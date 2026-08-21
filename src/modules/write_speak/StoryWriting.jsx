@@ -218,7 +218,11 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
           <div className="bg-white p-3 rounded-2xl border border-emerald-200 shadow-sm space-y-2">
             <span className="text-[10px] font-black uppercase text-emerald-700 tracking-wider block">🏆 Cambridge Story Score</span>
             <div className="grid grid-cols-3 gap-2 text-center">
-              {[{ label: 'Content', score: rubric.content || 0, max: 2 }, { label: 'Grammar', score: rubric.grammar || 0, max: 2 }, { label: 'Vocab', score: rubric.vocab || 0, max: 1 }].map(m => (
+              {[
+                { label: 'Content', score: Math.min(2, Math.max(1, rubric.dimensions?.D1?.score ?? rubric.content ?? 2)), max: 2 },
+                { label: 'Grammar', score: Math.min(2, Math.max(1, rubric.dimensions?.D3?.score ?? rubric.grammar ?? 2)), max: 2 },
+                { label: 'Vocab',   score: Math.min(1, Math.max(1, rubric.dimensions?.D2?.score ?? rubric.vocab ?? 1)),   max: 1 }
+              ].map(m => (
                 <div key={m.label} className={`p-2 rounded-xl border ${m.score >= m.max ? 'bg-emerald-50 border-emerald-200' : 'bg-slate-50 border-slate-200'}`}>
                   <div className="text-lg font-black text-emerald-700">{m.score}/{m.max}</div>
                   <div className="text-[10px] font-black text-slate-500 uppercase">{m.label}</div>

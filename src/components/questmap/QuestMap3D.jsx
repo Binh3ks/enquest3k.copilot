@@ -11,16 +11,23 @@ import { STATION_NAMES } from '../../config/stationLabels';
 import questMapBg from '../../assets/quest-map-forest.jpg';
 import './QuestMap3D.css';
 
-/**
- * QuestMap3D — Immersive 3D adventure map.
- * 
- * Features:
- * - Responsive: dual positions (desktop/mobile) + useViewport hook
- * - Actionable Lexio CTA button: directly starts/continues next task
- * - Cognitive load reduction: locked stations show only index number + lock
- * - Named locked nodes: station name visible at 45% opacity
- * - Direction arrows along the winding path
- */
+// Preload task zone chunks in background while student is exploring the Map
+const preloadTaskZones = () => {
+  try {
+    import('../../modules/zones/StoryWorldZone');
+    import('../../modules/zones/BattleArenaZone');
+    import('../../modules/zones/CreatorStudioZone');
+    import('../../modules/zones/BossBattleZone');
+    import('../../modules/zones/InfoExchangeZone');
+  } catch (_) {}
+};
+if (typeof window !== 'undefined') {
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(preloadTaskZones);
+  } else {
+    setTimeout(preloadTaskZones, 100);
+  }
+}
 
 const PATH_MIDPOINTS = [
   { x: 28, y: 60, angle: -30 },

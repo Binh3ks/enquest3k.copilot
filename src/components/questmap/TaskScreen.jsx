@@ -18,12 +18,30 @@ import './TaskScreen.css';
  * Renders the appropriate task component based on taskId.
  */
 
-// Lazy-load task components
+// Lazy-load task components with background preloading
 const StoryWorldZone = React.lazy(() => import('../../modules/zones/StoryWorldZone'));
 const BattleArenaZone = React.lazy(() => import('../../modules/zones/BattleArenaZone'));
 const CreatorStudioZone = React.lazy(() => import('../../modules/zones/CreatorStudioZone'));
 const BossBattleZone = React.lazy(() => import('../../modules/zones/BossBattleZone'));
 const InfoExchangeZone = React.lazy(() => import('../../modules/zones/InfoExchangeZone'));
+
+// Eager background preload to eliminate white flash
+const preloadZones = () => {
+  try {
+    import('../../modules/zones/StoryWorldZone');
+    import('../../modules/zones/BattleArenaZone');
+    import('../../modules/zones/CreatorStudioZone');
+    import('../../modules/zones/BossBattleZone');
+    import('../../modules/zones/InfoExchangeZone');
+  } catch (_) {}
+};
+if (typeof window !== 'undefined') {
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(preloadZones);
+  } else {
+    setTimeout(preloadZones, 100);
+  }
+}
 
 // Map taskId to zone + gear/station params
 const TASK_ROUTING = {
@@ -215,9 +233,17 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
       <div className="ts-content">
         <TaskErrorBoundary onBackToMap={handleBackToMap}>
           <Suspense fallback={
-            <div className="ts-loading flex flex-col items-center justify-center p-12 space-y-3">
-              <LexioMascot size={64} mood="thinking" />
-              <p className="font-black text-slate-500">Loading Task Activity...</p>
+            <div className="min-h-[70vh] flex flex-col items-center justify-center p-8 text-center space-y-4 animate-in fade-in duration-150">
+              <div className="p-4 bg-orange-50 rounded-full border-2 border-orange-200 shadow-md">
+                <LexioMascot size={72} mood="happy" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-base font-black text-slate-800">🦊 Lexio is loading your quest...</h3>
+                <p className="text-xs text-slate-400 font-bold">Preparing Cambridge 4-Skills Arena</p>
+              </div>
+              <div className="w-36 h-2 bg-slate-100 rounded-full overflow-hidden border border-slate-200 shadow-inner">
+                <div className="w-full h-full bg-gradient-to-r from-orange-400 to-amber-500 animate-pulse" />
+              </div>
             </div>
           }>
             {routing.zone === 'story' && (
