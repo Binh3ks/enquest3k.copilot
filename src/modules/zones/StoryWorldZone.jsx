@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import GearIndicator from '../../components/zones/GearIndicator';
 import CLILExplorer from '../../components/cambridge/CLILExplorer';
-import { PassportRackSidebar, GrandStampModal } from '../../components/cambridge/ExplorerPassport';
+import { SingleSubjectPassportSidebar, CLILSealStamp, GrandStampModal } from '../../components/cambridge/ExplorerPassport';
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { Film, Headphones, Mic, Globe, Volume2, Sparkles, CheckCircle2, ChevronRight, Play, Square, RotateCcw, MessageSquare, Info } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
@@ -1199,25 +1199,31 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
 
       {/* ========================================================================= */}
-      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER (Single Focused Science Badge)          */}
+      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER (Single Focused 3D Science Badge)       */}
       {/* ========================================================================= */}
       {currentGear === 4 && (
         <div className="w-full space-y-3 animate-in fade-in duration-200">
-          {/* Compact Single Badge Header for Week 33 Science */}
-          <div className="flex items-center justify-between p-2.5 sm:p-3 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl border border-indigo-500/30 text-white shadow-md">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 p-0.5 flex items-center justify-center text-white shadow-sm ring-2 ring-emerald-400/40 shrink-0">
-                <span className="text-base">🔬</span>
-              </div>
-              <div className="min-w-0">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-black text-white truncate">Science Lab Badge</span>
-                  <span className="px-1.5 py-0.5 bg-amber-400 text-slate-950 text-[9px] font-black rounded-md shrink-0">
-                    {clilStampEarned ? 'LV. 2' : 'LV. 1'}
+          {/* Mobile Header: Clean, background-free (NO black bar), just 3D Stamp + View Badge */}
+          <div className="md:hidden flex items-center justify-between py-1 px-1">
+            <div className="flex items-center gap-3">
+              <CLILSealStamp
+                stampId="science"
+                level={clilStampEarned ? 2 : 1}
+                size="sm"
+                onClick={() => {
+                  setSelectedStampId('science');
+                  setShowStampModal(true);
+                }}
+              />
+              <div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-xs font-black text-slate-900">Science Lab Stamp</span>
+                  <span className="px-1.5 py-0.5 bg-emerald-100 text-emerald-800 text-[9px] font-black rounded-md border border-emerald-300">
+                    LV. {clilStampEarned ? '2' : '1'} ✓
                   </span>
                 </div>
-                <p className="text-[10px] text-emerald-300 font-bold truncate">
-                  {clilStampEarned ? '✨ Science Master (Completed!)' : '🔭 Friction Explorer'}
+                <p className="text-[10px] text-slate-500 font-bold">
+                  {clilStampEarned ? '✨ Science Master' : 'Physics & Forces'}
                 </p>
               </div>
             </div>
@@ -1227,26 +1233,41 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                 setSelectedStampId('science');
                 setShowStampModal(true);
               }}
-              className="px-3 py-1.5 bg-indigo-600/80 hover:bg-indigo-500 text-white rounded-xl text-[11px] font-black border border-indigo-400/30 transition active:scale-95 shadow-sm shrink-0"
+              className="px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-xl text-xs font-black border border-indigo-200 transition active:scale-95 shadow-xs flex items-center gap-1 shrink-0"
             >
-              View Badge 🛂
+              <span>View Badge 🛂</span>
             </button>
           </div>
 
-          {/* Full-width CLIL Knowledge Explorer */}
-          <div className="w-full">
-            <CLILExplorer
-              clilData={clilArticle || readExplore}
-              weekNumber={weekNumber}
-              highlightMode={highlightMode}
-              setHighlightMode={setHighlightMode}
-              targetGrammarRegex={grammarRegex}
-              onCompleteCLIL={() => {
-                setClilStampEarned(true);
-                setSelectedStampId('science');
-                setShowStampModal(true);
-              }}
-            />
+          {/* Main Layout: Desktop has Left 3D Stamp Sidebar, Mobile takes full width */}
+          <div className="flex flex-col md:flex-row items-start gap-4 w-full">
+            {/* Desktop Left Sidebar with Big 3D Embossed Stamp */}
+            <div className="hidden md:block shrink-0">
+              <SingleSubjectPassportSidebar
+                currentSubject="science"
+                level={clilStampEarned ? 2 : 1}
+                onSelectStamp={() => {
+                  setSelectedStampId('science');
+                  setShowStampModal(true);
+                }}
+              />
+            </div>
+
+            {/* Main Reading & Quiz Content */}
+            <div className="flex-1 min-w-0 w-full">
+              <CLILExplorer
+                clilData={clilArticle || readExplore}
+                weekNumber={weekNumber}
+                highlightMode={highlightMode}
+                setHighlightMode={setHighlightMode}
+                targetGrammarRegex={grammarRegex}
+                onCompleteCLIL={() => {
+                  setClilStampEarned(true);
+                  setSelectedStampId('science');
+                  setShowStampModal(true);
+                }}
+              />
+            </div>
           </div>
 
           {/* Grand Stamp Slam Animation Modal */}
