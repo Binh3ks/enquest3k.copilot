@@ -129,23 +129,23 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
     useSensor(TouchSensor, { activationConstraint: { delay: 100, tolerance: 5 } })
   );
 
-  // 80s Timer Engine (Only active when gameState === 'playing')
+  // 80s Timer Engine (Linear 1s countdown, independent of score changes)
   useEffect(() => {
     if (gameState !== 'playing') return;
 
     const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          finishGame();
-          return 0;
-        }
-        return prev - 1;
-      });
+      setTimeLeft(prev => Math.max(0, prev - 1));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [gameState, score]);
+  }, [gameState]);
+
+  // Timeout trigger when timeLeft hits 0
+  useEffect(() => {
+    if (timeLeft === 0 && gameState === 'playing') {
+      finishGame();
+    }
+  }, [timeLeft, gameState]);
 
   const handleStartGame = () => {
     setPlacedItems({});

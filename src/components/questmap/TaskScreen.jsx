@@ -167,45 +167,41 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
       {/* Top bar */}
       <div className="ts-header">
         <button className="ts-back-btn" onClick={handleBackToMap}>
-          <ArrowLeft size={18} />
-          <span>Map</span>
+          <ArrowLeft size={16} />
+          <span className="hidden xs:inline">Map</span>
         </button>
-        <div className="ts-task-info flex items-center">
-          <div style={{ marginRight: '10px', lineHeight: 0 }}>
-            <LexioMascot size={30} mood="happy" />
-          </div>
-          <div style={{ width: '1px', height: '24px', background: '#e2e8f0', marginRight: '10px', flexShrink: 0 }} />
-          <span className="ts-task-icon" style={{ marginRight: '6px' }}>{taskInfo.icon}</span>
-          <span className="ts-task-name font-black">{taskInfo.label}</span>
+        <div className="ts-task-info">
+          <span className="ts-task-icon">{taskInfo.icon}</span>
+          <span className="ts-task-name">{taskInfo.label}</span>
         </div>
         
         {/* Arcade Button + Unified XP Reward & Time Badge */}
-        <div className="flex items-center gap-2.5">
+        <div className="ts-header-actions">
           <button
             type="button"
             onClick={() => setArcadeOpen(true)}
-            className={`px-3 py-1 rounded-xl text-xs font-black flex items-center gap-1.5 transition shadow-2xs ${
+            className={`ts-arcade-btn ${
               playEnergySeconds > 0
-                ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-cyan-500/30 ring-2 ring-cyan-400/40 hover:scale-105'
-                : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-cyan-500/30 ring-2 ring-cyan-400/40'
+                : 'bg-slate-100 text-slate-700'
             }`}
             title="Open Arcade Room"
           >
             <span>🕹️</span>
-            <span className="hidden sm:inline">Arcade</span>
+            <span className="hidden md:inline">Arcade</span>
             {playEnergySeconds > 0 ? (
-              <span className="w-2 h-2 rounded-full bg-emerald-300 animate-ping" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-ping" />
             ) : (
               <span className="text-[10px] text-slate-400">🔒</span>
             )}
           </button>
 
-          <div className="px-3 py-1 bg-amber-50 border border-amber-300 text-amber-900 rounded-xl text-xs font-black flex items-center gap-1.5 shadow-2xs">
-            <Trophy size={13} className="text-amber-500" />
-            <span>+{taskInfo.xp || 50} XP</span>
+          <div className="ts-xp-badge">
+            <Trophy size={12} className="text-amber-500" />
+            <span>+{taskInfo.xp || 50}</span>
           </div>
           <div className="ts-task-time">
-            <Clock size={12} />
+            <Clock size={11} />
             <span>~{taskInfo.minutes}m</span>
           </div>
         </div>

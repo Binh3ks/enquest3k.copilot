@@ -408,8 +408,8 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
             </div>
           </div>
 
-          {/* Navigation Footer */}
-          <div className="flex items-center justify-between gap-2 pt-1.5 border-t border-slate-100">
+          {/* Sticky Navigation Footer */}
+          <div className="sticky bottom-0 bg-white/95 backdrop-blur-md flex items-center justify-between gap-2 p-2.5 -mx-3.5 -mb-3.5 rounded-b-3xl border-t border-slate-100 shadow-md z-10">
             <button type="button" onClick={() => setPanelIdx(p => Math.max(0, p - 1))} disabled={panelIdx === 0}
               className="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 disabled:opacity-30 text-slate-700 font-black text-xs rounded-xl transition flex items-center gap-1.5 active:scale-95 shadow-2xs">
               <ArrowRight size={13} className="rotate-180" /> Back

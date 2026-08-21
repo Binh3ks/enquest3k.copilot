@@ -12,8 +12,12 @@
 .ts-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 8px 12px;
+  gap: 8px;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 6px 10px;
   background: white;
   border-bottom: 1px solid #e2e8f0;
   z-index: 50;
@@ -21,14 +25,15 @@
 }
 
 .ts-back-btn {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
+  gap: 4px;
+  padding: 6px 10px;
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  font-size: 13px;
+  border-radius: 10px;
+  font-size: 12px;
   font-weight: 800;
   color: #475569;
   cursor: pointer;
@@ -41,27 +46,67 @@
 }
 
 .ts-task-info {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .ts-task-icon {
-  font-size: 20px;
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .ts-task-name {
   font-family: 'Nunito', system-ui, sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 900;
   color: #1e293b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.ts-header-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ts-arcade-btn {
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s;
+}
+
+.ts-xp-badge {
+  padding: 4px 8px;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  color: #78350f;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .ts-task-time {
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 11px;
+  gap: 3px;
+  font-size: 10px;
   font-weight: 700;
   color: #94a3b8;
 }

@@ -480,21 +480,26 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
           <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-md space-y-4">
             {currentScene && (
               <div className="space-y-3">
-                <div className="relative w-full aspect-video sm:aspect-[21/9] rounded-2xl overflow-hidden bg-slate-900 border-2 border-slate-200 shadow-md">
+                <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-900 border-2 border-slate-200 shadow-md">
                   <img
                     src={currentScene.image_url}
                     alt={currentScene.title_en || 'Scene image'}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                     onError={(e) => { e.target.src = '/images/scenes/default_story.jpg'; }}
                   />
 
-                  {/* Mystery Pins — hidden until clicked, then reveal chunk */}
+                  {/* Mystery Pins — compact circular badges to prevent label overlap */}
                   {currentScene.lexical_chunks?.map((chunk, cIdx) => {
                     const pinKey = `${currentScene.scene_id}_${cIdx}`;
                     const chunkLabel = chunk.chunk || chunk.text || chunk.word || `Item ${cIdx + 1}`;
                     const chunkVi = chunk.vi || chunk.meaning_vi || '';
                     const isRevealed = revealedPins[pinKey];
                     const isFound = foundItems.includes(chunkLabel);
+                    
+                    // Safe staggered fallback coordinates if not provided in JSON
+                    const safeX = chunk.x ?? (20 + (cIdx * 30) % 70);
+                    const safeY = chunk.y ?? (35 + (cIdx * 25) % 45);
+
                     return (
                       <button
                         key={cIdx}
@@ -515,16 +520,18 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                             }
                           }
                         }}
-                        style={{ left: `${chunk.x || 30 + cIdx * 25}%`, top: `${chunk.y || 40 + (cIdx % 2) * 20}%` }}
-                        className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition hover:scale-125 z-10 ${
+                        style={{ left: `${safeX}%`, top: `${safeY}%` }}
+                        className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-transform active:scale-95 z-10 w-8 h-8 rounded-full border-2 border-white shadow-lg flex items-center justify-center text-xs font-black ${
                           isFound
-                            ? 'px-2.5 py-1 bg-emerald-500 border-2 border-white text-white font-black text-xs rounded-full shadow-lg'
+                            ? 'bg-emerald-500 text-white ring-2 ring-emerald-300'
                             : isRevealed
-                            ? 'px-3 py-1.5 bg-amber-400 border-2 border-white text-slate-950 font-black text-xs rounded-full shadow-lg'
-                            : 'w-9 h-9 rounded-full bg-amber-400/90 hover:bg-amber-300 border-2 border-white shadow-xl flex items-center justify-center animate-pulse'
+                            ? 'bg-amber-400 text-slate-950 ring-2 ring-amber-200'
+                            : 'bg-amber-400/90 hover:bg-amber-300 text-slate-950 animate-pulse'
                         }`}
+                        title={chunkLabel}
+                        aria-label={chunkLabel}
                       >
-                        {isFound ? `✓ ${chunkLabel}` : isRevealed ? `✨ ${chunkLabel}` : '?'}
+                        {isFound ? '✓' : isRevealed ? '✨' : '?'}
                       </button>
                     );
                   })}

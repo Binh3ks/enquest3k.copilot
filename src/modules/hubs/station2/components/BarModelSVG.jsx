@@ -1,6 +1,36 @@
 import React from 'react';
 
 /**
+ * Calculates proportional widths and percentages for Part-Whole Bar Models
+ * @param {Array<{ value: number, label: string, color?: string }>} bars
+ * @param {number} totalWidth (default: 320)
+ * @returns {Array<{ width: number, percent: number, xOffset: number, label: string, color?: string }>}
+ */
+export function calculateBarModelProportions(bars = [], totalWidth = 320) {
+  const totalSum = bars.reduce((acc, b) => acc + (Number(b.value) || 0), 0) || 100;
+  return bars.map((bar, idx) => {
+    const rawVal = Number(bar.value) || 0;
+    const ratio = totalSum > 0 ? rawVal / totalSum : 1 / (bars.length || 1);
+    const percent = Math.round(ratio * 100);
+    const width = ratio * totalWidth;
+    const xOffset = bars
+      .slice(0, idx)
+      .reduce((acc, b) => {
+        const bVal = Number(b.value) || 0;
+        const bRatio = totalSum > 0 ? bVal / totalSum : 1 / (bars.length || 1);
+        return acc + bRatio * totalWidth;
+      }, 0);
+
+    return {
+      ...bar,
+      percent,
+      width,
+      xOffset,
+    };
+  });
+}
+
+/**
  * Interactive SVG Renderer for Singapore Bar Models.
  * Renders Part-Whole and Comparison Bar Models dynamically.
  */
@@ -8,6 +38,7 @@ export function BarModelSVG({ modelData }) {
   if (!modelData) return null;
 
   const { type = 'part_whole', bars = [], totalLabel = '' } = modelData;
+  const computedBars = calculateBarModelProportions(bars, 320);
 
   return (
     <div className="w-full max-w-lg mx-auto bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center">
@@ -20,19 +51,13 @@ export function BarModelSVG({ modelData }) {
           <g>
             {/* Main Combined Bar */}
             <g transform="translate(40, 50)">
-              {bars.map((bar, idx) => {
-                const totalWidth = 320;
-                const width = (bar.value / 100) * totalWidth;
-                const xOffset = bars
-                  .slice(0, idx)
-                  .reduce((acc, b) => acc + (b.value / 100) * totalWidth, 0);
-
+              {computedBars.map((bar, idx) => {
                 return (
                   <g key={idx}>
                     <rect
-                      x={xOffset}
+                      x={bar.xOffset}
                       y={0}
-                      width={width}
+                      width={bar.width}
                       height={44}
                       fill={bar.color || (idx === 0 ? '#4f46e5' : '#06b6d4')}
                       stroke="#1e293b"
@@ -40,7 +65,7 @@ export function BarModelSVG({ modelData }) {
                       rx="4"
                     />
                     <text
-                      x={xOffset + width / 2}
+                      x={bar.xOffset + bar.width / 2}
                       y={26}
                       fill="#ffffff"
                       fontSize="14"

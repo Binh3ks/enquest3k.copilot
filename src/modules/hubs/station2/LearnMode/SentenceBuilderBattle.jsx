@@ -129,23 +129,23 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
     if (onComplete) onComplete(score);
   };
 
-  // Timer Engine
+  // Timer Engine (Linear 1s countdown, independent of score changes)
   useEffect(() => {
     if (gameState !== 'playing') return;
 
     const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          finishGame();
-          return 0;
-        }
-        return prev - 1;
-      });
+      setTimeLeft(prev => Math.max(0, prev - 1));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [gameState, score]);
+  }, [gameState]);
+
+  // Timeout trigger when timeLeft hits 0
+  useEffect(() => {
+    if (timeLeft === 0 && gameState === 'playing') {
+      finishGame();
+    }
+  }, [timeLeft, gameState]);
 
   const handleDragStart = (event) => setActiveId(event.active.id);
 
@@ -348,11 +348,11 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
       {/* Active Game Display */}
       {(gameState === 'playing' || gameState === 'paused') && (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-          <div className="space-y-4">
+          <div className="space-y-2.5 sm:space-y-4">
             {/* Target Drop Zone Area */}
-            <div className="p-4 bg-indigo-50/60 border-2 border-dashed border-indigo-300 rounded-2xl min-h-[90px] flex flex-wrap items-center gap-2 shadow-inner">
+            <div className="p-2.5 sm:p-4 bg-indigo-50/60 border-2 border-dashed border-indigo-300 rounded-2xl min-h-[64px] sm:min-h-[80px] flex flex-wrap items-center gap-1.5 sm:gap-2 shadow-inner">
               {targetBlocks.length === 0 ? (
-                <span className="text-xs text-indigo-400 font-bold italic mx-auto">
+                <span className="text-[11px] sm:text-xs text-indigo-400 font-bold italic mx-auto">
                   (Drag or tap word pills below to construct your sentence...)
                 </span>
               ) : (
@@ -365,7 +365,7 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
             </div>
 
             {/* Word Bank Dock */}
-            <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
+            <div className="p-2.5 sm:p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-1.5 sm:space-y-2">
               <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider">
                 Word Bank (Tap or drag words to choose):
               </span>

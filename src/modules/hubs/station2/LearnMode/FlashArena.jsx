@@ -146,23 +146,23 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
     if (onComplete) onComplete(score);
   };
 
-  // Timer Engine
+  // Timer Engine (Linear 1s countdown, independent of score changes)
   useEffect(() => {
     if (gameState !== 'playing') return;
 
     const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          finishGame();
-          return 0;
-        }
-        return prev - 1;
-      });
+      setTimeLeft(prev => Math.max(0, prev - 1));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [gameState, score]);
+  }, [gameState]);
+
+  // Timeout trigger when timeLeft hits 0
+  useEffect(() => {
+    if (timeLeft === 0 && gameState === 'playing') {
+      finishGame();
+    }
+  }, [timeLeft, gameState]);
 
   // Match Evaluation Logic
   useEffect(() => {
