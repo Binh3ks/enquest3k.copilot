@@ -51,43 +51,59 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '10px 16px',
-          background: 'rgba(255,255,255,0.04)',
-          borderBottom: '1px solid rgba(255,255,255,0.08)',
+          background: 'rgba(15,23,42,0.85)',
+          backdropFilter: 'blur(8px)',
+          borderBottom: '1px solid rgba(255,255,255,0.1)',
           flexShrink: 0,
         }}>
           <button
             type="button"
             onClick={() => setSelectedGame(null)}
             style={{
-              display: 'flex', alignItems: 'center', gap: '6px',
-              padding: '6px 12px', borderRadius: '10px',
-              background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
-              color: '#cbd5e1', fontSize: '12px', fontWeight: 800, cursor: 'pointer'
+              display: 'flex', alignItems: 'center', gap: '8px',
+              minHeight: '44px', minWidth: '44px',
+              padding: '8px 16px', borderRadius: '12px',
+              background: 'rgba(255,255,255,0.12)', border: '1.5px solid rgba(255,255,255,0.25)',
+              color: '#f8fafc', fontSize: '13px', fontWeight: 900, cursor: 'pointer',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+              transition: 'background 0.15s, transform 0.1s'
             }}
+            onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
+            onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
           >
-            <ArrowLeft size={14} /> Back to Arcade
+            <ArrowLeft size={18} />
+            <span>EXIT GAME</span>
           </button>
           <div style={{
-            fontSize: '11px', fontWeight: 800, color: '#94a3b8',
-            display: 'flex', alignItems: 'center', gap: '6px'
+            fontSize: '12px', fontWeight: 800, color: '#94a3b8',
+            display: 'flex', alignItems: 'center', gap: '8px'
           }}>
-            <span>🕹️ ARCADE</span>
+            <span style={{ letterSpacing: '0.04em' }}>🕹️ ARCADE ROOM</span>
             {!ownerBypass && (
               <span style={{
                 background: 'rgba(52,211,153,0.15)', border: '1px solid rgba(52,211,153,0.3)',
-                color: '#34d399', borderRadius: '8px', padding: '2px 8px'
+                color: '#34d399', borderRadius: '8px', padding: '3px 10px', fontWeight: 800
               }}>
                 🔋 {formatEnergy(playEnergySeconds)} remaining
               </span>
             )}
             {ownerBypass && (
-              <span style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', color: '#fbbf24', borderRadius: '8px', padding: '2px 8px' }}>
+              <span style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', color: '#fbbf24', borderRadius: '8px', padding: '3px 10px', fontWeight: 800 }}>
                 👑 Owner Mode
               </span>
             )}
           </div>
-          <button type="button" onClick={onClose} style={{ padding: '6px', borderRadius: '8px', background: 'rgba(255,255,255,0.06)', border: 'none', color: '#64748b', cursor: 'pointer' }}>
-            <X size={18} />
+          <button
+            type="button"
+            onClick={onClose}
+            style={{
+              minHeight: '44px', minWidth: '44px',
+              padding: '8px', borderRadius: '12px',
+              background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)',
+              color: '#94a3b8', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'
+            }}
+          >
+            <X size={20} />
           </button>
         </div>
 

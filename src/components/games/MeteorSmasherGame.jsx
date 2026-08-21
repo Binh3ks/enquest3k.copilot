@@ -217,31 +217,57 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
     const sx1 = x1 * scaleX, sy1 = y1 * scaleY;
     const sx2 = x2 * scaleX, sy2 = y2 * scaleY;
 
-    // Find closest meteor the laser line passes through
+    // Cone-based proximity target lock (relaxed for kids)
     let hitMeteor = null;
-    let bestDist = Infinity;
+    let bestScore = Infinity;
+
+    const swipeDx = sx2 - sx1;
+    const swipeDy = sy2 - sy1;
+    const swipeAngle = Math.atan2(swipeDy, swipeDx);
 
     meteorsRef.current.forEach(m => {
       if (m.hit) return;
-      // Distance from point m to line segment sx1,sy1 → sx2,sy2
+
+      // 1. Direct proximity to swipe end point
+      const endDist = Math.hypot(m.x - sx2, m.y - sy2);
+      if (endDist < m.r + 45) {
+        if (endDist < bestScore) {
+          bestScore = endDist;
+          hitMeteor = m;
+        }
+        return;
+      }
+
+      // 2. Line segment projection distance
       const A = m.x - sx1, B = m.y - sy1;
-      const C = sx2 - sx1, D = sy2 - sy1;
-      const dot = A * C + B * D;
-      const lenSq = C * C + D * D;
+      const dot = A * swipeDx + B * swipeDy;
+      const lenSq = swipeDx * swipeDx + swipeDy * swipeDy;
       const t = lenSq > 0 ? Math.max(0, Math.min(1, dot / lenSq)) : 0;
-      const closestX = sx1 + t * C;
-      const closestY = sy1 + t * D;
-      const d = Math.hypot(m.x - closestX, m.y - closestY);
-      if (d < m.r + 8 && d < bestDist) {
-        bestDist = d;
-        hitMeteor = m;
+      const projX = sx1 + t * swipeDx;
+      const projY = sy1 + t * swipeDy;
+      const lineDist = Math.hypot(m.x - projX, m.y - projY);
+
+      // 3. Angular cone check (within ~60 deg of swipe direction)
+      const toMeteorAngle = Math.atan2(m.y - sy1, m.x - sx1);
+      let angleDiff = Math.abs(toMeteorAngle - swipeAngle);
+      if (angleDiff > Math.PI) angleDiff = 2 * Math.PI - angleDiff;
+
+      if (lineDist < m.r + 35 || (angleDiff < Math.PI / 3 && Math.hypot(A, B) < 320)) {
+        const weightedScore = lineDist + angleDiff * 40;
+        if (weightedScore < bestScore) {
+          bestScore = weightedScore;
+          hitMeteor = m;
+        }
       }
     });
 
     const laserColor = hitMeteor ? (hitMeteor.isTarget ? '#4ade80' : '#ef4444') : '#60a5fa';
+    // Laser snaps to meteor center if hit, otherwise extends along swipe
+    const lx2 = hitMeteor ? hitMeteor.x : sx2;
+    const ly2 = hitMeteor ? hitMeteor.y : sy2;
 
     // Show laser
-    setLaser({ x1: sx1, y1: sy1, x2: sx2, y2: sy2, color: laserColor, hit: !!hitMeteor });
+    setLaser({ x1: sx1, y1: sy1, x2: lx2, y2: ly2, color: laserColor, hit: !!hitMeteor });
     setTimeout(() => setLaser(null), 350);
 
     if (!hitMeteor) return; // miss
@@ -259,14 +285,19 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
         pickNextTarget();
       }, 500);
     } else {
-      // Wrong meteor → shield damage
+      // Wrong meteor → shield damage + Answer Reveal Protocol V3
       shieldsRef.current = Math.max(0, shieldsRef.current - 1);
       setShields(shieldsRef.current);
-      setFeedback({ msg: `❌ "${hitMeteor.word}" — Wrong! −1 🛡️`, type: 'bad' });
+      
+      const correctWord = targetRef.current?.word || 'Correct Word';
+      setFeedback({
+        msg: `❌ Smashed "${hitMeteor.word}" · Correct is "${correctWord}"`,
+        type: 'bad'
+      });
       meteorsRef.current = meteorsRef.current.map(m =>
         m.id === hitMeteor.id ? { ...m, hit: true } : m
       );
-      setTimeout(() => setFeedback(null), 900);
+      setTimeout(() => setFeedback(null), 1500);
       if (shieldsRef.current <= 0) setTimeout(endGame, 400);
     }
   }, [pickNextTarget, endGame]);

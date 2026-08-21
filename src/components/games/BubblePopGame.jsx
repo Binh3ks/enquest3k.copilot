@@ -89,6 +89,8 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
     speak(target);
   }, [activeWords, speak]);
 
+  const [revealMsg, setRevealMsg] = useState(null);
+
   // Physics animation loop
   const runLoop = useCallback(() => {
     if (gameStateRef.current !== 'playing') return;
@@ -114,6 +116,11 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
           setScore(scoreRef.current);
           streakRef.current = 0;
           setStreak(0);
+          
+          // Answer Reveal Protocol V3 on escape
+          setRevealMsg({ text: `Missed: "${targetRef.current}" (−5)`, type: 'miss' });
+          setTimeout(() => setRevealMsg(null), 1400);
+
           // Spawn new round
           const newTarget = activeWords[Math.floor(Math.random() * activeWords.length)];
           targetRef.current = newTarget;
@@ -138,6 +145,7 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
     setGameTimer(60);
     setShowPenalty(false);
     setInkSplat(null);
+    setRevealMsg(null);
 
     const target = activeWords[Math.floor(Math.random() * activeWords.length)];
     targetRef.current = target;
@@ -183,19 +191,25 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
       setScore(scoreRef.current);
       setStreak(streakRef.current);
 
+      setRevealMsg({ text: `✓ "${bubble.word}"! +${pts}`, type: 'correct' });
+      setTimeout(() => setRevealMsg(null), 800);
+
       const nextTarget = activeWords[Math.floor(Math.random() * activeWords.length)];
       targetRef.current = nextTarget;
       setTargetWord(nextTarget);
       spawnBubbles(nextTarget, streakRef.current);
     } else {
-      // Wrong tap — ink splat penalty
+      // Wrong tap — ink splat penalty + Answer Reveal Protocol V3
       streakRef.current = 0;
       setStreak(0);
       const rect = e.currentTarget.getBoundingClientRect();
       setInkSplat({ x: e.clientX - rect.left, y: e.clientY - rect.top, color: bubble.color[0] });
       setShowPenalty(true);
-      speak(`Find: ${targetRef.current}`);
+
+      setRevealMsg({ text: `✗ Tapped "${bubble.word}" · Look for: "${targetRef.current}"`, type: 'wrong' });
+      speak(`Look for: ${targetRef.current}`);
       setTimeout(() => { setInkSplat(null); setShowPenalty(false); }, 900);
+      setTimeout(() => setRevealMsg(null), 1500);
     }
   }, [activeWords, spawnBubbles, speak]);
 
@@ -291,6 +305,25 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
             ref={containerRef}
             style={{ flex: 1, position: 'relative', overflow: 'hidden' }}
           >
+            {/* Answer Reveal Protocol Banner */}
+            {revealMsg && (
+              <div style={{
+                position: 'absolute', top: '16px', left: '50%', transform: 'translateX(-50%)',
+                zIndex: 25, padding: '8px 18px', borderRadius: '16px', fontWeight: 900, fontSize: '13px',
+                background: revealMsg.type === 'correct'
+                  ? 'rgba(16,185,129,0.95)'
+                  : revealMsg.type === 'miss'
+                  ? 'rgba(245,158,11,0.95)'
+                  : 'rgba(239,68,68,0.95)',
+                color: '#fff', boxShadow: '0 8px 24px rgba(0,0,0,0.5)',
+                border: '1.5px solid rgba(255,255,255,0.4)',
+                whiteSpace: 'nowrap', pointerEvents: 'none',
+                animation: 'scaleUp 0.15s ease-out',
+              }}>
+                {revealMsg.text}
+              </div>
+            )}
+
             {/* Ink splat overlay */}
             {inkSplat && (
               <div style={{

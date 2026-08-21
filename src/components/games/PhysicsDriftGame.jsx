@@ -182,6 +182,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, onComplete, isStanda
   const makeDecision = useCallback((choice) => {
     if (!decisionRef.current) return;
     const obs = decisionRef.current;
+    const correctChoice = obs.A.correct ? obs.A : obs.B;
     decisionRef.current = null;
     setDecision(null);
 
@@ -192,13 +193,18 @@ export default function PhysicsDriftGame({ weekNumber = 33, onComplete, isStanda
       setFeedback({ msg: `✅ ${choice.text}! +15`, type: 'good' });
       setTimeout(() => { setSpeedBoost(false); setFeedback(null); }, 1200);
     } else {
-      triggerSpinout(`❌ ${choice.penalty || 'Wrong!'} −10`);
+      triggerSpinout(`❌ ${choice.penalty || 'Wrong!'} · Đúng là: "${correctChoice.text}"`);
     }
   }, []);
 
   const triggerSpinout = useCallback((msg) => {
     spinoutRef.current = true;
     setSpinout(true);
+    if (decisionRef.current) {
+      const obs = decisionRef.current;
+      const correctChoice = obs.A.correct ? obs.A : obs.B;
+      msg = `⏰ Too slow! · Đúng là: "${correctChoice.text}"`;
+    }
     decisionRef.current = null;
     setDecision(null);
     scoreRef.current = Math.max(0, scoreRef.current - 10);
@@ -208,7 +214,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, onComplete, isStanda
       spinoutRef.current = false;
       setSpinout(false);
       setFeedback(null);
-    }, 1800);
+    }, 2000);
   }, []);
 
   // ── Lane change ───────────────────────────────────────────────────────────

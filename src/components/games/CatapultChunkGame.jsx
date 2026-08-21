@@ -67,18 +67,24 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
     const shuffled = allWords.sort(() => Math.random() - 0.5);
 
     const cw = 300, ch = 200;
-    return shuffled.map((word, i) => ({
-      id: `chunk_${i}_${Date.now()}`,
-      word,
-      isDecoy: word === r.decoy,
-      x: 40 + Math.random() * (cw - 80),
-      y: 40 + Math.random() * (ch - 80),
-      vx: (Math.random() - 0.5) * 0.6,
-      vy: (Math.random() - 0.5) * 0.6,
-      locked: false,
-      lockedSlotId: null,
-      dragging: false,
-    }));
+    return shuffled.map((word, i) => {
+      const initX = 50 + ((i % 2) * 160) + Math.random() * 40;
+      const initY = 40 + Math.floor(i / 2) * 60 + Math.random() * 20;
+      return {
+        id: `chunk_${i}_${Date.now()}`,
+        word,
+        isDecoy: word === r.decoy,
+        x: initX,
+        y: initY,
+        origX: initX,
+        origY: initY,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        locked: false,
+        lockedSlotId: null,
+        dragging: false,
+      };
+    });
   }, []);
 
   // Float animation loop
@@ -248,28 +254,40 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
         chunksRef.current = chunksRef.current.map(ch =>
           ch.id === chunkId ? { ...ch, locked: true, lockedSlotId: hit.id, dragging: false } : ch
         );
-        setFeedback({ msg: '✓ Locked in!', type: 'good' });
-        setTimeout(() => setFeedback(null), 600);
+        setFeedback({ msg: `✓ [${slot.label}] locked in!`, type: 'good' });
+        setTimeout(() => setFeedback(null), 800);
         checkRoundComplete(newLocked);
       } else {
-        // REJECT — bounce back with higher speed
+        // REJECT — smooth bounce back to origin without compound velocity penalty
         chunksRef.current = chunksRef.current.map(ch =>
           ch.id === chunkId ? {
-            ...ch, dragging: false,
-            vx: (Math.random() - 0.5) * 4,
-            vy: (Math.random() - 0.5) * 4,
+            ...ch,
+            dragging: false,
+            x: ch.origX,
+            y: ch.origY,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
           } : ch
         );
-        setFeedback({ msg: c.isDecoy ? '❌ Decoy chunk!' : '❌ Wrong slot!', type: 'bad' });
-        setTimeout(() => setFeedback(null), 700);
+        if (c.isDecoy) {
+          setFeedback({ msg: `❌ "${c.word}" is a decoy — not in this sentence!`, type: 'bad' });
+        } else {
+          const correctSlot = round.slots.find(s => s.answer === c.word);
+          setFeedback({
+            msg: `❌ "${c.word}" belongs to [${correctSlot?.label || 'Other Slot'}]`,
+            type: 'bad'
+          });
+        }
+        setTimeout(() => setFeedback(null), 1500);
       }
     } else {
-      // SCATTER — released in open space, chunk flies off
+      // SCATTER — smoothly return towards home if released outside
       chunksRef.current = chunksRef.current.map(ch =>
         ch.id === chunkId ? {
-          ...ch, dragging: false,
-          vx: (Math.random() - 0.5) * 3,
-          vy: (Math.random() - 0.5) * 3,
+          ...ch,
+          dragging: false,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
         } : ch
       );
     }
