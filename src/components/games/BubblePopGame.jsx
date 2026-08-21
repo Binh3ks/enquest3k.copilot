@@ -80,7 +80,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
 
     const newBubbles = allWords.map((word, i) => {
       const color = COLORS[i % COLORS.length];
-      const radius = Math.max(26, Math.min(34, 22 + word.length * 0.9));
+      const radius = Math.max(22, Math.min(29, 18 + word.length * 0.8));
       const col = i % 3;
       const row = Math.floor(i / 3);
 

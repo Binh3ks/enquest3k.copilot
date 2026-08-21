@@ -73,7 +73,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
     const pick = targetWordObj || wordBank[Math.floor(Math.random() * wordBank.length)];
     const x = 80 + idx * 155 + (Math.random() - 0.5) * 30;
     const y = -15 - Math.random() * 20; // Enters canvas in <1.5s
-    const r = Math.max(38, Math.min(50, 34 + Math.floor(pick.word.length * 1.4)));
+    const r = Math.max(30, Math.min(40, 26 + Math.floor(pick.word.length * 1.1)));
 
     return {
       id: `m_${Date.now()}_${idx}_${Math.random()}`,

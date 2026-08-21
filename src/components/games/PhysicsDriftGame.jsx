@@ -520,24 +520,24 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
               </div>
             ))}
 
-            {/* STAGE 1: ZOOMING WORD POPUP */}
+            {/* STAGE 1: ZOOMING WORD POPUP (Compact for mobile) */}
             {zoomingWord && (
               <div style={{
                 position: 'absolute',
                 left: `${zoomingWord.xPct}%`,
                 top: `${zoomingWord.y}px`,
-                transform: 'translate(-50%, -50%) scale(2.4)',
+                transform: 'translate(-50%, -50%) scale(1.15)',
                 zIndex: 40,
                 pointerEvents: 'none',
-                padding: '10px 18px',
-                borderRadius: '16px',
+                padding: '6px 12px',
+                borderRadius: '12px',
                 background: 'linear-gradient(135deg, #fef08a, #facc15)',
-                border: '3px solid #ffffff',
-                boxShadow: '0 0 35px #facc15, 0 10px 30px rgba(0,0,0,0.7)',
+                border: '2px solid #ffffff',
+                boxShadow: '0 0 18px #facc15, 0 6px 16px rgba(0,0,0,0.5)',
                 color: '#713f12',
                 fontWeight: 900,
-                fontSize: '15px',
-                letterSpacing: '0.04em',
+                fontSize: '12px',
+                letterSpacing: '0.03em',
                 whiteSpace: 'nowrap',
                 animation: 'zoomIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
               }}>
@@ -545,13 +545,13 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
               </div>
             )}
 
-            {/* STAGE 2: CATCH BURST EXPLOSION */}
+            {/* STAGE 2: CATCH BURST EXPLOSION (Compact for mobile) */}
             {catchBurst && (
               <div style={{
                 position: 'absolute',
                 left: `${catchBurst.xPct}%`,
                 top: `${catchBurst.y}px`,
-                transform: 'translate(-50%, -50%) scale(1.8)',
+                transform: 'translate(-50%, -50%) scale(1.1)',
                 zIndex: 38,
                 pointerEvents: 'none',
                 animation: 'zoomIn 0.3s ease-out',
@@ -559,12 +559,12 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
                 alignItems: 'center',
                 gap: '4px',
                 background: 'radial-gradient(circle, #fef08a 0%, #eab308 60%, transparent 100%)',
-                padding: '12px 22px',
-                borderRadius: '30px',
+                padding: '6px 14px',
+                borderRadius: '20px',
                 color: '#713f12',
                 fontWeight: 900,
-                fontSize: '18px',
-                boxShadow: '0 0 35px #facc15',
+                fontSize: '13px',
+                boxShadow: '0 0 18px #facc15',
                 whiteSpace: 'nowrap',
               }}>
                 <span>💥 +20 PTS!</span>
