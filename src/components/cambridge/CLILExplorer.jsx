@@ -166,7 +166,7 @@ export default function CLILExplorer({
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-5 font-sans text-slate-900">
+    <div className="w-full space-y-3.5 font-sans text-slate-900">
       {/* Stepper Header (Zero-L1) */}
       <div className="flex items-center justify-between px-2">
         <div className="flex items-center gap-2">

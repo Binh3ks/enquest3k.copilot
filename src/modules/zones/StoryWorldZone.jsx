@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import GearIndicator from '../../components/zones/GearIndicator';
 import CLILExplorer from '../../components/cambridge/CLILExplorer';
-import { CompactPassportBadge, GrandStampModal } from '../../components/cambridge/ExplorerPassport';
+import { PassportRackSidebar, GrandStampModal } from '../../components/cambridge/ExplorerPassport';
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { Film, Headphones, Mic, Globe, Volume2, Sparkles, CheckCircle2, ChevronRight, Play, Square, RotateCcw, MessageSquare, Info } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
@@ -71,6 +71,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
   const [showStampModal, setShowStampModal] = useState(false);
+  const [selectedStampId, setSelectedStampId] = useState('science');
   const [clilStampEarned, setClilStampEarned] = useState(false);
 
   // 10s Hint Countdown Timer
@@ -1188,44 +1189,46 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
 
       {/* ========================================================================= */}
-      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER + EXPLORER PASSPORT (Zero-Scroll)      */}
+      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER + PASSPORT RACK (Left Sidebar Standard) */}
       {/* ========================================================================= */}
       {currentGear === 4 && (
-        <div className="space-y-4">
-          {/* Top Info Bar: Nova Evolution Badge + Compact Passport Badge */}
-          <div className="flex items-center justify-between gap-2 flex-wrap">
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-amber-100 to-orange-100 border border-amber-300 rounded-2xl text-xs font-black text-amber-900 shadow-2xs">
-              <span className="text-xl">{novaStage.avatarIcon}</span>
-              <div>
-                <span className="block text-[11px] uppercase tracking-wider">{novaStage.title}</span>
-                <span className="text-[10px] font-medium text-amber-800">{novaStage.badgeTitle} · Streak {streakDays}d</span>
-              </div>
-            </div>
-
-            <CompactPassportBadge
-              stampId="science"
-              isEarned={clilStampEarned}
-              onClick={() => setShowStampModal(true)}
-            />
-          </div>
-
-          {/* CLIL Knowledge Explorer article */}
-          <CLILExplorer
-            clilData={clilArticle || readExplore}
-            weekNumber={weekNumber}
-            highlightMode={highlightMode}
-            setHighlightMode={setHighlightMode}
-            targetGrammarRegex={grammarRegex}
-            onCompleteCLIL={() => {
-              setClilStampEarned(true);
+        <div className="flex flex-col md:flex-row items-start gap-4 w-full animate-in fade-in duration-200">
+          {/* Left Sidebar: 4 Leveling CLIL Passport Stamps */}
+          <PassportRackSidebar
+            currentSubject="science"
+            earnedStamps={{
+              science: clilStampEarned ? 2 : 1,
+              math: 1,
+              history: 1,
+              geography: 0
+            }}
+            onSelectStamp={(id) => {
+              setSelectedStampId(id);
               setShowStampModal(true);
             }}
           />
 
+          {/* Right Main Content: CLIL Knowledge Explorer */}
+          <div className="flex-1 min-w-0 w-full">
+            <CLILExplorer
+              clilData={clilArticle || readExplore}
+              weekNumber={weekNumber}
+              highlightMode={highlightMode}
+              setHighlightMode={setHighlightMode}
+              targetGrammarRegex={grammarRegex}
+              onCompleteCLIL={() => {
+                setClilStampEarned(true);
+                setSelectedStampId('science');
+                setShowStampModal(true);
+              }}
+            />
+          </div>
+
           {/* Grand Stamp Slam Animation Modal */}
           <GrandStampModal
             isOpen={showStampModal}
-            stampId="science"
+            stampId={selectedStampId}
+            level={selectedStampId === 'science' && clilStampEarned ? 2 : 1}
             onClose={() => setShowStampModal(false)}
           />
         </div>
