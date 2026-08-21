@@ -45,14 +45,74 @@ const TASK_ROUTING = {
   weekly_review:    { zone: 'boss',    station: 'review' },
 };
 
+class TaskErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+  componentDidCatch(error, errorInfo) {
+    console.error('[TaskScreen Error]', error, errorInfo);
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="flex flex-col items-center justify-center p-8 text-center min-h-[400px] space-y-4">
+          <LexioMascot size={64} mood="thinking" />
+          <h3 className="font-black text-slate-800 text-lg">Task Encountered an Issue</h3>
+          <p className="text-xs text-slate-500 max-w-sm">
+            {this.state.error?.message || 'Unable to load this task content. Please return to the map.'}
+          </p>
+          <button
+            type="button"
+            onClick={this.props.onBackToMap}
+            className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs rounded-xl shadow-md transition"
+          >
+            ← Back to Map
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+function getSafeTaskData(weekData, weekId) {
+  if (!weekData || typeof weekData !== 'object') {
+    return {
+      weekNumber: weekId || 33,
+      theme: 'Weekly Theme',
+      storyWorld: { storyScenes: [], vocab: [], grammarDrills: [] },
+      battleArena: { vocab: [], grammarDrills: [], flashArena: null, barModel: [], scienceLab: null },
+      creatorStudio: { pictureStory: null, storyPrompts: {}, podcastScenes: [], debateTopics: [] },
+      bossBattle: { listening: {}, readingWriting: {}, speaking: {} },
+      stations: {},
+      rawWeekData: {}
+    };
+  }
+  return {
+    ...weekData,
+    weekNumber: weekData.weekNumber || weekId || 33,
+    storyWorld: weekData.storyWorld || { storyScenes: [], vocab: [], grammarDrills: [] },
+    battleArena: weekData.battleArena || { vocab: [], grammarDrills: [], flashArena: null, barModel: [], scienceLab: null },
+    creatorStudio: weekData.creatorStudio || { pictureStory: null, storyPrompts: {}, podcastScenes: [], debateTopics: [] },
+    bossBattle: weekData.bossBattle || { listening: {}, readingWriting: {}, speaking: {} },
+    stations: weekData.stations || {},
+    rawWeekData: weekData.rawWeekData || weekData
+  };
+}
+
 export default function TaskScreen({ weekData, weekId: propWeekId }) {
   const params = useParams();
   const navigate = useNavigate();
   const weekId = propWeekId || parseInt(params.weekId);
   const taskId = params.taskId;
-  const [showComplete, setShowComplete] = useState(false);
   const currentUser = useUserStore(state => state.currentUser);
   const isOwner = currentUser?.role === 'owner' || ['admin', 'super_admin', 'teacher', 'team_leader', 'center_director'].includes(currentUser?.role);
+
+  const safeData = useMemo(() => getSafeTaskData(weekData, weekId), [weekData, weekId]);
 
   // Find task info from QUEST_SCHEDULE
   const taskInfo = useMemo(() => {
@@ -65,8 +125,6 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
 
   const routing = TASK_ROUTING[taskId];
 
-  // TaskScreen does not auto-complete on mount; completion is triggered when user finishes the activity
-
   const handleBackToMap = () => {
     navigate(`/week/${weekId}/hub/1`);
   };
@@ -76,23 +134,12 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
       <div className="ts-container">
         <div className="ts-error">
           <LexioMascot size={80} mood="thinking" />
-          <h2>Task not found</h2>
+          <h2>Task not found: {taskId}</h2>
           <button className="ts-back-btn" onClick={handleBackToMap}>← Back to Map</button>
         </div>
       </div>
     );
   }
-
-  // Gamification: Best score retrieval from local storage
-  const bestScore = useMemo(() => {
-    try {
-      const stored = localStorage.getItem(`engquest_best_${weekId}_${taskId}`);
-      if (stored) return parseInt(stored, 10);
-      return null;
-    } catch (_) {
-      return null;
-    }
-  }, [weekId, taskId]);
 
   const {
     isArcadeOpen,
@@ -124,11 +171,9 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
           <span>Map</span>
         </button>
         <div className="ts-task-info flex items-center">
-          {/* Lexio mascot: explicitly wrapped with right margin so task icon never merges visually */}
           <div style={{ marginRight: '10px', lineHeight: 0 }}>
             <LexioMascot size={30} mood="happy" />
           </div>
-          {/* Vertical divider */}
           <div style={{ width: '1px', height: '24px', background: '#e2e8f0', marginRight: '10px', flexShrink: 0 }} />
           <span className="ts-task-icon" style={{ marginRight: '6px' }}>{taskInfo.icon}</span>
           <span className="ts-task-name font-black">{taskInfo.label}</span>
@@ -144,7 +189,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
                 ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-cyan-500/30 ring-2 ring-cyan-400/40 hover:scale-105'
                 : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
             }`}
-            title="Open Arcade Room (Study 15m to recharge 3m play battery)"
+            title="Open Arcade Room"
           >
             <span>🕹️</span>
             <span className="hidden sm:inline">Arcade</span>
@@ -166,53 +211,55 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
         </div>
       </div>
 
-      {/* Task content — renders the appropriate zone component */}
+      {/* Task content — wrapped in TaskErrorBoundary */}
       <div className="ts-content">
-        <Suspense fallback={
-          <div className="ts-loading">
-            <LexioMascot size={64} mood="thinking" />
-            <p>Loading...</p>
-          </div>
-        }>
-          {routing.zone === 'story' && (
-            <StoryWorldZone
-              data={weekData ? (typeof weekData === 'object' ? weekData : {}) : {}}
-              weekNumber={weekId}
-              forcedGear={routing.gear}
-              hideGearTabs={true}
-            />
-          )}
-          {routing.zone === 'arena' && (
-            <BattleArenaZone
-              data={weekData || {}}
-              weekNumber={weekId}
-              forcedStation={routing.station}
-              hideStationTabs={true}
-            />
-          )}
-          {routing.zone === 'create' && (
-            <CreatorStudioZone
-              data={weekData || {}}
-              weekNumber={weekId}
-              forcedStation={routing.station}
-              hideStationTabs={true}
-            />
-          )}
-          {routing.zone === 'boss' && (
-            <BossBattleZone
-              data={weekData || {}}
-              weekNumber={weekId}
-              forcedStation={routing.station}
-              hideStationTabs={true}
-            />
-          )}
-          {routing.zone === 'info_exchange' && (
-            <InfoExchangeZone
-              data={weekData || {}}
-              weekNumber={weekId}
-            />
-          )}
-        </Suspense>
+        <TaskErrorBoundary onBackToMap={handleBackToMap}>
+          <Suspense fallback={
+            <div className="ts-loading flex flex-col items-center justify-center p-12 space-y-3">
+              <LexioMascot size={64} mood="thinking" />
+              <p className="font-black text-slate-500">Loading Task Activity...</p>
+            </div>
+          }>
+            {routing.zone === 'story' && (
+              <StoryWorldZone
+                data={safeData}
+                weekNumber={weekId}
+                forcedGear={routing.gear}
+                hideGearTabs={true}
+              />
+            )}
+            {routing.zone === 'arena' && (
+              <BattleArenaZone
+                data={safeData}
+                weekNumber={weekId}
+                forcedStation={routing.station}
+                hideStationTabs={true}
+              />
+            )}
+            {routing.zone === 'create' && (
+              <CreatorStudioZone
+                data={safeData}
+                weekNumber={weekId}
+                forcedStation={routing.station}
+                hideStationTabs={true}
+              />
+            )}
+            {routing.zone === 'boss' && (
+              <BossBattleZone
+                data={safeData}
+                weekNumber={weekId}
+                forcedStation={routing.station}
+                hideStationTabs={true}
+              />
+            )}
+            {routing.zone === 'info_exchange' && (
+              <InfoExchangeZone
+                data={safeData}
+                weekNumber={weekId}
+              />
+            )}
+          </Suspense>
+        </TaskErrorBoundary>
       </div>
 
       {/* Arcade Room Modal */}

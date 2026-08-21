@@ -211,6 +211,25 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
                 </div>
                 <ChevronRight size={16} className="text-slate-400" />
               </button>
+
+              {(currentUser?.role === 'super_admin' || currentUser?.role === 'admin' || currentUser?.role === 'owner') && (
+                <button
+                  className="qs-nav-item teacher"
+                  onClick={() => {
+                    onClose();
+                    window.__openSuperAdminPanel?.();
+                  }}
+                >
+                  <div className="qs-nav-icon bg-amber-100 text-amber-700">
+                    <Shield size={18} />
+                  </div>
+                  <div className="qs-nav-text">
+                    <div className="qs-nav-title">👑 Super Admin Panel</div>
+                    <div className="qs-nav-desc">Owner licensing & system config</div>
+                  </div>
+                  <ChevronRight size={16} className="text-slate-400" />
+                </button>
+              )}
             </div>
           )}
 
