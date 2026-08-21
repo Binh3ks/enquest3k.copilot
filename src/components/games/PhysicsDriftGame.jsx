@@ -1,18 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { RotateCcw, Volume2, ArrowLeft, ArrowRight, Zap, Sparkles, Trophy } from 'lucide-react';
+import { RotateCcw, Volume2, ArrowLeft, ArrowRight, Zap, Sparkles, Trophy, Target } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
 import { speakText } from '../../utils/AudioHelper';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * PhysicsDriftGame V3 — Smooth Continuous Highway Road Runner
- *
- * Features:
- *  - Continuous Smooth Car Steering: Tap/Click anywhere on the highway or use ◀/▶ to glide smoothly!
- *  - Organic Random Item Placement: Word stars float down across the entire road naturally.
- *  - Reduced Obstacles: Rare single oil puddles for clear, fun dodging.
- *  - Lexio Fox Mascot on bottom-left gives hints and cheers.
+ * PhysicsDriftGame V3 — Highway Road Runner with Catch Explosion FX & Goal Tracking
  */
 
 export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
@@ -22,6 +16,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
   const [gameState, setGameState] = useState('idle');
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
+  const [wordsCaught, setWordsCaught] = useState(0);
   const [gameTimer, setGameTimer] = useState(60);
   const [carXPct, setCarXPct] = useState(50); // 0 to 100%
   const [targetWord, setTargetWord] = useState('');
@@ -29,12 +24,14 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
   const [roadOffset, setRoadOffset] = useState(0);
   const [speedBoost, setSpeedBoost] = useState(false);
   const [spinout, setSpinout] = useState(false);
+  const [catchBurst, setCatchBurst] = useState(null); // { xPct, y, word }
   const [feedback, setFeedback] = useState(null);
   const [foxTrigger, setFoxTrigger] = useState(false);
 
   const containerRef = useRef(null);
   const scoreRef = useRef(0);
   const streakRef = useRef(0);
+  const wordsCaughtRef = useRef(0);
   const carXRef = useRef(50);
   const targetRef = useRef('');
   const itemsRef = useRef([]);
@@ -46,10 +43,13 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
   const lastCatchTimeRef = useRef(Date.now());
   const keysPressed = useRef({});
 
-  const { consumePlayEnergy, recordHighScore } = useArcadeStore();
+  const { consumePlayEnergy, recordHighScore, highScores } = useArcadeStore();
+  const personalBest = highScores['physics_drift'] || 0;
+  const GOAL_WORDS = 10;
 
   const playAudio = useCallback((word) => {
     if (!word) return;
+    try { window.speechSynthesis?.cancel(); } catch (_) {}
     const matchObj = wordBank.find(w => w.word === word);
     speakText(word, matchObj?.audio_word, 0.92, null, 'new_word', weekNumber);
   }, [wordBank, weekNumber]);
@@ -85,7 +85,6 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
     if (Date.now() >= nextSpawnAtRef.current) {
       nextSpawnAtRef.current = Date.now() + (speedBoost ? 1100 : 1500);
 
-      // Random continuous X positions
       const x1 = 15 + Math.random() * 32;
       const x2 = 53 + Math.random() * 32;
 
@@ -132,7 +131,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
     }
 
     // Move items down and check collisions
-    const playerY = 360; // approximate player height
+    const playerY = 360;
     let nextItems = [];
 
     itemsRef.current.forEach(item => {
@@ -141,20 +140,27 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
       // Collision check
       if (Math.abs(nextY - playerY) < 32 && Math.abs(item.xPct - carXRef.current) < 14) {
         if (item.isTarget) {
-          // COLLECTED TARGET STAR!
+          // COLLECTED TARGET STAR! (VISUAL EXPLOSION FX, NO AUDIO OVERLAP)
           scoreRef.current += 20;
           streakRef.current += 1;
+          wordsCaughtRef.current += 1;
+
           setScore(scoreRef.current);
           setStreak(streakRef.current);
+          setWordsCaught(wordsCaughtRef.current);
           setSpeedBoost(true);
-          setFeedback({ msg: `🌟 Collected "${item.word}"! (+20 pts)`, type: 'good' });
-          playAudio(item.word);
+
+          // Trigger Starburst Explosion at catch location
+          setCatchBurst({ xPct: item.xPct, y: nextY, word: item.word });
+          setTimeout(() => setCatchBurst(null), 600);
+
+          setFeedback({ msg: `🌟 Caught "${item.word}"! (+20 pts)`, type: 'good' });
 
           setTimeout(() => {
             setSpeedBoost(false);
             setFeedback(null);
             pickNextTarget();
-          }, 700);
+          }, 600);
         } else if (item.isObstacle) {
           // HIT OIL SLICK
           scoreRef.current = Math.max(0, scoreRef.current - 5);
@@ -189,7 +195,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
     setItems(nextItems);
 
     frameRef.current = requestAnimationFrame(gameLoop);
-  }, [speedBoost, spinout, wordBank, playAudio, pickNextTarget]);
+  }, [speedBoost, spinout, wordBank, pickNextTarget]);
 
   // Touch / Click to smoothly steer car to target X
   const handleRoadClick = (e) => {
@@ -243,6 +249,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
   const startGame = () => {
     scoreRef.current = 0;
     streakRef.current = 0;
+    wordsCaughtRef.current = 0;
     carXRef.current = 50;
     itemsRef.current = [];
     nextSpawnAtRef.current = Date.now() + 500;
@@ -250,10 +257,12 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
 
     setScore(0);
     setStreak(0);
+    setWordsCaught(0);
     setGameTimer(60);
     setCarXPct(50);
     setItems([]);
     setFeedback(null);
+    setCatchBurst(null);
     setSpeedBoost(false);
     setSpinout(false);
 
@@ -272,7 +281,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
       borderRadius: '16px', display: 'flex', flexDirection: 'column',
       fontFamily: 'system-ui, sans-serif', userSelect: 'none', overflow: 'hidden',
     }}>
-      {/* Top HUD */}
+      {/* Top HUD with Goal & Personal Best */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '10px 16px', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
@@ -281,17 +290,24 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
           <span style={{ fontSize: '22px' }}>🏎️</span>
           <div>
             <div style={{ fontSize: '12px', fontWeight: 900, color: '#4ade80', letterSpacing: '0.05em' }}>ROAD RUNNER HIGHWAY</div>
-            <div style={{ fontSize: '10px', color: '#94a3b8' }}>Week {weekNumber} Word Collector</div>
+            <div style={{ fontSize: '10px', color: '#94a3b8' }}>
+              🎯 Goal: <b style={{ color: wordsCaught >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsCaught}/{GOAL_WORDS} words</b>
+            </div>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          {personalBest > 0 && (
+            <div style={{ fontSize: '11px', fontWeight: 800, color: '#a78bfa', background: 'rgba(167,139,250,0.12)', border: '1px solid rgba(167,139,250,0.3)', borderRadius: '8px', padding: '3px 8px' }}>
+              🏆 Best: {personalBest}
+            </div>
+          )}
           {streak >= 3 && (
             <div style={{ fontSize: '11px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
               <Zap size={12} fill="#fbbf24" /> {streak}x STREAK
             </div>
           )}
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 12px' }}>
-            🏆 {score} pts
+            ⭐ {score} pts
           </div>
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#7dd3fc', background: 'rgba(125,211,252,0.1)', border: '1px solid rgba(125,211,252,0.25)', borderRadius: '8px', padding: '4px 12px' }}>
             ⏱ {gameTimer}s
@@ -307,8 +323,8 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
             <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#4ade80' }}>
               Highway Word Collector!
             </h3>
-            <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '340px', lineHeight: 1.5 }}>
-              Tap anywhere on the road or use <b>◀ / ▶</b> to glide your car smoothly into target word stars!
+            <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
+              Target: Catch <b>{GOAL_WORDS} target words</b> in 60 seconds! Tap anywhere or use <b>◀ / ▶</b> to glide into target word stars!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
@@ -317,7 +333,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
             border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(5,150,105,0.4)',
             display: 'flex', alignItems: 'center', gap: '8px',
           }}>
-            <span>🏎️</span> START HIGHWAY RUN
+            <span>🏎️</span> START (GOAL: 10 WORDS)
           </button>
         </div>
       )}
@@ -377,7 +393,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
               </React.Fragment>
             ))}
 
-            {/* Falling Word Items / Stars (Natural continuous placement) */}
+            {/* Falling Word Items / Stars */}
             {items.map(item => (
               <div
                 key={item.id}
@@ -412,6 +428,31 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
                 <span>{item.word}</span>
               </div>
             ))}
+
+            {/* Catch Burst Explosion Effect */}
+            {catchBurst && (
+              <div style={{
+                position: 'absolute',
+                left: `${catchBurst.xPct}%`,
+                top: `${catchBurst.y}px`,
+                transform: 'translate(-50%, -50%) scale(1.6)',
+                zIndex: 35,
+                pointerEvents: 'none',
+                animation: 'zoomIn 0.3s ease-out',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px',
+                background: 'radial-gradient(circle, #fef08a 0%, #eab308 60%, transparent 100%)',
+                padding: '12px 20px',
+                borderRadius: '30px',
+                color: '#713f12',
+                fontWeight: 900,
+                fontSize: '16px',
+                boxShadow: '0 0 30px #facc15',
+              }}>
+                <span>💥 +20 PTS!</span>
+              </div>
+            )}
 
             {/* Player's Race Car */}
             <div
@@ -494,13 +535,17 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
       {/* GAME OVER STATE */}
       {gameState === 'done' && (
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
-          <div style={{ fontSize: '56px' }}>🏆</div>
+          <div style={{ fontSize: '56px' }}>{wordsCaught >= GOAL_WORDS ? '🏆' : '⭐'}</div>
           <div>
             <h3 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 900, color: '#4ade80' }}>
-              Highway Run Finished!
+              {wordsCaught >= GOAL_WORDS ? 'Target Achieved! Road Legend!' : 'Highway Run Finished!'}
             </h3>
-            <p style={{ margin: 0, fontSize: '15px', color: '#cbd5e1' }}>
-              Final Score: <strong style={{ color: '#fbbf24', fontSize: '20px' }}>{score} pts</strong>
+            <p style={{ margin: '0 0 6px', fontSize: '15px', color: '#cbd5e1' }}>
+              Caught: <strong style={{ color: wordsCaught >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsCaught} words</strong> (Goal: {GOAL_WORDS})
+            </p>
+            <p style={{ margin: 0, fontSize: '16px', color: '#cbd5e1' }}>
+              Final Score: <strong style={{ color: '#fbbf24', fontSize: '22px' }}>{score} pts</strong>
+              {score > personalBest && <span style={{ color: '#4ade80', fontSize: '13px', marginLeft: '8px', fontWeight: 900 }}>🔥 NEW BEST!</span>}
             </p>
           </div>
           <button type="button" onClick={startGame} style={{

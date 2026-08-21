@@ -14,9 +14,7 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
   const navigate = useNavigate();
   const [showTripModal, setShowTripModal] = useState(false);
   const [showCoopModal, setShowCoopModal] = useState(false);
-  const [showArcade, setShowArcade] = useState(false);
-
-  const { playEnergySeconds, studySeconds } = useArcadeStore();
+  const { isArcadeOpen, setArcadeOpen, playEnergySeconds, studySeconds } = useArcadeStore();
   const unlockedGames = getUnlockedGameCount(currentWeekId);
 
   const currentUser = useUserStore(state => state.currentUser) || { displayName: 'Young Explorer', role: 'student' };
@@ -255,10 +253,10 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
 
       {/* Arcade Modal — accessible from anywhere in the app */}
       <ArcadeModal
-        isOpen={showArcade}
+        isOpen={isArcadeOpen}
         weekNumber={currentWeekId}
         ownerBypass={isOwner}
-        onClose={() => setShowArcade(false)}
+        onClose={() => setArcadeOpen(false)}
       />
 
       {/* Trip Selector Modal */}

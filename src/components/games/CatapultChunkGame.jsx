@@ -1,19 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { RotateCcw, Volume2, Sparkles, CheckCircle2, Zap, Trophy } from 'lucide-react';
+import { RotateCcw, Volume2, Sparkles, CheckCircle2, Zap, Trophy, Target } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
 import { speakText } from '../../utils/AudioHelper';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * CatapultChunkGame V3 — Multi-Mode Sentence, Bilingual Chunk & Definition Matching
- *
- * Features:
- *  - 3 Diverse Modes: Sentence Structure, English Chunks to Vietnamese Meaning, and Word to Cambridge Definition!
- *  - Distractor Chunks included in every round for authentic focus & challenge!
- *  - Faster, more exciting Brownian floating speed.
- *  - Dual Input: Tap-to-Place (Click chunk -> Click slot) AND Smooth Drag-and-Drop!
- *  - Full TTS Voiceover with speakText and Lexio Fox assistant.
+ * CatapultChunkGame V3 — Multi-Mode Sentence & Definition Match with Audio Overlap Guard
  */
 
 export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStandalone = false }) {
@@ -23,6 +16,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
   const [gameState, setGameState] = useState('idle');
   const [score, setScore] = useState(0);
   const [roundIdx, setRoundIdx] = useState(0);
+  const [roundsDone, setRoundsDone] = useState(0);
   const [gameTimer, setGameTimer] = useState(60);
   const [lockedSlots, setLockedSlots] = useState({}); // { slotId: word }
   const [selectedChunkId, setSelectedChunkId] = useState(null); // for Tap-to-Place
@@ -34,17 +28,21 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
   const chunksRef = useRef([]);
   const lockedSlotsRef = useRef({});
   const scoreRef = useRef(0);
+  const roundsDoneRef = useRef(0);
   const gameStateRef = useRef('idle');
   const animRef = useRef(null);
   const dragRef = useRef(null);
   const lastCatchTimeRef = useRef(Date.now());
 
-  const { consumePlayEnergy, recordHighScore } = useArcadeStore();
+  const { consumePlayEnergy, recordHighScore, highScores } = useArcadeStore();
+  const personalBest = highScores['chunk_catapult'] || 0;
+  const TOTAL_ROUNDS = sentenceRounds.length;
 
   const round = sentenceRounds[Math.min(roundIdx, sentenceRounds.length - 1)];
 
   const playAudio = useCallback((text) => {
     if (!text) return;
+    try { window.speechSynthesis?.cancel(); } catch (_) {}
     speakText(text, null, 0.9, null, 'read', weekNumber);
   }, [weekNumber]);
 
@@ -60,7 +58,6 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
       const initX = 12 + col * 34 + (Math.random() - 0.5) * 6; // %
       const initY = 20 + row * 28 + (Math.random() - 0.5) * 6;
 
-      // Faster, more dynamic floating velocities
       const vx = (Math.random() - 0.5) * 0.22;
       const vy = (Math.random() - 0.5) * 0.22;
 
@@ -78,7 +75,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
     });
   }, []);
 
-  // Float animation loop (faster Brownian floating)
+  // Float animation loop
   const floatLoop = useCallback(() => {
     if (gameStateRef.current !== 'playing') return;
 
@@ -87,7 +84,6 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
 
       let { xPct, yPct, vx, vy } = c;
 
-      // Keep comfortably inside container % bounds
       if (xPct < 5) { xPct = 5; vx = Math.abs(vx); }
       if (xPct > 78) { xPct = 78; vx = -Math.abs(vx); }
       if (yPct < 10) { yPct = 10; vy = Math.abs(vy); }
@@ -109,10 +105,15 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
 
     if (allFilled) {
       scoreRef.current += 30;
+      roundsDoneRef.current += 1;
       setScore(scoreRef.current);
+      setRoundsDone(roundsDoneRef.current);
       setFeedback({ msg: `🎉 Round Complete! (+30 pts)`, type: 'good' });
+
+      // Cleanly speak the completed sentence
       playAudio(r.type === 'sentence' ? r.sentence : r.title);
 
+      // Generous delay so the sentence finishes speaking BEFORE the next round's prompt
       setTimeout(() => {
         setFeedback(null);
         if (currentRIdx + 1 < sentenceRounds.length) {
@@ -127,12 +128,15 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
           const newChunks = makeChunks(sentenceRounds[nextRIdx]);
           chunksRef.current = newChunks;
           setChunks(newChunks);
-          playAudio(sentenceRounds[nextRIdx].sentence || sentenceRounds[nextRIdx].title);
+
+          // Delay next prompt audio slightly
+          setTimeout(() => {
+            playAudio(sentenceRounds[nextRIdx].sentence || sentenceRounds[nextRIdx].title);
+          }, 400);
         } else {
-          // All rounds finished
           endGame();
         }
-      }, 1500);
+      }, 2200);
     }
   }, [sentenceRounds, makeChunks, playAudio]);
 
@@ -183,7 +187,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
     if (chunk.locked) return;
     playAudio(chunk.word);
     if (selectedChunkId === chunk.id) {
-      setSelectedChunkId(null); // deselect
+      setSelectedChunkId(null);
     } else {
       setSelectedChunkId(chunk.id);
     }
@@ -229,7 +233,9 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
 
   const startGame = () => {
     scoreRef.current = 0;
+    roundsDoneRef.current = 0;
     setScore(0);
+    setRoundsDone(0);
     setRoundIdx(0);
     setGameTimer(60);
     setLockedSlots({});
@@ -257,7 +263,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
       borderRadius: '16px', display: 'flex', flexDirection: 'column',
       fontFamily: 'system-ui, sans-serif', userSelect: 'none', overflow: 'hidden',
     }}>
-      {/* Top HUD */}
+      {/* Top HUD with Target Rounds & Personal Best */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '10px 16px', background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
@@ -266,12 +272,19 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
           <span style={{ fontSize: '22px' }}>🧩</span>
           <div>
             <div style={{ fontSize: '12px', fontWeight: 900, color: '#f59e0b', letterSpacing: '0.05em' }}>CHUNK CATAPULT</div>
-            <div style={{ fontSize: '10px', color: '#94a3b8' }}>Round {roundIdx + 1} of {sentenceRounds.length} · {round.title}</div>
+            <div style={{ fontSize: '10px', color: '#94a3b8' }}>
+              🎯 Target: <b style={{ color: roundsDone >= TOTAL_ROUNDS ? '#4ade80' : '#fbbf24' }}>{roundsDone}/{TOTAL_ROUNDS} Rounds</b> · {round.title}
+            </div>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          {personalBest > 0 && (
+            <div style={{ fontSize: '11px', fontWeight: 800, color: '#a78bfa', background: 'rgba(167,139,250,0.12)', border: '1px solid rgba(167,139,250,0.3)', borderRadius: '8px', padding: '3px 8px' }}>
+              🏆 Best: {personalBest}
+            </div>
+          )}
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 12px' }}>
-            🏆 {score} pts
+            ⭐ {score} pts
           </div>
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#7dd3fc', background: 'rgba(125,211,252,0.1)', border: '1px solid rgba(125,211,252,0.25)', borderRadius: '8px', padding: '4px 12px' }}>
             ⏱ {gameTimer}s
@@ -288,7 +301,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
               Chunk Catapult & Meaning Match!
             </h3>
             <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
-              Tap or drag the floating chunks to match grammar slots, Vietnamese meanings, and Cambridge definitions while avoiding tricky distractors!
+              Target: Complete <b>{TOTAL_ROUNDS} Challenge Rounds</b> in 60 seconds! Tap or drag floating chunks to match grammar slots, meanings, and definitions.
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
@@ -297,7 +310,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
             border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(245,158,11,0.4)',
             display: 'flex', alignItems: 'center', gap: '8px',
           }}>
-            <span>🧩</span> START CHALLENGE
+            <span>🧩</span> START (GOAL: 4 ROUNDS)
           </button>
         </div>
       )}
@@ -393,7 +406,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
               );
             })}
 
-            {/* Lexio Fox Mascot Assistant */}
+            {/* Lexio Fox Mascot Assistant on Bottom-Left */}
             <ArcadeFoxHelper
               hintText={`Match the floating chunk to the correct slot!`}
               triggerHint={foxTrigger}
@@ -479,13 +492,17 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
       {/* GAME OVER STATE */}
       {gameState === 'done' && (
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
-          <div style={{ fontSize: '56px' }}>🏆</div>
+          <div style={{ fontSize: '56px' }}>{roundsDone >= TOTAL_ROUNDS ? '🏆' : '⭐'}</div>
           <div>
             <h3 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 900, color: '#f59e0b' }}>
-              All Challenges Complete!
+              {roundsDone >= TOTAL_ROUNDS ? 'All Challenges Complete! Grammar Master!' : 'Round Complete!'}
             </h3>
-            <p style={{ margin: 0, fontSize: '15px', color: '#cbd5e1' }}>
-              Final Score: <strong style={{ color: '#fbbf24', fontSize: '20px' }}>{score} pts</strong>
+            <p style={{ margin: '0 0 6px', fontSize: '15px', color: '#cbd5e1' }}>
+              Completed: <strong style={{ color: roundsDone >= TOTAL_ROUNDS ? '#4ade80' : '#fbbf24' }}>{roundsDone}/{TOTAL_ROUNDS} Rounds</strong>
+            </p>
+            <p style={{ margin: 0, fontSize: '16px', color: '#cbd5e1' }}>
+              Final Score: <strong style={{ color: '#fbbf24', fontSize: '22px' }}>{score} pts</strong>
+              {score > personalBest && <span style={{ color: '#4ade80', fontSize: '13px', marginLeft: '8px', fontWeight: 900 }}>🔥 NEW BEST!</span>}
             </p>
           </div>
           <button type="button" onClick={startGame} style={{

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { RotateCcw, Volume2, Shield, Zap, Sparkles } from 'lucide-react';
+import { RotateCcw, Volume2, Shield, Zap, Sparkles, Trophy, Target } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
 import { speakText } from '../../utils/AudioHelper';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * MeteorSmasherGame V3 — Full Week Vocabulary & Upright Text with Lexio Fox Mascot
+ * MeteorSmasherGame V3 — Vocabulary Defense with Audio Overlap Guard & Goal Tracking
  */
 
 export default function MeteorSmasherGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
@@ -16,9 +16,10 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   const [gameState, setGameState] = useState('idle');
   const [score, setScore] = useState(0);
   const [shields, setShields] = useState(3);
+  const [meteorsSmashed, setMeteorsSmashed] = useState(0);
   const [gameTimer, setGameTimer] = useState(60);
   const [meteors, setMeteors] = useState([]);
-  const [laser, setLaser] = useState(null); // { x1, y1, x2, y2, color, hit }
+  const [laser, setLaser] = useState(null);
   const [target, setTarget] = useState(null);
   const [feedback, setFeedback] = useState(null);
   const [foxTrigger, setFoxTrigger] = useState(false);
@@ -26,6 +27,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   const meteorsRef = useRef([]);
   const shieldsRef = useRef(3);
   const scoreRef = useRef(0);
+  const meteorsSmashedRef = useRef(0);
   const gameStateRef = useRef('idle');
   const targetRef = useRef(null);
   const frameRef = useRef(null);
@@ -33,13 +35,16 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   const containerRef = useRef(null);
   const lastCatchTimeRef = useRef(Date.now());
 
-  const { consumePlayEnergy, recordHighScore } = useArcadeStore();
+  const { consumePlayEnergy, recordHighScore, highScores } = useArcadeStore();
+  const personalBest = highScores['meteor_smasher'] || 0;
+  const GOAL_METEORS = 10;
 
   const W = 600;
   const H = 420;
 
   const playDefinitionAudio = useCallback((defText, wordText) => {
     if (!defText) return;
+    try { window.speechSynthesis?.cancel(); } catch (_) {}
     speakText(`Find the word that means: ${defText}`, null, 0.92, null, 'explore', weekNumber);
   }, [weekNumber]);
 
@@ -55,7 +60,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
       isTarget,
       x: Math.max(r + 20, Math.min(W - r - 20, x)),
       y,
-      vy: 0.45 + Math.random() * 0.35, // Relaxed gentle fall speed
+      vy: 0.45 + Math.random() * 0.35,
       vx: (Math.random() - 0.5) * 0.3,
       rot: Math.random() * 360,
       rotSpeed: (Math.random() - 0.5) * 1.5,
@@ -161,8 +166,10 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   const startGame = () => {
     scoreRef.current = 0;
     shieldsRef.current = 3;
+    meteorsSmashedRef.current = 0;
     setScore(0);
     setShields(3);
+    setMeteorsSmashed(0);
     setGameTimer(60);
     setFeedback(null);
     setLaser(null);
@@ -200,9 +207,10 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
     if (isCorrect) {
       // Correct laser strike!
       scoreRef.current += 20;
+      meteorsSmashedRef.current += 1;
       setScore(scoreRef.current);
+      setMeteorsSmashed(meteorsSmashedRef.current);
       setFeedback({ msg: `💥 Laser Hit! "${meteor.word}" (+20 pts)`, type: 'good' });
-      speakText(meteor.word, null, 1.0, null, 'new_word', weekNumber);
 
       meteorsRef.current = meteorsRef.current.map(m =>
         m.id === meteor.id ? { ...m, hit: true } : m
@@ -231,7 +239,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
       setTimeout(() => setFeedback(null), 1600);
       if (shieldsRef.current <= 0) setTimeout(endGame, 500);
     }
-  }, [pickNextTarget, endGame, weekNumber]);
+  }, [pickNextTarget, endGame]);
 
   // Handle Trackpad Drag / Swipe
   const handlePointerDown = (e) => {
@@ -252,7 +260,6 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
     const sy2 = (e.clientY - cr.top) * (H / cr.height);
     swipeRef.current = null;
 
-    // Find closest meteor to swipe path or end point
     let closest = null;
     let minD = Infinity;
 
@@ -277,7 +284,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
       borderRadius: '16px', display: 'flex', flexDirection: 'column',
       fontFamily: 'system-ui, sans-serif', userSelect: 'none', overflow: 'hidden',
     }}>
-      {/* Top HUD */}
+      {/* Top HUD with Goal & Personal Best */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '10px 16px', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
@@ -286,10 +293,17 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
           <span style={{ fontSize: '22px' }}>🛸</span>
           <div>
             <div style={{ fontSize: '12px', fontWeight: 900, color: '#a78bfa', letterSpacing: '0.05em' }}>METEOR SMASHER</div>
-            <div style={{ fontSize: '10px', color: '#94a3b8' }}>Week {weekNumber} Vocabulary Defense</div>
+            <div style={{ fontSize: '10px', color: '#94a3b8' }}>
+              🎯 Goal: <b style={{ color: meteorsSmashed >= GOAL_METEORS ? '#4ade80' : '#fbbf24' }}>{meteorsSmashed}/{GOAL_METEORS} meteors</b>
+            </div>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          {personalBest > 0 && (
+            <div style={{ fontSize: '11px', fontWeight: 800, color: '#a78bfa', background: 'rgba(167,139,250,0.12)', border: '1px solid rgba(167,139,250,0.3)', borderRadius: '8px', padding: '3px 8px' }}>
+              🏆 Best: {personalBest}
+            </div>
+          )}
           {/* Shields */}
           <div style={{ display: 'flex', gap: '4px', background: 'rgba(0,0,0,0.3)', padding: '4px 8px', borderRadius: '8px' }}>
             {[0, 1, 2].map(i => (
@@ -299,7 +313,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
             ))}
           </div>
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 12px' }}>
-            🏆 {score} pts
+            ⭐ {score} pts
           </div>
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#a78bfa', background: 'rgba(167,139,250,0.1)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: '8px', padding: '4px 12px' }}>
             ⏱ {gameTimer}s
@@ -315,8 +329,8 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
             <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#a78bfa' }}>
               Meteor Smasher Defense!
             </h3>
-            <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '340px', lineHeight: 1.5 }}>
-              Listen to the definition, then <b>click or swipe across</b> the falling meteor with the correct word to blast it with your laser!
+            <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
+              Target: Blast <b>{GOAL_METEORS} target meteors</b> in 60 seconds! Listen to the definition, then click or swipe the matching meteor!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
@@ -325,7 +339,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
             border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(124,58,237,0.4)',
             display: 'flex', alignItems: 'center', gap: '8px',
           }}>
-            <span>🛸</span> LAUNCH DEFENSE
+            <span>🛸</span> START (GOAL: 10 METEORS)
           </button>
         </div>
       )}
@@ -425,7 +439,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
                   onMouseDown={(e) => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(0.92)'; }}
                   onMouseUp={(e) => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)'; }}
                 >
-                  {/* Rotating Meteor Texture (background only) */}
+                  {/* Rotating Meteor Texture */}
                   <div style={{
                     position: 'absolute',
                     inset: 0,
@@ -458,7 +472,6 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
             {/* Laser Beam SVG */}
             {laser && (
               <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 30 }} viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none">
-                {/* Glow beam */}
                 <line
                   x1={laser.x1} y1={laser.y1}
                   x2={laser.x2} y2={laser.y2}
@@ -467,7 +480,6 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
                   strokeLinecap="round"
                   opacity="0.4"
                 />
-                {/* Core laser */}
                 <line
                   x1={laser.x1} y1={laser.y1}
                   x2={laser.x2} y2={laser.y2}
@@ -476,7 +488,6 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
                   strokeLinecap="round"
                   opacity="0.95"
                 />
-                {/* Hit explosion ring */}
                 <circle cx={laser.x2} cy={laser.y2} r="18" fill={laser.color} opacity="0.6" />
               </svg>
             )}
@@ -492,15 +503,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
               🚀
             </div>
 
-            {/* Bottom guide */}
-            <div style={{
-              position: 'absolute', bottom: '6px', right: '12px',
-              fontSize: '11px', color: '#64748b', fontWeight: 700, pointerEvents: 'none'
-            }}>
-              Click or swipe any meteor to fire laser!
-            </div>
-
-            {/* Lexio Fox Mascot Assistant */}
+            {/* Lexio Fox Mascot Assistant on Bottom-Left */}
             <ArcadeFoxHelper
               hintText={`Laser the "${target?.word}" meteor! (${target?.definition_vi || ''})`}
               triggerHint={foxTrigger}
@@ -513,13 +516,17 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
       {/* GAME OVER STATE */}
       {gameState === 'done' && (
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
-          <div style={{ fontSize: '56px' }}>{shields > 0 ? '🏆' : '💥'}</div>
+          <div style={{ fontSize: '56px' }}>{meteorsSmashed >= GOAL_METEORS ? '🏆' : shields > 0 ? '⭐' : '💥'}</div>
           <div>
             <h3 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 900, color: '#a78bfa' }}>
-              {shields > 0 ? 'Mission Complete!' : 'Shields Depleted!'}
+              {meteorsSmashed >= GOAL_METEORS ? 'Target Achieved! Galaxy Guardian!' : shields > 0 ? 'Mission Complete!' : 'Shields Depleted!'}
             </h3>
-            <p style={{ margin: 0, fontSize: '15px', color: '#cbd5e1' }}>
-              Final Score: <strong style={{ color: '#fbbf24', fontSize: '20px' }}>{score} pts</strong>
+            <p style={{ margin: '0 0 6px', fontSize: '15px', color: '#cbd5e1' }}>
+              Smashed: <strong style={{ color: meteorsSmashed >= GOAL_METEORS ? '#4ade80' : '#fbbf24' }}>{meteorsSmashed}/{GOAL_METEORS} meteors</strong>
+            </p>
+            <p style={{ margin: 0, fontSize: '16px', color: '#cbd5e1' }}>
+              Final Score: <strong style={{ color: '#fbbf24', fontSize: '22px' }}>{score} pts</strong>
+              {score > personalBest && <span style={{ color: '#4ade80', fontSize: '13px', marginLeft: '8px', fontWeight: 900 }}>🔥 NEW BEST!</span>}
             </p>
           </div>
           <button type="button" onClick={startGame} style={{

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Volume2, RotateCcw, Trophy, Zap, Sparkles } from 'lucide-react';
+import { Volume2, RotateCcw, Trophy, Zap, Target, Sparkles, CheckCircle2 } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
 import { speakText } from '../../utils/AudioHelper';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * BubblePopGame V3 — Realistic Floating Bubble Physics with Lexio Fox Mascot
+ * BubblePopGame V3 — Realistic Floating Bubbles with Flying Fox Target Finder
  */
 
 export default function BubblePopGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
@@ -20,6 +20,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
   const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'done'
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
+  const [wordsPopped, setWordsPopped] = useState(0);
   const [targetWord, setTargetWord] = useState('');
   const [gameTimer, setGameTimer] = useState(60);
   const [bubbles, setBubbles] = useState([]);
@@ -32,12 +33,15 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
   const bubblesRef = useRef([]);
   const scoreRef = useRef(0);
   const streakRef = useRef(0);
+  const wordsPoppedRef = useRef(0);
   const targetRef = useRef('');
   const animFrameRef = useRef(null);
   const gameStateRef = useRef('idle');
   const lastCatchTimeRef = useRef(Date.now());
 
-  const { consumePlayEnergy, recordHighScore } = useArcadeStore();
+  const { consumePlayEnergy, recordHighScore, highScores } = useArcadeStore();
+  const personalBest = highScores['bubble_pop'] || 0;
+  const GOAL_WORDS = 10; // Target: 10 words in 60s
 
   const W = 600;
   const H = 420;
@@ -53,6 +57,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
 
   const playAudio = useCallback((word) => {
     if (!word) return;
+    try { window.speechSynthesis?.cancel(); } catch (_) {}
     const matchObj = activeWordObjects.find(w => w.word === word);
     speakText(word, matchObj?.audio_word, 0.9, null, 'new_word', weekNumber);
   }, [activeWordObjects, weekNumber]);
@@ -149,12 +154,15 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
   const startGame = () => {
     scoreRef.current = 0;
     streakRef.current = 0;
+    wordsPoppedRef.current = 0;
     setScore(0);
     setStreak(0);
+    setWordsPopped(0);
     setGameTimer(60);
     setShowPenalty(false);
     setInkSplat(null);
     setRevealMsg(null);
+    setFoxTrigger(false);
 
     const target = activeWords[Math.floor(Math.random() * activeWords.length)];
     targetRef.current = target;
@@ -200,14 +208,17 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
 
     if (bubble.isTarget) {
       // POP SUCCESS!
-      const pts = bubble.isGolden ? 30 : 10 + streakRef.current * 2;
+      const pts = 15 + streakRef.current * 2;
       scoreRef.current += pts;
       streakRef.current += 1;
+      wordsPoppedRef.current += 1;
+
       setScore(scoreRef.current);
       setStreak(streakRef.current);
+      setWordsPopped(wordsPoppedRef.current);
 
-      setRevealMsg({ text: `🎉 Great! Pop: "${bubble.word}" (+${pts} pts)`, type: 'correct' });
-      setTimeout(() => setRevealMsg(null), 900);
+      setRevealMsg({ text: `🎉 Pop: "${bubble.word}" (+${pts} pts)`, type: 'correct' });
+      setTimeout(() => setRevealMsg(null), 800);
 
       // Pick next target word & respawn
       const nextTarget = activeWords[Math.floor(Math.random() * activeWords.length)];
@@ -238,6 +249,8 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
     };
   }, []);
 
+  const targetBubble = bubbles.find(b => b.isTarget && !b.popped);
+
   const bgStyle = {
     width: '100%', height: '100%', minHeight: '420px',
     background: 'linear-gradient(180deg, #09153e 0%, #12286b 40%, #0d4085 100%)',
@@ -249,7 +262,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
 
   return (
     <div style={bgStyle}>
-      {/* Top HUD */}
+      {/* Top HUD with Target Goal & Personal Best */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '10px 16px', background: 'rgba(0,0,0,0.45)',
@@ -259,17 +272,24 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
           <span style={{ fontSize: '22px' }}>🫧</span>
           <div>
             <div style={{ fontSize: '12px', fontWeight: 900, color: '#7dd3fc', letterSpacing: '0.05em' }}>BUBBLE POP DASH</div>
-            <div style={{ fontSize: '10px', color: '#94a3b8' }}>Bouncing Bubbles Physics</div>
+            <div style={{ fontSize: '10px', color: '#94a3b8' }}>
+              🎯 Goal: <b style={{ color: wordsPopped >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsPopped}/{GOAL_WORDS} words</b>
+            </div>
           </div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          {personalBest > 0 && (
+            <div style={{ fontSize: '11px', fontWeight: 800, color: '#a78bfa', background: 'rgba(167,139,250,0.12)', border: '1px solid rgba(167,139,250,0.3)', borderRadius: '8px', padding: '3px 8px' }}>
+              🏆 Best: {personalBest}
+            </div>
+          )}
           {streak >= 3 && (
             <div style={{ fontSize: '11px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
               <Zap size={12} fill="#fbbf24" /> {streak}x STREAK
             </div>
           )}
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 12px' }}>
-            🏆 {score} pts
+            ⭐ {score} pts
           </div>
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#7dd3fc', background: 'rgba(125,211,252,0.1)', border: '1px solid rgba(125,211,252,0.25)', borderRadius: '8px', padding: '4px 12px' }}>
             ⏱ {gameTimer}s
@@ -288,8 +308,8 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
             <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#7dd3fc' }}>
               Catch the Bouncing Bubbles!
             </h3>
-            <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '340px', lineHeight: 1.5 }}>
-              Listen to the voice and read the target word. Tap the matching bubble as it gently floats and bounces off the ceiling!
+            <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
+              Target: Pop <b>{GOAL_WORDS} words</b> in 60 seconds! Read the target word and tap the matching bubble as it bounces off the ceiling!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
@@ -297,12 +317,8 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
             color: '#fff', fontWeight: 900, fontSize: '15px', borderRadius: '14px',
             border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(14,165,233,0.4)',
             display: 'flex', alignItems: 'center', gap: '8px',
-            transition: 'transform 0.15s',
-          }}
-          onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
-          onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-          >
-            <span>▶</span> START PLAYING
+          }}>
+            <span>▶</span> START (GOAL: 10 WORDS)
           </button>
         </div>
       )}
@@ -364,7 +380,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
               }} />
             )}
 
-            {/* Render bouncing bubbles */}
+            {/* Render bouncing bubbles (UNIFORM COLORS, NO GIVEAWAY) */}
             {bubbles.filter(b => !b.popped).map(b => {
               const leftPct = (b.x / W) * 100;
               const topPct = (b.y / H) * 100;
@@ -413,15 +429,41 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
               );
             })}
 
-            {/* Bottom guideline */}
-            <div style={{
-              position: 'absolute', bottom: '8px', left: 0, right: 0,
-              textAlign: 'center', fontSize: '11px', color: '#64748b', fontWeight: 700, pointerEvents: 'none'
-            }}>
-              Bubbles gently bounce off walls and ceiling · Tap the matching word!
-            </div>
+            {/* FLYING LEXIO FOX TRACKER (flies right to the target bubble when hint is triggered!) */}
+            {foxTrigger && targetBubble && (
+              <div style={{
+                position: 'absolute',
+                left: `${(targetBubble.x / W) * 100}%`,
+                top: `${(targetBubble.y / H) * 100}%`,
+                transform: 'translate(-50%, -140%)',
+                zIndex: 45,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                pointerEvents: 'none',
+                animation: 'bounceIn 0.3s ease-out',
+              }}>
+                <div style={{
+                  background: '#fde047',
+                  border: '2px solid #ca8a04',
+                  borderRadius: '12px',
+                  padding: '4px 10px',
+                  color: '#713f12',
+                  fontWeight: 900,
+                  fontSize: '11px',
+                  whiteSpace: 'nowrap',
+                  boxShadow: '0 4px 14px rgba(0,0,0,0.4)',
+                  marginBottom: '4px',
+                }}>
+                  🦊 Here! Pop this one! 👇
+                </div>
+                <div style={{ fontSize: '32px', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.5))' }}>
+                  🦊
+                </div>
+              </div>
+            )}
 
-            {/* Lexio Fox Mascot Assistant */}
+            {/* Bottom-left Base Fox Mascot */}
             <ArcadeFoxHelper
               hintText={`Pop the "${targetWord}" bubble!`}
               triggerHint={foxTrigger}
@@ -437,13 +479,17 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
           flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
           gap: '16px', padding: '24px', textAlign: 'center',
         }}>
-          <div style={{ fontSize: '56px' }}>🏆</div>
+          <div style={{ fontSize: '56px' }}>{wordsPopped >= GOAL_WORDS ? '🏆' : '⭐'}</div>
           <div>
             <h3 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 900, color: '#7dd3fc' }}>
-              Time's Up! Bubble Master!
+              {wordsPopped >= GOAL_WORDS ? 'Target Achieved! Bubble Master!' : 'Round Complete!'}
             </h3>
-            <p style={{ margin: 0, fontSize: '15px', color: '#cbd5e1' }}>
-              Final Score: <strong style={{ color: '#fbbf24', fontSize: '20px' }}>{score} pts</strong>
+            <p style={{ margin: '0 0 6px', fontSize: '15px', color: '#cbd5e1' }}>
+              Popped: <strong style={{ color: wordsPopped >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsPopped} words</strong> (Goal: {GOAL_WORDS})
+            </p>
+            <p style={{ margin: 0, fontSize: '16px', color: '#cbd5e1' }}>
+              Final Score: <strong style={{ color: '#fbbf24', fontSize: '22px' }}>{score} pts</strong>
+              {score > personalBest && <span style={{ color: '#4ade80', fontSize: '13px', marginLeft: '8px', fontWeight: 900 }}>🔥 NEW BEST!</span>}
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
