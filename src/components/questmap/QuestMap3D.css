@@ -519,30 +519,65 @@
   to { opacity: 1; }
 }
 
-/* Lexio mascot — Clean Floating Avatar Badge (Floating animation, never blocks clicks) */
-.qm3d-lexio {
+/* Floating Duolingo-style Mascot HUD (Top Right, Animated, Interactive) */
+.qm3d-floating-mascot-hud {
   position: absolute;
-  z-index: 25;
-  transform: translate(-50%, -100%);
-  transition: left 1.2s cubic-bezier(0.34, 1.56, 0.64, 1), top 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-  background: #ffffff;
-  border: 2.5px solid #f97316;
+  top: 72px;
+  right: 16px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
+  animation: qm3d-duo-floating 3.2s ease-in-out infinite;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (min-width: 768px) {
+  .qm3d-floating-mascot-hud {
+    top: 76px;
+    right: 28px;
+  }
+}
+
+.qm3d-floating-mascot-hud:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.qm3d-floating-mascot-hud:active {
+  transform: scale(0.95);
+}
+
+.qm3d-mascot-glow-ring {
   border-radius: 50%;
-  padding: 2px;
-  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45), 0 2px 6px rgba(0,0,0,0.2);
+  padding: 3px;
+  background: radial-gradient(circle, #ffffff 0%, #fffbeb 70%, #fef3c7 100%);
+  border: 3px solid #f59e0b;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4), 0 2px 8px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none !important; /* 🔥 Never intercepts clicks to station crystal underneath */
-  animation: qm3d-mascot-float 2.5s ease-in-out infinite;
 }
 
-@keyframes qm3d-mascot-float {
+.qm3d-mascot-pill {
+  padding: 2px 8px;
+  background: #ffffff;
+  border: 1.5px solid #fcd34d;
+  border-radius: 9999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes qm3d-duo-floating {
   0%, 100% {
-    transform: translate(-50%, -100%) translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
-  50% {
-    transform: translate(-50%, -100%) translateY(-6px);
+  25% {
+    transform: translateY(-8px) rotate(2.5deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(-1.5deg);
   }
 }
 

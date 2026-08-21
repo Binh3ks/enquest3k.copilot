@@ -503,19 +503,26 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
         </div>
       )}
 
-      {/* Lexio mascot — CSS transition follows suggested station smoothly (Floating non-blocking) */}
+      {/* Floating Duolingo-style Mascot HUD (Top Right, Animated, Interactive) */}
       <div
-        className="qm3d-lexio pointer-events-none"
-        style={{
-          left: `${pos(suggestedStation).x + (isPortrait ? 8 : -4)}%`,
-          top: `${pos(suggestedStation).y - (isPortrait ? 7 : 11)}%`,
-          transition: 'left 1.2s cubic-bezier(0.34,1.56,0.64,1), top 1.2s cubic-bezier(0.34,1.56,0.64,1)',
+        className="qm3d-floating-mascot-hud"
+        onClick={() => {
+          fireCelebrationConfetti('mascot_tap');
+          setMascotMood(prev => prev === 'celebrate' ? 'waving' : 'celebrate');
         }}
+        title="Lexio the Fox Companion — Tap for fun!"
       >
-        <LexioMascot
-          size={isPortrait ? 38 : 52}
-          mood={mascotMood}
-        />
+        <div className="qm3d-mascot-glow-ring">
+          <LexioMascot
+            size={isPortrait ? 56 : 72}
+            mood={mascotMood}
+          />
+        </div>
+        <div className="qm3d-mascot-pill">
+          <span className="text-[10px] font-black text-amber-900 flex items-center gap-1">
+            <span>🦊</span> Lexio
+          </span>
+        </div>
       </div>
 
       {/* Victory Castle */}

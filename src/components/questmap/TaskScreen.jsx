@@ -8,6 +8,7 @@ import LexioMascot from '../mascot/LexioMascot';
 import useArcadeStore from '../../stores/useArcadeStore';
 import { useUserStore } from '../../stores/useUserStore';
 import ArcadeModal from '../games/ArcadeModal';
+import { CLILSealStamp, GrandStampModal } from '../cambridge/ExplorerPassport';
 import './TaskScreen.css';
 
 /**
@@ -162,6 +163,39 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
     };
   }, [weekId, recordActiveInteraction]);
 
+  const [showPassportModal, setShowPassportModal] = useState(false);
+
+  // Dynamic Station Badge Helper
+  const renderStationBadge = () => {
+    if (taskId === 'gear4_clil' || taskId === 'explore') {
+      return (
+        <CLILSealStamp
+          stampId="science"
+          level={1}
+          size="sm"
+          onClick={() => setShowPassportModal(true)}
+          className="hover:scale-110"
+        />
+      );
+    }
+    if (routing.zone === 'story') {
+      return <span className="px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-black rounded-lg border border-blue-200">📖 Story</span>;
+    }
+    if (routing.zone === 'arena') {
+      return <span className="px-2 py-0.5 bg-amber-50 text-amber-700 text-xs font-black rounded-lg border border-amber-200">⚔️ Arena</span>;
+    }
+    if (routing.zone === 'creator') {
+      return <span className="px-2 py-0.5 bg-purple-50 text-purple-700 text-xs font-black rounded-lg border border-purple-200">✍️ Studio</span>;
+    }
+    if (routing.zone === 'info') {
+      return <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 text-xs font-black rounded-lg border border-emerald-200">🎙️ AI Tutor</span>;
+    }
+    if (routing.zone === 'boss') {
+      return <span className="px-2 py-0.5 bg-rose-50 text-rose-700 text-xs font-black rounded-lg border border-rose-200">👑 Review</span>;
+    }
+    return null;
+  };
+
   return (
     <div className="ts-container">
       {/* Top bar */}
@@ -175,34 +209,13 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
           <span className="ts-task-name">{taskInfo.label}</span>
         </div>
         
-        {/* Arcade Button + Unified XP Reward & Time Badge */}
+        {/* Dynamic Header Action: CLIL Stamp / Station Badge + XP Reward */}
         <div className="ts-header-actions">
-          <button
-            type="button"
-            onClick={() => setArcadeOpen(true)}
-            className={`ts-arcade-btn ${
-              playEnergySeconds > 0
-                ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-cyan-500/30 ring-2 ring-cyan-400/40'
-                : 'bg-slate-100 text-slate-700'
-            }`}
-            title="Open Arcade Room"
-          >
-            <span>🕹️</span>
-            <span className="hidden md:inline">Arcade</span>
-            {playEnergySeconds > 0 ? (
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-ping" />
-            ) : (
-              <span className="text-[10px] text-slate-400">🔒</span>
-            )}
-          </button>
+          {renderStationBadge()}
 
           <div className="ts-xp-badge">
             <Trophy size={12} className="text-amber-500" />
             <span>+{taskInfo.xp || 50}</span>
-          </div>
-          <div className="ts-task-time">
-            <Clock size={11} />
-            <span>~{taskInfo.minutes}m</span>
           </div>
         </div>
       </div>
@@ -257,6 +270,15 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
         weekNumber={weekId}
         ownerBypass={isOwner}
         onClose={() => setArcadeOpen(false)}
+      />
+
+      {/* CLIL Grand Stamp Modal */}
+      <GrandStampModal
+        isOpen={showPassportModal}
+        stampId="science"
+        level={1}
+        weekNumber={weekId}
+        onClose={() => setShowPassportModal(false)}
       />
     </div>
   );

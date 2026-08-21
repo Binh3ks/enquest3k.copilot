@@ -85,13 +85,12 @@ export function CLILSealStamp({
       <div
         onClick={onClick}
         className={`relative inline-flex items-center justify-center cursor-pointer select-none transition hover:scale-105 active:scale-95 ${className}`}
+        title={`${stamp.subject} Stamp (Level ${level})`}
       >
-        <div className={`w-12 h-12 rounded-full border-2 ${stamp.borderColor} bg-slate-900 p-0.5 shadow-md relative ring-2 ${stamp.ringColor} flex items-center justify-center`}>
-          <div className={`w-full h-full rounded-full border border-dashed ${stamp.borderColor} flex flex-col items-center justify-center p-0.5 bg-gradient-to-br ${stamp.color} shadow-inner`}>
-            <Icon size={14} className="text-white drop-shadow-sm" />
-            <div className="px-1 py-0.5 bg-white text-slate-950 rounded text-[7px] font-black uppercase tracking-tighter leading-none mt-0.5 shadow-2xs">
-              L{level} ✓
-            </div>
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-300 via-teal-500 to-emerald-800 p-0.5 shadow-[0_3px_8px_rgba(16,185,129,0.4)] relative ring-2 ring-emerald-400/40 flex items-center justify-center">
+          <div className="w-full h-full rounded-full border border-dashed border-white/70 flex flex-col items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-700 shadow-inner">
+            <Icon size={13} className="text-white drop-shadow-xs" />
+            <span className="text-[6px] font-black text-white leading-none mt-0.5">LV.{level}</span>
           </div>
         </div>
       </div>
@@ -104,33 +103,37 @@ export function CLILSealStamp({
       onClick={onClick}
       className={`relative inline-flex items-center justify-center select-none cursor-pointer group transition-transform duration-300 hover:scale-105 active:scale-95 ${className}`}
     >
-      {/* Outer 3D Embossed Glowing Ring */}
-      <div className={`w-44 h-44 sm:w-48 sm:h-48 rounded-full border-[5px] ${stamp.borderColor} bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 p-2 flex flex-col items-center justify-center shadow-[0_12px_36px_rgba(0,0,0,0.6),0_0_24px_rgba(52,211,153,0.35)] relative ring-[6px] ${stamp.ringColor}`}>
+      {/* 3D Embossed Outer Metallic Ring */}
+      <div className="w-44 h-44 sm:w-48 sm:h-48 rounded-full bg-gradient-to-br from-emerald-300 via-teal-500 to-emerald-800 p-1.5 flex flex-col items-center justify-center shadow-[0_16px_36px_rgba(16,185,129,0.35),0_6px_16px_rgba(0,0,0,0.15),inset_0_3px_6px_rgba(255,255,255,0.8),inset_0_-4px_6px_rgba(0,0,0,0.3)] relative ring-4 ring-emerald-400/40">
         
-        {/* Inner Serrated/Dashed Stamp Seal */}
-        <div className={`w-full h-full rounded-full border-2 border-dashed ${stamp.borderColor} flex flex-col items-center justify-center p-3 text-center bg-gradient-to-br ${stamp.color} shadow-inner relative overflow-hidden`}>
+        {/* Middle Ring with Dark Teal Contrast */}
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-600 via-teal-700 to-emerald-900 p-1.5 flex flex-col items-center justify-center shadow-inner relative">
           
-          {/* Subtle 3D stamp gloss/shimmer */}
-          <div className="absolute -top-12 -left-12 w-24 h-24 bg-white/20 rounded-full blur-lg pointer-events-none" />
+          {/* Inner Dashed Stamp Seal */}
+          <div className="w-full h-full rounded-full border-2 border-dashed border-emerald-200/80 flex flex-col items-center justify-center p-2.5 text-center bg-gradient-to-br from-emerald-500 via-teal-600 to-emerald-700 shadow-[inset_0_4px_12px_rgba(0,0,0,0.25)] relative overflow-hidden">
+            
+            {/* Top Gloss Shimmer */}
+            <div className="absolute -top-10 -left-10 w-24 h-24 bg-white/30 rounded-full blur-md pointer-events-none" />
 
-          {/* Subject Icon */}
-          <Icon size={36} className="text-white mb-1 drop-shadow-md" />
-          
-          {/* Subject Header */}
-          <span className="text-[11px] font-black uppercase tracking-widest text-white leading-tight drop-shadow-sm">
-            {stamp.subject}
-          </span>
-          
-          {/* Middle White Embossed Badge */}
-          <div className="my-1.5 px-3.5 py-1 bg-white text-slate-950 rounded-xl text-[11px] font-black tracking-wider uppercase shadow-md flex items-center gap-1.5 border border-white/80">
-            <span>LV. {level} VERIFIED</span>
-            <span className="text-emerald-600">✓</span>
+            {/* Subject Icon */}
+            <Icon size={34} className="text-white mb-0.5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
+            
+            {/* Subject Header */}
+            <span className="text-[10.5px] font-black uppercase tracking-widest text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+              {stamp.subject}
+            </span>
+            
+            {/* Middle White Embossed 3D Badge */}
+            <div className="my-1.5 px-3 py-1 bg-white text-slate-950 rounded-xl text-[10.5px] font-black tracking-wider uppercase shadow-[0_3px_8px_rgba(0,0,0,0.25),inset_0_1px_2px_rgba(255,255,255,0.9)] flex items-center gap-1 border border-slate-100">
+              <span>LV. {level} VERIFIED</span>
+              <span className="text-emerald-600 font-black">✓</span>
+            </div>
+            
+            {/* Bottom Stamp Label */}
+            <span className="text-[8.5px] font-black tracking-wider text-emerald-100 uppercase drop-shadow-xs">
+              ENGQUEST CLIL
+            </span>
           </div>
-          
-          {/* Bottom Stamp Label */}
-          <span className="text-[9px] font-black tracking-wider text-white/90 uppercase">
-            ENGQUEST CLIL
-          </span>
         </div>
       </div>
     </div>
@@ -149,12 +152,10 @@ export function SingleSubjectPassportSidebar({
   const stamp = CLIL_STAMPS[currentSubject] || CLIL_STAMPS.science;
 
   return (
-    <aside className="w-56 shrink-0 bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-950 p-4 sm:p-5 rounded-3xl border-2 border-indigo-500/30 shadow-2xl space-y-4 font-sans text-white text-center flex flex-col items-center">
-      <div className="flex items-center gap-2">
-        <span className="text-lg">🛂</span>
-        <h4 className="text-xs font-black uppercase tracking-wider text-amber-300">
-          CLIL Passport Stamp
-        </h4>
+    <aside className="w-56 shrink-0 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-3xl border-2 border-slate-200 shadow-xl space-y-3.5 font-sans text-slate-900 text-center flex flex-col items-center">
+      <div className="flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full text-xs font-black border border-emerald-200 shadow-2xs">
+        <span>🛂</span>
+        <span className="uppercase tracking-wider">CLIL Passport Stamp</span>
       </div>
 
       {/* Big 3D Embossed Stamp */}
@@ -169,13 +170,13 @@ export function SingleSubjectPassportSidebar({
 
       {/* Stamp Details */}
       <div className="space-y-1 w-full">
-        <div className="text-sm font-black text-white">
+        <div className="text-sm font-black text-slate-900">
           {stamp.title}
         </div>
-        <p className="text-[11px] text-emerald-300 font-bold">
+        <p className="text-[11px] text-emerald-700 font-bold">
           {stamp.levelTitle}
         </p>
-        <p className="text-[10px] text-indigo-200/80 leading-relaxed pt-1">
+        <p className="text-[10px] text-slate-500 leading-relaxed pt-0.5">
           {stamp.desc}
         </p>
       </div>
@@ -184,9 +185,9 @@ export function SingleSubjectPassportSidebar({
       <button
         type="button"
         onClick={() => onSelectStamp && onSelectStamp(currentSubject)}
-        className="w-full py-2.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 text-slate-950 rounded-xl text-xs font-black shadow-lg transition active:scale-95 flex items-center justify-center gap-1.5"
+        className="w-full py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white rounded-xl text-xs font-black shadow-md transition active:scale-95 flex items-center justify-center gap-1.5"
       >
-        <span>View Passport 🛂</span>
+        <span>View Passport Details 🛂</span>
       </button>
     </aside>
   );

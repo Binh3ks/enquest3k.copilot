@@ -1201,45 +1201,12 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       {/* ========================================================================= */}
       {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER (Single Focused 3D Science Badge)       */}
       {/* ========================================================================= */}
+      {/* ========================================================================= */}
+      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER (Desktop 3D Stamp Sidebar + Full Reading) */}
+      {/* ========================================================================= */}
       {currentGear === 4 && (
-        <div className="w-full space-y-3 animate-in fade-in duration-200">
-          {/* Mobile Header: Clean, background-free (NO black bar), just 3D Stamp + View Badge */}
-          <div className="md:hidden flex items-center justify-between py-1 px-1">
-            <div className="flex items-center gap-3">
-              <CLILSealStamp
-                stampId="science"
-                level={clilStampEarned ? 2 : 1}
-                size="sm"
-                onClick={() => {
-                  setSelectedStampId('science');
-                  setShowStampModal(true);
-                }}
-              />
-              <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-xs font-black text-slate-900">Science Lab Stamp</span>
-                  <span className="px-1.5 py-0.5 bg-emerald-100 text-emerald-800 text-[9px] font-black rounded-md border border-emerald-300">
-                    LV. {clilStampEarned ? '2' : '1'} ✓
-                  </span>
-                </div>
-                <p className="text-[10px] text-slate-500 font-bold">
-                  {clilStampEarned ? '✨ Science Master' : 'Physics & Forces'}
-                </p>
-              </div>
-            </div>
-            <button
-              type="button"
-              onClick={() => {
-                setSelectedStampId('science');
-                setShowStampModal(true);
-              }}
-              className="px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-xl text-xs font-black border border-indigo-200 transition active:scale-95 shadow-xs flex items-center gap-1 shrink-0"
-            >
-              <span>View Badge 🛂</span>
-            </button>
-          </div>
-
-          {/* Main Layout: Desktop has Left 3D Stamp Sidebar, Mobile takes full width */}
+        <div className="w-full animate-in fade-in duration-200">
+          {/* Main Layout: Desktop has Left 3D Stamp Sidebar, Mobile takes full 100% width */}
           <div className="flex flex-col md:flex-row items-start gap-4 w-full">
             {/* Desktop Left Sidebar with Big 3D Embossed Stamp */}
             <div className="hidden md:block shrink-0">

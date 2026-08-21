@@ -304,15 +304,12 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
           <div className="relative w-full rounded-2xl overflow-hidden shadow-md border-2 border-slate-200 bg-slate-100 aspect-[16/10] max-h-[290px]">
             <img
               src={currentPanel?.image_url || ''}
-              alt={currentPanel?.caption || `Panel ${panelIdx + 1}`}
+              alt={`Panel ${panelIdx + 1}`}
               className="w-full h-full object-cover"
               onError={e => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
             />
             <span className="absolute top-2.5 left-2.5 px-2 py-0.5 bg-amber-400 text-slate-950 rounded-md text-[10px] font-black uppercase tracking-wider shadow">
               Panel {panelIdx + 1}
-            </span>
-            <span className="absolute top-2.5 right-2.5 px-2 py-0.5 bg-slate-950/80 text-white rounded-md text-[9px] font-bold backdrop-blur-xs">
-              {currentPanel?.caption}
             </span>
           </div>
 
