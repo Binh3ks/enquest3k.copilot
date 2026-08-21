@@ -55,17 +55,29 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
 
   const makeChunks = (currentRound) => {
     if (!currentRound) return [];
-    return currentRound.chunks.map((c, i) => ({
-      id: `chunk_${c.slotId}_${i}_${Math.random()}`,
-      text: c.text,
-      slotId: c.slotId,
-      placed: false,
-      x: 10 + i * 28 + (Math.random() - 0.5) * 5,
-      y: 18 + (i % 2) * 20 + (Math.random() - 0.5) * 5,
-      vx: (Math.random() - 0.5) * 0.18,
-      vy: (Math.random() - 0.5) * 0.18,
-      color: ['#0284c7', '#7c3aed', '#059669', '#d97706', '#dc2626'][i % 5],
+    const correctChunks = (currentRound.slots || []).map(s => ({
+      slotId: s.id,
+      text: s.answer,
     }));
+    const distractorChunks = (currentRound.distractors || []).map(d => ({
+      slotId: null,
+      text: d,
+    }));
+    const rawChunks = currentRound.chunks || [...correctChunks, ...distractorChunks];
+
+    return rawChunks
+      .sort(() => Math.random() - 0.5)
+      .map((c, i) => ({
+        id: `chunk_${c.slotId || 'd'}_${i}_${Math.random()}`,
+        text: c.text,
+        slotId: c.slotId,
+        placed: false,
+        x: 8 + (i % 3) * 30 + (Math.random() - 0.5) * 5,
+        y: 16 + Math.floor(i / 3) * 26 + (Math.random() - 0.5) * 5,
+        vx: (Math.random() - 0.5) * 0.18,
+        vy: (Math.random() - 0.5) * 0.18,
+        color: ['#0284c7', '#7c3aed', '#059669', '#d97706', '#dc2626'][i % 5],
+      }));
   };
 
   const floatLoop = useCallback(() => {
@@ -194,9 +206,6 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
       if (!isStandalone) {
         const ok = consumePlayEnergy(1);
         if (!ok) { endGame(false); return; }
-      }
-      if (Date.now() - lastCatchTimeRef.current > 7000) {
-        setFoxTrigger(true);
       }
       setGameTimer(t => {
         if (t <= 1) { endGame(false); return 0; }

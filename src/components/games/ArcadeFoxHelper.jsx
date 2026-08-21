@@ -18,13 +18,13 @@ export default function ArcadeFoxHelper({
   const triggerFoxAction = (text) => {
     setIsJumping(true);
     setShowBubble(true);
-    setBubbleText(`🦊 Here! This one! 👉 ${text}`);
+    setBubbleText(`🦊 ${text}`);
 
-    const jumpTimer = setTimeout(() => setIsJumping(false), 800);
+    const jumpTimer = setTimeout(() => setIsJumping(false), 500);
     const bubbleTimer = setTimeout(() => {
       setShowBubble(false);
       if (onHintUsed) onHintUsed();
-    }, 4000);
+    }, 2000);
 
     return () => {
       clearTimeout(jumpTimer);

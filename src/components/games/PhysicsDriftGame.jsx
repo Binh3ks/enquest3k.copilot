@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { RotateCcw, Volume2, ArrowLeft, ArrowRight, Zap, Sparkles, Trophy, Target, Timer } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
@@ -306,9 +306,6 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
       if (!isStandalone) {
         const ok = consumePlayEnergy(1);
         if (!ok) { endGame(false); return; }
-      }
-      if (Date.now() - lastCatchTimeRef.current > 7000) {
-        setFoxTrigger(true);
       }
       setGameTimer(t => {
         if (t <= 1) { endGame(false); return 0; }

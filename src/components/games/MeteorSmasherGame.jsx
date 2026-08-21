@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { RotateCcw, Volume2, Shield, Zap, Sparkles, Trophy, Target, AlertTriangle, Timer } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
@@ -12,7 +12,10 @@ import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit, isStandalone = false }) {
   const weekData = getWeekArcadeData(weekNumber);
-  const wordBank = (words && words.length >= 4) ? words : weekData.words;
+  const wordBank = useMemo(() => {
+    const raw = (words && words.length >= 4) ? words : weekData.words;
+    return raw.map(w => (typeof w === 'string' ? { word: w, definition_en: w } : w));
+  }, [words, weekData.words]);
 
   const [gameState, setGameState] = useState('idle');
   const [score, setScore] = useState(0);
@@ -184,9 +187,6 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
       if (!isStandalone) {
         const ok = consumePlayEnergy(1);
         if (!ok) { endGame(false); return; }
-      }
-      if (Date.now() - lastCatchTimeRef.current > 7000) {
-        setFoxTrigger(true);
       }
       setGameTimer(t => {
         if (t <= 1) { endGame(false); return 0; }
@@ -537,29 +537,6 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
                 <line x1={laser.x1} y1={laser.y1} x2={laser.x2} y2={laser.y2} stroke="#ffffff" strokeWidth="3.5" strokeLinecap="round" opacity="0.95" />
                 <circle cx={laser.x2} cy={laser.y2} r="20" fill={laser.color} opacity="0.7" />
               </svg>
-            )}
-
-            {/* FLYING LEXIO FOX TARGET TRACKER */}
-            {foxTrigger && targetMeteor && (
-              <div style={{
-                position: 'absolute',
-                left: `${(targetMeteor.x / W) * 100}%`,
-                top: `${(targetMeteor.y / H) * 100}%`,
-                transform: 'translate(-50%, -140%)',
-                zIndex: 45, display: 'flex', flexDirection: 'column', alignItems: 'center', pointerEvents: 'none',
-                animation: 'bounceIn 0.3s ease-out',
-              }}>
-                <div style={{
-                  background: '#fde047', border: '2px solid #ca8a04', borderRadius: '12px',
-                  padding: '4px 10px', color: '#713f12', fontWeight: 900, fontSize: '11px',
-                  whiteSpace: 'nowrap', boxShadow: '0 4px 14px rgba(0,0,0,0.5)', marginBottom: '4px',
-                }}>
-                  🦊 Laser this one! 👇
-                </div>
-                <div style={{ fontSize: '32px', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.6))' }}>
-                  🦊
-                </div>
-              </div>
             )}
 
             {/* ROTATING PLASMA CANNON TURRET */}

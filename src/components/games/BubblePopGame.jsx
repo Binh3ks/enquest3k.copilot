@@ -192,9 +192,6 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
         const ok = consumePlayEnergy(1);
         if (!ok) { endGame(false); return; }
       }
-      if (Date.now() - lastCatchTimeRef.current > 7000) {
-        setFoxTrigger(true);
-      }
       setGameTimer(t => {
         if (t <= 1) { endGame(false); return 0; }
         return t - 1;
