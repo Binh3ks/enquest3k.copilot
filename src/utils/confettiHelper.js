@@ -1,9 +1,15 @@
+import { playVictoryFanfare } from './soundEffects';
+
 /**
  * Pure DOM Canvas Confetti Burst Helper
  * Zero dependency celebratory confetti animation for Check Mode and Performance Tasks.
  */
 export function fireCelebrationConfetti(activityId = 'Activity') {
   if (typeof window === 'undefined') return;
+
+  try {
+    playVictoryFanfare();
+  } catch (_) {}
 
   console.log(`[GAMIFICATION_SRS_DEBUG] Confetti & Star Ranks rendered successfully for Activity ${activityId}.`);
 

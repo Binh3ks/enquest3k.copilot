@@ -68,27 +68,27 @@ export default function CongratulationsModal({ weekId, onClose, userStats }) {
       >
         {/* Modal Content */}
         <div
-          className="relative bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full mx-4 transform transition-all"
+          className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-5 max-w-sm w-full mx-4 transform transition-all"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Trophy Emoji */}
-          <div className="text-center mb-6">
-            <div className="text-8xl animate-bounce">🎉</div>
+          <div className="text-center mb-2">
+            <div className="text-4xl animate-bounce">🏆</div>
           </div>
 
           {/* Heading */}
-          <h2 className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-xl sm:text-2xl font-black text-center mb-1 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
             Week {weekId} Complete!
           </h2>
 
           {/* Bonus Stars */}
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <Star className="w-6 h-6 text-yellow-500 fill-yellow-500" />
-            <span className="text-2xl font-bold text-yellow-600">+50 Bonus Stars!</span>
+          <div className="flex items-center justify-center gap-1.5 mb-3">
+            <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+            <span className="text-base font-bold text-yellow-600">+50 Bonus Stars!</span>
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-2 gap-2 mb-3">
             <StatCard
               icon={Target}
               label="Stations"
@@ -116,24 +116,23 @@ export default function CongratulationsModal({ weekId, onClose, userStats }) {
           </div>
 
           {/* Next Week Message */}
-          <p className="text-center text-gray-600 mb-6">
+          <p className="text-center text-xs text-gray-500 mb-3">
             Ready for your next challenge?
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col gap-3">
-            <button
-              onClick={handleContinue}
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-2xl hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
-            >
-              Continue to Week {weekId + 1}
-              <ArrowRight className="w-5 h-5" />
-            </button>
+          <div className="flex gap-2">
             <button
               onClick={handleReview}
-              className="w-full px-6 py-3 bg-gray-100 text-gray-700 font-medium rounded-2xl hover:bg-gray-200 transition-all"
+              className="flex-1 py-2 px-3 border border-gray-300 text-gray-700 text-xs font-bold rounded-xl hover:bg-gray-50 transition-colors"
             >
-              Review Week {weekId}
+              Review
+            </button>
+            <button
+              onClick={handleContinue}
+              className="flex-1 py-2 px-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs font-black rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-colors flex items-center justify-center gap-1 shadow-md shadow-indigo-200"
+            >
+              Next Week <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>

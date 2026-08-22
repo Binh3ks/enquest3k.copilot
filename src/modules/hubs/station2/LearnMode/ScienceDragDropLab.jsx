@@ -8,11 +8,12 @@ import {
   useSensors
 } from '@dnd-kit/core';
 import { useDraggable, useDroppable } from '@dnd-kit/core';
-import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, Trophy, HelpCircle, Lightbulb, Timer, Flame, Play, Pause, RotateCcw } from 'lucide-react';
+import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, Trophy, HelpCircle, Lightbulb, Timer, Flame, Play, Pause, RotateCcw, MousePointerClick } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 import { useUserStore } from '../../../../stores/useUserStore';
+import { playButtonClick, playCorrectSound, playWrongSound, playVictoryFanfare } from '../../../../utils/soundEffects';
 
-function DraggableLabel({ id, text, isPlaced, disabled }) {
+function DraggableLabel({ id, text, isPlaced, disabled, isSelected, onClick }) {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
     id,
     disabled: isPlaced || disabled
@@ -29,39 +30,46 @@ function DraggableLabel({ id, text, isPlaced, disabled }) {
 
   return (
     <button
+      type="button"
       ref={setNodeRef}
       style={style}
       {...listeners}
       {...attributes}
-      className={`px-4 py-2.5 bg-gradient-to-r from-teal-600 to-emerald-600 border-2 border-teal-400 text-white font-black text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg hover:scale-105 active:scale-95 cursor-grab active:cursor-grabbing transition select-none ${
+      onClick={onClick}
+      className={`px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r ${
+        isSelected
+          ? 'from-amber-500 to-amber-600 ring-4 ring-amber-300 scale-105 border-amber-300'
+          : 'from-teal-600 to-emerald-600 border-teal-400 hover:scale-105'
+      } border-2 text-white font-black text-[11px] sm:text-xs rounded-xl shadow-md active:scale-95 cursor-grab active:cursor-grabbing transition select-none ${
         isDragging ? 'opacity-50 ring-4 ring-teal-300' : ''
       }`}
     >
-      🏷️ {text}
+      {isSelected ? '👉 ' : '🏷️ '}{text}
     </button>
   );
 }
 
-function DropZone({ id, label, currentPlaced, isCorrect, targetInfo }) {
+function DropZone({ id, label, currentPlaced, isCorrect, targetInfo, isTargeted, onClick }) {
   const { setNodeRef, isOver } = useDroppable({ id });
 
   return (
     <div
       ref={setNodeRef}
+      onClick={onClick}
       style={{ left: `${targetInfo.x}%`, top: `${targetInfo.y}%` }}
-      className={`absolute transform -translate-x-1/2 -translate-y-1/2 p-2 min-w-[130px] min-h-[50px] rounded-2xl border-2 transition-all flex flex-col items-center justify-center text-center shadow-lg backdrop-blur-md ${
+      className={`absolute transform -translate-x-1/2 -translate-y-1/2 p-1 sm:p-1.5 min-w-[80px] sm:min-w-[105px] max-w-[125px] rounded-xl border-2 transition-all flex flex-col items-center justify-center text-center shadow-lg backdrop-blur-md cursor-pointer ${
         currentPlaced
           ? isCorrect
-            ? 'bg-emerald-600 border-white text-white font-black scale-105 ring-2 ring-emerald-300'
-            : 'bg-rose-600 border-white text-white font-black scale-105 animate-shake'
-          : isOver
+            ? 'bg-emerald-600/95 border-white text-white font-black scale-105 ring-2 ring-emerald-300'
+            : 'bg-rose-600/95 border-white text-white font-black scale-105 animate-shake'
+          : isOver || isTargeted
           ? 'bg-amber-400 border-amber-600 text-slate-950 font-black scale-110 ring-4 ring-amber-300'
-          : 'bg-white/95 border-2 border-dashed border-teal-500 text-teal-950 font-bold hover:bg-white'
+          : 'bg-white/90 border-2 border-dashed border-teal-500 text-teal-950 font-bold hover:bg-white'
       }`}
     >
-      <span className="text-[10px] uppercase font-black tracking-wider opacity-90">{label}</span>
-      <span className="text-xs font-black truncate max-w-[120px]">
-        {currentPlaced ? currentPlaced.text : 'Drop Label Here'}
+      <span className="text-[7.5px] sm:text-[9px] uppercase font-black tracking-wider opacity-90 leading-none mb-0.5">{label}</span>
+      <span className="text-[8.5px] sm:text-[10px] font-black truncate max-w-[115px] leading-tight">
+        {currentPlaced ? currentPlaced.text : (isTargeted ? '👉 Tap Place' : 'Drop / Tap')}
       </span>
     </div>
   );
@@ -76,16 +84,17 @@ const DEFAULT_SCIENCE_DATA = {
     { id: "lbl_03", text: "Hazard Alert", targetId: "target_03" }
   ],
   targets: [
-    { id: "target_01", name: "Wet Floor Puddle", x: 48, y: 76 },
-    { id: "target_02", name: "Running Fast", x: 62, y: 45 },
-    { id: "target_03", name: "Yellow Caution Sign", x: 28, y: 65 }
+    { id: "target_01", name: "Wet Floor Puddle", x: 50, y: 78 },
+    { id: "target_02", name: "Running Fast", x: 74, y: 38 },
+    { id: "target_03", name: "Yellow Caution Sign", x: 24, y: 55 }
   ],
-  explanation: "Water acts as a liquid lubricant between shoe soles and smooth tiles, reducing friction to near zero and causing sudden slips."
+  explanation: "Water makes the smooth floor very slippery and reduces friction to near zero, causing sudden slips."
 };
 
 export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onComplete }) {
   const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'paused' | 'gameover'
   const [placedItems, setPlacedItems] = useState({});
+  const [selectedLabelId, setSelectedLabelId] = useState(null);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
   const [timeLeft, setTimeLeft] = useState(80); // 80s total (20s per drag target for ages 6-10)
@@ -95,7 +104,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
 
     const experimentTitle = scienceData.title_en || scienceData.experimentTitle || "Corridor Friction Physics Lab";
     const diagramImage = scienceData.background_image || scienceData.diagramImage || "/images/week33/clil_friction.png";
-    const explanation = scienceData.description_en || scienceData.explanation || "Water acts as a liquid lubricant between shoe soles and smooth tiles.";
+    const explanation = scienceData.description_en || scienceData.explanation || "Water makes the smooth floor very slippery and reduces friction to near zero.";
 
     let targets = [];
     let labels = [];
@@ -149,6 +158,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
 
   const handleStartGame = () => {
     setPlacedItems({});
+    setSelectedLabelId(null);
     setScore(0);
     setStreak(0);
     setTimeLeft(80);
@@ -164,12 +174,47 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
     const xpEarned = score > 0 ? 45 : 0; // Anti-cheat: 0 XP if AFK or 0 score!
 
     if (score > 0) {
+      playVictoryFanfare();
       fireCelebrationConfetti('ScienceLab_Victory');
       const userStore = useUserStore?.getState ? useUserStore.getState() : null;
       if (userStore?.addXP) userStore.addXP(xpEarned);
     }
 
     if (onComplete) onComplete(score);
+  };
+
+  const handleLabelClick = (labelId) => {
+    if (gameState !== 'playing') return;
+    playButtonClick();
+    setSelectedLabelId(prev => (prev === labelId ? null : labelId));
+  };
+
+  const handleTargetClick = (target) => {
+    if (gameState !== 'playing' || !selectedLabelId) return;
+
+    const labelItem = labData.labels.find(l => l.id === selectedLabelId);
+    if (!labelItem) return;
+
+    const isCorrect = labelItem.targetId === target.id;
+    const newPlaced = { ...placedItems, [target.id]: { ...labelItem, isCorrect } };
+    setPlacedItems(newPlaced);
+    setSelectedLabelId(null);
+
+    if (isCorrect) {
+      playCorrectSound();
+      const nextStreak = streak + 1;
+      setStreak(nextStreak);
+      const bonusScore = 25 + nextStreak * 5;
+      setScore(prev => prev + bonusScore);
+
+      const totalCorrect = Object.values(newPlaced).filter(p => p.isCorrect).length;
+      if (totalCorrect === labData.targets.length) {
+        finishGame();
+      }
+    } else {
+      playWrongSound();
+      setStreak(0);
+    }
   };
 
   const handleDragEnd = (event) => {
@@ -186,6 +231,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
     setPlacedItems(newPlaced);
 
     if (isCorrect) {
+      playCorrectSound();
       const nextStreak = streak + 1;
       setStreak(nextStreak);
       const bonusScore = 25 + nextStreak * 5;
@@ -196,6 +242,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
         finishGame();
       }
     } else {
+      playWrongSound();
       setStreak(0);
     }
   };
@@ -325,7 +372,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             </div>
 
             {/* Diagram Area with Drop Zones */}
-            <div className="relative w-full aspect-video sm:aspect-[21/9] rounded-2xl overflow-hidden bg-slate-100 border-2 border-slate-300 shadow-md">
+            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden bg-slate-100 border-2 border-teal-300 shadow-md">
               <img
                 src={labData.diagramImage}
                 alt={labData.experimentTitle}
@@ -342,16 +389,29 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
                   currentPlaced={placedItems[target.id]}
                   isCorrect={placedItems[target.id]?.isCorrect}
                   targetInfo={target}
+                  isTargeted={!!selectedLabelId && !placedItems[target.id]?.isCorrect}
+                  onClick={() => handleTargetClick(target)}
                 />
               ))}
             </div>
 
             {/* Draggable Labels Source Dock */}
-            <div className="p-4 bg-slate-100 rounded-2xl border border-slate-200 space-y-2">
-              <span className="text-[10px] font-black uppercase tracking-wider text-slate-500">
-                DRAG LABELS TO EXPERIMENT DIAGRAM:
-              </span>
-              <div className="flex items-center gap-3 flex-wrap">
+            <div className="p-3 sm:p-4 bg-slate-100 rounded-2xl border border-slate-200 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-600">
+                  {selectedLabelId ? '👉 TAP A TARGET ZONE ON DIAGRAM ABOVE:' : 'TAP OR DRAG LABELS TO EXPERIMENT DIAGRAM:'}
+                </span>
+                {selectedLabelId && (
+                  <button
+                    type="button"
+                    onClick={() => setSelectedLabelId(null)}
+                    className="text-[10px] font-bold text-rose-600 underline"
+                  >
+                    Deselect
+                  </button>
+                )}
+              </div>
+              <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
                 {labData.labels?.map((label) => {
                   const isPlaced = Object.values(placedItems).some(p => p.id === label.id && p.isCorrect);
                   return (
@@ -361,6 +421,8 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
                       text={label.text}
                       isPlaced={isPlaced}
                       disabled={gameState !== 'playing'}
+                      isSelected={selectedLabelId === label.id}
+                      onClick={() => handleLabelClick(label.id)}
                     />
                   );
                 })}

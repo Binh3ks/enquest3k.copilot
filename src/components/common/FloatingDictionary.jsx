@@ -50,11 +50,19 @@ const FloatingDictionary = () => {
 
         const range = window.getSelection().getRangeAt(0);
         const rect = range.getBoundingClientRect();
+        const popupW = Math.min(290, window.innerWidth - 32);
+        const rawLeft = rect.left + (rect.width / 2);
+        const minLeft = popupW / 2 + 16;
+        const maxLeft = window.innerWidth - (popupW / 2) - 16;
+        const clampedLeft = Math.max(minLeft, Math.min(maxLeft, rawLeft));
+        const isNearTop = rect.top < 240;
         
-        // Tính vị trí hiện Popup (ngay trên đầu từ được chọn)
+        // Bounding clamp ensures popup never overflows left/right screen edges
         setPosition({ 
-          x: rect.left + (rect.width / 2), 
-          y: rect.top + window.scrollY - 10 
+          x: clampedLeft, 
+          y: isNearTop ? rect.bottom + 12 : rect.top - 10,
+          transform: isNearTop ? 'translate(-50%, 0)' : 'translate(-50%, -100%)',
+          isNearTop
         });
         
         setSelection({ 
@@ -113,8 +121,8 @@ const FloatingDictionary = () => {
   return (
     <div 
       ref={popupRef}
-      className="fixed z-[9999] bg-white rounded-xl shadow-2xl border border-indigo-100 p-4 flex flex-col gap-3 min-w-[280px] animate-in zoom-in-95 duration-200"
-      style={{ top: position.y, left: position.x, transform: 'translate(-50%, -100%)', marginTop: '-12px' }}
+      className="fixed z-[9999] bg-white rounded-xl shadow-2xl border border-indigo-100 p-4 flex flex-col gap-3 min-w-[260px] max-w-[290px] animate-in zoom-in-95 duration-200"
+      style={{ top: position.y, left: position.x, transform: position.transform || 'translate(-50%, -100%)' }}
     >
       {/* Mũi tên chỉ xuống */}
       <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-b border-r border-indigo-100 rotate-45"></div>

@@ -17,7 +17,11 @@ function tokensToString(tokens) {
 }
 
 export function evaluateSentenceAttempt(userTokens, answerKey) {
-  if (!userTokens || userTokens.length === 0) {
+  const normalizedUserTokens = typeof userTokens === 'string'
+    ? userTokens.trim().split(/\s+/)
+    : (Array.isArray(userTokens) ? userTokens : []);
+
+  if (!normalizedUserTokens || normalizedUserTokens.length === 0) {
     return {
       isCorrect: false,
       isMinorError: false,
@@ -28,17 +32,32 @@ export function evaluateSentenceAttempt(userTokens, answerKey) {
     };
   }
 
-  const {
-    valid_structures = [],
-    clause_rules = {},
-    acceptable_connectors = []
-  } = answerKey;
+  let valid_structures = [];
+  let acceptable_connectors = [];
 
-  const userStringNormalized = tokensToString(userTokens);
+  if (Array.isArray(answerKey)) {
+    valid_structures = [answerKey];
+  } else if (answerKey && typeof answerKey === 'object') {
+    if (Array.isArray(answerKey.valid_structures) && answerKey.valid_structures.length > 0) {
+      valid_structures = answerKey.valid_structures;
+    } else if (Array.isArray(answerKey.word_blocks)) {
+      valid_structures = [answerKey.word_blocks];
+    } else if (typeof answerKey.sentence === 'string') {
+      valid_structures = [answerKey.sentence.trim().split(/\s+/)];
+    }
+    if (Array.isArray(answerKey.acceptable_connectors)) {
+      acceptable_connectors = answerKey.acceptable_connectors;
+    }
+  }
+
+  const userStringNormalized = tokensToString(normalizedUserTokens);
 
   // 1. Layer 1: Check Exact Matches (Case-insensitive & space-normalized)
   for (const validTokens of valid_structures) {
-    const validStringNormalized = tokensToString(validTokens);
+    const validStringNormalized = Array.isArray(validTokens)
+      ? tokensToString(validTokens)
+      : String(validTokens).trim().replace(/\s+([.,!?:;])/g, '$1').toLowerCase();
+
     if (userStringNormalized === validStringNormalized) {
       return {
         isCorrect: true,

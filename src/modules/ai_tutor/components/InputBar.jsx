@@ -50,7 +50,7 @@ const InputBar = ({
     }
   }, [shouldAutoSend, message, disabled, onSend]);
 
-  // Initialize Web Speech API - SIMPLE & STABLE (from V6-FINAL backup)
+  // Initialize Web Speech API - Android-optimized & resilient
   useEffect(() => {
     if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
       console.warn('⚠️ Web Speech API not supported');
@@ -60,24 +60,36 @@ const InputBar = ({
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const rec = new SpeechRecognition();
     
-    // 🔥 SIMPLE CONFIG - No continuous, no interim results
-    rec.continuous = false; // Records until natural pause (~1-2 seconds silence)
-    rec.interimResults = false; // Only get final result
+    rec.continuous = false;
+    rec.interimResults = true; // Essential for Android Chrome to stream without early timeout
     rec.lang = 'en-US';
 
     rec.onstart = () => {
       console.log('🎤 Recording started');
+      setIsListening(true);
     };
 
     rec.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
-      console.log('📝 Transcript:', transcript);
-      setMessage(transcript);
+      let interimTranscript = '';
+      let finalTranscript = '';
+      for (let i = event.resultIndex; i < event.results.length; ++i) {
+        if (event.results[i].isFinal) {
+          finalTranscript += event.results[i][0].transcript;
+        } else {
+          interimTranscript += event.results[i][0].transcript;
+        }
+      }
+      const current = (finalTranscript || interimTranscript).trim();
+      if (current) {
+        console.log('📝 Transcript:', current);
+        setMessage(current);
+      }
       
-      // Auto-send after successful recognition
-      setTimeout(() => {
-        setShouldAutoSend(true);
-      }, 300);
+      if (finalTranscript) {
+        setTimeout(() => {
+          setShouldAutoSend(true);
+        }, 500);
+      }
     };
 
     rec.onend = () => {
@@ -86,17 +98,13 @@ const InputBar = ({
     };
 
     rec.onerror = (event) => {
-      console.error('❌ Speech recognition error:', event.error);
+      console.warn('Speech recognition status:', event.error);
       setIsListening(false);
       
-      // User-friendly error messages
-      if (event.error === 'no-speech') {
-        alert('No speech detected. Please try again.');
-      } else if (event.error === 'aborted') {
-        // Silent - user stopped manually
-      } else {
-        alert(`Speech recognition error: ${event.error}`);
+      if (event.error === 'not-allowed') {
+        alert('Please allow microphone access in your browser settings to speak.');
       }
+      // 'no-speech' and 'aborted' are soft recoverable states — avoid jarring popup alerts
     };
 
     setRecognition(rec);
@@ -104,10 +112,8 @@ const InputBar = ({
     return () => {
       if (rec) {
         try {
-          rec.stop();
-        } catch (e) {
-          // Already stopped
-        }
+          rec.abort();
+        } catch (_) {}
       }
     };
   }, []);
@@ -141,50 +147,50 @@ const InputBar = ({
     }
   };
 
-  // Handle voice input button click - SIMPLIFIED
-  const handleVoiceInput = () => {
+  // Handle voice input button click - Android resilient
+  const handleVoiceInput = async () => {
     if (!recognition) {
       alert('Speech recognition not supported. Please use Chrome or Edge.');
       return;
     }
 
     if (isListening) {
-      // User clicked stop - abort current recording
       console.log('🛑 User manually stopped recording');
       setIsListening(false);
-      
       try {
-        recognition.abort(); // Use abort() to cancel without triggering onresult
+        recognition.abort();
       } catch (e) {
         console.error('Stop error:', e);
       }
     } else {
-      // User clicked start - begin new recording
       console.log('🎤 User started recording');
-      setMessage(''); // Clear previous message
+      setMessage('');
       setShouldAutoSend(false);
       
+      // Microphone warmup for mobile Android Chrome
+      try {
+        if (navigator?.mediaDevices?.getUserMedia) {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          stream.getTracks().forEach(t => t.stop());
+        }
+      } catch (err) {
+        console.warn('Microphone permission warmup:', err);
+      }
+
       try {
         recognition.start();
         setIsListening(true);
       } catch (error) {
         console.error('Start error:', error);
-        
-        // If already running, stop first then retry
-        if (error.message && error.message.includes('already started')) {
-          try {
-            recognition.stop();
-            setTimeout(() => {
+        try {
+          recognition.abort();
+          setTimeout(() => {
+            try {
               recognition.start();
               setIsListening(true);
-            }, 200);
-          } catch (e) {
-            console.error('Retry error:', e);
-            alert('Speech recognition is busy. Please try again.');
-          }
-        } else {
-          alert('Could not start speech recognition. Please try again.');
-        }
+            } catch (_) {}
+          }, 250);
+        } catch (_) {}
       }
     }
   };

@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { TestTube, Sparkles, CheckCircle2, Send, Trophy, ChevronRight, ChevronLeft, Volume2 } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import { playButtonClick, playCorrectSound, playVictoryFanfare } from '../../utils/soundEffects';
 
 export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onComplete }) {
   const [currentStep, setCurrentStep] = useState(1);
@@ -22,6 +23,7 @@ export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onC
     e.preventDefault();
     if (!canSubmit) return;
     setIsSubmitted(true);
+    playVictoryFanfare();
     fireCelebrationConfetti('ScienceReport_Complete');
     if (onComplete) onComplete(50);
   };
@@ -35,7 +37,10 @@ export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onC
     }
   };
 
-  const appendToStep = (setter, text) => setter(prev => prev ? `${prev} ${text}` : text);
+  const appendToStep = (setter, text) => {
+    playButtonClick();
+    setter(prev => prev ? `${prev} ${text}` : text);
+  };
 
   const STEP_CONFIG = [
     {
@@ -43,12 +48,12 @@ export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onC
       label: 'Describe the Cause',
       icon: '🔬',
       color: 'emerald',
-      starter: 'Water acts as a liquid lubricant on the floor,',
+      starter: 'When water spills on the smooth tiled floor,',
       checker: step1OK,
       value: step1Text,
       setter: setStep1Text,
-      hint: 'Describe why the floor became slippery. Use: water, liquid lubricant, wet floor, puddle...',
-      pills: { '🟢 Cause Words': ['liquid lubricant', 'wet puddle', 'water on floor', 'acts as a lubricant'] },
+      hint: 'Describe why the floor became slippery. Use: water on floor, wet puddle, smooth tiles, spills, reduces grip...',
+      pills: { '🟢 Cause Words': ['water on floor', 'wet puddle', 'smooth tiles', 'spills on floor', 'reduces grip', 'very slippery'] },
     },
     {
       step: 2,

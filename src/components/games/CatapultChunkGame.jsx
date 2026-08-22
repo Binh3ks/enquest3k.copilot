@@ -401,20 +401,20 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
                     position: 'absolute',
                     left: `${c.x}%`,
                     top: `${c.y}%`,
-                    padding: '2.5px 6px',
-                    borderRadius: '6px',
+                    padding: '1.5px 4.5px',
+                    borderRadius: '5px',
                     background: isSelected
                       ? 'linear-gradient(135deg, #fbbf24, #f59e0b)'
                       : `linear-gradient(135deg, ${c.color}, #1e293b)`,
                     border: isSelected ? '1.5px solid #ffffff' : '1px solid rgba(255,255,255,0.35)',
                     boxShadow: isSelected
-                      ? '0 0 10px #fbbf24, 0 2px 6px rgba(0,0,0,0.5)'
-                      : '0 1.5px 4px rgba(0,0,0,0.35)',
+                      ? '0 0 8px #fbbf24, 0 2px 4px rgba(0,0,0,0.5)'
+                      : '0 1px 3px rgba(0,0,0,0.3)',
                     color: isSelected ? '#78350f' : '#ffffff',
                     fontWeight: 800,
-                    fontSize: '8.5px',
-                    lineHeight: 1.15,
-                    maxWidth: '92px',
+                    fontSize: '7.5px',
+                    lineHeight: 1.1,
+                    maxWidth: '82px',
                     textAlign: 'center',
                     cursor: 'grab',
                     zIndex: isSelected ? 30 : 20,
@@ -439,9 +439,9 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
 
           {/* Bottom Destination Slots (Clean, compact, no obstruction) */}
           <div style={{
-            padding: '4px 8px', background: 'rgba(15,23,42,0.95)',
+            padding: '3px 6px', background: 'rgba(15,23,42,0.95)',
             borderTop: '1px solid rgba(255,255,255,0.12)', flexShrink: 0,
-            display: 'flex', justifyContent: 'center', gap: '4px', flexWrap: 'wrap',
+            display: 'flex', justifyContent: 'center', gap: '3px', flexWrap: 'wrap',
           }}>
             {round.slots.map(slot => {
               const filledWord = lockedSlots[slot.id];
@@ -455,39 +455,39 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
                   onDrop={(e) => handleSlotDrop(slot, e)}
                   onClick={() => handleSlotClick(slot)}
                   style={{
-                    minWidth: '68px', minHeight: '30px', padding: '2px 5px',
-                    borderRadius: '6px',
+                    minWidth: '58px', minHeight: '26px', padding: '1.5px 4px',
+                    borderRadius: '5px',
                     background: isFilled
                       ? 'linear-gradient(135deg, rgba(16,185,129,0.25), rgba(5,150,105,0.35))'
                       : isHighlightTarget
                       ? 'rgba(251,191,36,0.18)'
                       : 'rgba(255,255,255,0.06)',
                     border: isFilled
-                      ? '1.5px solid #10b981'
+                      ? '1px solid #10b981'
                       : isHighlightTarget
-                      ? '1.5px dashed #fbbf24'
+                      ? '1px dashed #fbbf24'
                       : '1px dashed rgba(255,255,255,0.25)',
                     display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                     cursor: isFilled ? 'default' : 'pointer',
-                    boxShadow: isHighlightTarget ? '0 0 8px rgba(251,191,36,0.4)' : 'none',
+                    boxShadow: isHighlightTarget ? '0 0 6px rgba(251,191,36,0.4)' : 'none',
                     transition: 'all 0.15s',
                   }}
                 >
                   <div style={{
-                    fontSize: '7.5px', color: isFilled ? '#a7f3d0' : '#94a3b8',
+                    fontSize: '6.5px', color: isFilled ? '#a7f3d0' : '#94a3b8',
                     fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.02em',
-                    marginBottom: '1px', textAlign: 'center'
+                    marginBottom: '0.5px', textAlign: 'center'
                   }}>
                     {slot.label}
                   </div>
 
                   {isFilled ? (
-                    <div style={{ fontSize: '8.5px', fontWeight: 900, color: '#ffffff', display: 'flex', alignItems: 'center', gap: '2px', textAlign: 'center' }}>
-                      <CheckCircle2 size={10} color="#34d399" />
+                    <div style={{ fontSize: '7.5px', fontWeight: 900, color: '#ffffff', display: 'flex', alignItems: 'center', gap: '2px', textAlign: 'center' }}>
+                      <CheckCircle2 size={9} color="#34d399" />
                       <span>{filledWord}</span>
                     </div>
                   ) : (
-                    <div style={{ fontSize: '7.5px', color: isHighlightTarget ? '#fbbf24' : '#64748b', fontWeight: 800 }}>
+                    <div style={{ fontSize: '6.5px', color: isHighlightTarget ? '#fbbf24' : '#64748b', fontWeight: 800 }}>
                       {isHighlightTarget ? '👉 Place' : 'Empty'}
                     </div>
                   )}

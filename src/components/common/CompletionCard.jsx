@@ -36,57 +36,57 @@ const CompletionCard = ({ stationName, nextStation, weekId, onClose }) => {
   }, [nextStation]);
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-end justify-center pointer-events-none pb-6 px-4">
-      <div className="pointer-events-auto w-full max-w-sm bg-white rounded-3xl shadow-2xl border border-emerald-200 overflow-hidden animate-slide-up">
+    <div className="fixed inset-0 z-[9999] flex items-end justify-center pointer-events-none pb-4 px-3">
+      <div className="pointer-events-auto w-full max-w-xs bg-white rounded-2xl shadow-2xl border border-emerald-200 overflow-hidden animate-slide-up">
         {/* Green header */}
-        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 px-5 py-4 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <CheckCircle size={20} className="text-white" />
+            <CheckCircle size={17} className="text-white" />
             <div>
-              <p className="text-[10px] text-emerald-100 font-bold uppercase tracking-widest">Hoàn thành!</p>
-              <p className="text-sm font-black text-white">{stationName}</p>
+              <p className="text-[9px] text-emerald-100 font-bold uppercase tracking-widest leading-none">Hoàn thành!</p>
+              <p className="text-xs font-black text-white leading-tight">{stationName}</p>
             </div>
           </div>
-          <button onClick={onClose} className="p-1.5 rounded-full hover:bg-white/20 transition-colors">
-            <X size={16} className="text-white" />
+          <button onClick={onClose} className="p-1 rounded-full hover:bg-white/20 transition-colors">
+            <X size={15} className="text-white" />
           </button>
         </div>
 
         {/* Body */}
-        <div className="px-5 py-4">
+        <div className="px-3.5 py-3">
           {nextStation ? (
             <>
-              <p className="text-xs text-gray-500 mb-1">Tiếp theo</p>
-              <div className="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 mb-4">
-                <span className="text-lg">{nextStation.emoji || '🎯'}</span>
+              <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wide mb-1">Tiếp theo</p>
+              <div className="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-2.5 py-1.5 mb-3">
+                <span className="text-base">{nextStation.emoji || '🎯'}</span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-black text-gray-800 truncate">{nextStation.title_vi || nextStation.title_en}</p>
+                  <p className="text-xs font-black text-gray-800 truncate">{nextStation.title_vi || nextStation.title_en}</p>
                 </div>
-                <span className="text-xs font-bold text-emerald-600 bg-emerald-50 rounded-lg px-2 py-0.5">
+                <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 rounded-lg px-1.5 py-0.5">
                   {countdown}s
                 </span>
               </div>
               <div className="flex gap-2">
                 <button
                   onClick={onClose}
-                  className="flex-1 py-2.5 rounded-xl border border-gray-200 text-sm font-bold text-gray-600 hover:bg-gray-50 transition-colors"
+                  className="flex-1 py-2 rounded-xl border border-gray-200 text-xs font-bold text-gray-600 hover:bg-gray-50 transition-colors"
                 >
                   Để sau
                 </button>
                 <button
                   onClick={goNext}
-                  className="flex-1 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-black flex items-center justify-center gap-1 transition-colors"
+                  className="flex-1 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-black flex items-center justify-center gap-1 transition-colors shadow-sm"
                 >
-                  Bắt đầu ngay <ChevronRight size={15} />
+                  Bắt đầu ngay <ChevronRight size={13} />
                 </button>
               </div>
             </>
           ) : (
             <>
-              <p className="text-sm text-gray-600 mb-4 font-medium">🎉 Bạn đã hoàn thành tất cả các station tuần này!</p>
+              <p className="text-xs text-gray-600 mb-3 font-medium text-center">🎉 Bạn đã hoàn thành tất cả các station tuần này!</p>
               <button
                 onClick={onClose}
-                className="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-black transition-colors"
+                className="w-full py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-black transition-colors"
               >
                 Tuyệt vời! 🏆
               </button>

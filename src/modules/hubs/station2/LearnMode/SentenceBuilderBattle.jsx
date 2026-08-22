@@ -16,6 +16,7 @@ import { renderParsedText } from '../../../../components/common/HoverWord';
 import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight, Trophy, BookOpen, Timer, Flame, Play, Pause, RotateCcw } from 'lucide-react';
 import LearnGrammarModal from '../../../../components/cambridge/LearnGrammarModal';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
+import { playButtonClick, playCorrectSound, playWrongSound, playVictoryFanfare } from '../../../../utils/soundEffects';
 
 const WEEK33_GRAMMAR_DRILLS = [
   {
@@ -121,6 +122,7 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
     const xpEarned = score > 0 ? 35 : 0; // Anti-cheat: 0 XP if AFK!
 
     if (score > 0) {
+      playVictoryFanfare();
       fireCelebrationConfetti('SentenceSmash_Victory');
       const userStore = useUserStore?.getState ? useUserStore.getState() : null;
       if (userStore?.addXP) userStore.addXP(xpEarned);
@@ -170,6 +172,7 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
 
   const handleBlockClick = (block) => {
     if (gameState !== 'playing') return;
+    playButtonClick();
     const inTarget = targetBlocks.some((b) => b.id === block.id);
     if (inTarget) {
       setTargetBlocks((prev) => prev.filter((b) => b.id !== block.id));
@@ -183,10 +186,10 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
   const handleCheckAnswer = () => {
     if (gameState !== 'playing') return;
     const userSentence = targetBlocks.map((b) => b.word).join(' ');
-    const targetWords = currentDrill.word_blocks || [];
-    const evalResult = evaluateSentenceAttempt(userSentence, targetWords);
+    const evalResult = evaluateSentenceAttempt(targetBlocks.map(b => b.word), currentDrill);
 
     if (evalResult.isCorrect) {
+      playCorrectSound();
       const nextStreak = streak + 1;
       const nextCorrect = correctCount + 1;
       setStreak(nextStreak);
@@ -210,6 +213,7 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
         }
       }, 1000);
     } else {
+      playWrongSound();
       setStreak(0);
       setFeedback({
         isCorrect: false,

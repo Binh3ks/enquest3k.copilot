@@ -354,7 +354,21 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
     } else {
       if (wordRef.current) {
         const rect = wordRef.current.getBoundingClientRect();
-        setPopupPos({ top: rect.top, left: rect.left + rect.width / 2 });
+        const popupW = Math.min(290, window.innerWidth - 32);
+        const rawLeft = rect.left + rect.width / 2;
+        const minLeft = popupW / 2 + 16;
+        const maxLeft = window.innerWidth - (popupW / 2) - 16;
+        const clampedLeft = Math.max(minLeft, Math.min(maxLeft, rawLeft));
+
+        const isNearTop = rect.top < 240;
+        const topPos = isNearTop ? rect.bottom + 10 : rect.top - 10;
+        const transformY = isNearTop ? '0%' : '-100%';
+
+        setPopupPos({
+          top: topPos,
+          left: clampedLeft,
+          transform: `translate(-50%, ${transformY})`,
+        });
       }
       setMode('open');
     }
@@ -434,10 +448,10 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
             style={{
               top: popupPos.top,
               left: popupPos.left,
-              transform: 'translate(-50%, calc(-100% - 12px))',
+              transform: popupPos.transform || 'translate(-50%, -100%)',
             }}
           >
-            <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 min-w-[220px] max-w-[300px]">
+            <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 p-3.5 sm:p-4 min-w-[240px] max-w-[290px]">
               {/* Header: word + type + audio */}
               <div className="flex items-center justify-between mb-1.5 gap-2">
                 <div className="flex items-center gap-1.5 min-w-0">
