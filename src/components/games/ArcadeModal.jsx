@@ -137,22 +137,21 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
             )}
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <button
               type="button"
               onClick={() => { toggleSfx(); playButtonClick(); }}
               title={sfxEnabled ? 'Sound Effects: Enabled' : 'Sound Effects: Muted'}
               style={{
-                minHeight: '36px', padding: '6px 10px', borderRadius: '10px',
+                width: '32px', height: '32px', minWidth: '32px', minHeight: '32px',
+                padding: 0, borderRadius: '8px',
                 background: sfxEnabled ? 'rgba(56,189,248,0.18)' : 'rgba(255,255,255,0.06)',
                 border: `1px solid ${sfxEnabled ? 'rgba(56,189,248,0.4)' : 'rgba(255,255,255,0.15)'}`,
                 color: sfxEnabled ? '#38bdf8' : '#94a3b8',
-                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px',
-                fontSize: '11px', fontWeight: 800,
+                cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}
             >
-              {sfxEnabled ? <Volume2 size={14} /> : <VolumeX size={14} />}
-              <span>{sfxEnabled ? 'SFX' : 'MUTE'}</span>
+              {sfxEnabled ? <Volume2 size={16} /> : <VolumeX size={16} />}
             </button>
 
             <button
@@ -160,24 +159,23 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
               onClick={() => { toggleBgm(); playButtonClick(); }}
               title={bgmEnabled ? 'Music: Enabled' : 'Music: Muted'}
               style={{
-                minHeight: '36px', padding: '6px 10px', borderRadius: '10px',
+                width: '32px', height: '32px', minWidth: '32px', minHeight: '32px',
+                padding: 0, borderRadius: '8px',
                 background: bgmEnabled ? 'rgba(167,139,250,0.18)' : 'rgba(255,255,255,0.06)',
                 border: `1px solid ${bgmEnabled ? 'rgba(167,139,250,0.4)' : 'rgba(255,255,255,0.15)'}`,
                 color: bgmEnabled ? '#c4b5fd' : '#94a3b8',
-                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px',
-                fontSize: '11px', fontWeight: 800,
+                cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}
             >
-              <Music size={14} />
-              <span>{bgmEnabled ? 'BGM' : 'MUTE'}</span>
+              {bgmEnabled ? <Music size={16} /> : <Music2 size={16} />}
             </button>
 
             <button
               type="button"
               onClick={onClose}
               style={{
-                minHeight: '36px', minWidth: '36px',
-                padding: '6px', borderRadius: '10px',
+                width: '32px', height: '32px', minWidth: '32px', minHeight: '32px',
+                padding: 0, borderRadius: '8px',
                 background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)',
                 color: '#94a3b8', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'
               }}
@@ -269,23 +267,22 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             {/* Audio controls */}
             <button
               type="button"
               onClick={() => { toggleSfx(); playButtonClick(); }}
               title={sfxEnabled ? 'Sound Effects: Enabled' : 'Sound Effects: Muted'}
               style={{
-                padding: '6px 10px', borderRadius: '10px',
+                width: '32px', height: '32px', minWidth: '32px', minHeight: '32px',
+                padding: 0, borderRadius: '8px',
                 background: sfxEnabled ? 'rgba(56,189,248,0.15)' : 'rgba(255,255,255,0.06)',
                 border: `1px solid ${sfxEnabled ? 'rgba(56,189,248,0.35)' : 'rgba(255,255,255,0.12)'}`,
                 color: sfxEnabled ? '#38bdf8' : '#94a3b8',
-                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px',
-                fontSize: '11px', fontWeight: 800,
+                cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}
             >
-              {sfxEnabled ? <Volume2 size={14} /> : <VolumeX size={14} />}
-              <span>{sfxEnabled ? 'SFX' : 'MUTE'}</span>
+              {sfxEnabled ? <Volume2 size={16} /> : <VolumeX size={16} />}
             </button>
 
             <button
@@ -293,35 +290,35 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
               onClick={() => { toggleBgm(); playButtonClick(); }}
               title={bgmEnabled ? 'Music: Enabled' : 'Music: Muted'}
               style={{
-                padding: '6px 10px', borderRadius: '10px',
+                width: '32px', height: '32px', minWidth: '32px', minHeight: '32px',
+                padding: 0, borderRadius: '8px',
                 background: bgmEnabled ? 'rgba(167,139,250,0.15)' : 'rgba(255,255,255,0.06)',
                 border: `1px solid ${bgmEnabled ? 'rgba(167,139,250,0.35)' : 'rgba(255,255,255,0.12)'}`,
                 color: bgmEnabled ? '#c4b5fd' : '#94a3b8',
-                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px',
-                fontSize: '11px', fontWeight: 800,
+                cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}
             >
-              <Music size={14} />
-              <span>{bgmEnabled ? 'BGM' : 'MUTE'}</span>
+              {bgmEnabled ? <Music size={16} /> : <Music2 size={16} />}
             </button>
 
             <div style={{
-              display: 'flex', alignItems: 'center', gap: '6px',
-              padding: '6px 12px', borderRadius: '10px', fontSize: '12px', fontWeight: 800,
+              display: 'flex', alignItems: 'center', gap: '4px',
+              padding: '5px 8px', borderRadius: '8px', fontSize: '11px', fontWeight: 800,
               background: isBatteryCharged ? 'rgba(52,211,153,0.12)' : 'rgba(248,113,113,0.12)',
               border: `1px solid ${isBatteryCharged ? 'rgba(52,211,153,0.3)' : 'rgba(248,113,113,0.3)'}`,
               color: isBatteryCharged ? '#34d399' : '#f87171',
             }}>
               {isBatteryCharged
-                ? <><BatteryCharging size={14} /> {effectiveOwnerBypass ? 'UNLIMITED' : `${formatEnergy(playEnergySeconds)} left`}</>
-                : <><Battery size={14} /> {Math.round((studySeconds / focusCycleReq) * 100)}% charging</>
+                ? <><BatteryCharging size={13} /> {effectiveOwnerBypass ? 'MAX' : formatEnergy(playEnergySeconds)}</>
+                : <><Battery size={13} /> {Math.round((studySeconds / focusCycleReq) * 100)}%</>
               }
             </div>
 
             <button type="button" onClick={onClose} style={{
-              padding: '7px', borderRadius: '10px',
+              width: '32px', height: '32px', minWidth: '32px', minHeight: '32px',
+              padding: 0, borderRadius: '8px',
               background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
-              color: '#64748b', cursor: 'pointer', display: 'flex', alignItems: 'center'
+              color: '#64748b', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>
               <X size={18} />
             </button>

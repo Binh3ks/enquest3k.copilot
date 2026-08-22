@@ -68,19 +68,32 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
     }));
     const rawChunks = currentRound.chunks || [...correctChunks, ...distractorChunks];
 
+    // Non-overlapping spaced spawn grid
+    const SPAWN_POINTS = [
+      { x: 4,  y: 8 },
+      { x: 38, y: 8 },
+      { x: 70, y: 8 },
+      { x: 18, y: 32 },
+      { x: 54, y: 32 },
+      { x: 36, y: 52 },
+    ];
+
     return rawChunks
       .sort(() => Math.random() - 0.5)
-      .map((c, i) => ({
-        id: `chunk_${c.slotId || 'd'}_${i}_${Math.random()}`,
-        text: c.text,
-        slotId: c.slotId,
-        placed: false,
-        x: 4 + (i % 3) * 30 + (Math.random() - 0.5) * 3,
-        y: 10 + Math.floor(i / 3) * 28 + (Math.random() - 0.5) * 3,
-        vx: (Math.random() - 0.5) * 0.14,
-        vy: (Math.random() - 0.5) * 0.14,
-        color: ['#0284c7', '#7c3aed', '#059669', '#d97706', '#dc2626'][i % 5],
-      }));
+      .map((c, i) => {
+        const pt = SPAWN_POINTS[i % SPAWN_POINTS.length];
+        return {
+          id: `chunk_${c.slotId || 'd'}_${i}_${Math.random()}`,
+          text: c.text,
+          slotId: c.slotId,
+          placed: false,
+          x: pt.x + (Math.random() - 0.5) * 2,
+          y: pt.y + (Math.random() - 0.5) * 2,
+          vx: (Math.random() - 0.5) * 0.08,
+          vy: (Math.random() - 0.5) * 0.08,
+          color: ['#0284c7', '#7c3aed', '#059669', '#d97706', '#dc2626'][i % 5],
+        };
+      });
   };
 
   const floatLoop = useCallback(() => {
@@ -91,8 +104,8 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
       let { x, y, vx, vy } = c;
       x += vx;
       y += vy;
-      if (x < 2 || x > 62) vx = -vx;
-      if (y < 6 || y > 56) vy = -vy;
+      if (x < 2 || x > 72) vx = -vx;
+      if (y < 4 || y > 56) vy = -vy;
       return { ...c, x, y, vx, vy };
     });
 
@@ -388,25 +401,27 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
                     position: 'absolute',
                     left: `${c.x}%`,
                     top: `${c.y}%`,
-                    padding: '4px 9px',
-                    borderRadius: '8px',
+                    padding: '2.5px 6px',
+                    borderRadius: '6px',
                     background: isSelected
                       ? 'linear-gradient(135deg, #fbbf24, #f59e0b)'
                       : `linear-gradient(135deg, ${c.color}, #1e293b)`,
-                    border: isSelected ? '1.5px solid #ffffff' : '1px solid rgba(255,255,255,0.3)',
+                    border: isSelected ? '1.5px solid #ffffff' : '1px solid rgba(255,255,255,0.35)',
                     boxShadow: isSelected
-                      ? '0 0 12px #fbbf24, 0 3px 8px rgba(0,0,0,0.5)'
-                      : '0 2px 6px rgba(0,0,0,0.35)',
+                      ? '0 0 10px #fbbf24, 0 2px 6px rgba(0,0,0,0.5)'
+                      : '0 1.5px 4px rgba(0,0,0,0.35)',
                     color: isSelected ? '#78350f' : '#ffffff',
-                    fontWeight: 900,
-                    fontSize: '10px',
-                    lineHeight: 1.2,
-                    maxWidth: '120px',
+                    fontWeight: 800,
+                    fontSize: '8.5px',
+                    lineHeight: 1.15,
+                    maxWidth: '92px',
+                    textAlign: 'center',
                     cursor: 'grab',
                     zIndex: isSelected ? 30 : 20,
                     transform: isSelected ? 'scale(1.05)' : 'scale(1)',
                     transition: 'transform 0.15s, box-shadow 0.15s',
-                    whiteSpace: 'nowrap',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
                   }}
                 >
                   {c.text}
@@ -424,9 +439,9 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
 
           {/* Bottom Destination Slots (Clean, compact, no obstruction) */}
           <div style={{
-            padding: '6px 10px', background: 'rgba(15,23,42,0.94)',
+            padding: '4px 8px', background: 'rgba(15,23,42,0.95)',
             borderTop: '1px solid rgba(255,255,255,0.12)', flexShrink: 0,
-            display: 'flex', justifyContent: 'center', gap: '6px', flexWrap: 'wrap',
+            display: 'flex', justifyContent: 'center', gap: '4px', flexWrap: 'wrap',
           }}>
             {round.slots.map(slot => {
               const filledWord = lockedSlots[slot.id];
@@ -440,8 +455,8 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
                   onDrop={(e) => handleSlotDrop(slot, e)}
                   onClick={() => handleSlotClick(slot)}
                   style={{
-                    minWidth: '82px', minHeight: '36px', padding: '3px 6px',
-                    borderRadius: '8px',
+                    minWidth: '68px', minHeight: '30px', padding: '2px 5px',
+                    borderRadius: '6px',
                     background: isFilled
                       ? 'linear-gradient(135deg, rgba(16,185,129,0.25), rgba(5,150,105,0.35))'
                       : isHighlightTarget
@@ -454,25 +469,25 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
                       : '1px dashed rgba(255,255,255,0.25)',
                     display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                     cursor: isFilled ? 'default' : 'pointer',
-                    boxShadow: isHighlightTarget ? '0 0 10px rgba(251,191,36,0.4)' : 'none',
+                    boxShadow: isHighlightTarget ? '0 0 8px rgba(251,191,36,0.4)' : 'none',
                     transition: 'all 0.15s',
                   }}
                 >
                   <div style={{
-                    fontSize: '8px', color: isFilled ? '#a7f3d0' : '#94a3b8',
-                    fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.04em',
+                    fontSize: '7.5px', color: isFilled ? '#a7f3d0' : '#94a3b8',
+                    fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.02em',
                     marginBottom: '1px', textAlign: 'center'
                   }}>
                     {slot.label}
                   </div>
 
                   {isFilled ? (
-                    <div style={{ fontSize: '10px', fontWeight: 900, color: '#ffffff', display: 'flex', alignItems: 'center', gap: '2px' }}>
-                      <CheckCircle2 size={11} color="#34d399" />
+                    <div style={{ fontSize: '8.5px', fontWeight: 900, color: '#ffffff', display: 'flex', alignItems: 'center', gap: '2px', textAlign: 'center' }}>
+                      <CheckCircle2 size={10} color="#34d399" />
                       <span>{filledWord}</span>
                     </div>
                   ) : (
-                    <div style={{ fontSize: '9px', color: isHighlightTarget ? '#fbbf24' : '#64748b', fontWeight: 800 }}>
+                    <div style={{ fontSize: '7.5px', color: isHighlightTarget ? '#fbbf24' : '#64748b', fontWeight: 800 }}>
                       {isHighlightTarget ? '👉 Place' : 'Empty'}
                     </div>
                   )}

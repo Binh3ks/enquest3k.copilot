@@ -295,3 +295,24 @@ export function playVictoryFanfare() {
     });
   } catch (_) {}
 }
+
+/**
+ * 9. Global Click Sound Listener
+ * Attaches delegated click listener so interactive buttons across all tasks & stations produce tactile audio feedback.
+ */
+let isGlobalClickInstalled = false;
+
+export function initGlobalClickSound() {
+  if (typeof window === 'undefined' || isGlobalClickInstalled) return;
+  isGlobalClickInstalled = true;
+
+  document.addEventListener('pointerdown', (e) => {
+    try {
+      const interactiveEl = e.target?.closest?.('button, [role="button"], a, input[type="button"], input[type="submit"], [data-clickable="true"]');
+      if (interactiveEl && !interactiveEl.hasAttribute('data-no-click-sound')) {
+        playButtonClick();
+      }
+    } catch (_) {}
+  }, { passive: true });
+}
+

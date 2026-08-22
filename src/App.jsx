@@ -14,6 +14,7 @@ import { MODULE_COMPONENTS, STATIONS, TAB_TO_STATION_ID, STATION_ID_TO_TAB } fro
 // UTILS & COMPONENTS
 import { useFetchWeekData, useStationData } from './utils/dataHooks';
 import { loadVoices } from './utils/AudioHelper'; // Import loadVoices
+import { initGlobalClickSound } from './utils/soundEffects';
 import { replayJournal, installUnloadFlush, recoverFromLocalStorage } from './utils/progressBackup';
 import { TTSWeekPrefetch } from './services/ttsWeekPrefetch'; // Week-wide TTS prefetch
 import LoginScreen from './components/auth/LoginScreen';
@@ -233,6 +234,7 @@ const App = () => {
   const [isSandboxQAOpen, setIsSandboxQAOpen] = useState(false);
 
   useEffect(() => {
+    initGlobalClickSound();
     window.__openSandboxQA = () => setIsSandboxQAOpen(true);
   }, []);
 
