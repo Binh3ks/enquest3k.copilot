@@ -1,17 +1,17 @@
 # 🤝 Session Handoff Report
-**Date**: 12:53:29 22/8/2026
+**Date**: 13:40:33 22/8/2026
 **Branch**: `main`
-**Latest Commit**: `20b038a3 fix(voice-shadow): unify model audio stream and sync karaoke highlight to onPlayStart event`
+**Latest Commit**: `1eeaf63c fix(voice-shadow): add telemetry instrumentation, complete unmount resource teardown, and double-tap mutex guard`
 
 ---
 
 ## 1. 📌 Executive Summary
-fix(voice-shadow): unify model audio stream and sync karaoke highlight to onPlayStart event
+fix(voice-shadow): add telemetry instrumentation, complete unmount resource teardown, and double-tap mutex guard
 
 ---
 
 ## 2. ✅ Work Completed in This Session
-- **Commits & Fixes**: `20b038a3 fix(voice-shadow): unify model audio stream and sync karaoke highlight to onPlayStart event`
+- **Commits & Fixes**: `1eeaf63c fix(voice-shadow): add telemetry instrumentation, complete unmount resource teardown, and double-tap mutex guard`
 - **File System State**:
   - `?? .agents/handoffs/handoff_2026-08-22T02-03-16-654Z.md`
   - `?? .agents/handoffs/handoff_2026-08-22T02-08-54-513Z.md`
@@ -28,6 +28,7 @@ fix(voice-shadow): unify model audio stream and sync karaoke highlight to onPlay
   - `?? .agents/handoffs/handoff_2026-08-22T05-01-28-387Z.md`
   - `?? .agents/handoffs/handoff_2026-08-22T05-17-58-342Z.md`
   - `?? .agents/handoffs/handoff_2026-08-22T05-44-16-501Z.md`
+  - `?? .agents/handoffs/handoff_2026-08-22T05-53-29-266Z.md`
 
 ---
 
@@ -39,7 +40,7 @@ fix(voice-shadow): unify model audio stream and sync karaoke highlight to onPlay
 
 ## 4. 🧪 System Verification Status
 - **Git Branch**: `main`
-- **Uncommitted Files**: 15
+- **Uncommitted Files**: 16
 
 ---
 
