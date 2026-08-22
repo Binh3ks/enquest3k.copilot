@@ -1604,7 +1604,7 @@ export const VoiceService = {
 
     return new Promise((resolve, reject) => {
       let started = false;
-      const handleStart = () => {
+      const handlePlaying = () => {
         if (!started) {
           started = true;
           if (onPlayStart) {
@@ -1613,14 +1613,16 @@ export const VoiceService = {
         }
       };
 
-      audio.addEventListener('playing', handleStart, { once: true });
-      audio.addEventListener('play', handleStart, { once: true });
+      // 🎯 STRICT: Only listen to 'playing' (sound actually outputting to speaker/headphones)
+      // DO NOT listen to 'play' because 'play' fires optimistically before sound emits
+      audio.addEventListener('playing', handlePlaying, { once: true });
 
       audio.onended = () => {
         if (this._currentAudio === audio) this._currentAudio = null;
         if (revokeAfter) URL.revokeObjectURL(audioUrl);
         resolve();
       };
+
       audio.onerror = (err) => {
         if (this._currentAudio === audio) this._currentAudio = null;
         if (revokeAfter) URL.revokeObjectURL(audioUrl);
@@ -1628,20 +1630,46 @@ export const VoiceService = {
           reject(new Error('Audio playback failed'));
           return;
         }
-        console.warn('[TTS] ⚠️ Audio playback error, triggering browser Web Speech fallback...');
+        console.warn(`[TTS Telemetry] ⚠️ Audio playback error [err=${err?.message || 'unknown'}], triggering Web Speech fallback...`);
         this.webFallback(this._lastText || '');
         resolve();
       };
+
       audio.play().catch((err) => {
-        if (this._currentAudio === audio) this._currentAudio = null;
-        if (revokeAfter) URL.revokeObjectURL(audioUrl);
-        if (throwOnError) {
-          reject(err);
-          return;
+        const errName = err?.name || 'Error';
+        console.warn(`[TTS Telemetry] ⚠️ Audio play() rejected [name=${errName}, message=${err?.message}]`);
+
+        // 🔄 SMART RETRY: If AbortError (Audio Focus switched by mic initialization), retry once after 150ms
+        if (errName === 'AbortError') {
+          console.log('[TTS Telemetry] ⏳ AbortError detected (Audio Focus switch) -> Retrying play() in 150ms...');
+          setTimeout(() => {
+            if (this._currentAudio !== audio) return; // Superceded by another playback
+            // Re-register playing listener in case previous one was consumed or dropped
+            audio.removeEventListener('playing', handlePlaying);
+            audio.addEventListener('playing', handlePlaying, { once: true });
+
+            audio.play().then(() => {
+              console.log('[TTS Telemetry] ✅ Audio play() retry SUCCESSFUL after Audio Focus switch');
+            }).catch((retryErr) => {
+              console.warn(`[TTS Telemetry] ⚠️ Audio play() retry failed [name=${retryErr?.name}], falling back to Web Speech...`);
+              if (this._currentAudio === audio) this._currentAudio = null;
+              if (revokeAfter) URL.revokeObjectURL(audioUrl);
+              this.webFallback(this._lastText || '');
+              resolve();
+            });
+          }, 150);
+        } else {
+          // Fatal errors (NotAllowedError, NotSupportedError...) -> Immediate fallback
+          if (this._currentAudio === audio) this._currentAudio = null;
+          if (revokeAfter) URL.revokeObjectURL(audioUrl);
+          if (throwOnError) {
+            reject(err);
+            return;
+          }
+          console.warn(`[TTS Telemetry] ⚠️ Fatal audio error [name=${errName}], falling back to Web Speech...`);
+          this.webFallback(this._lastText || '');
+          resolve();
         }
-        console.warn('[TTS] ⚠️ Audio play() rejected, triggering browser Web Speech fallback...');
-        this.webFallback(this._lastText || '');
-        resolve();
       });
     });
   },
