@@ -62,7 +62,26 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
 #### Precedents từ W33 Golden Master (Commit 44c1cf13 → 60923a4e → ...):
 - BUG-1: `targetText` declared in map object nhưng không extract thành `const` → dùng `undefined` → sai 100%
 - BUG-2: `logAttempt` gọi kể cả `isAttempted: false` → data rác analytics
-- R-1: `textToEval.trim().length > 3` bypass trong Check Mode → học sinh gõ `asdf` pass → đã sửa thành `isStrictPass || isLenientPass`
+## 🏰 MASTER 15-TASK / 4-HUB ARCHITECTURE INVARIANT (W33+) — 2026-08-22
+**QUY TẮC BẤT BIẾN DUY NHẤT VỀ CẤU TRÚC TUẦN HỌC (W33+):**
+1. **Kiến trúc Duy nhất & Mới nhất**:
+   - Từ Tuần 33 trở đi, hệ thống **CHỈ HOẠT ĐỘNG TRÊN 15 TASKS / GEARS** phân bổ qua **5 Ngày học (4 Hubs / 4 Zones)** theo `src/config/questSchedule.js`.
+   - **4 Hub Dữ liệu Duy nhất per Week**:
+     - `reading_hub.js` (Zone 1 & 4: Scene Explorer, Voice Shadow, Story Retell, Fact Finder, Reading Shield)
+     - `listening_hub.js` (Zone 2 & 4: Action Lab, Speed Match, Grammar Duel, Math Quest, Listening Shield)
+     - `writing_hub.js` (Zone 3 & 4: Story Writer P7, Reading & Writing Shield)
+     - `speaking_hub.js` (Zone 3 & 4: Video Challenge, Info Exchange P2, Speaking & Passport)
+2. **CẤM TUYỆT ĐỐI Các Station Cũ (Legacy Prohibited)**:
+   - Nghiêm cấm tạo mới hoặc phụ thuộc vào các file rác cũ như `explore.js`, `logic_lab.js`, `daily_watch.js`, `dictation.js` như một nguồn nội dung độc lập.
+   - Mọi câu hỏi, bài đọc, từ vựng và bài tập **BẮT BUỘC chỉ nằm trong 4 Hubs và 15 Quests**.
+3. **Bảng 15 Quests / Gears Tiêu Chuẩn**:
+   - **Day 1 (Story World — Zone 1)**: `gear1_webtoon` (Scene Explorer), `gear2_karaoke` (Voice Shadow), `gear3_retell` (Story Retell)
+   - **Day 2 (Knowledge Lab — Zones 1, 2, 3)**: `gear4_clil` (Fact Finder), `science_lab` (Action Lab), `science_report` (Discovery Report)
+   - **Day 3 (Battle Arena — Zone 2)**: `word_blitz` (Speed Match), `sentence_smash` (Grammar Duel), `math_quest` (Math Quest)
+   - **Day 4 (Creator Studio — Zone 3)**: `story_writer` (Story Writer), `broadcast_studio` (Video Challenge), `info_exchange` (Info Exchange)
+   - **Day 5 (Boss Castle — Zone 4)**: `boss_listening` (Listening Shield), `boss_reading` (Reading & Writing Shield), `weekly_review` (Speaking & Passport)
+4. **Quy trình Audit & Kiểm duyệt**:
+   - Mọi công cụ audit (`cefr_curriculum_guard.mjs`, `audit_all_w33_tasks.mjs`) BẮT BUỘC chỉ quét và xác thực 4 Hubs và 15 Quests này.
 
 ## 🎓 Master Curriculum CEFR Staging & Vocabulary Standard (W01–W156) — 2026-08-22
 **BẮT BUỘC áp dụng cho toàn bộ các tuần biên soạn và kiểm thử:**

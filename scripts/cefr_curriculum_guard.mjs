@@ -120,7 +120,12 @@ async function auditWeekFiles(dirPath, modeLabel) {
     return { errors: 0, warnings: 0 };
   }
 
-  const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.js') && !f.endsWith('.bak'));
+  const HUB_FILES = ['reading_hub.js', 'listening_hub.js', 'writing_hub.js', 'speaking_hub.js'];
+  const allFiles = fs.readdirSync(dirPath).filter(f => f.endsWith('.js') && !f.endsWith('.bak'));
+  const files = targetWeek >= 33 
+    ? allFiles.filter(f => HUB_FILES.includes(f))
+    : allFiles;
+
   let totalErrors = 0;
   let totalWarnings = 0;
 
