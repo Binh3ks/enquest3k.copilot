@@ -497,7 +497,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         if (e.data && e.data.size > 0) sentenceChunksRef.current.push(e.data);
       };
 
-      recorder.onstop = () => {
+      recorder.onstop = async () => {
         if (playbackId !== currentPlaybackId.current) return;
         const durationMs = Date.now() - recordStartTime;
         setShadowingKaraokeIdx(null);
@@ -530,6 +530,34 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
           return;
         }
 
+        // 🎙️ Voice Activity Detection (VAD) & Silence Analysis via AudioContext Energy
+        let rms = 0;
+        let speechSamples = 0;
+        let totalSamples = 0;
+        try {
+          const arrayBuffer = await audioBlob.arrayBuffer();
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) {
+            const ctx = new AudioCtx();
+            const decoded = await ctx.decodeAudioData(arrayBuffer);
+            const channelData = decoded.getChannelData(0);
+            totalSamples = channelData.length;
+            let sumSquares = 0;
+            for (let i = 0; i < channelData.length; i++) {
+              const s = channelData[i];
+              sumSquares += s * s;
+              if (Math.abs(s) > 0.03) speechSamples++;
+            }
+            rms = Math.sqrt(sumSquares / Math.max(1, totalSamples));
+            try { ctx.close(); } catch (_) {}
+          }
+        } catch (vadErr) {
+          console.warn('[VAD] Audio energy detection fallback:', vadErr);
+        }
+
+        const speechRatio = totalSamples > 0 ? (speechSamples / totalSamples) : 0;
+        const isSilent = (totalSamples > 0 && (rms < 0.012 || speechRatio < 0.03));
+
         // Grade based on syntax word-order & sequence vs target sentence
         const spokenText = (recognizedTranscriptRef.current[idx] || '').trim();
         const hasLiveTranscript = spokenText.length > 0;
@@ -538,18 +566,20 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         let feedback = '';
         let displaySpoken = spokenText;
 
-        if (hasLiveTranscript) {
+        if (isSilent) {
+          // 🚫 Silence guard: Student did not speak into the mic
+          score = 0;
+          feedback = '⚠️ No speech detected. Please speak clearly into your mic!';
+          displaySpoken = '(No voice detected)';
+        } else if (hasLiveTranscript) {
           const evalResult = evaluateSpeechSyntax(spokenText, targetSentence, { mode: 'shadowing', minWords: 1 });
           score = evalResult.score;
           feedback = evalResult.feedback ? `Accuracy: ${score}% — ${evalResult.feedback}` : `Accuracy: ${score}%`;
-        } else if (audioBlob.size > 1500 && durationMs >= 1000) {
-          // Mobile Fallback: Student recorded real audio, but iOS/mobile WebKit doesn't support simultaneous Web Speech API
-          const targetWordCount = targetSentence.split(/\s+/).length;
-          const expectedMs = targetWordCount * 300;
-          const ratio = durationMs / Math.max(1200, expectedMs);
-          score = (ratio >= 0.5 && ratio <= 2.5) ? 85 : 75;
-          feedback = `✨ Voice Shadow recorded! Tap 'Play My Voice' to listen & compare.`;
-          displaySpoken = `(Recorded: ${(durationMs / 1000).toFixed(1)}s audio)`;
+        } else if (audioBlob.size > 1500 && durationMs >= 1000 && !isSilent) {
+          // 🎙️ Real human voice energy detected on mobile
+          score = 75;
+          feedback = `🎙️ Voice recorded! Tap 'Play My Voice' to listen & compare with model voice.`;
+          displaySpoken = `(Recorded: ${(durationMs / 1000).toFixed(1)}s voice)`;
         } else {
           score = 0;
           feedback = '⚠️ No voice recorded. Please speak clearly into your mic!';
@@ -560,14 +590,14 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
           ...prev,
           [idx]: {
             isRecording: false,
-            audioUrl,
+            audioUrl: score > 0 ? audioUrl : null,
             score,
             spokenText: displaySpoken,
             feedback
           }
         }));
 
-        if (score >= 60) {
+        if (score >= 70) {
           fireCelebrationConfetti('Sentence_Shadow_Complete');
         }
       };
