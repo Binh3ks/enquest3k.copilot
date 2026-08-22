@@ -115,7 +115,7 @@ export default {
   },
   {
     "word": "rules",
-    "definition_en": "instructions stating what is allowed or forbidden",
+    "definition_en": "instructions telling people what they must or must not do",
     "definition_vi": "quy tắc",
     "example": "Always obey the school safety rules.",
     "ipa": "/ruːlz/"

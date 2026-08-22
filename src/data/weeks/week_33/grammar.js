@@ -2,7 +2,7 @@
 export default {
   title: "Past Continuous with WHILE & Irregular Verbs Group 5",
   focus: "While + Past Continuous (was/were + V-ing), Past Simple occurred.",
-  rule_en: "Use 'While' to introduce a long background action in Past Continuous, interrupted by a shorter action in Past Simple.",
+  rule_en: "Use 'While' with Past Continuous for a long action, interrupted by Past Simple.",
   rule_vi: "Dùng 'While' để mô tả một hành động kéo dài ở Quá khứ Tiếp diễn, bị ngắt lời bởi một hành động ngắn ở Quá khứ Đơn.",
   examples: [
     "While Jake was walking down the corridor, a boy slipped.",

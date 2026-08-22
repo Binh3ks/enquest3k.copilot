@@ -64,6 +64,21 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
 - BUG-2: `logAttempt` gọi kể cả `isAttempted: false` → data rác analytics
 - R-1: `textToEval.trim().length > 3` bypass trong Check Mode → học sinh gõ `asdf` pass → đã sửa thành `isStrictPass || isLenientPass`
 
+## 🎓 Master Curriculum CEFR Staging & Vocabulary Standard (W01–W156) — 2026-08-22
+**BẮT BUỘC áp dụng cho toàn bộ các tuần biên soạn và kiểm thử:**
+1. **Stage 1 (Weeks 01 – 72) — Cambridge Young Learners (Pre-A1 Starters $\rightarrow$ A1 Movers $\rightarrow$ A2 Flyers / KET)**:
+   - **Độ tuổi mục tiêu**: Tiểu học (7–10 tuổi).
+   - **Khung Từ Vựng**: 100% từ vựng phải nằm trong bộ từ chuẩn Cambridge Starters, Movers, Flyers, KET (`starters_pre_a1.json`, `movers_a1.json`, `flyers_a2.json`, `ket_a2.json`).
+   - **CẤM TUYỆT ĐỐI Thuật ngữ Học thuật B2/C1**: Nghiêm cấm dùng các từ quá tải như `lubricant`, `kinetic momentum`, `thermal radiation`, `anachronism`, `mechanism`, `sterile`, `prohibit`, `forbid`, `predominantly`, `consequently`, `furthermore`, `moreover`, `whereby`.
+   - **Độ phức tạp câu**: Tối đa 1–2 mệnh đề per câu (độ dài $\le 22$ từ). Câu văn phải trực quan, tự nhiên, đậm chất storytelling thiếu nhi.
+   - **Discovery Report Scaffold**: Bắt buộc cung cấp câu mồi đơn giản (*Starters*) và các thẻ từ gợi ý (*1-Tap Word Pills*) để học sinh chạm chọn ghép câu dễ dàng, không gây nản lòng (*Zero-Friction Scaffolding*).
+2. **Stage 2 (Weeks 73 – 156) — Cambridge Lower Secondary & PET/FCE (B1 Preliminary $\rightarrow$ B1+ $\rightarrow$ B2 First)**:
+   - **Độ tuổi mục tiêu**: THCS & Nâng cao (11–15 tuổi).
+   - **Khung Từ Vựng**: Bổ sung kho từ B1/B2 (`pet_b1.json`, `fce_b2.json`, Academic Word List cơ bản).
+   - **Khung Ngữ Pháp**: Mở rộng Passive Voice, Conditionals loại 2/3, Mệnh đề quan hệ nâng cao, Báo cáo khoa học phân tích chuyên sâu.
+3. **Automated Pre-Commit Gatekeeper**:
+   - Chạy `npm run audit:cefr <weekNum>` (`node scripts/cefr_curriculum_guard.mjs <weekNum>`) trước khi commit để đảm bảo **0 lỗi vi phạm CEFR** và **0 lỗi từ vựng vượt cấp**.
+
 ## 🏆 Cambridge A2 Flyers 4-Skills Master Blueprint Standard — 2026-08-17
 **Áp dụng bắt buộc cho toàn bộ các tuần từ W33 đến W72 theo `CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md`:**
 1. **Listening (5 Parts)**: Đầy đủ Rubric dẫn đề, Example exchange, 5 Test items, phân bổ đa giọng (Nova `Journey-F`, Girl `Journey-F`, Boy `Journey-D`, Man `Neural2-D`, Woman `Neural2-F`). Part 4 bắt buộc nhắc đủ 3 tranh A, B, C kèm distractors.
