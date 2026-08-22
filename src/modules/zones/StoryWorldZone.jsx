@@ -60,17 +60,36 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   const recognizedTranscriptRef = useRef({});
   const karaokeIntervalRef = useRef(null);
 
-  // Clean up timers & media streams on unmount
+  // Clean up timers & media streams on unmount (prevent mic privacy indicator leak)
   useEffect(() => {
     return () => {
       if (karaokeIntervalRef.current) {
         clearInterval(karaokeIntervalRef.current);
+        karaokeIntervalRef.current = null;
       }
       if (sentenceStreamRef.current) {
         sentenceStreamRef.current.getTracks().forEach(track => track.stop());
+        sentenceStreamRef.current = null;
+      }
+      if (sentenceMediaRecorderRef.current && sentenceMediaRecorderRef.current.state !== 'inactive') {
+        try { sentenceMediaRecorderRef.current.stop(); } catch (_) {}
+        sentenceMediaRecorderRef.current = null;
       }
       if (sentenceSpeechRecRef.current) {
         try { sentenceSpeechRecRef.current.stop(); } catch (_) {}
+        sentenceSpeechRecRef.current = null;
+      }
+      if (retellStreamRef.current) {
+        retellStreamRef.current.getTracks().forEach(track => track.stop());
+        retellStreamRef.current = null;
+      }
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+        try { mediaRecorderRef.current.stop(); } catch (_) {}
+        mediaRecorderRef.current = null;
+      }
+      if (retellSpeechRecRef.current) {
+        try { retellSpeechRecRef.current.stop(); } catch (_) {}
+        retellSpeechRecRef.current = null;
       }
       try { VoiceService.pauseTTS(); } catch (_) {}
     };
@@ -193,8 +212,8 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     }
   }, [currentGear, weekNumber, forcedGear]);
 
-  // Word-by-Word Karaoke Highlighting Simulation
-  const handleSpeakSentence = (sentenceText, idx) => {
+  // Word-by-Word Karaoke Highlighting Simulation (Linear Pacing Heuristic)
+  const handleSpeakSentence = (sentenceText, idx, originTimestamp = null) => {
     setActiveSentenceIdx(idx);
     setActiveWordIdx(0);
 
@@ -218,12 +237,17 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
     // Synchronized Karaoke Highlight: Only start ticking when the audio ACTUALLY begins producing sound!
     const onPlayStart = ({ duration } = {}) => {
+      const startT = performance.now();
+      if (originTimestamp) {
+        console.log(`[VoiceShadow Telemetry] 🔊 [T=+${(startT - originTimestamp).toFixed(1)}ms] Audio playback actually started (reported duration: ${duration ? duration.toFixed(2) + 's' : 'N/A'})`);
+      }
       if (karaokeIntervalRef.current) {
         clearInterval(karaokeIntervalRef.current);
         karaokeIntervalRef.current = null;
       }
       setActiveWordIdx(0);
 
+      // Linear word pacing approximation based on actual duration
       const totalDurationMs = (duration && duration > 0.5) ? (duration * 1000) : (words.length * 320);
       const msPerWord = Math.max(180, Math.min(600, Math.floor(totalDurationMs / Math.max(1, words.length))));
 
@@ -264,8 +288,30 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
   // Gear 2: Shadowing = Instant Model Audio + Parallel Mic Recording (Exact Same Audio Path)
   const startSentenceShadowing = async (idx, targetSentence) => {
+    const t0 = performance.now();
+    console.log(`[VoiceShadow Telemetry] 🚀 [T=0.0ms] User clicked Voice Shadow (sentenceIdx=${idx})`);
+
+    // 0. Double-tap / Race-condition guard: Abort and release any ongoing recording or playback immediately
+    if (karaokeIntervalRef.current) {
+      clearInterval(karaokeIntervalRef.current);
+      karaokeIntervalRef.current = null;
+    }
+    if (sentenceStreamRef.current) {
+      sentenceStreamRef.current.getTracks().forEach(track => track.stop());
+      sentenceStreamRef.current = null;
+    }
+    if (sentenceMediaRecorderRef.current && sentenceMediaRecorderRef.current.state !== 'inactive') {
+      try { sentenceMediaRecorderRef.current.stop(); } catch (_) {}
+      sentenceMediaRecorderRef.current = null;
+    }
+    if (sentenceSpeechRecRef.current) {
+      try { sentenceSpeechRecRef.current.stop(); } catch (_) {}
+      sentenceSpeechRecRef.current = null;
+    }
+    try { VoiceService.pauseTTS(); } catch (_) {}
+
     // 1. Trigger the exact same model audio & synchronized karaoke highlight IMMEDIATELY (0ms wait!)
-    handleSpeakSentence(targetSentence, idx);
+    handleSpeakSentence(targetSentence, idx, t0);
     setShadowingKaraokeIdx(idx);
 
     const recordStartTime = Date.now();
@@ -278,6 +324,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
     try {
       // 2. Initialize microphone in background without delaying model audio
+      const micStartT = performance.now();
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: {
           echoCancellation: true,
@@ -285,6 +332,8 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
           autoGainControl: true
         }
       });
+      const micReadyT = performance.now();
+      console.log(`[VoiceShadow Telemetry] 🎙️ [T=+${(micReadyT - t0).toFixed(1)}ms] Mic stream active (took ${(micReadyT - micStartT).toFixed(1)}ms, tracks=${stream.getAudioTracks().length})`);
       sentenceStreamRef.current = stream;
 
       let mimeType = '';
@@ -407,8 +456,9 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
       // 4. Start MediaRecorder
       recorder.start(100);
+      console.log(`[VoiceShadow Telemetry] ⏺️ [T=+${(performance.now() - t0).toFixed(1)}ms] MediaRecorder active`);
     } catch (err) {
-      console.warn("Mic unavailable for shadowing:", err);
+      console.warn("[VoiceShadow] Mic initialization error:", err);
     }
   };
 
