@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { X, BatteryCharging, Battery, Trophy, Lock, ArrowLeft, ShieldAlert, Sparkles, Check } from 'lucide-react';
+import { X, BatteryCharging, Battery, Trophy, Lock, ArrowLeft, ShieldAlert, Sparkles, Check, Volume2, VolumeX, Music, Music2 } from 'lucide-react';
 import useArcadeStore, { ARCADE_GAME_CATALOG, getUnlockedGameCount, getFocusCycleSeconds } from '../../stores/useArcadeStore';
 import { useUserStore } from '../../stores/useUserStore';
+import { startArcadeBgm, stopArcadeBgm } from '../../utils/arcadeBgm';
+import { playButtonClick } from '../../utils/soundEffects';
 import BubblePopGame from './BubblePopGame';
 import MeteorSmasherGame from './MeteorSmasherGame';
 import PhysicsDriftGame from './PhysicsDriftGame';
@@ -14,6 +16,10 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
     highScores,
     bestReactionTimes = {},
     bestSpeedrunTimes = {},
+    sfxEnabled = true,
+    bgmEnabled = true,
+    toggleSfx,
+    toggleBgm,
   } = useArcadeStore();
 
   const currentUser = useUserStore(state => state.currentUser);
@@ -23,6 +29,18 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
   const [isOwnerModeActive, setIsOwnerModeActive] = useState(() => {
     return ownerBypass || isAutoStaff || localStorage.getItem('arcade_owner_bypass') === 'true';
   });
+
+  // Start / Stop Arcade BGM based on modal visibility and user preference
+  useEffect(() => {
+    if (isOpen && bgmEnabled) {
+      startArcadeBgm();
+    } else {
+      stopArcadeBgm();
+    }
+    return () => {
+      stopArcadeBgm();
+    };
+  }, [isOpen, bgmEnabled]);
 
   // Sync if prop or user role updates
   useEffect(() => {
@@ -118,18 +136,55 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
               </span>
             )}
           </div>
-          <button
-            type="button"
-            onClick={onClose}
-            style={{
-              minHeight: '44px', minWidth: '44px',
-              padding: '8px', borderRadius: '12px',
-              background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)',
-              color: '#94a3b8', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'
-            }}
-          >
-            <X size={20} />
-          </button>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <button
+              type="button"
+              onClick={() => { toggleSfx(); playButtonClick(); }}
+              title={sfxEnabled ? 'Sound Effects: Enabled' : 'Sound Effects: Muted'}
+              style={{
+                minHeight: '36px', padding: '6px 10px', borderRadius: '10px',
+                background: sfxEnabled ? 'rgba(56,189,248,0.18)' : 'rgba(255,255,255,0.06)',
+                border: `1px solid ${sfxEnabled ? 'rgba(56,189,248,0.4)' : 'rgba(255,255,255,0.15)'}`,
+                color: sfxEnabled ? '#38bdf8' : '#94a3b8',
+                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px',
+                fontSize: '11px', fontWeight: 800,
+              }}
+            >
+              {sfxEnabled ? <Volume2 size={14} /> : <VolumeX size={14} />}
+              <span>{sfxEnabled ? 'SFX' : 'MUTE'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => { toggleBgm(); playButtonClick(); }}
+              title={bgmEnabled ? 'Music: Enabled' : 'Music: Muted'}
+              style={{
+                minHeight: '36px', padding: '6px 10px', borderRadius: '10px',
+                background: bgmEnabled ? 'rgba(167,139,250,0.18)' : 'rgba(255,255,255,0.06)',
+                border: `1px solid ${bgmEnabled ? 'rgba(167,139,250,0.4)' : 'rgba(255,255,255,0.15)'}`,
+                color: bgmEnabled ? '#c4b5fd' : '#94a3b8',
+                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px',
+                fontSize: '11px', fontWeight: 800,
+              }}
+            >
+              <Music size={14} />
+              <span>{bgmEnabled ? 'BGM' : 'MUTE'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={onClose}
+              style={{
+                minHeight: '36px', minWidth: '36px',
+                padding: '6px', borderRadius: '10px',
+                background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)',
+                color: '#94a3b8', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'
+              }}
+            >
+              <X size={18} />
+            </button>
+          </div>
         </div>
 
         {/* Full-height game area */}
@@ -214,7 +269,42 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            {/* Audio controls */}
+            <button
+              type="button"
+              onClick={() => { toggleSfx(); playButtonClick(); }}
+              title={sfxEnabled ? 'Sound Effects: Enabled' : 'Sound Effects: Muted'}
+              style={{
+                padding: '6px 10px', borderRadius: '10px',
+                background: sfxEnabled ? 'rgba(56,189,248,0.15)' : 'rgba(255,255,255,0.06)',
+                border: `1px solid ${sfxEnabled ? 'rgba(56,189,248,0.35)' : 'rgba(255,255,255,0.12)'}`,
+                color: sfxEnabled ? '#38bdf8' : '#94a3b8',
+                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px',
+                fontSize: '11px', fontWeight: 800,
+              }}
+            >
+              {sfxEnabled ? <Volume2 size={14} /> : <VolumeX size={14} />}
+              <span>{sfxEnabled ? 'SFX' : 'MUTE'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => { toggleBgm(); playButtonClick(); }}
+              title={bgmEnabled ? 'Music: Enabled' : 'Music: Muted'}
+              style={{
+                padding: '6px 10px', borderRadius: '10px',
+                background: bgmEnabled ? 'rgba(167,139,250,0.15)' : 'rgba(255,255,255,0.06)',
+                border: `1px solid ${bgmEnabled ? 'rgba(167,139,250,0.35)' : 'rgba(255,255,255,0.12)'}`,
+                color: bgmEnabled ? '#c4b5fd' : '#94a3b8',
+                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px',
+                fontSize: '11px', fontWeight: 800,
+              }}
+            >
+              <Music size={14} />
+              <span>{bgmEnabled ? 'BGM' : 'MUTE'}</span>
+            </button>
+
             <div style={{
               display: 'flex', alignItems: 'center', gap: '6px',
               padding: '6px 12px', borderRadius: '10px', fontSize: '12px', fontWeight: 800,
@@ -227,6 +317,7 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
                 : <><Battery size={14} /> {Math.round((studySeconds / focusCycleReq) * 100)}% charging</>
               }
             </div>
+
             <button type="button" onClick={onClose} style={{
               padding: '7px', borderRadius: '10px',
               background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',

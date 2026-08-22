@@ -4,6 +4,8 @@ import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
 import { speakText } from '../../utils/AudioHelper';
 import { VoiceService } from '../../services/voiceService';
+import { playLaserSound, playCorrectSound, playWrongSound, playVictoryFanfare, playButtonClick } from '../../utils/soundEffects';
+import { duckArcadeBgm } from '../../utils/arcadeBgm';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
@@ -65,6 +67,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
 
     try { VoiceService.stop(); } catch (_) {}
     try { window.speechSynthesis?.cancel(); } catch (_) {}
+    duckArcadeBgm(2500);
 
     speakText(def, null, 0.90, null, 'explore', weekNumber);
   }, [weekNumber]);
@@ -212,6 +215,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
   }, [recordHighScore, recordSpeedrunTime]);
 
   const startGame = () => {
+    playButtonClick();
     scoreRef.current = 0;
     shieldsRef.current = 3;
     meteorsSmashedRef.current = 0;
@@ -244,6 +248,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
   // Fire laser with rotating cannon animation
   const fireLaserAtMeteor = useCallback((meteor) => {
     if (!meteor || meteor.hit || gameStateRef.current !== 'playing' || isTransitioningRef.current) return;
+    playLaserSound();
 
     // Rotate cannon directly towards aimed meteor
     const aimAngle = (Math.atan2(meteor.x - CANNON_X, -(meteor.y - CANNON_Y)) * 180) / Math.PI;
@@ -263,6 +268,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
     setTimeout(() => setLaser(null), 300);
 
     if (isCorrect) {
+      playCorrectSound();
       // Calculate Reflex Reaction Time
       const reflexSec = (Date.now() - spawnTimestampRef.current) / 1000;
       const isLightning = reflexSec <= 2.2;
@@ -292,6 +298,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
 
       // Speedrun Victory Trigger (All 15 meteors blasted early!)
       if (meteorsSmashedRef.current >= GOAL_METEORS) {
+        playVictoryFanfare();
         const timeBonus = Math.floor(gameTimer * 2);
         scoreRef.current += timeBonus;
         setScore(scoreRef.current);
@@ -305,6 +312,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
       }, 650);
     } else {
       // Wrong meteor hit -> shield damage
+      playWrongSound();
       shieldsRef.current = Math.max(0, shieldsRef.current - 1);
       setShields(shieldsRef.current);
 

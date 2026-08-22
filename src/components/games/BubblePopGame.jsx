@@ -3,6 +3,8 @@ import { Volume2, RotateCcw, Trophy, Zap, Target, Sparkles, CheckCircle2, Timer 
 import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
 import { speakText } from '../../utils/AudioHelper';
+import { playPopSound, playCorrectSound, playWrongSound, playVictoryFanfare, playButtonClick } from '../../utils/soundEffects';
+import { duckArcadeBgm } from '../../utils/arcadeBgm';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
@@ -65,6 +67,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
   const playAudio = useCallback((word) => {
     if (!word) return;
     try { window.speechSynthesis?.cancel(); } catch (_) {}
+    duckArcadeBgm(2000);
     const matchObj = activeWordObjects.find(w => w.word === word);
     speakText(word, matchObj?.audio_word, 0.9, null, 'new_word', weekNumber);
   }, [activeWordObjects, weekNumber]);
@@ -157,6 +160,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
   }, [recordHighScore, recordSpeedrunTime]);
 
   const startGame = () => {
+    playButtonClick();
     scoreRef.current = 0;
     streakRef.current = 0;
     wordsPoppedRef.current = 0;
@@ -203,8 +207,10 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
   const handleBubbleTap = useCallback((bubble, e) => {
     if (gameStateRef.current !== 'playing') return;
     e.stopPropagation();
+    playPopSound();
 
     if (bubble.isTarget) {
+      playCorrectSound();
       // Calculate Reflex Reaction Time
       const reflexSec = (Date.now() - spawnTimestampRef.current) / 1000;
       const isLightning = reflexSec <= 1.5;
@@ -235,6 +241,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
 
       // Check Speedrun Victory (All 20 words cleared early!)
       if (wordsPoppedRef.current >= GOAL_WORDS) {
+        playVictoryFanfare();
         const timeBonus = Math.floor(gameTimer * 2);
         scoreRef.current += timeBonus;
         setScore(scoreRef.current);
@@ -249,6 +256,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
       spawnBubbles(nextTarget, streakRef.current);
     } else {
       // Wrong tap — ink splat penalty + Answer Reveal
+      playWrongSound();
       streakRef.current = 0;
       setStreak(0);
       const rect = e.currentTarget.getBoundingClientRect();

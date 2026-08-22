@@ -3,31 +3,13 @@ import { RotateCcw, Volume2, ArrowLeft, ArrowRight, Zap, Sparkles, Trophy, Targe
 import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
 import { speakText } from '../../utils/AudioHelper';
+import { playDriftSound, playCorrectSound, playWrongSound, playVictoryFanfare, playButtonClick } from '../../utils/soundEffects';
+import { duckArcadeBgm } from '../../utils/arcadeBgm';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
  * PhysicsDriftGame V3 — Highway Road Runner with Reflex Speed Metric & Speedrun Time Attack
  */
-
-function playTireScreech() {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-
-    osc.type = 'sawtooth';
-    osc.frequency.setValueAtTime(800, ctx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(180, ctx.currentTime + 0.35);
-
-    gain.gain.setValueAtTime(0.25, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.35);
-
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.start();
-    osc.stop(ctx.currentTime + 0.38);
-  } catch (_) {}
-}
 
 export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, isStandalone = false }) {
   const weekData = getWeekArcadeData(weekNumber);
@@ -83,6 +65,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
   const playAudio = useCallback((word) => {
     if (!word) return;
     try { window.speechSynthesis?.cancel(); } catch (_) {}
+    duckArcadeBgm(2000);
     const matchObj = wordBank.find(w => w.word === word);
     speakText(word, matchObj?.audio_word, 0.92, null, 'new_word', weekNumber);
   }, [wordBank, weekNumber]);
@@ -198,6 +181,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
             recordBestReaction('physics_drift', reflexSec);
           }
 
+          playCorrectSound();
           scoreRef.current += (20 + speedBonus);
           streakRef.current += 1;
           wordsCaughtRef.current += 1;
@@ -223,6 +207,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
 
           // Speedrun Victory Check (All 20 words caught early!)
           if (wordsCaughtRef.current >= GOAL_WORDS) {
+            playVictoryFanfare();
             const timeBonus = Math.floor(gameTimer * 2);
             scoreRef.current += timeBonus;
             setScore(scoreRef.current);
@@ -236,6 +221,8 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
             pickNextTarget();
           }, 700);
         } else if (item.isObstacle) {
+          playDriftSound();
+          playWrongSound();
           scoreRef.current = Math.max(0, scoreRef.current - 5);
           streakRef.current = 0;
           setScore(scoreRef.current);
@@ -249,7 +236,6 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
           carXRef.current = Math.max(15, Math.min(85, carXRef.current + swerveDir));
           setCarXPct(carXRef.current);
 
-          playTireScreech();
           setFeedback({ msg: `🛢️ Oil Skid Spinout! (−5 pts)`, type: 'bad' });
           setFoxTrigger(true);
 
@@ -259,6 +245,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
             setFeedback(null);
           }, 1100);
         } else {
+          playWrongSound();
           scoreRef.current = Math.max(0, scoreRef.current - 2);
           setScore(scoreRef.current);
           setFeedback({ msg: `❌ That was "${item.word}" · Catch "${targetRef.current}"`, type: 'bad' });
@@ -316,6 +303,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
   }, [gameState, isStandalone, endGame]);
 
   const startGame = () => {
+    playButtonClick();
     scoreRef.current = 0;
     streakRef.current = 0;
     wordsCaughtRef.current = 0;
@@ -641,8 +629,8 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
             }}>
               <button
                 type="button"
-                onMouseDown={() => { carXRef.current = Math.max(12, carXRef.current - 14); setCarXPct(carXRef.current); }}
-                onTouchStart={() => { carXRef.current = Math.max(12, carXRef.current - 14); setCarXPct(carXRef.current); }}
+                onMouseDown={() => { playDriftSound(); carXRef.current = Math.max(12, carXRef.current - 14); setCarXPct(carXRef.current); }}
+                onTouchStart={() => { playDriftSound(); carXRef.current = Math.max(12, carXRef.current - 14); setCarXPct(carXRef.current); }}
                 style={{
                   width: '46px', height: '40px', borderRadius: '10px',
                   background: 'linear-gradient(135deg, #10b981, #059669)',
@@ -656,8 +644,8 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
               </button>
               <button
                 type="button"
-                onMouseDown={() => { carXRef.current = Math.min(88, carXRef.current + 14); setCarXPct(carXRef.current); }}
-                onTouchStart={() => { carXRef.current = Math.min(88, carXRef.current + 14); setCarXPct(carXRef.current); }}
+                onMouseDown={() => { playDriftSound(); carXRef.current = Math.min(88, carXRef.current + 14); setCarXPct(carXRef.current); }}
+                onTouchStart={() => { playDriftSound(); carXRef.current = Math.min(88, carXRef.current + 14); setCarXPct(carXRef.current); }}
                 style={{
                   width: '46px', height: '40px', borderRadius: '10px',
                   background: 'linear-gradient(135deg, #10b981, #059669)',

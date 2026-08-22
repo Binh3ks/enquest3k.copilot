@@ -3,6 +3,8 @@ import { RotateCcw, Volume2, Sparkles, CheckCircle2, Trophy, Zap, Target, BookOp
 import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
 import { speakText } from '../../utils/AudioHelper';
+import { playButtonClick, playCorrectSound, playWrongSound, playVictoryFanfare } from '../../utils/soundEffects';
+import { duckArcadeBgm } from '../../utils/arcadeBgm';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
@@ -50,6 +52,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
   const playAudio = useCallback((text) => {
     if (!text) return;
     try { window.speechSynthesis?.cancel(); } catch (_) {}
+    duckArcadeBgm(2000);
     speakText(text, null, 0.9, null, 'read', weekNumber);
   }, [weekNumber]);
 
@@ -101,6 +104,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
     if (lockedSlotsRef.current[slot.id]) return;
 
     if (chunk.slotId === slot.id) {
+      playCorrectSound();
       // Calculate Reflex Reaction Time for completing round
       const newLocked = { ...lockedSlotsRef.current, [slot.id]: chunk.text };
       lockedSlotsRef.current = newLocked;
@@ -122,6 +126,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
 
       if (allFilled) {
         // Round Finished!
+        playVictoryFanfare();
         const roundSolveSec = (Date.now() - spawnTimestampRef.current) / 1000;
         const isLightning = roundSolveSec <= 5.0;
         const speedBonus = isLightning ? 10 : 0;
@@ -167,6 +172,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
         setTimeout(() => setFeedback(null), 800);
       }
     } else {
+      playWrongSound();
       scoreRef.current = Math.max(0, scoreRef.current - 5);
       setScore(scoreRef.current);
       setFeedback({ msg: `❌ "${chunk.text}" does not match "${slot.label}"`, type: 'bad' });
@@ -230,6 +236,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
   }, [recordHighScore, recordSpeedrunTime]);
 
   const startGame = () => {
+    playButtonClick();
     scoreRef.current = 0;
     roundsDoneRef.current = 0;
     fastestReflexRef.current = null;

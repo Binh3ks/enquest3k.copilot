@@ -61,10 +61,14 @@ export const useArcadeStore = create(
       breakPromptDismissedCycle: false,
       activeGameId: 'bubble_pop',
       highScores: {},
+      sfxEnabled: true,
+      bgmEnabled: true,
 
       setArcadeOpen: (isOpen) => set({ isArcadeOpen: isOpen }),
       setShowBreakPrompt: (show) => set({ showBreakPrompt: show }),
       setActiveGame: (gameId) => set({ activeGameId: gameId }),
+      toggleSfx: () => set(state => ({ sfxEnabled: !state.sfxEnabled })),
+      toggleBgm: () => set(state => ({ bgmEnabled: !state.bgmEnabled })),
 
       // Active learning heartbeat (called on real user inputs: clicks, audio, typing)
       recordActiveInteraction: (weekNumber = 33) => {
@@ -190,6 +194,8 @@ export const useArcadeStore = create(
         highScores: state.highScores,
         bestReactionTimes: state.bestReactionTimes,
         bestSpeedrunTimes: state.bestSpeedrunTimes,
+        sfxEnabled: state.sfxEnabled,
+        bgmEnabled: state.bgmEnabled,
       }),
     }
   )
