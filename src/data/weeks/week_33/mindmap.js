@@ -18,7 +18,7 @@ export default {
       label: "First Aid Care",
       branches: [
         { id: "2_1", label: "Call school nurse right away" },
-        { id: "2_2", label: "Apply clean sterile bandage" },
+        { id: "2_2", label: "Apply clean white bandage" },
         { id: "2_3", label: "Use cold pack for swelling" },
         { id: "2_4", label: "Keep injured classmate calm" },
         { id: "2_5", label: "Do not move broken leg" },
@@ -31,7 +31,7 @@ export default {
       branches: [
         { id: "3_1", label: "Clean up spilled water fast" },
         { id: "3_2", label: "Tie shoe laces tightly" },
-        { id: "3_3", label: "Wear non-slip rubber shoes" },
+        { id: "3_3", label: "Wear safe rubber shoes" },
         { id: "3_4", label: "Walk in single line" },
         { id: "3_5", label: "Avoid pushing near doors" },
         { id: "3_6", label: "Keep hallways bright and clear" }
@@ -43,7 +43,7 @@ export default {
       branches: [
         { id: "4_1", label: "Follow teacher instructions" },
         { id: "4_2", label: "Help injured friends quickly" },
-        { id: "4_3", label: "Apologize for accidental clumsy mistakes" },
+        { id: "4_3", label: "Say sorry for clumsy mistakes" },
         { id: "4_4", label: "Remind classmates about rules" },
         { id: "4_5", label: "Respect janitors and staff" },
         { id: "4_6", label: "Praise responsible actions" }

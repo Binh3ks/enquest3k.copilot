@@ -73,7 +73,7 @@ export default {
         caption: "Panel 3: Nurse applying bandage",
         action_tags: ["nurse", "bandage", "helping", "relieved"],
         nova_question_en: "How does the story end? Who came to help, and how did everyone feel?",
-        pills: ["called the school nurse,", "with a clean bandage,", "felt deeply relieved,", "Everyone praised", "arrived quickly,"],
+        pills: ["called the school nurse,", "with a clean bandage,", "felt relieved,", "Everyone praised", "arrived quickly,"],
         grammar_hint: "Simple Past + Feeling: called / arrived / felt / praised",
         sentence_frame: "Jake called the school nurse, who arrived with...",
         pill_color: "purple",

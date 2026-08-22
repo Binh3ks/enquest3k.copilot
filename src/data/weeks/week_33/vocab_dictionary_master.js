@@ -288,13 +288,13 @@ export const WEEK_33_MASTER_DICTIONARY = {
     audioText: "friction",
     aliases: ["high friction", "low friction", "frictional"]
   },
-  "lubricant": {
-    type: "Noun",
-    ipa: "/ˈluːbrɪkənt/",
-    meaning: "chất bôi trơn (chất làm giảm ma sát)",
-    example: "Water acts like a lubricant on smooth tiled floors.",
-    audioText: "lubricant",
-    aliases: ["lubricants", "lubricating"]
+  "slippery floor": {
+    type: "Collocation",
+    ipa: "/ˈslɪpəri flɔːr/",
+    meaning: "sàn nhà trơn trượt",
+    example: "Water on tiles creates a slippery floor.",
+    audioText: "slippery floor",
+    aliases: ["slippery tiles", "slippery surface", "slippery"]
   },
   "rubber shoes": {
     type: "Collocation",

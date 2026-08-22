@@ -193,7 +193,7 @@ export default [
   { 
     id: 20, 
     word: "terrible", 
-    definition_en: "extremely bad, serious, or distressing", 
+    definition_en: "extremely bad, unpleasant, or serious", 
     definition_vi: "tồi tệ / nghiêm trọng", 
     example_en: "He felt terrible after the fall, but the nurse helped him right away.",
     example_vi: "Cậu bé cảm thấy rất tồi tệ sau cú ngã, nhưng cô y tá đã giúp đỡ ngay tức thì.",
@@ -207,7 +207,7 @@ export const lexicalChunks = [
   { id: "c2", chunk: "yellow warning sign", definition_en: "a bright sign alerting people to wet tiles", definition_vi: "biển báo cảnh báo màu vàng" },
   { id: "c3", chunk: "hurt his knee", definition_en: "injured the joint on his leg during a fall", definition_vi: "bị đau đầu gối" },
   { id: "c4", chunk: "call the school nurse", definition_en: "get medical aid from the school nurse", definition_vi: "gọi y tế trường học" },
-  { id: "c5", chunk: "clean bandage", definition_en: "a sterile cloth wrapped around a wound", definition_vi: "băng gạc sạch" },
+  { id: "c5", chunk: "clean bandage", definition_en: "a clean cloth wrapped around a cut or wound", definition_vi: "băng gạc sạch" },
   { id: "c6", chunk: "cold pack", definition_en: "a chilled gel bag to reduce swelling", definition_vi: "túi chườm lạnh" },
   { id: "c7", chunk: "walk carefully", definition_en: "move attentively without rushing", definition_vi: "đi bộ cẩn thận" },
   { id: "c8", chunk: "headmaster office", definition_en: "the office of the principal", definition_vi: "phòng hiệu trưởng" },

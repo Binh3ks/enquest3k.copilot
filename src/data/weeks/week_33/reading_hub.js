@@ -18,14 +18,14 @@ export const readingHubData = {
     theme: "The Science of Friction in Corridors",
     title_en: "The Science of Friction in Corridors",
     title_vi: "Khoa Học Về Lực Ma Sát Tại Hành Lang Trường Học",
-    content_en: "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water acts like a lubricant. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero! While the school nurse was applying the clean bandage, she explained that we must always look for the yellow warning sign. To stay safe, walk carefully and let friction do its job!",
-    content_vi: "Tại sao chúng ta lại bị ngã trên sàn nhà ướt? Câu trả lời nằm ở một khái niệm khoa học mang tên Lực Ma Sát. Lực ma sát là một lực ngăn cản các vật trượt đi. Trong khi Jake đang đi bộ xuống hành lang, đế giày cao su của cậu ấy đã tạo ra lực ma sát lớn với mặt sàn khô. Điều này giúp cậu ấy an toàn. Nhưng nước làm thay đổi tất cả! Nước đóng vai trò như một chất bôi trơn. Trong khi Tom đang chạy nhanh, giày của cậu ấy chạm vào vũng nước ướt. Lớp nước đã làm giảm lực ma sát xuống bằng không! Trong khi cô y tá đang băng bó vết thương sạch sẽ, cô giải thích rằng chúng ta phải luôn chú ý đến biển báo cảnh báo màu vàng. Để giữ an toàn, hãy đi bộ cẩn thận và để lực ma sát làm đúng nhiệm vụ của nó!",
+    content_en: "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water makes the floor smooth and slippery. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero! While the school nurse was applying the clean bandage, she explained that we must always look for the yellow warning sign. To stay safe, walk carefully and let friction do its job!",
+    content_vi: "Tại sao chúng ta lại bị ngã trên sàn nhà ướt? Câu trả lời nằm ở một khái niệm khoa học mang tên Lực Ma Sát. Lực ma sát là một lực ngăn cản các vật trượt đi. Trong khi Jake đang đi bộ xuống hành lang, đế giày cao su của cậu ấy đã tạo ra lực ma sát lớn với mặt sàn khô. Điều này giúp cậu ấy an toàn. Nhưng nước làm thay đổi tất cả! Lớp nước làm cho sàn trở nên trơn trượt. Trong khi Tom đang chạy nhanh, giày của cậu ấy chạm vào vũng nước ướt. Lớp nước đã làm giảm lực ma sát xuống bằng không! Trong khi cô y tá đang băng bó vết thương sạch sẽ, cô giải thích rằng chúng ta phải luôn chú ý đến biển báo cảnh báo màu vàng. Để giữ an toàn, hãy đi bộ cẩn thận và để lực ma sát làm đúng nhiệm vụ của nó!",
     audio_url: "/audio/week33/explore.mp3",
     check_questions: [
       {
         id: 1,
         question_en: "What is the science force that stops objects from sliding?",
-        options: ["Friction", "Gravity", "Magnetism"],
+        options: ["Friction", "Gravity", "Wind force"],
         answer: "Friction"
       },
       {
@@ -37,13 +37,13 @@ export const readingHubData = {
       {
         id: 3,
         question_en: "What does water act like on a smooth tiled floor?",
-        options: ["A lubricant that reduces friction to zero", "A solid glue that holds shoes", "A magnet that attracts boots"],
-        answer: "A lubricant that reduces friction to zero"
+        options: ["A slippery layer that reduces friction to zero", "A solid glue that holds shoes", "A heavy blanket that covers tiles"],
+        answer: "A slippery layer that reduces friction to zero"
       }
     ],
     critical_thinking: {
       question_en: "Why is it more dangerous to run in socks on a wooden floor than wearing sports shoes?",
-      hint_en: "Think about friction: socks have smooth fabric that slides easily on polished wood, whereas sports shoes have rubber soles that create high grip and friction."
+      hint_en: "Think about friction: socks slide easily on smooth wood, but sports shoes with rubber soles give good grip and high friction."
     }
   },
   interactive_story: {

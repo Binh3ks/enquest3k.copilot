@@ -375,7 +375,7 @@ export const listeningHubData = {
         correct_label: "Low Friction Zone",
         x: 48,
         y: 76,
-        micro_explanation: "⚠️ Physics Alert: Water acts like a lubricant! Friction is reduced to ZERO, making tiles extremely slippery."
+        micro_explanation: "⚠️ Physics Alert: Water makes tiles very slippery! Friction is reduced, causing sudden falls."
       },
       {
         id: "z2",
@@ -383,7 +383,7 @@ export const listeningHubData = {
         correct_label: "Forward Motion",
         x: 62,
         y: 45,
-        micro_explanation: "⚡ Safety Alert: High running speed keeps pushing your body forward, making it hard to stop on wet tiles!"
+        micro_explanation: "⚡ Safety Alert: Running fast makes it hard to stop safely on wet tiles!"
       },
       {
         id: "z3",
@@ -391,7 +391,7 @@ export const listeningHubData = {
         correct_label: "Hazard Alert",
         x: 28,
         y: 65,
-        micro_explanation: "💡 Safety Alert: Warning signs instruct everyone to slow down and let rubber sole friction maintain balance."
+        micro_explanation: "💡 Safety Alert: Warning signs tell everyone to slow down and walk carefully."
       },
       {
         id: "z4",
@@ -399,10 +399,10 @@ export const listeningHubData = {
         correct_label: "Cold Pack & Bandage",
         x: 80,
         y: 55,
-        micro_explanation: "🩹 Medical Care: Cold pack reduces tissue swelling, while clean bandage protects the cut skin from bacteria."
+        micro_explanation: "🩹 First Aid: A cold pack cools the sore knee, while a clean bandage protects the cut."
       }
     ],
-    labels: ["Low Friction Zone", "Kinetic Momentum", "Hazard Alert", "Cold Pack & Bandage", "High Gravity", "Thermal Radiation"]
+    labels: ["Low Friction Zone", "Forward Motion", "Hazard Alert", "Cold Pack & Bandage", "Heavy Weight", "Warm Air"]
   }
 };
 

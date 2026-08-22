@@ -27,7 +27,7 @@ export default {
       { id: 2, question_en: "Why do schools create safety rules?", options: ["To protect all students from accidents", "To make school boring", "To test memory"], answer: "To protect all students from accidents" },
       { id: 3, question_en: "What is an appropriate response if you accidentally break a school item?", options: ["Apologize and inform a teacher", "Hide it under a chair", "Blame someone else"], answer: "Apologize and inform a teacher" },
       { id: 4, question_en: "How did the ancient Olympic Truce help athletes?", options: ["Allowed safe travel during wartime", "Gave them free food", "Made games shorter"], answer: "Allowed safe travel during wartime" },
-      { id: 5, question_en: "What character trait did Jake display by helping his classmate?", options: ["Responsibility and care", "Selfishness", "Carelessness"], answer: "Responsibility and care" }
+      { id: 5, question_en: "What good value did Jake show by helping his classmate?", options: ["Responsibility and care", "Selfishness", "Carelessness"], answer: "Responsibility and care" }
     ]
   }
 };
