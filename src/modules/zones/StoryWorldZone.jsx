@@ -341,8 +341,29 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
         // Grade based on syntax word-order & sequence vs target sentence
         const spokenText = (recognizedTranscriptRef.current[idx] || '').trim();
-        const evalResult = evaluateSpeechSyntax(spokenText, targetSentence, { mode: 'shadowing', minWords: 1 });
-        const score = evalResult.score;
+        const hasLiveTranscript = spokenText.length > 0;
+        
+        let score = 0;
+        let feedback = '';
+        let displaySpoken = spokenText;
+
+        if (hasLiveTranscript) {
+          const evalResult = evaluateSpeechSyntax(spokenText, targetSentence, { mode: 'shadowing', minWords: 1 });
+          score = evalResult.score;
+          feedback = evalResult.feedback ? `Accuracy: ${score}% — ${evalResult.feedback}` : `Accuracy: ${score}%`;
+        } else if (audioBlob.size > 1500 && durationMs >= 1000) {
+          // Mobile Fallback: Student recorded real audio, but iOS/mobile WebKit doesn't support simultaneous Web Speech API
+          const targetWordCount = targetSentence.split(/\s+/).length;
+          const expectedMs = targetWordCount * 300;
+          const ratio = durationMs / Math.max(1200, expectedMs);
+          score = (ratio >= 0.5 && ratio <= 2.5) ? 85 : 75;
+          feedback = `✨ Voice Shadow recorded! Tap 'Play My Voice' to listen & compare.`;
+          displaySpoken = `(Recorded: ${(durationMs / 1000).toFixed(1)}s audio)`;
+        } else {
+          score = 0;
+          feedback = '⚠️ No voice recorded. Please speak clearly into your mic!';
+          displaySpoken = '';
+        }
 
         setSentenceShadowing(prev => ({
           ...prev,
@@ -350,8 +371,8 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
             isRecording: false,
             audioUrl,
             score,
-            spokenText,
-            feedback: evalResult.feedback
+            spokenText: displaySpoken,
+            feedback
           }
         }));
 
@@ -493,11 +514,28 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         setRetellAttemptCount(prev => prev + 1);
 
         const spoken = retellTranscriptRef.current.trim();
-        const evalRes = evaluateSpeechSyntax(spoken, currentQ.sentence, { mode: 'sentence', minWords: 3 });
+        let evalRes;
+        if (spoken.length > 0) {
+          evalRes = evaluateSpeechSyntax(spoken, currentQ.sentence, { mode: 'sentence', minWords: 3 });
+        } else if (audioBlob.size > 1500) {
+          evalRes = {
+            isCorrect: true,
+            score: 85,
+            feedback: "Great voice recording! Retell event completed.",
+            spokenText: `(Voice recorded: ${(audioBlob.size / 1024).toFixed(0)}KB)`
+          };
+        } else {
+          evalRes = {
+            isCorrect: false,
+            score: 0,
+            feedback: "No voice detected. Please speak or type your answer below!",
+            spokenText: ""
+          };
+        }
 
         setRetellEvaluations(prev => ({
           ...prev,
-          [retellStepIdx]: { transcript: spoken, evalResult: evalRes }
+          [retellStepIdx]: { transcript: spoken || evalRes.spokenText, evalResult: evalRes }
         }));
 
         setNovaFeedback({
