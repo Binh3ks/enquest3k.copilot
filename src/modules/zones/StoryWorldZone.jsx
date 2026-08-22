@@ -245,6 +245,13 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       console.warn('[voice-shadow-timing] Mic prewarm non-fatal error:', err?.message);
     });
 
+    // 🚀 Background Pre-cache all story sentences into IndexedDB for 0ms latency on click
+    if (storySentences && storySentences.length > 0) {
+      storySentences.forEach((sentence) => {
+        VoiceService.prefetch?.(sentence, 'shadowing', null, weekNumber).catch(() => {});
+      });
+    }
+
     return () => {
       cancelled = true;
       if (prewarmedMicStreamRef.current) {
@@ -252,28 +259,14 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         prewarmedMicStreamRef.current = null;
       }
     };
-  }, [currentGear]);
+  }, [currentGear, storySentences]);
 
   // Word-by-Word Karaoke Highlighting Simulation (Linear Pacing Heuristic)
-  const handleSpeakSentence = (sentenceText, idx, playbackId = null) => {
-    setActiveSentenceIdx(idx);
-    setActiveWordIdx(0);
-
+  const handleSpeakSentence = (sentenceText, idx, playbackId = null, onAudioStartCallback = null) => {
     if (karaokeIntervalRef.current) {
       clearInterval(karaokeIntervalRef.current);
       karaokeIntervalRef.current = null;
     }
-
-    // Gamification: mark sentence completed & increment streak
-    setCompletedKaraokeSentences(prev => {
-      const updated = { ...prev, [idx]: true };
-      const completedCount = Object.keys(updated).length;
-      if (completedCount === storySentences.length) {
-        fireCelebrationConfetti?.('Gear2_Karaoke_Master');
-      }
-      return updated;
-    });
-    setKaraokeStreak(prev => prev + 1);
 
     const words = sentenceText.split(/\s+/).filter(Boolean);
 
@@ -286,12 +279,28 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       }
 
       markTiming('audio-playing-event', `idx=${idx}, duration=${duration ? duration.toFixed(2) + 's' : 'N/A'}`);
+      markTiming('karaoke-start', `idx=${idx}`);
+
+      // 🎯 STRICT GATE: Only activate UI playing state & highlight word 0 when sound actually emits!
+      setActiveSentenceIdx(idx);
+      setActiveWordIdx(0);
+      if (onAudioStartCallback) onAudioStartCallback();
+
+      // Gamification: mark sentence completed & increment streak
+      setCompletedKaraokeSentences(prev => {
+        const updated = { ...prev, [idx]: true };
+        const completedCount = Object.keys(updated).length;
+        if (completedCount === storySentences.length) {
+          fireCelebrationConfetti?.('Gear2_Karaoke_Master');
+        }
+        return updated;
+      });
+      setKaraokeStreak(prev => prev + 1);
 
       if (karaokeIntervalRef.current) {
         clearInterval(karaokeIntervalRef.current);
         karaokeIntervalRef.current = null;
       }
-      setActiveWordIdx(0);
 
       // Linear word pacing approximation based on actual duration
       const totalDurationMs = (duration && duration > 0.5) ? (duration * 1000) : (words.length * 320);
@@ -360,10 +369,11 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     }
     try { VoiceService.pauseTTS(); } catch (_) {}
 
-    // 1. Synchronously trigger Model Audio (in user click tick)
+    // 1. Synchronously trigger Model Audio — state only activates inside onPlayStart!
     markTiming('play-called', `idx=${idx}`);
-    handleSpeakSentence(targetSentence, idx, playbackId);
-    setShadowingKaraokeIdx(idx);
+    handleSpeakSentence(targetSentence, idx, playbackId, () => {
+      setShadowingKaraokeIdx(idx);
+    });
 
     const recordStartTime = Date.now();
     recognizedTranscriptRef.current[idx] = '';
