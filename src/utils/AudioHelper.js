@@ -118,18 +118,12 @@ export const speakText = async (text, audioUrl = null, rate = 1.0, onEnd = null,
             setTimeout(fire, safetyMs);
             return true;
         }
-        // No audio element — fall through to estimate-only fallback below.
+        // If VoiceService.speak already awaited the entire playback (Web Audio source.onended):
+        if (onEnd) onEnd();
+        return true;
     } catch (ttsError) {
         console.warn(`[AudioHelper] TTS server error handled by VoiceService:`, ttsError.message);
-        if (onEnd) {
-            const fallbackMs = Math.max(2000, (text.length || 0) * 80);
-            setTimeout(onEnd, fallbackMs);
-        }
-        return true;
+        if (onEnd) onEnd();
+        return false;
     }
-
-    // No audio element (extremely rare) — estimate-only fallback.
-    const fallbackMs = Math.max(2000, (text.length || 0) * 80);
-    setTimeout(() => { if (onEnd) onEnd(); }, fallbackMs);
-    return true;
 };

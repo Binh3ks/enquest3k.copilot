@@ -6,6 +6,7 @@ import { SingleSubjectPassportSidebar, CLILSealStamp, GrandStampModal } from '..
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { Film, Headphones, Mic, Globe, Volume2, Sparkles, CheckCircle2, ChevronRight, Play, Square, RotateCcw, MessageSquare, Info } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
+import { VoiceService } from '../../services/voiceService';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { getNovaStage } from '../../services/companionEngine';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
@@ -57,6 +58,23 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   const sentenceStreamRef = useRef(null);
   const sentenceSpeechRecRef = useRef(null);
   const recognizedTranscriptRef = useRef({});
+  const karaokeIntervalRef = useRef(null);
+
+  // Clean up timers & media streams on unmount
+  useEffect(() => {
+    return () => {
+      if (karaokeIntervalRef.current) {
+        clearInterval(karaokeIntervalRef.current);
+      }
+      if (sentenceStreamRef.current) {
+        sentenceStreamRef.current.getTracks().forEach(track => track.stop());
+      }
+      if (sentenceSpeechRecRef.current) {
+        try { sentenceSpeechRecRef.current.stop(); } catch (_) {}
+      }
+      try { VoiceService.pauseTTS(); } catch (_) {}
+    };
+  }, []);
 
   // Gear 3: Retell to Nova state
   const [retellStepIdx, setRetellStepIdx] = useState(0);
@@ -179,7 +197,11 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   const handleSpeakSentence = (sentenceText, idx) => {
     setActiveSentenceIdx(idx);
     setActiveWordIdx(0);
-    speakText(sentenceText);
+
+    if (karaokeIntervalRef.current) {
+      clearInterval(karaokeIntervalRef.current);
+      karaokeIntervalRef.current = null;
+    }
 
     // Gamification: mark sentence completed & increment streak
     setCompletedKaraokeSentences(prev => {
@@ -192,26 +214,65 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     });
     setKaraokeStreak(prev => prev + 1);
 
-    const words = sentenceText.split(/\s+/);
+    const words = sentenceText.split(/\s+/).filter(Boolean);
     let wordCount = 0;
-    const interval = setInterval(() => {
+    karaokeIntervalRef.current = setInterval(() => {
       wordCount++;
       if (wordCount < words.length) {
         setActiveWordIdx(wordCount);
       } else {
-        clearInterval(interval);
+        if (karaokeIntervalRef.current) {
+          clearInterval(karaokeIntervalRef.current);
+          karaokeIntervalRef.current = null;
+        }
         setActiveWordIdx(null);
       }
     }, 320); // 320ms per word Karaoke highlight speed
+
+    speakText(
+      sentenceText,
+      null,
+      1.0,
+      () => {
+        if (karaokeIntervalRef.current) {
+          clearInterval(karaokeIntervalRef.current);
+          karaokeIntervalRef.current = null;
+        }
+        setActiveWordIdx(null);
+        setActiveSentenceIdx(null);
+      },
+      'shadowing',
+      weekNumber,
+      'advanced'
+    );
   };
 
   // Gear 2: Shadowing = Warm mic first -> simultaneous karaoke playback & recording
   const startSentenceShadowing = async (idx, targetSentence) => {
     try {
-      // 1. Initialize microphone stream first so audio does not start before recorder is active
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      // 1. Get studio clean audio stream (disable aggressive noise suppression to prevent clipping voice)
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: false,
+          autoGainControl: true
+        }
+      });
       sentenceStreamRef.current = stream;
-      sentenceMediaRecorderRef.current = new MediaRecorder(stream);
+
+      let mimeType = '';
+      if (typeof MediaRecorder !== 'undefined') {
+        if (MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) {
+          mimeType = 'audio/webm;codecs=opus';
+        } else if (MediaRecorder.isTypeSupported('audio/mp4')) {
+          mimeType = 'audio/mp4';
+        } else if (MediaRecorder.isTypeSupported('audio/webm')) {
+          mimeType = 'audio/webm';
+        }
+      }
+      const recorderOptions = mimeType ? { mimeType, audioBitsPerSecond: 128000 } : {};
+      const recorder = new MediaRecorder(stream, recorderOptions);
+      sentenceMediaRecorderRef.current = recorder;
       sentenceChunksRef.current = [];
 
       const recordStartTime = Date.now();
@@ -236,11 +297,11 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         } catch (_) {}
       }
 
-      sentenceMediaRecorderRef.current.ondataavailable = (e) => {
-        if (e.data.size > 0) sentenceChunksRef.current.push(e.data);
+      recorder.ondataavailable = (e) => {
+        if (e.data && e.data.size > 0) sentenceChunksRef.current.push(e.data);
       };
 
-      sentenceMediaRecorderRef.current.onstop = () => {
+      recorder.onstop = () => {
         const durationMs = Date.now() - recordStartTime;
         setShadowingKaraokeIdx(null);
 
@@ -256,7 +317,11 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
           sentenceSpeechRecRef.current = null;
         }
 
-        const audioBlob = new Blob(sentenceChunksRef.current, { type: 'audio/webm' });
+        // Stop model TTS if still in-flight
+        try { VoiceService.pauseTTS(); } catch (_) {}
+
+        const blobType = recorder.mimeType || 'audio/webm';
+        const audioBlob = new Blob(sentenceChunksRef.current, { type: blobType });
         const audioUrl = URL.createObjectURL(audioBlob);
 
         // If recording too short (less than 1s)
@@ -267,6 +332,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
               isRecording: false,
               audioUrl: null,
               score: 0,
+              spokenText: '',
               feedback: '⚠️ Recording was too short. Please speak the sentence out loud!'
             }
           }));
@@ -275,9 +341,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
         // Grade based on syntax word-order & sequence vs target sentence
         const spokenText = (recognizedTranscriptRef.current[idx] || '').trim();
-        const evalResult = spokenText
-          ? evaluateSpeechSyntax(spokenText, targetSentence, { mode: 'shadowing', minWords: 2 })
-          : { isCorrect: true, score: 85, feedback: 'Great voice shadowing!' };
+        const evalResult = evaluateSpeechSyntax(spokenText, targetSentence, { mode: 'shadowing', minWords: 1 });
         const score = evalResult.score;
 
         setSentenceShadowing(prev => ({
@@ -286,24 +350,26 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
             isRecording: false,
             audioUrl,
             score,
-            feedback: spokenText
-              ? `🌟 ${evalResult.feedback} (Accuracy: ${score}%)`
-              : '🌟 Great voice shadow recording!'
+            spokenText,
+            feedback: evalResult.feedback
           }
         }));
-        fireCelebrationConfetti('Sentence_Shadow_Complete');
+
+        if (score >= 60) {
+          fireCelebrationConfetti('Sentence_Shadow_Complete');
+        }
       };
 
       // 3. Start MediaRecorder
-      sentenceMediaRecorderRef.current.start();
+      recorder.start(100);
       setSentenceShadowing(prev => ({
         ...prev,
         [idx]: { isRecording: true, audioUrl: null, score: null, feedback: null, startTime: recordStartTime }
       }));
-
-      // 4. NOW play model voice & karaoke highlight from Word 0 (perfect 0ms sync)
-      handleSpeakSentence(targetSentence, idx);
       setShadowingKaraokeIdx(idx);
+
+      // 4. NOW play model voice & karaoke highlight from Word 0
+      handleSpeakSentence(targetSentence, idx);
     } catch (err) {
       console.warn("Mic unavailable for shadowing:", err);
       setShadowingKaraokeIdx(null);
@@ -320,6 +386,14 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   };
 
   const stopSentenceShadowing = (idx) => {
+    if (karaokeIntervalRef.current) {
+      clearInterval(karaokeIntervalRef.current);
+      karaokeIntervalRef.current = null;
+    }
+    setActiveWordIdx(null);
+
+    try { VoiceService.pauseTTS(); } catch (_) {}
+
     if (sentenceSpeechRecRef.current) {
       try { sentenceSpeechRecRef.current.stop(); } catch (_) {}
       sentenceSpeechRecRef.current = null;
@@ -347,6 +421,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   const retellSpeechRecRef = useRef(null);
   const retellTranscriptRef = useRef('');
   const [retellEvaluations, setRetellEvaluations] = useState({}); // { [stepIdx]: { transcript, evalResult } }
+  const retellStreamRef = useRef(null);
 
   const startRetellRecording = async () => {
     retellTranscriptRef.current = '';
@@ -370,23 +445,49 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     }
 
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      mediaRecorderRef.current = new MediaRecorder(stream);
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: false,
+          autoGainControl: true
+        }
+      });
+      retellStreamRef.current = stream;
+
+      let mimeType = '';
+      if (typeof MediaRecorder !== 'undefined') {
+        if (MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) {
+          mimeType = 'audio/webm;codecs=opus';
+        } else if (MediaRecorder.isTypeSupported('audio/mp4')) {
+          mimeType = 'audio/mp4';
+        } else if (MediaRecorder.isTypeSupported('audio/webm')) {
+          mimeType = 'audio/webm';
+        }
+      }
+      const recorderOptions = mimeType ? { mimeType, audioBitsPerSecond: 128000 } : {};
+      const recorder = new MediaRecorder(stream, recorderOptions);
+      mediaRecorderRef.current = recorder;
       audioChunksRef.current = [];
 
-      mediaRecorderRef.current.ondataavailable = (event) => {
-        if (event.data.size > 0) {
+      recorder.ondataavailable = (event) => {
+        if (event.data && event.data.size > 0) {
           audioChunksRef.current.push(event.data);
         }
       };
 
-      mediaRecorderRef.current.onstop = () => {
+      recorder.onstop = () => {
         if (retellSpeechRecRef.current) {
           try { retellSpeechRecRef.current.stop(); } catch (_) {}
           retellSpeechRecRef.current = null;
         }
 
-        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+        if (retellStreamRef.current) {
+          retellStreamRef.current.getTracks().forEach(track => track.stop());
+          retellStreamRef.current = null;
+        }
+
+        const blobType = recorder.mimeType || 'audio/webm';
+        const audioBlob = new Blob(audioChunksRef.current, { type: blobType });
         const audioUrl = URL.createObjectURL(audioBlob);
         setRetellRecordings(prev => ({ ...prev, [retellStepIdx]: audioUrl }));
         setRetellAttemptCount(prev => prev + 1);
@@ -412,7 +513,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         }
       };
 
-      mediaRecorderRef.current.start();
+      recorder.start(100);
       setIsRecording(true);
       setNovaFeedback(null);
     } catch (err) {
@@ -446,6 +547,16 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   };
 
   const stopRetellRecording = () => {
+    if (retellSpeechRecRef.current) {
+      try { retellSpeechRecRef.current.stop(); } catch (_) {}
+      retellSpeechRecRef.current = null;
+    }
+
+    if (retellStreamRef.current) {
+      retellStreamRef.current.getTracks().forEach(track => track.stop());
+      retellStreamRef.current = null;
+    }
+
     if (mediaRecorderRef.current && isRecording) {
       mediaRecorderRef.current.stop();
       setIsRecording(false);
@@ -820,23 +931,46 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                               onClick={() => {
                                 if (sentenceShadowing[idx].audioUrl !== 'simulated_voice_audio') {
                                   const audio = new Audio(sentenceShadowing[idx].audioUrl);
-                                  audio.play();
+                                  audio.play().catch(e => console.warn('Voice playback error:', e));
                                 } else {
-                                  speakText(sentence);
+                                  speakText(sentence, null, 1.0, null, 'shadowing', weekNumber);
                                 }
                               }}
-                              className="px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-300 rounded-xl font-black text-xs flex items-center gap-1.5 transition"
+                              className="px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-300 rounded-xl font-black text-xs flex items-center gap-1.5 transition active:scale-95"
                             >
                               <Play size={14} className="fill-emerald-800" /> Play My Voice
                             </button>
-                            <span className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl text-xs font-black shadow-sm flex items-center gap-1">
-                              {sentenceShadowing[idx].score >= 70 ? '🌟 Excellent!' : sentenceShadowing[idx].score >= 40 ? '⭐ Great Job!' : '✨ Recorded!'}
+                            <span
+                              className="px-3 py-1.5 rounded-xl text-xs font-black shadow-sm flex items-center gap-1 text-white"
+                              style={{
+                                backgroundColor:
+                                  (sentenceShadowing[idx].score >= 80)
+                                    ? '#059669'
+                                    : (sentenceShadowing[idx].score >= 50)
+                                    ? '#d97706'
+                                    : '#dc2626'
+                              }}
+                            >
+                              {sentenceShadowing[idx].score >= 80
+                                ? '🌟 Excellent!'
+                                : sentenceShadowing[idx].score >= 50
+                                ? '⭐ Great Job!'
+                                : '💪 Keep Practicing!'}
                             </span>
                           </div>
                           {sentenceShadowing[idx]?.feedback && (
-                            <span className="text-xs font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-lg border border-slate-200">
-                              {sentenceShadowing[idx].feedback}
-                            </span>
+                            <div className="flex flex-col items-center gap-0.5 text-xs font-bold text-slate-700 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200 text-center max-w-md">
+                              <span>{sentenceShadowing[idx].feedback} (Score: {sentenceShadowing[idx].score}%)</span>
+                              {sentenceShadowing[idx]?.spokenText ? (
+                                <span className="text-[11px] text-slate-500 font-semibold italic">
+                                  You said: "{sentenceShadowing[idx].spokenText}"
+                                </span>
+                              ) : (
+                                <span className="text-[11px] text-rose-600 font-semibold">
+                                  No speech recognized. Please speak clearly into your mic!
+                                </span>
+                              )}
+                            </div>
                           )}
                         </div>
                       )}

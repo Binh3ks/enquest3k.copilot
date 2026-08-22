@@ -1476,6 +1476,10 @@ export const VoiceService = {
    */
   pauseTTS() {
     this._shouldPauseNext = true;
+    if (this._currentSourceNode) {
+      try { this._currentSourceNode.stop(); } catch (_) {}
+      this._currentSourceNode = null;
+    }
     if (this._currentAudio) {
       try { this._currentAudio.pause(); return true; }
       catch { return false; }
