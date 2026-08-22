@@ -83,7 +83,7 @@ const speakNativeTTS = (text, rate = 1.0, onEnd = null) => {
 // event + error event + safety timeout). Only one of these fires (with a
 // `fired` guard). The safety timeout floor (2s) prevents rapid-fire even
 // when many sentences share the broken-blob path.
-export const speakText = async (text, audioUrl = null, rate = 1.0, onEnd = null, station = 'read', weekNumber = null, mode = 'advanced', instant = false) => {
+export const speakText = async (text, audioUrl = null, rate = 1.0, onEnd = null, station = 'read', weekNumber = null, mode = 'advanced', instant = false, onPlayStart = null) => {
     if (!text) {
         if (onEnd) onEnd();
         return;
@@ -91,34 +91,7 @@ export const speakText = async (text, audioUrl = null, rate = 1.0, onEnd = null,
 
     // 🎙️ 1. FIRST PRIORITY: Use Kokoro/Edge TTS Server with 7 different voices
     try {
-        await VoiceService.speak(text, station, audioUrl, weekNumber, mode, instant);
-        const audioEl = VoiceService._currentAudio;
-        if (audioEl) {
-            let fired = false;
-            const fire = () => {
-                if (fired) return;
-                fired = true;
-                try {
-                    audioEl.removeEventListener && audioEl.removeEventListener('ended', fire);
-                    audioEl.removeEventListener && audioEl.removeEventListener('error', fire);
-                } catch { /* ignore */ }
-                if (onEnd) onEnd();
-            };
-            // Wire onEnd to actual playback events. Three paths:
-            //   1. `ended` — normal audio completion
-            //   2. `error` — broken blob / network / unsupported codec
-            //   3. Safety timeout — even if neither fires (rare), the
-            //      sequence still progresses. Floor 2s ensures we never
-            //      fire faster than a real sentence would play.
-            try {
-                audioEl.addEventListener('ended', fire, { once: true });
-                audioEl.addEventListener('error', fire, { once: true });
-            } catch { /* ignore */ }
-            const safetyMs = Math.max(2000, (text.length || 0) * 80);
-            setTimeout(fire, safetyMs);
-            return true;
-        }
-        // If VoiceService.speak already awaited the entire playback (Web Audio source.onended):
+        await VoiceService.speak(text, station, audioUrl, weekNumber, mode, instant, null, onPlayStart);
         if (onEnd) onEnd();
         return true;
     } catch (ttsError) {

@@ -351,9 +351,10 @@ export const VoiceService = {
    * @param {string} mode - Mode ('advanced' or 'easy')
    * @param {boolean} instant - If true, play browser TTS immediately for AI Tutor (Deepgram worker will cache for next replay)
    * @param {object} voiceConfig - Optional voiceConfig object from week data (for on-demand generation)
+   * @param {function} onPlayStart - Optional callback fired when audio actually begins emitting sound
    * @returns {Promise<void>}
    */
-  async speak(text, station = 'read', audioUrl = null, weekNumber = null, mode = 'advanced', instant = false, voiceConfig = null) {
+  async speak(text, station = 'read', audioUrl = null, weekNumber = null, mode = 'advanced', instant = false, voiceConfig = null, onPlayStart = null) {
     // Clean text for TTS (remove emojis, normalize abbreviations)
     const cleanedText = this.cleanTextForTTS(text);
     this._lastText = cleanedText;
@@ -395,7 +396,7 @@ export const VoiceService = {
         const contentType = headRes?.headers.get('content-type') || '';
         if (headRes && headRes.ok && (contentType.includes('audio') || contentType.includes('mpeg') || contentType.includes('octet-stream'))) {
           console.log(`[TTS] 🎧 Playing verified static MP3 from: ${fullAudioPath}`);
-          await this.playAudio(fullAudioPath, false, true);
+          await this.playAudio(fullAudioPath, false, true, onPlayStart);
           return;
         }
       } catch (staticErr) {
@@ -411,7 +412,7 @@ export const VoiceService = {
       const dialogueCachedUrl = await TTSCache.get(cleanedText, station, 'multivoice_v2', audioUrl);
       if (dialogueCachedUrl) {
         console.log(`[TTS] 🎭 Multi-Voice Dialogue Cache Hit (0ms) [station: ${station}]`);
-        return this.playAudio(dialogueCachedUrl, true);
+        return this.playAudio(dialogueCachedUrl, true, false, onPlayStart);
       }
 
       try {
@@ -420,7 +421,7 @@ export const VoiceService = {
         if (combinedBlob) {
           await TTSCache.set(cleanedText, station, combinedBlob, 'multivoice_v2', audioUrl);
           const blobUrl = URL.createObjectURL(combinedBlob);
-          return this.playAudio(blobUrl, true);
+          return this.playAudio(blobUrl, true, false, onPlayStart);
         }
       } catch (dErr) {
         console.warn(`[TTS] ⚠️ Multi-Voice dialogue synthesis failed, falling back: ${dErr.message}`);
@@ -436,7 +437,7 @@ export const VoiceService = {
       const googleCachedUrl = await TTSCache.get(cleanedText, station, targetVoice, audioUrl);
       if (googleCachedUrl) {
         console.log(`[TTS] 🎓 Google Cloud TTS Direct Cache Hit (0ms) [voice: ${targetVoice}] [station: ${station}]`);
-        return this.playAudio(googleCachedUrl, true);
+        return this.playAudio(googleCachedUrl, true, false, onPlayStart);
       }
 
       try {
@@ -445,7 +446,7 @@ export const VoiceService = {
         if (audioBlob) {
           await TTSCache.set(cleanedText, station, audioBlob, targetVoice, audioUrl);
           const blobUrl = URL.createObjectURL(audioBlob);
-          return this.playAudio(blobUrl, true);
+          return this.playAudio(blobUrl, true, false, onPlayStart);
         }
       } catch (gErr) {
         console.warn(`[TTS] ⚠️ Google Cloud TTS Direct failed, falling back: ${gErr.message}`);
@@ -456,7 +457,7 @@ export const VoiceService = {
     const cachedUrl = await TTSCache.get(cleanedText, station, cacheVoice, audioUrl);
     if (cachedUrl) {
       console.log(`[TTS] ✅ Cache hit (0ms) [voice: ${cacheVoice || 'default'}]`);
-      return this.playAudio(cachedUrl, true);
+      return this.playAudio(cachedUrl, true, false, onPlayStart);
     }
     
     // Determine if this station uses static CDN or needs dynamic generation
@@ -1519,7 +1520,7 @@ export const VoiceService = {
    * @param {boolean} revokeAfter - Revoke URL after playback (for memory cleanup)
    * @returns {Promise<void>}
    */
-  async playAudio(audioUrl, revokeAfter = true, throwOnError = false) {
+  async playAudio(audioUrl, revokeAfter = true, throwOnError = false, onPlayStart = null) {
     // Stop any currently playing audio before starting a new one
     if (this._currentAudio) {
       try { this._currentAudio.pause(); this._currentAudio.currentTime = 0; } catch (_) {}
@@ -1584,6 +1585,9 @@ export const VoiceService = {
             resolve();
           };
           source.start(0);
+          if (onPlayStart) {
+            try { onPlayStart({ duration: audioBuffer.duration }); } catch (_) {}
+          }
         });
       } catch (webAudioErr) {
         console.warn('[TTS] Web Audio API playback failed, falling back to HTML5 Audio:', webAudioErr.message);
@@ -1599,6 +1603,19 @@ export const VoiceService = {
     audio.playbackRate = (savedRate >= 0.5 && savedRate <= 2.0) ? savedRate : 1.0;
 
     return new Promise((resolve, reject) => {
+      let started = false;
+      const handleStart = () => {
+        if (!started) {
+          started = true;
+          if (onPlayStart) {
+            try { onPlayStart({ duration: audio.duration || 0 }); } catch (_) {}
+          }
+        }
+      };
+
+      audio.addEventListener('playing', handleStart, { once: true });
+      audio.addEventListener('play', handleStart, { once: true });
+
       audio.onended = () => {
         if (this._currentAudio === audio) this._currentAudio = null;
         if (revokeAfter) URL.revokeObjectURL(audioUrl);

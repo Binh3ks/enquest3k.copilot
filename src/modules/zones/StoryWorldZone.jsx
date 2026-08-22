@@ -215,19 +215,32 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     setKaraokeStreak(prev => prev + 1);
 
     const words = sentenceText.split(/\s+/).filter(Boolean);
-    let wordCount = 0;
-    karaokeIntervalRef.current = setInterval(() => {
-      wordCount++;
-      if (wordCount < words.length) {
-        setActiveWordIdx(wordCount);
-      } else {
-        if (karaokeIntervalRef.current) {
-          clearInterval(karaokeIntervalRef.current);
-          karaokeIntervalRef.current = null;
-        }
-        setActiveWordIdx(null);
+
+    // Synchronized Karaoke Highlight: Only start ticking when the audio ACTUALLY begins producing sound!
+    const onPlayStart = ({ duration } = {}) => {
+      if (karaokeIntervalRef.current) {
+        clearInterval(karaokeIntervalRef.current);
+        karaokeIntervalRef.current = null;
       }
-    }, 320); // 320ms per word Karaoke highlight speed
+      setActiveWordIdx(0);
+
+      const totalDurationMs = (duration && duration > 0.5) ? (duration * 1000) : (words.length * 320);
+      const msPerWord = Math.max(180, Math.min(600, Math.floor(totalDurationMs / Math.max(1, words.length))));
+
+      let wordCount = 0;
+      karaokeIntervalRef.current = setInterval(() => {
+        wordCount++;
+        if (wordCount < words.length) {
+          setActiveWordIdx(wordCount);
+        } else {
+          if (karaokeIntervalRef.current) {
+            clearInterval(karaokeIntervalRef.current);
+            karaokeIntervalRef.current = null;
+          }
+          setActiveWordIdx(null);
+        }
+      }, msPerWord);
+    };
 
     speakText(
       sentenceText,
@@ -243,14 +256,28 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       },
       'shadowing',
       weekNumber,
-      'advanced'
+      'advanced',
+      false,
+      onPlayStart
     );
   };
 
-  // Gear 2: Shadowing = Warm mic first -> simultaneous karaoke playback & recording
+  // Gear 2: Shadowing = Instant Model Audio + Parallel Mic Recording (Exact Same Audio Path)
   const startSentenceShadowing = async (idx, targetSentence) => {
+    // 1. Trigger the exact same model audio & synchronized karaoke highlight IMMEDIATELY (0ms wait!)
+    handleSpeakSentence(targetSentence, idx);
+    setShadowingKaraokeIdx(idx);
+
+    const recordStartTime = Date.now();
+    recognizedTranscriptRef.current[idx] = '';
+
+    setSentenceShadowing(prev => ({
+      ...prev,
+      [idx]: { isRecording: true, audioUrl: null, score: null, feedback: null, startTime: recordStartTime }
+    }));
+
     try {
-      // 1. Get studio clean audio stream (disable aggressive noise suppression to prevent clipping voice)
+      // 2. Initialize microphone in background without delaying model audio
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: {
           echoCancellation: true,
@@ -275,10 +302,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       sentenceMediaRecorderRef.current = recorder;
       sentenceChunksRef.current = [];
 
-      const recordStartTime = Date.now();
-      recognizedTranscriptRef.current[idx] = '';
-
-      // 2. Start browser SpeechRecognition in parallel
+      // 3. Start browser SpeechRecognition in parallel (desktop only)
       if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
         try {
           const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -381,28 +405,10 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         }
       };
 
-      // 3. Start MediaRecorder
+      // 4. Start MediaRecorder
       recorder.start(100);
-      setSentenceShadowing(prev => ({
-        ...prev,
-        [idx]: { isRecording: true, audioUrl: null, score: null, feedback: null, startTime: recordStartTime }
-      }));
-      setShadowingKaraokeIdx(idx);
-
-      // 4. NOW play model voice & karaoke highlight from Word 0
-      handleSpeakSentence(targetSentence, idx);
     } catch (err) {
       console.warn("Mic unavailable for shadowing:", err);
-      setShadowingKaraokeIdx(null);
-      setSentenceShadowing(prev => ({
-        ...prev,
-        [idx]: {
-          isRecording: false,
-          audioUrl: null,
-          score: null,
-          feedback: '⚠️ Microphone not available. Please allow microphone access and try again.'
-        }
-      }));
     }
   };
 
