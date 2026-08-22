@@ -57,19 +57,19 @@ function DropZone({ id, label, currentPlaced, isCorrect, targetInfo, isTargeted,
       ref={setNodeRef}
       onClick={onClick}
       style={{ left: `${targetInfo.x}%`, top: `${targetInfo.y}%` }}
-      className={`absolute transform -translate-x-1/2 -translate-y-1/2 p-1 sm:p-1.5 min-w-[80px] sm:min-w-[105px] max-w-[125px] rounded-xl border-2 transition-all flex flex-col items-center justify-center text-center shadow-lg backdrop-blur-md cursor-pointer ${
+      className={`absolute transform -translate-x-1/2 -translate-y-1/2 px-2 py-1 min-w-[70px] sm:min-w-[85px] max-w-[105px] sm:max-w-[120px] rounded-xl border-2 transition-all flex flex-col items-center justify-center text-center shadow-lg backdrop-blur-md cursor-pointer z-10 select-none ${
         currentPlaced
           ? isCorrect
             ? 'bg-emerald-600/95 border-white text-white font-black scale-105 ring-2 ring-emerald-300'
             : 'bg-rose-600/95 border-white text-white font-black scale-105 animate-shake'
           : isOver || isTargeted
-          ? 'bg-amber-400 border-amber-600 text-slate-950 font-black scale-110 ring-4 ring-amber-300'
-          : 'bg-white/90 border-2 border-dashed border-teal-500 text-teal-950 font-bold hover:bg-white'
+          ? 'bg-amber-400 border-amber-600 text-slate-950 font-black scale-110 ring-4 ring-amber-300 z-20'
+          : 'bg-white/95 border-2 border-dashed border-teal-500 text-teal-950 font-bold hover:bg-white hover:scale-105'
       }`}
     >
-      <span className="text-[7.5px] sm:text-[9px] uppercase font-black tracking-wider opacity-90 leading-none mb-0.5">{label}</span>
-      <span className="text-[8.5px] sm:text-[10px] font-black truncate max-w-[115px] leading-tight">
-        {currentPlaced ? currentPlaced.text : (isTargeted ? '👉 Tap Place' : 'Drop / Tap')}
+      <span className="text-[7.5px] sm:text-[8.5px] uppercase font-black tracking-tight opacity-90 leading-tight mb-0.5 truncate max-w-[95px]">{label}</span>
+      <span className="text-[8px] sm:text-[9.5px] font-black truncate max-w-[95px] leading-tight">
+        {currentPlaced ? currentPlaced.text : (isTargeted ? '👉 Tap Here' : '📍 Drop / Tap')}
       </span>
     </div>
   );
@@ -371,8 +371,8 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
               </p>
             </div>
 
-            {/* Diagram Area with Drop Zones */}
-            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden bg-slate-100 border-2 border-teal-300 shadow-md">
+            {/* Diagram Area with Drop Zones (Spacious Height for Kids) */}
+            <div className="relative w-full h-[380px] sm:h-[450px] md:h-[500px] rounded-2xl overflow-hidden bg-slate-900 border-2 border-teal-300 shadow-md">
               <img
                 src={labData.diagramImage}
                 alt={labData.experimentTitle}

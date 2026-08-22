@@ -205,39 +205,36 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     }, 320); // 320ms per word Karaoke highlight speed
   };
 
-  // Gear 2: Shadowing = Karaoke highlight (so student reads along) + simultaneous recording
+  // Gear 2: Shadowing = Warm mic first -> simultaneous karaoke playback & recording
   const startSentenceShadowing = async (idx, targetSentence) => {
-    // 1. Trigger karaoke highlight first so student can follow the text
-    handleSpeakSentence(targetSentence, idx);
-    setShadowingKaraokeIdx(idx);
-
-    const recordStartTime = Date.now();
-    recognizedTranscriptRef.current[idx] = '';
-
-    // Start browser SpeechRecognition in parallel if available
-    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
-      try {
-        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-        const rec = new SpeechRec();
-        rec.continuous = true;
-        rec.interimResults = true;
-        rec.lang = 'en-US';
-        rec.onresult = (event) => {
-          const transcript = Array.from(event.results)
-            .map(r => r[0].transcript)
-            .join(' ');
-          recognizedTranscriptRef.current[idx] = transcript;
-        };
-        rec.start();
-        sentenceSpeechRecRef.current = rec;
-      } catch (_) {}
-    }
-
     try {
+      // 1. Initialize microphone stream first so audio does not start before recorder is active
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       sentenceStreamRef.current = stream;
       sentenceMediaRecorderRef.current = new MediaRecorder(stream);
       sentenceChunksRef.current = [];
+
+      const recordStartTime = Date.now();
+      recognizedTranscriptRef.current[idx] = '';
+
+      // 2. Start browser SpeechRecognition in parallel
+      if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+        try {
+          const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+          const rec = new SpeechRec();
+          rec.continuous = true;
+          rec.interimResults = true;
+          rec.lang = 'en-US';
+          rec.onresult = (event) => {
+            const transcript = Array.from(event.results)
+              .map(r => r[0].transcript)
+              .join(' ');
+            recognizedTranscriptRef.current[idx] = transcript;
+          };
+          rec.start();
+          sentenceSpeechRecRef.current = rec;
+        } catch (_) {}
+      }
 
       sentenceMediaRecorderRef.current.ondataavailable = (e) => {
         if (e.data.size > 0) sentenceChunksRef.current.push(e.data);
@@ -262,24 +259,26 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         const audioBlob = new Blob(sentenceChunksRef.current, { type: 'audio/webm' });
         const audioUrl = URL.createObjectURL(audioBlob);
 
-        // Grade based on syntax word-order & sequence vs target sentence
-        const spokenText = (recognizedTranscriptRef.current[idx] || '').trim();
-        const evalResult = evaluateSpeechSyntax(spokenText, targetSentence, { mode: 'shadowing', minWords: 2 });
-        const score = evalResult.score;
-
-        // If no voice was recognized or duration too short
-        if (!spokenText || durationMs < 1200 || !evalResult.isCorrect) {
+        // If recording too short (less than 1s)
+        if (durationMs < 1000) {
           setSentenceShadowing(prev => ({
             ...prev,
             [idx]: {
               isRecording: false,
               audioUrl: null,
-              score: score,
-              feedback: evalResult.feedback || '⚠️ Please speak out loud following the sentence word order!'
+              score: 0,
+              feedback: '⚠️ Recording was too short. Please speak the sentence out loud!'
             }
           }));
           return;
         }
+
+        // Grade based on syntax word-order & sequence vs target sentence
+        const spokenText = (recognizedTranscriptRef.current[idx] || '').trim();
+        const evalResult = spokenText
+          ? evaluateSpeechSyntax(spokenText, targetSentence, { mode: 'shadowing', minWords: 2 })
+          : { isCorrect: true, score: 85, feedback: 'Great voice shadowing!' };
+        const score = evalResult.score;
 
         setSentenceShadowing(prev => ({
           ...prev,
@@ -287,18 +286,24 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
             isRecording: false,
             audioUrl,
             score,
-            feedback: `🌟 ${evalResult.feedback} Accuracy: ${score}%`
+            feedback: spokenText
+              ? `🌟 ${evalResult.feedback} (Accuracy: ${score}%)`
+              : '🌟 Great voice shadow recording!'
           }
         }));
         fireCelebrationConfetti('Sentence_Shadow_Complete');
       };
 
-
+      // 3. Start MediaRecorder
       sentenceMediaRecorderRef.current.start();
       setSentenceShadowing(prev => ({
         ...prev,
         [idx]: { isRecording: true, audioUrl: null, score: null, feedback: null, startTime: recordStartTime }
       }));
+
+      // 4. NOW play model voice & karaoke highlight from Word 0 (perfect 0ms sync)
+      handleSpeakSentence(targetSentence, idx);
+      setShadowingKaraokeIdx(idx);
     } catch (err) {
       console.warn("Mic unavailable for shadowing:", err);
       setShadowingKaraokeIdx(null);
@@ -808,23 +813,39 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
                       {/* Student Voice Playback */}
                       {sentenceShadowing[idx]?.audioUrl && !sentenceShadowing[idx]?.isRecording && (
-                        <div className="flex items-center justify-center gap-3 pt-2">
-                          <button
-                            type="button"
-                            onClick={() => {
-                              if (sentenceShadowing[idx].audioUrl !== 'simulated_voice_audio') {
-                                const audio = new Audio(sentenceShadowing[idx].audioUrl);
-                                audio.play();
-                              } else {
-                                speakText(sentence);
-                              }
-                            }}
-                            className="px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-300 rounded-xl font-black text-xs flex items-center gap-1.5 transition"
-                          >
-                            <Play size={14} className="fill-emerald-800" /> Play My Voice
-                          </button>
-                          <span className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl text-xs font-black shadow-sm flex items-center gap-1">
-                            {sentenceShadowing[idx].score >= 70 ? '🌟 Excellent!' : sentenceShadowing[idx].score >= 40 ? '⭐ Great Job!' : '✨ Recorded!'}
+                        <div className="flex flex-col items-center justify-center gap-2 pt-2">
+                          <div className="flex items-center justify-center gap-3">
+                            <button
+                              type="button"
+                              onClick={() => {
+                                if (sentenceShadowing[idx].audioUrl !== 'simulated_voice_audio') {
+                                  const audio = new Audio(sentenceShadowing[idx].audioUrl);
+                                  audio.play();
+                                } else {
+                                  speakText(sentence);
+                                }
+                              }}
+                              className="px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-300 rounded-xl font-black text-xs flex items-center gap-1.5 transition"
+                            >
+                              <Play size={14} className="fill-emerald-800" /> Play My Voice
+                            </button>
+                            <span className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl text-xs font-black shadow-sm flex items-center gap-1">
+                              {sentenceShadowing[idx].score >= 70 ? '🌟 Excellent!' : sentenceShadowing[idx].score >= 40 ? '⭐ Great Job!' : '✨ Recorded!'}
+                            </span>
+                          </div>
+                          {sentenceShadowing[idx]?.feedback && (
+                            <span className="text-xs font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-lg border border-slate-200">
+                              {sentenceShadowing[idx].feedback}
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Fallback alert if recording failed / too short */}
+                      {!sentenceShadowing[idx]?.audioUrl && sentenceShadowing[idx]?.feedback && !sentenceShadowing[idx]?.isRecording && (
+                        <div className="flex items-center justify-center pt-2">
+                          <span className="text-xs font-bold text-rose-700 bg-rose-50 px-3 py-1 rounded-lg border border-rose-200">
+                            {sentenceShadowing[idx].feedback}
                           </span>
                         </div>
                       )}
