@@ -1530,10 +1530,12 @@ export const VoiceService = {
       this._currentSourceNode = null;
     }
 
-    // 🚀 ULTRA-LOW LATENCY PATH FOR BLOBS: Use Web Audio API AudioBufferSourceNode
-    // HTML5 <audio> tag has 80-120ms buffer startup lag which clips short 1-word audio files (<300ms like cave/wrote/came).
-    // AudioBufferSourceNode has 0ms latency and plays sample-accurate audio without dropping any initial/final consonants.
-    if (typeof audioUrl === 'string' && (audioUrl.startsWith('blob:') || audioUrl.startsWith('data:'))) {
+    // 🚀 ULTRA-LOW LATENCY PATH FOR BLOBS: Use Web Audio API AudioBufferSourceNode on Desktop
+    // On Mobile (iOS / Android), HTML5 Audio is preferred to preserve native Bluetooth headset routing (A2DP / HFP)
+    // and prevent audio from leaking out of the built-in phone speaker.
+    const isMobile = typeof navigator !== 'undefined' && (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent)));
+
+    if (!isMobile && typeof audioUrl === 'string' && (audioUrl.startsWith('blob:') || audioUrl.startsWith('data:'))) {
       try {
         const ctx = getAudioCtx();
         if (ctx.state === 'suspended') {
@@ -1590,25 +1592,11 @@ export const VoiceService = {
       }
     }
 
-    // Legacy / HTML5 Audio fallback path
+    // HTML5 Audio path (native mobile Bluetooth headset routing & desktop fallback)
     const audio = new Audio(audioUrl);
     this._currentAudio = audio;
-    const savedRate = parseFloat(localStorage.getItem('tts_speed') || '1.0');
+    const savedRate = parseFloat(localStorage.getItem('shadowing_speed') || localStorage.getItem('tts_speed') || '1.0');
     audio.playbackRate = (savedRate >= 0.5 && savedRate <= 2.0) ? savedRate : 1.0;
-
-    const gain = this._speakGain || 1.0;
-    if (gain > 1.0 && (window.AudioContext || window.webkitAudioContext)) {
-      try {
-        const ctx = getAudioCtx();
-        const source = ctx.createMediaElementSource(audio);
-        const gainNode = ctx.createGain();
-        gainNode.gain.value = gain;
-        source.connect(gainNode);
-        gainNode.connect(ctx.destination);
-      } catch (e) {
-        console.warn('[TTS] WebAudio gain skipped:', e.message);
-      }
-    }
 
     return new Promise((resolve, reject) => {
       audio.onended = () => {
