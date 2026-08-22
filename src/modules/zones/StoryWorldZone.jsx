@@ -262,7 +262,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   }, [currentGear, storySentences]);
 
   // Word-by-Word Karaoke Highlighting Simulation (Linear Pacing Heuristic)
-  const handleSpeakSentence = (sentenceText, idx, playbackId = null, onAudioStartCallback = null) => {
+  const handleSpeakSentence = (sentenceText, idx, playbackId = null, onAudioStartCallback = null, caller = 'unknown') => {
     if (karaokeIntervalRef.current) {
       clearInterval(karaokeIntervalRef.current);
       karaokeIntervalRef.current = null;
@@ -274,12 +274,12 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     const onPlayStart = ({ duration } = {}) => {
       // Race condition check: If user clicked another sentence/button, ignore stale playback
       if (playbackId !== null && playbackId !== currentPlaybackId.current) {
-        markTiming('stale-playback-ignored', `playbackId=${playbackId}, current=${currentPlaybackId.current}`);
+        markTiming('stale-playback-ignored', `playbackId=${playbackId}, current=${currentPlaybackId.current}, source=${caller}`);
         return;
       }
 
-      markTiming('audio-playing-event', `idx=${idx}, duration=${duration ? duration.toFixed(2) + 's' : 'N/A'}`);
-      markTiming('karaoke-start', `idx=${idx}`);
+      markTiming('audio-playing-event', `idx=${idx}, duration=${duration ? duration.toFixed(2) + 's' : 'N/A'}, source=${caller}`);
+      markTiming('karaoke-start', `idx=${idx}, source=${caller}`);
 
       // 🎯 STRICT GATE: Only activate UI playing state & highlight word 0 when sound actually emits!
       setActiveSentenceIdx(idx);
@@ -347,9 +347,57 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     );
   };
 
+  // 🔊 Listen Model Audio Handler: Shared Mutex & Full Cancellation Guard
+  const playListenModel = (sentenceText, idx, caller = 'listen-model-audio') => {
+    markTiming('button-tap', `idx=${idx}, source=${caller}`);
+
+    // 0. Bump Playback Mutex ID and clean up active intervals / timers
+    currentPlaybackId.current += 1;
+    const playbackId = currentPlaybackId.current;
+
+    if (karaokeIntervalRef.current) {
+      clearInterval(karaokeIntervalRef.current);
+      karaokeIntervalRef.current = null;
+    }
+    if (sentenceMediaRecorderRef.current && sentenceMediaRecorderRef.current.state !== 'inactive') {
+      try { sentenceMediaRecorderRef.current.stop(); } catch (_) {}
+      sentenceMediaRecorderRef.current = null;
+    }
+    if (sentenceSpeechRecRef.current) {
+      try { sentenceSpeechRecRef.current.stop(); } catch (_) {}
+      sentenceSpeechRecRef.current = null;
+    }
+    try { VoiceService.pauseTTS(); } catch (_) {}
+
+    markTiming('play-called', `idx=${idx}, source=${caller}`);
+    handleSpeakSentence(sentenceText, idx, playbackId, null, caller);
+  };
+
+  // 🔊 Full Story Audio Handler
+  const playFullStoryAudio = () => {
+    markTiming('button-tap', 'source=full-story-audio');
+    currentPlaybackId.current += 1;
+    if (karaokeIntervalRef.current) {
+      clearInterval(karaokeIntervalRef.current);
+      karaokeIntervalRef.current = null;
+    }
+    if (sentenceMediaRecorderRef.current && sentenceMediaRecorderRef.current.state !== 'inactive') {
+      try { sentenceMediaRecorderRef.current.stop(); } catch (_) {}
+      sentenceMediaRecorderRef.current = null;
+    }
+    if (sentenceSpeechRecRef.current) {
+      try { sentenceSpeechRecRef.current.stop(); } catch (_) {}
+      sentenceSpeechRecRef.current = null;
+    }
+    try { VoiceService.pauseTTS(); } catch (_) {}
+    setActiveSentenceIdx(null);
+    setActiveWordIdx(null);
+    speakText(fullStoryText, null, 1.0, null, 'shadowing', weekNumber);
+  };
+
   // Gear 2: Shadowing = Instant Model Audio + Parallel Mic Recording (Exact Same Audio Path)
   const startSentenceShadowing = async (idx, targetSentence) => {
-    markTiming('button-tap', `idx=${idx}`);
+    markTiming('button-tap', `idx=${idx}, source=voice-shadow`);
 
     // 0. Bump Playback Mutex ID and clean up active intervals / timers
     currentPlaybackId.current += 1;
@@ -370,10 +418,10 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     try { VoiceService.pauseTTS(); } catch (_) {}
 
     // 1. Synchronously trigger Model Audio — state only activates inside onPlayStart!
-    markTiming('play-called', `idx=${idx}`);
+    markTiming('play-called', `idx=${idx}, source=voice-shadow`);
     handleSpeakSentence(targetSentence, idx, playbackId, () => {
       setShadowingKaraokeIdx(idx);
-    });
+    }, 'voice-shadow');
 
     const recordStartTime = Date.now();
     recognizedTranscriptRef.current[idx] = '';
@@ -973,7 +1021,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                 </div>
                 <button
                   type="button"
-                  onClick={() => speakText(fullStoryText)}
+                  onClick={playFullStoryAudio}
                   className="px-2.5 py-1 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg font-black text-[11px] shadow-sm flex items-center gap-1"
                 >
                   <Play size={12} /> Full Audio
@@ -1047,7 +1095,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                       <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
                         <button
                           type="button"
-                          onClick={() => handleSpeakSentence(sentence, idx)}
+                          onClick={() => playListenModel(sentence, idx, 'listen-model-audio')}
                           className="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 rounded-2xl font-black text-sm sm:text-base shadow-lg hover:shadow-xl flex items-center gap-2 transition"
                         >
                           <Volume2 size={20} /> 🔊 Listen Model Audio
@@ -1243,7 +1291,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                       <div className="flex flex-col sm:flex-row items-end sm:items-center gap-2 shrink-0 self-end sm:self-center">
                         <button
                           type="button"
-                          onClick={() => handleSpeakSentence(sentence, idx)}
+                          onClick={() => playListenModel(sentence, idx, 'listen-model-audio-list')}
                           className="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition"
                         >
                           <Volume2 size={15} /> Listen
