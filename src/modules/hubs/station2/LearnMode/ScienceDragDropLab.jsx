@@ -80,7 +80,7 @@ const DEFAULT_SCIENCE_DATA = {
   diagramImage: "/images/week33/clil_friction.png",
   labels: [
     { id: "lbl_01", text: "Low Friction Zone", targetId: "target_01" },
-    { id: "lbl_02", text: "Kinetic Momentum", targetId: "target_02" },
+    { id: "lbl_02", text: "Forward Motion", targetId: "target_02" },
     { id: "lbl_03", text: "Hazard Alert", targetId: "target_03" }
   ],
   targets: [
