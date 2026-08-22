@@ -471,8 +471,11 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       sentenceMediaRecorderRef.current = recorder;
       sentenceChunksRef.current = [];
 
-      // 3. Start browser SpeechRecognition in parallel (desktop only)
-      if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+      // 3. Start browser SpeechRecognition in parallel (Desktop only)
+      // On Android/iOS mobile, SpeechRecognition launches Google Voice Services which plays a system 'ping-ping' tone and mutes background audio playback!
+      const isMobileDevice = typeof navigator !== 'undefined' && (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent)));
+
+      if (!isMobileDevice && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
         try {
           const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
           const rec = new SpeechRec();
@@ -619,8 +622,10 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     retellTranscriptRef.current = '';
     const currentQ = RETELL_QUESTIONS[retellStepIdx];
 
-    // Start browser SpeechRecognition in parallel
-    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+    // Start browser SpeechRecognition in parallel (Desktop only)
+    const isMobileDevice = typeof navigator !== 'undefined' && (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent)));
+
+    if (!isMobileDevice && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
       try {
         const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
         const rec = new SpeechRec();
