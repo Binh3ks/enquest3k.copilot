@@ -46,21 +46,21 @@ export const listeningHubData = {
 
   // Cambridge Listening Part 3 (Visual Matching A-H — School Locations)
   listening_p3: {
-    passage_audio_script: "Teacher: Hello Jake! I am writing our school safety report about yesterday. Can you tell me where all the items were found?\nJake: Of course, Mrs. Wilson! I remember everything clearly.\nTeacher: First, where was the clean bandage kept? Was it inside the headmaster's office?\nJake: No, not there! The school nurse keeps the clean bandage inside the white medical cabinet in the nurse room.\nTeacher: Excellent. And what about the cold pack for Tom's knee? Did someone leave it on the science lab desk?\nJake: No, the nurse placed the cold pack on the first aid table near the corridor entrance so it was ready to use.\nTeacher: Right. And where was Tom's science notebook? I know he was looking for it everywhere.\nJake: He thought he lost it on the playground bench. But his notebook was right on the science room desk.\nTeacher: Ah, that is a relief! Now, what about the glass of orange juice that someone brought for Tom?\nJake: Nobody took it outside! The fresh orange juice was placed on the cafeteria counter in the school canteen.\nTeacher: And what about Tom's alarm clock? Was that left in the corridor locker?\nJake: Haha, no! Tom told me his alarm clock was on his bedroom table at home. He woke up late that morning!",
+    passage_audio_script: "Teacher: Hello Jake! I am writing our school safety report about yesterday. Can you tell me where all the items were found?\nJake: Of course, Mrs. Wilson! I remember everything clearly.\nTeacher: First, where was the clean bandage kept? Was it inside the headmaster's office?\nJake: No, not there! The school nurse keeps the clean bandage inside the white medical cabinet in the nurse room.\nTeacher: Excellent. And what about the cold pack for Tom's knee? Did someone leave it on the science lab desk?\nJake: No, the nurse placed the cold pack on the first aid table near the entrance. It was ready to use.\nTeacher: Right. And where was Tom's science notebook? I know he was looking for it everywhere.\nJake: He thought he lost it on the playground bench. But his notebook was right on the science room desk.\nTeacher: Ah, that is a relief! Now, what about the glass of orange juice that someone brought for Tom?\nJake: Nobody took it outside! The fresh orange juice was placed on the cafeteria counter in the school canteen.\nTeacher: And what about Tom's alarm clock? Was that left in the corridor locker?\nJake: Haha, no! Tom told me his alarm clock was on his bedroom table at home. He woke up late that morning!",
     items: [
       { 
         id: 1, 
         name: 'Clean Bandage', 
         target_letter: 'A', 
         audio_url: '/audio/week33/listening_p3_item1.mp3', 
-        audio_text: "Teacher: Where was the clean bandage kept? Was it inside the headmaster's office?\nJake: No, not there! The school nurse keeps the clean bandage inside the white medical cabinet in the nurse room." 
+        audio_text: "Teacher: Where was the clean bandage kept? Was it inside the headmaster's office?\nJake: No, the nurse keeps the bandage inside the white medical cabinet in the nurse room." 
       },
       { 
         id: 2, 
         name: 'Cold Pack', 
         target_letter: 'B', 
         audio_url: '/audio/week33/listening_p3_item2.mp3', 
-        audio_text: "Teacher: What about the cold pack for Tom's knee? Did someone leave it on the science lab desk?\nJake: No, the nurse placed the cold pack on the first aid table near the corridor entrance so it was ready to use." 
+        audio_text: "Teacher: What about the cold pack for Tom's knee?\nJake: The nurse placed the cold pack on the table near the entrance. It was ready to use." 
       },
       { 
         id: 3, 

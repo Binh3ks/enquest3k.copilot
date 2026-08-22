@@ -6,7 +6,7 @@ export default {
   min_sentences: 3,
   min_words: 20,
   max_words: 60,
-  model_sentence: "While Jake was walking carefully down the school corridor after class, a boy slipped on the wet floor and hurt his knee badly. Jake stopped immediately and called the school nurse. The nurse arrived quickly with a clean bandage and a cold pack. Everyone felt relieved and praised Jake for his quick action.",
+  model_sentence: "While Jake was walking carefully down the corridor, a boy slipped on the wet floor and hurt his knee. Jake stopped immediately and called the school nurse. The nurse arrived quickly with a clean bandage and a cold pack. Everyone felt relieved and praised Jake.",
   picture_story: [
     {
       panel_id: 'panel_1',
