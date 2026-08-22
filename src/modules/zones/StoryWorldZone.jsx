@@ -212,8 +212,50 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     }
   }, [currentGear, weekNumber, forcedGear]);
 
+  // Timing telemetry helper
+  const markTiming = (label, extra = '') => {
+    console.log(`[voice-shadow-timing] ⏱️ ${label}: ${performance.now().toFixed(1)}ms ${extra}`);
+  };
+
+  // Playback ID Mutex to prevent race conditions on rapid double-taps
+  const currentPlaybackId = useRef(0);
+
+  // 🎙️ Prewarm Mic Stream when entering Gear 2 (Voice Shadow)
+  // Switches iOS Audio Session to 'play-and-record' upfront so audio never glitches when tapping Shadow
+  const prewarmedMicStreamRef = useRef(null);
+
+  useEffect(() => {
+    if (currentGear !== 2) return;
+    let cancelled = false;
+    markTiming('mic-prewarm-init');
+    navigator.mediaDevices?.getUserMedia({
+      audio: {
+        echoCancellation: true,
+        noiseSuppression: false,
+        autoGainControl: true
+      }
+    }).then(stream => {
+      if (!cancelled) {
+        prewarmedMicStreamRef.current = stream;
+        markTiming('mic-prewarmed-success', `(tracks: ${stream.getAudioTracks().length})`);
+      } else {
+        stream.getTracks().forEach(t => t.stop());
+      }
+    }).catch(err => {
+      console.warn('[voice-shadow-timing] Mic prewarm non-fatal error:', err?.message);
+    });
+
+    return () => {
+      cancelled = true;
+      if (prewarmedMicStreamRef.current) {
+        prewarmedMicStreamRef.current.getTracks().forEach(t => t.stop());
+        prewarmedMicStreamRef.current = null;
+      }
+    };
+  }, [currentGear]);
+
   // Word-by-Word Karaoke Highlighting Simulation (Linear Pacing Heuristic)
-  const handleSpeakSentence = (sentenceText, idx, originTimestamp = null) => {
+  const handleSpeakSentence = (sentenceText, idx, playbackId = null) => {
     setActiveSentenceIdx(idx);
     setActiveWordIdx(0);
 
@@ -237,10 +279,14 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
     // Synchronized Karaoke Highlight: Only start ticking when the audio ACTUALLY begins producing sound!
     const onPlayStart = ({ duration } = {}) => {
-      const startT = performance.now();
-      if (originTimestamp) {
-        console.log(`[VoiceShadow Telemetry] 🔊 [T=+${(startT - originTimestamp).toFixed(1)}ms] Audio playback actually started (reported duration: ${duration ? duration.toFixed(2) + 's' : 'N/A'})`);
+      // Race condition check: If user clicked another sentence/button, ignore stale playback
+      if (playbackId !== null && playbackId !== currentPlaybackId.current) {
+        markTiming('stale-playback-ignored', `playbackId=${playbackId}, current=${currentPlaybackId.current}`);
+        return;
       }
+
+      markTiming('audio-playing-event', `idx=${idx}, duration=${duration ? duration.toFixed(2) + 's' : 'N/A'}`);
+
       if (karaokeIntervalRef.current) {
         clearInterval(karaokeIntervalRef.current);
         karaokeIntervalRef.current = null;
@@ -253,6 +299,11 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
       let wordCount = 0;
       karaokeIntervalRef.current = setInterval(() => {
+        if (playbackId !== null && playbackId !== currentPlaybackId.current) {
+          clearInterval(karaokeIntervalRef.current);
+          karaokeIntervalRef.current = null;
+          return;
+        }
         wordCount++;
         if (wordCount < words.length) {
           setActiveWordIdx(wordCount);
@@ -271,6 +322,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       null,
       1.0,
       () => {
+        if (playbackId !== null && playbackId !== currentPlaybackId.current) return;
         if (karaokeIntervalRef.current) {
           clearInterval(karaokeIntervalRef.current);
           karaokeIntervalRef.current = null;
@@ -288,17 +340,15 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
   // Gear 2: Shadowing = Instant Model Audio + Parallel Mic Recording (Exact Same Audio Path)
   const startSentenceShadowing = async (idx, targetSentence) => {
-    const t0 = performance.now();
-    console.log(`[VoiceShadow Telemetry] 🚀 [T=0.0ms] User clicked Voice Shadow (sentenceIdx=${idx})`);
+    markTiming('button-tap', `idx=${idx}`);
 
-    // 0. Double-tap / Race-condition guard: Abort and release any ongoing recording or playback immediately
+    // 0. Bump Playback Mutex ID and clean up active intervals / timers
+    currentPlaybackId.current += 1;
+    const playbackId = currentPlaybackId.current;
+
     if (karaokeIntervalRef.current) {
       clearInterval(karaokeIntervalRef.current);
       karaokeIntervalRef.current = null;
-    }
-    if (sentenceStreamRef.current) {
-      sentenceStreamRef.current.getTracks().forEach(track => track.stop());
-      sentenceStreamRef.current = null;
     }
     if (sentenceMediaRecorderRef.current && sentenceMediaRecorderRef.current.state !== 'inactive') {
       try { sentenceMediaRecorderRef.current.stop(); } catch (_) {}
@@ -310,8 +360,9 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     }
     try { VoiceService.pauseTTS(); } catch (_) {}
 
-    // 1. Trigger the exact same model audio & synchronized karaoke highlight IMMEDIATELY (0ms wait!)
-    handleSpeakSentence(targetSentence, idx, t0);
+    // 1. Synchronously trigger Model Audio (in user click tick)
+    markTiming('play-called', `idx=${idx}`);
+    handleSpeakSentence(targetSentence, idx, playbackId);
     setShadowingKaraokeIdx(idx);
 
     const recordStartTime = Date.now();
@@ -322,20 +373,31 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       [idx]: { isRecording: true, audioUrl: null, score: null, feedback: null, startTime: recordStartTime }
     }));
 
-    try {
-      // 2. Initialize microphone in background without delaying model audio
-      const micStartT = performance.now();
-      const stream = await navigator.mediaDevices.getUserMedia({
-        audio: {
-          echoCancellation: true,
-          noiseSuppression: false,
-          autoGainControl: true
-        }
-      });
-      const micReadyT = performance.now();
-      console.log(`[VoiceShadow Telemetry] 🎙️ [T=+${(micReadyT - t0).toFixed(1)}ms] Mic stream active (took ${(micReadyT - micStartT).toFixed(1)}ms, tracks=${stream.getAudioTracks().length})`);
-      sentenceStreamRef.current = stream;
+    // 2. Use prewarmed mic stream immediately if ready, or fallback to on-demand getUserMedia
+    let stream = prewarmedMicStreamRef.current;
+    if (!stream || stream.getTracks().every(t => t.readyState === 'ended')) {
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({
+          audio: {
+            echoCancellation: true,
+            noiseSuppression: false,
+            autoGainControl: true
+          }
+        });
+        prewarmedMicStreamRef.current = stream;
+      } catch (e) {
+        console.warn("[voice-shadow-timing] On-demand mic request failed:", e);
+      }
+    }
 
+    if (!stream) {
+      console.warn("[voice-shadow-timing] No mic stream available for recording");
+      return;
+    }
+
+    sentenceStreamRef.current = stream;
+
+    try {
       let mimeType = '';
       if (typeof MediaRecorder !== 'undefined') {
         if (MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) {
@@ -375,14 +437,9 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       };
 
       recorder.onstop = () => {
+        if (playbackId !== currentPlaybackId.current) return;
         const durationMs = Date.now() - recordStartTime;
         setShadowingKaraokeIdx(null);
-
-        // Stop stream tracks to release microphone hardware immediately
-        if (sentenceStreamRef.current) {
-          sentenceStreamRef.current.getTracks().forEach(track => track.stop());
-          sentenceStreamRef.current = null;
-        }
 
         // Stop SpeechRecognition engine
         if (sentenceSpeechRecRef.current) {
@@ -456,9 +513,9 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
       // 4. Start MediaRecorder
       recorder.start(100);
-      console.log(`[VoiceShadow Telemetry] ⏺️ [T=+${(performance.now() - t0).toFixed(1)}ms] MediaRecorder active`);
+      markTiming('recording-started', `idx=${idx}`);
     } catch (err) {
-      console.warn("[VoiceShadow] Mic initialization error:", err);
+      console.warn("[VoiceShadow] Mic recording error:", err);
     }
   };
 
