@@ -1097,7 +1097,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                                         ? 'text-amber-950 font-black bg-amber-200 ring-2 ring-amber-300'
                                         : item.isStressed
                                         ? 'text-rose-700 font-bold bg-rose-50/90 border border-rose-200'
-                                        : 'text-slate-400 font-medium'
+                                        : 'text-slate-600 font-semibold bg-slate-100/80'
                                     }`}
                                   >
                                     {item.ipa}
@@ -1213,7 +1213,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                       <PronunciationCoachCard
                         sentence={sentence}
                         customIpa={ipaMap[idx] || null}
-                        defaultOpen={true}
+                        defaultOpen={false}
                       />
                     </div>
                   );

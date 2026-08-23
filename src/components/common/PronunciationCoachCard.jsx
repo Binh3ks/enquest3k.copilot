@@ -2,11 +2,32 @@ import React, { useState } from 'react';
 import { Sparkles, Lightbulb, Volume2, ArrowDownRight, ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
 
 /**
+ * Built-in phonetic dictionary for high-frequency A1/A2 Cambridge story words
+ */
+const COMMON_WORD_IPA = {
+  'jake': 'ʤeɪk', 'was': 'wəz', 'walking': 'ˈWƆːK-ɪŋ', 'carefully': 'ˈKEƏ-fə-li',
+  'down': 'daʊn', 'the': 'ðə', 'school': 'skuːl', 'corridor': 'ˈKɒR-ɪ-dɔː',
+  'corridors': 'ˈKɒR-ɪ-dɔːz', 'after': 'ˈⱭːF-tə', 'science': 'ˈSAꞮ-əns', 'class': 'klɑːs',
+  'suddenly': 'ˈSɅD-ən-li', 'a': 'ə', 'an': 'ən', 'boy': 'bɔɪ', 'running': 'ˈRɅN-ɪŋ',
+  'fast': 'fɑːst', 'slipped': 'slɪpt', 'on': 'ɒn', 'wet': 'wet', 'floor': 'flɔː',
+  'and': 'ənd', 'fell': 'fel', 'heavily': 'ˈHEV-ɪ-li', 'he': 'hiː', 'hurt': 'hɜːt',
+  'his': 'hɪz', 'knee': 'niː', 'lost': 'lɒst', 'balance': 'ˈBÆL-əns',
+  'completely': 'kəm-ˈPLIːT-li', 'stopped': 'stɒpt', 'immediately': 'ɪ-ˈMIː-di-ət-li',
+  'to': 'tuː', 'help': 'help', 'friend': 'frend', 'stay': 'steɪ', 'calm': 'kɑːm',
+  'called': 'kɔːld', 'nurse': 'nɜːs', 'right': 'raɪt', 'away': 'ə-ˈWEꞮ',
+  'arrived': 'ə-ˈRAꞮVD', 'quickly': 'ˈKWꞮK-li', 'with': 'wɪð', 'clean': 'kliːn',
+  'bandage': 'ˈBÆN-dɪʤ', 'cold': 'kəʊld', 'pack': 'pæk', 'treat': 'triːt',
+  'cut': 'kʌt', 'everyone': 'ˈEV-rɪ-wʌn', 'felt': 'felt', 'relieved': 'rɪ-ˈLIːVD',
+  'praised': 'preɪzd', 'for': 'fɔː', 'following': 'ˈFɒL-əʊ-ɪŋ', 'safety': 'ˈSEꞮF-ti',
+  'rules': 'ruːlz', 'headmaster': 'ˈHED-ˌmɑːs-tə', 'reminded': 'rɪ-ˈMAꞮN-dɪd',
+  'all': 'ɔːl', 'students': 'ˈSTJUː-dənts', 'never': 'ˈNEV-ə', 'run': 'rʌn', 'in': 'ɪn'
+};
+
+/**
  * Break sentence into semantic ESL Chunks (Linear Thinking)
  */
 export function getSentenceChunks(sentence) {
   if (!sentence) return [];
-  // Split on punctuation, prepositions, and conjunctions
   const rawParts = sentence.split(/([,.;!?]|\s+(?:down|in|on|at|after|before|with|from|to|into|through|during|because|and|but|suddenly|while|when)\b)/gi);
   const chunks = [];
   let currentChunk = '';
@@ -15,7 +36,6 @@ export function getSentenceChunks(sentence) {
     const part = rawParts[i];
     if (!part) continue;
     
-    // If it's a preposition/conjunction, start a new chunk if current is non-empty
     if (/^\s+(?:down|in|on|at|after|before|with|from|to|into|through|during|because|and|but|suddenly|while|when)\b/i.test(part)) {
       if (currentChunk.trim()) {
         chunks.push(currentChunk.trim());
@@ -49,9 +69,9 @@ export function getWordIpaList(sentence, fullIpaString = null) {
 
   return words.map((rawWord, idx) => {
     const cleanWord = rawWord.toLowerCase().replace(/[^a-z']/g, '');
-    let rawIpa = ipaTokens[idx] || '';
+    let rawIpa = ipaTokens[idx] || COMMON_WORD_IPA[cleanWord] || '';
 
-    const isStressed = rawIpa.includes('ˈ') || cleanWord.length >= 6;
+    const isStressed = rawIpa.includes('ˈ') || rawIpa.includes('ˌ') || cleanWord.length >= 6;
     let displayIpa = rawIpa;
     if (displayIpa.includes('ˈ')) {
       displayIpa = displayIpa.replace(/ˈ([a-zA-Zɔæɑʊɪʌəɛɜː]+)/g, (_, syl) => `ˈ${syl.toUpperCase()}`);
@@ -60,7 +80,7 @@ export function getWordIpaList(sentence, fullIpaString = null) {
     return {
       word: rawWord,
       cleanWord,
-      ipa: displayIpa ? `/${displayIpa}/` : '',
+      ipa: displayIpa ? `/${displayIpa}/` : (COMMON_WORD_IPA[cleanWord] ? `/${COMMON_WORD_IPA[cleanWord]}/` : ''),
       isStressed
     };
   });
@@ -169,7 +189,7 @@ export function analyzeSentencePhonetics(sentence, customIpa = null) {
   };
 }
 
-export default function PronunciationCoachCard({ sentence, customIpa = null, defaultOpen = true }) {
+export default function PronunciationCoachCard({ sentence, customIpa = null, defaultOpen = false }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const guide = analyzeSentencePhonetics(sentence, customIpa);
 
@@ -181,7 +201,7 @@ export default function PronunciationCoachCard({ sentence, customIpa = null, def
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-4 py-2.5 flex items-center justify-between bg-white/80 hover:bg-white/95 border-b border-indigo-100 transition"
+        className="w-full px-4 py-2.5 flex items-center justify-between bg-white/80 hover:bg-white/95 border-b border-indigo-100 transition cursor-pointer"
       >
         <div className="flex items-center gap-2">
           <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-indigo-600 text-white shadow-xs">
