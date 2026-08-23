@@ -39,8 +39,10 @@ export function useShadowingRecorder(weekId) {
     try { localStorage.setItem(`shadowing_scores_${weekId}`, JSON.stringify(scores)); } catch { /* ignore */ }
   }, [scores, weekId]);
 
-  // Minimum blob size for real speech (below this = silence / noise only)
-  const MIN_AUDIO_BLOB_BYTES = 3000; // ~3KB — empirically silence webm is < 2KB
+  // Minimum blob size for real speech (calibrated empirically):
+  // Silence 5s opus webm ≈ 1850 bytes | Speech 1s ≈ 2350 bytes
+  // → 1200 bytes is safe lower bound: blocks silence, passes 1s+ speech
+  const MIN_AUDIO_BLOB_BYTES = 1200;
   // Minimum fraction of targetText words that must appear in transcript
   const MIN_WORD_MATCH_RATIO = 0.4;
   // Minimum Deepgram confidence (0–1). Field is `data.confidence`, NOT `data.evaluation.confidence`
@@ -159,6 +161,27 @@ export function useShadowingRecorder(weekId) {
 
       rec.onresult = (e) => {
         const transcript = e.results[0]?.[0]?.transcript || '';
+        const targetWordCount = targetText.trim().split(/\s+/).filter(Boolean).length;
+        const transcriptWordCount = transcript.trim().split(/\s+/).filter(Boolean).length;
+        const wordRatio = targetWordCount > 0 ? transcriptWordCount / targetWordCount : 0;
+
+        // Silence detection for WebSpeech: reject sparse/empty transcripts
+        if (!transcript || wordRatio < MIN_WORD_MATCH_RATIO) {
+          console.warn(`[ShadowingRecorder] WebSpeech sparse result rejected: "${transcript}" (ratio=${wordRatio.toFixed(2)})`);
+          setScores(prev => ({
+            ...prev,
+            [sentenceId]: {
+              score: 0,
+              feedback: transcript
+                ? `🎤 I heard "${transcript}" — try saying the full sentence!`
+                : '🎤 Couldn\'t hear clearly. Speak closer to the mic!',
+              transcript,
+              provider: 'webspeech_low_confidence',
+            },
+          }));
+          return;
+        }
+
         const score = wordMatchScore(transcript, targetText);
         setScores(prev => ({
           ...prev,
