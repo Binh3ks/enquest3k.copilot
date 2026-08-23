@@ -31,7 +31,7 @@ const CANONICAL_STATION_LABELS = {
 const CANONICAL_STATION_KEYS = Object.keys(CANONICAL_STATION_LABELS);
 
 const QUICK_NUDGES = [
-  { label: '👏 Keep it up!',      text: 'Great work this week! Keep the momentum going!' },
+  { label: '👏 Keep it up!',      text: 'Great work this week! Keep up the great work!' },
   { label: '🔥 On a streak!',     text: "You're on a roll! Don't break your streak!" },
   { label: '📚 Review vocab',     text: 'You have vocab words due for SRS review. Spend 5 minutes today!' },
   { label: '🎤 Use the mic!',     text: 'Try the speaking activities — they help your pronunciation a lot!' },
