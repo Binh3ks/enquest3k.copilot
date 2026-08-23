@@ -222,46 +222,14 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   // Playback ID Mutex to prevent race conditions on rapid double-taps
   const currentPlaybackId = useRef(0);
 
-  // 🎙️ Prewarm Mic Stream when entering Gear 2 (Voice Shadow)
-  // Switches iOS Audio Session to 'play-and-record' upfront so audio never glitches when tapping Shadow
-  const prewarmedMicStreamRef = useRef(null);
-
+  // 🚀 Background Pre-cache all story sentences into IndexedDB for 0ms latency on click
   useEffect(() => {
-    if (currentGear !== 2) return;
-    let cancelled = false;
-    markTiming('mic-prewarm-init');
-    navigator.mediaDevices?.getUserMedia({
-      audio: {
-        echoCancellation: true,
-        noiseSuppression: true,
-        autoGainControl: true
-      }
-    }).then(stream => {
-      if (!cancelled) {
-        prewarmedMicStreamRef.current = stream;
-        markTiming('mic-prewarmed-success', `(tracks: ${stream.getAudioTracks().length})`);
-      } else {
-        stream.getTracks().forEach(t => t.stop());
-      }
-    }).catch(err => {
-      console.warn('[voice-shadow-timing] Mic prewarm non-fatal error:', err?.message);
-    });
-
-    // 🚀 Background Pre-cache all story sentences into IndexedDB for 0ms latency on click
     if (storySentences && storySentences.length > 0) {
       storySentences.forEach((sentence) => {
         VoiceService.prefetch?.(sentence, 'shadowing', null, weekNumber).catch(() => {});
       });
     }
-
-    return () => {
-      cancelled = true;
-      if (prewarmedMicStreamRef.current) {
-        prewarmedMicStreamRef.current.getTracks().forEach(t => t.stop());
-        prewarmedMicStreamRef.current = null;
-      }
-    };
-  }, [currentGear, storySentences]);
+  }, [currentGear, storySentences, weekNumber]);
 
   // Load Shadowing IPA data for Phonetics Coach
   const [ipaMap, setIpaMap] = useState({});
@@ -449,25 +417,32 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       [idx]: { isRecording: true, audioUrl: null, score: null, feedback: null, startTime: recordStartTime }
     }));
 
-    // 2. Use prewarmed mic stream immediately if ready, or fallback to on-demand getUserMedia
-    let stream = prewarmedMicStreamRef.current;
-    if (!stream || stream.getTracks().every(t => t.readyState === 'ended')) {
-      try {
-        stream = await navigator.mediaDevices.getUserMedia({
-          audio: {
-            echoCancellation: true,
-            noiseSuppression: false,
-            autoGainControl: true
-          }
-        });
-        prewarmedMicStreamRef.current = stream;
-      } catch (e) {
-        console.warn("[voice-shadow-timing] On-demand mic request failed:", e);
-      }
+    // 2. On-demand getUserMedia with clean lifecycle
+    let stream = null;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: false,
+          autoGainControl: true
+        }
+      });
+    } catch (e) {
+      console.warn("[voice-shadow] On-demand mic request failed:", e);
     }
 
     if (!stream) {
-      console.warn("[voice-shadow-timing] No mic stream available for recording");
+      console.warn("[voice-shadow] No mic stream available for recording");
+      setSentenceShadowing(prev => ({
+        ...prev,
+        [idx]: {
+          isRecording: false,
+          audioUrl: null,
+          score: 0,
+          spokenText: '',
+          feedback: '⚠️ Microphone permission needed. Please allow microphone access in your browser!'
+        }
+      }));
       return;
     }
 
@@ -494,6 +469,15 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       };
 
       recorder.onstop = async () => {
+        // 🔥 Release microphone tracks IMMEDIATELY so red recording dot disappears from browser tab
+        if (sentenceStreamRef.current) {
+          sentenceStreamRef.current.getTracks().forEach(track => track.stop());
+          sentenceStreamRef.current = null;
+        }
+        if (stream) {
+          stream.getTracks().forEach(track => track.stop());
+        }
+
         if (playbackId !== currentPlaybackId.current) return;
         const durationMs = Date.now() - recordStartTime;
         setShadowingKaraokeIdx(null);
