@@ -13,6 +13,8 @@ import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 import MicFallbackInput from '../../components/common/MicFallbackInput';
 import GrammarHintButton from '../../components/common/GrammarHintButton';
+import PronunciationCoachCard from '../../components/common/PronunciationCoachCard';
+import { loadIpaData } from '../shadowing/ipaUtils';
 import { useUserStore } from '../../stores/useUserStore';
 
 export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = null, hideGearTabs = false }) {
@@ -260,6 +262,22 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       }
     };
   }, [currentGear, storySentences]);
+
+  // Load Shadowing IPA data for Phonetics Coach
+  const [ipaMap, setIpaMap] = useState({});
+  useEffect(() => {
+    if (currentGear === 2) {
+      loadIpaData(weekNumber, 'advanced').then(data => {
+        if (data && Array.isArray(data)) {
+          const map = {};
+          data.forEach((item, i) => {
+            map[i] = item.ipa;
+          });
+          setIpaMap(map);
+        }
+      }).catch(() => {});
+    }
+  }, [currentGear, weekNumber]);
 
   // Word-by-Word Karaoke Highlighting Simulation (Linear Pacing Heuristic)
   const handleSpeakSentence = (sentenceText, idx, playbackId = null, onAudioStartCallback = null, caller = 'unknown') => {
@@ -1177,6 +1195,13 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                           </span>
                         </div>
                       )}
+
+                      {/* 🎯 AI Pronunciation & Intonation Coach Guide */}
+                      <PronunciationCoachCard
+                        sentence={sentence}
+                        customIpa={ipaMap[idx] || null}
+                        defaultOpen={true}
+                      />
                     </div>
                   );
                 })()}
