@@ -231,7 +231,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     navigator.mediaDevices?.getUserMedia({
       audio: {
         echoCancellation: true,
-        noiseSuppression: false,
+        noiseSuppression: true,
         autoGainControl: true
       }
     }).then(stream => {
@@ -438,7 +438,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         stream = await navigator.mediaDevices.getUserMedia({
           audio: {
             echoCancellation: true,
-            noiseSuppression: false,
+            noiseSuppression: true,
             autoGainControl: true
           }
         });
@@ -471,28 +471,6 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       sentenceMediaRecorderRef.current = recorder;
       sentenceChunksRef.current = [];
 
-      // 3. Start browser SpeechRecognition in parallel (Desktop only)
-      // On Android/iOS mobile, SpeechRecognition launches Google Voice Services which plays a system 'ping-ping' tone and mutes background audio playback!
-      const isAndroidOrIOS = typeof navigator !== 'undefined' && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-      if (!isAndroidOrIOS && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
-        try {
-          const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-          const rec = new SpeechRec();
-          rec.continuous = true;
-          rec.interimResults = true;
-          rec.lang = 'en-US';
-          rec.onresult = (event) => {
-            const transcript = Array.from(event.results)
-              .map(r => r[0].transcript)
-              .join(' ');
-            recognizedTranscriptRef.current[idx] = transcript;
-          };
-          rec.start();
-          sentenceSpeechRecRef.current = rec;
-        } catch (_) {}
-      }
-
       recorder.ondataavailable = (e) => {
         if (e.data && e.data.size > 0) sentenceChunksRef.current.push(e.data);
       };
@@ -501,12 +479,6 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         if (playbackId !== currentPlaybackId.current) return;
         const durationMs = Date.now() - recordStartTime;
         setShadowingKaraokeIdx(null);
-
-        // Stop SpeechRecognition engine
-        if (sentenceSpeechRecRef.current) {
-          try { sentenceSpeechRecRef.current.stop(); } catch (_) {}
-          sentenceSpeechRecRef.current = null;
-        }
 
         // Stop model TTS if still in-flight
         try { VoiceService.pauseTTS(); } catch (_) {}
@@ -546,7 +518,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
             for (let i = 0; i < channelData.length; i++) {
               const s = channelData[i];
               sumSquares += s * s;
-              if (Math.abs(s) > 0.03) speechSamples++;
+              if (Math.abs(s) > 0.04) speechSamples++;
             }
             rms = Math.sqrt(sumSquares / Math.max(1, totalSamples));
             try { ctx.close(); } catch (_) {}
@@ -556,10 +528,10 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         }
 
         const speechRatio = totalSamples > 0 ? (speechSamples / totalSamples) : 0;
-        const isSilent = (totalSamples > 0 && (rms < 0.012 || speechRatio < 0.03));
+        const isSilent = (totalSamples > 0 && (rms < 0.02 || speechRatio < 0.06));
 
         if (isSilent) {
-          // 🚫 Silence guard: Student did not speak into the mic
+          // 🚫 Silence guard: No active close-mic speech detected
           setSentenceShadowing(prev => ({
             ...prev,
             [idx]: {
@@ -573,26 +545,13 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
           return;
         }
 
-        // Grade based on syntax word-order & sequence vs target sentence
-        const spokenText = (recognizedTranscriptRef.current[idx] || '').trim();
-        const hasLiveTranscript = spokenText.length > 0;
-        
         let score = 0;
         let feedback = '';
-        let displaySpoken = spokenText;
+        let displaySpoken = '';
         let evalDone = false;
 
-        // 1. If Desktop Web Speech API produced live transcript
-        if (hasLiveTranscript) {
-          const evalResult = evaluateSpeechSyntax(spokenText, targetSentence, { mode: 'shadowing', minWords: 1 });
-          score = evalResult.score;
-          feedback = evalResult.feedback ? `Accuracy: ${score}% — ${evalResult.feedback}` : `Accuracy: ${score}%`;
-          displaySpoken = spokenText;
-          evalDone = true;
-        }
-
-        // 2. If Mobile or live transcript missing, evaluate via Deepgram STT Cloud API
-        if (!evalDone && audioBlob.size > 1500) {
+        // Evaluate via Deepgram STT Cloud API
+        if (audioBlob.size > 1500) {
           try {
             const formData = new FormData();
             formData.append('audio', audioBlob, 'recording.webm');
@@ -613,9 +572,16 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
             if (res.ok) {
               const data = await res.json();
               if (data.success && data.evaluation) {
-                score = data.evaluation.score;
-                feedback = data.evaluation.feedback || `Accuracy: ${score}%`;
-                displaySpoken = data.transcript || '';
+                const transcript = (data.transcript || '').trim();
+                if (!transcript || transcript.length === 0) {
+                  score = 0;
+                  feedback = '⚠️ No clear words recognized. Please speak clearly into your mic!';
+                  displaySpoken = '(No words recognized)';
+                } else {
+                  score = data.evaluation.score;
+                  feedback = data.evaluation.feedback || `Accuracy: ${score}%`;
+                  displaySpoken = transcript;
+                }
                 evalDone = true;
               }
             }
@@ -624,9 +590,9 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
           }
         }
 
-        // 3. Fallback if offline / cloud STT unavailable
+        // Fallback if offline / cloud STT unavailable
         if (!evalDone) {
-          score = 75;
+          score = 70;
           feedback = `🎙️ Voice recorded! Tap 'Play My Voice' to listen & compare with model voice.`;
           displaySpoken = `(Recorded: ${(durationMs / 1000).toFixed(1)}s voice)`;
         }
@@ -635,7 +601,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
           ...prev,
           [idx]: {
             isRecording: false,
-            audioUrl,
+            audioUrl: score > 0 ? audioUrl : null,
             score,
             spokenText: displaySpoken,
             feedback
