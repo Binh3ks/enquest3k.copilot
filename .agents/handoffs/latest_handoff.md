@@ -1,17 +1,17 @@
 # 🤝 Session Handoff Report
-**Date**: 09:25:11 23/8/2026
+**Date**: 09:38:49 23/8/2026
 **Branch**: `main`
-**Latest Commit**: `5d5424a6 feat(evaluation): integrate Deepgram Nova-2 STT for real word-by-word transcription and accurate scoring on mobile and laptop`
+**Latest Commit**: `3d10912c fix(shadowing): eliminate speaker bleeding into Web Speech API by relying solely on Deepgram STT with noise suppression and calibrated VAD`
 
 ---
 
 ## 1. 📌 Executive Summary
-feat(evaluation): integrate Deepgram Nova-2 STT for real word-by-word transcription and accurate scoring on mobile and laptop
+fix(shadowing): eliminate speaker bleeding into Web Speech API by relying solely on Deepgram STT with noise suppression and calibrated VAD
 
 ---
 
 ## 2. ✅ Work Completed in This Session
-- **Commits & Fixes**: `5d5424a6 feat(evaluation): integrate Deepgram Nova-2 STT for real word-by-word transcription and accurate scoring on mobile and laptop`
+- **Commits & Fixes**: `3d10912c fix(shadowing): eliminate speaker bleeding into Web Speech API by relying solely on Deepgram STT with noise suppression and calibrated VAD`
 - **File System State**:
   - `?? .agents/handoffs/handoff_2026-08-22T02-03-16-654Z.md`
   - `?? .agents/handoffs/handoff_2026-08-22T02-08-54-513Z.md`
@@ -36,6 +36,7 @@ feat(evaluation): integrate Deepgram Nova-2 STT for real word-by-word transcript
   - `?? .agents/handoffs/handoff_2026-08-22T10-46-17-041Z.md`
   - `?? .agents/handoffs/handoff_2026-08-22T11-15-49-996Z.md`
   - `?? .agents/handoffs/handoff_2026-08-22T11-24-49-997Z.md`
+  - `?? .agents/handoffs/handoff_2026-08-23T02-25-11-001Z.md`
 
 ---
 
@@ -47,7 +48,7 @@ feat(evaluation): integrate Deepgram Nova-2 STT for real word-by-word transcript
 
 ## 4. 🧪 System Verification Status
 - **Git Branch**: `main`
-- **Uncommitted Files**: 23
+- **Uncommitted Files**: 24
 
 ---
 
