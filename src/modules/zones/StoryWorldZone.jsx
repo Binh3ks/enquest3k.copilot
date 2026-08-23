@@ -473,9 +473,9 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
       // 3. Start browser SpeechRecognition in parallel (Desktop only)
       // On Android/iOS mobile, SpeechRecognition launches Google Voice Services which plays a system 'ping-ping' tone and mutes background audio playback!
-      const isMobileDevice = typeof navigator !== 'undefined' && (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent)));
+      const isAndroidOrIOS = typeof navigator !== 'undefined' && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-      if (!isMobileDevice && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
+      if (!isAndroidOrIOS && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
         try {
           const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
           const rec = new SpeechRec();
@@ -558,6 +558,21 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         const speechRatio = totalSamples > 0 ? (speechSamples / totalSamples) : 0;
         const isSilent = (totalSamples > 0 && (rms < 0.012 || speechRatio < 0.03));
 
+        if (isSilent) {
+          // 🚫 Silence guard: Student did not speak into the mic
+          setSentenceShadowing(prev => ({
+            ...prev,
+            [idx]: {
+              isRecording: false,
+              audioUrl: null,
+              score: 0,
+              spokenText: '(No speech detected)',
+              feedback: '⚠️ No speech detected. Please speak clearly into your mic!'
+            }
+          }));
+          return;
+        }
+
         // Grade based on syntax word-order & sequence vs target sentence
         const spokenText = (recognizedTranscriptRef.current[idx] || '').trim();
         const hasLiveTranscript = spokenText.length > 0;
@@ -565,32 +580,62 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         let score = 0;
         let feedback = '';
         let displaySpoken = spokenText;
+        let evalDone = false;
 
-        if (isSilent) {
-          // 🚫 Silence guard: Student did not speak into the mic
-          score = 0;
-          feedback = '⚠️ No speech detected. Please speak clearly into your mic!';
-          displaySpoken = '(No voice detected)';
-        } else if (hasLiveTranscript) {
+        // 1. If Desktop Web Speech API produced live transcript
+        if (hasLiveTranscript) {
           const evalResult = evaluateSpeechSyntax(spokenText, targetSentence, { mode: 'shadowing', minWords: 1 });
           score = evalResult.score;
           feedback = evalResult.feedback ? `Accuracy: ${score}% — ${evalResult.feedback}` : `Accuracy: ${score}%`;
-        } else if (audioBlob.size > 1500 && durationMs >= 1000 && !isSilent) {
-          // 🎙️ Real human voice energy detected on mobile
+          displaySpoken = spokenText;
+          evalDone = true;
+        }
+
+        // 2. If Mobile or live transcript missing, evaluate via Deepgram STT Cloud API
+        if (!evalDone && audioBlob.size > 1500) {
+          try {
+            const formData = new FormData();
+            formData.append('audio', audioBlob, 'recording.webm');
+            formData.append('targetText', targetSentence);
+            formData.append('mode', 'sentence');
+
+            const token = useUserStore.getState().token;
+            const headers = {};
+            if (token) headers['Authorization'] = `Bearer ${token}`;
+
+            const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+            const res = await fetch(`${API_BASE}/pronunciation/evaluate-deepgram`, {
+              method: 'POST',
+              headers,
+              body: formData,
+            });
+
+            if (res.ok) {
+              const data = await res.json();
+              if (data.success && data.evaluation) {
+                score = data.evaluation.score;
+                feedback = data.evaluation.feedback || `Accuracy: ${score}%`;
+                displaySpoken = data.transcript || '';
+                evalDone = true;
+              }
+            }
+          } catch (deepgramErr) {
+            console.warn('[Deepgram STT] Cloud evaluation fallback:', deepgramErr.message);
+          }
+        }
+
+        // 3. Fallback if offline / cloud STT unavailable
+        if (!evalDone) {
           score = 75;
           feedback = `🎙️ Voice recorded! Tap 'Play My Voice' to listen & compare with model voice.`;
           displaySpoken = `(Recorded: ${(durationMs / 1000).toFixed(1)}s voice)`;
-        } else {
-          score = 0;
-          feedback = '⚠️ No voice recorded. Please speak clearly into your mic!';
-          displaySpoken = '';
         }
 
         setSentenceShadowing(prev => ({
           ...prev,
           [idx]: {
             isRecording: false,
-            audioUrl: score > 0 ? audioUrl : null,
+            audioUrl,
             score,
             spokenText: displaySpoken,
             feedback
