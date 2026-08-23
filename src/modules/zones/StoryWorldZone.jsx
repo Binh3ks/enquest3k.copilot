@@ -13,7 +13,7 @@ import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 import MicFallbackInput from '../../components/common/MicFallbackInput';
 import GrammarHintButton from '../../components/common/GrammarHintButton';
-import PronunciationCoachCard from '../../components/common/PronunciationCoachCard';
+import PronunciationCoachCard, { getWordIpaList } from '../../components/common/PronunciationCoachCard';
 import { loadIpaData } from '../shadowing/ipaUtils';
 import { useUserStore } from '../../stores/useUserStore';
 
@@ -1065,35 +1065,48 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                   const isCurrentPlaying = activeSentenceIdx === idx;
                   const isDone = completedKaraokeSentences[idx];
                   const sentenceWords = sentence.split(/\s+/);
+                  const wordIpaList = getWordIpaList(sentence, ipaMap[idx] || null);
 
                   return (
                     <div className="p-3.5 sm:p-5 bg-gradient-to-b from-amber-50/80 to-white rounded-2xl border-2 border-amber-300 shadow-md space-y-3 text-center">
-                      <div className="min-h-[60px] flex items-center justify-center">
-                        {isCurrentPlaying ? (
-                          <div className="text-xl sm:text-2xl md:text-3xl font-black leading-relaxed flex flex-wrap justify-center gap-2">
-                            {sentenceWords.map((word, wIdx) => {
-                              const isWordActive = activeWordIdx === wIdx;
-                              return (
+                      <div className="min-h-[68px] flex items-center justify-center py-1">
+                        <div className="text-xl sm:text-2xl md:text-3xl font-black leading-relaxed flex flex-wrap items-end justify-center gap-x-3 gap-y-3">
+                          {wordIpaList.map((item, wIdx) => {
+                            const isWordActive = isCurrentPlaying && activeWordIdx === wIdx;
+                            const isPast = isCurrentPlaying && activeWordIdx !== null && wIdx < activeWordIdx;
+
+                            return (
+                              <div key={wIdx} className="flex flex-col items-center justify-center min-w-[28px]">
+                                {/* Word */}
                                 <span
-                                  key={wIdx}
-                                  className={`px-2 py-1 rounded-xl transition-all duration-150 ${
+                                  className={`px-2 py-0.5 rounded-xl transition-all duration-150 ${
                                     isWordActive
                                       ? 'bg-amber-400 text-slate-950 font-black scale-110 shadow-lg ring-4 ring-amber-300'
-                                      : activeWordIdx !== null && wIdx < activeWordIdx
+                                      : isPast
                                       ? 'text-amber-900 font-bold'
-                                      : 'text-slate-800'
+                                      : 'text-slate-900 font-black'
                                   }`}
                                 >
-                                  {word}
+                                  {item.word.replace(/\*\*/g, '')}
                                 </span>
-                              );
-                            })}
-                          </div>
-                        ) : (
-                          <div className="text-xl sm:text-2xl md:text-3xl font-black leading-relaxed text-slate-900">
-                            {renderParsedText(sentence, 'amber')}
-                          </div>
-                        )}
+                                {/* IPA subtitle directly underneath each word */}
+                                {item.ipa && (
+                                  <span
+                                    className={`text-[11px] sm:text-xs font-mono tracking-tight mt-0.5 px-1.5 py-0.2 rounded transition-all ${
+                                      isWordActive
+                                        ? 'text-amber-950 font-black bg-amber-200 ring-2 ring-amber-300'
+                                        : item.isStressed
+                                        ? 'text-rose-700 font-bold bg-rose-50/90 border border-rose-200'
+                                        : 'text-slate-400 font-medium'
+                                    }`}
+                                  >
+                                    {item.ipa}
+                                  </span>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
 
                       {isCurrentPlaying && (

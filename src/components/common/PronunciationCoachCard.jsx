@@ -1,102 +1,171 @@
 import React, { useState } from 'react';
-import { Sparkles, Lightbulb, Volume2, ArrowDownRight, ArrowUpRight, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { Sparkles, Lightbulb, Volume2, ArrowDownRight, ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
 
 /**
- * Automatically analyze sentence for phonetic coaching hints (Stress, Chunks, Final Sounds, Intonation)
+ * Break sentence into semantic ESL Chunks (Linear Thinking)
+ */
+export function getSentenceChunks(sentence) {
+  if (!sentence) return [];
+  // Split on punctuation, prepositions, and conjunctions
+  const rawParts = sentence.split(/([,.;!?]|\s+(?:down|in|on|at|after|before|with|from|to|into|through|during|because|and|but|suddenly|while|when)\b)/gi);
+  const chunks = [];
+  let currentChunk = '';
+
+  for (let i = 0; i < rawParts.length; i++) {
+    const part = rawParts[i];
+    if (!part) continue;
+    
+    // If it's a preposition/conjunction, start a new chunk if current is non-empty
+    if (/^\s+(?:down|in|on|at|after|before|with|from|to|into|through|during|because|and|but|suddenly|while|when)\b/i.test(part)) {
+      if (currentChunk.trim()) {
+        chunks.push(currentChunk.trim());
+      }
+      currentChunk = part.trim();
+    } else if (/^[,.;!?]$/.test(part.trim())) {
+      currentChunk += part;
+      if (currentChunk.trim()) {
+        chunks.push(currentChunk.trim());
+        currentChunk = '';
+      }
+    } else {
+      currentChunk += (currentChunk ? ' ' : '') + part.trim();
+    }
+  }
+  if (currentChunk.trim()) chunks.push(currentChunk.trim());
+
+  return chunks.length >= 2 ? chunks : [sentence.trim()];
+}
+
+/**
+ * Extract word-by-word IPA and Capitalized Stress
+ */
+export function getWordIpaList(sentence, fullIpaString = null) {
+  if (!sentence) return [];
+  const words = sentence.trim().split(/\s+/);
+  let ipaTokens = [];
+  if (fullIpaString) {
+    ipaTokens = fullIpaString.replace(/^\/|\/$/g, '').trim().split(/\s+/);
+  }
+
+  return words.map((rawWord, idx) => {
+    const cleanWord = rawWord.toLowerCase().replace(/[^a-z']/g, '');
+    let rawIpa = ipaTokens[idx] || '';
+
+    const isStressed = rawIpa.includes('ˈ') || cleanWord.length >= 6;
+    let displayIpa = rawIpa;
+    if (displayIpa.includes('ˈ')) {
+      displayIpa = displayIpa.replace(/ˈ([a-zA-Zɔæɑʊɪʌəɛɜː]+)/g, (_, syl) => `ˈ${syl.toUpperCase()}`);
+    }
+
+    return {
+      word: rawWord,
+      cleanWord,
+      ipa: displayIpa ? `/${displayIpa}/` : '',
+      isStressed
+    };
+  });
+}
+
+/**
+ * Analyze sentence phonetics for bilingual Zero-L1 coaching
  */
 export function analyzeSentencePhonetics(sentence, customIpa = null) {
   if (!sentence) return null;
 
-  const words = sentence.trim().split(/\s+/);
-  const isQuestion = sentence.endsWith('?');
+  const isQuestion = sentence.trim().endsWith('?');
   const isWhQuestion = isQuestion && /^(what|where|when|why|who|how|which|whose)/i.test(sentence.trim());
   const isYesNoQuestion = isQuestion && !isWhQuestion;
 
-  // 1. Intonation Guide
-  const intonationType = isYesNoQuestion ? 'rising' : 'falling';
-  const intonationLabel = isYesNoQuestion
-    ? 'Rising Intonation (↗) — Lên giọng ở cuối câu hỏi Yes/No'
-    : 'Falling Intonation (↘) — Xuống giọng trầm ở cuối câu kể';
+  const chunks = getSentenceChunks(sentence);
+  const wordIpaList = getWordIpaList(sentence, customIpa);
 
-  // 2. Linear Thinking ESL Chunks (split by prepositions, conjunctions, punctuation)
-  const chunks = [];
-  const chunkRegex = /([^,.;!?]+(?:[,.;!?]|\s+(?:down|in|on|at|after|before|with|from|to|because|and|but|suddenly|while)\b|$))/gi;
-  let match;
-  while ((match = chunkRegex.exec(sentence)) !== null) {
-    const chunkText = match[0].trim();
-    if (chunkText) chunks.push(chunkText);
+  // Capitalize stress in full IPA
+  let formattedIpa = customIpa;
+  if (formattedIpa) {
+    formattedIpa = formattedIpa.replace(/ˈ([a-zA-Zɔæɑʊɪʌəɛɜː]+)/g, (_, syl) => `ˈ${syl.toUpperCase()}`);
   }
-  const finalChunks = chunks.length >= 2 ? chunks : [sentence];
 
-  // 3. Extract Multi-syllable & Key Stress Words
-  const stressWords = [];
+  // Bilingual Coaching Tips (Zero-L1: English first, Vietnamese hint underneath)
   const phoneticTips = [];
+  const words = sentence.trim().split(/\s+/);
 
   words.forEach(rawWord => {
     const cleanWord = rawWord.toLowerCase().replace(/[^a-z]/g, '');
-    if (cleanWord.length >= 6) {
-      stressWords.push(rawWord.replace(/[.,!?;:]/g, ''));
-    }
-
-    // Specific phoneme detection
+    
     if (cleanWord.endsWith('ing') && !phoneticTips.some(t => t.id === 'ing')) {
       phoneticTips.push({
         id: 'ing',
         icon: '🎯',
-        title: 'Âm đuôi "-ing" (/ŋ/)',
-        desc: `Bật nhẹ âm mũi trong "${rawWord}", giữ hơi ở vòm họng, không đọc thành "in".`
+        titleEn: 'Nasal Ending "-ing" (/ŋ/)',
+        titleVi: 'Âm mũi đuôi "-ing"',
+        descEn: `Keep the air in your nasal cavity for "${rawWord}". Don't pronounce as "-in".`,
+        descVi: `Giữ hơi ở vòm mũi cho từ "${rawWord}", không đọc thành "in".`
       });
     } else if (cleanWord.endsWith('ed') && !phoneticTips.some(t => t.id === 'ed')) {
       phoneticTips.push({
         id: 'ed',
         icon: '🎯',
-        title: 'Âm đuôi "-ed"',
-        desc: `Chú ý phát âm rõ âm đuôi của từ "${rawWord}" (/t/ hoặc /d/), không nuốt âm.`
+        titleEn: 'Past Tense Ending "-ed"',
+        titleVi: 'Âm đuôi quá khứ "-ed"',
+        descEn: `Release a crisp /t/ or /d/ sound at the end of "${rawWord}".`,
+        descVi: `Bật dứt khoát âm /t/ hoặc /d/ ở đuôi từ "${rawWord}".`
       });
     } else if ((cleanWord.endsWith('tion') || cleanWord.endsWith('sion')) && !phoneticTips.some(t => t.id === 'tion')) {
       phoneticTips.push({
         id: 'tion',
         icon: '🎯',
-        title: 'Trọng âm trước "-tion" (/ʃən/)',
-        desc: `Nhấn mạnh vào âm tiết ngay liền trước đuôi "-tion" trong "${rawWord}".`
+        titleEn: 'Penultimate Stress before "-tion"',
+        titleVi: 'Trọng âm trước đuôi "-tion"',
+        descEn: `Stress the syllable immediately before "-tion" in "${rawWord}".`,
+        descVi: `Nhấn mạnh vào âm tiết ngay liền trước đuôi "-tion".`
       });
-    } else if (cleanWord.endsWith('ly') && cleanWord.length > 4 && !phoneticTips.some(t => t.id === 'ly')) {
+    } else if (cleanWord.length >= 7 && !phoneticTips.some(t => t.id === 'multisyllable')) {
       phoneticTips.push({
-        id: 'ly',
-        icon: '🎯',
-        title: 'Đuôi trạng từ "-ly" (/li/)',
-        desc: `Đọc lướt nhẹ âm "-ly", dồn trọng âm chính vào gốc từ trong "${rawWord}".`
+        id: 'multisyllable',
+        icon: '🔥',
+        titleEn: `Primary Stress in "${rawWord.toUpperCase()}"`,
+        titleVi: `Trọng âm chính trong "${rawWord}"`,
+        descEn: `Emphasize the primary stressed syllable loudly and clearly.`,
+        descVi: `Nhấn to, cao và ngân dài hơn ở âm tiết có trọng âm.`
       });
     }
   });
 
-  // Default stress tip if not enough specific rules
-  if (stressWords.length > 0 && phoneticTips.length < 3) {
-    phoneticTips.unshift({
-      id: 'stress',
-      icon: '🔥',
-      title: 'Trọng âm từ chính (Word Stress)',
-      desc: `Nhấn to, rõ và ngân dài hơn ở các từ quan trọng: ${stressWords.slice(0, 3).map(w => `"${w}"`).join(', ')}.`
-    });
+  // Default stress tip
+  if (phoneticTips.length < 2) {
+    const longWords = words.filter(w => w.replace(/[^a-z]/gi, '').length >= 5);
+    if (longWords.length > 0) {
+      phoneticTips.unshift({
+        id: 'stress',
+        icon: '🔥',
+        titleEn: 'Key Content Word Stress',
+        titleVi: 'Trọng âm từ khóa',
+        descEn: `Stress key content words: ${longWords.slice(0, 2).map(w => `"${w.toUpperCase()}"`).join(', ')}.`,
+        descVi: `Nhấn mạnh các từ khóa chính mang nội dung trong câu.`
+      });
+    }
   }
 
-  // Intonation tip
+  // Intonation Rule
   phoneticTips.push({
     id: 'intonation',
     icon: isYesNoQuestion ? '↗️' : '↘️',
-    title: 'Ngữ điệu câu (Sentence Intonation)',
-    desc: isYesNoQuestion
+    titleEn: isYesNoQuestion ? 'Rising Intonation (↗)' : 'Falling Intonation (↘)',
+    titleVi: isYesNoQuestion ? 'Ngữ điệu lên giọng cuối câu hỏi' : 'Ngữ điệu xuống giọng trầm cuối câu kể',
+    descEn: isYesNoQuestion
+      ? 'Raise your pitch slightly on the final word of the Yes/No question.'
+      : 'Lower your pitch smoothly on the final word to sound natural and confident.',
+    descVi: isYesNoQuestion
       ? 'Hơi nhấc cao giọng ở từ cuối cùng của câu hỏi.'
-      : 'Hạ trầm giọng dần ở từ cuối cùng để câu nói nghe tự nhiên và dứt khoát.'
+      : 'Hạ trầm giọng dần ở từ cuối cùng để câu nói tự nhiên và dứt khoát.'
   });
 
   return {
-    intonationType,
-    intonationLabel,
-    chunks: finalChunks,
-    stressWords,
-    phoneticTips: phoneticTips.slice(0, 3),
-    ipa: customIpa || null
+    isYesNoQuestion,
+    chunks,
+    wordIpaList,
+    ipa: formattedIpa,
+    phoneticTips: phoneticTips.slice(0, 3)
   };
 }
 
@@ -107,23 +176,28 @@ export default function PronunciationCoachCard({ sentence, customIpa = null, def
   if (!guide) return null;
 
   return (
-    <div className="w-full max-w-2xl mx-auto mt-3 bg-gradient-to-br from-indigo-50/90 via-purple-50/70 to-amber-50/80 rounded-2xl border border-indigo-200/80 shadow-sm overflow-hidden transition-all text-left">
+    <div className="w-full max-w-3xl mx-auto mt-3 bg-gradient-to-br from-indigo-50/90 via-purple-50/70 to-amber-50/80 rounded-2xl border border-indigo-200/80 shadow-sm overflow-hidden transition-all text-left">
       {/* Header Toggle */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-4 py-2.5 flex items-center justify-between bg-white/70 hover:bg-white/90 border-b border-indigo-100 transition"
+        className="w-full px-4 py-2.5 flex items-center justify-between bg-white/80 hover:bg-white/95 border-b border-indigo-100 transition"
       >
         <div className="flex items-center gap-2">
           <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-indigo-600 text-white shadow-xs">
             <Sparkles size={14} />
           </span>
-          <span className="text-xs sm:text-sm font-black text-indigo-950 tracking-tight">
-            🎯 AI Pronunciation & Intonation Coach <span className="text-indigo-600 font-semibold text-[11px]">(Mẹo Trọng Âm & Ngữ Điệu)</span>
-          </span>
+          <div className="flex flex-col sm:flex-row sm:items-baseline gap-1">
+            <span className="text-xs sm:text-sm font-black text-indigo-950 tracking-tight">
+              🎯 AI Pronunciation & Intonation Coach
+            </span>
+            <span className="text-indigo-600 font-semibold text-[11px]">
+              (Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ)
+            </span>
+          </div>
         </div>
         <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-600">
-          <span>{isOpen ? 'Thu gọn' : 'Xem mẹo'}</span>
+          <span>{isOpen ? 'Hide Guide' : 'Show Guide'}</span>
           {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </div>
       </button>
@@ -131,11 +205,11 @@ export default function PronunciationCoachCard({ sentence, customIpa = null, def
       {/* Expanded Content */}
       {isOpen && (
         <div className="p-3.5 sm:p-4 space-y-3">
-          {/* 1. IPA Transcription (if available) */}
+          {/* 1. Full IPA with Capitalized Stress */}
           {guide.ipa && (
-            <div className="bg-white/80 rounded-xl p-2.5 border border-indigo-100/80 flex items-center gap-2">
+            <div className="bg-white/90 rounded-xl p-2.5 border border-indigo-100/90 flex items-center gap-2">
               <span className="text-[11px] font-black uppercase text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-md shrink-0">
-                IPA
+                IPA (Stress CAP)
               </span>
               <span className="text-xs sm:text-sm font-mono font-bold text-slate-800 tracking-wide break-words">
                 {guide.ipa}
@@ -146,38 +220,49 @@ export default function PronunciationCoachCard({ sentence, customIpa = null, def
           {/* 2. Rhythmic ESL Chunks (Linear Thinking) */}
           <div className="space-y-1.5">
             <div className="text-[11px] font-black uppercase text-purple-900 tracking-wider flex items-center gap-1">
-              <span>🌊 Nhịp Ngắt Câu Tự Nhiên (Rhythmic Chunks):</span>
+              <span>🌊 Rhythmic Speech Chunks (Nhịp ngắt câu tự nhiên):</span>
             </div>
-            <div className="flex flex-wrap items-center gap-1.5">
+            <div className="flex flex-wrap items-center gap-2">
               {guide.chunks.map((chunk, cIdx) => (
-                <React.Fragment key={cIdx}>
-                  <span className="px-2.5 py-1 bg-white rounded-lg text-xs font-bold text-purple-950 border border-purple-200 shadow-xs">
-                    {chunk}
+                <div key={cIdx} className="flex items-center gap-2">
+                  <span className="px-3 py-1.5 bg-white rounded-xl text-xs sm:text-sm font-bold text-purple-950 border border-purple-300 shadow-xs flex items-center gap-1.5">
+                    <span className="w-4 h-4 rounded-full bg-purple-100 text-purple-700 text-[10px] font-black flex items-center justify-center">
+                      {cIdx + 1}
+                    </span>
+                    <span>{chunk}</span>
                   </span>
                   {cIdx < guide.chunks.length - 1 && (
-                    <span className="text-purple-400 font-black text-xs px-0.5">‖</span>
+                    <span className="text-purple-400 font-black text-sm" title="Take a short breath">
+                      ➔
+                    </span>
                   )}
-                </React.Fragment>
+                </div>
               ))}
             </div>
           </div>
 
-          {/* 3. Actionable Phonetic & Stress Tips */}
+          {/* 3. Actionable Bilingual Phonetic & Stress Tips */}
           <div className="space-y-1.5 pt-1">
             <div className="text-[11px] font-black uppercase text-amber-900 tracking-wider flex items-center gap-1">
               <Lightbulb size={13} className="text-amber-600" />
-              <span>Điểm Cần Chú Ý Khi Phát Âm:</span>
+              <span>Phonetic & Intonation Focus (Điểm chú ý):</span>
             </div>
             <div className="grid grid-cols-1 gap-1.5">
               {guide.phoneticTips.map((tip, tIdx) => (
                 <div
                   key={tIdx}
-                  className="flex items-start gap-2 bg-white/90 p-2 rounded-xl border border-amber-200/70 shadow-2xs text-xs"
+                  className="flex items-start gap-2.5 bg-white/95 p-2.5 rounded-xl border border-amber-200/80 shadow-2xs text-xs"
                 >
-                  <span className="text-sm shrink-0 mt-0.5">{tip.icon}</span>
-                  <div className="flex-1">
-                    <span className="font-black text-slate-900 mr-1">{tip.title}:</span>
-                    <span className="text-slate-600 font-medium leading-relaxed">{tip.desc}</span>
+                  <span className="text-base shrink-0 mt-0.5">{tip.icon}</span>
+                  <div className="flex-1 space-y-0.5">
+                    <div className="flex flex-wrap items-baseline gap-1.5">
+                      <span className="font-black text-slate-900">{tip.titleEn}</span>
+                      <span className="text-[11px] text-slate-500 font-semibold italic">({tip.titleVi})</span>
+                    </div>
+                    <p className="text-slate-700 font-medium leading-relaxed">
+                      {tip.descEn}{' '}
+                      <span className="text-slate-500 italic">({tip.descVi})</span>
+                    </p>
                   </div>
                 </div>
               ))}
