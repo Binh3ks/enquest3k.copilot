@@ -17,7 +17,7 @@ export const CLIL_STAMPS = {
     textColor: 'text-emerald-950',
     badgeBg: 'bg-emerald-600 text-white',
     stampText: 'VERIFIED · SCIENCE LAB',
-    desc: 'Mastered principles of friction, forces, momentum & laboratory safety.'
+    desc: 'Mastered principles of friction, forces, movement and speed, and laboratory safety.'
   },
   math: {
     id: 'math',

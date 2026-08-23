@@ -21,7 +21,7 @@ export default function CLILExplorer({
   const [selectedAnswers, setSelectedAnswers] = useState({});
 
   // Default Paragraph Split
-  const fullText = clilData?.content_en || "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water acts like a lubricant. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero!";
+  const fullText = clilData?.content_en || "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water acts like a slippery layer on the floor. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero!";
 
   const paragraphs = useMemo(() => {
     const parts = fullText.split(/\n\n+/);
@@ -62,9 +62,9 @@ export default function CLILExplorer({
     {
       id: "q3",
       question: "What happens when water is on the floor?",
-      options: ["Water acts like a lubricant and reduces friction", "Friction becomes 100 times higher", "Shoes stick to the floor"],
-      shuffledOptions: ["Friction becomes 100 times higher", "Water acts like a lubricant and reduces friction", "Shoes stick to the floor"].sort(() => 0.5 - Math.random()),
-      correct: "Water acts like a lubricant and reduces friction"
+      options: ["Water acts like a slippery layer and reduces friction", "Friction becomes 100 times higher", "Shoes stick to the floor"],
+      shuffledOptions: ["Friction becomes 100 times higher", "Water acts like a slippery layer and reduces friction", "Shoes stick to the floor"].sort(() => 0.5 - Math.random()),
+      correct: "Water acts like a slippery layer and reduces friction"
     },
     {
       id: "q4",
@@ -84,8 +84,8 @@ export default function CLILExplorer({
     {
       id: 1,
       label: 'Describe the cause',
-      scrambled: ['on the wet floor,', 'Water acts', 'reducing friction', 'as a lubricant'],
-      correct: ['Water acts', 'as a lubricant', 'on the wet floor,', 'reducing friction'],
+      scrambled: ['on the wet floor,', 'Water acts', 'reducing friction', 'as a slippery layer'],
+      correct: ['Water acts', 'as a slippery layer', 'on the wet floor,', 'reducing friction'],
     },
     {
       id: 2,
@@ -176,7 +176,7 @@ export default function CLILExplorer({
         <div className="flex items-center gap-2">
           <span className="text-sm font-black text-emerald-900 bg-emerald-100 px-3 py-1 rounded-xl">
             {currentPhase === 1 && '🔬 Part 1: Friction on Dry Surfaces'}
-            {currentPhase === 2 && '🧪 Part 2: Water Lubrication & Zero Friction'}
+            {currentPhase === 2 && '🧪 Part 2: Water on the Floor & Zero Friction'}
             {currentPhase === 3 && '🎓 Part 3: Sentence Builder Challenge'}
           </span>
           <span className="text-xs font-bold text-slate-500">

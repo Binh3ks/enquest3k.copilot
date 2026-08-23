@@ -103,57 +103,62 @@ export function BarModelSVG({ modelData }) {
           </g>
         )}
 
-        {type === 'comparison' && (
-          <g>
-            {/* Bar 1 */}
-            <g transform="translate(10, 25)">
-              <rect
-                x="0"
-                y="0"
-                width={bars[0]?.width || 380}
-                height={46}
-                fill="#4f46e5"
-                stroke="#1e293b"
-                strokeWidth="2.5"
-                rx="6"
-              />
-              <text
-                x={(bars[0]?.width || 380) / 2}
-                y="29"
-                fill="#ffffff"
-                fontSize="17"
-                fontWeight="900"
-                textAnchor="middle"
-              >
-                {bars[0]?.label}
-              </text>
-            </g>
+        {type === 'comparison' && (() => {
+          const compBars = calculateBarModelProportions(bars, 380);
+          return (
+            <g>
+              {/* Bar 1 */}
+              <g transform="translate(10, 25)">
+                <rect
+                  x="0"
+                  y="0"
+                  width={compBars[0]?.width || 380}
+                  height={46}
+                  fill={compBars[0]?.color || '#4f46e5'}
+                  stroke="#1e293b"
+                  strokeWidth="2.5"
+                  rx="6"
+                />
+                <text
+                  x={(compBars[0]?.width || 380) / 2}
+                  y="29"
+                  fill="#ffffff"
+                  fontSize="17"
+                  fontWeight="900"
+                  textAnchor="middle"
+                >
+                  {compBars[0]?.label}
+                </text>
+              </g>
 
-            {/* Bar 2 */}
-            <g transform="translate(10, 85)">
-              <rect
-                x="0"
-                y="0"
-                width={bars[1]?.width || 240}
-                height={46}
-                fill="#06b6d4"
-                stroke="#1e293b"
-                strokeWidth="2.5"
-                rx="6"
-              />
-              <text
-                x={(bars[1]?.width || 240) / 2}
-                y="29"
-                fill="#ffffff"
-                fontSize="17"
-                fontWeight="900"
-                textAnchor="middle"
-              >
-                {bars[1]?.label}
-              </text>
+              {/* Bar 2 */}
+              {compBars[1] && (
+                <g transform="translate(10, 85)">
+                  <rect
+                    x="0"
+                    y="0"
+                    width={compBars[1].width}
+                    height={46}
+                    fill={compBars[1]?.color || '#06b6d4'}
+                    stroke="#1e293b"
+                    strokeWidth="2.5"
+                    rx="6"
+                  />
+                  <text
+                    x={compBars[1].width / 2}
+                    y="29"
+                    fill="#ffffff"
+                    fontSize="17"
+                    fontWeight="900"
+                    textAnchor="middle"
+                  >
+                    {compBars[1]?.label}
+                  </text>
+                </g>
+              )}
             </g>
-          </g>
-        )}
+          );
+        })()}
       </svg>
     </div>
   );

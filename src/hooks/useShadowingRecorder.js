@@ -39,8 +39,32 @@ export function useShadowingRecorder(weekId) {
     try { localStorage.setItem(`shadowing_scores_${weekId}`, JSON.stringify(scores)); } catch { /* ignore */ }
   }, [scores, weekId]);
 
+  // Minimum blob size for real speech (below this = silence / noise only)
+  const MIN_AUDIO_BLOB_BYTES = 3000; // ~3KB — empirically silence webm is < 2KB
+  // Minimum fraction of targetText words that must appear in transcript
+  const MIN_WORD_MATCH_RATIO = 0.4;
+  // Minimum Deepgram confidence (0–1). Field is `data.confidence`, NOT `data.evaluation.confidence`
+  const MIN_DEEPGRAM_CONFIDENCE = 0.5;
+
   // Score via Deepgram STT (primary)
   const scoreWithDeepgram = async (audioBlob, targetText, sentenceId) => {
+    const blobSize = audioBlob instanceof Blob ? audioBlob.size : 0;
+
+    // --- Layer 1: Pre-flight blob size check (catches silence before API call) ---
+    if (blobSize < MIN_AUDIO_BLOB_BYTES) {
+      console.warn(`[ShadowingRecorder] Audio too small (${blobSize}B < ${MIN_AUDIO_BLOB_BYTES}B) — likely silence, skipping Deepgram.`);
+      setScores(prev => ({
+        ...prev,
+        [sentenceId]: {
+          score: 0,
+          feedback: "🎤 Couldn't hear your voice. Please speak clearly and try again!",
+          transcript: '',
+          provider: 'rejected_silence',
+        },
+      }));
+      return;
+    }
+
     try {
       const formData = new FormData();
       const typedBlob = audioBlob instanceof Blob ? new Blob([audioBlob], {type: audioBlob.type || 'audio/webm'}) : audioBlob;
@@ -50,22 +74,52 @@ export function useShadowingRecorder(weekId) {
 
       console.log('[ShadowingRecorder] Submitting to Deepgram:', JSON.stringify({
         targetText: formData.get('targetText'),
-        audioBlobSize: formData.get('audio')?.size,
+        audioBlobSize: blobSize,
         audioBlobType: formData.get('audio')?.type,
-        mode: formData.get('mode'),
         baseURL: apiClient.defaults.baseURL,
-        fullURL: `${apiClient.defaults.baseURL}/pronunciation/evaluate-deepgram`,
       }, null, 2));
+
       const res = await apiClient.post('/pronunciation/evaluate-deepgram', formData);
       const data = res.data;
 
       if (data.success && data.evaluation) {
+        // --- Layer 2: Confidence gate (field is data.confidence, not data.evaluation.confidence) ---
+        const deepgramConf = data.confidence; // set by backend L94: const { transcript, confidence } = deepgramResult
+        const transcript = data.transcript || '';
+        const targetWordCount = targetText.trim().split(/\s+/).filter(Boolean).length;
+        const transcriptWordCount = transcript.trim().split(/\s+/).filter(Boolean).length;
+        const wordRatio = targetWordCount > 0 ? transcriptWordCount / targetWordCount : 0;
+
+        console.log(`[ShadowingRecorder] Deepgram result: conf=${deepgramConf}, transcript="${transcript}", wordRatio=${wordRatio.toFixed(2)}`);
+
+        // Reject if: (a) confidence missing or low, OR (b) transcript too sparse relative to target
+        const confMissing = deepgramConf === undefined || deepgramConf === null;
+        const confLow = !confMissing && deepgramConf < MIN_DEEPGRAM_CONFIDENCE;
+        const sparseSpeech = wordRatio < MIN_WORD_MATCH_RATIO;
+
+        if (confMissing || confLow || sparseSpeech) {
+          console.warn(`[ShadowingRecorder] Low-quality input rejected: confMissing=${confMissing}, confLow=${confLow}, sparseSpeech=${sparseSpeech}`);
+          setScores(prev => ({
+            ...prev,
+            [sentenceId]: {
+              score: 0,
+              feedback: transcript
+                ? `🎤 I heard "${transcript}" — try saying the full sentence again!`
+                : "🎤 Couldn't hear clearly. Speak closer to the mic and try again!",
+              transcript,
+              provider: 'deepgram_low_confidence',
+            },
+          }));
+          return;
+        }
+
+        // --- Layer 3: Accept real score ---
         setScores(prev => ({
           ...prev,
           [sentenceId]: {
             score: data.evaluation.score,
             feedback: data.evaluation.feedback || '',
-            transcript: data.transcript || '',
+            transcript,
             provider: 'deepgram',
           },
         }));

@@ -120,11 +120,8 @@ async function auditWeekFiles(dirPath, modeLabel) {
     return { errors: 0, warnings: 0 };
   }
 
-  const HUB_FILES = ['reading_hub.js', 'listening_hub.js', 'writing_hub.js', 'speaking_hub.js'];
-  const allFiles = fs.readdirSync(dirPath).filter(f => f.endsWith('.js') && !f.endsWith('.bak'));
-  const files = targetWeek >= 33 
-    ? allFiles.filter(f => HUB_FILES.includes(f))
-    : allFiles;
+  // Scan ALL .js files (no HUB_FILES filter — confirmed gap via live test)
+  const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.js') && !f.endsWith('.bak'));
 
   let totalErrors = 0;
   let totalWarnings = 0;
@@ -205,8 +202,49 @@ async function main() {
   const advRes = await auditWeekFiles(wDirAdv, `WEEK ${targetWeek} ADVANCED`);
   const easyRes = await auditWeekFiles(wDirEasy, `WEEK ${targetWeek} EASY`);
 
-  const totalErrors = advRes.errors + easyRes.errors;
-  const totalWarnings = advRes.warnings + easyRes.warnings;
+  // --- Also scan .jsx component files that contain hardcoded fallback content ---
+  // Confirmed: CLILExplorer.jsx has hardcoded fallback text with 'lubricant' (Stage 1 banned)
+  // These files are NOT covered by the data-dir scan above.
+  const COMPONENT_DIRS_WITH_HARDCODED_CONTENT = [
+    path.join(__dirname, '../src/components/cambridge'),
+  ];
+  let componentErrors = 0;
+  let componentWarnings = 0;
+  console.log('\n📂 Scanning COMPONENT FALLBACK CONTENT (.jsx hardcoded strings):');
+  for (const dir of COMPONENT_DIRS_WITH_HARDCODED_CONTENT) {
+    if (!fs.existsSync(dir)) continue;
+    const jsxFiles = fs.readdirSync(dir).filter(f => f.endsWith('.jsx') || f.endsWith('.js'));
+    for (const file of jsxFiles) {
+      const fullPath = path.join(dir, file);
+      const rawSource = fs.readFileSync(fullPath, 'utf-8');
+      // Extract only string literals (content between quotes) — avoid false positives from code keywords
+      const stringLiterals = [];
+      // Match single/double-quoted strings and template literal segments
+      const stringRegex = /(?:"([^"\\\n]{10,})"|'([^'\\\n]{10,})'|`([^`\\]{10,})`)/g;
+      let m;
+      while ((m = stringRegex.exec(rawSource)) !== null) {
+        const s = (m[1] || m[2] || m[3] || '').trim();
+        // Skip import paths, URLs, CSS classes, regex patterns
+        if (s.startsWith('/') || s.startsWith('http') || s.includes('className') || s.includes('\\')) continue;
+        if (s.length > 15) stringLiterals.push(s); // Only substantial strings
+      }
+      for (const text of stringLiterals) {
+        const rawWords = text.toLowerCase().replace(/[^a-z\s-]/g, ' ').split(/\s+/).filter(Boolean);
+        if (isStage1_A2) {
+          for (const w of rawWords) {
+            if (STAGE1_BANNED_ACADEMIC_JARGON.has(w)) {
+              console.log(`  ❌ [HARDCODED JARGON IN COMPONENT] '${w}' in ${file}: "${text.slice(0, 80)}"`);
+              componentErrors++;
+            }
+          }
+        }
+      }
+    }
+  }
+  if (componentErrors === 0) console.log('  ✅ No banned jargon found in component fallback strings.');
+
+  const totalErrors = advRes.errors + easyRes.errors + componentErrors;
+  const totalWarnings = advRes.warnings + easyRes.warnings + componentWarnings;
 
   console.log(`\n================================================================`);
   console.log(`📊 AUDIT SUMMARY FOR WEEK ${targetWeek}:`);
