@@ -438,7 +438,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         stream = await navigator.mediaDevices.getUserMedia({
           audio: {
             echoCancellation: true,
-            noiseSuppression: true,
+            noiseSuppression: false,
             autoGainControl: true
           }
         });
@@ -518,7 +518,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
             for (let i = 0; i < channelData.length; i++) {
               const s = channelData[i];
               sumSquares += s * s;
-              if (Math.abs(s) > 0.04) speechSamples++;
+              if (Math.abs(s) > 0.03) speechSamples++;
             }
             rms = Math.sqrt(sumSquares / Math.max(1, totalSamples));
             try { ctx.close(); } catch (_) {}
@@ -528,89 +528,36 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         }
 
         const speechRatio = totalSamples > 0 ? (speechSamples / totalSamples) : 0;
-        const isSilent = (totalSamples > 0 && (rms < 0.02 || speechRatio < 0.06));
+        const isSilent = (totalSamples > 0 && (rms < 0.012 || speechRatio < 0.03));
 
         if (isSilent) {
-          // 🚫 Silence guard: No active close-mic speech detected
+          // 🚫 Silence guard: No active speech detected
           setSentenceShadowing(prev => ({
             ...prev,
             [idx]: {
               isRecording: false,
               audioUrl: null,
               score: 0,
-              spokenText: '(No speech detected)',
+              spokenText: '',
               feedback: '⚠️ No speech detected. Please speak clearly into your mic!'
             }
           }));
           return;
         }
 
-        let score = 0;
-        let feedback = '';
-        let displaySpoken = '';
-        let evalDone = false;
-
-        // Evaluate via Deepgram STT Cloud API
-        if (audioBlob.size > 1500) {
-          try {
-            const formData = new FormData();
-            formData.append('audio', audioBlob, 'recording.webm');
-            formData.append('targetText', targetSentence);
-            formData.append('mode', 'sentence');
-
-            const token = useUserStore.getState().token;
-            const headers = {};
-            if (token) headers['Authorization'] = `Bearer ${token}`;
-
-            const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
-            const res = await fetch(`${API_BASE}/pronunciation/evaluate-deepgram`, {
-              method: 'POST',
-              headers,
-              body: formData,
-            });
-
-            if (res.ok) {
-              const data = await res.json();
-              if (data.success && data.evaluation) {
-                const transcript = (data.transcript || '').trim();
-                if (!transcript || transcript.length === 0) {
-                  score = 0;
-                  feedback = '⚠️ No clear words recognized. Please speak clearly into your mic!';
-                  displaySpoken = '(No words recognized)';
-                } else {
-                  score = data.evaluation.score;
-                  feedback = data.evaluation.feedback || `Accuracy: ${score}%`;
-                  displaySpoken = transcript;
-                }
-                evalDone = true;
-              }
-            }
-          } catch (deepgramErr) {
-            console.warn('[Deepgram STT] Cloud evaluation fallback:', deepgramErr.message);
-          }
-        }
-
-        // Fallback if offline / cloud STT unavailable
-        if (!evalDone) {
-          score = 70;
-          feedback = `🎙️ Voice recorded! Tap 'Play My Voice' to listen & compare with model voice.`;
-          displaySpoken = `(Recorded: ${(durationMs / 1000).toFixed(1)}s voice)`;
-        }
-
+        // Student spoke into the mic -> Successfully recorded Voice Shadow
         setSentenceShadowing(prev => ({
           ...prev,
           [idx]: {
             isRecording: false,
-            audioUrl: score > 0 ? audioUrl : null,
-            score,
-            spokenText: displaySpoken,
-            feedback
+            audioUrl,
+            score: 100,
+            spokenText: `(Recorded: ${(durationMs / 1000).toFixed(1)}s voice)`,
+            feedback: `✨ Voice Shadow recorded! Tap 'Play My Voice' to listen & compare with model voice.`
           }
         }));
 
-        if (score >= 70) {
-          fireCelebrationConfetti('Sentence_Shadow_Complete');
-        }
+        fireCelebrationConfetti('Sentence_Shadow_Complete');
       };
 
       // 4. Start MediaRecorder
@@ -1199,30 +1146,22 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                               className="px-3 py-1.5 rounded-xl text-xs font-black shadow-sm flex items-center gap-1 text-white"
                               style={{
                                 backgroundColor:
-                                  (sentenceShadowing[idx].score >= 80)
+                                  (sentenceShadowing[idx].score > 0)
                                     ? '#059669'
-                                    : (sentenceShadowing[idx].score >= 50)
-                                    ? '#d97706'
                                     : '#dc2626'
                               }}
                             >
-                              {sentenceShadowing[idx].score >= 80
-                                ? '🌟 Excellent!'
-                                : sentenceShadowing[idx].score >= 50
-                                ? '⭐ Great Job!'
+                              {sentenceShadowing[idx].score > 0
+                                ? '✨ Voice Recorded!'
                                 : '💪 Keep Practicing!'}
                             </span>
                           </div>
                           {sentenceShadowing[idx]?.feedback && (
                             <div className="flex flex-col items-center gap-0.5 text-xs font-bold text-slate-700 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200 text-center max-w-md">
-                              <span>{sentenceShadowing[idx].feedback} (Score: {sentenceShadowing[idx].score}%)</span>
-                              {sentenceShadowing[idx]?.spokenText ? (
+                              <span>{sentenceShadowing[idx].feedback}</span>
+                              {sentenceShadowing[idx]?.spokenText && (
                                 <span className="text-[11px] text-slate-500 font-semibold italic">
-                                  You said: "{sentenceShadowing[idx].spokenText}"
-                                </span>
-                              ) : (
-                                <span className="text-[11px] text-rose-600 font-semibold">
-                                  No speech recognized. Please speak clearly into your mic!
+                                  {sentenceShadowing[idx].spokenText}
                                 </span>
                               )}
                             </div>
