@@ -1,17 +1,17 @@
 # 🤝 Session Handoff Report
-**Date**: 15:28:38 23/8/2026
+**Date**: 15:51:07 23/8/2026
 **Branch**: `main`
-**Latest Commit**: `bafc3be9 feat(shadowing): render word-by-word IPA subtitles in Karaoke box with capitalized stress, structured speech chunks, and bilingual Zero-L1 coaching`
+**Latest Commit**: `3f3f0a39 fix(shadowing): full 8-sentence IPA mapping, high-contrast unstressed IPA, and collapsed-by-default Coach guide`
 
 ---
 
 ## 1. 📌 Executive Summary
-feat(shadowing): render word-by-word IPA subtitles in Karaoke box with capitalized stress, structured speech chunks, and bilingual Zero-L1 coaching
+fix(shadowing): full 8-sentence IPA mapping, high-contrast unstressed IPA, and collapsed-by-default Coach guide
 
 ---
 
 ## 2. ✅ Work Completed in This Session
-- **Commits & Fixes**: `bafc3be9 feat(shadowing): render word-by-word IPA subtitles in Karaoke box with capitalized stress, structured speech chunks, and bilingual Zero-L1 coaching`
+- **Commits & Fixes**: `3f3f0a39 fix(shadowing): full 8-sentence IPA mapping, high-contrast unstressed IPA, and collapsed-by-default Coach guide`
 - **File System State**:
   - `?? .agents/handoffs/handoff_2026-08-22T02-03-16-654Z.md`
   - `?? .agents/handoffs/handoff_2026-08-22T02-08-54-513Z.md`
@@ -41,6 +41,7 @@ feat(shadowing): render word-by-word IPA subtitles in Karaoke box with capitaliz
   - `?? .agents/handoffs/handoff_2026-08-23T03-35-21-703Z.md`
   - `?? .agents/handoffs/handoff_2026-08-23T07-54-20-292Z.md`
   - `?? .agents/handoffs/handoff_2026-08-23T08-16-09-172Z.md`
+  - `?? .agents/handoffs/handoff_2026-08-23T08-28-38-908Z.md`
 
 ---
 
@@ -52,7 +53,7 @@ feat(shadowing): render word-by-word IPA subtitles in Karaoke box with capitaliz
 
 ## 4. 🧪 System Verification Status
 - **Git Branch**: `main`
-- **Uncommitted Files**: 28
+- **Uncommitted Files**: 29
 
 ---
 
