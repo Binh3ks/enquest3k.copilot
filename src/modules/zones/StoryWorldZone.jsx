@@ -611,9 +611,9 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     const currentQ = RETELL_QUESTIONS[retellStepIdx];
 
     // Start browser SpeechRecognition in parallel (Desktop only)
-    const isMobileDevice = typeof navigator !== 'undefined' && (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent)));
+    const isAndroidOrIOS = typeof navigator !== 'undefined' && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    if (!isMobileDevice && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
+    if (!isAndroidOrIOS && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
       try {
         const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
         const rec = new SpeechRec();
