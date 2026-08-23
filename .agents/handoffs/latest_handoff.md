@@ -1,17 +1,17 @@
 # 🤝 Session Handoff Report
-**Date**: 15:51:07 23/8/2026
+**Date**: 16:01:23 23/8/2026
 **Branch**: `main`
-**Latest Commit**: `3f3f0a39 fix(shadowing): full 8-sentence IPA mapping, high-contrast unstressed IPA, and collapsed-by-default Coach guide`
+**Latest Commit**: `cdaeb103 fix(shadowing): eliminate persistent mic prewarm, strictly stop audio tracks to extinguish red recording dot immediately`
 
 ---
 
 ## 1. 📌 Executive Summary
-fix(shadowing): full 8-sentence IPA mapping, high-contrast unstressed IPA, and collapsed-by-default Coach guide
+fix(shadowing): eliminate persistent mic prewarm, strictly stop audio tracks to extinguish red recording dot immediately
 
 ---
 
 ## 2. ✅ Work Completed in This Session
-- **Commits & Fixes**: `3f3f0a39 fix(shadowing): full 8-sentence IPA mapping, high-contrast unstressed IPA, and collapsed-by-default Coach guide`
+- **Commits & Fixes**: `cdaeb103 fix(shadowing): eliminate persistent mic prewarm, strictly stop audio tracks to extinguish red recording dot immediately`
 - **File System State**:
   - `?? .agents/handoffs/handoff_2026-08-22T02-03-16-654Z.md`
   - `?? .agents/handoffs/handoff_2026-08-22T02-08-54-513Z.md`
@@ -42,6 +42,7 @@ fix(shadowing): full 8-sentence IPA mapping, high-contrast unstressed IPA, and c
   - `?? .agents/handoffs/handoff_2026-08-23T07-54-20-292Z.md`
   - `?? .agents/handoffs/handoff_2026-08-23T08-16-09-172Z.md`
   - `?? .agents/handoffs/handoff_2026-08-23T08-28-38-908Z.md`
+  - `?? .agents/handoffs/handoff_2026-08-23T08-51-07-229Z.md`
 
 ---
 
@@ -53,7 +54,7 @@ fix(shadowing): full 8-sentence IPA mapping, high-contrast unstressed IPA, and c
 
 ## 4. 🧪 System Verification Status
 - **Git Branch**: `main`
-- **Uncommitted Files**: 29
+- **Uncommitted Files**: 30
 
 ---
 
