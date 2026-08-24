@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Trophy, Flame } from 'lucide-react';
+import { ArrowLeft, Clock, Trophy, Flame, Sparkles } from 'lucide-react';
 import { QUEST_SCHEDULE } from '../../config/questSchedule';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
@@ -198,10 +198,17 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
             />
           )}
 
-          <div className="ts-xp-badge">
-            <Trophy size={12} className="text-amber-500" />
-            <span>+{taskInfo.xp || 50}</span>
-          </div>
+          {taskInfo.isMilestone || taskInfo.xp === 0 ? (
+            <div className="ts-xp-badge ts-milestone-badge bg-indigo-50 border border-indigo-200 text-indigo-800 font-bold">
+              <Sparkles size={12} className="text-indigo-600" />
+              <span>Milestone</span>
+            </div>
+          ) : (
+            <div className="ts-xp-badge">
+              <Trophy size={12} className="text-amber-500" />
+              <span>+{taskInfo.xp} XP</span>
+            </div>
+          )}
         </div>
       </div>
 

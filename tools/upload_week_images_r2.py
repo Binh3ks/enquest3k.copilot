@@ -6,8 +6,19 @@ Usage: python3 tools/upload_week_images_r2.py 9 10
 """
 
 import sys
+import os
 import subprocess
 from pathlib import Path
+
+# Load .env into os.environ for Cloudflare wrangler auth
+env_path = Path(__file__).parent.parent / ".env"
+if env_path.exists():
+    with open(env_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                k, v = line.split('=', 1)
+                os.environ[k.strip()] = v.strip()
 
 BUCKET_NAME = "engquest-images"  # Fixed: Images have their own bucket!
 R2_PREFIX = "images"
@@ -30,10 +41,11 @@ def upload_file_to_r2(local_path, r2_key):
     try:
         result = subprocess.run(
             [
-                "wrangler", "r2", "object", "put",
+                "npx", "wrangler", "r2", "object", "put",
                 f"{BUCKET_NAME}/{r2_key}",
                 f"--file={local_path}",
                 f"--content-type={content_type}",
+                "--remote",
             ],
             capture_output=True,
             text=True,
@@ -128,8 +140,9 @@ def main():
         print("❌ Wrangler not found. Install: npm i -g wrangler")
         sys.exit(1)
     
-    # Parse week numbers
-    week_numbers = [int(w) for w in sys.argv[1:]]
+    # Parse week numbers & flags
+    auto_yes = '-y' in sys.argv or '--yes' in sys.argv
+    week_numbers = [int(w) for w in sys.argv[1:] if w.isdigit()]
     
     print(f"\n🖼️  UPLOAD WEEK IMAGES TO CLOUDFLARE R2")
     print("=" * 70)
@@ -139,10 +152,11 @@ def main():
     print("=" * 70)
     
     # Confirm
-    confirm = input(f"\n🚦 Upload images for Week {', '.join(map(str, week_numbers))}? (y/n): ")
-    if confirm.lower() != 'y':
-        print("❌ Cancelled")
-        sys.exit(0)
+    if not auto_yes:
+        confirm = input(f"\n🚦 Upload images for Week {', '.join(map(str, week_numbers))}? (y/n): ")
+        if confirm.lower() != 'y':
+            print("❌ Cancelled")
+            sys.exit(0)
     
     # Upload each week
     total_uploaded = 0

@@ -1,0 +1,44 @@
+{
+  "week": 34,
+  "theme": "The Lion and the Mouse",
+  "cefr_level": "A2 Flyers",
+  "genre": "Aesop Fable & Nature Science",
+  "characters": ["Lion", "Mouse", "Hunters", "Leo", "Oliver"],
+  "keywords": [
+    "lion",
+    "mouse",
+    "sleeping",
+    "paw",
+    "caught",
+    "claws",
+    "promise",
+    "laughed",
+    "hunters",
+    "net",
+    "ropes",
+    "chewed",
+    "freed",
+    "shady tree",
+    "best friends",
+    "oxpecker",
+    "zebra",
+    "cleaner fish",
+    "shark"
+  ],
+  "grammar_pattern": {
+    "name": "Past Continuous vs Past Simple with While / When",
+    "rule": "was/were + V-ing for background action, Past Simple for interrupting action",
+    "regex": "(was|were)\\s+\\w+ing"
+  },
+  "clil_topic": {
+    "title": "Animal Helpers in Nature",
+    "focus": "Symbiosis and mutual cooperation among animals (Oxpecker & Zebra, Cleaner fish & Sharks)"
+  },
+  "math_focus": {
+    "topic": "Forces, Friction & Pulley Ratios in Singapore Bar Models",
+    "num_models": 5
+  },
+  "rotary_cycle": 2,
+  "tested_skills": ["listening_p4", "listening_p5", "reading_p1"],
+  "target_shields": 3
+}

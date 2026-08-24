@@ -1,0 +1,41 @@
+{
+  "week": 33,
+  "theme": "Safety First at School & The Force of Friction",
+  "cefr_level": "A2 Flyers",
+  "genre": "School Life Story & Physics Science",
+  "characters": ["Jake", "Tom", "Mia", "School Nurse", "Headmaster"],
+  "keywords": [
+    "corridor",
+    "walking",
+    "running",
+    "slipped",
+    "wet floor",
+    "tiles",
+    "knee",
+    "bandage",
+    "cold pack",
+    "nurse",
+    "headmaster",
+    "friction",
+    "rubber shoes",
+    "smooth",
+    "relieved",
+    "safety rules"
+  ],
+  "grammar_pattern": {
+    "name": "Past Continuous vs Past Simple with While / When",
+    "rule": "was/were + V-ing for background action, Past Simple for interrupting action",
+    "regex": "(was|were)\\s+\\w+ing"
+  },
+  "clil_topic": {
+    "title": "The Science of Friction & Floor Safety",
+    "focus": "Friction force between shoes and floors, water reducing friction to zero"
+  },
+  "math_focus": {
+    "topic": "Friction & Velocity Singapore Bar Models",
+    "num_models": 5
+  },
+  "rotary_cycle": 1,
+  "tested_skills": ["listening_p1", "listening_p2", "listening_p3"],
+  "target_shields": 3
+}

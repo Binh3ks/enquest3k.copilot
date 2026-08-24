@@ -5,12 +5,17 @@
 
 import read_explore from './read.js';
 import vocabList from './vocab.js';
+import shadowingData from './shadowing.js';
 
 export const readingHubData = {
   week: 34,
   theme: "The Lion and the Mouse",
   cefr_level: "A2 Flyers",
+  read_explore: read_explore,
+  story_scenes: read_explore.story_scenes,
   vocab: vocabList,
+  shadowingData,
+  retell_questions: read_explore.retell_questions,
 
   // CLIL Knowledge Explorer (Animal Helpers & Symbiosis in Nature)
   clil_article: {

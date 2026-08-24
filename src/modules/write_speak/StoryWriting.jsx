@@ -591,9 +591,9 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   const flatWordBank = Array.isArray(pictureMode.word_bank) ? pictureMode.word_bank : [];
 
   const fallback3Panels = [
-    { panel: 1, image_url: "/images/week33/read_stem.jpg", caption: "Jake walking in corridor" },
-    { panel: 2, image_url: "/images/scenes/default_story.jpg", caption: "Boy slipping on wet floor" },
-    { panel: 3, image_url: "/images/week33/read_stem.jpg", caption: "Nurse applying clean bandage" }
+    { panel: 1, image_url: `/images/week${weekId || 34}/webtoon_scene_1.png`, caption: "Scene 1" },
+    { panel: 2, image_url: `/images/week${weekId || 34}/webtoon_scene_2.png`, caption: "Scene 2" },
+    { panel: 3, image_url: `/images/week${weekId || 34}/webtoon_scene_3.png`, caption: "Scene 3" }
   ];
 
   const pictureSet = (Array.isArray(pictureMode.picture_set) && pictureMode.picture_set.length > 0)

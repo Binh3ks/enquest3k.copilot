@@ -10,6 +10,8 @@ export const readingHubData = {
   week: 33,
   theme: "Corridor Safety & School Care",
   cefr_level: "A2 Flyers",
+  read_explore: read_explore,
+  story_scenes: read_explore.story_scenes,
   vocab: vocabList,
 
   // CLIL Knowledge Explorer (Science & Physics of Friction — Single Academic Focus)

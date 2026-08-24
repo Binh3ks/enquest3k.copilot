@@ -38,7 +38,7 @@ function copyDataDir() {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), copyDataDir()],
-  publicDir: false, // Disable auto-copy public/ → dist/ (media served from R2 CDN)
+  publicDir: 'public',
   build: {
     sourcemap: true,  // Generate source maps for debugging minified errors
     rollupOptions: {

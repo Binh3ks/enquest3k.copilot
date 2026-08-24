@@ -132,45 +132,6 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
     return () => clearInterval(timer);
   }, [hintSecondsLeft]);
 
-  // Retell to Nova: 5 Question Steps
-  const RETELL_QUESTIONS = [
-    {
-      step: 1,
-      question_vi: 'Chuyện đó xảy ra ở đâu và khi nào?',
-      question_en: 'Where and when did the story start?',
-      chips: ['after science class', 'walking carefully', 'school corridor'],
-      sentence: 'Jake was walking carefully down the school corridor after science class.',
-    },
-    {
-      step: 2,
-      question_vi: 'Điều bất ngờ gì đã xảy ra sau đó?',
-      question_en: 'What happened suddenly on the wet floor?',
-      chips: ['running fast', 'slipped on the wet floor', 'fell down heavily'],
-      sentence: 'Suddenly, a boy running fast slipped on the wet floor and fell down heavily.',
-    },
-    {
-      step: 3,
-      question_vi: 'Bạn học sinh bị đau ở đâu?',
-      question_en: 'How did the boy get hurt?',
-      chips: ['hurt his knee', 'lost his balance', 'completely'],
-      sentence: 'He hurt his knee and lost his balance completely.',
-    },
-    {
-      step: 4,
-      question_vi: 'Jake đã làm gì ngay lập tức để giúp bạn?',
-      question_en: 'What did Jake do immediately to help?',
-      chips: ['stopped immediately', 'help his friend', 'stay calm', 'called the school nurse'],
-      sentence: 'Jake stopped immediately to help his friend stay calm and called the school nurse right away.',
-    },
-    {
-      step: 5,
-      question_vi: 'Cô y tá đã giúp thế nào và mọi người cảm thấy ra sao?',
-      question_en: 'How did the nurse help and how did everyone feel?',
-      chips: ['clean bandage', 'cold pack', 'felt relieved', 'praised Jake'],
-      sentence: 'The nurse arrived quickly with a clean bandage, and everyone felt relieved and praised Jake for following safety rules.',
-    },
-  ];
-
   // Nova streak from localStorage for companion engine
   const rawStreak = typeof localStorage !== 'undefined' ? localStorage.getItem('engquest_streak') : null;
   const streakDays = rawStreak ? (JSON.parse(rawStreak).days || 0) : 3;
@@ -179,17 +140,74 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   const scenes = storyData.storyScenes || [];
   const clilArticle = storyData.clilArticle || null;
   const grammarRegex = storyData.grammarRegex || [];
-  const readExplore = storyData.readExplore || {};
-  const fullStoryText = readExplore.content_en || "Jake was walking carefully down the school corridor after science class. Suddenly, a boy running fast slipped on the wet floor and fell down heavily. He hurt his knee and lost his balance completely. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. Everyone felt relieved and praised Jake for following safety rules.";
+  const readExplore = storyData.readExplore || data?.readingHubData?.read_explore || data?.rawWeekData?.readExplore || {};
+  const atomicSentences = storyData.shadowingData?.sentences || storyData.shadowing?.sentences || data?.readingHubData?.shadowingData?.sentences || null;
+
+  const fullStoryText = readExplore.content_en || readExplore.text_en || readExplore.text || (atomicSentences ? atomicSentences.map(s => s.text).join(' ') : "");
+
+  // Dynamic Retell to Nova: 5 Question Steps per week (No hardcoded leak)
+  const RETELL_QUESTIONS = React.useMemo(() => {
+    if (readExplore.retell_questions && Array.isArray(readExplore.retell_questions) && readExplore.retell_questions.length > 0) {
+      return readExplore.retell_questions;
+    }
+    if (storyData.retell_questions && Array.isArray(storyData.retell_questions) && storyData.retell_questions.length > 0) {
+      return storyData.retell_questions;
+    }
+    if (atomicSentences && atomicSentences.length >= 5) {
+      return atomicSentences.slice(0, 5).map((s, idx) => ({
+        step: idx + 1,
+        question_vi: `Kể lại phần ${idx + 1} của câu chuyện:`,
+        question_en: `Retell part ${idx + 1} of the story:`,
+        chips: s.words ? s.words.slice(0, 3) : [],
+        sentence: s.text
+      }));
+    }
+    return [
+      {
+        step: 1,
+        question_vi: 'Chuyện đó xảy ra ở đâu và khi nào?',
+        question_en: 'Where and when did the story start?',
+        chips: ['one day', 'story began'],
+        sentence: fullStoryText.split('.')[0] || 'The story began one day.'
+      }
+    ];
+  }, [readExplore, storyData, atomicSentences, fullStoryText]);
 
   // Split story into individual sentences for Gear 2
   const storySentences = React.useMemo(() => {
+    if (atomicSentences && atomicSentences.length > 0) {
+      return atomicSentences.map(s => s.text);
+    }
     return fullStoryText
       .replace(/([.!?])\s+/g, '$1|SPLIT|')
       .split('|SPLIT|')
       .map(s => s.trim())
       .filter(s => s.length > 0);
-  }, [fullStoryText]);
+  }, [atomicSentences, fullStoryText]);
+
+  // Load Shadowing IPA data for Phonetics Coach
+  const [ipaMap, setIpaMap] = useState({});
+  useEffect(() => {
+    if (atomicSentences && atomicSentences.length > 0) {
+      const map = {};
+      atomicSentences.forEach((item, i) => {
+        map[i] = Array.isArray(item.ipa) ? item.ipa.join(' ') : item.ipa;
+      });
+      setIpaMap(map);
+      return;
+    }
+    if (currentGear === 2) {
+      loadIpaData(activeWeek, 'advanced').then(data => {
+        if (data && Array.isArray(data)) {
+          const map = {};
+          data.forEach((item, i) => {
+            map[i] = Array.isArray(item.ipa) ? item.ipa.join(' ') : item.ipa;
+          });
+          setIpaMap(map);
+        }
+      }).catch(() => {});
+    }
+  }, [currentGear, activeWeek, atomicSentences]);
 
   const currentScene = scenes[activeFrameIndex] || null;
   const currentSceneText = currentScene
@@ -233,22 +251,6 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
       });
     }
   }, [currentGear, storySentences, activeWeek]);
-
-  // Load Shadowing IPA data for Phonetics Coach
-  const [ipaMap, setIpaMap] = useState({});
-  useEffect(() => {
-    if (currentGear === 2) {
-      loadIpaData(activeWeek, 'advanced').then(data => {
-        if (data && Array.isArray(data)) {
-          const map = {};
-          data.forEach((item, i) => {
-            map[i] = item.ipa;
-          });
-          setIpaMap(map);
-        }
-      }).catch(() => {});
-    }
-  }, [currentGear, activeWeek]);
 
   // Word-by-Word Karaoke Highlighting Simulation (Linear Pacing Heuristic)
   const handleSpeakSentence = (sentenceText, idx, playbackId = null, onAudioStartCallback = null, caller = 'unknown') => {
@@ -1368,10 +1370,10 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                       {scenes[retellStepIdx] && (
                         <div className="w-full sm:w-28 h-20 sm:h-20 rounded-xl overflow-hidden shadow-sm shrink-0 border border-purple-300 bg-slate-100">
                           <img
-                            src={scenes[retellStepIdx].image_url || `/images/week33/read_stem.jpg`}
+                            src={scenes[retellStepIdx]?.image_url || `/images/week${weekNum}/webtoon_scene_${retellStepIdx + 1}.png`}
                             alt={`Scene ${retellStepIdx + 1}`}
                             className="w-full h-full object-cover"
-                            onError={(e) => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
+                            onError={(e) => { e.target.onerror = null; e.target.src = `/images/week${weekNum}/webtoon_scene_1.png`; }}
                           />
                         </div>
                       )}
