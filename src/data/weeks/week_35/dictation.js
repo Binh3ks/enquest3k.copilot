@@ -1,8 +1,8 @@
-// Week 35 dictation.js
+// Week 35 Dictation Sentences
 export default [
-  { id: 1, sentence: "Last Saturday was a wonderful best day ever for my family." },
-  { id: 2, sentence: "The weather was sunny and warm near the ocean." },
-  { id: 3, sentence: "We visited a grand amusement park by the beach." },
-  { id: 4, sentence: "We built an awesome sandcastle with high towers." },
-  { id: 5, sentence: "We watched bright fireworks in the night sky." }
+  { id: 1, text: "Our family went camping near Pine Valley Mountain.", audio_url: "/audio/week35/dictation_1.mp3" },
+  { id: 2, text: "We pitched our large blue tent on the green grass.", audio_url: "/audio/week35/dictation_2.mp3" },
+  { id: 3, text: "We hiked along a crystal clear forest stream.", audio_url: "/audio/week35/dictation_3.mp3" },
+  { id: 4, text: "Dad lit the warm campfire when evening arrived.", audio_url: "/audio/week35/dictation_4.mp3" },
+  { id: 5, text: "We roasted sweet marshmallows under the starry sky.", audio_url: "/audio/week35/dictation_5.mp3" }
 ];

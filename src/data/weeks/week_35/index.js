@@ -8,7 +8,7 @@ import grammar from './grammar.js';
 import daily_watch from './daily_watch.js';
 import logic_lab from './logic_lab.js';
 import mindmap_speaking from './mindmap.js';
-import ask_ai from './ask_ai.js';
+import ask_ai, { INFORMATION_EXCHANGE_P2, CUE_CARD_PROMPTS } from './ask_ai.js';
 import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
@@ -21,7 +21,12 @@ import { speakingHubData as speakingHub } from './speaking_hub.js';
 export const weekData = {
   weekId: 35,
   title: "The Best Day Ever",
+  weekTitle_en: "The Best Day Ever",
   title_vi: "Ngày Tuyệt Vời Nhất — Kể Lại Kỷ Niệm Cá Nhân",
+
+  cue_card_info_exchange: INFORMATION_EXCHANGE_P2,
+  cue_card_prompts: CUE_CARD_PROMPTS,
+
   readingHub,
   listeningHub,
   writingHub,

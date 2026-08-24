@@ -38,6 +38,17 @@ const BANNED_B2_C1_WORDS = new Set([
   'infrastructure', 'unprecedented', 'equilibrium', 'paradigm'
 ]);
 
+// Grammar complexity check for Stage 1 (A2 Young Learners)
+const STAGE1_BANNED_GRAMMAR_PATTERNS = [
+  { pattern: /\bhave been\b/i, name: 'Present Perfect Continuous / Passive' },
+  { pattern: /\bhad been\b/i, name: 'Past Perfect Continuous / Passive' },
+  { pattern: /\bwould have\b/i, name: '3rd Conditional (would have)' },
+  { pattern: /\bmight have\b/i, name: 'Past Modal (might have)' },
+  { pattern: /\bcould have\b/i, name: 'Past Modal (could have)' },
+  { pattern: /\bif I were\b/i, name: '2nd Conditional (if I were)' },
+  { pattern: /\bhad had\b/i, name: 'Past Perfect (had had)' }
+];
+
 const allowedWords = new Set();
 for (const file of ALLOWED_WORDLIST_FILES) {
   const filePath = path.join(WORDLISTS_DIR, file);
@@ -82,6 +93,18 @@ async function auditTask(task, baseDir, modeLabel) {
     const fullPath = path.join(baseDir, relFile);
     if (!fs.existsSync(fullPath)) continue;
 
+    // Check raw content for cross-week hardcoding
+    const rawContent = fs.readFileSync(fullPath, 'utf8');
+    const wrongWeekPattern = new RegExp(`week_?(?!${targetWeek}\\b)\\d+`, 'g');
+    const crossWeekMatches = rawContent.match(wrongWeekPattern);
+    if (crossWeekMatches) {
+      // Filter out harmless historical references or comments
+      const suspicious = crossWeekMatches.filter(m => m.includes('audio') || m.includes('image') || m.includes('w'));
+      if (suspicious.length > 0) {
+        issues.push({ type: 'CROSS_WEEK_HARDCODE', file: relFile, matches: suspicious });
+      }
+    }
+
     try {
       const mod = await import(pathToFileURL(fullPath).href);
       const data = mod.default || mod;
@@ -106,6 +129,7 @@ async function auditTask(task, baseDir, modeLabel) {
       collect(data);
 
       for (const { text, file, key } of snippets) {
+        // Banned B2/C1 words
         const words = text.toLowerCase().replace(/[^a-z\s-]/g, ' ').split(/\s+/).filter(Boolean);
         for (const w of words) {
           if (BANNED_B2_C1_WORDS.has(w)) {
@@ -113,7 +137,7 @@ async function auditTask(task, baseDir, modeLabel) {
           }
         }
 
-        // Sentence length check (max 22 words per sentence for kids)
+        // Sentence length check (max 22 words per sentence for Stage 1 kids)
         if (text.length > 20) {
           const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
           for (const s of sentences) {
@@ -123,7 +147,31 @@ async function auditTask(task, baseDir, modeLabel) {
             }
           }
         }
+
+        // Grammar complexity check (Stage 1)
+        for (const { pattern, name } of STAGE1_BANNED_GRAMMAR_PATTERNS) {
+          if (pattern.test(text)) {
+            issues.push({ type: 'COMPLEX_GRAMMAR', grammar: name, file, snippet: text.slice(0, 60) });
+          }
+        }
       }
+
+      // Word Count Validation on specific key articles
+      if (relFile === 'read.js' && (data.text_en || data.text)) {
+        const text = data.text_en || data.text;
+        const wc = text.split(/\s+/).filter(Boolean).length;
+        if (wc < 100 || wc > 260) {
+          issues.push({ type: 'WORD_COUNT_OUT_OF_BOUNDS', file: relFile, field: 'Main Reading Text', count: wc, expected: '100-260 words' });
+        }
+      }
+      if ((relFile === 'explore.js' || relFile === 'reading_hub.js') && data.clil_article?.content_en) {
+        const text = data.clil_article.content_en;
+        const wc = text.split(/\s+/).filter(Boolean).length;
+        if (wc < 90 || wc > 200) {
+          issues.push({ type: 'WORD_COUNT_OUT_OF_BOUNDS', file: relFile, field: 'CLIL Article', count: wc, expected: '90-200 words' });
+        }
+      }
+
     } catch (e) {
       issues.push({ type: 'FILE_ERROR', file: relFile, error: e.message });
     }
@@ -134,7 +182,7 @@ async function auditTask(task, baseDir, modeLabel) {
 
 async function run() {
   console.log(`================================================================`);
-  console.log(`📋 GRANULAR AUDIT OF ALL 15 TASKS / GEARS IN WEEK ${targetWeek}`);
+  console.log(`📋 ENHANCED AUDIT OF ALL 15 TASKS / GEARS IN WEEK ${targetWeek}`);
   console.log(`================================================================`);
 
   let totalIssues = 0;
@@ -153,6 +201,12 @@ async function run() {
           console.log(`   - 🚫 Banned B2 Word '${iss.word}' in ${iss.file}: "${iss.text}..."`);
         } else if (iss.type === 'SENTENCE_TOO_LONG') {
           console.log(`   - ⚠️ Long sentence (${iss.length} words) in ${iss.file}: "${iss.sentence}..."`);
+        } else if (iss.type === 'COMPLEX_GRAMMAR') {
+          console.log(`   - 🚫 Complex Grammar (${iss.grammar}) in ${iss.file}: "${iss.snippet}..."`);
+        } else if (iss.type === 'WORD_COUNT_OUT_OF_BOUNDS') {
+          console.log(`   - ⚠️ Word Count Out of Bounds for ${iss.field} in ${iss.file}: ${iss.count} words (Expected: ${iss.expected})`);
+        } else if (iss.type === 'CROSS_WEEK_HARDCODE') {
+          console.log(`   - ⚠️ Cross-Week Path Contamination in ${iss.file}: ${iss.matches.join(', ')}`);
         } else {
           console.log(`   - ⚠️ Error in ${iss.file}: ${iss.error}`);
         }
