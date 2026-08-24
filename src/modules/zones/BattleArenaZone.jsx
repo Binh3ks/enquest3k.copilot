@@ -51,7 +51,7 @@ export default function BattleArenaZone({ data, weekNumber, forcedStation = null
   const coopContribution = Math.min(globalXP % 1000, 1000);
   const coopPercent = Math.round((coopContribution / 1000) * 100);
 
-  const flashArenaData = arenaData.vocabSets || data?.stations?.new_words || null;
+  const flashArenaData = arenaData.flashArena || arenaData.vocabSets || arenaData.vocab || data?.stations?.new_words || null;
   const grammarDrills = arenaData.grammarDrills || data?.stations?.grammar || null;
   const vocabList = arenaData.vocabList || data?.stations?.new_words?.vocab_list || [];
   const barModelData = arenaData.barModel || logicLabData.singapore_math || null;

@@ -1,0 +1,181 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EngQuest3K Master Week Data Schema",
+  "description": "Standard schema contract for 4 Hubs and 15 Quests (W33+ Master Architecture)",
+  "type": "object",
+  "required": ["week", "theme", "reading_hub", "listening_hub", "writing_hub", "speaking_hub"],
+  "properties": {
+    "week": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 156
+    },
+    "theme": {
+      "type": "string",
+      "minLength": 3
+    },
+    "reading_hub": {
+      "type": "object",
+      "required": ["read_explore", "story_scenes", "shadowingData", "vocab"],
+      "properties": {
+        "read_explore": {
+          "type": "object",
+          "required": ["title", "story_scenes", "clil_article"],
+          "properties": {
+            "title": { "type": "string" },
+            "story_scenes": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "object",
+                "required": ["id", "scene_number", "title_en", "title_vi", "narration_en", "narration_vi", "image_url", "hotspots"],
+                "properties": {
+                  "id": { "type": "string" },
+                  "scene_number": { "type": "integer", "minimum": 1, "maximum": 5 },
+                  "title_en": { "type": "string" },
+                  "title_vi": { "type": "string" },
+                  "narration_en": { "type": "string" },
+                  "narration_vi": { "type": "string" },
+                  "image_url": { "type": "string", "pattern": "^/images/week[0-9]+/.*\\.(png|jpg|webp)$" },
+                  "hotspots": {
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "required": ["id", "label_en", "label_vi", "x", "y"],
+                      "properties": {
+                        "id": { "type": "string" },
+                        "label_en": { "type": "string" },
+                        "label_vi": { "type": "string" },
+                        "x": { "type": "number", "minimum": 5, "maximum": 95 },
+                        "y": { "type": "number", "minimum": 5, "maximum": 95 }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "clil_article": {
+              "type": "object",
+              "required": ["title", "content_en", "content_vi", "cover_image", "audio_url", "comprehension_questions"],
+              "properties": {
+                "title": { "type": "string" },
+                "content_en": { "type": "string", "minLength": 100 },
+                "content_vi": { "type": "string", "minLength": 100 },
+                "cover_image": { "type": "string", "pattern": "^/images/week[0-9]+/.*\\.(jpg|png|webp)$" },
+                "audio_url": { "type": "string", "pattern": "^/audio/week[0-9]+/.*\\.mp3$" }
+              }
+            }
+          }
+        },
+        "shadowingData": {
+          "type": "object",
+          "required": ["sentences"],
+          "properties": {
+            "sentences": {
+              "type": "array",
+              "minItems": 8,
+              "items": {
+                "type": "object",
+                "required": ["id", "text", "words", "ipa"],
+                "properties": {
+                  "id": { "type": "integer" },
+                  "text": { "type": "string" },
+                  "words": { "type": "array", "items": { "type": "string" } },
+                  "ipa": { "type": "array", "items": { "type": "string" } },
+                  "audio_url": { "type": "string", "pattern": "^/audio/week[0-9]+/.*\\.mp3$" }
+                }
+              }
+            }
+          }
+        },
+        "vocab": {
+          "type": "array",
+          "minItems": 20,
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "required": ["id", "word", "definition_en", "definition_vi", "example_en", "example_vi"],
+            "properties": {
+              "id": { "type": "integer" },
+              "word": { "type": "string" },
+              "definition_en": { "type": "string" },
+              "definition_vi": { "type": "string" },
+              "example_en": { "type": "string" },
+              "example_vi": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "listening_hub": {
+      "type": "object",
+      "required": ["dictation", "singapore_math", "science_lab", "listening_p1", "listening_p3", "listening_p5"],
+      "properties": {
+        "dictation": { "type": "array", "minItems": 5 },
+        "singapore_math": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["id", "problem_en", "bar_model_svg", "answer_value"],
+            "properties": {
+              "id": { "type": "integer" },
+              "problem_en": { "type": "string" },
+              "bar_model_svg": { "type": "string", "pattern": "^/images/week[0-9]+/barmodel_w[0-9]+_adv_p[1-5]\\.svg$" },
+              "answer_value": { "type": "number" }
+            }
+          }
+        },
+        "listening_p1": {
+          "type": "object",
+          "required": ["image_url", "names", "targets"],
+          "properties": {
+            "image_url": { "type": "string", "pattern": "^/images/week[0-9]+/.*\\.(jpg|png|webp)$" },
+            "names": { "type": "array", "minItems": 6 },
+            "targets": { "type": "array", "minItems": 6 }
+          }
+        },
+        "listening_p3": {
+          "type": "object",
+          "required": ["items", "cards"],
+          "properties": {
+            "items": { "type": "array", "minItems": 5 },
+            "cards": { "type": "array", "minItems": 8, "maxItems": 8 }
+          }
+        },
+        "listening_p5": {
+          "type": "object",
+          "required": ["image_url", "instructions"],
+          "properties": {
+            "image_url": { "type": "string", "pattern": "^/images/week[0-9]+/.*\\.(jpg|png|webp)$" },
+            "instructions": { "type": "array", "minItems": 4 }
+          }
+        }
+      }
+    },
+    "writing_hub": {
+      "type": "object",
+      "required": ["picture_story", "rw_part_1", "rw_part_2", "rw_part_4", "rw_part_5"],
+      "properties": {
+        "picture_story": { "type": "object" },
+        "rw_part_1": { "type": "object", "required": ["words", "definitions"] },
+        "rw_part_2": { "type": "object", "required": ["turns", "options"] },
+        "rw_part_4": { "type": "object", "required": ["text_template", "answers"] },
+        "rw_part_5": { "type": "object", "required": ["title", "story_text", "questions"] }
+      }
+    },
+    "speaking_hub": {
+      "type": "object",
+      "required": ["talkshow_video", "info_exchange_cards", "find_differences"],
+      "properties": {
+        "talkshow_video": { "type": "object", "required": ["video_id", "title"] },
+        "info_exchange_cards": { "type": "object" },
+        "find_differences": { "type": "object" }
+      }
+    }
+  }
+}

@@ -89,6 +89,10 @@ function getSafeTaskData(weekData, weekId) {
       battleArena: { vocab: [], grammarDrills: [], flashArena: null, barModel: [], scienceLab: null },
       creatorStudio: { pictureStory: null, storyPrompts: {}, podcastScenes: [], debateTopics: [] },
       bossBattle: { listening: {}, readingWriting: {}, speaking: {} },
+      reading_hub: {},
+      listening_hub: {},
+      writing_hub: {},
+      speaking_hub: {},
       stations: {},
       rawWeekData: {}
     };
@@ -100,6 +104,10 @@ function getSafeTaskData(weekData, weekId) {
     battleArena: weekData.battleArena || { vocab: [], grammarDrills: [], flashArena: null, barModel: [], scienceLab: null },
     creatorStudio: weekData.creatorStudio || { pictureStory: null, storyPrompts: {}, podcastScenes: [], debateTopics: [] },
     bossBattle: weekData.bossBattle || { listening: {}, readingWriting: {}, speaking: {} },
+    reading_hub: weekData.reading_hub || weekData.stations?.reading_hub || {},
+    listening_hub: weekData.listening_hub || weekData.stations?.listening_hub || {},
+    writing_hub: weekData.writing_hub || weekData.stations?.writing_hub || {},
+    speaking_hub: weekData.speaking_hub || weekData.stations?.speaking_hub || {},
     stations: weekData.stations || {},
     rawWeekData: weekData.rawWeekData || weekData
   };

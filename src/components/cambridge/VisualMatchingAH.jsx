@@ -25,59 +25,12 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
   const [shuffleSeed, setShuffleSeed] = useState(0);
   const [showCompletionModal, setShowCompletionModal] = useState(false);
 
-  const fullPassageScript = "Teacher: Hello Jake! I am writing our school safety report about yesterday. Can you tell me where all the items were found?\nJake: Of course, Mrs. Wilson! I remember everything clearly.\nTeacher: First, where was the clean bandage kept? Was it inside the headmaster's office?\nJake: No, not there! The school nurse keeps the clean bandage inside the white medical cabinet in the nurse room.\nTeacher: Excellent. And what about the cold pack for Tom's knee? Did someone leave it on the science lab desk?\nJake: No, the nurse placed the cold pack on the first aid table near the corridor entrance so it was ready to use.\nTeacher: Right. And where was Tom's science notebook? I know he was looking for it everywhere.\nJake: He thought he lost it on the playground bench, but actually his notebook was sitting right on the lab desk in the science room.\nTeacher: Ah, that is a relief! Now, what about the glass of orange juice that someone brought for Tom?\nJake: Nobody took it outside! The fresh orange juice was placed on the cafeteria counter in the school canteen.\nTeacher: And what about Tom's alarm clock? Was that left in the corridor locker?\nJake: Haha, no! Tom told me his alarm clock was on his bedroom table at home. He woke up late that morning!";
+  const fullPassageScript = customData?.passage_audio_script || "Listen carefully and match the letters to the items.";
 
-  // Default Listening Part 3 Visual Matching Data
-  const itemsList = customData?.items || [
-    { 
-      id: 1, 
-      name: 'Clean Bandage', 
-      target_letter: 'A', 
-      audio_url: '/audio/week33/listening_p3_item1.mp3',
-      audio_text: "Teacher: Where was the clean bandage kept? Was it inside the headmaster's office?\nJake: No, not there! The school nurse keeps the clean bandage inside the white medical cabinet in the nurse room." 
-    },
-    { 
-      id: 2, 
-      name: 'Cold Pack', 
-      target_letter: 'B', 
-      audio_url: '/audio/week33/listening_p3_item2.mp3',
-      audio_text: "Teacher: What about the cold pack for Tom's knee? Did someone leave it on the science lab desk?\nJake: No, the nurse placed the cold pack on the first aid table near the corridor entrance so it was ready to use." 
-    },
-    { 
-      id: 3, 
-      name: 'Science Notebook', 
-      target_letter: 'C', 
-      audio_url: '/audio/week33/listening_p3_item3.mp3',
-      audio_text: "Teacher: And where was Tom's science notebook? I know he was looking for it everywhere.\nJake: He thought he lost it on the playground bench, but actually his notebook was sitting right on the lab desk in the science room." 
-    },
-    { 
-      id: 4, 
-      name: 'Orange Juice', 
-      target_letter: 'D', 
-      audio_url: '/audio/week33/listening_p3_item4.mp3',
-      audio_text: "Teacher: What about the glass of orange juice that someone brought for Tom?\nJake: Nobody took it outside! The fresh orange juice was placed on the cafeteria counter in the school canteen." 
-    },
-    { 
-      id: 5, 
-      name: 'Alarm Clock', 
-      target_letter: 'E', 
-      audio_url: '/audio/week33/listening_p3_item5.mp3',
-      audio_text: "Teacher: And what about Tom's alarm clock? Was that left in the corridor locker?\nJake: Haha, no! Tom told me his alarm clock was on his bedroom table at home. He woke up late that morning!" 
-    }
-  ];
+  const itemsList = customData?.items || [];
 
-  // Fisher-Yates Shuffle 8 Picture Cards (A to H — School Locations)
   const pictureCards = useMemo(() => {
-    const rawCards = customData?.cards || [
-      { letter: 'A', name: 'Medical Cabinet (Nurse Room)', location_name: 'Medical Cabinet', image_url: '/images/week33/nurse_cabinet.jpg' },
-      { letter: 'B', name: 'First Aid Table', location_name: 'First Aid Table', image_url: '/images/week33/card_b_first_aid_table.jpg' },
-      { letter: 'C', name: 'Science Lab Desk', location_name: 'Science Lab Desk', image_url: '/images/week33/lab_desk.jpg' },
-      { letter: 'D', name: 'Cafeteria Counter', location_name: 'Cafeteria Counter', image_url: '/images/week33/cafeteria.jpg' },
-      { letter: 'E', name: 'Bedroom Table (Home)', location_name: 'Bedroom Table', image_url: '/images/week33/bedroom_table.jpg' },
-      { letter: 'F', name: 'Corridor Safety Locker', location_name: 'Corridor Locker', image_url: '/images/week33/corridor.jpg' },
-      { letter: 'G', name: 'Headmaster Office Desk', location_name: 'Headmaster Office', image_url: '/images/week33/card_g_headmaster_office.jpg' },
-      { letter: 'H', name: 'Playground Bench', location_name: 'Playground Bench', image_url: '/images/week33/card_h_playground_bench.jpg' }
-    ];
+    const rawCards = customData?.cards || [];
     return shuffleArray(rawCards);
   }, [customData, shuffleSeed]);
 

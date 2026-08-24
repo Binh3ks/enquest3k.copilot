@@ -36,7 +36,9 @@ const GATES = [
   { name: 'Gate 4: ESL Linear Chunk Bolding', cmd: `node scripts/gate4_chunk_bolding.mjs ${weekNum}` },
   { name: 'Gate 5: Runtime Visual Smoke & Canvas Pixels', cmd: `node scripts/gate5_runtime_visual_smoke.mjs ${weekNum}` },
   { name: 'Gate 6: XP Economy & Badge Invariants', cmd: `node scripts/gate6_xp_economy.mjs ${weekNum}` },
-  { name: 'CEFR Guard: Stage 1 Vocabulary Standards', cmd: `node scripts/cefr_curriculum_guard.mjs ${weekNum}` },
+  { name: 'Gate 7: CEFR Guard Stage 1 Vocabulary Standards', cmd: `node scripts/cefr_curriculum_guard.mjs ${weekNum}` },
+  { name: 'Gate 8: Static No-Fallback Sweep & Fail-Loud Audit', cmd: `node scripts/gate8_no_fallback_sweep.mjs` },
+  { name: 'Gate 9: Generator Purity & Zero-Clone Audit', cmd: `node scripts/gate9_generator_purity.mjs` },
   { name: 'Task Auditor: 15-Quest Hub Invariants', cmd: `node scripts/audit_week_tasks.mjs ${weekNum}` }
 ];
 

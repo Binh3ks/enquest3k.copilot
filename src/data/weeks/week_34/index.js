@@ -1,51 +1,23 @@
-// Index wrapper for Week 34
-import read_explore from './read.js';
-import explore from './explore.js';
-import new_words from './vocab.js';
-import word_match from './word_match.js';
-import word_power from './word_power.js';
-import grammar from './grammar.js';
-import daily_watch from './daily_watch.js';
-import logic_lab from './logic_lab.js';
-import mindmap_speaking from './mindmap.js';
-import ask_ai, { INFORMATION_EXCHANGE_P2, CUE_CARD_PROMPTS } from './ask_ai.js';
-import writing from './writing.js';
-import dictation from './dictation.js';
-import shadowing from './shadowing.js';
-
-import { readingHubData as readingHub } from './reading_hub.js';
-import { listeningHubData as listeningHub } from './listening_hub.js';
-import { writingHubData as writingHub } from './writing_hub.js';
-import { speakingHubData as speakingHub } from './speaking_hub.js';
+// Pure Generated Master Index for Week 34
+import { readingHub } from './reading_hub.js';
+import { listeningHub } from './listening_hub.js';
+import { writingHub } from './writing_hub.js';
+import { speakingHub } from './speaking_hub.js';
+import { week34Vocab } from './vocab.js';
 
 export const weekData = {
-  weekId: 34,
-  title: "The Lion and the Mouse",
-  weekTitle_en: "The Lion and the Mouse",
-  title_vi: "Sư Tử và Chuột — Truyện Ngụ Ngôn",
-
-  // Top-level for InfoExchangeZone direct hydration
-  cue_card_info_exchange: INFORMATION_EXCHANGE_P2,
-  cue_card_prompts: CUE_CARD_PROMPTS,
-
-  readingHub,
-  listeningHub,
-  writingHub,
-  speakingHub,
+  week: 34,
+  theme: "The Lion and the Mouse: True Friendship",
+  vocab: week34Vocab,
+  reading_hub: readingHub,
+  listening_hub: listeningHub,
+  writing_hub: writingHub,
+  speaking_hub: speakingHub,
   stations: {
-    read_explore,
-    explore,
-    new_words,
-    word_match,
-    word_power,
-    grammar,
-    daily_watch,
-    logic_lab,
-    mindmap_speaking,
-    ask_ai,
-    writing,
-    dictation,
-    shadowing
+    reading_hub: readingHub,
+    listening_hub: listeningHub,
+    writing_hub: writingHub,
+    speaking_hub: speakingHub
   }
 };
 

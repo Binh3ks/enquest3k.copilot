@@ -12,24 +12,24 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
 
   const defaultTopic = {
     id: "debate_w33_01",
-    topic_title: isModeA ? "Corridor Safety: Sharing Ideas on Walking vs Running" : "School Corridors: Running vs Walking Debate",
+    topic_title: isModeA ? "Topic Discussion: Sharing Opinions" : "Interactive Topic Debate",
     nova_statement: isModeA 
-      ? "Running in the corridor is fast and fun! Why do you think walking carefully might be a better idea?" 
-      : "I think running in the corridor is fun! It is a great way to get to the playground quickly and play with friends.",
-    expected_counter_points: ["Running on wet floors causes dangerous slips", "You can bump into friends", "Walking calmly keeps everyone safe"],
+      ? "What is your opinion on this topic? Why do you think that way?" 
+      : "I think exploring new ideas is exciting! What do you think about this perspective?",
+    expected_counter_points: ["Important reasons support this", "Evidence shows clear benefits", "Considering different views is helpful"],
     suggested_discourse_markers: isModeA ? [
-      "I think it's safer to...",
+      "I think it's better to...",
       "I have a different idea because...",
       "One reason is..."
     ] : [
       "I understand your point, but...",
-      "I disagree with Nova because...",
-      "In my opinion, if a student...",
-      "For example, walking carefully..."
+      "I disagree because...",
+      "In my opinion, if we...",
+      "For example, we know that..."
     ],
     sample_rebuttal: isModeA 
-      ? "I think it's safer to walk because the floor can be wet and slippery."
-      : "I understand your point, but running inside is dangerous. If the floor is wet, you can slip, fall down, and hurt your knee."
+      ? "I think it's important to consider all facts before making a decision."
+      : "I understand your point, but considering the evidence, there is a better approach."
   };
 
   const topic = (debateTopics && debateTopics[0]) || defaultTopic;
@@ -173,11 +173,11 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
     if (!hasPosition) {
       aiFeedback = "⚠️ Unclear Position: Start with 'I understand your point, but...' or 'In my opinion...' to state your position clearly.";
     } else if (!hasReason) {
-      aiFeedback = "⚠️ Missing Causal Reason: Good position! Add 'because' or 'however' to explain why running in corridors is unsafe.";
+      aiFeedback = "⚠️ Missing Causal Reason: Good position! Add 'because' or 'however' to explain your reason.";
     } else if (!hasEvidence) {
-      aiFeedback = "⚠️ Needs Safety Evidence: Good reasoning! Add a real example like 'slip on wet floor' or 'hurt knee' to support your argument.";
+      aiFeedback = "⚠️ Needs Supporting Evidence: Good reasoning! Add a real example or fact to support your argument.";
     } else {
-      aiFeedback = "🌟 Brilliant C.R.E Debate! You clearly stated your position (Claim), explained why (Reason), and supported it with safety facts (Evidence).";
+      aiFeedback = "🌟 Brilliant C.R.E Debate! You clearly stated your position (Claim), explained why (Reason), and supported it with facts (Evidence).";
     }
 
     const result = {
@@ -362,7 +362,7 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
                   {isModeA ? "💡 Share Different Idea" : "🚶 I disagree"}
                 </span>
                 <p className="text-xs text-slate-700">
-                  {isModeA ? '"I have a different idea because running on wet floors can cause slips."' : '"I understand your point, but running is risky because friction is reduced on wet floors."'}
+                  {isModeA ? '"I have a different idea because we should think about the facts."' : '"I understand your point, but looking at evidence gives a better solution."'}
                 </p>
               </button>
             </div>
@@ -412,11 +412,11 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
                 </div>
               </div>
 
-              {/* 🔬 Science Evidence */}
+              {/* 🔬 Supporting Evidence */}
               <div className="p-2.5 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1.5">
-                <span className="text-[9px] font-black uppercase text-emerald-900 block">🔬 Science Evidence:</span>
+                <span className="text-[9px] font-black uppercase text-emerald-900 block">🔬 Evidence & Facts:</span>
                 <div className="flex flex-wrap gap-1">
-                  {["water reduces friction", "wet floor is slippery", "rubber shoes grip better", "friction prevents sliding"].map((c,i) => (
+                  {["provides clear evidence", "supports the main idea", "creates better results", "protects everyone"].map((c,i) => (
                     <button key={i} type="button" onClick={() => setUserSpeechText(prev => prev ? `${prev} ${c}` : c)}
                       className="px-2 py-0.5 bg-white hover:bg-emerald-100 text-emerald-950 border border-emerald-300 rounded-md text-[10px] font-bold transition active:scale-95">
                       +{c}
@@ -429,7 +429,7 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
               <div className="p-2.5 bg-amber-50 rounded-xl border border-amber-200 space-y-1.5">
                 <span className="text-[9px] font-black uppercase text-amber-900 block">⚠️ Consequences:</span>
                 <div className="flex flex-wrap gap-1">
-                  {["causing students to slip", "hurt their knee badly", "a dangerous accident", "visit the school nurse"].map((c,i) => (
+                  {["causes unexpected problems", "leads to mistakes", "creates risks", "requires careful attention"].map((c,i) => (
                     <button key={i} type="button" onClick={() => setUserSpeechText(prev => prev ? `${prev} ${c}` : c)}
                       className="px-2 py-0.5 bg-white hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-md text-[10px] font-bold transition active:scale-95">
                       +{c}
@@ -478,10 +478,10 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
               {showModelDialogue && (
                 <div className="p-3 bg-white space-y-2 text-xs">
                   {[
-                    { speaker: '🤖 Nova', color: 'purple', text: '"Running in the corridor is fast and fun! It is a great way to get to the playground quickly."' },
-                    { speaker: '🏆 Champion', color: 'emerald', text: '"I understand your point, but running is dangerous. Water reduces friction on the wet floor."' },
-                    { speaker: '🤖 Nova', color: 'purple', text: '"Hmm, that is a good point! But what if students are careful?"' },
-                    { speaker: '🏆 Champion', color: 'emerald', text: '"Therefore, walking carefully in rubber shoes is always safer — it prevents slipping and accidents."' },
+                    { speaker: '🤖 Nova', color: 'purple', text: '"I think trying new things quickly is always the best approach!"' },
+                    { speaker: '🏆 Champion', color: 'emerald', text: '"I understand your point, but we must check the evidence first to make sure it works."' },
+                    { speaker: '🤖 Nova', color: 'purple', text: '"That makes sense! How does evidence help us?"' },
+                    { speaker: '🏆 Champion', color: 'emerald', text: '"Therefore, planning carefully with facts is always the safest and most effective method."' },
                   ].map((line, i) => (
                     <div key={i} className={`flex items-start gap-2 p-2 bg-${line.color}-50 rounded-xl border border-${line.color}-200`}>
                       <span className={`font-black text-${line.color}-900 shrink-0`}>{line.speaker}:</span>

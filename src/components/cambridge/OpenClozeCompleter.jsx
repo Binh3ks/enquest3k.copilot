@@ -3,17 +3,17 @@ import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, PenTool, BookOpen } fro
 import { learnerProgressService } from '../../services/learnerProgressService';
 import HoverWord, { renderParsedText } from '../common/HoverWord';
 
-export function OpenClozeCompleter({ customData, onComplete }) {
-  const data = customData || {
+export function OpenClozeCompleter({ customData, data: propData, onComplete }) {
+  const data = customData || propData || {
     instructions: "Read the diary and write the missing words. Write one word on each line.",
-    title: "Jake's Diary: Tuesday",
-    text_template: "Dear Diary, today was a crazy day at school. After science class, I was walking down the [1]_____. Suddenly, Tom ran past me very fast. He didn't see the yellow warning sign. He [2]_____ on the wet floor and fell down! He [3]_____ his left knee. I walked quickly and [4]_____ the school nurse for help. She brought a clean [5]_____ and fixed his knee. I'm glad he is okay!",
+    title: "Story Diary Note",
+    text_template: "Dear Diary, today I learned an amazing lesson. While exploring [1]_____, we found something interesting. A small creature [2]_____ quickly across the path. Everyone [3]_____ surprised. We worked [4]_____ to solve the puzzle and [5]_____ the day happily!",
     answers: {
-      "1": "corridor",
-      "2": "slipped",
-      "3": "hurt",
-      "4": "called",
-      "5": "bandage"
+      "1": "outside",
+      "2": "ran",
+      "3": "was",
+      "4": "together",
+      "5": "finished"
     }
   };
 
@@ -21,13 +21,7 @@ export function OpenClozeCompleter({ customData, onComplete }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
 
-  const targetAnswers = data.answers || {
-    "1": "corridor",
-    "2": "slipped",
-    "3": "hurt",
-    "4": "called",
-    "5": "bandage"
-  };
+  const targetAnswers = data.answers || {};
 
   const handleInputChange = (gapId, val) => {
     // Only allow single-word typing (no spaces)
@@ -170,7 +164,7 @@ export function OpenClozeCompleter({ customData, onComplete }) {
           <div className="flex items-center gap-2">
             <BookOpen size={20} className="text-amber-800" />
             <h3 className="text-lg sm:text-xl font-black text-amber-950 font-serif">
-              {data.title || "Jake's Diary: Tuesday"}
+              {data.title || "Story Diary Note"}
             </h3>
           </div>
           <span className="text-xs font-bold text-amber-800 bg-amber-200/70 px-3 py-1 rounded-full font-mono">

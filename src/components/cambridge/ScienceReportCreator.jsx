@@ -3,7 +3,7 @@ import { TestTube, Sparkles, CheckCircle2, Send, Trophy, ChevronRight, ChevronLe
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { playButtonClick, playCorrectSound, playVictoryFanfare } from '../../utils/soundEffects';
 
-export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onComplete }) {
+export default function ScienceReportCreator({ reportTopic, customConfig, weekNumber = 33, onComplete }) {
   const [currentStep, setCurrentStep] = useState(1);
   const [step1Text, setStep1Text] = useState('');
   const [step2Text, setStep2Text] = useState('');
@@ -42,53 +42,70 @@ export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onC
     setter(prev => prev ? `${prev} ${text}` : text);
   };
 
-  const STEP_CONFIG = [
-    {
-      step: 1,
-      label: 'What Happened?',
-      icon: '🏃',
-      color: 'emerald',
-      starter: 'While Jake was walking down the corridor,',
-      checker: step1OK,
-      value: step1Text,
-      setter: setStep1Text,
-      hint: 'What was happening when the boy fell? Tap pills or type...',
-      pills: {
-        '🔵 Who & Action': ['a boy was running fast', 'Jake was holding books', 'students were walking to class'],
-        '🟡 The Problem': ['slipped on the wet floor', 'fell down on the tiles', 'hurt his right knee'],
+  const STEP_CONFIG = useMemo(() => {
+    if (customConfig && customConfig.steps && Array.isArray(customConfig.steps)) {
+      return customConfig.steps.map((s, idx) => ({
+        step: idx + 1,
+        label: s.label || `Step ${idx + 1}`,
+        icon: s.icon || '📝',
+        color: idx === 0 ? 'emerald' : idx === 1 ? 'blue' : 'amber',
+        starter: s.starter || '',
+        checker: idx === 0 ? step1OK : idx === 1 ? step2OK : step3OK,
+        value: idx === 0 ? step1Text : idx === 1 ? step2Text : step3Text,
+        setter: idx === 0 ? setStep1Text : idx === 1 ? setStep2Text : setStep3Text,
+        hint: s.hint || 'Write your observation...',
+        pills: s.pills || {}
+      }));
+    }
+
+    return [
+      {
+        step: 1,
+        label: 'Observation & Facts',
+        icon: '🔬',
+        color: 'emerald',
+        starter: 'While observing the experiment,',
+        checker: step1OK,
+        value: step1Text,
+        setter: setStep1Text,
+        hint: 'What did you observe? Tap pills or type...',
+        pills: {
+          '🔵 Action & Setting': ['we noticed key changes', 'measurements were taken carefully', 'results showed clear differences'],
+          '🟡 Key Details': ['the force was measured', 'conditions changed quickly', 'data was recorded accurately'],
+        },
       },
-    },
-    {
-      step: 2,
-      label: 'Why Was It Slippery?',
-      icon: '🔬',
-      color: 'blue',
-      starter: 'The floor was very slippery because',
-      checker: step2OK,
-      value: step2Text,
-      setter: setStep2Text,
-      hint: 'Why did he slip? Explain with water & friction...',
-      pills: {
-        '🟢 Water & Tiles': ['water was on the smooth tiles', 'water makes less friction', 'the floor was very wet'],
-        '⚡ Shoes & Speed': ['his shoes had no grip', 'he was running too fast', 'smooth tiles have low friction'],
+      {
+        step: 2,
+        label: 'Scientific Reason',
+        icon: '⚡',
+        color: 'blue',
+        starter: 'This happened because',
+        checker: step2OK,
+        value: step2Text,
+        setter: setStep2Text,
+        hint: 'Explain the scientific reason...',
+        pills: {
+          '🟢 Science Concepts': ['forces interact with surfaces', 'energy is transferred smoothly', 'physical properties affect motion'],
+          '⚡ Effects': ['friction changes with texture', 'speed decreases under resistance', 'balance is maintained with grip'],
+        },
       },
-    },
-    {
-      step: 3,
-      label: 'Safety Rule & Care',
-      icon: '🩹',
-      color: 'amber',
-      starter: 'So, students must always',
-      checker: step3OK,
-      value: step3Text,
-      setter: setStep3Text,
-      hint: 'What is the rule? How did the nurse help?',
-      pills: {
-        '🟠 Safety Rules': ['walk carefully in corridors', 'look out for yellow warning signs', 'wear safe rubber shoes', 'never run on wet tiles'],
-        '🩹 Nurse Care': ['call the school nurse for help', 'apply a clean bandage', 'put a cold pack on the knee'],
+      {
+        step: 3,
+        label: 'Conclusion & Application',
+        icon: '🏆',
+        color: 'amber',
+        starter: 'In conclusion, we learned that',
+        checker: step3OK,
+        value: step3Text,
+        setter: setStep3Text,
+        hint: 'What is the final lesson or rule?',
+        pills: {
+          '🟠 Main Conclusion': ['understanding science helps us stay safe', 'small factors make big differences', 'proper precautions prevent accidents'],
+          '🩹 Recommendations': ['apply principles in daily life', 'follow safety guidelines', 'test ideas carefully'],
+        },
       },
-    },
-  ];
+    ];
+  }, [customConfig, step1OK, step2OK, step3OK, step1Text, step2Text, step3Text]);
 
   const cfg = STEP_CONFIG[currentStep - 1];
   const colorMap = { emerald: 'emerald', blue: 'blue', amber: 'amber' };

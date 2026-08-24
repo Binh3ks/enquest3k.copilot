@@ -136,15 +136,8 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
       setIsMicListening(false);
       setActiveRecordingPicId(null);
 
-      // BUG-1 FIX: extract targetText from map before passing to calculateSpeechAccuracy
-      const targetTextMap = {
-        2: "Tom ran fast and slipped on the wet floor near the yellow warning sign",
-        3: "Jake stopped immediately and called the school nurse to get help",
-        4: "The school nurse brought a clean bandage and a cold pack to treat his knee",
-        5: "Everyone felt relieved and the principal praised Jake publicly during Monday assembly"
-      };
-      const targetText = targetTextMap[picId] || "";
       const currentPic = pictureStoryData.pictures.find(p => p.id === picId);
+      const targetText = currentPic?.target_text || currentPic?.script || currentPic?.prompt_en || "";
       const keyChunks = currentPic?.key_chunks || [];
       const evalRes = calculateSpeechAccuracy(userSpeechInput, targetText, keyChunks);
 
@@ -174,83 +167,24 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
 
 
-  const sentencesList = data?.shadowing_sentences || [
-    { id: "sh_01", speaker: "Jake", text: "Jake was walking **carefully down the school corridor** after science class." },
-    { id: "sh_02", speaker: "Jake", text: "Suddenly, a boy running fast **slipped on the wet floor**." },
-    { id: "sh_03", speaker: "Jake", text: "**Right away**, Jake stopped immediately and **called the school nurse**." },
-    { id: "sh_04", speaker: "Nurse", text: "The school nurse applied a **clean bandage** and a **cold pack** gently." },
-    { id: "sh_05", speaker: "Headmaster", text: "Everyone **felt relieved**, and the headmaster **praised Jake** for following safety rules." }
-  ];
+  const sentencesList = data?.shadowing_sentences || [];
 
   const longParagraph = data?.podcast_shadowing?.long_paragraph || data?.long_paragraph || {
-    title: "Corridor Safety & Quick Action",
-    text: "Jake was walking **carefully down the school corridor** after science class when a boy running in a hurry suddenly **slipped on the wet floor**. **Right away**, Jake stopped immediately and **called the school nurse**. The nurse arrived quickly and applied a **clean bandage** and a **cold pack** to his bruised knee. Everyone **felt relieved**, and the headmaster **praised Jake** for following safety rules.",
-    phonetic_guide: "Focus on linking sounds: 'slipped on', 'called the', 'felt relieved'."
+    title: "Story Podcast",
+    text: "",
+    phonetic_guide: ""
   };
 
   const srsSpeakingContext = srsService.getSpeakingContextualPrompt();
 
-  const talkshowTurns = data?.talkshow_turns || [
-    { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! Today we are discussing school safety. What happened while Jake was walking down the school corridor?" },
-    { turn_number: 2, nova_question: "Oh dear! How did Tom slip on the wet floor near the science lab?" },
-    { turn_number: 3, nova_question: "What responsible action did Jake take right away when he saw Tom fall down?" },
-    { turn_number: 4, nova_question: "How did the school nurse help Tom with the clean bandage and cold pack?" },
-    { turn_number: 5, nova_question: srsSpeakingContext.nova_question }
-  ];
+  const talkshowTurns = data?.talkshow_turns || [];
 
-  const cueCardPrompts = data?.cue_card_prompts || [
-    {
-      cue_id: "cue_1",
-      target_prompt_en: "Ask Nova where Jake was walking after science class.",
-      question_word: "Where",
-      word_bank: ["Where", "was", "Jake", "walking", "after", "science", "class", "?"],
-      acceptable_questions: ["Where was Jake walking after science class?", "Where was Jake walking?", "Where was he walking?"],
-      nova_answer_audio_text: "Jake was walking carefully down the school corridor after science class."
-    },
-    {
-      cue_id: "cue_2",
-      target_prompt_en: "Ask Nova why the running boy slipped on the floor.",
-      question_word: "Why",
-      word_bank: ["Why", "did", "the", "running", "boy", "slip", "on", "the", "floor", "?"],
-      acceptable_questions: ["Why did the running boy slip?", "Why did the boy slip on the floor?", "Why did he fall down?"],
-      nova_answer_audio_text: "He slipped because the corridor tiles were wet and he was running fast."
-    },
-    {
-      cue_id: "cue_3",
-      target_prompt_en: "Ask Nova who Jake called immediately for help.",
-      question_word: "Who",
-      word_bank: ["Who", "did", "Jake", "call", "immediately", "for", "help", "?"],
-      acceptable_questions: ["Who did Jake call for help?", "Who did Jake call immediately?", "Who did he call?"],
-      nova_answer_audio_text: "Jake stopped immediately and called the school nurse right away."
-    },
-    {
-      cue_id: "cue_4",
-      target_prompt_en: "Ask Nova what the school nurse applied to his cut knee.",
-      question_word: "What",
-      word_bank: ["What", "did", "the", "school", "nurse", "apply", "to", "his", "knee", "?"],
-      acceptable_questions: ["What did the school nurse apply to his knee?", "What did the nurse apply?", "What did she put on his cut?"],
-      nova_answer_audio_text: "The nurse applied a clean bandage and a cold pack to treat his knee."
-    },
-    {
-      cue_id: "cue_5",
-      target_prompt_en: "Ask Nova why the headmaster praised Jake.",
-      question_word: "Why",
-      word_bank: ["Why", "did", "the", "headmaster", "praise", "Jake", "?"],
-      acceptable_questions: ["Why did the headmaster praise Jake?", "Why did he praise Jake?", "Why was Jake praised?"],
-      nova_answer_audio_text: "The headmaster praised Jake for following safety rules and acting responsibly."
-    }
-  ];
+  const cueCardPrompts = data?.cue_card_prompts || [];
 
   const pictureStoryData = data?.picture_story_continuation || {
-    title: "Safety First at School",
-    intro_audio_text: "Look at the five pictures. They tell a story called 'Safety First at School'. Just look at Picture 1 first. Jake was walking carefully down the corridor after science class.",
-    pictures: [
-      { id: 1, title: "Picture 1: Walking down corridor", image: "/images/week33/webtoon_scene_1.png", is_intro: true, script: "Jake was walking carefully down the corridor after science class." },
-      { id: 2, title: "Picture 2: Slipping on wet floor", image: "/images/week33/webtoon_scene_2.png", prompt_en: "Now you tell the story! What happened next in Picture 2?", key_chunks: ["slipped on wet floor", "fell down heavily"] },
-      { id: 3, title: "Picture 3: Calling the school nurse", image: "/images/week33/webtoon_scene_3.png", prompt_en: "What quick action did Jake take in Picture 3?", key_chunks: ["called school nurse", "stopped immediately"] },
-      { id: 4, title: "Picture 4: Applying clean bandage", image: "/images/week33/webtoon_scene_4.png", prompt_en: "How did the nurse treat Tom in Picture 4?", key_chunks: ["clean bandage", "cold pack"] },
-      { id: 5, title: "Picture 5: Feeling relieved & praised", image: "/images/week33/webtoon_scene_5.png", prompt_en: "How does the story end in Picture 5?", key_chunks: ["felt relieved", "praised by principal"] }
-    ]
+    title: "Picture Story",
+    intro_audio_text: "",
+    pictures: []
   };
 
   const handleAskNovaQuestion = async (userQuestion) => {

@@ -1,0 +1,173 @@
+{
+  "week": 34,
+  "generated_at": "2026-08-24T13:05:39.196Z",
+  "total_quests": 15,
+  "passed_quests": 15,
+  "matrix": [
+    {
+      "quest_id": "gear1_webtoon",
+      "quest_name": "Scene Explorer",
+      "zone": "Zone 1",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "Milestone",
+      "c5_screenshot_hash": "3dd6ec9c72",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "gear2_karaoke",
+      "quest_name": "Voice Shadowing",
+      "zone": "Zone 1",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "Milestone",
+      "c5_screenshot_hash": "b4fac495f1",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "gear3_retell",
+      "quest_name": "Story Retell",
+      "zone": "Zone 1",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "Milestone",
+      "c5_screenshot_hash": "7b58eb4267",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "gear4_clil",
+      "quest_name": "Fact Finder",
+      "zone": "Zone 1",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "Milestone",
+      "c5_screenshot_hash": "5bc74ee81a",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "science_lab",
+      "quest_name": "Action Lab",
+      "zone": "Zone 2",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "Milestone",
+      "c5_screenshot_hash": "d2c9b2b3bb",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "science_report",
+      "quest_name": "Discovery Report",
+      "zone": "Zone 2",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "+50 XP",
+      "c5_screenshot_hash": "2877178767",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "word_blitz",
+      "quest_name": "Speed Match",
+      "zone": "Zone 2",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "+45 XP",
+      "c5_screenshot_hash": "0bea58fec6",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "sentence_smash",
+      "quest_name": "Grammar Duel",
+      "zone": "Zone 2",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "+50 XP",
+      "c5_screenshot_hash": "6dcd492051",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "math_quest",
+      "quest_name": "Math Quest",
+      "zone": "Zone 2",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "+40 XP",
+      "c5_screenshot_hash": "45155f0fef",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "story_writer",
+      "quest_name": "Story Writer",
+      "zone": "Zone 3",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "+50 XP",
+      "c5_screenshot_hash": "0638deb83e",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "broadcast_studio",
+      "quest_name": "Video Challenge",
+      "zone": "Zone 3",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "+50 XP",
+      "c5_screenshot_hash": "efd169c577",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "info_exchange",
+      "quest_name": "Info Exchange",
+      "zone": "Zone 3",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "+50 XP",
+      "c5_screenshot_hash": "8bd9ed7f25",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "boss_listening",
+      "quest_name": "Listening Shield",
+      "zone": "Zone 4",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "Milestone",
+      "c5_screenshot_hash": "ee09f0e72b",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "boss_reading",
+      "quest_name": "Reading & Writing Shield",
+      "zone": "Zone 4",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "Milestone",
+      "c5_screenshot_hash": "f10b287488",
+      "status": "PASS"
+    },
+    {
+      "quest_id": "weekly_review",
+      "quest_name": "Speaking & Passport",
+      "zone": "Zone 4",
+      "c1_data_coverage": "✅ PASS",
+      "c2_asset_resolve": "✅ PASS",
+      "c3_dom_assertion": "✅ PASS",
+      "c4_xp_badge": "Milestone",
+      "c5_screenshot_hash": "b20bab3c1a",
+      "status": "PASS"
+    }
+  ]
+}

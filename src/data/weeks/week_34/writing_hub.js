@@ -1,132 +1,68 @@
-/**
- * Week 34 Gold Standard Data — Writing Hub
- * Theme: "The Lion and the Mouse"
- */
-
-import writing from './writing.js';
-
-export const writingHubData = {
-  week: 34,
-  theme: "The Lion and the Mouse",
-  picture_story: writing.picture_story,
-  word_bank_pills: writing.word_bank_pills,
-  model_sentence: writing.model_sentence,
-  sentence_frames: writing.sentence_frames,
-  min_words: writing.min_words || 20,
-  pbl_mission: {
-    title_en: "Offline Animal Helpers Comic Book Project",
-    title_vi: "Dự Án Vẽ Truyện Tranh Những Người Bạn Động Vật",
-    task_en: "1. Draw a 3-panel comic strip about two different animals helping each other in nature.\n2. Write 2 sentences under each drawing using past continuous and past simple (e.g., 'While the lion was sleeping, the mouse ran across his paw').\n3. Record a 1-minute video retelling your story to your family.",
-    task_vi: "1. Vẽ một truyện tranh 3 khung hình về hai con vật giúp đỡ lẫn nhau trong tự nhiên.\n2. Viết 2 câu dưới mỗi bức tranh dùng thì quá khứ tiếp diễn và quá khứ đơn.\n3. Quay video 1 phút kể lại câu chuyện của em cho gia đình nghe."
+// Pure Generated Writing Hub for Week 34
+export const writingHub = {
+  picture_story: {
+    panels: [
+      { image_url: "/images/week34/webtoon_scene_1.png", caption: "The lion was sleeping in the forest." },
+      { image_url: "/images/week34/webtoon_scene_4.png", caption: "Hunters trapped the lion in a heavy net." },
+      { image_url: "/images/week34/webtoon_scene_5.png", caption: "The brave mouse chewed the ropes and saved the lion." }
+    ],
+    word_bank: ["lion", "mouse", "sleeping", "trapped", "net", "chewed", "ropes", "freed", "grateful"],
+    sentence_frames: [
+      "In the beginning, the mighty lion was sleeping peacefully.",
+      "Suddenly, hunters trapped the lion in a strong net.",
+      "Finally, the clever mouse chewed the ropes and freed him."
+    ],
+    min_words: 20
   },
-
-  // Cambridge Reading & Writing Part 1 (10 Definitions, 15 Word Bank)
   rw_part_1: {
-    instructions: "Look and read. Choose the correct words and write them on the lines.",
-    words: [
-      { id: 'w1', word: 'a lion', image_url: '/images/week34/vocab_lion.jpg' },
-      { id: 'w2', word: 'a mouse', image_url: '/images/week34/vocab_mouse.jpg' },
-      { id: 'w3', word: 'a net', image_url: '/images/week34/vocab_net.jpg' },
-      { id: 'w4', word: 'a hunter', image_url: '/images/week34/vocab_hunter.jpg' },
-      { id: 'w5', word: 'a forest', image_url: '/images/week34/vocab_forest.jpg' },
-      { id: 'w6', word: 'sharp teeth', image_url: '/images/week34/vocab_sharp.jpg' },
-      { id: 'w7', word: 'a trap', image_url: '/images/week34/vocab_trap.jpg' },
-      { id: 'w8', word: 'a rope', image_url: '/images/week34/vocab_rope.jpg' },
-      { id: 'w9', word: 'a zebra', image_url: '/images/week34/zebra.jpg' },
-      { id: 'w10', word: 'a fable', image_url: '/images/week34/vocab_fable.jpg' },
-      { id: 'w11', word: 'a monkey', image_url: '/images/week34/monkey.jpg' },
-      { id: 'w12', word: 'a cave', image_url: '/images/week34/cave.jpg' },
-      { id: 'w13', word: 'a river', image_url: '/images/week34/river.jpg' },
-      { id: 'w14', word: 'a songbird', image_url: '/images/week34/songbird.jpg' },
-      { id: 'w15', word: 'a paw', image_url: '/images/week34/vocab_paw.jpg' }
-    ],
+    words: ["lion", "mouse", "net", "ropes", "forest"],
     definitions: [
-      { id: 1, text: "This is a large wild cat known as the king of the forest.", answer: "a lion" },
-      { id: 2, text: "This is a very small animal with a long tail and soft fur.", answer: "a mouse" },
-      { id: 3, text: "Hunters tie this material between trees to catch animals.", answer: "a net" },
-      { id: 4, text: "This person chases and catches wild animals in the forest.", answer: "a hunter" },
-      { id: 5, text: "This is a large area of land covered with many green trees.", answer: "a forest" },
-      { id: 6, text: "Animals use these pointed parts in their mouths to cut food and ropes.", answer: "sharp teeth" },
-      { id: 7, text: "This is strong, thick cord made of twisted threads.", answer: "a rope" },
-      { id: 8, text: "This animal has black and white stripes and lives on grasslands.", answer: "a zebra" },
-      { id: 9, text: "This is a traditional short story that teaches a moral lesson.", answer: "a fable" },
-      { id: 10, text: "This is the foot of an animal that has claws and pads.", answer: "a paw" }
+      "A large wild cat known as the king of the jungle.",
+      "A tiny furry animal with a long tail.",
+      "A trap made of strong threads or ropes.",
+      "Strong thick cords used for tying things.",
+      "A large area of land covered with trees."
     ]
   },
-
-  // Cambridge Reading & Writing Part 2 (Dialogue 5 Turns)
   rw_part_2: {
-    instructions: "Read the conversation between Emma and Harry about the fable. Choose the best answer (A-H).",
-    speakerA: "Emma",
-    speakerB: "Harry",
     turns: [
-      { id: 1, prompt: "Hello Harry! What story did you read in English class today?", answer_key: "D" },
-      { id: 2, prompt: "Why was the lion angry when he woke up?", answer_key: "F" },
-      { id: 3, prompt: "Did the lion believe the mouse when he promised to help?", answer_key: "A" },
-      { id: 4, prompt: "What happened when the hunters came to the forest?", answer_key: "C" },
-      { id: 5, prompt: "How did the mouse rescue the lion from the trap?", answer_key: "E" }
+      { speaker: "Leo", text: "Why did you wake me up, little mouse?" },
+      { speaker: "Milo", text: "I am sorry! I was running in a hurry." },
+      { speaker: "Leo", text: "What can a tiny creature like you do for me?" },
+      { speaker: "Milo", text: "One day, I might be able to help you!" },
+      { speaker: "Leo", text: "Haha! That is very funny. You may go free." }
     ],
-    options: [
-      { key: "A", text: "No, he laughed out loud because the mouse was so tiny." },
-      { key: "B", text: "I went to the library with my brother." },
-      { key: "C", text: "They trapped the lion in a heavy rope net." },
-      { key: "D", text: "I read the famous fable about the lion and the mouse!" },
-      { key: "E", text: "He chewed through the ropes with his sharp teeth." },
-      { key: "F", text: "Because a tiny mouse ran across his front paw." },
-      { key: "G", text: "Yes, they ate lunch together." },
-      { key: "H", text: "The lion ran away to the mountains." }
-    ]
+    options: ["A", "B", "C", "D", "E"]
   },
-
-  // Cambridge Reading & Writing Part 4 (Story Cloze 10 Gaps)
   rw_part_4: {
-    instructions: "Read the story. Choose the best word from the box for each gap (1-10).",
-    title: "The King of the Forest and His Little Helper",
-    text_template: "One sunny afternoon, a huge lion was [1]_____ under a shady tree in the green forest. While he was resting, a tiny mouse [2]_____ across his front paw. The lion woke up and [3]_____ the little mouse in his sharp claws. The mouse was very [4]_____, but he promised to help the lion one day. The lion started to [5]_____ because he thought a small mouse could never help him. A few days later, two [6]_____ came to the forest. They placed a strong [7]_____ between two trees. The lion stepped into the trap and [8]_____ loudly for help. The mouse heard the sound and ran quickly to the tree. He [9]_____ the thick ropes until the lion was free. They became best [10]_____ forever!",
-    word_bank: [
-      { id: 1, word: "sleeping" },
-      { id: 2, word: "ran" },
-      { id: 3, word: "caught" },
-      { id: 4, word: "scared" },
-      { id: 5, word: "laugh" },
-      { id: 6, word: "hunters" },
-      { id: 7, word: "net" },
-      { id: 8, word: "roared" },
-      { id: 9, word: "chewed" },
-      { id: 10, word: "friends" },
-      { id: 11, word: "flying" },
-      { id: 12, word: "cold" }
-    ],
+    text_template: "Lions are powerful animals that live in [1]_____. They spend many hours [2]_____ during the hottest parts of the day. Small animals like mice are very [3]_____ and can move quickly. When animals work together, they [4]_____ many difficult challenges in nature. True friendship makes everyone [5]_____.",
     answers: {
-      "1": "sleeping",
-      "2": "ran",
-      "3": "caught",
-      "4": "scared",
-      "5": "laugh",
-      "6": "hunters",
-      "7": "net",
-      "8": "roared",
-      "9": "chewed",
-      "10": "friends"
+      "1": "forests",
+      "2": "resting",
+      "3": "quick",
+      "4": "overcome",
+      "5": "stronger"
     }
   },
-
-  // Cambridge Reading & Writing Part 5 (Story Comprehension 7 Completions)
   rw_part_5: {
-    title: "A Hero in the Forest",
-    story_text: "Last weekend, Oliver and his sister Lily visited the animal wildlife park. At the educational storytelling corner, a park guide was reading Aesop's famous fable to all the children. The guide explained that a huge lion lived in a peaceful forest with many tall trees. While the lion was sleeping, a tiny mouse accidentally ran across his paw. Instead of eating the mouse, the lion showed great kindness and let him go free. Later that week, hunters caught the lion in a heavy net. The mouse did not run away in fear; he rushed over and used his sharp teeth to cut the ropes. Oliver and Lily loved the story because it showed that even the smallest creature can do great things.",
+    title: "The Lion and the Clever Mouse",
+    story_text: "Once upon a time in a deep green forest, a mighty lion was taking a nap under a tall tree. A small mouse named Milo accidentally bumped into his paw. The lion woke up and was about to roar, but the mouse asked for kindness and promised to return the favor. A few days later, hunters captured the lion with strong ropes. Hearing the lion's roar, Milo rushed over and chewed the ropes until the lion was free. They remained loyal friends forever.",
     questions: [
-      { id: 1, prompt: "Oliver and Lily visited the animal wildlife park last ___.", answer: "weekend" },
-      { id: 2, prompt: "A park guide was reading Aesop's fable to all the ___.", answer: "children" },
-      { id: 3, prompt: "The huge lion lived in a peaceful forest with many ___.", answer: "tall trees" },
-      { id: 4, prompt: "A tiny mouse ran across the lion's paw while he was ___.", answer: "sleeping" },
-      { id: 5, prompt: "The lion showed great ___ and let the mouse go free.", answer: "kindness" },
-      { id: 6, prompt: "Hunters caught the lion in a heavy ___.", answer: "net" },
-      { id: 7, prompt: "The brave mouse used his ___ to cut the ropes.", answer: "sharp teeth" }
+      {
+        id: "q1",
+        question: "Where was the lion sleeping at the beginning of the story?",
+        options: ["Under a tall tree in the green forest", "Inside a dark stone cave", "Near the noisy city market"],
+        answer: "Under a tall tree in the green forest"
+      },
+      {
+        id: "q2",
+        question: "How did the mouse free the lion from the net?",
+        options: ["He chewed through the strong ropes", "He called the hunters", "He cut the net with scissors"],
+        answer: "He chewed through the strong ropes"
+      }
     ]
-  },
-
-  writing
+  }
 };
 
-export default writingHubData;
+export const writingHubData = writingHub;
+export default writingHub;

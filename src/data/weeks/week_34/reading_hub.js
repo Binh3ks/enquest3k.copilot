@@ -1,120 +1,129 @@
-/**
- * Week 34 Gold Standard Data — Reading Hub
- * Theme: "The Lion and the Mouse"
- */
+// Pure Generated Reading Hub for Week 34
+import { week34Vocab } from './vocab.js';
 
-import read_explore from './read.js';
-import vocabList from './vocab.js';
-import shadowingData from './shadowing.js';
-
-export const readingHubData = {
-  week: 34,
-  theme: "The Lion and the Mouse",
-  cefr_level: "A2 Flyers",
-  read_explore: read_explore,
-  story_scenes: read_explore.story_scenes,
-  vocab: vocabList,
-  shadowingData,
-  retell_questions: read_explore.retell_questions,
-
-  // CLIL Knowledge Explorer (Animal Helpers & Symbiosis in Nature)
-  clil_article: {
-    id: "clil_w34_animal_helpers",
-    theme: "Animal Helpers in Nature",
-    title_en: "Animal Helpers in Nature",
-    title_vi: "Những Người Bạn Giúp Đỡ Lẫn Nhau Trong Tự Nhiên",
-    content_en: "In nature, many animals work together to stay healthy. In the fable, a tiny mouse helped a huge lion. Real animals in the wild also help each other every day! A small bird called the oxpecker sits on a zebra. While the zebra is grazing, the bird eats bugs off its skin. This gives the bird food and keeps the zebra clean. In the ocean, small cleaner fish swim inside shark mouths. Sharks never bite them because the fish clean their sharp teeth! When animals cooperate, everyone stays safe in nature.",
-    content_vi: "Trong tự nhiên, nhiều loài động vật làm việc cùng nhau để khỏe mạnh. Trong truyện ngụ ngôn, chú chuột nhỏ giúp sư tử to lớn. Các loài động vật thực tế cũng giúp nhau mỗi ngày! Một loài chim nhỏ tên là chim bắt ve đậu trên lưng ngựa vằn. Trong khi ngựa vằn gặm cỏ, chim ăn bọ trên da nó. Việc này mang lại thức ăn cho chim và giúp ngựa vằn sạch sẽ. Dưới đại dương, cá dọn vệ sinh nhỏ bơi vào miệng cá mập. Cá mập không cắn vì cá làm sạch răng sắc nhọn của chúng! Khi động vật hợp tác, mọi loài đều an toàn.",
-    audio_url: "/audio/week34/explore.mp3",
-    check_questions: [
+export const readingHub = {
+  theme: "The Lion and the Mouse: True Friendship",
+  read_explore: {
+    title: "The Lion and the Mouse",
+    story_scenes: [
       {
-        id: 1,
-        question_en: "What does the oxpecker bird eat while sitting on the zebra?",
-        options: ["Small bugs off the zebra's skin", "Grass seeds on the ground", "Tree leaves in the forest"],
-        answer: "Small bugs off the zebra's skin"
+        id: "scene_1",
+        scene_number: 1,
+        title_en: "Scene 1: The Lion Resting",
+        title_vi: "Cảnh 1: Sư Tử Nghỉ Ngơi",
+        narration_en: "On a sunny afternoon in the forest, the mighty **lion was sleeping** peacefully under the trees.",
+        narration_vi: "Vào một buổi chiều đầy nắng trong rừng, sư tử dũng mãnh đang ngủ yên bình dưới tán cây.",
+        image_url: "/images/week34/webtoon_scene_1.png",
+        hotspots: [
+          { id: "h1_1", label_en: "Sleeping Lion", label_vi: "Sư tử đang ngủ", x: 45, y: 55 },
+          { id: "h1_2", label_en: "Green Forest", label_vi: "Khu rừng xanh", x: 20, y: 30 },
+          { id: "h1_3", label_en: "Warm Sunlight", label_vi: "Ánh nắng ấm", x: 80, y: 25 }
+        ]
       },
       {
-        id: 2,
-        question_en: "Why do large sharks never bite small cleaner fish?",
-        options: ["Because the small fish clean their sharp teeth", "Because the fish are too fast", "Because sharks are sleeping"],
-        answer: "Because the small fish clean their sharp teeth"
+        id: "scene_2",
+        scene_number: 2,
+        title_en: "Scene 2: The Little Mouse Arrives",
+        title_vi: "Cảnh 2: Chuột Nhỏ Xuất Hiện",
+        narration_en: "While the lion was resting, a **tiny mouse ran** across the lion's big nose and woke him up.",
+        narration_vi: "Khi sư tử đang nghỉ ngơi, một chú chuột nhỏ chạy ngang qua mũi sư tử và đánh thức nó.",
+        image_url: "/images/week34/webtoon_scene_2.png",
+        hotspots: [
+          { id: "h2_1", label_en: "Tiny Mouse", label_vi: "Chuột nhỏ", x: 50, y: 50 },
+          { id: "h2_2", label_en: "Surprised Lion", label_vi: "Sư tử ngạc nhiên", x: 35, y: 40 },
+          { id: "h2_3", label_en: "Forest Path", label_vi: "Lối đi trong rừng", x: 75, y: 70 }
+        ]
       },
       {
-        id: 3,
-        question_en: "What lesson about nature does this article teach us?",
-        options: ["Animals cooperate and help each other to survive", "Big animals must always live alone", "Small animals never help large animals"],
-        answer: "Animals cooperate and help each other to survive"
+        id: "scene_3",
+        scene_number: 3,
+        title_en: "Scene 3: The Promise of Help",
+        title_vi: "Cảnh 3: Lời Hứa Giúp Đỡ",
+        narration_en: "The mouse begged for mercy and promised to **help the lion** one day if he let him go.",
+        narration_vi: "Chú chuột cầu xin tha mạng và hứa sẽ giúp sư tử vào một ngày nào đó nếu được tha.",
+        image_url: "/images/week34/webtoon_scene_3.png",
+        hotspots: [
+          { id: "h3_1", label_en: "Begging Mouse", label_vi: "Chuột cầu xin", x: 55, y: 65 },
+          { id: "h3_2", label_en: "Gentle Lion", label_vi: "Sư tử nhân từ", x: 40, y: 45 },
+          { id: "h3_3", label_en: "Big Paw", label_vi: "Bàn chân to", x: 60, y: 55 }
+        ]
+      },
+      {
+        id: "scene_4",
+        scene_number: 4,
+        title_en: "Scene 4: The Hunter's Net",
+        title_vi: "Cảnh 4: Lưới Của Thợ Săn",
+        narration_en: "A few days later, hunters trapped the lion in a **strong net** made of thick ropes.",
+        narration_vi: "Vài ngày sau, những người thợ săn bẫy sư tử trong một tấm lưới chắc chắn làm bằng dây thừng dày.",
+        image_url: "/images/week34/webtoon_scene_4.png",
+        hotspots: [
+          { id: "h4_1", label_en: "Hunter's Net", label_vi: "Lưới thợ săn", x: 50, y: 50 },
+          { id: "h4_2", label_en: "Trapped Lion", label_vi: "Sư tử bị mắc bẫy", x: 45, y: 60 },
+          { id: "h4_3", label_en: "Thick Ropes", label_vi: "Dây thừng dày", x: 65, y: 40 }
+        ]
+      },
+      {
+        id: "scene_5",
+        scene_number: 5,
+        title_en: "Scene 5: True Friends Forever",
+        title_vi: "Cảnh 5: Bạn Tốt Mãi Mãi",
+        narration_en: "The little mouse quickly **chewed through the ropes** and set the lion completely free.",
+        narration_vi: "Chú chuột nhỏ nhanh chóng gặm đứt dây thừng và trả lại tự do hoàn toàn cho sư tử.",
+        image_url: "/images/week34/webtoon_scene_5.png",
+        hotspots: [
+          { id: "h5_1", label_en: "Chewed Ropes", label_vi: "Dây thừng bị gặm đứt", x: 50, y: 60 },
+          { id: "h5_2", label_en: "Free Lion", label_vi: "Sư tử tự do", x: 35, y: 45 },
+          { id: "h5_3", label_en: "Happy Mouse", label_vi: "Chuột vui vẻ", x: 70, y: 65 }
+        ]
       }
     ],
-    critical_thinking: {
-      question_en: "Why is cooperation between different animals important in the forest?",
-      hint_en: "Think about how each animal gives something helpful: one gets food and the other stays clean and healthy."
+    clil_article: {
+      title: "Animal Cooperation & Forest Ecosystems",
+      content_en: "Animals in the wild often help each other survive. This special relationship is called Mutual Support or Symbiosis. For example, large predators like lions maintain balance in nature, while small animals play vital roles in seed dispersal and forest health. When different creatures cooperate, the entire forest ecosystem stays healthy and strong.",
+      content_vi: "Động vật trong tự nhiên thường giúp đỡ nhau sinh tồn. Mối quan hệ đặc biệt này được gọi là Tương trợ hay Cộng sinh. Ví dụ, những loài săn mồi lớn như sư tử duy trì sự cân bằng tự nhiên, trong khi những loài vật nhỏ đóng vai trò quan trọng trong việc phân tán hạt giống và giữ cho rừng khỏe mạnh. Khi các sinh vật khác nhau hợp tác, toàn bộ hệ sinh thái rừng sẽ luôn khỏe mạnh và vững mạnh.",
+      cover_image: "/images/week34/explore_cover_w34.jpg",
+      audio_url: "/audio/week34/explore.mp3",
+      comprehension_questions: [
+        {
+          id: "q1",
+          question: "What is the special relationship where animals help each other called?",
+          options: ["Mutual Support or Symbiosis", "Forest Competition", "Deep Hibernation"],
+          answer: "Mutual Support or Symbiosis"
+        },
+        {
+          id: "q2",
+          question: "Why are small animals important in the forest?",
+          options: ["They help with seed dispersal and forest health", "They build large bridges", "They sleep all day"],
+          answer: "They help with seed dispersal and forest health"
+        }
+      ]
     }
   },
-
-  interactive_story: {
-    mode: "open_cloze",
-    title: "Interactive Story: The Lion and the Mouse Fable",
-    text_template: "A huge lion was sleeping under a tree when a tiny mouse accidentally ____1____ across his paw. The lion woke up angrily and ____2____ the mouse with his big claws. The mouse cried and made a ____3____ to help him one day. Later, hunters trapped the lion in a heavy rope ____4____. The brave mouse chewed through the thick ropes and ____5____ his friend happily.",
-    gaps: [
-      { id: 1, target: "ran", hint: "moved quickly across", hint_en: "moved quickly across", hint_vi: "đã chạy qua" },
-      { id: 2, target: "caught", hint: "held with claws", hint_en: "held with claws", hint_vi: "đã bắt được" },
-      { id: 3, target: "promise", hint: "statement to do something", hint_en: "statement to do something", hint_vi: "lời hứa" },
-      { id: 4, target: "net", hint: "hunters' rope trap", hint_en: "hunters' rope trap", hint_vi: "tấm lưới" },
-      { id: 5, target: "freed", hint: "released from trap", hint_en: "released from trap", hint_vi: "đã giải thoát" }
-    ],
-    hints: {
-      1: "moved quickly across",
-      2: "held with claws",
-      3: "statement to do something",
-      4: "hunters' rope trap",
-      5: "released from trap"
-    },
-    word_bank: ["ran", "caught", "promise", "net", "freed"]
+  shadowingData: {
+    sentences: [
+      { id: 1, text: "The mighty lion was sleeping under a big tree.", words: ["The", "mighty", "lion", "was", "sleeping", "under", "a", "big", "tree."], ipa: ["ðə", "ˈmaɪ.ti", "ˈlaɪ.ən", "wɒz", "ˈsliː.pɪŋ", "ˈʌn.dər", "ə", "bɪɡ", "triː"], audio_url: "/audio/week34/shadowing_1.mp3" },
+      { id: 2, text: "A tiny mouse ran across his nose.", words: ["A", "tiny", "mouse", "ran", "across", "his", "nose."], ipa: ["ə", "ˈtaɪ.ni", "maʊs", "ræn", "əˈkrɒs", "hɪz", "nəʊz"], audio_url: "/audio/week34/shadowing_2.mp3" },
+      { id: 3, text: "The lion woke up and caught the little mouse.", words: ["The", "lion", "woke", "up", "and", "caught", "the", "little", "mouse."], ipa: ["ðə", "ˈlaɪ.ən", "wəʊk", "ʌp", "ænd", "kɔːt", "ðə", "ˈlɪt.əl", "maʊs"], audio_url: "/audio/week34/shadowing_3.mp3" },
+      { id: 4, text: "The mouse promised to help the lion one day.", words: ["The", "mouse", "promised", "to", "help", "the", "lion", "one", "day."], ipa: ["ðə", "maʊs", "ˈprɒm.ɪst", "tuː", "help", "ðə", "ˈlaɪ.ən", "wʌn", "deɪ"], audio_url: "/audio/week34/shadowing_4.mp3" },
+      { id: 5, text: "Hunters trapped the strong lion in a heavy net.", words: ["Hunters", "trapped", "the", "strong", "lion", "in", "a", "heavy", "net."], ipa: ["ˈhʌn.tərz", "træpt", "ðə", "strɒŋ", "ˈlaɪ.ən", "ɪn", "ə", "ˈhev.i", "net"], audio_url: "/audio/week34/shadowing_5.mp3" },
+      { id: 6, text: "The brave mouse chewed through the thick ropes.", words: ["The", "brave", "mouse", "chewed", "through", "the", "thick", "ropes."], ipa: ["ðə", "breɪv", "maʊs", "tʃuːd", "θruː", "ðə", "θɪk", "rəʊps"], audio_url: "/audio/week34/shadowing_6.mp3" },
+      { id: 7, text: "The lion escaped and was completely free.", words: ["The", "lion", "escaped", "and", "was", "completely", "free."], ipa: ["ðə", "ˈlaɪ.ən", "ɪˈskeɪpt", "ænd", "wɒz", "kəmˈpliːt.li", "friː"], audio_url: "/audio/week34/shadowing_7.mp3" },
+      { id: 8, text: "They became the best of friends forever.", words: ["They", "became", "the", "best", "of", "friends", "forever."], ipa: ["ðeɪ", "bɪˈkeɪm", "ðə", "best", "ɒv", "frendz", "fəˈrev.ər"], audio_url: "/audio/week34/shadowing_8.mp3" }
+    ]
   },
-
-  story_scenes: read_explore.story_scenes,
-  read_explore,
-
-  // Cambridge Reading & Writing Part 6 (Open Cloze Diary)
+  vocab: week34Vocab,
   rw_part_6: {
-    instructions: "Read the story diary and write the missing words. Write one word on each line.",
-    title: "Leo's Storybook Diary: Friday",
-    text_template: "Dear Diary, today I read a wonderful fable. A huge lion was sleeping [1]_____ a shady tree in the forest. Suddenly, a tiny mouse ran across his [2]_____. The lion caught the mouse, but he let him go [3]_____ he was kind. A few days later, hunters caught the lion in a heavy [4]_____. The mouse chewed the ropes and [5]_____ the lion safely. They became best friends!",
+    title: "Diary Note: Forest Adventure",
+    text_template: "Dear Diary, today I learned that even small friends can be a great help [1]_____. While walking through the woods, we saw a lion [2]_____ near the tall oak trees. Suddenly, a little mouse [3]_____ across the path. Later that day, the mouse [4]_____ through strong ropes and [5]_____ the lion bravely!",
     answers: {
-      "1": "under",
-      "2": "paw",
-      "3": "because",
-      "4": "net",
+      "1": "together",
+      "2": "resting",
+      "3": "ran",
+      "4": "chewed",
       "5": "freed"
     }
-  },
-
-  rw_part_6_check_mode: {
-    instructions: "Read the diary and write the missing words. Write one word on each line.",
-    title: "Oliver's Fable Notes: Saturday (Check Mode)",
-    text_template: "Today I wrote about the lion and the mouse. While the lion was [1]_____ under a tree, a tiny mouse ran [2]_____ his paw. The lion woke [3]_____ angrily. Later, hunters trapped the lion [4]_____ a net. The mouse helped him [5]_____ chewing the ropes.",
-    answers: {
-      "1": "sleeping",
-      "2": "across",
-      "3": "up",
-      "4": "in",
-      "5": "by"
-    }
-  },
-
-  check_mode_drills: [
-    { id: 1, prompt: "The huge lion was sleeping ___ a green tree in the forest.", options: ["under", "between", "above"], answer: "under" },
-    { id: 2, prompt: "A tiny mouse ran across the lion's front ___ by accident.", options: ["paw", "tail", "ear"], answer: "paw" },
-    { id: 3, prompt: "The lion woke up angrily and ___ the mouse with sharp claws.", options: ["caught", "is catching", "catches"], answer: "caught" },
-    { id: 4, prompt: "The scared mouse promised to ___ the mighty lion one day.", options: ["help", "eating", "fight"], answer: "help" },
-    { id: 5, prompt: "Two hunters placed a strong rope ___ to catch the wild animal.", options: ["net", "blanket", "towel"], answer: "net" },
-    { id: 6, prompt: "While the lion was walking, he stepped into a hidden ___.", options: ["trap", "cloud", "star"], answer: "trap" },
-    { id: 7, prompt: "The lion roared loudly because the ropes were very ___.", options: ["tight", "soft", "sweet"], answer: "tight" },
-    { id: 8, prompt: "The brave mouse chewed the thick ropes with his ___ teeth.", options: ["sharp", "round", "warm"], answer: "sharp" },
-    { id: 9, prompt: "The lion was ___ safely and thanked his little friend.", options: ["freed", "trapped", "lost"], answer: "freed" },
-    { id: 10, prompt: "Even the smallest friend can be a ___ help in times of need.", options: ["great", "scared", "dark"], answer: "great" }
-  ]
+  }
 };
 
-export default readingHubData;
+export const readingHubData = readingHub;
+export default readingHub;

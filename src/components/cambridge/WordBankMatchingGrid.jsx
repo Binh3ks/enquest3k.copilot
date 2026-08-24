@@ -15,35 +15,32 @@ function shuffleArray(array) {
   return shuffled;
 }
 
-export function WordBankMatchingGrid({ customData, onComplete }) {
+export function WordBankMatchingGrid({ customData, data: propData, onComplete }) {
   const [answers, setAnswers] = useState({});
   const [selectedWord, setSelectedWord] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
   const [shuffleSeed, setShuffleSeed] = useState(0);
 
+  const activeData = customData || propData || {};
+
   // Fisher-Yates Shuffle 15-Word Bank Pool
   const wordBank = useMemo(() => {
-    const rawWordBank = customData?.word_bank || [
-      "corridor", "nurse", "bandage", "headmaster", "puddle",
-      "library", "cafeteria", "handrail", "warning sign", "first-aid kit",
-      "playground", "stairs", "slippery", "cold pack", "science room"
-    ];
-    return shuffleArray(rawWordBank);
-  }, [customData, shuffleSeed]);
+    let rawWordBank = activeData?.word_bank;
+    if (!rawWordBank && activeData?.words) {
+      rawWordBank = activeData.words.map(w => typeof w === 'string' ? w : w.word);
+    }
+    return shuffleArray(rawWordBank || []);
+  }, [activeData, shuffleSeed]);
 
-  const definitions = customData?.definitions || [
-    { id: 1, text: "You walk along this long passage inside a school building to get to your classroom.", target: "corridor" },
-    { id: 2, text: "A trained medical worker at school who helps students when they get hurt.", target: "nurse" },
-    { id: 3, text: "A soft piece of cloth used to cover and protect a cut or knee injury.", target: "bandage" },
-    { id: 4, text: "The person in charge of managing the school who praises students for safe behaviour.", target: "headmaster" },
-    { id: 5, text: "A small pool of liquid left on the floor after cleaning or rain.", target: "puddle" },
-    { id: 6, text: "A quiet room in school with books where students read and borrow stories.", target: "library" },
-    { id: 7, text: "A large room at school where children eat lunch and talk with friends.", target: "cafeteria" },
-    { id: 8, text: "You hold onto this long metal bar when walking up or down stairs.", target: "handrail" },
-    { id: 9, text: "A yellow sign placed on the floor to warn people to walk carefully on wet tiles.", target: "warning sign" },
-    { id: 10, text: "A bag or box containing bandages and cold packs used for immediate medical aid at school.", target: "first-aid kit" }
-  ];
+  const definitions = useMemo(() => {
+    const rawDefs = activeData?.definitions || [];
+    return rawDefs.map(d => ({
+      id: d.id,
+      text: d.text || d.prompt,
+      target: d.target || d.answer
+    }));
+  }, [activeData]);
 
 
   // Track which words in the 15-word pool have already been assigned

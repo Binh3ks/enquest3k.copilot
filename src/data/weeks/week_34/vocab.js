@@ -1,203 +1,185 @@
-// Week 34 Target Vocabulary List (20 Words)
-export default [
-  { 
-    id: 1, 
-    word: "lion", 
-    definition_en: "a large wild cat with golden fur that lives in grasslands", 
-    definition_vi: "con sư tử", 
-    example_en: "A huge lion was sleeping peacefully under the shady tree.",
-    example_vi: "Một chú sư tử to lớn đang ngủ yên bình dưới tán cây râm mát.",
-    audio_word: "/audio/week34/vocab_lion.mp3", 
-    image_url: "/images/week34/vocab_lion.jpg" 
+// Pure Generated Target Vocab for Week 34
+export const week34Vocab = [
+  {
+    "id": 1,
+    "word": "lion",
+    "definition_en": "a large wild cat known as the king of beasts",
+    "definition_vi": "sư tử",
+    "example_en": "The Leo the Lion used lion carefully.",
+    "example_vi": "Ví dụ với từ lion.",
+    "audio_word": "/audio/week34/vocab_lion.mp3"
   },
-  { 
-    id: 2, 
-    word: "mouse", 
-    definition_en: "a small animal with a long tail and soft grey fur", 
-    definition_vi: "con chuột", 
-    example_en: "A tiny mouse accidentally ran across the lion's front paw.",
-    example_vi: "Một chú chuột tí hon vô tình chạy ngang qua bàn chân trước của sư tử.",
-    audio_word: "/audio/week34/vocab_mouse.mp3", 
-    image_url: "/images/week34/vocab_mouse.jpg" 
+  {
+    "id": 2,
+    "word": "mouse",
+    "definition_en": "a small rodent with a pointed nose and long tail",
+    "definition_vi": "con chuột",
+    "example_en": "The Leo the Lion used mouse carefully.",
+    "example_vi": "Ví dụ với từ mouse.",
+    "audio_word": "/audio/week34/vocab_mouse.mp3"
   },
-  { 
-    id: 3, 
-    word: "net", 
-    definition_en: "material made of strong cords tied together to catch animals", 
-    definition_vi: "tấm lưới", 
-    example_en: "The hunters tied a strong rope net between two trees.",
-    example_vi: "Các thợ săn đã buộc một tấm lưới thừng chắc chắn giữa hai cái cây.",
-    audio_word: "/audio/week34/vocab_net.mp3", 
-    image_url: "/images/week34/vocab_net.jpg" 
+  {
+    "id": 3,
+    "word": "forest",
+    "definition_en": "a large area covered chiefly with trees and undergrowth",
+    "definition_vi": "khu rừng",
+    "example_en": "The Leo the Lion used forest carefully.",
+    "example_vi": "Ví dụ với từ forest.",
+    "audio_word": "/audio/week34/vocab_forest.mp3"
   },
-  { 
-    id: 4, 
-    word: "trap", 
-    definition_en: "a piece of equipment used for catching wild animals", 
-    definition_vi: "cái bẫy", 
-    example_en: "The lion stepped into a hidden trap while walking in the forest.",
-    example_vi: "Sư tử đã bước vào một cái bẫy ẩn trong khi đi dạo trong rừng.",
-    audio_word: "/audio/week34/vocab_trap.mp3", 
-    image_url: "/images/week34/vocab_trap.jpg" 
+  {
+    "id": 4,
+    "word": "hunter",
+    "definition_en": "a person who searches for wild animals to capture them",
+    "definition_vi": "thợ săn",
+    "example_en": "The Leo the Lion used hunter carefully.",
+    "example_vi": "Ví dụ với từ hunter.",
+    "audio_word": "/audio/week34/vocab_hunter.mp3"
   },
-  { 
-    id: 5, 
-    word: "roar", 
-    definition_en: "a very loud, deep sound made by a lion or wild animal", 
-    definition_vi: "tiếng gầm / gầm lớn", 
-    example_en: "The lion gave a loud roar when he was trapped in the ropes.",
-    example_vi: "Sư tử đã gầm lớn một tiếng khi bị mắc kẹt trong dây thừng.",
-    audio_word: "/audio/week34/vocab_roar.mp3", 
-    image_url: "/images/week34/vocab_roar.jpg" 
+  {
+    "id": 5,
+    "word": "trapped",
+    "definition_en": "caught in a trap or unable to escape",
+    "definition_vi": "bị mắc bẫy",
+    "example_en": "The Leo the Lion used trapped carefully.",
+    "example_vi": "Ví dụ với từ trapped.",
+    "audio_word": "/audio/week34/vocab_trapped.mp3"
   },
-  { 
-    id: 6, 
-    word: "caught", 
-    definition_en: "held and captured something (past tense of catch)", 
-    definition_vi: "đã bắt được", 
-    example_en: "The lion woke up angrily and caught the little mouse.",
-    example_vi: "Sư tử tức giận thức giấc và đã bắt được chú chuột nhỏ.",
-    audio_word: "/audio/week34/vocab_caught.mp3", 
-    image_url: "/images/week34/vocab_caught.jpg" 
+  {
+    "id": 6,
+    "word": "net",
+    "definition_en": "a piece of mesh material used for catching animals",
+    "definition_vi": "tấm lưới",
+    "example_en": "The Leo the Lion used net carefully.",
+    "example_vi": "Ví dụ với từ net.",
+    "audio_word": "/audio/week34/vocab_net.mp3"
   },
-  { 
-    id: 7, 
-    word: "tiny", 
-    definition_en: "extremely small in size", 
-    definition_vi: "tí hon, rất nhỏ", 
-    example_en: "The mouse was so tiny that he could hide inside a small leaf.",
-    example_vi: "Chú chuột nhỏ đến mức có thể trốn bên trong một chiếc lá nhỏ.",
-    audio_word: "/audio/week34/vocab_tiny.mp3", 
-    image_url: "/images/week34/vocab_tiny.jpg" 
+  {
+    "id": 7,
+    "word": "ropes",
+    "definition_en": "strong thick cords made of twisted fibers",
+    "definition_vi": "dây thừng",
+    "example_en": "The Leo the Lion used ropes carefully.",
+    "example_vi": "Ví dụ với từ ropes.",
+    "audio_word": "/audio/week34/vocab_ropes.mp3"
   },
-  { 
-    id: 8, 
-    word: "huge", 
-    definition_en: "extremely large in size or amount", 
-    definition_vi: "khổng lồ, to lớn", 
-    example_en: "The lion had huge paws and very strong legs.",
-    example_vi: "Sư tử có những bàn chân khổng lồ và đôi chân rất khỏe.",
-    audio_word: "/audio/week34/vocab_huge.mp3", 
-    image_url: "/images/week34/vocab_huge.jpg" 
+  {
+    "id": 8,
+    "word": "chewed",
+    "definition_en": "bitten repeatedly with teeth to break apart",
+    "definition_vi": "gặm / nhai",
+    "example_en": "The Leo the Lion used chewed carefully.",
+    "example_vi": "Ví dụ với từ chewed.",
+    "audio_word": "/audio/week34/vocab_chewed.mp3"
   },
-  { 
-    id: 9, 
-    word: "hunter", 
-    definition_en: "a person who chases and catches wild animals in the forest", 
-    definition_vi: "thợ săn", 
-    example_en: "Two hunters left a heavy rope net to catch the lion.",
-    example_vi: "Hai người thợ săn đã để lại một tấm lưới thừng dày để bắt sư tử.",
-    audio_word: "/audio/week34/vocab_hunter.mp3", 
-    image_url: "/images/week34/vocab_hunter.jpg" 
+  {
+    "id": 9,
+    "word": "freed",
+    "definition_en": "released from captivity or confinement",
+    "definition_vi": "được trả tự do",
+    "example_en": "The Leo the Lion used freed carefully.",
+    "example_vi": "Ví dụ với từ freed.",
+    "audio_word": "/audio/week34/vocab_freed.mp3"
   },
-  { 
-    id: 10, 
-    word: "freed", 
-    definition_en: "released from a trap or cage (past tense of free)", 
-    definition_vi: "đã giải thoát", 
-    example_en: "The mouse cut the ropes and freed his friend happily.",
-    example_vi: "Chú chuột đã cắn đứt dây thừng và giải thoát bạn mình một cách vui vẻ.",
-    audio_word: "/audio/week34/vocab_freed.mp3", 
-    image_url: "/images/week34/vocab_freed.jpg" 
+  {
+    "id": 10,
+    "word": "grateful",
+    "definition_en": "feeling or showing an appreciation of kindness",
+    "definition_vi": "biết ơn",
+    "example_en": "The Leo the Lion used grateful carefully.",
+    "example_vi": "Ví dụ với từ grateful.",
+    "audio_word": "/audio/week34/vocab_grateful.mp3"
   },
-  { 
-    id: 11, 
-    word: "chewed", 
-    definition_en: "bit repeatedly with teeth (past tense of chew)", 
-    definition_vi: "đã cắn, gặm", 
-    example_en: "The mouse chewed through the thick ropes one by one.",
-    example_vi: "Chú chuột đã gặm đứt từng sợi dây thừng dày một.",
-    audio_word: "/audio/week34/vocab_chewed.mp3", 
-    image_url: "/images/week34/vocab_chewed.jpg" 
+  {
+    "id": 11,
+    "word": "mighty",
+    "definition_en": "possessing great and impressive power or strength",
+    "definition_vi": "dũng mãnh",
+    "example_en": "The Leo the Lion used mighty carefully.",
+    "example_vi": "Ví dụ với từ mighty.",
+    "audio_word": "/audio/week34/vocab_mighty.mp3"
   },
-  { 
-    id: 12, 
-    word: "sharp", 
-    definition_en: "having a thin edge that can cut easily", 
-    definition_vi: "sắc nhọn", 
-    example_en: "The mouse had very sharp front teeth for cutting wood and ropes.",
-    example_vi: "Chú chuột có những chiếc răng cửa rất sắc nhọn để cắt gỗ và dây thừng.",
-    audio_word: "/audio/week34/vocab_sharp.mp3", 
-    image_url: "/images/week34/vocab_sharp.jpg" 
+  {
+    "id": 12,
+    "word": "tiny",
+    "definition_en": "very small in size or amount",
+    "definition_vi": "tí hon",
+    "example_en": "The Leo the Lion used tiny carefully.",
+    "example_vi": "Ví dụ với từ tiny.",
+    "audio_word": "/audio/week34/vocab_tiny.mp3"
   },
-  { 
-    id: 13, 
-    word: "rope", 
-    definition_en: "strong, thick cord made of twisted threads", 
-    definition_vi: "dây thừng", 
-    example_en: "The heavy rope held the lion tightly against the tree.",
-    example_vi: "Sợi dây thừng dày đã giữ chặt sư tử vào thân cây.",
-    audio_word: "/audio/week34/vocab_rope.mp3", 
-    image_url: "/images/week34/vocab_rope.jpg" 
+  {
+    "id": 13,
+    "word": "gentle",
+    "definition_en": "mild in temperament or behavior; kind",
+    "definition_vi": "hiền từ / nhẹ nhàng",
+    "example_en": "The Leo the Lion used gentle carefully.",
+    "example_vi": "Ví dụ với từ gentle.",
+    "audio_word": "/audio/week34/vocab_gentle.mp3"
   },
-  { 
-    id: 14, 
-    word: "laugh", 
-    definition_en: "to make sounds showing that you think something is funny", 
-    definition_vi: "cười lớn", 
-    example_en: "The lion started to laugh when the tiny mouse offered to help him.",
-    example_vi: "Sư tử bắt đầu cười lớn khi chú chuột tí hon đề nghị giúp đỡ cậu ấy.",
-    audio_word: "/audio/week34/vocab_laugh.mp3", 
-    image_url: "/images/week34/vocab_laugh.jpg" 
+  {
+    "id": 14,
+    "word": "sharp",
+    "definition_en": "having an edge or point that is able to cut easily",
+    "definition_vi": "sắc nhọn",
+    "example_en": "The Leo the Lion used sharp carefully.",
+    "example_vi": "Ví dụ với từ sharp.",
+    "audio_word": "/audio/week34/vocab_sharp.mp3"
   },
-  { 
-    id: 15, 
-    word: "promise", 
-    definition_en: "a statement saying that you will definitely do something", 
-    definition_vi: "lời hứa / hứa", 
-    example_en: "The mouse kept his promise and saved the king of the forest.",
-    example_vi: "Chú chuột đã giữ đúng lời hứa và cứu chúa tể rừng xanh.",
-    audio_word: "/audio/week34/vocab_promise.mp3", 
-    image_url: "/images/week34/vocab_promise.jpg" 
+  {
+    "id": 15,
+    "word": "roar",
+    "definition_en": "a full, deep, prolonged cry uttered by a lion",
+    "definition_vi": "tiếng gầm",
+    "example_en": "The Leo the Lion used roar carefully.",
+    "example_vi": "Ví dụ với từ roar.",
+    "audio_word": "/audio/week34/vocab_roar.mp3"
   },
-  { 
-    id: 16, 
-    word: "forest", 
-    definition_en: "a large area of land covered with tall trees and plants", 
-    definition_vi: "khu rừng", 
-    example_en: "Many animals lived together peacefully in the green forest.",
-    example_vi: "Nhiều loài động vật đã sống cùng nhau yên bình trong khu rừng xanh tươi.",
-    audio_word: "/audio/week34/vocab_forest.mp3", 
-    image_url: "/images/week34/vocab_forest.jpg" 
+  {
+    "id": 16,
+    "word": "rescue",
+    "definition_en": "save someone from a dangerous or distressing situation",
+    "definition_vi": "giải cứu",
+    "example_en": "The Leo the Lion used rescue carefully.",
+    "example_vi": "Ví dụ với từ rescue.",
+    "audio_word": "/audio/week34/vocab_rescue.mp3"
   },
-  { 
-    id: 17, 
-    word: "paw", 
-    definition_en: "the foot of an animal that has claws or pads", 
-    definition_vi: "bàn chân động vật", 
-    example_en: "The lion lifted his heavy paw to let the mouse run away.",
-    example_vi: "Sư tử đã nhấc bàn chân nặng trịch của mình lên để cho chuột chạy đi.",
-    audio_word: "/audio/week34/vocab_paw.mp3", 
-    image_url: "/images/week34/vocab_paw.jpg" 
+  {
+    "id": 17,
+    "word": "promise",
+    "definition_en": "a declaration that one will definitely do something",
+    "definition_vi": "lời hứa",
+    "example_en": "The Leo the Lion used promise carefully.",
+    "example_vi": "Ví dụ với từ promise.",
+    "audio_word": "/audio/week34/vocab_promise.mp3"
   },
-  { 
-    id: 18, 
-    word: "scared", 
-    definition_en: "feeling fear or worry about something bad happening", 
-    definition_vi: "sợ hãi", 
-    example_en: "The little mouse was scared at first, but he spoke bravely.",
-    example_vi: "Chú chuột nhỏ lúc đầu rất sợ hãi, nhưng cậu ấy đã nói một cách dũng cảm.",
-    audio_word: "/audio/week34/vocab_scared.mp3", 
-    image_url: "/images/week34/vocab_scared.jpg" 
+  {
+    "id": 18,
+    "word": "brave",
+    "definition_en": "ready to face and endure danger or pain",
+    "definition_vi": "dũng cảm",
+    "example_en": "The Leo the Lion used brave carefully.",
+    "example_vi": "Ví dụ với từ brave.",
+    "audio_word": "/audio/week34/vocab_brave.mp3"
   },
-  { 
-    id: 19, 
-    word: "fable", 
-    definition_en: "a traditional short story that teaches a moral lesson", 
-    definition_vi: "truyện ngụ ngôn", 
-    example_en: "This famous fable shows that even small friends can be a great help.",
-    example_vi: "Truyện ngụ ngôn nổi tiếng này chỉ ra rằng ngay cả những người bạn nhỏ bé cũng có thể giúp ích rất nhiều.",
-    audio_word: "/audio/week34/vocab_fable.mp3", 
-    image_url: "/images/week34/vocab_fable.jpg" 
+  {
+    "id": 19,
+    "word": "loyal",
+    "definition_en": "giving or showing firm and constant support",
+    "definition_vi": "trung thành",
+    "example_en": "The Leo the Lion used loyal carefully.",
+    "example_vi": "Ví dụ với từ loyal.",
+    "audio_word": "/audio/week34/vocab_loyal.mp3"
   },
-  { 
-    id: 20, 
-    word: "grateful", 
-    definition_en: "feeling or showing thankfulness for kindness received", 
-    definition_vi: "biết ơn", 
-    example_en: "The lion was very grateful to the mouse for saving his life.",
-    example_vi: "Sư tử đã rất biết ơn chú chuột vì đã cứu mạng cậu ấy.",
-    audio_word: "/audio/week34/vocab_grateful.mp3", 
-    image_url: "/images/week34/vocab_grateful.jpg" 
+  {
+    "id": 20,
+    "word": "friendship",
+    "definition_en": "the emotions or conduct of friends; the state of being friends",
+    "definition_vi": "tình bạn",
+    "example_en": "The Leo the Lion used friendship carefully.",
+    "example_vi": "Ví dụ với từ friendship.",
+    "audio_word": "/audio/week34/vocab_friendship.mp3"
   }
 ];
+
+export default week34Vocab;

@@ -1,0 +1,150 @@
+# 🗄️ QUARANTINE REPORT — WEEK 34
+
+> Generated: 2026-08-24T12:45:30.450Z
+> Total In-Use Assets: **15** | Total Broken: **0** | Total Orphan Assets: **135**
+
+## 1. ⚠️ BROKEN ASSETS (Requested but Failed/404)
+
+*None. All requested assets resolved 200 OK.*
+
+## 2. 📦 ORPHAN ASSETS (Present on Disk but 0 Runtime Requests)
+
+*These files exist on disk in `public/images/week34` or `public/audio/week34` but were NEVER requested by any of the 15 production quest routes. They must NOT be included in the production baseline manifest.*
+
+| Orphan Disk Path | Size | SHA-256 (first 12) |
+|---|---|---|
+| `/images/week34/ant.jpg` | 207.1 KB | `1b0610dec7df` |
+| `/images/week34/barmodel_w34_adv_p1.svg` | 2.7 KB | `5e0464d4b195` |
+| `/images/week34/barmodel_w34_adv_p2.svg` | 2.7 KB | `b92b4dbb64fd` |
+| `/images/week34/barmodel_w34_adv_p3.svg` | 2.3 KB | `23147db35bd8` |
+| `/images/week34/barmodel_w34_adv_p4.svg` | 2.7 KB | `a92870150901` |
+| `/images/week34/barmodel_w34_adv_p5.svg` | 3.0 KB | `e64fbb55c2cc` |
+| `/images/week34/card_a.jpg` | 933.6 KB | `bbaff7734a54` |
+| `/images/week34/card_b.jpg` | 798.6 KB | `6a3cd1575349` |
+| `/images/week34/card_c.jpg` | 831.0 KB | `e6fc94b2a8ee` |
+| `/images/week34/card_d.jpg` | 829.8 KB | `d6a0835a3b66` |
+| `/images/week34/card_e.jpg` | 802.8 KB | `85515cf2e94c` |
+| `/images/week34/card_f.jpg` | 740.7 KB | `a77dca95e3b5` |
+| `/images/week34/card_g.jpg` | 807.9 KB | `c03bcdc746ee` |
+| `/images/week34/card_h.jpg` | 734.5 KB | `c5f968c8342a` |
+| `/images/week34/explore.jpg` | 352.7 KB | `0f2d4a84f0e6` |
+| `/images/week34/explore_cover_w34.jpg` | 1831.3 KB | `a8adf44bcf84` |
+| `/images/week34/fable.jpg` | 385.2 KB | `43b19594e3b7` |
+| `/images/week34/famine.jpg` | 267.8 KB | `ef66d54496ec` |
+| `/images/week34/frost.jpg` | 479.2 KB | `62fcbd728fb8` |
+| `/images/week34/future.jpg` | 261.6 KB | `277456c94599` |
+| `/images/week34/gather.jpg` | 280.7 KB | `4f751412eca9` |
+| `/images/week34/gathered_seeds.jpg` | 237.4 KB | `2bd1ff89587c` |
+| `/images/week34/grain.jpg` | 272.2 KB | `aae358291acf` |
+| `/images/week34/grasshopper.jpg` | 265.4 KB | `3d3adb01c565` |
+| `/images/week34/hard_working.jpg` | 192.8 KB | `5c1d6c31c9cc` |
+| `/images/week34/hill.jpg` | 168.1 KB | `899ec75e72a8` |
+| `/images/week34/lazy.jpg` | 359.5 KB | `0b40cd0a0fa6` |
+| `/images/week34/learned_lesson.jpg` | 225.7 KB | `d39a84c91486` |
+| `/images/week34/moral.jpg` | 236.8 KB | `9e499e5afbfa` |
+| `/images/week34/prepare.jpg` | 221.4 KB | `c3732ca1789f` |
+| `/images/week34/prepare_future.jpg` | 246.0 KB | `ea9f9e8a9d72` |
+| `/images/week34/read.jpg` | 284.7 KB | `28622239ae37` |
+| `/images/week34/read_cover_w34.jpg` | 1690.0 KB | `577164a5277a` |
+| `/images/week34/read_stem.jpg` | 1690.0 KB | `577164a5277a` |
+| `/images/week34/relative_clause.jpg` | 184.1 KB | `cd94de7cb72c` |
+| `/images/week34/share.jpg` | 242.7 KB | `d31c5da616b3` |
+| `/images/week34/shelter.jpg` | 339.3 KB | `14729d3b7bd4` |
+| `/images/week34/stored_food.jpg` | 238.1 KB | `83e2aaa11f79` |
+| `/images/week34/summer.jpg` | 320.9 KB | `dbb14528268f` |
+| `/images/week34/think_ahead.jpg` | 279.7 KB | `3ff97b7ff2d0` |
+| `/images/week34/violin.jpg` | 295.7 KB | `071e79b6dfcf` |
+| `/images/week34/vocab_ant.jpg` | 207.1 KB | `1b0610dec7df` |
+| `/images/week34/vocab_fable.jpg` | 385.2 KB | `43b19594e3b7` |
+| `/images/week34/vocab_famine.jpg` | 267.8 KB | `ef66d54496ec` |
+| `/images/week34/vocab_frost.jpg` | 479.2 KB | `62fcbd728fb8` |
+| `/images/week34/vocab_future.jpg` | 261.6 KB | `277456c94599` |
+| `/images/week34/vocab_gather.jpg` | 280.7 KB | `4f751412eca9` |
+| `/images/week34/vocab_gathered_seeds.jpg` | 237.4 KB | `2bd1ff89587c` |
+| `/images/week34/vocab_grain.jpg` | 272.2 KB | `aae358291acf` |
+| `/images/week34/vocab_grasshopper.jpg` | 265.4 KB | `3d3adb01c565` |
+| `/images/week34/vocab_hard_working.jpg` | 192.8 KB | `5c1d6c31c9cc` |
+| `/images/week34/vocab_hill.jpg` | 168.1 KB | `899ec75e72a8` |
+| `/images/week34/vocab_lazy.jpg` | 359.5 KB | `0b40cd0a0fa6` |
+| `/images/week34/vocab_learned_lesson.jpg` | 225.7 KB | `d39a84c91486` |
+| `/images/week34/vocab_moral.jpg` | 236.8 KB | `9e499e5afbfa` |
+| `/images/week34/vocab_prepare.jpg` | 221.4 KB | `c3732ca1789f` |
+| `/images/week34/vocab_prepare_future.jpg` | 246.0 KB | `ea9f9e8a9d72` |
+| `/images/week34/vocab_relative_clause.jpg` | 184.1 KB | `cd94de7cb72c` |
+| `/images/week34/vocab_share.jpg` | 242.7 KB | `d31c5da616b3` |
+| `/images/week34/vocab_shelter.jpg` | 339.3 KB | `14729d3b7bd4` |
+| `/images/week34/vocab_stored_food.jpg` | 238.1 KB | `83e2aaa11f79` |
+| `/images/week34/vocab_summer.jpg` | 320.9 KB | `dbb14528268f` |
+| `/images/week34/vocab_violin.jpg` | 295.7 KB | `071e79b6dfcf` |
+| `/images/week34/vocab_winter.jpg` | 166.2 KB | `84feb296b07c` |
+| `/images/week34/vocab_worked_hard.jpg` | 197.2 KB | `8d6eb49915fa` |
+| `/images/week34/vocab_worked_together.jpg` | 313.6 KB | `8a598bdf7c4a` |
+| `/images/week34/w34_diff_scene_a.jpg` | 888.4 KB | `5868458ee215` |
+| `/images/week34/w34_diff_scene_b.jpg` | 821.2 KB | `4d5cc59fde00` |
+| `/images/week34/w34_listening_p1_scene.jpg` | 994.6 KB | `360cd3303523` |
+| `/images/week34/webtoon_scene_1.png` | 1945.6 KB | `3829199d92ad` |
+| `/images/week34/webtoon_scene_2.png` | 1836.6 KB | `b82ee7acbd95` |
+| `/images/week34/webtoon_scene_3.png` | 1789.0 KB | `499837ea0c8d` |
+| `/images/week34/webtoon_scene_4.png` | 1939.9 KB | `3946468453b0` |
+| `/images/week34/webtoon_scene_5.png` | 1828.0 KB | `3c318257cd69` |
+| `/images/week34/winter.jpg` | 166.2 KB | `84feb296b07c` |
+| `/images/week34/wordpower_build_a_shelter.jpg` | 247.0 KB | `a03d0e59705f` |
+| `/images/week34/wordpower_gather_seeds.jpg` | 237.4 KB | `2bd1ff89587c` |
+| `/images/week34/wordpower_prepare_for.jpg` | 199.2 KB | `0b3d2479674a` |
+| `/images/week34/wordpower_share_food.jpg` | 228.3 KB | `2d5a1758539b` |
+| `/images/week34/wordpower_store_food.jpg` | 279.9 KB | `dadcc78030f6` |
+| `/images/week34/wordpower_the_future.jpg` | 226.7 KB | `c44eabb91da8` |
+| `/images/week34/wordpower_think_ahead.jpg` | 279.7 KB | `3ff97b7ff2d0` |
+| `/images/week34/wordpower_w1.jpg` | 237.4 KB | `2bd1ff89587c` |
+| `/images/week34/wordpower_w2.jpg` | 199.2 KB | `0b3d2479674a` |
+| `/images/week34/wordpower_w3.jpg` | 279.9 KB | `dadcc78030f6` |
+| `/images/week34/wordpower_w4.jpg` | 197.2 KB | `8d6eb49915fa` |
+| `/images/week34/wordpower_w5.jpg` | 279.7 KB | `3ff97b7ff2d0` |
+| `/images/week34/wordpower_w6.jpg` | 228.3 KB | `2d5a1758539b` |
+| `/images/week34/wordpower_w7.jpg` | 247.0 KB | `a03d0e59705f` |
+| `/images/week34/wordpower_w8.jpg` | 226.7 KB | `c44eabb91da8` |
+| `/images/week34/wordpower_work_hard.jpg` | 197.2 KB | `8d6eb49915fa` |
+| `/images/week34/worked_hard.jpg` | 197.2 KB | `8d6eb49915fa` |
+| `/images/week34/worked_together.jpg` | 313.6 KB | `8a598bdf7c4a` |
+| `/images/week34/wp_build_a_shelter.jpg` | 247.0 KB | `a03d0e59705f` |
+| `/images/week34/wp_gather_seeds.jpg` | 237.4 KB | `2bd1ff89587c` |
+| `/images/week34/wp_prepare_for.jpg` | 199.2 KB | `0b3d2479674a` |
+| `/images/week34/wp_share_food.jpg` | 228.3 KB | `2d5a1758539b` |
+| `/images/week34/wp_store_food.jpg` | 279.9 KB | `dadcc78030f6` |
+| `/images/week34/wp_the_future.jpg` | 226.7 KB | `c44eabb91da8` |
+| `/images/week34/wp_think_ahead.jpg` | 279.7 KB | `3ff97b7ff2d0` |
+| `/images/week34/wp_work_hard.jpg` | 197.2 KB | `8d6eb49915fa` |
+| `/audio/week34/dictation_1.mp3` | 26.8 KB | `7ee843e1e758` |
+| `/audio/week34/dictation_2.mp3` | 27.6 KB | `76e867476ffb` |
+| `/audio/week34/dictation_3.mp3` | 22.1 KB | `e9a6aac11c60` |
+| `/audio/week34/dictation_4.mp3` | 25.7 KB | `a8746e8a170c` |
+| `/audio/week34/dictation_5.mp3` | 26.8 KB | `1d8f88d59667` |
+| `/audio/week34/explore.mp3` | 144.3 KB | `1621c8d95ae6` |
+| `/audio/week34/listening_p1_full.mp3` | 376.2 KB | `2fd5e8ca7697` |
+| `/audio/week34/listening_p2_full.mp3` | 246.6 KB | `755505c68d82` |
+| `/audio/week34/listening_p3_full.mp3` | 415.7 KB | `142f32f8baf6` |
+| `/audio/week34/listening_p3_item1.mp3` | 48.4 KB | `8060c49aa2d0` |
+| `/audio/week34/listening_p3_item2.mp3` | 38.8 KB | `bcbcbf4e09db` |
+| `/audio/week34/listening_p3_item3.mp3` | 48.4 KB | `142ddbf92f0c` |
+| `/audio/week34/listening_p3_item4.mp3` | 43.5 KB | `ab3138cc5458` |
+| `/audio/week34/listening_p3_item5.mp3` | 52.3 KB | `808caa1885f2` |
+| `/audio/week34/listening_p4_q1.mp3` | 22.3 KB | `e4d1f6929c2e` |
+| `/audio/week34/listening_p4_q2.mp3` | 25.6 KB | `da0da8e12ebe` |
+| `/audio/week34/listening_p4_q3.mp3` | 23.3 KB | `2f28c9b47d5c` |
+| `/audio/week34/listening_p4_q4.mp3` | 24.2 KB | `107497139a71` |
+| `/audio/week34/listening_p4_q5.mp3` | 22.8 KB | `dde36e76aff7` |
+| `/audio/week34/listening_p5_full.mp3` | 75.0 KB | `6c6f3807e78a` |
+| `/audio/week34/listening_p5_inst1.mp3` | 11.6 KB | `2afed0292afe` |
+| `/audio/week34/listening_p5_inst2.mp3` | 15.1 KB | `4b3c6d2009ee` |
+| `/audio/week34/listening_p5_inst3.mp3` | 14.4 KB | `0b7a8ecfb556` |
+| `/audio/week34/listening_p5_inst4.mp3` | 16.0 KB | `efb9bd602ec6` |
+| `/audio/week34/listening_p5_inst5.mp3` | 17.1 KB | `7798d63a9d11` |
+| `/audio/week34/read_stem.mp3` | 222.6 KB | `96a8e80efb3d` |
+| `/audio/week34/shadowing_1.mp3` | 10.9 KB | `1495db4bb109` |
+| `/audio/week34/shadowing_2.mp3` | 8.1 KB | `21dde1ed03d6` |
+| `/audio/week34/shadowing_3.mp3` | 9.6 KB | `a765b8f42313` |
+| `/audio/week34/shadowing_4.mp3` | 10.5 KB | `82a853259dd3` |
+| `/audio/week34/shadowing_5.mp3` | 10.0 KB | `ee246e5cfc10` |
+| `/audio/week34/shadowing_6.mp3` | 10.5 KB | `c79805547b9c` |
+| `/audio/week34/shadowing_7.mp3` | 10.7 KB | `95a3fb6a1b91` |
+| `/audio/week34/shadowing_8.mp3` | 7.9 KB | `ad4e996f4f1a` |

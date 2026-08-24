@@ -8,83 +8,7 @@ import CompletionModal from '../../../../components/common/CompletionModal';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 
 
-const FALLBACK_CHECK_QUESTIONS = [
-  {
-    id: 'chk_w33_p4_01',
-    content_id: 'chk_w33_p4_01',
-    type: 'listening_p4_picture',
-    question: '1. Where did Tom slip and hurt his knee?',
-    prompt: 'Where did Tom slip and hurt his knee?',
-    audio_url: '/audio/week33/listening_p4_q1.mp3',
-    audio_script: "Girl: Where did Tom slip and hurt his knee yesterday?\nBoy: Well, he walked past the science lab after class and was heading towards the outdoor playground.\nGirl: Did he fall on the playground?\nBoy: No, he was running in a hurry and slipped on the wet floor in the school corridor before reaching the exit!",
-    options: [
-      { label: 'A', text: 'Inside the science lab', image_url: '/images/week33/lab_desk.jpg', isCorrect: false },
-      { label: 'B', text: 'In the school corridor', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: true },
-      { label: 'C', text: 'On the outdoor playground', image_url: '/images/week33/card_h_playground_bench.jpg', isCorrect: false }
-    ],
-    answerIndex: 1
-  },
-  {
-    id: 'chk_w33_p4_02',
-    content_id: 'chk_w33_p4_02',
-    type: 'listening_p4_picture',
-    question: '2. What did Jake do immediately when Tom fell?',
-    prompt: 'What did Jake do immediately when Tom fell?',
-    audio_url: '/audio/week33/listening_p4_q2.mp3',
-    audio_script: "Man: What did Jake do immediately when Tom slipped and fell down?\nWoman: Did he run back to find his teacher in class?\nMan: No, and he didn't just keep walking down the hallway either! Jake stopped right away and walked quickly to call the school nurse for help.\nWoman: That was very quick and responsible of him!",
-    options: [
-      { label: 'A', text: 'Ran to find his teacher in class', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
-      { label: 'B', text: 'Kept walking down the hallway', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false },
-      { label: 'C', text: 'Walked quickly to call the school nurse', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true }
-    ],
-    answerIndex: 2
-  },
-  {
-    id: 'chk_w33_p4_03',
-    content_id: 'chk_w33_p4_03',
-    type: 'listening_p4_picture',
-    question: '3. What did the school nurse apply to Tom’s knee?',
-    prompt: 'What did the school nurse apply to Tom’s knee?',
-    audio_url: '/audio/week33/listening_p4_q3.mp3',
-    audio_script: "Woman: What did the school nurse apply to Tom's knee first?\nMan: Tom asked for a new science notebook, and someone offered him a glass of orange juice to drink.\nWoman: But what did the nurse do for his injury?\nMan: The nurse first applied a clean bandage and a cold pack directly to his hurt knee to stop the swelling.",
-    options: [
-      { label: 'A', text: 'Applied a clean bandage and cold pack', image_url: '/images/week33/card_clean_bandage.jpg', isCorrect: true },
-      { label: 'B', text: 'Gave him a glass of orange juice', image_url: '/images/week33/card_orange_juice.jpg', isCorrect: false },
-      { label: 'C', text: 'Gave him a new science notebook', image_url: '/images/week33/card_science_notebook.jpg', isCorrect: false }
-    ],
-    answerIndex: 0
-  },
-  {
-    id: 'chk_w33_p4_04',
-    content_id: 'chk_w33_p4_04',
-    type: 'listening_p4_picture',
-    question: '4. How did everyone feel after Tom was safely helped?',
-    prompt: 'How did everyone feel after Tom was safely helped?',
-    audio_url: '/audio/week33/listening_p4_q4.mp3',
-    audio_script: "Girl: How did everyone feel after the nurse safely treated Tom?\nBoy: Tom was scared when he fell, and some students were quite upset.\nGirl: Were they still worried or angry?\nBoy: No, everyone felt greatly relieved and safe once they saw Tom was standing and smiling again.",
-    options: [
-      { label: 'A', text: 'Felt angry and upset', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
-      { label: 'B', text: 'Felt relieved and safe', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true },
-      { label: 'C', text: 'Felt scared and fell down', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
-    ],
-    answerIndex: 1
-  },
-  {
-    id: 'chk_w33_p4_05',
-    content_id: 'chk_w33_p4_05',
-    type: 'listening_p4_picture',
-    question: '5. What did the headmaster do during Monday assembly?',
-    prompt: 'What did the headmaster do during Monday assembly?',
-    audio_url: '/audio/week33/listening_p4_q5.mp3',
-    audio_script: "Man: What did the headmaster do during Monday morning assembly?\nWoman: Did he give all the students a difficult test or close down the corridor?\nMan: No, he gave a wonderful speech and praised Jake publicly on stage for his responsible corridor safety action!\nWoman: How fantastic for Jake!",
-    options: [
-      { label: 'A', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/card_g_headmaster_office.jpg', isCorrect: false },
-      { label: 'B', text: 'Closed the school corridor forever', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false },
-      { label: 'C', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/w33_listening_p1_scene.jpg', isCorrect: true }
-    ],
-    answerIndex: 2
-  }
-];
+const FALLBACK_CHECK_QUESTIONS = [];
 
 export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33, customQuestions, isStealthMode = false }) {
   const currentUser = useUserStore((state) => state.currentUser);
@@ -241,7 +165,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
   }
 
   const currentSelection = selectedAnswers[currentQ.content_id];
-  const audioTextToPlay = currentQ.audio_script || currentQ.prompt || currentQ.question || currentQ.text || 'Where was the boy when he slipped on the wet floor?';
+  const audioTextToPlay = currentQ.audio_script || currentQ.prompt || currentQ.question || currentQ.text || 'Listen to the question carefully.';
 
   return (
     <div className="w-full max-w-3xl mx-auto bg-white text-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-300 shadow-xl font-sans">

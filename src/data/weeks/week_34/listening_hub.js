@@ -1,173 +1,97 @@
-/**
- * Week 34 Gold Standard Data — Listening Hub
- * Theme: "The Lion and the Mouse"
- * Cambridge A2 Flyers Full Exam Standard Audio & Scripts
- */
-
-import dictation from './dictation.js';
-import shadowing from './shadowing.js';
-import singaporeMath from './singapore_math.js';
-import logicScience from './logic_science.js';
-
-export const listeningHubData = {
-  week: 34,
-  theme: "The Lion and the Mouse",
-  dictation,
-  shadowing,
-  singapore_math: singaporeMath,
-  science_lab: logicScience,
-
-  // Cambridge Listening Part 2 (Secret Notes / Notepad Note Completer)
-  listening_p2_notes: [
-    { id: 1, label: "Lion Location", hint: "Where was he sleeping?", target: "under a tree", audio_text: "The huge lion was sleeping peacefully under a shady tree in the forest." },
-    { id: 2, label: "Animal Running", hint: "Who ran across his paw?", target: "tiny mouse", audio_text: "A tiny mouse accidentally ran across his big front paw." },
-    { id: 3, label: "Hunters' Equipment", hint: "What did hunters place?", target: "rope net", audio_text: "Two hunters placed a strong rope net between two trees." },
-    { id: 4, label: "Cutting Method", hint: "How did mouse cut ropes?", target: "sharp teeth", audio_text: "The mouse chewed through the thick ropes with his sharp teeth." },
-    { id: 5, label: "Fable Moral", hint: "What was the lesson?", target: "small friends help", audio_text: "The fable teaches us that small friends can give great help." }
+// Pure Generated Listening Hub for Week 34
+export const listeningHub = {
+  dictation: [
+    { id: 1, text: "The lion was sleeping peacefully.", audio_url: "/audio/week34/dictation_1.mp3" },
+    { id: 2, text: "A tiny mouse ran across the path.", audio_url: "/audio/week34/dictation_2.mp3" },
+    { id: 3, text: "The mouse promised to help the lion.", audio_url: "/audio/week34/dictation_3.mp3" },
+    { id: 4, text: "Hunters trapped the lion in a strong net.", audio_url: "/audio/week34/dictation_4.mp3" },
+    { id: 5, text: "The mouse chewed through the thick ropes.", audio_url: "/audio/week34/dictation_5.mp3" }
   ],
-
-  // Cambridge Listening Part 1 (SVG Line Matcher — Forest Scene)
-  listening_p1: {
-    image_url: '/images/week34/w34_listening_p1_scene.jpg',
-    audio_url: '/audio/week34/listening_p1_full.mp3',
-    passage_audio_script: `Nova: Look at Part 1. Now look at the picture. Listen and look. There is one example.
-Girl: Look at this wonderful picture of the animals in the sunny forest!
-Man: Oh yes, I can see a big animal sleeping under the green tree. Is that the lion?
-Girl: Yes, that is the lion. He is having a peaceful afternoon sleep.
-Man: He looks very calm.
-Nova: Can you see the line? This is an example. Now you listen and draw lines.
-Girl: Can you see the tiny mouse running near the lion's front paw?
-Man: Ah yes! He has a long tail and soft grey fur. What is he doing?
-Girl: He is looking for berries on the forest grass.
-Man: Look up in the tall tree! There is a brown monkey eating a yellow banana.
-Girl: That's right. The monkey is sitting on the top branch watching everyone.
-Man: Who is that man hiding behind the bushes with a rope in his hand?
-Girl: That is one of the hunters. He is setting a trap between the trees.
-Man: Look near the riverbank. There is a little rabbit drinking clear water.
-Girl: Yes, the rabbit has long white ears and is hopping gently.
-Man: Now look at the small colourful bird flying above the sleeping lion.
-Girl: That is a songbird. She is singing a sweet melody in the forest sky.`,
-    names: [
-      { id: 'n1', text: 'Lion', target_id: 't1', isExample: true },
-      { id: 'n2', text: 'Mouse', target_id: 't2' },
-      { id: 'n3', text: 'Monkey', target_id: 't3' },
-      { id: 'n4', text: 'Hunter', target_id: 't4' },
-      { id: 'n5', text: 'Rabbit', target_id: 't5' },
-      { id: 'n6', text: 'Songbird', target_id: 't6' }
-    ],
-    targets: [
-      { id: 't1', label: 'Lion (Sleeping under the shady tree)', x: 45, y: 55, isExample: true },
-      { id: 't2', label: 'Mouse (Tiny grey mouse running on grass)', x: 30, y: 70 },
-      { id: 't3', label: 'Monkey (Brown monkey on top tree branch)', x: 65, y: 25 },
-      { id: 't4', label: 'Hunter (Man hiding behind green bushes)', x: 80, y: 50 },
-      { id: 't5', label: 'Rabbit (White rabbit drinking at riverbank)', x: 18, y: 75 },
-      { id: 't6', label: 'Songbird (Colourful bird flying in sky)', x: 50, y: 18 }
-    ]
-  },
-
-  // Cambridge Listening Part 3 (Visual Matching A-H — Forest Locations)
-  listening_p3: {
-    passage_audio_script: `Teacher: Hello Emma! Where did all the forest animals hide during the thunderstorm yesterday?
-Emma: I watched them carefully, Mr. Davis! I can tell you where they all went.
-Teacher: First, where did the tiny mouse hide? Was he under the wooden bridge?
-Emma: No! The little mouse hid inside the hollow tree trunk near the river.
-Teacher: Good. And what about the brown monkey? Did he stay in the tall tree?
-Emma: No, it was too windy! The monkey ran into the deep cave on the rocky hill.
-Teacher: Right. And where did the hunter leave his heavy rope net?
-Emma: The hunter left his rope net beside the old wooden barn.
-Teacher: Ah, I see. What about the little rabbit? Where did he run?
-Emma: The white rabbit hopped quickly into the thick berry bushes.
-Teacher: And what about the colourful songbird? Did she fly home to her nest?
-Emma: Yes, the songbird stayed warm inside her cozy nest on the high branch!`,
-    items: [
-      { id: 1, name: 'Tiny Mouse', target_letter: 'A', audio_url: '/audio/week34/listening_p3_item1.mp3', audio_text: "Teacher: Where did the tiny mouse hide?\nEmma: The little mouse hid inside the hollow tree trunk near the river." },
-      { id: 2, name: 'Brown Monkey', target_letter: 'B', audio_url: '/audio/week34/listening_p3_item2.mp3', audio_text: "Teacher: What about the brown monkey?\nEmma: The monkey ran into the deep cave on the rocky hill." },
-      { id: 3, name: 'Heavy Rope Net', target_letter: 'C', audio_url: '/audio/week34/listening_p3_item3.mp3', audio_text: "Teacher: Where did the hunter leave his heavy rope net?\nEmma: The hunter left his rope net beside the old wooden barn." },
-      { id: 4, name: 'White Rabbit', target_letter: 'D', audio_url: '/audio/week34/listening_p3_item4.mp3', audio_text: "Teacher: Where did the little rabbit run?\nEmma: The white rabbit hopped quickly into the thick berry bushes." },
-      { id: 5, name: 'Songbird', target_letter: 'E', audio_url: '/audio/week34/listening_p3_item5.mp3', audio_text: "Teacher: And what about the colourful songbird?\nEmma: The songbird stayed warm inside her cozy nest on the high branch!" }
-    ],
-    cards: [
-      { letter: 'A', name: 'Hollow Tree Trunk', location_name: 'Tree Trunk', image_url: '/images/week34/hollow_tree.jpg' },
-      { letter: 'B', name: 'Deep Rocky Cave', location_name: 'Rocky Cave', image_url: '/images/week34/rocky_cave.jpg' },
-      { letter: 'C', name: 'Old Wooden Barn', location_name: 'Wooden Barn', image_url: '/images/week34/wooden_barn.jpg' },
-      { letter: 'D', name: 'Thick Berry Bushes', location_name: 'Berry Bushes', image_url: '/images/week34/berry_bushes.jpg' },
-      { letter: 'E', name: 'Cozy Tree Nest', location_name: 'Tree Nest', image_url: '/images/week34/tree_nest.jpg' },
-      { letter: 'F', name: 'Under Wooden Bridge', location_name: 'Wooden Bridge', image_url: '/images/week34/wooden_bridge.jpg' },
-      { letter: 'G', name: 'Grassy Riverbank', location_name: 'Riverbank', image_url: '/images/week34/riverbank.jpg' },
-      { letter: 'H', name: 'Forest Clearing', location_name: 'Forest Clearing', image_url: '/images/week34/forest_clearing.jpg' }
-    ]
-  },
-
-  // Cambridge Listening Part 4 (3-Picture Options with Distractors)
-  listening_p4_questions: [
+  singapore_math: [
     {
       id: 1,
-      question: "What was the lion doing when the mouse arrived?",
-      audio_text: "Boy: Did the lion roar when the mouse arrived?\nGirl: No, he was sleeping quietly under the shady oak tree.",
-      correct_option: "A",
-      options: [
-        { id: "A", label: "Sleeping under tree", image_url: "/images/week34/p4_q1_a.jpg" },
-        { id: "B", label: "Drinking at river", image_url: "/images/week34/p4_q1_b.jpg" },
-        { id: "C", label: "Chasing a deer", image_url: "/images/week34/p4_q1_c.jpg" }
-      ]
+      problem_en: "The lion caught 24 fish on Monday and 16 fish on Tuesday. How many fish did he catch altogether?",
+      bar_model_svg: "/images/week34/barmodel_w34_adv_p1.svg",
+      answer_value: 40
     },
     {
       id: 2,
-      question: "What did the hunters use to trap the lion?",
-      audio_text: "Boy: Did the hunters dig a deep hole in the forest?\nGirl: No, they tied a heavy rope net between two large trees.",
-      correct_option: "B",
-      options: [
-        { id: "A", label: "Wooden cage", image_url: "/images/week34/p4_q2_a.jpg" },
-        { id: "B", label: "Heavy rope net", image_url: "/images/week34/p4_q2_b.jpg" },
-        { id: "C", label: "Deep ground hole", image_url: "/images/week34/p4_q2_c.jpg" }
-      ]
+      problem_en: "The mouse collected 35 seeds. He gave 15 seeds to his friend. How many seeds did he have left?",
+      bar_model_svg: "/images/week34/barmodel_w34_adv_p2.svg",
+      answer_value: 20
     },
     {
       id: 3,
-      question: "How did the mouse cut the strong ropes?",
-      audio_text: "Boy: Did the mouse use sharp stones to cut the net?\nGirl: No, he chewed through the thick ropes using his sharp front teeth.",
-      correct_option: "C",
-      options: [
-        { id: "A", label: "Using wooden stick", image_url: "/images/week34/p4_q3_a.jpg" },
-        { id: "B", label: "Using sharp stone", image_url: "/images/week34/p4_q3_b.jpg" },
-        { id: "C", label: "Using sharp teeth", image_url: "/images/week34/p4_q3_c.jpg" }
-      ]
+      problem_en: "There are 3 groups of monkeys. Each group has 8 monkeys. How many monkeys are there in total?",
+      bar_model_svg: "/images/week34/barmodel_w34_adv_p3.svg",
+      answer_value: 24
     },
     {
       id: 4,
-      question: "What food did the oxpecker bird eat on the zebra?",
-      audio_text: "Boy: Was the bird eating sweet fruit on the tree?\nGirl: No, the bird was eating small bugs off the zebra's back.",
-      correct_option: "A",
-      options: [
-        { id: "A", label: "Small bugs on zebra", image_url: "/images/week34/p4_q4_a.jpg" },
-        { id: "B", label: "Sweet red berries", image_url: "/images/week34/p4_q4_b.jpg" },
-        { id: "C", label: "Green grass seeds", image_url: "/images/week34/p4_q4_c.jpg" }
-      ]
+      problem_en: "The hunters had 45 meters of rope. They used 27 meters for a net. How many meters of rope remained?",
+      bar_model_svg: "/images/week34/barmodel_w34_adv_p4.svg",
+      answer_value: 18
     },
     {
       id: 5,
-      question: "Where did the lion and mouse go after they became friends?",
-      audio_text: "Boy: Did they run to the hunter's village?\nGirl: No, they walked together happily to the sunny forest clearing.",
-      correct_option: "B",
-      options: [
-        { id: "A", label: "Hunter village", image_url: "/images/week34/p4_q5_a.jpg" },
-        { id: "B", label: "Forest clearing", image_url: "/images/week34/p4_q5_b.jpg" },
-        { id: "C", label: "Dark mountain cave", image_url: "/images/week34/p4_q5_c.jpg" }
-      ]
+      problem_en: "A bird flew 12 kilometers in the morning and 18 kilometers in the afternoon. What was the total distance flown?",
+      bar_model_svg: "/images/week34/barmodel_w34_adv_p5.svg",
+      answer_value: 30
     }
   ],
-
-  // Cambridge Listening Part 5 (Color & Write)
+  science_lab: {
+    simulation_title: "Animal Cooperation Lab",
+    experiment_steps: ["Observe animal roles", "Measure mutual benefits", "Record ecosystem balance"],
+    interactive_items: ["Lion", "Mouse", "Forest Habitat"],
+    conclusion_formula: "Cooperation = Harmony"
+  },
+  listening_p1: {
+    image_url: "/images/week34/w34_listening_p1_scene.jpg",
+    names: [
+      { id: "n1", text: "Leo the Lion", target_id: "t1", isExample: true },
+      { id: "n2", text: "Milo the Mouse", target_id: "t2" },
+      { id: "n3", text: "Hunter Jack", target_id: "t3" },
+      { id: "n4", text: "Oliver the Owl", target_id: "t4" },
+      { id: "n5", text: "Bella the Bird", target_id: "t5" },
+      { id: "n6", text: "Sammy the Squirrel", target_id: null }
+    ],
+    targets: [
+      { id: "t1", label: "Leo (Large sleeping lion under tree)", x: 25, y: 65, isExample: true },
+      { id: "t2", label: "Milo (Tiny mouse on mossy rock)", x: 55, y: 70 },
+      { id: "t3", label: "Hunter Jack (Man holding rope behind bush)", x: 80, y: 40 },
+      { id: "t4", label: "Oliver (Wise owl on high branch)", x: 20, y: 25 },
+      { id: "t5", label: "Bella (Colorful bird near stream)", x: 68, y: 55 }
+    ]
+  },
+  listening_p3: {
+    items: [
+      { id: 1, name: "Wooden Trap", target_letter: "A", audio_url: "/audio/week34/listening_p3_item1.mp3" },
+      { id: 2, name: "Thick Rope", target_letter: "B", audio_url: "/audio/week34/listening_p3_item2.mp3" },
+      { id: 3, name: "Forest Map", target_letter: "C", audio_url: "/audio/week34/listening_p3_item3.mp3" },
+      { id: 4, name: "Water Bottle", target_letter: "D", audio_url: "/audio/week34/listening_p3_item4.mp3" },
+      { id: 5, name: "Compass", target_letter: "E", audio_url: "/audio/week34/listening_p3_item5.mp3" }
+    ],
+    cards: [
+      { letter: "A", name: "Wooden Trap", location_name: "Forest Clearing", image_url: "/images/week34/card_a.jpg" },
+      { letter: "B", name: "Thick Rope", location_name: "Hunter Camp", image_url: "/images/week34/card_b.jpg" },
+      { letter: "C", name: "Forest Map", location_name: "Tree Hollow", image_url: "/images/week34/card_c.jpg" },
+      { letter: "D", name: "Water Bottle", location_name: "Riverbank", image_url: "/images/week34/card_d.jpg" },
+      { letter: "E", name: "Compass", location_name: "Lookout Rock", image_url: "/images/week34/card_e.jpg" },
+      { letter: "F", name: "Flashlight", location_name: "Dark Cave", image_url: "/images/week34/card_f.jpg" },
+      { letter: "G", name: "Backpack", location_name: "Base Tent", image_url: "/images/week34/card_g.jpg" },
+      { letter: "H", name: "Binoculars", location_name: "Wooden Tower", image_url: "/images/week34/card_h.jpg" }
+    ]
+  },
   listening_p5: {
-    image_url: "/images/week34/w34_listening_p5_scene.jpg",
+    image_url: "/images/week34/explore_cover_w34.jpg",
     instructions: [
-      { id: 1, item: "Lion Paw", color: "yellow", target_desc: "Color the sleeping lion's front paw yellow", audio_text: "Look at the lion's front paw. Color it yellow." },
-      { id: 2, item: "Tiny Mouse", color: "grey", target_desc: "Color the tiny running mouse grey", audio_text: "Can you see the tiny mouse? Color his soft coat grey." },
-      { id: 3, item: "Rope Net", color: "brown", target_desc: "Color the hunters' rope net brown", audio_text: "Now find the rope net in the tree. Color the ropes brown." },
-      { id: 4, item: "Signboard", write_word: "FRIENDS", target_desc: "Write the word FRIENDS on the wooden forest sign", audio_text: "Look at the wooden sign by the path. Write the word FRIENDS on it." },
-      { id: 5, item: "Songbird", color: "blue", target_desc: "Color the little songbird in the sky blue", audio_text: "Look at the little songbird flying above the trees. Color her blue." }
+      { id: "inst_1", text: "Color the little mouse brown", x: 50, y: 70, color: "brown" },
+      { id: "inst_2", text: "Write the word 'NET' near the ropes", x: 65, y: 45, word: "NET" },
+      { id: "inst_3", text: "Color the lion's mane golden yellow", x: 30, y: 55, color: "yellow" },
+      { id: "inst_4", text: "Write the word 'FOREST' on the signpost", x: 80, y: 30, word: "FOREST" }
     ]
   }
 };
 
-export default listeningHubData;
+export const listeningHubData = listeningHub;
+export default listeningHub;

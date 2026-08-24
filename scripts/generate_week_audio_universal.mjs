@@ -132,9 +132,22 @@ async function main() {
 
   // Load modules dynamically
   const listeningHubPath = path.join(WEEK_DATA_DIR, 'listening_hub.js');
+  const readingHubPath = path.join(WEEK_DATA_DIR, 'reading_hub.js');
   const dictationPath = path.join(WEEK_DATA_DIR, 'dictation.js');
   const explorePath = path.join(WEEK_DATA_DIR, 'explore.js');
   const readPath = path.join(WEEK_DATA_DIR, 'read.js');
+
+  const readingRaw = fs.existsSync(readingHubPath) ? await import(pathToFileURL(readingHubPath).href) : {};
+  const readingMod = readingRaw.default || readingRaw.readingHub || readingRaw;
+
+  // --- 0. Generating Shadowing Sentences ---
+  console.log('\n--- 0. Generating Shadowing Audios ---');
+  const sentences = readingMod.shadowingData?.sentences || [];
+  for (let sIdx = 0; sIdx < sentences.length; sIdx++) {
+    const s = sentences[sIdx];
+    const sFile = path.join(OUTPUT_DIR, `shadowing_${s.id || sIdx + 1}.mp3`);
+    await generateSingleMP3(s.text, 'en-US-Journey-F', sFile);
+  }
 
   const listeningRaw = fs.existsSync(listeningHubPath) ? await import(pathToFileURL(listeningHubPath).href) : {};
   const listeningMod = listeningRaw.default || listeningRaw.listeningHubData || listeningRaw;

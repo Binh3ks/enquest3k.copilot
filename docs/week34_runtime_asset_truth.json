@@ -1,0 +1,780 @@
+{
+  "week": 34,
+  "captured_at": "2026-08-24T12:45:30.448Z",
+  "summary": {
+    "total_in_use": 15,
+    "total_broken": 0,
+    "total_orphans": 135,
+    "total_disk_assets": 135
+  },
+  "in_use": [
+    {
+      "path": "/src/assets/nova-sidebar.png",
+      "quest": "gear1_webtoon",
+      "size_bytes": 396,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-landing.png",
+      "quest": "gear1_webtoon",
+      "size_bytes": 396,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-achievement.png",
+      "quest": "gear1_webtoon",
+      "size_bytes": 412,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-encourage.png",
+      "quest": "gear1_webtoon",
+      "size_bytes": 402,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-thinking.png",
+      "quest": "gear1_webtoon",
+      "size_bytes": 401,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-letsgo.png",
+      "quest": "gear1_webtoon",
+      "size_bytes": 391,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-happy.png",
+      "quest": "gear1_webtoon",
+      "size_bytes": 390,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-listening.png",
+      "quest": "gear1_webtoon",
+      "size_bytes": 402,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/quest-map-forest.jpg",
+      "quest": "gear1_webtoon",
+      "size_bytes": 424,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-happy.jpg",
+      "quest": "gear1_webtoon",
+      "size_bytes": 391,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-celebrate.jpg",
+      "quest": "gear1_webtoon",
+      "size_bytes": 407,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-thinking.jpg",
+      "quest": "gear1_webtoon",
+      "size_bytes": 402,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-listening.jpg",
+      "quest": "gear1_webtoon",
+      "size_bytes": 407,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-waving.jpg",
+      "quest": "gear1_webtoon",
+      "size_bytes": 396,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-encourage.jpg",
+      "quest": "gear1_webtoon",
+      "size_bytes": 407,
+      "content_type": "text/javascript"
+    }
+  ],
+  "broken": [],
+  "orphans": [
+    {
+      "path": "/images/week34/ant.jpg",
+      "size_bytes": 212072,
+      "sha256": "1b0610dec7df281163358cf45a9c932ff565cf2908946b7897d5cbc67a85eb47"
+    },
+    {
+      "path": "/images/week34/barmodel_w34_adv_p1.svg",
+      "size_bytes": 2735,
+      "sha256": "5e0464d4b195d8418687032f55dc8650c47038cfba13394d9882d669c7aba979"
+    },
+    {
+      "path": "/images/week34/barmodel_w34_adv_p2.svg",
+      "size_bytes": 2718,
+      "sha256": "b92b4dbb64fd4e20e7760fa6df06b0b87dfba5639752d150cdec05c689fd317f"
+    },
+    {
+      "path": "/images/week34/barmodel_w34_adv_p3.svg",
+      "size_bytes": 2377,
+      "sha256": "23147db35bd876917ce59cbe240295a51f378cc17e84ea99930e018fadb661f6"
+    },
+    {
+      "path": "/images/week34/barmodel_w34_adv_p4.svg",
+      "size_bytes": 2737,
+      "sha256": "a9287015090181c37b7bc0e47eec21e6cd7c97f1a23a21bc3f7314fc038727f8"
+    },
+    {
+      "path": "/images/week34/barmodel_w34_adv_p5.svg",
+      "size_bytes": 3060,
+      "sha256": "e64fbb55c2cce72e5aff880a1765cd566e80bc3d4844a0054ec74c715c532899"
+    },
+    {
+      "path": "/images/week34/card_a.jpg",
+      "size_bytes": 955979,
+      "sha256": "bbaff7734a54c4753b9c86006f4af0acb3edf61d4b5f966677836a8cb003e32a"
+    },
+    {
+      "path": "/images/week34/card_b.jpg",
+      "size_bytes": 817779,
+      "sha256": "6a3cd1575349d8c4fb0a4538cf193e87e9dc6f59b78edb601bbf5206e11894b2"
+    },
+    {
+      "path": "/images/week34/card_c.jpg",
+      "size_bytes": 850979,
+      "sha256": "e6fc94b2a8eeef7275944bd3aae41a8967a0a6d1c3f7105cf6c7a746f64512f4"
+    },
+    {
+      "path": "/images/week34/card_d.jpg",
+      "size_bytes": 849711,
+      "sha256": "d6a0835a3b66f8316fa5d37c77e2336a2613058b4e5817858a89517fd037a325"
+    },
+    {
+      "path": "/images/week34/card_e.jpg",
+      "size_bytes": 822021,
+      "sha256": "85515cf2e94c4f4f0fe303f32e43f9dcb00d4bd3b9281fae4bb4bfa606912e63"
+    },
+    {
+      "path": "/images/week34/card_f.jpg",
+      "size_bytes": 758521,
+      "sha256": "a77dca95e3b58ea1514973c801c07c7baa79bdd304ff32258e636fa5a0820e95"
+    },
+    {
+      "path": "/images/week34/card_g.jpg",
+      "size_bytes": 827249,
+      "sha256": "c03bcdc746ee6eda0bf75f62ca2dc8751f41db1d133dbc210c961255fa4296c4"
+    },
+    {
+      "path": "/images/week34/card_h.jpg",
+      "size_bytes": 752130,
+      "sha256": "c5f968c8342ad737f5bcb8cfecb5f3394f164218375179b119135e1fd81594b2"
+    },
+    {
+      "path": "/images/week34/explore.jpg",
+      "size_bytes": 361132,
+      "sha256": "0f2d4a84f0e625ff2ac37895a1ffad0782bd427e793717c10149b7658700ac8b"
+    },
+    {
+      "path": "/images/week34/explore_cover_w34.jpg",
+      "size_bytes": 1875223,
+      "sha256": "a8adf44bcf84cd8e45187b9ad4be25953df46558e7e7d55905c473011ac532ef"
+    },
+    {
+      "path": "/images/week34/fable.jpg",
+      "size_bytes": 394464,
+      "sha256": "43b19594e3b7906ecef2c4d054a11ce30f283f8aec984ccf8a67ca40c779dd5f"
+    },
+    {
+      "path": "/images/week34/famine.jpg",
+      "size_bytes": 274242,
+      "sha256": "ef66d54496ec3f5c1866da20464d8d5e091db68ab3caeaa16f01d4cca9b9fafb"
+    },
+    {
+      "path": "/images/week34/frost.jpg",
+      "size_bytes": 490680,
+      "sha256": "62fcbd728fb8e21a50294a5c33069341cd2da63af4fa85511627c2fa7411adff"
+    },
+    {
+      "path": "/images/week34/future.jpg",
+      "size_bytes": 267897,
+      "sha256": "277456c945993594dde3ffd8aa4c28b4335e46fd14c2c97412654d03e8011834"
+    },
+    {
+      "path": "/images/week34/gather.jpg",
+      "size_bytes": 287395,
+      "sha256": "4f751412eca946c81aa93add704031b07b2245ae506448f96d0ce709fa447786"
+    },
+    {
+      "path": "/images/week34/gathered_seeds.jpg",
+      "size_bytes": 243075,
+      "sha256": "2bd1ff89587cce6b05c5dc621218ec2f1188af8a94110cbf7525f115f1096a65"
+    },
+    {
+      "path": "/images/week34/grain.jpg",
+      "size_bytes": 278763,
+      "sha256": "aae358291acf730349efdbd2d49d598308320ac68ffb1465cda4164b871e5a93"
+    },
+    {
+      "path": "/images/week34/grasshopper.jpg",
+      "size_bytes": 271769,
+      "sha256": "3d3adb01c565f9c453dc37857c7bd6a9170259122f21c77d2beead1905291fa8"
+    },
+    {
+      "path": "/images/week34/hard_working.jpg",
+      "size_bytes": 197377,
+      "sha256": "5c1d6c31c9cc5e7c6fd87383b7653dc40c6ee251bccee570799f2233601baf21"
+    },
+    {
+      "path": "/images/week34/hill.jpg",
+      "size_bytes": 172183,
+      "sha256": "899ec75e72a8f0c04cee5809d477dad833942ab2b1b5b59aaaf963de9d0a06f2"
+    },
+    {
+      "path": "/images/week34/lazy.jpg",
+      "size_bytes": 368179,
+      "sha256": "0b40cd0a0fa6a14dc35265fe155c2b314c047a48ed419d44e073d983d3d94da0"
+    },
+    {
+      "path": "/images/week34/learned_lesson.jpg",
+      "size_bytes": 231104,
+      "sha256": "d39a84c91486ae0432ae05b8abcffafef8ca8e6401d49766c2ca7a6c2b0da93c"
+    },
+    {
+      "path": "/images/week34/moral.jpg",
+      "size_bytes": 242526,
+      "sha256": "9e499e5afbfa2cdc97dcc45c6fce64de5fec9b4a8d7f99c1b139be235f51550d"
+    },
+    {
+      "path": "/images/week34/prepare.jpg",
+      "size_bytes": 226761,
+      "sha256": "c3732ca1789f2b3be5d6e1d298d531e7100a8e4ca20d14833aeaca2d7548e66c"
+    },
+    {
+      "path": "/images/week34/prepare_future.jpg",
+      "size_bytes": 251953,
+      "sha256": "ea9f9e8a9d72d4ca7611d24c10c414e9c5e147436644b14fa0d85aad8086a080"
+    },
+    {
+      "path": "/images/week34/read.jpg",
+      "size_bytes": 291527,
+      "sha256": "28622239ae376f8a0814b9472b08da16c2c836a6d9dd34b74b5c2824abe821af"
+    },
+    {
+      "path": "/images/week34/read_cover_w34.jpg",
+      "size_bytes": 1730566,
+      "sha256": "577164a5277a2c528547291bf77023dcf51bb416349f263ea869bc99579b27b0"
+    },
+    {
+      "path": "/images/week34/read_stem.jpg",
+      "size_bytes": 1730566,
+      "sha256": "577164a5277a2c528547291bf77023dcf51bb416349f263ea869bc99579b27b0"
+    },
+    {
+      "path": "/images/week34/relative_clause.jpg",
+      "size_bytes": 188516,
+      "sha256": "cd94de7cb72c43a4bfcf32c91874aa4a330bd20d9d687ac331301a2ed6c2a373"
+    },
+    {
+      "path": "/images/week34/share.jpg",
+      "size_bytes": 248488,
+      "sha256": "d31c5da616b3c4d66604e2c53e29c59c45229e4151827c8046c52248302cbed2"
+    },
+    {
+      "path": "/images/week34/shelter.jpg",
+      "size_bytes": 347418,
+      "sha256": "14729d3b7bd4d2d2bd947b316faf7e2a909a1c3d634c6a16ff1c967ede8fbcc9"
+    },
+    {
+      "path": "/images/week34/stored_food.jpg",
+      "size_bytes": 243810,
+      "sha256": "83e2aaa11f79484aebbea387556b8b75f6ee5b883c4f695eb2fa622140cf091c"
+    },
+    {
+      "path": "/images/week34/summer.jpg",
+      "size_bytes": 328644,
+      "sha256": "dbb14528268fc08ba45bc5f030addab458260851e662570bc24fb0719121ec5b"
+    },
+    {
+      "path": "/images/week34/think_ahead.jpg",
+      "size_bytes": 286389,
+      "sha256": "3ff97b7ff2d0dd58a5253209209a51921327fd5de4af35e5c92cb00c2878aec6"
+    },
+    {
+      "path": "/images/week34/violin.jpg",
+      "size_bytes": 302788,
+      "sha256": "071e79b6dfcf22cae1f3518d1167042f02247ce922a793084be246ff8ba5b8dc"
+    },
+    {
+      "path": "/images/week34/vocab_ant.jpg",
+      "size_bytes": 212072,
+      "sha256": "1b0610dec7df281163358cf45a9c932ff565cf2908946b7897d5cbc67a85eb47"
+    },
+    {
+      "path": "/images/week34/vocab_fable.jpg",
+      "size_bytes": 394464,
+      "sha256": "43b19594e3b7906ecef2c4d054a11ce30f283f8aec984ccf8a67ca40c779dd5f"
+    },
+    {
+      "path": "/images/week34/vocab_famine.jpg",
+      "size_bytes": 274242,
+      "sha256": "ef66d54496ec3f5c1866da20464d8d5e091db68ab3caeaa16f01d4cca9b9fafb"
+    },
+    {
+      "path": "/images/week34/vocab_frost.jpg",
+      "size_bytes": 490680,
+      "sha256": "62fcbd728fb8e21a50294a5c33069341cd2da63af4fa85511627c2fa7411adff"
+    },
+    {
+      "path": "/images/week34/vocab_future.jpg",
+      "size_bytes": 267897,
+      "sha256": "277456c945993594dde3ffd8aa4c28b4335e46fd14c2c97412654d03e8011834"
+    },
+    {
+      "path": "/images/week34/vocab_gather.jpg",
+      "size_bytes": 287395,
+      "sha256": "4f751412eca946c81aa93add704031b07b2245ae506448f96d0ce709fa447786"
+    },
+    {
+      "path": "/images/week34/vocab_gathered_seeds.jpg",
+      "size_bytes": 243075,
+      "sha256": "2bd1ff89587cce6b05c5dc621218ec2f1188af8a94110cbf7525f115f1096a65"
+    },
+    {
+      "path": "/images/week34/vocab_grain.jpg",
+      "size_bytes": 278763,
+      "sha256": "aae358291acf730349efdbd2d49d598308320ac68ffb1465cda4164b871e5a93"
+    },
+    {
+      "path": "/images/week34/vocab_grasshopper.jpg",
+      "size_bytes": 271769,
+      "sha256": "3d3adb01c565f9c453dc37857c7bd6a9170259122f21c77d2beead1905291fa8"
+    },
+    {
+      "path": "/images/week34/vocab_hard_working.jpg",
+      "size_bytes": 197377,
+      "sha256": "5c1d6c31c9cc5e7c6fd87383b7653dc40c6ee251bccee570799f2233601baf21"
+    },
+    {
+      "path": "/images/week34/vocab_hill.jpg",
+      "size_bytes": 172183,
+      "sha256": "899ec75e72a8f0c04cee5809d477dad833942ab2b1b5b59aaaf963de9d0a06f2"
+    },
+    {
+      "path": "/images/week34/vocab_lazy.jpg",
+      "size_bytes": 368179,
+      "sha256": "0b40cd0a0fa6a14dc35265fe155c2b314c047a48ed419d44e073d983d3d94da0"
+    },
+    {
+      "path": "/images/week34/vocab_learned_lesson.jpg",
+      "size_bytes": 231104,
+      "sha256": "d39a84c91486ae0432ae05b8abcffafef8ca8e6401d49766c2ca7a6c2b0da93c"
+    },
+    {
+      "path": "/images/week34/vocab_moral.jpg",
+      "size_bytes": 242526,
+      "sha256": "9e499e5afbfa2cdc97dcc45c6fce64de5fec9b4a8d7f99c1b139be235f51550d"
+    },
+    {
+      "path": "/images/week34/vocab_prepare.jpg",
+      "size_bytes": 226761,
+      "sha256": "c3732ca1789f2b3be5d6e1d298d531e7100a8e4ca20d14833aeaca2d7548e66c"
+    },
+    {
+      "path": "/images/week34/vocab_prepare_future.jpg",
+      "size_bytes": 251953,
+      "sha256": "ea9f9e8a9d72d4ca7611d24c10c414e9c5e147436644b14fa0d85aad8086a080"
+    },
+    {
+      "path": "/images/week34/vocab_relative_clause.jpg",
+      "size_bytes": 188516,
+      "sha256": "cd94de7cb72c43a4bfcf32c91874aa4a330bd20d9d687ac331301a2ed6c2a373"
+    },
+    {
+      "path": "/images/week34/vocab_share.jpg",
+      "size_bytes": 248488,
+      "sha256": "d31c5da616b3c4d66604e2c53e29c59c45229e4151827c8046c52248302cbed2"
+    },
+    {
+      "path": "/images/week34/vocab_shelter.jpg",
+      "size_bytes": 347418,
+      "sha256": "14729d3b7bd4d2d2bd947b316faf7e2a909a1c3d634c6a16ff1c967ede8fbcc9"
+    },
+    {
+      "path": "/images/week34/vocab_stored_food.jpg",
+      "size_bytes": 243810,
+      "sha256": "83e2aaa11f79484aebbea387556b8b75f6ee5b883c4f695eb2fa622140cf091c"
+    },
+    {
+      "path": "/images/week34/vocab_summer.jpg",
+      "size_bytes": 328644,
+      "sha256": "dbb14528268fc08ba45bc5f030addab458260851e662570bc24fb0719121ec5b"
+    },
+    {
+      "path": "/images/week34/vocab_violin.jpg",
+      "size_bytes": 302788,
+      "sha256": "071e79b6dfcf22cae1f3518d1167042f02247ce922a793084be246ff8ba5b8dc"
+    },
+    {
+      "path": "/images/week34/vocab_winter.jpg",
+      "size_bytes": 170152,
+      "sha256": "84feb296b07c8d6040fb3ffac41eb1f556e977a4b3062a475bb7a8fb5b9c93de"
+    },
+    {
+      "path": "/images/week34/vocab_worked_hard.jpg",
+      "size_bytes": 201920,
+      "sha256": "8d6eb49915fa573b22041c38a9b30c5b7e71294cdb5b11dac9174e6b11dc8d3c"
+    },
+    {
+      "path": "/images/week34/vocab_worked_together.jpg",
+      "size_bytes": 321107,
+      "sha256": "8a598bdf7c4a9b81ad3b3277107888ce3a2a05281d255fe1a4c634c4596cf07f"
+    },
+    {
+      "path": "/images/week34/w34_diff_scene_a.jpg",
+      "size_bytes": 909700,
+      "sha256": "5868458ee215240c8ac427d168b030ddb995dead324f367b87bb4133bf242cdd"
+    },
+    {
+      "path": "/images/week34/w34_diff_scene_b.jpg",
+      "size_bytes": 840931,
+      "sha256": "4d5cc59fde00ce6024312c1e36329993d02bab7d8c138c1588ae6b96e0a69b92"
+    },
+    {
+      "path": "/images/week34/w34_listening_p1_scene.jpg",
+      "size_bytes": 1018510,
+      "sha256": "360cd3303523e214b865100f117b39789e82d0913474ff3bedf07b5d2c7db875"
+    },
+    {
+      "path": "/images/week34/webtoon_scene_1.png",
+      "size_bytes": 1992246,
+      "sha256": "3829199d92ad781d664ee70ae7497da1c668e4443d86f8ef7ce0d67786b60515"
+    },
+    {
+      "path": "/images/week34/webtoon_scene_2.png",
+      "size_bytes": 1880716,
+      "sha256": "b82ee7acbd95099e3a9320e670881dd35270a3cbb8d78f33e16403ebf2c7fa12"
+    },
+    {
+      "path": "/images/week34/webtoon_scene_3.png",
+      "size_bytes": 1831934,
+      "sha256": "499837ea0c8d61e662bdb218de856883ef0966dc954146ab86a486e732195cd3"
+    },
+    {
+      "path": "/images/week34/webtoon_scene_4.png",
+      "size_bytes": 1986508,
+      "sha256": "3946468453b07fb0f453b6d39d49404ed26c62cde610096607004da8a88ac60a"
+    },
+    {
+      "path": "/images/week34/webtoon_scene_5.png",
+      "size_bytes": 1871885,
+      "sha256": "3c318257cd69249fa8e3e0fb07e21c099d95834653176cb1e1df2ccfc300c70c"
+    },
+    {
+      "path": "/images/week34/winter.jpg",
+      "size_bytes": 170152,
+      "sha256": "84feb296b07c8d6040fb3ffac41eb1f556e977a4b3062a475bb7a8fb5b9c93de"
+    },
+    {
+      "path": "/images/week34/wordpower_build_a_shelter.jpg",
+      "size_bytes": 252890,
+      "sha256": "a03d0e59705f2eeb0f590b1d56aa33e46d018d89869787830e12257f64eb386a"
+    },
+    {
+      "path": "/images/week34/wordpower_gather_seeds.jpg",
+      "size_bytes": 243075,
+      "sha256": "2bd1ff89587cce6b05c5dc621218ec2f1188af8a94110cbf7525f115f1096a65"
+    },
+    {
+      "path": "/images/week34/wordpower_prepare_for.jpg",
+      "size_bytes": 203950,
+      "sha256": "0b3d2479674ae31c609dcf2f1bcf134a311741784e8b9c61f35dc5ff5e14c2d6"
+    },
+    {
+      "path": "/images/week34/wordpower_share_food.jpg",
+      "size_bytes": 233755,
+      "sha256": "2d5a1758539b8f3e4f19fade1da55d482b7f2336a2e5b901089209e6debf1ea3"
+    },
+    {
+      "path": "/images/week34/wordpower_store_food.jpg",
+      "size_bytes": 286587,
+      "sha256": "dadcc78030f682d47daf105ca84cc5b19f1961353a04699089a9c4068b86e912"
+    },
+    {
+      "path": "/images/week34/wordpower_the_future.jpg",
+      "size_bytes": 232111,
+      "sha256": "c44eabb91da862ed819c13568386a1b3667916c8f448849ab8b016c59ced5c3d"
+    },
+    {
+      "path": "/images/week34/wordpower_think_ahead.jpg",
+      "size_bytes": 286389,
+      "sha256": "3ff97b7ff2d0dd58a5253209209a51921327fd5de4af35e5c92cb00c2878aec6"
+    },
+    {
+      "path": "/images/week34/wordpower_w1.jpg",
+      "size_bytes": 243075,
+      "sha256": "2bd1ff89587cce6b05c5dc621218ec2f1188af8a94110cbf7525f115f1096a65"
+    },
+    {
+      "path": "/images/week34/wordpower_w2.jpg",
+      "size_bytes": 203950,
+      "sha256": "0b3d2479674ae31c609dcf2f1bcf134a311741784e8b9c61f35dc5ff5e14c2d6"
+    },
+    {
+      "path": "/images/week34/wordpower_w3.jpg",
+      "size_bytes": 286587,
+      "sha256": "dadcc78030f682d47daf105ca84cc5b19f1961353a04699089a9c4068b86e912"
+    },
+    {
+      "path": "/images/week34/wordpower_w4.jpg",
+      "size_bytes": 201920,
+      "sha256": "8d6eb49915fa573b22041c38a9b30c5b7e71294cdb5b11dac9174e6b11dc8d3c"
+    },
+    {
+      "path": "/images/week34/wordpower_w5.jpg",
+      "size_bytes": 286389,
+      "sha256": "3ff97b7ff2d0dd58a5253209209a51921327fd5de4af35e5c92cb00c2878aec6"
+    },
+    {
+      "path": "/images/week34/wordpower_w6.jpg",
+      "size_bytes": 233755,
+      "sha256": "2d5a1758539b8f3e4f19fade1da55d482b7f2336a2e5b901089209e6debf1ea3"
+    },
+    {
+      "path": "/images/week34/wordpower_w7.jpg",
+      "size_bytes": 252890,
+      "sha256": "a03d0e59705f2eeb0f590b1d56aa33e46d018d89869787830e12257f64eb386a"
+    },
+    {
+      "path": "/images/week34/wordpower_w8.jpg",
+      "size_bytes": 232111,
+      "sha256": "c44eabb91da862ed819c13568386a1b3667916c8f448849ab8b016c59ced5c3d"
+    },
+    {
+      "path": "/images/week34/wordpower_work_hard.jpg",
+      "size_bytes": 201920,
+      "sha256": "8d6eb49915fa573b22041c38a9b30c5b7e71294cdb5b11dac9174e6b11dc8d3c"
+    },
+    {
+      "path": "/images/week34/worked_hard.jpg",
+      "size_bytes": 201920,
+      "sha256": "8d6eb49915fa573b22041c38a9b30c5b7e71294cdb5b11dac9174e6b11dc8d3c"
+    },
+    {
+      "path": "/images/week34/worked_together.jpg",
+      "size_bytes": 321107,
+      "sha256": "8a598bdf7c4a9b81ad3b3277107888ce3a2a05281d255fe1a4c634c4596cf07f"
+    },
+    {
+      "path": "/images/week34/wp_build_a_shelter.jpg",
+      "size_bytes": 252890,
+      "sha256": "a03d0e59705f2eeb0f590b1d56aa33e46d018d89869787830e12257f64eb386a"
+    },
+    {
+      "path": "/images/week34/wp_gather_seeds.jpg",
+      "size_bytes": 243075,
+      "sha256": "2bd1ff89587cce6b05c5dc621218ec2f1188af8a94110cbf7525f115f1096a65"
+    },
+    {
+      "path": "/images/week34/wp_prepare_for.jpg",
+      "size_bytes": 203950,
+      "sha256": "0b3d2479674ae31c609dcf2f1bcf134a311741784e8b9c61f35dc5ff5e14c2d6"
+    },
+    {
+      "path": "/images/week34/wp_share_food.jpg",
+      "size_bytes": 233755,
+      "sha256": "2d5a1758539b8f3e4f19fade1da55d482b7f2336a2e5b901089209e6debf1ea3"
+    },
+    {
+      "path": "/images/week34/wp_store_food.jpg",
+      "size_bytes": 286587,
+      "sha256": "dadcc78030f682d47daf105ca84cc5b19f1961353a04699089a9c4068b86e912"
+    },
+    {
+      "path": "/images/week34/wp_the_future.jpg",
+      "size_bytes": 232111,
+      "sha256": "c44eabb91da862ed819c13568386a1b3667916c8f448849ab8b016c59ced5c3d"
+    },
+    {
+      "path": "/images/week34/wp_think_ahead.jpg",
+      "size_bytes": 286389,
+      "sha256": "3ff97b7ff2d0dd58a5253209209a51921327fd5de4af35e5c92cb00c2878aec6"
+    },
+    {
+      "path": "/images/week34/wp_work_hard.jpg",
+      "size_bytes": 201920,
+      "sha256": "8d6eb49915fa573b22041c38a9b30c5b7e71294cdb5b11dac9174e6b11dc8d3c"
+    },
+    {
+      "path": "/audio/week34/dictation_1.mp3",
+      "size_bytes": 27456,
+      "sha256": "7ee843e1e7581969183392a376189fc275df8ae7d601060e93bdf4ca4ea7df9a"
+    },
+    {
+      "path": "/audio/week34/dictation_2.mp3",
+      "size_bytes": 28224,
+      "sha256": "76e867476ffb1b63fec8348fe6289c175f93e6b1979c4350dfa89b46c9a15cae"
+    },
+    {
+      "path": "/audio/week34/dictation_3.mp3",
+      "size_bytes": 22656,
+      "sha256": "e9a6aac11c600bc5a6796fd9f02291e928ffe140303fba0a8ee9d4066b34a629"
+    },
+    {
+      "path": "/audio/week34/dictation_4.mp3",
+      "size_bytes": 26304,
+      "sha256": "a8746e8a170cba7a9334e59e1c8fc4ecec3cd896993cb076ffac5e9bc2d74743"
+    },
+    {
+      "path": "/audio/week34/dictation_5.mp3",
+      "size_bytes": 27456,
+      "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a"
+    },
+    {
+      "path": "/audio/week34/explore.mp3",
+      "size_bytes": 147744,
+      "sha256": "1621c8d95ae6db47adccc09b1de499bab488ac621dd215d680a6fe5340130153"
+    },
+    {
+      "path": "/audio/week34/listening_p1_full.mp3",
+      "size_bytes": 385248,
+      "sha256": "2fd5e8ca7697e6e65665a302a2b364553953fde8e215de04101630c0d9440aee"
+    },
+    {
+      "path": "/audio/week34/listening_p2_full.mp3",
+      "size_bytes": 252480,
+      "sha256": "755505c68d82b82d9dd52728c8a780949766410b5886b0f8a94eb2a55068f67a"
+    },
+    {
+      "path": "/audio/week34/listening_p3_full.mp3",
+      "size_bytes": 425664,
+      "sha256": "142f32f8baf6c2557b966089645ffe14d21e5ef04737de056c6dbe305794bd21"
+    },
+    {
+      "path": "/audio/week34/listening_p3_item1.mp3",
+      "size_bytes": 49536,
+      "sha256": "8060c49aa2d0be4d7e558af7faa73272d9114e98b0909b882b8e555e5e5919d3"
+    },
+    {
+      "path": "/audio/week34/listening_p3_item2.mp3",
+      "size_bytes": 39744,
+      "sha256": "bcbcbf4e09db5a8b76b786ad4cbcb2a899c6a0c7d38dd194e0d11c7e872d0c29"
+    },
+    {
+      "path": "/audio/week34/listening_p3_item3.mp3",
+      "size_bytes": 49536,
+      "sha256": "142ddbf92f0cd9b74903d8738b1548c729b585f20b252a968131f7e1c38f5e6b"
+    },
+    {
+      "path": "/audio/week34/listening_p3_item4.mp3",
+      "size_bytes": 44544,
+      "sha256": "ab3138cc54587cc3f7dc762afcdb3e7a97fac02b95e860c51f80754c7377a416"
+    },
+    {
+      "path": "/audio/week34/listening_p3_item5.mp3",
+      "size_bytes": 53568,
+      "sha256": "808caa1885f2f2e180e64a5bac05d19be974aa5559aa90aa58eba39eee05048d"
+    },
+    {
+      "path": "/audio/week34/listening_p4_q1.mp3",
+      "size_bytes": 22848,
+      "sha256": "e4d1f6929c2e163652f108d6e2bf8051b61b20e53ec9a38376e8efa99a285527"
+    },
+    {
+      "path": "/audio/week34/listening_p4_q2.mp3",
+      "size_bytes": 26208,
+      "sha256": "da0da8e12ebeb8960de51ced6dde4339d07ae086874c25bad6ef1058d547630e"
+    },
+    {
+      "path": "/audio/week34/listening_p4_q3.mp3",
+      "size_bytes": 23904,
+      "sha256": "2f28c9b47d5cc6f0c5ee7403deafeb15fd8fc56ddbbf5026bbac79bcc143897b"
+    },
+    {
+      "path": "/audio/week34/listening_p4_q4.mp3",
+      "size_bytes": 24768,
+      "sha256": "107497139a7148d4494b9069ef21182f06b0e75237722cb008ca04419328921d"
+    },
+    {
+      "path": "/audio/week34/listening_p4_q5.mp3",
+      "size_bytes": 23328,
+      "sha256": "dde36e76aff7204e569540a2ea7d4e3e5740f4feb3a1875d171a0092dd8d2608"
+    },
+    {
+      "path": "/audio/week34/listening_p5_full.mp3",
+      "size_bytes": 76800,
+      "sha256": "6c6f3807e78a32e026a01a0fc063f0934f16d0d5969f2fa99d736333e5861535"
+    },
+    {
+      "path": "/audio/week34/listening_p5_inst1.mp3",
+      "size_bytes": 11904,
+      "sha256": "2afed0292afefbea471ca1e1fc2bea854bc682a1d73ee26725f24094339b6bf0"
+    },
+    {
+      "path": "/audio/week34/listening_p5_inst2.mp3",
+      "size_bytes": 15456,
+      "sha256": "4b3c6d2009ee2eba603c3b9483d56d09a79f0f779dadde27717d138a60c6c781"
+    },
+    {
+      "path": "/audio/week34/listening_p5_inst3.mp3",
+      "size_bytes": 14784,
+      "sha256": "0b7a8ecfb556bb88dffd67398e83e5c3d5d25e9c1dd16e868d826c8fd640a8b4"
+    },
+    {
+      "path": "/audio/week34/listening_p5_inst4.mp3",
+      "size_bytes": 16416,
+      "sha256": "efb9bd602ec60ec6537729655cdadcd6fd0aa1aa250938fe31a158b844c89d97"
+    },
+    {
+      "path": "/audio/week34/listening_p5_inst5.mp3",
+      "size_bytes": 17472,
+      "sha256": "7798d63a9d11251d35f789056d4da8d555e2291b9f49c3be8349cd45930d8217"
+    },
+    {
+      "path": "/audio/week34/read_stem.mp3",
+      "size_bytes": 227904,
+      "sha256": "96a8e80efb3de4688e3e2b4057d97edd701146c3e91e8ed323313b30927b3094"
+    },
+    {
+      "path": "/audio/week34/shadowing_1.mp3",
+      "size_bytes": 11136,
+      "sha256": "1495db4bb10960147d4fb009864e01e63bc614b2d16d7fc985d4ba108fed0851"
+    },
+    {
+      "path": "/audio/week34/shadowing_2.mp3",
+      "size_bytes": 8256,
+      "sha256": "21dde1ed03d61791787fd4adce730ac963ebed26f45f9ee3f7f4ca2e4694488c"
+    },
+    {
+      "path": "/audio/week34/shadowing_3.mp3",
+      "size_bytes": 9792,
+      "sha256": "a765b8f423132dfa69c364c75d7d9a75634d910729f536c9bfc40f91fc0d8b36"
+    },
+    {
+      "path": "/audio/week34/shadowing_4.mp3",
+      "size_bytes": 10752,
+      "sha256": "82a853259dd3bb086ede3e24c8a62dbf50a577de6eb0d7fb286ecfe87f20781a"
+    },
+    {
+      "path": "/audio/week34/shadowing_5.mp3",
+      "size_bytes": 10272,
+      "sha256": "ee246e5cfc107505a8ca13008eb649efd969ee1185749e92f086de16ba32e1d9"
+    },
+    {
+      "path": "/audio/week34/shadowing_6.mp3",
+      "size_bytes": 10752,
+      "sha256": "c79805547b9c62ad8ac9a5ceb87ba2823e7054ab23f608ef8eae3b91a1a00707"
+    },
+    {
+      "path": "/audio/week34/shadowing_7.mp3",
+      "size_bytes": 10944,
+      "sha256": "95a3fb6a1b913db66ff2df659d9ae2e6ead466723dc31a78d6f47e4f4fd9828d"
+    },
+    {
+      "path": "/audio/week34/shadowing_8.mp3",
+      "size_bytes": 8064,
+      "sha256": "ad4e996f4f1aaab08ddc5c475a1d73b8314ceef0a100a61c47650c8d1a17ad66"
+    }
+  ]
+}

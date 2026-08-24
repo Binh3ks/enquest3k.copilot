@@ -24,21 +24,21 @@ import { evaluateCambridgeCriteria } from '../../utils/cambridgeCriteria';
 import { speakText } from '../../utils/AudioHelper';
 import GrammarHintButton from '../../components/common/GrammarHintButton';
 
-const DEFAULT_W33_PICTURE_MODE = {
+const DEFAULT_PICTURE_MODE = {
   type: "picture",
   rubric_tier: 2,
-  image_url: "/images/week33/read_stem.jpg",
-  word_bank: ["corridor", "walking", "fast", "slipped", "wet floor", "knee", "bandage", "nurse"],
+  image_url: "",
+  word_bank: ["character", "action", "setting", "story", "happened", "helped"],
   writing_prompts: {
-    en: "Look at the school corridor story picture and write a story about what happened to the running student and how Jake helped."
+    en: "Look at the picture and write a story about what happened."
   }
 };
 
 const StoryWriting = ({ content, storyPrompts, themeColor, isVi, onToggleLang, onReportProgress, onGoToSpeak, onComplete, weekNumber }) => {
   const { weekId } = useParams();
   const currentWeek = parseInt(weekId) || weekNumber || 33;
-  const prompts = content?.story_prompts || storyPrompts || { picture_mode: DEFAULT_W33_PICTURE_MODE };
-  const pictureMode = prompts?.picture_mode || DEFAULT_W33_PICTURE_MODE;
+  const prompts = content?.story_prompts || storyPrompts || { picture_mode: DEFAULT_PICTURE_MODE };
+  const pictureMode = prompts?.picture_mode || DEFAULT_PICTURE_MODE;
   const topicMode = prompts?.topic_mode;
 
   // Saved progress lives under stationId 'story_writing'
@@ -636,13 +636,13 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       {/* Story Picture(s) — 3-Panel Cambridge Picture Set */}
       <div className="flex-shrink-0 bg-gradient-to-b from-slate-100 to-white p-3 border-b border-slate-200">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {[
-            { panel: 1, image_url: "/images/week33/writing_panel_1.png", caption: "Jake walking in school corridor" },
-            { panel: 2, image_url: "/images/week33/writing_panel_2.png", caption: "Boy slipping on wet floor" },
-            { panel: 3, image_url: "/images/week33/writing_panel_3.png", caption: "Nurse applying clean bandage" }
-          ].map((p, idx) => {
-            const panelImg = (pictureSet && pictureSet[idx]?.image_url) || p.image_url;
-            const captionText = (pictureSet && (pictureSet[idx]?.caption || pictureSet[idx]?.title_en)) || p.caption;
+          {(pictureSet && pictureSet.length >= 3 ? pictureSet.slice(0, 3) : [
+            { panel: 1, image_url: "", caption: "Panel 1" },
+            { panel: 2, image_url: "", caption: "Panel 2" },
+            { panel: 3, image_url: "", caption: "Panel 3" }
+          ]).map((p, idx) => {
+            const panelImg = p.image_url || p.image || "";
+            const captionText = p.caption || p.title_en || `Panel ${idx + 1}`;
 
             return (
               <div key={idx} className="bg-white p-2 rounded-2xl border-2 border-indigo-200 shadow-md flex flex-col items-center hover:scale-[1.02] transition">
@@ -653,7 +653,6 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                     className="w-full h-full object-cover rounded-lg"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = `/images/week33/writing_panel_${idx + 1}.png`;
                     }}
                   />
                   <span className="absolute top-2 left-2 px-2.5 py-0.5 bg-amber-400 text-slate-950 rounded-md text-[10px] font-black uppercase tracking-wider shadow border border-amber-300">
@@ -691,7 +690,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
             <div className="flex items-center gap-1.5">
               <button
                 type="button"
-                onClick={() => speakText("Jake was walking carefully down the school corridor after science class. Suddenly, a boy slipped on the wet floor and hurt his knee. The school nurse arrived quickly with a clean bandage to help.")}
+                onClick={() => speakText(pictureMode.model_story || "Look at the three pictures and write your own story about what happened.")}
                 className="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md text-[10px] font-black flex items-center gap-1 transition shadow-xs"
               >
                 🔊 Listen Model Audio
@@ -709,7 +708,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
           {/* Collapsible Model Text */}
           {showModelText ? (
             <p className="text-xs text-indigo-950 font-medium italic leading-relaxed bg-white/90 p-2.5 rounded-xl border border-indigo-200 animate-in fade-in">
-              &ldquo;Jake <span className="text-emerald-700 font-bold underline">was walking carefully</span> <span className="text-blue-700 font-bold underline">down the school corridor</span>. Suddenly, a boy <span className="text-amber-700 font-bold underline">slipped on the wet floor</span>. The school nurse <span className="text-purple-700 font-bold underline">arrived with a clean bandage</span> to help.&rdquo;
+              &ldquo;{pictureMode.model_story || "Look at the three pictures and describe the beginning, middle problem, and happy ending using your own words."}&rdquo;
             </p>
           ) : (
             <p className="text-[11px] text-indigo-700 font-medium italic bg-white/50 px-2.5 py-1.5 rounded-lg border border-indigo-100 flex items-center justify-between">
@@ -728,7 +727,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
               <div className="p-2 bg-blue-50 rounded-xl border border-blue-200 space-y-1">
                 <span className="text-[9px] font-black uppercase text-blue-900 block">🔵 Setting & Time:</span>
                 <div className="flex flex-wrap gap-1">
-                  {["After science class", "down the school corridor", "On a Monday morning"].map((c, i) => (
+                  {["In the morning", "at the beginning", "during the journey"].map((c, i) => (
                     <button key={i} type="button" onClick={() => isStructured ? setSettingText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
                       className="px-2 py-0.5 bg-white hover:bg-blue-100 text-blue-950 border border-blue-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
                       + {c}
@@ -741,7 +740,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
               <div className="p-2 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1">
                 <span className="text-[9px] font-black uppercase text-emerald-900 block">🟢 Action & Manner:</span>
                 <div className="flex flex-wrap gap-1">
-                  {["was walking carefully", "was running very fast", "stopped immediately to help"].map((c, i) => (
+                  {["was walking carefully", "was moving forward", "worked together to explore"].map((c, i) => (
                     <button key={i} type="button" onClick={() => isStructured ? setActionText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
                       className="px-2 py-0.5 bg-white hover:bg-emerald-100 text-emerald-950 border border-emerald-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
                       + {c}
@@ -752,9 +751,9 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
 
               {/* 🟠 Problem Chunks */}
               <div className="p-2 bg-amber-50 rounded-xl border border-amber-200 space-y-1">
-                <span className="text-[9px] font-black uppercase text-amber-900 block">🟠 Problem & Hazard:</span>
+                <span className="text-[9px] font-black uppercase text-amber-900 block">🟠 Problem & Event:</span>
                 <div className="flex flex-wrap gap-1">
-                  {["slipped on the wet floor", "fell down heavily", "hurt his knee badly"].map((c, i) => (
+                  {["faced a challenge", "needed urgent help", "stopped immediately"].map((c, i) => (
                     <button key={i} type="button" onClick={() => isStructured ? setProblemText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
                       className="px-2 py-0.5 bg-white hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
                       + {c}
@@ -765,9 +764,9 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
 
               {/* 🟣 Solution Chunks */}
               <div className="p-2 bg-purple-50 rounded-xl border border-purple-200 space-y-1">
-                <span className="text-[9px] font-black uppercase text-purple-900 block">🟣 Solution & Care:</span>
+                <span className="text-[9px] font-black uppercase text-purple-900 block">🟣 Solution & Outcome:</span>
                 <div className="flex flex-wrap gap-1">
-                  {["called the school nurse", "with a clean bandage", "felt deeply relieved"].map((c, i) => (
+                  {["helped each other", "solved the problem", "felt relieved and happy"].map((c, i) => (
                     <button key={i} type="button" onClick={() => isStructured ? setSolutionText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
                       className="px-2 py-0.5 bg-white hover:bg-purple-100 text-purple-950 border border-purple-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
                       + {c}
@@ -793,7 +792,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 {settingText.trim().length >= 5 && <span className="text-[10px] font-bold text-emerald-600">✓ Complete</span>}
               </div>
               <div className="flex items-center gap-1.5 flex-wrap">
-                {["After science class,", "Down the school corridor,", "On a sunny Monday morning,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
+                {["In the morning,", "On a sunny day,", "At the start of the adventure,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
                   <button key={sIdx} type="button" onClick={() => setSettingText(prev => prev ? `${prev} ${starter}` : starter)}
                     className="px-2 py-0.5 bg-white hover:bg-blue-100 text-blue-950 border border-blue-300 rounded-md text-[10px] font-bold transition active:scale-95">
                     + {starter}
@@ -804,7 +803,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 rows={2}
                 value={settingText}
                 onChange={e => setSettingText(e.target.value)}
-                placeholder="Write sentence 1: Describe the setting (e.g. After science class, Jake was in the school corridor...)"
+                placeholder="Write sentence 1: Describe the setting..."
                 className="w-full p-2.5 bg-white border border-blue-300 rounded-xl text-xs font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
             </div>
@@ -818,7 +817,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 {actionText.trim().length >= 5 && <span className="text-[10px] font-bold text-emerald-600">✓ Complete</span>}
               </div>
               <div className="flex items-center gap-1.5 flex-wrap">
-                {["Jake was walking carefully,", "A student was running fast,", "Everyone was moving,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
+                {["The characters were exploring,", "They were walking together,", "Everyone was busy,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
                   <button key={sIdx} type="button" onClick={() => setActionText(prev => prev ? `${prev} ${starter}` : starter)}
                     className="px-2 py-0.5 bg-white hover:bg-emerald-100 text-emerald-950 border border-emerald-300 rounded-md text-[10px] font-bold transition active:scale-95">
                     + {starter}
@@ -829,7 +828,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 rows={2}
                 value={actionText}
                 onChange={e => setActionText(e.target.value)}
-                placeholder="Write sentence 2: What were the characters doing? (e.g. Jake was walking carefully down the corridor...)"
+                placeholder="Write sentence 2: What were the characters doing?..."
                 className="w-full p-2.5 bg-white border border-emerald-300 rounded-xl text-xs font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-400"
               />
             </div>
@@ -843,7 +842,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 {problemText.trim().length >= 5 && <span className="text-[10px] font-bold text-emerald-600">✓ Complete</span>}
               </div>
               <div className="flex items-center gap-1.5 flex-wrap">
-                {["Suddenly, a student slipped on the wet floor,", "Unexpectedly, he fell down heavily,", "All of a sudden, someone lost their balance,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
+                {["Suddenly, an unexpected problem arose,", "Unexpectedly, a challenge happened,", "All of a sudden, they stopped,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
                   <button key={sIdx} type="button" onClick={() => setProblemText(prev => prev ? `${prev} ${starter}` : starter)}
                     className="px-2 py-0.5 bg-white hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-md text-[10px] font-bold transition active:scale-95">
                     + {starter}
@@ -854,7 +853,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 rows={2}
                 value={problemText}
                 onChange={e => setProblemText(e.target.value)}
-                placeholder="Write sentence 3: What problem occurred? (e.g. Suddenly, a boy slipped on the wet floor and hurt his knee...)"
+                placeholder="Write sentence 3: What problem occurred?..."
                 className="w-full p-2.5 bg-white border border-amber-300 rounded-xl text-xs font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-400"
               />
             </div>
@@ -868,7 +867,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 {solutionText.trim().length >= 5 && <span className="text-[10px] font-bold text-emerald-600">✓ Complete</span>}
               </div>
               <div className="flex items-center gap-1.5 flex-wrap">
-                {["The school nurse arrived quickly,", "Immediately, Jake helped his friend,", "Fortunately, a clean bandage was applied,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
+                {["Fortunately, help arrived quickly,", "Working together, they solved it,", "In the end, everyone learned a lesson,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
                   <button key={sIdx} type="button" onClick={() => setSolutionText(prev => prev ? `${prev} ${starter}` : starter)}
                     className="px-2 py-0.5 bg-white hover:bg-purple-100 text-purple-950 border border-purple-300 rounded-md text-[10px] font-bold transition active:scale-95">
                     + {starter}

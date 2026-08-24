@@ -76,19 +76,11 @@ function DropZone({ id, label, currentPlaced, isCorrect, targetInfo, isTargeted,
 }
 
 const DEFAULT_SCIENCE_DATA = {
-  experimentTitle: "Corridor Friction & Safety Physics Lab",
-  diagramImage: "/images/week33/clil_friction.png",
-  labels: [
-    { id: "lbl_01", text: "Low Friction Zone", targetId: "target_01" },
-    { id: "lbl_02", text: "Forward Motion", targetId: "target_02" },
-    { id: "lbl_03", text: "Hazard Alert", targetId: "target_03" }
-  ],
-  targets: [
-    { id: "target_01", name: "Wet Floor Puddle", x: 50, y: 78 },
-    { id: "target_02", name: "Running Fast", x: 74, y: 38 },
-    { id: "target_03", name: "Yellow Caution Sign", x: 24, y: 55 }
-  ],
-  explanation: "Water makes the smooth floor very slippery and reduces friction to near zero, causing sudden slips."
+  experimentTitle: "Interactive Science Lab",
+  diagramImage: "",
+  labels: [],
+  targets: [],
+  explanation: "Interactive science exploration."
 };
 
 export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onComplete }) {
@@ -102,9 +94,9 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
   const labData = useMemo(() => {
     if (!scienceData) return DEFAULT_SCIENCE_DATA;
 
-    const experimentTitle = scienceData.title_en || scienceData.experimentTitle || "Corridor Friction Physics Lab";
-    const diagramImage = scienceData.background_image || scienceData.diagramImage || "/images/week33/clil_friction.png";
-    const explanation = scienceData.description_en || scienceData.explanation || "Water makes the smooth floor very slippery and reduces friction to near zero.";
+    const experimentTitle = scienceData.title_en || scienceData.experimentTitle || "Interactive Science Lab";
+    const diagramImage = scienceData.background_image || scienceData.diagramImage || "";
+    const explanation = scienceData.description_en || scienceData.explanation || "Interactive science exploration.";
 
     let targets = [];
     let labels = [];

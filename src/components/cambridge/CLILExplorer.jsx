@@ -21,9 +21,10 @@ export default function CLILExplorer({
   const [selectedAnswers, setSelectedAnswers] = useState({});
 
   // Default Paragraph Split
-  const fullText = clilData?.content_en || "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water acts like a slippery layer on the floor. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero!";
+  const fullText = clilData?.content_en || clilData?.content || "";
 
   const paragraphs = useMemo(() => {
+    if (!fullText) return ["", ""];
     const parts = fullText.split(/\n\n+/);
     if (parts.length >= 2) return [parts[0], parts.slice(1).join('\n\n')];
 
@@ -39,71 +40,44 @@ export default function CLILExplorer({
     ];
   }, [fullText]);
 
-  // 2 Questions for Paragraph 1 (with randomized options)
-  const questionsP1 = useMemo(() => [
-    {
-      id: "q1",
-      question: "What is Friction?",
-      options: ["A force that stops objects from sliding", "A type of water puddle", "A running shoe brand"],
-      shuffledOptions: ["A type of water puddle", "A force that stops objects from sliding", "A running shoe brand"].sort(() => 0.5 - Math.random()),
-      correct: "A force that stops objects from sliding"
-    },
-    {
-      id: "q2",
-      question: "Why was Jake safe on the dry floor?",
-      options: ["His rubber shoes created high friction", "The floor was wet", "He was running fast"],
-      shuffledOptions: ["The floor was wet", "He was running fast", "His rubber shoes created high friction"].sort(() => 0.5 - Math.random()),
-      correct: "His rubber shoes created high friction"
-    }
-  ], []);
+  // Questions derived from clilData
+  const allQuestions = useMemo(() => {
+    const rawQs = clilData?.comprehension_questions || clilData?.check_questions || [];
+    return rawQs.map((q, idx) => ({
+      id: q.id || `q_${idx + 1}`,
+      question: q.question || q.prompt || `Question ${idx + 1}`,
+      options: q.options || [],
+      shuffledOptions: [...(q.options || [])].sort(() => 0.5 - Math.random()),
+      correct: q.answer || (q.options && q.options[0]) || ""
+    }));
+  }, [clilData]);
 
-  // 2 Questions for Paragraph 2 (with randomized options)
-  const questionsP2 = useMemo(() => [
-    {
-      id: "q3",
-      question: "What happens when water is on the floor?",
-      options: ["Water acts like a slippery layer and reduces friction", "Friction becomes 100 times higher", "Shoes stick to the floor"],
-      shuffledOptions: ["Friction becomes 100 times higher", "Water acts like a slippery layer and reduces friction", "Shoes stick to the floor"].sort(() => 0.5 - Math.random()),
-      correct: "Water acts like a slippery layer and reduces friction"
-    },
-    {
-      id: "q4",
-      question: "What should students do when they see a yellow caution sign?",
-      options: ["Slow down and walk carefully", "Run as fast as possible", "Jump over the wet puddle"],
-      shuffledOptions: ["Run as fast as possible", "Jump over the wet puddle", "Slow down and walk carefully"].sort(() => 0.5 - Math.random()),
-      correct: "Slow down and walk carefully"
-    }
-  ], []);
+  const questionsP1 = useMemo(() => allQuestions.slice(0, 2), [allQuestions]);
+  const questionsP2 = useMemo(() => allQuestions.slice(2, 4), [allQuestions]);
 
-  // ━━ Sentence Builder Quest — tap scrambled chunks in correct order ━━
+  // Sentence Builder Quest — tap scrambled chunks in correct order
   const [sbIdx, setSbIdx] = useState(0);
   const [sbBuilt, setSbBuilt] = useState([]);
   const [sbResult, setSbResult] = useState(null);
 
-  const sentenceDrills = [
-    {
-      id: 1,
-      label: 'Describe the cause',
-      scrambled: ['on the wet floor,', 'Water acts', 'reducing friction', 'as a slippery layer'],
-      correct: ['Water acts', 'as a slippery layer', 'on the wet floor,', 'reducing friction'],
-    },
-    {
-      id: 2,
-      label: 'Explain the effect',
-      scrambled: ['lost their grip', 'and he slipped', 'As a result,', 'Tom\'s shoes'],
-      correct: ['As a result,', 'Tom\'s shoes', 'lost their grip', 'and he slipped'],
-    },
-    {
-      id: 3,
-      label: 'Give safety advice',
-      scrambled: ['down the corridor', 'Therefore,', 'carefully in rubber shoes', 'students should walk'],
-      correct: ['Therefore,', 'students should walk', 'carefully in rubber shoes', 'down the corridor'],
-    },
-  ];
+  const sentenceDrills = useMemo(() => {
+    if (clilData?.sentence_drills && Array.isArray(clilData.sentence_drills)) {
+      return clilData.sentence_drills;
+    }
+    return [
+      {
+        id: 1,
+        label: 'Summary 1',
+        scrambled: ['work together', 'Animals in nature', 'to survive'],
+        correct: ['Animals in nature', 'work together', 'to survive']
+      }
+    ];
+  }, [clilData]);
 
-  const sbDrill = sentenceDrills[sbIdx];
+  const sbDrill = sentenceDrills[sbIdx] || sentenceDrills[0];
 
   const sbRemaining = useMemo(() => {
+    if (!sbDrill || !sbDrill.scrambled) return [];
     const builtCounts = {};
     sbBuilt.forEach(c => { builtCounts[c] = (builtCounts[c] || 0) + 1; });
     const result = [];
@@ -115,7 +89,7 @@ export default function CLILExplorer({
       }
     });
     return result;
-  }, [sbBuilt, sbDrill]);
+  }, [sbDrill, sbBuilt]);
 
   const handleSbSelect = (chunk) => {
     setSbBuilt(prev => [...prev, chunk]);
@@ -154,7 +128,8 @@ export default function CLILExplorer({
     setIsPlayingAudio(true);
     try {
       await VoiceService.speak(textToPlay || fullText, 'explore');
-    } catch (_) {
+    } catch (err) {
+      console.warn('[CLIL Audio] playback error:', err);
     } finally {
       setIsPlayingAudio(false);
     }

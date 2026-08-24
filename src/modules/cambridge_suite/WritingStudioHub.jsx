@@ -32,32 +32,13 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const [structureResult, setStructureResult] = useState(null);
 
 
-  const picturePanels = data?.picture_story || data?.writing?.picture_story || data?.picturePanels || data?.writing?.picturePanels || [
-    {
-      panel_id: 'panel_1',
-      title_en: 'Panel 1: Running in the Corridor',
-      title_vi: 'Cảnh 1: Chạy Nhảy Tại Hành Lang Trường',
-      image_url: '/images/week33/writing_panel_1.png'
-    },
-    {
-      panel_id: 'panel_2',
-      title_en: 'Panel 2: Slipping on Wet Floor',
-      title_vi: 'Cảnh 2: Trượt Chân Trên Sàn Ướt',
-      image_url: '/images/week33/writing_panel_2.png'
-    },
-    {
-      panel_id: 'panel_3',
-      title_en: 'Panel 3: Nurse Applying Bandage',
-      title_vi: 'Cảnh 3: Y Tá Băng Bó Và Dọn Dẹp',
-      image_url: '/images/week33/writing_panel_3.png'
-    }
-  ];
+  const picturePanels = data?.picture_story || data?.writing?.picture_story || data?.picturePanels || data?.writing?.picturePanels || [];
 
   const wordBankPills = data?.word_bank_pills || data?.writing?.word_bank_pills || data?.wordBankPills || data?.writing?.wordBankPills || {
-    action_verbs: ['slipped', 'fell down', 'hurt knee', 'called nurse', 'applied bandage', 'helped clean', 'walked carefully'],
+    action_verbs: [],
     connectors: ['first', 'suddenly', 'then', 'while', 'because', 'so', 'finally'],
-    cumulative_chunks: ['slipped on wet floor', 'hurt his knee', 'called the school nurse', 'applied a clean bandage', 'cleaned the wet floor'],
-    grammar_boosters: ['was running', 'was walking carefully', 'were helping', 'had slipped']
+    cumulative_chunks: [],
+    grammar_boosters: []
   };
 
   const handleInsertPill = (word) => {
@@ -399,18 +380,17 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
               <div className="p-3 bg-amber-50 rounded-xl border border-amber-200 space-y-1">
                 <h4 className="text-xs font-black text-amber-950 uppercase">Suggested Core Vocab:</h4>
                 <p className="text-xs font-bold text-amber-900">
-                  corridor, slipped, fell down, nurse, bandage, cold pack, praised, carefully, immediately, relieved.
+                  {wordBankPills.action_verbs.join(', ') || 'explore, discover, describe, connect, conclude'}
                 </p>
               </div>
 
               <div className="p-3 bg-indigo-50 rounded-xl border border-indigo-200 space-y-1">
                 <h4 className="text-xs font-black text-indigo-950 uppercase">Suggested Collocations & Chunks:</h4>
                 <ul className="text-xs font-bold text-indigo-900 space-y-1 list-disc pl-4">
-                  <li>walked carefully down the school corridor</li>
-                  <li>slipped on the wet slippery tiles</li>
-                  <li>called the school nurse immediately</li>
-                  <li>applied a clean bandage and cold pack</li>
-                  <li>praised Jake for following safety rules</li>
+                  {wordBankPills.cumulative_chunks.length > 0 
+                    ? wordBankPills.cumulative_chunks.map((c, i) => <li key={i}>{c}</li>)
+                    : <li>describe the setting, action, and final result clearly</li>
+                  }
                 </ul>
               </div>
             </div>

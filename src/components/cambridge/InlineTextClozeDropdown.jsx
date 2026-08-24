@@ -15,7 +15,7 @@ function shuffleArray(array) {
   return shuffled;
 }
 
-export function InlineTextClozeDropdown({ customData, onComplete }) {
+export function InlineTextClozeDropdown({ customData, data: propData, onComplete }) {
   const [answers, setAnswers] = useState({});
   const [activeGapPopover, setActiveGapPopover] = useState(null);
   const [selectedTitle, setSelectedTitle] = useState(null);
@@ -23,61 +23,62 @@ export function InlineTextClozeDropdown({ customData, onComplete }) {
   const [score, setScore] = useState(null);
   const [shuffleSeed, setShuffleSeed] = useState(0);
 
-  // Fisher-Yates Shuffle 3 options per inline gap popover
-  const gapsData = useMemo(() => {
-    const rawGaps = customData?.gaps || [
-      { id: 1, target: "carefully", options: ["carefully", "careful", "care"] },
-      { id: 2, target: "corridor", options: ["corridor", "playground", "library"] },
-      { id: 3, target: "slipped", options: ["slipped", "slipping", "slips"] },
-      { id: 4, target: "fell", options: ["fell", "fallen", "falling"] },
-      { id: 5, target: "Without", options: ["Without", "With", "Within"] },
-      { id: 6, target: "called", options: ["called", "calling", "calls"] },
-      { id: 7, target: "nurse", options: ["nurse", "doctor", "teacher"] },
-      { id: 8, target: "bandage", options: ["bandage", "bandaged", "bandaging"] },
-      { id: 9, target: "praised", options: ["praised", "praise", "praising"] },
-      { id: 10, target: "relieved", options: ["relieved", "relief", "relieving"] }
-    ];
+  const activeData = customData || propData || {};
 
-    return rawGaps.map((g) => ({
-      ...g,
-      options: shuffleArray(g.options)
-    }));
-  }, [customData, shuffleSeed]);
+  // Construct gaps data from answers or gaps
+  const gapsData = useMemo(() => {
+    if (activeData?.gaps && Array.isArray(activeData.gaps)) {
+      return activeData.gaps.map((g) => ({
+        ...g,
+        options: shuffleArray(g.options || [g.target])
+      }));
+    }
+
+    if (activeData?.answers && typeof activeData.answers === 'object') {
+      const bankWords = (activeData.word_bank || []).map(w => typeof w === 'string' ? w : w.word);
+      return Object.entries(activeData.answers).map(([gapId, target]) => {
+        const distractors = bankWords.filter(w => w !== target).slice(0, 2);
+        const options = shuffleArray([target, ...distractors]);
+        return {
+          id: parseInt(gapId, 10),
+          target,
+          options
+        };
+      });
+    }
+
+    return [];
+  }, [activeData, shuffleSeed]);
 
   // Fisher-Yates Shuffle Story Title choices
   const titleOptions = useMemo(() => {
-    const rawTitles = customData?.title_options || [
-      { id: 1, title: "A Dangerous Run Near the Science Room", target: false },
-      { id: 2, title: "Jake's Responsible Action in the School Corridor", target: true },
-      { id: 3, title: "How Teachers Clean Science Experiments", target: false }
+    const rawTitles = activeData?.title_options || [
+      { id: 1, title: activeData?.title || "Story Cloze Activity", target: true }
     ];
     return shuffleArray(rawTitles);
-  }, [customData, shuffleSeed]);
+  }, [activeData, shuffleSeed]);
 
-
-  const storySegments = [
-    { type: 'text', content: "Jake was walking " },
-    { type: 'gap', gapId: 1 },
-    { type: 'text', content: " down the main school " },
-    { type: 'gap', gapId: 2 },
-    { type: 'text', content: " after his science class. Suddenly, a boy running fast " },
-    { type: 'gap', gapId: 3 },
-    { type: 'text', content: " on the wet tiles and " },
-    { type: 'gap', gapId: 4 },
-    { type: 'text', content: " heavily to the ground. " },
-    { type: 'gap', gapId: 5 },
-    { type: 'text', content: " hesitation, Jake stopped immediately and " },
-    { type: 'gap', gapId: 6 },
-    { type: 'text', content: " the school " },
-    { type: 'gap', gapId: 7 },
-    { type: 'text', content: ". The medical worker arrived quickly with a clean " },
-    { type: 'gap', gapId: 8 },
-    { type: 'text', content: " and treated his knee gently. The headmaster later " },
-    { type: 'gap', gapId: 9 },
-    { type: 'text', content: " Jake for following all safety rules, and everyone felt " },
-    { type: 'gap', gapId: 10 },
-    { type: 'text', content: " that the injured boy was safe." }
-  ];
+  const storySegments = useMemo(() => {
+    const rawTemplate = activeData?.text_template || activeData?.story_template || activeData?.story || "";
+    if (rawTemplate) {
+      const parts = [];
+      const regex = /\[(\d+)\](?:_{1,})?/g;
+      let lastIndex = 0;
+      let match;
+      while ((match = regex.exec(rawTemplate)) !== null) {
+        if (match.index > lastIndex) {
+          parts.push({ type: 'text', content: rawTemplate.slice(lastIndex, match.index) });
+        }
+        parts.push({ type: 'gap', gapId: parseInt(match[1], 10) });
+        lastIndex = regex.lastIndex;
+      }
+      if (lastIndex < rawTemplate.length) {
+        parts.push({ type: 'text', content: rawTemplate.slice(lastIndex) });
+      }
+      if (parts.length > 0) return parts;
+    }
+    return [];
+  }, [activeData]);
 
   const handleOptionSelect = (gapId, option) => {
     if (isSubmitted) return;

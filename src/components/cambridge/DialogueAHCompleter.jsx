@@ -15,53 +15,50 @@ function shuffleArray(array) {
   return shuffled;
 }
 
-export function DialogueAHCompleter({ customData, onComplete }) {
+export function DialogueAHCompleter({ customData, data: propData, onComplete }) {
   const [answers, setAnswers] = useState({});
   const [selectedGap, setSelectedGap] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
   const [shuffleSeed, setShuffleSeed] = useState(0);
 
+  const activeData = customData || propData || {};
+
   // Fisher-Yates Shuffle A-H Options and dynamically assign keys A to H
   const { ahOptions, targetKeyMap } = useMemo(() => {
-    const rawOptions = customData?.options || [
-      { id: "opt_1", text: "Yes, I was walking carefully down the corridor when Tom slipped on the wet floor.", for_gap: 1 },
-      { id: "opt_2", text: "Yes, he lost his balance on the wet tiles and hurt his knee quite badly.", for_gap: 2 },
-      { id: "opt_3", text: "I stopped immediately and ran to call the school nurse for help.", for_gap: 3 },
-      { id: "opt_4", text: "She placed a cold pack on his knee and wrapped it gently with a clean bandage.", for_gap: 4 },
-      { id: "opt_5", text: "Yes, he was very pleased that I followed all school safety rules.", for_gap: 5 },
-      { id: "opt_6", text: "I usually eat lunch with my classmates in the school cafeteria.", for_gap: null },
-      { id: "opt_7", text: "The yellow warning sign is placed next to the classroom entrance.", for_gap: null },
-      { id: "opt_8", text: "We have our science experiment every Tuesday morning at nine.", for_gap: null }
-    ];
-
+    const rawOptions = activeData?.options || [];
     const shuffled = shuffleArray(rawOptions);
     const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
     const keyMap = {};
     const formatted = shuffled.map((opt, idx) => {
-      const key = letters[idx];
+      const key = opt.key || letters[idx];
       if (opt.for_gap) keyMap[opt.for_gap] = key;
-      return { key, text: opt.text, id: opt.id };
+      return { key, text: opt.text, id: opt.id || `opt_${idx}` };
     });
 
     return { ahOptions: formatted, targetKeyMap: keyMap };
-  }, [customData, shuffleSeed]);
+  }, [activeData, shuffleSeed]);
 
   // Dynamically map target keys for the 5 dialogue gaps
   const dialogueExchanges = useMemo(() => {
-    const rawDialogue = customData?.dialogue || [
-      { gap_id: 1, speaker_a: "Harry", speaker_b: "Jake", text_a: "Hi Jake! Did you see what happened in the corridor after science class today?" },
-      { gap_id: 2, speaker_a: "Harry", speaker_b: "Jake", text_a: "Oh no! Did Tom hurt himself badly when he fell down?" },
-      { gap_id: 3, speaker_a: "Harry", speaker_b: "Jake", text_a: "What did you do right away to help him?" },
-      { gap_id: 4, speaker_a: "Harry", speaker_b: "Jake", text_a: "How did the school nurse treat Tom's injured knee?" },
-      { gap_id: 5, speaker_a: "Harry", speaker_b: "Jake", text_a: "The headmaster praised you during assembly, didn't he?" }
-    ];
+    let rawDialogue = activeData?.dialogue;
+    if (!rawDialogue && activeData?.turns) {
+      const spkA = activeData.speakerA || "Speaker A";
+      const spkB = activeData.speakerB || "Speaker B";
+      rawDialogue = activeData.turns.map(t => ({
+        gap_id: t.id,
+        speaker_a: spkA,
+        speaker_b: spkB,
+        text_a: t.prompt,
+        target_answer: t.answer_key
+      }));
+    }
 
-    return rawDialogue.map((ex) => ({
+    return (rawDialogue || []).map((ex) => ({
       ...ex,
-      target: targetKeyMap[ex.gap_id] || "A"
+      target: ex.target_answer || targetKeyMap[ex.gap_id] || "A"
     }));
-  }, [customData, targetKeyMap]);
+  }, [activeData, targetKeyMap]);
 
 
   // Map option keys to the gap they are currently assigned to

@@ -10,16 +10,10 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
   const [score, setScore] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const defaultNotes = notes || [
-    { id: 1, label: "Incident Location", hint: "Where did it happen?", target: "school corridor", audio_text: "The incident happened down the school corridor after science class." },
-    { id: 2, label: "Cause of Fall", hint: "Why did he slip?", target: "wet floor", audio_text: "The classmate running fast slipped on the wet floor." },
-    { id: 3, label: "Person Called", hint: "Who did Jake call?", target: "school nurse", audio_text: "Jake stopped immediately and called the school nurse." },
-    { id: 4, label: "First Aid Applied", hint: "What did nurse apply?", target: "clean bandage", audio_text: "The nurse treated his cut knee gently with a clean bandage." },
-    { id: 5, label: "School Rule", hint: "What rule to follow?", target: "never run", audio_text: "The headmaster reminded all students never to run in corridors." }
-  ];
+  const defaultNotes = notes || [];
 
   // Combine notes audio into 1 continuous dialogue audio passage if passageAudioText is not passed
-  const fullAudioPassage = passageAudioText || defaultNotes.map(n => n.audio_text).join(" ");
+  const fullAudioPassage = passageAudioText || defaultNotes.map(n => n.audio_text).filter(Boolean).join(" ");
 
   // Cleanup audio playback on unmount or tab switch
   useEffect(() => {

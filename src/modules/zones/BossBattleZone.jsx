@@ -25,7 +25,28 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
 
   const userShields = useUserStore((state) => state.userShields || 0);
   const rotaryConfig = getBossRotaryConfig(activeWeek || 1);
-  const bossData = data?.bossBattle || {};
+  const bossData = React.useMemo(() => {
+    if (data?.bossBattle && Object.keys(data.bossBattle).length > 0) return data.bossBattle;
+    return {
+      listening: {
+        p1: data?.listening_hub?.listening_p1 || data?.listeningHubData?.listening_p1,
+        p2: data?.listening_hub?.listening_p2_notes || data?.listeningHubData?.listening_p2_notes,
+        p3: data?.listening_hub?.listening_p3 || data?.listeningHubData?.listening_p3,
+        p5: data?.listening_hub?.listening_p5 || data?.listeningHubData?.listening_p5
+      },
+      readingWriting: {
+        p1: data?.writing_hub?.rw_part_1 || data?.writingHubData?.rw_part_1,
+        p2: data?.writing_hub?.rw_part_2 || data?.writingHubData?.rw_part_2,
+        p4: data?.writing_hub?.rw_part_4 || data?.writingHubData?.rw_part_4,
+        p5: data?.writing_hub?.rw_part_5 || data?.writingHubData?.rw_part_5,
+        p6: data?.reading_hub?.rw_part_6 || data?.readingHubData?.rw_part_6
+      },
+      speaking: {
+        p1_findDiff: data?.speaking_hub?.find_differences || data?.speakingHubData?.find_differences,
+        p2_cueCard: data?.speaking_hub?.info_exchange_cards || data?.speakingHubData?.info_exchange_cards
+      }
+    };
+  }, [data]);
 
   const initialIndex = React.useMemo(() => {
     if (forcedStation === 'rw_boss' || forcedStation === 'reading_boss' || forcedStation === 'boss_reading') return 1;
@@ -207,6 +228,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {/* LISTENING P1 */}
         {currentTask.id === 'list_p1' && bossData.listening?.p1 && (
           <SVGLineMatcher
+            customData={bossData.listening.p1}
             listeningData={bossData.listening.p1}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p1')}
@@ -216,6 +238,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {/* LISTENING P2 */}
         {currentTask.id === 'list_p2' && (
           <NotepadNoteCompleter
+            customData={bossData.listening?.p2}
             data={bossData.listening?.p2}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p2')}
@@ -225,6 +248,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {/* LISTENING P3 */}
         {currentTask.id === 'list_p3' && bossData.listening?.p3 && (
           <VisualMatchingAH
+            customData={bossData.listening.p3}
             matchingData={bossData.listening.p3}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p3')}
@@ -234,6 +258,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {/* LISTENING P5 */}
         {currentTask.id === 'list_p5' && bossData.listening?.p5 && (
           <SVGColorAndWrite
+            customData={bossData.listening.p5}
             data={bossData.listening.p5}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p5')}
@@ -243,6 +268,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {/* R&W P1 */}
         {currentTask.id === 'rw_p1' && bossData.readingWriting?.p1 && (
           <WordBankMatchingGrid
+            customData={bossData.readingWriting.p1}
             data={bossData.readingWriting.p1}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p1')}
@@ -252,6 +278,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {/* R&W P2 */}
         {currentTask.id === 'rw_p2' && bossData.readingWriting?.p2 && (
           <DialogueAHCompleter
+            customData={bossData.readingWriting.p2}
             data={bossData.readingWriting.p2}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p2')}
@@ -261,6 +288,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {/* R&W P4 */}
         {currentTask.id === 'rw_p4' && bossData.readingWriting?.p4 && (
           <InlineTextClozeDropdown
+            customData={bossData.readingWriting.p4}
             data={bossData.readingWriting.p4}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p4')}
@@ -270,6 +298,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {/* R&W P5 */}
         {currentTask.id === 'rw_p5' && bossData.readingWriting?.p5 && (
           <TextExtractionCompleter
+            customData={bossData.readingWriting.p5}
             data={bossData.readingWriting.p5}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p5')}
@@ -279,6 +308,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {/* R&W P6 */}
         {currentTask.id === 'rw_p6' && bossData.readingWriting?.p6 && (
           <OpenClozeCompleter
+            customData={bossData.readingWriting.p6}
             data={bossData.readingWriting.p6}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p6')}
@@ -288,7 +318,8 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {/* SPEAKING P1 */}
         {currentTask.id === 'spk_p1' && bossData.speaking?.p1_findDiff && (
           <FindDifferencesInteractive
-            speakingData={bossData.speaking.p1_findDiff}
+            customData={bossData.speaking.p1_findDiff}
+            data={bossData.speaking.p1_findDiff}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('spk_p1')}
           />
@@ -297,7 +328,8 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {/* SPEAKING P2 */}
         {currentTask.id === 'spk_p2' && bossData.speaking?.p2_cueCard && (
           <InformationExchangeP2
-            cueCardData={bossData.speaking.p2_cueCard}
+            customData={bossData.speaking.p2_cueCard}
+            data={bossData.speaking.p2_cueCard}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('spk_p2')}
           />

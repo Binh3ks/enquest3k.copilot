@@ -5,40 +5,55 @@ import CompletionModal from '../common/CompletionModal';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
 
-export function TextExtractionCompleter({ customData, onComplete }) {
+export function TextExtractionCompleter({ customData, data: propData, onComplete }) {
   const [answers, setAnswers] = useState({});
   const [activeParagraph, setActiveParagraph] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
 
-  // Default Story Passage & 7 Summary Sentences (Cambridge Reading & Writing Part 5 Standard: 1-4 Words Input)
-  const storyPassage = customData?.story || {
-    title: "Jake's Quick Action in the School Corridor",
-    paragraphs: [
-      {
-        id: 1,
-        text: "On a bright Friday morning, Jake was walking carefully down the main school corridor after finishing his science class. Suddenly, he noticed another student running very fast past the science room. The floor was slippery because a cleaner had just washed the tiles."
-      },
-      {
-        id: 2,
-        text: "The running classmate lost his balance and fell down heavily near the stairs. Right away, Jake stopped immediately and ran to call the school nurse. The nurse arrived within two minutes carrying a clean bandage and a cold pack to treat the boy's swollen knee."
-      },
-      {
-        id: 3,
-        text: "The headmaster praised Jake during assembly for following all school safety rules and helping his classmate responsibly. All the students felt relieved and promised to walk carefully down the corridor in the future."
-      }
-    ]
-  };
+  const activeData = customData || propData || {};
 
-  const summarySentences = customData?.summary_sentences || [
-    { id: 1, text_before: "Jake was walking down the school corridor after his ", text_after: ".", target: "science class", paragraph_ref: 1 },
-    { id: 2, text_before: "The floor was slippery because a cleaner had just ", text_after: " the tiles.", target: "washed", paragraph_ref: 1 },
-    { id: 3, text_before: "The classmate lost his balance and ", text_after: " heavily near the stairs.", target: "fell down", paragraph_ref: 2 },
-    { id: 4, text_before: "Jake ran to call the ", text_after: " for help.", target: "school nurse", paragraph_ref: 2 },
-    { id: 5, text_before: "The nurse used a clean bandage and a ", text_after: " to treat the boy.", target: "cold pack", paragraph_ref: 2 },
-    { id: 6, text_before: "The headmaster praised Jake during ", text_after: " for helping his classmate.", target: "assembly", paragraph_ref: 3 },
-    { id: 7, text_before: "All students promised to walk ", text_after: " in the corridor.", target: "carefully", paragraph_ref: 3 }
-  ];
+  // Normalize Story Passage
+  const storyPassage = useMemo(() => {
+    if (activeData?.story && activeData.story.paragraphs) {
+      return activeData.story;
+    }
+    if (activeData?.story_text) {
+      const paragraphs = activeData.story_text
+        .split('\n\n')
+        .filter(Boolean)
+        .map((p, idx) => ({ id: idx + 1, text: p.trim() }));
+
+      return {
+        title: activeData.title || "Reading Story Comprehension",
+        paragraphs: paragraphs.length > 0 ? paragraphs : [{ id: 1, text: activeData.story_text }]
+      };
+    }
+    return {
+      title: activeData?.title || "Story Passage",
+      paragraphs: [{ id: 1, text: "" }]
+    };
+  }, [activeData]);
+
+  // Normalize Summary Sentences
+  const summarySentences = useMemo(() => {
+    if (activeData?.summary_sentences && Array.isArray(activeData.summary_sentences)) {
+      return activeData.summary_sentences;
+    }
+    if (activeData?.questions && Array.isArray(activeData.questions)) {
+      return activeData.questions.map((q, idx) => {
+        const parts = (q.prompt || '').split('___');
+        return {
+          id: q.id || idx + 1,
+          text_before: parts[0] || '',
+          text_after: parts[1] || '.',
+          target: q.answer || q.target || '',
+          paragraph_ref: 1
+        };
+      });
+    }
+    return [];
+  }, [activeData]);
 
   // Helper to normalize string: trim spaces, lowercase, strip punctuation & leading articles (a, an, the)
   const normalizeText = (str) => {

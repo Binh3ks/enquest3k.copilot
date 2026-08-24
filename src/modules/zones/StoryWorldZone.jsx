@@ -137,11 +137,11 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   const streakDays = rawStreak ? (JSON.parse(rawStreak).days || 0) : 3;
   const novaStage = getNovaStage(streakDays);
 
-  const scenes = storyData.storyScenes || [];
-  const clilArticle = storyData.clilArticle || null;
-  const grammarRegex = storyData.grammarRegex || [];
-  const readExplore = storyData.readExplore || data?.readingHubData?.read_explore || data?.rawWeekData?.readExplore || {};
-  const atomicSentences = storyData.shadowingData?.sentences || storyData.shadowing?.sentences || data?.readingHubData?.shadowingData?.sentences || null;
+  const scenes = storyData.storyScenes || data?.reading_hub?.read_explore?.story_scenes || data?.readingHubData?.read_explore?.story_scenes || data?.reading_hub?.story_scenes || [];
+  const clilArticle = storyData.clilArticle || data?.reading_hub?.read_explore?.clil_article || data?.readingHubData?.read_explore?.clil_article || null;
+  const grammarRegex = storyData.grammarRegex || data?.reading_hub?.grammarRegex || [];
+  const readExplore = storyData.readExplore || data?.reading_hub?.read_explore || data?.readingHubData?.read_explore || data?.rawWeekData?.readExplore || {};
+  const atomicSentences = storyData.shadowingData?.sentences || storyData.shadowing?.sentences || data?.reading_hub?.shadowingData?.sentences || data?.readingHubData?.shadowingData?.sentences || null;
 
   const fullStoryText = readExplore.content_en || readExplore.text_en || readExplore.text || (atomicSentences ? atomicSentences.map(s => s.text).join(' ') : "");
 

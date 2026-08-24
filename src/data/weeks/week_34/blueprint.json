@@ -1,44 +1,52 @@
 {
   "week": 34,
-  "theme": "The Lion and the Mouse",
+  "theme": "The Lion and the Mouse: True Friendship",
   "cefr_level": "A2 Flyers",
-  "genre": "Aesop Fable & Nature Science",
-  "characters": ["Lion", "Mouse", "Hunters", "Leo", "Oliver"],
+  "stage": 1,
+  "story_title": "The Lion and the Mouse",
+  "clil_topic": "Animal Cooperation & Forest Ecosystems",
+  "math_focus": "Singapore Math: Part-Whole & Comparative Models",
+  "moral": "No act of kindness, no matter how small, is ever wasted.",
+  "grammar_focus": {
+    "structure": "Past Simple & Past Continuous",
+    "pattern_regex": "was|were.*ing"
+  },
+  "characters": [
+    "Leo the Lion",
+    "Milo the Mouse",
+    "Hunter Jack",
+    "Oliver the Owl"
+  ],
   "keywords": [
-    "lion",
-    "mouse",
     "sleeping",
-    "paw",
-    "caught",
-    "claws",
-    "promise",
-    "laughed",
-    "hunters",
-    "net",
-    "ropes",
+    "tiny",
+    "begged",
+    "trapped",
     "chewed",
     "freed",
-    "shady tree",
-    "best friends",
-    "oxpecker",
-    "zebra",
-    "cleaner fish",
-    "shark"
+    "grateful",
+    "promise"
   ],
-  "grammar_pattern": {
-    "name": "Past Continuous vs Past Simple with While / When",
-    "rule": "was/were + V-ing for background action, Past Simple for interrupting action",
-    "regex": "(was|were)\\s+\\w+ing"
-  },
-  "clil_topic": {
-    "title": "Animal Helpers in Nature",
-    "focus": "Symbiosis and mutual cooperation among animals (Oxpecker & Zebra, Cleaner fish & Sharks)"
-  },
-  "math_focus": {
-    "topic": "Forces, Friction & Pulley Ratios in Singapore Bar Models",
-    "num_models": 5
-  },
-  "rotary_cycle": 2,
-  "tested_skills": ["listening_p4", "listening_p5", "reading_p1"],
-  "target_shields": 3
+  "target_vocab_20": [
+    { "word": "lion", "definition_en": "a large wild cat known as the king of beasts", "definition_vi": "sư tử" },
+    { "word": "mouse", "definition_en": "a small rodent with a pointed nose and long tail", "definition_vi": "con chuột" },
+    { "word": "forest", "definition_en": "a large area covered chiefly with trees and undergrowth", "definition_vi": "khu rừng" },
+    { "word": "hunter", "definition_en": "a person who searches for wild animals to capture them", "definition_vi": "thợ săn" },
+    { "word": "trapped", "definition_en": "caught in a trap or unable to escape", "definition_vi": "bị mắc bẫy" },
+    { "word": "net", "definition_en": "a piece of mesh material used for catching animals", "definition_vi": "tấm lưới" },
+    { "word": "ropes", "definition_en": "strong thick cords made of twisted fibers", "definition_vi": "dây thừng" },
+    { "word": "chewed", "definition_en": "bitten repeatedly with teeth to break apart", "definition_vi": "gặm / nhai" },
+    { "word": "freed", "definition_en": "released from captivity or confinement", "definition_vi": "được trả tự do" },
+    { "word": "grateful", "definition_en": "feeling or showing an appreciation of kindness", "definition_vi": "biết ơn" },
+    { "word": "mighty", "definition_en": "possessing great and impressive power or strength", "definition_vi": "dũng mãnh" },
+    { "word": "tiny", "definition_en": "very small in size or amount", "definition_vi": "tí hon" },
+    { "word": "gentle", "definition_en": "mild in temperament or behavior; kind", "definition_vi": "hiền từ / nhẹ nhàng" },
+    { "word": "sharp", "definition_en": "having an edge or point that is able to cut easily", "definition_vi": "sắc nhọn" },
+    { "word": "roar", "definition_en": "a full, deep, prolonged cry uttered by a lion", "definition_vi": "tiếng gầm" },
+    { "word": "rescue", "definition_en": "save someone from a dangerous or distressing situation", "definition_vi": "giải cứu" },
+    { "word": "promise", "definition_en": "a declaration that one will definitely do something", "definition_vi": "lời hứa" },
+    { "word": "brave", "definition_en": "ready to face and endure danger or pain", "definition_vi": "dũng cảm" },
+    { "word": "loyal", "definition_en": "giving or showing firm and constant support", "definition_vi": "trung thành" },
+    { "word": "friendship", "definition_en": "the emotions or conduct of friends; the state of being friends", "definition_vi": "tình bạn" }
+  ]
 }

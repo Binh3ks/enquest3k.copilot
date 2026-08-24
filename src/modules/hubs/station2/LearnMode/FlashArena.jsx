@@ -7,65 +7,13 @@ import { Zap, Trophy, Timer, CheckCircle2, RotateCcw, Flame, Sparkles, Play, Pau
 const DEFAULT_MICRO_ROUNDS = [
   {
     id: 1,
-    name: '⚔️ Core Verbs Clash',
-    theme: 'Action Verbs',
+    name: '⚔️ Core Vocabulary Clash',
+    theme: 'Target Words',
     pairs: [
-      { id: 'm1_1', en: 'slipped', vi: 'trượt chân' },
-      { id: 'm1_2', en: 'fell down', vi: 'ngã xuống' },
-      { id: 'm1_3', en: 'called', vi: 'gọi' },
-      { id: 'm1_4', en: 'praised', vi: 'khen ngợi' },
-    ]
-  },
-  {
-    id: 2,
-    name: '🛡️ Safety Nouns Strike',
-    theme: 'Safety & People',
-    pairs: [
-      { id: 'm2_1', en: 'corridor', vi: 'hành lang' },
-      { id: 'm2_2', en: 'bandage', vi: 'băng cá nhân' },
-      { id: 'm2_3', en: 'nurse', vi: 'y tế / y tá' },
-      { id: 'm2_4', en: 'cold pack', vi: 'túi chườm lạnh' },
-    ]
-  },
-  {
-    id: 3,
-    name: '🧊 Relief & Science Sprint',
-    theme: 'Concepts & Feelings',
-    pairs: [
-      { id: 'm3_1', en: 'relieved', vi: 'nhẹ nhõm' },
-      { id: 'm3_2', en: 'friction', vi: 'lực ma sát' },
-      { id: 'm3_3', en: 'puddle', vi: 'vũng nước trơn' },
-      { id: 'm3_4', en: 'careful', vi: 'cẩn thận' },
-    ]
-  },
-  {
-    id: 4,
-    name: '🏃 Action Chunks Rush',
-    theme: 'Incident Phrases',
-    pairs: [
-      { id: 'm4_1', en: 'slipped on wet floor', vi: 'trượt chân trên sàn ướt' },
-      { id: 'm4_2', en: 'walking carefully', vi: 'đi bộ cẩn thận' },
-      { id: 'm4_3', en: 'lost his balance', vi: 'mất thăng bằng' },
-    ]
-  },
-  {
-    id: 5,
-    name: '🩹 First Aid Rescue',
-    theme: 'Emergency Chunks',
-    pairs: [
-      { id: 'm5_1', en: 'called the school nurse', vi: 'gọi y tá trường' },
-      { id: 'm5_2', en: 'applied a clean bandage', vi: 'băng bó sạch sẽ' },
-      { id: 'm5_3', en: 'hurt his knee', vi: 'bị thương đầu gối' },
-    ]
-  },
-  {
-    id: 6,
-    name: '🏆 Master Rules Duel',
-    theme: 'Rules & Collocations',
-    pairs: [
-      { id: 'm6_1', en: 'corridor safety rules', vi: 'quy tắc an toàn hành lang' },
-      { id: 'm6_2', en: 'wet floor warning sign', vi: 'biển báo sàn ướt' },
-      { id: 'm6_3', en: 'felt relieved', vi: 'cảm thấy nhẹ nhõm' },
+      { id: 'm1_1', en: 'explore', vi: 'khám phá' },
+      { id: 'm1_2', en: 'discover', vi: 'phát hiện' },
+      { id: 'm1_3', en: 'learn', vi: 'học tập' },
+      { id: 'm1_4', en: 'practice', vi: 'luyện tập' },
     ]
   }
 ];
@@ -83,22 +31,51 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
   const [timeLeft, setTimeLeft] = useState(60);
 
   const rounds = useMemo(() => {
+    // 1. Structured customSets object with categorized sets
     if (customSets && customSets.set1_nouns_adj && customSets.set2_verbs) {
-      // If dynamic customSets exist, construct 6 clean 3-4 item micro-rounds
       const s1 = customSets.set1_nouns_adj || [];
       const s2 = customSets.set2_verbs || [];
       const s3 = customSets.set3_chunks || [];
       const s4 = customSets.set4_definitions || [];
 
       return [
-        { id: 1, name: '⚔️ Verbs Attack', theme: 'Action Verbs', pairs: s2.slice(0, 4).length >= 3 ? s2.slice(0, 4) : DEFAULT_MICRO_ROUNDS[0].pairs },
-        { id: 2, name: '🛡️ Core Nouns Strike', theme: 'Key Vocabulary', pairs: s1.slice(0, 4).length >= 3 ? s1.slice(0, 4) : DEFAULT_MICRO_ROUNDS[1].pairs },
-        { id: 3, name: '🧊 Mixed Vocabulary Sprint', theme: 'Power Words', pairs: [...s1.slice(4, 6), ...s2.slice(4, 6)].length >= 3 ? [...s1.slice(4, 6), ...s2.slice(4, 6)] : DEFAULT_MICRO_ROUNDS[2].pairs },
-        { id: 4, name: '🏃 Chunks Blitz I', theme: 'Collocations', pairs: s3.slice(0, 3).length >= 3 ? s3.slice(0, 3) : DEFAULT_MICRO_ROUNDS[3].pairs },
-        { id: 5, name: '🩹 Chunks Blitz II', theme: 'Action Phrases', pairs: s3.slice(3, 6).length >= 3 ? s3.slice(3, 6) : DEFAULT_MICRO_ROUNDS[4].pairs },
-        { id: 6, name: '🏆 Master Definitions Duel', theme: 'Final Challenge', pairs: s4.slice(0, 3).length >= 3 ? s4.slice(0, 3) : DEFAULT_MICRO_ROUNDS[5].pairs },
-      ];
+        { id: 1, name: '⚔️ Action Verbs Attack', theme: 'Action Verbs', pairs: s2.slice(0, 4) },
+        { id: 2, name: '🛡️ Core Nouns Strike', theme: 'Key Vocabulary', pairs: s1.slice(0, 4) },
+        { id: 3, name: '🧊 Mixed Vocabulary Sprint', theme: 'Power Words', pairs: [...s1.slice(4, 6), ...s2.slice(4, 6)] },
+        { id: 4, name: '🏃 Chunks Blitz I', theme: 'Collocations', pairs: s3.slice(0, 3) },
+        { id: 5, name: '🩹 Chunks Blitz II', theme: 'Action Phrases', pairs: s3.slice(3, 6) },
+        { id: 6, name: '🏆 Master Definitions Duel', theme: 'Final Challenge', pairs: s4.slice(0, 3) },
+      ].filter(r => r.pairs && r.pairs.length >= 2);
     }
+
+    // 2. Array of vocab items [{ word, definition_vi }] or [{ en, vi }]
+    if (Array.isArray(customSets) && customSets.length > 0) {
+      const normalizedPairs = customSets.map((v, i) => ({
+        id: `v_${v.id || i + 1}`,
+        en: v.word || v.en || v.term || '',
+        vi: v.definition_vi || v.vi || v.meaning || ''
+      })).filter(p => p.en && p.vi);
+
+      if (normalizedPairs.length >= 4) {
+        const chunkSize = 4;
+        const generatedRounds = [];
+        for (let i = 0; i < normalizedPairs.length; i += chunkSize) {
+          const chunk = normalizedPairs.slice(i, i + chunkSize);
+          if (chunk.length >= 2) {
+            generatedRounds.push({
+              id: Math.floor(i / chunkSize) + 1,
+              name: `⚔️ Round ${Math.floor(i / chunkSize) + 1}: Word Clash`,
+              theme: 'Week Vocabulary',
+              pairs: chunk
+            });
+          }
+        }
+        if (generatedRounds.length > 0) {
+          return generatedRounds;
+        }
+      }
+    }
+
     return DEFAULT_MICRO_ROUNDS;
   }, [customSets]);
 

@@ -1,0 +1,1126 @@
+{
+  "week": 34,
+  "generated_at": "2026-08-24T11:36:50.881Z",
+  "quests": {
+    "gear1_webtoon": {
+      "parts": {
+        "scene_1": [
+          {
+            "role": "scene_1_visual",
+            "ref": "/images/week34/webtoon_scene_1.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_1.png",
+            "exists": true,
+            "size_bytes": 1992246,
+            "sha256": "3829199d92ad781d664ee70ae7497da1c668e4443d86f8ef7ce0d67786b60515",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "scene_2": [
+          {
+            "role": "scene_2_visual",
+            "ref": "/images/week34/webtoon_scene_2.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_2.png",
+            "exists": true,
+            "size_bytes": 1880716,
+            "sha256": "b82ee7acbd95099e3a9320e670881dd35270a3cbb8d78f33e16403ebf2c7fa12",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "scene_3": [
+          {
+            "role": "scene_3_visual",
+            "ref": "/images/week34/webtoon_scene_3.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_3.png",
+            "exists": true,
+            "size_bytes": 1831934,
+            "sha256": "499837ea0c8d61e662bdb218de856883ef0966dc954146ab86a486e732195cd3",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "scene_4": [
+          {
+            "role": "scene_4_visual",
+            "ref": "/images/week34/webtoon_scene_4.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_4.png",
+            "exists": true,
+            "size_bytes": 1986508,
+            "sha256": "3946468453b07fb0f453b6d39d49404ed26c62cde610096607004da8a88ac60a",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "scene_5": [
+          {
+            "role": "scene_5_visual",
+            "ref": "/images/week34/webtoon_scene_5.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_5.png",
+            "exists": true,
+            "size_bytes": 1871885,
+            "sha256": "3c318257cd69249fa8e3e0fb07e21c099d95834653176cb1e1df2ccfc300c70c",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ]
+      }
+    },
+    "gear2_karaoke": {
+      "parts": {
+        "sentence_1": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_1.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_1.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          }
+        ],
+        "sentence_2": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_2.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_2.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          }
+        ],
+        "sentence_3": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_3.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_3.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          }
+        ],
+        "sentence_4": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_4.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_4.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          }
+        ],
+        "sentence_5": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_5.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          }
+        ],
+        "sentence_6": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_6.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_6.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          }
+        ],
+        "sentence_7": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_7.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_7.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          }
+        ],
+        "sentence_8": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_8.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_8.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          }
+        ],
+        "sentence_9": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_9.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_9.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "optional"
+          }
+        ],
+        "sentence_10": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_10.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_10.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "optional"
+          }
+        ],
+        "sentence_11": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_11.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_11.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "optional"
+          }
+        ],
+        "sentence_12": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_12.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_12.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "optional"
+          }
+        ],
+        "sentence_13": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_13.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_13.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "optional"
+          }
+        ],
+        "sentence_14": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/shadowing_14.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/shadowing_14.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "optional"
+          }
+        ]
+      }
+    },
+    "gear3_retell": {
+      "parts": {
+        "story_full": [
+          {
+            "role": "full_audio",
+            "ref": "/audio/week34/read_full.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/read_full.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          }
+        ]
+      }
+    },
+    "gear4_clil": {
+      "parts": {
+        "article": [
+          {
+            "role": "cover_image",
+            "ref": "/images/week34/explore_cover_w34.jpg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/explore_cover_w34.jpg",
+            "exists": true,
+            "size_bytes": 1875223,
+            "sha256": "a8adf44bcf84cd8e45187b9ad4be25953df46558e7e7d55905c473011ac532ef",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "audio",
+            "ref": "/audio/week34/explore.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/explore.mp3",
+            "exists": true,
+            "size_bytes": 147744,
+            "sha256": "1621c8d95ae6db47adccc09b1de499bab488ac621dd215d680a6fe5340130153",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ]
+      }
+    },
+    "science_lab": {
+      "parts": {
+        "physics_sim": [
+          {
+            "role": "cover_image",
+            "ref": "/images/week34/explore_cover_w34.jpg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/explore_cover_w34.jpg",
+            "exists": true,
+            "size_bytes": 1875223,
+            "sha256": "a8adf44bcf84cd8e45187b9ad4be25953df46558e7e7d55905c473011ac532ef",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ]
+      }
+    },
+    "science_report": {
+      "parts": {
+        "report": [
+          {
+            "role": "audio",
+            "ref": "/audio/week34/explore.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/explore.mp3",
+            "exists": true,
+            "size_bytes": 147744,
+            "sha256": "1621c8d95ae6db47adccc09b1de499bab488ac621dd215d680a6fe5340130153",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ]
+      }
+    },
+    "word_blitz": {
+      "parts": {
+        "vocab_1": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_1.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_1.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "7ee843e1e7581969183392a376189fc275df8ae7d601060e93bdf4ca4ea7df9a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_2": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_2.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_2.mp3",
+            "exists": true,
+            "size_bytes": 28224,
+            "sha256": "76e867476ffb1b63fec8348fe6289c175f93e6b1979c4350dfa89b46c9a15cae",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_3": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_3.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_3.mp3",
+            "exists": true,
+            "size_bytes": 22656,
+            "sha256": "e9a6aac11c600bc5a6796fd9f02291e928ffe140303fba0a8ee9d4066b34a629",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_4": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_4.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_4.mp3",
+            "exists": true,
+            "size_bytes": 26304,
+            "sha256": "a8746e8a170cba7a9334e59e1c8fc4ecec3cd896993cb076ffac5e9bc2d74743",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_5": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_6": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_7": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_8": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_9": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_10": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_11": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_12": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_13": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_14": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_15": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_16": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_17": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_18": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_19": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "vocab_20": [
+          {
+            "role": "vocab_card_audio",
+            "ref": "/audio/week34/dictation_5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/dictation_5.mp3",
+            "exists": true,
+            "size_bytes": 27456,
+            "sha256": "1d8f88d5966755d2edc6b2e620ff90b77e35f88790bf56db84c43c89f061614a",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ]
+      }
+    },
+    "math_quest": {
+      "parts": {
+        "problem_1": [
+          {
+            "role": "bar_model_svg",
+            "ref": "/images/week34/barmodel_w34_adv_p1.svg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/barmodel_w34_adv_p1.svg",
+            "exists": true,
+            "size_bytes": 2735,
+            "sha256": "5e0464d4b195d8418687032f55dc8650c47038cfba13394d9882d669c7aba979",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "problem_2": [
+          {
+            "role": "bar_model_svg",
+            "ref": "/images/week34/barmodel_w34_adv_p2.svg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/barmodel_w34_adv_p2.svg",
+            "exists": true,
+            "size_bytes": 2718,
+            "sha256": "b92b4dbb64fd4e20e7760fa6df06b0b87dfba5639752d150cdec05c689fd317f",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "problem_3": [
+          {
+            "role": "bar_model_svg",
+            "ref": "/images/week34/barmodel_w34_adv_p3.svg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/barmodel_w34_adv_p3.svg",
+            "exists": true,
+            "size_bytes": 2377,
+            "sha256": "23147db35bd876917ce59cbe240295a51f378cc17e84ea99930e018fadb661f6",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "problem_4": [
+          {
+            "role": "bar_model_svg",
+            "ref": "/images/week34/barmodel_w34_adv_p4.svg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/barmodel_w34_adv_p4.svg",
+            "exists": true,
+            "size_bytes": 2737,
+            "sha256": "a9287015090181c37b7bc0e47eec21e6cd7c97f1a23a21bc3f7314fc038727f8",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "problem_5": [
+          {
+            "role": "bar_model_svg",
+            "ref": "/images/week34/barmodel_w34_adv_p5.svg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/barmodel_w34_adv_p5.svg",
+            "exists": true,
+            "size_bytes": 3060,
+            "sha256": "e64fbb55c2cce72e5aff880a1765cd566e80bc3d4844a0054ec74c715c532899",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ]
+      }
+    },
+    "story_writer": {
+      "parts": {
+        "panel_1": [
+          {
+            "role": "story_panel",
+            "ref": "/images/week34/webtoon_scene_1.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_1.png",
+            "exists": true,
+            "size_bytes": 1992246,
+            "sha256": "3829199d92ad781d664ee70ae7497da1c668e4443d86f8ef7ce0d67786b60515",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "panel_2": [
+          {
+            "role": "story_panel",
+            "ref": "/images/week34/webtoon_scene_2.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_2.png",
+            "exists": true,
+            "size_bytes": 1880716,
+            "sha256": "b82ee7acbd95099e3a9320e670881dd35270a3cbb8d78f33e16403ebf2c7fa12",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "panel_3": [
+          {
+            "role": "story_panel",
+            "ref": "/images/week34/webtoon_scene_3.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_3.png",
+            "exists": true,
+            "size_bytes": 1831934,
+            "sha256": "499837ea0c8d61e662bdb218de856883ef0966dc954146ab86a486e732195cd3",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ]
+      }
+    },
+    "broadcast_studio": {
+      "parts": {
+        "video": [
+          {
+            "role": "poster",
+            "ref": "/images/week34/read_cover_w34.jpg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/read_cover_w34.jpg",
+            "exists": true,
+            "size_bytes": 1730566,
+            "sha256": "577164a5277a2c528547291bf77023dcf51bb416349f263ea869bc99579b27b0",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ]
+      }
+    },
+    "info_exchange": {
+      "parts": {
+        "p2_cards": [
+          {
+            "role": "cue_card",
+            "ref": "/images/week34/read_cover_w34.jpg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/read_cover_w34.jpg",
+            "exists": true,
+            "size_bytes": 1730566,
+            "sha256": "577164a5277a2c528547291bf77023dcf51bb416349f263ea869bc99579b27b0",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ]
+      }
+    },
+    "boss_listening": {
+      "parts": {
+        "p1_draw_lines": [
+          {
+            "role": "scene_image",
+            "ref": "/images/week34/read_cover_w34.jpg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/read_cover_w34.jpg",
+            "exists": true,
+            "size_bytes": 1730566,
+            "sha256": "577164a5277a2c528547291bf77023dcf51bb416349f263ea869bc99579b27b0",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "target_1_audio",
+            "ref": "/audio/week34/listening_p1_target1.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p1_target1.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          },
+          {
+            "role": "target_2_audio",
+            "ref": "/audio/week34/listening_p1_target2.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p1_target2.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          },
+          {
+            "role": "target_3_audio",
+            "ref": "/audio/week34/listening_p1_target3.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p1_target3.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          },
+          {
+            "role": "target_4_audio",
+            "ref": "/audio/week34/listening_p1_target4.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p1_target4.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          },
+          {
+            "role": "target_5_audio",
+            "ref": "/audio/week34/listening_p1_target5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p1_target5.mp3",
+            "exists": false,
+            "size_bytes": 0,
+            "sha256": null,
+            "status": "missing",
+            "requirement": "required"
+          }
+        ],
+        "p2_note_taking": [
+          {
+            "role": "full_audio",
+            "ref": "/audio/week34/listening_p2_full.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p2_full.mp3",
+            "exists": true,
+            "size_bytes": 252480,
+            "sha256": "755505c68d82b82d9dd52728c8a780949766410b5886b0f8a94eb2a55068f67a",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "p3_match_days": [
+          {
+            "role": "item_1_audio",
+            "ref": "/audio/week34/listening_p3_item1.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p3_item1.mp3",
+            "exists": true,
+            "size_bytes": 49536,
+            "sha256": "8060c49aa2d0be4d7e558af7faa73272d9114e98b0909b882b8e555e5e5919d3",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "item_2_audio",
+            "ref": "/audio/week34/listening_p3_item2.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p3_item2.mp3",
+            "exists": true,
+            "size_bytes": 39744,
+            "sha256": "bcbcbf4e09db5a8b76b786ad4cbcb2a899c6a0c7d38dd194e0d11c7e872d0c29",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "item_3_audio",
+            "ref": "/audio/week34/listening_p3_item3.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p3_item3.mp3",
+            "exists": true,
+            "size_bytes": 49536,
+            "sha256": "142ddbf92f0cd9b74903d8738b1548c729b585f20b252a968131f7e1c38f5e6b",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "item_4_audio",
+            "ref": "/audio/week34/listening_p3_item4.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p3_item4.mp3",
+            "exists": true,
+            "size_bytes": 44544,
+            "sha256": "ab3138cc54587cc3f7dc762afcdb3e7a97fac02b95e860c51f80754c7377a416",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "item_5_audio",
+            "ref": "/audio/week34/listening_p3_item5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p3_item5.mp3",
+            "exists": true,
+            "size_bytes": 53568,
+            "sha256": "808caa1885f2f2e180e64a5bac05d19be974aa5559aa90aa58eba39eee05048d",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "p4_mcq": [
+          {
+            "role": "question_1_audio",
+            "ref": "/audio/week34/listening_p4_q1.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p4_q1.mp3",
+            "exists": true,
+            "size_bytes": 22848,
+            "sha256": "e4d1f6929c2e163652f108d6e2bf8051b61b20e53ec9a38376e8efa99a285527",
+            "status": "valid",
+            "requirement": "optional"
+          },
+          {
+            "role": "question_2_audio",
+            "ref": "/audio/week34/listening_p4_q2.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p4_q2.mp3",
+            "exists": true,
+            "size_bytes": 26208,
+            "sha256": "da0da8e12ebeb8960de51ced6dde4339d07ae086874c25bad6ef1058d547630e",
+            "status": "valid",
+            "requirement": "optional"
+          },
+          {
+            "role": "question_3_audio",
+            "ref": "/audio/week34/listening_p4_q3.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p4_q3.mp3",
+            "exists": true,
+            "size_bytes": 23904,
+            "sha256": "2f28c9b47d5cc6f0c5ee7403deafeb15fd8fc56ddbbf5026bbac79bcc143897b",
+            "status": "valid",
+            "requirement": "optional"
+          },
+          {
+            "role": "question_4_audio",
+            "ref": "/audio/week34/listening_p4_q4.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p4_q4.mp3",
+            "exists": true,
+            "size_bytes": 24768,
+            "sha256": "107497139a7148d4494b9069ef21182f06b0e75237722cb008ca04419328921d",
+            "status": "valid",
+            "requirement": "optional"
+          },
+          {
+            "role": "question_5_audio",
+            "ref": "/audio/week34/listening_p4_q5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p4_q5.mp3",
+            "exists": true,
+            "size_bytes": 23328,
+            "sha256": "dde36e76aff7204e569540a2ea7d4e3e5740f4feb3a1875d171a0092dd8d2608",
+            "status": "valid",
+            "requirement": "optional"
+          }
+        ],
+        "p5_color_write": [
+          {
+            "role": "scene_coloring",
+            "ref": "/images/week34/explore_cover_w34.jpg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/explore_cover_w34.jpg",
+            "exists": true,
+            "size_bytes": 1875223,
+            "sha256": "a8adf44bcf84cd8e45187b9ad4be25953df46558e7e7d55905c473011ac532ef",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "inst_1_audio",
+            "ref": "/audio/week34/listening_p5_inst1.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p5_inst1.mp3",
+            "exists": true,
+            "size_bytes": 11904,
+            "sha256": "2afed0292afefbea471ca1e1fc2bea854bc682a1d73ee26725f24094339b6bf0",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "inst_2_audio",
+            "ref": "/audio/week34/listening_p5_inst2.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p5_inst2.mp3",
+            "exists": true,
+            "size_bytes": 15456,
+            "sha256": "4b3c6d2009ee2eba603c3b9483d56d09a79f0f779dadde27717d138a60c6c781",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "inst_3_audio",
+            "ref": "/audio/week34/listening_p5_inst3.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p5_inst3.mp3",
+            "exists": true,
+            "size_bytes": 14784,
+            "sha256": "0b7a8ecfb556bb88dffd67398e83e5c3d5d25e9c1dd16e868d826c8fd640a8b4",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "inst_4_audio",
+            "ref": "/audio/week34/listening_p5_inst4.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p5_inst4.mp3",
+            "exists": true,
+            "size_bytes": 16416,
+            "sha256": "efb9bd602ec60ec6537729655cdadcd6fd0aa1aa250938fe31a158b844c89d97",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "inst_5_audio",
+            "ref": "/audio/week34/listening_p5_inst5.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/listening_p5_inst5.mp3",
+            "exists": true,
+            "size_bytes": 17472,
+            "sha256": "7798d63a9d11251d35f789056d4da8d555e2291b9f49c3be8349cd45930d8217",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ]
+      }
+    },
+    "boss_reading": {
+      "parts": {
+        "p1_defs": [
+          {
+            "role": "text_only",
+            "ref": "none",
+            "status": "no-image-by-design",
+            "exists": true
+          }
+        ],
+        "p2_dialogue": [
+          {
+            "role": "text_only",
+            "ref": "none",
+            "status": "no-image-by-design",
+            "exists": true
+          }
+        ],
+        "p3_story_gaps": [
+          {
+            "role": "text_only",
+            "ref": "none",
+            "status": "no-image-by-design",
+            "exists": true
+          }
+        ],
+        "p4_grammar_mcq": [
+          {
+            "role": "text_only",
+            "ref": "none",
+            "status": "no-image-by-design",
+            "exists": true
+          }
+        ],
+        "p5_long_story": [
+          {
+            "role": "story_illustration",
+            "ref": "/images/week34/read_cover_w34.jpg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/read_cover_w34.jpg",
+            "exists": true,
+            "size_bytes": 1730566,
+            "sha256": "577164a5277a2c528547291bf77023dcf51bb416349f263ea869bc99579b27b0",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "p6_open_cloze": [
+          {
+            "role": "text_only",
+            "ref": "none",
+            "status": "no-image-by-design",
+            "exists": true
+          }
+        ],
+        "p7_picture_story": [
+          {
+            "role": "panel_1",
+            "ref": "/images/week34/webtoon_scene_1.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_1.png",
+            "exists": true,
+            "size_bytes": 1992246,
+            "sha256": "3829199d92ad781d664ee70ae7497da1c668e4443d86f8ef7ce0d67786b60515",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "panel_2",
+            "ref": "/images/week34/webtoon_scene_2.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_2.png",
+            "exists": true,
+            "size_bytes": 1880716,
+            "sha256": "b82ee7acbd95099e3a9320e670881dd35270a3cbb8d78f33e16403ebf2c7fa12",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "panel_3",
+            "ref": "/images/week34/webtoon_scene_3.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_3.png",
+            "exists": true,
+            "size_bytes": 1831934,
+            "sha256": "499837ea0c8d61e662bdb218de856883ef0966dc954146ab86a486e732195cd3",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ]
+      }
+    },
+    "weekly_review": {
+      "parts": {
+        "speaking_p1": [
+          {
+            "role": "scene_find_diff",
+            "ref": "/images/week34/webtoon_scene_1.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_1.png",
+            "exists": true,
+            "size_bytes": 1992246,
+            "sha256": "3829199d92ad781d664ee70ae7497da1c668e4443d86f8ef7ce0d67786b60515",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "speaking_p2": [
+          {
+            "role": "info_exchange_cards",
+            "ref": "/images/week34/read_cover_w34.jpg",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/read_cover_w34.jpg",
+            "exists": true,
+            "size_bytes": 1730566,
+            "sha256": "577164a5277a2c528547291bf77023dcf51bb416349f263ea869bc99579b27b0",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "speaking_p3": [
+          {
+            "role": "story_sequence_pic_1",
+            "ref": "/images/week34/webtoon_scene_1.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_1.png",
+            "exists": true,
+            "size_bytes": 1992246,
+            "sha256": "3829199d92ad781d664ee70ae7497da1c668e4443d86f8ef7ce0d67786b60515",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "story_sequence_pic_2",
+            "ref": "/images/week34/webtoon_scene_2.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_2.png",
+            "exists": true,
+            "size_bytes": 1880716,
+            "sha256": "b82ee7acbd95099e3a9320e670881dd35270a3cbb8d78f33e16403ebf2c7fa12",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "story_sequence_pic_3",
+            "ref": "/images/week34/webtoon_scene_3.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_3.png",
+            "exists": true,
+            "size_bytes": 1831934,
+            "sha256": "499837ea0c8d61e662bdb218de856883ef0966dc954146ab86a486e732195cd3",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "story_sequence_pic_4",
+            "ref": "/images/week34/webtoon_scene_4.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_4.png",
+            "exists": true,
+            "size_bytes": 1986508,
+            "sha256": "3946468453b07fb0f453b6d39d49404ed26c62cde610096607004da8a88ac60a",
+            "status": "valid",
+            "requirement": "required"
+          },
+          {
+            "role": "story_sequence_pic_5",
+            "ref": "/images/week34/webtoon_scene_5.png",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/images/week34/webtoon_scene_5.png",
+            "exists": true,
+            "size_bytes": 1871885,
+            "sha256": "3c318257cd69249fa8e3e0fb07e21c099d95834653176cb1e1df2ccfc300c70c",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ],
+        "speaking_p4": [
+          {
+            "role": "personal_questions_audio",
+            "ref": "/audio/week34/explore.mp3",
+            "local_path": "/Users/binhnguyen/projects/Engquest3k/public/audio/week34/explore.mp3",
+            "exists": true,
+            "size_bytes": 147744,
+            "sha256": "1621c8d95ae6db47adccc09b1de499bab488ac621dd215d680a6fe5340130153",
+            "status": "valid",
+            "requirement": "required"
+          }
+        ]
+      }
+    }
+  },
+  "summary": {
+    "total_audio": 59,
+    "total_images": 25,
+    "total_svgs": 5,
+    "missing_files": 14
+  }
+}

@@ -63,58 +63,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   }, [activeTab, learnSubTab]);
 
 
-    const storyScenes = data?.story_scenes || [
-    {
-      scene_id: 'scene_1',
-      title_en: 'Scene 1: Walking Down the Corridor',
-      description_en: 'Jake was walking **carefully** down the school **corridor** after science class.',
-      image_url: '/images/week33/webtoon_scene_1.png',
-      lexical_chunks: [
-        { word: 'corridor', chunk: 'school corridor', x: 45, y: 55 },
-        { word: 'carefully', chunk: 'walking carefully', x: 25, y: 40 }
-      ]
-    },
-    {
-      scene_id: 'scene_2',
-      title_en: 'Scene 2: Slipping on the Wet Floor',
-      description_en: 'A boy running fast **slipped on the wet floor** and **fell down** heavily.',
-      image_url: '/images/week33/webtoon_scene_2.png',
-      lexical_chunks: [
-        { word: 'slipped', chunk: 'slipped on wet floor', x: 50, y: 70 },
-        { word: 'fell', chunk: 'fell down heavily', x: 60, y: 80 }
-      ]
-    },
-    {
-      scene_id: 'scene_3',
-      title_en: 'Scene 3: Calling the School Nurse',
-      description_en: 'Jake stopped immediately and **called the school nurse** for medical help.',
-      image_url: '/images/week33/webtoon_scene_3.png',
-      lexical_chunks: [
-        { word: 'nurse', chunk: 'school nurse', x: 35, y: 50 },
-        { word: 'called', chunk: 'called immediately', x: 55, y: 60 }
-      ]
-    },
-    {
-      scene_id: 'scene_4',
-      title_en: 'Scene 4: Applying First Aid & Bandage',
-      description_en: 'The nurse arrived quickly with a **clean bandage** and a **cold pack**.',
-      image_url: '/images/week33/webtoon_scene_4.png',
-      lexical_chunks: [
-        { word: 'bandage', chunk: 'clean bandage', x: 40, y: 60 },
-        { word: 'cold_pack', chunk: 'cold pack', x: 60, y: 65 }
-      ]
-    },
-    {
-      scene_id: 'scene_5',
-      title_en: 'Scene 5: Feeling Relieved & Praised',
-      description_en: 'Everyone **felt relieved** and the headmaster **praised Jake** for following safety rules.',
-      image_url: '/images/week33/webtoon_scene_5.png',
-      lexical_chunks: [
-        { word: 'relieved', chunk: 'felt relieved', x: 45, y: 50 },
-        { word: 'praised', chunk: 'praised Jake', x: 65, y: 55 }
-      ]
-    }
-  ];
+    const storyScenes = data?.story_scenes || [];
 
     const interactiveStory = data?.interactive_story || {
     title: "Interactive Story: Corridor Safety Incident",
@@ -193,60 +142,9 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   ];
 
   const readingPart3Data = data?.reading_part3_story || {
-    title: "Nova's Story Discovery — Tom's Morning Adventure",
-    story_text: "Tom had a very eventful Saturday morning. While he was waking up, his alarm clock rang loudly. He reached over clumsily and accidentally knocked it off the table. Later, while he was rushing downstairs to have breakfast, he slipped on a wet puddle on the kitchen floor. To make things worse, he dropped his glass of juice over his English notebook. Fortunately, his sister Mia helped him clean the floor, and he promised to be more cautious.",
-    questions: [
-      {
-        id: "r3_q01",
-        question: "Why did Tom knock his alarm clock off the table?",
-        options: [
-          { label: "A", text: "Because he reached over clumsily while waking up.", isCorrect: true },
-          { label: "B", text: "Because he wanted to break it on purpose.", isCorrect: false },
-          { label: "C", text: "Because his dog jumped onto his bed.", isCorrect: false }
-        ],
-        answerIndex: 0
-      },
-      {
-        id: "r3_q02",
-        question: "What happened while Tom was rushing downstairs?",
-        options: [
-          { label: "A", text: "He slipped on a wet puddle on the kitchen floor.", isCorrect: true },
-          { label: "B", text: "He met his teacher at the front door.", isCorrect: false },
-          { label: "C", text: "He dropped his shoes into the sink.", isCorrect: false }
-        ],
-        answerIndex: 0
-      },
-      {
-        id: "r3_q03",
-        question: "What was damaged when Tom dropped his glass of juice?",
-        options: [
-          { label: "A", text: "His English notebook.", isCorrect: true },
-          { label: "B", text: "His new sports shoes.", isCorrect: false },
-          { label: "C", text: "His mother's phone.", isCorrect: false }
-        ],
-        answerIndex: 0
-      },
-      {
-        id: "r3_q04",
-        question: "Who helped Tom clean up the kitchen floor?",
-        options: [
-          { label: "A", text: "His sister Mia.", isCorrect: true },
-          { label: "B", text: "His school bus driver.", isCorrect: false },
-          { label: "C", text: "His neighbor Mr. Green.", isCorrect: false }
-        ],
-        answerIndex: 0
-      },
-      {
-        id: "r3_q05",
-        question: "What did Tom promise to do next time?",
-        options: [
-          { label: "A", text: "To be more cautious in the morning.", isCorrect: true },
-          { label: "B", text: "To sleep all day on Saturday.", isCorrect: false },
-          { label: "C", text: "To buy a new alarm clock.", isCorrect: false }
-        ],
-        answerIndex: 0
-      }
-    ]
+    title: "Story Discovery",
+    story_text: "",
+    questions: []
   };
 
   const currentFrame = storyScenes[activeFrameIndex] || storyScenes[0];

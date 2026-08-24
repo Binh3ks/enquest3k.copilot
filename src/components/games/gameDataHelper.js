@@ -12,26 +12,26 @@ const easyVocabModules = import.meta.glob('../../data/weeks_easy/**/vocab.js', {
 
 // Universal fallback vocabulary if week data is not yet generated
 const DEFAULT_FALLBACK_VOCAB = [
-  { word: 'corridor', definition_en: 'a long passage in a school building', definition_vi: 'hành lang', audio_word: '/audio/week33/vocab_corridor.mp3' },
-  { word: 'slipped', definition_en: 'lost footing on a smooth surface', definition_vi: 'bị trượt ngã', audio_word: '/audio/week33/vocab_slipped.mp3' },
-  { word: 'nurse', definition_en: 'a person trained to treat injured students', definition_vi: 'cô y tá', audio_word: '/audio/week33/vocab_nurse.mp3' },
-  { word: 'bandage', definition_en: 'a clean cloth wrapped around a cut', definition_vi: 'băng gạc', audio_word: '/audio/week33/vocab_bandage.mp3' },
-  { word: 'friction', definition_en: 'a physical force that prevents sliding', definition_vi: 'lực ma sát', audio_word: '/audio/week33/vocab_friction.mp3' },
-  { word: 'relieved', definition_en: 'feeling calm after danger has passed', definition_vi: 'nhẹ nhõm', audio_word: '/audio/week33/vocab_relieved.mp3' },
-  { word: 'caution', definition_en: 'careful attention to prevent accidents', definition_vi: 'cẩn trọng', audio_word: '/audio/week33/vocab_caution.mp3' },
-  { word: 'momentum', definition_en: 'forward driving force of a moving body', definition_vi: 'động lượng', audio_word: '/audio/week33/vocab_momentum.mp3' },
-  { word: 'velocity', definition_en: 'speed of an object in a direction', definition_vi: 'vận tốc', audio_word: '/audio/week33/vocab_velocity.mp3' },
-  { word: 'medical', definition_en: 'related to health care and healing wounds', definition_vi: 'y tế', audio_word: '/audio/week33/vocab_medical.mp3' },
-  { word: 'mistake', definition_en: 'an action or decision that is incorrect', definition_vi: 'sai sót', audio_word: '/audio/week33/vocab_mistake.mp3' },
-  { word: 'careful', definition_en: 'giving serious attention to avoid harm', definition_vi: 'cẩn thận', audio_word: '/audio/week33/vocab_careful.mp3' },
-  { word: 'surface', definition_en: 'the top or outside layer of something', definition_vi: 'bề mặt', audio_word: '/audio/week33/vocab_surface.mp3' },
-  { word: 'accident', definition_en: 'an unexpected event that causes harm', definition_vi: 'tai nạn', audio_word: '/audio/week33/vocab_accident.mp3' },
-  { word: 'treatment', definition_en: 'medical care given to an injured person', definition_vi: 'sự điều trị', audio_word: '/audio/week33/vocab_treatment.mp3' },
-  { word: 'emergency', definition_en: 'a serious situation needing quick action', definition_vi: 'khẩn cấp', audio_word: '/audio/week33/vocab_emergency.mp3' },
-  { word: 'recovery', definition_en: 'the process of becoming healthy again', definition_vi: 'hồi phục', audio_word: '/audio/week33/vocab_recovery.mp3' },
-  { word: 'distance', definition_en: 'the amount of space between two points', definition_vi: 'khoảng cách', audio_word: '/audio/week33/vocab_distance.mp3' },
-  { word: 'gravity', definition_en: 'the force that pulls objects to earth', definition_vi: 'trọng lực', audio_word: '/audio/week33/vocab_gravity.mp3' },
-  { word: 'prevention', definition_en: 'stopping something bad from happening', definition_vi: 'phòng ngừa', audio_word: '/audio/week33/vocab_prevention.mp3' },
+  { word: 'explore', definition_en: 'travel in order to learn about something', definition_vi: 'khám phá', audio_word: '' },
+  { word: 'discover', definition_en: 'find unexpectedly or during a search', definition_vi: 'phát hiện', audio_word: '' },
+  { word: 'journey', definition_en: 'an act of traveling from one place to another', definition_vi: 'hành trình', audio_word: '' },
+  { word: 'adventure', definition_en: 'an unusual and exciting experience', definition_vi: 'cuộc phiêu lưu', audio_word: '' },
+  { word: 'challenge', definition_en: 'a task or situation that tests ability', definition_vi: 'thử thách', audio_word: '' },
+  { word: 'practice', definition_en: 'repeated exercise to improve skill', definition_vi: 'luyện tập', audio_word: '' },
+  { word: 'imagine', definition_en: 'form a mental image or concept of', definition_vi: 'tưởng tượng', audio_word: '' },
+  { word: 'create', definition_en: 'bring something into existence', definition_vi: 'sáng tạo', audio_word: '' },
+  { word: 'knowledge', definition_en: 'facts, information, and skills acquired', definition_vi: 'kiến thức', audio_word: '' },
+  { word: 'champion', definition_en: 'a person who has defeated all rivals', definition_vi: 'nhà vô địch', audio_word: '' },
+  { word: 'curious', definition_en: 'eager to know or learn something', definition_vi: 'tò mò', audio_word: '' },
+  { word: 'inventor', definition_en: 'a person who creates a new device', definition_vi: 'nhà phát minh', audio_word: '' },
+  { word: 'teamwork', definition_en: 'the combined action of a group', definition_vi: 'làm việc nhóm', audio_word: '' },
+  { word: 'strategy', definition_en: 'a plan of action designed to achieve a goal', definition_vi: 'chiến lược', audio_word: '' },
+  { word: 'victory', definition_en: 'an act of defeating an enemy or opponent', definition_vi: 'chiến thắng', audio_word: '' },
+  { word: 'brave', definition_en: 'ready to face and endure danger', definition_vi: 'dũng cảm', audio_word: '' },
+  { word: 'clever', definition_en: 'quick to understand and learn', definition_vi: 'thông minh', audio_word: '' },
+  { word: 'friendly', definition_en: 'kind and pleasant', definition_vi: 'thân thiện', audio_word: '' },
+  { word: 'helpful', definition_en: 'giving or ready to give help', definition_vi: 'hay giúp đỡ', audio_word: '' },
+  { word: 'patient', definition_en: 'able to accept delay without getting angry', definition_vi: 'kiên nhẫn', audio_word: '' }
 ];
 
 // Rich pool of SRS Review Words from adjacent levels
@@ -101,96 +101,36 @@ export function getWeekArcadeData(weekNumber = 33) {
   const allWords = [...targetWords, ...srsWords];
 
   // 3. Collocations & Chunks of the week
-  const chunks = [
-    { en: 'walking carefully', vi: 'cẩn thận bước đi', category: 'Verb Phrase' },
-    { en: 'down the corridor', vi: 'dọc theo hành lang', category: 'Location' },
-    { en: 'slipped on the wet floor', vi: 'trượt ngã trên sàn ướt', category: 'Action' },
-    { en: 'called the nurse', vi: 'gọi cô y tá trường', category: 'Action' },
-    { en: 'applied clean bandage', vi: 'băng một chiếc băng sạch', category: 'Medical' },
-    { en: 'felt extremely relieved', vi: 'cảm thấy rất nhẹ nhõm', category: 'Feeling' },
-    { en: 'learned valuable lesson', vi: 'học được bài học quý', category: 'Outcome' },
-    { en: 'followed safety rules', vi: 'tuân theo quy tắc an toàn', category: 'Rule' },
-  ];
+  const chunks = targetWords.slice(0, 8).map(tw => ({
+    en: `practice ${tw.word}`,
+    vi: `luyện tập ${tw.definition_vi || tw.word}`,
+    category: 'Target Vocabulary'
+  }));
 
-  // 4. 6-8 Diverse Sentence & Grammar Rounds for Game 3
+  // 4. Diverse Sentence & Grammar Rounds for Game 3
   const sentenceRounds = [
     {
       type: 'sentence',
-      title: 'Past Continuous & Place',
-      sentence: 'Jake was walking carefully down the corridor.',
+      title: 'Action & Description',
+      sentence: 'The brave explorer started a new journey.',
       slots: [
-        { id: 'S', label: 'Subject', answer: 'Jake' },
-        { id: 'VP', label: 'Verb Phrase', answer: 'was walking' },
-        { id: 'C', label: 'Place', answer: 'down the corridor' },
+        { id: 'S', label: 'Subject', answer: 'The brave explorer' },
+        { id: 'VP', label: 'Verb Phrase', answer: 'started' },
+        { id: 'C', label: 'Object', answer: 'a new journey' },
       ],
-      distractors: ['sprinted fast', 'in the lab'],
+      distractors: ['jumped high', 'in the park'],
     },
     {
       type: 'bilingual',
       title: 'English Chunks to Vietnamese Meaning',
       sentence: 'Match English chunks to Vietnamese meanings:',
       slots: [
-        { id: 'B1', label: 'cẩn thận bước đi', answer: 'walking carefully' },
-        { id: 'B2', label: 'trên sàn nhà ướt', answer: 'on the wet floor' },
-        { id: 'B3', label: 'cô y tá trường học', answer: 'the school nurse' },
+        { id: 'B1', label: 'khám phá thế giới', answer: 'explore the world' },
+        { id: 'B2', label: 'học tập chăm chỉ', answer: 'learn diligently' },
+        { id: 'B3', label: 'thử thách mới', answer: 'new challenge' },
       ],
-      distractors: ['sprinted loudly', 'science class'],
-    },
-    {
-      type: 'definition',
-      title: 'Word to Cambridge Definition',
-      sentence: 'Match vocabulary to Cambridge definitions:',
-      slots: [
-        { id: 'D1', label: 'cloth wrapped on a cut', answer: 'bandage' },
-        { id: 'D2', label: 'hallway in building', answer: 'corridor' },
-        { id: 'D3', label: 'force stopping slide', answer: 'friction' },
-      ],
-      distractors: ['momentum', 'mistake'],
-    },
-    {
-      type: 'sentence',
-      title: 'School Safety Rule',
-      sentence: 'Students must walk calmly during class breaks.',
-      slots: [
-        { id: 'S', label: 'Subject', answer: 'Students' },
-        { id: 'VP', label: 'Modal & Verb', answer: 'must walk calmly' },
-        { id: 'C', label: 'Time Frame', answer: 'during breaks' },
-      ],
-      distractors: ['slipped down', 'clean bandages'],
-    },
-    {
-      type: 'bilingual',
-      title: 'Science & Medical Collocations',
-      sentence: 'Match science phrases to meanings:',
-      slots: [
-        { id: 'S1', label: 'lực ma sát bề mặt', answer: 'surface friction' },
-        { id: 'S2', label: 'cảm thấy nhẹ nhõm', answer: 'felt relieved' },
-        { id: 'S3', label: 'băng bó vết thương', answer: 'treated the wound' },
-      ],
-      distractors: ['fast velocity', 'lost balance'],
-    },
-    {
-      type: 'definition',
-      title: 'SRS Physics & Action Definitions',
-      sentence: 'Match advanced science concepts:',
-      slots: [
-        { id: 'D4', label: 'forward driving force', answer: 'momentum' },
-        { id: 'D5', label: 'speed with direction', answer: 'velocity' },
-        { id: 'D6', label: 'care to avoid harm', answer: 'caution' },
-      ],
-      distractors: ['emergency', 'recovery'],
-    },
-    {
-      type: 'sentence',
-      title: 'First Aid Emergency Response',
-      sentence: 'The nurse arrived quickly with clean bandages.',
-      slots: [
-        { id: 'S', label: 'Medical Helper', answer: 'The nurse' },
-        { id: 'VP', label: 'Action & Speed', answer: 'arrived quickly' },
-        { id: 'C', label: 'Supplies', answer: 'with bandages' },
-      ],
-      distractors: ['wet floor', 'walking slowly'],
-    },
+      distractors: ['run quickly', 'read carefully'],
+    }
   ];
 
   return {

@@ -1,0 +1,47 @@
+{
+  "week": 0,
+  "theme": "Standard Theme Title",
+  "cefr_level": "A2 Flyers",
+  "stage": 1,
+  "story_title": "Title of Main Story",
+  "clil_topic": "CLIL Topic Name",
+  "math_focus": "Singapore Math Topic Focus",
+  "moral": "Educational Moral or Concept",
+  "grammar_focus": {
+    "structure": "Past Continuous + Past Simple",
+    "pattern_regex": "was|were.*ing"
+  },
+  "characters": [
+    "Character 1",
+    "Character 2"
+  ],
+  "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3",
+    "keyword4",
+    "keyword5"
+  ],
+  "target_vocab_20": [
+    { "word": "word1", "definition_en": "Def 1", "definition_vi": "Nghĩa 1" },
+    { "word": "word2", "definition_en": "Def 2", "definition_vi": "Nghĩa 2" },
+    { "word": "word3", "definition_en": "Def 3", "definition_vi": "Nghĩa 3" },
+    { "word": "word4", "definition_en": "Def 4", "definition_vi": "Nghĩa 4" },
+    { "word": "word5", "definition_en": "Def 5", "definition_vi": "Nghĩa 5" },
+    { "word": "word6", "definition_en": "Def 6", "definition_vi": "Nghĩa 6" },
+    { "word": "word7", "definition_en": "Def 7", "definition_vi": "Nghĩa 7" },
+    { "word": "word8", "definition_en": "Def 8", "definition_vi": "Nghĩa 8" },
+    { "word": "word9", "definition_en": "Def 9", "definition_vi": "Nghĩa 9" },
+    { "word": "word10", "definition_en": "Def 10", "definition_vi": "Nghĩa 10" },
+    { "word": "word11", "definition_en": "Def 11", "definition_vi": "Nghĩa 11" },
+    { "word": "word12", "definition_en": "Def 12", "definition_vi": "Nghĩa 12" },
+    { "word": "word13", "definition_en": "Def 13", "definition_vi": "Nghĩa 13" },
+    { "word": "word14", "definition_en": "Def 14", "definition_vi": "Nghĩa 14" },
+    { "word": "word15", "definition_en": "Def 15", "definition_vi": "Nghĩa 15" },
+    { "word": "word16", "definition_en": "Def 16", "definition_vi": "Nghĩa 16" },
+    { "word": "word17", "definition_en": "Def 17", "definition_vi": "Nghĩa 17" },
+    { "word": "word18", "definition_en": "Def 18", "definition_vi": "Nghĩa 18" },
+    { "word": "word19", "definition_en": "Def 19", "definition_vi": "Nghĩa 19" },
+    { "word": "word20", "definition_en": "Def 20", "definition_vi": "Nghĩa 20" }
+  ]
+}
