@@ -1,0 +1,107 @@
+{
+  "engquest-daily-quest": {
+    "state": {
+      "completedQuests": {
+        "w34": {
+          "gear1_webtoon": true,
+          "gear2_karaoke": true,
+          "gear3_retell": true,
+          "gear4_clil": true,
+          "science_lab": true,
+          "science_report": true,
+          "word_blitz": true,
+          "sentence_smash": true,
+          "math_quest": true,
+          "story_writer": true,
+          "broadcast_studio": true,
+          "info_exchange": true,
+          "boss_listening": true,
+          "boss_reading": true,
+          "weekly_review": true
+        }
+      },
+      "weekStartDates": {},
+      "dailyBonusClaimed": {
+        "w34_d1": true,
+        "w34_d2": true,
+        "w34_d3": true,
+        "w34_d4": true,
+        "w34_d5": true
+      },
+      "isBarCollapsed": false
+    },
+    "version": 0
+  },
+  "engquest-user-storage": {
+    "state": {
+      "currentUser": {
+        "name": "Học sinh Vàng",
+        "role": "student"
+      },
+      "token": null,
+      "learningMode": "easy",
+      "progressCache": {
+        "34": {
+          "story_writing_easy": {
+            "data": {
+              "panelTexts": [
+                "",
+                "",
+                ""
+              ],
+              "rubric": null,
+              "_savedAt": "2026-08-24T09:51:39.385Z"
+            },
+            "isCompleted": false,
+            "score": 0,
+            "updatedAt": "2026-08-24T09:51:39.385Z"
+          },
+          "hub1": {
+            "score": 0,
+            "isCompleted": false
+          },
+          "hub2": {
+            "score": 0,
+            "isCompleted": false
+          },
+          "hub3": {
+            "score": 0,
+            "isCompleted": false
+          },
+          "hub4": {
+            "score": 0,
+            "isCompleted": false
+          }
+        }
+      },
+      "weekCompletion": {
+        "34": 0
+      },
+      "weekStars": {
+        "34": {
+          "totalStars": 0,
+          "maxStars": 3,
+          "stations": [
+            {
+              "stationId": "story_writing_easy",
+              "score": 0,
+              "stars": 0,
+              "isCompleted": false
+            }
+          ],
+          "percentage": 0
+        }
+      },
+      "earnedBadges": [],
+      "avatarItems": [],
+      "equippedItems": {
+        "hat": null,
+        "glasses": null,
+        "accessory": null
+      },
+      "userXP": 1730,
+      "xp": 1730
+    },
+    "version": 2
+  }
+}

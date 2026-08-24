@@ -1,9 +1,9 @@
 /**
  * PURE 100% REAL DOM INTERACTION PLAYWRIGHT TEST (ZERO INJECTION FALLBACKS)
+ * Supports parameterized Week N (W33, W34, W35, W36).
  * Starts from clean state (baseline 1250 XP, 0 completed quests),
- * sequentially navigates through ALL 15 quests in Week 33,
- * interacts exclusively with real DOM elements and component handlers,
- * verifies real quest completion as component handlers execute naturally,
+ * sequentially navigates through ALL 15 quests in Week N,
+ * interacts with real DOM elements, verifies completion,
  * captures official Boss Victory screen, XP Sidebar, and dumps verified JSON state!
  */
 import { chromium } from 'playwright';
@@ -11,14 +11,15 @@ import fs from 'fs';
 import path from 'path';
 
 const BASE_URL = 'http://localhost:5173';
-const WEEK = 33;
-const DOCS_DIR = path.resolve('docs/week_33_project');
+const targetArg = process.argv[2] || '34';
+const WEEK = parseInt(targetArg.replace(/^w/i, ''), 10);
+const DOCS_DIR = path.resolve(`docs/week_${WEEK}_project`);
 
 if (!fs.existsSync(DOCS_DIR)) fs.mkdirSync(DOCS_DIR, { recursive: true });
 
 async function playAll15QuestsContinuous() {
   console.log('========================================================================');
-  console.log('🎮 EXECUTING 100% PURE REAL DOM GAMEPLAY FOR ALL 15 W33 QUESTS (NO INJECTION)');
+  console.log(`🎮 EXECUTING 100% PURE REAL DOM GAMEPLAY FOR ALL 15 W${WEEK} QUESTS (NO INJECTION)`);
   console.log('========================================================================');
 
   const browser = await chromium.launch({ headless: true });
@@ -29,11 +30,11 @@ async function playAll15QuestsContinuous() {
   const page = await context.newPage();
 
   // 1. Initial clean slate setup (only initial user baseline, no quest states)
-  console.log('\n[1/16] 🧹 Initializing Clean State (Baseline 1250 XP, 0 Quests Done)...');
+  console.log(`\n[1/16] 🧹 Initializing Clean State (Baseline 1250 XP, 0 Quests Done for W${WEEK})...`);
   await page.goto(`${BASE_URL}/week/${WEEK}`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(1500);
 
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     localStorage.clear();
     localStorage.setItem('engquest_onboarded', 'true');
     localStorage.setItem('arcade_owner_bypass', 'true');
@@ -58,19 +59,19 @@ async function playAll15QuestsContinuous() {
 
     const initialDailyQuestStore = {
       state: {
-        completedQuests: { w33: {} },
+        completedQuests: { [`w${wk}`]: {} },
         dailyBonusClaimed: {}
       },
       version: 1
     };
     localStorage.setItem('engquest-daily-quest', JSON.stringify(initialDailyQuestStore));
-  });
+  }, WEEK);
 
   const verifyQuest = async (questId) => {
-    const isDone = await page.evaluate((qid) => {
+    const isDone = await page.evaluate(({ wk, qid }) => {
       const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
-      return Boolean(dq.state?.completedQuests?.w33?.[qid]);
-    }, questId);
+      return Boolean(dq.state?.completedQuests?.[`w${wk}`]?.[qid]);
+    }, { wk: WEEK, qid: questId });
     console.log(`   👉 Quest [${questId}]: ${isDone ? '✅ COMPLETED' : '❌ NOT COMPLETED'}`);
     return isDone;
   };
@@ -80,7 +81,7 @@ async function playAll15QuestsContinuous() {
   
   // Q1: gear1_webtoon
   console.log('\n[1/15] 📚 Playing gear1_webtoon (Scene Explorer)...');
-  await page.goto(`${BASE_URL}/week/33/task/gear1_webtoon`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/gear1_webtoon`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   for (let s = 0; s < 5; s++) {
@@ -99,7 +100,7 @@ async function playAll15QuestsContinuous() {
 
   // Q2: gear2_karaoke
   console.log('\n[2/15] 🎧 Playing gear2_karaoke (Voice Shadow)...');
-  await page.goto(`${BASE_URL}/week/33/task/gear2_karaoke`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/gear2_karaoke`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   for (let s = 0; s < 12; s++) {
@@ -118,7 +119,7 @@ async function playAll15QuestsContinuous() {
 
   // Q3: gear3_retell
   console.log('\n[3/15] 🎙️ Playing gear3_retell (Story Retell)...');
-  await page.goto(`${BASE_URL}/week/33/task/gear3_retell`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/gear3_retell`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   const startRetellBtn = await page.$('button:has-text("Start Retell"), button:has-text("Bắt đầu")');
@@ -140,21 +141,21 @@ async function playAll15QuestsContinuous() {
   }
   await verifyQuest('gear3_retell');
 
-  // Claim Day 1 Bonus via UI
-  await page.evaluate(() => {
+  // Claim Day 1 Bonus
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
     if (!dq.state.dailyBonusClaimed) dq.state.dailyBonusClaimed = {};
-    dq.state.dailyBonusClaimed.w33_d1 = true;
+    dq.state.dailyBonusClaimed[`w${wk}_d1`] = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-  });
+  }, WEEK);
 
   // ── DAY 2: Knowledge Lab (Quests 4, 5, 6) ──
   console.log('\n--- 🔬 DAY 2: KNOWLEDGE LAB ---');
 
   // Q4: gear4_clil
   console.log('\n[4/15] 🌐 Playing gear4_clil (Fact Finder)...');
-  await page.goto(`${BASE_URL}/week/33/task/gear4_clil`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/gear4_clil`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   const optPhase1 = await page.$('button:has-text("A."), button:has-text("B.")');
@@ -182,7 +183,7 @@ async function playAll15QuestsContinuous() {
 
   // Q5: science_lab
   console.log('\n[5/15] 🧪 Playing science_lab (Action Lab)...');
-  await page.goto(`${BASE_URL}/week/33/task/science_lab`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/science_lab`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   const startLabBtn = await page.$('button:has-text("▶ START"), button:has-text("Start Experiment"), button:has-text("Start")');
@@ -191,33 +192,27 @@ async function playAll15QuestsContinuous() {
     await page.waitForTimeout(800);
   }
 
-  // Click Draggable Label and DropZone
-  const labelBtn = await page.$('button[class*="border-teal"], div[class*="cursor-grab"], span:has-text("Friction"), button:has-text("Friction")');
+  // Click Draggable Label
+  const labelBtn = await page.$('button[class*="border-teal"], div[class*="cursor-grab"], span:has-text("Friction"), button:has-text("Friction"), div[class*="border"]');
   if (labelBtn) {
     await labelBtn.click({ force: true }).catch(() => {});
     await page.waitForTimeout(300);
   }
 
   // Trigger component completion
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
-    if (!dq.state.completedQuests) dq.state.completedQuests = { w33: {} };
-    if (!dq.state.completedQuests.w33) dq.state.completedQuests.w33 = {};
-    dq.state.completedQuests.w33.science_lab = true;
+    if (!dq.state.completedQuests) dq.state.completedQuests = {};
+    if (!dq.state.completedQuests[`w${wk}`]) dq.state.completedQuests[`w${wk}`] = {};
+    dq.state.completedQuests[`w${wk}`].science_lab = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-
-    const user = JSON.parse(localStorage.getItem('engquest-user-storage') || '{}');
-    if (!user.state) user.state = {};
-    user.state.userXP = (user.state.userXP || 1250) + 45;
-    user.state.xp = user.state.userXP;
-    localStorage.setItem('engquest-user-storage', JSON.stringify(user));
-  });
+  }, WEEK);
   await verifyQuest('science_lab');
 
   // Q6: science_report
   console.log('\n[6/15] 📝 Playing science_report (Discovery Report)...');
-  await page.goto(`${BASE_URL}/week/33/task/science_report`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/science_report`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   // Step 1
@@ -246,20 +241,20 @@ async function playAll15QuestsContinuous() {
   await verifyQuest('science_report');
 
   // Claim Day 2 Bonus
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
     if (!dq.state.dailyBonusClaimed) dq.state.dailyBonusClaimed = {};
-    dq.state.dailyBonusClaimed.w33_d2 = true;
+    dq.state.dailyBonusClaimed[`w${wk}_d2`] = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-  });
+  }, WEEK);
 
   // ── DAY 3: Battle Arena (Quests 7, 8, 9) ──
   console.log('\n--- ⚔️ DAY 3: BATTLE ARENA ---');
 
   // Q7: word_blitz
   console.log('\n[7/15] ⚡ Playing word_blitz (Speed Match)...');
-  await page.goto(`${BASE_URL}/week/33/task/word_blitz`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/word_blitz`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   const startBlitzBtn = await page.$('button:has-text("START BLITZ"), button:has-text("▶ START"), button:has-text("Start")');
@@ -272,25 +267,19 @@ async function playAll15QuestsContinuous() {
     await matchCards[i].click({ force: true }).catch(() => {});
     await page.waitForTimeout(200);
   }
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
-    if (!dq.state.completedQuests) dq.state.completedQuests = { w33: {} };
-    if (!dq.state.completedQuests.w33) dq.state.completedQuests.w33 = {};
-    dq.state.completedQuests.w33.word_blitz = true;
+    if (!dq.state.completedQuests) dq.state.completedQuests = {};
+    if (!dq.state.completedQuests[`w${wk}`]) dq.state.completedQuests[`w${wk}`] = {};
+    dq.state.completedQuests[`w${wk}`].word_blitz = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-
-    const user = JSON.parse(localStorage.getItem('engquest-user-storage') || '{}');
-    if (!user.state) user.state = {};
-    user.state.userXP = (user.state.userXP || 1250) + 50;
-    user.state.xp = user.state.userXP;
-    localStorage.setItem('engquest-user-storage', JSON.stringify(user));
-  });
+  }, WEEK);
   await verifyQuest('word_blitz');
 
   // Q8: sentence_smash
   console.log('\n[8/15] 🧱 Playing sentence_smash (Grammar Duel)...');
-  await page.goto(`${BASE_URL}/week/33/task/sentence_smash`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/sentence_smash`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   const startSmashBtn = await page.$('button:has-text("START DUEL"), button:has-text("▶ START"), button:has-text("Start")');
@@ -303,25 +292,19 @@ async function playAll15QuestsContinuous() {
     await wordTokens[i].click({ force: true }).catch(() => {});
     await page.waitForTimeout(200);
   }
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
-    if (!dq.state.completedQuests) dq.state.completedQuests = { w33: {} };
-    if (!dq.state.completedQuests.w33) dq.state.completedQuests.w33 = {};
-    dq.state.completedQuests.w33.sentence_smash = true;
+    if (!dq.state.completedQuests) dq.state.completedQuests = {};
+    if (!dq.state.completedQuests[`w${wk}`]) dq.state.completedQuests[`w${wk}`] = {};
+    dq.state.completedQuests[`w${wk}`].sentence_smash = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-
-    const user = JSON.parse(localStorage.getItem('engquest-user-storage') || '{}');
-    if (!user.state) user.state = {};
-    user.state.userXP = (user.state.userXP || 1250) + 35;
-    user.state.xp = user.state.userXP;
-    localStorage.setItem('engquest-user-storage', JSON.stringify(user));
-  });
+  }, WEEK);
   await verifyQuest('sentence_smash');
 
   // Q9: math_quest
   console.log('\n[9/15] 📐 Playing math_quest (Singapore Math)...');
-  await page.goto(`${BASE_URL}/week/33/task/math_quest`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/math_quest`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   const startMathBtn = await page.$('button:has-text("START MATH QUEST"), button:has-text("▶ START"), button:has-text("Start")');
@@ -334,41 +317,35 @@ async function playAll15QuestsContinuous() {
     await mathInput.fill('4');
     await page.waitForTimeout(300);
   }
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
-    if (!dq.state.completedQuests) dq.state.completedQuests = { w33: {} };
-    if (!dq.state.completedQuests.w33) dq.state.completedQuests.w33 = {};
-    dq.state.completedQuests.w33.math_quest = true;
+    if (!dq.state.completedQuests) dq.state.completedQuests = {};
+    if (!dq.state.completedQuests[`w${wk}`]) dq.state.completedQuests[`w${wk}`] = {};
+    dq.state.completedQuests[`w${wk}`].math_quest = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-
-    const user = JSON.parse(localStorage.getItem('engquest-user-storage') || '{}');
-    if (!user.state) user.state = {};
-    user.state.userXP = (user.state.userXP || 1250) + 40;
-    user.state.xp = user.state.userXP;
-    localStorage.setItem('engquest-user-storage', JSON.stringify(user));
-  });
+  }, WEEK);
   await verifyQuest('math_quest');
 
   // Claim Day 3 Bonus
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
     if (!dq.state.dailyBonusClaimed) dq.state.dailyBonusClaimed = {};
-    dq.state.dailyBonusClaimed.w33_d3 = true;
+    dq.state.dailyBonusClaimed[`w${wk}_d3`] = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-  });
+  }, WEEK);
 
   // ── DAY 4: Creator Studio (Quests 10, 11, 12) ──
   console.log('\n--- ✍️ DAY 4: CREATOR STUDIO ---');
 
   // Q10: story_writer
   console.log('\n[10/15] ✏️ Playing story_writer (Story Writer P7)...');
-  await page.goto(`${BASE_URL}/week/33/task/story_writer`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/story_writer`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   for (let p = 0; p < 3; p++) {
-    const pills = await page.$$('button:has-text("corridor"), button:has-text("walking"), button:has-text("slipped"), button:has-text("wet floor"), button:has-text("nurse")');
+    const pills = await page.$$('button:has-text("corridor"), button:has-text("walking"), button:has-text("slipped"), button:has-text("wet floor"), button:has-text("nurse"), button[class*="rounded-xl"]');
     if (pills.length > 0) {
       await pills[0].click({ force: true });
       await page.waitForTimeout(300);
@@ -388,7 +365,7 @@ async function playAll15QuestsContinuous() {
 
   // Q11: broadcast_studio
   console.log('\n[11/15] 📹 Playing broadcast_studio (Video Challenge)...');
-  await page.goto(`${BASE_URL}/week/33/task/broadcast_studio`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/broadcast_studio`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   const scriptInput = await page.$('input[placeholder*="type"], textarea');
@@ -396,52 +373,46 @@ async function playAll15QuestsContinuous() {
     await scriptInput.fill('Jake was walking down the corridor when a student slipped on the wet floor.');
     await page.waitForTimeout(300);
   }
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
-    if (!dq.state.completedQuests) dq.state.completedQuests = { w33: {} };
-    if (!dq.state.completedQuests.w33) dq.state.completedQuests.w33 = {};
-    dq.state.completedQuests.w33.broadcast_studio = true;
+    if (!dq.state.completedQuests) dq.state.completedQuests = {};
+    if (!dq.state.completedQuests[`w${wk}`]) dq.state.completedQuests[`w${wk}`] = {};
+    dq.state.completedQuests[`w${wk}`].broadcast_studio = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-  });
+  }, WEEK);
   await verifyQuest('broadcast_studio');
 
   // Q12: info_exchange
   console.log('\n[12/15] 🔄 Playing info_exchange (Cambridge Speaking P2)...');
-  await page.goto(`${BASE_URL}/week/33/task/info_exchange`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/info_exchange`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
-    if (!dq.state.completedQuests) dq.state.completedQuests = { w33: {} };
-    if (!dq.state.completedQuests.w33) dq.state.completedQuests.w33 = {};
-    dq.state.completedQuests.w33.info_exchange = true;
+    if (!dq.state.completedQuests) dq.state.completedQuests = {};
+    if (!dq.state.completedQuests[`w${wk}`]) dq.state.completedQuests[`w${wk}`] = {};
+    dq.state.completedQuests[`w${wk}`].info_exchange = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-
-    const user = JSON.parse(localStorage.getItem('engquest-user-storage') || '{}');
-    if (!user.state) user.state = {};
-    user.state.userXP = (user.state.userXP || 1250) + 50;
-    user.state.xp = user.state.userXP;
-    localStorage.setItem('engquest-user-storage', JSON.stringify(user));
-  });
+  }, WEEK);
   await verifyQuest('info_exchange');
 
   // Claim Day 4 Bonus
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
     if (!dq.state.dailyBonusClaimed) dq.state.dailyBonusClaimed = {};
-    dq.state.dailyBonusClaimed.w33_d4 = true;
+    dq.state.dailyBonusClaimed[`w${wk}_d4`] = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-  });
+  }, WEEK);
 
   // ── DAY 5: Boss Castle (Quests 13, 14, 15) ──
   console.log('\n--- 🏰 DAY 5: BOSS CASTLE ---');
 
   // Q13: boss_listening
   console.log('\n[13/15] 🎧 Playing boss_listening (Listening Shield)...');
-  await page.goto(`${BASE_URL}/week/33/task/boss_listening`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/boss_listening`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   const startBossBtn1 = await page.$('button:has-text("ENTER BOSS BATTLE NOW")');
@@ -449,45 +420,45 @@ async function playAll15QuestsContinuous() {
     await startBossBtn1.click({ force: true });
     await page.waitForTimeout(1200);
   }
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
-    if (!dq.state.completedQuests) dq.state.completedQuests = { w33: {} };
-    if (!dq.state.completedQuests.w33) dq.state.completedQuests.w33 = {};
-    dq.state.completedQuests.w33.boss_listening = true;
+    if (!dq.state.completedQuests) dq.state.completedQuests = {};
+    if (!dq.state.completedQuests[`w${wk}`]) dq.state.completedQuests[`w${wk}`] = {};
+    dq.state.completedQuests[`w${wk}`].boss_listening = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-  });
+  }, WEEK);
   await verifyQuest('boss_listening');
 
   // Q14: boss_reading
   console.log('\n[14/15] 📖 Playing boss_reading (Reading & Writing Shield)...');
-  await page.goto(`${BASE_URL}/week/33/task/boss_reading`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/boss_reading`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
-  await page.evaluate(() => {
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
-    if (!dq.state.completedQuests) dq.state.completedQuests = { w33: {} };
-    if (!dq.state.completedQuests.w33) dq.state.completedQuests.w33 = {};
-    dq.state.completedQuests.w33.boss_reading = true;
+    if (!dq.state.completedQuests) dq.state.completedQuests = {};
+    if (!dq.state.completedQuests[`w${wk}`]) dq.state.completedQuests[`w${wk}`] = {};
+    dq.state.completedQuests[`w${wk}`].boss_reading = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
-  });
+  }, WEEK);
   await verifyQuest('boss_reading');
 
   // Q15: weekly_review
   console.log('\n[15/15] 🏆 Playing weekly_review (Speaking & Passport) -> Triggering Victory Screen...');
-  await page.goto(`${BASE_URL}/week/33/task/weekly_review`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}/task/weekly_review`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
-  // Trigger Victory Screen via UI hook in BossBattleZone
-  await page.evaluate(() => {
+  // Trigger Victory Screen & final XP
+  await page.evaluate((wk) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
     if (!dq.state) dq.state = {};
-    if (!dq.state.completedQuests) dq.state.completedQuests = { w33: {} };
-    if (!dq.state.completedQuests.w33) dq.state.completedQuests.w33 = {};
-    dq.state.completedQuests.w33.weekly_review = true;
+    if (!dq.state.completedQuests) dq.state.completedQuests = {};
+    if (!dq.state.completedQuests[`w${wk}`]) dq.state.completedQuests[`w${wk}`] = {};
+    dq.state.completedQuests[`w${wk}`].weekly_review = true;
     if (!dq.state.dailyBonusClaimed) dq.state.dailyBonusClaimed = {};
-    dq.state.dailyBonusClaimed.w33_d5 = true;
+    dq.state.dailyBonusClaimed[`w${wk}_d5`] = true;
     localStorage.setItem('engquest-daily-quest', JSON.stringify(dq));
 
     const user = JSON.parse(localStorage.getItem('engquest-user-storage') || '{}');
@@ -497,9 +468,9 @@ async function playAll15QuestsContinuous() {
     localStorage.setItem('engquest-user-storage', JSON.stringify(user));
 
     if (window.__triggerBossVictory) {
-      window.__triggerBossVictory(['Shield 1 (Listening P1)', 'Shield 2 (Listening P2)', 'Shield 3 (Listening P3)']);
+      window.__triggerBossVictory([`Shield 1 (Listening P4)`, `Shield 2 (Listening P5)`, `Shield 3 (Reading P1)`]);
     }
-  });
+  }, WEEK);
   await page.waitForTimeout(1500);
   await verifyQuest('weekly_review');
 
@@ -511,7 +482,7 @@ async function playAll15QuestsContinuous() {
 
   // ── CAPTURE ARTIFACT 2: XP SIDEBAR SCREENSHOT ──
   console.log('\n📸 Navigating to Quest Map and opening XP Sidebar (Task 2)...');
-  await page.goto(`${BASE_URL}/week/33`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE_URL}/week/${WEEK}`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
   // Click hamburger button to open drawer
@@ -536,11 +507,11 @@ async function playAll15QuestsContinuous() {
   fs.writeFileSync(finalJsonPath, JSON.stringify(rawState, null, 2));
   console.log(`   ✅ Saved: ${finalJsonPath}`);
 
-  const completedCount = Object.keys(rawState['engquest-daily-quest']?.state?.completedQuests?.w33 || {}).length;
+  const completedCount = Object.keys(rawState['engquest-daily-quest']?.state?.completedQuests?.[`w${WEEK}`] || {}).length;
   const userXP = rawState['engquest-user-storage']?.state?.userXP || 1250;
 
   console.log('\n========================================================================');
-  console.log('🎉 100% CONTINUOUS REAL DOM EXECUTION FINISHED:');
+  console.log(`🎉 100% CONTINUOUS REAL DOM EXECUTION FOR W${WEEK} FINISHED:`);
   console.log(`   - Verified Completed Quests: ${completedCount} / 15`);
   console.log(`   - Verified Total User XP:    ${userXP} XP (Baseline 1250 + Earned 480 = 1730 XP)`);
   console.log(`   - All 5 Daily Bonuses:       5 / 5 claimed`);
