@@ -1,4 +1,4 @@
-// Week 34 Main Story — The Lion and the Mouse (Aesop Fable & Nature Symbiosis)
+// Week 34 Main Story — The Lion and the Mouse (Aesop Fable & Animal Cooperation)
 export const readData = {
   week: 34,
   title: "The Lion and the Mouse",

@@ -79,22 +79,22 @@ export const readingHub = {
     ],
     clil_article: {
       title: "Animal Cooperation & Forest Ecosystems",
-      content_en: "Animals in the wild often help each other survive. This special relationship is called Mutual Support or Symbiosis. For example, large predators like lions maintain balance in nature, while small animals play vital roles in seed dispersal and forest health. When different creatures cooperate, the entire forest ecosystem stays healthy and strong.",
-      content_vi: "Động vật trong tự nhiên thường giúp đỡ nhau sinh tồn. Mối quan hệ đặc biệt này được gọi là Tương trợ hay Cộng sinh. Ví dụ, những loài săn mồi lớn như sư tử duy trì sự cân bằng tự nhiên, trong khi những loài vật nhỏ đóng vai trò quan trọng trong việc phân tán hạt giống và giữ cho rừng khỏe mạnh. Khi các sinh vật khác nhau hợp tác, toàn bộ hệ sinh thái rừng sẽ luôn khỏe mạnh và vững mạnh.",
+      content_en: "In nature, many different animals live and work together in the green forest. Large animals and small creatures help each other find food, stay safe, and build warm homes. For example, big lions protect the open forest territory from danger. Tiny mice clean the forest floor and plant new seeds. Birds fly high in the sky and chirp loudly to warn other animals when danger is near. When different animals cooperate and live in peace, the whole forest ecosystem stays healthy, green, and full of life. True teamwork makes everyone stronger and happier every day.",
+      content_vi: "Trong tự nhiên, nhiều loài động vật khác nhau cùng chung sống và làm việc cùng nhau trong khu rừng xanh. Động vật lớn và sinh vật nhỏ giúp nhau tìm kiếm thức ăn, giữ an toàn và xây dựng tổ ấm. Ví dụ, những chú sư tử lớn bảo vệ lãnh thổ khỏi những kẻ xâm nhập nguy hiểm, trong khi những chú chuột nhỏ giúp làm sạch mặt đất và gieo những hạt giống mới. Những chú chim bay cao trên bầu trời và hót vang để cảnh báo các loài vật khác khi nguy hiểm đến gần. Khi các loài động vật khác nhau hợp tác và chung sống hòa bình, toàn bộ hệ sinh thái rừng luôn khỏe mạnh, xanh tươi và tràn đầy sức sống. Sự đoàn kết thực sự giúp mọi sinh vật trở nên mạnh mẽ hơn và vui vẻ hơn mỗi ngày.",
       cover_image: "/images/week34/explore_cover_w34.jpg",
       audio_url: "/audio/week34/explore.mp3",
       comprehension_questions: [
         {
           id: "q1",
-          question: "What is the special relationship where animals help each other called?",
-          options: ["Mutual Support or Symbiosis", "Forest Competition", "Deep Hibernation"],
-          answer: "Mutual Support or Symbiosis"
+          question: "How do animals help each other in the green forest?",
+          options: ["By living, working, and cooperating together", "By fighting all day", "By sleeping in cold caves"],
+          answer: "By living, working, and cooperating together"
         },
         {
           id: "q2",
-          question: "Why are small animals important in the forest?",
-          options: ["They help with seed dispersal and forest health", "They build large bridges", "They sleep all day"],
-          answer: "They help with seed dispersal and forest health"
+          question: "What do birds do when danger is near?",
+          options: ["They chirp loudly to warn other animals", "They run into deep water", "They hide under the ground"],
+          answer: "They chirp loudly to warn other animals"
         }
       ]
     }

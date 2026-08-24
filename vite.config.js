@@ -27,6 +27,10 @@ function copyDataDir() {
       if (existsSync(resolve('public/avatars'))) {
         cpSync(resolve('public/avatars'), resolve('dist/avatars'), { recursive: true });
       }
+      // Copy version.json
+      if (existsSync(resolve('public/version.json'))) {
+        copyFileSync(resolve('public/version.json'), resolve('dist/version.json'));
+      }
       // Copy images directory (public/images → dist/images)
       if (existsSync(resolve('public/images'))) {
         cpSync(resolve('public/images'), resolve('dist/images'), { recursive: true });

@@ -139,22 +139,22 @@ export const readingHub = {
     ],
     clil_article: {
       title: "${bp.clil_topic}",
-      content_en: "Animals in the wild often help each other survive. This special relationship is called Mutual Support or Symbiosis. For example, large predators like lions maintain balance in nature, while small animals play vital roles in seed dispersal and forest health. When different creatures cooperate, the entire forest ecosystem stays healthy and strong.",
-      content_vi: "Động vật trong tự nhiên thường giúp đỡ nhau sinh tồn. Mối quan hệ đặc biệt này được gọi là Tương trợ hay Cộng sinh. Ví dụ, những loài săn mồi lớn như sư tử duy trì sự cân bằng tự nhiên, trong khi những loài vật nhỏ đóng vai trò quan trọng trong việc phân tán hạt giống và giữ cho rừng khỏe mạnh. Khi các sinh vật khác nhau hợp tác, toàn bộ hệ sinh thái rừng sẽ luôn khỏe mạnh và vững mạnh.",
+      content_en: "In nature, many different animals live and work together in the green forest. Large animals and small creatures help each other find food, stay safe, and build warm homes. For example, big lions protect the open forest territory from danger. Tiny mice clean the forest floor and plant new seeds. Birds fly high in the sky and chirp loudly to warn other animals when danger is near. When different animals cooperate and live in peace, the whole forest ecosystem stays healthy, green, and full of life. True teamwork makes everyone stronger and happier every day.",
+      content_vi: "Trong tự nhiên, nhiều loài động vật khác nhau cùng chung sống và làm việc cùng nhau trong khu rừng xanh. Động vật lớn và sinh vật nhỏ giúp nhau tìm kiếm thức ăn, giữ an toàn và xây dựng tổ ấm. Ví dụ, những chú sư tử lớn bảo vệ lãnh thổ khỏi những kẻ xâm nhập nguy hiểm, trong khi những chú chuột nhỏ giúp làm sạch mặt đất và gieo những hạt giống mới. Những chú chim bay cao trên bầu trời và hót vang để cảnh báo các loài vật khác khi nguy hiểm đến gần. Khi các loài động vật khác nhau hợp tác và chung sống hòa bình, toàn bộ hệ sinh thái rừng luôn khỏe mạnh, xanh tươi và tràn đầy sức sống. Sự đoàn kết thực sự giúp mọi sinh vật trở nên mạnh mẽ hơn và vui vẻ hơn mỗi ngày.",
       cover_image: "/images/week${weekNum}/explore_cover_w${weekNum}.jpg",
       audio_url: "/audio/week${weekNum}/explore.mp3",
       comprehension_questions: [
         {
           id: "q1",
-          question: "What is the special relationship where animals help each other called?",
-          options: ["Mutual Support or Symbiosis", "Forest Competition", "Deep Hibernation"],
-          answer: "Mutual Support or Symbiosis"
+          question: "How do animals help each other in the green forest?",
+          options: ["By living, working, and cooperating together", "By fighting all day", "By sleeping in cold caves"],
+          answer: "By living, working, and cooperating together"
         },
         {
           id: "q2",
-          question: "Why are small animals important in the forest?",
-          options: ["They help with seed dispersal and forest health", "They build large bridges", "They sleep all day"],
-          answer: "They help with seed dispersal and forest health"
+          question: "What do birds do when danger is near?",
+          options: ["They chirp loudly to warn other animals", "They run into deep water", "They hide under the ground"],
+          answer: "They chirp loudly to warn other animals"
         }
       ]
     }
@@ -200,6 +200,43 @@ export const listeningHub = {
     { id: 4, text: "Hunters trapped the lion in a strong net.", audio_url: "/audio/week${weekNum}/dictation_4.mp3" },
     { id: 5, text: "The mouse chewed through the thick ropes.", audio_url: "/audio/week${weekNum}/dictation_5.mp3" }
   ],
+  grammar_drills: [
+    {
+      id: "st2_w${weekNum}_g01",
+      grammar_tag: "past_continuous_when_while",
+      text_en: "Build a past continuous sentence with 'While'.",
+      word_blocks: ["While", "the", "mighty", "lion", "was", "sleeping", ",", "a", "tiny", "mouse", "ran", "past", "."],
+      distractor_blocks: ["is", "runs", "sleeps"]
+    },
+    {
+      id: "st2_w${weekNum}_g02",
+      grammar_tag: "past_simple_promise",
+      text_en: "Build a sentence about the mouse promising help.",
+      word_blocks: ["The", "little", "mouse", "promised", "to", "help", "the", "lion", "one", "day", "."],
+      distractor_blocks: ["promises", "helping", "big"]
+    },
+    {
+      id: "st2_w${weekNum}_g03",
+      grammar_tag: "past_simple_passive_or_action",
+      text_en: "Build a sentence about hunters capturing the lion.",
+      word_blocks: ["Hunters", "trapped", "the", "strong", "lion", "in", "a", "heavy", "rope", "net", "."],
+      distractor_blocks: ["traps", "is", "tiny"]
+    },
+    {
+      id: "st2_w${weekNum}_g04",
+      grammar_tag: "past_simple_rescue",
+      text_en: "Build a rescue sentence with the brave mouse.",
+      word_blocks: ["The", "brave", "mouse", "chewed", "through", "the", "ropes", "and", "freed", "him", "."],
+      distractor_blocks: ["chews", "frees", "running"]
+    },
+    {
+      id: "st2_w${weekNum}_g05",
+      grammar_tag: "moral_friendship",
+      text_en: "Build a moral friendship sentence.",
+      word_blocks: ["They", "became", "loyal", "friends", "and", "lived", "peacefully", "in", "the", "forest", "."],
+      distractor_blocks: ["becomes", "lives", "never"]
+    }
+  ],
   singapore_math: [
     {
       id: 1,
@@ -233,10 +270,19 @@ export const listeningHub = {
     }
   ],
   science_lab: {
-    simulation_title: "Animal Cooperation Lab",
-    experiment_steps: ["Observe animal roles", "Measure mutual benefits", "Record ecosystem balance"],
-    interactive_items: ["Lion", "Mouse", "Forest Habitat"],
-    conclusion_formula: "Cooperation = Harmony"
+    experimentTitle: "Animal Cooperation & Ecosystem Lab",
+    diagramImage: "/images/week${weekNum}/explore_cover_w${weekNum}.jpg",
+    explanation: "Explore how the mighty lion, tiny mouse, and tall trees help each other survive and thrive in the forest.",
+    targets: [
+      { id: "t1", name: "Lion (Guardian)", x: 25, y: 60 },
+      { id: "t2", name: "Mouse (Helper)", x: 75, y: 65 },
+      { id: "t3", name: "Forest Trees (Habitat)", x: 50, y: 30 }
+    ],
+    labels: [
+      { id: "lbl_1", text: "Mighty Guardian", targetId: "t1" },
+      { id: "lbl_2", text: "Tiny Helper", targetId: "t2" },
+      { id: "lbl_3", text: "Green Habitat", targetId: "t3" }
+    ]
   },
   listening_p1: {
     image_url: "/images/week${weekNum}/w${weekNum}_listening_p1_scene.jpg",
@@ -273,6 +319,44 @@ export const listeningHub = {
       { letter: "F", name: "Flashlight", location_name: "Dark Cave", image_url: "/images/week${weekNum}/card_f.jpg" },
       { letter: "G", name: "Backpack", location_name: "Base Tent", image_url: "/images/week${weekNum}/card_g.jpg" },
       { letter: "H", name: "Binoculars", location_name: "Wooden Tower", image_url: "/images/week${weekNum}/card_h.jpg" }
+    ]
+  },
+  listening_p4: {
+    audio_url: "/audio/week${weekNum}/listening_p4_full.mp3",
+    questions: [
+      {
+        id: "p4_q1",
+        question_en: "Where was the lion sleeping?",
+        audio_url: "/audio/week${weekNum}/listening_p4_q1.mp3",
+        options: [
+          { letter: "A", text: "Under a tall oak tree", image_url: "/images/week${weekNum}/webtoon_scene_1.png" },
+          { letter: "B", text: "Inside a stone cave", image_url: "/images/week${weekNum}/card_f.jpg" },
+          { letter: "C", text: "Near a wooden camp", image_url: "/images/week${weekNum}/card_b.jpg" }
+        ],
+        answer: "A"
+      },
+      {
+        id: "p4_q2",
+        question_en: "What trapped the lion in the forest?",
+        audio_url: "/audio/week${weekNum}/listening_p4_q2.mp3",
+        options: [
+          { letter: "A", text: "A heavy rope net", image_url: "/images/week${weekNum}/card_a.jpg" },
+          { letter: "B", text: "A wooden cage", image_url: "/images/week${weekNum}/card_b.jpg" },
+          { letter: "C", text: "A deep hole", image_url: "/images/week${weekNum}/card_g.jpg" }
+        ],
+        answer: "A"
+      },
+      {
+        id: "p4_q3",
+        question_en: "How did the mouse free the lion?",
+        audio_url: "/audio/week${weekNum}/listening_p4_q3.mp3",
+        options: [
+          { letter: "A", text: "He chewed the thick ropes", image_url: "/images/week${weekNum}/webtoon_scene_5.png" },
+          { letter: "B", text: "He called other hunters", image_url: "/images/week${weekNum}/card_c.jpg" },
+          { letter: "C", text: "He brought a key", image_url: "/images/week${weekNum}/card_e.jpg" }
+        ],
+        answer: "A"
+      }
     ]
   },
   listening_p5: {
@@ -355,6 +439,25 @@ export const writingHub = {
         answer: "He chewed through the strong ropes"
       }
     ]
+  },
+  science_report_config: {
+    topic: "Animal Cooperation in Nature",
+    notebookTitle: "Animal Cooperation Lab Notebook",
+    step1Title: "Observe Animal Roles",
+    step1Pills: {
+      "🦁 Large Predators": ["protect the territory", "maintain balance in the forest", "keep other animals alert"],
+      "🐭 Small Animals": ["clean the forest floor", "plant new seeds", "help free larger friends"]
+    },
+    step2Title: "Measure Mutual Benefits",
+    step2Pills: {
+      "🤝 Teamwork Actions": ["animals work together in harmony", "different skills help everyone survive", "cooperation makes the forest safer"],
+      "🌲 Forest Health": ["plants and trees grow well", "animals stay safe from danger", "food and water are shared"]
+    },
+    step3Title: "Record Ecosystem Conclusion",
+    step3Pills: {
+      "🏆 Key Conclusion": ["true friendship and teamwork help all creatures", "size does not matter when helping friends", "cooperation keeps nature strong"],
+      "🌟 Takeaway": ["small acts of kindness make a big difference", "everyone has an important role in nature", "working together brings peace"]
+    }
   }
 };
 

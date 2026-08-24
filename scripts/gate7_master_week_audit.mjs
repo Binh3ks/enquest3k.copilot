@@ -40,6 +40,10 @@ const GATES = [
   { name: 'Gate 8: Static No-Fallback Sweep & Fail-Loud Audit', cmd: `node scripts/gate8_no_fallback_sweep.mjs` },
   { name: 'Gate 9: Generator Purity & Zero-Clone Audit', cmd: `node scripts/gate9_generator_purity.mjs` },
   { name: 'Gate 10: Example Sentence Grammaticality & Diversity', cmd: `node scripts/gate10_example_grammaticality.mjs ${weekNum}` },
+  { name: 'Gate 11: Content Richness & Volume Standard', cmd: `node scripts/gate11_content_richness.mjs ${weekNum}` },
+  { name: 'Gate 12: Comprehensive CEFR & Forbidden Jargon Guard', cmd: `node scripts/gate12_comprehensive_cefr.mjs ${weekNum}` },
+  { name: 'Gate 13: Boss Rotary Schedule & Skills Audit', cmd: `node scripts/gate13_rotary_schedule.mjs ${weekNum}` },
+  { name: 'Gate 14: Deployed Version Stamp & Verification Engine', cmd: `node scripts/gate14_deployed_version.mjs` },
   { name: 'Task Auditor: 15-Quest Hub Invariants', cmd: `node scripts/audit_week_tasks.mjs ${weekNum}` }
 ];
 

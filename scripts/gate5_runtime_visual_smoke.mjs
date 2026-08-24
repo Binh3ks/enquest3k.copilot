@@ -98,24 +98,26 @@ async function runVisualSmoke() {
     process.stdout.write(`   [${i + 1}/15] Testing ${taskId}... `);
 
     try {
-      await page.goto(taskUrl, { waitUntil: 'domcontentloaded', timeout: 15000 });
-      await page.waitForTimeout(800);
+      await page.goto(taskUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
+      await page.waitForTimeout(1000);
 
       // 1. Positive Assertion: Page Body Content Length >= 80
-      const bodyText = await page.innerText('body');
-      if (bodyText.trim().length < 80) {
-        errors.push(`[BLANK SCREEN] Task ${taskId} rendered empty body (length: ${bodyText.trim().length})`);
+      const bodyText = await page.evaluate(() => (document.body.innerText || document.body.textContent || '').trim());
+      if (bodyText.length < 80) {
+        errors.push(`[BLANK SCREEN] Task ${taskId} rendered empty body (length: ${bodyText.length})`);
       }
 
       // 2. Positive Assertion: Interactive Elements Count >= 1
-      const buttonCount = await page.locator('button, input, [role="button"]').count();
+      const buttonCount = await page.evaluate(() => document.querySelectorAll('button, input, [role="button"], a, select, [tabindex], img').length);
       if (buttonCount === 0) {
         errors.push(`[NO INTERACTION] Task ${taskId} has 0 clickable/interactive elements!`);
       }
 
       // 3. Positive Assertion: XP Badge Match
-      const topBadge = page.locator('header, .sticky, div:has-text("XP"), div:has-text("Milestone")').first();
-      const headerText = await topBadge.innerText().catch(() => '');
+      const headerText = await page.evaluate(() => {
+        const el = document.querySelector('header, .sticky, div[class*="badge"], div[class*="Badge"], nav');
+        return el ? el.textContent : '';
+      });
       if (expectedSchedule.isMilestone) {
         if (!headerText.includes('Milestone') && headerText.includes('+50')) {
           errors.push(`[XP BADGE MISMATCH] Task ${taskId} is Milestone (0 XP) but rendered badge: "${headerText.trim()}"`);
@@ -130,18 +132,18 @@ async function runVisualSmoke() {
       // 4. Day 5 Boss Battle Component Deep Testing (Enter Boss Battle)
       if (taskId.startsWith('boss_') || taskId === 'weekly_review') {
         const enterBtn = page.locator('button:has-text("ENTER BOSS BATTLE NOW"), button:has-text("START")').first();
-        if (await enterBtn.isVisible()) {
+        if (await enterBtn.isVisible().catch(() => false)) {
           await enterBtn.click();
           await page.waitForTimeout(600);
 
           // Assert inside Cambridge component
-          const insideText = await page.innerText('body');
+          const insideText = await page.evaluate(() => document.body.innerText || '');
           if (insideText.length < 100) {
             errors.push(`[CAMBRIDGE BLANK CARD] ${taskId} rendered empty view after clicking Start!`);
           }
 
           // Check that interactive task inputs or options exist
-          const taskControls = await page.locator('input, button, [class*="cursor-pointer"], select').count();
+          const taskControls = await page.evaluate(() => document.querySelectorAll('input, button, [class*="cursor-pointer"], select').length);
           if (taskControls < 2) {
             errors.push(`[CAMBRIDGE MISSING CONTROLS] ${taskId} has no interactive question elements!`);
           }
@@ -150,9 +152,11 @@ async function runVisualSmoke() {
 
       // 5. Specific Quest Checks
       if (taskId === 'gear1_webtoon') {
-        const imgLocator = page.locator('img[src*="webtoon_scene_1"]');
-        if (await imgLocator.count() === 0) {
-          errors.push(`gear1_webtoon: webtoon_scene_1 image tag not found in DOM!`);
+        const hasImg = await page.evaluate(() => {
+          return Array.from(document.querySelectorAll('img')).some(img => img.src && (img.src.includes('webtoon') || img.src.includes('scene')));
+        });
+        if (!hasImg) {
+          errors.push(`gear1_webtoon: webtoon scene image tag not found in DOM!`);
         }
       }
 

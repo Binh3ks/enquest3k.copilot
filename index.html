@@ -80,6 +80,12 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      fetch('/version.json?_t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(v) { window.__APP_VERSION__ = v; window.__GIT_COMMIT__ = v.commit; })
+        .catch(function() {});
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

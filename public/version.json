@@ -1,0 +1,9 @@
+{
+  "commit": "d2b98ddf0a881d54adf3f9644e04ff6d53358d45",
+  "git_commit": "d2b98ddf0a881d54adf3f9644e04ff6d53358d45",
+  "shortCommit": "d2b98ddf",
+  "message": "feat(w34): fix vocab example sentences with natural POS-aware contexts and implement Gate 10 example grammaticality auditor",
+  "builtAt": "2026-08-24T14:46:27.183Z",
+  "build_timestamp": "2026-08-24T14:46:27.183Z",
+  "env": "production"
+}

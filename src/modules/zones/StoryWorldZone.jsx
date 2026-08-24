@@ -211,7 +211,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
 
   const currentScene = scenes[activeFrameIndex] || null;
   const currentSceneText = currentScene
-    ? (currentScene.description_en || currentScene.en || currentScene.text || currentScene.title_en || '')
+    ? (currentScene.narration_en || currentScene.description_en || currentScene.en || currentScene.text || currentScene.title_en || '')
     : '';
 
   const handleNextGear = (targetGear) => {
@@ -817,10 +817,10 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                   />
 
                   {/* Mystery Pins — compact circular badges to prevent label overlap */}
-                  {currentScene.lexical_chunks?.map((chunk, cIdx) => {
-                    const pinKey = `${currentScene.scene_id}_${cIdx}`;
-                    const chunkLabel = chunk.chunk || chunk.text || chunk.word || `Item ${cIdx + 1}`;
-                    const chunkVi = chunk.vi || chunk.meaning_vi || '';
+                  {(currentScene.lexical_chunks || currentScene.hotspots || []).map((chunk, cIdx) => {
+                    const pinKey = `${currentScene.scene_id || currentScene.id || 'scene'}_${cIdx}`;
+                    const chunkLabel = chunk.label_en || chunk.chunk || chunk.text || chunk.word || `Item ${cIdx + 1}`;
+                    const chunkVi = chunk.label_vi || chunk.vi || chunk.meaning_vi || '';
                     const isRevealed = revealedPins[pinKey];
                     const isFound = foundItems.includes(chunkLabel);
                     
@@ -1624,6 +1624,9 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
               <SingleSubjectPassportSidebar
                 currentSubject="science"
                 level={clilStampEarned ? 2 : 1}
+                customTitle={clilArticle?.title || "Animal Cooperation"}
+                customLevelTitle={activeWeek === 34 ? "Animal Cooperation Explorer" : undefined}
+                customDesc={activeWeek === 34 ? "Discovered how animals help each other in the forest, work as a team, and protect nature." : undefined}
                 onSelectStamp={() => {
                   setSelectedStampId('science');
                   setShowStampModal(true);

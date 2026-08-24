@@ -61,6 +61,25 @@ export const writingHub = {
         answer: "He chewed through the strong ropes"
       }
     ]
+  },
+  science_report_config: {
+    topic: "Animal Cooperation in Nature",
+    notebookTitle: "Animal Cooperation Lab Notebook",
+    step1Title: "Observe Animal Roles",
+    step1Pills: {
+      "🦁 Large Predators": ["protect the territory", "maintain balance in the forest", "keep other animals alert"],
+      "🐭 Small Animals": ["clean the forest floor", "plant new seeds", "help free larger friends"]
+    },
+    step2Title: "Measure Mutual Benefits",
+    step2Pills: {
+      "🤝 Teamwork Actions": ["animals work together in harmony", "different skills help everyone survive", "cooperation makes the forest safer"],
+      "🌲 Forest Health": ["plants and trees grow well", "animals stay safe from danger", "food and water are shared"]
+    },
+    step3Title: "Record Ecosystem Conclusion",
+    step3Pills: {
+      "🏆 Key Conclusion": ["true friendship and teamwork help all creatures", "size does not matter when helping friends", "cooperation keeps nature strong"],
+      "🌟 Takeaway": ["small acts of kindness make a big difference", "everyone has an important role in nature", "working together brings peace"]
+    }
   }
 };
 

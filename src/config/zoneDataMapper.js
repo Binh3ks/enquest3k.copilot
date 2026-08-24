@@ -33,6 +33,12 @@ export function mapDataToZones(weekData, weekNumber = 33) {
       || weekData.speaking_hub?.cue_card_prompts
       || null,
 
+    // 4 Hubs Passthrough
+    reading_hub: readingHub,
+    listening_hub: listeningHub,
+    writing_hub: writingHub,
+    speaking_hub: speakingHub,
+
     // ZONE 1: STORY WORLD
     storyWorld: {
       storyScenes: readingHub.story_scenes || readingHub.read_explore?.story_scenes || [],
@@ -79,7 +85,7 @@ export function mapDataToZones(weekData, weekNumber = 33) {
         p1: listeningHub.listening_p1 || null,
         p2: listeningHub.listening_p2_notes || listeningHub.dictation || null,
         p3: listeningHub.listening_p3 || null,
-        p4: listeningHub.listening_p4_questions || null,
+        p4: listeningHub.listening_p4 || listeningHub.listening_p4_questions || null,
         p5: listeningHub.listening_p5 || null,
       },
       readingWriting: {

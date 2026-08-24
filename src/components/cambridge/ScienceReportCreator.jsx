@@ -120,9 +120,11 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         </div>
         <div>
           <span className="text-[10px] font-black text-emerald-700 uppercase tracking-wider">
-            Science Report • CLIL Friction Lab
+            Science Report • {customConfig?.topic || reportTopic || (weekNumber === 34 ? "Animal Cooperation Lab" : "CLIL Discovery Lab")}
           </span>
-          <h3 className="text-sm font-black text-slate-900">Corridor Friction Lab Notebook</h3>
+          <h3 className="text-sm font-black text-slate-900">
+            {customConfig?.notebookTitle || (weekNumber === 34 ? "Animal Cooperation Lab Notebook" : "Discovery Lab Notebook")}
+          </h3>
         </div>
       </div>
 

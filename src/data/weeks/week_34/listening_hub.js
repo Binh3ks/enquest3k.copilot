@@ -7,6 +7,43 @@ export const listeningHub = {
     { id: 4, text: "Hunters trapped the lion in a strong net.", audio_url: "/audio/week34/dictation_4.mp3" },
     { id: 5, text: "The mouse chewed through the thick ropes.", audio_url: "/audio/week34/dictation_5.mp3" }
   ],
+  grammar_drills: [
+    {
+      id: "st2_w34_g01",
+      grammar_tag: "past_continuous_when_while",
+      text_en: "Build a past continuous sentence with 'While'.",
+      word_blocks: ["While", "the", "mighty", "lion", "was", "sleeping", ",", "a", "tiny", "mouse", "ran", "past", "."],
+      distractor_blocks: ["is", "runs", "sleeps"]
+    },
+    {
+      id: "st2_w34_g02",
+      grammar_tag: "past_simple_promise",
+      text_en: "Build a sentence about the mouse promising help.",
+      word_blocks: ["The", "little", "mouse", "promised", "to", "help", "the", "lion", "one", "day", "."],
+      distractor_blocks: ["promises", "helping", "big"]
+    },
+    {
+      id: "st2_w34_g03",
+      grammar_tag: "past_simple_passive_or_action",
+      text_en: "Build a sentence about hunters capturing the lion.",
+      word_blocks: ["Hunters", "trapped", "the", "strong", "lion", "in", "a", "heavy", "rope", "net", "."],
+      distractor_blocks: ["traps", "is", "tiny"]
+    },
+    {
+      id: "st2_w34_g04",
+      grammar_tag: "past_simple_rescue",
+      text_en: "Build a rescue sentence with the brave mouse.",
+      word_blocks: ["The", "brave", "mouse", "chewed", "through", "the", "ropes", "and", "freed", "him", "."],
+      distractor_blocks: ["chews", "frees", "running"]
+    },
+    {
+      id: "st2_w34_g05",
+      grammar_tag: "moral_friendship",
+      text_en: "Build a moral friendship sentence.",
+      word_blocks: ["They", "became", "loyal", "friends", "and", "lived", "peacefully", "in", "the", "forest", "."],
+      distractor_blocks: ["becomes", "lives", "never"]
+    }
+  ],
   singapore_math: [
     {
       id: 1,
@@ -40,10 +77,19 @@ export const listeningHub = {
     }
   ],
   science_lab: {
-    simulation_title: "Animal Cooperation Lab",
-    experiment_steps: ["Observe animal roles", "Measure mutual benefits", "Record ecosystem balance"],
-    interactive_items: ["Lion", "Mouse", "Forest Habitat"],
-    conclusion_formula: "Cooperation = Harmony"
+    experimentTitle: "Animal Cooperation & Ecosystem Lab",
+    diagramImage: "/images/week34/explore_cover_w34.jpg",
+    explanation: "Explore how the mighty lion, tiny mouse, and tall trees help each other survive and thrive in the forest.",
+    targets: [
+      { id: "t1", name: "Lion (Guardian)", x: 25, y: 60 },
+      { id: "t2", name: "Mouse (Helper)", x: 75, y: 65 },
+      { id: "t3", name: "Forest Trees (Habitat)", x: 50, y: 30 }
+    ],
+    labels: [
+      { id: "lbl_1", text: "Mighty Guardian", targetId: "t1" },
+      { id: "lbl_2", text: "Tiny Helper", targetId: "t2" },
+      { id: "lbl_3", text: "Green Habitat", targetId: "t3" }
+    ]
   },
   listening_p1: {
     image_url: "/images/week34/w34_listening_p1_scene.jpg",
@@ -80,6 +126,44 @@ export const listeningHub = {
       { letter: "F", name: "Flashlight", location_name: "Dark Cave", image_url: "/images/week34/card_f.jpg" },
       { letter: "G", name: "Backpack", location_name: "Base Tent", image_url: "/images/week34/card_g.jpg" },
       { letter: "H", name: "Binoculars", location_name: "Wooden Tower", image_url: "/images/week34/card_h.jpg" }
+    ]
+  },
+  listening_p4: {
+    audio_url: "/audio/week34/listening_p4_full.mp3",
+    questions: [
+      {
+        id: "p4_q1",
+        question_en: "Where was the lion sleeping?",
+        audio_url: "/audio/week34/listening_p4_q1.mp3",
+        options: [
+          { letter: "A", text: "Under a tall oak tree", image_url: "/images/week34/webtoon_scene_1.png" },
+          { letter: "B", text: "Inside a stone cave", image_url: "/images/week34/card_f.jpg" },
+          { letter: "C", text: "Near a wooden camp", image_url: "/images/week34/card_b.jpg" }
+        ],
+        answer: "A"
+      },
+      {
+        id: "p4_q2",
+        question_en: "What trapped the lion in the forest?",
+        audio_url: "/audio/week34/listening_p4_q2.mp3",
+        options: [
+          { letter: "A", text: "A heavy rope net", image_url: "/images/week34/card_a.jpg" },
+          { letter: "B", text: "A wooden cage", image_url: "/images/week34/card_b.jpg" },
+          { letter: "C", text: "A deep hole", image_url: "/images/week34/card_g.jpg" }
+        ],
+        answer: "A"
+      },
+      {
+        id: "p4_q3",
+        question_en: "How did the mouse free the lion?",
+        audio_url: "/audio/week34/listening_p4_q3.mp3",
+        options: [
+          { letter: "A", text: "He chewed the thick ropes", image_url: "/images/week34/webtoon_scene_5.png" },
+          { letter: "B", text: "He called other hunters", image_url: "/images/week34/card_c.jpg" },
+          { letter: "C", text: "He brought a key", image_url: "/images/week34/card_e.jpg" }
+        ],
+        answer: "A"
+      }
     ]
   },
   listening_p5: {

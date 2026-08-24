@@ -147,9 +147,18 @@ export function CLILSealStamp({
 export function SingleSubjectPassportSidebar({
   currentSubject = 'science',
   level = 1,
-  onSelectStamp
+  onSelectStamp,
+  customTitle,
+  customLevelTitle,
+  customDesc
 }) {
-  const stamp = CLIL_STAMPS[currentSubject] || CLIL_STAMPS.science;
+  const baseStamp = CLIL_STAMPS[currentSubject] || CLIL_STAMPS.science;
+  const stamp = {
+    ...baseStamp,
+    title: customTitle || baseStamp.title,
+    levelTitle: customLevelTitle || baseStamp.levelTitle,
+    desc: customDesc || baseStamp.desc
+  };
 
   return (
     <aside className="w-56 shrink-0 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-3xl border-2 border-slate-200 shadow-xl space-y-3.5 font-sans text-slate-900 text-center flex flex-col items-center">

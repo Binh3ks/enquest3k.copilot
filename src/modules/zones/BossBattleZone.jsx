@@ -10,6 +10,7 @@ import WordBankMatchingGrid from '../../components/cambridge/WordBankMatchingGri
 import DialogueAHCompleter from '../../components/cambridge/DialogueAHCompleter';
 import InlineTextClozeDropdown from '../../components/cambridge/InlineTextClozeDropdown';
 import TextExtractionCompleter from '../../components/cambridge/TextExtractionCompleter';
+import MultipleChoice3Pic from '../../components/cambridge/MultipleChoice3Pic';
 import OpenClozeCompleter from '../../components/cambridge/OpenClozeCompleter';
 import FindDifferencesInteractive from '../../components/cambridge/FindDifferencesInteractive';
 import InformationExchangeP2 from '../../components/cambridge/InformationExchangeP2';
@@ -26,24 +27,28 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
   const userShields = useUserStore((state) => state.userShields || 0);
   const rotaryConfig = getBossRotaryConfig(activeWeek || 1);
   const bossData = React.useMemo(() => {
-    if (data?.bossBattle && Object.keys(data.bossBattle).length > 0) return data.bossBattle;
+    const hasCustomListening = Object.keys(data?.bossBattle?.listening || {}).length > 0;
+    const hasCustomRW = Object.keys(data?.bossBattle?.readingWriting || {}).length > 0;
+    if (hasCustomListening || hasCustomRW) return data.bossBattle;
+
     return {
       listening: {
-        p1: data?.listening_hub?.listening_p1 || data?.listeningHubData?.listening_p1,
-        p2: data?.listening_hub?.listening_p2_notes || data?.listeningHubData?.listening_p2_notes,
-        p3: data?.listening_hub?.listening_p3 || data?.listeningHubData?.listening_p3,
-        p5: data?.listening_hub?.listening_p5 || data?.listeningHubData?.listening_p5
+        p1: data?.listening_hub?.listening_p1 || data?.listeningHubData?.listening_p1 || data?.bossBattle?.listening?.p1,
+        p2: data?.listening_hub?.listening_p2_notes || data?.listeningHubData?.listening_p2_notes || data?.bossBattle?.listening?.p2,
+        p3: data?.listening_hub?.listening_p3 || data?.listeningHubData?.listening_p3 || data?.bossBattle?.listening?.p3,
+        p4: data?.listening_hub?.listening_p4 || data?.listeningHubData?.listening_p4 || data?.listening_hub?.listening_p4_questions || data?.bossBattle?.listening?.p4,
+        p5: data?.listening_hub?.listening_p5 || data?.listeningHubData?.listening_p5 || data?.bossBattle?.listening?.p5
       },
       readingWriting: {
-        p1: data?.writing_hub?.rw_part_1 || data?.writingHubData?.rw_part_1,
-        p2: data?.writing_hub?.rw_part_2 || data?.writingHubData?.rw_part_2,
-        p4: data?.writing_hub?.rw_part_4 || data?.writingHubData?.rw_part_4,
-        p5: data?.writing_hub?.rw_part_5 || data?.writingHubData?.rw_part_5,
-        p6: data?.reading_hub?.rw_part_6 || data?.readingHubData?.rw_part_6
+        p1: data?.writing_hub?.rw_part_1 || data?.writingHubData?.rw_part_1 || data?.bossBattle?.readingWriting?.p1,
+        p2: data?.writing_hub?.rw_part_2 || data?.writingHubData?.rw_part_2 || data?.bossBattle?.readingWriting?.p2,
+        p4: data?.writing_hub?.rw_part_4 || data?.writingHubData?.rw_part_4 || data?.bossBattle?.readingWriting?.p4,
+        p5: data?.writing_hub?.rw_part_5 || data?.writingHubData?.rw_part_5 || data?.bossBattle?.readingWriting?.p5,
+        p6: data?.reading_hub?.rw_part_6 || data?.readingHubData?.rw_part_6 || data?.bossBattle?.readingWriting?.p6
       },
       speaking: {
-        p1_findDiff: data?.speaking_hub?.find_differences || data?.speakingHubData?.find_differences,
-        p2_cueCard: data?.speaking_hub?.info_exchange_cards || data?.speakingHubData?.info_exchange_cards
+        p1_findDiff: data?.speaking_hub?.find_differences || data?.speakingHubData?.find_differences || data?.bossBattle?.speaking?.p1_findDiff,
+        p2_cueCard: data?.speaking_hub?.info_exchange_cards || data?.speakingHubData?.info_exchange_cards || data?.bossBattle?.speaking?.p2_cueCard
       }
     };
   }, [data]);
@@ -96,6 +101,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         { id: 'list_p1', name: 'Listening P1: Draw Lines', category: 'Listening' },
         { id: 'list_p2', name: 'Listening P2: Secret Notes', category: 'Listening' },
         { id: 'list_p3', name: 'Listening P3: Item Hunt', category: 'Listening' },
+        { id: 'list_p4', name: 'Listening P4: 3-Picture Quiz', category: 'Listening' },
         { id: 'list_p5', name: 'Listening P5: Magic Color', category: 'Listening' },
         { id: 'rw_p1', name: 'Reading P1: Word Bank', category: 'Reading' },
         { id: 'rw_p2', name: 'Reading P2: Dialogue A-H', category: 'Reading' },
@@ -117,9 +123,9 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
 
     if (rotaryConfig.cycleNumber === 2) {
       return [
+        { id: 'list_p4', name: 'Listening Part 4: 3-Picture Quiz', shieldName: 'Shield 4 (Listening P4)' },
         { id: 'list_p5', name: 'Listening Part 5: Color & Write', shieldName: 'Shield 5 (Listening P5)' },
         { id: 'rw_p1', name: 'Reading Part 1: Word Bank Match', shieldName: 'Shield 6 (R&W P1)' },
-        { id: 'rw_p6', name: 'Reading Part 6: Open Cloze', shieldName: 'Shield 11 (R&W P6)' },
       ];
     }
 
@@ -252,6 +258,16 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
             matchingData={bossData.listening.p3}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p3')}
+          />
+        )}
+
+        {/* LISTENING P4 */}
+        {currentTask.id === 'list_p4' && (
+          <MultipleChoice3Pic
+            customData={bossData.listening?.p4}
+            data={bossData.listening?.p4}
+            weekNumber={activeWeek}
+            onComplete={() => handleTaskComplete('list_p4')}
           />
         )}
 

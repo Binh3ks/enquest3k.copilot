@@ -153,6 +153,7 @@ export default function BattleArenaZone({ data, weekNumber, forcedStation = null
 
         {activeGame === 'sentence_smash' && (
           <SentenceBuilderBattle
+            customDrills={grammarDrills}
             grammarDrills={grammarDrills}
             weekNumber={activeWeek}
             onComplete={(pts) => handleGameComplete(pts > 0 ? 35 : 0)}

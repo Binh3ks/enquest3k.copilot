@@ -56,7 +56,45 @@ const WEEK33_GRAMMAR_DRILLS = [
   }
 ];
 
-export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptResult, onComplete }) {
+const WEEK34_GRAMMAR_DRILLS = [
+  {
+    id: "st2_w34_g01",
+    grammar_tag: "past_continuous_when_while",
+    text_en: "Build a past continuous sentence with 'While'.",
+    word_blocks: ["While", "the", "mighty", "lion", "was", "sleeping", ",", "a", "tiny", "mouse", "ran", "past", "."],
+    distractor_blocks: ["is", "runs", "sleeps"]
+  },
+  {
+    id: "st2_w34_g02",
+    grammar_tag: "past_simple_promise",
+    text_en: "Build a sentence about the mouse promising help.",
+    word_blocks: ["The", "little", "mouse", "promised", "to", "help", "the", "lion", "one", "day", "."],
+    distractor_blocks: ["promises", "helping", "big"]
+  },
+  {
+    id: "st2_w34_g03",
+    grammar_tag: "past_simple_passive_or_action",
+    text_en: "Build a sentence about hunters capturing the lion.",
+    word_blocks: ["Hunters", "trapped", "the", "strong", "lion", "in", "a", "heavy", "rope", "net", "."],
+    distractor_blocks: ["traps", "is", "tiny"]
+  },
+  {
+    id: "st2_w34_g04",
+    grammar_tag: "past_simple_rescue",
+    text_en: "Build a rescue sentence with the brave mouse.",
+    word_blocks: ["The", "brave", "mouse", "chewed", "through", "the", "ropes", "and", "freed", "him", "."],
+    distractor_blocks: ["chews", "frees", "running"]
+  },
+  {
+    id: "st2_w34_g05",
+    grammar_tag: "moral_friendship",
+    text_en: "Build a moral friendship sentence.",
+    word_blocks: ["They", "became", "loyal", "friends", "and", "lived", "peacefully", "in", "the", "forest", "."],
+    distractor_blocks: ["becomes", "lives", "never"]
+  }
+];
+
+export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, weekNumber = 33, grammarLesson, onAttemptResult, onComplete }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
   const [showGrammarModal, setShowGrammarModal] = useState(false);
@@ -72,9 +110,10 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
   const [correctCount, setCorrectCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(45);
 
-  const drillsList = (customDrills && Array.isArray(customDrills) && customDrills.length > 0)
-    ? customDrills
-    : WEEK33_GRAMMAR_DRILLS;
+  const inputDrills = customDrills || grammarDrills || drills;
+  const drillsList = (inputDrills && Array.isArray(inputDrills) && inputDrills.length > 0)
+    ? inputDrills
+    : (weekNumber === 34 ? WEEK34_GRAMMAR_DRILLS : WEEK33_GRAMMAR_DRILLS);
 
   const currentDrill = drillsList[currentDrillIndex] || drillsList[0];
   const totalDrillsCount = drillsList.length;
