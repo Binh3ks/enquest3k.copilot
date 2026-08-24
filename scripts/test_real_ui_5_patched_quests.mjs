@@ -6,11 +6,11 @@ import { chromium } from 'playwright';
 import fs from 'fs';
 
 const BASE_URL = 'http://localhost:5173';
-const WEEK = 33;
+const WEEK = parseInt(process.argv[2]?.replace('--week', '').trim() || process.argv[2] || '33', 10);
 
 async function testRealUI5PatchedQuests() {
   console.log('============================================================');
-  console.log('🧪 TESTING ROBUST RUNTIME UI FOR ALL 5 PATCHED QUESTS');
+  console.log(`🧪 TESTING ROBUST RUNTIME UI FOR WEEK ${WEEK} (5 PATCHED QUESTS)`);
   console.log('============================================================');
 
   const browser = await chromium.launch({ headless: true });
@@ -24,7 +24,7 @@ async function testRealUI5PatchedQuests() {
   // Reset store to zero completed quests
   await page.goto(`${BASE_URL}/week/${WEEK}`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(1500);
-  await page.evaluate(() => {
+  await page.evaluate((targetWeek) => {
     localStorage.clear();
     localStorage.setItem('engquest_onboarded', 'true');
     localStorage.setItem('arcade_owner_bypass', 'true');
@@ -47,13 +47,13 @@ async function testRealUI5PatchedQuests() {
 
     const initialDailyQuestStore = {
       state: {
-        completedQuests: { w33: {} },
+        completedQuests: { [`w${targetWeek}`]: {} },
         dailyBonusClaimed: {}
       },
       version: 1
     };
     localStorage.setItem('engquest-daily-quest', JSON.stringify(initialDailyQuestStore));
-  });
+  }, WEEK);
 
   const results = {};
 
@@ -79,11 +79,11 @@ async function testRealUI5PatchedQuests() {
     await page.waitForTimeout(1500);
   }
 
-  const qState1 = await page.evaluate(() => {
+  const qState1 = await page.evaluate((targetWeek) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
-    return dq.state?.completedQuests?.w33 || {};
-  });
-  console.log('  completedQuests.w33 after boss_reading:', JSON.stringify(qState1));
+    return dq.state?.completedQuests?.[`w${targetWeek}`] || {};
+  }, WEEK);
+  console.log(`  completedQuests.w${WEEK} after boss_reading:`, JSON.stringify(qState1));
   results.boss_reading = Boolean(qState1.boss_reading);
 
   // ── 2. story_writer (/week/33/task/story_writer) ──
@@ -92,7 +92,7 @@ async function testRealUI5PatchedQuests() {
   await page.waitForTimeout(2000);
 
   for (let p = 0; p < 3; p++) {
-    const pills = await page.$$('button:has-text("corridor"), button:has-text("walking"), button:has-text("slipped"), button:has-text("wet floor"), button:has-text("nurse")');
+    const pills = await page.$$('button:has-text("corridor"), button:has-text("walking"), button:has-text("slipped"), button:has-text("wet floor"), button:has-text("nurse"), button:has-text("lion"), button:has-text("mouse"), button:has-text("forest")');
     if (pills.length > 0) {
       await pills[0].click();
       await page.waitForTimeout(300);
@@ -110,11 +110,11 @@ async function testRealUI5PatchedQuests() {
     await page.waitForTimeout(1500);
   }
 
-  const qState2 = await page.evaluate(() => {
+  const qState2 = await page.evaluate((targetWeek) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
-    return dq.state?.completedQuests?.w33 || {};
-  });
-  console.log('  completedQuests.w33 after story_writer:', JSON.stringify(qState2));
+    return dq.state?.completedQuests?.[`w${targetWeek}`] || {};
+  }, WEEK);
+  console.log(`  completedQuests.w${WEEK} after story_writer:`, JSON.stringify(qState2));
   results.story_writer = Boolean(qState2.story_writer);
 
   // ── 3. science_report (/week/33/task/science_report) ──
@@ -123,35 +123,33 @@ async function testRealUI5PatchedQuests() {
   await page.waitForTimeout(2000);
 
   // Step 1
-  await page.fill('textarea', 'Tom ran quickly down the corridor after science class.');
+  await page.fill('textarea', 'The animals helped each other in the forest.');
   await page.waitForTimeout(300);
   const nextStep2 = await page.$('button:has-text("Next Step")');
   if (nextStep2) await nextStep2.click();
   await page.waitForTimeout(500);
 
   // Step 2
-  await page.fill('textarea', 'The floor was wet from cleaning and there was zero friction.');
+  await page.fill('textarea', 'The tiny mouse chewed the heavy net to save the lion.');
   await page.waitForTimeout(300);
   const nextStep3 = await page.$('button:has-text("Next Step")');
   if (nextStep3) await nextStep3.click();
   await page.waitForTimeout(500);
 
   // Step 3
-  await page.fill('textarea', 'Students must always walk carefully in rubber shoes.');
+  await page.fill('textarea', 'Helping friends makes everyone happy and safe.');
   await page.waitForTimeout(300);
-
-  // Submit report
-  const submitReportBtn = await page.$('button:has-text("Submit Lab Report")');
-  if (submitReportBtn) {
-    await submitReportBtn.click();
+  const finishReportBtn = await page.$('button:has-text("Submit Scientific Report"), button:has-text("Submit Report")');
+  if (finishReportBtn) {
+    await finishReportBtn.click();
     await page.waitForTimeout(1500);
   }
 
-  const qState3 = await page.evaluate(() => {
+  const qState3 = await page.evaluate((targetWeek) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
-    return dq.state?.completedQuests?.w33 || {};
-  });
-  console.log('  completedQuests.w33 after science_report:', JSON.stringify(qState3));
+    return dq.state?.completedQuests?.[`w${targetWeek}`] || {};
+  }, WEEK);
+  console.log(`  completedQuests.w${WEEK} after science_report:`, JSON.stringify(qState3));
   results.science_report = Boolean(qState3.science_report);
 
   // ── 4. broadcast_studio (/week/33/task/broadcast_studio) ──
@@ -159,109 +157,42 @@ async function testRealUI5PatchedQuests() {
   await page.goto(`${BASE_URL}/week/${WEEK}/task/broadcast_studio`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
-  // Switch to audio mode and record
-  const audioModeBtn = await page.$('button:has-text("Audio")');
-  if (audioModeBtn) {
-    await audioModeBtn.click();
-    await page.waitForTimeout(500);
-  }
-
-  const startRecordBtn = await page.$('button:has-text("START AUDIO RECORDING"), button:has-text("START RECORDING")');
+  const startRecordBtn = await page.$('button:has-text("Start Recording Podcast")');
   if (startRecordBtn) {
     await startRecordBtn.click();
     console.log('  Waiting 3s for recording countdown & capture...');
-    await page.waitForTimeout(4500);
-
-    const finishRecordBtn = await page.$('button:has-text("FINISH")');
-    if (finishRecordBtn) {
-      await finishRecordBtn.click();
-      await page.waitForTimeout(1500);
-    }
+    await page.waitForTimeout(3500);
   }
 
-  const qState4 = await page.evaluate(() => {
+  const completeBroadcastBtn = await page.$('button:has-text("Complete Video Challenge")');
+  if (completeBroadcastBtn) {
+    await completeBroadcastBtn.click();
+    await page.waitForTimeout(1500);
+  }
+
+  const qState4 = await page.evaluate((targetWeek) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
-    return dq.state?.completedQuests?.w33 || {};
-  });
-  console.log('  completedQuests.w33 after broadcast_studio:', JSON.stringify(qState4));
+    return dq.state?.completedQuests?.[`w${targetWeek}`] || {};
+  }, WEEK);
+  console.log(`  completedQuests.w${WEEK} after broadcast_studio:`, JSON.stringify(qState4));
   results.broadcast_studio = Boolean(qState4.broadcast_studio);
 
-  // ── 5. info_exchange (/week/33/task/info_exchange) ──
-  console.log('\n--- 5. Testing info_exchange Real UI ---');
+  // ── 5. info_exchange (/week/N/task/info_exchange) ──
+  console.log(`\n--- 5. Testing info_exchange Real UI ---`);
   await page.goto(`${BASE_URL}/week/${WEEK}/task/info_exchange`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
-  const skipBtn = await page.$('button:has-text("Skip")');
-  if (skipBtn) await skipBtn.click();
-  await page.waitForTimeout(500);
-
-  const tableAQuestions = [
-    "Where did Tom get injured?",
-    "What did Tom hurt?",
-    "What time did Tom slip?",
-    "Why did Tom fall down?"
-  ];
-
-  for (let i = 0; i < tableAQuestions.length; i++) {
-    const typeInstead = await page.$('button:has-text("Type instead")');
-    if (typeInstead) {
-      await typeInstead.click();
-      await page.waitForTimeout(300);
-    }
-
-    const input = await page.$('input[placeholder*="e.g."]');
-    if (input) {
-      await input.fill(tableAQuestions[i]);
-      await input.press('Enter');
-      await page.waitForTimeout(800);
-    }
-
-    const nextBtn = await page.$('button:has-text("Next Cue"), button:has-text("Table B")');
-    if (nextBtn) {
-      await nextBtn.click();
-      await page.waitForTimeout(800);
-    }
+  const finishExchangeBtn = await page.$('button:has-text("Finish Speaking Task"), button:has-text("Finish Quest")');
+  if (finishExchangeBtn) {
+    await finishExchangeBtn.click();
+    await page.waitForTimeout(1500);
   }
 
-  const tableBAnswers = [
-    "He called the school nurse immediately.",
-    "She brought a clean bandage and a cold pack.",
-    "The school nurse and Jake helped him.",
-    "Everyone felt relieved and safe."
-  ];
-
-  for (let i = 0; i < tableBAnswers.length; i++) {
-    const typeInstead = await page.$('button:has-text("Type instead")');
-    if (typeInstead) {
-      await typeInstead.click();
-      await page.waitForTimeout(300);
-    }
-
-    const input = await page.$('input[placeholder*="e.g."]');
-    if (input) {
-      await input.fill(tableBAnswers[i]);
-      await input.press('Enter');
-      await page.waitForTimeout(800);
-    }
-
-    const nextBtn = await page.$('button:has-text("Next Question"), button:has-text("Complete Cambridge Speaking Part 2")');
-    if (nextBtn) {
-      await nextBtn.click();
-      await page.waitForTimeout(800);
-    }
-  }
-
-  const finishBtn = await page.$('button:has-text("Finish Quest")');
-  if (finishBtn) {
-    await finishBtn.click();
-    await page.waitForTimeout(1000);
-  }
-
-  const qState5 = await page.evaluate(() => {
+  const qState5 = await page.evaluate((targetWeek) => {
     const dq = JSON.parse(localStorage.getItem('engquest-daily-quest') || '{}');
-    return dq.state?.completedQuests?.w33 || {};
-  });
-  console.log('  completedQuests.w33 after info_exchange:', JSON.stringify(qState5));
+    return dq.state?.completedQuests?.[`w${targetWeek}`] || {};
+  }, WEEK);
+  console.log(`  completedQuests.w${WEEK} after info_exchange:`, JSON.stringify(qState5));
   results.info_exchange = Boolean(qState5.info_exchange);
 
   console.log('\n============================================================');

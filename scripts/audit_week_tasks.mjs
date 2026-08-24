@@ -95,14 +95,17 @@ async function auditTask(task, baseDir, modeLabel) {
 
     // Check raw content for cross-week hardcoding
     const rawContent = fs.readFileSync(fullPath, 'utf8');
-    const wrongWeekPattern = new RegExp(`week_?(?!${targetWeek}\\b)\\d+`, 'g');
-    const crossWeekMatches = rawContent.match(wrongWeekPattern);
-    if (crossWeekMatches) {
-      // Filter out harmless historical references or comments
-      const suspicious = crossWeekMatches.filter(m => m.includes('audio') || m.includes('image') || m.includes('w'));
-      if (suspicious.length > 0) {
-        issues.push({ type: 'CROSS_WEEK_HARDCODE', file: relFile, matches: suspicious });
+    const wrongWeekMatches = [];
+    const weekRegex = /week_?(\d+)/g;
+    let match;
+    while ((match = weekRegex.exec(rawContent)) !== null) {
+      const foundWeek = parseInt(match[1], 10);
+      if (foundWeek !== targetWeek) {
+        wrongWeekMatches.push(match[0]);
       }
+    }
+    if (wrongWeekMatches.length > 0) {
+      issues.push({ type: 'CROSS_WEEK_HARDCODE', file: relFile, matches: wrongWeekMatches });
     }
 
     try {
