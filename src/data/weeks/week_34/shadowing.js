@@ -1,12 +1,16 @@
-// Week 34 shadowing.js
-export default {
-  videoId: "shadowing_w34",
-  title: "The Lion and the Mouse — Shadowing",
+// Week 34 Voice Shadowing Data
+export const shadowingData = {
   sentences: [
-    { id: 1, text: "One sunny day, a huge lion slept in the forest fable.", start_time: 0, end_time: 5 },
-    { id: 2, text: "A tiny mouse ran across his big paw.", start_time: 5, end_time: 10 },
-    { id: 3, text: "The lion caught the mouse but let him go.", start_time: 10, end_time: 15 },
-    { id: 4, text: "Later, hunters trapped the lion in a net.", start_time: 15, end_time: 20 },
-    { id: 5, text: "The mouse chewed the ropes and saved his friend.", start_time: 20, end_time: 25 }
+    "One warm afternoon, a huge lion was sleeping under a shady tree.",
+    "A tiny mouse ran across his big front paw by accident.",
+    "The lion woke up angrily and caught the little mouse.",
+    "The scared mouse promised to help the lion one day.",
+    "The lion laughed out loud and let the mouse go free.",
+    "A few days later, hunters trapped the lion in a heavy net.",
+    "The lion roared loudly because he could not escape.",
+    "The tiny mouse heard the roar and ran quickly to the tree.",
+    "Using his sharp teeth, the mouse chewed through the thick ropes.",
+    "The lion was freed safely and thanked his brave little friend."
   ]
 };
+export default shadowingData;
