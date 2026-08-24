@@ -1,0 +1,74 @@
+{
+  "baselineXP": 1250,
+  "finalXP": 1625,
+  "totalXPEarned": 375,
+  "transactionCount": 10,
+  "transactionLogs": [
+    {
+      "step": "Day 1 Complete -> Claim Daily Bonus",
+      "beforeXP": 1250,
+      "afterXP": 1275,
+      "deltaXP": 25
+    },
+    {
+      "step": "Day 2 Complete -> Claim Daily Bonus",
+      "beforeXP": 1275,
+      "afterXP": 1300,
+      "deltaXP": 25
+    },
+    {
+      "step": "Day 3 Speed Match Completed (+50 XP)",
+      "beforeXP": 1300,
+      "afterXP": 1350,
+      "deltaXP": 50
+    },
+    {
+      "step": "Day 3 Grammar Duel Completed (+50 XP)",
+      "beforeXP": 1350,
+      "afterXP": 1400,
+      "deltaXP": 50
+    },
+    {
+      "step": "Day 3 Math Quest Completed (+50 XP)",
+      "beforeXP": 1400,
+      "afterXP": 1450,
+      "deltaXP": 50
+    },
+    {
+      "step": "Day 3 Complete -> Claim Daily Bonus (+25 XP)",
+      "beforeXP": 1450,
+      "afterXP": 1475,
+      "deltaXP": 25
+    },
+    {
+      "step": "Day 4 Info Exchange Completed (+50 XP)",
+      "beforeXP": 1475,
+      "afterXP": 1525,
+      "deltaXP": 50
+    },
+    {
+      "step": "Day 4 Complete -> Claim Daily Bonus (+25 XP)",
+      "beforeXP": 1525,
+      "afterXP": 1550,
+      "deltaXP": 25
+    },
+    {
+      "step": "Day 5 Boss Battle Part 3 Done (+50 XP)",
+      "beforeXP": 1550,
+      "afterXP": 1600,
+      "deltaXP": 50
+    },
+    {
+      "step": "Day 5 Complete -> Claim Daily Bonus (+25 XP)",
+      "beforeXP": 1600,
+      "afterXP": 1625,
+      "deltaXP": 25
+    }
+  ],
+  "finalUIState": {
+    "sidebarXPText": "XP: 1625",
+    "sidebarLevelText": "Lv. 6",
+    "totalQuestsBadge": "15/15"
+  },
+  "screenshot": "scripts/qa_w33_real_transaction_sidebar_verified.png"
+}

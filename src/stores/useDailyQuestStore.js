@@ -117,7 +117,8 @@ const useDailyQuestStore = create(
       getWeekQuestCount: (weekId) => {
         const weekKey = `w${weekId}`;
         const completed = get().completedQuests[weekKey] || {};
-        return Object.keys(completed).filter((k) => completed[k]).length;
+        const allValidQuestIds = QUEST_SCHEDULE.flatMap((d) => d.quests.map((q) => q.id));
+        return allValidQuestIds.filter((id) => Boolean(completed[id])).length;
       },
 
       /**

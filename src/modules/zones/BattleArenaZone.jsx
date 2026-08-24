@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useParams } from 'react-router-dom';
 import FlashArena from '../hubs/station2/LearnMode/FlashArena';
 import { SentenceBuilderBattle } from '../hubs/station2/LearnMode/SentenceBuilderBattle';
 import SoundSniper from '../../components/zones/SoundSniper';
@@ -9,8 +9,11 @@ import { Swords, Trophy, Zap, ShieldAlert, Sparkles, BookOpen } from 'lucide-rea
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
-export default function BattleArenaZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
+export default function BattleArenaZone({ data, weekNumber, forcedStation = null, hideStationTabs = false }) {
   const [searchParams] = useSearchParams();
+  const routeParams = useParams();
+  const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;
+
   const arenaData = data?.battleArena || {};
   const logicLabData = data?.stations?.logic_lab || {};
 
@@ -56,7 +59,9 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
 
   const handleGameComplete = (earnedXP = 30) => {
     setTotalXP(prev => prev + earnedXP);
-    if (addGlobalXP) addGlobalXP(earnedXP);
+    // Note: Child game components (FlashArena, SentenceBuilderBattle, BarModelQuest, ScienceDragDropLab)
+    // already call userStore.addXP directly. We only manage local session totalXP and quest completion here.
+    
     // Track quest completion for Today's Quest
     const GAME_QUEST_MAP = {
       word_blitz: 'word_blitz',
@@ -67,7 +72,7 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
       science_lab: 'science_lab',
     };
     const questId = GAME_QUEST_MAP[activeGame];
-    if (questId) useDailyQuestStore.getState().completeQuest(weekNumber, questId);
+    if (questId && activeWeek) useDailyQuestStore.getState().completeQuest(activeWeek, questId);
   };
 
   return (
@@ -89,7 +94,7 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
       {/* Vibrant Multi-Color Subtabs Selector — hidden in task mode */}
       {!hideStationTabs && (() => {
         // Enforce 3 featured games per week rotation to prevent cognitive overload
-        const isEvenWeek = weekNumber % 2 === 0;
+        const isEvenWeek = (activeWeek || 0) % 2 === 0;
         const featuredGames = isEvenWeek
           ? ['word_blitz', 'sound_sniper', 'science_lab']
           : ['word_blitz', 'sentence_smash', 'math_quest'];
@@ -98,7 +103,7 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
           <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
             <div className="flex items-center justify-between px-2 pb-1.5 text-[10px] font-black text-slate-500 uppercase tracking-wider">
               <span>⚔️ Weekly 3 Featured Battle Games</span>
-              <span>Week {weekNumber} Rotation</span>
+              <span>Week {activeWeek} Rotation</span>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
               {[
@@ -141,7 +146,7 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
         {activeGame === 'word_blitz' && (
           <FlashArena
             customSets={flashArenaData}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={(pts) => handleGameComplete(pts > 0 ? 40 : 0)}
           />
         )}
@@ -149,7 +154,7 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
         {activeGame === 'sentence_smash' && (
           <SentenceBuilderBattle
             grammarDrills={grammarDrills}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={(pts) => handleGameComplete(pts > 0 ? 35 : 0)}
           />
         )}
@@ -164,7 +169,7 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
         {activeGame === 'math_quest' && (
           <BarModelQuest
             barModelData={barModelData}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={(pts) => handleGameComplete(pts > 0 ? 40 : 0)}
           />
         )}
@@ -172,7 +177,7 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
         {activeGame === 'science_lab' && (
           <ScienceDragDropLab
             scienceData={scienceLabData}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={(pts) => handleGameComplete(pts > 0 ? 45 : 0)}
           />
         )}

@@ -247,7 +247,8 @@ async function main() {
       let m;
       while ((m = stringRegex.exec(rawSource)) !== null) {
         const s = (m[1] || m[2] || m[3] || '').trim();
-        if (s.startsWith('/') || s.startsWith('http') || s.includes('className') || s.includes('\\') || s.includes('flex') || s.includes('grid')) continue;
+        // Skip import paths, URLs, and escaped strings
+        if (s.startsWith('/') || s.startsWith('http') || s.startsWith('./') || s.startsWith('../') || s.includes('className') || s.includes('\\')) continue;
         if (s.length > 15) stringLiterals.push(s);
       }
       for (const text of stringLiterals) {

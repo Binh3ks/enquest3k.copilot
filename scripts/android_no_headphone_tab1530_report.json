@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-08-24T02:44:56.252Z",
+  "device": "Samsung Galaxy S23 (SM-S911B)",
+  "test": "Speaker Loopback Test without Headphones on HTTPS Origin",
+  "evalResult": {
+    "feedbackText": "NOT_FOUND",
+    "hasNoSpeechWarning": false,
+    "hasVoiceRecorded": false,
+    "isFalsePositiveScoreAwarded": false,
+    "fullBodySnippet": "Map\n🎧\nVoice Shadow\n+50\n🎙️ Tap any sentence to listen & practice word-by-word karaoke\n⭐ 0/8\nFull Audio\nCâu 1/8\nJake\n/ʤeɪk/\nwas\n/wəz/\nwalking\n/ˈWƆːKꞮŋ/\ncarefully\n/ˈKEƏFƏLI/\ndown\n/daʊn/\nthe\n/ðə/\nschool\n/skuːl/\ncorridor\n/ˈKɒrɪdɔː/\nafter\n/ˈⱭːFTƏ/\nscience\n/ˈSAꞮƏNS/\nclass.\n/klɑːs/\n🔊 Listen Model Audio\n🎙️ Voice Shadow\n🎧\nPlease wear headphones during shadowing for the clearest recording!\n🎯 AI Pronunciation & Intonation Coach\n(Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ)\nShow Guide\n◀ Câu trước\nCâu tiếp theo ▶"
+  },
+  "logs": []
+}

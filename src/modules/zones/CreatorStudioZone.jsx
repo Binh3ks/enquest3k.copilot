@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useParams } from 'react-router-dom';
 import StoryWriting from '../write_speak/StoryWriting';
 import RetellRecorder from '../../components/zones/RetellRecorder';
 import ScienceReportCreator from '../../components/cambridge/ScienceReportCreator';
@@ -11,8 +11,11 @@ import { PenTool, Mic, TestTube, MessageSquare, Trophy, Sparkles, AlertCircle, Z
 import { useStationProgress } from '../../hooks/useStationProgress';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
-export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
+export default function CreatorStudioZone({ data, weekNumber, forcedStation = null, hideStationTabs = false }) {
   const [searchParams] = useSearchParams();
+  const routeParams = useParams();
+  const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;
+
   const studioData = data?.creatorStudio || {};
   // Fallback: pull writing data from stations.writing if creatorStudio key absent (W33+)
   const writingData = data?.stations?.writing || {};
@@ -47,16 +50,13 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
     else if (station === 'shadowing') setActiveTab('shadowing_studio');
   }, [searchParams, forcedStation]);
 
-  // Quest completion is now handled by TaskScreen, not by switching tabs
-  // (removed auto-complete that fired on mount/tab change)
-
   // Quest completion: mark current tab's quest when switching away
   const handleTabSwitch = (newTab) => {
     setActiveTab(newTab);
   };
 
   // Hydrate story submission from persistent station progress (story_writing)
-  const { savedData: storySavedData } = useStationProgress(weekNumber, 'story_writing');
+  const { savedData: storySavedData } = useStationProgress(activeWeek, 'story_writing');
 
   const [storySubmission, setStorySubmission] = useState(null);
 
@@ -113,6 +113,9 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
 
   const handleStoryComplete = (xpEarned = 50, finalText = '', extraData = null) => {
     if (xpEarned > 0) setStudioXP(prev => prev + xpEarned);
+    if (activeWeek) {
+      useDailyQuestStore.getState().completeQuest(activeWeek, 'story_writer');
+    }
 
     if (extraData?.structured && extraData?.fields) {
       // Data Contract v2: 4 Structured Broadcast Scenes (1:1 with story fields)
@@ -183,8 +186,12 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
     }
   };
 
-  const handleTaskComplete = (xpEarned = 50) => {
+  const handleTaskComplete = (xpEarned = 50, questType = null) => {
     setStudioXP(prev => prev + xpEarned);
+    const targetQuest = questType || (activeTab === 'podcast_creator' ? 'broadcast_studio' : activeTab === 'science_report' ? 'science_report' : activeTab === 'ai_debate' ? 'ai_debate' : null);
+    if (targetQuest && activeWeek) {
+      useDailyQuestStore.getState().completeQuest(activeWeek, targetQuest);
+    }
   };
 
   return (
@@ -270,7 +277,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
         {activeTab === 'story_writer' && (
           <StoryWriting
             storyPrompts={storyPrompts}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={(xp, finalText, extraData) => handleStoryComplete(xp, finalText, extraData)}
             onReportProgress={(percent, finalText, extraData) => handleStoryComplete(0, finalText, extraData)}
             onGoToSpeak={() => handleTabSwitch('brain_refresh')}
@@ -285,9 +292,9 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
           <div className="space-y-4">
             <RetellRecorder
               scenes={storySubmission?.podcastScenes || studioData.podcastScenes || []}
-              weekNumber={weekNumber}
+              weekNumber={activeWeek}
               mode={storySubmission?.mode || 'standalone'}
-              onComplete={() => handleTaskComplete(50)}
+              onComplete={() => handleTaskComplete(50, 'broadcast_studio')}
             />
           </div>
         )}
@@ -295,8 +302,8 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
         {activeTab === 'science_report' && (
           <ScienceReportCreator
             reportTopic={studioData.scienceTopic}
-            weekNumber={weekNumber}
-            onComplete={() => handleTaskComplete(50)}
+            weekNumber={activeWeek}
+            onComplete={() => handleTaskComplete(50, 'science_report')}
           />
         )}
 
@@ -304,7 +311,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
           <ShadowingErrorBoundary>
             <Shadowing
               data={data?.stations?.shadowing || data?.rawWeekData?.stations?.shadowing || data?.shadowing || {}}
-              weekNumber={weekNumber}
+              weekNumber={activeWeek}
               mode="advanced"
             />
           </ShadowingErrorBoundary>
@@ -313,8 +320,8 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
         {activeTab === 'ai_debate' && (
           <AIDebateMode
             debateTopics={studioData.debateTopics}
-            weekNumber={weekNumber}
-            onComplete={() => handleTaskComplete(60)}
+            weekNumber={activeWeek}
+            onComplete={() => handleTaskComplete(60, 'ai_debate')}
           />
         )}
       </div>

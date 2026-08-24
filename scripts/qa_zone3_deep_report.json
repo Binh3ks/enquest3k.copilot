@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-08-24T03:15:12.701Z",
+  "results": {
+    "story_writer": {
+      "boundary19": {
+        "totalText": "20 WORDS TOTAL",
+        "hasCheckMark": false
+      },
+      "boundary20": {
+        "totalText": "21 WORDS TOTAL",
+        "hasCheckMark": true
+      },
+      "panel2": {
+        "hasPanel2Badge": true,
+        "question": "Uh oh! What happened suddenly? Describe the problem you see in this picture!",
+        "pillsCount": 5,
+        "samplePills": [
+          "+ slipped on the wet floor,",
+          "+ fell down heavily,",
+          "+ hurt his knee badly,",
+          "+ Suddenly,"
+        ]
+      },
+      "panel3": {
+        "hasPanel3Badge": true,
+        "hasReviewBtn": true
+      },
+      "passed": true
+    },
+    "info_exchange": {
+      "cue1": {
+        "textSnippet": "Map 🔄 Info Exchange +50 Cue 1 / 4 Phase 1: Ask Questions from Cues 📋 Table A (You Ask) 🎙️ Table B (You Answer) 📄 Tom's Accident CANDIDATE'S QUESTION CARD 01. where / get injured? ? 02. what / hurt? ? 03. what time / slip? ? 04. why / fall down? ? CUE PROMPT (1/4): where / get injured? Formulate and ask a complete question using this cue! Need a grammar hint? SPEAK Tap SPEAK and ask Nova yo",
+        "hasCorridor": false,
+        "hasCheck": false
+      },
+      "cue2": {
+        "hasKnee": false,
+        "textSnippet": "Map 🔄 Info Exchange +50 Cue 1 / 4 Phase 1: Ask Questions from Cues 📋 Table A (You Ask) 🎙️ Table B (You Answer) 📄 Tom's Accident CANDIDATE'S QUESTION CARD 01. where / get injured? ? 02. what / hurt? ? 03. what time / slip? ? 04. why / fall down? ? CUE PROMPT (1/4): where / get injured? Formulat"
+      },
+      "passed": false
+    }
+  }
+}

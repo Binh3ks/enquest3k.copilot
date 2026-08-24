@@ -1,0 +1,314 @@
+{
+  "timestamp": "2026-08-24T02:29:25.670Z",
+  "device": "Samsung Galaxy S23 (SM-S911B)",
+  "barModelProblems": [
+    {
+      "problemNumber": 1,
+      "title": "Problem 1: Corridor Distance (Part-Whole)",
+      "problemText": "Jake walked 40 meters. The corridor is 100 meters long. How many meters are left?",
+      "hasSvg": true,
+      "rectsCount": 2,
+      "rects": [
+        {
+          "width": "152",
+          "height": "50",
+          "x": "0",
+          "y": "0",
+          "fill": "#4f46e5"
+        },
+        {
+          "width": "228",
+          "height": "50",
+          "x": "152",
+          "y": "0",
+          "fill": "#06b6d4"
+        }
+      ],
+      "texts": [
+        "40m walked",
+        "60m left",
+        "Total: 100m corridor"
+      ]
+    },
+    {
+      "problemNumber": 2,
+      "title": "Problem 2: Bandage Stock (Part-Whole)",
+      "problemText": "The nurse had 25 bandages. She used 8 bandages. How many bandages remain?",
+      "hasSvg": true,
+      "rectsCount": 2,
+      "rects": [
+        {
+          "width": "121.60000000000001",
+          "height": "50",
+          "x": "0",
+          "y": "0",
+          "fill": "#ef4444"
+        },
+        {
+          "width": "258.40000000000003",
+          "height": "50",
+          "x": "121.60000000000001",
+          "y": "0",
+          "fill": "#22c55e"
+        }
+      ],
+      "texts": [
+        "8 used",
+        "17 left",
+        "Total: 25 bandages"
+      ]
+    },
+    {
+      "problemNumber": 3,
+      "title": "Problem 3: Treatment Time (Part-Whole)",
+      "problemText": "Tom rested for 15 minutes and applied ice for 10 minutes. What is the total treatment time?",
+      "hasSvg": true,
+      "rectsCount": 2,
+      "rects": [
+        {
+          "width": "228",
+          "height": "50",
+          "x": "0",
+          "y": "0",
+          "fill": "#8b5cf6"
+        },
+        {
+          "width": "152",
+          "height": "50",
+          "x": "228",
+          "y": "0",
+          "fill": "#0ea5e9"
+        }
+      ],
+      "texts": [
+        "15m rest",
+        "10m ice",
+        "Total: 25 min total"
+      ]
+    },
+    {
+      "problemNumber": 4,
+      "title": "Problem 4: Safety Rule Compliance (Part-Whole)",
+      "problemText": "Class 4A has 30 students. 24 students followed safety rules. How many ran?",
+      "hasSvg": true,
+      "rectsCount": 2,
+      "rects": [
+        {
+          "width": "304",
+          "height": "50",
+          "x": "0",
+          "y": "0",
+          "fill": "#22c55e"
+        },
+        {
+          "width": "76",
+          "height": "50",
+          "x": "304",
+          "y": "0",
+          "fill": "#f97316"
+        }
+      ],
+      "texts": [
+        "24 safe",
+        "6 ran",
+        "Total: 30 students"
+      ]
+    },
+    {
+      "problemNumber": 5,
+      "title": "Problem 5: Safety Helper Stars (Multiplication)",
+      "problemText": "The headmaster gave 5 safety stars to each of 4 helpers. How many stars in total?",
+      "hasSvg": true,
+      "rectsCount": 4,
+      "rects": [
+        {
+          "width": "95",
+          "height": "50",
+          "x": "0",
+          "y": "0",
+          "fill": "#f59e0b"
+        },
+        {
+          "width": "95",
+          "height": "50",
+          "x": "95",
+          "y": "0",
+          "fill": "#f59e0b"
+        },
+        {
+          "width": "95",
+          "height": "50",
+          "x": "190",
+          "y": "0",
+          "fill": "#f59e0b"
+        },
+        {
+          "width": "95",
+          "height": "50",
+          "x": "285",
+          "y": "0",
+          "fill": "#f59e0b"
+        }
+      ],
+      "texts": [
+        "Helper 1",
+        "Helper 2",
+        "Helper 3",
+        "Helper 4",
+        "Total: 20 stars"
+      ]
+    }
+  ],
+  "voiceShadowVad": {
+    "feedbackDetected": [
+      "Map🎧Voice Shadow+50🎙️ Tap any sentence to listen & practice word-by-word karaoke⭐ 0/8 Full AudioCâu 1/8Jake/ʤeɪk/was/wəz/walking/ˈWƆːKꞮŋ/carefully/ˈKEƏFƏLI/down/daʊn/the/ðə/school/skuːl/corridor/ˈKɒrɪdɔː/after/ˈⱭːFTƏ/science/ˈSAꞮƏNS/class./klɑːs/ 🔊 Listen Model Audio 🎙️ Voice Shadow🎧 Please wear headphones during shadowing for the clearest recording! Play My Voice✨ Voice Recorded!✨ Voice Shadow recorded! Tap 'Play My Voice' to listen & compare with model voice.(Recorded: 5.6s voice)🎯 AI Pronunciation & Intonation Coach(Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ)Show Guide◀ Câu trướcCâu tiếp theo ▶Upgrade Plan",
+      "Map🎧Voice Shadow+50🎙️ Tap any sentence to listen & practice word-by-word karaoke⭐ 0/8 Full AudioCâu 1/8Jake/ʤeɪk/was/wəz/walking/ˈWƆːKꞮŋ/carefully/ˈKEƏFƏLI/down/daʊn/the/ðə/school/skuːl/corridor/ˈKɒrɪdɔː/after/ˈⱭːFTƏ/science/ˈSAꞮƏNS/class./klɑːs/ 🔊 Listen Model Audio 🎙️ Voice Shadow🎧 Please wear headphones during shadowing for the clearest recording! Play My Voice✨ Voice Recorded!✨ Voice Shadow recorded! Tap 'Play My Voice' to listen & compare with model voice.(Recorded: 5.6s voice)🎯 AI Pronunciation & Intonation Coach(Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ)Show Guide◀ Câu trướcCâu tiếp theo ▶",
+      "🎙️ Tap any sentence to listen & practice word-by-word karaoke⭐ 0/8 Full AudioCâu 1/8Jake/ʤeɪk/was/wəz/walking/ˈWƆːKꞮŋ/carefully/ˈKEƏFƏLI/down/daʊn/the/ðə/school/skuːl/corridor/ˈKɒrɪdɔː/after/ˈⱭːFTƏ/science/ˈSAꞮƏNS/class./klɑːs/ 🔊 Listen Model Audio 🎙️ Voice Shadow🎧 Please wear headphones during shadowing for the clearest recording! Play My Voice✨ Voice Recorded!✨ Voice Shadow recorded! Tap 'Play My Voice' to listen & compare with model voice.(Recorded: 5.6s voice)🎯 AI Pronunciation & Intonation Coach(Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ)Show Guide◀ Câu trướcCâu tiếp theo ▶",
+      "🎙️ Tap any sentence to listen & practice word-by-word karaoke⭐ 0/8 Full AudioCâu 1/8Jake/ʤeɪk/was/wəz/walking/ˈWƆːKꞮŋ/carefully/ˈKEƏFƏLI/down/daʊn/the/ðə/school/skuːl/corridor/ˈKɒrɪdɔː/after/ˈⱭːFTƏ/science/ˈSAꞮƏNS/class./klɑːs/ 🔊 Listen Model Audio 🎙️ Voice Shadow🎧 Please wear headphones during shadowing for the clearest recording! Play My Voice✨ Voice Recorded!✨ Voice Shadow recorded! Tap 'Play My Voice' to listen & compare with model voice.(Recorded: 5.6s voice)🎯 AI Pronunciation & Intonation Coach(Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ)Show Guide◀ Câu trướcCâu tiếp theo ▶",
+      "🎙️ Tap any sentence to listen & practice word-by-word karaoke⭐ 0/8 Full AudioCâu 1/8Jake/ʤeɪk/was/wəz/walking/ˈWƆːKꞮŋ/carefully/ˈKEƏFƏLI/down/daʊn/the/ðə/school/skuːl/corridor/ˈKɒrɪdɔː/after/ˈⱭːFTƏ/science/ˈSAꞮƏNS/class./klɑːs/ 🔊 Listen Model Audio 🎙️ Voice Shadow🎧 Please wear headphones during shadowing for the clearest recording! Play My Voice✨ Voice Recorded!✨ Voice Shadow recorded! Tap 'Play My Voice' to listen & compare with model voice.(Recorded: 5.6s voice)🎯 AI Pronunciation & Intonation Coach(Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ)Show Guide◀ Câu trướcCâu tiếp theo ▶"
+    ]
+  },
+  "consoleLogs": [
+    "[Android Log log] [TTS Preload] ℹ️ Using Cloudflare Worker with R2 cache - no warmup needed",
+    "[Android Log log] [TTSCache] ✅ IndexedDB v14 fresh ready",
+    "[Android Log log] [Prefetch] 🚀 Starting Full Week 33 (easy) Google Cloud TTS Pre-generation...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_read_14126628249_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_explore_27954924769_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1205927036_f_p2mr...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1802010143_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1261192641_f_p3qj...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_21286696425_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1034198863_f_p3vf...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_10563404655_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2429782724_f_p6l3...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_7279283483_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_207907886_f_p425l...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_11582817520_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1206119280_f_p5pc...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_12314233930_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2280189951_f_p5su...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2414006730_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_3143353_f_p5seuys...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_16645322621_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_896594575_f_p4xvg...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_10962218278_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_6771486_f_p3rd1ss...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_7263915253_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_871912999_f_p4zcp...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_12701194662_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_3002706_f_p5qodgx...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_6785528822_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_102193995_f_p5wby...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_5448234128_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_3317728_f_p5dj4b3...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1776001020_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_99151438_f_p5oy4c...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_10867371551_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2215384839_f_p4pq...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1420772431_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_799113398_f_p5iez...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_8534521694_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1929324009_f_p4e2...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_15168909875_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_67434998_f_p4um1u...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_798591227_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2178788427_f_p737...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2915235634_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_934784961_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_1963515004_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_475950361_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_3101213890_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_55746991_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_2698875265_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_2203980379_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_1715126091_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_6140595755_f_p39...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_1076996713_f_p39...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_13945762640_f_p3...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_1519162174_f_p39...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_5222726278_f_p39...",
+    "[Android Log log] [Prefetch] ✅ Week 33 Full Google Direct TTS Pre-generation Complete!",
+    "[Android Log log] [TTS Preload] ℹ️ Using Cloudflare Worker with R2 cache - no warmup needed",
+    "[Android Log log] [TTSCache] ✅ IndexedDB v14 fresh ready",
+    "[Android Log log] [Prefetch] 🚀 Starting Full Week 33 (easy) Google Cloud TTS Pre-generation...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_read_14126628249_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_explore_27954924769_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_737056903_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_12989511751_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_7162899452_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_25475750818_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_443798236_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_14379231336_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_9242402643_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_9846035754_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_737056903_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_12989511751_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_7162899452_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_25475750818_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_443798236_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_14379231336_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_9242402643_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_9846035754_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1205927036_f_p2mr...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1802010143_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1261192641_f_p3qj...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_21286696425_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1034198863_f_p3vf...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_10563404655_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2429782724_f_p6l3...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_7279283483_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_207907886_f_p425l...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_11582817520_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1206119280_f_p5pc...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_12314233930_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2280189951_f_p5su...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2414006730_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_3143353_f_p5seuys...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_16645322621_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_896594575_f_p4xvg...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_10962218278_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_6771486_f_p3rd1ss...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_7263915253_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_871912999_f_p4zcp...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_12701194662_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_3002706_f_p5qodgx...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_6785528822_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_102193995_f_p5wby...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_5448234128_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_3317728_f_p5dj4b3...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1776001020_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_99151438_f_p5oy4c...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_10867371551_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2215384839_f_p4pq...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1420772431_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_799113398_f_p5iez...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_8534521694_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_1929324009_f_p4e2...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_15168909875_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_67434998_f_p4um1u...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_798591227_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2178788427_f_p737...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_new_word_2915235634_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_934784961_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_1963515004_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_475950361_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_3101213890_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_55746991_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_2698875265_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_2203980379_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_word_power_1715126091_f...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_6140595755_f_p39...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_1076996713_f_p39...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_13945762640_f_p3...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_1519162174_f_p39...",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_5222726278_f_p39...",
+    "[Android Log log] [Prefetch] ✅ Week 33 Full Google Direct TTS Pre-generation Complete!",
+    "[Android Log log] [TTSCache] ✅ HIT: tts_shadowing_737056903_f...",
+    "[Android Log log] [TTS] 🎓 Google Cloud TTS Direct Cache Hit (0ms) [voice: en-US-Journey-F] [station: shadowing]",
+    "[Android Log warning] [TTS Telemetry] ⚠️ Audio play() rejected [name=NotAllowedError, message=play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD]",
+    "[Android Log warning] [TTS Telemetry] ⚠️ Fatal audio error [name=NotAllowedError], falling back to Web Speech...",
+    "[Android Log log] [TTS] 🎙️ Using browser voice: Assamese India (rate: 1, text: \"Jake was walking carefully down the school corridor after science class.\")",
+    "[Android Log warning] [TTS Telemetry] ⚠️ Audio playback error [err=unknown], triggering Web Speech fallback...",
+    "[Android Log log] [TTS] 🎙️ Using browser voice: Assamese India (rate: 1, text: \"Jake was walking carefully down the school corridor after science class.\")"
+  ]
+}

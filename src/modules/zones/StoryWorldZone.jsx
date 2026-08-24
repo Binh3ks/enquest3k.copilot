@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, useParams } from 'react-router-dom';
 import GearIndicator from '../../components/zones/GearIndicator';
 import CLILExplorer from '../../components/cambridge/CLILExplorer';
 import { SingleSubjectPassportSidebar, CLILSealStamp, GrandStampModal } from '../../components/cambridge/ExplorerPassport';
@@ -17,8 +17,11 @@ import PronunciationCoachCard, { getWordIpaList } from '../../components/common/
 import { loadIpaData } from '../shadowing/ipaUtils';
 import { useUserStore } from '../../stores/useUserStore';
 
-export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = null, hideGearTabs = false }) {
+export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hideGearTabs = false }) {
   const navigate = useNavigate();
+  const routeParams = useParams();
+  const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;
+
   const [searchParams] = useSearchParams();
   const storyData = data?.storyWorld || {};
   const [currentGear, setCurrentGear] = useState(forcedGear || 1);
@@ -201,18 +204,18 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     // Track quest completion for Today's Quest
     const GEAR_QUEST_MAP = { 1: 'gear1_webtoon', 2: 'gear2_karaoke', 3: 'gear3_retell', 4: 'gear4_clil' };
     const completedGearNum = targetGear - 1; // moving TO targetGear means previous is done
-    if (completedGearNum >= 1 && GEAR_QUEST_MAP[completedGearNum]) {
-      useDailyQuestStore.getState().completeQuest(weekNumber, GEAR_QUEST_MAP[completedGearNum]);
+    if (completedGearNum >= 1 && GEAR_QUEST_MAP[completedGearNum] && activeWeek) {
+      useDailyQuestStore.getState().completeQuest(activeWeek, GEAR_QUEST_MAP[completedGearNum]);
     }
   };
 
   // Auto-complete Gear 4 (CLIL) quest when user navigates into it organically
   // Guard: only fires in normal zone mode (no forcedGear), not when TaskScreen mounts with forcedGear=4
   useEffect(() => {
-    if (currentGear === 4 && !forcedGear) {
-      useDailyQuestStore.getState().completeQuest(weekNumber, 'gear4_clil');
+    if (currentGear === 4 && !forcedGear && activeWeek) {
+      useDailyQuestStore.getState().completeQuest(activeWeek, 'gear4_clil');
     }
-  }, [currentGear, weekNumber, forcedGear]);
+  }, [currentGear, activeWeek, forcedGear]);
 
   // Timing telemetry helper
   const markTiming = (label, extra = '') => {
@@ -226,16 +229,16 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   useEffect(() => {
     if (storySentences && storySentences.length > 0) {
       storySentences.forEach((sentence) => {
-        VoiceService.prefetch?.(sentence, 'shadowing', null, weekNumber).catch(() => {});
+        VoiceService.prefetch?.(sentence, 'shadowing', null, activeWeek).catch(() => {});
       });
     }
-  }, [currentGear, storySentences, weekNumber]);
+  }, [currentGear, storySentences, activeWeek]);
 
   // Load Shadowing IPA data for Phonetics Coach
   const [ipaMap, setIpaMap] = useState({});
   useEffect(() => {
     if (currentGear === 2) {
-      loadIpaData(weekNumber, 'advanced').then(data => {
+      loadIpaData(activeWeek, 'advanced').then(data => {
         if (data && Array.isArray(data)) {
           const map = {};
           data.forEach((item, i) => {
@@ -245,7 +248,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         }
       }).catch(() => {});
     }
-  }, [currentGear, weekNumber]);
+  }, [currentGear, activeWeek]);
 
   // Word-by-Word Karaoke Highlighting Simulation (Linear Pacing Heuristic)
   const handleSpeakSentence = (sentenceText, idx, playbackId = null, onAudioStartCallback = null, caller = 'unknown') => {
@@ -326,7 +329,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         setActiveSentenceIdx(null);
       },
       'shadowing',
-      weekNumber,
+      activeWeek,
       'advanced',
       false,
       onPlayStart
@@ -378,7 +381,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     try { VoiceService.pauseTTS(); } catch (_) {}
     setActiveSentenceIdx(null);
     setActiveWordIdx(null);
-    speakText(fullStoryText, null, 1.0, null, 'shadowing', weekNumber);
+    speakText(fullStoryText, null, 1.0, null, 'shadowing', activeWeek);
   };
 
   // Gear 2: Shadowing = Instant Model Audio + Parallel Mic Recording (Exact Same Audio Path)
@@ -531,6 +534,9 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
         const speechRatio = totalSamples > 0 ? (speechSamples / totalSamples) : 0;
         const isSilent = (totalSamples > 0 && (rms < 0.012 || speechRatio < 0.03));
+
+        console.log(`[VAD Telemetry Raw] audioBlobSize=${audioBlob.size}B, rms=${rms}, speechRatio=${speechRatio}, totalSamples=${totalSamples}, speechSamples=${speechSamples}, isSilent=${isSilent}`);
+        console.log(`[VAD Telemetry] audioBlobSize=${audioBlob.size}B, rms=${rms.toFixed(5)}, speechRatio=${speechRatio.toFixed(3)}, totalSamples=${totalSamples}, isSilent=${isSilent}`);
 
         if (isSilent) {
           // 🚫 Silence guard: No active speech detected
@@ -952,9 +958,11 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                     <button
                       type="button"
                       onClick={() => {
-                        useDailyQuestStore.getState().completeQuest(weekNumber, 'gear1_webtoon');
+                        if (activeWeek) {
+                          useDailyQuestStore.getState().completeQuest(activeWeek, 'gear1_webtoon');
+                        }
                         fireCelebrationConfetti('Quest_Completed');
-                        navigate(`/week/${weekNumber}/hub/1`);
+                        navigate(`/week/${activeWeek || 1}/hub/1`);
                       }}
                       className="px-5 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-xl text-xs font-black shadow-lg animate-bounce"
                     >
@@ -1150,7 +1158,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                                   const audio = new Audio(sentenceShadowing[idx].audioUrl);
                                   audio.play().catch(e => console.warn('Voice playback error:', e));
                                 } else {
-                                  speakText(sentence, null, 1.0, null, 'shadowing', weekNumber);
+                                  speakText(sentence, null, 1.0, null, 'shadowing', activeWeek);
                                 }
                               }}
                               className="px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-300 rounded-xl font-black text-xs flex items-center gap-1.5 transition active:scale-95"
@@ -1226,9 +1234,11 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                     <button
                       type="button"
                       onClick={() => {
-                        useDailyQuestStore.getState().completeQuest(weekNumber, 'gear2_karaoke');
+                        if (activeWeek) {
+                          useDailyQuestStore.getState().completeQuest(activeWeek, 'gear2_karaoke');
+                        }
                         fireCelebrationConfetti('Quest_Completed');
-                        navigate(`/week/${weekNumber}/hub/1`);
+                        navigate(`/week/${activeWeek || 1}/hub/1`);
                       }}
                       className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-2xl text-xs sm:text-sm font-black shadow-xl flex items-center gap-2 transition animate-bounce"
                     >
@@ -1540,7 +1550,9 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                         onClick={() => {
                           if (isLastStep) {
                             setRetellStepIdx(RETELL_QUESTIONS.length);
-                            useDailyQuestStore.getState().completeQuest(weekNumber, 'gear3_retell');
+                            if (activeWeek) {
+                              useDailyQuestStore.getState().completeQuest(activeWeek, 'gear3_retell');
+                            }
                             fireCelebrationConfetti('Retell_Master');
                           } else {
                             setRetellStepIdx(prev => prev + 1);
@@ -1578,9 +1590,11 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                 <button
                   type="button"
                   onClick={() => {
-                    useDailyQuestStore.getState().completeQuest(weekNumber, 'gear3_retell');
+                    if (activeWeek) {
+                      useDailyQuestStore.getState().completeQuest(activeWeek, 'gear3_retell');
+                    }
                     fireCelebrationConfetti('Quest_Completed');
-                    navigate(`/week/${weekNumber}/hub/1`);
+                    navigate(`/week/${activeWeek || 1}/hub/1`);
                   }}
                   className="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-2xl font-black text-sm shadow-xl flex items-center gap-2 transition hover:scale-105 animate-bounce"
                 >
@@ -1619,7 +1633,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
             <div className="flex-1 min-w-0 w-full">
               <CLILExplorer
                 clilData={clilArticle || readExplore}
-                weekNumber={weekNumber}
+                weekNumber={activeWeek}
                 highlightMode={highlightMode}
                 setHighlightMode={setHighlightMode}
                 targetGrammarRegex={grammarRegex}

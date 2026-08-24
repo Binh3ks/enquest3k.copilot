@@ -15,7 +15,7 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
   const fullListeningScript = "Nova: Look at Part 1. Now look at the picture. Listen and look. There is one example.\nGirl: Look at this photo of our school corridor after lunch! It was quite busy.\nMan: Oh yes, I can see many people. Who is that boy walking carefully down the hallway in the blue shirt?\nGirl: That's Jake. He always walks slowly and watches where he is going.\nMan: That is very sensible of him.\nNova: Can you see the line? This is an example. Now you listen and draw lines.\nGirl: Oh dear, look at the boy who is slipping on the wet floor!\nMan: Yes, his papers are flying everywhere! Is he wearing a red sweater?\nGirl: That's right, he is wearing a red shirt. His name is Tom. He fell down because he was running in a hurry.\nMan: Poor Tom! I hope he is okay.\nGirl: Look, someone is rushing quickly to help him. Can you see the lady carrying a clean bandage in the white uniform?\nMan: Ah, that's our school nurse! She always takes good care of everyone when accidents happen.\nGirl: Yes, she is very kind.\nMan: Who is that tall man standing near the blue lockers in the dark suit?\nGirl: Do you mean the man watching all the students to make sure the hallway is safe?\nMan: Yes, exactly.\nGirl: That's our headmaster! He always reminds us about corridor safety rules.\nMan: Now look near the yellow warning sign. Is that a girl holding a cleaning mop?\nGirl: Yes, that is Mia. She is wiping the water off the floor so nobody else slips.\nMan: What a helpful girl!\nGirl: Is Alex in this picture today?\nMan: No, Alex had a doctor appointment this morning, so he is not at school today.";
 
   // Default Listening Part 1 Line Matching Data with 100% Calibrated Coordinates
-  const sceneData = customData || {
+  const sceneData = React.useMemo(() => customData || {
     image_url: '/images/week33/w33_listening_p1_scene.jpg',
     names: [
       { id: 'n1', text: 'Jake', target_id: 't1', isExample: true },
@@ -32,7 +32,7 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
       { id: 't4', label: 'Headmaster (Dark blue suit near lockers)', x: 33, y: 50 },
       { id: 't5', label: 'Mia (Girl holding cleaning mop)', x: 78, y: 60 }
     ]
-  };
+  }, [customData]);
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 }); // % in master container
   const [positions, setPositions] = useState({}); // { nameId: {x,y}, targetId: {x,y} }

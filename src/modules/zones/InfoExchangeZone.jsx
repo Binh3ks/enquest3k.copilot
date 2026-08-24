@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import { Volume2, Mic, Square, CheckCircle2, XCircle, HelpCircle, ArrowRight, Sparkles, Award, RotateCcw, Eye, EyeOff, Keyboard } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import LexioMascot from '../../components/mascot/LexioMascot';
 import GrammarHintButton from '../../components/common/GrammarHintButton';
 import MicFallbackInput from '../../components/common/MicFallbackInput';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
+import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
 
 /**
@@ -12,6 +14,9 @@ import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
  * Fully responsive: Mobile stacked layout (375px), Tablet (1024px), Laptop (1440px).
  */
 export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
+  const routeParams = useParams();
+  const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;
+
   const [phase, setPhase] = useState('table_a'); // 'table_a' | 'table_b' | 'complete'
   
   // Phase 1 (Table A) State
@@ -254,6 +259,9 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
     } else {
       setShields(2);
       setPhase('complete');
+      if (activeWeek) {
+        useDailyQuestStore.getState().completeQuest(activeWeek, 'info_exchange');
+      }
       if (onComplete) onComplete(100, '');
     }
   };
@@ -300,7 +308,12 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
 
         <button
           type="button"
-          onClick={() => { if (onComplete) onComplete(100, ''); }}
+          onClick={() => {
+            if (activeWeek) {
+              useDailyQuestStore.getState().completeQuest(activeWeek, 'info_exchange');
+            }
+            if (onComplete) onComplete(100, '');
+          }}
           className="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-black text-base rounded-2xl shadow-xl shadow-purple-500/30 transition active:scale-95"
         >
           ✓ Finish Quest (+50 XP)
@@ -480,7 +493,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                         onSubmit={(typedText) => {
                           setManualTextA(typedText);
                           setTranscriptA(typedText);
-                          const evalRes = evaluateSpeechInput(typedText, currentCueA?.acceptable_questions || [], currentCueA?.cue_word || '');
+                          const evalRes = evaluateSpeechSyntax(typedText, currentCueA?.acceptable_questions || [], { mode: 'question', cueWord: currentCueA?.cue_word || '' });
                           setEvalResultA(evalRes);
                           if (evalRes.isCorrect) {
                             setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
@@ -678,7 +691,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                         onSubmit={(typedText) => {
                           setManualTextB(typedText);
                           setTranscriptB(typedText);
-                          const evalRes = evaluateSpeechInput(typedText, currentFieldB?.acceptable_answers || []);
+                          const evalRes = evaluateSpeechSyntax(typedText, currentFieldB?.acceptable_answers || [], { mode: 'answer' });
                           setEvalResultB(evalRes);
                           if (!evalRes.isCorrect) {
                             setRetryCountB(prev => prev + 1);

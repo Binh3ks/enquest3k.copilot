@@ -1,0 +1,12 @@
+{
+  "boss_listening": {
+    "hasAudioPlayer": false,
+    "hasNames": true,
+    "hasCanvasOrSvg": true,
+    "textSnippet": "Map 🎧 Listening Shield +50 ← Map 🔊 Play Audio Clear ★ EXAMPLE Jake EX School Nurse Tom Headmaster Mia Alex 📍 Jake 📍 📍 📍 📍 Check Line Matches UPGRADE PLAN"
+  },
+  "boss_reading": {
+    "hasInputs": 11,
+    "textSnippet": "Map 📖 Reading & Writing Shield +50 ← Map 🔊 Play Audio School Incident Notepad (5 Notes) 1 Incident Location: (Where did it happen?) 2 Cause of Fall: (Why did he slip?) 3 Person Called: (Who did Jake call?) 4 First Aid Applied: (What did nurse apply?) 5 School Rule: (What rule to follow?) Check Not"
+  }
+}

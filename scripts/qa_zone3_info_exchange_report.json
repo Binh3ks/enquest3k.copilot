@@ -1,0 +1,13 @@
+{
+  "cue1State": {
+    "isRecognized": false,
+    "accuracy": "100%",
+    "feedbackSnippet": "",
+    "fullSnippet": "Map 🔄 Info Exchange +50 Cue 1 / 4 Phase 1: Ask Questions from Cues 📋 Table A (You Ask) 🎙️ Table B (You Answer) 📄 Tom's Accident CANDIDATE'S QUESTION CARD 01. where / get injured? ? 02. what / hurt? ? 03. what time / slip? ? 04. why / fall down? ? CUE PROMPT (1/4): where / get injured? Formulate and ask a complete question using this cue! Need a grammar hint? SPEAK Tap SPEAK and ask Nova your question Type your answer: Use Mic instead Sub"
+  },
+  "cue2State": {
+    "isRecognized": false,
+    "feedbackSnippet": "",
+    "fullSnippet": "Map 🔄 Info Exchange +50 Cue 1 / 4 Phase 1: Ask Questions from Cues 📋 Table A (You Ask) 🎙️ Table B (You Answer) 📄 Tom's Accident CANDIDATE'S QUESTION CARD 01. where / get injured? ? 02. what / hurt? ? 03. what time / slip? ? 04. why / fall down? ? CUE PROMPT (1/4): where / get injured? Formulate and ask a complete question using this cue! Need a grammar hint? SPEAK Tap SPEAK and ask Nova your question Type your answer: Use Mic instead Sub"
+  }
+}

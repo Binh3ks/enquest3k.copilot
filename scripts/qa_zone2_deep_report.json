@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-08-24T03:06:00.465Z",
+  "results": [
+    {
+      "taskId": "word_blitz",
+      "label": "Speed Match (FlashArena)",
+      "status": "PASSED",
+      "svgCount": 0,
+      "consoleErrors": [],
+      "anomalies": [],
+      "snippet": "Map ⚡ Speed Match +50 ⚡ ROUND 1/6 • ⚔️ CORE VERBS CLASH 58s 0 PTS ENGLISH TARGET SELECT ENGLISH fell down praised slipped called MEANING / DEFINITION MATCH MEANING khen ngợi ngã xuống trượt chân gọi trợ giúp UPGRADE PLAN",
+      "screenshot": "scripts/qa_zone2_word_blitz_active.png"
+    },
+    {
+      "taskId": "sentence_smash",
+      "label": "Grammar Duel (SentenceBuilderBattle)",
+      "status": "PASSED",
+      "svgCount": 0,
+      "consoleErrors": [],
+      "anomalies": [],
+      "snippet": "Map 🧱 Grammar Duel +50 🧱 Build a past continuous sentence with 'While'. 43s 0 PTS 1/5 Jake slips the While slipped corridor walking a run down is boy was . , Check Sentence UPGRADE PLAN",
+      "screenshot": "scripts/qa_zone2_sentence_smash_active.png"
+    },
+    {
+      "taskId": "math_quest",
+      "label": "Math Quest (BarModelQuest)",
+      "status": "PASSED",
+      "svgCount": 7,
+      "consoleErrors": [],
+      "anomalies": [],
+      "snippet": "Map 📐 Math Quest +50 📐 Math Quest (Singapore Bar Model) 88s 0 PTS 1/5 PROBLEM 1: CORRIDOR DISTANCE (PART-WHOLE) Jake walked 40 meters. The corridor is 100 meters long. How many meters are left? 40m walked 60m left Total: 100m corridor Submit Answer ▶ UPGRADE PLAN",
+      "screenshot": "scripts/qa_zone2_math_quest_active.png"
+    }
+  ]
+}

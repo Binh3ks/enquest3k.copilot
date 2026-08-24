@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-08-24T03:30:51.978Z",
+  "results": {
+    "boss_listening_wrong": {
+      "audioTriggered": true,
+      "consoleErrors": [],
+      "afterWrongSubmit": {
+        "nextTaskLoaded": true,
+        "snippet": "Map 🎧 Listening Shield +50 ← Map 🔊 Play Audio School Incident Notepad (5 Notes) 1 Incident Location: (Where did it happen?) 2 Cause of Fall: (Why did he slip?) 3 Person Called: (Who did Jake call?) 4 First Aid Applied: (What did nurse apply?) 5 Sch"
+      }
+    },
+    "boss_listening_correct": {
+      "advancedToTask2": true,
+      "snippet": "Map 🎧 Listening Shield +50 ← Map 🔊 Play Audio School Incident Notepad (5 Notes) 1 Incident Location: (Where did it happen?) 2 Cause of Fall: (Why did he slip?) 3 Person Called: (Who did Jake call?) 4 First Aid Applied: (What did nurse apply?) 5 Sch"
+    },
+    "boss_reading_wrong": {
+      "audioTriggered": true,
+      "consoleErrors": [],
+      "wrongNotesState": {
+        "scoreText": "Score: 0%",
+        "hasRedTargets": false,
+        "snippet": "Map 📖 Reading & Writing Shield +50 ← Map 🔊 Play Audio Match 5 Items to Location Cards 1 Clean Bandage MATCHED: Choose card 👉 2 Cold Pack MATCHED: Choose card 👉 3 Science Notebook MATCHED: Choose card 👉 4 Orange Juice MATCHED: Choose card 👉 5 Alarm Clock MATCHED: Choose card 👉 B First Aid Tabl"
+      }
+    },
+    "boss_reading_correct": {
+      "scoreText": "Score: 100%",
+      "hasEmeraldChecks": false,
+      "snippet": "Map 📖 Reading & Writing Shield +50 ← Map 🔊 Play Audio Match 5 Items to Location Cards 1 Clean Bandage MATCHED: Choose card 👉 2 Cold Pack MATCHED: Choose card 👉 3 Science Notebook MATCHED: Choose card 👉 4 Orange Juice MATCHED: Choose card 👉 5 Alarm Clock MATCHED: Choose card 👉 G Headmaster Off"
+    },
+    "weekly_review": {
+      "headerText": "Map 🏆 Speaking & Passport +50 🎧 CYCLE 1/5 • WEEK 33 3 SHIELDS Master Soundwave Nova ← Map 0 Shields MISSION OBJECTIVE Listening Part 3: Matching A-H Cambridge A2 Flyers ~15m • Instant official Cambridge score ENTER BOSS BATTLE NOW UPGRADE PLAN",
+      "cycle": "CYCLE 1/5",
+      "week": "WEEK 33",
+      "bossName": "Master Soundwave Nova",
+      "targetShields": "3 SHIELDS",
+      "objective": "Listening Part 3: Matching A-H"
+    }
+  }
+}

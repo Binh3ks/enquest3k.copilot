@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-08-24T03:12:13.754Z",
+  "zone": "Zone 3: Creator Studio",
+  "week": 33,
+  "tasks": [
+    {
+      "taskId": "story_writer",
+      "label": "Story Writer (P7 Writing)",
+      "url": "http://localhost:5173/week/33/task/story_writer",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "first200Chars": "Map ✏️ Story Writer +50 PANEL 1 OF 3 0 WORDS TOTAL 1 2 3 Where does the story begin? Look closely — Jake was walking carefully, but what was another student doing? 🔊 PANEL 1 🏷️ Characters: Jake (w",
+      "screenshot": "scripts/qa_zone3_story_writer.png"
+    },
+    {
+      "taskId": "broadcast_studio",
+      "label": "Broadcast Studio (Video / Retell)",
+      "url": "http://localhost:5173/week/33/task/broadcast_studio",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "first200Chars": "Map 📹 Video Challenge +50 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). Video Audio ⚠️ Camera not available or access denied. Switched to audio mode. 🎙️ Audio R",
+      "screenshot": "scripts/qa_zone3_broadcast_studio.png"
+    },
+    {
+      "taskId": "info_exchange",
+      "label": "Info Exchange (P2 Speaking)",
+      "url": "http://localhost:5173/week/33/task/info_exchange",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "first200Chars": "Map 🔄 Info Exchange +50 Cue 1 / 4 Phase 1: Ask Questions from Cues 📋 Table A (You Ask) 🎙️ Table B (You Answer) 📄 Tom's Accident CANDIDATE'S QUESTION CARD 01. where / get injured? ? 02. what / hurt",
+      "screenshot": "scripts/qa_zone3_info_exchange.png"
+    }
+  ],
+  "interactions": {
+    "story_writer": {
+      "shortAttempt": "NO_WORD_COUNTER",
+      "validAttempt": "30 WORDS",
+      "passed": true
+    },
+    "info_exchange": {
+      "cardCount": 10,
+      "questionPrompt": "Map🔄Info Exchange+50Cue 1 / 4Phase 1: Ask Questions from Cues📋 Table A (You Ask)🎙️ Table B (You Answer)📄Tom's AccidentCandidate's Question Card01.",
+      "passed": true
+    }
+  },
+  "totalErrors": 0
+}

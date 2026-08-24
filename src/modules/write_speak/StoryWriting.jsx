@@ -44,10 +44,10 @@ const StoryWriting = ({ content, storyPrompts, themeColor, isVi, onToggleLang, o
   // Saved progress lives under stationId 'story_writing'
   const { savedData, saveProgress, markComplete } = useStationProgress(currentWeek, 'story_writing');
 
-  // Bridge: onComplete(xp, finalText) funnels into onReportProgress(percent, text)
-  const handleProgress = (percent, text = '') => {
-    if (onReportProgress) onReportProgress(percent, text);
-    if (onComplete && percent >= 100) onComplete(50, text);
+  // Bridge: onComplete(xp, finalText, extraData) funnels into onReportProgress(percent, text, extraData)
+  const handleProgress = (percent, text = '', extraData = null) => {
+    if (onReportProgress) onReportProgress(percent, text, extraData);
+    if (onComplete && percent >= 100) onComplete(50, text, extraData);
   };
 
   // ── Topic Mode (W36+) ─────────────────────────────────────

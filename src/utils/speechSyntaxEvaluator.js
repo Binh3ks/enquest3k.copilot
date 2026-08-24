@@ -84,7 +84,7 @@ export const evaluateSpeechSyntax = (spokenText, targets, options = {}) => {
       return {
         isCorrect: true,
         score: 100,
-        feedback: "🌟 Perfect pronunciation and grammar!",
+        feedback: "🌟 Perfect sentence structure and grammar!",
         spokenText: cleanSpoken,
         modelTarget: target
       };

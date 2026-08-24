@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-08-24T02:41:35.152Z",
+  "device": "Samsung Galaxy S23 (SM-S911B)",
+  "test": "Physical Microphone Silence Test (5s Room Silence with Zero Speaker Audio)",
+  "telemetry": [
+    "[Android Console warning] [TTS Telemetry] ⚠️ Audio play() rejected [name=NotAllowedError, message=play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD]",
+    "[Android Console warning] [TTS Telemetry] ⚠️ Fatal audio error [name=NotAllowedError], falling back to Web Speech...",
+    "[Android Console warning] [TTS Telemetry] ⚠️ Audio playback error [err=unknown], triggering Web Speech fallback...",
+    "[Android Console log] [VAD Telemetry] audioBlobSize=175B, rms=0.00000, speechRatio=0.000, totalSamples=2880, isSilent=true"
+  ],
+  "vadDomResult": {
+    "feedbackText": "Map🎧Voice Shadow+50🎙️ Tap any sentence to listen & practice word-by-word karaoke⭐ 0/8 Full AudioCâu 1/8Jake/ʤeɪk/was/wəz/walking/ˈWƆːKꞮŋ/carefully/ˈKEƏFƏLI/down/daʊn/the/ðə/school/skuːl/corridor/ˈKɒrɪdɔː/after/ˈⱭːFTƏ/science/ˈSAꞮƏNS/class./klɑːs/ 🔊 Listen Model Audio 🎙️ Voice Shadow🎧 Please wear headphones during shadowing for the clearest recording!⚠️ No speech detected. Please speak clearly into your mic!🎯 AI Pronunciation & Intonation Coach(Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ)Show Guide◀ Câu trướcCâu tiếp theo ▶Upgrade Plan",
+    "hasNoSpeechWarning": true,
+    "hasVoiceRecorded": false,
+    "isZeroScore": true,
+    "fullBodySnippet": "Map\n🎧\nVoice Shadow\n+50\n🎙️ Tap any sentence to listen & practice word-by-word karaoke\n⭐ 0/8\nFull Audio\nCâu 1/8\nJake\n/ʤeɪk/\nwas\n/wəz/\nwalking\n/ˈWƆːKꞮŋ/\ncarefully\n/ˈKEƏFƏLI/\ndown\n/daʊn/\nthe\n/ðə/\nschool\n/skuːl/\ncorridor\n/ˈKɒrɪdɔː/\nafter\n/ˈⱭːFTƏ/\nscience\n/ˈSAꞮƏNS/\nclass.\n/klɑːs/\n🔊 Listen Model Audio\n🎙️ Voice Shadow\n🎧\nPlease wear headphones during shadowing for the clearest recording!\n⚠️ No speech detected. Please speak clearly into your mic!\n🎯 AI Pronunciation & Intonation Coach\n(Trọng Âm & Ngữ"
+  }
+}

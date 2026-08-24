@@ -1,0 +1,45 @@
+{
+  "initial": {
+    "completedQuestsW33": [],
+    "progressCacheW33": {}
+  },
+  "updated": {
+    "completedQuestsCount": 3,
+    "completedQuestsList": [
+      "word_blitz",
+      "math_quest",
+      "sentence_smash"
+    ],
+    "totalZone2Score": 75,
+    "cacheDetails": {
+      "word_blitz": {
+        "isCompleted": true,
+        "score": 25
+      },
+      "math_quest": {
+        "isCompleted": true,
+        "score": 25
+      },
+      "sentence_smash": {
+        "isCompleted": true,
+        "score": 25
+      },
+      "hub1": {
+        "score": 0,
+        "isCompleted": false
+      },
+      "hub2": {
+        "score": 0,
+        "isCompleted": false
+      },
+      "hub3": {
+        "score": 0,
+        "isCompleted": false
+      },
+      "hub4": {
+        "score": 0,
+        "isCompleted": false
+      }
+    }
+  }
+}

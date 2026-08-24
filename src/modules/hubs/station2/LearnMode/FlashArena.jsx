@@ -12,7 +12,7 @@ const DEFAULT_MICRO_ROUNDS = [
     pairs: [
       { id: 'm1_1', en: 'slipped', vi: 'trượt chân' },
       { id: 'm1_2', en: 'fell down', vi: 'ngã xuống' },
-      { id: 'm1_3', en: 'called', vi: 'gọi trợ giúp' },
+      { id: 'm1_3', en: 'called', vi: 'gọi' },
       { id: 'm1_4', en: 'praised', vi: 'khen ngợi' },
     ]
   },

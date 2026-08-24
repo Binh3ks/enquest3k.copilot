@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-08-24T02:51:42.605Z",
+  "device": "Samsung Galaxy S23 (SM-S911B)",
+  "methodology": {
+    "origin": "https://app.bkbacademy.vn/week/33/task/gear2_karaoke",
+    "studentBehavior": "100% silent — does not speak at any point",
+    "speakerState": "ON — model audio plays through phone speaker",
+    "isFalsePositiveDerivedField": true,
+    "derivationFormula": "body.includes('Voice Shadow recorded') || body.includes('Voice Recorded!')",
+    "explanation": "isFalsePositiveAwarded is NOT a field returned by the app. It is derived by the test script checking whether the app UI showed the success message it only shows when it ACCEPTS audio as real speech."
+  },
+  "results": [
+    {
+      "run": 1,
+      "volumeLabel": "DEFAULT VOLUME (same as previous test)",
+      "screenshot": "scripts/android_loopback_run1.png",
+      "appFeedbackText": "NOT_FOUND",
+      "appScoreDisplay": "NOT_FOUND",
+      "hasNoSpeechMsg": false,
+      "hasVoiceRecordedMsg": false,
+      "hasMicPermissionError": false,
+      "isFalsePositiveAwarded": false,
+      "vadLogs": []
+    },
+    {
+      "run": 2,
+      "volumeLabel": "HIGH VOLUME (87% system max)",
+      "screenshot": "scripts/android_loopback_run2.png",
+      "appFeedbackText": "NOT_FOUND",
+      "appScoreDisplay": "NOT_FOUND",
+      "hasNoSpeechMsg": false,
+      "hasVoiceRecordedMsg": false,
+      "hasMicPermissionError": false,
+      "isFalsePositiveAwarded": false,
+      "vadLogs": []
+    },
+    {
+      "run": 3,
+      "volumeLabel": "MAX VOLUME (100% system max)",
+      "screenshot": "scripts/android_loopback_run3.png",
+      "appFeedbackText": "NOT_FOUND",
+      "appScoreDisplay": "NOT_FOUND",
+      "hasNoSpeechMsg": false,
+      "hasVoiceRecordedMsg": false,
+      "hasMicPermissionError": false,
+      "isFalsePositiveAwarded": false,
+      "vadLogs": []
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import getBossRotaryConfig from '../../config/bossRotarySchedule';
 import BossIntro from '../../components/zones/BossIntro';
 import SVGLineMatcher from '../../components/cambridge/SVGLineMatcher';
@@ -18,10 +18,13 @@ import { Shield, Trophy, CheckCircle2, RotateCcw, Award, PlayCircle, Star, Spark
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
-export default function BossBattleZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
+export default function BossBattleZone({ data, weekNumber, forcedStation = null, hideStationTabs = false }) {
   const navigate = useNavigate();
+  const routeParams = useParams();
+  const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;
+
   const userShields = useUserStore((state) => state.userShields || 0);
-  const rotaryConfig = getBossRotaryConfig(weekNumber);
+  const rotaryConfig = getBossRotaryConfig(activeWeek || 1);
   const bossData = data?.bossBattle || {};
 
   const initialIndex = React.useMemo(() => {
@@ -105,17 +108,22 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
       setEarnedShields(prev => [...prev, taskId]);
     }
 
-    // Track quest: mark boss_listening after first task, shadowing after all tasks
-    if (activeTaskIndex === 0) {
-      useDailyQuestStore.getState().completeQuest(weekNumber, 'boss_listening');
+    // Track quest: mark boss_listening after task 1, boss_reading after task 2, weekly_review after all tasks
+    if (activeWeek) {
+      if (activeTaskIndex === 0) {
+        useDailyQuestStore.getState().completeQuest(activeWeek, 'boss_listening');
+      } else if (activeTaskIndex === 1) {
+        useDailyQuestStore.getState().completeQuest(activeWeek, 'boss_reading');
+      }
     }
 
     if (activeTaskIndex + 1 < currentTasks.length) {
       setActiveTaskIndex(prev => prev + 1);
     } else {
       setExamFinished(true);
-      useDailyQuestStore.getState().completeQuest(weekNumber, 'shadowing');
-      useDailyQuestStore.getState().completeQuest(weekNumber, 'weekly_review');
+      if (activeWeek) {
+        useDailyQuestStore.getState().completeQuest(activeWeek, 'weekly_review');
+      }
     }
   };
 
@@ -184,7 +192,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
         {currentTask.id === 'list_p1' && bossData.listening?.p1 && (
           <SVGLineMatcher
             listeningData={bossData.listening.p1}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p1')}
           />
         )}
@@ -193,7 +201,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
         {currentTask.id === 'list_p2' && (
           <NotepadNoteCompleter
             data={bossData.listening?.p2}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p2')}
           />
         )}
@@ -202,7 +210,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
         {currentTask.id === 'list_p3' && bossData.listening?.p3 && (
           <VisualMatchingAH
             matchingData={bossData.listening.p3}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p3')}
           />
         )}
@@ -211,7 +219,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
         {currentTask.id === 'list_p5' && bossData.listening?.p5 && (
           <SVGColorAndWrite
             data={bossData.listening.p5}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p5')}
           />
         )}
@@ -220,7 +228,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
         {currentTask.id === 'rw_p1' && bossData.readingWriting?.p1 && (
           <WordBankMatchingGrid
             data={bossData.readingWriting.p1}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p1')}
           />
         )}
@@ -229,7 +237,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
         {currentTask.id === 'rw_p2' && bossData.readingWriting?.p2 && (
           <DialogueAHCompleter
             data={bossData.readingWriting.p2}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p2')}
           />
         )}
@@ -238,7 +246,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
         {currentTask.id === 'rw_p4' && bossData.readingWriting?.p4 && (
           <InlineTextClozeDropdown
             data={bossData.readingWriting.p4}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p4')}
           />
         )}
@@ -247,7 +255,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
         {currentTask.id === 'rw_p5' && bossData.readingWriting?.p5 && (
           <TextExtractionCompleter
             data={bossData.readingWriting.p5}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p5')}
           />
         )}
@@ -256,7 +264,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
         {currentTask.id === 'rw_p6' && bossData.readingWriting?.p6 && (
           <OpenClozeCompleter
             data={bossData.readingWriting.p6}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p6')}
           />
         )}
@@ -265,7 +273,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
         {currentTask.id === 'spk_p1' && bossData.speaking?.p1_findDiff && (
           <FindDifferencesInteractive
             speakingData={bossData.speaking.p1_findDiff}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('spk_p1')}
           />
         )}
@@ -274,7 +282,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
         {currentTask.id === 'spk_p2' && bossData.speaking?.p2_cueCard && (
           <InformationExchangeP2
             cueCardData={bossData.speaking.p2_cueCard}
-            weekNumber={weekNumber}
+            weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('spk_p2')}
           />
         )}

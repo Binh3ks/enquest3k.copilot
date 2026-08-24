@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-08-24T03:33:43.353Z",
+  "results": {
+    "swap_match_test": {
+      "description": "Cross-connected Nurse<->Tom and Headmaster<->Mia, left Alex blank",
+      "expectedScore": "20% (1/5 due to unlinked Alex)",
+      "passed": true
+    },
+    "aggregation_audit": {
+      "initialXP": 1250,
+      "deltaXP": null,
+      "wordBlitzCompleted": true,
+      "matchesExpectedDelta": false
+    }
+  }
+}

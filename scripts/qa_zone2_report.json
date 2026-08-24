@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-08-24T03:05:25.907Z",
+  "zone": "Zone 2: Battle Arena",
+  "week": 33,
+  "tasks": [
+    {
+      "taskId": "word_blitz",
+      "label": "Speed Match (FlashArena)",
+      "url": "http://localhost:5173/week/33/task/word_blitz",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "uiSummary": {
+        "title": "READY FORWORD BLITZ?",
+        "buttonCount": 3,
+        "sampleButtons": [
+          "Map",
+          "▶ START",
+          "Upgrade Plan"
+        ],
+        "first200Chars": "Map ⚡ Speed Match +50 ⚡ ROUND 1/6 • ⚔️ CORE VERBS CLASH 60s 0 PTS ⚡ READY FOR WORD BLITZ? ▶ START UPGRADE PLAN"
+      },
+      "screenshot": "scripts/qa_zone2_word_blitz.png"
+    },
+    {
+      "taskId": "sentence_smash",
+      "label": "Grammar Duel (SentenceBuilderBattle)",
+      "url": "http://localhost:5173/week/33/task/sentence_smash",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "uiSummary": {
+        "title": "Build a past continuous sentence with 'While'.",
+        "buttonCount": 3,
+        "sampleButtons": [
+          "Map",
+          "▶ START",
+          "Upgrade Plan"
+        ],
+        "first200Chars": "Map 🧱 Grammar Duel +50 🧱 Build a past continuous sentence with 'While'. 45s 0 PTS 1/5 🧱 READY FOR SENTENCE SMASH? ▶ START UPGRADE PLAN"
+      },
+      "screenshot": "scripts/qa_zone2_sentence_smash.png"
+    },
+    {
+      "taskId": "math_quest",
+      "label": "Math Quest (BarModelQuest)",
+      "url": "http://localhost:5173/week/33/task/math_quest",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "uiSummary": {
+        "title": "Math Quest (Singapore Bar Model)",
+        "buttonCount": 3,
+        "sampleButtons": [
+          "Map",
+          "▶ START",
+          "Upgrade Plan"
+        ],
+        "first200Chars": "Map 📐 Math Quest +50 📐 Math Quest (Singapore Bar Model) 90s 0 PTS 1/5 📐 READY FOR MATH QUEST? ▶ START UPGRADE PLAN"
+      },
+      "screenshot": "scripts/qa_zone2_math_quest.png"
+    }
+  ],
+  "totalErrors": 0
+}

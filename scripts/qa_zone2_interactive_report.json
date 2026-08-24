@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-08-24T03:09:16.727Z",
+  "results": {
+    "word_blitz": {
+      "wrongAttemptScore": 0,
+      "correctAttemptScore": 25,
+      "passed": true
+    },
+    "sentence_smash": {
+      "wrongFeedback": "NO_WRONG_FEEDBACK",
+      "correctFeedback": "Map🧱Grammar Duel+50🧱Build a sentence describing first aid treatment.44s25 PTS2/5kneefeltnurseso,wasfeels.treatsrelievedhisWhileTomtreatingthe Check Sentence\n    To pick up a draggable item, press the space bar.\n    While dragging, use the arrow keys to move the item.\n    Press space again to drop the item in its new position, or press escape to cancel.\n  Upgrade Plan",
+      "passed": false
+    },
+    "math_quest": {
+      "wrongFeedback": "Map📐Math Quest+50📐Math Quest (Singapore Bar Model)88s0 PTS1/5Problem 1: Corridor Distance (Part-Whole)Jake walked 40 meters. The corridor is 100 meters long. How many meters are left?40m walked60m leftTotal: 100m corridorSubmit Answer ▶❌ Not quite right. Check the Bar Model and try again!Upgrade Plan",
+      "correctFeedback": "Map📐Math Quest+50📐Math Quest (Singapore Bar Model)87s25 PTS2/5Problem 2: Bandage Stock (Part-Whole)The nurse had 25 bandages. She used 8 bandages. How many bandages remain?8 used17 leftTotal: 25 bandagesSubmit Answer ▶Upgrade Plan",
+      "passed": true
+    }
+  }
+}

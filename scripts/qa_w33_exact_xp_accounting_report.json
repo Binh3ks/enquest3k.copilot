@@ -1,0 +1,132 @@
+{
+  "baselineXP": 1250,
+  "finalXP": 1730,
+  "totalEarned": 480,
+  "txLogs": [
+    {
+      "txIndex": 1,
+      "description": "Day 1 Story Retell (gear3_retell)",
+      "deltaXP": 20,
+      "beforeXP": 1250,
+      "afterXP": 1270,
+      "fileSource": "StoryWorldZone.jsx#L843"
+    },
+    {
+      "txIndex": 2,
+      "description": "Day 1 Complete -> Claim Daily Bonus",
+      "deltaXP": 25,
+      "beforeXP": 1270,
+      "afterXP": 1295,
+      "fileSource": "TodayQuestBar.jsx#L43"
+    },
+    {
+      "txIndex": 3,
+      "description": "Day 2 CLIL Phase 1 MCQ (q1, q2)",
+      "deltaXP": 20,
+      "beforeXP": 1295,
+      "afterXP": 1315,
+      "fileSource": "CLILExplorer.jsx#L168"
+    },
+    {
+      "txIndex": 4,
+      "description": "Day 2 CLIL Phase 2 MCQ (q3, q4)",
+      "deltaXP": 20,
+      "beforeXP": 1315,
+      "afterXP": 1335,
+      "fileSource": "CLILExplorer.jsx#L168"
+    },
+    {
+      "txIndex": 5,
+      "description": "Day 2 CLIL Phase 3 Sentence Builder",
+      "deltaXP": 25,
+      "beforeXP": 1335,
+      "afterXP": 1360,
+      "fileSource": "CLILExplorer.jsx#L141"
+    },
+    {
+      "txIndex": 6,
+      "description": "Day 2 Science Lab (science_lab)",
+      "deltaXP": 45,
+      "beforeXP": 1360,
+      "afterXP": 1405,
+      "fileSource": "ScienceDragDropLab.jsx#L174"
+    },
+    {
+      "txIndex": 7,
+      "description": "Day 2 Complete -> Claim Daily Bonus",
+      "deltaXP": 25,
+      "beforeXP": 1405,
+      "afterXP": 1430,
+      "fileSource": "TodayQuestBar.jsx#L43"
+    },
+    {
+      "txIndex": 8,
+      "description": "Day 3 Speed Match (word_blitz)",
+      "deltaXP": 50,
+      "beforeXP": 1430,
+      "afterXP": 1480,
+      "fileSource": "FlashArena.jsx#L138"
+    },
+    {
+      "txIndex": 9,
+      "description": "Day 3 Grammar Duel (sentence_smash)",
+      "deltaXP": 35,
+      "beforeXP": 1480,
+      "afterXP": 1515,
+      "fileSource": "SentenceBuilderBattle.jsx#L122"
+    },
+    {
+      "txIndex": 10,
+      "description": "Day 3 Math Quest (math_quest)",
+      "deltaXP": 40,
+      "beforeXP": 1515,
+      "afterXP": 1555,
+      "fileSource": "BarModelQuest.jsx#L165"
+    },
+    {
+      "txIndex": 11,
+      "description": "Day 3 Complete -> Claim Daily Bonus",
+      "deltaXP": 25,
+      "beforeXP": 1555,
+      "afterXP": 1580,
+      "fileSource": "TodayQuestBar.jsx#L43"
+    },
+    {
+      "txIndex": 12,
+      "description": "Day 4 Info Exchange (info_exchange)",
+      "deltaXP": 50,
+      "beforeXP": 1580,
+      "afterXP": 1630,
+      "fileSource": "InformationExchangeP2.jsx#L288"
+    },
+    {
+      "txIndex": 13,
+      "description": "Day 4 Complete -> Claim Daily Bonus",
+      "deltaXP": 25,
+      "beforeXP": 1630,
+      "afterXP": 1655,
+      "fileSource": "TodayQuestBar.jsx#L43"
+    },
+    {
+      "txIndex": 14,
+      "description": "Day 5 Boss Visual Match (weekly_review)",
+      "deltaXP": 50,
+      "beforeXP": 1655,
+      "afterXP": 1705,
+      "fileSource": "VisualMatchingAH.jsx#L123"
+    },
+    {
+      "txIndex": 15,
+      "description": "Day 5 Complete -> Claim Daily Bonus",
+      "deltaXP": 25,
+      "beforeXP": 1705,
+      "afterXP": 1730,
+      "fileSource": "TodayQuestBar.jsx#L43"
+    }
+  ],
+  "finalUIState": {
+    "sidebarXPText": "XP: 1730",
+    "sidebarLevelText": "Lv. 6"
+  },
+  "screenshot": "scripts/qa_w33_sidebar_1730_xp_verified.png"
+}

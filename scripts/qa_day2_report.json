@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-08-24T03:48:19.039Z",
+  "day": "Day 2: Knowledge Lab",
+  "week": 33,
+  "tasks": [
+    {
+      "taskId": "gear4_clil",
+      "label": "Fact Finder (CLIL Science)",
+      "url": "http://localhost:5173/week/33/task/gear4_clil",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "textSnippet": "Map 🌐 Fact Finder LV.1 +50 🔬 Part 1: Friction on Dry Surfaces Step 1 of 3 MODE: 🔤 Vocab Focus 🔬 Grammar X-Ray 🎧 Listen to this part 📖 PARAGRAPH 1: FRICTION ON DRY SURFACES Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from",
+      "screenshot": "scripts/qa_day2_gear4_clil.png"
+    },
+    {
+      "taskId": "science_lab",
+      "label": "Action Lab (Interactive Science)",
+      "url": "http://localhost:5173/week/33/task/science_lab",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "textSnippet": "Map 🧪 Action Lab +50 🧪 Science Lab (Physics & Friction) 80s 0 PTS 🧪 READY FOR SCIENCE LAB? ▶ START UPGRADE PLAN",
+      "screenshot": "scripts/qa_day2_science_lab.png"
+    },
+    {
+      "taskId": "science_report",
+      "label": "Discovery Report (Science Report Creator)",
+      "url": "http://localhost:5173/week/33/task/science_report",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "textSnippet": "Map 📝 Discovery Report +50 🔬 SCIENCE REPORT • CLIL FRICTION LAB Corridor Friction Lab Notebook 1. What 2. Why 3. Safety 🏃 STEP 1 — WHAT HAPPENED? 💡 Starter: “While Jake was walking down the corridor,...” Use 🔵 WHO & ACTION: +a boy was running fast +Jake was holding books +students were walkin",
+      "screenshot": "scripts/qa_day2_science_report.png"
+    }
+  ],
+  "totalErrors": 0
+}

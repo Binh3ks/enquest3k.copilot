@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-08-24T02:40:29.577Z",
+  "device": "Samsung Galaxy S23 (SM-S911B)",
+  "testName": "Physical Mic Silence Test (Zero Speaker Audio)",
+  "silenceResult": {
+    "feedbackText": "NOT_FOUND",
+    "hasNoSpeechWarning": false,
+    "fullBodySnippet": "This site can’t be reached\n\nlocalhost refused to connect.\n\nTry:\n\nChecking the connection\nERR_CONNECTION_REFUSED\nReload\nDetails"
+  },
+  "vadLogs": []
+}

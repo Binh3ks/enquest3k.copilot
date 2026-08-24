@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-08-24T03:22:51.161Z",
+  "zone": "Zone 4: Boss Castle",
+  "week": 33,
+  "tasks": [
+    {
+      "taskId": "boss_listening",
+      "label": "Listening Shield (5 Parts)",
+      "url": "http://localhost:5173/week/33/task/boss_listening",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "first250Chars": "Map 🎧 Listening Shield +50 🎧 CYCLE 1/5 • WEEK 33 3 SHIELDS Master Soundwave Nova ← Map 0 Shields MISSION OBJECTIVE Listening Part 1: Draw Lines Cambridge A2 Flyers ~15m • Instant official Cambridge score ENTER BOSS BATTLE NOW UPGRADE PLAN",
+      "screenshot": "scripts/qa_zone4_boss_listening.png"
+    },
+    {
+      "taskId": "boss_reading",
+      "label": "Reading & Writing Shield (Parts 1-7)",
+      "url": "http://localhost:5173/week/33/task/boss_reading",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "first250Chars": "Map 📖 Reading & Writing Shield +50 🎧 CYCLE 1/5 • WEEK 33 3 SHIELDS Master Soundwave Nova ← Map 0 Shields MISSION OBJECTIVE Listening Part 2: Note Completion Cambridge A2 Flyers ~15m • Instant official Cambridge score ENTER BOSS BATTLE NOW UPGRADE P",
+      "screenshot": "scripts/qa_zone4_boss_reading.png"
+    },
+    {
+      "taskId": "weekly_review",
+      "label": "Weekly Review & Passport (Speaking 4 Parts)",
+      "url": "http://localhost:5173/week/33/task/weekly_review",
+      "status": "PASSED",
+      "consoleErrors": [],
+      "anomalies": [],
+      "first250Chars": "Map 🏆 Speaking & Passport +50 🎧 CYCLE 1/5 • WEEK 33 3 SHIELDS Master Soundwave Nova ← Map 0 Shields MISSION OBJECTIVE Listening Part 3: Matching A-H Cambridge A2 Flyers ~15m • Instant official Cambridge score ENTER BOSS BATTLE NOW UPGRADE PLAN",
+      "screenshot": "scripts/qa_zone4_weekly_review.png"
+    }
+  ],
+  "totalErrors": 0
+}
