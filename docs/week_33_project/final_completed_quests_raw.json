@@ -20,15 +20,17 @@
           "weekly_review": true
         }
       },
+      "weekStartDates": {},
       "dailyBonusClaimed": {
         "w33_d1": true,
         "w33_d2": true,
         "w33_d3": true,
         "w33_d4": true,
         "w33_d5": true
-      }
+      },
+      "isBarCollapsed": false
     },
-    "version": 1
+    "version": 0
   },
   "engquest-user-storage": {
     "state": {
@@ -36,16 +38,69 @@
         "name": "Học sinh Vàng",
         "role": "student"
       },
-      "userXP": 1730,
-      "xp": 1730,
-      "userShields": 15,
-      "progressCache": {},
+      "token": null,
+      "learningMode": "easy",
+      "progressCache": {
+        "33": {
+          "story_writing_easy": {
+            "data": {
+              "panelTexts": [
+                "",
+                "",
+                ""
+              ],
+              "rubric": null,
+              "_savedAt": "2026-08-24T09:28:16.669Z"
+            },
+            "isCompleted": false,
+            "score": 0,
+            "updatedAt": "2026-08-24T09:28:16.669Z"
+          },
+          "hub1": {
+            "score": 0,
+            "isCompleted": false
+          },
+          "hub2": {
+            "score": 0,
+            "isCompleted": false
+          },
+          "hub3": {
+            "score": 0,
+            "isCompleted": false
+          },
+          "hub4": {
+            "score": 0,
+            "isCompleted": false
+          }
+        }
+      },
       "weekCompletion": {
-        "33": true
+        "33": 0
       },
       "weekStars": {
-        "33": 3
-      }
+        "33": {
+          "totalStars": 0,
+          "maxStars": 3,
+          "stations": [
+            {
+              "stationId": "story_writing_easy",
+              "score": 0,
+              "stars": 0,
+              "isCompleted": false
+            }
+          ],
+          "percentage": 0
+        }
+      },
+      "earnedBadges": [],
+      "avatarItems": [],
+      "equippedItems": {
+        "hat": null,
+        "glasses": null,
+        "accessory": null
+      },
+      "userXP": 1730,
+      "xp": 1730
     },
     "version": 2
   }
