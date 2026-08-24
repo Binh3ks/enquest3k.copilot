@@ -1,0 +1,52 @@
+{
+  "engquest-daily-quest": {
+    "state": {
+      "completedQuests": {
+        "w33": {
+          "gear1_webtoon": true,
+          "gear2_karaoke": true,
+          "gear3_retell": true,
+          "gear4_clil": true,
+          "science_lab": true,
+          "science_report": true,
+          "word_blitz": true,
+          "sentence_smash": true,
+          "math_quest": true,
+          "story_writer": true,
+          "broadcast_studio": true,
+          "info_exchange": true,
+          "boss_listening": true,
+          "boss_reading": true,
+          "weekly_review": true
+        }
+      },
+      "dailyBonusClaimed": {
+        "w33_d1": true,
+        "w33_d2": true,
+        "w33_d3": true,
+        "w33_d4": true,
+        "w33_d5": true
+      }
+    },
+    "version": 1
+  },
+  "engquest-user-storage": {
+    "state": {
+      "currentUser": {
+        "name": "Học sinh Vàng",
+        "role": "student"
+      },
+      "userXP": 1730,
+      "xp": 1730,
+      "userShields": 15,
+      "progressCache": {},
+      "weekCompletion": {
+        "33": true
+      },
+      "weekStars": {
+        "33": 3
+      }
+    },
+    "version": 2
+  }
+}
