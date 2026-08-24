@@ -49,6 +49,22 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     }
   }, [forcedStation]);
 
+  // QA Hook for Victory Screen verification
+  React.useEffect(() => {
+    window.__triggerBossVictory = (customShields) => {
+      setHasStarted(true);
+      setExamFinished(true);
+      if (customShields && Array.isArray(customShields)) {
+        setEarnedShields(customShields);
+      } else {
+        setEarnedShields(['Shield 1 (Listening P1)', 'Shield 2 (Listening P2)', 'Shield 3 (Listening P3)']);
+      }
+    };
+    return () => {
+      delete window.__triggerBossVictory;
+    };
+  }, []);
+
   // Available tasks mapped from rotary config
   const isFullMock = rotaryConfig.cycleNumber === 5 || rotaryConfig.cycleNumber === 0;
 

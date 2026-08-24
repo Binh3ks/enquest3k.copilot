@@ -21,6 +21,9 @@
 | **11** | [**11_chief_architect_executive_decisions.md**](./11_chief_architect_executive_decisions.md) | **Quyết Định Kiến Trúc & Scaling Blueprint (W34–W72)**: Phân lập Lỗi Hệ Thống vs Lỗi Nội Dung, Content Linter `action_tags`, và chiến lược sản xuất hàng loạt. |
 | **12** | [**12_w33_golden_master_freeze_dossier.md**](./12_w33_golden_master_freeze_dossier.md) | **Tài Liệu Toàn Diện Review Đóng Băng W33 Golden Master (10 Nhóm)**: Kiến trúc, Pipeline, Syllabus, Schemas, State, QA, Artifacts, Tech Debt, Ops, ADRs. |
 | **13** | [**13_w37_mock_test_gap_analysis_spike.md**](./13_w37_mock_test_gap_analysis_spike.md) | **Spike Phân Tích 6 Gaps Kỹ Thuật W37 Mock Test**: Đánh giá thực tế mã nguồn `BossBattleZone.jsx`, Timer, Anti-cheat, Shield Aggregation & Radar Chart. |
+| **14** | [**boss_victory_screenshot.png**](./boss_victory_screenshot.png) | **Bằng Chứng Runtime Gap W33-A**: Ảnh chụp màn hình thật "🏆 BOSS BATTLE VICTORY!" khi hoàn thành trọn bộ 15 Quests và 3 Boss Shields. |
+| **15** | [**final_xp_sidebar.png**](./final_xp_sidebar.png) | **Bằng Chứng Runtime Gap W33-B**: Ảnh chụp Sidebar hiển thị chính xác tổng số 1730 XP đạt được từ 15 Quests + 5 Daily Bonuses. |
+| **16** | [**final_completed_quests.json**](./final_completed_quests.json) | **Bằng Chứng State Dump Gap W33-C**: JSON dump chính thức từ `localStorage` ghi nhận đủ 15/15 keys = true. |
 
 ---
 

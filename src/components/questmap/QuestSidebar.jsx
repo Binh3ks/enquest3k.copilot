@@ -18,7 +18,7 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
   const unlockedGames = getUnlockedGameCount(currentWeekId);
 
   const currentUser = useUserStore(state => state.currentUser) || { displayName: 'Young Explorer', role: 'student' };
-  const userXP = useUserStore(state => state.xp) || 1250;
+  const userXP = useUserStore(state => state.userXP !== undefined ? state.userXP : (state.xp || 0));
   const userStreak = useUserStore(state => state.streak) || 3;
   const userLevel = Math.floor(userXP / 300) + 1;
 
