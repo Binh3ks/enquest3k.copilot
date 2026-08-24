@@ -1,6 +1,6 @@
 {
   "week": 34,
-  "generated_at": "2026-08-24T13:05:39.196Z",
+  "generated_at": "2026-08-24T13:47:51.032Z",
   "total_quests": 15,
   "passed_quests": 15,
   "matrix": [
@@ -45,7 +45,7 @@
       "c2_asset_resolve": "✅ PASS",
       "c3_dom_assertion": "✅ PASS",
       "c4_xp_badge": "Milestone",
-      "c5_screenshot_hash": "5bc74ee81a",
+      "c5_screenshot_hash": "138c27f4cf",
       "status": "PASS"
     },
     {
@@ -56,7 +56,7 @@
       "c2_asset_resolve": "✅ PASS",
       "c3_dom_assertion": "✅ PASS",
       "c4_xp_badge": "Milestone",
-      "c5_screenshot_hash": "d2c9b2b3bb",
+      "c5_screenshot_hash": "ac2e6830da",
       "status": "PASS"
     },
     {
@@ -78,7 +78,7 @@
       "c2_asset_resolve": "✅ PASS",
       "c3_dom_assertion": "✅ PASS",
       "c4_xp_badge": "+45 XP",
-      "c5_screenshot_hash": "0bea58fec6",
+      "c5_screenshot_hash": "49c2cc69be",
       "status": "PASS"
     },
     {
@@ -100,7 +100,7 @@
       "c2_asset_resolve": "✅ PASS",
       "c3_dom_assertion": "✅ PASS",
       "c4_xp_badge": "+40 XP",
-      "c5_screenshot_hash": "45155f0fef",
+      "c5_screenshot_hash": "ff03065638",
       "status": "PASS"
     },
     {
@@ -122,7 +122,7 @@
       "c2_asset_resolve": "✅ PASS",
       "c3_dom_assertion": "✅ PASS",
       "c4_xp_badge": "+50 XP",
-      "c5_screenshot_hash": "efd169c577",
+      "c5_screenshot_hash": "57d34a2849",
       "status": "PASS"
     },
     {
@@ -133,7 +133,7 @@
       "c2_asset_resolve": "✅ PASS",
       "c3_dom_assertion": "✅ PASS",
       "c4_xp_badge": "+50 XP",
-      "c5_screenshot_hash": "8bd9ed7f25",
+      "c5_screenshot_hash": "62a90dee02",
       "status": "PASS"
     },
     {
@@ -144,7 +144,7 @@
       "c2_asset_resolve": "✅ PASS",
       "c3_dom_assertion": "✅ PASS",
       "c4_xp_badge": "Milestone",
-      "c5_screenshot_hash": "ee09f0e72b",
+      "c5_screenshot_hash": "4d48ad9cad",
       "status": "PASS"
     },
     {
@@ -155,7 +155,7 @@
       "c2_asset_resolve": "✅ PASS",
       "c3_dom_assertion": "✅ PASS",
       "c4_xp_badge": "Milestone",
-      "c5_screenshot_hash": "f10b287488",
+      "c5_screenshot_hash": "3a5bdfb83a",
       "status": "PASS"
     },
     {
@@ -166,7 +166,7 @@
       "c2_asset_resolve": "✅ PASS",
       "c3_dom_assertion": "✅ PASS",
       "c4_xp_badge": "Milestone",
-      "c5_screenshot_hash": "b20bab3c1a",
+      "c5_screenshot_hash": "26fa0a2152",
       "status": "PASS"
     }
   ]

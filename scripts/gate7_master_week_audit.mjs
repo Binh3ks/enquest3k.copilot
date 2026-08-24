@@ -39,6 +39,7 @@ const GATES = [
   { name: 'Gate 7: CEFR Guard Stage 1 Vocabulary Standards', cmd: `node scripts/cefr_curriculum_guard.mjs ${weekNum}` },
   { name: 'Gate 8: Static No-Fallback Sweep & Fail-Loud Audit', cmd: `node scripts/gate8_no_fallback_sweep.mjs` },
   { name: 'Gate 9: Generator Purity & Zero-Clone Audit', cmd: `node scripts/gate9_generator_purity.mjs` },
+  { name: 'Gate 10: Example Sentence Grammaticality & Diversity', cmd: `node scripts/gate10_example_grammaticality.mjs ${weekNum}` },
   { name: 'Task Auditor: 15-Quest Hub Invariants', cmd: `node scripts/audit_week_tasks.mjs ${weekNum}` }
 ];
 

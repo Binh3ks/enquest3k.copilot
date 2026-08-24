@@ -35,16 +35,23 @@ if (!fs.existsSync(targetDir)) {
 }
 
 // 1. Generate vocab.js (20 words)
+const vocabList = bp.target_vocab_20.map((v, i) => {
+  if (!v.example_en) {
+    throw new Error('Missing example_en for word "' + v.word + '" in blueprint!');
+  }
+  return {
+    id: i + 1,
+    word: v.word,
+    definition_en: v.definition_en,
+    definition_vi: v.definition_vi,
+    example_en: v.example_en,
+    example_vi: v.example_vi || ('Ví dụ với từ ' + v.word + '.'),
+    audio_word: `/audio/week${weekNum}/vocab_${v.word.replace(/[^a-z0-9]/gi, '_')}.mp3`
+  };
+});
+
 const vocabCode = `// Pure Generated Target Vocab for Week ${weekNum}
-export const week${weekNum}Vocab = ${JSON.stringify(bp.target_vocab_20.map((v, i) => ({
-  id: i + 1,
-  word: v.word,
-  definition_en: v.definition_en,
-  definition_vi: v.definition_vi,
-  example_en: v.example_en || `The ${bp.characters[0] || 'character'} used ${v.word} carefully.`,
-  example_vi: v.example_vi || `Ví dụ với từ ${v.word}.`,
-  audio_word: `/audio/week${weekNum}/vocab_${v.word.replace(/[^a-z0-9]/gi, '_')}.mp3`
-})), null, 2)};
+export const week${weekNum}Vocab = ${JSON.stringify(vocabList, null, 2)};
 
 export default week${weekNum}Vocab;
 `;
