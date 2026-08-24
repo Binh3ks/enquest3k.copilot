@@ -4,14 +4,14 @@ import { speakText } from '../../utils/AudioHelper';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 
 const DEFAULT_SNIPER_WORDS = [
-  { id: "w1", en: "corridor", vi: "hành lang" },
-  { id: "w2", en: "bandage", vi: "băng cá nhân" },
-  { id: "w3", en: "nurse", vi: "y tế / y tá" },
-  { id: "w4", en: "friction", vi: "lực ma sát" },
-  { id: "w5", en: "puddle", vi: "vũng nước ướt" },
-  { id: "w6", en: "slipped", vi: "trượt chân" },
-  { id: "w7", en: "relieved", vi: "nhẹ nhõm" },
-  { id: "w8", en: "carefully", vi: "cẩn thận" }
+  { id: "w1", en: "lion",      vi: "con sư tử" },
+  { id: "w2", en: "mouse",    vi: "con chuột nhỏ" },
+  { id: "w3", en: "hunter",   vi: "thợ săn" },
+  { id: "w4", en: "net",      vi: "lưới bẫy" },
+  { id: "w5", en: "forest",   vi: "khu rừng" },
+  { id: "w6", en: "brave",    vi: "dũng cảm" },
+  { id: "w7", en: "freed",    vi: "được giải thoát" },
+  { id: "w8", en: "promise",  vi: "lời hứa" }
 ];
 
 export default function SoundSniper({ words = [], onComplete }) {

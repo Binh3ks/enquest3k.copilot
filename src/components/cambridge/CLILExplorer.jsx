@@ -150,8 +150,8 @@ export default function CLILExplorer({
       <div className="flex items-center justify-between px-2">
         <div className="flex items-center gap-2">
           <span className="text-sm font-black text-emerald-900 bg-emerald-100 px-3 py-1 rounded-xl">
-            {currentPhase === 1 && '🔬 Part 1: Friction on Dry Surfaces'}
-            {currentPhase === 2 && '🧪 Part 2: Water on the Floor & Zero Friction'}
+            {currentPhase === 1 && `🔬 Part 1: ${clilData?.part_1_title || (clilData?.title ? clilData.title + ' (Part 1)' : 'Reading Part 1')}`}
+            {currentPhase === 2 && `🧪 Part 2: ${clilData?.part_2_title || (clilData?.title ? clilData.title + ' (Part 2)' : 'Reading Part 2')}`}
             {currentPhase === 3 && '🎓 Part 3: Sentence Builder Challenge'}
           </span>
           <span className="text-xs font-bold text-slate-500">
@@ -203,7 +203,7 @@ export default function CLILExplorer({
         <div className="space-y-4 animate-in fade-in">
           <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-700 border-b border-slate-100 pb-2">
-              <span>📖 PARAGRAPH 1: FRICTION ON DRY SURFACES</span>
+              <span>📖 PARAGRAPH 1: {(clilData?.part_1_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
             <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
               {renderParsedText(paragraphs[0], 'emerald', null, false, highlightMode, targetGrammarRegex)}
@@ -278,7 +278,7 @@ export default function CLILExplorer({
         <div className="space-y-4 animate-in fade-in">
           <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-700 border-b border-slate-100 pb-2">
-              <span>📖 PARAGRAPH 2: WATER LUBRICATION & ZERO FRICTION</span>
+              <span>📖 PARAGRAPH 2: {(clilData?.part_2_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
             <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
               {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, highlightMode, targetGrammarRegex)}

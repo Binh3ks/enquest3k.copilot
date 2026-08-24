@@ -59,9 +59,9 @@ export const listeningHub = {
     },
     {
       id: 3,
-      problem_en: "There are 3 groups of monkeys. Each group has 8 monkeys. How many monkeys are there in total?",
+      problem_en: "The lion roared 3 times in the morning and 4 times in the evening. Each roar lasted 2 seconds. How many seconds did he roar in total?",
       bar_model_svg: "/images/week34/barmodel_w34_adv_p3.svg",
-      answer_value: 24
+      answer_value: 14
     },
     {
       id: 4,
@@ -167,12 +167,12 @@ export const listeningHub = {
     ]
   },
   listening_p5: {
-    image_url: "/images/week34/explore_cover_w34.jpg",
+    image_url: "/images/week34/webtoon_scene_1.png",
     instructions: [
-      { id: "inst_1", text: "Color the little mouse brown", x: 50, y: 70, color: "brown" },
-      { id: "inst_2", text: "Write the word 'NET' near the ropes", x: 65, y: 45, word: "NET" },
-      { id: "inst_3", text: "Color the lion's mane golden yellow", x: 30, y: 55, color: "yellow" },
-      { id: "inst_4", text: "Write the word 'FOREST' on the signpost", x: 80, y: 30, word: "FOREST" }
+      { id: "inst_1", item: "Little Mouse", text: "Color the little mouse brown", x: 50, y: 70, color: "brown" },
+      { id: "inst_2", item: "Rope Net Sign", text: "Write the word 'NET' near the ropes", x: 65, y: 45, word: "NET" },
+      { id: "inst_3", item: "Lion's Mane", text: "Color the lion's mane golden yellow", x: 30, y: 55, color: "yellow" },
+      { id: "inst_4", item: "Forest Signpost", text: "Write the word 'FOREST' on the signpost", x: 80, y: 30, word: "FOREST" }
     ]
   }
 };

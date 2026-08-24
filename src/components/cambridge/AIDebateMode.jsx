@@ -128,7 +128,7 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
         hasReason,
         hasEvidence: true,
         wordCount,
-        aiFeedback: "🌟 Wonderful idea sharing! Nova loves your thoughtful suggestion for keeping the corridor safe!"
+        aiFeedback: "🌟 Wonderful idea sharing! Nova loves your thoughtful suggestion about animal friendship and teamwork!"
       };
 
       setDebateScore(result);
@@ -163,8 +163,8 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
     const hasReason = /\b(because|so\s+that|since|due\s+to|as\s+a\s+result|therefore|however|on\s+the\s+other\s+hand)\b/i.test(lower);
     const reasonScore = hasReason ? 40 : 10;
 
-    // Criteria 3: Evidence / Safety Context (30%)
-    const hasEvidence = /\b(friction|slip|slipped|slippery|wet\s+floor|puddle|dangerous|danger|accident|hazard|rubber|grip|sock|wood|injury|hurt|fall|fall\s+down|safe|safety|rules?|nurse|bandage)\b/i.test(lower);
+    // Criteria 3: Evidence / Nature & Cooperation Context (30%)
+    const hasEvidence = /\b(lion|mouse|hunter|rope|net|forest|brave|chew|freed|cooperation|teamwork|animal|strong|tiny|help|friendship|trust|kind|promise)\b/i.test(lower);
     const evidenceScore = hasEvidence ? 30 : 10;
 
     const totalScore = Math.min(100, claimScore + reasonScore + evidenceScore);
@@ -225,7 +225,7 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
     const lower = userSpeechText.toLowerCase();
     const hasClaim = /\b(i\s+disagree|i\s+understand|i\s+think|i\s+believe|my\s+opinion|in\s+my\s+opinion|i\s+have\s+a\s+different)\b/i.test(lower);
     const hasReason = /\b(because|so\s+that|since|due\s+to|as\s+a\s+result|therefore|however|on\s+the\s+other\s+hand)\b/i.test(lower);
-    const hasEvidence = /\b(slip|slippery|wet\s+floor|dangerous|accident|rubber|nurse|bandage|safe|safety|friction|hurt|fall)\b/i.test(lower);
+    const hasEvidence = /\b(lion|mouse|hunter|rope|net|forest|brave|freed|cooperation|teamwork|animal|friendship|trust|help|kind|promise|danger|escape|chew|strong|tiny)\b/i.test(lower);
     // "Good Listener" badge: starts with acknowledgement of Nova's point
     const isGoodListener = /^(i\s+understand|that[''']?s\s+true|i\s+see\s+your|good\s+point)/i.test(lower.trim());
     return { hasClaim, hasReason, hasEvidence, isGoodListener };

@@ -8,73 +8,123 @@ import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 
 
 export function InformationExchangeP2({ customData, isStealthMode = false }) {
-  const data = customData || {
-    title: "Nova's Cue-Card Exchange",
+  // Adapter: speaking_hub format (candidate_card / examiner_card) → table_a / table_b format
+  function adaptSpeakingHubData(raw) {
+    if (!raw) return null;
+    if (raw.table_a && raw.table_b) return raw; // Already correct format
+    if (raw.candidate_card || raw.examiner_card) {
+      const candItems = (raw.candidate_card?.items || []);
+      const examItems = (raw.examiner_card?.items || []);
+      const missingCandIds = ['field_a2', 'field_a3', 'field_a4'];
+      return {
+        title: raw.candidate_card?.title || "Cue-Card Exchange",
+        table_a: {
+          title: `Table A: ${raw.candidate_card?.title || 'Candidate Card'} (Candidate Asks Questions)`,
+          person: raw.candidate_card?.title?.split("'")[0] || "Character A",
+          fields: candItems.slice(0, 4).map((item, i) => ({
+            id: `field_a${i + 1}`,
+            label: item.label,
+            value: item.value,
+            is_missing: i > 0,
+            cue_prompt: `${item.label.replace('?','').trim()} / ${raw.candidate_card?.title?.split("'")[0] || 'character'} / ${item.value.split(' ')[0]}?`,
+            acceptable_questions: [
+              `What is the ${item.label.toLowerCase().replace('?','')}?`,
+              `Where does ${raw.candidate_card?.title?.split("'")[0] || 'the character'} ${item.label.toLowerCase().includes('live') ? 'live' : 'have'}?`,
+              `Can you tell me the ${item.label.toLowerCase().replace('?','')}?`
+            ],
+            nova_reply: `The ${item.label.toLowerCase().replace('?','')} is ${item.value}.`
+          }))
+        },
+        table_b: {
+          title: `Table B: ${raw.examiner_card?.title || 'Examiner Card'} (Examiner Asks Questions)`,
+          person: raw.examiner_card?.title?.split("'")[0] || "Character B",
+          fields: examItems.slice(0, 4).map((item, i) => ({
+            id: `field_b${i + 1}`,
+            label: item.label,
+            value: item.value,
+            nova_question: `What is the ${item.label.toLowerCase().replace('?','')} of ${raw.examiner_card?.title?.split("'")[0] || 'the character'}?`,
+            acceptable_answers: [
+              item.value,
+              `The ${item.label.toLowerCase().replace('?','')} is ${item.value}.`,
+              item.value.split(' ')[0]
+            ]
+          }))
+        },
+        prompt_questions: raw.prompt_questions || []
+      };
+    }
+    return null;
+  }
+
+  const adaptedData = adaptSpeakingHubData(customData);
+
+  const data = adaptedData || {
+    title: "Nova's Animal Shelter Cue-Card Exchange",
     table_a: {
-      title: "Table A: Tom's Accident (Candidate Asks Questions)",
-      person: "Tom",
+      title: "Table A: The Lion's Home (Candidate Asks Questions)",
+      person: "The Lion",
       fields: [
-        { id: "field_a1", label: "Who?", value: "Tom", is_missing: false },
+        { id: "field_a1", label: "Who?", value: "The Lion", is_missing: false },
         {
           id: "field_a2",
-          label: "Injury location?",
-          value: "Corridor",
+          label: "Where does he live?",
+          value: "Green Valley Forest",
           is_missing: true,
-          cue_prompt: "Where / Tom / get injured?",
-          acceptable_questions: ["Where did Tom get injured?", "Where was Tom injured?", "Where did he slip?"],
-          nova_reply: "Tom got injured in the main school corridor near the science lab."
+          cue_prompt: "Where / lion / live?",
+          acceptable_questions: ["Where does the lion live?", "Where does he live?", "Where is the lion's home?"],
+          nova_reply: "The lion lives in the Green Valley Forest."
         },
         {
           id: "field_a3",
-          label: "Hurt what?",
-          value: "His left knee",
+          label: "Favourite food?",
+          value: "Fresh Fish & Fruit",
           is_missing: true,
-          cue_prompt: "What / Tom / hurt?",
-          acceptable_questions: ["What did Tom hurt?", "What did he hurt?", "Which part of his body did he hurt?"],
-          nova_reply: "Tom hurt his left knee when he fell down."
+          cue_prompt: "What / lion / eat?",
+          acceptable_questions: ["What does the lion eat?", "What is his favourite food?", "What food does he like?"],
+          nova_reply: "The lion's favourite food is fresh fish and fruit."
         },
         {
           id: "field_a4",
-          label: "Time?",
-          value: "9:30 AM",
+          label: "When does he rest?",
+          value: "Sunny Afternoons",
           is_missing: true,
-          cue_prompt: "What time / slip?",
-          acceptable_questions: ["What time did Tom slip?", "What time did he slip?", "When did the accident happen?"],
-          nova_reply: "He slipped at exactly 9:30 AM."
+          cue_prompt: "When / lion / rest?",
+          acceptable_questions: ["When does the lion rest?", "When does he like to rest?", "What time does he rest?"],
+          nova_reply: "The lion likes to rest on sunny afternoons."
         }
       ]
     },
     table_b: {
-      title: "Table B: Jake's Action (Examiner Asks Questions)",
-      person: "Jake",
+      title: "Table B: The Mouse's Home (Examiner Asks Questions)",
+      person: "The Mouse",
       fields: [
         {
           id: "field_b1",
-          label: "Who?",
-          value: "Jake",
-          nova_question: "Who took quick action when Tom fell down?",
-          acceptable_answers: ["Jake took quick action.", "Jake", "Jake did."]
+          label: "Where?",
+          value: "Under the Tall Oak Tree",
+          nova_question: "Where does the mouse live?",
+          acceptable_answers: ["Under the tall oak tree.", "He lives under the tall oak tree.", "The tall oak tree."]
         },
         {
           id: "field_b2",
-          label: "Action taken?",
-          value: "Called school nurse",
-          nova_question: "What action did Jake take?",
-          acceptable_answers: ["He called the school nurse.", "Called the school nurse", "He called the nurse for help."]
+          label: "Special skill?",
+          value: "Chewing Strong Ropes",
+          nova_question: "What is the mouse's special skill?",
+          acceptable_answers: ["He can chew strong ropes.", "Chewing strong ropes.", "The mouse chews ropes."]
         },
         {
           id: "field_b3",
-          label: "First aid item?",
-          value: "Clean bandage & cold pack",
-          nova_question: "What first aid item did the nurse bring?",
-          acceptable_answers: ["She brought a clean bandage and a cold pack.", "Clean bandage and cold pack", "A clean bandage"]
+          label: "Best friend?",
+          value: "The Mighty Lion",
+          nova_question: "Who is the mouse's best friend?",
+          acceptable_answers: ["The mighty lion.", "The lion is his best friend.", "The lion."]
         },
         {
           id: "field_b4",
-          label: "Feeling?",
-          value: "Relieved & safe",
-          nova_question: "How did everyone feel after that?",
-          acceptable_answers: ["Everyone felt relieved and safe.", "Relieved", "They felt relieved."]
+          label: "How did he help?",
+          value: "He chewed through the thick ropes",
+          nova_question: "How did the mouse help the lion?",
+          acceptable_answers: ["He chewed through the thick ropes.", "The mouse chewed the ropes.", "He freed the lion."]
         }
       ]
     }

@@ -407,7 +407,7 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
                 <div className="relative flex items-center justify-center">
                   {isExamplePin ? (
                     <span className="px-2 py-0.5 rounded-full border border-white shadow-md bg-amber-500 text-white font-black text-[10px] sm:text-xs flex items-center gap-0.5">
-                      📍 Jake
+                      📍 Example
                     </span>
                   ) : (
                     <span className={`px-2 py-0.5 rounded-full border border-white shadow-md flex items-center justify-center font-black text-[10px] sm:text-xs ${

@@ -2,26 +2,31 @@
 export const writingHub = {
   picture_story: {
     panels: [
-      { image_url: "/images/week34/webtoon_scene_1.png", caption: "The lion was sleeping in the forest." },
-      { image_url: "/images/week34/webtoon_scene_4.png", caption: "Hunters trapped the lion in a heavy net." },
-      { image_url: "/images/week34/webtoon_scene_5.png", caption: "The brave mouse chewed the ropes and saved the lion." }
+      { image_url: "/images/week34/webtoon_scene_1.png", caption: "The mighty lion was resting under a tall oak tree in the forest." },
+      { image_url: "/images/week34/webtoon_scene_4.png", caption: "The hunters trapped the strong lion in a heavy rope net." },
+      { image_url: "/images/week34/webtoon_scene_5.png", caption: "The brave mouse chewed through the thick ropes and freed the lion." }
     ],
-    word_bank: ["lion", "mouse", "sleeping", "trapped", "net", "chewed", "ropes", "freed", "grateful"],
+    word_bank: ["lion", "mouse", "sleeping", "trapped", "net", "chewed", "ropes", "freed", "grateful", "hunter", "forest", "brave", "tiny", "strong", "promised"],
     sentence_frames: [
-      "In the beginning, the mighty lion was sleeping peacefully.",
+      "In the beginning, the mighty lion was sleeping peacefully under a tall tree.",
       "Suddenly, hunters trapped the lion in a strong net.",
-      "Finally, the clever mouse chewed the ropes and freed him."
+      "Finally, the brave mouse chewed the ropes and freed him."
     ],
     min_words: 20
   },
   rw_part_1: {
-    words: ["lion", "mouse", "net", "ropes", "forest"],
+    word_bank: ["lion", "mouse", "net", "ropes", "forest", "hunter", "trapped", "freed", "promise", "brave", "tiny", "grateful", "sleeping", "mighty", "chewed"],
     definitions: [
-      "A large wild cat known as the king of the jungle.",
-      "A tiny furry animal with a long tail.",
-      "A trap made of strong threads or ropes.",
-      "Strong thick cords used for tying things.",
-      "A large area of land covered with trees."
+      { id: "def1",  text: "A large wild cat known as the king of the jungle.",          target: "lion"     },
+      { id: "def2",  text: "A tiny furry animal with a small nose and a long tail.",     target: "mouse"    },
+      { id: "def3",  text: "A trap made of strong threads woven together.",              target: "net"      },
+      { id: "def4",  text: "Thick cords used for tying or binding heavy things.",        target: "ropes"    },
+      { id: "def5",  text: "A large area of land covered with many tall trees.",         target: "forest"   },
+      { id: "def6",  text: "A person whose job is to catch or trap wild animals.",       target: "hunter"   },
+      { id: "def7",  text: "Caught or stuck and unable to escape from a place.",         target: "trapped"  },
+      { id: "def8",  text: "Released from a trap or a difficult situation.",             target: "freed"    },
+      { id: "def9",  text: "A serious agreement to do something helpful in the future.", target: "promise"  },
+      { id: "def10", text: "Willing to do something difficult or dangerous without fear.",target: "brave"    }
     ]
   },
   rw_part_2: {

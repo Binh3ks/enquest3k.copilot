@@ -1,9 +1,9 @@
 {
-  "commit": "d2b98ddf0a881d54adf3f9644e04ff6d53358d45",
-  "git_commit": "d2b98ddf0a881d54adf3f9644e04ff6d53358d45",
-  "shortCommit": "d2b98ddf",
-  "message": "feat(w34): fix vocab example sentences with natural POS-aware contexts and implement Gate 10 example grammaticality auditor",
-  "builtAt": "2026-08-24T14:46:27.183Z",
-  "build_timestamp": "2026-08-24T14:46:27.183Z",
+  "commit": "2b59cc3903c9122ed6c1893e97404e4fe309d34f",
+  "git_commit": "2b59cc3903c9122ed6c1893e97404e4fe309d34f",
+  "shortCommit": "2b59cc39",
+  "message": "fix(w34): comprehensive production remediation & 15-gate certification [anti-hallucination-v1]",
+  "builtAt": "2026-08-24T15:11:20.555Z",
+  "build_timestamp": "2026-08-24T15:11:20.555Z",
   "env": "production"
 }

@@ -38,22 +38,22 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
     {
       id: 1,
       narrative_function: 'setting',
-      en: "On a sunny Monday morning, Jake was walking down the school corridor."
+      en: "In a deep green forest, a mighty lion was sleeping peacefully under a tall oak tree."
     },
     {
       id: 2,
       narrative_function: 'action',
-      en: "He noticed the floor was dry and safe, but someone spilled water ahead."
+      en: "A tiny mouse ran across the lion's nose and woke him up suddenly."
     },
     {
       id: 3,
       narrative_function: 'problem',
-      en: "Suddenly, a student slipped on the wet puddle and lost balance!"
+      en: "Later, hunters trapped the strong lion in a heavy rope net!"
     },
     {
       id: 4,
       narrative_function: 'solution',
-      en: "Jake quickly warned everyone and helped his friend stand up safely."
+      en: "The brave mouse chewed through the thick ropes and freed his friend forever."
     }
   ];
 
