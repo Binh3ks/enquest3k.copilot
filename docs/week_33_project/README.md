@@ -19,6 +19,7 @@
 | **09** | [**09_w33_adversarial_review.md**](./09_w33_adversarial_review.md) | **Multi-Agent Adversarial Review**: Báo cáo bắt lỗi chéo (TDZ, reference errors, cheat loopholes). |
 | **10** | [**10_w33_clil_counter_argument.md**](./10_w33_clil_counter_argument.md) | **Luận Điểm Thiết Kế CLIL & Horizon Mở Rộng**: Tiêu chuẩn kiến thức toàn cầu vượt ra ngoài khuôn khổ lớp học truyền thống. |
 | **11** | [**11_chief_architect_executive_decisions.md**](./11_chief_architect_executive_decisions.md) | **Quyết Định Kiến Trúc & Scaling Blueprint (W34–W72)**: Phân lập Lỗi Hệ Thống vs Lỗi Nội Dung, Content Linter `action_tags`, và chiến lược sản xuất hàng loạt. |
+| **12** | [**12_w33_golden_master_freeze_dossier.md**](./12_w33_golden_master_freeze_dossier.md) | **Tài Liệu Toàn Diện Review Đóng Băng W33 Golden Master (10 Nhóm)**: Kiến trúc, Pipeline, Syllabus, Schemas, State, QA, Artifacts, Tech Debt, Ops, ADRs. |
 
 ---
 
