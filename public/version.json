@@ -1,9 +1,9 @@
 {
-  "commit": "1f516d0d7f61d3105dcfd10ad71b549b2ad1d13d",
-  "git_commit": "1f516d0d7f61d3105dcfd10ad71b549b2ad1d13d",
-  "shortCommit": "1f516d0d",
-  "message": "fix(w34): F-series remediation — F1-F7 blueprint clean + Gate15 gate script",
-  "builtAt": "2026-08-25T01:54:00.234Z",
-  "build_timestamp": "2026-08-25T01:54:00.235Z",
+  "commit": "992f784bfb3affceff936805993916dd59965061",
+  "git_commit": "992f784bfb3affceff936805993916dd59965061",
+  "shortCommit": "992f784b",
+  "message": "fix(w34): data routing R2 — info_exchange / story_writer / science_lab + Gate15 v2",
+  "builtAt": "2026-08-25T02:01:48.872Z",
+  "build_timestamp": "2026-08-25T02:01:48.872Z",
   "env": "production"
 }

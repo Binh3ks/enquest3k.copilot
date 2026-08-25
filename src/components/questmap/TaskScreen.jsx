@@ -80,6 +80,39 @@ class TaskErrorBoundary extends React.Component {
   }
 }
 
+function adaptInfoExchangeCards(infoCards) {
+  if (!infoCards) return null;
+  // Already in table_a/table_b format
+  if (infoCards.table_a && infoCards.table_b) return infoCards;
+  // Convert candidate_card/examiner_card format to table_a/table_b
+  const toFields = (card) => {
+    if (!card) return [];
+    // items: [{label, value}] → fields: [{field_label, nova_question, answer}]
+    if (card.items && Array.isArray(card.items)) {
+      return card.items.map((item, i) => ({
+        field_label: item.label || `Field ${i + 1}`,
+        nova_question: `What is the ${(item.label || 'field').toLowerCase()}?`,
+        answer: item.value || ''
+      }));
+    }
+    return [];
+  };
+  const candidateCard = infoCards.candidate_card || {};
+  const examinerCard = infoCards.examiner_card || {};
+  return {
+    topic: infoCards.topic || candidateCard.title || 'Information Exchange',
+    prompt_questions: infoCards.prompt_questions || [],
+    table_a: {
+      title: candidateCard.title || 'Candidate Card A',
+      fields: toFields(candidateCard)
+    },
+    table_b: {
+      title: examinerCard.title || 'Candidate Card B',
+      fields: toFields(examinerCard)
+    }
+  };
+}
+
 function getSafeTaskData(weekData, weekId) {
   if (!weekData || typeof weekData !== 'object') {
     return {
@@ -97,6 +130,17 @@ function getSafeTaskData(weekData, weekId) {
       rawWeekData: {}
     };
   }
+
+  // Resolve speaking hub for info_exchange adapter
+  const speakingHub = weekData.speaking_hub || weekData.speakingHub || weekData.stations?.speaking_hub || {};
+  // Build cue_card_info_exchange: check multiple sources, adapt if needed
+  const rawInfoExchange = weekData.cue_card_info_exchange
+    || weekData.speaking_hub?.cue_card_info_exchange
+    || weekData.speakingHub?.cue_card_info_exchange
+    || speakingHub.info_exchange_cards
+    || null;
+  const cue_card_info_exchange = adaptInfoExchangeCards(rawInfoExchange);
+
   return {
     ...weekData,
     weekNumber: weekData.weekNumber || weekId || 33,
@@ -107,11 +151,14 @@ function getSafeTaskData(weekData, weekId) {
     reading_hub: weekData.reading_hub || weekData.stations?.reading_hub || {},
     listening_hub: weekData.listening_hub || weekData.stations?.listening_hub || {},
     writing_hub: weekData.writing_hub || weekData.stations?.writing_hub || {},
-    speaking_hub: weekData.speaking_hub || weekData.stations?.speaking_hub || {},
+    speaking_hub: speakingHub,
     stations: weekData.stations || {},
-    rawWeekData: weekData.rawWeekData || weekData
+    rawWeekData: weekData.rawWeekData || weekData,
+    // Inject adapted info_exchange data at root so InfoExchangeZone finds it
+    cue_card_info_exchange: cue_card_info_exchange || weekData.cue_card_info_exchange || null
   };
 }
+
 
 export default function TaskScreen({ weekData, weekId: propWeekId }) {
   const params = useParams();

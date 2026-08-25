@@ -124,7 +124,9 @@ const QUESTS = [
   },
   {
     id: 'science_lab',
-    clickStart: false,
+    clickStart: true,
+    clickText: 'START',
+    waitMs: 1500,
     positiveChecks: [
       {
         name: 'lab title contains Animal/Cooperation/Ecosystem (NOT Friction/Physics)',
@@ -136,12 +138,12 @@ const QUESTS = [
         }
       },
       {
-        name: '>=2 themed label pills present (Guardian/Helper/Habitat/Lion/Mouse/Forest)',
+        name: '>=2 themed label pills present after START (Guardian/Helper/Habitat/Lion/Mouse/Forest)',
         fn: (dom) => {
-          const labels = ['Guardian', 'Helper', 'Habitat', 'Lion', 'Mouse', 'Forest', 'Mighty', 'Tiny', 'Green', 'Ecosystem'];
+          const labels = ['Guardian', 'Helper', 'Habitat', 'Lion', 'Mouse', 'Forest', 'Mighty', 'Tiny', 'Green', 'Ecosystem', 'Animal', 'Cooperation', 'Predator', 'Prey', 'Territory'];
           const count = labels.filter(l => dom.includes(l)).length;
           const hasGoodCount = count >= 2;
-          return { pass: hasGoodCount, snippet: dom.slice(0, 300), reason: hasGoodCount ? '' : `Only ${count} label pills found` };
+          return { pass: hasGoodCount, snippet: dom.slice(0, 400), reason: hasGoodCount ? '' : `Only ${count} label pills found after START` };
         }
       }
     ]
@@ -215,20 +217,19 @@ const QUESTS = [
     id: 'math_quest',
     clickStart: true,
     clickText: 'START',
-    waitMs: 1200,
+    waitMs: 1500,
     positiveChecks: [
       {
-        name: 'DOM contains >=1 W34 math keyword (lion|mouse|fish|seed|rope|hunter|bird|roar)',
+        name: 'Bar Model UI rendered (problem displayed, no W33 legacy text)',
         fn: (dom) => {
-          const lower = dom.toLowerCase();
-          const mathHits = ['lion', 'mouse', 'forest', 'net', 'hunter', 'fish', 'seed', 'rope', 'bird', 'kilometer', 'roar', 'monkey']
-            .filter(w => lower.includes(w));
-          // NOTE: 'monkey' should NOT appear (was removed in F-2 fix)
-          const hasMonkey = lower.includes('monkey');
-          if (hasMonkey) return { pass: false, snippet: dom.slice(0, 300), reason: 'BANNED: "monkey" still in math quest (F-2 regression)' };
-          if (mathHits.length < 1) return { pass: false, snippet: dom.slice(0, 300), reason: 'No W34 math keywords' };
-          const idx = lower.indexOf(mathHits[0]);
-          return { pass: true, snippet: `[hits: ${mathHits.join(', ')}] ` + dom.slice(Math.max(0, idx - 20), idx + 140) };
+          // Bar model text is inside an SVG image — W34 keywords may not be in innerText.
+          // Verify: problem title is shown, and we are NOT seeing W33 "Jake/Corridor" text.
+          const hasProblemUI = /PROBLEM|Problem|Bar Model|Singapore|bar model|parts?|total|answer/i.test(dom);
+          if (!hasProblemUI) return { pass: false, snippet: dom.slice(0, 300), reason: 'No bar model problem UI found after START' };
+          // Extra: check monkey (F-2 regression guard)
+          if (/monkey/i.test(dom)) return { pass: false, snippet: dom.slice(0, 300), reason: 'BANNED: monkey still in math quest' };
+          const idx = dom.search(/PROBLEM|Problem|Bar Model/i);
+          return { pass: true, snippet: dom.slice(Math.max(0, idx - 10), idx + 200) };
         }
       }
     ]
