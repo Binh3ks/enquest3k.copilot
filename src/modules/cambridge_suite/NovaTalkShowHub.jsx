@@ -68,6 +68,7 @@ const calculateSpeechAccuracy = (spokenText, targetText, keyChunks = []) => {
 };
 
 import FindDifferencesInteractive from '../../components/cambridge/FindDifferencesInteractive';
+import ExamIntroAudioButton from '../../components/common/ExamIntroAudioButton';
 
 export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
@@ -642,6 +643,11 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
             <span className="flex items-center gap-1">
               <Radio size={14} className="text-purple-600" /> Turn {currentTurnIdx + 1} / {talkshowTurns.length}
             </span>
+            <ExamIntroAudioButton
+              weekNumber={weekNumber || 33}
+              introId="exam_intro_S4"
+              introText="Now let's talk about you and your daily life. Answer the questions."
+            />
           </div>
 
           {/* Chat History Container */}

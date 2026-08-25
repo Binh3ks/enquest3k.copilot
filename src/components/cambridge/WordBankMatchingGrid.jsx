@@ -123,7 +123,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
             Word Bank Matching (15 Words & 10 Definitions)
           </h2>
           <p className="text-xs text-indigo-700 font-bold mt-0.5">
-            Look and read. Choose the correct words and write them on the lines.
+            Look and read. Choose the correct words and write them on the lines. There is one example.
           </p>
         </div>
         <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">

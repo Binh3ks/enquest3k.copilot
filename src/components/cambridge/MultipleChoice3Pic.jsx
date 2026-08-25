@@ -4,6 +4,8 @@ import { speakText } from '../../utils/AudioHelper';
 import { playCorrectSound, playWrongSound, playButtonClick } from '../../utils/soundEffects';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 
+import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
+
 export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, onComplete }) {
   const p4Data = customData || data || {};
   const questions = p4Data.questions || [];
@@ -53,7 +55,7 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 font-sans text-slate-900 animate-in fade-in">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-2.5 bg-blue-50 border border-blue-200 rounded-2xl">
+      <div className="flex items-center justify-between px-4 py-2.5 bg-blue-50 border border-blue-200 rounded-2xl flex-wrap gap-2">
         <div className="flex items-center gap-2">
           <span className="text-base">🎧</span>
           <div>
@@ -61,8 +63,15 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
             <p className="text-[10px] text-blue-700 font-bold">Listen and tick the box. There is one example.</p>
           </div>
         </div>
-        <div className="text-xs font-black text-blue-900 bg-white px-3 py-1 rounded-xl border border-blue-200">
-          Question {currentQIdx + 1} / {questions.length}
+        <div className="flex items-center gap-2">
+          <ExamIntroAudioButton
+            weekNumber={weekNumber || 34}
+            introId="exam_intro_L4"
+            introText="Listen and tick the box. There is one example."
+          />
+          <div className="text-xs font-black text-blue-900 bg-white px-3 py-1 rounded-xl border border-blue-200">
+            {currentQ.isExample ? "★ EXAMPLE" : `Question ${currentQIdx + 1} / ${questions.length}`}
+          </div>
         </div>
       </div>
 

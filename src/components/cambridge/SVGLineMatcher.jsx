@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, User, Trash2, Volume2, Target } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
+import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 
 export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
   const [selectedName, setSelectedName] = useState(null);
@@ -221,14 +222,19 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
               VoiceService.speak(
                 scriptToSpeak,
                 'questions',
-                sceneData?.audio_url || '/audio/week33/listening_p1_full.mp3',
-                33
+                sceneData?.audio_url || `/audio/week${weekNumber || 33}/listening_p1_full.mp3`,
+                weekNumber || 33
               );
             }}
             className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-1.5 transition shadow-sm active:scale-95 shrink-0"
           >
             <Volume2 size={14} /> 🔊 Play Audio
           </button>
+          <ExamIntroAudioButton
+            weekNumber={weekNumber || 33}
+            introId="exam_intro_L1"
+            introText="Listen and draw lines. There is one example."
+          />
         </div>
 
         <button

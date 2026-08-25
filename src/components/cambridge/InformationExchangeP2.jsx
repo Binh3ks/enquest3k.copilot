@@ -4,6 +4,7 @@ import VoiceService from '../../services/voiceService';
 import CompletionModal from '../common/CompletionModal';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
+import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 
 
@@ -430,25 +431,25 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
             Information Exchange (Ask & Answer Questions)
           </h2>
           <p className="text-xs text-purple-700 font-bold mt-0.5">
-            Ask and answer questions using the information cards.
+            Look at the questions. Ask and answer questions using the information cards.
           </p>
         </div>
 
-        {flowState === 'idle' ? (
-          <button
-            onClick={handleStartExam}
-            className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-black rounded-2xl text-xs shadow-lg transition flex items-center gap-2 animate-bounce shrink-0"
-          >
-            <PlayCircle size={16} /> Start Examiner Nova Flow
-          </button>
-        ) : (
-          <button
-            onClick={handleStartExam}
-            className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl border border-slate-300 transition flex items-center gap-1.5 shrink-0"
-          >
-            <RefreshCw size={14} /> Restart Flow
-          </button>
-        )}
+        <div className="flex items-center gap-2">
+          <ExamIntroAudioButton
+            weekNumber={customData?.week || 33}
+            introId="exam_intro_S2"
+            introText="Look at the questions. Ask and answer questions using the information cards."
+          />
+          {flowState === 'idle' && (
+            <button
+              onClick={handleStartExam}
+              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-black rounded-2xl text-xs shadow-lg transition flex items-center gap-2 animate-bounce shrink-0"
+            >
+              🚀 START EXAM (4 CUES)
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Side-by-Side Information Tables with Visual Isolation & Phase Dimming */}

@@ -127,7 +127,7 @@ export function TextExtractionCompleter({ customData, data: propData, onComplete
             Story Text Extraction
           </h2>
           <p className="text-xs text-amber-700 font-bold mt-0.5">
-            Look at the picture and read the story. Write words to complete the sentences.
+            Look at the picture and read the story. Write some words to complete the sentences. You can use 1, 2, 3 or 4 words.
           </p>
         </div>
         <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">

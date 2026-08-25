@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, Play, Pause, RotateCcw, Headphones } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 import HoverWord, { renderParsedText } from './HoverWord';
+import ExamIntroAudioButton from './ExamIntroAudioButton';
 
 
-export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplete }) {
+export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplete, weekNumber = 33 }) {
   const [answers, setAnswers] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
@@ -113,6 +114,11 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
               {isPlaying ? <Pause size={14} className="fill-amber-950" /> : <Play size={14} className="fill-white ml-0.5" />}
               <span>{isPlaying ? 'Pause' : '🔊 Play Audio'}</span>
             </button>
+            <ExamIntroAudioButton
+              weekNumber={weekNumber || 33}
+              introId="exam_intro_L2"
+              introText="Listen and write. There is one example."
+            />
             <h3 className="text-xs sm:text-sm font-black text-amber-950">
               {title || "School Incident Notepad"} (5 Notes)
             </h3>

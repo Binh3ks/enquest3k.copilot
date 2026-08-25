@@ -138,7 +138,7 @@ export function InlineTextClozeDropdown({ customData, data: propData, onComplete
             Inline Text Cloze Dropdown
           </h2>
           <p className="text-xs text-emerald-700 font-bold mt-0.5">
-            Read the story. Choose the right words and write them on the lines.
+            Read the text. Choose the right words and write them on the lines.
           </p>
         </div>
         <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">

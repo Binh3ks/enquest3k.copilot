@@ -136,7 +136,7 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
             Dialogue A–H Completer
           </h2>
           <p className="text-xs text-purple-700 font-bold mt-0.5">
-            Read the conversation and choose the best answer. Write a letter (A–H) for each answer.
+            Read the conversation and choose the best answer. Write a letter (A-H) for each answer. You do not need to use all the letters.
           </p>
         </div>
         <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">

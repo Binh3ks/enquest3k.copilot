@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Layers, Grid, Volume2 } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
+import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import { srsService } from '../../services/srsService';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
@@ -115,22 +116,27 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
             onClick={() => VoiceService.speak(
               customData?.passage_audio_script || fullPassageScript,
               'questions',
-              '/audio/week33/listening_p3_full.mp3',
-              33
+              customData?.audio_url || `/audio/week${weekNumber || 33}/listening_p3_full.mp3`,
+              weekNumber || 33
             )}
             className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-1.5 transition shadow-sm active:scale-95 shrink-0"
           >
             <Volume2 size={14} /> 🔊 Play Audio
           </button>
+          <ExamIntroAudioButton
+            weekNumber={weekNumber || 33}
+            introId="exam_intro_L3"
+            introText="Listen and write a letter in each box. There is one example."
+          />
         </div>
 
         <div className="text-right">
           <span className="text-[10px] font-black uppercase text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-md border border-indigo-200 block w-max ml-auto">
             Cambridge A2 Flyers — Listening Part 3
           </span>
-          <h3 className="text-xs sm:text-sm font-black text-slate-800 mt-0.5">
-            Match 5 Items to Location Cards (A–H)
-          </h3>
+          <p className="text-[11px] text-slate-500 font-bold mt-0.5">
+            Listen and write a letter in each box. There is one example.
+          </p>
         </div>
       </div>
 

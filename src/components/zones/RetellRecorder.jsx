@@ -4,6 +4,7 @@ import { speakText } from '../../utils/AudioHelper';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 import MicFallbackInput from '../common/MicFallbackInput';
+import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 
 const NARRATIVE_STYLES = {
   setting:  { label: 'Scene 1: Setting', dot: '🔵', bg: 'bg-blue-50/80',    border: 'border-blue-200',    text: 'text-blue-950', badge: 'bg-blue-200 text-blue-900' },
@@ -13,7 +14,7 @@ const NARRATIVE_STYLES = {
 };
 const FUNC_ORDER = ['setting', 'action', 'problem', 'solution'];
 
-export default function RetellRecorder({ scenes = [], onComplete }) {
+export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplete }) {
   const [recordMode, setRecordMode] = useState('video'); // 'video' | 'audio'
   const [isRecording, setIsRecording] = useState(false);
   const [countdown, setCountdown] = useState(null);
@@ -276,26 +277,33 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
           </div>
         </div>
 
-        {/* Toggle Mode */}
-        <div className="flex items-center gap-1 bg-white p-0.5 rounded-lg border border-purple-200 shadow-2xs">
-          <button
-            type="button"
-            onClick={() => { setRecordMode('video'); setRecordedMediaUrl(null); }}
-            className={`px-2.5 py-1 rounded-md text-[11px] font-black transition flex items-center gap-1 ${
-              recordMode === 'video' ? 'bg-purple-600 text-white shadow-xs' : 'text-slate-600 hover:text-purple-900'
-            }`}
-          >
-            <Camera size={12} /> Video
-          </button>
-          <button
-            type="button"
-            onClick={() => { setRecordMode('audio'); stopCameraPreview(); setRecordedMediaUrl(null); }}
-            className={`px-2.5 py-1 rounded-md text-[11px] font-black transition flex items-center gap-1 ${
-              recordMode === 'audio' ? 'bg-indigo-600 text-white shadow-xs' : 'text-slate-600 hover:text-indigo-900'
-            }`}
-          >
-            <Mic size={12} /> Audio
-          </button>
+        {/* Toggle Mode & Intro Audio */}
+        <div className="flex items-center gap-2">
+          <ExamIntroAudioButton
+            weekNumber={weekNumber || 33}
+            introId="exam_intro_S3"
+            introText="Look at the pictures. They tell a story. Look at the pictures first and tell the story."
+          />
+          <div className="flex items-center gap-1 bg-white p-0.5 rounded-lg border border-purple-200 shadow-2xs">
+            <button
+              type="button"
+              onClick={() => { setRecordMode('video'); setRecordedMediaUrl(null); }}
+              className={`px-2.5 py-1 rounded-md text-[11px] font-black transition flex items-center gap-1 ${
+                recordMode === 'video' ? 'bg-purple-600 text-white shadow-xs' : 'text-slate-600 hover:text-purple-900'
+              }`}
+            >
+              <Camera size={12} /> Video
+            </button>
+            <button
+              type="button"
+              onClick={() => { setRecordMode('audio'); stopCameraPreview(); setRecordedMediaUrl(null); }}
+              className={`px-2.5 py-1 rounded-md text-[11px] font-black transition flex items-center gap-1 ${
+                recordMode === 'audio' ? 'bg-indigo-600 text-white shadow-xs' : 'text-slate-600 hover:text-indigo-900'
+              }`}
+            >
+              <Mic size={12} /> Audio
+            </button>
+          </div>
         </div>
       </div>
 

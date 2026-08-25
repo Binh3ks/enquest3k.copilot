@@ -147,7 +147,7 @@ export function OpenClozeCompleter({ customData, data: propData, onComplete }) {
             Open Cloze Challenge
           </h2>
           <p className="text-xs text-amber-700 font-bold mt-0.5">
-            Read the text and write the missing words. Write one word on each line.
+            Read the diary page and write the missing words. Write one word on each line.
           </p>
         </div>
         {isSubmitted && (

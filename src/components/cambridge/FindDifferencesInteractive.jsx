@@ -6,6 +6,7 @@ import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 import MicFallbackInput from '../common/MicFallbackInput';
+import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 
 export function FindDifferencesInteractive({ customData, onComplete, isStealthMode = false }) {
   const [foundHotspots, setFoundHotspots] = useState([]); // [hotspotId]
@@ -155,12 +156,20 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
             Find the Differences (Look at the Two Pictures)
           </h2>
           <p className="text-xs text-rose-700 font-bold mt-0.5">
-            Look at the two pictures and describe the differences.
+            Look at the two pictures. They are the same, but there are some differences. Tell me the differences.
           </p>
         </div>
-        <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
-          Found {foundHotspots.length} of {differencesData.hotspots.length} Differences
-        </span>
+        <div className="flex items-center gap-2">
+          <ExamIntroAudioButton
+            weekNumber={customData?.week || 33}
+            introId="exam_intro_S1"
+            introText="Look at the two pictures. They are the same, but there are some differences. Tell me the differences."
+            isStealth={isStealthMode}
+          />
+          <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
+            Found {foundHotspots.length} of {differencesData.hotspots.length} Differences
+          </span>
+        </div>
       </div>
 
       {/* Side-by-Side Dual Picture Scenes with Interactive SVG Circles */}

@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Palette, Volume2, PlayCircle, Eye, EyeOff } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
+import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 import CompletionModal from '../common/CompletionModal';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
@@ -194,12 +195,20 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
             </span>
           </div>
         </div>
-        <button
-          onClick={handlePlayMasterAudio}
-          className="w-full sm:w-auto px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs rounded-xl flex items-center justify-center gap-2 shadow-md transition active:scale-95 shrink-0"
-        >
-          <PlayCircle size={18} /> {isPlayingAudio ? 'Playing...' : 'Play Audio'}
-        </button>
+        <div className="flex items-center gap-2">
+          <ExamIntroAudioButton
+            weekNumber={weekNumber || 33}
+            introId="exam_intro_L5"
+            introText="Listen and colour and write. There is one example."
+          />
+          <button
+            onClick={handlePlayMasterAudio}
+            className="w-full sm:w-auto px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs rounded-xl flex items-center justify-center gap-2 shadow-md transition active:scale-95 shrink-0"
+          >
+            <PlayCircle size={16} />
+            {isPlayingAudio ? "Pause Audio" : "Play Full Listening Audio"}
+          </button>
+        </div>
       </div>
 
       {/* Main Split Grid: Left Color Palette & Hidden Text Instructions vs Right Interactive Scene Canvas */}
