@@ -1,9 +1,9 @@
 {
-  "commit": "318ff0c8800a94921a4dd9929de6caa2e2b78b56",
-  "git_commit": "318ff0c8800a94921a4dd9929de6caa2e2b78b56",
-  "shortCommit": "318ff0c8",
-  "message": "fix(story-writer): remove auto-save effect to fix react error 185",
-  "builtAt": "2026-08-25T07:18:17.750Z",
-  "build_timestamp": "2026-08-25T07:18:17.750Z",
+  "commit": "26b628cd82b86497c98464528f61e144fcab70d6",
+  "git_commit": "26b628cd82b86497c98464528f61e144fcab70d6",
+  "shortCommit": "26b628cd",
+  "message": "tooling(gate15): support week-aware spec file resolution",
+  "builtAt": "2026-08-25T07:47:51.746Z",
+  "build_timestamp": "2026-08-25T07:47:51.746Z",
   "env": "production"
 }
