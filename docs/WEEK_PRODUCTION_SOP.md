@@ -61,12 +61,15 @@ Run `npm run audit:week {N}`:
 3. **CLIL Glossary & Fact Unit Invariant**: Every CLIL article must include structured `glossary` entries, distinct part titles (`part_1_title`, `part_2_title`), and >= 3 concrete animal cooperation fact units.
 4. **No-Fallback & Fail-Loud Standard**: All components MUST prohibit hardcoded story fallbacks — if required data is missing, render a visible rose warning and fail loudly.
 5. **Quality Gates 1-17 Gatekeeper**: Every new week MUST pass all quality gates (Gate 1 through Gate 17) in `npm run audit:week <N>` before DoD signoff.
+6. **Hotspot Coordinate Doctrine Invariant**: All find-the-differences coordinates in `speaking_hub.find_differences.differences` MUST be stored strictly in **0–100% Image-Space**. Never bake container or crop offsets into data. `FindDifferencesInteractive.jsx` uses runtime mapping with container and natural image dimensions to render interactive targets and SVG rings. Gate 15 verifies production alignment $< 6\%$.
+7. **Scaffolding vs Micro-Decision Standard**: Every scaffolding level must provide 100% facts (via CLIL Data Card) while requiring >=1 active linguistic micro-decision (past-tense form + connectors `because`/`so`/`but`).
 
 ### Step 8: Reviewer Verification & Git Push
 - Verify `docs/GATE15_SPEC.json` and run `node scripts/gate15_production_dom_assertions.mjs {N}` on production build.
 - Commit data & components separately from test specs and tooling.
 - Ensure **0 RED CELLS across all 15 Quests $\times$ 5 Criteria**.
 
-### Step 7: Final Spot-Check & Commit
+### Step 9: Final Spot-Check & Commit
 - Reviewer spot-checks 3 random quests and screenshots in `docs/week_{N}_qa/`.
 - Commit with full artifact bundle.
+

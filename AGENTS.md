@@ -241,3 +241,24 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
   3. **Lexio Fox Mascot Ecosystem**: Tích hợp nút Cáo ở góc dưới-trái (`ArcadeFoxHelper`) + Cáo bay chỉ điểm (`Flying Fox Target Tracker`) khi học sinh dừng suy nghĩ $\ge 7\text{s}$.
   4. **Persistent Game Over Screen**: Màn hình kết thúc bắt buộc giữ nguyên (`gameState === 'done'`) cho học sinh xem thành tích, điểm số, kỷ lục mới; không bao giờ được tự động đóng. Cung cấp 2 nút `Play Again` và `Back to Arcade`.
   5. **Audio Cancellation Guard**: Mỗi khi đổi round bắt buộc gọi `VoiceService.stop()` + `window.speechSynthesis.cancel()` đồng thời. Chi tiết đầy đủ tại `docs/ENGQUEST_ARCADE_MASTER_BLUEPRINT.md`.
+
+## 🎯 Hotspot Coordinate Doctrine & Worked Example Invariants — 2026-08-25
+1. **Hotspot Coordinate Doctrine (Fix Dứt Điểm Lệch Crop)**:
+   - **Data Layer (`speaking_hub.find_differences.differences[].x/y`)**: Tọa độ luôn luôn được lưu dưới dạng **% theo IMAGE-SPACE (0–100% của kích thước gốc ảnh)**. Tuyệt đối KHÔNG bake container-% hay crop offset vào data file.
+   - **Runtime Rendering Layer (`FindDifferencesInteractive.jsx`)**: Thành phần UI bắt buộc sử dụng runtime coordinate mapper để tính toán vị trí hiển thị trên container theo `object-cover`:
+     $$s = \max(cw/iw, ch/ih); \quad rw = iw \cdot s; \quad rh = ih \cdot s;$$
+     $$ox = (rw - cw) / 2; \quad oy = (rh - ch) / 2;$$
+     $$X_{\text{container}}\% = \frac{\frac{x}{100} \cdot rw - ox}{cw} \cdot 100; \quad Y_{\text{container}}\% = \frac{\frac{y}{100} \cdot rh - oy}{ch} \cdot 100$$
+     Mapper áp dụng đồng bộ cho **CẢ nút hotspot tương tác lẫn vòng tròn SVG visual rings** trên cả Picture A và Picture B.
+   - **Calibration Tooling**: Script `calibrate_find_differences.mjs` tiếp tục xuất image-space coordinates; không convert bake container.
+   - **Production Gate**: Gate 15 assertion kiểm tra click-test 4/4 và xác thực khoảng cách tâm vòng render so với centroid pixel-diff $< 6\%$ trên cả 2 tranh.
+
+2. **Worked-Example Row Component Invariant**:
+   - Mọi component Cambridge có chỉ dẫn *"There is one example"* bắt buộc render hàng example độc lập với `data-testid="example-row"`, nền shaded/highlighted, badge `★ EXAMPLE`, đáp án điền sẵn và locked (`disabled={true}`).
+   - Áp dụng cho: `SVGLineMatcher`, `NotepadNoteCompleter`, `VisualMatchingAH`, `MultipleChoice3Pic`, `SVGColorAndWrite`, `WordBankMatchingGrid`, `DialogueAHCompleter`, `InlineTextClozeDropdown`, `TextExtractionCompleter`, `OpenClozeCompleter`.
+
+3. **Discovery Report 2-Axis Scaffolding & Ladder L1–L6**:
+   - **Trục nội dung**: Cấp sẵn đầy đủ 3 fact units từ Data Card (zero friction cho trí nhớ).
+   - **Trục ngôn ngữ**: Bắt buộc có micro-decision ngôn ngữ (chọn chips dạng QUÁ KHỨ có chủ ngữ + chọn connector `because` / `so` / `but` ở Step 2 & 3).
+   - **Distractor Feedback**: Khi chọn chip nhiễu, hiển thị ngay thông báo `🔬 The Data Card does not show this fact. A science report only uses observed data!` kèm hiệu ứng rung.
+   - **Ladder Levels**: L1-L2 (Grade 1), L3 (Grades 2-3), L4-L5 (Grades 4-5), L6 (Mock Exam).
