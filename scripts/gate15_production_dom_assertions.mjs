@@ -16,7 +16,13 @@ import path from 'path';
 const WEEK = parseInt(process.argv[2] || '34', 10);
 const PROD_BASE = 'https://app.bkbacademy.vn';
 const rootDir = process.cwd();
-const SPEC_PATH = path.resolve(rootDir, 'docs/GATE15_SPEC.json');
+
+let defaultSpec = `docs/GATE15_SPEC.json`;
+if (WEEK === 33 && fs.existsSync(path.resolve(rootDir, 'docs/GATE15_SPEC_W33.json'))) {
+  defaultSpec = `docs/GATE15_SPEC_W33.json`;
+}
+const customSpec = process.argv[3];
+const SPEC_PATH = path.resolve(rootDir, customSpec || defaultSpec);
 
 if (!fs.existsSync(SPEC_PATH)) {
   console.error(`FATAL: Spec file not found at ${SPEC_PATH}`);
