@@ -29,7 +29,7 @@ const PILL_COLOR_SCHEMES = [
 export default function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isVi = false, onReportProgress, onGoToSpeak, onComplete, weekNumber }) {
   const { weekId } = useParams();
   const currentWeek = parseInt(weekId) || weekNumber || 33;
-  const userProfile = useUserStore((state) => state.userProfile || {});
+  const userProfile = useUserStore((state) => state.userProfile);
   const userLevel = userProfile?.writingLevel || userProfile?.level || 'L3';
 
   // Saved progress under stationId 'story_writing'

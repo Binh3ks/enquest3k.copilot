@@ -1,9 +1,9 @@
 {
-  "commit": "2cc2c5a38c945b5f4d84945d93f54646fd28cd33",
-  "git_commit": "2cc2c5a38c945b5f4d84945d93f54646fd28cd33",
-  "shortCommit": "2cc2c5a3",
-  "message": "fix(creator-studio): add missing useCallback import in CreatorStudioZone",
-  "builtAt": "2026-08-25T07:14:14.966Z",
-  "build_timestamp": "2026-08-25T07:14:14.966Z",
+  "commit": "318ff0c8800a94921a4dd9929de6caa2e2b78b56",
+  "git_commit": "318ff0c8800a94921a4dd9929de6caa2e2b78b56",
+  "shortCommit": "318ff0c8",
+  "message": "fix(story-writer): remove auto-save effect to fix react error 185",
+  "builtAt": "2026-08-25T07:18:17.750Z",
+  "build_timestamp": "2026-08-25T07:18:17.750Z",
   "env": "production"
 }
