@@ -1,9 +1,9 @@
 {
-  "commit": "8316ee8c4d15b28db57bd89d985605a72c34f3f2",
-  "git_commit": "8316ee8c4d15b28db57bd89d985605a72c34f3f2",
-  "shortCommit": "8316ee8c",
-  "message": "feat(spec): update Gate 15 spec v2.6.0 for Round N Cambridge mechanics [round-n]",
-  "builtAt": "2026-08-25T11:28:03.626Z",
-  "build_timestamp": "2026-08-25T11:28:03.626Z",
+  "commit": "abd41e39cd41cce6e691b7dddb7e464fd5ffb23b",
+  "git_commit": "abd41e39cd41cce6e691b7dddb7e464fd5ffb23b",
+  "shortCommit": "abd41e39",
+  "message": "fix(writing): apply strict derangement to Step 2 chips in W33 and W34 writing_hub [round-n.1]",
+  "builtAt": "2026-08-25T12:06:32.612Z",
+  "build_timestamp": "2026-08-25T12:06:32.613Z",
   "env": "production"
 }
