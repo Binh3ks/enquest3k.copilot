@@ -101,6 +101,20 @@ export const listeningHub = {
   listening_p1: {
     image_url: "/images/week34/w34_listening_p1_scene.jpg",
     audio_url: "/audio/week34/listening_p1_full.mp3",
+    passage_audio_script: `Man: Look at Part 1. Now look at the picture. Listen and look. There is one example.
+Girl: I can see a big animal sleeping under the tree!
+Man: Yes, that is Leo the lion. He is resting peacefully.
+Girl: Can you see the example line? Now you listen and draw lines.
+Girl: Can you see the tiny mouse running near the lion's front paw?
+Man: Yes, that is Milo the mouse. He is looking for seeds.
+Girl: Who is that man hiding behind the bushes with a rope net?
+Man: That is Hunter Jack. He is setting a trap between the trees.
+Girl: Look up on the high branch! Who is that wise owl?
+Man: That is Oliver the owl. He is watching the whole forest.
+Girl: Look near the stream! There is a little bird singing.
+Man: That is Bella the bird. She has colorful feathers.
+Girl: Who is the white rabbit drinking water at the riverbank?
+Man: That is Rob the rabbit. He is hopping gently.`,
     names: [
       { id: "n1", text: "Leo the Lion", target_id: "t1", isExample: true },
       { id: "n2", text: "Milo the Mouse", target_id: "t2" },
@@ -163,6 +177,7 @@ export const listeningHub = {
         isExample: true,
         question_en: "Where was the lion sleeping?",
         audio_url: "/audio/week34/listening_p4_q1.mp3",
+        audio_script: `Boy: Look at the example. Where did Milo run in the morning?\nGirl: He ran across the mossy rocks.\nBoy: Can you see the tick? Now you listen and tick the box.`,
         options: [
           { letter: "A", text: "Under a tall oak tree", image_url: "/images/week34/webtoon_scene_1.png" },
           { letter: "B", text: "Inside a dark stone cave", image_url: "/images/week34/card_f.jpg" },
@@ -174,6 +189,7 @@ export const listeningHub = {
         id: "p4_q1",
         question_en: "Where was the lion resting in the afternoon?",
         audio_url: "/audio/week34/listening_p4_q1.mp3",
+        audio_script: `Boy: Question 1. Where was the lion resting in the afternoon?\nGirl: He was sleeping peacefully under a shady tree.`,
         options: [
           { letter: "A", text: "Under a shady tree", image_url: "/images/week34/webtoon_scene_1.png" },
           { letter: "B", text: "Near a rocky cave", image_url: "/images/week34/card_f.jpg" },
@@ -185,6 +201,7 @@ export const listeningHub = {
         id: "p4_q2",
         question_en: "What trapped the lion in the forest?",
         audio_url: "/audio/week34/listening_p4_q2.mp3",
+        audio_script: `Boy: Question 2. What trapped the lion in the forest?\nGirl: The hunters placed a heavy rope net between the trees.`,
         options: [
           { letter: "A", text: "A wooden cage", image_url: "/images/week34/card_a.jpg" },
           { letter: "B", text: "A heavy rope net", image_url: "/images/week34/webtoon_scene_4.png" },
@@ -196,6 +213,7 @@ export const listeningHub = {
         id: "p4_q3",
         question_en: "How did the mouse free the lion?",
         audio_url: "/audio/week34/listening_p4_q3.mp3",
+        audio_script: `Boy: Question 3. How did the mouse free the lion?\nGirl: He chewed through the thick ropes with his sharp teeth.`,
         options: [
           { letter: "A", text: "Using a wooden stick", image_url: "/images/week34/card_d.jpg" },
           { letter: "B", text: "Calling other animals", image_url: "/images/week34/card_e.jpg" },
@@ -207,6 +225,7 @@ export const listeningHub = {
         id: "p4_q4",
         question_en: "What does the oxpecker bird eat on the zebra?",
         audio_url: "/audio/week34/listening_p4_q4.mp3",
+        audio_script: `Boy: Question 4. What does the oxpecker bird eat on the zebra?\nGirl: The bird eats small bugs on the zebra's back.`,
         options: [
           { letter: "A", text: "Small bugs on zebra", image_url: "/images/week34/explore_cover_w34.jpg" },
           { letter: "B", text: "Sweet red berries", image_url: "/images/week34/card_g.jpg" },
@@ -218,6 +237,7 @@ export const listeningHub = {
         id: "p4_q5",
         question_en: "Where did the lion and mouse go after they became friends?",
         audio_url: "/audio/week34/listening_p4_q5.mp3",
+        audio_script: `Boy: Question 5. Where did the lion and mouse go after they became friends?\nGirl: They walked together to the sunny forest clearing.`,
         options: [
           { letter: "A", text: "To the hunter village", image_url: "/images/week34/card_b.jpg" },
           { letter: "B", text: "To the sunny forest clearing", image_url: "/images/week34/webtoon_scene_5.png" },
@@ -230,6 +250,23 @@ export const listeningHub = {
 
   listening_p5: {
     image_url: "/images/week34/webtoon_scene_1.png",
+    audio_script: `Nova: Listen and colour and write. There is one example.
+Woman: Look at this picture of the forest. Can you see the tall oak tree?
+Man: Yes, I can see it.
+Woman: Good. Colour the top leaves dark green.
+Nova: Can you see the green leaves? This is an example. Now you listen and colour and write.
+Woman: Look at the lion resting on the grass. Can you see his big mane?
+Man: Yes, shall I colour it?
+Woman: Yes, colour the lion's mane golden yellow.
+Woman: Can you see the hunter's rope near the bushes? Let's write a word.
+Man: What word shall I write?
+Woman: Write the word 'TRAP' near the ropes.
+Woman: Look at the little mouse sitting on the rock.
+Man: He is so small! What colour should he be?
+Woman: Colour the little mouse grey.
+Woman: Can you see the wooden signboard near the path? Let's write the final word.
+Man: What word should I write?
+Woman: Write the word 'FRIENDS' on the signboard.`,
     instructions: [
       { id: "inst_0", item: "Example Object", text: "Color the example brown", x: 10, y: 10, color: "brown", isExample: true },
       { id: "inst_1", item: "Lion Mane", text: "Color the lion's mane golden yellow", x: 45, y: 55, color: "yellow" },
