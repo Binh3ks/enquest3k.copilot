@@ -51,6 +51,7 @@ export const writingHub = {
   },
   rw_part_1: {
     word_bank: ["lion", "mouse", "net", "ropes", "forest", "hunter", "trapped", "freed", "promise", "brave", "tiny", "grateful", "sleeping", "mighty", "chewed"],
+    example: { id: "def0", text: "A small furry animal with whiskers that likes cheese.", target: "mouse" },
     definitions: [
       { id: "def1",  text: "A large wild cat known as the king of the jungle.",          target: "lion"     },
       { id: "def2",  text: "A tiny furry animal with a small nose and a long tail.",     target: "mouse"    },
@@ -66,6 +67,7 @@ export const writingHub = {
   },
   rw_part_2: {
     title: "Leo and Milo's Forest Conversation",
+    example: { gap_id: 0, speaker_a: "Leo", speaker_b: "Milo", text_a: "Good morning Milo! Are you exploring the woods today?", text_b: "Yes, I am looking for seeds in the grass.", target: "opt_0" },
     dialogue: [
       {
         gap_id: 1,
@@ -110,6 +112,7 @@ export const writingHub = {
     ]
   },
   rw_part_4: {
+    example: { id: 0, target: "lived", options: ["lived", "living", "live"] },
     text_template: "Lions are powerful animals that live in [1]_____. They spend many hours [2]_____ during the hottest parts of the day. Small animals like mice are very [3]_____ and can move quickly. When animals work together, they [4]_____ many difficult challenges in nature. True friendship makes everyone [5]_____. Every morning, birds [6]_____ from branch to branch looking for seeds. Squirrels [7]_____ acorns deep in the ground so new trees can grow. In the afternoon, the river gives fresh water to [8]_____ creatures in the forest. When hunters arrive, wise animals [9]_____ each other immediately. Nature is full of wonder when everyone lives [10]_____.",
     gaps: [
       { id: 1, target: "forests", options: ["forests", "oceans", "castles"] },
@@ -143,6 +146,7 @@ export const writingHub = {
   },
   rw_part_5: {
     instructions: "Complete the sentences about the story. Write 1, 2, 3 or 4 words.",
+    example: { id: 0, text_before: "Leo the lion was sleeping under a ", text_after: " on a warm afternoon.", target: "tall tree", paragraph_ref: 1 },
     story: {
       title: "The Mighty Lion and the Brave Little Mouse",
       paragraphs: [
@@ -171,7 +175,8 @@ export const writingHub = {
     ]
   },
   science_report_config: {
-    purpose: "Learn the language of science reports (observed / because / past tense), not science content.",
+    purpose: "🌱 Today we write like little scientists: we say what we SAW, use past tense, and join ideas with because / so!",
+    teacher_parent_note: "Learn the language of science reports (observed / because / past tense), not science content.",
     topic: "Seed Helpers & Forest Plants Report",
     notebookTitle: "How Animals Help Forest Plants Grow",
     data_card: [
@@ -180,27 +185,33 @@ export const writingHub = {
       { subject: "🐦 Jays", action: "hide seeds under soft leaves", result: "start small green plants across the forest" }
     ],
     levels: {
-      L1: { mode: "assemble", description: "Assemble data card observations into complete sentences" },
-      L2: { mode: "verb_choice", description: "Choose correct scientific reporting verbs (observed / caused / concluded)" },
-      L3: { mode: "cloze", description: "Complete scientific report sentences using guided keywords" },
-      L4: { mode: "guided_typing", description: "Type observations and reasons using data card chips" },
-      L5: { mode: "free_register", description: "Write full report with scientific register checklist" }
+      L1: { mode: "match_pairs", description: "Match Action and Result pairs from Data Card" },
+      L2: { mode: "reorder_chunks", description: "Reorder past-tense chunks into complete sentences" },
+      L3: { mode: "chips_connectors", description: "Combine past-tense observation chips with connectors (because/so/but)" },
+      L4: { mode: "gap_fill_connectors", description: "Fill connector gaps with guided word bank" },
+      L5: { mode: "sentence_frames", description: "Write with sentence frames without chip aids" },
+      L6: { mode: "free_write_checklist", description: "Free writing with scientific register checklist" }
     },
+    step1Starter: "While observing the experiment, we saw that",
     step1Title: "Observe Animal Roles",
     step1Pills: {
-      "🐿️ Squirrels": ["bury extra nuts in the ground", "forget some nuts in spring"],
-      "🐝 Bees": ["drink sweet nectar from flowers", "carry pollen to new flowers"],
-      "🐦 Jays": ["hide seeds under leaves", "start small green plants"]
+      "🐿️ Squirrels": ["squirrels buried extra nuts in the ground"],
+      "🐝 Bees": ["bees carried pollen to new flowers"],
+      "🐦 Jays": ["jays hid seeds under soft leaves"],
+      "Distractor": ["some animals forgot to share food"]
     },
+    distractor_feedback: "🔬 The Data Card does not show this fact. A science report only uses observed data!",
+    step2Connectors: ["because", "so", "but"],
     step2Title: "Measure Mutual Benefits",
     step2Pills: {
-      "🌳 New Trees": ["buried nuts grow into young trees", "the forest gets more trees"],
-      "🌸 New Flowers": ["pollen travel makes flowers grow", "flowers give food again"]
+      "🌳 New Trees": ["buried nuts grew into young oak trees"],
+      "🌸 New Flowers": ["carried pollen helped new flowers grow"]
     },
+    step3Connectors: ["so", "because", "but"],
     step3Title: "Record Ecosystem Conclusion",
     step3Pills: {
-      "🏆 Key Conclusion": ["animals help plants without knowing", "plants give animals food and homes"],
-      "🌟 Takeaway": ["small helpers keep the forest strong", "teamwork works across species"]
+      "🏆 Key Conclusion": ["small helpers kept the forest green and strong"],
+      "🌟 Takeaway": ["animals and plants worked together in nature"]
     }
   }
 };

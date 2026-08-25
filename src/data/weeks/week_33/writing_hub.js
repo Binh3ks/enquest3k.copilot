@@ -63,6 +63,7 @@ export const writingHubData = {
       "library", "cafeteria", "handrail", "warning sign", "first-aid kit",
       "playground", "stairs", "slippery", "cold pack", "science room"
     ],
+    example: { id: 0, text: "A quiet room in school with books where students read and borrow stories.", target: "library" },
     definitions: [
       { id: 1, text: "You walk along this long passage inside a school building to get to your classroom.", target: "corridor" },
       { id: 2, text: "A trained medical worker at school who helps students when they get hurt.", target: "nurse" },
@@ -78,6 +79,7 @@ export const writingHubData = {
   },
   rw_part_2: {
     title: "Harry & Jake's Corridor Incident Conversation",
+    example: { gap_id: 0, speaker_a: "Harry", speaker_b: "Jake", text_a: "Hello Jake! Did you have a busy morning at school?", text_b: "Yes, we had our morning science experiment.", target: "opt_0" },
     dialogue: [
       { gap_id: 1, speaker_a: "Harry", speaker_b: "Jake", text_a: "Hi Jake! Did you see what happened in the corridor after science class today?" },
       { gap_id: 2, speaker_a: "Harry", speaker_b: "Jake", text_a: "Oh no! Did Tom hurt himself badly when he fell down?" },
@@ -97,6 +99,7 @@ export const writingHubData = {
     ]
   },
   rw_part_4: {
+    example: { id: 0, target: "walked", options: ["walked", "walking", "walk"] },
     gaps: [
       { id: 1, target: "carefully", options: ["carefully", "careful", "care"] },
       { id: 2, target: "corridor", options: ["corridor", "playground", "library"] },
@@ -117,6 +120,7 @@ export const writingHubData = {
   },
   rw_part_5: {
     instructions: "Complete the sentences about the story. Write 1, 2, 3 or 4 words.",
+    example: { id: 0, text_before: "Jake was walking in the ", text_after: " after his class.", target: "school corridor", paragraph_ref: 1 },
     story: {
       title: "Jake's Quick Action in the School Corridor",
       paragraphs: [
@@ -136,7 +140,8 @@ export const writingHubData = {
     ]
   },
   science_report_config: {
-    purpose: "Learn the language of science reports (observed / because / past tense), not science content.",
+    purpose: "🌱 Today we write like little scientists: we say what we SAW, use past tense, and join ideas with because / so!",
+    teacher_parent_note: "Learn the language of science reports (observed / because / past tense), not science content.",
     topic: "Friction & Surface Safety Report",
     notebookTitle: "Friction on School Floors Lab Notebook",
     data_card: [
@@ -145,26 +150,33 @@ export const writingHubData = {
       { subject: "⚠️ Warning Sign", action: "placed near wet cleaning area", result: "warned everyone to walk carefully" }
     ],
     levels: {
-      L1: { mode: "assemble", description: "Assemble data card observations into complete sentences" },
-      L2: { mode: "verb_choice", description: "Choose correct scientific reporting verbs (observed / caused / concluded)" },
-      L3: { mode: "cloze", description: "Complete scientific report sentences using guided keywords" },
-      L4: { mode: "guided_typing", description: "Type observations and reasons using data card chips" },
-      L5: { mode: "free_register", description: "Write full report with scientific register checklist" }
+      L1: { mode: "match_pairs", description: "Match Action and Result pairs from Data Card" },
+      L2: { mode: "reorder_chunks", description: "Reorder past-tense chunks into complete sentences" },
+      L3: { mode: "chips_connectors", description: "Combine past-tense observation chips with connectors (because/so/but)" },
+      L4: { mode: "gap_fill_connectors", description: "Fill connector gaps with guided word bank" },
+      L5: { mode: "sentence_frames", description: "Write with sentence frames without chip aids" },
+      L6: { mode: "free_write_checklist", description: "Free writing with scientific register checklist" }
     },
+    step1Starter: "While observing the corridor, we saw that",
     step1Title: "Observe Surface Conditions",
     step1Pills: {
-      "💧 Wet Floor Tiles": ["water reduces surface friction", "floor becomes very smooth"],
-      "👟 Shoe Soles": ["smooth shoes lose grip", "rubber shoes provide traction"]
+      "💧 Wet Tiles": ["water reduced surface friction"],
+      "👟 Shoe Soles": ["rubber shoes provided strong grip"],
+      "⚠️ Warning Sign": ["the warning sign alerted everyone to walk carefully"],
+      "Distractor": ["students ran without looking"]
     },
+    distractor_feedback: "🔬 The Data Card does not show this fact. A science report only uses observed data!",
+    step2Connectors: ["because", "so", "but"],
     step2Title: "Measure Friction Differences",
     step2Pills: {
-      "⚡ Less Friction": ["less friction causes slips", "sliding motion cannot stop easily"],
-      "🛡️ More Friction": ["more friction keeps walkers safe", "dry surfaces give better grip"]
+      "⚡ Less Friction": ["wet tiles caused students to slip and fall"],
+      "🛡️ More Friction": ["rubber shoes increased friction on smooth floors"]
     },
+    step3Connectors: ["so", "because", "but"],
     step3Title: "Record Safety Conclusion",
     step3Pills: {
-      "🏆 Key Conclusion": ["safety signs warn about low friction", "walking carefully prevents accidents"],
-      "🌟 Takeaway": ["understanding friction keeps everyone safe", "clean floors dry quickly"]
+      "🏆 Key Conclusion": ["walking carefully prevented accidents in the corridor"],
+      "🌟 Takeaway": ["understanding friction kept everyone safe"]
     }
   },
   word_bank_pills: writing?.word_bank_pills || writing?.wordBankPills,
