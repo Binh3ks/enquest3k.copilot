@@ -112,80 +112,68 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
     }
   }, [storySavedData]);
 
-  const handleStoryComplete = (xpEarned = 50, finalText = '', extraData = null) => {
+  const handleStoryComplete = useCallback((xpEarned = 50, finalText = '', extraData = null) => {
     if (xpEarned > 0) setStudioXP(prev => prev + xpEarned);
-    if (activeWeek) {
+    if (activeWeek && xpEarned > 0) {
       useDailyQuestStore.getState().completeQuest(activeWeek, 'story_writer');
     }
 
     if (extraData?.structured && extraData?.fields) {
-      // Data Contract v2: 4 Structured Broadcast Scenes (1:1 with story fields)
       const { setting = '', action = '', problem = '', solution = '' } = extraData.fields;
-      const podcastScenes = [
-        {
-          id: 1,
-          narrative_function: 'setting',
-          title: 'Scene 1: Setting (🔵 Where & When)',
-          en: setting.trim() || '(Fill Part 1 Setting in Story Writer to see your script here)',
-          radio_starters: ["Welcome back to Corridor Watch!", "Breaking news from the hallway!", "On a sunny Monday morning..."]
-        },
-        {
-          id: 2,
-          narrative_function: 'action',
-          title: 'Scene 2: Action (🟢 What Was Happening)',
-          en: action.trim() || '(Fill Part 2 Action in Story Writer to see your script here)',
-          radio_starters: ["Right then and there...", "Let's find out what happened next...", "As students were moving..."]
-        },
-        {
-          id: 3,
-          narrative_function: 'problem',
-          title: 'Scene 3: Problem (🟠 What Went Wrong)',
-          en: problem.trim() || '(Fill Part 3 Problem in Story Writer to see your script here)',
-          radio_starters: ["But then, listeners...", "Suddenly, everything changed...", "Unexpectedly..."]
-        },
-        {
-          id: 4,
-          narrative_function: 'solution',
-          title: 'Scene 4: Solution (🟣 How It Was Fixed)',
-          en: solution.trim() || '(Fill Part 4 Solution in Story Writer to see your script here)',
-          radio_starters: ["And that's why we always...", "To sum it up...", "Fortunately..."]
-        }
-      ];
-
-      setStorySubmission({ mode: 'structured', finalText, podcastScenes });
+      setStorySubmission(prev => {
+        if (prev?.finalText === finalText && prev?.mode === 'structured') return prev;
+        const podcastScenes = [
+          {
+            id: 1,
+            narrative_function: 'setting',
+            title: 'Scene 1: Setting (🔵 Where & When)',
+            en: setting.trim() || '(Fill Part 1 Setting in Story Writer to see your script here)',
+            radio_starters: ["Welcome back to Corridor Watch!", "Breaking news from the hallway!", "On a sunny Monday morning..."]
+          },
+          {
+            id: 2,
+            narrative_function: 'action',
+            title: 'Scene 2: Action (🟢 What Was Happening)',
+            en: action.trim() || '(Fill Part 2 Action in Story Writer to see your script here)',
+            radio_starters: ["Right then and there...", "Let's find out what happened next...", "As students were moving..."]
+          },
+          {
+            id: 3,
+            narrative_function: 'problem',
+            title: 'Scene 3: Problem (🟠 What Went Wrong)',
+            en: problem.trim() || '(Fill Part 3 Problem in Story Writer to see your script here)',
+            radio_starters: ["But then, listeners...", "Suddenly, everything changed...", "Unexpectedly..."]
+          },
+          {
+            id: 4,
+            narrative_function: 'solution',
+            title: 'Scene 4: Solution (🟣 How It Was Fixed)',
+            en: solution.trim() || '(Fill Part 4 Solution in Story Writer to see your script here)',
+            radio_starters: ["And that's why we always...", "To sum it up...", "Fortunately..."]
+          }
+        ];
+        return { mode: 'structured', finalText, podcastScenes };
+      });
     } else if (finalText) {
-      // Freeform Mode (Tier 3 or legacy v1 schema)
-      const sentences = finalText
-        .replace(/([.!?])\s+/g, '$1|SPLIT|')
-        .split('|SPLIT|')
-        .map(s => s.trim())
-        .filter(s => s.length > 10);
+      setStorySubmission(prev => {
+        if (prev?.finalText === finalText && prev?.mode === 'freeform') return prev;
+        const sentences = finalText
+          .replace(/([.!?])\s+/g, '$1|SPLIT|')
+          .split('|SPLIT|')
+          .map(s => s.trim())
+          .filter(s => s.length > 10);
 
-      const third = Math.ceil(sentences.length / 3);
-      const podcastScenes = [
-        {
-          id: 1,
-          narrative_function: null,
-          title: 'Scene 1: Your Opening',
-          en: sentences.slice(0, third).join(' ') || sentences[0] || finalText
-        },
-        {
-          id: 2,
-          narrative_function: null,
-          title: 'Scene 2: Your Action Sequence',
-          en: sentences.slice(third, third * 2).join(' ') || sentences[1] || ''
-        },
-        {
-          id: 3,
-          narrative_function: null,
-          title: 'Scene 3: Your Conclusion',
-          en: sentences.slice(third * 2).join(' ') || sentences[2] || ''
-        }
-      ].filter(scene => scene.en.trim().length > 0);
+        const third = Math.ceil(sentences.length / 3);
+        const podcastScenes = [
+          { id: 1, narrative_function: null, title: 'Scene 1: Your Opening', en: sentences.slice(0, third).join(' ') || sentences[0] || finalText },
+          { id: 2, narrative_function: null, title: 'Scene 2: Your Action Sequence', en: sentences.slice(third, third * 2).join(' ') || sentences[1] || '' },
+          { id: 3, narrative_function: null, title: 'Scene 3: Your Conclusion', en: sentences.slice(third * 2).join(' ') || sentences[2] || '' }
+        ].filter(s => s.en.trim().length > 0);
 
-      setStorySubmission({ mode: 'freeform', finalText, podcastScenes });
+        return { mode: 'freeform', finalText, podcastScenes };
+      });
     }
-  };
+  }, [activeWeek]);
 
   const handleTaskComplete = (xpEarned = 50, questType = null) => {
     setStudioXP(prev => prev + xpEarned);

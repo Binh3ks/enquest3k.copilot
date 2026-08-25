@@ -105,13 +105,10 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
   const wordCount = useMemo(() => fullText ? fullText.split(/\s+/).filter(Boolean).length : 0, [fullText]);
   const stepWordCount = (panelTexts[currentStepIdx] || '').trim().split(/\s+/).filter(Boolean).length;
 
-  const hasHydratedRef = useRef(false);
-
-  // Hydrate saved data once on mount / week change
+  // Hydrate saved data ONCE on mount
   useEffect(() => {
-    if (!hasHydratedRef.current && savedData) {
-      hasHydratedRef.current = true;
-      if (savedData.panelTexts && Array.isArray(savedData.panelTexts)) {
+    if (savedData && typeof savedData === 'object') {
+      if (Array.isArray(savedData.panelTexts) && savedData.panelTexts.length > 0) {
         setPanelTexts(savedData.panelTexts);
       } else if (savedData.text) {
         const parts = savedData.text.split(/(?<=[.!?])\s+/);
@@ -119,7 +116,7 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
       }
       if (savedData.rubric) setRubric(savedData.rubric);
     }
-  }, [currentWeek, savedData]);
+  }, []);
 
   // Auto-focus on step change
   useEffect(() => {
@@ -135,26 +132,16 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
     return () => clearInterval(t);
   }, [timerActive, isReview, timeLeftSec]);
 
-  // Debounced auto-save (triggered only after hydration on user edits)
+  // Debounced auto-save (saves to persistent store without triggering parent loop)
   useEffect(() => {
-    if (!hasHydratedRef.current) return;
+    if (!panelTexts.some(Boolean)) return;
     const t = setTimeout(() => {
       const isComplete = wordCount >= 20 && Boolean(rubric);
       const percent = wordCount >= 20 ? 80 : wordCount >= 10 ? 40 : 0;
-      const extraData = {
-        structured: true,
-        fields: {
-          setting: panelTexts[0] || '',
-          action: '',
-          problem: panelTexts[1] || '',
-          solution: panelTexts[2] || ''
-        }
-      };
       saveProgress({ panelTexts, text: fullText, rubric, activeLevel }, isComplete, Math.round(percent));
-      if (onReportProgress) onReportProgress(percent, fullText, extraData);
-    }, 800);
+    }, 1000);
     return () => clearTimeout(t);
-  }, [panelTexts, rubric, activeLevel]);
+  }, [panelTexts, rubric, activeLevel, wordCount, fullText]);
 
   // Pill click helper
   const handleInsertPill = (pillText) => {

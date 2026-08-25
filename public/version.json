@@ -1,9 +1,9 @@
 {
-  "commit": "08e68c1dcaf8ebaa0e53060583b9dcaeafbefde6",
-  "git_commit": "08e68c1dcaf8ebaa0e53060583b9dcaeafbefde6",
-  "shortCommit": "08e68c1d",
-  "message": "tooling(gate15-17): update calibrator v2, gate16 content quality and qa artifacts",
-  "builtAt": "2026-08-25T07:03:44.938Z",
-  "build_timestamp": "2026-08-25T07:03:44.938Z",
+  "commit": "358005ba2937f6e6a670f15f2d60e8721ad3bd47",
+  "git_commit": "358005ba2937f6e6a670f15f2d60e8721ad3bd47",
+  "shortCommit": "358005ba",
+  "message": "fix(story-writer): prevent infinite re-render loop during hydration and debounced auto-save",
+  "builtAt": "2026-08-25T07:07:37.244Z",
+  "build_timestamp": "2026-08-25T07:07:37.245Z",
   "env": "production"
 }
