@@ -105,15 +105,20 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
   const wordCount = useMemo(() => fullText ? fullText.split(/\s+/).filter(Boolean).length : 0, [fullText]);
   const stepWordCount = (panelTexts[currentStepIdx] || '').trim().split(/\s+/).filter(Boolean).length;
 
-  // Hydrate saved data
+  const hasHydratedRef = useRef(false);
+
+  // Hydrate saved data once on mount / week change
   useEffect(() => {
-    if (savedData?.panelTexts && Array.isArray(savedData.panelTexts)) {
-      setPanelTexts(savedData.panelTexts);
-    } else if (savedData?.text && !fullText) {
-      const parts = savedData.text.split(/(?<=[.!?])\s+/);
-      setPanelTexts([parts[0] || '', parts[1] || '', parts.slice(2).join(' ') || '']);
+    if (!hasHydratedRef.current && savedData) {
+      hasHydratedRef.current = true;
+      if (savedData.panelTexts && Array.isArray(savedData.panelTexts)) {
+        setPanelTexts(savedData.panelTexts);
+      } else if (savedData.text) {
+        const parts = savedData.text.split(/(?<=[.!?])\s+/);
+        setPanelTexts([parts[0] || '', parts[1] || '', parts.slice(2).join(' ') || '']);
+      }
+      if (savedData.rubric) setRubric(savedData.rubric);
     }
-    if (savedData?.rubric) setRubric(savedData.rubric);
   }, [currentWeek, savedData]);
 
   // Auto-focus on step change
@@ -130,8 +135,9 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
     return () => clearInterval(t);
   }, [timerActive, isReview, timeLeftSec]);
 
-  // Debounced auto-save
+  // Debounced auto-save (triggered only after hydration on user edits)
   useEffect(() => {
+    if (!hasHydratedRef.current) return;
     const t = setTimeout(() => {
       const isComplete = wordCount >= 20 && Boolean(rubric);
       const percent = wordCount >= 20 ? 80 : wordCount >= 10 ? 40 : 0;
@@ -146,9 +152,9 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
       };
       saveProgress({ panelTexts, text: fullText, rubric, activeLevel }, isComplete, Math.round(percent));
       if (onReportProgress) onReportProgress(percent, fullText, extraData);
-    }, 600);
+    }, 800);
     return () => clearTimeout(t);
-  }, [panelTexts, rubric, wordCount, fullText, activeLevel]);
+  }, [panelTexts, rubric, activeLevel]);
 
   // Pill click helper
   const handleInsertPill = (pillText) => {
