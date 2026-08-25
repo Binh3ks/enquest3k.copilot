@@ -281,8 +281,8 @@ export default function CLILExplorer({
                 data-testid="clil-glossary-chip"
                 className="px-3 py-1 bg-white border border-teal-300 text-teal-950 rounded-xl text-xs font-bold shadow-xs flex items-center gap-1.5"
               >
-                <span className="font-black text-teal-800">{item.word}:</span>
-                <span className="text-slate-700 font-medium">{item.def}</span>
+                <span className="font-black text-teal-800">{item.term || item.word}:</span>
+                <span className="text-slate-700 font-medium">{item.meaning || item.def}</span>
               </span>
             ))}
           </div>

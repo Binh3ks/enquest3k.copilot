@@ -83,7 +83,7 @@ export const writingHubData = {
       { id: 3, text: "A soft piece of cloth used to cover and protect a cut or knee injury.", target: "bandage" },
       { id: 4, text: "The person in charge of managing the school who praises students for safe behaviour.", target: "headmaster" },
       { id: 5, text: "A small pool of liquid left on the floor after cleaning or rain.", target: "puddle" },
-      { id: 6, text: "A quiet room in school with books where students read and borrow stories.", target: "library" },
+      { id: 6, text: "An open area where children play during break time.", target: "playground" },
       { id: 7, text: "A large room at school where children eat lunch and talk with friends.", target: "cafeteria" },
       { id: 8, text: "You hold onto this long metal bar when walking up or down stairs.", target: "handrail" },
       { id: 9, text: "A yellow sign placed on the floor to warn people to walk carefully on wet tiles.", target: "warning sign" },
@@ -95,10 +95,10 @@ export const writingHubData = {
     example: { speaker_a: "Harry", text_a: "Why were you walking so carefully today?", speaker_b: "Jake", answer_letter: "D", answer_text: "I noticed a wet puddle near the science room." },
     turns: [
       { id: "q1", speaker_a: "Harry", text_a: "Did you see what happened when the boy ran fast?", correct_letter: "G" },
-      { id: "q2", speaker_a: "Jake", text_a: "He slipped on the wet tiles and hurt his knee!", correct_letter: "B" },
+      { id: "q2", speaker_a: "Harry", text_a: "Oh no! Did Tom hurt himself badly when he fell down?", correct_letter: "B" },
       { id: "q3", speaker_a: "Harry", text_a: "What did you do right away to help him?", correct_letter: "A" },
       { id: "q4", speaker_a: "Harry", text_a: "Did the school nurse arrive quickly?", correct_letter: "F" },
-      { id: "q5", speaker_a: "Jake", text_a: "She treated his knee with a clean bandage.", correct_letter: "E" }
+      { id: "q5", speaker_a: "Harry", text_a: "The headmaster praised you during assembly, didn't he?", correct_letter: "E" }
     ],
     answer_options: [
       { letter: "A", text: "I stayed calm and ran to call the school nurse immediately." },

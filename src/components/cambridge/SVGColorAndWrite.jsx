@@ -30,7 +30,8 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
 
   const normalizedTasks = useMemo(() => {
     if (rawData.instructions && Array.isArray(rawData.instructions)) {
-      return rawData.instructions.map((inst, index) => {
+      const testInstructions = rawData.instructions.filter(inst => !inst.isExample && inst.id !== 'inst_0');
+      return testInstructions.map((inst, index) => {
         const id = inst.id || `inst_${index + 1}`;
         const isWrite = !!(inst.write_word || inst.type === 'write');
         const targetColorHex = inst.target_color || (

@@ -170,7 +170,7 @@ export function OpenClozeCompleter({ customData, data: propData, onComplete }) {
             ★ EXAMPLE
           </span>
           <span className="text-xs font-black text-amber-950">
-            Example Gap [0]: &ldquo;{data?.example?.target || "was"}&rdquo;
+            Example Gap [0]: &ldquo;{data?.example?.target || ""}&rdquo;
           </span>
           <span className="text-[11px] text-amber-800 italic font-medium">
             (Read the diary and write one missing word on each line)

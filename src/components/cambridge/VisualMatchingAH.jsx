@@ -155,7 +155,7 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
                   ★ EXAMPLE
                 </span>
                 <span className="text-xs sm:text-sm font-black text-amber-950 leading-tight">
-                  {customData?.example?.name || (weekNumber === 34 ? "Milo's Seed Bag" : "School Handrail")}
+                  {customData?.example?.name || "Example Item"}
                 </span>
               </div>
               <span className="text-[10px] font-bold text-amber-800 bg-amber-200/80 px-1.5 py-0.5 rounded uppercase">

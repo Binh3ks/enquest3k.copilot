@@ -8,7 +8,8 @@ export const listeningHub = {
       { id: "n3", text: "Nurse Sarah", target_id: "t3" },
       { id: "n4", text: "Headmaster Brown", target_id: "t4" },
       { id: "n5", text: "Cleaner Bob", target_id: "t5" },
-      { id: "n6", text: "Teacher David", target_id: "t6" }
+      { id: "n6", text: "Teacher David", target_id: "t6" },
+      { id: "n7", text: "Mia the Monitor", target_id: null }
     ],
     targets: [
       { id: "t1", label: "Jake (Boy holding science notebooks)", x: 25, y: 65, isExample: true },
@@ -32,6 +33,7 @@ export const listeningHub = {
     ]
   },
   listening_p3: {
+    example: { name: "School Handrail", target_letter: "A" },
     items: [
       { id: 1, name: "School Handrail", target_letter: "A", audio_url: "/audio/week33/listening_p3_item1.mp3" },
       { id: 2, name: "Warning Sign", target_letter: "B", audio_url: "/audio/week33/listening_p3_item2.mp3" },
@@ -130,9 +132,7 @@ export const listeningHub = {
       { id: "inst_1", item: "Jake's Backpack", text: "Color Jake's backpack blue", x: 25, y: 70, color: "blue" },
       { id: "inst_2", item: "Warning Sign", text: "Write the word 'WET' on the sign", x: 45, y: 80, word: "WET" },
       { id: "inst_3", item: "Science Lab Door", text: "Color the door frame bright green", x: 75, y: 35, color: "green" },
-      { id: "inst_4", item: "Handrail", text: "Color the stairs handrail yellow", x: 85, y: 60, color: "yellow" },
-      { id: "inst_5", item: "First-Aid Box", text: "Color the first-aid cross red", x: 90, y: 20, color: "red" },
-      { id: "inst_6", item: "Notice Board", text: "Write the word 'CARE' on the board", x: 15, y: 30, word: "CARE" }
+      { id: "inst_4", item: "Notice Board", text: "Write the word 'CARE' on the board", x: 15, y: 30, word: "CARE" }
     ]
   }
 };
