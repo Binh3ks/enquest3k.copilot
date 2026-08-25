@@ -24,8 +24,8 @@ export const writingHub = {
         caption: "The hunters trapped the strong lion in a heavy rope net.",
         frame_L1: "Suddenly, hunters trapped the lion in a heavy rope net.",
         connectors: ["Then", "Suddenly", "After that"],
-        display_chips: ["trapped the strong lion", "the hunters", "in a heavy rope net"],
-        pills: ["trapped the strong lion", "the hunters", "in a heavy rope net"],
+        display_chips: ["in a heavy rope net", "the hunters", "trapped the strong lion"],
+        pills: ["in a heavy rope net", "the hunters", "trapped the strong lion"],
         correct_order: ["the hunters", "trapped the strong lion", "in a heavy rope net"],
         audio: "Suddenly, the hunters trapped the lion in a strong net."
       },

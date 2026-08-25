@@ -32,8 +32,8 @@ export const writingHubData = {
         caption: "Suddenly, the boy slipped on the wet floor and hurt his knee.",
         frame_L1: "Suddenly, the boy slipped on the wet floor and hurt his knee badly.",
         connectors: ["Then", "Suddenly", "After that"],
-        display_chips: ["ran past him", "a boy", "very fast"],
-        pills: ["ran past him", "a boy", "very fast"],
+        display_chips: ["very fast", "a boy", "ran past him"],
+        pills: ["very fast", "a boy", "ran past him"],
         correct_order: ["a boy", "ran past him", "very fast"],
         audio: "Suddenly, the boy slipped on the wet floor and fell down."
       },
