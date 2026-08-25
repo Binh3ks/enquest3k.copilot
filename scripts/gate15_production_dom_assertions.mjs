@@ -14,14 +14,15 @@ import fs from 'fs';
 import path from 'path';
 
 const WEEK = parseInt(process.argv[2] || '34', 10);
-const PROD_BASE = 'https://app.bkbacademy.vn';
+const isLocal = process.argv.includes('--local') || process.env.LOCAL === '1';
+const PROD_BASE = isLocal ? 'http://localhost:5173' : 'https://app.bkbacademy.vn';
 const rootDir = process.cwd();
 
 let defaultSpec = `docs/GATE15_SPEC.json`;
 if (WEEK === 33 && fs.existsSync(path.resolve(rootDir, 'docs/GATE15_SPEC_W33.json'))) {
   defaultSpec = `docs/GATE15_SPEC_W33.json`;
 }
-const customSpec = process.argv[3];
+const customSpec = process.argv.find(a => a.endsWith('.json'));
 const SPEC_PATH = path.resolve(rootDir, customSpec || defaultSpec);
 
 if (!fs.existsSync(SPEC_PATH)) {
@@ -134,6 +135,14 @@ async function runInteractionCheck(page, check) {
         return { pass: false, snippet: '', reason: `Interaction element '${selector}' not visible` };
       }
     }
+    if (assertion.type === 'dom_count') {
+      const count = await page.$$(assertion.selector).then(els => els.length).catch(() => 0);
+      const min = assertion.min || 1;
+      if (count < min) {
+        return { pass: false, snippet: '', reason: `Found only ${count}/${min} element(s) matching '${assertion.selector}'` };
+      }
+      return { pass: true, snippet: `Found ${count} element(s) matching '${assertion.selector}' (min: ${min})` };
+    }
     const newDom = await page.evaluate(() => (document.body?.innerText || '').trim());
     return evaluatePosCheck(assertion, newDom);
   } catch (e) {
@@ -150,39 +159,43 @@ async function main() {
   console.log(`📅 Timestamp: ${new Date().toISOString()}`);
   console.log(`========================================================================\n`);
 
-  // STEP 1: Check version.json vs git HEAD
-  let prodVersion = null;
-  try {
-    const vRes = await fetch(`${PROD_BASE}/version.json?_t=${Date.now()}`);
-    const vJson = await vRes.json();
-    prodVersion = vJson.commit || vJson.git_commit;
-  } catch (e) {
-    console.error(`FAIL: Cannot reach ${PROD_BASE}/version.json — ${e.message}`);
-    process.exit(1);
-  }
-
-  let gitHead = null;
-  try {
-    gitHead = execSync('git rev-parse HEAD', { cwd: process.cwd() }).toString().trim();
-  } catch (e) {
-    console.error(`FAIL: Cannot read git HEAD — ${e.message}`);
-    process.exit(1);
-  }
-
-  console.log(`🔖 Production commit: ${prodVersion}`);
-  console.log(`🔖 Git HEAD:          ${gitHead}`);
-
-  if (prodVersion && gitHead) {
-    const prodShort = prodVersion.slice(0, 8);
-    const headShort = gitHead.slice(0, 8);
-    if (prodShort !== headShort) {
-      console.error(`\nFAIL: PRODUCTION STALE — redeploy trước`);
-      console.error(`  Production: ${prodVersion}`);
-      console.error(`  Local HEAD: ${gitHead}`);
+  if (isLocal) {
+    console.log(`🏠 Running Gate 15 in LOCAL mode against ${PROD_BASE}`);
+  } else {
+    // STEP 1: Check version.json vs git HEAD
+    let prodVersion = null;
+    try {
+      const vRes = await fetch(`${PROD_BASE}/version.json?_t=${Date.now()}`);
+      const vJson = await vRes.json();
+      prodVersion = vJson.commit || vJson.git_commit;
+    } catch (e) {
+      console.error(`FAIL: Cannot reach ${PROD_BASE}/version.json — ${e.message}`);
       process.exit(1);
     }
+
+    let gitHead = null;
+    try {
+      gitHead = execSync('git rev-parse HEAD', { cwd: process.cwd() }).toString().trim();
+    } catch (e) {
+      console.error(`FAIL: Cannot read git HEAD — ${e.message}`);
+      process.exit(1);
+    }
+
+    console.log(`🔖 Production commit: ${prodVersion}`);
+    console.log(`🔖 Git HEAD:          ${gitHead}`);
+
+    if (prodVersion && gitHead) {
+      const prodShort = prodVersion.slice(0, 8);
+      const headShort = gitHead.slice(0, 8);
+      if (prodShort !== headShort) {
+        console.error(`\nFAIL: PRODUCTION STALE — redeploy trước`);
+        console.error(`  Production: ${prodVersion}`);
+        console.error(`  Local HEAD: ${gitHead}`);
+        process.exit(1);
+      }
+    }
+    console.log(`✅ Version check: Production matches local HEAD (${prodVersion?.slice(0, 8)})\n`);
   }
-  console.log(`✅ Version check: Production matches local HEAD (${prodVersion?.slice(0, 8)})\n`);
 
   // STEP 2: Launch browser and run all assertions
   const browser = await chromium.launch({ headless: true });

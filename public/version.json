@@ -1,9 +1,9 @@
 {
-  "commit": "abd41e39cd41cce6e691b7dddb7e464fd5ffb23b",
-  "git_commit": "abd41e39cd41cce6e691b7dddb7e464fd5ffb23b",
-  "shortCommit": "abd41e39",
-  "message": "fix(writing): apply strict derangement to Step 2 chips in W33 and W34 writing_hub [round-n.1]",
-  "builtAt": "2026-08-25T12:06:32.612Z",
-  "build_timestamp": "2026-08-25T12:06:32.613Z",
+  "commit": "ba95ff3a2968a8c60971c9e1919632d34e481782",
+  "git_commit": "ba95ff3a2968a8c60971c9e1919632d34e481782",
+  "shortCommit": "ba95ff3a",
+  "message": "fix(info-exchange): render ??? for unknown fields and add gate assertion [q4-infogap]",
+  "builtAt": "2026-08-25T14:13:17.636Z",
+  "build_timestamp": "2026-08-25T14:13:17.637Z",
   "env": "production"
 }

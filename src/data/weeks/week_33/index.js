@@ -26,7 +26,7 @@ export const weekData = {
   title_vi: "An Toàn Hành Lang & Chăm Sóc Trường Học",
 
   // Top-level for InfoExchangeZone direct hydration
-  cue_card_info_exchange: INFORMATION_EXCHANGE_P2,
+  cue_card_info_exchange: speakingHub.info_exchange_cards,
   cue_card_prompts: CUE_CARD_PROMPTS,
 
   readingHub,

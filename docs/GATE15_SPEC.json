@@ -87,9 +87,15 @@
         },
         {
           "name": "Grammar X-Ray inline: >=3 highlight marks INSIDE paragraph",
-          "type": "dom_count",
-          "selector": "p mark, p span[class*='amber'], p span[class*='highlight']",
-          "min": 3
+          "type": "interaction_check",
+          "action": "click",
+          "selector": "button:has-text('Grammar X-Ray')",
+          "wait_after_ms": 1000,
+          "assertion": {
+            "type": "dom_count",
+            "selector": "p mark, p span[class*='amber'], p span[class*='highlight']",
+            "min": 3
+          }
         },
         {
           "name": "CLIL glossary chips rendered (>=3)",
@@ -170,7 +176,7 @@
         {
           "name": ">=4 W34 blueprint words present",
           "type": "contains_min_count",
-          "values": ["lion", "mouse", "net", "rope", "forest", "hunter", "trapped", "freed", "brave", "tiny", "grateful", "sleeping", "mighty", "promise", "chewed"],
+          "values": ["lion", "mouse", "net", "rope", "forest", "hunter", "trapped", "freed", "brave", "tiny", "grateful", "sleeping", "mighty", "promise", "chewed", "paw", "sharp", "fable", "roar", "trap"],
           "min": 4,
           "case_sensitive": false
         }

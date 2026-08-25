@@ -196,11 +196,13 @@ function getSafeTaskData(weekData, weekId) {
   const speakingHub = weekData.speaking_hub || weekData.speakingHub || weekData.stations?.speaking_hub || {};
   const skillPracticeHub = weekData.skill_practice_hub || weekData.skillPracticeHub || weekData.stations?.skill_practice_hub || {};
   // Build cue_card_info_exchange: check multiple sources, adapt if needed
-  const rawInfoExchange = weekData.cue_card_info_exchange
-    || weekData.speaking_hub?.cue_card_info_exchange
-    || weekData.speakingHub?.cue_card_info_exchange
+  const rawInfoExchange = weekData.speaking_hub?.info_exchange_cards
+    || weekData.speakingHub?.info_exchange_cards
     || speakingHub.info_exchange_cards
-    || null;
+    || weekData.cue_card_info_exchange
+    || weekData.speaking_hub?.cue_card_info_exchange
+    || weekData.speakingHub?.cue_card_info_exchange;
+
   const cue_card_info_exchange = adaptInfoExchangeCards(rawInfoExchange);
 
   return {
