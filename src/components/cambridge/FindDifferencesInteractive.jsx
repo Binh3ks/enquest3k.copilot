@@ -16,10 +16,16 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
   const [score, setScore] = useState(null);
   const recognitionRef = useRef(null);
 
-  const differencesData = customData || {
-    picA: { title: 'Picture A (Original Scene)', image_url: '' },
-    picB: { title: 'Picture B (Difference Scene)', image_url: '' },
-    hotspots: []
+  const rawHotspots = (customData?.hotspots && Array.isArray(customData.hotspots))
+    ? customData.hotspots
+    : (customData?.differences && Array.isArray(customData.differences))
+      ? customData.differences
+      : [];
+
+  const differencesData = {
+    picA: customData?.picA || { title: 'Picture A (Original Scene)', image_url: '' },
+    picB: customData?.picB || { title: 'Picture B (Difference Scene)', image_url: '' },
+    hotspots: rawHotspots
   };
 
   const [showHint, setShowHint] = useState(false);

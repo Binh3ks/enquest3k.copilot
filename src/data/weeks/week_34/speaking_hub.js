@@ -8,23 +8,23 @@ export const speakingHub = {
     candidate_card: {
       title: "The Lion's Home",
       items: [
-        { label: "Location", value: "Green Valley Forest" },
-        { label: "Favorite Food", value: "Fresh Fish & Fruit" },
-        { label: "Resting Time", value: "Sunny Afternoons" }
+        { label: "Wilderness Location", value: "Green Wilderness Forest" },
+        { label: "Freshwater Food", value: "Freshwater River Fish" },
+        { label: "Resting Time", value: "Sunny Peaceful Afternoons" }
       ]
     },
     examiner_card: {
-      title: "The Mouse's Home",
+      title: "The Mouse's Burrow",
       items: [
-        { label: "Location", value: "Under the Tall Oak Tree" },
-        { label: "Special Skill", value: "Chewing Strong Ropes" },
-        { label: "Best Friend", value: "The Mighty Lion" }
+        { label: "Burrow Location", value: "Underneath the Oak Tree" },
+        { label: "Protective Skill", value: "Chewing Strong Ropes" },
+        { label: "Loyal Friendship", value: "The Mighty Lion" }
       ]
     },
     prompt_questions: [
-      "Where does the lion live?",
-      "What is the lion's favorite food?",
-      "When does he like to rest?"
+      "Where is the lion's wilderness location?",
+      "What is his favorite freshwater food?",
+      "When does he enjoy peaceful afternoons?"
     ]
   },
   find_differences: {

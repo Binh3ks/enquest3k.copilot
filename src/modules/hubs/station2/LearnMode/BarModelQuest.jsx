@@ -117,9 +117,9 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
   const questions = rawQuestions.map((q, idx) => ({
     id: q.id || idx + 1,
     title: q.title || `Problem ${idx + 1}: Singapore Bar Model`,
-    problemText: q.problemText || q.text || 'Solve the Bar Model problem below:',
-    correctAnswer: q.correctAnswer || parseInt(q.answer) || 10,
-    svg_url: q.svg_url || `/images/week33/barmodel_w33_adv_p${idx + 1}.svg`,
+    problemText: q.problemText || q.problem_en || q.text || 'Solve the Bar Model problem below:',
+    correctAnswer: q.correctAnswer || q.answer_value || parseInt(q.answer) || 10,
+    svg_url: q.svg_url || q.bar_model_svg || `/images/week34/barmodel_w34_adv_p${idx + 1}.svg`,
     modelData: q.modelData || null,
     hintText: q.hintText || `Check the bar model diagram to calculate the target answer!`
   }));
