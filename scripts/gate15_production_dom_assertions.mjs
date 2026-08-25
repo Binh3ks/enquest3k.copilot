@@ -345,6 +345,17 @@ async function main() {
           } catch (e) {
             result = { pass: false, snippet: '', reason: `hotspot_alignment_check error: ${e.message}` };
           }
+        } else if (chk.type === 'keyword_overlap') {
+          const sourceDom = questDoms[chk.source_quest] || '';
+          const sourceWords = (sourceDom.toLowerCase().match(/\b[a-z]{4,}\b/g) || []);
+          const currentWords = (dom.toLowerCase().match(/\b[a-z]{4,}\b/g) || []);
+          const overlap = [...new Set(currentWords.filter(w => sourceWords.includes(w) && !['this', 'that', 'with', 'from', 'have', 'were', 'will', 'your', 'about', 'step', 'note', 'book', 'notebook', 'animal', 'forest'].includes(w)))];
+          const min = chk.min_overlap || 2;
+          if (overlap.length < min) {
+            result = { pass: false, snippet: dom.slice(0, 300), reason: `Overlap with ${chk.source_quest} has only ${overlap.length}/${min} keywords: [${overlap.join(', ')}]` };
+          } else {
+            result = { pass: true, snippet: `[keyword overlap (${overlap.length}): ${overlap.slice(0, 6).join(', ')}]` };
+          }
         } else {
           result = evaluatePosCheck(chk, dom);
         }

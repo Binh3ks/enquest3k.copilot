@@ -1,9 +1,9 @@
 {
-  "commit": "1e6b43707a504525a08bdb20dd0300f53ff7a9a3",
-  "git_commit": "1e6b43707a504525a08bdb20dd0300f53ff7a9a3",
-  "shortCommit": "1e6b4370",
-  "message": "chore(version): stamp release [Round L]",
-  "builtAt": "2026-08-25T09:37:53.469Z",
-  "build_timestamp": "2026-08-25T09:37:53.470Z",
+  "commit": "5ac73b7e8f4b4581417252c78df5189aa4024376",
+  "git_commit": "5ac73b7e8f4b4581417252c78df5189aa4024376",
+  "shortCommit": "5ac73b7e",
+  "message": "chore: trigger deployment [round-l]",
+  "builtAt": "2026-08-25T09:41:08.013Z",
+  "build_timestamp": "2026-08-25T09:41:08.014Z",
   "env": "production"
 }
