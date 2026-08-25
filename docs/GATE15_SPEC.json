@@ -1,0 +1,310 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Gate 15 Production DOM Assertions Spec",
+  "version": "2.0.0",
+  "week": 34,
+  "global_negative_patterns": [
+    "corridor", "Corridor", "Jake", "friction", "Friction",
+    "nurse", "Nurse", "wet floor", "slipped", "Total Corridor",
+    "Object 1", "Object 2", "data not found", "Symbiosis",
+    "Physics & Forces", "Physics & Friction", "Dry Surfaces"
+  ],
+  "quests": {
+    "gear1_webtoon": {
+      "waitMs": 3000,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "W34 blueprint keyword in DOM (lion OR mouse)",
+          "type": "contains_one_of",
+          "values": ["lion", "mouse"],
+          "case_sensitive": false
+        },
+        {
+          "name": "3 pins mini-game present (Found indicator)",
+          "type": "contains_one_of",
+          "values": ["0/3", "Found", "🔍", "hidden", "pin"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    "gear2_karaoke": {
+      "waitMs": 1500,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "karaoke/shadowing blueprint keyword present",
+          "type": "contains_one_of",
+          "values": ["lion", "mouse", "forest", "net", "rope", "hunter", "brave"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    "gear3_retell": {
+      "waitMs": 1500,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "retell blueprint keyword present",
+          "type": "contains_one_of",
+          "values": ["lion", "mouse", "forest", "net", "rope", "hunter", "brave"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    "gear4_clil": {
+      "waitMs": 1500,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "part title contains Animal/Forest/Cooperation (NOT Friction/Dry Surfaces)",
+          "type": "regex",
+          "pattern": "(Animal|Forest|Cooperation|animal|forest|cooperation)"
+        },
+        {
+          "name": "banned friction labels absent",
+          "type": "not_contains_regex",
+          "pattern": "(friction|Friction|Dry Surfaces|Water on the Floor)"
+        },
+        {
+          "name": "Vocab Focus button clicked reveals >=5 vocab pills",
+          "type": "interaction_check",
+          "action": "click",
+          "selector": "button:has-text('Vocab Focus')",
+          "wait_after_ms": 1000,
+          "assertion": {
+            "type": "regex_min_count",
+            "pattern": "\\b(lion|mouse|trapped|net|rope|chewed|freed|hunter|forest|brave|tiny|mighty|grateful|promise|sleeping)\\b",
+            "min": 5,
+            "case_sensitive": false
+          }
+        },
+        {
+          "name": "Grammar X-Ray clicked reveals >=3 was/were+V-ing highlights",
+          "type": "interaction_check",
+          "action": "click",
+          "selector": "button:has-text('Grammar X-Ray')",
+          "wait_after_ms": 1000,
+          "assertion": {
+            "type": "regex_min_count",
+            "pattern": "\\b(was|were)\\s+\\w+ing\\b",
+            "min": 3,
+            "case_sensitive": false
+          }
+        }
+      ]
+    },
+    "science_lab": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "START",
+      "neg": [],
+      "pos": [
+        {
+          "name": "lab title contains Animal/Cooperation/Ecosystem (NOT Friction/Physics)",
+          "type": "regex",
+          "pattern": "(Animal|animal|Lion|lion|Cooperation|cooperation|Ecosystem)"
+        },
+        {
+          "name": ">=2 themed label pills present after START",
+          "type": "contains_min_count",
+          "values": ["Guardian", "Helper", "Habitat", "Lion", "Mouse", "Forest", "Mighty", "Tiny", "Green", "Ecosystem", "Animal", "Cooperation", "Predator", "Prey", "Territory"],
+          "min": 2,
+          "case_sensitive": false
+        }
+      ]
+    },
+    "science_report": {
+      "waitMs": 1500,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "title Animal Cooperation in Nature (NOT corridor/friction)",
+          "type": "regex",
+          "pattern": "(Animal|Cooperation|animal|cooperation)"
+        },
+        {
+          "name": "3 steps present (Observation/Scientific/Conclusion)",
+          "type": "regex_all",
+          "patterns": [
+            "(Observation|Observe|Observe Animal|Step 1|1\\.)",
+            "(Scientific|Measure|Mutual|Step 2|2\\.)",
+            "(Conclusion|Record|Result|Step 3|3\\.)"
+          ]
+        },
+        {
+          "name": "science_report pills reuse >=2 keywords from CLIL facts",
+          "type": "keyword_overlap",
+          "source_quest": "gear4_clil",
+          "min_overlap": 2
+        }
+      ]
+    },
+    "word_blitz": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "START",
+      "neg": [],
+      "pos": [
+        {
+          "name": ">=4 W34 blueprint words present",
+          "type": "contains_min_count",
+          "values": ["lion", "mouse", "net", "rope", "forest", "hunter", "trapped", "freed", "brave", "tiny", "grateful", "sleeping", "mighty", "promise", "chewed"],
+          "min": 4,
+          "case_sensitive": false
+        }
+      ]
+    },
+    "sentence_smash": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "START",
+      "neg": [],
+      "pos": [
+        {
+          "name": "grammar drill tiles contain >=2 W34 blueprint keywords",
+          "type": "contains_min_count",
+          "values": ["lion", "mouse", "hunter", "rope", "forest", "brave", "sleeping", "while", "trapped", "chewed"],
+          "min": 2,
+          "case_sensitive": false
+        }
+      ]
+    },
+    "math_quest": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "START",
+      "neg": ["monkey", "corridor", "Corridor", "Jake", "friction", "slipped", "nurse", "wet floor", "walked", "meters"],
+      "pos": [
+        {
+          "name": "Bar Model UI rendered",
+          "type": "regex",
+          "pattern": "(PROBLEM|Problem|Bar Model|Singapore|bar model|parts?|total|answer)"
+        },
+        {
+          "name": "math problem text contains W34 blueprint keywords",
+          "type": "regex",
+          "pattern": "(lion|mouse|forest|net|rope|hunter|trapped|freed|brave|mighty|tiny)"
+        }
+      ]
+    },
+    "story_writer": {
+      "waitMs": 2500,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "story writer interface loaded with W34 content",
+          "type": "contains_one_of",
+          "values": ["PANEL", "Panel", "Story", "Write", "lion", "mouse", "net", "ropes", "forest"],
+          "case_sensitive": false
+        },
+        {
+          "name": "word bank pills present (>=2 W34 words)",
+          "type": "contains_min_count",
+          "values": ["lion", "mouse", "sleeping", "trapped", "net", "chewed", "ropes", "freed", "grateful", "hunter", "forest", "brave", "tiny", "strong", "promised"],
+          "min": 2,
+          "case_sensitive": false
+        }
+      ]
+    },
+    "broadcast_studio": {
+      "waitMs": 2000,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "video recording interface loaded",
+          "type": "regex",
+          "pattern": "(Record|record|Camera|camera|Video Challenge|broadcast|Podcast|retell|RETELL)"
+        },
+        {
+          "name": "W34 blueprint keyword OR story context",
+          "type": "regex",
+          "pattern": "(lion|mouse|forest|net|rope|hunter|brave|retell|retelling|story|scene)"
+        }
+      ]
+    },
+    "info_exchange": {
+      "waitMs": 2000,
+      "clickStart": false,
+      "neg": ["data not found"],
+      "pos": [
+        {
+          "name": "cue card exchange UI loaded with W34 content",
+          "type": "regex",
+          "pattern": "(lion|mouse|Lion|Mouse|Forest|forest|Animal Shelter|Green Valley|Oak Tree|Rope|mighty|brave|Mighty|Brave)"
+        },
+        {
+          "name": "cue rows have actual text (NOT empty '01. ? 02. ? 03. ?')",
+          "type": "not_contains_regex",
+          "pattern": "01\\.\\s*\\?\\s*02\\.\\s*\\?\\s*03\\.\\s*\\?"
+        },
+        {
+          "name": "at least 3 cue text strings >=10 chars each",
+          "type": "regex_min_count",
+          "pattern": "\\b[A-Za-z][a-z]{9,}\\b",
+          "min": 3
+        }
+      ]
+    },
+    "boss_listening": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "ENTER BOSS BATTLE NOW",
+      "neg": [],
+      "pos": [
+        {
+          "name": "header shows correct Cycle 2 task (Part 4 or Part 5)",
+          "type": "regex",
+          "pattern": "(Part 4|Part 5|PART 4|PART 5|3-Picture|Color.*Write|Write.*Color|QUIZ|Quiz)"
+        },
+        {
+          "name": "object labels themed (NO Object N pattern)",
+          "type": "not_contains_regex",
+          "pattern": "\\bObject\\s+\\d+\\b"
+        }
+      ]
+    },
+    "boss_reading": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "ENTER BOSS BATTLE NOW",
+      "neg": ["MAGIC COLOR", "Color Mission", "Color Write", "Part 5", "PART 5"],
+      "pos": [
+        {
+          "name": "Cycle 2 boss_reading MUST render Word Bank Matching (RW Part 1)",
+          "type": "regex",
+          "pattern": "(word.*bank|Word Bank|Definition|definition|15-WORD BANK|15 Words|Candidate Words)"
+        }
+      ]
+    },
+    "weekly_review": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "ENTER BOSS BATTLE NOW",
+      "neg": ["word bank", "Word Bank", "Definition", "definition", "15-WORD", "Candidate Words"],
+      "pos": [
+        {
+          "name": "Cycle 2 weekly_review MUST be Speaking/Passport task",
+          "type": "regex",
+          "pattern": "(Speaking|speaking|Passport|passport|PASSPORT|Review|review|Find Differences|Picture Story|Personal Questions)"
+        }
+      ]
+    }
+  },
+  "content_quality_gates": {
+    "clil_factuality": {
+      "description": "CLIL content must have >=3 concrete fact units",
+      "quest": "gear4_clil",
+      "type": "fact_unit_count",
+      "min": 3,
+      "fact_unit_definition": "sentence with specific animal + specific behavior + observable result"
+    }
+  }
+}
