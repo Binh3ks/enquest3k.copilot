@@ -1,0 +1,122 @@
+[
+  {
+    "week": 33,
+    "file": "listening_p1_full.mp3",
+    "relPath": "public/audio/week33/listening_p1_full.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week33/listening_p1_full.mp3",
+    "size": 341280,
+    "sha256": "c79655a53172d3bdf7d0665ffdd0ccd83bc08e65e40dd79e2b60e11a8a9deb9a"
+  },
+  {
+    "week": 33,
+    "file": "listening_p4_q1.mp3",
+    "relPath": "public/audio/week33/listening_p4_q1.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week33/listening_p4_q1.mp3",
+    "size": 136512,
+    "sha256": "da508cbbf41e196bd42b90914f002a3a18ff2ebe3190e08c95a1d10d1c372fb1"
+  },
+  {
+    "week": 33,
+    "file": "listening_p4_q2.mp3",
+    "relPath": "public/audio/week33/listening_p4_q2.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week33/listening_p4_q2.mp3",
+    "size": 50688,
+    "sha256": "e39e2c573270e4c010ac0b854f01d04a3596ac3fb8a555624560090dddef2a67"
+  },
+  {
+    "week": 33,
+    "file": "listening_p4_q3.mp3",
+    "relPath": "public/audio/week33/listening_p4_q3.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week33/listening_p4_q3.mp3",
+    "size": 46464,
+    "sha256": "5c6498ba9ae16b45d1eb8a077afc2ca7d185d1e34d2e9f96d67ca3cff8a91d34"
+  },
+  {
+    "week": 33,
+    "file": "listening_p4_q4.mp3",
+    "relPath": "public/audio/week33/listening_p4_q4.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week33/listening_p4_q4.mp3",
+    "size": 50496,
+    "sha256": "d8eef75f441cf2775fd755b6d5b574ab6e00979292ab8e2bd754791f720b763e"
+  },
+  {
+    "week": 33,
+    "file": "listening_p4_q5.mp3",
+    "relPath": "public/audio/week33/listening_p4_q5.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week33/listening_p4_q5.mp3",
+    "size": 55296,
+    "sha256": "0f882c102e2e26058cd373fc1428ea18395404be458d805398fb3843c2e493dd"
+  },
+  {
+    "week": 33,
+    "file": "listening_p5_full.mp3",
+    "relPath": "public/audio/week33/listening_p5_full.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week33/listening_p5_full.mp3",
+    "size": 372384,
+    "sha256": "8c47ff5a5853226e57b4247a5d9deae9b2c062a68a3a17c757c28d96a8e92a30"
+  },
+  {
+    "week": 34,
+    "file": "listening_p1_full.mp3",
+    "relPath": "public/audio/week34/listening_p1_full.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week34/listening_p1_full.mp3",
+    "size": 302208,
+    "sha256": "16eb005e7adaafcdd5a1d78102e03583468e919c568d4c579894da67ded981d5"
+  },
+  {
+    "week": 34,
+    "file": "listening_p4_q1.mp3",
+    "relPath": "public/audio/week34/listening_p4_q1.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week34/listening_p4_q1.mp3",
+    "size": 62208,
+    "sha256": "53841c79b87a3eb2eab9ce1924a78d99cf953f1187a2e59fdca1566953750815"
+  },
+  {
+    "week": 34,
+    "file": "listening_p4_q2.mp3",
+    "relPath": "public/audio/week34/listening_p4_q2.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week34/listening_p4_q2.mp3",
+    "size": 26496,
+    "sha256": "ec40c3080875b19d0c7cbd1368a5e5ae2cff67d686cb1f520003e3d128896760"
+  },
+  {
+    "week": 34,
+    "file": "listening_p4_q3.mp3",
+    "relPath": "public/audio/week34/listening_p4_q3.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week34/listening_p4_q3.mp3",
+    "size": 24864,
+    "sha256": "f0b6379b88e733735920e0406198995d0e6f309cf835cd685ee70d797534fae5"
+  },
+  {
+    "week": 34,
+    "file": "listening_p4_q4.mp3",
+    "relPath": "public/audio/week34/listening_p4_q4.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week34/listening_p4_q4.mp3",
+    "size": 26688,
+    "sha256": "58a49607ca0f2650f17c90c70353609a6210c8d64d10fbea7f0e0a41b8b8e319"
+  },
+  {
+    "week": 34,
+    "file": "listening_p4_q5.mp3",
+    "relPath": "public/audio/week34/listening_p4_q5.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week34/listening_p4_q5.mp3",
+    "size": 28224,
+    "sha256": "e11d83226c9b824276cba5578329c9ea31c5a60e84080de0a305278af835fc07"
+  },
+  {
+    "week": 34,
+    "file": "listening_p5_full.mp3",
+    "relPath": "public/audio/week34/listening_p5_full.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week34/listening_p5_full.mp3",
+    "size": 379296,
+    "sha256": "3992e86be7e1bbd73fc33fb39ab031d786405c95bc8eb7eb9c88c38701e72df2"
+  },
+  {
+    "week": 34,
+    "file": "read_stem.mp3",
+    "relPath": "public/audio/week34/read_stem.mp3",
+    "cdnUrl": "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week34/read_stem.mp3",
+    "size": 230592,
+    "sha256": "fbbf4d249a63251347c4b455024d38cee176ad1f92cbcb7633464d48a41fcd3d"
+  }
+]

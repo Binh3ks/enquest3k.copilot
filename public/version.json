@@ -1,9 +1,9 @@
 {
-  "commit": "ba95ff3a2968a8c60971c9e1919632d34e481782",
-  "git_commit": "ba95ff3a2968a8c60971c9e1919632d34e481782",
-  "shortCommit": "ba95ff3a",
-  "message": "fix(info-exchange): render ??? for unknown fields and add gate assertion [q4-infogap]",
-  "builtAt": "2026-08-25T14:13:17.636Z",
-  "build_timestamp": "2026-08-25T14:13:17.637Z",
+  "commit": "3dd6d2d2d2781fe5392c2ff3718da92eb2f03ea9",
+  "git_commit": "3dd6d2d2d2781fe5392c2ff3718da92eb2f03ea9",
+  "shortCommit": "3dd6d2d2",
+  "message": "fix(audio-scripts): align Cambridge P1, P4, P5 and W34 read_stem scripts [w33-w34]",
+  "builtAt": "2026-08-25T15:08:27.742Z",
+  "build_timestamp": "2026-08-25T15:08:27.743Z",
   "env": "production"
 }
