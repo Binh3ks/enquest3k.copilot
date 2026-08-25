@@ -1,9 +1,9 @@
 {
-  "commit": "358005ba2937f6e6a670f15f2d60e8721ad3bd47",
-  "git_commit": "358005ba2937f6e6a670f15f2d60e8721ad3bd47",
-  "shortCommit": "358005ba",
-  "message": "fix(story-writer): prevent infinite re-render loop during hydration and debounced auto-save",
-  "builtAt": "2026-08-25T07:07:37.244Z",
-  "build_timestamp": "2026-08-25T07:07:37.245Z",
+  "commit": "aaf218aee58416e9da3792047ce657ab37525045",
+  "git_commit": "aaf218aee58416e9da3792047ce657ab37525045",
+  "shortCommit": "aaf218ae",
+  "message": "fix(creator-studio): eliminate state loop between CreatorStudioZone and StoryWriting",
+  "builtAt": "2026-08-25T07:10:06.042Z",
+  "build_timestamp": "2026-08-25T07:10:06.042Z",
   "env": "production"
 }
