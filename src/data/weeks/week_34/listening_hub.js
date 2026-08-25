@@ -107,7 +107,20 @@ export const listeningHub = {
   },
   listening_p4: {
     audio_url: "/audio/week34/listening_p4_full.mp3",
+    instructions: "Listen and tick the box. There is one example.",
     questions: [
+      {
+        id: "p4_example",
+        isExample: true,
+        question_en: "Where did Milo the mouse run in the morning?",
+        audio_url: "/audio/week34/listening_p4_example.mp3",
+        options: [
+          { letter: "A", text: "Across the mossy rocks", image_url: "/images/week34/card_c.jpg" },
+          { letter: "B", text: "Near the hunter camp", image_url: "/images/week34/card_b.jpg" },
+          { letter: "C", text: "Around the water river", image_url: "/images/week34/card_d.jpg" }
+        ],
+        answer: "A"
+      },
       {
         id: "p4_q1",
         question_en: "Where was the lion sleeping?",
@@ -140,6 +153,28 @@ export const listeningHub = {
           { letter: "C", text: "He brought a key", image_url: "/images/week34/card_e.jpg" }
         ],
         answer: "A"
+      },
+      {
+        id: "p4_q4",
+        question_en: "What did the hunters leave near their camp?",
+        audio_url: "/audio/week34/listening_p4_q4.mp3",
+        options: [
+          { letter: "A", text: "A strong wooden trap", image_url: "/images/week34/card_a.jpg" },
+          { letter: "B", text: "A shiny flashlight", image_url: "/images/week34/card_f.jpg" },
+          { letter: "C", text: "A blue water bottle", image_url: "/images/week34/card_d.jpg" }
+        ],
+        answer: "C"
+      },
+      {
+        id: "p4_q5",
+        question_en: "Where did the lion and mouse rest together?",
+        audio_url: "/audio/week34/listening_p4_q5.mp3",
+        options: [
+          { letter: "A", text: "On the high lookout rock", image_url: "/images/week34/card_e.jpg" },
+          { letter: "B", text: "Inside the dark stone cave", image_url: "/images/week34/card_f.jpg" },
+          { letter: "C", text: "Under the shade of green trees", image_url: "/images/week34/webtoon_scene_1.png" }
+        ],
+        answer: "C"
       }
     ]
   },

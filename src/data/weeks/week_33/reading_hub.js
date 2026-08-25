@@ -349,4 +349,9 @@ export const readingHubData = {
   }
 };
 
+readingHubData.rw_part_1 = readingHubData.rw_part1;
+readingHubData.rw_part_2 = readingHubData.rw_part2;
+readingHubData.rw_part_4 = readingHubData.rw_part4;
+readingHubData.rw_part_5 = readingHubData.rw_part5;
+
 export default readingHubData;

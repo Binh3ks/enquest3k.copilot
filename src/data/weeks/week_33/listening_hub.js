@@ -105,6 +105,79 @@ export const listeningHubData = {
   },
 
   // Cambridge Listening Part 4 (3-Picture Option Cards with Distractors)
+  listening_p4: {
+    audio_url: '/audio/week33/listening_p4_full.mp3',
+    instructions: 'Listen and tick the box. There is one example.',
+    questions: [
+      {
+        id: 'lp4_example',
+        isExample: true,
+        question_en: 'Where did Jake walk before science class?',
+        audio_url: '/audio/week33/listening_p4_example.mp3',
+        options: [
+          { letter: 'A', text: 'Down the school corridor', image_url: '/images/week33/webtoon_scene_1.png' },
+          { letter: 'B', text: 'Across the playground', image_url: '/images/week33/card_h_playground_bench.jpg' },
+          { letter: 'C', text: 'Inside the cafeteria', image_url: '/images/week33/cafeteria.jpg' }
+        ],
+        answer: 'A'
+      },
+      {
+        id: 'lp4_1',
+        question_en: '1. Where did Tom slip and hurt his knee?',
+        audio_url: '/audio/week33/listening_p4_q1.mp3',
+        options: [
+          { letter: 'A', text: 'Inside the science lab', image_url: '/images/week33/lab_desk.jpg' },
+          { letter: 'B', text: 'In the school corridor', image_url: '/images/week33/webtoon_scene_3.png' },
+          { letter: 'C', text: 'On the outdoor playground', image_url: '/images/week33/card_h_playground_bench.jpg' }
+        ],
+        answer: 'B'
+      },
+      {
+        id: 'lp4_2',
+        question_en: '2. What did Jake do immediately when Tom fell?',
+        audio_url: '/audio/week33/listening_p4_q2.mp3',
+        options: [
+          { letter: 'A', text: 'Ran to find his teacher in class', image_url: '/images/week33/webtoon_scene_2.png' },
+          { letter: 'B', text: 'Kept walking down the hallway', image_url: '/images/week33/webtoon_scene_1.png' },
+          { letter: 'C', text: 'Walked quickly to call the school nurse', image_url: '/images/week33/webtoon_scene_4.png' }
+        ],
+        answer: 'C'
+      },
+      {
+        id: 'lp4_3',
+        question_en: '3. What did the school nurse apply to Tom’s knee?',
+        audio_url: '/audio/week33/listening_p4_q3.mp3',
+        options: [
+          { letter: 'A', text: 'Applied a clean bandage and cold pack', image_url: '/images/week33/card_clean_bandage.jpg' },
+          { letter: 'B', text: 'Gave him a glass of orange juice', image_url: '/images/week33/card_orange_juice.jpg' },
+          { letter: 'C', text: 'Gave him a new science notebook', image_url: '/images/week33/card_science_notebook.jpg' }
+        ],
+        answer: 'A'
+      },
+      {
+        id: 'lp4_4',
+        question_en: '4. How did everyone feel after Tom was safely helped?',
+        audio_url: '/audio/week33/listening_p4_q4.mp3',
+        options: [
+          { letter: 'A', text: 'Felt angry and upset', image_url: '/images/week33/webtoon_scene_2.png' },
+          { letter: 'B', text: 'Felt relieved and safe', image_url: '/images/week33/webtoon_scene_5.png' },
+          { letter: 'C', text: 'Felt scared and fell down', image_url: '/images/week33/webtoon_scene_3.png' }
+        ],
+        answer: 'B'
+      },
+      {
+        id: 'lp4_5',
+        question_en: '5. What did the headmaster do during Monday assembly?',
+        audio_url: '/audio/week33/listening_p4_q5.mp3',
+        options: [
+          { letter: 'A', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/card_g_headmaster_office.jpg' },
+          { letter: 'B', text: 'Closed the school corridor forever', image_url: '/images/week33/webtoon_scene_1.png' },
+          { letter: 'C', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/webtoon_scene_5.png' }
+        ],
+        answer: 'C'
+      }
+    ]
+  },
   listening_p4_questions: [
     {
       id: 'lp4_1',

@@ -65,41 +65,109 @@ export const writingHub = {
     ]
   },
   rw_part_2: {
-    turns: [
-      { speaker: "Leo", text: "Why did you wake me up, little mouse?" },
-      { speaker: "Milo", text: "I am sorry! I was running in a hurry." },
-      { speaker: "Leo", text: "What can a tiny creature like you do for me?" },
-      { speaker: "Milo", text: "One day, I might be able to help you!" },
-      { speaker: "Leo", text: "Haha! That is very funny. You may go free." }
+    title: "Leo and Milo's Forest Conversation",
+    dialogue: [
+      {
+        gap_id: 1,
+        speaker_a: "Leo",
+        speaker_b: "Milo",
+        text_a: "Why did you wake me up while I was sleeping peacefully?"
+      },
+      {
+        gap_id: 2,
+        speaker_a: "Leo",
+        speaker_b: "Milo",
+        text_a: "What can a tiny creature like you do to help a mighty lion?"
+      },
+      {
+        gap_id: 3,
+        speaker_a: "Leo",
+        speaker_b: "Milo",
+        text_a: "Did you hear me roaring loudly when the hunters trapped me?"
+      },
+      {
+        gap_id: 4,
+        speaker_a: "Leo",
+        speaker_b: "Milo",
+        text_a: "How did you manage to break through those thick ropes so fast?"
+      },
+      {
+        gap_id: 5,
+        speaker_a: "Leo",
+        speaker_b: "Milo",
+        text_a: "Will you stay here and be my loyal friend forever?"
+      }
     ],
-    options: ["A", "B", "C", "D", "E"]
+    options: [
+      { id: "opt_1", text: "I am so sorry! I was running in a hurry across the path.", for_gap: 1 },
+      { id: "opt_2", text: "One day, if you are in danger, I might be able to help you!", for_gap: 2 },
+      { id: "opt_3", text: "Yes, I heard your loud roar and rushed over right away!", for_gap: 3 },
+      { id: "opt_4", text: "I used my sharp little teeth and chewed through every cord.", for_gap: 4 },
+      { id: "opt_5", text: "Yes! True friends always look after each other in the forest.", for_gap: 5 },
+      { id: "opt_6", text: "I usually look for sweet berries near the riverbank.", for_gap: null },
+      { id: "opt_7", text: "The hunters arrived in the forest early this morning.", for_gap: null },
+      { id: "opt_8", text: "Birds always sing loudly on sunny afternoons.", for_gap: null }
+    ]
   },
   rw_part_4: {
-    text_template: "Lions are powerful animals that live in [1]_____. They spend many hours [2]_____ during the hottest parts of the day. Small animals like mice are very [3]_____ and can move quickly. When animals work together, they [4]_____ many difficult challenges in nature. True friendship makes everyone [5]_____.",
+    text_template: "Lions are powerful animals that live in [1]_____. They spend many hours [2]_____ during the hottest parts of the day. Small animals like mice are very [3]_____ and can move quickly. When animals work together, they [4]_____ many difficult challenges in nature. True friendship makes everyone [5]_____. Every morning, birds [6]_____ from branch to branch looking for seeds. Squirrels [7]_____ acorns deep in the ground so new trees can grow. In the afternoon, the river gives fresh water to [8]_____ creatures in the forest. When hunters arrive, wise animals [9]_____ each other immediately. Nature is full of wonder when everyone lives [10]_____.",
+    gaps: [
+      { id: 1, target: "forests", options: ["forests", "oceans", "castles"] },
+      { id: 2, target: "resting", options: ["resting", "flying", "swimming"] },
+      { id: 3, target: "quick", options: ["quick", "heavy", "lazy"] },
+      { id: 4, target: "overcome", options: ["overcome", "forget", "lose"] },
+      { id: 5, target: "stronger", options: ["stronger", "weaker", "angrier"] },
+      { id: 6, target: "fly", options: ["fly", "flying", "flew"] },
+      { id: 7, target: "bury", options: ["bury", "buried", "burying"] },
+      { id: 8, target: "all", options: ["all", "none", "few"] },
+      { id: 9, target: "warn", options: ["warn", "warned", "warning"] },
+      { id: 10, target: "peacefully", options: ["peacefully", "peaceful", "peace"] }
+    ],
+    title_options: [
+      { id: 1, title: "Hunters in the High Mountains", target: false },
+      { id: 2, title: "Animal Cooperation and True Friendship in the Forest", target: true },
+      { id: 3, title: "How Birds Build Nests in Winter", target: false }
+    ],
     answers: {
       "1": "forests",
       "2": "resting",
       "3": "quick",
       "4": "overcome",
-      "5": "stronger"
+      "5": "stronger",
+      "6": "fly",
+      "7": "bury",
+      "8": "all",
+      "9": "warn",
+      "10": "peacefully"
     }
   },
   rw_part_5: {
-    title: "The Lion and the Clever Mouse",
-    story_text: "Once upon a time in a deep green forest, a mighty lion was taking a nap under a tall tree. A small mouse named Milo accidentally bumped into his paw. The lion woke up and was about to roar, but the mouse asked for kindness and promised to return the favor. A few days later, hunters captured the lion with strong ropes. Hearing the lion's roar, Milo rushed over and chewed the ropes until the lion was free. They remained loyal friends forever.",
-    questions: [
-      {
-        id: "q1",
-        question: "Where was the lion sleeping at the beginning of the story?",
-        options: ["Under a tall tree in the green forest", "Inside a dark stone cave", "Near the noisy city market"],
-        answer: "Under a tall tree in the green forest"
-      },
-      {
-        id: "q2",
-        question: "How did the mouse free the lion from the net?",
-        options: ["He chewed through the strong ropes", "He called the hunters", "He cut the net with scissors"],
-        answer: "He chewed through the strong ropes"
-      }
+    instructions: "Complete the sentences about the story. Write 1, 2, 3 or 4 words.",
+    story: {
+      title: "The Mighty Lion and the Brave Little Mouse",
+      paragraphs: [
+        {
+          id: 1,
+          text: "On a warm afternoon in the deep green forest, a mighty lion named Leo was sleeping under a tall tree. A small mouse named Milo was running in a hurry and accidentally bumped into the lion's big front paw. Leo woke up with a loud roar, but Milo begged for kindness and promised to help him one day."
+        },
+        {
+          id: 2,
+          text: "A few days later, two hunters came into the forest and set a strong net made of heavy ropes. Leo stepped into the trap and could not break free. He roared loudly across the trees, hoping someone would hear him."
+        },
+        {
+          id: 3,
+          text: "Hearing the roar, Milo rushed over right away. Using his sharp little teeth, the brave mouse chewed through the thick ropes until Leo was completely free. From that day on, the lion and the mouse were loyal friends forever."
+        }
+      ]
+    },
+    summary_sentences: [
+      { id: 1, text_before: "Leo the lion was sleeping under a ", text_after: " on a warm afternoon.", target: "tall tree", paragraph_ref: 1 },
+      { id: 2, text_before: "Milo the mouse was running in a ", text_after: " when he bumped into Leo.", target: "hurry", paragraph_ref: 1 },
+      { id: 3, text_before: "Milo promised to ", text_after: " the lion one day.", target: "help", paragraph_ref: 1 },
+      { id: 4, text_before: "Two hunters set a trap made of ", text_after: " in the forest.", target: "heavy ropes", paragraph_ref: 2 },
+      { id: 5, text_before: "Leo roared loudly because he was ", text_after: " in the net.", target: "trapped", paragraph_ref: 2 },
+      { id: 6, text_before: "Milo used his ", text_after: " to chew through the ropes.", target: "sharp teeth", paragraph_ref: 3 },
+      { id: 7, text_before: "Leo and Milo became ", text_after: " forever.", target: "loyal friends", paragraph_ref: 3 }
     ]
   },
   science_report_config: {

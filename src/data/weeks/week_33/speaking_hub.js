@@ -61,10 +61,10 @@ export const speakingHubData = {
     picA: { title: 'Picture A (Original Scene)', image_url: '/images/week33/w33_diff_scene_a.jpg' },
     picB: { title: 'Picture B (Difference Scene)', image_url: '/images/week33/w33_diff_scene_b.jpg' },
     hotspots: [
-      { id: 'diff1', name: 'Walking Boy Shirt Color', x: 44, y: 58, prompt_en: 'In Picture A, the boy is wearing a red shirt, but in Picture B, he is wearing a blue shirt.' },
-      { id: 'diff2', name: 'Left Bench Backpack Color', x: 11, y: 73, prompt_en: 'In Picture A, the backpack on the bench is blue, but in Picture B, it is red.' },
-      { id: 'diff3', name: 'Wet Floor Warning Sign Color', x: 4, y: 83, prompt_en: 'In Picture A, the wet floor warning sign is yellow, but in Picture B, it is orange.' },
-      { id: 'diff4', name: 'Corner Potted Plant', x: 5, y: 95, prompt_en: 'In Picture A, there is no plant by the bench, but in Picture B, there is a green plant.' }
+      { id: 'diff1', name: 'Safety Poster on Left Wall', x: 20, y: 22, prompt_en: 'In Picture A, there is a plain wall, but in Picture B, there is a blue safety badge poster.' },
+      { id: 'diff2', name: 'Emergency Bell on Right Wall', x: 78, y: 22, prompt_en: 'In Picture A, there is a plain wall, but in Picture B, there is a red emergency bell.' },
+      { id: 'diff3', name: 'Walking Boy Shirt Color', x: 30, y: 64, prompt_en: 'In Picture A, the walking boy wears a blue shirt, but in Picture B, he wears a purple shirt.' },
+      { id: 'diff4', name: 'Backpack on Bench Color', x: 80, y: 70, prompt_en: 'In Picture A, the backpack on the bench is blue, but in Picture B, it is bright green.' }
     ]
   },
 

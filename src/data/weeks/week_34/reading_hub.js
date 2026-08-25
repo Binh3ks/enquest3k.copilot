@@ -1,5 +1,5 @@
-// Pure Generated Reading Hub for Week 34
 import { week34Vocab } from './vocab.js';
+import { writingHub } from './writing_hub.js';
 
 export const readingHub = {
   theme: "The Lion and the Mouse: True Friendship",
@@ -143,7 +143,15 @@ export const readingHub = {
       "4": "chewed",
       "5": "freed"
     }
-  }
+  },
+  rw_part_1: writingHub?.rw_part_1,
+  rw_part_2: writingHub?.rw_part_2,
+  rw_part_4: writingHub?.rw_part_4,
+  rw_part_5: writingHub?.rw_part_5,
+  rw_part1: writingHub?.rw_part_1,
+  rw_part2: writingHub?.rw_part_2,
+  rw_part4: writingHub?.rw_part_4,
+  rw_part5: writingHub?.rw_part_5
 };
 
 export const readingHubData = readingHub;
