@@ -76,6 +76,19 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
       </div>
 
       <div className="pt-2">
+        {/* Cambridge Exam Header */}
+        <div className="bg-gradient-to-r from-amber-900 to-slate-900 text-white px-4 py-2.5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-sm mb-3">
+          <div>
+            <span className="text-[10px] font-black text-amber-300 uppercase tracking-wider block">Official Cambridge Assessment</span>
+            <h2 className="text-sm sm:text-base font-black text-white flex items-center gap-2">
+              🎧 CAMBRIDGE A2 FLYERS — LISTENING PART 2
+            </h2>
+          </div>
+          <p className="text-[11px] text-slate-200 font-medium">
+            Listen and write words or numbers. There is one example.
+          </p>
+        </div>
+
         {/* Compact Header & Audio Bar */}
         <div className="flex items-center justify-between border-b border-amber-200 pb-2 mb-2.5 flex-wrap gap-2">
           <div className="flex items-center gap-2">

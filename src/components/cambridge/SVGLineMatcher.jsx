@@ -189,6 +189,19 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto my-1 p-2.5 sm:p-4 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2.5">
+      {/* Cambridge Exam Header */}
+      <div className="bg-gradient-to-r from-indigo-900 to-slate-900 text-white px-4 py-2.5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-sm">
+        <div>
+          <span className="text-[10px] font-black text-amber-300 uppercase tracking-wider block">Official Cambridge Assessment</span>
+          <h2 className="text-sm sm:text-base font-black text-white flex items-center gap-2">
+            🎧 CAMBRIDGE A2 FLYERS — LISTENING PART 1
+          </h2>
+        </div>
+        <p className="text-[11px] text-slate-200 font-medium">
+          Listen and draw lines. There is one example.
+        </p>
+      </div>
+
       {/* Compact Header & Audio Control Bar */}
       <div className="flex items-center justify-between gap-2 pb-2 border-b border-slate-200">
         <div className="flex items-center gap-2">
