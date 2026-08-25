@@ -27,6 +27,7 @@ export function mapDataToZones(weekData, weekNumber = 33) {
       || weekData.speakingHub?.cue_card_info_exchange
       || weekData.speaking_hub?.cue_card_info_exchange
       || weekData.stations?.ask_ai?.cue_card_info_exchange
+      || speakingHub.info_exchange_cards
       || null,
     cue_card_prompts: weekData.cue_card_prompts
       || weekData.speakingHub?.cue_card_prompts

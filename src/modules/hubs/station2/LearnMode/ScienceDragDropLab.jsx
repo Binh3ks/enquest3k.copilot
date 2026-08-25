@@ -250,7 +250,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             🧪
           </div>
           <div className="min-w-0">
-            <h3 className="text-xs sm:text-sm font-black text-slate-900 truncate">Science Lab (Physics & Friction)</h3>
+            <h3 className="text-xs sm:text-sm font-black text-slate-900 truncate">{labData.experimentTitle || 'Interactive Science Lab'}</h3>
           </div>
         </div>
 

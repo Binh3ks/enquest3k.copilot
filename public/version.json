@@ -1,9 +1,9 @@
 {
-  "commit": "2b59cc3903c9122ed6c1893e97404e4fe309d34f",
-  "git_commit": "2b59cc3903c9122ed6c1893e97404e4fe309d34f",
-  "shortCommit": "2b59cc39",
-  "message": "fix(w34): comprehensive production remediation & 15-gate certification [anti-hallucination-v1]",
-  "builtAt": "2026-08-24T15:11:20.555Z",
-  "build_timestamp": "2026-08-24T15:11:20.555Z",
+  "commit": "1f516d0d7f61d3105dcfd10ad71b549b2ad1d13d",
+  "git_commit": "1f516d0d7f61d3105dcfd10ad71b549b2ad1d13d",
+  "shortCommit": "1f516d0d",
+  "message": "fix(w34): F-series remediation — F1-F7 blueprint clean + Gate15 gate script",
+  "builtAt": "2026-08-25T01:54:00.234Z",
+  "build_timestamp": "2026-08-25T01:54:00.235Z",
   "env": "production"
 }

@@ -17,10 +17,11 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
   const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;
 
   const studioData = data?.creatorStudio || {};
-  // Fallback: pull writing data from stations.writing if creatorStudio key absent (W33+)
-  const writingData = data?.stations?.writing || {};
+  // Fallback: pull writing data from writing_hub (canonical W33+) or stations.writing
+  const writingData = data?.writing_hub || data?.stations?.writing || {};
   const storyPrompts = studioData.storyPrompts || {
-    picture_mode: writingData.picture_mode,
+    // W33+: writing_hub.picture_story maps to picture_mode
+    picture_mode: writingData.picture_story || writingData.picture_mode,
     topic_mode:   writingData.topic_mode,
   };
 
