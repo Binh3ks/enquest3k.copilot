@@ -165,11 +165,14 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
           <span className="px-3 py-1 bg-cyan-100 text-cyan-900 text-[11px] font-black rounded-full uppercase tracking-wider">
-            🎨 MAGIC COLOR MISSION (PART 5)
+            Cambridge A2 Flyers — Listening Part 5
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
             {sceneTitle}
           </h2>
+          <p className="text-xs text-cyan-700 font-bold mt-0.5">
+            Listen and color and write. There is one example.
+          </p>
         </div>
         <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
           {normalizedTasks.length} Listening Tasks · Interactive Coloring

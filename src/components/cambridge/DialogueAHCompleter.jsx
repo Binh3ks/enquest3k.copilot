@@ -130,11 +130,14 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
           <span className="px-3 py-1 bg-purple-100 text-purple-900 text-[11px] font-black rounded-full uppercase tracking-wider">
-            💬 CHAT BOX CHALLENGE
+            Cambridge A2 Flyers — Reading & Writing Part 2
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-            Continuous Dialogue A-H Completer
+            Dialogue A–H Completer
           </h2>
+          <p className="text-xs text-purple-700 font-bold mt-0.5">
+            Read the conversation and choose the best answer. Write a letter (A–H) for each answer.
+          </p>
         </div>
         <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
           5 Dialogue Gaps · 8 Options Drawer (A-H)

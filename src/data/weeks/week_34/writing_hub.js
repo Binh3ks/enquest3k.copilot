@@ -1,10 +1,39 @@
 // Pure Generated Writing Hub for Week 34
 export const writingHub = {
   picture_story: {
+    steps: [
+      {
+        scene: 1,
+        title: "Scene 1: Lion in the Forest",
+        image_url: "/images/week34/webtoon_scene_1.png",
+        caption: "The mighty lion was resting under a tall oak tree in the forest.",
+        frame_L1: "The mighty lion was sleeping peacefully under a tall oak tree.",
+        pills: ["the mighty lion", "was sleeping peacefully", "under a tall oak tree", "in the forest"],
+        audio: "On a sunny afternoon, the mighty lion was resting under a tall tree."
+      },
+      {
+        scene: 2,
+        title: "Scene 2: Trapped in Heavy Net",
+        image_url: "/images/week34/webtoon_scene_4.png",
+        caption: "The hunters trapped the strong lion in a heavy rope net.",
+        frame_L1: "Suddenly, hunters trapped the lion in a heavy rope net.",
+        pills: ["hunters trapped the lion", "in a heavy net", "roared loudly for help", "could not escape"],
+        audio: "Suddenly, the hunters trapped the lion in a strong net."
+      },
+      {
+        scene: 3,
+        title: "Scene 3: Mouse Frees the Lion",
+        image_url: "/images/week34/webtoon_scene_5.png",
+        caption: "The brave mouse chewed through the thick ropes and freed the lion.",
+        frame_L1: "The brave mouse chewed the thick ropes and freed the mighty lion.",
+        pills: ["the brave mouse", "chewed the thick ropes", "freed the mighty lion", "became loyal friends"],
+        audio: "Finally, the brave mouse chewed the ropes and freed the lion."
+      }
+    ],
     panels: [
-      { image_url: "/images/week34/webtoon_scene_1.png", caption: "The mighty lion was resting under a tall oak tree in the forest." },
-      { image_url: "/images/week34/webtoon_scene_4.png", caption: "The hunters trapped the strong lion in a heavy rope net." },
-      { image_url: "/images/week34/webtoon_scene_5.png", caption: "The brave mouse chewed through the thick ropes and freed the lion." }
+      { image_url: "/images/week34/webtoon_scene_1.png", caption: "The mighty lion was resting under a tall oak tree in the forest.", pills: ["the mighty lion", "was sleeping peacefully", "under a tall oak tree", "in the forest"] },
+      { image_url: "/images/week34/webtoon_scene_4.png", caption: "The hunters trapped the strong lion in a heavy rope net.", pills: ["hunters trapped the lion", "in a heavy net", "roared loudly for help", "could not escape"] },
+      { image_url: "/images/week34/webtoon_scene_5.png", caption: "The brave mouse chewed through the thick ropes and freed the lion.", pills: ["the brave mouse", "chewed the thick ropes", "freed the mighty lion", "became loyal friends"] }
     ],
     word_bank: ["lion", "mouse", "sleeping", "trapped", "net", "chewed", "ropes", "freed", "grateful", "hunter", "forest", "brave", "tiny", "strong", "promised"],
     sentence_frames: [
@@ -74,8 +103,21 @@ export const writingHub = {
     ]
   },
   science_report_config: {
+    purpose: "Learn the language of science reports (observed / because / past tense), not science content.",
     topic: "Seed Helpers & Forest Plants Report",
     notebookTitle: "How Animals Help Forest Plants Grow",
+    data_card: [
+      { subject: "🐿️ Squirrels", action: "bury extra nuts in the ground", result: "some nuts grow into new oak trees" },
+      { subject: "🐝 Bees", action: "drink sweet nectar from flowers", result: "carry pollen to help new flowers grow" },
+      { subject: "🐦 Jays", action: "hide seeds under soft leaves", result: "start small green plants across the forest" }
+    ],
+    levels: {
+      L1: { mode: "assemble", description: "Assemble data card observations into complete sentences" },
+      L2: { mode: "verb_choice", description: "Choose correct scientific reporting verbs (observed / caused / concluded)" },
+      L3: { mode: "cloze", description: "Complete scientific report sentences using guided keywords" },
+      L4: { mode: "guided_typing", description: "Type observations and reasons using data card chips" },
+      L5: { mode: "free_register", description: "Write full report with scientific register checklist" }
+    },
     step1Title: "Observe Animal Roles",
     step1Pills: {
       "🐿️ Squirrels": ["bury extra nuts in the ground", "forget some nuts in spring"],

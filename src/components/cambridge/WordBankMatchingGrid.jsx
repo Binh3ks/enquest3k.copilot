@@ -117,11 +117,14 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
           <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-[11px] font-black rounded-full uppercase tracking-wider">
-            🧩 WORD MATCH CHALLENGE
+            Cambridge A2 Flyers — Reading & Writing Part 1
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
             Word Bank Matching (15 Words & 10 Definitions)
           </h2>
+          <p className="text-xs text-indigo-700 font-bold mt-0.5">
+            Look and read. Choose the correct words and write them on the lines.
+          </p>
         </div>
         <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
           10 Definitions · 15 Candidate Words

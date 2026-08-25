@@ -57,8 +57,8 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
         <div className="flex items-center gap-2">
           <span className="text-base">🎧</span>
           <div>
-            <h4 className="text-xs font-black text-blue-950 uppercase tracking-wider">Listening Part 4 • 3-Picture Quiz</h4>
-            <p className="text-[10px] text-blue-700 font-bold">Listen to the question and pick the correct picture</p>
+            <h4 className="text-xs font-black text-blue-950 uppercase tracking-wider">Cambridge A2 Flyers — Listening Part 4</h4>
+            <p className="text-[10px] text-blue-700 font-bold">Listen and tick the box. There is one example.</p>
           </div>
         </div>
         <div className="text-xs font-black text-blue-900 bg-white px-3 py-1 rounded-xl border border-blue-200">

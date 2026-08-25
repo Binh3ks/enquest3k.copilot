@@ -121,11 +121,14 @@ export function TextExtractionCompleter({ customData, data: propData, onComplete
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
           <span className="px-3 py-1 bg-amber-100 text-amber-900 text-[11px] font-black rounded-full uppercase tracking-wider">
-            🕵️ STORY DETECTIVE MISSION
+            Cambridge A2 Flyers — Reading & Writing Part 5
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-            Story Text Extraction (1 to 4 Words Limit)
+            Story Text Extraction
           </h2>
+          <p className="text-xs text-amber-700 font-bold mt-0.5">
+            Look at the picture and read the story. Write words to complete the sentences.
+          </p>
         </div>
         <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
           7 Summary Sentences · 1-4 Words Input

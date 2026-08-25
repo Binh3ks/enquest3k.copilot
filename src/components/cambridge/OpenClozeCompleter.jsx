@@ -141,11 +141,14 @@ export function OpenClozeCompleter({ customData, data: propData, onComplete }) {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
           <span className="px-3 py-1 bg-amber-100 text-amber-900 text-[11px] font-black rounded-full uppercase tracking-wider flex items-center gap-1.5 w-max">
-            <PenTool size={13} /> 📝 OPEN CLOZE CHALLENGE
+            Cambridge A2 Flyers — Reading & Writing Part 6
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-            {data.instructions || "Read the diary and write the missing words. Write one word on each line."}
+            Open Cloze Challenge
           </h2>
+          <p className="text-xs text-amber-700 font-bold mt-0.5">
+            Read the text and write the missing words. Write one word on each line.
+          </p>
         </div>
         {isSubmitted && (
           <button

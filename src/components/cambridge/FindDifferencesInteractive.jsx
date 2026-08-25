@@ -149,11 +149,14 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
           <span className="px-3 py-1 bg-rose-100 text-rose-900 text-[11px] font-black rounded-full uppercase tracking-wider">
-            🔍 FIND DIFFERENCES MISSION
+            Cambridge A2 Flyers — Speaking Part 1
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-            Click Hotspot Differences & Record Your Explanation
+            Find the Differences (Look at the Two Pictures)
           </h2>
+          <p className="text-xs text-rose-700 font-bold mt-0.5">
+            Look at the two pictures and describe the differences.
+          </p>
         </div>
         <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
           Found {foundHotspots.length} of {differencesData.hotspots.length} Differences

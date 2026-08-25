@@ -20,9 +20,15 @@ export const readingHubData = {
     theme: "The Science of Friction in Corridors",
     title_en: "The Science of Friction in Corridors",
     title_vi: "Khoa Học Về Lực Ma Sát Tại Hành Lang Trường Học",
-    content_en: "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water makes the floor smooth and slippery. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero! While the school nurse was applying the clean bandage, she explained that we must always look for the yellow warning sign. To stay safe, walk carefully and let friction do its job!",
-    content_vi: "Tại sao chúng ta lại bị ngã trên sàn nhà ướt? Câu trả lời nằm ở một khái niệm khoa học mang tên Lực Ma Sát. Lực ma sát là một lực ngăn cản các vật trượt đi. Trong khi Jake đang đi bộ xuống hành lang, đế giày cao su của cậu ấy đã tạo ra lực ma sát lớn với mặt sàn khô. Điều này giúp cậu ấy an toàn. Nhưng nước làm thay đổi tất cả! Lớp nước làm cho sàn trở nên trơn trượt. Trong khi Tom đang chạy nhanh, giày của cậu ấy chạm vào vũng nước ướt. Lớp nước đã làm giảm lực ma sát xuống bằng không! Trong khi cô y tá đang băng bó vết thương sạch sẽ, cô giải thích rằng chúng ta phải luôn chú ý đến biển báo cảnh báo màu vàng. Để giữ an toàn, hãy đi bộ cẩn thận và để lực ma sát làm đúng nhiệm vụ của nó!",
+    content_en: "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe and balanced. Water on smooth tiles reduces surface friction and causes students to slip. When the floor is wet, shoes cannot grip the tiles easily. Rubber shoes provide strong grip to help students walk safely on dry ground. Yellow warning signs alert students to slow down and walk carefully so everyone stays safe!",
+    content_vi: "Tại sao chúng ta lại bị ngã trên sàn nhà ướt? Câu trả lời nằm ở một khái niệm khoa học mang tên Lực Ma Sát. Lực ma sát là một lực ngăn cản các vật trượt đi. Trong khi Jake đang đi bộ xuống hành lang, đế giày cao su của cậu ấy đã tạo ra lực ma sát lớn với mặt sàn khô. Điều này giúp cậu ấy an toàn và giữ thăng bằng. Nước trên sàn gạch nhẵn làm giảm ma sát bề mặt và khiến học sinh trượt ngã. Khi sàn bị ướt, giày không thể bám vào gạch một cách dễ dàng. Giày cao su mang lại độ bám chắc chắn giúp học sinh đi lại an toàn trên mặt đất khô ráo. Biển cảnh báo màu vàng nhắc nhở học sinh đi chậm lại và cẩn thận để mọi người được an toàn!",
     audio_url: "/audio/week33/explore.mp3",
+    glossary: [
+      { term: "Friction", meaning: "A physical force that prevents surfaces from sliding easily." },
+      { term: "Rubber Soles", meaning: "Bottom of shoes that provide strong grip and high traction." },
+      { term: "Smooth Tiles", meaning: "Floor surface that becomes very slippery when wet." },
+      { term: "Warning Sign", meaning: "A yellow caution sign that alerts walkers to low-friction hazards." }
+    ],
     check_questions: [
       {
         id: 1,

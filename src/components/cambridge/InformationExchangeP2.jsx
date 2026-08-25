@@ -424,11 +424,14 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
       <div className="pb-3 border-b border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
         <div>
           <span className="px-3.5 py-1 bg-purple-100 text-purple-900 text-[11px] font-black rounded-full uppercase tracking-wider flex items-center gap-1.5 w-max">
-            📊 INFORMATION EXCHANGE — SPEAKING PART 2
+            Cambridge A2 Flyers — Speaking Part 2
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-            Candidate Information Exchange (Side-by-Side Data Tables)
+            Information Exchange (Ask & Answer Questions)
           </h2>
+          <p className="text-xs text-purple-700 font-bold mt-0.5">
+            Ask and answer questions using the information cards.
+          </p>
         </div>
 
         {flowState === 'idle' ? (

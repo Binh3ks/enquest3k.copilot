@@ -6,12 +6,20 @@
 
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
+import singapore_math from './singapore_math.js';
 
 export const listeningHubData = {
   week: 33,
   theme: "Corridor Safety & School Care",
   dictation,
   shadowing,
+  singapore_math: singapore_math?.problems?.map(p => ({
+    problem_en: p.problemText,
+    problem_vi: p.problemTextVi || p.problemText,
+    correct_answer: p.correctAnswer,
+    answer_unit: p.answer,
+    model_data: p.modelData
+  })) || [],
 
   // Cambridge Listening Part 2 (Secret Notes / Notepad Note Completer)
   listening_p2_notes: [

@@ -1,9 +1,9 @@
 {
-  "commit": "3b6e81e51be755f2ccbaccadbc3b8534a37c4e4d",
-  "git_commit": "3b6e81e51be755f2ccbaccadbc3b8534a37c4e4d",
-  "shortCommit": "3b6e81e5",
-  "message": "fix(hoverword): add highlight-target and highlight-grammar CSS hooks [multi-agent-review]",
-  "builtAt": "2026-08-25T06:09:24.106Z",
-  "build_timestamp": "2026-08-25T06:09:24.106Z",
+  "commit": "783f6fe6ca16f9ed3aaf7678381aab5c1bbc965b",
+  "git_commit": "783f6fe6ca16f9ed3aaf7678381aab5c1bbc965b",
+  "shortCommit": "783f6fe6",
+  "message": "fix(clil): bind activeHighlightMode patterns to renderParsedText for Paragraph 1 and 2 [multi-agent-review]",
+  "builtAt": "2026-08-25T07:00:21.741Z",
+  "build_timestamp": "2026-08-25T07:00:21.741Z",
   "env": "production"
 }

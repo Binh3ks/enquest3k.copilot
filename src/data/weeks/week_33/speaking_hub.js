@@ -21,6 +21,31 @@ export const speakingHubData = {
   ],
   cue_card_info_exchange: INFORMATION_EXCHANGE_P2,
   cue_card_prompts: CUE_CARD_PROMPTS,
+  info_exchange_cards: {
+    candidate_card: {
+      title: "Tom's Accident at School",
+      items: [
+        { label: "What happened?", value: "slipped on the wet floor" },
+        { label: "Where?", value: "down the school corridor" },
+        { label: "Who helped?", value: "Jake and the school nurse" },
+        { label: "What treatment?", value: "clean bandage and cold pack" }
+      ]
+    },
+    examiner_card: {
+      title: "Jake's Safety Helper Actions",
+      items: [
+        { label: "Where was Jake walking?", value: "down the school corridor" },
+        { label: "What did Jake notice?", value: "a yellow warning sign" },
+        { label: "Who did Jake call?", value: "the school nurse" },
+        { label: "How did everyone feel?", value: "relieved and safe" }
+      ]
+    },
+    examiner_questions: [
+      { text: "Where was Jake walking after science class?", audio_url: "/audio/week33/ie_examiner_q1.mp3" },
+      { text: "What did Jake notice near the wet puddle?", audio_url: "/audio/week33/ie_examiner_q2.mp3" },
+      { text: "Who did Jake call immediately?", audio_url: "/audio/week33/ie_examiner_q3.mp3" }
+    ]
+  },
 
   // Podcast / Shadowing Station Data
   shadowing_sentences: shadowing.sentences,

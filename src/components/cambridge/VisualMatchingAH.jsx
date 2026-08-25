@@ -124,9 +124,14 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
           </button>
         </div>
 
-        <h3 className="text-xs sm:text-sm font-black text-slate-800">
-          Match 5 Items to Location Cards
-        </h3>
+        <div className="text-right">
+          <span className="text-[10px] font-black uppercase text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-md border border-indigo-200 block w-max ml-auto">
+            Cambridge A2 Flyers — Listening Part 3
+          </span>
+          <h3 className="text-xs sm:text-sm font-black text-slate-800 mt-0.5">
+            Match 5 Items to Location Cards (A–H)
+          </h3>
+        </div>
       </div>
 
       {/* Main Split Grid: Left 5 Object Items vs Right 8 Picture Cards A-H */}
