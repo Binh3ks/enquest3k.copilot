@@ -1,9 +1,9 @@
 {
-  "commit": "ddbb843f3bba693eb348d24ccd9b83739e349ab0",
-  "git_commit": "ddbb843f3bba693eb348d24ccd9b83739e349ab0",
-  "shortCommit": "ddbb843f",
-  "message": "fix(w33-clil): add vocab_focus and remove animal fallback from CLILExplorer",
-  "builtAt": "2026-08-25T07:56:23.026Z",
-  "build_timestamp": "2026-08-25T07:56:23.027Z",
+  "commit": "80d36ebd6555469cf3f6583e431940af1fcb5730",
+  "git_commit": "80d36ebd6555469cf3f6583e431940af1fcb5730",
+  "shortCommit": "80d36ebd",
+  "message": "chore(audio-tooling): add exam intro audio generator and generated mp3 files [Round K]",
+  "builtAt": "2026-08-25T08:37:48.667Z",
+  "build_timestamp": "2026-08-25T08:37:48.667Z",
   "env": "production"
 }
