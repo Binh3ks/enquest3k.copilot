@@ -16,7 +16,7 @@ export default function CLILExplorer({
   onCompleteCLIL
 }) {
   const navigate = useNavigate();
-  const [internalMode, setInternalMode] = useState(highlightMode || 'vocab');
+  const [internalMode, setInternalMode] = useState(highlightMode || 'grammar');
   const activeHighlightMode = setHighlightMode ? highlightMode : internalMode;
   const handleModeSwitch = (mode) => {
     setInternalMode(mode);
