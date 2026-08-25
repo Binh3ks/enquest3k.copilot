@@ -345,6 +345,113 @@ async function main() {
           } catch (e) {
             result = { pass: false, snippet: '', reason: `hotspot_alignment_check error: ${e.message}` };
           }
+        } else if (chk.type === 'story_writer_ladder_test') {
+          try {
+            // STEP 1: Verify MODEL badge, locked connector, ordered chips
+            const badge1 = await page.locator('[data-testid="ladder-badge"]').innerText().catch(() => '');
+            if (!badge1.includes('MODEL')) {
+              result = { pass: false, snippet: '', reason: `Step 1 ladder badge expected MODEL, got "${badge1}"` };
+            } else {
+              const lockedConn = page.locator('[data-testid="locked-connector"]').first();
+              const hasLockedConn = await lockedConn.isVisible().catch(() => false);
+              const lockedText = hasLockedConn ? await lockedConn.innerText() : '';
+              if (!hasLockedConn || !lockedText.includes('In the beginning')) {
+                result = { pass: false, snippet: '', reason: `Step 1 locked connector missing or invalid: "${lockedText}"` };
+              } else {
+                // Click locked connector and Step 1 chips to form sentence
+                await lockedConn.click().catch(() => {});
+                await page.waitForTimeout(150);
+                const step1Chips = await page.$$('[data-testid="content-chip"]');
+                for (const chip of step1Chips) {
+                  await chip.click().catch(() => {});
+                  await page.waitForTimeout(100);
+                }
+                
+                // Click Next Scene
+                const nextBtn1 = page.locator('button:has-text("Next Scene")').first();
+                await nextBtn1.click();
+                await page.waitForTimeout(600);
+
+                // STEP 2: Verify BUILD badge, >=3 connector options, shuffled chips
+                const badge2 = await page.locator('[data-testid="ladder-badge"]').innerText().catch(() => '');
+                const connBtns2 = await page.locator('[data-testid="connector-btn"]').count();
+                const step2Chips = await page.$$eval('[data-testid="content-chip"]', els => els.map(e => e.innerText.replace(/^\+\s*/, '').trim()));
+                
+                if (!badge2.includes('BUILD')) {
+                  result = { pass: false, snippet: '', reason: `Step 2 ladder badge expected BUILD, got "${badge2}"` };
+                } else if (connBtns2 < 3) {
+                  result = { pass: false, snippet: '', reason: `Step 2 expected >=3 connector buttons, got ${connBtns2}` };
+                } else {
+                  // Click a connector and content chips
+                  const firstConnBtn2 = page.locator('[data-testid="connector-btn"]').first();
+                  await firstConnBtn2.click().catch(() => {});
+                  await page.waitForTimeout(150);
+                  const step2ChipEls = await page.$$('[data-testid="content-chip"]');
+                  for (const chip of step2ChipEls) {
+                    await chip.click().catch(() => {});
+                    await page.waitForTimeout(100);
+                  }
+
+                  // Click Next Scene
+                  const nextBtn2 = page.locator('button:has-text("Next Scene")').first();
+                  await nextBtn2.click();
+                  await page.waitForTimeout(600);
+
+                  // STEP 3: Verify WRITE badge, base verb keywords, textarea required
+                  const badge3 = await page.locator('[data-testid="ladder-badge"]').innerText().catch(() => '');
+                  const step3ChipsText = await page.$$eval('[data-testid="content-chip"]', els => els.map(e => e.innerText.replace(/^\+\s*/, '').trim()));
+                  const hasBaseVerb = step3ChipsText.some(t => /\b(chew|free|bandage|run|trap)\b/i.test(t));
+                  
+                  // Check Next button is disabled when textarea has <5 words
+                  const reviewBtn = page.locator('button:has-text("Review Complete Story")').first();
+                  const isDisabledInitial = await reviewBtn.isDisabled().catch(() => false);
+
+                  if (!badge3.includes('WRITE')) {
+                    result = { pass: false, snippet: '', reason: `Step 3 ladder badge expected WRITE, got "${badge3}"` };
+                  } else if (step3ChipsText.length > 4 || !hasBaseVerb) {
+                    result = { pass: false, snippet: '', reason: `Step 3 chips expected <=4 with base verbs (chew/free/bandage), got [${step3ChipsText.join(', ')}]` };
+                  } else if (!isDisabledInitial) {
+                    result = { pass: false, snippet: '', reason: `Step 3 Next button was not disabled when textarea has <5 words` };
+                  } else {
+                    // Type sentence with past-tense verb in textarea
+                    const s3Text = Number(WEEK) === 34
+                      ? "Finally, the brave mouse chewed the thick ropes and freed the mighty lion."
+                      : "Finally, the school nurse bandaged his knee carefully and everyone felt relieved.";
+                    const textarea = page.locator('textarea').first();
+                    await textarea.fill(s3Text);
+                    await page.waitForTimeout(300);
+
+                    // Check Next button is now enabled
+                    const isEnabledNow = !(await reviewBtn.isDisabled().catch(() => true));
+                    if (!isEnabledNow) {
+                      result = { pass: false, snippet: '', reason: `Step 3 Review button remained disabled after typing valid sentence` };
+                    } else {
+                      await reviewBtn.click();
+                      await page.waitForTimeout(800);
+
+                      // REVIEW SCREEN: Check total words counter + connector counter
+                      const totalWordsEl = page.locator('[data-testid="total-words-counter"]').first();
+                      const connCounterEl = page.locator('[data-testid="connector-counter"]').first();
+                      const hasTotalWords = await totalWordsEl.isVisible().catch(() => false);
+                      const hasConnCounter = await connCounterEl.isVisible().catch(() => false);
+                      const connCounterText = hasConnCounter ? await connCounterEl.innerText() : '';
+
+                      if (!hasTotalWords || !hasConnCounter) {
+                        result = { pass: false, snippet: '', reason: `Review screen missing total-words-counter (${hasTotalWords}) or connector-counter (${hasConnCounter})` };
+                      } else {
+                        result = {
+                          pass: true,
+                          snippet: `Mini-ladder verified: Step 1 (MODEL) -> Step 2 (BUILD, 3 conns) -> Step 3 (WRITE, base verbs, 5w gate) -> Review (${connCounterText})`
+                        };
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          } catch (e) {
+            result = { pass: false, snippet: '', reason: `story_writer_ladder_test error: ${e.message}` };
+          }
         } else if (chk.type === 'keyword_overlap') {
           const sourceDom = questDoms[chk.source_quest] || '';
           const sourceWords = (sourceDom.toLowerCase().match(/\b[a-z]{4,}\b/g) || []);

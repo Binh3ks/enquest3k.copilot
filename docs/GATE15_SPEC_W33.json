@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Gate 15 Production DOM Assertions Spec — Week 33",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "week": 33,
   "global_negative_patterns": [
     "lion", "mouse", "Lion", "Mouse", "hunter", "hunters", "heavy net", "thick ropes", "chewed through",
@@ -228,12 +228,25 @@
           "case_sensitive": false
         },
         {
-          "name": "chunks themed (>=2 W33 pill strings in DOM)",
+          "name": "DOM contains ladder stage badges (MODEL / BUILD / WRITE)",
+          "type": "regex",
+          "pattern": "(MODEL|BUILD|WRITE)"
+        },
+        {
+          "name": "Step 1: locked connector present ('In the beginning,')",
+          "type": "regex",
+          "pattern": "In the beginning,"
+        },
+        {
+          "name": "dedicated LINK YOUR SENTENCES connector row present",
+          "type": "regex",
+          "pattern": "LINK YOUR SENTENCES"
+        },
+        {
+          "name": "Step 1: chips in correct data order",
           "type": "contains_min_count",
           "values": [
-            "Jake was walking carefully", "down the school corridor", "near the warning sign", "a student was running fast",
-            "slipped on the wet floor", "fell down heavily", "hurt his knee badly", "lost his balance",
-            "called the school nurse", "with a clean bandage", "felt relieved", "praised Jake"
+            "Jake", "was walking carefully", "down the school corridor"
           ],
           "min": 2,
           "case_sensitive": false
@@ -241,6 +254,10 @@
         {
           "name": "story scenes ratio 16:9 assertion",
           "type": "scenes_ratio_16_9"
+        },
+        {
+          "name": "story writer mini-ladder test (Step 1-3 progression & review widgets)",
+          "type": "story_writer_ladder_test"
         }
       ]
     },
