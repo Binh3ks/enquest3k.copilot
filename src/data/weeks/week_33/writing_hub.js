@@ -12,29 +12,42 @@ export const writingHubData = {
     steps: [
       {
         scene: 1,
+        ladder_stage: "MODEL",
+        badge_label: "MODEL",
         title: "Scene 1: Walking in the Corridor",
         image_url: "/images/week33/writing_panel_1.png",
         caption: "Jake was walking carefully down the corridor while a student ran fast.",
         frame_L1: "Jake was walking carefully down the corridor while a student was running fast.",
-        pills: ["Jake was walking carefully", "down the school corridor", "near the warning sign", "a student was running fast"],
+        locked_connector: "In the beginning,",
+        ordered_chips: ["Jake", "was walking carefully", "down the school corridor"],
+        pills: ["Jake", "was walking carefully", "down the school corridor"],
         audio: "While Jake was walking carefully down the corridor, a boy was running fast."
       },
       {
         scene: 2,
+        ladder_stage: "BUILD",
+        badge_label: "BUILD",
         title: "Scene 2: Slipping on Wet Floor",
         image_url: "/images/week33/writing_panel_2.png",
         caption: "Suddenly, the boy slipped on the wet floor and hurt his knee.",
         frame_L1: "Suddenly, the boy slipped on the wet floor and hurt his knee badly.",
-        pills: ["slipped on the wet floor", "fell down heavily", "hurt his knee badly", "lost his balance"],
+        connectors: ["Then", "Suddenly", "After that"],
+        display_chips: ["ran past him", "a boy", "very fast"],
+        pills: ["ran past him", "a boy", "very fast"],
+        correct_order: ["a boy", "ran past him", "very fast"],
         audio: "Suddenly, the boy slipped on the wet floor and fell down."
       },
       {
         scene: 3,
+        ladder_stage: "WRITE",
+        badge_label: "WRITE",
         title: "Scene 3: Nurse Applying Bandage",
         image_url: "/images/week33/writing_panel_3.png",
         caption: "Jake called the school nurse, who arrived quickly with a clean bandage.",
         frame_L1: "Jake called the school nurse and everyone felt relieved.",
-        pills: ["called the school nurse", "with a clean bandage", "felt relieved", "praised Jake"],
+        connectors: ["Finally", "In the end", "At last"],
+        keywords: ["the school nurse", "bandage", "his knee", "feel relieved"],
+        pills: ["the school nurse", "bandage", "his knee", "feel relieved"],
         audio: "Jake called the school nurse, who arrived with a clean bandage and a cold pack."
       }
     ],
