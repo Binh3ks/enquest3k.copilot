@@ -30,7 +30,13 @@ const BANNED_HARDCODED_FALLBACK_PATTERNS = [
   { name: "Hardcoded School Nurse Room", regex: /NURSE ROOM/i },
   { name: "Hardcoded Slipped Corridor Action", regex: /slipped on wet floor/i },
   { name: "Hardcoded Wet Floor Vector Art", regex: /WET FLOOR/i },
-  { name: "Hardcoded Headmaster Assembly Fallback", regex: /praised you during assembly/i }
+  { name: "Hardcoded Headmaster Assembly Fallback", regex: /praised you during assembly/i },
+  { name: "Hardcoded was walking carefully", regex: /was walking carefully/i },
+  { name: "Hardcoded was moving forward", regex: /was moving forward/i },
+  { name: "Hardcoded during the journey", regex: /during the journey/i },
+  { name: "Hardcoded stopped immediately", regex: /stopped immediately/i },
+  { name: "Hardcoded needed urgent help", regex: /needed urgent help/i },
+  { name: "Hardcoded was patrolling", regex: /was patrolling/i }
 ];
 
 let errors = [];

@@ -55,9 +55,16 @@ Run `npm run audit:week {N}`:
 - **Gate 8**: 15-Quest Hub Invariants & Component Mount Trace.
 - **Gate 9**: Generator Purity & Zero-Clone Audit.
 
-### Step 6: Generate 15-Row Conformance Matrix
-- Execute `node scripts/generate_conformance_matrix.mjs {N}`.
-- Export `docs/week{N}_conformance_matrix.json` and render Markdown Matrix.
+### Step 7: Anti-Hallucination & Single-Source Invariants (Mandatory)
+1. **Singapore Math Single-Source Invariant**: `listening_hub.singapore_math` MUST be emitted directly from `singapore_math.js` (single source of truth — never manually duplicated).
+2. **Examiner Audio & Hotspot Calibration Invariant**: Pre-generate Table B examiner questions MP3 files and run Gate 17 hotspot calibrator (`npm run calibrate:diff <N>`) BEFORE committing data.
+3. **CLIL Glossary & Fact Unit Invariant**: Every CLIL article must include structured `glossary` entries, distinct part titles (`part_1_title`, `part_2_title`), and >= 3 concrete animal cooperation fact units.
+4. **No-Fallback & Fail-Loud Standard**: All components MUST prohibit hardcoded story fallbacks — if required data is missing, render a visible rose warning and fail loudly.
+5. **Quality Gates 1-17 Gatekeeper**: Every new week MUST pass all quality gates (Gate 1 through Gate 17) in `npm run audit:week <N>` before DoD signoff.
+
+### Step 8: Reviewer Verification & Git Push
+- Verify `docs/GATE15_SPEC.json` and run `node scripts/gate15_production_dom_assertions.mjs {N}` on production build.
+- Commit data & components separately from test specs and tooling.
 - Ensure **0 RED CELLS across all 15 Quests $\times$ 5 Criteria**.
 
 ### Step 7: Final Spot-Check & Commit

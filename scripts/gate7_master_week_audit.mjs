@@ -44,6 +44,7 @@ const GATES = [
   { name: 'Gate 12: Comprehensive CEFR & Forbidden Jargon Guard', cmd: `node scripts/gate12_comprehensive_cefr.mjs ${weekNum}` },
   { name: 'Gate 13: Boss Rotary Schedule & Skills Audit', cmd: `node scripts/gate13_rotary_schedule.mjs ${weekNum}` },
   { name: 'Gate 14: Deployed Version Stamp & Verification Engine', cmd: `node scripts/gate14_deployed_version.mjs` },
+  { name: 'Gate 16: Content Quality & Anti-Hallucination Guard', cmd: `node scripts/gate16_content_quality.mjs ${weekNum}` },
   { name: 'Task Auditor: 15-Quest Hub Invariants', cmd: `node scripts/audit_week_tasks.mjs ${weekNum}` }
 ];
 
