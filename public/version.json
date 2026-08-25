@@ -1,9 +1,9 @@
 {
-  "commit": "d084837137fb1daa8a489bc0b923cd41b32e1c5c",
-  "git_commit": "d084837137fb1daa8a489bc0b923cd41b32e1c5c",
-  "shortCommit": "d0848371",
-  "message": "feat(spec): update Gate 15 spec v2.5.0 and ladder interaction test for story writer mini-ladder [round-m]",
-  "builtAt": "2026-08-25T09:57:40.138Z",
-  "build_timestamp": "2026-08-25T09:57:40.139Z",
+  "commit": "8316ee8c4d15b28db57bd89d985605a72c34f3f2",
+  "git_commit": "8316ee8c4d15b28db57bd89d985605a72c34f3f2",
+  "shortCommit": "8316ee8c",
+  "message": "feat(spec): update Gate 15 spec v2.6.0 for Round N Cambridge mechanics [round-n]",
+  "builtAt": "2026-08-25T11:28:03.626Z",
+  "build_timestamp": "2026-08-25T11:28:03.626Z",
   "env": "production"
 }
