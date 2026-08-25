@@ -1,9 +1,9 @@
 {
-  "commit": "aaf218aee58416e9da3792047ce657ab37525045",
-  "git_commit": "aaf218aee58416e9da3792047ce657ab37525045",
-  "shortCommit": "aaf218ae",
-  "message": "fix(creator-studio): eliminate state loop between CreatorStudioZone and StoryWriting",
-  "builtAt": "2026-08-25T07:10:06.042Z",
-  "build_timestamp": "2026-08-25T07:10:06.042Z",
+  "commit": "2cc2c5a38c945b5f4d84945d93f54646fd28cd33",
+  "git_commit": "2cc2c5a38c945b5f4d84945d93f54646fd28cd33",
+  "shortCommit": "2cc2c5a3",
+  "message": "fix(creator-studio): add missing useCallback import in CreatorStudioZone",
+  "builtAt": "2026-08-25T07:14:14.966Z",
+  "build_timestamp": "2026-08-25T07:14:14.966Z",
   "env": "production"
 }

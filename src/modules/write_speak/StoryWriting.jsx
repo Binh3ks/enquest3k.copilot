@@ -132,17 +132,6 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
     return () => clearInterval(t);
   }, [timerActive, isReview, timeLeftSec]);
 
-  // Debounced auto-save (saves to persistent store without triggering parent loop)
-  useEffect(() => {
-    if (!panelTexts.some(Boolean)) return;
-    const t = setTimeout(() => {
-      const isComplete = wordCount >= 20 && Boolean(rubric);
-      const percent = wordCount >= 20 ? 80 : wordCount >= 10 ? 40 : 0;
-      saveProgress({ panelTexts, text: fullText, rubric, activeLevel }, isComplete, Math.round(percent));
-    }, 1000);
-    return () => clearTimeout(t);
-  }, [panelTexts, rubric, activeLevel, wordCount, fullText]);
-
   // Pill click helper
   const handleInsertPill = (pillText) => {
     playButtonClick();
