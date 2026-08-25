@@ -140,18 +140,16 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   const scenes = storyData.storyScenes || data?.reading_hub?.read_explore?.story_scenes || data?.readingHubData?.read_explore?.story_scenes || data?.reading_hub?.story_scenes || [];
   const clilArticle = storyData.clilArticle || data?.reading_hub?.read_explore?.clil_article || data?.readingHubData?.read_explore?.clil_article || null;
   const grammarRegex = storyData.grammarRegex || data?.reading_hub?.grammarRegex || [];
-  const readExplore = storyData.readExplore || data?.reading_hub?.read_explore || data?.readingHubData?.read_explore || data?.rawWeekData?.readExplore || {};
+  const readExplore = storyData.readExplore || data?.reading_hub?.read_explore || data?.readingHubData?.read_explore || data?.stations?.read_explore || data?.read_explore || data?.rawWeekData?.readExplore || data?.rawWeekData?.stations?.read_explore || {};
   const atomicSentences = storyData.shadowingData?.sentences || storyData.shadowing?.sentences || data?.reading_hub?.shadowingData?.sentences || data?.readingHubData?.shadowingData?.sentences || data?.stations?.shadowing?.sentences || data?.stations?.shadowing?.shadowingData?.sentences || data?.shadowing?.sentences || data?.rawWeekData?.stations?.shadowing?.sentences || null;
 
   const fullStoryText = readExplore.content_en || readExplore.text_en || readExplore.text || (atomicSentences ? atomicSentences.map(s => s.text).join(' ') : "");
 
   // Dynamic Retell to Nova: 5 Question Steps per week (No hardcoded leak)
   const RETELL_QUESTIONS = React.useMemo(() => {
-    if (readExplore.retell_questions && Array.isArray(readExplore.retell_questions) && readExplore.retell_questions.length > 0) {
-      return readExplore.retell_questions;
-    }
-    if (storyData.retell_questions && Array.isArray(storyData.retell_questions) && storyData.retell_questions.length > 0) {
-      return storyData.retell_questions;
+    const rawRetell = readExplore.retell_questions || data?.stations?.read_explore?.retell_questions || data?.read_explore?.retell_questions || storyData.retell_questions;
+    if (rawRetell && Array.isArray(rawRetell) && rawRetell.length > 0) {
+      return rawRetell;
     }
     if (atomicSentences && atomicSentences.length >= 5) {
       return atomicSentences.slice(0, 5).map((s, idx) => ({

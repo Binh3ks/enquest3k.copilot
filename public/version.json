@@ -1,9 +1,9 @@
 {
-  "commit": "f4325543af54f1589904cd084aed4c67a68bad8c",
-  "git_commit": "f4325543af54f1589904cd084aed4c67a68bad8c",
-  "shortCommit": "f4325543",
-  "message": "fix(index): export full station tree and skill_practice_hub in W34 index.js",
-  "builtAt": "2026-08-25T15:21:27.935Z",
-  "build_timestamp": "2026-08-25T15:21:27.935Z",
+  "commit": "06cb546ba291320add56c5aab73239c231315b11",
+  "git_commit": "06cb546ba291320add56c5aab73239c231315b11",
+  "shortCommit": "06cb546b",
+  "message": "fix(story-zone): add stations.shadowing fallback for karaoke and retell",
+  "builtAt": "2026-08-25T15:22:57.066Z",
+  "build_timestamp": "2026-08-25T15:22:57.066Z",
   "env": "production"
 }
