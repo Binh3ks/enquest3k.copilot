@@ -188,8 +188,9 @@ function getSafeTaskData(weekData, weekId) {
     };
   }
 
-  // Resolve speaking hub for info_exchange adapter
+  // Resolve speaking hub and skill practice hub
   const speakingHub = weekData.speaking_hub || weekData.speakingHub || weekData.stations?.speaking_hub || {};
+  const skillPracticeHub = weekData.skill_practice_hub || weekData.skillPracticeHub || weekData.stations?.skill_practice_hub || {};
   // Build cue_card_info_exchange: check multiple sources, adapt if needed
   const rawInfoExchange = weekData.cue_card_info_exchange
     || weekData.speaking_hub?.cue_card_info_exchange
@@ -202,13 +203,21 @@ function getSafeTaskData(weekData, weekId) {
     ...weekData,
     weekNumber: weekData.weekNumber || weekId || 33,
     storyWorld: weekData.storyWorld || { storyScenes: [], vocab: [], grammarDrills: [] },
-    battleArena: weekData.battleArena || { vocab: [], grammarDrills: [], flashArena: null, barModel: [], scienceLab: null },
+    battleArena: weekData.battleArena || {
+      vocab: [],
+      grammarDrills: skillPracticeHub.grammar_drills || [],
+      flashArena: skillPracticeHub.flash_arena || null,
+      barModel: skillPracticeHub.singapore_math || [],
+      scienceLab: skillPracticeHub.science_lab || null
+    },
     creatorStudio: weekData.creatorStudio || { pictureStory: null, storyPrompts: {}, podcastScenes: [], debateTopics: [] },
     bossBattle: weekData.bossBattle || { listening: {}, readingWriting: {}, speaking: {} },
     reading_hub: weekData.reading_hub || weekData.stations?.reading_hub || {},
     listening_hub: weekData.listening_hub || weekData.stations?.listening_hub || {},
     writing_hub: weekData.writing_hub || weekData.stations?.writing_hub || {},
     speaking_hub: speakingHub,
+    skill_practice_hub: skillPracticeHub,
+    skillPracticeHub,
     stations: weekData.stations || {},
     rawWeekData: weekData.rawWeekData || weekData,
     // Inject adapted info_exchange data at root so InfoExchangeZone finds it

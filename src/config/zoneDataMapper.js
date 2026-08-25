@@ -14,6 +14,7 @@ export function mapDataToZones(weekData, weekNumber = 33) {
   const listeningHub = weekData.listeningHub || weekData.listening_hub || weekData.stations?.listening_hub || {};
   const writingHub = weekData.writingHub || weekData.writing_hub || weekData.stations?.writing_hub || {};
   const speakingHub = weekData.speakingHub || weekData.speaking_hub || weekData.stations?.speaking_hub || {};
+  const skillPracticeHub = weekData.skillPracticeHub || weekData.skill_practice_hub || weekData.stations?.skill_practice_hub || {};
 
   return {
     weekNumber: weekData.weekId || weekData.week || weekNumber,
@@ -34,11 +35,12 @@ export function mapDataToZones(weekData, weekNumber = 33) {
       || weekData.speaking_hub?.cue_card_prompts
       || null,
 
-    // 4 Hubs Passthrough
+    // 4 Hubs Passthrough + Skill Practice Hub
     reading_hub: readingHub,
     listening_hub: listeningHub,
     writing_hub: writingHub,
     speaking_hub: speakingHub,
+    skill_practice_hub: skillPracticeHub,
 
     // ZONE 1: STORY WORLD
     storyWorld: {
@@ -53,14 +55,14 @@ export function mapDataToZones(weekData, weekNumber = 33) {
 
     // ZONE 2: BATTLE ARENA
     battleArena: {
-      flashArena: listeningHub.flash_arena || readingHub.vocab || weekData.vocab || [],
+      flashArena: skillPracticeHub.flash_arena || listeningHub.flash_arena || readingHub.vocab || weekData.vocab || [],
       wordPower: weekData.stations?.word_power || weekData.word_power || readingHub.word_power || null,
       vocab: readingHub.vocab || weekData.vocab || weekData.stations?.new_words?.vocab || [],
-      grammarDrills: listeningHub.grammar_drills || [],
-      sentenceBuilder: listeningHub.grammar_drills || [],
-      barModel: listeningHub.singapore_math || [],
-      scienceLab: listeningHub.science_lab || null,
-      dictation: listeningHub.dictation || [],
+      grammarDrills: skillPracticeHub.grammar_drills || listeningHub.grammar_drills || [],
+      sentenceBuilder: skillPracticeHub.grammar_drills || listeningHub.grammar_drills || [],
+      barModel: skillPracticeHub.singapore_math || listeningHub.singapore_math || [],
+      scienceLab: skillPracticeHub.science_lab || listeningHub.science_lab || null,
+      dictation: skillPracticeHub.dictation || listeningHub.dictation || [],
     },
 
     // ZONE 3: CREATOR STUDIO
@@ -74,7 +76,7 @@ export function mapDataToZones(weekData, weekNumber = 33) {
       podcastShadowing: speakingHub.podcast_shadowing || null,
       debateTopics: speakingHub.debate_topics || [],
       storyScenes: readingHub.story_scenes || readingHub.read_explore?.story_scenes || [],
-      dictation: listeningHub.dictation || [],
+      dictation: skillPracticeHub.dictation || listeningHub.dictation || [],
       talkshowVideo: speakingHub.talkshow_video || null,
       dialogueLines: speakingHub.dialogue_lines || [],
       infoExchange: speakingHub.info_exchange_cards || null,
@@ -84,7 +86,7 @@ export function mapDataToZones(weekData, weekNumber = 33) {
     bossBattle: {
       listening: {
         p1: listeningHub.listening_p1 || null,
-        p2: listeningHub.listening_p2_notes || listeningHub.dictation || null,
+        p2: listeningHub.listening_p2 || listeningHub.listening_p2_notes || null,
         p3: listeningHub.listening_p3 || null,
         p4: listeningHub.listening_p4 || listeningHub.listening_p4_questions || null,
         p5: listeningHub.listening_p5 || null,

@@ -17,6 +17,7 @@ import { readingHubData as readingHub } from './reading_hub.js';
 import { listeningHubData as listeningHub } from './listening_hub.js';
 import { writingHubData as writingHub } from './writing_hub.js';
 import { speakingHubData as speakingHub } from './speaking_hub.js';
+import { skillPracticeHubData as skillPracticeHub } from './skill_practice_hub.js';
 
 export const weekData = {
   weekId: 33,
@@ -32,6 +33,12 @@ export const weekData = {
   listeningHub,
   writingHub,
   speakingHub,
+  skillPracticeHub,
+  reading_hub: readingHub,
+  listening_hub: listeningHub,
+  writing_hub: writingHub,
+  speaking_hub: speakingHub,
+  skill_practice_hub: skillPracticeHub,
   stations: {
     read_explore,
     explore,
@@ -45,7 +52,8 @@ export const weekData = {
     ask_ai,
     writing,
     dictation,
-    shadowing
+    shadowing,
+    skill_practice_hub: skillPracticeHub
   }
 };
 
