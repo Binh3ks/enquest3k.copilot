@@ -413,8 +413,8 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
 
       {/* Step Container: Strictly 1 Full-Width <img> Scene */}
       <div className="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200 shadow-md space-y-4">
-        {/* Full-width Image Viewport */}
-        <div className="relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-inner">
+        {/* Full-width Image Viewport (16:9 Aspect Ratio) */}
+        <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-inner">
           <img
             src={currentStep.image_url}
             alt={`Scene ${currentStepIdx + 1}`}

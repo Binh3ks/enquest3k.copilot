@@ -136,6 +136,36 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
 
         {/* Notes Form List */}
         <div className="space-y-1.5">
+          {/* Worked Example Row */}
+          <div data-testid="example-row" className="p-2 sm:p-2.5 bg-amber-100/80 rounded-xl border-2 border-amber-300 shadow-2xs space-y-1">
+            <div className="flex items-center gap-1.5 flex-wrap justify-between">
+              <div className="flex items-center gap-1.5">
+                <span className="px-2 py-0.5 rounded-md bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider shadow-2xs">
+                  ★ EXAMPLE
+                </span>
+                <span className="text-xs font-black text-amber-950">
+                  {weekNumber === 34 ? "Lion's name" : "Incident Location"}:
+                </span>
+                <span className="text-[11px] text-amber-800 italic font-medium">
+                  ({weekNumber === 34 ? "name of the lion" : "where incident happened"})
+                </span>
+              </div>
+              <span className="text-[10px] font-bold text-amber-800 bg-amber-200/80 px-1.5 py-0.5 rounded uppercase">
+                Locked Example
+              </span>
+            </div>
+
+            <div className="flex items-center gap-1.5 w-full">
+              <input
+                type="text"
+                disabled={true}
+                value={weekNumber === 34 ? "Leo" : "corridor"}
+                className="flex-1 w-full px-3 py-1.5 rounded-lg border border-amber-300 font-black text-xs sm:text-sm text-amber-950 bg-amber-50/90 cursor-not-allowed"
+              />
+              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0" />
+            </div>
+          </div>
+
           {defaultNotes.map((note, index) => {
             const userAns = (answers[note.id] || '').trim().toLowerCase();
             const targetAns = note.target.toLowerCase();

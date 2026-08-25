@@ -152,7 +152,33 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
             <MessageSquare size={15} className="text-purple-600" /> {customData?.title || "Dialogue Passage (Cambridge Part 2):"}
           </div>
 
-          <div className="space-y-3.5">
+          <div className="space-y-4">
+            {/* Worked Example Exchange */}
+            <div
+              data-testid="example-row"
+              className="p-3.5 bg-amber-50/90 rounded-2xl border-2 border-amber-300 shadow-2xs space-y-2"
+            >
+              <div className="flex items-start gap-2">
+                <span className="px-2 py-0.5 bg-amber-500 text-white font-black text-[10px] rounded-md shrink-0 shadow-2xs">
+                  ★ EXAMPLE
+                </span>
+                <div className="text-xs sm:text-sm font-bold text-amber-950">
+                  &ldquo;{activeData?.example?.text_a || "Hello! Did you have a good day at school today?"}&rdquo;
+                </div>
+              </div>
+              <div className="p-3 rounded-xl border border-amber-300 bg-white flex items-center justify-between">
+                <div className="flex items-center gap-2 flex-1 min-w-0">
+                  <span className="px-2 py-0.5 bg-amber-200 text-amber-950 font-black text-[10px] rounded-md shrink-0">
+                    Example Answer
+                  </span>
+                  <div className="text-xs font-bold text-amber-950">
+                    <b className="text-amber-700 mr-1.5">(C)</b> {activeData?.example?.text_b || "Yes, we had a lot of fun in class."}
+                  </div>
+                </div>
+                <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0" />
+              </div>
+            </div>
+
             {dialogueExchanges.map((ex) => {
               const assignedOptKey = answers[ex.gap_id];
               const assignedOpt = ahOptions.find(o => o.key === assignedOptKey);

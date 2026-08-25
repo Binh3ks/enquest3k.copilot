@@ -261,6 +261,22 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
               </div>
             ) : (
               <div className="space-y-2">
+                {/* Worked Example Row */}
+                <div
+                  data-testid="example-row"
+                  className="p-3 bg-amber-50 rounded-xl border-2 border-amber-300 text-xs font-bold text-slate-900 flex items-center justify-between shadow-2xs"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-0.5 rounded-md bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider shadow-2xs">
+                      ★ EXAMPLE
+                    </span>
+                    <span>{customData?.example_desc || (weekNumber === 34 ? "Color the big lion's tail YELLOW" : "Color the main corridor sign YELLOW")}</span>
+                  </div>
+                  <span className="px-2 py-0.5 bg-amber-200 text-amber-900 text-[10px] font-black rounded-lg uppercase">
+                    Pre-colored
+                  </span>
+                </div>
+
                 {normalizedTasks.map((t) => {
                   const isCorrect = isSubmitted && (
                     t.type === 'color'

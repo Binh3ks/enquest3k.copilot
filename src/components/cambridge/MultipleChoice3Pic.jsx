@@ -76,9 +76,21 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
       </div>
 
       {/* Question prompt & Audio button */}
-      <div className="p-4 bg-white rounded-2xl border-2 border-slate-200 shadow-sm flex items-center justify-between gap-3">
-        <div className="text-sm sm:text-base font-black text-slate-900">
-          {currentQ.question_en}
+      <div
+        data-testid={currentQ.isExample ? "example-row" : undefined}
+        className={`p-4 rounded-2xl border-2 shadow-sm flex items-center justify-between gap-3 ${
+          currentQ.isExample ? "bg-amber-50/90 border-amber-300" : "bg-white border-slate-200"
+        }`}
+      >
+        <div className="space-y-1">
+          {currentQ.isExample && (
+            <span className="px-2.5 py-0.5 rounded-md bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider shadow-2xs inline-block">
+              ★ EXAMPLE
+            </span>
+          )}
+          <div className="text-sm sm:text-base font-black text-slate-900">
+            {currentQ.question_en}
+          </div>
         </div>
         <button
           type="button"
@@ -92,11 +104,18 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
       {/* 3-Picture Options Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
         {currentQ.options?.map((opt) => {
-          const isSelected = selected === opt.letter;
+          const isExampleCorrect = currentQ.isExample && opt.letter === currentQ.answer;
+          const isSelected = selected === opt.letter || isExampleCorrect;
           const isCorrect = opt.letter === currentQ.answer;
 
           let btnClass = "bg-white border-2 border-slate-200 hover:border-blue-400 hover:scale-[1.02]";
-          if (showFeedback) {
+          if (currentQ.isExample) {
+            if (isExampleCorrect) {
+              btnClass = "bg-amber-100/90 border-2 border-amber-500 ring-4 ring-amber-200 shadow-md cursor-default";
+            } else {
+              btnClass = "bg-slate-50 border-slate-200 opacity-60 cursor-default";
+            }
+          } else if (showFeedback) {
             if (isCorrect) {
               btnClass = "bg-emerald-50 border-2 border-emerald-500 ring-4 ring-emerald-200 scale-[1.02]";
             } else if (isSelected) {
@@ -112,7 +131,7 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
             <button
               key={opt.letter}
               type="button"
-              disabled={showFeedback}
+              disabled={showFeedback || currentQ.isExample}
               onClick={() => handleSelectOption(opt.letter)}
               className={`p-3 rounded-2xl flex flex-col items-center gap-2.5 text-center transition-all cursor-pointer shadow-sm ${btnClass}`}
             >
@@ -127,6 +146,11 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
                 <span className="absolute top-2 left-2 w-6 h-6 rounded-full bg-slate-900/80 text-white font-black text-xs flex items-center justify-center shadow">
                   {opt.letter}
                 </span>
+                {isExampleCorrect && (
+                  <span className="absolute bottom-2 right-2 px-2 py-0.5 bg-amber-500 text-white font-black text-[10px] rounded-lg shadow uppercase">
+                    ✓ Example
+                  </span>
+                )}
               </div>
               <span className="text-xs font-black text-slate-800 leading-snug">
                 {opt.text}
@@ -135,6 +159,22 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
           );
         })}
       </div>
+
+      {/* Example proceeding bar */}
+      {currentQ.isExample && (
+        <div className="p-3 bg-amber-100 text-amber-950 rounded-2xl border border-amber-300 flex items-center justify-between">
+          <span className="text-xs font-bold">
+            ★ This was a worked example. Ready for the test questions?
+          </span>
+          <button
+            type="button"
+            onClick={handleNext}
+            className="px-4 py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black rounded-xl shadow-md transition flex items-center gap-1"
+          >
+            Start Question 1 <ChevronRight size={14} />
+          </button>
+        </div>
+      )}
 
       {/* Feedback bar & Next button */}
       {showFeedback && (

@@ -31,6 +31,64 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
 
   const [showHint, setShowHint] = useState(false);
 
+  // Runtime coordinate mapper refs and dimensions (Hotspot Coordinate Doctrine)
+  const containerARef = useRef(null);
+  const containerBRef = useRef(null);
+  const [containerDimA, setContainerDimA] = useState({ cw: 0, ch: 0 });
+  const [containerDimB, setContainerDimB] = useState({ cw: 0, ch: 0 });
+  const [imageDimA, setImageDimA] = useState({ iw: 0, ih: 0 });
+  const [imageDimB, setImageDimB] = useState({ iw: 0, ih: 0 });
+
+  const updateContainerDims = React.useCallback(() => {
+    if (containerARef.current) {
+      const rect = containerARef.current.getBoundingClientRect();
+      if (rect.width && rect.height) {
+        setContainerDimA({ cw: rect.width, ch: rect.height });
+      }
+    }
+    if (containerBRef.current) {
+      const rect = containerBRef.current.getBoundingClientRect();
+      if (rect.width && rect.height) {
+        setContainerDimB({ cw: rect.width, ch: rect.height });
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    updateContainerDims();
+    const t1 = setTimeout(updateContainerDims, 100);
+    const t2 = setTimeout(updateContainerDims, 300);
+    window.addEventListener('resize', updateContainerDims);
+    let observer = null;
+    if (typeof ResizeObserver !== 'undefined') {
+      observer = new ResizeObserver(() => updateContainerDims());
+      if (containerARef.current) observer.observe(containerARef.current);
+      if (containerBRef.current) observer.observe(containerBRef.current);
+    }
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      window.removeEventListener('resize', updateContainerDims);
+      if (observer) observer.disconnect();
+    };
+  }, [updateContainerDims]);
+
+  const mapCoordinate = (x, y, containerDim, imageDim) => {
+    const { cw, ch } = containerDim;
+    const { iw, ih } = imageDim;
+    if (!cw || !ch || !iw || !ih) {
+      return { x, y };
+    }
+    const s = Math.max(cw / iw, ch / ih);
+    const rw = iw * s;
+    const rh = ih * s;
+    const ox = (rw - cw) / 2;
+    const oy = (rh - ch) / 2;
+    const mappedX = (((x / 100) * rw - ox) / cw) * 100;
+    const mappedY = (((y / 100) * rh - oy) / ch) * 100;
+    return { x: mappedX, y: mappedY };
+  };
+
   useEffect(() => {
     return () => {
       if (recognitionRef.current) {
@@ -175,8 +233,18 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
       {/* Side-by-Side Dual Picture Scenes with Interactive SVG Circles */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Picture A Viewport */}
-        <div className="relative h-64 sm:h-72 bg-slate-900 rounded-3xl overflow-hidden shadow-lg border-2 border-slate-800">
-          <img src={differencesData.picA.image_url} alt={differencesData.picA.title} className="w-full h-full object-cover" />
+        <div ref={containerARef} className="relative h-64 sm:h-72 bg-slate-900 rounded-3xl overflow-hidden shadow-lg border-2 border-slate-800">
+          <img
+            src={differencesData.picA.image_url}
+            alt={differencesData.picA.title}
+            onLoad={(e) => {
+              if (e.target.naturalWidth && e.target.naturalHeight) {
+                setImageDimA({ iw: e.target.naturalWidth, ih: e.target.naturalHeight });
+                updateContainerDims();
+              }
+            }}
+            className="w-full h-full object-cover"
+          />
           <div className="absolute top-3 left-3 px-3 py-1 bg-slate-950/80 text-white rounded-xl text-xs font-black backdrop-blur-md">
             Picture A
           </div>
@@ -186,29 +254,43 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
             {differencesData.hotspots.map((hs) => {
               const isFound = foundHotspots.includes(hs.id);
               if (!isFound) return null;
+              const pos = mapCoordinate(hs.x, hs.y, containerDimA, imageDimA);
               return (
                 <g key={hs.id}>
-                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="24" stroke="#f59e0b" strokeWidth="4" fill="rgba(245, 158, 11, 0.25)" className="animate-ping" />
-                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="24" stroke="#f59e0b" strokeWidth="4" fill="rgba(245, 158, 11, 0.25)" />
+                  <circle cx={`${pos.x}%`} cy={`${pos.y}%`} r="24" stroke="#f59e0b" strokeWidth="4" fill="rgba(245, 158, 11, 0.25)" className="animate-ping" />
+                  <circle cx={`${pos.x}%`} cy={`${pos.y}%`} r="24" stroke="#f59e0b" strokeWidth="4" fill="rgba(245, 158, 11, 0.25)" />
                 </g>
               );
             })}
           </svg>
 
           {/* Hotspot Click Targets */}
-          {differencesData.hotspots.map((hs) => (
-            <button
-              key={hs.id}
-              onClick={() => handleHotspotClick(hs)}
-              style={{ left: `${hs.x}%`, top: `${hs.y}%` }}
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full cursor-pointer hover:bg-amber-400/30 transition z-20"
-            />
-          ))}
+          {differencesData.hotspots.map((hs) => {
+            const pos = mapCoordinate(hs.x, hs.y, containerDimA, imageDimA);
+            return (
+              <button
+                key={hs.id}
+                onClick={() => handleHotspotClick(hs)}
+                style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full cursor-pointer hover:bg-amber-400/30 transition z-20"
+              />
+            );
+          })}
         </div>
 
         {/* Picture B Viewport */}
-        <div className="relative h-64 sm:h-72 bg-slate-900 rounded-3xl overflow-hidden shadow-lg border-2 border-slate-800">
-          <img src={differencesData.picB.image_url} alt={differencesData.picB.title} className="w-full h-full object-cover" />
+        <div ref={containerBRef} className="relative h-64 sm:h-72 bg-slate-900 rounded-3xl overflow-hidden shadow-lg border-2 border-slate-800">
+          <img
+            src={differencesData.picB.image_url}
+            alt={differencesData.picB.title}
+            onLoad={(e) => {
+              if (e.target.naturalWidth && e.target.naturalHeight) {
+                setImageDimB({ iw: e.target.naturalWidth, ih: e.target.naturalHeight });
+                updateContainerDims();
+              }
+            }}
+            className="w-full h-full object-cover"
+          />
           <div className="absolute top-3 left-3 px-3 py-1 bg-rose-600 text-white rounded-xl text-xs font-black backdrop-blur-md">
             Picture B
           </div>
@@ -218,24 +300,28 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
             {differencesData.hotspots.map((hs) => {
               const isFound = foundHotspots.includes(hs.id);
               if (!isFound) return null;
+              const pos = mapCoordinate(hs.x, hs.y, containerDimB, imageDimB);
               return (
                 <g key={hs.id}>
-                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="24" stroke="#f43f5e" strokeWidth="4" fill="rgba(244, 63, 94, 0.25)" className="animate-ping" />
-                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="24" stroke="#f43f5e" strokeWidth="4" fill="rgba(244, 63, 94, 0.25)" />
+                  <circle cx={`${pos.x}%`} cy={`${pos.y}%`} r="24" stroke="#f43f5e" strokeWidth="4" fill="rgba(244, 63, 94, 0.25)" className="animate-ping" />
+                  <circle cx={`${pos.x}%`} cy={`${pos.y}%`} r="24" stroke="#f43f5e" strokeWidth="4" fill="rgba(244, 63, 94, 0.25)" />
                 </g>
               );
             })}
           </svg>
 
           {/* Hotspot Click Targets */}
-          {differencesData.hotspots.map((hs) => (
-            <button
-              key={hs.id}
-              onClick={() => handleHotspotClick(hs)}
-              style={{ left: `${hs.x}%`, top: `${hs.y}%` }}
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full cursor-pointer hover:bg-rose-400/30 transition z-20"
-            />
-          ))}
+          {differencesData.hotspots.map((hs) => {
+            const pos = mapCoordinate(hs.x, hs.y, containerDimB, imageDimB);
+            return (
+              <button
+                key={hs.id}
+                onClick={() => handleHotspotClick(hs)}
+                style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full cursor-pointer hover:bg-rose-400/30 transition z-20"
+              />
+            );
+          })}
         </div>
       </div>
 

@@ -320,6 +320,7 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
         {/* 🌟 Example Badge Floating Overlay on Example Line */}
         {exampleStartPos && exampleEndPos && (
           <div
+            data-testid="example-row"
             style={{
               left: `${(exampleStartPos.x + exampleEndPos.x) / 2}%`,
               top: `${(exampleStartPos.y + exampleEndPos.y) / 2}%`
@@ -343,6 +344,7 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
                   ref={(el) => (nameButtonRefs.current[name.id] = el)}
                   disabled={isSubmitted || name.isExample}
                   onClick={() => handleSelectName(name)}
+                  data-testid={name.isExample ? "example-row" : undefined}
                   className={`px-2 py-1 rounded-lg text-xs font-black transition-all flex items-center justify-center gap-1 border shadow-2xs w-full ${
                     name.isExample
                       ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-1 ring-amber-300'
@@ -358,7 +360,7 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
                   </span>
                   {name.isExample && (
                     <span className="text-[9px] bg-amber-500 text-white px-1 py-0.2 rounded uppercase font-black shrink-0">
-                      Ex
+                      ★ EXAMPLE
                     </span>
                   )}
                   {hasLine && !name.isExample && <CheckCircle2 size={12} className="text-emerald-700 shrink-0" />}

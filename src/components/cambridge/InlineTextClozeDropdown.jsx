@@ -146,6 +146,27 @@ export function InlineTextClozeDropdown({ customData, data: propData, onComplete
         </span>
       </div>
 
+      {/* Worked Example Card */}
+      <div
+        data-testid="example-row"
+        className="p-3.5 bg-amber-50/90 rounded-2xl border-2 border-amber-300 shadow-2xs flex items-center justify-between gap-3"
+      >
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="px-2.5 py-0.5 rounded-md bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider shadow-2xs">
+            ★ EXAMPLE
+          </span>
+          <span className="text-xs font-black text-amber-950">
+            Example Gap [0]: &ldquo;{activeData?.example?.target || "walked"}&rdquo;
+          </span>
+          <span className="text-[11px] text-amber-800 italic font-medium">
+            (Options: {((activeData?.example?.options) || ["walked", "walking", "walk"]).join(' / ')})
+          </span>
+        </div>
+        <span className="px-2 py-0.5 bg-amber-200 text-amber-950 font-black text-[10px] rounded-lg uppercase">
+          Pre-selected
+        </span>
+      </div>
+
       {/* 📖 Continuous Story Text with 10 Popover Dropdown Gaps */}
       <div className="p-6 sm:p-8 bg-slate-50 rounded-3xl border border-slate-200 shadow-inner leading-loose text-slate-900 font-serif text-base sm:text-lg relative">
         {storySegments.map((seg, idx) => {

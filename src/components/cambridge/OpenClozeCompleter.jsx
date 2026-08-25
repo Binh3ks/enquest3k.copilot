@@ -160,6 +160,27 @@ export function OpenClozeCompleter({ customData, data: propData, onComplete }) {
         )}
       </div>
 
+      {/* Worked Example Card */}
+      <div
+        data-testid="example-row"
+        className="p-3.5 bg-amber-50/90 rounded-2xl border-2 border-amber-300 shadow-2xs flex items-center justify-between gap-3"
+      >
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="px-2.5 py-0.5 rounded-md bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider shadow-2xs">
+            ★ EXAMPLE
+          </span>
+          <span className="text-xs font-black text-amber-950">
+            Example Gap [0]: &ldquo;{data?.example?.target || "was"}&rdquo;
+          </span>
+          <span className="text-[11px] text-amber-800 italic font-medium">
+            (Read the diary and write one missing word on each line)
+          </span>
+        </div>
+        <span className="px-2 py-0.5 bg-amber-200 text-amber-950 font-black text-[10px] rounded-lg uppercase">
+          Pre-filled
+        </span>
+      </div>
+
       {/* Main Diary Entry Paper Card Viewport */}
       <div className="p-6 sm:p-8 bg-amber-50/80 rounded-3xl border-2 border-amber-200/90 shadow-lg relative overflow-hidden space-y-4">
         {/* Diary Title Ribbon */}

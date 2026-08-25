@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { TestTube, Sparkles, CheckCircle2, Send, Trophy, ChevronRight, ChevronLeft, Volume2, BookOpen, Lightbulb } from 'lucide-react';
+import { TestTube, Sparkles, CheckCircle2, AlertTriangle, Send, Trophy, ChevronRight, ChevronLeft, Volume2, BookOpen, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { playButtonClick, playCorrectSound, playVictoryFanfare } from '../../utils/soundEffects';
 import { speakText } from '../../utils/AudioHelper';
@@ -11,8 +11,14 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
   const [step3Text, setStep3Text] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [activeLevel, setActiveLevel] = useState('L3');
+  const [showTeacherNote, setShowTeacherNote] = useState(false);
+  const [distractorAlert, setDistractorAlert] = useState(null);
+  const [isShaking, setIsShaking] = useState(false);
+  const [selectedChips, setSelectedChips] = useState({});
 
-  const purpose = customConfig?.purpose || "Learn the language of science reports (observed / because / past tense), not science content.";
+  const purpose = customConfig?.purpose || "🌱 Today we write like little scientists: we say what we SAW, use past tense, and join ideas with because / so!";
+  const teacherNote = customConfig?.teacher_parent_note || "Learn the language of science reports (observed / because / past tense), not science content.";
+
   const dataCard = useMemo(() => {
     if (Array.isArray(customConfig?.data_card) && customConfig.data_card.length >= 3) {
       return customConfig.data_card.slice(0, 3);
@@ -49,27 +55,56 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
     if (onComplete) onComplete(50);
   };
 
-  const appendToStep = (setter, text) => {
+  const handleChipClick = (category, pillText, isDistractor, setter) => {
+    if (isDistractor) {
+      const msg = customConfig?.distractor_feedback || "🔬 The Data Card does not show this fact. A science report only uses observed data!";
+      setDistractorAlert(msg);
+      setIsShaking(true);
+      setTimeout(() => setIsShaking(false), 800);
+      return;
+    }
+
+    setDistractorAlert(null);
+    playCorrectSound();
+    setSelectedChips(prev => ({ ...prev, [pillText]: true }));
+    setter(prev => (prev ? `${prev} ${pillText}` : pillText));
+  };
+
+  const handleConnectorClick = (connector, setter) => {
     playButtonClick();
-    setter(prev => prev ? `${prev} ${text}` : text);
+    setter(prev => (prev ? `${prev} ${connector}` : connector));
   };
 
   const STEP_CONFIG = useMemo(() => {
-    const s1Pills = customConfig?.step1Pills || (dataCard ? {
-      [dataCard[0]?.subject || 'Fact 1']: [dataCard[0]?.action || '', dataCard[0]?.result || ''],
-      [dataCard[1]?.subject || 'Fact 2']: [dataCard[1]?.action || '', dataCard[1]?.result || ''],
-      [dataCard[2]?.subject || 'Fact 3']: [dataCard[2]?.action || '', dataCard[2]?.result || '']
-    } : {});
+    const s1Pills = customConfig?.step1Pills || (weekNumber === 33 ? {
+      "💧 Wet Tiles": ["water reduced surface friction"],
+      "👟 Shoe Soles": ["rubber shoes provided strong grip"],
+      "⚠️ Warning Sign": ["the warning sign alerted everyone to walk carefully"],
+      "Distractor": ["students ran without looking"]
+    } : {
+      "🐿️ Squirrels": ["squirrels buried extra nuts in the ground"],
+      "🐝 Bees": ["bees carried pollen to new flowers"],
+      "🐦 Jays": ["jays hid seeds under soft leaves"],
+      "Distractor": ["some animals forgot to share food"]
+    });
 
-    const s2Pills = customConfig?.step2Pills || {
-      '⚡ Cause & Effect': [dataCard[0]?.action || '', dataCard[1]?.action || ''],
-      '🌱 Scientific Growth': [dataCard[0]?.result || '', dataCard[1]?.result || '']
-    };
+    const s2Pills = customConfig?.step2Pills || (weekNumber === 33 ? {
+      "⚡ Less Friction": ["wet tiles caused students to slip and fall"],
+      "🛡️ More Friction": ["rubber shoes increased friction on smooth floors"]
+    } : {
+      "🌳 New Trees": ["buried nuts grew into young oak trees"],
+      "🌸 New Flowers": ["carried pollen helped new flowers grow"]
+    });
 
-    const s3Pills = customConfig?.step3Pills || {
-      '🏆 Key Conclusion': [dataCard[2]?.result || 'ecosystem balance is maintained', 'teamwork helps survival'],
-      '🌟 Takeaway': ['actions create positive cycles', 'small helpers keep nature strong']
-    };
+    const s3Pills = customConfig?.step3Pills || (weekNumber === 33 ? {
+      "🏆 Key Conclusion": ["walking carefully prevented accidents in the corridor"],
+      "🌟 Takeaway": ["understanding friction kept everyone safe"]
+    } : {
+      "🏆 Key Conclusion": ["small helpers kept the forest green and strong"],
+      "🌟 Takeaway": ["animals and plants worked together in nature"]
+    });
+
+    const s1Starter = customConfig?.step1Starter || (weekNumber === 33 ? "While observing the corridor, we saw that" : "While observing the experiment, we saw that");
 
     return [
       {
@@ -77,12 +112,13 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         label: 'Observation & Facts',
         icon: '🔬',
         color: 'emerald',
-        starter: 'While observing the experiment,',
+        starter: s1Starter,
         checker: step1OK,
         value: step1Text,
         setter: setStep1Text,
-        hint: 'What did you observe? Tap chips from the Data Card...',
-        pills: s1Pills
+        hint: 'What did you observe? Tap past-tense chips from the Data Card...',
+        pills: s1Pills,
+        connectors: null
       },
       {
         step: 2,
@@ -93,8 +129,9 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         checker: step2OK,
         value: step2Text,
         setter: setStep2Text,
-        hint: 'Explain the scientific reason why this occurred...',
-        pills: s2Pills
+        hint: 'Explain why this happened using because / so / but...',
+        pills: s2Pills,
+        connectors: customConfig?.step2Connectors || ['because', 'so', 'but']
       },
       {
         step: 3,
@@ -105,11 +142,12 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         checker: step3OK,
         value: step3Text,
         setter: setStep3Text,
-        hint: 'What is the final rule or conclusion?',
-        pills: s3Pills
+        hint: 'What is the final scientific takeaway?',
+        pills: s3Pills,
+        connectors: customConfig?.step3Connectors || ['so', 'because', 'but']
       }
     ];
-  }, [customConfig, dataCard, step1OK, step2OK, step3OK, step1Text, step2Text, step3Text]);
+  }, [customConfig, weekNumber, step1OK, step2OK, step3OK, step1Text, step2Text, step3Text]);
 
   const cfg = STEP_CONFIG[currentStep - 1];
 
@@ -131,20 +169,53 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
           </div>
         </div>
 
-        {/* Level Badge */}
-        <div className="flex items-center gap-1.5">
-          <span className="text-[10px] font-black uppercase text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-lg border border-emerald-300">
-            Level {activeLevel} Ladder
-          </span>
+        {/* Level Ladder Selector */}
+        <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+          {['L1', 'L2', 'L3', 'L4', 'L5', 'L6'].map((lvl) => (
+            <button
+              key={lvl}
+              type="button"
+              onClick={() => {
+                setActiveLevel(lvl);
+                playButtonClick();
+              }}
+              className={`px-2 py-0.5 rounded-lg text-[10px] font-black transition ${
+                activeLevel === lvl
+                  ? 'bg-emerald-600 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              {lvl}
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Purpose Banner (Fixed Pedagogical Contract) */}
+      {/* Purpose Banner for Kids */}
       <div className="p-3 bg-emerald-50/90 border border-emerald-200 rounded-2xl flex items-start gap-2.5 shadow-2xs">
         <Lightbulb size={16} className="text-emerald-700 shrink-0 mt-0.5" />
         <p className="text-xs font-bold text-emerald-950 leading-relaxed">
           {purpose}
         </p>
+      </div>
+
+      {/* Collapsible Teacher & Parent Note */}
+      <div className="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/70">
+        <button
+          type="button"
+          onClick={() => setShowTeacherNote(prev => !prev)}
+          className="w-full px-3.5 py-2 flex items-center justify-between text-[11px] font-black text-slate-700 hover:text-indigo-800 transition"
+        >
+          <span className="flex items-center gap-1.5">
+            👩‍🏫 Teacher & Parent Note
+          </span>
+          {showTeacherNote ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+        </button>
+        {showTeacherNote && (
+          <div className="px-3.5 pb-2.5 pt-1 border-t border-slate-200/60 text-xs text-slate-600 font-medium leading-relaxed">
+            {teacherNote}
+          </div>
+        )}
       </div>
 
       {/* 3-Row Data Card (Extracted from CLIL) */}
@@ -197,7 +268,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       </div>
 
       {/* Active Step Panel */}
-      <div className="p-4 sm:p-5 rounded-2xl border-2 border-emerald-200 bg-emerald-50/40 space-y-3">
+      <div className={`p-4 sm:p-5 rounded-2xl border-2 border-emerald-200 bg-emerald-50/40 space-y-3 ${isShaking ? 'animate-bounce' : ''}`}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-base">{cfg.icon}</span>
@@ -220,23 +291,63 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
           💡 Starter: &ldquo;{cfg.starter}&rdquo;
         </div>
 
-        {/* Dynamic Data Card Pills */}
+        {/* Distractor Alert Feedback */}
+        {distractorAlert && (
+          <div className="p-2.5 bg-rose-50 border-2 border-rose-300 rounded-xl text-xs font-bold text-rose-800 flex items-center gap-2 animate-in fade-in">
+            <AlertTriangle size={15} className="text-rose-600 shrink-0" />
+            <span>{distractorAlert}</span>
+          </div>
+        )}
+
+        {/* Micro-decision: Connector Choice Pills (Step 2 & 3) */}
+        {cfg.connectors && cfg.connectors.length > 0 && (
+          <div className="p-2.5 bg-blue-50/80 rounded-xl border border-blue-200 space-y-1.5">
+            <span className="text-[10px] font-black uppercase text-blue-900 tracking-wider block">
+              🔗 Join your ideas with a connector:
+            </span>
+            <div className="flex flex-wrap gap-1.5">
+              {cfg.connectors.map((conn) => (
+                <button
+                  key={conn}
+                  type="button"
+                  onClick={() => handleConnectorClick(conn, cfg.setter)}
+                  className="px-3 py-1 bg-white hover:bg-blue-100 text-blue-900 border border-blue-300 rounded-lg text-xs font-black transition active:scale-95 shadow-2xs"
+                >
+                  + {conn}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Dynamic Data Card Past-Tense Pills */}
         <div className="space-y-1.5">
           <span className="text-[10px] font-black uppercase text-slate-600 tracking-wider block">
-            Tap Data Card chips to insert:
+            Tap Data Card chips to insert (Past Tense):
           </span>
           <div className="flex flex-wrap gap-1.5">
             {Object.entries(cfg.pills || {}).flatMap(([cat, pills]) =>
-              (Array.isArray(pills) ? pills : []).map((pill, pIdx) => (
-                <button
-                  key={`${cat}-${pIdx}`}
-                  type="button"
-                  onClick={() => appendToStep(cfg.setter, pill)}
-                  className="px-2.5 py-1 bg-white hover:bg-emerald-100 text-emerald-950 border border-emerald-300 rounded-xl text-[11px] font-bold transition active:scale-95 shadow-2xs"
-                >
-                  + {pill}
-                </button>
-              ))
+              (Array.isArray(pills) ? pills : []).map((pill, pIdx) => {
+                const isDistractor = cat.toLowerCase().includes('distractor') || cat.toLowerCase().includes('nhiễu');
+                const isSelected = selectedChips[pill];
+                return (
+                  <button
+                    key={`${cat}-${pIdx}`}
+                    type="button"
+                    onClick={() => handleChipClick(cat, pill, isDistractor, cfg.setter)}
+                    className={`px-2.5 py-1 rounded-xl text-[11px] font-bold transition active:scale-95 shadow-2xs border ${
+                      isSelected
+                        ? 'bg-emerald-100 text-emerald-950 border-emerald-400 font-black'
+                        : isDistractor
+                        ? 'bg-amber-50/80 hover:bg-amber-100 text-amber-950 border-amber-300'
+                        : 'bg-white hover:bg-emerald-100 text-emerald-950 border-emerald-300'
+                    }`}
+                  >
+                    {isSelected ? '✓ ' : '+ '}
+                    {pill}
+                  </button>
+                );
+              })
             )}
           </div>
         </div>
@@ -245,7 +356,10 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         <textarea
           rows={3}
           value={cfg.value}
-          onChange={(e) => cfg.setter(e.target.value)}
+          onChange={(e) => {
+            cfg.setter(e.target.value);
+            setDistractorAlert(null);
+          }}
           placeholder={cfg.hint}
           className="w-full p-3 bg-white border-2 border-emerald-300 rounded-xl text-xs sm:text-sm font-medium text-slate-900 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 outline-none resize-none leading-relaxed transition"
         />

@@ -144,6 +144,34 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 items-start">
         {/* Left Column: 5 Object Items */}
         <div className="lg:col-span-5 space-y-2">
+          {/* Worked Example Row */}
+          <div
+            data-testid="example-row"
+            className="p-2.5 sm:p-3 rounded-xl border-2 border-amber-300 bg-amber-100/80 shadow-2xs flex flex-col justify-between"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded-md bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider shadow-2xs">
+                  ★ EXAMPLE
+                </span>
+                <span className="text-xs sm:text-sm font-black text-amber-950 leading-tight">
+                  {customData?.example?.name || (weekNumber === 34 ? "Milo's Seed Bag" : "School Handrail")}
+                </span>
+              </div>
+              <span className="text-[10px] font-bold text-amber-800 bg-amber-200/80 px-1.5 py-0.5 rounded uppercase">
+                Pre-matched
+              </span>
+            </div>
+
+            <div className="mt-2 pt-1.5 border-t border-amber-200 flex items-center justify-between">
+              <div className="px-2 py-0.5 rounded-lg text-[11px] font-black border border-amber-500 bg-amber-500 text-white shadow-2xs flex items-center gap-1">
+                <span className="text-[9px] uppercase opacity-75 font-bold">Matched:</span>
+                <span>Card {customData?.example?.target_letter || 'A'}</span>
+              </div>
+              <CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0" />
+            </div>
+          </div>
+
           {itemsList.map((item) => {
             const assignedLetter = answers[item.id];
             const isSelected = selectedItem?.id === item.id;

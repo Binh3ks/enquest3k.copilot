@@ -178,6 +178,35 @@ export function TextExtractionCompleter({ customData, data: propData, onComplete
           </div>
 
           <div className="space-y-3 max-h-[580px] overflow-y-auto pr-1">
+            {/* Worked Example Row */}
+            <div
+              data-testid="example-row"
+              className="p-3.5 rounded-2xl border-2 border-amber-300 bg-amber-50/90 shadow-2xs space-y-2"
+            >
+              <div className="flex items-start gap-2">
+                <span className="px-2 py-0.5 rounded-md bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider shrink-0 mt-0.5 shadow-2xs">
+                  ★ EXAMPLE
+                </span>
+                <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
+                  {activeData?.example?.text_before || "Jake was walking in the "}
+                  <span className="font-black text-amber-900 underline underline-offset-4">
+                    {activeData?.example?.target || "corridor"}
+                  </span>
+                  {activeData?.example?.text_after || " after his class."}
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between gap-2 pt-1">
+                <input
+                  type="text"
+                  disabled={true}
+                  value={activeData?.example?.target || "corridor"}
+                  className="flex-1 px-3 py-1.5 rounded-xl border border-amber-300 bg-amber-100/70 font-black text-xs sm:text-sm text-amber-950 cursor-not-allowed"
+                />
+                <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0" />
+              </div>
+            </div>
+
             {summarySentences.map((sent, idx) => {
               const userVal = answers[sent.id] || '';
               const wordCount = userVal.trim() ? userVal.trim().split(/\s+/).length : 0;
