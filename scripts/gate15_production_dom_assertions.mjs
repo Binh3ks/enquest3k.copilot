@@ -360,6 +360,35 @@ async function main() {
           consistencyPass = false;
           globalPass = false;
         }
+      } else if (dc.type === 'field_exists') {
+        try {
+          const mod = await import(`file://${path.resolve(rootDir, 'src/data/weeks/week_34/' + dc.file)}`);
+          const data = mod.default || mod[Object.keys(mod)[0]];
+          let ok = true;
+          let detail = '';
+          if (dc.path.includes('examiner_questions')) {
+            const eq = data?.info_exchange_cards?.examiner_questions || data?.info_exchange?.examiner_questions || [];
+            ok = eq.length >= 3 && eq.every(q => q.audio_url);
+            detail = `${eq.length} questions with audio_url`;
+          } else if (dc.path === 'writing_chunks') {
+            const wc = data?.writing_chunks;
+            ok = !!(wc && wc.setting_time && wc.action_manner && wc.problem_event && wc.solution_outcome);
+            detail = ok ? '4 chunk groups verified' : 'missing chunk group';
+          }
+          if (ok) {
+            console.log(`  ✅ CHECK: "${dc.name}"`);
+            console.log(`     SNIPPET: ${detail}`);
+          } else {
+            console.error(`  ❌ CHECK: "${dc.name}"`);
+            console.error(`     REASON:  ${detail || 'field does not exist'}`);
+            consistencyPass = false;
+            globalPass = false;
+          }
+        } catch (e) {
+          console.error(`  ❌ CHECK: "${dc.name}" — ${e.message}`);
+          consistencyPass = false;
+          globalPass = false;
+        }
       }
     }
   }

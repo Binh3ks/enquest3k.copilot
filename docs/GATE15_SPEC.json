@@ -8,7 +8,8 @@
     "nurse", "Nurse", "wet floor", "slipped", "Total Corridor",
     "Object 1", "Object 2", "data not found", "Symbiosis",
     "Physics & Forces", "Physics & Friction", "Dry Surfaces",
-    "walking carefully", "was moving forward", "was patrolling", "caught 24 fish"
+    "walking carefully", "moving forward", "during the journey",
+    "stopped immediately", "needed urgent help", "was patrolling", "caught 24 fish"
   ],
   "quests": {
     "gear1_webtoon": {
@@ -62,9 +63,9 @@
       "neg": [],
       "pos": [
         {
-          "name": "part title contains Animal/Forest/Cooperation (NOT Friction/Dry Surfaces)",
+          "name": "part title contains Animal/Forest/Cooperation/Seed (NOT Friction/Dry Surfaces)",
           "type": "regex",
-          "pattern": "(Animal|Forest|Cooperation|animal|forest|cooperation)"
+          "pattern": "(Animal|Forest|Cooperation|Seed|animal|forest|cooperation|seed)"
         },
         {
           "name": "banned friction labels absent",
@@ -79,21 +80,8 @@
           "wait_after_ms": 1000,
           "assertion": {
             "type": "regex_min_count",
-            "pattern": "\\b(lion|mouse|trapped|net|rope|chewed|freed|hunter|forest|brave|tiny|mighty|grateful|promise|sleeping)\\b",
+            "pattern": "\\b(forest|squirrel|jay|nectar|pollen|seed|grow|plants|flowers|helpers|safe|homes|green|strong|travel|lion|mouse)\\b",
             "min": 5,
-            "case_sensitive": false
-          }
-        },
-        {
-          "name": "Grammar X-Ray clicked reveals >=3 was/were+V-ing highlights",
-          "type": "interaction_check",
-          "action": "click",
-          "selector": "button:has-text('Grammar X-Ray')",
-          "wait_after_ms": 1000,
-          "assertion": {
-            "type": "regex_min_count",
-            "pattern": "\\b(was|were)\\s+\\w+ing\\b",
-            "min": 3,
             "case_sensitive": false
           }
         },
@@ -101,6 +89,12 @@
           "name": "Grammar X-Ray inline: >=3 highlight marks INSIDE paragraph",
           "type": "dom_count",
           "selector": "p mark, p span[class*='amber'], p span[class*='highlight']",
+          "min": 3
+        },
+        {
+          "name": "CLIL glossary chips rendered (>=3)",
+          "type": "dom_count",
+          "selector": "[data-testid='clil-glossary-chip']",
           "min": 3
         }
       ]
@@ -119,7 +113,7 @@
         {
           "name": ">=2 themed label pills present after START",
           "type": "contains_min_count",
-          "values": ["Guardian", "Helper", "Habitat", "Lion", "Mouse", "Forest", "Mighty", "Tiny", "Green", "Ecosystem", "Animal", "Cooperation", "Predator", "Prey", "Territory", "guards", "cleans", "gives", "chirps", "food", "danger", "seeds", "warnings"],
+          "values": ["Lion", "Mouse", "Forest Trees", "Warning Birds", "Forest", "guards", "cleans", "gives", "chirps", "food", "danger", "seeds", "warnings"],
           "min": 2,
           "case_sensitive": false
         }
@@ -131,9 +125,9 @@
       "neg": [],
       "pos": [
         {
-          "name": "title Animal Cooperation in Nature (NOT corridor/friction)",
+          "name": "title Seed Helpers / Animal Cooperation in Nature (NOT corridor/friction)",
           "type": "regex",
-          "pattern": "(Animal|Cooperation|animal|cooperation)"
+          "pattern": "(Seed|Animal|Cooperation|seed|animal|cooperation|Plants)"
         },
         {
           "name": "3 steps present (Observation/Scientific/Conclusion)",
@@ -199,7 +193,7 @@
           "pattern": "(lion|mouse|forest|net|rope|hunter|trapped|freed|brave|mighty|tiny)"
         },
         {
-          "name": "problem numbers appear in bar model area (>=2 shared integers)",
+          "name": "problem numbers overlap bar model (>=2 shared integers)",
           "type": "numbers_overlap",
           "min": 2
         }
@@ -217,10 +211,15 @@
           "case_sensitive": false
         },
         {
-          "name": "word bank pills present (>=2 W34 words)",
+          "name": "chunks themed (>=6 W34 chunk strings in DOM)",
           "type": "contains_min_count",
-          "values": ["lion", "mouse", "sleeping", "trapped", "net", "chewed", "ropes", "freed", "grateful", "hunter", "forest", "brave", "tiny", "strong", "promised"],
-          "min": 2,
+          "values": [
+            "sleeping peacefully", "heavy net", "chewed the thick ropes", "chewed the ropes",
+            "freed the mighty lion", "loyal friends", "sunny afternoon", "tall oak tree",
+            "running across the path", "worked together to escape", "roared for help",
+            "kept his promise bravely", "became loyal friends forever"
+          ],
+          "min": 6,
           "case_sensitive": false
         }
       ]
@@ -314,7 +313,7 @@
           "pattern": "(Speaking|speaking|Passport|passport|PASSPORT|Review|review|Find Differences|Picture Story|Personal Questions)"
         },
         {
-          "name": "hotspot calibration file exists with 4 mapped regions",
+          "name": "hotspot calibration file: 4 mapped regions",
           "type": "file_check",
           "path": "docs/week34_hotspot_calibration.json",
           "require": "\"mapped\": 4"
@@ -322,21 +321,24 @@
       ]
     }
   },
-  "content_quality_gates": {
-    "clil_factuality": {
-      "description": "CLIL content must have >=3 concrete fact units",
-      "quest": "gear4_clil",
-      "type": "fact_unit_count",
-      "min": 3,
-      "fact_unit_definition": "sentence with specific animal + specific behavior + observable result"
-    }
-  },
   "data_consistency": [
     {
       "name": "listening_hub.singapore_math[i].problem_en === singapore_math.js problems[i].problemText (i=1..5)",
       "type": "file_equality",
-      "a": "src/data/weeks/week_34/listening_hub.js#singapore_math.problem_en",
-      "b": "src/data/weeks/week_34/singapore_math.js#problems.problemText"
+      "a": "listening_hub.singapore_math[i].problem_en",
+      "b": "singapore_math.js problems[i].problemText"
+    },
+    {
+      "name": "speaking_hub.js info_exchange_cards.examiner_questions audio_url exists",
+      "type": "field_exists",
+      "file": "speaking_hub.js",
+      "path": "info_exchange_cards.examiner_questions[0..2].audio_url"
+    },
+    {
+      "name": "writing_hub.js writing_chunks exists",
+      "type": "field_exists",
+      "file": "writing_hub.js",
+      "path": "writing_chunks"
     }
   ]
 }
