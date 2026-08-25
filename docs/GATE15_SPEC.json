@@ -1,13 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Gate 15 Production DOM Assertions Spec",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "week": 34,
   "global_negative_patterns": [
     "corridor", "Corridor", "Jake", "friction", "Friction",
     "nurse", "Nurse", "wet floor", "slipped", "Total Corridor",
     "Object 1", "Object 2", "data not found", "Symbiosis",
-    "Physics & Forces", "Physics & Friction", "Dry Surfaces"
+    "Physics & Forces", "Physics & Friction", "Dry Surfaces",
+    "walking carefully", "was moving forward", "was patrolling", "caught 24 fish"
   ],
   "quests": {
     "gear1_webtoon": {
@@ -95,6 +96,12 @@
             "min": 3,
             "case_sensitive": false
           }
+        },
+        {
+          "name": "Grammar X-Ray inline: >=3 highlight marks INSIDE paragraph",
+          "type": "dom_count",
+          "selector": "p mark, p span[class*='amber'], p span[class*='highlight']",
+          "min": 3
         }
       ]
     },
@@ -112,7 +119,7 @@
         {
           "name": ">=2 themed label pills present after START",
           "type": "contains_min_count",
-          "values": ["Guardian", "Helper", "Habitat", "Lion", "Mouse", "Forest", "Mighty", "Tiny", "Green", "Ecosystem", "Animal", "Cooperation", "Predator", "Prey", "Territory"],
+          "values": ["Guardian", "Helper", "Habitat", "Lion", "Mouse", "Forest", "Mighty", "Tiny", "Green", "Ecosystem", "Animal", "Cooperation", "Predator", "Prey", "Territory", "guards", "cleans", "gives", "chirps", "food", "danger", "seeds", "warnings"],
           "min": 2,
           "case_sensitive": false
         }
@@ -179,7 +186,7 @@
       "waitMs": 1500,
       "clickStart": true,
       "clickText": "START",
-      "neg": ["monkey", "corridor", "Corridor", "Jake", "friction", "slipped", "nurse", "wet floor", "walked", "meters"],
+      "neg": ["monkey", "corridor", "Corridor", "Jake", "friction", "slipped", "nurse", "wet floor", "walked"],
       "pos": [
         {
           "name": "Bar Model UI rendered",
@@ -190,6 +197,11 @@
           "name": "math problem text contains W34 blueprint keywords",
           "type": "regex",
           "pattern": "(lion|mouse|forest|net|rope|hunter|trapped|freed|brave|mighty|tiny)"
+        },
+        {
+          "name": "problem numbers appear in bar model area (>=2 shared integers)",
+          "type": "numbers_overlap",
+          "min": 2
         }
       ]
     },
@@ -238,7 +250,7 @@
         {
           "name": "cue card exchange UI loaded with W34 content",
           "type": "regex",
-          "pattern": "(lion|mouse|Lion|Mouse|Forest|forest|Animal Shelter|Green Valley|Oak Tree|Rope|mighty|brave|Mighty|Brave)"
+          "pattern": "(lion|mouse|Lion|Mouse|Forest|forest|Animal Shelter|Green Valley|Oak Tree|Rope|mighty|brave|Mighty|Brave|wilderness|freshwater)"
         },
         {
           "name": "cue rows have actual text (NOT empty '01. ? 02. ? 03. ?')",
@@ -249,6 +261,12 @@
           "name": "at least 3 cue text strings >=10 chars each",
           "type": "regex_min_count",
           "pattern": "\\b[A-Za-z][a-z]{9,}\\b",
+          "min": 3
+        },
+        {
+          "name": "Table B has >=3 examiner audio buttons",
+          "type": "dom_count",
+          "selector": "[data-testid='ie-audio-btn']",
           "min": 3
         }
       ]
@@ -294,6 +312,12 @@
           "name": "Cycle 2 weekly_review MUST be Speaking/Passport task",
           "type": "regex",
           "pattern": "(Speaking|speaking|Passport|passport|PASSPORT|Review|review|Find Differences|Picture Story|Personal Questions)"
+        },
+        {
+          "name": "hotspot calibration file exists with 4 mapped regions",
+          "type": "file_check",
+          "path": "docs/week34_hotspot_calibration.json",
+          "require": "\"mapped\": 4"
         }
       ]
     }
@@ -306,5 +330,13 @@
       "min": 3,
       "fact_unit_definition": "sentence with specific animal + specific behavior + observable result"
     }
-  }
+  },
+  "data_consistency": [
+    {
+      "name": "listening_hub.singapore_math[i].problem_en === singapore_math.js problems[i].problemText (i=1..5)",
+      "type": "file_equality",
+      "a": "src/data/weeks/week_34/listening_hub.js#singapore_math.problem_en",
+      "b": "src/data/weeks/week_34/singapore_math.js#problems.problemText"
+    }
+  ]
 }

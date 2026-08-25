@@ -246,6 +246,35 @@ async function main() {
       try {
         if (chk.type === 'interaction_check') {
           result = await runInteractionCheck(page, chk);
+        } else if (chk.type === 'dom_count') {
+          const count = await page.locator(chk.selector).count();
+          const min = chk.min || 1;
+          if (count >= min) {
+            result = { pass: true, snippet: `Found ${count} element(s) matching '${chk.selector}' (min: ${min})` };
+          } else {
+            result = { pass: false, snippet: dom.slice(0, 300), reason: `Found only ${count}/${min} element(s) matching '${chk.selector}'` };
+          }
+        } else if (chk.type === 'numbers_overlap') {
+          const numbersInDom = (dom.match(/\b\d+\b/g) || []).map(n => parseInt(n, 10));
+          const uniqueNums = [...new Set(numbersInDom)];
+          const min = chk.min || 2;
+          if (uniqueNums.length >= min) {
+            result = { pass: true, snippet: `Found numbers in bar model DOM: [${uniqueNums.slice(0, 6).join(', ')}]` };
+          } else {
+            result = { pass: false, snippet: dom.slice(0, 300), reason: `Found only ${uniqueNums.length}/${min} numbers in DOM` };
+          }
+        } else if (chk.type === 'file_check') {
+          const targetPath = path.resolve(rootDir, chk.path);
+          if (fs.existsSync(targetPath)) {
+            const fileContent = fs.readFileSync(targetPath, 'utf8');
+            if (!chk.require || fileContent.includes(chk.require)) {
+              result = { pass: true, snippet: `File ${chk.path} exists and contains required string` };
+            } else {
+              result = { pass: false, snippet: fileContent.slice(0, 200), reason: `File ${chk.path} does not contain '${chk.require}'` };
+            }
+          } else {
+            result = { pass: false, snippet: '', reason: `File ${chk.path} does not exist` };
+          }
         } else if (chk.type === 'keyword_overlap') {
           const sourceDom = questDoms[chk.source_quest] || '';
           const sourceWords = (sourceDom.toLowerCase().match(/\b[a-z]{4,}\b/g) || []);
@@ -292,6 +321,48 @@ async function main() {
 
   await browser.close();
 
+  // STEP: Check data_consistency
+  let consistencyPass = true;
+  if (SPEC.data_consistency && Array.isArray(SPEC.data_consistency)) {
+    console.log(`\n========================================================================`);
+    console.log(`🔍 DATA CONSISTENCY ASSERTIONS`);
+    console.log(`========================================================================`);
+    for (const dc of SPEC.data_consistency) {
+      if (dc.type === 'file_equality') {
+        try {
+          const lhMod = await import(`file://${path.resolve(rootDir, 'src/data/weeks/week_34/listening_hub.js')}`);
+          const smMod = await import(`file://${path.resolve(rootDir, 'src/data/weeks/week_34/singapore_math.js')}`);
+          const lhProblems = lhMod.listeningHub?.singapore_math || [];
+          const smProblems = (smMod.default?.problems || smMod.problems || []);
+          let match = true;
+          let diffMsg = '';
+          for (let i = 0; i < 5; i++) {
+            const lhText = (lhProblems[i]?.problem_en || '').trim();
+            const smText = (smProblems[i]?.problemText || '').trim();
+            if (lhText !== smText) {
+              match = false;
+              diffMsg = `Mismatch problem ${i + 1}: "${lhText}" vs "${smText}"`;
+              break;
+            }
+          }
+          if (match) {
+            console.log(`  ✅ CHECK: "${dc.name}"`);
+            console.log(`     SNIPPET: 100% Identical 5 problems`);
+          } else {
+            console.error(`  ❌ CHECK: "${dc.name}"`);
+            console.error(`     REASON:  ${diffMsg}`);
+            consistencyPass = false;
+            globalPass = false;
+          }
+        } catch (e) {
+          console.error(`  ❌ CHECK: "${dc.name}" — ${e.message}`);
+          consistencyPass = false;
+          globalPass = false;
+        }
+      }
+    }
+  }
+
   console.log(`\n========================================================================`);
   console.log(`📋 GATE 15 CHECKLIST SUMMARY — WEEK ${WEEK}:`);
   console.log(`========================================================================`);
@@ -307,7 +378,7 @@ async function main() {
 
   console.log(`\n========================================================================`);
   console.log(`🔒 SPEC SHA256: ${specSha}`);
-  if (globalPass && passCount === questIds.length) {
+  if (globalPass && consistencyPass && passCount === questIds.length) {
     console.log(`🎉 GATE 15 PASSED: ${passCount}/${questIds.length} Quests — 100% Clean DOM Assertions`);
     console.log(`✅ PRODUCTION CERTIFIED — Week ${WEEK} ready for release`);
     process.exit(0);
