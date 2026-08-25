@@ -45,50 +45,27 @@ export const listeningHub = {
     }
   ],
   singapore_math: [
-    {
-      id: 1,
-      problem_en: "The lion caught 24 fish on Monday and 16 fish on Tuesday. How many fish did he catch altogether?",
-      bar_model_svg: "/images/week34/barmodel_w34_adv_p1.svg",
-      answer_value: 40
-    },
-    {
-      id: 2,
-      problem_en: "The mouse collected 35 seeds. He gave 15 seeds to his friend. How many seeds did he have left?",
-      bar_model_svg: "/images/week34/barmodel_w34_adv_p2.svg",
-      answer_value: 20
-    },
-    {
-      id: 3,
-      problem_en: "The lion roared 3 times in the morning and 4 times in the evening. Each roar lasted 2 seconds. How many seconds did he roar in total?",
-      bar_model_svg: "/images/week34/barmodel_w34_adv_p3.svg",
-      answer_value: 14
-    },
-    {
-      id: 4,
-      problem_en: "The hunters had 45 feet of rope. They used 27 feet for a net. How many feet of rope remained?",
-      bar_model_svg: "/images/week34/barmodel_w34_adv_p4.svg",
-      answer_value: 18
-    },
-    {
-      id: 5,
-      problem_en: "A bird flew 12 kilometers in the morning and 18 kilometers in the afternoon. What was the total distance flown?",
-      bar_model_svg: "/images/week34/barmodel_w34_adv_p5.svg",
-      answer_value: 30
-    }
+    { id: 1, problem_en: "The hunters had 60 meters of strong rope. They used 25 meters to make the net. How many meters of rope were left?", bar_model_svg: "/images/week34/barmodel_w34_adv_p1.svg", answer_value: 35 },
+    { id: 2, problem_en: "The lion slept for 14 hours during the day and rested for 4 hours at night. How many hours did he rest in total?", bar_model_svg: "/images/week34/barmodel_w34_adv_p2.svg", answer_value: 18 },
+    { id: 3, problem_en: "The mouse ran 80 meters to reach the trapped lion. A rabbit ran 45 meters. How many more meters did the mouse run?", bar_model_svg: "/images/week34/barmodel_w34_adv_p3.svg", answer_value: 35 },
+    { id: 4, problem_en: "The net had 30 thick ropes. The mouse chewed 18 ropes in the morning. How many ropes were left to chew?", bar_model_svg: "/images/week34/barmodel_w34_adv_p4.svg", answer_value: 12 },
+    { id: 5, problem_en: "There were 50 animals in the forest clearing. 32 were birds and the rest were small mammals. How many small mammals were there?", bar_model_svg: "/images/week34/barmodel_w34_adv_p5.svg", answer_value: 18 }
   ],
   science_lab: {
     experimentTitle: "Animal Cooperation & Ecosystem Lab",
     diagramImage: "/images/week34/explore_cover_w34.jpg",
-    explanation: "Explore how the mighty lion, tiny mouse, and tall trees help each other survive and thrive in the forest.",
+    explanation: "Match each forest job to the animal that does it. These are real jobs animals do to help the forest!",
     targets: [
-      { id: "t1", name: "Lion (Guardian)", x: 25, y: 60 },
-      { id: "t2", name: "Mouse (Helper)", x: 75, y: 65 },
-      { id: "t3", name: "Forest Trees (Habitat)", x: 50, y: 30 }
+      { id: "t1", name: "Lion", x: 25, y: 60 },
+      { id: "t2", name: "Mouse", x: 75, y: 65 },
+      { id: "t3", name: "Forest Trees", x: 50, y: 30 },
+      { id: "t4", name: "Warning Birds", x: 62, y: 22 }
     ],
     labels: [
-      { id: "lbl_1", text: "Mighty Guardian", targetId: "t1" },
-      { id: "lbl_2", text: "Tiny Helper", targetId: "t2" },
-      { id: "lbl_3", text: "Green Habitat", targetId: "t3" }
+      { id: "lbl_1", text: "guards the forest from danger", targetId: "t1" },
+      { id: "lbl_2", text: "cleans the floor and plants new seeds", targetId: "t2" },
+      { id: "lbl_3", text: "gives food, shade and warm homes", targetId: "t3" },
+      { id: "lbl_4", text: "chirps loud warnings when predators come", targetId: "t4" }
     ]
   },
   listening_p1: {

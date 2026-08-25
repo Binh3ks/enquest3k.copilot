@@ -25,6 +25,11 @@ export const speakingHub = {
       "Where is the lion's wilderness location?",
       "What is his favorite freshwater food?",
       "When does he enjoy peaceful afternoons?"
+    ],
+    examiner_questions: [
+      { text: "Where does the lion live?", audio_url: "/audio/week34/ie_examiner_q1.mp3" },
+      { text: "What is the lion's favorite food?", audio_url: "/audio/week34/ie_examiner_q2.mp3" },
+      { text: "When does he like to rest?", audio_url: "/audio/week34/ie_examiner_q3.mp3" }
     ]
   },
   find_differences: {
@@ -37,10 +42,10 @@ export const speakingHub = {
       image_url: "/images/week34/w34_diff_scene_b.jpg"
     },
     differences: [
-      { id: "d1", name: "Mouse Tail Direction", x: 45, y: 70, prompt_en: "In Picture A, the mouse tail points up, but in Picture B, it points down." },
-      { id: "d2", name: "Tree Flower Color", x: 20, y: 35, prompt_en: "In Picture A, the flower is pink, but in Picture B, it is yellow." },
-      { id: "d3", name: "Butterfly on Rock", x: 75, y: 60, prompt_en: "In Picture A, there is a blue butterfly, but in Picture B, there is no butterfly." },
-      { id: "d4", name: "Sun Position", x: 85, y: 15, prompt_en: "In Picture A, the sun is high, but in Picture B, it is behind a cloud." }
+      { id: "d1", name: "Mouse Tail Direction", x: 22, y: 69, prompt_en: "In Picture A, the mouse tail points up, but in Picture B, it points down." },
+      { id: "d2", name: "Tree Flower Color", x: 38, y: 16, prompt_en: "In Picture A, the flower is pink, but in Picture B, it is yellow." },
+      { id: "d3", name: "Butterfly on Rock", x: 84, y: 43, prompt_en: "In Picture A, there is a blue butterfly, but in Picture B, there is no butterfly." },
+      { id: "d4", name: "Sun Position", x: 85, y: 36, prompt_en: "In Picture A, the sun is high, but in Picture B, it is behind a cloud." }
     ]
   }
 };

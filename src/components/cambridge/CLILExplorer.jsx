@@ -58,6 +58,22 @@ export default function CLILExplorer({
     ];
   }, [fullText]);
 
+  const grammarLegend = useMemo(() => {
+    const src = currentPhase === 2 ? (paragraphs[1] || paragraphs[0]) : paragraphs[0];
+    const out = [];
+    grammarPatterns.forEach((gp) => {
+      try {
+        const re = new RegExp(gp.pattern, 'gi');
+        let m;
+        while ((m = re.exec(src)) !== null && out.length < 8) {
+          out.push(m[0]);
+          if (m.index === re.lastIndex) re.lastIndex++;
+        }
+      } catch (_) {}
+    });
+    return out;
+  }, [paragraphs, grammarPatterns, currentPhase]);
+
   // Questions derived from clilData
   const allQuestions = useMemo(() => {
     const rawQs = clilData?.comprehension_questions || clilData?.check_questions || [];
@@ -253,12 +269,18 @@ export default function CLILExplorer({
             </span>
           </div>
           <div className="flex flex-wrap gap-2 text-xs font-black text-amber-950">
-            <span className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">was patrolling</span>
-            <span className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">was gathering</span>
-            <span className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">were chirping</span>
-            <span className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">were approaching</span>
-            <span className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">were helping</span>
+            {grammarLegend.length === 0 && (
+              <span className="px-2.5 py-1 bg-rose-100 text-rose-700 rounded-lg border border-rose-300">
+                ⚠️ No Past Continuous found in this paragraph — check data!
+              </span>
+            )}
+            {grammarLegend.map((g, i) => (
+              <span key={i} className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">{g}</span>
+            ))}
           </div>
+          <p className="text-[10px] text-amber-800 font-bold">
+            👇 These phrases are highlighted inline inside the paragraph below.
+          </p>
         </div>
       )}
 
@@ -347,7 +369,7 @@ export default function CLILExplorer({
               <span>📖 PARAGRAPH 2: {(clilData?.part_2_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
             <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
-              {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, highlightMode, targetGrammarRegex)}
+              {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, activeHighlightMode, grammarPatterns)}
             </p>
 
             {/* Paragraph 2 Check Questions */}

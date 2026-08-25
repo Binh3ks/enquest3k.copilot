@@ -22,7 +22,8 @@
     "audit:chunks": "node scripts/audit_chunks.js",
     "audit:week": "node scripts/gate7_master_week_audit.mjs",
     "audit:week:tasks": "node scripts/audit_week_tasks.mjs",
-    "audit:cefr": "node scripts/cefr_curriculum_guard.mjs"
+    "audit:cefr": "node scripts/cefr_curriculum_guard.mjs",
+    "calibrate:diff": "node scripts/calibrate_find_differences.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

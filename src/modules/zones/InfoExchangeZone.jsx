@@ -342,18 +342,54 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
 
         {/* Phase Pill Indicators */}
         <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-          <div className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-            phase === 'table_a' ? 'bg-indigo-600 text-white shadow-sm' : 'bg-emerald-100 text-emerald-800'
-          }`}>
+          <button
+            type="button"
+            onClick={() => setPhase('table_a')}
+            className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 cursor-pointer ${
+              phase === 'table_a' ? 'bg-indigo-600 text-white shadow-sm' : 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
+            }`}
+          >
             <span>📋 Table A (You Ask)</span>
             {phase === 'table_b' && <CheckCircle2 size={13} />}
-          </div>
+          </button>
           <ArrowRight size={14} className="text-slate-300" />
-          <div className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-            phase === 'table_b' ? 'bg-purple-600 text-white shadow-sm' : 'bg-slate-100 text-slate-400'
-          }`}>
+          <button
+            type="button"
+            onClick={() => setPhase('table_b')}
+            className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 cursor-pointer ${
+              phase === 'table_b' ? 'bg-purple-600 text-white shadow-sm' : 'bg-slate-100 text-slate-400 hover:bg-slate-200'
+            }`}
+          >
             <span>🎙️ Table B (You Answer)</span>
-          </div>
+          </button>
+        </div>
+      </div>
+
+      {/* Examiner Audio Questions Bar (Table B Audio Controls) */}
+      <div className="p-3.5 bg-purple-50/90 border border-purple-200 rounded-2xl flex flex-wrap items-center justify-between gap-3 shadow-xs">
+        <span className="text-[11px] font-black uppercase text-purple-900 flex items-center gap-1.5">
+          <Volume2 size={14} className="text-purple-700" /> Examiner Questions Audio (Table B):
+        </span>
+        <div className="flex flex-wrap items-center gap-2">
+          {(infoExData?.examiner_questions || [
+            { text: "Where does the lion live?", audio_url: "/audio/week34/ie_examiner_q1.mp3" },
+            { text: "What is the lion's favorite food?", audio_url: "/audio/week34/ie_examiner_q2.mp3" },
+            { text: "When does he like to rest?", audio_url: "/audio/week34/ie_examiner_q3.mp3" }
+          ]).map((eq, i) => (
+            <button
+              key={i}
+              type="button"
+              data-testid="ie-audio-btn"
+              onClick={() => {
+                const url = eq.audio_url || `/audio/week34/ie_examiner_q${i + 1}.mp3`;
+                VoiceService.speak(eq.text, 'story', { audioUrl: url }).catch(() => VoiceService.speak(eq.text, 'story'));
+              }}
+              className="px-3 py-1.5 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-sm active:scale-95"
+              title={`Play Question ${i + 1}: ${eq.text}`}
+            >
+              <Volume2 size={13} /> Q{i + 1} Audio
+            </button>
+          ))}
         </div>
       </div>
 
