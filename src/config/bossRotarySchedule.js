@@ -21,32 +21,32 @@ export const BOSS_ROTARY_CYCLES = {
   2: {
     cycleName: "Color, Code & Lexicon Quests",
     subtitle: "Focus on Audio Quiz, Word Matching & Vector Color",
-    testedSkills: ["listening_p4", "listening_p5", "rw_p1"],
-    shieldCount: 3,
+    testedSkills: ["listening_p4", "listening_p5", "rw_p1", "speaking_p1"],
+    shieldCount: 4,
     approxDurationMin: 15,
     bossTitle: "Chroma Detective Nova",
     bossAvatar: "🎨",
-    bossDescription: "3-Picture audio quiz, definition word matching, and vector color coordination!"
+    bossDescription: "3-Picture audio quiz, vector color coordination, word matching, and spot the differences!"
   },
   3: {
     cycleName: "Deep Reading & Cloze Quests",
-    subtitle: "Focus on Dialogue, Story Logic & Open Cloze",
-    testedSkills: ["rw_p2", "rw_p3", "rw_p4", "rw_p5", "rw_p6"],
-    shieldCount: 5,
+    subtitle: "Focus on Dialogue, Story Logic & Comprehension",
+    testedSkills: ["rw_p2", "rw_p3", "rw_p4", "rw_p5"],
+    shieldCount: 4,
     approxDurationMin: 20,
     bossTitle: "Grand Inquisitor Nova",
     bossAvatar: "📜",
-    bossDescription: "Read passages, complete tricky cloze gaps, extract keywords and solve open cloze!"
+    bossDescription: "Read passages, complete dialogue turns, solve cloze gaps, and extract story keywords!"
   },
   4: {
     cycleName: "Master Creator & Speaking Quests",
-    subtitle: "Focus on 3-Picture Writing & Voice Examination",
-    testedSkills: ["rw_p7", "speaking_p1", "speaking_p2", "speaking_p3_p4"],
+    subtitle: "Focus on Open Cloze, Story Writing & Voice Examination",
+    testedSkills: ["rw_p6", "rw_p7", "speaking_p2", "speaking_p3"],
     shieldCount: 4,
     approxDurationMin: 20,
     bossTitle: "Examiner Titan Nova",
     bossAvatar: "🎙️",
-    bossDescription: "Write a 3-picture story, spot differences, ask questions and tell a continuous tale."
+    bossDescription: "Complete open cloze, ask & answer cue-card questions, and narrate picture stories."
   },
   0: { // Module 5 remainder (e.g. W37, W42, W47, W52, W72)
     cycleName: "Full Cambridge A2 Flyers Mock Exam",

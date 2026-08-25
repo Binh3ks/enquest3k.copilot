@@ -130,6 +130,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     if (rotaryConfig.cycleNumber === 2) {
       return [
         { id: 'list_p4', name: 'Listening Part 4: 3-Picture Quiz', shieldName: 'Shield 4 (Listening P4)' },
+        { id: 'list_p5', name: 'Listening Part 5: Color & Write', shieldName: 'Shield 5 (Listening P5)' },
         { id: 'rw_p1', name: 'Reading Part 1: Word Bank Match', shieldName: 'Shield 6 (R&W P1)' },
         { id: 'spk_p1', name: 'Speaking Part 1: Find Differences', shieldName: 'Shield 13 (Speaking P1)' },
       ];
@@ -138,6 +139,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     if (rotaryConfig.cycleNumber === 3) {
       return [
         { id: 'rw_p2', name: 'Reading Part 2: Dialogue A-H', shieldName: 'Shield 7 (R&W P2)' },
+        { id: 'rw_p3', name: 'Reading Part 3: Cloze Story & Title', shieldName: 'Shield 8 (R&W P3)' },
         { id: 'rw_p4', name: 'Reading Part 4: 10-Gap Cloze', shieldName: 'Shield 9 (R&W P4)' },
         { id: 'rw_p5', name: 'Reading Part 5: Story Detective', shieldName: 'Shield 10 (R&W P5)' },
       ];
@@ -145,8 +147,9 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
 
     // Cycle 4
     return [
-      { id: 'spk_p1', name: 'Speaking Part 1: Find Differences', shieldName: 'Shield 13 (Speaking P1)' },
+      { id: 'rw_p6', name: 'Reading Part 6: Open Cloze', shieldName: 'Shield 11 (R&W P6)' },
       { id: 'spk_p2', name: 'Speaking Part 2: Ask & Answer (Cue Card)', shieldName: 'Shield 14 (Speaking P2)' },
+      { id: 'spk_p3', name: 'Speaking Part 3: Picture Story', shieldName: 'Shield 15 (Speaking P3)' },
     ];
   }, [rotaryConfig, isFullMock]);
 
