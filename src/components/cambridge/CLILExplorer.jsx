@@ -39,7 +39,8 @@ export default function CLILExplorer({
   const vocabPills = useMemo(() => {
     if (Array.isArray(clilData?.vocab_focus) && clilData.vocab_focus.length > 0) return clilData.vocab_focus;
     if (Array.isArray(clilData?.target_vocab) && clilData.target_vocab.length > 0) return clilData.target_vocab;
-    return ["lion", "mouse", "forest", "hunter", "trapped", "net", "rope", "chewed", "freed", "brave", "tiny", "mighty", "grateful", "promise", "sleeping"];
+    if (Array.isArray(clilData?.glossary) && clilData.glossary.length > 0) return clilData.glossary.map(g => g.term.toLowerCase());
+    return [];
   }, [clilData]);
 
   // Default Paragraph Split

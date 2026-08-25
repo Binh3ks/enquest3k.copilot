@@ -89,8 +89,8 @@ function adaptInfoExchangeCards(infoCards) {
 
   const candidateCard = infoCards.candidate_card || infoCards.table_a || {};
   const examinerCard = infoCards.examiner_card || infoCards.table_b || {};
-  const cardATitle = candidateCard.title || "The Lion's Home";
-  const cardBTitle = examinerCard.title || "The Mouse's Home";
+  const cardATitle = candidateCard.title || "Candidate Card";
+  const cardBTitle = examinerCard.title || "Examiner Card";
 
   const toFieldsA = (card) => {
     const items = card.items || card.fields || [];

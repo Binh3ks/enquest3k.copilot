@@ -1,9 +1,9 @@
 {
-  "commit": "26b628cd82b86497c98464528f61e144fcab70d6",
-  "git_commit": "26b628cd82b86497c98464528f61e144fcab70d6",
-  "shortCommit": "26b628cd",
-  "message": "tooling(gate15): support week-aware spec file resolution",
-  "builtAt": "2026-08-25T07:47:51.746Z",
-  "build_timestamp": "2026-08-25T07:47:51.746Z",
+  "commit": "b29baabb787463a091cbf7d47bc31ca97aae686e",
+  "git_commit": "b29baabb787463a091cbf7d47bc31ca97aae686e",
+  "shortCommit": "b29baabb",
+  "message": "build: compile assets and update version stamp",
+  "builtAt": "2026-08-25T07:52:38.204Z",
+  "build_timestamp": "2026-08-25T07:52:38.204Z",
   "env": "production"
 }

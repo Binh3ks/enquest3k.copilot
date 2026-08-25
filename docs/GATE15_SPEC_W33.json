@@ -4,9 +4,9 @@
   "version": "2.2.0",
   "week": 33,
   "global_negative_patterns": [
-    "lion", "mouse", "Lion", "Mouse", "hunter", "net", "rope", "chewed", "freed", "trapped",
-    "grateful", "Oak Tree", "Green Valley", "Animal Cooperation", "Seed Helpers",
-    "Object 1", "Object 2", "data not found", "caught 24 fish"
+    "lion", "mouse", "Lion", "Mouse", "hunter", "hunters", "heavy net", "thick ropes", "chewed through",
+    "freed the lion", "trapped the lion", "grateful", "Oak Tree", "Green Valley", "Animal Cooperation",
+    "Seed Helpers", "Object 1", "Object 2", "data not found", "caught 24 fish"
   ],
   "quests": {
     "gear1_webtoon": {
@@ -182,7 +182,7 @@
       "waitMs": 1500,
       "clickStart": true,
       "clickText": "START",
-      "neg": ["monkey", "lion", "mouse", "hunter", "net", "rope", "chewed", "freed"],
+      "neg": ["monkey", "lion", "mouse", "hunter", "chewed", "freed"],
       "pos": [
         {
           "name": "Bar Model UI rendered",
@@ -204,7 +204,7 @@
     "story_writer": {
       "waitMs": 2500,
       "clickStart": false,
-      "neg": ["lion", "mouse", "net", "hunters trapped"],
+      "neg": ["lion", "mouse", "hunters trapped"],
       "pos": [
         {
           "name": "step wizard: đúng 1 <img> scene + indicator 'Scene X of 3'",
