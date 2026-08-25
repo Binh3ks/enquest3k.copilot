@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Gate 15 Production DOM Assertions Spec",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "week": 34,
   "global_negative_patterns": [
     "corridor", "Corridor", "Jake", "friction", "Friction",

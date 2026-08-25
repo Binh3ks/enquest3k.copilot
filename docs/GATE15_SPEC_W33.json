@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Gate 15 Production DOM Assertions Spec — Week 33",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "week": 33,
   "global_negative_patterns": [
     "lion", "mouse", "Lion", "Mouse", "hunter", "hunters", "heavy net", "thick ropes", "chewed through",

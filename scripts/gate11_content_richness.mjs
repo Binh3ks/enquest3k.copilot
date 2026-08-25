@@ -55,27 +55,35 @@ try {
   errors.push(`Error loading reading_hub.js: ${e.message}`);
 }
 
-// 3. Check Listening Hub
+// 3. Check Skill Practice / Listening Hub
 try {
-  const listeningHubPath = path.join(weekDir, 'listening_hub.js');
-  const listeningHubModule = await import(`file://${listeningHubPath}`);
-  const lh = listeningHubModule.listeningHub || listeningHubModule.default;
+  let skillHub = null;
+  const skillPracticePath = path.join(weekDir, 'skill_practice_hub.js');
+  if (fs.existsSync(skillPracticePath)) {
+    const spModule = await import(`file://${skillPracticePath}`);
+    skillHub = spModule.skillPracticeHub || spModule.skillPracticeHubData || spModule.default;
+  }
+  if (!skillHub) {
+    const listeningHubPath = path.join(weekDir, 'listening_hub.js');
+    const listeningHubModule = await import(`file://${listeningHubPath}`);
+    skillHub = listeningHubModule.listeningHub || listeningHubModule.listeningHubData || listeningHubModule.default;
+  }
 
-  if (!lh.dictation || lh.dictation.length !== 5) {
-    errors.push(`Expected 5 dictation sentences, found ${lh.dictation?.length || 0}`);
+  if (!skillHub.dictation || skillHub.dictation.length !== 5) {
+    errors.push(`Expected 5 dictation sentences, found ${skillHub?.dictation?.length || 0}`);
   }
-  if (!lh.singapore_math || lh.singapore_math.length !== 5) {
-    errors.push(`Expected 5 singapore_math items, found ${lh.singapore_math?.length || 0}`);
+  if (!skillHub.singapore_math || skillHub.singapore_math.length !== 5) {
+    errors.push(`Expected 5 singapore_math items, found ${skillHub?.singapore_math?.length || 0}`);
   }
-  if (!lh.grammar_drills || lh.grammar_drills.length !== 5) {
-    errors.push(`Expected 5 grammar_drills items, found ${lh.grammar_drills?.length || 0}`);
+  if (!skillHub.grammar_drills || skillHub.grammar_drills.length !== 5) {
+    errors.push(`Expected 5 grammar_drills items, found ${skillHub?.grammar_drills?.length || 0}`);
   }
-  const labTargets = lh.science_lab?.targets || lh.science_lab?.zones || [];
-  if (!lh.science_lab || labTargets.length < 3) {
+  const labTargets = skillHub.science_lab?.targets || skillHub.science_lab?.zones || [];
+  if (!skillHub.science_lab || labTargets.length < 3) {
     errors.push(`science_lab missing or has fewer than 3 drag targets`);
   }
 } catch (e) {
-  errors.push(`Error loading listening_hub.js: ${e.message}`);
+  errors.push(`Error loading skill_practice_hub.js / listening_hub.js: ${e.message}`);
 }
 
 // 4. Check Vocab

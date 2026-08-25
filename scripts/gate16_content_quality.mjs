@@ -147,16 +147,25 @@ async function runAudit() {
   }
 
   // 4. Singapore Math file equality
-  const lhMod = await import(`file://${path.join(weekDir, 'listening_hub.js')}`);
-  const lh = lhMod.listeningHub || lhMod.listeningHubData || lhMod.default || lhMod;
+  let mathHub = null;
+  const spPath = path.join(weekDir, 'skill_practice_hub.js');
+  if (fs.existsSync(spPath)) {
+    const spMod = await import(`file://${spPath}`);
+    mathHub = spMod.skillPracticeHub || spMod.skillPracticeHubData || spMod.default || spMod;
+  }
+  if (!mathHub || !mathHub.singapore_math) {
+    const lhMod = await import(`file://${path.join(weekDir, 'listening_hub.js')}`);
+    mathHub = lhMod.listeningHub || lhMod.listeningHubData || lhMod.default || lhMod;
+  }
+
   const smMod = await import(`file://${path.join(weekDir, 'singapore_math.js')}`);
   const sm = smMod.singaporeMath || smMod.default || smMod;
 
-  const lhMath = lh.singapore_math || [];
+  const lhMath = mathHub.singapore_math || [];
   const smMath = sm.problems || sm.singapore_math || [];
 
   if (lhMath.length !== 5 || smMath.length !== 5) {
-    errors.push(`Math problems count mismatch: listening_hub (${lhMath.length}) vs singapore_math.js (${smMath.length})`);
+    errors.push(`Math problems count mismatch: skill_practice_hub/listening_hub (${lhMath.length}) vs singapore_math.js (${smMath.length})`);
   } else {
     for (let i = 0; i < 5; i++) {
       const lhText = (lhMath[i]?.problem_en || lhMath[i]?.text || lhMath[i]?.problemText || '').trim();

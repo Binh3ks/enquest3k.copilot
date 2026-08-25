@@ -47,10 +47,10 @@ export const skillPracticeHub = {
   ],
   singapore_math: [
     { id: 1, problem_en: "Jake walked 40 meters. The corridor is 100 meters long. How many meters are left?", bar_model_svg: "/images/week33/barmodel_w33_adv_p1.svg", answer_value: 60 },
-    { id: 2, problem_en: "A box has 85 bandages. The nurse used 28 bandages. How many bandages remain?", bar_model_svg: "/images/week33/barmodel_w33_adv_p2.svg", answer_value: 57 },
-    { id: 3, problem_en: "Tom walked 65 meters. Jake walked 90 meters. How much further did Jake walk?", bar_model_svg: "/images/week33/barmodel_w33_adv_p3.svg", answer_value: 25 },
-    { id: 4, problem_en: "The nurse had 4 packs of 12 cold packs. How many cold packs does she have in total?", bar_model_svg: "/images/week33/barmodel_w33_adv_p4.svg", answer_value: 48 },
-    { id: 5, problem_en: "45 students were in the corridor. 27 entered classrooms. How many students are still in the corridor?", bar_model_svg: "/images/week33/barmodel_w33_adv_p5.svg", answer_value: 18 }
+    { id: 2, problem_en: "The nurse had 25 bandages. She used 8 bandages. How many bandages remain?", bar_model_svg: "/images/week33/barmodel_w33_adv_p2.svg", answer_value: 17 },
+    { id: 3, problem_en: "Tom rested for 15 minutes and applied ice for 10 minutes. What is the total treatment time?", bar_model_svg: "/images/week33/barmodel_w33_adv_p3.svg", answer_value: 25 },
+    { id: 4, problem_en: "Class 4A has 30 students. 24 students followed safety rules. How many ran?", bar_model_svg: "/images/week33/barmodel_w33_adv_p4.svg", answer_value: 6 },
+    { id: 5, problem_en: "The headmaster gave 5 safety stars to each of 4 helpers. How many stars in total?", bar_model_svg: "/images/week33/barmodel_w33_adv_p5.svg", answer_value: 20 }
   ],
   science_lab: {
     experimentTitle: "Corridor Friction & Safety Physics Lab",

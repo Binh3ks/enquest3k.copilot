@@ -507,9 +507,15 @@ async function main() {
     for (const dc of SPEC.data_consistency) {
       if (dc.type === 'file_equality') {
         try {
-          const lhMod = await import(`file://${path.resolve(rootDir, 'src/data/weeks/week_34/listening_hub.js')}`);
-          const smMod = await import(`file://${path.resolve(rootDir, 'src/data/weeks/week_34/singapore_math.js')}`);
-          const lhProblems = lhMod.listeningHub?.singapore_math || [];
+          const spPath = path.resolve(rootDir, `src/data/weeks/week_${WEEK}/skill_practice_hub.js`);
+          let spMod = null;
+          if (fs.existsSync(spPath)) {
+            spMod = await import(`file://${spPath}`);
+          } else {
+            spMod = await import(`file://${path.resolve(rootDir, `src/data/weeks/week_${WEEK}/listening_hub.js`)}`);
+          }
+          const smMod = await import(`file://${path.resolve(rootDir, `src/data/weeks/week_${WEEK}/singapore_math.js`)}`);
+          const lhProblems = spMod.skillPracticeHub?.singapore_math || spMod.skillPracticeHubData?.singapore_math || spMod.listeningHub?.singapore_math || [];
           const smProblems = (smMod.default?.problems || smMod.problems || []);
           let match = true;
           let diffMsg = '';
@@ -538,7 +544,7 @@ async function main() {
         }
       } else if (dc.type === 'field_exists') {
         try {
-          const mod = await import(`file://${path.resolve(rootDir, 'src/data/weeks/week_34/' + dc.file)}`);
+          const mod = await import(`file://${path.resolve(rootDir, `src/data/weeks/week_${WEEK}/` + dc.file)}`);
           const data = mod.default || mod[Object.keys(mod)[0]];
           let ok = true;
           let detail = '';
