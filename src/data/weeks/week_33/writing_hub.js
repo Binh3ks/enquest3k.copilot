@@ -92,117 +92,94 @@ export const writingHubData = {
   },
   rw_part_2: {
     title: "Harry & Jake's Corridor Incident Conversation",
-    example: { gap_id: 0, speaker_a: "Harry", speaker_b: "Jake", text_a: "Hello Jake! Did you have a busy morning at school?", text_b: "Yes, we had our morning science experiment.", target: "opt_0" },
-    dialogue: [
-      { gap_id: 1, speaker_a: "Harry", speaker_b: "Jake", text_a: "Hi Jake! Did you see what happened in the corridor after science class today?" },
-      { gap_id: 2, speaker_a: "Harry", speaker_b: "Jake", text_a: "Oh no! Did Tom hurt himself badly when he fell down?" },
-      { gap_id: 3, speaker_a: "Harry", speaker_b: "Jake", text_a: "What did you do right away to help him?" },
-      { gap_id: 4, speaker_a: "Harry", speaker_b: "Jake", text_a: "How did the school nurse treat Tom's injured knee?" },
-      { gap_id: 5, speaker_a: "Harry", speaker_b: "Jake", text_a: "The headmaster praised you during assembly, didn't he?" }
+    example: { speaker_a: "Harry", text_a: "Why were you walking so carefully today?", speaker_b: "Jake", answer_letter: "D", answer_text: "I noticed a wet puddle near the science room." },
+    turns: [
+      { id: "q1", speaker_a: "Harry", text_a: "Did you see what happened when the boy ran fast?", correct_letter: "G" },
+      { id: "q2", speaker_a: "Jake", text_a: "He slipped on the wet tiles and hurt his knee!", correct_letter: "B" },
+      { id: "q3", speaker_a: "Harry", text_a: "What did you do right away to help him?", correct_letter: "A" },
+      { id: "q4", speaker_a: "Harry", text_a: "Did the school nurse arrive quickly?", correct_letter: "F" },
+      { id: "q5", speaker_a: "Jake", text_a: "She treated his knee with a clean bandage.", correct_letter: "E" }
     ],
-    options: [
-      { id: "opt_1", text: "Yes, I was walking carefully down the corridor when Tom slipped on the wet floor.", for_gap: 1 },
-      { id: "opt_2", text: "Yes, he lost his balance on the wet tiles and hurt his knee quite badly.", for_gap: 2 },
-      { id: "opt_3", text: "I stopped immediately and ran to call the school nurse for help.", for_gap: 3 },
-      { id: "opt_4", text: "She placed a cold pack on his knee and wrapped it gently with a clean bandage.", for_gap: 4 },
-      { id: "opt_5", text: "Yes, he was very pleased that I followed all school safety rules.", for_gap: 5 },
-      { id: "opt_6", text: "I usually eat lunch with my classmates in the school cafeteria.", for_gap: null },
-      { id: "opt_7", text: "The yellow warning sign is placed next to the classroom entrance.", for_gap: null },
-      { id: "opt_8", text: "We have our science experiment every Tuesday morning at nine.", for_gap: null }
+    answer_options: [
+      { letter: "A", text: "I stayed calm and ran to call the school nurse immediately." },
+      { letter: "B", text: "Yes, he lost his balance and fell heavily near the stairs." },
+      { letter: "C", text: "I'm sorry for disturbing your quiet study time." },
+      { letter: "D", text: "I noticed a wet puddle near the science room." },
+      { letter: "E", text: "Everyone felt relieved and praised us for following safety rules." },
+      { letter: "F", text: "Yes, she arrived within two minutes with her first-aid kit." },
+      { letter: "G", text: "Yes, he was rushing past the science room in a hurry." },
+      { letter: "H", text: "I will call the headmaster during morning assembly." }
+    ]
+  },
+  rw_part_3: {
+    story_text: "Harry was ___ because he was starting his first science experiment today. But there was a lot of ___ on the stairs as students were rushing. 'I hope we can find ___ safe to walk,' said Jake. They arrived very ___ after the bell rang. 'That was the ___ corridor rush ever,' said Harry. But the teacher gave them a warm ___ with fun lab goggles. 'That's amazing!' said Harry. 'Science is the best subject in school!'",
+    example: { blank: 1, answer: "excited", word_bank: ["excited", "surprise", "late", "bored", "deepest", "somewhere", "worst", "ago", "explored", "traffic"] },
+    blanks: [
+      { id: 2, answer: "traffic" },
+      { id: 3, answer: "somewhere" },
+      { id: 4, answer: "late" },
+      { id: 5, answer: "worst" },
+      { id: 6, answer: "surprise" }
+    ],
+    title_options: [
+      { text: "Harry's safe morning at school", isCorrect: true },
+      { text: "Grandma's new classroom", isCorrect: false },
+      { text: "Running fast in corridors", isCorrect: false }
     ]
   },
   rw_part_4: {
-    example: { id: 0, target: "walked", options: ["walked", "walking", "walk"] },
-    gaps: [
-      { id: 1, target: "carefully", options: ["carefully", "careful", "care"] },
-      { id: 2, target: "corridor", options: ["corridor", "playground", "library"] },
-      { id: 3, target: "slipped", options: ["slipped", "slipping", "slips"] },
-      { id: 4, target: "fell", options: ["fell", "fallen", "falling"] },
-      { id: 5, target: "Without", options: ["Without", "With", "Within"] },
-      { id: 6, target: "called", options: ["called", "calling", "calls"] },
-      { id: 7, target: "nurse", options: ["nurse", "doctor", "teacher"] },
-      { id: 8, target: "bandage", options: ["bandage", "bandaged", "bandaging"] },
-      { id: 9, target: "praised", options: ["praised", "praise", "praising"] },
-      { id: 10, target: "relieved", options: ["relieved", "relief", "relieving"] }
-    ],
-    title_options: [
-      { id: 1, title: "A Dangerous Run Near the Science Room", target: false },
-      { id: 2, title: "Jake's Responsible Action in the School Corridor", target: true },
-      { id: 3, title: "How Teachers Clean Science Experiments", target: false }
+    text_template: "Students walk down the corridor [1] every morning. When floors are wet, there is less [2] between shoes and tiles. It is important to [3] warning signs placed near doors. Yesterday, Jake [4] another boy who was running too fast. The boy slipped and [5] down heavily near the stairs. Jake [6] immediately to assist his classmate. He ran to [7] the school nurse for quick help. The nurse applied a clean bandage [8] his injured knee. Everyone learned to walk [9] inside school buildings. Safe habits make school a [10] place for all children.",
+    example: { blank: 1, correct: "carefully", options: ["carefully", "careful", "careless"] },
+    blanks: [
+      { id: 2, correct: "friction", options: ["friction", "frictional", "frictions"] },
+      { id: 3, correct: "notice", options: ["notice", "notices", "noticed"] },
+      { id: 4, correct: "saw", options: ["see", "saw", "seen"] },
+      { id: 5, correct: "fell", options: ["fall", "fell", "fallen"] },
+      { id: 6, correct: "stopped", options: ["stop", "stops", "stopped"] },
+      { id: 7, correct: "call", options: ["call", "calls", "called"] },
+      { id: 8, correct: "on", options: ["on", "in", "at"] },
+      { id: 9, correct: "safely", options: ["safe", "safely", "safer"] },
+      { id: 10, correct: "better", options: ["good", "better", "best"] }
     ]
   },
   rw_part_5: {
-    instructions: "Complete the sentences about the story. Write 1, 2, 3 or 4 words.",
-    example: { id: 0, text_before: "Jake was walking in the ", text_after: " after his class.", target: "school corridor", paragraph_ref: 1 },
-    story: {
-      title: "Jake's Quick Action in the School Corridor",
-      paragraphs: [
-        { id: 1, text: "On a bright Friday morning, Jake was walking carefully down the main school corridor after finishing his science class. Suddenly, he noticed another student running very fast past the science room. The floor was slippery because a cleaner had just washed the tiles." },
-        { id: 2, text: "The running classmate lost his balance and fell down heavily near the stairs. Right away, Jake stopped immediately and ran to call the school nurse. The nurse arrived within two minutes carrying a clean bandage and a cold pack to treat the boy's swollen knee." },
-        { id: 3, text: "The headmaster praised Jake during assembly for following all school safety rules and helping his classmate responsibly. All the students felt relieved and promised to walk carefully down the corridor in the future." }
-      ]
-    },
-    summary_sentences: [
-      { id: 1, text_before: "Jake was walking down the school corridor after his ", text_after: ".", target: "science class", paragraph_ref: 1 },
-      { id: 2, text_before: "The floor was slippery because a cleaner had just ", text_after: " the tiles.", target: "washed", paragraph_ref: 1 },
-      { id: 3, text_before: "The classmate lost his balance and ", text_after: " heavily near the stairs.", target: "fell down", paragraph_ref: 2 },
-      { id: 4, text_before: "Jake ran to call the ", text_after: " for help.", target: "school nurse", paragraph_ref: 2 },
-      { id: 5, text_before: "The nurse used a clean bandage and a ", text_after: " to treat the boy.", target: "cold pack", paragraph_ref: 2 },
-      { id: 6, text_before: "The headmaster praised Jake during ", text_after: " for helping his classmate.", target: "assembly", paragraph_ref: 3 },
-      { id: 7, text_before: "All students promised to walk ", text_after: " in the corridor.", target: "carefully", paragraph_ref: 3 }
+    title: "Jake's Quick Action in the School Corridor",
+    story_text: "On a bright Friday morning, Jake was walking carefully down the main school corridor after finishing his science class. Suddenly, he noticed another student running very fast past the science room. The floor was slippery because a cleaner had just washed the tiles.\n\nThe running classmate lost his balance and fell down heavily near the stairs. Right away, Jake stopped immediately and ran to call the school nurse. The nurse arrived within two minutes carrying a clean bandage and a cold pack to treat the boy's swollen knee.\n\nThe headmaster praised Jake during assembly for following all school safety rules and helping his classmate responsibly. All the students felt relieved and promised to walk carefully down the corridor in the future.",
+    example: { prompt: "Jake was walking in the school corridor after his ___", answer: "science class" },
+    questions: [
+      { id: "q1", prompt: "Where was Jake walking carefully on Friday morning?", answer: "down the school corridor" },
+      { id: "q2", prompt: "Why was the floor slippery near the science room?", answer: "cleaner washed the tiles" },
+      { id: "q3", prompt: "What happened to the student who was running fast?", answer: "fell down heavily" },
+      { id: "q4", prompt: "Who did Jake call immediately for help?", answer: "the school nurse" },
+      { id: "q5", prompt: "How fast did the school nurse arrive at the scene?", answer: "within two minutes" },
+      { id: "q6", prompt: "What medical supplies did the nurse bring?", answer: "bandage and cold pack" },
+      { id: "q7", prompt: "How did the students feel after the incident?", answer: "relieved and safe" }
     ]
   },
   science_report_config: {
-    purpose: "🌱 Today we write like little scientists: we say what we SAW, use past tense, and join ideas with because / so!",
+    purpose: "💧 Today we write like little scientists: we say what we SAW, use past tense, and join ideas with because / so!",
     teacher_parent_note: "Learn the language of science reports (observed / because / past tense), not science content.",
-    topic: "Friction & Surface Safety Report",
-    notebookTitle: "Friction on School Floors Lab Notebook",
+    topic: "Friction on School Floors",
+    notebookTitle: "Corridor Surface Friction & Safety Report",
     data_card: [
       { subject: "💧 Wet Tiles", action: "water reduced surface friction", result: "students slipped and lost balance" },
-      { subject: "👟 Rubber Shoes", action: "rubber provided strong grip", result: "walking safely with more friction" },
-      { subject: "⚠️ Warning Sign", action: "placed near wet cleaning area", result: "warned everyone to walk carefully" }
+      { subject: "👟 Rubber Soles", action: "rubber created high grip friction", result: "helped children stop safely" },
+      { subject: "⚠️ Warning Sign", action: "cleaners placed yellow warning signs", result: "reminded everyone to walk carefully" }
     ],
     levels: {
-      L1: { mode: "match_pairs", description: "Match Action and Result pairs from Data Card" },
-      L2: { mode: "reorder_chunks", description: "Reorder past-tense chunks into complete sentences" },
-      L3: { mode: "chips_connectors", description: "Combine past-tense observation chips with connectors (because/so/but)" },
-      L4: { mode: "gap_fill_connectors", description: "Fill connector gaps with guided word bank" },
-      L5: { mode: "sentence_frames", description: "Write with sentence frames without chip aids" },
-      L6: { mode: "free_write_checklist", description: "Free writing with scientific register checklist" }
+      l1_title: "1. Observation",
+      l2_title: "2. Scientific",
+      l3_title: "3. Conclusion",
+      starter_L1: "While observing the corridor, we saw that wet tiles",
+      starter_L2: "In fact, when rubber soles gripped the dry floor,",
+      starter_L3: "In conclusion, students walked safely across the school"
     },
-    step1Starter: "While observing the corridor, we saw that",
-    step1Title: "Observe Surface Conditions",
-    step1Pills: {
-      "💧 Wet Tiles": ["water reduced surface friction"],
-      "👟 Shoe Soles": ["rubber shoes provided strong grip"],
-      "⚠️ Warning Sign": ["the warning sign alerted everyone to walk carefully"],
-      "Distractor": ["students ran without looking"]
-    },
-    distractor_feedback: "🔬 The Data Card does not show this fact. A science report only uses observed data!",
-    step2Connectors: ["because", "so", "but"],
-    step2Title: "Measure Friction Differences",
-    step2Pills: {
-      "⚡ Less Friction": ["wet tiles caused students to slip and fall"],
-      "🛡️ More Friction": ["rubber shoes increased friction on smooth floors"]
-    },
-    step3Connectors: ["so", "because", "but"],
-    step3Title: "Record Safety Conclusion",
-    step3Pills: {
-      "🏆 Key Conclusion": ["walking carefully prevented accidents in the corridor"],
-      "🌟 Takeaway": ["understanding friction kept everyone safe"]
-    }
-  },
-  word_bank_pills: writing?.word_bank_pills || writing?.wordBankPills,
-  model_sentence: writing?.model_sentence,
-  sentence_frames: writing?.sentence_frames,
-  min_words: 20,
-  pbl_mission: {
-    title_en: "Offline Corridor Safety Ambassador Project",
-    title_vi: "Dự Án Đại Sứ An Toàn Hành Lang Học Đường",
-    task_en: "1. Draw a creative safety warning sign for your school corridor or home staircase.\n2. Write 3 safety rules under your drawing using past continuous and modal verbs (e.g., 'Do not run while walking near water').\n3. Record a 1-minute video explaining your sign to your classmates.",
-    task_vi: "1. Vẽ một biển báo an toàn sáng tạo cho hành lang trường hoặc cầu thang nhà con.\n2. Viết 3 quy tắc an toàn bên dưới biển báo dùng thì quá khứ tiếp diễn và động từ khuyết thiếu.\n3. Quay video 1 phút thuyết trình giải thích biển báo cho bạn bè."
-  },
-  writing
+    pills_L1: ["had very low friction", "when water covered the floor", "causing students to slip"],
+    pills_L2: ["they created high grip", "so children walked steadily", "without falling down"],
+    pills_L3: ["by wearing rubber shoes", "because surface friction", "prevents dangerous accidents"],
+    min_words: 20
+  }
 };
 
+export const writingHub = writingHubData;
 export default writingHubData;

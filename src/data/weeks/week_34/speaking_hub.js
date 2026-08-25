@@ -6,31 +6,51 @@ export const speakingHub = {
   },
   info_exchange_cards: {
     candidate_card: {
-      title: "The Lion's Home",
-      items: [
-        { label: "Wilderness Location", value: "Green Wilderness Forest" },
-        { label: "Freshwater Food", value: "Freshwater River Fish" },
-        { label: "Resting Time", value: "Sunny Peaceful Afternoons" }
+      title: "The Lion's Home (Leo)",
+      fields: [
+        { label: "Location", value: "Green Valley Forest", known: true },
+        { label: "Favorite Food", value: null, known: false },
+        { label: "Resting Time", value: "Sunny Afternoons", known: true },
+        { label: "Best Friend", value: null, known: false }
       ]
     },
     examiner_card: {
-      title: "The Mouse's Burrow",
-      items: [
-        { label: "Burrow Location", value: "Underneath the Oak Tree" },
-        { label: "Protective Skill", value: "Chewing Strong Ropes" },
-        { label: "Loyal Friendship", value: "The Mighty Lion" }
+      title: "The Mouse's Home (Milo)",
+      fields: [
+        { label: "Location", value: "Under the Tall Oak Tree", known: true },
+        { label: "Favorite Food", value: null, known: false },
+        { label: "Special Skill", value: "Chewing Strong Ropes", known: true },
+        { label: "Best Friend", value: null, known: false }
       ]
     },
+    full_answers: {
+      "Location": ["Green Valley Forest", "Under the Tall Oak Tree"],
+      "Favorite Food": ["Wild Berries and Fresh Meat", "Small seeds and fresh nuts"],
+      "Resting Time": ["Sunny Afternoons", "Under soft leaves at night"],
+      "Special Skill": ["Loud Roar across the trees", "Chewing Strong Ropes"],
+      "Best Friend": ["Milo the brave mouse", "Leo the mighty lion"]
+    },
     prompt_questions: [
-      "Where is the lion's wilderness location?",
-      "What is his favorite freshwater food?",
-      "When does he enjoy peaceful afternoons?"
+      "Where is the lion's location?",
+      "What is his favorite food?",
+      "When does he like to rest?"
     ],
     examiner_questions: [
-      { text: "Where does the lion live?", audio_url: "/audio/week34/ie_examiner_q1.mp3" },
-      { text: "What is the lion's favorite food?", audio_url: "/audio/week34/ie_examiner_q2.mp3" },
-      { text: "When does he like to rest?", audio_url: "/audio/week34/ie_examiner_q3.mp3" }
+      { id: "eq1", text: "Where is Leo's home located?", audio_url: "/audio/week34/ie_examiner_q1.mp3" },
+      { id: "eq2", text: "What time does Leo usually rest?", audio_url: "/audio/week34/ie_examiner_q2.mp3" },
+      { id: "eq3", text: "What is Milo's special skill?", audio_url: "/audio/week34/ie_examiner_q3.mp3" }
     ]
+  },
+  picture_story: {
+    title: "The Forest Adventure",
+    images: [
+      { id: 1, image_url: "/images/week34/ps_1.png", narrator_prompt: "Leo and Milo decided to explore the forest." },
+      { id: 2, image_url: "/images/week34/ps_2.png", narrator_prompt: "They found a hidden cave near the river." },
+      { id: 3, image_url: "/images/week34/ps_3.png", narrator_prompt: "Inside the cave, they saw something shiny." },
+      { id: 4, image_url: "/images/week34/ps_4.png", narrator_prompt: "It was an old treasure chest!" },
+      { id: 5, image_url: "/images/week34/ps_5.png", narrator_prompt: "They opened it and found gold coins." }
+    ],
+    examiner_intro: "Look at these five pictures. They tell a story about Leo and Milo. First, I'll tell you about picture one. Then you tell me about pictures two, three, four, and five."
   },
   find_differences: {
     picA: {
