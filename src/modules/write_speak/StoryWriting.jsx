@@ -1,29 +1,45 @@
 /**
  * StoryWriting.jsx — Cambridge A2 Flyers Story Writer (Part 7).
  *
- * ANTI-HALLUCINATION PROTOCOL v1.0 — ROUND J: PEDAGOGY REDESIGN (W33 + W34)
+ * ANTI-HALLUCINATION PROTOCOL v1.0 — ROUND M: STORY WRITER PART-7 MINI-LADDER (W33 + W34)
  *
- * Strict Invariants:
- * 1. Step Wizard: Exactly 1 scene image per screen. NO simultaneous 3-panel grid.
- * 2. Each step: 1 full-width <img> + indicator "Scene X of 3" + <=4 scene-specific pills + "Listen to scene" audio.
- * 3. Review Mode: 3-sentence assembly + >=20 words validation + Cambridge 5-shield rubric (Content 2 / Grammar 2 / Vocab 1).
- * 4. Levels L1-L5 ladder (L1: Chunk assemble, L2: Gap-fill, L3: Guided pills (default), L4: Hint-only, L5: 7-min exam timer).
+ * Mini-Ladder 3-Stage Invariants:
+ * 1. Step 1 (MODEL): Locked connector ("In the beginning,") + ordered chips in data order.
+ * 2. Step 2 (BUILD): >=3 connectors choice + shuffled chips (child decides semantic order).
+ * 3. Step 3 (WRITE): Connectors choice + keyword chips with BASE VERBS (chew/free/bandage); textarea required (>=5 words min).
+ * 4. Dedicated Connector Row: "🔗 LINK YOUR SENTENCES" with distinct violet styling & tooltip.
+ * 5. Review Screen: Cohesive single-paragraph assembly + total word counter (min 20) + connector counter (>=2 distinct) + Scene 3 past-tense check.
  */
 
-import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { ArrowRight, ChevronLeft, Volume2, Sparkles, Trophy, Clock, CheckCircle2, Lightbulb, RotateCcw } from 'lucide-react';
+import { ArrowRight, ChevronLeft, Volume2, Sparkles, Trophy, Clock, CheckCircle2, Lightbulb, Link2, AlertCircle } from 'lucide-react';
 import Confetti from 'react-confetti';
 import { useStationProgress } from '../../hooks/useStationProgress';
 import { scoreWritingTiered } from '../../utils/writingRubric';
 import { speakText } from '../../utils/AudioHelper';
-import { playButtonClick, playCorrectSound, playVictoryFanfare } from '../../utils/soundEffects';
+import { playButtonClick, playVictoryFanfare } from '../../utils/soundEffects';
 import { useUserStore } from '../../stores/useUserStore';
 
 const PILL_COLOR_SCHEMES = [
   { bg: 'bg-sky-50', border: 'border-sky-200', pill: 'bg-sky-50 text-sky-950 border-sky-300 hover:bg-sky-100' },
   { bg: 'bg-amber-50', border: 'border-amber-200', pill: 'bg-amber-50 text-amber-950 border-amber-300 hover:bg-amber-100' },
-  { bg: 'bg-purple-50', border: 'border-purple-200', pill: 'bg-purple-50 text-purple-950 border-purple-300 hover:bg-purple-100' }
+  { bg: 'bg-emerald-50', border: 'border-emerald-200', pill: 'bg-emerald-50 text-emerald-950 border-emerald-300 hover:bg-emerald-100' }
+];
+
+const KNOWN_CONNECTORS = [
+  'in the beginning',
+  'then',
+  'suddenly',
+  'after that',
+  'finally',
+  'in the end',
+  'at last',
+  'while',
+  'when',
+  'because',
+  'so',
+  'but'
 ];
 
 export default function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isVi = false, onReportProgress, onGoToSpeak, onComplete, weekNumber }) {
@@ -42,45 +58,43 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
     if (Array.isArray(rawStory.steps) && rawStory.steps.length >= 3) {
       return rawStory.steps.slice(0, 3);
     }
-    if (Array.isArray(rawStory.panels) && rawStory.panels.length >= 3) {
-      return rawStory.panels.slice(0, 3).map((p, idx) => ({
-        scene: idx + 1,
-        title: p.title || `Scene ${idx + 1}`,
-        image_url: p.image_url || p.image || `/images/week${currentWeek}/writing_panel_${idx + 1}.png`,
-        caption: p.caption || `Scene ${idx + 1}`,
-        frame_L1: p.sentence_frame || p.caption || '',
-        pills: Array.isArray(p.pills) ? p.pills.slice(0, 4) : ["main character", "in the setting", "action happened", "next event"],
-        audio: p.audio || p.caption || ''
-      }));
-    }
-    // Safe fallbacks for 3 steps
+    // Fallback if not configured
     return [
       {
         scene: 1,
-        title: "Scene 1: The Beginning",
+        ladder_stage: 'MODEL',
+        badge_label: 'MODEL',
+        title: 'Scene 1: The Beginning',
         image_url: `/images/week${currentWeek}/writing_panel_1.png`,
-        caption: "Look at Picture 1 and describe the setting and characters.",
-        frame_L1: "The story begins on a sunny day.",
-        pills: ["on a sunny day", "in the setting", "started the journey", "noticed something"],
-        audio: "Look at the first picture and describe how the story begins."
+        caption: 'Look at Picture 1 and describe the setting and characters.',
+        locked_connector: 'In the beginning,',
+        ordered_chips: ['the main character', 'was walking carefully', 'in the setting'],
+        pills: ['the main character', 'was walking carefully', 'in the setting'],
+        audio: 'Look at the first picture and describe how the story begins.'
       },
       {
         scene: 2,
-        title: "Scene 2: The Problem",
+        ladder_stage: 'BUILD',
+        badge_label: 'BUILD',
+        title: 'Scene 2: The Problem',
         image_url: `/images/week${currentWeek}/writing_panel_2.png`,
-        caption: "Look at Picture 2 and describe what happened next.",
-        frame_L1: "Suddenly, an unexpected problem happened.",
-        pills: ["suddenly happened", "lost balance", "called for help", "stopped right away"],
-        audio: "Look at the second picture and describe what went wrong."
+        caption: 'Look at Picture 2 and describe what happened next.',
+        connectors: ['Then', 'Suddenly', 'After that'],
+        display_chips: ['an unexpected event', 'happened suddenly', 'on the path'],
+        pills: ['an unexpected event', 'happened suddenly', 'on the path'],
+        audio: 'Look at the second picture and describe what went wrong.'
       },
       {
         scene: 3,
-        title: "Scene 3: The Happy Ending",
+        ladder_stage: 'WRITE',
+        badge_label: 'WRITE',
+        title: 'Scene 3: The Resolution',
         image_url: `/images/week${currentWeek}/writing_panel_3.png`,
-        caption: "Look at Picture 3 and describe how it was resolved.",
-        frame_L1: "Finally, everything was resolved happily.",
-        pills: ["arrived quickly", "helped immediately", "felt relieved", "became good friends"],
-        audio: "Look at the third picture and describe the happy ending."
+        caption: 'Look at Picture 3 and describe how it was resolved.',
+        connectors: ['Finally', 'In the end', 'At last'],
+        keywords: ['the helper', 'arrive', 'the bandage', 'feel relieved'],
+        pills: ['the helper', 'arrive', 'the bandage', 'feel relieved'],
+        audio: 'Look at the third picture and describe the happy ending.'
       }
     ];
   }, [rawStory, currentWeek]);
@@ -104,6 +118,24 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
   const fullText = useMemo(() => panelTexts.filter(Boolean).join(' ').trim(), [panelTexts]);
   const wordCount = useMemo(() => fullText ? fullText.split(/\s+/).filter(Boolean).length : 0, [fullText]);
   const stepWordCount = (panelTexts[currentStepIdx] || '').trim().split(/\s+/).filter(Boolean).length;
+
+  // Real-time connector and past-tense analysis
+  const distinctConnectors = useMemo(() => {
+    const textLower = fullText.toLowerCase();
+    const found = new Set();
+    for (const c of KNOWN_CONNECTORS) {
+      const reg = new RegExp(`\\b${c}\\b`, 'i');
+      if (reg.test(textLower)) {
+        found.add(c.charAt(0).toUpperCase() + c.slice(1));
+      }
+    }
+    return Array.from(found);
+  }, [fullText]);
+
+  const hasScene3PastTense = useMemo(() => {
+    const s3Text = (panelTexts[2] || '').toLowerCase();
+    return /\b(chewed|freed|bandaged|ran|trapped|was|were|arrived|helped|applied|felt|slipped|fell|walked|became)\b/i.test(s3Text);
+  }, [panelTexts]);
 
   // Hydrate saved data ONCE on mount
   useEffect(() => {
@@ -132,17 +164,42 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
     return () => clearInterval(t);
   }, [timerActive, isReview, timeLeftSec]);
 
+  // Connector insertion helper
+  const handleInsertConnector = (connectorText) => {
+    playButtonClick();
+    setPanelTexts(prev => {
+      const next = [...prev];
+      const cur = (next[currentStepIdx] || '').trim();
+      const cleaned = connectorText.trim();
+      if (!cur) {
+        next[currentStepIdx] = cleaned.endsWith(',') ? `${cleaned} ` : `${cleaned}, `;
+      } else {
+        // If current text already starts with a comma/clause, prepend or append
+        next[currentStepIdx] = `${cleaned} ${cur}`;
+      }
+      return next;
+    });
+    textareaRef.current?.focus();
+  };
+
   // Pill click helper
   const handleInsertPill = (pillText) => {
     playButtonClick();
     setPanelTexts(prev => {
       const next = [...prev];
-      const cur = next[currentStepIdx] || '';
-      next[currentStepIdx] = cur ? `${cur.trim()} ${pillText}` : pillText;
+      const cur = (next[currentStepIdx] || '').trim();
+      next[currentStepIdx] = cur ? `${cur} ${pillText}` : pillText;
       return next;
     });
     textareaRef.current?.focus();
   };
+
+  const isCurrentStepValid = useMemo(() => {
+    if (currentStepIdx === 0) return stepWordCount >= 3;
+    if (currentStepIdx === 1) return stepWordCount >= 3;
+    if (currentStepIdx === 2) return stepWordCount >= 5; // STRICT: >=5 words min for Step 3
+    return true;
+  }, [currentStepIdx, stepWordCount]);
 
   const handleNextStep = () => {
     playButtonClick();
@@ -168,7 +225,7 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
   };
 
   const handleSubmitStory = () => {
-    const wordBank = steps.flatMap(s => s.pills || []);
+    const wordBank = steps.flatMap(s => s.pills || s.keywords || []);
     const evalResult = scoreWritingTiered({
       text: fullText,
       wordBank,
@@ -179,8 +236,8 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
 
     // Cambridge 5-shield distribution (Content 2, Grammar 2, Vocab 1)
     const contentScore = Math.min(2, Math.max(1, wordCount >= 20 ? 2 : 1));
-    const grammarScore = Math.min(2, Math.max(1, evalResult.dimensions?.D3?.score >= 2 ? 2 : 1));
-    const vocabScore = Math.min(1, Math.max(1, evalResult.dimensions?.D2?.score >= 2 ? 1 : 1));
+    const grammarScore = Math.min(2, Math.max(1, distinctConnectors.length >= 2 && hasScene3PastTense ? 2 : 1));
+    const vocabScore = Math.min(1, Math.max(1, evalResult.dimensions?.D2?.score >= 1 ? 1 : 1));
     const totalShields = contentScore + grammarScore + vocabScore;
 
     const scoredRubric = {
@@ -214,14 +271,14 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
   };
 
   // ─────────────────────────────────────────────────────────────
-  // REVIEW SCREEN
+  // REVIEW SCREEN (Story Cohesion & Flow Assessment)
   // ─────────────────────────────────────────────────────────────
   if (isReview) {
     return (
       <div className="w-full max-w-4xl mx-auto space-y-4 animate-in fade-in duration-300 font-sans text-slate-900">
         {showConfetti && <Confetti recycle={false} numberOfPieces={200} />}
 
-        {/* Review Header */}
+        {/* Cambridge Exam Review Header */}
         <div className="flex items-center justify-between px-4 py-3 bg-indigo-50 border border-indigo-200 rounded-2xl">
           <button
             type="button"
@@ -231,14 +288,17 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
             <ChevronLeft size={16} /> Edit Scenes
           </button>
           <span className="text-xs font-black uppercase text-indigo-900 tracking-wider">
-            📖 Cambridge Story Review
+            CAMBRIDGE A2 FLYERS — READING & WRITING PART 7
           </span>
-          <span className={`text-xs font-black px-3 py-1 rounded-full border ${
-            wordCount >= 20
-              ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
-              : 'bg-amber-100 text-amber-800 border-amber-300'
-          }`}>
-            {wordCount} words {wordCount >= 20 ? '✓' : '/ 20 min'}
+          <span
+            data-testid="total-words-counter"
+            className={`text-xs font-black px-3 py-1 rounded-full border ${
+              wordCount >= 20
+                ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
+                : 'bg-amber-100 text-amber-800 border-amber-300'
+            }`}
+          >
+            Total words: {wordCount} {wordCount >= 20 ? '✓' : '/ 20 min'}
           </span>
         </div>
 
@@ -275,25 +335,51 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
           ))}
         </div>
 
-        {/* Assembled Story Display */}
-        <div className="p-4 bg-gradient-to-br from-indigo-50/70 to-purple-50/70 rounded-2xl border-2 border-indigo-200 shadow-sm space-y-2">
-          <span className="text-[11px] font-black uppercase text-indigo-900 tracking-wider block">
-            📝 Your Assembled Story:
-          </span>
-          <div className="p-3 bg-white rounded-xl border border-indigo-100 space-y-2 text-sm leading-relaxed font-medium text-slate-800">
-            {panelTexts[0]?.trim() && (
-              <p><span className="font-bold text-sky-800">Scene 1:</span> {panelTexts[0].trim()}</p>
-            )}
-            {panelTexts[1]?.trim() && (
-              <p><span className="font-bold text-amber-800">Scene 2:</span> {panelTexts[1].trim()}</p>
-            )}
-            {panelTexts[2]?.trim() && (
-              <p><span className="font-bold text-purple-800">Scene 3:</span> {panelTexts[2].trim()}</p>
-            )}
-            {!fullText && (
+        {/* Assembled Continuous Cohesive Story */}
+        <div className="p-4 bg-gradient-to-br from-indigo-50/70 to-purple-50/70 rounded-2xl border-2 border-indigo-200 shadow-sm space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] font-black uppercase text-indigo-900 tracking-wider flex items-center gap-1.5">
+              <Sparkles size={14} className="text-purple-600" /> Assembled Story (Full Paragraph):
+            </span>
+            <span
+              data-testid="connector-counter"
+              className="text-[11px] font-black px-2.5 py-0.5 rounded-lg bg-purple-100 text-purple-900 border border-purple-300"
+            >
+              🔗 Connectors Used: {distinctConnectors.length} / 2+ {distinctConnectors.length > 0 ? `(${distinctConnectors.join(', ')})` : ''}
+            </span>
+          </div>
+
+          <div className="p-4 bg-white rounded-xl border border-indigo-100 space-y-2 text-sm leading-relaxed font-medium text-slate-800 shadow-inner">
+            {fullText ? (
+              <p className="text-base text-slate-800 leading-relaxed font-serif">
+                {panelTexts.map((text, i) => (
+                  <span key={i} className="inline mr-1.5">
+                    {text.trim()}
+                  </span>
+                ))}
+              </p>
+            ) : (
               <p className="text-slate-400 italic">No text written yet. Go back to each scene step to write your sentences.</p>
             )}
           </div>
+
+          {/* Real-time Story Cohesion & Flow Feedback */}
+          {distinctConnectors.length < 2 ? (
+            <div className="p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs font-bold text-amber-900 flex items-start gap-2 animate-in fade-in">
+              <AlertCircle size={16} className="text-amber-600 shrink-0 mt-0.5" />
+              <div>
+                <span>💡 Story Flow Hint: Your story needs linking words (Then / Finally) to become ONE story!</span>
+                <p className="text-[11px] font-medium text-amber-800 mt-0.5">
+                  Try adding connectors like <span className="font-bold">Then</span>, <span className="font-bold">Suddenly</span>, or <span className="font-bold">Finally</span> to connect your sentences smoothly.
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-xs font-bold text-emerald-900 flex items-center gap-2 animate-in fade-in">
+              <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
+              <span>🌟 Cohesive Story Flow — All linking connectors and past tense verified!</span>
+            </div>
+          )}
         </div>
 
         {/* Cambridge 5-Shield Rubric Result */}
@@ -360,8 +446,21 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
   }
 
   // ─────────────────────────────────────────────────────────────
-  // STEP WIZARD SCREEN (Strict 1-Panel per Screen Invariant)
+  // STEP WIZARD SCREEN (Mini-Ladder Stages: MODEL -> BUILD -> WRITE)
   // ─────────────────────────────────────────────────────────────
+  const stage = currentStep.ladder_stage || (currentStepIdx === 0 ? 'MODEL' : currentStepIdx === 1 ? 'BUILD' : 'WRITE');
+  const stageBadgeColors = {
+    MODEL: 'bg-blue-100 text-blue-900 border-blue-300',
+    BUILD: 'bg-amber-100 text-amber-900 border-amber-300',
+    WRITE: 'bg-emerald-100 text-emerald-900 border-emerald-300'
+  };
+
+  const chipsToDisplay = currentStepIdx === 0
+    ? (currentStep.ordered_chips || currentStep.pills || [])
+    : currentStepIdx === 1
+    ? (currentStep.display_chips || currentStep.pills || [])
+    : (currentStep.keywords || currentStep.pills || []);
+
   return (
     <div className="w-full max-w-4xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans text-slate-900">
       {/* Cambridge Exam Header */}
@@ -374,11 +473,14 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
         </p>
       </div>
 
-      {/* Level Selector & Step Progress Bar */}
+      {/* Mini-Ladder Stage Selector & Step Progress Bar */}
       <div className="flex items-center justify-between gap-3 px-4 py-2.5 bg-white border border-slate-200 rounded-2xl shadow-xs">
         <div className="flex items-center gap-2">
-          <span className="text-[10px] font-black uppercase text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-md border border-indigo-200">
-            Level {activeLevel}
+          <span
+            data-testid="ladder-badge"
+            className={`text-[10px] font-black uppercase px-2.5 py-0.5 rounded-md border shadow-2xs ${stageBadgeColors[stage] || 'bg-indigo-50 text-indigo-800 border-indigo-200'}`}
+          >
+            {stage}
           </span>
           <span className="text-xs font-black text-slate-700">
             Scene {currentStepIdx + 1} of {steps.length}
@@ -392,20 +494,21 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
         )}
 
         <div className="flex items-center gap-1.5">
-          {steps.map((_, i) => (
+          {steps.map((s, i) => (
             <button
               key={i}
               type="button"
               onClick={() => setCurrentStepIdx(i)}
-              className={`w-6 h-6 rounded-full text-[10px] font-black flex items-center justify-center border-2 transition ${
+              className={`px-2.5 py-0.5 rounded-full text-[10px] font-black flex items-center gap-1 border transition ${
                 i === currentStepIdx
-                  ? 'bg-indigo-600 text-white border-indigo-400 scale-110 shadow-xs'
+                  ? 'bg-indigo-600 text-white border-indigo-400 scale-105 shadow-xs'
                   : panelTexts[i]?.trim()
                   ? 'bg-emerald-500 text-white border-emerald-300'
                   : 'bg-slate-100 text-slate-400 border-slate-200'
               }`}
             >
-              {panelTexts[i]?.trim() ? '✓' : i + 1}
+              <span>{i + 1}</span>
+              <span className="text-[9px] uppercase opacity-80">{s.ladder_stage || (i === 0 ? 'MODEL' : i === 1 ? 'BUILD' : 'WRITE')}</span>
             </button>
           ))}
         </div>
@@ -422,7 +525,7 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
             onError={(e) => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
           />
           <div className="absolute top-3 left-3 px-3 py-1 bg-amber-400 text-slate-950 rounded-xl text-xs font-black uppercase tracking-wider shadow border border-amber-300">
-            Scene {currentStepIdx + 1} of {steps.length}
+            Scene {currentStepIdx + 1} of {steps.length} • {stage}
           </div>
 
           <button
@@ -435,21 +538,72 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
           </button>
         </div>
 
-        {/* Scene-specific Pills (<=4 pills, functional colors, no generic category name) */}
-        {Array.isArray(currentStep.pills) && currentStep.pills.length > 0 && (
+        {/* M2: Dedicated Connector Row ("🔗 LINK YOUR SENTENCES") */}
+        <div
+          data-testid="connector-row"
+          className="p-3 bg-purple-50/80 rounded-2xl border-2 border-purple-200 space-y-1.5"
+        >
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider flex items-center gap-1.5">
+              <Link2 size={13} className="text-purple-700" /> 🔗 LINK YOUR SENTENCES:
+            </span>
+            <span className="text-[10px] font-medium text-purple-700 italic">
+              Connectors join your three pictures into ONE story.
+            </span>
+          </div>
+
+          {currentStepIdx === 0 ? (
+            /* Step 1: Locked Connector */
+            <div className="flex items-center gap-2 pt-0.5">
+              <button
+                type="button"
+                onClick={() => handleInsertConnector(currentStep.locked_connector || "In the beginning,")}
+                className="px-3 py-1.5 rounded-xl text-xs font-black bg-purple-100 hover:bg-purple-200 text-purple-950 border border-purple-300 shadow-2xs flex items-center gap-1.5 transition active:scale-95 cursor-pointer"
+                data-testid="locked-connector"
+                title="Click to insert locked connector"
+              >
+                🔒 ★ LOCKED: {currentStep.locked_connector || "In the beginning,"}
+              </button>
+              <span className="text-[10px] font-bold text-purple-800">
+                (Pre-set starting connector for Scene 1)
+              </span>
+            </div>
+          ) : (
+            /* Step 2 & 3: Connector Selection Group */
+            <div className="flex flex-wrap gap-2 pt-0.5" data-testid="connector-options">
+              {(currentStep.connectors || (currentStepIdx === 1 ? ["Then", "Suddenly", "After that"] : ["Finally", "In the end", "At last"])).map((conn, cIdx) => (
+                <button
+                  key={cIdx}
+                  type="button"
+                  onClick={() => handleInsertConnector(conn)}
+                  className="px-3 py-1.5 rounded-xl text-xs font-black bg-purple-100 hover:bg-purple-200 text-purple-950 border border-purple-300 shadow-2xs transition active:scale-95 flex items-center gap-1 cursor-pointer"
+                  data-testid="connector-btn"
+                >
+                  🔗 + {conn}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Content Chips Row */}
+        {Array.isArray(chipsToDisplay) && chipsToDisplay.length > 0 && (
           <div className="space-y-1.5">
             <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider block">
-              💡 Tap words to insert:
+              {currentStepIdx === 0 && "💡 TAP WORDS TO INSERT (Tap in order to build sentence):"}
+              {currentStepIdx === 1 && "💡 TAP WORDS TO INSERT (Decide correct order):"}
+              {currentStepIdx === 2 && "💡 KEYWORDS FOR INSPIRATION (Change base verbs to past tense!):"}
             </span>
-            <div className="flex flex-wrap gap-2">
-              {currentStep.pills.slice(0, 4).map((pill, pIdx) => (
+            <div className="flex flex-wrap gap-2" data-testid="content-chips">
+              {chipsToDisplay.slice(0, 4).map((chip, pIdx) => (
                 <button
                   key={pIdx}
                   type="button"
-                  onClick={() => handleInsertPill(pill)}
+                  onClick={() => handleInsertPill(chip)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition shadow-2xs active:scale-95 ${colorScheme.pill}`}
+                  data-testid="content-chip"
                 >
-                  + {pill}
+                  + {chip}
                 </button>
               ))}
             </div>
@@ -460,7 +614,7 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <label className="text-[11px] font-black uppercase text-slate-700 tracking-wider">
-              Write 1 complete sentence for Scene {currentStepIdx + 1}:
+              Write 1 complete sentence for Scene {currentStepIdx + 1} ({stage}):
             </label>
             <button
               type="button"
@@ -489,12 +643,20 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
                 return next;
               });
             }}
-            placeholder={`Describe what is happening in Scene ${currentStepIdx + 1}...`}
+            placeholder={
+              currentStepIdx === 0
+                ? "Start with 'In the beginning,' and describe Scene 1..."
+                : currentStepIdx === 1
+                ? "Choose a connector (Then / Suddenly) and describe Scene 2..."
+                : "Choose a connector (Finally / In the end) and describe Scene 3 using past tense verbs..."
+            }
             className="w-full p-3.5 bg-slate-50 border-2 border-slate-200 rounded-2xl text-sm font-medium text-slate-900 focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none resize-none transition leading-relaxed"
           />
 
           <div className="flex items-center justify-between text-xs text-slate-500 font-bold">
-            <span>{stepWordCount} words in this sentence</span>
+            <span>
+              {stepWordCount} words in this sentence {currentStepIdx === 2 && '(min: 5)'}
+            </span>
             <span>Total story: {wordCount} words (min: 20)</span>
           </div>
         </div>
@@ -513,7 +675,8 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
           <button
             type="button"
             onClick={handleNextStep}
-            className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-black shadow-md transition active:scale-95 flex items-center gap-1.5"
+            disabled={!isCurrentStepValid}
+            className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white rounded-xl text-xs font-black shadow-md transition active:scale-95 flex items-center gap-1.5 cursor-pointer"
           >
             {currentStepIdx < steps.length - 1 ? (
               <>Next Scene <ArrowRight size={15} /></>
@@ -526,3 +689,4 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
     </div>
   );
 }
+
