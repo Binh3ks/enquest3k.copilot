@@ -62,8 +62,8 @@ export const speakingHub = {
       image_url: "/images/week34/w34_diff_scene_b.jpg"
     },
     differences: [
-      { id: "d1", name: "Tree Flower Color", x: 26, y: 20, prompt_en: "In Picture A, the tree flower is small, but in Picture B, there are bright exotic flowers." },
-      { id: "d2", name: "Sun and Cloud", x: 80, y: 19, prompt_en: "In Picture A, the sun is shining clearly, but in Picture B, a white cloud is covering the sun." },
+      { id: "d1", name: "Tree Flower Color", x: 80, y: 19, prompt_en: "In Picture A, the tree flower is small, but in Picture B, there are bright exotic flowers." },
+      { id: "d2", name: "Sun and Cloud", x: 26, y: 20, prompt_en: "In Picture A, the sun is shining clearly, but in Picture B, a white cloud is covering the sun." },
       { id: "d3", name: "Mouse Tail Color (Pink)", x: 56, y: 68, prompt_en: "In Picture A, the mouse tail is brown, but in Picture B, the tail is bright pink." },
       { id: "d4", name: "Forest Mushroom Color", x: 82, y: 73, prompt_en: "In Picture A, the mushrooms are brown, but in Picture B, there is a bright cyan mushroom." }
     ]

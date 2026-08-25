@@ -254,12 +254,30 @@ async function main() {
         if (chk.type === 'interaction_check') {
           result = await runInteractionCheck(page, chk);
         } else if (chk.type === 'dom_count') {
-          const count = await page.locator(chk.selector).count();
+          const locator = page.locator(chk.selector);
+          const count = await locator.count();
           const min = chk.min || 1;
-          if (count >= min) {
-            result = { pass: true, snippet: `Found ${count} element(s) matching '${chk.selector}' (min: ${min})` };
-          } else {
+          if (count < min) {
             result = { pass: false, snippet: dom.slice(0, 300), reason: `Found only ${count}/${min} element(s) matching '${chk.selector}'` };
+          } else {
+            let textLenPass = true;
+            let failedText = '';
+            const minTextLen = chk.min_text_len || (chk.selector.includes('clil-glossary-chip') ? 10 : 0);
+            if (minTextLen > 0) {
+              for (let i = 0; i < count; i++) {
+                const txt = (await locator.nth(i).innerText()).trim();
+                if (txt.length < minTextLen) {
+                  textLenPass = false;
+                  failedText = `Chip #${i + 1} text "${txt}" length ${txt.length} < min length ${minTextLen}`;
+                  break;
+                }
+              }
+            }
+            if (!textLenPass) {
+              result = { pass: false, snippet: dom.slice(0, 300), reason: failedText };
+            } else {
+              result = { pass: true, snippet: `Found ${count} element(s) matching '${chk.selector}' (min: ${min}${minTextLen > 0 ? `, all textContent >= ${minTextLen} chars` : ''})` };
+            }
           }
         } else if (chk.type === 'numbers_overlap') {
           const numbersInDom = (dom.match(/\b\d+\b/g) || []).map(n => parseInt(n, 10));
@@ -330,16 +348,32 @@ async function main() {
         } else if (chk.type === 'hotspot_alignment_check') {
           try {
             const calibPath = path.resolve(rootDir, `docs/week${WEEK}_hotspot_calibration.json`);
+            const speakingPath = path.resolve(rootDir, `src/data/weeks/week_${WEEK}/speaking_hub.js`);
             if (!fs.existsSync(calibPath)) {
               result = { pass: false, snippet: '', reason: `Calibration file not found at ${calibPath}` };
+            } else if (!fs.existsSync(speakingPath)) {
+              result = { pass: false, snippet: '', reason: `speaking_hub.js not found at ${speakingPath}` };
             } else {
               const calib = JSON.parse(fs.readFileSync(calibPath, 'utf8'));
-              const maxErr = calib.max_error_pct || 0;
-              const limit = chk.max_error_pct || 6.0;
-              if (maxErr < limit) {
-                result = { pass: true, snippet: `Hotspot calibration max error = ${maxErr.toFixed(2)}% (< ${limit}% limit across ${calib.mapped || 4} diff regions)` };
+              const speakingModule = await import(`file://${speakingPath}?t=${Date.now()}`);
+              const spkHub = speakingModule.speakingHub || speakingModule.speakingHubData || speakingModule.default || {};
+              const dataDiffs = spkHub.find_differences?.differences || [];
+              const centroids = calib.centroids || [];
+
+              if (dataDiffs.length !== 4 || centroids.length !== 4) {
+                result = { pass: false, snippet: '', reason: `Expected 4 diffs and 4 centroids, got ${dataDiffs.length} diffs and ${centroids.length} centroids` };
               } else {
-                result = { pass: false, snippet: '', reason: `Hotspot calibration max error ${maxErr.toFixed(2)}% >= ${limit}% limit` };
+                let maxDist = 0;
+                for (const d of dataDiffs) {
+                  const minDistToCentroid = Math.min(...centroids.map(c => Math.hypot(d.x - c.x, d.y - c.y)));
+                  if (minDistToCentroid > maxDist) maxDist = minDistToCentroid;
+                }
+                const limit = chk.max_error_pct || 6.0;
+                if (maxDist <= limit) {
+                  result = { pass: true, snippet: `Direct calculation: Data coordinates match pixel centroids within ${maxDist.toFixed(2)}% (limit <= ${limit}%)` };
+                } else {
+                  result = { pass: false, snippet: '', reason: `Direct calculation: Max error ${maxDist.toFixed(2)}% > ${limit}% limit between data coords and centroids` };
+                }
               }
             }
           } catch (e) {
