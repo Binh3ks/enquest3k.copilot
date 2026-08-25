@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Gate 15 Production DOM Assertions Spec",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "week": 34,
   "global_negative_patterns": [
     "corridor", "Corridor", "Jake", "friction", "Friction",
@@ -148,6 +148,16 @@
           "type": "keyword_overlap",
           "source_quest": "gear4_clil",
           "min_overlap": 2
+        },
+        {
+          "name": "chips do not contain base verbs (bury / drink / hide)",
+          "type": "not_contains_regex",
+          "pattern": "\\b(bury|drink|hide)\\s+"
+        },
+        {
+          "name": "DOM contains Teacher & Parent Note",
+          "type": "regex",
+          "pattern": "Teacher & Parent Note"
         }
       ]
     },
@@ -229,6 +239,10 @@
           ],
           "min": 2,
           "case_sensitive": false
+        },
+        {
+          "name": "story scenes ratio 16:9 assertion",
+          "type": "scenes_ratio_16_9"
         }
       ]
     },
@@ -306,6 +320,12 @@
           "min": 1
         },
         {
+          "name": "boss listening worked example row present",
+          "type": "dom_count",
+          "selector": "[data-testid='example-row']",
+          "min": 1
+        },
+        {
           "name": "object labels themed (NO Object N pattern)",
           "type": "not_contains_regex",
           "pattern": "\\bObject\\s+\\d+\\b"
@@ -332,6 +352,12 @@
           "name": "official Cambridge reading instruction sentence",
           "type": "regex",
           "pattern": "(Look and read|Read the text|Read the conversation|Read the story|Look at the picture and read the story|Read the diary|Write about this story)"
+        },
+        {
+          "name": "boss reading worked example row present",
+          "type": "dom_count",
+          "selector": "[data-testid='example-row']",
+          "min": 1
         }
       ]
     },
@@ -366,6 +392,11 @@
           "type": "file_check",
           "path": "docs/week34_hotspot_calibration.json",
           "require": "\"mapped\": 4"
+        },
+        {
+          "name": "hotspot mapper alignment <6% on both pictures",
+          "type": "hotspot_alignment_check",
+          "max_error_pct": 6.0
         }
       ]
     }

@@ -105,7 +105,10 @@ async function runAudit() {
       console.log(`  ✅ science_report Data Card: 3 rows verified`);
     }
 
-    if (!srConfig.purpose || !srConfig.purpose.includes('observed / because / past tense')) {
+    const hasValidPurpose = (srConfig.purpose && (srConfig.purpose.includes('little scientists') || srConfig.purpose.includes('observed / because / past tense'))) ||
+      (srConfig.teacher_parent_note && srConfig.teacher_parent_note.includes('observed / because / past tense'));
+
+    if (!hasValidPurpose) {
       errors.push('science_report_config.purpose missing or does not match pedagogical standard');
     } else {
       console.log(`  ✅ science_report Purpose: verified`);

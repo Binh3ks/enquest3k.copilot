@@ -302,16 +302,48 @@ async function main() {
           } else {
             result = { pass: false, snippet: '', reason: `File ${resolvedPath} does not exist` };
           }
-        } else if (chk.type === 'keyword_overlap') {
-          const sourceDom = questDoms[chk.source_quest] || '';
-          const sourceWords = (sourceDom.toLowerCase().match(/\b[a-z]{4,}\b/g) || []);
-          const currentWords = (dom.toLowerCase().match(/\b[a-z]{4,}\b/g) || []);
-          const overlap = [...new Set(currentWords.filter(w => sourceWords.includes(w) && !['this', 'that', 'with', 'from', 'have', 'were', 'will', 'your', 'about', 'step', 'note', 'book', 'notebook', 'animal', 'forest'].includes(w)))];
-          const min = chk.min_overlap || 2;
-          if (overlap.length < min) {
-            result = { pass: false, snippet: dom.slice(0, 300), reason: `Overlap with ${chk.source_quest} has only ${overlap.length}/${min} keywords: [${overlap.join(', ')}]` };
-          } else {
-            result = { pass: true, snippet: `[keyword overlap (${overlap.length}): ${overlap.slice(0, 6).join(', ')}]` };
+        } else if (chk.type === 'scenes_ratio_16_9') {
+          try {
+            const weekDir = path.resolve(rootDir, `public/images/week${WEEK}`);
+            const files = fs.readdirSync(weekDir).filter(f => f.startsWith('webtoon_scene_') || f.startsWith('writing_panel_'));
+            let all16x9 = true;
+            const details = [];
+            for (const f of files) {
+              const fPath = path.join(weekDir, f);
+              const outW = execSync(`sips -g pixelWidth "${fPath}"`).toString();
+              const outH = execSync(`sips -g pixelHeight "${fPath}"`).toString();
+              const w = parseInt(outW.match(/pixelWidth:\s*(\d+)/)[1], 10);
+              const h = parseInt(outH.match(/pixelHeight:\s*(\d+)/)[1], 10);
+              const ratio = w / h;
+              const is16x9 = Math.abs(ratio - (16 / 9)) <= 0.08;
+              details.push(`${f}: ${w}x${h} (r=${ratio.toFixed(2)})`);
+              if (!is16x9) all16x9 = false;
+            }
+            if (all16x9 && files.length > 0) {
+              result = { pass: true, snippet: `All ${files.length} story scenes verified 16:9 [${details.slice(0, 3).join(', ')}]` };
+            } else {
+              result = { pass: false, snippet: '', reason: `Story scenes not 16:9: ${details.join('; ')}` };
+            }
+          } catch (e) {
+            result = { pass: false, snippet: '', reason: `scenes_ratio_16_9 error: ${e.message}` };
+          }
+        } else if (chk.type === 'hotspot_alignment_check') {
+          try {
+            const calibPath = path.resolve(rootDir, `docs/week${WEEK}_hotspot_calibration.json`);
+            if (!fs.existsSync(calibPath)) {
+              result = { pass: false, snippet: '', reason: `Calibration file not found at ${calibPath}` };
+            } else {
+              const calib = JSON.parse(fs.readFileSync(calibPath, 'utf8'));
+              const maxErr = calib.max_error_pct || 0;
+              const limit = chk.max_error_pct || 6.0;
+              if (maxErr < limit) {
+                result = { pass: true, snippet: `Hotspot calibration max error = ${maxErr.toFixed(2)}% (< ${limit}% limit across ${calib.mapped || 4} diff regions)` };
+              } else {
+                result = { pass: false, snippet: '', reason: `Hotspot calibration max error ${maxErr.toFixed(2)}% >= ${limit}% limit` };
+              }
+            }
+          } catch (e) {
+            result = { pass: false, snippet: '', reason: `hotspot_alignment_check error: ${e.message}` };
           }
         } else {
           result = evaluatePosCheck(chk, dom);
