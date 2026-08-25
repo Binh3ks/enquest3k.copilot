@@ -68,8 +68,8 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
         image_url: `/images/week${currentWeek}/writing_panel_1.png`,
         caption: 'Look at Picture 1 and describe the setting and characters.',
         locked_connector: 'In the beginning,',
-        ordered_chips: ['the main character', 'was walking carefully', 'in the setting'],
-        pills: ['the main character', 'was walking carefully', 'in the setting'],
+        ordered_chips: ['the main character', 'explored the trail', 'in the setting'],
+        pills: ['the main character', 'explored the trail', 'in the setting'],
         audio: 'Look at the first picture and describe how the story begins.'
       },
       {

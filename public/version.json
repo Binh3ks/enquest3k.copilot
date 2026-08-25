@@ -1,9 +1,9 @@
 {
-  "commit": "c3c44d5342bbddc1ecf69ab767f4faecfce10a89",
-  "git_commit": "c3c44d5342bbddc1ecf69ab767f4faecfce10a89",
-  "shortCommit": "c3c44d53",
-  "message": "fix(scenes): resample W33 webtoon scenes to 16:9 and fix keyword_overlap [round-l]",
-  "builtAt": "2026-08-25T09:45:05.952Z",
-  "build_timestamp": "2026-08-25T09:45:05.953Z",
+  "commit": "d084837137fb1daa8a489bc0b923cd41b32e1c5c",
+  "git_commit": "d084837137fb1daa8a489bc0b923cd41b32e1c5c",
+  "shortCommit": "d0848371",
+  "message": "feat(spec): update Gate 15 spec v2.5.0 and ladder interaction test for story writer mini-ladder [round-m]",
+  "builtAt": "2026-08-25T09:57:40.138Z",
+  "build_timestamp": "2026-08-25T09:57:40.139Z",
   "env": "production"
 }
