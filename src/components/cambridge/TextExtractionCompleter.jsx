@@ -35,6 +35,25 @@ export function TextExtractionCompleter({ customData, data: propData, onComplete
     };
   }, [activeData]);
 
+function levenshteinDistance(s1, s2) {
+  if (!s1 || !s2) return Math.max((s1 || '').length, (s2 || '').length);
+  const track = Array(s2.length + 1).fill(null).map(() =>
+    Array(s1.length + 1).fill(null));
+  for (let i = 0; i <= s1.length; i += 1) track[0][i] = i;
+  for (let j = 0; j <= s2.length; j += 1) track[j][0] = j;
+  for (let j = 1; j <= s2.length; j += 1) {
+    for (let i = 1; i <= s1.length; i += 1) {
+      const indicator = s1[i - 1] === s2[j - 1] ? 0 : 1;
+      track[j][i] = Math.min(
+        track[j][i - 1] + 1,
+        track[j - 1][i] + 1,
+        track[j - 1][i - 1] + indicator
+      );
+    }
+  }
+  return track[s2.length][s1.length];
+}
+
   // Normalize Summary Sentences
   const summarySentences = useMemo(() => {
     if (activeData?.summary_sentences && Array.isArray(activeData.summary_sentences)) {
@@ -42,11 +61,15 @@ export function TextExtractionCompleter({ customData, data: propData, onComplete
     }
     if (activeData?.questions && Array.isArray(activeData.questions)) {
       return activeData.questions.map((q, idx) => {
-        const parts = (q.prompt || '').split('___');
+        const rawPrompt = q.prompt || '';
+        const hasGap = rawPrompt.includes('___');
+        const parts = hasGap ? rawPrompt.split('___') : [rawPrompt, ''];
         return {
-          id: q.id || idx + 1,
-          text_before: parts[0] || '',
-          text_after: parts[1] || '.',
+          id: q.id || `q${idx + 1}`,
+          prompt: rawPrompt,
+          text_before: parts[0] || rawPrompt,
+          text_after: parts[1] || '',
+          hasGap,
           target: q.answer || q.target || '',
           paragraph_ref: 1
         };
@@ -78,8 +101,12 @@ export function TextExtractionCompleter({ customData, data: propData, onComplete
       const targetNorm = normalizeText(sent.target);
       const altNorm = sent.alt_target ? normalizeText(sent.alt_target) : '';
 
-      // Match normalized exact target or acceptable alternate target (with/without leading 'the', 'a', 'an')
-      if (userNorm && (userNorm === targetNorm || (altNorm && userNorm === altNorm) || targetNorm.includes(userNorm) || userNorm.includes(targetNorm))) {
+      // Match normalized exact target, Levenshtein distance <= 2, or inclusion
+      const isLevenshteinMatch = userNorm && targetNorm && levenshteinDistance(userNorm, targetNorm) <= 2;
+      const isExactOrAlt = userNorm && (userNorm === targetNorm || (altNorm && userNorm === altNorm));
+      const isInclusion = userNorm && userNorm.length >= 3 && (targetNorm.includes(userNorm) || userNorm.includes(targetNorm));
+
+      if (isExactOrAlt || isLevenshteinMatch || isInclusion) {
         correct++;
       }
     });
@@ -233,9 +260,15 @@ export function TextExtractionCompleter({ customData, data: propData, onComplete
                       {idx + 1}
                     </span>
                     <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
-                      {sent.text_before}
-                      <span className="font-black text-amber-800 underline underline-offset-4">____</span>
-                      {sent.text_after}
+                      {sent.hasGap !== false ? (
+                        <>
+                          {sent.text_before}
+                          <span className="font-black text-amber-800 underline underline-offset-4">____</span>
+                          {sent.text_after}
+                        </>
+                      ) : (
+                        <span>{sent.prompt}</span>
+                      )}
                     </p>
                   </div>
 
@@ -243,6 +276,7 @@ export function TextExtractionCompleter({ customData, data: propData, onComplete
                     <div className="relative flex-1">
                       <input
                         type="text"
+                        maxLength={40}
                         disabled={isSubmitted}
                         value={userVal}
                         onChange={(e) => handleInputChange(sent.id, e.target.value)}

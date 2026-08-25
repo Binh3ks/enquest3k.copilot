@@ -24,41 +24,46 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
 
   const activeData = customData || propData || {};
 
-  // Fisher-Yates Shuffle A-H Options and dynamically assign keys A to H
-  const { ahOptions, targetKeyMap } = useMemo(() => {
-    const rawOptions = activeData?.options || [];
-    const shuffled = shuffleArray(rawOptions);
-    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
-    const keyMap = {};
-    const formatted = shuffled.map((opt, idx) => {
-      const key = opt.key || letters[idx];
-      if (opt.for_gap) keyMap[opt.for_gap] = key;
-      return { key, text: opt.text, id: opt.id || `opt_${idx}` };
-    });
-
-    return { ahOptions: formatted, targetKeyMap: keyMap };
-  }, [activeData, shuffleSeed]);
-
-  // Dynamically map target keys for the 5 dialogue gaps
-  const dialogueExchanges = useMemo(() => {
-    let rawDialogue = activeData?.dialogue;
-    if (!rawDialogue && activeData?.turns) {
-      const spkA = activeData.speakerA || "Speaker A";
-      const spkB = activeData.speakerB || "Speaker B";
-      rawDialogue = activeData.turns.map(t => ({
-        gap_id: t.id,
-        speaker_a: spkA,
-        speaker_b: spkB,
-        text_a: t.prompt,
-        target_answer: t.answer_key
+  // A-H Options Drawer
+  const ahOptions = useMemo(() => {
+    if (activeData?.answer_options && Array.isArray(activeData.answer_options)) {
+      return activeData.answer_options.map(opt => ({
+        key: opt.letter,
+        text: opt.text,
+        id: `opt_${opt.letter}`
       }));
     }
-
-    return (rawDialogue || []).map((ex) => ({
-      ...ex,
-      target: ex.target_answer || targetKeyMap[ex.gap_id] || "A"
+    const rawOptions = activeData?.options || [];
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    return rawOptions.map((opt, idx) => ({
+      key: opt.key || opt.letter || letters[idx],
+      text: opt.text,
+      id: opt.id || `opt_${idx}`
     }));
-  }, [activeData, targetKeyMap]);
+  }, [activeData]);
+
+  // Dialogue Gaps (5 Turns)
+  const dialogueExchanges = useMemo(() => {
+    if (activeData?.turns && Array.isArray(activeData.turns)) {
+      return activeData.turns.map((t, idx) => ({
+        gap_id: t.id || idx + 1,
+        speaker_a: t.speaker_a || activeData.speakerA || "Speaker A",
+        speaker_b: t.speaker_b || activeData.speakerB || "Speaker B",
+        text_a: t.text_a || t.prompt || "",
+        target: t.correct_letter || t.answer_letter || t.answer_key || "A"
+      }));
+    }
+    if (activeData?.dialogue && Array.isArray(activeData.dialogue)) {
+      return activeData.dialogue.map((ex, idx) => ({
+        gap_id: ex.gap_id || idx + 1,
+        speaker_a: ex.speaker_a || "Speaker A",
+        speaker_b: ex.speaker_b || "Speaker B",
+        text_a: ex.text_a || ex.prompt || "",
+        target: ex.target_answer || ex.target || "A"
+      }));
+    }
+    return [];
+  }, [activeData]);
 
 
   // Map option keys to the gap they are currently assigned to
@@ -172,7 +177,7 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
                     Example Answer
                   </span>
                   <div className="text-xs font-bold text-amber-950">
-                    <b className="text-amber-700 mr-1.5">(C)</b> {activeData?.example?.text_b || "Yes, we had a lot of fun in class."}
+                    <b className="text-amber-700 mr-1.5">({activeData?.example?.answer_letter || activeData?.example?.target || "D"})</b> {activeData?.example?.answer_text || activeData?.example?.text_b || "I am sorry! I was running in a hurry."}
                   </div>
                 </div>
                 <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0" />

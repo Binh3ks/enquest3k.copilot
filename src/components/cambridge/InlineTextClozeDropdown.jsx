@@ -25,12 +25,21 @@ export function InlineTextClozeDropdown({ customData, data: propData, onComplete
 
   const activeData = customData || propData || {};
 
-  // Construct gaps data from answers or gaps
+  // Construct gaps data from blanks, gaps or answers
   const gapsData = useMemo(() => {
+    if (activeData?.blanks && Array.isArray(activeData.blanks)) {
+      return activeData.blanks.map((b) => ({
+        id: b.id,
+        target: b.correct || b.target,
+        options: b.options || [b.correct || b.target]
+      }));
+    }
+
     if (activeData?.gaps && Array.isArray(activeData.gaps)) {
       return activeData.gaps.map((g) => ({
         ...g,
-        options: shuffleArray(g.options || [g.target])
+        target: g.correct || g.target,
+        options: g.options || [g.target]
       }));
     }
 
@@ -38,7 +47,7 @@ export function InlineTextClozeDropdown({ customData, data: propData, onComplete
       const bankWords = (activeData.word_bank || []).map(w => typeof w === 'string' ? w : w.word);
       return Object.entries(activeData.answers).map(([gapId, target]) => {
         const distractors = bankWords.filter(w => w !== target).slice(0, 2);
-        const options = shuffleArray([target, ...distractors]);
+        const options = [target, ...distractors];
         return {
           id: parseInt(gapId, 10),
           target,
@@ -49,6 +58,17 @@ export function InlineTextClozeDropdown({ customData, data: propData, onComplete
 
     return [];
   }, [activeData, shuffleSeed]);
+
+  const exampleBlank = useMemo(() => {
+    if (activeData?.example) {
+      return {
+        id: activeData.example.blank || activeData.example.id || 1,
+        target: activeData.example.correct || activeData.example.target || "forests",
+        options: activeData.example.options || ["forests", "forest", "a forest"]
+      };
+    }
+    return null;
+  }, [activeData]);
 
   // Fisher-Yates Shuffle Story Title choices
   const titleOptions = useMemo(() => {
@@ -156,10 +176,10 @@ export function InlineTextClozeDropdown({ customData, data: propData, onComplete
             ★ EXAMPLE
           </span>
           <span className="text-xs font-black text-amber-950">
-            Example Gap [0]: &ldquo;{activeData?.example?.target || "walked"}&rdquo;
+            Example Gap [{exampleBlank?.id || 1}]: &ldquo;{exampleBlank?.target || "forests"}&rdquo;
           </span>
           <span className="text-[11px] text-amber-800 italic font-medium">
-            (Options: {((activeData?.example?.options) || ["walked", "walking", "walk"]).join(' / ')})
+            (Options: {(exampleBlank?.options || ["forests", "forest", "a forest"]).join(' / ')})
           </span>
         </div>
         <span className="px-2 py-0.5 bg-amber-200 text-amber-950 font-black text-[10px] rounded-lg uppercase">
@@ -174,7 +194,16 @@ export function InlineTextClozeDropdown({ customData, data: propData, onComplete
             return <span key={idx}>{renderParsedText(seg.content, 'indigo')}</span>;
           }
 
+          if (exampleBlank && seg.gapId === exampleBlank.id) {
+            return (
+              <span key={idx} className="inline-flex items-center px-2.5 py-0.5 mx-1 rounded-lg bg-amber-200 text-amber-950 font-sans font-black text-xs sm:text-sm border border-amber-300">
+                ({exampleBlank.id}) {exampleBlank.target}
+              </span>
+            );
+          }
+
           const gap = gapsData.find(g => g.id === seg.gapId);
+          if (!gap) return null;
           const chosen = answers[seg.gapId];
           const isCorrect = isSubmitted && chosen === gap.target;
           const isPopoverOpen = activeGapPopover === seg.gapId;

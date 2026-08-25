@@ -1,69 +1,135 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, Play, Pause, RotateCcw, Headphones } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 import HoverWord, { renderParsedText } from './HoverWord';
 import ExamIntroAudioButton from './ExamIntroAudioButton';
+import CompletionModal from './CompletionModal';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import { useUserStore } from '../../stores/useUserStore';
 
+function normalizeNote(str) {
+  if (!str) return '';
+  return str
+    .trim()
+    .toLowerCase()
+    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '')
+    .replace(/^(the|a|an)\s+/, '')
+    .replace(/\s+/g, ' ');
+}
 
-export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplete, weekNumber = 33 }) {
+export function NotepadNoteCompleter({ customData, data: propData, title, notes, passageAudioText, onComplete, weekNumber = 33 }) {
   const [answers, setAnswers] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
 
-  const defaultNotes = notes || [];
+  const activeData = customData || propData || {};
+  const notepadTitle = title || activeData?.title || "Official Cambridge Listening Part 2 Notepad";
 
-  // Combine notes audio into 1 continuous dialogue audio passage if passageAudioText is not passed
+  const exampleObj = useMemo(() => {
+    if (activeData?.example) {
+      return {
+        label: activeData.example.field_label || activeData.example.label || "Example Item",
+        answer: activeData.example.answer || activeData.example.target || "corridor"
+      };
+    }
+    return {
+      label: weekNumber === 34 ? "Wake-up time" : "Classroom number",
+      answer: weekNumber === 34 ? "6:00 AM" : "Room 4B"
+    };
+  }, [activeData, weekNumber]);
+
+  const defaultNotes = useMemo(() => {
+    if (activeData?.fields && Array.isArray(activeData.fields)) {
+      return activeData.fields.map((f, idx) => ({
+        id: f.id || `f${idx + 1}`,
+        label: f.field_label || f.label || `Note ${idx + 1}`,
+        target: f.answer || f.target || "",
+        hint: f.hint || `fill in ${f.field_label || f.label || 'note'}`
+      }));
+    }
+    if (notes && Array.isArray(notes)) {
+      return notes;
+    }
+    return [];
+  }, [activeData, notes]);
+
+  const audioUrl = activeData?.audio_url || `/audio/week${weekNumber}/listening_p2_full.mp3`;
   const fullAudioPassage = passageAudioText || defaultNotes.map(n => n.audio_text).filter(Boolean).join(" ");
 
   // Cleanup audio playback on unmount or tab switch
   useEffect(() => {
     return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
       VoiceService.stopAudio();
     };
   }, []);
 
   const handleToggleMasterAudio = async () => {
     if (isPlaying) {
+      if (audioRef.current) audioRef.current.pause();
       VoiceService.stopAudio();
       setIsPlaying(false);
     } else {
       setIsPlaying(true);
       try {
-        await VoiceService.speak(fullAudioPassage, 'dictation');
+        if (audioUrl) {
+          if (!audioRef.current) {
+            audioRef.current = new Audio(audioUrl);
+            audioRef.current.onended = () => setIsPlaying(false);
+            audioRef.current.onerror = async () => {
+              // Fallback to TTS
+              await VoiceService.speak(fullAudioPassage || notepadTitle, 'dictation');
+              setIsPlaying(false);
+            };
+          }
+          await audioRef.current.play();
+        } else {
+          await VoiceService.speak(fullAudioPassage, 'dictation');
+          setIsPlaying(false);
+        }
       } catch (err) {
-        console.warn('[Notepad] Audio playback error:', err);
-      } finally {
+        console.warn('[Notepad] Audio playback error, falling back to TTS:', err);
+        try {
+          await VoiceService.speak(fullAudioPassage || notepadTitle, 'dictation');
+        } catch (e) {}
         setIsPlaying(false);
       }
     }
   };
 
   const handleReplayMasterAudio = async () => {
-    VoiceService.stopAudio();
-    setIsPlaying(true);
-    try {
-      await VoiceService.speak(fullAudioPassage, 'dictation');
-    } catch (err) {
-      console.warn('[Notepad] Audio playback error:', err);
-    } finally {
-      setIsPlaying(false);
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+      setIsPlaying(true);
+    } else {
+      handleToggleMasterAudio();
     }
   };
-
 
   const handleCheck = () => {
     let totalCorrect = 0;
     defaultNotes.forEach((note) => {
-      const userAns = (answers[note.id] || '').trim().toLowerCase();
-      const targetAns = note.target.toLowerCase();
-      if (userAns === targetAns || (userAns && targetAns.includes(userAns))) {
+      const userNorm = normalizeNote(answers[note.id] || '');
+      const targetNorm = normalizeNote(note.target);
+      if (userNorm && (userNorm === targetNorm || targetNorm.includes(userNorm) || userNorm.includes(targetNorm))) {
         totalCorrect++;
       }
     });
     const finalScore = Math.round((totalCorrect / defaultNotes.length) * 100);
     setScore(finalScore);
     setIsSubmitted(true);
+
+    if (finalScore >= 80) {
+      fireCelebrationConfetti('ListeningP2_Complete');
+    }
+    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+    if (userStore?.addXP) userStore.addXP(50);
+
     if (onComplete) onComplete(finalScore);
   };
 
@@ -120,7 +186,7 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
               introText="Listen and write. There is one example."
             />
             <h3 className="text-xs sm:text-sm font-black text-amber-950">
-              {title || "School Incident Notepad"} (5 Notes)
+              {notepadTitle} (5 Notes)
             </h3>
           </div>
 
@@ -144,10 +210,7 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
                   ★ EXAMPLE
                 </span>
                 <span className="text-xs font-black text-amber-950">
-                  {weekNumber === 34 ? "Lion's name" : "Incident Location"}:
-                </span>
-                <span className="text-[11px] text-amber-800 italic font-medium">
-                  ({weekNumber === 34 ? "name of the lion" : "where incident happened"})
+                  {exampleObj.label}:
                 </span>
               </div>
               <span className="text-[10px] font-bold text-amber-800 bg-amber-200/80 px-1.5 py-0.5 rounded uppercase">
@@ -159,7 +222,7 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
               <input
                 type="text"
                 disabled={true}
-                value={weekNumber === 34 ? "Leo" : "corridor"}
+                value={exampleObj.answer}
                 className="flex-1 w-full px-3 py-1.5 rounded-lg border border-amber-300 font-black text-xs sm:text-sm text-amber-950 bg-amber-50/90 cursor-not-allowed"
               />
               <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -167,9 +230,9 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
           </div>
 
           {defaultNotes.map((note, index) => {
-            const userAns = (answers[note.id] || '').trim().toLowerCase();
-            const targetAns = note.target.toLowerCase();
-            const isCorrect = isSubmitted && (userAns === targetAns || (userAns && targetAns.includes(userAns)));
+            const userNorm = normalizeNote(answers[note.id] || '');
+            const targetNorm = normalizeNote(note.target);
+            const isCorrect = isSubmitted && (userNorm === targetNorm || (userNorm && targetNorm.includes(userNorm)));
 
             return (
               <div key={note.id} className="p-2 sm:p-2.5 bg-white rounded-xl border border-amber-200 shadow-2xs space-y-1">
@@ -180,7 +243,6 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
                   <span className="text-xs font-black text-amber-950">
                     {note.label}:
                   </span>
-                  <span className="text-[11px] text-amber-700 italic font-medium">({note.hint})</span>
                 </div>
 
                 <div className="flex items-center gap-1.5 w-full">

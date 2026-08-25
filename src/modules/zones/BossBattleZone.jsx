@@ -12,6 +12,8 @@ import InlineTextClozeDropdown from '../../components/cambridge/InlineTextClozeD
 import TextExtractionCompleter from '../../components/cambridge/TextExtractionCompleter';
 import MultipleChoice3Pic from '../../components/cambridge/MultipleChoice3Pic';
 import OpenClozeCompleter from '../../components/cambridge/OpenClozeCompleter';
+import RWPart3ClozeWithTitle from '../../components/cambridge/RWPart3ClozeWithTitle';
+import PictureStoryContinuation from '../../components/cambridge/PictureStoryContinuation';
 import FindDifferencesInteractive from '../../components/cambridge/FindDifferencesInteractive';
 import InformationExchangeP2 from '../../components/cambridge/InformationExchangeP2';
 import ChoiceGrid from '../../components/common/ChoiceGrid';
@@ -34,7 +36,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     return {
       listening: {
         p1: data?.listening_hub?.listening_p1 || data?.listeningHubData?.listening_p1 || data?.bossBattle?.listening?.p1,
-        p2: data?.listening_hub?.listening_p2_notes || data?.listeningHubData?.listening_p2_notes || data?.bossBattle?.listening?.p2,
+        p2: data?.listening_hub?.listening_p2 || data?.listening_hub?.listening_p2_notes || data?.listeningHubData?.listening_p2 || data?.bossBattle?.listening?.p2,
         p3: data?.listening_hub?.listening_p3 || data?.listeningHubData?.listening_p3 || data?.bossBattle?.listening?.p3,
         p4: data?.listening_hub?.listening_p4 || data?.listeningHubData?.listening_p4 || data?.listening_hub?.listening_p4_questions || data?.bossBattle?.listening?.p4,
         p5: data?.listening_hub?.listening_p5 || data?.listeningHubData?.listening_p5 || data?.bossBattle?.listening?.p5
@@ -42,13 +44,15 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
       readingWriting: {
         p1: data?.writing_hub?.rw_part_1 || data?.writingHubData?.rw_part_1 || data?.bossBattle?.readingWriting?.p1,
         p2: data?.writing_hub?.rw_part_2 || data?.writingHubData?.rw_part_2 || data?.bossBattle?.readingWriting?.p2,
+        p3: data?.writing_hub?.rw_part_3 || data?.writingHubData?.rw_part_3 || data?.bossBattle?.readingWriting?.p3,
         p4: data?.writing_hub?.rw_part_4 || data?.writingHubData?.rw_part_4 || data?.bossBattle?.readingWriting?.p4,
         p5: data?.writing_hub?.rw_part_5 || data?.writingHubData?.rw_part_5 || data?.bossBattle?.readingWriting?.p5,
         p6: data?.reading_hub?.rw_part_6 || data?.readingHubData?.rw_part_6 || data?.bossBattle?.readingWriting?.p6
       },
       speaking: {
         p1_findDiff: data?.speaking_hub?.find_differences || data?.speakingHubData?.find_differences || data?.bossBattle?.speaking?.p1_findDiff,
-        p2_cueCard: data?.speaking_hub?.info_exchange_cards || data?.speakingHubData?.info_exchange_cards || data?.bossBattle?.speaking?.p2_cueCard
+        p2_cueCard: data?.speaking_hub?.info_exchange_cards || data?.speakingHubData?.info_exchange_cards || data?.bossBattle?.speaking?.p2_cueCard,
+        p3_pictureStory: data?.speaking_hub?.picture_story || data?.speakingHubData?.picture_story || data?.bossBattle?.speaking?.p3_pictureStory
       }
     };
   }, [data]);
@@ -105,11 +109,13 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         { id: 'list_p5', name: 'Listening P5: Magic Color', category: 'Listening' },
         { id: 'rw_p1', name: 'Reading P1: Word Bank', category: 'Reading' },
         { id: 'rw_p2', name: 'Reading P2: Dialogue A-H', category: 'Reading' },
+        { id: 'rw_p3', name: 'Reading P3: Cloze Story & Title', category: 'Reading' },
         { id: 'rw_p4', name: 'Reading P4: Text Cloze', category: 'Reading' },
         { id: 'rw_p5', name: 'Reading P5: Story Detective', category: 'Reading' },
         { id: 'rw_p6', name: 'Reading P6: Open Cloze', category: 'Reading' },
         { id: 'spk_p1', name: 'Speaking P1: Find Diff', category: 'Speaking' },
         { id: 'spk_p2', name: 'Speaking P2: Ask & Answer', category: 'Speaking' },
+        { id: 'spk_p3', name: 'Speaking P3: Picture Story', category: 'Speaking' },
       ];
     }
 
@@ -301,6 +307,16 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
           />
         )}
 
+        {/* R&W P3 */}
+        {currentTask.id === 'rw_p3' && bossData.readingWriting?.p3 && (
+          <RWPart3ClozeWithTitle
+            customData={bossData.readingWriting.p3}
+            data={bossData.readingWriting.p3}
+            weekNumber={activeWeek}
+            onComplete={() => handleTaskComplete('rw_p3')}
+          />
+        )}
+
         {/* R&W P4 */}
         {currentTask.id === 'rw_p4' && bossData.readingWriting?.p4 && (
           <InlineTextClozeDropdown
@@ -348,6 +364,16 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
             data={bossData.speaking.p2_cueCard}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('spk_p2')}
+          />
+        )}
+
+        {/* SPEAKING P3 */}
+        {currentTask.id === 'spk_p3' && bossData.speaking?.p3_pictureStory && (
+          <PictureStoryContinuation
+            customData={bossData.speaking.p3_pictureStory}
+            data={bossData.speaking.p3_pictureStory}
+            weekNumber={activeWeek}
+            onComplete={() => handleTaskComplete('spk_p3')}
           />
         )}
       </div>
