@@ -1,0 +1,360 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Gate 15 Production DOM Assertions Spec — Week 33",
+  "version": "2.2.0",
+  "week": 33,
+  "global_negative_patterns": [
+    "lion", "mouse", "Lion", "Mouse", "hunter", "net", "rope", "chewed", "freed", "trapped",
+    "grateful", "Oak Tree", "Green Valley", "Animal Cooperation", "Seed Helpers",
+    "Object 1", "Object 2", "data not found", "caught 24 fish"
+  ],
+  "quests": {
+    "gear1_webtoon": {
+      "waitMs": 3000,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "W33 blueprint keyword in DOM (Jake OR corridor)",
+          "type": "contains_one_of",
+          "values": ["Jake", "corridor", "walking"],
+          "case_sensitive": false
+        },
+        {
+          "name": "3 pins mini-game present (Found indicator)",
+          "type": "contains_one_of",
+          "values": ["0/3", "Found", "🔍", "hidden", "pin"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    "gear2_karaoke": {
+      "waitMs": 1500,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "karaoke/shadowing blueprint keyword present",
+          "type": "contains_one_of",
+          "values": ["Jake", "walking", "corridor", "slipped", "floor", "carefully"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    "gear3_retell": {
+      "waitMs": 1500,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "retell blueprint keyword present",
+          "type": "contains_one_of",
+          "values": ["Jake", "walking", "corridor", "slipped", "floor", "nurse"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    "gear4_clil": {
+      "waitMs": 1500,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "part title contains Friction/Surfaces/Safety (NOT Animal/Seed)",
+          "type": "regex",
+          "pattern": "(Friction|friction|Surface|Safety|Physics)"
+        },
+        {
+          "name": "banned animal labels absent",
+          "type": "not_contains_regex",
+          "pattern": "(lion|mouse|squirrel|jay|nectar|pollen)"
+        },
+        {
+          "name": "Vocab Focus button clicked reveals >=5 vocab pills",
+          "type": "interaction_check",
+          "action": "click",
+          "selector": "button:has-text('Vocab Focus')",
+          "wait_after_ms": 1000,
+          "assertion": {
+            "type": "regex_min_count",
+            "pattern": "\\b(friction|smooth|rough|rubber|tiles|shoes|surface|grip|slip|slide|safe|safety|floor|water)\\b",
+            "min": 5,
+            "case_sensitive": false
+          }
+        },
+        {
+          "name": "Grammar X-Ray inline: >=3 highlight marks INSIDE paragraph",
+          "type": "dom_count",
+          "selector": "p mark, p span[class*='amber'], p span[class*='highlight']",
+          "min": 3
+        },
+        {
+          "name": "CLIL glossary chips rendered (>=3)",
+          "type": "dom_count",
+          "selector": "[data-testid='clil-glossary-chip']",
+          "min": 3
+        }
+      ]
+    },
+    "science_lab": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "START",
+      "neg": [],
+      "pos": [
+        {
+          "name": "lab title contains Friction/Physics/Safety",
+          "type": "regex",
+          "pattern": "(Friction|Physics|Safety|Corridor)"
+        },
+        {
+          "name": ">=2 themed label pills present after START",
+          "type": "contains_min_count",
+          "values": ["Wet Tiles", "Rubber Shoes", "Dry Floor", "Friction", "Smooth", "Grip", "Slip", "Warning Sign", "Safe", "Corridor", "Floor"],
+          "min": 2,
+          "case_sensitive": false
+        }
+      ]
+    },
+    "science_report": {
+      "waitMs": 1500,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "title Friction / Surface Safety Report",
+          "type": "regex",
+          "pattern": "(Friction|Surface|Safety|Floor)"
+        },
+        {
+          "name": "CLIL Data Card 3 rows present",
+          "type": "regex",
+          "pattern": "(CLIL Data Card|3 Key Facts|Data Card)"
+        },
+        {
+          "name": "3 steps present (Observation/Scientific/Conclusion)",
+          "type": "regex_all",
+          "patterns": [
+            "(Observation|Observe|Step 1|1\\.)",
+            "(Scientific|Measure|Step 2|2\\.)",
+            "(Conclusion|Record|Step 3|3\\.)"
+          ]
+        },
+        {
+          "name": "science_report pills reuse >=2 keywords from CLIL facts",
+          "type": "keyword_overlap",
+          "source_quest": "gear4_clil",
+          "min_overlap": 2
+        }
+      ]
+    },
+    "word_blitz": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "START",
+      "neg": [],
+      "pos": [
+        {
+          "name": ">=4 W33 blueprint words present",
+          "type": "contains_min_count",
+          "values": ["corridor", "slipped", "fell", "nurse", "bandage", "careful", "warning", "floor", "knee", "relieved", "arrived", "called"],
+          "min": 4,
+          "case_sensitive": false
+        }
+      ]
+    },
+    "sentence_smash": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "START",
+      "neg": [],
+      "pos": [
+        {
+          "name": "grammar drill tiles contain >=2 W33 blueprint keywords",
+          "type": "contains_min_count",
+          "values": ["Jake", "corridor", "walking", "slipped", "running", "while", "floor", "nurse"],
+          "min": 2,
+          "case_sensitive": false
+        }
+      ]
+    },
+    "math_quest": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "START",
+      "neg": ["monkey", "lion", "mouse", "hunter", "net", "rope", "chewed", "freed"],
+      "pos": [
+        {
+          "name": "Bar Model UI rendered",
+          "type": "regex",
+          "pattern": "(PROBLEM|Problem|Bar Model|Singapore|bar model|parts?|total|answer)"
+        },
+        {
+          "name": "math problem text contains W33 blueprint keywords",
+          "type": "regex",
+          "pattern": "(corridor|Jake|distance|walked|meters|total)"
+        },
+        {
+          "name": "problem numbers overlap bar model (>=2 shared integers)",
+          "type": "numbers_overlap",
+          "min": 2
+        }
+      ]
+    },
+    "story_writer": {
+      "waitMs": 2500,
+      "clickStart": false,
+      "neg": ["lion", "mouse", "net", "hunters trapped"],
+      "pos": [
+        {
+          "name": "step wizard: đúng 1 <img> scene + indicator 'Scene X of 3'",
+          "type": "regex",
+          "pattern": "(Scene 1 of 3|Scene \\d+ of 3|Panel \\d+ of 3)"
+        },
+        {
+          "name": "story writer interface loaded with W33 content",
+          "type": "contains_one_of",
+          "values": ["Scene", "Story", "Write", "Jake", "corridor", "floor", "nurse"],
+          "case_sensitive": false
+        },
+        {
+          "name": "chunks themed (>=2 W33 pill strings in DOM)",
+          "type": "contains_min_count",
+          "values": [
+            "Jake was walking carefully", "down the school corridor", "near the warning sign", "a student was running fast",
+            "slipped on the wet floor", "fell down heavily", "hurt his knee badly", "lost his balance",
+            "called the school nurse", "with a clean bandage", "felt relieved", "praised Jake"
+          ],
+          "min": 2,
+          "case_sensitive": false
+        }
+      ]
+    },
+    "broadcast_studio": {
+      "waitMs": 2000,
+      "clickStart": false,
+      "neg": [],
+      "pos": [
+        {
+          "name": "video recording interface loaded",
+          "type": "regex",
+          "pattern": "(Record|record|Camera|camera|Video Challenge|broadcast|Podcast|retell|RETELL)"
+        },
+        {
+          "name": "W33 blueprint keyword OR story context",
+          "type": "regex",
+          "pattern": "(Jake|corridor|floor|nurse|slipped|careful|retell|retelling|story|scene)"
+        }
+      ]
+    },
+    "info_exchange": {
+      "waitMs": 2000,
+      "clickStart": false,
+      "neg": ["data not found"],
+      "pos": [
+        {
+          "name": "cue card exchange UI loaded with W33 content",
+          "type": "regex",
+          "pattern": "(School|Corridor|Jake|Nurse|Headmaster|First Aid|Bandage|Location|Time|Person|Microphone|Accident)"
+        },
+        {
+          "name": "cue rows have actual text (NOT empty '01. ? 02. ? 03. ?')",
+          "type": "not_contains_regex",
+          "pattern": "01\\.\\s*\\?\\s*02\\.\\s*\\?\\s*03\\.\\s*\\?"
+        },
+        {
+          "name": "at least 1 cue text string >=9 chars",
+          "type": "regex_min_count",
+          "pattern": "\\b[A-Za-z][a-z]{8,}\\b",
+          "min": 1
+        },
+        {
+          "name": "Table B has >=3 examiner audio buttons",
+          "type": "dom_count",
+          "selector": "[data-testid='ie-audio-btn']",
+          "min": 3
+        }
+      ]
+    },
+    "boss_listening": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "ENTER BOSS BATTLE NOW",
+      "neg": [],
+      "pos": [
+        {
+          "name": "exam header Cambridge A2 Flyers",
+          "type": "regex",
+          "pattern": "Cambridge A2 Flyers — "
+        },
+        {
+          "name": "header shows correct Cycle 1 task (Part 1 or Part 2 or Part 3)",
+          "type": "regex",
+          "pattern": "(Part 1|Part 2|Part 3|PART 1|PART 2|PART 3|Listening|Draw Lines)"
+        },
+        {
+          "name": "object labels themed (NO Object N pattern)",
+          "type": "not_contains_regex",
+          "pattern": "\\bObject\\s+\\d+\\b"
+        }
+      ]
+    },
+    "boss_reading": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "ENTER BOSS BATTLE NOW",
+      "neg": ["MAGIC COLOR", "Color Mission", "Color Write", "lion", "mouse"],
+      "pos": [
+        {
+          "name": "exam header Cambridge A2 Flyers",
+          "type": "regex",
+          "pattern": "Cambridge A2 Flyers — "
+        },
+        {
+          "name": "Cycle 1 boss_reading renders Note Completion (Listening P2 / RW)",
+          "type": "regex",
+          "pattern": "(Notepad|Note|NotepadNoteCompleter|Incident|Part 2|Listening Part 2|Cambridge A2 Flyers)"
+        }
+      ]
+    },
+    "weekly_review": {
+      "waitMs": 1500,
+      "clickStart": true,
+      "clickText": "ENTER BOSS BATTLE NOW",
+      "neg": ["lion", "mouse", "forest hunter"],
+      "pos": [
+        {
+          "name": "Cycle 1 weekly_review renders Cambridge Task",
+          "type": "regex",
+          "pattern": "(Cambridge A2 Flyers|Matching|Speaking|Listening Part 3|Location Cards|Clean Bandage)"
+        },
+        {
+          "name": "hotspot calibration file: 4 mapped regions",
+          "type": "file_check",
+          "path": "docs/week33_hotspot_calibration.json",
+          "require": "\"mapped\": 4"
+        }
+      ]
+    }
+  },
+  "data_consistency": [
+    {
+      "name": "listening_hub.singapore_math[i].problem_en === singapore_math.js problems[i].problemText (i=1..5)",
+      "type": "file_equality",
+      "a": "listening_hub.singapore_math[i].problem_en",
+      "b": "singapore_math.js problems[i].problemText"
+    },
+    {
+      "name": "speaking_hub.js info_exchange_cards.examiner_questions audio_url exists",
+      "type": "field_exists",
+      "file": "speaking_hub.js",
+      "path": "info_exchange_cards.examiner_questions[0..2].audio_url"
+    },
+    {
+      "name": "writing_hub.js writing_chunks exists",
+      "type": "field_exists",
+      "file": "writing_hub.js",
+      "path": "writing_chunks"
+    }
+  ]
+}
