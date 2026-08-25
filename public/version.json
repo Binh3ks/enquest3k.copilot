@@ -1,9 +1,9 @@
 {
-  "commit": "5ac73b7e8f4b4581417252c78df5189aa4024376",
-  "git_commit": "5ac73b7e8f4b4581417252c78df5189aa4024376",
-  "shortCommit": "5ac73b7e",
-  "message": "chore: trigger deployment [round-l]",
-  "builtAt": "2026-08-25T09:41:08.013Z",
-  "build_timestamp": "2026-08-25T09:41:08.014Z",
+  "commit": "c3c44d5342bbddc1ecf69ab767f4faecfce10a89",
+  "git_commit": "c3c44d5342bbddc1ecf69ab767f4faecfce10a89",
+  "shortCommit": "c3c44d53",
+  "message": "fix(scenes): resample W33 webtoon scenes to 16:9 and fix keyword_overlap [round-l]",
+  "builtAt": "2026-08-25T09:45:05.952Z",
+  "build_timestamp": "2026-08-25T09:45:05.953Z",
   "env": "production"
 }

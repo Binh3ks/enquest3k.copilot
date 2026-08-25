@@ -145,8 +145,8 @@ export const writingHubData = {
     topic: "Friction & Surface Safety Report",
     notebookTitle: "Friction on School Floors Lab Notebook",
     data_card: [
-      { subject: "💧 Wet Tiles", action: "water reduces surface friction", result: "students slipped and lost balance" },
-      { subject: "👟 Rubber Shoes", action: "rubber provides strong grip", result: "walking safely with more friction" },
+      { subject: "💧 Wet Tiles", action: "water reduced surface friction", result: "students slipped and lost balance" },
+      { subject: "👟 Rubber Shoes", action: "rubber provided strong grip", result: "walking safely with more friction" },
       { subject: "⚠️ Warning Sign", action: "placed near wet cleaning area", result: "warned everyone to walk carefully" }
     ],
     levels: {

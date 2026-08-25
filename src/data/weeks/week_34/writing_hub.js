@@ -180,9 +180,9 @@ export const writingHub = {
     topic: "Seed Helpers & Forest Plants Report",
     notebookTitle: "How Animals Help Forest Plants Grow",
     data_card: [
-      { subject: "🐿️ Squirrels", action: "bury extra nuts in the ground", result: "some nuts grow into new oak trees" },
-      { subject: "🐝 Bees", action: "drink sweet nectar from flowers", result: "carry pollen to help new flowers grow" },
-      { subject: "🐦 Jays", action: "hide seeds under soft leaves", result: "start small green plants across the forest" }
+      { subject: "🐿️ Squirrels", action: "buried extra nuts in the ground", result: "some nuts grew into new oak trees" },
+      { subject: "🐝 Bees", action: "drank sweet nectar from flowers", result: "carried pollen to help new flowers grow" },
+      { subject: "🐦 Jays", action: "hid seeds under soft leaves", result: "started small green plants across the forest" }
     ],
     levels: {
       L1: { mode: "match_pairs", description: "Match Action and Result pairs from Data Card" },
