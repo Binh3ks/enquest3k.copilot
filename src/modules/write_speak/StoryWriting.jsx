@@ -590,6 +590,12 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   const grammarBoosters = isCategorizedWordBank ? (pictureMode.word_bank.grammar_boosters || []) : [];
   const flatWordBank = Array.isArray(pictureMode.word_bank) ? pictureMode.word_bank : [];
 
+  const chunksData = pictureMode.writing_chunks || content?.writing_chunks || content?.writing_hub?.writing_chunks || null;
+  const settingChunks = chunksData?.setting_time;
+  const actionChunks = chunksData?.action_manner;
+  const problemChunks = chunksData?.problem_event;
+  const solutionChunks = chunksData?.solution_outcome;
+
   const fallback3Panels = [
     { panel: 1, image_url: `/images/week${weekId || 34}/webtoon_scene_1.png`, caption: "Scene 1" },
     { panel: 2, image_url: `/images/week${weekId || 34}/webtoon_scene_2.png`, caption: "Scene 2" },
@@ -722,59 +728,65 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
             <span className="text-[10px] font-black uppercase text-slate-700 tracking-wider">
               🎯 Tap Chunks & Collocations to Insert:
             </span>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-              {/* 🔵 Setting Chunks */}
-              <div className="p-2 bg-blue-50 rounded-xl border border-blue-200 space-y-1">
-                <span className="text-[9px] font-black uppercase text-blue-900 block">🔵 Setting & Time:</span>
-                <div className="flex flex-wrap gap-1">
-                  {["In the morning", "at the beginning", "during the journey"].map((c, i) => (
-                    <button key={i} type="button" onClick={() => isStructured ? setSettingText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
-                      className="px-2 py-0.5 bg-white hover:bg-blue-100 text-blue-950 border border-blue-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
-                      + {c}
-                    </button>
-                  ))}
-                </div>
+            {(!chunksData || !settingChunks || !actionChunks || !problemChunks || !solutionChunks) ? (
+              <div className="p-3 bg-rose-50 border border-rose-300 rounded-xl text-rose-700 text-xs font-bold">
+                ⚠️ Missing writing_chunks in writing_hub data — check data configuration!
               </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                {/* 🔵 Setting Chunks */}
+                <div className="p-2 bg-blue-50 rounded-xl border border-blue-200 space-y-1">
+                  <span className="text-[9px] font-black uppercase text-blue-900 block">🔵 Setting & Time:</span>
+                  <div className="flex flex-wrap gap-1">
+                    {settingChunks.map((c, i) => (
+                      <button key={i} type="button" onClick={() => isStructured ? setSettingText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
+                        className="px-2 py-0.5 bg-white hover:bg-blue-100 text-blue-950 border border-blue-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
+                        + {c}
+                      </button>
+                    ))}
+                  </div>
+                </div>
 
-              {/* 🟢 Action Chunks */}
-              <div className="p-2 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1">
-                <span className="text-[9px] font-black uppercase text-emerald-900 block">🟢 Action & Manner:</span>
-                <div className="flex flex-wrap gap-1">
-                  {["was walking carefully", "was moving forward", "worked together to explore"].map((c, i) => (
-                    <button key={i} type="button" onClick={() => isStructured ? setActionText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
-                      className="px-2 py-0.5 bg-white hover:bg-emerald-100 text-emerald-950 border border-emerald-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
-                      + {c}
-                    </button>
-                  ))}
+                {/* 🟢 Action Chunks */}
+                <div className="p-2 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1">
+                  <span className="text-[9px] font-black uppercase text-emerald-900 block">🟢 Action & Manner:</span>
+                  <div className="flex flex-wrap gap-1">
+                    {actionChunks.map((c, i) => (
+                      <button key={i} type="button" onClick={() => isStructured ? setActionText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
+                        className="px-2 py-0.5 bg-white hover:bg-emerald-100 text-emerald-950 border border-emerald-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
+                        + {c}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* 🟠 Problem Chunks */}
-              <div className="p-2 bg-amber-50 rounded-xl border border-amber-200 space-y-1">
-                <span className="text-[9px] font-black uppercase text-amber-900 block">🟠 Problem & Event:</span>
-                <div className="flex flex-wrap gap-1">
-                  {["faced a challenge", "needed urgent help", "stopped immediately"].map((c, i) => (
-                    <button key={i} type="button" onClick={() => isStructured ? setProblemText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
-                      className="px-2 py-0.5 bg-white hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
-                      + {c}
-                    </button>
-                  ))}
+                {/* 🟠 Problem Chunks */}
+                <div className="p-2 bg-amber-50 rounded-xl border border-amber-200 space-y-1">
+                  <span className="text-[9px] font-black uppercase text-amber-900 block">🟠 Problem & Event:</span>
+                  <div className="flex flex-wrap gap-1">
+                    {problemChunks.map((c, i) => (
+                      <button key={i} type="button" onClick={() => isStructured ? setProblemText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
+                        className="px-2 py-0.5 bg-white hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
+                        + {c}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* 🟣 Solution Chunks */}
-              <div className="p-2 bg-purple-50 rounded-xl border border-purple-200 space-y-1">
-                <span className="text-[9px] font-black uppercase text-purple-900 block">🟣 Solution & Outcome:</span>
-                <div className="flex flex-wrap gap-1">
-                  {["helped each other", "solved the problem", "felt relieved and happy"].map((c, i) => (
-                    <button key={i} type="button" onClick={() => isStructured ? setSolutionText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
-                      className="px-2 py-0.5 bg-white hover:bg-purple-100 text-purple-950 border border-purple-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
-                      + {c}
-                    </button>
-                  ))}
+                {/* 🟣 Solution Chunks */}
+                <div className="p-2 bg-purple-50 rounded-xl border border-purple-200 space-y-1">
+                  <span className="text-[9px] font-black uppercase text-purple-900 block">🟣 Solution & Outcome:</span>
+                  <div className="flex flex-wrap gap-1">
+                    {solutionChunks.map((c, i) => (
+                      <button key={i} type="button" onClick={() => isStructured ? setSolutionText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
+                        className="px-2 py-0.5 bg-white hover:bg-purple-100 text-purple-950 border border-purple-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
+                        + {c}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       )}

@@ -28,9 +28,13 @@ export default function CLILExplorer({
   const [selectedAnswers, setSelectedAnswers] = useState({});
 
   const grammarPatterns = useMemo(() => {
+    if (Array.isArray(clilData?.grammar_patterns) && clilData.grammar_patterns.length > 0) return clilData.grammar_patterns;
     if (Array.isArray(targetGrammarRegex) && targetGrammarRegex.length > 0) return targetGrammarRegex;
-    return [{ pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous (was/were + V-ing)' }];
-  }, [targetGrammarRegex]);
+    return [
+      { pattern: '\\b(help|bury|grow|hide|start|fly|drink|travel|carry|call|stays|have|was|were)\\b', label: 'Action Verbs' },
+      { pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous' }
+    ];
+  }, [clilData, targetGrammarRegex]);
 
   const vocabPills = useMemo(() => {
     if (Array.isArray(clilData?.vocab_focus) && clilData.vocab_focus.length > 0) return clilData.vocab_focus;
@@ -253,6 +257,32 @@ export default function CLILExplorer({
               >
                 <span>{w}</span>
               </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* CLIL Glossary Section */}
+      {Array.isArray(clilData?.glossary) && clilData.glossary.length > 0 && (
+        <div className="p-4 bg-teal-50/90 border border-teal-200 rounded-2xl space-y-2 shadow-xs">
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] font-black uppercase text-teal-900 tracking-wider flex items-center gap-1.5">
+              <BookOpen size={14} className="text-teal-700" /> Science & Nature Glossary
+            </span>
+            <span className="text-[10px] font-bold text-teal-800 bg-teal-100 px-2.5 py-0.5 rounded-full border border-teal-300">
+              Key Terms
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {clilData.glossary.map((item, idx) => (
+              <span
+                key={idx}
+                data-testid="clil-glossary-chip"
+                className="px-3 py-1 bg-white border border-teal-300 text-teal-950 rounded-xl text-xs font-bold shadow-xs flex items-center gap-1.5"
+              >
+                <span className="font-black text-teal-800">{item.word}:</span>
+                <span className="text-slate-700 font-medium">{item.def}</span>
+              </span>
             ))}
           </div>
         </div>

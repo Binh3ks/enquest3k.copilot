@@ -65,18 +65,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
 
     const storyScenes = data?.story_scenes || [];
 
-    const interactiveStory = data?.interactive_story || {
-    title: "Interactive Story: Corridor Safety Incident",
-    text_template: "Jake was walking carefully down the school corridor today. First, he noticed a wet puddle near the science room. Then, a boy running fast ____1____ on the slippery tiles and ____2____ heavily. ____3____, Jake stopped immediately and ____4____ the school nurse. The nurse arrived quickly with a ____5____ and treated his knee gently.",
-    gaps: [
-      { id: 1, target: 'slipped', hint: 'bị trượt chân' },
-      { id: 2, target: 'fell down', hint: 'ngã xuống' },
-      { id: 3, target: 'Right away', hint: 'ngay lập tức' },
-      { id: 4, target: 'called', hint: 'gọi y tế' },
-      { id: 5, target: 'clean bandage', hint: 'băng cá nhân' }
-    ],
-    word_bank: ['slipped', 'fell down', 'Right away', 'called', 'clean bandage', 'careful', 'hurt']
-  };
+    const interactiveStory = data?.interactive_story || null;
 
   const checkQuestions = data?.check_mode_drills || [
     {

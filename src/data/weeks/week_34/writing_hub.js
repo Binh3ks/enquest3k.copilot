@@ -14,6 +14,12 @@ export const writingHub = {
     ],
     min_words: 20
   },
+  writing_chunks: {
+    setting_time: ["One sunny afternoon,", "At the start of the adventure,", "Under a tall oak tree,"],
+    action_manner: ["was sleeping peacefully", "was running across the path", "worked together to escape"],
+    problem_event: ["was trapped in a heavy net", "roared for help", "chewed the thick ropes"],
+    solution_outcome: ["freed the mighty lion", "kept his promise bravely", "became loyal friends forever"]
+  },
   rw_part_1: {
     word_bank: ["lion", "mouse", "net", "ropes", "forest", "hunter", "trapped", "freed", "promise", "brave", "tiny", "grateful", "sleeping", "mighty", "chewed"],
     definitions: [
@@ -68,22 +74,23 @@ export const writingHub = {
     ]
   },
   science_report_config: {
-    topic: "Animal Cooperation in Nature",
-    notebookTitle: "Animal Cooperation Lab Notebook",
+    topic: "Seed Helpers & Forest Plants Report",
+    notebookTitle: "How Animals Help Forest Plants Grow",
     step1Title: "Observe Animal Roles",
     step1Pills: {
-      "🦁 Large Predators": ["protect the territory", "maintain balance in the forest", "keep other animals alert"],
-      "🐭 Small Animals": ["clean the forest floor", "plant new seeds", "help free larger friends"]
+      "🐿️ Squirrels": ["bury extra nuts in the ground", "forget some nuts in spring"],
+      "🐝 Bees": ["drink sweet nectar from flowers", "carry pollen to new flowers"],
+      "🐦 Jays": ["hide seeds under leaves", "start small green plants"]
     },
     step2Title: "Measure Mutual Benefits",
     step2Pills: {
-      "🤝 Teamwork Actions": ["animals work together in harmony", "different skills help everyone survive", "cooperation makes the forest safer"],
-      "🌲 Forest Health": ["plants and trees grow well", "animals stay safe from danger", "food and water are shared"]
+      "🌳 New Trees": ["buried nuts grow into young trees", "the forest gets more trees"],
+      "🌸 New Flowers": ["pollen travel makes flowers grow", "flowers give food again"]
     },
     step3Title: "Record Ecosystem Conclusion",
     step3Pills: {
-      "🏆 Key Conclusion": ["true friendship and teamwork help all creatures", "size does not matter when helping friends", "cooperation keeps nature strong"],
-      "🌟 Takeaway": ["small acts of kindness make a big difference", "everyone has an important role in nature", "working together brings peace"]
+      "🏆 Key Conclusion": ["animals help plants without knowing", "plants give animals food and homes"],
+      "🌟 Takeaway": ["small helpers keep the forest strong", "teamwork works across species"]
     }
   }
 };

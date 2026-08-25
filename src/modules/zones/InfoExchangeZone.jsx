@@ -447,21 +447,43 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                   </div>
                 );
               })
+            ) : fieldsB.length === 0 ? (
+              <div className="p-3 bg-rose-50 border border-rose-300 rounded-xl text-rose-700 text-xs font-bold">
+                ⚠️ Missing Table B fields in speaking_hub data — check data configuration!
+              </div>
             ) : (
               fieldsB.map((f, idx) => {
                 const isActive = fieldIdxB === idx;
                 const isPassed = fieldIdxB > idx;
+                const audioUrl = f.audio_url || infoExData?.examiner_questions?.[idx]?.audio_url || null;
 
                 return (
                   <div
-                    key={f.id}
+                    key={f.id || idx}
                     className={`px-3.5 sm:px-4 py-3 sm:py-3.5 rounded-xl transition flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3 ${
                       isActive ? 'bg-purple-50 border-2 border-purple-300 shadow-sm' : isPassed ? 'bg-emerald-50/70' : 'bg-white'
                     }`}
                   >
-                    <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-slate-500 shrink-0">
-                      {f.label}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      {audioUrl ? (
+                        <button
+                          type="button"
+                          data-testid="ie-audio-btn"
+                          onClick={() => {
+                            VoiceService.speak(f.nova_question || f.label, 'story', { audioUrl }).catch(() => VoiceService.speak(f.nova_question || f.label, 'story'));
+                          }}
+                          className="p-1.5 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-lg transition active:scale-95 shrink-0"
+                          title="Listen to Examiner Question"
+                        >
+                          <Volume2 size={14} />
+                        </button>
+                      ) : (
+                        <span className="p-1 bg-rose-100 text-rose-600 rounded text-[9px] font-bold">⚠️ No Audio</span>
+                      )}
+                      <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-slate-500 shrink-0">
+                        {f.label}
+                      </span>
+                    </div>
                     <div className="flex items-center gap-1.5 text-slate-900 font-bold text-xs sm:text-sm">
                       <span>{f.value}</span>
                       {isPassed && <CheckCircle2 size={15} className="text-emerald-600 shrink-0" />}

@@ -109,7 +109,7 @@ function adaptInfoExchangeCards(infoCards) {
         field_label: label,
         value: val,
         cue_word: cueWord,
-        cue_prompt: `${label} / ${cardATitle} / ${val}?`,
+        cue_prompt: `${cueWord.toUpperCase()} — ${label.toLowerCase()}`,
         nova_reply: `The ${label.toLowerCase()} is ${val}.`,
         acceptable_questions: [
           `What is the ${label.toLowerCase()} of ${cardATitle}?`,
@@ -132,6 +132,7 @@ function adaptInfoExchangeCards(infoCards) {
         label: `${label}: ${val}`,
         field_label: label,
         value: val,
+        audio_url: (infoCards.examiner_questions && infoCards.examiner_questions[i] && infoCards.examiner_questions[i].audio_url) || null,
         nova_question: `What is the ${label.toLowerCase()} of ${cardBTitle}?`,
         answer: val,
         acceptable_answers: [

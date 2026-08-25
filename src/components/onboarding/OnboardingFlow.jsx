@@ -475,7 +475,7 @@ export default function OnboardingFlow({ onComplete }) {
               <div className="onboarding-nova-demo">
                 <div className="onboarding-nova-bubble">
                   <span className="onboarding-nova-icon">🔊</span>
-                  <span className="onboarding-nova-text">"Jake was walking carefully down the corridor."</span>
+                  <span className="onboarding-nova-text">"The brave lion was resting under the green tree."</span>
                 </div>
                 <p className="onboarding-hint">
                   In the app, you'll shadow Nova's voice to improve your English!

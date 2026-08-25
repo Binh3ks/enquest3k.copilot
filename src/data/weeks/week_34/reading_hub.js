@@ -78,24 +78,44 @@ export const readingHub = {
       }
     ],
     clil_article: {
-      title: "Animal Cooperation & Forest Ecosystems",
-      content_en: "In the green forest ecosystem, animals work together to survive and protect their shared habitat. Yesterday, a mighty lion was patrolling the sunny forest territory to guard the animal community against dangerous hunters. Nearby, a tiny mouse was gathering seeds under the oak tree. The buried seeds soon grew into fresh green bushes. High above the ground, alert birds were chirping warning signals from thick branches whenever predators were approaching. The brave creatures were helping each other build safe shelters and gather food across the forest. When different species cooperate in nature, the whole forest ecosystem stays healthy, vibrant, and strong.",
-      content_vi: "Trong hệ sinh thái rừng xanh, các loài động vật cùng nhau làm việc để sinh tồn và bảo vệ môi trường sống chung. Hôm qua, một chú sư tử dũng mãnh đã tuần tra lãnh thổ rừng rực nắng để bảo vệ cộng đồng động vật khỏi những kẻ săn bắn nguy hiểm. Gần đó, một chú chuột nhỏ đang thu gom hạt giống dưới gốc cây sồi. Những hạt giống được vùi đã sớm mọc thành những bụi cây xanh tươi mới. Trên cao khỏi mặt đất, những chú chim cảnh giác hót vang tín hiệu cảnh báo từ cành cây dày mỗi khi có thú săn mồi đang tiến lại gần. Những sinh vật dũng cảm đã giúp đỡ lẫn nhau xây dựng nơi trú ẩn an toàn và thu thập thức ăn khắp khu rừng. Khi các loài khác nhau hợp tác trong tự nhiên, toàn bộ hệ sinh thái rừng luôn khỏe mạnh, tràn đầy sức sống và bền vững.",
+      title: "Animal Cooperation: Seed Helpers & Forest Plants",
+      part_1_title: "Seed Helpers in the Forest",
+      part_2_title: "Bees, Birds and New Plants",
+      content_en: "In a forest, animals and plants help each other every day. Squirrels eat nuts, and they bury extra nuts in the ground. In spring, some buried nuts grow into new young trees. Birds called jays also hide seeds in the soft earth, and small green plants start from them.\n\nBees fly happily from flower to flower to drink sweet nectar. While they travel, they carry pollen, so bright new flowers can grow. Scientists call these animals seed helpers. When many animals help the forest, it stays green, healthy, and strong. All animals have plenty of food and safe homes.",
+      content_vi: "Trong một khu rừng, động vật và thực vật giúp đỡ lẫn nhau mỗi ngày. Sóc ăn các loại hạt và chúng vùi các hạt thừa xuống đất. Vào mùa xuân, một số hạt được chôn mọc thành những cây non mới. Những loài chim gọi là giẻ cùi cũng giấu hạt trong lòng đất mềm và những cây xanh nhỏ bắt đầu mọc từ chúng.\n\nOng bay vui vẻ từ bông hoa này sang bông hoa khác để uống mật hoa ngọt ngào. Trong khi di chuyển, chúng mang theo phấn hoa, để những bông hoa rực rỡ mới có thể phát triển. Các nhà khoa học gọi những loài động vật này là những người trợ giúp hạt giống. Khi nhiều loài động vật giúp đỡ khu rừng, nó luôn xanh tươi, khỏe mạnh và vững chắc. Mọi loài động vật đều có nhiều thức ăn và ngôi nhà an toàn.",
       cover_image: "/images/week34/explore_cover_w34.jpg",
       audio_url: "/audio/week34/explore.mp3",
-      vocab_focus: ["lion", "mouse", "forest", "hunter", "trapped", "net", "rope", "chewed", "freed", "brave", "tiny", "mighty", "grateful", "promise", "sleeping"],
+      vocab_focus: ["forest", "squirrel", "jay", "nectar", "pollen", "seed", "grow", "plants", "flowers", "helpers", "safe", "homes", "green", "strong", "travel"],
+      glossary: [
+        { word: "squirrel", def: "A small animal with a bushy tail that eats and buries nuts." },
+        { word: "jay", def: "A colorful forest bird that hides acorns and seeds." },
+        { word: "nectar", def: "Sweet liquid inside flowers that bees and birds drink." },
+        { word: "pollen", def: "Fine yellow powder that bees carry so new flowers can grow." }
+      ],
       comprehension_questions: [
         {
           id: "q1",
-          question: "Why was the mighty lion patrolling the forest territory?",
-          options: ["To guard the animal community against dangerous hunters", "To catch small mice for dinner", "To sleep all day under a rock"],
-          answer: "To guard the animal community against dangerous hunters"
+          question: "What do squirrels do with extra nuts in the forest?",
+          options: ["They bury extra nuts in the ground", "They throw them in the river", "They give them to hunters"],
+          answer: "They bury extra nuts in the ground"
         },
         {
           id: "q2",
-          question: "What were alert birds doing when predators were approaching?",
-          options: ["Chirping warning signals from thick branches", "Flying away to a far city", "Hiding in deep water"],
-          answer: "Chirping warning signals from thick branches"
+          question: "How do bees help new flowers grow?",
+          options: ["They carry pollen while travelling from flower to flower", "They build nests on flower petals", "They dig holes under the roots"],
+          answer: "They carry pollen while travelling from flower to flower"
+        },
+        {
+          id: "q3",
+          question: "What birds also hide seeds in the forest?",
+          options: ["Birds called jays", "Ducks swimming in ponds", "Penguins on ice"],
+          answer: "Birds called jays"
+        },
+        {
+          id: "q4",
+          question: "What happens when many animals help the forest?",
+          options: ["The forest stays green and strong with food for all animals", "The forest becomes dry and empty", "All the trees stop growing"],
+          answer: "The forest stays green and strong with food for all animals"
         }
       ]
     }

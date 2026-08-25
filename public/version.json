@@ -1,9 +1,9 @@
 {
-  "commit": "d474a4f7b6dcfc936f1b1654cf9a9f8f0a00465a",
-  "git_commit": "d474a4f7b6dcfc936f1b1654cf9a9f8f0a00465a",
-  "shortCommit": "d474a4f7",
-  "message": "fix(w34): solve math_quest problemText, info_exchange 10+ char words, and FindDifferences data [multi-agent-review]",
-  "builtAt": "2026-08-25T05:45:32.619Z",
-  "build_timestamp": "2026-08-25T05:45:32.620Z",
+  "commit": "6c930f9ea658bd51650b2bbfe5b94ac3dd713838",
+  "git_commit": "6c930f9ea658bd51650b2bbfe5b94ac3dd713838",
+  "shortCommit": "6c930f9e",
+  "message": "fix(gate15): define rootDir in spec-driven assertion runner",
+  "builtAt": "2026-08-25T05:56:08.377Z",
+  "build_timestamp": "2026-08-25T05:56:08.378Z",
   "env": "production"
 }
