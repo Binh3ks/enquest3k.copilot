@@ -1,9 +1,9 @@
 {
-  "commit": "b29baabb787463a091cbf7d47bc31ca97aae686e",
-  "git_commit": "b29baabb787463a091cbf7d47bc31ca97aae686e",
-  "shortCommit": "b29baabb",
-  "message": "build: compile assets and update version stamp",
-  "builtAt": "2026-08-25T07:52:38.204Z",
-  "build_timestamp": "2026-08-25T07:52:38.204Z",
+  "commit": "ddbb843f3bba693eb348d24ccd9b83739e349ab0",
+  "git_commit": "ddbb843f3bba693eb348d24ccd9b83739e349ab0",
+  "shortCommit": "ddbb843f",
+  "message": "fix(w33-clil): add vocab_focus and remove animal fallback from CLILExplorer",
+  "builtAt": "2026-08-25T07:56:23.026Z",
+  "build_timestamp": "2026-08-25T07:56:23.027Z",
   "env": "production"
 }

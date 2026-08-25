@@ -1624,9 +1624,9 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
               <SingleSubjectPassportSidebar
                 currentSubject="science"
                 level={clilStampEarned ? 2 : 1}
-                customTitle={clilArticle?.title || "Animal Cooperation"}
-                customLevelTitle={activeWeek === 34 ? "Animal Cooperation Explorer" : undefined}
-                customDesc={activeWeek === 34 ? "Discovered how animals help each other in the forest, work as a team, and protect nature." : undefined}
+                customTitle={clilArticle?.title || clilArticle?.title_en || clilArticle?.theme || "CLIL Knowledge Explorer"}
+                customLevelTitle={activeWeek === 34 ? "Animal Cooperation Explorer" : "CLIL Science Explorer"}
+                customDesc={activeWeek === 34 ? "Discovered how animals help each other in the forest, work as a team, and protect nature." : "Mastered scientific principles, vocabulary, and inquiry in English."}
                 onSelectStamp={() => {
                   setSelectedStampId('science');
                   setShowStampModal(true);

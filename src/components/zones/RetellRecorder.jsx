@@ -38,22 +38,22 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
     {
       id: 1,
       narrative_function: 'setting',
-      en: "In a deep green forest, a mighty lion was sleeping peacefully under a tall oak tree."
+      en: "Look at the first scene and describe where and when the story began."
     },
     {
       id: 2,
       narrative_function: 'action',
-      en: "A tiny mouse ran across the lion's nose and woke him up suddenly."
+      en: "Describe what the characters were doing and what happened next."
     },
     {
       id: 3,
       narrative_function: 'problem',
-      en: "Later, hunters trapped the strong lion in a heavy rope net!"
+      en: "Explain what unexpected problem or challenge occurred in the story."
     },
     {
       id: 4,
       narrative_function: 'solution',
-      en: "The brave mouse chewed through the thick ropes and freed his friend forever."
+      en: "Tell how the situation was resolved and how the story ended."
     }
   ];
 

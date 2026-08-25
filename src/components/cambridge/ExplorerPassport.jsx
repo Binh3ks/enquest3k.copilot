@@ -8,7 +8,7 @@ export const CLIL_STAMPS = {
     id: 'science',
     title: 'Science Explorer',
     subject: 'Science Lab',
-    levelTitle: 'Animal Cooperation Master',
+    levelTitle: 'CLIL Science Master',
     icon: Microscope,
     color: 'from-emerald-500 to-teal-600',
     borderColor: 'border-emerald-400',
@@ -17,7 +17,7 @@ export const CLIL_STAMPS = {
     textColor: 'text-emerald-950',
     badgeBg: 'bg-emerald-600 text-white',
     stampText: 'VERIFIED · SCIENCE LAB',
-    desc: 'Mastered how animals cooperate in ecosystems, forest habitats, and teamwork roles in nature.'
+    desc: 'Mastered scientific principles, vocabulary, and inquiry in English.'
   },
   math: {
     id: 'math',
