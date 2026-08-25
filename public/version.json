@@ -1,9 +1,9 @@
 {
-  "commit": "80d36ebd6555469cf3f6583e431940af1fcb5730",
-  "git_commit": "80d36ebd6555469cf3f6583e431940af1fcb5730",
-  "shortCommit": "80d36ebd",
-  "message": "chore(audio-tooling): add exam intro audio generator and generated mp3 files [Round K]",
-  "builtAt": "2026-08-25T08:37:48.667Z",
-  "build_timestamp": "2026-08-25T08:37:48.667Z",
+  "commit": "97d811b7c80c672ca80dbd5e4d7bc1ff99fbe4d7",
+  "git_commit": "97d811b7c80c672ca80dbd5e4d7bc1ff99fbe4d7",
+  "shortCommit": "97d811b7",
+  "message": "chore(version): stamp release [Round L]",
+  "builtAt": "2026-08-25T09:35:13.649Z",
+  "build_timestamp": "2026-08-25T09:35:13.649Z",
   "env": "production"
 }
