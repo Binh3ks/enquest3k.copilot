@@ -423,8 +423,8 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
   // Tier 1 = Vocab target, Tier 3 = General word, Tier 4 = Grammar X-Ray highlight
   const isTarget = tier === 1;
   const isGrammar = tier === 4;
-  const targetClass = `text-indigo-600 font-bold underline decoration-dotted cursor-pointer hover:text-indigo-800 transition-colors`;
-  const grammarClass = `font-semibold text-amber-800 bg-amber-100/80 rounded px-0.5 cursor-pointer hover:bg-amber-200 transition-all border-b-2 border-amber-300`;
+  const targetClass = `text-indigo-600 font-bold underline decoration-dotted cursor-pointer hover:text-indigo-800 transition-colors highlight-target`;
+  const grammarClass = `font-semibold text-amber-800 bg-amber-100/80 rounded px-0.5 cursor-pointer hover:bg-amber-200 transition-all border-b-2 border-amber-300 highlight-grammar`;
   const generalWordClass = `font-medium text-slate-800 hover:text-indigo-600 hover:bg-indigo-50/50 cursor-pointer rounded px-[1px] transition-all`;
 
   const className = isGrammar ? grammarClass : (isTarget ? targetClass : generalWordClass);

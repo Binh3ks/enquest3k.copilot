@@ -1,9 +1,9 @@
 {
-  "commit": "73111733884e0f67c4d8003184d6f9200b552a26",
-  "git_commit": "73111733884e0f67c4d8003184d6f9200b552a26",
-  "shortCommit": "73111733",
-  "message": "chore(pipeline): add Gate 16, expand Gate 8 forbidden list and update SOP [anti-hallucination]",
-  "builtAt": "2026-08-25T06:01:03.129Z",
-  "build_timestamp": "2026-08-25T06:01:03.130Z",
+  "commit": "e0a346f394f214d013063ed25b3d5d7671e7807e",
+  "git_commit": "e0a346f394f214d013063ed25b3d5d7671e7807e",
+  "shortCommit": "e0a346f3",
+  "message": "fix(clil): activate default grammar marks for CLILExplorer inline inspection [multi-agent-review]",
+  "builtAt": "2026-08-25T06:04:25.599Z",
+  "build_timestamp": "2026-08-25T06:04:25.600Z",
   "env": "production"
 }
