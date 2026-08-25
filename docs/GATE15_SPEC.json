@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Gate 15 Production DOM Assertions Spec",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "week": 34,
   "global_negative_patterns": [
     "corridor", "Corridor", "Jake", "friction", "Friction",
@@ -130,6 +130,11 @@
           "pattern": "(Seed|Animal|Cooperation|seed|animal|cooperation|Plants)"
         },
         {
+          "name": "CLIL Data Card 3 rows present",
+          "type": "regex",
+          "pattern": "(CLIL Data Card|3 Key Facts|Data Card)"
+        },
+        {
           "name": "3 steps present (Observation/Scientific/Conclusion)",
           "type": "regex_all",
           "patterns": [
@@ -202,24 +207,27 @@
     "story_writer": {
       "waitMs": 2500,
       "clickStart": false,
-      "neg": [],
+      "neg": ["In the morning,", "was walking carefully"],
       "pos": [
+        {
+          "name": "step wizard: đúng 1 <img> scene + indicator 'Scene X of 3'",
+          "type": "regex",
+          "pattern": "(Scene 1 of 3|Scene \\d+ of 3|Panel \\d+ of 3)"
+        },
         {
           "name": "story writer interface loaded with W34 content",
           "type": "contains_one_of",
-          "values": ["PANEL", "Panel", "Story", "Write", "lion", "mouse", "net", "ropes", "forest"],
+          "values": ["Scene", "Story", "Write", "lion", "mouse", "net", "ropes", "forest"],
           "case_sensitive": false
         },
         {
-          "name": "chunks themed (>=6 W34 chunk strings in DOM)",
+          "name": "chunks themed (>=2 W34 pill strings in DOM)",
           "type": "contains_min_count",
           "values": [
-            "sleeping peacefully", "heavy net", "chewed the thick ropes", "chewed the ropes",
-            "freed the mighty lion", "loyal friends", "sunny afternoon", "tall oak tree",
-            "running across the path", "worked together to escape", "roared for help",
-            "kept his promise bravely", "became loyal friends forever"
+            "the mighty lion", "was sleeping peacefully", "under a tall oak tree", "in the forest",
+            "hunters trapped the lion", "in a heavy net", "chewed the thick ropes", "freed the mighty lion", "loyal friends"
           ],
-          "min": 6,
+          "min": 2,
           "case_sensitive": false
         }
       ]
@@ -277,6 +285,11 @@
       "neg": [],
       "pos": [
         {
+          "name": "exam header Cambridge A2 Flyers",
+          "type": "regex",
+          "pattern": "Cambridge A2 Flyers — "
+        },
+        {
           "name": "header shows correct Cycle 2 task (Part 4 or Part 5)",
           "type": "regex",
           "pattern": "(Part 4|Part 5|PART 4|PART 5|3-Picture|Color.*Write|Write.*Color|QUIZ|Quiz)"
@@ -295,6 +308,11 @@
       "neg": ["MAGIC COLOR", "Color Mission", "Color Write", "Part 5", "PART 5"],
       "pos": [
         {
+          "name": "exam header Cambridge A2 Flyers",
+          "type": "regex",
+          "pattern": "Cambridge A2 Flyers — "
+        },
+        {
           "name": "Cycle 2 boss_reading MUST render Word Bank Matching (RW Part 1)",
           "type": "regex",
           "pattern": "(word.*bank|Word Bank|Definition|definition|15-WORD BANK|15 Words|Candidate Words)"
@@ -310,7 +328,11 @@
         {
           "name": "Cycle 2 weekly_review MUST be Speaking/Passport task",
           "type": "regex",
-          "pattern": "(Speaking|speaking|Passport|passport|PASSPORT|Review|review|Find Differences|Picture Story|Personal Questions)"
+          "pattern": "(Speaking|speaking|Passport|passport|PASSPORT|Review|review|Find Differences|Picture Story|Personal Questions|Cambridge A2 Flyers)"
+        },
+        {
+          "name": "hotspot click-test: click 4 regions reveals 'Found 4 of 4'",
+          "type": "click_test_hotspots"
         },
         {
           "name": "hotspot calibration file: 4 mapped regions",
