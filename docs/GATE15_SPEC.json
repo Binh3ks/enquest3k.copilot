@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Gate 15 Production DOM Assertions Spec",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "week": 34,
   "global_negative_patterns": [
     "corridor", "Corridor", "Jake", "friction", "Friction",
@@ -295,6 +295,17 @@
           "pattern": "(Part 4|Part 5|PART 4|PART 5|3-Picture|Color.*Write|Write.*Color|QUIZ|Quiz)"
         },
         {
+          "name": "official Cambridge listening instruction sentence",
+          "type": "regex",
+          "pattern": "(Listen and tick the box|Listen and colour and write|Listen and draw lines|Listen and write|Listen and write a letter)"
+        },
+        {
+          "name": "exam intro audio button present",
+          "type": "dom_count",
+          "selector": "[data-testid='exam-intro-audio']",
+          "min": 1
+        },
+        {
           "name": "object labels themed (NO Object N pattern)",
           "type": "not_contains_regex",
           "pattern": "\\bObject\\s+\\d+\\b"
@@ -316,6 +327,11 @@
           "name": "Cycle 2 boss_reading MUST render Word Bank Matching (RW Part 1)",
           "type": "regex",
           "pattern": "(word.*bank|Word Bank|Definition|definition|15-WORD BANK|15 Words|Candidate Words)"
+        },
+        {
+          "name": "official Cambridge reading instruction sentence",
+          "type": "regex",
+          "pattern": "(Look and read|Read the text|Read the conversation|Read the story|Look at the picture and read the story|Read the diary|Write about this story)"
         }
       ]
     },
@@ -329,6 +345,17 @@
           "name": "Cycle 2 weekly_review MUST be Speaking/Passport task",
           "type": "regex",
           "pattern": "(Speaking|speaking|Passport|passport|PASSPORT|Review|review|Find Differences|Picture Story|Personal Questions|Cambridge A2 Flyers)"
+        },
+        {
+          "name": "official Cambridge speaking/review instruction sentence",
+          "type": "regex",
+          "pattern": "(Look at the two pictures|Ask and answer questions|Look at the pictures|Now let's talk about you|Tell me the differences)"
+        },
+        {
+          "name": "exam intro audio button present",
+          "type": "dom_count",
+          "selector": "[data-testid='exam-intro-audio']",
+          "min": 1
         },
         {
           "name": "hotspot click-test: click 4 regions reveals 'Found 4 of 4'",

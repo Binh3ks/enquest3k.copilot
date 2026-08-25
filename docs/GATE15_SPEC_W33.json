@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Gate 15 Production DOM Assertions Spec — Week 33",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "week": 33,
   "global_negative_patterns": [
     "lion", "mouse", "Lion", "Mouse", "hunter", "hunters", "heavy net", "thick ropes", "chewed through",
@@ -293,6 +293,17 @@
           "pattern": "(Part 1|Part 2|Part 3|PART 1|PART 2|PART 3|Listening|Draw Lines)"
         },
         {
+          "name": "official Cambridge listening instruction sentence",
+          "type": "regex",
+          "pattern": "(Listen and draw lines|Listen and write|Listen and write a letter|Listen and tick the box|Listen and colour and write)"
+        },
+        {
+          "name": "exam intro audio button present",
+          "type": "dom_count",
+          "selector": "[data-testid='exam-intro-audio']",
+          "min": 1
+        },
+        {
           "name": "object labels themed (NO Object N pattern)",
           "type": "not_contains_regex",
           "pattern": "\\bObject\\s+\\d+\\b"
@@ -314,6 +325,11 @@
           "name": "Cycle 1 boss_reading renders Note Completion (Listening P2 / RW)",
           "type": "regex",
           "pattern": "(Notepad|Note|NotepadNoteCompleter|Incident|Part 2|Listening Part 2|Cambridge A2 Flyers)"
+        },
+        {
+          "name": "official Cambridge reading instruction sentence",
+          "type": "regex",
+          "pattern": "(Look and read|Read the conversation|Read the story|Read the text|Look at the picture and read the story|Read the diary|Write about this story|Listen and write)"
         }
       ]
     },
@@ -327,6 +343,11 @@
           "name": "Cycle 1 weekly_review renders Cambridge Task",
           "type": "regex",
           "pattern": "(Cambridge A2 Flyers|Matching|Speaking|Listening Part 3|Location Cards|Clean Bandage)"
+        },
+        {
+          "name": "official Cambridge speaking/review instruction sentence",
+          "type": "regex",
+          "pattern": "(Look at the two pictures|Ask and answer questions|Look at the pictures|Now let's talk about you|Listen and write a letter)"
         },
         {
           "name": "hotspot calibration file: 4 mapped regions",
