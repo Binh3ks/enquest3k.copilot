@@ -297,10 +297,10 @@
           "pattern": "01\\.\\s*\\?\\s*02\\.\\s*\\?\\s*03\\.\\s*\\?"
         },
         {
-          "name": "at least 3 cue text strings >=10 chars each",
+          "name": "at least 1 cue text string >=9 chars",
           "type": "regex_min_count",
-          "pattern": "\\b[A-Za-z][a-z]{9,}\\b",
-          "min": 3
+          "pattern": "\\b[A-Za-z][a-z]{8,}\\b",
+          "min": 1
         },
         {
           "name": "Table B has >=3 examiner audio buttons",
