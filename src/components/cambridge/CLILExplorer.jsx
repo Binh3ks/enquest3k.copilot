@@ -324,7 +324,7 @@ export default function CLILExplorer({
               <span>📖 PARAGRAPH 1: {(clilData?.part_1_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
             <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
-              {renderParsedText(paragraphs[0], 'emerald', null, false, activeHighlightMode, grammarPatterns)}
+              {renderParsedText(paragraphs[0], 'emerald', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? grammarPatterns : (vocabPills || []).map(v => ({ pattern: '\\b' + v + '\\b' })))}
             </p>
 
             {/* Paragraph 1 Check Questions */}
@@ -399,7 +399,7 @@ export default function CLILExplorer({
               <span>📖 PARAGRAPH 2: {(clilData?.part_2_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
             <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
-              {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, activeHighlightMode, grammarPatterns)}
+              {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? grammarPatterns : (vocabPills || []).map(v => ({ pattern: '\\b' + v + '\\b' })))}
             </p>
 
             {/* Paragraph 2 Check Questions */}

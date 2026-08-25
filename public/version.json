@@ -1,9 +1,9 @@
 {
-  "commit": "e0a346f394f214d013063ed25b3d5d7671e7807e",
-  "git_commit": "e0a346f394f214d013063ed25b3d5d7671e7807e",
-  "shortCommit": "e0a346f3",
-  "message": "fix(clil): activate default grammar marks for CLILExplorer inline inspection [multi-agent-review]",
-  "builtAt": "2026-08-25T06:04:25.599Z",
-  "build_timestamp": "2026-08-25T06:04:25.600Z",
+  "commit": "3b6e81e51be755f2ccbaccadbc3b8534a37c4e4d",
+  "git_commit": "3b6e81e51be755f2ccbaccadbc3b8534a37c4e4d",
+  "shortCommit": "3b6e81e5",
+  "message": "fix(hoverword): add highlight-target and highlight-grammar CSS hooks [multi-agent-review]",
+  "builtAt": "2026-08-25T06:09:24.106Z",
+  "build_timestamp": "2026-08-25T06:09:24.106Z",
   "env": "production"
 }

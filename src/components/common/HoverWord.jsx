@@ -167,19 +167,22 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, is
         if (/^[a-zA-Z0-9'-]+$/.test(token)) {
           const cleanW = token.toLowerCase().trim();
           const matchedBaseKey = phraseLookupMap[cleanW];
-          const isTarget = Boolean(matchedBaseKey);
-          const entry = isTarget ? WEEK_33_MASTER_DICTIONARY[matchedBaseKey] : lookupDict(token);
+          const matchesTarget = Boolean(Array.isArray(targetGrammarRegex) && targetGrammarRegex.some(g => {
+            try { return new RegExp(g.pattern || g, 'i').test(cleanW); } catch(_) { return false; }
+          }));
+          const isTarget = Boolean(matchedBaseKey) || matchesTarget;
+          const entry = matchedBaseKey ? WEEK_33_MASTER_DICTIONARY[matchedBaseKey] : lookupDict(token);
 
-          // Grammar X-Ray: check if this token position falls within a grammar pattern match
+          // Grammar X-Ray vs Vocab Focus highlight tiers
           let grammarTier = isStealthMode ? 3 : (isTarget ? 1 : 3);
           if (highlightMode === 'clean') grammarTier = 3;
-          else if (highlightMode === 'grammar') grammarTier = isTarget ? 3 : 3; // suppress vocab in grammar mode
+          else if (highlightMode === 'grammar') grammarTier = isTarget ? 4 : 3;
 
           parts.push(
             <HoverWord
               key={`word-${key++}`}
               word={token}
-              themeColor={themeColor}
+              themeColor={highlightMode === 'grammar' && isTarget ? 'amber' : themeColor}
               onSpeak={onSpeak}
               entry={entry}
               tier={grammarTier}
