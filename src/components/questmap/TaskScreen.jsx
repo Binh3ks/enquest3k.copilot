@@ -96,10 +96,11 @@ function adaptInfoExchangeCards(infoCards) {
     const items = card.items || card.fields || [];
     return items.map((item, i) => {
       const label = item.label || item.field_label || `Feature ${i + 1}`;
+      const isUnknown = item.known === false;
       const fullAnswerVal = (infoCards.full_answers && infoCards.full_answers[label])
         ? (Array.isArray(infoCards.full_answers[label]) ? infoCards.full_answers[label][0] : infoCards.full_answers[label])
         : null;
-      const val = item.value || fullAnswerVal || 'Green Valley Forest';
+      const val = isUnknown ? null : (item.value || fullAnswerVal || null);
       const cueWord = label.toLowerCase().includes('location') || label.toLowerCase().includes('where')
         ? 'where'
         : label.toLowerCase().includes('time') || label.toLowerCase().includes('when')
@@ -108,13 +109,14 @@ function adaptInfoExchangeCards(infoCards) {
 
       return {
         id: `field_a${i + 1}`,
-        label: `${label}: ${item.known === false ? '???' : val}`,
+        label: `${label}: ${isUnknown ? '???' : (val || '')}`,
         field_label: label,
         value: val,
-        known: item.known !== undefined ? item.known : true,
+        known: !isUnknown,
+        is_missing: isUnknown,
         cue_word: cueWord,
         cue_prompt: `${cueWord.toUpperCase()} — ${label.toLowerCase()}`,
-        nova_reply: `The ${label.toLowerCase()} is ${val}.`,
+        nova_reply: `The ${label.toLowerCase()} is ${fullAnswerVal || val || ''}.`,
         acceptable_questions: [
           `What is the ${label.toLowerCase()} of ${cardATitle}?`,
           `Where is the ${label.toLowerCase()}?`,
@@ -130,23 +132,25 @@ function adaptInfoExchangeCards(infoCards) {
     const items = card.items || card.fields || [];
     return items.map((item, i) => {
       const label = item.label || item.field_label || `Detail ${i + 1}`;
+      const isUnknown = item.known === false;
       const fullAnswerVal = (infoCards.full_answers && infoCards.full_answers[label])
         ? (Array.isArray(infoCards.full_answers[label]) ? (infoCards.full_answers[label][1] || infoCards.full_answers[label][0]) : infoCards.full_answers[label])
         : null;
-      const val = item.value || fullAnswerVal || 'Under the Oak Tree';
+      const val = isUnknown ? null : (item.value || fullAnswerVal || null);
       const examinerQ = (infoCards.examiner_questions && infoCards.examiner_questions[i]) ? infoCards.examiner_questions[i].text : `What is the ${label.toLowerCase()} of ${cardBTitle}?`;
       return {
         id: `field_b${i + 1}`,
-        label: `${label}: ${val}`,
+        label: `${label}: ${isUnknown ? '???' : (val || '')}`,
         field_label: label,
         value: val,
-        known: item.known !== undefined ? item.known : true,
+        known: !isUnknown,
+        is_missing: isUnknown,
         audio_url: (infoCards.examiner_questions && infoCards.examiner_questions[i] && infoCards.examiner_questions[i].audio_url) || null,
         nova_question: examinerQ,
-        answer: val,
+        answer: val || fullAnswerVal,
         acceptable_answers: [
-          val,
-          `The ${label.toLowerCase()} is ${val}.`
+          val || fullAnswerVal || '',
+          `The ${label.toLowerCase()} is ${val || fullAnswerVal || ''}.`
         ]
       };
     });

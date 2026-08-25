@@ -303,6 +303,12 @@
           "min": 1
         },
         {
+          "name": "info_exchange DOM contains >=2 '???' gaps for unknown fields",
+          "type": "regex_min_count",
+          "pattern": "\\?\\?\\?",
+          "min": 2
+        },
+        {
           "name": "Table B has >=3 examiner audio buttons",
           "type": "dom_count",
           "selector": "[data-testid='ie-audio-btn']",
