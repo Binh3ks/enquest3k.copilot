@@ -122,18 +122,6 @@ export const readingHub = {
     }
   },
 
-  shadowingData: {
-    sentences: [
-      { id: 1, text: "The mighty lion was sleeping under a big tree.", words: ["The", "mighty", "lion", "was", "sleeping", "under", "a", "big", "tree."], ipa: ["ðə", "ˈmaɪ.ti", "ˈlaɪ.ən", "wɒz", "ˈsliː.pɪŋ", "ˈʌn.dər", "ə", "bɪɡ", "triː"], audio_url: "/audio/week34/shadowing_1.mp3" },
-      { id: 2, text: "A tiny mouse ran across his nose.", words: ["A", "tiny", "mouse", "ran", "across", "his", "nose."], ipa: ["ə", "ˈtaɪ.ni", "maʊs", "ræn", "əˈkrɒs", "hɪz", "nəʊz"], audio_url: "/audio/week34/shadowing_2.mp3" },
-      { id: 3, text: "The lion woke up and caught the little mouse.", words: ["The", "lion", "woke", "up", "and", "caught", "the", "little", "mouse."], ipa: ["ðə", "ˈlaɪ.ən", "wəʊk", "ʌp", "ænd", "kɔːt", "ðə", "ˈlɪt.əl", "maʊs"], audio_url: "/audio/week34/shadowing_3.mp3" },
-      { id: 4, text: "The mouse promised to help the lion one day.", words: ["The", "mouse", "promised", "to", "help", "the", "lion", "one", "day."], ipa: ["ðə", "maʊs", "ˈprɒm.ɪst", "tuː", "help", "ðə", "ˈlaɪ.ən", "wʌn", "deɪ"], audio_url: "/audio/week34/shadowing_4.mp3" },
-      { id: 5, text: "Hunters trapped the strong lion in a heavy net.", words: ["Hunters", "trapped", "the", "strong", "lion", "in", "a", "heavy", "net."], ipa: ["ˈhʌn.tərz", "træpt", "ðə", "strɒŋ", "ˈlaɪ.ən", "ɪn", "ə", "ˈhev.i", "net"], audio_url: "/audio/week34/shadowing_5.mp3" },
-      { id: 6, text: "The brave mouse chewed through the thick ropes.", words: ["The", "brave", "mouse", "chewed", "through", "the", "thick", "ropes."], ipa: ["ðə", "breɪv", "maʊs", "tʃuːd", "θruː", "ðə", "θɪk", "rəʊps"], audio_url: "/audio/week34/shadowing_6.mp3" },
-      { id: 7, text: "The lion escaped and was completely free.", words: ["The", "lion", "escaped", "and", "was", "completely", "free."], ipa: ["ðə", "ˈlaɪ.ən", "ɪˈskeɪpt", "ænd", "wɒz", "kəmˈpliːt.li", "friː"], audio_url: "/audio/week34/shadowing_7.mp3" },
-      { id: 8, text: "They became the best of friends forever.", words: ["They", "became", "the", "best", "of", "friends", "forever."], ipa: ["ðeɪ", "bɪˈkeɪm", "ðə", "best", "ɒv", "frendz", "fəˈrev.ər"], audio_url: "/audio/week34/shadowing_8.mp3" }
-    ]
-  },
 
   rw_part_6: {
     instructions: "Read the story diary and write the missing words. Write one word on each line.",
@@ -219,7 +207,7 @@ export const readingHub = {
     ]
   },
 
-  rw_part3: {
+  reading_part3_story: {
     story_text: "Harry was excited because he was reading about forest animals today. The lion was resting peacefully when a little mouse ran across his paw. 'I hope the lion will be ___,' thought the mouse. The lion was very ___ and let the mouse go. Later, hunters set a ___ trap with thick ropes. The mouse arrived very ___ and chewed through the net. 'You are the most ___ friend ever,' roared the grateful lion.",
     word_bank: ["kind", "surprised", "heavy", "quickly", "loyal", "sleeping", "cold", "afraid", "hungry", "dark"],
     answers: {
@@ -274,24 +262,19 @@ export const readingHub = {
       { id: "q7", prompt: "The children learned that even the smallest ___ can do great things.", answer: "creature" }
     ]
   },
-  rw_part_1: null, // assigned below
+  rw_part_1: null,
   rw_part_2: null,
-  rw_part_3: null,
   rw_part_4: null,
-  rw_part_5: null,
-  rw_part_6: null
+  rw_part_5: null
 };
 
 readingHub.week = Number(34);
 readingHub.story_scenes = readingHub.read_explore.story_scenes;
 readingHub.interactive_story = readingHub.read_explore.story_scenes;
-readingHub.reading_part3_story = readingHub.rw_part3;
 readingHub.rw_part_1 = readingHub.rw_part1;
 readingHub.rw_part_2 = readingHub.rw_part2;
-readingHub.rw_part_3 = readingHub.rw_part3;
 readingHub.rw_part_4 = readingHub.rw_part4;
 readingHub.rw_part_5 = readingHub.rw_part5;
-readingHub.rw_part_6 = readingHub.rw_part_6;
 
 export const readingHubData = readingHub;
 export default readingHub;

@@ -64,10 +64,9 @@ export const writingHub = {
 
   rw_part_1: readingHub.rw_part1,
   rw_part_2: readingHub.rw_part2,
-  rw_part_3: readingHub.rw_part3,
+  rw_part_3: readingHub.reading_part3_story,
   rw_part_4: readingHub.rw_part4,
   rw_part_5: readingHub.rw_part5,
-  rw_part_6: readingHub.rw_part_6,
 
   writing_chunks: {
     setting_time: ["On a sunny afternoon", "Under a shady tree", "In the deep forest", "During morning hours"],

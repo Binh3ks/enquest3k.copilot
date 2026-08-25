@@ -282,7 +282,7 @@ export const readingHub = {
     ]
   },
 
-  rw_part3: {
+  reading_part3_story: {
     story_text: "Harry was excited because he was reading about forest animals today. The lion was resting peacefully when a little mouse ran across his paw. 'I hope the lion will be ___,' thought the mouse. The lion was very ___ and let the mouse go. Later, hunters set a ___ trap with thick ropes. The mouse arrived very ___ and chewed through the net. 'You are the most ___ friend ever,' roared the grateful lion.",
     word_bank: ["kind", "surprised", "heavy", "quickly", "loyal", "sleeping", "cold", "afraid", "hungry", "dark"],
     answers: {
@@ -337,24 +337,19 @@ export const readingHub = {
       { id: "q7", prompt: "The children learned that even the smallest ___ can do great things.", answer: "creature" }
     ]
   },
-  rw_part_1: null, // assigned below
+  rw_part_1: null,
   rw_part_2: null,
-  rw_part_3: null,
   rw_part_4: null,
-  rw_part_5: null,
-  rw_part_6: null
+  rw_part_5: null
 };
 
 readingHub.week = Number(${weekNum});
 readingHub.story_scenes = readingHub.read_explore.story_scenes;
 readingHub.interactive_story = readingHub.read_explore.story_scenes;
-readingHub.reading_part3_story = readingHub.rw_part3;
 readingHub.rw_part_1 = readingHub.rw_part1;
 readingHub.rw_part_2 = readingHub.rw_part2;
-readingHub.rw_part_3 = readingHub.rw_part3;
 readingHub.rw_part_4 = readingHub.rw_part4;
 readingHub.rw_part_5 = readingHub.rw_part5;
-readingHub.rw_part_6 = readingHub.rw_part_6;
 
 export const readingHubData = readingHub;
 export default readingHub;
@@ -364,106 +359,8 @@ fs.writeFileSync(path.join(targetDir, 'reading_hub.js'), readingHubCode, 'utf8')
 // ─────────────────────────────────────────────────────────────────────────────
 // 3. LISTENING_HUB.JS
 // ─────────────────────────────────────────────────────────────────────────────
-const listeningHubCode = `// Pure Generated Listening Hub for Week ${weekNum}
+const listeningHubCode = `// Pure Generated Listening Hub for Week \${weekNum}
 export const listeningHub = {
-  theme: "The Lion and the Mouse",
-  cefr_level: "A2 Flyers",
-
-  dictation: [
-    { id: 1, text: "The lion was sleeping peacefully under a tree.", audio_url: "/audio/week${weekNum}/dictation_1.mp3" },
-    { id: 2, text: "A tiny mouse ran across his front paw.", audio_url: "/audio/week${weekNum}/dictation_2.mp3" },
-    { id: 3, text: "The mouse promised to help the lion one day.", audio_url: "/audio/week${weekNum}/dictation_3.mp3" },
-    { id: 4, text: "Hunters trapped the lion in a strong net.", audio_url: "/audio/week${weekNum}/dictation_4.mp3" },
-    { id: 5, text: "The mouse chewed through the thick ropes.", audio_url: "/audio/week${weekNum}/dictation_5.mp3" }
-  ],
-
-  grammar_drills: [
-    {
-      id: "st2_w${weekNum}_g01",
-      grammar_tag: "past_continuous_when_while",
-      text_en: "Build a past continuous sentence with 'While'.",
-      word_blocks: ["While", "the", "mighty", "lion", "was", "sleeping", ",", "a", "tiny", "mouse", "ran", "past", "."],
-      distractor_blocks: ["is", "runs", "sleeps"]
-    },
-    {
-      id: "st2_w${weekNum}_g02",
-      grammar_tag: "past_simple_promise",
-      text_en: "Build a sentence about the mouse promising help.",
-      word_blocks: ["The", "little", "mouse", "promised", "to", "help", "the", "lion", "one", "day", "."],
-      distractor_blocks: ["promises", "helping", "big"]
-    },
-    {
-      id: "st2_w${weekNum}_g03",
-      grammar_tag: "past_simple_passive_or_action",
-      text_en: "Build a sentence about hunters capturing the lion.",
-      word_blocks: ["Hunters", "trapped", "the", "strong", "lion", "in", "a", "heavy", "rope", "net", "."],
-      distractor_blocks: ["traps", "is", "tiny"]
-    },
-    {
-      id: "st2_w${weekNum}_g04",
-      grammar_tag: "past_simple_rescue",
-      text_en: "Build a rescue sentence with the brave mouse.",
-      word_blocks: ["The", "brave", "mouse", "chewed", "through", "the", "ropes", "and", "freed", "him", "."],
-      distractor_blocks: ["chews", "frees", "running"]
-    },
-    {
-      id: "st2_w${weekNum}_g05",
-      grammar_tag: "moral_friendship",
-      text_en: "Build a moral friendship sentence.",
-      word_blocks: ["They", "became", "loyal", "friends", "and", "lived", "peacefully", "in", "the", "forest", "."],
-      distractor_blocks: ["becomes", "lives", "never"]
-    }
-  ],
-
-  singapore_math: [
-    {
-      id: 1,
-      problem_en: "The hunters had 60 meters of strong rope. They used 25 meters to make the net. How many meters of rope were left?",
-      bar_model_svg: "/images/week${weekNum}/barmodel_w${weekNum}_adv_p1.svg",
-      answer_value: 35
-    },
-    {
-      id: 2,
-      problem_en: "The lion slept for 14 hours during the day and rested for 4 hours at night. How many hours did he rest in total?",
-      bar_model_svg: "/images/week${weekNum}/barmodel_w${weekNum}_adv_p2.svg",
-      answer_value: 18
-    },
-    {
-      id: 3,
-      problem_en: "The mouse ran 80 meters to reach the trapped lion. A rabbit ran 45 meters. How many more meters did the mouse run?",
-      bar_model_svg: "/images/week${weekNum}/barmodel_w${weekNum}_adv_p3.svg",
-      answer_value: 35
-    },
-    {
-      id: 4,
-      problem_en: "The net had 30 thick ropes. The mouse chewed 18 ropes in the morning. How many ropes were left to chew?",
-      bar_model_svg: "/images/week${weekNum}/barmodel_w${weekNum}_adv_p4.svg",
-      answer_value: 12
-    },
-    {
-      id: 5,
-      problem_en: "The mouse collected 40 seeds. He shared 15 seeds with the bird. How many seeds did he keep for himself?",
-      bar_model_svg: "/images/week${weekNum}/barmodel_w${weekNum}_adv_p5.svg",
-      answer_value: 25
-    }
-  ],
-
-  science_lab: {
-    experimentTitle: "Animal Cooperation & Ecosystem Lab",
-    diagramImage: "/images/week${weekNum}/explore_cover_w${weekNum}.jpg",
-    explanation: "Explore how the mighty lion, tiny mouse, and tall trees help each other survive and thrive in the forest.",
-    targets: [
-      { id: "t1", name: "Lion (Guardian)", x: 25, y: 60 },
-      { id: "t2", name: "Mouse (Helper)", x: 75, y: 65 },
-      { id: "t3", name: "Forest Trees (Habitat)", x: 50, y: 30 }
-    ],
-    labels: [
-      { id: "lbl_1", text: "Mighty Guardian", targetId: "t1" },
-      { id: "lbl_2", text: "Tiny Helper", targetId: "t2" },
-      { id: "lbl_3", text: "Green Habitat", targetId: "t3" }
-    ]
-  },
-
   listening_p1: {
     image_url: "/images/week${weekNum}/w${weekNum}_listening_p1_scene.jpg",
     audio_url: "/audio/week${weekNum}/listening_p1_full.mp3",
@@ -717,10 +614,9 @@ export const writingHub = {
 
   rw_part_1: readingHub.rw_part1,
   rw_part_2: readingHub.rw_part2,
-  rw_part_3: readingHub.rw_part3,
+  rw_part_3: readingHub.reading_part3_story,
   rw_part_4: readingHub.rw_part4,
   rw_part_5: readingHub.rw_part5,
-  rw_part_6: readingHub.rw_part_6,
 
   writing_chunks: {
     setting_time: ["On a sunny afternoon", "Under a shady tree", "In the deep forest", "During morning hours"],
