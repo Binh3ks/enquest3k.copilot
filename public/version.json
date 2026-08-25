@@ -1,9 +1,9 @@
 {
-  "commit": "f5268109e1cc4f77cad1578d42e393cb35fdd6f4",
-  "git_commit": "f5268109e1cc4f77cad1578d42e393cb35fdd6f4",
-  "shortCommit": "f5268109",
-  "message": "chore(release): bump version stamp [w33-w34-cert]",
-  "builtAt": "2026-08-25T15:19:42.072Z",
-  "build_timestamp": "2026-08-25T15:19:42.073Z",
+  "commit": "f4325543af54f1589904cd084aed4c67a68bad8c",
+  "git_commit": "f4325543af54f1589904cd084aed4c67a68bad8c",
+  "shortCommit": "f4325543",
+  "message": "fix(index): export full station tree and skill_practice_hub in W34 index.js",
+  "builtAt": "2026-08-25T15:21:27.935Z",
+  "build_timestamp": "2026-08-25T15:21:27.935Z",
   "env": "production"
 }

@@ -141,7 +141,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   const clilArticle = storyData.clilArticle || data?.reading_hub?.read_explore?.clil_article || data?.readingHubData?.read_explore?.clil_article || null;
   const grammarRegex = storyData.grammarRegex || data?.reading_hub?.grammarRegex || [];
   const readExplore = storyData.readExplore || data?.reading_hub?.read_explore || data?.readingHubData?.read_explore || data?.rawWeekData?.readExplore || {};
-  const atomicSentences = storyData.shadowingData?.sentences || storyData.shadowing?.sentences || data?.reading_hub?.shadowingData?.sentences || data?.readingHubData?.shadowingData?.sentences || null;
+  const atomicSentences = storyData.shadowingData?.sentences || storyData.shadowing?.sentences || data?.reading_hub?.shadowingData?.sentences || data?.readingHubData?.shadowingData?.sentences || data?.stations?.shadowing?.sentences || data?.stations?.shadowing?.shadowingData?.sentences || data?.shadowing?.sentences || data?.rawWeekData?.stations?.shadowing?.sentences || null;
 
   const fullStoryText = readExplore.content_en || readExplore.text_en || readExplore.text || (atomicSentences ? atomicSentences.map(s => s.text).join(' ') : "");
 
