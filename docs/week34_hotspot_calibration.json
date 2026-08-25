@@ -1,25 +1,26 @@
 {
   "week": 34,
-  "calibratedAt": "2026-08-25T05:44:28.003Z",
+  "calibratedAt": "2026-08-25T06:55:50.175Z",
   "regions": 4,
   "mapped": 4,
-  "max_error_pct": 2.4,
+  "min_pairwise_distance": 13.3,
+  "max_error_pct": 2.1,
   "centroids": [
     {
-      "x": 22,
-      "y": 69
-    },
-    {
-      "x": 38,
+      "x": 42,
       "y": 16
     },
     {
-      "x": 84,
-      "y": 43
+      "x": 29,
+      "y": 19
     },
     {
       "x": 85,
-      "y": 36
+      "y": 39
+    },
+    {
+      "x": 15,
+      "y": 62
     }
   ]
 }

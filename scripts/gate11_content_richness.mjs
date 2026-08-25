@@ -70,7 +70,8 @@ try {
   if (!lh.grammar_drills || lh.grammar_drills.length !== 5) {
     errors.push(`Expected 5 grammar_drills items, found ${lh.grammar_drills?.length || 0}`);
   }
-  if (!lh.science_lab || !lh.science_lab.targets || lh.science_lab.targets.length < 3) {
+  const labTargets = lh.science_lab?.targets || lh.science_lab?.zones || [];
+  if (!lh.science_lab || labTargets.length < 3) {
     errors.push(`science_lab missing or has fewer than 3 drag targets`);
   }
 } catch (e) {

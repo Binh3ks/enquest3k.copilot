@@ -264,17 +264,37 @@ async function main() {
           } else {
             result = { pass: false, snippet: dom.slice(0, 300), reason: `Found only ${uniqueNums.length}/${min} numbers in DOM` };
           }
+        } else if (chk.type === 'click_test_hotspots') {
+          try {
+            // Find all hotspot buttons (absolute positioned rounded-full buttons)
+            const hotspotBtns = await page.$$('button.rounded-full.absolute, button[style*="left:"]');
+            for (const btn of hotspotBtns) {
+              await btn.click({ force: true }).catch(() => {});
+              await page.waitForTimeout(150);
+            }
+            await page.waitForTimeout(500);
+            const clickDom = await page.evaluate(() => (document.body?.innerText || '').trim());
+            const has4of4 = clickDom.includes('Found 4 of 4') || clickDom.includes('4 of 4 Differences') || clickDom.includes('4/4');
+            if (has4of4) {
+              result = { pass: true, snippet: `Found 4 of 4 Differences verified in DOM after clicking ${hotspotBtns.length} hotspots` };
+            } else {
+              result = { pass: false, snippet: clickDom.slice(0, 300), reason: `Hotspot click test failed to reach 4/4 (DOM: ${clickDom.slice(0, 150)})` };
+            }
+          } catch (e) {
+            result = { pass: false, snippet: '', reason: `click_test_hotspots error: ${e.message}` };
+          }
         } else if (chk.type === 'file_check') {
-          const targetPath = path.resolve(rootDir, chk.path);
+          const resolvedPath = chk.path.replace(/week\d+/i, `week${WEEK}`);
+          const targetPath = path.resolve(rootDir, resolvedPath);
           if (fs.existsSync(targetPath)) {
             const fileContent = fs.readFileSync(targetPath, 'utf8');
             if (!chk.require || fileContent.includes(chk.require)) {
-              result = { pass: true, snippet: `File ${chk.path} exists and contains required string` };
+              result = { pass: true, snippet: `File ${resolvedPath} exists and contains required string` };
             } else {
-              result = { pass: false, snippet: fileContent.slice(0, 200), reason: `File ${chk.path} does not contain '${chk.require}'` };
+              result = { pass: false, snippet: fileContent.slice(0, 200), reason: `File ${resolvedPath} does not contain '${chk.require}'` };
             }
           } else {
-            result = { pass: false, snippet: '', reason: `File ${chk.path} does not exist` };
+            result = { pass: false, snippet: '', reason: `File ${resolvedPath} does not exist` };
           }
         } else if (chk.type === 'keyword_overlap') {
           const sourceDom = questDoms[chk.source_quest] || '';
