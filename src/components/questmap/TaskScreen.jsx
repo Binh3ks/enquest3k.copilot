@@ -82,33 +82,80 @@ class TaskErrorBoundary extends React.Component {
 
 function adaptInfoExchangeCards(infoCards) {
   if (!infoCards) return null;
-  // Already in table_a/table_b format
-  if (infoCards.table_a && infoCards.table_b) return infoCards;
-  // Convert candidate_card/examiner_card format to table_a/table_b
-  const toFields = (card) => {
-    if (!card) return [];
-    // items: [{label, value}] → fields: [{field_label, nova_question, answer}]
-    if (card.items && Array.isArray(card.items)) {
-      return card.items.map((item, i) => ({
-        field_label: item.label || `Field ${i + 1}`,
-        nova_question: `What is the ${(item.label || 'field').toLowerCase()}?`,
-        answer: item.value || ''
-      }));
-    }
-    return [];
+  // Already in full table_a/table_b format
+  if (infoCards.table_a && infoCards.table_b && Array.isArray(infoCards.table_a?.fields) && infoCards.table_a.fields[0]?.cue_prompt) {
+    return infoCards;
+  }
+
+  const candidateCard = infoCards.candidate_card || infoCards.table_a || {};
+  const examinerCard = infoCards.examiner_card || infoCards.table_b || {};
+  const cardATitle = candidateCard.title || "The Lion's Home";
+  const cardBTitle = examinerCard.title || "The Mouse's Home";
+
+  const toFieldsA = (card) => {
+    const items = card.items || card.fields || [];
+    return items.map((item, i) => {
+      const label = item.label || item.field_label || `Feature ${i + 1}`;
+      const val = item.value || item.answer || 'Green Valley Forest';
+      const cueWord = label.toLowerCase().includes('location') || label.toLowerCase().includes('where')
+        ? 'where'
+        : label.toLowerCase().includes('time') || label.toLowerCase().includes('when')
+        ? 'when'
+        : 'what';
+
+      return {
+        id: `field_a${i + 1}`,
+        label: `${label}: ${val}`,
+        field_label: label,
+        value: val,
+        cue_word: cueWord,
+        cue_prompt: `${label} / ${cardATitle} / ${val}?`,
+        nova_reply: `The ${label.toLowerCase()} is ${val}.`,
+        acceptable_questions: [
+          `What is the ${label.toLowerCase()} of ${cardATitle}?`,
+          `Where is the ${label.toLowerCase()}?`,
+          `When is the ${label.toLowerCase()}?`,
+          `Can you tell me the ${label.toLowerCase()}?`,
+          `What is the ${label.toLowerCase()}?`
+        ]
+      };
+    });
   };
-  const candidateCard = infoCards.candidate_card || {};
-  const examinerCard = infoCards.examiner_card || {};
+
+  const toFieldsB = (card) => {
+    const items = card.items || card.fields || [];
+    return items.map((item, i) => {
+      const label = item.label || item.field_label || `Detail ${i + 1}`;
+      const val = item.value || item.answer || 'Under the Oak Tree';
+      return {
+        id: `field_b${i + 1}`,
+        label: `${label}: ${val}`,
+        field_label: label,
+        value: val,
+        nova_question: `What is the ${label.toLowerCase()} of ${cardBTitle}?`,
+        answer: val,
+        acceptable_answers: [
+          val,
+          `The ${label.toLowerCase()} is ${val}.`
+        ]
+      };
+    });
+  };
+
   return {
-    topic: infoCards.topic || candidateCard.title || 'Information Exchange',
-    prompt_questions: infoCards.prompt_questions || [],
+    topic: infoCards.topic || `${cardATitle} & ${cardBTitle}`,
+    prompt_questions: infoCards.prompt_questions || [
+      `Where does the character live?`,
+      `What is the special skill?`,
+      `When is the resting time?`
+    ],
     table_a: {
-      title: candidateCard.title || 'Candidate Card A',
-      fields: toFields(candidateCard)
+      title: `${cardATitle} (Candidate Question Card)`,
+      fields: toFieldsA(candidateCard)
     },
     table_b: {
-      title: examinerCard.title || 'Candidate Card B',
-      fields: toFields(examinerCard)
+      title: `${cardBTitle} (Examiner Answer Card)`,
+      fields: toFieldsB(examinerCard)
     }
   };
 }

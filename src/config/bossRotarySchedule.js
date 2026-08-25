@@ -20,13 +20,13 @@ export const BOSS_ROTARY_CYCLES = {
   },
   2: {
     cycleName: "Color, Code & Lexicon Quests",
-    subtitle: "Focus on Visual Audio & Definition Matching",
+    subtitle: "Focus on Audio Quiz, Word Matching & Vector Color",
     testedSkills: ["listening_p4", "listening_p5", "rw_p1"],
     shieldCount: 3,
     approxDurationMin: 15,
     bossTitle: "Chroma Detective Nova",
     bossAvatar: "🎨",
-    bossDescription: "3-Picture audio quiz, vector color coordination, and definition word matching!"
+    bossDescription: "3-Picture audio quiz, definition word matching, and vector color coordination!"
   },
   3: {
     cycleName: "Deep Reading & Cloze Quests",

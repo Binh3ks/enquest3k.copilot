@@ -16,9 +16,27 @@ export default function CLILExplorer({
   onCompleteCLIL
 }) {
   const navigate = useNavigate();
+  const [internalMode, setInternalMode] = useState(highlightMode || 'vocab');
+  const activeHighlightMode = setHighlightMode ? highlightMode : internalMode;
+  const handleModeSwitch = (mode) => {
+    setInternalMode(mode);
+    if (setHighlightMode) setHighlightMode(mode);
+  };
+
   const [currentPhase, setCurrentPhase] = useState(1); // 1: Part 1, 2: Part 2, 3: Sentence Builder & Passport
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState({});
+
+  const grammarPatterns = useMemo(() => {
+    if (Array.isArray(targetGrammarRegex) && targetGrammarRegex.length > 0) return targetGrammarRegex;
+    return [{ pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous (was/were + V-ing)' }];
+  }, [targetGrammarRegex]);
+
+  const vocabPills = useMemo(() => {
+    if (Array.isArray(clilData?.vocab_focus) && clilData.vocab_focus.length > 0) return clilData.vocab_focus;
+    if (Array.isArray(clilData?.target_vocab) && clilData.target_vocab.length > 0) return clilData.target_vocab;
+    return ["lion", "mouse", "forest", "hunter", "trapped", "net", "rope", "chewed", "freed", "brave", "tiny", "mighty", "grateful", "promise", "sleeping"];
+  }, [clilData]);
 
   // Default Paragraph Split
   const fullText = clilData?.content_en || clilData?.content || "";
@@ -171,17 +189,19 @@ export default function CLILExplorer({
         <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl">
           <span className="text-[10px] font-black text-slate-400 uppercase px-2">Mode:</span>
           <button
-            onClick={() => setHighlightMode && setHighlightMode('vocab')}
+            type="button"
+            onClick={() => handleModeSwitch('vocab')}
             className={`px-3 py-1 rounded-lg text-xs font-black transition ${
-              highlightMode === 'vocab' ? 'bg-emerald-600 text-white shadow-sm' : 'text-slate-600'
+              activeHighlightMode === 'vocab' ? 'bg-emerald-600 text-white shadow-sm' : 'text-slate-600'
             }`}
           >
             🔤 Vocab Focus
           </button>
           <button
-            onClick={() => setHighlightMode && setHighlightMode('grammar')}
+            type="button"
+            onClick={() => handleModeSwitch('grammar')}
             className={`px-3 py-1 rounded-lg text-xs font-black transition ${
-              highlightMode === 'grammar' ? 'bg-amber-500 text-white shadow-sm' : 'text-slate-600'
+              activeHighlightMode === 'grammar' ? 'bg-amber-500 text-white shadow-sm' : 'text-slate-600'
             }`}
           >
             🔬 Grammar X-Ray
@@ -196,6 +216,52 @@ export default function CLILExplorer({
         </button>
       </div>
 
+      {/* Mode Active Banner & Word Pills */}
+      {activeHighlightMode === 'vocab' && (
+        <div className="p-4 bg-emerald-50/90 border border-emerald-300 rounded-2xl space-y-2.5 shadow-xs animate-in fade-in">
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] font-black uppercase text-emerald-900 tracking-wider flex items-center gap-1.5">
+              <Sparkles size={14} className="text-emerald-700" /> Key Vocabulary Focus ({vocabPills.length} words)
+            </span>
+            <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-300">
+              Interactive Word Bank
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {vocabPills.map((w, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className="px-3 py-1 bg-white hover:bg-emerald-100 border border-emerald-300 text-emerald-950 font-black text-xs rounded-xl shadow-xs transition active:scale-95 flex items-center gap-1"
+                onClick={() => VoiceService.speakWord(w)}
+              >
+                <span>{w}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {activeHighlightMode === 'grammar' && (
+        <div className="p-4 bg-amber-50/90 border border-amber-300 rounded-2xl space-y-2 shadow-xs animate-in fade-in">
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] font-black uppercase text-amber-900 tracking-wider flex items-center gap-1.5">
+              <BookOpen size={14} className="text-amber-700" /> Grammar X-Ray: Past Continuous (was / were + V-ing)
+            </span>
+            <span className="text-[10px] font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full border border-amber-300">
+              Action in Progress
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2 text-xs font-black text-amber-950">
+            <span className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">was patrolling</span>
+            <span className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">was gathering</span>
+            <span className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">were chirping</span>
+            <span className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">were approaching</span>
+            <span className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">were helping</span>
+          </div>
+        </div>
+      )}
+
       {/* ========================================================================= */}
       {/* PHASE 1: PARAGRAPH 1 + 2 CHECK QUESTIONS                                  */}
       {/* ========================================================================= */}
@@ -206,7 +272,7 @@ export default function CLILExplorer({
               <span>📖 PARAGRAPH 1: {(clilData?.part_1_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
             <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
-              {renderParsedText(paragraphs[0], 'emerald', null, false, highlightMode, targetGrammarRegex)}
+              {renderParsedText(paragraphs[0], 'emerald', null, false, activeHighlightMode, grammarPatterns)}
             </p>
 
             {/* Paragraph 1 Check Questions */}

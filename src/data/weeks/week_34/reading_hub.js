@@ -79,22 +79,23 @@ export const readingHub = {
     ],
     clil_article: {
       title: "Animal Cooperation & Forest Ecosystems",
-      content_en: "In nature, many different animals live and work together in the green forest. Large animals and small creatures help each other find food, stay safe, and build warm homes. For example, big lions protect the open forest territory from danger. Tiny mice clean the forest floor and plant new seeds. Birds fly high in the sky and chirp loudly to warn other animals when danger is near. When different animals cooperate and live in peace, the whole forest ecosystem stays healthy, green, and full of life. True teamwork makes everyone stronger and happier every day.",
-      content_vi: "Trong tự nhiên, nhiều loài động vật khác nhau cùng chung sống và làm việc cùng nhau trong khu rừng xanh. Động vật lớn và sinh vật nhỏ giúp nhau tìm kiếm thức ăn, giữ an toàn và xây dựng tổ ấm. Ví dụ, những chú sư tử lớn bảo vệ lãnh thổ khỏi những kẻ xâm nhập nguy hiểm, trong khi những chú chuột nhỏ giúp làm sạch mặt đất và gieo những hạt giống mới. Những chú chim bay cao trên bầu trời và hót vang để cảnh báo các loài vật khác khi nguy hiểm đến gần. Khi các loài động vật khác nhau hợp tác và chung sống hòa bình, toàn bộ hệ sinh thái rừng luôn khỏe mạnh, xanh tươi và tràn đầy sức sống. Sự đoàn kết thực sự giúp mọi sinh vật trở nên mạnh mẽ hơn và vui vẻ hơn mỗi ngày.",
+      content_en: "In the green forest ecosystem, animals work together to survive and protect their shared habitat. Yesterday, a mighty lion was patrolling the sunny forest territory to guard the animal community against dangerous hunters. Nearby, a tiny mouse was gathering seeds under the oak tree. The buried seeds soon grew into fresh green bushes. High above the ground, alert birds were chirping warning signals from thick branches whenever predators were approaching. The brave creatures were helping each other build safe shelters and gather food across the forest. When different species cooperate in nature, the whole forest ecosystem stays healthy, vibrant, and strong.",
+      content_vi: "Trong hệ sinh thái rừng xanh, các loài động vật cùng nhau làm việc để sinh tồn và bảo vệ môi trường sống chung. Hôm qua, một chú sư tử dũng mãnh đã tuần tra lãnh thổ rừng rực nắng để bảo vệ cộng đồng động vật khỏi những kẻ săn bắn nguy hiểm. Gần đó, một chú chuột nhỏ đang thu gom hạt giống dưới gốc cây sồi. Những hạt giống được vùi đã sớm mọc thành những bụi cây xanh tươi mới. Trên cao khỏi mặt đất, những chú chim cảnh giác hót vang tín hiệu cảnh báo từ cành cây dày mỗi khi có thú săn mồi đang tiến lại gần. Những sinh vật dũng cảm đã giúp đỡ lẫn nhau xây dựng nơi trú ẩn an toàn và thu thập thức ăn khắp khu rừng. Khi các loài khác nhau hợp tác trong tự nhiên, toàn bộ hệ sinh thái rừng luôn khỏe mạnh, tràn đầy sức sống và bền vững.",
       cover_image: "/images/week34/explore_cover_w34.jpg",
       audio_url: "/audio/week34/explore.mp3",
+      vocab_focus: ["lion", "mouse", "forest", "hunter", "trapped", "net", "rope", "chewed", "freed", "brave", "tiny", "mighty", "grateful", "promise", "sleeping"],
       comprehension_questions: [
         {
           id: "q1",
-          question: "How do animals help each other in the green forest?",
-          options: ["By living, working, and cooperating together", "By fighting all day", "By sleeping in cold caves"],
-          answer: "By living, working, and cooperating together"
+          question: "Why was the mighty lion patrolling the forest territory?",
+          options: ["To guard the animal community against dangerous hunters", "To catch small mice for dinner", "To sleep all day under a rock"],
+          answer: "To guard the animal community against dangerous hunters"
         },
         {
           id: "q2",
-          question: "What do birds do when danger is near?",
-          options: ["They chirp loudly to warn other animals", "They run into deep water", "They hide under the ground"],
-          answer: "They chirp loudly to warn other animals"
+          question: "What were alert birds doing when predators were approaching?",
+          options: ["Chirping warning signals from thick branches", "Flying away to a far city", "Hiding in deep water"],
+          answer: "Chirping warning signals from thick branches"
         }
       ]
     }

@@ -5,17 +5,17 @@ export default {
     {
       id: 1,
       title: "Problem 1: Rope Length for the Trap (Part-Whole)",
-      problemText: "The hunters had 60 meters of strong rope. They used 25 meters to make the net. How many meters of rope were left?",
+      problemText: "The hunters had 60 feet of strong rope. They used 25 feet to make the net. How many feet of rope were left?",
       correctAnswer: 35,
-      answer: "35 meters",
-      hintText: "Total rope (60m) - Used rope (25m) = 35 meters remaining.",
+      answer: "35 feet",
+      hintText: "Total rope (60 ft) - Used rope (25 ft) = 35 feet remaining.",
       modelData: {
         type: "part_whole",
         bars: [
-          { value: 25, label: "25m used", color: "#ef4444" },
-          { value: 35, label: "35m left", color: "#22c55e" }
+          { value: 25, label: "25 ft used", color: "#ef4444" },
+          { value: 35, label: "35 ft left", color: "#22c55e" }
         ],
-        totalLabel: "60m rope total"
+        totalLabel: "60 ft rope total"
       }
     },
     {
@@ -37,17 +37,17 @@ export default {
     {
       id: 3,
       title: "Problem 3: Mouse Running Distance (Comparison)",
-      problemText: "The mouse ran 80 meters to reach the trapped lion. A rabbit ran 45 meters. How many more meters did the mouse run?",
+      problemText: "The mouse ran 80 steps to reach the trapped lion. A rabbit ran 45 steps. How many more steps did the mouse run?",
       correctAnswer: 35,
-      answer: "35 meters",
-      hintText: "Mouse distance (80m) - Rabbit distance (45m) = 35 meters difference.",
+      answer: "35 steps",
+      hintText: "Mouse distance (80 steps) - Rabbit distance (45 steps) = 35 steps difference.",
       modelData: {
         type: "comparison",
         bars: [
-          { value: 80, label: "Mouse (80m)", color: "#8b5cf6" },
-          { value: 45, label: "Rabbit (45m)", color: "#f59e0b" }
+          { value: 80, label: "Mouse (80 steps)", color: "#8b5cf6" },
+          { value: 45, label: "Rabbit (45 steps)", color: "#f59e0b" }
         ],
-        diffLabel: "35m more"
+        diffLabel: "35 steps more"
       }
     },
     {

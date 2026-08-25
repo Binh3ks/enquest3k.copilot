@@ -124,8 +124,8 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     if (rotaryConfig.cycleNumber === 2) {
       return [
         { id: 'list_p4', name: 'Listening Part 4: 3-Picture Quiz', shieldName: 'Shield 4 (Listening P4)' },
-        { id: 'list_p5', name: 'Listening Part 5: Color & Write', shieldName: 'Shield 5 (Listening P5)' },
         { id: 'rw_p1', name: 'Reading Part 1: Word Bank Match', shieldName: 'Shield 6 (R&W P1)' },
+        { id: 'spk_p1', name: 'Speaking Part 1: Find Differences', shieldName: 'Shield 13 (Speaking P1)' },
       ];
     }
 

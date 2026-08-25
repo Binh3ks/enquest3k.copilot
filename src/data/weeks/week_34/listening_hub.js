@@ -65,7 +65,7 @@ export const listeningHub = {
     },
     {
       id: 4,
-      problem_en: "The hunters had 45 meters of rope. They used 27 meters for a net. How many meters of rope remained?",
+      problem_en: "The hunters had 45 feet of rope. They used 27 feet for a net. How many feet of rope remained?",
       bar_model_svg: "/images/week34/barmodel_w34_adv_p4.svg",
       answer_value: 18
     },

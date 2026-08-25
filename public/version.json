@@ -1,9 +1,9 @@
 {
-  "commit": "992f784bfb3affceff936805993916dd59965061",
-  "git_commit": "992f784bfb3affceff936805993916dd59965061",
-  "shortCommit": "992f784b",
-  "message": "fix(w34): data routing R2 — info_exchange / story_writer / science_lab + Gate15 v2",
-  "builtAt": "2026-08-25T02:01:48.872Z",
-  "build_timestamp": "2026-08-25T02:01:48.872Z",
+  "commit": "99ac63b73662c2b56e1ce15f379f522184ad2f72",
+  "git_commit": "99ac63b73662c2b56e1ce15f379f522184ad2f72",
+  "shortCommit": "99ac63b7",
+  "message": "spec(gate15): v2.0 with G-series fixes [reviewer-approved]",
+  "builtAt": "2026-08-25T02:59:46.407Z",
+  "build_timestamp": "2026-08-25T02:59:46.408Z",
   "env": "production"
 }
