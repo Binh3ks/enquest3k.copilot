@@ -23,8 +23,8 @@ Man: That is Rob the rabbit. He is hopping gently.`,
       { id: "n3", text: "Hunter Jack", target_id: "t3" },
       { id: "n4", text: "Oliver the Owl", target_id: "t4" },
       { id: "n5", text: "Bella the Bird", target_id: "t5" },
-      { id: "n6", text: "Rob the Rabbit", target_id: "t6" },
-      { id: "n7", text: "Sammy the Squirrel", target_id: null }
+      { id: "n6", text: "Sammy the Squirrel", target_id: "t6" },
+      { id: "n7", text: "Rob the Rabbit", target_id: null }
     ],
     targets: [
       { id: "t1", label: "Leo (Large sleeping lion under tree)", x: 45, y: 55, isExample: true },
@@ -32,7 +32,7 @@ Man: That is Rob the rabbit. He is hopping gently.`,
       { id: "t3", label: "Hunter Jack (Man holding rope behind bush)", x: 80, y: 50 },
       { id: "t4", label: "Oliver (Wise owl on high branch)", x: 65, y: 25 },
       { id: "t5", label: "Bella (Colorful bird near stream)", x: 50, y: 18 },
-      { id: "t6", label: "Rob (White rabbit drinking at riverbank)", x: 18, y: 75 }
+      { id: "t6", label: "Sammy (Squirrel gathering acorns on path)", x: 42, y: 78 }
     ]
   },
 
@@ -177,7 +177,7 @@ Woman: Yes, colour the hat dark green.`,
       { id: "inst_2", item: "Rope Net", text: "Write the word 'NET' near the ropes", x: 65, y: 45, word: "NET", action: "write" },
       { id: "inst_3", item: "Tiny Mouse", text: "Color the little mouse brown", x: 30, y: 70, color: "brown", action: "colour" },
       { id: "inst_4", item: "Forest Signboard", text: "Write the word 'FOREST' on the signboard", x: 80, y: 30, word: "FOREST", action: "write" },
-      { id: "inst_5", item: "Hunter's Hat", text: "Color the hat dark green", x: 90, y: 20, color: "green", action: "colour" }
+      { id: "inst_5", item: "Hunter's Hat", text: "Color the hat dark green", x: 90, y: 20, color: "dark green", action: "colour" }
     ]
   }
 };

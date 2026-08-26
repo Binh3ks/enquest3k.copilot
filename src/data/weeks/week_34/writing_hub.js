@@ -18,12 +18,12 @@ export const writingHub = {
         badge_label: "MODEL",
         title: "Scene 1: Lion in the Forest",
         image_url: "/images/week34/webtoon_scene_1.png",
-        caption: "The mighty lion was resting under a tall oak tree in the forest.",
-        frame_L1: "The mighty lion was sleeping peacefully under a tall oak tree.",
+        caption: "The mighty lion was resting under a shady green tree.",
+        frame_L1: "In the beginning, the mighty lion was sleeping peacefully under a shady green tree.",
         locked_connector: "In the beginning,",
-        ordered_chips: ["the mighty lion", "was sleeping peacefully", "under a tall oak tree"],
-        pills: ["the mighty lion", "was sleeping peacefully", "under a tall oak tree"],
-        audio: "On a sunny afternoon, the mighty lion was resting under a tall tree."
+        ordered_chips: ["the mighty lion", "was sleeping peacefully", "under a shady green tree"],
+        pills: ["the mighty lion", "was sleeping peacefully", "under a shady green tree"],
+        audio: "On a sunny afternoon, the mighty lion was resting under a shady green tree."
       },
       {
         scene: 2,
@@ -31,13 +31,13 @@ export const writingHub = {
         badge_label: "BUILD",
         title: "Scene 2: Trapped in Heavy Net",
         image_url: "/images/week34/webtoon_scene_4.png",
-        caption: "The hunters trapped the strong lion in a heavy rope net.",
-        frame_L1: "Suddenly, hunters trapped the lion in a heavy rope net.",
+        caption: "Two hunters trapped the lion in a heavy net.",
+        frame_L1: "Suddenly, two hunters trapped the lion in a heavy net.",
         connectors: ["Then", "Suddenly", "After that"],
-        display_chips: ["trapped the strong lion", "the hunters", "in a heavy rope net"],
-        pills: ["trapped the strong lion", "the hunters", "in a heavy rope net"],
-        correct_order: ["the hunters", "trapped the strong lion", "in a heavy rope net"],
-        audio: "Suddenly, the hunters trapped the lion in a strong net."
+        display_chips: ["in a heavy net", "two hunters", "trapped the lion"],
+        pills: ["in a heavy net", "two hunters", "trapped the lion"],
+        correct_order: ["two hunters", "trapped the lion", "in a heavy net"],
+        audio: "Suddenly, two hunters trapped the lion in a heavy net."
       },
       {
         scene: 3,
@@ -45,8 +45,8 @@ export const writingHub = {
         badge_label: "WRITE",
         title: "Scene 3: Mouse Frees the Lion",
         image_url: "/images/week34/webtoon_scene_5.png",
-        caption: "The brave mouse chewed through the thick ropes and freed the lion.",
-        frame_L1: "The brave mouse chewed the thick ropes and freed the mighty lion.",
+        caption: "The brave mouse chewed the thick ropes and freed the lion.",
+        frame_L1: "Finally, the brave mouse chewed the thick ropes and freed the lion.",
         connectors: ["Finally", "In the end", "At last"],
         keywords: ["the brave mouse", "chew", "the thick ropes", "free"],
         pills: ["the brave mouse", "chew", "the thick ropes", "free"],
@@ -81,9 +81,9 @@ export const writingHub = {
     purpose: "🌱 Today we write like little scientists: we say what we SAW, use past tense, and join ideas with because / so!",
     teacher_parent_note: "Learn the language of science reports (observed / because / past tense), not science content.",
     data_card: [
-      { subject: "🐿️ Squirrels", action: "buried extra nuts in the ground", result: "some nuts grew into new oak trees" },
-      { subject: "🐝 Bees", action: "drank sweet nectar from flowers", result: "carried pollen to help new flowers grow" },
-      { subject: "🐦 Jays", action: "hid seeds under soft leaves", result: "started small green plants across the forest" }
+      { subject: "🦁 Mighty Lion", action: "protected the forest territory", result: "kept other animals safe" },
+      { subject: "🐭 Tiny Mouse", action: "planted new seeds in the ground", result: "helped new trees grow" },
+      { subject: "🌳 Forest Trees", action: "gave food, shade and warm homes", result: "kept the ecosystem green" }
     ],
     step1Title: "Observe Animal Roles",
     step1Pills: {
