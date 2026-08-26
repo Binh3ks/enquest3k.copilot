@@ -298,121 +298,260 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
           </div>
         </div>
 
-        {/* Right Column: Interactive Line-Art Canvas with Direct Clickable Hotspots */}
-        <div className="lg:col-span-8 bg-slate-900 rounded-3xl p-3 sm:p-4 border-2 border-slate-800 shadow-2xl flex flex-col items-center">
+        {/* Right Column: Authentic Vector Line-Art SVG Canvas */}
+        <div className="lg:col-span-8 bg-slate-900 rounded-3xl p-3 sm:p-5 border-2 border-slate-800 shadow-2xl flex flex-col items-center">
           <div className="w-full flex items-center justify-between mb-2 px-1">
-            <span className="text-[11px] font-black text-amber-400 uppercase tracking-wider flex items-center gap-1">
-              <Palette size={13} /> Interactive Scene — Click targets to Color & Write:
+            <span className="text-[11px] font-black text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+              <Palette size={14} /> Vector Line-Art Canvas — Click paths to fill color & write:
             </span>
             <span className="text-[10px] font-bold text-slate-400">
-              5 Scored Targets + 1 Example
+              Active: <span style={{ color: selectedColor }}>● {colorsPalette.find(c => c.hex === selectedColor)?.name}</span>
             </span>
           </div>
 
-          {/* Line-Art Image & SVG Overlay Container */}
-          <div className="relative w-full aspect-[4/3] max-h-[420px] rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 shadow-inner select-none">
-            {/* Background Line-Art Scene */}
-            <img
-              src={sceneImageUrl}
-              alt="Listening Part 5 Scene"
-              className="w-full h-full object-cover filter contrast-105"
-              onError={(e) => {
-                // Fallback to W34 diff scene if webtoon is missing
-                if (!e.target.src.includes('w34_diff_scene_a')) {
-                  e.target.src = `/images/week${currentWeek}/w${currentWeek}_diff_scene_a.jpg`;
-                }
-              }}
-            />
+          {/* Interactive Vector Line-Art Scene Container */}
+          <div className="relative w-full aspect-[4/3] max-h-[440px] rounded-2xl overflow-hidden border-2 border-slate-700 bg-white shadow-2xl select-none">
+            <svg
+              viewBox="0 0 800 600"
+              className="w-full h-full"
+              style={{ filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))' }}
+            >
+              {/* Sky Background */}
+              <rect x="0" y="0" width="800" height="600" fill="#f8fafc" />
 
-            {/* Example Hotspot (Pre-colored green badge) */}
-            {exampleInstruction && (
-              <div
-                style={{
-                  left: `${exampleInstruction.x || 10}%`,
-                  top: `${exampleInstruction.y || 10}%`,
-                  transform: 'translate(-50%, -50%)'
-                }}
-                className="absolute z-10 px-2 py-1 bg-emerald-600/90 text-white rounded-lg text-[10px] font-black border border-emerald-300 shadow-lg flex items-center gap-1 backdrop-blur-xs"
+              {/* Distant Hills Line Art */}
+              <path
+                d="M 0 380 Q 200 320, 400 360 T 800 340 L 800 600 L 0 600 Z"
+                fill="#f1f5f9"
+                stroke="#64748b"
+                strokeWidth="2"
+              />
+
+              {/* Ground & Grass Line Art */}
+              <path
+                d="M 0 420 Q 250 390, 500 430 T 800 410 L 800 600 L 0 600 Z"
+                fill="#e2e8f0"
+                stroke="#334155"
+                strokeWidth="3"
+              />
+
+              {/* --- SCENE OBJECT: TREE LEAVES (Example Pre-colored Green) --- */}
+              <g id="tree_structure">
+                {/* Tree Trunk */}
+                <path
+                  d="M 60 600 L 90 220 Q 110 180, 160 160 L 150 600 Z"
+                  fill="#cbd5e1"
+                  stroke="#1e293b"
+                  strokeWidth="3.5"
+                />
+                {/* Branch to Right */}
+                <path
+                  d="M 120 230 Q 200 200, 320 220 L 310 240 Q 180 225, 110 270 Z"
+                  fill="#cbd5e1"
+                  stroke="#1e293b"
+                  strokeWidth="3"
+                />
+
+                {/* Example Top Tree Leaves (Pre-colored Dark Green) */}
+                <path
+                  d="M 20 200 C 0 120, 80 40, 180 50 C 260 30, 340 100, 320 180 C 350 240, 260 290, 180 270 C 100 290, 30 250, 20 200 Z"
+                  fill="#15803d"
+                  stroke="#0f172a"
+                  strokeWidth="3.5"
+                  className="transition-colors duration-300"
+                />
+                <text x="140" y="140" fill="#ffffff" fontSize="13" fontWeight="900" textAnchor="middle">
+                  ★ EXAMPLE: LEAVES (GREEN)
+                </text>
+              </g>
+
+              {/* --- SCENE OBJECT 5: HUNTER'S HAT ON BRANCH (inst_5 / color) --- */}
+              <g
+                id="hunter_hat"
+                onClick={() => handleApplyColor('inst_5')}
+                className="cursor-pointer group"
               >
-                <span>★ EX: Leaves (Green)</span>
-              </div>
-            )}
+                {/* Hat Brim */}
+                <ellipse
+                  cx="260"
+                  cy="205"
+                  rx="45"
+                  ry="12"
+                  fill={coloredElements['inst_5'] || '#ffffff'}
+                  stroke="#0f172a"
+                  strokeWidth="3"
+                  className="transition-colors duration-300 group-hover:stroke-amber-500"
+                />
+                {/* Hat Crown */}
+                <path
+                  d="M 235 203 C 235 165, 285 165, 285 203 Z"
+                  fill={coloredElements['inst_5'] || '#ffffff'}
+                  stroke="#0f172a"
+                  strokeWidth="3"
+                  className="transition-colors duration-300 group-hover:stroke-amber-500"
+                />
+                {/* Hat Feather / Ribbon */}
+                <path d="M 275 190 Q 295 160, 290 145" stroke="#ef4444" strokeWidth="2.5" fill="none" />
+                <text x="260" y="235" fill="#0f172a" fontSize="11" fontWeight="800" textAnchor="middle">
+                  5. Hunter's Hat
+                </text>
+              </g>
 
-            {/* Interactive Color & Write Spatial Hotspots */}
-            {testInstructions.map((inst, idx) => {
-              const isColor = inst.type === 'color';
-              const userColor = coloredElements[inst.id];
-              const userText = writtenText[inst.id] || '';
-              const isCorrect = isSubmitted && (
-                isColor
-                  ? (userColor || '').toLowerCase() === inst.target_color.toLowerCase()
-                  : userText.trim().toUpperCase() === inst.target_word
-              );
+              {/* --- SCENE OBJECT 4: FOREST SIGNBOARD (inst_4 / write) --- */}
+              <g id="signboard" className="cursor-pointer">
+                {/* Wooden Post */}
+                <rect x="660" y="240" width="16" height="220" fill="#94a3b8" stroke="#0f172a" strokeWidth="3" />
+                {/* Sign Board Rectangle */}
+                <rect
+                  x="580"
+                  y="180"
+                  width="180"
+                  height="75"
+                  rx="8"
+                  fill="#ffffff"
+                  stroke="#0f172a"
+                  strokeWidth="3.5"
+                />
+                <text x="670" y="202" fill="#64748b" fontSize="10" fontWeight="800" textAnchor="middle">
+                  4. WRITE ON SIGNBOARD:
+                </text>
+                <foreignObject x="595" y="210" width="150" height="38">
+                  <input
+                    type="text"
+                    disabled={isSubmitted}
+                    value={writtenText['inst_4'] || ''}
+                    onChange={(e) => handleTextChange('inst_4', e.target.value)}
+                    placeholder="CLICK & WRITE"
+                    maxLength={10}
+                    className="w-full h-8 px-2 bg-amber-50 text-slate-900 font-mono font-black text-xs rounded-md border-2 border-slate-700 focus:outline-none focus:border-amber-500 text-center uppercase tracking-widest"
+                  />
+                </foreignObject>
+              </g>
 
-              return (
-                <div
-                  key={inst.id}
-                  style={{
-                    left: `${inst.x}%`,
-                    top: `${inst.y}%`,
-                    transform: 'translate(-50%, -50%)'
-                  }}
-                  className="absolute z-20 flex flex-col items-center"
-                >
-                  {isColor ? (
-                    /* Color Hotspot Button */
-                    <button
-                      type="button"
-                      disabled={isSubmitted}
-                      onClick={() => handleApplyColor(inst.id)}
-                      style={{
-                        backgroundColor: userColor || 'rgba(15, 23, 42, 0.85)',
-                        borderColor: userColor ? '#ffffff' : (isSubmitted ? '#f43f5e' : '#fbbf24')
-                      }}
-                      className={`group p-2 rounded-2xl border-2 shadow-xl transition-all flex items-center gap-1.5 cursor-pointer backdrop-blur-xs ${
-                        userColor ? 'ring-3 ring-amber-400 scale-105' : 'hover:scale-110 hover:border-amber-300 animate-pulse'
-                      }`}
-                      title={`Click to color ${inst.item}`}
-                    >
-                      <span className="w-5 h-5 rounded-full bg-slate-900 text-white font-black text-[10px] flex items-center justify-center border border-white/40">
-                        {idx + 1}
-                      </span>
-                      <Palette size={14} className={userColor ? 'text-white' : 'text-amber-400'} />
-                      <span className="text-[11px] font-black text-white px-1">
-                        {inst.item}
-                      </span>
-                      {isSubmitted && (
-                        isCorrect ? <CheckCircle2 size={14} className="text-emerald-400 ml-0.5" /> : <AlertCircle size={14} className="text-rose-400 ml-0.5" />
-                      )}
-                    </button>
-                  ) : (
-                    /* Write Hotspot Bubble */
-                    <div
-                      className={`p-1.5 rounded-2xl border-2 shadow-xl transition-all flex items-center gap-1.5 backdrop-blur-md ${
-                        userText ? 'bg-slate-950/90 border-cyan-400 ring-2 ring-cyan-400/40' : 'bg-slate-900/85 border-amber-400'
-                      }`}
-                    >
-                      <span className="w-5 h-5 rounded-full bg-amber-500 text-slate-950 font-black text-[10px] flex items-center justify-center">
-                        {idx + 1}
-                      </span>
-                      <Edit3 size={13} className="text-cyan-400 shrink-0" />
-                      <input
-                        type="text"
-                        disabled={isSubmitted}
-                        value={userText}
-                        onChange={(e) => handleTextChange(inst.id, e.target.value)}
-                        placeholder={inst.item}
-                        maxLength={12}
-                        className="w-20 sm:w-24 px-2 py-0.5 bg-slate-800 text-cyan-300 font-mono font-black text-xs rounded border border-slate-700 focus:outline-none focus:border-cyan-400 text-center uppercase"
-                      />
-                      {isSubmitted && (
-                        isCorrect ? <CheckCircle2 size={14} className="text-emerald-400 shrink-0" /> : <AlertCircle size={14} className="text-rose-400 shrink-0" />
-                      )}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+              {/* --- SCENE OBJECT 2: ROPE NET (inst_2 / write) --- */}
+              <g id="rope_net" className="cursor-pointer">
+                {/* Net Mesh Lines */}
+                <path
+                  d="M 480 320 L 590 380 M 500 300 L 610 360 M 520 280 L 630 340 M 480 370 L 610 290 M 500 390 L 630 310"
+                  stroke="#64748b"
+                  strokeWidth="2.5"
+                  strokeDasharray="4,3"
+                />
+                {/* Net Tag / Label to write */}
+                <rect
+                  x="480"
+                  y="340"
+                  width="140"
+                  height="65"
+                  rx="8"
+                  fill="#ffffff"
+                  stroke="#0f172a"
+                  strokeWidth="3"
+                />
+                <text x="550" y="360" fill="#64748b" fontSize="10" fontWeight="800" textAnchor="middle">
+                  2. WRITE NEAR ROPE:
+                </text>
+                <foreignObject x="495" y="368" width="110" height="32">
+                  <input
+                    type="text"
+                    disabled={isSubmitted}
+                    value={writtenText['inst_2'] || ''}
+                    onChange={(e) => handleTextChange('inst_2', e.target.value)}
+                    placeholder="WRITE WORD"
+                    maxLength={6}
+                    className="w-full h-7 px-1 bg-amber-50 text-slate-900 font-mono font-black text-xs rounded border border-slate-600 focus:outline-none focus:border-amber-500 text-center uppercase tracking-widest"
+                  />
+                </foreignObject>
+              </g>
+
+              {/* --- SCENE OBJECT: ROCKS --- */}
+              <path
+                d="M 120 540 C 90 480, 160 450, 240 460 C 280 465, 300 510, 280 550 Z"
+                fill="#cbd5e1"
+                stroke="#1e293b"
+                strokeWidth="3"
+              />
+
+              {/* --- SCENE OBJECT 3: TINY MOUSE ON ROCK (inst_3 / color) --- */}
+              <g
+                id="tiny_mouse"
+                onClick={() => handleApplyColor('inst_3')}
+                className="cursor-pointer group"
+              >
+                {/* Mouse Body */}
+                <ellipse
+                  cx="200"
+                  cy="465"
+                  rx="24"
+                  ry="16"
+                  fill={coloredElements['inst_3'] || '#ffffff'}
+                  stroke="#0f172a"
+                  strokeWidth="2.5"
+                  className="transition-colors duration-300 group-hover:stroke-amber-500"
+                />
+                {/* Mouse Head & Ear */}
+                <circle
+                  cx="180"
+                  cy="460"
+                  r="12"
+                  fill={coloredElements['inst_3'] || '#ffffff'}
+                  stroke="#0f172a"
+                  strokeWidth="2"
+                />
+                <circle cx="178" cy="450" r="6" fill="#fbcfe8" stroke="#0f172a" strokeWidth="1.5" />
+                {/* Mouse Tail */}
+                <path d="M 224 468 Q 248 455, 252 440" stroke="#0f172a" strokeWidth="2" fill="none" />
+                <text x="200" y="500" fill="#0f172a" fontSize="11" fontWeight="800" textAnchor="middle">
+                  3. Little Mouse
+                </text>
+              </g>
+
+              {/* --- SCENE OBJECT 1: BIG LION & LION MANE (inst_1 / color) --- */}
+              <g id="big_lion">
+                {/* Lion Body Line-Art */}
+                <path
+                  d="M 360 490 C 340 430, 420 380, 520 400 C 600 410, 620 490, 580 540 C 500 560, 390 550, 360 490 Z"
+                  fill="#f8fafc"
+                  stroke="#0f172a"
+                  strokeWidth="3.5"
+                />
+                {/* Lion Tail */}
+                <path d="M 590 470 Q 660 460, 670 510" stroke="#0f172a" strokeWidth="3" fill="none" />
+                <circle cx="675" cy="515" r="8" fill="#e2e8f0" stroke="#0f172a" strokeWidth="2" />
+
+                {/* Lion Mane (CLICKABLE COLORABLE PATH inst_1) */}
+                <path
+                  id="lion_mane_path"
+                  onClick={() => handleApplyColor('inst_1')}
+                  d="M 330 450 C 300 370, 350 300, 420 310 C 490 300, 540 370, 510 450 C 480 500, 360 500, 330 450 Z"
+                  fill={coloredElements['inst_1'] || '#ffffff'}
+                  stroke="#0f172a"
+                  strokeWidth="4"
+                  className="cursor-pointer transition-colors duration-300 hover:stroke-amber-500"
+                />
+
+                {/* Lion Face Inside Mane */}
+                <ellipse
+                  cx="420"
+                  cy="410"
+                  rx="45"
+                  ry="40"
+                  fill="#fef08a"
+                  stroke="#0f172a"
+                  strokeWidth="2.5"
+                  pointerEvents="none"
+                />
+                {/* Eyes, Nose, Whiskers */}
+                <circle cx="405" cy="400" r="4" fill="#0f172a" pointerEvents="none" />
+                <circle cx="435" cy="400" r="4" fill="#0f172a" pointerEvents="none" />
+                <polygon points="415,415 425,415 420,422" fill="#ef4444" pointerEvents="none" />
+                <path d="M 420 422 L 420 430 M 415 430 Q 420 435, 425 430" stroke="#0f172a" strokeWidth="2" fill="none" pointerEvents="none" />
+
+                <text x="420" y="475" fill="#0f172a" fontSize="12" fontWeight="900" textAnchor="middle" pointerEvents="none">
+                  1. Lion's Big Mane
+                </text>
+              </g>
+            </svg>
           </div>
         </div>
       </div>
