@@ -50,7 +50,7 @@ Man: That is Rob the rabbit. He is hopping gently.`,
   },
 
   listening_p3: {
-    example: { name: "Wooden Trap", target_letter: "A" },
+    example: { name: "Binoculars", target_letter: "H" },
     items: [
       { id: 1, name: "Wooden Trap", target_letter: "A", audio_url: "/audio/week34/listening_p3_item1.mp3" },
       { id: 2, name: "Thick Rope", target_letter: "B", audio_url: "/audio/week34/listening_p3_item2.mp3" },

@@ -139,13 +139,14 @@ export const readingHub = {
     instructions: "Read the story diary and write the missing words. Write one word on each line.",
     title: "Leo's Storybook Diary: Friday",
     example: { target: "under" },
-    text_template: "Dear Diary, today I read a wonderful fable. A huge lion was sleeping [1]_____ a shady tree in the forest. Suddenly, a tiny mouse ran across his [2]_____. The lion caught the mouse, but he let him go [3]_____ he was kind. A few days later, hunters caught the lion in a heavy [4]_____. The mouse chewed the ropes and [5]_____ the lion safely. They became best friends!",
+    text_template: "Dear Diary, today I read a wonderful fable. A huge lion was sleeping [0]_____ a shady tree in the forest. Suddenly, a tiny mouse ran across his [1]_____. The lion caught the mouse, but he let him go [2]_____ he was kind. A few days later, hunters caught the lion in a heavy [3]_____. The mouse chewed the ropes and [4]_____ the lion safely. They became [5]_____ friends!",
     answers: {
-      "1": "under",
-      "2": "paw",
-      "3": "because",
-      "4": "net",
-      "5": "freed"
+      "0": "under",
+      "1": "paw",
+      "2": "because",
+      "3": "net",
+      "4": "freed",
+      "5": "best"
     }
   },
 
@@ -153,13 +154,14 @@ export const readingHub = {
     instructions: "Read the diary and write the missing words. Write one word on each line.",
     title: "Oliver's Fable Notes: Saturday (Check Mode)",
     example: { target: "under" },
-    text_template: "Today I wrote about the lion and the mouse. While the lion was [1]_____ under a tree, a tiny mouse ran [2]_____ his paw. The lion woke [3]_____ angrily. Later, hunters trapped the lion [4]_____ a net. The mouse helped him [5]_____ chewing the ropes.",
+    text_template: "Today I wrote about the lion and the mouse. While the lion was [0]_____ under a tree, a tiny mouse ran [1]_____ his paw. The lion woke [2]_____ angrily. Later, hunters trapped the lion [3]_____ a net. The mouse helped him [4]_____ chewing the ropes. They stayed [5]_____ forever.",
     answers: {
-      "1": "sleeping",
-      "2": "across",
-      "3": "up",
-      "4": "in",
-      "5": "by"
+      "0": "sleeping",
+      "1": "across",
+      "2": "up",
+      "3": "in",
+      "4": "by",
+      "5": "friends"
     }
   },
 
@@ -182,7 +184,7 @@ export const readingHub = {
       "sharp teeth", "a trap", "a rope", "a zebra", "a fable",
       "a monkey", "a cave", "a river", "a songbird", "a paw"
     ],
-    example: { id: 0, text: "A large wild cat known as the king of the jungle.", target: "lion" },
+    example: { id: 0, text: "A short story that teaches a moral lesson, often with animal characters.", target: "a fable" },
     definitions: [
       { id: 1, text: "This is a large wild cat known as the king of the forest.", target: "a lion" },
       { id: 2, text: "This is a very small animal with a long tail and soft fur.", target: "a mouse" },
@@ -220,9 +222,11 @@ export const readingHub = {
   },
 
   reading_part3_story: {
-    story_text: "Harry was excited because he was reading about forest animals today. The lion was resting peacefully when a little mouse ran across his paw. 'I hope the lion will be ___,' thought the mouse. The lion was very ___ and let the mouse go. Later, hunters set a ___ trap with thick ropes. The mouse arrived very ___ and chewed through the net. 'You are the most ___ friend ever,' roared the grateful lion.",
-    word_bank: ["kind", "surprised", "heavy", "quickly", "loyal", "sleeping", "cold", "afraid", "hungry", "dark"],
+    example: { blank: 0, answer: "excited" },
+    story_text: "Harry was [0]_____ because he was reading about forest animals today. The lion was resting peacefully when a little mouse ran across his paw. 'I hope the lion will be [1]_____,' thought the mouse. The lion was very [2]_____ and let the mouse go. Later, hunters set a [3]_____ trap with thick ropes. The mouse arrived very [4]_____ and chewed through the net. 'You are the most [5]_____ friend ever,' roared the grateful lion.",
+    word_bank: ["excited", "kind", "surprised", "heavy", "quickly", "loyal", "sleeping", "cold", "afraid", "hungry"],
     answers: {
+      "0": "excited",
       "1": "kind",
       "2": "surprised",
       "3": "heavy",

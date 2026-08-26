@@ -291,9 +291,21 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
   }, [weekId, recordActiveInteraction]);
 
   const [showPassportModal, setShowPassportModal] = useState(false);
+  const qaNonce = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('qa_nonce') : null;
 
   return (
-    <div className="ts-container">
+    <div className="ts-container relative">
+      {/* QA Nonce Banner */}
+      {qaNonce && (
+        <div
+          data-testid="qa-nonce-badge"
+          className="fixed top-3 right-3 z-[9999] px-3 py-1 bg-amber-400 text-slate-950 font-mono font-black text-xs rounded-full shadow-xl border-2 border-slate-950 flex items-center gap-1.5"
+        >
+          <span className="w-2 h-2 rounded-full bg-emerald-600 animate-ping" />
+          <span>NONCE: {qaNonce}</span>
+        </div>
+      )}
+
       {/* Top bar */}
       <div className="ts-header">
         <button

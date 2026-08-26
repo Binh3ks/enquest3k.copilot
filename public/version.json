@@ -1,9 +1,9 @@
 {
-  "commit": "e06b64c9b206ea09b67290fe9d9c5806f4208a38",
-  "git_commit": "e06b64c9b206ea09b67290fe9d9c5806f4208a38",
-  "shortCommit": "e06b64c9",
+  "commit": "97e83cad3aca50139514ef7e55cb5776676d82be",
+  "git_commit": "97e83cad3aca50139514ef7e55cb5776676d82be",
+  "shortCommit": "97e83cad",
   "message": "docs(agents): add Cambridge Mechanic Fidelity Doctrine",
-  "builtAt": "2026-08-26T02:00:54.075Z",
-  "build_timestamp": "2026-08-26T02:00:54.076Z",
+  "builtAt": "2026-08-26T02:21:07.715Z",
+  "build_timestamp": "2026-08-26T02:21:07.715Z",
   "env": "production"
 }

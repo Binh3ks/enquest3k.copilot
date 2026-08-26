@@ -82,9 +82,10 @@ export const readingHubData = {
   rw_part_6: {
     instructions: "Read the diary and write the missing words. Write one word on each line.",
     title: "Jake's Diary: Tuesday",
-    example: { target: "corridor" },
-    text_template: "Dear Diary, today was a crazy day at school. After science class, I was walking down the [1]_____. Suddenly, Tom ran past me very fast. He didn't see the yellow warning sign. He [2]_____ on the wet floor and fell down! He [3]_____ his left knee. I walked quickly and [4]_____ the school nurse for help. She brought a clean [5]_____ and fixed his knee. I'm glad he is okay!",
+    example: { target: "after" },
+    text_template: "Dear Diary, today was a crazy day [0]_____ school. After science class, I was walking down the [1]_____. Suddenly, Tom ran past me very fast. He didn't see the yellow warning sign. He [2]_____ on the wet floor and fell down! He [3]_____ his left knee. I walked quickly and [4]_____ the school nurse for help. She brought a clean [5]_____ and fixed his knee. I'm glad he is okay!",
     answers: {
+      "0": "after",
       "1": "corridor",
       "2": "slipped",
       "3": "hurt",
@@ -237,13 +238,14 @@ export const readingHubData = {
       "library", "cafeteria", "handrail", "warning sign", "first-aid kit",
       "playground", "stairs", "slippery", "cold pack", "science room"
     ],
+    example: { id: 0, text: "A quiet room filled with books where students study.", target: "library" },
     definitions: [
       { id: 1, text: "You walk along this long passage inside a school building to get to your classroom.", target: "corridor" },
       { id: 2, text: "A trained medical worker at school who helps students when they get hurt.", target: "nurse" },
       { id: 3, text: "A soft piece of cloth used to cover and protect a cut or knee injury.", target: "bandage" },
       { id: 4, text: "The person in charge of managing the school who praises students for safe behaviour.", target: "headmaster" },
       { id: 5, text: "A small pool of liquid left on the floor after cleaning or rain.", target: "puddle" },
-      { id: 6, text: "An open area where children play during break time.", target: "playground" },
+      { id: 6, text: "The place where students do experiments with goggles and chemicals.", target: "science room" },
       { id: 7, text: "A large room at school where children eat lunch and talk with friends.", target: "cafeteria" },
       { id: 8, text: "You hold onto this long metal bar when walking up or down stairs.", target: "handrail" },
       { id: 9, text: "A yellow sign placed on the floor to warn people to walk carefully on wet tiles.", target: "warning sign" },

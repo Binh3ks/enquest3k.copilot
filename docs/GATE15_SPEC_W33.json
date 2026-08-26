@@ -391,7 +391,12 @@
         {
           "name": "Cycle 1 weekly_review renders Cambridge Task",
           "type": "regex",
-          "pattern": "(Cambridge A2 Flyers|Matching|Speaking|Listening Part 3|Location Cards|Clean Bandage)"
+          "pattern": "(Cambridge A2 Flyers|Matching|Speaking|Listening Part 3|Location Cards|Clean Bandage|Cleaning Mop)"
+        },
+        {
+          "name": "W33 weekly_review P3 flow: regex Cleaning Mop + ★ EXAMPLE",
+          "type": "regex",
+          "pattern": "(Cleaning Mop|★ EXAMPLE)"
         },
         {
           "name": "official Cambridge speaking/review instruction sentence",

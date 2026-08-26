@@ -34,9 +34,10 @@ export function OpenClozeCompleter({ customData, data: propData, onComplete }) {
 
   const handleSubmit = () => {
     let correctCount = 0;
-    const totalGaps = Object.keys(targetAnswers).length;
+    const testGapIds = Object.keys(targetAnswers).filter(id => id !== '0');
+    const totalGaps = testGapIds.length || 1;
 
-    Object.keys(targetAnswers).forEach((id) => {
+    testGapIds.forEach((id) => {
       const userVal = (userInputs[id] || '').trim().toLowerCase();
       const targetVal = (targetAnswers[id] || '').trim().toLowerCase();
       if (userVal === targetVal) {
@@ -69,7 +70,7 @@ export function OpenClozeCompleter({ customData, data: propData, onComplete }) {
     setScore(null);
   };
 
-  // Helper to parse text_template and replace [1]_____, [2]_____, etc. with input fields
+  // Helper to parse text_template and replace [0]_____, [1]_____, [2]_____, etc. with input fields
   const renderParsedDiaryText = () => {
     const rawText = data.text_template || '';
     const gapRegex = /\[(\d+)\]_____/g;
@@ -88,6 +89,27 @@ export function OpenClozeCompleter({ customData, data: propData, onComplete }) {
             {renderParsedText(rawText.substring(lastIndex, matchIndex), 'indigo', null, true)}
           </span>
         );
+      }
+
+      // Check if gap 0 is an example gap
+      if (gapId === '0') {
+        const exampleVal = data.example?.target || data.answers?.['0'] || '';
+        parts.push(
+          <span key={`gap-0`} className="inline-flex flex-col items-center mx-1.5 my-1 align-baseline relative">
+            <input
+              type="text"
+              disabled={true}
+              value={exampleVal}
+              readOnly
+              className="w-28 sm:w-36 px-3 py-1.5 rounded-xl border-2 font-mono font-black text-center text-sm bg-amber-100 border-amber-400 text-amber-950 shadow-xs cursor-not-allowed"
+            />
+            <span className="text-[9px] font-black text-amber-800 bg-amber-200 px-1.5 py-0.5 rounded mt-0.5 uppercase tracking-wide">
+              ★ EXAMPLE
+            </span>
+          </span>
+        );
+        lastIndex = gapRegex.lastIndex;
+        continue;
       }
 
       // Push gap input field

@@ -47,7 +47,7 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
     ]
   },
   listening_p3: {
-    example: { name: "School Handrail", target_letter: "A" },
+    example: { name: "Cleaning Mop", target_letter: "H" },
     items: [
       { id: 1, name: "School Handrail", target_letter: "A", audio_url: "/audio/week33/listening_p3_item1.mp3" },
       { id: 2, name: "Warning Sign", target_letter: "B", audio_url: "/audio/week33/listening_p3_item2.mp3" },
