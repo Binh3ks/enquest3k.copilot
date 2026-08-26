@@ -53,22 +53,23 @@ export const skillPracticeHub = {
     { id: 5, problem_en: "The headmaster gave 5 safety stars to each of 4 helpers. How many stars in total?", bar_model_svg: "/images/week33/barmodel_w33_adv_p5.svg", answer_value: 20 }
   ],
   science_lab: {
-    experimentTitle: "Corridor Friction & Safety Physics Lab",
+    experimentTitle: "Friction Science Lab — Corridor Safety",
     diagramImage: "/images/week33/explore_cover_w33.jpg",
-    explanation: "Drag the science labels into the correct target zones to show how friction keeps school corridors safe!",
+    explanation: "Drag each science label to the correct part of the picture. Show how friction keeps us safe in the school corridor!",
     targets: [
-      { id: "t1", name: "Wet Corridor Tiles", x: 25, y: 70 },
-      { id: "t2", name: "Rubber Shoe Soles", x: 75, y: 65 },
-      { id: "t3", name: "Yellow Caution Sign", x: 50, y: 35 },
-      { id: "t4", name: "Stair Steps", x: 80, y: 25 }
+      { id: "t1", name: "Wet Tiles", x: 25, y: 70 },
+      { id: "t2", name: "Rubber Shoes", x: 75, y: 65 },
+      { id: "t3", name: "Warning Sign", x: 50, y: 35 },
+      { id: "t4", name: "Smooth Floor", x: 80, y: 25 }
     ],
     labels: [
-      { id: "lbl_1", text: "Low Friction Surface (Water Layer)", targetId: "t1" },
-      { id: "lbl_2", text: "High Grip Surface (Rubber Tread)", targetId: "t2" },
-      { id: "lbl_3", text: "Visual Safety Warning Notice", targetId: "t3" },
-      { id: "lbl_4", text: "Physical Balance & Stability Aid", targetId: "t4" }
+      { id: "lbl_1", text: "Slippery — Low Grip (Water)", targetId: "t1" },
+      { id: "lbl_2", text: "Safe — Good Grip (Rubber)", targetId: "t2" },
+      { id: "lbl_3", text: "Danger Warning Sign", targetId: "t3" },
+      { id: "lbl_4", text: "Smooth — Very Slippery", targetId: "t4" }
     ]
   }
+
 };
 
 export const skillPracticeHubData = skillPracticeHub;

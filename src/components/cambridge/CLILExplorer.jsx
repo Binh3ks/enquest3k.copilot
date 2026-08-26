@@ -84,7 +84,7 @@ export default function CLILExplorer({
     const rawQs = clilData?.comprehension_questions || clilData?.check_questions || [];
     return rawQs.map((q, idx) => ({
       id: q.id || `q_${idx + 1}`,
-      question: q.question || q.prompt || `Question ${idx + 1}`,
+      question: q.question || q.question_en || q.prompt || `Question ${idx + 1}`,
       options: q.options || [],
       shuffledOptions: [...(q.options || [])].sort(() => 0.5 - Math.random()),
       correct: q.answer || (q.options && q.options[0]) || ""

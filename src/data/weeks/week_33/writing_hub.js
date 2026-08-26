@@ -48,11 +48,30 @@ export const writingHubData = {
         frame_L1: "Jake called the school nurse and everyone felt relieved.",
         locked_connector: "Finally,",
         connectors: ["Finally,", "In the end,", "At last,"],
-        keywords: ["called the school nurse", "a clean bandage", "his swollen knee", "felt relieved", "arrived quickly", "a cold pack", "praised Jake"],
-        pills: ["called the school nurse", "a clean bandage", "his swollen knee", "felt relieved", "arrived quickly", "a cold pack", "praised Jake"],
-        sentence_frame: "Finally, Jake called the school nurse. She arrived quickly with [a clean bandage] and [a cold pack]. She wrapped [his swollen knee] carefully. Everyone [felt relieved] and [praised Jake] for his quick help.",
+        keywords: [
+          "called the school nurse",
+          "arrived quickly",
+          "washed the wound",
+          "put on a bandage",
+          "cleaned his knee",
+          "used a cold pack",
+          "felt relieved",
+          "praised Jake"
+        ],
+        pills: [
+          "called the school nurse",
+          "arrived quickly",
+          "washed the wound",
+          "put on a bandage",
+          "cleaned his knee",
+          "used a cold pack",
+          "felt relieved",
+          "praised Jake"
+        ],
+        sentence_frame: "Finally, Jake called the school nurse. She arrived quickly and [washed the wound]. Then she [put on a bandage] and [used a cold pack]. Everyone [felt relieved] and [praised Jake] for helping.",
         audio: "Jake called the school nurse, who arrived with a clean bandage and a cold pack."
       }
+
     ],
     panels: [
       { image_url: "/images/week33/writing_panel_1.png", caption: "Jake was walking carefully down the corridor while a student ran fast.", pills: ["Jake was walking carefully", "down the school corridor", "near the warning sign", "a student was running fast"] },

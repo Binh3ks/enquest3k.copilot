@@ -26,12 +26,12 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
       { id: "n7", text: "Mia the Monitor", target_id: null }
     ],
     targets: [
-      { id: "t1", label: "Jake (Boy holding backpack on left)", x: 31, y: 66, isExample: true },
-      { id: "t2", label: "Tom (Student slipping in red shirt)", x: 49, y: 64 },
-      { id: "t3", label: "Nurse Sarah (Woman rushing in white uniform)", x: 54, y: 62 },
-      { id: "t4", label: "Headmaster Brown (Man in blue suit near lockers)", x: 39, y: 56 },
-      { id: "t5", label: "Cleaner Bob (Person with mop near yellow sign)", x: 65, y: 63 },
-      { id: "t6", label: "Teacher David (Student bending near bench)", x: 71, y: 72 }
+      { id: "t1", label: "Jake (Boy holding backpack on left)", x: 20, y: 68, isExample: true },
+      { id: "t2", label: "Tom (Student slipping in red shirt)", x: 42, y: 72 },
+      { id: "t3", label: "Nurse Sarah (Woman rushing in white uniform)", x: 60, y: 58 },
+      { id: "t4", label: "Headmaster Brown (Man in blue suit near lockers)", x: 35, y: 48 },
+      { id: "t5", label: "Cleaner Bob (Person with mop near yellow sign)", x: 72, y: 65 },
+      { id: "t6", label: "Teacher David (Student bending near bench)", x: 83, y: 74 }
     ]
   },
   listening_p2: {
@@ -56,14 +56,14 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
       { id: 5, name: "Clean Bandage", target_letter: "E", audio_url: "/audio/week33/listening_p3_item5.mp3" }
     ],
     cards: [
-      { letter: "A", name: "School Stairs", location_name: "Corridor Corner", image_url: "/images/week33/card_a.jpg" },
-      { letter: "B", name: "Warning Sign", location_name: "Corridor Floor", image_url: "/images/week33/card_b.jpg" },
-      { letter: "C", name: "First-Aid Kit", location_name: "Nurse Office", image_url: "/images/week33/card_c.jpg" },
-      { letter: "D", name: "Cold Pack", location_name: "Freezer Box", image_url: "/images/week33/card_d.jpg" },
-      { letter: "E", name: "Clean Bandage", location_name: "Medical Cabinet", image_url: "/images/week33/card_e.jpg" },
-      { letter: "F", name: "Science Goggles", location_name: "Science Room", image_url: "/images/week33/card_f.jpg" },
-      { letter: "G", name: "School Backpack", location_name: "Locker Room", image_url: "/images/week33/card_g.jpg" },
-      { letter: "H", name: "Cleaning Mop", location_name: "Utility Closet", image_url: "/images/week33/card_h.jpg" }
+      { letter: "A", name: "School Stairs", image_url: "/images/week33/card_a.jpg" },
+      { letter: "B", name: "Warning Sign", image_url: "/images/week33/card_b.jpg" },
+      { letter: "C", name: "First-Aid Kit", image_url: "/images/week33/card_c.jpg" },
+      { letter: "D", name: "Cold Pack", image_url: "/images/week33/card_d.jpg" },
+      { letter: "E", name: "Clean Bandage", image_url: "/images/week33/card_e.jpg" },
+      { letter: "F", name: "Science Goggles", image_url: "/images/week33/card_f.jpg" },
+      { letter: "G", name: "School Backpack", image_url: "/images/week33/card_g.jpg" },
+      { letter: "H", name: "Cleaning Mop", image_url: "/images/week33/card_h.jpg" }
     ]
   },
   listening_p4: {
