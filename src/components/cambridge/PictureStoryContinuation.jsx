@@ -20,11 +20,10 @@ export function PictureStoryContinuation({ customData, data: propData, weekNumbe
     { id: 1, image_url: `/images/week${weekNumber}/ps_1.png`, narrator_prompt: "Leo and Milo decided to explore the forest." },
     { id: 2, image_url: `/images/week${weekNumber}/ps_2.png`, narrator_prompt: "They found a hidden cave near the river." },
     { id: 3, image_url: `/images/week${weekNumber}/ps_3.png`, narrator_prompt: "Inside the cave, they saw something shiny." },
-    { id: 4, image_url: `/images/week${weekNumber}/ps_4.png`, narrator_prompt: "It was an old treasure chest!" },
-    { id: 5, image_url: `/images/week${weekNumber}/ps_5.png`, narrator_prompt: "They opened it and found gold coins." }
+    { id: 4, image_url: `/images/week${weekNumber}/ps_4.png`, narrator_prompt: "It was an old treasure chest with gold coins!" }
   ];
 
-  const examinerIntro = activeData?.examiner_intro || "Look at these five pictures. They tell a story. First, I'll tell you about picture one. Then you tell me about pictures two, three, four, and five.";
+  const examinerIntro = activeData?.examiner_intro || "Look at these four pictures. They tell a story. First, I'll tell you about picture one. Then you tell me about pictures two, three, and four.";
 
   const wordCount = storyText.trim() ? storyText.trim().split(/\s+/).length : 0;
   const isLengthValid = wordCount >= 20;

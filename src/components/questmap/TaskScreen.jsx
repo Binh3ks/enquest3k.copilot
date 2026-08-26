@@ -44,6 +44,7 @@ const TASK_ROUTING = {
   boss_listening:   { zone: 'boss',    station: 'listening_boss' },
   boss_reading:     { zone: 'boss',    station: 'rw_boss' },
   weekly_review:    { zone: 'boss',    station: 'review' },
+  personal_questions: { zone: 'boss', station: 'personal_qs' },
 };
 
 class TaskErrorBoundary extends React.Component {

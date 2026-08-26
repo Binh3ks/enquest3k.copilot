@@ -49,10 +49,18 @@ export const speakingHub = {
       { id: 1, image_url: "/images/week33/ps_1.png", narrator_prompt: "Jake was walking carefully down the corridor." },
       { id: 2, image_url: "/images/week33/ps_2.png", narrator_prompt: "Suddenly, a boy ran fast and slipped on the wet floor." },
       { id: 3, image_url: "/images/week33/ps_3.png", narrator_prompt: "Jake rushed over to check on the hurt student." },
-      { id: 4, image_url: "/images/week33/ps_4.png", narrator_prompt: "He called the school nurse right away." },
-      { id: 5, image_url: "/images/week33/ps_5.png", narrator_prompt: "The nurse bandaged his knee and everyone felt relieved." }
+      { id: 4, image_url: "/images/week33/ps_4.png", narrator_prompt: "He called the school nurse right away and she bandaged his knee." }
     ],
-    examiner_intro: "Look at these five pictures. They tell a story about Jake and a corridor incident. First, I'll tell you about picture one. Then you tell me about pictures two, three, four, and five."
+    examiner_intro: "Look at these four pictures. They tell a story about Jake and a corridor incident. First, I'll tell you about picture one. Then you tell me about pictures two, three, and four."
+  },
+  personal_questions: {
+    examiner_intro: "Now let's talk about you. Please listen to each question and answer clearly.",
+    questions: [
+      { id: "q1", question: "What's your favorite subject at school?", topic: "school", sample_answer_hint: "My favorite subject is English because I love stories." },
+      { id: "q2", question: "What do you usually do on your birthday?", topic: "birthday", sample_answer_hint: "I usually have a party with my family and eat cake." },
+      { id: "q3", question: "Tell me about your family.", topic: "family", sample_answer_hint: "There are four people in my family: my parents, my brother, and me." },
+      { id: "q4", question: "What did you do last holiday?", topic: "holidays", sample_answer_hint: "Last holiday, I visited the beach with my cousins." }
+    ]
   },
   find_differences: {
     picA: {

@@ -16,6 +16,7 @@ import RWPart3ClozeWithTitle from '../../components/cambridge/RWPart3ClozeWithTi
 import PictureStoryContinuation from '../../components/cambridge/PictureStoryContinuation';
 import FindDifferencesInteractive from '../../components/cambridge/FindDifferencesInteractive';
 import InformationExchangeP2 from '../../components/cambridge/InformationExchangeP2';
+import PersonalQuestionsCompleter from '../../components/cambridge/PersonalQuestionsCompleter';
 import ChoiceGrid from '../../components/common/ChoiceGrid';
 import { Shield, Trophy, CheckCircle2, RotateCcw, Award, PlayCircle, Star, Sparkles } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';
@@ -52,7 +53,8 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
       speaking: {
         p1_findDiff: data?.speaking_hub?.find_differences || data?.speakingHubData?.find_differences || data?.bossBattle?.speaking?.p1_findDiff,
         p2_cueCard: data?.speaking_hub?.info_exchange_cards || data?.speakingHubData?.info_exchange_cards || data?.bossBattle?.speaking?.p2_cueCard,
-        p3_pictureStory: data?.speaking_hub?.picture_story || data?.speakingHubData?.picture_story || data?.bossBattle?.speaking?.p3_pictureStory
+        p3_pictureStory: data?.speaking_hub?.picture_story || data?.speakingHubData?.picture_story || data?.bossBattle?.speaking?.p3_pictureStory,
+        p4_personalQs: data?.speaking_hub?.personal_questions || data?.speakingHubData?.personal_questions || data?.bossBattle?.speaking?.p4_personalQs
       }
     };
   }, [data]);
@@ -376,6 +378,16 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
             data={bossData.speaking.p3_pictureStory}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('spk_p3')}
+          />
+        )}
+
+        {/* SPEAKING P4 */}
+        {(currentTask.id === 'spk_p4' || currentTask.id === 'personal_questions' || forcedStation === 'personal_qs') && bossData.speaking?.p4_personalQs && (
+          <PersonalQuestionsCompleter
+            customData={bossData.speaking.p4_personalQs}
+            data={bossData.speaking.p4_personalQs}
+            weekNumber={activeWeek}
+            onComplete={() => handleTaskComplete('spk_p4')}
           />
         )}
       </div>

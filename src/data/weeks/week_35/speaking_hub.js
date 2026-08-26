@@ -43,13 +43,21 @@ export const speakingHub = {
   },
   picture_story: {
     title: "The Lion and the Little Mouse",
-    examiner_intro: "Look at these five pictures. They tell a story about a lion and a little mouse. First, I'll tell you about picture one. Then you tell me about pictures two, three, four, and five.",
+    examiner_intro: "Look at these four pictures. They tell a story about a lion and a little mouse. First, I'll tell you about picture one. Then you tell me about pictures two, three, and four.",
     images: [
       { id: 1, image_url: "/images/week35/webtoon_scene_1.png", narrator_prompt: "The lion was sleeping peacefully under a big tree in the forest." },
       { id: 2, image_url: "/images/week35/webtoon_scene_2.png", narrator_prompt: "A tiny mouse ran across his paw and woke him up." },
       { id: 3, image_url: "/images/week35/webtoon_scene_3.png", narrator_prompt: "The lion caught him, but let him go after the mouse promised to help." },
-      { id: 4, image_url: "/images/week35/webtoon_scene_4.png", narrator_prompt: "Later, hunters trapped the lion in a heavy rope net." },
-      { id: 5, image_url: "/images/week35/webtoon_scene_5.png", narrator_prompt: "The brave mouse chewed the ropes and freed the lion completely." }
+      { id: 4, image_url: "/images/week35/webtoon_scene_4.png", narrator_prompt: "Later, hunters trapped the lion, and the brave mouse chewed the ropes to free him." }
+    ]
+  },
+  personal_questions: {
+    examiner_intro: "Now let's talk about you. Please listen to each question and answer clearly.",
+    questions: [
+      { id: "q1", question: "What's your favorite animal?", topic: "animals", sample_answer_hint: "My favorite animal is the lion because it is brave and strong." },
+      { id: "q2", question: "What do you usually do on weekends?", topic: "hobbies", sample_answer_hint: "I usually read storybooks and play soccer in the park." },
+      { id: "q3", question: "Tell me about your best friend.", topic: "friends", sample_answer_hint: "My best friend is kind and helps me with my homework." },
+      { id: "q4", question: "Where do you like going on holidays?", topic: "holidays", sample_answer_hint: "I like going to the countryside to see nature." }
     ]
   },
   find_differences: {

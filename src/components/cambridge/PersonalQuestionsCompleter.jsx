@@ -1,0 +1,247 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { Volume2, Mic, MicOff, CheckCircle2, Sparkles, MessageSquare, Play, HelpCircle } from 'lucide-react';
+import VoiceService from '../../services/voiceService';
+import CompletionModal from '../common/CompletionModal';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import { useUserStore } from '../../stores/useUserStore';
+
+export function PersonalQuestionsCompleter({ customData, data: propData, onComplete }) {
+  const activeData = customData || propData || {};
+  const [answers, setAnswers] = useState({});
+  const [activeRecordingId, setActiveRecordingId] = useState(null);
+  const [showHints, setShowHints] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [score, setScore] = useState(null);
+  const recognitionRef = useRef(null);
+
+  const examinerIntro = activeData?.examiner_intro || "Now let's talk about you. Please listen to each question and answer clearly.";
+  
+  const questions = activeData?.questions || [
+    { id: "q1", question: "What's your favorite subject at school?", topic: "school", sample_answer_hint: "My favorite subject is English because I love stories." },
+    { id: "q2", question: "What do you usually do on your birthday?", topic: "birthday", sample_answer_hint: "I usually have a party with my family and eat cake." },
+    { id: "q3", question: "Tell me about your family.", topic: "family", sample_answer_hint: "There are four people in my family: my parents, my brother, and me." },
+    { id: "q4", question: "What did you do last holiday?", topic: "holidays", sample_answer_hint: "Last holiday, I visited the beach with my cousins." }
+  ];
+
+  useEffect(() => {
+    return () => {
+      if (recognitionRef.current) {
+        try { recognitionRef.current.stop(); } catch (_) {}
+      }
+    };
+  }, []);
+
+  const handlePlayIntro = () => {
+    VoiceService.speak(examinerIntro);
+  };
+
+  const handlePlayQuestion = (text) => {
+    VoiceService.speak(text);
+  };
+
+  const handleTextChange = (id, value) => {
+    if (isSubmitted) return;
+    setAnswers(prev => ({ ...prev, [id]: value }));
+  };
+
+  const toggleRecording = (id) => {
+    if (activeRecordingId === id) {
+      if (recognitionRef.current) {
+        try { recognitionRef.current.stop(); } catch (_) {}
+      }
+      setActiveRecordingId(null);
+      return;
+    }
+
+    const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRec) {
+      return;
+    }
+
+    try {
+      if (recognitionRef.current) {
+        try { recognitionRef.current.stop(); } catch (_) {}
+      }
+      const rec = new SpeechRec();
+      rec.lang = 'en-US';
+      rec.continuous = false;
+      rec.interimResults = false;
+
+      rec.onstart = () => setActiveRecordingId(id);
+      rec.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        setAnswers(prev => ({ ...prev, [id]: transcript }));
+        setActiveRecordingId(null);
+      };
+      rec.onerror = () => setActiveRecordingId(null);
+      rec.onend = () => setActiveRecordingId(null);
+
+      recognitionRef.current = rec;
+      rec.start();
+    } catch (_) {
+      setActiveRecordingId(null);
+    }
+  };
+
+  const answeredCount = questions.filter(q => (answers[q.id] || '').trim().length > 0).length;
+  const isAllAnswered = answeredCount === questions.length;
+
+  const handleSubmit = () => {
+    const finalScore = Math.min(100, Math.round((answeredCount / questions.length) * 100));
+    setScore(finalScore);
+    setIsSubmitted(true);
+
+    if (finalScore >= 75) {
+      fireCelebrationConfetti('Personal_Questions_Complete');
+    }
+    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+    if (userStore?.addXP) userStore.addXP(50);
+
+    if (onComplete) onComplete(finalScore);
+  };
+
+  return (
+    <div className="w-full max-w-4xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
+      <CompletionModal
+        isOpen={isSubmitted && (score || 0) >= 50}
+        onClose={() => {}}
+        score={score || 0}
+        maxScore={100}
+        stars={(score || 0) >= 80 ? 3 : (score || 0) >= 60 ? 2 : 1}
+        title="Speaking Part 4 Complete!"
+        subtitle="You answered all personal questions with confidence!"
+        customStat={`${answeredCount}/${questions.length} Answered`}
+      />
+
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
+        <div>
+          <span className="px-3 py-1 bg-violet-100 text-violet-900 text-[11px] font-black rounded-full uppercase tracking-wider">
+            Cambridge A2 Flyers — Speaking Part 4
+          </span>
+          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+            Personal Questions (Talk About You)
+          </h2>
+          <p className="text-xs text-violet-700 font-bold mt-0.5">
+            Answer the examiner's questions about your life, hobbies, and family.
+          </p>
+        </div>
+        <button
+          onClick={handlePlayIntro}
+          className="px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white text-xs font-black rounded-xl shadow-md flex items-center gap-2 transition"
+        >
+          <Volume2 className="w-4 h-4" />
+          Examiner Intro
+        </button>
+      </div>
+
+      {/* Examiner Intro Banner */}
+      <div className="p-4 bg-violet-50 rounded-2xl border border-violet-200 flex items-start gap-3">
+        <MessageSquare className="w-5 h-5 text-violet-600 shrink-0 mt-0.5" />
+        <div className="text-xs sm:text-sm text-violet-900 font-medium leading-relaxed">
+          &ldquo;{examinerIntro}&rdquo;
+        </div>
+      </div>
+
+      {/* Questions List */}
+      <div className="space-y-4">
+        {questions.map((q, idx) => {
+          const isRecordingThis = activeRecordingId === q.id;
+          const currentAnswer = answers[q.id] || '';
+          const hasAnswer = currentAnswer.trim().length > 0;
+
+          return (
+            <div
+              key={q.id}
+              className={`p-5 rounded-2xl border-2 transition ${
+                hasAnswer ? 'bg-emerald-50/40 border-emerald-300' : 'bg-slate-50 border-slate-200'
+              }`}
+            >
+              <div className="flex items-center justify-between gap-3 mb-2 flex-wrap">
+                <div className="flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-violet-600 text-white text-xs font-black flex items-center justify-center">
+                    {idx + 1}
+                  </span>
+                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                    Topic: {q.topic || 'General'}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => handlePlayQuestion(q.question)}
+                    className="p-2 bg-slate-100 hover:bg-violet-100 text-slate-700 hover:text-violet-700 rounded-lg transition"
+                    title="Listen to question"
+                  >
+                    <Volume2 className="w-4 h-4" />
+                  </button>
+                  {q.sample_answer_hint && (
+                    <button
+                      onClick={() => setShowHints(prev => ({ ...prev, [q.id]: !prev[q.id] }))}
+                      className="text-xs font-bold text-slate-500 hover:text-violet-600 flex items-center gap-1"
+                    >
+                      <HelpCircle className="w-3.5 h-3.5" />
+                      {showHints[q.id] ? 'Hide Hint' : 'Show Hint'}
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              <div className="text-base sm:text-lg font-black text-slate-900 mb-3">
+                {q.question}
+              </div>
+
+              {showHints[q.id] && q.sample_answer_hint && (
+                <div className="mb-3 p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900 italic">
+                  💡 Hint: &ldquo;{q.sample_answer_hint}&rdquo;
+                </div>
+              )}
+
+              <div className="flex items-center gap-2">
+                <input
+                  type="text"
+                  value={currentAnswer}
+                  onChange={(e) => handleTextChange(q.id, e.target.value)}
+                  disabled={isSubmitted}
+                  placeholder="Type your spoken answer here..."
+                  className="flex-1 px-4 py-2.5 bg-white rounded-xl border border-slate-300 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-violet-500 disabled:opacity-60"
+                />
+                <button
+                  onClick={() => toggleRecording(q.id)}
+                  disabled={isSubmitted}
+                  className={`p-2.5 rounded-xl font-bold transition flex items-center justify-center ${
+                    isRecordingThis
+                      ? 'bg-rose-500 text-white animate-pulse'
+                      : 'bg-violet-100 hover:bg-violet-200 text-violet-700'
+                  }`}
+                  title={isRecordingThis ? 'Stop recording' : 'Record your voice'}
+                >
+                  {isRecordingThis ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Action Footer */}
+      <div className="flex items-center justify-between pt-4 border-t border-slate-200">
+        <div className="text-xs font-bold text-slate-600">
+          Progress: {answeredCount} of {questions.length} questions answered
+        </div>
+        <button
+          onClick={handleSubmit}
+          disabled={!isAllAnswered || isSubmitted}
+          className={`px-6 py-3 rounded-2xl font-black text-sm uppercase tracking-wider transition shadow-lg ${
+            isAllAnswered && !isSubmitted
+              ? 'bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white cursor-pointer shadow-violet-200'
+              : 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none'
+          }`}
+        >
+          {isSubmitted ? 'Submitted' : 'Submit Speaking Answers'}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default PersonalQuestionsCompleter;
