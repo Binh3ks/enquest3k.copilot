@@ -168,7 +168,10 @@ Man: He is so small! What colour should he be?
 Woman: Colour the little mouse grey.
 Woman: Can you see the wooden signboard near the path? Let's write the final word.
 Man: What word should I write?
-Woman: Write the word 'FRIENDS' on the signboard.`,
+Woman: Write the word 'FRIENDS' on the signboard.
+Woman: Now look at the hunter's hat on the branch.
+Man: Shall I colour it?
+Woman: Yes, colour the hat dark green.`,
     instructions: [
       { id: "inst_0", item: "Example Object", text: "Color the example brown", x: 10, y: 10, color: "brown", isExample: true },
       { id: "inst_1", item: "Lion Mane", text: "Color the lion's mane golden yellow", x: 45, y: 55, color: "yellow", action: "colour" },
