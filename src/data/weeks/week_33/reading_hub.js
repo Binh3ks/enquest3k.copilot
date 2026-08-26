@@ -173,62 +173,25 @@ export const readingHubData = {
     }
   ],
 
-  // Cambridge Reading Part 3 Story (Story Gap-Fill & Comprehension)
+  // Cambridge Reading Part 3 Story (Story Gap-Fill & Best Title Choice)
   reading_part3_story: {
-    title: "Nova's Discovery — Corridor Safety Incident",
-    story_text: "Jake was walking carefully down the school corridor after science class. Suddenly, Tom ran past him in a hurry. Tom didn't notice the wet puddle on the floor and slipped heavily, hurting his knee. Papers flew everywhere! Jake stopped immediately and called the school nurse. The nurse arrived quickly with a clean bandage and a cold pack. Meanwhile, Mia brought a mop and wiped the wet floor so nobody else would fall. The headmaster praised the students for their quick action and reminded everyone to always walk safely.",
-    questions: [
-      {
-        id: "r3_q01",
-        question: "Why was Jake walking carefully down the corridor?",
-        options: [
-          { label: "A", text: "Because he always watches where he is going after class.", isCorrect: true },
-          { label: "B", text: "Because he lost his shoes.", isCorrect: false },
-          { label: "C", text: "Because the lights were completely off.", isCorrect: false }
-        ],
-        answerIndex: 0
-      },
-      {
-        id: "r3_q02",
-        question: "What caused Tom to slip and fall heavily?",
-        options: [
-          { label: "A", text: "He was running fast and stepped on a wet puddle.", isCorrect: true },
-          { label: "B", text: "He tripped over a school bag.", isCorrect: false },
-          { label: "C", text: "His friend pulled his jacket.", isCorrect: false }
-        ],
-        answerIndex: 0
-      },
-      {
-        id: "r3_q03",
-        question: "What did Jake do as soon as he saw Tom fall?",
-        options: [
-          { label: "A", text: "He stopped immediately and called the school nurse.", isCorrect: true },
-          { label: "B", text: "He ran away to his next class.", isCorrect: false },
-          { label: "C", text: "He started laughing loudly.", isCorrect: false }
-        ],
-        answerIndex: 0
-      },
-      {
-        id: "r3_q04",
-        question: "How did Mia help keep other students safe?",
-        options: [
-          { label: "A", text: "She wiped the floor with a cleaning mop.", isCorrect: true },
-          { label: "B", text: "She placed a bench across the door.", isCorrect: false },
-          { label: "C", text: "She carried Tom to the playground.", isCorrect: false }
-        ],
-        answerIndex: 0
-      },
-      {
-        id: "r3_q05",
-        question: "What important message did the headmaster give all students?",
-        options: [
-          { label: "A", text: "To always walk safely and never run in school corridors.", isCorrect: true },
-          { label: "B", text: "To play soccer inside the science lab.", isCorrect: false },
-          { label: "C", text: "To arrive at school an hour later.", isCorrect: false }
-        ],
-        answerIndex: 0
-      }
-    ]
+    example: { blank: 0, answer: "science" },
+    story_text: "Jake was walking carefully down the school corridor after [0]_____ class. Suddenly, Tom ran past him very [1]_____. Tom didn't notice the wet [2]_____ on the floor and slipped heavily, hurting his knee. Jake stopped immediately and called the school [3]_____. The nurse arrived quickly with a clean [4]_____ and a cold pack. The headmaster gave both boys a safety [5]_____ during assembly.",
+    word_bank: ["science", "fast", "puddle", "nurse", "bandage", "badge", "happy", "cold", "hungry", "loud"],
+    answers: {
+      "0": "science",
+      "1": "fast",
+      "2": "puddle",
+      "3": "nurse",
+      "4": "bandage",
+      "5": "badge"
+    },
+    title_options: [
+      { id: 1, title: "A Day in the School Library", target: false },
+      { id: 2, title: "Jake's Responsible Action in the School Corridor", target: true },
+      { id: 3, title: "Cleaning the Chemistry Classroom", target: false }
+    ],
+    correct_title: "Jake's Responsible Action in the School Corridor"
   },
 
   // ─── R&W Part 1: Word Bank Matching (15 words → 10 definitions) — Shield 11 ───
