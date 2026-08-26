@@ -189,8 +189,8 @@ export default function CLILExplorer({
       <div className="flex items-center justify-between px-2">
         <div className="flex items-center gap-2">
           <span className="text-sm font-black text-emerald-900 bg-emerald-100 px-3 py-1 rounded-xl">
-            {currentPhase === 1 && `🔬 Part 1: ${clilData?.part_1_title || (clilData?.title ? clilData.title + ' (Part 1)' : 'Reading Part 1')}`}
-            {currentPhase === 2 && `🧪 Part 2: ${clilData?.part_2_title || (clilData?.title ? clilData.title + ' (Part 2)' : 'Reading Part 2')}`}
+            {currentPhase === 1 && `🔬 Part 1: ${clilData?.part_1_title || clilData?.title_en || clilData?.title || 'Science Principles'}`}
+            {currentPhase === 2 && `🧪 Part 2: ${clilData?.part_2_title || clilData?.title_en || clilData?.title || 'Real-World Applications'}`}
             {currentPhase === 3 && '🎓 Part 3: Sentence Builder Challenge'}
           </span>
           <span className="text-xs font-bold text-slate-500">

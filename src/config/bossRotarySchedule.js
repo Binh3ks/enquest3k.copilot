@@ -74,4 +74,36 @@ export function getBossRotaryConfig(weekNumber = 33) {
   };
 }
 
+/**
+ * Returns dynamic task label for Day 5 boss stations based on active cycle
+ */
+export function getRotaryTaskLabel(taskId, weekNumber = 33) {
+  const config = getBossRotaryConfig(weekNumber);
+  const cycle = config.cycleNumber;
+
+  if (taskId === 'boss_listening') {
+    if (cycle === 1) return 'Listening Shield (Part 1)';
+    if (cycle === 2) return 'Listening Shield (Part 4)';
+    if (cycle === 3) return 'Reading Shield (R&W P2)';
+    if (cycle === 4) return 'Reading & Writing Shield (R&W P6)';
+    return 'Full Mock Listening Shield';
+  }
+  if (taskId === 'boss_reading') {
+    if (cycle === 1) return 'Listening Shield (Part 2)';
+    if (cycle === 2) return 'Reading Shield (R&W P1)';
+    if (cycle === 3) return 'Reading Shield (R&W P3)';
+    if (cycle === 4) return 'Story Writer Shield (R&W P7)';
+    return 'Full Mock Reading & Writing Shield';
+  }
+  if (taskId === 'weekly_review') {
+    if (cycle === 1) return 'Listening Shield (Part 3)';
+    if (cycle === 2) return 'Speaking & Passport (S1)';
+    if (cycle === 3) return 'Reading Shield (R&W P4 & P5)';
+    if (cycle === 4) return 'Speaking & Passport (S2 & S3)';
+    return 'Full Mock Speaking & Passport';
+  }
+  return null;
+}
+
 export default getBossRotaryConfig;
+

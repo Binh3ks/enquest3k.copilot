@@ -105,6 +105,41 @@ if (fs.existsSync(weekDataDir)) {
   console.log(`   ✅ Data files scan complete (0 cross-week asset leaks).`);
 }
 
+// 4. Production Asset HEAD Check for Cambridge Referenced Assets
+console.log(`\n🌐 Checking Referenced Assets in Cambridge Hubs (L1, L3, L4, L5, S1)...`);
+let referencedUrls = [];
+try {
+  const lhMod = await import(`file://${path.join(weekDataDir, 'listening_hub.js')}`);
+  const lh = lhMod.listeningHub || lhMod.listeningHubData || lhMod.default || {};
+  if (lh.listening_p1?.image_url) referencedUrls.push(lh.listening_p1.image_url);
+  (lh.listening_p3?.cards || []).forEach(c => { if (c.image_url) referencedUrls.push(c.image_url); });
+  (lh.listening_p3?.items || []).forEach(i => { if (i.audio_url) referencedUrls.push(i.audio_url); });
+  (lh.listening_p4?.questions || []).forEach(q => {
+    if (q.audio_url) referencedUrls.push(q.audio_url);
+    (q.options || []).forEach(opt => { if (opt.image_url) referencedUrls.push(opt.image_url); });
+  });
+  if (lh.listening_p5?.image_url) referencedUrls.push(lh.listening_p5.image_url);
+  if (lh.listening_p5?.audio_url) referencedUrls.push(lh.listening_p5.audio_url);
+} catch (e) {}
+
+try {
+  const shMod = await import(`file://${path.join(weekDataDir, 'speaking_hub.js')}`);
+  const sh = shMod.speakingHub || shMod.speakingHubData || shMod.default || {};
+  if (sh.find_differences?.picA?.image_url) referencedUrls.push(sh.find_differences.picA.image_url);
+  if (sh.find_differences?.picB?.image_url) referencedUrls.push(sh.find_differences.picB.image_url);
+} catch (e) {}
+
+referencedUrls = [...new Set(referencedUrls)].filter(u => u && typeof u === 'string' && u.startsWith('/'));
+referencedUrls.forEach(u => {
+  const localP = path.join(rootDir, 'public', u);
+  if (!fs.existsSync(localP)) {
+    errors.push(`Missing referenced asset in public directory: ${u}`);
+  } else if (fs.statSync(localP).size === 0) {
+    errors.push(`Zero-byte referenced asset: ${u}`);
+  }
+});
+console.log(`   ✅ Verified ${referencedUrls.length} referenced Cambridge assets (0 missing, 0 empty).`);
+
 console.log(`\n------------------------------------------------------------------------`);
 if (errors.length > 0) {
   console.error(`❌ GATE 3 FAILED with ${errors.length} error(s):`);

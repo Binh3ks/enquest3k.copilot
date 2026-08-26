@@ -81,7 +81,7 @@ Man: That is Rob the rabbit. He is hopping gently.`,
         audio_url: "/audio/week34/listening_p4_example.mp3",
         audio_script: `Boy: Look at the example. Where did Milo the mouse run in the morning?\nGirl: He ran across the mossy rocks.\nBoy: Can you see the tick? Now you listen and tick the box.`,
         options: [
-          { letter: "A", text: "Across the mossy rocks", image_url: "/images/week34/card_c.jpg" },
+          { letter: "A", text: "Across the mossy rocks", image_url: "/images/week34/mossy_rocks.jpg" },
           { letter: "B", text: "Near the hunter camp", image_url: "/images/week34/card_b.jpg" },
           { letter: "C", text: "Around the water river", image_url: "/images/week34/card_d.jpg" }
         ],

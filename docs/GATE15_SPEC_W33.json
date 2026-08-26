@@ -70,6 +70,11 @@
           "pattern": "(lion|mouse|squirrel|jay|nectar|pollen)"
         },
         {
+          "name": "generic reading part title absent",
+          "type": "not_contains_regex",
+          "pattern": "(Part 1: Reading Part 1|Part 2: Reading Part 2)"
+        },
+        {
           "name": "Vocab Focus button clicked reveals >=5 vocab pills",
           "type": "interaction_check",
           "action": "click",

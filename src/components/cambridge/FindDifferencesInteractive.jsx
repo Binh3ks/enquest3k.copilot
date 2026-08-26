@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Mic, MicOff, Volume2, Eye, HelpCircle } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 import CompletionModal from '../common/CompletionModal';

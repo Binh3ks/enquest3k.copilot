@@ -87,6 +87,8 @@ export const readingHub = {
     theme: "Animal Helpers in Nature",
     title_en: "Animal Helpers in Nature",
     title_vi: "Những Người Bạn Giúp Đỡ Lẫn Nhau Trong Tự Nhiên",
+    part_1_title: "Seed Helpers in the Forest",
+    part_2_title: "How Animals Keep the Forest Green",
     content_en: "In nature, many animals help and work together to build safe homes in the forest. Large animals like lions protect the forest and help young plants and trees grow strong. Tiny mice eat small insects and carry seeds into the ground. Colourful birds fly high in the trees to chirp loudly and help alert their animal friends. When different creatures help one another, the whole forest stays green and healthy.",
     content_vi: "Trong tự nhiên, nhiều loài động vật làm việc cùng nhau để sinh tồn và khỏe mạnh. Giống như chú chuột nhỏ giúp sư tử to lớn trong truyện ngụ ngôn, các loài động vật thực tế cũng giúp đỡ lẫn nhau mỗi ngày! Một loài chim nhỏ tên là chim bắt ve thường đậu trên lưng chú ngựa vằn to lớn. Trong khi ngựa vằn đang gặm cỏ, chú chim ăn những con bọ nhỏ trên da ngựa vằn. Điều này mang lại thức ăn cho chim và giúp ngựa vằn sạch sẽ. Dưới đại dương, những chú cá dọn vệ sinh nhỏ bơi vào trong miệng cá mập lớn. Cá mập không bao giờ cắn vì cá nhỏ làm sạch răng sắc nhọn của chúng! Khi các loài động vật hợp tác, mọi loài đều an toàn và khỏe mạnh.",
     cover_image: "/images/week34/explore_cover_w34.jpg",

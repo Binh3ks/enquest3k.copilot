@@ -197,6 +197,59 @@ async function main() {
     console.log(`✅ Version check: Production matches local HEAD (${prodVersion?.slice(0, 8)})\n`);
   }
 
+  // STEP 1.5: Production Asset HEAD Check (Listening P1/P3/P4/P5 + S1 differences)
+  const weekDir = path.join(rootDir, `src/data/weeks/week_${WEEK}`);
+  let referencedAssetUrls = [];
+  try {
+    const lhMod = await import(`file://${path.join(weekDir, 'listening_hub.js')}`);
+    const lh = lhMod.listeningHub || lhMod.listeningHubData || lhMod.default || {};
+    if (lh.listening_p1?.image_url) referencedAssetUrls.push(lh.listening_p1.image_url);
+    (lh.listening_p3?.cards || []).forEach(c => { if (c.image_url) referencedAssetUrls.push(c.image_url); });
+    (lh.listening_p3?.items || []).forEach(i => { if (i.audio_url) referencedAssetUrls.push(i.audio_url); });
+    (lh.listening_p4?.questions || []).forEach(q => {
+      if (q.audio_url) referencedAssetUrls.push(q.audio_url);
+      (q.options || []).forEach(opt => { if (opt.image_url) referencedAssetUrls.push(opt.image_url); });
+    });
+    if (lh.listening_p5?.image_url) referencedAssetUrls.push(lh.listening_p5.image_url);
+    if (lh.listening_p5?.audio_url) referencedAssetUrls.push(lh.listening_p5.audio_url);
+  } catch (e) {}
+
+  try {
+    const shMod = await import(`file://${path.join(weekDir, 'speaking_hub.js')}`);
+    const sh = shMod.speakingHub || shMod.speakingHubData || shMod.default || {};
+    if (sh.find_differences?.picA?.image_url) referencedAssetUrls.push(sh.find_differences.picA.image_url);
+    if (sh.find_differences?.picB?.image_url) referencedAssetUrls.push(sh.find_differences.picB.image_url);
+  } catch (e) {}
+
+  referencedAssetUrls = [...new Set(referencedAssetUrls)].filter(u => u && typeof u === 'string' && u.startsWith('/'));
+  console.log(`🔍 Production Asset HEAD Check: verifying ${referencedAssetUrls.length} referenced URLs on ${PROD_BASE}...`);
+  const missingProdAssets = [];
+  for (const u of referencedAssetUrls) {
+    if (isLocal) {
+      const localP = path.join(rootDir, 'public', u);
+      if (!fs.existsSync(localP) || fs.statSync(localP).size === 0) {
+        missingProdAssets.push({ url: u, status: 'LOCAL_MISSING_OR_EMPTY' });
+      }
+    } else {
+      const fullUrl = `${PROD_BASE}${u}`;
+      try {
+        const hRes = await fetch(fullUrl, { method: 'HEAD' });
+        if (hRes.status === 404) {
+          missingProdAssets.push({ url: fullUrl, status: 404 });
+        }
+      } catch (err) {
+        missingProdAssets.push({ url: fullUrl, error: err.message });
+      }
+    }
+  }
+
+  if (missingProdAssets.length > 0) {
+    console.error(`❌ Production Asset HEAD Check FAILED (${missingProdAssets.length} missing/empty):`);
+    missingProdAssets.forEach(m => console.error(`   - ${m.url} (${m.status || m.error})`));
+    process.exit(1);
+  }
+  console.log(`   ✅ 100% of ${referencedAssetUrls.length} referenced assets verified!\n`);
+
   // STEP 2: Launch browser and run all assertions
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({

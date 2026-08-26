@@ -1,9 +1,9 @@
 {
-  "commit": "e9b8b984cbac81cd352f3715371197d3f3dee3a5",
-  "git_commit": "e9b8b984cbac81cd352f3715371197d3f3dee3a5",
-  "shortCommit": "e9b8b984",
-  "message": "fix(examples): apply Round T example integrity fixes [round-t]",
-  "builtAt": "2026-08-26T02:21:15.117Z",
-  "build_timestamp": "2026-08-26T02:21:15.118Z",
+  "commit": "3dd9d8eeefa9529e6bf4c31a32e4010193cd2d04",
+  "git_commit": "3dd9d8eeefa9529e6bf4c31a32e4010193cd2d04",
+  "shortCommit": "3dd9d8ee",
+  "message": "feat(pipeline): integrate Gate 17 fidelity validator into build and audit pipeline",
+  "builtAt": "2026-08-26T03:00:54.438Z",
+  "build_timestamp": "2026-08-26T03:00:54.438Z",
   "env": "production"
 }

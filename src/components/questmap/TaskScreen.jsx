@@ -26,6 +26,8 @@ import CreatorStudioZone from '../../modules/zones/CreatorStudioZone';
 import BossBattleZone from '../../modules/zones/BossBattleZone';
 import InfoExchangeZone from '../../modules/zones/InfoExchangeZone';
 
+import { getRotaryTaskLabel } from '../../config/bossRotarySchedule';
+
 // Map taskId to zone + gear/station params
 const TASK_ROUTING = {
   gear1_webtoon:    { zone: 'story',   gear: 1 },
@@ -243,14 +245,17 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
 
   const safeData = useMemo(() => getSafeTaskData(weekData, weekId), [weekData, weekId]);
 
-  // Find task info from QUEST_SCHEDULE
+  // Find task info from QUEST_SCHEDULE with dynamic rotary label for Day 5
   const taskInfo = useMemo(() => {
     for (const day of QUEST_SCHEDULE) {
       const quest = day.quests.find(q => q.id === taskId);
-      if (quest) return { ...quest, dayLabel: day.label };
+      if (quest) {
+        const dynamicLabel = getRotaryTaskLabel(taskId, weekId) || quest.label;
+        return { ...quest, label: dynamicLabel, dayLabel: day.label };
+      }
     }
     return null;
-  }, [taskId]);
+  }, [taskId, weekId]);
 
   const routing = TASK_ROUTING[taskId];
 
