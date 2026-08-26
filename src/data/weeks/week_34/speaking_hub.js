@@ -70,10 +70,10 @@ export const speakingHub = {
       image_url: "/images/week34/w34_diff_scene_b.jpg"
     },
     differences: [
-      { id: "d1", name: "Sun and Cloud", prompt_en: "In Picture A, the sun is shining, but in Picture B, there is a cloud over the sun.", x: 20, y: 18 },
-      { id: "d2", name: "Flower Color", prompt_en: "In Picture A, the flower is pink, but in Picture B, the flower is yellow.", x: 87, y: 40 },
-      { id: "d3", name: "Butterfly on Rock", prompt_en: "In Picture A, there is a blue butterfly on the rock, but in Picture B, there is no butterfly.", x: 15, y: 73 },
-      { id: "d4", name: "Mouse Color", prompt_en: "In Picture A, the mouse is grey, but in Picture B, the mouse is brown.", x: 32, y: 75 }
+      { id: "d1", name: "Sun and Cloud", prompt_en: "In Picture A, the sun is shining, but in Picture B, there is a cloud over the sun.", x: 31, y: 20 },
+      { id: "d2", name: "Flower Color", prompt_en: "In Picture A, the flower is pink, but in Picture B, the flower is yellow.", x: 73, y: 44 },
+      { id: "d3", name: "Butterfly on Rock", prompt_en: "In Picture A, there is a blue butterfly on the rock, but in Picture B, there is no butterfly.", x: 27, y: 54 },
+      { id: "d4", name: "Mouse Color", prompt_en: "In Picture A, the mouse is grey, but in Picture B, the mouse is brown.", x: 29, y: 52 }
     ]
   }
 };
