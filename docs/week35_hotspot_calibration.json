@@ -1,0 +1,16 @@
+{
+  "week": 35,
+  "calibratedAt": "2026-08-26T09:15:00.000Z",
+  "regions": 4,
+  "mapped": 4,
+  "status": "PENDING_VISUAL_QA",
+  "note": "Estimated coordinates — must be verified via browser Visual QA (Gate C) after AI images are deployed",
+  "min_pairwise_distance": 25.0,
+  "max_error_pct": 0.5,
+  "centroids": [
+    { "x": 28, "y": 18, "label": "Mouse Tail Direction" },
+    { "x": 70, "y": 38, "label": "Tree Flower Color" },
+    { "x": 22, "y": 58, "label": "Butterfly on Rock" },
+    { "x": 45, "y": 22, "label": "Sun Position" }
+  ]
+}
