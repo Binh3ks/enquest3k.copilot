@@ -30,8 +30,8 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
   const userShields = useUserStore((state) => state.userShields || 0);
   const rotaryConfig = getBossRotaryConfig(activeWeek || 1);
   const bossData = React.useMemo(() => {
-    const hasCustomListening = Object.keys(data?.bossBattle?.listening || {}).length > 0;
-    const hasCustomRW = Object.keys(data?.bossBattle?.readingWriting || {}).length > 0;
+    const hasCustomListening = data?.bossBattle?.listening?.p1 || data?.bossBattle?.listening?.p2;
+    const hasCustomRW = data?.bossBattle?.readingWriting?.p1 || data?.bossBattle?.readingWriting?.p2;
     if (hasCustomListening || hasCustomRW) return data.bossBattle;
 
     return {
@@ -43,12 +43,12 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         p5: data?.listening_hub?.listening_p5 || data?.listeningHubData?.listening_p5 || data?.bossBattle?.listening?.p5
       },
       readingWriting: {
-        p1: data?.writing_hub?.rw_part_1 || data?.writingHubData?.rw_part_1 || data?.bossBattle?.readingWriting?.p1,
-        p2: data?.writing_hub?.rw_part_2 || data?.writingHubData?.rw_part_2 || data?.bossBattle?.readingWriting?.p2,
-        p3: data?.writing_hub?.rw_part_3 || data?.writingHubData?.rw_part_3 || data?.bossBattle?.readingWriting?.p3,
-        p4: data?.writing_hub?.rw_part_4 || data?.writingHubData?.rw_part_4 || data?.bossBattle?.readingWriting?.p4,
-        p5: data?.writing_hub?.rw_part_5 || data?.writingHubData?.rw_part_5 || data?.bossBattle?.readingWriting?.p5,
-        p6: data?.reading_hub?.rw_part_6 || data?.readingHubData?.rw_part_6 || data?.bossBattle?.readingWriting?.p6
+        p1: data?.reading_hub?.rw_part_1 || data?.writing_hub?.rw_part_1 || data?.readingHubData?.rw_part_1 || data?.writingHubData?.rw_part_1 || data?.bossBattle?.readingWriting?.p1,
+        p2: data?.reading_hub?.rw_part_2 || data?.writing_hub?.rw_part_2 || data?.readingHubData?.rw_part_2 || data?.writingHubData?.rw_part_2 || data?.bossBattle?.readingWriting?.p2,
+        p3: data?.reading_hub?.rw_part_3 || data?.writing_hub?.rw_part_3 || data?.readingHubData?.rw_part_3 || data?.writingHubData?.rw_part_3 || data?.bossBattle?.readingWriting?.p3,
+        p4: data?.reading_hub?.rw_part_4 || data?.writing_hub?.rw_part_4 || data?.reading_hub?.rw_part4 || data?.writing_hub?.rw_part4 || data?.readingHubData?.rw_part_4 || data?.writingHubData?.rw_part_4 || data?.bossBattle?.readingWriting?.p4,
+        p5: data?.reading_hub?.rw_part_5 || data?.writing_hub?.rw_part_5 || data?.reading_hub?.rw_part5 || data?.writing_hub?.rw_part5 || data?.readingHubData?.rw_part_5 || data?.writingHubData?.rw_part_5 || data?.bossBattle?.readingWriting?.p5,
+        p6: data?.reading_hub?.rw_part_6 || data?.writing_hub?.rw_part_6 || data?.reading_hub?.rw_part6 || data?.writing_hub?.rw_part6 || data?.readingHubData?.rw_part_6 || data?.writingHubData?.rw_part_6 || data?.bossBattle?.readingWriting?.p6
       },
       speaking: {
         p1_findDiff: data?.speaking_hub?.find_differences || data?.speakingHubData?.find_differences || data?.bossBattle?.speaking?.p1_findDiff,
@@ -59,19 +59,139 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     };
   }, [data]);
 
+  // Parse URL query params for direct part/task targeting
+  const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const rawPartParam = searchParams?.get('part') || searchParams?.get('part_id') || searchParams?.get('task') || searchParams?.get('taskId');
+  const qaNonce = searchParams?.get('qa_nonce');
+
+  const requestedTaskId = React.useMemo(() => {
+    if (!rawPartParam) return null;
+    const p = rawPartParam.toLowerCase().trim();
+    if (p === '1' || p === 'l1' || p === 'list_p1' || p === 'listening_p1') return 'list_p1';
+    if (p === '2' || p === 'l2' || p === 'list_p2' || p === 'listening_p2') return 'list_p2';
+    if (p === '3' || p === 'l3' || p === 'list_p3' || p === 'listening_p3') return 'list_p3';
+    if (p === '4' || p === 'l4' || p === 'list_p4' || p === 'listening_p4') return 'list_p4';
+    if (p === '5' || p === 'l5' || p === 'list_p5' || p === 'listening_p5') return 'list_p5';
+    if (p === 'r1' || p === 'rw_p1' || p === 'reading_p1') return 'rw_p1';
+    if (p === 'r2' || p === 'rw_p2' || p === 'reading_p2') return 'rw_p2';
+    if (p === 'r3' || p === 'rw_p3' || p === 'reading_p3') return 'rw_p3';
+    if (p === 'r4' || p === 'rw_p4' || p === 'reading_p4') return 'rw_p4';
+    if (p === 'r5' || p === 'rw_p5' || p === 'reading_p5') return 'rw_p5';
+    if (p === 'r6' || p === 'rw_p6' || p === 'reading_p6') return 'rw_p6';
+    if (p === 's1' || p === 'spk_p1' || p === 'speaking_p1') return 'spk_p1';
+    if (p === 's2' || p === 'spk_p2' || p === 'speaking_p2') return 'spk_p2';
+    if (p === 's3' || p === 'spk_p3' || p === 'speaking_p3') return 'spk_p3';
+    if (p === 's4' || p === 'spk_p4' || p === 'speaking_p4') return 'spk_p4';
+    return rawPartParam;
+  }, [rawPartParam]);
+
+  // Available tasks mapped from rotary config
+  const isFullMock = rotaryConfig.cycleNumber === 5 || rotaryConfig.cycleNumber === 0;
+
+  // Build task list for current week
+  const currentTasks = React.useMemo(() => {
+    let tasks = [];
+    if (isFullMock) {
+      tasks = [
+        { id: 'list_p1', name: 'Listening P1: Draw Lines', category: 'Listening' },
+        { id: 'list_p2', name: 'Listening P2: Secret Notes', category: 'Listening' },
+        { id: 'list_p3', name: 'Listening P3: Item Hunt', category: 'Listening' },
+        { id: 'list_p4', name: 'Listening P4: 3-Picture Quiz', category: 'Listening' },
+        { id: 'list_p5', name: 'Listening P5: Magic Color', category: 'Listening' },
+        { id: 'rw_p1', name: 'Reading P1: Word Bank', category: 'Reading' },
+        { id: 'rw_p2', name: 'Reading P2: Dialogue A-H', category: 'Reading' },
+        { id: 'rw_p3', name: 'Reading P3: Cloze Story & Title', category: 'Reading' },
+        { id: 'rw_p4', name: 'Reading P4: Text Cloze', category: 'Reading' },
+        { id: 'rw_p5', name: 'Reading P5: Story Detective', category: 'Reading' },
+        { id: 'rw_p6', name: 'Reading P6: Open Cloze', category: 'Reading' },
+        { id: 'spk_p1', name: 'Speaking P1: Find Diff', category: 'Speaking' },
+        { id: 'spk_p2', name: 'Speaking P2: Ask & Answer', category: 'Speaking' },
+        { id: 'spk_p3', name: 'Speaking P3: Picture Story', category: 'Speaking' },
+      ];
+    } else if (rotaryConfig.cycleNumber === 1) {
+      tasks = [
+        { id: 'list_p1', name: 'Listening Part 1: Draw Lines', shieldName: 'Shield 1 (Listening P1)' },
+        { id: 'list_p2', name: 'Listening Part 2: Note Completion', shieldName: 'Shield 2 (Listening P2)' },
+        { id: 'list_p3', name: 'Listening Part 3: Matching A-H', shieldName: 'Shield 3 (Listening P3)' },
+      ];
+    } else if (rotaryConfig.cycleNumber === 2) {
+      tasks = [
+        { id: 'list_p4', name: 'Listening Part 4: 3-Picture Quiz', shieldName: 'Shield 4 (Listening P4)' },
+        { id: 'rw_p1', name: 'Reading Part 1: Word Bank Match', shieldName: 'Shield 6 (R&W P1)' },
+        { id: 'spk_p1', name: 'Speaking Part 1: Find Differences', shieldName: 'Shield 13 (Speaking P1)' },
+      ];
+    } else if (rotaryConfig.cycleNumber === 3) {
+      tasks = [
+        { id: 'rw_p2', name: 'Reading Part 2: Dialogue A-H', shieldName: 'Shield 7 (R&W P2)' },
+        { id: 'rw_p3', name: 'Reading Part 3: Cloze Story & Title', shieldName: 'Shield 8 (R&W P3)' },
+        { id: 'rw_p4', name: 'Reading Part 4: 10-Gap Cloze', shieldName: 'Shield 9 (R&W P4)' },
+        { id: 'rw_p5', name: 'Reading Part 5: Story Detective', shieldName: 'Shield 10 (R&W P5)' },
+      ];
+    } else {
+      // Cycle 4
+      tasks = [
+        { id: 'rw_p6', name: 'Reading Part 6: Open Cloze', shieldName: 'Shield 11 (R&W P6)' },
+        { id: 'spk_p2', name: 'Speaking Part 2: Ask & Answer (Cue Card)', shieldName: 'Shield 14 (Speaking P2)' },
+        { id: 'spk_p3', name: 'Speaking Part 3: Picture Story', shieldName: 'Shield 15 (Speaking P3)' },
+      ];
+    }
+
+    // If a specific task was requested via URL and is not in current rotary tasks, append it
+    if (requestedTaskId && !tasks.some(t => t.id === requestedTaskId)) {
+      const taskLabels = {
+        list_p1: 'Listening Part 1: Draw Lines',
+        list_p2: 'Listening Part 2: Note Completion',
+        list_p3: 'Listening Part 3: Matching A-H',
+        list_p4: 'Listening Part 4: 3-Picture Quiz',
+        list_p5: 'Listening Part 5: Magic Color & Write',
+        rw_p1: 'Reading Part 1: Word Bank Match',
+        rw_p2: 'Reading Part 2: Dialogue A-H',
+        rw_p3: 'Reading Part 3: Cloze Story & Title',
+        rw_p4: 'Reading Part 4: Text Cloze Dropdown',
+        rw_p5: 'Reading Part 5: Text Extraction',
+        rw_p6: 'Reading Part 6: Open Cloze',
+        spk_p1: 'Speaking Part 1: Find Differences',
+        spk_p2: 'Speaking Part 2: Info Exchange',
+        spk_p3: 'Speaking Part 3: Picture Story',
+        spk_p4: 'Speaking Part 4: Personal Questions'
+      };
+      tasks.push({
+        id: requestedTaskId,
+        name: taskLabels[requestedTaskId] || requestedTaskId,
+        shieldName: `Direct Part (${requestedTaskId})`
+      });
+    }
+
+    return tasks;
+  }, [rotaryConfig, isFullMock, requestedTaskId]);
+
   const initialIndex = React.useMemo(() => {
+    if (requestedTaskId) {
+      const foundIdx = currentTasks.findIndex(t => t.id === requestedTaskId);
+      if (foundIdx !== -1) return foundIdx;
+    }
     if (forcedStation === 'rw_boss' || forcedStation === 'reading_boss' || forcedStation === 'boss_reading') return 1;
     if (forcedStation === 'review' || forcedStation === 'weekly_review' || forcedStation === 'speaking_boss') return 2;
     return 0;
-  }, [forcedStation]);
+  }, [forcedStation, requestedTaskId, currentTasks]);
 
-  const [hasStarted, setHasStarted] = useState(false);
+  const [hasStarted, setHasStarted] = useState(() => {
+    return Boolean(qaNonce || requestedTaskId);
+  });
   const [activeTaskIndex, setActiveTaskIndex] = useState(initialIndex);
   const [earnedShields, setEarnedShields] = useState([]);
   const [examFinished, setExamFinished] = useState(false);
 
-  // Sync active task index if forcedStation prop changes
+  // Sync active task index if forcedStation or requestedTaskId changes
   React.useEffect(() => {
+    if (requestedTaskId) {
+      const foundIdx = currentTasks.findIndex(t => t.id === requestedTaskId);
+      if (foundIdx !== -1) {
+        setActiveTaskIndex(foundIdx);
+        setHasStarted(true);
+        return;
+      }
+    }
     if (forcedStation === 'rw_boss' || forcedStation === 'reading_boss' || forcedStation === 'boss_reading') {
       setActiveTaskIndex(1);
     } else if (forcedStation === 'review' || forcedStation === 'weekly_review' || forcedStation === 'speaking_boss') {
@@ -79,7 +199,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     } else if (forcedStation === 'listening_boss' || forcedStation === 'boss_listening') {
       setActiveTaskIndex(0);
     }
-  }, [forcedStation]);
+  }, [forcedStation, requestedTaskId, currentTasks]);
 
   // QA Hook for Victory Screen verification
   React.useEffect(() => {
@@ -96,63 +216,6 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
       delete window.__triggerBossVictory;
     };
   }, []);
-
-  // Available tasks mapped from rotary config
-  const isFullMock = rotaryConfig.cycleNumber === 5 || rotaryConfig.cycleNumber === 0;
-
-  // Build task list for current week
-  const currentTasks = React.useMemo(() => {
-    if (isFullMock) {
-      return [
-        { id: 'list_p1', name: 'Listening P1: Draw Lines', category: 'Listening' },
-        { id: 'list_p2', name: 'Listening P2: Secret Notes', category: 'Listening' },
-        { id: 'list_p3', name: 'Listening P3: Item Hunt', category: 'Listening' },
-        { id: 'list_p4', name: 'Listening P4: 3-Picture Quiz', category: 'Listening' },
-        { id: 'list_p5', name: 'Listening P5: Magic Color', category: 'Listening' },
-        { id: 'rw_p1', name: 'Reading P1: Word Bank', category: 'Reading' },
-        { id: 'rw_p2', name: 'Reading P2: Dialogue A-H', category: 'Reading' },
-        { id: 'rw_p3', name: 'Reading P3: Cloze Story & Title', category: 'Reading' },
-        { id: 'rw_p4', name: 'Reading P4: Text Cloze', category: 'Reading' },
-        { id: 'rw_p5', name: 'Reading P5: Story Detective', category: 'Reading' },
-        { id: 'rw_p6', name: 'Reading P6: Open Cloze', category: 'Reading' },
-        { id: 'spk_p1', name: 'Speaking P1: Find Diff', category: 'Speaking' },
-        { id: 'spk_p2', name: 'Speaking P2: Ask & Answer', category: 'Speaking' },
-        { id: 'spk_p3', name: 'Speaking P3: Picture Story', category: 'Speaking' },
-      ];
-    }
-
-    if (rotaryConfig.cycleNumber === 1) {
-      return [
-        { id: 'list_p1', name: 'Listening Part 1: Draw Lines', shieldName: 'Shield 1 (Listening P1)' },
-        { id: 'list_p2', name: 'Listening Part 2: Note Completion', shieldName: 'Shield 2 (Listening P2)' },
-        { id: 'list_p3', name: 'Listening Part 3: Matching A-H', shieldName: 'Shield 3 (Listening P3)' },
-      ];
-    }
-
-    if (rotaryConfig.cycleNumber === 2) {
-      return [
-        { id: 'list_p4', name: 'Listening Part 4: 3-Picture Quiz', shieldName: 'Shield 4 (Listening P4)' },
-        { id: 'rw_p1', name: 'Reading Part 1: Word Bank Match', shieldName: 'Shield 6 (R&W P1)' },
-        { id: 'spk_p1', name: 'Speaking Part 1: Find Differences', shieldName: 'Shield 13 (Speaking P1)' },
-      ];
-    }
-
-    if (rotaryConfig.cycleNumber === 3) {
-      return [
-        { id: 'rw_p2', name: 'Reading Part 2: Dialogue A-H', shieldName: 'Shield 7 (R&W P2)' },
-        { id: 'rw_p3', name: 'Reading Part 3: Cloze Story & Title', shieldName: 'Shield 8 (R&W P3)' },
-        { id: 'rw_p4', name: 'Reading Part 4: 10-Gap Cloze', shieldName: 'Shield 9 (R&W P4)' },
-        { id: 'rw_p5', name: 'Reading Part 5: Story Detective', shieldName: 'Shield 10 (R&W P5)' },
-      ];
-    }
-
-    // Cycle 4
-    return [
-      { id: 'rw_p6', name: 'Reading Part 6: Open Cloze', shieldName: 'Shield 11 (R&W P6)' },
-      { id: 'spk_p2', name: 'Speaking Part 2: Ask & Answer (Cue Card)', shieldName: 'Shield 14 (Speaking P2)' },
-      { id: 'spk_p3', name: 'Speaking Part 3: Picture Story', shieldName: 'Shield 15 (Speaking P3)' },
-    ];
-  }, [rotaryConfig, isFullMock]);
 
   const currentTask = currentTasks[activeTaskIndex] || currentTasks[0];
 
