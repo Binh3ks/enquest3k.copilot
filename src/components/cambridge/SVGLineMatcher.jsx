@@ -317,20 +317,6 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
           )}
         </svg>
 
-        {/* 🌟 Example Badge Floating Overlay on Example Line */}
-        {exampleStartPos && exampleEndPos && (
-          <div
-            data-testid="example-row"
-            style={{
-              left: `${(exampleStartPos.x + exampleEndPos.x) / 2}%`,
-              top: `${(exampleStartPos.y + exampleEndPos.y) / 2}%`
-            }}
-            className="absolute transform -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none px-2.5 py-0.5 bg-amber-500 text-white font-black text-[10px] rounded-full uppercase tracking-wider border-2 border-white shadow-md flex items-center gap-1 animate-pulse"
-          >
-            ★ EXAMPLE
-          </div>
-        )}
-
         {/* Name Selection Ribbon */}
         <div className="p-1.5 sm:p-2 bg-slate-50 border border-slate-200 rounded-xl z-10 relative">
           <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">

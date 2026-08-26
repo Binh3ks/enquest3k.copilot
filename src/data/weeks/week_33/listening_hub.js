@@ -26,12 +26,12 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
       { id: "n7", text: "Mia the Monitor", target_id: null }
     ],
     targets: [
-      { id: "t1", label: "Jake (Boy holding science notebooks)", x: 25, y: 65, isExample: true },
-      { id: "t2", label: "Tom (Student running fast near tiles)", x: 55, y: 70 },
-      { id: "t3", label: "Nurse Sarah (Woman with first-aid kit)", x: 80, y: 40 },
-      { id: "t4", label: "Headmaster Brown (Man wearing glasses)", x: 20, y: 25 },
-      { id: "t5", label: "Cleaner Bob (Man holding mop near sign)", x: 42, y: 78 },
-      { id: "t6", label: "Teacher David (Teacher walking near lab)", x: 68, y: 55 }
+      { id: "t1", label: "Jake (Boy holding backpack on left)", x: 31, y: 66, isExample: true },
+      { id: "t2", label: "Tom (Student slipping in red shirt)", x: 49, y: 64 },
+      { id: "t3", label: "Nurse Sarah (Woman rushing in white uniform)", x: 54, y: 62 },
+      { id: "t4", label: "Headmaster Brown (Man in blue suit near lockers)", x: 39, y: 56 },
+      { id: "t5", label: "Cleaner Bob (Person with mop near yellow sign)", x: 65, y: 63 },
+      { id: "t6", label: "Teacher David (Student bending near bench)", x: 71, y: 72 }
     ]
   },
   listening_p2: {
