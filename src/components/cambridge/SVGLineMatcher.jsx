@@ -185,8 +185,8 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
   const exampleName = sceneData.names.find(n => n.isExample);
   const exampleTarget = activeTargets.find(t => t.id === exampleName?.target_id || t.isExample);
 
-  const exampleStartPos = positions[exampleName?.id];
-  const exampleEndPos = positions[exampleTarget?.id];
+  const exampleStartPos = positions[exampleName?.id] || (exampleName ? { x: 8, y: 15 } : null);
+  const exampleEndPos = positions[exampleTarget?.id] || (exampleTarget ? { x: exampleTarget.x || 25, y: (exampleTarget.y || 65) * 0.75 + 18 } : null);
 
   return (
     <div className="w-full max-w-5xl mx-auto my-1 p-2.5 sm:p-4 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2.5">
