@@ -1,9 +1,9 @@
 {
-  "commit": "06cb546ba291320add56c5aab73239c231315b11",
-  "git_commit": "06cb546ba291320add56c5aab73239c231315b11",
-  "shortCommit": "06cb546b",
-  "message": "fix(story-zone): add stations.shadowing fallback for karaoke and retell",
-  "builtAt": "2026-08-25T15:22:57.066Z",
-  "build_timestamp": "2026-08-25T15:22:57.066Z",
+  "commit": "ef01bdb2813a7e86bb87980ed7d97640375e1b01",
+  "git_commit": "ef01bdb2813a7e86bb87980ed7d97640375e1b01",
+  "shortCommit": "ef01bdb2",
+  "message": "fix(retell): add stations.read_explore fallback for retell questions",
+  "builtAt": "2026-08-26T01:54:28.421Z",
+  "build_timestamp": "2026-08-26T01:54:28.421Z",
   "env": "production"
 }

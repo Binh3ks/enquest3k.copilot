@@ -245,7 +245,7 @@ export const readingHub = {
       "sharp teeth", "a trap", "a rope", "a zebra", "a fable",
       "a monkey", "a cave", "a river", "a songbird", "a paw"
     ],
-    example: { id: 0, text: "This is a traditional short story that teaches a moral lesson.", target: "a fable" },
+    example: { id: 0, text: "A large wild cat known as the king of the jungle.", target: "lion" },
     definitions: [
       { id: 1, text: "This is a large wild cat known as the king of the forest.", target: "a lion" },
       { id: 2, text: "This is a very small animal with a long tail and soft fur.", target: "a mouse" },
@@ -261,24 +261,24 @@ export const readingHub = {
   },
 
   rw_part2: {
-    title: "Emma & Harry's Fable Conversation",
-    example: { speaker_a: "Emma", text_a: "What story did you read in English class today?", speaker_b: "Harry", answer_letter: "D", answer_text: "I read the famous fable about the lion and the mouse!" },
+    title: "Leo & Milo's Fable Conversation",
+    example: { speaker_a: "Leo", text_a: "Why did you wake me up?", speaker_b: "Milo", answer_letter: "D", answer_text: "I am sorry! I was running in a hurry." },
     turns: [
-      { id: "q1", speaker_a: "Emma", text_a: "Why was the lion angry when he woke up?", correct_letter: "F" },
-      { id: "q2", speaker_a: "Emma", text_a: "Did the lion believe the mouse when he promised to help?", correct_letter: "A" },
-      { id: "q3", speaker_a: "Emma", text_a: "What happened when the hunters came to the forest?", correct_letter: "C" },
-      { id: "q4", speaker_a: "Emma", text_a: "How did the mouse rescue the lion from the trap?", correct_letter: "E" },
-      { id: "q5", speaker_a: "Emma", text_a: "They became great friends in the forest, didn't they?", correct_letter: "G" }
+      { id: "q1", speaker_a: "Leo", text_a: "What can a tiny creature do for me?", correct_letter: "G" },
+      { id: "q2", speaker_a: "Milo", text_a: "One day, I might be able to help you!", correct_letter: "B" },
+      { id: "q3", speaker_a: "Leo", text_a: "Haha! That is very funny.", correct_letter: "A" },
+      { id: "q4", speaker_a: "Leo", text_a: "Help! I am trapped in this net!", correct_letter: "F" },
+      { id: "q5", speaker_a: "Milo", text_a: "Don't worry! I will chew through these ropes.", correct_letter: "E" }
     ],
     answer_options: [
-      { letter: "A", text: "No, he laughed out loud because the mouse was so tiny." },
-      { letter: "B", text: "I went to the library with my brother." },
-      { letter: "C", text: "They trapped the lion in a heavy rope net." },
-      { letter: "D", text: "I read the famous fable about the lion and the mouse!" },
-      { letter: "E", text: "He chewed through the ropes with his sharp teeth." },
-      { letter: "F", text: "Because a tiny mouse ran across his front paw." },
-      { letter: "G", text: "Yes, they lived peacefully and helped each other forever." },
-      { letter: "H", text: "The lion ran away to the cold mountains." }
+      { letter: "A", text: "Thank you, kind lion! I will never forget your mercy." },
+      { letter: "B", text: "Even small friends can be a great help." },
+      { letter: "C", text: "I'm sorry for disturbing your rest." },
+      { letter: "D", text: "I am sorry! I was running in a hurry." },
+      { letter: "E", text: "I remember my promise! Let me free you now." },
+      { letter: "F", text: "Please help me, little mouse!" },
+      { letter: "G", text: "Nothing much. Small creatures are too weak." },
+      { letter: "H", text: "I will call the other animals to help." }
     ]
   },
 
@@ -303,6 +303,18 @@ export const readingHub = {
   rw_part4: {
     instructions: "Read the text. Choose the correct words and write them on the lines.",
     story_text: "Lions are powerful animals that live in [1]_____. They spend many hours [2]_____ during the hottest parts of the day. A tiny mouse is very small [3]_____ it has sharp front teeth. When the lion was trapped [4]_____ a rope net, the little mouse rushed [5]_____ help him immediately. He chewed [6]_____ the thick cords until the lion escaped. Animals in the wild often [7]_____ each other to stay safe. This fable teaches us [8]_____ even small friends can do great things. We should always [9]_____ kind to others because kindness is never [10]_____.",
+    example: { blank: 1, correct: "forests", options: ["forests", "forest", "a forest"] },
+    blanks: [
+      { id: 2, correct: "sleeping", options: ["sleep", "sleeping", "slept"] },
+      { id: 3, correct: "quick", options: ["quick", "quickly", "quicker"] },
+      { id: 4, correct: "overcome", options: ["overcome", "overcomes", "overcame"] },
+      { id: 5, correct: "stronger", options: ["strong", "stronger", "strongest"] },
+      { id: 6, correct: "protect", options: ["protect", "protects", "protected"] },
+      { id: 7, correct: "during", options: ["during", "while", "when"] },
+      { id: 8, correct: "survive", options: ["survive", "survives", "survived"] },
+      { id: 9, correct: "bravely", options: ["brave", "bravely", "braver"] },
+      { id: 10, correct: "loyal", options: ["loyal", "loyalty", "loyally"] }
+    ],
     questions: [
       { gap: 1, options: ["forests", "oceans", "clouds"], answer: "forests" },
       { gap: 2, options: ["sleeping", "sleeps", "slept"], answer: "sleeping" },
@@ -326,15 +338,15 @@ export const readingHub = {
   rw_part5: {
     story_title: "A Hero in the Forest",
     story_text: "Last weekend, Oliver and his sister Lily visited the animal wildlife park. At the educational storytelling corner, a park guide was reading Aesop's famous fable to all the children. The guide explained that a huge lion lived in a peaceful forest with many tall trees. While the lion was sleeping, a tiny mouse accidentally ran across his paw. Instead of eating the mouse, the lion showed great kindness and let him go free. Later that week, hunters caught the lion in a heavy net. The mouse did not run away in fear; he rushed over and used his sharp teeth to cut the ropes. Oliver and Lily loved the story because it showed that even the smallest creature can do great things.",
-    example: { text: "Oliver and his sister Lily visited the wildlife park last", answer: "weekend" },
+    example: { prompt: "Richard went to visit a castle with his parents last ___", answer: "weekend" },
     questions: [
-      { id: "q1", prompt: "A park guide was reading Aesop's fable to all the ___.", answer: "children" },
-      { id: "q2", prompt: "The huge lion lived in a peaceful forest with many ___.", answer: "tall trees" },
-      { id: "q3", prompt: "A tiny mouse ran across the lion's paw while he was ___.", answer: "sleeping" },
-      { id: "q4", prompt: "The lion showed great ___ and let the mouse go free.", answer: "kindness" },
-      { id: "q5", prompt: "Hunters caught the lion in a heavy ___.", answer: "net" },
-      { id: "q6", prompt: "The brave mouse used his ___ to cut the ropes.", answer: "sharp teeth" },
-      { id: "q7", prompt: "The children learned that even the smallest ___ can do great things.", answer: "creature" }
+      { id: "q1", prompt: "Where was the lion sleeping at the beginning?", answer: "under a tall tree" },
+      { id: "q2", prompt: "How did the mouse free the lion from the net?", answer: "chewed the ropes" },
+      { id: "q3", prompt: "What did the lion promise the mouse?", answer: "to be his friend forever" },
+      { id: "q4", prompt: "Who trapped the lion in the forest?", answer: "hunters with strong ropes" },
+      { id: "q5", prompt: "What material was the net made of?", answer: "thick ropes" },
+      { id: "q6", prompt: "Why did the mouse help the lion?", answer: "because he promised to return the favor" },
+      { id: "q7", prompt: "How did they feel after the rescue?", answer: "grateful and loyal friends" }
     ]
   },
   rw_part_1: null,
@@ -359,7 +371,7 @@ fs.writeFileSync(path.join(targetDir, 'reading_hub.js'), readingHubCode, 'utf8')
 // ─────────────────────────────────────────────────────────────────────────────
 // 3. LISTENING_HUB.JS
 // ─────────────────────────────────────────────────────────────────────────────
-const listeningHubCode = `// Pure Generated Listening Hub for Week \${weekNum}
+const listeningHubCode = `// Pure Generated Listening Hub for Week ${weekNum}
 export const listeningHub = {
   listening_p1: {
     image_url: "/images/week${weekNum}/w${weekNum}_listening_p1_scene.jpg",
@@ -438,13 +450,13 @@ Man: That is Rob the rabbit. He is hopping gently.\`,
       {
         id: "p4_example",
         isExample: true,
-        question_en: "Where was the lion sleeping?",
-        audio_url: "/audio/week${weekNum}/listening_p4_q1.mp3",
-        audio_script: \`Boy: Look at the example. Where did Milo run in the morning?\\nGirl: He ran across the mossy rocks.\\nBoy: Can you see the tick? Now you listen and tick the box.\`,
+        question_en: "Where did Milo the mouse run in the morning?",
+        audio_url: "/audio/week${weekNum}/listening_p4_example.mp3",
+        audio_script: \`Boy: Look at the example. Where did Milo the mouse run in the morning?\\nGirl: He ran across the mossy rocks.\\nBoy: Can you see the tick? Now you listen and tick the box.\`,
         options: [
-          { letter: "A", text: "Under a tall oak tree", image_url: "/images/week${weekNum}/webtoon_scene_1.png" },
-          { letter: "B", text: "Inside a dark stone cave", image_url: "/images/week${weekNum}/card_f.jpg" },
-          { letter: "C", text: "Near a wooden camp", image_url: "/images/week${weekNum}/card_b.jpg" }
+          { letter: "A", text: "Across the mossy rocks", image_url: "/images/week${weekNum}/card_c.jpg" },
+          { letter: "B", text: "Near the hunter camp", image_url: "/images/week${weekNum}/card_b.jpg" },
+          { letter: "C", text: "Around the water river", image_url: "/images/week${weekNum}/card_d.jpg" }
         ],
         answer: "A"
       },
@@ -486,27 +498,27 @@ Man: That is Rob the rabbit. He is hopping gently.\`,
       },
       {
         id: "p4_q4",
-        question_en: "What does the oxpecker bird eat on the zebra?",
+        question_en: "Who helped the lion escape?",
         audio_url: "/audio/week${weekNum}/listening_p4_q4.mp3",
-        audio_script: \`Boy: Question 4. What does the oxpecker bird eat on the zebra?\\nGirl: The bird eats small bugs on the zebra's back.\`,
+        audio_script: \`Boy: Question 4. Who helped the lion escape?\\nGirl: The brave little mouse chewed the ropes to free him.\`,
         options: [
-          { letter: "A", text: "Small bugs on zebra", image_url: "/images/week${weekNum}/explore_cover_w${weekNum}.jpg" },
-          { letter: "B", text: "Sweet red berries", image_url: "/images/week${weekNum}/card_g.jpg" },
-          { letter: "C", text: "Green grass seeds", image_url: "/images/week${weekNum}/card_h.jpg" }
+          { letter: "A", text: "The brave little mouse", image_url: "/images/week${weekNum}/webtoon_scene_5.png" },
+          { letter: "B", text: "A big brown bear", image_url: "/images/week${weekNum}/card_f.jpg" },
+          { letter: "C", text: "A wise gray owl", image_url: "/images/week${weekNum}/card_c.jpg" }
         ],
         answer: "A"
       },
       {
         id: "p4_q5",
-        question_en: "Where did the lion and mouse go after they became friends?",
+        question_en: "How did the lion feel after being freed?",
         audio_url: "/audio/week${weekNum}/listening_p4_q5.mp3",
-        audio_script: \`Boy: Question 5. Where did the lion and mouse go after they became friends?\\nGirl: They walked together to the sunny forest clearing.\`,
+        audio_script: \`Boy: Question 5. How did the lion feel after being freed?\\nGirl: He felt grateful and relieved that his little friend saved him.\`,
         options: [
-          { letter: "A", text: "To the hunter village", image_url: "/images/week${weekNum}/card_b.jpg" },
-          { letter: "B", text: "To the sunny forest clearing", image_url: "/images/week${weekNum}/webtoon_scene_5.png" },
-          { letter: "C", text: "To the dark mountains", image_url: "/images/week${weekNum}/card_f.jpg" }
+          { letter: "A", text: "Grateful and relieved", image_url: "/images/week${weekNum}/webtoon_scene_1.png" },
+          { letter: "B", text: "Angry and hungry", image_url: "/images/week${weekNum}/card_b.jpg" },
+          { letter: "C", text: "Scared of the mouse", image_url: "/images/week${weekNum}/card_g.jpg" }
         ],
-        answer: "B"
+        answer: "A"
       }
     ]
   },
@@ -535,7 +547,9 @@ Woman: Write the word 'FRIENDS' on the signboard.\`,
       { id: "inst_1", item: "Lion Mane", text: "Color the lion's mane golden yellow", x: 45, y: 55, color: "yellow" },
       { id: "inst_2", item: "Rope Trap", text: "Write the word 'TRAP' near the ropes", x: 65, y: 45, word: "TRAP" },
       { id: "inst_3", item: "Tiny Mouse", text: "Color the little mouse grey", x: 30, y: 70, color: "grey" },
-      { id: "inst_4", item: "Forest Signboard", text: "Write the word 'FRIENDS' on the signboard", x: 80, y: 30, word: "FRIENDS" }
+      { id: "inst_4", item: "Forest Signboard", text: "Write the word 'FRIENDS' on the signboard", x: 80, y: 30, word: "FRIENDS" },
+      { id: "inst_5", item: "Hunter's Hat", text: "Color the hat dark green", x: 90, y: 20, color: "dark green" },
+      { id: "inst_6", item: "Tree Trunk", text: "Write the word 'TREE' on the trunk", x: 15, y: 85, word: "TREE" }
     ]
   }
 };
@@ -566,41 +580,41 @@ export const writingHub = {
         scene: 1,
         ladder_stage: "MODEL",
         badge_label: "MODEL",
-        title: "Scene 1: Lion Sleeping Under Tree",
+        title: "Scene 1: Lion in the Forest",
         image_url: "/images/week${weekNum}/webtoon_scene_1.png",
-        caption: "The mighty lion was sleeping peacefully under a tree.",
-        frame_L1: "The mighty lion was sleeping peacefully under a tree.",
+        caption: "The mighty lion was resting under a tall oak tree in the forest.",
+        frame_L1: "The mighty lion was sleeping peacefully under a tall oak tree.",
         locked_connector: "In the beginning,",
-        ordered_chips: ["the mighty lion", "was sleeping peacefully", "under a shady green tree"],
-        pills: ["the mighty lion", "was sleeping peacefully", "under a shady green tree"],
-        audio: "While the lion was sleeping peacefully under a shady tree, a mouse arrived."
+        ordered_chips: ["the mighty lion", "was sleeping peacefully", "under a tall oak tree"],
+        pills: ["the mighty lion", "was sleeping peacefully", "under a tall oak tree"],
+        audio: "On a sunny afternoon, the mighty lion was resting under a tall tree."
       },
       {
         scene: 2,
         ladder_stage: "BUILD",
         badge_label: "BUILD",
-        title: "Scene 2: Hunters Trap the Lion",
+        title: "Scene 2: Trapped in Heavy Net",
         image_url: "/images/week${weekNum}/webtoon_scene_4.png",
-        caption: "Suddenly, hunters trapped the lion in a heavy rope net.",
-        frame_L1: "Suddenly, two hunters trapped the lion in a heavy net.",
+        caption: "The hunters trapped the strong lion in a heavy rope net.",
+        frame_L1: "Suddenly, hunters trapped the lion in a heavy rope net.",
         connectors: ["Then", "Suddenly", "After that"],
-        display_chips: ["in a heavy net", "two hunters", "trapped the lion"],
-        pills: ["in a heavy net", "two hunters", "trapped the lion"],
-        correct_order: ["two hunters", "trapped the lion", "in a heavy net"],
-        audio: "Suddenly, two hunters trapped the strong lion in a heavy net."
+        display_chips: ["trapped the strong lion", "the hunters", "in a heavy rope net"],
+        pills: ["trapped the strong lion", "the hunters", "in a heavy rope net"],
+        correct_order: ["the hunters", "trapped the strong lion", "in a heavy rope net"],
+        audio: "Suddenly, the hunters trapped the lion in a strong net."
       },
       {
         scene: 3,
         ladder_stage: "WRITE",
         badge_label: "WRITE",
-        title: "Scene 3: Mouse Rescues Lion",
+        title: "Scene 3: Mouse Frees the Lion",
         image_url: "/images/week${weekNum}/webtoon_scene_5.png",
-        caption: "The brave mouse chewed the thick ropes and freed the lion.",
-        frame_L1: "The brave mouse chewed the thick ropes and freed his friend.",
+        caption: "The brave mouse chewed through the thick ropes and freed the lion.",
+        frame_L1: "The brave mouse chewed the thick ropes and freed the mighty lion.",
         connectors: ["Finally", "In the end", "At last"],
-        keywords: ["the brave mouse", "chew the ropes", "free the lion", "feel grateful"],
-        pills: ["the brave mouse", "chew the ropes", "free the lion", "feel grateful"],
-        audio: "Finally, the brave mouse chewed the thick ropes and freed the mighty lion."
+        keywords: ["the brave mouse", "chew", "the thick ropes", "free"],
+        pills: ["the brave mouse", "chew", "the thick ropes", "free"],
+        audio: "Finally, the brave mouse chewed the ropes and freed the lion."
       }
     ],
     connectors: ["In the beginning,", "Suddenly,", "Finally,"],
@@ -628,11 +642,12 @@ export const writingHub = {
   science_report_config: {
     topic: "Animal Cooperation in Nature",
     notebookTitle: "Animal Cooperation Lab Notebook",
-    purpose: "For young learners (little scientists): practice observational reporting using concrete scientific facts observed / because / past tense structures.",
+    purpose: "🌱 Today we write like little scientists: we say what we SAW, use past tense, and join ideas with because / so!",
+    teacher_parent_note: "Learn the language of science reports (observed / because / past tense), not science content.",
     data_card: [
-      { id: 1, subject: "Mighty Lion", action: "protected the forest territory", result: "kept other animals safe" },
-      { id: 2, subject: "Tiny Mouse", action: "chewed through the thick ropes", result: "freed his large friend" },
-      { id: 3, subject: "Forest Birds", action: "chirped high in the trees", result: "alerted others about danger" }
+      { subject: "🐿️ Squirrels", action: "buried extra nuts in the ground", result: "some nuts grew into new oak trees" },
+      { subject: "🐝 Bees", action: "drank sweet nectar from flowers", result: "carried pollen to help new flowers grow" },
+      { subject: "🐦 Jays", action: "hid seeds under soft leaves", result: "started small green plants across the forest" }
     ],
     step1Title: "Observe Animal Roles",
     step1Pills: {
@@ -668,36 +683,34 @@ export const speakingHub = {
   },
   info_exchange_cards: {
     candidate_card: {
-      title: "The Lion's Home (Candidate)",
+      title: "The Lion's Home (Leo)",
       fields: [
         { label: "Location", value: "Green Valley Forest", known: true },
         { label: "Favorite Food", value: null, known: false },
         { label: "Resting Time", value: "Sunny Afternoons", known: true },
-        { label: "Helper Animal", value: null, known: false }
+        { label: "Best Friend", value: null, known: false }
       ]
     },
     examiner_card: {
-      title: "The Mouse's Home (Examiner)",
+      title: "The Mouse's Home (Milo)",
       fields: [
         { label: "Location", value: "Under the Tall Oak Tree", known: true },
-        { label: "Special Skill", value: null, known: false },
-        { label: "Friendship Bond", value: "Mighty Forest Lion", known: true },
-        { label: "Rescue Tool", value: null, known: false }
+        { label: "Favorite Food", value: null, known: false },
+        { label: "Special Skill", value: "Chewing Strong Ropes", known: true },
+        { label: "Best Friend", value: null, known: false }
       ]
     },
     full_answers: {
       "Location": ["Green Valley Forest", "Under the Tall Oak Tree"],
       "Favorite Food": ["Fresh Wild Berries & Meat", "Small Grass Seeds"],
       "Resting Time": ["Sunny Afternoons", "Cool Evenings"],
-      "Helper Animal": ["Brave Tiny Mouse", "Wise Forest Owl"],
       "Special Skill": ["Chewing Strong Ropes", "Running Fast on Grass"],
-      "Friendship Bond": ["Mighty Forest Lion", "Gentle Forest Animals"],
-      "Rescue Tool": ["Sharp Front Teeth", "Wooden Stick Lever"]
+      "Best Friend": ["Mighty Forest Lion", "Gentle Forest Animals"]
     },
     prompt_questions: [
-      "Where does the lion live?",
-      "What is the lion's favorite food?",
-      "How did the mouse help the lion?"
+      "Where does the character live?",
+      "What is the special skill?",
+      "When is the resting time?"
     ],
     examiner_questions: [
       { id: "eq1", text: "Where does the mouse live?", audio_url: "/audio/week${weekNum}/exam_intro_S2.mp3" },
@@ -738,35 +751,5 @@ export const speakingHubData = speakingHub;
 export default speakingHub;
 `;
 fs.writeFileSync(path.join(targetDir, 'speaking_hub.js'), speakingHubCode, 'utf8');
-
-// ─────────────────────────────────────────────────────────────────────────────
-// 6. INDEX.JS
-// ─────────────────────────────────────────────────────────────────────────────
-const indexCode = `// Pure Generated Master Index for Week ${weekNum}
-import { readingHub } from './reading_hub.js';
-import { listeningHub } from './listening_hub.js';
-import { writingHub } from './writing_hub.js';
-import { speakingHub } from './speaking_hub.js';
-import { week${weekNum}Vocab } from './vocab.js';
-
-export const weekData = {
-  week: ${weekNum},
-  theme: "The Lion and the Mouse",
-  vocab: week${weekNum}Vocab,
-  reading_hub: readingHub,
-  listening_hub: listeningHub,
-  writing_hub: writingHub,
-  speaking_hub: speakingHub,
-  stations: {
-    reading_hub: readingHub,
-    listening_hub: listeningHub,
-    writing_hub: writingHub,
-    speaking_hub: speakingHub
-  }
-};
-
-export default weekData;
-`;
-fs.writeFileSync(path.join(targetDir, 'index.js'), indexCode, 'utf8');
 
 console.log(`✅ Successfully generated pure data files for Week ${weekNum}!`);

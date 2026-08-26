@@ -6,36 +6,34 @@ export const speakingHub = {
   },
   info_exchange_cards: {
     candidate_card: {
-      title: "The Lion's Home (Candidate)",
+      title: "The Lion's Home (Leo)",
       fields: [
         { label: "Location", value: "Green Valley Forest", known: true },
         { label: "Favorite Food", value: null, known: false },
         { label: "Resting Time", value: "Sunny Afternoons", known: true },
-        { label: "Helper Animal", value: null, known: false }
+        { label: "Best Friend", value: null, known: false }
       ]
     },
     examiner_card: {
-      title: "The Mouse's Home (Examiner)",
+      title: "The Mouse's Home (Milo)",
       fields: [
         { label: "Location", value: "Under the Tall Oak Tree", known: true },
-        { label: "Special Skill", value: null, known: false },
-        { label: "Friendship Bond", value: "Mighty Forest Lion", known: true },
-        { label: "Rescue Tool", value: null, known: false }
+        { label: "Favorite Food", value: null, known: false },
+        { label: "Special Skill", value: "Chewing Strong Ropes", known: true },
+        { label: "Best Friend", value: null, known: false }
       ]
     },
     full_answers: {
       "Location": ["Green Valley Forest", "Under the Tall Oak Tree"],
       "Favorite Food": ["Fresh Wild Berries & Meat", "Small Grass Seeds"],
       "Resting Time": ["Sunny Afternoons", "Cool Evenings"],
-      "Helper Animal": ["Brave Tiny Mouse", "Wise Forest Owl"],
       "Special Skill": ["Chewing Strong Ropes", "Running Fast on Grass"],
-      "Friendship Bond": ["Mighty Forest Lion", "Gentle Forest Animals"],
-      "Rescue Tool": ["Sharp Front Teeth", "Wooden Stick Lever"]
+      "Best Friend": ["Mighty Forest Lion", "Gentle Forest Animals"]
     },
     prompt_questions: [
-      "Where does the lion live?",
-      "What is the lion's favorite food?",
-      "How did the mouse help the lion?"
+      "Where does the character live?",
+      "What is the special skill?",
+      "When is the resting time?"
     ],
     examiner_questions: [
       { id: "eq1", text: "Where does the mouse live?", audio_url: "/audio/week34/exam_intro_S2.mp3" },

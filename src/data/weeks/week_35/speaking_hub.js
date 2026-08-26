@@ -1,81 +1,74 @@
-/**
- * Week 35 Gold Standard Data — Speaking Hub
- * Theme: "The Best Day Ever: Mountain Camping"
- */
-
-import mindmap from './mindmap.js';
-import ask_ai, { INFORMATION_EXCHANGE_P2, CUE_CARD_PROMPTS } from './ask_ai.js';
-import shadowing from './shadowing.js';
-
-export const speakingHubData = {
-  week: 35,
-  theme: "The Best Day Ever: Mountain Camping",
-  mindmap,
-  ask_ai,
-  talkshow_turns: [
-    { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! Today we are sharing our best memories. Where did you go for your best adventure?" },
-    { turn_number: 2, nova_question: "How exciting! What did you do while setting up the campsite in the morning?" },
-    { turn_number: 3, nova_question: "What interesting wildlife did you spot while hiking along the forest stream?" },
-    { turn_number: 4, nova_question: "How did your family spend the cozy evening around the warm campfire?" },
-    { turn_number: 5, nova_question: "Why was stargazing under the clear night sky such a memorable moment?" }
-  ],
-  cue_card_info_exchange: INFORMATION_EXCHANGE_P2,
-  cue_card_prompts: CUE_CARD_PROMPTS,
-
-  shadowing_sentences: shadowing.sentences,
-  podcast_shadowing: {
-    long_paragraph: {
-      text: "Last Saturday was the most memorable day of my summer holiday. Our family packed our backpacks and drove to Pine Valley Mountain. While my parents were pitching our large blue tent, we collected firewood. In the afternoon, we hiked along a cool forest stream. In the evening, we roasted sweet marshmallows by the warm campfire under the starry sky.",
-      audio_url: '/audio/week35/shadowing_full_paragraph.mp3'
-    }
+// Pure Generated Speaking Hub for Week 35
+export const speakingHub = {
+  talkshow_video: {
+    video_id: "forest_cooperation_w35",
+    title: "Animal Friendship & Teamwork in Nature"
   },
-
-  // Cambridge Speaking Part 1 (Find Differences - 6 Hotspots)
+  info_exchange_cards: {
+    candidate_card: {
+      title: "The Lion's Home (Leo)",
+      fields: [
+        { label: "Location", value: "Green Valley Forest", known: true },
+        { label: "Favorite Food", value: null, known: false },
+        { label: "Resting Time", value: "Sunny Afternoons", known: true },
+        { label: "Best Friend", value: null, known: false }
+      ]
+    },
+    examiner_card: {
+      title: "The Mouse's Home (Milo)",
+      fields: [
+        { label: "Location", value: "Under the Tall Oak Tree", known: true },
+        { label: "Favorite Food", value: null, known: false },
+        { label: "Special Skill", value: "Chewing Strong Ropes", known: true },
+        { label: "Best Friend", value: null, known: false }
+      ]
+    },
+    full_answers: {
+      "Location": ["Green Valley Forest", "Under the Tall Oak Tree"],
+      "Favorite Food": ["Fresh Wild Berries & Meat", "Small Grass Seeds"],
+      "Resting Time": ["Sunny Afternoons", "Cool Evenings"],
+      "Special Skill": ["Chewing Strong Ropes", "Running Fast on Grass"],
+      "Best Friend": ["Mighty Forest Lion", "Gentle Forest Animals"]
+    },
+    prompt_questions: [
+      "Where does the character live?",
+      "What is the special skill?",
+      "When is the resting time?"
+    ],
+    examiner_questions: [
+      { id: "eq1", text: "Where does the mouse live?", audio_url: "/audio/week35/exam_intro_S2.mp3" },
+      { id: "eq2", text: "What is the mouse's special skill?", audio_url: "/audio/week35/exam_intro_S3.mp3" },
+      { id: "eq3", text: "What did the mouse use to rescue the lion?", audio_url: "/audio/week35/exam_intro_S4.mp3" }
+    ]
+  },
+  picture_story: {
+    title: "The Lion and the Little Mouse",
+    examiner_intro: "Look at these five pictures. They tell a story about a lion and a little mouse. First, I'll tell you about picture one. Then you tell me about pictures two, three, four, and five.",
+    images: [
+      { id: 1, image_url: "/images/week35/webtoon_scene_1.png", narrator_prompt: "The lion was sleeping peacefully under a big tree in the forest." },
+      { id: 2, image_url: "/images/week35/webtoon_scene_2.png", narrator_prompt: "A tiny mouse ran across his paw and woke him up." },
+      { id: 3, image_url: "/images/week35/webtoon_scene_3.png", narrator_prompt: "The lion caught him, but let him go after the mouse promised to help." },
+      { id: 4, image_url: "/images/week35/webtoon_scene_4.png", narrator_prompt: "Later, hunters trapped the lion in a heavy rope net." },
+      { id: 5, image_url: "/images/week35/webtoon_scene_5.png", narrator_prompt: "The brave mouse chewed the ropes and freed the lion completely." }
+    ]
+  },
   find_differences: {
-    picA: { title: 'Picture A (Original Campsite)', image_url: '/images/week35/w35_diff_scene_a.jpg' },
-    picB: { title: 'Picture B (Difference Campsite)', image_url: '/images/week35/w35_diff_scene_b.jpg' },
-    hotspots: [
-      { id: 'diff1', name: 'Tent Color', x: 30, y: 55, prompt_en: 'In Picture A, the tent is blue, but in Picture B, it is green.' },
-      { id: 'diff2', name: 'Backpack on Log', x: 50, y: 65, prompt_en: 'In Picture A, the backpack is red, but in Picture B, it is yellow.' },
-      { id: 'diff3', name: 'Tree Squirrel', x: 75, y: 35, prompt_en: 'In Picture A, there is one squirrel, but in Picture B, there are two squirrels.' },
-      { id: 'diff4', name: 'Flashlight on Table', x: 40, y: 48, prompt_en: 'In Picture A, the flashlight is turned on, but in Picture B, it is turned off.' },
-      { id: 'diff5', name: 'Mountain Moon', x: 80, y: 20, prompt_en: 'In Picture A, there is a crescent moon, but in Picture B, there is a full moon.' },
-      { id: 'diff6', name: 'Guitar beside Log', x: 65, y: 60, prompt_en: 'In Picture A, there is a guitar on the log, but in Picture B, there is no guitar.' }
+    picA: {
+      title: "Picture A (Forest Afternoon)",
+      image_url: "/images/week35/w35_diff_scene_a.jpg"
+    },
+    picB: {
+      title: "Picture B (Forest Afternoon Difference)",
+      image_url: "/images/week35/w35_diff_scene_b.jpg"
+    },
+    differences: [
+      { id: "d1", name: "Mouse Tail Direction", x: 80, y: 19, prompt_en: "In Picture A, the mouse tail points up, but in Picture B, it points down." },
+      { id: "d2", name: "Tree Flower Color", x: 26, y: 20, prompt_en: "In Picture A, the flower is pink, but in Picture B, it is yellow." },
+      { id: "d3", name: "Butterfly on Rock", x: 56, y: 68, prompt_en: "In Picture A, there is a blue butterfly, but in Picture B, there is no butterfly." },
+      { id: "d4", name: "Sun Position", x: 82, y: 73, prompt_en: "In Picture A, the sun is high, but in Picture B, it is behind a cloud." }
     ]
-  },
-
-  // Cambridge Speaking Part 3 (5 Sequential Pictures Invariant)
-  picture_story_continuation: {
-    title: "The Mountain Camping Trip",
-    intro_audio_text: "Look at the five pictures. They tell a story called 'The Mountain Camping Trip'. Just look at Picture 1 first. Early on Saturday morning, the family arrived at Pine Valley to go camping.",
-    pictures: [
-      { id: 1, title: "Picture 1: Setting up the tent", image: "/images/week35/webtoon_scene_1.png", is_intro: true, script: "Early on Saturday morning, the family arrived at Pine Valley to go camping." },
-      { id: 2, title: "Picture 2: Hiking by the stream", image: "/images/week35/webtoon_scene_2.png", prompt_en: "Now you tell the story! What did the children do in Picture 2?", key_chunks: ["went hiking along stream", "crystal clear water"] },
-      { id: 3, title: "Picture 3: Spotting tree squirrels", image: "/images/week35/webtoon_scene_3.png", prompt_en: "What wildlife did they discover in Picture 3?", key_chunks: ["spotted two squirrels", "jumping between branches"] },
-      { id: 4, title: "Picture 4: Roasting marshmallows", image: "/images/week35/webtoon_scene_4.png", prompt_en: "What happened around the campfire in Picture 4?", key_chunks: ["lit warm campfire", "roasted sweet marshmallows"] },
-      { id: 5, title: "Picture 5: Stargazing under the sky", image: "/images/week35/webtoon_scene_5.png", prompt_en: "How does the story end in Picture 5?", key_chunks: ["clear starry sky", "truly the best day ever"] }
-    ]
-  },
-
-  // Cambridge AI Debate Arena
-  debate_topics: [
-    {
-      id: "debate_w35_01",
-      topic_title: "Camping Outdoors vs Staying at Home on Holidays",
-      nova_statement: "I think staying at home during holidays is much better because you have comfortable beds and video games!",
-      expected_counter_points: [
-        "Camping in nature allows you to explore fresh air and mountain trails",
-        "Outdoor activities help families bond and work together",
-        "Stargazing and campfires create unforgettable lifelong memories"
-      ],
-      suggested_discourse_markers: [
-        "I disagree with Nova because...",
-        "In my opinion, camping outdoors is...",
-        "For example, when you camp, you can roast marshmallows and..."
-      ],
-      sample_rebuttal: "I disagree with Nova because camping in nature gives fresh air and exciting adventures. You can hike along clear streams, roast marshmallows, and stargaze together with your family."
-    }
-  ]
+  }
 };
 
-export default speakingHubData;
+export const speakingHubData = speakingHub;
+export default speakingHub;

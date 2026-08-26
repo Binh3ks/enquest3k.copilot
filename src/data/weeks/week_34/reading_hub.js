@@ -122,6 +122,18 @@ export const readingHub = {
     }
   },
 
+  shadowingData: {
+    sentences: [
+      { id: 1, text: "The mighty lion was sleeping under a big tree.", words: ["The", "mighty", "lion", "was", "sleeping", "under", "a", "big", "tree."], ipa: ["ðə", "ˈmaɪ.ti", "ˈlaɪ.ən", "wɒz", "ˈsliː.pɪŋ", "ˈʌn.dər", "ə", "bɪɡ", "triː"], audio_url: "/audio/week34/shadowing_1.mp3" },
+      { id: 2, text: "A tiny mouse ran across his nose.", words: ["A", "tiny", "mouse", "ran", "across", "his", "nose."], ipa: ["ə", "ˈtaɪ.ni", "maʊs", "ræn", "əˈkrɒs", "hɪz", "nəʊz"], audio_url: "/audio/week34/shadowing_2.mp3" },
+      { id: 3, text: "The lion woke up and caught the little mouse.", words: ["The", "lion", "woke", "up", "and", "caught", "the", "little", "mouse."], ipa: ["ðə", "ˈlaɪ.ən", "wəʊk", "ʌp", "ænd", "kɔːt", "ðə", "ˈlɪt.əl", "maʊs"], audio_url: "/audio/week34/shadowing_3.mp3" },
+      { id: 4, text: "The mouse promised to help the lion one day.", words: ["The", "mouse", "promised", "to", "help", "the", "lion", "one", "day."], ipa: ["ðə", "maʊs", "ˈprɒm.ɪst", "tuː", "help", "ðə", "ˈlaɪ.ən", "wʌn", "deɪ"], audio_url: "/audio/week34/shadowing_4.mp3" },
+      { id: 5, text: "Hunters trapped the strong lion in a heavy net.", words: ["Hunters", "trapped", "the", "strong", "lion", "in", "a", "heavy", "net."], ipa: ["ˈhʌn.tərz", "træpt", "ðə", "strɒŋ", "ˈlaɪ.ən", "ɪn", "ə", "ˈhev.i", "net"], audio_url: "/audio/week34/shadowing_5.mp3" },
+      { id: 6, text: "The brave mouse chewed through the thick ropes.", words: ["The", "brave", "mouse", "chewed", "through", "the", "thick", "ropes."], ipa: ["ðə", "breɪv", "maʊs", "tʃuːd", "θruː", "ðə", "θɪk", "rəʊps"], audio_url: "/audio/week34/shadowing_6.mp3" },
+      { id: 7, text: "The lion escaped and was completely free.", words: ["The", "lion", "escaped", "and", "was", "completely", "free."], ipa: ["ðə", "ˈlaɪ.ən", "ɪˈskeɪpt", "ænd", "wɒz", "kəmˈpliːt.li", "friː"], audio_url: "/audio/week34/shadowing_7.mp3" },
+      { id: 8, text: "They became the best of friends forever.", words: ["They", "became", "the", "best", "of", "friends", "forever."], ipa: ["ðeɪ", "bɪˈkeɪm", "ðə", "best", "ɒv", "frendz", "fəˈrev.ər"], audio_url: "/audio/week34/shadowing_8.mp3" }
+    ]
+  },
 
   rw_part_6: {
     instructions: "Read the story diary and write the missing words. Write one word on each line.",
@@ -170,7 +182,7 @@ export const readingHub = {
       "sharp teeth", "a trap", "a rope", "a zebra", "a fable",
       "a monkey", "a cave", "a river", "a songbird", "a paw"
     ],
-    example: { id: 0, text: "This is a traditional short story that teaches a moral lesson.", target: "a fable" },
+    example: { id: 0, text: "A large wild cat known as the king of the jungle.", target: "lion" },
     definitions: [
       { id: 1, text: "This is a large wild cat known as the king of the forest.", target: "a lion" },
       { id: 2, text: "This is a very small animal with a long tail and soft fur.", target: "a mouse" },
@@ -186,24 +198,24 @@ export const readingHub = {
   },
 
   rw_part2: {
-    title: "Emma & Harry's Fable Conversation",
-    example: { speaker_a: "Emma", text_a: "What story did you read in English class today?", speaker_b: "Harry", answer_letter: "D", answer_text: "I read the famous fable about the lion and the mouse!" },
+    title: "Leo & Milo's Fable Conversation",
+    example: { speaker_a: "Leo", text_a: "Why did you wake me up?", speaker_b: "Milo", answer_letter: "D", answer_text: "I am sorry! I was running in a hurry." },
     turns: [
-      { id: "q1", speaker_a: "Emma", text_a: "Why was the lion angry when he woke up?", correct_letter: "F" },
-      { id: "q2", speaker_a: "Emma", text_a: "Did the lion believe the mouse when he promised to help?", correct_letter: "A" },
-      { id: "q3", speaker_a: "Emma", text_a: "What happened when the hunters came to the forest?", correct_letter: "C" },
-      { id: "q4", speaker_a: "Emma", text_a: "How did the mouse rescue the lion from the trap?", correct_letter: "E" },
-      { id: "q5", speaker_a: "Emma", text_a: "They became great friends in the forest, didn't they?", correct_letter: "G" }
+      { id: "q1", speaker_a: "Leo", text_a: "What can a tiny creature do for me?", correct_letter: "G" },
+      { id: "q2", speaker_a: "Milo", text_a: "One day, I might be able to help you!", correct_letter: "B" },
+      { id: "q3", speaker_a: "Leo", text_a: "Haha! That is very funny.", correct_letter: "A" },
+      { id: "q4", speaker_a: "Leo", text_a: "Help! I am trapped in this net!", correct_letter: "F" },
+      { id: "q5", speaker_a: "Milo", text_a: "Don't worry! I will chew through these ropes.", correct_letter: "E" }
     ],
     answer_options: [
-      { letter: "A", text: "No, he laughed out loud because the mouse was so tiny." },
-      { letter: "B", text: "I went to the library with my brother." },
-      { letter: "C", text: "They trapped the lion in a heavy rope net." },
-      { letter: "D", text: "I read the famous fable about the lion and the mouse!" },
-      { letter: "E", text: "He chewed through the ropes with his sharp teeth." },
-      { letter: "F", text: "Because a tiny mouse ran across his front paw." },
-      { letter: "G", text: "Yes, they lived peacefully and helped each other forever." },
-      { letter: "H", text: "The lion ran away to the cold mountains." }
+      { letter: "A", text: "Thank you, kind lion! I will never forget your mercy." },
+      { letter: "B", text: "Even small friends can be a great help." },
+      { letter: "C", text: "I'm sorry for disturbing your rest." },
+      { letter: "D", text: "I am sorry! I was running in a hurry." },
+      { letter: "E", text: "I remember my promise! Let me free you now." },
+      { letter: "F", text: "Please help me, little mouse!" },
+      { letter: "G", text: "Nothing much. Small creatures are too weak." },
+      { letter: "H", text: "I will call the other animals to help." }
     ]
   },
 
@@ -228,6 +240,18 @@ export const readingHub = {
   rw_part4: {
     instructions: "Read the text. Choose the correct words and write them on the lines.",
     story_text: "Lions are powerful animals that live in [1]_____. They spend many hours [2]_____ during the hottest parts of the day. A tiny mouse is very small [3]_____ it has sharp front teeth. When the lion was trapped [4]_____ a rope net, the little mouse rushed [5]_____ help him immediately. He chewed [6]_____ the thick cords until the lion escaped. Animals in the wild often [7]_____ each other to stay safe. This fable teaches us [8]_____ even small friends can do great things. We should always [9]_____ kind to others because kindness is never [10]_____.",
+    example: { blank: 1, correct: "forests", options: ["forests", "forest", "a forest"] },
+    blanks: [
+      { id: 2, correct: "sleeping", options: ["sleep", "sleeping", "slept"] },
+      { id: 3, correct: "quick", options: ["quick", "quickly", "quicker"] },
+      { id: 4, correct: "overcome", options: ["overcome", "overcomes", "overcame"] },
+      { id: 5, correct: "stronger", options: ["strong", "stronger", "strongest"] },
+      { id: 6, correct: "protect", options: ["protect", "protects", "protected"] },
+      { id: 7, correct: "during", options: ["during", "while", "when"] },
+      { id: 8, correct: "survive", options: ["survive", "survives", "survived"] },
+      { id: 9, correct: "bravely", options: ["brave", "bravely", "braver"] },
+      { id: 10, correct: "loyal", options: ["loyal", "loyalty", "loyally"] }
+    ],
     questions: [
       { gap: 1, options: ["forests", "oceans", "clouds"], answer: "forests" },
       { gap: 2, options: ["sleeping", "sleeps", "slept"], answer: "sleeping" },
@@ -251,15 +275,15 @@ export const readingHub = {
   rw_part5: {
     story_title: "A Hero in the Forest",
     story_text: "Last weekend, Oliver and his sister Lily visited the animal wildlife park. At the educational storytelling corner, a park guide was reading Aesop's famous fable to all the children. The guide explained that a huge lion lived in a peaceful forest with many tall trees. While the lion was sleeping, a tiny mouse accidentally ran across his paw. Instead of eating the mouse, the lion showed great kindness and let him go free. Later that week, hunters caught the lion in a heavy net. The mouse did not run away in fear; he rushed over and used his sharp teeth to cut the ropes. Oliver and Lily loved the story because it showed that even the smallest creature can do great things.",
-    example: { text: "Oliver and his sister Lily visited the wildlife park last", answer: "weekend" },
+    example: { prompt: "Richard went to visit a castle with his parents last ___", answer: "weekend" },
     questions: [
-      { id: "q1", prompt: "A park guide was reading Aesop's fable to all the ___.", answer: "children" },
-      { id: "q2", prompt: "The huge lion lived in a peaceful forest with many ___.", answer: "tall trees" },
-      { id: "q3", prompt: "A tiny mouse ran across the lion's paw while he was ___.", answer: "sleeping" },
-      { id: "q4", prompt: "The lion showed great ___ and let the mouse go free.", answer: "kindness" },
-      { id: "q5", prompt: "Hunters caught the lion in a heavy ___.", answer: "net" },
-      { id: "q6", prompt: "The brave mouse used his ___ to cut the ropes.", answer: "sharp teeth" },
-      { id: "q7", prompt: "The children learned that even the smallest ___ can do great things.", answer: "creature" }
+      { id: "q1", prompt: "Where was the lion sleeping at the beginning?", answer: "under a tall tree" },
+      { id: "q2", prompt: "How did the mouse free the lion from the net?", answer: "chewed the ropes" },
+      { id: "q3", prompt: "What did the lion promise the mouse?", answer: "to be his friend forever" },
+      { id: "q4", prompt: "Who trapped the lion in the forest?", answer: "hunters with strong ropes" },
+      { id: "q5", prompt: "What material was the net made of?", answer: "thick ropes" },
+      { id: "q6", prompt: "Why did the mouse help the lion?", answer: "because he promised to return the favor" },
+      { id: "q7", prompt: "How did they feel after the rescue?", answer: "grateful and loyal friends" }
     ]
   },
   rw_part_1: null,

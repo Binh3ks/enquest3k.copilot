@@ -1,173 +1,185 @@
-/**
- * Week 35 Gold Standard Data — Listening Hub
- * Theme: "The Best Day Ever: Mountain Camping"
- * Cambridge A2 Flyers Full Exam Standard Audio & Scripts
- */
-
-import dictation from './dictation.js';
-import shadowing from './shadowing.js';
-import singaporeMath from './singapore_math.js';
-import logicScience from './logic_science.js';
-
-export const listeningHubData = {
-  week: 35,
-  theme: "The Best Day Ever: Mountain Camping",
-  dictation,
-  shadowing,
-  singapore_math: singaporeMath,
-  science_lab: logicScience,
-
-  // Cambridge Listening Part 2 (Secret Notes / Notepad Note Completer)
-  listening_p2_notes: [
-    { id: 1, label: "Trip Destination", hint: "Where did they go?", target: "Pine Valley", audio_text: "The family went camping at Pine Valley Mountain." },
-    { id: 2, label: "Tent Color", hint: "What color was the tent?", target: "blue", audio_text: "Dad and the boys set up a large blue tent on the grass." },
-    { id: 3, label: "Afternoon Activity", hint: "What did they do near stream?", target: "hiking", audio_text: "In the afternoon, they went hiking along the forest stream." },
-    { id: 4, label: "Evening Treat", hint: "What did they roast?", target: "marshmallows", audio_text: "They sat around the fire and roasted sweet marshmallows." },
-    { id: 5, label: "Night View", hint: "What was shining above?", target: "starry sky", audio_text: "Everyone looked up at the clear starry sky before bed." }
-  ],
-
-  // Cambridge Listening Part 1 (SVG Line Matcher — Campsite Scene)
+// Pure Generated Listening Hub for Week 35
+export const listeningHub = {
   listening_p1: {
-    image_url: '/images/week35/w35_listening_p1_scene.jpg',
-    audio_url: '/audio/week35/listening_p1_full.mp3',
-    passage_audio_script: `Nova: Look at Part 1. Now look at the picture. Listen and look. There is one example.
-Girl: Look at our family campsite in Pine Valley! It was such a wonderful day.
-Man: Oh yes! I can see a boy pitching the blue tent with his father. Is that Oliver?
-Girl: Yes, that is Oliver. He is holding the tent pole carefully.
-Man: That is very helpful of him.
-Nova: Can you see the line? This is an example. Now you listen and draw lines.
-Girl: Can you see the girl holding a wooden stick with a marshmallow?
-Man: Ah yes! She is wearing a green sweater and smiling by the fire.
-Girl: That's Lily! She loves roasting marshmallows over the warm campfire.
-Man: Look near the forest stream! There is a boy carrying a red backpack.
-Girl: That is Harry. He just finished hiking along the mountain trail.
-Man: Who is that man sitting on the wooden log playing a guitar?
-Girl: That is Uncle Robert. He was singing cheerful campfire songs for us.
-Man: Look near the tall pine tree. Is that a woman taking photographs?
-Girl: Yes, that is Aunt Sarah. She was photographing the golden sunset over the lake.
-Man: Now look at the boy shining a flashlight into the tent.
-Girl: That is Jack. He is looking for his cozy sleeping bag before bedtime.`,
+    image_url: "/images/week35/w35_listening_p1_scene.jpg",
+    audio_url: "/audio/week35/listening_p1_full.mp3",
+    passage_audio_script: `Man: Look at Part 1. Now look at the picture. Listen and look. There is one example.
+Girl: I can see a big animal sleeping under the tree!
+Man: Yes, that is Leo the lion. He is resting peacefully.
+Girl: Can you see the example line? Now you listen and draw lines.
+Girl: Can you see the tiny mouse running near the lion's front paw?
+Man: Yes, that is Milo the mouse. He is looking for seeds.
+Girl: Who is that man hiding behind the bushes with a rope net?
+Man: That is Hunter Jack. He is setting a trap between the trees.
+Girl: Look up on the high branch! Who is that wise owl?
+Man: That is Oliver the owl. He is watching the whole forest.
+Girl: Look near the stream! There is a little bird singing.
+Man: That is Bella the bird. She has colorful feathers.
+Girl: Who is the white rabbit drinking water at the riverbank?
+Man: That is Rob the rabbit. He is hopping gently.`,
     names: [
-      { id: 'n1', text: 'Oliver', target_id: 't1', isExample: true },
-      { id: 'n2', text: 'Lily', target_id: 't2' },
-      { id: 'n3', text: 'Harry', target_id: 't3' },
-      { id: 'n4', text: 'Uncle Robert', target_id: 't4' },
-      { id: 'n5', text: 'Aunt Sarah', target_id: 't5' },
-      { id: 'n6', text: 'Jack', target_id: 't6' }
+      { id: "n1", text: "Leo the Lion", target_id: "t1", isExample: true },
+      { id: "n2", text: "Milo the Mouse", target_id: "t2" },
+      { id: "n3", text: "Hunter Jack", target_id: "t3" },
+      { id: "n4", text: "Oliver the Owl", target_id: "t4" },
+      { id: "n5", text: "Bella the Bird", target_id: "t5" },
+      { id: "n6", text: "Rob the Rabbit", target_id: "t6" },
+      { id: "n7", text: "Sammy the Squirrel", target_id: null }
     ],
     targets: [
-      { id: 't1', label: 'Oliver (Boy holding blue tent pole on left)', x: 30, y: 55, isExample: true },
-      { id: 't2', label: 'Lily (Girl roasting marshmallow by fire)', x: 55, y: 65 },
-      { id: 't3', label: 'Harry (Boy with red backpack by stream)', x: 18, y: 70 },
-      { id: 't4', label: 'Uncle Robert (Man playing guitar on log)', x: 70, y: 60 },
-      { id: 't5', label: 'Aunt Sarah (Woman taking sunset photos)', x: 82, y: 40 },
-      { id: 't6', label: 'Jack (Boy shining flashlight near tent)', x: 40, y: 48 }
+      { id: "t1", label: "Leo (Large sleeping lion under tree)", x: 45, y: 55, isExample: true },
+      { id: "t2", label: "Milo (Tiny mouse on mossy rock)", x: 30, y: 70 },
+      { id: "t3", label: "Hunter Jack (Man holding rope behind bush)", x: 80, y: 50 },
+      { id: "t4", label: "Oliver (Wise owl on high branch)", x: 65, y: 25 },
+      { id: "t5", label: "Bella (Colorful bird near stream)", x: 50, y: 18 },
+      { id: "t6", label: "Rob (White rabbit drinking at riverbank)", x: 18, y: 75 }
     ]
   },
 
-  // Cambridge Listening Part 3 (Visual Matching A-H — Campsite Items)
+  listening_p2: {
+    title: "The Forest Wildlife Project",
+    audio_url: "/audio/week35/listening_p2_full.mp3",
+    example: { field_label: "Fable story title", answer: "The Lion and Mouse" },
+    fields: [
+      { id: "f1", field_label: "Lion location", answer: "under a tree" },
+      { id: "f2", field_label: "Running animal", answer: "tiny mouse" },
+      { id: "f3", field_label: "Hunter equipment", answer: "rope net" },
+      { id: "f4", field_label: "Cutting method", answer: "sharp teeth" },
+      { id: "f5", field_label: "Story moral", answer: "small friends help" }
+    ]
+  },
+
   listening_p3: {
-    passage_audio_script: `Teacher: Hello Oliver! Where did you keep all your camping supplies during the trip?
-Oliver: I organized everything carefully, Mrs. Taylor! I remember where all the items were.
-Teacher: First, where was the bright flashlight kept? Was it inside your backpack?
-Oliver: No! The flashlight was placed on the wooden picnic table near the campfire.
-Teacher: Excellent. And what about your warm sleeping bag? Where did you put that?
-Oliver: My sleeping bag was unrolled inside the blue family tent on the soft mat.
-Teacher: Right. And where did Dad keep the box of sweet marshmallows?
-Oliver: Dad kept the marshmallows inside the metal cooler box near the car.
-Teacher: Good idea! What about your camera? Did you take photos of the wildlife?
-Oliver: Yes! My camera was hanging on the pine branch beside our tent.
-Teacher: And what about your water bottle? Was that in your hand while hiking?
-Oliver: Yes, my water bottle was in the side pocket of my green hiking backpack!`,
+    example: { name: "Wooden Trap", target_letter: "A" },
     items: [
-      { id: 1, name: 'Bright Flashlight', target_letter: 'A', audio_url: '/audio/week35/listening_p3_item1.mp3', audio_text: "Teacher: Where was the bright flashlight kept?\nOliver: The flashlight was placed on the wooden picnic table near the campfire." },
-      { id: 2, name: 'Warm Sleeping Bag', target_letter: 'B', audio_url: '/audio/week35/listening_p3_item2.mp3', audio_text: "Teacher: And what about your warm sleeping bag?\nOliver: My sleeping bag was unrolled inside the blue family tent on the soft mat." },
-      { id: 3, name: 'Sweet Marshmallows', target_letter: 'C', audio_url: '/audio/week35/listening_p3_item3.mp3', audio_text: "Teacher: Where did Dad keep the box of sweet marshmallows?\nOliver: Dad kept the marshmallows inside the metal cooler box near the car." },
-      { id: 4, name: 'Digital Camera', target_letter: 'D', audio_url: '/audio/week35/listening_p3_item4.mp3', audio_text: "Teacher: Where was your camera?\nOliver: My camera was hanging on the pine branch beside our tent." },
-      { id: 5, name: 'Water Bottle', target_letter: 'E', audio_url: '/audio/week35/listening_p3_item5.mp3', audio_text: "Teacher: And what about your water bottle?\nOliver: My water bottle was in the side pocket of my green hiking backpack!" }
+      { id: 1, name: "Wooden Trap", target_letter: "A", audio_url: "/audio/week35/listening_p3_item1.mp3" },
+      { id: 2, name: "Thick Rope", target_letter: "B", audio_url: "/audio/week35/listening_p3_item2.mp3" },
+      { id: 3, name: "Forest Map", target_letter: "C", audio_url: "/audio/week35/listening_p3_item3.mp3" },
+      { id: 4, name: "Water Bottle", target_letter: "D", audio_url: "/audio/week35/listening_p3_item4.mp3" },
+      { id: 5, name: "Compass", target_letter: "E", audio_url: "/audio/week35/listening_p3_item5.mp3" }
     ],
     cards: [
-      { letter: 'A', name: 'Wooden Picnic Table', location_name: 'Picnic Table', image_url: '/images/week35/picnic_table.jpg' },
-      { letter: 'B', name: 'Inside Blue Tent', location_name: 'Blue Tent', image_url: '/images/week35/inside_tent.jpg' },
-      { letter: 'C', name: 'Metal Cooler Box', location_name: 'Cooler Box', image_url: '/images/week35/cooler_box.jpg' },
-      { letter: 'D', name: 'Pine Tree Branch', location_name: 'Tree Branch', image_url: '/images/week35/tree_branch.jpg' },
-      { letter: 'E', name: 'Green Backpack Pocket', location_name: 'Backpack Pocket', image_url: '/images/week35/backpack_pocket.jpg' },
-      { letter: 'F', name: 'Rocky Stream Bank', location_name: 'Stream Bank', image_url: '/images/week35/stream_bank.jpg' },
-      { letter: 'G', name: 'Car Trunk', location_name: 'Car Trunk', image_url: '/images/week35/car_trunk.jpg' },
-      { letter: 'H', name: 'Campfire Circle', location_name: 'Campfire Circle', image_url: '/images/week35/campfire_circle.jpg' }
+      { letter: "A", name: "Wooden Trap", location_name: "Forest Clearing", image_url: "/images/week35/card_a.jpg" },
+      { letter: "B", name: "Thick Rope", location_name: "Hunter Camp", image_url: "/images/week35/card_b.jpg" },
+      { letter: "C", name: "Forest Map", location_name: "Tree Hollow", image_url: "/images/week35/card_c.jpg" },
+      { letter: "D", name: "Water Bottle", location_name: "Riverbank", image_url: "/images/week35/card_d.jpg" },
+      { letter: "E", name: "Compass", location_name: "Lookout Rock", image_url: "/images/week35/card_e.jpg" },
+      { letter: "F", name: "Flashlight", location_name: "Dark Cave", image_url: "/images/week35/card_f.jpg" },
+      { letter: "G", name: "Backpack", location_name: "Base Tent", image_url: "/images/week35/card_g.jpg" },
+      { letter: "H", name: "Binoculars", location_name: "Wooden Tower", image_url: "/images/week35/card_h.jpg" }
     ]
   },
 
-  // Cambridge Listening Part 4 (3-Picture Options with Distractors)
-  listening_p4_questions: [
-    {
-      id: 1,
-      question: "What was the weather like when the family arrived?",
-      audio_text: "Boy: Was it raining when you reached Pine Valley?\nGirl: No, it was warm and sunny with a gentle mountain breeze.",
-      correct_option: "A",
-      options: [
-        { id: "A", label: "Sunny and warm", image_url: "/images/week35/p4_q1_a.jpg" },
-        { id: "B", label: "Rainy thunderstorm", image_url: "/images/week35/p4_q1_b.jpg" },
-        { id: "C", label: "Snowy cold", image_url: "/images/week35/p4_q1_c.jpg" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What animals did the children spot during their hike?",
-      audio_text: "Boy: Did you see any wild deer near the stream?\nGirl: No, we saw two playful squirrels jumping in the pine trees.",
-      correct_option: "B",
-      options: [
-        { id: "A", label: "Two brown bears", image_url: "/images/week35/p4_q2_a.jpg" },
-        { id: "B", label: "Two playful squirrels", image_url: "/images/week35/p4_q2_b.jpg" },
-        { id: "C", label: "Wild mountain deer", image_url: "/images/week35/p4_q2_c.jpg" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What did Dad cook for dinner over the campfire?",
-      audio_text: "Boy: Did Dad cook fish from the stream?\nGirl: No, we cooked delicious sweet corn and roasted sausages on sticks.",
-      correct_option: "C",
-      options: [
-        { id: "A", label: "Fried fish", image_url: "/images/week35/p4_q3_a.jpg" },
-        { id: "B", label: "Chicken soup", image_url: "/images/week35/p4_q3_b.jpg" },
-        { id: "C", label: "Sweet corn and sausages", image_url: "/images/week35/p4_q3_c.jpg" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What musical instrument did Uncle Robert play?",
-      audio_text: "Boy: Was Uncle Robert playing a flute by the fire?\nGirl: No, he was playing an acoustic guitar and singing songs.",
-      correct_option: "A",
-      options: [
-        { id: "A", label: "Acoustic guitar", image_url: "/images/week35/p4_q4_a.jpg" },
-        { id: "B", label: "Wooden flute", image_url: "/images/week35/p4_q4_b.jpg" },
-        { id: "C", label: "Silver trumpet", image_url: "/images/week35/p4_q4_c.jpg" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What did they see in the clear night sky before bed?",
-      audio_text: "Boy: Did you see the full moon rising?\nGirl: Yes, and we saw bright starry constellations above the mountain.",
-      correct_option: "B",
-      options: [
-        { id: "A", label: "Dark storm clouds", image_url: "/images/week35/p4_q5_a.jpg" },
-        { id: "B", label: "Starry constellations", image_url: "/images/week35/p4_q5_b.jpg" },
-        { id: "C", label: "Hot air balloon", image_url: "/images/week35/p4_q5_c.jpg" }
-      ]
-    }
-  ],
+  listening_p4: {
+    audio_url: "/audio/week35/listening_p4_full.mp3",
+    instructions: "Listen and tick the box. There is one example.",
+    questions: [
+      {
+        id: "p4_example",
+        isExample: true,
+        question_en: "Where did Milo the mouse run in the morning?",
+        audio_url: "/audio/week35/listening_p4_example.mp3",
+        audio_script: `Boy: Look at the example. Where did Milo the mouse run in the morning?\nGirl: He ran across the mossy rocks.\nBoy: Can you see the tick? Now you listen and tick the box.`,
+        options: [
+          { letter: "A", text: "Across the mossy rocks", image_url: "/images/week35/card_c.jpg" },
+          { letter: "B", text: "Near the hunter camp", image_url: "/images/week35/card_b.jpg" },
+          { letter: "C", text: "Around the water river", image_url: "/images/week35/card_d.jpg" }
+        ],
+        answer: "A"
+      },
+      {
+        id: "p4_q1",
+        question_en: "Where was the lion resting in the afternoon?",
+        audio_url: "/audio/week35/listening_p4_q1.mp3",
+        audio_script: `Boy: Question 1. Where was the lion resting in the afternoon?\nGirl: He was sleeping peacefully under a shady tree.`,
+        options: [
+          { letter: "A", text: "Under a shady tree", image_url: "/images/week35/webtoon_scene_1.png" },
+          { letter: "B", text: "Near a rocky cave", image_url: "/images/week35/card_f.jpg" },
+          { letter: "C", text: "In the grassy field", image_url: "/images/week35/card_b.jpg" }
+        ],
+        answer: "A"
+      },
+      {
+        id: "p4_q2",
+        question_en: "What trapped the lion in the forest?",
+        audio_url: "/audio/week35/listening_p4_q2.mp3",
+        audio_script: `Boy: Question 2. What trapped the lion in the forest?\nGirl: The hunters placed a heavy rope net between the trees.`,
+        options: [
+          { letter: "A", text: "A wooden cage", image_url: "/images/week35/card_a.jpg" },
+          { letter: "B", text: "A heavy rope net", image_url: "/images/week35/webtoon_scene_4.png" },
+          { letter: "C", text: "A deep ground hole", image_url: "/images/week35/card_c.jpg" }
+        ],
+        answer: "B"
+      },
+      {
+        id: "p4_q3",
+        question_en: "How did the mouse free the lion?",
+        audio_url: "/audio/week35/listening_p4_q3.mp3",
+        audio_script: `Boy: Question 3. How did the mouse free the lion?\nGirl: He chewed through the thick ropes with his sharp teeth.`,
+        options: [
+          { letter: "A", text: "Using a wooden stick", image_url: "/images/week35/card_d.jpg" },
+          { letter: "B", text: "Calling other animals", image_url: "/images/week35/card_e.jpg" },
+          { letter: "C", text: "Chewing the thick ropes", image_url: "/images/week35/webtoon_scene_5.png" }
+        ],
+        answer: "C"
+      },
+      {
+        id: "p4_q4",
+        question_en: "Who helped the lion escape?",
+        audio_url: "/audio/week35/listening_p4_q4.mp3",
+        audio_script: `Boy: Question 4. Who helped the lion escape?\nGirl: The brave little mouse chewed the ropes to free him.`,
+        options: [
+          { letter: "A", text: "The brave little mouse", image_url: "/images/week35/webtoon_scene_5.png" },
+          { letter: "B", text: "A big brown bear", image_url: "/images/week35/card_f.jpg" },
+          { letter: "C", text: "A wise gray owl", image_url: "/images/week35/card_c.jpg" }
+        ],
+        answer: "A"
+      },
+      {
+        id: "p4_q5",
+        question_en: "How did the lion feel after being freed?",
+        audio_url: "/audio/week35/listening_p4_q5.mp3",
+        audio_script: `Boy: Question 5. How did the lion feel after being freed?\nGirl: He felt grateful and relieved that his little friend saved him.`,
+        options: [
+          { letter: "A", text: "Grateful and relieved", image_url: "/images/week35/webtoon_scene_1.png" },
+          { letter: "B", text: "Angry and hungry", image_url: "/images/week35/card_b.jpg" },
+          { letter: "C", text: "Scared of the mouse", image_url: "/images/week35/card_g.jpg" }
+        ],
+        answer: "A"
+      }
+    ]
+  },
 
-  // Cambridge Listening Part 5 (Color & Write)
   listening_p5: {
-    image_url: "/images/week35/w35_listening_p5_scene.jpg",
+    image_url: "/images/week35/webtoon_scene_1.png",
+    audio_script: `Nova: Listen and colour and write. There is one example.
+Woman: Look at this picture of the forest. Can you see the tall oak tree?
+Man: Yes, I can see it.
+Woman: Good. Colour the top leaves dark green.
+Nova: Can you see the green leaves? This is an example. Now you listen and colour and write.
+Woman: Look at the lion resting on the grass. Can you see his big mane?
+Man: Yes, shall I colour it?
+Woman: Yes, colour the lion's mane golden yellow.
+Woman: Can you see the hunter's rope near the bushes? Let's write a word.
+Man: What word shall I write?
+Woman: Write the word 'TRAP' near the ropes.
+Woman: Look at the little mouse sitting on the rock.
+Man: He is so small! What colour should he be?
+Woman: Colour the little mouse grey.
+Woman: Can you see the wooden signboard near the path? Let's write the final word.
+Man: What word should I write?
+Woman: Write the word 'FRIENDS' on the signboard.`,
     instructions: [
-      { id: 1, item: "Family Tent", color: "blue", target_desc: "Color the family tent blue", audio_text: "Look at the large tent on the grass. Color it blue." },
-      { id: 2, item: "Campfire Flames", color: "orange", target_desc: "Color the warm campfire flames orange", audio_text: "Can you see the campfire? Color the flames orange." },
-      { id: 3, item: "Hiking Backpack", color: "red", target_desc: "Color the backpack by the log red", audio_text: "Now find the backpack beside the wooden log. Color it red." },
-      { id: 4, item: "Signboard", write_word: "CAMP", target_desc: "Write the word CAMP on the wooden trail sign", audio_text: "Look at the wooden sign by the path. Write the word CAMP on it." },
-      { id: 5, item: "Shining Flashlight", color: "yellow", target_desc: "Color the flashlight on the table yellow", audio_text: "Look at the flashlight on the picnic table. Color it yellow." }
+      { id: "inst_0", item: "Example Object", text: "Color the example brown", x: 10, y: 10, color: "brown", isExample: true },
+      { id: "inst_1", item: "Lion Mane", text: "Color the lion's mane golden yellow", x: 45, y: 55, color: "yellow" },
+      { id: "inst_2", item: "Rope Trap", text: "Write the word 'TRAP' near the ropes", x: 65, y: 45, word: "TRAP" },
+      { id: "inst_3", item: "Tiny Mouse", text: "Color the little mouse grey", x: 30, y: 70, color: "grey" },
+      { id: "inst_4", item: "Forest Signboard", text: "Write the word 'FRIENDS' on the signboard", x: 80, y: 30, word: "FRIENDS" },
+      { id: "inst_5", item: "Hunter's Hat", text: "Color the hat dark green", x: 90, y: 20, color: "dark green" },
+      { id: "inst_6", item: "Tree Trunk", text: "Write the word 'TREE' on the trunk", x: 15, y: 85, word: "TREE" }
     ]
   }
 };
 
-export default listeningHubData;
+export const listeningHubData = listeningHub;
+export default listeningHub;

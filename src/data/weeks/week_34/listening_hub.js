@@ -1,3 +1,4 @@
+// Pure Generated Listening Hub for Week 34
 export const listeningHub = {
   listening_p1: {
     image_url: "/images/week34/w34_listening_p1_scene.jpg",
@@ -76,13 +77,13 @@ Man: That is Rob the rabbit. He is hopping gently.`,
       {
         id: "p4_example",
         isExample: true,
-        question_en: "Where was the lion sleeping?",
-        audio_url: "/audio/week34/listening_p4_q1.mp3",
-        audio_script: `Boy: Look at the example. Where did Milo run in the morning?\nGirl: He ran across the mossy rocks.\nBoy: Can you see the tick? Now you listen and tick the box.`,
+        question_en: "Where did Milo the mouse run in the morning?",
+        audio_url: "/audio/week34/listening_p4_example.mp3",
+        audio_script: `Boy: Look at the example. Where did Milo the mouse run in the morning?\nGirl: He ran across the mossy rocks.\nBoy: Can you see the tick? Now you listen and tick the box.`,
         options: [
-          { letter: "A", text: "Under a tall oak tree", image_url: "/images/week34/webtoon_scene_1.png" },
-          { letter: "B", text: "Inside a dark stone cave", image_url: "/images/week34/card_f.jpg" },
-          { letter: "C", text: "Near a wooden camp", image_url: "/images/week34/card_b.jpg" }
+          { letter: "A", text: "Across the mossy rocks", image_url: "/images/week34/card_c.jpg" },
+          { letter: "B", text: "Near the hunter camp", image_url: "/images/week34/card_b.jpg" },
+          { letter: "C", text: "Around the water river", image_url: "/images/week34/card_d.jpg" }
         ],
         answer: "A"
       },
@@ -124,27 +125,27 @@ Man: That is Rob the rabbit. He is hopping gently.`,
       },
       {
         id: "p4_q4",
-        question_en: "What does the oxpecker bird eat on the zebra?",
+        question_en: "Who helped the lion escape?",
         audio_url: "/audio/week34/listening_p4_q4.mp3",
-        audio_script: `Boy: Question 4. What does the oxpecker bird eat on the zebra?\nGirl: The bird eats small bugs on the zebra's back.`,
+        audio_script: `Boy: Question 4. Who helped the lion escape?\nGirl: The brave little mouse chewed the ropes to free him.`,
         options: [
-          { letter: "A", text: "Small bugs on zebra", image_url: "/images/week34/explore_cover_w34.jpg" },
-          { letter: "B", text: "Sweet red berries", image_url: "/images/week34/card_g.jpg" },
-          { letter: "C", text: "Green grass seeds", image_url: "/images/week34/card_h.jpg" }
+          { letter: "A", text: "The brave little mouse", image_url: "/images/week34/webtoon_scene_5.png" },
+          { letter: "B", text: "A big brown bear", image_url: "/images/week34/card_f.jpg" },
+          { letter: "C", text: "A wise gray owl", image_url: "/images/week34/card_c.jpg" }
         ],
         answer: "A"
       },
       {
         id: "p4_q5",
-        question_en: "Where did the lion and mouse go after they became friends?",
+        question_en: "How did the lion feel after being freed?",
         audio_url: "/audio/week34/listening_p4_q5.mp3",
-        audio_script: `Boy: Question 5. Where did the lion and mouse go after they became friends?\nGirl: They walked together to the sunny forest clearing.`,
+        audio_script: `Boy: Question 5. How did the lion feel after being freed?\nGirl: He felt grateful and relieved that his little friend saved him.`,
         options: [
-          { letter: "A", text: "To the hunter village", image_url: "/images/week34/card_b.jpg" },
-          { letter: "B", text: "To the sunny forest clearing", image_url: "/images/week34/webtoon_scene_5.png" },
-          { letter: "C", text: "To the dark mountains", image_url: "/images/week34/card_f.jpg" }
+          { letter: "A", text: "Grateful and relieved", image_url: "/images/week34/webtoon_scene_1.png" },
+          { letter: "B", text: "Angry and hungry", image_url: "/images/week34/card_b.jpg" },
+          { letter: "C", text: "Scared of the mouse", image_url: "/images/week34/card_g.jpg" }
         ],
-        answer: "B"
+        answer: "A"
       }
     ]
   },
@@ -173,7 +174,9 @@ Woman: Write the word 'FRIENDS' on the signboard.`,
       { id: "inst_1", item: "Lion Mane", text: "Color the lion's mane golden yellow", x: 45, y: 55, color: "yellow" },
       { id: "inst_2", item: "Rope Trap", text: "Write the word 'TRAP' near the ropes", x: 65, y: 45, word: "TRAP" },
       { id: "inst_3", item: "Tiny Mouse", text: "Color the little mouse grey", x: 30, y: 70, color: "grey" },
-      { id: "inst_4", item: "Forest Signboard", text: "Write the word 'FRIENDS' on the signboard", x: 80, y: 30, word: "FRIENDS" }
+      { id: "inst_4", item: "Forest Signboard", text: "Write the word 'FRIENDS' on the signboard", x: 80, y: 30, word: "FRIENDS" },
+      { id: "inst_5", item: "Hunter's Hat", text: "Color the hat dark green", x: 90, y: 20, color: "dark green" },
+      { id: "inst_6", item: "Tree Trunk", text: "Write the word 'TREE' on the trunk", x: 15, y: 85, word: "TREE" }
     ]
   }
 };
