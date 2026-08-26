@@ -141,18 +141,18 @@ async function runGate17() {
 
   let allComponentsExist = true;
   for (const item of allParts) {
-    const compPath1 = path.join(rootDir, 'src/components/cambridge', item.component);
-    const compPath2 = path.join(rootDir, 'src/components/common', item.component);
-    const compPath3 = path.join(rootDir, 'src/modules/write_speak', item.component);
-    const exists = fs.existsSync(compPath1) || fs.existsSync(compPath2) || fs.existsSync(compPath3);
+    const absPath = path.resolve(rootDir, 'src/components/cambridge', item.component);
+    const exists = fs.existsSync(absPath);
+    console.log(`[GATE 17 CHECK] Part ${item.part.padEnd(3)} -> ${absPath} : ${exists ? 'EXISTS' : 'NOT FOUND'}`);
     componentExistence.push({
       part: item.part,
       file: item.component,
+      absPath,
       exists
     });
     if (!exists) {
       allComponentsExist = false;
-      failReasons.push(`INV-8 failed: Component ${item.component} for part ${item.part} does not exist`);
+      failReasons.push(`INV-8 failed: Component ${item.component} for part ${item.part} does not exist at ${absPath}`);
     }
   }
 
