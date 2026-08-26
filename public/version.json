@@ -1,9 +1,9 @@
 {
-  "commit": "97e83cad3aca50139514ef7e55cb5776676d82be",
-  "git_commit": "97e83cad3aca50139514ef7e55cb5776676d82be",
-  "shortCommit": "97e83cad",
-  "message": "docs(agents): add Cambridge Mechanic Fidelity Doctrine",
-  "builtAt": "2026-08-26T02:21:07.715Z",
-  "build_timestamp": "2026-08-26T02:21:07.715Z",
+  "commit": "e9b8b984cbac81cd352f3715371197d3f3dee3a5",
+  "git_commit": "e9b8b984cbac81cd352f3715371197d3f3dee3a5",
+  "shortCommit": "e9b8b984",
+  "message": "fix(examples): apply Round T example integrity fixes [round-t]",
+  "builtAt": "2026-08-26T02:21:15.117Z",
+  "build_timestamp": "2026-08-26T02:21:15.118Z",
   "env": "production"
 }
