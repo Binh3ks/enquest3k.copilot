@@ -61,10 +61,14 @@ export function InlineTextClozeDropdown({ customData, data: propData, onComplete
 
   const exampleBlank = useMemo(() => {
     if (activeData?.example) {
+      const blankId = activeData.example.blank !== undefined 
+        ? activeData.example.blank 
+        : (activeData.example.id !== undefined ? activeData.example.id : 0);
       return {
-        id: activeData.example.blank || activeData.example.id || 1,
+        id: blankId,
         target: activeData.example.correct || activeData.example.target || "forests",
-        options: activeData.example.options || ["forests", "forest", "a forest"]
+        options: activeData.example.options || ["forests", "forest", "a forest"],
+        isExample: true
       };
     }
     return null;
