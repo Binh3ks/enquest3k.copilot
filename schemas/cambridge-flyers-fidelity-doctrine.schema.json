@@ -1,0 +1,321 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://engquest3k.edu.vn/schemas/cambridge-flyers-fidelity-doctrine.schema.json",
+  "title": "Cambridge A2 Flyers Mechanic Fidelity Doctrine Schema",
+  "description": "Authoritative machine-enforced schema and invariant doctrine for Cambridge A2 Flyers 16-part mechanics.",
+  "doctrineVersion": "1.0.0",
+  "officialSourceUrl": "https://www.cambridgeenglish.org/exams-and-tests/flyers/",
+  "type": "object",
+  "required": [
+    "doctrineVersion",
+    "examMeta",
+    "listening",
+    "readingWriting",
+    "speaking",
+    "knownDeviationsRegistry"
+  ],
+  "properties": {
+    "doctrineVersion": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "examMeta": {
+      "type": "object",
+      "required": ["totalParts", "skills", "totalScoredQuestions"],
+      "properties": {
+        "totalParts": {
+          "type": "integer",
+          "enum": [16]
+        },
+        "skills": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "totalScoredQuestions": {
+          "type": "integer",
+          "enum": [69]
+        }
+      }
+    },
+    "listening": {
+      "type": "object",
+      "required": ["parts"],
+      "properties": {
+        "parts": {
+          "type": "object",
+          "required": ["L1", "L2", "L3", "L4", "L5"],
+          "properties": {
+            "L1": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "exampleCount", "scoredQuestionCount", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [1] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "exampleCount": { "type": "integer", "enum": [1] },
+                "scoredQuestionCount": { "type": "integer", "enum": [5] },
+                "targetNamesCount": { "type": "integer", "enum": [5] },
+                "distractorNamesCount": { "type": "integer", "enum": [1] },
+                "mechanicComponent": { "type": "string", "enum": ["SVGLineMatcher.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "L2": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "exampleCount", "scoredQuestionCount", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [2] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "exampleCount": { "type": "integer", "enum": [1] },
+                "scoredQuestionCount": { "type": "integer", "enum": [5] },
+                "mechanicComponent": { "type": "string", "enum": ["NotepadNoteCompleter.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "L3": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "exampleCount", "scoredQuestionCount", "cardCount", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [3] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "exampleCount": { "type": "integer", "enum": [1] },
+                "scoredQuestionCount": { "type": "integer", "enum": [5] },
+                "cardCount": { "type": "integer", "enum": [8] },
+                "mechanicComponent": { "type": "string", "enum": ["VisualMatchingAH.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "L4": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "exampleCount", "scoredQuestionCount", "optionsPerQuestion", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [4] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "exampleCount": { "type": "integer", "enum": [1] },
+                "scoredQuestionCount": { "type": "integer", "enum": [5] },
+                "optionsPerQuestion": { "type": "integer", "enum": [3] },
+                "mechanicComponent": { "type": "string", "enum": ["MultipleChoice3Pic.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "L5": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "exampleCount", "scoredQuestionCount", "colorInstructions", "writeInstructions", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [5] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "exampleCount": { "type": "integer", "enum": [1] },
+                "scoredQuestionCount": { "type": "integer", "enum": [5] },
+                "colorInstructions": { "type": "integer", "enum": [3] },
+                "writeInstructions": { "type": "integer", "enum": [2] },
+                "mechanicComponent": { "type": "string", "enum": ["SVGColorAndWrite.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            }
+          }
+        }
+      }
+    },
+    "readingWriting": {
+      "type": "object",
+      "required": ["parts"],
+      "properties": {
+        "parts": {
+          "type": "object",
+          "required": ["R1", "R2", "R3", "R4", "R5", "R6", "R7"],
+          "properties": {
+            "R1": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "exampleCount", "scoredQuestionCount", "definitionsCount", "wordBankCount", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [1] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "exampleCount": { "type": "integer", "enum": [1] },
+                "scoredQuestionCount": { "type": "integer", "enum": [10] },
+                "definitionsCount": { "type": "integer", "enum": [10] },
+                "wordBankCount": { "type": "integer", "enum": [15] },
+                "mechanicComponent": { "type": "string", "enum": ["WordBankMatchingGrid.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "R2": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "exampleCount", "scoredQuestionCount", "dialogueTurns", "optionsCount", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [2] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "exampleCount": { "type": "integer", "enum": [1] },
+                "scoredQuestionCount": { "type": "integer", "enum": [5] },
+                "dialogueTurns": { "type": "integer", "enum": [5] },
+                "optionsCount": { "type": "integer", "enum": [8] },
+                "mechanicComponent": { "type": "string", "enum": ["DialogueAHCompleter.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "R3": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "exampleCount", "scoredQuestionCount", "gapFillQuestions", "titleChoiceQuestions", "wordBankCount", "titleOptionsCount", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [3] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "exampleCount": { "type": "integer", "enum": [1] },
+                "scoredQuestionCount": { "type": "integer", "enum": [6] },
+                "gapFillQuestions": { "type": "integer", "enum": [5] },
+                "titleChoiceQuestions": { "type": "integer", "enum": [1] },
+                "wordBankCount": { "type": "integer", "enum": [10] },
+                "titleOptionsCount": { "type": "integer", "enum": [3] },
+                "mechanicComponent": { "type": "string", "enum": ["RWPart3ClozeWithTitle.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "R4": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "exampleCount", "scoredQuestionCount", "choicesPerBlank", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [4] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "exampleCount": { "type": "integer", "enum": [1] },
+                "scoredQuestionCount": { "type": "integer", "enum": [10] },
+                "choicesPerBlank": { "type": "integer", "enum": [3] },
+                "mechanicComponent": { "type": "string", "enum": ["InlineTextClozeDropdown.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "R5": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "exampleCount", "scoredQuestionCount", "wordsPerAnswerRange", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [5] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "exampleCount": { "type": "integer", "enum": [1] },
+                "scoredQuestionCount": { "type": "integer", "enum": [7] },
+                "wordsPerAnswerRange": { "type": "string", "enum": ["1-4 words"] },
+                "mechanicComponent": { "type": "string", "enum": ["TextExtractionCompleter.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "R6": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "exampleCount", "scoredQuestionCount", "wordsPerGap", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [6] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "exampleCount": { "type": "integer", "enum": [1] },
+                "scoredQuestionCount": { "type": "integer", "enum": [5] },
+                "wordsPerGap": { "type": "integer", "enum": [1] },
+                "mechanicComponent": { "type": "string", "enum": ["OpenClozeCompleter.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "R7": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "picturesCount", "minWords", "scoredQuestionCount", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [7] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "picturesCount": { "type": "integer", "enum": [3] },
+                "minWords": { "type": "integer", "enum": [20] },
+                "scoredQuestionCount": { "type": "integer", "enum": [1] },
+                "mechanicComponent": { "type": "string", "enum": ["StoryWriting.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            }
+          }
+        }
+      }
+    },
+    "speaking": {
+      "type": "object",
+      "required": ["parts"],
+      "properties": {
+        "parts": {
+          "type": "object",
+          "required": ["S1", "S2", "S3", "S4"],
+          "properties": {
+            "S1": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "differencesCount", "hotspotCoordinateSource", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [1] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "differencesCount": { "type": "integer", "enum": [4] },
+                "hotspotCoordinateSource": { "type": "string", "enum": ["calibration-file-derived"] },
+                "mechanicComponent": { "type": "string", "enum": ["FindDifferencesInteractive.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "S2": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "infoGapFields", "knownFalseMin", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [2] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "infoGapFields": { "type": "integer", "enum": [4] },
+                "knownFalseMin": { "type": "integer", "enum": [2] },
+                "mechanicComponent": { "type": "string", "enum": ["InformationExchangeP2.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "S3": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "totalPictures", "examinerNarrates", "studentNarrates", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [3] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "totalPictures": { "type": "integer", "enum": [4] },
+                "examinerNarrates": { "type": "integer", "enum": [1] },
+                "studentNarrates": { "type": "integer", "enum": [3] },
+                "mechanicComponent": { "type": "string", "enum": ["PictureStoryContinuation.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            },
+            "S4": {
+              "type": "object",
+              "required": ["partNumber", "name", "mechanic", "mustExistAsStandaloneObject", "scoredQuestionCount", "topicPoolMinimum", "mechanicComponent", "componentExistenceVerified"],
+              "properties": {
+                "partNumber": { "type": "integer", "enum": [4] },
+                "name": { "type": "string" },
+                "mechanic": { "type": "string" },
+                "mustExistAsStandaloneObject": { "type": "boolean", "enum": [true] },
+                "scoredQuestionCount": { "type": "integer", "minimum": 3, "maximum": 5 },
+                "topicPoolMinimum": { "type": "integer", "enum": [4] },
+                "mechanicComponent": { "type": "string", "enum": ["PersonalQuestionsCompleter.jsx"] },
+                "componentExistenceVerified": { "type": "boolean", "enum": [true] }
+              }
+            }
+          }
+        }
+      }
+    },
+    "knownDeviationsRegistry": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "part", "description", "severity", "status"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^DEV-\\d{3}$" },
+          "part": { "type": "string" },
+          "description": { "type": "string" },
+          "severity": { "type": "string", "enum": ["RED", "YELLOW", "MINOR"] },
+          "status": { "type": "string", "enum": ["open", "resolved"] }
+        }
+      }
+    }
+  }
+}

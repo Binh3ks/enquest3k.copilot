@@ -107,24 +107,18 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
 
 ## 🎯 CAMBRIDGE MECHANIC FIDELITY DOCTRINE (W33+)
 
-| Part | Mechanic | Spec |
-|---|---|---|
-| L1 | Draw lines | 1ex + 5 targets + 1 distractor name |
-| L2 | Form-fill | 1ex + 5 fields |
-| L3 | Match cards A-H | 1ex + 5 items + 8 cards |
-| L4 | 3-pic MCQ dialogue | 1ex + 5 questions × 3 options |
-| L5 | Color & Write | 1ex + 5-6 instructions |
-| R1 | Word bank | 1ex + 10 defs + 15 words |
-| R2 | Dialogue A-H | 1ex + 5 turns + 8 options |
-| R3 | Cloze + title | 1ex + 5 blanks + 10 words + 3 titles |
-| R4 | Grammar 3-choice | 1ex + 9 blanks × 3 options |
-| R5 | Text extraction | 1ex + 7 questions (1-4 words) |
-| R6 | Open cloze | 1ex + 5 gaps (1 word) |
-| R7 | 3-pic story | ≥20 words |
-| S1 | Find differences | 2 pics + 4 hotspots |
-| S2 | Info exchange | known:false + examiner Qs |
-| S3 | Picture story | 5 pics + examiner intro |
-| S4 | Personal questions | 4 questions |
+**Single Source of Truth**: `schemas/cambridge-flyers-fidelity-doctrine.schema.json`
+(draft-07, doctrineVersion 1.0.0, verified 2026-08-26)
+
+Quy tắc bắt buộc:
+1. Mọi `blueprint.json` hoặc normalized export của `*_hub.js`
+   PHẢI validate thành công với schema trước khi Gate15/16 pass.
+2. Gate17 (`gate17_fidelity_doctrine.mjs`) chạy validation bằng ajv
+   + thực thi các `x-invariants` runtime (JSON Schema không biểu diễn được).
+3. Gate16 TỪ CHỐI gắn nhãn "Flyers-compliant" cho bất kỳ tuần nào
+   còn entry `status: "open"` trong `knownDeviationsRegistry` áp dụng.
+4. Schema là frozen — muốn sửa phải bump `doctrineVersion` MAJOR
+   và re-verify vs officialSourceUrl trước khi merge.
 
 
 
