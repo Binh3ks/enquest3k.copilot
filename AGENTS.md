@@ -279,3 +279,30 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
    - **Trục ngôn ngữ**: Bắt buộc có micro-decision ngôn ngữ (chọn chips dạng QUÁ KHỨ có chủ ngữ + chọn connector `because` / `so` / `but` ở Step 2 & 3).
    - **Distractor Feedback**: Khi chọn chip nhiễu, hiển thị ngay thông báo `🔬 The Data Card does not show this fact. A science report only uses observed data!` kèm hiệu ứng rung.
    - **Ladder Levels**: L1-L2 (Grade 1), L3 (Grades 2-3), L4-L5 (Grades 4-5), L6 (Mock Exam).
+
+## 🎨 MANDATORY TOGETHER AI IMAGE GENERATION ENGINE (W33+) — 2026-08-26
+**QUY TẮC BẤT BIẾN DUY NHẤT VỀ SINH HÌNH ẢNH:**
+1. **100% Ảnh Trong Toàn Bộ Ứng Dụng BẮT BUỘC Dùng Together AI**:
+   - Toàn bộ hình ảnh (Covers, Webtoons, Flashcards / Exam Cards A–H, Scene Tìm Khác Biệt Scene A/B, Picture Story 4 Tranh, Listening P1 Scene, v.v.) **BẮT BUỘC sinh trực tiếp qua Together AI API** với model `black-forest-labs/FLUX.1-schnell`.
+   - Endpoint: `https://api.together.xyz/v1/images/generations` | Payload: `model: "black-forest-labs/FLUX.1-schnell"`, `width: 1024, height: 1024, steps: 4`.
+   - ❌ **CẤM TUYỆT ĐỐI**:
+     - Nghiêm cấm dùng PIL `ImageDraw` vẽ hình học / gradient giả lập ảnh bài tập (như trường hợp `mossy_rocks.jpg`).
+     - Nghiêm cấm copy alias hoặc tái sử dụng ảnh lệch chủ đề giữa các tuần (ví dụ: dùng ảnh trường học W33 cho bài rừng rậm W34).
+2. **Phong cách Thẩm mỹ Thống nhất (Pixar 3D Aesthetic)**:
+   - Mọi prompt BẮT BUỘC theo cấu trúc chuẩn: `"Cute 3D illustration of [MÔ TẢ CHI TIẾT ĐỐI TƯỢNG VÀ BỐI CẢNH], Pixar animation style, vibrant colors, soft lighting, clean composition, no text."`
+
+## 📍 FROZEN HOTSPOT & PIN CALIBRATION PIPELINE (S1 & L1 STANDARDS) — 2026-08-26
+**Kế thừa chuẩn hóa từ W33 Golden Master (15 Shields):**
+1. **Speaking Part 1 — Find Differences (S1 Hotspots)**:
+   - **Phân Bổ 4 Điểm Khác Biệt Rõ Ràng (Min Pairwise Distance >= 25%)**:
+     - Scene A và Scene B phải có đúng **4 điểm khác biệt** phân bố đều trên 4 góc / 4 phần tư ảnh (tương tự W33: d1(20,22), d2(78,22), d3(30,64), d4(80,70) với khoảng cách tối thiểu 43.2%).
+     - Tuyệt đối không đặt 2 điểm khác biệt sát nhau (< 20%) để chống chồng lấn hitbox (48x48px) trên màn hình di động/tablet.
+   - **Hiệu Chỉnh Pixel Diff Tự Động**:
+     - Chạy `node scripts/calibrate_find_differences.mjs <weekNum>` để phát hiện cụm pixel diff thật qua Canvas k-means clustering và ghi vào `docs/week<weekNum>_hotspot_calibration.json`.
+     - Tọa độ trong `speaking_hub.js` (`x, y`) BẮT BUỘC khớp centroids đã hiệu chỉnh (±1%).
+2. **Listening Part 1 — Draw the Lines (L1 Pins)**:
+   - Tuân thủ nghiêm ngặt skill `.agents/skills/listening-p1-pins/SKILL.md`:
+   - **Cấu trúc 7 Tên & 6 Mục Tiêu**:
+     - `names`: Đúng 7 phần tử (1 Example `isExample: true`, 5 Scored names có `target_id`, 1 Distractor có `target_id: null`).
+     - `targets`: Đúng 6 phần tử (1 Example target `isExample: true`, 5 Scored targets).
+   - **Tọa độ Ghim Chuẩn**: Tọa độ % theo image-space (0–100%) trỏ chính xác vào vùng ngực/vai nhân vật trên ảnh `w<weekNum>_listening_p1_scene.jpg`.
