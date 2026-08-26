@@ -306,37 +306,37 @@ export const readingHub = {
 
   rw_part4: {
     instructions: "Read the text. Choose the correct words and write them on the lines.",
-    story_text: "Lions are powerful animals that live in [1]_____. They spend many hours [2]_____ during the hottest parts of the day. A tiny mouse is very small [3]_____ it has sharp front teeth. When the lion was trapped [4]_____ a rope net, the little mouse rushed [5]_____ help him immediately. He chewed [6]_____ the thick cords until the lion escaped. Animals in the wild often [7]_____ each other to stay safe. This fable teaches us [8]_____ even small friends can do great things. We should always [9]_____ kind to others because kindness is never [10]_____.",
-    example: { blank: 1, correct: "forests", options: ["forests", "forest", "a forest"] },
+    story_text: "Lions are powerful animals that live in [0]_____. They spend many hours [1]_____ during the hottest parts of the day. A tiny mouse is very small [2]_____ it has sharp front teeth. When the lion was trapped [3]_____ a rope net, the little mouse rushed [4]_____ help him immediately. He chewed [5]_____ the thick cords until the lion escaped. Animals in the wild often [6]_____ each other to stay safe. This fable teaches us [7]_____ even small friends can do great things. We should always [8]_____ kind to others because kindness is never [9]_____. They became [10]_____ friends forever.",
+    example: { blank: 0, id: 0, correct: "forests", options: ["forests", "forest", "a forest"], isExample: true },
     blanks: [
-      { id: 2, correct: "sleeping", options: ["sleep", "sleeping", "slept"] },
-      { id: 3, correct: "quick", options: ["quick", "quickly", "quicker"] },
-      { id: 4, correct: "overcome", options: ["overcome", "overcomes", "overcame"] },
-      { id: 5, correct: "stronger", options: ["strong", "stronger", "strongest"] },
-      { id: 6, correct: "protect", options: ["protect", "protects", "protected"] },
-      { id: 7, correct: "during", options: ["during", "while", "when"] },
-      { id: 8, correct: "survive", options: ["survive", "survives", "survived"] },
-      { id: 9, correct: "bravely", options: ["brave", "bravely", "braver"] },
+      { id: 1, correct: "sleeping", options: ["sleep", "sleeping", "slept"] },
+      { id: 2, correct: "but", options: ["but", "or", "so"] },
+      { id: 3, correct: "in", options: ["in", "on", "at"] },
+      { id: 4, correct: "to", options: ["to", "for", "with"] },
+      { id: 5, correct: "through", options: ["through", "between", "under"] },
+      { id: 6, correct: "help", options: ["help", "helps", "helping"] },
+      { id: 7, correct: "that", options: ["that", "which", "who"] },
+      { id: 8, correct: "be", options: ["be", "is", "are"] },
+      { id: 9, correct: "wasted", options: ["wasted", "waste", "wasting"] },
       { id: 10, correct: "loyal", options: ["loyal", "loyalty", "loyally"] }
     ],
-    questions: [
-      { gap: 1, options: ["forests", "oceans", "clouds"], answer: "forests" },
-      { gap: 2, options: ["sleeping", "sleeps", "slept"], answer: "sleeping" },
-      { gap: 3, options: ["but", "or", "so"], answer: "but" },
-      { gap: 4, options: ["in", "on", "at"], answer: "in" },
-      { gap: 5, options: ["to", "for", "with"], answer: "to" },
-      { gap: 6, options: ["through", "between", "under"], answer: "through" },
-      { gap: 7, options: ["help", "helps", "helping"], answer: "help" },
-      { gap: 8, options: ["that", "which", "who"], answer: "that" },
-      { gap: 9, options: ["be", "been", "being"], answer: "be" },
-      { gap: 10, options: ["wasted", "waste", "wasting"], answer: "wasted" }
+    gaps: [
+      { id: 1, target: "sleeping", options: ["sleep", "sleeping", "slept"] },
+      { id: 2, target: "but", options: ["but", "or", "so"] },
+      { id: 3, target: "in", options: ["in", "on", "at"] },
+      { id: 4, target: "to", options: ["to", "for", "with"] },
+      { id: 5, target: "through", options: ["through", "between", "under"] },
+      { id: 6, target: "help", options: ["help", "helps", "helping"] },
+      { id: 7, target: "that", options: ["that", "which", "who"] },
+      { id: 8, target: "be", options: ["be", "is", "are"] },
+      { id: 9, target: "wasted", options: ["wasted", "waste", "wasting"] },
+      { id: 10, target: "loyal", options: ["loyal", "loyalty", "loyally"] }
     ],
     title_options: [
-      "The Animals of the Forest",
-      "The Lesson of the Fable",
-      "How to Build a Net"
-    ],
-    correct_title: "The Lesson of the Fable"
+      { id: 1, title: "A Busy Day in the City", target: false },
+      { id: 2, title: "The Mighty Lion and His Loyal Friend", target: true },
+      { id: 3, title: "A Trip to the Sunny Beach", target: false }
+    ]
   },
 
   rw_part5: {

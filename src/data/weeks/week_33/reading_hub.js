@@ -302,17 +302,32 @@ export const readingHubData = {
 
   // ─── R&W Part 4: 10-Gap Inline Cloze + Story Title (gaps array + title_options) — Shield 13 ───
   rw_part4: {
+    instructions: "Read the text. Choose the correct words and write them on the lines.",
+    story_text: "Jake was walking [0]_____ down the corridor after his science class. Suddenly, a boy [1]_____ past him very fast. The floor was [2]_____ because a cleaner had just washed the tiles. Tom lost his [3]_____ and fell down heavily near the stairs. Jake ran [4]_____ help him and called the school nurse. The nurse arrived [5]_____ two minutes with a bandage. She wrapped his knee [6]_____ so he felt much better. The headmaster [7]_____ both boys during assembly for safety rules. Everyone [8]_____ to walk safely in the future. Safety is the [9]_____ important thing at school. We must [10]_____ each other every day.",
+    example: { blank: 0, id: 0, correct: "carefully", options: ["carefully", "careful", "care"], isExample: true },
+    blanks: [
+      { id: 1, correct: "ran", options: ["ran", "run", "running"] },
+      { id: 2, correct: "slippery", options: ["slippery", "slip", "slipped"] },
+      { id: 3, correct: "balance", options: ["balance", "balanced", "balancing"] },
+      { id: 4, correct: "to", options: ["to", "for", "with"] },
+      { id: 5, correct: "within", options: ["within", "without", "with"] },
+      { id: 6, correct: "gently", options: ["gently", "gentle", "gentleness"] },
+      { id: 7, correct: "praised", options: ["praised", "praise", "praising"] },
+      { id: 8, correct: "promised", options: ["promised", "promise", "promising"] },
+      { id: 9, correct: "most", options: ["most", "more", "much"] },
+      { id: 10, correct: "protect", options: ["protect", "protects", "protecting"] }
+    ],
     gaps: [
-      { id: 1, target: "carefully", options: ["carefully", "careful", "care"] },
-      { id: 2, target: "corridor", options: ["corridor", "playground", "library"] },
-      { id: 3, target: "slipped", options: ["slipped", "slipping", "slips"] },
-      { id: 4, target: "fell", options: ["fell", "fallen", "falling"] },
-      { id: 5, target: "Without", options: ["Without", "With", "Within"] },
-      { id: 6, target: "called", options: ["called", "calling", "calls"] },
-      { id: 7, target: "nurse", options: ["nurse", "doctor", "teacher"] },
-      { id: 8, target: "bandage", options: ["bandage", "bandaged", "bandaging"] },
-      { id: 9, target: "praised", options: ["praised", "praise", "praising"] },
-      { id: 10, target: "relieved", options: ["relieved", "relief", "relieving"] }
+      { id: 1, target: "ran", options: ["ran", "run", "running"] },
+      { id: 2, target: "slippery", options: ["slippery", "slip", "slipped"] },
+      { id: 3, target: "balance", options: ["balance", "balanced", "balancing"] },
+      { id: 4, target: "to", options: ["to", "for", "with"] },
+      { id: 5, target: "within", options: ["within", "without", "with"] },
+      { id: 6, target: "gently", options: ["gently", "gentle", "gentleness"] },
+      { id: 7, target: "praised", options: ["praised", "praise", "praising"] },
+      { id: 8, target: "promised", options: ["promised", "promise", "promising"] },
+      { id: 9, target: "most", options: ["most", "more", "much"] },
+      { id: 10, target: "protect", options: ["protect", "protects", "protecting"] }
     ],
     title_options: [
       { id: 1, title: "A Dangerous Run Near the Science Room", target: false },
