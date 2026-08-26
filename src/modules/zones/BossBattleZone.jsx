@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import getBossRotaryConfig from '../../config/bossRotarySchedule';
 import BossIntro from '../../components/zones/BossIntro';
 import SVGLineMatcher from '../../components/cambridge/SVGLineMatcher';
@@ -25,6 +25,7 @@ import useDailyQuestStore from '../../stores/useDailyQuestStore';
 export default function BossBattleZone({ data, weekNumber, forcedStation = null, hideStationTabs = false }) {
   const navigate = useNavigate();
   const routeParams = useParams();
+  const location = useLocation();
   const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;
 
   const userShields = useUserStore((state) => state.userShields || 0);
@@ -59,10 +60,13 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     };
   }, [data]);
 
-  // Parse URL query params for direct part/task targeting
-  const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
-  const rawPartParam = searchParams?.get('part') || searchParams?.get('part_id') || searchParams?.get('task') || searchParams?.get('taskId');
-  const qaNonce = searchParams?.get('qa_nonce');
+  // Parse URL query params reactively with useLocation
+  const searchParams = useMemo(() => {
+    return new URLSearchParams(location.search);
+  }, [location.search]);
+
+  const rawPartParam = searchParams.get('part') || searchParams.get('part_id') || searchParams.get('task') || searchParams.get('taskId');
+  const qaNonce = searchParams.get('qa_nonce');
 
   const requestedTaskId = React.useMemo(() => {
     if (!rawPartParam) return null;
@@ -300,22 +304,24 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     );
   }
 
+  const activeTaskId = requestedTaskId || currentTask?.id;
+
   return (
     <div className="w-full max-w-5xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans">
       {/* Task Content Card */}
       <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 border border-slate-200 shadow-md min-h-[360px]">
         {/* LISTENING P1 */}
-        {currentTask.id === 'list_p1' && bossData.listening?.p1 && (
+        {activeTaskId === 'list_p1' && (
           <SVGLineMatcher
-            customData={bossData.listening.p1}
-            listeningData={bossData.listening.p1}
+            customData={bossData.listening?.p1}
+            listeningData={bossData.listening?.p1}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p1')}
           />
         )}
 
         {/* LISTENING P2 */}
-        {currentTask.id === 'list_p2' && (
+        {activeTaskId === 'list_p2' && (
           <NotepadNoteCompleter
             customData={bossData.listening?.p2}
             data={bossData.listening?.p2}
@@ -325,17 +331,17 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         )}
 
         {/* LISTENING P3 */}
-        {currentTask.id === 'list_p3' && bossData.listening?.p3 && (
+        {activeTaskId === 'list_p3' && (
           <VisualMatchingAH
-            customData={bossData.listening.p3}
-            matchingData={bossData.listening.p3}
+            customData={bossData.listening?.p3}
+            matchingData={bossData.listening?.p3}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p3')}
           />
         )}
 
         {/* LISTENING P4 */}
-        {currentTask.id === 'list_p4' && (
+        {activeTaskId === 'list_p4' && (
           <MultipleChoice3Pic
             customData={bossData.listening?.p4}
             data={bossData.listening?.p4}
@@ -345,110 +351,110 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         )}
 
         {/* LISTENING P5 */}
-        {currentTask.id === 'list_p5' && bossData.listening?.p5 && (
+        {activeTaskId === 'list_p5' && (
           <SVGColorAndWrite
-            customData={bossData.listening.p5}
-            data={bossData.listening.p5}
+            customData={bossData.listening?.p5}
+            data={bossData.listening?.p5}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('list_p5')}
           />
         )}
 
         {/* R&W P1 */}
-        {currentTask.id === 'rw_p1' && bossData.readingWriting?.p1 && (
+        {activeTaskId === 'rw_p1' && (
           <WordBankMatchingGrid
-            customData={bossData.readingWriting.p1}
-            data={bossData.readingWriting.p1}
+            customData={bossData.readingWriting?.p1}
+            data={bossData.readingWriting?.p1}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p1')}
           />
         )}
 
         {/* R&W P2 */}
-        {currentTask.id === 'rw_p2' && bossData.readingWriting?.p2 && (
+        {activeTaskId === 'rw_p2' && (
           <DialogueAHCompleter
-            customData={bossData.readingWriting.p2}
-            data={bossData.readingWriting.p2}
+            customData={bossData.readingWriting?.p2}
+            data={bossData.readingWriting?.p2}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p2')}
           />
         )}
 
         {/* R&W P3 */}
-        {currentTask.id === 'rw_p3' && bossData.readingWriting?.p3 && (
+        {activeTaskId === 'rw_p3' && (
           <RWPart3ClozeWithTitle
-            customData={bossData.readingWriting.p3}
-            data={bossData.readingWriting.p3}
+            customData={bossData.readingWriting?.p3}
+            data={bossData.readingWriting?.p3}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p3')}
           />
         )}
 
         {/* R&W P4 */}
-        {currentTask.id === 'rw_p4' && bossData.readingWriting?.p4 && (
+        {activeTaskId === 'rw_p4' && (
           <InlineTextClozeDropdown
-            customData={bossData.readingWriting.p4}
-            data={bossData.readingWriting.p4}
+            customData={bossData.readingWriting?.p4}
+            data={bossData.readingWriting?.p4}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p4')}
           />
         )}
 
         {/* R&W P5 */}
-        {currentTask.id === 'rw_p5' && bossData.readingWriting?.p5 && (
+        {activeTaskId === 'rw_p5' && (
           <TextExtractionCompleter
-            customData={bossData.readingWriting.p5}
-            data={bossData.readingWriting.p5}
+            customData={bossData.readingWriting?.p5}
+            data={bossData.readingWriting?.p5}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p5')}
           />
         )}
 
         {/* R&W P6 */}
-        {currentTask.id === 'rw_p6' && bossData.readingWriting?.p6 && (
+        {activeTaskId === 'rw_p6' && (
           <OpenClozeCompleter
-            customData={bossData.readingWriting.p6}
-            data={bossData.readingWriting.p6}
+            customData={bossData.readingWriting?.p6}
+            data={bossData.readingWriting?.p6}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('rw_p6')}
           />
         )}
 
         {/* SPEAKING P1 */}
-        {currentTask.id === 'spk_p1' && bossData.speaking?.p1_findDiff && (
+        {activeTaskId === 'spk_p1' && (
           <FindDifferencesInteractive
-            customData={bossData.speaking.p1_findDiff}
-            data={bossData.speaking.p1_findDiff}
+            customData={bossData.speaking?.p1_findDiff}
+            data={bossData.speaking?.p1_findDiff}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('spk_p1')}
           />
         )}
 
         {/* SPEAKING P2 */}
-        {currentTask.id === 'spk_p2' && bossData.speaking?.p2_cueCard && (
+        {activeTaskId === 'spk_p2' && (
           <InformationExchangeP2
-            customData={bossData.speaking.p2_cueCard}
-            data={bossData.speaking.p2_cueCard}
+            customData={bossData.speaking?.p2_cueCard}
+            data={bossData.speaking?.p2_cueCard}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('spk_p2')}
           />
         )}
 
         {/* SPEAKING P3 */}
-        {currentTask.id === 'spk_p3' && bossData.speaking?.p3_pictureStory && (
+        {activeTaskId === 'spk_p3' && (
           <PictureStoryContinuation
-            customData={bossData.speaking.p3_pictureStory}
-            data={bossData.speaking.p3_pictureStory}
+            customData={bossData.speaking?.p3_pictureStory}
+            data={bossData.speaking?.p3_pictureStory}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('spk_p3')}
           />
         )}
 
         {/* SPEAKING P4 */}
-        {(currentTask.id === 'spk_p4' || currentTask.id === 'personal_questions' || forcedStation === 'personal_qs') && bossData.speaking?.p4_personalQs && (
+        {(activeTaskId === 'spk_p4' || activeTaskId === 'personal_questions' || forcedStation === 'personal_qs') && (
           <PersonalQuestionsCompleter
-            customData={bossData.speaking.p4_personalQs}
-            data={bossData.speaking.p4_personalQs}
+            customData={bossData.speaking?.p4_personalQs}
+            data={bossData.speaking?.p4_personalQs}
             weekNumber={activeWeek}
             onComplete={() => handleTaskComplete('spk_p4')}
           />
