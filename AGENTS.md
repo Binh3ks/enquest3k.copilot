@@ -105,6 +105,37 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
 3. **Reading (Parts 1-6)**: Tuân thủ độ dài chuẩn A2 Flyers (P1 10 defs/15 words, P2 5 dialogue turns, P3 ~120w story gap-fill + title, P4 10 grammar MCQs, P5 ~250w story + 7 completions 1-4 words, P6 5 open cloze gaps).
 4. **Writing (Part 7)**: Viết truyện theo 3 tranh liên hoàn $\ge 20$ từ, chấm điểm theo Rubric 5 Shields (Content 2, Grammar/Flow 2, Vocab/Spelling 1).
 
+## 🎯 CAMBRIDGE MECHANIC FIDELITY DOCTRINE (W33+)
+
+Bảng 17 mechanics chuẩn Cambridge A2 Flyers:
+
+| Part | Mechanic | Số lượng | Example bắt buộc |
+|---|---|---|---|
+| L1 | Draw lines (names → targets) | 1ex + 5 targets + 1 distractor name | ✅ |
+| L2 | Form-fill (notepad) | 1ex + 5 fields | ✅ |
+| L3 | Match cards A-H | 1ex + 5 items + 8 cards | ✅ |
+| L4 | 3-picture MCQ (dialogue) | 1ex + 5 questions | ✅ |
+| L5 | Color & Write | 1ex + 5-6 instructions | ✅ |
+| R1 | Word bank matching | 1ex + 10 defs + 15 words | ✅ |
+| R2 | Dialogue A-H | 1ex + 5 turns + 8 options | ✅ |
+| R3 | Cloze + title | 1ex + 5 blanks + 10 words + 3 titles | ✅ |
+| R4 | Grammar cloze 3-choice | 1ex + 9 blanks × 3 options | ✅ |
+| R5 | Text extraction (free-text) | 1ex + 7 questions (1-4 words) | ✅ |
+| R6 | Open cloze (1 word) | 1ex + 5 gaps | ✅ |
+| R7 | 3-pic story writing | 3 pics + ≥20 words | N/A |
+| S1 | Find differences | 2 pics + 4 hotspots | N/A |
+| S2 | Info exchange (info-gap) | known:false fields + examiner Qs | N/A |
+| S3 | Picture story | 5 pics + examiner intro | N/A |
+| S4 | Personal questions | 4 questions | N/A |
+
+Quy tắc:
+1. Cơ chế PHẢI đúng bản chất (MCQ ≠ free-text; 3-choice ≠ open)
+2. Số lượng PHẢI đúng chuẩn (example + N items)
+3. Example PHẢI locked/pre-filled
+4. Generator PHẢI output đúng format (không fallback)
+5. Gate PHẢI catch sai format (not just count)
+
+
 ## 🤝 Session Handoff & Start Protocol (`/handoff` & `/start`) — 2026-08-17
 - **Kết thúc phiên (`/handoff`)**: Agent thực thi `node scripts/handoff.mjs "<Tóm tắt công việc>"` để tự động ghi nhận git status, commit hash, các việc đã xong, các việc chưa xong và các điểm cần user quyết định vào `.agents/handoffs/latest_handoff.md` và `.agents/handoffs/handoff_<timestamp>.md`.
 - **Mở đầu phiên mới (`/start`)**: Agent đọc ngay file `.agents/handoffs/latest_handoff.md`, kiểm tra `AGENTS.md`, thực thi `node scripts/start_session.mjs` và báo cáo 3 mục: (1) Công việc phiên cũ bàn giao, (2) Trạng thái Git & Build hiện tại, (3) Sẵn sàng nhận chỉ thị mới.
