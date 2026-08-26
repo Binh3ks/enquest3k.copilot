@@ -26,14 +26,17 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
 
   const rawHotspots = useMemo(() => {
     if (rawDifferences.length === 0) return [];
+    if (rawDifferences.some(d => d.x !== undefined || d.y !== undefined)) {
+      throw new Error('DEV-003: literal coordinates still in data');
+    }
     const centroids = getCalibratedCentroids(customData?.week || weekNumber);
     if (rawDifferences.length !== centroids.length) {
       throw new Error(`[DEV-003 Violation] differences length (${rawDifferences.length}) !== calibration centroids length (${centroids.length})`);
     }
     return rawDifferences.map((item, index) => ({
       ...item,
-      x: centroids[index]?.x ?? item.x,
-      y: centroids[index]?.y ?? item.y
+      x: centroids[index].x,
+      y: centroids[index].y
     }));
   }, [rawDifferences, customData, weekNumber]);
 
