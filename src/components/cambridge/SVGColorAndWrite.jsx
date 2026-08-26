@@ -33,7 +33,7 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
       const testInstructions = rawData.instructions.filter(inst => !inst.isExample && inst.id !== 'inst_0');
       return testInstructions.map((inst, index) => {
         const id = inst.id || `inst_${index + 1}`;
-        const isWrite = !!(inst.write_word || inst.type === 'write');
+        const isWrite = !!(inst.write_word || inst.type === 'write' || inst.word || inst.action === 'write');
         const targetColorHex = inst.target_color || (
           inst.color === 'yellow' ? '#eab308' :
           inst.color === 'blue' ? '#3b82f6' :
@@ -51,8 +51,8 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
           item_name: inst.item || `Object ${index + 1}`,
           target_color: targetColorHex,
           color_name: inst.color || 'blue',
-          target_text: inst.write_word || inst.target_text || '',
-          prompt: inst.target_desc || inst.prompt || (isWrite ? `Write "${inst.write_word}" on ${inst.item}` : `Color ${inst.item} ${inst.color}`),
+          target_text: inst.write_word || inst.target_text || inst.word || '',
+          prompt: inst.target_desc || inst.prompt || (isWrite ? `Write "${inst.write_word || inst.word}" on ${inst.item}` : `Color ${inst.item} ${inst.color}`),
           audio_text: inst.audio_text || inst.prompt || ''
         };
       });

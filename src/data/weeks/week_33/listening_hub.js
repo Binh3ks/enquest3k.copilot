@@ -163,13 +163,17 @@ Man: Yes, it is next to the lockers.
 Woman: Colour the door frame bright green.
 Woman: Look at the notice board on the wall. Can you write one more word?
 Man: Yes, what should I write?
-Woman: Write the word 'CARE' on the board.`,
+Woman: Write the word 'CARE' on the board.
+Woman: Now look at the long handrail near the stairs.
+Man: Should I colour it red?
+Woman: Yes, colour the handrail red.`,
     instructions: [
       { id: "inst_0", item: "Example Object", text: "Color the example brown", x: 10, y: 10, color: "brown", isExample: true },
-      { id: "inst_1", item: "Jake's Backpack", text: "Color Jake's backpack blue", x: 25, y: 70, color: "blue" },
-      { id: "inst_2", item: "Warning Sign", text: "Write the word 'WET' on the sign", x: 45, y: 80, word: "WET" },
-      { id: "inst_3", item: "Science Lab Door", text: "Color the door frame bright green", x: 75, y: 35, color: "green" },
-      { id: "inst_4", item: "Notice Board", text: "Write the word 'CARE' on the board", x: 15, y: 30, word: "CARE" }
+      { id: "inst_1", item: "Jake's Backpack", text: "Color Jake's backpack blue", x: 25, y: 70, color: "blue", action: "colour" },
+      { id: "inst_2", item: "Warning Sign", text: "Write the word 'WET' on the sign", x: 45, y: 80, word: "WET", action: "write" },
+      { id: "inst_3", item: "Science Lab Door", text: "Color the door frame bright green", x: 75, y: 35, color: "green", action: "colour" },
+      { id: "inst_4", item: "Notice Board", text: "Write the word 'CARE' on the board", x: 15, y: 30, word: "CARE", action: "write" },
+      { id: "inst_5", item: "School Handrail", text: "Color the handrail red", x: 85, y: 60, color: "red", action: "colour" }
     ]
   }
 };
