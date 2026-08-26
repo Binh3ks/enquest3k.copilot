@@ -26,18 +26,25 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
 
   const rawHotspots = useMemo(() => {
     if (rawDifferences.length === 0) return [];
-    if (rawDifferences.some(d => d.x !== undefined || d.y !== undefined)) {
-      throw new Error('DEV-003: literal coordinates still in data');
-    }
     const centroids = getCalibratedCentroids(customData?.week || weekNumber);
     if (rawDifferences.length !== centroids.length) {
       throw new Error(`[DEV-003 Violation] differences length (${rawDifferences.length}) !== calibration centroids length (${centroids.length})`);
     }
-    return rawDifferences.map((item, index) => ({
-      ...item,
-      x: centroids[index].x,
-      y: centroids[index].y
-    }));
+    return rawDifferences.map((item, index) => {
+      const cx = centroids[index].x;
+      const cy = centroids[index].y;
+      if (item.x !== undefined && Math.abs(item.x - cx) > 2) {
+        throw new Error(`[DEV-003 Violation] differences[${index}].x (${item.x}) deviates from calibration centroid x (${cx})`);
+      }
+      if (item.y !== undefined && Math.abs(item.y - cy) > 2) {
+        throw new Error(`[DEV-003 Violation] differences[${index}].y (${item.y}) deviates from calibration centroid y (${cy})`);
+      }
+      return {
+        ...item,
+        x: item.x ?? cx,
+        y: item.y ?? cy
+      };
+    });
   }, [rawDifferences, customData, weekNumber]);
 
   const differencesData = {

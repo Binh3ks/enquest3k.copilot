@@ -162,23 +162,22 @@ Man: Yes, shall I colour it?
 Woman: Yes, colour the lion's mane golden yellow.
 Woman: Can you see the hunter's rope near the bushes? Let's write a word.
 Man: What word shall I write?
-Woman: Write the word 'TRAP' near the ropes.
+Woman: Write the word 'NET' near the ropes.
 Woman: Look at the little mouse sitting on the rock.
 Man: He is so small! What colour should he be?
-Woman: Colour the little mouse grey.
-Woman: Can you see the wooden signboard near the path? Let's write the final word.
-Man: What word should I write?
-Woman: Write the word 'FRIENDS' on the signboard.
+Woman: Colour the little mouse brown.
+Woman: Can you see the wooden signboard near the path? Let's write the word 'FOREST'.
+Man: Great! I wrote 'FOREST' on the signboard.
 Woman: Now look at the hunter's hat on the branch.
 Man: Shall I colour it?
 Woman: Yes, colour the hat dark green.`,
     instructions: [
       { id: "inst_0", item: "Example Object", text: "Color the example brown", x: 10, y: 10, color: "brown", isExample: true },
       { id: "inst_1", item: "Lion Mane", text: "Color the lion's mane golden yellow", x: 45, y: 55, color: "yellow", action: "colour" },
-      { id: "inst_2", item: "Rope Trap", text: "Write the word 'TRAP' near the ropes", x: 65, y: 45, word: "TRAP", action: "write" },
-      { id: "inst_3", item: "Tiny Mouse", text: "Color the little mouse grey", x: 30, y: 70, color: "grey", action: "colour" },
-      { id: "inst_4", item: "Forest Signboard", text: "Write the word 'FRIENDS' on the signboard", x: 80, y: 30, word: "FRIENDS", action: "write" },
-      { id: "inst_5", item: "Hunter's Hat", text: "Color the hat dark green", x: 90, y: 20, color: "dark green", action: "colour" }
+      { id: "inst_2", item: "Rope Net", text: "Write the word 'NET' near the ropes", x: 65, y: 45, word: "NET", action: "write" },
+      { id: "inst_3", item: "Tiny Mouse", text: "Color the little mouse brown", x: 30, y: 70, color: "brown", action: "colour" },
+      { id: "inst_4", item: "Forest Signboard", text: "Write the word 'FOREST' on the signboard", x: 80, y: 30, word: "FOREST", action: "write" },
+      { id: "inst_5", item: "Hunter's Hat", text: "Color the hat dark green", x: 90, y: 20, color: "green", action: "colour" }
     ]
   }
 };

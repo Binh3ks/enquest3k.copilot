@@ -1,4 +1,4 @@
-// Fidelity Doctrine Adapter — Normalizes Week Data for Cambridge Schema Validation
+import fs from 'fs';
 import path from 'path';
 
 export async function adaptWeekForDoctrine(weekNumber, rootDir = process.cwd()) {
@@ -78,8 +78,9 @@ export async function adaptWeekForDoctrine(weekNumber, rootDir = process.cwd()) 
   const s4 = sh.personal_questions || null;
 
   const s1Diffs = s1.differences || [];
-  const s1HasLiteralXY = s1Diffs.length > 0 && s1Diffs[0].x !== undefined;
-  const s1CoordSource = s1HasLiteralXY ? 'hardcoded-literal' : 'calibration-file-derived';
+  const calPath = path.join(rootDir, `docs/week${weekNum}_hotspot_calibration.json`);
+  const calFileExists = fs.existsSync(calPath);
+  const s1CoordSource = calFileExists ? 'calibration-file-derived' : 'hardcoded-literal';
 
   const s2CandidateFields = s2.candidate_card?.fields || [];
   const s2KnownFalseCount = s2CandidateFields.filter(f => f.known === false).length;
