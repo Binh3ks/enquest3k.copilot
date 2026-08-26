@@ -43,7 +43,7 @@ graph TD
 - Run `python tools/upload_week_images_boto3.py {N}` and `python tools/upload_week_audio.py {N}`.
 - Verify 100% of uploaded URLs return `HTTP 200 OK`.
 
-### Step 5: Execute Automated 9-Gate Quality Suite
+### Step 5: Execute Automated Quality Suite (Gates 1–17)
 Run `npm run audit:week {N}`:
 - **Gate 1**: Full-Corpus Blueprint Conformance & Anti-Leak (0 leaks across all 25 files).
 - **Gate 2**: Atomic Alignment `{id, text, words[], ipa[]}` & 3 Calibrated Pins/Scene.
@@ -54,6 +54,9 @@ Run `npm run audit:week {N}`:
 - **Gate 7**: CEFR Stage 1 Guard (0 B1/B2 jargon, <= 22 words/sentence).
 - **Gate 8**: 15-Quest Hub Invariants & Component Mount Trace.
 - **Gate 9**: Generator Purity & Zero-Clone Audit.
+- **Gate 15**: Production DOM Assertions & Zero-Drift Visual Verification.
+- **Gate 16**: Content Quality, CLIL Fact Units, and Single-Source Singapore Math Guard.
+- **Gate 17**: Cambridge A2 Flyers Mechanic Fidelity Doctrine Validator (16 Parts, 8 Runtime Invariants).
 
 ### Step 7: Anti-Hallucination & Single-Source Invariants (Mandatory)
 1. **Singapore Math Single-Source Invariant**: `listening_hub.singapore_math` MUST be emitted directly from `singapore_math.js` (single source of truth — never manually duplicated).

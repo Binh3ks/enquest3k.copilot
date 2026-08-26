@@ -11,6 +11,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -185,6 +186,18 @@ async function runAudit() {
     errors.push(`speaking_hub info_exchange examiner_questions missing audio_url (found: ${eq.length}/3)`);
   } else {
     console.log(`  ✅ Examiner Audio Questions: 3/3 audio URLs verified`);
+  }
+
+  // 6. Execute Gate 17 Cambridge Fidelity Doctrine Check
+  try {
+    const g17Result = execSync(`node scripts/gate17_fidelity_doctrine.mjs ${WEEK}`, { cwd: rootDir, encoding: 'utf8' });
+    if (!g17Result.includes('"finalVerdict": "PASS"')) {
+      errors.push('Gate 17 Cambridge Fidelity Doctrine check failed');
+    } else {
+      console.log(`  ✅ Gate 17 Fidelity Doctrine: 16-Part Schema & Invariants PASS`);
+    }
+  } catch (e) {
+    errors.push(`Gate 17 execution failed: ${e.message}`);
   }
 
   console.log(`\n========================================================================`);

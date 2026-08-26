@@ -20,7 +20,9 @@
     "dict:lint": "node tools/dict_lint.mjs",
     "content:lint": "node tools/content_lint.mjs",
     "audit:chunks": "node scripts/audit_chunks.js",
-    "audit:week": "node scripts/gate7_master_week_audit.mjs",
+    "audit:week": "node scripts/gate15_production_dom_assertions.mjs $1 --local && node scripts/gate16_content_quality.mjs $1 && node scripts/gate17_fidelity_doctrine.mjs $1",
+    "gate:17": "node scripts/gate17_fidelity_doctrine.mjs",
+    "gate:fidelity": "node scripts/gate17_fidelity_doctrine.mjs",
     "audit:week:tasks": "node scripts/audit_week_tasks.mjs",
     "audit:cefr": "node scripts/cefr_curriculum_guard.mjs",
     "calibrate:diff": "node scripts/calibrate_find_differences.mjs"
