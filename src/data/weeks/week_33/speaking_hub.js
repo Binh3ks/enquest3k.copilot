@@ -7,34 +7,25 @@ export const speakingHub = {
   info_exchange_cards: {
     candidate_card: {
       title: "Tom's Accident (Candidate)",
-      fields: [
-        { label: "Location", value: "School Corridor", known: true },
-        { label: "Injured Body Part", value: null, known: false },
-        { label: "Time of Incident", value: "Morning Break Time", known: true },
-        { label: "Helper Name", value: null, known: false }
+      items: [
+        { label: "Where — accident?",     value: "School Corridor",    known: true  },
+        { label: "Which — body part?",     value: "Swollen Right Knee", known: false },
+        { label: "When — accident?",       value: "Morning Break Time", known: true  },
+        { label: "Who — helped Tom?",      value: "Jake from Grade 5",  known: false }
       ]
     },
     examiner_card: {
       title: "Jake's First Aid Action (Examiner)",
-      fields: [
-        { label: "Location", value: "Near Science Room", known: true },
-        { label: "First Aid Item", value: null, known: false },
-        { label: "Nurse Arrival Time", value: "Two Minutes", known: true },
-        { label: "Praise Speaker", value: null, known: false }
+      items: [
+        { label: "Where — Jake helped?",   value: "Near Science Room",            known: true  },
+        { label: "What — first aid item?", value: "Clean Bandage and Cold Pack",   known: false },
+        { label: "When — nurse arrived?",  value: "Within Two Minutes",            known: true  },
+        { label: "Who — praised Jake?",    value: "The Headmaster in Assembly",    known: false }
       ]
-    },
-    full_answers: {
-      "Location": ["School Corridor", "Near Science Room"],
-      "Injured Body Part": ["Swollen Right Knee", "Scratched Left Elbow"],
-      "Time of Incident": ["Morning Break Time", "After Science Class"],
-      "Helper Name": ["Jake from Grade 5", "School Nurse Sarah"],
-      "First Aid Item": ["Clean Bandage and Cold Pack", "First-Aid Kit Box"],
-      "Nurse Arrival Time": ["Within Two Minutes", "Immediately"],
-      "Praise Speaker": ["The Headmaster in Assembly", "The Science Teacher"]
     },
     prompt_questions: [
       "Where did the accident happen?",
-      "What was the injured body part?",
+      "Which part of Tom's body was hurt?",
       "When did the nurse arrive?"
     ],
     examiner_questions: [

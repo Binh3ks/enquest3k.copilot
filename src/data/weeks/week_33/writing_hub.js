@@ -31,9 +31,10 @@ export const writingHubData = {
         image_url: "/images/week33/writing_panel_2.png",
         caption: "Suddenly, the boy slipped on the wet floor and hurt his knee.",
         frame_L1: "Suddenly, the boy slipped on the wet floor and hurt his knee badly.",
-        connectors: ["Then", "Suddenly", "After that"],
-        display_chips: ["very fast", "a boy", "ran past him"],
-        pills: ["very fast", "a boy", "ran past him"],
+        locked_connector: "Suddenly,",
+        connectors: ["Then,", "Suddenly,", "After that,"],
+        display_chips: ["a boy", "ran past him", "very fast"],
+        pills: ["a boy", "ran past him", "very fast"],
         correct_order: ["a boy", "ran past him", "very fast"],
         audio: "Suddenly, the boy slipped on the wet floor and fell down."
       },
@@ -45,9 +46,11 @@ export const writingHubData = {
         image_url: "/images/week33/writing_panel_3.png",
         caption: "Jake called the school nurse, who arrived quickly with a clean bandage.",
         frame_L1: "Jake called the school nurse and everyone felt relieved.",
-        connectors: ["Finally", "In the end", "At last"],
-        keywords: ["the school nurse", "bandage", "his knee", "feel relieved"],
-        pills: ["the school nurse", "bandage", "his knee", "feel relieved"],
+        locked_connector: "Finally,",
+        connectors: ["Finally,", "In the end,", "At last,"],
+        keywords: ["called the school nurse", "a clean bandage", "his swollen knee", "felt relieved", "arrived quickly", "a cold pack", "praised Jake"],
+        pills: ["called the school nurse", "a clean bandage", "his swollen knee", "felt relieved", "arrived quickly", "a cold pack", "praised Jake"],
+        sentence_frame: "Finally, Jake called the school nurse. She arrived quickly with [a clean bandage] and [a cold pack]. She wrapped [his swollen knee] carefully. Everyone [felt relieved] and [praised Jake] for his quick help.",
         audio: "Jake called the school nurse, who arrived with a clean bandage and a cold pack."
       }
     ],
@@ -73,8 +76,8 @@ export const writingHubData = {
   rw_part_1: {
     word_bank: [
       "corridor", "nurse", "bandage", "headmaster", "puddle",
-      "library", "cafeteria", "handrail", "warning sign", "first-aid kit",
-      "playground", "stairs", "slippery", "cold pack", "science room"
+      "library", "cafeteria", "stairs", "warning sign", "first-aid kit",
+      "playground", "floor", "slippery", "cold pack", "science room"
     ],
     example: { id: 0, text: "A quiet room in school with books where students read and borrow stories.", target: "library" },
     definitions: [
@@ -85,7 +88,7 @@ export const writingHubData = {
       { id: 5, text: "A small pool of liquid left on the floor after cleaning or rain.", target: "puddle" },
       { id: 6, text: "An open area where children play during break time.", target: "playground" },
       { id: 7, text: "A large room at school where children eat lunch and talk with friends.", target: "cafeteria" },
-      { id: 8, text: "You hold onto this long metal bar when walking up or down stairs.", target: "handrail" },
+      { id: 8, text: "You walk up or down these steps inside the school building to go between floors.", target: "stairs" },
       { id: 9, text: "A yellow sign placed on the floor to warn people to walk carefully on wet tiles.", target: "warning sign" },
       { id: 10, text: "A bag or box containing bandages and cold packs used for immediate medical aid at school.", target: "first-aid kit" }
     ]

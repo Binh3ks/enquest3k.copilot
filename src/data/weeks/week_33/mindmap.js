@@ -9,7 +9,7 @@ export default {
         { id: "1_2", label: "Never run on wet tiles" },
         { id: "1_3", label: "Look out for warning signs" },
         { id: "1_4", label: "Keep school bags off floor" },
-        { id: "1_5", label: "Hold stair handrails firmly" },
+        { id: "1_5", label: "Walk carefully on the stairs" },
         { id: "1_6", label: "Report wet puddles to janitor" }
       ]
     },

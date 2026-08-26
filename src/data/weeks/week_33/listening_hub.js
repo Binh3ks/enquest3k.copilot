@@ -49,14 +49,14 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
   listening_p3: {
     example: { name: "Cleaning Mop", target_letter: "H" },
     items: [
-      { id: 1, name: "School Handrail", target_letter: "A", audio_url: "/audio/week33/listening_p3_item1.mp3" },
+      { id: 1, name: "School Stairs", target_letter: "A", audio_url: "/audio/week33/listening_p3_item1.mp3" },
       { id: 2, name: "Warning Sign", target_letter: "B", audio_url: "/audio/week33/listening_p3_item2.mp3" },
       { id: 3, name: "First-Aid Kit", target_letter: "C", audio_url: "/audio/week33/listening_p3_item3.mp3" },
       { id: 4, name: "Cold Pack", target_letter: "D", audio_url: "/audio/week33/listening_p3_item4.mp3" },
       { id: 5, name: "Clean Bandage", target_letter: "E", audio_url: "/audio/week33/listening_p3_item5.mp3" }
     ],
     cards: [
-      { letter: "A", name: "School Handrail", location_name: "Staircase", image_url: "/images/week33/card_a.jpg" },
+      { letter: "A", name: "School Stairs", location_name: "Corridor Corner", image_url: "/images/week33/card_a.jpg" },
       { letter: "B", name: "Warning Sign", location_name: "Corridor Floor", image_url: "/images/week33/card_b.jpg" },
       { letter: "C", name: "First-Aid Kit", location_name: "Nurse Office", image_url: "/images/week33/card_c.jpg" },
       { letter: "D", name: "Cold Pack", location_name: "Freezer Box", image_url: "/images/week33/card_d.jpg" },
@@ -164,16 +164,16 @@ Woman: Colour the door frame bright green.
 Woman: Look at the notice board on the wall. Can you write one more word?
 Man: Yes, what should I write?
 Woman: Write the word 'CARE' on the board.
-Woman: Now look at the long handrail near the stairs.
+Woman: Now look at the nurse room door at the end of the corridor.
 Man: Should I colour it red?
-Woman: Yes, colour the handrail red.`,
+Woman: Yes, colour the nurse room door red.`,
     instructions: [
       { id: "inst_0", item: "Example Object", text: "Color the example brown", x: 10, y: 10, color: "brown", isExample: true },
       { id: "inst_1", item: "Jake's Backpack", text: "Color Jake's backpack blue", x: 25, y: 70, color: "blue", action: "colour" },
       { id: "inst_2", item: "Warning Sign", text: "Write the word 'WET' on the sign", x: 45, y: 80, word: "WET", action: "write" },
       { id: "inst_3", item: "Science Lab Door", text: "Color the door frame bright green", x: 75, y: 35, color: "green", action: "colour" },
       { id: "inst_4", item: "Notice Board", text: "Write the word 'CARE' on the board", x: 15, y: 30, word: "CARE", action: "write" },
-      { id: "inst_5", item: "School Handrail", text: "Color the handrail red", x: 85, y: 60, color: "red", action: "colour" }
+      {id: "inst_5", item: "Nurse Room Door", text: "Color the nurse room door red", x: 85, y: 60, color: "red", action: "colour" }
     ]
   }
 };

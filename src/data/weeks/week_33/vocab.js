@@ -115,7 +115,7 @@ export default [
     word: "arm", 
     definition_en: "the upper limb of the human body from shoulder to hand", 
     definition_vi: "cánh tay", 
-    example_en: "He held onto the handrail with his strong arm.",
+    example_en: "He walked carefully up the stairs at school.",
     example_vi: "Cậu bé bám chặt vào tay vịn bằng cánh tay chắc khỏe của mình.",
     audio_word: "/audio/week33/vocab_arm.mp3", 
     image_url: "/images/week33/vocab_arm.jpg" 

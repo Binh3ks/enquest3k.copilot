@@ -60,7 +60,7 @@ export const skillPracticeHub = {
       { id: "t1", name: "Wet Corridor Tiles", x: 25, y: 70 },
       { id: "t2", name: "Rubber Shoe Soles", x: 75, y: 65 },
       { id: "t3", name: "Yellow Caution Sign", x: 50, y: 35 },
-      { id: "t4", name: "Handrail Support", x: 80, y: 25 }
+      { id: "t4", name: "Stair Steps", x: 80, y: 25 }
     ],
     labels: [
       { id: "lbl_1", text: "Low Friction Surface (Water Layer)", targetId: "t1" },

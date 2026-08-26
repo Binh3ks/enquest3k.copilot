@@ -50,6 +50,18 @@ export const readingHubData = {
         question_en: "What does water act like on a smooth tiled floor?",
         options: ["A slippery layer that reduces friction to zero", "A solid glue that holds shoes", "A heavy blanket that covers tiles"],
         answer: "A slippery layer that reduces friction to zero"
+      },
+      {
+        id: 4,
+        question_en: "What did the school put on the wet floor to warn students?",
+        options: ["A yellow warning sign", "A blue rope", "A red carpet"],
+        answer: "A yellow warning sign"
+      },
+      {
+        id: 5,
+        question_en: "Which type of shoe gives the best grip on a wet floor?",
+        options: ["Rubber-soled sports shoes", "Smooth leather shoes", "Thick socks"],
+        answer: "Rubber-soled sports shoes"
       }
     ],
     critical_thinking: {
@@ -200,8 +212,8 @@ export const readingHubData = {
   rw_part1: {
     word_bank: [
       "corridor", "nurse", "bandage", "headmaster", "puddle",
-      "library", "cafeteria", "handrail", "warning sign", "first-aid kit",
-      "playground", "stairs", "slippery", "cold pack", "science room"
+      "library", "cafeteria", "stairs", "warning sign", "first-aid kit",
+      "playground", "floor", "slippery", "cold pack", "science room"
     ],
     example: { id: 0, text: "A quiet room filled with books where students study.", target: "library" },
     definitions: [
@@ -212,7 +224,7 @@ export const readingHubData = {
       { id: 5, text: "A small pool of liquid left on the floor after cleaning or rain.", target: "puddle" },
       { id: 6, text: "The place where students do experiments with goggles and chemicals.", target: "science room" },
       { id: 7, text: "A large room at school where children eat lunch and talk with friends.", target: "cafeteria" },
-      { id: 8, text: "You hold onto this long metal bar when walking up or down stairs.", target: "handrail" },
+      { id: 8, text: "You walk up or down these steps inside the school building to go between floors.", target: "stairs" },
       { id: 9, text: "A yellow sign placed on the floor to warn people to walk carefully on wet tiles.", target: "warning sign" },
       { id: 10, text: "A bag or box containing bandages and cold packs used for immediate medical aid at school.", target: "first-aid kit" }
     ]

@@ -106,7 +106,7 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(90); // 90s total (18s per problem for ages 6-10)
+  const [timeLeft, setTimeLeft] = useState(150); // 30s per problem × 5 problems
 
   const rawQuestions = (Array.isArray(barModelData) && barModelData.length > 0)
     ? barModelData
@@ -119,7 +119,7 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
     title: q.title || `Problem ${idx + 1}: Singapore Bar Model`,
     problemText: q.problemText || q.problem_en || q.text || 'Solve the Bar Model problem below:',
     correctAnswer: q.correctAnswer || q.answer_value || parseInt(q.answer) || 10,
-    svg_url: q.svg_url || q.bar_model_svg || `/images/week34/barmodel_w34_adv_p${idx + 1}.svg`,
+    svg_url: q.svg_url || q.bar_model_svg || `/images/week${weekNumber}/barmodel_w${weekNumber}_adv_p${idx + 1}.svg`,
     modelData: q.modelData || null,
     hintText: q.hintText || `Check the bar model diagram to calculate the target answer!`
   }));
@@ -152,7 +152,7 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
     setScore(0);
     setStreak(0);
     setCorrectCount(0);
-    setTimeLeft(90);
+    setTimeLeft(150);
     setGameState('playing');
   };
 
