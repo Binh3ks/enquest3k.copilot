@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import getBossRotaryConfig from '../../config/bossRotarySchedule';
 import BossIntro from '../../components/zones/BossIntro';
