@@ -64,10 +64,10 @@ export const speakingHub = {
       image_url: "/images/week33/w33_diff_scene_b.jpg"
     },
     differences: [
-      { id: "d1", name: "Warning Sign Shape", x: 20, y: 22, prompt_en: "In Picture A, the warning sign is tall and yellow, but in Picture B, it is smaller." },
-      { id: "d2", name: "Wall Clock Time", x: 78, y: 22, prompt_en: "In Picture A, the clock shows ten o'clock, but in Picture B, it shows half past ten." },
-      { id: "d3", name: "Student Bag Color", x: 30, y: 64, prompt_en: "In Picture A, the student bag is blue, but in Picture B, it is bright red." },
-      { id: "d4", name: "First-Aid Box", x: 80, y: 70, prompt_en: "In Picture A, the first-aid box is on the wall, but in Picture B, it is missing." }
+      { id: "d1", name: "Warning Sign Shape", prompt_en: "In Picture A, the warning sign is tall and yellow, but in Picture B, it is smaller." },
+      { id: "d2", name: "Wall Clock Time", prompt_en: "In Picture A, the clock shows ten o'clock, but in Picture B, it shows half past ten." },
+      { id: "d3", name: "Student Bag Color", prompt_en: "In Picture A, the student bag is blue, but in Picture B, it is bright red." },
+      { id: "d4", name: "First-Aid Box", prompt_en: "In Picture A, the first-aid box is on the wall, but in Picture B, it is missing." }
     ]
   }
 };

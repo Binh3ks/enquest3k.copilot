@@ -7,8 +7,9 @@ import { useUserStore } from '../../stores/useUserStore';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 import MicFallbackInput from '../common/MicFallbackInput';
 import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
+import { getCalibratedCentroids } from '../../utils/calibrationAdapter';
 
-export function FindDifferencesInteractive({ customData, onComplete, isStealthMode = false }) {
+export function FindDifferencesInteractive({ customData, onComplete, isStealthMode = false, weekNumber = 33 }) {
   const [foundHotspots, setFoundHotspots] = useState([]); // [hotspotId]
   const [activeHotspot, setActiveHotspot] = useState(null);
   const [isRecording, setIsRecording] = useState(false);
@@ -17,11 +18,24 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
   const [score, setScore] = useState(null);
   const recognitionRef = useRef(null);
 
-  const rawHotspots = (customData?.hotspots && Array.isArray(customData.hotspots))
-    ? customData.hotspots
-    : (customData?.differences && Array.isArray(customData.differences))
-      ? customData.differences
+  const rawDifferences = (customData?.differences && Array.isArray(customData.differences))
+    ? customData.differences
+    : (customData?.hotspots && Array.isArray(customData.hotspots))
+      ? customData.hotspots
       : [];
+
+  const rawHotspots = useMemo(() => {
+    if (rawDifferences.length === 0) return [];
+    const centroids = getCalibratedCentroids(customData?.week || weekNumber);
+    if (rawDifferences.length !== centroids.length) {
+      throw new Error(`[DEV-003 Violation] differences length (${rawDifferences.length}) !== calibration centroids length (${centroids.length})`);
+    }
+    return rawDifferences.map((item, index) => ({
+      ...item,
+      x: centroids[index]?.x ?? item.x,
+      y: centroids[index]?.y ?? item.y
+    }));
+  }, [rawDifferences, customData, weekNumber]);
 
   const differencesData = {
     picA: customData?.picA || { title: 'Picture A (Original Scene)', image_url: '' },

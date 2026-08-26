@@ -62,10 +62,10 @@ export const speakingHub = {
       image_url: "/images/week35/w35_diff_scene_b.jpg"
     },
     differences: [
-      { id: "d1", name: "Mouse Tail Direction", x: 80, y: 19, prompt_en: "In Picture A, the mouse tail points up, but in Picture B, it points down." },
-      { id: "d2", name: "Tree Flower Color", x: 26, y: 20, prompt_en: "In Picture A, the flower is pink, but in Picture B, it is yellow." },
-      { id: "d3", name: "Butterfly on Rock", x: 56, y: 68, prompt_en: "In Picture A, there is a blue butterfly, but in Picture B, there is no butterfly." },
-      { id: "d4", name: "Sun Position", x: 82, y: 73, prompt_en: "In Picture A, the sun is high, but in Picture B, it is behind a cloud." }
+      { id: "d1", name: "Mouse Tail Direction", prompt_en: "In Picture A, the mouse tail points up, but in Picture B, it points down." },
+      { id: "d2", name: "Tree Flower Color", prompt_en: "In Picture A, the flower is pink, but in Picture B, it is yellow." },
+      { id: "d3", name: "Butterfly on Rock", prompt_en: "In Picture A, there is a blue butterfly, but in Picture B, there is no butterfly." },
+      { id: "d4", name: "Sun Position", prompt_en: "In Picture A, the sun is high, but in Picture B, it is behind a cloud." }
     ]
   }
 };
