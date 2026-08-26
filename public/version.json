@@ -1,9 +1,9 @@
 {
-  "commit": "ef01bdb2813a7e86bb87980ed7d97640375e1b01",
-  "git_commit": "ef01bdb2813a7e86bb87980ed7d97640375e1b01",
-  "shortCommit": "ef01bdb2",
-  "message": "fix(retell): add stations.read_explore fallback for retell questions",
-  "builtAt": "2026-08-26T01:54:28.421Z",
-  "build_timestamp": "2026-08-26T01:54:28.421Z",
+  "commit": "9a67e462c85ba34870fc9d8eee18bc9d408f0139",
+  "git_commit": "9a67e462c85ba34870fc9d8eee18bc9d408f0139",
+  "shortCommit": "9a67e462",
+  "message": "fix(w34): apply Round S data fixes to match W33 schema [round-s]",
+  "builtAt": "2026-08-26T01:54:35.303Z",
+  "build_timestamp": "2026-08-26T01:54:35.304Z",
   "env": "production"
 }
