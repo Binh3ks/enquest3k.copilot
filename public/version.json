@@ -1,9 +1,9 @@
 {
-  "commit": "3dd9d8eeefa9529e6bf4c31a32e4010193cd2d04",
-  "git_commit": "3dd9d8eeefa9529e6bf4c31a32e4010193cd2d04",
-  "shortCommit": "3dd9d8ee",
-  "message": "feat(pipeline): integrate Gate 17 fidelity validator into build and audit pipeline",
-  "builtAt": "2026-08-26T03:00:54.438Z",
-  "build_timestamp": "2026-08-26T03:00:54.438Z",
+  "commit": "9a074ab6806b8c9b0e723995a24bc66ff18923a1",
+  "git_commit": "9a074ab6806b8c9b0e723995a24bc66ff18923a1",
+  "shortCommit": "9a074ab6",
+  "message": "fix(cambridge): add runtime assertion against literal coordinates in FindDifferencesInteractive [BUG-4]",
+  "builtAt": "2026-08-26T03:08:18.124Z",
+  "build_timestamp": "2026-08-26T03:08:18.124Z",
   "env": "production"
 }
