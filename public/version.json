@@ -1,9 +1,9 @@
 {
-  "commit": "9a67e462c85ba34870fc9d8eee18bc9d408f0139",
-  "git_commit": "9a67e462c85ba34870fc9d8eee18bc9d408f0139",
-  "shortCommit": "9a67e462",
-  "message": "fix(w34): apply Round S data fixes to match W33 schema [round-s]",
-  "builtAt": "2026-08-26T01:54:35.303Z",
-  "build_timestamp": "2026-08-26T01:54:35.304Z",
+  "commit": "e06b64c9b206ea09b67290fe9d9c5806f4208a38",
+  "git_commit": "e06b64c9b206ea09b67290fe9d9c5806f4208a38",
+  "shortCommit": "e06b64c9",
+  "message": "docs(agents): add Cambridge Mechanic Fidelity Doctrine",
+  "builtAt": "2026-08-26T02:00:54.075Z",
+  "build_timestamp": "2026-08-26T02:00:54.076Z",
   "env": "production"
 }
