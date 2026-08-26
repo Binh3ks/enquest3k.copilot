@@ -107,33 +107,25 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
 
 ## 🎯 CAMBRIDGE MECHANIC FIDELITY DOCTRINE (W33+)
 
-Bảng 17 mechanics chuẩn Cambridge A2 Flyers:
+| Part | Mechanic | Spec |
+|---|---|---|
+| L1 | Draw lines | 1ex + 5 targets + 1 distractor name |
+| L2 | Form-fill | 1ex + 5 fields |
+| L3 | Match cards A-H | 1ex + 5 items + 8 cards |
+| L4 | 3-pic MCQ dialogue | 1ex + 5 questions × 3 options |
+| L5 | Color & Write | 1ex + 5-6 instructions |
+| R1 | Word bank | 1ex + 10 defs + 15 words |
+| R2 | Dialogue A-H | 1ex + 5 turns + 8 options |
+| R3 | Cloze + title | 1ex + 5 blanks + 10 words + 3 titles |
+| R4 | Grammar 3-choice | 1ex + 9 blanks × 3 options |
+| R5 | Text extraction | 1ex + 7 questions (1-4 words) |
+| R6 | Open cloze | 1ex + 5 gaps (1 word) |
+| R7 | 3-pic story | ≥20 words |
+| S1 | Find differences | 2 pics + 4 hotspots |
+| S2 | Info exchange | known:false + examiner Qs |
+| S3 | Picture story | 5 pics + examiner intro |
+| S4 | Personal questions | 4 questions |
 
-| Part | Mechanic | Số lượng | Example bắt buộc |
-|---|---|---|---|
-| L1 | Draw lines (names → targets) | 1ex + 5 targets + 1 distractor name | ✅ |
-| L2 | Form-fill (notepad) | 1ex + 5 fields | ✅ |
-| L3 | Match cards A-H | 1ex + 5 items + 8 cards | ✅ |
-| L4 | 3-picture MCQ (dialogue) | 1ex + 5 questions | ✅ |
-| L5 | Color & Write | 1ex + 5-6 instructions | ✅ |
-| R1 | Word bank matching | 1ex + 10 defs + 15 words | ✅ |
-| R2 | Dialogue A-H | 1ex + 5 turns + 8 options | ✅ |
-| R3 | Cloze + title | 1ex + 5 blanks + 10 words + 3 titles | ✅ |
-| R4 | Grammar cloze 3-choice | 1ex + 9 blanks × 3 options | ✅ |
-| R5 | Text extraction (free-text) | 1ex + 7 questions (1-4 words) | ✅ |
-| R6 | Open cloze (1 word) | 1ex + 5 gaps | ✅ |
-| R7 | 3-pic story writing | 3 pics + ≥20 words | N/A |
-| S1 | Find differences | 2 pics + 4 hotspots | N/A |
-| S2 | Info exchange (info-gap) | known:false fields + examiner Qs | N/A |
-| S3 | Picture story | 5 pics + examiner intro | N/A |
-| S4 | Personal questions | 4 questions | N/A |
-
-Quy tắc:
-1. Cơ chế PHẢI đúng bản chất (MCQ ≠ free-text; 3-choice ≠ open)
-2. Số lượng PHẢI đúng chuẩn (example + N items)
-3. Example PHẢI locked/pre-filled
-4. Generator PHẢI output đúng format (không fallback)
-5. Gate PHẢI catch sai format (not just count)
 
 
 ## 🤝 Session Handoff & Start Protocol (`/handoff` & `/start`) — 2026-08-17

@@ -276,7 +276,7 @@ export const readingHub = {
     story_title: "A Hero in the Forest",
     story_text: "Last weekend, Oliver and his sister Lily visited the animal wildlife park. At the educational storytelling corner, a park guide was reading Aesop's famous fable to all the children. The guide explained that a huge lion lived in a peaceful forest with many tall trees. While the lion was sleeping, a tiny mouse accidentally ran across his paw. Instead of eating the mouse, the lion showed great kindness and let him go free. Later that week, hunters caught the lion in a heavy net. The mouse did not run away in fear; he rushed over and used his sharp teeth to cut the ropes. Oliver and Lily loved the story because it showed that even the smallest creature can do great things.",
     example: {
-      prompt: weekNum === 34 ? "Oliver and his sister Lily visited the animal wildlife park last ___" : "Richard went to visit a castle with his parents last ___",
+      prompt: "Oliver and his sister Lily visited the animal wildlife park last ___",
       answer: "weekend"
     },
     questions: [
