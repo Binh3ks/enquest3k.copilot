@@ -1,0 +1,201 @@
+{
+  "_comment": "W33 Orphaned/stale audio manifest. Standard: Golden Learning & Assessment Standard v1.0, Rule S12. Generated: 2026-08-27",
+  "week": 33,
+  "generated": "2026-08-27",
+  "standard_version": "1.0",
+  "orphans": [
+    {
+      "filename": "listening_p1_target1.mp3",
+      "status": "ORPHANED",
+      "reason": "Superseded by passage_audio_script approach. Per-target audio not used by SVGLineMatcher runtime.",
+      "content_summary": "ASR: 'Tom is the boy in the blue shirt who slipped...' — Jake/Tom identity swapped vs current hub",
+      "hub_discrepancy": "n1=Jake(target1) but audio says 'Tom is the boy'; character identity inverted",
+      "safe_to_retain": true,
+      "safe_to_activate": false,
+      "action_required": "Regenerate from current listening_hub.js names[] before any per-target activation"
+    },
+    {
+      "filename": "listening_p1_target2.mp3",
+      "status": "ORPHANED",
+      "reason": "Same as target1. Tom/Jake identity swapped.",
+      "content_summary": "ASR: 'Jake is the boy wearing a green shirt...' — should be Tom",
+      "hub_discrepancy": "n2=Tom(target2) but audio says 'Jake is the boy'",
+      "safe_to_retain": true,
+      "safe_to_activate": false,
+      "action_required": "Regenerate from current hub data"
+    },
+    {
+      "filename": "listening_p1_target3.mp3",
+      "status": "ORPHANED",
+      "reason": "Stale character name: 'Nurse Clara' vs current 'Nurse Sarah'",
+      "content_summary": "ASR: 'Nurse Clara is the kind school nurse...'",
+      "hub_discrepancy": "n3=Nurse Sarah but audio says Nurse Clara",
+      "safe_to_retain": true,
+      "safe_to_activate": false,
+      "action_required": "Regenerate with correct name 'Nurse Sarah'"
+    },
+    {
+      "filename": "listening_p1_target4.mp3",
+      "status": "ORPHANED",
+      "reason": "Stale character name: 'Mr. Davis' vs current 'Headmaster Brown'",
+      "content_summary": "ASR: 'Mr. Davis is the tall headmaster...'",
+      "hub_discrepancy": "n4=Headmaster Brown but audio says Mr. Davis",
+      "safe_to_retain": true,
+      "safe_to_activate": false,
+      "action_required": "Regenerate with correct name 'Headmaster Brown'"
+    },
+    {
+      "filename": "listening_p1_target5.mp3",
+      "status": "ORPHANED",
+      "reason": "Stale character identity: 'Emma' (female) vs current 'Cleaner Bob' (male)",
+      "content_summary": "ASR: 'Emma is the helpful girl wearing yellow...'",
+      "hub_discrepancy": "n5=Cleaner Bob but audio says Emma (wrong name, wrong gender)",
+      "safe_to_retain": true,
+      "safe_to_activate": false,
+      "action_required": "Regenerate with correct name 'Cleaner Bob'"
+    }
+  ],
+  "stale_active": [
+    {
+      "filename": "read_stem.mp3",
+      "status": "REGENERATED",
+      "reason": "Previously generated from stale version with 'Nurse Clara'. Regenerated 2026-08-27 from read.js text_en.",
+      "content_summary": "Now: anonymous nurse/boy as per current read.js. No character names.",
+      "source_file": "src/data/weeks/week_33/read.js",
+      "source_field": "text_en",
+      "action_required": "None — regenerated",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "explore.mp3",
+      "status": "REGENERATED",
+      "reason": "Previously explore_full.mp3 with global safety rules content. Rewritten to friction science and regenerated.",
+      "content_summary": "Now: friction science (wet floors, friction force, Jake's corridor, Japan/Australia non-slip tiles).",
+      "source_file": "src/data/weeks/week_33/explore.js",
+      "source_field": "content_en",
+      "action_required": "None — regenerated",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "dictation_1.mp3",
+      "status": "REGENERATED",
+      "reason": "Minor drift (added 'school'). Regenerated from current source.",
+      "source_file": "src/data/weeks/week_33/skill_practice_hub.js",
+      "source_field": "dictation[0].text",
+      "action_required": "None — regenerated",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "dictation_2.mp3",
+      "status": "REGENERATED",
+      "reason": "Grammar error ('running' vs 'ran'). Regenerated from current source.",
+      "source_file": "src/data/weeks/week_33/skill_practice_hub.js",
+      "source_field": "dictation[1].text",
+      "action_required": "None — regenerated",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "dictation_3.mp3",
+      "status": "REGENERATED",
+      "reason": "Completely different sentence. Regenerated from current source.",
+      "source_file": "src/data/weeks/week_33/skill_practice_hub.js",
+      "source_field": "dictation[2].text",
+      "action_required": "None — regenerated",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "dictation_4.mp3",
+      "status": "REGENERATED",
+      "reason": "Different predicate. Regenerated from current source.",
+      "source_file": "src/data/weeks/week_33/skill_practice_hub.js",
+      "source_field": "dictation[3].text",
+      "action_required": "None — regenerated",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "dictation_5.mp3",
+      "status": "REGENERATED",
+      "reason": "Different ending. Regenerated from current source.",
+      "source_file": "src/data/weeks/week_33/skill_practice_hub.js",
+      "source_field": "dictation[4].text",
+      "action_required": "None — regenerated",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "listening_p4_example.mp3",
+      "status": "NEW",
+      "reason": "New file generated for p4_example from dialogue_script[] (P0-4 fix).",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_field": "listening_p4.questions[0].dialogue_script",
+      "action_required": "None",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "listening_p4_q1.mp3",
+      "status": "REGENERATED",
+      "reason": "Regenerated with new dialogue_script[]. Answer now B (options reordered).",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_field": "listening_p4.questions[p4_q1].dialogue_script",
+      "action_required": "None",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "listening_p4_q2.mp3",
+      "status": "REGENERATED",
+      "reason": "Regenerated with new dialogue_script[]. Answer A.",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_field": "listening_p4.questions[p4_q2].dialogue_script",
+      "action_required": "None",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "listening_p4_q3.mp3",
+      "status": "REGENERATED",
+      "reason": "Regenerated with new dialogue_script[]. Answer now C (options reordered).",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_field": "listening_p4.questions[p4_q3].dialogue_script",
+      "action_required": "None",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "listening_p4_q4.mp3",
+      "status": "REGENERATED",
+      "reason": "Regenerated with new dialogue_script[]. Answer now B (options reordered).",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_field": "listening_p4.questions[p4_q4].dialogue_script",
+      "action_required": "None",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "listening_p4_q5.mp3",
+      "status": "REGENERATED",
+      "reason": "Regenerated with new dialogue_script[]. Answer A.",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_field": "listening_p4.questions[p4_q5].dialogue_script",
+      "action_required": "None",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    },
+    {
+      "filename": "listening_p4_full.mp3",
+      "status": "REGENERATED",
+      "reason": "Composite file regenerated from all Q dialogue_script audio.",
+      "action_required": "None",
+      "blocking": false,
+      "regenerated": "2026-08-27"
+    }
+  ]
+}
+

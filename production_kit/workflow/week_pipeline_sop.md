@@ -1,6 +1,90 @@
 # EngQuest3K — Week Content Pipeline SOP (W33+)
-**Schema Version**: 2.0 | **Effective from**: W33 | **Frozen**: 2026-08-26
+**Schema Version**: 2.1 | **Effective from**: W33 | **Updated**: 2026-08-26
 **Single Source of Truth**: AGENTS.md §🏰 Master 15-Task Architecture Invariant
+
+---
+
+## ⚖️ CRITICAL GOVERNANCE PRINCIPLES (Read First — Non-Negotiable)
+
+### TWO-LEVEL REVIEW SYSTEM
+
+W33+ content is reviewed at **two separate levels**. These levels MUST NOT be confused.
+
+**Level A — Learning & Practice Content (Quest 1–4)**
+- Quests 1–4 are learning/practice quests. They develop the 3-year syllabus.
+- They **DO NOT** need to reproduce the exact Cambridge Flyers exam format.
+- They must be: Cambridge-aligned, age-appropriate (A2), CEFR-compliant, pedagogically sound,
+  communicatively valid, and supportive of CLIL English-medium learning.
+- A practice task CAN be structurally different from the exam and still be **fully valid**.
+
+**Level B — Flyers Shields (Quest 5)**
+- Shields are the assessment units. Exact Cambridge Flyers mechanics are **mandatory**.
+- Number of examples, scored items, distractor rules, interaction model, audio structure —
+  all must match the Cambridge doctrine in `schemas/cambridge-flyers-fidelity-doctrine.schema.json`.
+
+> ⚠️ **"Cambridge-aligned practice does not mean every practice task must replicate the Cambridge exam format."**
+>
+> ⚠️ **"Exact Cambridge Flyers format is mandatory for active Flyers Shields and the full Mock Test."**
+
+### VALIDATION GATES ARE INDEPENDENT
+
+A PASS on one gate does NOT imply a PASS on any other gate:
+
+| Gate | What it validates |
+|------|------------------|
+| Gate A | Learning Practice Quality (Level A) |
+| Gate B | Cambridge Alignment |
+| Gate C | Flyers Shield Fidelity (Level B) |
+| Gate D | Wordlist / Vocabulary Governance |
+| Gate E | CLIL / Domain Accuracy |
+| Gate F | Runtime / Schema Integrity |
+| Gate G | Asset / Audio / Data Parity |
+| Gate H | Visual QA |
+
+CEFR PASS ≠ Flyers Shield PASS. Wordlist PASS ≠ Cambridge Mechanics PASS.
+
+### CLIL / DOMAIN TERMINOLOGY GOVERNANCE
+
+CLIL-specific science/topic terms (e.g., `friction`, `surface`, `tiles`, `grip`) are NOT
+core learner vocabulary — they are domain terms explicitly approved for a specific week's
+CLIL topic. They must be:
+- Listed in the week's `clil_article.vocab_focus[]`
+- NOT treated as silent wordlist passes
+- NOT rejected as "B2+ jargon" if they are genuine A2 CLIL concepts
+- Pedagogically justified by the CLIL lesson context
+
+### WORDLIST GOVERNANCE — 5 REGISTERS
+
+Do NOT merge all wordlists into one undifferentiated set. Maintain 5 registers:
+
+| Register | Source | Validator action |
+|----------|---------|-----------------|
+| Core Flyers A2 | `flyers_a2.json` + `movers_a1.json` + `starters_pre_a1.json` | PASS |
+| Function words | Grammar, pronouns, auxiliaries | PASS always |
+| Proper names | Character names, week-specific places | PASS (explicit list) |
+| CLIL domain terms | Week's `clil_article.vocab_focus[]` | PASS if on approved list |
+| KET extension | `ket_a2.json` words NOT in Flyers/Movers/Starters | **WARN** — not a silent PASS |
+
+> KET vocabulary is NOT a silent fallback for core Flyers A2. KET-only words trigger a WARN,
+> not a PASS, in the vocabulary gate. Do NOT use KET to expand core learner vocabulary silently.
+
+### RUNTIME REACHABILITY RULE
+
+The mere existence of Shield data in a week's hub files does NOT mean it is active in Quest 5.
+A Shield is active ONLY if `bossRotarySchedule.js` includes its ID in `testedSkills[cycleNumber]`
+for that week. Non-active data is valid **future rotation material** — NOT a bug.
+
+Do NOT treat extra Shield data in a hub file as a rotation violation unless it is reachable
+from the active Quest 5 runtime for that week's cycle.
+
+### WEEK 5 MOCK TEST — SEPARATE FROM WEEKLY ROTATION
+
+Every 5th week (W37, W42, W47, W52…) is a Full Cambridge A2 Flyers Mock Exam.
+The Mock Test:
+- Is NOT a Shield rotation week
+- Must cover all 16 Cambridge Flyers parts (L1–L5, R&W P1–P7, Speaking P1–P4)
+- Must follow real exam timing per Cambridge specification
+- Corresponds to `cycleNumber === 5` / `cycleKey === 0` in `bossRotarySchedule.js`
 
 ---
 
@@ -56,14 +140,16 @@ const { cycleNumber, testedSkills, shieldCount } = getBossRotaryConfig(weekNumbe
 // → Chỉ sinh data cho testedSkills của cycleNumber này
 ```
 
-| Cycle | Tuần (W33+) | Boss data cần sinh |
-|-------|-------------|-------------------|
-| **1** | W33, W38, W43… | `listening_p1`, `listening_p2`, `listening_p3` |
-| **2** | W34, W39, W44… | `listening_p4`, `listening_p5`, `rw_p1`, `speaking_p1` |
-| **3** | W35, W40, W45… | `rw_p2`, `rw_p3`, `rw_p4`, `rw_p5` |
-| **4** | W36, W41, W46… | `rw_p6`, `rw_p7`, `speaking_p2`, `speaking_p3` |
-| **5** | W37, W42, W47… | ALL 15 Shields (Full Mock Exam) |
+| Cycle | Tuần (W33+) | Boss data cần sinh | Cambridge Parts |
+|-------|-------------|-------------------|----------------|
+| **1** | W33, W38, W43… | `listening_p1`, `listening_p2`, `listening_p3` | L P1, P2, P3 |
+| **2** | W34, W39, W44… | `listening_p4`, `listening_p5`, `rw_p1`, `speaking_p1` | L P4, P5; R&W P1; S P1 |
+| **3** | W35, W40, W45… | `rw_p2`, `rw_p3`, `rw_p4`, `rw_p5` | R&W P2, P3, P4, P5 |
+| **4** | W36, W41, W46… | `rw_p6`, `rw_p7`, `speaking_p2`, `speaking_p3`, `speaking_p4` | R&W P6, P7; S P2, P3, P4 |
+| **5** | W37, W42, W47… | ALL 16 Cambridge parts (Full Mock Exam) | All L/R&W/S |
 
+> Total across Cycles 1–4: 16 unique Cambridge Flyers parts (L1–L5 + R&W P1–P7 + Speaking P1–P4).
+>
 > ❌ CẤM sinh data cho Shield không thuộc `testedSkills[cycleNumber]`.
 
 ---
@@ -274,3 +360,9 @@ Push chỉ khi 0 CRITICAL BUGS.
 8. **L1 pins cách nhau ≥ 8%** — Tránh overlap trên mọi màn hình
 9. **Action Lab vocab từ `clil_article.vocab_focus[]`** — Không dùng B2+ terms
 10. **Vocabulary Gate** — `grep -rn "handrail\|lubricant\|predominantly" src/data/weeks/weekNN/` → ZERO
+11. **Quest 1–4 KHÔNG yêu cầu exact Cambridge exam format** — Chỉ cần Cambridge-aligned & pedagogically valid (Level A)
+12. **Quest 5 Shields BẮT BUỘC exact Cambridge Flyers format** — Gate17 PHẢI PASS trước khi push (Level B)
+13. **CLIL domain terms phải có trong `clil_article.vocab_focus[]`** — Không hardcode vào function whitelist
+14. **KET là WARN không phải PASS** — KET-only words không được tính là core Flyers A2 vocabulary
+15. **Extra Shield data trong hub ≠ active Shield** — Chỉ `testedSkills[cycleNumber]` mới là active Quest 5 Shields
+16. **Week 5 Mock = 16 Cambridge parts** — Khác hoàn toàn với weekly Shield rotation, có full timing

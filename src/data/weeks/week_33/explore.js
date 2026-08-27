@@ -1,19 +1,37 @@
-// Week 33 Social Studies: Corridor Safety & School Rules Around the World
+// Week 33 CLIL Explore: Why Do Wet Floors Cause Accidents? — Friction Science in Schools Worldwide
 export default {
   id: "w33_explore",
-  title: "School Safety Rules Around the World",
-  title_vi: "Quy Tắc An Toàn Trường Học Trên Khắp Thế Giới",
+  title: "Why Do Wet Floors Cause Accidents?",
+  title_vi: "Tại Sao Sàn Ướt Lại Gây Tai Nạn?",
   cover_image: "/images/week33/explore_cover_w33.jpg",
-  audio_url: "/audio/week33/explore_full.mp3",
-  content_en: "Schools around the world have important safety rules to protect students every day. In Canada and the UK, janitors place bright yellow warning signs in corridors whenever floors are wet. In Japan, students walk in single lines during class breaks and practice safety drills every month. Following safety rules helps prevent accidents, keeps hallways calm, and shows respect for our school community.",
-  content_vi: "Các trường học trên thế giới đều có các quy tắc an toàn quan trọng để bảo vệ học sinh mỗi ngày. Tại Canada và Vương quốc Anh, các nhân viên dọn dẹp đặt biển cảnh báo màu vàng tươi ở hành lang bất cứ khi nào sàn bị ướt. Tại Nhật Bản, học sinh đi thành hàng đơn trong giờ giải lao và thực hành diễn tập an toàn hàng tháng. Việc tuân thủ quy tắc an toàn giúp ngăn ngừa tai nạn, giữ cho hành lang trật tự và thể hiện sự tôn trọng đối với cộng đồng trường học.",
+  audio_url: "/audio/week33/explore.mp3",
+  // P0-6 FIX: content_en rewritten to match W33 theme (friction/corridor/Jake's incident).
+  // Previously narrated global school safety policy (Canada/UK/Japan) — unrelated to the week's
+  // core narrative. Now extends the friction science story introduced in read_stem and clil_article.
+  content_en: "Have you ever slipped on a wet floor? There is a science reason for this. When a floor is dry, your shoes grip the tiles. This grip is called friction. Friction is a force that keeps your feet from sliding. When water covers the tiles, the friction between your shoes and the floor becomes very low. Your feet slide easily and you can fall. That is exactly what happened to the boy in Jake's school corridor. The cleaner had just washed the tiles. The floor looked clean, but it was very slippery. In schools around the world, yellow warning signs are placed on wet floors to remind students to walk slowly. In Japan, school corridors have special non-slip tiles to increase friction even when wet. In Australia, rubber mats are placed near water fountains to keep the floor safe. Understanding friction helps us design safer schools for everyone.",
+  content_vi: "Bạn đã bao giờ bị trượt trên sàn ướt chưa? Có một lý do khoa học cho điều này. Khi sàn khô, giày của bạn bám chặt vào gạch. Lực bám này được gọi là ma sát. Ma sát là một lực giữ cho chân bạn không bị trượt. Khi nước phủ lên gạch, ma sát giữa giày và sàn trở nên rất thấp. Chân bạn dễ dàng trượt và bạn có thể ngã. Đó chính xác là những gì đã xảy ra với cậu bé trong hành lang trường của Jake. Người lau dọn vừa mới lau sàn. Sàn trông sạch sẽ nhưng rất trơn trượt. Ở các trường học trên thế giới, biển cảnh báo màu vàng được đặt trên sàn ướt để nhắc nhở học sinh đi chậm lại. Ở Nhật Bản, hành lang trường học có gạch chống trượt đặc biệt để tăng ma sát ngay cả khi ướt. Ở Úc, thảm cao su được đặt gần đài phun nước để giữ cho sàn an toàn. Hiểu về ma sát giúp chúng ta thiết kế các trường học an toàn hơn.",
   check_questions: [
-    { id: 1, question_en: "Why do schools place yellow warning signs in corridors?", options: ["To warn people about wet and slippery floors", "To make hallways look colorful", "To show the time of day"], answer: "To warn people about wet and slippery floors" },
-    { id: 2, question_en: "How do Japanese students move during class breaks to stay safe?", options: ["They walk in single lines calmly", "They run quickly to the playground", "They play football in the hallway"], answer: "They walk in single lines calmly" },
-    { id: 3, question_en: "What is the main purpose of following school safety rules?", options: ["To prevent accidents and protect classmates", "To make homework longer", "To test student memory"], answer: "To prevent accidents and protect classmates" }
+    {
+      id: 1,
+      question_en: "What happens to friction when a floor is wet?",
+      options: ["Friction becomes very low and feet slide easily", "Friction becomes higher and feet stick to the floor", "Friction stays the same as on a dry floor"],
+      answer: "Friction becomes very low and feet slide easily"
+    },
+    {
+      id: 2,
+      question_en: "Why did the boy in Jake's corridor slip and fall?",
+      options: ["The cleaner had just washed the tiles, making the floor slippery", "He was wearing new shoes for the first time", "The corridor was too dark to see"],
+      answer: "The cleaner had just washed the tiles, making the floor slippery"
+    },
+    {
+      id: 3,
+      question_en: "How do schools in Japan keep corridors safe when floors are wet?",
+      options: ["They use special non-slip tiles that increase friction", "They close the corridor until it is dry", "They ask students to remove their shoes"],
+      answer: "They use special non-slip tiles that increase friction"
+    }
   ],
   critical_thinking: {
-    question_en: "How do safety rules in your school help you and your classmates learn better?",
-    hint_en: "Think about how feeling safe and calm allows everyone to focus on lessons without fear of accidents."
+    question_en: "What can you do to keep your school corridor safe after a cleaner washes the floor?",
+    hint_en: "Think about warning signs, walking slowly, and how friction protects you from slipping."
   }
 };

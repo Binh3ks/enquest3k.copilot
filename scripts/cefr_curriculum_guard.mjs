@@ -25,12 +25,20 @@ const isStage1_A2 = targetWeek <= 72; // Weeks 1-72: Cambridge Pre-A1 -> A1 -> A
 const isStage2_B1B2 = targetWeek > 72; // Weeks 73-156: B1 Preliminary -> B1+ -> B2 First
 
 const STAGE_NAME = isStage1_A2
-  ? 'STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers / KET)'
+  ? 'STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)'
   : 'STAGE 2: Cambridge Lower Secondary & PET/FCE (B1 Preliminary / B1+ / B2 First)';
 
+// Core Flyers A2 wordlists (excludes KET — tracked separately)
+const CORE_FLYERS_FILES = isStage1_A2
+  ? ['starters_pre_a1.json', 'movers_a1.json', 'flyers_a2.json']
+  : ['starters_pre_a1.json', 'movers_a1.json', 'flyers_a2.json', 'pet_b1.json', 'fce_b2.json'];
+
+// KET tracked separately — KET words trigger WARN (not silent PASS)
+const KET_FILE = 'ket_a2.json';
+
 const ALLOWED_WORDLIST_FILES = isStage1_A2
-  ? ['starters_pre_a1.json', 'movers_a1.json', 'flyers_a2.json', 'ket_a2.json']
-  : ['starters_pre_a1.json', 'movers_a1.json', 'flyers_a2.json', 'ket_a2.json', 'pet_b1.json', 'fce_b2.json'];
+  ? [...CORE_FLYERS_FILES, KET_FILE]
+  : [...CORE_FLYERS_FILES, KET_FILE, 'pet_b1.json', 'fce_b2.json'];
 
 // Words strictly banned in Stage 1 (A2) to protect 7-10yo kids from academic burnout
 const STAGE1_BANNED_ACADEMIC_JARGON = new Set([
@@ -44,9 +52,12 @@ const STAGE1_BANNED_ACADEMIC_JARGON = new Set([
   'infrastructure', 'unprecedented', 'equilibrium', 'paradigm'
 ]);
 
-// Populate Allowed Word Sets
+// Populate word sets
+const coreFlyers = new Set(); // Starters + Movers + Flyers (primary register)
+const ketOnly = new Set();    // KET words NOT in coreFlyers (extension register — WARN only)
 const allowedWords = new Set();
-for (const file of ALLOWED_WORDLIST_FILES) {
+
+for (const file of CORE_FLYERS_FILES) {
   const filePath = path.join(WORDLISTS_DIR, file);
   if (fs.existsSync(filePath)) {
     try {
@@ -55,7 +66,7 @@ for (const file of ALLOWED_WORDLIST_FILES) {
         content.words.forEach(w => {
           w.toLowerCase().split(/\s+/).forEach(t => {
             const clean = t.replace(/[^a-z]/g, '');
-            if (clean) allowedWords.add(clean);
+            if (clean) { coreFlyers.add(clean); allowedWords.add(clean); }
           });
         });
       }
@@ -64,6 +75,28 @@ for (const file of ALLOWED_WORDLIST_FILES) {
     }
   }
 }
+
+// Load KET — track which words are KET-only (not in core Flyers)
+const ketFilePath = path.join(WORDLISTS_DIR, KET_FILE);
+if (fs.existsSync(ketFilePath)) {
+  try {
+    const content = JSON.parse(fs.readFileSync(ketFilePath, 'utf-8'));
+    if (Array.isArray(content.words)) {
+      content.words.forEach(w => {
+        w.toLowerCase().split(/\s+/).forEach(t => {
+          const clean = t.replace(/[^a-z]/g, '');
+          if (clean) {
+            allowedWords.add(clean); // still allowed to pass
+            if (!coreFlyers.has(clean)) ketOnly.add(clean); // but marked as extension
+          }
+        });
+      });
+    }
+  } catch (e) {
+    console.warn(`Warning: Could not parse ${KET_FILE}`);
+  }
+}
+
 
 // Fundamental ESL Grammatical Function Words, Proper Names, Numbers & Core School/Science terms
 const BASE_FUNCTIONAL_WHITELIST = new Set([
@@ -279,7 +312,33 @@ async function main() {
     console.log(`❌ FAILED: Week ${targetWeek} contains ${totalErrors} out-of-standard elements. Please fix before release!`);
     process.exit(1);
   } else {
-    console.log(`✅ PASSED: Week ${targetWeek} conforms 100% to ${STAGE_NAME}!`);
+    // Governance: report KET-only words found in this week's content (WARN not FAIL)
+    if (isStage1_A2 && ketOnly.size > 0) {
+      // Collect words used in week content that are KET-extension (not in core Flyers)
+      const weekDirFull = path.join(WEEKS_DIR, `week_${targetWeek}`);
+      const ketWordsUsed = new Set();
+      if (fs.existsSync(weekDirFull)) {
+        const weekFiles = fs.readdirSync(weekDirFull).filter(f => f.endsWith('.js') || f.endsWith('.json'));
+        for (const wf of weekFiles) {
+          try {
+            const raw = fs.readFileSync(path.join(weekDirFull, wf), 'utf-8');
+            const words = raw.toLowerCase().replace(/[^a-z\s]/g, ' ').split(/\s+/).filter(Boolean);
+            for (const w of words) {
+              if (ketOnly.has(w)) ketWordsUsed.add(w);
+            }
+          } catch (e) { /* skip */ }
+        }
+      }
+      if (ketWordsUsed.size > 0) {
+        console.log(`\n⚠️  KET EXTENSION WORDS DETECTED (not Core Flyers A2 — review if intentional):`);
+        console.log(`   These words are from KET A2 (not Starters/Movers/Flyers). They PASS the guard`);
+        console.log(`   but are NOT considered core Flyers A2 learner vocabulary:`);
+        [...ketWordsUsed].sort().forEach(w => console.log(`   • ${w}`));
+        console.log(`   → If these are CLIL domain terms, add them to clil_article.vocab_focus[].`);
+        console.log(`   → If they are core words, verify they appear in flyers_a2.json.`);
+      }
+    }
+    console.log(`✅ PASSED: Week ${targetWeek} conforms to ${STAGE_NAME}!`);
     process.exit(0);
   }
 }

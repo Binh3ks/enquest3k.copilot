@@ -37,6 +37,40 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
   listening_p2: {
     title: "Jake's School Day",
     audio_url: "/audio/week33/listening_p2_full.mp3",
+    // ──────────────────────────────────────────────────────────────────────
+    // dialogue_script: ONE SOURCE OF TRUTH for L2 audio generation.
+    // RULE: speaker field is metadata → controls TTS voice selection only.
+    //       text field is the spoken content → sent verbatim to TTS.
+    //       "Man:" / "Woman:" must NEVER appear in any text field.
+    //       Cambridge A2 Flyers Part 2 requires 2 acoustically distinct voices.
+    //       man  → en-US-Neural2-D (male)
+    //       woman → en-US-Journey-F (female)
+    // ──────────────────────────────────────────────────────────────────────
+    required_speakers: ['man', 'woman'],
+    dialogue_script: [
+      // Intro frame (female examiner/narrator opens)
+      { speaker: 'woman', text: 'Listen and write. There is one example.' },
+      // Example exchange
+      { speaker: 'man',   text: 'Hi. My name is Jake. Can I answer some questions?' },
+      { speaker: 'woman', text: 'Of course. What classroom are you in?' },
+      { speaker: 'man',   text: 'I am in Room 4B.' },
+      { speaker: 'woman', text: 'That is the example. Room 4B. Now you listen and write.' },
+      // Field 1 — Favorite subject → answer: Science
+      { speaker: 'woman', text: 'What is your favourite subject at school?' },
+      { speaker: 'man',   text: 'My favourite subject is Science.' },
+      // Field 2 — Incident location → answer: school corridor
+      { speaker: 'woman', text: 'And where did the accident happen today?' },
+      { speaker: 'man',   text: 'It happened in the school corridor, near the science room.' },
+      // Field 3 — Nurse arrival time → answer: 2 minutes
+      { speaker: 'woman', text: 'How quickly did the nurse arrive?' },
+      { speaker: 'man',   text: 'She arrived in about 2 minutes.' },
+      // Field 4 — First aid item → answer: clean bandage
+      { speaker: 'woman', text: 'What did the nurse use to help the hurt knee?' },
+      { speaker: 'man',   text: 'She used a clean bandage and a cold pack.' },
+      // Field 5 — Headmaster award → answer: safety badge
+      { speaker: 'woman', text: 'Did the headmaster say anything at assembly?' },
+      { speaker: 'man',   text: 'Yes. He gave Jake a safety badge in front of the whole school.' }
+    ],
     example: { field_label: "Classroom number", answer: "Room 4B" },
     fields: [
       { id: "f1", field_label: "Favorite subject", answer: "Science" },
@@ -46,14 +80,37 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
       { id: "f5", field_label: "Headmaster award", answer: "safety badge" }
     ]
   },
+  // Cambridge alignment: ALIGNED (two-voice per item, 8 cards, 5 items, example)
   listening_p3: {
+    cambridge_alignment: "ALIGNED",
     example: { name: "Cleaning Mop", target_letter: "H" },
     items: [
-      { id: 1, name: "School Stairs", target_letter: "A", audio_url: "/audio/week33/listening_p3_item1.mp3" },
-      { id: 2, name: "Warning Sign", target_letter: "B", audio_url: "/audio/week33/listening_p3_item2.mp3" },
-      { id: 3, name: "First-Aid Kit", target_letter: "C", audio_url: "/audio/week33/listening_p3_item3.mp3" },
-      { id: 4, name: "Cold Pack", target_letter: "D", audio_url: "/audio/week33/listening_p3_item4.mp3" },
-      { id: 5, name: "Clean Bandage", target_letter: "E", audio_url: "/audio/week33/listening_p3_item5.mp3" }
+      // P0-5 FIX: audio_text field added — source of truth for L3 item audio generation
+      {
+        id: 1, name: "School Stairs", target_letter: "A",
+        audio_text: "Look at the first picture. What are the steps inside the school building that go up and down between floors? Those are the school stairs. They go up to the second floor. School stairs. Write the letter.",
+        audio_url: "/audio/week33/listening_p3_item1.mp3"
+      },
+      {
+        id: 2, name: "Warning Sign", target_letter: "B",
+        audio_text: "What is the yellow board placed on the wet floor to warn students to be careful? That is the warning sign. It says Be Careful. Warning sign. Write the letter.",
+        audio_url: "/audio/week33/listening_p3_item2.mp3"
+      },
+      {
+        id: 3, name: "First-Aid Kit", target_letter: "C",
+        audio_text: "What is the white box with a red cross kept in the nurse office for injuries? That is the first aid kit. The nurse keeps it ready. First aid kit. Write the letter.",
+        audio_url: "/audio/week33/listening_p3_item3.mp3"
+      },
+      {
+        id: 4, name: "Cold Pack", target_letter: "D",
+        audio_text: "What is the blue bag filled with ice that the nurse puts on a swollen knee? That is the cold pack. It stops the knee from swelling. Cold pack. Write the letter.",
+        audio_url: "/audio/week33/listening_p3_item4.mp3"
+      },
+      {
+        id: 5, name: "Clean Bandage", target_letter: "E",
+        audio_text: "What is the long white cloth strip wrapped around a cut or hurt part of the body? That is the clean bandage. The nurse uses it to cover the wound. Clean bandage. Write the letter.",
+        audio_url: "/audio/week33/listening_p3_item5.mp3"
+      }
     ],
     cards: [
       { letter: "A", name: "School Stairs", image_url: "/images/week33/card_a.jpg" },
@@ -66,80 +123,110 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
       { letter: "H", name: "Cleaning Mop", image_url: "/images/week33/card_h.jpg" }
     ]
   },
+  // Cambridge alignment: EXACT after P0 fixes (dialogue_script, 2-voice, mixed answers, example)
   listening_p4: {
+    cambridge_alignment: "ALIGNED", // upgrades to EXACT after audio regeneration with dialogue_script
     audio_url: "/audio/week33/listening_p4_full.mp3",
     instructions: "Listen and tick the box. There is one example.",
+    // P0-1 FIX: Answer distribution corrected — Q1=B, Q2=A, Q3=C, Q4=B, Q5=A (spans A/B/C)
+    // P0-4 FIX: dialogue_script[] replaces audio_script string; no Man:/Woman: in text fields
+    // P0-3/DEF-014 FIX: "Question N." prefix removed from question turns
     questions: [
       {
         id: "p4_example",
         isExample: true,
         question_en: "Where was Jake walking after class?",
-        audio_url: "/audio/week33/listening_p4_q1.mp3",
-        audio_script: `Woman: Look at the example. Where was Jake walking after class?\nMan: He was walking carefully in the school corridor.\nWoman: Can you see the tick? Now you listen and tick the box.`,
+        audio_url: "/audio/week33/listening_p4_example.mp3",
+        // RULE B: speaker metadata only; RULE I: no 'Question N.' in text
+        dialogue_script: [
+          { speaker: 'woman', text: 'Look at the example. Where was Jake walking after class?' },
+          { speaker: 'man',   text: 'He was walking carefully in the school corridor.' },
+          { speaker: 'woman', text: 'Can you see the tick next to picture A? Now you listen and tick the box.' }
+        ],
         options: [
-          { letter: "A", text: "In the school corridor", image_url: "/images/week33/webtoon_scene_1.png" },
-          { letter: "B", text: "Across the playground", image_url: "/images/week33/card_g.jpg" },
-          { letter: "C", text: "Inside the library", image_url: "/images/week33/card_c.jpg" }
+          { letter: "A", text: "In the school corridor",  image_url: "/images/week33/webtoon_scene_1.png" },
+          { letter: "B", text: "Across the playground",   image_url: "/images/week33/card_g.jpg" },
+          { letter: "C", text: "Inside the library",      image_url: "/images/week33/card_c.jpg" }
         ],
         answer: "A"
       },
       {
+        // Q1 answer: B — options shuffled so correct answer is B
         id: "p4_q1",
         question_en: "Why was the floor slippery near the science room?",
         audio_url: "/audio/week33/listening_p4_q1.mp3",
-        audio_script: `Woman: Question 1. Why was the floor slippery near the science room?\nMan: The cleaner had just washed the tiles with water.`,
-        options: [
-          { letter: "A", text: "The cleaner just washed the tiles", image_url: "/images/week33/card_b.jpg" },
-          { letter: "B", text: "Someone spilled apple juice", image_url: "/images/week33/card_d.jpg" },
-          { letter: "C", text: "It was raining outside", image_url: "/images/week33/card_f.jpg" }
+        dialogue_script: [
+          { speaker: 'woman', text: 'Why was the floor slippery near the science room?' },
+          { speaker: 'man',   text: 'The cleaner had just washed the tiles with water.' }
         ],
-        answer: "A"
+        options: [
+          { letter: "A", text: "Someone spilled apple juice",       image_url: "/images/week33/card_d.jpg" },
+          { letter: "B", text: "The cleaner just washed the tiles", image_url: "/images/week33/card_b.jpg" },
+          { letter: "C", text: "It was raining outside",           image_url: "/images/week33/card_f.jpg" }
+        ],
+        answer: "B"
       },
       {
+        // Q2 answer: A — options kept with correct at A
         id: "p4_q2",
         question_en: "What happened when the boy ran fast?",
         audio_url: "/audio/week33/listening_p4_q2.mp3",
-        audio_script: `Woman: Question 2. What happened when the boy ran fast?\nMan: He slipped on the wet floor and hurt his knee.`,
+        dialogue_script: [
+          { speaker: 'woman', text: 'What happened when the boy ran fast?' },
+          { speaker: 'man',   text: 'He slipped on the wet floor and hurt his knee.' }
+        ],
         options: [
           { letter: "A", text: "He slipped and hurt his knee", image_url: "/images/week33/webtoon_scene_2.png" },
-          { letter: "B", text: "He dropped his lunch box", image_url: "/images/week33/card_a.jpg" },
-          { letter: "C", text: "He forgot his backpack", image_url: "/images/week33/card_g.jpg" }
+          { letter: "B", text: "He dropped his lunch box",     image_url: "/images/week33/card_a.jpg" },
+          { letter: "C", text: "He forgot his backpack",       image_url: "/images/week33/card_g.jpg" }
         ],
         answer: "A"
       },
       {
+        // Q3 answer: C — options shuffled so correct answer is C
         id: "p4_q3",
         question_en: "What did Jake do immediately?",
         audio_url: "/audio/week33/listening_p4_q3.mp3",
-        audio_script: `Woman: Question 3. What did Jake do immediately?\nMan: He ran to the nurse's room to call for help.`,
-        options: [
-          { letter: "A", text: "He ran to call the school nurse", image_url: "/images/week33/webtoon_scene_3.png" },
-          { letter: "B", text: "He laughed at his friend", image_url: "/images/week33/card_c.jpg" },
-          { letter: "C", text: "He ran outside to play", image_url: "/images/week33/card_e.jpg" }
+        dialogue_script: [
+          { speaker: 'woman', text: 'What did Jake do immediately?' },
+          { speaker: 'man',   text: "He ran to the nurse's room to call for help." }
         ],
-        answer: "A"
+        options: [
+          { letter: "A", text: "He laughed at his friend",        image_url: "/images/week33/card_c.jpg" },
+          { letter: "B", text: "He ran outside to play",          image_url: "/images/week33/card_e.jpg" },
+          { letter: "C", text: "He ran to call the school nurse", image_url: "/images/week33/webtoon_scene_3.png" }
+        ],
+        answer: "C"
       },
       {
+        // Q4 answer: B — options shuffled so correct answer is B
         id: "p4_q4",
         question_en: "What did the nurse use to treat the knee?",
         audio_url: "/audio/week33/listening_p4_q4.mp3",
-        audio_script: `Woman: Question 4. What did the nurse use to treat the knee?\nMan: She used a clean bandage and a cold pack.`,
-        options: [
-          { letter: "A", text: "A clean bandage and cold pack", image_url: "/images/week33/card_e.jpg" },
-          { letter: "B", text: "A warm cup of hot tea", image_url: "/images/week33/card_d.jpg" },
-          { letter: "C", text: "A pair of lab goggles", image_url: "/images/week33/card_f.jpg" }
+        dialogue_script: [
+          { speaker: 'woman', text: 'What did the nurse use to treat the knee?' },
+          { speaker: 'man',   text: 'She used a clean bandage and a cold pack.' }
         ],
-        answer: "A"
+        options: [
+          { letter: "A", text: "A warm cup of hot tea",        image_url: "/images/week33/card_d.jpg" },
+          { letter: "B", text: "A clean bandage and cold pack", image_url: "/images/week33/card_e.jpg" },
+          { letter: "C", text: "A pair of lab goggles",        image_url: "/images/week33/card_f.jpg" }
+        ],
+        answer: "B"
       },
       {
+        // Q5 answer: A — options kept with correct at A
         id: "p4_q5",
         question_en: "What did the headmaster say during assembly?",
         audio_url: "/audio/week33/listening_p4_q5.mp3",
-        audio_script: `Woman: Question 5. What did the headmaster say during assembly?\nMan: He praised Jake for following safety habits.`,
+        dialogue_script: [
+          { speaker: 'woman', text: 'What did the headmaster say during assembly?' },
+          { speaker: 'man',   text: 'He praised Jake for following safety habits.' }
+        ],
         options: [
           { letter: "A", text: "He praised Jake for safety habits", image_url: "/images/week33/webtoon_scene_1.png" },
-          { letter: "B", text: "He canceled science class", image_url: "/images/week33/card_c.jpg" },
-          { letter: "C", text: "He closed the corridor", image_url: "/images/week33/card_b.jpg" }
+          { letter: "B", text: "He canceled science class",         image_url: "/images/week33/card_c.jpg" },
+          { letter: "C", text: "He closed the corridor",            image_url: "/images/week33/card_b.jpg" }
         ],
         answer: "A"
       }

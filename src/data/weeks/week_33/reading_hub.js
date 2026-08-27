@@ -48,8 +48,8 @@ export const readingHubData = {
       {
         id: 3,
         question_en: "What does water act like on a smooth tiled floor?",
-        options: ["A slippery layer that reduces friction to zero", "A solid glue that holds shoes", "A heavy blanket that covers tiles"],
-        answer: "A slippery layer that reduces friction to zero"
+        options: ["A slippery layer that greatly reduces friction", "A solid glue that holds shoes", "A heavy blanket that covers tiles"],
+        answer: "A slippery layer that greatly reduces friction"
       },
       {
         id: 4,

@@ -1,9 +1,9 @@
 {
-  "commit": "a8e8680e81e0195768d8ea692def08b97a5a3310",
-  "git_commit": "a8e8680e81e0195768d8ea692def08b97a5a3310",
-  "shortCommit": "a8e8680e",
-  "message": "chore(version): update build version metadata",
-  "builtAt": "2026-08-26T03:34:34.719Z",
-  "build_timestamp": "2026-08-26T03:34:34.720Z",
+  "commit": "4d09204903a520035b8d5f897aac5e194879457b",
+  "git_commit": "4d09204903a520035b8d5f897aac5e194879457b",
+  "shortCommit": "4d092049",
+  "message": "fix(registry): add fidelityRequired to all 16 Parts; add mode/maxShieldScore to Full Mock cycle",
+  "builtAt": "2026-08-27T04:23:41.866Z",
+  "build_timestamp": "2026-08-27T04:23:41.866Z",
   "env": "production"
 }

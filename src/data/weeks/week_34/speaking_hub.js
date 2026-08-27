@@ -63,11 +63,11 @@ export const speakingHub = {
   find_differences: {
     picA: {
       title: "Picture A (Forest Afternoon)",
-      image_url: "/images/week34/w34_diff_scene_a.jpg"
+      image_url: "/images/week34/w34_diff_scene_a.svg"
     },
     picB: {
       title: "Picture B (Forest Afternoon Difference)",
-      image_url: "/images/week34/w34_diff_scene_b.jpg"
+      image_url: "/images/week34/w34_diff_scene_b.svg"
     },
     differences: [
       { id: "d1", name: "Sun and Cloud", prompt_en: "In Picture A, the sun is shining, but in Picture B, there is a cloud over the sun.", x: 31, y: 20 },

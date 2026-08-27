@@ -151,7 +151,7 @@ Man: That is Rob the rabbit. He is hopping gently.`,
   },
 
   listening_p5: {
-    image_url: "/images/week34/webtoon_scene_1.png",
+    image_url: "/images/week34/w34_l5_colorwrite_scene.svg",
     audio_script: `Nova: Listen and colour and write. There is one example.
 Woman: Look at this picture of the forest. Can you see the tall oak tree?
 Man: Yes, I can see it.
