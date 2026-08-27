@@ -5,48 +5,142 @@ export const speakingHub = {
     title: "School Corridor Safety & Responsibility"
   },
   info_exchange_cards: {
-    candidate_card: {
-      title: "Tom's Accident (Candidate)",
-      items: [
-        { label: "Where — accident?",     value: "School Corridor",    known: true  },
-        { label: "Which — body part?",     value: "Swollen Right Knee", known: false },
-        { label: "When — accident?",       value: "Morning Break Time", known: true  },
-        { label: "Who — helped Tom?",      value: "Jake from Grade 5",  known: false }
-      ]
-    },
-    examiner_card: {
-      title: "Jake's First Aid Action (Examiner)",
-      items: [
-        { label: "Where — Jake helped?",   value: "Near Science Room",            known: true  },
-        { label: "What — first aid item?", value: "Clean Bandage and Cold Pack",   known: false },
-        { label: "When — nurse arrived?",  value: "Within Two Minutes",            known: true  },
-        { label: "Who — praised Jake?",    value: "The Headmaster in Assembly",    known: false }
-      ]
-    },
     audio_url: "/audio/week33/exam_intro_S2.mp3",
-    // Cambridge Speaking Part 2: Examiner asks Candidate → Candidate asks Examiner
-    // Voices: woman = Examiner (Journey-F), man = Candidate (Neural2-D)
+    table_a: {
+      title: "Tom's Accident",
+      subtitle: "Candidate's Question Card (Ask Examiner)",
+      person: "Tom",
+      fields: [
+        {
+          id: "field_a1",
+          label: "where / get injured?",
+          cue_word: "where",
+          value: "?",
+          is_missing: true,
+          cue_prompt: "where / get injured?",
+          grammar_scaffold: "Where did Tom get injured?",
+          acceptable_questions: [
+            "Where did Tom get injured?",
+            "Where was Tom injured?",
+            "Where did he get hurt?",
+            "Where did he slip?",
+            "Where did the accident happen?"
+          ],
+          nova_reply: "Tom got injured in the main school corridor near the science lab."
+        },
+        {
+          id: "field_a2",
+          label: "what / hurt?",
+          cue_word: "what",
+          value: "?",
+          is_missing: true,
+          cue_prompt: "what / hurt?",
+          grammar_scaffold: "What did Tom hurt?",
+          acceptable_questions: [
+            "What did Tom hurt?",
+            "What did he hurt?",
+            "Which part of his body did he hurt?",
+            "What was hurt?"
+          ],
+          nova_reply: "Tom hurt his right knee when he fell on the wet floor."
+        },
+        {
+          id: "field_a3",
+          label: "when / accident happen?",
+          cue_word: "when",
+          value: "?",
+          is_missing: true,
+          cue_prompt: "when / accident happen?",
+          grammar_scaffold: "When did the accident happen?",
+          acceptable_questions: [
+            "When did the accident happen?",
+            "When did Tom slip?",
+            "What time did the accident happen?",
+            "When did he fall down?"
+          ],
+          nova_reply: "It happened this morning right after science class."
+        },
+        {
+          id: "field_a4",
+          label: "who / helped Tom?",
+          cue_word: "who",
+          value: "?",
+          is_missing: true,
+          cue_prompt: "who / helped Tom?",
+          grammar_scaffold: "Who helped Tom?",
+          acceptable_questions: [
+            "Who helped Tom?",
+            "Who helped Tom immediately?",
+            "Who helped him?",
+            "Who stopped to help?"
+          ],
+          nova_reply: "Jake stopped walking and called the school nurse right away."
+        }
+      ]
+    },
+    table_b: {
+      title: "Jake's First Aid Action",
+      subtitle: "Candidate's Information Sheet (Answer Examiner)",
+      person: "Jake",
+      fields: [
+        {
+          id: "field_b1",
+          label: "Where Jake helped",
+          value: "Near Science Room",
+          nova_question: "Where did Jake help his friend?",
+          acceptable_answers: [
+            "He helped him near the science room.",
+            "Near the science room.",
+            "In the school corridor near the science lab."
+          ]
+        },
+        {
+          id: "field_b2",
+          label: "First aid item",
+          value: "Clean Bandage and Cold Pack",
+          nova_question: "What first aid items did the nurse use?",
+          acceptable_answers: [
+            "The nurse used a clean bandage and a cold pack.",
+            "A clean bandage and a cold pack.",
+            "Clean bandage and cold pack."
+          ]
+        },
+        {
+          id: "field_b3",
+          label: "Nurse arrival time",
+          value: "Within Two Minutes",
+          nova_question: "How fast did the school nurse arrive to help?",
+          acceptable_answers: [
+            "She arrived within two minutes.",
+            "Within two minutes.",
+            "In about two minutes."
+          ]
+        },
+        {
+          id: "field_b4",
+          label: "Who praised Jake",
+          value: "Headmaster in Assembly",
+          nova_question: "Who praised Jake for his quick action?",
+          acceptable_answers: [
+            "The headmaster praised him in school assembly.",
+            "Headmaster Brown in the assembly.",
+            "The headmaster."
+          ]
+        }
+      ]
+    },
     dialogue_script: [
-      { speaker: 'woman', text: "Now I'd like you to ask and answer some questions about the school accident. I have a card with some information, and so do you. Let's start. I'll ask you first." },
-      { speaker: 'woman', text: "Where did the accident happen exactly?" },
-      { speaker: 'man',   text: "It happened in the school corridor, near the science room." },
-      { speaker: 'woman', text: "Good. And which part of Tom's body was hurt?" },
-      { speaker: 'man',   text: "He hurt his right knee. It was quite swollen." },
-      { speaker: 'woman', text: "Right. Now it's your turn. Ask me about Jake's information on your card." },
-      { speaker: 'man',   text: "OK! What first aid item did Jake use to help Tom?" },
-      { speaker: 'woman', text: "Jake used a clean bandage and a cold pack to treat Tom's knee." },
-      { speaker: 'man',   text: "And who praised Jake afterwards?" },
-      { speaker: 'woman', text: "The headmaster praised Jake in the school assembly. He was very proud of him." }
-    ],
-    prompt_questions: [
-      "Where did the accident happen?",
-      "Which part of Tom's body was hurt?",
-      "What first aid item did Jake use?"
-    ],
-    examiner_questions: [
-      { id: "eq1", text: "Where did the accident happen exactly?" },
-      { id: "eq2", text: "Which part of Tom's body was hurt?" },
-      { id: "eq3", text: "What first aid item did Jake use to help Tom?" }
+      { speaker: 'woman', text: "Now, let's practice asking and answering questions. I have information about Tom's accident, and you have questions to ask me. Let's begin." },
+      { speaker: 'man',   text: "Where did Tom have the accident?" },
+      { speaker: 'woman', text: "He slipped in the school corridor near the science lab." },
+      { speaker: 'man',   text: "Which part of his body was hurt?" },
+      { speaker: 'woman', text: "He hurt his right knee when he fell." },
+      { speaker: 'man',   text: "When did the accident happen?" },
+      { speaker: 'woman', text: "It happened this morning right after science class." },
+      { speaker: 'man',   text: "Who helped Tom immediately?" },
+      { speaker: 'woman', text: "Jake stopped walking and called the school nurse right away." },
+      { speaker: 'woman', text: "Now it is my turn to ask you questions about Jake's first aid action. What first aid item did the nurse use?" },
+      { speaker: 'man',   text: "The nurse used a clean bandage and a cold pack." }
     ]
   },
   picture_story: {

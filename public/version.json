@@ -1,9 +1,9 @@
 {
-  "commit": "fe12952a23daf2f65610b11801632a5fc2657ccd",
-  "git_commit": "fe12952a23daf2f65610b11801632a5fc2657ccd",
-  "shortCommit": "fe12952a",
-  "message": "fix(w33): final release candidate QA and audio/content alignment",
-  "builtAt": "2026-08-27T13:30:11.500Z",
-  "build_timestamp": "2026-08-27T13:30:11.501Z",
+  "commit": "c88d0d60918e33e8aacdff2d8a30ae9a0f5ace24",
+  "git_commit": "c88d0d60918e33e8aacdff2d8a30ae9a0f5ace24",
+  "shortCommit": "c88d0d60",
+  "message": "fix(science_report): import useEffect hook in ScienceReportCreator",
+  "builtAt": "2026-08-27T14:21:57.430Z",
+  "build_timestamp": "2026-08-27T14:21:57.431Z",
   "env": "production"
 }
