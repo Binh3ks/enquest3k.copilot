@@ -2,6 +2,7 @@
 export const listeningHub = {
   listening_p1: {
     image_url: "/images/week33/w33_listening_p1_scene.jpg",
+    audio_url: "/audio/week33/listening_p1_full.mp3",
     passage_audio_script: `Teacher: Look at Part 1. Now look at the picture. Listen and look. There is one example.
 Mia: Look at that boy in the corridor! Is he running?
 Teacher: No, that's Tom slipping on the wet floor. Look at the boy walking carefully in the blue shirt.
@@ -16,6 +17,22 @@ Mia: Is that Cleaner Bob holding the yellow warning sign and mop?
 Teacher: Yes, that is Cleaner Bob. He is drying the tiles.
 Mia: Who is the teacher walking near the science lab?
 Teacher: That is Teacher David. He is guiding students into the classroom.`,
+    dialogue_script: [
+      { speaker: 'woman', text: 'Look at Part 1. Now look at the picture. Listen and look. There is one example.' },
+      { speaker: 'girl',  text: 'Look at that boy in the corridor! Is he running?' },
+      { speaker: 'woman', text: "No, that's Tom slipping on the wet floor. Look at the boy walking carefully in the blue shirt." },
+      { speaker: 'girl',  text: 'Oh, I see him now. Is that Jake?' },
+      { speaker: 'woman', text: "Yes, that's right. Jake is walking carefully." },
+      { speaker: 'woman', text: 'Can you see the example line? Now you listen and draw lines.' },
+      { speaker: 'girl',  text: 'Who is the woman with the first-aid kit rushing near the wall?' },
+      { speaker: 'woman', text: 'That is Nurse Sarah. She is bringing bandages to help.' },
+      { speaker: 'girl',  text: 'Look at the man wearing glasses near the notice board.' },
+      { speaker: 'woman', text: 'That is Headmaster Brown. He is watching the corridor.' },
+      { speaker: 'girl',  text: 'Is that Cleaner Bob holding the yellow warning sign and mop?' },
+      { speaker: 'woman', text: 'Yes, that is Cleaner Bob. He is drying the tiles.' },
+      { speaker: 'girl',  text: 'Who is the teacher walking near the science lab?' },
+      { speaker: 'woman', text: 'That is Teacher David. He is guiding students into the classroom.' }
+    ],
     names: [
       { id: "n1", text: "Jake", target_id: "t1", isExample: true },
       { id: "n2", text: "Tom", target_id: "t2" },
@@ -80,36 +97,63 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
       { id: "f5", field_label: "Headmaster award", answer: "safety badge" }
     ]
   },
-  // Cambridge alignment: ALIGNED (two-voice per item, 8 cards, 5 items, example)
+  // Cambridge alignment: EXACT (two-voice per item, 8 cards, 5 items, example)
   listening_p3: {
-    cambridge_alignment: "ALIGNED",
-    example: { name: "Cleaning Mop", target_letter: "H" },
+    cambridge_alignment: "EXACT",
+    example: {
+      name: "Cleaning Mop",
+      target_letter: "H",
+      audio_url: "/audio/week33/listening_p3_example.mp3",
+      dialogue_script: [
+        { speaker: 'woman', text: 'Listen and write a letter in each box. There is one example. Jake, what was the tool used to clean the wet corridor tiles?' },
+        { speaker: 'man',   text: 'That is the cleaning mop! Cleaner Bob left it near the wall. Can you see the letter H? That is the example. Now you listen and write a letter in each box.' }
+      ]
+    },
     items: [
-      // P0-5 FIX: audio_text field added — source of truth for L3 item audio generation
       {
         id: 1, name: "School Stairs", target_letter: "A",
-        audio_text: "Look at the first picture. What are the steps inside the school building that go up and down between floors? Those are the school stairs. They go up to the second floor. School stairs. Write the letter.",
-        audio_url: "/audio/week33/listening_p3_item1.mp3"
+        audio_text: "Look at the first picture. What are the steps inside the school building? Those are the school stairs. They go up to the second floor.",
+        audio_url: "/audio/week33/listening_p3_item1.mp3",
+        dialogue_script: [
+          { speaker: 'woman', text: 'Jake, where was Tom walking before he ran down the corridor?' },
+          { speaker: 'man',   text: 'He was walking down the school stairs. The steps connect the first and second floors. School stairs.' }
+        ]
       },
       {
         id: 2, name: "Warning Sign", target_letter: "B",
-        audio_text: "What is the yellow board placed on the wet floor to warn students to be careful? That is the warning sign. It says Be Careful. Warning sign. Write the letter.",
-        audio_url: "/audio/week33/listening_p3_item2.mp3"
+        audio_text: "What is the yellow board placed on the wet floor to warn students? That is the warning sign. It says Be Careful.",
+        audio_url: "/audio/week33/listening_p3_item2.mp3",
+        dialogue_script: [
+          { speaker: 'woman', text: 'What is that bright yellow board standing near the wet tiles?' },
+          { speaker: 'man',   text: 'That is the caution warning sign! It reminds everyone to walk slowly. Warning sign.' }
+        ]
       },
       {
         id: 3, name: "First-Aid Kit", target_letter: "C",
-        audio_text: "What is the white box with a red cross kept in the nurse office for injuries? That is the first aid kit. The nurse keeps it ready. First aid kit. Write the letter.",
-        audio_url: "/audio/week33/listening_p3_item3.mp3"
+        audio_text: "What is the white box with a red cross kept in the nurse office for injuries? That is the first aid kit.",
+        audio_url: "/audio/week33/listening_p3_item3.mp3",
+        dialogue_script: [
+          { speaker: 'woman', text: 'Where did the school nurse get her emergency supplies so fast?' },
+          { speaker: 'man',   text: 'She brought the white first-aid kit right from the medical cabinet. First aid kit.' }
+        ]
       },
       {
         id: 4, name: "Cold Pack", target_letter: "D",
-        audio_text: "What is the blue bag filled with ice that the nurse puts on a swollen knee? That is the cold pack. It stops the knee from swelling. Cold pack. Write the letter.",
-        audio_url: "/audio/week33/listening_p3_item4.mp3"
+        audio_text: "What is the blue bag filled with ice that the nurse puts on a swollen knee? That is the cold pack.",
+        audio_url: "/audio/week33/listening_p3_item4.mp3",
+        dialogue_script: [
+          { speaker: 'woman', text: 'What did the nurse put on the swollen knee to stop the swelling?' },
+          { speaker: 'man',   text: 'She gently applied the blue cold pack with ice. Cold pack.' }
+        ]
       },
       {
         id: 5, name: "Clean Bandage", target_letter: "E",
-        audio_text: "What is the long white cloth strip wrapped around a cut or hurt part of the body? That is the clean bandage. The nurse uses it to cover the wound. Clean bandage. Write the letter.",
-        audio_url: "/audio/week33/listening_p3_item5.mp3"
+        audio_text: "What is the long white cloth strip wrapped around a cut? That is the clean bandage.",
+        audio_url: "/audio/week33/listening_p3_item5.mp3",
+        dialogue_script: [
+          { speaker: 'woman', text: 'What did the nurse wrap around the cut to keep it clean and safe?' },
+          { speaker: 'man',   text: 'She wrapped the clean bandage around his knee. Clean bandage.' }
+        ]
       }
     ],
     cards: [

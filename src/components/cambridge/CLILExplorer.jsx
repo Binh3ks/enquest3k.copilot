@@ -106,9 +106,9 @@ export default function CLILExplorer({
     return [
       {
         id: 1,
-        label: 'Summary 1',
-        scrambled: ['work together', 'Animals in nature', 'to survive'],
-        correct: ['Animals in nature', 'work together', 'to survive']
+        label: 'Science Fact',
+        scrambled: ['stops things', 'Friction is a force that', 'from sliding easily'],
+        correct: ['Friction is a force that', 'stops things', 'from sliding easily']
       }
     ];
   }, [clilData]);

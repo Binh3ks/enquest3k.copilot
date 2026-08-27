@@ -53,20 +53,53 @@ export const skillPracticeHub = {
     { id: 5, problem_en: "The headmaster gave 5 safety stars to each of 4 helpers. How many stars in total?", bar_model_svg: "/images/week33/barmodel_w33_adv_p5.svg", answer_value: 20 }
   ],
   science_lab: {
-    experimentTitle: "Friction Science Lab — Corridor Safety",
-    diagramImage: "/images/week33/explore_cover_w33.jpg",
-    explanation: "Drag each science label to the correct part of the picture. Show how friction keeps us safe in the school corridor!",
-    targets: [
-      { id: "t1", name: "Wet Tiles", x: 25, y: 70 },
-      { id: "t2", name: "Rubber Shoes", x: 75, y: 65 },
-      { id: "t3", name: "Warning Sign", x: 50, y: 35 },
-      { id: "t4", name: "Smooth Floor", x: 80, y: 25 }
+    id: "sci_w33_lab1",
+    experimentTitle: "Corridor Friction & Safety Physics Lab",
+    title_en: "Corridor Friction & Safety Physics Lab",
+    title_vi: "Phòng Thí Nghiệm Vật Lý Ma Sát & An Toàn Hành Lang",
+    diagramImage: "/images/week33/read_cover_w33.jpg",
+    background_image: "/images/week33/read_cover_w33.jpg",
+    explanation: "Drag the physics principles and first aid tools to the correct positions on the diagram to show how friction keeps school corridors safe!",
+    description_en: "Drag the physics principles and first aid tools to the correct positions on the diagram to show how friction keeps school corridors safe!",
+    zones: [
+      {
+        id: "z1",
+        label: "Wet Floor Puddle",
+        correct_label: "Low Friction Zone",
+        x: 48,
+        y: 76,
+        micro_explanation: "⚠️ Physics Alert: Water makes tiles very slippery! Friction is reduced, causing sudden falls."
+      },
+      {
+        id: "z2",
+        label: "Running Fast",
+        correct_label: "Forward Motion",
+        x: 62,
+        y: 45,
+        micro_explanation: "⚡ Safety Alert: Running fast makes it hard to stop safely on wet tiles!"
+      },
+      {
+        id: "z3",
+        label: "Yellow Caution Sign",
+        correct_label: "Hazard Alert",
+        x: 28,
+        y: 65,
+        micro_explanation: "💡 Safety Alert: Warning signs tell everyone to slow down and walk carefully."
+      },
+      {
+        id: "z4",
+        label: "First Aid Treatment",
+        correct_label: "Cold Pack & Bandage",
+        x: 80,
+        y: 55,
+        micro_explanation: "🩹 First Aid: A cold pack cools the sore knee, while a clean bandage protects the cut."
+      }
     ],
     labels: [
-      { id: "lbl_1", text: "Slippery — Low Grip (Water)", targetId: "t1" },
-      { id: "lbl_2", text: "Safe — Good Grip (Rubber)", targetId: "t2" },
-      { id: "lbl_3", text: "Danger Warning Sign", targetId: "t3" },
-      { id: "lbl_4", text: "Smooth — Very Slippery", targetId: "t4" }
+      { id: "lbl_1", text: "Low Friction Zone", targetId: "z1" },
+      { id: "lbl_2", text: "Forward Motion", targetId: "z2" },
+      { id: "lbl_3", text: "Hazard Alert", targetId: "z3" },
+      { id: "lbl_4", text: "Cold Pack & Bandage", targetId: "z4" }
     ]
   }
 

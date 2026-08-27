@@ -23,6 +23,15 @@ export const speakingHub = {
         { label: "Who — praised Jake?",    value: "The Headmaster in Assembly",    known: false }
       ]
     },
+    audio_url: "/audio/week33/exam_intro_S2.mp3",
+    dialogue_script: [
+      { speaker: 'woman', text: 'Where did Tom get injured?' },
+      { speaker: 'man',   text: 'Tom got injured in the school corridor near the science room.' },
+      { speaker: 'woman', text: 'What time did the accident happen?' },
+      { speaker: 'man',   text: 'The accident happened during morning break time.' },
+      { speaker: 'woman', text: 'How long did it take the nurse to arrive?' },
+      { speaker: 'man',   text: 'The school nurse arrived within two minutes with a clean bandage and a cold pack.' }
+    ],
     prompt_questions: [
       "Where did the accident happen?",
       "Which part of Tom's body was hurt?",
@@ -30,8 +39,8 @@ export const speakingHub = {
     ],
     examiner_questions: [
       { id: "eq1", text: "Where did Tom get injured?", audio_url: "/audio/week33/exam_intro_S2.mp3" },
-      { id: "eq2", text: "What time did the accident happen?", audio_url: "/audio/week33/exam_intro_S3.mp3" },
-      { id: "eq3", text: "How long did it take the nurse to arrive?", audio_url: "/audio/week33/exam_intro_S4.mp3" }
+      { id: "eq2", text: "What time did the accident happen?", audio_url: "/audio/week33/exam_intro_S2.mp3" },
+      { id: "eq3", text: "How long did it take the nurse to arrive?", audio_url: "/audio/week33/exam_intro_S2.mp3" }
     ]
   },
   picture_story: {

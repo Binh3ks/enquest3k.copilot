@@ -923,9 +923,9 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                   <button
                     type="button"
                     onClick={() => speakText(currentSceneText)}
-                    className="absolute bottom-3 right-3 px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl shadow-md transition flex items-center gap-1.5 font-black text-xs border border-white/30 z-10"
+                    className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 px-2.5 py-1.5 sm:px-4 sm:py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl shadow-md transition flex items-center gap-1 sm:gap-1.5 font-black text-[11px] sm:text-xs border border-white/40 z-10 backdrop-blur-xs active:scale-95"
                   >
-                    <Volume2 size={16} /> Listen to Scene
+                    <Volume2 size={14} className="sm:w-4 sm:h-4" /> <span>Listen to Scene</span>
                   </button>
                 </div>
 
@@ -1081,10 +1081,10 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                                 >
                                   {item.word.replace(/\*\*/g, '')}
                                 </span>
-                                {/* IPA subtitle directly underneath each word */}
+                                {/* IPA subtitle directly underneath each word — high compatibility font */}
                                 {item.ipa && (
                                   <span
-                                    className={`text-[11px] sm:text-xs font-mono tracking-tight mt-0.5 px-1.5 py-0.2 rounded transition-all ${
+                                    className={`text-[10px] sm:text-xs font-sans tracking-normal mt-0.5 px-1.5 py-0.5 rounded transition-all ${
                                       isWordActive
                                         ? 'text-amber-950 font-black bg-amber-200 ring-2 ring-amber-300'
                                         : item.isStressed
@@ -1366,7 +1366,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                     {/* Scene Visual Anchor Thumbnail + Nova Question Bubble */}
                     <div className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-purple-50 border border-purple-200 rounded-2xl text-left">
                       {scenes[retellStepIdx] && (
-                        <div className="w-full sm:w-28 h-20 sm:h-20 rounded-xl overflow-hidden shadow-sm shrink-0 border border-purple-300 bg-slate-100">
+                        <div className="w-full sm:w-44 md:w-52 h-28 sm:h-28 md:h-32 rounded-xl overflow-hidden shadow-sm shrink-0 border border-purple-300 bg-slate-100">
                           <img
                             src={scenes[retellStepIdx]?.image_url || `/images/week${weekNum}/webtoon_scene_${retellStepIdx + 1}.png`}
                             alt={`Scene ${retellStepIdx + 1}`}

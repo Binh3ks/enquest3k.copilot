@@ -31,9 +31,10 @@ async function tts(text, voice = VOICE_F, rate = 0.88) {
   if (!text || !text.trim()) throw new Error('tts(): empty text');
   // Strip any residual speaker labels that might exist in source (safety guard)
   const cleaned = text.replace(/\b(Man|Woman|Girl|Boy|Teacher|Nova|Mia)\s*:\s*/gi, '');
+  const chosenVoice = (cleaned.length > 400 && voice === VOICE_F) ? 'en-US-Neural2-F' : voice;
   const body = {
     input: { text: cleaned },
-    voice: { languageCode: 'en-US', name: voice },
+    voice: { languageCode: 'en-US', name: chosenVoice },
     audioConfig: { audioEncoding: 'MP3', speakingRate: rate }
   };
   const res = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${GOOGLE_API_KEY}`, {
@@ -161,6 +162,56 @@ if (allL4Bufs.length > 0) {
   console.log('  ✅ listening_p4_full.mp3 regenerated');
 }
 
+// ── P1-1 (audio): L1 dialogue_script[] → regenerate listening_p1_full.mp3 (Teacher + Mia) ───
+console.log('\n[L1 audio] Regenerating L1 audio from dialogue_script[] (Teacher + Mia 2-voice)...');
+const p1 = lh.listening_p1;
+if (p1?.dialogue_script) {
+  const l1Bufs = [];
+  for (const turn of p1.dialogue_script) {
+    const voice = turn.speaker === 'girl' ? 'en-US-Neural2-F' : VOICE_F;
+    const buf = await tts(turn.text, voice, 0.86);
+    l1Bufs.push(buf);
+  }
+  save('listening_p1_full.mp3', Buffer.concat(l1Bufs));
+}
+
+// ── P1-2 (audio): L3 dialogue_script[] → regenerate L3 items 1-5 + example + full (Teacher + Jake) ───
+console.log('\n[L3 audio] Regenerating L3 audio from dialogue_script[] (Teacher + Jake 2-voice)...');
+const p3 = lh.listening_p3;
+if (p3) {
+  const allL3Bufs = [];
+  // Example
+  if (p3.example?.dialogue_script) {
+    const exBuf = await generateDialogueAudio(p3.example.dialogue_script);
+    save('listening_p3_example.mp3', exBuf);
+    allL3Bufs.push(exBuf);
+  }
+  // Items 1-5
+  if (Array.isArray(p3.items)) {
+    for (const item of p3.items) {
+      if (item.dialogue_script) {
+        console.log(`  Generating L3 item ${item.id} (${item.name})...`);
+        const itemBuf = await generateDialogueAudio(item.dialogue_script);
+        save(`listening_p3_item${item.id}.mp3`, itemBuf);
+        allL3Bufs.push(itemBuf);
+      }
+    }
+  }
+  if (allL3Bufs.length > 0) {
+    save('listening_p3_full.mp3', Buffer.concat(allL3Bufs));
+    console.log('  ✅ listening_p3_full.mp3 regenerated');
+  }
+}
+
+// ── P1-3 (audio): Speaking Part 2 Info Exchange dialogue_script[] ────────
+console.log('\n[Speaking S2 audio] Regenerating unified Info Exchange audio (Examiner + Candidate)...');
+const speakingMod = await import(pathToFileURL(path.join(weekDir, 'speaking_hub.js')).href);
+const sh = speakingMod.speakingHub || speakingMod.speakingHubData || speakingMod.default;
+if (sh?.info_exchange_cards?.dialogue_script) {
+  const s2Buf = await generateDialogueAudio(sh.info_exchange_cards.dialogue_script);
+  save('exam_intro_S2.mp3', s2Buf);
+}
+
 // ── Final summary ─────────────────────────────────────────────────────────
 console.log('\n══════════════════════════════════════════════');
 console.log('Stale audio regeneration COMPLETE — Week 33');
@@ -168,7 +219,10 @@ console.log('Files regenerated:');
 console.log('  read_stem.mp3     ← read.js text_en (no Nurse Clara)');
 console.log('  explore.mp3       ← explore.js content_en (friction theme)');
 console.log('  dictation_1-5.mp3 ← skill_practice_hub.js dictation[].text');
-console.log('  listening_p4_example.mp3 + q1-5 + full ← dialogue_script[]');
+console.log('  listening_p1_full.mp3 ← dialogue_script[] (Teacher + Mia 2-voice)');
+console.log('  listening_p3_example.mp3 + item1-5 + full ← dialogue_script[] (Teacher + Jake 2-voice)');
+console.log('  listening_p4_example.mp3 + q1-5 + full ← dialogue_script[] (Woman + Man 2-voice)');
+console.log('  exam_intro_S2.mp3 ← info_exchange_cards dialogue_script[] (Examiner + Candidate 2-voice)');
 console.log('\nNext steps:');
 console.log('  node scripts/validate_l4_answer_distribution.mjs 33');
 console.log('  node scripts/validate_public_dist_sync.mjs 33');

@@ -524,17 +524,17 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
             className="w-full h-full object-cover"
             onError={(e) => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
           />
-          <div className="absolute top-3 left-3 px-3 py-1 bg-amber-400 text-slate-950 rounded-xl text-xs font-black uppercase tracking-wider shadow border border-amber-300">
-            Scene {currentStepIdx + 1} of {steps.length} • {stage}
+          <div className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2 py-0.5 sm:px-3 sm:py-1 bg-amber-400/95 text-slate-950 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-wider shadow border border-amber-300 backdrop-blur-xs">
+            Scene {currentStepIdx + 1}/{steps.length} • {stage}
           </div>
 
           <button
             type="button"
             onClick={handleListenScene}
-            className="absolute bottom-3 right-3 px-3 py-1.5 bg-slate-950/80 hover:bg-slate-950 text-white rounded-xl text-xs font-bold shadow-md backdrop-blur-md flex items-center gap-1.5 transition active:scale-95"
+            className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 px-2.5 py-1 sm:px-3 sm:py-1.5 bg-slate-950/85 hover:bg-slate-950 text-white rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold shadow-md backdrop-blur-md flex items-center gap-1 sm:gap-1.5 transition active:scale-95 border border-white/20"
             title="Listen to scene audio"
           >
-            <Volume2 size={14} className="text-amber-400" /> Listen to scene
+            <Volume2 size={13} className="text-amber-400" /> <span>Listen</span>
           </button>
         </div>
 

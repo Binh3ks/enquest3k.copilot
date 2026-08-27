@@ -382,9 +382,21 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
 
             {/* Live Recording HUD */}
             {isRecording && (
-              <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5 px-2.5 py-1 bg-rose-600 text-white font-mono font-black text-xs rounded-lg shadow animate-pulse">
+              <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5 px-2.5 py-1 bg-rose-600 text-white font-mono font-black text-xs rounded-lg shadow animate-pulse z-20">
                 <div className="w-2 h-2 rounded-full bg-white animate-ping" />
                 REC {formatTime(recordingSeconds)}
+              </div>
+            )}
+
+            {/* Live Teleprompter Overlay — Visible while recording on mobile & desktop */}
+            {isRecording && (
+              <div className="absolute bottom-2 inset-x-2 bg-black/85 backdrop-blur-md text-white p-2.5 rounded-xl border border-purple-400/60 shadow-xl z-20 animate-in fade-in slide-in-from-bottom-2 duration-200">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <span className="text-[10px] font-black uppercase text-amber-300 tracking-wider">📜 Teleprompter Prompt:</span>
+                </div>
+                <p className="text-xs sm:text-sm font-black leading-snug text-slate-100 max-h-16 overflow-y-auto">
+                  {fullScriptText || "Describe what happened in the corridor and how Jake helped."}
+                </p>
               </div>
             )}
           </div>

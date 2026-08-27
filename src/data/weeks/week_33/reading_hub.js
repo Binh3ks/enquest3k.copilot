@@ -26,6 +26,20 @@ export const readingHubData = {
     content_vi: "Tại sao chúng ta lại bị ngã trên sàn nhà ướt? Câu trả lời nằm ở một khái niệm khoa học mang tên Lực Ma Sát. Lực ma sát là một lực ngăn cản các vật trượt đi. Trong khi Jake đang đi bộ xuống hành lang, đế giày cao su của cậu ấy đã tạo ra lực ma sát lớn với mặt sàn khô. Điều này giúp cậu ấy an toàn và giữ thăng bằng. Nước trên sàn gạch nhẵn làm giảm ma sát bề mặt và khiến học sinh trượt ngã. Khi sàn bị ướt, giày không thể bám vào gạch một cách dễ dàng. Giày cao su mang lại độ bám chắc chắn giúp học sinh đi lại an toàn trên mặt đất khô ráo. Biển cảnh báo màu vàng nhắc nhở học sinh đi chậm lại và cẩn thận để mọi người được an toàn!",
     audio_url: "/audio/week33/explore.mp3",
     vocab_focus: ["friction", "smooth", "rubber", "tiles", "shoes", "surface", "grip", "safe", "warning", "floor"],
+    sentence_drills: [
+      {
+        id: 1,
+        label: "Friction Science Principle",
+        scrambled: ["stops things", "Friction is a physical force that", "from sliding on surfaces"],
+        correct: ["Friction is a physical force that", "stops things", "from sliding on surfaces"]
+      },
+      {
+        id: 2,
+        label: "Corridor Safety Rule",
+        scrambled: ["on dry corridor tiles", "Rubber shoes provide strong grip", "to help students walk safely"],
+        correct: ["Rubber shoes provide strong grip", "on dry corridor tiles", "to help students walk safely"]
+      }
+    ],
     glossary: [
       { term: "Friction", meaning: "A physical force that prevents surfaces from sliding easily." },
       { term: "Rubber Soles", meaning: "Bottom of shoes that provide strong grip and high traction." },
