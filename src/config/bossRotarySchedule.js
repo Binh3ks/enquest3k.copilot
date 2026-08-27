@@ -87,10 +87,13 @@ export const BOSS_ROTARY_CYCLES = {
     bossDescription:  "Complete open cloze, write a story, ask & answer cue-card questions, and narrate picture stories."
   },
   // Cycle 0 = Full Mock (Week 5 of each 5-week rotation: W37, W42…)
-  // partCount = 16 (all Cambridge Parts) — NOT 15 (the max Shield score is separate)
+  // partCount = 16 (all Cambridge Parts).
+  // maxShieldScore = 15 (max Paper performance: 5L + 5RW + 5S) — NOT the same as partCount.
   0: {
+    mode:             'FULL_MOCK',   // explicit mode flag — consumed by BossBattleZone
     cycleName:        "Full Cambridge A2 Flyers Mock Exam",
     subtitle:         "All 16 Cambridge Parts — Authentic Exam Simulation",
+    maxShieldScore:   15,            // 5 Listening + 5 R&W + 5 Speaking Paper Shield max
     // Full Mock: all 16 Parts — activeParts is a flat list
     // Quest completion is managed by the Full Mock completion handler, not per-Part
     activeParts: [
