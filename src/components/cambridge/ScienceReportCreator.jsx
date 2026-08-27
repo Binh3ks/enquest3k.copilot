@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Sparkles, CheckCircle2, AlertTriangle, Trophy, ChevronRight, ChevronLeft, Volume2, Search, Lightbulb, Compass, Award } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { playButtonClick, playCorrectSound, playVictoryFanfare } from '../../utils/soundEffects';
