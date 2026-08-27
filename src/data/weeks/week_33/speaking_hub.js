@@ -24,23 +24,29 @@ export const speakingHub = {
       ]
     },
     audio_url: "/audio/week33/exam_intro_S2.mp3",
+    // Cambridge Speaking Part 2: Examiner asks Candidate → Candidate asks Examiner
+    // Voices: woman = Examiner (Journey-F), man = Candidate (Neural2-D)
     dialogue_script: [
-      { speaker: 'woman', text: 'Where did Tom get injured?' },
-      { speaker: 'man',   text: 'Tom got injured in the school corridor near the science room.' },
-      { speaker: 'woman', text: 'What time did the accident happen?' },
-      { speaker: 'man',   text: 'The accident happened during morning break time.' },
-      { speaker: 'woman', text: 'How long did it take the nurse to arrive?' },
-      { speaker: 'man',   text: 'The school nurse arrived within two minutes with a clean bandage and a cold pack.' }
+      { speaker: 'woman', text: "Now I'd like you to ask and answer some questions about the school accident. I have a card with some information, and so do you. Let's start. I'll ask you first." },
+      { speaker: 'woman', text: "Where did the accident happen exactly?" },
+      { speaker: 'man',   text: "It happened in the school corridor, near the science room." },
+      { speaker: 'woman', text: "Good. And which part of Tom's body was hurt?" },
+      { speaker: 'man',   text: "He hurt his right knee. It was quite swollen." },
+      { speaker: 'woman', text: "Right. Now it's your turn. Ask me about Jake's information on your card." },
+      { speaker: 'man',   text: "OK! What first aid item did Jake use to help Tom?" },
+      { speaker: 'woman', text: "Jake used a clean bandage and a cold pack to treat Tom's knee." },
+      { speaker: 'man',   text: "And who praised Jake afterwards?" },
+      { speaker: 'woman', text: "The headmaster praised Jake in the school assembly. He was very proud of him." }
     ],
     prompt_questions: [
       "Where did the accident happen?",
       "Which part of Tom's body was hurt?",
-      "When did the nurse arrive?"
+      "What first aid item did Jake use?"
     ],
     examiner_questions: [
-      { id: "eq1", text: "Where did Tom get injured?", audio_url: "/audio/week33/exam_intro_S2.mp3" },
-      { id: "eq2", text: "What time did the accident happen?", audio_url: "/audio/week33/exam_intro_S2.mp3" },
-      { id: "eq3", text: "How long did it take the nurse to arrive?", audio_url: "/audio/week33/exam_intro_S2.mp3" }
+      { id: "eq1", text: "Where did the accident happen exactly?" },
+      { id: "eq2", text: "Which part of Tom's body was hurt?" },
+      { id: "eq3", text: "What first aid item did Jake use to help Tom?" }
     ]
   },
   picture_story: {

@@ -1,420 +1,474 @@
 import React, { useState, useMemo } from 'react';
-import { TestTube, Sparkles, CheckCircle2, AlertTriangle, Send, Trophy, ChevronRight, ChevronLeft, Volume2, BookOpen, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react';
+import { Sparkles, CheckCircle2, AlertTriangle, Trophy, ChevronRight, ChevronLeft, Volume2, Search, Lightbulb, Compass, Award } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { playButtonClick, playCorrectSound, playVictoryFanfare } from '../../utils/soundEffects';
 import { speakText } from '../../utils/AudioHelper';
 
-export default function ScienceReportCreator({ reportTopic, customConfig, weekNumber = 34, onComplete }) {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [step1Text, setStep1Text] = useState('');
-  const [step2Text, setStep2Text] = useState('');
-  const [step3Text, setStep3Text] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [activeLevel, setActiveLevel] = useState('L3');
-  const [showTeacherNote, setShowTeacherNote] = useState(false);
-  const [distractorAlert, setDistractorAlert] = useState(null);
-  const [isShaking, setIsShaking] = useState(false);
-  const [selectedChips, setSelectedChips] = useState({});
+export default function ScienceReportCreator({ reportTopic, customConfig, weekNumber = 33, onComplete }) {
+  const [currentStep, setCurrentStep] = useState(1); // 1: OBSERVE, 2: PICK CLUE, 3: SNAP SENTENCE, 4: SEE REPORT
+  const [observedHotspot, setObservedHotspot] = useState(null);
+  const [selectedClue, setSelectedClue] = useState(null);
+  const [clueError, setClueError] = useState(null);
+  const [assembledPills, setAssembledPills] = useState([]);
+  const [sentenceError, setSentenceError] = useState(null);
+  const [isCompleted, setIsCompleted] = useState(false);
 
-  const purpose = customConfig?.purpose || "🌱 Today we write like little scientists: we say what we SAW, use past tense, and join ideas with because / so!";
-  const teacherNote = customConfig?.teacher_parent_note || "Learn the language of science reports (observed / because / past tense), not science content.";
-
-  const dataCard = useMemo(() => {
-    if (Array.isArray(customConfig?.data_card) && customConfig.data_card.length >= 3) {
-      return customConfig.data_card.slice(0, 3);
+  // ── Step 1: Hotspot Data ──────────────────────────────────────────────────
+  const hotspots = useMemo(() => [
+    {
+      id: 'wet_floor',
+      icon: '💧',
+      name: 'Wet Corridor Floor',
+      x: '50%',
+      y: '78%',
+      fact: 'Observation: Water on smooth tiles forms a thin layer that greatly reduces friction.'
+    },
+    {
+      id: 'rubber_shoes',
+      icon: '👟',
+      name: 'Rubber Shoe Soles',
+      x: '28%',
+      y: '65%',
+      fact: 'Observation: Rubber soles have high grip friction to help people stop safely.'
+    },
+    {
+      id: 'warning_sign',
+      icon: '⚠️',
+      name: 'Yellow Caution Sign',
+      x: '75%',
+      y: '50%',
+      fact: 'Observation: Warning signs remind students to walk slowly and avoid slippery areas.'
     }
-    if (weekNumber === 33) {
-      return [
-        { subject: "💧 Wet Tiles", action: "water reduces surface friction", result: "students slipped and lost balance" },
-        { subject: "👟 Rubber Shoes", action: "rubber provides strong grip", result: "walking safely with more friction" },
-        { subject: "⚠️ Warning Sign", action: "placed near wet cleaning area", result: "warned everyone to walk carefully" }
-      ];
+  ], []);
+
+  // ── Step 2: Clue Cards Data ───────────────────────────────────────────────
+  const clueCards = useMemo(() => [
+    {
+      id: 'low_friction',
+      title: '🔬 Low Surface Friction',
+      isCorrect: true,
+      description: 'Water forms a slippery layer between shoes and tiles, drastically reducing the friction needed to walk safely.'
+    },
+    {
+      id: 'smooth_dry_floor',
+      title: '🧱 Smooth and Dry Floor',
+      isCorrect: false,
+      description: 'The corridor tiles are very smooth, but dry. Smooth tiles are safe because there is no water reducing the friction.'
     }
-    // Week 34 default
-    return [
-      { subject: "🐿️ Squirrels", action: "bury extra nuts in the ground", result: "some nuts grow into new oak trees" },
-      { subject: "🐝 Bees", action: "drink sweet nectar from flowers", result: "carry pollen to help new flowers grow" },
-      { subject: "🐦 Jays", action: "hide seeds under soft leaves", result: "start small green plants across the forest" }
-    ];
-  }, [customConfig, weekNumber]);
+  ], []);
 
-  const MIN_LEN = 8;
-  const step1OK = useMemo(() => step1Text.trim().length >= MIN_LEN, [step1Text]);
-  const step2OK = useMemo(() => step2Text.trim().length >= MIN_LEN, [step2Text]);
-  const step3OK = useMemo(() => step3Text.trim().length >= MIN_LEN, [step3Text]);
+  // ── Step 3: Sentence Word Pills ───────────────────────────────────────────
+  const wordPills = useMemo(() => [
+    { id: 'p1', text: 'Water on the smooth tiles', correctOrder: 1 },
+    { id: 'p2', text: 'reduced surface friction,', correctOrder: 2 },
+    { id: 'p3', text: 'so the student slipped and fell.', correctOrder: 3 },
+    { id: 'p_dist', text: 'because of sunny weather outside.', correctOrder: -1 } // distractor
+  ], []);
 
-  const canSubmit = step1OK && step2OK && step3OK;
-  const assembledReport = `${step1Text.trim()} ${step2Text.trim()} ${step3Text.trim()}`.trim();
+  const requiredPillCount = 3;
+  const isSentenceComplete = assembledPills.length === requiredPillCount;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!canSubmit) return;
-    setIsSubmitted(true);
+  // ── Handlers ──────────────────────────────────────────────────────────────
+  const handleHotspotClick = (hs) => {
+    playButtonClick();
+    setObservedHotspot(hs);
+  };
+
+  const handleClueSelect = (clue) => {
+    if (clue.isCorrect) {
+      playCorrectSound();
+      setSelectedClue(clue.id);
+      setClueError(null);
+    } else {
+      playButtonClick();
+      setClueError('🔬 Science Alert: That did not cause the slip! Try examining the friction between shoes and tiles.');
+    }
+  };
+
+  const handleAddPill = (pill) => {
+    if (pill.correctOrder === -1) {
+      playButtonClick();
+      setSentenceError('⚠️ That fact is not part of the corridor physics report. Pick the friction cause and effect!');
+      return;
+    }
+    if (assembledPills.some(p => p.id === pill.id)) return;
+
+    playCorrectSound();
+    setSentenceError(null);
+    setAssembledPills(prev => [...prev, pill]);
+  };
+
+  const handleRemovePill = (pillId) => {
+    playButtonClick();
+    setAssembledPills(prev => prev.filter(p => p.id !== pillId));
+  };
+
+  const handleFinalSubmit = () => {
+    setIsCompleted(true);
     playVictoryFanfare();
-    fireCelebrationConfetti('ScienceReport_Complete');
+    fireCelebrationConfetti('ScienceDetective_Complete');
     if (onComplete) onComplete(50);
   };
 
-  const handleChipClick = (category, pillText, isDistractor, setter) => {
-    if (isDistractor) {
-      const msg = customConfig?.distractor_feedback || "🔬 The Data Card does not show this fact. A science report only uses observed data!";
-      setDistractorAlert(msg);
-      setIsShaking(true);
-      setTimeout(() => setIsShaking(false), 800);
-      return;
-    }
-
-    setDistractorAlert(null);
-    playCorrectSound();
-    setSelectedChips(prev => ({ ...prev, [pillText]: true }));
-    setter(prev => (prev ? `${prev} ${pillText}` : pillText));
-  };
-
-  const handleConnectorClick = (connector, setter) => {
-    playButtonClick();
-    setter(prev => (prev ? `${prev} ${connector}` : connector));
-  };
-
-  const STEP_CONFIG = useMemo(() => {
-    const s1Pills = customConfig?.step1Pills || (weekNumber === 33 ? {
-      "💧 Wet Tiles": ["water reduced surface friction"],
-      "👟 Shoe Soles": ["rubber shoes provided strong grip"],
-      "⚠️ Warning Sign": ["the warning sign alerted everyone to walk carefully"],
-      "Distractor": ["students ran without looking"]
-    } : {
-      "🐿️ Squirrels": ["squirrels buried extra nuts in the ground"],
-      "🐝 Bees": ["bees carried pollen to new flowers"],
-      "🐦 Jays": ["jays hid seeds under soft leaves"],
-      "Distractor": ["some animals forgot to share food"]
-    });
-
-    const s2Pills = customConfig?.step2Pills || (weekNumber === 33 ? {
-      "⚡ Less Friction": ["wet tiles caused students to slip and fall"],
-      "🛡️ More Friction": ["rubber shoes increased friction on smooth floors"]
-    } : {
-      "🌳 New Trees": ["buried nuts grew into young oak trees"],
-      "🌸 New Flowers": ["carried pollen helped new flowers grow"]
-    });
-
-    const s3Pills = customConfig?.step3Pills || (weekNumber === 33 ? {
-      "🏆 Key Conclusion": ["walking carefully prevented accidents in the corridor"],
-      "🌟 Takeaway": ["understanding friction kept everyone safe"]
-    } : {
-      "🏆 Key Conclusion": ["small helpers kept the forest green and strong"],
-      "🌟 Takeaway": ["animals and plants worked together in nature"]
-    });
-
-    const s1Starter = customConfig?.step1Starter || (weekNumber === 33 ? "While observing the corridor, we saw that" : "While observing the experiment, we saw that");
-
-    return [
-      {
-        step: 1,
-        label: 'Observation & Facts',
-        icon: '🔬',
-        color: 'emerald',
-        starter: s1Starter,
-        checker: step1OK,
-        value: step1Text,
-        setter: setStep1Text,
-        hint: 'What did you observe? Tap past-tense chips from the Data Card...',
-        pills: s1Pills,
-        connectors: null
-      },
-      {
-        step: 2,
-        label: 'Scientific Reason',
-        icon: '⚡',
-        color: 'blue',
-        starter: 'This happened because',
-        checker: step2OK,
-        value: step2Text,
-        setter: setStep2Text,
-        hint: 'Explain why this happened using because / so / but...',
-        pills: s2Pills,
-        connectors: customConfig?.step2Connectors || ['because', 'so', 'but']
-      },
-      {
-        step: 3,
-        label: 'Conclusion & Application',
-        icon: '🏆',
-        color: 'amber',
-        starter: 'In conclusion, we learned that',
-        checker: step3OK,
-        value: step3Text,
-        setter: setStep3Text,
-        hint: 'What is the final scientific takeaway?',
-        pills: s3Pills,
-        connectors: customConfig?.step3Connectors || ['so', 'because', 'but']
-      }
-    ];
-  }, [customConfig, weekNumber, step1OK, step2OK, step3OK, step1Text, step2Text, step3Text]);
-
-  const cfg = STEP_CONFIG[currentStep - 1];
+  const finalReportText = "While observing the corridor, we discovered that water on the smooth tiles reduced surface friction, so the student slipped and fell. Walking slowly and wearing rubber shoes keep everyone safe!";
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 sm:p-5 bg-white rounded-3xl border border-emerald-200 shadow-md space-y-4 text-slate-900 font-sans">
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-black text-lg shadow-md">
-            🔬
-          </div>
-          <div>
-            <span className="text-[10px] font-black text-emerald-700 uppercase tracking-wider block">
-              Science Report • {customConfig?.topic || reportTopic || (weekNumber === 34 ? "Seed Helpers & Forest Plants Report" : "Friction & Surface Safety Report")}
+    <div className="max-w-3xl mx-auto bg-white rounded-3xl p-4 sm:p-7 border border-purple-200 shadow-xl space-y-6">
+      {/* Top Detective Header */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-4 border-b border-purple-100">
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="px-3 py-1 bg-amber-400 text-slate-950 font-black text-xs rounded-xl shadow-xs flex items-center gap-1.5">
+              <Search size={14} /> SCIENCE DETECTIVE
             </span>
-            <h3 className="text-sm font-black text-slate-900">
-              {customConfig?.notebookTitle || (weekNumber === 34 ? "How Animals Help Forest Plants Grow" : "Friction on School Floors Lab Notebook")}
-            </h3>
+            <span className="text-xs font-bold text-purple-700">Week {weekNumber} • Discovery Report</span>
           </div>
+          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+            Corridor Friction & Safety Discovery Report
+          </h2>
         </div>
 
-        {/* Level Ladder Selector */}
-        <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
-          {['L1', 'L2', 'L3', 'L4', 'L5', 'L6'].map((lvl) => (
+        {/* 4-Step Progress Dots */}
+        <div className="flex items-center gap-1.5 bg-purple-50 p-1.5 rounded-2xl border border-purple-200">
+          {[
+            { num: 1, label: 'Observe' },
+            { num: 2, label: 'Clue' },
+            { num: 3, label: 'Sentence' },
+            { num: 4, label: 'Report' }
+          ].map(s => (
             <button
-              key={lvl}
+              key={s.num}
               type="button"
               onClick={() => {
-                setActiveLevel(lvl);
-                playButtonClick();
+                if (s.num < currentStep || (s.num === 2 && observedHotspot) || (s.num === 3 && selectedClue) || (s.num === 4 && isSentenceComplete)) {
+                  setCurrentStep(s.num);
+                }
               }}
-              className={`px-2 py-0.5 rounded-lg text-[10px] font-black transition ${
-                activeLevel === lvl
-                  ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900'
+              className={`px-3 py-1 rounded-xl text-xs font-black transition flex items-center gap-1 ${
+                currentStep === s.num
+                  ? 'bg-purple-600 text-white shadow-sm'
+                  : currentStep > s.num
+                  ? 'bg-emerald-100 text-emerald-800'
+                  : 'text-slate-400 hover:text-slate-700'
               }`}
             >
-              {lvl}
+              <span>{s.num}.</span> <span>{s.label}</span>
             </button>
           ))}
         </div>
       </div>
 
-      {/* Purpose Banner for Kids */}
-      <div className="p-3 bg-emerald-50/90 border border-emerald-200 rounded-2xl flex items-start gap-2.5 shadow-2xs">
-        <Lightbulb size={16} className="text-emerald-700 shrink-0 mt-0.5" />
-        <p className="text-xs font-bold text-emerald-950 leading-relaxed">
-          {purpose}
-        </p>
-      </div>
-
-      {/* Collapsible Teacher & Parent Note */}
-      <div className="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/70">
-        <button
-          type="button"
-          onClick={() => setShowTeacherNote(prev => !prev)}
-          className="w-full px-3.5 py-2 flex items-center justify-between text-[11px] font-black text-slate-700 hover:text-indigo-800 transition"
-        >
-          <span className="flex items-center gap-1.5">
-            👩‍🏫 Teacher & Parent Note
-          </span>
-          {showTeacherNote ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-        </button>
-        {showTeacherNote && (
-          <div className="px-3.5 pb-2.5 pt-1 border-t border-slate-200/60 text-xs text-slate-600 font-medium leading-relaxed">
-            {teacherNote}
-          </div>
-        )}
-      </div>
-
-      {/* 3-Row Data Card (Extracted from CLIL) */}
-      {dataCard && dataCard.length > 0 && (
-        <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
-          <div className="flex items-center justify-between text-[11px] font-black uppercase text-slate-600 tracking-wider">
-            <span className="flex items-center gap-1.5">
-              <BookOpen size={13} className="text-indigo-600" /> CLIL Data Card (3 Key Facts)
-            </span>
-            <span className="text-[10px] text-slate-400 font-bold">Use these facts in your report</span>
+      {/* ── STEP 1: OBSERVE ──────────────────────────────────────────────── */}
+      {currentStep === 1 && (
+        <div className="space-y-4 animate-in fade-in duration-200">
+          <div className="p-3 bg-purple-50 rounded-2xl border border-purple-200 flex items-center justify-between">
+            <p className="text-xs sm:text-sm font-bold text-purple-900">
+              🔍 <strong>Step 1:</strong> Tap an evidence spot on the corridor diagram to observe what happened!
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            {dataCard.map((row, idx) => (
-              <div key={idx} className="p-2.5 bg-white rounded-xl border border-slate-200 shadow-2xs space-y-1">
-                <div className="text-xs font-black text-slate-900 flex items-center justify-between">
-                  <span>{row.subject}</span>
-                  <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">Row #{idx + 1}</span>
-                </div>
-                <div className="text-[11px] text-indigo-950 font-medium leading-tight">
-                  <span className="text-slate-500 font-bold">Action:</span> {row.action}
-                </div>
-                <div className="text-[11px] text-slate-700 font-medium leading-tight">
-                  <span className="text-slate-500 font-bold">Result:</span> {row.result}
-                </div>
-              </div>
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-900 border-2 border-purple-200 shadow-md">
+            <img
+              src="/images/week33/read_cover_w33.jpg"
+              alt="Corridor Observation Scene"
+              className="w-full h-full object-cover"
+              onError={(e) => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
+            />
+
+            {/* Hotspots */}
+            {hotspots.map(hs => (
+              <button
+                key={hs.id}
+                type="button"
+                onClick={() => handleHotspotClick(hs)}
+                style={{ top: hs.y, left: hs.x }}
+                className={`absolute -translate-x-1/2 -translate-y-1/2 p-2 sm:p-2.5 rounded-2xl font-black text-xs shadow-xl transition-all flex items-center gap-1.5 ${
+                  observedHotspot?.id === hs.id
+                    ? 'bg-amber-400 text-slate-950 scale-110 ring-4 ring-amber-300 z-20'
+                    : 'bg-slate-950/80 text-white hover:bg-slate-950 animate-pulse border border-white/40'
+                }`}
+              >
+                <span>{hs.icon}</span>
+                <span className="hidden sm:inline">{hs.name}</span>
+              </button>
             ))}
+          </div>
+
+          {/* Observation Callout Card */}
+          {observedHotspot && (
+            <div className="p-4 bg-amber-50 border-2 border-amber-300 rounded-2xl space-y-2 animate-in slide-in-from-bottom-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black uppercase text-amber-900 flex items-center gap-1.5">
+                  <Lightbulb size={16} className="text-amber-600" /> Evidence Found: {observedHotspot.name}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => speakText(observedHotspot.fact)}
+                  className="px-2.5 py-1 bg-amber-200 hover:bg-amber-300 text-amber-950 rounded-lg text-xs font-bold transition flex items-center gap-1"
+                >
+                  <Volume2 size={13} /> Listen
+                </button>
+              </div>
+              <p className="text-sm font-bold text-slate-800 leading-relaxed">
+                {observedHotspot.fact}
+              </p>
+            </div>
+          )}
+
+          <div className="flex justify-end pt-2">
+            <button
+              type="button"
+              onClick={() => setCurrentStep(2)}
+              disabled={!observedHotspot}
+              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:opacity-40 text-white font-black text-sm rounded-2xl shadow-md transition flex items-center gap-2"
+            >
+              Next: Pick Science Clue <ChevronRight size={16} />
+            </button>
           </div>
         </div>
       )}
 
-      {/* Step Tabs Indicator */}
-      <div className="flex items-center gap-2">
-        {STEP_CONFIG.map(({ step, label, checker }) => (
-          <button
-            key={step}
-            type="button"
-            onClick={() => setCurrentStep(step)}
-            className={`flex-1 py-2 px-2 rounded-xl text-center text-[10px] font-black border transition ${
-              currentStep === step
-                ? 'bg-emerald-600 text-white border-emerald-700 shadow-md'
-                : checker
-                ? 'bg-emerald-100 text-emerald-900 border-emerald-300'
-                : 'bg-slate-100 text-slate-500 border-slate-200'
-            }`}
-          >
-            {checker ? '✓' : step}. {label.split(' ')[0]}
-          </button>
-        ))}
-      </div>
-
-      {/* Active Step Panel */}
-      <div className={`p-4 sm:p-5 rounded-2xl border-2 border-emerald-200 bg-emerald-50/40 space-y-3 ${isShaking ? 'animate-bounce' : ''}`}>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-base">{cfg.icon}</span>
-            <h4 className="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-wide">
-              STEP {cfg.step} — {cfg.label}
-            </h4>
+      {/* ── STEP 2: PICK CLUE ────────────────────────────────────────────── */}
+      {currentStep === 2 && (
+        <div className="space-y-4 animate-in fade-in duration-200">
+          <div className="p-3 bg-purple-50 rounded-2xl border border-purple-200">
+            <p className="text-xs sm:text-sm font-bold text-purple-900">
+              💡 <strong>Step 2:</strong> What scientific principle explains why the boy slipped on the wet corridor floor?
+            </p>
           </div>
-          <button
-            type="button"
-            onClick={() => speakText(`${cfg.starter} ${cfg.value}`)}
-            className="p-1.5 bg-white text-emerald-700 hover:bg-emerald-100 rounded-lg border border-emerald-300 text-xs transition"
-            title="Listen step"
-          >
-            <Volume2 size={14} />
-          </button>
-        </div>
 
-        {/* Starter Sentence Frame */}
-        <div className="p-2.5 bg-white rounded-xl border border-emerald-200 text-xs font-bold text-emerald-900">
-          💡 Starter: &ldquo;{cfg.starter}&rdquo;
-        </div>
-
-        {/* Distractor Alert Feedback */}
-        {distractorAlert && (
-          <div className="p-2.5 bg-rose-50 border-2 border-rose-300 rounded-xl text-xs font-bold text-rose-800 flex items-center gap-2 animate-in fade-in">
-            <AlertTriangle size={15} className="text-rose-600 shrink-0" />
-            <span>{distractorAlert}</span>
-          </div>
-        )}
-
-        {/* Micro-decision: Connector Choice Pills (Step 2 & 3) */}
-        {cfg.connectors && cfg.connectors.length > 0 && (
-          <div className="p-2.5 bg-blue-50/80 rounded-xl border border-blue-200 space-y-1.5">
-            <span className="text-[10px] font-black uppercase text-blue-900 tracking-wider block">
-              🔗 Join your ideas with a connector:
-            </span>
-            <div className="flex flex-wrap gap-1.5">
-              {cfg.connectors.map((conn) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            {clueCards.map(clue => {
+              const isSelected = selectedClue === clue.id;
+              return (
                 <button
-                  key={conn}
+                  key={clue.id}
                   type="button"
-                  onClick={() => handleConnectorClick(conn, cfg.setter)}
-                  className="px-3 py-1 bg-white hover:bg-blue-100 text-blue-900 border border-blue-300 rounded-lg text-xs font-black transition active:scale-95 shadow-2xs"
+                  onClick={() => handleClueSelect(clue)}
+                  className={`p-5 rounded-3xl text-left border-2 transition-all space-y-2 flex flex-col justify-between ${
+                    isSelected
+                      ? 'bg-emerald-50 border-emerald-500 ring-4 ring-emerald-200 shadow-lg scale-102'
+                      : 'bg-slate-50 hover:bg-white border-slate-200 hover:border-purple-300'
+                  }`}
                 >
-                  + {conn}
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-black text-base text-slate-900">{clue.title}</h3>
+                    {isSelected && <CheckCircle2 size={20} className="text-emerald-600" />}
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+                    {clue.description}
+                  </p>
+                  <div className="pt-2 text-xs font-bold text-purple-700">
+                    {isSelected ? '✓ Clue Confirmed' : 'Tap to select this clue'}
+                  </div>
                 </button>
-              ))}
+              );
+            })}
+          </div>
+
+          {clueError && (
+            <div className="p-3 bg-rose-50 border border-rose-200 text-rose-800 rounded-xl text-xs font-bold flex items-center gap-2">
+              <AlertTriangle size={15} className="text-rose-600 shrink-0" />
+              <span>{clueError}</span>
+            </div>
+          )}
+
+          <div className="flex items-center justify-between pt-4">
+            <button
+              type="button"
+              onClick={() => setCurrentStep(1)}
+              className="px-4 py-2 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold hover:bg-slate-50 flex items-center gap-1"
+            >
+              <ChevronLeft size={14} /> Back
+            </button>
+            <button
+              type="button"
+              onClick={() => setCurrentStep(3)}
+              disabled={!selectedClue}
+              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:opacity-40 text-white font-black text-sm rounded-2xl shadow-md transition flex items-center gap-2"
+            >
+              Next: Snap Sentence <ChevronRight size={16} />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ── STEP 3: SNAP SENTENCE ────────────────────────────────────────── */}
+      {currentStep === 3 && (
+        <div className="space-y-4 animate-in fade-in duration-200">
+          <div className="p-3 bg-purple-50 rounded-2xl border border-purple-200">
+            <p className="text-xs sm:text-sm font-bold text-purple-900">
+              🧩 <strong>Step 3:</strong> Tap the word pills in order to snap your official scientific discovery sentence together!
+            </p>
+          </div>
+
+          {/* Target Sentence Drop Area */}
+          <div className="p-5 bg-gradient-to-br from-indigo-900 to-purple-950 rounded-3xl border border-purple-400 text-white space-y-3 shadow-inner">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-black uppercase text-amber-300 tracking-wider">
+                📝 Official Discovery Sentence Builder:
+              </span>
+              <span className="text-xs text-purple-200 font-bold">
+                {assembledPills.length} / {requiredPillCount} words connected
+              </span>
+            </div>
+
+            <div className="min-h-16 p-3 bg-black/40 rounded-2xl border border-purple-400/40 flex flex-wrap items-center gap-2">
+              {assembledPills.length === 0 ? (
+                <span className="text-xs text-purple-300/70 italic">
+                  Tap the magnetic word pills below to build your science sentence...
+                </span>
+              ) : (
+                assembledPills.map(p => (
+                  <button
+                    key={p.id}
+                    type="button"
+                    onClick={() => handleRemovePill(p.id)}
+                    className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 rounded-xl text-xs font-black shadow transition active:scale-95 flex items-center gap-1.5"
+                    title="Tap to remove"
+                  >
+                    <span>{p.text}</span>
+                    <span className="text-[10px] text-slate-700">✕</span>
+                  </button>
+                ))
+              )}
             </div>
           </div>
-        )}
 
-        {/* Dynamic Data Card Past-Tense Pills */}
-        <div className="space-y-1.5">
-          <span className="text-[10px] font-black uppercase text-slate-600 tracking-wider block">
-            Tap Data Card chips to insert (Past Tense):
-          </span>
-          <div className="flex flex-wrap gap-1.5">
-            {Object.entries(cfg.pills || {}).flatMap(([cat, pills]) =>
-              (Array.isArray(pills) ? pills : []).map((pill, pIdx) => {
-                const isDistractor = cat.toLowerCase().includes('distractor') || cat.toLowerCase().includes('nhiễu');
-                const isSelected = selectedChips[pill];
+          {sentenceError && (
+            <div className="p-3 bg-rose-50 border border-rose-200 text-rose-800 rounded-xl text-xs font-bold flex items-center gap-2">
+              <AlertTriangle size={15} className="text-rose-600 shrink-0" />
+              <span>{sentenceError}</span>
+            </div>
+          )}
+
+          {/* Magnetic Word Pills Bank */}
+          <div className="space-y-2 pt-1">
+            <span className="text-xs font-black uppercase text-slate-600 tracking-wider block">
+              Tap Word Pills to Insert:
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {wordPills.map(pill => {
+                const isSelected = assembledPills.some(p => p.id === pill.id);
                 return (
                   <button
-                    key={`${cat}-${pIdx}`}
+                    key={pill.id}
                     type="button"
-                    onClick={() => handleChipClick(cat, pill, isDistractor, cfg.setter)}
-                    className={`px-2.5 py-1 rounded-xl text-[11px] font-bold transition active:scale-95 shadow-2xs border ${
+                    disabled={isSelected}
+                    onClick={() => handleAddPill(pill)}
+                    className={`px-4 py-2.5 rounded-2xl text-xs font-bold transition shadow-xs border ${
                       isSelected
-                        ? 'bg-emerald-100 text-emerald-950 border-emerald-400 font-black'
-                        : isDistractor
-                        ? 'bg-amber-50/80 hover:bg-amber-100 text-amber-950 border-amber-300'
-                        : 'bg-white hover:bg-emerald-100 text-emerald-950 border-emerald-300'
+                        ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed'
+                        : 'bg-white hover:bg-purple-50 text-slate-900 border-purple-200 hover:border-purple-400 active:scale-95'
                     }`}
                   >
-                    {isSelected ? '✓ ' : '+ '}
-                    {pill}
+                    + {pill.text}
                   </button>
                 );
-              })
+              })}
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between pt-4">
+            <button
+              type="button"
+              onClick={() => setCurrentStep(2)}
+              className="px-4 py-2 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold hover:bg-slate-50 flex items-center gap-1"
+            >
+              <ChevronLeft size={14} /> Back
+            </button>
+            <button
+              type="button"
+              onClick={() => setCurrentStep(4)}
+              disabled={!isSentenceComplete}
+              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:opacity-40 text-white font-black text-sm rounded-2xl shadow-md transition flex items-center gap-2"
+            >
+              Next: View Official Report <ChevronRight size={16} />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ── STEP 4: SEE REPORT & COLLECT BADGE ───────────────────────────── */}
+      {currentStep === 4 && (
+        <div className="space-y-5 animate-in fade-in duration-300">
+          {/* Stamped Spiral Notebook */}
+          <div className="relative p-6 sm:p-8 bg-amber-50/90 rounded-3xl border-2 border-amber-200 shadow-lg space-y-4">
+            {/* Spiral binding rings decoration */}
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-3 h-3 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
+              <span className="w-3 h-3 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
+              <span className="w-3 h-3 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
+              <span className="text-[11px] font-black uppercase text-amber-900 tracking-wider ml-2">
+                📓 Nova's Official Science Detective Notebook
+              </span>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-amber-200 pb-3">
+              <div>
+                <h3 className="text-lg sm:text-xl font-black text-slate-900">
+                  Corridor Friction & Safety Field Report
+                </h3>
+                <p className="text-xs text-amber-800 font-bold">Investigator: Junior Science Detective</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => speakText(finalReportText)}
+                className="px-3.5 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs shadow transition flex items-center gap-1.5"
+              >
+                <Volume2 size={14} /> Listen to Full Report
+              </button>
+            </div>
+
+            {/* Official Report Findings Paragraph */}
+            <div className="p-4 bg-white/90 rounded-2xl border border-amber-200 text-slate-900 leading-relaxed font-serif text-sm sm:text-base space-y-2">
+              <p>
+                <strong>Observation:</strong> While observing the corridor, we discovered that <em>water on the smooth tiles reduced surface friction</em>, so the student slipped and lost balance.
+              </p>
+              <p>
+                <strong>Scientific Conclusion:</strong> Understanding friction keeps everyone safe. Cleaners place yellow warning signs, and students walk carefully with rubber shoes!
+              </p>
+            </div>
+
+            {/* Detective Badge */}
+            <div className="p-4 bg-gradient-to-r from-amber-400 to-yellow-300 rounded-2xl text-slate-950 flex items-center gap-3 shadow-md border border-amber-300">
+              <div className="w-12 h-12 rounded-2xl bg-white/90 shadow flex items-center justify-center text-2xl shrink-0">
+                🥇
+              </div>
+              <div>
+                <h4 className="font-black text-sm uppercase tracking-wide">Certified Science Detective</h4>
+                <p className="text-xs text-slate-800 font-bold">Corridor Physics & Safety Mastery Badge Earned</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex items-center justify-between pt-2">
+            <button
+              type="button"
+              onClick={() => setCurrentStep(3)}
+              className="px-4 py-2 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold hover:bg-slate-50 flex items-center gap-1"
+            >
+              <ChevronLeft size={14} /> Back to Sentence
+            </button>
+
+            {!isCompleted ? (
+              <button
+                type="button"
+                onClick={handleFinalSubmit}
+                className="px-8 py-3.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-sm rounded-2xl shadow-xl transition active:scale-95 flex items-center gap-2 animate-bounce"
+              >
+                <Award size={18} /> CLAIM 50 XP & FINISH QUEST
+              </button>
+            ) : (
+              <div className="px-6 py-3 bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-2xl text-xs font-black flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-emerald-700" />
+                <span>Discovery Report Completed & Saved (+50 XP)!</span>
+              </div>
             )}
           </div>
         </div>
-
-        {/* Input Textarea */}
-        <textarea
-          rows={3}
-          value={cfg.value}
-          onChange={(e) => {
-            cfg.setter(e.target.value);
-            setDistractorAlert(null);
-          }}
-          placeholder={cfg.hint}
-          className="w-full p-3 bg-white border-2 border-emerald-300 rounded-xl text-xs sm:text-sm font-medium text-slate-900 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 outline-none resize-none leading-relaxed transition"
-        />
-
-        <div className="flex items-center justify-between text-xs">
-          <span className={cfg.checker ? "text-emerald-700 font-bold" : "text-slate-400"}>
-            {cfg.checker ? "✓ Step verified (>=8 chars)" : "Type or tap pills above..."}
-          </span>
-          <div className="flex items-center gap-2">
-            {currentStep > 1 && (
-              <button
-                type="button"
-                onClick={() => setCurrentStep(prev => prev - 1)}
-                className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-600 hover:bg-white"
-              >
-                Previous
-              </button>
-            )}
-            {currentStep < 3 && (
-              <button
-                type="button"
-                onClick={() => setCurrentStep(prev => prev + 1)}
-                className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-black shadow-xs flex items-center gap-1"
-              >
-                Next Step <ChevronRight size={13} />
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Assembled Report Preview & Final Submit */}
-      <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
-        <span className="text-[10px] font-black uppercase text-slate-600 tracking-wider block">
-          📄 Complete Report Preview:
-        </span>
-        <p className="text-xs leading-relaxed text-slate-800 font-medium italic bg-white p-3 rounded-xl border border-slate-200">
-          {assembledReport ? `"${assembledReport}"` : "Complete all 3 steps above to assemble your official scientific discovery report."}
-        </p>
-
-        {!isSubmitted ? (
-          <button
-            type="button"
-            onClick={handleSubmit}
-            disabled={!canSubmit}
-            className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white font-black text-xs sm:text-sm rounded-xl shadow-md transition active:scale-98 flex items-center justify-center gap-2"
-          >
-            <Send size={15} /> Submit Science Report (+50 XP)
-          </button>
-        ) : (
-          <div className="p-3 bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-center text-xs font-black">
-            ✓ Official Science Report Filed Successfully! (+50 XP)
-          </div>
-        )}
-      </div>
+      )}
     </div>
   );
 }

@@ -161,6 +161,8 @@ function adaptInfoExchangeCards(infoCards) {
 
   return {
     topic: infoCards.topic || `${cardATitle} & ${cardBTitle}`,
+    audio_url: infoCards.audio_url || null,
+    dialogue_script: infoCards.dialogue_script || [],
     prompt_questions: infoCards.prompt_questions || [
       `Where does the character live?`,
       `What is the special skill?`,

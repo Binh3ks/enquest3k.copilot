@@ -1,9 +1,9 @@
 {
-  "commit": "cc1564d5fce2645a2dbc02efe4711fdfa4057645",
-  "git_commit": "cc1564d5fce2645a2dbc02efe4711fdfa4057645",
-  "shortCommit": "cc1564d5",
-  "message": "fix(w33): Golden Learning & Assessment Standard v1.0 — resolve all P0 defects, regenerate audio, sync assets [multi-agent-review]",
-  "builtAt": "2026-08-27T06:30:21.801Z",
-  "build_timestamp": "2026-08-27T06:30:21.801Z",
+  "commit": "7f7a8f3587966b8d67ec53a8f6c4ca58691de6ad",
+  "git_commit": "7f7a8f3587966b8d67ec53a8f6c4ca58691de6ad",
+  "shortCommit": "7f7a8f35",
+  "message": "fix(w33): restore frozen Action Lab & Fact Finder, upgrade dual-voice audio, and polish mobile UX [multi-agent-review]",
+  "builtAt": "2026-08-27T09:32:25.029Z",
+  "build_timestamp": "2026-08-27T09:32:25.029Z",
   "env": "production"
 }

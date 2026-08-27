@@ -66,27 +66,26 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
     required_speakers: ['man', 'woman'],
     dialogue_script: [
       // Intro frame (female examiner/narrator opens)
-      { speaker: 'woman', text: 'Listen and write. There is one example.' },
-      // Example exchange
-      { speaker: 'man',   text: 'Hi. My name is Jake. Can I answer some questions?' },
-      { speaker: 'woman', text: 'Of course. What classroom are you in?' },
-      { speaker: 'man',   text: 'I am in Room 4B.' },
-      { speaker: 'woman', text: 'That is the example. Room 4B. Now you listen and write.' },
+      { speaker: 'woman', text: 'Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day?' },
+      { speaker: 'man',   text: 'Yes, of course! I am happy to help.' },
+      { speaker: 'woman', text: 'Which classroom are you in this year?' },
+      { speaker: 'man',   text: 'I am in Room 4B on the second floor.' },
+      { speaker: 'woman', text: 'Can you see the answer? Now you listen and write.' },
       // Field 1 — Favorite subject → answer: Science
-      { speaker: 'woman', text: 'What is your favourite subject at school?' },
-      { speaker: 'man',   text: 'My favourite subject is Science.' },
+      { speaker: 'woman', text: 'First, what is your favourite subject at school?' },
+      { speaker: 'man',   text: 'I really love doing experiments with forces, so my favourite subject is Science.' },
       // Field 2 — Incident location → answer: school corridor
-      { speaker: 'woman', text: 'And where did the accident happen today?' },
-      { speaker: 'man',   text: 'It happened in the school corridor, near the science room.' },
+      { speaker: 'woman', text: 'That sounds exciting! And where did the accident happen this morning?' },
+      { speaker: 'man',   text: 'It happened while students were walking through the school corridor near the science room.' },
       // Field 3 — Nurse arrival time → answer: 2 minutes
-      { speaker: 'woman', text: 'How quickly did the nurse arrive?' },
-      { speaker: 'man',   text: 'She arrived in about 2 minutes.' },
+      { speaker: 'woman', text: 'How quickly did the school nurse arrive to help?' },
+      { speaker: 'man',   text: 'She came running very quickly, in about 2 minutes.' },
       // Field 4 — First aid item → answer: clean bandage
-      { speaker: 'woman', text: 'What did the nurse use to help the hurt knee?' },
-      { speaker: 'man',   text: 'She used a clean bandage and a cold pack.' },
+      { speaker: 'woman', text: 'What did the nurse use to treat the injured knee?' },
+      { speaker: 'man',   text: 'She cleaned the cut carefully and wrapped a clean bandage around his leg.' },
       // Field 5 — Headmaster award → answer: safety badge
-      { speaker: 'woman', text: 'Did the headmaster say anything at assembly?' },
-      { speaker: 'man',   text: 'Yes. He gave Jake a safety badge in front of the whole school.' }
+      { speaker: 'woman', text: 'Did Headmaster Brown say anything during the school assembly?' },
+      { speaker: 'man',   text: 'Yes, he praised everyone for helping and gave me a shining safety badge!' }
     ],
     example: { field_label: "Classroom number", answer: "Room 4B" },
     fields: [
@@ -97,74 +96,73 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
       { id: "f5", field_label: "Headmaster award", answer: "safety badge" }
     ]
   },
-  // Cambridge alignment: EXACT (two-voice per item, 8 cards, 5 items, example)
   listening_p3: {
     cambridge_alignment: "EXACT",
     example: {
-      name: "Cleaning Mop",
+      name: "School Backpack",
       target_letter: "H",
       audio_url: "/audio/week33/listening_p3_example.mp3",
       dialogue_script: [
-        { speaker: 'woman', text: 'Listen and write a letter in each box. There is one example. Jake, what was the tool used to clean the wet corridor tiles?' },
-        { speaker: 'man',   text: 'That is the cleaning mop! Cleaner Bob left it near the wall. Can you see the letter H? That is the example. Now you listen and write a letter in each box.' }
+        { speaker: 'woman', text: 'Listen and write a letter in each box. There is one example. Jake, where did you leave your blue school backpack before morning class?' },
+        { speaker: 'man',   text: 'I left my backpack on the playground bench outside. Can you see the letter H? That is the example. Now you listen and write a letter in each box.' }
       ]
     },
     items: [
       {
-        id: 1, name: "School Stairs", target_letter: "A",
-        audio_text: "Look at the first picture. What are the steps inside the school building? Those are the school stairs. They go up to the second floor.",
+        id: 1, name: "Clean Bandage", target_letter: "A",
+        audio_text: "Where did Nurse Sarah find the clean bandage? She opened the glass nurse cabinet right away.",
         audio_url: "/audio/week33/listening_p3_item1.mp3",
         dialogue_script: [
-          { speaker: 'woman', text: 'Jake, where was Tom walking before he ran down the corridor?' },
-          { speaker: 'man',   text: 'He was walking down the school stairs. The steps connect the first and second floors. School stairs.' }
+          { speaker: 'woman', text: 'Where did Nurse Sarah find the clean bandage to help Tom?' },
+          { speaker: 'man',   text: 'She went to the nurse office and opened the glass cabinet. She took out a clean bandage. Clean bandage.' }
         ]
       },
       {
-        id: 2, name: "Warning Sign", target_letter: "B",
-        audio_text: "What is the yellow board placed on the wet floor to warn students? That is the warning sign. It says Be Careful.",
+        id: 2, name: "Cold Pack", target_letter: "B",
+        audio_text: "Where was the blue cold pack? It was on the first-aid table in the nurse room.",
         audio_url: "/audio/week33/listening_p3_item2.mp3",
         dialogue_script: [
-          { speaker: 'woman', text: 'What is that bright yellow board standing near the wet tiles?' },
-          { speaker: 'man',   text: 'That is the caution warning sign! It reminds everyone to walk slowly. Warning sign.' }
+          { speaker: 'woman', text: 'And where did she find the cold pack?' },
+          { speaker: 'man',   text: 'The blue cold pack was lying on the first-aid table right next to her. Cold pack.' }
         ]
       },
       {
-        id: 3, name: "First-Aid Kit", target_letter: "C",
-        audio_text: "What is the white box with a red cross kept in the nurse office for injuries? That is the first aid kit.",
+        id: 3, name: "Science Notebook", target_letter: "C",
+        audio_text: "Where did Jake leave his science notebook? He left it on the science lab desk.",
         audio_url: "/audio/week33/listening_p3_item3.mp3",
         dialogue_script: [
-          { speaker: 'woman', text: 'Where did the school nurse get her emergency supplies so fast?' },
-          { speaker: 'man',   text: 'She brought the white first-aid kit right from the medical cabinet. First aid kit.' }
+          { speaker: 'woman', text: 'Jake, where is your green science notebook?' },
+          { speaker: 'man',   text: 'I put it on the lab desk during our science lesson this morning. Science notebook.' }
         ]
       },
       {
-        id: 4, name: "Cold Pack", target_letter: "D",
-        audio_text: "What is the blue bag filled with ice that the nurse puts on a swollen knee? That is the cold pack.",
+        id: 4, name: "Water Bottle", target_letter: "D",
+        audio_text: "Where was Tom's water bottle? He left it on the cafeteria table at lunchtime.",
         audio_url: "/audio/week33/listening_p3_item4.mp3",
         dialogue_script: [
-          { speaker: 'woman', text: 'What did the nurse put on the swollen knee to stop the swelling?' },
-          { speaker: 'man',   text: 'She gently applied the blue cold pack with ice. Cold pack.' }
+          { speaker: 'woman', text: 'Did Tom leave his water bottle in the corridor?' },
+          { speaker: 'man',   text: 'No, Tom left his bottle on the table in the school cafeteria after lunch. Water bottle.' }
         ]
       },
       {
-        id: 5, name: "Clean Bandage", target_letter: "E",
-        audio_text: "What is the long white cloth strip wrapped around a cut? That is the clean bandage.",
+        id: 5, name: "Alarm Clock", target_letter: "E",
+        audio_text: "Why did Jake arrive so early? His alarm clock was ringing on his bedroom table.",
         audio_url: "/audio/week33/listening_p3_item5.mp3",
         dialogue_script: [
-          { speaker: 'woman', text: 'What did the nurse wrap around the cut to keep it clean and safe?' },
-          { speaker: 'man',   text: 'She wrapped the clean bandage around his knee. Clean bandage.' }
+          { speaker: 'woman', text: 'Why did you arrive so early at school this morning?' },
+          { speaker: 'man',   text: 'My alarm clock was ringing very loudly on my bedroom table at seven in the morning. An alarm clock.' }
         ]
       }
     ],
     cards: [
-      { letter: "A", name: "School Stairs", image_url: "/images/week33/card_a.jpg" },
-      { letter: "B", name: "Warning Sign", image_url: "/images/week33/card_b.jpg" },
-      { letter: "C", name: "First-Aid Kit", image_url: "/images/week33/card_c.jpg" },
-      { letter: "D", name: "Cold Pack", image_url: "/images/week33/card_d.jpg" },
-      { letter: "E", name: "Clean Bandage", image_url: "/images/week33/card_e.jpg" },
-      { letter: "F", name: "Science Goggles", image_url: "/images/week33/card_f.jpg" },
-      { letter: "G", name: "School Backpack", image_url: "/images/week33/card_g.jpg" },
-      { letter: "H", name: "Cleaning Mop", image_url: "/images/week33/card_h.jpg" }
+      { letter: "A", name: "Nurse's Cabinet", location_name: "Nurse Office", image_url: "/images/week33/card_a.jpg" },
+      { letter: "B", name: "First-Aid Table", location_name: "First Aid Area", image_url: "/images/week33/card_b.jpg" },
+      { letter: "C", name: "Science Lab Desk", location_name: "Science Room", image_url: "/images/week33/card_c.jpg" },
+      { letter: "D", name: "School Cafeteria", location_name: "Dining Hall", image_url: "/images/week33/card_d.jpg" },
+      { letter: "E", name: "Bedroom Table", location_name: "Jake's Home", image_url: "/images/week33/card_e.jpg" },
+      { letter: "F", name: "School Corridor", location_name: "Corridor Floor", image_url: "/images/week33/card_f.jpg" },
+      { letter: "G", name: "Headmaster's Office", location_name: "Office", image_url: "/images/week33/card_g.jpg" },
+      { letter: "H", name: "Playground Bench", location_name: "School Yard", image_url: "/images/week33/card_h.jpg" }
     ]
   },
   // Cambridge alignment: EXACT after P0 fixes (dialogue_script, 2-voice, mixed answers, example)
@@ -279,32 +277,32 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
   listening_p5: {
     image_url: "/images/week33/webtoon_scene_1.png",
     audio_script: `Nova: Listen and colour and write. There is one example.
-Woman: Look at this picture of the school corridor. Can you see Jake's friend sitting on the bench?
-Man: Yes, I can see him.
-Woman: Good. Colour his notebook yellow.
-Nova: Can you see the yellow notebook? This is an example. Now you listen and colour and write.
+Woman: Look at this picture of the school corridor. Can you see Jake's friends sitting on the bench?
+Man: Yes, I can see them.
+Woman: Good. Colour the notebook yellow.
+Nova: Can you see the yellow notebook? That is the example. Now you listen and colour and write.
 Woman: Now look at Jake. He is carrying a backpack.
 Man: Shall I colour his backpack blue?
-Woman: Yes, colour Jake's backpack blue.
+Woman: Yes. Colour Jake's backpack blue.
 Woman: Look at the warning sign near the wet tiles. Can you write a word on it?
-Man: Sure! What word should I write?
-Woman: Write the word 'WET' on the sign.
-Woman: Can you find the science lab door frame?
+Man: Sure. What word should I write?
+Woman: Write the word wet on the sign.
+Woman: Can you find the science lab doorframe?
 Man: Yes, it is next to the lockers.
-Woman: Colour the door frame bright green.
+Woman: Colour the doorframe bright green.
 Woman: Look at the notice board on the wall. Can you write one more word?
 Man: Yes, what should I write?
-Woman: Write the word 'CARE' on the board.
-Woman: Now look at the nurse room door at the end of the corridor.
+Woman: Write the word care on the board.
+Woman: Now look at the long handrail near the stairs.
 Man: Should I colour it red?
-Woman: Yes, colour the nurse room door red.`,
+Woman: Yes. Colour the handrail red.`,
     instructions: [
       { id: "inst_0", item: "Example Object", text: "Color the example brown", x: 10, y: 10, color: "brown", isExample: true },
       { id: "inst_1", item: "Jake's Backpack", text: "Color Jake's backpack blue", x: 25, y: 70, color: "blue", action: "colour" },
       { id: "inst_2", item: "Warning Sign", text: "Write the word 'WET' on the sign", x: 45, y: 80, word: "WET", action: "write" },
       { id: "inst_3", item: "Science Lab Door", text: "Color the door frame bright green", x: 75, y: 35, color: "green", action: "colour" },
       { id: "inst_4", item: "Notice Board", text: "Write the word 'CARE' on the board", x: 15, y: 30, word: "CARE", action: "write" },
-      {id: "inst_5", item: "Nurse Room Door", text: "Color the nurse room door red", x: 85, y: 60, color: "red", action: "colour" }
+      { id: "inst_5", item: "School Handrail", text: "Color the handrail red", x: 85, y: 60, color: "red", action: "colour" }
     ]
   }
 };

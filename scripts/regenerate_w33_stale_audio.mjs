@@ -2,18 +2,25 @@
 /**
  * regenerate_w33_stale_audio.mjs
  *
- * Regenerates ONLY the stale audio files identified by the W33 forensic audit.
- * Source of truth: current hub data files (Golden Standard v1.0 Rule A).
+ * Authoritative W33 Audio Generator — Source-of-Truth Architecture:
+ * HUB DATA → VALIDATION → TTS
  *
- * Files regenerated:
- *  P0-3: read_stem.mp3     ← read.js text_en (anonymous nurse/boy)
- *  P0-7: explore.mp3       ← explore.js content_en (friction theme, updated)
- *  P0-2: dictation_1–5.mp3 ← skill_practice_hub.js dictation[].text
+ * Reads 100% of spoken scripts directly from authoritative hub data files:
+ *  - read.js: text_en → read_stem.mp3
+ *  - explore.js: content_en → explore.mp3
+ *  - reading_hub.js: clil_article.content_en → clil_friction.mp3
+ *  - skill_practice_hub.js: dictation[].text → dictation_1–5.mp3
+ *  - listening_hub.js:
+ *      * listening_p1.dialogue_script → listening_p1_full.mp3
+ *      * listening_p2.dialogue_script → listening_p2_full.mp3
+ *      * listening_p3.example + items[].dialogue_script → listening_p3_example.mp3, listening_p3_item1–5.mp3, listening_p3_full.mp3
+ *      * listening_p4.questions[].dialogue_script → listening_p4_example.mp3, listening_p4_q1–5.mp3, listening_p4_full.mp3
+ *      * listening_p5.instructions[] + audio_script → listening_p5_inst1–5.mp3, listening_p5_full.mp3
+ *  - speaking_hub.js: info_exchange_cards.dialogue_script → exam_intro_S2.mp3
  *
- * Also regenerates L4 audio using the new dialogue_script[] format (P0-4).
- *
- * Usage: node scripts/regenerate_w33_stale_audio.mjs
+ * ZERO hardcoded duplicate assessment dialogue.
  */
+
 import fs from 'fs';
 import path from 'path';
 import { pathToFileURL } from 'url';
@@ -26,11 +33,11 @@ const GOOGLE_API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE
 const VOICE_F = 'en-US-Journey-F';   // woman / narrator
 const VOICE_M = 'en-US-Neural2-D';   // man
 
-// ── Core TTS call ─────────────────────────────────────────────────────────
+// ── Core TTS ──────────────────────────────────────────────────────────────
 async function tts(text, voice = VOICE_F, rate = 0.88) {
   if (!text || !text.trim()) throw new Error('tts(): empty text');
-  // Strip any residual speaker labels that might exist in source (safety guard)
-  const cleaned = text.replace(/\b(Man|Woman|Girl|Boy|Teacher|Nova|Mia)\s*:\s*/gi, '');
+  // Strip any residual speaker labels that might exist in raw text
+  const cleaned = text.replace(/\b(Man|Woman|Girl|Boy|Teacher|Nova|Mia)\s*:\s*/gi, '').trim();
   const chosenVoice = (cleaned.length > 400 && voice === VOICE_F) ? 'en-US-Neural2-F' : voice;
   const body = {
     input: { text: cleaned },
@@ -46,26 +53,12 @@ async function tts(text, voice = VOICE_F, rate = 0.88) {
   return Buffer.from(json.audioContent, 'base64');
 }
 
-// 200ms silence buffer
-function silence200ms() {
-  // Minimal valid MP3 silence ~200ms (approximated by 0-byte padding between segments)
-  // In practice: we insert 200ms pause via speakingRate or just concat without gap.
-  // For simplicity, return empty buffer — TTS already adds natural pauses.
-  return Buffer.alloc(0);
-}
-
-async function generateDialogueAudio(turns, pauseMs = 200) {
+async function generateDialogueAudio(turns, rate = 0.88) {
   const parts = [];
   for (const turn of turns) {
-    const voice = turn.speaker === 'man' || turn.speaker === 'boy' ? VOICE_M : VOICE_F;
-    const buf = await tts(turn.text, voice);
+    const voice = (turn.speaker === 'man' || turn.speaker === 'boy') ? VOICE_M : VOICE_F;
+    const buf = await tts(turn.text, voice, rate);
     parts.push(buf);
-    // Small pause between speakers — re-use silence via a short TTS pause phrase
-    if (pauseMs > 0) {
-      // Approximate: use TTS with a tiny pause or just concatenate
-      // Real implementation would use audio-concat with silence.
-      // Here we just concatenate — the natural neural TTS endings create implicit gaps.
-    }
   }
   return Buffer.concat(parts);
 }
@@ -73,16 +66,17 @@ async function generateDialogueAudio(turns, pauseMs = 200) {
 function save(filename, buffer) {
   const pubPath = path.join(OUTPUT_DIR, filename);
   const distPath = path.join(DIST_DIR, filename);
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   fs.writeFileSync(pubPath, buffer);
   if (fs.existsSync(DIST_DIR)) {
     fs.writeFileSync(distPath, buffer);
     console.log(`  ✅ Saved + synced to dist: ${filename}`);
   } else {
-    console.log(`  ✅ Saved (no dist dir): ${filename}`);
+    console.log(`  ✅ Saved (no dist): ${filename}`);
   }
 }
 
-// ── Load source data ───────────────────────────────────────────────────────
+// ── Load Hub Modules (Source of Truth) ────────────────────────────────────
 const weekDir = path.resolve(`src/data/weeks/week_${WEEK}`);
 
 const readMod = await import(pathToFileURL(path.join(weekDir, 'read.js')).href);
@@ -91,106 +85,74 @@ const readData = readMod.default || readMod;
 const exploreMod = await import(pathToFileURL(path.join(weekDir, 'explore.js')).href);
 const exploreData = exploreMod.default || exploreMod;
 
+const readingHubMod = await import(pathToFileURL(path.join(weekDir, 'reading_hub.js')).href);
+const readingHub = readingHubMod.readingHub || readingHubMod.readingHubData || readingHubMod.default || readingHubMod;
+
 const skillMod = await import(pathToFileURL(path.join(weekDir, 'skill_practice_hub.js')).href);
 const skillHub = skillMod.skillPracticeHub || skillMod.default || skillMod;
 
 const listeningMod = await import(pathToFileURL(path.join(weekDir, 'listening_hub.js')).href);
-const lh = listeningMod.listeningHub || listeningMod.listeningHubData || listeningMod.default;
+const lh = listeningMod.listeningHub || listeningMod.listeningHubData || listeningMod.default || listeningMod;
 
-// ── P0-3: read_stem.mp3 ───────────────────────────────────────────────────
-console.log('\n[P0-3] Regenerating read_stem.mp3 from read.js text_en...');
+const speakingMod = await import(pathToFileURL(path.join(weekDir, 'speaking_hub.js')).href);
+const sh = speakingMod.speakingHub || speakingMod.speakingHubData || speakingMod.default || speakingMod;
+
+// ─── 1. read_stem.mp3 from read.js ────────────────────────────────────────
+console.log('\n[1/10] Regenerating read_stem.mp3 from read.js text_en...');
 const stemText = (readData.text_en || readData.content_en || '').trim();
-if (!stemText) { console.error('ERROR: read.js text_en is empty'); process.exit(1); }
-console.log(`  Source (first 100): "${stemText.slice(0, 100)}..."`);
-const stemBuf = await tts(stemText.slice(0, 800), VOICE_F, 0.88);
-save('read_stem.mp3', stemBuf);
+if (!stemText) throw new Error('read.js text_en is empty');
+save('read_stem.mp3', await tts(stemText.slice(0, 1000), VOICE_F, 0.88));
 
-// ── P0-7: explore.mp3 ────────────────────────────────────────────────────
-console.log('\n[P0-7] Regenerating explore.mp3 from explore.js content_en...');
+// ─── 2. explore.mp3 from explore.js ───────────────────────────────────────
+console.log('\n[2/10] Regenerating explore.mp3 from explore.js content_en...');
 const exploreText = (exploreData.content_en || '').trim();
-if (!exploreText) { console.error('ERROR: explore.js content_en is empty'); process.exit(1); }
-console.log(`  Source (first 100): "${exploreText.slice(0, 100)}..."`);
-const exploreBuf = await tts(exploreText, VOICE_F, 0.90);
-save('explore.mp3', exploreBuf);
+if (!exploreText) throw new Error('explore.js content_en is empty');
+save('explore.mp3', await tts(exploreText, VOICE_F, 0.90));
 
-// ── P0-2: dictation_1–5.mp3 ──────────────────────────────────────────────
-console.log('\n[P0-2] Regenerating dictation 1–5 from skill_practice_hub.js...');
+// ─── 3. clil_friction.mp3 from reading_hub.js ─────────────────────────────
+console.log('\n[3/10] Regenerating clil_friction.mp3 from reading_hub.js clil_article.content_en...');
+const clilText = (readingHub.clil_article?.content_en || '').trim();
+if (!clilText) throw new Error('reading_hub.js clil_article.content_en is empty');
+save('clil_friction.mp3', await tts(clilText, VOICE_F, 0.90));
+
+// ─── 4. dictation_1–5.mp3 from skill_practice_hub.js ──────────────────────
+console.log('\n[4/10] Regenerating dictation 1–5 from skill_practice_hub.js...');
 const dictItems = skillHub.dictation?.items || skillHub.dictation || [];
-if (!Array.isArray(dictItems) || dictItems.length === 0) {
-  console.error('ERROR: dictation items not found in skill_practice_hub.js');
-  process.exit(1);
-}
 for (const item of dictItems) {
-  const id = item.id;
   const text = item.text || item.sentence;
-  if (!text) { console.error(`  ERROR: dictation item ${id} has no text`); continue; }
-  console.log(`  D${id}: "${text}"`);
-  const buf = await tts(text, VOICE_F, 0.82); // slower for dictation
-  save(`dictation_${id}.mp3`, buf);
+  if (!text) continue;
+  save(`dictation_${item.id}.mp3`, await tts(text, VOICE_F, 0.82));
 }
 
-// ── P0-4 (audio): L4 dialogue_script[] → regenerate Q1–Q5 and full ───────
-console.log('\n[P0-4 audio] Regenerating L4 audio from new dialogue_script[]...');
-const p4 = lh.listening_p4;
-if (!p4) { console.error('ERROR: listening_p4 not found'); process.exit(1); }
-
-const allL4Bufs = [];
-
-// Example
-const exampleQ = p4.questions.find(q => q.isExample);
-if (exampleQ?.dialogue_script) {
-  console.log('  Generating example...');
-  const buf = await generateDialogueAudio(exampleQ.dialogue_script);
-  save('listening_p4_example.mp3', buf);
-  allL4Bufs.push(buf);
-}
-
-// Scored Q1–Q5
-const scored = p4.questions.filter(q => !q.isExample);
-for (const q of scored) {
-  if (!q.dialogue_script) { console.warn(`  SKIP ${q.id}: no dialogue_script`); continue; }
-  console.log(`  Generating ${q.id} (answer: ${q.answer})...`);
-  const qNum = q.id.replace('p4_q', '');
-  const buf = await generateDialogueAudio(q.dialogue_script);
-  save(`listening_p4_q${qNum}.mp3`, buf);
-  allL4Bufs.push(buf);
-}
-
-// Regenerate full composite
-if (allL4Bufs.length > 0) {
-  save('listening_p4_full.mp3', Buffer.concat(allL4Bufs));
-  console.log('  ✅ listening_p4_full.mp3 regenerated');
-}
-
-// ── P1-1 (audio): L1 dialogue_script[] → regenerate listening_p1_full.mp3 (Teacher + Mia) ───
-console.log('\n[L1 audio] Regenerating L1 audio from dialogue_script[] (Teacher + Mia 2-voice)...');
-const p1 = lh.listening_p1;
-if (p1?.dialogue_script) {
+// ─── 5. listening_p1_full.mp3 from listening_hub.js ───────────────────────
+console.log('\n[5/10] Regenerating listening_p1_full.mp3 from listening_hub.js dialogue_script...');
+if (lh.listening_p1?.dialogue_script) {
   const l1Bufs = [];
-  for (const turn of p1.dialogue_script) {
+  for (const turn of lh.listening_p1.dialogue_script) {
     const voice = turn.speaker === 'girl' ? 'en-US-Neural2-F' : VOICE_F;
-    const buf = await tts(turn.text, voice, 0.86);
-    l1Bufs.push(buf);
+    l1Bufs.push(await tts(turn.text, voice, 0.86));
   }
   save('listening_p1_full.mp3', Buffer.concat(l1Bufs));
 }
 
-// ── P1-2 (audio): L3 dialogue_script[] → regenerate L3 items 1-5 + example + full (Teacher + Jake) ───
-console.log('\n[L3 audio] Regenerating L3 audio from dialogue_script[] (Teacher + Jake 2-voice)...');
-const p3 = lh.listening_p3;
-if (p3) {
+// ─── 6. listening_p2_full.mp3 from listening_hub.js ───────────────────────
+console.log('\n[6/10] Regenerating listening_p2_full.mp3 from listening_hub.js dialogue_script...');
+if (lh.listening_p2?.dialogue_script) {
+  save('listening_p2_full.mp3', await generateDialogueAudio(lh.listening_p2.dialogue_script, 0.86));
+}
+
+// ─── 7. listening_p3 (example + items 1-5 + full) from listening_hub.js ───
+console.log('\n[7/10] Regenerating listening_p3 from listening_hub.js dialogue_script...');
+if (lh.listening_p3) {
   const allL3Bufs = [];
-  // Example
-  if (p3.example?.dialogue_script) {
-    const exBuf = await generateDialogueAudio(p3.example.dialogue_script);
+  if (lh.listening_p3.example?.dialogue_script) {
+    const exBuf = await generateDialogueAudio(lh.listening_p3.example.dialogue_script);
     save('listening_p3_example.mp3', exBuf);
     allL3Bufs.push(exBuf);
   }
-  // Items 1-5
-  if (Array.isArray(p3.items)) {
-    for (const item of p3.items) {
+  if (Array.isArray(lh.listening_p3.items)) {
+    for (const item of lh.listening_p3.items) {
       if (item.dialogue_script) {
-        console.log(`  Generating L3 item ${item.id} (${item.name})...`);
         const itemBuf = await generateDialogueAudio(item.dialogue_script);
         save(`listening_p3_item${item.id}.mp3`, itemBuf);
         allL3Bufs.push(itemBuf);
@@ -199,32 +161,66 @@ if (p3) {
   }
   if (allL3Bufs.length > 0) {
     save('listening_p3_full.mp3', Buffer.concat(allL3Bufs));
-    console.log('  ✅ listening_p3_full.mp3 regenerated');
   }
 }
 
-// ── P1-3 (audio): Speaking Part 2 Info Exchange dialogue_script[] ────────
-console.log('\n[Speaking S2 audio] Regenerating unified Info Exchange audio (Examiner + Candidate)...');
-const speakingMod = await import(pathToFileURL(path.join(weekDir, 'speaking_hub.js')).href);
-const sh = speakingMod.speakingHub || speakingMod.speakingHubData || speakingMod.default;
-if (sh?.info_exchange_cards?.dialogue_script) {
-  const s2Buf = await generateDialogueAudio(sh.info_exchange_cards.dialogue_script);
-  save('exam_intro_S2.mp3', s2Buf);
+// ─── 8. listening_p4 (example + q1-5 + full) from listening_hub.js ────────
+console.log('\n[8/10] Regenerating listening_p4 from listening_hub.js dialogue_script...');
+if (lh.listening_p4?.questions) {
+  const allL4Bufs = [];
+  const exQ = lh.listening_p4.questions.find(q => q.isExample);
+  if (exQ?.dialogue_script) {
+    const buf = await generateDialogueAudio(exQ.dialogue_script);
+    save('listening_p4_example.mp3', buf);
+    allL4Bufs.push(buf);
+  }
+  const scored = lh.listening_p4.questions.filter(q => !q.isExample);
+  for (const q of scored) {
+    if (q.dialogue_script) {
+      const qNum = q.id.replace('p4_q', '');
+      const buf = await generateDialogueAudio(q.dialogue_script);
+      save(`listening_p4_q${qNum}.mp3`, buf);
+      allL4Bufs.push(buf);
+    }
+  }
+  if (allL4Bufs.length > 0) {
+    save('listening_p4_full.mp3', Buffer.concat(allL4Bufs));
+  }
 }
 
-// ── Final summary ─────────────────────────────────────────────────────────
+// ─── 9. listening_p5 (inst1-5 + full) from listening_hub.js ──────────────
+console.log('\n[9/10] Regenerating listening_p5 from listening_hub.js instructions & audio_script...');
+if (lh.listening_p5) {
+  // Generate individual instruction MP3s from instructions array (skipping example inst_0)
+  const scoredInsts = (lh.listening_p5.instructions || []).filter(i => !i.isExample);
+  for (let idx = 0; idx < scoredInsts.length; idx++) {
+    const inst = scoredInsts[idx];
+    const text = inst.text || `Color the ${inst.item} ${inst.color || 'blue'}`;
+    save(`listening_p5_inst${idx + 1}.mp3`, await tts(text, VOICE_F, 0.88));
+  }
+  // Full composite passage from audio_script
+  if (lh.listening_p5.audio_script) {
+    // Parse turns or synthesize script directly
+    const lines = lh.listening_p5.audio_script.split('\n').filter(l => l.trim());
+    const turns = lines.map(line => {
+      const match = line.match(/^(\w+):\s*(.*)$/);
+      if (match) {
+        const speaker = match[1].toLowerCase();
+        return { speaker: (speaker === 'man' || speaker === 'boy') ? 'man' : 'woman', text: match[2] };
+      }
+      return { speaker: 'woman', text: line };
+    });
+    save('listening_p5_full.mp3', await generateDialogueAudio(turns, 0.88));
+  }
+}
+
+// ─── 10. exam_intro_S2.mp3 from speaking_hub.js ───────────────────────────
+console.log('\n[10/10] Regenerating exam_intro_S2.mp3 from speaking_hub.js dialogue_script...');
+if (sh.info_exchange_cards?.dialogue_script) {
+  save('exam_intro_S2.mp3', await generateDialogueAudio(sh.info_exchange_cards.dialogue_script, 0.88));
+}
+
 console.log('\n══════════════════════════════════════════════');
-console.log('Stale audio regeneration COMPLETE — Week 33');
-console.log('Files regenerated:');
-console.log('  read_stem.mp3     ← read.js text_en (no Nurse Clara)');
-console.log('  explore.mp3       ← explore.js content_en (friction theme)');
-console.log('  dictation_1-5.mp3 ← skill_practice_hub.js dictation[].text');
-console.log('  listening_p1_full.mp3 ← dialogue_script[] (Teacher + Mia 2-voice)');
-console.log('  listening_p3_example.mp3 + item1-5 + full ← dialogue_script[] (Teacher + Jake 2-voice)');
-console.log('  listening_p4_example.mp3 + q1-5 + full ← dialogue_script[] (Woman + Man 2-voice)');
-console.log('  exam_intro_S2.mp3 ← info_exchange_cards dialogue_script[] (Examiner + Candidate 2-voice)');
-console.log('\nNext steps:');
-console.log('  node scripts/validate_l4_answer_distribution.mjs 33');
-console.log('  node scripts/validate_public_dist_sync.mjs 33');
-console.log('  node scripts/validate_hub_structure.mjs 33');
+console.log('Authoritative Source-of-Truth Audio Generation COMPLETE — Week 33');
+console.log('All audio synthesized directly from hub data files.');
 console.log('══════════════════════════════════════════════\n');

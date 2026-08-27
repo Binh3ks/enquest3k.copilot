@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { Volume2, Mic, Square, CheckCircle2, XCircle, HelpCircle, ArrowRight, Sparkles, Award, RotateCcw, Eye, EyeOff, Keyboard } from 'lucide-react';
+import { Volume2, Mic, Square, CheckCircle2, XCircle, HelpCircle, ArrowRight, Sparkles, Award, RotateCcw, Eye, EyeOff, Keyboard, PlayCircle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
+import VoiceService from '../../services/voiceService';
 import LexioMascot from '../../components/mascot/LexioMascot';
 import GrammarHintButton from '../../components/common/GrammarHintButton';
 import MicFallbackInput from '../../components/common/MicFallbackInput';
@@ -365,32 +366,28 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
         </div>
       </div>
 
-      {/* Examiner Audio Questions Bar (Table B Audio Controls) */}
+      {/* Model Dialogue Control Bar (Interactive Demo) */}
       <div className="p-3.5 bg-purple-50/90 border border-purple-200 rounded-2xl flex flex-wrap items-center justify-between gap-3 shadow-xs">
-        <span className="text-[11px] font-black uppercase text-purple-900 flex items-center gap-1.5">
-          <Volume2 size={14} className="text-purple-700" /> Examiner Questions Audio (Table B):
-        </span>
-        <div className="flex flex-wrap items-center gap-2">
-          {(infoExData?.examiner_questions || [
-            { text: "Where does the lion live?", audio_url: "/audio/week34/ie_examiner_q1.mp3" },
-            { text: "What is the lion's favorite food?", audio_url: "/audio/week34/ie_examiner_q2.mp3" },
-            { text: "When does he like to rest?", audio_url: "/audio/week34/ie_examiner_q3.mp3" }
-          ]).map((eq, i) => (
-            <button
-              key={i}
-              type="button"
-              data-testid="ie-audio-btn"
-              onClick={() => {
-                const url = eq.audio_url || `/audio/week34/ie_examiner_q${i + 1}.mp3`;
-                VoiceService.speak(eq.text, 'story', { audioUrl: url }).catch(() => VoiceService.speak(eq.text, 'story'));
-              }}
-              className="px-3 py-1.5 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-sm active:scale-95"
-              title={`Play Question ${i + 1}: ${eq.text}`}
-            >
-              <Volume2 size={13} /> Q{i + 1} Audio
-            </button>
-          ))}
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] font-black uppercase text-purple-900 flex items-center gap-1.5">
+            <Volume2 size={14} className="text-purple-700" /> Model Dialogue:
+          </span>
+          <span className="text-xs text-purple-700 font-medium">Listen to examiner & candidate conversation example</span>
         </div>
+        <button
+          type="button"
+          data-testid="ie-model-dialogue-btn"
+          onClick={() => {
+            const url = infoExData?.audio_url || `/audio/week${activeWeek || 33}/exam_intro_S2.mp3`;
+            VoiceService.speak("Listen to the model dialogue", 'story', { audioUrl: url }).catch(() => {
+              speakText("Where did the accident happen? It happened in the school corridor.");
+            });
+          }}
+          className="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-xl text-xs font-black transition flex items-center gap-2 shadow-sm active:scale-95 cursor-pointer"
+          title="Play full examiner and candidate model dialogue"
+        >
+          <PlayCircle size={14} /> ▶ Play Model Dialogue
+        </button>
       </div>
 
       {/* Main Responsive Layout: Stack vertically on Mobile (<1024px), Side-by-side on Desktop */}
@@ -455,7 +452,6 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
               fieldsB.map((f, idx) => {
                 const isActive = fieldIdxB === idx;
                 const isPassed = fieldIdxB > idx;
-                const audioUrl = f.audio_url || infoExData?.examiner_questions?.[idx]?.audio_url || null;
 
                 return (
                   <div
@@ -465,21 +461,17 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                     }`}
                   >
                     <div className="flex items-center gap-2">
-                      {audioUrl ? (
-                        <button
-                          type="button"
-                          data-testid="ie-audio-btn"
-                          onClick={() => {
-                            VoiceService.speak(f.nova_question || f.label, 'story', { audioUrl }).catch(() => VoiceService.speak(f.nova_question || f.label, 'story'));
-                          }}
-                          className="p-1.5 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-lg transition active:scale-95 shrink-0"
-                          title="Listen to Examiner Question"
-                        >
-                          <Volume2 size={14} />
-                        </button>
-                      ) : (
-                        <span className="p-1 bg-rose-100 text-rose-600 rounded text-[9px] font-bold">⚠️ No Audio</span>
-                      )}
+                      <button
+                        type="button"
+                        data-testid="ie-audio-btn"
+                        onClick={() => {
+                          speakText(f.nova_question || f.label);
+                        }}
+                        className="p-1.5 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-lg transition active:scale-95 shrink-0 cursor-pointer"
+                        title="Listen to Examiner Question"
+                      >
+                        <Volume2 size={14} />
+                      </button>
                       <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-slate-500 shrink-0">
                         {f.label}
                       </span>
