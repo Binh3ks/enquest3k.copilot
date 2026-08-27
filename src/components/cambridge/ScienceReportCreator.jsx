@@ -57,13 +57,25 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
     }
   ], []);
 
-  // ── Step 3: Sentence Word Pills ───────────────────────────────────────────
-  const wordPills = useMemo(() => [
+  // ── Step 3: Sentence Word Pills (Shuffled on Initial Display) ─────────────
+  const rawWordPills = useMemo(() => [
     { id: 'p1', text: 'Water on the smooth tiles', correctOrder: 1 },
     { id: 'p2', text: 'reduced surface friction,', correctOrder: 2 },
     { id: 'p3', text: 'so the student slipped and fell.', correctOrder: 3 },
     { id: 'p_dist', text: 'because of sunny weather outside.', correctOrder: -1 } // distractor
   ], []);
+
+  const [shuffledWordPills, setShuffledWordPills] = useState([]);
+
+  useEffect(() => {
+    // Fisher-Yates deterministic/randomized initial shuffle so pills are never pre-sorted
+    const pills = [...rawWordPills];
+    for (let i = pills.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pills[i], pills[j]] = [pills[j], pills[i]];
+    }
+    setShuffledWordPills(pills);
+  }, [rawWordPills]);
 
   const requiredPillCount = 3;
   const isSentenceComplete = assembledPills.length === requiredPillCount;
@@ -72,6 +84,10 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
   const handleHotspotClick = (hs) => {
     playButtonClick();
     setObservedHotspot(hs);
+    // 🎧 Hotspot Tap Requirement: Automatically play the discovery fact audio
+    if (hs?.fact) {
+      VoiceService.speak(hs.fact, 'read');
+    }
   };
 
   const handleClueSelect = (clue) => {
@@ -348,7 +364,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               Tap Word Pills to Insert:
             </span>
             <div className="flex flex-wrap gap-2">
-              {wordPills.map(pill => {
+              {shuffledWordPills.map(pill => {
                 const isSelected = assembledPills.some(p => p.id === pill.id);
                 return (
                   <button

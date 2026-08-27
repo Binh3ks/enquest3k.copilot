@@ -13,8 +13,8 @@ Mia: Who is the woman with the first-aid kit rushing near the wall?
 Teacher: That is Nurse Sarah. She is bringing bandages to help.
 Mia: Look at the tall man in the blue suit near the lockers.
 Teacher: That is Headmaster Brown. He is watching the corridor.
-Mia: Is that Cleaner Bob holding the yellow warning sign and mop?
-Teacher: Yes, that is Cleaner Bob. He is drying the tiles.
+Mia: Is that Maria holding the yellow warning sign and mop?
+Teacher: Yes, that is Maria. She is drying the tiles.
 Mia: Who is the boy sitting on the bench on the right?
 Teacher: That is David. He is waiting for class to start.`,
     dialogue_script: [
@@ -28,8 +28,8 @@ Teacher: That is David. He is waiting for class to start.`,
       { speaker: 'woman', text: 'That is Nurse Sarah. She is bringing bandages to help.' },
       { speaker: 'girl',  text: 'Look at the tall man in the blue suit near the lockers.' },
       { speaker: 'woman', text: 'That is Headmaster Brown. He is watching the corridor.' },
-      { speaker: 'girl',  text: 'Is that Cleaner Bob holding the yellow warning sign and mop?' },
-      { speaker: 'woman', text: 'Yes, that is Cleaner Bob. He is drying the tiles.' },
+      { speaker: 'girl',  text: 'Is that Maria holding the yellow warning sign and mop?' },
+      { speaker: 'woman', text: 'Yes, that is Maria. She is drying the tiles.' },
       { speaker: 'girl',  text: 'Who is the boy sitting on the bench on the right?' },
       { speaker: 'woman', text: 'That is David. He is waiting for class to start.' }
     ],
@@ -38,7 +38,7 @@ Teacher: That is David. He is waiting for class to start.`,
       { id: "n2", text: "Tom", target_id: "t2" },
       { id: "n3", text: "Nurse Sarah", target_id: "t3" },
       { id: "n4", text: "Headmaster Brown", target_id: "t4" },
-      { id: "n5", text: "Cleaner Bob", target_id: "t5" },
+      { id: "n5", text: "Maria", target_id: "t5" },
       { id: "n6", text: "David", target_id: "t6" },
       { id: "n7", text: "Mia the Monitor", target_id: null }
     ],
@@ -47,22 +47,13 @@ Teacher: That is David. He is waiting for class to start.`,
       { id: "t2", label: "Tom (Student slipping in red shirt)", x: 50, y: 70 },
       { id: "t3", label: "Nurse Sarah (Woman rushing in white uniform)", x: 61, y: 52 },
       { id: "t4", label: "Headmaster Brown (Man in blue suit near lockers)", x: 32, y: 52 },
-      { id: "t5", label: "Cleaner Bob (Person with mop near yellow sign)", x: 71, y: 70 },
+      { id: "t5", label: "Maria (Girl holding mop near yellow sign)", x: 71, y: 70 },
       { id: "t6", label: "David (Boy sitting on bench on right)", x: 84, y: 85 }
     ]
   },
   listening_p2: {
     title: "Jake's School Day",
     audio_url: "/audio/week33/listening_p2_full.mp3",
-    // ──────────────────────────────────────────────────────────────────────
-    // dialogue_script: ONE SOURCE OF TRUTH for L2 audio generation.
-    // RULE: speaker field is metadata → controls TTS voice selection only.
-    //       text field is the spoken content → sent verbatim to TTS.
-    //       "Man:" / "Woman:" must NEVER appear in any text field.
-    //       Cambridge A2 Flyers Part 2 requires 2 acoustically distinct voices.
-    //       man  → en-US-Neural2-D (male)
-    //       woman → en-US-Journey-F (female)
-    // ──────────────────────────────────────────────────────────────────────
     required_speakers: ['man', 'woman'],
     dialogue_script: [
       // Intro frame (female examiner/narrator opens)
@@ -104,17 +95,18 @@ Teacher: That is David. He is waiting for class to start.`,
       audio_url: "/audio/week33/listening_p3_example.mp3",
       dialogue_script: [
         { speaker: 'woman', text: 'Listen and write a letter in each box. There is one example. Jake, where did you leave your blue school backpack before morning class?' },
-        { speaker: 'man',   text: 'I left my backpack on the playground bench outside. Can you see the letter H? That is the example. Now you listen and write a letter in each box.' }
+        { speaker: 'man',   text: 'I was sitting on the wooden playground bench outside before the bell rang, and I left it right there.' },
+        { speaker: 'woman', text: 'Can you see the letter H? That is the example. Now you listen and write a letter in each box.' }
       ]
     },
     items: [
       {
         id: 1, name: "Clean Bandage", target_letter: "A",
-        audio_text: "Where did Nurse Sarah find the clean bandage? She opened the glass nurse cabinet right away.",
+        audio_text: "Where did Nurse Sarah find the clean bandage? She opened the glass cabinet in the nurse office.",
         audio_url: "/audio/week33/listening_p3_item1.mp3",
         dialogue_script: [
-          { speaker: 'woman', text: 'Where did Nurse Sarah find the clean bandage to help Tom?' },
-          { speaker: 'man',   text: 'She went to the nurse office and opened the glass cabinet. She took out a clean bandage. Clean bandage.' }
+          { speaker: 'woman', text: 'Where did Nurse Sarah get the clean bandage to help Tom?' },
+          { speaker: 'man',   text: 'She went into the nurse room and took it straight out of the white glass cabinet on the wall.' }
         ]
       },
       {
@@ -122,8 +114,8 @@ Teacher: That is David. He is waiting for class to start.`,
         audio_text: "Where was the blue cold pack? It was on the first-aid table in the nurse room.",
         audio_url: "/audio/week33/listening_p3_item2.mp3",
         dialogue_script: [
-          { speaker: 'woman', text: 'And where did she find the cold pack?' },
-          { speaker: 'man',   text: 'The blue cold pack was lying on the first-aid table right next to her. Cold pack.' }
+          { speaker: 'woman', text: 'And what about the cold pack? Was that inside the cabinet too?' },
+          { speaker: 'man',   text: 'No, the nurse had already placed the blue cold pack on the first-aid table near the door.' }
         ]
       },
       {
@@ -131,26 +123,26 @@ Teacher: That is David. He is waiting for class to start.`,
         audio_text: "Where did Jake leave his science notebook? He left it on the science lab desk.",
         audio_url: "/audio/week33/listening_p3_item3.mp3",
         dialogue_script: [
-          { speaker: 'woman', text: 'Jake, where is your green science notebook?' },
-          { speaker: 'man',   text: 'I put it on the lab desk during our science lesson this morning. Science notebook.' }
+          { speaker: 'woman', text: 'Did you find your green science notebook after class?' },
+          { speaker: 'man',   text: 'Yes, I remembered we were doing experiments, and I left it sitting on the science lab desk.' }
         ]
       },
       {
         id: 4, name: "Water Bottle", target_letter: "D",
-        audio_text: "Where was Tom's water bottle? He left it on the cafeteria table at lunchtime.",
+        audio_text: "Where was Tom's water bottle? He left it on the dining table after lunch.",
         audio_url: "/audio/week33/listening_p3_item4.mp3",
         dialogue_script: [
-          { speaker: 'woman', text: 'Did Tom leave his water bottle in the corridor?' },
-          { speaker: 'man',   text: 'No, Tom left his bottle on the table in the school cafeteria after lunch. Water bottle.' }
+          { speaker: 'woman', text: 'Tom was looking for his blue water bottle. Did he drop it in the hallway?' },
+          { speaker: 'man',   text: 'No, we were eating lunch together and he forgot his bottle on the dining table.' }
         ]
       },
       {
         id: 5, name: "Alarm Clock", target_letter: "E",
-        audio_text: "Why did Jake arrive so early? His alarm clock was ringing on his bedroom table.",
+        audio_text: "Why was Tom in such a rush? His alarm clock was ringing on his bedroom table.",
         audio_url: "/audio/week33/listening_p3_item5.mp3",
         dialogue_script: [
-          { speaker: 'woman', text: 'Why did you arrive so early at school this morning?' },
-          { speaker: 'man',   text: 'My alarm clock was ringing very loudly on my bedroom table at seven in the morning. An alarm clock.' }
+          { speaker: 'woman', text: 'Why was Tom running so fast down the corridor before class?' },
+          { speaker: 'man',   text: 'He woke up late! His alarm clock was ringing loudly on his bedroom table, but he did not hear it in time.' }
         ]
       }
     ],
@@ -158,7 +150,7 @@ Teacher: That is David. He is waiting for class to start.`,
       { letter: "A", name: "Nurse's Cabinet", location_name: "Nurse Office", image_url: "/images/week33/card_a.jpg" },
       { letter: "B", name: "First-Aid Table", location_name: "First Aid Area", image_url: "/images/week33/card_b.jpg" },
       { letter: "C", name: "Science Lab Desk", location_name: "Science Room", image_url: "/images/week33/card_c.jpg" },
-      { letter: "D", name: "School Cafeteria", location_name: "Dining Hall", image_url: "/images/week33/card_d.jpg" },
+      { letter: "D", name: "Dining Table", location_name: "Dining Area", image_url: "/images/week33/card_d.jpg" },
       { letter: "E", name: "Bedroom Table", location_name: "Jake's Home", image_url: "/images/week33/card_e.jpg" },
       { letter: "F", name: "School Corridor", location_name: "Corridor Floor", image_url: "/images/week33/card_f.jpg" },
       { letter: "G", name: "Headmaster's Office", location_name: "Office", image_url: "/images/week33/card_g.jpg" },

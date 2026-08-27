@@ -335,6 +335,62 @@ export const WEEK_33_MASTER_DICTIONARY = {
     example: "His shoes hit the wet puddle near the science room.",
     audioText: "puddle",
     aliases: ["puddles", "wet puddle", "water puddle"]
+  },
+  "grip": {
+    type: "Noun",
+    ipa: "/ɡrɪp/",
+    meaning: "độ bám dính / lực bám sàn",
+    example: "Rubber soles provide strong grip on smooth corridor tiles.",
+    audioText: "grip",
+    aliases: ["grips", "gripping", "gripped"]
+  },
+  "rubber soles": {
+    type: "Collocation",
+    ipa: "/ˈrʌbər soʊlz/",
+    meaning: "đế giày bằng cao su giúp bám sàn tốt",
+    example: "Wearing shoes with rubber soles prevents slipping on smooth floors.",
+    audioText: "rubber soles",
+    aliases: ["rubber sole", "shoe soles", "soles", "sole"]
+  },
+  "smooth tiles": {
+    type: "Collocation",
+    ipa: "/smuːð taɪlz/",
+    meaning: "gạch lát sàn trơn nhẵn",
+    example: "Smooth tiles become very slippery when water is spilled on them.",
+    audioText: "smooth tiles",
+    aliases: ["smooth tile", "tiles", "tile", "floor tiles"]
+  },
+  "slippery layer": {
+    type: "Collocation",
+    ipa: "/ˈslɪpəri ˈleɪər/",
+    meaning: "lớp màng trơn trượt do nước tạo ra",
+    example: "Water on the tiles forms a thin slippery layer that reduces friction.",
+    audioText: "slippery layer",
+    aliases: ["slippery layers", "thin layer", "water layer"]
+  },
+  "warning sign": {
+    type: "Collocation",
+    ipa: "/ˈwɔːrnɪŋ saɪn/",
+    meaning: "biển báo cảnh báo nguy hiểm",
+    example: "The yellow warning sign alerts students to walk slowly.",
+    audioText: "warning sign",
+    aliases: ["warning signs", "caution sign"]
+  },
+  "balance": {
+    type: "Noun",
+    ipa: "/ˈbæləns/",
+    meaning: "sự thăng bằng / giữ thăng bằng",
+    example: "Good friction between shoes and floor helps you stay balanced.",
+    audioText: "balance",
+    aliases: ["balanced", "balancing", "balances"]
+  },
+  "surface": {
+    type: "Noun",
+    ipa: "/ˈsɜːrfɪs/",
+    meaning: "bề mặt tiếp xúc",
+    example: "Friction is the physical grip between two contacting surfaces.",
+    audioText: "surface",
+    aliases: ["surfaces", "floor surface"]
   }
 };
 

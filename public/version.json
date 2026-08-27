@@ -1,9 +1,9 @@
 {
-  "commit": "b3f4cf6d41f6c620aa1934321bb2fe1046e32278",
-  "git_commit": "b3f4cf6d41f6c620aa1934321bb2fe1046e32278",
-  "shortCommit": "b3f4cf6d",
-  "message": "build(version): update build timestamp for W33 production test candidate",
-  "builtAt": "2026-08-27T10:39:56.298Z",
-  "build_timestamp": "2026-08-27T10:39:56.299Z",
+  "commit": "670f8600810096f6cc8b7bd5578424e1ec78ebbc",
+  "git_commit": "670f8600810096f6cc8b7bd5578424e1ec78ebbc",
+  "shortCommit": "670f8600",
+  "message": "fix(w33): Final Release Candidate — align L1 David identity & audio, enhance Fact Finder CLIL audio & vocabulary, enforce cross-platform mobile IPA, and verify zero-defect pipeline [multi-agent-review]",
+  "builtAt": "2026-08-27T13:01:49.760Z",
+  "build_timestamp": "2026-08-27T13:01:49.761Z",
   "env": "production"
 }

@@ -30,33 +30,61 @@ const OUTPUT_DIR = path.resolve(`public/audio/week${WEEK}`);
 const DIST_DIR   = path.resolve(`dist/audio/week${WEEK}`);
 const GOOGLE_API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_API_KEY || 'AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU';
 
-const VOICE_F = 'en-US-Journey-F';   // woman / narrator
-const VOICE_M = 'en-US-Neural2-D';   // man
+const VOICE_F = 'en-US-Journey-F';   // woman / narrator (adult female)
+const VOICE_M = 'en-US-Neural2-D';   // man / boy (male)
+const VOICE_G = 'en-US-Neural2-C';   // child / girl student (youthful female)
 
-// ── Core TTS ──────────────────────────────────────────────────────────────
-async function tts(text, voice = VOICE_F, rate = 0.88) {
+// ── Core TTS with Exponential Backoff Retry ───────────────────────────────
+async function tts(text, voice = VOICE_F, rate = 0.88, pitch = 0.0, maxRetries = 4) {
   if (!text || !text.trim()) throw new Error('tts(): empty text');
-  // Strip any residual speaker labels that might exist in raw text
-  const cleaned = text.replace(/\b(Man|Woman|Girl|Boy|Teacher|Nova|Mia)\s*:\s*/gi, '').trim();
-  const chosenVoice = (cleaned.length > 400 && voice === VOICE_F) ? 'en-US-Neural2-F' : voice;
+  const cleaned = text.replace(/\b(Man|Woman|Girl|Boy|Teacher|Nova|Mia|Jake)\s*:\s*/gi, '').trim();
+  const chosenVoice = voice;
+  const audioConfig = { audioEncoding: 'MP3', speakingRate: rate };
+  if (pitch !== 0.0 && !chosenVoice.includes('Journey')) {
+    audioConfig.pitch = pitch;
+  }
   const body = {
     input: { text: cleaned },
     voice: { languageCode: 'en-US', name: chosenVoice },
-    audioConfig: { audioEncoding: 'MP3', speakingRate: rate }
+    audioConfig
   };
-  const res = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${GOOGLE_API_KEY}`, {
-    method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body)
-  });
-  const json = await res.json();
-  if (!json.audioContent) throw new Error(`TTS error: ${JSON.stringify(json).slice(0, 200)}`);
-  return Buffer.from(json.audioContent, 'base64');
+
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const res = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${GOOGLE_API_KEY}`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      const json = await res.json();
+      if (json.audioContent) {
+        return Buffer.from(json.audioContent, 'base64');
+      }
+      if (attempt < maxRetries && (json.error?.code === 503 || json.error?.code === 429)) {
+        console.warn(`  ⚠️ TTS ${json.error?.code} on attempt ${attempt}, retrying in ${attempt * 1.5}s...`);
+        await new Promise(r => setTimeout(r, attempt * 1500));
+        continue;
+      }
+      throw new Error(`TTS error: ${JSON.stringify(json).slice(0, 200)}`);
+    } catch (err) {
+      if (attempt < maxRetries) {
+        console.warn(`  ⚠️ TTS fetch error on attempt ${attempt} (${err.message}), retrying in ${attempt * 1.5}s...`);
+        await new Promise(r => setTimeout(r, attempt * 1500));
+      } else {
+        throw err;
+      }
+    }
+  }
 }
 
 async function generateDialogueAudio(turns, rate = 0.88) {
   const parts = [];
   for (const turn of turns) {
-    const voice = (turn.speaker === 'man' || turn.speaker === 'boy') ? VOICE_M : VOICE_F;
+    let voice = VOICE_F;
+    if (turn.speaker === 'man' || turn.speaker === 'boy') {
+      voice = VOICE_M;
+    } else if (turn.speaker === 'girl') {
+      voice = VOICE_G;
+    }
     const buf = await tts(turn.text, voice, rate);
     parts.push(buf);
   }
@@ -129,8 +157,8 @@ console.log('\n[5/10] Regenerating listening_p1_full.mp3 from listening_hub.js d
 if (lh.listening_p1?.dialogue_script) {
   const l1Bufs = [];
   for (const turn of lh.listening_p1.dialogue_script) {
-    const voice = turn.speaker === 'girl' ? 'en-US-Neural2-F' : VOICE_F;
-    l1Bufs.push(await tts(turn.text, voice, 0.86));
+    const voice = turn.speaker === 'girl' ? VOICE_G : VOICE_F;
+    l1Bufs.push(await tts(turn.text, voice, 0.88));
   }
   save('listening_p1_full.mp3', Buffer.concat(l1Bufs));
 }
