@@ -2,6 +2,7 @@ import React from 'react';
 import { Shield, Trophy, PlayCircle } from 'lucide-react';
 
 export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0, currentTask }) {
+  const isFullMock = rotaryConfig?.cycleNumber === 5 || rotaryConfig?.cycleNumber === 0;
   if (!rotaryConfig) return null;
 
   return (
@@ -17,9 +18,19 @@ export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0
               <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-purple-500/30 text-purple-200 border border-purple-400/40">
                 Cycle {rotaryConfig.cycleNumber}/5 • Week {rotaryConfig.weekNumber}
               </span>
+              {/* partCount = Cambridge Part tasks in this cycle (not the same as Shield score) */}
               <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-amber-500/30 text-amber-300 border border-amber-400/40 flex items-center gap-1">
-                <Trophy size={10} /> {rotaryConfig.shieldCount} Shields
+                <Trophy size={10} />
+                {isFullMock
+                  ? '16 Cambridge Parts'
+                  : `${rotaryConfig.partCount ?? rotaryConfig.shieldCount} Parts`
+                }
               </span>
+              {isFullMock && (
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-purple-500/30 text-purple-200 border border-purple-400/40 flex items-center gap-1">
+                  <Shield size={10} /> max 15 Shields
+                </span>
+              )}
             </div>
             <h2 className="text-base sm:text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-rose-300 to-purple-200 mt-0.5">
               {rotaryConfig.bossTitle}

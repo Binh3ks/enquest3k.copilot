@@ -1,6 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import getBossRotaryConfig from '../../config/bossRotarySchedule';
+import { getPart, getAllParts } from '../../config/cambridgePartRegistry';
+import { evaluateMockAssessment } from '../../services/assessment/MockAssessmentEngine';
 import BossIntro from '../../components/zones/BossIntro';
 import SVGLineMatcher from '../../components/cambridge/SVGLineMatcher';
 import NotepadNoteCompleter from '../../components/common/NotepadNoteCompleter';
@@ -13,6 +15,7 @@ import TextExtractionCompleter from '../../components/cambridge/TextExtractionCo
 import MultipleChoice3Pic from '../../components/cambridge/MultipleChoice3Pic';
 import OpenClozeCompleter from '../../components/cambridge/OpenClozeCompleter';
 import RWPart3ClozeWithTitle from '../../components/cambridge/RWPart3ClozeWithTitle';
+import StoryWriting from '../../components/cambridge/StoryWriting';
 import PictureStoryContinuation from '../../components/cambridge/PictureStoryContinuation';
 import FindDifferencesInteractive from '../../components/cambridge/FindDifferencesInteractive';
 import InformationExchangeP2 from '../../components/cambridge/InformationExchangeP2';
@@ -22,6 +25,14 @@ import { Shield, Trophy, CheckCircle2, RotateCcw, Award, PlayCircle, Star, Spark
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
+// ── Domain note ────────────────────────────────────────────────────────────────
+// Cambridge Part ≠ Shield.
+// completedPartIds[] tracks which Cambridge Part tasks the learner finished.
+// Paper Shield scores (listeningShields, rwShields, speakingShields)
+//   are computed by MockAssessmentEngine from performance data — NOT from part count.
+// Maximum Shield score = 15 (5L + 5RW + 5S).
+// ──────────────────────────────────────────────────────────────────────────────
+
 export default function BossBattleZone({ data, weekNumber, forcedStation = null, hideStationTabs = false }) {
   const navigate = useNavigate();
   const routeParams = useParams();
@@ -30,6 +41,8 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
 
   const userShields = useUserStore((state) => state.userShields || 0);
   const rotaryConfig = getBossRotaryConfig(activeWeek || 1);
+
+  // ── Boss data wiring (hub data → Cambridge Part data paths) ──────────────
   const bossData = React.useMemo(() => {
     const hasCustomListening = data?.bossBattle?.listening?.p1 || data?.bossBattle?.listening?.p2;
     const hasCustomRW = data?.bossBattle?.readingWriting?.p1 || data?.bossBattle?.readingWriting?.p2;
@@ -49,21 +62,20 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         p3: data?.reading_hub?.rw_part_3 || data?.writing_hub?.rw_part_3 || data?.readingHubData?.rw_part_3 || data?.writingHubData?.rw_part_3 || data?.bossBattle?.readingWriting?.p3,
         p4: data?.reading_hub?.rw_part_4 || data?.writing_hub?.rw_part_4 || data?.reading_hub?.rw_part4 || data?.writing_hub?.rw_part4 || data?.readingHubData?.rw_part_4 || data?.writingHubData?.rw_part_4 || data?.bossBattle?.readingWriting?.p4,
         p5: data?.reading_hub?.rw_part_5 || data?.writing_hub?.rw_part_5 || data?.reading_hub?.rw_part5 || data?.writing_hub?.rw_part5 || data?.readingHubData?.rw_part_5 || data?.writingHubData?.rw_part_5 || data?.bossBattle?.readingWriting?.p5,
-        p6: data?.reading_hub?.rw_part_6 || data?.writing_hub?.rw_part_6 || data?.reading_hub?.rw_part6 || data?.writing_hub?.rw_part6 || data?.readingHubData?.rw_part_6 || data?.writingHubData?.rw_part_6 || data?.bossBattle?.readingWriting?.p6
+        p6: data?.reading_hub?.rw_part_6 || data?.writing_hub?.rw_part_6 || data?.reading_hub?.rw_part6 || data?.writing_hub?.rw_part6 || data?.readingHubData?.rw_part_6 || data?.writingHubData?.rw_part_6 || data?.bossBattle?.readingWriting?.p6,
+        p7: data?.writing_hub?.picture_story || data?.writingHubData?.picture_story || data?.bossBattle?.readingWriting?.p7
       },
       speaking: {
-        p1_findDiff: data?.speaking_hub?.find_differences || data?.speakingHubData?.find_differences || data?.bossBattle?.speaking?.p1_findDiff,
-        p2_cueCard: data?.speaking_hub?.info_exchange_cards || data?.speakingHubData?.info_exchange_cards || data?.bossBattle?.speaking?.p2_cueCard,
+        p1_findDiff:     data?.speaking_hub?.find_differences || data?.speakingHubData?.find_differences || data?.bossBattle?.speaking?.p1_findDiff,
+        p2_cueCard:      data?.speaking_hub?.info_exchange_cards || data?.speakingHubData?.info_exchange_cards || data?.bossBattle?.speaking?.p2_cueCard,
         p3_pictureStory: data?.speaking_hub?.picture_story || data?.speakingHubData?.picture_story || data?.bossBattle?.speaking?.p3_pictureStory,
-        p4_personalQs: data?.speaking_hub?.personal_questions || data?.speakingHubData?.personal_questions || data?.bossBattle?.speaking?.p4_personalQs
+        p4_personalQs:   data?.speaking_hub?.personal_questions || data?.speakingHubData?.personal_questions || data?.bossBattle?.speaking?.p4_personalQs
       }
     };
   }, [data]);
 
-  // Parse URL query params reactively with useLocation
-  const searchParams = useMemo(() => {
-    return new URLSearchParams(location.search);
-  }, [location.search]);
+  // ── URL query param parsing ──────────────────────────────────────────────
+  const searchParams = useMemo(() => new URLSearchParams(location.search), [location.search]);
 
   const rawPartParam = searchParams.get('part') || searchParams.get('part_id') || searchParams.get('task') || searchParams.get('taskId');
   const qaNonce = searchParams.get('qa_nonce');
@@ -82,6 +94,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     if (p === 'r4' || p === 'rw_p4' || p === 'reading_p4') return 'rw_p4';
     if (p === 'r5' || p === 'rw_p5' || p === 'reading_p5') return 'rw_p5';
     if (p === 'r6' || p === 'rw_p6' || p === 'reading_p6') return 'rw_p6';
+    if (p === 'r7' || p === 'rw_p7' || p === 'reading_p7') return 'rw_p7';
     if (p === 's1' || p === 'spk_p1' || p === 'speaking_p1') return 'spk_p1';
     if (p === 's2' || p === 'spk_p2' || p === 'speaking_p2') return 'spk_p2';
     if (p === 's3' || p === 'spk_p3' || p === 'speaking_p3') return 'spk_p3';
@@ -89,89 +102,51 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     return rawPartParam;
   }, [rawPartParam]);
 
-  // Available tasks mapped from rotary config
+  // ── Full Mock detection ──────────────────────────────────────────────────
   const isFullMock = rotaryConfig.cycleNumber === 5 || rotaryConfig.cycleNumber === 0;
 
-  // Build task list for current week
+  // ── Current task list derived from schedule + registry ──────────────────
+  // Source of truth: rotaryConfig.activeParts (from bossRotarySchedule.js)
+  // enriched with registry metadata. No hardcoded per-cycle arrays here.
   const currentTasks = React.useMemo(() => {
-    let tasks = [];
-    if (isFullMock) {
-      tasks = [
-        { id: 'list_p1', name: 'Listening P1: Draw Lines', category: 'Listening' },
-        { id: 'list_p2', name: 'Listening P2: Secret Notes', category: 'Listening' },
-        { id: 'list_p3', name: 'Listening P3: Item Hunt', category: 'Listening' },
-        { id: 'list_p4', name: 'Listening P4: 3-Picture Quiz', category: 'Listening' },
-        { id: 'list_p5', name: 'Listening P5: Magic Color', category: 'Listening' },
-        { id: 'rw_p1', name: 'Reading P1: Word Bank', category: 'Reading' },
-        { id: 'rw_p2', name: 'Reading P2: Dialogue A-H', category: 'Reading' },
-        { id: 'rw_p3', name: 'Reading P3: Cloze Story & Title', category: 'Reading' },
-        { id: 'rw_p4', name: 'Reading P4: Text Cloze', category: 'Reading' },
-        { id: 'rw_p5', name: 'Reading P5: Story Detective', category: 'Reading' },
-        { id: 'rw_p6', name: 'Reading P6: Open Cloze', category: 'Reading' },
-        { id: 'spk_p1', name: 'Speaking P1: Find Diff', category: 'Speaking' },
-        { id: 'spk_p2', name: 'Speaking P2: Ask & Answer', category: 'Speaking' },
-        { id: 'spk_p3', name: 'Speaking P3: Picture Story', category: 'Speaking' },
-      ];
-    } else if (rotaryConfig.cycleNumber === 1) {
-      tasks = [
-        { id: 'list_p1', name: 'Listening Part 1: Draw Lines', shieldName: 'Shield 1 (Listening P1)' },
-        { id: 'list_p2', name: 'Listening Part 2: Note Completion', shieldName: 'Shield 2 (Listening P2)' },
-        { id: 'list_p3', name: 'Listening Part 3: Matching A-H', shieldName: 'Shield 3 (Listening P3)' },
-      ];
-    } else if (rotaryConfig.cycleNumber === 2) {
-      tasks = [
-        { id: 'list_p4', name: 'Listening Part 4: 3-Picture Quiz', shieldName: 'Shield 4 (Listening P4)' },
-        { id: 'rw_p1', name: 'Reading Part 1: Word Bank Match', shieldName: 'Shield 6 (R&W P1)' },
-        { id: 'spk_p1', name: 'Speaking Part 1: Find Differences', shieldName: 'Shield 13 (Speaking P1)' },
-      ];
-    } else if (rotaryConfig.cycleNumber === 3) {
-      tasks = [
-        { id: 'rw_p2', name: 'Reading Part 2: Dialogue A-H', shieldName: 'Shield 7 (R&W P2)' },
-        { id: 'rw_p3', name: 'Reading Part 3: Cloze Story & Title', shieldName: 'Shield 8 (R&W P3)' },
-        { id: 'rw_p4', name: 'Reading Part 4: 10-Gap Cloze', shieldName: 'Shield 9 (R&W P4)' },
-        { id: 'rw_p5', name: 'Reading Part 5: Story Detective', shieldName: 'Shield 10 (R&W P5)' },
-      ];
-    } else {
-      // Cycle 4
-      tasks = [
-        { id: 'rw_p6', name: 'Reading Part 6: Open Cloze', shieldName: 'Shield 11 (R&W P6)' },
-        { id: 'spk_p2', name: 'Speaking Part 2: Ask & Answer (Cue Card)', shieldName: 'Shield 14 (Speaking P2)' },
-        { id: 'spk_p3', name: 'Speaking Part 3: Picture Story', shieldName: 'Shield 15 (Speaking P3)' },
-      ];
-    }
+    // Full Mock uses all 16 Parts from the registry — neither R7 nor S4 are omitted
+    const scheduledParts = isFullMock ? getAllParts().map(p => ({ partId: p.partId, questId: null })) : (rotaryConfig.activeParts || []);
 
-    // If a specific task was requested via URL and is not in current rotary tasks, append it
-    if (requestedTaskId && !tasks.some(t => t.id === requestedTaskId)) {
-      const taskLabels = {
-        list_p1: 'Listening Part 1: Draw Lines',
-        list_p2: 'Listening Part 2: Note Completion',
-        list_p3: 'Listening Part 3: Matching A-H',
-        list_p4: 'Listening Part 4: 3-Picture Quiz',
-        list_p5: 'Listening Part 5: Magic Color & Write',
-        rw_p1: 'Reading Part 1: Word Bank Match',
-        rw_p2: 'Reading Part 2: Dialogue A-H',
-        rw_p3: 'Reading Part 3: Cloze Story & Title',
-        rw_p4: 'Reading Part 4: Text Cloze Dropdown',
-        rw_p5: 'Reading Part 5: Text Extraction',
-        rw_p6: 'Reading Part 6: Open Cloze',
-        spk_p1: 'Speaking Part 1: Find Differences',
-        spk_p2: 'Speaking Part 2: Info Exchange',
-        spk_p3: 'Speaking Part 3: Picture Story',
-        spk_p4: 'Speaking Part 4: Personal Questions'
+    let tasks = scheduledParts.map(({ partId, questId }) => {
+      const registryEntry = getPart(partId);
+      if (!registryEntry) {
+        console.warn(`BossBattleZone: partId '${partId}' not found in Cambridge Part Registry.`);
+        return null;
+      }
+      return {
+        // Cambridge Part identity from registry (single source of truth)
+        partId,
+        paper:       registryEntry.paper,
+        partNumber:  registryEntry.partNumber,
+        displayName: registryEntry.displayName,
+        shortLabel:  registryEntry.shortLabel,
+        // Quest completion metadata from schedule (explicit, not index-derived)
+        questId,
       };
-      tasks.push({
-        id: requestedTaskId,
-        name: taskLabels[requestedTaskId] || requestedTaskId,
-        shieldName: `Direct Part (${requestedTaskId})`
-      });
+    }).filter(Boolean);
+
+    // URL deep-link: if a specific Part is requested and not in current schedule, append it
+    if (requestedTaskId && !tasks.some(t => t.partId === requestedTaskId)) {
+      const registryEntry = getPart(requestedTaskId);
+      if (registryEntry) {
+        tasks.push({ ...registryEntry, questId: null });
+      } else {
+        tasks.push({ partId: requestedTaskId, displayName: requestedTaskId, questId: null });
+      }
     }
 
     return tasks;
   }, [rotaryConfig, isFullMock, requestedTaskId]);
 
+  // Initial task index
   const initialIndex = React.useMemo(() => {
     if (requestedTaskId) {
-      const foundIdx = currentTasks.findIndex(t => t.id === requestedTaskId);
+      const foundIdx = currentTasks.findIndex(t => t.partId === requestedTaskId);
       if (foundIdx !== -1) return foundIdx;
     }
     if (forcedStation === 'rw_boss' || forcedStation === 'reading_boss' || forcedStation === 'boss_reading') return 1;
@@ -179,17 +154,21 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     return 0;
   }, [forcedStation, requestedTaskId, currentTasks]);
 
-  const [hasStarted, setHasStarted] = useState(() => {
-    return Boolean(qaNonce || requestedTaskId);
-  });
+  const [hasStarted, setHasStarted] = useState(() => Boolean(qaNonce || requestedTaskId));
   const [activeTaskIndex, setActiveTaskIndex] = useState(initialIndex);
-  const [earnedShields, setEarnedShields] = useState([]);
-  const [examFinished, setExamFinished] = useState(false);
 
-  // Sync active task index if forcedStation or requestedTaskId changes
+  // completedPartIds: which Cambridge Parts the learner has finished this session.
+  // Semantics: Cambridge Part completion tracking — NOT Paper Shield scores.
+  const [completedPartIds, setCompletedPartIds] = useState([]);
+
+  const [examFinished, setExamFinished] = useState(false);
+  // Mock Paper Shield scores (set on Full Mock completion via MockAssessmentEngine)
+  const [mockPaperScores, setMockPaperScores] = useState(null);
+
+  // Sync active task index when forcedStation or requestedTaskId changes
   React.useEffect(() => {
     if (requestedTaskId) {
-      const foundIdx = currentTasks.findIndex(t => t.id === requestedTaskId);
+      const foundIdx = currentTasks.findIndex(t => t.partId === requestedTaskId);
       if (foundIdx !== -1) {
         setActiveTaskIndex(foundIdx);
         setHasStarted(true);
@@ -207,46 +186,72 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
 
   // QA Hook for Victory Screen verification
   React.useEffect(() => {
-    window.__triggerBossVictory = (customShields) => {
+    window.__triggerBossVictory = (customCompletedParts) => {
       setHasStarted(true);
       setExamFinished(true);
-      if (customShields && Array.isArray(customShields)) {
-        setEarnedShields(customShields);
+      if (customCompletedParts && Array.isArray(customCompletedParts)) {
+        setCompletedPartIds(customCompletedParts);
       } else {
-        setEarnedShields(['Shield 1 (Listening P1)', 'Shield 2 (Listening P2)', 'Shield 3 (Listening P3)']);
+        setCompletedPartIds(['list_p1', 'list_p2', 'list_p3']);
       }
     };
-    return () => {
-      delete window.__triggerBossVictory;
-    };
+    return () => { delete window.__triggerBossVictory; };
   }, []);
 
   const currentTask = currentTasks[activeTaskIndex] || currentTasks[0];
 
-  const handleTaskComplete = (taskId) => {
-    if (!earnedShields.includes(taskId)) {
-      setEarnedShields(prev => [...prev, taskId]);
+  // ── Task completion handler ──────────────────────────────────────────────
+  // Quest completion is driven by task.questId (explicit metadata), NOT array index.
+  // This eliminates the brittle index 0→boss_listening pattern.
+  const handleTaskComplete = (partId) => {
+    // Track completed Cambridge Part ID
+    if (!completedPartIds.includes(partId)) {
+      setCompletedPartIds(prev => [...prev, partId]);
     }
 
-    // Track quest: mark boss_listening after task 1, boss_reading after task 2, weekly_review after all tasks
-    if (activeWeek) {
-      if (activeTaskIndex === 0) {
-        useDailyQuestStore.getState().completeQuest(activeWeek, 'boss_listening');
-      } else if (activeTaskIndex === 1) {
-        useDailyQuestStore.getState().completeQuest(activeWeek, 'boss_reading');
-      }
+    // Complete the Day-5 quest associated with this Part (explicit — not index-based)
+    const task = currentTasks.find(t => t.partId === partId);
+    if (task?.questId && activeWeek) {
+      useDailyQuestStore.getState().completeQuest(activeWeek, task.questId);
     }
 
+    // Advance to next Part or finish
     if (activeTaskIndex + 1 < currentTasks.length) {
       setActiveTaskIndex(prev => prev + 1);
     } else {
+      // All Parts in this cycle/mock completed
       setExamFinished(true);
+
+      // On Full Mock completion: compute Paper Shield scores via MockAssessmentEngine
+      // NOTE: Components do not currently expose answer-level data.
+      // MockAssessmentEngine falls back to defaults when answers={} (honest, not fabricated).
+      // This integration will produce real scores once components pass answer data.
+      if (isFullMock && activeWeek) {
+        try {
+          const mockResult = evaluateMockAssessment({
+            mockId: `MOCK-W${activeWeek}`,
+            learnerId: `learner_w${activeWeek}`,
+            readingWritingAnswers: {},  // TODO: populate when R&W components expose answers
+            listeningAnswers:      {},  // TODO: populate when L components expose answers
+            speakingScorePct:      80,  // TODO: populate from speaking assessment data
+            timeSpentSeconds:      rotaryConfig.approxDurationMin * 60
+          });
+          setMockPaperScores(mockResult);
+        } catch (err) {
+          console.warn('MockAssessmentEngine error (non-fatal):', err.message);
+        }
+      }
+
+      // Complete all Day-5 quests on final Part (idempotent)
       if (activeWeek) {
-        useDailyQuestStore.getState().completeQuest(activeWeek, 'weekly_review');
+        ['boss_listening', 'boss_reading', 'weekly_review'].forEach(qId => {
+          useDailyQuestStore.getState().completeQuest(activeWeek, qId);
+        });
       }
     }
   };
 
+  // ── BossIntro screen ─────────────────────────────────────────────────────
   if (!hasStarted) {
     return (
       <div className="w-full max-w-5xl mx-auto font-sans">
@@ -260,6 +265,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     );
   }
 
+  // ── Exam Finished / Victory Screen ──────────────────────────────────────
   if (examFinished) {
     return (
       <div className="w-full max-w-4xl mx-auto p-8 sm:p-10 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 border-2 border-amber-400 text-white rounded-3xl text-center space-y-6 shadow-2xl animate-in zoom-in-95">
@@ -272,22 +278,58 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
             🏆 BOSS BATTLE VICTORY!
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
-            You successfully tackled all Cambridge Exam Tasks for Cycle {rotaryConfig.cycleNumber}!
+            You completed all {currentTasks.length} Cambridge Part{currentTasks.length !== 1 ? 's' : ''} for {isFullMock ? 'the Full Mock Exam' : `Cycle ${rotaryConfig.cycleNumber}`}!
           </p>
         </div>
 
-        {/* Shield Rewards */}
+        {/* Completed Cambridge Parts */}
         <div className="flex items-center justify-center gap-3 py-4 flex-wrap">
-          {earnedShields.map((sh, idx) => (
-            <div key={idx} className="p-3 bg-purple-900/60 border border-purple-400/50 rounded-2xl flex items-center gap-2 shadow-lg">
-              <Shield className="text-amber-400" size={24} />
-              <div className="text-left">
-                <div className="text-[10px] uppercase font-black text-purple-300">Shield Earned</div>
-                <div className="text-xs font-black text-white">{sh}</div>
+          {completedPartIds.map((partId, idx) => {
+            const part = getPart(partId);
+            return (
+              <div key={idx} className="p-3 bg-purple-900/60 border border-purple-400/50 rounded-2xl flex items-center gap-2 shadow-lg">
+                <CheckCircle2 className="text-amber-400" size={20} />
+                <div className="text-left">
+                  <div className="text-[10px] uppercase font-black text-purple-300">Cambridge Part Complete</div>
+                  <div className="text-xs font-black text-white">{part?.shortLabel || partId}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
+
+        {/* Full Mock: Paper Shield scores (5+5+5 = max 15) */}
+        {isFullMock && mockPaperScores && (
+          <div className="bg-slate-900/80 rounded-2xl p-4 border border-amber-400/30 text-left space-y-3">
+            <div className="text-xs font-black text-amber-300 uppercase text-center mb-2">
+              📊 Cambridge Paper Results — Diagnostic Practice Score
+            </div>
+            <div className="text-center text-[10px] text-slate-400 mb-3">
+              Shield score = Paper performance (max 5 per Paper, max 15 total).
+              Shield score ≠ number of Cambridge Parts completed.
+            </div>
+            {mockPaperScores.sections?.map(sec => (
+              <div key={sec.name} className="flex items-center justify-between px-2">
+                <span className="text-xs font-bold text-slate-300">{sec.name}</span>
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Shield key={i} size={16} className={i < sec.shields ? 'text-amber-400' : 'text-slate-600'} />
+                  ))}
+                  <span className="text-xs font-black text-white ml-1">{sec.shields}/5</span>
+                </div>
+              </div>
+            ))}
+            <div className="border-t border-slate-600 pt-2 flex items-center justify-between px-2">
+              <span className="text-xs font-black text-amber-300">Total Paper Shields</span>
+              <span className="text-sm font-black text-amber-400">
+                {mockPaperScores.diagnosticPractice?.totalShieldsEarned}/15
+              </span>
+            </div>
+            <div className="text-center text-xs text-purple-300 font-bold">
+              {mockPaperScores.diagnosticPractice?.ratingText}
+            </div>
+          </div>
+        )}
 
         <button
           type="button"
@@ -295,6 +337,8 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
             setExamFinished(false);
             setHasStarted(false);
             setActiveTaskIndex(0);
+            setCompletedPartIds([]);
+            setMockPaperScores(null);
           }}
           className="px-6 py-3 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-2xl font-black text-xs shadow-xl inline-flex items-center gap-2"
         >
@@ -304,7 +348,10 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     );
   }
 
-  const activeTaskId = requestedTaskId || currentTask?.id;
+  // ── Active Part rendering ────────────────────────────────────────────────
+  // activeTaskId drives component routing.
+  // URL deep-link (requestedTaskId) takes priority for single-Part QA access.
+  const activeTaskId = requestedTaskId || currentTask?.partId;
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans">
@@ -420,6 +467,16 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
           />
         )}
 
+        {/* R&W P7 — Story Writing (Cambridge A2 Flyers Part 7) */}
+        {activeTaskId === 'rw_p7' && (
+          <StoryWriting
+            customData={bossData.readingWriting?.p7}
+            data={bossData.readingWriting?.p7}
+            weekNumber={activeWeek}
+            onComplete={() => handleTaskComplete('rw_p7')}
+          />
+        )}
+
         {/* SPEAKING P1 */}
         {activeTaskId === 'spk_p1' && (
           <FindDifferencesInteractive
@@ -450,7 +507,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
           />
         )}
 
-        {/* SPEAKING P4 */}
+        {/* SPEAKING P4 — Personal Questions (now included in Full Mock) */}
         {(activeTaskId === 'spk_p4' || activeTaskId === 'personal_questions' || forcedStation === 'personal_qs') && (
           <PersonalQuestionsCompleter
             customData={bossData.speaking?.p4_personalQs}

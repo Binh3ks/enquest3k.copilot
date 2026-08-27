@@ -1,9 +1,25 @@
 #!/usr/bin/env node
 /**
  * Gate 17: Cambridge A2 Flyers Mechanic Fidelity Doctrine Validator (Round X)
- * 
+ *
  * Machine-enforces 14 raw-only invariants, schema compliance,
  * component existence, and dev registry with zero tolerance.
+ *
+ * VALIDATION BOUNDARY (per product doctrine in AGENTS.md):
+ *
+ *   ASSESSMENT mode (default): Applied to hub keys used in Boss/Quest-5 assessment.
+ *     - Exact Cambridge A2 Flyers mechanic invariants required.
+ *     - listening_hub.js, reading_hub.js, writing_hub.js, speaking_hub.js
+ *       → Cambridge Part keys (listening_p1, rw_part_1, etc.) are ASSESSMENT content.
+ *
+ *   LEARNING mode (--learning flag): Applied to content used in Quest 1–4 only.
+ *     - Cambridge alignment required; exact Flyers mechanics NOT required.
+ *     - Skips INV-L1/L4/L5/R1/R2/R3/R4/R5/R6 exact count checks.
+ *     - Still validates data integrity (imports, key presence, schema).
+ *
+ * Usage:
+ *   node scripts/gate17_fidelity_doctrine.mjs 33            # ASSESSMENT mode (strict)
+ *   node scripts/gate17_fidelity_doctrine.mjs 33 --learning  # LEARNING mode (aligned)
  */
 
 import fs from 'fs';
@@ -16,6 +32,10 @@ const rootDir = process.cwd();
 const args = process.argv.slice(2);
 const weekArg = args.find(a => /^\d+$/.test(a)) || '33';
 const weekNum = parseInt(weekArg, 10);
+
+// Validation mode: 'assessment' (strict, default) or 'learning' (alignment-only)
+const validationMode = args.includes('--learning') ? 'learning' : 'assessment';
+const isAssessmentMode = validationMode === 'assessment';
 
 async function runGate17() {
   const schemaPath = path.join(rootDir, 'schemas/cambridge-flyers-fidelity-doctrine.schema.json');
@@ -114,123 +134,124 @@ async function runGate17() {
   if (!invHubPass) failReasons.push(`INV-HUB failed: listening_hub has extra keys, skill_practice_hub missing modules, or math mismatch`);
 
   // 2. INV-L1: 1 isExample + 5 scored names + 1 target_id null; targets = 6
-  const l1Names = rawListening?.listening_p1?.names || [];
-  const l1Targets = rawListening?.listening_p1?.targets || [];
-  const l1ExNames = l1Names.filter(n => n.isExample);
-  const l1ScoredNames = l1Names.filter(n => !n.isExample && n.target_id !== null);
-  const l1NullNames = l1Names.filter(n => !n.isExample && n.target_id === null);
-  const invL1Pass = l1ExNames.length === 1 && l1ScoredNames.length === 5 && l1NullNames.length === 1 && l1Targets.length === 6;
-  invariants.push({
-    id: "INV-L1",
-    pass: invL1Pass,
-    detail: `L1 names: ${l1ExNames.length} ex + ${l1ScoredNames.length} scored + ${l1NullNames.length} null; targets: ${l1Targets.length}/6`
-  });
-  if (!invL1Pass) failReasons.push(`INV-L1 failed: L1 names/targets != 1 ex + 5 scored + 1 null with 6 targets`);
+  // ASSESSMENT mode only — Learning mode does not require exact Cambridge mechanics
+  let invL1Pass = true;
+  if (isAssessmentMode) {
+    const l1Names = rawListening?.listening_p1?.names || [];
+    const l1Targets = rawListening?.listening_p1?.targets || [];
+    const l1ExNames = l1Names.filter(n => n.isExample);
+    const l1ScoredNames = l1Names.filter(n => !n.isExample && n.target_id !== null);
+    const l1NullNames = l1Names.filter(n => !n.isExample && n.target_id === null);
+    invL1Pass = l1ExNames.length === 1 && l1ScoredNames.length === 5 && l1NullNames.length === 1 && l1Targets.length === 6;
+    invariants.push({
+      id: "INV-L1",
+      pass: invL1Pass,
+      detail: `L1 names: ${l1ExNames.length} ex + ${l1ScoredNames.length} scored + ${l1NullNames.length} null; targets: ${l1Targets.length}/6`
+    });
+    if (!invL1Pass) failReasons.push(`INV-L1 failed: L1 names/targets != 1 ex + 5 scored + 1 null with 6 targets`);
+  } else {
+    invariants.push({ id: 'INV-L1', pass: true, detail: 'Skipped in learning mode' });
+  }
 
-  // 3. INV-L4: 1 isExample + 5 scored, each question has 3 options
-  const l4Questions = rawListening?.listening_p4?.questions || [];
-  const l4Ex = l4Questions.filter(q => q.isExample);
-  const l4Scored = l4Questions.filter(q => !q.isExample);
-  const l4Opt3 = l4Questions.every(q => Array.isArray(q.options) && q.options.length === 3);
-  const invL4Pass = l4Ex.length === 1 && l4Scored.length === 5 && l4Opt3;
-  invariants.push({
-    id: "INV-L4",
-    pass: invL4Pass,
-    detail: `L4 questions: ${l4Ex.length} ex + ${l4Scored.length} scored, 3 options each: ${l4Opt3}`
-  });
-  if (!invL4Pass) failReasons.push(`INV-L4 failed: L4 questions != 1 ex + 5 scored with 3 options each`);
+  // 3. INV-L4: 1 isExample + 5 scored, each question has 3 options (assessment mode only)
+  let invL4Pass = true;
+  if (isAssessmentMode) {
+    const l4Questions = rawListening?.listening_p4?.questions || [];
+    const l4Ex = l4Questions.filter(q => q.isExample);
+    const l4Scored = l4Questions.filter(q => !q.isExample);
+    const l4Opt3 = l4Questions.every(q => Array.isArray(q.options) && q.options.length === 3);
+    invL4Pass = l4Ex.length === 1 && l4Scored.length === 5 && l4Opt3;
+    invariants.push({
+      id: "INV-L4",
+      pass: invL4Pass,
+      detail: `L4 questions: ${l4Ex.length} ex + ${l4Scored.length} scored, 3 options each: ${l4Opt3}`
+    });
+    if (!invL4Pass) failReasons.push(`INV-L4 failed: L4 questions != 1 ex + 5 scored with 3 options each`);
+  } else {
+    invariants.push({ id: 'INV-L4', pass: true, detail: 'Skipped in learning mode' });
+  }
 
-  // 4. INV-L5: 1 isExample + 3 color + 2 write
-  const l5Insts = rawListening?.listening_p5?.instructions || [];
-  const l5Ex = l5Insts.filter(i => i.isExample);
-  const l5Colors = l5Insts.filter(i => !i.isExample && (i.action === 'colour' || (i.color && i.action !== 'write')));
-  const l5Writes = l5Insts.filter(i => !i.isExample && (i.action === 'write' || i.word));
-  const invL5Pass = l5Ex.length === 1 && l5Colors.length === 3 && l5Writes.length === 2;
-  invariants.push({
-    id: "INV-L5",
-    pass: invL5Pass,
-    detail: `L5 instructions: ${l5Ex.length} ex + ${l5Colors.length} color + ${l5Writes.length} write`
-  });
-  if (!invL5Pass) failReasons.push(`INV-L5 failed: L5 instructions != 1 ex + 3 color + 2 write`);
+  // 4. INV-L5: 1 isExample + 3 color + 2 write (assessment mode only)
+  let invL5Pass = true;
+  if (isAssessmentMode) {
+    const l5Insts = rawListening?.listening_p5?.instructions || [];
+    const l5Ex = l5Insts.filter(i => i.isExample);
+    const l5Colors = l5Insts.filter(i => !i.isExample && (i.action === 'colour' || (i.color && i.action !== 'write')));
+    const l5Writes = l5Insts.filter(i => !i.isExample && (i.action === 'write' || i.word));
+    invL5Pass = l5Ex.length === 1 && l5Colors.length === 3 && l5Writes.length === 2;
+    invariants.push({
+      id: "INV-L5",
+      pass: invL5Pass,
+      detail: `L5 instructions: ${l5Ex.length} ex + ${l5Colors.length} color + ${l5Writes.length} write`
+    });
+    if (!invL5Pass) failReasons.push(`INV-L5 failed: L5 instructions != 1 ex + 3 color + 2 write`);
+  } else {
+    invariants.push({ id: 'INV-L5', pass: true, detail: 'Skipped in learning mode' });
+  }
 
-  // 5. INV-R1: example exists; word_bank 15; defs 10; no def dup target with example
-  const r1 = rawReading?.rw_part1 || rawWriting?.rw_part_1 || {};
-  const r1Ex = r1.example;
-  const r1WbLen = (r1.word_bank || []).length;
-  const r1Defs = r1.definitions || [];
-  const r1NoDup = r1Defs.every(d => d.target !== r1Ex?.target);
-  const invR1Pass = !!r1Ex && r1WbLen === 15 && r1Defs.length === 10 && r1NoDup;
-  invariants.push({
-    id: "INV-R1",
-    pass: invR1Pass,
-    detail: `R1 example: ${!!r1Ex}, word_bank: ${r1WbLen}/15, defs: ${r1Defs.length}/10, no target dup: ${r1NoDup}`
-  });
-  if (!invR1Pass) failReasons.push(`INV-R1 failed: R1 example missing, word_bank != 15, defs != 10, or duplicate example target`);
+  // 5–10. INV-R1 through INV-R6: Reading & Writing Part exact mechanic counts (assessment mode only)
+  // In learning mode, exact Cambridge mechanic counts are NOT required for Quest 1–4 content.
+  if (isAssessmentMode) {
+    // 5. INV-R1
+    const r1 = rawReading?.rw_part1 || rawWriting?.rw_part_1 || {};
+    const r1Ex = r1.example;
+    const r1WbLen = (r1.word_bank || []).length;
+    const r1Defs = r1.definitions || [];
+    const r1NoDup = r1Defs.every(d => d.target !== r1Ex?.target);
+    const invR1Pass = !!r1Ex && r1WbLen === 15 && r1Defs.length === 10 && r1NoDup;
+    invariants.push({ id: 'INV-R1', pass: invR1Pass, detail: `R1 example: ${!!r1Ex}, word_bank: ${r1WbLen}/15, defs: ${r1Defs.length}/10, no target dup: ${r1NoDup}` });
+    if (!invR1Pass) failReasons.push(`INV-R1 failed: R1 example missing, word_bank != 15, defs != 10, or duplicate example target`);
 
-  // 6. INV-R2: example + 5 turns + 8 answer_options with text; exactly 3 letters unused
-  const r2 = rawReading?.rw_part2 || rawWriting?.rw_part_2 || {};
-  const r2Ex = r2.example;
-  const r2Turns = r2.turns || r2.dialogue || [];
-  const r2Options = r2.answer_options || r2.options || [];
-  const r2OptValid = r2Options.length === 8 && r2Options.every(o => o.text && o.text.trim().length > 0);
-  const invR2Pass = (weekNum === 33 || !!r2Ex) && r2Turns.length === 5 && r2OptValid;
-  invariants.push({
-    id: "INV-R2",
-    pass: invR2Pass,
-    detail: `R2 example: ${!!r2Ex || weekNum === 33}, turns: ${r2Turns.length}/5, options: ${r2Options.length}/8, options valid: ${r2OptValid}`
-  });
-  if (!invR2Pass) failReasons.push(`INV-R2 failed: R2 example missing, turns != 5, or options != 8 valid text items`);
+    // 6. INV-R2
+    const r2 = rawReading?.rw_part2 || rawWriting?.rw_part_2 || {};
+    const r2Ex = r2.example;
+    const r2Turns = r2.turns || r2.dialogue || [];
+    const r2Options = r2.answer_options || r2.options || [];
+    const r2OptValid = r2Options.length === 8 && r2Options.every(o => o.text && o.text.trim().length > 0);
+    const invR2Pass = (weekNum === 33 || !!r2Ex) && r2Turns.length === 5 && r2OptValid;
+    invariants.push({ id: 'INV-R2', pass: invR2Pass, detail: `R2 example: ${!!r2Ex || weekNum === 33}, turns: ${r2Turns.length}/5, options: ${r2Options.length}/8, options valid: ${r2OptValid}` });
+    if (!invR2Pass) failReasons.push(`INV-R2 failed: R2 example missing, turns != 5, or options != 8 valid text items`);
 
-  // 7. INV-R3: example + 5 blanks + 3 title_options
-  const r3 = rawReading?.reading_part3_story || rawWriting?.rw_part_3 || {};
-  const r3Ex = r3.example;
-  const r3Blanks = Object.keys(r3.answers || {}).filter(k => k !== "0" && k !== 0).length || 5;
-  const r3Titles = (r3.title_options || []).length;
-  const invR3Pass = !!r3Ex && r3Blanks === 5 && r3Titles === 3;
-  invariants.push({
-    id: "INV-R3",
-    pass: invR3Pass,
-    detail: `R3 example: ${!!r3Ex}, blanks: ${r3Blanks}/5, title_options: ${r3Titles}/3`
-  });
-  if (!invR3Pass) failReasons.push(`INV-R3 failed: R3 example missing, blanks != 5, or title_options != 3`);
+    // 7. INV-R3
+    const r3 = rawReading?.reading_part3_story || rawWriting?.rw_part_3 || {};
+    const r3Ex = r3.example;
+    const r3Blanks = Object.keys(r3.answers || {}).filter(k => k !== '0' && k !== 0).length || 5;
+    const r3Titles = (r3.title_options || []).length;
+    const invR3Pass = !!r3Ex && r3Blanks === 5 && r3Titles === 3;
+    invariants.push({ id: 'INV-R3', pass: invR3Pass, detail: `R3 example: ${!!r3Ex}, blanks: ${r3Blanks}/5, title_options: ${r3Titles}/3` });
+    if (!invR3Pass) failReasons.push(`INV-R3 failed: R3 example missing, blanks != 5, or title_options != 3`);
 
-  // 8. INV-R4: example blank 0 + blanks 1–10 each with 3 options
-  const r4 = rawReading?.rw_part4 || rawWriting?.rw_part_4 || {};
-  const r4Ex = r4.example?.blank === 0 || r4.example?.id === 0;
-  const r4Blanks = r4.blanks || r4.gaps || [];
-  const r4BlanksOpt3 = r4Blanks.length === 10 && r4Blanks.every(b => Array.isArray(b.options) && b.options.length === 3);
-  const invR4Pass = r4Ex && r4BlanksOpt3;
-  invariants.push({
-    id: "INV-R4",
-    pass: invR4Pass,
-    detail: `R4 example blank 0: ${r4Ex}, blanks 1-10 with 3 options: ${r4BlanksOpt3} (${r4Blanks.length}/10)`
-  });
-  if (!invR4Pass) failReasons.push(`INV-R4 failed: R4 example blank != 0 or blanks != 10 with 3 options each`);
+    // 8. INV-R4
+    const r4 = rawReading?.rw_part4 || rawWriting?.rw_part_4 || {};
+    const r4Ex = r4.example?.blank === 0 || r4.example?.id === 0;
+    const r4Blanks = r4.blanks || r4.gaps || [];
+    const r4BlanksOpt3 = r4Blanks.length === 10 && r4Blanks.every(b => Array.isArray(b.options) && b.options.length === 3);
+    const invR4Pass = r4Ex && r4BlanksOpt3;
+    invariants.push({ id: 'INV-R4', pass: invR4Pass, detail: `R4 example blank 0: ${r4Ex}, blanks 1-10 with 3 options: ${r4BlanksOpt3} (${r4Blanks.length}/10)` });
+    if (!invR4Pass) failReasons.push(`INV-R4 failed: R4 example blank != 0 or blanks != 10 with 3 options each`);
 
-  // 9. INV-R5: example + 7 questions; EVERY question has NO options field
-  const r5 = rawReading?.rw_part5 || rawWriting?.rw_part_5 || {};
-  const r5Ex = !!r5.example;
-  const r5Qs = r5.questions || r5.summary_sentences || [];
-  const r5NoOptions = r5Qs.length === 7 && r5Qs.every(q => !q.options);
-  const invR5Pass = (weekNum === 33 || r5Ex) && r5NoOptions;
-  invariants.push({
-    id: "INV-R5",
-    pass: invR5Pass,
-    detail: `R5 example: ${r5Ex || weekNum === 33}, questions: ${r5Qs.length}/7, no options field: ${r5NoOptions}`
-  });
-  if (!invR5Pass) failReasons.push(`INV-R5 failed: R5 example missing, questions != 7, or contains forbidden options field`);
+    // 9. INV-R5
+    const r5 = rawReading?.rw_part5 || rawWriting?.rw_part_5 || {};
+    const r5Ex = !!r5.example;
+    const r5Qs = r5.questions || r5.summary_sentences || [];
+    const r5NoOptions = r5Qs.length === 7 && r5Qs.every(q => !q.options);
+    const invR5Pass = (weekNum === 33 || r5Ex) && r5NoOptions;
+    invariants.push({ id: 'INV-R5', pass: invR5Pass, detail: `R5 example: ${r5Ex || weekNum === 33}, questions: ${r5Qs.length}/7, no options field: ${r5NoOptions}` });
+    if (!invR5Pass) failReasons.push(`INV-R5 failed: R5 example missing, questions != 7, or contains forbidden options field`);
 
-  // 10. INV-R6: example + 5 answers
-  const r6 = rawReading?.rw_part_6 || {};
-  const r6Ex = !!r6.example;
-  const r6Ans = Object.keys(r6.answers || {}).length >= 5;
-  const invR6Pass = r6Ex && r6Ans;
-  invariants.push({
-    id: "INV-R6",
-    pass: invR6Pass,
-    detail: `R6 example: ${r6Ex}, answers: ${Object.keys(r6.answers || {}).length} (min 5)`
-  });
-  if (!invR6Pass) failReasons.push(`INV-R6 failed: R6 example missing or answers < 5`);
+    // 10. INV-R6
+    const r6 = rawReading?.rw_part_6 || {};
+    const r6Ex = !!r6.example;
+    const r6Ans = Object.keys(r6.answers || {}).length >= 5;
+    const invR6Pass = r6Ex && r6Ans;
+    invariants.push({ id: 'INV-R6', pass: invR6Pass, detail: `R6 example: ${r6Ex}, answers: ${Object.keys(r6.answers || {}).length} (min 5)` });
+    if (!invR6Pass) failReasons.push(`INV-R6 failed: R6 example missing or answers < 5`);
+  } else {
+    // Learning mode: skip exact mechanic count invariants
+    ['INV-R1','INV-R2','INV-R3','INV-R4','INV-R5','INV-R6'].forEach(id => {
+      invariants.push({ id, pass: true, detail: 'Skipped in learning mode (Cambridge alignment sufficient)' });
+    });
+  }
 
   // 11. INV-S1: 4 diffs; each (x,y) matches centroid calibration +-1%
   const calPath = path.join(rootDir, `docs/week${weekNum}_hotspot_calibration.json`);
@@ -254,18 +275,21 @@ async function runGate17() {
   if (!invS1Pass) failReasons.push(`INV-S1 failed: S1 differences coordinates do not match calibration centroids ±1%`);
 
   // 12. INV-S2: >=2 known:false each card; examiner_questions 3 has audio_url
+  // Accept BOTH items[] (W33+ schema) and fields[] (legacy schema) — both are valid
   const s2 = rawSpeaking?.info_exchange_cards || {};
-  const s2CandUnknown = (s2.candidate_card?.fields || []).filter(f => f.known === false).length;
-  const s2ExamUnknown = (s2.examiner_card?.fields || []).filter(f => f.known === false).length;
+  const s2CandItems = s2.candidate_card?.items || s2.candidate_card?.fields || [];
+  const s2ExamItems = s2.examiner_card?.items || s2.examiner_card?.fields || [];
+  const s2CandUnknown = s2CandItems.filter(f => f.known === false).length;
+  const s2ExamUnknown = s2ExamItems.filter(f => f.known === false).length;
   const s2Eq = s2.examiner_questions || [];
   const s2EqValid = s2Eq.length === 3 && s2Eq.every(q => q.audio_url && q.audio_url.trim().length > 0);
   const invS2Pass = s2CandUnknown >= 2 && s2ExamUnknown >= 2 && s2EqValid;
   invariants.push({
     id: "INV-S2",
     pass: invS2Pass,
-    detail: `S2 candidate unknown: ${s2CandUnknown}>=2, examiner unknown: ${s2ExamUnknown}>=2, examiner_questions: ${s2Eq.length}/3 with audio: ${s2EqValid}`
+    detail: `S2 candidate unknown: ${s2CandUnknown}>=2 (from ${s2CandItems.length} items/fields), examiner unknown: ${s2ExamUnknown}>=2, examiner_questions: ${s2Eq.length}/3 with audio: ${s2EqValid}`
   });
-  if (!invS2Pass) failReasons.push(`INV-S2 failed: S2 cards missing >=2 known:false fields or examiner_questions != 3 with audio`);
+  if (!invS2Pass) failReasons.push(`INV-S2 failed: S2 cards missing >=2 known:false items/fields or examiner_questions != 3 with audio`);
 
   // 13. INV-S3: EXACTLY 4 images; intro contains "pictures two, three, and four"
   const s3 = rawSpeaking?.picture_story || {};
