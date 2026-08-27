@@ -1084,7 +1084,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                                 {/* IPA subtitle directly underneath each word — high compatibility font */}
                                 {item.ipa && (
                                   <span
-                                    className={`text-[10px] sm:text-xs font-sans tracking-normal mt-0.5 px-1.5 py-0.5 rounded transition-all ${
+                                    className={`text-[10px] sm:text-xs font-ipa tracking-normal mt-0.5 px-1.5 py-0.5 rounded transition-all ${
                                       isWordActive
                                         ? 'text-amber-950 font-black bg-amber-200 ring-2 ring-amber-300'
                                         : item.isStressed

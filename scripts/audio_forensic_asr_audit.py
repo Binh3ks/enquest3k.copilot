@@ -57,7 +57,7 @@ AUDIO_MANIFEST = {
     "dictation_5.mp3": { "task": "Day 2 Quest 2 (Dictation)", "ui_usage": "Sentence 5 audio", "speakers": "Narrator", "expected_theme": "Everyone felt relieved and followed safety rules." },
 
     # Listening Part 1 (Draw Lines)
-    "listening_p1_full.mp3": { "task": "Day 5 Quest 1 / Boss Listening Part 1", "ui_usage": "Full 2-voice dialogue for character line matching", "speakers": "Teacher (Journey-F) + Mia (Neural2-F)", "expected_theme": "Jake, Tom, Nurse Sarah, Headmaster Brown, Cleaner Bob, Teacher David" },
+    "listening_p1_full.mp3": { "task": "Day 5 Quest 1 / Boss Listening Part 1", "ui_usage": "Full 2-voice dialogue for character line matching", "speakers": "Teacher (Journey-F) + Mia (Neural2-F)", "expected_theme": "Jake, Tom, Nurse Sarah, Headmaster Brown, Cleaner Bob, David" },
     "listening_p1_target1.mp3": { "task": "Listening Part 1 Target 1", "ui_usage": "Target audio clip 1 (Jake)", "speakers": "Teacher", "expected_theme": "Jake walking carefully" },
     "listening_p1_target2.mp3": { "task": "Listening Part 1 Target 2", "ui_usage": "Target audio clip 2 (Tom)", "speakers": "Teacher", "expected_theme": "Tom slipping on wet floor" },
     "listening_p1_target3.mp3": { "task": "Listening Part 1 Target 3", "ui_usage": "Target audio clip 3 (Nurse Sarah)", "speakers": "Teacher", "expected_theme": "Nurse Sarah with bandages" },

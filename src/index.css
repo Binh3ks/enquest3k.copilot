@@ -42,6 +42,13 @@ html, body {
 .dict-popup { animation: popIn 0.2s ease-out forwards; }
 @keyframes popIn { 0% { opacity: 0; transform: scale(0.9) translateY(10px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
 
+/* Universal IPA phonetic font rendering for mobile iOS/Android */
+.font-ipa {
+  font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', 'DejaVu Sans', 'Segoe UI', -apple-system, system-ui, sans-serif;
+  font-feature-settings: "liga" 0;
+  letter-spacing: 0.02em;
+}
+
 /* --- NOVA MASCOT --- */
 @keyframes novaFloatAnim {
   0%, 100% { transform: translateY(0px) rotate(-2deg); }

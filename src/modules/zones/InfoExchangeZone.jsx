@@ -287,7 +287,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
         </div>
         <div className="space-y-2">
           <span className="px-4 py-1.5 bg-amber-100 text-amber-900 font-black text-xs uppercase tracking-widest rounded-full">
-            🏆 Cambridge Speaking Part 2 Completed
+            🏆 Cambridge Speaking Part 2 Practice Completed
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
             Brilliant Speaking Performance!
@@ -301,7 +301,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
           <div className="p-4 bg-emerald-50 border-2 border-emerald-300 rounded-2xl flex items-center gap-3">
             <span className="text-3xl">🛡️</span>
             <div className="text-left">
-              <p className="text-xs font-black uppercase text-emerald-700">Shields Earned</p>
+              <p className="text-xs font-black uppercase text-emerald-700">Practice Shields Earned</p>
               <p className="text-xl font-black text-emerald-900">+2 Speaking Shields</p>
             </div>
           </div>
@@ -331,6 +331,9 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
           <LexioMascot size={42} mood="happy" />
           <div>
             <div className="flex items-center gap-2 mb-0.5">
+              <span className="text-xs font-bold text-purple-600 font-mono uppercase bg-purple-50 px-2 py-0.5 rounded">
+                Speaking Practice
+              </span>
               <span className="text-xs font-bold text-slate-500">
                 {phase === 'table_a' ? `Cue ${cueIdxA + 1} / ${cuesA.length}` : `Question ${fieldIdxB + 1} / ${fieldsB.length}`}
               </span>

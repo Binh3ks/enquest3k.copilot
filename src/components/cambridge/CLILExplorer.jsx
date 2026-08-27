@@ -157,7 +157,7 @@ export default function CLILExplorer({
     }
   };
 
-  const handleToggleAudio = async (textToPlay) => {
+  const handleToggleAudio = async (textToPlay, forceAudioUrl = null) => {
     if (isPlayingAudio) {
       VoiceService.stop();
       setIsPlayingAudio(false);
@@ -166,7 +166,8 @@ export default function CLILExplorer({
 
     setIsPlayingAudio(true);
     try {
-      await VoiceService.speak(textToPlay || fullText, 'explore');
+      const audioUrl = forceAudioUrl || clilData?.audio_url || `/audio/week${weekNumber}/clil_friction.mp3`;
+      await VoiceService.speak(textToPlay || fullText, 'explore', { audioUrl });
     } catch (err) {
       console.warn('[CLIL Audio] playback error:', err);
     } finally {
@@ -228,13 +229,23 @@ export default function CLILExplorer({
             🔬 Grammar X-Ray
           </button>
         </div>
-        <button
-          type="button"
-          onClick={() => handleToggleAudio(currentPhase === 1 ? paragraphs[0] : paragraphs[1])}
-          className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95"
-        >
-          <Volume2 size={15} /> {isPlayingAudio ? 'Pause' : '🎧 Listen to this part'}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => handleToggleAudio(fullText, clilData?.audio_url || `/audio/week${weekNumber}/clil_friction.mp3`)}
+            className="px-3 py-1.5 bg-teal-700 hover:bg-teal-600 text-white font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer"
+            title="Listen to full article audio"
+          >
+            <Volume2 size={14} /> 🔊 Listen to whole text
+          </button>
+          <button
+            type="button"
+            onClick={() => handleToggleAudio(currentPhase === 1 ? paragraphs[0] : paragraphs[1])}
+            className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer"
+          >
+            <Volume2 size={14} /> {isPlayingAudio ? 'Pause' : '🎧 Listen to this part'}
+          </button>
+        </div>
       </div>
 
       {/* Mode Active Banner & Word Pills */}

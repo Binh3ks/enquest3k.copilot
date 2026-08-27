@@ -23,28 +23,32 @@ export const readingHubData = {
     part_1_title: "Why Wet Floors Are Slippery",
     part_2_title: "How Rubber Shoes Keep Us Safe",
     content_en: "Why do we fall on wet floors? The answer is a science force called friction. Friction is the grip between two surfaces. It stops objects from sliding. Dry tiles have good friction with shoe soles. When a student walks on a dry floor, the shoes grip the tiles well and the student stays balanced. But water on smooth tiles forms a thin slippery layer. This layer reduces the friction between shoes and the floor. When friction is very low, feet can slide easily and a student may fall. That is what happened in Jake's school corridor. The cleaner had just washed the tiles and the floor was still wet. Rubber soles help because rubber grips surfaces better than plastic. Yellow warning signs remind students to walk slowly on wet floors. Understanding friction helps us stay safe every day!",
-    content_vi: "Tại sao chúng ta lại bị ngã trên sàn nhà ướt? Câu trả lời nằm ở một khái niệm khoa học mang tên Lực Ma Sát. Lực ma sát là một lực ngăn cản các vật trượt đi. Trong khi Jake đang đi bộ xuống hành lang, đế giày cao su của cậu ấy đã tạo ra lực ma sát lớn với mặt sàn khô. Điều này giúp cậu ấy an toàn và giữ thăng bằng. Nước trên sàn gạch nhẵn làm giảm ma sát bề mặt và khiến học sinh trượt ngã. Khi sàn bị ướt, giày không thể bám vào gạch một cách dễ dàng. Giày cao su mang lại độ bám chắc chắn giúp học sinh đi lại an toàn trên mặt đất khô ráo. Biển cảnh báo màu vàng nhắc nhở học sinh đi chậm lại và cẩn thận để mọi người được an toàn!",
-    audio_url: "/audio/week33/explore.mp3",
-    vocab_focus: ["friction", "smooth", "rubber", "tiles", "shoes", "surface", "grip", "safe", "warning", "floor"],
+    content_vi: "Tại sao chúng ta lại bị ngã trên sàn nhà ướt? Câu trả lời nằm ở một lực khoa học mang tên Lực Ma Sát. Ma sát là độ bám giữa hai bề mặt tiếp xúc. Nó ngăn các vật không bị trượt đi. Gạch khô tạo độ ma sát tốt với đế giày. Khi học sinh đi trên sàn khô, giày bám tốt vào gạch và học sinh giữ được thăng bằng. Nhưng nước trên sàn gạch nhẵn tạo thành một lớp trơn mỏng. Lớp nước này làm giảm lực ma sát giữa giày và sàn nhà. Khi ma sát rất thấp, chân có thể trượt dễ dàng và học sinh có thể bị ngã. Đó là điều đã xảy ra ở hành lang trường của Jake. Nhân viên vệ sinh vừa lau gạch xong và sàn vẫn còn ướt. Đế cao su giúp ích vì cao su bám bề mặt tốt hơn nhựa. Các biển báo màu vàng nhắc nhở học sinh đi chậm trên sàn ướt. Hiểu về lực ma sát giúp chúng ta luôn an toàn mỗi ngày!",
+    audio_url: "/audio/week33/clil_friction.mp3",
+    vocab_focus: ["friction", "smooth", "rubber", "tiles", "shoes", "surface", "grip", "safe", "warning", "floor", "balance", "slippery"],
     sentence_drills: [
       {
         id: 1,
         label: "Friction Science Principle",
-        scrambled: ["stops things", "Friction is a physical force that", "from sliding on surfaces"],
-        correct: ["Friction is a physical force that", "stops things", "from sliding on surfaces"]
+        scrambled: ["stops objects", "Friction is a force that", "from sliding on floors"],
+        correct: ["Friction is a force that", "stops objects", "from sliding on floors"]
       },
       {
         id: 2,
         label: "Corridor Safety Rule",
-        scrambled: ["on dry corridor tiles", "Rubber shoes provide strong grip", "to help students walk safely"],
-        correct: ["Rubber shoes provide strong grip", "on dry corridor tiles", "to help students walk safely"]
+        scrambled: ["on dry tiles", "Rubber shoe soles provide good grip", "to prevent accidental slips"],
+        correct: ["Rubber shoe soles provide good grip", "on dry tiles", "to prevent accidental slips"]
       }
     ],
     glossary: [
       { term: "Friction", meaning: "A physical force that prevents surfaces from sliding easily." },
-      { term: "Rubber Soles", meaning: "Bottom of shoes that provide strong grip and high traction." },
+      { term: "Grip", meaning: "The hold between shoe soles and the floor surface." },
+      { term: "Rubber Soles", meaning: "Bottom of shoes made of rubber for high traction." },
       { term: "Smooth Tiles", meaning: "Floor surface that becomes very slippery when wet." },
-      { term: "Warning Sign", meaning: "A yellow caution sign that alerts walkers to low-friction hazards." }
+      { term: "Slippery Layer", meaning: "A thin film of water that reduces friction." },
+      { term: "Warning Sign", meaning: "A bright yellow sign that alerts people to walk slowly." },
+      { term: "Balance", meaning: "Staying steady on your feet without falling over." },
+      { term: "Surface", meaning: "The flat top or outer boundary of an object or floor." }
     ],
     check_questions: [
       {

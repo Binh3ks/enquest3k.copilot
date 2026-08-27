@@ -5,22 +5,24 @@ import { Sparkles, Lightbulb, Volume2, ArrowDownRight, ArrowUpRight, ChevronDown
  * Built-in phonetic dictionary for high-frequency A1/A2 Cambridge story words
  */
 const COMMON_WORD_IPA = {
-  'jake': 'ʤeɪk', 'was': 'wəz', 'walking': 'ˈWƆːK-ɪŋ', 'carefully': 'ˈKEƏ-fə-li',
-  'down': 'daʊn', 'the': 'ðə', 'school': 'skuːl', 'corridor': 'ˈKɒR-ɪ-dɔː',
-  'corridors': 'ˈKɒR-ɪ-dɔːz', 'after': 'ˈⱭːF-tə', 'science': 'ˈSAꞮ-əns', 'class': 'klɑːs',
-  'suddenly': 'ˈSɅD-ən-li', 'a': 'ə', 'an': 'ən', 'boy': 'bɔɪ', 'running': 'ˈRɅN-ɪŋ',
+  'jake': 'dʒeɪk', 'was': 'wəz', 'walking': 'ˈwɔːk-ɪŋ', 'carefully': 'ˈkeə-fə-li',
+  'down': 'daʊn', 'the': 'ðə', 'school': 'skuːl', 'corridor': 'ˈkɒr-ɪ-dɔː',
+  'corridors': 'ˈkɒr-ɪ-dɔːz', 'after': 'ˈɑːf-tə', 'science': 'ˈsaɪ-əns', 'class': 'klɑːs',
+  'suddenly': 'ˈsʌd-ən-li', 'a': 'ə', 'an': 'ən', 'boy': 'bɔɪ', 'running': 'ˈrʌn-ɪŋ',
   'fast': 'fɑːst', 'slipped': 'slɪpt', 'on': 'ɒn', 'wet': 'wet', 'floor': 'flɔː',
-  'and': 'ənd', 'fell': 'fel', 'heavily': 'ˈHEV-ɪ-li', 'he': 'hiː', 'hurt': 'hɜːt',
-  'his': 'hɪz', 'knee': 'niː', 'lost': 'lɒst', 'balance': 'ˈBÆL-əns',
-  'completely': 'kəm-ˈPLIːT-li', 'stopped': 'stɒpt', 'immediately': 'ɪ-ˈMIː-di-ət-li',
+  'and': 'ənd', 'fell': 'fel', 'heavily': 'ˈhev-ɪ-li', 'he': 'hiː', 'hurt': 'hɜːt',
+  'his': 'hɪz', 'knee': 'niː', 'lost': 'lɒst', 'balance': 'ˈbæl-əns',
+  'completely': 'kəm-ˈpliːt-li', 'stopped': 'stɒpt', 'immediately': 'ɪ-ˈmiː-di-ət-li',
   'to': 'tuː', 'help': 'help', 'friend': 'frend', 'stay': 'steɪ', 'calm': 'kɑːm',
-  'called': 'kɔːld', 'nurse': 'nɜːs', 'right': 'raɪt', 'away': 'ə-ˈWEꞮ',
-  'arrived': 'ə-ˈRAꞮVD', 'quickly': 'ˈKWꞮK-li', 'with': 'wɪð', 'clean': 'kliːn',
-  'bandage': 'ˈBÆN-dɪʤ', 'cold': 'kəʊld', 'pack': 'pæk', 'treat': 'triːt',
-  'cut': 'kʌt', 'everyone': 'ˈEV-rɪ-wʌn', 'felt': 'felt', 'relieved': 'rɪ-ˈLIːVD',
-  'praised': 'preɪzd', 'for': 'fɔː', 'following': 'ˈFɒL-əʊ-ɪŋ', 'safety': 'ˈSEꞮF-ti',
-  'rules': 'ruːlz', 'headmaster': 'ˈHED-ˌmɑːs-tə', 'reminded': 'rɪ-ˈMAꞮN-dɪd',
-  'all': 'ɔːl', 'students': 'ˈSTJUː-dənts', 'never': 'ˈNEV-ə', 'run': 'rʌn', 'in': 'ɪn'
+  'called': 'kɔːld', 'nurse': 'nɜːs', 'right': 'raɪt', 'away': 'ə-ˈweɪ',
+  'arrived': 'ə-ˈraɪvd', 'quickly': 'ˈkwɪk-li', 'with': 'wɪð', 'clean': 'kliːn',
+  'bandage': 'ˈbæn-dɪdʒ', 'cold': 'kəʊld', 'pack': 'pæk', 'treat': 'triːt',
+  'cut': 'kʌt', 'everyone': 'ˈev-ri-wʌn', 'felt': 'felt', 'relieved': 'rɪ-ˈliːvd',
+  'praised': 'preɪzd', 'for': 'fɔː', 'following': 'ˈfɒl-əʊ-ɪŋ', 'safety': 'ˈseɪf-ti',
+  'rules': 'ruːlz', 'headmaster': 'ˈhed-ˌmɑːs-tə', 'reminded': 'rɪ-ˈmaɪn-dɪd',
+  'all': 'ɔːl', 'students': 'ˈstjuː-dənts', 'never': 'ˈnev-ə', 'run': 'rʌn', 'in': 'ɪn',
+  'friction': 'ˈfrɪk-ʃən', 'smooth': 'smuːð', 'tiles': 'taɪlz', 'shoes': 'ʃuːz',
+  'rubber': 'ˈrʌb-ə', 'grip': 'grɪp', 'surface': 'ˈsɜː-fɪs', 'warning': 'ˈwɔː-nɪŋ'
 };
 
 /**
@@ -72,15 +74,11 @@ export function getWordIpaList(sentence, fullIpaString = null) {
     let rawIpa = ipaTokens[idx] || COMMON_WORD_IPA[cleanWord] || '';
 
     const isStressed = rawIpa.includes('ˈ') || rawIpa.includes('ˌ') || cleanWord.length >= 6;
-    let displayIpa = rawIpa;
-    if (displayIpa.includes('ˈ')) {
-      displayIpa = displayIpa.replace(/ˈ([a-zA-Zɔæɑʊɪʌəɛɜː]+)/g, (_, syl) => `ˈ${syl.toUpperCase()}`);
-    }
 
     return {
       word: rawWord,
       cleanWord,
-      ipa: displayIpa ? `/${displayIpa}/` : (COMMON_WORD_IPA[cleanWord] ? `/${COMMON_WORD_IPA[cleanWord]}/` : ''),
+      ipa: rawIpa ? `/${rawIpa}/` : '',
       isStressed
     };
   });

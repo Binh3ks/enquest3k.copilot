@@ -11,12 +11,12 @@ Teacher: Yes, that's right. Jake is walking carefully.
 Teacher: Can you see the example line? Now you listen and draw lines.
 Mia: Who is the woman with the first-aid kit rushing near the wall?
 Teacher: That is Nurse Sarah. She is bringing bandages to help.
-Mia: Look at the man wearing glasses near the notice board.
+Mia: Look at the tall man in the blue suit near the lockers.
 Teacher: That is Headmaster Brown. He is watching the corridor.
 Mia: Is that Cleaner Bob holding the yellow warning sign and mop?
 Teacher: Yes, that is Cleaner Bob. He is drying the tiles.
-Mia: Who is the teacher walking near the science lab?
-Teacher: That is Teacher David. He is guiding students into the classroom.`,
+Mia: Who is the boy sitting on the bench on the right?
+Teacher: That is David. He is waiting for class to start.`,
     dialogue_script: [
       { speaker: 'woman', text: 'Look at Part 1. Now look at the picture. Listen and look. There is one example.' },
       { speaker: 'girl',  text: 'Look at that boy in the corridor! Is he running?' },
@@ -26,12 +26,12 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
       { speaker: 'woman', text: 'Can you see the example line? Now you listen and draw lines.' },
       { speaker: 'girl',  text: 'Who is the woman with the first-aid kit rushing near the wall?' },
       { speaker: 'woman', text: 'That is Nurse Sarah. She is bringing bandages to help.' },
-      { speaker: 'girl',  text: 'Look at the man wearing glasses near the notice board.' },
+      { speaker: 'girl',  text: 'Look at the tall man in the blue suit near the lockers.' },
       { speaker: 'woman', text: 'That is Headmaster Brown. He is watching the corridor.' },
       { speaker: 'girl',  text: 'Is that Cleaner Bob holding the yellow warning sign and mop?' },
       { speaker: 'woman', text: 'Yes, that is Cleaner Bob. He is drying the tiles.' },
-      { speaker: 'girl',  text: 'Who is the teacher walking near the science lab?' },
-      { speaker: 'woman', text: 'That is Teacher David. He is guiding students into the classroom.' }
+      { speaker: 'girl',  text: 'Who is the boy sitting on the bench on the right?' },
+      { speaker: 'woman', text: 'That is David. He is waiting for class to start.' }
     ],
     names: [
       { id: "n1", text: "Jake", target_id: "t1", isExample: true },
@@ -39,7 +39,7 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
       { id: "n3", text: "Nurse Sarah", target_id: "t3" },
       { id: "n4", text: "Headmaster Brown", target_id: "t4" },
       { id: "n5", text: "Cleaner Bob", target_id: "t5" },
-      { id: "n6", text: "Teacher David", target_id: "t6" },
+      { id: "n6", text: "David", target_id: "t6" },
       { id: "n7", text: "Mia the Monitor", target_id: null }
     ],
     targets: [
@@ -48,7 +48,7 @@ Teacher: That is Teacher David. He is guiding students into the classroom.`,
       { id: "t3", label: "Nurse Sarah (Woman rushing in white uniform)", x: 61, y: 52 },
       { id: "t4", label: "Headmaster Brown (Man in blue suit near lockers)", x: 32, y: 52 },
       { id: "t5", label: "Cleaner Bob (Person with mop near yellow sign)", x: 71, y: 70 },
-      { id: "t6", label: "Teacher David (Student bending near bench)", x: 84, y: 85 }
+      { id: "t6", label: "David (Boy sitting on bench on right)", x: 84, y: 85 }
     ]
   },
   listening_p2: {

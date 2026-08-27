@@ -149,7 +149,7 @@
     "ui_usage": "Full 2-voice dialogue for character line matching",
     "speakers": "Teacher (Journey-F) + Mia (Neural2-F)",
     "transcript": "Look at Part 1. Now look at the picture. Listen and look. There is one example. Look at that boy in the corridor. Is he running? No? That's Tom slipping on the wet floor. Look at the boy walking carefully in the blue shirt. Oh, I see him now. Is that Jake? Yes. That's right. Jake is walking carefully. Can you see the example line? Now you listen and draw lines. Who is the woman with the first eight-kit rushing near the wall? That is nurse Sarah. She is bringing bandages to help. Look at the man wearing glasses near the notice board. That is headmaster Brown. He is watching the corridor. Is that cleaner Bob holding the yellow warning sign in Mop? Yes, that is cleaner Bob. He is drying the tiles. Who is the teacher walking near the science lab? That is teacher David. He is guiding students into the classroom.",
-    "expected_theme": "Jake, Tom, Nurse Sarah, Headmaster Brown, Cleaner Bob, Teacher David",
+    "expected_theme": "Jake, Tom, Nurse Sarah, Headmaster Brown, Cleaner Bob, David",
     "status": "VERIFIED"
   },
   {
