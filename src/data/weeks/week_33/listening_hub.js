@@ -93,6 +93,26 @@ Teacher: That is David. He is picking up his water bottle from the floor.`,
   },
   listening_p3: {
     cambridge_alignment: "EXACT",
+    audio_url: "/audio/week33/listening_p3_full.mp3",
+    passage_audio_script: `Listen and write a letter in each box. There is one example.
+Jake, where did you leave your blue school backpack before morning class?
+I was sitting on the wooden playground bench outside before the bell rang, and I left it right there.
+Can you see the letter H? That is the example. Now you listen and write a letter in each box.
+
+Where did Nurse Sarah get the clean bandage to help Tom?
+She went into the nurse room and took it straight out of the white glass cabinet on the wall.
+
+And what about the cold pack? Was that inside the cabinet too?
+No, the nurse had already placed the blue cold pack on the first-aid table near the door.
+
+Did you find your green science notebook after class?
+Yes, I remembered we were doing experiments, and I left it sitting on the science lab desk.
+
+Tom was looking for his blue water bottle. Did he drop it in the hallway?
+No, we were eating lunch together and he forgot his bottle on the dining table.
+
+Why was Tom running so fast down the corridor before class?
+He woke up late! His alarm clock was ringing loudly on his bedroom table, but he did not hear it in time.`,
     example: {
       name: "School Backpack",
       target_letter: "H",
@@ -106,7 +126,7 @@ Teacher: That is David. He is picking up his water bottle from the floor.`,
     items: [
       {
         id: 1, name: "Clean Bandage", target_letter: "A",
-        audio_text: "Where did Nurse Sarah find the clean bandage? She opened the glass cabinet in the nurse office.",
+        audio_text: "Where did Nurse Sarah get the clean bandage to help Tom? She went into the nurse room and took it straight out of the white glass cabinet on the wall.",
         audio_url: "/audio/week33/listening_p3_item1.mp3",
         dialogue_script: [
           { speaker: 'woman', text: 'Where did Nurse Sarah get the clean bandage to help Tom?' },
@@ -115,7 +135,7 @@ Teacher: That is David. He is picking up his water bottle from the floor.`,
       },
       {
         id: 2, name: "Cold Pack", target_letter: "B",
-        audio_text: "Where was the blue cold pack? It was on the first-aid table in the nurse room.",
+        audio_text: "And what about the cold pack? Was that inside the cabinet too? No, the nurse had already placed the blue cold pack on the first-aid table near the door.",
         audio_url: "/audio/week33/listening_p3_item2.mp3",
         dialogue_script: [
           { speaker: 'woman', text: 'And what about the cold pack? Was that inside the cabinet too?' },
@@ -124,7 +144,7 @@ Teacher: That is David. He is picking up his water bottle from the floor.`,
       },
       {
         id: 3, name: "Science Notebook", target_letter: "C",
-        audio_text: "Where did Jake leave his science notebook? He left it on the science lab desk.",
+        audio_text: "Did you find your green science notebook after class? Yes, I remembered we were doing experiments, and I left it sitting on the science lab desk.",
         audio_url: "/audio/week33/listening_p3_item3.mp3",
         dialogue_script: [
           { speaker: 'woman', text: 'Did you find your green science notebook after class?' },
@@ -133,7 +153,7 @@ Teacher: That is David. He is picking up his water bottle from the floor.`,
       },
       {
         id: 4, name: "Water Bottle", target_letter: "D",
-        audio_text: "Where was Tom's water bottle? He left it on the dining table after lunch.",
+        audio_text: "Tom was looking for his blue water bottle. Did he drop it in the hallway? No, we were eating lunch together and he forgot his bottle on the dining table.",
         audio_url: "/audio/week33/listening_p3_item4.mp3",
         dialogue_script: [
           { speaker: 'woman', text: 'Tom was looking for his blue water bottle. Did he drop it in the hallway?' },
@@ -142,7 +162,7 @@ Teacher: That is David. He is picking up his water bottle from the floor.`,
       },
       {
         id: 5, name: "Alarm Clock", target_letter: "E",
-        audio_text: "Why was Tom in such a rush? His alarm clock was ringing on his bedroom table.",
+        audio_text: "Why was Tom running so fast down the corridor before class? He woke up late! His alarm clock was ringing loudly on his bedroom table, but he did not hear it in time.",
         audio_url: "/audio/week33/listening_p3_item5.mp3",
         dialogue_script: [
           { speaker: 'woman', text: 'Why was Tom running so fast down the corridor before class?' },
