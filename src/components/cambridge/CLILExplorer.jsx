@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Globe, Volume2, CheckCircle2, AlertCircle, BookOpen, RotateCcw, HelpCircle, ArrowRight, Sparkles, Award } from 'lucide-react';
 import { renderParsedText } from '../common/HoverWord';
 import VoiceService from '../../services/voiceService';
+import { speakText } from '../../utils/AudioHelper';
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
@@ -36,21 +37,29 @@ export default function CLILExplorer({
     ];
   }, [clilData, targetGrammarRegex]);
 
-  // VOCAB FOCUS: hub vocab_focus is a curated list of chunks/collocations.
-  // We build regex patterns from each item (multi-word safe).
+  // VOCAB FOCUS: hub vocab_focus is a curated list of multi-word chunks/collocations.
+  // renderParsedText tokenizes word-by-word, so we extract ALL individual content words
+  // from each chunk and use those as the highlight targets (avoids multi-word regex failure).
   const vocabPills = useMemo(() => {
     const raw = clilData?.vocab_focus || clilData?.target_vocab || [];
     if (Array.isArray(raw) && raw.length > 0) return raw;
-    // Fallback: do NOT auto-derive from glossary — that defeats the curated purpose
     return [];
   }, [clilData]);
 
-  // Build highlight regex patterns for vocab focus (multi-word aware)
+  // Build per-word highlight patterns from multi-word chunks.
+  // Stop-words (the, a, an, of, in, on, so, that, from, when, and, but, is) are excluded.
+  const STOP_WORDS = new Set(['the','a','an','of','in','on','so','that','from','when','and','but','is','are','was','were','it','to','do']);
   const vocabHighlightPatterns = useMemo(() => {
-    return vocabPills.map(chunk => ({
-      pattern: '\\b' + chunk.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+') + '\\b',
-      label: chunk
-    }));
+    const words = new Set();
+    vocabPills.forEach(chunk => {
+      chunk.toLowerCase().split(/\s+/).forEach(w => {
+        const clean = w.replace(/[^a-z]/g, '');
+        if (clean.length > 2 && !STOP_WORDS.has(clean)) words.add(clean);
+      });
+    });
+    return words.size > 0
+      ? [{ pattern: '\\b(' + [...words].join('|') + ')\\b', label: 'Vocab Focus' }]
+      : [];
   }, [vocabPills]);
 
   // Default Paragraph Split
@@ -187,10 +196,14 @@ export default function CLILExplorer({
 
     setIsPlayingAudio(true);
     try {
+      // VoiceService.speak(text, station, audioUrl<string>, weekNumber, ...)
+      // 3rd param MUST be a string, not an object.
       const audioUrl = forceAudioUrl || clilData?.audio_url || `/audio/week${weekNumber}/clil_friction.mp3`;
-      await VoiceService.speak(textToPlay || fullText, 'explore', { audioUrl });
+      await VoiceService.speak(textToPlay || fullText, 'explore', audioUrl, weekNumber);
     } catch (err) {
       console.warn('[CLIL Audio] playback error:', err);
+      // Final fallback: browser TTS
+      speakText(textToPlay || fullText);
     } finally {
       setIsPlayingAudio(false);
     }
@@ -312,7 +325,7 @@ export default function CLILExplorer({
                 key={idx}
                 type="button"
                 data-testid="clil-glossary-chip"
-                onClick={() => VoiceService.speak(item.term || item.word, 'explore')}
+                onClick={() => speakText(item.term || item.word)}
                 title={`Tap to hear: ${item.term || item.word}`}
                 className="px-3 py-1 bg-white border border-teal-300 text-teal-950 rounded-xl text-xs font-bold shadow-xs flex items-center gap-1.5 hover:bg-teal-50 active:scale-95 transition cursor-pointer"
               >
