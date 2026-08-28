@@ -222,35 +222,50 @@ export default function CLILExplorer({
   };
 
   return (
-    <div className="w-full space-y-3.5 font-sans text-slate-900">
+    <div className="w-full space-y-4 font-sans text-slate-900">
       {/* Stepper Header (Zero-L1) */}
-      <div className="flex items-center justify-between px-2">
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-black text-emerald-900 bg-emerald-100 px-3 py-1 rounded-xl">
+      <div className="flex items-center justify-between px-1 flex-wrap gap-2">
+        <div className="flex items-center gap-2.5">
+          <span className="text-sm sm:text-base font-black text-emerald-900 bg-emerald-100 px-4 py-1.5 rounded-xl border border-emerald-200 shadow-xs">
             {currentPhase === 1 && `🔬 Part 1: ${clilData?.part_1_title || clilData?.title_en || clilData?.title || 'Science Principles'}`}
             {currentPhase === 2 && `🧪 Part 2: ${clilData?.part_2_title || clilData?.title_en || clilData?.title || 'Real-World Applications'}`}
             {currentPhase === 3 && '🎓 Part 3: Sentence Builder Challenge'}
           </span>
-          <span className="text-xs font-bold text-slate-500">
+          <span className="text-xs sm:text-sm font-bold text-slate-500">
             Step {currentPhase} of 3
           </span>
         </div>
-        <div className="w-36 h-2.5 bg-slate-200 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-300 rounded-full"
-            style={{ width: `${(currentPhase / 3) * 100}%` }}
-          />
+
+        {/* Right Header: Progress Bar & Compact Stamp Icon */}
+        <div className="flex items-center gap-3">
+          <div className="w-28 sm:w-40 h-3 bg-slate-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-300 rounded-full"
+              style={{ width: `${(currentPhase / 3) * 100}%` }}
+            />
+          </div>
+
+          {/* Compact Top-Right Stamp Badge */}
+          <button
+            type="button"
+            onClick={onCompleteCLIL}
+            title="Click to view CLIL Science Passport Details"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white rounded-xl font-black text-xs shadow-sm border border-emerald-400/40 cursor-pointer active:scale-95 transition"
+          >
+            <Award size={16} className="text-amber-300 animate-pulse" />
+            <span className="text-xs font-black tracking-wide">Science LV.1</span>
+          </button>
         </div>
       </div>
 
       {/* Mode Control Bar */}
-      <div className="p-3 bg-white rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between flex-wrap gap-2">
-        <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl">
-          <span className="text-[10px] font-black text-slate-400 uppercase px-2">Mode:</span>
+      <div className="p-3.5 sm:p-4 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm flex items-center justify-between flex-wrap gap-3">
+        <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-xl">
+          <span className="text-xs font-black text-slate-500 uppercase px-2">Mode:</span>
           <button
             type="button"
             onClick={() => handleModeSwitch('vocab')}
-            className={`px-3 py-1 rounded-lg text-xs font-black transition ${
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition ${
               activeHighlightMode === 'vocab' ? 'bg-emerald-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
@@ -259,65 +274,65 @@ export default function CLILExplorer({
           <button
             type="button"
             onClick={() => handleModeSwitch('grammar')}
-            className={`px-3 py-1 rounded-lg text-xs font-black transition ${
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition ${
               activeHighlightMode === 'grammar' ? 'bg-amber-500 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             🔬 Grammar X-Ray
           </button>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
           <button
             type="button"
             onClick={handleToggleWholeAudio}
-            className={`px-3 py-1.5 font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer ${
+            className={`px-4 py-2 font-black text-xs sm:text-sm rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer ${
               playingAudioType === 'whole'
                 ? 'bg-rose-600 text-white animate-pulse'
                 : 'bg-teal-700 hover:bg-teal-600 text-white'
             }`}
             title={playingAudioType === 'whole' ? 'Click to stop whole text audio' : 'Listen to full article audio'}
           >
-            <Volume2 size={14} /> {playingAudioType === 'whole' ? '⏹ Stop whole text' : '🔊 Listen to whole text'}
+            <Volume2 size={16} /> {playingAudioType === 'whole' ? '⏹ Stop whole text' : '🔊 Listen to whole text'}
           </button>
           <button
             type="button"
             onClick={handleTogglePartAudio}
-            className={`px-3 py-1.5 font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer ${
+            className={`px-4 py-2 font-black text-xs sm:text-sm rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer ${
               playingAudioType === 'part'
                 ? 'bg-rose-600 text-white animate-pulse'
                 : 'bg-emerald-600 hover:bg-emerald-500 text-white'
             }`}
             title={playingAudioType === 'part' ? 'Click to stop this part audio' : 'Listen to current part audio'}
           >
-            <Volume2 size={14} /> {playingAudioType === 'part' ? '⏹ Stop this part' : '🎧 Listen to this part'}
+            <Volume2 size={16} /> {playingAudioType === 'part' ? '⏹ Stop this part' : '🎧 Listen to this part'}
           </button>
         </div>
       </div>
 
       {/* Mode Active Banner & Word Pills */}
       {activeHighlightMode === 'vocab' && (
-        <div className="p-4 bg-emerald-50/90 border border-emerald-300 rounded-2xl space-y-2.5 shadow-xs animate-in fade-in">
+        <div className="p-4 sm:p-5 bg-emerald-50/90 border border-emerald-300 rounded-2xl sm:rounded-3xl space-y-3 shadow-xs animate-in fade-in">
           <div className="flex items-center justify-between">
-            <span className="text-[11px] font-black uppercase text-emerald-900 tracking-wider flex items-center gap-1.5">
-              <Sparkles size={14} className="text-emerald-700" /> Key Collocations & Chunks ({vocabPills.length})
+            <span className="text-xs sm:text-sm font-black uppercase text-emerald-900 tracking-wider flex items-center gap-1.5">
+              <Sparkles size={16} className="text-emerald-700" /> Key Collocations & Chunks ({vocabPills.length})
             </span>
-            <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-300">
+            <span className="text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-300">
               Interactive Word Bank
             </span>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2.5">
             {vocabPills.map((w, idx) => (
               <div
                 key={idx}
-                className="px-3 py-1 bg-white hover:bg-emerald-50/80 border border-emerald-300 text-emerald-950 font-black text-xs rounded-xl shadow-xs transition flex items-center gap-1.5"
+                className="px-3.5 py-1.5 bg-white hover:bg-emerald-50/80 border border-emerald-300 text-emerald-950 font-black text-xs sm:text-sm rounded-xl shadow-xs transition flex items-center gap-1.5"
               >
                 <button
                   type="button"
                   onClick={(e) => { e.stopPropagation(); speakText(w); }}
                   title={`Tap to hear: ${w}`}
-                  className="p-0.5 hover:bg-emerald-100 rounded text-emerald-700 transition cursor-pointer shrink-0"
+                  className="p-1 hover:bg-emerald-100 rounded-lg text-emerald-700 transition cursor-pointer shrink-0"
                 >
-                  <Volume2 size={11} />
+                  <Volume2 size={13} />
                 </button>
                 <span className="cursor-pointer">{renderParsedText(w, 'emerald', null, false, 'vocab', [w])}</span>
               </div>
@@ -328,62 +343,67 @@ export default function CLILExplorer({
 
       {/* CLIL Glossary Section */}
       {Array.isArray(clilData?.glossary) && clilData.glossary.length > 0 && (
-        <div className="p-4 bg-teal-50/90 border border-teal-200 rounded-2xl space-y-2 shadow-xs">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] font-black uppercase text-teal-900 tracking-wider flex items-center gap-1.5">
-              <BookOpen size={14} className="text-teal-700" /> Science & Nature Glossary
+        <div className="p-4 sm:p-5 bg-teal-50/90 border border-teal-200 rounded-2xl sm:rounded-3xl space-y-3 shadow-xs">
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <span className="text-xs sm:text-sm font-black uppercase text-teal-900 tracking-wider flex items-center gap-1.5">
+              <BookOpen size={16} className="text-teal-700" /> Science & Nature Glossary
             </span>
-            <span className="text-[10px] font-bold text-teal-800 bg-teal-100 px-2.5 py-0.5 rounded-full border border-teal-300">
-              Key Terms (Click any word in definitions for dictionary)
+            <span className="text-xs font-bold text-teal-800 bg-teal-100 px-3 py-1 rounded-full border border-teal-300">
+              Key Terms (Click any term or word for full dictionary)
             </span>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {clilData.glossary.map((item, idx) => (
-              <div
-                key={idx}
-                data-testid="clil-glossary-chip"
-                className="px-3 py-1.5 bg-white border border-teal-300 text-teal-950 rounded-xl text-xs font-bold shadow-xs flex items-center gap-1.5 hover:bg-teal-50/80 transition"
-              >
-                <button
-                  type="button"
-                  onClick={(e) => { e.stopPropagation(); speakText(item.term || item.word); }}
-                  title={`Tap to hear: ${item.term || item.word}`}
-                  className="p-1 hover:bg-teal-100 rounded-lg text-teal-700 transition cursor-pointer shrink-0"
+          <div className="flex flex-wrap gap-2.5">
+            {clilData.glossary.map((item, idx) => {
+              const termStr = item.term || item.word || '';
+              return (
+                <div
+                  key={idx}
+                  data-testid="clil-glossary-chip"
+                  className="px-3.5 py-2 bg-white border border-teal-300 text-teal-950 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold shadow-xs flex items-center gap-2 hover:bg-teal-50/80 transition"
                 >
-                  <Volume2 size={12} />
-                </button>
-                <span className="font-black text-teal-900 shrink-0">{item.term || item.word}:</span>
-                <span className="text-slate-700 font-medium">
-                  {renderParsedText(item.meaning || item.def, 'teal', null, false, 'clean')}
-                </span>
-              </div>
-            ))}
+                  <button
+                    type="button"
+                    onClick={(e) => { e.stopPropagation(); speakText(termStr); }}
+                    title={`Tap to hear: ${termStr}`}
+                    className="p-1 hover:bg-teal-100 rounded-lg text-teal-700 transition cursor-pointer shrink-0"
+                  >
+                    <Volume2 size={14} />
+                  </button>
+                  <span className="font-black text-teal-900 shrink-0 cursor-pointer">
+                    {renderParsedText(termStr, 'teal', null, false, 'vocab', [termStr])}:
+                  </span>
+                  <span className="text-slate-700 font-medium cursor-pointer">
+                    {renderParsedText(item.meaning || item.def, 'teal', null, false, 'clean')}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
 
       {activeHighlightMode === 'grammar' && (
-        <div className="p-4 bg-amber-50/90 border border-amber-300 rounded-2xl space-y-2 shadow-xs animate-in fade-in">
+        <div className="p-4 sm:p-5 bg-amber-50/90 border border-amber-300 rounded-2xl sm:rounded-3xl space-y-3 shadow-xs animate-in fade-in">
           <div className="flex items-center justify-between">
-            <span className="text-[11px] font-black uppercase text-amber-900 tracking-wider flex items-center gap-1.5">
-              <BookOpen size={14} className="text-amber-700" /> Grammar X-Ray: {activeGrammarInfo?.label || 'Target Grammar Focus'}
+            <span className="text-xs sm:text-sm font-black uppercase text-amber-900 tracking-wider flex items-center gap-1.5">
+              <BookOpen size={16} className="text-amber-700" /> Grammar X-Ray: {activeGrammarInfo?.label || 'Target Grammar Focus'}
             </span>
-            <span className="text-[10px] font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full border border-amber-300">
+            <span className="text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
               Grammar Focus
             </span>
           </div>
-          <div className="flex flex-wrap gap-2 text-xs font-black text-amber-950">
+          <div className="flex flex-wrap gap-2 text-xs sm:text-sm font-black text-amber-950">
             {grammarLegend.length === 0 && (
-              <span className="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-lg border border-amber-300">
+              <span className="px-3 py-1.5 bg-amber-100 text-amber-900 rounded-xl border border-amber-300">
                 ℹ️ This section focuses on vocabulary and reading comprehension.
               </span>
             )}
             {grammarLegend.map((g, i) => (
-              <span key={i} className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">{g}</span>
+              <span key={i} className="px-3 py-1.5 bg-amber-200/90 rounded-xl border border-amber-300">{g}</span>
             ))}
           </div>
           {grammarLegend.length > 0 && (
-            <p className="text-[10px] text-amber-800 font-bold">
+            <p className="text-xs text-amber-800 font-bold">
               👇 These phrases are highlighted inline inside the paragraph below.
             </p>
           )}
@@ -395,43 +415,43 @@ export default function CLILExplorer({
       {/* ========================================================================= */}
       {currentPhase === 1 && (
         <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
-            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-700 border-b border-slate-100 pb-2">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200 shadow-md space-y-6">
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-black uppercase tracking-wider text-emerald-700 border-b border-slate-100 pb-3">
               <span>📖 PARAGRAPH 1: {(clilData?.part_1_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
-            <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
+            <p className="text-lg sm:text-xl lg:text-2xl text-slate-900 font-bold leading-relaxed sm:leading-loose">
               {renderParsedText(paragraphs[0], 'emerald', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? [activeScopedPattern].filter(Boolean) : vocabPills)}
             </p>
 
             {/* Paragraph 1 Check Questions */}
-            <div className="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-3 pt-3">
-              <h4 className="text-xs font-black uppercase text-emerald-900 flex items-center gap-1.5">
-                <HelpCircle size={15} className="text-emerald-600" /> CHECK QUESTIONS (2 Questions)
+            <div className="p-5 sm:p-6 bg-emerald-50/70 rounded-2xl sm:rounded-3xl border border-emerald-200 space-y-4 pt-4">
+              <h4 className="text-xs sm:text-sm font-black uppercase text-emerald-900 flex items-center gap-1.5">
+                <HelpCircle size={16} className="text-emerald-600" /> CHECK QUESTIONS (2 Questions)
               </h4>
-              <div className="space-y-3">
+              <div className="space-y-3.5">
                 {questionsP1.map((q) => {
                   const selected = selectedAnswers[q.id];
                   const isCorrect = selected === q.correct;
 
                   return (
-                    <div key={q.id} className="p-4 bg-white rounded-2xl border border-emerald-200 space-y-2.5 shadow-sm">
-                      <div className="flex items-center justify-between">
-                        <p className="text-xs sm:text-sm font-black text-slate-900">{q.question}</p>
+                    <div key={q.id} className="p-4 sm:p-5 bg-white rounded-2xl border border-emerald-200 space-y-3 shadow-sm">
+                      <div className="flex items-center justify-between flex-wrap gap-2">
+                        <p className="text-sm sm:text-base lg:text-lg font-black text-slate-900">{q.question}</p>
                         {selected && (
-                          <span className={`text-[11px] font-black px-2 py-0.5 rounded-lg flex items-center gap-1 animate-in zoom-in-95 ${
+                          <span className={`text-xs font-black px-2.5 py-1 rounded-xl flex items-center gap-1 animate-in zoom-in-95 ${
                             isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'
                           }`}>
                             {isCorrect ? '✓ Correct! +10 XP' : '❌ Try another option'}
                           </span>
                         )}
                       </div>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2.5">
                         {q.shuffledOptions.map((opt, i) => (
                           <button
                             key={i}
                             type="button"
                             onClick={() => handleSelectAnswer(q.id, opt, q.correct)}
-                            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition border text-left flex items-center gap-2 ${
+                            className={`px-4 sm:px-5 py-3 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold transition border text-left flex items-center gap-2.5 ${
                               selected === opt
                                 ? isCorrect
                                   ? 'bg-emerald-600 text-white border-emerald-500 font-black shadow-md scale-[1.02]'
@@ -439,7 +459,7 @@ export default function CLILExplorer({
                                 : 'bg-slate-50 hover:bg-emerald-100 text-slate-800 border-slate-200'
                             }`}
                           >
-                            <span className="w-5 h-5 rounded-full bg-white/30 text-[10px] font-black flex items-center justify-center shrink-0">
+                            <span className="w-6 h-6 rounded-full bg-white/30 text-xs font-black flex items-center justify-center shrink-0">
                               {String.fromCharCode(65 + i)}
                             </span>
                             {opt}
@@ -457,7 +477,7 @@ export default function CLILExplorer({
             <button
               type="button"
               onClick={() => setCurrentPhase(2)}
-              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl font-black text-xs sm:text-sm shadow-lg flex items-center gap-2 transition active:scale-95 hover:scale-105"
+              className="px-7 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl font-black text-sm sm:text-base shadow-lg flex items-center gap-2 transition active:scale-95 hover:scale-105 cursor-pointer"
             >
               Next: Part 2 ▶
             </button>
@@ -470,43 +490,43 @@ export default function CLILExplorer({
       {/* ========================================================================= */}
       {currentPhase === 2 && (
         <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
-            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-700 border-b border-slate-100 pb-2">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200 shadow-md space-y-6">
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-black uppercase tracking-wider text-teal-700 border-b border-slate-100 pb-3">
               <span>📖 PARAGRAPH 2: {(clilData?.part_2_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
-            <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
+            <p className="text-lg sm:text-xl lg:text-2xl text-slate-900 font-bold leading-relaxed sm:leading-loose">
               {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? [activeScopedPattern].filter(Boolean) : vocabPills)}
             </p>
 
             {/* Paragraph 2 Check Questions */}
-            <div className="p-4 bg-teal-50/70 rounded-2xl border border-teal-200 space-y-3 pt-3">
-              <h4 className="text-xs font-black uppercase text-teal-900 flex items-center gap-1.5">
-                <HelpCircle size={15} className="text-teal-600" /> CHECK QUESTIONS (2 Questions)
+            <div className="p-5 sm:p-6 bg-teal-50/70 rounded-2xl sm:rounded-3xl border border-teal-200 space-y-4 pt-4">
+              <h4 className="text-xs sm:text-sm font-black uppercase text-teal-900 flex items-center gap-1.5">
+                <HelpCircle size={16} className="text-teal-600" /> CHECK QUESTIONS (2 Questions)
               </h4>
-              <div className="space-y-3">
+              <div className="space-y-3.5">
                 {questionsP2.map((q) => {
                   const selected = selectedAnswers[q.id];
                   const isCorrect = selected === q.correct;
 
                   return (
-                    <div key={q.id} className="p-4 bg-white rounded-2xl border border-teal-200 space-y-2.5 shadow-sm">
-                      <div className="flex items-center justify-between">
-                        <p className="text-xs sm:text-sm font-black text-slate-900">{q.question}</p>
+                    <div key={q.id} className="p-4 sm:p-5 bg-white rounded-2xl border border-teal-200 space-y-3 shadow-sm">
+                      <div className="flex items-center justify-between flex-wrap gap-2">
+                        <p className="text-sm sm:text-base lg:text-lg font-black text-slate-900">{q.question}</p>
                         {selected && (
-                          <span className={`text-[11px] font-black px-2 py-0.5 rounded-lg flex items-center gap-1 animate-in zoom-in-95 ${
+                          <span className={`text-xs font-black px-2.5 py-1 rounded-xl flex items-center gap-1 animate-in zoom-in-95 ${
                             isCorrect ? 'bg-teal-100 text-teal-800' : 'bg-rose-100 text-rose-800'
                           }`}>
                             {isCorrect ? '✓ Correct! +10 XP' : '❌ Try another option'}
                           </span>
                         )}
                       </div>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2.5">
                         {q.shuffledOptions.map((opt, i) => (
                           <button
                             key={i}
                             type="button"
                             onClick={() => handleSelectAnswer(q.id, opt, q.correct)}
-                            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition border text-left flex items-center gap-2 ${
+                            className={`px-4 sm:px-5 py-3 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold transition border text-left flex items-center gap-2.5 ${
                               selected === opt
                                 ? isCorrect
                                   ? 'bg-teal-600 text-white border-teal-500 font-black shadow-md scale-[1.02]'
@@ -514,7 +534,7 @@ export default function CLILExplorer({
                                 : 'bg-slate-50 hover:bg-teal-100 text-slate-800 border-slate-200'
                             }`}
                           >
-                            <span className="w-5 h-5 rounded-full bg-white/30 text-[10px] font-black flex items-center justify-center shrink-0">
+                            <span className="w-6 h-6 rounded-full bg-white/30 text-xs font-black flex items-center justify-center shrink-0">
                               {String.fromCharCode(65 + i)}
                             </span>
                             {opt}
@@ -532,14 +552,14 @@ export default function CLILExplorer({
             <button
               type="button"
               onClick={() => setCurrentPhase(1)}
-              className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold transition"
+              className="px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-2xl text-xs sm:text-sm font-bold transition cursor-pointer"
             >
               ◀ Back to Part 1
             </button>
             <button
               type="button"
               onClick={() => setCurrentPhase(3)}
-              className="px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-2xl font-black text-xs sm:text-sm shadow-lg flex items-center gap-2 transition active:scale-95 hover:scale-105"
+              className="px-7 py-3.5 bg-teal-600 hover:bg-teal-500 text-white rounded-2xl font-black text-sm sm:text-base shadow-lg flex items-center gap-2 transition active:scale-95 hover:scale-105 cursor-pointer"
             >
               Sentence Builder Challenge ▶
             </button>
@@ -552,13 +572,13 @@ export default function CLILExplorer({
       {/* ========================================================================= */}
       {currentPhase === 3 && (
         <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-md space-y-4">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
               <div className="flex items-center gap-2">
-                <span className="text-lg">🧩</span>
+                <span className="text-xl">🧩</span>
                 <div>
-                  <h4 className="text-sm font-black text-slate-900">Sentence Builder Quest</h4>
-                  <p className="text-[10px] text-slate-500">
+                  <h4 className="text-base sm:text-lg font-black text-slate-900">Sentence Builder Quest</h4>
+                  <p className="text-xs sm:text-sm text-slate-500 font-medium">
                     Tap the scrambled chunks in the correct grammar order
                   </p>
                 </div>
@@ -572,7 +592,7 @@ export default function CLILExplorer({
                   key={i}
                   type="button"
                   onClick={() => { setSbIdx(i); setSbBuilt([]); setSbResult(null); }}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-black transition ${
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition cursor-pointer ${
                     sbIdx === i ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                   }`}
                 >
@@ -582,16 +602,16 @@ export default function CLILExplorer({
             </div>
 
             {/* Built sentence display */}
-            <div className="min-h-[60px] p-4 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 flex flex-wrap gap-2 items-start">
+            <div className="min-h-[70px] p-4 sm:p-5 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 flex flex-wrap gap-2.5 items-start">
               {sbBuilt.length === 0 ? (
-                <span className="text-xs text-slate-400 italic">Tap chunks below in the correct grammar order…</span>
+                <span className="text-sm text-slate-400 italic">Tap chunks below in the correct grammar order…</span>
               ) : (
                 sbBuilt.map((chunk, i) => (
                   <button
                     key={i}
                     type="button"
                     onClick={() => handleSbRemove(i)}
-                    className="px-3 py-1.5 bg-purple-100 hover:bg-rose-100 text-purple-900 hover:text-rose-700 border border-purple-300 hover:border-rose-300 rounded-xl text-xs font-bold transition active:scale-95"
+                    className="px-4 py-2 bg-purple-100 hover:bg-rose-100 text-purple-900 hover:text-rose-700 border border-purple-300 hover:border-rose-300 rounded-xl text-xs sm:text-sm font-bold transition active:scale-95 cursor-pointer"
                   >
                     {chunk} ×
                   </button>
@@ -600,14 +620,14 @@ export default function CLILExplorer({
             </div>
 
             {/* Remaining chips */}
-            <div className="space-y-1.5">
-              <div className="flex flex-wrap gap-2">
+            <div className="space-y-2">
+              <div className="flex flex-wrap gap-2.5">
                 {sbRemaining.map((chunk, i) => (
                   <button
                     key={i}
                     type="button"
                     onClick={() => handleSbSelect(chunk)}
-                    className="px-3.5 py-2 bg-white hover:bg-emerald-50 text-slate-800 border border-slate-300 hover:border-emerald-400 rounded-xl text-xs font-bold transition active:scale-95 shadow-sm"
+                    className="px-4 py-2.5 bg-white hover:bg-emerald-50 text-slate-800 border border-slate-300 hover:border-emerald-400 rounded-xl text-xs sm:text-sm font-bold transition active:scale-95 shadow-sm cursor-pointer"
                   >
                     {chunk}
                   </button>
@@ -616,27 +636,27 @@ export default function CLILExplorer({
             </div>
 
             {/* Actions */}
-            <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-3 flex-wrap pt-1">
               <button
                 type="button"
                 onClick={handleSbCheck}
                 disabled={sbBuilt.length === 0}
-                className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white font-black text-xs rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95"
+                className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white font-black text-xs sm:text-sm rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95 cursor-pointer"
               >
-                <CheckCircle2 size={15} /> Check Order
+                <CheckCircle2 size={16} /> Check Order
               </button>
               <button
                 type="button"
                 onClick={handleSbReset}
-                className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs rounded-xl flex items-center gap-1.5 transition"
+                className="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs sm:text-sm rounded-xl flex items-center gap-1.5 transition cursor-pointer"
               >
-                <RotateCcw size={14} /> Reset
+                <RotateCcw size={15} /> Reset
               </button>
               {sbResult && (
-                <div className={`flex-1 min-w-0 p-2.5 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
+                <div className={`flex-1 min-w-0 p-3 rounded-xl border text-xs sm:text-sm font-black flex items-center gap-2 animate-in fade-in ${
                   sbResult.correct ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
                 }`}>
-                  {sbResult.correct ? <CheckCircle2 size={15} /> : <AlertCircle size={15} />}
+                  {sbResult.correct ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
                   {sbResult.msg}
                 </div>
               )}
@@ -647,7 +667,7 @@ export default function CLILExplorer({
             <button
               type="button"
               onClick={() => setCurrentPhase(2)}
-              className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold transition"
+              className="px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-2xl text-xs sm:text-sm font-bold transition cursor-pointer"
             >
               ◀ Back to Part 2
             </button>
@@ -662,7 +682,7 @@ export default function CLILExplorer({
                   navigate(`/week/${weekNumber}/hub/1`);
                 }
               }}
-              className="px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-2xl font-black text-sm shadow-xl flex items-center gap-2 transition hover:scale-105 animate-bounce"
+              className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-2xl font-black text-sm sm:text-base shadow-xl flex items-center gap-2 transition hover:scale-105 animate-bounce cursor-pointer"
             >
               🎉 Claim CLIL Passport & Return to Map ▶
             </button>
@@ -672,3 +692,4 @@ export default function CLILExplorer({
     </div>
   );
 }
+

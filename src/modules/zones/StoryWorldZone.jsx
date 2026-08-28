@@ -1608,46 +1608,22 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
 
 
       {/* ========================================================================= */}
-      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER (Single Focused 3D Science Badge)       */}
-      {/* ========================================================================= */}
-      {/* ========================================================================= */}
-      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER (Desktop 3D Stamp Sidebar + Full Reading) */}
+      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER (Full-Width Expanded Layout)            */}
       {/* ========================================================================= */}
       {currentGear === 4 && (
         <div className="w-full animate-in fade-in duration-200">
-          {/* Main Layout: Desktop has Left 3D Stamp Sidebar, Mobile takes full 100% width */}
-          <div className="flex flex-col md:flex-row items-start gap-4 w-full">
-            {/* Desktop Left Sidebar with Big 3D Embossed Stamp */}
-            <div className="hidden md:block shrink-0">
-              <SingleSubjectPassportSidebar
-                currentSubject="science"
-                level={clilStampEarned ? 2 : 1}
-                customTitle={clilArticle?.title || clilArticle?.title_en || clilArticle?.theme || "CLIL Knowledge Explorer"}
-                customLevelTitle={activeWeek === 34 ? "Animal Cooperation Explorer" : "CLIL Science Explorer"}
-                customDesc={activeWeek === 34 ? "Discovered how animals help each other in the forest, work as a team, and protect nature." : "Mastered scientific principles, vocabulary, and inquiry in English."}
-                onSelectStamp={() => {
-                  setSelectedStampId('science');
-                  setShowStampModal(true);
-                }}
-              />
-            </div>
-
-            {/* Main Reading & Quiz Content */}
-            <div className="flex-1 min-w-0 w-full">
-              <CLILExplorer
-                clilData={clilArticle || readExplore}
-                weekNumber={activeWeek}
-                highlightMode={highlightMode}
-                setHighlightMode={setHighlightMode}
-                targetGrammarRegex={grammarRegex}
-                onCompleteCLIL={() => {
-                  setClilStampEarned(true);
-                  setSelectedStampId('science');
-                  setShowStampModal(true);
-                }}
-              />
-            </div>
-          </div>
+          <CLILExplorer
+            clilData={clilArticle || readExplore}
+            weekNumber={activeWeek}
+            highlightMode={highlightMode}
+            setHighlightMode={setHighlightMode}
+            targetGrammarRegex={grammarRegex}
+            onCompleteCLIL={() => {
+              setClilStampEarned(true);
+              setSelectedStampId('science');
+              setShowStampModal(true);
+            }}
+          />
 
           {/* Grand Stamp Slam Animation Modal */}
           <GrandStampModal
