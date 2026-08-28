@@ -80,55 +80,65 @@ export const speakingHub = {
     },
     table_b: {
       title: "Jake's First Aid Action",
-      subtitle: "Candidate's Information Sheet (Answer Examiner)",
+      subtitle: "Your Information Card — Answer the Examiner's Questions",
       person: "Jake",
       fields: [
         {
           id: "field_b1",
-          label: "Where Jake helped",
-          value: "Near Science Room",
+          label: "Where did Jake help Tom?",
+          value: "Near the science room.",
           nova_question: "Where did Jake help his friend?",
           audio_url: "/audio/week33/info_exchange_q1.mp3",
+          hint: "Check your card — where was Jake standing when he helped?",
           acceptable_answers: [
             "He helped him near the science room.",
             "Near the science room.",
-            "In the school corridor near the science lab."
+            "In the school corridor near the science lab.",
+            "Near the science lab."
           ]
         },
         {
           id: "field_b2",
-          label: "First aid item",
-          value: "Clean Bandage and Cold Pack",
+          label: "What first-aid items did the nurse use?",
+          value: "A clean bandage and a cold pack.",
           nova_question: "What first aid items did the nurse use?",
           audio_url: "/audio/week33/info_exchange_q2.mp3",
+          hint: "Look at your card — two items are listed.",
           acceptable_answers: [
             "The nurse used a clean bandage and a cold pack.",
             "A clean bandage and a cold pack.",
-            "Clean bandage and cold pack."
+            "Clean bandage and cold pack.",
+            "She used a bandage and a cold pack."
           ]
         },
         {
           id: "field_b3",
-          label: "Nurse arrival time",
-          value: "Within Two Minutes",
+          label: "How fast did the nurse arrive?",
+          value: "Within two minutes.",
           nova_question: "How fast did the school nurse arrive to help?",
           audio_url: "/audio/week33/info_exchange_q3.mp3",
+          hint: "Your card says the nurse was very quick — how many minutes?",
           acceptable_answers: [
             "She arrived within two minutes.",
             "Within two minutes.",
-            "In about two minutes."
+            "In about two minutes.",
+            "Two minutes.",
+            "In two minutes."
           ]
         },
         {
           id: "field_b4",
-          label: "Who praised Jake",
-          value: "Headmaster in Assembly",
+          label: "Who praised Jake?",
+          value: "The headmaster praised him in the school assembly.",
           nova_question: "Who praised Jake for his quick action?",
           audio_url: "/audio/week33/info_exchange_q4.mp3",
+          hint: "Who spoke about Jake in front of the whole school?",
           acceptable_answers: [
             "The headmaster praised him in school assembly.",
             "Headmaster Brown in the assembly.",
-            "The headmaster."
+            "The headmaster.",
+            "Headmaster Brown praised Jake.",
+            "The headmaster praised him."
           ]
         }
       ]

@@ -36,12 +36,22 @@ export default function CLILExplorer({
     ];
   }, [clilData, targetGrammarRegex]);
 
+  // VOCAB FOCUS: hub vocab_focus is a curated list of chunks/collocations.
+  // We build regex patterns from each item (multi-word safe).
   const vocabPills = useMemo(() => {
-    if (Array.isArray(clilData?.vocab_focus) && clilData.vocab_focus.length > 0) return clilData.vocab_focus;
-    if (Array.isArray(clilData?.target_vocab) && clilData.target_vocab.length > 0) return clilData.target_vocab;
-    if (Array.isArray(clilData?.glossary) && clilData.glossary.length > 0) return clilData.glossary.map(g => g.term.toLowerCase());
+    const raw = clilData?.vocab_focus || clilData?.target_vocab || [];
+    if (Array.isArray(raw) && raw.length > 0) return raw;
+    // Fallback: do NOT auto-derive from glossary — that defeats the curated purpose
     return [];
   }, [clilData]);
+
+  // Build highlight regex patterns for vocab focus (multi-word aware)
+  const vocabHighlightPatterns = useMemo(() => {
+    return vocabPills.map(chunk => ({
+      pattern: '\\b' + chunk.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+') + '\\b',
+      label: chunk
+    }));
+  }, [vocabPills]);
 
   // Default Paragraph Split
   const fullText = clilData?.content_en || clilData?.content || "";
@@ -63,34 +73,32 @@ export default function CLILExplorer({
     ];
   }, [fullText]);
 
+  // Select the grammar pattern appropriate to the CURRENT PHASE (paragraph_scope).
+  // paragraph_scope: 1 = P1 only, 2 = P2 only, 0 = both
+  const activeScopedPattern = useMemo(() => {
+    for (const gp of grammarPatterns) {
+      const scope = gp.paragraph_scope ?? 0;
+      if (scope === 0 || scope === currentPhase) return gp;
+    }
+    return grammarPatterns[0] || { pattern: '', label: 'Target Grammar Focus', paragraph_scope: 0 };
+  }, [grammarPatterns, currentPhase]);
+
   const grammarLegend = useMemo(() => {
     const src = currentPhase === 2 ? (paragraphs[1] || paragraphs[0]) : paragraphs[0];
     const out = [];
-    grammarPatterns.forEach((gp) => {
-      try {
-        const re = new RegExp(gp.pattern, 'gi');
-        let m;
-        while ((m = re.exec(src)) !== null && out.length < 8) {
-          out.push(m[0]);
-          if (m.index === re.lastIndex) re.lastIndex++;
-        }
-      } catch (_) {}
-    });
+    if (!activeScopedPattern?.pattern) return out;
+    try {
+      const re = new RegExp(activeScopedPattern.pattern, 'gi');
+      let m;
+      while ((m = re.exec(src)) !== null && out.length < 8) {
+        out.push(m[0]);
+        if (m.index === re.lastIndex) re.lastIndex++;
+      }
+    } catch (_) {}
     return out;
-  }, [paragraphs, grammarPatterns, currentPhase]);
+  }, [paragraphs, activeScopedPattern, currentPhase]);
 
-  const activeGrammarInfo = useMemo(() => {
-    const src = currentPhase === 2 ? (paragraphs[1] || paragraphs[0]) : paragraphs[0];
-    for (const gp of grammarPatterns) {
-      try {
-        const re = new RegExp(gp.pattern, 'gi');
-        if (re.test(src)) {
-          return gp;
-        }
-      } catch (_) {}
-    }
-    return grammarPatterns[0] || { pattern: '', label: 'Target Grammar Focus' };
-  }, [paragraphs, grammarPatterns, currentPhase]);
+  const activeGrammarInfo = activeScopedPattern;
 
   // Questions derived from clilData
   const allQuestions = useMemo(() => {
@@ -300,14 +308,18 @@ export default function CLILExplorer({
           </div>
           <div className="flex flex-wrap gap-2">
             {clilData.glossary.map((item, idx) => (
-              <span
+              <button
                 key={idx}
+                type="button"
                 data-testid="clil-glossary-chip"
-                className="px-3 py-1 bg-white border border-teal-300 text-teal-950 rounded-xl text-xs font-bold shadow-xs flex items-center gap-1.5"
+                onClick={() => VoiceService.speak(item.term || item.word, 'explore')}
+                title={`Tap to hear: ${item.term || item.word}`}
+                className="px-3 py-1 bg-white border border-teal-300 text-teal-950 rounded-xl text-xs font-bold shadow-xs flex items-center gap-1.5 hover:bg-teal-50 active:scale-95 transition cursor-pointer"
               >
+                <Volume2 size={11} className="text-teal-600 shrink-0" />
                 <span className="font-black text-teal-800">{item.term || item.word}:</span>
                 <span className="text-slate-700 font-medium">{item.meaning || item.def}</span>
-              </span>
+              </button>
             ))}
           </div>
         </div>
@@ -351,7 +363,7 @@ export default function CLILExplorer({
               <span>📖 PARAGRAPH 1: {(clilData?.part_1_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
             <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
-              {renderParsedText(paragraphs[0], 'emerald', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? grammarPatterns : (vocabPills || []).map(v => ({ pattern: '\\b' + v + '\\b' })))}
+              {renderParsedText(paragraphs[0], 'emerald', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? [activeScopedPattern].filter(Boolean) : vocabHighlightPatterns)}
             </p>
 
             {/* Paragraph 1 Check Questions */}
@@ -426,7 +438,7 @@ export default function CLILExplorer({
               <span>📖 PARAGRAPH 2: {(clilData?.part_2_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
             <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
-              {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? grammarPatterns : (vocabPills || []).map(v => ({ pattern: '\\b' + v + '\\b' })))}
+              {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? [activeScopedPattern].filter(Boolean) : vocabHighlightPatterns)}
             </p>
 
             {/* Paragraph 2 Check Questions */}

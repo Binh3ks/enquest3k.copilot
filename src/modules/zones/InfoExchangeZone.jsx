@@ -415,7 +415,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
               <span>{phase === 'table_a' ? tableA.title : tableB.title}</span>
             </span>
             <span className="text-[10px] sm:text-[11px] font-bold text-indigo-200 uppercase tracking-wider">
-              {phase === 'table_a' ? "Candidate's Question Card" : "Candidate's Information Sheet"}
+              {phase === 'table_a' ? (tableA.subtitle || "Candidate's Question Card") : (tableB.subtitle || "Candidate's Information Sheet")}
             </span>
           </div>
 
@@ -785,6 +785,11 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                     <p className="text-sm font-bold text-slate-800">
                       You said: <span className="italic">"{transcriptB || '(unclear audio)'}"</span>
                     </p>
+                    {!evalResultB.isCorrect && currentFieldB?.hint && (
+                      <p className="mt-2 text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1.5 rounded-xl flex items-center gap-1.5">
+                        💡 Hint: {currentFieldB.hint}
+                      </p>
+                    )}
                   </div>
 
                   {/* Model Answer for Learning */}

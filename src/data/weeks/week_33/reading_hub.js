@@ -25,10 +25,24 @@ export const readingHubData = {
     content_en: "Why do people slip on wet floors? The answer is a science force called friction. Friction is the grip between two surfaces that stops things from sliding. When a student walks on dry tiles, shoe soles grip the floor firmly and the student stays balanced. But water on smooth tiles creates a thin slippery layer. This water layer reduces friction, so shoes slide easily.\n\nThis morning in our school corridor, Jake was walking carefully while the cleaner was drying the floor. Tom was running quickly to class, so he slipped on the wet tiles. Rubber soles provide strong grip because rubber holds surfaces better than plastic. Yellow warning signs remind students to walk slowly. Understanding friction keeps everyone safe!",
     content_vi: "Tại sao mọi người lại bị trượt chân trên sàn nhà ướt? Câu trả lời nằm ở một lực khoa học mang tên Lực Ma Sát. Ma sát là độ bám giữa hai bề mặt giúp ngăn đồ vật không bị trượt. Khi học sinh đi trên gạch khô, đế giày bám chặt vào sàn và học sinh giữ được thăng bằng. Nhưng nước trên sàn gạch nhẵn tạo ra một lớp màng trơn mỏng. Lớp nước này làm giảm lực ma sát, khiến giày bị trượt dễ dàng.\n\nSáng nay tại hành lang trường học, Jake đang đi bộ cẩn thận trong khi nhân viên vệ sinh đang lau khô sàn. Tom đang chạy nhanh tới lớp nên đã bị trượt trên sàn gạch ướt. Đế cao su tạo độ bám tốt vì cao su bám bề mặt chắc hơn nhựa. Các biển báo màu vàng nhắc nhở học sinh đi chậm lại. Hiểu về lực ma sát giúp tất cả chúng ta luôn an toàn!",
     audio_url: "/audio/week33/clil_friction.mp3",
-    vocab_focus: ["friction", "smooth", "rubber", "tiles", "shoes", "surface", "grip", "safe", "warning", "floor", "balance", "slippery"],
+    // VOCAB FOCUS: Curated pedagogical target chunks/collocations ONLY — NOT every clickable word.
+    // Each item is a meaningful lexical unit selected because it exemplifies a useful chunk or collocation.
+    // Dictionary clickability covers more words; this list is intentionally small.
+    vocab_focus: [
+      "slippery layer",
+      "shoe soles",
+      "rubber soles",
+      "warning sign",
+      "reduces friction",
+      "grip the floor",
+      "stays balanced"
+    ],
+    // GRAMMAR X-RAY: Two-pattern system.
+    // paragraph_scope: 1 = Paragraph 1 only, 2 = Paragraph 2 only, 0 = both.
+    // The renderer must only activate the pattern whose paragraph_scope matches the current phase.
     grammar_patterns: [
-      { pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous (Action in Progress)' },
-      { pattern: '\\b(stops|walks|grip|creates|reduces|slide|holds)\\b', label: 'Present Simple (Scientific Principles)' }
+      { pattern: '\\b(stops|grip|creates|reduces|slide|walks|holds|provides|remind)\\b', label: 'Present Simple — Scientific Principles', paragraph_scope: 1 },
+      { pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous — Action in Progress', paragraph_scope: 2 }
     ],
     sentence_drills: [
       {
