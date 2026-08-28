@@ -1,14 +1,11 @@
 /**
  * regenerate_w33_listening_audio.mjs
- * Regenerates W33 Listening Parts 1-5 MP3s with mandatory Example segments.
- * Cambridge format: [Intro] → [Example exchange + pause] → [Items 1-5]
- *
- * ARCHITECTURE INVARIANT — Cambridge dialogue tasks:
- *   - dialogue_script[] in listening_hub.js is the ONE SOURCE OF TRUTH for L2 content.
- *   - Each turn = { speaker: 'man'|'woman', text: '<spoken words only>' }
- *   - Speaker identity controls TTS voice selection ONLY — it is never spoken aloud.
- *   - The generator MUST fail if a text field contains raw speaker labels ("Man:" / "Woman:").
- *   - The generator MUST fail if a 2-speaker dialogue resolves to fewer than 2 distinct voices.
+ * Regenerates W33 Listening Parts 1-5 MP3s with Cambridge-compliant Dual Voices.
+ * 
+ * Distinct Voice Profiles:
+ *   - Adult Female Teacher / Examiner (woman / teacher): en-US-Neural2-F (pitch: -1.5, rate: 0.86) — warm, mature, authoritative
+ *   - Young Female Student Mia (girl / mia):            en-US-Neural2-C (pitch: +4.0, rate: 0.98) — bright, cheerful, high-pitch child tone
+ *   - Male Student Jake / Examiner (man / boy):          en-US-Neural2-D (pitch: +1.0, rate: 0.95) — natural young male tone
  *
  * Usage: node scripts/regenerate_w33_listening_audio.mjs
  */
@@ -25,19 +22,17 @@ const OUT_DIR = path.join(rootDir, 'public/audio/week33');
 const API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_API_KEY;
 if (!API_KEY) { console.error('❌ No TTS API key. Set VITE_GOOGLE_TTS_API_KEY in .env'); process.exit(1); }
 
-// ── Voice constants — cambridgeA2 Flyers speaker roles ──────────────────────
-const VOICE_F = 'en-US-Journey-F';   // woman / girl / examiner-female
-const VOICE_M = 'en-US-Neural2-D';   // man / boy / narrator-male
-
-const SPEAKER_VOICE_MAP = {
-  woman: VOICE_F,
-  girl:  VOICE_F,
-  man:   VOICE_M,
-  boy:   VOICE_M,
+// ── Voice Configurations with Custom Pitch & Speaking Rate ──────────────────
+const SPEAKER_CONFIG = {
+  woman:   { voice: 'en-US-Neural2-F', pitch: -1.5, rate: 0.86 }, // Adult Teacher / Examiner
+  teacher: { voice: 'en-US-Neural2-F', pitch: -1.5, rate: 0.86 },
+  girl:    { voice: 'en-US-Neural2-C', pitch: 4.0,  rate: 0.98 }, // Young Girl Student (Mia)
+  mia:     { voice: 'en-US-Neural2-C', pitch: 4.0,  rate: 0.98 },
+  man:     { voice: 'en-US-Neural2-D', pitch: 1.0,  rate: 0.95 }, // Male Student (Jake) / Narrator
+  boy:     { voice: 'en-US-Neural2-D', pitch: 1.0,  rate: 0.95 },
 };
 
 // ── Silence padding between dialogue turns (200ms silent MP3 frame) ──────────
-// This is a minimal valid MP3 silence buffer (4 silent frames at 44.1kHz, 128kbps)
 const SILENCE_200MS = Buffer.from(
   'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' +
   'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
@@ -45,14 +40,21 @@ const SILENCE_200MS = Buffer.from(
 );
 
 // ── Core TTS call ────────────────────────────────────────────────────────────
-async function tts(text, voice = VOICE_F, speakingRate = 0.88) {
-  if (!text || !text.trim()) throw new Error(`tts(): empty text passed for voice ${voice}`);
+async function tts(text, speakerOrConfig = 'woman') {
+  if (!text || !text.trim()) throw new Error('tts(): empty text passed');
+
+  let config = SPEAKER_CONFIG.woman;
+  if (typeof speakerOrConfig === 'string') {
+    config = SPEAKER_CONFIG[speakerOrConfig.toLowerCase()] || SPEAKER_CONFIG.woman;
+  } else if (typeof speakerOrConfig === 'object') {
+    config = speakerOrConfig;
+  }
 
   // Safety guard — ensure no speaker label leaked into TTS input
-  const labelPattern = /\b(Man|Woman|Girl|Boy|Nova|Teacher|Mia)\s*:/;
+  const labelPattern = /\b(Man|Woman|Girl|Boy|Nova|Teacher|Mia)\s*:/i;
   if (labelPattern.test(text)) {
     throw new Error(
-      `tts() REJECTED: Speaker label detected in text for voice ${voice}.\n` +
+      `tts() REJECTED: Speaker label detected in text.\n` +
       `  Input: "${text.slice(0, 80)}..."\n` +
       `  Speaker identity must be metadata, not spoken content.`
     );
@@ -62,8 +64,8 @@ async function tts(text, voice = VOICE_F, speakingRate = 0.88) {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       input: { text },
-      voice: { languageCode: 'en-US', name: voice },
-      audioConfig: { audioEncoding: 'MP3', speakingRate }
+      voice: { languageCode: 'en-US', name: config.voice },
+      audioConfig: { audioEncoding: 'MP3', speakingRate: config.rate, pitch: config.pitch }
     })
   });
   if (!res.ok) throw new Error(`TTS ${res.status}: ${await res.text()}`);
@@ -76,19 +78,8 @@ function save(filename, buf) {
 }
 
 // ── Cambridge Dialogue Validator ─────────────────────────────────────────────
-/**
- * Validates a dialogue_script[] before TTS generation.
- * Enforces:
- *   1. Minimum 2 turns
- *   2. All speakers have a voice mapping
- *   3. Required speakers all present
- *   4. At least 2 DISTINCT voices are used (no single-voice simulation)
- *   5. No text field contains a raw speaker label ("Man:", "Woman:", etc.)
- *
- * Throws an Error with a descriptive message on any violation.
- */
 function validateDialogueScript(dialogueScript, requiredSpeakers = []) {
-  const labelPattern = /\b(Man|Woman|Girl|Boy|Nova|Teacher|Mia)\s*:/;
+  const labelPattern = /\b(Man|Woman|Girl|Boy|Nova|Teacher|Mia)\s*:/i;
 
   if (!Array.isArray(dialogueScript) || dialogueScript.length < 2) {
     throw new Error(`validateDialogueScript: dialogue_script must have >= 2 turns. Got ${dialogueScript?.length ?? 0}.`);
@@ -108,10 +99,11 @@ function validateDialogueScript(dialogueScript, requiredSpeakers = []) {
     }
 
     const speakerKey = turn.speaker.toLowerCase();
-    if (!SPEAKER_VOICE_MAP[speakerKey]) {
+    const config = SPEAKER_CONFIG[speakerKey];
+    if (!config) {
       throw new Error(
         `validateDialogueScript: Unknown speaker '${turn.speaker}' at turn ${i}. ` +
-        `Known speakers: ${Object.keys(SPEAKER_VOICE_MAP).join(', ')}.`
+        `Known speakers: ${Object.keys(SPEAKER_CONFIG).join(', ')}.`
       );
     }
 
@@ -124,7 +116,7 @@ function validateDialogueScript(dialogueScript, requiredSpeakers = []) {
     }
 
     usedSpeakers.add(speakerKey);
-    usedVoices.add(SPEAKER_VOICE_MAP[speakerKey]);
+    usedVoices.add(`${config.voice}_p${config.pitch}`);
   }
 
   // Check required speakers are present
@@ -134,49 +126,39 @@ function validateDialogueScript(dialogueScript, requiredSpeakers = []) {
     }
   }
 
-  // Cambridge 2-speaker dialogue must use 2 DISTINCT voices
+  // Cambridge 2-speaker dialogue must use 2 DISTINCT voices/tones
   if (requiredSpeakers.length >= 2 && usedVoices.size < 2) {
-    const voiceList = [...usedVoices].join(', ');
     throw new Error(
-      `validateDialogueScript: Cambridge 2-speaker dialogue resolved to only 1 voice (${voiceList}). ` +
-      `Man and Woman must map to different voice IDs.`
+      `validateDialogueScript: Cambridge 2-speaker dialogue resolved to only 1 voice profile.`
     );
   }
 
   console.log(
     `  ✔ dialogue_script valid: ${dialogueScript.length} turns, ` +
     `${usedSpeakers.size} speakers (${[...usedSpeakers].join(', ')}), ` +
-    `${usedVoices.size} distinct voices.`
+    `${usedVoices.size} distinct voice profiles.`
   );
 }
 
 // ── Cambridge Dialogue Generator ─────────────────────────────────────────────
-/**
- * Generates a composite MP3 from a validated dialogue_script.
- * Each turn is TTS'd independently with the correct voice.
- * A brief silence is inserted between consecutive turns of DIFFERENT speakers.
- *
- * @param {Array}  dialogueScript - Validated dialogue_script array from hub data
- * @param {number} [pauseMs=200]  - Pause duration between speaker switches (ms)
- * @returns {Buffer} Concatenated MP3 buffer
- */
 async function generateDialogueAudio(dialogueScript, pauseMs = 200) {
   const buffers = [];
-  let prevVoice = null;
+  let prevSpeaker = null;
 
   for (let i = 0; i < dialogueScript.length; i++) {
     const turn = dialogueScript[i];
-    const voice = SPEAKER_VOICE_MAP[turn.speaker.toLowerCase()];
+    const speakerKey = turn.speaker.toLowerCase();
+    const config = SPEAKER_CONFIG[speakerKey] || SPEAKER_CONFIG.woman;
 
     // Insert silence when speaker switches
-    if (prevVoice !== null && voice !== prevVoice) {
+    if (prevSpeaker !== null && speakerKey !== prevSpeaker) {
       buffers.push(SILENCE_200MS);
     }
 
-    console.log(`    [${i + 1}/${dialogueScript.length}] ${turn.speaker.padEnd(6)} → ${voice.split('-').pop()} ...`);
-    const buf = await tts(turn.text, voice);
+    console.log(`    [${i + 1}/${dialogueScript.length}] ${turn.speaker.padEnd(7)} → ${config.voice.split('-').pop()} (pitch ${config.pitch}) ...`);
+    const buf = await tts(turn.text, config);
     buffers.push(buf);
-    prevVoice = voice;
+    prevSpeaker = speakerKey;
   }
 
   return Buffer.concat(buffers);
@@ -185,166 +167,100 @@ async function generateDialogueAudio(dialogueScript, pauseMs = 200) {
 // ── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  console.log('🔊 W33 Listening Audio Regeneration — Cambridge-compliant\n');
+  console.log('🔊 W33 Listening Audio Regeneration — Distinct Cambridge Multi-Voice\n');
 
-  // ── Load W33 listening_hub.js as the authoritative data source ──────────
+  // ── Load W33 listening_hub.js as authoritative source ─────────────────────
   const hubPath = path.join(rootDir, 'src/data/weeks/week_33/listening_hub.js');
   const hubModule = await import(`file://${hubPath}`);
   const hub = hubModule.listeningHub || hubModule.listeningHubData || hubModule.default;
-  if (!hub) throw new Error('Failed to load listening_hub.js — no named or default export found.');
+  if (!hub) throw new Error('Failed to load listening_hub.js.');
   console.log('📂 Loaded listening_hub.js as data source.\n');
 
-  // ── L1: Draw a Line ──────────────────────────────────────────────────────
-  console.log('🎧 L1: Draw a Line (passage audio)...');
-  // L1 uses a multi-speaker passage_audio_script string (Teacher + Mia).
-  // Runtime plays this via TTS (VoiceService), so pre-generated file uses VOICE_F.
-  // Speaker labels in this string are NOT spoken — they guide staging only.
-  // Strip speaker labels before TTS to prevent them being spoken aloud.
-  const l1Raw = hub.listening_p1.passage_audio_script;
-  const l1Cleaned = l1Raw
-    .replace(/^(Teacher|Mia|Nova)\s*:\s*/gm, '')
-    .trim();
-  save('listening_p1_full.mp3', await tts(l1Cleaned, VOICE_F, 0.85));
+  // ── L1: Draw a Line (Teacher & Mia — Adult vs Child) ───────────────────────
+  console.log('🎧 L1: Draw a Line (Teacher Neural2-F pitch -1.5 vs Mia Neural2-C pitch +4.0)...');
+  const p1 = hub.listening_p1;
+  if (!p1.dialogue_script) throw new Error('listening_p1 missing dialogue_script');
+  validateDialogueScript(p1.dialogue_script, ['woman', 'girl']);
+  const l1Buf = await generateDialogueAudio(p1.dialogue_script, 250);
+  save('listening_p1_full.mp3', l1Buf);
   console.log('');
 
-  // ── L2: Note Completion — FIXED TWO-VOICE DIALOGUE ─────────────────────
-  console.log('📝 L2: Note Completion (dual-voice dialogue)...');
+  // ── L2: Note Completion (Examiner Female vs Jake Male) ─────────────────────
+  console.log('📝 L2: Note Completion (Examiner Neural2-F vs Jake Neural2-D)...');
   const p2 = hub.listening_p2;
-
-  if (!p2.dialogue_script) {
-    throw new Error('listening_p2 is missing dialogue_script. Add it to listening_hub.js.');
-  }
-
-  // Phase 4: Structural validation BEFORE TTS
-  console.log('  Validating dialogue_script...');
-  validateDialogueScript(p2.dialogue_script, p2.required_speakers || ['man', 'woman']);
-
-  // Phase 3: Per-turn generation with correct speaker voices
+  if (!p2.dialogue_script) throw new Error('listening_p2 missing dialogue_script');
+  validateDialogueScript(p2.dialogue_script, ['woman', 'man']);
   const l2Buf = await generateDialogueAudio(p2.dialogue_script, 200);
   save('listening_p2_full.mp3', l2Buf);
   console.log('');
 
-  // ── L3: Visual Matching A-H ──────────────────────────────────────────────
-  console.log('🔤 L3: Matching A-H (example + items 1-5)...');
-  const l3Example = `Listen and write a letter in each box. There is one example.
-Look at the picture. What is the tool used to clean a wet floor?
-That is the cleaning mop. Can you see the letter H in the box? That is the example.
-Now you listen and write a letter in each box.`;
-  const l3ExBuf = await tts(l3Example, VOICE_F);
+  // ── L3: Visual Matching A-H (Examiner Female vs Jake Male) ────────────────
+  console.log('🔤 L3: Matching A-H (Reading dialogue directly from listening_hub.js)...');
+  const p3 = hub.listening_p3;
+  if (!p3.example?.dialogue_script) throw new Error('listening_p3 example missing dialogue_script');
+  
+  console.log('  Generating L3 Example (School Backpack)...');
+  validateDialogueScript(p3.example.dialogue_script, ['woman', 'man']);
+  const l3ExBuf = await generateDialogueAudio(p3.example.dialogue_script, 200);
   save('listening_p3_example.mp3', l3ExBuf);
 
-  const l3Items = [
-    {
-      f: 'listening_p3_item1.mp3',
-      turns: [
-        { speaker: 'man',   text: 'Look at the first picture. What are the steps inside the school building that go up and down between floors?' },
-        { speaker: 'woman', text: 'Those are the school stairs. They go up to the second floor.' },
-        { speaker: 'man',   text: 'School stairs. Write the letter.' }
-      ]
-    },
-    {
-      f: 'listening_p3_item2.mp3',
-      turns: [
-        { speaker: 'man',   text: 'What is the yellow board placed on the wet floor to warn students to be careful?' },
-        { speaker: 'woman', text: 'That is the warning sign. It says Be Careful.' },
-        { speaker: 'man',   text: 'Warning sign. Write the letter.' }
-      ]
-    },
-    {
-      f: 'listening_p3_item3.mp3',
-      turns: [
-        { speaker: 'man',   text: 'What is the white box with a red cross kept in the nurse office for injuries?' },
-        { speaker: 'woman', text: 'That is the first aid kit. The nurse keeps it ready.' },
-        { speaker: 'man',   text: 'First aid kit. Write the letter.' }
-      ]
-    },
-    {
-      f: 'listening_p3_item4.mp3',
-      turns: [
-        { speaker: 'man',   text: 'What is the blue bag filled with ice that the nurse puts on a swollen knee?' },
-        { speaker: 'woman', text: 'That is the cold pack. It stops the knee from swelling.' },
-        { speaker: 'man',   text: 'Cold pack. Write the letter.' }
-      ]
-    },
-    {
-      f: 'listening_p3_item5.mp3',
-      turns: [
-        { speaker: 'man',   text: 'What is the long white cloth strip wrapped around a cut or hurt part of the body?' },
-        { speaker: 'woman', text: 'That is the clean bandage. The nurse uses it to cover the wound.' },
-        { speaker: 'man',   text: 'Clean bandage. Write the letter.' }
-      ]
-    },
-  ];
-
   const l3Bufs = [l3ExBuf];
-  for (const item of l3Items) {
-    validateDialogueScript(item.turns);
-    const buf = await generateDialogueAudio(item.turns);
-    save(item.f, buf);
-    l3Bufs.push(buf);
+  for (let idx = 0; idx < p3.items.length; idx++) {
+    const item = p3.items[idx];
+    console.log(`  Generating L3 Item ${item.id} (${item.name})...`);
+    validateDialogueScript(item.dialogue_script, ['woman', 'man']);
+    const itemBuf = await generateDialogueAudio(item.dialogue_script, 200);
+    save(`listening_p3_item${item.id}.mp3`, itemBuf);
+    l3Bufs.push(itemBuf);
   }
   save('listening_p3_full.mp3', Buffer.concat(l3Bufs));
   console.log('');
 
-  // ── L4: 3-Picture Quiz ────────────────────────────────────────────────────
+  // ── L4: 3-Picture Quiz (Example Female, Questions Male) ───────────────────
   console.log('☑️  L4: 3-Picture Quiz (example + Q1-Q5)...');
   const l4Scripts = [
-    { f: 'listening_p4_example.mp3', v: VOICE_F,
+    { f: 'listening_p4_example.mp3', s: 'woman',
       t: `Look at the example. Where was Jake walking after class? He was walking carefully in the school corridor. Can you see the tick next to picture A? Now you listen and tick the box.` },
-    { f: 'listening_p4_q1.mp3',    v: VOICE_M,
+    { f: 'listening_p4_q1.mp3',    s: 'man',
       t: `Question 1. Why was the floor slippery near the science room? The cleaner had just washed the tiles with water.` },
-    { f: 'listening_p4_q2.mp3',    v: VOICE_M,
+    { f: 'listening_p4_q2.mp3',    s: 'man',
       t: `Question 2. What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.` },
-    { f: 'listening_p4_q3.mp3',    v: VOICE_M,
+    { f: 'listening_p4_q3.mp3',    s: 'man',
       t: `Question 3. What did Jake do immediately? He ran to the nurse room to call for help.` },
-    { f: 'listening_p4_q4.mp3',    v: VOICE_M,
+    { f: 'listening_p4_q4.mp3',    s: 'man',
       t: `Question 4. What did the nurse use to treat the knee? She used a clean bandage and a cold pack.` },
-    { f: 'listening_p4_q5.mp3',    v: VOICE_M,
+    { f: 'listening_p4_q5.mp3',    s: 'man',
       t: `Question 5. What did the headmaster say during assembly? He praised Jake for following safety habits.` },
   ];
   const l4Bufs = [];
   for (const s of l4Scripts) {
-    const buf = await tts(s.t, s.v);
+    const buf = await tts(s.t, s.s);
     save(s.f, buf);
     l4Bufs.push(buf);
   }
   save('listening_p4_full.mp3', Buffer.concat(l4Bufs));
   console.log('');
 
-  // ── L5: Colour and Write — CARE PRONUNCIATION FIX ───────────────────────
-  // DEFECT DEF-003: 'CARE' (single-quoted uppercase) was misread by TTS as "See AR".
-  // FIX: Use lowercase "care" without quotes. TTS reads it as the natural English word.
-  // The word's identity is preserved in the hub data instruction fields (word: "CARE").
+  // ── L5: Colour and Write (Examiner Female vs Jake Male) ───────────────────
   console.log('🎨 L5: Colour and Write (CARE pronunciation fix)...');
-
-  // Build L5 dialogue as structured turns to maintain consistency
   const l5Turns = [
     { speaker: 'woman', text: 'Listen and colour and write. There is one example.' },
     { speaker: 'woman', text: "Look at this picture of the school corridor. Can you see Jake's friend sitting on the bench?" },
     { speaker: 'man',   text: 'Yes, I can see him.' },
     { speaker: 'woman', text: 'Good. Colour his notebook yellow.' },
     { speaker: 'woman', text: "Can you see the yellow notebook? That is the example. Now you listen and colour and write." },
-    // Instruction 1: colour backpack blue
     { speaker: 'woman', text: 'Now look at Jake. He is carrying a backpack.' },
     { speaker: 'man',   text: 'Shall I colour his backpack blue?' },
     { speaker: 'woman', text: "Yes, colour Jake's backpack blue." },
-    // Instruction 2: write WET
     { speaker: 'woman', text: 'Look at the warning sign near the wet tiles. Can you write a word on it?' },
     { speaker: 'man',   text: 'Sure. What word should I write?' },
-    // FIX: 'WET' → lowercase "wet" to prevent uppercase acronym misread
     { speaker: 'woman', text: 'Write the word wet on the sign.' },
-    // Instruction 3: colour door green
     { speaker: 'woman', text: 'Can you find the science lab door frame?' },
     { speaker: 'man',   text: 'Yes, it is next to the lockers.' },
     { speaker: 'woman', text: 'Colour the door frame bright green.' },
-    // Instruction 4: write CARE — FIX: lowercase "care" prevents "See AR" TTS artifact
     { speaker: 'woman', text: 'Look at the notice board on the wall. Can you write one more word?' },
     { speaker: 'man',   text: 'Yes, what should I write?' },
-    // KEY FIX: was 'CARE' (uppercase, single-quoted) → now lowercase "care"
-    // TTS reads uppercase isolated letters as individual characters → "See AR"
-    // Lowercase "care" → natural English word pronunciation
     { speaker: 'woman', text: 'Write the word care on the board.' },
-    // Instruction 5: colour door red
     { speaker: 'woman', text: 'Now look at the nurse room door at the end of the corridor.' },
     { speaker: 'man',   text: 'Should I colour it red?' },
     { speaker: 'woman', text: 'Yes, colour the nurse room door red.' },
@@ -354,30 +270,19 @@ Now you listen and write a letter in each box.`;
   const l5Buf = await generateDialogueAudio(l5Turns, 150);
   save('listening_p5_full.mp3', l5Buf);
 
-  // Individual instruction files (for per-step playback in SVGColorAndWrite)
-  // These use plain English words — no uppercase acronym risk
   const l5Insts = [
     { f: 'listening_p5_inst1.mp3', t: "Colour Jake's backpack blue" },
     { f: 'listening_p5_inst2.mp3', t: 'Write the word wet on the warning sign' },
     { f: 'listening_p5_inst3.mp3', t: 'Colour the science lab door frame bright green' },
-    // FIX: was 'Write the word CARE on the notice board' → lowercase "care"
     { f: 'listening_p5_inst4.mp3', t: 'Write the word care on the notice board' },
     { f: 'listening_p5_inst5.mp3', t: 'Colour the nurse room door red' },
   ];
   for (const inst of l5Insts) {
-    save(inst.f, await tts(inst.t, VOICE_F));
+    save(inst.f, await tts(inst.t, 'woman'));
   }
   console.log('');
 
-  // ── L1 Target files — DOCUMENTED AS ORPHANED ASSETS ─────────────────────
-  // listening_p1_target1.mp3 through target5.mp3 are NOT referenced at runtime.
-  // SVGLineMatcher plays the passage_audio_script via live TTS (VoiceService).
-  // These files currently contain wrong character names (Nurse Clara, Mr. Davis, Emma).
-  // Action: NOT regenerated — see ORPHANED_AUDIO_MANIFEST below.
-  console.log('⚠️  L1 target1-5.mp3: ORPHANED — not referenced at runtime. Not regenerated.');
-  console.log('   See: public/audio/week33/ORPHANED_AUDIO_MANIFEST.md for details.\n');
-
-  console.log('✅ ALL DONE — W33 Listening audio regenerated (Cambridge-compliant, dual-voice).');
+  console.log('✅ ALL DONE — W33 Listening audio regenerated with highly distinct multi-voices.');
 }
 
 main().catch(e => { console.error('❌', e.message); process.exit(1); });
