@@ -88,6 +88,7 @@ export const speakingHub = {
           label: "Where Jake helped",
           value: "Near Science Room",
           nova_question: "Where did Jake help his friend?",
+          audio_url: "/audio/week33/info_exchange_q1.mp3",
           acceptable_answers: [
             "He helped him near the science room.",
             "Near the science room.",
@@ -99,6 +100,7 @@ export const speakingHub = {
           label: "First aid item",
           value: "Clean Bandage and Cold Pack",
           nova_question: "What first aid items did the nurse use?",
+          audio_url: "/audio/week33/info_exchange_q2.mp3",
           acceptable_answers: [
             "The nurse used a clean bandage and a cold pack.",
             "A clean bandage and a cold pack.",
@@ -110,6 +112,7 @@ export const speakingHub = {
           label: "Nurse arrival time",
           value: "Within Two Minutes",
           nova_question: "How fast did the school nurse arrive to help?",
+          audio_url: "/audio/week33/info_exchange_q3.mp3",
           acceptable_answers: [
             "She arrived within two minutes.",
             "Within two minutes.",
@@ -121,6 +124,7 @@ export const speakingHub = {
           label: "Who praised Jake",
           value: "Headmaster in Assembly",
           nova_question: "Who praised Jake for his quick action?",
+          audio_url: "/audio/week33/info_exchange_q4.mp3",
           acceptable_answers: [
             "The headmaster praised him in school assembly.",
             "Headmaster Brown in the assembly.",

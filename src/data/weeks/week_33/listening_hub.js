@@ -16,7 +16,7 @@ Teacher: That is Headmaster Brown. He is watching the corridor.
 Mia: Is that Maria holding the yellow warning sign and mop?
 Teacher: Yes, that is Maria. She is drying the tiles.
 Mia: Who is the boy sitting beside the bench on the right?
-Teacher: That is David. He is waiting for class to start.`,
+Teacher: That is David. He is sitting quietly by the bench.`,
     dialogue_script: [
       { speaker: 'woman', text: 'Look at Part 1. Now look at the picture. Listen and look. There is one example.' },
       { speaker: 'girl',  text: 'Look at that boy in the corridor! Is he running?' },
@@ -31,7 +31,7 @@ Teacher: That is David. He is waiting for class to start.`,
       { speaker: 'girl',  text: 'Is that Maria holding the yellow warning sign and mop?' },
       { speaker: 'woman', text: 'Yes, that is Maria. She is drying the tiles.' },
       { speaker: 'girl',  text: 'Who is the boy sitting beside the bench on the right?' },
-      { speaker: 'woman', text: 'That is David. He is waiting for class to start.' }
+      { speaker: 'woman', text: 'That is David. He is sitting quietly by the bench.' }
     ],
     names: [
       { id: "n1", text: "Jake", target_id: "t1", isExample: true },

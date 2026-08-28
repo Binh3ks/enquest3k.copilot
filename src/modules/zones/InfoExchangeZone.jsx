@@ -60,12 +60,21 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
   const fieldsB = tableB?.fields || [];
   const currentFieldB = fieldsB[fieldIdxB] || null;
 
+  const playQuestionAudioB = () => {
+    if (currentFieldB?.audio_url) {
+      const a = new Audio(currentFieldB.audio_url);
+      a.play().catch(() => speakText(currentFieldB?.nova_question || ''));
+    } else {
+      speakText(currentFieldB?.nova_question || '');
+    }
+  };
+
   // Auto-speak Nova's question in Phase 2
   useEffect(() => {
-    if (phase === 'table_b' && currentFieldB?.nova_question) {
+    if (phase === 'table_b' && currentFieldB) {
       setShowQuestionTextB(false);
       const timer = setTimeout(() => {
-        speakText(currentFieldB.nova_question);
+        playQuestionAudioB();
       }, 500);
       return () => clearTimeout(timer);
     }
@@ -684,7 +693,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                   </div>
                   <button
                     type="button"
-                    onClick={() => speakText(currentFieldB?.nova_question || '')}
+                    onClick={playQuestionAudioB}
                     className="p-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-xl transition active:scale-95 shadow-md flex items-center gap-1.5 text-xs font-bold"
                   >
                     <Volume2 size={16} /> Replay Audio
