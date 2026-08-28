@@ -26,14 +26,18 @@ const API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_AP
 if (!API_KEY) { console.error('❌ No TTS API key. Set VITE_GOOGLE_TTS_API_KEY in .env'); process.exit(1); }
 
 // ── Voice constants — cambridgeA2 Flyers speaker roles ──────────────────────
-const VOICE_F = 'en-US-Journey-F';   // woman / girl / examiner-female
-const VOICE_M = 'en-US-Neural2-D';   // man / boy / narrator-male
+const VOICE_WOMAN = 'en-US-Neural2-F';  // adult female (Teacher / Examiner / Nurse)
+const VOICE_GIRL  = 'en-US-Journey-F';  // young female student (Mia / Girl)
+const VOICE_MAN   = 'en-US-Neural2-D';  // adult male (Headmaster / Narrator / Man)
+const VOICE_BOY   = 'en-US-Journey-D';  // young male student (Jake / Tom / Boy)
 
 const SPEAKER_VOICE_MAP = {
-  woman: VOICE_F,
-  girl:  VOICE_F,
-  man:   VOICE_M,
-  boy:   VOICE_M,
+  woman:   VOICE_WOMAN,
+  teacher: VOICE_WOMAN,
+  girl:    VOICE_GIRL,
+  mia:     VOICE_GIRL,
+  man:     VOICE_MAN,
+  boy:     VOICE_BOY,
 };
 
 // ── Silence padding between dialogue turns (200ms silent MP3 frame) ──────────
@@ -45,7 +49,7 @@ const SILENCE_200MS = Buffer.from(
 );
 
 // ── Core TTS call ────────────────────────────────────────────────────────────
-async function tts(text, voice = VOICE_F, speakingRate = 0.88) {
+async function tts(text, voice = VOICE_WOMAN, speakingRate = 0.88) {
   if (!text || !text.trim()) throw new Error(`tts(): empty text passed for voice ${voice}`);
 
   // Safety guard — ensure no speaker label leaked into TTS input
@@ -195,16 +199,14 @@ async function main() {
   console.log('📂 Loaded listening_hub.js as data source.\n');
 
   // ── L1: Draw a Line ──────────────────────────────────────────────────────
-  console.log('🎧 L1: Draw a Line (passage audio)...');
-  // L1 uses a multi-speaker passage_audio_script string (Teacher + Mia).
-  // Runtime plays this via TTS (VoiceService), so pre-generated file uses VOICE_F.
-  // Speaker labels in this string are NOT spoken — they guide staging only.
-  // Strip speaker labels before TTS to prevent them being spoken aloud.
-  const l1Raw = hub.listening_p1.passage_audio_script;
-  const l1Cleaned = l1Raw
-    .replace(/^(Teacher|Mia|Nova)\s*:\s*/gm, '')
-    .trim();
-  save('listening_p1_full.mp3', await tts(l1Cleaned, VOICE_F, 0.85));
+  console.log('🎧 L1: Draw a Line (dual-voice dialogue: Teacher & Mia)...');
+  const p1 = hub.listening_p1;
+  if (!p1.dialogue_script) {
+    throw new Error('listening_p1 is missing dialogue_script in listening_hub.js');
+  }
+  validateDialogueScript(p1.dialogue_script, ['woman', 'girl']);
+  const l1Buf = await generateDialogueAudio(p1.dialogue_script, 250);
+  save('listening_p1_full.mp3', l1Buf);
   console.log('');
 
   // ── L2: Note Completion — FIXED TWO-VOICE DIALOGUE ─────────────────────
@@ -230,7 +232,7 @@ async function main() {
 Look at the picture. What is the tool used to clean a wet floor?
 That is the cleaning mop. Can you see the letter H in the box? That is the example.
 Now you listen and write a letter in each box.`;
-  const l3ExBuf = await tts(l3Example, VOICE_F);
+  const l3ExBuf = await tts(l3Example, VOICE_WOMAN);
   save('listening_p3_example.mp3', l3ExBuf);
 
   const l3Items = [
@@ -289,17 +291,17 @@ Now you listen and write a letter in each box.`;
   // ── L4: 3-Picture Quiz ────────────────────────────────────────────────────
   console.log('☑️  L4: 3-Picture Quiz (example + Q1-Q5)...');
   const l4Scripts = [
-    { f: 'listening_p4_example.mp3', v: VOICE_F,
+    { f: 'listening_p4_example.mp3', v: VOICE_WOMAN,
       t: `Look at the example. Where was Jake walking after class? He was walking carefully in the school corridor. Can you see the tick next to picture A? Now you listen and tick the box.` },
-    { f: 'listening_p4_q1.mp3',    v: VOICE_M,
+    { f: 'listening_p4_q1.mp3',    v: VOICE_MAN,
       t: `Question 1. Why was the floor slippery near the science room? The cleaner had just washed the tiles with water.` },
-    { f: 'listening_p4_q2.mp3',    v: VOICE_M,
+    { f: 'listening_p4_q2.mp3',    v: VOICE_MAN,
       t: `Question 2. What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.` },
-    { f: 'listening_p4_q3.mp3',    v: VOICE_M,
+    { f: 'listening_p4_q3.mp3',    v: VOICE_MAN,
       t: `Question 3. What did Jake do immediately? He ran to the nurse room to call for help.` },
-    { f: 'listening_p4_q4.mp3',    v: VOICE_M,
+    { f: 'listening_p4_q4.mp3',    v: VOICE_MAN,
       t: `Question 4. What did the nurse use to treat the knee? She used a clean bandage and a cold pack.` },
-    { f: 'listening_p4_q5.mp3',    v: VOICE_M,
+    { f: 'listening_p4_q5.mp3',    v: VOICE_MAN,
       t: `Question 5. What did the headmaster say during assembly? He praised Jake for following safety habits.` },
   ];
   const l4Bufs = [];
@@ -365,7 +367,7 @@ Now you listen and write a letter in each box.`;
     { f: 'listening_p5_inst5.mp3', t: 'Colour the nurse room door red' },
   ];
   for (const inst of l5Insts) {
-    save(inst.f, await tts(inst.t, VOICE_F));
+    save(inst.f, await tts(inst.t, VOICE_WOMAN));
   }
   console.log('');
 
