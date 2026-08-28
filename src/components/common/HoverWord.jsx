@@ -133,10 +133,11 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, is
   // Sort explicit chunks by length descending
   explicitChunks.sort((a, b) => b.length - a.length);
 
-  // Build regex patterns for matching
+  // Build regex patterns for matching (convert all capturing groups to non-capturing (?:...) to prevent String.split duplication)
   const chunkRegexes = explicitChunks.map(c => {
-    if (c.includes('\\b') || c.includes('(') || c.includes('|')) return c;
-    return '\\b' + c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+') + '\\b';
+    const nonCapturing = c.replace(/\((?!\?)/g, '(?:');
+    if (nonCapturing.includes('\\b') || nonCapturing.includes('(?:') || nonCapturing.includes('|')) return nonCapturing;
+    return '\\b' + nonCapturing.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+') + '\\b';
   });
 
   const shouldHighlightChunks = highlightMode === 'vocab' || highlightMode === 'grammar';
