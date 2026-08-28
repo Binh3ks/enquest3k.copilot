@@ -25,42 +25,25 @@ export default function CLILExplorer({
   };
 
   const [currentPhase, setCurrentPhase] = useState(1); // 1: Part 1, 2: Part 2, 3: Sentence Builder & Passport
-  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  // Audio playback state: null | 'whole' | 'part'
+  const [playingAudioType, setPlayingAudioType] = useState(null);
   const [selectedAnswers, setSelectedAnswers] = useState({});
 
   const grammarPatterns = useMemo(() => {
     if (Array.isArray(clilData?.grammar_patterns) && clilData.grammar_patterns.length > 0) return clilData.grammar_patterns;
     if (Array.isArray(targetGrammarRegex) && targetGrammarRegex.length > 0) return targetGrammarRegex;
     return [
-      { pattern: '\\b(help|bury|grow|hide|start|fly|drink|travel|carry|call|stays|have|was|were)\\b', label: 'Action Verbs' },
-      { pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous' }
+      { pattern: '\\b(stops things from sliding|walks on dry tiles|grip the floor firmly|stays balanced|creates a thin slippery layer|reduces friction|slide easily)\\b', label: 'Present Simple Verb Phrases', paragraph_scope: 1 },
+      { pattern: '\\b(was walking carefully|was drying the floor|was running quickly|slipped on the wet tiles|provide strong grip|holds surfaces better|remind students to walk slowly|keeps everyone safe)\\b', label: 'Past Continuous & Action Verb Phrases', paragraph_scope: 2 }
     ];
   }, [clilData, targetGrammarRegex]);
 
-  // VOCAB FOCUS: hub vocab_focus is a curated list of multi-word chunks/collocations.
-  // renderParsedText tokenizes word-by-word, so we extract ALL individual content words
-  // from each chunk and use those as the highlight targets (avoids multi-word regex failure).
+  // VOCAB FOCUS: Curated list of multi-word chunks and collocations
   const vocabPills = useMemo(() => {
     const raw = clilData?.vocab_focus || clilData?.target_vocab || [];
     if (Array.isArray(raw) && raw.length > 0) return raw;
     return [];
   }, [clilData]);
-
-  // Build per-word highlight patterns from multi-word chunks.
-  // Stop-words (the, a, an, of, in, on, so, that, from, when, and, but, is) are excluded.
-  const STOP_WORDS = new Set(['the','a','an','of','in','on','so','that','from','when','and','but','is','are','was','were','it','to','do']);
-  const vocabHighlightPatterns = useMemo(() => {
-    const words = new Set();
-    vocabPills.forEach(chunk => {
-      chunk.toLowerCase().split(/\s+/).forEach(w => {
-        const clean = w.replace(/[^a-z]/g, '');
-        if (clean.length > 2 && !STOP_WORDS.has(clean)) words.add(clean);
-      });
-    });
-    return words.size > 0
-      ? [{ pattern: '\\b(' + [...words].join('|') + ')\\b', label: 'Vocab Focus' }]
-      : [];
-  }, [vocabPills]);
 
   // Default Paragraph Split
   const fullText = clilData?.content_en || clilData?.content || "";
@@ -89,7 +72,7 @@ export default function CLILExplorer({
       const scope = gp.paragraph_scope ?? 0;
       if (scope === 0 || scope === currentPhase) return gp;
     }
-    return grammarPatterns[0] || { pattern: '', label: 'Target Grammar Focus', paragraph_scope: 0 };
+    return grammarPatterns[0] || { pattern: '', label: 'Target Verb Phrases', paragraph_scope: 0 };
   }, [grammarPatterns, currentPhase]);
 
   const grammarLegend = useMemo(() => {
@@ -187,25 +170,45 @@ export default function CLILExplorer({
     }
   };
 
-  const handleToggleAudio = async (textToPlay, forceAudioUrl = null) => {
-    if (isPlayingAudio) {
+  // Audio Playback Controls
+  const handleToggleWholeAudio = async () => {
+    if (playingAudioType === 'whole') {
       VoiceService.stop();
-      setIsPlayingAudio(false);
+      setPlayingAudioType(null);
       return;
     }
 
-    setIsPlayingAudio(true);
+    VoiceService.stop();
+    setPlayingAudioType('whole');
     try {
-      // VoiceService.speak(text, station, audioUrl<string>, weekNumber, ...)
-      // 3rd param MUST be a string, not an object.
-      const audioUrl = forceAudioUrl || clilData?.audio_url || `/audio/week${weekNumber}/clil_friction.mp3`;
-      await VoiceService.speak(textToPlay || fullText, 'explore', audioUrl, weekNumber);
+      const audioUrl = clilData?.audio_url || `/audio/week${weekNumber}/clil_friction.mp3`;
+      await VoiceService.speak(fullText, 'explore', audioUrl, weekNumber);
     } catch (err) {
-      console.warn('[CLIL Audio] playback error:', err);
-      // Final fallback: browser TTS
-      speakText(textToPlay || fullText);
+      console.warn('[CLIL Audio Whole] playback error:', err);
+      speakText(fullText);
     } finally {
-      setIsPlayingAudio(false);
+      setPlayingAudioType(null);
+    }
+  };
+
+  const handleTogglePartAudio = async () => {
+    if (playingAudioType === 'part') {
+      VoiceService.stop();
+      setPlayingAudioType(null);
+      return;
+    }
+
+    VoiceService.stop();
+    setPlayingAudioType('part');
+    const partText = currentPhase === 1 ? paragraphs[0] : (paragraphs[1] || paragraphs[0]);
+    try {
+      // Pass null audioUrl so it synthesizes/plays ONLY this specific part via TTS
+      await VoiceService.speak(partText, 'explore', null, weekNumber);
+    } catch (err) {
+      console.warn('[CLIL Audio Part] playback error:', err);
+      speakText(partText);
+    } finally {
+      setPlayingAudioType(null);
     }
   };
 
@@ -248,7 +251,7 @@ export default function CLILExplorer({
             type="button"
             onClick={() => handleModeSwitch('vocab')}
             className={`px-3 py-1 rounded-lg text-xs font-black transition ${
-              activeHighlightMode === 'vocab' ? 'bg-emerald-600 text-white shadow-sm' : 'text-slate-600'
+              activeHighlightMode === 'vocab' ? 'bg-emerald-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             🔤 Vocab Focus
@@ -257,7 +260,7 @@ export default function CLILExplorer({
             type="button"
             onClick={() => handleModeSwitch('grammar')}
             className={`px-3 py-1 rounded-lg text-xs font-black transition ${
-              activeHighlightMode === 'grammar' ? 'bg-amber-500 text-white shadow-sm' : 'text-slate-600'
+              activeHighlightMode === 'grammar' ? 'bg-amber-500 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             🔬 Grammar X-Ray
@@ -266,18 +269,27 @@ export default function CLILExplorer({
         <div className="flex items-center gap-2">
           <button
             type="button"
-            onClick={() => handleToggleAudio(fullText, clilData?.audio_url || `/audio/week${weekNumber}/clil_friction.mp3`)}
-            className="px-3 py-1.5 bg-teal-700 hover:bg-teal-600 text-white font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer"
-            title="Listen to full article audio"
+            onClick={handleToggleWholeAudio}
+            className={`px-3 py-1.5 font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer ${
+              playingAudioType === 'whole'
+                ? 'bg-rose-600 text-white animate-pulse'
+                : 'bg-teal-700 hover:bg-teal-600 text-white'
+            }`}
+            title={playingAudioType === 'whole' ? 'Click to stop whole text audio' : 'Listen to full article audio'}
           >
-            <Volume2 size={14} /> 🔊 Listen to whole text
+            <Volume2 size={14} /> {playingAudioType === 'whole' ? '⏹ Stop whole text' : '🔊 Listen to whole text'}
           </button>
           <button
             type="button"
-            onClick={() => handleToggleAudio(currentPhase === 1 ? paragraphs[0] : paragraphs[1])}
-            className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer"
+            onClick={handleTogglePartAudio}
+            className={`px-3 py-1.5 font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer ${
+              playingAudioType === 'part'
+                ? 'bg-rose-600 text-white animate-pulse'
+                : 'bg-emerald-600 hover:bg-emerald-500 text-white'
+            }`}
+            title={playingAudioType === 'part' ? 'Click to stop this part audio' : 'Listen to current part audio'}
           >
-            <Volume2 size={14} /> {isPlayingAudio ? 'Pause' : '🎧 Listen to this part'}
+            <Volume2 size={14} /> {playingAudioType === 'part' ? '⏹ Stop this part' : '🎧 Listen to this part'}
           </button>
         </div>
       </div>
@@ -287,7 +299,7 @@ export default function CLILExplorer({
         <div className="p-4 bg-emerald-50/90 border border-emerald-300 rounded-2xl space-y-2.5 shadow-xs animate-in fade-in">
           <div className="flex items-center justify-between">
             <span className="text-[11px] font-black uppercase text-emerald-900 tracking-wider flex items-center gap-1.5">
-              <Sparkles size={14} className="text-emerald-700" /> Key Vocabulary Focus ({vocabPills.length} words)
+              <Sparkles size={14} className="text-emerald-700" /> Key Collocations & Chunks ({vocabPills.length})
             </span>
             <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-300">
               Interactive Word Bank
@@ -298,9 +310,11 @@ export default function CLILExplorer({
               <button
                 key={idx}
                 type="button"
-                className="px-3 py-1 bg-white hover:bg-emerald-100 border border-emerald-300 text-emerald-950 font-black text-xs rounded-xl shadow-xs transition active:scale-95 flex items-center gap-1"
-                onClick={() => VoiceService.speakWord(w)}
+                className="px-3 py-1 bg-white hover:bg-emerald-100 border border-emerald-300 text-emerald-950 font-black text-xs rounded-xl shadow-xs transition active:scale-95 flex items-center gap-1 cursor-pointer"
+                onClick={() => speakText(w)}
+                title={`Tap to hear: ${w}`}
               >
+                <Volume2 size={11} className="text-emerald-600 shrink-0" />
                 <span>{w}</span>
               </button>
             ))}
@@ -316,23 +330,29 @@ export default function CLILExplorer({
               <BookOpen size={14} className="text-teal-700" /> Science & Nature Glossary
             </span>
             <span className="text-[10px] font-bold text-teal-800 bg-teal-100 px-2.5 py-0.5 rounded-full border border-teal-300">
-              Key Terms
+              Key Terms (Click any word in definitions for dictionary)
             </span>
           </div>
           <div className="flex flex-wrap gap-2">
             {clilData.glossary.map((item, idx) => (
-              <button
+              <div
                 key={idx}
-                type="button"
                 data-testid="clil-glossary-chip"
-                onClick={() => speakText(item.term || item.word)}
-                title={`Tap to hear: ${item.term || item.word}`}
-                className="px-3 py-1 bg-white border border-teal-300 text-teal-950 rounded-xl text-xs font-bold shadow-xs flex items-center gap-1.5 hover:bg-teal-50 active:scale-95 transition cursor-pointer"
+                className="px-3 py-1.5 bg-white border border-teal-300 text-teal-950 rounded-xl text-xs font-bold shadow-xs flex items-center gap-1.5 hover:bg-teal-50/80 transition"
               >
-                <Volume2 size={11} className="text-teal-600 shrink-0" />
-                <span className="font-black text-teal-800">{item.term || item.word}:</span>
-                <span className="text-slate-700 font-medium">{item.meaning || item.def}</span>
-              </button>
+                <button
+                  type="button"
+                  onClick={(e) => { e.stopPropagation(); speakText(item.term || item.word); }}
+                  title={`Tap to hear: ${item.term || item.word}`}
+                  className="p-1 hover:bg-teal-100 rounded-lg text-teal-700 transition cursor-pointer shrink-0"
+                >
+                  <Volume2 size={12} />
+                </button>
+                <span className="font-black text-teal-900 shrink-0">{item.term || item.word}:</span>
+                <span className="text-slate-700 font-medium">
+                  {renderParsedText(item.meaning || item.def, 'teal', null, false, 'clean')}
+                </span>
+              </div>
             ))}
           </div>
         </div>
@@ -376,7 +396,7 @@ export default function CLILExplorer({
               <span>📖 PARAGRAPH 1: {(clilData?.part_1_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
             <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
-              {renderParsedText(paragraphs[0], 'emerald', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? [activeScopedPattern].filter(Boolean) : vocabHighlightPatterns)}
+              {renderParsedText(paragraphs[0], 'emerald', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? [activeScopedPattern].filter(Boolean) : vocabPills)}
             </p>
 
             {/* Paragraph 1 Check Questions */}
@@ -451,7 +471,7 @@ export default function CLILExplorer({
               <span>📖 PARAGRAPH 2: {(clilData?.part_2_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
             <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
-              {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? [activeScopedPattern].filter(Boolean) : vocabHighlightPatterns)}
+              {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? [activeScopedPattern].filter(Boolean) : vocabPills)}
             </p>
 
             {/* Paragraph 2 Check Questions */}

@@ -118,18 +118,39 @@ export const lookupDict = (raw) => {
 export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, isStealthMode = false, highlightMode = 'vocab', targetGrammarRegex = []) {
   if (!text) return null;
 
-  // 2. Filter all multi-word phrases (Base + Aliases containing spaces) sorted by length descending
-  const allPhrases = Object.keys(phraseLookupMap)
-    .filter((k) => k.includes(' '))
-    .sort((a, b) => b.length - a.length);
+  // 1. Collect explicit target patterns (either string chunks or { pattern, label } objects)
+  const explicitChunks = [];
+  if (Array.isArray(targetGrammarRegex)) {
+    targetGrammarRegex.forEach(p => {
+      if (typeof p === 'string' && p.trim()) {
+        explicitChunks.push(p.trim());
+      } else if (p && typeof p.pattern === 'string' && p.pattern.trim()) {
+        explicitChunks.push(p.pattern.trim());
+      }
+    });
+  }
 
-  // Step 2: Build master regex for markdown bold **...** OR whitelisted multi-word phrases/aliases ONLY
-  const escapedPhrases = allPhrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-  const masterRegex = escapedPhrases.length > 0
-    ? new RegExp(`(\\*{2}.*?\\*{2}|${escapedPhrases.join('|')})`, 'gi')
-    : /(\*{2}.*?\*{2})/gi;
+  // Sort explicit chunks by length descending
+  explicitChunks.sort((a, b) => b.length - a.length);
 
-  // Step 3: Parse text segments
+  // Build regex patterns for matching
+  const chunkRegexes = explicitChunks.map(c => {
+    if (c.includes('\\b') || c.includes('(') || c.includes('|')) return c;
+    return '\\b' + c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+') + '\\b';
+  });
+
+  const shouldHighlightChunks = highlightMode === 'vocab' || highlightMode === 'grammar';
+  const masterPattern = (shouldHighlightChunks && chunkRegexes.length > 0)
+    ? `(\\*{2}.*?\\*{2}|${chunkRegexes.join('|')})`
+    : `(\\*{2}.*?\\*{2})`;
+
+  let masterRegex;
+  try {
+    masterRegex = new RegExp(masterPattern, 'gi');
+  } catch (_) {
+    masterRegex = /(\*{2}.*?\*{2})/gi;
+  }
+
   const segments = text.split(masterRegex);
   let key = 0;
   const parts = [];
@@ -137,23 +158,31 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, is
   for (const segment of segments) {
     if (!segment) continue;
 
-    const cleanSegment = segment.replace(/\*\*/g, '').trim().toLowerCase();
+    const cleanSegment = segment.replace(/\*\*/g, '').trim();
     const isMarkdownBold = segment.startsWith('**') && segment.endsWith('**');
-    const isMatchedPhrase = allPhrases.includes(cleanSegment);
+    const isTargetMatch = shouldHighlightChunks && (isMarkdownBold || chunkRegexes.some(r => {
+      try { return new RegExp('^' + r + '$', 'i').test(cleanSegment); } catch (_) { return false; }
+    }));
 
-    if (isMarkdownBold || isMatchedPhrase) {
-      const phraseWord = segment.replace(/\*\*/g, '').trim();
+    if (isTargetMatch) {
+      const phraseWord = cleanSegment;
       const matchedBaseKey = phraseLookupMap[phraseWord.toLowerCase()] || phraseWord;
       const entry = WEEK_33_MASTER_DICTIONARY[matchedBaseKey] || lookupDict(phraseWord);
 
+      let targetTier = 3;
+      if (!isStealthMode) {
+        if (highlightMode === 'grammar') targetTier = 4;
+        else if (highlightMode === 'vocab') targetTier = 1;
+      }
+
       parts.push(
         <HoverWord
-          key={`chunk-${key++}`}
+          key={`target-${key++}`}
           word={phraseWord}
-          themeColor={themeColor}
+          themeColor={highlightMode === 'grammar' ? 'amber' : themeColor}
           onSpeak={onSpeak}
           entry={entry}
-          tier={isStealthMode ? 3 : (highlightMode === 'clean' ? 3 : (highlightMode === 'grammar' ? 3 : 1))}
+          tier={targetTier}
         />
       );
     } else {
@@ -163,100 +192,27 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, is
       tokens.forEach((token) => {
         if (!token) return;
 
-        // If English word (letters, numbers, hyphens) -> WRAP 100% IN HOVERWORD
+        // English word: wrap in HoverWord with tier = 3 (clean, unhighlighted, but 100% interactive)
         if (/^[a-zA-Z0-9'-]+$/.test(token)) {
           const cleanW = token.toLowerCase().trim();
           const matchedBaseKey = phraseLookupMap[cleanW];
-          const matchesTarget = Boolean(Array.isArray(targetGrammarRegex) && targetGrammarRegex.some(g => {
-            try { return new RegExp(g.pattern || g, 'i').test(cleanW); } catch(_) { return false; }
-          }));
-          const isTarget = Boolean(matchedBaseKey) || matchesTarget;
           const entry = matchedBaseKey ? WEEK_33_MASTER_DICTIONARY[matchedBaseKey] : lookupDict(token);
-
-          // Grammar X-Ray vs Vocab Focus highlight tiers
-          let grammarTier = isStealthMode ? 3 : (isTarget ? 1 : 3);
-          if (highlightMode === 'clean') grammarTier = 3;
-          else if (highlightMode === 'grammar') grammarTier = isTarget ? 4 : 3;
 
           parts.push(
             <HoverWord
               key={`word-${key++}`}
               word={token}
-              themeColor={highlightMode === 'grammar' && isTarget ? 'amber' : themeColor}
+              themeColor={themeColor}
               onSpeak={onSpeak}
               entry={entry}
-              tier={grammarTier}
+              tier={3}
             />
           );
         } else {
-          // Plain text only for whitespace and punctuation (.,!?)
+          // Plain whitespace and punctuation
           parts.push(<span key={`space-${key++}`}>{token}</span>);
         }
       });
-    }
-  }
-
-  // Grammar X-Ray Post-Processing: wrap grammar pattern matches with <mark> highlight
-  if (highlightMode === 'grammar' && Array.isArray(targetGrammarRegex) && targetGrammarRegex.length > 0 && typeof text === 'string') {
-    // Build a flat text from parts to find grammar pattern positions
-    // Then wrap matching spans with grammar highlight styling
-    // For simplicity and robustness, we do a second pass on the original text
-    const grammarParts = [];
-    let processedText = text.replace(/\*\*/g, ''); // strip markdown bold
-    let lastIndex = 0;
-
-    // Combine all grammar regex patterns into one
-    const combinedPatterns = targetGrammarRegex.map(g => `(${g.pattern})`).join('|');
-    const grammarRegex = new RegExp(combinedPatterns, 'gi');
-    let match;
-
-    const grammarMatches = [];
-    while ((match = grammarRegex.exec(processedText)) !== null) {
-      grammarMatches.push({ start: match.index, end: match.index + match[0].length, text: match[0] });
-    }
-
-    if (grammarMatches.length > 0) {
-      // Rebuild parts with grammar highlights inserted
-      const finalParts = [];
-      let gKey = 0;
-      lastIndex = 0;
-
-      for (const gm of grammarMatches) {
-        // Add pre-match text as regular parsed
-        if (gm.start > lastIndex) {
-          const preText = processedText.slice(lastIndex, gm.start);
-          finalParts.push(...renderParsedText(preText, themeColor, onSpeak, false, 'clean', []));
-        }
-        // Add grammar-highlighted match
-        const matchTokens = gm.text.split(/([a-zA-Z0-9'-]+)/g);
-        matchTokens.forEach(mt => {
-          if (!mt) return;
-          if (/^[a-zA-Z0-9'-]+$/.test(mt)) {
-            const entry = lookupDict(mt);
-            finalParts.push(
-              <HoverWord
-                key={`grammar-${gKey++}`}
-                word={mt}
-                themeColor="amber"
-                onSpeak={onSpeak}
-                entry={entry}
-                tier={4}
-              />
-            );
-          } else {
-            finalParts.push(<span key={`gspace-${gKey++}`}>{mt}</span>);
-          }
-        });
-        lastIndex = gm.end;
-      }
-
-      // Add remaining text
-      if (lastIndex < processedText.length) {
-        const postText = processedText.slice(lastIndex);
-        finalParts.push(...renderParsedText(postText, themeColor, onSpeak, false, 'clean', []));
-      }
-
-      return finalParts;
     }
   }
 

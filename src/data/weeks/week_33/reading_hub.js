@@ -27,22 +27,32 @@ export const readingHubData = {
     audio_url: "/audio/week33/clil_friction.mp3",
     // VOCAB FOCUS: Curated pedagogical target chunks/collocations ONLY — NOT every clickable word.
     // Each item is a meaningful lexical unit selected because it exemplifies a useful chunk or collocation.
-    // Dictionary clickability covers more words; this list is intentionally small.
     vocab_focus: [
       "slippery layer",
       "shoe soles",
       "rubber soles",
-      "warning sign",
+      "warning signs",
       "reduces friction",
       "grip the floor",
-      "stays balanced"
+      "stays balanced",
+      "smooth tiles",
+      "wet tiles",
+      "school corridor",
+      "strong grip"
     ],
-    // GRAMMAR X-RAY: Two-pattern system.
-    // paragraph_scope: 1 = Paragraph 1 only, 2 = Paragraph 2 only, 0 = both.
-    // The renderer must only activate the pattern whose paragraph_scope matches the current phase.
+    // GRAMMAR X-RAY: Target Verb Phrases for each paragraph.
+    // paragraph_scope: 1 = Paragraph 1 only, 2 = Paragraph 2 only.
     grammar_patterns: [
-      { pattern: '\\b(stops|grip|creates|reduces|slide|walks|holds|provides|remind)\\b', label: 'Present Simple — Scientific Principles', paragraph_scope: 1 },
-      { pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous — Action in Progress', paragraph_scope: 2 }
+      {
+        pattern: '\\b(stops things from sliding|walks on dry tiles|grip the floor firmly|stays balanced|creates a thin slippery layer|reduces friction|slide easily)\\b',
+        label: 'Present Simple Verb Phrases (Scientific Principles)',
+        paragraph_scope: 1
+      },
+      {
+        pattern: '\\b(was walking carefully|was drying the floor|was running quickly|slipped on the wet tiles|provide strong grip|holds surfaces better|remind students to walk slowly|keeps everyone safe)\\b',
+        label: 'Past Continuous & Action Verb Phrases',
+        paragraph_scope: 2
+      }
     ],
     sentence_drills: [
       {
