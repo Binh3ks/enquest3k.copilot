@@ -5,6 +5,7 @@ import { playCorrectSound, playWrongSound, playButtonClick } from '../../utils/s
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 
 import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
+import FlyersListeningPlayButton from '../common/FlyersListeningPlayButton';
 
 export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, onComplete }) {
   const p4Data = customData || data || {};
@@ -64,6 +65,12 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
           </div>
         </div>
         <div className="flex items-center gap-2">
+          <FlyersListeningPlayButton
+            partNumber={4}
+            audioUrl={p4Data?.audio_url || `/audio/week${weekNumber || 33}/listening_p4_full.mp3`}
+            script={p4Data?.passage_audio_script || questions.map(q => q.audio_script || q.question_en).join('\n')}
+            weekNumber={weekNumber || 33}
+          />
           <ExamIntroAudioButton
             weekNumber={weekNumber || 34}
             introId="exam_intro_L4"

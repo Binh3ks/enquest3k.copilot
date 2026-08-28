@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { CheckCircle2, Sparkles, RefreshCw, Trash2, Volume2, Target, Copy, Check } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
+import FlyersListeningPlayButton from '../common/FlyersListeningPlayButton';
 
 // SVG ViewBox dimensions — MUST match actual image dimensions (1264×848)
 const VB_W = 1264;
@@ -245,35 +246,12 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
             className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 rounded-xl text-xs font-black flex items-center gap-1 transition active:scale-95 shadow shrink-0"
           >← Map</button>
 
-          {/* ── Cambridge Double-Play Audio Button (Flyers spec: plays TWICE) ── */}
-          {(() => {
-            const isPlaying = playStatus === 'playing-1' || playStatus === 'playing-2';
-            const isPausing = playStatus === 'pausing';
-            const isDone    = playStatus === 'done';
-            const label =
-              playStatus === 'playing-1' ? '🔊 Playing (1st play…)' :
-              playStatus === 'pausing'   ? '⏸ Pausing… (2nd play soon)' :
-              playStatus === 'playing-2' ? '🔊 Playing (2nd play…)' :
-              playStatus === 'done'      ? '✅ Done — both plays finished' :
-                                          '🎧 Play Audio (×2)';
-            return (
-              <button
-                type="button"
-                onClick={handleDoublePlay}
-                disabled={isDone}
-                className={`px-3 py-1.5 font-black rounded-xl text-xs flex items-center gap-1.5 transition shadow-sm active:scale-95 shrink-0 ${
-                  isPlaying  ? 'bg-rose-500 text-white animate-pulse' :
-                  isPausing  ? 'bg-amber-300 text-slate-900' :
-                  isDone     ? 'bg-emerald-100 text-emerald-800 cursor-default' :
-                               'bg-amber-400 hover:bg-amber-300 text-slate-950'
-                }`}
-                title={isPlaying ? 'Click to stop' : 'Cambridge Flyers: plays audio twice with pause (authentic exam format)'}
-              >
-                <Volume2 size={14} />
-                {label}
-              </button>
-            );
-          })()}
+          <FlyersListeningPlayButton
+            partNumber={1}
+            audioUrl={sceneData?.audio_url || `/audio/week${weekNumber || 33}/listening_p1_full.mp3`}
+            script={sceneData?.passage_audio_script || fullListeningScript}
+            weekNumber={weekNumber || 33}
+          />
 
           <ExamIntroAudioButton
             weekNumber={weekNumber || 33}

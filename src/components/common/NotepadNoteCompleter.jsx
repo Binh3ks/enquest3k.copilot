@@ -3,6 +3,7 @@ import { CheckCircle2, AlertCircle, Sparkles, Play, Pause, RotateCcw, Headphones
 import VoiceService from '../../services/voiceService';
 import HoverWord, { renderParsedText } from './HoverWord';
 import ExamIntroAudioButton from './ExamIntroAudioButton';
+import FlyersListeningPlayButton from './FlyersListeningPlayButton';
 import CompletionModal from './CompletionModal';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
@@ -168,18 +169,12 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
             >
               ← Map
             </button>
-            <button
-              type="button"
-              onClick={handleToggleMasterAudio}
-              className={`px-3 py-1.5 rounded-xl font-black text-xs transition-all shadow-xs flex items-center gap-1.5 active:scale-95 ${
-                isPlaying
-                  ? 'bg-amber-400 text-amber-950 ring-2 ring-amber-300 animate-pulse'
-                  : 'bg-amber-600 text-white hover:bg-amber-700'
-              }`}
-            >
-              {isPlaying ? <Pause size={14} className="fill-amber-950" /> : <Play size={14} className="fill-white ml-0.5" />}
-              <span>{isPlaying ? 'Pause' : '🔊 Play Audio'}</span>
-            </button>
+            <FlyersListeningPlayButton
+              partNumber={2}
+              audioUrl={audioUrl}
+              script={fullAudioPassage || notepadTitle}
+              weekNumber={weekNumber || 33}
+            />
             <ExamIntroAudioButton
               weekNumber={weekNumber || 33}
               introId="exam_intro_L2"

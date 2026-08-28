@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Palette, PlayCircle, Eye, EyeOff, Edit3, Volume2 } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
+import FlyersListeningPlayButton from '../common/FlyersListeningPlayButton';
 import CompletionModal from '../common/CompletionModal';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
@@ -179,13 +180,12 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
             introId="exam_intro_L5"
             introText="Listen and colour and write. There is one example."
           />
-          <button
-            onClick={handlePlayMasterAudio}
-            className="px-4 py-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs rounded-xl flex items-center gap-1.5 shadow-md transition active:scale-95"
-          >
-            <PlayCircle size={15} />
-            {isPlayingAudio ? "Pause Audio" : "Play Part 5 Audio"}
-          </button>
+          <FlyersListeningPlayButton
+            partNumber={5}
+            audioUrl={rawData.audio_url || `/audio/week${currentWeek}/listening_p5_full.mp3`}
+            script={fullAudioScript}
+            weekNumber={currentWeek}
+          />
         </div>
       </div>
 

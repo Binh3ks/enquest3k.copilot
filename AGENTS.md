@@ -100,7 +100,20 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
 
 ## 🏆 Cambridge A2 Flyers 4-Skills Master Blueprint Standard — 2026-08-17
 **Áp dụng bắt buộc cho toàn bộ các tuần từ W33 đến W72 theo `CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md`:**
-1. **Listening (5 Parts)**: Đầy đủ Rubric dẫn đề, Example exchange, 5 Test items, phân bổ đa giọng (Nova `Journey-F`, Girl `Journey-F`, Boy `Journey-D`, Man `Neural2-D`, Woman `Neural2-F`). Part 4 bắt buộc nhắc đủ 3 tranh A, B, C kèm distractors.
+1. **Listening (5 Parts) — Official Two-Play Loop Standard**:
+   - **Cơ chế 2 Lần Nghe Chuẩn Cambridge**: Toàn bộ các bài Listening Part 1–5 (Boss Battle Quest 5 và Mock Tests) bắt buộc chạy theo chu trình chính thức:
+     ```
+     PLAY 1 (Audio Asset X)
+       ↓ (Play 1 ends)
+     EXAMINER RUBRIC: "Now listen to Part X again." (audio/cambridge/flyers_replay_pX.mp3)
+       ↓ (3s pause)
+     PLAY 2 (EXACT SAME Audio Asset X)
+       ↓ (Play 2 ends)
+     EXAMINER CLOSING: "That is the end of Part X." (audio/cambridge/flyers_end_pX.mp3)
+       ↓
+     COMPLETE (Không tự ý phát lần 3, không dùng bản ghi âm biến thể)
+     ```
+   - **Phân bổ đa giọng đối đáp**: Examiner Nữ (`en-US-Neural2-F`, pitch -1.5, rate 0.86), Thí sinh Nam Jake (`en-US-Neural2-D`, pitch +1.0), Học sinh Nữ Mia (`en-US-Neural2-C`, pitch +4.0).
 2. **Speaking (4 Parts)**: Đầy đủ Examiner audio guidance cho cả 4 Parts. Part 3 tuân thủ Invariant 5 tranh liên hoàn (`Picture 1` giám khảo dẫn đề $\rightarrow$ `Pictures 2-5` thí sinh ghi âm). Chấm điểm theo 5 Shields Cambridge.
 3. **Reading (Parts 1-6)**: Tuân thủ độ dài chuẩn A2 Flyers (P1 10 defs/15 words, P2 5 dialogue turns, P3 ~120w story gap-fill + title, P4 10 grammar MCQs, P5 ~250w story + 7 completions 1-4 words, P6 5 open cloze gaps).
 4. **Writing (Part 7)**: Viết truyện theo 3 tranh liên hoàn $\ge 20$ từ, chấm điểm theo Rubric 5 Shields (Content 2, Grammar/Flow 2, Vocab/Spelling 1).

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Layers, Grid, Volume2 } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
+import FlyersListeningPlayButton from '../common/FlyersListeningPlayButton';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import { srsService } from '../../services/srsService';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
@@ -111,18 +112,12 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
           >
             ← Map
           </button>
-          <button
-            type="button"
-            onClick={() => VoiceService.speak(
-              customData?.passage_audio_script || fullPassageScript,
-              'questions',
-              customData?.audio_url || `/audio/week${weekNumber || 33}/listening_p3_full.mp3`,
-              weekNumber || 33
-            )}
-            className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-1.5 transition shadow-sm active:scale-95 shrink-0"
-          >
-            <Volume2 size={14} /> 🔊 Play Audio
-          </button>
+          <FlyersListeningPlayButton
+            partNumber={3}
+            audioUrl={customData?.audio_url || `/audio/week${weekNumber || 33}/listening_p3_full.mp3`}
+            script={customData?.passage_audio_script || fullPassageScript}
+            weekNumber={weekNumber || 33}
+          />
           <ExamIntroAudioButton
             weekNumber={weekNumber || 33}
             introId="exam_intro_L3"
