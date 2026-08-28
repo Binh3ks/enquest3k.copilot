@@ -89,8 +89,125 @@ export const WEEK_33_MASTER_DICTIONARY = {
     aliases: [
       "walking carefully",
       "walked carefully",
-      "walks carefully"
+      "walks carefully",
+      "was walking carefully",
+      "were walking carefully"
     ]
+  },
+  "was walking carefully": {
+    type: "Grammar / Verb Phrase",
+    ipa: "/wəz ˈwɔːkɪŋ ˈkɛrfəli/",
+    meaning: "đang đi bộ cẩn thận (thì quá khứ tiếp diễn Past Continuous)",
+    example: "Jake was walking carefully in the school corridor when the cleaner was working.",
+    audioText: "was walking carefully",
+    aliases: [
+      "were walking carefully",
+      "walking carefully"
+    ]
+  },
+  "was drying": {
+    type: "Grammar / Verb Phrase",
+    ipa: "/wəz ˈdraɪɪŋ/",
+    meaning: "đang lau khô (thì quá khứ tiếp diễn Past Continuous)",
+    example: "The cleaner was drying the wet floor with a mop.",
+    audioText: "was drying",
+    aliases: [
+      "were drying",
+      "is drying",
+      "drying"
+    ]
+  },
+  "was running quickly": {
+    type: "Grammar / Verb Phrase",
+    ipa: "/wəz ˈrʌnɪŋ ˈkwɪkli/",
+    meaning: "đang chạy nhanh (hành động đang diễn ra trong quá khứ)",
+    example: "Tom was running quickly to class, so he slipped on the wet tiles.",
+    audioText: "was running quickly",
+    aliases: [
+      "were running quickly",
+      "running quickly",
+      "run quickly"
+    ]
+  },
+  "stops things from sliding": {
+    type: "Grammar / Verb Phrase",
+    ipa: "/stɑːps θɪŋz frəm ˈslaɪdɪŋ/",
+    meaning: "ngăn đồ vật không bị trượt (nguyên lý ma sát - thì hiện tại đơn)",
+    example: "Friction is the science force that stops things from sliding on smooth floors.",
+    audioText: "stops things from sliding",
+    aliases: [
+      "stop things from sliding",
+      "stops objects from sliding",
+      "stop objects from sliding"
+    ]
+  },
+  "slide easily": {
+    type: "Grammar / Verb Phrase",
+    ipa: "/slaɪd ˈiːzəli/",
+    meaning: "bị trượt đi một cách dễ dàng",
+    example: "Water reduces friction, so shoes slide easily across the tiles.",
+    audioText: "slide easily",
+    aliases: [
+      "slides easily",
+      "sliding easily",
+      "slid easily"
+    ]
+  },
+  "provide strong grip": {
+    type: "Grammar / Verb Phrase",
+    ipa: "/prəˈvaɪd strɔːŋ ɡrɪp/",
+    meaning: "tạo độ bám dính chắc chắn vào mặt sàn",
+    example: "Rubber shoe soles provide strong grip on smooth corridor tiles.",
+    audioText: "provide strong grip",
+    aliases: [
+      "provides strong grip",
+      "providing strong grip",
+      "provided strong grip"
+    ]
+  },
+  "keeps everyone safe": {
+    type: "Grammar / Verb Phrase",
+    ipa: "/kiːps ˈɛvriwʌn seɪf/",
+    meaning: "giúp mọi người luôn được an toàn",
+    example: "Understanding friction and following safety rules keeps everyone safe.",
+    audioText: "keeps everyone safe",
+    aliases: [
+      "keep everyone safe",
+      "keeping everyone safe",
+      "kept everyone safe"
+    ]
+  },
+  "holds": {
+    type: "Verb",
+    ipa: "/hoʊldz/",
+    meaning: "giữ / bám dính (nguyên lý bám bề mặt)",
+    example: "Rubber holds surfaces better than smooth plastic.",
+    audioText: "holds",
+    aliases: ["hold", "holding", "held"]
+  },
+  "remind": {
+    type: "Verb",
+    ipa: "/rɪˈmaɪnd/",
+    meaning: "nhắc nhở / lưu ý",
+    example: "Yellow warning signs remind students to walk slowly.",
+    audioText: "remind",
+    aliases: ["reminds", "reminded", "reminding"]
+  },
+  "creates": {
+    type: "Verb",
+    ipa: "/kriˈeɪts/",
+    meaning: "tạo ra (nguyên lý khoa học)",
+    example: "Water on smooth tiles creates a thin slippery layer.",
+    audioText: "creates",
+    aliases: ["create", "creating", "created"]
+  },
+  "walks": {
+    type: "Verb",
+    ipa: "/wɔːks/",
+    meaning: "đi bộ (ngôi thứ 3 số ít thì hiện tại đơn)",
+    example: "When a student walks on dry tiles, shoe soles grip the floor firmly.",
+    audioText: "walks",
+    aliases: ["walk", "walking", "walked"]
   },
   "headmaster office": {
     type: "Collocation",
