@@ -350,7 +350,47 @@ export const WEEK_33_MASTER_DICTIONARY = {
     meaning: "đế giày bằng cao su giúp bám sàn tốt",
     example: "Wearing shoes with rubber soles prevents slipping on smooth floors.",
     audioText: "rubber soles",
-    aliases: ["rubber sole", "shoe soles", "soles", "sole"]
+    aliases: ["rubber sole", "rubber-soled shoes"]
+  },
+  "shoe soles": {
+    type: "Collocation",
+    ipa: "/ʃuː soʊlz/",
+    meaning: "đế giày (phần dưới của giày tiếp xúc với mặt sàn)",
+    example: "Shoe soles grip dry tiles firmly and keep you balanced.",
+    audioText: "shoe soles",
+    aliases: ["shoe sole", "soles of shoes", "soles"]
+  },
+  "reduces friction": {
+    type: "Collocation",
+    ipa: "/rɪˈdjuːsɪz ˈfrɪkʃən/",
+    meaning: "làm giảm lực ma sát (khiến đồ vật dễ trượt ngã)",
+    example: "This water layer reduces friction, so shoes slide easily.",
+    audioText: "reduces friction",
+    aliases: ["reduce friction", "reducing friction", "reduced friction"]
+  },
+  "stays balanced": {
+    type: "Collocation",
+    ipa: "/steɪz ˈbælənst/",
+    meaning: "giữ được thăng bằng vững vàng (không bị ngã)",
+    example: "High friction helps the student stay balanced on the floor.",
+    audioText: "stays balanced",
+    aliases: ["stay balanced", "staying balanced", "stayed balanced"]
+  },
+  "strong grip": {
+    type: "Collocation",
+    ipa: "/strɔːŋ ɡrɪp/",
+    meaning: "độ bám dính chắc chắn vào mặt sàn",
+    example: "Rubber soles provide strong grip on smooth corridor tiles.",
+    audioText: "strong grip",
+    aliases: ["good grip", "high grip"]
+  },
+  "school corridor": {
+    type: "Collocation",
+    ipa: "/skuːl ˈkɔːrɪdɔːr/",
+    meaning: "hành lang trong trường học",
+    example: "Jake was walking carefully down the school corridor.",
+    audioText: "school corridor",
+    aliases: ["school corridors", "the school corridor"]
   },
   "smooth tiles": {
     type: "Collocation",
@@ -360,13 +400,37 @@ export const WEEK_33_MASTER_DICTIONARY = {
     audioText: "smooth tiles",
     aliases: ["smooth tile", "tiles", "tile", "floor tiles"]
   },
+  "wet tiles": {
+    type: "Collocation",
+    ipa: "/wɛt taɪlz/",
+    meaning: "sàn gạch ướt (dễ gây trơn trượt)",
+    example: "Tom was running quickly and slipped on the wet tiles.",
+    audioText: "wet tiles",
+    aliases: ["wet tile", "wet floor tiles"]
+  },
   "slippery layer": {
     type: "Collocation",
     ipa: "/ˈslɪpəri ˈleɪər/",
-    meaning: "lớp màng trơn trượt do nước tạo ra",
+    meaning: "lớp màng trơn trượt do nước tạo ra trên sàn",
     example: "Water on the tiles forms a thin slippery layer that reduces friction.",
     audioText: "slippery layer",
-    aliases: ["slippery layers", "thin layer", "water layer"]
+    aliases: ["slippery layers", "thin layer", "thin slippery layer"]
+  },
+  "water layer": {
+    type: "Collocation",
+    ipa: "/ˈwɔːtər ˈleɪər/",
+    meaning: "lớp màng nước mỏng trên mặt phẳng",
+    example: "This water layer reduces friction, so shoes slide easily.",
+    audioText: "water layer",
+    aliases: ["water layers", "thin water layer"]
+  },
+  "warning signs": {
+    type: "Collocation",
+    ipa: "/ˈwɔːrnɪŋ saɪnz/",
+    meaning: "các biển báo cảnh báo nguy hiểm",
+    example: "Yellow warning signs remind students to walk slowly.",
+    audioText: "warning signs",
+    aliases: ["warning sign", "caution sign", "yellow warning sign", "yellow warning signs"]
   },
   "warning sign": {
     type: "Collocation",

@@ -307,16 +307,20 @@ export default function CLILExplorer({
           </div>
           <div className="flex flex-wrap gap-2">
             {vocabPills.map((w, idx) => (
-              <button
+              <div
                 key={idx}
-                type="button"
-                className="px-3 py-1 bg-white hover:bg-emerald-100 border border-emerald-300 text-emerald-950 font-black text-xs rounded-xl shadow-xs transition active:scale-95 flex items-center gap-1 cursor-pointer"
-                onClick={() => speakText(w)}
-                title={`Tap to hear: ${w}`}
+                className="px-3 py-1 bg-white hover:bg-emerald-50/80 border border-emerald-300 text-emerald-950 font-black text-xs rounded-xl shadow-xs transition flex items-center gap-1.5"
               >
-                <Volume2 size={11} className="text-emerald-600 shrink-0" />
-                <span>{w}</span>
-              </button>
+                <button
+                  type="button"
+                  onClick={(e) => { e.stopPropagation(); speakText(w); }}
+                  title={`Tap to hear: ${w}`}
+                  className="p-0.5 hover:bg-emerald-100 rounded text-emerald-700 transition cursor-pointer shrink-0"
+                >
+                  <Volume2 size={11} />
+                </button>
+                <span className="cursor-pointer">{renderParsedText(w, 'emerald', null, false, 'vocab', [w])}</span>
+              </div>
             ))}
           </div>
         </div>

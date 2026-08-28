@@ -26,30 +26,30 @@ export const readingHubData = {
     content_vi: "Tại sao mọi người lại bị trượt chân trên sàn nhà ướt? Câu trả lời nằm ở một lực khoa học mang tên Lực Ma Sát. Ma sát là độ bám giữa hai bề mặt giúp ngăn đồ vật không bị trượt. Khi học sinh đi trên gạch khô, đế giày bám chặt vào sàn và học sinh giữ được thăng bằng. Nhưng nước trên sàn gạch nhẵn tạo ra một lớp màng trơn mỏng. Lớp nước này làm giảm lực ma sát, khiến giày bị trượt dễ dàng.\n\nSáng nay tại hành lang trường học, Jake đang đi bộ cẩn thận trong khi nhân viên vệ sinh đang lau khô sàn. Tom đang chạy nhanh tới lớp nên đã bị trượt trên sàn gạch ướt. Đế cao su tạo độ bám tốt vì cao su bám bề mặt chắc hơn nhựa. Các biển báo màu vàng nhắc nhở học sinh đi chậm lại. Hiểu về lực ma sát giúp tất cả chúng ta luôn an toàn!",
     audio_url: "/audio/week33/clil_friction.mp3",
     // VOCAB FOCUS: Curated pedagogical target chunks/collocations ONLY — NOT every clickable word.
-    // Each item is a meaningful lexical unit selected because it exemplifies a useful chunk or collocation.
+    // Each item is a meaningful lexical unit with complete entry in WEEK_33_MASTER_DICTIONARY.
     vocab_focus: [
       "slippery layer",
       "shoe soles",
       "rubber soles",
       "warning signs",
       "reduces friction",
-      "grip the floor",
       "stays balanced",
       "smooth tiles",
       "wet tiles",
       "school corridor",
-      "strong grip"
+      "strong grip",
+      "wet floors"
     ],
     // GRAMMAR X-RAY: Target Verb Phrases for each paragraph.
     // paragraph_scope: 1 = Paragraph 1 only, 2 = Paragraph 2 only.
     grammar_patterns: [
       {
-        pattern: '\\b(stops things from sliding|walks on dry tiles|grip the floor firmly|stays balanced|creates a thin slippery layer|reduces friction|slide easily)\\b',
+        pattern: '\\b(stops things from sliding|walks|grip|stays balanced|creates|reduces friction|slide easily)\\b',
         label: 'Present Simple Verb Phrases (Scientific Principles)',
         paragraph_scope: 1
       },
       {
-        pattern: '\\b(was walking carefully|was drying the floor|was running quickly|slipped on the wet tiles|provide strong grip|holds surfaces better|remind students to walk slowly|keeps everyone safe)\\b',
+        pattern: '\\b(was walking carefully|was drying|was running quickly|slipped|provide strong grip|holds|remind|keeps everyone safe)\\b',
         label: 'Past Continuous & Action Verb Phrases',
         paragraph_scope: 2
       }
