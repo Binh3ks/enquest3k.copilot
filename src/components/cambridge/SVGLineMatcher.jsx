@@ -25,6 +25,11 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
 
+  /* ── Cambridge double-play state ── */
+  // 'idle' | 'playing-1' | 'pausing' | 'playing-2' | 'done'
+  const [playStatus, setPlayStatus] = useState('idle');
+  const doublePlayAbortRef = useRef(false); // lets us cancel mid-sequence
+
   /* ── Refs ── */
   const svgRef = useRef(null);            // the <svg> element
   const nameButtonRefs = useRef({});      // name pill buttons
@@ -146,6 +151,57 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
     setDrawnLines([]); setSelectedName(null); setIsSubmitted(false); setScore(null);
   };
 
+  /* ── Flyers-authentic double-play ── */
+  // Cambridge A2 Flyers spec: each Listening part is played TWICE.
+  // Between the two plays there is a short pause (~5 seconds).
+  const PAUSE_BETWEEN_PLAYS_MS = 5000; // 5 second pause
+
+  const handleDoublePlay = useCallback(async () => {
+    if (playStatus === 'playing-1' || playStatus === 'playing-2') {
+      // Stop current playback
+      VoiceService.stop();
+      doublePlayAbortRef.current = true;
+      setPlayStatus('idle');
+      return;
+    }
+
+    doublePlayAbortRef.current = false;
+    const audioUrl = sceneData?.audio_url || `/audio/week${weekNumber || 33}/listening_p1_full.mp3`;
+    const script = sceneData?.passage_audio_script || fullListeningScript;
+
+    try {
+      // ── PLAY 1 ──
+      setPlayStatus('playing-1');
+      await VoiceService.speak(script, 'questions', audioUrl, weekNumber || 33);
+
+      if (doublePlayAbortRef.current) { setPlayStatus('idle'); return; }
+
+      // ── PAUSE ──
+      setPlayStatus('pausing');
+      await new Promise(resolve => {
+        const t = setTimeout(resolve, PAUSE_BETWEEN_PLAYS_MS);
+        // Allow abort during pause
+        const check = setInterval(() => {
+          if (doublePlayAbortRef.current) { clearTimeout(t); clearInterval(check); resolve(); }
+        }, 100);
+        setTimeout(() => clearInterval(check), PAUSE_BETWEEN_PLAYS_MS + 200);
+      });
+
+      if (doublePlayAbortRef.current) { setPlayStatus('idle'); return; }
+
+      // ── PLAY 2 ──
+      setPlayStatus('playing-2');
+      await VoiceService.speak(script, 'questions', audioUrl, weekNumber || 33);
+
+    } catch (err) {
+      console.warn('[DoublePlay] error:', err);
+    } finally {
+      setPlayStatus('done');
+      // Reset to idle after 3s so button is usable again
+      setTimeout(() => setPlayStatus('idle'), 3000);
+    }
+  }, [playStatus, sceneData, fullListeningScript, weekNumber]);
+
   const handleCopyCalibratedJSON = () => {
     // Export as ready-to-paste listening_hub.js targets array
     const out = calibratedTargets.map(t => ({
@@ -189,15 +245,35 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
             className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 rounded-xl text-xs font-black flex items-center gap-1 transition active:scale-95 shadow shrink-0"
           >← Map</button>
 
-          <button type="button"
-            onClick={() => VoiceService.speak(
-              sceneData?.passage_audio_script || fullListeningScript,
-              'questions',
-              sceneData?.audio_url || `/audio/week${weekNumber || 33}/listening_p1_full.mp3`,
-              weekNumber || 33
-            )}
-            className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-1.5 transition shadow-sm active:scale-95 shrink-0"
-          ><Volume2 size={14} /> 🔊 Play Audio</button>
+          {/* ── Cambridge Double-Play Audio Button (Flyers spec: plays TWICE) ── */}
+          {(() => {
+            const isPlaying = playStatus === 'playing-1' || playStatus === 'playing-2';
+            const isPausing = playStatus === 'pausing';
+            const isDone    = playStatus === 'done';
+            const label =
+              playStatus === 'playing-1' ? '🔊 Playing (1st play…)' :
+              playStatus === 'pausing'   ? '⏸ Pausing… (2nd play soon)' :
+              playStatus === 'playing-2' ? '🔊 Playing (2nd play…)' :
+              playStatus === 'done'      ? '✅ Done — both plays finished' :
+                                          '🎧 Play Audio (×2)';
+            return (
+              <button
+                type="button"
+                onClick={handleDoublePlay}
+                disabled={isDone}
+                className={`px-3 py-1.5 font-black rounded-xl text-xs flex items-center gap-1.5 transition shadow-sm active:scale-95 shrink-0 ${
+                  isPlaying  ? 'bg-rose-500 text-white animate-pulse' :
+                  isPausing  ? 'bg-amber-300 text-slate-900' :
+                  isDone     ? 'bg-emerald-100 text-emerald-800 cursor-default' :
+                               'bg-amber-400 hover:bg-amber-300 text-slate-950'
+                }`}
+                title={isPlaying ? 'Click to stop' : 'Cambridge Flyers: plays audio twice with pause (authentic exam format)'}
+              >
+                <Volume2 size={14} />
+                {label}
+              </button>
+            );
+          })()}
 
           <ExamIntroAudioButton
             weekNumber={weekNumber || 33}

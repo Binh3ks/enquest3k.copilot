@@ -17,8 +17,8 @@ Mia: And who is the tall man in the dark blue suit near the lockers?
 Teacher: That is Headmaster Brown. He is watching over the corridor.
 Mia: Is that Maria standing near the yellow warning sign?
 Teacher: Yes, that is Maria. She is holding the mop to dry the wet floor.
-Mia: Who is the boy sitting on the floor beside the bench on the right?
-Teacher: That is David. He is sitting quietly by the wall.`,
+Mia: Who is the boy bending down near the bench on the right?
+Teacher: That is David. He is picking up his water bottle from the floor.`,
     dialogue_script: [
       { speaker: 'woman', text: 'Look at Part 1. Now look at the picture. Listen and look. There is one example.' },
       { speaker: 'girl',  text: 'Look at all the students in the school corridor!' },
@@ -34,8 +34,8 @@ Teacher: That is David. He is sitting quietly by the wall.`,
       { speaker: 'woman', text: 'That is Headmaster Brown. He is watching over the corridor.' },
       { speaker: 'girl',  text: 'Is that Maria standing near the yellow warning sign?' },
       { speaker: 'woman', text: 'Yes, that is Maria. She is holding the mop to dry the wet floor.' },
-      { speaker: 'girl',  text: 'Who is the boy sitting on the floor beside the bench on the right?' },
-      { speaker: 'woman', text: 'That is David. He is sitting quietly by the wall.' }
+      { speaker: 'girl',  text: 'Who is the boy bending down near the bench on the right?' },
+      { speaker: 'woman', text: 'That is David. He is picking up his water bottle from the floor.' }
     ],
     names: [
       { id: "n1", text: "Jake", target_id: "t1", isExample: true },
@@ -52,7 +52,7 @@ Teacher: That is David. He is sitting quietly by the wall.`,
       { id: "t3", label: "Nurse Sarah (Woman in white uniform rushing)", x: 61, y: 52 },
       { id: "t4", label: "Headmaster Brown (Man in blue suit near lockers)", x: 32, y: 52 },
       { id: "t5", label: "Maria (Girl with mop near yellow sign)", x: 71, y: 70 },
-      { id: "t6", label: "David (Boy sitting on floor beside bench)", x: 84, y: 85 }
+      { id: "t6", label: "David (Boy picking up water bottle near bench)", x: 84, y: 85 }
     ]
   },
   listening_p2: {
