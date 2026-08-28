@@ -1,9 +1,9 @@
 {
-  "commit": "a1ffbb6f699d281bd657a16a2b551d81081ff571",
-  "git_commit": "a1ffbb6f699d281bd657a16a2b551d81081ff571",
-  "shortCommit": "a1ffbb6f",
-  "message": "fix(w33): final forensic QA and audio-ui-content alignment",
-  "builtAt": "2026-08-28T01:20:41.029Z",
-  "build_timestamp": "2026-08-28T01:20:41.030Z",
+  "commit": "13cf5ffbddb315be17a6e630b5dd37fe5bcaa1b0",
+  "git_commit": "13cf5ffbddb315be17a6e630b5dd37fe5bcaa1b0",
+  "shortCommit": "13cf5ffb",
+  "message": "fix(w33): final acceptance alignment for listening and speaking",
+  "builtAt": "2026-08-28T02:44:07.535Z",
+  "build_timestamp": "2026-08-28T02:44:07.536Z",
   "env": "production"
 }

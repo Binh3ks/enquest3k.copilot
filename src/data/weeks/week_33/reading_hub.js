@@ -27,7 +27,8 @@ export const readingHubData = {
     audio_url: "/audio/week33/clil_friction.mp3",
     vocab_focus: ["friction", "smooth", "rubber", "tiles", "shoes", "surface", "grip", "safe", "warning", "floor", "balance", "slippery"],
     grammar_patterns: [
-      { pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous (Action in Progress)' }
+      { pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous (Action in Progress)' },
+      { pattern: '\\b(stops|walks|grip|creates|reduces|slide|holds)\\b', label: 'Present Simple (Scientific Principles)' }
     ],
     sentence_drills: [
       {

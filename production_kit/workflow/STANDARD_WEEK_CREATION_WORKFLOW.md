@@ -705,3 +705,26 @@ After running `node tools/update_videos.js N` and selecting the Shadowing videoI
 4. **Browser test**: Open Shadowing station → toggle Transcript mode → verify sentences + IPA + YouTube seek
 
 5. **Update both modes** (ADV + Easy) — same videoId is used in `week_NN/shadowing.js` for both
+
+---
+
+## 🔒 MASTER 16-RULE CAMBRIDGE & AUDIO FORENSIC STANDARDS (W33+) — 2026-08-28
+
+Every new week (W33+) MUST adhere strictly to the following 16 invariant rules before release:
+
+1. **Image ↔ Audio Factual Grounding**: Audio descriptions MUST describe ONLY what is physically visible in the image. NEVER invent ungrounded clothing, accessories, roles, or assumptions (e.g. no "Teacher David" if David is a student, no "waiting for class to start" if ungrounded).
+2. **Audio Transcript Audit Before PASS**: Run Whisper ASR on 100% of generated MP3 files. Compare transcript against source hub text, UI wording, and image content. Zero word-for-word discrepancies permitted.
+3. **Two-Speaker Voice Distinction**: Multi-speaker dialogues (Listening P1, P2, P3, P4, Speaking P2) MUST use acoustically distinct voices (e.g., Adult Female `en-US-Journey-F` + Student Girl `en-US-Neural2-C` or Adult Male `en-US-Neural2-D`).
+4. **No Keyword Chanting in Listening Clues**: Listening Part 3 clues MUST be conversational and inferable from context. NEVER chant or repeat target answer phrases at the end of turns (e.g. NO trailing "Clean bandage. Clean bandage.").
+5. **Flyers Part 1 Example Logic**: Part 1 Example MUST teach matching clearly on ONE example character (e.g., Jake). NEVER mix another scored character (e.g., Tom) into the example exchange.
+6. **Flyers Part 3 Clue & Label Harmony**: Picture captions, hub `name`, hub `location_name`, and spoken audio references MUST be 100% identical in phrasing (e.g., `Nurse's Cabinet`, `First-Aid Table`, `Science Lab Desk`, `Dining Table`, `Bedroom Table`).
+7. **Flyers Speaking Part 2 True Reciprocal Exchange**: Table A = Candidate asks questions from cues $\rightarrow$ Examiner answers with pre-generated static audio. Table B = Examiner asks questions via pre-generated static audio $\rightarrow$ Candidate answers from candidate card.
+8. **Static MP3 Source-of-Truth Pipeline**: 100% of runtime audio MUST be pre-generated from authoritative hub source fields (`public/audio/weekXX/` & `dist/audio/weekXX/`). Zero live TTS calls during standard playback.
+9. **No Hard-Coded Duplicate Audio Scripts**: Audio generation scripts MUST read directly from hub data files (`reading_hub.js`, `listening_hub.js`, `speaking_hub.js`). Never duplicate transcript strings in standalone scripts.
+10. **CLIL Grammar X-Ray Conditional Rule**: If a paragraph naturally contains the grammar target, highlight genuine instances. If a scientific paragraph uses Present Simple, adapt the label dynamically (`Present Simple / Scientific Principles`) or display an educational note. NEVER show false error banners.
+11. **Vocab Focus Selective Highlighting**: Vocabulary Focus highlights ONLY high-value target learning chunks/collocations, NOT every clickable dictionary word.
+12. **Dictionary Completeness Rule**: 100% of glossary terms and key science terms on screen MUST exist in `vocab_dictionary_master.js` with IPA, definition, Vietnamese translation, and audio.
+13. **Discovery Report Hotspot Autoplay**: Tapping evidence hotspots in Step 1 MUST immediately trigger narration audio for 0ms interactive exploration.
+14. **Randomized Sentence Pills**: Step 3 word pills MUST be shuffled dynamically (Fisher-Yates) on initial mount with randomized distractor position. Sentences MUST NEVER appear pre-assembled.
+15. **Chrome MCP Real-Browser QA Requirement**: All UI text, images, buttons, and audio triggers MUST be verified in the actual rendered browser via Chrome MCP / Native Host before declaring PASS.
+16. **Final Human-Review Evidence Package Requirement**: Every release candidate MUST generate `.agents/W33_FINAL_HUMAN_REVIEW_EVIDENCE.md` containing full untruncated Whisper transcripts, image descriptions, and agreement matrices.

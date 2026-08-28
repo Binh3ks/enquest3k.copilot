@@ -4,34 +4,38 @@ export const listeningHub = {
     image_url: "/images/week33/w33_listening_p1_scene.jpg",
     audio_url: "/audio/week33/listening_p1_full.mp3",
     passage_audio_script: `Teacher: Look at Part 1. Now look at the picture. Listen and look. There is one example.
-Mia: Look at that boy in the corridor! Is he running?
-Teacher: No, that's Tom slipping on the wet floor. Look at the boy walking carefully in the blue shirt.
-Mia: Oh, I see him now. Is that Jake?
-Teacher: Yes, that's right. Jake is walking carefully.
+Mia: Look at all the students in the school corridor!
+Teacher: Yes, can you see the boy walking carefully on the left? He is wearing a blue shirt.
+Mia: Oh, with the blue school backpack? Is that Jake?
+Teacher: Yes, that is Jake. He is walking very carefully.
 Teacher: Can you see the example line? Now you listen and draw lines.
-Mia: Who is the woman with the first-aid kit rushing near the wall?
-Teacher: That is Nurse Sarah. She is bringing bandages to help.
-Mia: Look at the tall man in the blue suit near the lockers.
-Teacher: That is Headmaster Brown. He is watching the corridor.
-Mia: Is that Maria holding the yellow warning sign and mop?
-Teacher: Yes, that is Maria. She is drying the tiles.
-Mia: Who is the boy sitting beside the bench on the right?
-Teacher: That is David. He is sitting quietly by the bench.`,
+Mia: Look at the boy in the middle of the hallway! What happened to him?
+Teacher: That is Tom. He was in a hurry and slipped on the wet tiles.
+Mia: Who is the woman in the white uniform rushing near the wall?
+Teacher: That is Nurse Sarah. She is carrying a first-aid kit to help him.
+Mia: And who is the tall man in the dark blue suit near the lockers?
+Teacher: That is Headmaster Brown. He is watching over the corridor.
+Mia: Is that Maria standing near the yellow warning sign?
+Teacher: Yes, that is Maria. She is holding the mop to dry the wet floor.
+Mia: Who is the boy sitting on the floor beside the bench on the right?
+Teacher: That is David. He is sitting quietly by the wall.`,
     dialogue_script: [
       { speaker: 'woman', text: 'Look at Part 1. Now look at the picture. Listen and look. There is one example.' },
-      { speaker: 'girl',  text: 'Look at that boy in the corridor! Is he running?' },
-      { speaker: 'woman', text: "No, that's Tom slipping on the wet floor. Look at the boy walking carefully in the blue shirt." },
-      { speaker: 'girl',  text: 'Oh, I see him now. Is that Jake?' },
-      { speaker: 'woman', text: "Yes, that's right. Jake is walking carefully." },
+      { speaker: 'girl',  text: 'Look at all the students in the school corridor!' },
+      { speaker: 'woman', text: 'Yes, can you see the boy walking carefully on the left? He is wearing a blue shirt.' },
+      { speaker: 'girl',  text: 'Oh, with the blue school backpack? Is that Jake?' },
+      { speaker: 'woman', text: 'Yes, that is Jake. He is walking very carefully.' },
       { speaker: 'woman', text: 'Can you see the example line? Now you listen and draw lines.' },
-      { speaker: 'girl',  text: 'Who is the woman with the first-aid kit rushing near the wall?' },
-      { speaker: 'woman', text: 'That is Nurse Sarah. She is bringing bandages to help.' },
-      { speaker: 'girl',  text: 'Look at the tall man in the blue suit near the lockers.' },
-      { speaker: 'woman', text: 'That is Headmaster Brown. He is watching the corridor.' },
-      { speaker: 'girl',  text: 'Is that Maria holding the yellow warning sign and mop?' },
-      { speaker: 'woman', text: 'Yes, that is Maria. She is drying the tiles.' },
-      { speaker: 'girl',  text: 'Who is the boy sitting beside the bench on the right?' },
-      { speaker: 'woman', text: 'That is David. He is sitting quietly by the bench.' }
+      { speaker: 'girl',  text: 'Look at the boy in the middle of the hallway! What happened to him?' },
+      { speaker: 'woman', text: 'That is Tom. He was in a hurry and slipped on the wet tiles.' },
+      { speaker: 'girl',  text: 'Who is the woman in the white uniform rushing near the wall?' },
+      { speaker: 'woman', text: 'That is Nurse Sarah. She is carrying a first-aid kit to help him.' },
+      { speaker: 'girl',  text: 'And who is the tall man in the dark blue suit near the lockers?' },
+      { speaker: 'woman', text: 'That is Headmaster Brown. He is watching over the corridor.' },
+      { speaker: 'girl',  text: 'Is that Maria standing near the yellow warning sign?' },
+      { speaker: 'woman', text: 'Yes, that is Maria. She is holding the mop to dry the wet floor.' },
+      { speaker: 'girl',  text: 'Who is the boy sitting on the floor beside the bench on the right?' },
+      { speaker: 'woman', text: 'That is David. He is sitting quietly by the wall.' }
     ],
     names: [
       { id: "n1", text: "Jake", target_id: "t1", isExample: true },
@@ -43,12 +47,12 @@ Teacher: That is David. He is sitting quietly by the bench.`,
       { id: "n7", text: "Mia the Monitor", target_id: null }
     ],
     targets: [
-      { id: "t1", label: "Jake (Boy holding backpack on left)", x: 18, y: 82, isExample: true },
+      { id: "t1", label: "Jake (Boy in blue shirt on left)", x: 18, y: 82, isExample: true },
       { id: "t2", label: "Tom (Student slipping in red shirt)", x: 50, y: 70 },
-      { id: "t3", label: "Nurse Sarah (Woman rushing in white uniform)", x: 61, y: 52 },
+      { id: "t3", label: "Nurse Sarah (Woman in white uniform rushing)", x: 61, y: 52 },
       { id: "t4", label: "Headmaster Brown (Man in blue suit near lockers)", x: 32, y: 52 },
-      { id: "t5", label: "Maria (Girl holding mop near yellow sign)", x: 71, y: 70 },
-      { id: "t6", label: "David (Boy sitting beside bench on right)", x: 84, y: 85 }
+      { id: "t5", label: "Maria (Girl with mop near yellow sign)", x: 71, y: 70 },
+      { id: "t6", label: "David (Boy sitting on floor beside bench)", x: 84, y: 85 }
     ]
   },
   listening_p2: {
@@ -147,14 +151,14 @@ Teacher: That is David. He is sitting quietly by the bench.`,
       }
     ],
     cards: [
-      { letter: "A", name: "Nurse's Cabinet", location_name: "Nurse Office", image_url: "/images/week33/card_a.jpg" },
-      { letter: "B", name: "First-Aid Table", location_name: "First Aid Area", image_url: "/images/week33/card_b.jpg" },
-      { letter: "C", name: "Science Lab Desk", location_name: "Science Room", image_url: "/images/week33/card_c.jpg" },
-      { letter: "D", name: "Dining Table", location_name: "Dining Area", image_url: "/images/week33/card_d.jpg" },
-      { letter: "E", name: "Bedroom Table", location_name: "Jake's Home", image_url: "/images/week33/card_e.jpg" },
-      { letter: "F", name: "School Corridor", location_name: "Corridor Floor", image_url: "/images/week33/card_f.jpg" },
-      { letter: "G", name: "Headmaster's Office", location_name: "Office", image_url: "/images/week33/card_g.jpg" },
-      { letter: "H", name: "Playground Bench", location_name: "School Yard", image_url: "/images/week33/card_h.jpg" }
+      { letter: "A", name: "Nurse's Cabinet", location_name: "Nurse's Cabinet", image_url: "/images/week33/card_a.jpg" },
+      { letter: "B", name: "First-Aid Table", location_name: "First-Aid Table", image_url: "/images/week33/card_b.jpg" },
+      { letter: "C", name: "Science Lab Desk", location_name: "Science Lab Desk", image_url: "/images/week33/card_c.jpg" },
+      { letter: "D", name: "Dining Table", location_name: "Dining Table", image_url: "/images/week33/card_d.jpg" },
+      { letter: "E", name: "Bedroom Table", location_name: "Bedroom Table", image_url: "/images/week33/card_e.jpg" },
+      { letter: "F", name: "School Corridor", location_name: "School Corridor", image_url: "/images/week33/card_f.jpg" },
+      { letter: "G", name: "Headmaster's Office", location_name: "Headmaster's Office", image_url: "/images/week33/card_g.jpg" },
+      { letter: "H", name: "Playground Bench", location_name: "Playground Bench", image_url: "/images/week33/card_h.jpg" }
     ]
   },
   // Cambridge alignment: EXACT after P0 fixes (dialogue_script, 2-voice, mixed answers, example)

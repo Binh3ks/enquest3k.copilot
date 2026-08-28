@@ -79,6 +79,19 @@ export default function CLILExplorer({
     return out;
   }, [paragraphs, grammarPatterns, currentPhase]);
 
+  const activeGrammarInfo = useMemo(() => {
+    const src = currentPhase === 2 ? (paragraphs[1] || paragraphs[0]) : paragraphs[0];
+    for (const gp of grammarPatterns) {
+      try {
+        const re = new RegExp(gp.pattern, 'gi');
+        if (re.test(src)) {
+          return gp;
+        }
+      } catch (_) {}
+    }
+    return grammarPatterns[0] || { pattern: '', label: 'Target Grammar Focus' };
+  }, [paragraphs, grammarPatterns, currentPhase]);
+
   // Questions derived from clilData
   const allQuestions = useMemo(() => {
     const rawQs = clilData?.comprehension_questions || clilData?.check_questions || [];
@@ -304,25 +317,27 @@ export default function CLILExplorer({
         <div className="p-4 bg-amber-50/90 border border-amber-300 rounded-2xl space-y-2 shadow-xs animate-in fade-in">
           <div className="flex items-center justify-between">
             <span className="text-[11px] font-black uppercase text-amber-900 tracking-wider flex items-center gap-1.5">
-              <BookOpen size={14} className="text-amber-700" /> Grammar X-Ray: Past Continuous (was / were + V-ing)
+              <BookOpen size={14} className="text-amber-700" /> Grammar X-Ray: {activeGrammarInfo?.label || 'Target Grammar Focus'}
             </span>
             <span className="text-[10px] font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full border border-amber-300">
-              Action in Progress
+              Grammar Focus
             </span>
           </div>
           <div className="flex flex-wrap gap-2 text-xs font-black text-amber-950">
             {grammarLegend.length === 0 && (
-              <span className="px-2.5 py-1 bg-rose-100 text-rose-700 rounded-lg border border-rose-300">
-                ⚠️ No Past Continuous found in this paragraph — check data!
+              <span className="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-lg border border-amber-300">
+                ℹ️ This section focuses on vocabulary and reading comprehension.
               </span>
             )}
             {grammarLegend.map((g, i) => (
               <span key={i} className="px-2.5 py-1 bg-amber-200/90 rounded-lg border border-amber-300">{g}</span>
             ))}
           </div>
-          <p className="text-[10px] text-amber-800 font-bold">
-            👇 These phrases are highlighted inline inside the paragraph below.
-          </p>
+          {grammarLegend.length > 0 && (
+            <p className="text-[10px] text-amber-800 font-bold">
+              👇 These phrases are highlighted inline inside the paragraph below.
+            </p>
+          )}
         </div>
       )}
 
