@@ -987,12 +987,20 @@ async function main() {
       failureReason = 'CRITICAL: Route weekly_review failed to mount Speaking Find Differences';
     }
 
+    const actualPaper = d5Id === 'boss_listening' ? 'Listening' : d5Id === 'boss_reading' ? 'Reading & Writing' : 'Speaking';
+    const actualPart = d5Id === 'boss_listening' ? 'L1' : d5Id === 'boss_reading' ? 'R1' : 'S1';
+    const actualComponent = d5Inspection.isLineMatcher ? 'SVGLineMatcher' : d5Inspection.isWordBankMatching ? 'WordBankMatchingGrid' : d5Inspection.isFindDifferences ? 'FindDifferencesInteractive' : 'Unknown';
+
     report.day5ForensicContract[d5Id] = {
       expectedPaper: oracleSpec.expected_paper,
       expectedComponent: oracleSpec.expected_component_identity,
+      actualPaper,
+      actualPart,
+      actualHeader: d5Inspection.headerText,
       actualHeaderTitle: d5Inspection.headerText,
+      actualComponent,
       forbiddenViolation,
-      failureReason,
+      failureReason: failureReason || null,
       inspection: d5Inspection
     };
 

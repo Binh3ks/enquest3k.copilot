@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-29T14:10:27.135Z",
+  "timestamp": "2026-08-29T14:21:38.248Z",
   "governingStandard": "W33 Golden Learning & Assessment Standard v1.0",
   "activeProfile": "NORMAL_LEARNER_PROFILE (role: student)",
   "pathA_TrueLearnerNavigation": {
@@ -1372,9 +1372,13 @@
     "boss_listening": {
       "expectedPaper": "Listening",
       "expectedComponent": "BossBattleZone -> SVGLineMatcher (L1)",
+      "actualPaper": "Listening",
+      "actualPart": "L1",
+      "actualHeader": "Listening Shield (L1 & L2)",
       "actualHeaderTitle": "Listening Shield (L1 & L2)",
+      "actualComponent": "SVGLineMatcher",
       "forbiddenViolation": false,
-      "failureReason": "",
+      "failureReason": null,
       "inspection": {
         "headerText": "Listening Shield (L1 & L2)",
         "isLineMatcher": true,
@@ -1388,9 +1392,13 @@
     "boss_reading": {
       "expectedPaper": "Reading & Writing",
       "expectedComponent": "BossBattleZone -> WordBankMatchingGrid (R1) or designated Cambridge R&W Part",
+      "actualPaper": "Reading & Writing",
+      "actualPart": "R1",
+      "actualHeader": "Reading & Writing Shield (R1)",
       "actualHeaderTitle": "Reading & Writing Shield (R1)",
+      "actualComponent": "WordBankMatchingGrid",
       "forbiddenViolation": false,
-      "failureReason": "",
+      "failureReason": null,
       "inspection": {
         "headerText": "Reading & Writing Shield (R1)",
         "isLineMatcher": false,
@@ -1404,9 +1412,13 @@
     "weekly_review": {
       "expectedPaper": "Speaking",
       "expectedComponent": "BossBattleZone -> FindDifferencesInteractive (S1) or designated Cambridge Speaking Part",
+      "actualPaper": "Speaking",
+      "actualPart": "S1",
+      "actualHeader": "Speaking & Passport (S1)",
       "actualHeaderTitle": "Speaking & Passport (S1)",
+      "actualComponent": "FindDifferencesInteractive",
       "forbiddenViolation": false,
-      "failureReason": "",
+      "failureReason": null,
       "inspection": {
         "headerText": "Speaking & Passport (S1)",
         "isLineMatcher": false,
