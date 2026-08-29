@@ -216,7 +216,10 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
   const starsEarned = (score || 0) >= 80 ? 3 : (score || 0) >= 60 ? 2 : 1;
 
   return (
-    <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
+    <div
+      data-testid="find-differences"
+      className="find-differences w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6"
+    >
       <CompletionModal
         isOpen={isSubmitted && (score || 0) >= 50}
         onClose={() => {}}

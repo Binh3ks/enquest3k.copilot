@@ -24,7 +24,7 @@
     "plan_months": null,
     "trial_expires_at": "2026-06-13T08:01:53.673Z",
     "seats_total": 0,
-    "avatar_url": "https://dlvjqdyvatceidzeyfnq.supabase.co/storage/v1/object/public/avatars/cp_cute_45.jpg",
+    "avatar_url": null,
     "created_at": "2026-05-30T08:01:54.376Z"
   },
   {
@@ -66,7 +66,7 @@
     "plan_months": null,
     "trial_expires_at": "2026-06-08T00:00:00.000Z",
     "seats_total": 0,
-    "avatar_url": "https://dlvjqdyvatceidzeyfnq.supabase.co/storage/v1/object/public/avatars/jbagy_nam_4.jpg",
+    "avatar_url": null,
     "created_at": "2026-05-25T05:48:14.851Z"
   },
   {
@@ -472,7 +472,7 @@
     "plan_months": null,
     "trial_expires_at": null,
     "seats_total": 0,
-    "avatar_url": "https://dlvjqdyvatceidzeyfnq.supabase.co/storage/v1/object/public/avatars/cp_cute_39.jpg",
+    "avatar_url": null,
     "created_at": "2026-03-13T14:04:22.926Z"
   },
   {
@@ -486,7 +486,7 @@
     "plan_months": null,
     "trial_expires_at": "2026-06-19T13:34:23.445Z",
     "seats_total": 0,
-    "avatar_url": "https://dlvjqdyvatceidzeyfnq.supabase.co/storage/v1/object/public/avatars/cp_cute_49.jpg",
+    "avatar_url": null,
     "created_at": "2026-03-09T13:10:24.195Z"
   },
   {
@@ -500,7 +500,7 @@
     "plan_months": null,
     "trial_expires_at": "2026-06-19T13:34:38.089Z",
     "seats_total": 0,
-    "avatar_url": "https://dlvjqdyvatceidzeyfnq.supabase.co/storage/v1/object/public/avatars/cp_cute_46.jpg",
+    "avatar_url": null,
     "created_at": "2026-03-06T02:32:37.568Z"
   },
   {
@@ -514,7 +514,7 @@
     "plan_months": null,
     "trial_expires_at": "2026-06-19T13:34:48.435Z",
     "seats_total": 0,
-    "avatar_url": "https://dlvjqdyvatceidzeyfnq.supabase.co/storage/v1/object/public/avatars/cp_cute_37.jpg",
+    "avatar_url": null,
     "created_at": "2026-03-06T02:32:25.274Z"
   },
   {
@@ -542,7 +542,7 @@
     "plan_months": null,
     "trial_expires_at": null,
     "seats_total": 0,
-    "avatar_url": "https://dlvjqdyvatceidzeyfnq.supabase.co/storage/v1/object/public/avatars/cp_cute_55.jpg",
+    "avatar_url": null,
     "created_at": "2026-03-06T02:31:58.805Z"
   },
   {
@@ -556,7 +556,7 @@
     "plan_months": null,
     "trial_expires_at": null,
     "seats_total": 0,
-    "avatar_url": "https://dlvjqdyvatceidzeyfnq.supabase.co/storage/v1/object/public/avatars/jbagy_nam_7.jpg",
+    "avatar_url": null,
     "created_at": "2026-03-06T02:31:45.173Z"
   },
   {

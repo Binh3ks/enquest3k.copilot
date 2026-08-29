@@ -1,9 +1,9 @@
 {
-  "commit": "66c0d1f8f673d2db6626c9dbf28e739d68e5ab3a",
-  "git_commit": "66c0d1f8f673d2db6626c9dbf28e739d68e5ab3a",
-  "shortCommit": "66c0d1f8",
-  "message": "feat(clil): make glossary terms clickable with dictionary, expand full-width laptop layout and increase font sizes",
-  "builtAt": "2026-08-29T05:25:28.730Z",
-  "build_timestamp": "2026-08-29T05:25:28.731Z",
+  "commit": "e8f6e2c31bbbe51884d57c1f710d9d4b7e555b23",
+  "git_commit": "e8f6e2c31bbbe51884d57c1f710d9d4b7e555b23",
+  "shortCommit": "e8f6e2c3",
+  "message": "feat(gamification): close phase 3c cosmetic and arcade hardening",
+  "builtAt": "2026-08-29T14:12:44.176Z",
+  "build_timestamp": "2026-08-29T14:12:44.177Z",
   "env": "production"
 }

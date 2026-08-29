@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Search, BookOpen } from 'lucide-react';
-import { getAllWords, getBankStats } from '../utils/wordMemoryBank';
+import { getAllWords, getBankStats, addWeekWords } from '../utils/wordMemoryBank';
 import { getWeekTitle } from '../data/weeks/metadata';
+import { loadWeekData } from '../data/weeks/index';
 
 const STATUS_LABELS = {
   new: { label: 'New', color: 'bg-blue-100 text-blue-700' },
@@ -21,10 +22,23 @@ const STATUS_TABS = [
 
 export default function WordTreasury() {
   const navigate = useNavigate();
-  const [allWords] = useState(() => getAllWords());
-  const [stats] = useState(() => getBankStats());
+  const [allWords, setAllWords] = useState(() => getAllWords());
+  const [stats, setStats] = useState(() => getBankStats());
   const [statusFilter, setStatusFilter] = useState('all');
   const [search, setSearch] = useState('');
+
+  React.useEffect(() => {
+    // Ensure active week (Week 33) vocabulary is ingested if not already loaded
+    loadWeekData(33, false).then((wData) => {
+      const rawVocab = wData?.stations?.new_words || wData?.new_words || wData?.reading_hub?.vocab || wData?.readingHub?.vocab || wData?.vocab;
+      const vocabList = Array.isArray(rawVocab) ? rawVocab : rawVocab?.vocab;
+      if (Array.isArray(vocabList) && vocabList.length > 0) {
+        addWeekWords(33, vocabList);
+        setAllWords(getAllWords());
+        setStats(getBankStats());
+      }
+    }).catch(() => {});
+  }, []);
 
   const filtered = useMemo(() => {
     let words = allWords;

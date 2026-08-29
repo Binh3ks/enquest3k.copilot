@@ -1,0 +1,144 @@
+{
+  "timings": {
+    "initialLoadMs": 2992
+  },
+  "routesChecked": [],
+  "findings": [],
+  "sceneVisuals": {
+    "scene_1": {
+      "imgSrc": null,
+      "imgNaturalWidth": 0,
+      "imgNaturalHeight": 0,
+      "imgClientWidth": 0,
+      "imgClientHeight": 0,
+      "objectFit": null,
+      "containerOverflow": null,
+      "sceneText": "Không chỉ học tiếng Anh — mà học Toán, Khoa học, Tư duy bằng tiếng Anh. Sau 3 năm: B1+ Cambridge, sẵn sàng cho chương trình giáo dục quốc tế."
+    },
+    "scene_2": {
+      "imgSrc": null,
+      "imgNaturalWidth": 0,
+      "imgNaturalHeight": 0,
+      "imgClientWidth": 0,
+      "imgClientHeight": 0,
+      "objectFit": null,
+      "containerOverflow": null,
+      "sceneText": "Không chỉ học tiếng Anh — mà học Toán, Khoa học, Tư duy bằng tiếng Anh. Sau 3 năm: B1+ Cambridge, sẵn sàng cho chương trình giáo dục quốc tế."
+    },
+    "scene_3": {
+      "imgSrc": null,
+      "imgNaturalWidth": 0,
+      "imgNaturalHeight": 0,
+      "imgClientWidth": 0,
+      "imgClientHeight": 0,
+      "objectFit": null,
+      "containerOverflow": null,
+      "sceneText": "Không chỉ học tiếng Anh — mà học Toán, Khoa học, Tư duy bằng tiếng Anh. Sau 3 năm: B1+ Cambridge, sẵn sàng cho chương trình giáo dục quốc tế."
+    },
+    "scene_4": {
+      "imgSrc": null,
+      "imgNaturalWidth": 0,
+      "imgNaturalHeight": 0,
+      "imgClientWidth": 0,
+      "imgClientHeight": 0,
+      "objectFit": null,
+      "containerOverflow": null,
+      "sceneText": "Không chỉ học tiếng Anh — mà học Toán, Khoa học, Tư duy bằng tiếng Anh. Sau 3 năm: B1+ Cambridge, sẵn sàng cho chương trình giáo dục quốc tế."
+    },
+    "scene_5": {
+      "imgSrc": null,
+      "imgNaturalWidth": 0,
+      "imgNaturalHeight": 0,
+      "imgClientWidth": 0,
+      "imgClientHeight": 0,
+      "objectFit": null,
+      "containerOverflow": null,
+      "sceneText": "Không chỉ học tiếng Anh — mà học Toán, Khoa học, Tư duy bằng tiếng Anh. Sau 3 năm: B1+ Cambridge, sẵn sàng cho chương trình giáo dục quốc tế."
+    }
+  },
+  "wordBankStatus": {
+    "bankRouteDirect": {
+      "url": "http://localhost:5173/#/bank",
+      "hasNoRouteMatch": false,
+      "bodySnippet": "Đăng nhập\n🦊\nLEXIO\nEN\nHọc Tiếng Anh\nChuẩn Cambridge\n\nKhông chỉ học tiếng Anh — mà học Toán, Khoa học, Tư duy bằng tiếng Anh. Sau 3 năm: B1+ Cambridge, sẵn sàng cho chương trình giáo dục quốc tế.\n\n14 n"
+    }
+  },
+  "weeklyReviewStatus": {
+    "title": "Học Tiếng Anh\nChuẩn Cambridge",
+    "bodySnippet": "Đăng nhập\n🦊\nLEXIO\nEN\nHọc Tiếng Anh\nChuẩn Cambridge\n\nKhông chỉ học tiếng Anh — mà học Toán, Khoa học, Tư duy bằng tiếng Anh. Sau 3 năm: B1+ Cambridge, sẵn sàng cho chương trình giáo dục quốc tế.\n\n14 ngày dùng thử MIỄN PHÍ — đầy đủ tính năng\n🎁\nDùng thử 14 ngày miễn phí\n\nKhông cần thẻ ngân hàng · Đăn",
+    "wordsDisplayed": [],
+    "hasW01W32Keywords": false,
+    "hasPassportTab": false
+  },
+  "coopBoardStatus": {
+    "textSnippet": "Đăng nhập\n🦊\nLEXIO\nEN\nHọc Tiếng Anh\nChuẩn Cambridge\n\nKhông chỉ học tiếng Anh — mà học Toán, Khoa học, Tư duy bằng tiếng Anh. Sau 3 năm: B1+ Cambridge, sẵn sàng cho chương trình giáo dục quốc tế.\n\n14 ngày dùng thử MIỄN PHÍ — đầy đủ tính năng\n🎁\nDùng thử 14 ngày miễn phí\n\nKhông cần thẻ ngân hàng · Đăng ký trong 30 giây\n\n156\n\nTUẦN HỌC\n\n4\n\nKỸ NĂNG\n\n30+\n\nNĂM KINH NGHIỆM\n\nA1→B1+\n\nCAMBRIDGE\n\nKHÁC BIỆT CỐ",
+    "hasAlex": false,
+    "hasLeo": false,
+    "has15k": false,
+    "has9450": false
+  },
+  "voiceShadowLabels": {
+    "lMatches": [],
+    "navButtonsSample": [
+      "Đăng nhập",
+      "🦊\nLEXIO",
+      "🦊",
+      "LEXIO",
+      "EN",
+      "Chuẩn Cambridge",
+      "🎁\nDùng thử 14 ngày miễn phí",
+      "🎁",
+      "156\n\nTUẦN HỌC",
+      "4\n\nKỸ NĂNG",
+      "30+\n\nNĂM KINH NGHIỆM",
+      "A1→B1+\n\nCAMBRIDGE",
+      "KHÁC BIỆT CỐT LÕI",
+      "CLIL",
+      "bằng tiếng Anh",
+      "📐",
+      "🔬\n\nKhoa học bằng tiếng Anh",
+      "🔬",
+      "🌍\n\nXã hội học bằng tiếng Anh",
+      "🌍",
+      "📚",
+      "🤖",
+      "🧠",
+      "🎮",
+      "📊",
+      "🎙️",
+      "🏫",
+      "🤖",
+      "🧠\n\nKhoa học\n\nSRS + Shadowing",
+      "🧠"
+    ],
+    "rawTextHasL1": false
+  },
+  "consoleLogs": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "log",
+      "text": "[TTS Preload] ℹ️ Using Cloudflare Worker with R2 cache - no warmup needed"
+    },
+    {
+      "type": "log",
+      "text": "[TTSCache] 🆕 Created fresh object store v14"
+    },
+    {
+      "type": "log",
+      "text": "[TTSCache] ✅ IndexedDB v14 fresh ready"
+    }
+  ],
+  "networkErrors": [],
+  "totalNetworkRequests": 697
+}

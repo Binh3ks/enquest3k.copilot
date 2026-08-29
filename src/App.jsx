@@ -389,9 +389,9 @@ const MainLayout = ({ isTaskMode = false }) => {
     }
   }, [weekCompletion, weekId, currentUser?.id, currentUser?._id]);
 
-  // 🚀 Single prefetch entry point — cancel old week first, then start new one
+  // 🚀 Single prefetch entry point — only prefetch live Google TTS for weeks without static MP3 (< 33)
   useEffect(() => {
-    if (weekData && !isWeekDataLoading) {
+    if (weekData && !isWeekDataLoading && weekId < 33) {
       const isEasy = learningMode === 'easy';
       console.log(`[App] 🚀 Prefetch Week ${weekId} (${isEasy ? 'EASY' : 'ADVANCED'}), station: ${tabKey}`);
       TTSWeekPrefetch.cancel(); // stop any in-flight prefetch from previous week

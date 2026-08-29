@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import getBossRotaryConfig from '../../config/bossRotarySchedule';
-import { getPart, getAllParts } from '../../config/cambridgePartRegistry';
+import { getPart, getAllParts, PAPER } from '../../config/cambridgePartRegistry';
 import { evaluateMockAssessment } from '../../services/assessment/MockAssessmentEngine';
 import BossIntro from '../../components/zones/BossIntro';
 import SVGLineMatcher from '../../components/cambridge/SVGLineMatcher';
@@ -144,14 +144,27 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     return tasks;
   }, [rotaryConfig, isFullMock, requestedTaskId]);
 
-  // Initial task index
+  // Initial task index derived from explicit questId and paper contract (ZERO positional assumptions)
   const initialIndex = React.useMemo(() => {
     if (requestedTaskId) {
       const foundIdx = currentTasks.findIndex(t => t.partId === requestedTaskId);
       if (foundIdx !== -1) return foundIdx;
     }
-    if (forcedStation === 'rw_boss' || forcedStation === 'reading_boss' || forcedStation === 'boss_reading') return 1;
-    if (forcedStation === 'review' || forcedStation === 'weekly_review' || forcedStation === 'speaking_boss') return 2;
+    if (!forcedStation) return 0;
+
+    const station = forcedStation.toLowerCase().trim();
+    if (['rw_boss', 'reading_boss', 'boss_reading'].includes(station)) {
+      const idx = currentTasks.findIndex(t => t.questId === 'boss_reading' || t.paper === PAPER.READING_WRITING);
+      return idx !== -1 ? idx : 0;
+    }
+    if (['review', 'weekly_review', 'speaking_boss', 'personal_qs'].includes(station)) {
+      const idx = currentTasks.findIndex(t => t.questId === 'weekly_review' || t.paper === PAPER.SPEAKING);
+      return idx !== -1 ? idx : 0;
+    }
+    if (['listening_boss', 'boss_listening'].includes(station)) {
+      const idx = currentTasks.findIndex(t => t.questId === 'boss_listening' || t.paper === PAPER.LISTENING);
+      return idx !== -1 ? idx : 0;
+    }
     return 0;
   }, [forcedStation, requestedTaskId, currentTasks]);
 
@@ -166,7 +179,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
   // Mock Paper Shield scores (set on Full Mock completion via MockAssessmentEngine)
   const [mockPaperScores, setMockPaperScores] = useState(null);
 
-  // Sync active task index when forcedStation or requestedTaskId changes
+  // Sync active task index when forcedStation or requestedTaskId changes (contract-driven)
   React.useEffect(() => {
     if (requestedTaskId) {
       const foundIdx = currentTasks.findIndex(t => t.partId === requestedTaskId);
@@ -176,12 +189,18 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         return;
       }
     }
-    if (forcedStation === 'rw_boss' || forcedStation === 'reading_boss' || forcedStation === 'boss_reading') {
-      setActiveTaskIndex(1);
-    } else if (forcedStation === 'review' || forcedStation === 'weekly_review' || forcedStation === 'speaking_boss') {
-      setActiveTaskIndex(2);
-    } else if (forcedStation === 'listening_boss' || forcedStation === 'boss_listening') {
-      setActiveTaskIndex(0);
+    if (!forcedStation) return;
+
+    const station = forcedStation.toLowerCase().trim();
+    if (['rw_boss', 'reading_boss', 'boss_reading'].includes(station)) {
+      const idx = currentTasks.findIndex(t => t.questId === 'boss_reading' || t.paper === PAPER.READING_WRITING);
+      if (idx !== -1) setActiveTaskIndex(idx);
+    } else if (['review', 'weekly_review', 'speaking_boss', 'personal_qs'].includes(station)) {
+      const idx = currentTasks.findIndex(t => t.questId === 'weekly_review' || t.paper === PAPER.SPEAKING);
+      if (idx !== -1) setActiveTaskIndex(idx);
+    } else if (['listening_boss', 'boss_listening'].includes(station)) {
+      const idx = currentTasks.findIndex(t => t.questId === 'boss_listening' || t.paper === PAPER.LISTENING);
+      if (idx !== -1) setActiveTaskIndex(idx);
     }
   }, [forcedStation, requestedTaskId, currentTasks]);
 
@@ -306,7 +325,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
                 <CheckCircle2 className="text-amber-400" size={20} />
                 <div className="text-left">
                   <div className="text-[10px] uppercase font-black text-purple-300">Cambridge Part Complete</div>
-                  <div className="text-xs font-black text-white">{part?.shortLabel || partId}</div>
+                  <div className="text-xs font-black text-white">{part?.displayName || part?.shortLabel || partId}</div>
                 </div>
               </div>
             );

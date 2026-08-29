@@ -6,6 +6,7 @@ import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import LexioMascot from '../mascot/LexioMascot';
 import useArcadeStore, { getUnlockedGameCount } from '../../stores/useArcadeStore';
 import ArcadeModal from '../games/ArcadeModal';
+import ClassLeaderboardModal from '../common/ClassLeaderboardModal';
 import './QuestSidebar.css';
 
 const TOTAL_TRIPS = 36; // Current syllabus length
@@ -119,7 +120,43 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
             <ChevronRight size={16} className="text-slate-400" />
           </button>
 
-          {/* Weekly Review / Passport */}
+          {/* Day 5 Boss & Passport */}
+          <button
+            className="qs-nav-item"
+            onClick={() => {
+              onClose();
+              navigate(`/week/${currentWeekId}/task/weekly_review`);
+            }}
+          >
+            <div className="qs-nav-icon bg-emerald-100 text-emerald-700">
+              <Award size={18} />
+            </div>
+            <div className="qs-nav-text">
+              <div className="qs-nav-title">🏰 Day 5 Boss & Passport</div>
+              <div className="qs-nav-desc">Cambridge assessment & 15-Shield Passport</div>
+            </div>
+            <ChevronRight size={16} className="text-slate-400" />
+          </button>
+
+          {/* Word Treasury / Memory Bank */}
+          <button
+            className="qs-nav-item"
+            onClick={() => {
+              onClose();
+              navigate('/word-treasury');
+            }}
+          >
+            <div className="qs-nav-icon bg-purple-100 text-purple-700">
+              <BookOpen size={18} />
+            </div>
+            <div className="qs-nav-text">
+              <div className="qs-nav-title">📖 Word Treasury</div>
+              <div className="qs-nav-desc">SRS vocabulary bank & flashcards</div>
+            </div>
+            <ChevronRight size={16} className="text-slate-400" />
+          </button>
+
+          {/* Smart Practice Drills (SRS) */}
           <button
             className="qs-nav-item"
             onClick={() => {
@@ -127,30 +164,12 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
               navigate(`/week/${currentWeekId}/review`);
             }}
           >
-            <div className="qs-nav-icon bg-emerald-100 text-emerald-700">
-              <Award size={18} />
+            <div className="qs-nav-icon bg-blue-100 text-blue-700">
+              <Sparkles size={18} />
             </div>
             <div className="qs-nav-text">
-              <div className="qs-nav-title">📋 Weekly Review & Passport</div>
-              <div className="qs-nav-desc">Review SRS words & mastery</div>
-            </div>
-            <ChevronRight size={16} className="text-slate-400" />
-          </button>
-
-          {/* Story Library */}
-          <button
-            className="qs-nav-item"
-            onClick={() => {
-              onClose();
-              navigate(`/bank`);
-            }}
-          >
-            <div className="qs-nav-icon bg-purple-100 text-purple-700">
-              <BookOpen size={18} />
-            </div>
-            <div className="qs-nav-text">
-              <div className="qs-nav-title">📖 Word Memory Bank</div>
-              <div className="qs-nav-desc">All collected vocabulary</div>
+              <div className="qs-nav-title">📝 Smart Practice Drills</div>
+              <div className="qs-nav-desc">Spaced repetition across past weeks</div>
             </div>
             <ChevronRight size={16} className="text-slate-400" />
           </button>
@@ -303,56 +322,8 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
         </div>
       )}
 
-      {/* Co-op Board Modal */}
-      {showCoopModal && (
-        <div className="qs-modal-overlay animate-in fade-in duration-200" onClick={() => setShowCoopModal(false)}>
-          <div className="qs-trip-modal animate-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
-            <div className="qs-modal-header">
-              <div>
-                <h3 className="qs-modal-title">🏆 Class Co-op Board</h3>
-                <p className="qs-modal-sub">Trip {currentWeekId} Classroom Team Challenge</p>
-              </div>
-              <button className="qs-modal-close" onClick={() => setShowCoopModal(false)}>
-                <X size={18} />
-              </button>
-            </div>
-
-            <div className="p-4 space-y-4">
-              <div className="p-4 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl text-white text-center space-y-1 shadow-lg">
-                <div className="text-xs font-black uppercase tracking-wider text-amber-100">Team Goal: 15,000 XP</div>
-                <div className="text-2xl font-black">9,450 / 15,000 XP (63%)</div>
-                <div className="w-full h-3 bg-black/20 rounded-full overflow-hidden mt-2">
-                  <div className="h-full bg-yellow-300 rounded-full" style={{ width: '63%' }} />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <div className="text-xs font-black text-slate-500 uppercase tracking-wider">🌟 Top Class Heroes:</div>
-                <div className="space-y-1.5">
-                  <div className="flex items-center justify-between p-2.5 bg-amber-50 border border-amber-200 rounded-xl text-xs font-black text-slate-800">
-                    <div className="flex items-center gap-2">
-                      <span>🥇</span> <span>Alex</span>
-                    </div>
-                    <span className="text-amber-700">1,820 XP</span>
-                  </div>
-                  <div className="flex items-center justify-between p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-black text-slate-800">
-                    <div className="flex items-center gap-2">
-                      <span>🥈</span> <span>Leo</span>
-                    </div>
-                    <span className="text-slate-700">1,640 XP</span>
-                  </div>
-                  <div className="flex items-center justify-between p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-black text-slate-800">
-                    <div className="flex items-center gap-2">
-                      <span>🥉</span> <span>{currentUser.displayName || 'You'}</span>
-                    </div>
-                    <span className="text-emerald-700">{userXP} XP (You)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Co-op Board Modal (Canonical Phase 2D standard) */}
+      <ClassLeaderboardModal isOpen={showCoopModal} onClose={() => setShowCoopModal(false)} />
     </div>
   );
 }

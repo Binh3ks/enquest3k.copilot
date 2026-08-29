@@ -1,8 +1,11 @@
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Menu, CheckCircle2, Lock } from 'lucide-react';
+import { Menu, CheckCircle2, Lock, Gamepad2, BookOpen, Users } from 'lucide-react';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { useUserStore } from '../../stores/useUserStore';
+import useArcadeStore from '../../stores/useArcadeStore';
+import ArcadeModal from '../games/ArcadeModal';
+import ClassLeaderboardModal from '../common/ClassLeaderboardModal';
 import { QUEST_SCHEDULE, DAILY_BONUS_XP, TOTAL_QUEST_DAYS } from '../../config/questSchedule';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import LexioMascot from '../mascot/LexioMascot';
@@ -133,6 +136,8 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
   const isPortrait = useIsPortrait();
   const [expandedStation, setExpandedStation] = useState(null);
   const [showPIN, setShowPIN] = useState(false);
+  const [showCoopModal, setShowCoopModal] = useState(false);
+  const { isArcadeOpen, setArcadeOpen } = useArcadeStore();
   const [teacherOverride, setTeacherOverride] = useState(false);
   const [showNarrative, setShowNarrative] = useState(false);
   const [mascotMood, setMascotMood] = useState('waving');
@@ -284,6 +289,37 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
           <span className="qm3d-week-label">TRIP {weekId}</span>
           <span className="qm3d-week-dot">•</span>
           <span className="qm3d-progress-text">{weekQuestCount}/{totalQuests}</span>
+        </div>
+
+        {/* Quick Access Actions for High Discoverability */}
+        <div className="qm3d-header-right">
+          <button
+            type="button"
+            onClick={() => setArcadeOpen(true)}
+            className="qm3d-action-btn"
+            title="Arcade Room"
+          >
+            <Gamepad2 size={16} className="text-indigo-600" />
+            <span className="hidden sm:inline text-xs font-black text-slate-700">Arcade</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => navigate('/word-treasury')}
+            className="qm3d-action-btn"
+            title="Word Memory Bank"
+          >
+            <BookOpen size={16} className="text-purple-600" />
+            <span className="hidden sm:inline text-xs font-black text-slate-700">Words</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowCoopModal(true)}
+            className="qm3d-action-btn"
+            title="Class Co-op Board"
+          >
+            <Users size={16} className="text-amber-600" />
+            <span className="hidden sm:inline text-xs font-black text-slate-700">Co-op</span>
+          </button>
         </div>
       </div>
 
@@ -579,6 +615,10 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
           <p>All {totalQuests} quests finished!</p>
         </div>
       )}
+
+      {/* Modals */}
+      {isArcadeOpen && <ArcadeModal weekNumber={weekId} onClose={() => setArcadeOpen(false)} />}
+      <ClassLeaderboardModal isOpen={showCoopModal} onClose={() => setShowCoopModal(false)} />
 
       {/* PIN Gate */}
       <ParentPINGate

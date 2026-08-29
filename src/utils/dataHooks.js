@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import weekIndex, { loadWeekData } from '../data/weeks/index'; 
 import { VoiceService } from '../services/voiceService';
+import { addWeekWords } from './wordMemoryBank';
 
 // FIX: Thêm tham số forceEasyMode để ép buộc đúng mode từ Hook
 const injectAudioUrls = (weekData, forceEasyMode = false) => {
@@ -181,8 +182,20 @@ export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
             setData(processedData);
             setLoading(false);
 
-            // 🚀 Automatically pre-generate ALL Google Cloud TTS cache for the entire week!
-            VoiceService.prefetchEntireWeek(weekId, learningMode).catch(() => {});
+            // Ingest vocabulary into wordMemoryBank for SRS
+            try {
+              const vocabList = deepClonedData?.stations?.new_words?.vocab || deepClonedData?.new_words?.vocab || deepClonedData?.reading_hub?.storyWorld?.vocab || deepClonedData?.readingHub?.storyWorld?.vocab;
+              if (Array.isArray(vocabList) && vocabList.length > 0) {
+                addWeekWords(weekId, vocabList);
+              }
+            } catch (e) {
+              console.warn('[DataHooks] Failed to ingest vocab into wordMemoryBank:', e);
+            }
+
+            // 🚀 Automatically pre-generate Google Cloud TTS cache for weeks without static MP3
+            if (weekId < 33) {
+              VoiceService.prefetchEntireWeek(weekId, learningMode).catch(() => {});
+            }
           } else {
             console.warn(`[DataHooks] Week ${weekId} data not found for ${learningMode} mode.`);
             setData(null);

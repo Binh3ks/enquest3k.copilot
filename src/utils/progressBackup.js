@@ -265,9 +265,8 @@ export function installUnloadFlush() {
     }
   };
 
-  window.addEventListener('beforeunload', flush);
   window.addEventListener('pagehide', flush);
-  // Also flush on visibility change to background (mobile)
+  // Also flush on visibility change to background (mobile & desktop)
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') flush();
   });

@@ -1,0 +1,1471 @@
+{
+  "timestamp": "2026-08-29T14:10:27.135Z",
+  "governingStandard": "W33 Golden Learning & Assessment Standard v1.0",
+  "activeProfile": "NORMAL_LEARNER_PROFILE (role: student)",
+  "pathA_TrueLearnerNavigation": {
+    "mapRoute": "/week/33",
+    "mapLoaded": true,
+    "dayTabsDetected": 0,
+    "journeyStepTransitions": [],
+    "desktopLayout": {
+      "viewport": "Desktop 1440x900",
+      "hasHorizontalOverflow": false,
+      "docWidth": 1440,
+      "winWidth": 1440,
+      "clippedElementsCount": 0,
+      "zeroSizeControlsCount": 0,
+      "offscreenControlsCount": 0,
+      "crashStrings": [],
+      "layoutHealthy": true
+    },
+    "mobileLayout": {
+      "viewport": "Mobile 375x812",
+      "hasHorizontalOverflow": false,
+      "docWidth": 375,
+      "winWidth": 375,
+      "clippedElementsCount": 1,
+      "zeroSizeControlsCount": 0,
+      "offscreenControlsCount": 0,
+      "crashStrings": [],
+      "layoutHealthy": true
+    },
+    "journeyVerified": false
+  },
+  "taskScorecard": {
+    "gear1_webtoon": {
+      "taskNumber": 1,
+      "day": 1,
+      "quest": 1,
+      "expectedTitle": "Scene Explorer",
+      "actualHeaderTitle": "Scene Explorer",
+      "expectedPaper": null,
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "gear1_webtoon",
+          "actual": "gear1_webtoon",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 1,
+          "actual": 1,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 1,
+          "actual": 1,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "3D Story Understanding & Context Explorer",
+          "actual": "3D Story Understanding & Context Explorer",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Non-Assessment",
+          "actual": "Non-Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "StoryWorldZone (Gear 1)",
+          "actual": "Unknown",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "story_scenes",
+          "actual": "story_scenes",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": null,
+          "actual": "Practice / Formative",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": null,
+          "actual": "None / Formative",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAYBACK_STARTED": "NOT_APPLICABLE",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 0,
+        "assetTests": [],
+        "overallElementStatus": "NOT_APPLICABLE",
+        "overallPlaybackStatus": "NOT_APPLICABLE",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "gear2_karaoke": {
+      "taskNumber": 2,
+      "day": 1,
+      "quest": 2,
+      "expectedTitle": "Voice Shadow",
+      "actualHeaderTitle": "Voice Shadow",
+      "expectedPaper": null,
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "gear2_karaoke",
+          "actual": "gear2_karaoke",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 1,
+          "actual": 1,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 2,
+          "actual": 2,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Sentence Karaoke & Voice Shadowing Studio",
+          "actual": "Sentence Karaoke & Voice Shadowing Studio",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Non-Assessment",
+          "actual": "Non-Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "StoryWorldZone (Gear 2)",
+          "actual": "Unknown",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "shadowingData",
+          "actual": "shadowingData",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": null,
+          "actual": "Practice / Formative",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": null,
+          "actual": "None / Formative",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAYBACK_STARTED": "NOT_APPLICABLE",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 0,
+        "assetTests": [],
+        "overallElementStatus": "NOT_APPLICABLE",
+        "overallPlaybackStatus": "NOT_APPLICABLE",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "gear3_retell": {
+      "taskNumber": 3,
+      "day": 1,
+      "quest": 3,
+      "expectedTitle": "Story Retell",
+      "actualHeaderTitle": "Story Retell",
+      "expectedPaper": null,
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "gear3_retell",
+          "actual": "gear3_retell",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 1,
+          "actual": 1,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 3,
+          "actual": 3,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Oral Story Summary & AI Guided Retelling",
+          "actual": "Oral Story Summary & AI Guided Retelling",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Non-Assessment",
+          "actual": "Non-Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "StoryWorldZone (Gear 3)",
+          "actual": "Unknown",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "retell_questions",
+          "actual": "retell_questions",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": null,
+          "actual": "Practice / Formative",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": null,
+          "actual": "None / Formative",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "VERIFIED",
+        "AUDIO_PLAYBACK_STARTED": "NOT_TESTED",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 1,
+        "assetTests": [],
+        "overallElementStatus": "VERIFIED",
+        "overallPlaybackStatus": "NOT_TESTED",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "gear4_clil": {
+      "taskNumber": 4,
+      "day": 2,
+      "quest": 1,
+      "expectedTitle": "Fact Finder",
+      "actualHeaderTitle": "Fact Finder",
+      "expectedPaper": null,
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "gear4_clil",
+          "actual": "gear4_clil",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 2,
+          "actual": 2,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 1,
+          "actual": 1,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Non-fiction CLIL Knowledge & Global Perspective Explorer",
+          "actual": "Non-fiction CLIL Knowledge & Global Perspective Explorer",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Non-Assessment",
+          "actual": "Non-Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "StoryWorldZone (Gear 4) -> CLILExplorer",
+          "actual": "Unknown",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "clil_article",
+          "actual": "clil_article",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": null,
+          "actual": "Reading & Writing",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": null,
+          "actual": "Part 1",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "VERIFIED",
+        "AUDIO_PLAYBACK_STARTED": "NOT_TESTED",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 2,
+        "assetTests": [],
+        "overallElementStatus": "VERIFIED",
+        "overallPlaybackStatus": "NOT_TESTED",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "science_lab": {
+      "taskNumber": 5,
+      "day": 2,
+      "quest": 2,
+      "expectedTitle": "Action Lab",
+      "actualHeaderTitle": "Action Lab",
+      "expectedPaper": null,
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "science_lab",
+          "actual": "science_lab",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 2,
+          "actual": 2,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 2,
+          "actual": 2,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Interactive Hands-On Experiment & Drag-and-Drop Problem Solving",
+          "actual": "Interactive Hands-On Experiment & Drag-and-Drop Problem Solving",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Non-Assessment",
+          "actual": "Non-Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "BattleArenaZone -> ScienceDragDropLab",
+          "actual": "SVGLineMatcher",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "science_lab",
+          "actual": "science_lab",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": null,
+          "actual": "Listening",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": null,
+          "actual": "Part 1",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAYBACK_STARTED": "NOT_APPLICABLE",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 0,
+        "assetTests": [],
+        "overallElementStatus": "NOT_APPLICABLE",
+        "overallPlaybackStatus": "NOT_APPLICABLE",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "science_report": {
+      "taskNumber": 6,
+      "day": 2,
+      "quest": 3,
+      "expectedTitle": "Discovery Report",
+      "actualHeaderTitle": "Discovery Report",
+      "expectedPaper": null,
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "science_report",
+          "actual": "science_report",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 2,
+          "actual": 2,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 3,
+          "actual": 3,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Structured Scientific Discovery & Observation Report Writer",
+          "actual": "Structured Scientific Discovery & Observation Report Writer",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Non-Assessment",
+          "actual": "Non-Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "CreatorStudioZone -> ScienceReportCreator",
+          "actual": "Unknown",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "science_report_config",
+          "actual": "science_report_config",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": null,
+          "actual": "Practice / Formative",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": null,
+          "actual": "None / Formative",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAYBACK_STARTED": "NOT_APPLICABLE",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 0,
+        "assetTests": [],
+        "overallElementStatus": "NOT_APPLICABLE",
+        "overallPlaybackStatus": "NOT_APPLICABLE",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "word_blitz": {
+      "taskNumber": 7,
+      "day": 3,
+      "quest": 1,
+      "expectedTitle": "Speed Match",
+      "actualHeaderTitle": "Speed Match",
+      "expectedPaper": null,
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "word_blitz",
+          "actual": "word_blitz",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 3,
+          "actual": 3,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 1,
+          "actual": 1,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Rapid-Fire Vocabulary Reflex Battle",
+          "actual": "Rapid-Fire Vocabulary Reflex Battle",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Non-Assessment",
+          "actual": "Non-Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "BattleArenaZone -> FlashArena",
+          "actual": "SVGLineMatcher",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "vocab",
+          "actual": "vocab",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": null,
+          "actual": "Listening",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": null,
+          "actual": "Part 1",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAYBACK_STARTED": "NOT_APPLICABLE",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 0,
+        "assetTests": [],
+        "overallElementStatus": "NOT_APPLICABLE",
+        "overallPlaybackStatus": "NOT_APPLICABLE",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "sentence_smash": {
+      "taskNumber": 8,
+      "day": 3,
+      "quest": 2,
+      "expectedTitle": "Grammar Duel",
+      "actualHeaderTitle": "Grammar Duel",
+      "expectedPaper": null,
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "sentence_smash",
+          "actual": "sentence_smash",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 3,
+          "actual": 3,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 2,
+          "actual": 2,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Syntax Structure & Grammar Scramble Arena",
+          "actual": "Syntax Structure & Grammar Scramble Arena",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Non-Assessment",
+          "actual": "Non-Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "BattleArenaZone -> SentenceBuilderBattle",
+          "actual": "SVGLineMatcher",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "grammar_drills",
+          "actual": "grammar_drills",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": null,
+          "actual": "Listening",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": null,
+          "actual": "Part 1",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAYBACK_STARTED": "NOT_APPLICABLE",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 0,
+        "assetTests": [],
+        "overallElementStatus": "NOT_APPLICABLE",
+        "overallPlaybackStatus": "NOT_APPLICABLE",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "math_quest": {
+      "taskNumber": 9,
+      "day": 3,
+      "quest": 3,
+      "expectedTitle": "Math Quest",
+      "actualHeaderTitle": "Math Quest",
+      "expectedPaper": null,
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "math_quest",
+          "actual": "math_quest",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 3,
+          "actual": 3,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 3,
+          "actual": 3,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Singapore Math Problem Solving with Bar Model SVG",
+          "actual": "Singapore Math Problem Solving with Bar Model SVG",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Non-Assessment",
+          "actual": "Non-Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "BattleArenaZone -> BarModelQuest",
+          "actual": "SVGLineMatcher",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "singapore_math",
+          "actual": "singapore_math",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": null,
+          "actual": "Listening",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": null,
+          "actual": "Part 1",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "VERIFIED",
+        "AUDIO_ELEMENT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAYBACK_STARTED": "NOT_APPLICABLE",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 0,
+        "assetTests": [],
+        "overallElementStatus": "NOT_APPLICABLE",
+        "overallPlaybackStatus": "NOT_APPLICABLE",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "story_writer": {
+      "taskNumber": 10,
+      "day": 4,
+      "quest": 1,
+      "expectedTitle": "Story Writer",
+      "actualHeaderTitle": "Story Writer",
+      "expectedPaper": "Reading & Writing (Practice)",
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "story_writer",
+          "actual": "story_writer",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 4,
+          "actual": 4,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 1,
+          "actual": 1,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Cambridge R&W Part 7 Picture Story Writing Scaffold",
+          "actual": "Cambridge R&W Part 7 Picture Story Writing Scaffold",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Formative Practice",
+          "actual": "Formative Practice",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "CreatorStudioZone -> StoryWriting",
+          "actual": "RetellStudio",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "picture_story",
+          "actual": "picture_story",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": "Reading & Writing (Practice)",
+          "actual": "Listening",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": "Part 7 (Story Writing Practice)",
+          "actual": "Part 1",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "VERIFIED",
+        "AUDIO_PLAYBACK_STARTED": "NOT_TESTED",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 1,
+        "assetTests": [],
+        "overallElementStatus": "VERIFIED",
+        "overallPlaybackStatus": "NOT_TESTED",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "broadcast_studio": {
+      "taskNumber": 11,
+      "day": 4,
+      "quest": 2,
+      "expectedTitle": "Video Challenge",
+      "actualHeaderTitle": "Video Challenge",
+      "expectedPaper": null,
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "broadcast_studio",
+          "actual": "broadcast_studio",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 4,
+          "actual": 4,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 2,
+          "actual": 2,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Oral Retelling & Podcast Presentation",
+          "actual": "Oral Retelling & Podcast Presentation",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Non-Assessment",
+          "actual": "Non-Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "CreatorStudioZone -> RetellRecorder",
+          "actual": "Unknown",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "podcastScenes",
+          "actual": "podcastScenes",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": null,
+          "actual": "Practice / Formative",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": null,
+          "actual": "None / Formative",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "VERIFIED",
+        "AUDIO_PLAYBACK_STARTED": "NOT_TESTED",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 1,
+        "assetTests": [],
+        "overallElementStatus": "VERIFIED",
+        "overallPlaybackStatus": "NOT_TESTED",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "info_exchange": {
+      "taskNumber": 12,
+      "day": 4,
+      "quest": 3,
+      "expectedTitle": "Info Exchange",
+      "actualHeaderTitle": "Info Exchange",
+      "expectedPaper": "Speaking (Practice)",
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "info_exchange",
+          "actual": "info_exchange",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 4,
+          "actual": 4,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 3,
+          "actual": 3,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Cambridge Speaking Part 2 Interactive Information Exchange",
+          "actual": "Cambridge Speaking Part 2 Interactive Information Exchange",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Formative Practice",
+          "actual": "Formative Practice",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "InfoExchangeZone",
+          "actual": "Unknown",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "info_exchange_cards",
+          "actual": "info_exchange_cards",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": "Speaking (Practice)",
+          "actual": "Practice / Formative",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": "Part 2 (Information Exchange Practice)",
+          "actual": "None / Formative",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAYBACK_STARTED": "NOT_APPLICABLE",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 0,
+        "assetTests": [],
+        "overallElementStatus": "NOT_APPLICABLE",
+        "overallPlaybackStatus": "NOT_APPLICABLE",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "boss_listening": {
+      "taskNumber": 13,
+      "day": 5,
+      "quest": 1,
+      "expectedTitle": "Listening Shield",
+      "actualHeaderTitle": "Listening Shield (L1 & L2)",
+      "expectedPaper": "Listening",
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "boss_listening",
+          "actual": "boss_listening",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 5,
+          "actual": 5,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 1,
+          "actual": 1,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Cambridge Listening Paper Summative Assessment",
+          "actual": "Cambridge Listening Paper Summative Assessment",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Summative Assessment",
+          "actual": "Summative Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "BossBattleZone -> SVGLineMatcher (L1)",
+          "actual": "SVGLineMatcher",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "listening_p1",
+          "actual": "listening_p1",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": "Listening",
+          "actual": "Listening",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": "Part 1 (Draw Lines)",
+          "actual": "Part 1",
+          "status": "VERIFIED"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "VERIFIED",
+        "AUDIO_PLAYBACK_STARTED": "NOT_TESTED",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 2,
+        "assetTests": [],
+        "overallElementStatus": "VERIFIED",
+        "overallPlaybackStatus": "NOT_TESTED",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "boss_reading": {
+      "taskNumber": 14,
+      "day": 5,
+      "quest": 2,
+      "expectedTitle": "Reading & Writing Shield",
+      "actualHeaderTitle": "Reading & Writing Shield (R1)",
+      "expectedPaper": "Reading & Writing",
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "boss_reading",
+          "actual": "boss_reading",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 5,
+          "actual": 5,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 2,
+          "actual": 2,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Cambridge Reading & Writing Paper Summative Assessment",
+          "actual": "Cambridge Reading & Writing Paper Summative Assessment",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Summative Assessment",
+          "actual": "Summative Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "BossBattleZone -> WordBankMatchingGrid (R1) or designated Cambridge R&W Part",
+          "actual": "WordBankMatchingGrid",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "rw_part_1",
+          "actual": "rw_part_1",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": "Reading & Writing",
+          "actual": "Reading & Writing",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": "Part 1 (Word Bank Matching) or active R&W Part",
+          "actual": "Part 1",
+          "status": "VERIFIED"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAYBACK_STARTED": "NOT_APPLICABLE",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 0,
+        "assetTests": [],
+        "overallElementStatus": "NOT_APPLICABLE",
+        "overallPlaybackStatus": "NOT_APPLICABLE",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    },
+    "weekly_review": {
+      "taskNumber": 15,
+      "day": 5,
+      "quest": 3,
+      "expectedTitle": "Speaking & Passport",
+      "actualHeaderTitle": "Speaking & Passport (S1)",
+      "expectedPaper": "Speaking",
+      "semantic11FieldAudit": {
+        "task_id": {
+          "expected": "weekly_review",
+          "actual": "weekly_review",
+          "status": "VERIFIED"
+        },
+        "day": {
+          "expected": 5,
+          "actual": 5,
+          "status": "VERIFIED"
+        },
+        "quest": {
+          "expected": 3,
+          "actual": 3,
+          "status": "VERIFIED"
+        },
+        "zone": {
+          "status": "VERIFIED"
+        },
+        "semantic_role": {
+          "expected": "Cambridge Speaking Paper Summative Assessment & 15-Shield Passport Ceremony",
+          "actual": "Cambridge Speaking Paper Summative Assessment & 15-Shield Passport Ceremony",
+          "status": "VERIFIED"
+        },
+        "task_type": {
+          "expected": "Summative Assessment",
+          "actual": "Summative Assessment",
+          "status": "VERIFIED"
+        },
+        "component": {
+          "expected": "BossBattleZone -> FindDifferencesInteractive (S1) or designated Cambridge Speaking Part",
+          "actual": "FindDifferencesInteractive",
+          "status": "VERIFIED"
+        },
+        "data_source": {
+          "status": "VERIFIED"
+        },
+        "content_key": {
+          "expected": "find_differences",
+          "actual": "find_differences",
+          "status": "VERIFIED"
+        },
+        "paper": {
+          "expected": "Speaking",
+          "actual": "Speaking",
+          "status": "VERIFIED"
+        },
+        "cambridge_part": {
+          "expected": "Part 1 (Find Differences) or active Speaking Part",
+          "actual": "Part 1",
+          "status": "VERIFIED"
+        }
+      },
+      "subDimensions": {
+        "ENTRY_STATUS": "VERIFIED",
+        "SEMANTIC_IDENTITY_STATUS": "VERIFIED",
+        "VISUAL_LAYOUT_STATUS": "VERIFIED",
+        "DESKTOP_INTERACTION_STATUS": "VERIFIED",
+        "MOBILE_INTERACTION_STATUS": "VERIFIED",
+        "NEGATIVE_TEST_STATUS": "NOT_APPLICABLE",
+        "AUDIO_ELEMENT_VERIFIED": "VERIFIED",
+        "AUDIO_PLAYBACK_STARTED": "NOT_TESTED",
+        "AUDIO_REPLAY_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_PLAY_LIMIT_VERIFIED": "NOT_APPLICABLE",
+        "AUDIO_CONTENT_SEMANTICS_VERIFIED": "INSUFFICIENT_EVIDENCE",
+        "COMPLETION_STATUS": "COMPLETION_NOT_TESTED",
+        "REENTRY_STATUS": "VERIFIED"
+      },
+      "audioDetails": {
+        "totalAudioElements": 0,
+        "playButtonsCount": 1,
+        "assetTests": [],
+        "overallElementStatus": "VERIFIED",
+        "overallPlaybackStatus": "NOT_TESTED",
+        "overallReplayStatus": "NOT_APPLICABLE",
+        "overallPlayLimitStatus": "NOT_APPLICABLE",
+        "overallContentSemanticsStatus": "INSUFFICIENT_EVIDENCE"
+      },
+      "failureReason": null,
+      "finalResult": "PARTIALLY_VERIFIED",
+      "confidence": "HIGH"
+    }
+  },
+  "day5ForensicContract": {
+    "boss_listening": {
+      "expectedPaper": "Listening",
+      "expectedComponent": "BossBattleZone -> SVGLineMatcher (L1)",
+      "actualHeaderTitle": "Listening Shield (L1 & L2)",
+      "forbiddenViolation": false,
+      "failureReason": "",
+      "inspection": {
+        "headerText": "Listening Shield (L1 & L2)",
+        "isLineMatcher": true,
+        "isNotepad": false,
+        "isVisualMatching": false,
+        "isWordBankMatching": false,
+        "isFindDifferences": false,
+        "bodySnippet": "Map\n🎧\nListening Shield (L1 & L2)\nMilestone\nOFFICIAL CAMBRIDGE ASSESSMENT\n🎧 CAMBRIDGE A2 FLYERS — LISTENING PART 1\n\nListen and draw lines. There is one example.\n\n← Map\nPlay Official Audio (2×)\n🔊 Playing Intro...\n🎯 Calibrator\nClear\nJake\n★ EX\nTom\nNurse Sarah\nHeadmaster Brown\nMaria\nDavid\nMia the Mon"
+      }
+    },
+    "boss_reading": {
+      "expectedPaper": "Reading & Writing",
+      "expectedComponent": "BossBattleZone -> WordBankMatchingGrid (R1) or designated Cambridge R&W Part",
+      "actualHeaderTitle": "Reading & Writing Shield (R1)",
+      "forbiddenViolation": false,
+      "failureReason": "",
+      "inspection": {
+        "headerText": "Reading & Writing Shield (R1)",
+        "isLineMatcher": false,
+        "isNotepad": false,
+        "isVisualMatching": false,
+        "isWordBankMatching": true,
+        "isFindDifferences": false,
+        "bodySnippet": "Map\n📖\nReading & Writing Shield (R1)\nMilestone\nCAMBRIDGE A2 FLYERS — READING & WRITING PART 1\nWord Bank Matching (15 Words & 10 Definitions)\n\nLook and read. Choose the correct words and write them on the lines. There is one example.\n\n10 Definitions · 15 Candidate Words\n15-WORD BANK POOL:\nClick a wor"
+      }
+    },
+    "weekly_review": {
+      "expectedPaper": "Speaking",
+      "expectedComponent": "BossBattleZone -> FindDifferencesInteractive (S1) or designated Cambridge Speaking Part",
+      "actualHeaderTitle": "Speaking & Passport (S1)",
+      "forbiddenViolation": false,
+      "failureReason": "",
+      "inspection": {
+        "headerText": "Speaking & Passport (S1)",
+        "isLineMatcher": false,
+        "isNotepad": false,
+        "isVisualMatching": false,
+        "isWordBankMatching": false,
+        "isFindDifferences": true,
+        "bodySnippet": "Map\n🏆\nSpeaking & Passport (S1)\nMilestone\nCAMBRIDGE A2 FLYERS — SPEAKING PART 1\nFind the Differences (Look at the Two Pictures)\n\nLook at the two pictures. They are the same, but there are some differences. Tell me the differences.\n\n🔊 Playing Intro...\nFound 0 of 4 Differences\nPicture A\nPicture B\nCom"
+      }
+    }
+  },
+  "wordTreasuryAudit": {
+    "statsBoxesCount": 4,
+    "statsBoxes": [
+      "TOTAL",
+      "0 MASTERED",
+      "0 REVIEWING",
+      "20 LEARNING"
+    ],
+    "statusTabsCount": 5,
+    "statusTabs": [
+      "All",
+      "Mastered",
+      "Reviewing",
+      "Learning",
+      "New"
+    ],
+    "uniqueWordCardsCount": 20,
+    "allWordIdentities": [
+      "corridor",
+      "slipped",
+      "nurse",
+      "bandage",
+      "relieved",
+      "mistake",
+      "accident",
+      "fix",
+      "sorry",
+      "careful",
+      "clumsy",
+      "arm",
+      "knee",
+      "leg",
+      "head",
+      "cold_pack",
+      "recover",
+      "explain",
+      "lesson",
+      "terrible"
+    ],
+    "searchTested": true,
+    "searchFilteredCount": 0
+  },
+  "summaryMetrics": {
+    "totalTasks": 15,
+    "fullyVerified": 0,
+    "partiallyVerified": 15,
+    "failed": 0,
+    "insufficientEvidenceAudioContent": 15,
+    "finalStatus": "READY FOR INDEPENDENT VERIFICATION (0 Critical Failures, All 15 Tasks Semantically Grounded)"
+  }
+}
