@@ -356,6 +356,7 @@ async function main() {
     viewport: { width: 1440, height: 900 },
     userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
   });
+  await desktopContext.addInitScript(normalStudentAuthScript);
 
   const mobileContext = await browser.newContext({
     viewport: { width: 375, height: 812 },
@@ -363,12 +364,18 @@ async function main() {
     hasTouch: true,
     userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Mobile/15E148 Safari/604.1'
   });
+  await mobileContext.addInitScript(normalStudentAuthScript);
 
   const dPage = await desktopContext.newPage();
   const mPage = await mobileContext.newPage();
 
-  await dPage.addInitScript(normalStudentAuthScript);
-  await mPage.addInitScript(normalStudentAuthScript);
+  async function ensureOnboardingDismissed(page) {
+    const skipBtn = await page.$('.onboarding-skip, button:has-text("Skip")');
+    if (skipBtn) {
+      await skipBtn.click({ timeout: 1000 }).catch(() => {});
+      await page.waitForTimeout(300);
+    }
+  }
 
   const report = {
     timestamp: new Date().toISOString(),
@@ -943,7 +950,7 @@ async function main() {
     };
   }
 
-  // ── STEP 3: DAY 5 GENERIC CONTRACT FORENSIC AUDIT ───────────────────────────
+  // ── STEP 3: DAY 5 GENERIC CONTRACT FORENSIC AUDIT (STRICT RUNTIME OBSERVATION) ─
   console.log('\n========================================================================');
   console.log('🏰 3. SPECIAL GENERIC DAY 5 CAMBRIDGE ASSESSMENT AUDIT');
   console.log('========================================================================\n');
@@ -952,53 +959,118 @@ async function main() {
   for (const d5Id of day5Keys) {
     const d5Url = `${BASE_URL}/week/33/task/${d5Id}`;
     await dPage.goto(d5Url, { waitUntil: 'domcontentloaded' });
-    await dPage.waitForTimeout(800);
+    await ensureOnboardingDismissed(dPage);
+    await dPage.waitForSelector('[data-testid="boss-start-battle-btn"], [data-testid="boss-paper-badge"]', { timeout: 5000 }).catch(() => {});
 
-    const enterBtn = await dPage.$('button:has-text("ENTER BOSS BATTLE NOW"), button:has-text("Start")');
+    const enterBtn = await dPage.$('[data-testid="boss-start-battle-btn"]');
     if (enterBtn) {
-      await enterBtn.click({ timeout: 1000 }).catch(() => {});
-      await dPage.waitForTimeout(1000);
+      await enterBtn.click({ timeout: 2000 }).catch(() => {});
+      await dPage.waitForSelector('[data-testid="boss-paper-badge"]', { timeout: 4000 }).catch(() => {});
+      await dPage.waitForTimeout(400);
     }
 
-    const d5Inspection = await dPage.evaluate(() => {
+    // Inspect first active part
+    let d5Inspection = await dPage.evaluate(() => {
       const headerText = document.querySelector('.ts-task-name, h1, h2')?.innerText?.trim() || '';
       const bodyText = document.body?.innerText || '';
+      const paperBadge = document.querySelector('[data-testid="boss-paper-badge"]')?.innerText?.trim() || '';
+      const activePartEl = document.querySelector('[data-testid="boss-active-part"]');
+      const activePartId = activePartEl?.getAttribute('data-part-id') || '';
+      const activePartComponent = activePartEl?.getAttribute('data-component') || '';
       const isLineMatcher = !!document.querySelector('svg line, .line-matcher, [data-testid="svg-line-matcher"]');
       const isNotepad = !!document.querySelector('.notepad-container, textarea, [data-testid="notepad-completer"]') || bodyText.includes("Jake's School Day");
       const isVisualMatching = !!document.querySelector('.matching-grid, [data-testid="visual-matching-ah"]') || bodyText.includes('Clean Bandage');
       const isWordBankMatching = !!document.querySelector('.word-bank-grid, [data-testid="word-bank-matching"]');
       const isFindDifferences = !!document.querySelector('.find-differences, [data-testid="find-differences"]');
 
-      return { headerText, isLineMatcher, isNotepad, isVisualMatching, isWordBankMatching, isFindDifferences, bodySnippet: bodyText.slice(0, 300) };
+      return {
+        headerText,
+        paperBadge,
+        activePartId,
+        activePartComponent,
+        isLineMatcher,
+        isNotepad,
+        isVisualMatching,
+        isWordBankMatching,
+        isFindDifferences,
+        bodySnippet: bodyText.slice(0, 300)
+      };
     });
+
+    const observedParts = [];
+    if (d5Inspection.activePartId) {
+      observedParts.push({
+        part: d5Inspection.activePartId,
+        component: d5Inspection.activePartComponent || (d5Inspection.isLineMatcher ? 'SVGLineMatcher' : d5Inspection.isWordBankMatching ? 'WordBankMatchingGrid' : d5Inspection.isFindDifferences ? 'FindDifferencesInteractive' : 'Unknown'),
+        paper: d5Inspection.paperBadge,
+        observedFrom: 'runtime'
+      });
+    }
+
+    // Multi-Part Investigation: For stations with multiple parts (e.g. boss_listening L1 + L2)
+    const p2Tab = await dPage.$('[data-testid="boss-part-tab-list_p2"], [data-testid="boss-part-tab-rw_p3"], [data-testid="boss-part-tab-rw_p5"], [data-testid="boss-part-tab-rw_p7"]');
+    if (p2Tab) {
+      await p2Tab.click({ timeout: 1000 }).catch(() => {});
+      await dPage.waitForTimeout(600);
+
+      const p2Inspection = await dPage.evaluate(() => {
+        const paperBadge = document.querySelector('[data-testid="boss-paper-badge"]')?.innerText?.trim() || '';
+        const activePartEl = document.querySelector('[data-testid="boss-active-part"]');
+        const activePartId = activePartEl?.getAttribute('data-part-id') || '';
+        const activePartComponent = activePartEl?.getAttribute('data-component') || '';
+        const isNotepad = !!document.querySelector('.notepad-container, textarea, [data-testid="notepad-completer"]');
+        const isClozeStory = !!document.querySelector('.cloze-story-container');
+        const isExtraction = !!document.querySelector('.text-extraction-container');
+        const isStoryWriting = !!document.querySelector('.story-writing-container');
+
+        return { paperBadge, activePartId, activePartComponent, isNotepad, isClozeStory, isExtraction, isStoryWriting };
+      });
+
+      if (p2Inspection.activePartId) {
+        observedParts.push({
+          part: p2Inspection.activePartId,
+          component: p2Inspection.activePartComponent || (p2Inspection.isNotepad ? 'NotepadNoteCompleter' : p2Inspection.isClozeStory ? 'RWPart3ClozeWithTitle' : 'Unknown'),
+          paper: p2Inspection.paperBadge,
+          observedFrom: 'runtime'
+        });
+      }
+    }
 
     const oracleSpec = ORACLE.tasks[d5Id];
     let forbiddenViolation = false;
     let failureReason = '';
 
-    if (d5Id === 'boss_listening' && !d5Inspection.isLineMatcher) {
-      forbiddenViolation = true;
-      failureReason = 'CRITICAL: Route boss_listening failed to mount Listening Part 1 Line Matcher';
-    } else if (d5Id === 'boss_reading' && (!d5Inspection.isWordBankMatching || d5Inspection.isNotepad || d5Inspection.isVisualMatching)) {
-      forbiddenViolation = true;
-      failureReason = 'CRITICAL: Route boss_reading failed to mount Reading & Writing Word Bank Grid';
-    } else if (d5Id === 'weekly_review' && (!d5Inspection.isFindDifferences || d5Inspection.isNotepad || d5Inspection.isVisualMatching)) {
-      forbiddenViolation = true;
-      failureReason = 'CRITICAL: Route weekly_review failed to mount Speaking Find Differences';
-    }
+    // Runtime-derived paper and part verification (NO hardcoding)
+    const runtimePaper = d5Inspection.paperBadge;
+    const runtimePart = d5Inspection.activePartId;
+    const runtimeComponent = d5Inspection.activePartComponent;
 
-    const actualPaper = d5Id === 'boss_listening' ? 'Listening' : d5Id === 'boss_reading' ? 'Reading & Writing' : 'Speaking';
-    const actualPart = d5Id === 'boss_listening' ? 'L1' : d5Id === 'boss_reading' ? 'R1' : 'S1';
-    const actualComponent = d5Inspection.isLineMatcher ? 'SVGLineMatcher' : d5Inspection.isWordBankMatching ? 'WordBankMatchingGrid' : d5Inspection.isFindDifferences ? 'FindDifferencesInteractive' : 'Unknown';
+    if (d5Id === 'boss_listening') {
+      if (runtimePaper.toUpperCase() !== 'LISTENING' || !d5Inspection.isLineMatcher) {
+        forbiddenViolation = true;
+        failureReason = `CRITICAL: Route boss_listening rendered Paper "${runtimePaper}" / Component "${runtimeComponent}" instead of Listening L1 Line Matcher`;
+      }
+    } else if (d5Id === 'boss_reading') {
+      if (runtimePaper.toUpperCase() !== 'READING & WRITING' || !d5Inspection.isWordBankMatching) {
+        forbiddenViolation = true;
+        failureReason = `CRITICAL: Route boss_reading rendered Paper "${runtimePaper}" / Component "${runtimeComponent}" instead of Reading & Writing Word Bank Grid`;
+      }
+    } else if (d5Id === 'weekly_review') {
+      if (runtimePaper.toUpperCase() !== 'SPEAKING' || !d5Inspection.isFindDifferences) {
+        forbiddenViolation = true;
+        failureReason = `CRITICAL: Route weekly_review rendered Paper "${runtimePaper}" / Component "${runtimeComponent}" instead of Speaking Find Differences`;
+      }
+    }
 
     report.day5ForensicContract[d5Id] = {
       expectedPaper: oracleSpec.expected_paper,
       expectedComponent: oracleSpec.expected_component_identity,
-      actualPaper,
-      actualPart,
+      actualPaper: runtimePaper,
+      actualPart: runtimePart,
       actualHeader: d5Inspection.headerText,
       actualHeaderTitle: d5Inspection.headerText,
-      actualComponent,
+      actualComponent: runtimeComponent,
+      observedParts,
       forbiddenViolation,
       failureReason: failureReason || null,
       inspection: d5Inspection
@@ -1006,8 +1078,64 @@ async function main() {
 
     console.log(`[Day 5 Independent Audit] ${d5Id}:`);
     console.log(`  Expected Paper: ${oracleSpec.expected_paper}`);
+    console.log(`  Observed Runtime Paper: "${runtimePaper}"`);
+    console.log(`  Observed Runtime Parts: ${observedParts.map(p => `${p.part} (${p.component})`).join(', ')}`);
     console.log(`  Actual Rendered Header: "${d5Inspection.headerText}"`);
     console.log(`  Forbidden Violation: ${forbiddenViolation ? '🔴 CRITICAL VIOLATION' : '🟢 NONE'}`);
+  }
+
+  // ── STEP 3.5: INDEPENDENT 4-WEEK ROTARY AUDIT (W33–W36) ─────────────────────
+  console.log('\n========================================================================');
+  console.log('🔄 3.5. INDEPENDENT 4-WEEK ROTARY MATRIX AUDIT (W33–W36)');
+  console.log('========================================================================\n');
+
+  report.rotationForensicMatrix16Parts = [];
+  const rotationWeeks = [33, 34, 35, 36];
+  for (const w of rotationWeeks) {
+    for (const d5Id of day5Keys) {
+      const weekUrl = `${BASE_URL}/week/${w}/task/${d5Id}`;
+      await dPage.goto(weekUrl, { waitUntil: 'domcontentloaded' });
+      await ensureOnboardingDismissed(dPage);
+      await dPage.waitForSelector('[data-testid="boss-start-battle-btn"], [data-testid="boss-paper-badge"]', { timeout: 5000 }).catch(() => {});
+
+      const enterBtn = await dPage.$('[data-testid="boss-start-battle-btn"]');
+      if (enterBtn) {
+        await enterBtn.click({ timeout: 2000 }).catch(() => {});
+        await dPage.waitForSelector('[data-testid="boss-paper-badge"]', { timeout: 4000 }).catch(() => {});
+        await dPage.waitForTimeout(400);
+      }
+
+      const weekInspection = await dPage.evaluate(() => {
+        const paperBadge = document.querySelector('[data-testid="boss-paper-badge"]')?.innerText?.trim() || '';
+        const activePartEl = document.querySelector('[data-testid="boss-active-part"]');
+        const activePartId = activePartEl?.getAttribute('data-part-id') || '';
+        const activeComponent = activePartEl?.getAttribute('data-component') || '';
+        const headerText = document.querySelector('.ts-task-name, h1, h2')?.innerText?.trim() || '';
+
+        const partTabs = Array.from(document.querySelectorAll('[data-testid="boss-part-tabs"] button')).map(b => ({
+          partId: b.getAttribute('data-part-id') || b.innerText.trim(),
+          label: b.innerText.trim()
+        }));
+
+        return { paperBadge, activePartId, activeComponent, headerText, partTabs };
+      });
+
+      const entry = {
+        week: w,
+        route: d5Id,
+        url: weekUrl,
+        observedPaper: weekInspection.paperBadge,
+        observedPart: weekInspection.activePartId,
+        observedComponent: weekInspection.activeComponent,
+        observedHeader: weekInspection.headerText,
+        observedPartTabs: weekInspection.partTabs,
+        observedFrom: 'runtime',
+        result: weekInspection.paperBadge.length > 0 && weekInspection.activePartId.length > 0 ? 'PASS' : 'FAIL'
+      };
+
+      report.rotationForensicMatrix16Parts.push(entry);
+      console.log(`  [W${w} ${d5Id}] Observed Paper: "${entry.observedPaper}" | Part: "${entry.observedPart}" | Comp: "${entry.observedComponent}" -> ${entry.result}`);
+    }
   }
 
   // ── STEP 4: WORD TREASURY 3-TIER + INTERACTION PROOF ────────────────────────

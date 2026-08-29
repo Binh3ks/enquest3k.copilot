@@ -73,6 +73,7 @@ export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0
         </span>
         <button
           type="button"
+          data-testid="boss-start-battle-btn"
           onClick={onStartBattle}
           className="px-6 py-2.5 sm:py-3 bg-gradient-to-r from-rose-500 via-purple-600 to-indigo-600 hover:from-rose-600 hover:to-indigo-700 text-white rounded-xl font-black text-xs sm:text-sm shadow-lg shadow-purple-500/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-1.5"
         >

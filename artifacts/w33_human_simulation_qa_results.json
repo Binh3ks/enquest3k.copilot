@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-29T14:21:38.248Z",
+  "timestamp": "2026-08-29T14:45:00.335Z",
   "governingStandard": "W33 Golden Learning & Assessment Standard v1.0",
   "activeProfile": "NORMAL_LEARNER_PROFILE (role: student)",
   "pathA_TrueLearnerNavigation": {
@@ -1372,61 +1372,100 @@
     "boss_listening": {
       "expectedPaper": "Listening",
       "expectedComponent": "BossBattleZone -> SVGLineMatcher (L1)",
-      "actualPaper": "Listening",
-      "actualPart": "L1",
+      "actualPaper": "LISTENING",
+      "actualPart": "list_p1",
       "actualHeader": "Listening Shield (L1 & L2)",
       "actualHeaderTitle": "Listening Shield (L1 & L2)",
       "actualComponent": "SVGLineMatcher",
+      "observedParts": [
+        {
+          "part": "list_p1",
+          "component": "SVGLineMatcher",
+          "paper": "LISTENING",
+          "observedFrom": "runtime"
+        },
+        {
+          "part": "list_p2",
+          "component": "NotepadNoteCompleter",
+          "paper": "LISTENING",
+          "observedFrom": "runtime"
+        }
+      ],
       "forbiddenViolation": false,
       "failureReason": null,
       "inspection": {
         "headerText": "Listening Shield (L1 & L2)",
+        "paperBadge": "LISTENING",
+        "activePartId": "list_p1",
+        "activePartComponent": "SVGLineMatcher",
         "isLineMatcher": true,
         "isNotepad": false,
         "isVisualMatching": false,
         "isWordBankMatching": false,
         "isFindDifferences": false,
-        "bodySnippet": "Map\n🎧\nListening Shield (L1 & L2)\nMilestone\nOFFICIAL CAMBRIDGE ASSESSMENT\n🎧 CAMBRIDGE A2 FLYERS — LISTENING PART 1\n\nListen and draw lines. There is one example.\n\n← Map\nPlay Official Audio (2×)\n🔊 Playing Intro...\n🎯 Calibrator\nClear\nJake\n★ EX\nTom\nNurse Sarah\nHeadmaster Brown\nMaria\nDavid\nMia the Mon"
+        "bodySnippet": "Map\n🎧\nListening Shield (L1 & L2)\nMilestone\nLISTENING\nListening Part 1: Draw Lines\nL1 · Draw Lines\nL2 · Note Completion\nOFFICIAL CAMBRIDGE ASSESSMENT\n🎧 CAMBRIDGE A2 FLYERS — LISTENING PART 1\n\nListen and draw lines. There is one example.\n\n← Map\nPlay Official Audio (2×)\n🔊 Playing Intro...\n🎯 Calibra"
       }
     },
     "boss_reading": {
       "expectedPaper": "Reading & Writing",
       "expectedComponent": "BossBattleZone -> WordBankMatchingGrid (R1) or designated Cambridge R&W Part",
-      "actualPaper": "Reading & Writing",
-      "actualPart": "R1",
+      "actualPaper": "READING & WRITING",
+      "actualPart": "rw_p1",
       "actualHeader": "Reading & Writing Shield (R1)",
       "actualHeaderTitle": "Reading & Writing Shield (R1)",
       "actualComponent": "WordBankMatchingGrid",
+      "observedParts": [
+        {
+          "part": "rw_p1",
+          "component": "WordBankMatchingGrid",
+          "paper": "READING & WRITING",
+          "observedFrom": "runtime"
+        }
+      ],
       "forbiddenViolation": false,
       "failureReason": null,
       "inspection": {
         "headerText": "Reading & Writing Shield (R1)",
+        "paperBadge": "READING & WRITING",
+        "activePartId": "rw_p1",
+        "activePartComponent": "WordBankMatchingGrid",
         "isLineMatcher": false,
         "isNotepad": false,
         "isVisualMatching": false,
         "isWordBankMatching": true,
         "isFindDifferences": false,
-        "bodySnippet": "Map\n📖\nReading & Writing Shield (R1)\nMilestone\nCAMBRIDGE A2 FLYERS — READING & WRITING PART 1\nWord Bank Matching (15 Words & 10 Definitions)\n\nLook and read. Choose the correct words and write them on the lines. There is one example.\n\n10 Definitions · 15 Candidate Words\n15-WORD BANK POOL:\nClick a wor"
+        "bodySnippet": "Map\n📖\nReading & Writing Shield (R1)\nMilestone\nREADING & WRITING\nReading & Writing Part 1: Word Bank Match\nCAMBRIDGE A2 FLYERS — READING & WRITING PART 1\nWord Bank Matching (15 Words & 10 Definitions)\n\nLook and read. Choose the correct words and write them on the lines. There is one example.\n\n10 Def"
       }
     },
     "weekly_review": {
       "expectedPaper": "Speaking",
       "expectedComponent": "BossBattleZone -> FindDifferencesInteractive (S1) or designated Cambridge Speaking Part",
-      "actualPaper": "Speaking",
-      "actualPart": "S1",
+      "actualPaper": "SPEAKING",
+      "actualPart": "spk_p1",
       "actualHeader": "Speaking & Passport (S1)",
       "actualHeaderTitle": "Speaking & Passport (S1)",
       "actualComponent": "FindDifferencesInteractive",
+      "observedParts": [
+        {
+          "part": "spk_p1",
+          "component": "FindDifferencesInteractive",
+          "paper": "SPEAKING",
+          "observedFrom": "runtime"
+        }
+      ],
       "forbiddenViolation": false,
       "failureReason": null,
       "inspection": {
         "headerText": "Speaking & Passport (S1)",
+        "paperBadge": "SPEAKING",
+        "activePartId": "spk_p1",
+        "activePartComponent": "FindDifferencesInteractive",
         "isLineMatcher": false,
         "isNotepad": false,
         "isVisualMatching": false,
         "isWordBankMatching": false,
         "isFindDifferences": true,
-        "bodySnippet": "Map\n🏆\nSpeaking & Passport (S1)\nMilestone\nCAMBRIDGE A2 FLYERS — SPEAKING PART 1\nFind the Differences (Look at the Two Pictures)\n\nLook at the two pictures. They are the same, but there are some differences. Tell me the differences.\n\n🔊 Playing Intro...\nFound 0 of 4 Differences\nPicture A\nPicture B\nCom"
+        "bodySnippet": "Map\n🏆\nSpeaking & Passport (S1)\nMilestone\nSPEAKING\nSpeaking Part 1: Find Differences\nCAMBRIDGE A2 FLYERS — SPEAKING PART 1\nFind the Differences (Look at the Two Pictures)\n\nLook at the two pictures. They are the same, but there are some differences. Tell me the differences.\n\n🔊 Playing Intro...\nFound"
       }
     }
   },
@@ -1479,5 +1518,187 @@
     "failed": 0,
     "insufficientEvidenceAudioContent": 15,
     "finalStatus": "READY FOR INDEPENDENT VERIFICATION (0 Critical Failures, All 15 Tasks Semantically Grounded)"
-  }
+  },
+  "rotationForensicMatrix16Parts": [
+    {
+      "week": 33,
+      "route": "boss_listening",
+      "url": "http://localhost:5173/week/33/task/boss_listening",
+      "observedPaper": "LISTENING",
+      "observedPart": "list_p1",
+      "observedComponent": "SVGLineMatcher",
+      "observedHeader": "Listening Shield (L1 & L2)",
+      "observedPartTabs": [
+        {
+          "partId": "list_p1",
+          "label": "L1 · Draw Lines"
+        },
+        {
+          "partId": "list_p2",
+          "label": "L2 · Note Completion"
+        }
+      ],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    },
+    {
+      "week": 33,
+      "route": "boss_reading",
+      "url": "http://localhost:5173/week/33/task/boss_reading",
+      "observedPaper": "READING & WRITING",
+      "observedPart": "rw_p1",
+      "observedComponent": "WordBankMatchingGrid",
+      "observedHeader": "Reading & Writing Shield (R1)",
+      "observedPartTabs": [],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    },
+    {
+      "week": 33,
+      "route": "weekly_review",
+      "url": "http://localhost:5173/week/33/task/weekly_review",
+      "observedPaper": "SPEAKING",
+      "observedPart": "spk_p1",
+      "observedComponent": "FindDifferencesInteractive",
+      "observedHeader": "Speaking & Passport (S1)",
+      "observedPartTabs": [],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    },
+    {
+      "week": 34,
+      "route": "boss_listening",
+      "url": "http://localhost:5173/week/34/task/boss_listening",
+      "observedPaper": "LISTENING",
+      "observedPart": "list_p3",
+      "observedComponent": "VisualMatchingAH",
+      "observedHeader": "Listening Shield (L3)",
+      "observedPartTabs": [],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    },
+    {
+      "week": 34,
+      "route": "boss_reading",
+      "url": "http://localhost:5173/week/34/task/boss_reading",
+      "observedPaper": "READING & WRITING",
+      "observedPart": "rw_p2",
+      "observedComponent": "DialogueAHCompleter",
+      "observedHeader": "Reading & Writing Shield (R2 & R3)",
+      "observedPartTabs": [
+        {
+          "partId": "rw_p2",
+          "label": "R2 · Dialogue A–H"
+        },
+        {
+          "partId": "rw_p3",
+          "label": "R3 · Cloze Story"
+        }
+      ],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    },
+    {
+      "week": 34,
+      "route": "weekly_review",
+      "url": "http://localhost:5173/week/34/task/weekly_review",
+      "observedPaper": "SPEAKING",
+      "observedPart": "spk_p2",
+      "observedComponent": "InformationExchangeP2",
+      "observedHeader": "Speaking & Passport (S2)",
+      "observedPartTabs": [],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    },
+    {
+      "week": 35,
+      "route": "boss_listening",
+      "url": "http://localhost:5173/week/35/task/boss_listening",
+      "observedPaper": "LISTENING",
+      "observedPart": "list_p4",
+      "observedComponent": "MultipleChoice3Pic",
+      "observedHeader": "Listening Shield (L4)",
+      "observedPartTabs": [],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    },
+    {
+      "week": 35,
+      "route": "boss_reading",
+      "url": "http://localhost:5173/week/35/task/boss_reading",
+      "observedPaper": "READING & WRITING",
+      "observedPart": "rw_p4",
+      "observedComponent": "InlineTextClozeDropdown",
+      "observedHeader": "Reading & Writing Shield (R4 & R5)",
+      "observedPartTabs": [
+        {
+          "partId": "rw_p4",
+          "label": "R4 · Text Cloze"
+        },
+        {
+          "partId": "rw_p5",
+          "label": "R5 · Story Detective"
+        }
+      ],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    },
+    {
+      "week": 35,
+      "route": "weekly_review",
+      "url": "http://localhost:5173/week/35/task/weekly_review",
+      "observedPaper": "SPEAKING",
+      "observedPart": "spk_p3",
+      "observedComponent": "PictureStoryContinuation",
+      "observedHeader": "Speaking & Passport (S3)",
+      "observedPartTabs": [],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    },
+    {
+      "week": 36,
+      "route": "boss_listening",
+      "url": "http://localhost:5173/week/36/task/boss_listening",
+      "observedPaper": "LISTENING",
+      "observedPart": "list_p5",
+      "observedComponent": "SVGColorAndWrite",
+      "observedHeader": "Listening Shield (L5)",
+      "observedPartTabs": [],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    },
+    {
+      "week": 36,
+      "route": "boss_reading",
+      "url": "http://localhost:5173/week/36/task/boss_reading",
+      "observedPaper": "READING & WRITING",
+      "observedPart": "rw_p6",
+      "observedComponent": "OpenClozeCompleter",
+      "observedHeader": "Reading & Writing Shield (R6 & R7)",
+      "observedPartTabs": [
+        {
+          "partId": "rw_p6",
+          "label": "R6 · Open Cloze"
+        },
+        {
+          "partId": "rw_p7",
+          "label": "R7 · Story Writing"
+        }
+      ],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    },
+    {
+      "week": 36,
+      "route": "weekly_review",
+      "url": "http://localhost:5173/week/36/task/weekly_review",
+      "observedPaper": "SPEAKING",
+      "observedPart": "spk_p4",
+      "observedComponent": "PersonalQuestionsCompleter",
+      "observedHeader": "Speaking & Passport (S4)",
+      "observedPartTabs": [],
+      "observedFrom": "runtime",
+      "result": "PASS"
+    }
+  ]
 }

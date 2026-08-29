@@ -122,10 +122,11 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
       return {
         // Cambridge Part identity from registry (single source of truth)
         partId,
-        paper:       registryEntry.paper,
-        partNumber:  registryEntry.partNumber,
-        displayName: registryEntry.displayName,
-        shortLabel:  registryEntry.shortLabel,
+        paper:        registryEntry.paper,
+        partNumber:   registryEntry.partNumber,
+        displayName:  registryEntry.displayName,
+        shortLabel:   registryEntry.shortLabel,
+        componentKey: registryEntry.componentKey,
         // Quest completion metadata from schedule (explicit, not index-derived)
         questId,
       };
@@ -143,6 +144,22 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
 
     return tasks;
   }, [rotaryConfig, isFullMock, requestedTaskId]);
+
+  // Tasks specifically belonging to this forced station (or all tasks if not forced)
+  const stationTasks = React.useMemo(() => {
+    if (!forcedStation) return currentTasks;
+    const station = forcedStation.toLowerCase().trim();
+    if (['rw_boss', 'reading_boss', 'boss_reading'].includes(station)) {
+      return currentTasks.filter(t => t.questId === 'boss_reading' || t.paper === PAPER.READING_WRITING);
+    }
+    if (['review', 'weekly_review', 'speaking_boss', 'personal_qs'].includes(station)) {
+      return currentTasks.filter(t => t.questId === 'weekly_review' || t.paper === PAPER.SPEAKING);
+    }
+    if (['listening_boss', 'boss_listening'].includes(station)) {
+      return currentTasks.filter(t => t.questId === 'boss_listening' || t.paper === PAPER.LISTENING);
+    }
+    return currentTasks;
+  }, [forcedStation, currentTasks]);
 
   // Initial task index derived from explicit questId and paper contract (ZERO positional assumptions)
   const initialIndex = React.useMemo(() => {
@@ -179,6 +196,8 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
   // Mock Paper Shield scores (set on Full Mock completion via MockAssessmentEngine)
   const [mockPaperScores, setMockPaperScores] = useState(null);
 
+  const lastForcedStationRef = React.useRef(forcedStation);
+
   // Sync active task index when forcedStation or requestedTaskId changes (contract-driven)
   React.useEffect(() => {
     if (requestedTaskId) {
@@ -189,18 +208,21 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         return;
       }
     }
-    if (!forcedStation) return;
+    if (lastForcedStationRef.current !== forcedStation) {
+      lastForcedStationRef.current = forcedStation;
+      if (!forcedStation) return;
 
-    const station = forcedStation.toLowerCase().trim();
-    if (['rw_boss', 'reading_boss', 'boss_reading'].includes(station)) {
-      const idx = currentTasks.findIndex(t => t.questId === 'boss_reading' || t.paper === PAPER.READING_WRITING);
-      if (idx !== -1) setActiveTaskIndex(idx);
-    } else if (['review', 'weekly_review', 'speaking_boss', 'personal_qs'].includes(station)) {
-      const idx = currentTasks.findIndex(t => t.questId === 'weekly_review' || t.paper === PAPER.SPEAKING);
-      if (idx !== -1) setActiveTaskIndex(idx);
-    } else if (['listening_boss', 'boss_listening'].includes(station)) {
-      const idx = currentTasks.findIndex(t => t.questId === 'boss_listening' || t.paper === PAPER.LISTENING);
-      if (idx !== -1) setActiveTaskIndex(idx);
+      const station = forcedStation.toLowerCase().trim();
+      if (['rw_boss', 'reading_boss', 'boss_reading'].includes(station)) {
+        const idx = currentTasks.findIndex(t => t.questId === 'boss_reading' || t.paper === PAPER.READING_WRITING);
+        if (idx !== -1) setActiveTaskIndex(idx);
+      } else if (['review', 'weekly_review', 'speaking_boss', 'personal_qs'].includes(station)) {
+        const idx = currentTasks.findIndex(t => t.questId === 'weekly_review' || t.paper === PAPER.SPEAKING);
+        if (idx !== -1) setActiveTaskIndex(idx);
+      } else if (['listening_boss', 'boss_listening'].includes(station)) {
+        const idx = currentTasks.findIndex(t => t.questId === 'boss_listening' || t.paper === PAPER.LISTENING);
+        if (idx !== -1) setActiveTaskIndex(idx);
+      }
     }
   }, [forcedStation, requestedTaskId, currentTasks]);
 
@@ -382,13 +404,72 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     );
   }
 
-  // ── Active Part rendering ────────────────────────────────────────────────
-  // activeTaskId drives component routing.
-  // URL deep-link (requestedTaskId) takes priority for single-Part QA access.
   const activeTaskId = requestedTaskId || currentTask?.partId;
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans">
+      {/* Boss Assessment Header with Runtime Paper Badge & Multi-Part Tabs */}
+      <div
+        data-testid="boss-assessment-header"
+        className="bg-slate-900 text-white rounded-2xl p-3 sm:p-4 border border-slate-800 shadow-lg flex flex-wrap items-center justify-between gap-3"
+      >
+        <div className="flex items-center gap-2.5">
+          <span
+            data-testid="boss-paper-badge"
+            className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider ${
+              currentTask.paper === PAPER.LISTENING
+                ? 'bg-indigo-500/30 text-indigo-300 border border-indigo-500/50'
+                : currentTask.paper === PAPER.READING_WRITING
+                ? 'bg-emerald-500/30 text-emerald-300 border border-emerald-500/50'
+                : 'bg-amber-500/30 text-amber-300 border border-amber-500/50'
+            }`}
+          >
+            {currentTask.paper}
+          </span>
+          <div
+            data-testid="boss-active-part"
+            data-part-id={currentTask.partId}
+            data-paper={currentTask.paper}
+            data-component={currentTask.componentKey}
+            className="text-xs sm:text-sm font-black text-white"
+          >
+            {currentTask.displayName}
+          </div>
+        </div>
+
+        {/* Part Tabs (for multi-part stations or mock navigation) */}
+        {stationTasks.length > 1 && (
+          <div data-testid="boss-part-tabs" className="flex items-center gap-1.5 bg-slate-950/60 p-1 rounded-xl border border-slate-800">
+            {stationTasks.map((task) => {
+              const isActive = activeTaskId === task.partId;
+              const isDone = completedPartIds.includes(task.partId);
+              return (
+                <button
+                  key={task.partId}
+                  type="button"
+                  data-testid={`boss-part-tab-${task.partId}`}
+                  data-part-id={task.partId}
+                  onClick={() => {
+                    const targetIdx = currentTasks.findIndex(t => t.partId === task.partId);
+                    if (targetIdx !== -1) setActiveTaskIndex(targetIdx);
+                  }}
+                  className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
+                    isActive
+                      ? 'bg-amber-400 text-slate-950 shadow-md scale-105'
+                      : isDone
+                      ? 'bg-slate-800 text-emerald-400 hover:bg-slate-700'
+                      : 'bg-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-700'
+                  }`}
+                >
+                  {isDone && <CheckCircle2 size={12} />}
+                  <span>{task.shortLabel || task.partId.toUpperCase()}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
       {/* Task Content Card */}
       <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 border border-slate-200 shadow-md min-h-[360px]">
         {/* LISTENING P1 */}
