@@ -1,14 +1,14 @@
 # EngQuest3K — Week Content Pipeline SOP (W33+)
-**Schema Version**: 2.1 | **Effective from**: W33 | **Updated**: 2026-08-26
-**Single Source of Truth**: AGENTS.md §🏰 Master 15-Task Architecture Invariant
+**Schema Version**: 3.0 (Golden Frozen Baseline) | **Effective from**: W33 | **Updated**: 2026-08-28
+**Single Source of Truth**: AGENTS.md §🏰 Master 15-Task Architecture Invariant & `docs/W33_GOLDEN_BASELINE.md`
 
 ---
 
 ## ⚖️ CRITICAL GOVERNANCE PRINCIPLES (Read First — Non-Negotiable)
 
-### TWO-LEVEL REVIEW SYSTEM
+### 1. TWO-LEVEL REVIEW SYSTEM & CAMBRIDGE PRACTICE BOUNDARY
 
-W33+ content is reviewed at **two separate levels**. These levels MUST NOT be confused.
+W33+ content is reviewed at **two separate levels**. These levels MUST NOT be confused:
 
 **Level A — Learning & Practice Content (Quest 1–4)**
 - Quests 1–4 are learning/practice quests. They develop the 3-year syllabus.
@@ -25,25 +25,45 @@ W33+ content is reviewed at **two separate levels**. These levels MUST NOT be co
 > ⚠️ **"Cambridge-aligned practice does not mean every practice task must replicate the Cambridge exam format."**
 >
 > ⚠️ **"Exact Cambridge Flyers format is mandatory for active Flyers Shields and the full Mock Test."**
+>
+> ⚠️ **"Game Layer must never alter Learning/Assessment Core."**
 
-### VALIDATION GATES ARE INDEPENDENT
+### 2. STRICT LIFECYCLE & INDEPENDENT EVIDENCE DISCIPLINE
+
+Every defect, mismatch, or QA finding follows the non-negotiable lifecycle:
+`DISCOVERED → FIXED → VERIFIED → CLOSED`
+
+- **Never mark a finding CLOSED merely because:** code was changed, a validator passes, a file exists, build succeeds, or the UI appears to render.
+- **Independent Evidence Rule:**
+  > ⚠️ **"PASS from the same validator that was modified to fix the issue is not, by itself, sufficient independent closure evidence for a high-risk finding."**
+  A finding requires multimodal verification (e.g. Whisper ASR for audio, fresh Playwright DOM assertions for runtime, adversarial meta-validation for schema).
+
+### 3. NO-FALLBACK DOCTRINE (FAIL-LOUD STANDARD)
+
+Missing production content must **fail loudly** rather than silently falling back to hardcoded substitute content.
+- 0 hardcoded strings inside component UI.
+- Gate 8 (`node scripts/gate8_no_fallback_sweep.mjs NN`) MUST scan and report 0 hardcoded fallbacks before release.
+
+### 4. VALIDATION GATES ARE INDEPENDENT
 
 A PASS on one gate does NOT imply a PASS on any other gate:
 
-| Gate | What it validates |
-|------|------------------|
-| Gate A | Learning Practice Quality (Level A) |
-| Gate B | Cambridge Alignment |
-| Gate C | Flyers Shield Fidelity (Level B) |
-| Gate D | Wordlist / Vocabulary Governance |
-| Gate E | CLIL / Domain Accuracy |
-| Gate F | Runtime / Schema Integrity |
-| Gate G | Asset / Audio / Data Parity |
-| Gate H | Visual QA |
+| Gate | What it validates | Script |
+|------|-------------------|--------|
+| **Gate 3** | Media Integrity (100% static MP3s > 0 bytes) | `node scripts/gate3_media_integrity.mjs NN` |
+| **Gate 4** | ESL Chunk Bolding (Punctuation outside bold tags) | `node scripts/gate4_chunk_bolding.mjs NN` |
+| **Gate 8** | Static No-Fallback Sweep (100% Fail-Loud) | `node scripts/gate8_no_fallback_sweep.mjs NN` |
+| **Gate 10** | Example Grammaticality & Agreement | `node scripts/gate10_example_grammaticality.mjs NN` |
+| **Gate 11** | Content Richness & Word Variety | `node scripts/gate11_content_richness.mjs NN` |
+| **Gate 12** | Comprehensive CEFR Staging (Stage 1 A2 Flyers) | `node scripts/gate12_comprehensive_cefr.mjs NN` |
+| **Gate 13** | Rotary Schedule Invariant (15 Tasks / 5 Days) | `node scripts/gate13_rotary_schedule.mjs NN` |
+| **Gate 15** | Production DOM Assertions (15/15 clean DOM) | `node scripts/gate15_production_dom_assertions.mjs NN` |
+| **Gate 16** | Content Quality & Single-Source Purity | `node scripts/gate16_content_quality.mjs NN` |
+| **Gate 17** | Cambridge Fidelity Doctrine (16 Parts) | `node scripts/gate17_fidelity_doctrine.mjs NN` |
 
-CEFR PASS ≠ Flyers Shield PASS. Wordlist PASS ≠ Cambridge Mechanics PASS.
+CEFR PASS ≠ Flyers Shield PASS. Wordlist PASS ≠ Cambridge Mechanics PASS. Build PASS ≠ Runtime DOM PASS.
 
-### CLIL / DOMAIN TERMINOLOGY GOVERNANCE
+### 5. CLIL / DOMAIN TERMINOLOGY GOVERNANCE
 
 CLIL-specific science/topic terms (e.g., `friction`, `surface`, `tiles`, `grip`) are NOT
 core learner vocabulary — they are domain terms explicitly approved for a specific week's
@@ -53,7 +73,7 @@ CLIL topic. They must be:
 - NOT rejected as "B2+ jargon" if they are genuine A2 CLIL concepts
 - Pedagogically justified by the CLIL lesson context
 
-### WORDLIST GOVERNANCE — 5 REGISTERS
+### 6. WORDLIST GOVERNANCE — 5 REGISTERS
 
 Do NOT merge all wordlists into one undifferentiated set. Maintain 5 registers:
 
@@ -68,7 +88,7 @@ Do NOT merge all wordlists into one undifferentiated set. Maintain 5 registers:
 > KET vocabulary is NOT a silent fallback for core Flyers A2. KET-only words trigger a WARN,
 > not a PASS, in the vocabulary gate. Do NOT use KET to expand core learner vocabulary silently.
 
-### RUNTIME REACHABILITY RULE
+### 7. RUNTIME REACHABILITY RULE
 
 The mere existence of Shield data in a week's hub files does NOT mean it is active in Quest 5.
 A Shield is active ONLY if `bossRotarySchedule.js` includes its ID in `testedSkills[cycleNumber]`
@@ -77,7 +97,7 @@ for that week. Non-active data is valid **future rotation material** — NOT a b
 Do NOT treat extra Shield data in a hub file as a rotation violation unless it is reachable
 from the active Quest 5 runtime for that week's cycle.
 
-### WEEK 5 MOCK TEST — SEPARATE FROM WEEKLY ROTATION
+### 8. WEEK 5 MOCK TEST — SEPARATE FROM WEEKLY ROTATION
 
 Every 5th week (W37, W42, W47, W52…) is a Full Cambridge A2 Flyers Mock Exam.
 The Mock Test:
@@ -319,22 +339,27 @@ node scripts/generate_week_images.mjs NN
 ### PHASE 4 — GATES (Không skip, không thương tiếc)
 
 ```bash
-# Gate 15 — CEFR + Audit
-npm run audit:week NN               # 0 errors
-node scripts/cefr_curriculum_guard.mjs NN  # 0 violations
+# 1. Media & Chunk Integrity
+node scripts/gate3_media_integrity.mjs NN          # 100% static MP3s verified > 0 bytes
+node scripts/gate4_chunk_bolding.mjs NN            # 0 punctuation within bold tags
 
-# Gate 17 — Cambridge Fidelity Doctrine
-node scripts/gate17_fidelity_doctrine.mjs NN
-# Expect: "finalVerdict": "PASS", "failReasons": []
+# 2. Fail-Loud Sweep & CEFR Staging
+node scripts/gate8_no_fallback_sweep.mjs NN        # 0 hardcoded fallback strings
+node scripts/cefr_curriculum_guard.mjs NN          # 0 B1/B2 violations, A2 Flyers staging
 
-# Gate B — Build
-npm run build                       # exit code 0
+# 3. Content Quality & Grammaticality
+node scripts/gate10_example_grammaticality.mjs NN  # 0 agreement defects
+node scripts/gate11_content_richness.mjs NN        # Content richness standard
+node scripts/gate13_rotary_schedule.mjs NN         # 15 Quests / 5 Days invariant
 
-# Manual spot-check
-# - L1: Pins hiển thị đúng nhân vật, không chồng lên nhau
-# - L3: Item names (left) khớp với Card names (right)
-# - CLIL: Question text hiển thị (không chỉ Options)
-# - Story Writer Scene 3: keywords có động từ quá khứ
+# 4. Cambridge Fidelity & Production DOM
+node scripts/gate16_content_quality.mjs NN         # 100% single-source content purity
+node scripts/gate17_fidelity_doctrine.mjs NN       # 16-part Cambridge schema & invariants PASS
+node scripts/gate15_production_dom_assertions.mjs NN # 15/15 clean DOM assertions
+
+# 5. Master Suite & Production Build
+npm run audit:week NN                              # All quality gates Exit 0
+npm run build                                      # 0 build errors
 ```
 
 **Multi-Agent Review Report bắt buộc:**

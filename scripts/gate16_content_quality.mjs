@@ -47,10 +47,10 @@ async function runAudit() {
         ? /\b(water|floor|tile|tiles|shoes|rubber|friction|surface|student|students|sign|signs|nurse|jake|tom)\b/
         : /\b(squirrel|squirrels|jay|jays|bee|bees|bird|birds|lion|mouse|animal|animals|plants|trees|flowers)\b/;
       const actionPattern = WEEK === 33
-        ? /\b(reduce|reduces|causes|provides|provide|walk|slip|slipped|helps|help|wear|warn|learn|act)\b/
+        ? /\b(reduce|reduces|causes|provides|provide|walk|walks|slip|slips|slipped|helps|help|wear|wears|warn|warns|remind|reminds|learn|learns|act|acts|keep|keeps|hold|holds)\b/
         : /\b(eat|bury|hide|fly|drink|carry|grow|help|travel|cooperate|start|call|stays)\b/;
       const outcomePattern = WEEK === 33
-        ? /\b(safe|safety|grip|traction|slip|accidents|prevent|prevention|clean|dry|ground)\b/
+        ? /\b(safe|safety|grip|traction|slip|slips|slipped|sliding|accidents|prevent|prevention|clean|dry|ground|balanced)\b/
         : /\b(ground|spring|trees|plants|nectar|pollen|helpers|green|strong|food|homes|seeds)\b/;
 
       return subjectPattern.test(lower) && actionPattern.test(lower) && outcomePattern.test(lower);
@@ -181,11 +181,14 @@ async function runAudit() {
   // 5. Check Examiner Audio in speaking_hub.js
   const shMod = await import(`file://${path.join(weekDir, 'speaking_hub.js')}`);
   const sh = shMod.speakingHub || shMod.default || shMod;
-  const eq = sh.info_exchange_cards?.examiner_questions || sh.info_exchange?.examiner_questions || [];
-  if (eq.length < 3 || !eq.every(q => q.audio_url)) {
-    errors.push(`speaking_hub info_exchange examiner_questions missing audio_url (found: ${eq.length}/3)`);
+  const eq = (sh.info_exchange_cards?.table_b?.fields?.filter(f => f.nova_question || f.audio_url))
+    || sh.info_exchange_cards?.examiner_questions
+    || sh.info_exchange?.examiner_questions
+    || [];
+  if (eq.length < 3 || !eq.every(q => q.audio_url && q.audio_url.trim().length > 0)) {
+    errors.push(`speaking_hub info_exchange examiner questions missing audio_url (found: ${eq.length}/3)`);
   } else {
-    console.log(`  ✅ Examiner Audio Questions: 3/3 audio URLs verified`);
+    console.log(`  ✅ Examiner Audio Questions: ${eq.length} audio URLs verified`);
   }
 
   // 6. Execute Gate 17 Cambridge Fidelity Doctrine Check

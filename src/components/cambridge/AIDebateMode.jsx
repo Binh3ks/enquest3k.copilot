@@ -134,8 +134,6 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
       setDebateScore(result);
       setIsCompleted(true);
       fireCelebrationConfetti('AIDebate_Complete');
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(50);
       return;
     }
 
@@ -196,8 +194,6 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
     if (totalScore >= 70) {
       setIsCompleted(true);
       fireCelebrationConfetti('AIDebate_Complete');
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(60);
     }
   };
 

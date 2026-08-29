@@ -6,7 +6,7 @@
  * Badges are achievements unlocked by completing specific milestones.
  */
 
-import { getCollectionById } from '../data/collectionConfig';
+import { getCollectionById } from '../data/collectionConfig.js';
 
 /**
  * Calculate stars based on score/percentage

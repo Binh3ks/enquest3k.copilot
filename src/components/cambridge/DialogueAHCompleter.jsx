@@ -104,8 +104,6 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
     if (finalScore >= 80) {
       fireCelebrationConfetti('Dialogue_Complete');
     }
-    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-    if (userStore?.addXP) userStore.addXP(50);
 
     if (onComplete) onComplete(finalScore);
   };

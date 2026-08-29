@@ -335,8 +335,6 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
           console.log('[SPEAKING_P2_DEBUG] Phase changed to: EXAM_COMPLETED');
           setFlowState('completed');
           fireCelebrationConfetti('InfoExchange_Complete');
-          const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-          if (userStore?.addXP) userStore.addXP(50);
           speakNovaWithDebug("Fantastic job! You completed the Speaking Information Exchange Exam!");
         }
       }, 3500);

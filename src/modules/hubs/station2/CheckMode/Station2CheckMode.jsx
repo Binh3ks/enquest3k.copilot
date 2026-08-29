@@ -106,8 +106,6 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
     if (finalAvgScore >= 80) {
       fireCelebrationConfetti('Picture_Quiz_Complete');
     }
-    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-    if (userStore?.addXP) userStore.addXP(50);
     if (userStore?.updateLocalProgress) {
       userStore.updateLocalProgress(weekNumber, 'listening_p4', { score: finalAvgScore, isCompleted: true });
     }

@@ -116,8 +116,6 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
 
     if (score > 0) {
       fireCelebrationConfetti('WordBlitz_Victory');
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(xpEarned);
     }
 
     if (onComplete) onComplete(score);

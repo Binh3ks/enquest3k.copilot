@@ -89,8 +89,6 @@ export function RWPart3ClozeWithTitle({ customData, data: propData, onComplete }
     if (finalScore >= 80) {
       fireCelebrationConfetti('RWPart3_Complete');
     }
-    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-    if (userStore?.addXP) userStore.addXP(50);
 
     if (onComplete) onComplete(finalScore);
   };

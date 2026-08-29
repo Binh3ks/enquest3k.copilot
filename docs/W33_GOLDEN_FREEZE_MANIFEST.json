@@ -1,0 +1,97 @@
+{
+  "manifestVersion": "1.0.0",
+  "goldenStandardVersion": "1.0.0",
+  "weekNumber": 33,
+  "theme": "Corridor Safety & Friction",
+  "cefrLevel": "A2 Flyers / Stage 1 Young Learners (Ages 7–10)",
+  "freezeDate": "2026-08-28T19:55:00Z",
+  "lifecycleState": "GOLDEN_FROZEN",
+  "rotaryCycle": {
+    "cycleNumber": 1,
+    "testedSkills": ["listening_p1", "listening_p2", "listening_p3"],
+    "shieldCount": 3
+  },
+  "protectedSourceFiles": [
+    "src/data/weeks/week_33/reading_hub.js",
+    "src/data/weeks/week_33/listening_hub.js",
+    "src/data/weeks/week_33/writing_hub.js",
+    "src/data/weeks/week_33/speaking_hub.js",
+    "src/data/weeks/week_33/skill_practice_hub.js",
+    "src/data/weeks/week_33/vocab.js"
+  ],
+  "protectedFileHashes": {
+    "src/data/weeks/week_33/reading_hub.js": "7b7cdc7d4a15bc6489ed719be8b40d0e5f2c9505bef93a068257981945255a4f",
+    "src/data/weeks/week_33/listening_hub.js": "5e5fe0bb504e5d14a4ed0a1f86f0fffd0c0c798d2b458276ee68cf0399c8d76a",
+    "src/data/weeks/week_33/writing_hub.js": "57cd0bca5f66d3c9ec6c92bb656c41722a5bd085232b5569d27504b3f84d2a03",
+    "src/data/weeks/week_33/speaking_hub.js": "288a087ac528b224b0d9d36a93a214b7377402c1bd11298b6f92a973a1cbac56",
+    "src/data/weeks/week_33/skill_practice_hub.js": "94ca6c6fe931dcacdb1a99f237772f1ffe868f5d57c1e1119a5aa7668cf9376c",
+    "src/data/weeks/week_33/vocab.js": "b60c6a06188cd88d6539311519f23c52e9ddb785f303ffd953a6fcec7e4783e4",
+    "docs/GATE15_SPEC_W33.json": "da5f312e19726e2b93e7c5a4b722b02b1f4543c34f1fbca0937935503b04c92f"
+  },
+  "governanceDocumentation": [
+    "docs/W33_GOLDEN_BASELINE.md",
+    "docs/W33_CLOSURE_LEDGER.md",
+    "docs/W33_POST_FREEZE_SKEPTICAL_AUDIT.md",
+    "docs/W33_GOLDEN_HANDOFF_TO_W34_PLUS.md",
+    "production_kit/workflow/week_pipeline_sop.md"
+  ],
+  "canonicalComponentImplementations": [
+    "src/components/cambridge/WebtoonViewer.jsx",
+    "src/components/cambridge/KaraokeShadowing.jsx",
+    "src/components/cambridge/CLILExplorer.jsx",
+    "src/components/cambridge/ScienceReportCreator.jsx",
+    "src/components/cambridge/StoryWriting.jsx",
+    "src/components/cambridge/InformationExchangeP2.jsx",
+    "src/components/cambridge/SVGLineMatcher.jsx",
+    "src/components/cambridge/NotepadNoteCompleter.jsx",
+    "src/components/cambridge/VisualMatchingAH.jsx",
+    "src/components/cambridge/MultipleChoice3Pic.jsx",
+    "src/components/cambridge/SVGColorAndWrite.jsx",
+    "src/components/cambridge/WordBankMatchingGrid.jsx",
+    "src/components/cambridge/DialogueAHCompleter.jsx",
+    "src/components/cambridge/RWPart3ClozeWithTitle.jsx",
+    "src/components/cambridge/InlineTextClozeDropdown.jsx",
+    "src/components/cambridge/TextExtractionCompleter.jsx",
+    "src/components/cambridge/OpenClozeCompleter.jsx",
+    "src/components/cambridge/FindDifferencesInteractive.jsx",
+    "src/components/cambridge/PictureStoryContinuation.jsx",
+    "src/components/cambridge/PersonalQuestionsCompleter.jsx"
+  ],
+  "validationSuite": [
+    { "gate": "Gate 3", "script": "scripts/gate3_media_integrity.mjs 33", "target": "44/44 MP3s verified" },
+    { "gate": "Gate 4", "script": "scripts/gate4_chunk_bolding.mjs 33", "target": "0 chunk punctuation errors" },
+    { "gate": "Gate 8", "script": "scripts/gate8_no_fallback_sweep.mjs 33", "target": "0 hardcoded UI fallback strings" },
+    { "gate": "Gate 10", "script": "scripts/gate10_example_grammaticality.mjs 33", "target": "0 grammar agreement defects" },
+    { "gate": "Gate 11", "script": "scripts/gate11_content_richness.mjs 33", "target": "Word counts and variety standard" },
+    { "gate": "Gate 12", "script": "scripts/gate12_comprehensive_cefr.mjs 33", "target": "0 B1/B2 violations" },
+    { "gate": "Gate 13", "script": "scripts/gate13_rotary_schedule.mjs 33", "target": "15 Quests / 5 Days invariant" },
+    { "gate": "Gate 15", "script": "scripts/gate15_production_dom_assertions.mjs 33", "target": "15/15 Quests clean DOM assertions" },
+    { "gate": "Gate 16", "script": "scripts/gate16_content_quality.mjs 33", "target": "100% single-source content purity" },
+    { "gate": "Gate 17", "script": "scripts/gate17_fidelity_doctrine.mjs 33", "target": "16-part Cambridge schema & invariants PASS" },
+    { "gate": "Freeze Guard", "script": "scripts/guard_golden_w33_freeze.mjs", "target": "SHA-256 integrity verification" }
+  ],
+  "taskInventory": [
+    { "id": "gear1_webtoon", "day": 1, "zone": 1, "name": "Scene Explorer", "type": "practice" },
+    { "id": "gear2_karaoke", "day": 1, "zone": 1, "name": "Voice Shadow", "type": "practice" },
+    { "id": "gear3_retell", "day": 1, "zone": 1, "name": "Story Retell", "type": "practice" },
+    { "id": "gear4_clil", "day": 2, "zone": 1, "name": "Fact Finder (CLIL)", "type": "practice" },
+    { "id": "science_lab", "day": 2, "zone": 2, "name": "Action Lab", "type": "practice" },
+    { "id": "science_report", "day": 2, "zone": 3, "name": "Discovery Report", "type": "practice" },
+    { "id": "word_blitz", "day": 3, "zone": 2, "name": "Speed Match", "type": "practice" },
+    { "id": "sentence_smash", "day": 3, "zone": 2, "name": "Grammar Duel", "type": "practice" },
+    { "id": "math_quest", "day": 3, "zone": 2, "name": "Math Quest (Singapore Bar Model)", "type": "practice" },
+    { "id": "story_writer", "day": 4, "zone": 3, "name": "Story Writer P7", "type": "practice" },
+    { "id": "broadcast_studio", "day": 4, "zone": 3, "name": "Video Challenge", "type": "practice" },
+    { "id": "info_exchange", "day": 4, "zone": 3, "name": "Info Exchange P2", "type": "practice" },
+    { "id": "boss_listening", "day": 5, "zone": 4, "name": "Boss Listening (L1)", "type": "assessment" },
+    { "id": "boss_reading", "day": 5, "zone": 4, "name": "Boss Reading (L2)", "type": "assessment" },
+    { "id": "weekly_review", "day": 5, "zone": 4, "name": "Boss Review (L3)", "type": "assessment" }
+  ],
+  "criticalMediaSummary": {
+    "totalStaticMP3s": 44,
+    "barModelSVGs": 5,
+    "webtoonScenes": 5,
+    "storyPanels": 3,
+    "videoTranscriptSegments": 4
+  }
+}

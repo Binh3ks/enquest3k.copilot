@@ -146,8 +146,6 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
     if (finalScore >= 80) {
       fireCelebrationConfetti('L5_Color_And_Write');
       setShowCompletionModal(true);
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(50);
     }
 
     if (onComplete) onComplete(finalScore);

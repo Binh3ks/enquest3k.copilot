@@ -5,9 +5,9 @@ import { SentenceBuilderBattle } from '../hubs/station2/LearnMode/SentenceBuilde
 import SoundSniper from '../../components/zones/SoundSniper';
 import { BarModelQuest } from '../hubs/station2/LearnMode/BarModelQuest';
 import ScienceDragDropLab from '../hubs/station2/LearnMode/ScienceDragDropLab';
-import { Swords, Trophy, Zap, ShieldAlert, Sparkles, BookOpen } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
+import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
 
 export default function BattleArenaZone({ data, weekNumber, forcedStation = null, hideStationTabs = false }) {
   const [searchParams] = useSearchParams();
@@ -59,8 +59,6 @@ export default function BattleArenaZone({ data, weekNumber, forcedStation = null
 
   const handleGameComplete = (earnedXP = 30) => {
     setTotalXP(prev => prev + earnedXP);
-    // Note: Child game components (FlashArena, SentenceBuilderBattle, BarModelQuest, ScienceDragDropLab)
-    // already call userStore.addXP directly. We only manage local session totalXP and quest completion here.
     
     // Track quest completion for Today's Quest
     const GAME_QUEST_MAP = {
@@ -72,7 +70,14 @@ export default function BattleArenaZone({ data, weekNumber, forcedStation = null
       science_lab: 'science_lab',
     };
     const questId = GAME_QUEST_MAP[activeGame];
-    if (questId && activeWeek) useDailyQuestStore.getState().completeQuest(activeWeek, questId);
+    if (questId && activeWeek) {
+      useDailyQuestStore.getState().completeQuest(activeWeek, questId);
+      emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
+        weekNumber: activeWeek,
+        taskId: questId,
+        timestamp: new Date().toISOString()
+      });
+    }
   };
 
   return (

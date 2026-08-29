@@ -86,8 +86,6 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
     if (finalScore >= 80) {
       fireCelebrationConfetti('WordBank_Complete');
     }
-    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-    if (userStore?.addXP) userStore.addXP(50);
 
     if (onComplete) onComplete(finalScore);
   };

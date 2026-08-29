@@ -7,6 +7,7 @@ import { Menu, Printer, Gauge, Sparkles, BookOpen, Swords, PenTool, Radio } from
 import { useUserStore } from './stores/useUserStore';
 import { progressAPI } from './services/api';
 import useTTSStore from './stores/useTTSStore';
+import './services/badgeEngine';
 
 // CONFIG & CONSTANTS
 import { MODULE_COMPONENTS, STATIONS, TAB_TO_STATION_ID, STATION_ID_TO_TAB } from './config/stationConfig';
@@ -44,7 +45,6 @@ import PeriodicAssessmentModal from './components/assessment/PeriodicAssessmentM
 import ChildrenManager from './components/parent/ChildrenManager';
 import { getWeekCEFR, MILESTONE_WEEKS } from './data/weekData';
 import { evaluateSpeakingNudge } from './utils/adaptiveEngine';
-import { recordDailyStreak } from './utils/progressReport';
 import { generateSmartReviewAsync } from './utils/srsGenerator';
 import EncounterOverlay from './components/encounter/EncounterOverlay';
 import UnboxAnimation from './components/avatar/UnboxAnimation';
@@ -360,7 +360,6 @@ const MainLayout = ({ isTaskMode = false }) => {
     if (currentUser && currentUser.role !== 'guest') {
       const { showSpeakingNudge } = evaluateSpeakingNudge(weekId);
       setSpeakingNudge(showSpeakingNudge);
-      recordDailyStreak();
     }
   }, [weekId, currentUser]);
 

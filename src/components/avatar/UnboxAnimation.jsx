@@ -5,6 +5,7 @@ import { useUserStore } from '../../stores/useUserStore';
 import { getCollectionById } from '../../data/collectionConfig';
 import { getBadgeById } from '../../data/badgeConfig';
 import { getAvatarItem } from '../../data/avatarItemConfig';
+import { playVictoryFanfare } from '../../utils/soundEffects';
 
 const ACCENT_COLORS = {
   blue: { primary: '#3b82f6', secondary: '#93c5fd', bg: 'bg-blue-500' },
@@ -34,6 +35,9 @@ export default function UnboxAnimation({ isOpen, onClose, onOpenCloset }) {
 
   useEffect(() => {
     if (!isOpen) return;
+    try {
+      playVictoryFanfare();
+    } catch (_) {}
     const t1 = setTimeout(() => setStage('reveal'), 100);
     const t2 = setTimeout(() => setStage('done'), 2500);
     return () => { clearTimeout(t1); clearTimeout(t2); };

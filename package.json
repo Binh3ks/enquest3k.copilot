@@ -23,9 +23,10 @@
     "audit:week": "node scripts/audit_week.mjs",
     "gate:17": "node scripts/gate17_fidelity_doctrine.mjs",
     "gate:fidelity": "node scripts/gate17_fidelity_doctrine.mjs",
-    "audit:week:tasks": "node scripts/audit_week_tasks.mjs",
     "audit:cefr": "node scripts/cefr_curriculum_guard.mjs",
-    "calibrate:diff": "node scripts/calibrate_find_differences.mjs"
+    "calibrate:diff": "node scripts/calibrate_find_differences.mjs",
+    "guard:freeze:w33": "node scripts/guard_golden_w33_freeze.mjs",
+    "audit:golden:w33": "node scripts/audit_golden_w33.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

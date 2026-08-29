@@ -124,8 +124,6 @@ export function InlineTextClozeDropdown({ customData, data: propData, onComplete
     if (finalScore >= 75) {
       fireCelebrationConfetti('Cloze_Dropdown_Complete');
     }
-    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-    if (userStore?.addXP) userStore.addXP(50);
 
     if (onComplete) onComplete(finalScore);
   };

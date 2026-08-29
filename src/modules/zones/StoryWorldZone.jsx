@@ -16,6 +16,7 @@ import GrammarHintButton from '../../components/common/GrammarHintButton';
 import PronunciationCoachCard, { getWordIpaList } from '../../components/common/PronunciationCoachCard';
 import { loadIpaData } from '../shadowing/ipaUtils';
 import { useUserStore } from '../../stores/useUserStore';
+import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
 
 export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hideGearTabs = false }) {
   const navigate = useNavigate();
@@ -221,7 +222,13 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
     const GEAR_QUEST_MAP = { 1: 'gear1_webtoon', 2: 'gear2_karaoke', 3: 'gear3_retell', 4: 'gear4_clil' };
     const completedGearNum = targetGear - 1; // moving TO targetGear means previous is done
     if (completedGearNum >= 1 && GEAR_QUEST_MAP[completedGearNum] && activeWeek) {
-      useDailyQuestStore.getState().completeQuest(activeWeek, GEAR_QUEST_MAP[completedGearNum]);
+      const qId = GEAR_QUEST_MAP[completedGearNum];
+      useDailyQuestStore.getState().completeQuest(activeWeek, qId);
+      emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
+        weekNumber: activeWeek,
+        taskId: qId,
+        timestamp: new Date().toISOString()
+      });
     }
   };
 
@@ -230,6 +237,11 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   useEffect(() => {
     if (currentGear === 4 && !forcedGear && activeWeek) {
       useDailyQuestStore.getState().completeQuest(activeWeek, 'gear4_clil');
+      emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
+        weekNumber: activeWeek,
+        taskId: 'gear4_clil',
+        timestamp: new Date().toISOString()
+      });
     }
   }, [currentGear, activeWeek, forcedGear]);
 
@@ -842,8 +854,6 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                             setFoundItems(nextFound);
                             if (nextFound.length === 3) {
                               fireCelebrationConfetti('HiddenItem_Complete');
-                              const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-                              if (userStore?.addXP) userStore.addXP(20);
                             }
                           }
                         }}

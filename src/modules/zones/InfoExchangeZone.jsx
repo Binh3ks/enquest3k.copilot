@@ -8,6 +8,7 @@ import GrammarHintButton from '../../components/common/GrammarHintButton';
 import MicFallbackInput from '../../components/common/MicFallbackInput';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
+import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
 
 
 /**
@@ -271,6 +272,11 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
       setPhase('complete');
       if (activeWeek) {
         useDailyQuestStore.getState().completeQuest(activeWeek, 'info_exchange');
+        emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
+          weekNumber: activeWeek,
+          taskId: 'info_exchange',
+          timestamp: new Date().toISOString()
+        });
       }
       if (onComplete) onComplete(100, '');
     }

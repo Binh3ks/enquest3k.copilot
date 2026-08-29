@@ -94,8 +94,6 @@ export function PictureStoryContinuation({ customData, data: propData, weekNumbe
     if (finalScore >= 80) {
       fireCelebrationConfetti('PictureStory_Complete');
     }
-    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-    if (userStore?.addXP) userStore.addXP(50);
 
     if (onComplete) onComplete(finalScore);
   };

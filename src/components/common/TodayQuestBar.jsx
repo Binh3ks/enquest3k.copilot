@@ -40,7 +40,6 @@ export default function TodayQuestBar({ weekId }) {
   const handleClaimBonus = () => {
     const claimed = claimDailyBonus(weekId, currentDay);
     if (claimed) {
-      addXP(DAILY_BONUS_XP);
       fireCelebrationConfetti?.('DailyQuestBonus');
       setShowCelebration(true);
       setTimeout(() => setShowCelebration(false), 3000);

@@ -10,6 +10,7 @@ import ShadowingErrorBoundary from '../shadowing/ShadowingErrorBoundary';
 import { PenTool, Mic, TestTube, MessageSquare, Trophy, Sparkles, AlertCircle, Zap } from 'lucide-react';
 import { useStationProgress } from '../../hooks/useStationProgress';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
+import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
 
 export default function CreatorStudioZone({ data, weekNumber, forcedStation = null, hideStationTabs = false }) {
   const [searchParams] = useSearchParams();
@@ -116,6 +117,11 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
     if (xpEarned > 0) setStudioXP(prev => prev + xpEarned);
     if (activeWeek && xpEarned > 0) {
       useDailyQuestStore.getState().completeQuest(activeWeek, 'story_writer');
+      emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
+        weekNumber: activeWeek,
+        taskId: 'story_writer',
+        timestamp: new Date().toISOString()
+      });
     }
 
     if (extraData?.structured && extraData?.fields) {
@@ -180,6 +186,11 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
     const targetQuest = questType || (activeTab === 'podcast_creator' ? 'broadcast_studio' : activeTab === 'science_report' ? 'science_report' : activeTab === 'ai_debate' ? 'ai_debate' : null);
     if (targetQuest && activeWeek) {
       useDailyQuestStore.getState().completeQuest(activeWeek, targetQuest);
+      emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
+        weekNumber: activeWeek,
+        taskId: targetQuest,
+        timestamp: new Date().toISOString()
+      });
     }
   };
 

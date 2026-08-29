@@ -6,7 +6,7 @@ export function setTokenGetter(fn) { _getToken = fn; }
 
 // Create an Axios instance with a base URL.
 // In Vite, environment variables must be prefixed with VITE_ to be exposed to the client.
-const configuredApiUrl = import.meta.env.VITE_API_URL;
+const configuredApiUrl = typeof import.meta !== 'undefined' && import.meta.env ? import.meta.env.VITE_API_URL : (typeof process !== 'undefined' ? process.env?.VITE_API_URL : undefined);
 const isApiUrlProvided = configuredApiUrl !== undefined && configuredApiUrl !== null && configuredApiUrl.trim() !== '';
 
 const apiClient = axios.create({
@@ -168,7 +168,7 @@ export const getAiTutorResponse = (chatData) =>
   apiClient.post('/ai/chat', chatData);
 
 // ADMIN & LOCAL PERSISTENT STORAGE ENGINE
-import initialUsersBackup from '../data/users_backup.json';
+import initialUsersBackup from '../data/users_backup.json' with { type: 'json' };
 
 const STORAGE_USERS_KEY = 'engquest_admin_users';
 

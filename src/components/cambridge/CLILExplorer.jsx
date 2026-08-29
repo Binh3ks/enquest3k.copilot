@@ -32,10 +32,7 @@ export default function CLILExplorer({
   const grammarPatterns = useMemo(() => {
     if (Array.isArray(clilData?.grammar_patterns) && clilData.grammar_patterns.length > 0) return clilData.grammar_patterns;
     if (Array.isArray(targetGrammarRegex) && targetGrammarRegex.length > 0) return targetGrammarRegex;
-    return [
-      { pattern: '\\b(stops things from sliding|walks on dry tiles|grip the floor firmly|stays balanced|creates a thin slippery layer|reduces friction|slide easily)\\b', label: 'Present Simple Verb Phrases', paragraph_scope: 1 },
-      { pattern: '\\b(was walking carefully|was drying the floor|was running quickly|slipped on the wet tiles|provide strong grip|holds surfaces better|remind students to walk slowly|keeps everyone safe)\\b', label: 'Past Continuous & Action Verb Phrases', paragraph_scope: 2 }
-    ];
+    return [];
   }, [clilData, targetGrammarRegex]);
 
   // VOCAB FOCUS: Curated list of multi-word chunks and collocations
@@ -163,8 +160,6 @@ export default function CLILExplorer({
     if (isCorrect) {
       setSbResult({ correct: true, msg: '🌟 Excellent! Grammar order is 100% correct!' });
       fireCelebrationConfetti('SentenceBuilder_Success');
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(25);
     } else {
       setSbResult({ correct: false, msg: '❌ Not quite right yet. Try resetting and tapping in the correct order!' });
     }
@@ -216,8 +211,6 @@ export default function CLILExplorer({
     setSelectedAnswers(prev => ({ ...prev, [qId]: option }));
     if (option === correct) {
       fireCelebrationConfetti('CLIL_Answer_Correct');
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(10);
     }
   };
 

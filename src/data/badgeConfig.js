@@ -112,6 +112,50 @@ export const BADGE_DEFINITIONS = {
     icon: '🏙️',
     color: 'bg-amber-500',
     requirement: 'Complete weeks 9-12 (100% each)'
+  },
+
+  first_quest: {
+    id: 'first_quest',
+    name: 'First Quest',
+    nameVi: 'Nhiệm Vụ Đầu Tiên',
+    description: 'Complete your first learning quest',
+    descriptionVi: 'Hoàn thành nhiệm vụ học đầu tiên',
+    icon: '⚡',
+    color: 'bg-teal-500',
+    requirement: 'Complete 1 learning quest'
+  },
+
+  streak_3: {
+    id: 'streak_3',
+    name: 'Streak Explorer',
+    nameVi: 'Thói Quen Vàng (3 Ngày)',
+    description: 'Reach a 3-day learning streak',
+    descriptionVi: 'Đạt chuỗi học tập 3 ngày liên tiếp',
+    icon: '🔥',
+    color: 'bg-orange-500',
+    requirement: 'Maintain a 3-day streak'
+  },
+
+  streak_7: {
+    id: 'streak_7',
+    name: 'Streak Master',
+    nameVi: 'Bậc Thầy Kỷ Luật (7 Ngày)',
+    description: 'Reach a 7-day learning streak',
+    descriptionVi: 'Đạt chuỗi học tập 7 ngày liên tiếp',
+    icon: '🏆',
+    color: 'bg-rose-500',
+    requirement: 'Maintain a 7-day streak'
+  },
+
+  shield_master: {
+    id: 'shield_master',
+    name: 'Shield Master',
+    nameVi: 'Bậc Thầy Khiên Cambridge',
+    description: 'Earn 5 shields on any Cambridge Part',
+    descriptionVi: 'Đạt tối đa 5 khiên trong bài thi Cambridge',
+    icon: '🛡️',
+    color: 'bg-emerald-600',
+    requirement: 'Earn 5 shields on a Cambridge section'
   }
 };
 
@@ -162,16 +206,20 @@ export const getBadgeDisplay = (badgeId, isEarned = false, language = 'en') => {
  */
 export const getBadgeTier = (badgeId) => {
   const tierMap = {
+    first_quest: 1,
     first_week: 1,
+    collection_1: 1,
+    collection_2: 1,
+    collection_3: 1,
+    streak_3: 2,
     five_weeks: 2,
     perfect_week: 2,
+    shield_master: 3,
+    streak_7: 3,
     ten_weeks: 3,
     star_collector: 3,
     dedication: 4,
     champion: 5,
-    collection_1: 1,
-    collection_2: 1,
-    collection_3: 1,
   };
   return tierMap[badgeId] || 0;
 };

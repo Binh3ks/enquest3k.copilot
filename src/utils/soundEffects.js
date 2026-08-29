@@ -4,14 +4,14 @@
  * 0 bytes downloaded, works offline, perfectly tuned for children's ears (pleasant, cheerful frequencies).
  */
 
-import useArcadeStore from '../stores/useArcadeStore';
+import useArcadeStore from '../stores/useArcadeStore.js';
 
 let audioCtx = null;
 let lastSoundTime = {};
 
 function getAudioContext() {
   if (!audioCtx) {
-    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    const AudioContextClass = (typeof window !== 'undefined' ? (window.AudioContext || window.webkitAudioContext) : null) || (typeof globalThis !== 'undefined' ? globalThis.AudioContext : null);
     if (AudioContextClass) {
       audioCtx = new AudioContextClass();
     }

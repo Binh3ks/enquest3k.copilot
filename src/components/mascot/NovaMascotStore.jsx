@@ -63,11 +63,11 @@ export default function NovaMascotStore({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
-  const handleBuy = (item) => {
-    const res = buyNovaItem(item);
-    if (res.success) {
+  const handleBuy = async (item) => {
+    const res = await buyNovaItem(item);
+    if (res?.success) {
       fireCelebrationConfetti();
-    } else {
+    } else if (res?.message) {
       alert(res.message);
     }
   };

@@ -26,34 +26,87 @@
 
 import { STATUS, updateWordStatus, getDueWords, getVocabStats } from './srsEngine.js';
 
-const STORAGE_KEY = 'engquest_word_bank';
+const LEGACY_STORAGE_KEY = 'engquest_word_bank';
+let _activeUserId = null;
+const _caches = new Map(); // Map<storageKey, bankObject>
+
+/**
+ * Set the currently active learner ID for Word Treasury.
+ * @param {string|null} userId
+ */
+export function setActiveLearner(userId) {
+  _activeUserId = userId;
+}
+
+/**
+ * Resolve the current active learner ID from memory or persisted user storage.
+ * @returns {string}
+ */
+export function resolveActiveUserId() {
+  if (_activeUserId) return _activeUserId;
+  try {
+    if (typeof localStorage !== 'undefined') {
+      const rawUser = localStorage.getItem('engquest-user-storage');
+      if (rawUser) {
+        const parsed = JSON.parse(rawUser)?.state?.currentUser;
+        const uid = parsed?.id || parsed?.username;
+        if (uid) return uid;
+      }
+    }
+  } catch (_) {}
+  return 'anonymous';
+}
+
+/**
+ * Resolve storage key for a specific learner.
+ * @param {string} [userId]
+ * @returns {string} e.g. "engquest_word_bank_user123"
+ */
+export function resolveStorageKey(userId = null) {
+  const uid = userId || resolveActiveUserId();
+  return `engquest_word_bank_${uid}`;
+}
 
 // ─────────────────────────────────────────────────────────────
 // Internal cache + persistence
 // ─────────────────────────────────────────────────────────────
 
-let _cache = null; // { [word_id]: WordEntry } | null
+function loadBank(userId = null) {
+  const key = resolveStorageKey(userId);
+  if (_caches.has(key)) return _caches.get(key);
 
-function loadBank() {
-  if (_cache !== null) return _cache;
-  try {
-    const raw = typeof localStorage !== 'undefined'
-      ? localStorage.getItem(STORAGE_KEY)
-      : null;
-    _cache = raw ? JSON.parse(raw) : {};
-  } catch {
-    _cache = {};
-  }
-  return _cache;
-}
-
-function saveBank(bank) {
-  _cache = bank;
+  let bank = {};
   try {
     if (typeof localStorage !== 'undefined') {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(bank));
+      let raw = localStorage.getItem(key);
+      
+      // Legacy Migration: If learner key is empty but legacy un-namespaced key exists
+      if (!raw && key !== `engquest_word_bank_anonymous`) {
+        const legacyRaw = localStorage.getItem(LEGACY_STORAGE_KEY);
+        if (legacyRaw) {
+          raw = legacyRaw;
+          localStorage.setItem(key, legacyRaw);
+        }
+      }
+
+      bank = raw ? JSON.parse(raw) : {};
     }
-  } catch {
+  } catch (_) {
+    bank = {};
+  }
+
+  _caches.set(key, bank);
+  return bank;
+}
+
+function saveBank(bank, userId = null) {
+  const key = resolveStorageKey(userId);
+  _caches.set(key, bank);
+  try {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(key, JSON.stringify(bank));
+    }
+  } catch (_) {
     // Storage quota exceeded — fail silently, keep in-memory cache
   }
 }
@@ -270,13 +323,15 @@ export function resetWord(wordId) {
 }
 
 /**
- * Clear entire word bank. USE ONLY for dev/testing.
+ * Clear entire word bank for active or specified learner. USE ONLY for dev/testing.
+ * @param {string} [userId]
  */
-export function clearBank() {
-  _cache = {};
+export function clearBank(userId = null) {
+  const key = resolveStorageKey(userId);
+  _caches.set(key, {});
   try {
     if (typeof localStorage !== 'undefined') {
-      localStorage.removeItem(STORAGE_KEY);
+      localStorage.setItem(key, JSON.stringify({}));
     }
   } catch { /* ignore */ }
 }

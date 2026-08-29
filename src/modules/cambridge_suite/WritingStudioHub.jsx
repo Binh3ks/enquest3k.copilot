@@ -70,10 +70,9 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
       const foundPastVerbs = evaluation.foundPastVerbs;
       const foundConnectors = evaluation.connectorsFound;
 
-      // Hub 3 Performance Task Gamification: Trigger Confetti Burst & +100 XP for ≥ 80% (3 Stars) 🎉
+      // Hub 3 Performance Task Gamification: Trigger Confetti Burst for ≥ 80% (3 Stars) 🎉
       if (totalScore >= 80) {
         fireCelebrationConfetti();
-        if (addXP) addXP(100);
       }
 
       let feedbackText = "";

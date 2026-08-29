@@ -4,7 +4,7 @@
     "task": "Day 2 Quest 1 (Fact Finder)",
     "ui_usage": "CLIL audio snippet for friction science",
     "speakers": "Narrator (en-US-Journey-F)",
-    "transcript": "Why do we fall on wet floors? The answer is a science concept called friction. Friction is a force that stops things from sliding, while Jake was walking down the corridor. His rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything. Water acts like a lubricant, while Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero, while the school nurse was applying the clean bandage, she explained that we must always look for the yellow warning sign. To stay safe, walk carefully and let friction do its job.",
+    "transcript": "Why do people slip on wet floors? The answer is a science force called friction. Friction is the grip between two surfaces that stop things from sliding. When a student walks on dry tiles, shoe souls grip the floor firmly, and the student stays balanced. But water on smooth tiles creates a thin slippery layer. This water layer reduces friction, so shoes slide easily. This morning in our school corridor, Jake was walking carefully while the cleaner was drying the floor. Tom was running quickly to class, so he slipped on the wet tiles. Rubber souls provide strong grip, because rubber holds surfaces better than plastic. Yellow warning signs remind students to walk slowly. Understanding friction keeps everyone safe.",
     "expected_theme": "Friction science explanation",
     "status": "VERIFIED"
   },
@@ -112,7 +112,7 @@
     "task": "Speaking Part 2 (Info Exchange)",
     "ui_usage": "Unified 2-voice model dialogue",
     "speakers": "Examiner (Journey-F) + Candidate (Neural2-D)",
-    "transcript": "Where did Tom get injured? Tom got injured in the school corridor near the science room. What time did the accident happen? The accident happened during morning break time. How long did it take the nurse to arrive? The school nurse arrived within two minutes with a clean bandage and a cold pack.",
+    "transcript": "Now I'd like you to ask and answer some questions about the school accident. I have a card with some information and so do you. Let's start. I'll ask you first. Where did the accident happen exactly? It happened in the school corridor near the science room. Good. And which part of Tom's body was hurt? He hurt his right knee. It was quite swollen. Right. Now it's your turn. Ask me about Jake's information on your card. Okay. What first aid item did Jake use to help Tom? Jake used a clean bandage and a cold pack to treat Tom's knee. And who praised Jake afterwards? The headmaster praised Jake in the school assembly. He was very proud of him.",
     "expected_theme": "Ask and answer cue card questions about corridor accident",
     "status": "VERIFIED"
   },
@@ -144,57 +144,48 @@
     "status": "VERIFIED"
   },
   {
+    "filename": "info_exchange_q1.mp3",
+    "task": "Unknown",
+    "ui_usage": "Unknown",
+    "speakers": "Unknown",
+    "transcript": "Where did Jake help his friend?",
+    "expected_theme": "Unknown",
+    "status": "VERIFIED"
+  },
+  {
+    "filename": "info_exchange_q2.mp3",
+    "task": "Unknown",
+    "ui_usage": "Unknown",
+    "speakers": "Unknown",
+    "transcript": "What first aid items did the nurse use?",
+    "expected_theme": "Unknown",
+    "status": "VERIFIED"
+  },
+  {
+    "filename": "info_exchange_q3.mp3",
+    "task": "Unknown",
+    "ui_usage": "Unknown",
+    "speakers": "Unknown",
+    "transcript": "How fast did the school nurse arrive to help?",
+    "expected_theme": "Unknown",
+    "status": "VERIFIED"
+  },
+  {
+    "filename": "info_exchange_q4.mp3",
+    "task": "Unknown",
+    "ui_usage": "Unknown",
+    "speakers": "Unknown",
+    "transcript": "Who praised Jake for his quick action?",
+    "expected_theme": "Unknown",
+    "status": "VERIFIED"
+  },
+  {
     "filename": "listening_p1_full.mp3",
     "task": "Day 5 Quest 1 / Boss Listening Part 1",
     "ui_usage": "Full 2-voice dialogue for character line matching",
     "speakers": "Teacher (Journey-F) + Mia (Neural2-F)",
-    "transcript": "Look at Part 1. Now look at the picture. Listen and look. There is one example. Look at that boy in the corridor. Is he running? No? That's Tom slipping on the wet floor. Look at the boy walking carefully in the blue shirt. Oh, I see him now. Is that Jake? Yes. That's right. Jake is walking carefully. Can you see the example line? Now you listen and draw lines. Who is the woman with the first eight-kit rushing near the wall? That is nurse Sarah. She is bringing bandages to help. Look at the man wearing glasses near the notice board. That is headmaster Brown. He is watching the corridor. Is that cleaner Bob holding the yellow warning sign in Mop? Yes, that is cleaner Bob. He is drying the tiles. Who is the teacher walking near the science lab? That is teacher David. He is guiding students into the classroom.",
-    "expected_theme": "Jake, Tom, Nurse Sarah, Headmaster Brown, Cleaner Bob, Teacher David",
-    "status": "VERIFIED"
-  },
-  {
-    "filename": "listening_p1_target1.mp3",
-    "task": "Listening Part 1 Target 1",
-    "ui_usage": "Target audio clip 1 (Jake)",
-    "speakers": "Teacher",
-    "transcript": "Tom is the boy in the blue shirt, who slipped on the wet floor near the stairs.",
-    "expected_theme": "Jake walking carefully",
-    "status": "VERIFIED"
-  },
-  {
-    "filename": "listening_p1_target2.mp3",
-    "task": "Listening Part 1 Target 2",
-    "ui_usage": "Target audio clip 2 (Tom)",
-    "speakers": "Teacher",
-    "transcript": "Jake is the boy wearing a green shirt holding his notebook and calling for help.",
-    "expected_theme": "Tom slipping on wet floor",
-    "status": "VERIFIED"
-  },
-  {
-    "filename": "listening_p1_target3.mp3",
-    "task": "Listening Part 1 Target 3",
-    "ui_usage": "Target audio clip 3 (Nurse Sarah)",
-    "speakers": "Teacher",
-    "transcript": "Nurse Clara is the kind school nurse carrying a clean first aid medical kit.",
-    "expected_theme": "Nurse Sarah with bandages",
-    "status": "VERIFIED"
-  },
-  {
-    "filename": "listening_p1_target4.mp3",
-    "task": "Listening Part 1 Target 4",
-    "ui_usage": "Target audio clip 4 (Headmaster Brown)",
-    "speakers": "Teacher",
-    "transcript": "Mr. Davis is the tall headmaster in a dark suit standing near the science lab.",
-    "expected_theme": "Headmaster Brown near lockers",
-    "status": "VERIFIED"
-  },
-  {
-    "filename": "listening_p1_target5.mp3",
-    "task": "Listening Part 1 Target 5",
-    "ui_usage": "Target audio clip 5 (Cleaner Bob)",
-    "speakers": "Teacher",
-    "transcript": "Emma is the helpful girl wearing yellow putting down a bright orange warning sign.",
-    "expected_theme": "Cleaner Bob with mop",
+    "transcript": "Look at Part 1. Now look at the picture. Listen and look. There is one example. Look at all the students in the school corridor. Yes. Can you see the boy walking carefully on the left? He is wearing a blue shirt. Oh, with the blue school backpack? Is that Jake? Yes, that is Jake. He is walking very carefully. Can you see the example line? Now you listen and draw lines. Look at the boy in the middle of the hallway. What happened to him? That is Tom. He was in a hurry and slipped on the wet tiles. Who is the woman in the white uniform rushing near the wall? That is Nurse Sarah. She is carrying a first aid kit to help him. And who is the tall man in the dark blue suit near the lockers? That is headmaster Brown. He is watching over the corridor. Is that Maria standing near the yellow warning sign? Yes, that is Maria. She is holding the mop to dry the wet floor. Who is the boy bending down near the bench on the right? That is David. He is picking up his water bottle from the floor.",
+    "expected_theme": "Jake, Tom, Nurse Sarah, Headmaster Brown, Cleaner Bob, David",
     "status": "VERIFIED"
   },
   {
@@ -202,7 +193,7 @@
     "task": "Day 5 Quest 1 / Boss Listening Part 2",
     "ui_usage": "Full 2-voice dialogue for notes completion",
     "speakers": "Woman (Journey-F) + Man (Neural2-D)",
-    "transcript": "Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day? Yes, of course. I am happy to help. Which classroom are you in this year? I am in room 4B on the second floor. Can you see the answer? Now you listen and write. First, what is your favorite subject at school? I really love doing experiments with forces, so my favorite subject is science. That sounds exciting. And where did the accident happen this morning? It happened while students were walking through the school corridor near the science room. How quickly did the school nurse arrive to help? She came running very quickly in about two minutes. What did the nurse use to treat the injured knee? She cleaned the cut carefully and wrapped the clean bandage around his leg. Did Headmaster Brown say anything during the school assembly? Yes, he praised everyone for helping and gave me a shining safety badge.",
+    "transcript": "Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day? Yes, of course. I am happy to help. Which classroom are you in this year? I am in room 4B on the second floor. Can you see the answer? Now you listen and write. First, what is your favorite subject at school? I really love doing experiments with forces, so my favorite subject is science. That sounds exciting, and where did the accident happen this morning? It happened while students were walking through the school corridor near the science room. How quickly did the school nurse arrive to help? She came running very quickly in about two minutes. What did the nurse use to treat the injured knee? She cleaned the cut carefully and wrapped a clean bandage around his leg. Did headmaster Brown say anything during the school assembly? Yes, he praised everyone for helping and gave me a shining safety badge.",
     "expected_theme": "Room 4B, Science, school corridor, 2 minutes, clean bandage, safety badge",
     "status": "VERIFIED"
   },
@@ -211,7 +202,7 @@
     "task": "Listening Part 3 Example",
     "ui_usage": "Example item matching audio",
     "speakers": "Teacher (Journey-F) + Jake (Neural2-D)",
-    "transcript": "Listen and write a letter in each box. There is one example. Jake, where did you leave your blue school backpack before morning class? I was playing outside with Tom and I left my backpack on the playground bench. Can you see the letter H? This is an example. Now you listen and write a letter in each box.",
+    "transcript": "Listen and write a letter in each box. There is one example. Jake, where did you leave your blue school backpack before morning class? I was sitting on the wooden playground bench outside before the bell rang and I left it right there. Can you see the letter H? That is the example. Now you listen and write a letter in each box.",
     "expected_theme": "School backpack on playground bench (H)",
     "status": "VERIFIED"
   },
@@ -220,7 +211,7 @@
     "task": "Listening Part 3 Full",
     "ui_usage": "Composite 2-voice track for Part 3",
     "speakers": "Teacher (Journey-F) + Jake (Neural2-D)",
-    "transcript": "Listen and write a letter in each box. There is one example. Jake, where did you leave your blue school backpack before morning class? I was playing outside with Tom and I left my backpack on the playground bench. Can you see the letter H? This is an example. Now you listen and write a letter in each box. Where did Nurse Sarah find the clean bandage to help Tom's knee? What straight to the medical room and took a clean bandage out of the glass nurse cabinet? Clean bandage? And where did she get the cold pack with ice? The blue cold pack was sitting right on the white first aid table next to her desk. Cold pack? What about your green science notebook? I remembered our science lesson and left my notebook on the wooden science lab desk. Science notebook? Did Tom leave his water bottle in the corridor? No, Tom drank some water and left his bottle on the lunch table in the school cafeteria. Water bottle? Why did you arrive so early at school this morning? My loud alarm clock was ringing on my bedroom table at home at 7 o'clock. A alarm clock.",
+    "transcript": "Listen and write a letter in each box. There is one example. Jake, where did you leave your blue school backpack before morning class? I was sitting on the wooden playground bench outside before the bell rang and I left it right there. Can you see the letter H? That is the example. Now you listen and write a letter in each box. Where did Nurse Sarah get the clean bandage to help she went into the nurse room and took its straight out of the white glass cabinet on the wall. And what about the cold pack? Was that inside the cabinet too? No, the nurse had already placed the blue cold pack on the first aid table near the door. Did you find your green science note book after class? Yes, I remembered we were doing experiments and I left it sitting on the science lab desk. Tom was looking for his blue water bottle. Did he drop it in the hallway? No, we were eating lunch together and he forgot his bottle on the dining table. Why was Tom running so fast down the corridor before class? He woke up late. His alarm clock was ringing loudly on his bedroom table, but he did not hear it in time.",
     "expected_theme": "All items 1-5 + example matching",
     "status": "VERIFIED"
   },
@@ -229,7 +220,7 @@
     "task": "Listening Part 3 Item 1",
     "ui_usage": "Item 1 matching audio",
     "speakers": "Teacher (Journey-F) + Jake (Neural2-D)",
-    "transcript": "Where did Nurse Sarah find the clean bandage to help Tom's knee? She walks straight to the medical room and took a clean bandage out of the glass nurse cabinet. Clean bandage",
+    "transcript": "Where did Nurse Sarah get the clean bandage to help Tom? She went into the Nurse Room and took it straight out of the white glass cabinet on the wall.",
     "expected_theme": "Clean bandage in nurse cabinet (A)",
     "status": "VERIFIED"
   },
@@ -238,7 +229,7 @@
     "task": "Listening Part 3 Item 2",
     "ui_usage": "Item 2 matching audio",
     "speakers": "Teacher (Journey-F) + Jake (Neural2-D)",
-    "transcript": "and where did she get the cold pack with ice? The blue-cold pack was sitting right on the white first aid table next to her desk. Cold pack.",
+    "transcript": "And what about the cold pack? Was that inside the cabinet too? No, the nurse had already placed the blue cold pack on the first aid table near the door.",
     "expected_theme": "Cold pack on first-aid table (B)",
     "status": "VERIFIED"
   },
@@ -247,7 +238,7 @@
     "task": "Listening Part 3 Item 3",
     "ui_usage": "Item 3 matching audio",
     "speakers": "Teacher (Journey-F) + Jake (Neural2-D)",
-    "transcript": "What about your Green Science Notebook? I remembered our Science lesson and left my notebook on the Wooden Science Lab Desk. Science Notebook",
+    "transcript": "Did you find your green science notebook after class? Yes, I remembered we were doing experiments and I left it sitting on the science lab desk.",
     "expected_theme": "Science notebook on science lab desk (C)",
     "status": "VERIFIED"
   },
@@ -256,7 +247,7 @@
     "task": "Listening Part 3 Item 4",
     "ui_usage": "Item 4 matching audio",
     "speakers": "Teacher (Journey-F) + Jake (Neural2-D)",
-    "transcript": "Did Tom leave his water bottle in the corridor? No, Tom drank some water and left his bottle on the lunch table in the school cafeteria. Water bottle.",
+    "transcript": "Tom was looking for his blue water bottle. Did he drop it in the hallway? No, we were eating lunch together and he forgot his bottle on the dining table.",
     "expected_theme": "Water bottle in school cafeteria (D)",
     "status": "VERIFIED"
   },
@@ -265,7 +256,7 @@
     "task": "Listening Part 3 Item 5",
     "ui_usage": "Item 5 matching audio",
     "speakers": "Teacher (Journey-F) + Jake (Neural2-D)",
-    "transcript": "Why did you arrive so early at school this morning? My loud alarm clock was ringing on my bedroom table at home at 7 o'clock. A alarm clock.",
+    "transcript": "Why was Tom running so fast down the corridor before class? He woke up late, his alarm clock was ringing loudly on his bedroom table, but he did not hear it in time.",
     "expected_theme": "Alarm clock on bedroom table (E)",
     "status": "VERIFIED"
   },
@@ -274,7 +265,7 @@
     "task": "Listening Part 4 Example",
     "ui_usage": "Part 4 Example dialogue",
     "speakers": "Woman (Journey-F) + Man (Neural2-D)",
-    "transcript": "Look at the example. Where was Jake walking after class? He was walking carefully in the school corridor. Can you see the tick next to picture A? Now you listen and tick the box.",
+    "transcript": "Look at the example, where was Jake walking after class? He was walking carefully in the school corridor. Can you see the tick next to picture A? Now you listen and tick the box.",
     "expected_theme": "Where was Jake walking? (Corridor)",
     "status": "VERIFIED"
   },
@@ -283,7 +274,7 @@
     "task": "Listening Part 4 Full",
     "ui_usage": "Composite Part 4 audio",
     "speakers": "Woman + Man",
-    "transcript": "Look at the example. Where was Jake walking after class? He was walking carefully in the school corridor. Can you see the tick next to picture A? Now you listen and tick the box. Why was the floor slippery near the science room? The cleaner had just washed the tiles with water. What happened when the boy ran fast? He slipped on the wet floor and hurt his knee. What did Jake do immediately? He ran to the nurses room to call for help. What did the nurse use to treat the knee? She used a clean bandage and a cold pack. What did the head master say during assembly? He praised Jake for following safety habits.",
+    "transcript": "Look at the example, where was Jake walking after class? He was walking carefully in the school corridor. Can you see the tick next to picture A? Now you listen and tick the box. Question 1. Why was the floor slippery near the science room? The cleaner had just washed the tiles with water. Question 2. What happened when the boy ran fast? He slipped on the wet floor and hurt his knee. Question 3. What did Jake do immediately? He ran to the nurse room to call for help. Question 4. What did the nurse use to treat the knee? She used a clean bandage and a cold pack. Question 5. What did the headmaster say during assembly? He praised Jake for following safety habits.",
     "expected_theme": "Complete Part 4 questions suite",
     "status": "VERIFIED"
   },
@@ -292,7 +283,7 @@
     "task": "Listening Part 4 Q1",
     "ui_usage": "Q1 dialogue",
     "speakers": "Woman + Man",
-    "transcript": "Why was the floor slippery near the science room? The cleaner had just washed the tiles with water.",
+    "transcript": "Question 1. Why was the floor slippery near the science room? The cleaner had just washed the tiles with water.",
     "expected_theme": "Why was floor slippery? (Cleaner washed tiles - B)",
     "status": "VERIFIED"
   },
@@ -301,7 +292,7 @@
     "task": "Listening Part 4 Q2",
     "ui_usage": "Q2 dialogue",
     "speakers": "Woman + Man",
-    "transcript": "What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
+    "transcript": "Question 2, What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
     "expected_theme": "What happened when boy ran? (Slipped and hurt knee - A)",
     "status": "VERIFIED"
   },
@@ -310,7 +301,7 @@
     "task": "Listening Part 4 Q3",
     "ui_usage": "Q3 dialogue",
     "speakers": "Woman + Man",
-    "transcript": "What did Jake do immediately? He ran to the nurses room to call for help.",
+    "transcript": "Question 3. What did Jake do immediately? He ran to the nurse room to call for help.",
     "expected_theme": "What did Jake do? (Called school nurse - C)",
     "status": "VERIFIED"
   },
@@ -319,7 +310,7 @@
     "task": "Listening Part 4 Q4",
     "ui_usage": "Q4 dialogue",
     "speakers": "Woman + Man",
-    "transcript": "What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
+    "transcript": "Question 4. What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
     "expected_theme": "What did nurse use? (Bandage and cold pack - B)",
     "status": "VERIFIED"
   },
@@ -328,7 +319,7 @@
     "task": "Listening Part 4 Q5",
     "ui_usage": "Q5 dialogue",
     "speakers": "Woman + Man",
-    "transcript": "What did the headmaster say during assembly? He praised Jake for following safety habits.",
+    "transcript": "Question 5, What did the headmaster say during assembly? He praised Jake for following safety habits.",
     "expected_theme": "What did headmaster say? (Praised safety habits - A)",
     "status": "VERIFIED"
   },
@@ -337,7 +328,7 @@
     "task": "Listening Part 5 Full",
     "ui_usage": "Full 2-voice Part 5 dialogue",
     "speakers": "Woman (Journey-F) + Man (Neural2-D)",
-    "transcript": "Listen and color and right. There is one example. Look at this picture of the school corridor. Can you see Jake's friends sitting on the bench? Yes, I can see him. Good. Color his notebook yellow. Can you see the yellow notebook? That is the example. Now you listen, and color, and right. Now look at Jake. He is carrying a backpack. Shall I color his backpack blue? Yes. Color Jake's backpack blue. Look at the warning sign near the wet tiles. Can you write a word on it? Sure. What word should I write? Write the word wet on the sign. Can you find the science lab doorframe? Yes, it is next to the lockers. Color the doorframe, bright green. Look at the notice board on the wall. Can you write one more word? Yes, what should I write? Write the word care on the board. Now look at the nurse room door at the end of the corridor. Can I color it red? Yes, color the nurse room door red.",
+    "transcript": "Listen and color and write. There is one example. Look at this picture of the school corridor. Can you see Jake's friends sitting on the bench? Yes, I can see him. Good. Color his notebook yellow. Can you see the yellow notebook? That is the example. Now you listen and color and write. Now look at Jake. He is carrying a backpack. Shall I color his backpack blue? Yes. Color Jake's backpack blue. Look at the warning sign near the wet tiles. Can you write a word on it? Sure. What word should I write? Write the word wet on the sign. Can you find a science lab door frame? Yes. It is next to the lockers. Color the door frame bright green. Look at the notice board on the wall. Can you write one more word? Yes. What should I write? Write the word care on the board. Now look at the nurse room door at the end of the corridor. Should I color it red? Yes. Color the nurse room door red.",
     "expected_theme": "All 5 color and write instructions",
     "status": "VERIFIED"
   },
@@ -346,7 +337,7 @@
     "task": "Listening Part 5 Inst 1",
     "ui_usage": "Instruction 1 audio (Color backpack blue)",
     "speakers": "Woman (Journey-F)",
-    "transcript": "Color Jakes Backpack Blue",
+    "transcript": "Color Jakes Backpack Blue.",
     "expected_theme": "Color backpack blue",
     "status": "VERIFIED"
   },

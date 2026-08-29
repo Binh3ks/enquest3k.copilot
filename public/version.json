@@ -1,9 +1,9 @@
 {
-  "commit": "13cf5ffbddb315be17a6e630b5dd37fe5bcaa1b0",
-  "git_commit": "13cf5ffbddb315be17a6e630b5dd37fe5bcaa1b0",
-  "shortCommit": "13cf5ffb",
-  "message": "fix(w33): final acceptance alignment for listening and speaking",
-  "builtAt": "2026-08-28T02:44:07.535Z",
-  "build_timestamp": "2026-08-28T02:44:07.536Z",
+  "commit": "66c0d1f8f673d2db6626c9dbf28e739d68e5ab3a",
+  "git_commit": "66c0d1f8f673d2db6626c9dbf28e739d68e5ab3a",
+  "shortCommit": "66c0d1f8",
+  "message": "feat(clil): make glossary terms clickable with dictionary, expand full-width laptop layout and increase font sizes",
+  "builtAt": "2026-08-29T05:25:28.730Z",
+  "build_timestamp": "2026-08-29T05:25:28.731Z",
   "env": "production"
 }

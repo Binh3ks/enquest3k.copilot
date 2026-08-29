@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { QUEST_SCHEDULE, DAILY_BONUS_XP, TOTAL_QUEST_DAYS } from '../config/questSchedule';
+import { QUEST_SCHEDULE, TOTAL_QUEST_DAYS } from '../config/questSchedule';
+import { DAILY_BONUS_XP } from '../config/gamificationConfig';
+import { emitLearningEvent, GAMIFICATION_EVENTS } from '../services/gamificationEventBus';
 
 /**
  * Today's Quest Store — Daily pacing system
@@ -96,6 +98,22 @@ const useDailyQuestStore = create(
             },
           },
         }));
+
+        // Authoritative Learning Task Completion Event
+        emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
+          weekNumber: weekId,
+          taskId: questId,
+          timestamp: new Date().toISOString()
+        });
+
+        // Perfect Week Detection: check if all 15 quests are completed
+        const updatedCount = get().getWeekQuestCount(weekId);
+        if (updatedCount === 15) {
+          emitLearningEvent(GAMIFICATION_EVENTS.WEEK_COMPLETED, {
+            weekNumber: weekId,
+            timestamp: new Date().toISOString()
+          });
+        }
       },
 
       /**
@@ -133,6 +151,14 @@ const useDailyQuestStore = create(
             [bonusKey]: true,
           },
         }));
+
+        // Emit authoritative event to Event Bus
+        emitLearningEvent(GAMIFICATION_EVENTS.DAILY_QUESTS_COMPLETED, {
+          weekNumber: weekId,
+          dayNumber: day,
+          timestamp: new Date().toISOString()
+        });
+
         return true;
       },
 

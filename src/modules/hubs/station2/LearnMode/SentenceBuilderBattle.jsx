@@ -163,8 +163,6 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
     if (score > 0) {
       playVictoryFanfare();
       fireCelebrationConfetti('SentenceSmash_Victory');
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(xpEarned);
     }
 
     if (onComplete) onComplete(score);

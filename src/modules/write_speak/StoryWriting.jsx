@@ -42,7 +42,7 @@ const KNOWN_CONNECTORS = [
   'but'
 ];
 
-export default function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isVi = false, onReportProgress, onGoToSpeak, onComplete, weekNumber }) {
+export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isVi = false, onReportProgress, onGoToSpeak, onComplete, weekNumber }) {
   const { weekId } = useParams();
   const currentWeek = parseInt(weekId) || weekNumber || 33;
   const userProfile = useUserStore((state) => state.userProfile);
@@ -690,3 +690,4 @@ export default function StoryWriting({ content, storyPrompts, themeColor = 'indi
   );
 }
 
+export default StoryWriting;

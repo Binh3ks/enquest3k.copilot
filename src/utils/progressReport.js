@@ -3,10 +3,11 @@
  * Sources: localStorage (SRS bank, adaptive state, checkpoint results, writing history)
  */
 
-import { getBankStats, getAllWords } from './wordMemoryBank';
-import { getAdaptiveState } from './adaptiveEngine';
-import { getWeekCEFR } from '../data/weekData';
-import { useUserStore } from '../stores/useUserStore';
+import { getBankStats, getAllWords } from './wordMemoryBank.js';
+import { getAdaptiveState } from './adaptiveEngine.js';
+import { getWeekCEFR } from '../data/weekData.js';
+import { useUserStore } from '../stores/useUserStore.js';
+import { getLocalDateString } from '../config/gamificationConfig.js';
 
 /**
  * getWeeklyReport(weekNumber)
@@ -136,28 +137,68 @@ function getStreakDays() {
     const raw = localStorage.getItem('engquest_streak');
     if (!raw) return 0;
     const { days, lastDate } = JSON.parse(raw);
-    const today = new Date().toDateString();
-    const yesterday = new Date(Date.now() - 86400000).toDateString();
+    const today = getLocalDateString();
+    const yesterday = getLocalDateString(new Date(Date.now() - 86400000));
     if (lastDate === today || lastDate === yesterday) return days || 0;
     return 0;
   } catch { return 0; }
 }
 
 /**
- * recordDailyStreak() — call once per day when user opens the app
+ * recordAuthoritativeStreak() — Called strictly upon authoritative learning task completion.
+ * Never called on app mount.
+ * @param {Object} params
+ * @param {Date|string} params.date - Event date (defaults to now)
+ * @param {boolean} params.streakFreezeActive - Whether learner has an active streak freeze
+ * @param {Function} params.onFreezeConsumed - Callback if a freeze was consumed
+ * @returns {number} Current streak days
  */
-export function recordDailyStreak() {
+export function recordAuthoritativeStreak({ date = new Date(), streakFreezeActive = false, onFreezeConsumed = null } = {}) {
   try {
-    const today = new Date().toDateString();
-    const yesterday = new Date(Date.now() - 86400000).toDateString();
+    const today = getLocalDateString(date);
+    const yesterday = getLocalDateString(new Date(new Date(today).getTime() - 86400000));
+    const twoDaysAgo = getLocalDateString(new Date(new Date(today).getTime() - 172800000));
+
     const raw = localStorage.getItem('engquest_streak');
     const prev = raw ? JSON.parse(raw) : { days: 0, lastDate: null };
 
-    if (prev.lastDate === today) return prev.days; // already recorded
-    const newDays = prev.lastDate === yesterday ? prev.days + 1 : 1;
+    // Same day: streak unchanged
+    if (prev.lastDate === today) {
+      return prev.days || 1;
+    }
+
+    // Exactly consecutive day
+    if (prev.lastDate === yesterday) {
+      const newDays = (prev.days || 0) + 1;
+      localStorage.setItem('engquest_streak', JSON.stringify({ days: newDays, lastDate: today }));
+      return newDays;
+    }
+
+    // Missed exactly 1 day: check streak freeze
+    if (prev.lastDate === twoDaysAgo && streakFreezeActive) {
+      const preservedDays = prev.days || 1;
+      localStorage.setItem('engquest_streak', JSON.stringify({ days: preservedDays, lastDate: today, freezeUsedOn: today }));
+      if (typeof onFreezeConsumed === 'function') {
+        onFreezeConsumed();
+      }
+      return preservedDays;
+    }
+
+    // Missed 2+ days or fresh start
+    const newDays = 1;
     localStorage.setItem('engquest_streak', JSON.stringify({ days: newDays, lastDate: today }));
     return newDays;
-  } catch { return 0; }
+  } catch {
+    return 1;
+  }
+}
+
+/**
+ * Legacy alias for backwards compatibility during migration.
+ * @deprecated Use recordAuthoritativeStreak triggered via EventBus.
+ */
+export function recordDailyStreak() {
+  return recordAuthoritativeStreak();
 }
 
 /**

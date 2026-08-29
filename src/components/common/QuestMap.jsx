@@ -158,7 +158,6 @@ export default function QuestMap({ weekId }) {
   const handleClaimBonus = (day) => {
     const claimed = claimDailyBonus(weekId, day);
     if (claimed) {
-      addXP(DAILY_BONUS_XP);
       fireCelebrationConfetti?.('QuestMapBonus');
       setShowCelebration(true);
       setTimeout(() => setShowCelebration(false), 3000);

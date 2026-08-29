@@ -128,8 +128,6 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
     if (finalScore >= 80) {
       fireCelebrationConfetti('ListeningP2_Complete');
     }
-    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-    if (userStore?.addXP) userStore.addXP(50);
 
     if (onComplete) onComplete(finalScore);
   };

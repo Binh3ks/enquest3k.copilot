@@ -1,10 +1,63 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { register as apiRegister, updateProfile as apiUpdateProfile, progressAPI, setTokenGetter, login as apiLogin } from '../services/api';
+import { register as apiRegister, updateProfile as apiUpdateProfile, progressAPI, setTokenGetter, login as apiLogin } from '../services/api.js';
 // import { supabaseAuth } from '../services/supabase';
-import { calculateWeekStars, getNewlyEarnedBadges } from '../utils/scoringSystem';
-import { COLLECTIONS } from '../data/collectionConfig';
-import { saveProgressWithBackup } from '../utils/progressBackup';
+import { calculateWeekStars, getNewlyEarnedBadges } from '../utils/scoringSystem.js';
+import { COLLECTIONS } from '../data/collectionConfig.js';
+import { saveProgressWithBackup } from '../utils/progressBackup.js';
+import { recordAuthoritativeStreak } from '../utils/progressReport.js';
+import {
+  DAILY_BONUS_XP,
+  PERFECT_WEEK_XP,
+  SHIELD_UNIT_XP,
+  TASK_BASE_XP_MAP,
+  DEFAULT_TASK_XP,
+  generateXPTransactionId,
+  generateShieldScoreId
+} from '../config/gamificationConfig.js';
+import { gamificationEventBus, GAMIFICATION_EVENTS } from '../services/gamificationEventBus.js';
+
+export const LEGACY_TO_NOVA_COSMETIC_MAP = {
+  crown: 'crown',
+  glasses: 'glasses',
+  cool_glasses: 'glasses',
+};
+
+export const NOVA_TO_LEGACY_COSMETIC_MAP = {
+  crown: 'crown',
+  glasses: 'glasses',
+};
+
+/**
+ * Non-destructive bidirectional cosmetic inventory synchronization (SPEC-P3-002)
+ * Ensures legacy avatar items and modern Nova mascot gear cross-grant cleanly without duplicates or data loss.
+ */
+export function syncCosmeticInventories(avatarItems = [], purchasedNovaItems = ['headphones']) {
+  const currentAvatar = Array.isArray(avatarItems) ? [...avatarItems] : [];
+  const currentNova = Array.isArray(purchasedNovaItems) ? [...purchasedNovaItems] : ['headphones'];
+
+  const updatedAvatarSet = new Set(currentAvatar);
+  const updatedNovaSet = new Set(currentNova);
+
+  // 1. Cross-grant: Legacy -> Nova
+  for (const item of currentAvatar) {
+    if (LEGACY_TO_NOVA_COSMETIC_MAP[item]) {
+      updatedNovaSet.add(LEGACY_TO_NOVA_COSMETIC_MAP[item]);
+    }
+  }
+
+  // 2. Mirror: Nova -> Legacy
+  for (const item of currentNova) {
+    if (NOVA_TO_LEGACY_COSMETIC_MAP[item]) {
+      updatedAvatarSet.add(NOVA_TO_LEGACY_COSMETIC_MAP[item]);
+    }
+  }
+
+  return {
+    avatarItems: Array.from(updatedAvatarSet),
+    purchasedNovaItems: Array.from(updatedNovaSet),
+  };
+}
 
 // This store manages user authentication, profile, and app-wide settings.
 const useUserStore = create(
@@ -28,42 +81,288 @@ const useUserStore = create(
       setTeacherPanelOpen: (open) => set({ isTeacherPanelOpen: Boolean(open) }),
 
       // META-GAME MASCOT STORE & XP ECONOMY STATE
-      userXP: 1250, // Default starting balance for Word Treasury
+      userXP: 0, // Default starting balance for new learners (dev tests use seedXP)
       purchasedNovaItems: ['headphones'], // Pre-unlocked starter item
       equippedNovaGear: { hat: null, glasses: null, accessory: 'headphones' },
       streakFreezeActive: false,
-
-      // MASCOT STORE ACTIONS
-      addXP: (amount) => set((state) => ({ userXP: (state.userXP || 0) + amount })),
       
-      buyNovaItem: (item) => {
+      // IDEMPOTENT TRANSACTION LEDGERS (Namespaced by userId)
+      // Structure: { [userId]: { [transactionKey]: { xp, reason, metadata, timestamp } } }
+      claimedTransactions: {},
+      // Structure: { [userId]: { [shieldScoreId]: { shields, rawScore, updatedAt } } }
+      highestShieldScores: {},
+
+      // MASCOT STORE & IDEMPOTENT XP ACTIONS
+      
+      /**
+       * Primary Idempotent XP Award Method
+       * Protects against duplicate rewards on retries, page reloads, and replayed events.
+       * Uses Web Locks API (navigator.locks) for cross-tab multi-process atomicity where available.
+       * @param {Object} params
+       * @param {string} [params.userId] - Learner ID (defaults to active currentUser)
+       * @param {string} params.transactionKey - Unique deterministic transaction ID
+       * @param {number} params.amount - XP amount to award
+       * @param {string} [params.reason] - Human-readable reason
+       * @param {Object} [params.metadata] - Extra context
+       * @returns {Promise<Object>|Object} Result object { awarded: boolean, xpEarned: number, newTotalXP: number }
+       */
+      awardIdempotentXP: async ({ userId, transactionKey, amount, reason = '', metadata = {} }) => {
         const state = get();
-        const currentXP = state.userXP || 0;
-        if (currentXP < item.price) return { success: false, message: 'Not enough XP!' };
-        if ((state.purchasedNovaItems || []).includes(item.id)) return { success: false, message: 'Already owned!' };
+        const uid = userId || state.currentUser?.id || state.currentUser?.username || 'anonymous';
 
-        const updatedPurchased = [...(state.purchasedNovaItems || []), item.id];
-        const updatedEquipped = { ...(state.equippedNovaGear || {}), [item.category]: item.id };
+        if (!transactionKey) {
+          console.warn('[Gamification] awardIdempotentXP called without transactionKey!');
+          return { awarded: false, reason: 'MISSING_TRANSACTION_KEY', currentXP: state.userXP || 0 };
+        }
 
-        set({
-          userXP: currentXP - item.price,
-          purchasedNovaItems: updatedPurchased,
-          equippedNovaGear: updatedEquipped,
-          streakFreezeActive: item.id === 'streak_freeze' ? true : state.streakFreezeActive
-        });
-        return { success: true };
+        const executeCriticalSection = () => {
+          const currentState = get();
+          let effectiveLedger = currentState.claimedTransactions[uid] || {};
+          let currentBalance = currentState.userXP || 0;
+
+          // Synchronous Multi-Tab Concurrency Guard: inspect disk state if available
+          try {
+            if (typeof localStorage !== 'undefined') {
+              const rawStorage = localStorage.getItem('engquest-user-storage');
+              if (rawStorage) {
+                const diskState = JSON.parse(rawStorage)?.state;
+                const diskLedger = diskState?.claimedTransactions?.[uid];
+                if (diskLedger) {
+                  effectiveLedger = { ...effectiveLedger, ...diskLedger };
+                }
+                if (typeof diskState?.userXP === 'number') {
+                  currentBalance = Math.max(currentBalance, diskState.userXP);
+                }
+              }
+            }
+          } catch (_) {
+            // Fallback to in-memory ledger
+          }
+
+          // Idempotency check: if already claimed, return early with 0 new XP
+          if (effectiveLedger[transactionKey]) {
+            return {
+              awarded: false,
+              reason: 'ALREADY_CLAIMED',
+              transactionKey,
+              previousRecord: effectiveLedger[transactionKey],
+              currentXP: currentBalance
+            };
+          }
+
+          const earnedAmount = typeof amount === 'number' && amount >= 0 ? amount : 0;
+          const newTotalXP = currentBalance + earnedAmount;
+          const txRecord = {
+            xp: earnedAmount,
+            reason,
+            metadata,
+            timestamp: new Date().toISOString()
+          };
+
+          set((s) => ({
+            userXP: newTotalXP,
+            claimedTransactions: {
+              ...s.claimedTransactions,
+              [uid]: {
+                ...(s.claimedTransactions[uid] || {}),
+                [transactionKey]: txRecord
+              }
+            }
+          }));
+
+          return {
+            awarded: true,
+            xpEarned: earnedAmount,
+            newTotalXP,
+            transactionKey
+          };
+        };
+
+        // Origin-wide multi-tab critical section lock via Web Locks API
+        if (typeof navigator !== 'undefined' && navigator.locks?.request) {
+          const lockName = `engquest_xp_lock_${uid}`;
+          return await navigator.locks.request(lockName, async () => {
+            return executeCriticalSection();
+          });
+        }
+
+        // Fallback for non-Web-Locks environments (Node.js tests, legacy browsers)
+        return executeCriticalSection();
+      },
+
+      /**
+       * Award Delta XP for Cambridge Shield Improvements
+       * Anti-inflation guard: awards delta only if newShields > highestPreviousShields.
+       */
+      awardShieldDeltaXP: async ({ userId, weekNumber, shieldPart, newShields, rawScore = 0 }) => {
+        const state = get();
+        const uid = userId || state.currentUser?.id || state.currentUser?.username || 'anonymous';
+        const shieldScoreId = generateShieldScoreId({ userId: uid, weekNumber, shieldPart });
+
+        const executeShieldSection = async () => {
+          const currentState = get();
+          const userShields = currentState.highestShieldScores[uid] || {};
+          const previousRecord = userShields[shieldScoreId];
+          const highestPrevShields = previousRecord ? (previousRecord.shields || 0) : 0;
+
+          const currentShieldScore = typeof newShields === 'number' ? Math.max(0, Math.min(5, newShields)) : 0;
+
+          if (currentShieldScore <= highestPrevShields) {
+            return {
+              awarded: false,
+              reason: 'NO_IMPROVEMENT',
+              shieldPart,
+              previousHighest: highestPrevShields,
+              currentShieldScore,
+              xpEarned: 0
+            };
+          }
+
+          const delta = currentShieldScore - highestPrevShields;
+          const earnedXP = delta * SHIELD_UNIT_XP;
+          const txKey = `tx_shield_${uid}_w${weekNumber}_${shieldPart}_lvl${currentShieldScore}`;
+
+          set((s) => ({
+            highestShieldScores: {
+              ...s.highestShieldScores,
+              [uid]: {
+                ...(s.highestShieldScores[uid] || {}),
+                [shieldScoreId]: {
+                  shields: currentShieldScore,
+                  rawScore: rawScore || 0,
+                  updatedAt: new Date().toISOString()
+                }
+              }
+            }
+          }));
+
+          const awardRes = await get().awardIdempotentXP({
+            userId: uid,
+            transactionKey: txKey,
+            amount: earnedXP,
+            reason: `Shield improvement on ${shieldPart}: ${highestPrevShields} -> ${currentShieldScore} (+${delta} shields)`
+          });
+
+          return {
+            awarded: true,
+            shieldPart,
+            previousHighest: highestPrevShields,
+            newHighest: currentShieldScore,
+            deltaShields: delta,
+            xpEarned: awardRes?.xpEarned || earnedXP
+          };
+        };
+
+        if (typeof navigator !== 'undefined' && navigator.locks?.request) {
+          const lockName = `engquest_shield_lock_${uid}`;
+          return await navigator.locks.request(lockName, async () => {
+            return await executeShieldSection();
+          });
+        }
+
+        return await executeShieldSection();
+      },
+
+      // Legacy addXP wrapper for dev/testing backwards compatibility
+      addXP: (amount) => {
+        const state = get();
+        const uid = state.currentUser?.id || state.currentUser?.username || 'anonymous';
+        const txKey = `manual_add_${uid}_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+        return get().awardIdempotentXP({ userId: uid, transactionKey: txKey, amount, reason: 'Manual/Legacy addXP' });
+      },
+
+      // Developer Seed Tool (Used in Teacher Panel for testing)
+      seedDevXP: (amount = 1250) => set((state) => ({ userXP: (state.userXP || 0) + amount })),
+      
+      buyNovaItem: async (item) => {
+        const state = get();
+        const uid = state.currentUser?.id || state.currentUser?.username || 'anonymous';
+
+        if (!item || !item.id || typeof item.price !== 'number' || item.price < 0) {
+          return { success: false, message: 'Invalid item definition!' };
+        }
+
+        const executePurchase = () => {
+          const currentState = get();
+          let currentXP = currentState.userXP || 0;
+          let purchased = Array.isArray(currentState.purchasedNovaItems) ? [...currentState.purchasedNovaItems] : [];
+
+          // Synchronous disk balance & inventory sync
+          try {
+            if (typeof localStorage !== 'undefined') {
+              const raw = localStorage.getItem('engquest-user-storage');
+              if (raw) {
+                const diskState = JSON.parse(raw)?.state;
+                if (typeof diskState?.userXP === 'number') {
+                  currentXP = diskState.userXP;
+                }
+                if (Array.isArray(diskState?.purchasedNovaItems)) {
+                  purchased = Array.from(new Set([...purchased, ...diskState.purchasedNovaItems]));
+                }
+              }
+            }
+          } catch (_) {}
+
+          if (currentXP < item.price) {
+            return { success: false, message: 'Not enough XP!', currentXP };
+          }
+          if (purchased.includes(item.id)) {
+            return { success: false, message: 'Already owned!', currentXP };
+          }
+
+          const rawUpdatedPurchased = [...purchased, item.id];
+          const newXP = currentXP - item.price;
+          const updatedEquipped = item.category ? { ...(currentState.equippedNovaGear || {}), [item.category]: item.id } : (currentState.equippedNovaGear || {});
+          const synced = syncCosmeticInventories(currentState.avatarItems || [], rawUpdatedPurchased);
+
+          set({
+            userXP: newXP,
+            purchasedNovaItems: synced.purchasedNovaItems,
+            avatarItems: synced.avatarItems,
+            equippedNovaGear: updatedEquipped,
+            streakFreezeActive: item.id === 'streak_freeze' ? true : currentState.streakFreezeActive
+          });
+
+          return { success: true, newTotalXP: newXP, purchasedItem: item.id };
+        };
+
+        if (typeof navigator !== 'undefined' && navigator.locks?.request) {
+          const lockName = `engquest_xp_lock_${uid}`;
+          return await navigator.locks.request(lockName, async () => {
+            return executePurchase();
+          });
+        }
+
+        return executePurchase();
       },
 
       equipNovaItem: (category, itemId) => {
         const state = get();
-        const currentEquipped = state.equippedNovaGear || {};
-        const isEquipped = currentEquipped[category] === itemId;
-        set({
-          equippedNovaGear: {
-            ...currentEquipped,
-            [category]: isEquipped ? null : itemId
+        let currentEquipped = state.equippedNovaGear || {};
+        
+        try {
+          if (typeof localStorage !== 'undefined') {
+            const raw = localStorage.getItem('engquest-user-storage');
+            if (raw) {
+              const diskEquipped = JSON.parse(raw)?.state?.equippedNovaGear;
+              if (diskEquipped && typeof diskEquipped === 'object') {
+                currentEquipped = { ...currentEquipped, ...diskEquipped };
+              }
+            }
           }
+        } catch (_) {}
+
+        const isEquipped = currentEquipped[category] === itemId;
+        const newEquipped = {
+          ...currentEquipped,
+          [category]: isEquipped ? null : itemId
+        };
+
+        set({
+          equippedNovaGear: newEquipped
         });
+
+        return { success: true, equippedNovaGear: newEquipped };
       },
 
       // ACTIONS
@@ -489,11 +788,27 @@ const useUserStore = create(
         });
 
         if (newItems.length > 0) {
-          set((state) => ({
-            avatarItems: [...state.avatarItems, ...newItems]
-          }));
+          const currentNova = state.purchasedNovaItems || ['headphones'];
+          const rawAvatar = [...state.avatarItems, ...newItems];
+          const synced = syncCosmeticInventories(rawAvatar, currentNova);
+          set({
+            avatarItems: synced.avatarItems,
+            purchasedNovaItems: synced.purchasedNovaItems
+          });
           console.log('🎁 New avatar items earned:', newItems);
         }
+      },
+
+      /**
+       * Synchronize legacy avatar items and Nova mascot gear (SPEC-P3-002)
+       */
+      syncCosmeticInventories: () => {
+        const state = get();
+        const synced = syncCosmeticInventories(state.avatarItems || [], state.purchasedNovaItems || ['headphones']);
+        set({
+          avatarItems: synced.avatarItems,
+          purchasedNovaItems: synced.purchasedNovaItems
+        });
       },
 
       /**
@@ -513,10 +828,9 @@ const useUserStore = create(
       // code version added/removed state fields, deserializing the old localStorage
       // payload would silently drop or overwrite the progressCache. Versioning +
       // migration + explicit partialize + deep-merge protect progress across deploys.
-      version: 2,
+      // Version bump to 3: added claimedTransactions and highestShieldScores ledger
+      version: 3,
       // Only persist user-meaningful fields (never functions or transient state).
-      // If a future state field is added, explicitly opt it in here so a stale
-      // localStorage payload cannot accidentally clobber it.
       partialize: (state) => ({
         currentUser: state.currentUser,
         token: state.token,
@@ -527,24 +841,36 @@ const useUserStore = create(
         earnedBadges: state.earnedBadges,
         avatarItems: state.avatarItems,
         equippedItems: state.equippedItems,
+        userXP: state.userXP,
+        purchasedNovaItems: state.purchasedNovaItems,
+        equippedNovaGear: state.equippedNovaGear,
+        streakFreezeActive: state.streakFreezeActive,
+        claimedTransactions: state.claimedTransactions,
+        highestShieldScores: state.highestShieldScores,
       }),
-      // Zustand's default merge is shallow — that wipes nested progressCache[weekId]
-      // when the persisted payload is missing a week. Deep-merge so old payloads
-      // combine with new defaults instead of replacing them.
+      // Zustand's default merge is shallow — deep-merge nested maps
       merge: (persistedState, currentState) => {
         if (!persistedState) return currentState;
         const merged = { ...currentState, ...persistedState };
-        // Deep-merge nested maps so missing keys are preserved from defaults
         merged.progressCache = { ...(currentState.progressCache || {}), ...(persistedState.progressCache || {}) };
         merged.weekCompletion = { ...(currentState.weekCompletion || {}), ...(persistedState.weekCompletion || {}) };
         merged.weekStars = { ...(currentState.weekStars || {}), ...(persistedState.weekStars || {}) };
         merged.earnedBadges = Array.isArray(persistedState.earnedBadges) ? persistedState.earnedBadges : (currentState.earnedBadges || []);
         merged.avatarItems = Array.isArray(persistedState.avatarItems) ? persistedState.avatarItems : (currentState.avatarItems || []);
+        merged.purchasedNovaItems = Array.isArray(persistedState.purchasedNovaItems) ? persistedState.purchasedNovaItems : (currentState.purchasedNovaItems || ['headphones']);
         merged.equippedItems = { ...(currentState.equippedItems || { hat: null, glasses: null, accessory: null }), ...(persistedState.equippedItems || {}) };
+        merged.equippedNovaGear = { ...(currentState.equippedNovaGear || { hat: null, glasses: null, accessory: 'headphones' }), ...(persistedState.equippedNovaGear || {}) };
+        merged.claimedTransactions = { ...(currentState.claimedTransactions || {}), ...(persistedState.claimedTransactions || {}) };
+        merged.highestShieldScores = { ...(currentState.highestShieldScores || {}), ...(persistedState.highestShieldScores || {}) };
+        merged.userXP = typeof persistedState.userXP === 'number' ? persistedState.userXP : (currentState.userXP || 0);
+
+        const synced = syncCosmeticInventories(merged.avatarItems, merged.purchasedNovaItems);
+        merged.avatarItems = synced.avatarItems;
+        merged.purchasedNovaItems = synced.purchasedNovaItems;
+
         return merged;
       },
-      // Migration handler — when persisted version differs from current, run
-      // the chain of migrations.
+      // Migration handler
       migrate: (persistedState, fromVersion) => {
         if (!persistedState) return persistedState;
         let state = { ...persistedState };
@@ -563,13 +889,106 @@ const useUserStore = create(
           state.avatarItems = Array.isArray(state.avatarItems) ? state.avatarItems : [];
           state.equippedItems = state.equippedItems || { hat: null, glasses: null, accessory: null };
         }
+        // v2 → v3: preserve existing userXP, add claimedTransactions and highestShieldScores
+        if (fromVersion < 3) {
+          state.userXP = typeof state.userXP === 'number' ? state.userXP : 0;
+          state.claimedTransactions = state.claimedTransactions || {};
+          state.highestShieldScores = state.highestShieldScores || {};
+          state.purchasedNovaItems = Array.isArray(state.purchasedNovaItems) ? state.purchasedNovaItems : ['headphones'];
+          state.equippedNovaGear = state.equippedNovaGear || { hat: null, glasses: null, accessory: 'headphones' };
+          state.streakFreezeActive = Boolean(state.streakFreezeActive);
+        }
+
+        const synced = syncCosmeticInventories(state.avatarItems, state.purchasedNovaItems);
+        state.avatarItems = synced.avatarItems;
+        state.purchasedNovaItems = synced.purchasedNovaItems;
+
         return state;
       },
     }
   )
 );
 
+// ─── INITIALIZE IMMUTABLE GAMIFICATION EVENT BUS LISTENERS ────────────────────
+let listenersInitialized = false;
+
+export function initGamificationListeners() {
+  if (listenersInitialized) return;
+  listenersInitialized = true;
+
+  // 1. Task Completion Handler
+  gamificationEventBus.subscribe(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, (payload) => {
+    const { userId, weekNumber, taskId, baseXP } = payload;
+    const store = useUserStore.getState();
+    const uid = userId || store.currentUser?.id || store.currentUser?.username || 'anonymous';
+    
+    // Resolve task base XP from canonical config or payload
+    const xpAmount = TASK_BASE_XP_MAP[taskId] !== undefined ? TASK_BASE_XP_MAP[taskId] : (baseXP || DEFAULT_TASK_XP);
+    const txKey = generateXPTransactionId({ userId: uid, weekNumber, taskId, type: 'task' });
+
+    // Award XP through idempotent ledger
+    store.awardIdempotentXP({
+      userId: uid,
+      transactionKey: txKey,
+      amount: xpAmount,
+      reason: `Completed task ${taskId}`,
+      metadata: payload
+    });
+
+    // Record learning day streak strictly upon task completion
+    recordAuthoritativeStreak({
+      date: payload.timestamp || new Date(),
+      streakFreezeActive: store.streakFreezeActive,
+      onFreezeConsumed: () => useUserStore.setState({ streakFreezeActive: false })
+    });
+  });
+
+  // 2. Daily Bonus Handler
+  gamificationEventBus.subscribe(GAMIFICATION_EVENTS.DAILY_QUESTS_COMPLETED, (payload) => {
+    const { userId, weekNumber, dayNumber } = payload;
+    const store = useUserStore.getState();
+    const uid = userId || store.currentUser?.id || store.currentUser?.username || 'anonymous';
+    const txKey = generateXPTransactionId({ userId: uid, weekNumber, type: 'daily_bonus', dayNumber });
+
+    store.awardIdempotentXP({
+      userId: uid,
+      transactionKey: txKey,
+      amount: DAILY_BONUS_XP,
+      reason: `Daily Bonus for Day ${dayNumber} (Week ${weekNumber})`,
+      metadata: payload
+    });
+  });
+
+  // 3. Cambridge Shield Award Handler
+  gamificationEventBus.subscribe(GAMIFICATION_EVENTS.CAMBRIDGE_SHIELD_AWARDED, (payload) => {
+    useUserStore.getState().awardShieldDeltaXP(payload);
+  });
+
+  // 4. Perfect Week Handler
+  gamificationEventBus.subscribe(GAMIFICATION_EVENTS.WEEK_COMPLETED, (payload) => {
+    const { userId, weekNumber } = payload;
+    const store = useUserStore.getState();
+    const uid = userId || store.currentUser?.id || store.currentUser?.username || 'anonymous';
+    const txKey = generateXPTransactionId({ userId: uid, weekNumber, type: 'perfect_week' });
+
+    store.awardIdempotentXP({
+      userId: uid,
+      transactionKey: txKey,
+      amount: PERFECT_WEEK_XP,
+      reason: `Perfect Week Completion (Week ${weekNumber})`,
+      metadata: payload
+    });
+  });
+}
+
+// Auto-initialize on module load
+initGamificationListeners();
+
 export { useUserStore };
+
+if (typeof window !== 'undefined') {
+  window.__engquestUserStore = useUserStore;
+}
 
 // Wire up lazy token getter to break circular import between api.js and useUserStore
 setTokenGetter(() => useUserStore.getState().token);

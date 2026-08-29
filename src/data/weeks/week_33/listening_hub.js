@@ -291,6 +291,7 @@ He woke up late! His alarm clock was ringing loudly on his bedroom table, but he
     ]
   },
   listening_p5: {
+    audio_url: "/audio/week33/listening_p5_full.mp3",
     image_url: "/images/week33/webtoon_scene_1.png",
     audio_script: `Nova: Listen and colour and write. There is one example.
 Woman: Look at this picture of the school corridor. Can you see Jake's friends sitting on the bench?
@@ -309,16 +310,16 @@ Woman: Colour the doorframe bright green.
 Woman: Look at the notice board on the wall. Can you write one more word?
 Man: Yes, what should I write?
 Woman: Write the word care on the board.
-Woman: Now look at the long handrail near the stairs.
+Woman: Now look at the nurse's room door at the end of the corridor.
 Man: Should I colour it red?
-Woman: Yes. Colour the handrail red.`,
+Woman: Yes, colour the nurse's room door red.`,
     instructions: [
-      { id: "inst_0", item: "Example Object", text: "Color the example brown", x: 10, y: 10, color: "brown", isExample: true },
+      { id: "inst_0", item: "Student's Notebook", text: "Color the notebook yellow", x: 10, y: 10, color: "yellow", isExample: true },
       { id: "inst_1", item: "Jake's Backpack", text: "Color Jake's backpack blue", x: 25, y: 70, color: "blue", action: "colour" },
       { id: "inst_2", item: "Warning Sign", text: "Write the word 'WET' on the sign", x: 45, y: 80, word: "WET", action: "write" },
       { id: "inst_3", item: "Science Lab Door", text: "Color the door frame bright green", x: 75, y: 35, color: "green", action: "colour" },
       { id: "inst_4", item: "Notice Board", text: "Write the word 'CARE' on the board", x: 15, y: 30, word: "CARE", action: "write" },
-      { id: "inst_5", item: "School Handrail", text: "Color the handrail red", x: 85, y: 60, color: "red", action: "colour" }
+      { id: "inst_5", item: "Nurse's Room Door", text: "Color the nurse's room door red", x: 85, y: 45, color: "red", action: "colour" }
     ]
   }
 };

@@ -82,8 +82,8 @@ export async function adaptWeekForDoctrine(weekNumber, rootDir = process.cwd()) 
   const calFileExists = fs.existsSync(calPath);
   const s1CoordSource = calFileExists ? 'calibration-file-derived' : 'hardcoded-literal';
 
-  const s2CandidateFields = s2.candidate_card?.fields || [];
-  const s2KnownFalseCount = s2CandidateFields.filter(f => f.known === false).length;
+  const s2CandidateFields = s2.table_a?.fields || s2.candidate_card?.items || s2.candidate_card?.fields || [];
+  const s2KnownFalseCount = s2CandidateFields.filter(f => f.known === false || f.is_missing === true).length;
 
   const s3ImagesCount = (s3.images || []).length;
   const s4Questions = s4?.questions || [];
@@ -245,7 +245,7 @@ export async function adaptWeekForDoctrine(weekNumber, rootDir = process.cwd()) 
           name: "Speaking Part 2 — Information Exchange",
           mechanic: "Ask and answer questions using cue cards with info gaps",
           infoGapFields: s2CandidateFields.length || 4,
-          knownFalseMin: s2KnownFalseCount || 2,
+          knownFalseMin: s2KnownFalseCount >= 2 ? 2 : s2KnownFalseCount,
           mechanicComponent: "InformationExchangeP2.jsx",
           componentExistenceVerified: true
         },

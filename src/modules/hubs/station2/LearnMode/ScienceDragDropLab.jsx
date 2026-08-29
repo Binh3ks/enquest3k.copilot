@@ -168,8 +168,6 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
     if (score > 0) {
       playVictoryFanfare();
       fireCelebrationConfetti('ScienceLab_Victory');
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(xpEarned);
     }
 
     if (onComplete) onComplete(score);

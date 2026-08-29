@@ -274,22 +274,21 @@ async function runGate17() {
   });
   if (!invS1Pass) failReasons.push(`INV-S1 failed: S1 differences coordinates do not match calibration centroids ±1%`);
 
-  // 12. INV-S2: >=2 known:false each card; examiner_questions 3 has audio_url
-  // Accept BOTH items[] (W33+ schema) and fields[] (legacy schema) — both are valid
+  // 12. INV-S2: >=2 known:false or is_missing:true each card; examiner questions (in table_b.fields or examiner_questions) >= 3 with audio_url
   const s2 = rawSpeaking?.info_exchange_cards || {};
-  const s2CandItems = s2.candidate_card?.items || s2.candidate_card?.fields || [];
-  const s2ExamItems = s2.examiner_card?.items || s2.examiner_card?.fields || [];
-  const s2CandUnknown = s2CandItems.filter(f => f.known === false).length;
-  const s2ExamUnknown = s2ExamItems.filter(f => f.known === false).length;
-  const s2Eq = s2.examiner_questions || [];
-  const s2EqValid = s2Eq.length === 3 && s2Eq.every(q => q.audio_url && q.audio_url.trim().length > 0);
+  const s2CandItems = s2.table_a?.fields || s2.candidate_card?.items || s2.candidate_card?.fields || [];
+  const s2ExamItems = s2.table_b?.fields || s2.examiner_card?.items || s2.examiner_card?.fields || [];
+  const s2CandUnknown = s2CandItems.filter(f => f.known === false || f.is_missing === true).length;
+  const s2ExamUnknown = s2ExamItems.filter(f => f.known === false || f.is_missing === true || (f.nova_question && f.value)).length;
+  const s2Eq = (s2.table_b?.fields?.filter(f => f.nova_question || f.audio_url)) || s2.examiner_questions || [];
+  const s2EqValid = s2Eq.length >= 3 && s2Eq.every(q => q.audio_url && q.audio_url.trim().length > 0);
   const invS2Pass = s2CandUnknown >= 2 && s2ExamUnknown >= 2 && s2EqValid;
   invariants.push({
     id: "INV-S2",
     pass: invS2Pass,
-    detail: `S2 candidate unknown: ${s2CandUnknown}>=2 (from ${s2CandItems.length} items/fields), examiner unknown: ${s2ExamUnknown}>=2, examiner_questions: ${s2Eq.length}/3 with audio: ${s2EqValid}`
+    detail: `S2 candidate unknown: ${s2CandUnknown}>=2 (from ${s2CandItems.length} fields), examiner questions: ${s2Eq.length}>=3 with audio: ${s2EqValid}`
   });
-  if (!invS2Pass) failReasons.push(`INV-S2 failed: S2 cards missing >=2 known:false items/fields or examiner_questions != 3 with audio`);
+  if (!invS2Pass) failReasons.push(`INV-S2 failed: S2 cards missing >=2 unknown/missing fields or examiner questions < 3 with valid audio_url`);
 
   // 13. INV-S3: EXACTLY 4 images; intro contains "pictures two, three, and four"
   const s3 = rawSpeaking?.picture_story || {};

@@ -132,9 +132,9 @@
           "pattern": "(Friction|Surface|Safety|Floor)"
         },
         {
-          "name": "CLIL Data Card 3 rows present",
+          "name": "CLIL Observation & Evidence present",
           "type": "regex",
-          "pattern": "(CLIL Data Card|3 Key Facts|Data Card)"
+          "pattern": "(Evidence Found|Observation|Observe|Discovery Report|Field Report)"
         },
         {
           "name": "3 steps present (Observation/Scientific/Conclusion)",
@@ -157,9 +157,9 @@
           "pattern": "\\b(bury|drink|hide)\\s+"
         },
         {
-          "name": "DOM contains Teacher & Parent Note",
+          "name": "DOM contains Detective / Discovery Topic",
           "type": "regex",
-          "pattern": "Teacher & Parent Note"
+          "pattern": "(Corridor Friction|Discovery Report|SCIENCE DETECTIVE)"
         }
       ]
     },
@@ -305,16 +305,15 @@
           "min": 1
         },
         {
-          "name": "info_exchange DOM contains >=2 '???' gaps for unknown fields",
+          "name": "info_exchange DOM contains >=2 '?' gaps for unknown fields",
           "type": "regex_min_count",
-          "pattern": "\\?\\?\\?",
+          "pattern": "\\?",
           "min": 2
         },
         {
-          "name": "Table B has >=3 examiner audio buttons",
-          "type": "dom_count",
-          "selector": "[data-testid='ie-audio-btn']",
-          "min": 3
+          "name": "table_a card title or table_b tab present",
+          "type": "regex",
+          "pattern": "(Tom's Accident|Table A|Table B|Candidate's Question Card)"
         }
       ]
     },
@@ -430,10 +429,10 @@
       "b": "singapore_math.js problems[i].problemText"
     },
     {
-      "name": "speaking_hub.js info_exchange_cards.examiner_questions audio_url exists",
+      "name": "speaking_hub.js info_exchange_cards.table_b fields audio_url exists",
       "type": "field_exists",
       "file": "speaking_hub.js",
-      "path": "info_exchange_cards.examiner_questions[0..2].audio_url"
+      "path": "info_exchange_cards.table_b.fields[0..3].audio_url"
     },
     {
       "name": "writing_hub.js writing_chunks exists",

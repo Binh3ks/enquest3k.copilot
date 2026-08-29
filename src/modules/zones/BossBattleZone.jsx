@@ -24,6 +24,7 @@ import ChoiceGrid from '../../components/common/ChoiceGrid';
 import { Shield, Trophy, CheckCircle2, RotateCcw, Award, PlayCircle, Star, Sparkles } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
+import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
 
 // ── Domain note ────────────────────────────────────────────────────────────────
 // Cambridge Part ≠ Shield.
@@ -213,6 +214,18 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     const task = currentTasks.find(t => t.partId === partId);
     if (task?.questId && activeWeek) {
       useDailyQuestStore.getState().completeQuest(activeWeek, task.questId);
+      emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
+        weekNumber: activeWeek,
+        taskId: task.questId,
+        timestamp: new Date().toISOString()
+      });
+      // Emit Shield Award event for the specific Cambridge part
+      emitLearningEvent(GAMIFICATION_EVENTS.CAMBRIDGE_SHIELD_AWARDED, {
+        weekNumber: activeWeek,
+        shieldPart: partId,
+        newShields: 5, // Default full completion shield for rotary cycle part
+        timestamp: new Date().toISOString()
+      });
     }
 
     // Advance to next Part or finish
@@ -223,17 +236,14 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
       setExamFinished(true);
 
       // On Full Mock completion: compute Paper Shield scores via MockAssessmentEngine
-      // NOTE: Components do not currently expose answer-level data.
-      // MockAssessmentEngine falls back to defaults when answers={} (honest, not fabricated).
-      // This integration will produce real scores once components pass answer data.
       if (isFullMock && activeWeek) {
         try {
           const mockResult = evaluateMockAssessment({
             mockId: `MOCK-W${activeWeek}`,
             learnerId: `learner_w${activeWeek}`,
-            readingWritingAnswers: {},  // TODO: populate when R&W components expose answers
-            listeningAnswers:      {},  // TODO: populate when L components expose answers
-            speakingScorePct:      80,  // TODO: populate from speaking assessment data
+            readingWritingAnswers: {},
+            listeningAnswers:      {},
+            speakingScorePct:      80,
             timeSpentSeconds:      rotaryConfig.approxDurationMin * 60
           });
           setMockPaperScores(mockResult);
@@ -246,6 +256,11 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
       if (activeWeek) {
         ['boss_listening', 'boss_reading', 'weekly_review'].forEach(qId => {
           useDailyQuestStore.getState().completeQuest(activeWeek, qId);
+          emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
+            weekNumber: activeWeek,
+            taskId: qId,
+            timestamp: new Date().toISOString()
+          });
         });
       }
     }

@@ -1,4 +1,4 @@
-import { playVictoryFanfare } from './soundEffects';
+import { playVictoryFanfare } from './soundEffects.js';
 
 /**
  * Pure DOM Canvas Confetti Burst Helper

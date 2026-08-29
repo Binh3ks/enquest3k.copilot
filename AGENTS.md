@@ -318,4 +318,47 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
    - **Cấu trúc 7 Tên & 6 Mục Tiêu**:
      - `names`: Đúng 7 phần tử (1 Example `isExample: true`, 5 Scored names có `target_id`, 1 Distractor có `target_id: null`).
      - `targets`: Đúng 6 phần tử (1 Example target `isExample: true`, 5 Scored targets).
-   - **Tọa độ Ghim Chuẩn**: Tọa độ % theo image-space (0–100%) trỏ chính xác vào vùng ngực/vai nhân vật trên ảnh `w<weekNum>_listening_p1_scene.jpg`.
+    - **Tọa độ Ghim Chuẩn**: Tọa độ % theo image-space (0–100%) trỏ chính xác vào vùng ngực/vai nhân vật trên ảnh `w<weekNum>_listening_p1_scene.jpg`.
+
+## 🌐 BROWSER E2E & CHROME MCP STANDARD — 2026-08-29
+
+### 1. Local Chrome MCP Server Configuration:
+- **User-Provided MCP Endpoint**: `http://127.0.0.1:12306/mcp`
+- **Standard Configuration**:
+  ```json
+  {
+    "mcpServers": {
+      "streamable-mcp-server": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:12306/mcp"
+      }
+    }
+  }
+  ```
+
+### 2. Mandatory 10-Point Verification Standard:
+1. **User-Provided Infrastructure**: The user provides a local Chrome MCP Server at `http://127.0.0.1:12306/mcp`.
+2. **Prioritization**: When agent-driven browser interaction is required, the agent MUST attempt to use the Chrome MCP Server first.
+3. **No Single-Path Assumption**: The agent MUST NOT assume that the built-in browser integration is the only browser automation mechanism.
+4. **No Premature Block Declaration**: The agent MUST NOT declare Browser E2E infrastructure blocked before checking:
+   - Chrome MCP availability (`http://127.0.0.1:12306/mcp`)
+   - Local Google Chrome availability (`/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`)
+   - Repository browser verification tooling (`scripts/verify_browser_e2e.mjs`)
+5. **Approved Fallback**: Playwright + local Google Chrome is an approved fallback verification mechanism when MCP direct browser control is unavailable.
+6. **Strict Evidence Separation**: MCP verification and Playwright verification MUST be reported as separate evidence classes (`PLAYWRIGHT + LOCAL CHROME ≠ CHROME MCP`).
+7. **No Conflation of Handshake vs Control**: A successful HTTP/MCP initialize handshake alone MUST NOT be described as "browser control verified".
+8. **Definition of "Chrome MCP VERIFIED"**: Requires actual successful browser-tool interaction executed through the MCP server.
+9. **Definition of "Playwright Local Chrome VERIFIED"**: Means Playwright successfully launched and automated `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`.
+10. **Evidence Integrity**: Never claim MCP browser control was used unless the actual MCP browser operation is directly evidenced.
+
+### 3. Required Verification Hierarchy:
+- **LEVEL 1 — Chrome MCP**:
+  - Path: `Antigravity → Chrome MCP Server → Real Chrome Browser`.
+  - Condition for `MCP BROWSER VERIFIED`: Direct invocation of exposed MCP browser-control tools with concrete DOM/interaction evidence.
+- **LEVEL 2 — Local Chrome + Playwright (Approved Fallback)**:
+  - Path: `Playwright → /Applications/Google Chrome.app/Contents/MacOS/Google Chrome`.
+  - Condition for `PLAYWRIGHT LOCAL CHROME VERIFIED`: Successful execution of `scripts/verify_browser_e2e.mjs` against live app.
+- **LEVEL 3 — Playwright Managed Browser Download (Avoid / Non-Default)**:
+  - Path: Managed binary download via Playwright CLI.
+  - Policy: Do NOT make binary download the default assumption on macOS. CDN download 404s are infrastructure issues, NOT proof that browser E2E is impossible.
+

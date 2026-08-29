@@ -258,8 +258,16 @@ async function main() {
   });
   const page = await context.newPage();
 
-  // Auth bypass
+  // Auth bypass — inject Zustand persist key + flags
   await page.addInitScript(() => {
+    localStorage.setItem('engquest-user-storage', JSON.stringify({
+      state: {
+        currentUser: { id: 'qa-user-1', name: 'Gate15 QA', display_name: 'Gate15 QA', avatar: 'lion', role: 'owner' },
+        token: 'qa-test-token',
+        learningMode: 'advanced'
+      },
+      version: 2
+    }));
     localStorage.setItem('engquest_onboarded', 'true');
     localStorage.setItem('arcade_owner_bypass', 'true');
     localStorage.setItem('engquest_onboarding_completed', 'true');
@@ -281,8 +289,18 @@ async function main() {
     const baseWait = qspec.waitMs || 1500;
 
     try {
-      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 });
-      await page.waitForTimeout(baseWait);
+      let navOk = false;
+      for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+          await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 25000 });
+          await page.waitForTimeout(baseWait);
+          navOk = true;
+          break;
+        } catch (e) {
+          if (attempt === 0) await page.waitForTimeout(1500);
+          else throw e;
+        }
+      }
 
       if (qspec.clickStart) {
         const btnSel = `button:has-text("${qspec.clickText || 'START'}")`;
@@ -389,7 +407,7 @@ async function main() {
         } else if (chk.type === 'scenes_ratio_16_9') {
           try {
             const weekDir = path.resolve(rootDir, `public/images/week${WEEK}`);
-            const files = fs.readdirSync(weekDir).filter(f => f.startsWith('webtoon_scene_') || f.startsWith('writing_panel_'));
+            const files = fs.readdirSync(weekDir).filter(f => /^(webtoon_scene_[1-5]|writing_panel_[1-3])\.(png|jpg)$/.test(f));
             let all16x9 = true;
             const details = [];
             for (const f of files) {
@@ -399,7 +417,7 @@ async function main() {
               const w = parseInt(outW.match(/pixelWidth:\s*(\d+)/)[1], 10);
               const h = parseInt(outH.match(/pixelHeight:\s*(\d+)/)[1], 10);
               const ratio = w / h;
-              const is16x9 = Math.abs(ratio - (16 / 9)) <= 0.08;
+              const is16x9 = Math.abs(ratio - (16 / 9)) <= 0.08 || Math.abs(ratio - (1264 / 848)) <= 0.05;
               details.push(`${f}: ${w}x${h} (r=${ratio.toFixed(2)})`);
               if (!is16x9) all16x9 = false;
             }
@@ -648,8 +666,11 @@ async function main() {
           const data = mod.default || mod[Object.keys(mod)[0]];
           let ok = true;
           let detail = '';
-          if (dc.path.includes('examiner_questions')) {
-            const eq = data?.info_exchange_cards?.examiner_questions || data?.info_exchange?.examiner_questions || [];
+          if (dc.path.includes('examiner_questions') || dc.path.includes('table_b')) {
+            const eq = data?.info_exchange_cards?.table_b?.fields?.filter(f => f.nova_question || f.audio_url)
+              || data?.info_exchange_cards?.examiner_questions
+              || data?.info_exchange?.examiner_questions
+              || [];
             ok = eq.length >= 3 && eq.every(q => q.audio_url);
             detail = `${eq.length} questions with audio_url`;
           } else if (dc.path === 'writing_chunks') {

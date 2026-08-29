@@ -25,7 +25,7 @@
  * a stray `data: {}` from any client cannot wipe rich JSONB.
  */
 
-import { progressAPI } from '../services/api';
+import { progressAPI } from '../services/api.js';
 
 const JOURNAL_KEY = 'engquest_progress_journal';
 const LAST_SEEN_KEY = 'engquest_progress_journal_cursor';

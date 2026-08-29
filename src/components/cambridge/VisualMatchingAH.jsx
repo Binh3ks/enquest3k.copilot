@@ -74,8 +74,6 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
     if (finalScore >= 80) {
       fireCelebrationConfetti('Hub2_Item_Hunt');
       setShowCompletionModal(true);
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(50);
     }
 
     learnerProgressService.logAttempt({
