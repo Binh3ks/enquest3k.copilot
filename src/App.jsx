@@ -287,6 +287,45 @@ const PracticeRoute = () => {
   );
 };
 
+
+/**
+ * Game Hub Layout - Route for Game Hub station
+ */
+const GameHubLayout = () => {
+  const params = useParams();
+  const weekNumber = parseInt(params.weekId) || 33;
+  const { learningMode } = useUserStore();
+  const navigate = useNavigate();
+  
+  return (
+    <div className="game-hub-layout min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+      <header className="bg-white shadow-sm py-4 px-6">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <button 
+            onClick={() => navigate(`/week/${weekNumber}/hub/1`)} 
+            className="text-blue-600 hover:text-blue-800 font-bold flex items-center gap-1"
+          >
+            ← Back to Quest Map
+          </button>
+          <h1 className="text-2xl font-bold text-slate-800">🎮 Game Hub</h1>
+          <div className="flex items-center gap-3">
+            <span className={`text-xs font-bold px-2 py-1 rounded-full ${learningMode === 'easy' ? 'bg-teal-100 text-teal-700' : 'bg-indigo-100 text-indigo-700'}`}>
+              {learningMode === 'easy' ? '⭐ EASY' : '⭐⭐ ADVANCED'}
+            </span>
+            <div className="text-sm text-gray-500 font-bold">Week {weekNumber}</div>
+          </div>
+        </div>
+      </header>
+      
+      <main className="py-8">
+        <React.Suspense fallback={<div className="p-10 text-center font-bold text-slate-400">Loading Game Hub...</div>}>
+          <GameHub weekNumber={weekNumber} learningMode={learningMode} />
+        </React.Suspense>
+      </main>
+    </div>
+  );
+};
+
 const App = () => {
   const [isSandboxQAOpen, setIsSandboxQAOpen] = useState(false);
 
