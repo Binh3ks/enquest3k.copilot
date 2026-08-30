@@ -1,0 +1,156 @@
+# 🗄️ QUARANTINE REPORT — WEEK 33
+
+> Generated: 2026-08-24T12:12:47.782Z
+> Total In-Use Assets: **27** | Total Broken: **0** | Total Orphan Assets: **141**
+
+## 1. ⚠️ BROKEN ASSETS (Requested but Failed/404)
+
+*None. All requested assets resolved 200 OK.*
+
+## 2. 📦 ORPHAN ASSETS (Present on Disk but 0 Runtime Requests)
+
+*These files exist on disk in `public/images/week33` or `public/audio/week33` but were NEVER requested by any of the 15 production quest routes. They must NOT be included in the production baseline manifest.*
+
+| Orphan Disk Path | Size | SHA-256 (first 12) |
+|---|---|---|
+| `/images/week33/accident.jpg` | 218.4 KB | `3e25b0a133cf` |
+| `/images/week33/arm.jpg` | 144.2 KB | `976c68f11800` |
+| `/images/week33/back.jpg` | 140.4 KB | `2cf7a18ad0b0` |
+| `/images/week33/barmodel_w33_adv_p1.svg` | 2.7 KB | `f8a43c092c7f` |
+| `/images/week33/barmodel_w33_adv_p2.svg` | 2.5 KB | `79db0ca24db6` |
+| `/images/week33/barmodel_w33_adv_p3.svg` | 2.3 KB | `8e06eb6e31f2` |
+| `/images/week33/barmodel_w33_adv_p4.svg` | 2.5 KB | `69aa58b7840b` |
+| `/images/week33/barmodel_w33_adv_p5.svg` | 0.7 KB | `c1988d3ed7d7` |
+| `/images/week33/card_alarm_clock.jpg` | 609.0 KB | `bcc2b858be9e` |
+| `/images/week33/card_alarm_clock.png` | 609.0 KB | `bcc2b858be9e` |
+| `/images/week33/card_backpack.jpg` | 672.2 KB | `30b86441ad5b` |
+| `/images/week33/card_backpack.png` | 672.2 KB | `30b86441ad5b` |
+| `/images/week33/card_clean_bandage.jpg` | 490.5 KB | `e583e0f30824` |
+| `/images/week33/card_clean_bandage.png` | 490.5 KB | `e583e0f30824` |
+| `/images/week33/card_cold_pack.jpg` | 561.6 KB | `7152b2bf76e5` |
+| `/images/week33/card_cold_pack.png` | 561.6 KB | `7152b2bf76e5` |
+| `/images/week33/card_first_aid_kit.jpg` | 536.3 KB | `47def30aab4c` |
+| `/images/week33/card_first_aid_kit.png` | 536.3 KB | `47def30aab4c` |
+| `/images/week33/card_orange_juice.jpg` | 592.2 KB | `911df49c4a80` |
+| `/images/week33/card_orange_juice.png` | 592.2 KB | `911df49c4a80` |
+| `/images/week33/card_science_notebook.jpg` | 607.7 KB | `da18c727176b` |
+| `/images/week33/card_science_notebook.png` | 607.7 KB | `da18c727176b` |
+| `/images/week33/card_water_bottle.jpg` | 465.5 KB | `1a996cf209d3` |
+| `/images/week33/card_water_bottle.png` | 465.5 KB | `1a996cf209d3` |
+| `/images/week33/carefully.jpg` | 187.9 KB | `2c06b79ab775` |
+| `/images/week33/catch.jpg` | 111.0 KB | `dc98093978c8` |
+| `/images/week33/cold_pack.jpg` | 180.6 KB | `116e80d2f6ba` |
+| `/images/week33/explain.jpg` | 204.4 KB | `4964ccd4bc42` |
+| `/images/week33/explore.jpg` | 343.7 KB | `8e7de1de1f0c` |
+| `/images/week33/explore_cover_w33.jpg` | 343.7 KB | `8e7de1de1f0c` |
+| `/images/week33/felldown.jpg` | 216.5 KB | `7627e0055ae1` |
+| `/images/week33/hand.jpg` | 155.3 KB | `a5c6b0c48784` |
+| `/images/week33/head.jpg` | 201.7 KB | `7ee98916e8bb` |
+| `/images/week33/knee.jpg` | 112.8 KB | `5b874b2b1880` |
+| `/images/week33/learn_a_lesson.jpg` | 162.2 KB | `25ce0686123b` |
+| `/images/week33/leg.jpg` | 192.9 KB | `c7fa03045e0d` |
+| `/images/week33/lesson.jpg` | 176.7 KB | `24aac4523954` |
+| `/images/week33/nurse.jpg` | 160.3 KB | `0df8a0ff6ee1` |
+| `/images/week33/read.jpg` | 295.8 KB | `2f01ded0d9c7` |
+| `/images/week33/read_cover_w33.jpg` | 295.8 KB | `2f01ded0d9c7` |
+| `/images/week33/read_stem.jpg` | 295.8 KB | `2f01ded0d9c7` |
+| `/images/week33/recover.jpg` | 224.7 KB | `8a12cfb8a664` |
+| `/images/week33/shoulder.jpg` | 133.3 KB | `01d61ff875b0` |
+| `/images/week33/terrible.jpg` | 133.8 KB | `5e14f767a490` |
+| `/images/week33/tongue.jpg` | 184.1 KB | `229b8433e9a8` |
+| `/images/week33/understand.jpg` | 223.3 KB | `ea073c932ed2` |
+| `/images/week33/vocab_accident.jpg` | 218.4 KB | `3e25b0a133cf` |
+| `/images/week33/vocab_arm.jpg` | 144.2 KB | `976c68f11800` |
+| `/images/week33/vocab_back.jpg` | 140.4 KB | `2cf7a18ad0b0` |
+| `/images/week33/vocab_bandage.jpg` | 490.5 KB | `e583e0f30824` |
+| `/images/week33/vocab_careful.jpg` | 187.9 KB | `2c06b79ab775` |
+| `/images/week33/vocab_carefully.jpg` | 187.9 KB | `2c06b79ab775` |
+| `/images/week33/vocab_catch.jpg` | 111.0 KB | `dc98093978c8` |
+| `/images/week33/vocab_clumsy.jpg` | 216.5 KB | `7627e0055ae1` |
+| `/images/week33/vocab_cold_pack.jpg` | 180.6 KB | `116e80d2f6ba` |
+| `/images/week33/vocab_corridor.jpg` | 314.6 KB | `27e305c19db9` |
+| `/images/week33/vocab_explain.jpg` | 204.4 KB | `4964ccd4bc42` |
+| `/images/week33/vocab_felldown.jpg` | 216.5 KB | `7627e0055ae1` |
+| `/images/week33/vocab_fix.jpg` | 160.3 KB | `0df8a0ff6ee1` |
+| `/images/week33/vocab_hand.jpg` | 155.3 KB | `a5c6b0c48784` |
+| `/images/week33/vocab_head.jpg` | 201.7 KB | `7ee98916e8bb` |
+| `/images/week33/vocab_knee.jpg` | 112.8 KB | `5b874b2b1880` |
+| `/images/week33/vocab_leg.jpg` | 192.9 KB | `c7fa03045e0d` |
+| `/images/week33/vocab_lesson.jpg` | 176.7 KB | `24aac4523954` |
+| `/images/week33/vocab_mistake.jpg` | 218.4 KB | `3e25b0a133cf` |
+| `/images/week33/vocab_nurse.jpg` | 160.3 KB | `0df8a0ff6ee1` |
+| `/images/week33/vocab_recover.jpg` | 224.7 KB | `8a12cfb8a664` |
+| `/images/week33/vocab_relieved.jpg` | 224.7 KB | `8a12cfb8a664` |
+| `/images/week33/vocab_shoulder.jpg` | 133.3 KB | `01d61ff875b0` |
+| `/images/week33/vocab_slipped.jpg` | 216.5 KB | `7627e0055ae1` |
+| `/images/week33/vocab_sorry.jpg` | 223.3 KB | `ea073c932ed2` |
+| `/images/week33/vocab_terrible.jpg` | 133.8 KB | `5e14f767a490` |
+| `/images/week33/vocab_tongue.jpg` | 184.1 KB | `229b8433e9a8` |
+| `/images/week33/vocab_understand.jpg` | 223.3 KB | `ea073c932ed2` |
+| `/images/week33/w33_diff_scene_a.jpg` | 810.0 KB | `24305fc7cc97` |
+| `/images/week33/w33_diff_scene_b.jpg` | 761.5 KB | `0b2c033d922c` |
+| `/images/week33/webtoon_scene_2.png` | 811.9 KB | `ffad0ce8759c` |
+| `/images/week33/webtoon_scene_3.png` | 748.7 KB | `c36cb748545e` |
+| `/images/week33/webtoon_scene_4.jpg` | 707.4 KB | `644d3c954e91` |
+| `/images/week33/webtoon_scene_4.png` | 707.4 KB | `644d3c954e91` |
+| `/images/week33/webtoon_scene_5.png` | 783.2 KB | `ed85c9f7d1b4` |
+| `/images/week33/webtoon_scene_6.png` | 718.1 KB | `858409b603cb` |
+| `/images/week33/wordpower_break_something.jpg` | 175.4 KB | `4e882c0f5a1c` |
+| `/images/week33/wordpower_fall_down.jpg` | 207.2 KB | `dda8bd0b0c82` |
+| `/images/week33/wordpower_feel_terrible.jpg` | 176.2 KB | `905b04bffa51` |
+| `/images/week33/wordpower_have_an_accident.jpg` | 140.9 KB | `5a3f6c98c7be` |
+| `/images/week33/wordpower_hurt_yourself.jpg` | 232.7 KB | `a9a1111c5065` |
+| `/images/week33/wordpower_learn_a_lesson.jpg` | 162.2 KB | `25ce0686123b` |
+| `/images/week33/wordpower_run_in_the_corridor.jpg` | 247.2 KB | `8d67d02620d6` |
+| `/images/week33/wordpower_tell_the_truth.jpg` | 264.4 KB | `6e26af5a9a7c` |
+| `/images/week33/wordpower_w1.jpg` | 140.9 KB | `5a3f6c98c7be` |
+| `/images/week33/wordpower_w2.jpg` | 207.2 KB | `dda8bd0b0c82` |
+| `/images/week33/wordpower_w3.jpg` | 232.7 KB | `a9a1111c5065` |
+| `/images/week33/wordpower_w4.jpg` | 175.4 KB | `4e882c0f5a1c` |
+| `/images/week33/wordpower_w5.jpg` | 162.2 KB | `25ce0686123b` |
+| `/images/week33/wordpower_w6.jpg` | 176.2 KB | `905b04bffa51` |
+| `/images/week33/wordpower_w7.jpg` | 264.4 KB | `6e26af5a9a7c` |
+| `/images/week33/wordpower_w8.jpg` | 247.2 KB | `8d67d02620d6` |
+| `/images/week33/wp_break_something.jpg` | 175.4 KB | `4e882c0f5a1c` |
+| `/images/week33/wp_fall_down.jpg` | 207.2 KB | `dda8bd0b0c82` |
+| `/images/week33/wp_feel_terrible.jpg` | 176.2 KB | `905b04bffa51` |
+| `/images/week33/wp_have_an_accident.jpg` | 140.9 KB | `5a3f6c98c7be` |
+| `/images/week33/wp_hurt_yourself.jpg` | 232.7 KB | `a9a1111c5065` |
+| `/images/week33/wp_learn_a_lesson.jpg` | 162.2 KB | `25ce0686123b` |
+| `/images/week33/wp_run_in_the_corridor.jpg` | 247.2 KB | `8d67d02620d6` |
+| `/images/week33/wp_tell_the_truth.jpg` | 264.4 KB | `6e26af5a9a7c` |
+| `/images/week33/writing_panel_2.png` | 748.7 KB | `c36cb748545e` |
+| `/images/week33/writing_panel_3.png` | 707.4 KB | `644d3c954e91` |
+| `/audio/week33/clil_friction.mp3` | 152.7 KB | `6826c75dcc57` |
+| `/audio/week33/dictation_1.mp3` | 25.1 KB | `46e49f57768d` |
+| `/audio/week33/dictation_2.mp3` | 22.3 KB | `fb93e58f92e6` |
+| `/audio/week33/dictation_3.mp3` | 23.4 KB | `c52f6f424712` |
+| `/audio/week33/dictation_4.mp3` | 25.1 KB | `adadc319f474` |
+| `/audio/week33/dictation_5.mp3` | 25.7 KB | `23dd1734e1f7` |
+| `/audio/week33/explore.mp3` | 147.3 KB | `a3aa732f4174` |
+| `/audio/week33/listening_p1_full.mp3` | 486.3 KB | `affb32a78ef4` |
+| `/audio/week33/listening_p1_target1.mp3` | 16.5 KB | `fb972215c8f8` |
+| `/audio/week33/listening_p1_target2.mp3` | 15.6 KB | `9c9773724f8d` |
+| `/audio/week33/listening_p1_target3.mp3` | 21.9 KB | `5df387d34e81` |
+| `/audio/week33/listening_p1_target4.mp3` | 20.8 KB | `9a953fb30fd6` |
+| `/audio/week33/listening_p1_target5.mp3` | 18.2 KB | `2d4c82164f88` |
+| `/audio/week33/listening_p2_full.mp3` | 134.8 KB | `294e0240ef4e` |
+| `/audio/week33/listening_p3_full.mp3` | 397.2 KB | `e4b7fd7f321f` |
+| `/audio/week33/listening_p3_item1.mp3` | 36.4 KB | `df3a4127f4c2` |
+| `/audio/week33/listening_p3_item2.mp3` | 33.9 KB | `f9d46d9d0ec6` |
+| `/audio/week33/listening_p3_item3.mp3` | 34.7 KB | `0734250f19d4` |
+| `/audio/week33/listening_p3_item4.mp3` | 32.4 KB | `f887631ea7cc` |
+| `/audio/week33/listening_p3_item5.mp3` | 28.9 KB | `993e718d6c28` |
+| `/audio/week33/listening_p4_q1.mp3` | 57.1 KB | `85df988e861f` |
+| `/audio/week33/listening_p4_q2.mp3` | 134.3 KB | `636162fe41bb` |
+| `/audio/week33/listening_p4_q3.mp3` | 134.4 KB | `45e0198ec8e7` |
+| `/audio/week33/listening_p4_q4.mp3` | 56.4 KB | `e10e10e58989` |
+| `/audio/week33/listening_p4_q5.mp3` | 128.8 KB | `9f5aef07b217` |
+| `/audio/week33/listening_p5_full.mp3` | 221.2 KB | `f0c5fd129744` |
+| `/audio/week33/listening_p5_inst1.mp3` | 14.3 KB | `7dc1ed7a7b08` |
+| `/audio/week33/listening_p5_inst2.mp3` | 13.8 KB | `f232543d324f` |
+| `/audio/week33/listening_p5_inst3.mp3` | 16.3 KB | `47279649a378` |
+| `/audio/week33/listening_p5_inst4.mp3` | 12.4 KB | `29edabecfde8` |
+| `/audio/week33/listening_p5_inst5.mp3` | 16.6 KB | `3254dd31336a` |
+| `/audio/week33/read_social.mp3` | 78.4 KB | `3dba545d1e1f` |
+| `/audio/week33/read_stem.mp3` | 110.1 KB | `39b6a7fee48a` |

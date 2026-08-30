@@ -1,0 +1,882 @@
+{
+  "week": 33,
+  "captured_at": "2026-08-24T12:12:47.781Z",
+  "summary": {
+    "total_in_use": 27,
+    "total_broken": 0,
+    "total_orphans": 141,
+    "total_disk_assets": 152
+  },
+  "in_use": [
+    {
+      "path": "/src/assets/nova-landing.png",
+      "quest": "gear2_karaoke",
+      "size_bytes": 396,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-happy.png",
+      "quest": "gear2_karaoke",
+      "size_bytes": 390,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-achievement.png",
+      "quest": "gear2_karaoke",
+      "size_bytes": 412,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-encourage.png",
+      "quest": "gear2_karaoke",
+      "size_bytes": 402,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-thinking.png",
+      "quest": "gear2_karaoke",
+      "size_bytes": 401,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-sidebar.png",
+      "quest": "gear2_karaoke",
+      "size_bytes": 396,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-letsgo.png",
+      "quest": "gear2_karaoke",
+      "size_bytes": 391,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/nova-listening.png",
+      "quest": "gear2_karaoke",
+      "size_bytes": 402,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/quest-map-forest.jpg",
+      "quest": "gear2_karaoke",
+      "size_bytes": 424,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-happy.jpg",
+      "quest": "gear2_karaoke",
+      "size_bytes": 391,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-celebrate.jpg",
+      "quest": "gear2_karaoke",
+      "size_bytes": 407,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-thinking.jpg",
+      "quest": "gear2_karaoke",
+      "size_bytes": 402,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-encourage.jpg",
+      "quest": "gear2_karaoke",
+      "size_bytes": 407,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-listening.jpg",
+      "quest": "gear2_karaoke",
+      "size_bytes": 407,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/src/assets/lexio-waving.jpg",
+      "quest": "gear2_karaoke",
+      "size_bytes": 396,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "/images/week33/webtoon_scene_1.png",
+      "quest": "gear1_webtoon",
+      "size_bytes": 817531,
+      "content_type": "image/png"
+    },
+    {
+      "path": "/images/week33/writing_panel_1.png",
+      "quest": "story_writer",
+      "size_bytes": 831396,
+      "content_type": "image/png"
+    },
+    {
+      "path": "/src/assets/lexio-happy.jpg",
+      "quest": "info_exchange",
+      "size_bytes": 418972,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "/images/week33/w33_listening_p1_scene.jpg",
+      "quest": "boss_listening",
+      "size_bytes": 756515,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "/images/week33/nurse_cabinet.jpg",
+      "quest": "weekly_review",
+      "size_bytes": 650491,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "/images/week33/corridor.jpg",
+      "quest": "weekly_review",
+      "size_bytes": 322133,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "/images/week33/card_g_headmaster_office.jpg",
+      "quest": "weekly_review",
+      "size_bytes": 773525,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "/images/week33/lab_desk.jpg",
+      "quest": "weekly_review",
+      "size_bytes": 708217,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "/images/week33/card_b_first_aid_table.jpg",
+      "quest": "weekly_review",
+      "size_bytes": 656275,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "/images/week33/card_h_playground_bench.jpg",
+      "quest": "weekly_review",
+      "size_bytes": 1050888,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "/images/week33/bedroom_table.jpg",
+      "quest": "weekly_review",
+      "size_bytes": 760181,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "/images/week33/cafeteria.jpg",
+      "quest": "weekly_review",
+      "size_bytes": 841478,
+      "content_type": "image/jpeg"
+    }
+  ],
+  "broken": [],
+  "orphans": [
+    {
+      "path": "/images/week33/accident.jpg",
+      "size_bytes": 223624,
+      "sha256": "3e25b0a133cf4221ec8ac7ec673fac41f3740528b6bc70941d70058ecc78d04c"
+    },
+    {
+      "path": "/images/week33/arm.jpg",
+      "size_bytes": 147646,
+      "sha256": "976c68f1180024cb4afd0cb6eb573a17608e6a8911917eefc191f98501936c8f"
+    },
+    {
+      "path": "/images/week33/back.jpg",
+      "size_bytes": 143768,
+      "sha256": "2cf7a18ad0b0bdf4166de16619102e3ba6afa4c164f90f4324c6035edba2b776"
+    },
+    {
+      "path": "/images/week33/barmodel_w33_adv_p1.svg",
+      "size_bytes": 2740,
+      "sha256": "f8a43c092c7fa260a6e52ce35e949efc75c95f92740222bbc52de3119edfbf51"
+    },
+    {
+      "path": "/images/week33/barmodel_w33_adv_p2.svg",
+      "size_bytes": 2533,
+      "sha256": "79db0ca24db6c5427a817d30c4a3f520b93ddcd5de9a8e62ee45dca7a8cc776f"
+    },
+    {
+      "path": "/images/week33/barmodel_w33_adv_p3.svg",
+      "size_bytes": 2386,
+      "sha256": "8e06eb6e31f2eb653fcf1fd907d6893d104edc0de09a6cc318e73bec5ee3d72e"
+    },
+    {
+      "path": "/images/week33/barmodel_w33_adv_p4.svg",
+      "size_bytes": 2566,
+      "sha256": "69aa58b7840be3c5d003c835b097ddefd86daeac97266589939b663ddc05ea47"
+    },
+    {
+      "path": "/images/week33/barmodel_w33_adv_p5.svg",
+      "size_bytes": 666,
+      "sha256": "c1988d3ed7d7a527b627ab58bdb04a9e1de11cf2bff7747275abd77de158d443"
+    },
+    {
+      "path": "/images/week33/card_alarm_clock.jpg",
+      "size_bytes": 623592,
+      "sha256": "bcc2b858be9ec5b82ce2d6eb29cfa9c5b819d53b92071a9ece92bdbdd1e89672"
+    },
+    {
+      "path": "/images/week33/card_alarm_clock.png",
+      "size_bytes": 623592,
+      "sha256": "bcc2b858be9ec5b82ce2d6eb29cfa9c5b819d53b92071a9ece92bdbdd1e89672"
+    },
+    {
+      "path": "/images/week33/card_backpack.jpg",
+      "size_bytes": 688372,
+      "sha256": "30b86441ad5bf22a269c5bf45e81f7e76bde6976275c8752e45dc9ddb859295a"
+    },
+    {
+      "path": "/images/week33/card_backpack.png",
+      "size_bytes": 688372,
+      "sha256": "30b86441ad5bf22a269c5bf45e81f7e76bde6976275c8752e45dc9ddb859295a"
+    },
+    {
+      "path": "/images/week33/card_clean_bandage.jpg",
+      "size_bytes": 502301,
+      "sha256": "e583e0f308242e317e2631c19e3b13bf8acabb29420c7aa8687251fac6ef2610"
+    },
+    {
+      "path": "/images/week33/card_clean_bandage.png",
+      "size_bytes": 502301,
+      "sha256": "e583e0f308242e317e2631c19e3b13bf8acabb29420c7aa8687251fac6ef2610"
+    },
+    {
+      "path": "/images/week33/card_cold_pack.jpg",
+      "size_bytes": 575042,
+      "sha256": "7152b2bf76e5f79b7d640760b88bb623a3939e8595018d14d6bf164c137929b2"
+    },
+    {
+      "path": "/images/week33/card_cold_pack.png",
+      "size_bytes": 575042,
+      "sha256": "7152b2bf76e5f79b7d640760b88bb623a3939e8595018d14d6bf164c137929b2"
+    },
+    {
+      "path": "/images/week33/card_first_aid_kit.jpg",
+      "size_bytes": 549222,
+      "sha256": "47def30aab4c7ab6d38e8d0f073478df693c4a62d320a3f1fd20e7a51961846c"
+    },
+    {
+      "path": "/images/week33/card_first_aid_kit.png",
+      "size_bytes": 549222,
+      "sha256": "47def30aab4c7ab6d38e8d0f073478df693c4a62d320a3f1fd20e7a51961846c"
+    },
+    {
+      "path": "/images/week33/card_orange_juice.jpg",
+      "size_bytes": 606392,
+      "sha256": "911df49c4a80546f633158701468db8da92e3c2ca04fb6c6a56135e403173d0c"
+    },
+    {
+      "path": "/images/week33/card_orange_juice.png",
+      "size_bytes": 606392,
+      "sha256": "911df49c4a80546f633158701468db8da92e3c2ca04fb6c6a56135e403173d0c"
+    },
+    {
+      "path": "/images/week33/card_science_notebook.jpg",
+      "size_bytes": 622277,
+      "sha256": "da18c727176bf66cbeafd17409ae66b6c331ed57f361d7e4f4d1ac16b18b578d"
+    },
+    {
+      "path": "/images/week33/card_science_notebook.png",
+      "size_bytes": 622277,
+      "sha256": "da18c727176bf66cbeafd17409ae66b6c331ed57f361d7e4f4d1ac16b18b578d"
+    },
+    {
+      "path": "/images/week33/card_water_bottle.jpg",
+      "size_bytes": 476704,
+      "sha256": "1a996cf209d3e43015d786c64a568cef8e03faac51667610ca95b8141b29e7ed"
+    },
+    {
+      "path": "/images/week33/card_water_bottle.png",
+      "size_bytes": 476704,
+      "sha256": "1a996cf209d3e43015d786c64a568cef8e03faac51667610ca95b8141b29e7ed"
+    },
+    {
+      "path": "/images/week33/carefully.jpg",
+      "size_bytes": 192433,
+      "sha256": "2c06b79ab7756b680cea553b4cc705fbc50e27c0154db8742f952396e61d55c7"
+    },
+    {
+      "path": "/images/week33/catch.jpg",
+      "size_bytes": 113648,
+      "sha256": "dc98093978c86de9c60a2398e9f68cdef268a60246f12b1a1661a031b0c8bf8c"
+    },
+    {
+      "path": "/images/week33/cold_pack.jpg",
+      "size_bytes": 184951,
+      "sha256": "116e80d2f6ba6e917d9ed9d78761093c77ec5f8fd5f60cf746b6421a9f676750"
+    },
+    {
+      "path": "/images/week33/explain.jpg",
+      "size_bytes": 209266,
+      "sha256": "4964ccd4bc426188003ff5deaf9db761c97bbb5c2d14599235fade224124295e"
+    },
+    {
+      "path": "/images/week33/explore.jpg",
+      "size_bytes": 351972,
+      "sha256": "8e7de1de1f0c5738696ab36d217243ea534d8c2ee3c1f1e3fea407b9acbd5dd8"
+    },
+    {
+      "path": "/images/week33/explore_cover_w33.jpg",
+      "size_bytes": 351972,
+      "sha256": "8e7de1de1f0c5738696ab36d217243ea534d8c2ee3c1f1e3fea407b9acbd5dd8"
+    },
+    {
+      "path": "/images/week33/felldown.jpg",
+      "size_bytes": 221694,
+      "sha256": "7627e0055ae1cda92ffbc673835007063547510def24a1256188d47fb471729b"
+    },
+    {
+      "path": "/images/week33/hand.jpg",
+      "size_bytes": 159040,
+      "sha256": "a5c6b0c487844ba5879abc9b53bab1ce8b6504ec556e9e741d2d8d1ffdcf52f2"
+    },
+    {
+      "path": "/images/week33/head.jpg",
+      "size_bytes": 206502,
+      "sha256": "7ee98916e8bbf648910d351da1276061ccdc9a2a7a17eb541f10c35770ae97b4"
+    },
+    {
+      "path": "/images/week33/knee.jpg",
+      "size_bytes": 115471,
+      "sha256": "5b874b2b1880465e7bbe51974406b77df3ed1c66a2d7100129f022ca4827cc8e"
+    },
+    {
+      "path": "/images/week33/learn_a_lesson.jpg",
+      "size_bytes": 166077,
+      "sha256": "25ce0686123b90b4703c42f46bf968f911967745e73aeac2c4ea319abce79da1"
+    },
+    {
+      "path": "/images/week33/leg.jpg",
+      "size_bytes": 197506,
+      "sha256": "c7fa03045e0d69f8cf9de7e88d2bd946ad53b8eca2c93183fe9f10c7fdf7ee88"
+    },
+    {
+      "path": "/images/week33/lesson.jpg",
+      "size_bytes": 180989,
+      "sha256": "24aac4523954ea31514c4d4f67b4fd2d19e2dac84b9043bba54eeab476a6c6fc"
+    },
+    {
+      "path": "/images/week33/nurse.jpg",
+      "size_bytes": 164198,
+      "sha256": "0df8a0ff6ee172e95b678fe06857e7bb0349da461b52acf85f1e916e3d59908d"
+    },
+    {
+      "path": "/images/week33/read.jpg",
+      "size_bytes": 302878,
+      "sha256": "2f01ded0d9c7fd33bb5b71b7d30e51357219a6aa6cb610434c95f77294d1a134"
+    },
+    {
+      "path": "/images/week33/read_cover_w33.jpg",
+      "size_bytes": 302878,
+      "sha256": "2f01ded0d9c7fd33bb5b71b7d30e51357219a6aa6cb610434c95f77294d1a134"
+    },
+    {
+      "path": "/images/week33/read_stem.jpg",
+      "size_bytes": 302878,
+      "sha256": "2f01ded0d9c7fd33bb5b71b7d30e51357219a6aa6cb610434c95f77294d1a134"
+    },
+    {
+      "path": "/images/week33/recover.jpg",
+      "size_bytes": 230096,
+      "sha256": "8a12cfb8a664d0dde3508365ee592c3557f9580f850b9ac10cc5c6c22d7e4f32"
+    },
+    {
+      "path": "/images/week33/shoulder.jpg",
+      "size_bytes": 136474,
+      "sha256": "01d61ff875b011434d443ab2b3a47f77c903424ba9dcaa0a8940737f467ef3b5"
+    },
+    {
+      "path": "/images/week33/terrible.jpg",
+      "size_bytes": 137008,
+      "sha256": "5e14f767a4903b7f6c1d0a10e87c6b536a8da8f1ddbe8246369b5d5ba03682dc"
+    },
+    {
+      "path": "/images/week33/tongue.jpg",
+      "size_bytes": 188537,
+      "sha256": "229b8433e9a8115b849b5eb380a60aabe4c2485abec7b81c7aac5fe66ef72d57"
+    },
+    {
+      "path": "/images/week33/understand.jpg",
+      "size_bytes": 228631,
+      "sha256": "ea073c932ed258556ed0ca712ff92ccee76a7d847e0d09755e0898955e26ff71"
+    },
+    {
+      "path": "/images/week33/vocab_accident.jpg",
+      "size_bytes": 223624,
+      "sha256": "3e25b0a133cf4221ec8ac7ec673fac41f3740528b6bc70941d70058ecc78d04c"
+    },
+    {
+      "path": "/images/week33/vocab_arm.jpg",
+      "size_bytes": 147646,
+      "sha256": "976c68f1180024cb4afd0cb6eb573a17608e6a8911917eefc191f98501936c8f"
+    },
+    {
+      "path": "/images/week33/vocab_back.jpg",
+      "size_bytes": 143768,
+      "sha256": "2cf7a18ad0b0bdf4166de16619102e3ba6afa4c164f90f4324c6035edba2b776"
+    },
+    {
+      "path": "/images/week33/vocab_bandage.jpg",
+      "size_bytes": 502301,
+      "sha256": "e583e0f308242e317e2631c19e3b13bf8acabb29420c7aa8687251fac6ef2610"
+    },
+    {
+      "path": "/images/week33/vocab_careful.jpg",
+      "size_bytes": 192433,
+      "sha256": "2c06b79ab7756b680cea553b4cc705fbc50e27c0154db8742f952396e61d55c7"
+    },
+    {
+      "path": "/images/week33/vocab_carefully.jpg",
+      "size_bytes": 192433,
+      "sha256": "2c06b79ab7756b680cea553b4cc705fbc50e27c0154db8742f952396e61d55c7"
+    },
+    {
+      "path": "/images/week33/vocab_catch.jpg",
+      "size_bytes": 113648,
+      "sha256": "dc98093978c86de9c60a2398e9f68cdef268a60246f12b1a1661a031b0c8bf8c"
+    },
+    {
+      "path": "/images/week33/vocab_clumsy.jpg",
+      "size_bytes": 221694,
+      "sha256": "7627e0055ae1cda92ffbc673835007063547510def24a1256188d47fb471729b"
+    },
+    {
+      "path": "/images/week33/vocab_cold_pack.jpg",
+      "size_bytes": 184951,
+      "sha256": "116e80d2f6ba6e917d9ed9d78761093c77ec5f8fd5f60cf746b6421a9f676750"
+    },
+    {
+      "path": "/images/week33/vocab_corridor.jpg",
+      "size_bytes": 322133,
+      "sha256": "27e305c19db91b4001a520f8cdf2a0680fa8273445b64f2739a39242d6eb522a"
+    },
+    {
+      "path": "/images/week33/vocab_explain.jpg",
+      "size_bytes": 209266,
+      "sha256": "4964ccd4bc426188003ff5deaf9db761c97bbb5c2d14599235fade224124295e"
+    },
+    {
+      "path": "/images/week33/vocab_felldown.jpg",
+      "size_bytes": 221694,
+      "sha256": "7627e0055ae1cda92ffbc673835007063547510def24a1256188d47fb471729b"
+    },
+    {
+      "path": "/images/week33/vocab_fix.jpg",
+      "size_bytes": 164198,
+      "sha256": "0df8a0ff6ee172e95b678fe06857e7bb0349da461b52acf85f1e916e3d59908d"
+    },
+    {
+      "path": "/images/week33/vocab_hand.jpg",
+      "size_bytes": 159040,
+      "sha256": "a5c6b0c487844ba5879abc9b53bab1ce8b6504ec556e9e741d2d8d1ffdcf52f2"
+    },
+    {
+      "path": "/images/week33/vocab_head.jpg",
+      "size_bytes": 206502,
+      "sha256": "7ee98916e8bbf648910d351da1276061ccdc9a2a7a17eb541f10c35770ae97b4"
+    },
+    {
+      "path": "/images/week33/vocab_knee.jpg",
+      "size_bytes": 115471,
+      "sha256": "5b874b2b1880465e7bbe51974406b77df3ed1c66a2d7100129f022ca4827cc8e"
+    },
+    {
+      "path": "/images/week33/vocab_leg.jpg",
+      "size_bytes": 197506,
+      "sha256": "c7fa03045e0d69f8cf9de7e88d2bd946ad53b8eca2c93183fe9f10c7fdf7ee88"
+    },
+    {
+      "path": "/images/week33/vocab_lesson.jpg",
+      "size_bytes": 180989,
+      "sha256": "24aac4523954ea31514c4d4f67b4fd2d19e2dac84b9043bba54eeab476a6c6fc"
+    },
+    {
+      "path": "/images/week33/vocab_mistake.jpg",
+      "size_bytes": 223624,
+      "sha256": "3e25b0a133cf4221ec8ac7ec673fac41f3740528b6bc70941d70058ecc78d04c"
+    },
+    {
+      "path": "/images/week33/vocab_nurse.jpg",
+      "size_bytes": 164198,
+      "sha256": "0df8a0ff6ee172e95b678fe06857e7bb0349da461b52acf85f1e916e3d59908d"
+    },
+    {
+      "path": "/images/week33/vocab_recover.jpg",
+      "size_bytes": 230096,
+      "sha256": "8a12cfb8a664d0dde3508365ee592c3557f9580f850b9ac10cc5c6c22d7e4f32"
+    },
+    {
+      "path": "/images/week33/vocab_relieved.jpg",
+      "size_bytes": 230096,
+      "sha256": "8a12cfb8a664d0dde3508365ee592c3557f9580f850b9ac10cc5c6c22d7e4f32"
+    },
+    {
+      "path": "/images/week33/vocab_shoulder.jpg",
+      "size_bytes": 136474,
+      "sha256": "01d61ff875b011434d443ab2b3a47f77c903424ba9dcaa0a8940737f467ef3b5"
+    },
+    {
+      "path": "/images/week33/vocab_slipped.jpg",
+      "size_bytes": 221694,
+      "sha256": "7627e0055ae1cda92ffbc673835007063547510def24a1256188d47fb471729b"
+    },
+    {
+      "path": "/images/week33/vocab_sorry.jpg",
+      "size_bytes": 228631,
+      "sha256": "ea073c932ed258556ed0ca712ff92ccee76a7d847e0d09755e0898955e26ff71"
+    },
+    {
+      "path": "/images/week33/vocab_terrible.jpg",
+      "size_bytes": 137008,
+      "sha256": "5e14f767a4903b7f6c1d0a10e87c6b536a8da8f1ddbe8246369b5d5ba03682dc"
+    },
+    {
+      "path": "/images/week33/vocab_tongue.jpg",
+      "size_bytes": 188537,
+      "sha256": "229b8433e9a8115b849b5eb380a60aabe4c2485abec7b81c7aac5fe66ef72d57"
+    },
+    {
+      "path": "/images/week33/vocab_understand.jpg",
+      "size_bytes": 228631,
+      "sha256": "ea073c932ed258556ed0ca712ff92ccee76a7d847e0d09755e0898955e26ff71"
+    },
+    {
+      "path": "/images/week33/w33_diff_scene_a.jpg",
+      "size_bytes": 829477,
+      "sha256": "24305fc7cc976381150490891c2053d29f082aaf473230a0846556d0014d1ebc"
+    },
+    {
+      "path": "/images/week33/w33_diff_scene_b.jpg",
+      "size_bytes": 779732,
+      "sha256": "0b2c033d922c50c6f0339d456666e981f1fa11912886200a83f1fee6d61d81ff"
+    },
+    {
+      "path": "/images/week33/webtoon_scene_2.png",
+      "size_bytes": 831396,
+      "sha256": "ffad0ce8759cd920b07a0533f230109df24b0c0b78cb7e41e20a77aca910e8e6"
+    },
+    {
+      "path": "/images/week33/webtoon_scene_3.png",
+      "size_bytes": 766620,
+      "sha256": "c36cb748545e7053c890097edb80d8070813af60a49f090b48a2cf63005b4cce"
+    },
+    {
+      "path": "/images/week33/webtoon_scene_4.jpg",
+      "size_bytes": 724370,
+      "sha256": "644d3c954e91da666db99a7c3ce5aa2619d3807f5122e15acf3766bf2cdbe115"
+    },
+    {
+      "path": "/images/week33/webtoon_scene_4.png",
+      "size_bytes": 724370,
+      "sha256": "644d3c954e91da666db99a7c3ce5aa2619d3807f5122e15acf3766bf2cdbe115"
+    },
+    {
+      "path": "/images/week33/webtoon_scene_5.png",
+      "size_bytes": 801954,
+      "sha256": "ed85c9f7d1b41484cc411ec76b14e1a20b755e84a09d7a688d206cade6d15b47"
+    },
+    {
+      "path": "/images/week33/webtoon_scene_6.png",
+      "size_bytes": 735360,
+      "sha256": "858409b603cbe058b7d4ee4b51c9c2a171249f7b465f438e1b947f26750ef6eb"
+    },
+    {
+      "path": "/images/week33/wordpower_break_something.jpg",
+      "size_bytes": 179646,
+      "sha256": "4e882c0f5a1c278f92f5d3a02dd9265106e993ab1617ed5027e723e0acc43b2f"
+    },
+    {
+      "path": "/images/week33/wordpower_fall_down.jpg",
+      "size_bytes": 212187,
+      "sha256": "dda8bd0b0c8200e76cdf3943f23a40feae2817131306188f28e69d66d337ae16"
+    },
+    {
+      "path": "/images/week33/wordpower_feel_terrible.jpg",
+      "size_bytes": 180463,
+      "sha256": "905b04bffa51ee148f2d8a348801e7339b4d5129bf2ef6c2e3f5278ed952eef7"
+    },
+    {
+      "path": "/images/week33/wordpower_have_an_accident.jpg",
+      "size_bytes": 144283,
+      "sha256": "5a3f6c98c7be5a04e1455f96135894e8675b78f8fd6a30541462c9559b2218b0"
+    },
+    {
+      "path": "/images/week33/wordpower_hurt_yourself.jpg",
+      "size_bytes": 238284,
+      "sha256": "a9a1111c506508855a0db810371cdfa899bc2e2bd8ccf325755d0ae7a5644118"
+    },
+    {
+      "path": "/images/week33/wordpower_learn_a_lesson.jpg",
+      "size_bytes": 166077,
+      "sha256": "25ce0686123b90b4703c42f46bf968f911967745e73aeac2c4ea319abce79da1"
+    },
+    {
+      "path": "/images/week33/wordpower_run_in_the_corridor.jpg",
+      "size_bytes": 253135,
+      "sha256": "8d67d02620d6fac36b97a357d195314dfac5353d00a3fa3590186231b72c698d"
+    },
+    {
+      "path": "/images/week33/wordpower_tell_the_truth.jpg",
+      "size_bytes": 270739,
+      "sha256": "6e26af5a9a7cbe8812776be8111ae5a63b473c694ac7a70467a17ce6b885dbb6"
+    },
+    {
+      "path": "/images/week33/wordpower_w1.jpg",
+      "size_bytes": 144283,
+      "sha256": "5a3f6c98c7be5a04e1455f96135894e8675b78f8fd6a30541462c9559b2218b0"
+    },
+    {
+      "path": "/images/week33/wordpower_w2.jpg",
+      "size_bytes": 212187,
+      "sha256": "dda8bd0b0c8200e76cdf3943f23a40feae2817131306188f28e69d66d337ae16"
+    },
+    {
+      "path": "/images/week33/wordpower_w3.jpg",
+      "size_bytes": 238284,
+      "sha256": "a9a1111c506508855a0db810371cdfa899bc2e2bd8ccf325755d0ae7a5644118"
+    },
+    {
+      "path": "/images/week33/wordpower_w4.jpg",
+      "size_bytes": 179646,
+      "sha256": "4e882c0f5a1c278f92f5d3a02dd9265106e993ab1617ed5027e723e0acc43b2f"
+    },
+    {
+      "path": "/images/week33/wordpower_w5.jpg",
+      "size_bytes": 166077,
+      "sha256": "25ce0686123b90b4703c42f46bf968f911967745e73aeac2c4ea319abce79da1"
+    },
+    {
+      "path": "/images/week33/wordpower_w6.jpg",
+      "size_bytes": 180463,
+      "sha256": "905b04bffa51ee148f2d8a348801e7339b4d5129bf2ef6c2e3f5278ed952eef7"
+    },
+    {
+      "path": "/images/week33/wordpower_w7.jpg",
+      "size_bytes": 270739,
+      "sha256": "6e26af5a9a7cbe8812776be8111ae5a63b473c694ac7a70467a17ce6b885dbb6"
+    },
+    {
+      "path": "/images/week33/wordpower_w8.jpg",
+      "size_bytes": 253135,
+      "sha256": "8d67d02620d6fac36b97a357d195314dfac5353d00a3fa3590186231b72c698d"
+    },
+    {
+      "path": "/images/week33/wp_break_something.jpg",
+      "size_bytes": 179646,
+      "sha256": "4e882c0f5a1c278f92f5d3a02dd9265106e993ab1617ed5027e723e0acc43b2f"
+    },
+    {
+      "path": "/images/week33/wp_fall_down.jpg",
+      "size_bytes": 212187,
+      "sha256": "dda8bd0b0c8200e76cdf3943f23a40feae2817131306188f28e69d66d337ae16"
+    },
+    {
+      "path": "/images/week33/wp_feel_terrible.jpg",
+      "size_bytes": 180463,
+      "sha256": "905b04bffa51ee148f2d8a348801e7339b4d5129bf2ef6c2e3f5278ed952eef7"
+    },
+    {
+      "path": "/images/week33/wp_have_an_accident.jpg",
+      "size_bytes": 144283,
+      "sha256": "5a3f6c98c7be5a04e1455f96135894e8675b78f8fd6a30541462c9559b2218b0"
+    },
+    {
+      "path": "/images/week33/wp_hurt_yourself.jpg",
+      "size_bytes": 238284,
+      "sha256": "a9a1111c506508855a0db810371cdfa899bc2e2bd8ccf325755d0ae7a5644118"
+    },
+    {
+      "path": "/images/week33/wp_learn_a_lesson.jpg",
+      "size_bytes": 166077,
+      "sha256": "25ce0686123b90b4703c42f46bf968f911967745e73aeac2c4ea319abce79da1"
+    },
+    {
+      "path": "/images/week33/wp_run_in_the_corridor.jpg",
+      "size_bytes": 253135,
+      "sha256": "8d67d02620d6fac36b97a357d195314dfac5353d00a3fa3590186231b72c698d"
+    },
+    {
+      "path": "/images/week33/wp_tell_the_truth.jpg",
+      "size_bytes": 270739,
+      "sha256": "6e26af5a9a7cbe8812776be8111ae5a63b473c694ac7a70467a17ce6b885dbb6"
+    },
+    {
+      "path": "/images/week33/writing_panel_2.png",
+      "size_bytes": 766620,
+      "sha256": "c36cb748545e7053c890097edb80d8070813af60a49f090b48a2cf63005b4cce"
+    },
+    {
+      "path": "/images/week33/writing_panel_3.png",
+      "size_bytes": 724370,
+      "sha256": "644d3c954e91da666db99a7c3ce5aa2619d3807f5122e15acf3766bf2cdbe115"
+    },
+    {
+      "path": "/audio/week33/clil_friction.mp3",
+      "size_bytes": 156384,
+      "sha256": "6826c75dcc57d0b35d071846944ee862079ebfd9ee9e58219c28f1c7fb444dad"
+    },
+    {
+      "path": "/audio/week33/dictation_1.mp3",
+      "size_bytes": 25728,
+      "sha256": "46e49f57768dd5e744700d2aed3bd5a7df62d405ac82c258e3dbda8973b5cd58"
+    },
+    {
+      "path": "/audio/week33/dictation_2.mp3",
+      "size_bytes": 22848,
+      "sha256": "fb93e58f92e659ac7a3221af86792561c572258903632b03aa531af84b864fa7"
+    },
+    {
+      "path": "/audio/week33/dictation_3.mp3",
+      "size_bytes": 24000,
+      "sha256": "c52f6f424712a3bd6d5d2fdbdec0ed26e965f54cebbd0b498147f683810e93cc"
+    },
+    {
+      "path": "/audio/week33/dictation_4.mp3",
+      "size_bytes": 25728,
+      "sha256": "adadc319f4743bade7b901083d6d3ee0ca74f2c0ed434bbd906d32c98e38a0d2"
+    },
+    {
+      "path": "/audio/week33/dictation_5.mp3",
+      "size_bytes": 26304,
+      "sha256": "23dd1734e1f7bc3adcf6871a0aebfb624e74f8886636e8691f72d127fe8406cc"
+    },
+    {
+      "path": "/audio/week33/explore.mp3",
+      "size_bytes": 150816,
+      "sha256": "a3aa732f417458d6356bf18483a83c998ee8c254d1d2d528d970d2f17184b226"
+    },
+    {
+      "path": "/audio/week33/listening_p1_full.mp3",
+      "size_bytes": 497952,
+      "sha256": "affb32a78ef46adc476f0b10243d94c86ea0aebcfd65931bae3e5f920e96feb6"
+    },
+    {
+      "path": "/audio/week33/listening_p1_target1.mp3",
+      "size_bytes": 16896,
+      "sha256": "fb972215c8f8ee92c09cf978dd9aceb9d3348ffe3faaea7660d43af16dc03841"
+    },
+    {
+      "path": "/audio/week33/listening_p1_target2.mp3",
+      "size_bytes": 15936,
+      "sha256": "9c9773724f8d59514c43bd80ef6693d5a2db036efb478ca15f4259aa922e274d"
+    },
+    {
+      "path": "/audio/week33/listening_p1_target3.mp3",
+      "size_bytes": 22464,
+      "sha256": "5df387d34e818fe3d26704ad9f0aa7c41ad4b3bf32f301e5308b8c3d961a807e"
+    },
+    {
+      "path": "/audio/week33/listening_p1_target4.mp3",
+      "size_bytes": 21312,
+      "sha256": "9a953fb30fd6914d3edd71c6c5c935c5222c734547ef36f34ba691952277f071"
+    },
+    {
+      "path": "/audio/week33/listening_p1_target5.mp3",
+      "size_bytes": 18624,
+      "sha256": "2d4c82164f884d2b4114106e30ef18330d4caaabf058434719e57f32af186dd3"
+    },
+    {
+      "path": "/audio/week33/listening_p2_full.mp3",
+      "size_bytes": 138048,
+      "sha256": "294e0240ef4e50524439c734a354535303e0b56512b2261800a33744da7e33df"
+    },
+    {
+      "path": "/audio/week33/listening_p3_full.mp3",
+      "size_bytes": 406752,
+      "sha256": "e4b7fd7f321f6dcade953e9a92c0dc29edd63cb2ddd3ea1a287d921147d7f3bb"
+    },
+    {
+      "path": "/audio/week33/listening_p3_item1.mp3",
+      "size_bytes": 37248,
+      "sha256": "df3a4127f4c265e9b5a9892b366dabb3b13c0886ffb15adbba9fd5c0fbdcb084"
+    },
+    {
+      "path": "/audio/week33/listening_p3_item2.mp3",
+      "size_bytes": 34752,
+      "sha256": "f9d46d9d0ec68a6b199cc84b37a89f4c67d87effb5d5b14bf5a9ac2e2b0f46cd"
+    },
+    {
+      "path": "/audio/week33/listening_p3_item3.mp3",
+      "size_bytes": 35520,
+      "sha256": "0734250f19d4503b8d38a076fddf00a0b9693e3ec558dd4892ee9de2fcf99a0c"
+    },
+    {
+      "path": "/audio/week33/listening_p3_item4.mp3",
+      "size_bytes": 33216,
+      "sha256": "f887631ea7cc93b87b30e5721d4562520324c6c52bda35e47d63c2e2ea626044"
+    },
+    {
+      "path": "/audio/week33/listening_p3_item5.mp3",
+      "size_bytes": 29568,
+      "sha256": "993e718d6c28d5ddc0d653f3abecf4583a467da8052962d5dc86af5503dd6f9f"
+    },
+    {
+      "path": "/audio/week33/listening_p4_q1.mp3",
+      "size_bytes": 58464,
+      "sha256": "85df988e861f5eec8305b52e8775ac827f305302e813292c3e2df9a3cdf85a1a"
+    },
+    {
+      "path": "/audio/week33/listening_p4_q2.mp3",
+      "size_bytes": 137472,
+      "sha256": "636162fe41bb5f49c3b2d48daf13218a80ca1003cc43a5b58e9c85c103e58a8a"
+    },
+    {
+      "path": "/audio/week33/listening_p4_q3.mp3",
+      "size_bytes": 137664,
+      "sha256": "45e0198ec8e7cfae3a0e26b0ba777b45d0ac87bedcd8555f59edd7d3a0fa1e33"
+    },
+    {
+      "path": "/audio/week33/listening_p4_q4.mp3",
+      "size_bytes": 57792,
+      "sha256": "e10e10e5898994e9566dcfac7d7b2006c20a2481e8b0d91bbd51f2d3d4567b4d"
+    },
+    {
+      "path": "/audio/week33/listening_p4_q5.mp3",
+      "size_bytes": 131904,
+      "sha256": "9f5aef07b217080a0697bbadf7dd11c7c65fed5682a36e332305816c33a9d68d"
+    },
+    {
+      "path": "/audio/week33/listening_p5_full.mp3",
+      "size_bytes": 226464,
+      "sha256": "f0c5fd129744e8c70b851f51a217889cc6aa87e509d32eefe9cc2944f1871b62"
+    },
+    {
+      "path": "/audio/week33/listening_p5_inst1.mp3",
+      "size_bytes": 14592,
+      "sha256": "7dc1ed7a7b08e7aece2890e9a8b4eec76a36390c8b5ced09f24f2944c4dd5281"
+    },
+    {
+      "path": "/audio/week33/listening_p5_inst2.mp3",
+      "size_bytes": 14112,
+      "sha256": "f232543d324f43e1760a33527ac9f77257da01c428e9e3054d07c7d3306b5985"
+    },
+    {
+      "path": "/audio/week33/listening_p5_inst3.mp3",
+      "size_bytes": 16704,
+      "sha256": "47279649a378445bc4681ee54883dff56bd177987bb4d0173ddbbc3530f3ae2f"
+    },
+    {
+      "path": "/audio/week33/listening_p5_inst4.mp3",
+      "size_bytes": 12672,
+      "sha256": "29edabecfde80430a13829d57816218d6d2d544e674cffaba94eb0519013e167"
+    },
+    {
+      "path": "/audio/week33/listening_p5_inst5.mp3",
+      "size_bytes": 16992,
+      "sha256": "3254dd31336a3f437262f9aa951f5a883f9f51355d496b620d11f5f71e2a3dfc"
+    },
+    {
+      "path": "/audio/week33/read_social.mp3",
+      "size_bytes": 80256,
+      "sha256": "3dba545d1e1fff5ea4e69e6a1ece976ddac3027752aebfee772a638c0adf56ef"
+    },
+    {
+      "path": "/audio/week33/read_stem.mp3",
+      "size_bytes": 112704,
+      "sha256": "39b6a7fee48ac9a2c87dfe960ba6daeb8948595d4225cc96ee287b431a98e961"
+    }
+  ]
+}

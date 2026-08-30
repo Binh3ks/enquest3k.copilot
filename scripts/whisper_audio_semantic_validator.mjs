@@ -458,9 +458,11 @@ async function main() {
     process.exit(0);
   }
 
-  const manifestPath = path.join(rootDir, 'docs/W33_AUDIO_SEMANTIC_MANIFEST.json');
+  const primaryManifestPath = path.join(rootDir, 'docs/audit/w33/W33_AUDIO_SEMANTIC_MANIFEST.json');
+  const legacyManifestPath = path.join(rootDir, 'docs/W33_AUDIO_SEMANTIC_MANIFEST.json');
+  const manifestPath = fs.existsSync(primaryManifestPath) ? primaryManifestPath : legacyManifestPath;
   if (!fs.existsSync(manifestPath)) {
-    console.error(`❌ Manifest not found at ${manifestPath}`);
+    console.error(`❌ Manifest not found at ${primaryManifestPath} or ${legacyManifestPath}`);
     process.exit(1);
   }
 
@@ -653,11 +655,17 @@ async function main() {
   fs.mkdirSync(artifactsDir, { recursive: true });
   fs.writeFileSync(path.join(artifactsDir, 'w33_audio_semantic_validation.json'), JSON.stringify(jsonReport, null, 2));
 
-  const jsonPath = path.join(rootDir, 'docs/W33_AUDIO_SEMANTIC_VALIDATION_REPORT.json');
-  fs.writeFileSync(jsonPath, JSON.stringify(jsonReport, null, 2));
+  const auditDir = path.join(rootDir, 'docs/audit/w33');
+  fs.mkdirSync(auditDir, { recursive: true });
+  const jsonReportAudit = path.join(auditDir, 'W33_AUDIO_SEMANTIC_VALIDATION_REPORT.json');
+  const jsonReportLegacy = path.join(rootDir, 'docs/W33_AUDIO_SEMANTIC_VALIDATION_REPORT.json');
+  const jsonReportStr = JSON.stringify(jsonReport, null, 2);
+  fs.writeFileSync(jsonReportAudit, jsonReportStr);
+  fs.writeFileSync(jsonReportLegacy, jsonReportStr);
 
   // ── SAVE HUMAN-READABLE MARKDOWN REPORT ──────────────────────────────────
-  const mdPath = path.join(rootDir, 'docs/W33_AUDIO_SEMANTIC_VALIDATION_REPORT.md');
+  const mdReportAudit = path.join(auditDir, 'W33_AUDIO_SEMANTIC_VALIDATION_REPORT.md');
+  const mdReportLegacy = path.join(rootDir, 'docs/W33_AUDIO_SEMANTIC_VALIDATION_REPORT.md');
   let mdContent = `# 🎙️ W33 Audio Semantic Validation Report (Hardened)\n\n`;
   mdContent += `**Governing Standard**: W33 Golden Learning & Assessment Standard v1.0  \n`;
   mdContent += `**Whisper Engine**: \`${whisperBin}\`  \n`;
@@ -673,8 +681,9 @@ async function main() {
   mdContent += `- **NO_CANONICAL_TRANSCRIPT**: ${counts.no_canonical_transcript}\n`;
   mdContent += `- **BLOCKED**: ${counts.blocked}\n\n`;
   mdContent += `## 2. Granular Verification Table\n\n`;
-  mdContent += `| File | Category | Part | Similarity | Anchors Found | Classification |\n`;
+  mdContent += `| Asset File | Category | Part | Similarity | Anchors | Status |\n`;
   mdContent += `| :--- | :--- | :---: | :---: | :---: | :---: |\n`;
+
   for (const r of results) {
     const fn = path.basename(r.file);
     const simPct = `${(r.similarity * 100).toFixed(1)}%`;
@@ -682,7 +691,8 @@ async function main() {
     const statusIcon = r.classification === 'PASS' ? '🟢 PASS' : r.classification === 'MINOR_TRANSCRIPTION_VARIANCE' ? '🟡 MINOR_VARIANCE' : '🔴 ' + r.classification;
     mdContent += `| \`${fn}\` | ${r.category} | ${r.part} | ${simPct} | ${anchorRatio} | ${statusIcon} |\n`;
   }
-  fs.writeFileSync(mdPath, mdContent);
+  fs.writeFileSync(mdReportAudit, mdContent);
+  fs.writeFileSync(mdReportLegacy, mdContent);
 
   // ── CLI OUTPUT REPORT ────────────────────────────────────────────────────
   console.log('\n---------------------------------------------');

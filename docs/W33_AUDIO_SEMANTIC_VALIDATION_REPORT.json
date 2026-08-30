@@ -1,7 +1,7 @@
 {
   "week": 33,
   "validator": "scripts/whisper_audio_semantic_validator.mjs",
-  "timestamp": "2026-08-30T08:56:32.199Z",
+  "timestamp": "2026-08-30T09:25:18.437Z",
   "whisper_engine": "/Library/Frameworks/Python.framework/Versions/3.11/bin/whisper",
   "model": "tiny",
   "total_assets": 54,
@@ -61,7 +61,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 7521
+      "duration_ms": 6655
     },
     {
       "asset": "/audio/week33/read_stem.mp3",
@@ -101,7 +101,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 5800
+      "duration_ms": 5468
     },
     {
       "asset": "/audio/week33/read_social.mp3",
@@ -139,7 +139,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 3584
+      "duration_ms": 3527
     },
     {
       "asset": "/audio/week33/explore.mp3",
@@ -179,7 +179,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 7466
+      "duration_ms": 6690
     },
     {
       "asset": "/audio/week33/dictation_1.mp3",
@@ -211,7 +211,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2563
+      "duration_ms": 2284
     },
     {
       "asset": "/audio/week33/dictation_2.mp3",
@@ -239,7 +239,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2522
+      "duration_ms": 2350
     },
     {
       "asset": "/audio/week33/dictation_3.mp3",
@@ -271,7 +271,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2401
+      "duration_ms": 2291
     },
     {
       "asset": "/audio/week33/dictation_4.mp3",
@@ -305,7 +305,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2412
+      "duration_ms": 2320
     },
     {
       "asset": "/audio/week33/dictation_5.mp3",
@@ -339,7 +339,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2442
+      "duration_ms": 2292
     },
     {
       "asset": "/audio/week33/exam_intro_L1.mp3",
@@ -365,7 +365,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2643
+      "duration_ms": 2433
     },
     {
       "asset": "/audio/week33/exam_intro_L2.mp3",
@@ -393,7 +393,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2505
+      "duration_ms": 2350
     },
     {
       "asset": "/audio/week33/exam_intro_L3.mp3",
@@ -421,7 +421,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2626
+      "duration_ms": 2496
     },
     {
       "asset": "/audio/week33/exam_intro_L4.mp3",
@@ -449,7 +449,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2484
+      "duration_ms": 2382
     },
     {
       "asset": "/audio/week33/exam_intro_L5.mp3",
@@ -477,7 +477,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2494
+      "duration_ms": 2393
     },
     {
       "asset": "/audio/week33/exam_intro_S1.mp3",
@@ -503,7 +503,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2846
+      "duration_ms": 2679
     },
     {
       "asset": "/audio/week33/exam_intro_S2.mp3",
@@ -539,7 +539,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 6451
+      "duration_ms": 6081
     },
     {
       "asset": "/audio/week33/exam_intro_S3.mp3",
@@ -565,7 +565,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2908
+      "duration_ms": 2645
     },
     {
       "asset": "/audio/week33/exam_intro_S4.mp3",
@@ -593,7 +593,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2682
+      "duration_ms": 2497
     },
     {
       "asset": "/audio/week33/info_exchange_q1.mp3",
@@ -623,7 +623,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2363
+      "duration_ms": 2290
     },
     {
       "asset": "/audio/week33/info_exchange_q2.mp3",
@@ -653,7 +653,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2493
+      "duration_ms": 2293
     },
     {
       "asset": "/audio/week33/info_exchange_q3.mp3",
@@ -685,7 +685,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2448
+      "duration_ms": 2314
     },
     {
       "asset": "/audio/week33/info_exchange_q4.mp3",
@@ -715,7 +715,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2399
+      "duration_ms": 2311
     },
     {
       "asset": "/audio/week33/listening_p1_full.mp3",
@@ -757,7 +757,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 8527
+      "duration_ms": 8471
     },
     {
       "asset": "/audio/week33/listening_p2_full.mp3",
@@ -766,11 +766,11 @@
       "source_key": "listeningHub.listening_p2.dialogue_script",
       "category": "COMPOSITE_AUDIO",
       "part": "L2",
-      "canonical_transcript": "woman: Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day?\nman: Yes, of course! I am happy to help.\nwoman: Which classroom are you in this year?\nman: I am in Room 4B on the second floor.\nwoman: Can you see the answer? Now you listen and write.\nwoman: First, what is your favourite subject at school?\nman: I really love doing experiments with forces, so my favourite subject is Science.\nwoman: That sounds exciting! And where did the accident happen this morning?\nman: It happened while students were walking through the school corridor near the science room.\nwoman: How quickly did the school nurse arrive to help?\nman: She came running very quickly, in about 2 minutes.\nwoman: What did the nurse use to treat the injured knee?\nman: She cleaned the cut carefully and wrapped a clean bandage around his leg.\nwoman: Did Headmaster Brown say anything during the school assembly?\nman: Yes, he praised everyone for helping and gave me a shining safety badge!",
+      "canonical_transcript": "Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day? Yes, of course! I am happy to help. Which classroom are you in this year? I am in Room 4B on the second floor. Can you see the answer? Now you listen and write. First, what is your favourite subject at school? I really love doing experiments with forces, so my favourite subject is Science. That sounds exciting! And where did the accident happen this morning? It happened while students were walking through the school corridor near the science room. How quickly did the school nurse arrive to help? She came running very quickly, in about 2 minutes. What did the nurse use to treat the injured knee? She cleaned the cut carefully and wrapped a clean bandage around his leg. Did Headmaster Brown say anything during the school assembly? Yes, he praised everyone for helping and gave me a shining safety badge!",
       "actual_transcript": "Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day?\nYes, of course. I am happy to help. Which classroom are you in this year?\nI am in room 4B on the second floor.\nCan you see the answer? Now you listen and write.\nFirst, what is your favorite subject at school?\nI really love doing experiments with forces, so my favorite subject is science.\nThat sounds exciting, and where did the accident happen this morning?\nIt happened while students were walking through the school corridor near the science room.\nHow quickly did the school nurse arrive to help?\nShe came running very quickly in about two minutes.\nWhat did the nurse use to treat the injured knee?\nShe cleaned the cut carefully and wrapped a clean bandage around his leg.\nDid headmaster Brown say anything during the school assembly?\nYes, he praised everyone for helping and gave me a shining safety badge.",
-      "expected": "woman: Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day?\nman: Yes, of course! I am happy to help.\nwoman: Which classroom are you in this year?\nman: I am in Room 4B on the second floor.\nwoman: Can you see the answer? Now you listen and write.\nwoman: First, what is your favourite subject at school?\nman: I really love doing experiments with forces, so my favourite subject is Science.\nwoman: That sounds exciting! And where did the accident happen this morning?\nman: It happened while students were walking through the school corridor near the science room.\nwoman: How quickly did the school nurse arrive to help?\nman: She came running very quickly, in about 2 minutes.\nwoman: What did the nurse use to treat the injured knee?\nman: She cleaned the cut carefully and wrapped a clean bandage around his leg.\nwoman: Did Headmaster Brown say anything during the school assembly?\nman: Yes, he praised everyone for helping and gave me a shining safety badge!",
+      "expected": "Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day? Yes, of course! I am happy to help. Which classroom are you in this year? I am in Room 4B on the second floor. Can you see the answer? Now you listen and write. First, what is your favourite subject at school? I really love doing experiments with forces, so my favourite subject is Science. That sounds exciting! And where did the accident happen this morning? It happened while students were walking through the school corridor near the science room. How quickly did the school nurse arrive to help? She came running very quickly, in about 2 minutes. What did the nurse use to treat the injured knee? She cleaned the cut carefully and wrapped a clean bandage around his leg. Did Headmaster Brown say anything during the school assembly? Yes, he praised everyone for helping and gave me a shining safety badge!",
       "actual": "Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day?\nYes, of course. I am happy to help. Which classroom are you in this year?\nI am in room 4B on the second floor.\nCan you see the answer? Now you listen and write.\nFirst, what is your favorite subject at school?\nI really love doing experiments with forces, so my favorite subject is science.\nThat sounds exciting, and where did the accident happen this morning?\nIt happened while students were walking through the school corridor near the science room.\nHow quickly did the school nurse arrive to help?\nShe came running very quickly in about two minutes.\nWhat did the nurse use to treat the injured knee?\nShe cleaned the cut carefully and wrapped a clean bandage around his leg.\nDid headmaster Brown say anything during the school assembly?\nYes, he praised everyone for helping and gave me a shining safety badge.",
-      "similarity": 0.918,
+      "similarity": 1,
       "required_anchors": [
         "Jake",
         "Room 4B",
@@ -795,7 +795,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 7432
+      "duration_ms": 7030
     },
     {
       "asset": "/audio/week33/listening_p3_example.mp3",
@@ -823,7 +823,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 4527
+      "duration_ms": 4021
     },
     {
       "asset": "/audio/week33/listening_p3_full.mp3",
@@ -863,7 +863,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 10266
+      "duration_ms": 8169
     },
     {
       "asset": "/audio/week33/listening_p3_item1.mp3",
@@ -907,7 +907,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2930
+      "duration_ms": 2887
     },
     {
       "asset": "/audio/week33/listening_p3_item2.mp3",
@@ -947,7 +947,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2977
+      "duration_ms": 2899
     },
     {
       "asset": "/audio/week33/listening_p3_item3.mp3",
@@ -991,7 +991,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2876
+      "duration_ms": 2814
     },
     {
       "asset": "/audio/week33/listening_p3_item4.mp3",
@@ -1037,7 +1037,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 3065
+      "duration_ms": 2939
     },
     {
       "asset": "/audio/week33/listening_p3_item5.mp3",
@@ -1083,7 +1083,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 3096
+      "duration_ms": 2980
     },
     {
       "asset": "/audio/week33/listening_p4_example.mp3",
@@ -1111,7 +1111,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 3331
+      "duration_ms": 3100
     },
     {
       "asset": "/audio/week33/listening_p4_full.mp3",
@@ -1149,7 +1149,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 6621
+      "duration_ms": 6037
     },
     {
       "asset": "/audio/week33/listening_p4_q1.mp3",
@@ -1158,11 +1158,11 @@
       "source_key": "listeningHub.listening_p4.questions[1].dialogue_script",
       "category": "QUESTION_AUDIO",
       "part": "L4",
-      "canonical_transcript": "Question 1. Why was the floor slippery near the science room? Why was the floor slippery near the science room? The cleaner had just washed the tiles with water.",
+      "canonical_transcript": "Why was the floor slippery near the science room? The cleaner had just washed the tiles with water.",
       "actual_transcript": "Question 1. Why was the floor slippery near the science room?\nThe cleaner had just washed the tiles with water.",
-      "expected": "Question 1. Why was the floor slippery near the science room? Why was the floor slippery near the science room? The cleaner had just washed the tiles with water.",
+      "expected": "Why was the floor slippery near the science room? The cleaner had just washed the tiles with water.",
       "actual": "Question 1. Why was the floor slippery near the science room?\nThe cleaner had just washed the tiles with water.",
-      "similarity": 0.846,
+      "similarity": 0.891,
       "required_anchors": [
         "floor",
         "slippery",
@@ -1174,10 +1174,10 @@
         "science"
       ],
       "missing_anchors": [],
-      "classification": "MINOR_TRANSCRIPTION_VARIANCE",
-      "status": "MINOR_TRANSCRIPTION_VARIANCE",
+      "classification": "PASS",
+      "status": "PASS",
       "error": null,
-      "duration_ms": 2944
+      "duration_ms": 2659
     },
     {
       "asset": "/audio/week33/listening_p4_q2.mp3",
@@ -1186,11 +1186,11 @@
       "source_key": "listeningHub.listening_p4.questions[2].dialogue_script",
       "category": "QUESTION_AUDIO",
       "part": "L4",
-      "canonical_transcript": "Question 2. What happened when the boy ran fast? What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
+      "canonical_transcript": "What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
       "actual_transcript": "Question 2. What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
-      "expected": "Question 2. What happened when the boy ran fast? What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
+      "expected": "What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
       "actual": "Question 2. What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
-      "similarity": 0.862,
+      "similarity": 0.878,
       "required_anchors": [
         "happened"
       ],
@@ -1201,7 +1201,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2746
+      "duration_ms": 2635
     },
     {
       "asset": "/audio/week33/listening_p4_q3.mp3",
@@ -1210,11 +1210,11 @@
       "source_key": "listeningHub.listening_p4.questions[3].dialogue_script",
       "category": "QUESTION_AUDIO",
       "part": "L4",
-      "canonical_transcript": "Question 3. What did Jake do immediately? What did Jake do immediately? He ran to the nurse's room to call for help.",
+      "canonical_transcript": "What did Jake do immediately? He ran to the nurse's room to call for help.",
       "actual_transcript": "Question 3. What did Jake do immediately? He ran to the nurse room to call for help.",
-      "expected": "Question 3. What did Jake do immediately? What did Jake do immediately? He ran to the nurse's room to call for help.",
+      "expected": "What did Jake do immediately? He ran to the nurse's room to call for help.",
       "actual": "Question 3. What did Jake do immediately? He ran to the nurse room to call for help.",
-      "similarity": 0.847,
+      "similarity": 0.818,
       "required_anchors": [
         "immediately"
       ],
@@ -1225,7 +1225,7 @@
       "classification": "MINOR_TRANSCRIPTION_VARIANCE",
       "status": "MINOR_TRANSCRIPTION_VARIANCE",
       "error": null,
-      "duration_ms": 2621
+      "duration_ms": 2592
     },
     {
       "asset": "/audio/week33/listening_p4_q4.mp3",
@@ -1234,11 +1234,11 @@
       "source_key": "listeningHub.listening_p4.questions[4].dialogue_script",
       "category": "QUESTION_AUDIO",
       "part": "L4",
-      "canonical_transcript": "Question 4. What did the nurse use to treat the knee? What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
+      "canonical_transcript": "What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
       "actual_transcript": "Question 4. What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
-      "expected": "Question 4. What did the nurse use to treat the knee? What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
+      "expected": "What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
       "actual": "Question 4. What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
-      "similarity": 0.849,
+      "similarity": 0.876,
       "required_anchors": [
         "nurse",
         "treat"
@@ -1248,10 +1248,10 @@
         "treat"
       ],
       "missing_anchors": [],
-      "classification": "MINOR_TRANSCRIPTION_VARIANCE",
-      "status": "MINOR_TRANSCRIPTION_VARIANCE",
+      "classification": "PASS",
+      "status": "PASS",
       "error": null,
-      "duration_ms": 2765
+      "duration_ms": 2625
     },
     {
       "asset": "/audio/week33/listening_p4_q5.mp3",
@@ -1260,11 +1260,11 @@
       "source_key": "listeningHub.listening_p4.questions[5].dialogue_script",
       "category": "QUESTION_AUDIO",
       "part": "L4",
-      "canonical_transcript": "Question 5. What did the headmaster say during assembly? What did the headmaster say during assembly? He praised Jake for following safety habits.",
+      "canonical_transcript": "What did the headmaster say during assembly? He praised Jake for following safety habits.",
       "actual_transcript": "Question 5. What did the headmaster say during assembly? He praised Jake for following safety habits.",
-      "expected": "Question 5. What did the headmaster say during assembly? What did the headmaster say during assembly? He praised Jake for following safety habits.",
+      "expected": "What did the headmaster say during assembly? He praised Jake for following safety habits.",
       "actual": "Question 5. What did the headmaster say during assembly? He praised Jake for following safety habits.",
-      "similarity": 0.848,
+      "similarity": 0.868,
       "required_anchors": [
         "headmaster",
         "during",
@@ -1276,10 +1276,10 @@
         "assembly"
       ],
       "missing_anchors": [],
-      "classification": "MINOR_TRANSCRIPTION_VARIANCE",
-      "status": "MINOR_TRANSCRIPTION_VARIANCE",
+      "classification": "PASS",
+      "status": "PASS",
       "error": null,
-      "duration_ms": 2736
+      "duration_ms": 2586
     },
     {
       "asset": "/audio/week33/listening_p5_full.mp3",
@@ -1325,7 +1325,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 7488
+      "duration_ms": 7771
     },
     {
       "asset": "/audio/week33/listening_p5_inst1.mp3",
@@ -1334,24 +1334,26 @@
       "source_key": "listeningHub.listening_p5.instructions[1].text",
       "category": "INSTRUCTION_AUDIO",
       "part": "L5",
-      "canonical_transcript": "Color Jake's backpack blue.",
+      "canonical_transcript": "Color Jake's backpack blue",
       "actual_transcript": "Color Jakes Backpack Blue.",
-      "expected": "Color Jake's backpack blue.",
+      "expected": "Color Jake's backpack blue",
       "actual": "Color Jakes Backpack Blue.",
       "similarity": 1,
       "required_anchors": [
-        "backpack",
-        "blue"
+        "blue",
+        "jake",
+        "backpack"
       ],
       "detected_anchors": [
-        "backpack",
-        "blue"
+        "blue",
+        "jake",
+        "backpack"
       ],
       "missing_anchors": [],
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2263
+      "duration_ms": 2606
     },
     {
       "asset": "/audio/week33/listening_p5_inst2.mp3",
@@ -1360,28 +1362,24 @@
       "source_key": "listeningHub.listening_p5.instructions[2].text",
       "category": "INSTRUCTION_AUDIO",
       "part": "L5",
-      "canonical_transcript": "Write the word WET on the warning sign.",
+      "canonical_transcript": "Write the word 'WET' on the sign",
       "actual_transcript": "Write the word wet on the warning sign.",
-      "expected": "Write the word WET on the warning sign.",
+      "expected": "Write the word 'WET' on the sign",
       "actual": "Write the word wet on the warning sign.",
-      "similarity": 1,
+      "similarity": 0.832,
       "required_anchors": [
-        "write",
         "wet",
-        "warning",
         "sign"
       ],
       "detected_anchors": [
-        "write",
         "wet",
-        "warning",
         "sign"
       ],
       "missing_anchors": [],
-      "classification": "PASS",
-      "status": "PASS",
+      "classification": "MINOR_TRANSCRIPTION_VARIANCE",
+      "status": "MINOR_TRANSCRIPTION_VARIANCE",
       "error": null,
-      "duration_ms": 2343
+      "duration_ms": 2326
     },
     {
       "asset": "/audio/week33/listening_p5_inst3.mp3",
@@ -1390,30 +1388,28 @@
       "source_key": "listeningHub.listening_p5.instructions[3].text",
       "category": "INSTRUCTION_AUDIO",
       "part": "L5",
-      "canonical_transcript": "Color the science lab doorframe bright green.",
+      "canonical_transcript": "Color the door frame bright green",
       "actual_transcript": "Color the science lab doorframe bright green.",
-      "expected": "Color the science lab doorframe bright green.",
+      "expected": "Color the door frame bright green",
       "actual": "Color the science lab doorframe bright green.",
-      "similarity": 1,
+      "similarity": 0.721,
       "required_anchors": [
-        "color",
-        "science",
-        "lab",
-        "doorframe",
-        "green"
+        "green",
+        "door",
+        "frame",
+        "bright"
       ],
       "detected_anchors": [
-        "color",
-        "science",
-        "lab",
-        "doorframe",
-        "green"
+        "green",
+        "door",
+        "frame",
+        "bright"
       ],
       "missing_anchors": [],
-      "classification": "PASS",
-      "status": "PASS",
+      "classification": "MINOR_TRANSCRIPTION_VARIANCE",
+      "status": "MINOR_TRANSCRIPTION_VARIANCE",
       "error": null,
-      "duration_ms": 2360
+      "duration_ms": 2294
     },
     {
       "asset": "/audio/week33/listening_p5_inst4.mp3",
@@ -1422,28 +1418,24 @@
       "source_key": "listeningHub.listening_p5.instructions[4].text",
       "category": "INSTRUCTION_AUDIO",
       "part": "L5",
-      "canonical_transcript": "Write the word CARE on the notice board.",
+      "canonical_transcript": "Write the word 'CARE' on the board",
       "actual_transcript": "Write the word care on the notice board.",
-      "expected": "Write the word CARE on the notice board.",
+      "expected": "Write the word 'CARE' on the board",
       "actual": "Write the word care on the notice board.",
-      "similarity": 1,
+      "similarity": 0.85,
       "required_anchors": [
-        "write",
         "care",
-        "notice",
         "board"
       ],
       "detected_anchors": [
-        "write",
         "care",
-        "notice",
         "board"
       ],
       "missing_anchors": [],
-      "classification": "PASS",
-      "status": "PASS",
+      "classification": "MINOR_TRANSCRIPTION_VARIANCE",
+      "status": "MINOR_TRANSCRIPTION_VARIANCE",
       "error": null,
-      "duration_ms": 2329
+      "duration_ms": 2317
     },
     {
       "asset": "/audio/week33/listening_p5_inst5.mp3",
@@ -1452,28 +1444,28 @@
       "source_key": "listeningHub.listening_p5.instructions[5].text",
       "category": "INSTRUCTION_AUDIO",
       "part": "L5",
-      "canonical_transcript": "Color the nurse's room door red.",
+      "canonical_transcript": "Color the nurse's room door red",
       "actual_transcript": "Color the nurse room door red.",
-      "expected": "Color the nurse's room door red.",
+      "expected": "Color the nurse's room door red",
       "actual": "Color the nurse room door red.",
       "similarity": 0.9,
       "required_anchors": [
-        "color",
+        "red",
         "nurse",
-        "door",
-        "red"
+        "room",
+        "door"
       ],
       "detected_anchors": [
-        "color",
+        "red",
         "nurse",
-        "door",
-        "red"
+        "room",
+        "door"
       ],
       "missing_anchors": [],
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2469
+      "duration_ms": 2264
     },
     {
       "asset": "/audio/cambridge/flyers_replay_p1.mp3",
@@ -1503,7 +1495,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2427
+      "duration_ms": 2264
     },
     {
       "asset": "/audio/cambridge/flyers_end_p1.mp3",
@@ -1531,7 +1523,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2444
+      "duration_ms": 2292
     },
     {
       "asset": "/audio/cambridge/flyers_replay_p2.mp3",
@@ -1561,7 +1553,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2373
+      "duration_ms": 2236
     },
     {
       "asset": "/audio/cambridge/flyers_end_p2.mp3",
@@ -1589,7 +1581,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2340
+      "duration_ms": 2303
     },
     {
       "asset": "/audio/cambridge/flyers_replay_p3.mp3",
@@ -1619,7 +1611,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2323
+      "duration_ms": 2261
     },
     {
       "asset": "/audio/cambridge/flyers_end_p3.mp3",
@@ -1647,7 +1639,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2287
+      "duration_ms": 2293
     },
     {
       "asset": "/audio/cambridge/flyers_replay_p4.mp3",
@@ -1677,7 +1669,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2279
+      "duration_ms": 2277
     },
     {
       "asset": "/audio/cambridge/flyers_end_p4.mp3",
@@ -1705,7 +1697,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2444
+      "duration_ms": 2308
     },
     {
       "asset": "/audio/cambridge/flyers_replay_p5.mp3",
@@ -1735,7 +1727,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2645
+      "duration_ms": 2234
     },
     {
       "asset": "/audio/cambridge/flyers_end_p5.mp3",
@@ -1763,7 +1755,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2506
+      "duration_ms": 2325
     }
   ]
 }

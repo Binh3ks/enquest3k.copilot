@@ -180,7 +180,7 @@ async function buildManifest() {
   });
 
   // 9. Listening P2 Full
-  const p2Text = listHub.listening_p2.dialogue_script.map(d => `${d.speaker}: ${d.text}`).join('\n');
+  const p2Text = listHub.listening_p2.dialogue_script.map(d => d.text).join(' ');
   add({
     file: 'public/audio/week33/listening_p2_full.mp3',
     category: 'COMPOSITE_AUDIO',
@@ -267,7 +267,7 @@ async function buildManifest() {
       part: 'L4',
       source_file: 'src/data/weeks/week_33/listening_hub.js',
       source_key: `listeningHub.listening_p4.questions[${idx + 1}].dialogue_script`,
-      transcript: `Question ${idx + 1}. ${q.question_en} ${qText}`,
+      transcript: qText,
       transcript_provenance: 'SOURCE_DATA',
       required_anchors: q.question_en.replace(/[.,?]/g, '').split(' ').filter(w => w.length > 4),
       optional_anchors: []
@@ -287,15 +287,15 @@ async function buildManifest() {
     optional_anchors: ['corridor', 'lockers']
   });
 
-  const p5InstCanonical = [
-    { text: "Color Jake's backpack blue.", reqAnchors: ['backpack', 'blue'], optAnchors: ['Jake'] },
-    { text: "Write the word WET on the warning sign.", reqAnchors: ['write', 'wet', 'warning', 'sign'], optAnchors: [] },
-    { text: "Color the science lab doorframe bright green.", reqAnchors: ['color', 'science', 'lab', 'doorframe', 'green'], optAnchors: ['bright'] },
-    { text: "Write the word CARE on the notice board.", reqAnchors: ['write', 'care', 'notice', 'board'], optAnchors: [] },
-    { text: "Color the nurse's room door red.", reqAnchors: ['color', 'nurse', 'door', 'red'], optAnchors: [] }
-  ];
+  // Scored production instructions: inst_1 through inst_5 (inst_0 is example)
+  const scoredP5Instructions = listHub.listening_p5.instructions.filter(inst => !inst.isExample);
+  scoredP5Instructions.forEach((inst, idx) => {
+    const reqAnchors = [];
+    if (inst.color) reqAnchors.push(inst.color.toLowerCase());
+    if (inst.word) reqAnchors.push(inst.word.toLowerCase());
+    const textWords = inst.text.replace(/[^a-zA-Z]/g, ' ').split(/\s+/).filter(w => w.length > 3 && !['color', 'colour', 'write', 'word'].includes(w.toLowerCase()));
+    reqAnchors.push(...textWords.map(w => w.toLowerCase()));
 
-  p5InstCanonical.forEach((inst, idx) => {
     add({
       file: `public/audio/week33/listening_p5_inst${idx + 1}.mp3`,
       category: 'INSTRUCTION_AUDIO',
@@ -304,8 +304,8 @@ async function buildManifest() {
       source_key: `listeningHub.listening_p5.instructions[${idx + 1}].text`,
       transcript: inst.text,
       transcript_provenance: 'SOURCE_DATA',
-      required_anchors: inst.reqAnchors,
-      optional_anchors: inst.optAnchors
+      required_anchors: Array.from(new Set(reqAnchors)),
+      optional_anchors: []
     });
   });
 
@@ -335,9 +335,14 @@ async function buildManifest() {
     });
   }
 
-  const outputPath = path.join(rootDir, 'docs/W33_AUDIO_SEMANTIC_MANIFEST.json');
-  fs.writeFileSync(outputPath, JSON.stringify(manifest, null, 2));
-  console.log(`✅ Generated canonical audio semantic manifest: ${outputPath} (${manifest.assets.length} assets)`);
+  const auditDir = path.join(rootDir, 'docs/audit/w33');
+  fs.mkdirSync(auditDir, { recursive: true });
+  const outputPathAudit = path.join(auditDir, 'W33_AUDIO_SEMANTIC_MANIFEST.json');
+  const outputPathLegacy = path.join(rootDir, 'docs/W33_AUDIO_SEMANTIC_MANIFEST.json');
+  const manifestJson = JSON.stringify(manifest, null, 2);
+  fs.writeFileSync(outputPathAudit, manifestJson);
+  fs.writeFileSync(outputPathLegacy, manifestJson);
+  console.log(`✅ Generated canonical audio semantic manifest: ${outputPathAudit} (${manifest.assets.length} assets)`);
 }
 
 buildManifest().catch(err => {
