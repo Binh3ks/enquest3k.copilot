@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-08-30T09:31:29.277Z",
+  "governing_standard": "W33 Golden Learning & Assessment Standard v1.0",
+  "total_findings": 4,
+  "findings": [
+    {
+      "id": "AUDIT-FINDING-GEN-SPLIT",
+      "title": "Audio Generator Fragmentation & Stale Generation Task Defect",
+      "severity": "HIGH",
+      "category": "GOVERNANCE & GENERATOR INTEGRITY",
+      "status": "DISCOVERED",
+      "affected_files": [
+        "tools/generate_w33_all_audio.mjs",
+        "scripts/regenerate_w33_listening_audio.mjs",
+        "scripts/regenerate_w33_stale_audio.mjs"
+      ],
+      "root_cause": "tools/generate_w33_all_audio.mjs contains obsolete single-voice listening tasks with incorrect text (e.g. orange warning sign in P5 inst1, paragraph summary in P2 full). Running generate_w33_all_audio.mjs would overwrite the multi-voice audio produced by regenerate_w33_listening_audio.mjs with stale content.",
+      "impact": "Accidental invocation of tools/generate_w33_all_audio.mjs destroys Cambridge multi-voice compliance and introduces stale spoken text.",
+      "required_fix": "Deprecate/consolidate tools/generate_w33_all_audio.mjs into a single authoritative universal pipeline referencing 100% hub source data."
+    },
+    {
+      "id": "AUDIT-FINDING-MANIFEST-DECOUPLING",
+      "title": "Manifest Rebuild Decoupled from Validator Execution Gate",
+      "severity": "MEDIUM",
+      "category": "AUDIT HARNESS INTEGRITY",
+      "status": "DISCOVERED",
+      "affected_files": [
+        "scripts/whisper_audio_semantic_validator.mjs",
+        "scripts/build_w33_audio_manifest.mjs",
+        "package.json"
+      ],
+      "root_cause": "npm run audit:audio:semantic executes whisper_audio_semantic_validator.mjs directly without forcing build_w33_audio_manifest.mjs first.",
+      "impact": "If source content in listening_hub.js changes, running audit:audio:semantic alone validates against stale manifest on disk rather than live source code.",
+      "required_fix": "Prepend manifest rebuild or assert source-manifest hash identity at the start of whisper_audio_semantic_validator.mjs."
+    },
+    {
+      "id": "AUDIT-FINDING-P3-CONCAT-HASH",
+      "title": "Listening Part 3 & 4 Full Audio Assembled by Raw Buffer Concatenation",
+      "severity": "LOW",
+      "category": "AUDIO ASSET ENCODING",
+      "status": "DISCOVERED",
+      "affected_files": [
+        "scripts/regenerate_w33_listening_audio.mjs",
+        "public/audio/week33/listening_p3_full.mp3",
+        "public/audio/week33/listening_p4_full.mp3"
+      ],
+      "root_cause": "regenerate_w33_listening_audio.mjs concatenates MP3 frame buffers via Buffer.concat(l3Bufs) without ffmpeg re-muxing or inter-turn silence headers.",
+      "impact": "While decodable by browser HTML5 Audio and Whisper, buffer concatenation can introduce minor timestamp discontinuities across legacy MP3 decoders.",
+      "required_fix": "Use ffmpeg or silence-padded MP3 concatenation utility."
+    },
+    {
+      "id": "AUDIT-FINDING-RUNTIME-DISCOVERY-REPORT-TTS",
+      "title": "Day 2 Discovery Report & Day 4 Video Challenge Audio Independence",
+      "severity": "INFO",
+      "category": "RUNTIME BINDING",
+      "status": "DISCOVERED",
+      "affected_files": [
+        "src/modules/science_report/DiscoveryReportModal.jsx",
+        "src/modules/broadcast/BroadcastStudioModal.jsx"
+      ],
+      "root_cause": "Student interactive speaking stations (Discovery Report, Story Writer P7, Video Challenge) record student mic audio rather than loading static pre-recorded MP3s.",
+      "impact": "Zero regression risk; these stations do not depend on static corpus MP3s.",
+      "required_fix": "None required (by design)."
+    }
+  ]
+}
