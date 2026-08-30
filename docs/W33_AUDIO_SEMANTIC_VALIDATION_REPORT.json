@@ -1,934 +1,1489 @@
 {
+  "week": 33,
+  "version": "1.0",
+  "timestamp": "2026-08-30T06:53:21.445Z",
+  "whisper_executable": "/Library/Frameworks/Python.framework/Versions/3.11/bin/whisper",
   "summary": {
-    "totalAssets": 54,
-    "passed": 54,
-    "minorVariance": 0,
-    "failed": 0,
-    "overall": "PASS",
-    "timestamp": "2026-08-30T01:26:02.270Z"
+    "total": 54,
+    "passed": 50,
+    "minor_transcription_variance": 4,
+    "semantic_mismatch": 0,
+    "no_transcript": 0,
+    "missing_asset": 0,
+    "no_canonical_transcript": 0,
+    "blocked": 0,
+    "verdict": "PASS"
   },
   "results": [
     {
-      "asset": "public/audio/week33/clil_friction.mp3",
-      "category": "CLIL_ARTICLE",
-      "provenance": "SOURCE_DATA",
-      "expected": "Why do people slip on wet floors? The answer is a science force called friction. Friction is the grip between two surfaces that stops things from sliding. When a student walks on dry tiles, shoe soles grip the floor firmly and the student stays balanced. But water on smooth tiles creates a thin slippery layer. This water layer reduces friction, so shoes slide easily.\n\nThis morning in our school corridor, Jake was walking carefully while the cleaner was drying the floor. Tom was running quickly to class, so he slipped on the wet tiles. Rubber soles provide strong grip because rubber holds surfaces better than plastic. Yellow warning signs remind students to walk slowly. Understanding friction keeps everyone safe!",
-      "actual": "Why do people slip on wet floors?\nThe answer is a science force called friction.\nFriction is the grip between two surfaces\nthat stop things from sliding.\nWhen a student walks on dry tiles,\nshoe souls grip the floor firmly,\nand the student stays balanced.\nBut water on smooth tiles creates a thin slippery layer.\nThis water layer reduces friction\nso shoes slide easily.\nThis morning in our school corridor,\nJake was walking carefully\nwhile the cleaner was drying the floor.\nTom was running quickly to class,\nso he slipped on the wet tiles.\nRubber souls provide strong grip,\nbecause rubber holds surfaces better than plastic.\nYellow warning signs remind students to walk slowly.\nUnderstanding friction keeps everyone safe.",
-      "score": 0.9838488586924131,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 8,
-        "total": 9,
-        "ratio": 0.8888888888888888,
-        "missing": [
-          "rubber soles"
-        ]
-      },
-      "durationMs": 7233
+      "file": "public/audio/week33/clil_friction.mp3",
+      "source_file": "src/data/weeks/week_33/reading_hub.js",
+      "source_path": "clil_article.content_en",
+      "source_type": "source_data",
+      "category": "SOURCE_DATA_AUDIO",
+      "part": "CLIL",
+      "canonical_transcript": "Why do people slip on wet floors? The answer is a science force called friction. Friction is the grip between two surfaces that stops things from sliding. When a student walks on dry tiles, shoe soles grip the floor firmly and the student stays balanced. But water on smooth tiles creates a thin slippery layer. This water layer reduces friction, so shoes slide easily.\n\nThis morning in our school corridor, Jake was walking carefully while the cleaner was drying the floor. Tom was running quickly to class, so he slipped on the wet tiles. Rubber soles provide strong grip because rubber holds surfaces better than plastic. Yellow warning signs remind students to walk slowly. Understanding friction keeps everyone safe!",
+      "whisper_transcript": "Why do people slip on wet floors?\nThe answer is a science force called friction.\nFriction is the grip between two surfaces\nthat stop things from sliding.\nWhen a student walks on dry tiles,\nshoe souls grip the floor firmly,\nand the student stays balanced.\nBut water on smooth tiles creates a thin slippery layer.\nThis water layer reduces friction\nso shoes slide easily.\nThis morning in our school corridor,\nJake was walking carefully\nwhile the cleaner was drying the floor.\nTom was running quickly to class,\nso he slipped on the wet tiles.\nRubber souls provide strong grip,\nbecause rubber holds surfaces better than plastic.\nYellow warning signs remind students to walk slowly.\nUnderstanding friction keeps everyone safe.",
+      "similarity": 0.984,
+      "anchors_required": [
+        "friction",
+        "slip",
+        "wet floors",
+        "tiles",
+        "rubber soles",
+        "corridor",
+        "Jake",
+        "Tom",
+        "warning signs"
+      ],
+      "anchors_found": [
+        "friction",
+        "slip",
+        "wet floors",
+        "tiles",
+        "corridor",
+        "Jake",
+        "Tom",
+        "warning signs"
+      ],
+      "classification": "PASS",
+      "duration_ms": 3535
     },
     {
-      "asset": "public/audio/week33/read_stem.mp3",
-      "category": "STEM_STORY",
-      "provenance": "SOURCE_DATA",
-      "expected": "Jake was walking carefully down the school corridor after science class. Suddenly, a boy running fast slipped on the wet floor and fell down heavily. He hurt his knee and lost his balance completely. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. She explained that wet floors have low friction. Everyone felt relieved and praised Jake for following safety rules. The headmaster reminded all students never to run in corridors and always watch for yellow warning signs.",
-      "actual": "Jake was walking carefully down the school corridor after science class. Suddenly, a boy running\nfast slipped on the wet floor and fell down heavily. He hurt his knee and lost his balance\ncompletely. Jake stopped immediately to help his friends stay calm. He called the school nurse\nright away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut.\nShe explained that wet floors have low friction. Everyone felt relieved and praised Jake for\nfollowing safety rules. The headmaster reminded all students never to run in corridors and always\nwatch for yellow warning signs.",
-      "score": 0.9941991648144406,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 9,
-        "total": 9,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 5394
+      "file": "public/audio/week33/read_stem.mp3",
+      "source_file": "src/data/weeks/week_33/read.js",
+      "source_path": "text_en",
+      "source_type": "source_data",
+      "category": "SOURCE_DATA_AUDIO",
+      "part": "STORY",
+      "canonical_transcript": "Jake was walking carefully down the school corridor after science class. Suddenly, a boy running fast slipped on the wet floor and fell down heavily. He hurt his knee and lost his balance completely. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. She explained that wet floors have low friction. Everyone felt relieved and praised Jake for following safety rules. The headmaster reminded all students never to run in corridors and always watch for yellow warning signs.",
+      "whisper_transcript": "Jake was walking carefully down the school corridor after science class. Suddenly, a boy running\nfast slipped on the wet floor and fell down heavily. He hurt his knee and lost his balance\ncompletely. Jake stopped immediately to help his friends stay calm. He called the school nurse\nright away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut.\nShe explained that wet floors have low friction. Everyone felt relieved and praised Jake for\nfollowing safety rules. The headmaster reminded all students never to run in corridors and always\nwatch for yellow warning signs.",
+      "similarity": 0.994,
+      "anchors_required": [
+        "Jake",
+        "corridor",
+        "science class",
+        "slipped",
+        "wet floor",
+        "nurse",
+        "bandage",
+        "friction",
+        "warning signs"
+      ],
+      "anchors_found": [
+        "Jake",
+        "corridor",
+        "science class",
+        "slipped",
+        "wet floor",
+        "nurse",
+        "bandage",
+        "friction",
+        "warning signs"
+      ],
+      "classification": "PASS",
+      "duration_ms": 2877
     },
     {
-      "asset": "public/audio/week33/read_social.mp3",
-      "category": "SOCIAL_STORY",
-      "provenance": "SOURCE_DATA",
-      "expected": "School safety rules help protect every student each day. In ancient schools and modern academies, following rules creates a peaceful environment. When students walk calmly in hallways, accidents do not happen. Helping an injured friend shows kindness and responsibility. Good citizens always care for others.",
-      "actual": "School safety rules help protect every student each day.\nIn ancient schools and modern academies, following rules creates a peaceful environment\nwhen students walk calmly and hallways, accidents do not happen.\nHelping an injured friend shows kindness and responsibility.\nGood citizens always care for others.",
-      "score": 0.9966887417218543,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 8,
-        "total": 8,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 3558
+      "file": "public/audio/week33/read_social.mp3",
+      "source_file": "tools/generate_w33_all_audio.mjs",
+      "source_path": "STATIC_AUDIO_TASKS[read_social.mp3]",
+      "source_type": "source_data",
+      "category": "SOURCE_DATA_AUDIO",
+      "part": "STORY",
+      "canonical_transcript": "School safety rules help protect every student each day. In ancient schools and modern academies, following rules creates a peaceful environment. When students walk calmly in hallways, accidents do not happen. Helping an injured friend shows kindness and responsibility. Good citizens always care for others.",
+      "whisper_transcript": "School safety rules help protect every student each day.\nIn ancient schools and modern academies, following rules creates a peaceful environment\nwhen students walk calmly and hallways, accidents do not happen.\nHelping an injured friend shows kindness and responsibility.\nGood citizens always care for others.",
+      "similarity": 0.997,
+      "anchors_required": [
+        "safety rules",
+        "protect",
+        "student",
+        "peaceful environment",
+        "hallways",
+        "accidents",
+        "kindness",
+        "responsibility"
+      ],
+      "anchors_found": [
+        "safety rules",
+        "protect",
+        "student",
+        "peaceful environment",
+        "hallways",
+        "accidents",
+        "kindness",
+        "responsibility"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1961
     },
     {
-      "asset": "public/audio/week33/explore.mp3",
-      "category": "KNOWLEDGE_EXPLORER",
-      "provenance": "SOURCE_DATA",
-      "expected": "Have you ever slipped on a wet floor? There is a science reason for this. When a floor is dry, your shoes grip the tiles. This grip is called friction. Friction is a force that keeps your feet from sliding. When water covers the tiles, the friction between your shoes and the floor becomes very low. Your feet slide easily and you can fall. That is exactly what happened to the boy in Jake's school corridor. The cleaner had just washed the tiles. The floor looked clean, but it was very slippery. In schools around the world, yellow warning signs are placed on wet floors to remind students to walk slowly. In Japan, school corridors have special non-slip tiles to increase friction even when wet. In Australia, rubber mats are placed near water fountains to keep the floor safe. Understanding friction helps us design safer schools for everyone.",
-      "actual": "Have you ever slipped on a wet floor? There is a science reason for this.\nWhen a floor is dry, your shoes grip the tiles.\nThis grip is called friction.\nFriction is a force that keeps your feet from sliding.\nWhen water covers the tiles, the friction between your shoes and the floor becomes very low.\nYour feet slide easily, and you can fall.\nThat is exactly what happened to the boy in Jake's school corridor.\nThe cleaner had just washed the tiles.\nThe floor slipped clean, but it was very slippery.\nIn schools around the world, yellow warning signs are placed on wet floors to remind students to walk slowly.\nIn Japan, school corridors have special non-slip tiles to increase friction even when wet.\nIn Australia, rubber mats are placed near water fountains to keep the floor safe.\nUnderstanding friction helps us design safer schools for everyone.",
-      "score": 0.9942259156164028,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 9,
-        "total": 9,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 6698
+      "file": "public/audio/week33/explore.mp3",
+      "source_file": "src/data/weeks/week_33/explore.js",
+      "source_path": "content_en",
+      "source_type": "source_data",
+      "category": "SOURCE_DATA_AUDIO",
+      "part": "EXPLORE",
+      "canonical_transcript": "Have you ever slipped on a wet floor? There is a science reason for this. When a floor is dry, your shoes grip the tiles. This grip is called friction. Friction is a force that keeps your feet from sliding. When water covers the tiles, the friction between your shoes and the floor becomes very low. Your feet slide easily and you can fall. That is exactly what happened to the boy in Jake's school corridor. The cleaner had just washed the tiles. The floor looked clean, but it was very slippery. In schools around the world, yellow warning signs are placed on wet floors to remind students to walk slowly. In Japan, school corridors have special non-slip tiles to increase friction even when wet. In Australia, rubber mats are placed near water fountains to keep the floor safe. Understanding friction helps us design safer schools for everyone.",
+      "whisper_transcript": "Have you ever slipped on a wet floor? There is a science reason for this.\nWhen a floor is dry, your shoes grip the tiles.\nThis grip is called friction.\nFriction is a force that keeps your feet from sliding.\nWhen water covers the tiles, the friction between your shoes and the floor becomes very low.\nYour feet slide easily, and you can fall.\nThat is exactly what happened to the boy in Jake's school corridor.\nThe cleaner had just washed the tiles.\nThe floor slipped clean, but it was very slippery.\nIn schools around the world, yellow warning signs are placed on wet floors to remind students to walk slowly.\nIn Japan, school corridors have special non-slip tiles to increase friction even when wet.\nIn Australia, rubber mats are placed near water fountains to keep the floor safe.\nUnderstanding friction helps us design safer schools for everyone.",
+      "similarity": 0.994,
+      "anchors_required": [
+        "slipped",
+        "wet floor",
+        "friction",
+        "tiles",
+        "Jake",
+        "corridor",
+        "warning signs",
+        "Japan",
+        "Australia"
+      ],
+      "anchors_found": [
+        "slipped",
+        "wet floor",
+        "friction",
+        "tiles",
+        "Jake",
+        "corridor",
+        "warning signs",
+        "Japan",
+        "Australia"
+      ],
+      "classification": "PASS",
+      "duration_ms": 3796
     },
     {
-      "asset": "public/audio/week33/dictation_1.mp3",
-      "category": "DICTATION",
-      "provenance": "SOURCE_DATA",
-      "expected": "Jake was walking carefully down the corridor.",
-      "actual": "Jake was walking carefully down the corridor.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 5,
-        "total": 5,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2493
+      "file": "public/audio/week33/dictation_1.mp3",
+      "source_file": "src/data/weeks/week_33/skill_practice_hub.js",
+      "source_path": "skillPracticeHub.dictation[0].text",
+      "source_type": "source_data",
+      "category": "SOURCE_DATA_AUDIO",
+      "part": "DICTATION",
+      "canonical_transcript": "Jake was walking carefully down the corridor.",
+      "whisper_transcript": "Jake was walking carefully down the corridor.",
+      "similarity": 1,
+      "anchors_required": [
+        "Jake",
+        "walking",
+        "carefully",
+        "down",
+        "corridor"
+      ],
+      "anchors_found": [
+        "Jake",
+        "walking",
+        "carefully",
+        "down",
+        "corridor"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1243
     },
     {
-      "asset": "public/audio/week33/dictation_2.mp3",
-      "category": "DICTATION",
-      "provenance": "SOURCE_DATA",
-      "expected": "A boy ran fast and slipped on the wet floor.",
-      "actual": "A boy ran fast and slipped on the wet floor.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2625
+      "file": "public/audio/week33/dictation_2.mp3",
+      "source_file": "src/data/weeks/week_33/skill_practice_hub.js",
+      "source_path": "skillPracticeHub.dictation[1].text",
+      "source_type": "source_data",
+      "category": "SOURCE_DATA_AUDIO",
+      "part": "DICTATION",
+      "canonical_transcript": "A boy ran fast and slipped on the wet floor.",
+      "whisper_transcript": "A boy ran fast and slipped on the wet floor.",
+      "similarity": 1,
+      "anchors_required": [
+        "fast",
+        "slipped",
+        "floor"
+      ],
+      "anchors_found": [
+        "fast",
+        "slipped",
+        "floor"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1324
     },
     {
-      "asset": "public/audio/week33/dictation_3.mp3",
-      "category": "DICTATION",
-      "provenance": "SOURCE_DATA",
-      "expected": "Jake stopped immediately to help his classmate.",
-      "actual": "Jake stopped immediately to help his classmate.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 5,
-        "total": 5,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2339
+      "file": "public/audio/week33/dictation_3.mp3",
+      "source_file": "src/data/weeks/week_33/skill_practice_hub.js",
+      "source_path": "skillPracticeHub.dictation[2].text",
+      "source_type": "source_data",
+      "category": "SOURCE_DATA_AUDIO",
+      "part": "DICTATION",
+      "canonical_transcript": "Jake stopped immediately to help his classmate.",
+      "whisper_transcript": "Jake stopped immediately to help his classmate.",
+      "similarity": 1,
+      "anchors_required": [
+        "Jake",
+        "stopped",
+        "immediately",
+        "help",
+        "classmate"
+      ],
+      "anchors_found": [
+        "Jake",
+        "stopped",
+        "immediately",
+        "help",
+        "classmate"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1209
     },
     {
-      "asset": "public/audio/week33/dictation_4.mp3",
-      "category": "DICTATION",
-      "provenance": "SOURCE_DATA",
-      "expected": "The school nurse arrived quickly with a bandage.",
-      "actual": "The school nurse arrived quickly with a bandage.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 6,
-        "total": 6,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2338
+      "file": "public/audio/week33/dictation_4.mp3",
+      "source_file": "src/data/weeks/week_33/skill_practice_hub.js",
+      "source_path": "skillPracticeHub.dictation[3].text",
+      "source_type": "source_data",
+      "category": "SOURCE_DATA_AUDIO",
+      "part": "DICTATION",
+      "canonical_transcript": "The school nurse arrived quickly with a bandage.",
+      "whisper_transcript": "The school nurse arrived quickly with a bandage.",
+      "similarity": 1,
+      "anchors_required": [
+        "school",
+        "nurse",
+        "arrived",
+        "quickly",
+        "with",
+        "bandage"
+      ],
+      "anchors_found": [
+        "school",
+        "nurse",
+        "arrived",
+        "quickly",
+        "with",
+        "bandage"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1228
     },
     {
-      "asset": "public/audio/week33/dictation_5.mp3",
-      "category": "DICTATION",
-      "provenance": "SOURCE_DATA",
-      "expected": "Everyone felt relieved and followed safety rules.",
-      "actual": "Everyone felt relieved and followed safety rules.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 6,
-        "total": 6,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2329
+      "file": "public/audio/week33/dictation_5.mp3",
+      "source_file": "src/data/weeks/week_33/skill_practice_hub.js",
+      "source_path": "skillPracticeHub.dictation[4].text",
+      "source_type": "source_data",
+      "category": "SOURCE_DATA_AUDIO",
+      "part": "DICTATION",
+      "canonical_transcript": "Everyone felt relieved and followed safety rules.",
+      "whisper_transcript": "Everyone felt relieved and followed safety rules.",
+      "similarity": 1,
+      "anchors_required": [
+        "Everyone",
+        "felt",
+        "relieved",
+        "followed",
+        "safety",
+        "rules"
+      ],
+      "anchors_found": [
+        "Everyone",
+        "felt",
+        "relieved",
+        "followed",
+        "safety",
+        "rules"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1176
     },
     {
-      "asset": "public/audio/week33/exam_intro_L1.mp3",
-      "category": "EXAM_RUBRIC",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Listen and draw lines. There is one example.",
-      "actual": "Listen and draw lines.\nThere is one example.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 2,
-        "total": 2,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2378
+      "file": "public/audio/week33/exam_intro_L1.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.exam_intro_L1",
+      "source_type": "cambridge_blueprint",
+      "category": "CAMBRIDGE_STANDARD_AUDIO",
+      "part": "L1",
+      "canonical_transcript": "Listen and draw lines. There is one example.",
+      "whisper_transcript": "Listen and draw lines.\nThere is one example.",
+      "similarity": 1,
+      "anchors_required": [
+        "draw lines",
+        "example"
+      ],
+      "anchors_found": [
+        "draw lines",
+        "example"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1234
     },
     {
-      "asset": "public/audio/week33/exam_intro_L2.mp3",
-      "category": "EXAM_RUBRIC",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Listen and write. There is one example.",
-      "actual": "Listen and write. There is one example.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2350
+      "file": "public/audio/week33/exam_intro_L2.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.exam_intro_L2",
+      "source_type": "cambridge_blueprint",
+      "category": "CAMBRIDGE_STANDARD_AUDIO",
+      "part": "L2",
+      "canonical_transcript": "Listen and write. There is one example.",
+      "whisper_transcript": "Listen and write. There is one example.",
+      "similarity": 1,
+      "anchors_required": [
+        "listen",
+        "write",
+        "example"
+      ],
+      "anchors_found": [
+        "listen",
+        "write",
+        "example"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1184
     },
     {
-      "asset": "public/audio/week33/exam_intro_L3.mp3",
-      "category": "EXAM_RUBRIC",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Listen and write a letter in each box. There is one example.",
-      "actual": "Listen and write a letter in each box.\nThere is one example.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2468
+      "file": "public/audio/week33/exam_intro_L3.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.exam_intro_L3",
+      "source_type": "cambridge_blueprint",
+      "category": "CAMBRIDGE_STANDARD_AUDIO",
+      "part": "L3",
+      "canonical_transcript": "Listen and write a letter in each box. There is one example.",
+      "whisper_transcript": "Listen and write a letter in each box.\nThere is one example.",
+      "similarity": 1,
+      "anchors_required": [
+        "letter",
+        "box",
+        "example"
+      ],
+      "anchors_found": [
+        "letter",
+        "box",
+        "example"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1403
     },
     {
-      "asset": "public/audio/week33/exam_intro_L4.mp3",
-      "category": "EXAM_RUBRIC",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Listen and tick the box. There is one example.",
-      "actual": "Listen and tick the box. There is one example.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2362
+      "file": "public/audio/week33/exam_intro_L4.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.exam_intro_L4",
+      "source_type": "cambridge_blueprint",
+      "category": "CAMBRIDGE_STANDARD_AUDIO",
+      "part": "L4",
+      "canonical_transcript": "Listen and tick the box. There is one example.",
+      "whisper_transcript": "Listen and tick the box. There is one example.",
+      "similarity": 1,
+      "anchors_required": [
+        "tick",
+        "box",
+        "example"
+      ],
+      "anchors_found": [
+        "tick",
+        "box",
+        "example"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1201
     },
     {
-      "asset": "public/audio/week33/exam_intro_L5.mp3",
-      "category": "EXAM_RUBRIC",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Listen and colour and write. There is one example.",
-      "actual": "Listen and color and right. There's one example.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2381
+      "file": "public/audio/week33/exam_intro_L5.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.exam_intro_L5",
+      "source_type": "cambridge_blueprint",
+      "category": "CAMBRIDGE_STANDARD_AUDIO",
+      "part": "L5",
+      "canonical_transcript": "Listen and colour and write. There is one example.",
+      "whisper_transcript": "Listen and color and right. There's one example.",
+      "similarity": 1,
+      "anchors_required": [
+        "colour",
+        "write",
+        "example"
+      ],
+      "anchors_found": [
+        "colour",
+        "write",
+        "example"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1226
     },
     {
-      "asset": "public/audio/week33/exam_intro_S1.mp3",
-      "category": "EXAM_RUBRIC",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Look at the two pictures. They are the same, but there are some differences. Tell me about the differences.",
-      "actual": "Look at the two pictures.\nThey are the same, but there are some differences.\nTell me the differences.",
-      "score": 0.9445579969340827,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 2,
-        "total": 2,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2692
+      "file": "public/audio/week33/exam_intro_S1.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.exam_intro_S1",
+      "source_type": "cambridge_blueprint",
+      "category": "CAMBRIDGE_STANDARD_AUDIO",
+      "part": "S1",
+      "canonical_transcript": "Look at the two pictures. They are the same, but there are some differences. Tell me about the differences.",
+      "whisper_transcript": "Look at the two pictures.\nThey are the same, but there are some differences.\nTell me the differences.",
+      "similarity": 0.945,
+      "anchors_required": [
+        "pictures",
+        "differences"
+      ],
+      "anchors_found": [
+        "pictures",
+        "differences"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1386
     },
     {
-      "asset": "public/audio/week33/exam_intro_S2.mp3",
-      "category": "EXAM_RUBRIC",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Now I'd like you to ask and answer some questions about the school accident. I have a card with some information and so do you. Let's start. I'll ask you first. Where did the accident happen exactly? It happened in the school corridor near the science room. Good. And which part of Tom's body was hurt? He hurt his right knee. It was quite swollen. Right. Now it's your turn. Ask me about Jake's information on your card. Okay. What first aid item did Jake use to help Tom? Jake used a clean bandage and a cold pack to treat Tom's knee. And who praised Jake afterwards? The headmaster praised Jake in the school assembly. He was very proud of him.",
-      "actual": "Now I'd like you to ask and answer some questions about the school accident.\nI have a card with some information and so do you.\nLet's start.\nI'll ask you first.\nWhere did the accident happen exactly?\nIt happened in the school corridor near the science room.\nGood.\nAnd which part of Tom's body was hurt?\nHe hurt his right knee.\nIt was quite swollen.\nRight.\nNow it's your turn.\nAsk me about Jake's information on your card.\nOkay.\nWhat first aid item did Jake use to help Tom?\nJake used a clean bandage and a cold pack to treat Tom's knee.\nAnd who praised Jake afterwards?\nThe headmaster praised Jake in the school assembly.\nHe was very proud of him.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 7,
-        "total": 7,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 6126
+      "file": "public/audio/week33/exam_intro_S2.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.exam_intro_S2",
+      "source_type": "cambridge_blueprint",
+      "category": "CAMBRIDGE_STANDARD_AUDIO",
+      "part": "S2",
+      "canonical_transcript": "Now I'd like you to ask and answer some questions about the school accident. I have a card with some information and so do you. Let's start. I'll ask you first. Where did the accident happen exactly? It happened in the school corridor near the science room. Good. And which part of Tom's body was hurt? He hurt his right knee. It was quite swollen. Right. Now it's your turn. Ask me about Jake's information on your card. Okay. What first aid item did Jake use to help Tom? Jake used a clean bandage and a cold pack to treat Tom's knee. And who praised Jake afterwards? The headmaster praised Jake in the school assembly. He was very proud of him.",
+      "whisper_transcript": "Now I'd like you to ask and answer some questions about the school accident.\nI have a card with some information and so do you.\nLet's start.\nI'll ask you first.\nWhere did the accident happen exactly?\nIt happened in the school corridor near the science room.\nGood.\nAnd which part of Tom's body was hurt?\nHe hurt his right knee.\nIt was quite swollen.\nRight.\nNow it's your turn.\nAsk me about Jake's information on your card.\nOkay.\nWhat first aid item did Jake use to help Tom?\nJake used a clean bandage and a cold pack to treat Tom's knee.\nAnd who praised Jake afterwards?\nThe headmaster praised Jake in the school assembly.\nHe was very proud of him.",
+      "similarity": 1,
+      "anchors_required": [
+        "questions",
+        "school accident",
+        "corridor",
+        "science room",
+        "knee",
+        "clean bandage",
+        "headmaster"
+      ],
+      "anchors_found": [
+        "questions",
+        "school accident",
+        "corridor",
+        "science room",
+        "knee",
+        "clean bandage",
+        "headmaster"
+      ],
+      "classification": "PASS",
+      "duration_ms": 3332
     },
     {
-      "asset": "public/audio/week33/exam_intro_S3.mp3",
-      "category": "EXAM_RUBRIC",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Look at the pictures. They tell a story. Look at the pictures first and tell the story.",
-      "actual": "Look at the pictures they tell a story.\nLook at the pictures first and tell the story.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 2,
-        "total": 2,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2591
+      "file": "public/audio/week33/exam_intro_S3.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.exam_intro_S3",
+      "source_type": "cambridge_blueprint",
+      "category": "CAMBRIDGE_STANDARD_AUDIO",
+      "part": "S3",
+      "canonical_transcript": "Look at the pictures. They tell a story. Look at the pictures first and tell the story.",
+      "whisper_transcript": "Look at the pictures they tell a story.\nLook at the pictures first and tell the story.",
+      "similarity": 1,
+      "anchors_required": [
+        "pictures",
+        "story"
+      ],
+      "anchors_found": [
+        "pictures",
+        "story"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1321
     },
     {
-      "asset": "public/audio/week33/exam_intro_S4.mp3",
-      "category": "EXAM_RUBRIC",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Now let's talk about you and your daily life. Answer the questions.",
-      "actual": "Now let's talk about you and your daily life.\nAnswer the questions.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2541
+      "file": "public/audio/week33/exam_intro_S4.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.exam_intro_S4",
+      "source_type": "cambridge_blueprint",
+      "category": "CAMBRIDGE_STANDARD_AUDIO",
+      "part": "S4",
+      "canonical_transcript": "Now let's talk about you and your daily life. Answer the questions.",
+      "whisper_transcript": "Now let's talk about you and your daily life.\nAnswer the questions.",
+      "similarity": 1,
+      "anchors_required": [
+        "talk",
+        "daily life",
+        "questions"
+      ],
+      "anchors_found": [
+        "talk",
+        "daily life",
+        "questions"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1280
     },
     {
-      "asset": "public/audio/week33/info_exchange_q1.mp3",
-      "category": "SPEAKING_P2",
-      "provenance": "SOURCE_DATA",
-      "expected": "Where did Jake help his friend?",
-      "actual": "Where did Jake help his friend?",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 4,
-        "total": 4,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2252
+      "file": "public/audio/week33/info_exchange_q1.mp3",
+      "source_file": "src/data/weeks/week_33/speaking_hub.js",
+      "source_path": "speakingHub.info_exchange_cards.table_b.fields[0].nova_question",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "S2",
+      "canonical_transcript": "Where did Jake help his friend?",
+      "whisper_transcript": "Where did Jake help his friend?",
+      "similarity": 1,
+      "anchors_required": [
+        "Where",
+        "Jake",
+        "help",
+        "friend"
+      ],
+      "anchors_found": [
+        "Where",
+        "Jake",
+        "help",
+        "friend"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1144
     },
     {
-      "asset": "public/audio/week33/info_exchange_q2.mp3",
-      "category": "SPEAKING_P2",
-      "provenance": "SOURCE_DATA",
-      "expected": "What first aid items did the nurse use?",
-      "actual": "What first aid items did the nurse use?",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 4,
-        "total": 4,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2304
+      "file": "public/audio/week33/info_exchange_q2.mp3",
+      "source_file": "src/data/weeks/week_33/speaking_hub.js",
+      "source_path": "speakingHub.info_exchange_cards.table_b.fields[1].nova_question",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "S2",
+      "canonical_transcript": "What first aid items did the nurse use?",
+      "whisper_transcript": "What first aid items did the nurse use?",
+      "similarity": 1,
+      "anchors_required": [
+        "What",
+        "first",
+        "items",
+        "nurse"
+      ],
+      "anchors_found": [
+        "What",
+        "first",
+        "items",
+        "nurse"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1169
     },
     {
-      "asset": "public/audio/week33/info_exchange_q3.mp3",
-      "category": "SPEAKING_P2",
-      "provenance": "SOURCE_DATA",
-      "expected": "How fast did the school nurse arrive to help?",
-      "actual": "How fast did the school nurse arrive to help?",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 5,
-        "total": 5,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2301
+      "file": "public/audio/week33/info_exchange_q3.mp3",
+      "source_file": "src/data/weeks/week_33/speaking_hub.js",
+      "source_path": "speakingHub.info_exchange_cards.table_b.fields[2].nova_question",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "S2",
+      "canonical_transcript": "How fast did the school nurse arrive to help?",
+      "whisper_transcript": "How fast did the school nurse arrive to help?",
+      "similarity": 1,
+      "anchors_required": [
+        "fast",
+        "school",
+        "nurse",
+        "arrive",
+        "help"
+      ],
+      "anchors_found": [
+        "fast",
+        "school",
+        "nurse",
+        "arrive",
+        "help"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1188
     },
     {
-      "asset": "public/audio/week33/info_exchange_q4.mp3",
-      "category": "SPEAKING_P2",
-      "provenance": "SOURCE_DATA",
-      "expected": "Who praised Jake for his quick action?",
-      "actual": "Who praised Jake for his quick action?",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 4,
-        "total": 4,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2271
+      "file": "public/audio/week33/info_exchange_q4.mp3",
+      "source_file": "src/data/weeks/week_33/speaking_hub.js",
+      "source_path": "speakingHub.info_exchange_cards.table_b.fields[3].nova_question",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "S2",
+      "canonical_transcript": "Who praised Jake for his quick action?",
+      "whisper_transcript": "Who praised Jake for his quick action?",
+      "similarity": 1,
+      "anchors_required": [
+        "praised",
+        "Jake",
+        "quick",
+        "action"
+      ],
+      "anchors_found": [
+        "praised",
+        "Jake",
+        "quick",
+        "action"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1160
     },
     {
-      "asset": "public/audio/week33/listening_p1_full.mp3",
-      "category": "LISTENING_P1",
-      "provenance": "SOURCE_DATA",
-      "expected": "Teacher: Look at Part 1. Now look at the picture. Listen and look. There is one example.\nMia: Look at all the students in the school corridor!\nTeacher: Yes, can you see the boy walking carefully on the left? He is wearing a blue shirt.\nMia: Oh, with the blue school backpack? Is that Jake?\nTeacher: Yes, that is Jake. He is walking very carefully.\nTeacher: Can you see the example line? Now you listen and draw lines.\nMia: Look at the boy in the middle of the hallway! What happened to him?\nTeacher: That is Tom. He was in a hurry and slipped on the wet tiles.\nMia: Who is the woman in the white uniform rushing near the wall?\nTeacher: That is Nurse Sarah. She is carrying a first-aid kit to help him.\nMia: And who is the tall man in the dark blue suit near the lockers?\nTeacher: That is Headmaster Brown. He is watching over the corridor.\nMia: Is that Maria standing near the yellow warning sign?\nTeacher: Yes, that is Maria. She is holding the mop to dry the wet floor.\nMia: Who is the boy bending down near the bench on the right?\nTeacher: That is David. He is picking up his water bottle from the floor.",
-      "actual": "Look at Part 1. Now look at the picture. Listen and look. There is one example.\nLook at all the students in the school corridor. Yes, can you see the boy walking carefully on the left?\nHe is wearing a blue shirt. Oh, with the blue school backpack? Is that Jake? Yes, that is Jake.\nHe is walking very carefully. Can you see the example line? Now you listen and draw lines.\nLook at the boy in the middle of the hallway. What happened to him?\nThat is Tom. He was in a hurry and slipped on the wet tiles. Who is the woman in the white uniform rushing near the wall?\nThat is Nurse Sarah. She is carrying a first aid kit to help him. And who is the tall man in the\ndark blue suit near the lockers? That is headmaster Brown. He is watching over the corridor.\nIs that Maria standing near the yellow warning sign? Yes, that is Maria. She is holding the\nmop to dry the wet floor. Who is the boy bending down near the bench on the right? That is David.\nHe is picking up his water bottle from the floor.",
-      "score": 0.9154470111091518,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 10,
-        "total": 10,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 8094
+      "file": "public/audio/week33/listening_p1_full.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p1.passage_audio_script",
+      "source_type": "source_data",
+      "category": "COMPOSITE_AUDIO",
+      "part": "L1",
+      "canonical_transcript": "Teacher: Look at Part 1. Now look at the picture. Listen and look. There is one example.\nMia: Look at all the students in the school corridor!\nTeacher: Yes, can you see the boy walking carefully on the left? He is wearing a blue shirt.\nMia: Oh, with the blue school backpack? Is that Jake?\nTeacher: Yes, that is Jake. He is walking very carefully.\nTeacher: Can you see the example line? Now you listen and draw lines.\nMia: Look at the boy in the middle of the hallway! What happened to him?\nTeacher: That is Tom. He was in a hurry and slipped on the wet tiles.\nMia: Who is the woman in the white uniform rushing near the wall?\nTeacher: That is Nurse Sarah. She is carrying a first-aid kit to help him.\nMia: And who is the tall man in the dark blue suit near the lockers?\nTeacher: That is Headmaster Brown. He is watching over the corridor.\nMia: Is that Maria standing near the yellow warning sign?\nTeacher: Yes, that is Maria. She is holding the mop to dry the wet floor.\nMia: Who is the boy bending down near the bench on the right?\nTeacher: That is David. He is picking up his water bottle from the floor.",
+      "whisper_transcript": "Look at Part 1. Now look at the picture. Listen and look. There is one example.\nLook at all the students in the school corridor. Yes, can you see the boy walking carefully on the left?\nHe is wearing a blue shirt. Oh, with the blue school backpack? Is that Jake? Yes, that is Jake.\nHe is walking very carefully. Can you see the example line? Now you listen and draw lines.\nLook at the boy in the middle of the hallway. What happened to him?\nThat is Tom. He was in a hurry and slipped on the wet tiles. Who is the woman in the white uniform rushing near the wall?\nThat is Nurse Sarah. She is carrying a first aid kit to help him. And who is the tall man in the\ndark blue suit near the lockers? That is headmaster Brown. He is watching over the corridor.\nIs that Maria standing near the yellow warning sign? Yes, that is Maria. She is holding the\nmop to dry the wet floor. Who is the boy bending down near the bench on the right? That is David.\nHe is picking up his water bottle from the floor.",
+      "similarity": 0.915,
+      "anchors_required": [
+        "Jake",
+        "Tom",
+        "Nurse Sarah",
+        "Headmaster Brown",
+        "Maria",
+        "David",
+        "corridor",
+        "mop",
+        "warning sign",
+        "water bottle"
+      ],
+      "anchors_found": [
+        "Jake",
+        "Tom",
+        "Nurse Sarah",
+        "Headmaster Brown",
+        "Maria",
+        "David",
+        "corridor",
+        "mop",
+        "warning sign",
+        "water bottle"
+      ],
+      "classification": "PASS",
+      "duration_ms": 4477
     },
     {
-      "asset": "public/audio/week33/listening_p2_full.mp3",
-      "category": "LISTENING_P2",
-      "provenance": "SOURCE_DATA",
-      "expected": "woman: Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day?\nman: Yes, of course! I am happy to help.\nwoman: Which classroom are you in this year?\nman: I am in Room 4B on the second floor.\nwoman: Can you see the answer? Now you listen and write.\nwoman: First, what is your favourite subject at school?\nman: I really love doing experiments with forces, so my favourite subject is Science.\nwoman: That sounds exciting! And where did the accident happen this morning?\nman: It happened while students were walking through the school corridor near the science room.\nwoman: How quickly did the school nurse arrive to help?\nman: She came running very quickly, in about 2 minutes.\nwoman: What did the nurse use to treat the injured knee?\nman: She cleaned the cut carefully and wrapped a clean bandage around his leg.\nwoman: Did Headmaster Brown say anything during the school assembly?\nman: Yes, he praised everyone for helping and gave me a shining safety badge!",
-      "actual": "Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day?\nYes, of course. I am happy to help. Which classroom are you in this year?\nI am in room 4B on the second floor.\nCan you see the answer? Now you listen and write.\nFirst, what is your favorite subject at school?\nI really love doing experiments with forces, so my favorite subject is science.\nThat sounds exciting, and where did the accident happen this morning?\nIt happened while students were walking through the school corridor near the science room.\nHow quickly did the school nurse arrive to help?\nShe came running very quickly in about two minutes.\nWhat did the nurse use to treat the injured knee?\nShe cleaned the cut carefully and wrapped a clean bandage around his leg.\nDid headmaster Brown say anything during the school assembly?\nYes, he praised everyone for helping and gave me a shining safety badge.",
-      "score": 0.9184869301973569,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 8,
-        "total": 8,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 7157
+      "file": "public/audio/week33/listening_p2_full.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p2.dialogue_script",
+      "source_type": "source_data",
+      "category": "COMPOSITE_AUDIO",
+      "part": "L2",
+      "canonical_transcript": "woman: Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day?\nman: Yes, of course! I am happy to help.\nwoman: Which classroom are you in this year?\nman: I am in Room 4B on the second floor.\nwoman: Can you see the answer? Now you listen and write.\nwoman: First, what is your favourite subject at school?\nman: I really love doing experiments with forces, so my favourite subject is Science.\nwoman: That sounds exciting! And where did the accident happen this morning?\nman: It happened while students were walking through the school corridor near the science room.\nwoman: How quickly did the school nurse arrive to help?\nman: She came running very quickly, in about 2 minutes.\nwoman: What did the nurse use to treat the injured knee?\nman: She cleaned the cut carefully and wrapped a clean bandage around his leg.\nwoman: Did Headmaster Brown say anything during the school assembly?\nman: Yes, he praised everyone for helping and gave me a shining safety badge!",
+      "whisper_transcript": "Listen and write. There is one example. Hello Jake. May I ask you a few questions about your school day?\nYes, of course. I am happy to help. Which classroom are you in this year?\nI am in room 4B on the second floor.\nCan you see the answer? Now you listen and write.\nFirst, what is your favorite subject at school?\nI really love doing experiments with forces, so my favorite subject is science.\nThat sounds exciting, and where did the accident happen this morning?\nIt happened while students were walking through the school corridor near the science room.\nHow quickly did the school nurse arrive to help?\nShe came running very quickly in about two minutes.\nWhat did the nurse use to treat the injured knee?\nShe cleaned the cut carefully and wrapped a clean bandage around his leg.\nDid headmaster Brown say anything during the school assembly?\nYes, he praised everyone for helping and gave me a shining safety badge.",
+      "similarity": 0.918,
+      "anchors_required": [
+        "Jake",
+        "Room 4B",
+        "Science",
+        "school corridor",
+        "2 minutes",
+        "clean bandage",
+        "Headmaster Brown",
+        "safety badge"
+      ],
+      "anchors_found": [
+        "Jake",
+        "Room 4B",
+        "Science",
+        "school corridor",
+        "2 minutes",
+        "clean bandage",
+        "Headmaster Brown",
+        "safety badge"
+      ],
+      "classification": "PASS",
+      "duration_ms": 3825
     },
     {
-      "asset": "public/audio/week33/listening_p3_example.mp3",
-      "category": "LISTENING_P3",
-      "provenance": "SOURCE_DATA",
-      "expected": "Listen and write a letter in each box. There is one example. Jake, where did you leave your blue school backpack before morning class? I was sitting on the wooden playground bench outside before the bell rang, and I left it right there. Can you see the letter H? That is the example. Now you listen and write a letter in each box.",
-      "actual": "Listen and write a letter in each box. There is one example. Jake, where did you leave your\nblue school backpack before morning class? I was sitting on the wooden playground bench outside\nbefore the bell rang and I left it right there. Can you see the letter H? That is the example.\nNow you listen and write a letter in each box.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 4011
+      "file": "public/audio/week33/listening_p3_example.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p3.example.dialogue_script",
+      "source_type": "source_data",
+      "category": "EXAMPLE_AUDIO",
+      "part": "L3",
+      "canonical_transcript": "Listen and write a letter in each box. There is one example. Jake, where did you leave your blue school backpack before morning class? I was sitting on the wooden playground bench outside before the bell rang, and I left it right there. Can you see the letter H? That is the example. Now you listen and write a letter in each box.",
+      "whisper_transcript": "Listen and write a letter in each box. There is one example. Jake, where did you leave your\nblue school backpack before morning class? I was sitting on the wooden playground bench outside\nbefore the bell rang and I left it right there. Can you see the letter H? That is the example.\nNow you listen and write a letter in each box.",
+      "similarity": 1,
+      "anchors_required": [
+        "backpack",
+        "playground bench",
+        "letter H"
+      ],
+      "anchors_found": [
+        "backpack",
+        "playground bench",
+        "letter H"
+      ],
+      "classification": "PASS",
+      "duration_ms": 2115
     },
     {
-      "asset": "public/audio/week33/listening_p3_full.mp3",
-      "category": "LISTENING_P3",
-      "provenance": "SOURCE_DATA",
-      "expected": "Listen and write a letter in each box. There is one example.\nJake, where did you leave your blue school backpack before morning class?\nI was sitting on the wooden playground bench outside before the bell rang, and I left it right there.\nCan you see the letter H? That is the example. Now you listen and write a letter in each box.\n\nWhere did Nurse Sarah get the clean bandage to help Tom?\nShe went into the nurse room and took it straight out of the white glass cabinet on the wall.\n\nAnd what about the cold pack? Was that inside the cabinet too?\nNo, the nurse had already placed the blue cold pack on the first-aid table near the door.\n\nDid you find your green science notebook after class?\nYes, I remembered we were doing experiments, and I left it sitting on the science lab desk.\n\nTom was looking for his blue water bottle. Did he drop it in the hallway?\nNo, we were eating lunch together and he forgot his bottle on the dining table.\n\nWhy was Tom running so fast down the corridor before class?\nHe woke up late! His alarm clock was ringing loudly on his bedroom table, but he did not hear it in time.",
-      "actual": "Listen and write a letter in each box. There is one example. Jake, where did you leave your\nblue school backpack before morning class? I was sitting on the wooden playground bench outside\nbefore the bell rang and I left it right there. Can you see the letter H? That is the example.\nNow you listen and write a letter in each box. Where did Nurse Sarah get the clean bandage to help\nshe went into the nurse room and took it straight out of the white glass cabinet on the wall.\nAnd what about the cold pack? Was that inside the cabinet too? No, the nurse had already\nplaced the blue cold pack on the first aid table near the door. Did you find your green science note\nbook after class? Yes, I remembered we were doing experiments and I left it sitting on the\nscience lab desk. Tom was looking for his blue water bottle. Did he drop it in the hallway?\nNo, we were eating lunch together and he forgot his bottle on the dining table.\nWhy was Tom running so fast down the corridor before class? He woke up late. His alarm clock was\nringing loudly on his bedroom table, but he did not hear it in time.",
-      "score": 0.9953115933109427,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 8,
-        "total": 9,
-        "ratio": 0.8888888888888888,
-        "missing": [
-          "notebook"
-        ]
-      },
-      "durationMs": 8420
+      "file": "public/audio/week33/listening_p3_full.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p3.passage_audio_script",
+      "source_type": "source_data",
+      "category": "COMPOSITE_AUDIO",
+      "part": "L3",
+      "canonical_transcript": "Listen and write a letter in each box. There is one example.\nJake, where did you leave your blue school backpack before morning class?\nI was sitting on the wooden playground bench outside before the bell rang, and I left it right there.\nCan you see the letter H? That is the example. Now you listen and write a letter in each box.\n\nWhere did Nurse Sarah get the clean bandage to help Tom?\nShe went into the nurse room and took it straight out of the white glass cabinet on the wall.\n\nAnd what about the cold pack? Was that inside the cabinet too?\nNo, the nurse had already placed the blue cold pack on the first-aid table near the door.\n\nDid you find your green science notebook after class?\nYes, I remembered we were doing experiments, and I left it sitting on the science lab desk.\n\nTom was looking for his blue water bottle. Did he drop it in the hallway?\nNo, we were eating lunch together and he forgot his bottle on the dining table.\n\nWhy was Tom running so fast down the corridor before class?\nHe woke up late! His alarm clock was ringing loudly on his bedroom table, but he did not hear it in time.",
+      "whisper_transcript": "Listen and write a letter in each box. There is one example. Jake, where did you leave your\nblue school backpack before morning class? I was sitting on the wooden playground bench outside\nbefore the bell rang and I left it right there. Can you see the letter H? That is the example.\nNow you listen and write a letter in each box. Where did Nurse Sarah get the clean bandage to help\nshe went into the nurse room and took it straight out of the white glass cabinet on the wall.\nAnd what about the cold pack? Was that inside the cabinet too? No, the nurse had already\nplaced the blue cold pack on the first aid table near the door. Did you find your green science note\nbook after class? Yes, I remembered we were doing experiments and I left it sitting on the\nscience lab desk. Tom was looking for his blue water bottle. Did he drop it in the hallway?\nNo, we were eating lunch together and he forgot his bottle on the dining table.\nWhy was Tom running so fast down the corridor before class? He woke up late. His alarm clock was\nringing loudly on his bedroom table, but he did not hear it in time.",
+      "similarity": 0.995,
+      "anchors_required": [
+        "backpack",
+        "Nurse Sarah",
+        "bandage",
+        "glass cabinet",
+        "cold pack",
+        "first-aid table",
+        "notebook",
+        "water bottle",
+        "alarm clock"
+      ],
+      "anchors_found": [
+        "backpack",
+        "Nurse Sarah",
+        "bandage",
+        "glass cabinet",
+        "cold pack",
+        "first-aid table",
+        "water bottle",
+        "alarm clock"
+      ],
+      "classification": "PASS",
+      "duration_ms": 4518
     },
     {
-      "asset": "public/audio/week33/listening_p3_item1.mp3",
-      "category": "LISTENING_P3",
-      "provenance": "SOURCE_DATA",
-      "expected": "Where did Nurse Sarah get the clean bandage to help Tom? She went into the nurse room and took it straight out of the white glass cabinet on the wall.",
-      "actual": "Where did Nurse Sarah get the clean bandage to help Tom?\nShe went into the nurse room and took it straight out of the white glass cabinet on the wall.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 11,
-        "total": 11,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2847
+      "file": "public/audio/week33/listening_p3_item1.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p3.items[0].audio_text",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "L3",
+      "canonical_transcript": "Where did Nurse Sarah get the clean bandage to help Tom? She went into the nurse room and took it straight out of the white glass cabinet on the wall.",
+      "whisper_transcript": "Where did Nurse Sarah get the clean bandage to help Tom?\nShe went into the nurse room and took it straight out of the white glass cabinet on the wall.",
+      "similarity": 1,
+      "anchors_required": [
+        "Clean Bandage",
+        "Where",
+        "Nurse",
+        "Sarah",
+        "clean",
+        "bandage",
+        "nurse",
+        "straight",
+        "white",
+        "glass",
+        "cabinet"
+      ],
+      "anchors_found": [
+        "Clean Bandage",
+        "Where",
+        "Nurse",
+        "Sarah",
+        "clean",
+        "bandage",
+        "nurse",
+        "straight",
+        "white",
+        "glass",
+        "cabinet"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1512
     },
     {
-      "asset": "public/audio/week33/listening_p3_item2.mp3",
-      "category": "LISTENING_P3",
-      "provenance": "SOURCE_DATA",
-      "expected": "And what about the cold pack? Was that inside the cabinet too? No, the nurse had already placed the blue cold pack on the first-aid table near the door.",
-      "actual": "And what about the cold pack? Was that inside the cabinet too?\nNo, the nurse had already placed the blue cold pack on the first aid table near the door.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 9,
-        "total": 9,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2862
+      "file": "public/audio/week33/listening_p3_item2.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p3.items[1].audio_text",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "L3",
+      "canonical_transcript": "And what about the cold pack? Was that inside the cabinet too? No, the nurse had already placed the blue cold pack on the first-aid table near the door.",
+      "whisper_transcript": "And what about the cold pack? Was that inside the cabinet too?\nNo, the nurse had already placed the blue cold pack on the first aid table near the door.",
+      "similarity": 1,
+      "anchors_required": [
+        "Cold Pack",
+        "about",
+        "inside",
+        "cabinet",
+        "nurse",
+        "already",
+        "placed",
+        "first-aid",
+        "table"
+      ],
+      "anchors_found": [
+        "Cold Pack",
+        "about",
+        "inside",
+        "cabinet",
+        "nurse",
+        "already",
+        "placed",
+        "first-aid",
+        "table"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1519
     },
     {
-      "asset": "public/audio/week33/listening_p3_item3.mp3",
-      "category": "LISTENING_P3",
-      "provenance": "SOURCE_DATA",
-      "expected": "Did you find your green science notebook after class? Yes, I remembered we were doing experiments, and I left it sitting on the science lab desk.",
-      "actual": "Did you find your green science notebook after class?\nYes, I remembered we were doing experiments and I left it sitting on the science lab desk.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 11,
-        "total": 11,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2801
+      "file": "public/audio/week33/listening_p3_item3.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p3.items[2].audio_text",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "L3",
+      "canonical_transcript": "Did you find your green science notebook after class? Yes, I remembered we were doing experiments, and I left it sitting on the science lab desk.",
+      "whisper_transcript": "Did you find your green science notebook after class?\nYes, I remembered we were doing experiments and I left it sitting on the science lab desk.",
+      "similarity": 1,
+      "anchors_required": [
+        "Science Notebook",
+        "green",
+        "science",
+        "notebook",
+        "after",
+        "class",
+        "remembered",
+        "doing",
+        "experiments",
+        "sitting",
+        "science"
+      ],
+      "anchors_found": [
+        "Science Notebook",
+        "green",
+        "science",
+        "notebook",
+        "after",
+        "class",
+        "remembered",
+        "doing",
+        "experiments",
+        "sitting",
+        "science"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1460
     },
     {
-      "asset": "public/audio/week33/listening_p3_item4.mp3",
-      "category": "LISTENING_P3",
-      "provenance": "SOURCE_DATA",
-      "expected": "Tom was looking for his blue water bottle. Did he drop it in the hallway? No, we were eating lunch together and he forgot his bottle on the dining table.",
-      "actual": "Tom was looking for his blue water bottle. Did he drop it in the hallway?\nNo, we were eating lunch together and he forgot his bottle on the dining table.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 12,
-        "total": 12,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2894
+      "file": "public/audio/week33/listening_p3_item4.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p3.items[3].audio_text",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "L3",
+      "canonical_transcript": "Tom was looking for his blue water bottle. Did he drop it in the hallway? No, we were eating lunch together and he forgot his bottle on the dining table.",
+      "whisper_transcript": "Tom was looking for his blue water bottle. Did he drop it in the hallway?\nNo, we were eating lunch together and he forgot his bottle on the dining table.",
+      "similarity": 1,
+      "anchors_required": [
+        "Water Bottle",
+        "looking",
+        "water",
+        "bottle",
+        "hallway",
+        "eating",
+        "lunch",
+        "together",
+        "forgot",
+        "bottle",
+        "dining",
+        "table"
+      ],
+      "anchors_found": [
+        "Water Bottle",
+        "looking",
+        "water",
+        "bottle",
+        "hallway",
+        "eating",
+        "lunch",
+        "together",
+        "forgot",
+        "bottle",
+        "dining",
+        "table"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1502
     },
     {
-      "asset": "public/audio/week33/listening_p3_item5.mp3",
-      "category": "LISTENING_P3",
-      "provenance": "SOURCE_DATA",
-      "expected": "Why was Tom running so fast down the corridor before class? He woke up late! His alarm clock was ringing loudly on his bedroom table, but he did not hear it in time.",
-      "actual": "Why was Tom running so fast down the corridor before class?\nHe woke up late, his alarm clock was ringing loudly on his bedroom table, but he did not hear it in time.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 12,
-        "total": 12,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2918
+      "file": "public/audio/week33/listening_p3_item5.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p3.items[4].audio_text",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "L3",
+      "canonical_transcript": "Why was Tom running so fast down the corridor before class? He woke up late! His alarm clock was ringing loudly on his bedroom table, but he did not hear it in time.",
+      "whisper_transcript": "Why was Tom running so fast down the corridor before class?\nHe woke up late, his alarm clock was ringing loudly on his bedroom table, but he did not hear it in time.",
+      "similarity": 1,
+      "anchors_required": [
+        "Alarm Clock",
+        "running",
+        "corridor",
+        "before",
+        "class",
+        "late!",
+        "alarm",
+        "clock",
+        "ringing",
+        "loudly",
+        "bedroom",
+        "table"
+      ],
+      "anchors_found": [
+        "Alarm Clock",
+        "running",
+        "corridor",
+        "before",
+        "class",
+        "late!",
+        "alarm",
+        "clock",
+        "ringing",
+        "loudly",
+        "bedroom",
+        "table"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1564
     },
     {
-      "asset": "public/audio/week33/listening_p4_example.mp3",
-      "category": "LISTENING_P4",
-      "provenance": "SOURCE_DATA",
-      "expected": "Look at the example. Where was Jake walking after class? He was walking carefully in the school corridor. Can you see the tick next to picture A? Now you listen and tick the box.",
-      "actual": "Look at the example, where was Jake walking after class?\nHe was walking carefully in the school corridor.\nCan you see the tick next to picture A?\nNow you listen and tick the box.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 3068
+      "file": "public/audio/week33/listening_p4_example.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p4.questions[0].dialogue_script",
+      "source_type": "source_data",
+      "category": "EXAMPLE_AUDIO",
+      "part": "L4",
+      "canonical_transcript": "Look at the example. Where was Jake walking after class? He was walking carefully in the school corridor. Can you see the tick next to picture A? Now you listen and tick the box.",
+      "whisper_transcript": "Look at the example, where was Jake walking after class?\nHe was walking carefully in the school corridor.\nCan you see the tick next to picture A?\nNow you listen and tick the box.",
+      "similarity": 1,
+      "anchors_required": [
+        "Jake",
+        "corridor",
+        "picture A"
+      ],
+      "anchors_found": [
+        "Jake",
+        "corridor",
+        "picture A"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1604
     },
     {
-      "asset": "public/audio/week33/listening_p4_full.mp3",
-      "category": "LISTENING_P4",
-      "provenance": "SOURCE_DATA",
-      "expected": "Look at the example. Where was Jake walking after class? He was walking carefully in the school corridor. Can you see the tick next to picture A? Now you listen and tick the box.\nWhy was the floor slippery near the science room? The cleaner had just washed the tiles with water.\nWhat happened when the boy ran fast? He slipped on the wet floor and hurt his knee.\nWhat did Jake do immediately? He ran to the nurse's room to call for help.\nWhat did the nurse use to treat the knee? She used a clean bandage and a cold pack.\nWhat did the headmaster say during assembly? He praised Jake for following safety habits.",
-      "actual": "Look at the example, where was Jake walking after class?\nHe was walking carefully in the school corridor.\nCan you see the tick next to picture A?\nNow you listen and tick the box.\nQuestion 1.\nWhy was the floor slippery near the science room?\nThe cleaner had just washed the tiles with water.\nQuestion 2.\nWhat happened when the boy ran fast?\nHe slipped on the wet floor and hurt his knee.\nQuestion 3.\nWhat did Jake do immediately?\nHe ran to the nurse room to call for help.\nQuestion 4.\nWhat did the nurse use to treat the knee?\nShe used a clean bandage and a cold pack.\nQuestion 5.\nWhat did the headmaster say during assembly?\nHe praised Jake for following safety habits.",
-      "score": 0.9035588594412124,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 8,
-        "total": 8,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 5988
+      "file": "public/audio/week33/listening_p4_full.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p4.questions[*].dialogue_script",
+      "source_type": "source_data",
+      "category": "COMPOSITE_AUDIO",
+      "part": "L4",
+      "canonical_transcript": "Look at the example. Where was Jake walking after class? He was walking carefully in the school corridor. Can you see the tick next to picture A? Now you listen and tick the box.\nWhy was the floor slippery near the science room? The cleaner had just washed the tiles with water.\nWhat happened when the boy ran fast? He slipped on the wet floor and hurt his knee.\nWhat did Jake do immediately? He ran to the nurse's room to call for help.\nWhat did the nurse use to treat the knee? She used a clean bandage and a cold pack.\nWhat did the headmaster say during assembly? He praised Jake for following safety habits.",
+      "whisper_transcript": "Look at the example, where was Jake walking after class?\nHe was walking carefully in the school corridor.\nCan you see the tick next to picture A?\nNow you listen and tick the box.\nQuestion 1.\nWhy was the floor slippery near the science room?\nThe cleaner had just washed the tiles with water.\nQuestion 2.\nWhat happened when the boy ran fast?\nHe slipped on the wet floor and hurt his knee.\nQuestion 3.\nWhat did Jake do immediately?\nHe ran to the nurse room to call for help.\nQuestion 4.\nWhat did the nurse use to treat the knee?\nShe used a clean bandage and a cold pack.\nQuestion 5.\nWhat did the headmaster say during assembly?\nHe praised Jake for following safety habits.",
+      "similarity": 0.904,
+      "anchors_required": [
+        "Jake",
+        "corridor",
+        "cleaner",
+        "slipped",
+        "nurse",
+        "bandage",
+        "cold pack",
+        "headmaster"
+      ],
+      "anchors_found": [
+        "Jake",
+        "corridor",
+        "cleaner",
+        "slipped",
+        "nurse",
+        "bandage",
+        "cold pack",
+        "headmaster"
+      ],
+      "classification": "PASS",
+      "duration_ms": 3281
     },
     {
-      "asset": "public/audio/week33/listening_p4_q1.mp3",
-      "category": "LISTENING_P4",
-      "provenance": "SOURCE_DATA",
-      "expected": "Question 1. Why was the floor slippery near the science room? Why was the floor slippery near the science room? The cleaner had just washed the tiles with water.",
-      "actual": "Question 1. Why was the floor slippery near the science room?\nThe cleaner had just washed the tiles with water.",
-      "score": 0.8459119496855346,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2662
+      "file": "public/audio/week33/listening_p4_q1.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p4.questions[1].dialogue_script",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "L4",
+      "canonical_transcript": "Question 1. Why was the floor slippery near the science room? Why was the floor slippery near the science room? The cleaner had just washed the tiles with water.",
+      "whisper_transcript": "Question 1. Why was the floor slippery near the science room?\nThe cleaner had just washed the tiles with water.",
+      "similarity": 0.846,
+      "anchors_required": [
+        "floor",
+        "slippery",
+        "science"
+      ],
+      "anchors_found": [
+        "floor",
+        "slippery",
+        "science"
+      ],
+      "classification": "MINOR_TRANSCRIPTION_VARIANCE",
+      "duration_ms": 1375
     },
     {
-      "asset": "public/audio/week33/listening_p4_q2.mp3",
-      "category": "LISTENING_P4",
-      "provenance": "SOURCE_DATA",
-      "expected": "Question 2. What happened when the boy ran fast? What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
-      "actual": "Question 2. What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
-      "score": 0.8615384615384616,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 1,
-        "total": 1,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2625
+      "file": "public/audio/week33/listening_p4_q2.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p4.questions[2].dialogue_script",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "L4",
+      "canonical_transcript": "Question 2. What happened when the boy ran fast? What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
+      "whisper_transcript": "Question 2. What happened when the boy ran fast? He slipped on the wet floor and hurt his knee.",
+      "similarity": 0.862,
+      "anchors_required": [
+        "happened"
+      ],
+      "anchors_found": [
+        "happened"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1353
     },
     {
-      "asset": "public/audio/week33/listening_p4_q3.mp3",
-      "category": "LISTENING_P4",
-      "provenance": "SOURCE_DATA",
-      "expected": "Question 3. What did Jake do immediately? What did Jake do immediately? He ran to the nurse's room to call for help.",
-      "actual": "Question 3. What did Jake do immediately? He ran to the nurse room to call for help.",
-      "score": 0.8468379446640316,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 1,
-        "total": 1,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2575
+      "file": "public/audio/week33/listening_p4_q3.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p4.questions[3].dialogue_script",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "L4",
+      "canonical_transcript": "Question 3. What did Jake do immediately? What did Jake do immediately? He ran to the nurse's room to call for help.",
+      "whisper_transcript": "Question 3. What did Jake do immediately? He ran to the nurse room to call for help.",
+      "similarity": 0.847,
+      "anchors_required": [
+        "immediately"
+      ],
+      "anchors_found": [
+        "immediately"
+      ],
+      "classification": "MINOR_TRANSCRIPTION_VARIANCE",
+      "duration_ms": 1361
     },
     {
-      "asset": "public/audio/week33/listening_p4_q4.mp3",
-      "category": "LISTENING_P4",
-      "provenance": "SOURCE_DATA",
-      "expected": "Question 4. What did the nurse use to treat the knee? What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
-      "actual": "Question 4. What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
-      "score": 0.8492647058823529,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 2,
-        "total": 2,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2650
+      "file": "public/audio/week33/listening_p4_q4.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p4.questions[4].dialogue_script",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "L4",
+      "canonical_transcript": "Question 4. What did the nurse use to treat the knee? What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
+      "whisper_transcript": "Question 4. What did the nurse use to treat the knee? She used a clean bandage and a cold pack.",
+      "similarity": 0.849,
+      "anchors_required": [
+        "nurse",
+        "treat"
+      ],
+      "anchors_found": [
+        "nurse",
+        "treat"
+      ],
+      "classification": "MINOR_TRANSCRIPTION_VARIANCE",
+      "duration_ms": 1383
     },
     {
-      "asset": "public/audio/week33/listening_p4_q5.mp3",
-      "category": "LISTENING_P4",
-      "provenance": "SOURCE_DATA",
-      "expected": "Question 5. What did the headmaster say during assembly? What did the headmaster say during assembly? He praised Jake for following safety habits.",
-      "actual": "Question 5. What did the headmaster say during assembly? He praised Jake for following safety habits.",
-      "score": 0.8482758620689655,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2771
+      "file": "public/audio/week33/listening_p4_q5.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p4.questions[5].dialogue_script",
+      "source_type": "source_data",
+      "category": "QUESTION_AUDIO",
+      "part": "L4",
+      "canonical_transcript": "Question 5. What did the headmaster say during assembly? What did the headmaster say during assembly? He praised Jake for following safety habits.",
+      "whisper_transcript": "Question 5. What did the headmaster say during assembly? He praised Jake for following safety habits.",
+      "similarity": 0.848,
+      "anchors_required": [
+        "headmaster",
+        "during",
+        "assembly"
+      ],
+      "anchors_found": [
+        "headmaster",
+        "during",
+        "assembly"
+      ],
+      "classification": "MINOR_TRANSCRIPTION_VARIANCE",
+      "duration_ms": 1329
     },
     {
-      "asset": "public/audio/week33/listening_p5_full.mp3",
-      "category": "LISTENING_P5",
-      "provenance": "SOURCE_DATA",
-      "expected": "Nova: Listen and colour and write. There is one example.\nWoman: Look at this picture of the school corridor. Can you see Jake's friends sitting on the bench?\nMan: Yes, I can see them.\nWoman: Good. Colour the notebook yellow.\nNova: Can you see the yellow notebook? That is the example. Now you listen and colour and write.\nWoman: Now look at Jake. He is carrying a backpack.\nMan: Shall I colour his backpack blue?\nWoman: Yes. Colour Jake's backpack blue.\nWoman: Look at the warning sign near the wet tiles. Can you write a word on it?\nMan: Sure. What word should I write?\nWoman: Write the word wet on the sign.\nWoman: Can you find the science lab doorframe?\nMan: Yes, it is next to the lockers.\nWoman: Colour the doorframe bright green.\nWoman: Look at the notice board on the wall. Can you write one more word?\nMan: Yes, what should I write?\nWoman: Write the word care on the board.\nWoman: Now look at the nurse's room door at the end of the corridor.\nMan: Should I colour it red?\nWoman: Yes, colour the nurse's room door red.",
-      "actual": "Listen and color and write. There is one example. Look at this picture of the school corridor.\nCan you see Jake's friends sitting on the bench? Yes, I can see him. Good. Color his notebook yellow.\nCan you see the yellow notebook? That is the example. Now you listen and color and write.\nNow look at Jake. He is carrying a backpack. Shall I color his backpack blue? Yes.\nColor Jake's backpack blue. Look at the warning sign near the wet tiles. Can you write a word on it?\nSure, what word should I write? Write the word wet on the sign. Can you find a science lab doorframe?\nYes, it is next to the lockers. Color the doorframe bright green. Look at the notice board on the wall.\nCan you write one more word? Yes, what should I write? Write the word care on the board.\nNow look at the nurse room door at the end of the corridor. Should I color it red? Yes, color the nurse room door red.",
-      "score": 0.8796245003475843,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 12,
-        "total": 12,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 7577
+      "file": "public/audio/week33/listening_p5_full.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p5.audio_script",
+      "source_type": "source_data",
+      "category": "COMPOSITE_AUDIO",
+      "part": "L5",
+      "canonical_transcript": "Nova: Listen and colour and write. There is one example.\nWoman: Look at this picture of the school corridor. Can you see Jake's friends sitting on the bench?\nMan: Yes, I can see them.\nWoman: Good. Colour the notebook yellow.\nNova: Can you see the yellow notebook? That is the example. Now you listen and colour and write.\nWoman: Now look at Jake. He is carrying a backpack.\nMan: Shall I colour his backpack blue?\nWoman: Yes. Colour Jake's backpack blue.\nWoman: Look at the warning sign near the wet tiles. Can you write a word on it?\nMan: Sure. What word should I write?\nWoman: Write the word wet on the sign.\nWoman: Can you find the science lab doorframe?\nMan: Yes, it is next to the lockers.\nWoman: Colour the doorframe bright green.\nWoman: Look at the notice board on the wall. Can you write one more word?\nMan: Yes, what should I write?\nWoman: Write the word care on the board.\nWoman: Now look at the nurse's room door at the end of the corridor.\nMan: Should I colour it red?\nWoman: Yes, colour the nurse's room door red.",
+      "whisper_transcript": "Listen and color and write. There is one example. Look at this picture of the school corridor.\nCan you see Jake's friends sitting on the bench? Yes, I can see him. Good. Color his notebook yellow.\nCan you see the yellow notebook? That is the example. Now you listen and color and write.\nNow look at Jake. He is carrying a backpack. Shall I color his backpack blue? Yes.\nColor Jake's backpack blue. Look at the warning sign near the wet tiles. Can you write a word on it?\nSure, what word should I write? Write the word wet on the sign. Can you find a science lab doorframe?\nYes, it is next to the lockers. Color the doorframe bright green. Look at the notice board on the wall.\nCan you write one more word? Yes, what should I write? Write the word care on the board.\nNow look at the nurse room door at the end of the corridor. Should I color it red? Yes, color the nurse room door red.",
+      "similarity": 0.88,
+      "anchors_required": [
+        "notebook",
+        "yellow",
+        "backpack",
+        "blue",
+        "warning sign",
+        "wet",
+        "doorframe",
+        "green",
+        "notice board",
+        "care",
+        "nurse",
+        "red"
+      ],
+      "anchors_found": [
+        "notebook",
+        "yellow",
+        "backpack",
+        "blue",
+        "warning sign",
+        "wet",
+        "doorframe",
+        "green",
+        "notice board",
+        "care",
+        "nurse",
+        "red"
+      ],
+      "classification": "PASS",
+      "duration_ms": 4134
     },
     {
-      "asset": "public/audio/week33/listening_p5_inst1.mp3",
-      "category": "LISTENING_P5",
-      "provenance": "SOURCE_DATA",
-      "expected": "Color Jake's backpack blue.",
-      "actual": "Color Jakes Backpack Blue.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 2,
-        "total": 2,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2269
+      "file": "public/audio/week33/listening_p5_inst1.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p5.instructions[1].text",
+      "source_type": "source_data",
+      "category": "INSTRUCTION_AUDIO",
+      "part": "L5",
+      "canonical_transcript": "Color Jake's backpack blue.",
+      "whisper_transcript": "Color Jakes Backpack Blue.",
+      "similarity": 1,
+      "anchors_required": [
+        "backpack",
+        "blue"
+      ],
+      "anchors_found": [
+        "backpack",
+        "blue"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1227
     },
     {
-      "asset": "public/audio/week33/listening_p5_inst2.mp3",
-      "category": "LISTENING_P5",
-      "provenance": "SOURCE_DATA",
-      "expected": "Write the word WET on the warning sign.",
-      "actual": "Write the word wet on the warning sign.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 4,
-        "total": 4,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2299
+      "file": "public/audio/week33/listening_p5_inst2.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p5.instructions[2].text",
+      "source_type": "source_data",
+      "category": "INSTRUCTION_AUDIO",
+      "part": "L5",
+      "canonical_transcript": "Write the word WET on the warning sign.",
+      "whisper_transcript": "Write the word wet on the warning sign.",
+      "similarity": 1,
+      "anchors_required": [
+        "write",
+        "wet",
+        "warning",
+        "sign"
+      ],
+      "anchors_found": [
+        "write",
+        "wet",
+        "warning",
+        "sign"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1230
     },
     {
-      "asset": "public/audio/week33/listening_p5_inst3.mp3",
-      "category": "LISTENING_P5",
-      "provenance": "SOURCE_DATA",
-      "expected": "Color the science lab doorframe bright green.",
-      "actual": "Color the science lab doorframe bright green.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 5,
-        "total": 5,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2299
+      "file": "public/audio/week33/listening_p5_inst3.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p5.instructions[3].text",
+      "source_type": "source_data",
+      "category": "INSTRUCTION_AUDIO",
+      "part": "L5",
+      "canonical_transcript": "Color the science lab doorframe bright green.",
+      "whisper_transcript": "Color the science lab doorframe bright green.",
+      "similarity": 1,
+      "anchors_required": [
+        "color",
+        "science",
+        "lab",
+        "doorframe",
+        "green"
+      ],
+      "anchors_found": [
+        "color",
+        "science",
+        "lab",
+        "doorframe",
+        "green"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1218
     },
     {
-      "asset": "public/audio/week33/listening_p5_inst4.mp3",
-      "category": "LISTENING_P5",
-      "provenance": "SOURCE_DATA",
-      "expected": "Write the word CARE on the notice board.",
-      "actual": "Write the word care on the notice board.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 4,
-        "total": 4,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2299
+      "file": "public/audio/week33/listening_p5_inst4.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p5.instructions[4].text",
+      "source_type": "source_data",
+      "category": "INSTRUCTION_AUDIO",
+      "part": "L5",
+      "canonical_transcript": "Write the word CARE on the notice board.",
+      "whisper_transcript": "Write the word care on the notice board.",
+      "similarity": 1,
+      "anchors_required": [
+        "write",
+        "care",
+        "notice",
+        "board"
+      ],
+      "anchors_found": [
+        "write",
+        "care",
+        "notice",
+        "board"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1220
     },
     {
-      "asset": "public/audio/week33/listening_p5_inst5.mp3",
-      "category": "LISTENING_P5",
-      "provenance": "SOURCE_DATA",
-      "expected": "Color the nurse's room door red.",
-      "actual": "Color the nurse room door red.",
-      "score": 0.9,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 4,
-        "total": 4,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2278
+      "file": "public/audio/week33/listening_p5_inst5.mp3",
+      "source_file": "src/data/weeks/week_33/listening_hub.js",
+      "source_path": "listeningHub.listening_p5.instructions[5].text",
+      "source_type": "source_data",
+      "category": "INSTRUCTION_AUDIO",
+      "part": "L5",
+      "canonical_transcript": "Color the nurse's room door red.",
+      "whisper_transcript": "Color the nurse room door red.",
+      "similarity": 0.9,
+      "anchors_required": [
+        "color",
+        "nurse",
+        "door",
+        "red"
+      ],
+      "anchors_found": [
+        "color",
+        "nurse",
+        "door",
+        "red"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1191
     },
     {
-      "asset": "public/audio/cambridge/flyers_replay_p1.mp3",
-      "category": "CAMBRIDGE_REPLAY",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Now listen to Part 1 again.",
-      "actual": "Now listen to part 1 again.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 4,
-        "total": 4,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2248
+      "file": "public/audio/cambridge/flyers_replay_p1.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.flyers_replay_p1",
+      "source_type": "cambridge_blueprint",
+      "category": "REPLAY_AUDIO",
+      "part": "L1",
+      "canonical_transcript": "Now listen to Part 1 again.",
+      "whisper_transcript": "Now listen to part 1 again.",
+      "similarity": 1,
+      "anchors_required": [
+        "listen",
+        "part",
+        "1",
+        "again"
+      ],
+      "anchors_found": [
+        "listen",
+        "part",
+        "1",
+        "again"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1189
     },
     {
-      "asset": "public/audio/cambridge/flyers_end_p1.mp3",
-      "category": "CAMBRIDGE_END",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "That is the end of Part 1.",
-      "actual": "That is the end of part 1.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2255
+      "file": "public/audio/cambridge/flyers_end_p1.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.flyers_end_p1",
+      "source_type": "cambridge_blueprint",
+      "category": "END_AUDIO",
+      "part": "L1",
+      "canonical_transcript": "That is the end of Part 1.",
+      "whisper_transcript": "That is the end of part 1.",
+      "similarity": 1,
+      "anchors_required": [
+        "end",
+        "part",
+        "1"
+      ],
+      "anchors_found": [
+        "end",
+        "part",
+        "1"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1177
     },
     {
-      "asset": "public/audio/cambridge/flyers_replay_p2.mp3",
-      "category": "CAMBRIDGE_REPLAY",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Now listen to Part 2 again.",
-      "actual": "Now listen to part 2 again.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 4,
-        "total": 4,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2261
+      "file": "public/audio/cambridge/flyers_replay_p2.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.flyers_replay_p2",
+      "source_type": "cambridge_blueprint",
+      "category": "REPLAY_AUDIO",
+      "part": "L2",
+      "canonical_transcript": "Now listen to Part 2 again.",
+      "whisper_transcript": "Now listen to part 2 again.",
+      "similarity": 1,
+      "anchors_required": [
+        "listen",
+        "part",
+        "2",
+        "again"
+      ],
+      "anchors_found": [
+        "listen",
+        "part",
+        "2",
+        "again"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1153
     },
     {
-      "asset": "public/audio/cambridge/flyers_end_p2.mp3",
-      "category": "CAMBRIDGE_END",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "That is the end of Part 2.",
-      "actual": "That is the end of part 2.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2276
+      "file": "public/audio/cambridge/flyers_end_p2.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.flyers_end_p2",
+      "source_type": "cambridge_blueprint",
+      "category": "END_AUDIO",
+      "part": "L2",
+      "canonical_transcript": "That is the end of Part 2.",
+      "whisper_transcript": "That is the end of part 2.",
+      "similarity": 1,
+      "anchors_required": [
+        "end",
+        "part",
+        "2"
+      ],
+      "anchors_found": [
+        "end",
+        "part",
+        "2"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1163
     },
     {
-      "asset": "public/audio/cambridge/flyers_replay_p3.mp3",
-      "category": "CAMBRIDGE_REPLAY",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Now listen to Part 3 again.",
-      "actual": "Now listen to part 3 again.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 4,
-        "total": 4,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2268
+      "file": "public/audio/cambridge/flyers_replay_p3.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.flyers_replay_p3",
+      "source_type": "cambridge_blueprint",
+      "category": "REPLAY_AUDIO",
+      "part": "L3",
+      "canonical_transcript": "Now listen to Part 3 again.",
+      "whisper_transcript": "Now listen to part 3 again.",
+      "similarity": 1,
+      "anchors_required": [
+        "listen",
+        "part",
+        "3",
+        "again"
+      ],
+      "anchors_found": [
+        "listen",
+        "part",
+        "3",
+        "again"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1159
     },
     {
-      "asset": "public/audio/cambridge/flyers_end_p3.mp3",
-      "category": "CAMBRIDGE_END",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "That is the end of Part 3.",
-      "actual": "That is the end of Part 3.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2281
+      "file": "public/audio/cambridge/flyers_end_p3.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.flyers_end_p3",
+      "source_type": "cambridge_blueprint",
+      "category": "END_AUDIO",
+      "part": "L3",
+      "canonical_transcript": "That is the end of Part 3.",
+      "whisper_transcript": "That is the end of Part 3.",
+      "similarity": 1,
+      "anchors_required": [
+        "end",
+        "part",
+        "3"
+      ],
+      "anchors_found": [
+        "end",
+        "part",
+        "3"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1160
     },
     {
-      "asset": "public/audio/cambridge/flyers_replay_p4.mp3",
-      "category": "CAMBRIDGE_REPLAY",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Now listen to Part 4 again.",
-      "actual": "Now listen to Part 4 again.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 4,
-        "total": 4,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2252
+      "file": "public/audio/cambridge/flyers_replay_p4.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.flyers_replay_p4",
+      "source_type": "cambridge_blueprint",
+      "category": "REPLAY_AUDIO",
+      "part": "L4",
+      "canonical_transcript": "Now listen to Part 4 again.",
+      "whisper_transcript": "Now listen to Part 4 again.",
+      "similarity": 1,
+      "anchors_required": [
+        "listen",
+        "part",
+        "4",
+        "again"
+      ],
+      "anchors_found": [
+        "listen",
+        "part",
+        "4",
+        "again"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1164
     },
     {
-      "asset": "public/audio/cambridge/flyers_end_p4.mp3",
-      "category": "CAMBRIDGE_END",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "That is the end of Part 4.",
-      "actual": "That is the end of Part 4.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2281
+      "file": "public/audio/cambridge/flyers_end_p4.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.flyers_end_p4",
+      "source_type": "cambridge_blueprint",
+      "category": "END_AUDIO",
+      "part": "L4",
+      "canonical_transcript": "That is the end of Part 4.",
+      "whisper_transcript": "That is the end of Part 4.",
+      "similarity": 1,
+      "anchors_required": [
+        "end",
+        "part",
+        "4"
+      ],
+      "anchors_found": [
+        "end",
+        "part",
+        "4"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1162
     },
     {
-      "asset": "public/audio/cambridge/flyers_replay_p5.mp3",
-      "category": "CAMBRIDGE_REPLAY",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "Now listen to Part 5 again.",
-      "actual": "Now listen to Part 5 again.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 4,
-        "total": 4,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2245
+      "file": "public/audio/cambridge/flyers_replay_p5.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.flyers_replay_p5",
+      "source_type": "cambridge_blueprint",
+      "category": "REPLAY_AUDIO",
+      "part": "L5",
+      "canonical_transcript": "Now listen to Part 5 again.",
+      "whisper_transcript": "Now listen to Part 5 again.",
+      "similarity": 1,
+      "anchors_required": [
+        "listen",
+        "part",
+        "5",
+        "again"
+      ],
+      "anchors_found": [
+        "listen",
+        "part",
+        "5",
+        "again"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1152
     },
     {
-      "asset": "public/audio/cambridge/flyers_end_p5.mp3",
-      "category": "CAMBRIDGE_END",
-      "provenance": "CAMBRIDGE_BLUEPRINT",
-      "expected": "That is the end of Part 5.",
-      "actual": "That is the end of Part 5.",
-      "score": 1,
-      "status": "PASS",
-      "anchors": {
-        "passed": true,
-        "matchedCount": 3,
-        "total": 3,
-        "ratio": 1,
-        "missing": []
-      },
-      "durationMs": 2279
+      "file": "public/audio/cambridge/flyers_end_p5.mp3",
+      "source_file": "CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md",
+      "source_path": "cambridge_audio_blueprint.flyers_end_p5",
+      "source_type": "cambridge_blueprint",
+      "category": "END_AUDIO",
+      "part": "L5",
+      "canonical_transcript": "That is the end of Part 5.",
+      "whisper_transcript": "That is the end of Part 5.",
+      "similarity": 1,
+      "anchors_required": [
+        "end",
+        "part",
+        "5"
+      ],
+      "anchors_found": [
+        "end",
+        "part",
+        "5"
+      ],
+      "classification": "PASS",
+      "duration_ms": 1162
     }
   ]
 }

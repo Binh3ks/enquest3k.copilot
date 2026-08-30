@@ -1,9 +1,9 @@
 {
-  "commit": "0200e1663da04af1240f369f407ce65fdf81393c",
-  "git_commit": "0200e1663da04af1240f369f407ce65fdf81393c",
-  "shortCommit": "0200e166",
-  "message": "fix(qa): ground Day 5 contract in runtime DOM and add 4-week rotary proof",
-  "builtAt": "2026-08-30T01:26:28.667Z",
-  "build_timestamp": "2026-08-30T01:26:28.667Z",
+  "commit": "d448e0828c7088fe7b89baa0f2628c3408c5ca29",
+  "git_commit": "d448e0828c7088fe7b89baa0f2628c3408c5ca29",
+  "shortCommit": "d448e082",
+  "message": "feat(qa): implement W33 audio semantic manifest and batch Whisper STT validator",
+  "builtAt": "2026-08-30T06:53:28.123Z",
+  "build_timestamp": "2026-08-30T06:53:28.124Z",
   "env": "production"
 }
