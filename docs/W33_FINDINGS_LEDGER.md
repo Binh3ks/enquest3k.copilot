@@ -90,20 +90,26 @@
 ### FINDING ID: `FINDING-AUDIO-SEMANTICS`
 - **TITLE**: Playback Success vs Acoustic STT Transcript Verification Gap
 - **SEVERITY**: 🟡 HIGH
-- **LIFECYCLE STATUS**: `DISCOVERED` → `FIXED` → `VERIFIED` (Awaiting Independent Reviewer Closure)
+- **LIFECYCLE STATUS**: `DISCOVERED` → `FIXED` → `VERIFIED` (NOT CLOSED — Awaiting Independent Reviewer Final Closure)
 - **ROOT CAUSE**: Prior QA validated only HTML5 audio creation, valid URL binding, and non-zero duration, leaving a gap between file playback and spoken phoneme accuracy.
-- **RESOLUTION & SPECIFICATION**: 
-  - **Manifest Path**: [`docs/W33_AUDIO_SEMANTIC_MANIFEST.json`](file:///Users/binhnguyen/projects/Engquest3k/docs/W33_AUDIO_SEMANTIC_MANIFEST.json) (54 records mapped to canonical source data / Cambridge blueprints).
+- **RESOLUTION & HARDENING SPECIFICATION**: 
+  - **Manifest Path**: [`docs/W33_AUDIO_SEMANTIC_MANIFEST.json`](file:///Users/binhnguyen/projects/Engquest3k/docs/W33_AUDIO_SEMANTIC_MANIFEST.json) (54 deterministic records).
   - **Validator Path**: [`scripts/whisper_audio_semantic_validator.mjs`](file:///Users/binhnguyen/projects/Engquest3k/scripts/whisper_audio_semantic_validator.mjs) (`npm run audit:audio:semantic 33`).
   - **Whisper Engine**: `/Library/Frameworks/Python.framework/Versions/3.11/bin/whisper` (Model: `tiny`, Language: `en`).
   - **Scoring Algorithm**: Blended $50\%$ Token Overlap (Jaccard) + $50\%$ Normalized Character Levenshtein distance on normalized text.
-  - **Similarity Baseline**: $\ge 85\%$ standard threshold ($\ge 65\%$ for short clips $\le 12$ words combined with mandatory anchor matching).
-  - **Semantic Anchor Policy**: Transcript-specific named entities, locations, numbers, and key actions (e.g. `Jake`, `Tom`, `Nurse Sarah`, `Headmaster Brown`, `corridor`, `bandage`, `warning signs`, `2 minutes`). High lexical similarity NEVER overrides a failed critical anchor.
-  - **Adversarial Self-Tests**: 4 fail-closed test fixtures (`--self-test`) verifying rejection of corrupted, truncated, or entity-swapped transcripts.
+  - **Classification Thresholds**:
+    - Standard Audio ($>12$ words): `PASS` $\ge 85.0\%$, `MINOR_TRANSCRIPTION_VARIANCE` $70.0\% - <85.0\%$, `SEMANTIC_MISMATCH` $< 70.0\%$.
+    - Short Audio ($\le 12$ words): `PASS` $\ge 85.0\%$, `MINOR_TRANSCRIPTION_VARIANCE` $65.0\% - <85.0\%$, `SEMANTIC_MISMATCH` $< 65.0\%$.
+  - **Fail-Closed Semantic Guards (Overrides similarity score)**:
+    1. **Polarity / Negation Guard**: Rejects negation insertion/removal (`helped` $\leftrightarrow$ `did not help`) as `SEMANTIC_MISMATCH`.
+    2. **Critical Entity / Location Guard**: Rejects character name or location substitutions (`corridor` $\leftrightarrow$ `classroom`, `Jake` $\leftrightarrow$ `Tom`) as `SEMANTIC_MISMATCH`.
+    3. **Numeric & Code Identifier Guard**: Rejects number and identifier mutations (`2 minutes` $\leftrightarrow$ `20 minutes`, `Room 4B` $\leftrightarrow$ `Room 4C`) as `SEMANTIC_MISMATCH`.
+    4. **Material Truncation Guard**: Rejects transcripts with token length ratio $<60\%$ as `SEMANTIC_MISMATCH`.
+  - **Adversarial Self-Tests**: 9 deterministic positive and negative test fixtures (Tests A through I) executed on production classifier prior to corpus validation.
 - **EMPIRICAL VERIFICATION EVIDENCE**: 
   - Corpus Evaluated: 54 / 54 Assets (W33: 44, Cambridge: 10)
-  - Result Counts: 50 PASS, 4 MINOR_TRANSCRIPTION_VARIANCE, 0 SEMANTIC_MISMATCH, 0 NO_TRANSCRIPT, 0 MISSING_ASSET, 0 BLOCKED
-  - Verdict: 🟢 **PASS (100% Lexical & Semantic Fidelity)**
+  - Result Counts: 50 Strict PASS, 4 Accepted Minor Transcription Variances, 0 SEMANTIC_MISMATCH, 0 NO_TRANSCRIPT, 0 MISSING_ASSET, 0 BLOCKED
+  - Verdict: 🟢 **PASS (54/54 Semantic Validation Success, 0 Fatal Errors)**
   - Machine-Readable Artifact: [`artifacts/w33_audio_semantic_validation.json`](file:///Users/binhnguyen/projects/Engquest3k/artifacts/w33_audio_semantic_validation.json)
   - Documentation Reports: [`docs/W33_AUDIO_SEMANTIC_VALIDATION_REPORT.json`](file:///Users/binhnguyen/projects/Engquest3k/docs/W33_AUDIO_SEMANTIC_VALIDATION_REPORT.json) & [`.md`](file:///Users/binhnguyen/projects/Engquest3k/docs/W33_AUDIO_SEMANTIC_VALIDATION_REPORT.md)
-- **CONFIDENCE**: HIGH
+- **CONFIDENCE**: HIGH (Hardened against polarity, entity, numeric, and truncation mutations)

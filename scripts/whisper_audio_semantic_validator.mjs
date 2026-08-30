@@ -1,13 +1,17 @@
 #!/usr/bin/env node
 /**
- * 🎙️ W33 WHISPER AUDIO SEMANTIC VALIDATOR
+ * 🎙️ W33 WHISPER AUDIO SEMANTIC VALIDATOR (Hardened Edition)
  * 
- * Multimodal Forensic Audio Validator:
+ * Multimodal Fail-Closed Forensic Audio Validator:
  * - Layer T4-A: Asset Existence (> 0 bytes)
- * - Layer T4-B: Transcript Existence (non-empty)
- * - Layer T4-C: Normalized Lexical Comparison (Levenshtein >= 85%)
- * - Layer T4-D: Semantic Key Anchor Verification
- * - Short-Audio Handling: Bounded similarity with mandatory critical anchors
+ * - Layer T4-B: Transcript Existence (non-empty from native Whisper)
+ * - Layer T4-C: Normalized Lexical Comparison (Blended Levenshtein + Token Jaccard)
+ * - Layer T4-D: Semantic Integrity Guards:
+ *     1. Polarity / Negation Inversion Guard
+ *     2. Critical Entity & Location Integrity Guard (100% required anchor match)
+ *     3. Numeric, Quantity & Code Identifier Integrity Guard (2 min != 20 min, 4B != 4C)
+ *     4. Material Truncation Guard (< 60% length ratio)
+ * - Adversarial Self-Test Suite (9 Comprehensive Positive & Negative Tests: Tests A through I)
  * - Fail-Closed Guard: Exits 0 ONLY if all assets are PASS / MINOR_TRANSCRIPTION_VARIANCE, else 1.
  */
 
@@ -44,7 +48,20 @@ export function findWhisperBin() {
 // ── 2. Text Normalization ───────────────────────────────────────────────────
 const NUMBER_MAP = {
   '1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five',
-  '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine', '10': 'ten'
+  '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine', '10': 'ten',
+  '11': 'eleven', '12': 'twelve', '13': 'thirteen', '14': 'fourteen', '15': 'fifteen',
+  '16': 'sixteen', '17': 'seventeen', '18': 'eighteen', '19': 'nineteen', '20': 'twenty',
+  '30': 'thirty', '40': 'forty', '50': 'fifty', '60': 'sixty', '70': 'seventy',
+  '80': 'eighty', '90': 'ninety', '100': 'hundred', '1000': 'thousand'
+};
+
+const WORD_TO_NUMBER = {
+  'zero': '0', 'one': '1', 'two': '2', 'three': '3', 'four': '4', 'five': '5',
+  'six': '6', 'seven': '7', 'eight': '8', 'nine': '9', 'ten': '10',
+  'eleven': '11', 'twelve': '12', 'thirteen': '13', 'fourteen': '14', 'fifteen': '15',
+  'sixteen': '16', 'seventeen': '17', 'eighteen': '18', 'nineteen': '19', 'twenty': '20',
+  'thirty': '30', 'forty': '40', 'fifty': '50', 'sixty': '60', 'seventy': '70',
+  'eighty': '80', 'ninety': '90', 'hundred': '100', 'thousand': '1000'
 };
 
 export function normalizeText(text) {
@@ -53,20 +70,65 @@ export function normalizeText(text) {
   // Normalize contractions & special punctuation
   norm = norm.replace(/[’']/g, '');
   norm = norm.replace(/[^a-z0-9\s]/g, ' ');
-  // UK / US spelling variations & contractions
+  // First collapse all whitespace (\n, \t, spaces) to single space
+  norm = norm.replace(/\s+/g, ' ').trim();
+  // UK / US spelling variations & compound words
   norm = norm.replace(/\bcolour\b/g, 'color');
   norm = norm.replace(/\bfavourite\b/g, 'favorite');
   norm = norm.replace(/\bpractise\b/g, 'practice');
   norm = norm.replace(/\bdoor frame\b/g, 'doorframe');
+  norm = norm.replace(/\bnote book\b/g, 'notebook');
+  norm = norm.replace(/\bback pack\b/g, 'backpack');
+  norm = norm.replace(/\bnotice board\b/g, 'noticeboard');
   norm = norm.replace(/\btheres\b/g, 'there is');
   norm = norm.replace(/\bcolor and right\b/g, 'color and write');
   // Convert digits to words for uniform phonetic comparison
-  norm = norm.replace(/\b([1-9]|10)\b/g, m => NUMBER_MAP[m] || m);
-  // Collapse whitespace
-  return norm.trim().replace(/\s+/g, ' ');
+  norm = norm.replace(/\b([0-9]+)\b/g, m => NUMBER_MAP[m] || m);
+  return norm.trim();
 }
 
-// ── 3. Lexical Similarity (Token Overlap & Levenshtein) ─────────────────────
+// ── 3. Polarity & Semantic Markers ──────────────────────────────────────────
+const NEGATION_WORDS = new Set([
+  'not', 'no', 'never', 'none', 'neither', 'nor', 'nowhere',
+  'dont', 'doesnt', 'didnt', 'wont', 'wouldnt', 'cant', 'cannot', 'couldnt',
+  'shouldnt', 'isnt', 'arent', 'wasnt', 'werent', 'hasnt', 'havent', 'hadnt'
+]);
+
+export function extractPolarity(text) {
+  if (!text) return false;
+  const norm = normalizeText(text);
+  const tokens = norm.split(' ').filter(Boolean);
+  const negs = tokens.filter(t => NEGATION_WORDS.has(t));
+  return negs.length % 2 !== 0; // true if net negative
+}
+
+// ── 4. Numeric & Code Identifier Entities ───────────────────────────────────
+export function extractNumericAndCodeEntities(text) {
+  if (!text) return [];
+  const norm = normalizeText(text);
+  const tokens = norm.split(' ').filter(Boolean);
+  const entities = [];
+
+  for (let i = 0; i < tokens.length; i++) {
+    const t = tokens[i];
+    // Check number words or digits
+    if (/^[0-9]+$/.test(t) || WORD_TO_NUMBER[t]) {
+      const val = WORD_TO_NUMBER[t] || t;
+      const nextWord = tokens[i + 1] || '';
+      entities.push(`${val}_${nextWord}`);
+    }
+    // Check alphanumeric identifier codes like 4b, 4c, room 4b
+    if (/^[0-9]+[a-z]$/.test(t)) {
+      entities.push(t);
+    }
+    if (t === 'room' && tokens[i + 1] && /^[0-9]+[a-z]?$/.test(tokens[i + 1])) {
+      entities.push(`room_${tokens[i + 1]}`);
+    }
+  }
+  return Array.from(new Set(entities));
+}
+
+// ── 5. Lexical Similarity (Token Overlap & Levenshtein) ─────────────────────
 export function calculateLevenshtein(a, b) {
   const m = a.length;
   const n = b.length;
@@ -104,8 +166,8 @@ export function calculateSimilarity(expected, actual) {
   const charSim = 1 - (charDist / maxLen);
 
   // Token Jaccard / Overlap
-  const expTokens = normExp.split(' ');
-  const actTokens = normAct.split(' ');
+  const expTokens = normExp.split(' ').filter(Boolean);
+  const actTokens = normAct.split(' ').filter(Boolean);
   const actSet = new Set(actTokens);
   const matchedTokens = expTokens.filter(t => actSet.has(t));
   const tokenSim = matchedTokens.length / Math.max(expTokens.length, actTokens.length);
@@ -114,7 +176,7 @@ export function calculateSimilarity(expected, actual) {
   return (charSim * 0.5) + (tokenSim * 0.5);
 }
 
-// ── 4. Semantic Anchor Verification ─────────────────────────────────────────
+// ── 6. Semantic Anchor Verification ─────────────────────────────────────────
 export function verifyAnchors(anchors, actualText) {
   if (!anchors || anchors.length === 0) return { passed: true, matchedCount: 0, total: 0, missing: [], found: [] };
   const normActual = normalizeText(actualText);
@@ -126,7 +188,7 @@ export function verifyAnchors(anchors, actualText) {
     if (normActual.includes(normAnchor)) {
       found.push(anchor);
     } else {
-      const tokens = normAnchor.split(' ');
+      const tokens = normAnchor.split(' ').filter(Boolean);
       const allTokensPresent = tokens.every(t => normActual.includes(t));
       if (allTokensPresent) {
         found.push(anchor);
@@ -137,8 +199,8 @@ export function verifyAnchors(anchors, actualText) {
   }
 
   const ratio = found.length / anchors.length;
-  // Critical Anchor Rule: Must match >= 75% of anchors and cannot fail critical named entities
-  const passed = ratio >= 0.75;
+  // Strict Fail-Closed Rule: Missing ANY explicitly declared required anchor fails
+  const passed = missing.length === 0;
   return {
     passed,
     matchedCount: found.length,
@@ -149,7 +211,7 @@ export function verifyAnchors(anchors, actualText) {
   };
 }
 
-// ── 5. Transcribe Asset with Whisper CLI ────────────────────────────────────
+// ── 7. Transcribe Asset with Whisper CLI ────────────────────────────────────
 export function transcribeAudio(whisperBin, filePath, tempDir) {
   const baseName = path.basename(filePath, '.mp3');
   const txtFile = path.join(tempDir, `${baseName}.txt`);
@@ -168,9 +230,9 @@ export function transcribeAudio(whisperBin, filePath, tempDir) {
   }
 }
 
-// ── 6. Evaluate Asset Entry ─────────────────────────────────────────────────
+// ── 8. Evaluate Asset Entry with Fail-Closed Semantic Guards ─────────────────
 export function evaluateAsset(entry, actualTranscript) {
-  const expectedTranscript = entry.expected_transcript || entry.canonical_transcript;
+  const expectedTranscript = entry.expected_transcript || entry.canonical_transcript || entry.transcript;
   const requiredAnchors = entry.required_anchors || entry.semantic_anchors || [];
 
   if (!expectedTranscript || expectedTranscript.trim() === '') {
@@ -183,23 +245,63 @@ export function evaluateAsset(entry, actualTranscript) {
     return { classification: 'NO_TRANSCRIPT', similarity: 0, reason: 'Whisper returned empty transcript' };
   }
 
+  // Guard 1: Polarity Inversion / Negation Guard
+  const expPolarity = extractPolarity(expectedTranscript);
+  const actPolarity = extractPolarity(actualTranscript);
+  if (expPolarity !== actPolarity) {
+    return {
+      classification: 'SEMANTIC_MISMATCH',
+      similarity: calculateSimilarity(expectedTranscript, actualTranscript),
+      reason: `Polarity mismatch: expected ${expPolarity ? 'negative' : 'affirmative'}, actual is ${actPolarity ? 'negative' : 'affirmative'}`
+    };
+  }
+
+  // Guard 2: Material Truncation Guard (< 60% length ratio)
+  const normExp = normalizeText(expectedTranscript);
+  const normAct = normalizeText(actualTranscript);
+  const expTokens = normExp.split(' ').filter(Boolean);
+  const actTokens = normAct.split(' ').filter(Boolean);
+  const lengthRatio = actTokens.length / Math.max(expTokens.length, 1);
+  if (expTokens.length >= 8 && lengthRatio < 0.60) {
+    return {
+      classification: 'SEMANTIC_MISMATCH',
+      similarity: calculateSimilarity(expectedTranscript, actualTranscript),
+      reason: `Material truncation detected: length ratio ${(lengthRatio * 100).toFixed(1)}% < 60%`
+    };
+  }
+
+  // Guard 3: Numeric & Code Identifier Entity Integrity
+  const expEntities = extractNumericAndCodeEntities(expectedTranscript);
+  const actEntities = extractNumericAndCodeEntities(actualTranscript);
+  for (const ent of expEntities) {
+    if (!actEntities.includes(ent)) {
+      return {
+        classification: 'SEMANTIC_MISMATCH',
+        similarity: calculateSimilarity(expectedTranscript, actualTranscript),
+        reason: `Numeric/code identifier mismatch: missing expected entity '${ent}'`
+      };
+    }
+  }
+
+  // Guard 4: Anchor Verification & Lexical Similarity
   const similarity = calculateSimilarity(expectedTranscript, actualTranscript);
   const anchorResult = verifyAnchors(requiredAnchors, actualTranscript);
 
-  const wordCount = expectedTranscript.split(/\s+/).length;
+  const wordCount = expTokens.length;
   const isShortAudio = wordCount <= 12;
 
   // Short audio policy vs Standard audio policy
   if (isShortAudio) {
-    if (anchorResult.passed && similarity >= 0.65) {
-      const classification = similarity >= 0.85 ? 'PASS' : 'MINOR_TRANSCRIPTION_VARIANCE';
-      return { classification, similarity, anchorResult };
+    if (anchorResult.passed && similarity >= 0.85) {
+      return { classification: 'PASS', similarity, anchorResult };
+    } else if (anchorResult.passed && similarity >= 0.65) {
+      return { classification: 'MINOR_TRANSCRIPTION_VARIANCE', similarity, anchorResult };
     } else {
       return {
         classification: 'SEMANTIC_MISMATCH',
         similarity,
         anchorResult,
-        reason: `Short audio failed criteria: sim=${similarity.toFixed(2)}, anchors=${anchorResult.matchedCount}/${anchorResult.total}, missing=[${anchorResult.missing.join(', ')}]`
+        reason: `Short audio failed criteria: sim=${similarity.toFixed(2)}, missing_anchors=[${anchorResult.missing.join(', ')}]`
       };
     }
   }
@@ -214,26 +316,26 @@ export function evaluateAsset(entry, actualTranscript) {
       classification: 'SEMANTIC_MISMATCH',
       similarity,
       anchorResult,
-      reason: `Standard audio mismatch: sim=${similarity.toFixed(2)}, anchors=${anchorResult.matchedCount}/${anchorResult.total}, missing=[${anchorResult.missing.join(', ')}]`
+      reason: `Standard audio mismatch: sim=${similarity.toFixed(2)}, missing_anchors=[${anchorResult.missing.join(', ')}]`
     };
   }
 }
 
-// ── 7. Adversarial Self-Test Suite (Step 11) ────────────────────────────────
+// ── 9. Comprehensive Adversarial Self-Test Suite (Tests A through I) ─────────
 export function runSelfTests(whisperBin) {
   console.log('========================================================================');
-  console.log('🧪 RUNNING VALIDATOR ADVERSARIAL SELF-TESTS (Step 11)');
+  console.log('🧪 RUNNING HARDENED ADVERSARIAL SELF-TESTS (Tests A through I)');
   console.log('========================================================================\n');
 
   const tempDir = path.join(os.tmpdir(), `w33_selftest_${Date.now()}`);
   fs.mkdirSync(tempDir, { recursive: true });
 
-  // TEST A — Known good
+  // TEST A — Known good asset
   const realFile = path.join(rootDir, 'public/audio/week33/info_exchange_q1.mp3');
   const realTrans = transcribeAudio(whisperBin, realFile, tempDir);
   const testA = evaluateAsset({
-    canonical_transcript: 'Where did Jake help his friend?',
-    semantic_anchors: ['Jake', 'help', 'friend']
+    expected_transcript: 'Where did Jake help his friend?',
+    required_anchors: ['Jake', 'help', 'friend']
   }, realTrans);
   if (testA.classification !== 'PASS') {
     throw new Error(`TEST A (known good) FAILED: expected PASS, got ${testA.classification}`);
@@ -248,26 +350,97 @@ export function runSelfTests(whisperBin) {
 
   // TEST C — Blocked Whisper / Invalid Executable
   const testC = transcribeAudio('/invalid/path/to/nonexistent/whisper', realFile, tempDir);
-  const evalC = evaluateAsset({ canonical_transcript: 'Sample' }, testC);
+  const evalC = evaluateAsset({ expected_transcript: 'Sample' }, testC);
   if (evalC.classification !== 'BLOCKED') {
     throw new Error(`TEST C (blocked whisper) FAILED: expected BLOCKED, got ${evalC.classification}`);
   }
   console.log('  ✅ TEST C — Blocked / Invalid Whisper -> BLOCKED detection verified');
 
-  // TEST D — Semantic mismatch
-  const testD = evaluateAsset({
-    canonical_transcript: 'Where did Jake help his friend?',
-    semantic_anchors: ['Jake', 'help', 'friend']
-  }, 'Where did Tom help his friend?'); // Jake swapped with Tom
-  if (testD.classification !== 'SEMANTIC_MISMATCH') {
-    throw new Error(`TEST D (semantic mismatch) FAILED: expected SEMANTIC_MISMATCH, got ${testD.classification}`);
+  // TEST D — Entity Swaps (Character & Object)
+  const testD1 = evaluateAsset({
+    expected_transcript: 'Where did Jake help his friend?',
+    required_anchors: ['Jake', 'help', 'friend']
+  }, 'Where did Tom help his friend?'); // Character swap: Jake -> Tom
+  if (testD1.classification !== 'SEMANTIC_MISMATCH') {
+    throw new Error(`TEST D1 (character swap) FAILED: expected SEMANTIC_MISMATCH, got ${testD1.classification}`);
   }
-  console.log('  ✅ TEST D — Semantic mismatch (Jake -> Tom swap) -> SEMANTIC_MISMATCH verified');
+  const testD2 = evaluateAsset({
+    expected_transcript: 'Nurse Clara applied a clean bandage to Tom.',
+    required_anchors: ['Nurse Clara', 'bandage', 'Tom']
+  }, 'Nurse Clara applied a clean notebook to Tom.'); // Object swap: bandage -> notebook
+  if (testD2.classification !== 'SEMANTIC_MISMATCH') {
+    throw new Error(`TEST D2 (object swap) FAILED: expected SEMANTIC_MISMATCH, got ${testD2.classification}`);
+  }
+  console.log('  ✅ TEST D — Entity swaps (Jake -> Tom, bandage -> notebook) -> SEMANTIC_MISMATCH verified');
 
-  console.log('\n🎉 ALL 4 ADVERSARIAL SELF-TESTS PASSED!\n');
+  // TEST E — Location Substitution
+  const testE = evaluateAsset({
+    expected_transcript: 'Jake helped Tom in the school corridor after Tom slipped.',
+    required_anchors: ['Jake', 'Tom', 'school corridor', 'slipped']
+  }, 'Jake helped Tom in the classroom after Tom slipped.'); // corridor swapped with classroom
+  if (testE.classification !== 'SEMANTIC_MISMATCH') {
+    throw new Error(`TEST E (location swap) FAILED: expected SEMANTIC_MISMATCH, got ${testE.classification}`);
+  }
+  console.log('  ✅ TEST E — Location substitution (corridor -> classroom) -> SEMANTIC_MISMATCH verified');
+
+  // TEST F — Bidirectional Polarity Inversion (Negation & Affirmative)
+  const testF1 = evaluateAsset({
+    expected_transcript: 'Jake helped Tom in the school corridor after Tom slipped.',
+    required_anchors: ['Jake', 'Tom', 'corridor', 'slipped']
+  }, 'Jake did not help Tom in the school corridor after Tom slipped.'); // Pos -> Neg (did not)
+  if (testF1.classification !== 'SEMANTIC_MISMATCH') {
+    throw new Error(`TEST F1 (pos -> neg) FAILED: expected SEMANTIC_MISMATCH, got ${testF1.classification}`);
+  }
+  const testF2 = evaluateAsset({
+    expected_transcript: 'When students walk calmly in hallways, accidents do not happen.',
+    required_anchors: ['students', 'hallways', 'accidents']
+  }, 'When students walk calmly in hallways, accidents happen.'); // Neg -> Pos (omitted 'not')
+  if (testF2.classification !== 'SEMANTIC_MISMATCH') {
+    throw new Error(`TEST F2 (neg -> pos) FAILED: expected SEMANTIC_MISMATCH, got ${testF2.classification}`);
+  }
+  const testF3 = evaluateAsset({
+    expected_transcript: 'Students should never run in the hallways.',
+    required_anchors: ['Students', 'run', 'hallways']
+  }, 'Students should run in the hallways.'); // Neg (never) -> Pos
+  if (testF3.classification !== 'SEMANTIC_MISMATCH') {
+    throw new Error(`TEST F3 (never -> pos) FAILED: expected SEMANTIC_MISMATCH, got ${testF3.classification}`);
+  }
+  console.log('  ✅ TEST F — Bidirectional polarity (pos <-> neg, did not, never, do not) -> SEMANTIC_MISMATCH verified');
+
+  // TEST G — Number Alteration
+  const testG = evaluateAsset({
+    expected_transcript: 'The doctor arrived in 2 minutes to help the boy.',
+    required_anchors: ['doctor', 'minutes', 'help']
+  }, 'The doctor arrived in 20 minutes to help the boy.'); // 2 minutes -> 20 minutes
+  if (testG.classification !== 'SEMANTIC_MISMATCH') {
+    throw new Error(`TEST G (number alteration) FAILED: expected SEMANTIC_MISMATCH, got ${testG.classification}`);
+  }
+  console.log('  ✅ TEST G — Number alteration (2 minutes -> 20 minutes) -> SEMANTIC_MISMATCH verified');
+
+  // TEST H — Identifier Code Alteration
+  const testH = evaluateAsset({
+    expected_transcript: 'The accident happened near Room 4B after science class.',
+    required_anchors: ['accident', 'Room 4B', 'science class']
+  }, 'The accident happened near Room 4C after science class.'); // Room 4B -> Room 4C
+  if (testH.classification !== 'SEMANTIC_MISMATCH') {
+    throw new Error(`TEST H (identifier alteration) FAILED: expected SEMANTIC_MISMATCH, got ${testH.classification}`);
+  }
+  console.log('  ✅ TEST H — Identifier alteration (Room 4B -> Room 4C) -> SEMANTIC_MISMATCH verified');
+
+  // TEST I — Material Truncation / Semantic Collision
+  const testI = evaluateAsset({
+    expected_transcript: 'Jake was walking carefully down the school corridor after science class.',
+    required_anchors: ['Jake', 'corridor', 'science class']
+  }, 'Jake was walking.'); // Heavily truncated (<60% length)
+  if (testI.classification !== 'SEMANTIC_MISMATCH') {
+    throw new Error(`TEST I (material truncation) FAILED: expected SEMANTIC_MISMATCH, got ${testI.classification}`);
+  }
+  console.log('  ✅ TEST I — Material truncation (< 60% length) -> SEMANTIC_MISMATCH verified');
+
+  console.log('\n🎉 ALL 9 ADVERSARIAL SELF-TESTS (Tests A-I) PASSED WITH FAIL-CLOSED PROTECTION!\n');
 }
 
-// ── 8. Main Execution Runner ────────────────────────────────────────────────
+// ── 10. Main Execution Runner ────────────────────────────────────────────────
 async function main() {
   const args = process.argv.slice(2);
   const isSelfTestOnly = args.includes('--test-negative') || args.includes('--self-test');
@@ -279,14 +452,11 @@ async function main() {
     process.exit(1);
   }
 
-  // If self-test mode requested, run and exit
+  // Run self-tests first as internal invariant
+  runSelfTests(whisperBin);
   if (isSelfTestOnly) {
-    runSelfTests(whisperBin);
     process.exit(0);
   }
-
-  // Otherwise run self-tests first as internal invariant
-  runSelfTests(whisperBin);
 
   const manifestPath = path.join(rootDir, 'docs/W33_AUDIO_SEMANTIC_MANIFEST.json');
   if (!fs.existsSync(manifestPath)) {
@@ -299,16 +469,12 @@ async function main() {
   console.log('🎙️  W33 AUDIO SEMANTIC VALIDATION');
   console.log('========================================================================');
   console.log(`Whisper:\n  ${whisperBin}\n`);
-
+  
   const w33Count = manifest.assets.filter(a => a.file.includes('week33')).length;
   const camCount = manifest.assets.filter(a => a.file.includes('cambridge')).length;
+  console.log(`Corpus:\n  W33: ${w33Count}\n  Cambridge: ${camCount}\n  Total: ${manifest.assets.length}\n`);
 
-  console.log(`Corpus:`);
-  console.log(`  W33: ${w33Count}`);
-  console.log(`  Cambridge: ${camCount}`);
-  console.log(`  Total: ${manifest.assets.length}\n`);
-
-  const tempDir = path.join(os.tmpdir(), `w33_whisper_batch_${Date.now()}`);
+  const tempDir = path.join(os.tmpdir(), `w33_whisper_${Date.now()}`);
   fs.mkdirSync(tempDir, { recursive: true });
 
   const results = [];
@@ -330,7 +496,7 @@ async function main() {
 
   for (let i = 0; i < manifest.assets.length; i++) {
     const entry = manifest.assets[i];
-    const fullPath = path.join(rootDir, entry.file);
+    const fullPath = path.join(rootDir, entry.filesystem_path || entry.file);
 
     // T4-A: Asset existence
     if (!fs.existsSync(fullPath)) {
@@ -338,14 +504,14 @@ async function main() {
       results.push({
         file: entry.file,
         source_file: entry.source_file,
-        source_path: entry.source_path,
-        source_type: entry.source_type,
+        source_path: entry.source_path || entry.source_key,
+        source_type: entry.source_type || entry.transcript_provenance,
         category: entry.category,
         part: entry.part,
-        canonical_transcript: entry.canonical_transcript,
+        canonical_transcript: entry.expected_transcript || entry.canonical_transcript || entry.transcript,
         whisper_transcript: null,
         similarity: 0,
-        anchors_required: entry.semantic_anchors || [],
+        anchors_required: entry.required_anchors || entry.semantic_anchors || [],
         anchors_found: [],
         classification: 'MISSING_ASSET'
       });
@@ -359,14 +525,14 @@ async function main() {
       results.push({
         file: entry.file,
         source_file: entry.source_file,
-        source_path: entry.source_path,
-        source_type: entry.source_type,
+        source_path: entry.source_path || entry.source_key,
+        source_type: entry.source_type || entry.transcript_provenance,
         category: entry.category,
         part: entry.part,
-        canonical_transcript: entry.canonical_transcript,
+        canonical_transcript: entry.expected_transcript || entry.canonical_transcript || entry.transcript,
         whisper_transcript: null,
         similarity: 0,
-        anchors_required: entry.semantic_anchors || [],
+        anchors_required: entry.required_anchors || entry.semantic_anchors || [],
         anchors_found: [],
         classification: 'MISSING_ASSET'
       });
@@ -400,7 +566,7 @@ async function main() {
       source_type: entry.source_type || entry.transcript_provenance,
       category: entry.category,
       part: entry.part,
-      canonical_transcript: entry.expected_transcript || entry.canonical_transcript,
+      canonical_transcript: entry.expected_transcript || entry.canonical_transcript || entry.transcript,
       whisper_transcript: actualTranscript,
       similarity: Number(evaluation.similarity.toFixed(3)),
       anchors_required: entry.required_anchors || entry.semantic_anchors || [],
@@ -418,7 +584,7 @@ async function main() {
       console.log(`[${i + 1}/${manifest.assets.length}] 🟡 MINOR_VARIANCE (${durationMs}ms) ${path.basename(entry.file)} [Sim: ${(evaluation.similarity * 100).toFixed(1)}%]`);
     } else if (evaluation.classification === 'SEMANTIC_MISMATCH') {
       counts.semantic_mismatch++;
-      console.log(`[${i + 1}/${manifest.assets.length}] 🔴 SEMANTIC_MISMATCH (${durationMs}ms) ${path.basename(entry.file)}`);
+      console.log(`[${i + 1}/${manifest.assets.length}] 🔴 SEMANTIC_MISMATCH (${durationMs}ms) ${path.basename(entry.file)}: ${evaluation.reason}`);
     } else if (evaluation.classification === 'NO_TRANSCRIPT') {
       counts.no_transcript++;
       console.log(`[${i + 1}/${manifest.assets.length}] 🔴 NO_TRANSCRIPT (${durationMs}ms) ${path.basename(entry.file)}`);
@@ -441,6 +607,15 @@ async function main() {
     timestamp: new Date().toISOString(),
     whisper_engine: whisperBin,
     model: 'tiny',
+    total_assets: counts.total,
+    passed: counts.passed,
+    minor_variance: counts.minor_transcription_variance,
+    semantic_mismatch: counts.semantic_mismatch,
+    no_transcript: counts.no_transcript,
+    missing_asset: counts.missing_asset,
+    no_canonical_transcript: counts.no_canonical_transcript,
+    blocked: counts.blocked,
+    overall_status: verdict,
     summary: {
       total: counts.total,
       pass: counts.passed,
@@ -453,13 +628,24 @@ async function main() {
       verdict
     },
     assets: results.map(r => ({
+      asset: r.file.replace(/^public/, ''),
       file: r.file,
+      source_file: r.source_file,
+      source_key: r.source_path,
+      category: r.category,
+      part: r.part,
+      canonical_transcript: r.canonical_transcript,
+      actual_transcript: r.whisper_transcript,
       expected: r.canonical_transcript,
       actual: r.whisper_transcript,
       similarity: r.similarity,
       required_anchors: r.anchors_required,
+      detected_anchors: r.anchors_found,
       missing_anchors: (r.anchors_required || []).filter(a => !(r.anchors_found || []).includes(a)),
-      status: r.classification
+      classification: r.classification,
+      status: r.classification,
+      error: (r.classification === 'PASS' || r.classification === 'MINOR_TRANSCRIPTION_VARIANCE') ? null : r.classification,
+      duration_ms: r.duration_ms
     }))
   };
 
@@ -472,15 +658,15 @@ async function main() {
 
   // ── SAVE HUMAN-READABLE MARKDOWN REPORT ──────────────────────────────────
   const mdPath = path.join(rootDir, 'docs/W33_AUDIO_SEMANTIC_VALIDATION_REPORT.md');
-  let mdContent = `# 🎙️ W33 Audio Semantic Validation Report\n\n`;
+  let mdContent = `# 🎙️ W33 Audio Semantic Validation Report (Hardened)\n\n`;
   mdContent += `**Governing Standard**: W33 Golden Learning & Assessment Standard v1.0  \n`;
   mdContent += `**Whisper Engine**: \`${whisperBin}\`  \n`;
   mdContent += `**Execution Date**: ${jsonReport.timestamp}  \n`;
   mdContent += `**Verdict**: **${verdict}**\n\n`;
   mdContent += `## 1. Summary Statistics\n\n`;
   mdContent += `- **Total Corpus Assets**: ${counts.total} (W33: ${w33Count}, Cambridge: ${camCount})\n`;
-  mdContent += `- **PASS (Exact / High Semantic Match)**: ${counts.passed}\n`;
-  mdContent += `- **MINOR_TRANSCRIPTION_VARIANCE**: ${counts.minor_transcription_variance}\n`;
+  mdContent += `- **PASS (Exact / High Semantic Match >= 85%)**: ${counts.passed}\n`;
+  mdContent += `- **MINOR_TRANSCRIPTION_VARIANCE (70% - 84.9%)**: ${counts.minor_transcription_variance}\n`;
   mdContent += `- **SEMANTIC_MISMATCH**: ${counts.semantic_mismatch}\n`;
   mdContent += `- **NO_TRANSCRIPT**: ${counts.no_transcript}\n`;
   mdContent += `- **MISSING_ASSET**: ${counts.missing_asset}\n`;
@@ -498,12 +684,12 @@ async function main() {
   }
   fs.writeFileSync(mdPath, mdContent);
 
-  // ── STEP 10: HUMAN-READABLE CLI REPORT ────────────────────────────────────
+  // ── CLI OUTPUT REPORT ────────────────────────────────────────────────────
   console.log('\n---------------------------------------------');
   console.log(`T4-A Asset existence       [${t4A_pass}/${counts.total} PASS]`);
   console.log(`T4-B Transcript existence  [${t4B_pass}/${counts.total} PASS]`);
   console.log(`T4-C Lexical similarity    [${t4C_pass}/${counts.total} PASS]`);
-  console.log(`T4-D Semantic anchors      [${t4D_pass}/${counts.total} PASS]`);
+  console.log(`T4-D Semantic guards       [${t4D_pass}/${counts.total} PASS]`);
   console.log('---------------------------------------------');
   console.log(`PASS                         ${counts.passed}`);
   console.log(`MINOR_TRANSCRIPTION_VARIANCE ${counts.minor_transcription_variance}`);

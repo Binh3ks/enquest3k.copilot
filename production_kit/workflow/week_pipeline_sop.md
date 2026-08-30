@@ -66,7 +66,24 @@ A PASS on one gate does NOT imply a PASS on any other gate:
 > - **Tier 1 (Asset Existence)**: File exists on disk ($>0$ bytes).
 > - **Tier 2 (Asset Binding)**: Valid relative URL bound in hub data schema.
 > - **Tier 3 (Playback Integrity)**: Browser mounts `<audio>` element with valid duration $>0$ and successful playback.
-> - **Tier 4 (Acoustic Semantic Integrity)**: Offline Speech-to-Text (Whisper STT) validates spoken phonemes against canonical dialogue script with $\ge 85\%$ similarity and $100\%$ semantic anchor retention.
+> - **Tier 4 (Acoustic Semantic Integrity)**: Offline Speech-to-Text (Whisper STT) validates spoken phonemes against canonical dialogue script.
+> 
+> ⚠️ **Core Principle**: **"Playback success does not prove semantic correctness."** (Tier 3 PASS does NOT imply Tier 4 PASS).
+> 
+> **Tier 4 Classification Thresholds & Semantic Invariants**:
+> - **Standard Audio ($> 12$ words)**:
+>   - `PASS`: $\ge 85.0\%$ similarity + $100\%$ required anchors passed.
+>   - `MINOR_TRANSCRIPTION_VARIANCE`: $70.0\% - <85.0\%$ similarity + $100\%$ required anchors passed (accepted harmless ASR variations).
+>   - `SEMANTIC_MISMATCH`: $< 70.0\%$ similarity OR any critical semantic failure.
+> - **Short Audio ($\le 12$ words)**:
+>   - `PASS`: $\ge 85.0\%$ similarity + $100\%$ required anchors passed.
+>   - `MINOR_TRANSCRIPTION_VARIANCE`: $65.0\% - <85.0\%$ similarity + $100\%$ required anchors passed.
+>   - `SEMANTIC_MISMATCH`: $< 65.0\%$ similarity OR any critical semantic failure.
+> - **Mandatory Semantic Integrity Overrides** (Similarity thresholds CANNOT override these failures):
+>   1. **Polarity / Negation Inversion** $\implies$ `SEMANTIC_MISMATCH` (e.g. `helped` $\leftrightarrow$ `did not help`).
+>   2. **Critical Entity / Location Substitution** $\implies$ `SEMANTIC_MISMATCH` (e.g. `corridor` $\leftrightarrow$ `classroom`, `Jake` $\leftrightarrow$ `Tom`).
+>   3. **Number / Quantity / Code Mismatch** $\implies$ `SEMANTIC_MISMATCH` (e.g. `2 minutes` $\leftrightarrow$ `20 minutes`, `Room 4B` $\leftrightarrow$ `Room 4C`).
+>   4. **Material Truncation** ($< 60\%$ token length ratio) $\implies$ `SEMANTIC_MISMATCH`.
 
 CEFR PASS ≠ Flyers Shield PASS. Wordlist PASS ≠ Cambridge Mechanics PASS. Build PASS ≠ Runtime DOM PASS.
 

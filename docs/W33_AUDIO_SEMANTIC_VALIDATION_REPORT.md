@@ -1,15 +1,15 @@
-# 🎙️ W33 Audio Semantic Validation Report
+# 🎙️ W33 Audio Semantic Validation Report (Hardened)
 
 **Governing Standard**: W33 Golden Learning & Assessment Standard v1.0  
 **Whisper Engine**: `/Library/Frameworks/Python.framework/Versions/3.11/bin/whisper`  
-**Execution Date**: 2026-08-30T07:12:16.681Z  
+**Execution Date**: 2026-08-30T08:56:32.199Z  
 **Verdict**: **PASS**
 
 ## 1. Summary Statistics
 
 - **Total Corpus Assets**: 54 (W33: 44, Cambridge: 10)
-- **PASS (Exact / High Semantic Match)**: 50
-- **MINOR_TRANSCRIPTION_VARIANCE**: 4
+- **PASS (Exact / High Semantic Match >= 85%)**: 50
+- **MINOR_TRANSCRIPTION_VARIANCE (70% - 84.9%)**: 4
 - **SEMANTIC_MISMATCH**: 0
 - **NO_TRANSCRIPT**: 0
 - **MISSING_ASSET**: 0
@@ -45,7 +45,7 @@
 | `listening_p1_full.mp3` | COMPOSITE_AUDIO | L1 | 91.5% | 10/10 | 🟢 PASS |
 | `listening_p2_full.mp3` | COMPOSITE_AUDIO | L2 | 91.8% | 8/8 | 🟢 PASS |
 | `listening_p3_example.mp3` | EXAMPLE_AUDIO | L3 | 100.0% | 3/3 | 🟢 PASS |
-| `listening_p3_full.mp3` | COMPOSITE_AUDIO | L3 | 99.5% | 8/9 | 🟢 PASS |
+| `listening_p3_full.mp3` | COMPOSITE_AUDIO | L3 | 99.8% | 9/9 | 🟢 PASS |
 | `listening_p3_item1.mp3` | QUESTION_AUDIO | L3 | 100.0% | 11/11 | 🟢 PASS |
 | `listening_p3_item2.mp3` | QUESTION_AUDIO | L3 | 100.0% | 9/9 | 🟢 PASS |
 | `listening_p3_item3.mp3` | QUESTION_AUDIO | L3 | 100.0% | 11/11 | 🟢 PASS |
@@ -58,7 +58,7 @@
 | `listening_p4_q3.mp3` | QUESTION_AUDIO | L4 | 84.7% | 1/1 | 🟡 MINOR_VARIANCE |
 | `listening_p4_q4.mp3` | QUESTION_AUDIO | L4 | 84.9% | 2/2 | 🟡 MINOR_VARIANCE |
 | `listening_p4_q5.mp3` | QUESTION_AUDIO | L4 | 84.8% | 3/3 | 🟡 MINOR_VARIANCE |
-| `listening_p5_full.mp3` | COMPOSITE_AUDIO | L5 | 88.0% | 12/12 | 🟢 PASS |
+| `listening_p5_full.mp3` | COMPOSITE_AUDIO | L5 | 87.9% | 12/12 | 🟢 PASS |
 | `listening_p5_inst1.mp3` | INSTRUCTION_AUDIO | L5 | 100.0% | 2/2 | 🟢 PASS |
 | `listening_p5_inst2.mp3` | INSTRUCTION_AUDIO | L5 | 100.0% | 4/4 | 🟢 PASS |
 | `listening_p5_inst3.mp3` | INSTRUCTION_AUDIO | L5 | 100.0% | 5/5 | 🟢 PASS |

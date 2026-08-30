@@ -25,7 +25,7 @@ async function synthesizeGoogleTTS(text, voiceName, speakingRate = 1.0) {
   return Buffer.from(data.audioContent, 'base64');
 }
 
-const STATIC_AUDIO_TASKS = [
+export const STATIC_AUDIO_TASKS = [
   // 1. Dictation
   { filename: 'dictation_1.mp3', text: 'Jake was walking carefully down the school corridor.', voice: 'en-US-Neural2-F' },
   { filename: 'dictation_2.mp3', text: 'A boy running fast slipped on the wet floor.', voice: 'en-US-Neural2-F' },
@@ -64,7 +64,7 @@ const STATIC_AUDIO_TASKS = [
   { filename: 'clil_friction.mp3', text: 'Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water acts like a lubricant. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero! While the school nurse was applying the clean bandage, she explained that we must always look for the yellow warning sign. To stay safe, walk carefully and let friction do its job!', voice: 'en-US-Journey-F' }
 ];
 
-async function generateAll() {
+export async function generateAll() {
   const outputDir = path.join(ROOT, 'public', 'audio', 'week33');
   fs.mkdirSync(outputDir, { recursive: true });
 
@@ -83,7 +83,9 @@ async function generateAll() {
   console.log(`\n🎉 Week 33 Audio Generation 100% COMPLETE! Total files in /public/audio/week33/: ${fs.readdirSync(outputDir).length}`);
 }
 
-generateAll().catch(err => {
-  console.error("❌ Generation error:", err);
-  process.exit(1);
-});
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  generateAll().catch(err => {
+    console.error("❌ Generation error:", err);
+    process.exit(1);
+  });
+}
