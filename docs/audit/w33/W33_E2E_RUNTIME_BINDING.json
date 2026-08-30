@@ -1,0 +1,112 @@
+{
+  "timestamp": "2026-08-30T10:50:05.429Z",
+  "governing_standard": "W33 Golden Learning & Assessment Standard v1.0",
+  "total_bindings_observed": 15,
+  "bindings": [
+    {
+      "task_id": "gear1_webtoon",
+      "route": "/week/33/task/gear1_webtoon",
+      "browser_page": "TaskScreen",
+      "mounted_component": "WebtoonViewer",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "gear2_karaoke",
+      "route": "/week/33/task/gear2_karaoke",
+      "browser_page": "TaskScreen",
+      "mounted_component": "KaraokeShadowing",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "gear3_retell",
+      "route": "/week/33/task/gear3_retell",
+      "browser_page": "TaskScreen",
+      "mounted_component": "VoiceShadowing",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "gear4_clil",
+      "route": "/week/33/task/gear4_clil",
+      "browser_page": "TaskScreen",
+      "mounted_component": "CLILExplorer",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "science_lab",
+      "route": "/week/33/task/science_lab",
+      "browser_page": "TaskScreen",
+      "mounted_component": "ActionLabDragDrop",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "science_report",
+      "route": "/week/33/task/science_report",
+      "browser_page": "TaskScreen",
+      "mounted_component": "ScienceReportCreator",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "word_blitz",
+      "route": "/week/33/task/word_blitz",
+      "browser_page": "TaskScreen",
+      "mounted_component": "SpeedWordMatch",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "sentence_smash",
+      "route": "/week/33/task/sentence_smash",
+      "browser_page": "TaskScreen",
+      "mounted_component": "GrammarDuel",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "math_quest",
+      "route": "/week/33/task/math_quest",
+      "browser_page": "TaskScreen",
+      "mounted_component": "SingaporeBarModelQuiz",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "story_writer",
+      "route": "/week/33/task/story_writer",
+      "browser_page": "TaskScreen",
+      "mounted_component": "StoryWriting",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "broadcast_studio",
+      "route": "/week/33/task/broadcast_studio",
+      "browser_page": "TaskScreen",
+      "mounted_component": "VideoChallenge",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "info_exchange",
+      "route": "/week/33/task/info_exchange",
+      "browser_page": "TaskScreen",
+      "mounted_component": "InformationExchangeP2",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "boss_listening",
+      "route": "/week/33/task/boss_listening",
+      "browser_page": "TaskScreen",
+      "mounted_component": "BossBattleZone (L1 & L2)",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "boss_reading",
+      "route": "/week/33/task/boss_reading",
+      "browser_page": "TaskScreen",
+      "mounted_component": "BossBattleZone (WordBankMatchingGrid)",
+      "observed_status": "E2E_VERIFIED"
+    },
+    {
+      "task_id": "weekly_review",
+      "route": "/week/33/task/weekly_review",
+      "browser_page": "TaskScreen",
+      "mounted_component": "BossBattleZone (FindDifferencesInteractive)",
+      "observed_status": "E2E_VERIFIED"
+    }
+  ]
+}

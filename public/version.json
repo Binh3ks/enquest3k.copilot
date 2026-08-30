@@ -1,9 +1,9 @@
 {
-  "commit": "a2536c912834c301f1efdac592f23b52c1850bd2",
-  "git_commit": "a2536c912834c301f1efdac592f23b52c1850bd2",
-  "shortCommit": "a2536c91",
-  "message": "docs(audit): complete W33 Step 1H source-of-truth, provenance, and freeze forensic audit",
-  "builtAt": "2026-08-30T10:10:31.320Z",
-  "build_timestamp": "2026-08-30T10:10:31.321Z",
+  "commit": "18186b2c0518f9eb47ee808494030356b34f90cb",
+  "git_commit": "18186b2c0518f9eb47ee808494030356b34f90cb",
+  "shortCommit": "18186b2c",
+  "message": "docs(audit): publish W33 final adversarial forensic and dependency graph deliverables",
+  "builtAt": "2026-08-30T10:51:44.217Z",
+  "build_timestamp": "2026-08-30T10:51:44.218Z",
   "env": "production"
 }
