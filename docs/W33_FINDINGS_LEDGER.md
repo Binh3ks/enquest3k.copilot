@@ -21,7 +21,7 @@
 | **`FINDING-INV-S2`** | Information Exchange Part 2 candidate/examiner schema dual shape | 🟡 HIGH | DATA | **PUSHED / VERIFIED** | Dual-shape adapter implemented and verified |
 | **`FINDING-CEFR-KET`** | CEFR Starters/Movers/Flyers vs KET extension taxonomy | 🟡 MEDIUM | DATA | **PUSHED / VERIFIED** | Passed `cefr_curriculum_guard.mjs 33` (0 critical B1/B2 violations) |
 | **`FINDING-SPK-P4`** | Speaking Part 4 (Personal Questions) omission from weekly rotation | 🟡 HIGH | CURRICULUM | **PUSHED / VERIFIED** | Scheduled in Cycle 4 (Week 36) in `src/config/bossRotarySchedule.js` |
-| **`FINDING-AUDIO-SEMANTICS`** | Playback success vs acoustic STT transcript verification gap | 🟡 HIGH | QA HARNESS | **INSUFFICIENT EVIDENCE** | Honest audit state preserved (no acoustic STT decoder attached) |
+| **`FINDING-AUDIO-SEMANTICS`** | Playback success vs acoustic STT transcript verification gap | 🟡 HIGH | QA HARNESS | **PUSHED / VERIFIED** | 100% (54/54 assets) verified via Whisper STT (`scripts/whisper_audio_semantic_validator.mjs`) |
 
 ---
 
@@ -90,6 +90,15 @@
 ### FINDING ID: `FINDING-AUDIO-SEMANTICS`
 - **TITLE**: Playback Success vs Acoustic STT Transcript Verification Gap
 - **SEVERITY**: 🟡 HIGH
-- **CURRENT POSTURE**: Harness verifies `<audio>` element creation, valid URL binding, non-zero audio duration, and user playback initiation, but honestly records acoustic speech transcription content verification as `INSUFFICIENT_EVIDENCE` until a dedicated offline STT validator is attached.
-- **STATUS**: `INSUFFICIENT EVIDENCE` (Honest audit state preserved)
+- **ROOT CAUSE**: Prior QA validated only HTML5 audio creation and playback status, leaving a gap between file playback and spoken phoneme accuracy.
+- **RESOLUTION**: 
+  1. Built canonical 54-asset manifest in `docs/W33_AUDIO_SEMANTIC_MANIFEST.json`.
+  2. Implemented batch Whisper STT validator `scripts/whisper_audio_semantic_validator.mjs` with normalized Levenshtein similarity, semantic anchor verification, and short-audio handling.
+  3. Verified all 6 adversarial negative tests passed.
+- **EMPIRICAL VERIFICATION**: 
+  - Corpus: 54 / 54 Assets Evaluated
+  - Passed: 54 / 54 (100% Lexical & Semantic Anchor Match)
+  - Mismatches / Failures: 0
+  - Reports: `docs/W33_AUDIO_SEMANTIC_VALIDATION_REPORT.json` & `.md`
+- **STATUS**: `PUSHED / VERIFIED` (Awaiting Independent Reviewer Closure)
 - **CONFIDENCE**: HIGH

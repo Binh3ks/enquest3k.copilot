@@ -50,7 +50,8 @@ A PASS on one gate does NOT imply a PASS on any other gate:
 
 | Gate | What it validates | Script |
 |------|-------------------|--------|
-| **Gate 3** | Media Integrity (100% static MP3s > 0 bytes) | `node scripts/gate3_media_integrity.mjs NN` |
+| **Gate 3** | Media Existence & Integrity (100% static MP3s > 0 bytes) | `node scripts/gate3_media_integrity.mjs NN` |
+| **Gate 3B** | Audio Semantic STT Integrity (100% Whisper transcript & anchor match) | `node scripts/whisper_audio_semantic_validator.mjs` |
 | **Gate 4** | ESL Chunk Bolding (Punctuation outside bold tags) | `node scripts/gate4_chunk_bolding.mjs NN` |
 | **Gate 8** | Static No-Fallback Sweep (100% Fail-Loud) | `node scripts/gate8_no_fallback_sweep.mjs NN` |
 | **Gate 10** | Example Grammaticality & Agreement | `node scripts/gate10_example_grammaticality.mjs NN` |
@@ -60,6 +61,12 @@ A PASS on one gate does NOT imply a PASS on any other gate:
 | **Gate 15** | Production DOM Assertions (15/15 clean DOM) | `node scripts/gate15_production_dom_assertions.mjs NN` |
 | **Gate 16** | Content Quality & Single-Source Purity | `node scripts/gate16_content_quality.mjs NN` |
 | **Gate 17** | Cambridge Fidelity Doctrine (16 Parts) | `node scripts/gate17_fidelity_doctrine.mjs NN` |
+
+> 🎙️ **4-Tier Audio Verification Taxonomy**:
+> - **Tier 1 (Asset Existence)**: File exists on disk ($>0$ bytes).
+> - **Tier 2 (Asset Binding)**: Valid relative URL bound in hub data schema.
+> - **Tier 3 (Playback Integrity)**: Browser mounts `<audio>` element with valid duration $>0$ and successful playback.
+> - **Tier 4 (Acoustic Semantic Integrity)**: Offline Speech-to-Text (Whisper STT) validates spoken phonemes against canonical dialogue script with $\ge 85\%$ similarity and $100\%$ semantic anchor retention.
 
 CEFR PASS ≠ Flyers Shield PASS. Wordlist PASS ≠ Cambridge Mechanics PASS. Build PASS ≠ Runtime DOM PASS.
 

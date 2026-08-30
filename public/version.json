@@ -1,9 +1,9 @@
 {
-  "commit": "7f6fda358560380412b4b7058df704f8533863d7",
-  "git_commit": "7f6fda358560380412b4b7058df704f8533863d7",
-  "shortCommit": "7f6fda35",
-  "message": "test(qa): enrich Day 5 contract fields and update human simulation results",
-  "builtAt": "2026-08-29T14:47:13.755Z",
-  "build_timestamp": "2026-08-29T14:47:13.755Z",
+  "commit": "0200e1663da04af1240f369f407ce65fdf81393c",
+  "git_commit": "0200e1663da04af1240f369f407ce65fdf81393c",
+  "shortCommit": "0200e166",
+  "message": "fix(qa): ground Day 5 contract in runtime DOM and add 4-week rotary proof",
+  "builtAt": "2026-08-30T01:26:28.667Z",
+  "build_timestamp": "2026-08-30T01:26:28.667Z",
   "env": "production"
 }
