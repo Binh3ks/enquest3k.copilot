@@ -1,9 +1,9 @@
 {
-  "commit": "18186b2c0518f9eb47ee808494030356b34f90cb",
-  "git_commit": "18186b2c0518f9eb47ee808494030356b34f90cb",
-  "shortCommit": "18186b2c",
-  "message": "docs(audit): publish W33 final adversarial forensic and dependency graph deliverables",
-  "builtAt": "2026-08-30T10:51:44.217Z",
-  "build_timestamp": "2026-08-30T10:51:44.218Z",
+  "commit": "2c276500456db69e1608d599ee18b5f70932b40f",
+  "git_commit": "2c276500456db69e1608d599ee18b5f70932b40f",
+  "shortCommit": "2c276500",
+  "message": "fix(w33): Voice Shadow EN labels, PracticeRoute standalone, MCP config [multi-agent-review]",
+  "builtAt": "2026-08-30T13:34:33.160Z",
+  "build_timestamp": "2026-08-30T13:34:33.161Z",
   "env": "production"
 }

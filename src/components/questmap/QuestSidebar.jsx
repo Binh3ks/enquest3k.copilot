@@ -7,7 +7,6 @@ import LexioMascot from '../mascot/LexioMascot';
 import useArcadeStore, { getUnlockedGameCount } from '../../stores/useArcadeStore';
 import ArcadeModal from '../games/ArcadeModal';
 import ClassLeaderboardModal from '../common/ClassLeaderboardModal';
-import { getBossRotaryConfig } from '../../config/bossRotarySchedule';
 import './QuestSidebar.css';
 
 const TOTAL_TRIPS = 36; // Current syllabus length
@@ -121,31 +120,23 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
             <ChevronRight size={16} className="text-slate-400" />
           </button>
 
-          {/* Day 5 Boss & Passport — dynamic cycle label */}
-          {(() => {
-            const bossConfig = getBossRotaryConfig(currentWeekId);
-            const cycleLabel = bossConfig?.cycleNumber === 5
-              ? 'Full Mock — All 16 Parts'
-              : `Cycle ${bossConfig?.cycleNumber} · ${bossConfig?.activeParts?.length || 4} Parts`;
-            return (
-              <button
-                className="qs-nav-item"
-                onClick={() => {
-                  onClose();
-                  navigate(`/week/${currentWeekId}/task/weekly_review`);
-                }}
-              >
-                <div className="qs-nav-icon bg-emerald-100 text-emerald-700">
-                  <Award size={18} />
-                </div>
-                <div className="qs-nav-text">
-                  <div className="qs-nav-title">🏰 Day 5 Boss & Passport</div>
-                  <div className="qs-nav-desc">Cambridge assessment · {cycleLabel}</div>
-                </div>
-                <ChevronRight size={16} className="text-slate-400" />
-              </button>
-            );
-          })()}
+          {/* Passport Tracker — Cambridge shields earned per week */}
+          <button
+            className="qs-nav-item"
+            onClick={() => {
+              onClose();
+              navigate('/word-treasury?tab=shields');
+            }}
+          >
+            <div className="qs-nav-icon bg-emerald-100 text-emerald-700">
+              <Award size={18} />
+            </div>
+            <div className="qs-nav-text">
+              <div className="qs-nav-title">🛡️ Passport Tracker</div>
+              <div className="qs-nav-desc">Cambridge shields earned per week</div>
+            </div>
+            <ChevronRight size={16} className="text-slate-400" />
+          </button>
 
           {/* Word Treasury / Memory Bank */}
           <button

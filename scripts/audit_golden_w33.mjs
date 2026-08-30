@@ -16,7 +16,9 @@ const suite = [
   { name: '8. Rotary Schedule Invariant (Gate 13)', cmd: 'node scripts/gate13_rotary_schedule.mjs 33' },
   { name: '9. Content Quality & Single-Source (Gate 16)', cmd: 'node scripts/gate16_content_quality.mjs 33' },
   { name: '10. Cambridge Fidelity Doctrine (Gate 17)', cmd: 'node scripts/gate17_fidelity_doctrine.mjs 33' },
-  { name: '11. Master Audit & Production DOM (Gate 15)', cmd: 'node scripts/audit_week.mjs 33' }
+  { name: '11. Master Audit & Production DOM (Gate 15)', cmd: 'node scripts/audit_week.mjs 33' },
+  { name: '12. Runtime Smoke (Gate 5 Chrome MCP)', cmd: 'node scripts/gate5_chrome_mcp.mjs 33 --prod' },
+  { name: '13. DOM Assertions (Gate 15 Chrome MCP)', cmd: 'node scripts/gate15_chrome_mcp.mjs 33 --prod' }
 ];
 
 let allPassed = true;

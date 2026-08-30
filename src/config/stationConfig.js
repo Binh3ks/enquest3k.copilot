@@ -8,14 +8,6 @@ import AskAi from '../modules/ask_ai/AskAi';
 import DictationEngine from '../modules/dictation/DictationEngine';
 import Shadowing from '../modules/shadowing/Shadowing';
 import VideoChallenge from '../modules/video/VideoChallenge';
-import WriteAndSpeak from '../modules/write_speak/WriteAndSpeak';
-import Explore from '../modules/explore/Explore';
-import LogicLab from '../modules/logic/LogicLab';
-import WordPower from '../modules/power/WordPower';
-import DailyWatch from '../modules/watch/DailyWatch';
-import GameHub from '../modules/games/GameHub';
-import SelfRegulation from '../modules/self_regulation/SelfRegulation';
-import ReviewDashboard from '../modules/review/ReviewDashboard';
 import WorldDiscoveryHub from '../modules/cambridge_suite/WorldDiscoveryHub';
 import ArenaHub from '../modules/cambridge_suite/ArenaHub';
 import WritingStudioHub from '../modules/cambridge_suite/WritingStudioHub';
@@ -24,10 +16,7 @@ import NovaTalkShowHub from '../modules/cambridge_suite/NovaTalkShowHub';
 export const MODULE_COMPONENTS = {
   read_explore: ReadExploreRouter, new_words: VocabManager, word_match: WordMatch,
   grammar: GrammarEngine, mindmap_speaking: MindMapSpeaking, ask_ai: AskAi,
-  dictation: DictationEngine, shadowing: Shadowing, writing: WriteAndSpeak,
-  explore: Explore, logic_lab: LogicLab, word_power: WordPower,
-  daily_watch: DailyWatch, game_hub: GameHub, self_regulation: SelfRegulation,
-  review: ReviewDashboard,
+  dictation: DictationEngine, shadowing: Shadowing,
   hub1: WorldDiscoveryHub, hub2: ArenaHub, hub3: WritingStudioHub, hub4: NovaTalkShowHub,
   1: WorldDiscoveryHub, 2: ArenaHub, 3: WritingStudioHub, 4: NovaTalkShowHub
 };
