@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-08-30T17:10:00Z",
+  "governing_standard": "W33 Golden Learning & Assessment Standard v1.0",
+  "baseline_sha": "a2536c912834c301f1efdac592f23b52c1850bd2",
+  "golden_freeze_state": {
+    "manifest_version": "1.0.0",
+    "status": "PROTECTED_AMENDED",
+    "total_protected_files": 7,
+    "unmutated_hub_files": [
+      "src/data/weeks/week_33/reading_hub.js",
+      "src/data/weeks/week_33/listening_hub.js",
+      "src/data/weeks/week_33/writing_hub.js",
+      "src/data/weeks/week_33/speaking_hub.js",
+      "src/data/weeks/week_33/skill_practice_hub.js",
+      "src/data/weeks/week_33/vocab.js"
+    ],
+    "amended_spec_files": [
+      "docs/GATE15_SPEC_W33.json"
+    ]
+  },
+  "formal_amendments": [
+    {
+      "id": "AMENDMENT-W33-FREEZE-001",
+      "title": "Align Gate 15 Production DOM Assertion Spec with Approved Speaking Part 1 Routing",
+      "timestamp": "2026-08-30T16:49:18Z",
+      "affected_files": [
+        "docs/GATE15_SPEC_W33.json",
+        "docs/W33_GOLDEN_FREEZE_MANIFEST.json"
+      ],
+      "reason": "DAY5-ROUTING-001 established that weekly_review mounts Cambridge Speaking Part 1 (FindDifferencesInteractive). Legacy GATE15_SPEC_W33.json incorrectly tested Listening Part 3 regex ('Cleaning Mop'). The assertion pattern was updated to '(Find the Differences|Differences|Look at the two pictures|Speaking Part 1)' and the freeze manifest hash was updated.",
+      "old_hash": "da5f312e19726e2b93e7c5a4b722b02b1f4543c34f1fbca0937935503b04c92f",
+      "new_hash": "c30e8d05e5687613fb83b6f25104b7b3e5142a44ae3a9ede255b6b827ff89e14",
+      "semantic_reason": "Correcting legacy test assertion mismatch with zero learner content mutation.",
+      "impact": "Zero curriculum data mutation. Test harness assertion aligned with production component routing.",
+      "authorization_state": "FORMAL_AMENDMENT_RECORDED_FOR_STRATEGIC_REVIEWER_RATIFICATION",
+      "verification_evidence": "Gate 15 passes 15/15 clean DOM assertions against active component tree."
+    }
+  ],
+  "generator_authority_registry": {
+    "authoritative_command": "npm run generate:audio:w33",
+    "canonical_generator": "scripts/generate_w33_audio_canonical.mjs",
+    "deprecated_fail_closed_scripts": [
+      "tools/generate_w33_all_audio.mjs",
+      "tools/generate_w33_dialogue_audio.mjs",
+      "tools/generate_w33_part1_audio.mjs",
+      "tools/generate_w33_all_cambridge_audio.mjs",
+      "scripts/generate_exam_intro_audio.mjs",
+      "scripts/regenerate_w33_listening_audio.mjs",
+      "scripts/regenerate_w33_stale_audio.mjs"
+    ],
+    "guarded_universal_scripts": [
+      "scripts/generate_week_audio_universal.mjs"
+    ],
+    "unprotected_dangerous_generators_remaining": 0
+  }
+}

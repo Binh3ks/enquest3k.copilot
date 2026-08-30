@@ -9,6 +9,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const targetWeek = parseInt(process.argv[2] || '34', 10);
+if (targetWeek === 33) {
+  console.error('\n❌ PIPELINE SAFETY ERROR: Week 33 audio must be generated via the canonical generator.');
+  console.error('   Please run: npm run generate:audio:w33 (or node scripts/generate_w33_audio_canonical.mjs)\n');
+  process.exit(1);
+}
 const GOOGLE_API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_API_KEY;
 if (!GOOGLE_API_KEY) {
   console.error('❌ No TTS API key found in environment.');

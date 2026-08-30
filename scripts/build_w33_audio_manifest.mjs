@@ -74,10 +74,9 @@ async function buildManifest() {
     optional_anchors: ['cold pack', 'headmaster', 'relieved']
   });
 
-  const staticAudioTasks = (await import(path.join(rootDir, 'tools/generate_w33_all_audio.mjs'))).STATIC_AUDIO_TASKS;
-  const readSocialTask = staticAudioTasks.find(t => t.filename === 'read_social.mp3');
-  if (!readSocialTask || !readSocialTask.text) {
-    throw new Error('Could not find read_social.mp3 task in tools/generate_w33_all_audio.mjs');
+  const readSocialText = readJs.social_story?.content_en;
+  if (!readSocialText) {
+    throw new Error('Could not find social_story.content_en in src/data/weeks/week_33/read.js');
   }
 
   // 3. Social Studies Story
@@ -85,9 +84,9 @@ async function buildManifest() {
     file: 'public/audio/week33/read_social.mp3',
     category: 'SOURCE_DATA_AUDIO',
     part: 'STORY',
-    source_file: 'tools/generate_w33_all_audio.mjs',
-    source_key: 'STATIC_AUDIO_TASKS[read_social.mp3].text',
-    transcript: readSocialTask.text,
+    source_file: 'src/data/weeks/week_33/read.js',
+    source_key: 'social_story.content_en',
+    transcript: readSocialText,
     transcript_provenance: 'SOURCE_DATA',
     required_anchors: ['safety rules', 'protect', 'student', 'peaceful environment', 'hallways', 'accidents', 'kindness', 'responsibility'],
     optional_anchors: ['citizens', 'care']

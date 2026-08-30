@@ -1,0 +1,126 @@
+{
+  "timestamp": "2026-08-30T17:10:00Z",
+  "governing_standard": "W33 Golden Learning & Assessment Standard v1.0",
+  "total_findings": 6,
+  "summary_by_status": {
+    "FIXED": 3,
+    "VERIFIED": 2,
+    "AMENDMENT_FORMALIZED": 1,
+    "DISCOVERED": 0,
+    "CLOSED": 0
+  },
+  "findings": [
+    {
+      "id": "GEN-CANONICAL-HARDCODED-SPOKEN-CONTENT",
+      "category": "SOURCE OF TRUTH",
+      "severity": "HIGH",
+      "title": "Canonical Audio Generator Hardcoded Learner-Facing Spoken Strings",
+      "root_cause": "read_social.mp3 and info_exchange_q1..q4 were hardcoded as string literals in scripts/generate_w33_audio_canonical.mjs.",
+      "affected_files": [
+        "src/data/weeks/week_33/read.js",
+        "scripts/generate_w33_audio_canonical.mjs"
+      ],
+      "affected_runtime": "Audio generation and manifest derivation",
+      "impact": "Risk of silent drift between data hubs and synthesized audio.",
+      "evidence": "read.js now formally exports social_story; generate_w33_audio_canonical.mjs dynamically imports from read.js and speaking_hub.js.",
+      "current_status": "FIXED",
+      "required_fix": "Add social_story to read.js; dynamic binding in canonical generator.",
+      "verification_method": "scripts/build_w33_audio_manifest.mjs & scripts/test_w33_manifest_drift.mjs",
+      "closure_criteria": "100% of spoken content derives dynamically from data hubs or blueprints."
+    },
+    {
+      "id": "MANIFEST-LEGACY-SOURCE-DEPENDENCY",
+      "category": "MANIFEST PROVENANCE",
+      "severity": "MEDIUM",
+      "title": "Manifest Builder Imported Social Story from Deprecated Generator Script",
+      "root_cause": "scripts/build_w33_audio_manifest.mjs imported STATIC_AUDIO_TASKS from tools/generate_w33_all_audio.mjs.",
+      "affected_files": [
+        "scripts/build_w33_audio_manifest.mjs",
+        "scripts/whisper_audio_semantic_validator.mjs"
+      ],
+      "affected_runtime": "Manifest rebuild & validator Source-Manifest Identity Gate",
+      "impact": "Manifest generation coupled to a retired script.",
+      "evidence": "scripts/build_w33_audio_manifest.mjs and whisper validator now read directly from src/data/weeks/week_33/read.js.",
+      "current_status": "FIXED",
+      "required_fix": "Remove import of tools/generate_w33_all_audio.mjs and import from read.js.",
+      "verification_method": "npm run test:manifest:drift",
+      "closure_criteria": "Zero imports from deprecated tools/ in manifest generation."
+    },
+    {
+      "id": "GEN-COMPETING-ACTIVE-SCRIPTS",
+      "category": "PIPELINE SAFETY",
+      "severity": "HIGH",
+      "title": "Unprotected Competing Generator Scripts Could Overwrite Production Audio",
+      "root_cause": "5 generator scripts remained executable and capable of overwriting public/audio/week33/ MP3s.",
+      "affected_files": [
+        "tools/generate_w33_all_cambridge_audio.mjs",
+        "scripts/generate_exam_intro_audio.mjs",
+        "scripts/regenerate_w33_listening_audio.mjs",
+        "scripts/regenerate_w33_stale_audio.mjs",
+        "scripts/generate_week_audio_universal.mjs"
+      ],
+      "affected_runtime": "Audio assets in public/audio/week33/",
+      "impact": "Accidental execution could corrupt multi-voice Cambridge audio.",
+      "evidence": "All 4 standalone scripts converted to fail-closed deprecation errors; universal script guarded against week 33.",
+      "current_status": "FIXED",
+      "required_fix": "Deprecate all legacy scripts with exit(1) fail-closed messages pointing to canonical generator.",
+      "verification_method": "Execute all 5 scripts and verify fail-closed exit code 1.",
+      "closure_criteria": "Zero competing scripts capable of overwriting W33 audio."
+    },
+    {
+      "id": "GOLDEN-FREEZE-SPEC-MUTATION",
+      "category": "GOLDEN FREEZE GOVERNANCE",
+      "severity": "HIGH",
+      "title": "Gate 15 Assertion & Freeze Manifest Hash Mutated Without Formal Amendment",
+      "root_cause": "Gate 15 spec updated to align with Speaking S1 routing, and W33_GOLDEN_FREEZE_MANIFEST.json hash updated inline in Step 1G.",
+      "affected_files": [
+        "docs/GATE15_SPEC_W33.json",
+        "docs/W33_GOLDEN_FREEZE_MANIFEST.json",
+        "docs/audit/w33/W33_MASTER_GOVERNANCE_MATRIX.json"
+      ],
+      "affected_runtime": "Gate 15 test assertion and freeze guard",
+      "impact": "Baseline mutation without formal governance tracking.",
+      "evidence": "Formal AMENDMENT-W33-FREEZE-001 created in W33_MASTER_GOVERNANCE_MATRIX.json documenting reasons, old/new hashes, and zero-content-mutation proof.",
+      "current_status": "AMENDMENT_FORMALIZED",
+      "required_fix": "Record formal freeze amendment with complete justification for Strategic Reviewer signoff.",
+      "verification_method": "node scripts/guard_golden_w33_freeze.mjs & npm run audit:golden:w33",
+      "closure_criteria": "Strategic Reviewer ratifies AMENDMENT-W33-FREEZE-001."
+    },
+    {
+      "id": "GENERATOR-PROVENANCE-NOT-PROVEN",
+      "category": "PHYSICAL PROVENANCE",
+      "severity": "HIGH",
+      "title": "Physical MP3s on Disk Lacked Cryptographic Audit Manifest",
+      "root_cause": "No generation manifest existed linking on-disk MP3 hashes to source hub keys.",
+      "affected_files": [
+        "docs/audit/w33/W33_AUDIO_GENERATION_MANIFEST.json",
+        "scripts/build_w33_generation_manifest.mjs"
+      ],
+      "affected_runtime": "Media asset verification",
+      "impact": "Physical MP3s were unverified against source hashes.",
+      "evidence": "W33_AUDIO_GENERATION_MANIFEST.json generated containing SHA-256 hashes and byte counts for all 54 assets.",
+      "current_status": "VERIFIED",
+      "required_fix": "Build and publish W33_AUDIO_GENERATION_MANIFEST.json.",
+      "verification_method": "Validate all 54 assets against on-disk files.",
+      "closure_criteria": "Cryptographic audit manifest published and committed."
+    },
+    {
+      "id": "FINDING-AUDIO-SEMANTICS",
+      "category": "AUDIO SEMANTIC INTEGRITY",
+      "severity": "HIGH",
+      "title": "Acoustic Audio Playback Semantic Verification Gap",
+      "root_cause": "Need to prove acoustic transcripts match source data hubs without hallucination.",
+      "affected_files": [
+        "docs/audit/w33/W33_AUDIO_SEMANTIC_MANIFEST.json",
+        "scripts/whisper_audio_semantic_validator.mjs"
+      ],
+      "affected_runtime": "Audio playback across all 15 tasks",
+      "impact": "Spoken audio defects or mismatched prompts.",
+      "evidence": "54/54 assets verified with Whisper STT; 9 adversarial self-tests and 4 drift tests pass with zero false-greens.",
+      "current_status": "VERIFIED",
+      "required_fix": "Enforce fail-closed Source-Manifest Identity Gate and semantic anchor validation.",
+      "verification_method": "npm run audit:audio:semantic 33",
+      "closure_criteria": "Strategic Reviewer authorizes closure based on verified evidence."
+    }
+  ]
+}

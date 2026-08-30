@@ -125,5 +125,14 @@ export default {
       { id: "opt_b", text: "Corridor Safety & Quick Action", is_correct: true, explanation: "Correct! The story describes corridor safety, Jake's quick action, and first aid treatment." },
       { id: "opt_c", text: "Playing Soccer in Science Class", is_correct: false, explanation: "Incorrect: Soccer is not played in the science class." }
     ]
+  },
+
+  social_story: {
+    id: "w33_social",
+    title_en: "School Safety Rules and Citizenship",
+    title_vi: "Quy Tắc An Toàn Trường Học & Ý Thức Trách Nhiệm",
+    content_en: "School safety rules help protect every student each day. In ancient schools and modern academies, following rules creates a peaceful environment. When students walk calmly in hallways, accidents do not happen. Helping an injured friend shows kindness and responsibility. Good citizens always care for others.",
+    content_vi: "Các quy tắc an toàn trường học giúp bảo vệ mọi học sinh mỗi ngày. Trong các trường học cổ đại và học viện hiện đại, việc tuân thủ quy tắc tạo nên một môi trường hòa bình. Khi học sinh đi bộ bình tĩnh trong hành lang, tai nạn sẽ không xảy ra. Giúp đỡ một người bạn bị thương thể hiện lòng tốt và tinh thần trách nhiệm. Những công dân tốt luôn quan tâm đến người khác.",
+    audio_url: "/audio/week33/read_social.mp3"
   }
 };

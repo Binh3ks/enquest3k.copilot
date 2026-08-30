@@ -45,7 +45,7 @@ function recordSource(filename, category, sourceFile, sourceKey, text) {
 // Reading & CLIL
 if (readHub.clil_article?.content_en) recordSource('clil_friction.mp3', 'CLIL', 'src/data/weeks/week_33/reading_hub.js', 'clil_article.content_en', readHub.clil_article.content_en);
 if (readJs.content_en || readJs.text_en) recordSource('read_stem.mp3', 'STORY', 'src/data/weeks/week_33/read.js', 'content_en', readJs.content_en || readJs.text_en);
-recordSource('read_social.mp3', 'STORY', 'tools/generate_w33_all_audio.mjs', 'STATIC_AUDIO_TASKS.read_social', 'School safety rules help protect every student each day...');
+if (readJs.social_story?.content_en) recordSource('read_social.mp3', 'STORY', 'src/data/weeks/week_33/read.js', 'social_story.content_en', readJs.social_story.content_en);
 if (exploreJs.exploreData?.content_en || exploreJs.content_en) recordSource('explore.mp3', 'ARTICLE', 'src/data/weeks/week_33/explore.js', 'exploreData.content_en', exploreJs.exploreData?.content_en || exploreJs.content_en);
 
 // Dictation

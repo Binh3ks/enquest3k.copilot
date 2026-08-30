@@ -1,9 +1,9 @@
 {
-  "commit": "b4c30b0f99aa4fbf8afb31f3a3ac95f505df3338",
-  "git_commit": "b4c30b0f99aa4fbf8afb31f3a3ac95f505df3338",
-  "shortCommit": "b4c30b0f",
-  "message": "feat(qa): finalize W33 audio semantic manifest schema and validator self-test suite",
-  "builtAt": "2026-08-30T07:12:17.166Z",
-  "build_timestamp": "2026-08-30T07:12:17.167Z",
+  "commit": "a2536c912834c301f1efdac592f23b52c1850bd2",
+  "git_commit": "a2536c912834c301f1efdac592f23b52c1850bd2",
+  "shortCommit": "a2536c91",
+  "message": "docs(audit): complete W33 Step 1H source-of-truth, provenance, and freeze forensic audit",
+  "builtAt": "2026-08-30T10:10:31.320Z",
+  "build_timestamp": "2026-08-30T10:10:31.321Z",
   "env": "production"
 }

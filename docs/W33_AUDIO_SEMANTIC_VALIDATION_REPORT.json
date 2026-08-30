@@ -1,7 +1,7 @@
 {
   "week": 33,
   "validator": "scripts/whisper_audio_semantic_validator.mjs",
-  "timestamp": "2026-08-30T09:25:18.437Z",
+  "timestamp": "2026-08-30T10:10:13.706Z",
   "whisper_engine": "/Library/Frameworks/Python.framework/Versions/3.11/bin/whisper",
   "model": "tiny",
   "total_assets": 54,
@@ -61,13 +61,13 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 6655
+      "duration_ms": 6909
     },
     {
       "asset": "/audio/week33/read_stem.mp3",
       "file": "public/audio/week33/read_stem.mp3",
       "source_file": "src/data/weeks/week_33/read.js",
-      "source_key": "text_en",
+      "source_key": "content_en",
       "category": "SOURCE_DATA_AUDIO",
       "part": "STORY",
       "canonical_transcript": "Jake was walking carefully down the school corridor after science class. Suddenly, a boy running fast slipped on the wet floor and fell down heavily. He hurt his knee and lost his balance completely. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. She explained that wet floors have low friction. Everyone felt relieved and praised Jake for following safety rules. The headmaster reminded all students never to run in corridors and always watch for yellow warning signs.",
@@ -101,13 +101,13 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 5468
+      "duration_ms": 5617
     },
     {
       "asset": "/audio/week33/read_social.mp3",
       "file": "public/audio/week33/read_social.mp3",
-      "source_file": "tools/generate_w33_all_audio.mjs",
-      "source_key": "STATIC_AUDIO_TASKS[read_social.mp3].text",
+      "source_file": "src/data/weeks/week_33/read.js",
+      "source_key": "social_story.content_en",
       "category": "SOURCE_DATA_AUDIO",
       "part": "STORY",
       "canonical_transcript": "School safety rules help protect every student each day. In ancient schools and modern academies, following rules creates a peaceful environment. When students walk calmly in hallways, accidents do not happen. Helping an injured friend shows kindness and responsibility. Good citizens always care for others.",
@@ -139,7 +139,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 3527
+      "duration_ms": 4121
     },
     {
       "asset": "/audio/week33/explore.mp3",
@@ -179,7 +179,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 6690
+      "duration_ms": 7340
     },
     {
       "asset": "/audio/week33/dictation_1.mp3",
@@ -211,7 +211,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2284
+      "duration_ms": 2443
     },
     {
       "asset": "/audio/week33/dictation_2.mp3",
@@ -239,7 +239,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2350
+      "duration_ms": 2551
     },
     {
       "asset": "/audio/week33/dictation_3.mp3",
@@ -271,7 +271,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2291
+      "duration_ms": 2446
     },
     {
       "asset": "/audio/week33/dictation_4.mp3",
@@ -305,7 +305,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2320
+      "duration_ms": 2439
     },
     {
       "asset": "/audio/week33/dictation_5.mp3",
@@ -339,7 +339,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2292
+      "duration_ms": 2550
     },
     {
       "asset": "/audio/week33/exam_intro_L1.mp3",
@@ -365,7 +365,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2433
+      "duration_ms": 2789
     },
     {
       "asset": "/audio/week33/exam_intro_L2.mp3",
@@ -393,7 +393,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2350
+      "duration_ms": 2660
     },
     {
       "asset": "/audio/week33/exam_intro_L3.mp3",
@@ -421,7 +421,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2496
+      "duration_ms": 2739
     },
     {
       "asset": "/audio/week33/exam_intro_L4.mp3",
@@ -449,7 +449,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2382
+      "duration_ms": 2593
     },
     {
       "asset": "/audio/week33/exam_intro_L5.mp3",
@@ -477,7 +477,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2393
+      "duration_ms": 2691
     },
     {
       "asset": "/audio/week33/exam_intro_S1.mp3",
@@ -503,7 +503,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2679
+      "duration_ms": 2860
     },
     {
       "asset": "/audio/week33/exam_intro_S2.mp3",
@@ -539,7 +539,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 6081
+      "duration_ms": 7360
     },
     {
       "asset": "/audio/week33/exam_intro_S3.mp3",
@@ -565,7 +565,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2645
+      "duration_ms": 2954
     },
     {
       "asset": "/audio/week33/exam_intro_S4.mp3",
@@ -593,7 +593,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2497
+      "duration_ms": 2711
     },
     {
       "asset": "/audio/week33/info_exchange_q1.mp3",
@@ -623,7 +623,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2290
+      "duration_ms": 2601
     },
     {
       "asset": "/audio/week33/info_exchange_q2.mp3",
@@ -653,7 +653,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2293
+      "duration_ms": 2492
     },
     {
       "asset": "/audio/week33/info_exchange_q3.mp3",
@@ -685,7 +685,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2314
+      "duration_ms": 2517
     },
     {
       "asset": "/audio/week33/info_exchange_q4.mp3",
@@ -715,7 +715,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2311
+      "duration_ms": 2485
     },
     {
       "asset": "/audio/week33/listening_p1_full.mp3",
@@ -757,7 +757,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 8471
+      "duration_ms": 10158
     },
     {
       "asset": "/audio/week33/listening_p2_full.mp3",
@@ -795,7 +795,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 7030
+      "duration_ms": 7945
     },
     {
       "asset": "/audio/week33/listening_p3_example.mp3",
@@ -823,7 +823,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 4021
+      "duration_ms": 4370
     },
     {
       "asset": "/audio/week33/listening_p3_full.mp3",
@@ -863,7 +863,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 8169
+      "duration_ms": 10375
     },
     {
       "asset": "/audio/week33/listening_p3_item1.mp3",
@@ -907,7 +907,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2887
+      "duration_ms": 3816
     },
     {
       "asset": "/audio/week33/listening_p3_item2.mp3",
@@ -947,7 +947,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2899
+      "duration_ms": 3446
     },
     {
       "asset": "/audio/week33/listening_p3_item3.mp3",
@@ -991,7 +991,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2814
+      "duration_ms": 3851
     },
     {
       "asset": "/audio/week33/listening_p3_item4.mp3",
@@ -1037,7 +1037,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2939
+      "duration_ms": 3290
     },
     {
       "asset": "/audio/week33/listening_p3_item5.mp3",
@@ -1083,7 +1083,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2980
+      "duration_ms": 3183
     },
     {
       "asset": "/audio/week33/listening_p4_example.mp3",
@@ -1111,7 +1111,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 3100
+      "duration_ms": 3393
     },
     {
       "asset": "/audio/week33/listening_p4_full.mp3",
@@ -1149,7 +1149,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 6037
+      "duration_ms": 6766
     },
     {
       "asset": "/audio/week33/listening_p4_q1.mp3",
@@ -1177,7 +1177,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2659
+      "duration_ms": 3511
     },
     {
       "asset": "/audio/week33/listening_p4_q2.mp3",
@@ -1201,7 +1201,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2635
+      "duration_ms": 3197
     },
     {
       "asset": "/audio/week33/listening_p4_q3.mp3",
@@ -1225,7 +1225,7 @@
       "classification": "MINOR_TRANSCRIPTION_VARIANCE",
       "status": "MINOR_TRANSCRIPTION_VARIANCE",
       "error": null,
-      "duration_ms": 2592
+      "duration_ms": 2835
     },
     {
       "asset": "/audio/week33/listening_p4_q4.mp3",
@@ -1251,7 +1251,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2625
+      "duration_ms": 2796
     },
     {
       "asset": "/audio/week33/listening_p4_q5.mp3",
@@ -1279,7 +1279,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2586
+      "duration_ms": 3047
     },
     {
       "asset": "/audio/week33/listening_p5_full.mp3",
@@ -1325,7 +1325,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 7771
+      "duration_ms": 8452
     },
     {
       "asset": "/audio/week33/listening_p5_inst1.mp3",
@@ -1353,7 +1353,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2606
+      "duration_ms": 2320
     },
     {
       "asset": "/audio/week33/listening_p5_inst2.mp3",
@@ -1379,7 +1379,7 @@
       "classification": "MINOR_TRANSCRIPTION_VARIANCE",
       "status": "MINOR_TRANSCRIPTION_VARIANCE",
       "error": null,
-      "duration_ms": 2326
+      "duration_ms": 2423
     },
     {
       "asset": "/audio/week33/listening_p5_inst3.mp3",
@@ -1409,7 +1409,7 @@
       "classification": "MINOR_TRANSCRIPTION_VARIANCE",
       "status": "MINOR_TRANSCRIPTION_VARIANCE",
       "error": null,
-      "duration_ms": 2294
+      "duration_ms": 2692
     },
     {
       "asset": "/audio/week33/listening_p5_inst4.mp3",
@@ -1435,7 +1435,7 @@
       "classification": "MINOR_TRANSCRIPTION_VARIANCE",
       "status": "MINOR_TRANSCRIPTION_VARIANCE",
       "error": null,
-      "duration_ms": 2317
+      "duration_ms": 2491
     },
     {
       "asset": "/audio/week33/listening_p5_inst5.mp3",
@@ -1465,7 +1465,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2264
+      "duration_ms": 2642
     },
     {
       "asset": "/audio/cambridge/flyers_replay_p1.mp3",
@@ -1495,7 +1495,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2264
+      "duration_ms": 2519
     },
     {
       "asset": "/audio/cambridge/flyers_end_p1.mp3",
@@ -1523,7 +1523,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2292
+      "duration_ms": 2604
     },
     {
       "asset": "/audio/cambridge/flyers_replay_p2.mp3",
@@ -1553,7 +1553,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2236
+      "duration_ms": 2528
     },
     {
       "asset": "/audio/cambridge/flyers_end_p2.mp3",
@@ -1581,7 +1581,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2303
+      "duration_ms": 2535
     },
     {
       "asset": "/audio/cambridge/flyers_replay_p3.mp3",
@@ -1611,7 +1611,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2261
+      "duration_ms": 2461
     },
     {
       "asset": "/audio/cambridge/flyers_end_p3.mp3",
@@ -1639,7 +1639,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2293
+      "duration_ms": 2487
     },
     {
       "asset": "/audio/cambridge/flyers_replay_p4.mp3",
@@ -1669,7 +1669,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2277
+      "duration_ms": 2376
     },
     {
       "asset": "/audio/cambridge/flyers_end_p4.mp3",
@@ -1697,7 +1697,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2308
+      "duration_ms": 2450
     },
     {
       "asset": "/audio/cambridge/flyers_replay_p5.mp3",
@@ -1727,7 +1727,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2234
+      "duration_ms": 2408
     },
     {
       "asset": "/audio/cambridge/flyers_end_p5.mp3",
@@ -1755,7 +1755,7 @@
       "classification": "PASS",
       "status": "PASS",
       "error": null,
-      "duration_ms": 2325
+      "duration_ms": 2493
     }
   ]
 }

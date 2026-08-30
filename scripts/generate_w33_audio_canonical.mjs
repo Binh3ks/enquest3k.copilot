@@ -170,11 +170,12 @@ export async function generateCanonicalW33Audio() {
   saveAudio(path.join(OUT_DIR_W33, 'read_stem.mp3'), stemBuf);
   record('public/audio/week33/read_stem.mp3', 'STORY', 'src/data/weeks/week_33/read.js', 'story.content_en', stemText, 'en-US-Journey-F');
 
-  // 2. Social Studies Story (canonical text)
-  const socialText = 'School safety rules help protect every student each day. In ancient schools and modern academies, following rules creates a peaceful environment. When students walk calmly in hallways, accidents do not happen. Helping an injured friend shows kindness and responsibility. Good citizens always care for others.';
+  // 2. Social Studies Story (authoritative hub export)
+  const socialText = readData.social_story?.content_en;
+  if (!socialText) throw new Error('Missing readData.social_story.content_en in src/data/weeks/week_33/read.js');
   const socialBuf = await synthesizeGoogleTTS(socialText, 'narrator');
   saveAudio(path.join(OUT_DIR_W33, 'read_social.mp3'), socialBuf);
-  record('public/audio/week33/read_social.mp3', 'STORY', 'AUTHORITATIVE_CURRICULUM', 'social_studies.content_en', socialText, 'en-US-Journey-F');
+  record('public/audio/week33/read_social.mp3', 'STORY', 'src/data/weeks/week_33/read.js', 'social_story.content_en', socialText, 'en-US-Journey-F');
 
   // 3. Explore & CLIL
   const exploreText = exploreData.exploreData?.content_en || exploreData.content_en;
@@ -205,8 +206,11 @@ export async function generateCanonicalW33Audio() {
     { id: 'exam_intro_L3', text: 'Listen and write a letter in each box. There is one example.' },
     { id: 'exam_intro_L4', text: 'Listen and tick the box. There is one example.' },
     { id: 'exam_intro_L5', text: 'Listen and colour and write. There is one example.' },
-    { id: 'exam_intro_S1', text: 'Look at the two pictures. They are the same, but there are some differences. Tell me the differences.' },
-    { id: 'exam_intro_S2', text: 'Look at the questions. Ask and answer questions using the information cards.' },
+    { id: 'exam_intro_S1', text: 'Look at the two pictures. They are the same, but there are some differences. Tell me about the differences.' },
+    {
+      id: 'exam_intro_S2',
+      text: "Now I'd like you to ask and answer some questions about the school accident. I have a card with some information and so do you. Let's start. I'll ask you first. Where did the accident happen exactly? It happened in the school corridor near the science room. Good. And which part of Tom's body was hurt? He hurt his right knee. It was quite swollen. Right. Now it's your turn. Ask me about Jake's information on your card. Okay. What first aid item did Jake use to help Tom? Jake used a clean bandage and a cold pack to treat Tom's knee. And who praised Jake afterwards? The headmaster praised Jake in the school assembly. He was very proud of him."
+    },
     { id: 'exam_intro_S3', text: 'Look at the pictures. They tell a story. Look at the pictures first and tell the story.' },
     { id: 'exam_intro_S4', text: "Now let's talk about you and your daily life. Answer the questions." }
   ];
@@ -216,18 +220,16 @@ export async function generateCanonicalW33Audio() {
     record(`public/audio/week33/${intro.id}.mp3`, 'EXAM_INTRO', 'CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md', `exam_intro.${intro.id}`, intro.text, 'en-US-Journey-F');
   }
 
-  // 6. Speaking Info Exchange Prompts
+  // 6. Speaking Info Exchange Prompts (authoritative speaking_hub fields)
   console.log('▶️ [4/8] Generating Info Exchange Prompts...');
-  const infoPrompts = [
-    { file: 'info_exchange_q1.mp3', text: 'Where did Jake help his friend?' },
-    { file: 'info_exchange_q2.mp3', text: 'What time did the accident happen?' },
-    { file: 'info_exchange_q3.mp3', text: 'Who did Jake call for help?' },
-    { file: 'info_exchange_q4.mp3', text: 'What did the headmaster give Jake?' }
-  ];
-  for (const prompt of infoPrompts) {
-    const buf = await synthesizeGoogleTTS(prompt.text, 'narrator');
-    saveAudio(path.join(OUT_DIR_W33, prompt.file), buf);
-    record(`public/audio/week33/${prompt.file}`, 'QUESTION_AUDIO', 'src/data/weeks/week_33/speaking_hub.js', `info_exchange.${prompt.file}`, prompt.text, 'en-US-Journey-F');
+  const infoFields = spkHub.info_exchange_cards?.table_b?.fields || [];
+  for (let idx = 0; idx < infoFields.length; idx++) {
+    const field = infoFields[idx];
+    const fileName = `info_exchange_q${idx + 1}.mp3`;
+    const promptText = field.nova_question;
+    const buf = await synthesizeGoogleTTS(promptText, 'narrator');
+    saveAudio(path.join(OUT_DIR_W33, fileName), buf);
+    record(`public/audio/week33/${fileName}`, 'QUESTION_AUDIO', 'src/data/weeks/week_33/speaking_hub.js', `speakingHub.info_exchange_cards.table_b.fields[${idx}].nova_question`, promptText, 'en-US-Journey-F');
   }
 
   // 7. Listening Parts 1-5 (Multi-voice Cambridge standard)

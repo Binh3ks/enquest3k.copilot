@@ -450,14 +450,11 @@ async function verifyLiveSourceManifestIdentity(manifest) {
   const skillMod = await import(pathToFileURL(path.join(weekDir, 'skill_practice_hub.js')).href + `?t=${t}`);
   const readMod = await import(pathToFileURL(path.join(weekDir, 'read.js')).href + `?t=${t}`);
   const exploreMod = await import(pathToFileURL(path.join(weekDir, 'explore.js')).href + `?t=${t}`);
-  const genTasksMod = await import(pathToFileURL(path.join(rootDir, 'tools/generate_w33_all_audio.mjs')).href + `?t=${t}`);
-
   const readHub = readHubMod.readingHubData || readHubMod.default;
   const listHub = listHubMod.listeningHub || listHubMod.default;
   const skillPractice = skillMod.skillPracticeHub || skillMod.default;
   const readJs = readMod.default || readMod;
   const exploreJs = exploreMod.default || exploreMod;
-  const staticTasks = genTasksMod.STATIC_AUDIO_TASKS || [];
 
   const liveMap = new Map();
 
@@ -468,8 +465,7 @@ async function verifyLiveSourceManifestIdentity(manifest) {
   liveMap.set('public/audio/week33/read_stem.mp3', readJs.content_en || readJs.text_en);
 
   // 3. Social
-  const socialTask = staticTasks.find(t => t.filename === 'read_social.mp3');
-  liveMap.set('public/audio/week33/read_social.mp3', socialTask?.text);
+  liveMap.set('public/audio/week33/read_social.mp3', readJs.social_story?.content_en);
 
   // 4. Explore
   liveMap.set('public/audio/week33/explore.mp3', exploreJs.exploreData?.content_en || exploreJs.content_en);

@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-08-30T09:44:45.235Z",
+  "timestamp": "2026-08-30T10:06:49.699Z",
   "governing_standard": "W33 Golden Learning & Assessment Standard v1.0",
   "mode": "INDEPENDENT_SOURCE_DISCOVERY_V2",
   "total_authoritative_assets": 54,
   "set_reconciliation": {
     "counts": {
       "A_source_defined_independent": 54,
-      "B_canonical_generator_defined": 15,
+      "B_canonical_generator_defined": 11,
       "C_manifest_defined": 54,
       "D_physical_on_disk": 54,
-      "E_runtime_referenced": 32,
+      "E_runtime_referenced": 33,
       "F_validator_audited": 54
     },
     "differences": {
@@ -28,6 +28,10 @@
         "exam_intro_S2.mp3",
         "exam_intro_S3.mp3",
         "exam_intro_S4.mp3",
+        "info_exchange_q1.mp3",
+        "info_exchange_q2.mp3",
+        "info_exchange_q3.mp3",
+        "info_exchange_q4.mp3",
         "listening_p3_item1.mp3",
         "listening_p3_item2.mp3",
         "listening_p3_item3.mp3",
@@ -57,7 +61,6 @@
       "A_minus_C": [],
       "A_minus_D": [],
       "A_minus_E": [
-        "read_social.mp3",
         "exam_intro_L1.mp3",
         "exam_intro_L2.mp3",
         "exam_intro_L3.mp3",
@@ -85,7 +88,6 @@
       "B_minus_D": [],
       "C_minus_D": [],
       "D_minus_E": [
-        "read_social.mp3",
         "exam_intro_L1.mp3",
         "exam_intro_L2.mp3",
         "exam_intro_L3.mp3",
@@ -153,14 +155,16 @@
       "file": "public/audio/week33/read_social.mp3",
       "filename": "read_social.mp3",
       "category": "STORY",
-      "source_file": "tools/generate_w33_all_audio.mjs",
-      "source_key": "STATIC_AUDIO_TASKS.read_social",
+      "source_file": "src/data/weeks/week_33/read.js",
+      "source_key": "social_story.content_en",
       "exists": true,
       "size_bytes": 80256,
       "is_zero_byte": false,
       "sha256": "3dba545d1e1fff5ea4e69e6a1ece976ddac3027752aebfee772a638c0adf56ef",
-      "runtime_bindings": [],
-      "is_referenced_in_src": false
+      "runtime_bindings": [
+        "src/data/weeks/week_33/read.js"
+      ],
+      "is_referenced_in_src": true
     },
     {
       "file": "public/audio/week33/explore.mp3",
