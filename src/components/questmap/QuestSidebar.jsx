@@ -7,6 +7,7 @@ import LexioMascot from '../mascot/LexioMascot';
 import useArcadeStore, { getUnlockedGameCount } from '../../stores/useArcadeStore';
 import ArcadeModal from '../games/ArcadeModal';
 import ClassLeaderboardModal from '../common/ClassLeaderboardModal';
+import { getBossRotaryConfig } from '../../config/bossRotarySchedule';
 import './QuestSidebar.css';
 
 const TOTAL_TRIPS = 36; // Current syllabus length
@@ -120,23 +121,31 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
             <ChevronRight size={16} className="text-slate-400" />
           </button>
 
-          {/* Day 5 Boss & Passport */}
-          <button
-            className="qs-nav-item"
-            onClick={() => {
-              onClose();
-              navigate(`/week/${currentWeekId}/task/weekly_review`);
-            }}
-          >
-            <div className="qs-nav-icon bg-emerald-100 text-emerald-700">
-              <Award size={18} />
-            </div>
-            <div className="qs-nav-text">
-              <div className="qs-nav-title">🏰 Day 5 Boss & Passport</div>
-              <div className="qs-nav-desc">Cambridge assessment & 15-Shield Passport</div>
-            </div>
-            <ChevronRight size={16} className="text-slate-400" />
-          </button>
+          {/* Day 5 Boss & Passport — dynamic cycle label */}
+          {(() => {
+            const bossConfig = getBossRotaryConfig(currentWeekId);
+            const cycleLabel = bossConfig?.cycleNumber === 5
+              ? 'Full Mock — All 16 Parts'
+              : `Cycle ${bossConfig?.cycleNumber} · ${bossConfig?.activeParts?.length || 4} Parts`;
+            return (
+              <button
+                className="qs-nav-item"
+                onClick={() => {
+                  onClose();
+                  navigate(`/week/${currentWeekId}/task/weekly_review`);
+                }}
+              >
+                <div className="qs-nav-icon bg-emerald-100 text-emerald-700">
+                  <Award size={18} />
+                </div>
+                <div className="qs-nav-text">
+                  <div className="qs-nav-title">🏰 Day 5 Boss & Passport</div>
+                  <div className="qs-nav-desc">Cambridge assessment · {cycleLabel}</div>
+                </div>
+                <ChevronRight size={16} className="text-slate-400" />
+              </button>
+            );
+          })()}
 
           {/* Word Treasury / Memory Bank */}
           <button
@@ -156,12 +165,12 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
             <ChevronRight size={16} className="text-slate-400" />
           </button>
 
-          {/* Smart Practice Drills (SRS) */}
+          {/* Smart Practice Drills — navigates to Word Treasury (SRS flashcard bank) */}
           <button
             className="qs-nav-item"
             onClick={() => {
               onClose();
-              navigate(`/week/${currentWeekId}/review`);
+              navigate('/word-treasury');
             }}
           >
             <div className="qs-nav-icon bg-blue-100 text-blue-700">
@@ -169,7 +178,7 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
             </div>
             <div className="qs-nav-text">
               <div className="qs-nav-title">📝 Smart Practice Drills</div>
-              <div className="qs-nav-desc">Spaced repetition across past weeks</div>
+              <div className="qs-nav-desc">SRS flashcard drills & word review</div>
             </div>
             <ChevronRight size={16} className="text-slate-400" />
           </button>
