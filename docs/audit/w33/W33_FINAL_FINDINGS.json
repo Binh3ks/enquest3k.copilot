@@ -1,0 +1,231 @@
+{
+  "timestamp": "2026-08-30T17:20:00Z",
+  "governing_standard": "W33 Golden Learning & Assessment Standard v1.0",
+  "total_findings": 14,
+  "summary_by_status": {
+    "FIXED": 4,
+    "VERIFIED": 9,
+    "AMENDMENT_FORMALIZED": 1,
+    "DISCOVERED": 0,
+    "CLOSED": 0
+  },
+  "findings": [
+    {
+      "id": "DAY5-ROUTING-001",
+      "category": "ROUTING / ROTARY SCHEDULE",
+      "severity": "CRITICAL",
+      "title": "Route /week/33/task/weekly_review Mounted Listening Part 3 Instead of Speaking Paper",
+      "root_cause": "Positional array assumption in BossBattleZone combined with Listening-only Cycle 1 in bossRotarySchedule.js.",
+      "affected_files": [
+        "src/config/bossRotarySchedule.js",
+        "src/modules/zones/BossBattleZone.jsx"
+      ],
+      "current_status": "VERIFIED",
+      "evidence": "Cycle 1 activeParts rebalanced to [list_p1, list_p2, rw_p1, spk_p1]; weekly_review explicitly mounts Speaking Part 1.",
+      "verification_method": "Gate 13 Rotary Invariant & Gate 15 Production DOM Assertions",
+      "closure_criteria": "Weekly review mounts Speaking S1 and awards 0-5 Speaking Shields."
+    },
+    {
+      "id": "FINDING-GATE16-AUDIO",
+      "category": "DATA BINDINGS",
+      "severity": "HIGH",
+      "title": "Speaking Examiner Question audio_url Static Asset Binding",
+      "root_cause": "Examiner cue cards lacked static MP3 bindings.",
+      "affected_files": [
+        "src/data/weeks/week_33/speaking_hub.js"
+      ],
+      "current_status": "VERIFIED",
+      "evidence": "4 static asset bindings (info_exchange_q1.mp3 ... q4.mp3) present in table_b.fields.",
+      "verification_method": "Gate 16 Content Quality",
+      "closure_criteria": "All examiner questions have valid static audio URLs."
+    },
+    {
+      "id": "FINDING-INV-S2",
+      "category": "SCHEMA COMPATIBILITY",
+      "severity": "HIGH",
+      "title": "Information Exchange Part 2 Candidate/Examiner Schema Dual Shape",
+      "root_cause": "Component expected legacy table_a/table_b shape while hub used candidate_card/examiner_card.",
+      "affected_files": [
+        "src/components/questmap/TaskScreen.jsx",
+        "src/modules/zones/InfoExchangeZone.jsx"
+      ],
+      "current_status": "VERIFIED",
+      "evidence": "Dual-shape adapter adaptInfoExchangeCards implemented and verified.",
+      "verification_method": "Unit tests & Gate 15 DOM assertions",
+      "closure_criteria": "Info exchange renders seamlessly across both data shapes."
+    },
+    {
+      "id": "FINDING-CEFR-KET",
+      "category": "CURRICULUM STAGING",
+      "severity": "MEDIUM",
+      "title": "CEFR Starters/Movers/Flyers vs KET Extension Taxonomy",
+      "root_cause": "Need to ensure zero critical B1/B2 violations in Stage 1 content.",
+      "affected_files": [
+        "src/data/weeks/week_33/reading_hub.js",
+        "src/data/weeks/week_33/vocab.js"
+      ],
+      "current_status": "VERIFIED",
+      "evidence": "Passed npm run audit:cefr 33 with 0 critical B1/B2 violations.",
+      "verification_method": "scripts/cefr_curriculum_guard.mjs 33",
+      "closure_criteria": "0 critical B1/B2 vocabulary violations."
+    },
+    {
+      "id": "FINDING-SPK-P4",
+      "category": "CURRICULUM ROTATION",
+      "severity": "HIGH",
+      "title": "Speaking Part 4 (Personal Questions) Omission from Weekly Rotation",
+      "root_cause": "Speaking S4 was absent from Cycles 1-4 active schedules.",
+      "affected_files": [
+        "src/config/bossRotarySchedule.js"
+      ],
+      "current_status": "VERIFIED",
+      "evidence": "Scheduled in Cycle 4 (Week 36) in src/config/bossRotarySchedule.js.",
+      "verification_method": "Gate 13 Rotary Invariant",
+      "closure_criteria": "All 16 Cambridge parts covered across 4 weekly cycles."
+    },
+    {
+      "id": "FINDING-AUDIO-SEMANTICS",
+      "category": "QA HARNESS",
+      "severity": "HIGH",
+      "title": "Playback Success vs Acoustic STT Transcript Verification Gap",
+      "root_cause": "Audio assets required STT acoustic transcription to prove alignment with source data hubs.",
+      "affected_files": [
+        "docs/audit/w33/W33_AUDIO_SEMANTIC_MANIFEST.json",
+        "scripts/whisper_audio_semantic_validator.mjs"
+      ],
+      "current_status": "VERIFIED",
+      "evidence": "54/54 audio assets verified with Whisper STT; 9 adversarial self-tests and 4 drift tests pass with zero false-greens.",
+      "verification_method": "npm run audit:audio:semantic 33",
+      "closure_criteria": "100% semantic verification via Whisper STT without hallucination."
+    },
+    {
+      "id": "AUDIT-FINDING-GEN-SPLIT",
+      "category": "GOVERNANCE",
+      "severity": "HIGH",
+      "title": "Audio Generator Fragmentation & Stale Generation Task Defect",
+      "root_cause": "Multiple disconnected audio generation scripts existed across tools/ and scripts/.",
+      "affected_files": [
+        "scripts/generate_w33_audio_canonical.mjs",
+        "tools/generate_w33_all_audio.mjs",
+        "tools/generate_w33_dialogue_audio.mjs",
+        "tools/generate_w33_part1_audio.mjs"
+      ],
+      "current_status": "VERIFIED",
+      "evidence": "Unified canonical generator created; legacy scripts deprecated with fail-closed errors.",
+      "verification_method": "Execution of canonical generator & fail-closed tests",
+      "closure_criteria": "Single authoritative generator for W33 audio."
+    },
+    {
+      "id": "AUDIT-FINDING-MANIFEST-DECOUPLING",
+      "category": "QA HARNESS",
+      "severity": "MEDIUM",
+      "title": "Manifest Rebuild Decoupled from Validator Gate",
+      "root_cause": "Manifest drift could allow validator to pass on stale on-disk data.",
+      "affected_files": [
+        "scripts/build_w33_audio_manifest.mjs",
+        "scripts/whisper_audio_semantic_validator.mjs",
+        "scripts/test_w33_manifest_drift.mjs"
+      ],
+      "current_status": "VERIFIED",
+      "evidence": "Cryptographic Source-Manifest Identity Gate enforced; 4/4 drift tests pass fail-closed.",
+      "verification_method": "npm run test:manifest:drift",
+      "closure_criteria": "Validator blocks immediately on unbuilt source changes."
+    },
+    {
+      "id": "SEC-FINDING-HARDCODED-KEY",
+      "category": "SECURITY",
+      "severity": "HIGH",
+      "title": "Hardcoded Google Cloud TTS API Key Fallback in Tooling & Services",
+      "root_cause": "Hardcoded API keys were present in fallback branches of voice services and scripts.",
+      "affected_files": [
+        "src/services/voiceService.js",
+        "tools/generate_w33_all_cambridge_audio.mjs",
+        "scripts/generate_exam_intro_audio.mjs",
+        "scripts/regenerate_w33_stale_audio.mjs",
+        "scripts/generate_week_audio_universal.mjs"
+      ],
+      "current_status": "VERIFIED",
+      "evidence": "Purged 100% of hardcoded credentials from codebase; enforced env configuration.",
+      "verification_method": "Repository-wide regex grep for API keys",
+      "closure_criteria": "0 hardcoded credentials in repository."
+    },
+    {
+      "id": "AUDIT-FINDING-P3-CONCAT-HASH",
+      "category": "ENCODING",
+      "severity": "LOW",
+      "title": "Raw Buffer Concatenation in L3/L4 Full Composite Audio",
+      "root_cause": "Composite audio created via Buffer.concat without MP3 re-encoding.",
+      "affected_files": [
+        "scripts/generate_w33_audio_canonical.mjs"
+      ],
+      "current_status": "VERIFIED",
+      "evidence": "Decodable across all HTML5 browsers and Whisper with 0 decode errors. Accepted low risk.",
+      "verification_method": "Whisper audio validation & Gate 3 media integrity",
+      "closure_criteria": "Clean playback across browsers."
+    },
+    {
+      "id": "GEN-CANONICAL-HARDCODED-SPOKEN-CONTENT",
+      "category": "SOURCE OF TRUTH",
+      "severity": "HIGH",
+      "title": "Canonical Audio Generator Hardcoded Learner-Facing Spoken Strings",
+      "root_cause": "read_social.mp3 and info_exchange_q1..q4 were hardcoded as string literals in canonical generator.",
+      "affected_files": [
+        "src/data/weeks/week_33/read.js",
+        "scripts/generate_w33_audio_canonical.mjs"
+      ],
+      "current_status": "FIXED",
+      "evidence": "read.js formally exports social_story; generator derives dynamically from read.js and speaking_hub.js.",
+      "verification_method": "scripts/build_w33_audio_manifest.mjs & test_w33_manifest_drift.mjs",
+      "closure_criteria": "100% of spoken content derives dynamically from data hubs or blueprints."
+    },
+    {
+      "id": "MANIFEST-LEGACY-SOURCE-DEPENDENCY",
+      "category": "MANIFEST PROVENANCE",
+      "severity": "MEDIUM",
+      "title": "Manifest Builder Imported Social Story from Deprecated Generator Script",
+      "root_cause": "scripts/build_w33_audio_manifest.mjs imported from tools/generate_w33_all_audio.mjs.",
+      "affected_files": [
+        "scripts/build_w33_audio_manifest.mjs",
+        "scripts/whisper_audio_semantic_validator.mjs"
+      ],
+      "current_status": "FIXED",
+      "evidence": "scripts/build_w33_audio_manifest.mjs imports directly from src/data/weeks/week_33/read.js.",
+      "verification_method": "npm run test:manifest:drift",
+      "closure_criteria": "0 imports from deprecated tools/."
+    },
+    {
+      "id": "GEN-COMPETING-ACTIVE-SCRIPTS",
+      "category": "PIPELINE SAFETY",
+      "severity": "HIGH",
+      "title": "Unprotected Competing Generator Scripts Could Overwrite Production Audio",
+      "root_cause": "5 generator scripts remained executable and capable of overwriting public/audio/week33/ MP3s.",
+      "affected_files": [
+        "tools/generate_w33_all_cambridge_audio.mjs",
+        "scripts/generate_exam_intro_audio.mjs",
+        "scripts/regenerate_w33_listening_audio.mjs",
+        "scripts/regenerate_w33_stale_audio.mjs",
+        "scripts/generate_week_audio_universal.mjs"
+      ],
+      "current_status": "FIXED",
+      "evidence": "All 4 standalone scripts converted to fail-closed deprecation errors; universal script guarded against week 33.",
+      "verification_method": "Executed all 5 scripts and verified fail-closed exit code 1.",
+      "closure_criteria": "0 active scripts capable of overwriting W33 audio outside canonical pipeline."
+    },
+    {
+      "id": "GOLDEN-FREEZE-SPEC-MUTATION",
+      "category": "GOLDEN FREEZE GOVERNANCE",
+      "severity": "HIGH",
+      "title": "Gate 15 Assertion & Freeze Manifest Hash Mutated Without Formal Amendment",
+      "root_cause": "Gate 15 spec updated to align with Speaking S1 routing, and freeze manifest hash updated inline in Step 1G.",
+      "affected_files": [
+        "docs/GATE15_SPEC_W33.json",
+        "docs/W33_GOLDEN_FREEZE_MANIFEST.json",
+        "docs/audit/w33/W33_MASTER_GOVERNANCE_MATRIX.json"
+      ],
+      "current_status": "AMENDMENT_FORMALIZED",
+      "evidence": "Formal AMENDMENT-W33-FREEZE-001 created in W33_MASTER_GOVERNANCE_MATRIX.json documenting reasons and zero-content-mutation proof.",
+      "verification_method": "node scripts/guard_golden_w33_freeze.mjs & npm run audit:golden:w33",
+      "closure_criteria": "Strategic Reviewer ratifies AMENDMENT-W33-FREEZE-001."
+    }
+  ]
+}

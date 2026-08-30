@@ -1,0 +1,499 @@
+{
+  "timestamp": "2026-08-30T10:16:36.375Z",
+  "governing_standard": "W33 Golden Learning & Assessment Standard v1.0",
+  "week_number": 33,
+  "total_tasks": 15,
+  "tasks": [
+    {
+      "task_id": "gear1_webtoon",
+      "day": 1,
+      "zone": 1,
+      "quest_name": "Scene Explorer",
+      "route": "/week/33/task/gear1_webtoon",
+      "route_registration": "src/App.jsx:250 (<Route path=\"/week/:weekId/task/:taskId\" element={<TaskRoute />} />)",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/StoryWorldZone.jsx",
+      "child_components": [
+        "src/components/cambridge/WebtoonViewer.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/read.js",
+        "object": "readData.story_scenes"
+      },
+      "answer_data": "Non-assessment (Scene progression state: activeSceneIndex 0..4)",
+      "scoring_function": "handleSceneExplore() -> internal progress count",
+      "completion_function": "useDailyQuestStore.completeQuest('gear1_webtoon')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].gear1_webtoon",
+      "xp_event": "Learning Milestone (0 XP / Milestone completion badge)",
+      "shield_event": null,
+      "navigation_unlock_condition": "Day 1 unlock / gear1 active",
+      "media": [
+        "/audio/week33/read_stem.mp3",
+        "/images/week33/read_cover_w33.jpg"
+      ],
+      "media_source_of_truth": "src/data/weeks/week_33/read.js:content_en",
+      "generator": "scripts/generate_w33_audio_canonical.mjs",
+      "manifest": "docs/audit/w33/W33_AUDIO_SEMANTIC_MANIFEST.json",
+      "validator": "scripts/whisper_audio_semantic_validator.mjs",
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "gear2_karaoke",
+      "day": 1,
+      "zone": 1,
+      "quest_name": "Voice Shadow",
+      "route": "/week/33/task/gear2_karaoke",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/StoryWorldZone.jsx",
+      "child_components": [
+        "src/components/cambridge/KaraokeShadowing.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/read.js",
+        "object": "readData.story_scenes"
+      },
+      "answer_data": "Speech audio chunks / timestamps",
+      "scoring_function": "evaluateSpeechRhythm() -> similarity index",
+      "completion_function": "useDailyQuestStore.completeQuest('gear2_karaoke')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].gear2_karaoke",
+      "xp_event": "Learning Milestone (0 XP / Milestone badge)",
+      "shield_event": null,
+      "navigation_unlock_condition": "gear1_webtoon completion",
+      "media": [
+        "/audio/week33/read_stem.mp3"
+      ],
+      "media_source_of_truth": "src/data/weeks/week_33/read.js:content_en",
+      "generator": "scripts/generate_w33_audio_canonical.mjs",
+      "manifest": "docs/audit/w33/W33_AUDIO_SEMANTIC_MANIFEST.json",
+      "validator": "scripts/whisper_audio_semantic_validator.mjs",
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "gear3_retell",
+      "day": 1,
+      "zone": 1,
+      "quest_name": "Story Retell",
+      "route": "/week/33/task/gear3_retell",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/StoryWorldZone.jsx",
+      "child_components": [
+        "src/components/cambridge/VoiceShadowing.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/read.js",
+        "object": "readData.story_scenes"
+      },
+      "answer_data": "Learner audio recording",
+      "scoring_function": "evaluateVoiceShadowing() -> fluency score",
+      "completion_function": "useDailyQuestStore.completeQuest('gear3_retell')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].gear3_retell",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 50 })",
+      "shield_event": null,
+      "navigation_unlock_condition": "gear2_karaoke completion",
+      "media": [
+        "/audio/week33/read_stem.mp3"
+      ],
+      "media_source_of_truth": "src/data/weeks/week_33/read.js:content_en",
+      "generator": "scripts/generate_w33_audio_canonical.mjs",
+      "manifest": "docs/audit/w33/W33_AUDIO_SEMANTIC_MANIFEST.json",
+      "validator": "scripts/whisper_audio_semantic_validator.mjs",
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "gear4_clil",
+      "day": 2,
+      "zone": 1,
+      "quest_name": "Fact Finder",
+      "route": "/week/33/task/gear4_clil",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/StoryWorldZone.jsx",
+      "child_components": [
+        "src/components/cambridge/CLILExplorer.jsx",
+        "src/components/cambridge/ExplorerPassport.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/reading_hub.js",
+        "object": "readingHubData.clil_article"
+      },
+      "answer_data": "Comprehension drill question selections",
+      "scoring_function": "handleDrillAnswer() -> accuracy",
+      "completion_function": "useDailyQuestStore.completeQuest('gear4_clil')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].gear4_clil",
+      "xp_event": "Learning Milestone (CLIL Seal Stamp level 1 awarded)",
+      "shield_event": null,
+      "navigation_unlock_condition": "Day 2 unlock",
+      "media": [
+        "/audio/week33/clil_friction.mp3"
+      ],
+      "media_source_of_truth": "src/data/weeks/week_33/reading_hub.js:clil_article.content_en",
+      "generator": "scripts/generate_w33_audio_canonical.mjs",
+      "manifest": "docs/audit/w33/W33_AUDIO_SEMANTIC_MANIFEST.json",
+      "validator": "scripts/whisper_audio_semantic_validator.mjs",
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "science_lab",
+      "day": 2,
+      "zone": 2,
+      "quest_name": "Action Lab",
+      "route": "/week/33/task/science_lab",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/BattleArenaZone.jsx",
+      "child_components": [
+        "src/components/cambridge/ActionLabDragDrop.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/skill_practice_hub.js",
+        "object": "skillPracticeHub.science_lab"
+      },
+      "answer_data": "Zone drag-and-drop placements { zoneId: itemLabel }",
+      "scoring_function": "verifyDropZones() -> correct match ratio",
+      "completion_function": "useDailyQuestStore.completeQuest('science_lab')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].science_lab",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 50 })",
+      "shield_event": null,
+      "navigation_unlock_condition": "gear4_clil completion",
+      "media": [
+        "/images/week33/read_cover_w33.jpg"
+      ],
+      "media_source_of_truth": "src/data/weeks/week_33/skill_practice_hub.js:science_lab",
+      "generator": null,
+      "manifest": null,
+      "validator": null,
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "science_report",
+      "day": 2,
+      "zone": 3,
+      "quest_name": "Discovery Report",
+      "route": "/week/33/task/science_report",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/CreatorStudioZone.jsx",
+      "child_components": [
+        "src/components/cambridge/ScienceReportCreator.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/writing_hub.js",
+        "object": "writingHubData.science_report_config"
+      },
+      "answer_data": "Structured report sentences { level1: string, level2: string, level3: string }",
+      "scoring_function": "evaluateReportWords() -> wordCount >= min_words (20 words)",
+      "completion_function": "useDailyQuestStore.completeQuest('science_report')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].science_report",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 50 })",
+      "shield_event": null,
+      "navigation_unlock_condition": "science_lab completion",
+      "media": [],
+      "media_source_of_truth": null,
+      "generator": null,
+      "manifest": null,
+      "validator": null,
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "word_blitz",
+      "day": 3,
+      "zone": 2,
+      "quest_name": "Speed Match",
+      "route": "/week/33/task/word_blitz",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/BattleArenaZone.jsx",
+      "child_components": [
+        "src/components/cambridge/SpeedWordMatch.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/vocab.js",
+        "object": "vocabList"
+      },
+      "answer_data": "Matched word-definition pairs",
+      "scoring_function": "calculateBlitzScore() -> matches / seconds",
+      "completion_function": "useDailyQuestStore.completeQuest('word_blitz')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].word_blitz",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 45 })",
+      "shield_event": null,
+      "navigation_unlock_condition": "Day 3 unlock",
+      "media": [],
+      "media_source_of_truth": "src/data/weeks/week_33/vocab.js",
+      "generator": null,
+      "manifest": null,
+      "validator": null,
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "sentence_smash",
+      "day": 3,
+      "zone": 2,
+      "quest_name": "Grammar Duel",
+      "route": "/week/33/task/sentence_smash",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/BattleArenaZone.jsx",
+      "child_components": [
+        "src/components/cambridge/GrammarDuel.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/skill_practice_hub.js",
+        "object": "skillPracticeHub.grammar_drills"
+      },
+      "answer_data": "Ordered word blocks for 5 target sentences",
+      "scoring_function": "validateSentenceOrder() -> boolean per drill",
+      "completion_function": "useDailyQuestStore.completeQuest('sentence_smash')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].sentence_smash",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 50 })",
+      "shield_event": null,
+      "navigation_unlock_condition": "word_blitz completion",
+      "media": [],
+      "media_source_of_truth": "src/data/weeks/week_33/skill_practice_hub.js:grammar_drills",
+      "generator": null,
+      "manifest": null,
+      "validator": null,
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "math_quest",
+      "day": 3,
+      "zone": 2,
+      "quest_name": "Math Quest",
+      "route": "/week/33/task/math_quest",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/BattleArenaZone.jsx",
+      "child_components": [
+        "src/components/cambridge/SingaporeBarModelQuiz.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/skill_practice_hub.js",
+        "object": "skillPracticeHub.singapore_math"
+      },
+      "answer_data": "Numeric answer inputs [60, 17, 25, 6, 20]",
+      "scoring_function": "validateMathAnswers() -> correctCount / 5",
+      "completion_function": "useDailyQuestStore.completeQuest('math_quest')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].math_quest",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 40 })",
+      "shield_event": null,
+      "navigation_unlock_condition": "sentence_smash completion",
+      "media": [
+        "/images/week33/barmodel_w33_adv_p1.svg",
+        "/images/week33/barmodel_w33_adv_p2.svg",
+        "/images/week33/barmodel_w33_adv_p3.svg",
+        "/images/week33/barmodel_w33_adv_p4.svg",
+        "/images/week33/barmodel_w33_adv_p5.svg"
+      ],
+      "media_source_of_truth": "src/data/weeks/week_33/skill_practice_hub.js:singapore_math",
+      "generator": null,
+      "manifest": null,
+      "validator": null,
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "story_writer",
+      "day": 4,
+      "zone": 3,
+      "quest_name": "Story Writer P7",
+      "route": "/week/33/task/story_writer",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/CreatorStudioZone.jsx",
+      "child_components": [
+        "src/components/cambridge/StoryWriting.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/writing_hub.js",
+        "object": "writingHubData.picture_story"
+      },
+      "answer_data": "3-panel story continuation text (Scene 1: Model, Scene 2: Build, Scene 3: Write)",
+      "scoring_function": "evaluateStoryWriting() -> 5-Shield Rubric (Content: 2, Grammar: 2, Vocab: 1)",
+      "completion_function": "useDailyQuestStore.completeQuest('story_writer')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].story_writer",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 50 })",
+      "shield_event": null,
+      "navigation_unlock_condition": "Day 4 unlock",
+      "media": [
+        "/images/week33/writing_panel_1.png",
+        "/images/week33/writing_panel_2.png",
+        "/images/week33/writing_panel_3.png"
+      ],
+      "media_source_of_truth": "src/data/weeks/week_33/writing_hub.js:picture_story",
+      "generator": null,
+      "manifest": null,
+      "validator": null,
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "broadcast_studio",
+      "day": 4,
+      "zone": 3,
+      "quest_name": "Video Challenge",
+      "route": "/week/33/task/broadcast_studio",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/CreatorStudioZone.jsx",
+      "child_components": [
+        "src/components/cambridge/VideoChallenge.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/speaking_hub.js",
+        "object": "speakingHub.talkshow_video"
+      },
+      "answer_data": "Recorded learner talkshow response",
+      "scoring_function": "evaluateBroadcastRecording() -> participation score",
+      "completion_function": "useDailyQuestStore.completeQuest('broadcast_studio')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].broadcast_studio",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 50 })",
+      "shield_event": null,
+      "navigation_unlock_condition": "story_writer completion",
+      "media": [],
+      "media_source_of_truth": "src/data/weeks/week_33/speaking_hub.js:talkshow_video",
+      "generator": null,
+      "manifest": null,
+      "validator": null,
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "info_exchange",
+      "day": 4,
+      "zone": 3,
+      "quest_name": "Info Exchange P2",
+      "route": "/week/33/task/info_exchange",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/InfoExchangeZone.jsx",
+      "child_components": [
+        "src/components/cambridge/InformationExchangeP2.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/speaking_hub.js",
+        "object": "speakingHub.info_exchange_cards"
+      },
+      "answer_data": "Question formulation (Card A) + Spoken answers to examiner (Card B)",
+      "scoring_function": "evaluateInfoExchange() -> question & answer completeness",
+      "completion_function": "useDailyQuestStore.completeQuest('info_exchange')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].info_exchange",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 50 })",
+      "shield_event": null,
+      "navigation_unlock_condition": "broadcast_studio completion",
+      "media": [
+        "/audio/week33/exam_intro_S2.mp3",
+        "/audio/week33/info_exchange_q1.mp3",
+        "/audio/week33/info_exchange_q2.mp3",
+        "/audio/week33/info_exchange_q3.mp3",
+        "/audio/week33/info_exchange_q4.mp3"
+      ],
+      "media_source_of_truth": "src/data/weeks/week_33/speaking_hub.js:info_exchange_cards",
+      "generator": "scripts/generate_w33_audio_canonical.mjs",
+      "manifest": "docs/audit/w33/W33_AUDIO_SEMANTIC_MANIFEST.json",
+      "validator": "scripts/whisper_audio_semantic_validator.mjs",
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "boss_listening",
+      "day": 5,
+      "zone": 4,
+      "quest_name": "Listening Shield (L1 & L2)",
+      "route": "/week/33/task/boss_listening",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/BossBattleZone.jsx",
+      "child_components": [
+        "src/components/cambridge/SVGLineMatcher.jsx",
+        "src/components/common/NotepadNoteCompleter.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/listening_hub.js",
+        "object": "listeningHub.listening_p1 & listening_p2"
+      },
+      "answer_data": "Line connections (L1) + Note text entries (L2)",
+      "scoring_function": "MockAssessmentEngine.evaluateMockAssessment() -> listenShields (1..5)",
+      "completion_function": "useDailyQuestStore.completeQuest('boss_listening')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].boss_listening",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 100 })",
+      "shield_event": "emitLearningEvent(GAMIFICATION_EVENTS.SHIELD_EARNED, { paper: 'listening', shields: listenShields })",
+      "navigation_unlock_condition": "Day 5 unlock / Rotary Cycle 1",
+      "media": [
+        "/images/week33/w33_listening_p1_scene.jpg",
+        "/audio/week33/listening_p1_full.mp3",
+        "/audio/week33/listening_p2_full.mp3",
+        "/audio/cambridge/flyers_replay_p1.mp3",
+        "/audio/cambridge/flyers_end_p1.mp3",
+        "/audio/cambridge/flyers_replay_p2.mp3",
+        "/audio/cambridge/flyers_end_p2.mp3"
+      ],
+      "media_source_of_truth": "src/data/weeks/week_33/listening_hub.js",
+      "generator": "scripts/generate_w33_audio_canonical.mjs",
+      "manifest": "docs/audit/w33/W33_AUDIO_SEMANTIC_MANIFEST.json",
+      "validator": "scripts/whisper_audio_semantic_validator.mjs",
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "boss_reading",
+      "day": 5,
+      "zone": 4,
+      "quest_name": "Reading & Writing Shield (R1)",
+      "route": "/week/33/task/boss_reading",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/BossBattleZone.jsx",
+      "child_components": [
+        "src/components/cambridge/WordBankMatchingGrid.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/reading_hub.js",
+        "object": "readingHubData.rw_part_1"
+      },
+      "answer_data": "Definitions matching word entries (10 items)",
+      "scoring_function": "MockAssessmentEngine.evaluateMockAssessment() -> rwShields (1..5)",
+      "completion_function": "useDailyQuestStore.completeQuest('boss_reading')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].boss_reading",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 100 })",
+      "shield_event": "emitLearningEvent(GAMIFICATION_EVENTS.SHIELD_EARNED, { paper: 'readingWriting', shields: rwShields })",
+      "navigation_unlock_condition": "boss_listening completion",
+      "media": [],
+      "media_source_of_truth": "src/data/weeks/week_33/reading_hub.js:rw_part_1",
+      "generator": null,
+      "manifest": null,
+      "validator": null,
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    },
+    {
+      "task_id": "weekly_review",
+      "day": 5,
+      "zone": 4,
+      "quest_name": "Speaking & Passport (S1)",
+      "route": "/week/33/task/weekly_review",
+      "route_registration": "src/App.jsx:250",
+      "page_container": "src/components/questmap/TaskScreen.jsx",
+      "task_component": "src/modules/zones/BossBattleZone.jsx",
+      "child_components": [
+        "src/components/cambridge/FindDifferencesInteractive.jsx"
+      ],
+      "data_hub": {
+        "file": "src/data/weeks/week_33/speaking_hub.js",
+        "object": "speakingHub.find_differences"
+      },
+      "answer_data": "5 hotspot difference clicks & spoken explanations",
+      "scoring_function": "MockAssessmentEngine.evaluateMockAssessment() -> speakingShields (1..5)",
+      "completion_function": "useDailyQuestStore.completeQuest('weekly_review')",
+      "persistence_key": "daily-quests-storage:completedQuests[33].weekly_review",
+      "xp_event": "emitLearningEvent(GAMIFICATION_EVENTS.QUEST_COMPLETED, { xp: 150 })",
+      "shield_event": "emitLearningEvent(GAMIFICATION_EVENTS.SHIELD_EARNED, { paper: 'speaking', shields: speakingShields })",
+      "navigation_unlock_condition": "boss_reading completion",
+      "media": [
+        "/images/week33/w33_spk_part1_left.jpg",
+        "/images/week33/w33_spk_part1_right.jpg",
+        "/audio/week33/exam_intro_S1.mp3"
+      ],
+      "media_source_of_truth": "src/data/weeks/week_33/speaking_hub.js:find_differences",
+      "generator": "scripts/generate_w33_audio_canonical.mjs",
+      "manifest": "docs/audit/w33/W33_AUDIO_SEMANTIC_MANIFEST.json",
+      "validator": "scripts/whisper_audio_semantic_validator.mjs",
+      "audit_gate": "Gate 15: scripts/gate15_production_dom_assertions.mjs 33"
+    }
+  ]
+}

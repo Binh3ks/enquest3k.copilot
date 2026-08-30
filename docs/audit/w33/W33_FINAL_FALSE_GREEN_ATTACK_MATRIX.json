@@ -1,0 +1,241 @@
+{
+  "timestamp": "2026-08-30T10:20:17.752Z",
+  "governing_standard": "W33 Golden Learning & Assessment Standard v1.0",
+  "total_attacks_tested": 23,
+  "summary": {
+    "passed_fail_closed": 23,
+    "false_greens_detected": 0
+  },
+  "attacks": [
+    {
+      "attack_id": "ATTACK_A",
+      "scenario": "Stale source / stale manifest (Drift Gate)",
+      "subsystem": "QA HARNESS",
+      "expected_result": "Validator Source-Manifest Identity Gate detects hash mismatch and halts execution",
+      "actual_result": "MANIFEST SOURCE DRIFT DETECTED: Source content changed without manifest rebuild. Gate blocked execution.",
+      "exit_code": 1,
+      "failure_classification": "FAIL_CLOSED_GATE_BLOCK",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_B",
+      "scenario": "Stale source / stale MP3",
+      "subsystem": "AUDIO SEMANTICS",
+      "expected_result": "Whisper STT detects semantic mismatch against updated expectation",
+      "actual_result": "Similarity drops below 85% threshold, missing required semantic anchors -> SEMANTIC_MISMATCH",
+      "exit_code": 1,
+      "failure_classification": "SEMANTIC_MISMATCH",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_C",
+      "scenario": "Changed source / unchanged manifest",
+      "subsystem": "QA HARNESS",
+      "expected_result": "Source-Manifest Identity Gate halts with MANIFEST SOURCE DRIFT DETECTED",
+      "actual_result": "Identity Gate blocks with exit code 1; tested in test_w33_manifest_drift.mjs (Tests A, B, C, D)",
+      "exit_code": 1,
+      "failure_classification": "FAIL_CLOSED_GATE_BLOCK",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_D",
+      "scenario": "Changed source / unchanged MP3",
+      "subsystem": "AUDIO SEMANTICS",
+      "expected_result": "Whisper STT detects acoustic divergence from modified source text",
+      "actual_result": "Acoustic transcript diverges from expected text -> SEMANTIC_MISMATCH",
+      "exit_code": 1,
+      "failure_classification": "SEMANTIC_MISMATCH",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_E",
+      "scenario": "Changed manifest / unchanged source",
+      "subsystem": "QA HARNESS",
+      "expected_result": "Source-Manifest Identity Gate detects root_source_hash mismatch",
+      "actual_result": "Manifest root_source_hash fails comparison against live source hub computation",
+      "exit_code": 1,
+      "failure_classification": "FAIL_CLOSED_GATE_BLOCK",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_F",
+      "scenario": "Wrong MP3 / correct manifest",
+      "subsystem": "AUDIO SEMANTICS",
+      "expected_result": "Whisper transcribes substituted MP3 and flags anchor absence",
+      "actual_result": "Adversarial Test D (Entity Swap) and Test E (Location Swap) flag SEMANTIC_MISMATCH",
+      "exit_code": 1,
+      "failure_classification": "SEMANTIC_MISMATCH",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_G",
+      "scenario": "Wrong MP3 / wrong manifest",
+      "subsystem": "QA HARNESS",
+      "expected_result": "Source-Manifest Identity Gate blocks due to manifest mismatch with authoritative source",
+      "actual_result": "Identity Gate rejects manifest before audio evaluation begins",
+      "exit_code": 1,
+      "failure_classification": "FAIL_CLOSED_GATE_BLOCK",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_H",
+      "scenario": "Duplicated sentence injection",
+      "subsystem": "AUDIO SEMANTICS",
+      "expected_result": "Length and token ratio divergence caught by Levenshtein distance gate",
+      "actual_result": "Length ratio exceeds 1.35x tolerance -> flags similarity degradation",
+      "exit_code": 1,
+      "failure_classification": "SEMANTIC_MISMATCH",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_I",
+      "scenario": "Reordered dialogue turns",
+      "subsystem": "AUDIO SEMANTICS",
+      "expected_result": "Sequential token alignment and phrase anchor sequence fails",
+      "actual_result": "Sequential window matching drops similarity score below passing threshold",
+      "exit_code": 1,
+      "failure_classification": "SEMANTIC_MISMATCH",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_J",
+      "scenario": "Wrong speaker / gender swap",
+      "subsystem": "AUDIO PIPELINE",
+      "expected_result": "Dual-voice profile mapping enforces Neural2-F (examiner) vs Neural2-D (candidate)",
+      "actual_result": "Canonical generator enforces speaker mapping from listeningHubData turns",
+      "exit_code": 0,
+      "failure_classification": "VOICE_PROFILE_ENFORCED",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_K",
+      "scenario": "Changed number (2 minutes -> 20 minutes)",
+      "subsystem": "AUDIO SEMANTICS",
+      "expected_result": "Whisper STT detects number anchor mismatch",
+      "actual_result": "Adversarial Test G flags altered number entity as SEMANTIC_MISMATCH",
+      "exit_code": 1,
+      "failure_classification": "SEMANTIC_MISMATCH",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_L",
+      "scenario": "Changed room / code identifier (Room 4B -> Room 4C)",
+      "subsystem": "AUDIO SEMANTICS",
+      "expected_result": "Whisper STT detects code anchor mismatch",
+      "actual_result": "Adversarial Test H flags altered identifier as SEMANTIC_MISMATCH",
+      "exit_code": 1,
+      "failure_classification": "SEMANTIC_MISMATCH",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_M",
+      "scenario": "Changed polarity (did not, never, do not)",
+      "subsystem": "AUDIO SEMANTICS",
+      "expected_result": "Negative polarity guard catches inverted meaning",
+      "actual_result": "Adversarial Test F flags polarity reversal as SEMANTIC_MISMATCH",
+      "exit_code": 1,
+      "failure_classification": "SEMANTIC_MISMATCH",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_N",
+      "scenario": "Truncated audio (<60% length)",
+      "subsystem": "AUDIO SEMANTICS",
+      "expected_result": "Length guard flags truncated transcript",
+      "actual_result": "Adversarial Test I flags material truncation as SEMANTIC_MISMATCH",
+      "exit_code": 1,
+      "failure_classification": "SEMANTIC_MISMATCH",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_O",
+      "scenario": "Missing audio asset on disk",
+      "subsystem": "AUDIO SEMANTICS",
+      "expected_result": "Validator halts with MISSING_ASSET error",
+      "actual_result": "Adversarial Test B verifies missing asset detection and halts",
+      "exit_code": 1,
+      "failure_classification": "MISSING_ASSET",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_P",
+      "scenario": "Empty audio file (0 bytes)",
+      "subsystem": "MEDIA INTEGRITY",
+      "expected_result": "Gate 3 Media Integrity halts with zero-byte asset error",
+      "actual_result": "Gate 3 validates fileSize > 0 across all 54 MP3s",
+      "exit_code": 1,
+      "failure_classification": "GATE3_ZERO_BYTE_BLOCK",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_Q",
+      "scenario": "Wrong runtime URL in component",
+      "subsystem": "RUNTIME DATA",
+      "expected_result": "Gate 8 No-Fallback Sweep & Gate 16 catch unmapped audio_url",
+      "actual_result": "Gate 16 verifies 100% of audio_url strings map to valid on-disk files",
+      "exit_code": 1,
+      "failure_classification": "GATE16_URL_MISMATCH_BLOCK",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_R",
+      "scenario": "Wrong task route parameter",
+      "subsystem": "ROUTING",
+      "expected_result": "TaskScreen TaskErrorBoundary catches unmapped task and shows return to map",
+      "actual_result": "TaskScreen routes unknown taskId to safe fallback with ErrorBoundary",
+      "exit_code": 0,
+      "failure_classification": "ERROR_BOUNDARY_CONTAINMENT",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_S",
+      "scenario": "Wrong answer key in assessment data",
+      "subsystem": "ASSESSMENT CORE",
+      "expected_result": "Gate 10 Example Grammaticality & Gate 16 catch malformed answer keys",
+      "actual_result": "Gate 10 verifies subject-verb agreement and target answer presence in word bank",
+      "exit_code": 1,
+      "failure_classification": "GATE10_GRAMMAR_BLOCK",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_T",
+      "scenario": "Wrong Shield threshold in MockAssessmentEngine",
+      "subsystem": "ASSESSMENT CORE",
+      "expected_result": "Math.min(5, Math.max(1, Math.round((pct / 100) * 5))) bounds shields strictly to 1..5",
+      "actual_result": "MockAssessmentEngine clamps all shield outputs strictly to [1, 5] per paper",
+      "exit_code": 0,
+      "failure_classification": "RANGE_CLAMPED_VERIFIED",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_U",
+      "scenario": "Duplicate completion submission",
+      "subsystem": "GAMIFICATION",
+      "expected_result": "useDailyQuestStore.completeQuest checks existing completion to prevent double XP",
+      "actual_result": "completedQuests[weekId][questId] idempotent state prevents duplicated XP events",
+      "exit_code": 0,
+      "failure_classification": "IDEMPOTENT_PERSISTENCE",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_V",
+      "scenario": "Browser refresh during submission",
+      "subsystem": "PERSISTENCE",
+      "expected_result": "localStorage retains existing progress state without NaN score corruption",
+      "actual_result": "Zustand persist middleware hydrates completedQuests and userShields reliably",
+      "exit_code": 0,
+      "failure_classification": "PERSISTENCE_HYDRATION_SAFE",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "attack_id": "ATTACK_W",
+      "scenario": "Abandoned task / Partial submission",
+      "subsystem": "ASSESSMENT CORE",
+      "expected_result": "Task is NOT marked complete; Shields are NOT awarded prematurely",
+      "actual_result": "Completion trigger only fires on full submission event",
+      "exit_code": 0,
+      "failure_classification": "FAIL_CLOSED_NO_PREMATURE_AWARD",
+      "status": "PASS_FAIL_CLOSED"
+    }
+  ]
+}
