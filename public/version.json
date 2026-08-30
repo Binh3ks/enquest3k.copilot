@@ -1,9 +1,9 @@
 {
-  "commit": "d448e0828c7088fe7b89baa0f2628c3408c5ca29",
-  "git_commit": "d448e0828c7088fe7b89baa0f2628c3408c5ca29",
-  "shortCommit": "d448e082",
-  "message": "feat(qa): implement W33 audio semantic manifest and batch Whisper STT validator",
-  "builtAt": "2026-08-30T06:53:28.123Z",
-  "build_timestamp": "2026-08-30T06:53:28.124Z",
+  "commit": "b4c30b0f99aa4fbf8afb31f3a3ac95f505df3338",
+  "git_commit": "b4c30b0f99aa4fbf8afb31f3a3ac95f505df3338",
+  "shortCommit": "b4c30b0f",
+  "message": "feat(qa): finalize W33 audio semantic manifest schema and validator self-test suite",
+  "builtAt": "2026-08-30T07:12:17.166Z",
+  "build_timestamp": "2026-08-30T07:12:17.167Z",
   "env": "production"
 }

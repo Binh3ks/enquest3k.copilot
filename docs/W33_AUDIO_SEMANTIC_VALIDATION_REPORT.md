@@ -2,7 +2,7 @@
 
 **Governing Standard**: W33 Golden Learning & Assessment Standard v1.0  
 **Whisper Engine**: `/Library/Frameworks/Python.framework/Versions/3.11/bin/whisper`  
-**Execution Date**: 2026-08-30T06:53:21.445Z  
+**Execution Date**: 2026-08-30T07:12:16.681Z  
 **Verdict**: **PASS**
 
 ## 1. Summary Statistics
@@ -20,7 +20,7 @@
 
 | File | Category | Part | Similarity | Anchors Found | Classification |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| `clil_friction.mp3` | SOURCE_DATA_AUDIO | CLIL | 98.4% | 8/9 | 🟢 PASS |
+| `clil_friction.mp3` | SOURCE_DATA_AUDIO | CLIL | 98.4% | 8/8 | 🟢 PASS |
 | `read_stem.mp3` | SOURCE_DATA_AUDIO | STORY | 99.4% | 9/9 | 🟢 PASS |
 | `read_social.mp3` | SOURCE_DATA_AUDIO | STORY | 99.7% | 8/8 | 🟢 PASS |
 | `explore.mp3` | SOURCE_DATA_AUDIO | EXPLORE | 99.4% | 9/9 | 🟢 PASS |

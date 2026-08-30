@@ -170,7 +170,10 @@ export function transcribeAudio(whisperBin, filePath, tempDir) {
 
 // ── 6. Evaluate Asset Entry ─────────────────────────────────────────────────
 export function evaluateAsset(entry, actualTranscript) {
-  if (!entry.canonical_transcript || entry.canonical_transcript.trim() === '') {
+  const expectedTranscript = entry.expected_transcript || entry.canonical_transcript;
+  const requiredAnchors = entry.required_anchors || entry.semantic_anchors || [];
+
+  if (!expectedTranscript || expectedTranscript.trim() === '') {
     return { classification: 'NO_CANONICAL_TRANSCRIPT', similarity: 0, reason: 'Missing canonical transcript in manifest' };
   }
   if (actualTranscript === null) {
@@ -180,10 +183,10 @@ export function evaluateAsset(entry, actualTranscript) {
     return { classification: 'NO_TRANSCRIPT', similarity: 0, reason: 'Whisper returned empty transcript' };
   }
 
-  const similarity = calculateSimilarity(entry.canonical_transcript, actualTranscript);
-  const anchorResult = verifyAnchors(entry.semantic_anchors, actualTranscript);
+  const similarity = calculateSimilarity(expectedTranscript, actualTranscript);
+  const anchorResult = verifyAnchors(requiredAnchors, actualTranscript);
 
-  const wordCount = entry.canonical_transcript.split(/\s+/).length;
+  const wordCount = expectedTranscript.split(/\s+/).length;
   const isShortAudio = wordCount <= 12;
 
   // Short audio policy vs Standard audio policy
@@ -393,14 +396,14 @@ async function main() {
     const record = {
       file: entry.file,
       source_file: entry.source_file,
-      source_path: entry.source_path,
-      source_type: entry.source_type,
+      source_path: entry.source_path || entry.source_key,
+      source_type: entry.source_type || entry.transcript_provenance,
       category: entry.category,
       part: entry.part,
-      canonical_transcript: entry.canonical_transcript,
+      canonical_transcript: entry.expected_transcript || entry.canonical_transcript,
       whisper_transcript: actualTranscript,
       similarity: Number(evaluation.similarity.toFixed(3)),
-      anchors_required: entry.semantic_anchors || [],
+      anchors_required: entry.required_anchors || entry.semantic_anchors || [],
       anchors_found: evaluation.anchorResult?.found || [],
       classification: evaluation.classification,
       duration_ms: durationMs
@@ -431,18 +434,38 @@ async function main() {
   const isCompleteSuccess = (counts.passed + counts.minor_transcription_variance === counts.total);
   const verdict = isCompleteSuccess ? 'PASS' : 'FAIL';
 
-  // ── SAVE MACHINE-READABLE REPORT (Step 9) ─────────────────────────────────
+  // ── SAVE MACHINE-READABLE REPORT (Step 9 & Step 1J) ───────────────────────
   const jsonReport = {
     week: 33,
-    version: '1.0',
+    validator: 'scripts/whisper_audio_semantic_validator.mjs',
     timestamp: new Date().toISOString(),
-    whisper_executable: whisperBin,
+    whisper_engine: whisperBin,
+    model: 'tiny',
     summary: {
-      ...counts,
+      total: counts.total,
+      pass: counts.passed,
+      minor_variance: counts.minor_transcription_variance,
+      semantic_mismatch: counts.semantic_mismatch,
+      no_transcript: counts.no_transcript,
+      missing_asset: counts.missing_asset,
+      blocked: counts.blocked,
+      no_canonical_transcript: counts.no_canonical_transcript,
       verdict
     },
-    results
+    assets: results.map(r => ({
+      file: r.file,
+      expected: r.canonical_transcript,
+      actual: r.whisper_transcript,
+      similarity: r.similarity,
+      required_anchors: r.anchors_required,
+      missing_anchors: (r.anchors_required || []).filter(a => !(r.anchors_found || []).includes(a)),
+      status: r.classification
+    }))
   };
+
+  const artifactsDir = path.join(rootDir, 'artifacts');
+  fs.mkdirSync(artifactsDir, { recursive: true });
+  fs.writeFileSync(path.join(artifactsDir, 'w33_audio_semantic_validation.json'), JSON.stringify(jsonReport, null, 2));
 
   const jsonPath = path.join(rootDir, 'docs/W33_AUDIO_SEMANTIC_VALIDATION_REPORT.json');
   fs.writeFileSync(jsonPath, JSON.stringify(jsonReport, null, 2));
