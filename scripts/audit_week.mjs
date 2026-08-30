@@ -12,7 +12,7 @@ try {
   execSync(`node scripts/gate3_media_integrity.mjs ${weekNum}`, { stdio: 'inherit' });
 
   console.log(`\n▶ 2/4: GATE 15 — Production DOM Assertions (Local Preview)`);
-  execSync(`node scripts/gate15_production_dom_assertions.mjs ${weekNum} --local`, { stdio: 'inherit' });
+  execSync(`node scripts/gate15_chrome_mcp.mjs ${weekNum} --local`, { stdio: 'inherit' });
 
   console.log(`\n▶ 3/4: GATE 16 — Content Quality`);
   execSync(`node scripts/gate16_content_quality.mjs ${weekNum}`, { stdio: 'inherit' });
