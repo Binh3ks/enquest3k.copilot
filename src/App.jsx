@@ -74,6 +74,7 @@ const ParentDashboard = React.lazy(() => import('./pages/ParentDashboard'));
 const WordTreasury = React.lazy(() => import('./pages/WordTreasury'));
 const AdminDashboard = React.lazy(() => import('./components/common/AdminDashboard'));
 const WorksheetGenerator = React.lazy(() => import('./components/common/WorksheetGenerator'));
+const ReviewDashboardPage = React.lazy(() => import('./modules/review/ReviewDashboard'));
 import week33Data from './data/weeks/week_33/index.js';
 import { getCollectionByWeek } from './data/collectionConfig';
 
@@ -230,6 +231,64 @@ const QuestMapRoute = () => {
   );
 };
 
+/**
+ * PracticeRoute — Standalone Smart Practice Drills (SRS drilling) without legacy station tabs.
+ * Route: /week/:weekId/practice
+ */
+const PracticeRoute = () => {
+  const params = useParams();
+  const weekId = parseInt(params.weekId || 33);
+  const navigate = useNavigate();
+  const [reviewItems, setReviewItems] = useState([]);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { learningMode, toggleLearningMode, currentUser } = useUserStore();
+  const isOwner = currentUser?.role === 'owner' || localStorage.getItem('arcade_owner_bypass') === 'true';
+
+  React.useEffect(() => {
+    import('./utils/srsGenerator').then(({ generateSmartReviewAsync }) => {
+      generateSmartReviewAsync(weekId).then(items => setReviewItems(items || []));
+    }).catch(() => setReviewItems([]));
+  }, [weekId]);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
+      {/* Minimal header */}
+      <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-3 shadow-sm sticky top-0 z-40">
+        <button
+          onClick={() => navigate(`/week/${weekId}/hub/1`)}
+          className="p-2 rounded-xl hover:bg-slate-100 transition-colors text-slate-600"
+          aria-label="Back to map"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7"/>
+          </svg>
+        </button>
+        <div>
+          <p className="text-[10px] font-black text-slate-400 uppercase tracking-wide">Week {weekId} · Smart Practice</p>
+          <h1 className="text-base font-black text-slate-800">📝 Smart Practice Drills</h1>
+        </div>
+      </header>
+      <div className="max-w-2xl mx-auto px-4 py-6">
+        <React.Suspense fallback={<div className="p-10 text-center text-slate-400 font-black">Loading drills...</div>}>
+          <ReviewDashboardPage
+            reviewItems={reviewItems}
+            setReviewItems={setReviewItems}
+            themeColor="indigo"
+            onWeekComplete={() => navigate(`/week/${weekId}/hub/1`)}
+          />
+        </React.Suspense>
+      </div>
+      <QuestSidebar
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+        currentWeekId={weekId}
+        learningMode={learningMode}
+        onToggleMode={toggleLearningMode}
+      />
+    </div>
+  );
+};
+
 const App = () => {
   const [isSandboxQAOpen, setIsSandboxQAOpen] = useState(false);
 
@@ -248,6 +307,7 @@ const App = () => {
       <Route path="/week/:weekId" element={<QuestMapRoute />} />
       <Route path="/week/:weekId/hub/:hubId" element={<QuestMapRoute />} />
       <Route path="/week/:weekId/task/:taskId" element={<TaskRoute />} />
+      <Route path="/week/:weekId/practice" element={<PracticeRoute />} />
       <Route path="/week/:weekId/:tabKey" element={<MainLayout />} />
 
       <Route path="/gamehub/:weekId" element={<GameHubLayout />} />

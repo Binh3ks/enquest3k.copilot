@@ -1049,7 +1049,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                 <div className="flex items-center justify-between px-1">
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-black text-amber-900 bg-amber-100 px-2.5 py-0.5 rounded-lg">
-                      Câu {stepperIdx + 1}/{storySentences.length}
+                      Sentence {stepperIdx + 1}/{storySentences.length}
                     </span>
                   </div>
                   <div className="w-28 sm:w-36 h-2 bg-slate-200 rounded-full overflow-hidden">
@@ -1229,7 +1229,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                     onClick={() => setStepperIdx(prev => Math.max(0, prev - 1))}
                     className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 disabled:opacity-40 text-slate-800 rounded-xl text-xs sm:text-sm font-black transition"
                   >
-                    ◀ Câu trước
+                    ◀ Prev
                   </button>
 
                   {stepperIdx < storySentences.length - 1 ? (
@@ -1238,7 +1238,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                       onClick={() => setStepperIdx(prev => Math.min(storySentences.length - 1, prev + 1))}
                       className="px-6 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl text-xs sm:text-sm font-black shadow-md flex items-center gap-1.5 transition"
                     >
-                      Câu tiếp theo ▶
+                      Next ▶
                     </button>
                   ) : (
                     <button

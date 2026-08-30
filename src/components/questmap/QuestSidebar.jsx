@@ -165,12 +165,12 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
             <ChevronRight size={16} className="text-slate-400" />
           </button>
 
-          {/* Smart Practice Drills — navigates to Word Treasury (SRS flashcard bank) */}
+          {/* Smart Practice Drills — navigates to standalone SRS drill page */}
           <button
             className="qs-nav-item"
             onClick={() => {
               onClose();
-              navigate('/word-treasury');
+              navigate(`/week/${currentWeekId}/practice`);
             }}
           >
             <div className="qs-nav-icon bg-blue-100 text-blue-700">
