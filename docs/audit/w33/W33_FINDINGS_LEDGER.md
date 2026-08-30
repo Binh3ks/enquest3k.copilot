@@ -26,6 +26,11 @@
 | **`AUDIT-FINDING-MANIFEST-DECOUPLING`** | Manifest Rebuild Decoupled from Validator Gate | 🟡 MEDIUM | QA HARNESS | **PUSHED / VERIFIED** | Cryptographic Source-Manifest Identity Gate enforced; 4/4 drift tests pass fail-closed |
 | **`SEC-FINDING-HARDCODED-KEY`** | Hardcoded Google Cloud TTS API Key Fallback in Tooling & Services | 🟡 HIGH | SECURITY | **PUSHED / VERIFIED** | Purged 100% of hardcoded credentials from code; enforced env configuration |
 | **`AUDIT-FINDING-P3-CONCAT-HASH`** | Raw Buffer Concatenation in L3/L4 Full Composite Audio | 🟢 LOW | ENCODING | **PUSHED / VERIFIED (ACCEPTED RISK)** | Decodable across all HTML5 browsers and Whisper with 0 decode errors |
+| **`GEN-CANONICAL-HARDCODED-SPOKEN-CONTENT`** | Canonical Generator Contains Hardcoded Learner-Facing Spoken Strings | 🔴 HIGH | SOURCE OF TRUTH | **DISCOVERED** | 24/54 assets rely on hardcoded literal strings in `generate_w33_audio_canonical.mjs` |
+| **`GENERATOR-PROVENANCE-NOT-PROVEN`** | Physical MP3 Assets Lack Cryptographic Provenance to Canonical Generator | 🔴 HIGH | PROVENANCE | **DISCOVERED** | Physical MP3s predate canonical generator; generation manifest not yet generated |
+| **`GEN-COMPETING-ACTIVE-SCRIPTS`** | Unprotected Competing Generator Scripts Can Overwrite Production Audio | 🔴 HIGH | PIPELINE SAFETY | **DISCOVERED** | 5 active generator scripts remain capable of overwriting production W33 audio |
+| **`MANIFEST-LEGACY-SOURCE-DEPENDENCY`** | Manifest Builder Depends on Deprecated Generator for Social Story | 🟡 MEDIUM | PROVENANCE | **DISCOVERED** | `build_w33_audio_manifest.mjs` imports from deprecated `tools/generate_w33_all_audio.mjs` |
+| **`GOLDEN-FREEZE-SPEC-MUTATION`** | Golden Freeze Spec and Manifest Hashes Mutated Without Formal Amendment | 🔴 HIGH | GOVERNANCE | **DISCOVERED** | `GATE15_SPEC_W33.json` and freeze manifest hash updated inline in Step 1G |
 
 ---
 
