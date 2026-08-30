@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-08-30T11:09:43.760Z",
+  "governing_standard": "W33 Golden Learning & Assessment Standard v1.0",
+  "total_harness_attacks": 9,
+  "summary": {
+    "detected_fail_closed": 9,
+    "false_greens": 0
+  },
+  "attacks": [
+    {
+      "attack_id": "HARNESS_ATTACK_1",
+      "attack_name": "Disabled Completion Callback",
+      "injected_mutation": "completeQuest callback intercepted and suppressed during Scene Explorer interaction",
+      "expected_harness_behavior": "Harness fails test with COMPLETION_FAILED because completedQuests['w33']['gear1_webtoon'] remains false",
+      "actual_harness_behavior": "Assertion failed: expected completedQuests['w33']['gear1_webtoon'] === true. Marked E2E_FAILED.",
+      "harness_detection": "DETECTED_FAIL_CLOSED",
+      "verdict": "PASS"
+    },
+    {
+      "attack_id": "HARNESS_ATTACK_2",
+      "attack_name": "Suppressed LocalStorage Persistence",
+      "injected_mutation": "localStorage.setItem disabled for engquest-daily-quest store",
+      "expected_harness_behavior": "Harness fails test with PERSISTENCE_FAILED because reload does not hydrate completed status",
+      "actual_harness_behavior": "Post-reload assertion failed: completedQuests was undefined. Marked E2E_FAILED.",
+      "harness_detection": "DETECTED_FAIL_CLOSED",
+      "verdict": "PASS"
+    },
+    {
+      "attack_id": "HARNESS_ATTACK_3",
+      "attack_name": "Suppressed XP Award",
+      "injected_mutation": "XP increment function mocked to return unchanged userXP on gear3_retell (+50 XP)",
+      "expected_harness_behavior": "Harness fails test with XP_AWARD_FAILED because stateAfter.xp === stateBefore.xp",
+      "actual_harness_behavior": "XP delta assertion failed: expected +50 XP but observed 0. Marked E2E_FAILED.",
+      "harness_detection": "DETECTED_FAIL_CLOSED",
+      "verdict": "PASS"
+    },
+    {
+      "attack_id": "HARNESS_ATTACK_4",
+      "attack_name": "Injected Runtime Console Error",
+      "injected_mutation": "Component throws unhandled Error('Synthetic Test Error')",
+      "expected_harness_behavior": "Console error listener registers error count > 0 and fails the test",
+      "actual_harness_behavior": "Harness caught error in page.on('console') and failed task assertion. Marked E2E_FAILED.",
+      "harness_detection": "DETECTED_FAIL_CLOSED",
+      "verdict": "PASS"
+    },
+    {
+      "attack_id": "HARNESS_ATTACK_5",
+      "attack_name": "Synthetic 404 Media Route",
+      "injected_mutation": "Audio asset URL pointed to /audio/week33/non_existent_file.mp3",
+      "expected_harness_behavior": "Network response listener catches HTTP 404 and flags MEDIA_ERROR",
+      "actual_harness_behavior": "Harness registered 404 in networkErrors array and marked test E2E_FAILED.",
+      "harness_detection": "DETECTED_FAIL_CLOSED",
+      "verdict": "PASS"
+    },
+    {
+      "attack_id": "HARNESS_ATTACK_6",
+      "attack_name": "Interaction Selector Miss",
+      "injected_mutation": "Next button selector changed to non-existent button#fake_next_btn",
+      "expected_harness_behavior": "Harness throws error instead of swallowing exception",
+      "actual_harness_behavior": "Harness threw SelectorNotFoundError and marked task E2E_FAILED.",
+      "harness_detection": "DETECTED_FAIL_CLOSED",
+      "verdict": "PASS"
+    },
+    {
+      "attack_id": "HARNESS_ATTACK_7",
+      "attack_name": "Invalid Assessment Answer Acceptance",
+      "injected_mutation": "Wrong math answer '999' submitted, MockAssessmentEngine mocked to return 5 shields",
+      "expected_harness_behavior": "Harness cross-checks raw correctness array against score and flags ASSESSMENT_MISMATCH",
+      "actual_harness_behavior": "Harness detected answer correctness mismatch with computed shields. Marked E2E_FAILED.",
+      "harness_detection": "DETECTED_FAIL_CLOSED",
+      "verdict": "PASS"
+    },
+    {
+      "attack_id": "HARNESS_ATTACK_8",
+      "attack_name": "Mutated Expected Content Text",
+      "injected_mutation": "Expected story title asserted as 'Ancient Roman Chariots' instead of 'Corridor Safety & School Care'",
+      "expected_harness_behavior": "DOM content assertion fails with CONTENT_MISMATCH",
+      "actual_harness_behavior": "Harness failed text assertion against live DOM. Marked E2E_FAILED.",
+      "harness_detection": "DETECTED_FAIL_CLOSED",
+      "verdict": "PASS"
+    },
+    {
+      "attack_id": "HARNESS_ATTACK_9",
+      "attack_name": "Duplicate Reward Injection",
+      "injected_mutation": "Two consecutive completion calls award +50 XP twice (+100 total)",
+      "expected_harness_behavior": "Harness checks idempotence and flags duplicate reward inflation",
+      "actual_harness_behavior": "Idempotence assertion failed: observed XP increase on second submit. Marked E2E_FAILED.",
+      "harness_detection": "DETECTED_FAIL_CLOSED",
+      "verdict": "PASS"
+    }
+  ]
+}
