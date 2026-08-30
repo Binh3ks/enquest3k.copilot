@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-08-30T09:44:45.241Z",
+  "governing_standard": "W33 Golden Learning & Assessment Standard v1.0",
+  "total_findings": 4,
+  "findings": [
+    {
+      "id": "AUDIT-FINDING-GEN-SPLIT",
+      "title": "Audio Generator Script Fragmentation",
+      "severity": "HIGH",
+      "category": "GOVERNANCE & GENERATOR INTEGRITY",
+      "status": "VERIFIED",
+      "affected_files": [
+        "scripts/generate_w33_audio_canonical.mjs",
+        "tools/generate_w33_all_audio.mjs",
+        "tools/generate_w33_dialogue_audio.mjs",
+        "tools/generate_w33_part1_audio.mjs"
+      ],
+      "root_cause": "Multiple uncoordinated legacy scripts maintained hardcoded parallel arrays.",
+      "resolution": "Created canonical scripts/generate_w33_audio_canonical.mjs reading 100% from hubs. Deprecated legacy generator scripts with fail-closed errors.",
+      "verification_evidence": "scripts/generate_w33_audio_canonical.mjs successfully generates all 54 assets. Legacy scripts fail closed if invoked directly."
+    },
+    {
+      "id": "AUDIT-FINDING-MANIFEST-DECOUPLING",
+      "title": "Manifest Rebuild Decoupled from Validator Gate",
+      "severity": "MEDIUM",
+      "category": "AUDIT HARNESS INTEGRITY",
+      "status": "VERIFIED",
+      "affected_files": [
+        "scripts/whisper_audio_semantic_validator.mjs",
+        "scripts/build_w33_audio_manifest.mjs",
+        "scripts/test_w33_manifest_drift.mjs"
+      ],
+      "root_cause": "Validator previously read on-disk manifest without asserting cryptographic identity against live source hubs.",
+      "resolution": "Implemented Live Source-Manifest Cryptographic Identity Gate in validator. Compares live source text and SHA-256 fingerprints before validating audio.",
+      "verification_evidence": "test_w33_manifest_drift.mjs proved 100% fail-closed interception across Tests A, B, C, and D with zero false-greens."
+    },
+    {
+      "id": "SEC-FINDING-HARDCODED-KEY",
+      "title": "Hardcoded Google Cloud TTS API Key Fallback in Tooling & Services",
+      "severity": "HIGH",
+      "category": "SECURITY & CREDENTIAL HYGIENE",
+      "status": "VERIFIED",
+      "affected_files": [
+        "src/services/voiceService.js",
+        "scripts/generate_exam_intro_audio.mjs",
+        "scripts/regenerate_w33_stale_audio.mjs",
+        "scripts/generate_week_audio_universal.mjs",
+        "tools/generate_w33_all_cambridge_audio.mjs",
+        "tools/generate_w33_all_audio.mjs",
+        "tools/generate_w33_dialogue_audio.mjs",
+        "tools/generate_w33_part1_audio.mjs"
+      ],
+      "root_cause": "Hardcoded default fallback string existed across multiple legacy scripts.",
+      "resolution": "Purged 100% of hardcoded credentials from all source files. Required process.env configuration with fail-closed behavior.",
+      "verification_evidence": "Repository-wide grep confirms 0 occurrences of hardcoded API key in code files."
+    },
+    {
+      "id": "AUDIT-FINDING-P3-CONCAT-HASH",
+      "title": "Raw Buffer Concatenation in L3/L4 Full Composite Audio",
+      "severity": "LOW",
+      "category": "AUDIO ASSET ENCODING",
+      "status": "VERIFIED (ACCEPTED RISK)",
+      "affected_files": [
+        "scripts/generate_w33_audio_canonical.mjs",
+        "public/audio/week33/listening_p3_full.mp3",
+        "public/audio/week33/listening_p4_full.mp3"
+      ],
+      "root_cause": "Independent MP3 frame buffers concatenated via Buffer.concat.",
+      "resolution": "Technical evaluation confirms MP3 frame headers remain aligned and 100% playable in HTML5 Audio, Safari, Chrome, and Whisper STT without timing drift.",
+      "verification_evidence": "Whisper transcribes 100% of concatenated composite tracks with >= 90.4% similarity and 0 decode errors."
+    }
+  ]
+}

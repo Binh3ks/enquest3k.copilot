@@ -1148,8 +1148,8 @@ export const VoiceService = {
    * (Used for Week 36 testing with en-US-Journey-F & en-US-Neural2-F)
    */
   async useGoogleTTSDirect(text, voice = 'en-US-Journey-F') {
-    const apiKey = import.meta.env.VITE_GOOGLE_TTS_API_KEY || import.meta.env.GOOGLE_TTS_API_KEY || 'AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU';
-    if (!apiKey) throw new Error('Missing VITE_GOOGLE_TTS_API_KEY');
+    const apiKey = import.meta.env.VITE_GOOGLE_TTS_API_KEY || import.meta.env.GOOGLE_TTS_API_KEY;
+    if (!apiKey) throw new Error('Missing VITE_GOOGLE_TTS_API_KEY in environment');
 
     // Normalize invalid voice names for Google Cloud TTS (e.g. Neural2-B -> Neural2-D)
     let safeVoice = voice || 'en-US-Journey-F';

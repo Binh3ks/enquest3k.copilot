@@ -8,76 +8,128 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 
 const listeningHubPath = path.join(rootDir, 'src/data/weeks/week_33/listening_hub.js');
+const readingHubPath = path.join(rootDir, 'src/data/weeks/week_33/reading_hub.js');
+const readJsPath = path.join(rootDir, 'src/data/weeks/week_33/read.js');
 const manifestAuditPath = path.join(rootDir, 'docs/audit/w33/W33_AUDIO_SEMANTIC_MANIFEST.json');
 
 console.log('========================================================================');
-console.log('🧪 RUNNING W33 SOURCE-OF-TRUTH MANIFEST DRIFT TESTS (P4, P5, P2)');
+console.log('🧪 RUNNING HARDENED W33 SOURCE-MANIFEST DRIFT & FAIL-CLOSED GATE TESTS');
 console.log('========================================================================\n');
 
-const originalHubContent = fs.readFileSync(listeningHubPath, 'utf-8');
+const originalListeningHub = fs.readFileSync(listeningHubPath, 'utf-8');
+const originalReadingHub = fs.readFileSync(readingHubPath, 'utf-8');
+const originalReadJs = fs.readFileSync(readJsPath, 'utf-8');
 
-try {
-  // ── 1. DRIFT TEST P4: Mutate P4 Q1 dialogue script ─────────────────────────
-  console.log('▶️ Running Drift Test P4 (Listening Part 4 projection)...');
-  const mutatedP4Content = originalHubContent.replace(
-    "The cleaner had just washed the tiles with water.",
-    "DRIFT_P4_TEST: The cleaner washed the wet floor thoroughly."
-  );
-  fs.writeFileSync(listeningHubPath, mutatedP4Content, 'utf-8');
-  execSync('node scripts/build_w33_audio_manifest.mjs', { cwd: rootDir });
+function assertGateBlocksOnDrift(testName, mutateFn, restoreFn) {
+  try {
+    mutateFn();
+    // 1. DO NOT rebuild manifest -> Gate MUST FAIL CLOSED
+    let gateThrew = false;
+    let gateOutput = '';
+    try {
+      gateOutput = execSync('node scripts/whisper_audio_semantic_validator.mjs --check-manifest-only', {
+        cwd: rootDir,
+        encoding: 'utf-8',
+        stdio: 'pipe'
+      });
+    } catch (err) {
+      gateThrew = true;
+      gateOutput = err.stderr || err.stdout || '';
+    }
 
-  const manifestP4 = JSON.parse(fs.readFileSync(manifestAuditPath, 'utf-8'));
-  const p4Entry = manifestP4.assets.find(a => a.file.includes('listening_p4_q1.mp3'));
-  if (!p4Entry || !p4Entry.transcript.includes('DRIFT_P4_TEST')) {
-    throw new Error(`Drift Test P4 FAILED: Expected manifest to contain mutated string, got: ${p4Entry?.transcript}`);
+    if (!gateThrew || !gateOutput.includes('MANIFEST SOURCE DRIFT DETECTED')) {
+      throw new Error(`${testName} FAILED: Validator gate did NOT fail closed on source drift! Output: ${gateOutput}`);
+    }
+    console.log(`  ✅ [Fail-Closed Verified] ${testName}: Gate correctly blocked on stale on-disk manifest.`);
+
+    // 2. Rebuild manifest -> Gate MUST PASS
+    execSync('node scripts/build_w33_audio_manifest.mjs', { cwd: rootDir, stdio: 'pipe' });
+    const passOutput = execSync('node scripts/whisper_audio_semantic_validator.mjs --check-manifest-only', {
+      cwd: rootDir,
+      encoding: 'utf-8',
+      stdio: 'pipe'
+    });
+    if (!passOutput.includes('Gate Check Passed')) {
+      throw new Error(`${testName} FAILED: Gate did not pass after manifest rebuild.`);
+    }
+    console.log(`  ✅ [Recovery Verified]   ${testName}: Manifest rebuild restored cryptographic identity.`);
+  } finally {
+    restoreFn();
+    execSync('node scripts/build_w33_audio_manifest.mjs', { cwd: rootDir, stdio: 'pipe' });
   }
-  // Also assert that Question 1. prefix is NOT present in the projection
-  if (p4Entry.transcript.startsWith('Question 1.')) {
-    throw new Error(`Drift Test P4 FAILED: Manifest transcript contains forbidden synthetic 'Question 1.' prefix!`);
-  }
-  console.log('  ✅ Drift Test P4 PASSED: Manifest dynamically updated and pure of duplicated question prefix.');
-
-  // ── 2. DRIFT TEST P5: Mutate P5 Instruction 3 ──────────────────────────────
-  console.log('\n▶️ Running Drift Test P5 (Listening Part 5 instruction derivation)...');
-  const mutatedP5Content = originalHubContent.replace(
-    'text: "Color the door frame bright green"',
-    'text: "DRIFT_P5_TEST: Color the science door neon green"'
-  );
-  fs.writeFileSync(listeningHubPath, mutatedP5Content, 'utf-8');
-  execSync('node scripts/build_w33_audio_manifest.mjs', { cwd: rootDir });
-
-  const manifestP5 = JSON.parse(fs.readFileSync(manifestAuditPath, 'utf-8'));
-  const p5Entry = manifestP5.assets.find(a => a.file.includes('listening_p5_inst3.mp3'));
-  if (!p5Entry || !p5Entry.transcript.includes('DRIFT_P5_TEST')) {
-    throw new Error(`Drift Test P5 FAILED: Expected manifest to contain mutated string from listening_hub.js, got: ${p5Entry?.transcript}`);
-  }
-  console.log('  ✅ Drift Test P5 PASSED: Manifest dynamically derived inst3 from listening_hub.js without hardcoded arrays.');
-
-  // ── 3. DRIFT TEST P2: Mutate P2 dialogue & verify no speaker labels ────────
-  console.log('\n▶️ Running Drift Test P2 (Listening Part 2 clean transcript)...');
-  const mutatedP2Content = originalHubContent.replace(
-    "It happened while students were walking through the school corridor near the science room.",
-    "DRIFT_P2_TEST: It happened while students were walking down the main school corridor near the science room."
-  );
-  fs.writeFileSync(listeningHubPath, mutatedP2Content, 'utf-8');
-  execSync('node scripts/build_w33_audio_manifest.mjs', { cwd: rootDir });
-
-  const manifestP2 = JSON.parse(fs.readFileSync(manifestAuditPath, 'utf-8'));
-  const p2Entry = manifestP2.assets.find(a => a.file.includes('listening_p2_full.mp3'));
-  if (!p2Entry || !p2Entry.transcript.includes('DRIFT_P2_TEST')) {
-    throw new Error(`Drift Test P2 FAILED: Expected manifest to contain mutated string, got: ${p2Entry?.transcript}`);
-  }
-  if (p2Entry.transcript.includes('woman:') || p2Entry.transcript.includes('man:')) {
-    throw new Error(`Drift Test P2 FAILED: Manifest transcript contains synthetic speaker labels ('woman:' / 'man:')!`);
-  }
-  console.log('  ✅ Drift Test P2 PASSED: Manifest dynamically derived clean spoken text with zero speaker labels.');
-
-} finally {
-  // ── 4. RESTORE SOURCE AND REBUILD CLEAN MANIFEST ────────────────────────────
-  console.log('\n▶️ Restoring original source and regenerating clean canonical manifest...');
-  fs.writeFileSync(listeningHubPath, originalHubContent, 'utf-8');
-  execSync('node scripts/build_w33_audio_manifest.mjs', { cwd: rootDir });
-  console.log('  ✅ Clean state restored successfully.');
 }
 
-console.log('\n🎉 ALL 3 SOURCE-OF-TRUTH MANIFEST DRIFT TESTS (P4, P5, P2) PASSED WITH 100% PROVENANCE!\n');
+try {
+  // ── TEST A: Listening P4 Source Mutation ───────────────────────────────────
+  console.log('▶️ TEST A — Listening Part 4 Source Mutation...');
+  assertGateBlocksOnDrift(
+    'TEST A (P4 Dialogue Mutation)',
+    () => {
+      const mutated = originalListeningHub.replace(
+        "The cleaner had just washed the tiles with water.",
+        "DRIFT_TEST_P4: The cleaner washed the corridor tiles."
+      );
+      fs.writeFileSync(listeningHubPath, mutated, 'utf-8');
+    },
+    () => {
+      fs.writeFileSync(listeningHubPath, originalListeningHub, 'utf-8');
+    }
+  );
+
+  // ── TEST B: Listening P5 Instruction Mutation ──────────────────────────────
+  console.log('\n▶️ TEST B — Listening Part 5 Instruction Mutation...');
+  assertGateBlocksOnDrift(
+    'TEST B (P5 Instruction Mutation)',
+    () => {
+      const mutated = originalListeningHub.replace(
+        'text: "Color the door frame bright green"',
+        'text: "DRIFT_TEST_P5: Color the door frame neon green"'
+      );
+      fs.writeFileSync(listeningHubPath, mutated, 'utf-8');
+    },
+    () => {
+      fs.writeFileSync(listeningHubPath, originalListeningHub, 'utf-8');
+    }
+  );
+
+  // ── TEST C: Listening P2 Dialogue Mutation ─────────────────────────────────
+  console.log('\n▶️ TEST C — Listening Part 2 Dialogue Mutation...');
+  assertGateBlocksOnDrift(
+    'TEST C (P2 Dialogue Mutation)',
+    () => {
+      const mutated = originalListeningHub.replace(
+        "It happened while students were walking through the school corridor near the science room.",
+        "DRIFT_TEST_P2: It happened in the second floor hallway."
+      );
+      fs.writeFileSync(listeningHubPath, mutated, 'utf-8');
+    },
+    () => {
+      fs.writeFileSync(listeningHubPath, originalListeningHub, 'utf-8');
+    }
+  );
+
+  // ── TEST D: STEM Story Mutation in read.js ─────────────────────────────────
+  console.log('\n▶️ TEST D — Authoritative STEM Story Mutation (read.js)...');
+  assertGateBlocksOnDrift(
+    'TEST D (STEM Story Mutation in read.js)',
+    () => {
+      const mutated = originalReadJs.replaceAll(
+        "Jake was walking carefully down the school corridor after science class.",
+        "DRIFT_TEST_STEM: Jake walked slowly along the corridor after physics."
+      );
+      fs.writeFileSync(readJsPath, mutated, 'utf-8');
+    },
+    () => {
+      fs.writeFileSync(readJsPath, originalReadJs, 'utf-8');
+    }
+  );
+
+} finally {
+  // Final clean restore
+  fs.writeFileSync(listeningHubPath, originalListeningHub, 'utf-8');
+  fs.writeFileSync(readingHubPath, originalReadingHub, 'utf-8');
+  fs.writeFileSync(readJsPath, originalReadJs, 'utf-8');
+  execSync('node scripts/build_w33_audio_manifest.mjs', { cwd: rootDir, stdio: 'pipe' });
+}
+
+console.log('\n🎉 ALL 4 DRIFT & FAIL-CLOSED GATE TESTS (TESTS A, B, C, D) PASSED WITH ZERO FALSE-GREENS!\n');

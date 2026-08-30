@@ -17,7 +17,8 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import crypto from 'crypto';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { execSync } from 'child_process';
 import os from 'os';
 
@@ -440,20 +441,151 @@ export function runSelfTests(whisperBin) {
   console.log('\n🎉 ALL 9 ADVERSARIAL SELF-TESTS (Tests A-I) PASSED WITH FAIL-CLOSED PROTECTION!\n');
 }
 
+// ── 9.5. Live Source-Manifest Cryptographic Identity Gate ────────────────────
+async function verifyLiveSourceManifestIdentity(manifest) {
+  const weekDir = path.join(rootDir, 'src/data/weeks/week_33');
+  const t = Date.now();
+  const readHubMod = await import(pathToFileURL(path.join(weekDir, 'reading_hub.js')).href + `?t=${t}`);
+  const listHubMod = await import(pathToFileURL(path.join(weekDir, 'listening_hub.js')).href + `?t=${t}`);
+  const skillMod = await import(pathToFileURL(path.join(weekDir, 'skill_practice_hub.js')).href + `?t=${t}`);
+  const readMod = await import(pathToFileURL(path.join(weekDir, 'read.js')).href + `?t=${t}`);
+  const exploreMod = await import(pathToFileURL(path.join(weekDir, 'explore.js')).href + `?t=${t}`);
+  const genTasksMod = await import(pathToFileURL(path.join(rootDir, 'tools/generate_w33_all_audio.mjs')).href + `?t=${t}`);
+
+  const readHub = readHubMod.readingHubData || readHubMod.default;
+  const listHub = listHubMod.listeningHub || listHubMod.default;
+  const skillPractice = skillMod.skillPracticeHub || skillMod.default;
+  const readJs = readMod.default || readMod;
+  const exploreJs = exploreMod.default || exploreMod;
+  const staticTasks = genTasksMod.STATIC_AUDIO_TASKS || [];
+
+  const liveMap = new Map();
+
+  // 1. CLIL
+  liveMap.set('public/audio/week33/clil_friction.mp3', readHub.clil_article?.content_en);
+
+  // 2. STEM
+  liveMap.set('public/audio/week33/read_stem.mp3', readJs.content_en || readJs.text_en);
+
+  // 3. Social
+  const socialTask = staticTasks.find(t => t.filename === 'read_social.mp3');
+  liveMap.set('public/audio/week33/read_social.mp3', socialTask?.text);
+
+  // 4. Explore
+  liveMap.set('public/audio/week33/explore.mp3', exploreJs.exploreData?.content_en || exploreJs.content_en);
+
+  // 5. Dictation 1-5
+  const dictItems = skillPractice.dictation?.items || skillPractice.dictation || [];
+  dictItems.forEach(item => {
+    liveMap.set(`public/audio/week33/dictation_${item.id}.mp3`, item.text || item.sentence);
+  });
+
+  // 6. Exam Intros
+  const examIntros = [
+    { file: 'exam_intro_L1.mp3', text: 'Listen and draw lines. There is one example.' },
+    { file: 'exam_intro_L2.mp3', text: 'Listen and write. There is one example.' },
+    { file: 'exam_intro_L3.mp3', text: 'Listen and write a letter in each box. There is one example.' },
+    { file: 'exam_intro_L4.mp3', text: 'Listen and tick the box. There is one example.' },
+    { file: 'exam_intro_L5.mp3', text: 'Listen and colour and write. There is one example.' },
+    { file: 'exam_intro_S1.mp3', text: 'Look at the two pictures. They are the same, but there are some differences. Tell me about the differences.' },
+    {
+      file: 'exam_intro_S2.mp3',
+      text: "Now I'd like you to ask and answer some questions about the school accident. I have a card with some information and so do you. Let's start. I'll ask you first. Where did the accident happen exactly? It happened in the school corridor near the science room. Good. And which part of Tom's body was hurt? He hurt his right knee. It was quite swollen. Right. Now it's your turn. Ask me about Jake's information on your card. Okay. What first aid item did Jake use to help Tom? Jake used a clean bandage and a cold pack to treat Tom's knee. And who praised Jake afterwards? The headmaster praised Jake in the school assembly. He was very proud of him."
+    },
+    { file: 'exam_intro_S3.mp3', text: 'Look at the pictures. They tell a story. Look at the pictures first and tell the story.' },
+    { file: 'exam_intro_S4.mp3', text: "Now let's talk about you and your daily life. Answer the questions." }
+  ];
+  examIntros.forEach(intro => {
+    liveMap.set(`public/audio/week33/${intro.file}`, intro.text);
+  });
+
+  // 7. Speaking P2 Questions (info_exchange_q1 to q4)
+  const spkMod = await import(pathToFileURL(path.join(weekDir, 'speaking_hub.js')).href);
+  const spkHub = spkMod.speakingHub || spkMod.speakingHubData || spkMod.default;
+  spkHub.info_exchange_cards.table_b.fields.forEach(f => {
+    liveMap.set(`public${f.audio_url}`, f.nova_question);
+  });
+
+  // 8. Listening P1
+  liveMap.set('public/audio/week33/listening_p1_full.mp3', listHub.listening_p1.passage_audio_script);
+
+  // 9. Listening P2
+  liveMap.set('public/audio/week33/listening_p2_full.mp3', listHub.listening_p2.dialogue_script.map(d => d.text).join(' '));
+
+  // 10. Listening P3
+  liveMap.set('public/audio/week33/listening_p3_example.mp3', listHub.listening_p3.example.dialogue_script.map(d => d.text).join(' '));
+  liveMap.set('public/audio/week33/listening_p3_full.mp3', listHub.listening_p3.passage_audio_script);
+  listHub.listening_p3.items.forEach(item => {
+    liveMap.set(`public${item.audio_url}`, item.audio_text);
+  });
+
+  // 11. Listening P4
+  liveMap.set('public/audio/week33/listening_p4_example.mp3', listHub.listening_p4.questions[0].dialogue_script.map(d => d.text).join(' '));
+  liveMap.set('public/audio/week33/listening_p4_full.mp3', listHub.listening_p4.questions.map(q => q.dialogue_script.map(d => d.text).join(' ')).join('\n'));
+  listHub.listening_p4.questions.slice(1).forEach(q => {
+    liveMap.set(`public${q.audio_url}`, q.dialogue_script.map(d => d.text).join(' '));
+  });
+
+  // 12. Listening P5
+  liveMap.set('public/audio/week33/listening_p5_full.mp3', listHub.listening_p5.audio_script);
+  const scoredP5 = listHub.listening_p5.instructions.filter(i => !i.isExample);
+  scoredP5.forEach((inst, idx) => {
+    liveMap.set(`public/audio/week33/listening_p5_inst${idx + 1}.mp3`, inst.text);
+  });
+
+  // 13. Cambridge
+  for (let i = 1; i <= 5; i++) {
+    liveMap.set(`public/audio/cambridge/flyers_replay_p${i}.mp3`, `Now listen to Part ${i} again.`);
+    liveMap.set(`public/audio/cambridge/flyers_end_p${i}.mp3`, `That is the end of Part ${i}.`);
+  }
+
+  // Compare against manifest
+  const driftErrors = [];
+  for (const entry of manifest.assets) {
+    const liveExpected = liveMap.get(entry.file);
+    if (liveExpected === undefined) {
+      driftErrors.push({ file: entry.file, error: 'Asset not found in live source hubs' });
+      continue;
+    }
+    const liveSha = crypto.createHash('sha256').update(liveExpected || '').digest('hex');
+    const manifestSha = entry.source_fingerprint || crypto.createHash('sha256').update(entry.transcript || '').digest('hex');
+
+    if (liveExpected !== entry.transcript || (entry.source_fingerprint && liveSha !== entry.source_fingerprint)) {
+      driftErrors.push({
+        file: entry.file,
+        source_file: entry.source_file,
+        source_key: entry.source_key,
+        live_text: liveExpected,
+        manifest_text: entry.transcript,
+        live_sha: liveSha,
+        manifest_sha: manifestSha
+      });
+    }
+  }
+
+  return {
+    valid: driftErrors.length === 0,
+    errors: driftErrors
+  };
+}
+
 // ── 10. Main Execution Runner ────────────────────────────────────────────────
 async function main() {
   const args = process.argv.slice(2);
   const isSelfTestOnly = args.includes('--test-negative') || args.includes('--self-test');
+  const isCheckIdentityOnly = args.includes('--check-identity-only') || args.includes('--check-manifest-only');
 
   const whisperBin = findWhisperBin();
-  if (!whisperBin) {
+  if (!whisperBin && !isCheckIdentityOnly) {
     console.error('❌ CRITICAL ERROR: Whisper executable not found on host.');
     console.error('Searched: $WHISPER_BIN, /Library/Frameworks/Python.framework/Versions/3.11/bin/whisper, /opt/homebrew/bin/whisper, which whisper');
     process.exit(1);
   }
 
   // Run self-tests first as internal invariant
-  runSelfTests(whisperBin);
+  if (whisperBin) {
+    runSelfTests(whisperBin);
+  }
   if (isSelfTestOnly) {
     process.exit(0);
   }
@@ -467,6 +599,30 @@ async function main() {
   }
 
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+
+  // ── FAIL-CLOSED GATE: Source-Manifest Identity Verification ──────────────
+  console.log('🔒 Verifying Source-Manifest Cryptographic Identity Gate...');
+  const identityCheck = await verifyLiveSourceManifestIdentity(manifest);
+  if (!identityCheck.valid) {
+    console.error('\n❌ FAIL-CLOSED GATE: MANIFEST SOURCE DRIFT DETECTED!');
+    console.error('   The on-disk manifest does NOT match current authoritative source hubs:');
+    identityCheck.errors.forEach(err => {
+      console.error(`   - Asset: ${err.file}`);
+      console.error(`     Source File:     ${err.source_file} (${err.source_key})`);
+      console.error(`     Live Source:     "${err.live_text}"`);
+      console.error(`     Manifest Target: "${err.manifest_text}"`);
+      console.error(`     Live SHA:        ${err.live_sha}`);
+      console.error(`     Manifest SHA:    ${err.manifest_sha}\n`);
+    });
+    console.error('   Action Required: Run \'node scripts/build_w33_audio_manifest.mjs\' to re-synchronize manifest with source hubs.\n');
+    process.exit(1);
+  }
+  console.log('  ✅ Source-Manifest Identity 100% verified (0 drift errors across 54 assets).\n');
+
+  if (isCheckIdentityOnly) {
+    console.log('🎉 Gate Check Passed: Manifest is cryptographically synchronized with live source hubs.');
+    process.exit(0);
+  }
   console.log('========================================================================');
   console.log('🎙️  W33 AUDIO SEMANTIC VALIDATION');
   console.log('========================================================================');

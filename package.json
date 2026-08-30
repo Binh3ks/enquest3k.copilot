@@ -27,6 +27,9 @@
     "calibrate:diff": "node scripts/calibrate_find_differences.mjs",
     "guard:freeze:w33": "node scripts/guard_golden_w33_freeze.mjs",
     "audit:golden:w33": "node scripts/audit_golden_w33.mjs",
+    "generate:audio:w33": "node scripts/generate_w33_audio_canonical.mjs",
+    "manifest:audio:w33": "node scripts/build_w33_audio_manifest.mjs",
+    "test:manifest:drift": "node scripts/test_w33_manifest_drift.mjs",
     "audit:audio:semantic": "node scripts/whisper_audio_semantic_validator.mjs"
   },
   "dependencies": {

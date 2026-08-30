@@ -9,7 +9,11 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const GOOGLE_API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_API_KEY || 'AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU';
+const GOOGLE_API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_API_KEY;
+if (!GOOGLE_API_KEY) {
+  console.error('❌ No TTS API key found in environment.');
+  process.exit(1);
+}
 const OUTPUT_DIR = path.resolve(__dirname, '../public/audio/week33');
 
 if (!fs.existsSync(OUTPUT_DIR)) {

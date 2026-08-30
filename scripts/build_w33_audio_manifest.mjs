@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -26,6 +27,7 @@ async function buildManifest() {
   function add(entry) {
     const fsPath = entry.filesystem_path || entry.file;
     const urlPath = fsPath.replace(/^public/, '');
+    const sourceFingerprint = crypto.createHash('sha256').update(entry.transcript || '').digest('hex');
     manifest.assets.push({
       asset: urlPath,
       filesystem_path: fsPath,
@@ -39,6 +41,7 @@ async function buildManifest() {
       expected_transcript: entry.transcript,
       canonical_transcript: entry.transcript,
       transcript_provenance: entry.transcript_provenance,
+      source_fingerprint: sourceFingerprint,
       required_anchors: entry.required_anchors || [],
       optional_anchors: entry.optional_anchors || [],
       required: true
@@ -64,8 +67,8 @@ async function buildManifest() {
     category: 'SOURCE_DATA_AUDIO',
     part: 'STORY',
     source_file: 'src/data/weeks/week_33/read.js',
-    source_key: 'text_en',
-    transcript: readJs.text_en,
+    source_key: 'content_en',
+    transcript: readJs.content_en || readJs.text_en,
     transcript_provenance: 'SOURCE_DATA',
     required_anchors: ['Jake', 'corridor', 'science class', 'slipped', 'wet floor', 'nurse', 'bandage', 'friction', 'warning signs'],
     optional_anchors: ['cold pack', 'headmaster', 'relieved']
@@ -335,6 +338,10 @@ async function buildManifest() {
     });
   }
 
+  manifest.source_fingerprint_root = crypto.createHash('sha256')
+    .update(manifest.assets.map(a => `${a.file}:${a.source_fingerprint}`).join('|'))
+    .digest('hex');
+
   const auditDir = path.join(rootDir, 'docs/audit/w33');
   fs.mkdirSync(auditDir, { recursive: true });
   const outputPathAudit = path.join(auditDir, 'W33_AUDIO_SEMANTIC_MANIFEST.json');
@@ -342,7 +349,7 @@ async function buildManifest() {
   const manifestJson = JSON.stringify(manifest, null, 2);
   fs.writeFileSync(outputPathAudit, manifestJson);
   fs.writeFileSync(outputPathLegacy, manifestJson);
-  console.log(`✅ Generated canonical audio semantic manifest: ${outputPathAudit} (${manifest.assets.length} assets)`);
+  console.log(`✅ Generated canonical audio semantic manifest: ${outputPathAudit} (${manifest.assets.length} assets, root hash: ${manifest.source_fingerprint_root.slice(0, 12)}...)`);
 }
 
 buildManifest().catch(err => {

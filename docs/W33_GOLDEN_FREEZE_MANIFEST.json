@@ -26,7 +26,7 @@
     "src/data/weeks/week_33/speaking_hub.js": "288a087ac528b224b0d9d36a93a214b7377402c1bd11298b6f92a973a1cbac56",
     "src/data/weeks/week_33/skill_practice_hub.js": "94ca6c6fe931dcacdb1a99f237772f1ffe868f5d57c1e1119a5aa7668cf9376c",
     "src/data/weeks/week_33/vocab.js": "b60c6a06188cd88d6539311519f23c52e9ddb785f303ffd953a6fcec7e4783e4",
-    "docs/GATE15_SPEC_W33.json": "da5f312e19726e2b93e7c5a4b722b02b1f4543c34f1fbca0937935503b04c92f"
+    "docs/GATE15_SPEC_W33.json": "c30e8d05e5687613fb83b6f25104b7b3e5142a44ae3a9ede255b6b827ff89e14"
   },
   "governanceDocumentation": [
     "docs/W33_GOLDEN_BASELINE.md",

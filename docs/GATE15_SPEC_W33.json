@@ -398,9 +398,9 @@
           "pattern": "(Cambridge A2 Flyers|Matching|Speaking|Listening Part 3|Location Cards|Clean Bandage|Cleaning Mop)"
         },
         {
-          "name": "W33 weekly_review P3 flow: regex Cleaning Mop + ★ EXAMPLE",
+          "name": "W33 weekly_review S1 flow: Find Differences / Hotspots",
           "type": "regex",
-          "pattern": "(Cleaning Mop|★ EXAMPLE)"
+          "pattern": "(Find the Differences|Differences|Look at the two pictures|Speaking Part 1)"
         },
         {
           "name": "official Cambridge speaking/review instruction sentence",

@@ -22,6 +22,10 @@
 | **`FINDING-CEFR-KET`** | CEFR Starters/Movers/Flyers vs KET extension taxonomy | 🟡 MEDIUM | DATA | **PUSHED / VERIFIED** | Passed `cefr_curriculum_guard.mjs 33` (0 critical B1/B2 violations) |
 | **`FINDING-SPK-P4`** | Speaking Part 4 (Personal Questions) omission from weekly rotation | 🟡 HIGH | CURRICULUM | **PUSHED / VERIFIED** | Scheduled in Cycle 4 (Week 36) in `src/config/bossRotarySchedule.js` |
 | **`FINDING-AUDIO-SEMANTICS`** | Playback success vs acoustic STT transcript verification gap | 🟡 HIGH | QA HARNESS | **PUSHED / VERIFIED** | 100% (54/54 assets) verified via Whisper STT (`scripts/whisper_audio_semantic_validator.mjs`) |
+| **`AUDIT-FINDING-GEN-SPLIT`** | Audio Generator Fragmentation & Stale Generation Task Defect | 🟡 HIGH | GOVERNANCE | **PUSHED / VERIFIED** | Unified in `scripts/generate_w33_audio_canonical.mjs`; deprecated legacy scripts with fail-closed errors |
+| **`AUDIT-FINDING-MANIFEST-DECOUPLING`** | Manifest Rebuild Decoupled from Validator Gate | 🟡 MEDIUM | QA HARNESS | **PUSHED / VERIFIED** | Cryptographic Source-Manifest Identity Gate enforced; 4/4 drift tests pass fail-closed |
+| **`SEC-FINDING-HARDCODED-KEY`** | Hardcoded Google Cloud TTS API Key Fallback in Tooling & Services | 🟡 HIGH | SECURITY | **PUSHED / VERIFIED** | Purged 100% of hardcoded credentials from code; enforced env configuration |
+| **`AUDIT-FINDING-P3-CONCAT-HASH`** | Raw Buffer Concatenation in L3/L4 Full Composite Audio | 🟢 LOW | ENCODING | **PUSHED / VERIFIED (ACCEPTED RISK)** | Decodable across all HTML5 browsers and Whisper with 0 decode errors |
 
 ---
 

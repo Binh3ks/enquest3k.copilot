@@ -28,7 +28,11 @@ import { pathToFileURL } from 'url';
 const WEEK = 33;
 const OUTPUT_DIR = path.resolve(`public/audio/week${WEEK}`);
 const DIST_DIR   = path.resolve(`dist/audio/week${WEEK}`);
-const GOOGLE_API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_API_KEY || 'AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU';
+const GOOGLE_API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_API_KEY;
+if (!GOOGLE_API_KEY) {
+  console.error('❌ No TTS API key found in environment.');
+  process.exit(1);
+}
 
 const VOICE_F = 'en-US-Journey-F';   // woman / narrator (adult female)
 const VOICE_M = 'en-US-Neural2-D';   // man / boy (male)

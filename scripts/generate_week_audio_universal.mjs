@@ -9,7 +9,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const targetWeek = parseInt(process.argv[2] || '34', 10);
-const GOOGLE_API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_API_KEY || 'AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU';
+const GOOGLE_API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_API_KEY;
+if (!GOOGLE_API_KEY) {
+  console.error('❌ No TTS API key found in environment.');
+  process.exit(1);
+}
 const OUTPUT_DIR = path.resolve(__dirname, `../public/audio/week${targetWeek}`);
 const WEEK_DATA_DIR = path.resolve(__dirname, `../src/data/weeks/week_${targetWeek}`);
 
