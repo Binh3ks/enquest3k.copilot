@@ -54,8 +54,8 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
           <div className="qs-brand">
             <span className="qs-brand-fox">🦊</span>
             <div>
-              <h2 className="qs-brand-title">ENGQUEST</h2>
-              <span className="qs-brand-sub">English Quest 3000</span>
+              <h2 className="qs-brand-title">LEXIO</h2>
+              <span className="qs-brand-sub">ENGLISH QUEST 3000</span>
             </div>
           </div>
           <button className="qs-close-btn" onClick={onClose} aria-label="Close">
