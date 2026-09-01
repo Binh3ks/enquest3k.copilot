@@ -84,9 +84,10 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
   const handleHotspotClick = (hs) => {
     playButtonClick();
     setObservedHotspot(hs);
-    // 🎧 Hotspot Tap Requirement: Automatically play the discovery fact audio
+    // 🎧 Hotspot Tap: play discovery fact audio via speakText (AudioHelper)
+    // speakText(text, audioUrl, rate, onEnd, station)
     if (hs?.fact) {
-      VoiceService.speak(hs.fact, 'read');
+      speakText(hs.fact, null, 1.0, null, 'read');
     }
   };
 
