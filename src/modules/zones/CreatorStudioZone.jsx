@@ -64,37 +64,36 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
 
   // Sync saved story progress to Broadcast Studio on mount / progress update
   useEffect(() => {
-    if (storySavedData?.fields) {
+    if (!storySavedData) return;
+    // StoryWriting saves panelTexts array (5 panels for S3 Cambridge format)
+    const panelTexts = storySavedData.panelTexts || [];
+    const sceneLabels = [
+      { id: 1, func: 'setting',  title: 'Scene 1: Setting \uD83D\uDD35',  placeholder: '(Write Scene 1 in Story Writer to see your script here)' },
+      { id: 2, func: 'action',   title: 'Scene 2: Action \uD83D\uDFE2',   placeholder: '(Write Scene 2 in Story Writer to see your script here)' },
+      { id: 3, func: 'problem',  title: 'Scene 3: Problem \uD83D\uDFE0',  placeholder: '(Write Scene 3 in Story Writer to see your script here)' },
+      { id: 4, func: 'climax',   title: 'Scene 4: Response \uD83D\uDFE3', placeholder: '(Write Scene 4 in Story Writer to see your script here)' },
+      { id: 5, func: 'solution', title: 'Scene 5: Ending \u2B50',       placeholder: '(Write Scene 5 in Story Writer to see your script here)' },
+    ];
+    if (panelTexts.length >= 3) {
+      const podcastScenes = sceneLabels.map((s, i) => ({
+        id: s.id,
+        narrative_function: s.func,
+        title: s.title,
+        en: (panelTexts[i] || '').trim() || s.placeholder,
+      })).filter(s => !s.en.startsWith('('));
+      if (podcastScenes.length > 0) {
+        setStorySubmission({ mode: 'structured', finalText: storySavedData.text || panelTexts.join(' '), podcastScenes });
+        return;
+      }
+    }
+    // Legacy: fields-based (older data)
+    if (storySavedData.fields) {
       const { setting = '', action = '', problem = '', solution = '' } = storySavedData.fields;
       const podcastScenes = [
-        {
-          id: 1,
-          narrative_function: 'setting',
-          title: 'Scene 1: Setting (🔵 Where & When)',
-          en: setting.trim() || '(Fill Part 1 Setting in Story Writer to see your script here)',
-          radio_starters: ["Welcome back to Corridor Watch!", "Breaking news from the hallway!", "On a sunny Monday morning..."]
-        },
-        {
-          id: 2,
-          narrative_function: 'action',
-          title: 'Scene 2: Action (🟢 What Was Happening)',
-          en: action.trim() || '(Fill Part 2 Action in Story Writer to see your script here)',
-          radio_starters: ["Right then and there...", "Let's find out what happened next...", "As students were moving..."]
-        },
-        {
-          id: 3,
-          narrative_function: 'problem',
-          title: 'Scene 3: Problem (🟠 What Went Wrong)',
-          en: problem.trim() || '(Fill Part 3 Problem in Story Writer to see your script here)',
-          radio_starters: ["But then, listeners...", "Suddenly, everything changed...", "Unexpectedly..."]
-        },
-        {
-          id: 4,
-          narrative_function: 'solution',
-          title: 'Scene 4: Solution (🟣 How It Was Fixed)',
-          en: solution.trim() || '(Fill Part 4 Solution in Story Writer to see your script here)',
-          radio_starters: ["And that's why we always...", "To sum it up...", "Fortunately..."]
-        }
+        { id: 1, narrative_function: 'setting',  title: 'Scene 1: Setting', en: setting.trim() || '(Write Scene 1 in Story Writer)' },
+        { id: 2, narrative_function: 'action',   title: 'Scene 2: Action',  en: action.trim()   || '(Write Scene 2 in Story Writer)' },
+        { id: 3, narrative_function: 'problem',  title: 'Scene 3: Problem', en: problem.trim()  || '(Write Scene 3 in Story Writer)' },
+        { id: 4, narrative_function: 'solution', title: 'Scene 4: Ending',  en: solution.trim() || '(Write Scene 4 in Story Writer)' },
       ];
       setStorySubmission({ mode: 'structured', finalText: storySavedData.text || '', podcastScenes });
     } else if (storySavedData?.text) {
@@ -103,11 +102,13 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
         .split('|SPLIT|')
         .map(s => s.trim())
         .filter(s => s.length > 10);
-      const third = Math.ceil(sentences.length / 3);
+      const fifth = Math.ceil(sentences.length / 5);
       const podcastScenes = [
-        { id: 1, narrative_function: null, title: 'Scene 1: Your Opening', en: sentences.slice(0, third).join(' ') || sentences[0] || storySavedData.text },
-        { id: 2, narrative_function: null, title: 'Scene 2: Your Action Sequence', en: sentences.slice(third, third * 2).join(' ') || sentences[1] || '' },
-        { id: 3, narrative_function: null, title: 'Scene 3: Your Conclusion', en: sentences.slice(third * 2).join(' ') || sentences[2] || '' }
+        { id: 1, narrative_function: null, title: 'Scene 1', en: sentences.slice(0, fifth).join(' ') || sentences[0] || storySavedData.text },
+        { id: 2, narrative_function: null, title: 'Scene 2', en: sentences.slice(fifth, fifth * 2).join(' ') || '' },
+        { id: 3, narrative_function: null, title: 'Scene 3', en: sentences.slice(fifth * 2, fifth * 3).join(' ') || '' },
+        { id: 4, narrative_function: null, title: 'Scene 4', en: sentences.slice(fifth * 3, fifth * 4).join(' ') || '' },
+        { id: 5, narrative_function: null, title: 'Scene 5', en: sentences.slice(fifth * 4).join(' ') || '' },
       ].filter(s => s.en.trim().length > 0);
       setStorySubmission({ mode: 'freeform', finalText: storySavedData.text, podcastScenes });
     }
@@ -124,39 +125,32 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
       });
     }
 
-    if (extraData?.structured && extraData?.fields) {
+    if (extraData?.panelTexts && extraData.panelTexts.length >= 3) {
+      // New 5-panel format from StoryWriting
+      const sceneLabels = [
+        { id: 1, func: 'setting',  title: 'Scene 1: Setting \uD83D\uDD35' },
+        { id: 2, func: 'action',   title: 'Scene 2: Action \uD83D\uDFE2' },
+        { id: 3, func: 'problem',  title: 'Scene 3: Problem \uD83D\uDFE0' },
+        { id: 4, func: 'climax',   title: 'Scene 4: Response \uD83D\uDFE3' },
+        { id: 5, func: 'solution', title: 'Scene 5: Ending \u2B50' },
+      ];
+      setStorySubmission(prev => {
+        if (prev?.finalText === finalText && prev?.mode === 'structured') return prev;
+        const podcastScenes = sceneLabels.map((s, i) => ({
+          id: s.id, narrative_function: s.func, title: s.title,
+          en: (extraData.panelTexts[i] || '').trim(),
+        })).filter(s => s.en.length > 0);
+        return { mode: 'structured', finalText, podcastScenes };
+      });
+    } else if (extraData?.structured && extraData?.fields) {
       const { setting = '', action = '', problem = '', solution = '' } = extraData.fields;
       setStorySubmission(prev => {
         if (prev?.finalText === finalText && prev?.mode === 'structured') return prev;
         const podcastScenes = [
-          {
-            id: 1,
-            narrative_function: 'setting',
-            title: 'Scene 1: Setting (🔵 Where & When)',
-            en: setting.trim() || '(Fill Part 1 Setting in Story Writer to see your script here)',
-            radio_starters: ["Welcome back to Corridor Watch!", "Breaking news from the hallway!", "On a sunny Monday morning..."]
-          },
-          {
-            id: 2,
-            narrative_function: 'action',
-            title: 'Scene 2: Action (🟢 What Was Happening)',
-            en: action.trim() || '(Fill Part 2 Action in Story Writer to see your script here)',
-            radio_starters: ["Right then and there...", "Let's find out what happened next...", "As students were moving..."]
-          },
-          {
-            id: 3,
-            narrative_function: 'problem',
-            title: 'Scene 3: Problem (🟠 What Went Wrong)',
-            en: problem.trim() || '(Fill Part 3 Problem in Story Writer to see your script here)',
-            radio_starters: ["But then, listeners...", "Suddenly, everything changed...", "Unexpectedly..."]
-          },
-          {
-            id: 4,
-            narrative_function: 'solution',
-            title: 'Scene 4: Solution (🟣 How It Was Fixed)',
-            en: solution.trim() || '(Fill Part 4 Solution in Story Writer to see your script here)',
-            radio_starters: ["And that's why we always...", "To sum it up...", "Fortunately..."]
-          }
+          { id: 1, narrative_function: 'setting',  title: 'Scene 1: Setting',  en: setting.trim()  || '(Write in Story Writer)' },
+          { id: 2, narrative_function: 'action',   title: 'Scene 2: Action',   en: action.trim()   || '(Write in Story Writer)' },
+          { id: 3, narrative_function: 'problem',  title: 'Scene 3: Problem',  en: problem.trim()  || '(Write in Story Writer)' },
+          { id: 4, narrative_function: 'solution', title: 'Scene 4: Ending',   en: solution.trim() || '(Write in Story Writer)' },
         ];
         return { mode: 'structured', finalText, podcastScenes };
       });
@@ -168,14 +162,14 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
           .split('|SPLIT|')
           .map(s => s.trim())
           .filter(s => s.length > 10);
-
-        const third = Math.ceil(sentences.length / 3);
+        const fifth = Math.ceil(sentences.length / 5);
         const podcastScenes = [
-          { id: 1, narrative_function: null, title: 'Scene 1: Your Opening', en: sentences.slice(0, third).join(' ') || sentences[0] || finalText },
-          { id: 2, narrative_function: null, title: 'Scene 2: Your Action Sequence', en: sentences.slice(third, third * 2).join(' ') || sentences[1] || '' },
-          { id: 3, narrative_function: null, title: 'Scene 3: Your Conclusion', en: sentences.slice(third * 2).join(' ') || sentences[2] || '' }
+          { id: 1, narrative_function: null, title: 'Scene 1', en: sentences.slice(0, fifth).join(' ') || finalText },
+          { id: 2, narrative_function: null, title: 'Scene 2', en: sentences.slice(fifth, fifth * 2).join(' ') || '' },
+          { id: 3, narrative_function: null, title: 'Scene 3', en: sentences.slice(fifth * 2, fifth * 3).join(' ') || '' },
+          { id: 4, narrative_function: null, title: 'Scene 4', en: sentences.slice(fifth * 3, fifth * 4).join(' ') || '' },
+          { id: 5, narrative_function: null, title: 'Scene 5', en: sentences.slice(fifth * 4).join(' ') || '' },
         ].filter(s => s.en.trim().length > 0);
-
         return { mode: 'freeform', finalText, podcastScenes };
       });
     }

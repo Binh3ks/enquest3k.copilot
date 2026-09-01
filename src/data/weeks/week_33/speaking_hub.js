@@ -160,12 +160,34 @@ export const speakingHub = {
   picture_story: {
     title: "Jake's School Incident",
     images: [
-      { id: 1, image_url: "/images/week33/ps_1.png", narrator_prompt: "Jake was walking carefully down the corridor." },
-      { id: 2, image_url: "/images/week33/ps_2.png", narrator_prompt: "Suddenly, a boy ran fast and slipped on the wet floor." },
-      { id: 3, image_url: "/images/week33/ps_3.png", narrator_prompt: "Jake rushed over to check on the hurt student." },
-      { id: 4, image_url: "/images/week33/ps_4.png", narrator_prompt: "He called the school nurse right away and she bandaged his knee." }
+      {
+        id: 1,
+        image_url: "/images/week33/ps_1.png",
+        narrator_prompt: "Jake was walking carefully down the corridor."
+      },
+      {
+        id: 2,
+        image_url: "/images/week33/ps_2.png",
+        narrator_prompt: "Suddenly, a boy ran fast and slipped on the wet floor."
+      },
+      {
+        id: 3,
+        image_url: "/images/week33/ps_3.png",
+        narrator_prompt: "Jake rushed over to check on the hurt student."
+      },
+      {
+        id: 4,
+        image_url: "/images/week33/ps_4.png",
+        narrator_prompt: "He called the school nurse right away and she bandaged his knee."
+      },
+      {
+        id: 5,
+        image_url: "/images/week33/ps_5.png",
+        narrator_prompt: "In the end, Headmaster Brown gave Jake a safety award at the assembly."
+      }
     ],
-    examiner_intro: "Look at these four pictures. They tell a story about Jake and a corridor incident. First, I'll tell you about picture one. Then you tell me about pictures two, three, and four."
+    examiner_intro: "Look at these five pictures. They tell a story about Jake and a school corridor incident. First, I’ll tell you about picture one. Then you tell me what happens in pictures two, three, four and five.",
+    examiner_pic1_narration: "In the first picture, Jake was walking carefully down the school corridor. He noticed the wet floor tiles near the science room."
   },
   personal_questions: {
     examiner_intro: "Now let's talk about you. Please listen to each question and answer clearly.",

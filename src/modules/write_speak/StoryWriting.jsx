@@ -21,10 +21,12 @@ import { speakText } from '../../utils/AudioHelper';
 import { playButtonClick, playVictoryFanfare } from '../../utils/soundEffects';
 import { useUserStore } from '../../stores/useUserStore';
 
-const PILL_COLOR_SCHEMES = [
+const STAGE_COLORS = [
   { bg: 'bg-sky-50', border: 'border-sky-200', pill: 'bg-sky-50 text-sky-950 border-sky-300 hover:bg-sky-100' },
   { bg: 'bg-amber-50', border: 'border-amber-200', pill: 'bg-amber-50 text-amber-950 border-amber-300 hover:bg-amber-100' },
-  { bg: 'bg-emerald-50', border: 'border-emerald-200', pill: 'bg-emerald-50 text-emerald-950 border-emerald-300 hover:bg-emerald-100' }
+  { bg: 'bg-emerald-50', border: 'border-emerald-200', pill: 'bg-emerald-50 text-emerald-950 border-emerald-300 hover:bg-emerald-100' },
+  { bg: 'bg-purple-50', border: 'border-purple-200', pill: 'bg-purple-50 text-purple-950 border-purple-300 hover:bg-purple-100' },
+  { bg: 'bg-rose-50', border: 'border-rose-200', pill: 'bg-rose-50 text-rose-950 border-rose-300 hover:bg-rose-100' }
 ];
 
 const KNOWN_CONNECTORS = [
@@ -56,7 +58,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
 
   const steps = useMemo(() => {
     if (Array.isArray(rawStory.steps) && rawStory.steps.length >= 3) {
-      return rawStory.steps.slice(0, 3);
+      return rawStory.steps.slice(0, 5); // Support up to 5 scenes (S3 Cambridge format)
     }
     // Fallback if not configured
     return [
@@ -90,18 +92,41 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
         badge_label: 'WRITE',
         title: 'Scene 3: The Resolution',
         image_url: `/images/week${currentWeek}/writing_panel_3.png`,
-        caption: 'Look at Picture 3 and describe how it was resolved.',
+        caption: 'Look at Picture 3 and describe what happened next.',
+        frame_L1: 'Someone came to help. Describe what they did.',
+        ladder_stage: 'WRITE', badge_label: 'WRITE',
+        sentence_hint: 'Write 2 sentences about how someone helped.',
         connectors: ['Finally', 'In the end', 'At last'],
         keywords: ['the helper', 'arrive', 'the bandage', 'feel relieved'],
         pills: ['the helper', 'arrive', 'the bandage', 'feel relieved'],
         audio: 'Look at the third picture and describe the happy ending.'
+      },
+      {
+        scene: 4, title: 'Scene 4: What Happened Next',
+        image_url: `/images/week${currentWeek}/writing_panel_4.png`,
+        caption: 'Look at Picture 4 and continue the story.',
+        frame_L1: 'An important person arrived. Describe what they said or did.',
+        ladder_stage: 'EXPAND', badge_label: 'EXPAND',
+        sentence_hint: 'Write 2 sentences about what happened after that.',
+        connectors: ['Then,', 'After that,', 'Meanwhile,'],
+        pills: ['Then,', 'After that,', 'arrived', 'spoke to'],
+      },
+      {
+        scene: 5, title: 'Scene 5: The Ending',
+        image_url: `/images/week${currentWeek}/writing_panel_5.png`,
+        caption: 'Look at Picture 5 and write how the story ended.',
+        frame_L1: 'In the end, everyone felt proud. Describe the final outcome.',
+        ladder_stage: 'REFLECT', badge_label: 'REFLECT',
+        sentence_hint: 'Write 2 sentences about how the story ended and how people felt.',
+        connectors: ['In the end,', 'Finally,', 'At last,'],
+        pills: ['In the end,', 'Finally,', 'everyone', 'felt proud'],
       }
     ];
   }, [rawStory, currentWeek]);
 
   // Wizard state: 0, 1, 2 = Scene steps, 3 = Review screen
   const [currentStepIdx, setCurrentStepIdx] = useState(0);
-  const [panelTexts, setPanelTexts] = useState(['', '', '']);
+  const [panelTexts, setPanelTexts] = useState(['', '', '', '', '']);
   const [showHint, setShowHint] = useState(false);
   const [rubric, setRubric] = useState(null);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -113,7 +138,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
   const textareaRef = useRef(null);
   const isReview = currentStepIdx >= steps.length;
   const currentStep = steps[currentStepIdx] || steps[0];
-  const colorScheme = PILL_COLOR_SCHEMES[currentStepIdx % PILL_COLOR_SCHEMES.length];
+  const colorScheme = STAGE_COLORS[currentStepIdx % STAGE_COLORS.length];
 
   const fullText = useMemo(() => panelTexts.filter(Boolean).join(' ').trim(), [panelTexts]);
   const wordCount = useMemo(() => fullText ? fullText.split(/\s+/).filter(Boolean).length : 0, [fullText]);
@@ -144,7 +169,15 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
         setPanelTexts(savedData.panelTexts);
       } else if (savedData.text) {
         const parts = savedData.text.split(/(?<=[.!?])\s+/);
-        setPanelTexts([parts[0] || '', parts[1] || '', parts.slice(2).join(' ') || '']);
+        // Distribute legacy text across 5 slots
+        const fifth = Math.ceil(parts.length / 5);
+        setPanelTexts([
+          parts.slice(0, fifth).join(' ') || '',
+          parts.slice(fifth, fifth * 2).join(' ') || '',
+          parts.slice(fifth * 2, fifth * 3).join(' ') || '',
+          parts.slice(fifth * 3, fifth * 4).join(' ') || '',
+          parts.slice(fifth * 4).join(' ') || ''
+        ]);
       }
       if (savedData.rubric) setRubric(savedData.rubric);
     }
@@ -198,6 +231,8 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     if (currentStepIdx === 0) return stepWordCount >= 3;
     if (currentStepIdx === 1) return stepWordCount >= 3;
     if (currentStepIdx === 2) return stepWordCount >= 5; // STRICT: >=5 words min for Step 3
+    if (currentStepIdx === 3) return stepWordCount >= 3;
+    if (currentStepIdx === 4) return stepWordCount >= 3;
     return true;
   }, [currentStepIdx, stepWordCount]);
 
@@ -235,7 +270,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     });
 
     // Cambridge 5-shield distribution (Content 2, Grammar 2, Vocab 1)
-    const contentScore = Math.min(2, Math.max(1, wordCount >= 30 ? 2 : 1));
+    const contentScore = Math.min(2, Math.max(1, wordCount >= 40 ? 2 : 1));
     const grammarScore = Math.min(2, Math.max(1, distinctConnectors.length >= 2 && hasScene3PastTense ? 2 : 1));
     const vocabScore = Math.min(1, Math.max(1, evalResult.dimensions?.D2?.score >= 1 ? 1 : 1));
     const totalShields = contentScore + grammarScore + vocabScore;
@@ -258,13 +293,23 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     markComplete(100);
     const extraData = {
       structured: true,
+      panelTexts: [...panelTexts], // 5-panel array for CreatorStudioZone → Video Challenge
       fields: {
         setting: panelTexts[0] || '',
-        action: '',
-        problem: panelTexts[1] || '',
-        solution: panelTexts[2] || ''
-      }
+        action: panelTexts[1] || '',
+        problem: panelTexts[2] || '',
+        climax: panelTexts[3] || '',
+        solution: panelTexts[4] || ''
+      },
+      text: fullText
     };
+    // Persist panelTexts to station progress for hydration across navigation
+    saveProgress({
+      panelTexts,
+      text: fullText,
+      rubric: scoredRubric,
+      completedAt: new Date().toISOString()
+    });
     if (onComplete) onComplete(50, fullText, extraData);
     if (onReportProgress) onReportProgress(100, fullText, extraData);
     speakText("Great job! You completed your Cambridge story!");
@@ -293,12 +338,12 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
           <span
             data-testid="total-words-counter"
             className={`text-xs font-black px-3 py-1 rounded-full border ${
-              wordCount >= 30
+              wordCount >= 40
                 ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
                 : 'bg-amber-100 text-amber-800 border-amber-300'
             }`}
           >
-            Total words: {wordCount} {wordCount >= 30 ? '✓' : '/ 30 min'}
+            Total words: {wordCount} {wordCount >= 40 ? '✓' : '/ 40 min'}
           </span>
         </div>
 

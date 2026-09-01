@@ -7,12 +7,13 @@ import MicFallbackInput from '../common/MicFallbackInput';
 import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 
 const NARRATIVE_STYLES = {
-  setting:  { label: 'Scene 1: Setting', dot: '🔵', bg: 'bg-blue-50/80',    border: 'border-blue-200',    text: 'text-blue-950', badge: 'bg-blue-200 text-blue-900' },
-  action:   { label: 'Scene 2: Action',  dot: '🟢', bg: 'bg-emerald-50/80', border: 'border-emerald-200', text: 'text-emerald-950', badge: 'bg-emerald-200 text-emerald-900' },
-  problem:  { label: 'Scene 3: Problem', dot: '🟠', bg: 'bg-amber-50/80',   border: 'border-amber-200',   text: 'text-amber-950', badge: 'bg-amber-200 text-amber-900' },
-  solution: { label: 'Scene 4: Ending',  dot: '🟣', bg: 'bg-purple-50/80',  border: 'border-purple-200',  text: 'text-purple-950', badge: 'bg-purple-200 text-purple-900' }
+  setting:  { label: 'Scene 1: Setting',  dot: '🔵', bg: 'bg-blue-50/80',    border: 'border-blue-200',    text: 'text-blue-950', badge: 'bg-blue-200 text-blue-900' },
+  action:   { label: 'Scene 2: Action',   dot: '🟢', bg: 'bg-emerald-50/80', border: 'border-emerald-200', text: 'text-emerald-950', badge: 'bg-emerald-200 text-emerald-900' },
+  problem:  { label: 'Scene 3: Problem',  dot: '🟠', bg: 'bg-amber-50/80',   border: 'border-amber-200',   text: 'text-amber-950', badge: 'bg-amber-200 text-amber-900' },
+  climax:   { label: 'Scene 4: Response', dot: '🟣', bg: 'bg-purple-50/80',  border: 'border-purple-200',  text: 'text-purple-950', badge: 'bg-purple-200 text-purple-900' },
+  solution: { label: 'Scene 5: Ending',   dot: '⭐', bg: 'bg-rose-50/80',    border: 'border-rose-200',    text: 'text-rose-950', badge: 'bg-rose-200 text-rose-900' }
 };
-const FUNC_ORDER = ['setting', 'action', 'problem', 'solution'];
+const FUNC_ORDER = ['setting', 'action', 'problem', 'climax', 'solution'];
 
 export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplete }) {
   const [recordMode, setRecordMode] = useState('video'); // 'video' | 'audio'
@@ -49,12 +50,17 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
     {
       id: 3,
       narrative_function: 'problem',
-      en: "Explain what unexpected problem or challenge occurred in the story."
+      en: "Something went wrong. Describe the problem or challenge that occurred."
     },
     {
       id: 4,
+      narrative_function: 'climax',
+      en: "Someone came to help or responded to the problem. What did they do?"
+    },
+    {
+      id: 5,
       narrative_function: 'solution',
-      en: "Tell how the situation was resolved and how the story ended."
+      en: "How did the story end? Describe the final outcome and how everyone felt."
     }
   ];
 
