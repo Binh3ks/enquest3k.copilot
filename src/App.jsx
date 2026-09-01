@@ -73,6 +73,7 @@ const WordTreasury = React.lazy(() => import('./pages/WordTreasury'));
 const AdminDashboard = React.lazy(() => import('./components/common/AdminDashboard'));
 const WorksheetGenerator = React.lazy(() => import('./components/common/WorksheetGenerator'));
 const ReviewDashboardPage = React.lazy(() => import('./modules/review/ReviewDashboard'));
+const PassportTracker = React.lazy(() => import('./pages/PassportTracker'));
 import week33Data from './data/weeks/week_33/index.js';
 import { getCollectionByWeek } from './data/collectionConfig';
 
@@ -268,12 +269,24 @@ const PracticeRoute = () => {
       </header>
       <div className="max-w-2xl mx-auto px-4 py-6">
         <React.Suspense fallback={<div className="p-10 text-center text-slate-400 font-black">Loading drills...</div>}>
-          <ReviewDashboardPage
-            reviewItems={reviewItems}
-            setReviewItems={setReviewItems}
-            themeColor="indigo"
-            onWeekComplete={() => navigate(`/week/${weekId}/hub/1`)}
-          />
+          {reviewItems.length > 0 ? (
+            <ReviewDashboardPage
+              reviewItems={reviewItems}
+              setReviewItems={setReviewItems}
+              themeColor="indigo"
+              onWeekComplete={() => navigate(`/week/${weekId}/hub/1`)}
+            />
+          ) : (
+            <div className="bg-white rounded-2xl shadow-sm border-2 border-indigo-100 p-10 text-center">
+              <div className="text-4xl mb-3">📝</div>
+              <p className="font-black text-slate-700 text-lg mb-2">No drills due today!</p>
+              <p className="text-sm text-slate-500 mb-6">Complete quests to build up your SRS vocabulary bank, then come back here to practice.</p>
+              <button
+                onClick={() => navigate(`/week/${weekId}/hub/1`)}
+                className="bg-indigo-500 text-white font-black rounded-xl px-6 py-3 hover:bg-indigo-600 transition-colors"
+              >Back to Quest Map</button>
+            </div>
+          )}
         </React.Suspense>
       </div>
       <QuestSidebar
@@ -349,6 +362,7 @@ const App = () => {
       <Route path="/gamehub/:weekId" element={<GameHubLayout />} />
       <Route path="/collection" element={<CollectionBoard />} />
       <Route path="/word-treasury" element={<WordTreasury />} />
+      <Route path="/passport" element={<PassportTracker />} />
       <Route path="/hub/station-1" element={<WorldDiscoveryHub data={week33Data?.readingHub} weekNumber={33} />} />
       <Route path="/hub/station-2" element={<ArenaHub data={week33Data?.listeningHub} weekNumber={33} />} />
       <Route path="/hub/station-3" element={<WritingStudioHub data={week33Data?.writingHub} weekNumber={33} />} />
