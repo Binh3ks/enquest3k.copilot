@@ -144,7 +144,7 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
   const [mascotQuoteIndex, setMascotQuoteIndex] = useState(0);
   const prevSuggestedIdxRef = useRef(-1);
 
-  const { isQuestCompleted, getWeekQuestCount } = useDailyQuestStore();
+  const { isQuestCompleted, getWeekQuestCount, isDayUnlocked } = useDailyQuestStore();
   const weekQuestCount = getWeekQuestCount(weekId);
   const totalQuests = TOTAL_QUEST_DAYS * 3;
   const progressPercent = Math.round((weekQuestCount / totalQuests) * 100);
@@ -173,10 +173,8 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
   }, [isQuestCompleted, weekId]);
 
   const isStationUnlocked = useCallback((dayIndex) => {
-    if (teacherOverride) return true;
-    if (dayIndex === 0) return true;
-    return getStationCompletion(dayIndex - 1).allDone;
-  }, [teacherOverride, getStationCompletion]);
+    return isDayUnlocked(weekId, dayIndex, teacherOverride);
+  }, [isDayUnlocked, weekId, teacherOverride]);
 
   const suggestedIdx = STATIONS.findIndex((_, i) => {
     const c = getStationCompletion(i);
@@ -512,62 +510,84 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
       })}
 
       {/* Universal Task Drawer (Mobile bottom sheet / Desktop centered card) */}
-      {expandedStation !== null && STATIONS[expandedStation] && (
-        <div className="qm3d-mobile-drawer-backdrop" onClick={() => setExpandedStation(null)}>
-          <div className="qm3d-mobile-drawer" onClick={e => e.stopPropagation()}>
-            <div className="qm3d-drawer-header">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">{STATIONS[expandedStation].emoji}</span>
-                <div>
-                  <h3 className="font-black text-slate-800 text-sm">{STATIONS[expandedStation].name}</h3>
-                  <p className="text-[11px] font-bold text-slate-400">
-                    Station {STATIONS[expandedStation].index} · {getStationCompletion(expandedStation).done}/{getStationCompletion(expandedStation).total} Hoàn thành
-                  </p>
+      {expandedStation !== null && STATIONS[expandedStation] && (() => {
+        const stationUnlockedForDrawer = isStationUnlocked(expandedStation);
+        const dayQuestsForDrawer = QUEST_SCHEDULE[expandedStation]?.quests || [];
+        // Find the first uncompleted quest in this day for the 'START HERE' indicator
+        const firstUncompletedIdx = dayQuestsForDrawer.findIndex(q => !isQuestCompleted(weekId, q.id));
+        return (
+          <div className="qm3d-mobile-drawer-backdrop" onClick={() => setExpandedStation(null)}>
+            <div className="qm3d-mobile-drawer" onClick={e => e.stopPropagation()}>
+              <div className="qm3d-drawer-header">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">{STATIONS[expandedStation].emoji}</span>
+                  <div>
+                    <h3 className="font-black text-slate-800 text-sm">{STATIONS[expandedStation].name}</h3>
+                    <p className="text-[11px] font-bold text-slate-400">
+                      Station {STATIONS[expandedStation].index} · {getStationCompletion(expandedStation).done}/{getStationCompletion(expandedStation).total} Hoàn thành
+                    </p>
+                  </div>
                 </div>
+                <button 
+                  onClick={() => setExpandedStation(null)} 
+                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 font-black text-sm"
+                >
+                  ✕
+                </button>
               </div>
-              <button 
-                onClick={() => setExpandedStation(null)} 
-                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 font-black text-sm"
-              >
-                ✕
-              </button>
-            </div>
 
-            <div className="qm3d-drawer-tasks space-y-2 mt-3">
-              {(QUEST_SCHEDULE[expandedStation]?.quests || []).map((quest) => {
-                const isDone = isQuestCompleted(weekId, quest.id);
-                return (
-                  <button
-                    key={quest.id}
-                    onClick={() => {
-                      setExpandedStation(null);
-                      navigate(getTaskLink(quest));
-                    }}
-                    className={`w-full p-3 rounded-2xl border-2 flex items-center justify-between text-left transition-all ${
-                      isDone 
-                        ? 'bg-emerald-50/70 border-emerald-300 text-emerald-900' 
-                        : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-800 shadow-sm'
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="text-xl w-8 text-center">{isDone ? '✅' : quest.icon}</span>
-                      <div>
-                        <p className="font-black text-xs leading-tight">{quest.label}</p>
-                        <p className="text-[10px] font-bold text-slate-400 mt-0.5">⏱️ ~{quest.minutes} phút · +{quest.xp || 50} XP</p>
+              <div className="qm3d-drawer-tasks space-y-2 mt-3">
+                {dayQuestsForDrawer.map((quest, qi) => {
+                  const isDone = isQuestCompleted(weekId, quest.id);
+                  // Intra-day soft guide: visually highlight the recommended next quest
+                  const isNextUp = !isDone && qi === firstUncompletedIdx;
+                  // Quests after the next recommended one get a subtle 'waiting' style
+                  const isWaiting = !isDone && qi > firstUncompletedIdx;
+                  return (
+                    <button
+                      key={quest.id}
+                      onClick={() => {
+                        setExpandedStation(null);
+                        navigate(getTaskLink(quest));
+                      }}
+                      className={`w-full p-3 rounded-2xl border-2 flex items-center justify-between text-left transition-all ${
+                        isDone 
+                          ? 'bg-emerald-50/70 border-emerald-300 text-emerald-900' 
+                          : isNextUp
+                            ? 'bg-amber-50 border-amber-400 text-slate-800 shadow-md ring-2 ring-amber-300/60'
+                            : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-800 shadow-sm'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl w-8 text-center">{isDone ? '✅' : quest.icon}</span>
+                        <div>
+                          <p className="font-black text-xs leading-tight">{quest.label}</p>
+                          <p className="text-[10px] font-bold text-slate-400 mt-0.5">⏱️ ~{quest.minutes} phút · +{quest.xp || 50} XP</p>
+                          {isNextUp && (
+                            <p className="text-[10px] font-black text-amber-600 mt-0.5 animate-pulse">▶ DO THIS NEXT</p>
+                          )}
+                          {isWaiting && (
+                            <p className="text-[10px] font-semibold text-slate-400 mt-0.5">✦ Available after above</p>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                    <span className={`px-3 py-1.5 rounded-xl text-[11px] font-black ${
-                      isDone ? 'bg-emerald-600 text-white' : 'bg-amber-500 text-white shadow-xs'
-                    }`}>
-                      {isDone ? 'Làm lại' : 'Bắt đầu ▶'}
-                    </span>
-                  </button>
-                );
-              })}
+                      <span className={`px-3 py-1.5 rounded-xl text-[11px] font-black ${
+                        isDone 
+                          ? 'bg-emerald-600 text-white' 
+                          : isNextUp
+                            ? 'bg-amber-500 text-white shadow-sm'
+                            : 'bg-slate-200 text-slate-600'
+                      }`}>
+                        {isDone ? 'Làm lại' : isNextUp ? 'Bắt đầu ▶' : 'Mở sau'}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* Single Floating Duo-style Mascot Fox Companion (Transparent, Animated, with Bubble & Continue Button) */}
       <div

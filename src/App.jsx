@@ -7,6 +7,8 @@ import { Menu, Printer, Gauge, Sparkles, BookOpen, Swords, PenTool, Radio } from
 import { useUserStore } from './stores/useUserStore';
 import { progressAPI } from './services/api';
 import useTTSStore from './stores/useTTSStore';
+import useDailyQuestStore from './stores/useDailyQuestStore';
+import { QUEST_SCHEDULE } from './config/questSchedule';
 import './services/badgeEngine';
 
 // CONFIG & CONSTANTS
@@ -154,14 +156,55 @@ const STAFF_ROLES = ['owner', 'admin', 'super_admin', 'teacher', 'team_leader', 
  */
 const TaskRoute = () => {
   const params = useParams();
+  const navigate = useNavigate();
   const weekId = parseInt(params.weekId || 33);
+  const taskId = params.taskId;
   const { learningMode, currentUser } = useUserStore();
+  const { isDayUnlocked, getQuestDayIndex } = useDailyQuestStore();
   const [showOnboarding, setShowOnboarding] = useState(() => !localStorage.getItem('engquest_onboarded'));
+  const [lockToast, setLockToast] = useState(null);
+
   const isOwner = currentUser?.role === 'owner' || currentUser?.displayName === 'Bình' || currentUser?.email?.includes('binh') || localStorage.getItem('arcade_owner_bypass') === 'true';
   const isStaffOrOwner = isOwner || STAFF_ROLES.includes(currentUser?.role);
   const effectiveShowOnboarding = showOnboarding && !isStaffOrOwner;
 
+  // ── Progressive Day Lock check (runs before data fetch) ──────────────────
+  const questDayIndex = getQuestDayIndex(taskId);
+  const questUnlocked = isDayUnlocked(weekId, questDayIndex, isStaffOrOwner);
+
+  // Find what day number to complete first (for the toast message)
+  const prevDayConfig = questDayIndex > 0 ? QUEST_SCHEDULE[questDayIndex - 1] : null;
+  const prevDayLabel = prevDayConfig?.label || `Day ${questDayIndex}`;
+
+  useEffect(() => {
+    if (!questUnlocked) {
+      // Show brief toast then redirect
+      setLockToast(prevDayLabel);
+      const t = setTimeout(() => {
+        navigate(`/week/${weekId}/hub/map`, { replace: true });
+      }, 2200);
+      return () => clearTimeout(t);
+    }
+  }, [questUnlocked, weekId, navigate, prevDayLabel]);
+
   const { data: weekData, loading: isWeekDataLoading } = useFetchWeekData(weekId, learningMode);
+
+  // Show lock toast + redirect screen
+  if (!questUnlocked) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center text-white gap-5 p-6">
+        <div className="text-6xl">🔒</div>
+        <div className="text-center">
+          <p className="font-black text-xl text-amber-400 mb-1">Quest Locked!</p>
+          <p className="text-slate-300 text-sm">Complete <strong className="text-amber-300">{prevDayLabel}</strong> first to unlock this quest.</p>
+        </div>
+        <div className="w-48 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+          <div className="h-full bg-amber-400 rounded-full animate-[lock-slide_2s_linear_forwards]" style={{ width: '100%', animation: 'width 2.2s linear' }} />
+        </div>
+        <p className="text-slate-500 text-xs">Redirecting to map...</p>
+      </div>
+    );
+  }
 
   if (isWeekDataLoading && !weekData) {
     return (

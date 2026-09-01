@@ -11,7 +11,8 @@ import { emitLearningEvent, GAMIFICATION_EVENTS } from '../services/gamification
  * manages daily XP bonus claims, and provides navigation helpers.
  *
  * Day numbering: Day 1 = first time user opens the week (flexible for homeschool).
- * No hard-lock: all zones remain accessible regardless of quest progress.
+ * Progressive lock (Hybrid Lock C): Day N unlocks when all 3 quests of Day N-1 are done.
+ * Teacher/Owner bypass: handled at call-site via teacherOverride / role check.
  */
 const useDailyQuestStore = create(
   persist(
@@ -127,6 +128,34 @@ const useDailyQuestStore = create(
         return dayConfig.quests.every(
           (q) => state.completedQuests[weekKey]?.[q.id]
         );
+      },
+
+      /**
+       * Check if a day is unlocked for navigation (0-based dayIndex).
+       * Day 0 (Day 1) is always accessible.
+       * Day N is unlocked when ALL 3 quests of Day N-1 are completed.
+       * Pass teacherOverride=true to bypass (owner / staff / parent PIN).
+       */
+      isDayUnlocked: (weekId, dayIndex, teacherOverride = false) => {
+        if (teacherOverride) return true;
+        if (dayIndex <= 0) return true;
+        // Check that all quests in the PREVIOUS day are complete
+        const prevDayConfig = QUEST_SCHEDULE[dayIndex - 1];
+        if (!prevDayConfig) return true;
+        const weekKey = `w${weekId}`;
+        const completed = get().completedQuests[weekKey] || {};
+        return prevDayConfig.quests.every((q) => Boolean(completed[q.id]));
+      },
+
+      /**
+       * Given a questId, return its dayIndex (0-based) in QUEST_SCHEDULE.
+       * Returns -1 if not found.
+       */
+      getQuestDayIndex: (questId) => {
+        for (let i = 0; i < QUEST_SCHEDULE.length; i++) {
+          if (QUEST_SCHEDULE[i].quests.some((q) => q.id === questId)) return i;
+        }
+        return -1;
       },
 
       /**
