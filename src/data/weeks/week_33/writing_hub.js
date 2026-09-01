@@ -11,67 +11,88 @@ export const writingHubData = {
   picture_story: {
     steps: [
       {
+        // SCENE 1 (MODEL): Jake walking — 2 sentences target
+        // Sentence A: "In the beginning, Jake was walking carefully down the school corridor."
+        // Sentence B: "While he was walking, a student was running very fast past him."
         scene: 1,
         ladder_stage: "MODEL",
         badge_label: "MODEL",
         title: "Scene 1: Walking in the Corridor",
         image_url: "/images/week33/writing_panel_1.png",
         caption: "Jake was walking carefully down the corridor while a student ran fast.",
-        frame_L1: "Jake was walking carefully down the corridor while a student was running fast.",
+        frame_L1: "In the beginning, Jake was walking carefully down the school corridor. While he was walking, a student was running very fast past him.",
         locked_connector: "In the beginning,",
-        ordered_chips: ["Jake", "was walking carefully", "down the school corridor"],
-        pills: ["Jake", "was walking carefully", "down the school corridor"],
-        audio: "While Jake was walking carefully down the corridor, a boy was running fast."
+        sentence_hint: "Write 2 sentences: describe WHERE Jake was and WHAT the other student was doing.",
+        // ordered_chips = correct sentence order (used in MODEL stage for guided tap)
+        ordered_chips: ["Jake", "was walking carefully", "down the school corridor", "while", "a student", "was running", "very fast"],
+        // pills = SHUFFLED + distractors for student to select from
+        pills: ["was running", "very fast", "Jake", "was playing", "down the school corridor", "while", "was walking carefully", "up the staircase", "a student", "slowly", "In the beginning,"],
+        audio: "In the beginning, Jake was walking carefully down the corridor. While he was walking, a student was running very fast past him."
       },
       {
+        // SCENE 2 (BUILD): Slipping — 2 sentences target
+        // Sentence A: "Suddenly, the boy slipped on the wet floor and lost his balance."
+        // Sentence B: "He fell down heavily near the stairs and hurt his knee badly."
         scene: 2,
         ladder_stage: "BUILD",
         badge_label: "BUILD",
         title: "Scene 2: Slipping on Wet Floor",
         image_url: "/images/week33/writing_panel_2.png",
         caption: "Suddenly, the boy slipped on the wet floor and hurt his knee.",
-        frame_L1: "Suddenly, the boy slipped on the wet floor and hurt his knee badly.",
-        locked_connector: "Suddenly,",
-        connectors: ["Then,", "Suddenly,", "After that,"],
-        display_chips: ["a boy", "ran past him", "very fast"],
-        pills: ["a boy", "ran past him", "very fast"],
-        correct_order: ["a boy", "ran past him", "very fast"],
-        audio: "Suddenly, the boy slipped on the wet floor and fell down."
+        frame_L1: "Suddenly, the boy slipped on the wet floor and lost his balance. He fell down heavily near the stairs and hurt his knee badly.",
+        sentence_hint: "Write 2 sentences: what happened FIRST (slipped) and what happened NEXT (fell, hurt).",
+        connectors: ["Then,", "Suddenly,", "After that,", "While,", "Next,"],
+        // display_chips = shuffled for BUILD stage (child decides order)
+        display_chips: ["slipped on", "lost his balance", "the wet floor", "hurt his knee badly", "fell down heavily", "near the stairs", "the boy", "ran to the classroom", "tripped over a bag", "quickly stood up"],
+        pills: ["slipped on", "lost his balance", "the wet floor", "hurt his knee badly", "fell down heavily", "near the stairs", "the boy", "ran to the classroom", "tripped over a bag", "quickly stood up", "Suddenly,", "After that,", "Then,"],
+        correct_order: ["the boy", "slipped on", "the wet floor", "and", "lost his balance", "he", "fell down heavily", "near the stairs", "and", "hurt his knee badly"],
+        audio: "Suddenly, the boy slipped on the wet floor and lost his balance. He fell down heavily near the stairs and hurt his knee badly."
       },
       {
+        // SCENE 3 (WRITE): Nurse + ending — 3 sentences target
+        // Sentence A: "Finally, Jake called the school nurse for help."
+        // Sentence B: "She arrived quickly and put on a clean bandage and a cold pack."
+        // Sentence C: "Everyone felt relieved and praised Jake for following safety rules."
         scene: 3,
         ladder_stage: "WRITE",
         badge_label: "WRITE",
         title: "Scene 3: Nurse Applying Bandage",
         image_url: "/images/week33/writing_panel_3.png",
         caption: "Jake called the school nurse, who arrived quickly with a clean bandage.",
-        frame_L1: "Jake called the school nurse and everyone felt relieved.",
+        frame_L1: "Finally, Jake called the school nurse for help. She arrived quickly and put on a clean bandage and a cold pack. Everyone felt relieved and praised Jake for following safety rules.",
+        sentence_hint: "Write 3 sentences: who Jake called, what the nurse did, and how everyone felt at the end.",
         locked_connector: "Finally,",
-        connectors: ["Finally,", "In the end,", "At last,"],
+        connectors: ["Finally,", "In the end,", "At last,", "After that,", "Then,"],
         keywords: [
           "called the school nurse",
           "arrived quickly",
-          "washed the wound",
           "put on a bandage",
-          "cleaned his knee",
           "used a cold pack",
           "felt relieved",
-          "praised Jake"
+          "praised Jake",
+          "washed his knee",
+          "safety rules"
         ],
+        // pills = keywords + connectors + distractors, NOT in sentence order
         pills: [
-          "called the school nurse",
-          "arrived quickly",
-          "washed the wound",
           "put on a bandage",
-          "cleaned his knee",
-          "used a cold pack",
+          "In the end,",
           "felt relieved",
-          "praised Jake"
+          "went to the library",
+          "called the school nurse",
+          "praised Jake",
+          "used a cold pack",
+          "Finally,",
+          "gave him homework",
+          "arrived quickly",
+          "safety rules",
+          "washed his knee",
+          "At last,",
+          "played outside"
         ],
-        sentence_frame: "Finally, Jake called the school nurse. She arrived quickly and [washed the wound]. Then she [put on a bandage] and [used a cold pack]. Everyone [felt relieved] and [praised Jake] for helping.",
-        audio: "Jake called the school nurse, who arrived with a clean bandage and a cold pack."
+        sentence_frame: "Finally, Jake [called the school nurse] for help. She [arrived quickly] and [put on a bandage] and [used a cold pack]. Everyone [felt relieved] and [praised Jake] for following [safety rules].",
+        audio: "Finally, Jake called the school nurse for help. She arrived quickly and put on a clean bandage and a cold pack. Everyone felt relieved and praised Jake for following safety rules."
       }
-
     ],
     panels: [
       { image_url: "/images/week33/writing_panel_1.png", caption: "Jake was walking carefully down the corridor while a student ran fast.", pills: ["Jake was walking carefully", "down the school corridor", "near the warning sign", "a student was running fast"] },

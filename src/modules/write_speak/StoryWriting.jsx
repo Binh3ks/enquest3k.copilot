@@ -235,7 +235,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     });
 
     // Cambridge 5-shield distribution (Content 2, Grammar 2, Vocab 1)
-    const contentScore = Math.min(2, Math.max(1, wordCount >= 20 ? 2 : 1));
+    const contentScore = Math.min(2, Math.max(1, wordCount >= 30 ? 2 : 1));
     const grammarScore = Math.min(2, Math.max(1, distinctConnectors.length >= 2 && hasScene3PastTense ? 2 : 1));
     const vocabScore = Math.min(1, Math.max(1, evalResult.dimensions?.D2?.score >= 1 ? 1 : 1));
     const totalShields = contentScore + grammarScore + vocabScore;
@@ -293,12 +293,12 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
           <span
             data-testid="total-words-counter"
             className={`text-xs font-black px-3 py-1 rounded-full border ${
-              wordCount >= 20
+              wordCount >= 30
                 ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
                 : 'bg-amber-100 text-amber-800 border-amber-300'
             }`}
           >
-            Total words: {wordCount} {wordCount >= 20 ? '✓' : '/ 20 min'}
+            Total words: {wordCount} {wordCount >= 30 ? '✓' : '/ 30 min'}
           </span>
         </div>
 
@@ -612,9 +612,16 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
 
         {/* Writing Input Area */}
         <div className="space-y-2">
+          {/* Sentence Target Guidance */}
+          {currentStep.sentence_hint && (
+            <div className="px-3 py-2 bg-indigo-50 rounded-xl border border-indigo-200 text-[11px] font-bold text-indigo-800 flex items-start gap-1.5">
+              <span>📝</span>
+              <span>{currentStep.sentence_hint}</span>
+            </div>
+          )}
           <div className="flex items-center justify-between">
             <label className="text-[11px] font-black uppercase text-slate-700 tracking-wider">
-              Write 1 complete sentence for Scene {currentStepIdx + 1} ({stage}):
+              Write your sentences for Scene {currentStepIdx + 1} ({stage}):
             </label>
             <button
               type="button"

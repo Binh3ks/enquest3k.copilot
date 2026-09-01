@@ -564,7 +564,7 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
                           <p className="font-black text-xs leading-tight">{quest.label}</p>
                           <p className="text-[10px] font-bold text-slate-400 mt-0.5">⏱️ ~{quest.minutes} phút · +{quest.xp || 50} XP</p>
                           {isNextUp && (
-                            <p className="text-[10px] font-black text-amber-600 mt-0.5 animate-pulse">▶ DO THIS NEXT</p>
+                            <p className="text-[10px] font-black text-amber-600 mt-0.5 animate-pulse">▶ Do this next!</p>
                           )}
                           {isWaiting && (
                             <p className="text-[10px] font-semibold text-slate-400 mt-0.5">✦ Available after above</p>
@@ -578,7 +578,7 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
                             ? 'bg-amber-500 text-white shadow-sm'
                             : 'bg-slate-200 text-slate-600'
                       }`}>
-                        {isDone ? 'Làm lại' : isNextUp ? 'Bắt đầu ▶' : 'Mở sau'}
+                        {isDone ? 'Retry' : isNextUp ? 'Start ▶' : 'Next up'}
                       </span>
                     </button>
                   );

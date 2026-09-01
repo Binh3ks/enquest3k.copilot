@@ -281,8 +281,8 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
         <div className="flex items-center gap-2">
           <ExamIntroAudioButton
             weekNumber={weekNumber || 33}
-            introId="exam_intro_S3"
-            introText="Look at the pictures. They tell a story. Look at the pictures first and tell the story."
+            introId="exam_intro_video_challenge"
+            introText="Read your story aloud. Look at the teleprompter and tell your story clearly. Speak at a natural speed."
           />
           <div className="flex items-center gap-1 bg-white p-0.5 rounded-lg border border-purple-200 shadow-2xs">
             <button

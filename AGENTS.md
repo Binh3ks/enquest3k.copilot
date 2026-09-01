@@ -429,3 +429,27 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
   - Path: Managed binary download via Playwright CLI.
   - Policy: Do NOT make binary download the default assumption on macOS. CDN download 404s are infrastructure issues, NOT proof that browser E2E is impossible.
 
+
+## 🌐 English-Only Student-Facing UI Rule — 2026-09-01
+
+**CẤM TUYỆT ĐỐI dùng tiếng Việt (L1) trong bất kỳ label/button/text nào hiển thị cho học sinh.**
+
+### Phạm vi áp dụng:
+- Tất cả button labels: `Start ▶` KHÔNG phải `Bắt đầu ▶`, `Next up` KHÔNG phải `Mở sau`
+- Progress messages, quest status text, drawer cards, toast notifications
+- Examiner instructions, task prompts, placeholder text trong inputs
+- Badge labels, completion messages, error/locked states
+
+### Ngoại lệ cho phép:
+- `definition_vi` fields trong vocab data (định nghĩa tiếng Việt tra cứu)
+- Parent/Teacher dashboard (giao diện phụ huynh)
+- Debug panels (QADebugDrawer, SandboxQAPanel)
+- Parent-targeted modals (SubscriptionModal, ParentPINGate)
+
+### Precedent (lý do rule này tồn tại):
+- **2026-09-01**: Progressive Lock drawer buttons render `"Bắt đầu ▶"` và `"Mở sau"` — tiếng Việt — khi implement Hybrid Lock C feature.
+
+### Checklist trước khi commit code có UI text:
+- [ ] Không có literal tiếng Việt trong JSX student-facing components
+- [ ] Tất cả button/label text là tiếng Anh
+- [ ] Toast messages / locked state messages là tiếng Anh
