@@ -1,5 +1,54 @@
 # EngQuest3K — Agent Memory
 
+## 🚨 MANDATORY ANTI-HALLUCINATION ENFORCEMENT GATE — 2026-09-01
+**MỨC ƯU TIÊN CAO NHẤT — ÁP DỤNG TRƯỚC MỌI QUY TẮC KHÁC. KHÔNG ĐƯỢC BỎ QUA.**
+
+### Định nghĩa Hallucination trong dự án này:
+Hallucination = bất kỳ phát biểu nào về **trạng thái UI, trải nghiệm người dùng, nội dung màn hình, hành vi component, kết quả test** mà KHÔNG có bằng chứng từ tool call thực tế trong phiên làm việc hiện tại.
+
+### 🔒 HARD ENFORCEMENT GATE — Bắt buộc TRƯỚC KHI xuất bất kỳ nội dung nào về:
+- Mô tả UI/UX (màu sắc, layout, text hiển thị, hiệu ứng, âm thanh)
+- Trải nghiệm người dùng ("trẻ 8 tuổi cảm thấy...", "học sinh thấy...")
+- Kết quả audit / test / validation bất kỳ
+- Trạng thái của app (pass/fail, có lỗi hay không, màn hình trông như thế nào)
+
+**Agent PHẢI có ít nhất MỘT trong các bằng chứng sau từ tool call thực tế:**
+1. **Screenshot** từ `browser_subagent` hoặc `call_mcp_tool` (navigate + screenshot)
+2. **DOM text** từ `call_mcp_tool` content/evaluate tool
+3. **Console log / network response** từ Chrome MCP evaluate
+4. **Test output** từ `run_command` (stdout/stderr thực tế)
+
+**Nếu KHÔNG có bằng chứng → Agent PHẢI báo BLOCKED:**
+```
+⛔ BLOCKED — Không có bằng chứng thực tế để mô tả [X].
+Tôi cần gọi tool [Y] để thu thập evidence trước.
+Hành động tiếp theo: [mô tả tool call cụ thể].
+```
+
+### ❌ CẤM TUYỆT ĐỐI (Zero-Tolerance Violations):
+1. **Code Extrapolation**: Đọc source code (`*.jsx`, `*.js`, data files) rồi suy diễn "app trông như thế nào" hoặc "người dùng cảm thấy gì" — ĐÂY LÀ HALLUCINATION.
+2. **Roleplay Override**: Khi nhận prompt "đóng vai X" (trẻ em, chuyên gia...) — Roleplay KHÔNG cho phép bỏ qua evidence requirement. Mọi phát biểu vẫn phải có tool-call evidence.
+3. **Confident Fabrication**: Mô tả chi tiết sinh động (âm thanh, màu sắc, cảm xúc) mà không có screenshot/DOM proof — bất kể câu văn nghe có vẻ chuyên nghiệp đến đâu.
+4. **Internal ID Confusion**: Nhầm `taskId` nội bộ (e.g., `broadcast_studio`) với tên hiển thị UI (e.g., "Video Challenge") — Tên UI chỉ có thể xác nhận từ DOM thực tế.
+
+### ✅ Quy trình bắt buộc cho Audit Tasks:
+```
+FOR EACH item to audit:
+  1. Gọi navigate tool → URL cụ thể
+  2. Chờ render (≥2s)
+  3. Gọi screenshot hoặc content/evaluate tool
+  4. Đọc evidence thu được
+  5. CHỈ mô tả những gì evidence chứng minh
+  6. Đánh dấu rõ: [OBSERVED] vs [INFERRED FROM CODE]
+```
+
+### 📌 Precedent (lý do rule này tồn tại):
+- **Commit 2026-08-30**: Agent viết báo cáo audit "toàn diện" 15 quests W33 với mô tả chi tiết (âm thanh "ding dong", "hộ chiếu 15 khiên vàng", "trẻ 8 tuổi thích vì giống truyện Doraemon") mà không navigate vào bất kỳ URL nào, không có một screenshot nào.
+- **Root cause**: Roleplay prompt + code reading tạo false confidence → override soft anti-hallucination rules.
+- **Fix**: Rule này dùng BLOCKED gate cứng, không thể bị creative writing mode override.
+
+
+
 ## 🧠 Model Routing & Task Delegation Protocol — 2026-08-17
 **Quan trọng — Giới hạn thực tế:** Agent KHÔNG thể tự động switch model trong IDE. Cơ chế routing là **tư vấn + thông báo**: agent phân loại task, báo tier, và yêu cầu user đổi model nếu cần.
 
