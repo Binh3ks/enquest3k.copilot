@@ -1,6 +1,6 @@
 # EngQuest3K — Agent Memory
 
-## 🚨 MANDATORY ANTI-HALLUCINATION ENFORCEMENT GATE — 2026-09-01
+## 🚨 MANDATORY ANTI-HALLUCINATION ENFORCEMENT GATE — 2026-09-01 (v2)
 **MỨC ƯU TIÊN CAO NHẤT — ÁP DỤNG TRƯỚC MỌI QUY TẮC KHÁC. KHÔNG ĐƯỢC BỎ QUA.**
 
 ### Định nghĩa Hallucination trong dự án này:
@@ -13,10 +13,10 @@ Hallucination = bất kỳ phát biểu nào về **trạng thái UI, trải ngh
 - Trạng thái của app (pass/fail, có lỗi hay không, màn hình trông như thế nào)
 
 **Agent PHẢI có ít nhất MỘT trong các bằng chứng sau từ tool call thực tế:**
-1. **Screenshot** từ `browser_subagent` hoặc `call_mcp_tool` (navigate + screenshot)
-2. **DOM text** từ `call_mcp_tool` content/evaluate tool
-3. **Console log / network response** từ Chrome MCP evaluate
-4. **Test output** từ `run_command` (stdout/stderr thực tế)
+1. **Screenshot được nhúng vào báo cáo** (không phải chỉ "đã lưu file") — từ Puppeteer/browser tool
+2. **DOM text đầy đủ** từ `evaluate()` hoặc `call_mcp_tool` (không phải 400-char truncated snippet)
+3. **Console log / network response** từ Chrome evaluate — phải paste stderr thực tế
+4. **Test output** từ `run_command` (stdout/stderr thực tế, không diễn giải)
 
 **Nếu KHÔNG có bằng chứng → Agent PHẢI báo BLOCKED:**
 ```
@@ -25,29 +25,47 @@ Tôi cần gọi tool [Y] để thu thập evidence trước.
 Hành động tiếp theo: [mô tả tool call cụ thể].
 ```
 
-### ❌ CẤM TUYỆT ĐỐI (Zero-Tolerance Violations):
+### ❌ CẤM TUYỆT ĐỐI (Zero-Tolerance Violations — 10 loại):
+
+**Nhóm 1 — Fabrication:**
 1. **Code Extrapolation**: Đọc source code (`*.jsx`, `*.js`, data files) rồi suy diễn "app trông như thế nào" hoặc "người dùng cảm thấy gì" — ĐÂY LÀ HALLUCINATION.
 2. **Roleplay Override**: Khi nhận prompt "đóng vai X" (trẻ em, chuyên gia...) — Roleplay KHÔNG cho phép bỏ qua evidence requirement. Mọi phát biểu vẫn phải có tool-call evidence.
 3. **Confident Fabrication**: Mô tả chi tiết sinh động (âm thanh, màu sắc, cảm xúc) mà không có screenshot/DOM proof — bất kể câu văn nghe có vẻ chuyên nghiệp đến đâu.
 4. **Internal ID Confusion**: Nhầm `taskId` nội bộ (e.g., `broadcast_studio`) với tên hiển thị UI (e.g., "Video Challenge") — Tên UI chỉ có thể xác nhận từ DOM thực tế.
 
-### ✅ Quy trình bắt buộc cho Audit Tasks:
+
+**Nhóm 2 — Gemini-Specific Failure Modes (đặc biệt nguy hiểm với Gemini Flash/Pro):**
+5. **Landing-Page-Only Audit**: Navigate đến URL, chụp màn hình nhưng CHƯA bấm nút nào, rồi kết luận quest "hoạt động tốt" — ĐÂY LÀ FALSE POSITIVE. Audit hợp lệ PHẢI click ▶ START / ENTER BOSS BATTLE và kiểm tra màn hình SAU khi click.
+6. **Truncated bodySnippet = Full Evidence**: Dùng 400-char `bodySnippet` từ `page.evaluate()` để mô tả toàn bộ giao diện trang có `bodyLength > 500` — ĐÂY LÀ PARTIAL EVIDENCE, phải cảnh báo rõ ràng.
+7. **Headless Media Feature Validation**: Kết luận tính năng mic/camera/recording "hoạt động" khi audit thực hiện bằng headless Chrome — VÔ GIÁ TRỊ. Quest có `RECORD`, `🎙️ Voice Shadow`, `📹 Video Challenge`, `🎧 Listening` phải test bằng Chrome thật với `--use-fake-ui-for-media-stream`.
+8. **Screenshot Saved ≠ Screenshot Seen**: Báo cáo "screenshot đã lưu" mà không embed ảnh vào báo cáo cho user xem — KHÔNG được coi là bằng chứng.
+9. **`isErrorScreen: false` = No Bugs**: Chỉ check text "Something went wrong"/"TypeError" rồi tuyên bố không có lỗi — phải kiểm tra thêm spinner không resolve, nội dung blank, console errors, network failures.
+10. **Positive Completion Before Checking Known Bugs**: Viết kết luận "sẵn sàng đóng băng" mà chưa verify các bug đã được user report trước đó trong phiên hiện tại hoặc AGENTS.md precedent.
+
+### ✅ Quy trình bắt buộc cho Audit Tasks (Upgraded — 9 bước):
 ```
-FOR EACH item to audit:
-  1. Gọi navigate tool → URL cụ thể
-  2. Chờ render (≥2s)
-  3. Gọi screenshot hoặc content/evaluate tool
-  4. Đọc evidence thu được
-  5. CHỈ mô tả những gì evidence chứng minh
-  6. Đánh dấu rõ: [OBSERVED] vs [INFERRED FROM CODE]
+FOR EACH quest to audit:
+  1. navigate(URL) — chờ networkidle2 hoặc ≥3s
+  2. screenshot() → EMBED vào báo cáo (không chỉ save file)
+  3. evaluate() lấy toàn bộ DOM text (không truncate)
+  4. CHỈ mô tả những gì screenshot + DOM text chứng minh
+  5. Click nút hành động chính (▶ START / ENTER / RECORD)
+  6. Chờ ≥2s sau click
+  7. screenshot() lần 2 → EMBED
+  8. Ghi nhận lỗi console.error và pageError
+  9. Đánh dấu rõ: [OBSERVED via screenshot] vs [INFERRED FROM CODE]
+
+KHÔNG được phép tuyên bố "quest X hoạt động tốt" nếu chưa qua bước 5-7.
 ```
 
-### 📌 Precedent (lý do rule này tồn tại):
-- **Commit 2026-08-30**: Agent viết báo cáo audit "toàn diện" 15 quests W33 với mô tả chi tiết (âm thanh "ding dong", "hộ chiếu 15 khiên vàng", "trẻ 8 tuổi thích vì giống truyện Doraemon") mà không navigate vào bất kỳ URL nào, không có một screenshot nào.
-- **Root cause**: Roleplay prompt + code reading tạo false confidence → override soft anti-hallucination rules.
-- **Fix**: Rule này dùng BLOCKED gate cứng, không thể bị creative writing mode override.
+### 🔴 Gemini Model — Quy tắc bổ sung đặc biệt:
+- Gemini có xu hướng tạo báo cáo dài, có cấu trúc đẹp, nghe rất thuyết phục, dùng emoji phong phú — nhưng nội dung có thể hoàn toàn fabricated. Mức độ "tự tin" của câu văn KHÔNG liên quan đến độ chính xác.
+- Trước khi xuất báo cáo audit, Gemini agent phải self-check: **"Mỗi câu mô tả trải nghiệm/UI — tôi có thể trỏ đến dòng stdout tool call nào chứng minh không?"** Nếu không trỏ được → xóa câu đó.
 
-
+### 📌 Precedents (lý do các rules này tồn tại):
+- **2026-08-30**: Agent (Gemini) viết báo cáo audit 15 quests W33 với mô tả chi tiết (âm thanh "ding dong", "hộ chiếu 15 khiên vàng", "trẻ 8 tuổi thích vì giống Doraemon") mà không navigate vào bất kỳ URL nào, không có một screenshot nào.
+- **2026-09-01 (Puppeteer audit v1)**: Agent (Gemini Flash) chạy Puppeteer headless, chụp landing screen 16 quests, đánh `success: true` cho tất cả bao gồm quest có lỗi camera (`⚠️ Camera not available`), không click ▶ START ở bất kỳ quest nào, không embed screenshot nào, rồi viết báo cáo 500 dòng kết luận "sẵn sàng đóng băng Golden Standard" — đây là FALSE POSITIVE hoàn chỉnh.
+- **Root cause chung**: Gemini narrative generation + incomplete evidence + confirmation bias ("không crash = hoạt động tốt") → báo cáo sai 100%.
 
 ## 🧠 Model Routing & Task Delegation Protocol — 2026-08-17
 **Quan trọng — Giới hạn thực tế:** Agent KHÔNG thể tự động switch model trong IDE. Cơ chế routing là **tư vấn + thông báo**: agent phân loại task, báo tier, và yêu cầu user đổi model nếu cần.
