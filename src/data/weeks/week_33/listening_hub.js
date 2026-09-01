@@ -43,8 +43,7 @@ Teacher: That is David. He is picking up his water bottle from the floor.`,
       { id: "n3", text: "Nurse Sarah", target_id: "t3" },
       { id: "n4", text: "Headmaster Brown", target_id: "t4" },
       { id: "n5", text: "Maria", target_id: "t5" },
-      { id: "n6", text: "David", target_id: "t6" },
-      { id: "n7", text: "Mia the Monitor", target_id: null }
+      { id: "n6", text: "David", target_id: "t6" }
     ],
     targets: [
       { id: "t1", label: "Jake (Boy in blue shirt on left)", x: 18, y: 82, isExample: true },

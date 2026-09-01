@@ -236,15 +236,14 @@ export const readingHubData = {
   // Cambridge Reading Part 3 Story (Story Gap-Fill & Best Title Choice)
   reading_part3_story: {
     example: { blank: 0, answer: "science" },
-    story_text: "Jake was walking carefully down the school corridor after [0]_____ class. Suddenly, Tom ran past him very [1]_____. Tom didn't notice the wet [2]_____ on the floor and slipped heavily, hurting his knee. Jake stopped immediately and called the school [3]_____. The nurse arrived quickly with a clean [4]_____ and a cold pack. The headmaster gave both boys a safety [5]_____ during assembly.",
-    word_bank: ["science", "fast", "puddle", "nurse", "bandage", "badge", "happy", "cold", "hungry", "loud"],
+    story_text: "Jake was walking carefully down the school corridor after [0]_____ class. Suddenly, Tom ran past him very [1]_____. Tom didn't notice the yellow [2]_____ sign on the wet floor. He slipped heavily and hurt his [3]_____. He also dropped all his books on the ground and cried out in pain. Jake stopped immediately and called the school [4]_____. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. She told Tom to rest and not walk fast. Headmaster Brown came to see Tom and reminded all students to walk slowly in the corridor. He said that safety rules are very important for everyone at school.",
+    word_bank: ["science", "fast", "warning", "knee", "nurse", "library", "running", "happy", "cold", "loud"],
     answers: {
       "0": "science",
       "1": "fast",
-      "2": "puddle",
-      "3": "nurse",
-      "4": "bandage",
-      "5": "badge"
+      "2": "warning",
+      "3": "knee",
+      "4": "nurse"
     },
     title_options: [
       { id: 1, title: "A Day in the School Library", target: false },
@@ -323,39 +322,77 @@ export const readingHubData = {
     ]
   },
 
-  // ─── R&W Part 4: 10-Gap Inline Cloze + Story Title (gaps array + title_options) — Shield 13 ───
+  // ─── R&W Part 4: Grammar MCQ — 10 standalone 3-option questions (Cambridge Flyers exact spec) —───
   rw_part4: {
-    instructions: "Read the text. Choose the correct words and write them on the lines.",
-    story_text: "Jake was walking [0]_____ down the corridor after his science class. Suddenly, a boy [1]_____ past him very fast. The floor was [2]_____ because a cleaner had just washed the tiles. Tom lost his [3]_____ and fell down heavily near the stairs. Jake ran [4]_____ help him and called the school nurse. The nurse arrived [5]_____ two minutes with a bandage. She wrapped his knee [6]_____ so he felt much better. The headmaster [7]_____ both boys during assembly for safety rules. Everyone [8]_____ to walk safely in the future. Safety is the [9]_____ important thing at school. We must [10]_____ each other every day.",
-    example: { blank: 0, id: 0, correct: "carefully", options: ["carefully", "careful", "care"], isExample: true },
-    blanks: [
-      { id: 1, correct: "ran", options: ["ran", "run", "running"] },
-      { id: 2, correct: "slippery", options: ["slippery", "slip", "slipped"] },
-      { id: 3, correct: "balance", options: ["balance", "balanced", "balancing"] },
-      { id: 4, correct: "to", options: ["to", "for", "with"] },
-      { id: 5, correct: "within", options: ["within", "without", "with"] },
-      { id: 6, correct: "gently", options: ["gently", "gentle", "gentleness"] },
-      { id: 7, correct: "praised", options: ["praised", "praise", "praising"] },
-      { id: 8, correct: "promised", options: ["promised", "promise", "promising"] },
-      { id: 9, correct: "most", options: ["most", "more", "much"] },
-      { id: 10, correct: "protect", options: ["protect", "protects", "protecting"] }
-    ],
-    gaps: [
-      { id: 1, target: "ran", options: ["ran", "run", "running"] },
-      { id: 2, target: "slippery", options: ["slippery", "slip", "slipped"] },
-      { id: 3, target: "balance", options: ["balance", "balanced", "balancing"] },
-      { id: 4, target: "to", options: ["to", "for", "with"] },
-      { id: 5, target: "within", options: ["within", "without", "with"] },
-      { id: 6, target: "gently", options: ["gently", "gentle", "gentleness"] },
-      { id: 7, target: "praised", options: ["praised", "praise", "praising"] },
-      { id: 8, target: "promised", options: ["promised", "promise", "promising"] },
-      { id: 9, target: "most", options: ["most", "more", "much"] },
-      { id: 10, target: "protect", options: ["protect", "protects", "protecting"] }
-    ],
-    title_options: [
-      { id: 1, title: "A Dangerous Run Near the Science Room", target: false },
-      { id: 2, title: "Jake's Responsible Action in the School Corridor", target: true },
-      { id: 3, title: "How Teachers Clean Science Experiments", target: false }
+    instructions: "Read the sentences. Choose the correct word and write the letter A, B or C.",
+    questions: [
+      {
+        id: 0,
+        isExample: true,
+        sentence: "Jake was walking _____ down the corridor after class.",
+        options: { A: "careful", B: "carefully", C: "care" },
+        answer: "B"
+      },
+      {
+        id: 1,
+        sentence: "Tom _____ past Jake very quickly and did not see the wet floor.",
+        options: { A: "run", B: "runs", C: "ran" },
+        answer: "C"
+      },
+      {
+        id: 2,
+        sentence: "The floor was _____ because a cleaner had just washed the tiles.",
+        options: { A: "slip", B: "slippery", C: "slipped" },
+        answer: "B"
+      },
+      {
+        id: 3,
+        sentence: "Tom lost his _____ and fell down heavily near the stairs.",
+        options: { A: "balancing", B: "balanced", C: "balance" },
+        answer: "C"
+      },
+      {
+        id: 4,
+        sentence: "Jake ran _____ help Tom and called the school nurse right away.",
+        options: { A: "for", B: "with", C: "to" },
+        answer: "C"
+      },
+      {
+        id: 5,
+        sentence: "The nurse arrived _____ two minutes with a bandage and a cold pack.",
+        options: { A: "without", B: "within", C: "with" },
+        answer: "B"
+      },
+      {
+        id: 6,
+        sentence: "She wrapped the bandage _____ around his swollen knee.",
+        options: { A: "gentle", B: "gentleness", C: "gently" },
+        answer: "C"
+      },
+      {
+        id: 7,
+        sentence: "The headmaster _____ both boys during school assembly for being safe.",
+        options: { A: "praise", B: "praised", C: "praising" },
+        answer: "B"
+      },
+      {
+        id: 8,
+        sentence: "All the students _____ to walk carefully in the school corridor every day.",
+        options: { A: "promise", B: "promising", C: "promised" },
+        answer: "C"
+      },
+      {
+        id: 9,
+        sentence: "Safety is the _____ important thing we learn about at school each week.",
+        options: { A: "more", B: "much", C: "most" },
+        answer: "C"
+      },
+      {
+        id: 10,
+        sentence: "We must always _____ each other and follow the school safety rules.",
+        options: { A: "protects", B: "protect", C: "protecting" },
+        answer: "B"
+      }
     ]
   },
 
@@ -367,26 +404,26 @@ export const readingHubData = {
       paragraphs: [
         {
           id: 1,
-          text: "On a bright Friday morning, Jake was walking carefully down the main school corridor after finishing his science class. Suddenly, he noticed another student running very fast past the science room. The floor was slippery because a cleaner had just washed the tiles."
+          text: "On a bright Friday morning, Jake was walking carefully down the main school corridor after finishing his science class. The corridor was long and quiet. Suddenly, he noticed another student running very fast past the science room door. The floor near the stairs was slippery because a cleaner had just washed the smooth white tiles. A yellow warning sign was standing on the floor, but the boy did not see it."
         },
         {
           id: 2,
-          text: "The running classmate lost his balance and fell down heavily near the stairs. Right away, Jake stopped immediately and ran to call the school nurse. The nurse arrived within two minutes carrying a clean bandage and a cold pack to treat the boy's swollen knee."
+          text: "The running classmate lost his balance and fell down heavily near the bottom of the stairs. He cried out in pain and held his left knee tightly. Right away, Jake stopped and ran quickly to the teacher's office to call the school nurse. The nurse arrived within two minutes. She was carrying a clean white bandage and a cold pack to treat the boy's swollen and painful knee. She wrapped the bandage gently and placed the cold pack carefully on top."
         },
         {
           id: 3,
-          text: "The headmaster praised Jake during assembly for following all school safety rules and helping his classmate responsibly. All the students felt relieved and promised to walk carefully down the corridor in the future."
+          text: "After school, the headmaster called everyone to the main hall for the end-of-day assembly. He praised Jake in front of all the students for following school safety rules and helping his classmate quickly and calmly. He also reminded every student to walk slowly in the corridor and always look at the floor for wet tiles or warning signs. All the students listened carefully and felt happy and safe. They all promised to walk carefully down the corridor every single day and to look after each other at school."
         }
       ]
     },
     summary_sentences: [
       { id: 1, text_before: "Jake was walking down the school corridor after his ", text_after: ".", target: "science class", paragraph_ref: 1 },
-      { id: 2, text_before: "The floor was slippery because a cleaner had just ", text_after: " the tiles.", target: "washed", paragraph_ref: 1 },
+      { id: 2, text_before: "The floor was slippery because a cleaner had just ", text_after: " the smooth white tiles.", target: "washed", paragraph_ref: 1 },
       { id: 3, text_before: "The classmate lost his balance and ", text_after: " heavily near the stairs.", target: "fell down", paragraph_ref: 2 },
-      { id: 4, text_before: "Jake ran to call the ", text_after: " for help.", target: "school nurse", paragraph_ref: 2 },
+      { id: 4, text_before: "Jake ran quickly to call the ", text_after: " for help.", target: "school nurse", paragraph_ref: 2 },
       { id: 5, text_before: "The nurse used a clean bandage and a ", text_after: " to treat the boy.", target: "cold pack", paragraph_ref: 2 },
       { id: 6, text_before: "The headmaster praised Jake during ", text_after: " for helping his classmate.", target: "assembly", paragraph_ref: 3 },
-      { id: 7, text_before: "All students promised to walk ", text_after: " in the corridor.", target: "carefully", paragraph_ref: 3 }
+      { id: 7, text_before: "All students promised to walk ", text_after: " in the corridor every day.", target: "carefully", paragraph_ref: 3 }
     ]
   }
 };

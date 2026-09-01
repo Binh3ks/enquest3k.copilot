@@ -42,13 +42,13 @@ export default [
   },
   { 
     id: 5, 
-    word: "relieved", 
-    definition_en: "feeling happy because something unpleasant has stopped", 
-    definition_vi: "cảm thấy nhẹ nhõm", 
-    example_en: "Everyone felt relieved when they saw Tom smiling again.",
-    example_vi: "Mọi người đều cảm thấy nhẹ nhõm khi thấy Tom mỉm cười trở lại.",
-    audio_word: "/audio/week33/vocab_relieved.mp3", 
-    image_url: "/images/week33/vocab_relieved.jpg" 
+    word: "safe", 
+    definition_en: "not in danger or at risk of getting hurt", 
+    definition_vi: "an toàn", 
+    example_en: "Everyone was happy when Tom was safe and smiling again.",
+    example_vi: "Mọi người đều vui khi Tom đã an toàn và mỉm cười trở lại.",
+    audio_word: "/audio/week33/vocab_safe.mp3", 
+    image_url: "/images/week33/vocab_safe.jpg" 
   },
   { 
     id: 6, 
@@ -162,13 +162,13 @@ export default [
   },
   { 
     id: 17, 
-    word: "recover", 
-    definition_en: "to return to normal health or strength after injury", 
-    definition_vi: "hồi phục sức khỏe", 
-    example_en: "Tom will recover quickly with rest and gentle walking.",
-    example_vi: "Tom sẽ sớm hồi phục sức khỏe khi nghỉ ngơi và đi lại nhẹ nhàng.",
-    audio_word: "/audio/week33/vocab_recover.mp3", 
-    image_url: "/images/week33/vocab_recover.jpg" 
+    word: "get better", 
+    definition_en: "to become healthy and well again after being sick or hurt", 
+    definition_vi: "bình phục / khỏe lại", 
+    example_en: "Tom started to get better after the nurse put a cold pack on his knee.",
+    example_vi: "Tom bắt đầu bình phục sau khi cô y tá đặt túi chườm lạnh lên đầu gối.",
+    audio_word: "/audio/week33/vocab_get_better.mp3", 
+    image_url: "/images/week33/vocab_get_better.jpg" 
   },
   { 
     id: 18, 

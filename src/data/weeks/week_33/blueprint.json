@@ -19,13 +19,18 @@
     "friction",
     "rubber shoes",
     "smooth",
-    "relieved",
+    "safe",
     "safety rules"
   ],
   "grammar_pattern": {
     "name": "Past Continuous vs Past Simple with While / When",
     "rule": "was/were + V-ing for background action, Past Simple for interrupting action",
-    "regex": "(was|were)\\s+\\w+ing"
+    "regex": "(was|were)\\s+\\w+ing",
+    "examples": [
+      "Jake **was walking** carefully when Tom **slipped** on the wet floor.",
+      "The cleaner **was drying** the tiles while the students **were waiting** outside.",
+      "Tom **was running** fast, so he did not see the yellow warning sign."
+    ]
   },
   "clil_topic": {
     "title": "The Science of Friction & Floor Safety",
@@ -36,6 +41,11 @@
     "num_models": 5
   },
   "rotary_cycle": 1,
-  "tested_skills": ["listening_p1", "listening_p2", "listening_p3"],
+  "tested_skills": [
+    "listening_p1", "listening_p2", "listening_p3", "listening_p4", "listening_p5",
+    "reading_p1", "reading_p2", "reading_p3", "reading_p4", "reading_p5", "reading_p6",
+    "writing_p7",
+    "speaking_p1", "speaking_p2", "speaking_p3", "speaking_p4"
+  ],
   "target_shields": 3
 }
