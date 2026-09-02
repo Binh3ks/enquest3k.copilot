@@ -514,7 +514,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
           Cambridge A2 Flyers — Reading & Writing Part 7
         </span>
         <p className="text-xs text-indigo-700 font-bold mt-1">
-          Look at the three pictures. Write about this story. Write 20 or more words.
+          Look at the five pictures. Write about this story. Write 40 or more words.
         </p>
       </div>
 
@@ -632,28 +632,71 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
         </div>
 
         {/* Content Chips Row */}
-        {Array.isArray(chipsToDisplay) && chipsToDisplay.length > 0 && (
-          <div className="space-y-1.5">
-            <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider block">
-              {currentStepIdx === 0 && "💡 TAP WORDS TO INSERT (Tap in order to build sentence):"}
-              {currentStepIdx === 1 && "💡 TAP WORDS TO INSERT (Decide correct order):"}
-              {currentStepIdx === 2 && "💡 KEYWORDS FOR INSPIRATION (Change base verbs to past tense!):"}
-            </span>
-            <div className="flex flex-wrap gap-2" data-testid="content-chips">
-              {chipsToDisplay.slice(0, 4).map((chip, pIdx) => (
-                <button
-                  key={pIdx}
-                  type="button"
-                  onClick={() => handleInsertPill(chip)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition shadow-2xs active:scale-95 ${colorScheme.pill}`}
-                  data-testid="content-chip"
-                >
-                  + {chip}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+        {(() => {
+          // Support sentence_chips: [[sent1chips], [sent2chips]] for 2-sentence guidance
+          const sentenceChips = currentStep.sentence_chips;
+          if (sentenceChips && Array.isArray(sentenceChips) && sentenceChips.length > 0) {
+            return (
+              <div className="space-y-2">
+                <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider block">
+                  💡 TAP WORDS TO INSERT — Build each sentence:
+                </span>
+                {sentenceChips.map((sentChips, sIdx) => (
+                  <div key={sIdx} className="space-y-1">
+                    <span className={`text-[10px] font-black px-2 py-0.5 rounded-md ${
+                      sIdx === 0 ? 'bg-sky-100 text-sky-800' : 'bg-violet-100 text-violet-800'
+                    }`}>
+                      Sentence {sIdx + 1}:
+                    </span>
+                    <div className="flex flex-wrap gap-2" data-testid={`content-chips-s${sIdx + 1}`}>
+                      {sentChips.map((chip, pIdx) => (
+                        <button
+                          key={pIdx}
+                          type="button"
+                          onClick={() => handleInsertPill(chip)}
+                          className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition shadow-2xs active:scale-95 ${
+                            sIdx === 0
+                              ? 'bg-sky-50 text-sky-950 border-sky-300 hover:bg-sky-100'
+                              : 'bg-violet-50 text-violet-950 border-violet-300 hover:bg-violet-100'
+                          }`}
+                          data-testid="content-chip"
+                        >
+                          + {chip}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            );
+          }
+          // Fallback: flat chip list for BUILD / WRITE / EXPAND / REFLECT
+          if (Array.isArray(chipsToDisplay) && chipsToDisplay.length > 0) {
+            return (
+              <div className="space-y-1.5">
+                <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider block">
+                  {currentStepIdx === 0 && "💡 TAP WORDS TO INSERT (Tap in order to build sentence):"}
+                  {currentStepIdx === 1 && "💡 TAP WORDS TO INSERT (Decide correct order):"}
+                  {currentStepIdx >= 2 && "💡 KEYWORDS FOR INSPIRATION (Change base verbs to past tense!):"}
+                </span>
+                <div className="flex flex-wrap gap-2" data-testid="content-chips">
+                  {chipsToDisplay.map((chip, pIdx) => (
+                    <button
+                      key={pIdx}
+                      type="button"
+                      onClick={() => handleInsertPill(chip)}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition shadow-2xs active:scale-95 ${colorScheme.pill}`}
+                      data-testid="content-chip"
+                    >
+                      + {chip}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          }
+          return null;
+        })()}
 
         {/* Writing Input Area */}
         <div className="space-y-2">

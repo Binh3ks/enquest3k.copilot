@@ -11,37 +11,53 @@ export const writingHubData = {
   picture_story: {
     steps: [
       {
-        // SCENE 1 (MODEL): Jake walking — 2 sentences target
-        // Sentence A: "In the beginning, Jake was walking carefully down the school corridor."
-        // Sentence B: "While he was walking, a student was running very fast past him."
+        // SCENE 1 (MODEL): Jake walking + boy running
+        // Sentence 1: "In the beginning, Jake was walking carefully down the school corridor."
+        // Sentence 2: "While he was walking, a boy was running very fast and knocked into him."
         scene: 1,
         ladder_stage: "MODEL",
         badge_label: "MODEL",
         title: "Scene 1: Walking in the Corridor",
         image_url: "/images/week33/writing_panel_1.png",
-        caption: "Jake was walking carefully down the corridor while a student ran fast.",
-        frame_L1: "In the beginning, Jake was walking carefully down the school corridor. While he was walking, a student was running very fast past him.",
+        caption: "Jake was walking carefully down the corridor while a boy ran very fast past him.",
+        frame_L1: "In the beginning, Jake was walking carefully down the school corridor. While he was walking, a boy was running very fast and knocked into him.",
         locked_connector: "In the beginning,",
-        sentence_hint: "Write 2 sentences: describe WHERE Jake was and WHAT the other student was doing.",
-        ordered_chips: ["Jake", "was walking carefully", "down the school corridor", "while", "a student", "was running", "very fast"],
-        pills: ["was running", "very fast", "Jake", "was playing", "down the school corridor", "while", "was walking carefully", "up the staircase", "a student", "slowly", "In the beginning,"],
-        audio: "In the beginning, Jake was walking carefully down the corridor. While he was walking, a student was running very fast past him."
+        sentence_hint: "Write 2–3 sentences: (1) WHERE was Jake walking? (2) WHAT was the other boy doing?",
+        // sentence_chips: 2D array — one row per sentence, renders as labeled 'Sentence 1:' / 'Sentence 2:'
+        sentence_chips: [
+          // Sentence 1: Jake was walking carefully down the school corridor.
+          ["Jake", "was walking carefully", "down the school corridor"],
+          // Sentence 2: While he was walking, a boy was running very fast past him.
+          ["While he was walking,", "a boy", "was running very fast", "past him"]
+        ],
+        // pills = full shuffled pool (including distractors) for free-type mode
+        pills: ["was running very fast", "past him", "Jake", "was playing outside", "down the school corridor", "While he was walking,", "was walking carefully", "up the staircase", "a boy", "slowly", "ran to class", "turned left"],
+        ordered_chips: ["Jake", "was walking carefully", "down the school corridor", "While he was walking,", "a boy", "was running very fast", "past him"],
+        audio: "In the beginning, Jake was walking carefully down the school corridor. While he was walking, a boy was running very fast and knocked into him."
       },
       {
         // SCENE 2 (BUILD): Slipping — 2 sentences target
+        // Sentence 1: "Suddenly, the boy slipped on the wet floor and lost his balance."
+        // Sentence 2: "He fell down very heavily and hurt his knee badly."
         scene: 2,
         ladder_stage: "BUILD",
         badge_label: "BUILD",
         title: "Scene 2: Slipping on Wet Floor",
         image_url: "/images/week33/writing_panel_2.png",
-        caption: "Suddenly, the boy slipped on the wet floor and hurt his knee.",
-        frame_L1: "Suddenly, the boy slipped on the wet floor and lost his balance. He fell down heavily near the stairs and hurt his knee badly.",
-        sentence_hint: "Write 2 sentences: what happened FIRST (slipped) and what happened NEXT (fell, hurt).",
-        connectors: ["Then,", "Suddenly,", "After that,", "While,", "Next,"],
-        display_chips: ["slipped on", "lost his balance", "the wet floor", "hurt his knee badly", "fell down heavily", "near the stairs", "the boy", "ran to the classroom", "tripped over a bag", "quickly stood up"],
-        pills: ["slipped on", "lost his balance", "the wet floor", "hurt his knee badly", "fell down heavily", "near the stairs", "the boy", "ran to the classroom", "tripped over a bag", "quickly stood up", "Suddenly,", "After that,", "Then,"],
-        correct_order: ["the boy", "slipped on", "the wet floor", "and", "lost his balance", "he", "fell down heavily", "near the stairs", "and", "hurt his knee badly"],
-        audio: "Suddenly, the boy slipped on the wet floor and lost his balance. He fell down heavily near the stairs and hurt his knee badly."
+        caption: "Suddenly, the boy slipped on the wet floor, fell down heavily and hurt his knee.",
+        frame_L1: "Suddenly, the boy slipped on the wet floor and lost his balance. He fell down very heavily and hurt his knee badly.",
+        sentence_hint: "Write 2–3 sentences: (1) The boy slipped — WHAT happened? (2) He fell — WHERE and HOW did he get hurt?",
+        connectors: ["Then,", "Suddenly,", "After that,", "Next,"],
+        // display_chips split into two logical groups matching the 2 target sentences
+        display_chips: [
+          // S1 chips: slipping
+          "slipped on the wet floor", "lost his balance", "the boy",
+          // S2 chips: falling & hurting
+          "fell down very heavily", "hurt his knee badly", "near the lockers"
+        ],
+        pills: ["slipped on the wet floor", "lost his balance", "the boy", "fell down very heavily", "hurt his knee badly", "near the lockers", "ran to the classroom", "tripped over a bag", "quickly stood up", "Suddenly,", "After that,", "Then,"],
+        correct_order: ["the boy", "slipped on the wet floor", "and", "lost his balance", "he", "fell down very heavily", "and", "hurt his knee badly"],
+        audio: "Suddenly, the boy slipped on the wet floor and lost his balance. He fell down very heavily and hurt his knee badly."
       },
       {
         // SCENE 3 (WRITE): Nurse + treatment — 2 sentences target
