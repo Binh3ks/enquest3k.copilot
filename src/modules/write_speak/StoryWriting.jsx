@@ -591,26 +591,26 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
       </div>
 
       {/* Mini-Ladder Stage Selector & Step Progress Bar */}
-      <div className="flex items-center justify-between gap-3 px-4 py-2.5 bg-white border border-slate-200 rounded-2xl shadow-xs">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-2 p-2 sm:px-4 sm:py-2.5 bg-white border border-slate-200 rounded-2xl shadow-xs">
+        <div className="flex items-center gap-1.5">
           <span
             data-testid="ladder-badge"
-            className={`text-[10px] font-black uppercase px-2.5 py-0.5 rounded-md border shadow-2xs ${stageBadgeColors[stage] || 'bg-indigo-50 text-indigo-800 border-indigo-200'}`}
+            className={`text-[9.5px] sm:text-[10px] font-black uppercase px-2 py-0.5 rounded-md border shadow-2xs ${stageBadgeColors[stage] || 'bg-indigo-50 text-indigo-800 border-indigo-200'}`}
           >
             {stage}
           </span>
-          <span className="text-xs font-black text-slate-700">
+          <span className="text-[11px] sm:text-xs font-black text-slate-700">
             Scene {currentStepIdx + 1} of {steps.length}
           </span>
         </div>
 
         {activeLevel === 'L5' && (
-          <div className="flex items-center gap-1.5 text-xs font-mono font-black text-rose-600 bg-rose-50 px-2.5 py-0.5 rounded-lg border border-rose-200">
-            <Clock size={13} /> {Math.floor(timeLeftSec / 60)}:{String(timeLeftSec % 60).padStart(2, '0')}
+          <div className="flex items-center gap-1.5 text-xs font-mono font-black text-rose-600 bg-rose-50 px-2 py-0.5 rounded-lg border border-rose-200">
+            <Clock size={12} /> {Math.floor(timeLeftSec / 60)}:{String(timeLeftSec % 60).padStart(2, '0')}
           </div>
         )}
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto max-w-full py-0.5">
           {steps.map((s, i) => (
             <button
               key={i}
@@ -624,7 +624,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
                 });
                 setCurrentStepIdx(i);
               }}
-              className={`px-2.5 py-0.5 rounded-full text-[10px] font-black flex items-center gap-1 border transition ${
+              className={`px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] font-black flex items-center gap-1 border transition shrink-0 ${
                 i === currentStepIdx
                   ? 'bg-indigo-600 text-white border-indigo-400 scale-105 shadow-xs'
                   : panelTexts[i]?.trim()
@@ -633,7 +633,9 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
               }`}
             >
               <span>{i + 1}</span>
-              <span className="text-[9px] uppercase opacity-80">{s.ladder_stage || (i === 0 ? 'MODEL' : i === 1 ? 'BUILD' : 'WRITE')}</span>
+              <span className="text-[9px] uppercase opacity-80 hidden sm:inline">
+                {s.ladder_stage || (i === 0 ? 'MODEL' : i === 1 ? 'BUILD' : 'WRITE')}
+              </span>
             </button>
           ))}
         </div>

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Video, Mic, Square, RefreshCw, Volume2, CheckCircle2, Sparkles, Download, Camera, VideoOff, Trophy, Play, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Video, Mic, Square, RefreshCw, Volume2, CheckCircle2, Sparkles, Download, Camera, VideoOff, Trophy, Play, ChevronLeft, ChevronRight, Eye, EyeOff } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { evaluateSpeechSyntax, evaluateStoryRetell } from '../../utils/speechSyntaxEvaluator';
@@ -28,6 +28,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
   const [cameraActive, setCameraActive] = useState(false);
   const [cameraError, setCameraError] = useState(null);
   const [activeTeleprompterIdx, setActiveTeleprompterIdx] = useState(0);
+  const [showTeleprompter, setShowTeleprompter] = useState(true);
 
   const previewVideoRef = useRef(null);
   const streamRef = useRef(null);
@@ -272,46 +273,46 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-2.5 font-sans text-slate-900 animate-in fade-in duration-200">
+    <div className="w-full max-w-5xl mx-auto space-y-2 font-sans text-slate-900 animate-in fade-in duration-200">
       {/* ── Mode Switch & Instruction Bar ── */}
-      <div className="p-2.5 bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-xl flex items-center justify-between flex-wrap gap-2 text-xs">
-        <div className="flex items-center gap-2">
-          <span className="text-lg">📹</span>
-          <div>
-            <h3 className="font-black text-purple-950 text-xs sm:text-sm">
+      <div className="p-2 sm:p-2.5 bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-xl flex items-center justify-between gap-1.5 text-xs">
+        <div className="flex items-center gap-1.5 min-w-0">
+          <span className="text-base sm:text-lg shrink-0">📹</span>
+          <div className="min-w-0">
+            <h3 className="font-black text-purple-950 text-[11px] sm:text-sm truncate">
               Record yourself retelling your story!
             </h3>
-            <p className="text-[10px] sm:text-[11px] font-medium text-purple-800">
+            <p className="text-[9.5px] sm:text-[11px] font-medium text-purple-800 truncate">
               Look at camera & speak clearly (+50 XP).
             </p>
           </div>
         </div>
 
         {/* Toggle Mode & Intro Audio */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 shrink-0">
           <ExamIntroAudioButton
             weekNumber={weekNumber || 33}
             introId="exam_intro_video_challenge"
             introText="Read your story aloud. Look at the teleprompter and tell your story clearly. Speak at a natural speed."
           />
-          <div className="flex items-center gap-1 bg-white p-0.5 rounded-lg border border-purple-200 shadow-2xs">
+          <div className="flex items-center bg-white p-0.5 rounded-lg border border-purple-200 shadow-2xs">
             <button
               type="button"
               onClick={() => { setRecordMode('video'); setRecordedMediaUrl(null); }}
-              className={`px-2.5 py-1 rounded-md text-[11px] font-black transition flex items-center gap-1 ${
+              className={`px-2 py-0.5 rounded-md text-[10px] font-black transition flex items-center gap-0.5 ${
                 recordMode === 'video' ? 'bg-purple-600 text-white shadow-xs' : 'text-slate-600 hover:text-purple-900'
               }`}
             >
-              <Camera size={12} /> Video
+              <Camera size={11} /> Video
             </button>
             <button
               type="button"
               onClick={() => { setRecordMode('audio'); stopCameraPreview(); setRecordedMediaUrl(null); }}
-              className={`px-2.5 py-1 rounded-md text-[11px] font-black transition flex items-center gap-1 ${
+              className={`px-2 py-0.5 rounded-md text-[10px] font-black transition flex items-center gap-0.5 ${
                 recordMode === 'audio' ? 'bg-indigo-600 text-white shadow-xs' : 'text-slate-600 hover:text-indigo-900'
               }`}
             >
-              <Mic size={12} /> Audio
+              <Mic size={11} /> Audio
             </button>
           </div>
         </div>
@@ -324,7 +325,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
       )}
 
       {/* ── Main Unified Viewport ── */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 items-start">
         
         {/* Left Column (6/12): Camera Preview + Teleprompter + Action Buttons */}
         <div className="md:col-span-6 flex flex-col gap-2">
@@ -399,43 +400,50 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
             )}
           </div>
 
-          {/* ── Mobile/Desktop Teleprompter Dock (Positioned cleanly under camera so face is 100% visible) ── */}
-          <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-3 rounded-2xl border border-purple-400/40 shadow-md space-y-2">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="text-amber-400 text-xs font-black tracking-wider flex items-center gap-1">
-                  📜 TELEPROMPTER
-                </span>
-                <span className="px-2 py-0.5 rounded-md bg-purple-800 text-[10px] font-black text-purple-200">
-                  Scene {activeTeleprompterIdx + 1} of {activeScenes.length}
-                </span>
-              </div>
-              <div className="flex items-center gap-1">
+          {/* ── Mobile/Desktop Teleprompter Dock (Positioned cleanly under camera) ── */}
+          <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-2.5 rounded-2xl border border-purple-400/40 shadow-md space-y-1.5">
+            <div className="flex items-center justify-between gap-1">
+              <span className="text-amber-400 text-[10px] sm:text-[11px] font-black tracking-wider flex items-center gap-1 shrink-0">
+                📜 TELEPROMPTER
+              </span>
+
+              <div className="flex items-center gap-1 shrink-0">
                 <button
                   type="button"
                   onClick={() => setActiveTeleprompterIdx(prev => Math.max(0, prev - 1))}
                   disabled={activeTeleprompterIdx === 0}
-                  className="px-2.5 py-1 bg-purple-800/80 hover:bg-purple-700 disabled:opacity-30 rounded-lg text-[10px] font-black transition flex items-center gap-0.5"
+                  className="px-2 py-0.5 bg-purple-800/80 hover:bg-purple-700 disabled:opacity-30 rounded-md text-[10px] font-black transition flex items-center gap-0.5"
                 >
-                  <ChevronLeft size={12} /> Prev
+                  <ChevronLeft size={11} /> Prev
                 </button>
                 <button
                   type="button"
                   onClick={() => setActiveTeleprompterIdx(prev => Math.min(activeScenes.length - 1, prev + 1))}
                   disabled={activeTeleprompterIdx >= activeScenes.length - 1}
-                  className="px-2.5 py-1 bg-purple-800/80 hover:bg-purple-700 disabled:opacity-30 rounded-lg text-[10px] font-black transition flex items-center gap-0.5"
+                  className="px-2 py-0.5 bg-purple-800/80 hover:bg-purple-700 disabled:opacity-30 rounded-md text-[10px] font-black transition flex items-center gap-0.5"
                 >
-                  Next <ChevronRight size={12} />
+                  Next <ChevronRight size={11} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setShowTeleprompter(prev => !prev)}
+                  className="px-2 py-0.5 bg-slate-800/90 hover:bg-slate-700 border border-slate-600 rounded-md text-[10px] font-black transition flex items-center gap-1 text-slate-200"
+                  title={showTeleprompter ? "Hide Teleprompter" : "Show Teleprompter"}
+                >
+                  {showTeleprompter ? <EyeOff size={11} /> : <Eye size={11} />}
+                  <span>{showTeleprompter ? 'Hide' : 'Show'}</span>
                 </button>
               </div>
             </div>
 
             {/* Current Sentence (1-2 lines clean, readable) */}
-            <div className="p-2.5 bg-black/40 rounded-xl border border-purple-500/30">
-              <p className="text-xs sm:text-sm font-bold text-amber-100 leading-relaxed">
-                {activeScenes[activeTeleprompterIdx]?.en || activeScenes[activeTeleprompterIdx]?.text || "Read your story sentence by sentence..."}
-              </p>
-            </div>
+            {showTeleprompter && (
+              <div className="p-2 bg-black/50 rounded-xl border border-purple-500/30 animate-in fade-in duration-150">
+                <p className="text-[11px] sm:text-xs font-semibold text-amber-100 leading-snug">
+                  {activeScenes[activeTeleprompterIdx]?.en || activeScenes[activeTeleprompterIdx]?.text || "Read your story sentence by sentence..."}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Action Buttons Dock */}
@@ -503,7 +511,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
             <button
               type="button"
               onClick={() => speakText(fullScriptText)}
-              className="px-2.5 py-0.5 bg-purple-100 hover:bg-purple-200 text-purple-950 font-bold rounded-lg text-[10px] flex items-center gap-1 transition active:scale-95"
+              className="px-2 py-0.5 bg-purple-100 hover:bg-purple-200 text-purple-950 font-bold rounded-lg text-[10px] flex items-center gap-1 transition active:scale-95"
             >
               <Volume2 size={11} className="text-purple-700" /> Full Audio
             </button>
@@ -519,22 +527,22 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
               return (
                 <div
                   key={scene.id || idx}
-                  className={`p-2.5 rounded-xl border ${style.bg} ${style.border} space-y-1`}
+                  className={`p-2 rounded-xl border ${style.bg} ${style.border} space-y-1`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className={`px-2 py-0.5 rounded-md text-[9.5px] font-black uppercase tracking-wider ${style.badge}`}>
+                    <span className={`px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider ${style.badge}`}>
                       {style.label}
                     </span>
                     <button
                       type="button"
                       onClick={() => speakText(sceneText)}
-                      className="p-1 hover:bg-white/80 rounded-md text-slate-600 transition"
+                      className="p-0.5 hover:bg-white/80 rounded-md text-slate-600 transition"
                       title="Hear this sentence"
                     >
-                      <Volume2 size={13} />
+                      <Volume2 size={12} />
                     </button>
                   </div>
-                  <p className={`text-xs sm:text-sm font-bold leading-snug ${style.text}`}>
+                  <p className={`text-xs font-medium leading-relaxed ${style.text}`}>
                     {sceneText}
                   </p>
                 </div>
