@@ -345,12 +345,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
             />
           )}
 
-          {taskInfo.isMilestone || taskInfo.xp === 0 ? (
-            <div className="ts-xp-badge ts-milestone-badge bg-indigo-50 border border-indigo-200 text-indigo-800 font-bold">
-              <Sparkles size={12} className="text-indigo-600" />
-              <span>Milestone</span>
-            </div>
-          ) : (
+          {taskInfo.xp > 0 && (
             <div className="ts-xp-badge">
               <Trophy size={12} className="text-amber-500" />
               <span>+{taskInfo.xp} XP</span>

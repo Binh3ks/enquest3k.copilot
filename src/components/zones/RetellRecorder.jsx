@@ -288,33 +288,26 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
           </div>
         </div>
 
-        {/* Toggle Mode & Intro Audio */}
-        <div className="flex items-center gap-1 shrink-0">
-          <ExamIntroAudioButton
-            weekNumber={weekNumber || 33}
-            introId="exam_intro_video_challenge"
-            introText="Read your story aloud. Look at the teleprompter and tell your story clearly. Speak at a natural speed."
-          />
-          <div className="flex items-center bg-white p-0.5 rounded-lg border border-purple-200 shadow-2xs">
-            <button
-              type="button"
-              onClick={() => { setRecordMode('video'); setRecordedMediaUrl(null); }}
-              className={`px-2 py-0.5 rounded-md text-[10px] font-black transition flex items-center gap-0.5 ${
-                recordMode === 'video' ? 'bg-purple-600 text-white shadow-xs' : 'text-slate-600 hover:text-purple-900'
-              }`}
-            >
-              <Camera size={11} /> Video
-            </button>
-            <button
-              type="button"
-              onClick={() => { setRecordMode('audio'); stopCameraPreview(); setRecordedMediaUrl(null); }}
-              className={`px-2 py-0.5 rounded-md text-[10px] font-black transition flex items-center gap-0.5 ${
-                recordMode === 'audio' ? 'bg-indigo-600 text-white shadow-xs' : 'text-slate-600 hover:text-indigo-900'
-              }`}
-            >
-              <Mic size={11} /> Audio
-            </button>
-          </div>
+        {/* Toggle Mode Buttons (Video / Audio) */}
+        <div className="flex items-center bg-white p-0.5 rounded-lg border border-purple-200 shadow-2xs shrink-0">
+          <button
+            type="button"
+            onClick={() => { setRecordMode('video'); setRecordedMediaUrl(null); }}
+            className={`px-2 py-0.5 rounded-md text-[10px] font-black transition flex items-center gap-0.5 ${
+              recordMode === 'video' ? 'bg-purple-600 text-white shadow-xs' : 'text-slate-600 hover:text-purple-900'
+            }`}
+          >
+            <Camera size={11} /> Video
+          </button>
+          <button
+            type="button"
+            onClick={() => { setRecordMode('audio'); stopCameraPreview(); setRecordedMediaUrl(null); }}
+            className={`px-2 py-0.5 rounded-md text-[10px] font-black transition flex items-center gap-0.5 ${
+              recordMode === 'audio' ? 'bg-indigo-600 text-white shadow-xs' : 'text-slate-600 hover:text-indigo-900'
+            }`}
+          >
+            <Mic size={11} /> Audio
+          </button>
         </div>
       </div>
 
@@ -327,8 +320,8 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
       {/* ── Main Unified Viewport ── */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 items-start">
         
-        {/* Left Column (6/12): Camera Preview + Teleprompter + Action Buttons */}
-        <div className="md:col-span-6 flex flex-col gap-2">
+        {/* Left Column (6/12 Desktop, 12/12 Mobile): Camera Preview + Teleprompter + Action Buttons + Evaluation */}
+        <div className="w-full md:col-span-6 flex flex-col gap-2">
           <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-slate-950 rounded-2xl overflow-hidden shadow-md border-2 border-slate-300 flex items-center justify-center">
             
             {/* Live Camera View */}
@@ -400,7 +393,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
             )}
           </div>
 
-          {/* ── Mobile/Desktop Teleprompter Dock (Positioned cleanly under camera) ── */}
+          {/* ── Teleprompter Dock (Positioned cleanly under camera) ── */}
           <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-2.5 rounded-2xl border border-purple-400/40 shadow-md space-y-1.5">
             <div className="flex items-center justify-between gap-1">
               <span className="text-amber-400 text-[10px] sm:text-[11px] font-black tracking-wider flex items-center gap-1 shrink-0">
@@ -497,60 +490,8 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
               </div>
             )}
           </div>
-        </div>
 
-        {/* Right Column (6/12): Story Script Teleprompter Directly Visible */}
-        <div className="md:col-span-6 flex flex-col gap-2 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between pb-1 border-b border-slate-100">
-            <div className="flex items-center gap-1.5">
-              <span className="text-sm">📜</span>
-              <span className="text-xs font-black uppercase text-purple-900 tracking-wider">
-                Story Teleprompter (Read Aloud)
-              </span>
-            </div>
-            <button
-              type="button"
-              onClick={() => speakText(fullScriptText)}
-              className="px-2 py-0.5 bg-purple-100 hover:bg-purple-200 text-purple-950 font-bold rounded-lg text-[10px] flex items-center gap-1 transition active:scale-95"
-            >
-              <Volume2 size={11} className="text-purple-700" /> Full Audio
-            </button>
-          </div>
-
-          {/* 5 Story Scenes */}
-          <div className="space-y-2 max-h-[320px] overflow-y-auto pr-1">
-            {activeScenes.map((scene, idx) => {
-              const func = scene.narrative_function || FUNC_ORDER[idx] || 'setting';
-              const style = NARRATIVE_STYLES[func] || NARRATIVE_STYLES.setting;
-              const sceneText = scene.en || scene.text || '';
-
-              return (
-                <div
-                  key={scene.id || idx}
-                  className={`p-2 rounded-xl border ${style.bg} ${style.border} space-y-1`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className={`px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider ${style.badge}`}>
-                      {style.label}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => speakText(sceneText)}
-                      className="p-0.5 hover:bg-white/80 rounded-md text-slate-600 transition"
-                      title="Hear this sentence"
-                    >
-                      <Volume2 size={12} />
-                    </button>
-                  </div>
-                  <p className={`text-xs font-medium leading-relaxed ${style.text}`}>
-                    {sceneText}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Evaluation / Feedback banner */}
+          {/* Evaluation / Feedback banner (Always visible under action buttons on mobile & desktop) */}
           {evalResult && (
             <div className={`p-3 rounded-2xl border ${
               evalResult.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'
@@ -560,7 +501,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
                   <CheckCircle2 size={16} className={evalResult.isCorrect ? "text-emerald-600" : "text-amber-600"} />
                   {evalResult.feedback}
                 </span>
-                <span className="px-2.5 py-1 bg-white rounded-lg border text-xs font-black shadow-2xs">
+                <span className="px-2.5 py-1 bg-white rounded-lg border text-xs font-black shadow-2xs shrink-0">
                   Score: {evalResult.score}%
                 </span>
               </div>
@@ -595,6 +536,58 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
               buttonLabel="Submit Script →"
               color="purple"
             />
+          </div>
+        </div>
+
+        {/* Right Column: Full Story Teleprompter Cards (Desktop only, hidden on mobile) */}
+        <div className="hidden md:flex md:col-span-6 flex-col gap-2 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+          <div className="flex items-center justify-between pb-1 border-b border-slate-100">
+            <div className="flex items-center gap-1.5">
+              <span className="text-sm">📜</span>
+              <span className="text-xs font-black uppercase text-purple-900 tracking-wider">
+                Full Story Script
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() => speakText(fullScriptText)}
+              className="px-2 py-0.5 bg-purple-100 hover:bg-purple-200 text-purple-950 font-bold rounded-lg text-[10px] flex items-center gap-1 transition active:scale-95"
+            >
+              <Volume2 size={11} className="text-purple-700" /> Listen
+            </button>
+          </div>
+
+          {/* 5 Story Scenes */}
+          <div className="space-y-2 max-h-[360px] overflow-y-auto pr-1">
+            {activeScenes.map((scene, idx) => {
+              const func = scene.narrative_function || FUNC_ORDER[idx] || 'setting';
+              const style = NARRATIVE_STYLES[func] || NARRATIVE_STYLES.setting;
+              const sceneText = scene.en || scene.text || '';
+
+              return (
+                <div
+                  key={scene.id || idx}
+                  className={`p-2 rounded-xl border ${style.bg} ${style.border} space-y-1`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className={`px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider ${style.badge}`}>
+                      {style.label}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => speakText(sceneText)}
+                      className="p-0.5 hover:bg-white/80 rounded-md text-slate-600 transition"
+                      title="Hear this sentence"
+                    >
+                      <Volume2 size={12} />
+                    </button>
+                  </div>
+                  <p className={`text-xs font-medium leading-relaxed ${style.text}`}>
+                    {sceneText}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
