@@ -500,11 +500,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     WRITE: 'bg-emerald-100 text-emerald-900 border-emerald-300'
   };
 
-  const chipsToDisplay = currentStepIdx === 0
-    ? (currentStep.ordered_chips || currentStep.pills || [])
-    : currentStepIdx === 1
-    ? (currentStep.display_chips || currentStep.pills || [])
-    : (currentStep.keywords || currentStep.pills || []);
+  const chipsToDisplay = currentStep.pills || currentStep.ordered_chips || currentStep.display_chips || currentStep.keywords || [];
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans text-slate-900">
@@ -597,26 +593,27 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
             </span>
           </div>
 
-          {currentStepIdx === 0 ? (
-            /* Step 1: Locked Connector */
-            <div className="flex items-center gap-2 pt-0.5">
+          {/* Locked connector (Scene 1 only) */}
+          {currentStep.locked_connector && (
+            <div className="flex items-center gap-2 pt-0.5 flex-wrap">
               <button
                 type="button"
-                onClick={() => handleInsertConnector(currentStep.locked_connector || "In the beginning,")}
+                onClick={() => handleInsertConnector(currentStep.locked_connector)}
                 className="px-3 py-1.5 rounded-xl text-xs font-black bg-purple-100 hover:bg-purple-200 text-purple-950 border border-purple-300 shadow-2xs flex items-center gap-1.5 transition active:scale-95 cursor-pointer"
                 data-testid="locked-connector"
                 title="Click to insert locked connector"
               >
-                🔒 ★ LOCKED: {currentStep.locked_connector || "In the beginning,"}
+                🔒 ★ LOCKED: {currentStep.locked_connector}
               </button>
               <span className="text-[10px] font-bold text-purple-800">
-                (Pre-set starting connector for Scene 1)
+                (Start your first sentence with this)
               </span>
             </div>
-          ) : (
-            /* Step 2 & 3: Connector Selection Group */
-            <div className="flex flex-wrap gap-2 pt-0.5" data-testid="connector-options">
-              {(currentStep.connectors || (currentStepIdx === 1 ? ["Then", "Suddenly", "After that"] : ["Finally", "In the end", "At last"])).map((conn, cIdx) => (
+          )}
+          {/* Optional connectors for linking sentences within this scene */}
+          {(currentStep.connectors || []).length > 0 && (
+            <div className="flex flex-wrap gap-2 pt-1" data-testid="connector-options">
+              {(currentStep.connectors || []).map((conn, cIdx) => (
                 <button
                   key={cIdx}
                   type="button"
@@ -631,72 +628,29 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
           )}
         </div>
 
-        {/* Content Chips Row */}
-        {(() => {
-          // Support sentence_chips: [[sent1chips], [sent2chips]] for 2-sentence guidance
-          const sentenceChips = currentStep.sentence_chips;
-          if (sentenceChips && Array.isArray(sentenceChips) && sentenceChips.length > 0) {
-            return (
-              <div className="space-y-2">
-                <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider block">
-                  💡 WORD BANK FOR THIS SCENE — use these to write 2 sentences (min):
-                </span>
-                {sentenceChips.map((sentChips, sIdx) => (
-                  <div key={sIdx} className="space-y-1">
-                    <span className={`text-[10px] font-black px-2 py-0.5 rounded-md ${
-                      sIdx === 0 ? 'bg-sky-100 text-sky-800' : 'bg-violet-100 text-violet-800'
-                    }`}>
-                      📝 Sentence {sIdx + 1} — words to use:
-                    </span>
-                    <div className="flex flex-wrap gap-2" data-testid={`content-chips-s${sIdx + 1}`}>
-                      {sentChips.map((chip, pIdx) => (
-                        <button
-                          key={pIdx}
-                          type="button"
-                          onClick={() => handleInsertPill(chip)}
-                          className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition shadow-2xs active:scale-95 ${
-                            sIdx === 0
-                              ? 'bg-sky-50 text-sky-950 border-sky-300 hover:bg-sky-100'
-                              : 'bg-violet-50 text-violet-950 border-violet-300 hover:bg-violet-100'
-                          }`}
-                          data-testid="content-chip"
-                        >
-                          + {chip}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            );
-          }
-          // Fallback: flat chip list for BUILD / WRITE / EXPAND / REFLECT
-          if (Array.isArray(chipsToDisplay) && chipsToDisplay.length > 0) {
-            return (
-              <div className="space-y-1.5">
-                <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider block">
-                  {currentStepIdx === 0 && "💡 TAP WORDS TO INSERT (Tap in order to build sentence):"}
-                  {currentStepIdx === 1 && "💡 TAP WORDS TO INSERT (Decide correct order):"}
-                  {currentStepIdx >= 2 && "💡 KEYWORDS FOR INSPIRATION (Change base verbs to past tense!):"}
-                </span>
-                <div className="flex flex-wrap gap-2" data-testid="content-chips">
-                  {chipsToDisplay.map((chip, pIdx) => (
-                    <button
-                      key={pIdx}
-                      type="button"
-                      onClick={() => handleInsertPill(chip)}
-                      className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition shadow-2xs active:scale-95 ${colorScheme.pill}`}
-                      data-testid="content-chip"
-                    >
-                      + {chip}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            );
-          }
-          return null;
-        })()}
+        {/* Content Chips Row — flat word bank for this scene */}
+        {Array.isArray(chipsToDisplay) && chipsToDisplay.length > 0 && (
+          <div className="space-y-1.5">
+            <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider block">
+              {currentStepIdx === 0 && "💡 WORD BANK — tap to insert into your sentences:"}
+              {currentStepIdx === 1 && "💡 WORD BANK — tap words, then decide the order:"}
+              {currentStepIdx >= 2 && "💡 WORD BANK — change verbs to past tense when you use them:"}
+            </span>
+            <div className="flex flex-wrap gap-2" data-testid="content-chips">
+              {chipsToDisplay.map((chip, pIdx) => (
+                <button
+                  key={pIdx}
+                  type="button"
+                  onClick={() => handleInsertPill(chip)}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition shadow-2xs active:scale-95 ${colorScheme.pill}`}
+                  data-testid="content-chip"
+                >
+                  + {chip}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Writing Input Area */}
         <div className="space-y-2">

@@ -11,9 +11,6 @@ export const writingHubData = {
   picture_story: {
     steps: [
       {
-        // SCENE 1 (MODEL): Jake walking + boy running
-        // Sentence 1: "In the beginning, Jake was walking carefully down the school corridor."
-        // Sentence 2: "While he was walking, a boy was running very fast and knocked into him."
         scene: 1,
         ladder_stage: "MODEL",
         badge_label: "MODEL",
@@ -22,17 +19,11 @@ export const writingHubData = {
         caption: "Jake was walking carefully down the corridor while a boy ran very fast past him.",
         frame_L1: "In the beginning, Jake was walking carefully down the school corridor. While he was walking, a boy was running very fast and knocked into him.",
         locked_connector: "In the beginning,",
-        sentence_hint: "Write 2–3 sentences: (1) WHERE was Jake walking? (2) WHAT was the other boy doing?",
-        // sentence_chips: 2D array — one row per sentence, renders as labeled 'Sentence 1:' / 'Sentence 2:'
-        sentence_chips: [
-          // Sentence 1: Jake was walking carefully down the school corridor.
-          ["Jake", "was walking carefully", "down the school corridor"],
-          // Sentence 2: While he was walking, a boy was running very fast past him.
-          ["While he was walking,", "a boy", "was running very fast", "past him"]
-        ],
-        // pills = full shuffled pool (including distractors) for free-type mode
-        pills: ["was running very fast", "past him", "Jake", "was playing outside", "down the school corridor", "While he was walking,", "was walking carefully", "up the staircase", "a boy", "slowly", "ran to class", "turned left"],
-        ordered_chips: ["Jake", "was walking carefully", "down the school corridor", "While he was walking,", "a boy", "was running very fast", "past him"],
+        // connectors shown in Link Your Sentences to connect the 2-3 sentences within this scene
+        connectors: ["While he was walking,", "Then,", "Suddenly,", "and"],
+        sentence_hint: "Write 2–3 sentences about this picture. Use the words below to help.",
+        ordered_chips: ["Jake", "was walking carefully", "down the school corridor", "a boy", "was running very fast", "past him", "knocked into him"],
+        pills: ["Jake", "was walking carefully", "down the school corridor", "a boy", "was running very fast", "past him", "knocked into him", "was playing outside", "up the staircase", "slowly", "ran to class"],
         audio: "In the beginning, Jake was walking carefully down the school corridor. While he was walking, a boy was running very fast and knocked into him."
       },
       {
