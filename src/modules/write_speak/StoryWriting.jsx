@@ -162,6 +162,18 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     return /\b(chewed|freed|bandaged|ran|trapped|was|were|arrived|helped|applied|felt|slipped|fell|walked|became)\b/i.test(s3Text);
   }, [panelTexts]);
 
+  // Mandatory cognitive shuffle: never display pills in sequential sentence order
+  const chipsToDisplay = useMemo(() => {
+    const raw = currentStep.pills || currentStep.display_chips || currentStep.keywords || currentStep.ordered_chips || [];
+    if (!Array.isArray(raw) || raw.length === 0) return [];
+    const arr = [...raw];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const hash = ((i * 37 + (arr[i].charCodeAt(0) || 0) * 19 + currentStepIdx * 13) ^ 0x5a5a) % (i + 1);
+      [arr[i], arr[hash]] = [arr[hash], arr[i]];
+    }
+    return arr;
+  }, [currentStep, currentStepIdx]);
+
   // Hydrate saved data ONCE on mount
   useEffect(() => {
     if (savedData && typeof savedData === 'object') {
@@ -370,8 +382,8 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
           </span>
         </div>
 
-        {/* 3 Step Thumbnails */}
-        <div className="grid grid-cols-3 gap-2 sm:gap-3">
+        {/* 5 Step Thumbnails */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
           {steps.map((step, idx) => (
             <div
               key={idx}
@@ -478,7 +490,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
             </div>
 
             <p className="text-xs text-emerald-800 font-bold text-center">
-              🎉 Cambridge-ready story! Excellent job describing all 3 scenes in detail.
+              🎉 Cambridge-ready story! Excellent job describing all 5 scenes in detail.
             </p>
           </div>
         )}
@@ -522,18 +534,6 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     BUILD: 'bg-amber-100 text-amber-900 border-amber-300',
     WRITE: 'bg-emerald-100 text-emerald-900 border-emerald-300'
   };
-
-  const chipsToDisplay = useMemo(() => {
-    const raw = currentStep.pills || currentStep.display_chips || currentStep.keywords || currentStep.ordered_chips || [];
-    if (!Array.isArray(raw) || raw.length === 0) return [];
-    // Mandatory cognitive shuffle: never display pills in sequential sentence order
-    const arr = [...raw];
-    for (let i = arr.length - 1; i > 0; i--) {
-      const hash = ((i * 37 + (arr[i].charCodeAt(0) || 0) * 19 + currentStepIdx * 13) ^ 0x5a5a) % (i + 1);
-      [arr[i], arr[hash]] = [arr[hash], arr[i]];
-    }
-    return arr;
-  }, [currentStep, currentStepIdx]);
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans text-slate-900">
