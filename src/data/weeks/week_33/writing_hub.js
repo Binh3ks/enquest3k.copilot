@@ -23,7 +23,7 @@ export const writingHubData = {
         connectors: ["While he was walking,", "Then,", "Suddenly,", "and"],
         sentence_hint: "Write 2–3 sentences about this picture. Use the words below to help.",
         ordered_chips: ["Jake", "was walking carefully", "down the school corridor", "a boy", "was running very fast", "past him", "knocked into him"],
-        pills: ["Jake", "was walking carefully", "down the school corridor", "a boy", "was running very fast", "past him", "knocked into him", "was playing outside", "up the staircase", "slowly", "ran to class"],
+        pills: ["knocked into him", "was walking carefully", "up the staircase", "a boy", "down the school corridor", "was playing outside", "was running very fast", "Jake", "slowly", "past him", "ran to class"],
         audio: "In the beginning, Jake was walking carefully down the school corridor. While he was walking, a boy was running very fast and knocked into him."
       },
       {
@@ -39,14 +39,10 @@ export const writingHubData = {
         frame_L1: "Suddenly, the boy slipped on the wet floor and lost his balance. He fell down very heavily and hurt his knee badly.",
         sentence_hint: "Write 2–3 sentences: (1) The boy slipped — WHAT happened? (2) He fell — WHERE and HOW did he get hurt?",
         connectors: ["Then,", "Suddenly,", "After that,", "Next,"],
-        // display_chips split into two logical groups matching the 2 target sentences
         display_chips: [
-          // S1 chips: slipping
-          "slipped on the wet floor", "lost his balance", "the boy",
-          // S2 chips: falling & hurting
-          "fell down very heavily", "hurt his knee badly", "near the lockers"
+          "hurt his knee badly", "the boy", "near the lockers", "slipped on the wet floor", "lost his balance", "fell down very heavily"
         ],
-        pills: ["slipped on the wet floor", "lost his balance", "the boy", "fell down very heavily", "hurt his knee badly", "near the lockers", "ran to the classroom", "tripped over a bag", "quickly stood up", "Suddenly,", "After that,", "Then,"],
+        pills: ["hurt his knee badly", "the boy", "near the lockers", "ran to the classroom", "slipped on the wet floor", "lost his balance", "tripped over a bag", "fell down very heavily", "quickly stood up"],
         correct_order: ["the boy", "slipped on the wet floor", "and", "lost his balance", "he", "fell down very heavily", "and", "hurt his knee badly"],
         audio: "Suddenly, the boy slipped on the wet floor and lost his balance. He fell down very heavily and hurt his knee badly."
       },
@@ -63,7 +59,7 @@ export const writingHubData = {
         locked_connector: "After that,",
         connectors: ["After that,", "Then,", "Next,", "So,"],
         keywords: ["called the school nurse", "arrived quickly", "put on a bandage", "used a cold pack", "washed his knee", "helped Tom"],
-        pills: ["put on a bandage", "called the school nurse", "used a cold pack", "went to the library", "arrived quickly", "washed his knee", "played outside", "helped Tom", "After that,", "Then,", "Next,"],
+        pills: ["used a cold pack", "went to the library", "put on a bandage", "arrived quickly", "helped Tom", "called the school nurse", "washed his knee", "played outside"],
         sentence_frame: "After that, Jake [called the school nurse] for help. She [arrived quickly] and [put on a bandage] and [used a cold pack].",
         audio: "After that, Jake called the school nurse for help. She arrived quickly and put on a clean bandage and a cold pack."
       },
@@ -80,7 +76,7 @@ export const writingHubData = {
         locked_connector: "Then,",
         connectors: ["Then,", "After that,", "Next,", "Meanwhile,"],
         keywords: ["Headmaster Brown", "arrived", "spoke to the students", "corridor safety", "walk carefully", "never run", "near a wet floor", "reminded everyone"],
-        pills: ["Headmaster Brown", "spoke to the students", "corridor safety", "went home early", "arrived", "never run", "reminded everyone", "walk carefully", "near a wet floor", "laughed loudly", "Then,", "After that,"],
+        pills: ["walk carefully", "went home early", "Headmaster Brown", "never run", "spoke to the students", "laughed loudly", "near a wet floor", "corridor safety", "reminded everyone", "arrived"],
         sentence_frame: "Then, [Headmaster Brown] [arrived] and [spoke to the students] about [corridor safety]. He [reminded everyone] to [walk carefully] and [never run] [near a wet floor].",
         audio: "Then, Headmaster Brown arrived and spoke to the students about corridor safety. He told everyone to walk carefully and never run near a wet floor."
       },
@@ -97,7 +93,7 @@ export const writingHubData = {
         locked_connector: "In the end,",
         connectors: ["In the end,", "Finally,", "At last,"],
         keywords: ["gave Jake", "safety award", "school assembly", "everyone clapped", "felt proud", "praised Jake", "helping his classmate", "a certificate"],
-        pills: ["gave Jake", "safety award", "school assembly", "went to sleep", "everyone clapped", "felt proud", "a certificate", "praised Jake", "helping his classmate", "cried loudly", "In the end,", "Finally,", "At last,"],
+        pills: ["everyone clapped", "went to sleep", "safety award", "praised Jake", "felt proud", "gave Jake", "cried loudly", "a certificate", "helping his classmate", "school assembly"],
         sentence_frame: "In the end, [Headmaster Brown] [gave Jake] a [safety award] at the [school assembly]. [Everyone clapped] and [felt proud] of Jake for [helping his classmate].",
         audio: "In the end, Headmaster Brown gave Jake a special safety award at the school assembly. Everyone clapped and felt proud of Jake for helping his classmate."
       }

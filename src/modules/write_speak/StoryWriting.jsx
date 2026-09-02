@@ -523,7 +523,17 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     WRITE: 'bg-emerald-100 text-emerald-900 border-emerald-300'
   };
 
-  const chipsToDisplay = currentStep.pills || currentStep.ordered_chips || currentStep.display_chips || currentStep.keywords || [];
+  const chipsToDisplay = useMemo(() => {
+    const raw = currentStep.pills || currentStep.display_chips || currentStep.keywords || currentStep.ordered_chips || [];
+    if (!Array.isArray(raw) || raw.length === 0) return [];
+    // Mandatory cognitive shuffle: never display pills in sequential sentence order
+    const arr = [...raw];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const hash = ((i * 37 + (arr[i].charCodeAt(0) || 0) * 19 + currentStepIdx * 13) ^ 0x5a5a) % (i + 1);
+      [arr[i], arr[hash]] = [arr[hash], arr[i]];
+    }
+    return arr;
+  }, [currentStep, currentStepIdx]);
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans text-slate-900">
