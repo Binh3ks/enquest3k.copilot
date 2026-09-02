@@ -174,9 +174,12 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     return arr;
   }, [currentStep, currentStepIdx]);
 
-  // Hydrate saved data ONCE on mount
+  // Robust Hydration with hydratedRef
+  const hydratedRef = useRef(false);
   useEffect(() => {
-    if (savedData && typeof savedData === 'object') {
+    if (hydratedRef.current) return;
+    if (savedData && typeof savedData === 'object' && (savedData.panelTexts || savedData.text)) {
+      hydratedRef.current = true;
       if (Array.isArray(savedData.panelTexts) && savedData.panelTexts.length > 0) {
         setPanelTexts(savedData.panelTexts);
       } else if (savedData.text) {
@@ -192,8 +195,36 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
         ]);
       }
       if (savedData.rubric) setRubric(savedData.rubric);
+      if (typeof savedData.currentStepIdx === 'number' && savedData.currentStepIdx < steps.length) {
+        setCurrentStepIdx(savedData.currentStepIdx);
+      }
     }
-  }, []);
+  }, [savedData, steps.length]);
+
+  // Mark hydration true on first user edit even if savedData was empty
+  useEffect(() => {
+    if (!hydratedRef.current && panelTexts.some(t => t && t.trim().length > 0)) {
+      hydratedRef.current = true;
+    }
+  }, [panelTexts]);
+
+  // Debounced Auto-Save on panelTexts changes
+  useEffect(() => {
+    if (!hydratedRef.current) return;
+    const hasContent = panelTexts.some(t => t && t.trim().length > 0);
+    if (!hasContent) return;
+
+    const timer = setTimeout(() => {
+      saveProgress({
+        panelTexts: [...panelTexts],
+        text: fullText,
+        currentStepIdx,
+        _savedAt: new Date().toISOString()
+      });
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, [panelTexts, fullText, currentStepIdx, saveProgress]);
 
   // Auto-focus on step change
   useEffect(() => {
@@ -273,6 +304,13 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
 
   const handleNextStep = () => {
     playButtonClick();
+    // Save progress immediately on step change
+    saveProgress({
+      panelTexts: [...panelTexts],
+      text: fullText,
+      currentStepIdx: currentStepIdx + 1,
+      _savedAt: new Date().toISOString()
+    });
     if (currentStepIdx < steps.length - 1) {
       setCurrentStepIdx(prev => prev + 1);
       setShowHint(false);
@@ -284,6 +322,12 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
   const handlePrevStep = () => {
     playButtonClick();
     if (currentStepIdx > 0) {
+      saveProgress({
+        panelTexts: [...panelTexts],
+        text: fullText,
+        currentStepIdx: currentStepIdx - 1,
+        _savedAt: new Date().toISOString()
+      });
       setCurrentStepIdx(prev => prev - 1);
       setShowHint(false);
     }
@@ -568,11 +612,18 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
         )}
 
         <div className="flex items-center gap-1.5">
-          {steps.map((s, i) => (
             <button
               key={i}
               type="button"
-              onClick={() => setCurrentStepIdx(i)}
+              onClick={() => {
+                saveProgress({
+                  panelTexts: [...panelTexts],
+                  text: fullText,
+                  currentStepIdx: i,
+                  _savedAt: new Date().toISOString()
+                });
+                setCurrentStepIdx(i);
+              }}
               className={`px-2.5 py-0.5 rounded-full text-[10px] font-black flex items-center gap-1 border transition ${
                 i === currentStepIdx
                   ? 'bg-indigo-600 text-white border-indigo-400 scale-105 shadow-xs'
