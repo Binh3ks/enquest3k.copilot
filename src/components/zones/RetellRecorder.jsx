@@ -200,19 +200,35 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
         const spoken = transcriptRef.current.trim();
         setSpokenTranscript(spoken);
 
+        if (!spoken || spoken.length === 0) {
+          // No speech detected (silent recording or mic not transcribed)
+          const evaluation = evaluateStoryRetell('', activeScenes);
+          setEvalResult(evaluation);
+          setFeedback({
+            message: "⚠️ No speech detected. Please speak clearly into your microphone when recording!"
+          });
+          speakText("No speech was detected. Please try recording again and read your story aloud.");
+          return;
+        }
+
         // Long-form story retell evaluation (phonetic tolerance + scene alignment)
         const evaluation = evaluateStoryRetell(spoken, activeScenes);
         setEvalResult(evaluation);
 
-        setFeedback({
-          message: evaluation.isCorrect
-            ? `🎉 Fantastic video performance! Accuracy: ${evaluation.score}%. Your fluency is Cambridge-ready!`
-            : `⭐ Good effort! Accuracy: ${evaluation.score}%. Practice speaking with confident expression!`
-        });
-
-        fireCelebrationConfetti('VideoChallenge_Success');
-        speakText("Awesome video challenge! You told your story brilliantly!");
-        if (onComplete) onComplete(50);
+        if (evaluation.isCorrect) {
+          setFeedback({
+            message: `🎉 Fantastic video performance! Score: ${evaluation.score}%. Your story fluency is Cambridge-ready!`
+          });
+          fireCelebrationConfetti('VideoChallenge_Success');
+          speakText("Awesome video challenge! You told your story brilliantly!");
+          if (onComplete) onComplete(50);
+        } else {
+          setFeedback({
+            message: `⭐ Keep practicing! Score: ${evaluation.score}%. Try reading all sentences clearly!`
+          });
+          speakText("Good effort! Try reading all the sentences clearly to tell the whole story.");
+          if (onComplete) onComplete(30);
+        }
       };
 
       mediaRecorderRef.current.start(1000);
@@ -253,17 +269,31 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
     setRecordedMediaUrl('typed_mode');
     setSpokenTranscript(typedText);
 
+    if (!typedText || typedText.trim().length === 0) {
+      const evaluation = evaluateStoryRetell('', activeScenes);
+      setEvalResult(evaluation);
+      setFeedback({
+        message: "⚠️ No script provided. Please write your story before submitting!"
+      });
+      return;
+    }
+
     const evaluation = evaluateStoryRetell(typedText, activeScenes);
     setEvalResult(evaluation);
 
-    setFeedback({
-      message: evaluation.isCorrect
-        ? `🎉 Story script submitted! Accuracy: ${evaluation.score}%. Great storytelling syntax!`
-        : `⚠️ Script submitted! Accuracy: ${evaluation.score}%. Keep practicing!`
-    });
-
-    fireCelebrationConfetti('VideoChallenge_Success');
-    if (onComplete) onComplete(50);
+    if (evaluation.isCorrect) {
+      setFeedback({
+        message: `🎉 Story script submitted! Score: ${evaluation.score}%. Great storytelling syntax!`
+      });
+      fireCelebrationConfetti('VideoChallenge_Success');
+      speakText("Awesome! Your story script is complete.");
+      if (onComplete) onComplete(50);
+    } else {
+      setFeedback({
+        message: `⚠️ Script submitted! Score: ${evaluation.score}%. Keep practicing!`
+      });
+      if (onComplete) onComplete(30);
+    }
   };
 
   const formatTime = (secs) => {
@@ -393,34 +423,44 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
             )}
           </div>
 
-          {/* ── Teleprompter Dock (Positioned cleanly under camera) ── */}
-          <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-2.5 rounded-2xl border border-purple-400/40 shadow-md space-y-1.5">
-            <div className="flex items-center justify-between gap-1">
-              <span className="text-amber-400 text-[10px] sm:text-[11px] font-black tracking-wider flex items-center gap-1 shrink-0">
-                📜 TELEPROMPTER
+          {/* ── Teleprompter Dock (Positioned cleanly under camera, 100% overflow-proof) ── */}
+          <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-2 sm:p-2.5 rounded-2xl border border-purple-400/40 shadow-md space-y-1.5 overflow-hidden">
+            <div className="flex items-center justify-between gap-1 w-full">
+              <span className="text-amber-400 text-[10px] font-black tracking-wider flex items-center gap-1 truncate">
+                📜 PROMPTER
               </span>
 
               <div className="flex items-center gap-1 shrink-0">
-                <button
-                  type="button"
-                  onClick={() => setActiveTeleprompterIdx(prev => Math.max(0, prev - 1))}
-                  disabled={activeTeleprompterIdx === 0}
-                  className="px-2 py-0.5 bg-purple-800/80 hover:bg-purple-700 disabled:opacity-30 rounded-md text-[10px] font-black transition flex items-center gap-0.5"
-                >
-                  <ChevronLeft size={11} /> Prev
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveTeleprompterIdx(prev => Math.min(activeScenes.length - 1, prev + 1))}
-                  disabled={activeTeleprompterIdx >= activeScenes.length - 1}
-                  className="px-2 py-0.5 bg-purple-800/80 hover:bg-purple-700 disabled:opacity-30 rounded-md text-[10px] font-black transition flex items-center gap-0.5"
-                >
-                  Next <ChevronRight size={11} />
-                </button>
+                <div className="flex items-center bg-purple-900/80 rounded-lg p-0.5 border border-purple-700/50">
+                  <button
+                    type="button"
+                    onClick={() => setActiveTeleprompterIdx(prev => Math.max(0, prev - 1))}
+                    disabled={activeTeleprompterIdx === 0}
+                    className="px-1.5 py-0.5 hover:bg-purple-700 disabled:opacity-30 rounded text-[10px] font-black transition flex items-center gap-0.5"
+                    title="Previous scene"
+                  >
+                    <ChevronLeft size={11} />
+                    <span className="hidden sm:inline">Prev</span>
+                  </button>
+                  <span className="text-[9px] text-purple-300 px-1 font-bold">
+                    {activeTeleprompterIdx + 1}/{activeScenes.length}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTeleprompterIdx(prev => Math.min(activeScenes.length - 1, prev + 1))}
+                    disabled={activeTeleprompterIdx >= activeScenes.length - 1}
+                    className="px-1.5 py-0.5 hover:bg-purple-700 disabled:opacity-30 rounded text-[10px] font-black transition flex items-center gap-0.5"
+                    title="Next scene"
+                  >
+                    <span className="hidden sm:inline">Next</span>
+                    <ChevronRight size={11} />
+                  </button>
+                </div>
+
                 <button
                   type="button"
                   onClick={() => setShowTeleprompter(prev => !prev)}
-                  className="px-2 py-0.5 bg-slate-800/90 hover:bg-slate-700 border border-slate-600 rounded-md text-[10px] font-black transition flex items-center gap-1 text-slate-200"
+                  className="px-2 py-1 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-lg text-[10px] font-black transition flex items-center gap-1 text-slate-200"
                   title={showTeleprompter ? "Hide Teleprompter" : "Show Teleprompter"}
                 >
                   {showTeleprompter ? <EyeOff size={11} /> : <Eye size={11} />}
