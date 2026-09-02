@@ -197,34 +197,57 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     return () => clearInterval(t);
   }, [timerActive, isReview, timeLeftSec]);
 
-  // Connector insertion helper
-  const handleInsertConnector = (connectorText) => {
+  // Smart cursor-based insertion helper for connectors and pills
+  const insertTextAtCursor = (textToInsert) => {
     playButtonClick();
+    const textarea = textareaRef.current;
+    const currentText = panelTexts[currentStepIdx] || '';
+    
+    let newText = '';
+    let newCursorPos = 0;
+
+    if (!textarea || typeof textarea.selectionStart !== 'number') {
+      newText = currentText ? `${currentText} ${textToInsert}` : textToInsert;
+      newCursorPos = newText.length;
+    } else {
+      const startPos = textarea.selectionStart;
+      const endPos = textarea.selectionEnd;
+      const before = currentText.substring(0, startPos);
+      const after = currentText.substring(endPos);
+
+      // Add leading space if before cursor is not empty and doesn't end with whitespace
+      const needsLeadingSpace = before.length > 0 && !/\s$/.test(before);
+      // Add trailing space if after cursor is not empty and doesn't start with whitespace or punctuation
+      const needsTrailingSpace = after.length > 0 && !/^\s/.test(after) && !/^[.,!?;:]/.test(after);
+
+      const prefix = needsLeadingSpace ? ' ' : '';
+      const suffix = needsTrailingSpace ? ' ' : '';
+
+      newText = before + prefix + textToInsert + suffix + after;
+      newCursorPos = startPos + prefix.length + textToInsert.length;
+    }
+
     setPanelTexts(prev => {
       const next = [...prev];
-      const cur = (next[currentStepIdx] || '').trim();
-      const cleaned = connectorText.trim();
-      if (!cur) {
-        next[currentStepIdx] = cleaned.endsWith(',') ? `${cleaned} ` : `${cleaned}, `;
-      } else {
-        // If current text already starts with a comma/clause, prepend or append
-        next[currentStepIdx] = `${cleaned} ${cur}`;
-      }
+      next[currentStepIdx] = newText;
       return next;
     });
-    textareaRef.current?.focus();
+
+    // Re-focus and set cursor right after the inserted text
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+        textareaRef.current.setSelectionRange(newCursorPos, newCursorPos);
+      }
+    }, 10);
   };
 
-  // Pill click helper
+  const handleInsertConnector = (connectorText) => {
+    insertTextAtCursor(connectorText);
+  };
+
   const handleInsertPill = (pillText) => {
-    playButtonClick();
-    setPanelTexts(prev => {
-      const next = [...prev];
-      const cur = (next[currentStepIdx] || '').trim();
-      next[currentStepIdx] = cur ? `${cur} ${pillText}` : pillText;
-      return next;
-    });
-    textareaRef.current?.focus();
+    insertTextAtCursor(pillText);
   };
 
   const isCurrentStepValid = useMemo(() => {
