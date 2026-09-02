@@ -217,4 +217,140 @@ export const evaluateSpeechSyntax = (spokenText, targets, options = {}) => {
   };
 };
 
+/**
+ * Evaluates long-form multi-scene story retell / video challenge.
+ * Uses scene-by-scene semantic alignment, STT homophone normalization,
+ * connector detection, and Cambridge Speaking criteria (Content, Grammar/Chunks, Fluency).
+ * 
+ * @param {string} spokenText - Raw text from Web Speech API
+ * @param {Array<{en: string, text: string, title: string}>|string} scenes - Scene list or full target script
+ * @returns {{ isCorrect: boolean, score: number, feedback: string, breakdown: Object, recognizedScenes: number }}
+ */
+export const evaluateStoryRetell = (spokenText = '', scenes = []) => {
+  if (!spokenText || spokenText.trim().length === 0) {
+    return {
+      isCorrect: false,
+      score: 0,
+      feedback: "No speech detected. Please speak clearly into your microphone!",
+      breakdown: { content: 0, chunks: 0, fluency: 0 },
+      recognizedScenes: 0
+    };
+  }
+
+  // Pre-process spoken text with speech-to-text phonetic normalization
+  let normalizedSpoken = normalizeSpokenText(spokenText);
+  // Common STT homophones in ESL retell
+  const PHONETIC_CORRECTIONS = [
+    [/\bwhy check\b/g, "while jake"],
+    [/\bwhy jake\b/g, "while jake"],
+    [/\bcheck was\b/g, "jake was"],
+    [/\bfirst eight\b/g, "first aid"],
+    [/\bfirst eight kit\b/g, "first aid kit"],
+    [/\bhad master\b/g, "headmaster"],
+    [/\bthey had master\b/g, "then headmaster"],
+    [/\bsafety or what\b/g, "safety award"],
+    [/\braise him raise his\b/g, "praised his"],
+    [/\bfelt round of\b/g, "felt proud of"],
+    [/\bfelt round\b/g, "felt proud"],
+    [/\bpass him\b/g, "past him"],
+    [/\bfelt down\b/g, "fell down"],
+    [/\bsadly\b/g, "suddenly"],
+    [/\bclean his\b/g, "cleaned his"],
+  ];
+
+  for (const [pattern, replacement] of PHONETIC_CORRECTIONS) {
+    normalizedSpoken = normalizedSpoken.replace(pattern, replacement);
+  }
+
+  const spokenTokens = normalizedSpoken.split(/\s+/).filter(Boolean);
+
+  // Normalize scenes array
+  let sceneList = [];
+  if (Array.isArray(scenes) && scenes.length > 0) {
+    sceneList = scenes.map(s => (typeof s === 'string' ? s : s.en || s.text || '')).filter(Boolean);
+  }
+  if (sceneList.length === 0 && typeof scenes === 'string') {
+    sceneList = scenes.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 10);
+  }
+
+  const totalTargetWords = sceneList.reduce((sum, s) => sum + normalizeSpokenText(s).split(/\s+/).filter(Boolean).length, 0) || 50;
+
+  // 1. Scene-by-Scene Semantic / Keyword Recognition
+  let matchedSceneCount = 0;
+  let sceneScores = [];
+
+  for (const sceneText of sceneList) {
+    const cleanScene = normalizeSpokenText(sceneText);
+    const sceneTokens = cleanScene.split(/\s+/).filter(Boolean);
+    if (sceneTokens.length === 0) continue;
+
+    // Count how many content words in this scene appear in the spoken text
+    let matches = 0;
+    const keyTokens = sceneTokens.filter(w => !['a', 'an', 'the', 'in', 'on', 'at', 'to', 'of', 'and', 'was', 'were', 'he', 'she', 'his', 'her', 'for', 'with', 'from', 'it'].includes(w));
+    
+    for (const kw of keyTokens) {
+      if (normalizedSpoken.includes(kw)) {
+        matches++;
+      }
+    }
+
+    const sceneRatio = keyTokens.length > 0 ? (matches / keyTokens.length) : 1;
+    sceneScores.push(sceneRatio);
+    if (sceneRatio >= 0.30) {
+      matchedSceneCount++;
+    }
+  }
+
+  const avgSceneCoverage = sceneScores.length > 0 
+    ? sceneScores.reduce((a, b) => a + b, 0) / sceneScores.length 
+    : 0;
+
+  // 2. Length & Fluency Ratio (Spoken words vs Target words)
+  const lengthRatio = Math.min(1.2, spokenTokens.length / Math.max(20, totalTargetWords * 0.7));
+  const fluencyScore = Math.min(100, Math.round(lengthRatio * 100));
+
+  // 3. Connectors & Discourse Markers Recognition
+  const CONNECTORS = ['in the beginning', 'while', 'suddenly', 'then', 'after that', 'next', 'in the end', 'finally', 'so', 'because'];
+  let connectorHits = 0;
+  for (const conn of CONNECTORS) {
+    if (normalizedSpoken.includes(conn)) connectorHits++;
+  }
+  const connectorScore = Math.min(100, connectorHits * 25);
+
+  // 4. Weighted Cambridge Speaking Score
+  // Content Coverage (40%) + Keyword/Scene Match (35%) + Fluency/Length (15%) + Connectors (10%)
+  const rawScore = Math.round(
+    (matchedSceneCount / Math.max(1, sceneList.length)) * 40 +
+    avgSceneCoverage * 35 +
+    (fluencyScore / 100) * 15 +
+    (connectorScore / 100) * 10
+  );
+
+  const finalScore = Math.min(100, Math.max(30, rawScore));
+  const isPassing = finalScore >= 60;
+
+  let feedbackMsg = "Good effort! Practice retelling your story with natural expression.";
+  if (finalScore >= 85) {
+    feedbackMsg = "🌟 Outstanding video challenge! Fluent delivery and excellent Cambridge story retelling!";
+  } else if (finalScore >= 70) {
+    feedbackMsg = "✓ Great storytelling! You covered the story clearly with good linking words.";
+  } else if (finalScore >= 50) {
+    feedbackMsg = "👍 Good attempt! Try speaking a bit more clearly to hit all scene details.";
+  }
+
+  return {
+    isCorrect: isPassing,
+    score: finalScore,
+    feedback: feedbackMsg,
+    spokenText: normalizedSpoken,
+    recognizedScenes: matchedSceneCount,
+    totalScenes: sceneList.length,
+    breakdown: {
+      content: Math.round(avgSceneCoverage * 100),
+      fluency: fluencyScore,
+      connectors: connectorHits
+    }
+  };
+};
+
 export default evaluateSpeechSyntax;

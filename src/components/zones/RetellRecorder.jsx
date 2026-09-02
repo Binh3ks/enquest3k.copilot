@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Video, Mic, Square, RefreshCw, Volume2, CheckCircle2, Sparkles, Download, Camera, VideoOff, Trophy, Play } from 'lucide-react';
+import { Video, Mic, Square, RefreshCw, Volume2, CheckCircle2, Sparkles, Download, Camera, VideoOff, Trophy, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
-import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
+import { evaluateSpeechSyntax, evaluateStoryRetell } from '../../utils/speechSyntaxEvaluator';
 import MicFallbackInput from '../common/MicFallbackInput';
 import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 
@@ -27,6 +27,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
   const [spokenTranscript, setSpokenTranscript] = useState('');
   const [cameraActive, setCameraActive] = useState(false);
   const [cameraError, setCameraError] = useState(null);
+  const [activeTeleprompterIdx, setActiveTeleprompterIdx] = useState(0);
 
   const previewVideoRef = useRef(null);
   const streamRef = useRef(null);
@@ -137,6 +138,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
     setEvalResult(null);
     setRecordedMediaUrl(null);
     setRecordingSeconds(0);
+    setActiveTeleprompterIdx(0);
     transcriptRef.current = '';
 
     // Start Speech Recognition
@@ -197,7 +199,8 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
         const spoken = transcriptRef.current.trim();
         setSpokenTranscript(spoken);
 
-        const evaluation = evaluateSpeechSyntax(spoken, fullScriptText, { mode: 'sentence', minWords: 4 });
+        // Long-form story retell evaluation (phonetic tolerance + scene alignment)
+        const evaluation = evaluateStoryRetell(spoken, activeScenes);
         setEvalResult(evaluation);
 
         setFeedback({
@@ -239,6 +242,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
     setFeedback(null);
     setEvalResult(null);
     setSpokenTranscript('');
+    setActiveTeleprompterIdx(0);
     if (recordMode === 'video') {
       startCameraPreview();
     }
@@ -248,7 +252,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
     setRecordedMediaUrl('typed_mode');
     setSpokenTranscript(typedText);
 
-    const evaluation = evaluateSpeechSyntax(typedText, fullScriptText, { mode: 'sentence', minWords: 4 });
+    const evaluation = evaluateStoryRetell(typedText, activeScenes);
     setEvalResult(evaluation);
 
     setFeedback({
@@ -324,7 +328,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
         
         {/* Left Column (6/12): Camera Preview + Teleprompter + Action Buttons */}
         <div className="md:col-span-6 flex flex-col gap-2">
-          <div className="relative w-full aspect-[16/10] bg-slate-950 rounded-2xl overflow-hidden shadow-md border-2 border-slate-300 flex items-center justify-center">
+          <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-slate-950 rounded-2xl overflow-hidden shadow-md border-2 border-slate-300 flex items-center justify-center">
             
             {/* Live Camera View */}
             {!recordedMediaUrl && recordMode === 'video' && (
@@ -393,18 +397,45 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
                 REC {formatTime(recordingSeconds)}
               </div>
             )}
+          </div>
 
-            {/* Live Teleprompter Overlay — Visible while recording on mobile & desktop */}
-            {isRecording && (
-              <div className="absolute bottom-2 inset-x-2 bg-black/85 backdrop-blur-md text-white p-2.5 rounded-xl border border-purple-400/60 shadow-xl z-20 animate-in fade-in slide-in-from-bottom-2 duration-200">
-                <div className="flex items-center gap-1.5 mb-1">
-                  <span className="text-[10px] font-black uppercase text-amber-300 tracking-wider">📜 Teleprompter Prompt:</span>
-                </div>
-                <p className="text-xs sm:text-sm font-black leading-snug text-slate-100 max-h-16 overflow-y-auto">
-                  {fullScriptText || "Describe what happened in the corridor and how Jake helped."}
-                </p>
+          {/* ── Mobile/Desktop Teleprompter Dock (Positioned cleanly under camera so face is 100% visible) ── */}
+          <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-3 rounded-2xl border border-purple-400/40 shadow-md space-y-2">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-amber-400 text-xs font-black tracking-wider flex items-center gap-1">
+                  📜 TELEPROMPTER
+                </span>
+                <span className="px-2 py-0.5 rounded-md bg-purple-800 text-[10px] font-black text-purple-200">
+                  Scene {activeTeleprompterIdx + 1} of {activeScenes.length}
+                </span>
               </div>
-            )}
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={() => setActiveTeleprompterIdx(prev => Math.max(0, prev - 1))}
+                  disabled={activeTeleprompterIdx === 0}
+                  className="px-2.5 py-1 bg-purple-800/80 hover:bg-purple-700 disabled:opacity-30 rounded-lg text-[10px] font-black transition flex items-center gap-0.5"
+                >
+                  <ChevronLeft size={12} /> Prev
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTeleprompterIdx(prev => Math.min(activeScenes.length - 1, prev + 1))}
+                  disabled={activeTeleprompterIdx >= activeScenes.length - 1}
+                  className="px-2.5 py-1 bg-purple-800/80 hover:bg-purple-700 disabled:opacity-30 rounded-lg text-[10px] font-black transition flex items-center gap-0.5"
+                >
+                  Next <ChevronRight size={12} />
+                </button>
+              </div>
+            </div>
+
+            {/* Current Sentence (1-2 lines clean, readable) */}
+            <div className="p-2.5 bg-black/40 rounded-xl border border-purple-500/30">
+              <p className="text-xs sm:text-sm font-bold text-amber-100 leading-relaxed">
+                {activeScenes[activeTeleprompterIdx]?.en || activeScenes[activeTeleprompterIdx]?.text || "Read your story sentence by sentence..."}
+              </p>
+            </div>
           </div>
 
           {/* Action Buttons Dock */}
@@ -454,7 +485,6 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
 
                 <div className="py-2 bg-emerald-600 text-white font-black text-xs rounded-lg text-center shadow-sm flex items-center justify-center gap-1.5">
                   <CheckCircle2 size={14} /> Video Recorded! +50 XP ⭐
-                </div>
               </div>
             )}
           </div>
@@ -478,7 +508,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
             </button>
           </div>
 
-          {/* 4 Story Scenes */}
+          {/* 5 Story Scenes */}
           <div className="space-y-2 max-h-[320px] overflow-y-auto pr-1">
             {activeScenes.map((scene, idx) => {
               const func = scene.narrative_function || FUNC_ORDER[idx] || 'setting';
@@ -515,20 +545,35 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
           {evalResult && (
             <div className={`p-3 rounded-2xl border ${
               evalResult.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'
-            } text-xs font-black space-y-1 animate-in fade-in`}>
+            } text-xs font-black space-y-2 animate-in fade-in`}>
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 size={15} className={evalResult.isCorrect ? "text-emerald-600" : "text-amber-600"} />
+                  <CheckCircle2 size={16} className={evalResult.isCorrect ? "text-emerald-600" : "text-amber-600"} />
                   {evalResult.feedback}
                 </span>
-                <span className="px-2 py-0.5 bg-white rounded-md border text-[10px]">
+                <span className="px-2.5 py-1 bg-white rounded-lg border text-xs font-black shadow-2xs">
                   Score: {evalResult.score}%
                 </span>
               </div>
+
+              {evalResult.recognizedScenes !== undefined && (
+                <div className="flex items-center gap-2 pt-1 text-[11px] font-bold text-slate-700 flex-wrap">
+                  <span className="px-2 py-0.5 rounded-md bg-white border border-slate-200">
+                    🎬 Scenes Covered: {evalResult.recognizedScenes} / {evalResult.totalScenes || 5}
+                  </span>
+                  {evalResult.breakdown?.connectors !== undefined && (
+                    <span className="px-2 py-0.5 rounded-md bg-white border border-slate-200">
+                      🔗 Connectors: {evalResult.breakdown.connectors}
+                    </span>
+                  )}
+                </div>
+              )}
+
               {spokenTranscript && (
-                <p className="text-[10.5px] font-medium text-slate-700 italic">
-                  Recognized speech: "{spokenTranscript}"
-                </p>
+                <div className="p-2 bg-white/80 rounded-xl border border-slate-200/60 text-[10.5px] font-medium text-slate-700">
+                  <span className="font-bold text-slate-900 block mb-0.5">🎙️ AI Recognized Speech:</span>
+                  <p className="italic leading-relaxed">{spokenTranscript}</p>
+                </div>
               )}
             </div>
           )}
