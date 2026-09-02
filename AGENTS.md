@@ -228,6 +228,11 @@ Source: `.devin/workflows/start.md` §3.
   5. **Formatting Rules**: Capitalize day names/proper nouns (`Saturday morning`). Terminal punctuation (`.`, `,`, `!`, `?`) MUST strictly stay OUTSIDE bold tags `**...**`.
   6. **Automated Audit**: Run `npm run audit:chunks` (`node scripts/audit_chunks.js`) before committing to guarantee 0 chunking errors.
 - **Audio & TTS Fallback**: `audio_word` paths MUST handle missing MP3 files gracefully with browser TTS fallback so card flip audio never hangs or crashes.
+- **Story Writer & S3 Scaffold Standard (Collocations & Chunks Invariant)** — 2026-09-02:
+  1. **Collocation & Chunk-First Invariant**: Mọi `pills` và keyword gợi ý trong Story Writer (`picture_story` trong `writing_hub.js`) BẮT BUỘC phải là **cụm từ tự nhiên (Chunks, Collocations, Phrasal Verbs, Prepositional Phrases)** hoàn chỉnh (e.g., `felt proud of him`, `spoke to all the students`, `walked carefully down the corridor`, `slipped on the wet floor`, `applied a clean bandage`, `gave Jake a special safety award`). CẤM TUYỆT ĐỐI bẻ nhỏ thành từng từ đơn rời rạc vô nghĩa (`fast`, `walked`, `the`).
+  2. **Mandatory Shuffle & Distractors**: Toàn bộ `pills` ở mọi cảnh PHẢI được xáo trộn ngẫu nhiên (Scrambled), KHÔNG BAO GIỜ sắp xếp theo đúng thứ tự câu. Bắt buộc cung cấp các distractors hợp lý để kiểm tra tư duy ngữ cảnh của học sinh.
+  3. **Multi-Sentence Target (2–3 Sentences per Scene)**: Mỗi cảnh (Scene 1–5) yêu cầu học sinh viết tối thiểu 2 câu hoàn chỉnh (khuyến khích 3 câu). Word Bank cung cấp sẵn inputs/collocations tối thiểu cho 2 câu, học sinh tự do mở rộng câu thứ 3.
+  4. **Smart Cursor Insertion**: Khi bấm vào Connector hoặc Pill, văn bản PHẢI được chèn chính xác tại vị trí con trỏ (Cursor Position), tự động căn chỉnh khoảng trắng, không nhảy về đầu đoạn.
 
 ## 🔒 FROZEN AUDIO PIPELINE: PRE-GENERATED MP3 & 3-TIER FALLBACK STANDARD (W33+) — 2026-08-18
 **BẮT BUỘC áp dụng cho Tuần 33 và TOÀN BỘ các tuần sản xuất mới (W34–W72). KHÔNG ĐƯỢC PHÉP BỎ QUA:**

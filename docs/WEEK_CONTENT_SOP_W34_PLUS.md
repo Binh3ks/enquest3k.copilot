@@ -196,21 +196,36 @@ rw_part_6: {
 }
 ```
 
-### R7 (picture_story) — 5-Panel Story Writing
+### R7 (picture_story) — 5-Panel Story Writing (S3 Learning Scaffold Standard)
+
+> **Mandatory Scaffold Invariants for Story Writer**:
+> 1. **Collocation & Chunk-First Invariant**:
+>    - Mọi `pills` và keyword inputs BẮT BUỘC phải là **cụm từ tự nhiên (Chunks, Collocations, Phrasal Verbs, Prepositional Phrases)** hoàn chỉnh (ví dụ: `felt proud of him`, `spoke to all the students`, `walked carefully down the corridor`, `slipped on the wet floor`, `applied a clean bandage`, `gave Jake a special safety award`).
+>    - CẤM TUYỆT ĐỐI bẻ nhỏ thành từng từ đơn rời rạc vô nghĩa (`fast`, `walked`, `the`).
+> 2. **Mandatory Shuffle & Distractors**:
+>    - Toàn bộ `pills` ở mọi cảnh PHẢI được xáo trộn ngẫu nhiên (Scrambled), KHÔNG BAO GIỜ sắp xếp theo đúng thứ tự câu.
+>    - Bắt buộc cung cấp các distractors hợp lý để kiểm tra tư duy ngữ cảnh của học sinh.
+> 3. **Multi-Sentence Target (2–3 Sentences per Scene)**:
+>    - Mỗi cảnh (Scene 1–5) yêu cầu học sinh viết tối thiểu 2 câu hoàn chỉnh (khuyến khích 3 câu).
+>    - Word Bank cung cấp sẵn inputs/collocations tối thiểu cho 2 câu, học sinh tự do mở rộng câu thứ 3.
+> 4. **Smart Cursor Insertion**:
+>    - Khi bấm vào Connector hoặc Pill, văn bản PHẢI được chèn chính xác tại vị trí con trỏ (Cursor Position), tự động căn chỉnh khoảng trắng, không nhảy về đầu đoạn.
+
 ```js
 picture_story: {
   steps: [   // exactly 5 steps
     { scene: 1, ladder_stage: 'MODEL', badge_label: 'MODEL',
       title: 'Scene 1: Setting', image_url: '/images/weekXX/writing_panel_1.png',
       caption: '...', frame_L1: '2 sentences example', locked_connector: 'In the beginning,',
-      sentence_hint: 'Write 2 sentences: WHERE and WHEN',
-      ordered_chips: [...],   // correct order (MODEL guided)
-      pills: [...],           // shuffled + distractors
+      connectors: ['While he was walking,', 'Then,', 'Suddenly,', 'and'],
+      sentence_hint: 'Write 2–3 sentences about this picture. Use the words below to help.',
+      ordered_chips: [...],   // full sentence target components
+      pills: [...],           // SCRAMBLED collocations/chunks + distractors
       audio: '...' },
     { scene: 2, ladder_stage: 'BUILD', ..., connectors: [...], display_chips: [...], pills: [...] },
-    { scene: 3, ladder_stage: 'WRITE', ..., keywords: [...], pills: [...], sentence_frame: '...' },
-    { scene: 4, ladder_stage: 'EXPAND', ..., keywords: [...], pills: [...], sentence_frame: '...' },
-    { scene: 5, ladder_stage: 'REFLECT', locked_connector: 'In the end,', ..., pills: [...] }
+    { scene: 3, ladder_stage: 'WRITE', ..., connectors: [...], keywords: [...], pills: [...] },
+    { scene: 4, ladder_stage: 'EXPAND', ..., connectors: [...], keywords: [...], pills: [...] },
+    { scene: 5, ladder_stage: 'REFLECT', locked_connector: 'In the end,', connectors: [...], keywords: [...], pills: [...] }
   ],
   min_words: 40   // 5 scenes × ~2 sentences × ~4 words
 }
