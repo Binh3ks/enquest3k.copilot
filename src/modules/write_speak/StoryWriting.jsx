@@ -593,7 +593,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
               <Link2 size={13} className="text-purple-700" /> 🔗 LINK YOUR SENTENCES:
             </span>
             <span className="text-[10px] font-medium text-purple-700 italic">
-              Connectors join your three pictures into ONE story.
+              Connectors join your five pictures into ONE story.
             </span>
           </div>
 
@@ -639,14 +639,14 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
             return (
               <div className="space-y-2">
                 <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider block">
-                  💡 TAP WORDS TO INSERT — Build each sentence:
+                  💡 WORD BANK FOR THIS SCENE — use these to write 2 sentences (min):
                 </span>
                 {sentenceChips.map((sentChips, sIdx) => (
                   <div key={sIdx} className="space-y-1">
                     <span className={`text-[10px] font-black px-2 py-0.5 rounded-md ${
                       sIdx === 0 ? 'bg-sky-100 text-sky-800' : 'bg-violet-100 text-violet-800'
                     }`}>
-                      Sentence {sIdx + 1}:
+                      📝 Sentence {sIdx + 1} — words to use:
                     </span>
                     <div className="flex flex-wrap gap-2" data-testid={`content-chips-s${sIdx + 1}`}>
                       {sentChips.map((chip, pIdx) => (
