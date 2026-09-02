@@ -485,6 +485,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
 
                 <div className="py-2 bg-emerald-600 text-white font-black text-xs rounded-lg text-center shadow-sm flex items-center justify-center gap-1.5">
                   <CheckCircle2 size={14} /> Video Recorded! +50 XP ⭐
+                </div>
               </div>
             )}
           </div>

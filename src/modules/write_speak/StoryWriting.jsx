@@ -94,7 +94,6 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
         image_url: `/images/week${currentWeek}/writing_panel_3.png`,
         caption: 'Look at Picture 3 and describe what happened next.',
         frame_L1: 'Someone came to help. Describe what they did.',
-        ladder_stage: 'WRITE', badge_label: 'WRITE',
         sentence_hint: 'Write 2 sentences about how someone helped.',
         connectors: ['Finally', 'In the end', 'At last'],
         keywords: ['the helper', 'arrive', 'the bandage', 'feel relieved'],
@@ -612,6 +611,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
         )}
 
         <div className="flex items-center gap-1.5">
+          {steps.map((s, i) => (
             <button
               key={i}
               type="button"
