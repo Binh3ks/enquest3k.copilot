@@ -279,22 +279,24 @@ rw_part_6: {
 > 4. **Smart Cursor Insertion & Dictionary Synchronization**:
 >    - Khi bấm vào Connector hoặc Pill, văn bản chèn chính xác tại vị trí con trỏ chuột, tự căn chỉnh dấu cách.
 >    - 100% pills và chunks BẮT BUỘC phải có trong từ điển `vocab_dictionary_master.js` với nghĩa tiếng Việt, IPA và câu ví dụ để click là xem ngay không bị treo.
+> 5. **No Locked Connectors (Trao Quyền Tự Chủ Lựa Chọn)**:
+>    - Tuyệt đối KHÔNG sử dụng `locked_connector`. 100% liên từ được đưa vào hàng `connectors` dưới dạng các nút lựa chọn tự do (`🔗 + In the beginning,`, `🔗 + Suddenly,`, `🔗 + Then,`, `🔗 + and`,...). Học sinh có toàn quyền lựa chọn cách mở đầu câu.
 
 ```js
 picture_story: {
   steps: [   // exactly 5 steps
     { scene: 1, ladder_stage: 'MODEL', badge_label: 'MODEL',
       title: 'Scene 1: Walking in the Corridor', image_url: '/images/weekXX/writing_panel_1.png',
-      caption: '...', frame_L1: '2 sentences example', locked_connector: 'In the beginning,',
-      connectors: ['Suddenly,', 'Then,', 'and'],
+      caption: '...', frame_L1: '2 sentences example',
+      connectors: ['In the beginning,', 'Suddenly,', 'Then,', 'and'],
       sentence_hint: 'Write 2 sentences: (1) Where Jake was walking, and (2) who ran past him.',
       ordered_chips: [...],   // full sentence target components
       pills: [...],           // SCRAMBLED collocations/chunks + 2 distractors
       audio: '...' },
-    { scene: 2, ladder_stage: 'BUILD', locked_connector: 'Suddenly,', connectors: ['Then,', 'Right away,', 'and', 'because'], ... },
-    { scene: 3, ladder_stage: 'WRITE', locked_connector: 'After that,', connectors: ['Next,', 'Then,', 'and', 'quickly'], ... },
-    { scene: 4, ladder_stage: 'EXPAND', locked_connector: 'Then,', connectors: ['After that,', 'Meanwhile,', 'and', 'so'], ... },
-    { scene: 5, ladder_stage: 'REFLECT', locked_connector: 'In the end,', connectors: ['Finally,', 'At last,', 'and', 'because'], ... }
+    { scene: 2, ladder_stage: 'BUILD', connectors: ['Suddenly,', 'Right away,', 'Then,', 'and', 'because'], ... },
+    { scene: 3, ladder_stage: 'WRITE', connectors: ['After that,', 'Next,', 'Then,', 'and', 'quickly'], ... },
+    { scene: 4, ladder_stage: 'EXPAND', connectors: ['Then,', 'After that,', 'Meanwhile,', 'and', 'so'], ... },
+    { scene: 5, ladder_stage: 'REFLECT', connectors: ['In the end,', 'Finally,', 'At last,', 'and', 'because'], ... }
   ],
   min_words: 40   // 5 scenes × 2 sentences = 10 sentences (~100-120 words)
 }
