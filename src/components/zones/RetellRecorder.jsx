@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Video, Mic, Square, RefreshCw, Volume2, CheckCircle2, Sparkles, Download, Camera, VideoOff, Trophy, Play, ChevronLeft, ChevronRight, Eye, EyeOff } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
+import { VoiceService } from '../../services/voiceService';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { playVictoryFanfare } from '../../utils/soundEffects';
 import { useStationProgress } from '../../hooks/useStationProgress';
@@ -116,30 +117,9 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
   }, [savedData, activeScenes.length]);
 
   const [isSpeakingFeedback, setIsSpeakingFeedback] = useState(false);
+  const activeFeedbackAudioRef = useRef(null);
 
-  const handleHearFeedback = (textToSpeak) => {
-    if (!textToSpeak) return;
-
-    // Clean text: strip emojis, symbols, and special characters that break TTS engines
-    const cleanSpeech = textToSpeak
-      .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '')
-      .replace(/[🌟⭐✓👍🎬🔗🎙️⚠️·]/g, '')
-      .replace(/\s+/g, ' ')
-      .trim();
-
-    if (!cleanSpeech) return;
-
-    if (isSpeakingFeedback) {
-      if (typeof window !== 'undefined' && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-      }
-      setIsSpeakingFeedback(false);
-      return;
-    }
-
-    setIsSpeakingFeedback(true);
-
-    // 1. Direct Native SpeechSynthesis for instantaneous gesture response on iOS/Android
+  const fallbackToBrowserTTS = (cleanSpeech) => {
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       try {
         window.speechSynthesis.cancel();
@@ -155,20 +135,77 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
         if (usVoice) utterance.voice = usVoice;
 
         utterance.onend = () => setIsSpeakingFeedback(false);
-        utterance.onerror = () => {
-          setIsSpeakingFeedback(false);
-          speakText(cleanSpeech, null, 1.0, () => setIsSpeakingFeedback(false));
-        };
+        utterance.onerror = () => setIsSpeakingFeedback(false);
 
         window.speechSynthesis.speak(utterance);
         return;
-      } catch (err) {
-        console.warn('SpeechSynthesis invocation error, falling back to speakText:', err);
+      } catch (_) {}
+    }
+    setIsSpeakingFeedback(false);
+  };
+
+  const handleHearFeedback = async (textToSpeak) => {
+    if (!textToSpeak) return;
+
+    // Toggle stop if already playing
+    if (isSpeakingFeedback) {
+      if (activeFeedbackAudioRef.current) {
+        try {
+          activeFeedbackAudioRef.current.pause();
+          activeFeedbackAudioRef.current.currentTime = 0;
+        } catch (_) {}
+        activeFeedbackAudioRef.current = null;
       }
+      if (typeof window !== 'undefined' && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      setIsSpeakingFeedback(false);
+      return;
     }
 
-    // 2. Fallback to VoiceService speakText
-    speakText(cleanSpeech, null, 1.0, () => setIsSpeakingFeedback(false));
+    // Clean text: strip emojis, symbols, and special characters
+    const cleanSpeech = textToSpeak
+      .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '')
+      .replace(/[🌟⭐✓👍🎬🔗🎙️⚠️·]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (!cleanSpeech) return;
+
+    setIsSpeakingFeedback(true);
+
+    // 📱 Mobile iOS audio unlock (unlock HTML5 Audio inside user tap event)
+    try {
+      const unlockAudio = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA');
+      unlockAudio.play().catch(() => {});
+    } catch (_) {}
+
+    // 🎙️ TIER 1: Google Cloud TTS Direct (en-US-Journey-F) — High-fidelity AI speech
+    try {
+      const audioBlob = await VoiceService.useGoogleTTSDirect(cleanSpeech, 'en-US-Journey-F');
+      if (audioBlob) {
+        const audioUrl = URL.createObjectURL(audioBlob);
+        const audio = new Audio(audioUrl);
+        activeFeedbackAudioRef.current = audio;
+
+        audio.onended = () => {
+          setIsSpeakingFeedback(false);
+          activeFeedbackAudioRef.current = null;
+        };
+        audio.onerror = (e) => {
+          console.warn('[RetellRecorder] Google TTS audio playback error, falling back to browser TTS:', e);
+          fallbackToBrowserTTS(cleanSpeech);
+        };
+
+        await audio.play();
+        return;
+      }
+    } catch (gErr) {
+      console.warn('[RetellRecorder] Google Cloud TTS Direct unavailable, falling back to browser TTS:', gErr.message);
+    }
+
+    // 🎙️ TIER 2: Fallback to Browser Web Speech API
+    fallbackToBrowserTTS(cleanSpeech);
   };
 
   // Initialize camera preview on mount if in video mode
