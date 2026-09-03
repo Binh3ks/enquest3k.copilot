@@ -73,20 +73,32 @@ export const useStationProgress = (weekId, stationId, learningMode = null) => {
   // 2. Get current progress from cache using storage key with intelligent cross-mode fallback
   const stationState = useMemo(() => {
     const weekMap = progressCache[weekId] || {};
-    // Check primary key first
-    if (weekMap[storageKey] && (weekMap[storageKey].data || weekMap[storageKey].isCompleted || weekMap[storageKey].score)) {
-      return weekMap[storageKey];
+    const candidates = [
+      weekMap[storageKey],
+      weekMap[stationId],
+      weekMap[`${stationId}_easy`]
+    ].filter(c => Boolean(c && (c.data || c.isCompleted || c.score)));
+
+    if (candidates.length === 0) {
+      return weekMap[storageKey] || weekMap[stationId] || {};
     }
-    // Check base stationId
-    if (weekMap[stationId] && (weekMap[stationId].data || weekMap[stationId].isCompleted || weekMap[stationId].score)) {
-      return weekMap[stationId];
-    }
-    // Check easy variant
-    const easyKey = `${stationId}_easy`;
-    if (weekMap[easyKey] && (weekMap[easyKey].data || weekMap[easyKey].isCompleted || weekMap[easyKey].score)) {
-      return weekMap[easyKey];
-    }
-    return weekMap[storageKey] || weekMap[stationId] || {};
+
+    // Sort candidates: prioritize candidate with most panelTexts, then highest score, then latest updated
+    candidates.sort((a, b) => {
+      const panelsA = a.data?.panelTexts?.filter(Boolean)?.length || 0;
+      const panelsB = b.data?.panelTexts?.filter(Boolean)?.length || 0;
+      if (panelsB !== panelsA) return panelsB - panelsA;
+
+      const scoreA = a.score || 0;
+      const scoreB = b.score || 0;
+      if (scoreB !== scoreA) return scoreB - scoreA;
+
+      const timeA = new Date(a.updatedAt || a.data?._savedAt || 0).getTime();
+      const timeB = new Date(b.updatedAt || b.data?._savedAt || 0).getTime();
+      return timeB - timeA;
+    });
+
+    return candidates[0];
   }, [progressCache, weekId, storageKey, stationId]);
 
   const savedData = stationState.data || {};
