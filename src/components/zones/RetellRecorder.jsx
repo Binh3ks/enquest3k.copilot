@@ -354,61 +354,64 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
         <div className="w-full md:col-span-6 flex flex-col gap-2">
 
           {/* ── Teleprompter Dock (Positioned ABOVE camera for natural eye contact & easy reading) ── */}
-          <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-2.5 sm:p-3 rounded-2xl border border-purple-400/40 shadow-md space-y-2 overflow-hidden">
-            <div className="flex items-center justify-between gap-1 w-full">
-              <span className="text-amber-400 text-xs font-black tracking-wider flex items-center gap-1.5 shrink-0">
-                📜 PROMPTER
-              </span>
+          <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-2.5 sm:p-3 rounded-2xl border border-purple-400/40 shadow-md space-y-2">
+            {/* Top Bar: Title + ALWAYS-VISIBLE Hide/Show Button */}
+            <div className="flex items-center justify-between w-full">
+              <div className="flex items-center gap-1.5">
+                <span className="text-amber-400 text-xs sm:text-sm font-black tracking-wider flex items-center gap-1">
+                  📜 PROMPTER
+                </span>
+                <span className="text-[10px] sm:text-xs text-purple-300 font-bold bg-purple-900/60 px-2 py-0.5 rounded-md border border-purple-700/40">
+                  Scene {activeTeleprompterIdx + 1} of {activeScenes.length}
+                </span>
+              </div>
 
-              <div className="flex items-center gap-1.5 shrink-0">
-                {/* Larger, comfortable touch buttons for Prev & Next */}
-                <div className="flex items-center bg-purple-900/90 rounded-xl p-0.5 border border-purple-600/60 shadow-xs">
+              {/* Hide / Show Toggle Button (Guaranteed 100% visible, never clipped) */}
+              <button
+                type="button"
+                onClick={() => setShowTeleprompter(prev => !prev)}
+                className="px-3 py-1 bg-purple-900/90 hover:bg-purple-800 active:scale-95 border border-purple-500/50 rounded-xl text-xs font-black transition flex items-center gap-1.5 text-amber-300 shadow-xs shrink-0"
+                title={showTeleprompter ? "Hide Teleprompter" : "Show Teleprompter"}
+              >
+                {showTeleprompter ? <EyeOff size={14} /> : <Eye size={14} />}
+                <span>{showTeleprompter ? 'Hide' : 'Show'}</span>
+              </button>
+            </div>
+
+            {/* Prompter Body (Only shown when not hidden) */}
+            {showTeleprompter && (
+              <div className="space-y-2 animate-in fade-in duration-150">
+                {/* Current Sentence (Clean, large, high-contrast text) */}
+                <div className="p-2.5 sm:p-3 bg-black/60 rounded-xl border border-purple-500/40 shadow-inner">
+                  <p className="text-xs sm:text-sm font-bold text-amber-100 leading-relaxed">
+                    {activeScenes[activeTeleprompterIdx]?.en || activeScenes[activeTeleprompterIdx]?.text || "Read your story sentence by sentence..."}
+                  </p>
+                </div>
+
+                {/* Big, Touch-Friendly Navigation Controls (Prev / Next) */}
+                <div className="grid grid-cols-2 gap-2">
                   <button
                     type="button"
                     onClick={() => setActiveTeleprompterIdx(prev => Math.max(0, prev - 1))}
                     disabled={activeTeleprompterIdx === 0}
-                    className="px-2.5 sm:px-3 py-1 hover:bg-purple-700 active:scale-95 disabled:opacity-30 rounded-lg text-xs font-black transition flex items-center gap-1 text-purple-100"
-                    title="Previous scene"
+                    className="py-1.5 px-3 bg-purple-800/90 hover:bg-purple-700 active:scale-98 disabled:opacity-30 disabled:pointer-events-none rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 border border-purple-600/50 text-white shadow-xs"
+                    title="Previous sentence"
                   >
-                    <ChevronLeft size={14} className="stroke-[3]" />
-                    <span className="text-[11px] sm:text-xs">Prev</span>
+                    <ChevronLeft size={16} className="stroke-[3]" />
+                    <span>◀ Previous</span>
                   </button>
-
-                  <span className="text-[11px] sm:text-xs text-amber-300 px-2 font-black">
-                    {activeTeleprompterIdx + 1}/{activeScenes.length}
-                  </span>
 
                   <button
                     type="button"
                     onClick={() => setActiveTeleprompterIdx(prev => Math.min(activeScenes.length - 1, prev + 1))}
                     disabled={activeTeleprompterIdx >= activeScenes.length - 1}
-                    className="px-2.5 sm:px-3 py-1 hover:bg-purple-700 active:scale-95 disabled:opacity-30 rounded-lg text-xs font-black transition flex items-center gap-1 text-purple-100"
-                    title="Next scene"
+                    className="py-1.5 px-3 bg-indigo-600 hover:bg-indigo-500 active:scale-98 disabled:opacity-30 disabled:pointer-events-none rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 border border-indigo-400/50 text-white shadow-xs"
+                    title="Next sentence"
                   >
-                    <span className="text-[11px] sm:text-xs">Next</span>
-                    <ChevronRight size={14} className="stroke-[3]" />
+                    <span>Next ▶</span>
+                    <ChevronRight size={16} className="stroke-[3]" />
                   </button>
                 </div>
-
-                {/* Hide / Show Toggle Button */}
-                <button
-                  type="button"
-                  onClick={() => setShowTeleprompter(prev => !prev)}
-                  className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 active:scale-95 border border-slate-600 rounded-xl text-xs font-bold transition flex items-center gap-1 text-slate-200 shadow-xs"
-                  title={showTeleprompter ? "Hide Teleprompter" : "Show Teleprompter"}
-                >
-                  {showTeleprompter ? <EyeOff size={13} /> : <Eye size={13} />}
-                  <span className="text-[11px] sm:text-xs">{showTeleprompter ? 'Hide' : 'Show'}</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Current Sentence (1-2 lines clean, readable, placed above camera) */}
-            {showTeleprompter && (
-              <div className="p-2.5 bg-black/55 rounded-xl border border-purple-500/40 animate-in fade-in duration-150 shadow-inner">
-                <p className="text-xs sm:text-sm font-bold text-amber-100 leading-snug">
-                  {activeScenes[activeTeleprompterIdx]?.en || activeScenes[activeTeleprompterIdx]?.text || "Read your story sentence by sentence..."}
-                </p>
               </div>
             )}
           </div>
