@@ -28,29 +28,31 @@ export const readingHubData = {
     // VOCAB FOCUS: Curated pedagogical target chunks/collocations ONLY — NOT every clickable word.
     // Each item is a meaningful lexical unit with complete entry in WEEK_33_MASTER_DICTIONARY.
     vocab_focus: [
-      "slippery layer",
+      "invisible science force",
       "shoe soles",
-      "rubber soles",
-      "warning signs",
+      "smooth tiles",
+      "slippery layer",
       "reduces friction",
       "stays balanced",
-      "smooth tiles",
-      "wet tiles",
       "school corridor",
+      "wet tiles",
+      "plastic soles",
+      "rubber soles",
       "strong grip",
-      "wet floors"
+      "yellow warning sign"
     ],
-    // GRAMMAR X-RAY: Target Verb Phrases for each paragraph.
-    // paragraph_scope: 1 = Paragraph 1 only, 2 = Paragraph 2 only.
+    // GRAMMAR X-RAY: Selective target structures.
+    // Paragraph 1: Scientific Cause-and-Effect (Present Simple action units)
+    // Paragraph 2: Past Continuous vs Past Simple Action Contrast (A2 Flyers Core Grammar)
     grammar_patterns: [
       {
-        pattern: '\\b(turn into|is|stops you from sliding|walk|grip firmly|stays balanced|spills|spreads out|reduces friction|turning safe floors into)\\b',
-        label: 'Present Simple Verb Phrases (Scientific Principles)',
+        pattern: '\\b(stops you from sliding|stays balanced|reduces friction)\\b',
+        label: 'Present Simple: Scientific Cause & Effect',
         paragraph_scope: 1
       },
       {
-        pattern: '\\b(was running in a big hurry|slipped on the wet tiles|had smooth plastic soles|was walking carefully|rushed to help|noticed|gripped the floor tightly|smiled and pointed|gives a strong grip|steals your friction|rubbed his sore knee and laughed|will walk like a smart scientist)\\b',
-        label: 'Past Continuous & Action Verb Phrases',
+        pattern: '\\b(was running in a big hurry|slipped on the wet tiles|was walking carefully|gripped the floor tightly)\\b',
+        label: 'Past Continuous vs Past Simple (Action in Progress vs Result)',
         paragraph_scope: 2
       }
     ],
@@ -82,31 +84,51 @@ export const readingHubData = {
       {
         id: 1,
         question_en: "What is the invisible science force that stops shoes from sliding on floors?",
-        options: ["Friction", "Gravity", "Wind power"],
+        options: ["Friction", "Gravity", "Wind power", "Magnetic force"],
         answer: "Friction"
       },
       {
         id: 2,
         question_en: "What happens when water spills onto dry smooth tiles?",
-        options: ["It creates a thin slippery layer that reduces friction", "It makes the tiles sticky and hard to move", "It increases friction and stops all movement"],
+        options: [
+          "It creates a thin slippery layer that reduces friction",
+          "It makes the tiles sticky and hard to move",
+          "It increases friction and stops all movement",
+          "It turns the smooth floor into rough sandpaper"
+        ],
         answer: "It creates a thin slippery layer that reduces friction"
       },
       {
         id: 3,
         question_en: "Why did Tom slip when running fast to science class?",
-        options: ["His sneakers had smooth plastic soles with no grip", "His shoes were too big for his feet", "He was carrying heavy books"],
+        options: [
+          "His sneakers had smooth plastic soles with no grip",
+          "His shoes were too big for his feet",
+          "He was carrying a heavy school backpack",
+          "His shoelaces were tied together tightly"
+        ],
         answer: "His sneakers had smooth plastic soles with no grip"
       },
       {
         id: 4,
         question_en: "Why was Jake able to walk safely without sliding on the wet floor?",
-        options: ["His rubber soles gripped the floor tightly", "He held onto the wall with both hands", "He jumped over the wet area"],
+        options: [
+          "His rubber soles gripped the floor tightly",
+          "He held onto the wall with both hands",
+          "He jumped over the wet area",
+          "He walked very fast so he did not touch the water"
+        ],
         answer: "His rubber soles gripped the floor tightly"
       },
       {
         id: 5,
         question_en: "What did the school nurse remind Tom about the yellow warning sign?",
-        options: ["Rubber gives strong grip, but water steals friction", "Running fast is good exercise in the corridor", "Always take off shoes before walking on tiles"],
+        options: [
+          "Rubber gives strong grip, but water steals friction",
+          "Running fast is good exercise in the corridor",
+          "Always take off shoes before walking on wet tiles",
+          "Yellow signs mean the floor is completely dry and safe"
+        ],
         answer: "Rubber gives strong grip, but water steals friction"
       }
     ],
