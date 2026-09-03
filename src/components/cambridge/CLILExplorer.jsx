@@ -102,7 +102,7 @@ export default function CLILExplorer({
   }, [clilData]);
 
   const questionsP1 = useMemo(() => allQuestions.slice(0, 2), [allQuestions]);
-  const questionsP2 = useMemo(() => allQuestions.slice(2, 4), [allQuestions]);
+  const questionsP2 = useMemo(() => allQuestions.slice(2), [allQuestions]);
 
   // Sentence Builder Quest — tap scrambled chunks in correct order
   const [sbIdx, setSbIdx] = useState(0);
@@ -431,7 +431,7 @@ export default function CLILExplorer({
             {/* Paragraph 1 Check Questions */}
             <div className="p-5 sm:p-6 bg-emerald-50/70 rounded-2xl sm:rounded-3xl border border-emerald-200 space-y-4 pt-4">
               <h4 className="text-xs sm:text-sm font-black uppercase text-emerald-900 flex items-center gap-1.5">
-                <HelpCircle size={16} className="text-emerald-600" /> CHECK QUESTIONS (2 Questions)
+                <HelpCircle size={16} className="text-emerald-600" /> CHECK QUESTIONS ({questionsP1.length} Questions)
               </h4>
               <div className="space-y-3.5">
                 {questionsP1.map((q) => {
@@ -512,7 +512,7 @@ export default function CLILExplorer({
             {/* Paragraph 2 Check Questions */}
             <div className="p-5 sm:p-6 bg-teal-50/70 rounded-2xl sm:rounded-3xl border border-teal-200 space-y-4 pt-4">
               <h4 className="text-xs sm:text-sm font-black uppercase text-teal-900 flex items-center gap-1.5">
-                <HelpCircle size={16} className="text-teal-600" /> CHECK QUESTIONS (2 Questions)
+                <HelpCircle size={16} className="text-teal-600" /> CHECK QUESTIONS ({questionsP2.length} Questions)
               </h4>
               <div className="space-y-3.5">
                 {questionsP2.map((q) => {

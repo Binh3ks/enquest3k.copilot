@@ -57,15 +57,15 @@ export const readingHubData = {
     sentence_drills: [
       {
         id: 1,
-        label: "Friction Science Principle",
-        scrambled: ["stops objects", "Friction is a force that", "from sliding on floors"],
-        correct: ["Friction is a force that", "stops objects", "from sliding on floors"]
+        label: "Friction Principle",
+        scrambled: ["stops shoes from sliding", "Friction is a force that", "on dry tiles"],
+        correct: ["Friction is a force that", "stops shoes from sliding", "on dry tiles"]
       },
       {
         id: 2,
-        label: "Corridor Safety Rule",
-        scrambled: ["on dry tiles", "Rubber shoe soles provide good grip", "to prevent accidental slips"],
-        correct: ["Rubber shoe soles provide good grip", "on dry tiles", "to prevent accidental slips"]
+        label: "Rubber Grip Rule",
+        scrambled: ["on wet floors", "Rubber shoe soles provide strong grip", "to stop accidental slips"],
+        correct: ["Rubber shoe soles provide strong grip", "on wet floors", "to stop accidental slips"]
       }
     ],
     glossary: [
@@ -81,38 +81,38 @@ export const readingHubData = {
     check_questions: [
       {
         id: 1,
-        question_en: "What is the science force that stops objects from sliding?",
-        options: ["Friction", "Gravity", "Wind force"],
+        question_en: "What is the invisible science force that stops shoes from sliding on floors?",
+        options: ["Friction", "Gravity", "Wind power"],
         answer: "Friction"
       },
       {
         id: 2,
-        question_en: "Why did Jake not slip while walking down the dry corridor?",
-        options: ["His rubber shoes created high friction with dry floor", "He was holding the wall", "He walked with closed eyes"],
-        answer: "His rubber shoes created high friction with dry floor"
+        question_en: "What happens when water spills onto dry smooth tiles?",
+        options: ["It creates a thin slippery layer that reduces friction", "It makes the tiles sticky and hard to move", "It increases friction and stops all movement"],
+        answer: "It creates a thin slippery layer that reduces friction"
       },
       {
         id: 3,
-        question_en: "What does water act like on a smooth tiled floor?",
-        options: ["A slippery layer that greatly reduces friction", "A solid glue that holds shoes", "A heavy blanket that covers tiles"],
-        answer: "A slippery layer that greatly reduces friction"
+        question_en: "Why did Tom slip when running fast to science class?",
+        options: ["His sneakers had smooth plastic soles with no grip", "His shoes were too big for his feet", "He was carrying heavy books"],
+        answer: "His sneakers had smooth plastic soles with no grip"
       },
       {
         id: 4,
-        question_en: "What did the school put on the wet floor to warn students?",
-        options: ["A yellow warning sign", "A blue rope", "A red carpet"],
-        answer: "A yellow warning sign"
+        question_en: "Why was Jake able to walk safely without sliding on the wet floor?",
+        options: ["His rubber soles gripped the floor tightly", "He held onto the wall with both hands", "He jumped over the wet area"],
+        answer: "His rubber soles gripped the floor tightly"
       },
       {
         id: 5,
-        question_en: "Which type of shoe gives the best grip on a wet floor?",
-        options: ["Rubber-soled sports shoes", "Smooth leather shoes", "Thick socks"],
-        answer: "Rubber-soled sports shoes"
+        question_en: "What did the school nurse remind Tom about the yellow warning sign?",
+        options: ["Rubber gives strong grip, but water steals friction", "Running fast is good exercise in the corridor", "Always take off shoes before walking on tiles"],
+        answer: "Rubber gives strong grip, but water steals friction"
       }
     ],
     critical_thinking: {
-      question_en: "Why is it more dangerous to run in socks on a wooden floor than wearing sports shoes?",
-      hint_en: "Think about friction: socks slide easily on smooth wood, but sports shoes with rubber soles give good grip and high friction."
+      question_en: "Why is it much safer to walk in rubber-soled sports shoes than in smooth plastic shoes on a wet corridor floor?",
+      hint_en: "Think about friction: rubber soles have strong grip that holds surfaces tightly, while smooth plastic soles have no grip and slide easily over the water layer."
     }
   },
   interactive_story: {
