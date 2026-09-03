@@ -442,267 +442,253 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
         </div>
       )}
 
-      {/* ── Main Unified Viewport ── */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 items-start">
+      {/* ── Main Unified Centered Viewport (Aligned directly with camera) ── */}
+      <div className="w-full max-w-3xl mx-auto flex flex-col gap-2.5">
         
-        {/* Left Column (6/12 Desktop, 12/12 Mobile): Teleprompter (TOP) + Camera Preview + Action Buttons + Evaluation */}
-        <div className="w-full md:col-span-6 flex flex-col gap-2">
-
-          {/* ── Teleprompter Dock (Positioned ABOVE camera for natural eye contact & easy reading) ── */}
-          <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-2.5 sm:p-3 rounded-2xl border border-purple-400/40 shadow-md space-y-2">
-            {/* Top Bar: Title + ALWAYS-VISIBLE Hide/Show Button */}
-            <div className="flex items-center justify-between w-full">
-              <div className="flex items-center gap-1.5">
-                <span className="text-amber-400 text-xs sm:text-sm font-black tracking-wider flex items-center gap-1">
-                  📜 PROMPTER
-                </span>
-                <span className="text-[10px] sm:text-xs text-purple-300 font-bold bg-purple-900/60 px-2 py-0.5 rounded-md border border-purple-700/40">
-                  Scene {activeTeleprompterIdx + 1} of {activeScenes.length}
-                </span>
-              </div>
-
-              {/* Hide / Show Toggle Button (Guaranteed 100% visible, never clipped) */}
-              <button
-                type="button"
-                onClick={() => setShowTeleprompter(prev => !prev)}
-                className="px-3 py-1 bg-purple-900/90 hover:bg-purple-800 active:scale-95 border border-purple-500/50 rounded-xl text-xs font-black transition flex items-center gap-1.5 text-amber-300 shadow-xs shrink-0"
-                title={showTeleprompter ? "Hide Teleprompter" : "Show Teleprompter"}
-              >
-                {showTeleprompter ? <EyeOff size={14} /> : <Eye size={14} />}
-                <span>{showTeleprompter ? 'Hide' : 'Show'}</span>
-              </button>
+        {/* ── Teleprompter Dock (Positioned ABOVE camera on both laptop & mobile for direct eye contact) ── */}
+        <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-2 sm:p-2.5 rounded-2xl border border-purple-400/40 shadow-md space-y-1.5">
+          {/* Top Bar: Title + Scene Badge + Hide Button (Fits on 1 line on mobile) */}
+          <div className="flex items-center justify-between w-full gap-1">
+            <div className="flex items-center gap-1.5 min-w-0">
+              <span className="text-amber-400 text-[10px] sm:text-xs font-black tracking-wider flex items-center gap-1 shrink-0">
+                📜 PROMPTER
+              </span>
+              <span className="text-[9px] sm:text-[10.5px] text-purple-200 font-bold bg-purple-900/70 px-1.5 py-0.5 rounded-md border border-purple-600/40 truncate">
+                Scene {activeTeleprompterIdx + 1} of {activeScenes.length}
+              </span>
             </div>
 
-            {/* Prompter Body (Only shown when not hidden) */}
-            {showTeleprompter && (
-              <div className="space-y-2 animate-in fade-in duration-150">
-                {/* Current Sentence (Clean, large, high-contrast text) */}
-                <div className="p-2.5 sm:p-3 bg-black/60 rounded-xl border border-purple-500/40 shadow-inner">
-                  <p className="text-xs sm:text-sm font-bold text-amber-100 leading-relaxed">
-                    {activeScenes[activeTeleprompterIdx]?.en || activeScenes[activeTeleprompterIdx]?.text || "Read your story sentence by sentence..."}
-                  </p>
-                </div>
-
-                {/* Big, Touch-Friendly Navigation Controls (Prev / Next) */}
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setActiveTeleprompterIdx(prev => Math.max(0, prev - 1))}
-                    disabled={activeTeleprompterIdx === 0}
-                    className="py-1.5 px-3 bg-purple-800/90 hover:bg-purple-700 active:scale-98 disabled:opacity-30 disabled:pointer-events-none rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 border border-purple-600/50 text-white shadow-xs"
-                    title="Previous sentence"
-                  >
-                    <ChevronLeft size={16} className="stroke-[3]" />
-                    <span>◀ Previous</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setActiveTeleprompterIdx(prev => Math.min(activeScenes.length - 1, prev + 1))}
-                    disabled={activeTeleprompterIdx >= activeScenes.length - 1}
-                    className="py-1.5 px-3 bg-indigo-600 hover:bg-indigo-500 active:scale-98 disabled:opacity-30 disabled:pointer-events-none rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 border border-indigo-400/50 text-white shadow-xs"
-                    title="Next sentence"
-                  >
-                    <span>Next ▶</span>
-                    <ChevronRight size={16} className="stroke-[3]" />
-                  </button>
-                </div>
-              </div>
-            )}
+            {/* Hide / Show Toggle Button (Compact, never wraps) */}
+            <button
+              type="button"
+              onClick={() => setShowTeleprompter(prev => !prev)}
+              className="px-2 sm:px-2.5 py-0.5 bg-purple-900/90 hover:bg-purple-800 active:scale-95 border border-purple-500/50 rounded-lg text-[10px] sm:text-xs font-bold transition flex items-center gap-1 text-amber-300 shadow-xs shrink-0"
+              title={showTeleprompter ? "Hide Teleprompter" : "Show Teleprompter"}
+            >
+              {showTeleprompter ? <EyeOff size={12} /> : <Eye size={12} />}
+              <span>{showTeleprompter ? 'Hide' : 'Show'}</span>
+            </button>
           </div>
 
-          {/* Live Camera View Box (Positioned directly under prompter) */}
-          <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-slate-950 rounded-2xl overflow-hidden shadow-md border-2 border-slate-300 flex items-center justify-center">
-            
-            {/* Live Camera View */}
-            {!recordedMediaUrl && recordMode === 'video' && (
-              <>
-                <video
-                  ref={previewVideoRef}
-                  autoPlay
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover transform -scale-x-100"
-                />
-                {!cameraActive && (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white/80 gap-1.5 bg-slate-900">
-                    <Camera size={28} className="animate-pulse text-purple-400" />
-                    <span className="text-xs font-bold">Connecting Camera...</span>
-                  </div>
-                )}
-              </>
-            )}
-
-            {/* Audio Mode Graphic View */}
-            {!recordedMediaUrl && recordMode === 'audio' && (
-              <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-indigo-950 to-slate-900 text-white space-y-2 p-3">
-                <div className={`w-14 h-14 rounded-full bg-indigo-600/30 border-2 border-indigo-400 flex items-center justify-center shadow-lg ${isRecording ? 'animate-pulse scale-110' : ''}`}>
-                  <Mic size={24} className="text-indigo-300" />
-                </div>
-                <span className="text-xs font-bold text-indigo-200">🎙️ Audio Recording Mode</span>
+          {/* Prompter Body (Only shown when not hidden) */}
+          {showTeleprompter && (
+            <div className="space-y-1.5 animate-in fade-in duration-150">
+              {/* Current Sentence (Enlarged font size for easy reading from eye distance) */}
+              <div className="p-2.5 sm:p-3.5 bg-black/60 rounded-xl border border-purple-500/40 shadow-inner text-center sm:text-left">
+                <p className="text-sm sm:text-base md:text-lg font-bold text-amber-100 leading-snug tracking-wide">
+                  {activeScenes[activeTeleprompterIdx]?.en || activeScenes[activeTeleprompterIdx]?.text || "Read your story sentence by sentence..."}
+                </p>
               </div>
-            )}
 
-            {/* Recorded Video Playback View */}
-            {recordedMediaUrl && recordedMediaType === 'video' && recordedMediaUrl !== 'typed_mode' && (
+              {/* Compact Prev / Next Navigation Controls */}
+              <div className="grid grid-cols-2 gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => setActiveTeleprompterIdx(prev => Math.max(0, prev - 1))}
+                  disabled={activeTeleprompterIdx === 0}
+                  className="py-1 px-2.5 bg-purple-800/90 hover:bg-purple-700 active:scale-98 disabled:opacity-30 disabled:pointer-events-none rounded-lg text-[11px] sm:text-xs font-black transition flex items-center justify-center gap-1 border border-purple-600/50 text-white shadow-xs"
+                  title="Previous sentence"
+                >
+                  <ChevronLeft size={13} className="stroke-[3]" />
+                  <span>◀ Prev</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setActiveTeleprompterIdx(prev => Math.min(activeScenes.length - 1, prev + 1))}
+                  disabled={activeTeleprompterIdx >= activeScenes.length - 1}
+                  className="py-1 px-2.5 bg-indigo-600 hover:bg-indigo-500 active:scale-98 disabled:opacity-30 disabled:pointer-events-none rounded-lg text-[11px] sm:text-xs font-black transition flex items-center justify-center gap-1 border border-indigo-400/50 text-white shadow-xs"
+                  title="Next sentence"
+                >
+                  <span>Next ▶</span>
+                  <ChevronRight size={13} className="stroke-[3]" />
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Live Camera View Box (Centered directly under prompter, squarely facing camera lens) */}
+        <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] max-h-[460px] bg-slate-950 rounded-2xl overflow-hidden shadow-md border-2 border-slate-300 flex items-center justify-center">
+          
+          {/* Live Camera View */}
+          {!recordedMediaUrl && recordMode === 'video' && (
+            <>
               <video
-                src={recordedMediaUrl}
-                controls
+                ref={previewVideoRef}
                 autoPlay
+                muted
                 playsInline
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transform -scale-x-100"
               />
-            )}
-
-            {/* Recorded Audio Playback View */}
-            {recordedMediaUrl && (recordedMediaType === 'audio' || recordedMediaUrl === 'typed_mode') && (
-              <div className="w-full h-full flex flex-col items-center justify-center bg-indigo-950 text-white p-3 space-y-2">
-                <CheckCircle2 size={36} className="text-emerald-400" />
-                <span className="text-xs font-black">Audio Clip Ready</span>
-                {recordedMediaUrl !== 'typed_mode' && (
-                  <audio src={recordedMediaUrl} controls className="w-full max-w-xs" />
-                )}
-              </div>
-            )}
-
-            {/* Countdown Overlay (3, 2, 1) */}
-            {countdown !== null && (
-              <div className="absolute inset-0 bg-black/75 flex items-center justify-center z-30">
-                <span className="text-6xl sm:text-7xl font-black text-amber-400 animate-ping">
-                  {countdown}
-                </span>
-              </div>
-            )}
-
-            {/* Live Recording HUD */}
-            {isRecording && (
-              <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5 px-2.5 py-1 bg-rose-600 text-white font-mono font-black text-xs rounded-lg shadow animate-pulse z-20">
-                <div className="w-2 h-2 rounded-full bg-white animate-ping" />
-                REC {formatTime(recordingSeconds)}
-              </div>
-            )}
-          </div>
-
-          {/* Action Buttons Dock */}
-          <div className="space-y-1.5">
-            {!isRecording && !recordedMediaUrl && (
-              <button
-                type="button"
-                onClick={initiateRecording}
-                disabled={countdown !== null}
-                className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-xl font-black text-xs sm:text-sm shadow-md active:scale-98 transition flex items-center justify-center gap-2"
-              >
-                {recordMode === 'video' ? <Video size={16} /> : <Mic size={16} />}
-                {recordMode === 'video' ? '🎬 START RECORDING' : '🎙️ START AUDIO RECORDING'}
-              </button>
-            )}
-
-            {isRecording && (
-              <button
-                type="button"
-                onClick={stopRecording}
-                className="w-full py-2.5 sm:py-3 bg-rose-600 hover:bg-rose-500 text-white rounded-xl font-black text-xs sm:text-sm shadow-md active:scale-98 transition flex items-center justify-center gap-2 animate-bounce"
-              >
-                <Square size={16} fill="currentColor" /> ⏹️ FINISH ({formatTime(recordingSeconds)})
-              </button>
-            )}
-
-            {recordedMediaUrl && (
-              <div className="space-y-1.5">
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={handleRetake}
-                    className="py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-xs font-black transition flex items-center justify-center gap-1"
-                  >
-                    <RefreshCw size={12} /> Retake
-                  </button>
-                  {recordedMediaUrl !== 'typed_mode' && (
-                    <a
-                      href={recordedMediaUrl}
-                      download={`engquest_story_video_${Date.now()}.webm`}
-                      className="py-2 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 rounded-lg text-xs font-black transition flex items-center justify-center gap-1 text-center"
-                    >
-                      <Download size={12} /> Save Clip 💾
-                    </a>
-                  )}
-                </div>
-
-                <div className="py-2 bg-emerald-600 text-white font-black text-xs rounded-lg text-center shadow-sm flex items-center justify-center gap-1.5">
-                  <CheckCircle2 size={14} /> Video Recorded! +50 XP ⭐
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Evaluation / Feedback banner (Always visible under action buttons on mobile & desktop) */}
-          {evalResult && (
-            <div className={`p-3 rounded-2xl border ${
-              evalResult.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'
-            } text-xs font-black space-y-2 animate-in fade-in`}>
-              <div className="flex items-center justify-between">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 size={16} className={evalResult.isCorrect ? "text-emerald-600" : "text-amber-600"} />
-                  {evalResult.feedback}
-                </span>
-                <span className="px-2.5 py-1 bg-white rounded-lg border text-xs font-black shadow-2xs shrink-0">
-                  Score: {evalResult.score}%
-                </span>
-              </div>
-
-              {evalResult.recognizedScenes !== undefined && (
-                <div className="flex items-center gap-2 pt-1 text-[11px] font-bold text-slate-700 flex-wrap">
-                  <span className="px-2 py-0.5 rounded-md bg-white border border-slate-200">
-                    🎬 Scenes Covered: {evalResult.recognizedScenes} / {evalResult.totalScenes || 5}
-                  </span>
-                  {evalResult.breakdown?.connectors !== undefined && (
-                    <span className="px-2 py-0.5 rounded-md bg-white border border-slate-200">
-                      🔗 Connectors: {evalResult.breakdown.connectors}
-                    </span>
-                  )}
+              {!cameraActive && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white/80 gap-1.5 bg-slate-900">
+                  <Camera size={28} className="animate-pulse text-purple-400" />
+                  <span className="text-xs font-bold">Connecting Camera...</span>
                 </div>
               )}
+            </>
+          )}
 
-              {spokenTranscript && (
-                <div className="p-2 bg-white/80 rounded-xl border border-slate-200/60 text-[10.5px] font-medium text-slate-700">
-                  <span className="font-bold text-slate-900 block mb-0.5">🎙️ AI Recognized Speech:</span>
-                  <p className="italic leading-relaxed">{spokenTranscript}</p>
-                </div>
+          {/* Audio Mode Graphic View */}
+          {!recordedMediaUrl && recordMode === 'audio' && (
+            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-indigo-950 to-slate-900 text-white space-y-2 p-3">
+              <div className={`w-14 h-14 rounded-full bg-indigo-600/30 border-2 border-indigo-400 flex items-center justify-center shadow-lg ${isRecording ? 'animate-pulse scale-110' : ''}`}>
+                <Mic size={24} className="text-indigo-300" />
+              </div>
+              <span className="text-xs font-bold text-indigo-200">🎙️ Audio Recording Mode</span>
+            </div>
+          )}
+
+          {/* Recorded Video Playback View */}
+          {recordedMediaUrl && recordedMediaType === 'video' && recordedMediaUrl !== 'typed_mode' && (
+            <video
+              src={recordedMediaUrl}
+              controls
+              autoPlay
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          )}
+
+          {/* Recorded Audio Playback View */}
+          {recordedMediaUrl && (recordedMediaType === 'audio' || recordedMediaUrl === 'typed_mode') && (
+            <div className="w-full h-full flex flex-col items-center justify-center bg-indigo-950 text-white p-3 space-y-2">
+              <CheckCircle2 size={36} className="text-emerald-400" />
+              <span className="text-xs font-black">Audio Clip Ready</span>
+              {recordedMediaUrl !== 'typed_mode' && (
+                <audio src={recordedMediaUrl} controls className="w-full max-w-xs" />
               )}
             </div>
           )}
 
-          {/* Typing fallback */}
-          <div className="pt-1">
-            <MicFallbackInput
-              onSubmit={handleManualSubmit}
-              placeholder="Or type your story script here..."
-              buttonLabel="Submit Script →"
-              color="purple"
-            />
-          </div>
+          {/* Countdown Overlay (3, 2, 1) */}
+          {countdown !== null && (
+            <div className="absolute inset-0 bg-black/75 flex items-center justify-center z-30">
+              <span className="text-6xl sm:text-7xl font-black text-amber-400 animate-ping">
+                {countdown}
+              </span>
+            </div>
+          )}
+
+          {/* Live Recording HUD */}
+          {isRecording && (
+            <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5 px-2.5 py-1 bg-rose-600 text-white font-mono font-black text-xs rounded-lg shadow animate-pulse z-20">
+              <div className="w-2 h-2 rounded-full bg-white animate-ping" />
+              REC {formatTime(recordingSeconds)}
+            </div>
+          )}
         </div>
 
-        {/* Right Column: Full Story Teleprompter Cards (Desktop only, hidden on mobile) */}
-        <div className="hidden md:flex md:col-span-6 flex-col gap-2 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between pb-1 border-b border-slate-100">
+        {/* Action Buttons Dock */}
+        <div className="space-y-1.5">
+          {!isRecording && !recordedMediaUrl && (
+            <button
+              type="button"
+              onClick={initiateRecording}
+              disabled={countdown !== null}
+              className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-xl font-black text-xs sm:text-sm shadow-md active:scale-98 transition flex items-center justify-center gap-2"
+            >
+              {recordMode === 'video' ? <Video size={16} /> : <Mic size={16} />}
+              {recordMode === 'video' ? '🎬 START RECORDING' : '🎙️ START AUDIO RECORDING'}
+            </button>
+          )}
+
+          {isRecording && (
+            <button
+              type="button"
+              onClick={stopRecording}
+              className="w-full py-2.5 sm:py-3 bg-rose-600 hover:bg-rose-500 text-white rounded-xl font-black text-xs sm:text-sm shadow-md active:scale-98 transition flex items-center justify-center gap-2 animate-bounce"
+            >
+              <Square size={16} fill="currentColor" /> ⏹️ FINISH ({formatTime(recordingSeconds)})
+            </button>
+          )}
+
+          {recordedMediaUrl && (
+            <div className="space-y-1.5">
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={handleRetake}
+                  className="py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-xs font-black transition flex items-center justify-center gap-1"
+                >
+                  <RefreshCw size={12} /> Retake
+                </button>
+                {recordedMediaUrl !== 'typed_mode' && (
+                  <a
+                    href={recordedMediaUrl}
+                    download={`engquest_story_video_${Date.now()}.webm`}
+                    className="py-2 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 rounded-lg text-xs font-black transition flex items-center justify-center gap-1 text-center"
+                  >
+                    <Download size={12} /> Save Clip 💾
+                  </a>
+                )}
+              </div>
+
+              <div className="py-2 bg-emerald-600 text-white font-black text-xs rounded-lg text-center shadow-sm flex items-center justify-center gap-1.5">
+                <CheckCircle2 size={14} /> Video Recorded! +50 XP ⭐
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Evaluation / Feedback banner */}
+        {evalResult && (
+          <div className={`p-3 rounded-2xl border ${
+            evalResult.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'
+          } text-xs font-black space-y-2 animate-in fade-in`}>
+            <div className="flex items-center justify-between">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 size={16} className={evalResult.isCorrect ? "text-emerald-600" : "text-amber-600"} />
+                {evalResult.feedback}
+              </span>
+              <span className="px-2.5 py-1 bg-white rounded-lg border text-xs font-black shadow-2xs shrink-0">
+                Score: {evalResult.score}%
+              </span>
+            </div>
+
+            {evalResult.recognizedScenes !== undefined && (
+              <div className="flex items-center gap-2 pt-1 text-[11px] font-bold text-slate-700 flex-wrap">
+                <span className="px-2 py-0.5 rounded-md bg-white border border-slate-200">
+                  🎬 Scenes Covered: {evalResult.recognizedScenes} / {evalResult.totalScenes || 5}
+                </span>
+                {evalResult.breakdown?.connectors !== undefined && (
+                  <span className="px-2 py-0.5 rounded-md bg-white border border-slate-200">
+                    🔗 Connectors: {evalResult.breakdown.connectors}
+                  </span>
+                )}
+              </div>
+            )}
+
+            {spokenTranscript && (
+              <div className="p-2 bg-white/80 rounded-xl border border-slate-200/60 text-[10.5px] font-medium text-slate-700">
+                <span className="font-bold text-slate-900 block mb-0.5">🎙️ AI Recognized Speech:</span>
+                <p className="italic leading-relaxed">{spokenTranscript}</p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* ── Story Teleprompter (Read Aloud) (Placed below video on both mobile & laptop with larger font) ── */}
+        <div className="flex flex-col gap-2 bg-white p-3 sm:p-4 rounded-2xl border border-slate-200 shadow-sm mt-1">
+          <div className="flex items-center justify-between pb-1.5 border-b border-slate-100">
             <div className="flex items-center gap-1.5">
-              <span className="text-sm">📜</span>
-              <span className="text-xs font-black uppercase text-purple-900 tracking-wider">
-                Full Story Script
+              <span className="text-sm sm:text-base">📜</span>
+              <span className="text-xs sm:text-sm font-black uppercase text-purple-900 tracking-wider">
+                Story Teleprompter (Read Aloud)
               </span>
             </div>
             <button
               type="button"
               onClick={() => speakText(fullScriptText)}
-              className="px-2 py-0.5 bg-purple-100 hover:bg-purple-200 text-purple-950 font-bold rounded-lg text-[10px] flex items-center gap-1 transition active:scale-95"
+              className="px-2.5 py-1 bg-purple-100 hover:bg-purple-200 text-purple-950 font-bold rounded-lg text-xs flex items-center gap-1 transition active:scale-95"
             >
-              <Volume2 size={11} className="text-purple-700" /> Listen
+              <Volume2 size={13} className="text-purple-700" /> Listen All
             </button>
           </div>
 
-          {/* 5 Story Scenes */}
-          <div className="space-y-2 max-h-[360px] overflow-y-auto pr-1">
+          {/* 5 Story Scenes (Enhanced font size for superior readability) */}
+          <div className="space-y-2.5 max-h-[380px] overflow-y-auto pr-1">
             {activeScenes.map((scene, idx) => {
               const func = scene.narrative_function || FUNC_ORDER[idx] || 'setting';
               const style = NARRATIVE_STYLES[func] || NARRATIVE_STYLES.setting;
@@ -711,28 +697,38 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
               return (
                 <div
                   key={scene.id || idx}
-                  className={`p-2 rounded-xl border ${style.bg} ${style.border} space-y-1`}
+                  className={`p-2.5 sm:p-3 rounded-xl border ${style.bg} ${style.border} space-y-1`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className={`px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider ${style.badge}`}>
+                    <span className={`px-2 py-0.5 rounded-md text-[10px] sm:text-xs font-black uppercase tracking-wider ${style.badge}`}>
                       {style.label}
                     </span>
                     <button
                       type="button"
                       onClick={() => speakText(sceneText)}
-                      className="p-0.5 hover:bg-white/80 rounded-md text-slate-600 transition"
+                      className="p-1 hover:bg-white/80 rounded-md text-slate-600 transition"
                       title="Hear this sentence"
                     >
-                      <Volume2 size={12} />
+                      <Volume2 size={14} />
                     </button>
                   </div>
-                  <p className={`text-xs font-medium leading-relaxed ${style.text}`}>
+                  <p className={`text-xs sm:text-sm md:text-base font-medium leading-relaxed ${style.text}`}>
                     {sceneText}
                   </p>
                 </div>
               );
             })}
           </div>
+        </div>
+
+        {/* Typing fallback */}
+        <div className="pt-1">
+          <MicFallbackInput
+            onSubmit={handleManualSubmit}
+            placeholder="Or type your story script here..."
+            buttonLabel="Submit Script →"
+            color="purple"
+          />
         </div>
       </div>
     </div>
