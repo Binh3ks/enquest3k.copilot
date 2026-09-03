@@ -26,7 +26,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
   const audioRef = useRef(null);
 
   const activeData = customData || propData || {};
-  const notepadTitle = title || activeData?.title || "Official Cambridge Listening Part 2 Notepad";
+  const notepadTitle = title || activeData?.title || "Listening Part 2 Notepad";
 
   const exampleObj = useMemo(() => {
     if (activeData?.example) {
@@ -133,56 +133,40 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto my-2 bg-amber-50/90 rounded-2xl sm:rounded-3xl border-2 border-amber-200 shadow-md p-3.5 sm:p-5 relative overflow-hidden font-sans space-y-3">
-      {/* Top Notepad Spiral Binding Effect */}
-      <div className="absolute top-0 left-0 right-0 h-4 bg-amber-200/80 flex justify-around items-center px-4">
+    <div className="w-full max-w-4xl mx-auto my-1 p-3 sm:p-5 bg-gradient-to-b from-amber-50 to-orange-50/50 rounded-2xl sm:rounded-3xl border-2 border-amber-200 shadow-md font-sans space-y-2.5">
+      {/* Visual Spiral Binding top holes */}
+      <div className="flex justify-around items-center px-4 py-1 border-b-2 border-dashed border-amber-300">
         {[...Array(12)].map((_, i) => (
           <div key={i} className="w-2 h-2 rounded-full bg-amber-700 shadow-inner"></div>
         ))}
       </div>
 
-      <div className="pt-2">
+      <div className="pt-1">
         {/* Cambridge Exam Header */}
-        <div className="bg-gradient-to-r from-amber-900 to-slate-900 text-white px-4 py-2.5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-sm mb-3">
+        <div className="bg-gradient-to-r from-amber-900 to-slate-900 text-white px-3.5 py-2 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 shadow-sm mb-2.5">
           <div>
-            <span className="text-[10px] font-black text-amber-300 uppercase tracking-wider block">Official Cambridge Assessment</span>
-            <h2 className="text-sm sm:text-base font-black text-white flex items-center gap-2">
-              🎧 CAMBRIDGE A2 FLYERS — LISTENING PART 2
+            <h2 className="text-xs sm:text-sm font-bold text-slate-300 flex items-center gap-1.5">
+              🎧 Cambridge A2 Flyers Practice — Listening Part 2
             </h2>
           </div>
-          <p className="text-[11px] text-slate-200 font-medium">
-            Listen and write words or numbers. There is one example.
+          <p className="text-xs sm:text-sm font-black text-amber-300">
+            👉 Listen and write words or numbers. There is one example.
           </p>
         </div>
 
         {/* Compact Header & Audio Bar */}
         <div className="flex items-center justify-between border-b border-amber-200 pb-2 mb-2.5 flex-wrap gap-2">
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => {
-                window.location.href = `/week/${weekNumber || 33}/hub/1`;
-              }}
-              className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 rounded-xl text-xs font-black flex items-center gap-1 transition active:scale-95 shadow shrink-0"
-            >
-              ← Map
-            </button>
             <FlyersListeningPlayButton
               partNumber={2}
               audioUrl={audioUrl}
               script={fullAudioPassage || notepadTitle}
               weekNumber={weekNumber || 33}
             />
-            <ExamIntroAudioButton
-              weekNumber={weekNumber || 33}
-              introId="exam_intro_L2"
-              introText="Listen and write. There is one example."
-            />
             <h3 className="text-xs sm:text-sm font-black text-amber-950">
               {notepadTitle} (5 Notes)
             </h3>
-          </div>
-
+          </div> 
           <button
             type="button"
             onClick={handleReplayMasterAudio}

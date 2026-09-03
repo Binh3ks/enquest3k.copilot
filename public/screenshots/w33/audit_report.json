@@ -1,0 +1,444 @@
+[
+  {
+    "quest": {
+      "id": "hub_map",
+      "url": "/week/33/hub/1",
+      "name": "Quest Map (Day 1-5)"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [],
+      "buttons": [
+        "Arcade",
+        "Words",
+        "Co-op",
+        "📖",
+        "2",
+        "3",
+        "4",
+        "5",
+        "▶ Continue",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "🦊 LEXIO TRIP 33 • 0/15 Arcade Words Co-op 🦊 Welcome to Trip 33! Your language adventure begins here. 5 stations, 15 quests — starting from Story World! 🗺️✨ › › › › 📖 📖 Story World ▶ START HERE 2 🔒 Knowledge Lab 3 🔒 Battle Arena 4 🔒 Creator Studio 5 🔒 Boss Castle Welcome! Ready for Day 1? 🌟 ▶ Continue 🏰 VICTORY (W156) UPGRADE PLAN",
+      "isErrorScreen": false,
+      "bodyLength": 342
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "gear1_webtoon",
+      "url": "/week/33/task/gear1_webtoon",
+      "name": "Quest 1: Scene Explorer (Webtoon)"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [],
+      "buttons": [
+        "Map",
+        "?",
+        "?",
+        "?",
+        "Listen to Scene",
+        "◀ Previous",
+        "Next ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 📚 Scene Explorer Milestone 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) ? ? ? Listen to Scene Jake was walking carefully down the school corridor after science class. ◀ Previous Scene 1 of 5 Next ▶ UPGRADE PLAN",
+      "isErrorScreen": false,
+      "bodyLength": 253
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "gear2_karaoke",
+      "url": "/week/33/task/gear2_karaoke",
+      "name": "Quest 2: Voice Shadow (Karaoke)"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [],
+      "buttons": [
+        "Map",
+        "Full Audio",
+        "🔊 Listen Model Audio",
+        "🎙️ Voice Shadow",
+        "🎯 AI Pronunciation & Intonation Coach (Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ) Show Guide",
+        "◀ Prev",
+        "Next ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 🎧 Voice Shadow Milestone 🎙️ Tap any sentence to listen & practice word-by-word karaoke ⭐ 0/8 Full Audio Sentence 1/8 Jake /ʤeɪk// was //wəz// walking //ˈwɔːkɪŋ// carefully //ˈkeəfəli// down //daʊn// the //ðə// school //skuːl// corridor //ˈkɒrɪdɔː// after //ˈɑːftə// science //ˈsaɪəns// class. //klɑːs/ 🔊 Listen Model Audio 🎙️ Voice Shadow 🎧 Please wear headphones during shadowing for the cl",
+      "isErrorScreen": false,
+      "bodyLength": 529
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "gear3_retell",
+      "url": "/week/33/task/gear3_retell",
+      "name": "Quest 3: Story Retell"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [],
+      "buttons": [
+        "Map",
+        "after science class",
+        "walking carefully",
+        "school corridor",
+        "💡 Show Sentence Hint (10s)",
+        "RECORD",
+        "Microphone not working? Type instead",
+        "◀ Previous",
+        "Next Question ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 1 of 5 \"Where and when did the story start?\" after science class walking carefully school corridor 💡 Show Sentence Hint (10s) RECORD Tap RECORD to answer Nova Microphone not working? Type instead ◀ Previous Next Question ▶ UPGRADE PLAN",
+      "isErrorScreen": false,
+      "bodyLength": 289
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "gear4_clil",
+      "url": "/week/33/task/gear4_clil",
+      "name": "Quest 4: Fact Finder (CLIL)"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [
+        "CHECK QUESTIONS (2 QUESTIONS)"
+      ],
+      "buttons": [
+        "Map",
+        "Science LV.1",
+        "🔤 Vocab Focus",
+        "🔬 Grammar X-Ray",
+        "🔊 Listen to whole text",
+        "🎧 Listen to this part",
+        "A Gravity",
+        "B Wind force",
+        "C Friction",
+        "A He walked with closed eyes",
+        "B He was holding the wall",
+        "C His rubber shoes created high friction with dry floor",
+        "Next: Part 2 ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 🌐 Fact Finder LV.1 Milestone 🔬 Part 1: Why Wet Floors Are Slippery Step 1 of 3 Science LV.1 MODE: 🔤 Vocab Focus 🔬 Grammar X-Ray 🔊 Listen to whole text 🎧 Listen to this part KEY COLLOCATIONS & CHUNKS (11) Interactive Word Bank slippery layer shoe soles rubber soles warning signs reduces friction stays balanced smooth tiles wet tiles school corridor strong grip wet floors SCIENCE & NATURE ",
+      "isErrorScreen": false,
+      "bodyLength": 1707
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "science_lab",
+      "url": "/week/33/task/science_lab",
+      "name": "Quest 5: Action Lab"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [
+        "Corridor Friction & Safety Physics Lab",
+        "READY FOR\nSCIENCE LAB?"
+      ],
+      "buttons": [
+        "Map",
+        "▶ START",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 🧪 Action Lab +50 XP 🧪 Corridor Friction & Safety Physics Lab 80s 0 PTS 🧪 READY FOR SCIENCE LAB? ▶ START UPGRADE PLAN",
+      "isErrorScreen": false,
+      "bodyLength": 123
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "science_report",
+      "url": "/week/33/task/science_report",
+      "name": "Quest 6: Discovery Report"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [
+        "Corridor Friction & Safety Discovery Report"
+      ],
+      "buttons": [
+        "Map",
+        "1. Observe",
+        "2. Clue",
+        "3. Sentence",
+        "4. Report",
+        "💧 Wet Corridor Floor",
+        "👟 Rubber Shoe Soles",
+        "⚠️ Yellow Caution Sign",
+        "Next: Pick Science Clue",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 📝 Discovery Report +50 XP SCIENCE DETECTIVE Week 33 • Discovery Report Corridor Friction & Safety Discovery Report 1. Observe 2. Clue 3. Sentence 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to observe what happened! 💧 Wet Corridor Floor 👟 Rubber Shoe Soles ⚠️ Yellow Caution Sign Next: Pick Science Clue UPGRADE PLAN",
+      "isErrorScreen": false,
+      "bodyLength": 345
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "word_blitz",
+      "url": "/week/33/task/word_blitz",
+      "name": "Quest 7: Speed Match (Word Blitz)"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [
+        "READY FOR\nWORD BLITZ?"
+      ],
+      "buttons": [
+        "Map",
+        "▶ START",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 60s 0 PTS ⚡ READY FOR WORD BLITZ? ▶ START UPGRADE PLAN",
+      "isErrorScreen": false,
+      "bodyLength": 116
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "sentence_smash",
+      "url": "/week/33/task/sentence_smash",
+      "name": "Quest 8: Grammar Duel (Sentence Smash)"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [
+        "Build a past continuous sentence with 'While'.",
+        "READY FOR\nSENTENCE SMASH?"
+      ],
+      "buttons": [
+        "Map",
+        "▶ START",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 🧱 Grammar Duel +50 XP 🧱 Build a past continuous sentence with 'While'. 45s 0 PTS 1/5 🧱 READY FOR SENTENCE SMASH? ▶ START UPGRADE PLAN",
+      "isErrorScreen": false,
+      "bodyLength": 140
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "math_quest",
+      "url": "/week/33/task/math_quest",
+      "name": "Quest 9: Math Quest (Bar Model)"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [
+        "Math Quest (Singapore Bar Model)",
+        "READY FOR\nMATH QUEST?"
+      ],
+      "buttons": [
+        "Map",
+        "▶ START",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 📐 READY FOR MATH QUEST? ▶ START UPGRADE PLAN",
+      "isErrorScreen": false,
+      "bodyLength": 121
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "story_writer",
+      "url": "/week/33/task/story_writer",
+      "name": "Quest 10: Story Writer (Part 7)"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [],
+      "buttons": [
+        "Map",
+        "1 MODEL",
+        "2 BUILD",
+        "3 WRITE",
+        "Listen",
+        "🔒 ★ LOCKED: In the beginning,",
+        "+ Jake",
+        "+ was walking carefully",
+        "+ down the school corridor",
+        "Sentence Hint",
+        "Previous Scene",
+        "Next Scene",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map ✏️ Story Writer +50 XP CAMBRIDGE A2 FLYERS — READING & WRITING PART 7 Look at the three pictures. Write about this story. Write 20 or more words. MODEL Scene 1 of 3 1 MODEL 2 BUILD 3 WRITE SCENE 1/3 • MODEL Listen 🔗 LINK YOUR SENTENCES: Connectors join your three pictures into ONE story. 🔒 ★ LOCKED: In the beginning, (Pre-set starting connector for Scene 1) 💡 TAP WORDS TO INSERT (TAP IN ORD",
+      "isErrorScreen": false,
+      "bodyLength": 636
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "broadcast_studio",
+      "url": "/week/33/task/broadcast_studio",
+      "name": "Quest 11: Video Challenge (Broadcast)"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [
+        "Record yourself retelling your story!"
+      ],
+      "buttons": [
+        "Map",
+        "🎧 Exam Intro",
+        "Video",
+        "Audio",
+        "🎙️ START AUDIO RECORDING",
+        "Full Audio",
+        "Microphone not working? Type instead",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 📹 Video Challenge Milestone 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). 🎧 Exam Intro Video Audio ⚠️ Camera not available or access denied. Switched to audio mode. 🎙️ Audio Recording Mode 🎙️ START AUDIO RECORDING 📜 STORY TELEPROMPTER (READ ALOUD) Full Audio SCENE 1: SETTING Look at the first scene and describe where and when the story began. SCENE 2: A",
+      "isErrorScreen": false,
+      "bodyLength": 681
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "info_exchange",
+      "url": "/week/33/task/info_exchange",
+      "name": "Quest 12: Info Exchange (Speaking P2)"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [
+        "Phase 1: Ask Questions from Cues"
+      ],
+      "buttons": [
+        "Map",
+        "📋 Table A (You Ask)",
+        "🎙️ Table B (You Answer)",
+        "▶ Play Model Dialogue",
+        "Need a grammar hint?",
+        "SPEAK",
+        "Microphone not working? Type instead",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 🔄 Info Exchange +20 XP SPEAKING PRACTICE Cue 1 / 4 Phase 1: Ask Questions from Cues 📋 Table A (You Ask) 🎙️ Table B (You Answer) MODEL DIALOGUE: Listen to examiner & candidate conversation example ▶ Play Model Dialogue 📄 Tom's Accident CANDIDATE'S QUESTION CARD (ASK EXAMINER) 01. where / get injured? ? 02. what / hurt? ? 03. when / accident happen? ? 04. who / helped tom? ? CUE PROMPT (1/4)",
+      "isErrorScreen": false,
+      "bodyLength": 590
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "boss_listening",
+      "url": "/week/33/task/boss_listening",
+      "name": "Quest 13: Boss Listening Shield"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [
+        "Master Soundwave Nova"
+      ],
+      "buttons": [
+        "Map",
+        "← Map",
+        "ENTER BOSS BATTLE NOW",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 🎧 Listening Shield (L1 & L2) Milestone 🎧 CYCLE 1/5 • WEEK 33 4 PARTS Master Soundwave Nova ← Map 0 Shields MISSION OBJECTIVE Cambridge A2 Flyers ~18m • Instant official Cambridge score ENTER BOSS BATTLE NOW UPGRADE PLAN",
+      "isErrorScreen": false,
+      "bodyLength": 225
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "boss_reading",
+      "url": "/week/33/task/boss_reading",
+      "name": "Quest 14: Boss Reading & Writing Shield"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [
+        "Master Soundwave Nova"
+      ],
+      "buttons": [
+        "Map",
+        "← Map",
+        "ENTER BOSS BATTLE NOW",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 📖 Reading & Writing Shield (R1) Milestone 🎧 CYCLE 1/5 • WEEK 33 4 PARTS Master Soundwave Nova ← Map 0 Shields MISSION OBJECTIVE Cambridge A2 Flyers ~18m • Instant official Cambridge score ENTER BOSS BATTLE NOW UPGRADE PLAN",
+      "isErrorScreen": false,
+      "bodyLength": 228
+    },
+    "errors": [],
+    "consoleLogs": []
+  },
+  {
+    "quest": {
+      "id": "weekly_review",
+      "url": "/week/33/task/weekly_review",
+      "name": "Quest 15: Speaking & Passport Review"
+    },
+    "success": true,
+    "data": {
+      "title": "EngQuest: Kids Edition",
+      "headings": [
+        "Master Soundwave Nova"
+      ],
+      "buttons": [
+        "Map",
+        "← Map",
+        "ENTER BOSS BATTLE NOW",
+        "UPGRADE PLAN"
+      ],
+      "bodySnippet": "Map 🏆 Speaking & Passport (S1) Milestone 🎧 CYCLE 1/5 • WEEK 33 4 PARTS Master Soundwave Nova ← Map 0 Shields MISSION OBJECTIVE Cambridge A2 Flyers ~18m • Instant official Cambridge score ENTER BOSS BATTLE NOW UPGRADE PLAN",
+      "isErrorScreen": false,
+      "bodyLength": 223
+    },
+    "errors": [],
+    "consoleLogs": []
+  }
+]

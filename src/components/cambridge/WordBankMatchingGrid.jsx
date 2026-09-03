@@ -103,7 +103,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
   return (
     <div
       data-testid="word-bank-matching"
-      className="word-bank-grid w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6"
+      className="word-bank-grid w-full max-w-5xl mx-auto my-1 sm:my-2 p-3 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2.5 sm:space-y-3"
     >
       <CompletionModal
         isOpen={isSubmitted && (score || 0) >= 50}
@@ -115,35 +115,35 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
         activityTitle="Word Match Challenge (R&W Part 1)"
       />
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-2 border-b border-slate-200 gap-1.5">
         <div>
-          <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-[11px] font-black rounded-full uppercase tracking-wider">
-            Cambridge A2 Flyers — Reading & Writing Part 1
+          <span className="px-2.5 py-0.5 bg-indigo-100 text-indigo-900 text-[10.5px] font-black rounded-full uppercase tracking-wider">
+            Cambridge A2 Flyers Practice — Reading & Writing Part 1
           </span>
-          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-            Word Bank Matching (15 Words & 10 Definitions)
+          <h2 className="text-base sm:text-lg font-black text-slate-900 mt-0.5">
+            Word Bank Matching
           </h2>
-          <p className="text-xs text-indigo-700 font-bold mt-0.5">
+          <p className="text-[11px] sm:text-xs text-indigo-700 font-bold">
             Look and read. Choose the correct words and write them on the lines. There is one example.
           </p>
         </div>
-        <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
-          10 Definitions · 15 Candidate Words
+        <span className="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-black rounded-lg border border-slate-200">
+          10 Definitions · 15 Words
         </span>
       </div>
 
       {/* 📦 Floating 15-Word Bank Pool (Compact 2-Column Mobile Grid, Sticky Dock) */}
-      <div className="sticky top-2 z-20 p-2.5 sm:p-3 bg-slate-50/95 backdrop-blur-md rounded-xl sm:rounded-2xl border-2 border-indigo-200 shadow-md space-y-1.5">
+      <div className="sticky top-1 z-20 p-2 sm:p-2.5 bg-slate-50/95 backdrop-blur-md rounded-xl border-2 border-indigo-200 shadow-sm space-y-1">
         <div className="flex items-center justify-between">
-          <span className="text-[11px] sm:text-xs font-black text-indigo-800 uppercase tracking-wider flex items-center gap-1">
-            <Layers size={14} /> 15-Word Bank Pool:
+          <span className="text-[10.5px] sm:text-[11.5px] font-black text-indigo-800 uppercase tracking-wider flex items-center gap-1">
+            <Layers size={13} /> 15-Word Bank:
           </span>
-          <span className="text-[10px] font-bold text-slate-500 italic">
-            Tap word pill, then tap slot
+          <span className="text-[9.5px] font-bold text-slate-500 italic">
+            Tap word pill, then tap slot below
           </span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-1 sm:gap-1.5 pt-0.5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-1 pt-0.5">
           {wordBank.map((word) => {
             const isUsed = usedWords.includes(word);
             const isSelected = selectedWord === word;
@@ -153,7 +153,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
                 key={word}
                 disabled={isSubmitted || isUsed}
                 onClick={() => handleSelectWord(word)}
-                className={`px-2 sm:px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-bold transition-all flex items-center justify-between border shadow-2xs ${
+                className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md sm:rounded-lg text-[10.5px] sm:text-[11.5px] font-bold transition-all flex items-center justify-between border shadow-2xs ${
                   isUsed
                     ? 'opacity-40 line-through bg-slate-200 text-slate-500 border-slate-300 cursor-not-allowed'
                     : isSelected
@@ -169,28 +169,28 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
         </div>
       </div>
 
-      {/* 📜 10 Definition Sentences Form */}
-      <div className="space-y-1.5 sm:space-y-2">
-        {/* Worked Example Row */}
+      {/* 📝 10 Cambridge Definition Rows */}
+      <div className="space-y-1 sm:space-y-1.5">
+        {/* Worked Example Definition */}
         <div
           data-testid="example-row"
-          className="p-2 sm:p-3 rounded-xl sm:rounded-2xl border-2 border-amber-300 bg-amber-50/90 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-2"
+          className="p-1.5 sm:p-2 rounded-xl border-2 border-amber-300 bg-amber-50/90 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-1.5"
         >
-          <div className="flex items-start gap-2 flex-1">
-            <span className="px-2 py-0.5 rounded-md bg-amber-500 text-white font-black text-[9.5px] uppercase tracking-wider shrink-0 mt-0.5 shadow-2xs">
-              ★ EXAMPLE
+          <div className="flex items-start gap-1.5 flex-1">
+            <span className="px-1.5 py-0.5 rounded-md bg-amber-500 text-white font-black text-[9px] uppercase tracking-wider shrink-0 mt-0.5 shadow-2xs">
+              ★ EX
             </span>
-            <div className="text-xs sm:text-sm font-medium text-slate-800 leading-snug">
+            <div className="text-xs sm:text-[13px] font-medium text-slate-800 leading-snug">
               {activeData?.example?.text || "A quiet room in school with books where students read and borrow stories."}
             </div>
           </div>
 
-          <div className="flex items-center gap-1.5 self-end sm:self-auto shrink-0">
-            <div className="min-w-[110px] sm:min-w-[130px] px-2.5 py-1 rounded-lg border-2 border-amber-400 bg-white text-xs font-black text-center text-amber-950 shadow-inner flex items-center justify-center gap-1">
+          <div className="flex items-center gap-1 self-end sm:self-auto shrink-0">
+            <div className="min-w-[100px] sm:min-w-[120px] px-2 py-0.5 rounded-lg border-2 border-amber-400 bg-white text-xs font-black text-center text-amber-950 shadow-inner flex items-center justify-center gap-1">
               <span>{activeData?.example?.target || "library"}</span>
-              <span className="text-[9px] text-amber-600 font-bold uppercase">(Locked)</span>
+              <span className="text-[8.5px] text-amber-600 font-bold uppercase">(Locked)</span>
             </div>
-            <CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" />
           </div>
         </div>
 
@@ -202,7 +202,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
             <div
               key={def.id}
               onClick={() => handleAssignWordToDef(def.id)}
-              className={`p-2 sm:p-2.5 rounded-xl sm:rounded-2xl border transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-2 cursor-pointer ${
+              className={`p-1.5 sm:p-2 rounded-xl border transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-1.5 cursor-pointer ${
                 isSubmitted
                   ? isCorrect
                     ? 'bg-emerald-50/80 border-emerald-300'
@@ -259,27 +259,27 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
       </div>
 
       {/* Footer Check & Score */}
-      <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
+      <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
         {!isSubmitted ? (
           <button
             onClick={handleCheck}
-            className="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs sm:text-sm rounded-xl shadow-md transition active:scale-95 flex items-center justify-center gap-1.5"
           >
-            <Sparkles size={18} /> Check Matching Answers
+            <Sparkles size={16} /> Check Matching Answers
           </button>
         ) : (
-          <div className="w-full flex items-center justify-between bg-slate-50 p-4 rounded-2xl border border-slate-200">
+          <div className="w-full flex items-center justify-between bg-slate-50 p-2.5 sm:p-3 rounded-xl border border-slate-200">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-6 h-6 text-amber-500 animate-bounce" />
-              <span className="text-lg font-black text-slate-900">
+              <Sparkles className="w-5 h-5 text-amber-500 animate-bounce" />
+              <span className="text-sm sm:text-base font-black text-slate-900">
                 Matching Score: {score}%
               </span>
             </div>
             <button
               onClick={handleReset}
-              className="px-5 py-2.5 bg-indigo-100 hover:bg-indigo-200 text-indigo-900 font-bold text-xs rounded-xl transition flex items-center gap-1.5"
+              className="px-4 py-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-900 font-bold text-xs rounded-xl transition flex items-center gap-1.5"
             >
-              <RefreshCw size={14} /> Try Again
+              <RefreshCw size={13} /> Try Again
             </button>
           </div>
         )}

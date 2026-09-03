@@ -1,9 +1,9 @@
 {
-  "commit": "e3f4cc4878976bc80cd77bd0cc55cf9a0c6a3175",
-  "git_commit": "e3f4cc4878976bc80cd77bd0cc55cf9a0c6a3175",
-  "shortCommit": "e3f4cc48",
-  "message": "docs: encode Universal Mobile-First Display & Viewport Standard into AGENTS.md & SOP",
-  "builtAt": "2026-09-03T09:00:08.675Z",
-  "build_timestamp": "2026-09-03T09:00:08.676Z",
+  "commit": "6dc56793c38c64d976135ae8c1045e43133532ee",
+  "git_commit": "6dc56793c38c64d976135ae8c1045e43133532ee",
+  "shortCommit": "6dc56793",
+  "message": "fix(ui): overhaul task layouts, Boss Castle header, and 2-clause grammar across W33",
+  "builtAt": "2026-09-03T10:01:31.631Z",
+  "build_timestamp": "2026-09-03T10:01:31.631Z",
   "env": "production"
 }

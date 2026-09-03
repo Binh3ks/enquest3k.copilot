@@ -201,12 +201,11 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
   /* ── Render ── */
   return (
     <div className="w-full max-w-5xl mx-auto my-1 p-2.5 sm:p-4 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2.5">
-
       {/* Cambridge Exam Header */}
       <div className="bg-gradient-to-r from-indigo-900 to-slate-900 text-white px-3.5 py-2 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 shadow-sm">
         <div>
           <h2 className="text-xs sm:text-sm font-bold text-slate-300 flex items-center gap-1.5">
-            🎧 Cambridge A2 Flyers Practice Mock — Listening Part 1
+            🎧 Cambridge A2 Flyers Practice — Listening Part 1
           </h2>
         </div>
         <p className="text-xs sm:text-sm font-black text-amber-300">
@@ -215,8 +214,8 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
       </div>
 
       {/* Control Bar */}
-      <div className="flex items-center justify-between gap-2 pb-2 border-b border-slate-200 flex-wrap">
-        <div className="flex items-center gap-2 flex-wrap">
+      <div className="flex items-center justify-between gap-2 pb-2 border-b border-slate-200">
+        <div className="flex items-center justify-between w-full gap-2">
           <FlyersListeningPlayButton
             partNumber={1}
             audioUrl={sceneData?.audio_url || `/audio/week${weekNumber || 33}/listening_p1_full.mp3`}
@@ -228,116 +227,119 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
             type="button"
             onClick={() => { setDrawnLines([]); setSelectedName(null); }}
             disabled={isSubmitted || drawnLines.length === 0}
-            className="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 font-black text-xs rounded-xl border border-rose-200 transition disabled:opacity-40 flex items-center gap-1 shadow-2xs"
+            className="px-2.5 sm:px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 font-black text-xs rounded-xl border border-rose-200 transition disabled:opacity-40 flex items-center gap-1 shadow-2xs whitespace-nowrap shrink-0"
           >
             <Trash2 size={13} /> Clear Lines
           </button>
         </div>
       </div>
 
-      {/* ── Name Selection Ribbon ── */}
-      <div className="p-1.5 sm:p-2 bg-slate-50 border border-slate-200 rounded-xl">
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
-          {sceneData.names.map(name => {
-            const hasLine = drawnLines.some(l => l.nameId === name.id);
-            const isSelected = selectedName?.id === name.id;
-            return (
-              <button key={name.id}
-                ref={el => (nameButtonRefs.current[name.id] = el)}
-                disabled={isSubmitted || name.isExample}
-                onClick={() => handleSelectName(name)}
-                data-testid={name.isExample ? 'example-row' : undefined}
-                className={`px-2 py-1 rounded-lg text-xs font-black transition-all flex items-center justify-center gap-1 border shadow-2xs w-full ${
-                  name.isExample
-                    ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-1 ring-amber-300'
-                    : isSelected
-                    ? 'bg-indigo-600 text-white border-indigo-700 ring-2 ring-indigo-200 scale-102 shadow-sm animate-pulse'
-                    : hasLine
-                    ? 'bg-emerald-100 text-emerald-950 border-emerald-400'
-                    : 'bg-white text-slate-900 border-slate-300 hover:border-indigo-400 hover:bg-indigo-50'
-                }`}
-              >
-                <span className="text-[10px] sm:text-xs font-black break-words leading-tight text-center">{name.text}</span>
-                {name.isExample && <span className="text-[9px] bg-amber-500 text-white px-1 rounded uppercase font-black shrink-0">★ EX</span>}
-                {hasLine && !name.isExample && <CheckCircle2 size={12} className="text-emerald-700 shrink-0" />}
-              </button>
-            );
-          })}
+      {/* ── Interactive Matching Area (Names Ribbon + SVG Canvas) ── */}
+      <div onMouseMove={handleSVGMouseMove} className="space-y-2 relative">
+        {/* ── Name Selection Ribbon ── */}
+        <div className="p-1.5 sm:p-2 bg-slate-50 border border-slate-200 rounded-xl relative z-10">
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
+            {sceneData.names.map(name => {
+              const hasLine = drawnLines.some(l => l.nameId === name.id);
+              const isSelected = selectedName?.id === name.id;
+              return (
+                <button key={name.id}
+                  ref={el => (nameButtonRefs.current[name.id] = el)}
+                  disabled={isSubmitted || name.isExample}
+                  onClick={() => handleSelectName(name)}
+                  data-testid={name.isExample ? 'example-row' : undefined}
+                  className={`px-2 py-1 rounded-lg text-xs font-black transition-all flex items-center justify-center gap-1 border shadow-2xs w-full ${
+                    name.isExample
+                      ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-1 ring-amber-300'
+                      : isSelected
+                      ? 'bg-indigo-600 text-white border-indigo-700 ring-2 ring-indigo-200 scale-102 shadow-sm animate-pulse'
+                      : hasLine
+                      ? 'bg-emerald-100 text-emerald-950 border-emerald-400'
+                      : 'bg-white text-slate-900 border-slate-300 hover:border-indigo-400 hover:bg-indigo-50'
+                  }`}
+                >
+                  <span className="text-[10px] sm:text-xs font-black break-words leading-tight text-center">{name.text}</span>
+                  {name.isExample && <span className="text-[9px] bg-amber-500 text-white px-1 rounded uppercase font-black shrink-0">★ EX</span>}
+                  {hasLine && !name.isExample && <CheckCircle2 size={12} className="text-emerald-700 shrink-0" />}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
 
-      {/* ══════════════════════════════════════════════════════════════
-          🖼️ SVG ViewBox Canvas — Image + Pins + Lines in ONE coordinate space
-          preserveAspectRatio="xMidYMid meet" ensures correct scaling on all screens.
-          Pin coords: x = (data_x / 100) * 1264, y = (data_y / 100) * 848
-          Name label coords: computed via svg.getScreenCTM().inverse()
-         ══════════════════════════════════════════════════════════════ */}
-      <svg
-        ref={svgRef}
-        viewBox={`0 0 ${VB_W} ${VB_H}`}
-        preserveAspectRatio="xMidYMid meet"
-        className={`w-full h-auto block rounded-2xl border-2 transition-all ${
-          selectedName ? 'cursor-crosshair border-indigo-400' : 'border-slate-800 cursor-default'
-        }`}
-        onMouseMove={handleSVGMouseMove}
-        style={{ background: '#0f172a' }}
-      >
-        {/* Background image — fills full viewBox, no stretch issues */}
-        <image
-          href={sceneData.image_url}
-          x={0} y={0}
-          width={VB_W} height={VB_H}
-          preserveAspectRatio="xMidYMid slice"
-          onLoad={recalcNamePositions}
-        />
-
-        {/* ─ Official EXAMPLE line (amber dashed) ─ */}
-        {exNameVB && exTargVB && (
-          <g opacity="0.95">
-            <line
-              x1={exNameVB.x} y1={exNameVB.y}
-              x2={exTargVB.x} y2={exTargVB.y}
-              stroke="#f59e0b" strokeWidth="3" strokeDasharray="10 6" strokeLinecap="round"
+        {/* ══════════════════════════════════════════════════════════════
+            🖼️ SVG ViewBox Canvas — Image + Pins + Lines in ONE coordinate space
+            overflow: visible allows dashed lines to cross through the frame and connect to names above.
+           ══════════════════════════════════════════════════════════════ */}
+        <div className="relative z-20">
+          <svg
+            ref={svgRef}
+            viewBox={`0 0 ${VB_W} ${VB_H}`}
+            preserveAspectRatio="xMidYMid meet"
+            className={`w-full h-auto block rounded-2xl border-2 transition-all ${
+              selectedName ? 'cursor-crosshair border-indigo-400' : 'border-slate-800 cursor-default'
+            }`}
+            style={{ background: '#0f172a', overflow: 'visible' }}
+          >
+            {/* Background image — fills full viewBox, no stretch issues */}
+            <image
+              href={sceneData.image_url}
+              x={0} y={0}
+              width={VB_W} height={VB_H}
+              preserveAspectRatio="xMidYMid slice"
+              onLoad={recalcNamePositions}
             />
-            <circle cx={exTargVB.x} cy={exTargVB.y} r="9" fill="#f59e0b" stroke="#ffffff" strokeWidth="2.5" />
-            <text x={exTargVB.x} y={exTargVB.y + 4} textAnchor="middle" fill="white" fontSize="10" fontWeight="900" fontFamily="sans-serif">★</text>
-          </g>
-        )}
 
-        {/* ─ User-drawn locked lines ─ */}
-        {drawnLines.map((line, idx) => {
-          const startVB = namePosVB[line.nameId];
-          const tgt = activeTargets.find(t => t.id === line.targetId);
-          if (!startVB || !tgt) return null;
-          const endVB = { x: pctToVB(tgt.x, VB_W), y: pctToVB(tgt.y, VB_H) };
-          const nameObj = sceneData.names.find(n => n.id === line.nameId);
-          const isCorrect = isSubmitted && nameObj?.target_id === line.targetId;
-          const stroke = isSubmitted ? (isCorrect ? '#10b981' : '#f43f5e') : '#6366f1';
-          return (
-            <g key={idx}>
-              <line x1={startVB.x} y1={startVB.y} x2={endVB.x} y2={endVB.y}
-                stroke={stroke} strokeWidth="3" strokeDasharray="10 6" strokeLinecap="round" />
-              <circle cx={endVB.x} cy={endVB.y} r="9" fill={stroke} stroke="#ffffff" strokeWidth="2.5" />
-              {isSubmitted && (
-                <text x={endVB.x} y={endVB.y + 4} textAnchor="middle" fill="white" fontSize="11" fontWeight="900" fontFamily="sans-serif">
-                  {isCorrect ? '✓' : '✗'}
-                </text>
-              )}
-            </g>
-          );
-        })}
+            {/* ─ Official EXAMPLE line (amber dashed, crossing through frame to name above) ─ */}
+            {exNameVB && exTargVB && (
+              <g opacity="0.95" className="pointer-events-none">
+                <line
+                  x1={exNameVB.x} y1={exNameVB.y}
+                  x2={exTargVB.x} y2={exTargVB.y}
+                  stroke="#f59e0b" strokeWidth="3.5" strokeDasharray="10 6" strokeLinecap="round"
+                />
+                <circle cx={exNameVB.x} cy={exNameVB.y} r="6" fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
+                <circle cx={exTargVB.x} cy={exTargVB.y} r="9" fill="#f59e0b" stroke="#ffffff" strokeWidth="2.5" />
+                <text x={exTargVB.x} y={exTargVB.y + 4} textAnchor="middle" fill="white" fontSize="10" fontWeight="900" fontFamily="sans-serif">★</text>
+              </g>
+            )}
 
-        {/* ─ Live drag preview line (from selected name → cursor) ─ */}
-        {selectedName && namePosVB[selectedName.id] && (
-          <g>
-            <line
-              x1={namePosVB[selectedName.id].x} y1={namePosVB[selectedName.id].y}
-              x2={mouseVB.x} y2={mouseVB.y}
-              stroke="#f59e0b" strokeWidth="2.5" strokeDasharray="6 4" strokeLinecap="round" opacity="0.8"
-            />
-            <circle cx={mouseVB.x} cy={mouseVB.y} r="8" fill="#f59e0b" opacity="0.7" />
-          </g>
-        )}
+            {/* ─ User-drawn locked lines (crossing through frame to name above) ─ */}
+            {drawnLines.map((line, idx) => {
+              const startVB = namePosVB[line.nameId];
+              const tgt = activeTargets.find(t => t.id === line.targetId);
+              if (!startVB || !tgt) return null;
+              const endVB = { x: pctToVB(tgt.x, VB_W), y: pctToVB(tgt.y, VB_H) };
+              const nameObj = sceneData.names.find(n => n.id === line.nameId);
+              const isCorrect = isSubmitted && nameObj?.target_id === line.targetId;
+              const stroke = isSubmitted ? (isCorrect ? '#10b981' : '#f43f5e') : '#6366f1';
+              return (
+                <g key={idx} className="pointer-events-none">
+                  <line x1={startVB.x} y1={startVB.y} x2={endVB.x} y2={endVB.y}
+                    stroke={stroke} strokeWidth="3.5" strokeDasharray="10 6" strokeLinecap="round" />
+                  <circle cx={startVB.x} cy={startVB.y} r="6" fill={stroke} stroke="#ffffff" strokeWidth="2" />
+                  <circle cx={endVB.x} cy={endVB.y} r="9" fill={stroke} stroke="#ffffff" strokeWidth="2.5" />
+                  {isSubmitted && (
+                    <text x={endVB.x} y={endVB.y + 4} textAnchor="middle" fill="white" fontSize="11" fontWeight="900" fontFamily="sans-serif">
+                      {isCorrect ? '✓' : '✗'}
+                    </text>
+                  )}
+                </g>
+              );
+            })}
+
+            {/* ─ Live drag preview line (from selected name → cursor) ─ */}
+            {selectedName && namePosVB[selectedName.id] && (
+              <g className="pointer-events-none">
+                <line
+                  x1={namePosVB[selectedName.id].x} y1={namePosVB[selectedName.id].y}
+                  x2={mouseVB.x} y2={mouseVB.y}
+                  stroke="#f59e0b" strokeWidth="3" strokeDasharray="6 4" strokeLinecap="round" opacity="0.85"
+                />
+                <circle cx={namePosVB[selectedName.id].x} cy={namePosVB[selectedName.id].y} r="6" fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
+                <circle cx={mouseVB.x} cy={mouseVB.y} r="8" fill="#f59e0b" opacity="0.8" />
+              </g>
+            )}
 
         {/* ─ Target pin markers (SVG native, locked to image pixels) ─ */}
         {activeTargets.map(target => {
@@ -389,6 +391,8 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
           );
         })}
       </svg>
+    </div>
+  </div>
 
       {/* Footer Check & Score */}
       <div className="pt-2 border-t border-slate-200 flex items-center justify-between">

@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Palette, PlayCircle, Eye, EyeOff, Edit3, Volume2 } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
-import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 import FlyersListeningPlayButton from '../common/FlyersListeningPlayButton';
 import CompletionModal from '../common/CompletionModal';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
@@ -165,7 +164,7 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
         <div>
           <span className="px-3 py-1 bg-amber-500/10 text-amber-800 text-[11px] font-black uppercase tracking-wider rounded-full border border-amber-300">
-            Cambridge A2 Flyers — Listening Part 5
+            Cambridge A2 Flyers Practice — Listening Part 5
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
             🎨 Color & Write On The Picture
@@ -173,11 +172,6 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
         </div>
 
         <div className="flex items-center gap-2">
-          <ExamIntroAudioButton
-            weekNumber={currentWeek}
-            introId="exam_intro_L5"
-            introText="Listen and colour and write. There is one example."
-          />
           <FlyersListeningPlayButton
             partNumber={5}
             audioUrl={rawData.audio_url || `/audio/week${currentWeek}/listening_p5_full.mp3`}

@@ -39,13 +39,6 @@ export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0
         </div>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => window.location.href = `/week/${rotaryConfig.weekNumber || 33}/hub/1`}
-            className="px-3 py-1.5 bg-purple-900/80 hover:bg-purple-800 text-purple-200 border border-purple-400/40 rounded-xl text-xs font-black flex items-center gap-1 transition active:scale-95 shadow shrink-0"
-          >
-            ← Map
-          </button>
           <div className="bg-purple-900/60 px-3 py-1.5 rounded-xl border border-purple-400/30 flex items-center gap-1.5">
             <Shield className="text-amber-400" size={16} />
             <div className="text-xs font-black text-white">{userShields} Shields</div>
@@ -61,7 +54,7 @@ export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0
             <div className="text-xs sm:text-sm font-black text-white">{currentTask.name}</div>
           </div>
           <span className="px-2.5 py-1 bg-purple-600/40 border border-purple-400/40 text-purple-200 rounded-lg text-xs font-bold shrink-0">
-            Cambridge A2 Flyers
+            Cambridge A2 Flyers Practice
           </span>
         </div>
       )}
@@ -69,7 +62,7 @@ export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0
       {/* Action CTA */}
       <div className="pt-1 flex items-center justify-between flex-wrap gap-2">
         <span className="text-[11px] text-slate-400 font-medium">
-          ~{rotaryConfig.approxDurationMin}m • Instant official Cambridge score
+          ~{rotaryConfig.approxDurationMin}m • Instant Cambridge score
         </span>
         <button
           type="button"

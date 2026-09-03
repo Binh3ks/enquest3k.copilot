@@ -4,7 +4,6 @@ import { speakText } from '../../utils/AudioHelper';
 import { playCorrectSound, playWrongSound, playButtonClick } from '../../utils/soundEffects';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 
-import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 import FlyersListeningPlayButton from '../common/FlyersListeningPlayButton';
 
 export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, onComplete }) {
@@ -60,8 +59,8 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
         <div className="flex items-center gap-2">
           <span className="text-base">🎧</span>
           <div>
-            <h4 className="text-xs font-black text-blue-950 uppercase tracking-wider">Cambridge A2 Flyers — Listening Part 4</h4>
-            <p className="text-[10px] text-blue-700 font-bold">Listen and tick the box. There is one example.</p>
+            <h4 className="text-xs font-black text-blue-950 uppercase tracking-wider">Cambridge A2 Flyers Practice — Listening Part 4</h4>
+            <p className="text-[10px] text-blue-700 font-bold">👉 Listen and tick the box. There is one example.</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -70,11 +69,6 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
             audioUrl={p4Data?.audio_url || `/audio/week${weekNumber || 33}/listening_p4_full.mp3`}
             script={p4Data?.passage_audio_script || questions.map(q => q.audio_script || q.question_en).join('\n')}
             weekNumber={weekNumber || 33}
-          />
-          <ExamIntroAudioButton
-            weekNumber={weekNumber || 34}
-            introId="exam_intro_L4"
-            introText="Listen and tick the box. There is one example."
           />
           <div className="text-xs font-black text-blue-900 bg-white px-3 py-1 rounded-xl border border-blue-200">
             {currentQ.isExample ? "★ EXAMPLE" : `Question ${currentQIdx + 1} / ${questions.length}`}

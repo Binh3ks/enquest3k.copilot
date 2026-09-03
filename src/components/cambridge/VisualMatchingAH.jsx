@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Layers, Grid, Volume2 } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
-import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 import FlyersListeningPlayButton from '../common/FlyersListeningPlayButton';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import { srsService } from '../../services/srsService';
@@ -101,34 +100,20 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
       {/* Compact Header & Audio Control Bar */}
       <div className="flex items-center justify-between gap-2 pb-2 border-b border-slate-200 flex-wrap">
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => {
-              window.location.href = `/week/${weekNumber || 33}/hub/1`;
-            }}
-            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 rounded-xl text-xs font-black flex items-center gap-1 transition active:scale-95 shadow shrink-0"
-          >
-            ← Map
-          </button>
           <FlyersListeningPlayButton
             partNumber={3}
             audioUrl={customData?.audio_url || `/audio/week${weekNumber || 33}/listening_p3_full.mp3`}
             script={customData?.passage_audio_script || fullPassageScript}
             weekNumber={weekNumber || 33}
           />
-          <ExamIntroAudioButton
-            weekNumber={weekNumber || 33}
-            introId="exam_intro_L3"
-            introText="Listen and write a letter in each box. There is one example."
-          />
         </div>
 
         <div className="text-right">
           <span className="text-[10px] font-black uppercase text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-md border border-indigo-200 block w-max ml-auto">
-            Cambridge A2 Flyers — Listening Part 3
+            Cambridge A2 Flyers Practice — Listening Part 3
           </span>
           <p className="text-[11px] text-slate-500 font-bold mt-0.5">
-            Listen and write a letter in each box. There is one example.
+            👉 Listen and write a letter in each box. There is one example.
           </p>
         </div>
       </div>

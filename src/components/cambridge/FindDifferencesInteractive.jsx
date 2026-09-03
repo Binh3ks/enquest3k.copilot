@@ -166,7 +166,7 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
   return (
     <div
       data-testid="find-differences"
-      className="find-differences w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6"
+      className="find-differences w-full max-w-5xl mx-auto my-1 sm:my-2 p-3 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-3"
     >
       <CompletionModal
         isOpen={isSubmitted && (score || 0) >= 50}
@@ -178,15 +178,15 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
         activityTitle="Find Differences Mission (Speaking Part 1)"
       />
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-2.5 border-b border-slate-200 gap-1.5">
         <div>
-          <span className="px-3 py-1 bg-rose-100 text-rose-900 text-[11px] font-black rounded-full uppercase tracking-wider">
-            Cambridge A2 Flyers — Speaking Part 1
+          <span className="px-2.5 py-0.5 bg-rose-100 text-rose-900 text-[10.5px] font-black rounded-full uppercase tracking-wider">
+            Cambridge A2 Flyers Practice — Speaking Part 1
           </span>
-          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-            Find the Differences (Look at the Two Pictures)
+          <h2 className="text-base sm:text-xl font-black text-slate-900 mt-0.5">
+            Find the Differences
           </h2>
-          <p className="text-xs text-rose-700 font-bold mt-0.5">
+          <p className="text-[11px] sm:text-xs text-rose-700 font-bold">
             Look at the two pictures. They are the same, but there are some differences. Tell me the differences.
           </p>
         </div>
@@ -197,16 +197,16 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
             introText="Look at the two pictures. They are the same, but there are some differences. Tell me the differences."
             isStealth={isStealthMode}
           />
-          <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
-            Found {foundHotspots.length} of {differencesData.hotspots.length} Differences
+          <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
+            {foundHotspots.length}/{differencesData.hotspots.length} differences
           </span>
         </div>
       </div>
 
       {/* Side-by-Side Dual Picture Scenes with Interactive SVG Circles */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {/* Picture A Viewport */}
-        <div ref={containerARef} className="relative h-64 sm:h-72 bg-slate-900 rounded-3xl overflow-hidden shadow-lg border-2 border-slate-800">
+        <div ref={containerARef} className="relative h-48 sm:h-56 md:h-64 bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-slate-800">
           <img
             src={differencesData.picA.image_url}
             alt={differencesData.picA.title}
@@ -370,28 +370,28 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
 
 
       {/* Footer Check & Score */}
-      <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
+      <div className="pt-2 sm:pt-2.5 border-t border-slate-200 flex items-center justify-between">
         {!isSubmitted ? (
           <button
             onClick={handleCheck}
             disabled={foundHotspots.length === 0}
-            className="w-full sm:w-auto px-8 py-3.5 bg-rose-600 hover:bg-rose-700 text-white font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40"
+            className="w-full sm:w-auto px-6 py-2.5 bg-rose-600 hover:bg-rose-700 text-white font-black text-xs sm:text-sm rounded-xl shadow-md transition active:scale-95 flex items-center justify-center gap-1.5 disabled:opacity-40"
           >
-            <Sparkles size={18} /> Complete Speaking Differences
+            <Sparkles size={16} /> Complete Speaking Differences
           </button>
         ) : (
-          <div className="w-full flex items-center justify-between bg-slate-50 p-4 rounded-2xl border border-slate-200">
+          <div className="w-full flex items-center justify-between bg-slate-50 p-2.5 sm:p-3 rounded-xl border border-slate-200">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-6 h-6 text-rose-600 animate-bounce" />
-              <span className="text-lg font-black text-slate-900">
+              <Sparkles className="w-5 h-5 text-rose-600 animate-bounce" />
+              <span className="text-sm sm:text-base font-black text-slate-900">
                 Differences Score: {score}%
               </span>
             </div>
             <button
               onClick={handleReset}
-              className="px-5 py-2.5 bg-rose-100 hover:bg-rose-200 text-rose-950 font-bold text-xs rounded-xl transition flex items-center gap-1.5"
+              className="px-4 py-2 bg-rose-100 hover:bg-rose-200 text-rose-950 font-bold text-xs rounded-xl transition flex items-center gap-1.5"
             >
-              <RefreshCw size={14} /> Try Again
+              <RefreshCw size={13} /> Try Again
             </button>
           </div>
         )}

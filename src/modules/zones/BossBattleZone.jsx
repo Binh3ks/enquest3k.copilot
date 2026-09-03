@@ -325,13 +325,13 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         <Trophy size={64} className="mx-auto text-amber-400 animate-bounce" />
         <div className="space-y-2">
           <span className="px-3 py-1 bg-amber-500/30 text-amber-300 rounded-full text-xs font-black uppercase tracking-wider">
-            Official Cambridge A2 Flyers Result
+            Cambridge A2 Flyers Practice Result
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-rose-300 to-purple-200">
             🏆 BOSS BATTLE VICTORY!
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
-            You completed all {currentTasks.length} Cambridge Part{currentTasks.length !== 1 ? 's' : ''} for {isFullMock ? 'the Full Mock Exam' : `Cycle ${rotaryConfig.cycleNumber}`}!
+            You completed all {currentTasks.length} Cambridge Part{currentTasks.length !== 1 ? 's' : ''} for {isFullMock ? 'the Full Practice Exam' : `Cycle ${rotaryConfig.cycleNumber}`}!
           </p>
         </div>
 

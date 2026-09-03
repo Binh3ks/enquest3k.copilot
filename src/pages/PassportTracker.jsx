@@ -77,13 +77,13 @@ export default function PassportTracker() {
         </div>
       </header>
 
-      <div className="max-w-2xl mx-auto px-4 py-6 space-y-6">
+      <div className="max-w-2xl mx-auto px-3 sm:px-4 py-3 sm:py-4 space-y-3 sm:space-y-4">
         {/* Summary Card */}
-        <div className="bg-white rounded-2xl border-2 border-emerald-100 shadow-sm p-4 flex items-center gap-4">
-          <div className="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-2xl">🛡️</div>
+        <div className="bg-white rounded-xl sm:rounded-2xl border-2 border-emerald-100 shadow-sm p-3 sm:p-4 flex items-center gap-3 sm:gap-4">
+          <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-emerald-100 flex items-center justify-center text-xl sm:text-2xl">🛡️</div>
           <div>
-            <div className="font-black text-slate-800 text-lg">{totalEarned} / {TOTAL_TRIPS * 15} Shields</div>
-            <div className="text-xs text-slate-500">Cambridge A2 Flyers — 3 shields × 5 parts × {TOTAL_TRIPS} trips</div>
+            <div className="font-black text-slate-800 text-base sm:text-lg">{totalEarned} / {TOTAL_TRIPS * 15} Shields</div>
+            <div className="text-[11px] sm:text-xs text-slate-500">Cambridge A2 Flyers Practice — 3 shields × 5 parts × {TOTAL_TRIPS} trips</div>
             <div className="flex gap-2 mt-1">
               {SHIELD_PARTS.map(p => {
                 const earned = weeks.reduce((acc, w) => acc + (w.parts.find(x => x.key === p.key)?.shields || 0), 0);
@@ -103,11 +103,11 @@ export default function PassportTracker() {
           return (
             <div
               key={weekNum}
-              className={`bg-white rounded-2xl border-2 shadow-sm p-4 transition-all ${
+              className={`bg-white rounded-xl sm:rounded-2xl border-2 shadow-sm p-3 sm:p-4 transition-all ${
                 hasAny ? 'border-emerald-200' : 'border-slate-100 opacity-60'
               }`}
             >
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center justify-between mb-2">
                 <div>
                   <span className="font-black text-slate-800 text-sm">Trip {weekNum}</span>
                   {totalShields >= 10 && (
@@ -118,7 +118,7 @@ export default function PassportTracker() {
                 </div>
                 <span className="text-xs font-black text-slate-500">{totalShields}/15 shields</span>
               </div>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
                 {parts.map(part => (
                   <div
                     key={part.key}

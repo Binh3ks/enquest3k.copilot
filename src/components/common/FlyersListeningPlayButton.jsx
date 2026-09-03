@@ -29,8 +29,8 @@ export function FlyersListeningPlayButton({
       <button
         type="button"
         onClick={player.togglePlay}
-        className={`px-3.5 py-1.5 font-black text-xs rounded-xl shadow-xs flex items-center gap-1.5 transition active:scale-95 cursor-pointer ${player.badgeColor}`}
-        title={player.isPlaying ? 'Click to stop audio' : `Play Part ${partNumber} Official Audio (2× with Cambridge Rubric)`}
+        className={`px-3 py-1.5 font-black text-xs rounded-xl shadow-xs flex items-center gap-1.5 transition active:scale-95 cursor-pointer whitespace-nowrap shrink-0 ${player.badgeColor}`}
+        title={player.isPlaying ? 'Click to stop audio' : `Play Part ${partNumber} Audio (2×)`}
       >
         {player.isPlaying ? (
           <>

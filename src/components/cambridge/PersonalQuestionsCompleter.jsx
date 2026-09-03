@@ -99,7 +99,7 @@ export function PersonalQuestionsCompleter({ customData, data: propData, onCompl
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
+    <div className="w-full max-w-4xl mx-auto my-1 sm:my-2 p-3 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-3 sm:space-y-3.5">
       <CompletionModal
         isOpen={isSubmitted && (score || 0) >= 50}
         onClose={() => {}}
@@ -112,29 +112,29 @@ export function PersonalQuestionsCompleter({ customData, data: propData, onCompl
       />
 
       {/* Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-2 border-b border-slate-200 gap-1.5">
         <div>
-          <span className="px-3 py-1 bg-violet-100 text-violet-900 text-[11px] font-black rounded-full uppercase tracking-wider">
-            Cambridge A2 Flyers — Speaking Part 4
+          <span className="px-2.5 py-0.5 bg-violet-100 text-violet-900 text-[10.5px] font-black rounded-full uppercase tracking-wider">
+            Cambridge A2 Flyers Practice — Speaking Part 4
           </span>
-          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-            Personal Questions (Talk About You)
+          <h2 className="text-base sm:text-lg font-black text-slate-900 mt-0.5">
+            Personal Questions
           </h2>
-          <p className="text-xs text-violet-700 font-bold mt-0.5">
+          <p className="text-[11px] sm:text-xs text-violet-700 font-bold">
             Answer the examiner's questions about your life, hobbies, and family.
           </p>
         </div>
         <button
           onClick={handlePlayIntro}
-          className="px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white text-xs font-black rounded-xl shadow-md flex items-center gap-2 transition"
+          className="px-3 py-1.5 bg-violet-600 hover:bg-violet-700 text-white text-xs font-black rounded-xl shadow-sm flex items-center gap-1.5 transition"
         >
-          <Volume2 className="w-4 h-4" />
+          <Volume2 className="w-3.5 h-3.5" />
           Examiner Intro
         </button>
       </div>
 
       {/* Examiner Intro Banner */}
-      <div className="p-2.5 sm:p-4 bg-violet-50 rounded-xl sm:rounded-2xl border border-violet-200 flex items-start gap-2.5">
+      <div className="p-2 sm:p-3 bg-violet-50 rounded-xl border border-violet-200 flex items-start gap-2">
         <MessageSquare className="w-4 h-4 text-violet-600 shrink-0 mt-0.5" />
         <div className="text-xs sm:text-sm text-violet-900 font-medium leading-relaxed">
           &ldquo;{examinerIntro}&rdquo;
@@ -142,7 +142,7 @@ export function PersonalQuestionsCompleter({ customData, data: propData, onCompl
       </div>
 
       {/* Questions List */}
-      <div className="space-y-2.5 sm:space-y-4">
+      <div className="space-y-2 sm:space-y-2.5">
         {questions.map((q, idx) => {
           const isRecordingThis = activeRecordingId === q.id;
           const currentAnswer = answers[q.id] || '';
@@ -151,7 +151,7 @@ export function PersonalQuestionsCompleter({ customData, data: propData, onCompl
           return (
             <div
               key={q.id}
-              className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border-2 transition ${
+              className={`p-2.5 sm:p-3.5 rounded-xl border-2 transition ${
                 hasAnswer ? 'bg-emerald-50/40 border-emerald-300' : 'bg-slate-50 border-slate-200'
               }`}
             >
@@ -222,14 +222,14 @@ export function PersonalQuestionsCompleter({ customData, data: propData, onCompl
       </div>
 
       {/* Action Footer */}
-      <div className="flex items-center justify-between pt-4 border-t border-slate-200">
+      <div className="flex items-center justify-between pt-2.5 border-t border-slate-200">
         <div className="text-xs font-bold text-slate-600">
-          Progress: {answeredCount} of {questions.length} questions answered
+          Progress: {answeredCount}/{questions.length} answered
         </div>
         <button
           onClick={handleSubmit}
           disabled={!isAllAnswered || isSubmitted}
-          className={`px-6 py-3 rounded-2xl font-black text-sm uppercase tracking-wider transition shadow-lg ${
+          className={`px-5 py-2.5 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider transition shadow-md ${
             isAllAnswered && !isSubmitted
               ? 'bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white cursor-pointer shadow-violet-200'
               : 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none'

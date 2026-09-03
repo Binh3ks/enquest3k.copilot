@@ -1,0 +1,753 @@
+[
+  {
+    "id": "hub_map",
+    "label": "Quest Map",
+    "url": "/week/33/hub/1",
+    "status": "PASS_VIEW_ONLY",
+    "screenshotBefore": "hub_map_1_before.png",
+    "screenshotAfter": null,
+    "clickText": null,
+    "clicked": null,
+    "domBefore": {
+      "headings": [],
+      "buttons": [
+        "Arcade",
+        "Words",
+        "Co-op",
+        "📖",
+        "2",
+        "3",
+        "4",
+        "5",
+        "▶ Continue",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "🦊 LEXIO TRIP 33 • 0/15 Arcade Words Co-op 🦊 Welcome to Trip 33! Your language adventure begins here. 5 stations, 15 quests — starting from Story World! 🗺️✨ › › › › 📖 📖 Story World ▶ START HERE 2 🔒 Knowledge Lab 3 🔒 Battle Arena 4 🔒 Creator Studio 5 🔒 Boss Castle Welcome! Ready for Day 1? 🌟 ▶ Continue 🏰 VICTORY (W156) UPGRADE PLAN",
+      "bodyLength": 344,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": null,
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "gear1_webtoon",
+    "label": "Q1: Scene Explorer",
+    "url": "/week/33/task/gear1_webtoon",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "gear1_webtoon_1_before.png",
+    "screenshotAfter": "gear1_webtoon_2_after.png",
+    "clickText": "Listen to Scene",
+    "clicked": "Listen to Scene",
+    "domBefore": {
+      "headings": [],
+      "buttons": [
+        "Map",
+        "?",
+        "?",
+        "?",
+        "Listen to Scene",
+        "◀ Previous",
+        "Next ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 📚 Scene Explorer Milestone 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) ? ? ? Listen to Scene Jake was walking carefully down the school corridor after science class. ◀ Previous Scene 1 of 5 Next ▶ UPGRADE PLAN",
+      "bodyLength": 253,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [],
+      "buttons": [
+        "Map",
+        "?",
+        "?",
+        "?",
+        "Listen to Scene",
+        "◀ Previous",
+        "Next ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 📚 Scene Explorer Milestone 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) ? ? ? Listen to Scene Jake was walking carefully down the school corridor after science class. ◀ Previous Scene 1 of 5 Next ▶ UPGRADE PLAN",
+      "bodyLength": 253,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "gear2_karaoke",
+    "label": "Q2: Voice Shadow",
+    "url": "/week/33/task/gear2_karaoke",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "gear2_karaoke_1_before.png",
+    "screenshotAfter": "gear2_karaoke_2_after.png",
+    "clickText": "Listen Model Audio",
+    "clicked": "🔊 Listen Model Audio",
+    "domBefore": {
+      "headings": [],
+      "buttons": [
+        "Map",
+        "Full Audio",
+        "🔊 Listen Model Audio",
+        "🎙️ Voice Shadow",
+        "🎯 AI Pronunciation & Intonation Coach (Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ) Show Guide",
+        "◀ Prev",
+        "Next ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🎧 Voice Shadow Milestone 🎙️ Tap any sentence to listen & practice word-by-word karaoke ⭐ 0/8 Full Audio Sentence 1/8 Jake /ʤeɪk// was //wəz// walking //ˈwɔːkɪŋ// carefully //ˈkeəfəli// down //daʊn// the //ðə// school //skuːl// corridor //ˈkɒrɪdɔː// after //ˈɑːftə// science //ˈsaɪəns// class. //klɑːs/ 🔊 Listen Model Audio 🎙️ Voice Shadow 🎧 Please wear headphones during shadowing for the clearest recording! 🎯 AI Pronunciation & Intonation Coach (Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ) Show Guide ◀ Prev Next ▶ UPGRADE PLAN",
+      "bodyLength": 529,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [],
+      "buttons": [
+        "Map",
+        "Full Audio",
+        "🔊 Listen Model Audio",
+        "🎙️ Voice Shadow",
+        "🎯 AI Pronunciation & Intonation Coach (Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ) Show Guide",
+        "◀ Prev",
+        "Next ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🎧 Voice Shadow Milestone 🎙️ Tap any sentence to listen & practice word-by-word karaoke ⭐ 0/8 Full Audio Sentence 1/8 Jake /ʤeɪk// was //wəz// walking //ˈwɔːkɪŋ// carefully //ˈkeəfəli// down //daʊn// the //ðə// school //skuːl// corridor //ˈkɒrɪdɔː// after //ˈɑːftə// science //ˈsaɪəns// class. //klɑːs/ 🔊 Listen Model Audio 🎙️ Voice Shadow 🎧 Please wear headphones during shadowing for the clearest recording! 🎯 AI Pronunciation & Intonation Coach (Trọng Âm & Ngữ Điệu Chuẩn Bản Xứ) Show Guide ◀ Prev Next ▶ UPGRADE PLAN",
+      "bodyLength": 529,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "gear3_retell",
+    "label": "Q3: Story Retell",
+    "url": "/week/33/task/gear3_retell",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "gear3_retell_1_before.png",
+    "screenshotAfter": "gear3_retell_2_after.png",
+    "clickText": "RECORD",
+    "clicked": "RECORD",
+    "domBefore": {
+      "headings": [],
+      "buttons": [
+        "Map",
+        "after science class",
+        "walking carefully",
+        "school corridor",
+        "💡 Show Sentence Hint (10s)",
+        "RECORD",
+        "Microphone not working? Type instead",
+        "◀ Previous",
+        "Next Question ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 1 of 5 \"Where and when did the story start?\" after science class walking carefully school corridor 💡 Show Sentence Hint (10s) RECORD Tap RECORD to answer Nova Microphone not working? Type instead ◀ Previous Next Question ▶ UPGRADE PLAN",
+      "bodyLength": 293,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [],
+      "buttons": [
+        "Map",
+        "after science class",
+        "walking carefully",
+        "school corridor",
+        "💡 Show Sentence Hint (10s)",
+        "STOP",
+        "Microphone not working? Type instead",
+        "◀ Previous",
+        "Next Question ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 1 of 5 \"Where and when did the story start?\" after science class walking carefully school corridor 💡 Show Sentence Hint (10s) STOP 🔴 Recording... Speak your answer now! Microphone not working? Type instead ◀ Previous Next Question ▶ UPGRADE PLAN",
+      "bodyLength": 304,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "gear4_clil",
+    "label": "Q4: Fact Finder",
+    "url": "/week/33/task/gear4_clil",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "gear4_clil_1_before.png",
+    "screenshotAfter": "gear4_clil_2_after.png",
+    "clickText": "Gravity",
+    "clicked": "B\nGravity",
+    "domBefore": {
+      "headings": [
+        "CHECK QUESTIONS (2 QUESTIONS)"
+      ],
+      "buttons": [
+        "Map",
+        "Science LV.1",
+        "🔤 Vocab Focus",
+        "🔬 Grammar X-Ray",
+        "🔊 Listen to whole text",
+        "🎧 Listen to this part",
+        "A Friction",
+        "B Gravity",
+        "C Wind force",
+        "A His rubber shoes created high friction with dry floor",
+        "B He walked with closed eyes",
+        "C He was holding the wall",
+        "Next: Part 2 ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🌐 Fact Finder LV.1 Milestone 🔬 Part 1: Why Wet Floors Are Slippery Step 1 of 3 Science LV.1 MODE: 🔤 Vocab Focus 🔬 Grammar X-Ray 🔊 Listen to whole text 🎧 Listen to this part KEY COLLOCATIONS & CHUNKS (11) Interactive Word Bank slippery layer shoe soles rubber soles warning signs reduces friction stays balanced smooth tiles wet tiles school corridor strong grip wet floors SCIENCE & NATURE GLOSSARY Key Terms (Click any term or word for full dictionary) Friction: A physical force that prevents surfaces from sliding easily. Grip: The hold between shoe soles and the floor surface. Rubber Soles: Bottom of shoes made of rubber for high traction. Smooth Tiles: Floor surface that becomes very slippery when wet. Slippery Layer: A thin film of water that reduces friction. Warning Sign: A bright yellow sign that alerts people to walk slowly. Balance: Staying steady on your feet without falling over. Surface: The flat top or outer boundary of an object or floor. 📖 PARAGRAPH 1: WHY WET FLOORS ARE SLIPPERY Why do people slip on wet floors? The answer is a science force called friction. Friction is the grip between two surfaces that stops things from sliding. When a student walks on dry tiles, shoe soles grip the floor firmly and the student stays balanced. But water on smooth tiles creates a thin slippery layer. This water layer reduces friction, so shoes slide easily. CHECK QUESTIONS (2 QUESTIONS) What is the science force that stops objects from sliding? A Friction B Gravity C Wind force Why did Jake not slip while walking down the dry corridor? A His rubber shoes created high friction with dry floor B He walked with closed eyes C He was holding the wall Next: Part 2 ▶ UPGRADE PLAN",
+      "bodyLength": 1713,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [
+        "CHECK QUESTIONS (2 QUESTIONS)"
+      ],
+      "buttons": [
+        "Map",
+        "Science LV.1",
+        "🔤 Vocab Focus",
+        "🔬 Grammar X-Ray",
+        "🔊 Listen to whole text",
+        "🎧 Listen to this part",
+        "A Friction",
+        "B Gravity",
+        "C Wind force",
+        "A His rubber shoes created high friction with dry floor",
+        "B He walked with closed eyes",
+        "C He was holding the wall",
+        "Next: Part 2 ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🌐 Fact Finder LV.1 Milestone 🔬 Part 1: Why Wet Floors Are Slippery Step 1 of 3 Science LV.1 MODE: 🔤 Vocab Focus 🔬 Grammar X-Ray 🔊 Listen to whole text 🎧 Listen to this part KEY COLLOCATIONS & CHUNKS (11) Interactive Word Bank slippery layer shoe soles rubber soles warning signs reduces friction stays balanced smooth tiles wet tiles school corridor strong grip wet floors SCIENCE & NATURE GLOSSARY Key Terms (Click any term or word for full dictionary) Friction: A physical force that prevents surfaces from sliding easily. Grip: The hold between shoe soles and the floor surface. Rubber Soles: Bottom of shoes made of rubber for high traction. Smooth Tiles: Floor surface that becomes very slippery when wet. Slippery Layer: A thin film of water that reduces friction. Warning Sign: A bright yellow sign that alerts people to walk slowly. Balance: Staying steady on your feet without falling over. Surface: The flat top or outer boundary of an object or floor. 📖 PARAGRAPH 1: WHY WET FLOORS ARE SLIPPERY Why do people slip on wet floors? The answer is a science force called friction. Friction is the grip between two surfaces that stops things from sliding. When a student walks on dry tiles, shoe soles grip the floor firmly and the student stays balanced. But water on smooth tiles creates a thin slippery layer. This water layer reduces friction, so shoes slide easily. CHECK QUESTIONS (2 QUESTIONS) What is the science force that stops objects from sliding? ❌ Try another option A Friction B Gravity C Wind force Why did Jake not slip while walking down the dry corridor? A His rubber shoes created high friction with dry floor B He walked with closed eyes C He was holding the wall Next: Part 2 ▶ UPGRADE PLAN",
+      "bodyLength": 1734,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "science_lab",
+    "label": "Q5: Action Lab",
+    "url": "/week/33/task/science_lab",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "science_lab_1_before.png",
+    "screenshotAfter": "science_lab_2_after.png",
+    "clickText": "START",
+    "clicked": "▶ START",
+    "domBefore": {
+      "headings": [
+        "Corridor Friction & Safety Physics Lab",
+        "READY FOR\nSCIENCE LAB?"
+      ],
+      "buttons": [
+        "Map",
+        "▶ START",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🧪 Action Lab +50 XP 🧪 Corridor Friction & Safety Physics Lab 80s 0 PTS 🧪 READY FOR SCIENCE LAB? ▶ START UPGRADE PLAN",
+      "bodyLength": 123,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [
+        "Corridor Friction & Safety Physics Lab",
+        "Corridor Friction & Safety Physics Lab"
+      ],
+      "buttons": [
+        "Map",
+        "🏷️ Low Friction Zone",
+        "🏷️ Forward Motion",
+        "🏷️ Hazard Alert",
+        "🏷️ Cold Pack & Bandage",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🧪 Action Lab +50 XP 🧪 Corridor Friction & Safety Physics Lab 77s 0 PTS Corridor Friction & Safety Physics Lab Drag the science labels into the correct position on the experiment diagram before time runs out! WET FLOOR PUDDLE 📍 Drop / Tap RUNNING FAST 📍 Drop / Tap YELLOW CAUTION SIGN 📍 Drop / Tap FIRST AID TREATMENT 📍 Drop / Tap TAP OR DRAG LABELS TO EXPERIMENT DIAGRAM: 🏷️ Low Friction Zone 🏷️ Forward Motion 🏷️ Hazard Alert 🏷️ Cold Pack & Bandage UPGRADE PLAN",
+      "bodyLength": 478,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "science_report",
+    "label": "Q6: Discovery Report",
+    "url": "/week/33/task/science_report",
+    "status": "WARNINGS",
+    "screenshotBefore": "science_report_1_before.png",
+    "screenshotAfter": "science_report_2_after.png",
+    "clickText": "Wet Corridor",
+    "clicked": "💧\nWet Corridor Floor",
+    "domBefore": {
+      "headings": [
+        "Corridor Friction & Safety Discovery Report"
+      ],
+      "buttons": [
+        "Map",
+        "1. Observe",
+        "2. Clue",
+        "3. Sentence",
+        "4. Report",
+        "💧 Wet Corridor Floor",
+        "👟 Rubber Shoe Soles",
+        "⚠️ Yellow Caution Sign",
+        "Next: Pick Science Clue",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 📝 Discovery Report +50 XP SCIENCE DETECTIVE Week 33 • Discovery Report Corridor Friction & Safety Discovery Report 1. Observe 2. Clue 3. Sentence 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to observe what happened! 💧 Wet Corridor Floor 👟 Rubber Shoe Soles ⚠️ Yellow Caution Sign Next: Pick Science Clue UPGRADE PLAN",
+      "bodyLength": 347,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [
+        "Corridor Friction & Safety Discovery Report"
+      ],
+      "buttons": [
+        "Map",
+        "1. Observe",
+        "2. Clue",
+        "3. Sentence",
+        "4. Report",
+        "💧 Wet Corridor Floor",
+        "👟 Rubber Shoe Soles",
+        "⚠️ Yellow Caution Sign",
+        "Listen",
+        "Next: Pick Science Clue",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 📝 Discovery Report +50 XP SCIENCE DETECTIVE Week 33 • Discovery Report Corridor Friction & Safety Discovery Report 1. Observe 2. Clue 3. Sentence 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to observe what happened! 💧 Wet Corridor Floor 👟 Rubber Shoe Soles ⚠️ Yellow Caution Sign EVIDENCE FOUND: WET CORRIDOR FLOOR Listen Observation: Water on smooth tiles forms a thin layer that greatly reduces friction. Next: Pick Science Clue UPGRADE PLAN",
+      "bodyLength": 476,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": [
+      "VoiceService is not defined"
+    ]
+  },
+  {
+    "id": "word_blitz",
+    "label": "Q7: Speed Match",
+    "url": "/week/33/task/word_blitz",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "word_blitz_1_before.png",
+    "screenshotAfter": "word_blitz_2_after.png",
+    "clickText": "START",
+    "clicked": "▶ START",
+    "domBefore": {
+      "headings": [
+        "READY FOR\nWORD BLITZ?"
+      ],
+      "buttons": [
+        "Map",
+        "▶ START",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 60s 0 PTS ⚡ READY FOR WORD BLITZ? ▶ START UPGRADE PLAN",
+      "bodyLength": 116,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [],
+      "buttons": [
+        "Map",
+        "bandage",
+        "corridor",
+        "slipped",
+        "nurse",
+        "y tá trường học",
+        "bị trượt chân",
+        "băng cá nhân / băng gạc",
+        "hành lang",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 58s 0 PTS ENGLISH TARGET SELECT ENGLISH bandage corridor slipped nurse MEANING / DEFINITION MATCH MEANING y tá trường học bị trượt chân băng cá nhân / băng gạc hành lang UPGRADE PLAN",
+      "bodyLength": 244,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "sentence_smash",
+    "label": "Q8: Grammar Duel",
+    "url": "/week/33/task/sentence_smash",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "sentence_smash_1_before.png",
+    "screenshotAfter": "sentence_smash_2_after.png",
+    "clickText": "START",
+    "clicked": "▶ START",
+    "domBefore": {
+      "headings": [
+        "Build a past continuous sentence with 'While'.",
+        "READY FOR\nSENTENCE SMASH?"
+      ],
+      "buttons": [
+        "Map",
+        "▶ START",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🧱 Grammar Duel +50 XP 🧱 Build a past continuous sentence with 'While'. 45s 0 PTS 1/5 🧱 READY FOR SENTENCE SMASH? ▶ START UPGRADE PLAN",
+      "bodyLength": 140,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [
+        "Build a past continuous sentence with 'While'."
+      ],
+      "buttons": [
+        "Map",
+        "is",
+        "walking",
+        "slipped",
+        "Jake",
+        "While",
+        ",",
+        "run",
+        "in",
+        "slips",
+        ".",
+        "a",
+        "the",
+        "was",
+        "boy",
+        "corridor",
+        "Check Sentence",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🧱 Grammar Duel +50 XP 🧱 Build a past continuous sentence with 'While'. 43s 0 PTS 1/5 is walking slipped Jake While , run in slips . a the was boy corridor Check Sentence UPGRADE PLAN",
+      "bodyLength": 188,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "math_quest",
+    "label": "Q9: Math Quest",
+    "url": "/week/33/task/math_quest",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "math_quest_1_before.png",
+    "screenshotAfter": "math_quest_2_after.png",
+    "clickText": "START",
+    "clicked": "▶ START",
+    "domBefore": {
+      "headings": [
+        "Math Quest (Singapore Bar Model)",
+        "READY FOR\nMATH QUEST?"
+      ],
+      "buttons": [
+        "Map",
+        "▶ START",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 📐 READY FOR MATH QUEST? ▶ START UPGRADE PLAN",
+      "bodyLength": 121,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [
+        "Math Quest (Singapore Bar Model)",
+        "PROBLEM 1: SINGAPORE BAR MODEL"
+      ],
+      "buttons": [
+        "Map",
+        "Submit Answer ▶",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 148s 0 PTS 1/5 PROBLEM 1: SINGAPORE BAR MODEL Jake walked 40 meters. The corridor is 100 meters long. How many meters are left? Submit Answer ▶ UPGRADE PLAN",
+      "bodyLength": 219,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "story_writer",
+    "label": "Q10: Story Writer",
+    "url": "/week/33/task/story_writer",
+    "status": "BUTTON_MISSING",
+    "screenshotBefore": "story_writer_1_before.png",
+    "screenshotAfter": null,
+    "clickText": "2 BUILD",
+    "clicked": null,
+    "domBefore": {
+      "headings": [],
+      "buttons": [
+        "Map",
+        "1 MODEL",
+        "2 BUILD",
+        "3 WRITE",
+        "Listen",
+        "🔒 ★ LOCKED: In the beginning,",
+        "+ Jake",
+        "+ was walking carefully",
+        "+ down the school corridor",
+        "Sentence Hint",
+        "Previous Scene",
+        "Next Scene",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map ✏️ Story Writer +50 XP CAMBRIDGE A2 FLYERS — READING & WRITING PART 7 Look at the three pictures. Write about this story. Write 20 or more words. MODEL Scene 1 of 3 1 MODEL 2 BUILD 3 WRITE SCENE 1/3 • MODEL Listen 🔗 LINK YOUR SENTENCES: Connectors join your three pictures into ONE story. 🔒 ★ LOCKED: In the beginning, (Pre-set starting connector for Scene 1) 💡 TAP WORDS TO INSERT (TAP IN ORDER TO BUILD SENTENCE): + Jake + was walking carefully + down the school corridor WRITE 1 COMPLETE SENTENCE FOR SCENE 1 (MODEL): Sentence Hint 0 words in this sentence Total story: 0 words (min: 20) Previous Scene Next Scene UPGRADE PLAN",
+      "bodyLength": 638,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": null,
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "broadcast_studio",
+    "label": "Q11: Video Challenge",
+    "url": "/week/33/task/broadcast_studio",
+    "status": "BUTTON_MISSING",
+    "screenshotBefore": "broadcast_studio_1_before.png",
+    "screenshotAfter": null,
+    "clickText": "START AUDIO RECORDING",
+    "clicked": null,
+    "domBefore": {
+      "headings": [
+        "Record yourself retelling your story!"
+      ],
+      "buttons": [
+        "Map",
+        "🔊 Playing Intro...",
+        "Video",
+        "Audio",
+        "🎬 START RECORDING",
+        "Full Audio",
+        "Microphone not working? Type instead",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 📹 Video Challenge Milestone 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). 🔊 Playing Intro... Video Audio 🎬 START RECORDING 📜 STORY TELEPROMPTER (READ ALOUD) Full Audio SCENE 1: SETTING Look at the first scene and describe where and when the story began. SCENE 2: ACTION Describe what the characters were doing and what happened next. SCENE 3: PROBLEM Explain what unexpected problem or challenge occurred in the story. SCENE 4: ENDING Tell how the situation was resolved and how the story ended. Microphone not working? Type instead UPGRADE PLAN",
+      "bodyLength": 599,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": null,
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "info_exchange",
+    "label": "Q12: Info Exchange",
+    "url": "/week/33/task/info_exchange",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "info_exchange_1_before.png",
+    "screenshotAfter": "info_exchange_2_after.png",
+    "clickText": "SPEAK",
+    "clicked": "SPEAK",
+    "domBefore": {
+      "headings": [
+        "Phase 1: Ask Questions from Cues"
+      ],
+      "buttons": [
+        "Map",
+        "📋 Table A (You Ask)",
+        "🎙️ Table B (You Answer)",
+        "▶ Play Model Dialogue",
+        "Need a grammar hint?",
+        "SPEAK",
+        "Microphone not working? Type instead",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🔄 Info Exchange +20 XP SPEAKING PRACTICE Cue 1 / 4 Phase 1: Ask Questions from Cues 📋 Table A (You Ask) 🎙️ Table B (You Answer) MODEL DIALOGUE: Listen to examiner & candidate conversation example ▶ Play Model Dialogue 📄 Tom's Accident CANDIDATE'S QUESTION CARD (ASK EXAMINER) 01. where / get injured? ? 02. what / hurt? ? 03. when / accident happen? ? 04. who / helped tom? ? CUE PROMPT (1/4): where / get injured? Formulate and ask a complete question using this cue! Need a grammar hint? SPEAK Tap SPEAK and ask Nova your question Microphone not working? Type instead UPGRADE PLAN",
+      "bodyLength": 595,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [
+        "Phase 1: Ask Questions from Cues"
+      ],
+      "buttons": [
+        "Map",
+        "📋 Table A (You Ask)",
+        "🎙️ Table B (You Answer)",
+        "▶ Play Model Dialogue",
+        "Need a grammar hint?",
+        "STOP",
+        "Microphone not working? Type instead",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🔄 Info Exchange +20 XP SPEAKING PRACTICE Cue 1 / 4 Phase 1: Ask Questions from Cues 📋 Table A (You Ask) 🎙️ Table B (You Answer) MODEL DIALOGUE: Listen to examiner & candidate conversation example ▶ Play Model Dialogue 📄 Tom's Accident CANDIDATE'S QUESTION CARD (ASK EXAMINER) 01. where / get injured? ? 02. what / hurt? ? 03. when / accident happen? ? 04. who / helped tom? ? CUE PROMPT (1/4): where / get injured? Formulate and ask a complete question using this cue! Need a grammar hint? STOP 🔴 Listening... Speak your question clearly! Microphone not working? Type instead UPGRADE PLAN",
+      "bodyLength": 602,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "boss_listening",
+    "label": "Q13: Listening Shield",
+    "url": "/week/33/task/boss_listening",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "boss_listening_1_before.png",
+    "screenshotAfter": "boss_listening_2_after.png",
+    "clickText": "ENTER BOSS BATTLE NOW",
+    "clicked": "ENTER BOSS BATTLE NOW",
+    "domBefore": {
+      "headings": [
+        "Master Soundwave Nova"
+      ],
+      "buttons": [
+        "Map",
+        "← Map",
+        "ENTER BOSS BATTLE NOW",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🎧 Listening Shield (L1 & L2) Milestone 🎧 CYCLE 1/5 • WEEK 33 4 PARTS Master Soundwave Nova ← Map 0 Shields MISSION OBJECTIVE Cambridge A2 Flyers ~18m • Instant official Cambridge score ENTER BOSS BATTLE NOW UPGRADE PLAN",
+      "bodyLength": 225,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [
+        "🎧 CAMBRIDGE A2 FLYERS — LISTENING PART 1"
+      ],
+      "buttons": [
+        "Map",
+        "L1 · Draw Lines",
+        "L2 · Note Completion",
+        "← Map",
+        "Play Official Audio (2×)",
+        "🔊 Playing Intro...",
+        "🎯 Calibrator",
+        "Clear",
+        "Jake ★ EX",
+        "Tom",
+        "Nurse Sarah",
+        "Headmaster Brown",
+        "Maria",
+        "David",
+        "Mia the Monitor",
+        "Check Line Matches",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🎧 Listening Shield (L1 & L2) Milestone LISTENING Listening Part 1: Draw Lines L1 · Draw Lines L2 · Note Completion OFFICIAL CAMBRIDGE ASSESSMENT 🎧 CAMBRIDGE A2 FLYERS — LISTENING PART 1 Listen and draw lines. There is one example. ← Map Play Official Audio (2×) 🔊 Playing Intro... 🎯 Calibrator Clear Jake ★ EX Tom Nurse Sarah Headmaster Brown Maria David Mia the Monitor ★ ★ EXAMPLE 📍 ? 📍 ? 📍 ? 📍 ? 📍 ? Check Line Matches UPGRADE PLAN",
+      "bodyLength": 449,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "boss_reading",
+    "label": "Q14: R&W Shield",
+    "url": "/week/33/task/boss_reading",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "boss_reading_1_before.png",
+    "screenshotAfter": "boss_reading_2_after.png",
+    "clickText": "ENTER BOSS BATTLE NOW",
+    "clicked": "ENTER BOSS BATTLE NOW",
+    "domBefore": {
+      "headings": [
+        "Master Soundwave Nova"
+      ],
+      "buttons": [
+        "Map",
+        "← Map",
+        "ENTER BOSS BATTLE NOW",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 📖 Reading & Writing Shield (R1) Milestone 🎧 CYCLE 1/5 • WEEK 33 4 PARTS Master Soundwave Nova ← Map 0 Shields MISSION OBJECTIVE Cambridge A2 Flyers ~18m • Instant official Cambridge score ENTER BOSS BATTLE NOW UPGRADE PLAN",
+      "bodyLength": 228,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [
+        "Word Bank Matching (15 Words & 10 Definitions)"
+      ],
+      "buttons": [
+        "Map",
+        "slippery",
+        "bandage",
+        "headmaster",
+        "warning sign",
+        "science room",
+        "library",
+        "corridor",
+        "floor",
+        "first-aid kit",
+        "playground",
+        "cold pack",
+        "stairs",
+        "cafeteria",
+        "puddle",
+        "nurse",
+        "Check Matching Answers",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 📖 Reading & Writing Shield (R1) Milestone READING & WRITING Reading & Writing Part 1: Word Bank Match CAMBRIDGE A2 FLYERS — READING & WRITING PART 1 Word Bank Matching (15 Words & 10 Definitions) Look and read. Choose the correct words and write them on the lines. There is one example. 10 Definitions · 15 Candidate Words 15-WORD BANK POOL: Click a word pill, then click a definition slot below slippery bandage headmaster warning sign science room library corridor floor first-aid kit playground cold pack stairs cafeteria puddle nurse ★ EXAMPLE A quiet room filled with books where students study. library (LOCKED) 1 You walk along this long passage inside a school building to get to your classroom. Select Word 2 A trained medical worker at school who helps students when they get hurt. Select Word 3 A soft piece of cloth used to cover and protect a cut or knee injury. Select Word 4 The person in charge of managing the school who praises students for safe behaviour. Select Word 5 A small pool of liquid left on the floor after cleaning or rain. Select Word 6 The place where students do experiments with goggles and chemicals. Select Word 7 A large room at school where children eat lunch and talk with friends. Select Word 8 You walk up or down these steps inside the school building to go between floors. Select Word 9 A yellow sign placed on the floor to warn people to walk carefully on wet tiles. Select Word 10 A bag or box containing bandages and cold packs used for immediate medical aid at school. Select Word Check Matching Answers UPGRADE PLAN",
+      "bodyLength": 1570,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  {
+    "id": "weekly_review",
+    "label": "Q15: Speaking & Passport",
+    "url": "/week/33/task/weekly_review",
+    "status": "PASS_INTERACTED",
+    "screenshotBefore": "weekly_review_1_before.png",
+    "screenshotAfter": "weekly_review_2_after.png",
+    "clickText": "ENTER BOSS BATTLE NOW",
+    "clicked": "ENTER BOSS BATTLE NOW",
+    "domBefore": {
+      "headings": [
+        "Master Soundwave Nova"
+      ],
+      "buttons": [
+        "Map",
+        "← Map",
+        "ENTER BOSS BATTLE NOW",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🏆 Speaking & Passport (S1) Milestone 🎧 CYCLE 1/5 • WEEK 33 4 PARTS Master Soundwave Nova ← Map 0 Shields MISSION OBJECTIVE Cambridge A2 Flyers ~18m • Instant official Cambridge score ENTER BOSS BATTLE NOW UPGRADE PLAN",
+      "bodyLength": 223,
+      "spinners": 0,
+      "errEls": []
+    },
+    "domAfter": {
+      "headings": [
+        "Find the Differences (Look at the Two Pictures)"
+      ],
+      "buttons": [
+        "Map",
+        "🔊 Playing Intro...",
+        "Complete Speaking Differences",
+        "UPGRADE PLAN"
+      ],
+      "bodyText": "Map 🏆 Speaking & Passport (S1) Milestone SPEAKING Speaking Part 1: Find Differences CAMBRIDGE A2 FLYERS — SPEAKING PART 1 Find the Differences (Look at the Two Pictures) Look at the two pictures. They are the same, but there are some differences. Tell me the differences. 🔊 Playing Intro... Found 0 of 4 Differences Picture A Picture B Complete Speaking Differences UPGRADE PLAN",
+      "bodyLength": 382,
+      "spinners": 0,
+      "errEls": []
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+]
