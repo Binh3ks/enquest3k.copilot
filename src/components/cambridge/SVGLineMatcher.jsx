@@ -279,7 +279,7 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
             className={`w-full h-auto block rounded-2xl border-2 transition-all ${
               selectedName ? 'cursor-crosshair border-indigo-400' : 'border-slate-800 cursor-default'
             }`}
-            style={{ background: '#0f172a', overflow: 'visible' }}
+            style={{ background: '#0f172a', overflow: 'visible', maxHeight: '52vh' }}
           >
             {/* Background image — fills full viewBox, no stretch issues */}
             <image

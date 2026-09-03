@@ -170,11 +170,11 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
       </div>
 
       {/* 📝 10 Cambridge Definition Rows */}
-      <div className="space-y-1 sm:space-y-1.5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-1.5 sm:gap-2">
         {/* Worked Example Definition */}
         <div
           data-testid="example-row"
-          className="p-1.5 sm:p-2 rounded-xl border-2 border-amber-300 bg-amber-50/90 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-1.5"
+          className="col-span-1 lg:col-span-2 p-1.5 sm:p-2 rounded-xl border-2 border-amber-300 bg-amber-50/90 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-1.5"
         >
           <div className="flex items-start gap-1.5 flex-1">
             <span className="px-1.5 py-0.5 rounded-md bg-amber-500 text-white font-black text-[9px] uppercase tracking-wider shrink-0 mt-0.5 shadow-2xs">

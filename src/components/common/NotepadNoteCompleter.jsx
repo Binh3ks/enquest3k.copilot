@@ -133,7 +133,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto my-1 p-3 sm:p-5 bg-gradient-to-b from-amber-50 to-orange-50/50 rounded-2xl sm:rounded-3xl border-2 border-amber-200 shadow-md font-sans space-y-2.5">
+    <div className="w-full max-w-2xl sm:max-w-3xl mx-auto my-1 p-2.5 sm:p-3.5 bg-gradient-to-b from-amber-50 to-orange-50/50 rounded-2xl border-2 border-amber-200 shadow-md font-sans space-y-2">
       {/* Visual Spiral Binding top holes */}
       <div className="flex justify-around items-center px-4 py-1 border-b-2 border-dashed border-amber-300">
         {[...Array(12)].map((_, i) => (
@@ -143,7 +143,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
 
       <div className="pt-1">
         {/* Cambridge Exam Header */}
-        <div className="bg-gradient-to-r from-amber-900 to-slate-900 text-white px-3.5 py-2 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 shadow-sm mb-2.5">
+        <div className="bg-gradient-to-r from-amber-900 to-slate-900 text-white px-3.5 py-1.5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-1 shadow-sm mb-2">
           <div>
             <h2 className="text-xs sm:text-sm font-bold text-slate-300 flex items-center gap-1.5">
               🎧 Cambridge A2 Flyers Practice — Listening Part 2
@@ -155,7 +155,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
         </div>
 
         {/* Compact Header & Audio Bar */}
-        <div className="flex items-center justify-between border-b border-amber-200 pb-2 mb-2.5 flex-wrap gap-2">
+        <div className="flex items-center justify-between border-b border-amber-200 pb-1.5 mb-2 flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <FlyersListeningPlayButton
               partNumber={2}
@@ -180,7 +180,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
         {/* Notes Form List */}
         <div className="space-y-1.5">
           {/* Worked Example Row */}
-          <div data-testid="example-row" className="p-2 sm:p-2.5 bg-amber-100/80 rounded-xl border-2 border-amber-300 shadow-2xs space-y-1">
+          <div data-testid="example-row" className="p-1.5 sm:p-2 bg-amber-100/80 rounded-xl border-2 border-amber-300 shadow-2xs space-y-0.5">
             <div className="flex items-center gap-1.5 flex-wrap justify-between">
               <div className="flex items-center gap-1.5">
                 <span className="px-2 py-0.5 rounded-md bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider shadow-2xs">
@@ -200,9 +200,9 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
                 type="text"
                 disabled={true}
                 value={exampleObj.answer}
-                className="flex-1 w-full px-3 py-1.5 rounded-lg border border-amber-300 font-black text-xs sm:text-sm text-amber-950 bg-amber-50/90 cursor-not-allowed"
+                className="flex-1 w-full px-3 py-1 rounded-lg border border-amber-300 font-black text-xs sm:text-sm text-amber-950 bg-amber-50/90 cursor-not-allowed"
               />
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-amber-600 flex-shrink-0" />
             </div>
           </div>
 
@@ -212,7 +212,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
             const isCorrect = isSubmitted && (userNorm === targetNorm || (userNorm && targetNorm.includes(userNorm)));
 
             return (
-              <div key={note.id} className="p-2 sm:p-2.5 bg-white rounded-xl border border-amber-200 shadow-2xs space-y-1">
+              <div key={note.id} className="p-1.5 sm:p-2 bg-white rounded-xl border border-amber-200 shadow-2xs space-y-0.5">
                 <div className="flex items-center gap-1.5 flex-wrap">
                   <span className="w-5 h-5 rounded-md bg-amber-200 text-amber-950 font-black text-[11px] flex items-center justify-center shrink-0">
                     {index + 1}
@@ -229,7 +229,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
                     value={answers[note.id] || ''}
                     onChange={(e) => setAnswers({ ...answers, [note.id]: e.target.value })}
                     placeholder="Type note answer here..."
-                    className={`flex-1 w-full px-3 py-1.5 rounded-lg border font-bold text-xs sm:text-sm text-slate-900 focus:outline-none transition-all ${
+                    className={`flex-1 w-full px-3 py-1 rounded-lg border font-bold text-xs sm:text-sm text-slate-900 focus:outline-none transition-all ${
                       isSubmitted
                         ? isCorrect
                           ? 'border-emerald-500 bg-emerald-50 text-emerald-950'

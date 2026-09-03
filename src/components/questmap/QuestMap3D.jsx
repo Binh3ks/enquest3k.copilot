@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Menu, CheckCircle2, Lock, Gamepad2, BookOpen, Users } from 'lucide-react';
+import { Menu, CheckCircle2, Lock, Gamepad2, BookOpen, Users, Sparkles } from 'lucide-react';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { useUserStore } from '../../stores/useUserStore';
 import useArcadeStore from '../../stores/useArcadeStore';
@@ -137,6 +137,7 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
   const [expandedStation, setExpandedStation] = useState(null);
   const [showPIN, setShowPIN] = useState(false);
   const [showCoopModal, setShowCoopModal] = useState(false);
+  const [showMobileQuickHub, setShowMobileQuickHub] = useState(false);
   const { isArcadeOpen, setArcadeOpen } = useArcadeStore();
   const [teacherOverride, setTeacherOverride] = useState(false);
   const [showNarrative, setShowNarrative] = useState(false);
@@ -289,34 +290,49 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
           <span className="qm3d-progress-text">{weekQuestCount}/{totalQuests}</span>
         </div>
 
-        {/* Quick Access Actions for High Discoverability */}
+        {/* Quick Access Actions: Full buttons on sm+, Compact Hub button on mobile (<sm) */}
         <div className="qm3d-header-right">
+          {/* Desktop/Tablet (>= sm): 3 distinct action buttons with labels */}
+          <div className="hidden sm:flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setArcadeOpen(true)}
+              className="qm3d-action-btn"
+              title="Arcade Room"
+            >
+              <Gamepad2 size={16} className="text-indigo-600" />
+              <span className="text-xs font-black text-slate-700">Arcade</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate('/word-treasury')}
+              className="qm3d-action-btn"
+              title="Word Memory Bank"
+            >
+              <BookOpen size={16} className="text-purple-600" />
+              <span className="text-xs font-black text-slate-700">Words</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowCoopModal(true)}
+              className="qm3d-action-btn"
+              title="Class Co-op Board"
+            >
+              <Users size={16} className="text-amber-600" />
+              <span className="text-xs font-black text-slate-700">Co-op</span>
+            </button>
+          </div>
+
+          {/* Mobile (< sm): 1 compact Hub button to prevent header overflow */}
           <button
             type="button"
-            onClick={() => setArcadeOpen(true)}
-            className="qm3d-action-btn"
-            title="Arcade Room"
+            onClick={() => setShowMobileQuickHub(true)}
+            className="sm:hidden flex items-center gap-1.5 px-3 py-1.5 bg-white/95 hover:bg-white text-indigo-950 border border-slate-200 rounded-xl shadow-xs backdrop-blur-md active:scale-95 transition"
+            title="Quick Features Menu"
+            aria-label="Quick Features Menu"
           >
-            <Gamepad2 size={16} className="text-indigo-600" />
-            <span className="hidden sm:inline text-xs font-black text-slate-700">Arcade</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => navigate('/word-treasury')}
-            className="qm3d-action-btn"
-            title="Word Memory Bank"
-          >
-            <BookOpen size={16} className="text-purple-600" />
-            <span className="hidden sm:inline text-xs font-black text-slate-700">Words</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setShowCoopModal(true)}
-            className="qm3d-action-btn"
-            title="Class Co-op Board"
-          >
-            <Users size={16} className="text-amber-600" />
-            <span className="hidden sm:inline text-xs font-black text-slate-700">Co-op</span>
+            <Sparkles size={15} className="text-amber-500" />
+            <span className="text-xs font-black text-slate-800">Hub</span>
           </button>
         </div>
       </div>
@@ -639,6 +655,107 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
       {/* Modals */}
       {isArcadeOpen && <ArcadeModal weekNumber={weekId} onClose={() => setArcadeOpen(false)} />}
       <ClassLeaderboardModal isOpen={showCoopModal} onClose={() => setShowCoopModal(false)} />
+
+      {/* Mobile Quick Hub Bottom Sheet (Option 1) */}
+      {showMobileQuickHub && (
+        <div
+          data-testid="mobile-quick-hub-overlay"
+          className="fixed inset-0 z-[200] flex items-end justify-center bg-slate-950/60 backdrop-blur-xs animate-in fade-in duration-200 sm:hidden"
+          onClick={() => setShowMobileQuickHub(false)}
+        >
+          <div
+            className="w-full max-w-lg bg-white rounded-t-3xl p-5 shadow-2xl border-t-2 border-indigo-200 animate-in slide-in-from-bottom duration-250 flex flex-col gap-3.5"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Sheet Handle */}
+            <div className="w-12 h-1.5 bg-slate-300 rounded-full mx-auto" />
+
+            {/* Header */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-xl">⚡</span>
+                <h3 className="font-black text-slate-900 text-base">Quick Hub</h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowMobileQuickHub(false)}
+                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center text-sm font-black transition active:scale-90"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* 3 Interactive Feature Cards */}
+            <div className="grid grid-cols-1 gap-2.5">
+              {/* 1. Arcade Room */}
+              <button
+                type="button"
+                onClick={() => {
+                  setShowMobileQuickHub(false);
+                  setArcadeOpen(true);
+                }}
+                className="flex items-center gap-3.5 p-3 rounded-2xl bg-gradient-to-r from-indigo-50 to-blue-50 border border-indigo-200 hover:border-indigo-300 text-left transition active:scale-98 shadow-xs"
+              >
+                <div className="w-11 h-11 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-sm shrink-0">
+                  🎮
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-black text-indigo-950 text-sm flex items-center gap-1.5">
+                    <span>Arcade Room</span>
+                    <span className="text-[10px] bg-indigo-200 text-indigo-800 px-1.5 py-0.5 rounded-full font-bold">Games</span>
+                  </div>
+                  <p className="text-xs text-slate-500 truncate">Play English learning mini-games</p>
+                </div>
+                <span className="text-slate-400 text-sm font-black">→</span>
+              </button>
+
+              {/* 2. Word Treasury */}
+              <button
+                type="button"
+                onClick={() => {
+                  setShowMobileQuickHub(false);
+                  navigate('/word-treasury');
+                }}
+                className="flex items-center gap-3.5 p-3 rounded-2xl bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 hover:border-purple-300 text-left transition active:scale-98 shadow-xs"
+              >
+                <div className="w-11 h-11 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-sm shrink-0">
+                  📖
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-black text-purple-950 text-sm flex items-center gap-1.5">
+                    <span>Word Treasury</span>
+                    <span className="text-[10px] bg-purple-200 text-purple-800 px-1.5 py-0.5 rounded-full font-bold">Vocab</span>
+                  </div>
+                  <p className="text-xs text-slate-500 truncate">Review vocabulary & memory bank</p>
+                </div>
+                <span className="text-slate-400 text-sm font-black">→</span>
+              </button>
+
+              {/* 3. Class Co-op */}
+              <button
+                type="button"
+                onClick={() => {
+                  setShowMobileQuickHub(false);
+                  setShowCoopModal(true);
+                }}
+                className="flex items-center gap-3.5 p-3 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 hover:border-amber-300 text-left transition active:scale-98 shadow-xs"
+              >
+                <div className="w-11 h-11 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center text-xl shadow-sm shrink-0">
+                  🏆
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-black text-amber-950 text-sm flex items-center gap-1.5">
+                    <span>Class Co-op</span>
+                    <span className="text-[10px] bg-amber-200 text-amber-800 px-1.5 py-0.5 rounded-full font-bold">Team Goal</span>
+                  </div>
+                  <p className="text-xs text-slate-500 truncate">Work together with friends for class milestones</p>
+                </div>
+                <span className="text-slate-400 text-sm font-black">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* PIN Gate */}
       <ParentPINGate
