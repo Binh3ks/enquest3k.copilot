@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Video, Mic, Square, RefreshCw, Volume2, CheckCircle2, Sparkles, Download, Camera, VideoOff, Trophy, Play, ChevronLeft, ChevronRight, Eye, EyeOff } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { VoiceService } from '../../services/voiceService';
+import { TTSCache } from '../../services/ttsCache';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { playVictoryFanfare } from '../../utils/soundEffects';
 import { useStationProgress } from '../../hooks/useStationProgress';
@@ -88,7 +89,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
         const score = evaluation.score || savedData.score || 95;
         const scenes = evaluation.recognizedScenes || activeScenes.length;
         const connCount = evaluation.breakdown?.connectors || 5;
-        evaluation.spokenFeedback = `Outstanding job! You achieved a score of ${score} percent on your video challenge. You successfully described all ${scenes} scenes with ${connCount} linking words. Excellent Cambridge story retelling!`;
+        evaluation.spokenFeedback = `Outstanding job! You achieved a score of ${score} percent on your video challenge. You presented all ${scenes} scenes with confident camera delivery and ${connCount} linking words. Excellent Cambridge Flyers video presentation!`;
       }
       setEvalResult(evaluation);
     } else if (savedData.score !== undefined && savedData.score > 0) {
@@ -98,8 +99,8 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
       setEvalResult({
         isCorrect: score >= 60,
         score,
-        feedback: savedData.feedback?.message || `🌟 Outstanding video challenge! Score: ${score}%. Excellent Cambridge story retelling!`,
-        spokenFeedback: `Outstanding job! You achieved a score of ${score} percent on your video challenge. You successfully described all ${scenes} scenes with ${connCount} linking words. Excellent Cambridge story retelling!`,
+        feedback: savedData.feedback?.message || `🌟 Outstanding Video Challenge! Score: ${score}%. Excellent Cambridge story presentation!`,
+        spokenFeedback: `Outstanding job! You achieved a score of ${score} percent on your video challenge. You presented all ${scenes} scenes with confident camera delivery and ${connCount} linking words. Excellent Cambridge Flyers video presentation!`,
         recognizedScenes: scenes,
         totalScenes: activeScenes.length,
         breakdown: savedData.breakdown || { connectors: connCount, keyCollocations: 5, fluency: score }
@@ -180,10 +181,34 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
       unlockAudio.play().catch(() => {});
     } catch (_) {}
 
-    // 🎙️ TIER 1: Google Cloud TTS Direct (en-US-Journey-F) — High-fidelity AI speech
+    // 🔍 TIER 1: Check Client IndexedDB Cache (0ms instant playback on replay)
+    try {
+      const cachedUrl = await TTSCache.get(cleanSpeech, 'video_feedback', 'en-US-Journey-F');
+      if (cachedUrl) {
+        console.log('[RetellRecorder] ⚡ AI Feedback Cache Hit (0ms) from IndexedDB');
+        const audio = new Audio(cachedUrl);
+        activeFeedbackAudioRef.current = audio;
+        audio.onended = () => {
+          setIsSpeakingFeedback(false);
+          activeFeedbackAudioRef.current = null;
+        };
+        audio.onerror = () => {
+          fallbackToBrowserTTS(cleanSpeech);
+        };
+        await audio.play();
+        return;
+      }
+    } catch (_) {}
+
+    // 🎙️ TIER 2: Google Cloud TTS Direct (en-US-Journey-F) — High-fidelity AI speech
     try {
       const audioBlob = await VoiceService.useGoogleTTSDirect(cleanSpeech, 'en-US-Journey-F');
       if (audioBlob) {
+        // Save to IndexedDB cache so all future clicks are instant 0ms!
+        try {
+          await TTSCache.set(cleanSpeech, 'video_feedback', audioBlob, 'en-US-Journey-F');
+        } catch (_) {}
+
         const audioUrl = URL.createObjectURL(audioBlob);
         const audio = new Audio(audioUrl);
         activeFeedbackAudioRef.current = audio;
@@ -204,7 +229,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
       console.warn('[RetellRecorder] Google Cloud TTS Direct unavailable, falling back to browser TTS:', gErr.message);
     }
 
-    // 🎙️ TIER 2: Fallback to Browser Web Speech API
+    // 🎙️ TIER 3: Fallback to Browser Web Speech API
     fallbackToBrowserTTS(cleanSpeech);
   };
 
@@ -417,23 +442,23 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
 
         if (!hasSpokenAudio) {
           // True silence detection: User stayed completely silent or mic was muted
-          const evaluation = evaluateStoryRetell('', activeScenes);
+          const evaluation = evaluateStoryRetell('', activeScenes, 'video');
           setEvalResult(evaluation);
           setFeedback({
-            message: "⚠️ No speech detected. Please speak clearly into your microphone when recording!"
+            message: "⚠️ No speech detected. Please speak clearly towards the camera when recording!"
           });
-          speakText("No speech was detected. Please try recording again and read your story aloud.");
+          speakText("No speech was detected. Please try recording again and speak clearly towards the camera.");
           return;
         }
 
         let evaluation;
         if (spoken && spoken.length > 0) {
           // Exact text evaluation via Cambridge story retell matrix
-          evaluation = evaluateStoryRetell(spoken, activeScenes);
+          evaluation = evaluateStoryRetell(spoken, activeScenes, 'video');
         } else {
           // Hardware voice verified (Audio recorded, user spoke into mic)
           // Run evaluateStoryRetell on fullScriptText to get the exact identical Cambridge criteria and breakdown!
-          evaluation = evaluateStoryRetell(fullScriptText, activeScenes);
+          evaluation = evaluateStoryRetell(fullScriptText, activeScenes, 'video');
           setSpokenTranscript(fullScriptText);
         }
 
@@ -515,7 +540,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
     setSpokenTranscript(typedText);
 
     if (!typedText || typedText.trim().length === 0) {
-      const evaluation = evaluateStoryRetell('', activeScenes);
+      const evaluation = evaluateStoryRetell('', activeScenes, 'video');
       setEvalResult(evaluation);
       setFeedback({
         message: "⚠️ No script provided. Please write your story before submitting!"
@@ -523,13 +548,12 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
       return;
     }
 
-    const evaluation = evaluateStoryRetell(typedText, activeScenes);
+    const evaluation = evaluateStoryRetell(typedText, activeScenes, 'video');
     setEvalResult(evaluation);
 
     const feedbackObj = {
-      message: evaluation.isCorrect
-        ? (evaluation.feedback || `🎉 Story script submitted! Score: ${evaluation.score}%. Great storytelling syntax!`)
-        : `⚠️ Script submitted! Score: ${evaluation.score}%. Keep practicing!`
+      message: evaluation.feedback || `🎉 Story script submitted! Score: ${evaluation.score}%. Great storytelling syntax!`,
+      spokenFeedback: evaluation.spokenFeedback
     };
     setFeedback(feedbackObj);
 
