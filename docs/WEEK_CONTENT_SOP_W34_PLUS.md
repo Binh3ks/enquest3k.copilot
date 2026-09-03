@@ -266,34 +266,37 @@ rw_part_6: {
 
 > **Mandatory Scaffold Invariants for Story Writer**:
 > 1. **Collocation & Chunk-First Invariant**:
->    - Mọi `pills` và keyword inputs BẮT BUỘC phải là **cụm từ tự nhiên (Chunks, Collocations, Phrasal Verbs, Prepositional Phrases)** hoàn chỉnh (ví dụ: `felt proud of him`, `spoke to all the students`, `walked carefully down the corridor`, `slipped on the wet floor`, `applied a clean bandage`, `gave Jake a special safety award`).
+>    - Mọi `pills` và keyword inputs BẮT BUỘC phải là **cụm từ tự nhiên (Chunks, Collocations, Phrasal Verbs, Prepositional Phrases)** hoàn chỉnh (ví dụ: `felt proud of him`, `spoke to all the students`, `walked carefully down the corridor`, `slipped on the wet tiles`, `applied a clean bandage`, `gave Jake a special safety award`).
 >    - CẤM TUYỆT ĐỐI bẻ nhỏ thành từng từ đơn rời rạc vô nghĩa (`fast`, `walked`, `the`).
-> 2. **Mandatory Shuffle & Distractors**:
->    - Toàn bộ `pills` ở mọi cảnh PHẢI được xáo trộn ngẫu nhiên (Scrambled), KHÔNG BAO GIỜ sắp xếp theo đúng thứ tự câu.
->    - Bắt buộc cung cấp các distractors hợp lý để kiểm tra tư duy ngữ cảnh của học sinh.
-> 3. **Multi-Sentence Target (2–3 Sentences per Scene)**:
->    - Mỗi cảnh (Scene 1–5) yêu cầu học sinh viết tối thiểu 2 câu hoàn chỉnh (khuyến khích 3 câu).
->    - Word Bank cung cấp sẵn inputs/collocations tối thiểu cho 2 câu, học sinh tự do mở rộng câu thứ 3.
-> 4. **Smart Cursor Insertion**:
->    - Khi bấm vào Connector hoặc Pill, văn bản PHẢI được chèn chính xác tại vị trí con trỏ (Cursor Position), tự động căn chỉnh khoảng trắng, không nhảy về đầu đoạn.
+> 2. **Pure Discourse Connectors Invariant (Chống Xung Đột Cú Pháp)**:
+>    - Hàng `connectors` BẮT BUỘC CHỈ CHỨA các liên từ nối câu / liên từ thời gian thuần túy (`In the beginning,`, `Suddenly,`, `Then,`, `After that,`, `Meanwhile,`, `In the end,`, `Finally,`, `and`, `because`, `so`).
+>    - **CẤM TUYỆT ĐỐI** nhét cả mệnh đề có sẵn chủ ngữ và động từ vào hàng connectors (ví dụ: cấm dùng `"While he was walking,"`), tránh gây xung đột kép thành *"In the beginning, While Jake was walking walked carefully..."*.
+> 3. **2-Sentence Syntactic Architecture (2 Câu Hoàn Chỉnh per Scene)**:
+>    - Mỗi cảnh (Scene 1–5) cung cấp đủ các cụm từ để học sinh ghép thành **2 câu chuẩn mực**:
+>      - *Câu 1*: Bối cảnh / Hành động của nhân vật chính.
+>      - *Câu 2*: Sự cố bất ngờ / Hành động can thiệp / Kết quả.
+>    - Bắt buộc cung cấp đúng 2 distractors hợp lý per scene để kiểm tra tư duy ngữ cảnh của học sinh.
+> 4. **Smart Cursor Insertion & Dictionary Synchronization**:
+>    - Khi bấm vào Connector hoặc Pill, văn bản chèn chính xác tại vị trí con trỏ chuột, tự căn chỉnh dấu cách.
+>    - 100% pills và chunks BẮT BUỘC phải có trong từ điển `vocab_dictionary_master.js` với nghĩa tiếng Việt, IPA và câu ví dụ để click là xem ngay không bị treo.
 
 ```js
 picture_story: {
   steps: [   // exactly 5 steps
     { scene: 1, ladder_stage: 'MODEL', badge_label: 'MODEL',
-      title: 'Scene 1: Setting', image_url: '/images/weekXX/writing_panel_1.png',
+      title: 'Scene 1: Walking in the Corridor', image_url: '/images/weekXX/writing_panel_1.png',
       caption: '...', frame_L1: '2 sentences example', locked_connector: 'In the beginning,',
-      connectors: ['While he was walking,', 'Then,', 'Suddenly,', 'and'],
-      sentence_hint: 'Write 2–3 sentences about this picture. Use the words below to help.',
+      connectors: ['Suddenly,', 'Then,', 'and'],
+      sentence_hint: 'Write 2 sentences: (1) Where Jake was walking, and (2) who ran past him.',
       ordered_chips: [...],   // full sentence target components
-      pills: [...],           // SCRAMBLED collocations/chunks + distractors
+      pills: [...],           // SCRAMBLED collocations/chunks + 2 distractors
       audio: '...' },
-    { scene: 2, ladder_stage: 'BUILD', ..., connectors: [...], display_chips: [...], pills: [...] },
-    { scene: 3, ladder_stage: 'WRITE', ..., connectors: [...], keywords: [...], pills: [...] },
-    { scene: 4, ladder_stage: 'EXPAND', ..., connectors: [...], keywords: [...], pills: [...] },
-    { scene: 5, ladder_stage: 'REFLECT', locked_connector: 'In the end,', connectors: [...], keywords: [...], pills: [...] }
+    { scene: 2, ladder_stage: 'BUILD', locked_connector: 'Suddenly,', connectors: ['Then,', 'Right away,', 'and', 'because'], ... },
+    { scene: 3, ladder_stage: 'WRITE', locked_connector: 'After that,', connectors: ['Next,', 'Then,', 'and', 'quickly'], ... },
+    { scene: 4, ladder_stage: 'EXPAND', locked_connector: 'Then,', connectors: ['After that,', 'Meanwhile,', 'and', 'so'], ... },
+    { scene: 5, ladder_stage: 'REFLECT', locked_connector: 'In the end,', connectors: ['Finally,', 'At last,', 'and', 'because'], ... }
   ],
-  min_words: 40   // 5 scenes × ~2 sentences × ~4 words
+  min_words: 40   // 5 scenes × 2 sentences = 10 sentences (~100-120 words)
 }
 ```
 

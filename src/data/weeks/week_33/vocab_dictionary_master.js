@@ -684,6 +684,142 @@ export const WEEK_33_MASTER_DICTIONARY = {
     example: "The headmaster spoke to all the students about corridor safety.",
     audioText: "spoke to all the students",
     aliases: ["speak to all the students", "speaking to all the students"]
+  },
+  "lost his balance": {
+    type: "Collocation",
+    ipa: "/lɔːst hɪz ˈbæləns/",
+    meaning: "bị mất thăng bằng",
+    example: "The running boy slipped on the wet tiles and lost his balance.",
+    audioText: "lost his balance",
+    aliases: ["lose his balance", "losing his balance", "lost balance"]
+  },
+  "the running boy": {
+    type: "Noun Phrase",
+    ipa: "/ðə ˈrʌnɪŋ bɔɪ/",
+    meaning: "cậu bé đang chạy",
+    example: "The running boy was in a big hurry to science class.",
+    audioText: "the running boy",
+    aliases: ["running boy", "a running boy"]
+  },
+  "near the blue lockers": {
+    type: "Prepositional Phrase",
+    ipa: "/nɪr ðə bluː ˈlɑːkərz/",
+    meaning: "gần dãy tủ khóa màu xanh",
+    example: "He slipped and fell down heavily near the blue lockers.",
+    audioText: "near the blue lockers",
+    aliases: ["by the blue lockers", "near the lockers"]
+  },
+  "hurt his left knee badly": {
+    type: "Collocation",
+    ipa: "/hɜːrt hɪz lɛft niː ˈbædli/",
+    meaning: "bị thương đau nặng ở đầu gối trái",
+    example: "He fell down heavily and hurt his left knee badly.",
+    audioText: "hurt his left knee badly",
+    aliases: ["hurt his left knee", "hurt his knee badly"]
+  },
+  "cried out in pain": {
+    type: "Collocation",
+    ipa: "/kraɪd aʊt ɪn peɪn/",
+    meaning: "kêu lên vì đau đớn",
+    example: "The boy cried out in pain when he bumped his knee.",
+    audioText: "cried out in pain",
+    aliases: ["cry out in pain", "crying out in pain"]
+  },
+  "first-aid kit": {
+    type: "Noun",
+    ipa: "/ˌfɜːrst ˈeɪd kɪt/",
+    meaning: "hộp dụng cụ sơ cứu y tế",
+    example: "The school nurse brought a first-aid kit with bandages and cold packs.",
+    audioText: "first-aid kit",
+    aliases: ["a first-aid kit", "first aid kit", "first-aid kits"]
+  },
+  "stayed with his hurt classmate": {
+    type: "Collocation",
+    ipa: "/steɪd wɪð hɪz hɜːrt ˈklæsmeɪt/",
+    meaning: "ở bên cạnh người bạn cùng lớp bị đau",
+    example: "Jake stayed with his hurt classmate until the nurse arrived.",
+    audioText: "stayed with his hurt classmate",
+    aliases: ["stay with his hurt classmate", "staying with his hurt classmate"]
+  },
+  "the school nurse arrived quickly": {
+    type: "Collocation",
+    ipa: "/ðə skuːl nɜːrs əˈraɪvd ˈkwɪkli/",
+    meaning: "cô y tá trường học đã đến rất nhanh",
+    example: "Jake called for help and the school nurse arrived quickly.",
+    audioText: "the school nurse arrived quickly",
+    aliases: ["nurse arrived quickly", "arrived quickly"]
+  },
+  "placed a blue cold pack": {
+    type: "Collocation",
+    ipa: "/pleɪst ə bluː koʊld pæk/",
+    meaning: "chườm túi chườm lạnh màu xanh",
+    example: "The nurse placed a blue cold pack on his swollen knee.",
+    audioText: "placed a blue cold pack",
+    aliases: ["place a blue cold pack", "cold pack", "placed a cold pack"]
+  },
+  "Headmaster Brown": {
+    type: "Proper Noun",
+    ipa: "/ˌhɛdˈmæstər braʊn/",
+    meaning: "thầy hiệu trưởng Brown",
+    example: "Headmaster Brown spoke to all the students about corridor safety.",
+    audioText: "Headmaster Brown",
+    aliases: ["headmaster", "the headmaster"]
+  },
+  "explained the corridor safety rules": {
+    type: "Collocation",
+    ipa: "/ɪkˈspleɪnd ðə ˈkɔːrɪdɔːr ˈseɪfti ruːlz/",
+    meaning: "giải thích các quy tắc an toàn hành lang",
+    example: "He explained the corridor safety rules during the morning assembly.",
+    audioText: "explained the corridor safety rules",
+    aliases: ["explain the corridor safety rules", "corridor safety rules"]
+  },
+  "never run on wet floors": {
+    type: "Collocation",
+    ipa: "/ˈnɛvər rʌn ɑːn wɛt flɔːrz/",
+    meaning: "không bao giờ chạy trên sàn ướt",
+    example: "Safety rule number one: never run on wet floors!",
+    audioText: "never run on wet floors",
+    aliases: ["never run on wet floor", "never run near a wet floor"]
+  },
+  "at the school assembly": {
+    type: "Prepositional Phrase",
+    ipa: "/æt ðə skuːl əˈsɛmbli/",
+    meaning: "tại buổi lễ chào cờ / tập trung toàn trường",
+    example: "Jake received a special award at the school assembly.",
+    audioText: "at the school assembly",
+    aliases: ["school assembly", "during the school assembly"]
+  },
+  "all the students and teachers": {
+    type: "Noun Phrase",
+    ipa: "/ɔːl ðə ˈstjuːdnts ænd ˈtiːtʃərz/",
+    meaning: "toàn thể học sinh và giáo viên",
+    example: "All the students and teachers clapped and cheered for Jake.",
+    audioText: "all the students and teachers",
+    aliases: ["students and teachers", "all students and teachers"]
+  },
+  "handed him a certificate": {
+    type: "Collocation",
+    ipa: "/ˈhændɪd hɪm ə sərˈtɪfɪkət/",
+    meaning: "trao cho bạn ấy một giấy chứng nhận",
+    example: "Headmaster Brown handed him a certificate of bravery and care.",
+    audioText: "handed him a certificate",
+    aliases: ["hand him a certificate", "handed Jake a certificate"]
+  },
+  "promised to walk carefully": {
+    type: "Collocation",
+    ipa: "/ˈprɑːmɪst tuː wɔːk ˈkerfəli/",
+    meaning: "hứa sẽ đi lại cẩn thận",
+    example: "Tom rubbed his knee and promised to walk carefully from now on.",
+    audioText: "promised to walk carefully",
+    aliases: ["promise to walk carefully", "promising to walk carefully"]
+  },
+  "were clapping loudly": {
+    type: "Collocation",
+    ipa: "/wɜːr ˈklæpɪŋ ˈlaʊdli/",
+    meaning: "đang vỗ tay nhiệt liệt",
+    example: "Everyone was clapping loudly when Jake stepped on stage.",
+    audioText: "were clapping loudly",
+    aliases: ["clapping loudly", "clapped loudly"]
   }
 };
 

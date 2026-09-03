@@ -16,86 +16,80 @@ export const writingHubData = {
         badge_label: "MODEL",
         title: "Scene 1: Walking in the Corridor",
         image_url: "/images/week33/writing_panel_1.png",
-        caption: "Jake was walking carefully down the corridor while a boy ran very fast past him.",
-        frame_L1: "In the beginning, Jake was walking carefully down the school corridor. While he was walking, a boy was running very fast and knocked into him.",
+        caption: "Jake was walking carefully down the corridor while a boy ran fast.",
+        frame_L1: "In the beginning, Jake was walking carefully down the school corridor. Suddenly, a boy was running very fast and knocked into his shoulder.",
         locked_connector: "In the beginning,",
-        // connectors shown in Link Your Sentences to connect the 2-3 sentences within this scene
-        connectors: ["While he was walking,", "Then,", "Suddenly,", "and"],
-        sentence_hint: "Write 2–3 sentences about this picture. Use the words below to help.",
-        ordered_chips: ["Jake was walking carefully", "down the school corridor", "a boy was running very fast", "past him", "knocked into his shoulder"],
-        pills: ["knocked into his shoulder", "was walking carefully", "was rushing to class", "was walking up the staircase", "a boy was running very fast", "down the school corridor", "was playing with friends", "noticed the warning sign", "Jake", "was looking at the wet floor", "ran past him"],
-        audio: "In the beginning, Jake was walking carefully down the school corridor. While he was walking, a boy was running very fast and knocked into him."
+        connectors: ["Suddenly,", "Then,", "and"],
+        sentence_hint: "Write 2 sentences: (1) Where Jake was walking, and (2) who ran past him.",
+        ordered_chips: ["Jake", "was walking carefully", "down the school corridor", "a boy was running very fast", "and", "knocked into his shoulder"],
+        pills: ["knocked into his shoulder", "was walking carefully", "was walking up the staircase", "a boy was running very fast", "down the school corridor", "was playing with friends", "noticed the warning sign", "Jake", "ran past him"],
+        audio: "In the beginning, Jake was walking carefully down the school corridor. Suddenly, a boy was running very fast and knocked into his shoulder."
       },
       {
-        // SCENE 2 (BUILD): Slipping — 2 sentences target
-        // Sentence 1: "Suddenly, the boy slipped on the wet floor and lost his balance."
-        // Sentence 2: "He fell down very heavily and hurt his knee badly."
         scene: 2,
         ladder_stage: "BUILD",
         badge_label: "BUILD",
         title: "Scene 2: Slipping on Wet Floor",
         image_url: "/images/week33/writing_panel_2.png",
-        caption: "Suddenly, the boy slipped on the wet floor, fell down heavily and hurt his knee.",
-        frame_L1: "Suddenly, the boy slipped on the wet floor and lost his balance. He fell down very heavily and hurt his knee badly.",
-        sentence_hint: "Write 2–3 sentences: (1) The boy slipped — WHAT happened? (2) He fell — WHERE and HOW did he get hurt?",
-        connectors: ["Suddenly,", "Right away,", "After that,", "Then,"],
+        caption: "Suddenly, the running boy slipped on the wet tiles, fell down heavily and hurt his knee.",
+        frame_L1: "Suddenly, the running boy slipped on the wet tiles and lost his balance. He fell down heavily and hurt his left knee badly.",
+        sentence_hint: "Write 2 sentences: (1) The boy slipped on the wet tiles, and (2) how he fell and hurt his knee.",
+        locked_connector: "Suddenly,",
+        connectors: ["Then,", "Right away,", "and", "because"],
         display_chips: [
-          "hurt his left knee badly", "was running near the lockers", "near the blue lockers", "slipped on the wet floor", "lost his balance", "fell down heavily"
+          "hurt his left knee badly", "the running boy", "near the blue lockers", "slipped on the wet tiles", "lost his balance", "fell down heavily"
         ],
-        pills: ["hurt his left knee badly", "was running near the lockers", "near the blue lockers", "tripped over his shoelaces", "slipped on the wet floor", "lost his balance", "was crying out in pain", "fell down heavily", "dropped his heavy schoolbag"],
-        correct_order: ["the running boy", "slipped on the wet floor", "and", "lost his balance", "he", "fell down heavily", "near the blue lockers", "and", "hurt his left knee badly"],
-        audio: "Suddenly, the boy slipped on the wet floor and lost his balance. He fell down very heavily and hurt his knee badly."
+        pills: ["hurt his left knee badly", "the running boy", "near the blue lockers", "tripped over his shoelaces", "slipped on the wet tiles", "lost his balance", "cried out in pain", "fell down heavily", "dropped his heavy schoolbag"],
+        correct_order: ["the running boy", "slipped on the wet tiles", "and", "lost his balance", "he", "fell down heavily", "and", "hurt his left knee badly"],
+        audio: "Suddenly, the running boy slipped on the wet tiles and lost his balance. He fell down heavily and hurt his left knee badly."
       },
       {
-        // SCENE 3 (WRITE): Nurse + treatment — 2 sentences target
         scene: 3,
         ladder_stage: "WRITE",
         badge_label: "WRITE",
         title: "Scene 3: Nurse Applying Bandage",
         image_url: "/images/week33/writing_panel_3.png",
         caption: "Jake called the school nurse, who arrived quickly with a clean bandage.",
-        frame_L1: "Jake called the school nurse for help. She arrived quickly and put on a clean bandage and a cold pack.",
-        sentence_hint: "Write 2–3 sentences: who Jake called and what the nurse did to help.",
+        frame_L1: "After that, Jake called the school nurse for help. She arrived with a first-aid kit and applied a clean bandage to his knee.",
+        sentence_hint: "Write 2 sentences: (1) Who Jake called for help, and (2) what the nurse did to help Tom.",
         locked_connector: "After that,",
-        connectors: ["After that,", "Then,", "Next,", "So,"],
-        keywords: ["called the school nurse for help", "arrived with a first-aid kit", "applied a clean bandage", "placed a blue cold pack", "cleaned his injured knee", "helped his hurt classmate"],
-        pills: ["placed a blue cold pack", "went to the library", "applied a clean bandage", "arrived with a first-aid kit", "helped his hurt classmate", "called the school nurse for help", "cleaned his injured knee", "was sitting on the bench"],
-        sentence_frame: "After that, Jake [called the school nurse for help]. She [arrived with a first-aid kit] and [applied a clean bandage] and [placed a blue cold pack].",
-        audio: "After that, Jake called the school nurse for help. She arrived quickly and put on a clean bandage and a cold pack."
+        connectors: ["Next,", "Then,", "and", "quickly"],
+        keywords: ["called the school nurse for help", "arrived with a first-aid kit", "applied a clean bandage", "placed a blue cold pack", "stayed with his hurt classmate"],
+        pills: ["placed a blue cold pack", "went to the library", "applied a clean bandage", "arrived with a first-aid kit", "stayed with his hurt classmate", "called the school nurse for help", "the school nurse arrived quickly", "was sitting on the wooden bench", "Jake"],
+        sentence_frame: "After that, Jake [called the school nurse for help]. The school nurse [arrived with a first-aid kit] and [applied a clean bandage] to his knee.",
+        audio: "After that, Jake called the school nurse for help. She arrived with a first-aid kit and applied a clean bandage to his knee."
       },
       {
-        // SCENE 4 (EXPAND): Headmaster safety talk — 2 sentences target
         scene: 4,
         ladder_stage: "EXPAND",
         badge_label: "EXPAND",
         title: "Scene 4: Headmaster Teaches Safety",
         image_url: "/images/week33/writing_panel_4.png",
         caption: "Headmaster Brown arrived and spoke to the students about corridor safety.",
-        frame_L1: "Headmaster Brown arrived and spoke to all the students about corridor safety. He told everyone to walk carefully and never run near a wet floor.",
-        sentence_hint: "Write 2–3 sentences: who arrived and what he said to the students about safety.",
+        frame_L1: "Then, Headmaster Brown arrived and spoke to all the students. He pointed to the yellow warning sign and reminded everyone to walk carefully.",
+        sentence_hint: "Write 2 sentences: (1) Who arrived to talk to the students, and (2) what safety rules he taught them.",
         locked_connector: "Then,",
-        connectors: ["Then,", "After that,", "Next,", "Meanwhile,"],
-        keywords: ["Headmaster Brown arrived", "spoke to all the students", "corridor safety rules", "reminded everyone to walk carefully", "never run inside the school", "pointed to the caution sign", "were listening attentively"],
-        pills: ["reminded everyone to walk carefully", "went home early", "Headmaster Brown arrived", "never run inside the school", "spoke to all the students", "laughed loudly", "pointed to the caution sign", "corridor safety rules", "were listening attentively", "explained what happened"],
-        sentence_frame: "Then, [Headmaster Brown arrived] and [spoke to all the students] about [corridor safety rules]. He [reminded everyone to walk carefully] and [never run inside the school] [near a wet floor].",
-        audio: "Then, Headmaster Brown arrived and spoke to the students about corridor safety. He told everyone to walk carefully and never run near a wet floor."
+        connectors: ["After that,", "Meanwhile,", "and", "so"],
+        keywords: ["Headmaster Brown arrived", "spoke to all the students", "corridor safety rules", "reminded everyone to walk carefully", "never run on wet floors", "pointed to the yellow warning sign"],
+        pills: ["reminded everyone to walk carefully", "went home early", "Headmaster Brown arrived", "never run on wet floors", "spoke to all the students", "laughed loudly", "pointed to the yellow warning sign", "explained the corridor safety rules", "were listening attentively"],
+        sentence_frame: "Then, [Headmaster Brown arrived] and [spoke to all the students]. He [pointed to the yellow warning sign] and [reminded everyone to walk carefully].",
+        audio: "Then, Headmaster Brown arrived and spoke to all the students. He pointed to the yellow warning sign and reminded everyone to walk carefully."
       },
       {
-        // SCENE 5 (REFLECT): Award ceremony — 2 sentences target
         scene: 5,
         ladder_stage: "REFLECT",
         badge_label: "REFLECT",
         title: "Scene 5: Jake Receives Award",
         image_url: "/images/week33/writing_panel_5.png",
         caption: "At the school assembly, Headmaster Brown gave Jake a safety award.",
-        frame_L1: "In the end, Headmaster Brown gave Jake a special safety award at the school assembly. Everyone clapped and felt proud of Jake for helping his classmate.",
-        sentence_hint: "Write 2–3 sentences: what award Jake received and how everyone felt at the end.",
+        frame_L1: "In the end, Headmaster Brown gave Jake a special safety award at the school assembly. All the students were clapping loudly and felt very proud of him.",
+        sentence_hint: "Write 2 sentences: (1) What award Jake received, and (2) how everyone felt at the assembly.",
         locked_connector: "In the end,",
-        connectors: ["In the end,", "Finally,", "At last,"],
-        keywords: ["gave Jake a special safety award", "at the school assembly", "were clapping and cheering loudly", "felt proud of him", "praised his quick thinking", "handed him a certificate"],
-        pills: ["were clapping and cheering loudly", "went to sleep", "gave Jake a special safety award", "praised his quick thinking", "felt proud of him", "at the school assembly", "cried loudly", "handed him a certificate", "was smiling happily on stage", "promised to walk carefully"],
-        sentence_frame: "In the end, [Headmaster Brown] [gave Jake] a [safety award] at the [school assembly]. [Everyone clapped] and [felt proud] of Jake for [helping his classmate].",
-        audio: "In the end, Headmaster Brown gave Jake a special safety award at the school assembly. Everyone clapped and felt proud of Jake for helping his classmate."
+        connectors: ["Finally,", "At last,", "and", "because"],
+        keywords: ["gave Jake a special safety award", "at the school assembly", "were clapping loudly", "felt very proud of him", "handed him a certificate", "Headmaster Brown"],
+        pills: ["were clapping loudly", "went to sleep", "gave Jake a special safety award", "felt very proud of him", "at the school assembly", "cried loudly", "handed him a certificate", "Headmaster Brown", "all the students and teachers", "promised to walk carefully"],
+        sentence_frame: "In the end, [Headmaster Brown] [gave Jake a special safety award] [at the school assembly]. [All the students and teachers] [were clapping loudly] and [felt very proud of him].",
+        audio: "In the end, Headmaster Brown gave Jake a special safety award at the school assembly. All the students were clapping loudly and felt very proud of him."
       }
     ],
     panels: [
