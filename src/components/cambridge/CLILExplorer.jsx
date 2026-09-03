@@ -214,6 +214,89 @@ export default function CLILExplorer({
     }
   };
 
+  const renderModeControlBar = () => (
+    <div className="p-3.5 sm:p-4 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm flex items-center justify-between flex-wrap gap-3">
+      <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-xl">
+        <span className="text-xs font-black text-slate-500 uppercase px-2">Mode:</span>
+        <button
+          type="button"
+          onClick={() => handleModeSwitch('vocab')}
+          className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition cursor-pointer ${
+            activeHighlightMode === 'vocab' ? 'bg-emerald-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
+          }`}
+        >
+          🔤 Vocab Focus
+        </button>
+        <button
+          type="button"
+          onClick={() => handleModeSwitch('grammar')}
+          className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition cursor-pointer ${
+            activeHighlightMode === 'grammar' ? 'bg-amber-500 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
+          }`}
+        >
+          🔬 Grammar X-Ray
+        </button>
+      </div>
+      <div className="flex items-center gap-2.5 flex-wrap">
+        <button
+          type="button"
+          onClick={handleToggleWholeAudio}
+          className={`px-4 py-2 font-black text-xs sm:text-sm rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer ${
+            playingAudioType === 'whole'
+              ? 'bg-rose-600 text-white animate-pulse'
+              : 'bg-teal-700 hover:bg-teal-600 text-white'
+          }`}
+          title={playingAudioType === 'whole' ? 'Click to stop whole text audio' : 'Listen to full article audio'}
+        >
+          <Volume2 size={16} /> {playingAudioType === 'whole' ? '⏹ Stop whole text' : '🔊 Listen to whole text'}
+        </button>
+        <button
+          type="button"
+          onClick={handleTogglePartAudio}
+          className={`px-4 py-2 font-black text-xs sm:text-sm rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer ${
+            playingAudioType === 'part'
+              ? 'bg-rose-600 text-white animate-pulse'
+              : 'bg-emerald-600 hover:bg-emerald-500 text-white'
+          }`}
+          title={playingAudioType === 'part' ? 'Click to stop this part audio' : 'Listen to current part audio'}
+        >
+          <Volume2 size={16} /> {playingAudioType === 'part' ? '⏹ Stop this part' : '🎧 Listen to this part'}
+        </button>
+      </div>
+    </div>
+  );
+
+  const renderGrammarBanner = () => {
+    if (activeHighlightMode !== 'grammar') return null;
+    return (
+      <div className="p-4 sm:p-5 bg-amber-50/90 border border-amber-300 rounded-2xl sm:rounded-3xl space-y-3 shadow-xs animate-in fade-in">
+        <div className="flex items-center justify-between">
+          <span className="text-xs sm:text-sm font-black uppercase text-amber-900 tracking-wider flex items-center gap-1.5">
+            <BookOpen size={16} className="text-amber-700" /> Grammar X-Ray: {activeGrammarInfo?.label || 'Target Grammar Focus'}
+          </span>
+          <span className="text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+            Grammar Focus
+          </span>
+        </div>
+        <div className="flex flex-wrap gap-2 text-xs sm:text-sm font-black text-amber-950">
+          {grammarLegend.length === 0 && (
+            <span className="px-3 py-1.5 bg-amber-100 text-amber-900 rounded-xl border border-amber-300">
+              ℹ️ This section focuses on vocabulary and reading comprehension.
+            </span>
+          )}
+          {grammarLegend.map((g, i) => (
+            <span key={i} className="px-3 py-1.5 bg-amber-200/90 rounded-xl border border-amber-300">{g}</span>
+          ))}
+        </div>
+        {grammarLegend.length > 0 && (
+          <p className="text-xs text-amber-800 font-bold">
+            👇 These phrases are highlighted inline inside the paragraph below.
+          </p>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div className="w-full space-y-4 font-sans text-slate-900">
       {/* Stepper Header (Zero-L1) */}
@@ -247,57 +330,6 @@ export default function CLILExplorer({
           >
             <Award size={16} className="text-amber-300 animate-pulse" />
             <span className="text-xs font-black tracking-wide">Science LV.1</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Mode Control Bar */}
-      <div className="p-3.5 sm:p-4 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm flex items-center justify-between flex-wrap gap-3">
-        <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-xl">
-          <span className="text-xs font-black text-slate-500 uppercase px-2">Mode:</span>
-          <button
-            type="button"
-            onClick={() => handleModeSwitch('vocab')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition ${
-              activeHighlightMode === 'vocab' ? 'bg-emerald-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
-            }`}
-          >
-            🔤 Vocab Focus
-          </button>
-          <button
-            type="button"
-            onClick={() => handleModeSwitch('grammar')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition ${
-              activeHighlightMode === 'grammar' ? 'bg-amber-500 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
-            }`}
-          >
-            🔬 Grammar X-Ray
-          </button>
-        </div>
-        <div className="flex items-center gap-2.5">
-          <button
-            type="button"
-            onClick={handleToggleWholeAudio}
-            className={`px-4 py-2 font-black text-xs sm:text-sm rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer ${
-              playingAudioType === 'whole'
-                ? 'bg-rose-600 text-white animate-pulse'
-                : 'bg-teal-700 hover:bg-teal-600 text-white'
-            }`}
-            title={playingAudioType === 'whole' ? 'Click to stop whole text audio' : 'Listen to full article audio'}
-          >
-            <Volume2 size={16} /> {playingAudioType === 'whole' ? '⏹ Stop whole text' : '🔊 Listen to whole text'}
-          </button>
-          <button
-            type="button"
-            onClick={handleTogglePartAudio}
-            className={`px-4 py-2 font-black text-xs sm:text-sm rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95 cursor-pointer ${
-              playingAudioType === 'part'
-                ? 'bg-rose-600 text-white animate-pulse'
-                : 'bg-emerald-600 hover:bg-emerald-500 text-white'
-            }`}
-            title={playingAudioType === 'part' ? 'Click to stop this part audio' : 'Listen to current part audio'}
-          >
-            <Volume2 size={16} /> {playingAudioType === 'part' ? '⏹ Stop this part' : '🎧 Listen to this part'}
           </button>
         </div>
       </div>
@@ -375,39 +407,17 @@ export default function CLILExplorer({
         </div>
       )}
 
-      {activeHighlightMode === 'grammar' && (
-        <div className="p-4 sm:p-5 bg-amber-50/90 border border-amber-300 rounded-2xl sm:rounded-3xl space-y-3 shadow-xs animate-in fade-in">
-          <div className="flex items-center justify-between">
-            <span className="text-xs sm:text-sm font-black uppercase text-amber-900 tracking-wider flex items-center gap-1.5">
-              <BookOpen size={16} className="text-amber-700" /> Grammar X-Ray: {activeGrammarInfo?.label || 'Target Grammar Focus'}
-            </span>
-            <span className="text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
-              Grammar Focus
-            </span>
-          </div>
-          <div className="flex flex-wrap gap-2 text-xs sm:text-sm font-black text-amber-950">
-            {grammarLegend.length === 0 && (
-              <span className="px-3 py-1.5 bg-amber-100 text-amber-900 rounded-xl border border-amber-300">
-                ℹ️ This section focuses on vocabulary and reading comprehension.
-              </span>
-            )}
-            {grammarLegend.map((g, i) => (
-              <span key={i} className="px-3 py-1.5 bg-amber-200/90 rounded-xl border border-amber-300">{g}</span>
-            ))}
-          </div>
-          {grammarLegend.length > 0 && (
-            <p className="text-xs text-amber-800 font-bold">
-              👇 These phrases are highlighted inline inside the paragraph below.
-            </p>
-          )}
-        </div>
-      )}
-
       {/* ========================================================================= */}
       {/* PHASE 1: PARAGRAPH 1 + 2 CHECK QUESTIONS                                  */}
       {/* ========================================================================= */}
       {currentPhase === 1 && (
         <div className="space-y-4 animate-in fade-in">
+          {/* Mode Control Bar (Vocab Focus, Grammar X-Ray, Listen to whole text, Listen to this part) */}
+          {renderModeControlBar()}
+
+          {/* Grammar X-Ray Legend Banner (when grammar mode is active) */}
+          {renderGrammarBanner()}
+
           <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200 shadow-md space-y-6">
             <div className="flex items-center gap-2 text-xs sm:text-sm font-black uppercase tracking-wider text-emerald-700 border-b border-slate-100 pb-3">
               <span>📖 PARAGRAPH 1: {(clilData?.part_1_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
@@ -483,6 +493,12 @@ export default function CLILExplorer({
       {/* ========================================================================= */}
       {currentPhase === 2 && (
         <div className="space-y-4 animate-in fade-in">
+          {/* Mode Control Bar (Vocab Focus, Grammar X-Ray, Listen to whole text, Listen to this part) */}
+          {renderModeControlBar()}
+
+          {/* Grammar X-Ray Legend Banner (when grammar mode is active) */}
+          {renderGrammarBanner()}
+
           <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200 shadow-md space-y-6">
             <div className="flex items-center gap-2 text-xs sm:text-sm font-black uppercase tracking-wider text-teal-700 border-b border-slate-100 pb-3">
               <span>📖 PARAGRAPH 2: {(clilData?.part_2_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
