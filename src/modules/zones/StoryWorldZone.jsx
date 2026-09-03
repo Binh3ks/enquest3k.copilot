@@ -817,7 +817,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
           </div>
 
           {/* Webtoon Viewer */}
-          <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-md space-y-4">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 border border-slate-200 shadow-md space-y-3 sm:space-y-4">
             {currentScene && (
               <div className="space-y-3">
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-900 border-2 border-slate-200 shadow-md">
@@ -941,8 +941,8 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                   </button>
                 </div>
 
-                <div className="p-4 bg-blue-50/70 rounded-2xl border border-blue-200/80">
-                  <div className="text-base font-bold text-slate-900 leading-relaxed">
+                <div className="p-3 sm:p-4 bg-blue-50/70 rounded-xl sm:rounded-2xl border border-blue-200/80">
+                  <div className="text-sm sm:text-base font-bold text-slate-900 leading-relaxed">
                     {renderParsedText(currentSceneText, 'blue', null, false, highlightMode, grammarRegex)}
                   </div>
                 </div>
@@ -1374,9 +1374,9 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                   </div>
 
                   {/* Main Story Card */}
-                  <div className="bg-white rounded-3xl p-6 sm:p-8 border border-purple-200 shadow-lg space-y-6 text-center">
+                  <div className="bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 border border-purple-200 shadow-md space-y-3.5 sm:space-y-5 text-center">
                     {/* Scene Visual Anchor Thumbnail + Nova Question Bubble */}
-                    <div className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-purple-50 border border-purple-200 rounded-2xl text-left">
+                    <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-purple-50 border border-purple-200 rounded-xl sm:rounded-2xl text-left">
                       {scenes[retellStepIdx] && (
                         <div className="w-full sm:w-44 md:w-52 h-28 sm:h-28 md:h-32 rounded-xl overflow-hidden shadow-sm shrink-0 border border-purple-300 bg-slate-100">
                           <img

@@ -324,24 +324,24 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
 
       {/* Active Question Display */}
       {(gameState === 'playing' || gameState === 'paused') && (
-        <div className="space-y-5">
+        <div className="space-y-3 sm:space-y-5">
           {/* Question Text */}
-          <div className="p-5 bg-amber-50/80 rounded-2xl border border-amber-200 space-y-1">
-            <h4 className="text-xs font-black uppercase text-amber-800 tracking-wider">{currentQ.title}</h4>
-            <p className="text-base sm:text-lg font-bold text-slate-900 leading-relaxed">
+          <div className="p-3 sm:p-5 bg-amber-50/80 rounded-xl sm:rounded-2xl border border-amber-200 space-y-0.5 sm:space-y-1">
+            <h4 className="text-[10px] sm:text-xs font-black uppercase text-amber-800 tracking-wider">{currentQ.title}</h4>
+            <p className="text-sm sm:text-base font-bold text-slate-900 leading-relaxed">
               {renderParsedText(currentQ.problemText, 'amber')}
             </p>
           </div>
 
           {/* Bar Model Visual Display — Full width zoom */}
-          <div className="p-1 sm:p-2 bg-slate-50 rounded-2xl border-2 border-slate-200 flex items-center justify-center shadow-inner w-full overflow-hidden">
+          <div className="p-1 sm:p-2 bg-slate-50 rounded-xl sm:rounded-2xl border-2 border-slate-200 flex items-center justify-center shadow-inner w-full overflow-hidden">
             {currentQ.modelData ? (
               <BarModelSVG modelData={currentQ.modelData} />
             ) : (
               <img
                 src={currentQ.svg_url}
                 alt={currentQ.title}
-                className="w-full h-auto max-h-[260px] object-contain drop-shadow-md"
+                className="w-full h-auto max-h-[190px] sm:max-h-[260px] object-contain drop-shadow-md"
                 onError={(e) => {
                   e.target.style.display = 'none';
                 }}

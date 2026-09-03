@@ -352,17 +352,17 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
       {/* Active Lab Display */}
       {gameState === 'playing' && (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-          <div className="space-y-5">
+          <div className="space-y-2.5 sm:space-y-4">
             {/* Title */}
-            <div className="p-4 bg-teal-50 rounded-2xl border border-teal-200">
-              <h4 className="text-sm font-black text-teal-950">{labData.experimentTitle}</h4>
-              <p className="text-xs text-teal-800 mt-0.5">
-                Drag the science labels into the correct position on the experiment diagram before time runs out!
+            <div className="p-2.5 sm:p-4 bg-teal-50 rounded-xl sm:rounded-2xl border border-teal-200">
+              <h4 className="text-xs sm:text-sm font-black text-teal-950">{labData.experimentTitle}</h4>
+              <p className="text-[11px] sm:text-xs text-teal-800 mt-0.5">
+                Drag or tap the science labels into the correct position on the diagram!
               </p>
             </div>
 
-            {/* Diagram Area with Drop Zones (Spacious Height for Kids) */}
-            <div className="relative w-full h-[380px] sm:h-[450px] md:h-[500px] rounded-2xl overflow-hidden bg-slate-900 border-2 border-teal-300 shadow-md">
+            {/* Diagram Area with Drop Zones */}
+            <div className="relative w-full h-[260px] xs:h-[300px] sm:h-[450px] md:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border-2 border-teal-300 shadow-md">
               <img
                 src={labData.diagramImage}
                 alt={labData.experimentTitle}
@@ -386,7 +386,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             </div>
 
             {/* Draggable Labels Source Dock */}
-            <div className="p-3 sm:p-4 bg-slate-100 rounded-2xl border border-slate-200 space-y-2">
+            <div className="p-2.5 sm:p-4 bg-slate-100 rounded-xl sm:rounded-2xl border border-slate-200 space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-black uppercase tracking-wider text-slate-600">
                   {selectedLabelId ? '👉 TAP A TARGET ZONE ON DIAGRAM ABOVE:' : 'TAP OR DRAG LABELS TO EXPERIMENT DIAGRAM:'}

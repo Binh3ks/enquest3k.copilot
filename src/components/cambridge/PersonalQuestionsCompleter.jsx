@@ -134,15 +134,15 @@ export function PersonalQuestionsCompleter({ customData, data: propData, onCompl
       </div>
 
       {/* Examiner Intro Banner */}
-      <div className="p-4 bg-violet-50 rounded-2xl border border-violet-200 flex items-start gap-3">
-        <MessageSquare className="w-5 h-5 text-violet-600 shrink-0 mt-0.5" />
+      <div className="p-2.5 sm:p-4 bg-violet-50 rounded-xl sm:rounded-2xl border border-violet-200 flex items-start gap-2.5">
+        <MessageSquare className="w-4 h-4 text-violet-600 shrink-0 mt-0.5" />
         <div className="text-xs sm:text-sm text-violet-900 font-medium leading-relaxed">
           &ldquo;{examinerIntro}&rdquo;
         </div>
       </div>
 
       {/* Questions List */}
-      <div className="space-y-4">
+      <div className="space-y-2.5 sm:space-y-4">
         {questions.map((q, idx) => {
           const isRecordingThis = activeRecordingId === q.id;
           const currentAnswer = answers[q.id] || '';
@@ -151,45 +151,45 @@ export function PersonalQuestionsCompleter({ customData, data: propData, onCompl
           return (
             <div
               key={q.id}
-              className={`p-5 rounded-2xl border-2 transition ${
+              className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border-2 transition ${
                 hasAnswer ? 'bg-emerald-50/40 border-emerald-300' : 'bg-slate-50 border-slate-200'
               }`}
             >
-              <div className="flex items-center justify-between gap-3 mb-2 flex-wrap">
-                <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-violet-600 text-white text-xs font-black flex items-center justify-center">
+              <div className="flex items-center justify-between gap-2 mb-1.5 flex-wrap">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-5 h-5 rounded-full bg-violet-600 text-white text-[11px] font-black flex items-center justify-center">
                     {idx + 1}
                   </span>
-                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">
                     Topic: {q.topic || 'General'}
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
                   <button
                     onClick={() => handlePlayQuestion(q.question)}
-                    className="p-2 bg-slate-100 hover:bg-violet-100 text-slate-700 hover:text-violet-700 rounded-lg transition"
+                    className="p-1.5 bg-slate-100 hover:bg-violet-100 text-slate-700 hover:text-violet-700 rounded-lg transition"
                     title="Listen to question"
                   >
-                    <Volume2 className="w-4 h-4" />
+                    <Volume2 className="w-3.5 h-3.5" />
                   </button>
                   {q.sample_answer_hint && (
                     <button
                       onClick={() => setShowHints(prev => ({ ...prev, [q.id]: !prev[q.id] }))}
-                      className="text-xs font-bold text-slate-500 hover:text-violet-600 flex items-center gap-1"
+                      className="text-[11px] font-bold text-slate-500 hover:text-violet-600 flex items-center gap-0.5"
                     >
-                      <HelpCircle className="w-3.5 h-3.5" />
-                      {showHints[q.id] ? 'Hide Hint' : 'Show Hint'}
+                      <HelpCircle className="w-3 h-3" />
+                      {showHints[q.id] ? 'Hide' : 'Hint'}
                     </button>
                   )}
                 </div>
               </div>
 
-              <div className="text-base sm:text-lg font-black text-slate-900 mb-3">
+              <div className="text-sm sm:text-base font-black text-slate-900 mb-2">
                 {q.question}
               </div>
 
               {showHints[q.id] && q.sample_answer_hint && (
-                <div className="mb-3 p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900 italic">
+                <div className="mb-2 p-2 sm:p-2.5 bg-amber-50 rounded-lg sm:rounded-xl border border-amber-200 text-[11px] sm:text-xs text-amber-900 italic">
                   💡 Hint: &ldquo;{q.sample_answer_hint}&rdquo;
                 </div>
               )}

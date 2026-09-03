@@ -451,34 +451,34 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
       </div>
 
       {/* Side-by-Side Information Tables with Visual Isolation & Phase Dimming */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
         
         {/* TABLE A: TOM'S ACCIDENT (MISSING INFO TO ASK) */}
-        <div className={`rounded-3xl border-2 p-5 sm:p-6 shadow-md transition-all duration-500 ${
+        <div className={`rounded-2xl sm:rounded-3xl border-2 p-3 sm:p-5 shadow-md transition-all duration-500 ${
           isPhase2Active
             ? 'bg-amber-50 border-amber-500 ring-4 ring-amber-200 shadow-2xl opacity-100 scale-101'
             : isPhase1Active
             ? 'opacity-40 pointer-events-none grayscale bg-slate-50 border-slate-200'
             : 'bg-slate-50/70 border-slate-200 opacity-90'
         }`}>
-          <div className="flex items-center justify-between border-b-2 border-amber-300/70 pb-3 mb-4">
-            <div className="flex items-center gap-2">
-              <span className="p-2 bg-amber-500 text-white rounded-xl text-xs font-black">📋</span>
+          <div className="flex items-center justify-between border-b-2 border-amber-300/70 pb-2 mb-2.5">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="p-1.5 sm:p-2 bg-amber-500 text-white rounded-lg sm:rounded-xl text-xs font-black">📋</span>
               <div>
-                <h3 className="text-base sm:text-lg font-black text-amber-950 font-serif">
+                <h3 className="text-sm sm:text-lg font-black text-amber-950 font-serif">
                   {data.table_a.title}
                 </h3>
-                <span className="text-[11px] font-bold text-amber-800">Person: {data.table_a.person}</span>
+                <span className="text-[10px] sm:text-[11px] font-bold text-amber-800">Person: {data.table_a.person}</span>
               </div>
             </div>
             {isPhase2Active && (
-              <span className="text-[10px] font-black uppercase tracking-wider bg-amber-400 text-amber-950 px-3 py-1 rounded-full animate-pulse shadow-sm">
+              <span className="text-[9.5px] sm:text-[10px] font-black uppercase tracking-wider bg-amber-400 text-amber-950 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full animate-pulse shadow-2xs">
                 Active: Ask Nova
               </span>
             )}
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-1.5 sm:space-y-2.5">
             {data.table_a.fields.map((field) => {
               const isMissing = field.is_missing;
               const isRevealed = revealedTableA[field.id];
@@ -520,31 +520,31 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
         </div>
 
         {/* TABLE B: JAKE'S ACTION (COMPLETE INFO TO ANSWER) */}
-        <div className={`rounded-3xl border-2 p-5 sm:p-6 shadow-md transition-all duration-500 ${
+        <div className={`rounded-2xl sm:rounded-3xl border-2 p-3 sm:p-5 shadow-md transition-all duration-500 ${
           isPhase1Active
             ? 'bg-indigo-50 border-indigo-500 ring-4 ring-indigo-200 shadow-2xl opacity-100 scale-101'
             : isPhase2Active
             ? 'opacity-40 pointer-events-none grayscale bg-slate-50 border-slate-200'
             : 'bg-slate-50/70 border-slate-200 opacity-90'
         }`}>
-          <div className="flex items-center justify-between border-b-2 border-indigo-300/70 pb-3 mb-4">
-            <div className="flex items-center gap-2">
-              <span className="p-2 bg-indigo-600 text-white rounded-xl text-xs font-black">🎙️</span>
+          <div className="flex items-center justify-between border-b-2 border-indigo-300/70 pb-2 mb-2.5">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="p-1.5 sm:p-2 bg-indigo-600 text-white rounded-lg sm:rounded-xl text-xs font-black">🎙️</span>
               <div>
-                <h3 className="text-base sm:text-lg font-black text-indigo-950 font-serif">
+                <h3 className="text-sm sm:text-lg font-black text-indigo-950 font-serif">
                   {data.table_b.title}
                 </h3>
-                <span className="text-[11px] font-bold text-indigo-800">Person: {data.table_b.person}</span>
+                <span className="text-[10px] sm:text-[11px] font-bold text-indigo-800">Person: {data.table_b.person}</span>
               </div>
             </div>
             {isPhase1Active && (
-              <span className="text-[10px] font-black uppercase tracking-wider bg-indigo-400 text-indigo-950 px-3 py-1 rounded-full animate-pulse shadow-sm">
+              <span className="text-[9.5px] sm:text-[10px] font-black uppercase tracking-wider bg-indigo-400 text-indigo-950 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full animate-pulse shadow-sm">
                 Active: Answer Nova
               </span>
             )}
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-1.5 sm:space-y-2.5">
             {tableBFields.map((field, idx) => {
               const evalRes = tableBResults[field.id];
               const isHighlighted = flowState === 'phase1_q' && phase1Index === idx;
@@ -573,9 +573,9 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
       </div>
 
       {/* CENTRAL VOICE CONTROLLER (HOSTED BY MASCOT NOVA) */}
-      <div className="p-5 sm:p-6 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 rounded-3xl text-white shadow-2xl border-2 border-indigo-400/40 space-y-4">
+      <div className="p-3.5 sm:p-6 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 rounded-2xl sm:rounded-3xl text-white shadow-2xl border-2 border-indigo-400/40 space-y-3 sm:space-y-4">
         {/* Nova Status Bar */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-700/80 pb-3">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 border-b border-slate-700/80 pb-2.5">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-500 to-indigo-500 p-2.5 shrink-0 shadow-lg border border-white/20 flex items-center justify-center text-2xl">
               🤖

@@ -154,31 +154,30 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
           <div className="text-xs font-black text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
             <MessageSquare size={15} className="text-purple-600" /> {customData?.title || "Dialogue Passage (Cambridge Part 2):"}
           </div>
-
-          <div className="space-y-4">
+          <div className="space-y-2.5 sm:space-y-3">
             {/* Worked Example Exchange */}
             <div
               data-testid="example-row"
-              className="p-3.5 bg-amber-50/90 rounded-2xl border-2 border-amber-300 shadow-2xs space-y-2"
+              className="p-2.5 sm:p-3 bg-amber-50/90 rounded-xl sm:rounded-2xl border-2 border-amber-300 shadow-2xs space-y-1.5"
             >
-              <div className="flex items-start gap-2">
-                <span className="px-2 py-0.5 bg-amber-500 text-white font-black text-[10px] rounded-md shrink-0 shadow-2xs">
+              <div className="flex items-start gap-1.5">
+                <span className="px-1.5 py-0.5 bg-amber-500 text-white font-black text-[9.5px] rounded-md shrink-0 shadow-2xs">
                   ★ EXAMPLE
                 </span>
                 <div className="text-xs sm:text-sm font-bold text-amber-950">
                   &ldquo;{activeData?.example?.text_a || "Hello! Did you have a good day at school today?"}&rdquo;
                 </div>
               </div>
-              <div className="p-3 rounded-xl border border-amber-300 bg-white flex items-center justify-between">
-                <div className="flex items-center gap-2 flex-1 min-w-0">
-                  <span className="px-2 py-0.5 bg-amber-200 text-amber-950 font-black text-[10px] rounded-md shrink-0">
-                    Example Answer
+              <div className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-amber-300 bg-white flex items-center justify-between">
+                <div className="flex items-center gap-1.5 flex-1 min-w-0">
+                  <span className="px-1.5 py-0.5 bg-amber-200 text-amber-950 font-black text-[9.5px] rounded-md shrink-0">
+                    Example
                   </span>
-                  <div className="text-xs font-bold text-amber-950">
-                    <b className="text-amber-700 mr-1.5">({activeData?.example?.answer_letter || activeData?.example?.target || "D"})</b> {activeData?.example?.answer_text || activeData?.example?.text_b || "I am sorry! I was running in a hurry."}
+                  <div className="text-xs font-bold text-amber-950 truncate">
+                    <b className="text-amber-700 mr-1">({activeData?.example?.answer_letter || activeData?.example?.target || "D"})</b> {activeData?.example?.answer_text || activeData?.example?.text_b || "I am sorry! I was running in a hurry."}
                   </div>
                 </div>
-                <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0" />
               </div>
             </div>
 
@@ -189,10 +188,10 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
               const isCorrect = isSubmitted && assignedOptKey === ex.target;
 
               return (
-                <div key={ex.gap_id} className="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2 shadow-sm">
+                <div key={ex.gap_id} className="p-2.5 sm:p-3.5 bg-slate-50 rounded-xl sm:rounded-2xl border border-slate-200 space-y-1.5 sm:space-y-2 shadow-2xs">
                   {/* Speaker A Question */}
-                  <div className="flex items-start gap-2.5">
-                    <span className="px-2.5 py-0.5 bg-indigo-600 text-white font-black text-[10px] rounded-md uppercase shrink-0 mt-0.5">
+                  <div className="flex items-start gap-2">
+                    <span className="px-2 py-0.5 bg-indigo-600 text-white font-black text-[9.5px] rounded-md uppercase shrink-0 mt-0.5">
                       {ex.speaker_a || "Speaker A"}
                     </span>
                     <div className="text-xs sm:text-sm font-extrabold text-slate-900 leading-snug">
@@ -203,11 +202,11 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
                   {/* Speaker B Answer Slot */}
                   <div
                     onClick={() => !isSubmitted && setSelectedGap(ex.gap_id)}
-                    className={`p-3 rounded-xl border-2 transition-all flex items-center justify-between cursor-pointer ${
+                    className={`p-2 sm:p-2.5 rounded-lg sm:rounded-xl border-2 transition-all flex items-center justify-between cursor-pointer ${
                       isSubmitted
                         ? isCorrect
-                          ? 'bg-emerald-50 border-emerald-300'
-                          : 'bg-rose-50 border-rose-300'
+                        ? 'bg-emerald-50 border-emerald-300'
+                        : 'bg-rose-50 border-rose-300'
                         : isSelectedGap
                         ? 'bg-purple-100/80 border-purple-500 ring-2 ring-purple-200'
                         : assignedOptKey
@@ -258,17 +257,17 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
         </div>
 
         {/* Right Column: 8 Options Drawer Panel (A-H) */}
-        <div className="lg:col-span-5 space-y-3 bg-purple-50/70 p-4 sm:p-5 rounded-2xl border-2 border-purple-200 h-fit">
-          <div className="flex items-center justify-between pb-2 border-b border-purple-200">
+        <div className="lg:col-span-5 space-y-2 bg-purple-50/70 p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-purple-200 h-fit">
+          <div className="flex items-center justify-between pb-1.5 border-b border-purple-200">
             <span className="text-xs font-black text-purple-900 uppercase tracking-wider flex items-center gap-1.5">
-              <ListFilter size={15} /> A-H Answers Drawer:
+              <ListFilter size={14} /> A-H Options:
             </span>
             <span className="text-[10px] font-bold text-purple-700">
-              {selectedGap ? `Filling Gap [${selectedGap}]` : 'Select a gap'}
+              {selectedGap ? `Gap [${selectedGap}] active` : 'Tap gap first'}
             </span>
           </div>
 
-          <div className="space-y-2 max-h-[500px] overflow-y-auto pr-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-1.5 max-h-[480px] overflow-y-auto pr-1">
             {ahOptions.map((opt) => {
               const assignedGapId = optionToGapMap[opt.key];
               const isUsed = Boolean(assignedGapId);
@@ -278,7 +277,7 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
                   key={opt.key}
                   disabled={isSubmitted || isUsed}
                   onClick={() => handleSelectOption(opt.key)}
-                  className={`w-full p-3 rounded-xl text-left text-xs font-bold transition-all flex items-start gap-2.5 border shadow-sm ${
+                  className={`w-full p-2 sm:p-2.5 rounded-lg sm:rounded-xl text-left text-[11px] sm:text-xs font-bold transition-all flex items-start gap-2 border shadow-2xs ${
                     isUsed
                       ? 'opacity-40 line-through bg-slate-200 text-slate-500 border-slate-300 cursor-not-allowed'
                       : 'bg-white text-slate-900 border-purple-200 hover:border-purple-500 hover:bg-purple-100/50'

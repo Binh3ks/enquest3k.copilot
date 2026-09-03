@@ -223,48 +223,46 @@ export default function CLILExplorer({
         <button
           type="button"
           onClick={() => handleModeSwitch('vocab')}
-          className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-black transition cursor-pointer ${
+          className={`px-3 sm:px-4 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-black transition cursor-pointer ${
             activeHighlightMode === 'vocab' ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'
           }`}
         >
-          🔤 <span className="hidden sm:inline">Vocab Focus</span><span className="sm:hidden">Vocab</span>
+          🔤 Vocab Focus
         </button>
         <button
           type="button"
           onClick={() => handleModeSwitch('grammar')}
-          className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-black transition cursor-pointer ${
+          className={`px-3 sm:px-4 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-black transition cursor-pointer ${
             activeHighlightMode === 'grammar' ? 'bg-amber-500 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'
           }`}
         >
-          🔬 <span className="hidden sm:inline">Grammar X-Ray</span><span className="sm:hidden">X-Ray</span>
+          🔬 Grammar X-Ray
         </button>
       </div>
       <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
         <button
           type="button"
           onClick={handleToggleWholeAudio}
-          className={`px-2.5 sm:px-3 py-1 sm:py-1.5 font-black text-[11px] sm:text-xs rounded-lg sm:rounded-xl shadow-xs flex items-center gap-1 transition active:scale-95 cursor-pointer ${
+          className={`px-3 py-1 sm:py-1.5 font-black text-xs sm:text-sm rounded-lg sm:rounded-xl shadow-xs flex items-center gap-1 transition active:scale-95 cursor-pointer ${
             playingAudioType === 'whole'
               ? 'bg-rose-600 text-white animate-pulse'
               : 'bg-teal-700 hover:bg-teal-600 text-white'
           }`}
           title={playingAudioType === 'whole' ? 'Click to stop whole text audio' : 'Listen to full article audio'}
         >
-          <Volume2 size={13} /> <span>{playingAudioType === 'whole' ? '⏹ Stop' : '🔊 All'}</span>
-          <span className="hidden sm:inline">{playingAudioType === 'whole' ? ' whole' : ' text'}</span>
+          <Volume2 size={13} /> <span>{playingAudioType === 'whole' ? '⏹ Stop All' : '🔊 Play All'}</span>
         </button>
         <button
           type="button"
           onClick={handleTogglePartAudio}
-          className={`px-2.5 sm:px-3 py-1 sm:py-1.5 font-black text-[11px] sm:text-xs rounded-lg sm:rounded-xl shadow-xs flex items-center gap-1 transition active:scale-95 cursor-pointer ${
+          className={`px-3 py-1 sm:py-1.5 font-black text-xs sm:text-sm rounded-lg sm:rounded-xl shadow-xs flex items-center gap-1 transition active:scale-95 cursor-pointer ${
             playingAudioType === 'part'
               ? 'bg-rose-600 text-white animate-pulse'
               : 'bg-emerald-600 hover:bg-emerald-500 text-white'
           }`}
           title={playingAudioType === 'part' ? 'Click to stop this part audio' : 'Listen to current part audio'}
         >
-          <Volume2 size={13} /> <span>{playingAudioType === 'part' ? '⏹ Stop' : '🎧 Part'}</span>
-          <span className="hidden sm:inline">{playingAudioType === 'part' ? ' part' : ' audio'}</span>
+          <Volume2 size={13} /> <span>{playingAudioType === 'part' ? `⏹ Stop Part ${currentPhase}` : `🎧 Play Part ${currentPhase}`}</span>
         </button>
       </div>
     </div>

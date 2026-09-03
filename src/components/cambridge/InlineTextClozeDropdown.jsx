@@ -190,7 +190,7 @@ export function InlineTextClozeDropdown({ customData, data: propData, onComplete
       </div>
 
       {/* 📖 Continuous Story Text with 10 Popover Dropdown Gaps */}
-      <div className="p-6 sm:p-8 bg-slate-50 rounded-3xl border border-slate-200 shadow-inner leading-loose text-slate-900 font-serif text-base sm:text-lg relative">
+      <div className="p-3.5 sm:p-6 bg-slate-50 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-inner leading-relaxed sm:leading-loose text-slate-900 font-serif text-sm sm:text-base relative">
         {storySegments.map((seg, idx) => {
           if (seg.type === 'text') {
             return <span key={idx}>{renderParsedText(seg.content, 'indigo')}</span>;

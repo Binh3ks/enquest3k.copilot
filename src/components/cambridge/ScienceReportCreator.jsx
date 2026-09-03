@@ -254,7 +254,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-4 pt-1">
             {clueCards.map(clue => {
               const isSelected = selectedClue === clue.id;
               return (
@@ -262,14 +262,14 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
                   key={clue.id}
                   type="button"
                   onClick={() => handleClueSelect(clue)}
-                  className={`p-5 rounded-3xl text-left border-2 transition-all space-y-2 flex flex-col justify-between ${
+                  className={`p-3.5 sm:p-5 rounded-2xl sm:rounded-3xl text-left border-2 transition-all space-y-1.5 sm:space-y-2 flex flex-col justify-between ${
                     isSelected
                       ? 'bg-emerald-50 border-emerald-500 ring-4 ring-emerald-200 shadow-lg scale-102'
                       : 'bg-slate-50 hover:bg-white border-slate-200 hover:border-purple-300'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="font-black text-base text-slate-900">{clue.title}</h3>
+                    <h3 className="font-black text-sm sm:text-base text-slate-900">{clue.title}</h3>
                     {isSelected && <CheckCircle2 size={20} className="text-emerald-600" />}
                   </div>
                   <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
@@ -320,10 +320,10 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
           </div>
 
           {/* Target Sentence Drop Area */}
-          <div className="p-5 bg-gradient-to-br from-indigo-900 to-purple-950 rounded-3xl border border-purple-400 text-white space-y-3 shadow-inner">
+          <div className="p-3.5 sm:p-5 bg-gradient-to-br from-indigo-900 to-purple-950 rounded-2xl sm:rounded-3xl border border-purple-400 text-white space-y-2 sm:space-y-3 shadow-inner">
             <div className="flex items-center justify-between">
-              <span className="text-[11px] font-black uppercase text-amber-300 tracking-wider">
-                📝 Official Discovery Sentence Builder:
+              <span className="text-[10.5px] sm:text-[11px] font-black uppercase text-amber-300 tracking-wider">
+                📝 Discovery Sentence:
               </span>
               <span className="text-xs text-purple-200 font-bold">
                 {assembledPills.length} / {requiredPillCount} words connected
@@ -410,20 +410,20 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       {currentStep === 4 && (
         <div className="space-y-5 animate-in fade-in duration-300">
           {/* Stamped Spiral Notebook */}
-          <div className="relative p-6 sm:p-8 bg-amber-50/90 rounded-3xl border-2 border-amber-200 shadow-lg space-y-4">
+          <div className="relative p-3.5 sm:p-6 bg-amber-50/90 rounded-2xl sm:rounded-3xl border-2 border-amber-200 shadow-md space-y-3 sm:space-y-4">
             {/* Spiral binding rings decoration */}
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-3 h-3 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
-              <span className="w-3 h-3 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
-              <span className="w-3 h-3 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
-              <span className="text-[11px] font-black uppercase text-amber-900 tracking-wider ml-2">
+            <div className="flex items-center gap-1.5 mb-1">
+              <span className="w-2.5 h-2.5 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
+              <span className="w-2.5 h-2.5 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
+              <span className="w-2.5 h-2.5 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
+              <span className="text-[10px] sm:text-[11px] font-black uppercase text-amber-900 tracking-wider ml-1">
                 📓 Nova's Official Science Detective Notebook
               </span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-amber-200 pb-3">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-amber-200 pb-2.5">
               <div>
-                <h3 className="text-lg sm:text-xl font-black text-slate-900">
+                <h3 className="text-base sm:text-xl font-black text-slate-900">
                   Corridor Friction & Safety Field Report
                 </h3>
                 <p className="text-xs text-amber-800 font-bold">Investigator: Junior Science Detective</p>
@@ -431,14 +431,14 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               <button
                 type="button"
                 onClick={() => speakText(finalReportText)}
-                className="px-3.5 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs shadow transition flex items-center gap-1.5"
+                className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs shadow transition flex items-center gap-1.5"
               >
-                <Volume2 size={14} /> Listen to Full Report
+                <Volume2 size={13} /> Listen Report
               </button>
             </div>
 
             {/* Official Report Findings Paragraph */}
-            <div className="p-4 bg-white/90 rounded-2xl border border-amber-200 text-slate-900 leading-relaxed font-serif text-sm sm:text-base space-y-2">
+            <div className="p-3 sm:p-4 bg-white/90 rounded-xl sm:rounded-2xl border border-amber-200 text-slate-900 leading-relaxed font-serif text-xs sm:text-base space-y-1.5 sm:space-y-2">
               <p>
                 <strong>Observation:</strong> While observing the corridor, we discovered that <em>water on the smooth tiles reduced surface friction</em>, so the student slipped and lost balance.
               </p>

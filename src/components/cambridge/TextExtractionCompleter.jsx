@@ -175,7 +175,7 @@ function levenshteinDistance(s1, s2) {
               return (
                 <div
                   key={p.id}
-                  className={`p-4 sm:p-5 rounded-2xl border-2 transition-all leading-relaxed font-serif text-sm sm:text-base text-slate-900 ${
+                  className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border-2 transition-all leading-relaxed font-serif text-xs sm:text-base text-slate-900 ${
                     isHighlighted
                       ? 'bg-amber-100/90 border-amber-500 shadow-md ring-2 ring-amber-300'
                       : 'bg-slate-50 border-slate-200'
@@ -206,10 +206,10 @@ function levenshteinDistance(s1, s2) {
             {/* Worked Example Row */}
             <div
               data-testid="example-row"
-              className="p-3.5 rounded-2xl border-2 border-amber-300 bg-amber-50/90 shadow-2xs space-y-2"
+              className="p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border-2 border-amber-300 bg-amber-50/90 shadow-2xs space-y-1.5"
             >
-              <div className="flex items-start gap-2">
-                <span className="px-2 py-0.5 rounded-md bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider shrink-0 mt-0.5 shadow-2xs">
+              <div className="flex items-start gap-1.5">
+                <span className="px-1.5 py-0.5 rounded-md bg-amber-500 text-white font-black text-[9.5px] uppercase tracking-wider shrink-0 mt-0.5 shadow-2xs">
                   ★ EXAMPLE
                 </span>
                 <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
@@ -245,7 +245,7 @@ function levenshteinDistance(s1, s2) {
                   key={sent.id}
                   onFocus={() => setActiveParagraph(sent.paragraph_ref)}
                   onBlur={() => setActiveParagraph(null)}
-                  className={`p-3.5 rounded-2xl border-2 transition-all space-y-2 ${
+                  className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border-2 transition-all space-y-1.5 ${
                     isSubmitted
                       ? isCorrect
                         ? 'bg-emerald-50/80 border-emerald-300'
