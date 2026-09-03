@@ -59,9 +59,9 @@ export const useStationProgress = (weekId, stationId, learningMode = null) => {
   // Use provided mode or get from store
   const mode = learningMode || storeLearningMode || 'advanced';
   
-  // 🔥 Create a simple mode-aware key for backend storage
-  // For 'advanced' mode, use original key for backward compatibility
-  const storageKey = mode === 'advanced' ? stationId : `${stationId}_${mode}`;
+  // 🔥 For W33+ (Cambridge Flyers 15-task invariant), quests are unified without mode splitting
+  const isCambridgeWeek = Number(weekId) >= 33;
+  const storageKey = (isCambridgeWeek || mode === 'advanced') ? stationId : `${stationId}_${mode}`;
 
   // 1. Auto-load progress when component mounts
   useEffect(() => {
@@ -70,16 +70,25 @@ export const useStationProgress = (weekId, stationId, learningMode = null) => {
     }
   }, [weekId, loadWeekProgress]);
 
-  // 2. Get current progress from cache using storage key.
-  // BUG FIX (Jun 7, 2026): useMemo so savedData/isCompleted/savedScore keep
-  // stable references when the underlying cache didn't change for THIS station.
-  // Without useMemo, every render produces a new {} object reference, which
-  // causes child useState(s) and useEffect([savedData]) to think the data
-  // changed on every render — breaking the re-sync logic in station components.
-  const stationState = useMemo(
-    () => progressCache[weekId]?.[storageKey] || {},
-    [progressCache, weekId, storageKey]
-  );
+  // 2. Get current progress from cache using storage key with intelligent cross-mode fallback
+  const stationState = useMemo(() => {
+    const weekMap = progressCache[weekId] || {};
+    // Check primary key first
+    if (weekMap[storageKey] && (weekMap[storageKey].data || weekMap[storageKey].isCompleted || weekMap[storageKey].score)) {
+      return weekMap[storageKey];
+    }
+    // Check base stationId
+    if (weekMap[stationId] && (weekMap[stationId].data || weekMap[stationId].isCompleted || weekMap[stationId].score)) {
+      return weekMap[stationId];
+    }
+    // Check easy variant
+    const easyKey = `${stationId}_easy`;
+    if (weekMap[easyKey] && (weekMap[easyKey].data || weekMap[easyKey].isCompleted || weekMap[easyKey].score)) {
+      return weekMap[easyKey];
+    }
+    return weekMap[storageKey] || weekMap[stationId] || {};
+  }, [progressCache, weekId, storageKey, stationId]);
+
   const savedData = stationState.data || {};
   const isCompleted = stationState.isCompleted || false;
   const savedScore = stationState.score || 0;

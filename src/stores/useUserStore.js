@@ -514,15 +514,16 @@ const useUserStore = create(
           return;
         }
 
-        // 🔥 FIX: Filter to only count stations for the current learning mode.
-        // Advanced stores keys like 'vocab_mastery'; easy stores 'vocab_mastery_easy'.
-        // Without filtering, switching modes causes both variants to accumulate and
-        // doubles maxStars, making the star display jump randomly.
-        const modeProgress = Object.fromEntries(
-          Object.entries(weekProgress).filter(([key]) =>
-            currentMode === 'easy' ? key.endsWith('_easy') : !key.endsWith('_easy')
-          )
-        );
+        // 🔥 For Cambridge W33+, 15 quests are unified and do not use _easy suffixes.
+        // For legacy W1-32, filter by mode while falling back to base keys if no _easy version exists.
+        const isCambridgeWeek = Number(weekId) >= 33;
+        const modeProgress = isCambridgeWeek
+          ? weekProgress
+          : Object.fromEntries(
+              Object.entries(weekProgress).filter(([key]) =>
+                currentMode === 'easy' ? (key.endsWith('_easy') || !weekProgress[`${key}_easy`]) : !key.endsWith('_easy')
+              )
+            );
 
         const stations = Object.values(modeProgress);
         const totalStations = stations.length;
