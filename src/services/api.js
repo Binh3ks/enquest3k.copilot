@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { supabase } from './supabase.js';
 
 // Lazy token getter — set by useUserStore after init to avoid circular import
 let _getToken = null;
@@ -124,42 +125,119 @@ export const getProgress = (weekId) =>
 export const updateProgress = (progressData) => 
   apiClient.post('/progress', progressData);
 
-// PROGRESS (Universal System with JSONB)
+// PROGRESS (Universal System with JSONB & Supabase Cloud Sync)
 export const progressAPI = {
   /**
-   * Fetch all progress for a specific week
+   * Fetch all progress for a specific week from Supabase Cloud (with fallback)
    * @param {number} weekId - The week ID
+   * @param {string|number} [userId] - Optional user ID
    * @returns {Promise} Response with progress map: { stationId: { data, isCompleted, score } }
    */
-  fetchWeekProgress: async (weekId) => {
+  fetchWeekProgress: async (weekId, userId = null) => {
+    const targetWeek = parseInt(weekId);
+    if (!targetWeek) return {};
+
+    // 1. Primary: Direct Supabase Cloud Fetch for instant cross-device sync
     try {
-      const response = await apiClient.get(`/progress/${weekId}`);
-      return response.data || {};
-    } catch (err) {
-      console.warn(`[ProgressAPI] Remote fetch un-reachable for week ${weekId}, falling back to local progress:`, err.message);
-      return {};
+      if (supabase) {
+        // Default to user_id = 1 for owner, or numeric parsed ID
+        const effectiveUid = (typeof userId === 'number' && userId > 0) ? userId : 1;
+        const { data: rows, error } = await supabase
+          .from('user_progress')
+          .select('station_id, data, is_completed, score, updated_at')
+          .eq('user_id', effectiveUid)
+          .eq('week_id', targetWeek);
+
+        if (!error && Array.isArray(rows) && rows.length > 0) {
+          const progressMap = {};
+          for (const row of rows) {
+            progressMap[row.station_id] = {
+              data: row.data || {},
+              isCompleted: Boolean(row.is_completed),
+              score: typeof row.score === 'number' ? row.score : 0,
+              updatedAt: row.updated_at
+            };
+          }
+          return progressMap;
+        }
+      }
+    } catch (sbErr) {
+      console.warn('[ProgressAPI] Supabase fetch error, falling back:', sbErr.message);
     }
+
+    // 2. Secondary: Remote API client (if configured)
+    try {
+      if (isApiUrlProvided) {
+        const response = await apiClient.get(`/progress/${targetWeek}`);
+        if (response?.data && Object.keys(response.data).length > 0) {
+          return response.data;
+        }
+      }
+    } catch (err) {
+      // expected in Cloudflare Pages client-side mode
+    }
+
+    // 3. Fallback: LocalStorage journal backup
+    try {
+      const localBackupKey = `engquest_progress_backup_${targetWeek}`;
+      const cached = localStorage.getItem(localBackupKey);
+      if (cached) return JSON.parse(cached);
+    } catch (_) {}
+
+    return {};
   },
 
   /**
-   * Save progress with JSONB state support
+   * Save progress with JSONB state support to Supabase Cloud
    * @param {Object} params - Progress parameters
-   * @param {number} params.weekId - The week ID
-   * @param {string} params.stationId - The station identifier (e.g., 'daily_watch', 'ai_story')
-   * @param {Object} params.data - JSONB data object with module-specific state
-   * @param {boolean} params.isCompleted - Completion flag
-   * @param {number} params.score - Score (0-100)
-   * @returns {Promise} Response with saved progress
    */
-  saveProgress: async ({ weekId, stationId, data, isCompleted, score }) => {
-    const response = await apiClient.post('/progress/save', {
-      weekId,
-      stationId,
-      data,
-      isCompleted,
-      score
-    });
-    return response.data;
+  saveProgress: async ({ weekId, stationId, data, isCompleted, score, userId = null }) => {
+    const targetWeek = parseInt(weekId);
+    if (!targetWeek || !stationId) return { success: false };
+
+    // 1. Primary: Direct Supabase Cloud Save for immediate cross-device availability
+    try {
+      if (supabase) {
+        const effectiveUid = (typeof userId === 'number' && userId > 0) ? userId : 1;
+        const payload = {
+          user_id: effectiveUid,
+          week_id: targetWeek,
+          station_id: stationId,
+          data: data || {},
+          is_completed: Boolean(isCompleted),
+          score: typeof score === 'number' ? score : 0,
+          updated_at: new Date().toISOString()
+        };
+
+        const { error } = await supabase
+          .from('user_progress')
+          .upsert(payload, { onConflict: 'user_id,week_id,station_id' });
+
+        if (!error) {
+          return { success: true, syncedToCloud: true };
+        } else {
+          console.warn('[ProgressAPI] Supabase upsert error:', error.message);
+        }
+      }
+    } catch (sbErr) {
+      console.warn('[ProgressAPI] Supabase save error:', sbErr.message);
+    }
+
+    // 2. Secondary: Remote API client (if configured)
+    try {
+      if (isApiUrlProvided) {
+        const response = await apiClient.post('/progress/save', {
+          weekId: targetWeek,
+          stationId,
+          data,
+          isCompleted,
+          score
+        });
+        return response.data;
+      }
+    } catch (_) {}
+
+    return { success: true, localOnly: true };
   }
 };
 

@@ -568,23 +568,48 @@ const useUserStore = create(
           return;
         }
 
-        // If already cached, skip API call
+        // Optimistically recalculate with existing local cache first for instant 0ms render
         if (get().progressCache[weekId]) {
-          get().recalculateWeekCompletion(weekId); // Recalculate on load
-          return;
+          get().recalculateWeekCompletion(weekId);
         }
 
+        // Always check Cloud (Supabase) to synchronize latest cross-device progress!
         try {
-          const data = await progressAPI.fetchWeekProgress(weekId);
-          set((state) => ({
-            progressCache: {
-              ...state.progressCache,
-              [weekId]: data
-            }
-          }));
-          get().recalculateWeekCompletion(weekId); // Recalculate after fetch
+          const cloudData = await progressAPI.fetchWeekProgress(weekId, currentUser?.id);
+          if (cloudData && Object.keys(cloudData).length > 0) {
+            set((state) => {
+              const localWeek = state.progressCache[weekId] || {};
+              const mergedWeek = { ...localWeek };
+              for (const [sId, sProgress] of Object.entries(cloudData)) {
+                const localStation = mergedWeek[sId];
+                if (!localStation || (sProgress.score >= (localStation.score || 0))) {
+                  mergedWeek[sId] = sProgress;
+                }
+              }
+              return {
+                progressCache: {
+                  ...state.progressCache,
+                  [weekId]: mergedWeek
+                }
+              };
+            });
+            get().recalculateWeekCompletion(weekId); // Recalculate after merging cloud
+
+            // Synchronize with useDailyQuestStore
+            try {
+              const useDailyQuestStore = (await import('./useDailyQuestStore')).default;
+              if (useDailyQuestStore) {
+                const dailyStore = useDailyQuestStore.getState();
+                for (const [stationKey, item] of Object.entries(cloudData)) {
+                  if (item?.isCompleted) {
+                    dailyStore.completeQuest(weekId, stationKey);
+                  }
+                }
+              }
+            } catch (_) {}
+          }
         } catch (error) {
-          console.error('Failed to load week progress:', error);
+          console.warn('Failed to load cloud week progress:', error);
         }
       },
 
