@@ -283,6 +283,10 @@ rw_part_6: {
 >    - Tuyệt đối KHÔNG sử dụng `locked_connector`. 100% liên từ được đưa vào hàng `connectors` dưới dạng các nút lựa chọn tự do (`🔗 + In the beginning,`, `🔗 + Suddenly,`, `🔗 + Then,`, `🔗 + and`,...). Học sinh có toàn quyền lựa chọn cách mở đầu câu.
 > 6. **Mobile-First Compact Real Estate Invariant**:
 >    - Bố cục responsive: 2 cột trên desktop (`md:grid md:grid-cols-12`), khống chế chiều cao ảnh vừa vặn trên di động (`h-36 sm:h-44`), textarea `rows={2}`, giúp hiển thị trọn vẹn trong 1 màn hình di động mà không cần cuộn trang.
+> 7. **Universal Mobile-First Viewport Standards**:
+>    - **Speed Match**: 2 cột song song (English | Meaning) thay vì 1 cột dọc.
+>    - **Action Lab**: Diagram height cap `h-[260px] xs:h-[300px] sm:h-[450px]` để dock luôn nằm trên fold.
+>    - **Fact Finder**: Check Questions 2-column options grid (`grid-cols-2`), full mode labels (`Vocab Focus`, `Grammar X-Ray`), audio buttons `Play All` & `Play Part 1/2`.
 
 ```js
 picture_story: {

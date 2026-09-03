@@ -260,6 +260,26 @@ Source: `.devin/workflows/start.md` §3.
 6. **Mobile-First 2-Column Options Grid Invariant (Chống Tràn Màn Hình Dọc)**:
    - Toàn bộ các lựa chọn (A, B, C, D) của Check Questions trong CLIL Explorer / Fact Finder BẮT BUỘC xếp theo dạng lưới 2 cột (`grid grid-cols-2 gap-1.5 sm:gap-2`) ngay cả trên màn hình di động.
    - Cỡ chữ đoạn văn bài đọc chuẩn hóa ở mức `text-sm sm:text-base` với khoảng đệm tinh gọn (`p-3 sm:p-5`), giúp giảm hơn 50% chiều cao cuộn trang trên điện thoại.
+7. **Audio Control Bar Standard**:
+   - Hai nút chế độ giữ nguyên nhãn đầy đủ: `🔤 Vocab Focus` và `🔬 Grammar X-Ray`.
+   - Hai nút nghe audio hiển thị rõ ràng: `🔊 Play All` (hoặc `⏹ Stop All`) và `🎧 Play Part 1` / `🎧 Play Part 2` (hoặc `⏹ Stop Part X`).
+
+## 📱 Universal Mobile-First Display & Viewport Standard (W33+) — 2026-09-03
+**Áp dụng bắt buộc cho toàn bộ 15 Quests / Tasks và các Zone Components:**
+1. **Side-by-Side Matching Grid (Speed Match / Word Blitz)**:
+   - Cột tiếng Anh và cột tiếng Việt BẮT BUỘC hiển thị song song 2 cột (`grid grid-cols-2 gap-2 sm:gap-3`) trên mọi màn hình di động, loại bỏ hoàn toàn việc xếp chồng 1 cột khiến học sinh phải cuộn trang lên xuống liên tục để tìm từ ghép cặp.
+2. **Action Lab Diagram Height Cap**:
+   - Khung hình thí nghiệm / sơ đồ khoa học trên di động khống chế trong khoảng `h-[260px] xs:h-[300px] sm:h-[450px]` để thanh dock chứa các nhãn gắp/chọn luôn nằm trọn trong nửa dưới màn hình mà không bị đẩy ra khỏi khung nhìn.
+3. **Math Quest Visual Proportion**:
+   - Chiều cao sơ đồ Bar Model khống chế tối đa `max-h-[190px] sm:max-h-[260px]`, đoạn văn bài toán định cỡ `text-sm sm:text-base` với padding `p-3 sm:p-5`.
+4. **Information Exchange Split Tables**:
+   - Table A và Table B thu gọn padding thành `p-3 sm:p-5 rounded-2xl sm:rounded-3xl`, các hàng thuộc tính thẻ thông tin `p-2 sm:p-3 rounded-xl sm:rounded-2xl` với khoảng cách `space-y-1.5 sm:space-y-2.5`.
+5. **Reading Parts 2, 4, 5 Compact Real Estate**:
+   - Part 2 Dialogue A-H: Các lượt hội thoại tinh gọn `p-2.5 sm:p-3.5`, ngăn kéo 8 lựa chọn A-H xếp dạng lưới 2 cột trên màn hình nhỏ (`grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-1.5`).
+   - Part 4 Inline Cloze: Đoạn văn đọc chuẩn hóa cỡ chữ `text-sm sm:text-base` với `leading-relaxed sm:leading-loose` và đệm `p-3.5 sm:p-6`.
+   - Part 5 Text Extraction: Đoạn văn đọc và 7 câu hỏi tóm tắt thu gọn padding `p-2.5 sm:p-3.5`, không tạo khoảng trống thừa giữa các câu.
+6. **Speaking Part 4 Personal Questions**:
+   - Tinh gọn padding thẻ câu hỏi từ `p-5` xuống `p-3 sm:p-5`, font câu hỏi `text-sm sm:text-base` để hiển thị vừa vặn trên 1 màn hình cuộn nhẹ.
 
 ## 🔒 FROZEN AUDIO PIPELINE: PRE-GENERATED MP3 & 3-TIER FALLBACK STANDARD (W33+) — 2026-08-18
 **BẮT BUỘC áp dụng cho Tuần 33 và TOÀN BỘ các tuần sản xuất mới (W34–W72). KHÔNG ĐƯỢC PHÉP BỎ QUA:**
