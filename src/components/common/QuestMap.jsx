@@ -105,6 +105,13 @@ export default function QuestMap({ weekId }) {
   } = useDailyQuestStore();
 
   const addXP = useUserStore((s) => s.addXP);
+  const loadWeekProgress = useUserStore((s) => s.loadWeekProgress);
+
+  React.useEffect(() => {
+    if (weekId) {
+      loadWeekProgress(weekId);
+    }
+  }, [weekId, loadWeekProgress]);
 
   const currentDay = getCurrentDay(weekId);
   const weekQuestCount = getWeekQuestCount(weekId);

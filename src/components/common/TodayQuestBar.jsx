@@ -27,7 +27,14 @@ export default function TodayQuestBar({ weekId }) {
   } = useDailyQuestStore();
 
   const addXP = useUserStore((s) => s.addXP);
+  const loadWeekProgress = useUserStore((s) => s.loadWeekProgress);
   const [showCelebration, setShowCelebration] = useState(false);
+
+  React.useEffect(() => {
+    if (weekId) {
+      loadWeekProgress(weekId);
+    }
+  }, [weekId, loadWeekProgress]);
 
   const currentDay = getCurrentDay(weekId);
   const todayData = getTodayQuests(weekId);
