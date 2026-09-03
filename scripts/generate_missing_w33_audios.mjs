@@ -36,11 +36,15 @@ const shadowingSentences = [
 const clilParts = [
   {
     name: 'clil_friction_p1.mp3',
-    text: "Why do people slip on wet floors? The answer is a science force called friction. Friction is the grip between two surfaces that stops things from sliding. When a student walks on dry tiles, shoe soles grip the floor firmly and the student stays balanced. But water on smooth tiles creates a thin slippery layer. This water layer reduces friction, so shoes slide easily."
+    text: "Did you ever wonder why wet floors turn into ice rinks? The secret is an invisible science force called friction! Friction is the friendly grip between your shoe soles and the floor that stops you from sliding. When you walk on dry, smooth tiles, your shoes grip firmly and your body stays balanced. But when water spills, it spreads out into a thin slippery layer. This water layer reduces friction, turning safe floors into a slippery slide!"
   },
   {
     name: 'clil_friction_p2.mp3',
-    text: "This morning in our school corridor, Jake was walking carefully while the cleaner was drying the floor. Tom was running quickly to class, so he slipped on the wet tiles. Rubber soles provide strong grip because rubber holds surfaces better than plastic. Yellow warning signs remind students to walk slowly. Understanding friction keeps everyone safe!"
+    text: "This morning in our school corridor, Tom was running in a big hurry to science class. Suddenly—whoosh! He slipped on the wet tiles because his old sneakers had smooth plastic soles with no grip! Luckily, Jake was walking carefully nearby. When Jake rushed to help Tom up, he noticed something amazing: his own rubber soles gripped the floor tightly without sliding at all! The school nurse smiled and pointed to the bright yellow warning sign: \"Tom, rubber gives a strong grip, but water always steals your friction!\" Tom rubbed his sore knee and laughed, \"From now on, I will walk like a smart scientist!\""
+  },
+  {
+    name: 'clil_friction.mp3',
+    text: "Did you ever wonder why wet floors turn into ice rinks? The secret is an invisible science force called friction! Friction is the friendly grip between your shoe soles and the floor that stops you from sliding. When you walk on dry, smooth tiles, your shoes grip firmly and your body stays balanced. But when water spills, it spreads out into a thin slippery layer. This water layer reduces friction, turning safe floors into a slippery slide!\n\nThis morning in our school corridor, Tom was running in a big hurry to science class. Suddenly—whoosh! He slipped on the wet tiles because his old sneakers had smooth plastic soles with no grip! Luckily, Jake was walking carefully nearby. When Jake rushed to help Tom up, he noticed something amazing: his own rubber soles gripped the floor tightly without sliding at all! The school nurse smiled and pointed to the bright yellow warning sign: \"Tom, rubber gives a strong grip, but water always steals your friction!\" Tom rubbed his sore knee and laughed, \"From now on, I will walk like a smart scientist!\""
   }
 ];
 
