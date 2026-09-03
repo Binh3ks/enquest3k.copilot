@@ -1,9 +1,9 @@
 {
-  "commit": "83c6ee6d912ca555346d063678f7660baa66a53f",
-  "git_commit": "83c6ee6d912ca555346d063678f7660baa66a53f",
-  "shortCommit": "83c6ee6d",
-  "message": "docs(agents): update Boss Castle Practice standard and UI invariants",
-  "builtAt": "2026-09-03T11:32:10.089Z",
-  "build_timestamp": "2026-09-03T11:32:10.090Z",
+  "commit": "a67b660de30929987e89aeacb37de39f2ef17e75",
+  "git_commit": "a67b660de30929987e89aeacb37de39f2ef17e75",
+  "shortCommit": "a67b660d",
+  "message": "test(boss): add playwright audit screenshots verifying all Cambridge Practice fixes",
+  "builtAt": "2026-09-03T12:35:24.362Z",
+  "build_timestamp": "2026-09-03T12:35:24.363Z",
   "env": "production"
 }

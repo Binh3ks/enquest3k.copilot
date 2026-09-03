@@ -20,8 +20,7 @@ import PictureStoryContinuation from '../../components/cambridge/PictureStoryCon
 import FindDifferencesInteractive from '../../components/cambridge/FindDifferencesInteractive';
 import InformationExchangeP2 from '../../components/cambridge/InformationExchangeP2';
 import PersonalQuestionsCompleter from '../../components/cambridge/PersonalQuestionsCompleter';
-import ChoiceGrid from '../../components/common/ChoiceGrid';
-import { Shield, Trophy, CheckCircle2, RotateCcw, Award, PlayCircle, Star, Sparkles } from 'lucide-react';
+import { Shield, Trophy, CheckCircle2, RotateCcw, Award, PlayCircle, Star, Sparkles, ArrowLeft } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
@@ -34,7 +33,7 @@ import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificat
 // Maximum Shield score = 15 (5L + 5RW + 5S).
 // ──────────────────────────────────────────────────────────────────────────────
 
-export default function BossBattleZone({ data, weekNumber, forcedStation = null, hideStationTabs = false }) {
+export default function BossBattleZone({ data, weekNumber, forcedStation = null, hideStationTabs = false, onBackToMap = null }) {
   const navigate = useNavigate();
   const routeParams = useParams();
   const location = useLocation();
@@ -408,17 +407,48 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
 
   const activeTaskId = requestedTaskId || currentTask?.partId;
 
+  const handleReturnToMap = React.useCallback(() => {
+    if (typeof onBackToMap === 'function') {
+      onBackToMap();
+    } else {
+      navigate(`/week/${activeWeek || 33}/hub/1`);
+    }
+  }, [onBackToMap, navigate, activeWeek]);
+
+  const getUnifiedTitle = React.useCallback(() => {
+    if (forcedStation === 'listening_boss' || currentTask?.paper === PAPER.LISTENING) {
+      return stationTasks.length > 1 ? 'Listening Part 1 & 2' : 'Listening Part 1';
+    }
+    if (forcedStation === 'rw_boss' || currentTask?.paper === PAPER.READING_WRITING) {
+      return 'Reading & Writing Part 1';
+    }
+    if (forcedStation === 'review' || currentTask?.paper === PAPER.SPEAKING) {
+      return 'Speaking Part 1';
+    }
+    return currentTask?.displayName || 'Boss Castle';
+  }, [forcedStation, currentTask?.paper, currentTask?.displayName, stationTasks.length]);
+
+  const getHeaderTheme = React.useCallback(() => {
+    if (currentTask?.paper === PAPER.LISTENING) {
+      return 'bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border-indigo-200 text-indigo-950';
+    }
+    if (currentTask?.paper === PAPER.READING_WRITING) {
+      return 'bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 border-emerald-200 text-emerald-950';
+    }
+    return 'bg-gradient-to-r from-amber-50 via-orange-50 to-yellow-50 border-amber-200 text-amber-950';
+  }, [currentTask?.paper]);
+
   return (
     <div className="w-full max-w-5xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans">
-      {/* Boss Assessment Header with Runtime Paper Badge & Multi-Part Tabs */}
+      {/* Unified Boss Assessment Header with Themed Box and Map Return Button */}
       <div
         data-testid="boss-assessment-header"
-        className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 text-slate-900 rounded-2xl p-2.5 sm:p-3.5 border-2 border-indigo-200 shadow-md flex flex-wrap items-center justify-between gap-2.5"
+        className={`rounded-2xl p-2 sm:p-2.5 border-2 shadow-xs flex flex-wrap items-center justify-between gap-2 ${getHeaderTheme()}`}
       >
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <span
             data-testid="boss-paper-badge"
-            className={`px-3 py-1 rounded-xl text-xs font-black uppercase tracking-wider shadow-xs ${
+            className={`px-2.5 py-0.5 rounded-lg text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-2xs ${
               currentTask.paper === PAPER.LISTENING
                 ? 'bg-indigo-600 text-white'
                 : currentTask.paper === PAPER.READING_WRITING
@@ -435,13 +465,13 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
             data-component={currentTask.componentKey}
             className="text-xs sm:text-sm font-black text-slate-900"
           >
-            {currentTask.displayName}
+            {getUnifiedTitle()}
           </div>
         </div>
 
-        {/* Part Tabs (for multi-part stations or mock navigation) */}
+        {/* Part Tabs (for multi-part stations: L1/L2) */}
         {stationTasks.length > 1 && (
-          <div data-testid="boss-part-tabs" className="flex items-center gap-1.5 bg-white p-1 rounded-xl border-2 border-indigo-200 shadow-2xs">
+          <div data-testid="boss-part-tabs" className="flex items-center gap-1 bg-white/80 p-0.5 rounded-xl border border-slate-200 shadow-2xs">
             {stationTasks.map((task) => {
               const isActive = activeTaskId === task.partId;
               const isDone = completedPartIds.includes(task.partId);
@@ -455,21 +485,33 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
                     const targetIdx = currentTasks.findIndex(t => t.partId === task.partId);
                     if (targetIdx !== -1) setActiveTaskIndex(targetIdx);
                   }}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
+                  className={`px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-black transition flex items-center gap-1 ${
                     isActive
-                      ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-md ring-2 ring-amber-300 scale-105'
+                      ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-xs ring-1 ring-amber-300 scale-102'
                       : isDone
                       ? 'bg-emerald-100 text-emerald-800 border border-emerald-300 hover:bg-emerald-200'
-                      : 'bg-slate-100 text-slate-700 hover:bg-indigo-100 hover:text-indigo-900 border border-slate-200'
+                      : 'bg-slate-100/80 text-slate-700 hover:bg-white border border-slate-200'
                   }`}
                 >
-                  {isDone && <CheckCircle2 size={12} />}
+                  {isDone && <CheckCircle2 size={11} />}
                   <span>{task.shortLabel || task.partId.toUpperCase()}</span>
                 </button>
               );
             })}
           </div>
         )}
+
+        {/* Right side: Map button with back arrow */}
+        <button
+          type="button"
+          onClick={handleReturnToMap}
+          className="ml-auto px-2.5 py-1 bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-300 rounded-xl text-xs font-black flex items-center gap-1.5 shadow-2xs transition active:scale-95 shrink-0"
+          title="Back to Map"
+          aria-label="Back to Map"
+        >
+          <ArrowLeft size={14} className="text-slate-600" />
+          <span>Map</span>
+        </button>
       </div>
 
       {/* Task Content Card */}

@@ -389,6 +389,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               weekNumber={weekId}
               forcedStation={routing.station}
               hideStationTabs={true}
+              onBackToMap={handleBackToMap}
             />
           )}
           {routing.zone === 'info_exchange' && (

@@ -73,7 +73,7 @@ export default function ExamIntroAudioButton({
       } ${className}`}
     >
       <Volume2 size={14} className={isPlaying ? 'animate-bounce text-amber-700' : 'text-amber-800'} />
-      <span>{isPlaying ? '🔊 Playing Intro...' : '🎧 Exam Intro'}</span>
+      <span>{isPlaying ? '🔊 Playing Intro...' : '🎧 Intro'}</span>
     </button>
   );
 }

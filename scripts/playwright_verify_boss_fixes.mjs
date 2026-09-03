@@ -78,8 +78,8 @@ async function verify() {
   await page.goto('http://localhost:4173/week/33/task/weekly_review', { waitUntil: 'domcontentloaded', timeout: 15000 });
   await page.waitForTimeout(2000);
 
-  const s1Header = await page.locator('h2').first().textContent().catch(() => '');
-  const diffCounter = await page.locator('text=/\\d+\\/\\d+ differences/').first().textContent().catch(() => '');
+  const s1Header = await page.locator('h2').first().textContent({ timeout: 3000 }).catch(() => '');
+  const diffCounter = await page.locator('text=/\\d+\\/\\d+ differences/').first().textContent({ timeout: 3000 }).catch(() => '');
   console.log('S1 Header Text:', s1Header.trim());
   console.log('S1 Counter Text:', diffCounter.trim());
   await page.screenshot({ path: path.join(SCREENSHOT_DIR, 'weekly_review_s1.png') });
