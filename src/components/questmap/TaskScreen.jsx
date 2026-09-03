@@ -314,45 +314,47 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
         </div>
       )}
 
-      {/* Top bar */}
-      <div className="ts-header">
-        <button
-          type="button"
-          className="ts-back-btn"
-          onClick={(e) => {
-            e.stopPropagation();
-            handleBackToMap();
-          }}
-          aria-label="Back to Map"
-        >
-          <ArrowLeft size={16} />
-          <span>Map</span>
-        </button>
-        <div className="ts-task-info">
-          <span className="ts-task-icon">{taskInfo.icon}</span>
-          <span className="ts-task-name">{taskInfo.label}</span>
-        </div>
-        
-        {/* Dynamic Header Action: CLIL Stamp (CLIL only) + XP Reward */}
-        <div className="ts-header-actions">
-          {(taskId === 'gear4_clil' || taskId === 'explore') && (
-            <CLILSealStamp
-              stampId="science"
-              level={1}
-              size="sm"
-              onClick={() => setShowPassportModal(true)}
-              className="hover:scale-110"
-            />
-          )}
+      {/* Top bar — hidden in Boss Castle to remove duplicate Map button and gain vertical space */}
+      {routing.zone !== 'boss' && (
+        <div className="ts-header">
+          <button
+            type="button"
+            className="ts-back-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleBackToMap();
+            }}
+            aria-label="Back to Map"
+          >
+            <ArrowLeft size={16} />
+            <span>Map</span>
+          </button>
+          <div className="ts-task-info">
+            <span className="ts-task-icon">{taskInfo.icon}</span>
+            <span className="ts-task-name">{taskInfo.label}</span>
+          </div>
+          
+          {/* Dynamic Header Action: CLIL Stamp (CLIL only) + XP Reward */}
+          <div className="ts-header-actions">
+            {(taskId === 'gear4_clil' || taskId === 'explore') && (
+              <CLILSealStamp
+                stampId="science"
+                level={1}
+                size="sm"
+                onClick={() => setShowPassportModal(true)}
+                className="hover:scale-110"
+              />
+            )}
 
-          {taskInfo.xp > 0 && (
-            <div className="ts-xp-badge">
-              <Trophy size={12} className="text-amber-500" />
-              <span>+{taskInfo.xp} XP</span>
-            </div>
-          )}
+            {taskInfo.xp > 0 && (
+              <div className="ts-xp-badge">
+                <Trophy size={12} className="text-amber-500" />
+                <span>+{taskInfo.xp} XP</span>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Task content — wrapped in TaskErrorBoundary */}
       <div className="ts-content">

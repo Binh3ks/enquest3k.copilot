@@ -1,9 +1,9 @@
 {
-  "commit": "6dc56793c38c64d976135ae8c1045e43133532ee",
-  "git_commit": "6dc56793c38c64d976135ae8c1045e43133532ee",
-  "shortCommit": "6dc56793",
-  "message": "fix(ui): overhaul task layouts, Boss Castle header, and 2-clause grammar across W33",
-  "builtAt": "2026-09-03T10:01:31.631Z",
-  "build_timestamp": "2026-09-03T10:01:31.631Z",
+  "commit": "83c6ee6d912ca555346d063678f7660baa66a53f",
+  "git_commit": "83c6ee6d912ca555346d063678f7660baa66a53f",
+  "shortCommit": "83c6ee6d",
+  "message": "docs(agents): update Boss Castle Practice standard and UI invariants",
+  "builtAt": "2026-09-03T11:32:10.089Z",
+  "build_timestamp": "2026-09-03T11:32:10.090Z",
   "env": "production"
 }
