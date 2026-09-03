@@ -470,13 +470,13 @@ async function main() {
             if (!badge1.includes('MODEL')) {
               result = { pass: false, snippet: '', reason: `Step 1 ladder badge expected MODEL, got "${badge1}"` };
             } else {
-              const lockedConn = page.locator('[data-testid="locked-connector"]').first();
+              const lockedConn = page.locator('[data-testid="locked-connector"], [data-testid="connector-btn"]').first();
               const hasLockedConn = await lockedConn.isVisible().catch(() => false);
               const lockedText = hasLockedConn ? await lockedConn.innerText() : '';
-              if (!hasLockedConn || !lockedText.includes('In the beginning')) {
-                result = { pass: false, snippet: '', reason: `Step 1 locked connector missing or invalid: "${lockedText}"` };
+              if (!hasLockedConn || (!lockedText.includes('In the beginning') && !lockedText.includes('Suddenly'))) {
+                result = { pass: false, snippet: '', reason: `Step 1 connector missing or invalid: "${lockedText}"` };
               } else {
-                // Click locked connector and Step 1 chips to form sentence
+                // Click connector and Step 1 chips to form sentence
                 await lockedConn.click().catch(() => {});
                 await page.waitForTimeout(150);
                 const step1Chips = await page.$$('[data-testid="content-chip"]');

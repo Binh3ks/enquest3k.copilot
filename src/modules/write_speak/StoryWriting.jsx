@@ -68,8 +68,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
         badge_label: 'MODEL',
         title: 'Scene 1: The Beginning',
         image_url: `/images/week${currentWeek}/writing_panel_1.png`,
-        caption: 'Look at Picture 1 and describe the setting and characters.',
-        locked_connector: 'In the beginning,',
+        connectors: ['In the beginning,', 'Suddenly,', 'Then,'],
         ordered_chips: ['the main character', 'explored the trail', 'in the setting'],
         pills: ['the main character', 'explored the trail', 'in the setting'],
         audio: 'Look at the first picture and describe how the story begins.'
@@ -701,39 +700,31 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
             </span>
           </div>
 
-          {/* Locked connector (Scene 1 only) */}
-          {currentStep.locked_connector && (
-            <div className="flex items-center gap-2 pt-0.5 flex-wrap">
-              <button
-                type="button"
-                onClick={() => handleInsertConnector(currentStep.locked_connector)}
-                className="px-3 py-1.5 rounded-xl text-xs font-black bg-purple-100 hover:bg-purple-200 text-purple-950 border border-purple-300 shadow-2xs flex items-center gap-1.5 transition active:scale-95 cursor-pointer"
-                data-testid="locked-connector"
-                title="Click to insert locked connector"
-              >
-                🔒 ★ LOCKED: {currentStep.locked_connector}
-              </button>
-              <span className="text-[10px] font-bold text-purple-800">
-                (Start your first sentence with this)
-              </span>
-            </div>
-          )}
-          {/* Optional connectors for linking sentences within this scene */}
-          {(currentStep.connectors || []).length > 0 && (
-            <div className="flex flex-wrap gap-2 pt-1" data-testid="connector-options">
-              {(currentStep.connectors || []).map((conn, cIdx) => (
-                <button
-                  key={cIdx}
-                  type="button"
-                  onClick={() => handleInsertConnector(conn)}
-                  className="px-3 py-1.5 rounded-xl text-xs font-black bg-purple-100 hover:bg-purple-200 text-purple-950 border border-purple-300 shadow-2xs transition active:scale-95 flex items-center gap-1 cursor-pointer"
-                  data-testid="connector-btn"
-                >
-                  🔗 + {conn}
-                </button>
-              ))}
-            </div>
-          )}
+          {/* Connectors for linking sentences within this scene (unified selectable buttons) */}
+          {(() => {
+            const rawConnectors = [
+              ...(currentStep.locked_connector ? [currentStep.locked_connector] : []),
+              ...(currentStep.connectors || [])
+            ];
+            const uniqueConnectors = [...new Set(rawConnectors)];
+            if (uniqueConnectors.length === 0) return null;
+
+            return (
+              <div className="flex flex-wrap gap-2 pt-1" data-testid="connector-options">
+                {uniqueConnectors.map((conn, cIdx) => (
+                  <button
+                    key={cIdx}
+                    type="button"
+                    onClick={() => handleInsertConnector(conn)}
+                    className="px-3 py-1.5 rounded-xl text-xs font-black bg-purple-100 hover:bg-purple-200 text-purple-950 border border-purple-300 shadow-2xs transition active:scale-95 flex items-center gap-1 cursor-pointer"
+                    data-testid="connector-btn"
+                  >
+                    🔗 + {conn}
+                  </button>
+                ))}
+              </div>
+            );
+          })()}
         </div>
 
         {/* Content Chips Row — flat word bank for this scene */}
