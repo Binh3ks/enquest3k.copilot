@@ -173,17 +173,38 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     return arr;
   }, [currentStep, currentStepIdx]);
 
-  // Robust Hydration with hydratedRef
+  // Smart Hydration: accepts cloud data if it has more panels or is newer than local draft
   const hydratedRef = useRef(false);
+  const lastSavedAtRef = useRef(0);
+
   useEffect(() => {
-    if (hydratedRef.current) return;
-    if (savedData && typeof savedData === 'object' && (savedData.panelTexts || savedData.text)) {
+    if (!savedData || typeof savedData !== 'object') return;
+    const incomingPanels = Array.isArray(savedData.panelTexts) ? savedData.panelTexts : [];
+    const incomingText = savedData.text || '';
+    if (!incomingPanels.length && !incomingText) return;
+
+    const incomingTime = new Date(savedData._savedAt || savedData.updated_at || savedData.updatedAt || 0).getTime();
+    const incomingPanelCount = incomingPanels.filter(t => t && t.trim().length > 0).length;
+    const currentPanelCount = panelTexts.filter(t => t && t.trim().length > 0).length;
+
+    // Hydrate if:
+    // 1. Not hydrated yet, OR
+    // 2. Incoming data has strictly more panels (e.g. 5 vs 2), OR
+    // 3. Incoming timestamp is newer than our last saved timestamp
+    const shouldHydrate = !hydratedRef.current || 
+      (incomingPanelCount > currentPanelCount) || 
+      (incomingTime > lastSavedAtRef.current && incomingPanelCount >= currentPanelCount);
+
+    if (shouldHydrate) {
       hydratedRef.current = true;
-      if (Array.isArray(savedData.panelTexts) && savedData.panelTexts.length > 0) {
-        setPanelTexts(savedData.panelTexts);
-      } else if (savedData.text) {
-        const parts = savedData.text.split(/(?<=[.!?])\s+/);
-        // Distribute legacy text across 5 slots
+      lastSavedAtRef.current = incomingTime || Date.now();
+
+      if (incomingPanels.length > 0) {
+        const padded = [...incomingPanels];
+        while (padded.length < 5) padded.push('');
+        setPanelTexts(padded.slice(0, 5));
+      } else if (incomingText) {
+        const parts = incomingText.split(/(?<=[.!?])\s+/);
         const fifth = Math.ceil(parts.length / 5);
         setPanelTexts([
           parts.slice(0, fifth).join(' ') || '',
@@ -200,27 +221,28 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     }
   }, [savedData, steps.length]);
 
-  // Mark hydration true on first user edit even if savedData was empty
+  // Mark hydration true on user typing
   useEffect(() => {
     if (!hydratedRef.current && panelTexts.some(t => t && t.trim().length > 0)) {
       hydratedRef.current = true;
     }
   }, [panelTexts]);
 
-  // Debounced Auto-Save on panelTexts changes
+  // Debounced Auto-Save on user edits (with saved timestamp tracking)
   useEffect(() => {
     if (!hydratedRef.current) return;
     const hasContent = panelTexts.some(t => t && t.trim().length > 0);
     if (!hasContent) return;
 
     const timer = setTimeout(() => {
+      lastSavedAtRef.current = Date.now();
       saveProgress({
         panelTexts: [...panelTexts],
         text: fullText,
         currentStepIdx,
         _savedAt: new Date().toISOString()
       });
-    }, 600);
+    }, 800);
 
     return () => clearTimeout(timer);
   }, [panelTexts, fullText, currentStepIdx, saveProgress]);

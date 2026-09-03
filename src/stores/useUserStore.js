@@ -610,13 +610,45 @@ const useUserStore = create(
               const useDailyQuestStore = (await import('./useDailyQuestStore')).default;
               if (useDailyQuestStore) {
                 const dailyStore = useDailyQuestStore.getState();
+                // 1. Pull cloud completed quests down to local
                 for (const [stationKey, item] of Object.entries(cloudData)) {
                   if (item?.isCompleted) {
                     dailyStore.completeQuest(weekId, stationKey);
                   }
                 }
+                // 2. Push any local completed quests up to cloud if missing
+                const weekQuests = dailyStore.completedQuests[weekId] || {};
+                for (const [qId, isDone] of Object.entries(weekQuests)) {
+                  if (isDone && !cloudData[qId]) {
+                    progressAPI.saveProgress({
+                      weekId,
+                      stationId: qId,
+                      data: { completedFromDaily: true },
+                      isCompleted: true,
+                      score: 100,
+                      userId: currentUser?.id
+                    });
+                  }
+                }
               }
             } catch (_) {}
+
+            // Auto-sync: Push any local completed station caches up to cloud if missing
+            const currentLocal = get().progressCache[weekId] || {};
+            for (const [sId, sProg] of Object.entries(currentLocal)) {
+              if (sProg && (sProg.isCompleted || (sProg.score && sProg.score > 0))) {
+                if (!cloudData[sId]) {
+                  progressAPI.saveProgress({
+                    weekId,
+                    stationId: sId,
+                    data: sProg.data || {},
+                    isCompleted: sProg.isCompleted || false,
+                    score: sProg.score || 0,
+                    userId: currentUser?.id
+                  });
+                }
+              }
+            }
           }
         } catch (error) {
           console.warn('Failed to load cloud week progress:', error);
