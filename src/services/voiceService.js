@@ -388,19 +388,26 @@ export const VoiceService = {
     
     // 🎵 TIER 0: Pre-generated Static Multi-Voice MP3 priority (if live on CDN/Storage)
     if (audioUrl) {
-      const fullAudioPath = audioUrl.startsWith('http')
-        ? audioUrl
-        : (audioUrl.startsWith('/') ? audioUrl : `/audio/week${weekNumber || 33}/${audioUrl}`);
-      try {
-        const headRes = await fetch(fullAudioPath, { method: 'HEAD' }).catch(() => null);
-        const contentType = headRes?.headers.get('content-type') || '';
-        if (headRes && headRes.ok && (contentType.includes('audio') || contentType.includes('mpeg') || contentType.includes('octet-stream'))) {
-          console.log(`[TTS] 🎧 Playing verified static MP3 from: ${fullAudioPath}`);
-          await this.playAudio(fullAudioPath, false, true, onPlayStart);
+      const candidates = [];
+      if (audioUrl.startsWith('http')) {
+        candidates.push(audioUrl);
+      } else {
+        const cleanRelPath = audioUrl.startsWith('/') ? audioUrl : `/audio/week${weekNumber || 33}/${audioUrl}`;
+        // 1. Same-origin local static audio asset (fastest, guaranteed CORS on Cloudflare Pages)
+        candidates.push(cleanRelPath);
+        // 2. Cloudflare R2 CDN URL
+        candidates.push(`${CDN_URL}${cleanRelPath}`);
+      }
+
+      for (const candidatePath of candidates) {
+        try {
+          console.log(`[TTS] 🎧 Trying pre-generated static MP3: ${candidatePath}`);
+          await this.playAudio(candidatePath, false, true, onPlayStart);
+          console.log(`[TTS] ✅ Static MP3 played successfully: ${candidatePath}`);
           return;
+        } catch (staticErr) {
+          console.warn(`[TTS] Static MP3 candidate unavailable (${candidatePath}): ${staticErr.message}`);
         }
-      } catch (staticErr) {
-        console.warn(`[TTS] Static MP3 unavailable or failed (${fullAudioPath}), falling through to Multi-Voice Synthesis: ${staticErr.message}`);
       }
     }
 

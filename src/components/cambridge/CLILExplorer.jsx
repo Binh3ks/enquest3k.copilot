@@ -196,9 +196,11 @@ export default function CLILExplorer({
     VoiceService.stop();
     setPlayingAudioType('part');
     const partText = currentPhase === 1 ? paragraphs[0] : (paragraphs[1] || paragraphs[0]);
+    const partAudioUrl = currentPhase === 1
+      ? `/audio/week${weekNumber || 33}/clil_friction_p1.mp3`
+      : `/audio/week${weekNumber || 33}/clil_friction_p2.mp3`;
     try {
-      // Pass null audioUrl so it synthesizes/plays ONLY this specific part via TTS
-      await VoiceService.speak(partText, 'explore', null, weekNumber);
+      await VoiceService.speak(partText, 'explore', partAudioUrl, weekNumber);
     } catch (err) {
       console.warn('[CLIL Audio Part] playback error:', err);
       speakText(partText);

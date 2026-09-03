@@ -327,9 +327,11 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
       }, msPerWord);
     };
 
+    const sentenceAudioUrl = `/audio/week${activeWeek || 33}/shadowing_${idx + 1}.mp3`;
+
     speakText(
       sentenceText,
-      null,
+      sentenceAudioUrl,
       1.0,
       () => {
         if (playbackId !== null && playbackId !== currentPlaybackId.current) return;
