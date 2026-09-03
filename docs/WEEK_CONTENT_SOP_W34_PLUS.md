@@ -112,6 +112,69 @@ listening_p5: {
 }
 ```
 
+## Reading Hub Data Schemas (Zone 1 & 4)
+
+### Gear 1 — Scene Explorer (`story_scenes`, 5 scenes)
+- 5 Webtoon scenes with natural linear chunks.
+- Audio: `/audio/weekXX/read_stem.mp3`.
+
+### Gear 2 — Voice Shadowing (`shadowing_sentences`, 8 sentences)
+- Exactly 8 atomic sentences for shadowing.
+- Pre-generated static MP3 files: `/audio/weekXX/shadowing_1.mp3` through `shadowing_8.mp3` (Voice: `en-US-Journey-F`).
+- Schema:
+```js
+shadowing: {
+  theme: 'Theme Title',
+  sentences: [
+    { id: 1, text: 'Sentence 1...', words: [...], ipa: [...], audio_url: '/audio/weekXX/shadowing_1.mp3' }
+  ]
+}
+```
+
+### Gear 4 — Fact Finder (`clil_article` - Knowledge Lab)
+- **Story-Driven Science Principle**:
+  - **CẤM** hội chứng dịch sách giáo khoa khô khan (Fragmented Textbook Syndrome).
+  - Phải xuất phát từ **hiện tượng tương phản đời thực** (Scientific Contrast).
+  - Khoa học là **manh mối thám tử** trong câu chuyện (Scientific Clue).
+  - Hình tượng hóa khái niệm khoa học thành ấn tượng khó quên (*"Water steals your friction"*).
+- **Selective Grammar X-Ray Invariant**:
+  - **Tối đa 3–4 cụm cấu trúc ngữ pháp mục tiêu per đoạn văn**.
+  - **CẤM TUYỆT ĐỐI** đưa các từ đơn lẻ phổ thông (`is`, `walk`, `noticed`, `pointed`) vào regex pattern, tránh làm hơn 70% đoạn văn bị bôi vàng gây quá tải nhận thức.
+  - Soi rọi chính xác ngữ pháp mục tiêu của tuần (ví dụ: Past Continuous hành động đang diễn ra vs Past Simple xen vào/kết quả).
+- **Vocab Focus Collocation Invariant**:
+  - 100% mục trong `vocab_focus` phải là **cụm từ tự nhiên hoàn chỉnh (Chunks, Collocations, Compound Nouns)**. CẤM bẻ nhỏ thành từ đơn rời rạc vô nghĩa.
+- **4-Option MCQ Check Questions Standard**:
+  - Toàn bộ 5 câu hỏi Check Questions BẮT BUỘC có **4 lựa chọn (A, B, C, D)** với các phương án nhiễu (distractors) tự nhiên, chặt chẽ.
+- **Audio Assets Pre-generation Requirement**:
+  - Bắt buộc sinh sẵn 3 file: `clil_X_p1.mp3` (Part 1), `clil_X_p2.mp3` (Part 2), `clil_X.mp3` (Full text) giọng `en-US-Journey-F`.
+- Schema:
+```js
+clil_article: {
+  id: 'clil_wXX_theme',
+  title_en: 'Title En',
+  title_vi: 'Title Vi',
+  part_1_title: 'Part 1 Heading',
+  part_2_title: 'Part 2 Heading',
+  content_en: 'Part 1 text...\n\nPart 2 text...',
+  content_vi: 'Dịch Part 1...\n\nDịch Part 2...',
+  audio_url: '/audio/weekXX/clil_theme.mp3',
+  vocab_focus: ['collocation 1', 'collocation 2', ...],
+  grammar_patterns: [
+    { pattern: '\\b(target phrase 1|target phrase 2)\\b', label: 'Grammar Focus P1', paragraph_scope: 1 },
+    { pattern: '\\b(target phrase 3|target phrase 4)\\b', label: 'Grammar Focus P2', paragraph_scope: 2 }
+  ],
+  sentence_drills: [
+    { id: 1, label: 'Science Fact', scrambled: [...], correct: [...] },
+    { id: 2, label: 'Safety Rule', scrambled: [...], correct: [...] }
+  ],
+  check_questions: [
+    { id: 1, question_en: 'Question 1?', options: ['A', 'B', 'C', 'D'], answer: 'A' },
+    // id 2-5 (all 4 options)
+  ],
+  critical_thinking: { question_en: '...', hint_en: '...' }
+}
+```
+
 ## Writing Hub Data Schemas
 
 ### R1 — Word-Definition Match (10 of 15 words)
@@ -307,9 +370,33 @@ public/images/weekXX/
   listening_p1_scene.jpg # L1 scene with 6 characters
   listening_p5_scene.png # L5 colour & write scene
 
+## Audio Asset Checklist Per Week (Pre-generated MP3 Priority)
+
+public/audio/weekXX/
+  shadowing_1.mp3 ... shadowing_8.mp3 # Voice Shadowing (8 sentences, en-US-Journey-F)
+  clil_X_p1.mp3                       # Fact Finder Part 1 audio (en-US-Journey-F)
+  clil_X_p2.mp3                       # Fact Finder Part 2 audio (en-US-Journey-F)
+  clil_X.mp3                          # Fact Finder Full text audio (en-US-Journey-F)
+  read_stem.mp3                       # STEM Story full audio (en-US-Journey-F)
+  read_social.mp3                     # Social Story full audio (en-US-Journey-F)
+  dictation_1.mp3 ... dictation_5.mp3 # Dictation audio (5 files, en-US-Neural2-F)
+  listening_p1_full.mp3               # L1 full audio with 2-play loop
+  listening_p2_full.mp3               # L2 full audio
+  listening_p3_full.mp3               # L3 full audio
+  listening_p4_full.mp3               # L4 full audio
+  listening_p5_full.mp3               # L5 full audio
+
 ## Validation Before Commit
 
   npm run build
   npm run audit:cefr <weekNum>
   node scripts/gate17_fidelity_doctrine.mjs <weekNum>
   npm run audit:chunks
+
+## 🔄 Mandatory Continuous Handoff & Maintenance Doctrine (Invariant)
+> **BẮT BUỘC ÁP DỤNG TỪ NAY VỀ SAU**:
+> Bất kỳ review, tinh chỉnh phương pháp luận, sửa đổi cấu trúc (architecture) hay chuẩn hóa dữ liệu nào được User phê duyệt trên Tuần 33 (Golden Standard) **BẮT BUỘC PHẢI ĐƯỢC CẬP NHẬT ĐỒNG BỘ NGAY LẬP TỨC** vào:
+> 1. `AGENTS.md` (Agent Memory & Rules)
+> 2. `docs/WEEK_CONTENT_SOP_W34_PLUS.md` (Standard Operating Procedure cho W34–W72)
+> 
+> Tuyệt đối không để xảy ra tình trạng "sửa xong trong code mà quên cập nhật tài liệu chuẩn", đảm bảo mọi Agent trong các phiên làm việc tiếp theo luôn thừa hưởng kiến trúc mới nhất 100%!

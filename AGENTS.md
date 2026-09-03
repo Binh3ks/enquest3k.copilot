@@ -234,11 +234,31 @@ Source: `.devin/workflows/start.md` §3.
   3. **Multi-Sentence Target (2–3 Sentences per Scene)**: Mỗi cảnh (Scene 1–5) yêu cầu học sinh viết tối thiểu 2 câu hoàn chỉnh (khuyến khích 3 câu). Word Bank cung cấp sẵn inputs/collocations tối thiểu cho 2 câu, học sinh tự do mở rộng câu thứ 3.
   4. **Smart Cursor Insertion**: Khi bấm vào Connector hoặc Pill, văn bản PHẢI được chèn chính xác tại vị trí con trỏ (Cursor Position), tự động căn chỉnh khoảng trắng, không nhảy về đầu đoạn.
 
+## 🔬 CLIL Fact Finder & Story-Driven Science Doctrine (W33+) — 2026-09-03
+**BẮT BUỘC ÁP DỤNG CHO TOÀN BỘ CÁC BÀI ĐỌC CLIL (DAY 2 QUEST 4 - FACT FINDER / KNOWLEDGE LAB):**
+1. **Cấm Hội Chứng Dịch Sách Giáo Khoa Rời Rạc (Anti-Textbook Translation Syndrome)**:
+   - Bài đọc CLIL KHÔNG ĐƯỢC PHÉP là những đoạn văn trích bách khoa toàn thư khô cứng, chắp vá các câu rời rạc để "nhồi từ khóa".
+   - Phải tuân thủ nguyên lý **"Story-Driven Inquiry & Phenomenon-Based Science"**:
+     - **Hiện tượng tương phản đời thực (Scientific Contrast)**: Xuất phát từ tình huống thực tế gần gũi với học sinh (ví dụ: Cùng chạy trên hành lang ướt, vì sao Tom ngã nhào còn Jake đứng vững?).
+     - **Khoa học là Manh mối Thám tử (Scientific Clue)**: Lời giải thích khoa học phải là hành động quan sát, đối chiếu của nhân vật (Đế giày nhựa trơn láng vs. Đế cao su có rãnh bám chặt).
+     - **Hình tượng hóa Khái niệm Khoa học**: Biến kiến thức trừu tượng thành hình ảnh dễ nhớ (*"Nước đã lấy cắp lực ma sát"* - *Water steals your friction*).
+2. **Selective Grammar X-Ray Invariant (Chống Over-Highlighting / Biển Màu Vàng)**:
+   - Grammar X-Ray chỉ là công cụ soi rọi "khung xương ngữ pháp", **TỐI ĐA 3–4 cụm cấu trúc ngữ pháp trọng tâm per đoạn văn**.
+   - **CẤM TUYỆT ĐỐI** đưa các từ đơn lẻ thông thường (`is`, `walk`, `noticed`, `spills`, `pointed`) vào regex pattern, tránh làm hơn 70% đoạn văn bị bôi vàng gây quá tải nhận thức (*cognitive overload*).
+   - Phải tập trung vào đúng **Cấu trúc Ngữ pháp Trọng tâm của Tuần** (ví dụ: Tương phản giữa Quá khứ tiếp diễn hành động đang diễn ra vs Quá khứ đơn xen vào / kết quả: `was running in a big hurry` vs `slipped on the wet tiles`, `was walking carefully` vs `gripped the floor tightly`).
+3. **Vocab Focus Collocations & Chunks Invariant**:
+   - 100% mục trong `vocab_focus` phải là **cụm từ tự nhiên hoàn chỉnh (Chunks, Collocations, Phrasal Verbs, Compound Nouns)** (ví dụ: `invisible science force`, `shoe soles`, `slippery layer`, `reduces friction`, `school corridor`, `rubber soles`, `strong grip`, `yellow warning sign`).
+   - CẤM bẻ nhỏ thành từ đơn rời rạc vô nghĩa (`fast`, `wet`, `floor`).
+4. **4-Option MCQ Check Questions Standard**:
+   - Mặc dù chuẩn khảo thí Cambridge YLE chính thức dùng 3 lựa chọn (A, B, C), hệ thống câu hỏi Check Questions của Fact Finder / CLIL Explorer **BẮT BUỘC cung cấp 4 lựa chọn (A, B, C, D)** với các phương án nhiễu (distractors) tự nhiên, chặt chẽ, kích thích tư duy và đồng bộ với thói quen kiểm tra phổ thông tại Việt Nam.
+
 ## 🔒 FROZEN AUDIO PIPELINE: PRE-GENERATED MP3 & 3-TIER FALLBACK STANDARD (W33+) — 2026-08-18
 **BẮT BUỘC áp dụng cho Tuần 33 và TOÀN BỘ các tuần sản xuất mới (W34–W72). KHÔNG ĐƯỢC PHÉP BỎ QUA:**
 1. **Zero-Live-TTS on First Play**:
    - Khi tạo nội dung tuần mới, **BẮT BUỘC chạy script pre-generate 100% file static MP3** và lưu vào `public/audio/weekXX/` (đồng thời upload lên Cloudflare R2 / CDN).
    - Danh sách file bắt buộc sinh sẵn per week:
+     - 8 file Voice Shadowing (`shadowing_1.mp3` → `shadowing_8.mp3`, giọng `en-US-Journey-F`)
+     - 2 file CLIL Parts (`clil_X_p1.mp3`, `clil_X_p2.mp3`, giọng `en-US-Journey-F`) và 1 file Full (`clil_X.mp3`)
      - 5 file Dictation (`dictation_1.mp3` → `dictation_5.mp3`, giọng `en-US-Neural2-F`)
      - 5 file Listening Part 1 (`listening_p1_target1.mp3` → `target5.mp3`, giọng `en-US-Journey-F`)
      - 1 file Listening Part 2 dài (`listening_p2_full.mp3`, giọng `en-US-Neural2-D`)
@@ -249,10 +269,10 @@ Source: `.devin/workflows/start.md` §3.
      - 1 file CLIL Knowledge Explorer (`explore.mp3` / `clil_friction.mp3`, giọng `en-US-Journey-F`)
 2. **Chuỗi Fallback 3 Tầng Bảo Vệ Bất Biến**:
    - **Tier 1 (0ms)**: IndexedDB Client Cache (`TTSCache`).
-   - **Tier 2 (CDN / Pre-generated Static MP3)**: Tải trực tiếp file tĩnh từ Cloudflare R2 / local asset (`/audio/weekXX/...`).
-   - **Tier 3 (Dự phòng cấp bách khi CDN sập)**: Google Cloud TTS Direct (`en-US-Journey-F` / `en-US-Neural2-F` / `en-US-Neural2-D`).
+   - **Tier 2 (CDN / Pre-generated Static MP3)**: Tải trực tiếp file tĩnh từ Cloudflare Pages local asset (`/audio/weekXX/...`) hoặc Cloudflare R2 CDN. Phát trực tiếp qua native HTML5 Audio mà KHÔNG qua lệnh `fetch(HEAD)` trung gian (tránh timeout/CORS trên Safari Mobile).
+   - **Tier 3 (Dự phòng cấp bách khi CDN sập)**: Google Cloud TTS Direct (`en-US-Journey-F` / `en-US-Neural2-F` / `en-US-Neural2-D`) và tự động lưu ngay vào IndexedDB `TTSCache`.
    - **Tier 4 (Phòng tuyến cuối cùng)**: Native Browser SpeechSynthesis.
-   - ❌ **CẤM TUYỆT ĐỐI**: Không để Client gọi trực tiếp Google Cloud TTS API khi người dùng bấm Play ở điều kiện bình thường. Tiết kiệm 100% chi phí API và triệt tiêu độ trễ!
+   - ❌ **CẤM TUYỆT ĐỐI**: Không truyền `audioUrl = null` ở các thành phần có file tĩnh. Không để Client gọi trực tiếp Google Cloud TTS API khi người dùng bấm Play ở điều kiện bình thường!
 3. **Phonetic Proper Noun Normalization**: Vietnamese proper nouns (`Hội An`, `Hà Nội`, `Bánh Mì`) MUST be normalized in `cleanTextForTTS` using single compound phonetic strings (`Hoyahn`, `Hahnoy`, `Bahnmee`).
 
 ## Master Curriculum & Blueprint Station Pipeline Matrix — 2026-08-08
