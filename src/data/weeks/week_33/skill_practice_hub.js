@@ -12,37 +12,57 @@ export const skillPracticeHub = {
     {
       id: "st2_w33_g01",
       grammar_tag: "past_continuous_while",
-      text_en: "Build a past continuous sentence with 'While'.",
-      word_blocks: ["While", "Jake", "was", "walking", "in", "the", "corridor", ",", "a", "boy", "slipped", "."],
-      distractor_blocks: ["is", "slips", "run"]
+      text_en: "While Jake was walking down the corridor, a boy slipped on the wet floor.",
+      word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "the", "wet", "floor", "."],
+      valid_structures: [
+        ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "the", "wet", "floor", "."],
+        ["A", "boy", "slipped", "on", "the", "wet", "floor", "while", "Jake", "was", "walking", "down", "the", "corridor", "."]
+      ],
+      distractor_blocks: ["is", "slips", "walks"]
     },
     {
       id: "st2_w33_g02",
-      grammar_tag: "past_simple_incident",
-      text_en: "Build a sentence about the incident.",
-      word_blocks: ["The", "running", "student", "fell", "heavily", "on", "the", "wet", "tiles", "."],
-      distractor_blocks: ["falls", "slip", "fast"]
+      grammar_tag: "past_continuous_while",
+      text_en: "While Tom was running in a hurry, he slipped and hurt his knee.",
+      word_blocks: ["While", "Tom", "was", "running", "in", "a", "hurry", ",", "he", "slipped", "and", "hurt", "his", "knee", "."],
+      valid_structures: [
+        ["While", "Tom", "was", "running", "in", "a", "hurry", ",", "he", "slipped", "and", "hurt", "his", "knee", "."],
+        ["Tom", "slipped", "and", "hurt", "his", "knee", "while", "he", "was", "running", "in", "a", "hurry", "."]
+      ],
+      distractor_blocks: ["is", "runs", "hurts"]
     },
     {
       id: "st2_w33_g03",
-      grammar_tag: "past_simple_help",
-      text_en: "Build a sentence about calling the nurse.",
-      word_blocks: ["Jake", "called", "the", "school", "nurse", "right", "away", "for", "help", "."],
-      distractor_blocks: ["calls", "helping", "quick"]
+      grammar_tag: "past_continuous_while",
+      text_en: "While Jake was helping his classmate, the school nurse arrived quickly.",
+      word_blocks: ["While", "Jake", "was", "helping", "his", "classmate", ",", "the", "school", "nurse", "arrived", "quickly", "."],
+      valid_structures: [
+        ["While", "Jake", "was", "helping", "his", "classmate", ",", "the", "school", "nurse", "arrived", "quickly", "."],
+        ["The", "school", "nurse", "arrived", "quickly", "while", "Jake", "was", "helping", "his", "classmate", "."]
+      ],
+      distractor_blocks: ["is", "helps", "arrives"]
     },
     {
       id: "st2_w33_g04",
-      grammar_tag: "past_simple_treatment",
-      text_en: "Build a treatment sentence with the bandage.",
-      word_blocks: ["The", "nurse", "applied", "a", "clean", "bandage", "gently", "."],
-      distractor_blocks: ["applies", "applying", "was"]
+      grammar_tag: "past_continuous_while",
+      text_en: "While the nurse was treating his knee, Tom felt very relieved.",
+      word_blocks: ["While", "the", "nurse", "was", "treating", "his", "knee", ",", "Tom", "felt", "very", "relieved", "."],
+      valid_structures: [
+        ["While", "the", "nurse", "was", "treating", "his", "knee", ",", "Tom", "felt", "very", "relieved", "."],
+        ["Tom", "felt", "very", "relieved", "while", "the", "nurse", "was", "treating", "his", "knee", "."]
+      ],
+      distractor_blocks: ["treats", "feels", "is"]
     },
     {
       id: "st2_w33_g05",
-      grammar_tag: "past_simple_praise",
-      text_en: "Build a praise sentence during assembly.",
-      word_blocks: ["The", "headmaster", "praised", "Jake", "for", "responsible", "action", "."],
-      distractor_blocks: ["praises", "praising", "never"]
+      grammar_tag: "past_continuous_while",
+      text_en: "While the cleaners were drying the floor, the headmaster praised Jake.",
+      word_blocks: ["While", "the", "cleaners", "were", "drying", "the", "floor", ",", "the", "headmaster", "praised", "Jake", "."],
+      valid_structures: [
+        ["While", "the", "cleaners", "were", "drying", "the", "floor", ",", "the", "headmaster", "praised", "Jake", "."],
+        ["The", "headmaster", "praised", "Jake", "while", "the", "cleaners", "were", "drying", "the", "floor", "."]
+      ],
+      distractor_blocks: ["dries", "praises", "was"]
     }
   ],
   singapore_math: [
@@ -66,31 +86,31 @@ export const skillPracticeHub = {
         id: "z1",
         label: "Wet Floor Puddle",
         correct_label: "Low Friction Zone",
-        x: 48,
-        y: 76,
+        x: 50,
+        y: 84,
         micro_explanation: "⚠️ Physics Alert: Water makes tiles very slippery! Friction is reduced, causing sudden falls."
       },
       {
         id: "z2",
         label: "Running Fast",
         correct_label: "Forward Motion",
-        x: 62,
-        y: 45,
+        x: 50,
+        y: 28,
         micro_explanation: "⚡ Safety Alert: Running fast makes it hard to stop safely on wet tiles!"
       },
       {
         id: "z3",
         label: "Yellow Caution Sign",
         correct_label: "Hazard Alert",
-        x: 28,
-        y: 65,
+        x: 20,
+        y: 68,
         micro_explanation: "💡 Safety Alert: Warning signs tell everyone to slow down and walk carefully."
       },
       {
         id: "z4",
         label: "First Aid Treatment",
         correct_label: "Cold Pack & Bandage",
-        x: 80,
+        x: 82,
         y: 55,
         micro_explanation: "🩹 First Aid: A cold pack cools the sore knee, while a clean bandage protects the cut."
       }

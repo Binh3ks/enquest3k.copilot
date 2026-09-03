@@ -1,9 +1,9 @@
 {
-  "commit": "2c276500456db69e1608d599ee18b5f70932b40f",
-  "git_commit": "2c276500456db69e1608d599ee18b5f70932b40f",
-  "shortCommit": "2c276500",
-  "message": "fix(w33): Voice Shadow EN labels, PracticeRoute standalone, MCP config [multi-agent-review]",
-  "builtAt": "2026-08-30T13:34:33.160Z",
-  "build_timestamp": "2026-08-30T13:34:33.161Z",
+  "commit": "e3f4cc4878976bc80cd77bd0cc55cf9a0c6a3175",
+  "git_commit": "e3f4cc4878976bc80cd77bd0cc55cf9a0c6a3175",
+  "shortCommit": "e3f4cc48",
+  "message": "docs: encode Universal Mobile-First Display & Viewport Standard into AGENTS.md & SOP",
+  "builtAt": "2026-09-03T09:00:08.675Z",
+  "build_timestamp": "2026-09-03T09:00:08.676Z",
   "env": "production"
 }

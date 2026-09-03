@@ -21,7 +21,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       name: 'Wet Corridor Floor',
       x: '50%',
       y: '78%',
-      fact: 'Observation: Water on smooth tiles forms a thin layer that greatly reduces friction.'
+      fact: 'Observation: Water on smooth corridor tiles forms a thin slippery layer that greatly reduces friction.'
     },
     {
       id: 'rubber_shoes',
@@ -29,7 +29,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       name: 'Rubber Shoe Soles',
       x: '28%',
       y: '65%',
-      fact: 'Observation: Rubber soles have high grip friction to help people stop safely.'
+      fact: 'Observation: Jake wore rubber soles with strong grip and high friction, helping him walk safely.'
     },
     {
       id: 'warning_sign',
@@ -37,7 +37,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       name: 'Yellow Caution Sign',
       x: '75%',
       y: '50%',
-      fact: 'Observation: Warning signs remind students to walk slowly and avoid slippery areas.'
+      fact: 'Observation: Cleaners mopped the wet floor and placed a yellow warning sign to alert everyone.'
     }
   ], []);
 
@@ -47,22 +47,22 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       id: 'low_friction',
       title: '🔬 Low Surface Friction',
       isCorrect: true,
-      description: 'Water forms a slippery layer between shoes and tiles, drastically reducing the friction needed to walk safely.'
+      description: 'Water formed a thin slippery layer between Tom\'s smooth shoe soles and the floor tiles, drastically reducing the friction needed to walk safely.'
     },
     {
       id: 'smooth_dry_floor',
-      title: '🧱 Smooth and Dry Floor',
+      title: '🧱 Rough Carpet Flooring',
       isCorrect: false,
-      description: 'The corridor tiles are very smooth, but dry. Smooth tiles are safe because there is no water reducing the friction.'
+      description: 'The corridor has thick rough carpet that provides maximum grip and prevents anyone from slipping.'
     }
   ], []);
 
   // ── Step 3: Sentence Word Pills (Shuffled on Initial Display) ─────────────
   const rawWordPills = useMemo(() => [
-    { id: 'p1', text: 'Water on the smooth tiles', correctOrder: 1 },
-    { id: 'p2', text: 'reduced surface friction,', correctOrder: 2 },
-    { id: 'p3', text: 'so the student slipped and fell.', correctOrder: 3 },
-    { id: 'p_dist', text: 'because of sunny weather outside.', correctOrder: -1 } // distractor
+    { id: 'p1', text: 'Water on the smooth corridor tiles', correctOrder: 1 },
+    { id: 'p2', text: 'greatly reduced surface friction,', correctOrder: 2 },
+    { id: 'p3', text: 'so Tom slipped while running in a hurry.', correctOrder: 3 },
+    { id: 'p_dist', text: 'because of heavy rain inside the classroom.', correctOrder: -1 } // distractor
   ], []);
 
   const [shuffledWordPills, setShuffledWordPills] = useState([]);
@@ -127,7 +127,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
     if (onComplete) onComplete(50);
   };
 
-  const finalReportText = "While observing the corridor, we discovered that water on the smooth tiles reduced surface friction, so the student slipped and fell. Walking slowly and wearing rubber shoes keep everyone safe!";
+  const finalReportText = "While investigating the corridor, we discovered that water on the smooth tiles reduced surface friction, so Tom slipped while running in a hurry. Jake walked carefully with rubber soles that provided strong grip. The cleaners dried the floor and put up a yellow warning sign to keep everyone safe.";
 
   return (
     <div className="max-w-3xl mx-auto bg-white rounded-3xl p-4 sm:p-7 border border-purple-200 shadow-xl space-y-6">
@@ -145,8 +145,8 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
           </h2>
         </div>
 
-        {/* 4-Step Progress Dots */}
-        <div className="flex items-center gap-1.5 bg-purple-50 p-1.5 rounded-2xl border border-purple-200">
+        {/* 4-Step Progress Dots — Compact grid on mobile to prevent overflow */}
+        <div className="w-full sm:w-auto grid grid-cols-4 sm:flex items-center gap-1 bg-purple-50 p-1 sm:p-1.5 rounded-xl sm:rounded-2xl border border-purple-200">
           {[
             { num: 1, label: 'Observe' },
             { num: 2, label: 'Clue' },
@@ -161,15 +161,15 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
                   setCurrentStep(s.num);
                 }
               }}
-              className={`px-3 py-1 rounded-xl text-xs font-black transition flex items-center gap-1 ${
+              className={`px-1 sm:px-2.5 py-1 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-black transition flex items-center justify-center gap-0.5 sm:gap-1 ${
                 currentStep === s.num
-                  ? 'bg-purple-600 text-white shadow-sm'
+                  ? 'bg-purple-600 text-white shadow-xs'
                   : currentStep > s.num
                   ? 'bg-emerald-100 text-emerald-800'
                   : 'text-slate-400 hover:text-slate-700'
               }`}
             >
-              <span>{s.num}.</span> <span>{s.label}</span>
+              <span>{s.num}.</span> <span className="truncate">{s.label}</span>
             </button>
           ))}
         </div>
@@ -440,10 +440,10 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
             {/* Official Report Findings Paragraph */}
             <div className="p-3 sm:p-4 bg-white/90 rounded-xl sm:rounded-2xl border border-amber-200 text-slate-900 leading-relaxed font-serif text-xs sm:text-base space-y-1.5 sm:space-y-2">
               <p>
-                <strong>Observation:</strong> While observing the corridor, we discovered that <em>water on the smooth tiles reduced surface friction</em>, so the student slipped and lost balance.
+                <strong>Observation:</strong> While investigating the corridor, we discovered that <em>water on the smooth tiles greatly reduced surface friction</em>, so Tom slipped while running in a hurry.
               </p>
               <p>
-                <strong>Scientific Conclusion:</strong> Understanding friction keeps everyone safe. Cleaners place yellow warning signs, and students walk carefully with rubber shoes!
+                <strong>Scientific Conclusion:</strong> Jake walked carefully with rubber shoe soles that provided strong grip. The cleaners mopped the floor dry and put up a yellow warning sign to protect all students!
               </p>
             </div>
 

@@ -57,7 +57,7 @@ function DropZone({ id, label, currentPlaced, isCorrect, targetInfo, isTargeted,
       ref={setNodeRef}
       onClick={onClick}
       style={{ left: `${targetInfo.x}%`, top: `${targetInfo.y}%` }}
-      className={`absolute transform -translate-x-1/2 -translate-y-1/2 px-2 py-1 min-w-[70px] sm:min-w-[85px] max-w-[105px] sm:max-w-[120px] rounded-xl border-2 transition-all flex flex-col items-center justify-center text-center shadow-lg backdrop-blur-md cursor-pointer z-10 select-none ${
+      className={`absolute transform -translate-x-1/2 -translate-y-1/2 px-1.5 py-0.5 min-w-[56px] sm:min-w-[80px] max-w-[80px] sm:max-w-[115px] rounded-lg sm:rounded-xl border-2 transition-all flex flex-col items-center justify-center text-center shadow-md backdrop-blur-md cursor-pointer z-10 select-none ${
         currentPlaced
           ? isCorrect
             ? 'bg-emerald-600/95 border-white text-white font-black scale-105 ring-2 ring-emerald-300'
@@ -67,9 +67,9 @@ function DropZone({ id, label, currentPlaced, isCorrect, targetInfo, isTargeted,
           : 'bg-white/95 border-2 border-dashed border-teal-500 text-teal-950 font-bold hover:bg-white hover:scale-105'
       }`}
     >
-      <span className="text-[7.5px] sm:text-[8.5px] uppercase font-black tracking-tight opacity-90 leading-tight mb-0.5 truncate max-w-[95px]">{label}</span>
-      <span className="text-[8px] sm:text-[9.5px] font-black truncate max-w-[95px] leading-tight">
-        {currentPlaced ? currentPlaced.text : (isTargeted ? '👉 Tap Here' : '📍 Drop / Tap')}
+      <span className="text-[6.5px] sm:text-[8px] uppercase font-black tracking-tight opacity-90 leading-tight mb-0.5 truncate max-w-[75px] sm:max-w-[105px]">{label}</span>
+      <span className="text-[7.5px] sm:text-[9px] font-black truncate max-w-[75px] sm:max-w-[105px] leading-tight">
+        {currentPlaced ? currentPlaced.text : (isTargeted ? '👉 Tap' : '📍 Drop')}
       </span>
     </div>
   );

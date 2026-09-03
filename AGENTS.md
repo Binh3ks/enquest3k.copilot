@@ -507,3 +507,31 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
 - [ ] Không có literal tiếng Việt trong JSX student-facing components
 - [ ] Tất cả button/label text là tiếng Anh
 - [ ] Toast messages / locked state messages là tiếng Anh
+
+## 🏰 Master W33+ Task & Boss Castle UI Invariants — 2026-09-03
+1. **Voice Shadow Viewport Compression**:
+   - `wordIpaList`: Container `min-h-[48px] sm:min-h-[56px]`, word size `text-base sm:text-xl md:text-2xl`, gap `gap-x-1.5 sm:gap-x-2.5 gap-y-1.5 sm:gap-y-2`.
+   - Action buttons: `px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-black` to keep recording buttons directly visible above the fold on mobile.
+2. **Grammar Duel 2-Clause Architecture**:
+   - Every drill MUST provide full tokens to build 2-clause sentences (While + Past Continuous, Past Simple).
+   - `valid_structures` MUST support both clause orderings (`While X did Y, Z happened.` and `Z happened while X did Y.`).
+3. **Action Lab Spacing & Anti-Overlap**:
+   - Diagram target zones must have coordinates widely dispersed across quadrants (minimum 25-30% distance separation).
+   - `DropZone` badges must be compact (`px-1.5 py-0.5 min-w-[56px] sm:min-w-[80px] max-w-[80px] sm:max-w-[115px]`) to ensure zero visual overlap.
+4. **Discovery Report Stepper & Narrative Sync**:
+   - 4-step progress dots must use a compact responsive grid on mobile (`grid grid-cols-4 sm:flex`) to never overflow the viewport width.
+   - Narrative content across observation, clue, sentence pills, and final report MUST stay 100% synchronized with Fact Finder story facts.
+5. **Info Exchange Mobile Compression**:
+   - Headers, tables, and Mascot voice controller must use tight vertical margins and compact padding (`p-2.5 sm:p-4`) to eliminate unnecessary downward scrolling.
+6. **Boss Castle Unofficial Mock Standard & Clutter Elimination**:
+   - CẤM TUYỆT ĐỐI nhãn `"Official Cambridge Assessment"` trên bài tập hoặc header.
+   - Luôn sử dụng nhãn rõ ràng: `Cambridge A2 Flyers Practice Mock — [Part Name]`.
+   - Instructions (e.g., *"Listen and draw lines. There is one example."*) must be prominent and highlighted.
+   - Loại bỏ các nút Map thừa, Exam Intro audio và Calibrator panel khỏi giao diện học sinh.
+   - Nút `Clear` phải nằm cùng hàng với nút `Play Audio (2×)`.
+   - Bỏ màn hình ngoài `<BossIntro>` — học sinh bấm vào Station Day 5 là vào thẳng bài làm (`hasStarted: true`).
+   - Thanh điều hướng Boss Castle dùng theme tươi sáng, rực rỡ (`bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50`, border indigo) với các tab Part nổi bật, tương phản cao.
+7. **Word Bank Matching Compact Layout**:
+   - Word Bank pool bố trí dạng 2 cột trên điện thoại di động (`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5`) và dạng dock sticky cố định ở trên cùng để học sinh không phải cuộn lên cuộn xuống.
+   - Thu hẹp padding của các hàng câu hỏi/định nghĩa (`p-2 sm:p-2.5`, `space-y-1.5 sm:space-y-2`) để kéo các phần bên dưới lên.
+

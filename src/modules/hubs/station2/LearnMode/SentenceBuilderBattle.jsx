@@ -21,38 +21,58 @@ import { playButtonClick, playCorrectSound, playWrongSound, playVictoryFanfare }
 const WEEK33_GRAMMAR_DRILLS = [
   {
     id: "st2_w33_g01",
-    grammar_tag: "past_continuous_when_while",
-    text_en: "Build a past continuous sentence with 'While'.",
-    word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "."],
-    distractor_blocks: ["is", "slips", "run"]
+    grammar_tag: "past_continuous_while",
+    text_en: "While Jake was walking down the corridor, a boy slipped on the wet floor.",
+    word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "the", "wet", "floor", "."],
+    valid_structures: [
+      ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "the", "wet", "floor", "."],
+      ["A", "boy", "slipped", "on", "the", "wet", "floor", "while", "Jake", "was", "walking", "down", "the", "corridor", "."]
+    ],
+    distractor_blocks: ["is", "slips", "walks"]
   },
   {
     id: "st2_w33_g02",
-    grammar_tag: "past_continuous_when_while",
-    text_en: "Build a sentence describing first aid treatment.",
-    word_blocks: ["While", "the", "nurse", "was", "treating", "his", "knee", ",", "Tom", "felt", "relieved", "."],
-    distractor_blocks: ["feels", "treats", "so"]
+    grammar_tag: "past_continuous_while",
+    text_en: "While Tom was running in a hurry, he slipped and hurt his knee.",
+    word_blocks: ["While", "Tom", "was", "running", "in", "a", "hurry", ",", "he", "slipped", "and", "hurt", "his", "knee", "."],
+    valid_structures: [
+      ["While", "Tom", "was", "running", "in", "a", "hurry", ",", "he", "slipped", "and", "hurt", "his", "knee", "."],
+      ["Tom", "slipped", "and", "hurt", "his", "knee", "while", "he", "was", "running", "in", "a", "hurry", "."]
+    ],
+    distractor_blocks: ["is", "runs", "hurts"]
   },
   {
     id: "st2_w33_g03",
-    grammar_tag: "past_continuous_when_while",
-    text_en: "Build a sentence showing cause of slipping.",
-    word_blocks: ["A", "boy", "slipped", "while", "he", "was", "running", "fast", "on", "the", "wet", "floor", "."],
-    distractor_blocks: ["runs", "is", "slowly"]
+    grammar_tag: "past_continuous_while",
+    text_en: "While Jake was helping his classmate, the school nurse arrived quickly.",
+    word_blocks: ["While", "Jake", "was", "helping", "his", "classmate", ",", "the", "school", "nurse", "arrived", "quickly", "."],
+    valid_structures: [
+      ["While", "Jake", "was", "helping", "his", "classmate", ",", "the", "school", "nurse", "arrived", "quickly", "."],
+      ["The", "school", "nurse", "arrived", "quickly", "while", "Jake", "was", "helping", "his", "classmate", "."]
+    ],
+    distractor_blocks: ["is", "helps", "arrives"]
   },
   {
     id: "st2_w33_g04",
-    grammar_tag: "past_simple_irregular",
-    text_en: "Build an emergency action sentence.",
-    word_blocks: ["Jake", "called", "the", "school", "nurse", "immediately", "for", "medical", "help", "."],
-    distractor_blocks: ["calls", "calling", "later"]
+    grammar_tag: "past_continuous_while",
+    text_en: "While the nurse was treating his knee, Tom felt very relieved.",
+    word_blocks: ["While", "the", "nurse", "was", "treating", "his", "knee", ",", "Tom", "felt", "very", "relieved", "."],
+    valid_structures: [
+      ["While", "the", "nurse", "was", "treating", "his", "knee", ",", "Tom", "felt", "very", "relieved", "."],
+      ["Tom", "felt", "very", "relieved", "while", "the", "nurse", "was", "treating", "his", "knee", "."]
+    ],
+    distractor_blocks: ["treats", "feels", "is"]
   },
   {
     id: "st2_w33_g05",
-    grammar_tag: "modal_verbs",
-    text_en: "Build a school rule sentence.",
-    word_blocks: ["The", "headmaster", "reminded", "all", "students", "never", "to", "run", "in", "corridors", "."],
-    distractor_blocks: ["reminds", "always", "slow"]
+    grammar_tag: "past_continuous_while",
+    text_en: "While the cleaners were drying the floor, the headmaster praised Jake.",
+    word_blocks: ["While", "the", "cleaners", "were", "drying", "the", "floor", ",", "the", "headmaster", "praised", "Jake", "."],
+    valid_structures: [
+      ["While", "the", "cleaners", "were", "drying", "the", "floor", ",", "the", "headmaster", "praised", "Jake", "."],
+      ["The", "headmaster", "praised", "Jake", "while", "the", "cleaners", "were", "drying", "the", "floor", "."]
+    ],
+    distractor_blocks: ["dries", "praises", "was"]
   }
 ];
 

@@ -132,18 +132,18 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
         </span>
       </div>
 
-      {/* 📦 Floating 15-Word Bank Pool (Visual Elimination Effect) */}
-      <div className="p-4 bg-slate-50 rounded-2xl border-2 border-indigo-100 space-y-2">
+      {/* 📦 Floating 15-Word Bank Pool (Compact 2-Column Mobile Grid, Sticky Dock) */}
+      <div className="sticky top-2 z-20 p-2.5 sm:p-3 bg-slate-50/95 backdrop-blur-md rounded-xl sm:rounded-2xl border-2 border-indigo-200 shadow-md space-y-1.5">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-black text-indigo-700 uppercase tracking-widest flex items-center gap-1.5">
-            <Layers size={15} /> 15-Word Bank Pool:
+          <span className="text-[11px] sm:text-xs font-black text-indigo-800 uppercase tracking-wider flex items-center gap-1">
+            <Layers size={14} /> 15-Word Bank Pool:
           </span>
-          <span className="text-[11px] font-bold text-slate-500 italic">
-            Click a word pill, then click a definition slot below
+          <span className="text-[10px] font-bold text-slate-500 italic">
+            Tap word pill, then tap slot
           </span>
         </div>
 
-        <div className="flex flex-wrap gap-2 pt-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-1 sm:gap-1.5 pt-0.5">
           {wordBank.map((word) => {
             const isUsed = usedWords.includes(word);
             const isSelected = selectedWord === word;
@@ -153,16 +153,16 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
                 key={word}
                 disabled={isSubmitted || isUsed}
                 onClick={() => handleSelectWord(word)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1 border shadow-sm ${
+                className={`px-2 sm:px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-bold transition-all flex items-center justify-between border shadow-2xs ${
                   isUsed
                     ? 'opacity-40 line-through bg-slate-200 text-slate-500 border-slate-300 cursor-not-allowed'
                     : isSelected
-                    ? 'bg-indigo-600 text-white border-indigo-700 ring-4 ring-indigo-200 scale-105 shadow-md'
+                    ? 'bg-indigo-600 text-white border-indigo-700 ring-2 ring-indigo-300 scale-102 shadow-sm font-black'
                     : 'bg-white text-slate-800 border-slate-300 hover:border-indigo-400 hover:bg-indigo-50'
                 }`}
               >
-                <span>{word}</span>
-                {isUsed && <span className="text-[9px] font-mono text-slate-400">(Used)</span>}
+                <span className="truncate">{word}</span>
+                {isUsed && <span className="text-[8.5px] font-mono text-slate-400">✓</span>}
               </button>
             );
           })}
@@ -170,27 +170,27 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
       </div>
 
       {/* 📜 10 Definition Sentences Form */}
-      <div className="space-y-3">
+      <div className="space-y-1.5 sm:space-y-2">
         {/* Worked Example Row */}
         <div
           data-testid="example-row"
-          className="p-4 rounded-2xl border-2 border-amber-300 bg-amber-50/90 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+          className="p-2 sm:p-3 rounded-xl sm:rounded-2xl border-2 border-amber-300 bg-amber-50/90 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-2"
         >
-          <div className="flex items-start gap-3 flex-1">
-            <span className="px-2.5 py-0.5 rounded-md bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider shrink-0 mt-0.5 shadow-2xs">
+          <div className="flex items-start gap-2 flex-1">
+            <span className="px-2 py-0.5 rounded-md bg-amber-500 text-white font-black text-[9.5px] uppercase tracking-wider shrink-0 mt-0.5 shadow-2xs">
               ★ EXAMPLE
             </span>
-            <div className="text-xs sm:text-sm font-medium text-slate-800 leading-relaxed">
+            <div className="text-xs sm:text-sm font-medium text-slate-800 leading-snug">
               {activeData?.example?.text || "A quiet room in school with books where students read and borrow stories."}
             </div>
           </div>
 
-          <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
-            <div className="min-w-[140px] px-3.5 py-2 rounded-xl border-2 border-amber-400 bg-white text-xs font-black text-center text-amber-950 shadow-inner flex items-center justify-center gap-1.5">
+          <div className="flex items-center gap-1.5 self-end sm:self-auto shrink-0">
+            <div className="min-w-[110px] sm:min-w-[130px] px-2.5 py-1 rounded-lg border-2 border-amber-400 bg-white text-xs font-black text-center text-amber-950 shadow-inner flex items-center justify-center gap-1">
               <span>{activeData?.example?.target || "library"}</span>
-              <span className="text-[10px] text-amber-600 font-bold uppercase">(Locked)</span>
+              <span className="text-[9px] text-amber-600 font-bold uppercase">(Locked)</span>
             </div>
-            <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0" />
           </div>
         </div>
 
@@ -202,7 +202,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
             <div
               key={def.id}
               onClick={() => handleAssignWordToDef(def.id)}
-              className={`p-4 rounded-2xl border transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 cursor-pointer ${
+              className={`p-2 sm:p-2.5 rounded-xl sm:rounded-2xl border transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-2 cursor-pointer ${
                 isSubmitted
                   ? isCorrect
                     ? 'bg-emerald-50/80 border-emerald-300'
@@ -214,28 +214,28 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
                   : 'bg-white border-slate-200 hover:border-slate-300'
               }`}
             >
-              <div className="flex items-start gap-3 flex-1">
-                <span className="w-6 h-6 rounded-lg bg-indigo-100 text-indigo-900 text-xs font-black flex items-center justify-center shrink-0 mt-0.5">
+              <div className="flex items-start gap-2 flex-1">
+                <span className="w-5 h-5 rounded-md bg-indigo-100 text-indigo-900 text-[11px] font-black flex items-center justify-center shrink-0 mt-0.5">
                   {idx + 1}
                 </span>
-                <div className="text-xs sm:text-sm font-medium text-slate-800 leading-relaxed">
+                <div className="text-xs sm:text-sm font-medium text-slate-800 leading-snug">
                   {renderParsedText(def.text, 'indigo', null, true)}
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
+              <div className="flex items-center gap-1.5 self-end sm:self-auto shrink-0">
                 <div
-                  className={`min-w-[140px] px-3.5 py-2 rounded-xl border-2 text-xs font-black text-center flex items-center justify-between gap-2 shadow-inner transition-all ${
+                  className={`min-w-[110px] sm:min-w-[130px] px-2.5 py-1 rounded-lg border-2 text-xs font-black text-center flex items-center justify-between gap-1.5 shadow-inner transition-all ${
                     assignedWord
                       ? 'bg-white border-indigo-400 text-indigo-950'
                       : 'bg-slate-100 border-dashed border-slate-300 text-slate-400'
                   }`}
                 >
-                  <span>{assignedWord || (selectedWord ? 'Click to Assign' : 'Select Word')}</span>
+                  <span className="truncate">{assignedWord || (selectedWord ? '👉 Assign' : 'Tap to slot')}</span>
                   {assignedWord && !isSubmitted && (
                     <button
                       onClick={(e) => handleClearDefSlot(def.id, e)}
-                      className="text-slate-400 hover:text-rose-600 text-sm font-bold leading-none"
+                      className="text-slate-400 hover:text-rose-600 text-xs font-bold leading-none ml-1"
                     >
                       ✕
                     </button>
@@ -244,11 +244,11 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
 
                 {isSubmitted && (
                   isCorrect ? (
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                   ) : (
                     <div className="flex items-center gap-1">
-                      <AlertCircle className="w-5 h-5 text-rose-500 shrink-0" />
-                      <span className="text-[11px] font-bold text-rose-700">({def.target})</span>
+                      <AlertCircle className="w-4 h-4 text-rose-500 shrink-0" />
+                      <span className="text-[10px] font-bold text-rose-700">({def.target})</span>
                     </div>
                   )
                 )}

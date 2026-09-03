@@ -1072,20 +1072,20 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                   const wordIpaList = getWordIpaList(sentence, ipaMap[idx] || null);
 
                   return (
-                    <div className="p-3.5 sm:p-5 bg-gradient-to-b from-amber-50/80 to-white rounded-2xl border-2 border-amber-300 shadow-md space-y-3 text-center">
-                      <div className="min-h-[68px] flex items-center justify-center py-1">
-                        <div className="text-xl sm:text-2xl md:text-3xl font-black leading-relaxed flex flex-wrap items-end justify-center gap-x-3 gap-y-3">
+                    <div className="p-2.5 sm:p-4 bg-gradient-to-b from-amber-50/80 to-white rounded-2xl border-2 border-amber-300 shadow-md space-y-2 sm:space-y-3 text-center">
+                      <div className="min-h-[48px] sm:min-h-[56px] flex items-center justify-center py-0.5">
+                        <div className="text-base sm:text-xl md:text-2xl font-black leading-snug flex flex-wrap items-end justify-center gap-x-1.5 sm:gap-x-2.5 gap-y-1.5 sm:gap-y-2">
                           {wordIpaList.map((item, wIdx) => {
                             const isWordActive = isCurrentPlaying && activeWordIdx === wIdx;
                             const isPast = isCurrentPlaying && activeWordIdx !== null && wIdx < activeWordIdx;
 
                             return (
-                              <div key={wIdx} className="flex flex-col items-center justify-center min-w-[28px]">
+                              <div key={wIdx} className="flex flex-col items-center justify-center min-w-[20px] sm:min-w-[24px]">
                                 {/* Word */}
                                 <span
-                                  className={`px-2 py-0.5 rounded-xl transition-all duration-150 ${
+                                  className={`px-1.5 sm:px-2 py-0.5 rounded-lg transition-all duration-150 ${
                                     isWordActive
-                                      ? 'bg-amber-400 text-slate-950 font-black scale-110 shadow-lg ring-4 ring-amber-300'
+                                      ? 'bg-amber-400 text-slate-950 font-black scale-105 shadow-md ring-2 ring-amber-300'
                                       : isPast
                                       ? 'text-amber-900 font-bold'
                                       : 'text-slate-900 font-black'
@@ -1093,12 +1093,12 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                                 >
                                   {item.word.replace(/\*\*/g, '')}
                                 </span>
-                                {/* IPA subtitle directly underneath each word — high compatibility font */}
+                                {/* IPA subtitle directly underneath each word */}
                                 {item.ipa && (
                                   <span
-                                    className={`text-[10px] sm:text-xs font-ipa tracking-normal mt-0.5 px-1.5 py-0.5 rounded transition-all ${
+                                    className={`text-[8.5px] sm:text-[10.5px] font-ipa tracking-tight mt-0 px-1 py-0 rounded transition-all ${
                                       isWordActive
-                                        ? 'text-amber-950 font-black bg-amber-200 ring-2 ring-amber-300'
+                                        ? 'text-amber-950 font-black bg-amber-200 ring-1 ring-amber-300'
                                         : item.isStressed
                                         ? 'text-rose-700 font-bold bg-rose-50/90 border border-rose-200'
                                         : 'text-slate-600 font-semibold bg-slate-100/80'
@@ -1114,34 +1114,34 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                       </div>
 
                       {isCurrentPlaying && (
-                        <div className="inline-flex items-center gap-2 text-xs font-black uppercase text-amber-800 tracking-wider bg-amber-200 px-3 py-1 rounded-full animate-pulse">
-                          <Sparkles size={14} className="animate-spin text-amber-600" /> 🎤 Playing word-by-word audio...
+                        <div className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase text-amber-800 tracking-wider bg-amber-200 px-2.5 py-0.5 rounded-full animate-pulse">
+                          <Sparkles size={13} className="animate-spin text-amber-600" /> 🎤 Playing audio...
                         </div>
                       )}
 
                       {/* Main Action Buttons */}
-                      <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+                      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-1">
                         <button
                           type="button"
                           onClick={() => playListenModel(sentence, idx, 'listen-model-audio')}
-                          className="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 rounded-2xl font-black text-sm sm:text-base shadow-lg hover:shadow-xl flex items-center gap-2 transition"
+                          className="px-4 sm:px-5 py-2 sm:py-2.5 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm shadow-md hover:shadow-lg flex items-center gap-1.5 transition"
                         >
-                          <Volume2 size={20} /> 🔊 Listen Model Audio
+                          <Volume2 size={16} /> 🔊 Listen Model
                         </button>
 
                         {sentenceShadowing[idx]?.isRecording ? (
                           <button
                             type="button"
                             onClick={() => stopSentenceShadowing(idx)}
-                            className="px-6 py-3.5 bg-rose-600 hover:bg-rose-700 text-white rounded-2xl font-black text-sm sm:text-base shadow-lg flex items-center gap-2 transition animate-pulse"
+                            className="px-4 sm:px-5 py-2 sm:py-2.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm shadow-md flex items-center gap-1.5 transition animate-pulse"
                           >
-                            <Square size={18} /> ⏹ Stop Recording
+                            <Square size={16} /> ⏹ Stop Recording
                           </button>
                         ) : (
                           <button
                             type="button"
                             onClick={() => startSentenceShadowing(idx, sentence)}
-                            className={`px-6 py-3.5 rounded-2xl font-black text-sm sm:text-base shadow-lg hover:shadow-xl flex items-center gap-2 transition active:scale-95 ${
+                            className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm shadow-md hover:shadow-lg flex items-center gap-1.5 transition active:scale-95 ${
                               shadowingKaraokeIdx === idx
                                 ? 'bg-purple-700 text-white animate-pulse ring-4 ring-purple-300'
                                 : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white'

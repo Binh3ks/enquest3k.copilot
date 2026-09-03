@@ -420,15 +420,15 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
         activityTitle="Cue Card Exchange (Speaking Part 2)"
       />
       {/* Decorative Glow Patterns */}
-      <div className="pb-3 border-b border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+      <div className="pb-2 sm:pb-2.5 border-b border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-2">
         <div>
-          <span className="px-3.5 py-1 bg-purple-100 text-purple-900 text-[11px] font-black rounded-full uppercase tracking-wider flex items-center gap-1.5 w-max">
+          <span className="px-2.5 py-0.5 bg-purple-100 text-purple-900 text-[10px] font-black rounded-full uppercase tracking-wider flex items-center gap-1 w-max">
             Cambridge A2 Flyers — Speaking Part 2
           </span>
-          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+          <h2 className="text-sm sm:text-lg font-black text-slate-900 mt-0.5">
             Information Exchange (Ask & Answer Questions)
           </h2>
-          <p className="text-xs text-purple-700 font-bold mt-0.5">
+          <p className="text-[10.5px] sm:text-xs text-purple-700 font-bold">
             Look at the questions. Ask and answer questions using the information cards.
           </p>
         </div>
@@ -442,7 +442,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
           {flowState === 'idle' && (
             <button
               onClick={handleStartExam}
-              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-black rounded-2xl text-xs shadow-lg transition flex items-center gap-2 animate-bounce shrink-0"
+              className="px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-black rounded-xl text-xs shadow-md transition flex items-center gap-1.5 animate-bounce shrink-0"
             >
               🚀 START EXAM (4 CUES)
             </button>
@@ -451,34 +451,34 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
       </div>
 
       {/* Side-by-Side Information Tables with Visual Isolation & Phase Dimming */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4">
         
         {/* TABLE A: TOM'S ACCIDENT (MISSING INFO TO ASK) */}
-        <div className={`rounded-2xl sm:rounded-3xl border-2 p-3 sm:p-5 shadow-md transition-all duration-500 ${
+        <div className={`rounded-xl sm:rounded-2xl border-2 p-2.5 sm:p-4 shadow-sm transition-all duration-500 ${
           isPhase2Active
-            ? 'bg-amber-50 border-amber-500 ring-4 ring-amber-200 shadow-2xl opacity-100 scale-101'
+            ? 'bg-amber-50 border-amber-500 ring-4 ring-amber-200 shadow-xl opacity-100 scale-101'
             : isPhase1Active
             ? 'opacity-40 pointer-events-none grayscale bg-slate-50 border-slate-200'
             : 'bg-slate-50/70 border-slate-200 opacity-90'
         }`}>
-          <div className="flex items-center justify-between border-b-2 border-amber-300/70 pb-2 mb-2.5">
+          <div className="flex items-center justify-between border-b border-amber-300/70 pb-1.5 mb-2">
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <span className="p-1.5 sm:p-2 bg-amber-500 text-white rounded-lg sm:rounded-xl text-xs font-black">📋</span>
+              <span className="p-1 sm:p-1.5 bg-amber-500 text-white rounded-lg text-xs font-black">📋</span>
               <div>
-                <h3 className="text-sm sm:text-lg font-black text-amber-950 font-serif">
+                <h3 className="text-xs sm:text-base font-black text-amber-950 font-serif">
                   {data.table_a.title}
                 </h3>
-                <span className="text-[10px] sm:text-[11px] font-bold text-amber-800">Person: {data.table_a.person}</span>
+                <span className="text-[9.5px] sm:text-[10.5px] font-bold text-amber-800">Person: {data.table_a.person}</span>
               </div>
             </div>
             {isPhase2Active && (
-              <span className="text-[9.5px] sm:text-[10px] font-black uppercase tracking-wider bg-amber-400 text-amber-950 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full animate-pulse shadow-2xs">
+              <span className="text-[9px] sm:text-[9.5px] font-black uppercase tracking-wider bg-amber-400 text-amber-950 px-2 py-0.5 rounded-full animate-pulse shadow-2xs">
                 Active: Ask Nova
               </span>
             )}
           </div>
 
-          <div className="space-y-1.5 sm:space-y-2.5">
+          <div className="space-y-1 sm:space-y-2">
             {data.table_a.fields.map((field) => {
               const isMissing = field.is_missing;
               const isRevealed = revealedTableA[field.id];
@@ -487,9 +487,9 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
               return (
                 <div
                   key={field.id}
-                  className={`p-3.5 rounded-2xl border flex items-center justify-between transition-all ${
+                  className={`p-2 sm:p-2.5 rounded-xl border flex items-center justify-between transition-all ${
                     isHighlighted
-                      ? 'bg-amber-100 border-amber-500 ring-2 ring-amber-300 shadow-md scale-102 font-black'
+                      ? 'bg-amber-100 border-amber-500 ring-2 ring-amber-300 shadow-sm scale-101 font-black'
                       : isRevealed
                       ? 'bg-emerald-100 border-emerald-400'
                       : !isMissing
@@ -520,31 +520,31 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
         </div>
 
         {/* TABLE B: JAKE'S ACTION (COMPLETE INFO TO ANSWER) */}
-        <div className={`rounded-2xl sm:rounded-3xl border-2 p-3 sm:p-5 shadow-md transition-all duration-500 ${
+        <div className={`rounded-xl sm:rounded-2xl border-2 p-2.5 sm:p-4 shadow-sm transition-all duration-500 ${
           isPhase1Active
-            ? 'bg-indigo-50 border-indigo-500 ring-4 ring-indigo-200 shadow-2xl opacity-100 scale-101'
+            ? 'bg-indigo-50 border-indigo-500 ring-4 ring-indigo-200 shadow-xl opacity-100 scale-101'
             : isPhase2Active
             ? 'opacity-40 pointer-events-none grayscale bg-slate-50 border-slate-200'
             : 'bg-slate-50/70 border-slate-200 opacity-90'
         }`}>
-          <div className="flex items-center justify-between border-b-2 border-indigo-300/70 pb-2 mb-2.5">
+          <div className="flex items-center justify-between border-b border-indigo-300/70 pb-1.5 mb-2">
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <span className="p-1.5 sm:p-2 bg-indigo-600 text-white rounded-lg sm:rounded-xl text-xs font-black">🎙️</span>
+              <span className="p-1 sm:p-1.5 bg-indigo-600 text-white rounded-lg text-xs font-black">🎙️</span>
               <div>
-                <h3 className="text-sm sm:text-lg font-black text-indigo-950 font-serif">
+                <h3 className="text-xs sm:text-base font-black text-indigo-950 font-serif">
                   {data.table_b.title}
                 </h3>
-                <span className="text-[10px] sm:text-[11px] font-bold text-indigo-800">Person: {data.table_b.person}</span>
+                <span className="text-[9.5px] sm:text-[10.5px] font-bold text-indigo-800">Person: {data.table_b.person}</span>
               </div>
             </div>
             {isPhase1Active && (
-              <span className="text-[9.5px] sm:text-[10px] font-black uppercase tracking-wider bg-indigo-400 text-indigo-950 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full animate-pulse shadow-sm">
+              <span className="text-[9px] sm:text-[9.5px] font-black uppercase tracking-wider bg-indigo-400 text-indigo-950 px-2 py-0.5 rounded-full animate-pulse shadow-2xs">
                 Active: Answer Nova
               </span>
             )}
           </div>
 
-          <div className="space-y-1.5 sm:space-y-2.5">
+          <div className="space-y-1 sm:space-y-2">
             {tableBFields.map((field, idx) => {
               const evalRes = tableBResults[field.id];
               const isHighlighted = flowState === 'phase1_q' && phase1Index === idx;
@@ -552,16 +552,16 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
               return (
                 <div
                   key={field.id}
-                  className={`p-3.5 rounded-2xl border flex items-center justify-between transition-all ${
+                  className={`p-2 sm:p-2.5 rounded-xl border flex items-center justify-between transition-all ${
                     isHighlighted
-                      ? 'bg-indigo-100 border-indigo-500 ring-2 ring-indigo-300 shadow-md scale-102 font-black'
+                      ? 'bg-indigo-100 border-indigo-500 ring-2 ring-indigo-300 shadow-sm scale-101 font-black'
                       : evalRes?.isCorrect
                       ? 'bg-emerald-100 border-emerald-400'
                       : 'bg-white border-indigo-200'
                   }`}
                 >
                   <span className="text-xs font-black text-indigo-950">{field.label}</span>
-                  <span className={`text-xs font-black px-3 py-1 rounded-lg ${isStealthMode ? 'bg-indigo-200/60 text-indigo-400 italic' : 'text-indigo-950 bg-indigo-100/90'}`}>
+                  <span className={`text-xs font-black px-2.5 py-0.5 rounded-lg ${isStealthMode ? 'bg-indigo-200/60 text-indigo-400 italic' : 'text-indigo-950 bg-indigo-100/90'}`}>
                     {isStealthMode ? '❓ Answer from your card' : field.value}
                   </span>
                 </div>
@@ -573,11 +573,11 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
       </div>
 
       {/* CENTRAL VOICE CONTROLLER (HOSTED BY MASCOT NOVA) */}
-      <div className="p-3.5 sm:p-6 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 rounded-2xl sm:rounded-3xl text-white shadow-2xl border-2 border-indigo-400/40 space-y-3 sm:space-y-4">
+      <div className="p-3 sm:p-4 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 rounded-xl sm:rounded-2xl text-white shadow-xl border border-indigo-400/40 space-y-2 sm:space-y-3">
         {/* Nova Status Bar */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 border-b border-slate-700/80 pb-2.5">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-500 to-indigo-500 p-2.5 shrink-0 shadow-lg border border-white/20 flex items-center justify-center text-2xl">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-slate-700/80 pb-2">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-purple-500 to-indigo-500 p-1.5 shrink-0 shadow-md border border-white/20 flex items-center justify-center text-xl">
               🤖
             </div>
             <div>

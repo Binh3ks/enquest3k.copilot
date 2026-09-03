@@ -157,7 +157,7 @@ export function useFlyersListeningPlayer({
   ]);
 
   // Derived status display text
-  let statusText = 'Play Official Audio (2×)';
+  let statusText = 'Play Audio (2×)';
   let badgeColor = 'bg-amber-400 text-slate-950';
 
   switch (playStatus) {
@@ -186,7 +186,7 @@ export function useFlyersListeningPlayer({
       badgeColor = 'bg-slate-800 text-emerald-400';
       break;
     default:
-      statusText = 'Play Official Audio (2×)';
+      statusText = 'Play Audio (2×)';
       badgeColor = 'bg-amber-400 hover:bg-amber-300 text-slate-950';
   }
 

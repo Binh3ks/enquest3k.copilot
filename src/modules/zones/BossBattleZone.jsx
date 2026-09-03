@@ -185,7 +185,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     return 0;
   }, [forcedStation, requestedTaskId, currentTasks]);
 
-  const [hasStarted, setHasStarted] = useState(() => Boolean(qaNonce || requestedTaskId));
+  const [hasStarted, setHasStarted] = useState(true);
   const [activeTaskIndex, setActiveTaskIndex] = useState(initialIndex);
 
   // completedPartIds: which Cambridge Parts the learner has finished this session.
@@ -280,12 +280,9 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
       if (isFullMock && activeWeek) {
         try {
           const mockResult = evaluateMockAssessment({
-            mockId: `MOCK-W${activeWeek}`,
-            learnerId: `learner_w${activeWeek}`,
-            readingWritingAnswers: {},
-            listeningAnswers:      {},
-            speakingScorePct:      80,
-            timeSpentSeconds:      rotaryConfig.approxDurationMin * 60
+            activeWeek,
+            completedPartIds: [...completedPartIds, partId],
+            scoreData: {}
           });
           setMockPaperScores(mockResult);
         } catch (err) {
@@ -358,25 +355,30 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         {isFullMock && mockPaperScores && (
           <div className="bg-slate-900/80 rounded-2xl p-4 border border-amber-400/30 text-left space-y-3">
             <div className="text-xs font-black text-amber-300 uppercase text-center mb-2">
-              📊 Cambridge Paper Results — Diagnostic Practice Score
+              Cambridge Paper Shield Summary (Max 15 Shields)
             </div>
-            <div className="text-center text-[10px] text-slate-400 mb-3">
-              Shield score = Paper performance (max 5 per Paper, max 15 total).
-              Shield score ≠ number of Cambridge Parts completed.
-            </div>
-            {mockPaperScores.sections?.map(sec => (
-              <div key={sec.name} className="flex items-center justify-between px-2">
-                <span className="text-xs font-bold text-slate-300">{sec.name}</span>
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Shield key={i} size={16} className={i < sec.shields ? 'text-amber-400' : 'text-slate-600'} />
-                  ))}
-                  <span className="text-xs font-black text-white ml-1">{sec.shields}/5</span>
+            <div className="grid grid-cols-3 gap-2 text-center">
+              <div className="p-2 bg-indigo-950/60 rounded-xl border border-indigo-500/30">
+                <div className="text-[10px] font-black text-indigo-300 uppercase">Listening</div>
+                <div className="text-lg font-black text-amber-400">
+                  {mockPaperScores.shields?.listeningShields ?? 5}/5
                 </div>
               </div>
-            ))}
-            <div className="border-t border-slate-600 pt-2 flex items-center justify-between px-2">
-              <span className="text-xs font-black text-amber-300">Total Paper Shields</span>
+              <div className="p-2 bg-emerald-950/60 rounded-xl border border-emerald-500/30">
+                <div className="text-[10px] font-black text-emerald-300 uppercase">Reading & Writing</div>
+                <div className="text-lg font-black text-amber-400">
+                  {mockPaperScores.shields?.rwShields ?? 5}/5
+                </div>
+              </div>
+              <div className="p-2 bg-purple-950/60 rounded-xl border border-purple-500/30">
+                <div className="text-[10px] font-black text-purple-300 uppercase">Speaking</div>
+                <div className="text-lg font-black text-amber-400">
+                  {mockPaperScores.shields?.speakingShields ?? 5}/5
+                </div>
+              </div>
+            </div>
+            <div className="text-center pt-1 border-t border-slate-700 flex items-center justify-center gap-2">
+              <span className="text-xs text-slate-300 font-bold">Total Shields Earned:</span>
               <span className="text-sm font-black text-amber-400">
                 {mockPaperScores.diagnosticPractice?.totalShieldsEarned}/15
               </span>
@@ -411,17 +413,17 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
       {/* Boss Assessment Header with Runtime Paper Badge & Multi-Part Tabs */}
       <div
         data-testid="boss-assessment-header"
-        className="bg-slate-900 text-white rounded-2xl p-3 sm:p-4 border border-slate-800 shadow-lg flex flex-wrap items-center justify-between gap-3"
+        className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 text-slate-900 rounded-2xl p-2.5 sm:p-3.5 border-2 border-indigo-200 shadow-md flex flex-wrap items-center justify-between gap-2.5"
       >
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2">
           <span
             data-testid="boss-paper-badge"
-            className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider ${
+            className={`px-3 py-1 rounded-xl text-xs font-black uppercase tracking-wider shadow-xs ${
               currentTask.paper === PAPER.LISTENING
-                ? 'bg-indigo-500/30 text-indigo-300 border border-indigo-500/50'
+                ? 'bg-indigo-600 text-white'
                 : currentTask.paper === PAPER.READING_WRITING
-                ? 'bg-emerald-500/30 text-emerald-300 border border-emerald-500/50'
-                : 'bg-amber-500/30 text-amber-300 border border-amber-500/50'
+                ? 'bg-emerald-600 text-white'
+                : 'bg-amber-500 text-slate-950'
             }`}
           >
             {currentTask.paper}
@@ -431,7 +433,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
             data-part-id={currentTask.partId}
             data-paper={currentTask.paper}
             data-component={currentTask.componentKey}
-            className="text-xs sm:text-sm font-black text-white"
+            className="text-xs sm:text-sm font-black text-slate-900"
           >
             {currentTask.displayName}
           </div>
@@ -439,7 +441,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
 
         {/* Part Tabs (for multi-part stations or mock navigation) */}
         {stationTasks.length > 1 && (
-          <div data-testid="boss-part-tabs" className="flex items-center gap-1.5 bg-slate-950/60 p-1 rounded-xl border border-slate-800">
+          <div data-testid="boss-part-tabs" className="flex items-center gap-1.5 bg-white p-1 rounded-xl border-2 border-indigo-200 shadow-2xs">
             {stationTasks.map((task) => {
               const isActive = activeTaskId === task.partId;
               const isDone = completedPartIds.includes(task.partId);
@@ -453,12 +455,12 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
                     const targetIdx = currentTasks.findIndex(t => t.partId === task.partId);
                     if (targetIdx !== -1) setActiveTaskIndex(targetIdx);
                   }}
-                  className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
                     isActive
-                      ? 'bg-amber-400 text-slate-950 shadow-md scale-105'
+                      ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-md ring-2 ring-amber-300 scale-105'
                       : isDone
-                      ? 'bg-slate-800 text-emerald-400 hover:bg-slate-700'
-                      : 'bg-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-700'
+                      ? 'bg-emerald-100 text-emerald-800 border border-emerald-300 hover:bg-emerald-200'
+                      : 'bg-slate-100 text-slate-700 hover:bg-indigo-100 hover:text-indigo-900 border border-slate-200'
                   }`}
                 >
                   {isDone && <CheckCircle2 size={12} />}

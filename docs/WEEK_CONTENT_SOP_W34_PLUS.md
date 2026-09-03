@@ -407,6 +407,28 @@ public/audio/weekXX/
   node scripts/gate17_fidelity_doctrine.mjs <weekNum>
   npm run audit:chunks
 
+## Master Task & Boss Castle UI Invariants (W33+ Standard)
+1. **Voice Shadow Spacing**:
+   - `wordIpaList` container height `min-h-[48px] sm:min-h-[56px]`, font size `text-base sm:text-xl md:text-2xl`, tight IPA gaps. Action buttons compact `px-4 sm:px-5 py-2 sm:py-2.5` to pull recording above the fold.
+2. **Grammar Duel 2-Clause Drills**:
+   - All drills must provide complete tokens for 2 clauses (While + Past Continuous, Past Simple).
+   - `valid_structures` must include both clause order variations.
+3. **Action Lab Spacing**:
+   - Diagram target zone coordinates widely dispersed across quadrants; drop badges compact `min-w-[56px] sm:min-w-[80px]` with zero overlap.
+4. **Discovery Report Stepper & Facts**:
+   - 4-step progress dots use a responsive compact grid (`grid grid-cols-4 sm:flex`) to avoid horizontal overflow.
+   - Narrative facts 100% synchronized with Fact Finder text.
+5. **Info Exchange Compression**:
+   - Compact table padding (`p-2.5 sm:p-4`) and tight mascot voice controller to reduce vertical scrolling.
+6. **Boss Castle Unofficial Mock Standard**:
+   - Strictly prohibit `"Official Cambridge Assessment"`; label as `Cambridge A2 Flyers Practice Mock — [Part Name]`.
+   - Clear instructions prominent; remove Map, Exam Intro, and Calibrator clutter.
+   - Group `Clear` button with `Play Audio (2×)`.
+   - Skip outer `<BossIntro>` screen (`hasStarted: true` by default).
+   - Vibrant, bright navigation bar theme with high-contrast part tabs.
+7. **Word Bank Matching**:
+   - Compact 2-column mobile word pool (`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5`), sticky dock at the top, tight definition padding (`p-2 sm:p-2.5`).
+
 ## 🔄 Mandatory Continuous Handoff & Maintenance Doctrine (Invariant)
 > **BẮT BUỘC ÁP DỤNG TỪ NAY VỀ SAU**:
 > Bất kỳ review, tinh chỉnh phương pháp luận, sửa đổi cấu trúc (architecture) hay chuẩn hóa dữ liệu nào được User phê duyệt trên Tuần 33 (Golden Standard) **BẮT BUỘC PHẢI ĐƯỢC CẬP NHẬT ĐỒNG BỘ NGAY LẬP TỨC** vào:
