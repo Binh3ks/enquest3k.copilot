@@ -350,8 +350,70 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
       {/* ── Main Unified Viewport ── */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 items-start">
         
-        {/* Left Column (6/12 Desktop, 12/12 Mobile): Camera Preview + Teleprompter + Action Buttons + Evaluation */}
+        {/* Left Column (6/12 Desktop, 12/12 Mobile): Teleprompter (TOP) + Camera Preview + Action Buttons + Evaluation */}
         <div className="w-full md:col-span-6 flex flex-col gap-2">
+
+          {/* ── Teleprompter Dock (Positioned ABOVE camera for natural eye contact & easy reading) ── */}
+          <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-2.5 sm:p-3 rounded-2xl border border-purple-400/40 shadow-md space-y-2 overflow-hidden">
+            <div className="flex items-center justify-between gap-1 w-full">
+              <span className="text-amber-400 text-xs font-black tracking-wider flex items-center gap-1.5 shrink-0">
+                📜 PROMPTER
+              </span>
+
+              <div className="flex items-center gap-1.5 shrink-0">
+                {/* Larger, comfortable touch buttons for Prev & Next */}
+                <div className="flex items-center bg-purple-900/90 rounded-xl p-0.5 border border-purple-600/60 shadow-xs">
+                  <button
+                    type="button"
+                    onClick={() => setActiveTeleprompterIdx(prev => Math.max(0, prev - 1))}
+                    disabled={activeTeleprompterIdx === 0}
+                    className="px-2.5 sm:px-3 py-1 hover:bg-purple-700 active:scale-95 disabled:opacity-30 rounded-lg text-xs font-black transition flex items-center gap-1 text-purple-100"
+                    title="Previous scene"
+                  >
+                    <ChevronLeft size={14} className="stroke-[3]" />
+                    <span className="text-[11px] sm:text-xs">Prev</span>
+                  </button>
+
+                  <span className="text-[11px] sm:text-xs text-amber-300 px-2 font-black">
+                    {activeTeleprompterIdx + 1}/{activeScenes.length}
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={() => setActiveTeleprompterIdx(prev => Math.min(activeScenes.length - 1, prev + 1))}
+                    disabled={activeTeleprompterIdx >= activeScenes.length - 1}
+                    className="px-2.5 sm:px-3 py-1 hover:bg-purple-700 active:scale-95 disabled:opacity-30 rounded-lg text-xs font-black transition flex items-center gap-1 text-purple-100"
+                    title="Next scene"
+                  >
+                    <span className="text-[11px] sm:text-xs">Next</span>
+                    <ChevronRight size={14} className="stroke-[3]" />
+                  </button>
+                </div>
+
+                {/* Hide / Show Toggle Button */}
+                <button
+                  type="button"
+                  onClick={() => setShowTeleprompter(prev => !prev)}
+                  className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 active:scale-95 border border-slate-600 rounded-xl text-xs font-bold transition flex items-center gap-1 text-slate-200 shadow-xs"
+                  title={showTeleprompter ? "Hide Teleprompter" : "Show Teleprompter"}
+                >
+                  {showTeleprompter ? <EyeOff size={13} /> : <Eye size={13} />}
+                  <span className="text-[11px] sm:text-xs">{showTeleprompter ? 'Hide' : 'Show'}</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Current Sentence (1-2 lines clean, readable, placed above camera) */}
+            {showTeleprompter && (
+              <div className="p-2.5 bg-black/55 rounded-xl border border-purple-500/40 animate-in fade-in duration-150 shadow-inner">
+                <p className="text-xs sm:text-sm font-bold text-amber-100 leading-snug">
+                  {activeScenes[activeTeleprompterIdx]?.en || activeScenes[activeTeleprompterIdx]?.text || "Read your story sentence by sentence..."}
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Live Camera View Box (Positioned directly under prompter) */}
           <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-slate-950 rounded-2xl overflow-hidden shadow-md border-2 border-slate-300 flex items-center justify-center">
             
             {/* Live Camera View */}
@@ -419,62 +481,6 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
               <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5 px-2.5 py-1 bg-rose-600 text-white font-mono font-black text-xs rounded-lg shadow animate-pulse z-20">
                 <div className="w-2 h-2 rounded-full bg-white animate-ping" />
                 REC {formatTime(recordingSeconds)}
-              </div>
-            )}
-          </div>
-
-          {/* ── Teleprompter Dock (Positioned cleanly under camera, 100% overflow-proof) ── */}
-          <div className="bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 text-white p-2 sm:p-2.5 rounded-2xl border border-purple-400/40 shadow-md space-y-1.5 overflow-hidden">
-            <div className="flex items-center justify-between gap-1 w-full">
-              <span className="text-amber-400 text-[10px] font-black tracking-wider flex items-center gap-1 truncate">
-                📜 PROMPTER
-              </span>
-
-              <div className="flex items-center gap-1 shrink-0">
-                <div className="flex items-center bg-purple-900/80 rounded-lg p-0.5 border border-purple-700/50">
-                  <button
-                    type="button"
-                    onClick={() => setActiveTeleprompterIdx(prev => Math.max(0, prev - 1))}
-                    disabled={activeTeleprompterIdx === 0}
-                    className="px-1.5 py-0.5 hover:bg-purple-700 disabled:opacity-30 rounded text-[10px] font-black transition flex items-center gap-0.5"
-                    title="Previous scene"
-                  >
-                    <ChevronLeft size={11} />
-                    <span className="hidden sm:inline">Prev</span>
-                  </button>
-                  <span className="text-[9px] text-purple-300 px-1 font-bold">
-                    {activeTeleprompterIdx + 1}/{activeScenes.length}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setActiveTeleprompterIdx(prev => Math.min(activeScenes.length - 1, prev + 1))}
-                    disabled={activeTeleprompterIdx >= activeScenes.length - 1}
-                    className="px-1.5 py-0.5 hover:bg-purple-700 disabled:opacity-30 rounded text-[10px] font-black transition flex items-center gap-0.5"
-                    title="Next scene"
-                  >
-                    <span className="hidden sm:inline">Next</span>
-                    <ChevronRight size={11} />
-                  </button>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => setShowTeleprompter(prev => !prev)}
-                  className="px-2 py-1 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-lg text-[10px] font-black transition flex items-center gap-1 text-slate-200"
-                  title={showTeleprompter ? "Hide Teleprompter" : "Show Teleprompter"}
-                >
-                  {showTeleprompter ? <EyeOff size={11} /> : <Eye size={11} />}
-                  <span>{showTeleprompter ? 'Hide' : 'Show'}</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Current Sentence (1-2 lines clean, readable) */}
-            {showTeleprompter && (
-              <div className="p-2 bg-black/50 rounded-xl border border-purple-500/30 animate-in fade-in duration-150">
-                <p className="text-[11px] sm:text-xs font-semibold text-amber-100 leading-snug">
-                  {activeScenes[activeTeleprompterIdx]?.en || activeScenes[activeTeleprompterIdx]?.text || "Read your story sentence by sentence..."}
-                </p>
               </div>
             )}
           </div>
