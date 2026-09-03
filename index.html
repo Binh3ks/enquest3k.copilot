@@ -81,10 +81,33 @@
   <body>
     <div id="root"></div>
     <script>
-      fetch('/version.json?_t=' + Date.now())
-        .then(function(r) { return r.json(); })
-        .then(function(v) { window.__APP_VERSION__ = v; window.__GIT_COMMIT__ = v.commit; })
-        .catch(function() {});
+      (function() {
+        fetch('/version.json?_t=' + Date.now())
+          .then(function(r) { return r.json(); })
+          .then(function(v) {
+            window.__APP_VERSION__ = v;
+            window.__GIT_COMMIT__ = v.commit;
+            var prevCommit = localStorage.getItem('engquest_last_commit');
+            if (prevCommit && v.commit && prevCommit !== v.commit) {
+              console.log('[VersionGuard] App update detected:', prevCommit, '->', v.commit);
+              localStorage.setItem('engquest_last_commit', v.commit);
+              if ('caches' in window) {
+                caches.keys().then(function(keys) {
+                  keys.forEach(function(k) { caches.delete(k); });
+                });
+              }
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(regs) {
+                  regs.forEach(function(r) { r.unregister(); });
+                });
+              }
+              window.location.reload(true);
+            } else if (v.commit) {
+              localStorage.setItem('engquest_last_commit', v.commit);
+            }
+          })
+          .catch(function() {});
+      })();
     </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
