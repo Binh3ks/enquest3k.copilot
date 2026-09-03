@@ -234,6 +234,7 @@ Source: `.devin/workflows/start.md` §3.
   3. **2-Sentence Syntactic Architecture (2 Câu Hoàn Chỉnh per Scene)**: Mỗi cảnh (Scene 1–5) cung cấp đủ các cụm từ để học sinh ghép thành **2 câu chuẩn mực**: Câu 1 (Bối cảnh/Hành động nhân vật chính) + Câu 2 (Sự cố bất ngờ/Hành động can thiệp/Kết quả). Bắt buộc cung cấp đúng 2 distractors hợp lý per scene để kiểm tra tư duy ngữ cảnh của học sinh.
   4. **Smart Cursor Insertion & Dictionary Synchronization**: Khi bấm vào Connector hoặc Pill, văn bản PHẢI được chèn chính xác tại vị trí con trỏ (Cursor Position), tự động căn chỉnh khoảng trắng, không nhảy về đầu đoạn. 100% pills và chunks BẮT BUỘC phải có trong từ điển `vocab_dictionary_master.js` với nghĩa tiếng Việt, IPA và câu ví dụ để click là xem ngay không bị treo spinner.
   5. **No Locked Connectors (Trao Quyền Tự Chủ Lựa Chọn - Learner Agency)**: Tuyệt đối KHÔNG sử dụng `locked_connector` bắt buộc học sinh phải mở đầu câu bằng một từ khóa cố định (`🔒 ★ LOCKED:`). Với bài viết 2 câu per scene, 100% liên từ được đưa vào hàng `connectors` dưới dạng các nút lựa chọn tự do (`🔗 + In the beginning,`, `🔗 + Suddenly,`, `🔗 + Then,`, `🔗 + and`,...). Học sinh có toàn quyền quyết định: bắt đầu bằng liên từ thời gian hoặc bắt đầu trực tiếp bằng chủ ngữ (`Jake was walking...`), tạo câu văn tự nhiên và rèn luyện tư duy ngữ pháp chủ động.
+  6. **Mobile-First Compact Real Estate Invariant**: Áp dụng cấu trúc responsive 2 cột trên màn hình ngang / desktop (`md:grid md:grid-cols-12`): Cột trái (Ảnh + Gợi ý câu) | Cột phải (Connectors + Word Bank + Textarea + Nút chuyển). Trên điện thoại di động: khống chế chiều cao ảnh vừa vặn (`h-36 sm:h-44`), thu nhỏ padding các nút liên từ (`px-2.5 py-1 text-[11px]`), thu nhỏ textarea còn `rows={2}`. Đảm bảo toàn bộ không gian làm việc hiển thị trọn vẹn trong 1 màn hình di động mà không phải cuộn trang.
 
 ## 🔬 CLIL Fact Finder & Story-Driven Science Doctrine (W33+) — 2026-09-03
 **BẮT BUỘC ÁP DỤNG CHO TOÀN BỘ CÁC BÀI ĐỌC CLIL (DAY 2 QUEST 4 - FACT FINDER / KNOWLEDGE LAB):**
@@ -256,6 +257,9 @@ Source: `.devin/workflows/start.md` §3.
    - Khi tạo bất kỳ chunks, collocations, hoặc từ vựng mới nào trong `vocab_focus`, `clil_article`, `story_scenes`, hoặc `picture_story`, **BẮT BUỘC PHẢI ĐỒNG BỘ NGAY LẬP TỨC VÀO TỪ ĐIỂN** (`src/data/weeks/weekXX/vocab_dictionary_master.js` và `src/data/dictionary.json`).
    - Mỗi mục từ điển BẮT BUỘC có đầy đủ: `meaning` (tiếng Việt có dấu chuẩn xác), `ipa` (phiên âm quốc tế), `example` (câu ví dụ ngữ cảnh), `type` ("Collocation" / "Noun" / "Verb"), `audioText`, và `aliases` (các biến thể hình thái).
    - **CẤM TUYỆT ĐỐI** để sót cụm từ không có trong từ điển khiến popup `HoverWord` bị treo spinner *"Looking up example..."*.
+6. **Mobile-First 2-Column Options Grid Invariant (Chống Tràn Màn Hình Dọc)**:
+   - Toàn bộ các lựa chọn (A, B, C, D) của Check Questions trong CLIL Explorer / Fact Finder BẮT BUỘC xếp theo dạng lưới 2 cột (`grid grid-cols-2 gap-1.5 sm:gap-2`) ngay cả trên màn hình di động.
+   - Cỡ chữ đoạn văn bài đọc chuẩn hóa ở mức `text-sm sm:text-base` với khoảng đệm tinh gọn (`p-3 sm:p-5`), giúp giảm hơn 50% chiều cao cuộn trang trên điện thoại.
 
 ## 🔒 FROZEN AUDIO PIPELINE: PRE-GENERATED MP3 & 3-TIER FALLBACK STANDARD (W33+) — 2026-08-18
 **BẮT BUỘC áp dụng cho Tuần 33 và TOÀN BỘ các tuần sản xuất mới (W34–W72). KHÔNG ĐƯỢC PHÉP BỎ QUA:**

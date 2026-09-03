@@ -600,19 +600,19 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans text-slate-900">
+    <div className="w-full max-w-4xl mx-auto space-y-2 sm:space-y-3 animate-in fade-in duration-200 font-sans text-slate-900">
       {/* Cambridge Exam Header */}
-      <div className="pb-2 border-b border-slate-200">
-        <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-[11px] font-black rounded-full uppercase tracking-wider">
+      <div className="pb-1.5 border-b border-slate-200 flex items-center justify-between flex-wrap gap-1">
+        <span className="px-2.5 py-0.5 bg-indigo-100 text-indigo-900 text-[10px] sm:text-[11px] font-black rounded-full uppercase tracking-wider">
           Cambridge A2 Flyers — Reading & Writing Part 7
         </span>
-        <p className="text-xs text-indigo-700 font-bold mt-1">
-          Look at the five pictures. Write about this story. Write 40 or more words.
+        <p className="text-[11px] text-indigo-700 font-bold hidden sm:block">
+          Look at the pictures. Write 40 or more words.
         </p>
       </div>
 
       {/* Mini-Ladder Stage Selector & Step Progress Bar */}
-      <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-2 p-2 sm:px-4 sm:py-2.5 bg-white border border-slate-200 rounded-2xl shadow-xs">
+      <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-1.5 p-1.5 sm:px-4 sm:py-2 bg-white border border-slate-200 rounded-xl sm:rounded-2xl shadow-xs">
         <div className="flex items-center gap-1.5">
           <span
             data-testid="ladder-badge"
@@ -620,7 +620,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
           >
             {stage}
           </span>
-          <span className="text-[11px] sm:text-xs font-black text-slate-700">
+          <span className="text-[10.5px] sm:text-xs font-black text-slate-700">
             Scene {currentStepIdx + 1} of {steps.length}
           </span>
         </div>
@@ -645,7 +645,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
                 });
                 setCurrentStepIdx(i);
               }}
-              className={`px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] font-black flex items-center gap-1 border transition shrink-0 ${
+              className={`px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] font-black flex items-center gap-1 border transition shrink-0 cursor-pointer ${
                 i === currentStepIdx
                   ? 'bg-indigo-600 text-white border-indigo-400 scale-105 shadow-xs'
                   : panelTexts[i]?.trim()
@@ -662,174 +662,180 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
         </div>
       </div>
 
-      {/* Step Container: Strictly 1 Full-Width <img> Scene */}
-      <div className="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200 shadow-md space-y-4">
-        {/* Full-width Image Viewport (16:9 Aspect Ratio) */}
-        <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-inner">
-          <img
-            src={currentStep.image_url}
-            alt={`Scene ${currentStepIdx + 1}`}
-            className="w-full h-full object-cover"
-            onError={(e) => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
-          />
-          <div className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2 py-0.5 sm:px-3 sm:py-1 bg-amber-400/95 text-slate-950 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-wider shadow border border-amber-300 backdrop-blur-xs">
-            Scene {currentStepIdx + 1}/{steps.length} • {stage}
-          </div>
-
-          <button
-            type="button"
-            onClick={handleListenScene}
-            className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 px-2.5 py-1 sm:px-3 sm:py-1.5 bg-slate-950/85 hover:bg-slate-950 text-white rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold shadow-md backdrop-blur-md flex items-center gap-1 sm:gap-1.5 transition active:scale-95 border border-white/20"
-            title="Listen to scene audio"
-          >
-            <Volume2 size={13} className="text-amber-400" /> <span>Listen</span>
-          </button>
-        </div>
-
-        {/* M2: Dedicated Connector Row ("🔗 LINK YOUR SENTENCES") */}
-        <div
-          data-testid="connector-row"
-          className="p-3 bg-purple-50/80 rounded-2xl border-2 border-purple-200 space-y-1.5"
-        >
-          <div className="flex items-center justify-between">
-            <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider flex items-center gap-1.5">
-              <Link2 size={13} className="text-purple-700" /> 🔗 LINK YOUR SENTENCES:
-            </span>
-            <span className="text-[10px] font-medium text-purple-700 italic">
-              Connectors join your five pictures into ONE story.
-            </span>
-          </div>
-
-          {/* Connectors for linking sentences within this scene (unified selectable buttons) */}
-          {(() => {
-            const rawConnectors = [
-              ...(currentStep.locked_connector ? [currentStep.locked_connector] : []),
-              ...(currentStep.connectors || [])
-            ];
-            const uniqueConnectors = [...new Set(rawConnectors)];
-            if (uniqueConnectors.length === 0) return null;
-
-            return (
-              <div className="flex flex-wrap gap-2 pt-1" data-testid="connector-options">
-                {uniqueConnectors.map((conn, cIdx) => (
-                  <button
-                    key={cIdx}
-                    type="button"
-                    onClick={() => handleInsertConnector(conn)}
-                    className="px-3 py-1.5 rounded-xl text-xs font-black bg-purple-100 hover:bg-purple-200 text-purple-950 border border-purple-300 shadow-2xs transition active:scale-95 flex items-center gap-1 cursor-pointer"
-                    data-testid="connector-btn"
-                  >
-                    🔗 + {conn}
-                  </button>
-                ))}
+      {/* Step Container: 2-Column Responsive Layout (Side-by-side on desktop, Ultra-compact on mobile) */}
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 border border-slate-200 shadow-md">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 sm:gap-4">
+          {/* Left Column (md:col-span-5): Image & Scene Context */}
+          <div className="md:col-span-5 space-y-2 flex flex-col">
+            <div className="relative w-full h-36 sm:h-44 md:h-full md:min-h-[220px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-inner">
+              <img
+                src={currentStep.image_url}
+                alt={`Scene ${currentStepIdx + 1}`}
+                className="w-full h-full object-cover"
+                onError={(e) => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
+              />
+              <div className="absolute top-1.5 left-1.5 sm:top-2.5 sm:left-2.5 px-2 py-0.5 sm:px-2.5 sm:py-1 bg-amber-400/95 text-slate-950 rounded-md sm:rounded-lg text-[9.5px] sm:text-[11px] font-black uppercase tracking-wider shadow border border-amber-300 backdrop-blur-xs">
+                Scene {currentStepIdx + 1}/{steps.length} • {stage}
               </div>
-            );
-          })()}
-        </div>
 
-        {/* Content Chips Row — flat word bank for this scene */}
-        {Array.isArray(chipsToDisplay) && chipsToDisplay.length > 0 && (
-          <div className="space-y-1.5">
-            <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider block">
-              {currentStepIdx === 0 && "💡 WORD BANK — tap to insert into your sentences:"}
-              {currentStepIdx === 1 && "💡 WORD BANK — tap words, then decide the order:"}
-              {currentStepIdx >= 2 && "💡 WORD BANK — change verbs to past tense when you use them:"}
-            </span>
-            <div className="flex flex-wrap gap-2" data-testid="content-chips">
-              {chipsToDisplay.map((chip, pIdx) => (
-                <button
-                  key={pIdx}
-                  type="button"
-                  onClick={() => handleInsertPill(chip)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition shadow-2xs active:scale-95 ${colorScheme.pill}`}
-                  data-testid="content-chip"
-                >
-                  + {chip}
-                </button>
-              ))}
+              <button
+                type="button"
+                onClick={handleListenScene}
+                className="absolute bottom-1.5 right-1.5 sm:bottom-2.5 sm:right-2.5 px-2 py-0.5 sm:px-2.5 sm:py-1 bg-slate-950/85 hover:bg-slate-950 text-white rounded-md sm:rounded-lg text-[10px] sm:text-xs font-bold shadow backdrop-blur-md flex items-center gap-1 transition active:scale-95 border border-white/20 cursor-pointer"
+                title="Listen to scene audio"
+              >
+                <Volume2 size={12} className="text-amber-400" /> <span>Listen</span>
+              </button>
             </div>
+
+            {/* Sentence Target Guidance */}
+            {currentStep.sentence_hint && (
+              <div className="px-2.5 py-1.5 bg-indigo-50/90 rounded-xl border border-indigo-200 text-[10.5px] sm:text-xs font-bold text-indigo-900 flex items-start gap-1.5">
+                <span className="shrink-0">📝</span>
+                <span className="leading-tight">{currentStep.sentence_hint}</span>
+              </div>
+            )}
           </div>
-        )}
 
-        {/* Writing Input Area */}
-        <div className="space-y-2">
-          {/* Sentence Target Guidance */}
-          {currentStep.sentence_hint && (
-            <div className="px-3 py-2 bg-indigo-50 rounded-xl border border-indigo-200 text-[11px] font-bold text-indigo-800 flex items-start gap-1.5">
-              <span>📝</span>
-              <span>{currentStep.sentence_hint}</span>
-            </div>
-          )}
-          <div className="flex items-center justify-between">
-            <label className="text-[11px] font-black uppercase text-slate-700 tracking-wider">
-              Write your sentences for Scene {currentStepIdx + 1} ({stage}):
-            </label>
-            <button
-              type="button"
-              onClick={() => setShowHint(!showHint)}
-              className="text-[11px] font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1"
+          {/* Right Column (md:col-span-7): Connectors, Word Bank & Input Area */}
+          <div className="md:col-span-7 space-y-2 sm:space-y-2.5">
+            {/* M2: Dedicated Connector Row ("🔗 LINK YOUR SENTENCES") */}
+            <div
+              data-testid="connector-row"
+              className="p-2 sm:p-2.5 bg-purple-50/80 rounded-xl sm:rounded-2xl border border-purple-200 space-y-1"
             >
-              <Lightbulb size={12} /> {showHint ? 'Hide Hint' : 'Sentence Hint'}
-            </button>
-          </div>
+              <div className="flex items-center justify-between">
+                <span className="text-[9.5px] sm:text-[10px] font-black uppercase text-purple-900 tracking-wider flex items-center gap-1">
+                  <Link2 size={12} className="text-purple-700" /> 🔗 Connectors:
+                </span>
+                <span className="text-[9.5px] font-medium text-purple-700 italic hidden sm:inline">
+                  Join pictures into ONE story
+                </span>
+              </div>
 
-          {showHint && currentStep.frame_L1 && (
-            <div className="p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs font-medium text-amber-900 italic animate-in fade-in">
-              💡 Hint frame: &ldquo;{currentStep.frame_L1}&rdquo;
+              {/* Connectors for linking sentences within this scene (unified selectable buttons) */}
+              {(() => {
+                const rawConnectors = [
+                  ...(currentStep.locked_connector ? [currentStep.locked_connector] : []),
+                  ...(currentStep.connectors || [])
+                ];
+                const uniqueConnectors = [...new Set(rawConnectors)];
+                if (uniqueConnectors.length === 0) return null;
+
+                return (
+                  <div className="flex flex-wrap gap-1.5 pt-0.5" data-testid="connector-options">
+                    {uniqueConnectors.map((conn, cIdx) => (
+                      <button
+                        key={cIdx}
+                        type="button"
+                        onClick={() => handleInsertConnector(conn)}
+                        className="px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-black bg-purple-100 hover:bg-purple-200 text-purple-950 border border-purple-300 shadow-2xs transition active:scale-95 flex items-center gap-1 cursor-pointer"
+                        data-testid="connector-btn"
+                      >
+                        🔗 + {conn}
+                      </button>
+                    ))}
+                  </div>
+                );
+              })()}
             </div>
-          )}
 
-          <textarea
-            ref={textareaRef}
-            rows={3}
-            value={panelTexts[currentStepIdx] || ''}
-            onChange={(e) => {
-              const val = e.target.value;
-              setPanelTexts(prev => {
-                const next = [...prev];
-                next[currentStepIdx] = val;
-                return next;
-              });
-            }}
-            placeholder={
-              currentStepIdx === 0
-                ? "Start with 'In the beginning,' and describe Scene 1..."
-                : currentStepIdx === 1
-                ? "Choose a connector (Then / Suddenly) and describe Scene 2..."
-                : "Choose a connector (Finally / In the end) and describe Scene 3 using past tense verbs..."
-            }
-            className="w-full p-3.5 bg-slate-50 border-2 border-slate-200 rounded-2xl text-sm font-medium text-slate-900 focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none resize-none transition leading-relaxed"
-          />
+            {/* Content Chips Row — flat word bank for this scene */}
+            {Array.isArray(chipsToDisplay) && chipsToDisplay.length > 0 && (
+              <div className="space-y-1">
+                <span className="text-[9.5px] sm:text-[10px] font-black uppercase text-slate-500 tracking-wider block">
+                  💡 WORD BANK (tap words to insert):
+                </span>
+                <div className="flex flex-wrap gap-1.5" data-testid="content-chips">
+                  {chipsToDisplay.map((chip, pIdx) => (
+                    <button
+                      key={pIdx}
+                      type="button"
+                      onClick={() => handleInsertPill(chip)}
+                      className={`px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-bold border transition shadow-2xs active:scale-95 cursor-pointer ${colorScheme.pill}`}
+                      data-testid="content-chip"
+                    >
+                      + {chip}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
-          <div className="flex items-center justify-between text-xs text-slate-500 font-bold">
-            <span>
-              {stepWordCount} words in this sentence {currentStepIdx === 2 && '(min: 5)'}
-            </span>
-            <span>Total story: {wordCount} words (min: 20)</span>
+            {/* Writing Input Area */}
+            <div className="space-y-1.5">
+              <div className="flex items-center justify-between">
+                <label className="text-[10.5px] sm:text-[11px] font-black uppercase text-slate-700 tracking-wider">
+                  Scene {currentStepIdx + 1} ({stage}):
+                </label>
+                <button
+                  type="button"
+                  onClick={() => setShowHint(!showHint)}
+                  className="text-[10px] sm:text-[11px] font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 cursor-pointer"
+                >
+                  <Lightbulb size={11} /> {showHint ? 'Hide Hint' : 'Hint'}
+                </button>
+              </div>
+
+              {showHint && currentStep.frame_L1 && (
+                <div className="p-2 bg-amber-50 rounded-xl border border-amber-200 text-[11px] font-medium text-amber-900 italic animate-in fade-in">
+                  💡 Hint frame: &ldquo;{currentStep.frame_L1}&rdquo;
+                </div>
+              )}
+
+              <textarea
+                ref={textareaRef}
+                rows={2}
+                value={panelTexts[currentStepIdx] || ''}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setPanelTexts(prev => {
+                    const next = [...prev];
+                    next[currentStepIdx] = val;
+                    return next;
+                  });
+                }}
+                placeholder={
+                  currentStepIdx === 0
+                    ? "Start with 'In the beginning,' and describe Scene 1..."
+                    : currentStepIdx === 1
+                    ? "Choose a connector (Then / Suddenly) and describe Scene 2..."
+                    : "Choose a connector (Finally / In the end) and describe Scene 3..."
+                }
+                className="w-full p-2.5 sm:p-3 bg-slate-50 border-2 border-slate-200 rounded-xl text-xs sm:text-sm font-medium text-slate-900 focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none resize-none transition leading-normal"
+              />
+
+              <div className="flex items-center justify-between text-[10.5px] sm:text-xs text-slate-500 font-bold">
+                <span>
+                  {stepWordCount} words in scene {currentStepIdx === 2 && '(min: 5)'}
+                </span>
+                <span>Total: {wordCount} words (min: 20)</span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Navigation Step Buttons */}
-        <div className="flex items-center justify-between pt-2 border-t border-slate-100">
+        <div className="flex items-center justify-between pt-2 mt-2 border-t border-slate-100">
           <button
             type="button"
             onClick={handlePrevStep}
             disabled={currentStepIdx === 0}
-            className="px-4 py-2.5 rounded-xl border border-slate-300 text-xs font-black text-slate-600 hover:bg-slate-100 disabled:opacity-30 transition flex items-center gap-1"
+            className="px-3.5 py-1.5 sm:py-2 rounded-xl border border-slate-300 text-xs font-black text-slate-600 hover:bg-slate-100 disabled:opacity-30 transition flex items-center gap-1 cursor-pointer"
           >
-            <ChevronLeft size={15} /> Previous Scene
+            <ChevronLeft size={14} /> Previous
           </button>
 
           <button
             type="button"
             onClick={handleNextStep}
             disabled={!isCurrentStepValid}
-            className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white rounded-xl text-xs font-black shadow-md transition active:scale-95 flex items-center gap-1.5 cursor-pointer"
+            className="px-4.5 py-1.5 sm:py-2 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white rounded-xl text-xs font-black shadow-md transition active:scale-95 flex items-center gap-1.5 cursor-pointer"
           >
             {currentStepIdx < steps.length - 1 ? (
-              <>Next Scene <ArrowRight size={15} /></>
+              <>Next Scene <ArrowRight size={14} /></>
             ) : (
-              <>Review Complete Story <Sparkles size={15} /></>
+              <>Review Story <Sparkles size={14} /></>
             )}
           </button>
         </div>

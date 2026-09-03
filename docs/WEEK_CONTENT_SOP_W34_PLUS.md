@@ -281,6 +281,8 @@ rw_part_6: {
 >    - 100% pills và chunks BẮT BUỘC phải có trong từ điển `vocab_dictionary_master.js` với nghĩa tiếng Việt, IPA và câu ví dụ để click là xem ngay không bị treo.
 > 5. **No Locked Connectors (Trao Quyền Tự Chủ Lựa Chọn)**:
 >    - Tuyệt đối KHÔNG sử dụng `locked_connector`. 100% liên từ được đưa vào hàng `connectors` dưới dạng các nút lựa chọn tự do (`🔗 + In the beginning,`, `🔗 + Suddenly,`, `🔗 + Then,`, `🔗 + and`,...). Học sinh có toàn quyền lựa chọn cách mở đầu câu.
+> 6. **Mobile-First Compact Real Estate Invariant**:
+>    - Bố cục responsive: 2 cột trên desktop (`md:grid md:grid-cols-12`), khống chế chiều cao ảnh vừa vặn trên di động (`h-36 sm:h-44`), textarea `rows={2}`, giúp hiển thị trọn vẹn trong 1 màn hình di động mà không cần cuộn trang.
 
 ```js
 picture_story: {
