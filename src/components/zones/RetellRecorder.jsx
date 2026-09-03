@@ -82,15 +82,26 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
   useEffect(() => {
     if (!savedData) return;
     if (savedData.evalResult) {
-      setEvalResult(savedData.evalResult);
+      const evaluation = { ...savedData.evalResult };
+      if (!evaluation.spokenFeedback) {
+        const score = evaluation.score || savedData.score || 95;
+        const scenes = evaluation.recognizedScenes || activeScenes.length;
+        const connCount = evaluation.breakdown?.connectors || 5;
+        evaluation.spokenFeedback = `Outstanding job! You achieved a score of ${score} percent on your video challenge. You successfully described all ${scenes} scenes with ${connCount} linking words. Excellent Cambridge story retelling!`;
+      }
+      setEvalResult(evaluation);
     } else if (savedData.score !== undefined && savedData.score > 0) {
+      const score = savedData.score;
+      const scenes = savedData.recognizedScenes || activeScenes.length;
+      const connCount = savedData.breakdown?.connectors || 5;
       setEvalResult({
-        isCorrect: savedData.score >= 60,
-        score: savedData.score,
-        feedback: savedData.feedback?.message || "🌟 Outstanding video challenge! Cambridge story retelling completed.",
-        recognizedScenes: savedData.recognizedScenes || activeScenes.length,
+        isCorrect: score >= 60,
+        score,
+        feedback: savedData.feedback?.message || `🌟 Outstanding video challenge! Score: ${score}%. Excellent Cambridge story retelling!`,
+        spokenFeedback: `Outstanding job! You achieved a score of ${score} percent on your video challenge. You successfully described all ${scenes} scenes with ${connCount} linking words. Excellent Cambridge story retelling!`,
+        recognizedScenes: scenes,
         totalScenes: activeScenes.length,
-        breakdown: savedData.breakdown || { connectors: 5, keyCollocations: 5, fluency: savedData.score }
+        breakdown: savedData.breakdown || { connectors: connCount, keyCollocations: 5, fluency: score }
       });
     }
     if (savedData.spokenTranscript) {
@@ -103,6 +114,62 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
       setRecordedMediaType(savedData.mediaType);
     }
   }, [savedData, activeScenes.length]);
+
+  const [isSpeakingFeedback, setIsSpeakingFeedback] = useState(false);
+
+  const handleHearFeedback = (textToSpeak) => {
+    if (!textToSpeak) return;
+
+    // Clean text: strip emojis, symbols, and special characters that break TTS engines
+    const cleanSpeech = textToSpeak
+      .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '')
+      .replace(/[🌟⭐✓👍🎬🔗🎙️⚠️·]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (!cleanSpeech) return;
+
+    if (isSpeakingFeedback) {
+      if (typeof window !== 'undefined' && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      setIsSpeakingFeedback(false);
+      return;
+    }
+
+    setIsSpeakingFeedback(true);
+
+    // 1. Direct Native SpeechSynthesis for instantaneous gesture response on iOS/Android
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      try {
+        window.speechSynthesis.cancel();
+        if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+
+        const utterance = new SpeechSynthesisUtterance(cleanSpeech);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.92;
+        utterance.pitch = 1.0;
+
+        const voices = window.speechSynthesis.getVoices() || [];
+        const usVoice = voices.find(v => v.lang === 'en-US' || (v.lang && v.lang.startsWith('en-')));
+        if (usVoice) utterance.voice = usVoice;
+
+        utterance.onend = () => setIsSpeakingFeedback(false);
+        utterance.onerror = () => {
+          setIsSpeakingFeedback(false);
+          speakText(cleanSpeech, null, 1.0, () => setIsSpeakingFeedback(false));
+        };
+
+        window.speechSynthesis.speak(utterance);
+        return;
+      } catch (err) {
+        console.warn('SpeechSynthesis invocation error, falling back to speakText:', err);
+      }
+    }
+
+    // 2. Fallback to VoiceService speakText
+    speakText(cleanSpeech, null, 1.0, () => setIsSpeakingFeedback(false));
+  };
 
   // Initialize camera preview on mount if in video mode
   useEffect(() => {
@@ -336,9 +403,8 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
         setEvalResult(evaluation);
 
         const feedbackObj = {
-          message: evaluation.isCorrect
-            ? (evaluation.feedback || `🌟 Outstanding video challenge! Score: ${evaluation.score}%. Fluent delivery and excellent Cambridge story retelling!`)
-            : `⭐ Keep practicing! Score: ${evaluation.score}%. Try reading all sentences clearly!`
+          message: evaluation.feedback || `🌟 Outstanding video challenge! Score: ${evaluation.score}%. Fluent delivery and excellent Cambridge story retelling!`,
+          spokenFeedback: evaluation.spokenFeedback
         };
         setFeedback(feedbackObj);
 
@@ -704,12 +770,14 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
               <div className="flex items-center gap-1.5 shrink-0">
                 <button
                   type="button"
-                  onClick={() => speakText(evalResult.feedback)}
-                  className="px-2 py-0.5 bg-white hover:bg-slate-50 text-purple-900 border border-purple-200 rounded-lg text-[11px] font-bold flex items-center gap-1 transition shadow-2xs"
+                  onClick={() => handleHearFeedback(evalResult.spokenFeedback || evalResult.feedback)}
+                  className={`px-2.5 py-1 bg-white hover:bg-purple-50 text-purple-900 border border-purple-200 rounded-lg text-xs font-bold flex items-center gap-1.5 transition shadow-2xs active:scale-95 ${
+                    isSpeakingFeedback ? 'ring-2 ring-purple-400 bg-purple-100 text-purple-950 animate-pulse' : ''
+                  }`}
                   title="Hear AI feedback spoken aloud"
                 >
-                  <Volume2 size={12} className="text-purple-600" />
-                  <span className="hidden sm:inline">Hear</span> Feedback
+                  <Volume2 size={13} className={isSpeakingFeedback ? "text-purple-700 animate-bounce" : "text-purple-600"} />
+                  <span>{isSpeakingFeedback ? 'Speaking...' : 'Hear Feedback'}</span>
                 </button>
                 <span className="px-2.5 py-1 bg-white rounded-lg border text-xs font-black shadow-2xs">
                   Score: {evalResult.score}%

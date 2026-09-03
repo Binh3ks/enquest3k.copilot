@@ -311,10 +311,11 @@ export const evaluateStoryRetell = (spokenText = '', scenes = []) => {
 
   // 3. Connectors & Discourse Markers Recognition
   const CONNECTORS = ['in the beginning', 'while', 'suddenly', 'then', 'after that', 'next', 'in the end', 'finally', 'so', 'because'];
-  let connectorHits = 0;
+  const detectedConnectors = [];
   for (const conn of CONNECTORS) {
-    if (normalizedSpoken.includes(conn)) connectorHits++;
+    if (normalizedSpoken.includes(conn)) detectedConnectors.push(conn);
   }
+  const connectorHits = detectedConnectors.length;
   const connectorScore = Math.min(100, connectorHits * 25);
 
   // 4. Weighted Cambridge Speaking Score
@@ -329,19 +330,45 @@ export const evaluateStoryRetell = (spokenText = '', scenes = []) => {
   const finalScore = Math.min(100, Math.max(30, rawScore));
   const isPassing = finalScore >= 60;
 
-  let feedbackMsg = "Good effort! Practice retelling your story with natural expression.";
+  // Rich, personalized Cambridge pedagogical spoken feedback
+  const connectorPhrases = detectedConnectors.slice(0, 3).map(c => `"${c}"`).join(', ');
+  let spokenFeedback = "";
+  let feedbackMsg = "";
+
   if (finalScore >= 85) {
-    feedbackMsg = "🌟 Outstanding video challenge! Fluent delivery and excellent Cambridge story retelling!";
+    feedbackMsg = `🌟 Outstanding video challenge! Score: ${finalScore}%. Excellent Cambridge story retelling!`;
+    spokenFeedback = `Outstanding job! You achieved a score of ${finalScore} percent on your video challenge. `;
+    if (matchedSceneCount >= sceneList.length) {
+      spokenFeedback += `You successfully described all ${sceneList.length} scenes with vivid detail. `;
+    } else {
+      spokenFeedback += `You covered ${matchedSceneCount} out of ${sceneList.length} scenes clearly. `;
+    }
+    if (detectedConnectors.length > 0) {
+      spokenFeedback += `Your use of linking words like ${connectorPhrases} gave your storytelling wonderful flow and structure. `;
+    }
+    spokenFeedback += "Excellent Cambridge Flyers story retelling!";
   } else if (finalScore >= 70) {
-    feedbackMsg = "✓ Great storytelling! You covered the story clearly with good linking words.";
-  } else if (finalScore >= 50) {
-    feedbackMsg = "👍 Good attempt! Try speaking a bit more clearly to hit all scene details.";
+    feedbackMsg = `✓ Great storytelling! Score: ${finalScore}%. Good linking words and story coverage.`;
+    spokenFeedback = `Great effort! You scored ${finalScore} percent. `;
+    spokenFeedback += `You covered ${matchedSceneCount} of the ${sceneList.length} scenes. `;
+    if (detectedConnectors.length > 0) {
+      spokenFeedback += `Good use of transitions like ${connectorPhrases}. `;
+    } else {
+      spokenFeedback += "To improve even more, try adding transition words like 'suddenly' and 'after that'. ";
+    }
+    spokenFeedback += "Keep up the fantastic practice!";
+  } else {
+    feedbackMsg = `👍 Good attempt! Score: ${finalScore}%. Practice hitting all scene details.`;
+    spokenFeedback = `Good try! You scored ${finalScore} percent and covered ${matchedSceneCount} scenes. `;
+    spokenFeedback += "Practice reading through the prompt sentences once more, and speak clearly into your microphone to capture all the story details!";
   }
 
   return {
     isCorrect: isPassing,
     score: finalScore,
     feedback: feedbackMsg,
+    spokenFeedback: spokenFeedback,
+    detectedConnectors: detectedConnectors,
     spokenText: normalizedSpoken,
     recognizedScenes: matchedSceneCount,
     totalScenes: sceneList.length,
