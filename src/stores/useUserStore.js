@@ -583,8 +583,17 @@ const useUserStore = create(
               const mergedWeek = { ...localWeek };
               for (const [sId, sProgress] of Object.entries(cloudData)) {
                 const localStation = mergedWeek[sId];
-                if (!localStation || (sProgress.score >= (localStation.score || 0))) {
+                if (!localStation) {
                   mergedWeek[sId] = sProgress;
+                } else {
+                  const cloudPanels = sProgress.data?.panelTexts?.length || 0;
+                  const localPanels = localStation.data?.panelTexts?.length || 0;
+                  const cloudTime = new Date(sProgress.updatedAt || 0).getTime();
+                  const localTime = new Date(localStation.updatedAt || localStation.data?._savedAt || 0).getTime();
+
+                  if (cloudPanels >= 5 || cloudPanels > localPanels || cloudTime >= localTime || (sProgress.score || 0) >= (localStation.score || 0)) {
+                    mergedWeek[sId] = sProgress;
+                  }
                 }
               }
               return {

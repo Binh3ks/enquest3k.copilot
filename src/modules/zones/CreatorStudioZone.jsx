@@ -64,55 +64,36 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
 
   // Sync saved story progress to Broadcast Studio on mount / progress update
   useEffect(() => {
-    if (!storySavedData) return;
-    // StoryWriting saves panelTexts array (5 panels for S3 Cambridge format)
-    const panelTexts = storySavedData.panelTexts || [];
-    const sceneLabels = [
-      { id: 1, func: 'setting',  title: 'Scene 1: Setting \uD83D\uDD35',  placeholder: '(Write Scene 1 in Story Writer to see your script here)' },
-      { id: 2, func: 'action',   title: 'Scene 2: Action \uD83D\uDFE2',   placeholder: '(Write Scene 2 in Story Writer to see your script here)' },
-      { id: 3, func: 'problem',  title: 'Scene 3: Problem \uD83D\uDFE0',  placeholder: '(Write Scene 3 in Story Writer to see your script here)' },
-      { id: 4, func: 'climax',   title: 'Scene 4: Response \uD83D\uDFE3', placeholder: '(Write Scene 4 in Story Writer to see your script here)' },
-      { id: 5, func: 'solution', title: 'Scene 5: Ending \u2B50',       placeholder: '(Write Scene 5 in Story Writer to see your script here)' },
+    // 5 canonical scene frames as fallback so prompter ALWAYS has 5 full scenes
+    const canonicalSteps = writingData?.picture_story?.steps || [];
+    const defaultScenes = [
+      { id: 1, func: 'setting',  title: 'Scene 1: Setting 🔵', defaultText: canonicalSteps[0]?.frame_L1 || canonicalSteps[0]?.caption || "In the beginning, Jake was walking carefully down the school corridor while a boy ran very fast past him." },
+      { id: 2, func: 'action',   title: 'Scene 2: Action 🟢',  defaultText: canonicalSteps[1]?.frame_L1 || canonicalSteps[1]?.caption || "Suddenly, the boy slipped on the wet floor and lost his balance. He fell down heavily and hurt his knee badly." },
+      { id: 3, func: 'problem',  title: 'Scene 3: Problem 🟠', defaultText: canonicalSteps[2]?.frame_L1 || canonicalSteps[2]?.caption || "Then, Jake called the school nurse. She arrived quickly with a clean bandage and treated him carefully." },
+      { id: 4, func: 'climax',   title: 'Scene 4: Response 🟣', defaultText: canonicalSteps[3]?.frame_L1 || canonicalSteps[3]?.caption || "After that, Headmaster Brown arrived and spoke to all the students about corridor safety rules." },
+      { id: 5, func: 'solution', title: 'Scene 5: Ending ⭐',  defaultText: canonicalSteps[4]?.frame_L1 || canonicalSteps[4]?.caption || "In the end, the Headmaster gave Jake a special safety award at the school assembly. Everyone felt proud of him." }
     ];
-    if (panelTexts.length >= 3) {
-      const podcastScenes = sceneLabels.map((s, i) => ({
+
+    const panelTexts = (storySavedData?.panelTexts && Array.isArray(storySavedData.panelTexts)) ? storySavedData.panelTexts : [];
+
+    // Map through ALL 5 SCENES: Use user's written panel if present, otherwise use canonical default text
+    const podcastScenes = defaultScenes.map((s, i) => {
+      const userPanel = (panelTexts[i] || '').trim();
+      const isRealUserText = userPanel && !userPanel.startsWith('(') && userPanel.length > 5;
+      return {
         id: s.id,
         narrative_function: s.func,
         title: s.title,
-        en: (panelTexts[i] || '').trim() || s.placeholder,
-      })).filter(s => !s.en.startsWith('('));
-      if (podcastScenes.length > 0) {
-        setStorySubmission({ mode: 'structured', finalText: storySavedData.text || panelTexts.join(' '), podcastScenes });
-        return;
-      }
-    }
-    // Legacy: fields-based (older data)
-    if (storySavedData.fields) {
-      const { setting = '', action = '', problem = '', solution = '' } = storySavedData.fields;
-      const podcastScenes = [
-        { id: 1, narrative_function: 'setting',  title: 'Scene 1: Setting', en: setting.trim() || '(Write Scene 1 in Story Writer)' },
-        { id: 2, narrative_function: 'action',   title: 'Scene 2: Action',  en: action.trim()   || '(Write Scene 2 in Story Writer)' },
-        { id: 3, narrative_function: 'problem',  title: 'Scene 3: Problem', en: problem.trim()  || '(Write Scene 3 in Story Writer)' },
-        { id: 4, narrative_function: 'solution', title: 'Scene 4: Ending',  en: solution.trim() || '(Write Scene 4 in Story Writer)' },
-      ];
-      setStorySubmission({ mode: 'structured', finalText: storySavedData.text || '', podcastScenes });
-    } else if (storySavedData?.text) {
-      const sentences = storySavedData.text
-        .replace(/([.!?])\s+/g, '$1|SPLIT|')
-        .split('|SPLIT|')
-        .map(s => s.trim())
-        .filter(s => s.length > 10);
-      const fifth = Math.ceil(sentences.length / 5);
-      const podcastScenes = [
-        { id: 1, narrative_function: null, title: 'Scene 1', en: sentences.slice(0, fifth).join(' ') || sentences[0] || storySavedData.text },
-        { id: 2, narrative_function: null, title: 'Scene 2', en: sentences.slice(fifth, fifth * 2).join(' ') || '' },
-        { id: 3, narrative_function: null, title: 'Scene 3', en: sentences.slice(fifth * 2, fifth * 3).join(' ') || '' },
-        { id: 4, narrative_function: null, title: 'Scene 4', en: sentences.slice(fifth * 3, fifth * 4).join(' ') || '' },
-        { id: 5, narrative_function: null, title: 'Scene 5', en: sentences.slice(fifth * 4).join(' ') || '' },
-      ].filter(s => s.en.trim().length > 0);
-      setStorySubmission({ mode: 'freeform', finalText: storySavedData.text, podcastScenes });
-    }
-  }, [storySavedData]);
+        en: isRealUserText ? userPanel : s.defaultText
+      };
+    });
+
+    setStorySubmission({
+      mode: 'structured',
+      finalText: storySavedData?.text || podcastScenes.map(s => s.en).join(' '),
+      podcastScenes
+    });
+  }, [storySavedData, writingData]);
 
   const handleStoryComplete = useCallback((xpEarned = 50, finalText = '', extraData = null) => {
     if (xpEarned > 0) setStudioXP(prev => prev + xpEarned);
