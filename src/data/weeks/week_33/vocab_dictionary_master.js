@@ -572,6 +572,118 @@ export const WEEK_33_MASTER_DICTIONARY = {
     example: "Friction is the physical grip between two contacting surfaces.",
     audioText: "surface",
     aliases: ["surfaces", "floor surface"]
+  },
+  "plastic soles": {
+    type: "Collocation",
+    ipa: "/ˈplæstɪk soʊlz/",
+    meaning: "đế giày bằng nhựa trơn (kém ma sát, dễ trượt ngã)",
+    example: "His sneakers had smooth plastic soles with no grip on wet tiles.",
+    audioText: "plastic soles",
+    aliases: ["plastic sole", "smooth plastic soles", "plastic shoe soles"]
+  },
+  "invisible science force": {
+    type: "Collocation",
+    ipa: "/ɪnˈvɪzəbl ˈsaɪəns fɔːrs/",
+    meaning: "lực khoa học vô hình (như lực ma sát)",
+    example: "The secret is an invisible science force called friction!",
+    audioText: "invisible science force",
+    aliases: ["invisible force", "science force", "an invisible science force"]
+  },
+  "slipped on the wet tiles": {
+    type: "Collocation",
+    ipa: "/slɪpt ɑːn ðə wɛt taɪlz/",
+    meaning: "trượt chân trên sàn gạch ướt",
+    example: "Tom slipped on the wet tiles because his shoes had no grip.",
+    audioText: "slipped on the wet tiles",
+    aliases: ["slip on the wet tiles", "slipping on the wet tiles", "slips on the wet tiles"]
+  },
+  "was running in a big hurry": {
+    type: "Collocation",
+    ipa: "/wəz ˈrʌnɪŋ ɪn ə bɪɡ ˈhɜːri/",
+    meaning: "đang chạy rất vội vã",
+    example: "Tom was running in a big hurry to science class.",
+    audioText: "was running in a big hurry",
+    aliases: ["running in a big hurry", "run in a big hurry", "in a big hurry"]
+  },
+  "gripped the floor tightly": {
+    type: "Collocation",
+    ipa: "/ɡrɪpt ðə flɔːr ˈtaɪtli/",
+    meaning: "bám chặt vào mặt sàn",
+    example: "His own rubber soles gripped the floor tightly without sliding.",
+    audioText: "gripped the floor tightly",
+    aliases: ["grip the floor tightly", "gripping the floor tightly", "grips the floor tightly", "gripped firmly"]
+  },
+  "stops you from sliding": {
+    type: "Collocation",
+    ipa: "/stɑːps juː frəm ˈslaɪdɪŋ/",
+    meaning: "ngăn bạn không bị trượt ngã",
+    example: "Friction is the friendly grip that stops you from sliding.",
+    audioText: "stops you from sliding",
+    aliases: ["stop you from sliding", "stopping you from sliding", "stops things from sliding", "stop things from sliding"]
+  },
+  "water steals your friction": {
+    type: "Collocation",
+    ipa: "/ˈwɔːtər stiːlz jɔːr ˈfrɪkʃn/",
+    meaning: "nước làm mất lực ma sát (lấy cắp ma sát)",
+    example: "Rubber gives strong grip, but water always steals your friction!",
+    audioText: "water steals your friction",
+    aliases: ["steals your friction", "water steals friction", "steal your friction"]
+  },
+  "smart scientist": {
+    type: "Collocation",
+    ipa: "/smɑːrt ˈsaɪəntɪst/",
+    meaning: "nhà khoa học thông thái",
+    example: "From now on, I will walk like a smart scientist!",
+    audioText: "smart scientist",
+    aliases: ["walk like a smart scientist", "smart scientists"]
+  },
+  "ice rinks": {
+    type: "Collocation",
+    ipa: "/aɪs rɪŋks/",
+    meaning: "sân trượt băng",
+    example: "Did you ever wonder why wet floors turn into ice rinks?",
+    audioText: "ice rinks",
+    aliases: ["ice rink", "an ice rink"]
+  },
+  "slippery slide": {
+    type: "Collocation",
+    ipa: "/ˈslɪpəri slaɪd/",
+    meaning: "cầu trượt trơn trượt nguy hiểm",
+    example: "This water layer turns safe floors into a slippery slide!",
+    audioText: "slippery slide",
+    aliases: ["slippery slides", "a slippery slide"]
+  },
+  "applied a clean bandage": {
+    type: "Collocation",
+    ipa: "/əˈplaɪd ə kliːn ˈbændɪdʒ/",
+    meaning: "băng bó bằng băng gạc sạch",
+    example: "The nurse applied a clean bandage to protect the cut.",
+    audioText: "applied a clean bandage",
+    aliases: ["apply a clean bandage", "applying a clean bandage"]
+  },
+  "special safety award": {
+    type: "Collocation",
+    ipa: "/ˈspɛʃl ˈseɪfti əˈwɔːrd/",
+    meaning: "giải thưởng an toàn đặc biệt",
+    example: "The headmaster gave Jake a special safety award during assembly.",
+    audioText: "special safety award",
+    aliases: ["safety award", "a special safety award"]
+  },
+  "felt proud of him": {
+    type: "Collocation",
+    ipa: "/fɛlt praʊd əv hɪm/",
+    meaning: "cảm thấy tự hào về bạn ấy",
+    example: "All the teachers and students felt proud of him.",
+    audioText: "felt proud of him",
+    aliases: ["feel proud of him", "feeling proud of him"]
+  },
+  "spoke to all the students": {
+    type: "Collocation",
+    ipa: "/spoʊk tuː ɔːl ðə ˈstjuːdnts/",
+    meaning: "nói chuyện trước toàn thể học sinh",
+    example: "The headmaster spoke to all the students about corridor safety.",
+    audioText: "spoke to all the students",
+    aliases: ["speak to all the students", "speaking to all the students"]
   }
 };
 

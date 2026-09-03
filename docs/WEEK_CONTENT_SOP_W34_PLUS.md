@@ -145,6 +145,9 @@ shadowing: {
   - 100% mục trong `vocab_focus` phải là **cụm từ tự nhiên hoàn chỉnh (Chunks, Collocations, Compound Nouns)**. CẤM bẻ nhỏ thành từ đơn rời rạc vô nghĩa.
 - **4-Option MCQ Check Questions Standard**:
   - Toàn bộ 5 câu hỏi Check Questions BẮT BUỘC có **4 lựa chọn (A, B, C, D)** với các phương án nhiễu (distractors) tự nhiên, chặt chẽ.
+- **Mandatory Dictionary Synchronization Invariant**:
+  - Mọi chunks/collocations trong `vocab_focus` và bài đọc BẮT BUỘC phải được khai báo trong `src/data/weeks/weekXX/vocab_dictionary_master.js` (và `src/data/dictionary.json`) với đầy đủ `ipa`, `meaning` (tiếng Việt có dấu), `example`, `type`, `audioText`, và `aliases`.
+  - Tuyệt đối không để trống khiến popup từ điển `HoverWord` bị treo spinner "Looking up example...".
 - **Audio Assets Pre-generation Requirement**:
   - Bắt buộc sinh sẵn 3 file: `clil_X_p1.mp3` (Part 1), `clil_X_p2.mp3` (Part 2), `clil_X.mp3` (Full text) giọng `en-US-Journey-F`.
 - Schema:

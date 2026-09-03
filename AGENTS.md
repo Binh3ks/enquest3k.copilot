@@ -251,6 +251,10 @@ Source: `.devin/workflows/start.md` §3.
    - CẤM bẻ nhỏ thành từ đơn rời rạc vô nghĩa (`fast`, `wet`, `floor`).
 4. **4-Option MCQ Check Questions Standard**:
    - Mặc dù chuẩn khảo thí Cambridge YLE chính thức dùng 3 lựa chọn (A, B, C), hệ thống câu hỏi Check Questions của Fact Finder / CLIL Explorer **BẮT BUỘC cung cấp 4 lựa chọn (A, B, C, D)** với các phương án nhiễu (distractors) tự nhiên, chặt chẽ, kích thích tư duy và đồng bộ với thói quen kiểm tra phổ thông tại Việt Nam.
+5. **Mandatory Dictionary Synchronization Invariant (Đồng bộ Từ điển Bắt buộc)**:
+   - Khi tạo bất kỳ chunks, collocations, hoặc từ vựng mới nào trong `vocab_focus`, `clil_article`, `story_scenes`, hoặc `picture_story`, **BẮT BUỘC PHẢI ĐỒNG BỘ NGAY LẬP TỨC VÀO TỪ ĐIỂN** (`src/data/weeks/weekXX/vocab_dictionary_master.js` và `src/data/dictionary.json`).
+   - Mỗi mục từ điển BẮT BUỘC có đầy đủ: `meaning` (tiếng Việt có dấu chuẩn xác), `ipa` (phiên âm quốc tế), `example` (câu ví dụ ngữ cảnh), `type` ("Collocation" / "Noun" / "Verb"), `audioText`, và `aliases` (các biến thể hình thái).
+   - **CẤM TUYỆT ĐỐI** để sót cụm từ không có trong từ điển khiến popup `HoverWord` bị treo spinner *"Looking up example..."*.
 
 ## 🔒 FROZEN AUDIO PIPELINE: PRE-GENERATED MP3 & 3-TIER FALLBACK STANDARD (W33+) — 2026-08-18
 **BẮT BUỘC áp dụng cho Tuần 33 và TOÀN BỘ các tuần sản xuất mới (W34–W72). KHÔNG ĐƯỢC PHÉP BỎ QUA:**
