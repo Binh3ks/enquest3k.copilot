@@ -523,15 +523,21 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
    - Narrative content across observation, clue, sentence pills, and final report MUST stay 100% synchronized with Fact Finder story facts.
 5. **Info Exchange Mobile Compression**:
    - Headers, tables, and Mascot voice controller must use tight vertical margins and compact padding (`p-2.5 sm:p-4`) to eliminate unnecessary downward scrolling.
-6. **Boss Castle Unofficial Mock Standard & Clutter Elimination**:
-   - CẤM TUYỆT ĐỐI nhãn `"Official Cambridge Assessment"` trên bài tập hoặc header.
-   - Luôn sử dụng nhãn rõ ràng: `Cambridge A2 Flyers Practice Mock — [Part Name]`.
-   - Instructions (e.g., *"Listen and draw lines. There is one example."*) must be prominent and highlighted.
-   - Loại bỏ các nút Map thừa, Exam Intro audio và Calibrator panel khỏi giao diện học sinh.
-   - Nút `Clear` phải nằm cùng hàng với nút `Play Audio (2×)`.
+6. **Boss Castle Practice Standard (No Mock, No Official, Practice Only)**:
+   - CẤM TUYỆT ĐỐI nhãn `"Official Cambridge Assessment"` hoặc từ `"Mock"` trên tất cả các heading và part.
+   - Chuẩn tiêu đề đồng nhất duy nhất: `Cambridge A2 Flyers Practice — [Part Name]`.
+   - CẤM TUYỆT ĐỐI các nút màu đen `← Map` với mũi tên sang trái ở mọi Cambridge part.
+   - Nút `Clear Lines` phải luôn nằm trên cùng một hàng với nút `Play Audio (2×)` (`flex-nowrap`, không ngắt dòng).
+   - SVG Line Matcher: Cho phép `overflow: visible` trên `<svg>` để các nét đứt (dashed lines) xuyên qua khung hình và nối trực tiếp, liền mạch vào tâm các nút tên ở trên.
+   - Speaking Part 1 (Find the Differences):
+     - Heading: Bỏ phần trong ngoặc `(Look at the two pictures)`, chỉ giữ `Find the Differences`.
+     - Counter: Bỏ chữ `Found`, chỉ hiển thị định dạng số gọn: `${count}/${total} differences` (ví dụ: `0/4 differences`, `1/4 differences`).
+     - Thu gọn chiều cao hình ảnh và padding để kéo toàn bộ lên trên màn hình.
    - Bỏ màn hình ngoài `<BossIntro>` — học sinh bấm vào Station Day 5 là vào thẳng bài làm (`hasStarted: true`).
    - Thanh điều hướng Boss Castle dùng theme tươi sáng, rực rỡ (`bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50`, border indigo) với các tab Part nổi bật, tương phản cao.
-7. **Word Bank Matching Compact Layout**:
+7. **Word Bank Matching & Speaking & Passport Layout Compression**:
    - Word Bank pool bố trí dạng 2 cột trên điện thoại di động (`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5`) và dạng dock sticky cố định ở trên cùng để học sinh không phải cuộn lên cuộn xuống.
-   - Thu hẹp padding của các hàng câu hỏi/định nghĩa (`p-2 sm:p-2.5`, `space-y-1.5 sm:space-y-2`) để kéo các phần bên dưới lên.
+   - Thu hẹp triệt để padding của các hàng câu hỏi/định nghĩa (`p-1.5 sm:p-2`, `space-y-1 sm:space-y-1.5`), card margins (`my-1 sm:my-2`) để kéo toàn bộ nội dung lên trên.
+   - Speaking & Passport / Personal Questions: Tối ưu padding, giảm gap giữa các câu hỏi, card padding `p-2.5 sm:p-3.5` để loại bỏ hoàn toàn khoảng trống thừa.
+
 
