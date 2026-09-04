@@ -265,7 +265,7 @@
                 "partNumber": { "type": "integer", "enum": [2] },
                 "name": { "type": "string" },
                 "mechanic": { "type": "string" },
-                "infoGapFields": { "type": "integer", "enum": [4] },
+                "infoGapFields": { "type": "integer", "enum": [4, 5] },
                 "knownFalseMin": { "type": "integer", "enum": [2] },
                 "mechanicComponent": { "type": "string", "enum": ["InformationExchangeP2.jsx"] },
                 "componentExistenceVerified": { "type": "boolean", "enum": [true] }

@@ -75,6 +75,23 @@ export const speakingHub = {
             "Who stopped to help?"
           ],
           nova_reply: "Jake stopped walking and called the school nurse right away."
+        },
+        {
+          id: "field_a5",
+          label: "how / feel now?",
+          cue_word: "how",
+          value: "?",
+          is_missing: true,
+          cue_prompt: "how / feel now?",
+          grammar_scaffold: "How does Tom feel now?",
+          acceptable_questions: [
+            "How does Tom feel now?",
+            "How does he feel now?",
+            "How is Tom feeling now?",
+            "How is he feeling now?",
+            "Is Tom feeling better now?"
+          ],
+          nova_reply: "Tom feels much better now and his knee is recovering well."
         }
       ]
     },
@@ -85,7 +102,9 @@ export const speakingHub = {
       fields: [
         {
           id: "field_b1",
-          label: "Where did Jake help Tom?",
+          topic: "Location",
+          short_label: "Location",
+          label: "Location: Near the science room",
           value: "Near the science room.",
           nova_question: "Where did Jake help his friend?",
           audio_url: "/audio/week33/info_exchange_q1.mp3",
@@ -99,7 +118,9 @@ export const speakingHub = {
         },
         {
           id: "field_b2",
-          label: "What first-aid items did the nurse use?",
+          topic: "First-aid items",
+          short_label: "First-aid items",
+          label: "First-aid items: Clean bandage & cold pack",
           value: "A clean bandage and a cold pack.",
           nova_question: "What first aid items did the nurse use?",
           audio_url: "/audio/week33/info_exchange_q2.mp3",
@@ -113,7 +134,9 @@ export const speakingHub = {
         },
         {
           id: "field_b3",
-          label: "How fast did the nurse arrive?",
+          topic: "Arrival time",
+          short_label: "Arrival time",
+          label: "Arrival time: Within two minutes",
           value: "Within two minutes.",
           nova_question: "How fast did the school nurse arrive to help?",
           audio_url: "/audio/week33/info_exchange_q3.mp3",
@@ -128,7 +151,9 @@ export const speakingHub = {
         },
         {
           id: "field_b4",
-          label: "Who praised Jake?",
+          topic: "Praised by",
+          short_label: "Praised by",
+          label: "Praised by: Headmaster Brown",
           value: "The headmaster praised him in the school assembly.",
           nova_question: "Who praised Jake for his quick action?",
           audio_url: "/audio/week33/info_exchange_q4.mp3",
@@ -139,6 +164,23 @@ export const speakingHub = {
             "The headmaster.",
             "Headmaster Brown praised Jake.",
             "The headmaster praised him."
+          ]
+        },
+        {
+          id: "field_b5",
+          topic: "Safety rule",
+          short_label: "Safety rule",
+          label: "Safety rule: Never run in corridors",
+          value: "Never run in school corridors.",
+          nova_question: "What safety rule did the headmaster remind all students?",
+          audio_url: "/audio/week33/info_exchange_q5.mp3",
+          hint: "Look at your card — what must students never do inside?",
+          acceptable_answers: [
+            "Never run in school corridors.",
+            "Students must never run in corridors.",
+            "Never run inside the school.",
+            "Walk carefully and never run inside.",
+            "Always walk carefully in corridors."
           ]
         }
       ]
@@ -153,8 +195,12 @@ export const speakingHub = {
       { speaker: 'woman', text: "It happened this morning right after science class." },
       { speaker: 'man',   text: "Who helped Tom immediately?" },
       { speaker: 'woman', text: "Jake stopped walking and called the school nurse right away." },
+      { speaker: 'man',   text: "How does Tom feel now?" },
+      { speaker: 'woman', text: "Tom feels much better now and his knee is recovering well." },
       { speaker: 'woman', text: "Now it is my turn to ask you questions about Jake's first aid action. What first aid item did the nurse use?" },
-      { speaker: 'man',   text: "The nurse used a clean bandage and a cold pack." }
+      { speaker: 'man',   text: "The nurse used a clean bandage and a cold pack." },
+      { speaker: 'woman', text: "What safety rule did the headmaster remind everyone?" },
+      { speaker: 'man',   text: "Never run in school corridors." }
     ]
   },
   picture_story: {
