@@ -164,7 +164,7 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
         <div>
           <span className="px-3 py-1 bg-amber-500/10 text-amber-800 text-[11px] font-black uppercase tracking-wider rounded-full border border-amber-300">
-            Cambridge A2 Flyers Practice — Listening Part 5
+            Flyers Practice
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
             🎨 Color & Write On The Picture

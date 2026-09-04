@@ -58,24 +58,11 @@
         }
       }, true);
 
-      // 4. Eruda Mobile DevTools for live on-device debugging
-      (function() {
-        var isDebug = /[?&]debug(=1|=[^&]+|&|$)/i.test(window.location.search) || localStorage.getItem('debug') === '1';
-        if (isDebug) {
-          try { localStorage.setItem('debug', '1'); } catch(_) {}
-          var script = document.createElement('script');
-          script.src = 'https://cdn.jsdelivr.net/npm/eruda';
-          script.onload = function() {
-            if (window.eruda) {
-              window.eruda.init({
-                tool: ['console', 'network', 'elements', 'resources', 'info']
-              });
-              console.log('[Debug] 🚀 Eruda Mobile DevTools initialized successfully!');
-            }
-          };
-          document.head.appendChild(script);
-        }
-      })();
+      // Clear any leftover mobile debug flag so floating dev tools never appear
+      try {
+        localStorage.removeItem('debug');
+        localStorage.removeItem('eruda');
+      } catch(_) {}
     </script>
   </head>
   <body>

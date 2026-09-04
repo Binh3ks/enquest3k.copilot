@@ -118,7 +118,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-2 border-b border-slate-200 gap-1.5">
         <div>
           <span className="px-2.5 py-0.5 bg-indigo-100 text-indigo-900 text-[10.5px] font-black rounded-full uppercase tracking-wider">
-            Cambridge A2 Flyers Practice — Reading & Writing Part 1
+            Flyers Practice
           </span>
           <h2 className="text-base sm:text-lg font-black text-slate-900 mt-0.5">
             Word Bank Matching

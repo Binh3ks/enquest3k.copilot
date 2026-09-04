@@ -1620,9 +1620,10 @@ export const VoiceService = {
         }
       };
 
-      // 🎯 STRICT: Only listen to 'playing' (sound actually outputting to speaker/headphones)
-      // DO NOT listen to 'play' because 'play' fires optimistically before sound emits
       audio.addEventListener('playing', handlePlaying, { once: true });
+      audio.addEventListener('timeupdate', () => {
+        if (!started && audio.currentTime > 0) handlePlaying();
+      }, { once: true });
 
       audio.onended = () => {
         if (this._currentAudio === audio) this._currentAudio = null;

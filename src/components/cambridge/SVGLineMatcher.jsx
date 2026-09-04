@@ -205,7 +205,7 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
       <div className="bg-gradient-to-r from-indigo-900 to-slate-900 text-white px-3.5 py-2 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 shadow-sm">
         <div>
           <h2 className="text-xs sm:text-sm font-bold text-slate-300 flex items-center gap-1.5">
-            🎧 Cambridge A2 Flyers Practice — Listening Part 1
+            🎧 Flyers Practice
           </h2>
         </div>
         <p className="text-xs sm:text-sm font-black text-amber-300">

@@ -432,7 +432,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
             <ChevronLeft size={16} /> Edit Scenes
           </button>
           <span className="text-xs font-black uppercase text-indigo-900 tracking-wider">
-            CAMBRIDGE A2 FLYERS — READING & WRITING PART 7
+            Write 2-3 sentences to describe the scenes
           </span>
           <span
             data-testid="total-words-counter"
@@ -604,7 +604,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
       {/* Cambridge Exam Header */}
       <div className="pb-1.5 border-b border-slate-200 flex items-center justify-between flex-wrap gap-1">
         <span className="px-2.5 py-0.5 bg-indigo-100 text-indigo-900 text-[10px] sm:text-[11px] font-black rounded-full uppercase tracking-wider">
-          Cambridge A2 Flyers — Reading & Writing Part 7
+          Write 2-3 sentences to describe the scenes
         </span>
         <p className="text-[11px] text-indigo-700 font-bold hidden sm:block">
           Look at the pictures. Write 40 or more words.

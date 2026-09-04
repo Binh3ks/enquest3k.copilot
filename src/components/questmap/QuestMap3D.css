@@ -799,10 +799,17 @@
 }
 
 @media (max-width: 768px) {
+  .qm3d-header {
+    padding: max(10px, env(safe-area-inset-top)) 10px 10px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
   .qm3d-week-badge {
-    padding: 4px 10px;
+    padding: 4px 8px;
     border-radius: 12px;
-    gap: 6px;
+    gap: 4px;
   }
   .qm3d-week-label {
     font-size: 12px;

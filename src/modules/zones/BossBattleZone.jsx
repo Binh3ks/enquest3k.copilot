@@ -445,19 +445,22 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         data-testid="boss-assessment-header"
         className={`rounded-2xl p-2 sm:p-2.5 border-2 shadow-xs flex flex-wrap items-center justify-between gap-2 ${getHeaderTheme()}`}
       >
-        <div className="flex items-center gap-2 shrink-0">
-          <span
-            data-testid="boss-paper-badge"
-            className={`px-2.5 py-0.5 rounded-lg text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-2xs ${
-              currentTask.paper === PAPER.LISTENING
-                ? 'bg-indigo-600 text-white'
-                : currentTask.paper === PAPER.READING_WRITING
-                ? 'bg-emerald-600 text-white'
-                : 'bg-amber-500 text-slate-950'
-            }`}
+        {/* Left Side: Map button at TOP-LEFT + Single Non-repeating Title */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {/* Top-Left: Map button with back arrow */}
+          <button
+            type="button"
+            data-testid="boss-back-to-map"
+            onClick={handleReturnToMap}
+            className="px-2.5 py-1 bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-300 rounded-xl text-xs font-black flex items-center gap-1.5 shadow-2xs transition active:scale-95 shrink-0"
+            title="Back to Map"
+            aria-label="Back to Map"
           >
-            {currentTask.paper}
-          </span>
+            <ArrowLeft size={14} className="text-slate-600" />
+            <span>Map</span>
+          </button>
+
+          {/* Unified title (no duplicate paper tag) */}
           <div
             data-testid="boss-active-part"
             data-part-id={currentTask.partId}
@@ -469,7 +472,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
           </div>
         </div>
 
-        {/* Part Tabs (for multi-part stations: L1/L2) */}
+        {/* Right Side: Part Tabs (for multi-part stations: L1/L2) */}
         {stationTasks.length > 1 && (
           <div data-testid="boss-part-tabs" className="flex items-center gap-1 bg-white/80 p-0.5 rounded-xl border border-slate-200 shadow-2xs">
             {stationTasks.map((task) => {
@@ -500,18 +503,6 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
             })}
           </div>
         )}
-
-        {/* Right side: Map button with back arrow */}
-        <button
-          type="button"
-          onClick={handleReturnToMap}
-          className="ml-auto px-2.5 py-1 bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-300 rounded-xl text-xs font-black flex items-center gap-1.5 shadow-2xs transition active:scale-95 shrink-0"
-          title="Back to Map"
-          aria-label="Back to Map"
-        >
-          <ArrowLeft size={14} className="text-slate-600" />
-          <span>Map</span>
-        </button>
       </div>
 
       {/* Task Content Card */}

@@ -110,7 +110,7 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
 
         <div className="text-right">
           <span className="text-[10px] font-black uppercase text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-md border border-indigo-200 block w-max ml-auto">
-            Cambridge A2 Flyers Practice — Listening Part 3
+            Flyers Practice
           </span>
           <p className="text-[11px] text-slate-500 font-bold mt-0.5">
             👉 Listen and write a letter in each box. There is one example.

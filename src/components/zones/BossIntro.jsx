@@ -54,7 +54,7 @@ export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0
             <div className="text-xs sm:text-sm font-black text-white">{currentTask.name}</div>
           </div>
           <span className="px-2.5 py-1 bg-purple-600/40 border border-purple-400/40 text-purple-200 rounded-lg text-xs font-bold shrink-0">
-            Cambridge A2 Flyers Practice
+            Flyers Practice
           </span>
         </div>
       )}

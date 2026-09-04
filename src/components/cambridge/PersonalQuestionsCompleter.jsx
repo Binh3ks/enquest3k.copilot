@@ -115,7 +115,7 @@ export function PersonalQuestionsCompleter({ customData, data: propData, onCompl
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-2 border-b border-slate-200 gap-1.5">
         <div>
           <span className="px-2.5 py-0.5 bg-violet-100 text-violet-900 text-[10.5px] font-black rounded-full uppercase tracking-wider">
-            Cambridge A2 Flyers Practice — Speaking Part 4
+            Flyers Practice
           </span>
           <h2 className="text-base sm:text-lg font-black text-slate-900 mt-0.5">
             Personal Questions

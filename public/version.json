@@ -1,9 +1,9 @@
 {
-  "commit": "a67b660de30929987e89aeacb37de39f2ef17e75",
-  "git_commit": "a67b660de30929987e89aeacb37de39f2ef17e75",
-  "shortCommit": "a67b660d",
-  "message": "test(boss): add playwright audit screenshots verifying all Cambridge Practice fixes",
-  "builtAt": "2026-09-03T12:35:24.362Z",
-  "build_timestamp": "2026-09-03T12:35:24.363Z",
+  "commit": "9538bd2b2e82c946fbab71e44bf53a7b5def92b3",
+  "git_commit": "9538bd2b2e82c946fbab71e44bf53a7b5def92b3",
+  "shortCommit": "9538bd2b",
+  "message": "fix(ux-sync): unify boss castle headers, shorten flyers practice labels, and fix voice shadow karaoke sync",
+  "builtAt": "2026-09-04T02:45:00.000Z",
+  "build_timestamp": "2026-09-04T02:45:00.000Z",
   "env": "production"
 }

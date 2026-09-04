@@ -423,7 +423,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
       <div className="pb-2 sm:pb-2.5 border-b border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-2">
         <div>
           <span className="px-2.5 py-0.5 bg-purple-100 text-purple-900 text-[10px] font-black rounded-full uppercase tracking-wider flex items-center gap-1 w-max">
-            Cambridge A2 Flyers Practice — Speaking Part 2
+            Flyers Practice
           </span>
           <h2 className="text-sm sm:text-lg font-black text-slate-900 mt-0.5">
             Information Exchange (Ask & Answer Questions)

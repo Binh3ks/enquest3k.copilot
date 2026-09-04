@@ -64,15 +64,19 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   const sentenceStreamRef = useRef(null);
   const sentenceSpeechRecRef = useRef(null);
   const recognizedTranscriptRef = useRef({});
-  const karaokeIntervalRef = useRef(null);
+  const karaokeRafRef = useRef(null);
+
+  const stopKaraokeHighlight = () => {
+    if (karaokeRafRef.current) {
+      cancelAnimationFrame(karaokeRafRef.current);
+      karaokeRafRef.current = null;
+    }
+  };
 
   // Clean up timers & media streams on unmount (prevent mic privacy indicator leak)
   useEffect(() => {
     return () => {
-      if (karaokeIntervalRef.current) {
-        clearInterval(karaokeIntervalRef.current);
-        karaokeIntervalRef.current = null;
-      }
+      stopKaraokeHighlight();
       if (sentenceStreamRef.current) {
         sentenceStreamRef.current.getTracks().forEach(track => track.stop());
         sentenceStreamRef.current = null;
@@ -262,12 +266,9 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
     }
   }, [currentGear, storySentences, activeWeek]);
 
-  // Word-by-Word Karaoke Highlighting Simulation (Linear Pacing Heuristic)
+  // Word-by-Word Karaoke Highlighting Simulation (Real-Time Audio Sync & Weighted Pacing)
   const handleSpeakSentence = (sentenceText, idx, playbackId = null, onAudioStartCallback = null, caller = 'unknown') => {
-    if (karaokeIntervalRef.current) {
-      clearInterval(karaokeIntervalRef.current);
-      karaokeIntervalRef.current = null;
-    }
+    stopKaraokeHighlight();
 
     const words = sentenceText.split(/\s+/).filter(Boolean);
 
@@ -298,33 +299,70 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
       });
       setKaraokeStreak(prev => prev + 1);
 
-      if (karaokeIntervalRef.current) {
-        clearInterval(karaokeIntervalRef.current);
-        karaokeIntervalRef.current = null;
-      }
+      stopKaraokeHighlight();
 
-      // Linear word pacing approximation based on actual duration
-      const totalDurationMs = (duration && duration > 0.5) ? (duration * 1000) : (words.length * 320);
-      const msPerWord = Math.max(180, Math.min(600, Math.floor(totalDurationMs / Math.max(1, words.length))));
+      // Calculate word time boundaries using phoneme / character length weighting:
+      // Longer words ("carefully", "corridor", "immediately") naturally take more time,
+      // while shorter function words ("was", "the", "to", "in") take less time.
+      const weights = words.map(w => {
+        const clean = w.replace(/[^a-zA-Z]/g, '');
+        return Math.max(2, clean.length);
+      });
+      const totalWeight = weights.reduce((sum, w) => sum + w, 0);
 
-      let wordCount = 0;
-      karaokeIntervalRef.current = setInterval(() => {
+      // Total audio duration: use reported duration or fallback to speech rate
+      const effectiveDuration = (duration && duration > 0.5)
+        ? duration
+        : Math.max(1.8, words.length * 0.42);
+
+      let accumulated = 0;
+      const wordIntervals = words.map((w, i) => {
+        const wordDur = (weights[i] / totalWeight) * effectiveDuration;
+        const start = accumulated;
+        const end = accumulated + wordDur;
+        accumulated = end;
+        return { word: w, start, end };
+      });
+
+      const startPerfTime = performance.now();
+
+      const tick = () => {
         if (playbackId !== null && playbackId !== currentPlaybackId.current) {
-          clearInterval(karaokeIntervalRef.current);
-          karaokeIntervalRef.current = null;
+          stopKaraokeHighlight();
           return;
         }
-        wordCount++;
-        if (wordCount < words.length) {
-          setActiveWordIdx(wordCount);
+
+        const audio = VoiceService._currentAudio;
+        let currentSec = 0;
+        if (audio && typeof audio.currentTime === 'number' && !isNaN(audio.currentTime) && audio.currentTime >= 0) {
+          currentSec = audio.currentTime;
         } else {
-          if (karaokeIntervalRef.current) {
-            clearInterval(karaokeIntervalRef.current);
-            karaokeIntervalRef.current = null;
-          }
-          setActiveWordIdx(null);
+          currentSec = (performance.now() - startPerfTime) / 1000;
         }
-      }, msPerWord);
+
+        // Find which word corresponds to currentSec
+        let matchedIdx = -1;
+        for (let i = 0; i < wordIntervals.length; i++) {
+          if (currentSec >= wordIntervals[i].start && currentSec < wordIntervals[i].end) {
+            matchedIdx = i;
+            break;
+          }
+        }
+
+        if (matchedIdx === -1) {
+          if (currentSec >= effectiveDuration) {
+            matchedIdx = words.length - 1; // hold last word until audio ends
+          } else {
+            matchedIdx = 0;
+          }
+        }
+
+        setActiveWordIdx(prev => (prev === matchedIdx ? prev : matchedIdx));
+
+        karaokeRafRef.current = requestAnimationFrame(tick);
+      };
+
+      karaokeRafRef.current = requestAnimationFrame(tick);
     };
 
     const sentenceAudioUrl = `/audio/week${activeWeek || 33}/shadowing_${idx + 1}.mp3`;
@@ -335,10 +373,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
       1.0,
       () => {
         if (playbackId !== null && playbackId !== currentPlaybackId.current) return;
-        if (karaokeIntervalRef.current) {
-          clearInterval(karaokeIntervalRef.current);
-          karaokeIntervalRef.current = null;
-        }
+        stopKaraokeHighlight();
         setActiveWordIdx(null);
         setActiveSentenceIdx(null);
       },
@@ -358,10 +393,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
     currentPlaybackId.current += 1;
     const playbackId = currentPlaybackId.current;
 
-    if (karaokeIntervalRef.current) {
-      clearInterval(karaokeIntervalRef.current);
-      karaokeIntervalRef.current = null;
-    }
+    stopKaraokeHighlight();
     if (sentenceMediaRecorderRef.current && sentenceMediaRecorderRef.current.state !== 'inactive') {
       try { sentenceMediaRecorderRef.current.stop(); } catch (_) {}
       sentenceMediaRecorderRef.current = null;
@@ -380,10 +412,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   const playFullStoryAudio = () => {
     markTiming('button-tap', 'source=full-story-audio');
     currentPlaybackId.current += 1;
-    if (karaokeIntervalRef.current) {
-      clearInterval(karaokeIntervalRef.current);
-      karaokeIntervalRef.current = null;
-    }
+    stopKaraokeHighlight();
     if (sentenceMediaRecorderRef.current && sentenceMediaRecorderRef.current.state !== 'inactive') {
       try { sentenceMediaRecorderRef.current.stop(); } catch (_) {}
       sentenceMediaRecorderRef.current = null;
@@ -406,10 +435,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
     currentPlaybackId.current += 1;
     const playbackId = currentPlaybackId.current;
 
-    if (karaokeIntervalRef.current) {
-      clearInterval(karaokeIntervalRef.current);
-      karaokeIntervalRef.current = null;
-    }
+    stopKaraokeHighlight();
     if (sentenceMediaRecorderRef.current && sentenceMediaRecorderRef.current.state !== 'inactive') {
       try { sentenceMediaRecorderRef.current.stop(); } catch (_) {}
       sentenceMediaRecorderRef.current = null;
@@ -591,10 +617,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   };
 
   const stopSentenceShadowing = (idx) => {
-    if (karaokeIntervalRef.current) {
-      clearInterval(karaokeIntervalRef.current);
-      karaokeIntervalRef.current = null;
-    }
+    stopKaraokeHighlight();
     setActiveWordIdx(null);
 
     try { VoiceService.pauseTTS(); } catch (_) {}

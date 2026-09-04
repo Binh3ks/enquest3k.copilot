@@ -146,7 +146,7 @@ function levenshteinDistance(s1, s2) {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
           <span className="px-3 py-1 bg-amber-100 text-amber-900 text-[11px] font-black rounded-full uppercase tracking-wider">
-            Cambridge A2 Flyers Practice — Reading & Writing Part 5
+            Flyers Practice
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
             Story Text Extraction

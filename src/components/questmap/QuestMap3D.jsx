@@ -274,24 +274,24 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
 
       {/* Header */}
       <div className="qm3d-header">
-        <div className="qm3d-header-left">
+        <div className="qm3d-header-left shrink-0">
           <button className="qm3d-hamburger" onClick={onToggleSidebar} aria-label="Menu">
-            <Menu size={22} />
+            <Menu size={20} />
           </button>
           <div className="qm3d-logo">
             <span className="qm3d-logo-fox">🦊</span>
-            <span className="qm3d-logo-text">LEXIO</span>
+            <span className="qm3d-logo-text hidden sm:inline">LEXIO</span>
           </div>
         </div>
         {/* 1-Line Compact Trip Badge */}
-        <div className="qm3d-week-badge">
+        <div className="qm3d-week-badge shrink-0">
           <span className="qm3d-week-label">TRIP {weekId}</span>
           <span className="qm3d-week-dot">•</span>
           <span className="qm3d-progress-text">{weekQuestCount}/{totalQuests}</span>
         </div>
 
         {/* Quick Access Actions: Full buttons on sm+, Compact Hub button on mobile (<sm) */}
-        <div className="qm3d-header-right">
+        <div className="qm3d-header-right shrink-0">
           {/* Desktop/Tablet (>= sm): 3 distinct action buttons with labels */}
           <div className="hidden sm:flex items-center gap-2">
             <button
