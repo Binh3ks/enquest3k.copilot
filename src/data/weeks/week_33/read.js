@@ -29,57 +29,57 @@ export default {
     {
       scene_id: "scene_2",
       scene_number: 2,
-      title_en: "Scene 2: Running Fast Past the Room",
-      description_en: "A boy was **running very fast** past the **science room**.",
-      description: "A boy was **running very fast** past the **science room**.",
+      title_en: "Scene 2: Running Fast & Slipping on Wet Floor",
+      description_en: "A boy was **running very fast** past the **science room**, **lost his balance**, and **slipped**.",
+      description: "A boy was **running very fast** past the **science room**, **lost his balance**, and **slipped**.",
       image_url: "/images/week33/webtoon_scene_2.png",
       audio_url: "/audio/week33/scene_2.mp3",
       lexical_chunks: [
-        { word: "running", chunk: "running very fast", vi: "chạy rất nhanh", x: 62, y: 50 },
-        { word: "science", chunk: "science room", vi: "phòng khoa học", x: 86, y: 30 },
-        { word: "hurry", chunk: "in a hurry", vi: "vội vã", x: 35, y: 65 }
+        { word: "running", chunk: "running very fast", vi: "chạy rất nhanh", x: 62, y: 45 },
+        { word: "science", chunk: "science room", vi: "phòng khoa học", x: 88, y: 30 },
+        { word: "balance", chunk: "lost his balance", vi: "mất thăng bằng", x: 58, y: 82 }
       ]
     },
     {
       scene_id: "scene_3",
       scene_number: 3,
-      title_en: "Scene 3: Slipping on the Wet Floor",
-      description_en: "Suddenly, he **lost his balance** on the wet floor, **slipped**, and **hurt his knee**.",
-      description: "Suddenly, he **lost his balance** on the wet floor, **slipped**, and **hurt his knee**.",
+      title_en: "Scene 3: Helping Friend & Calling Nurse",
+      description_en: "Jake **stopped immediately** to help his friend and **called the school nurse**.",
+      description: "Jake **stopped immediately** to help his friend and **called the school nurse**.",
       image_url: "/images/week33/webtoon_scene_3.png",
       audio_url: "/audio/week33/scene_3.mp3",
       lexical_chunks: [
-        { word: "balance", chunk: "lost his balance", vi: "mất thăng bằng", x: 70, y: 45 },
-        { word: "slipped", chunk: "slipped on the wet floor", vi: "trượt trên sàn ướt", x: 50, y: 82 },
-        { word: "hurt", chunk: "hurt his knee", vi: "đau đầu gối", x: 30, y: 65 }
+        { word: "stopped", chunk: "stopped immediately", vi: "dừng lại ngay lập tức", x: 46, y: 62 },
+        { word: "nurse", chunk: "called the school nurse", vi: "gọi y tá trường", x: 53, y: 39 },
+        { word: "help", chunk: "help his friend", vi: "giúp bạn mình", x: 34, y: 62 }
       ]
     },
     {
       scene_id: "scene_4",
       scene_number: 4,
-      title_en: "Scene 4: Calling the Nurse for Help",
-      description_en: "Jake **stopped immediately** to help his friend and **called the school nurse**.",
-      description: "Jake **stopped immediately** to help his friend and **called the school nurse**.",
+      title_en: "Scene 4: Nurse Arriving with Bandage",
+      description_en: "The nurse **arrived quickly** with a **clean bandage** and a **cold pack** to **treat the cut**.",
+      description: "The nurse **arrived quickly** with a **clean bandage** and a **cold pack** to **treat the cut**.",
       image_url: "/images/week33/webtoon_scene_4.png",
       audio_url: "/audio/week33/scene_4.mp3",
       lexical_chunks: [
-        { word: "stopped", chunk: "stopped immediately", vi: "dừng lại ngay lập tức", x: 32, y: 40 },
-        { word: "nurse", chunk: "school nurse", vi: "y tá trường", x: 48, y: 55 },
-        { word: "stay calm", chunk: "stay calm", vi: "giữ bình tĩnh", x: 68, y: 70 }
+        { word: "nurse", chunk: "arrived quickly", vi: "đến nhanh chóng", x: 27, y: 42 },
+        { word: "bandage", chunk: "clean bandage", vi: "băng sạch", x: 38, y: 68 },
+        { word: "cut", chunk: "treat the cut", vi: "điều trị vết thương", x: 46, y: 69 }
       ]
     },
     {
       scene_id: "scene_5",
       scene_number: 5,
-      title_en: "Scene 5: Nurse Applying Bandage & Relief",
-      description_en: "The nurse **applied a clean bandage**, and everyone **felt relieved**.",
-      description: "The nurse **applied a clean bandage**, and everyone **felt relieved**.",
+      title_en: "Scene 5: Relief & Safety Reminder",
+      description_en: "Everyone **felt relieved**, and the headmaster **reminded all students** never to run in corridors.",
+      description: "Everyone **felt relieved**, and the headmaster **reminded all students** never to run in corridors.",
       image_url: "/images/week33/webtoon_scene_5.png",
       audio_url: "/audio/week33/scene_5.mp3",
       lexical_chunks: [
-        { word: "bandage", chunk: "clean bandage", vi: "băng sạch", x: 42, y: 72 },
-        { word: "relieved", chunk: "felt relieved", vi: "cảm thấy nhẹ nhõm", x: 75, y: 60 },
-        { word: "reminded", chunk: "reminded all students", vi: "nhắc nhở tất cả học sinh", x: 58, y: 45 }
+        { word: "headmaster", chunk: "headmaster", vi: "thầy hiệu trưởng", x: 58, y: 32 },
+        { word: "relieved", chunk: "felt relieved", vi: "cảm thấy nhẹ nhõm", x: 78, y: 50 },
+        { word: "reminded", chunk: "reminded all students", vi: "nhắc nhở tất cả học sinh", x: 44, y: 52 }
       ]
     }
   ],
@@ -87,38 +87,38 @@ export default {
   retell_questions: [
     {
       step: 1,
-      question_vi: 'Chuyện đó xảy ra ở đâu và khi nào?',
-      question_en: 'Where and when did the story start?',
+      question_vi: 'Chuyện đó bắt đầu ở đâu và như thế nào?',
+      question_en: 'Where and how did the story begin?',
       chips: ['after science class', 'walking carefully', 'school corridor'],
       sentence: 'Jake was walking carefully down the school corridor after science class.'
     },
     {
       step: 2,
-      question_vi: 'Cậu bé kia đã làm gì ở hành lang?',
-      question_en: 'What was the other boy doing in the corridor?',
-      chips: ['running very fast', 'past the science room', 'in a hurry'],
-      sentence: 'A boy was running very fast past the science room.'
+      question_vi: 'Cậu bé kia đã làm gì và điều gì xảy ra trên sàn ướt?',
+      question_en: 'What did the other boy do, and what happened on the wet floor?',
+      chips: ['running very fast', 'lost his balance', 'slipped'],
+      sentence: 'A boy was running very fast past the science room, lost his balance, and slipped.'
     },
     {
       step: 3,
-      question_vi: 'Điều gì đã xảy ra trên sàn nhà ướt?',
-      question_en: 'What happened on the wet floor?',
-      chips: ['lost his balance', 'slipped on the wet floor', 'hurt his knee'],
-      sentence: 'Suddenly, he lost his balance on the wet floor, slipped, and hurt his knee.'
+      question_vi: 'Jake đã làm gì ngay lập tức để giúp bạn mình?',
+      question_en: 'What did Jake do immediately to help his friend?',
+      chips: ['stopped immediately', 'help his friend', 'called the school nurse'],
+      sentence: 'Jake stopped immediately to help his friend and called the school nurse.'
     },
     {
       step: 4,
-      question_vi: 'Jake đã làm gì ngay lập tức để giúp bạn?',
-      question_en: 'What did Jake do immediately to help?',
-      chips: ['stopped immediately', 'stay calm', 'called the school nurse'],
-      sentence: 'Jake stopped immediately to help his friend and called the school nurse right away.'
+      question_vi: 'Cô y tá đã làm gì để điều trị vết thương?',
+      question_en: 'What did the nurse do when she arrived?',
+      chips: ['arrived quickly', 'clean bandage', 'treat the cut'],
+      sentence: 'The nurse arrived quickly with a clean bandage and a cold pack to treat the cut.'
     },
     {
       step: 5,
-      question_vi: 'Cô y tá đã giúp thế nào và mọi người cảm thấy ra sao?',
-      question_en: 'How did the nurse help and how did everyone feel?',
-      chips: ['clean bandage', 'cold pack', 'felt relieved'],
-      sentence: 'The nurse arrived quickly with a clean bandage, and everyone felt relieved.'
+      question_vi: 'Mọi người cảm thấy thế nào và thầy hiệu trưởng nhắc nhở điều gì?',
+      question_en: 'How did everyone feel, and what did the headmaster remind students?',
+      chips: ['felt relieved', 'headmaster', 'reminded all students'],
+      sentence: 'Everyone felt relieved, and the headmaster reminded all students never to run in corridors.'
     }
   ],
 

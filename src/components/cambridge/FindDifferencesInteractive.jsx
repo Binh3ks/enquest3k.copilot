@@ -206,13 +206,13 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
       {/* Side-by-Side Dual Picture Scenes with Interactive SVG Circles */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {/* Picture A Viewport */}
-        <div ref={containerARef} className="relative h-48 sm:h-56 md:h-64 bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-slate-800">
+        <div ref={containerARef} className="relative aspect-[1264/848] w-full bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-slate-800">
           <img
             src={differencesData.picA.image_url}
             alt={differencesData.picA.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain pointer-events-none"
           />
-          <div className="absolute top-3 left-3 px-3 py-1 bg-slate-950/80 text-white rounded-xl text-xs font-black backdrop-blur-md">
+          <div className="absolute top-2 sm:top-3 left-2 sm:left-3 px-2.5 sm:px-3 py-1 bg-slate-950/80 text-white rounded-xl text-[11px] sm:text-xs font-black backdrop-blur-md">
             Picture A
           </div>
 
@@ -223,8 +223,8 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
               if (!isFound) return null;
               return (
                 <g key={hs.id}>
-                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="24" stroke="#f59e0b" strokeWidth="4" fill="rgba(245, 158, 11, 0.25)" className="animate-ping" />
-                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="24" stroke="#f59e0b" strokeWidth="4" fill="rgba(245, 158, 11, 0.25)" />
+                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="20" stroke="#f59e0b" strokeWidth="3" fill="rgba(245, 158, 11, 0.25)" className="animate-ping" />
+                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="20" stroke="#f59e0b" strokeWidth="3" fill="rgba(245, 158, 11, 0.25)" />
                 </g>
               );
             })}
@@ -236,19 +236,19 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
               key={hs.id}
               onClick={() => handleHotspotClick(hs)}
               style={{ left: `${hs.x}%`, top: `${hs.y}%` }}
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full cursor-pointer hover:bg-amber-400/30 transition z-20"
+              className="absolute transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer hover:bg-amber-400/30 transition z-20"
             />
           ))}
         </div>
 
         {/* Picture B Viewport */}
-        <div ref={containerBRef} className="relative h-64 sm:h-72 bg-slate-900 rounded-3xl overflow-hidden shadow-lg border-2 border-slate-800">
+        <div ref={containerBRef} className="relative aspect-[1264/848] w-full bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-slate-800">
           <img
             src={differencesData.picB.image_url}
             alt={differencesData.picB.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain pointer-events-none"
           />
-          <div className="absolute top-3 left-3 px-3 py-1 bg-rose-600 text-white rounded-xl text-xs font-black backdrop-blur-md">
+          <div className="absolute top-2 sm:top-3 left-2 sm:left-3 px-2.5 sm:px-3 py-1 bg-rose-600 text-white rounded-xl text-[11px] sm:text-xs font-black backdrop-blur-md">
             Picture B
           </div>
 
@@ -259,8 +259,8 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
               if (!isFound) return null;
               return (
                 <g key={hs.id}>
-                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="24" stroke="#f43f5e" strokeWidth="4" fill="rgba(244, 63, 94, 0.25)" className="animate-ping" />
-                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="24" stroke="#f43f5e" strokeWidth="4" fill="rgba(244, 63, 94, 0.25)" />
+                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="20" stroke="#f43f5e" strokeWidth="3" fill="rgba(244, 63, 94, 0.25)" className="animate-ping" />
+                  <circle cx={`${hs.x}%`} cy={`${hs.y}%`} r="20" stroke="#f43f5e" strokeWidth="3" fill="rgba(244, 63, 94, 0.25)" />
                 </g>
               );
             })}
@@ -272,7 +272,7 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
               key={hs.id}
               onClick={() => handleHotspotClick(hs)}
               style={{ left: `${hs.x}%`, top: `${hs.y}%` }}
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full cursor-pointer hover:bg-rose-400/30 transition z-20"
+              className="absolute transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer hover:bg-rose-400/30 transition z-20"
             />
           ))}
         </div>

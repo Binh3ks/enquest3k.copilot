@@ -1,9 +1,9 @@
 {
-  "commit": "9538bd2b2e82c946fbab71e44bf53a7b5def92b3",
-  "git_commit": "9538bd2b2e82c946fbab71e44bf53a7b5def92b3",
-  "shortCommit": "9538bd2b",
-  "message": "fix(ux-sync): unify boss castle headers, shorten flyers practice labels, and fix voice shadow karaoke sync",
-  "builtAt": "2026-09-04T02:45:00.000Z",
-  "build_timestamp": "2026-09-04T02:45:00.000Z",
+  "commit": "7c7ae0c6da565b2e063ececa8b9429d900ccdd50",
+  "git_commit": "7c7ae0c6da565b2e063ececa8b9429d900ccdd50",
+  "shortCommit": "7c7ae0c6",
+  "message": "fix(w33): correct story logic sequence and pre-generate static audios for scene explorer & voice shadow",
+  "builtAt": "2026-09-04T03:38:24.127Z",
+  "build_timestamp": "2026-09-04T03:38:24.128Z",
   "env": "production"
 }

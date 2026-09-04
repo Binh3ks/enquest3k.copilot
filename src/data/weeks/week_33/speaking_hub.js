@@ -173,17 +173,17 @@ export const speakingHub = {
       {
         id: 3,
         image_url: "/images/week33/ps_3.png",
-        narrator_prompt: "Jake rushed over to check on the hurt student."
+        narrator_prompt: "Jake stopped immediately to help his friend and called the school nurse."
       },
       {
         id: 4,
         image_url: "/images/week33/ps_4.png",
-        narrator_prompt: "He called the school nurse right away and she bandaged his knee."
+        narrator_prompt: "The nurse arrived quickly with a clean bandage and a cold pack to treat the cut."
       },
       {
         id: 5,
         image_url: "/images/week33/ps_5.png",
-        narrator_prompt: "In the end, Headmaster Brown gave Jake a safety award at the assembly."
+        narrator_prompt: "Everyone felt relieved, and the headmaster reminded all students never to run in corridors."
       }
     ],
     examiner_intro: "Look at these five pictures. They tell a story about Jake and a school corridor incident. First, I’ll tell you about picture one. Then you tell me what happens in pictures two, three, four and five.",
@@ -194,7 +194,7 @@ export const speakingHub = {
     questions: [
       { id: "q1", question: "What's your favorite subject at school?", topic: "school", sample_answer_hint: "My favorite subject is English because I love stories." },
       { id: "q2", question: "What do you usually do on your birthday?", topic: "birthday", sample_answer_hint: "I usually have a party with my family and eat cake." },
-      { id: "q3", question: "Tell me about your family.", topic: "family", sample_answer_hint: "There are four people in my family: my parents, my brother, and me." },
+      { id: "q3", topic: "family", question: "Tell me about your family.", sample_answer_hint: "There are four people in my family: my parents, my brother, and me." },
       { id: "q4", question: "What did you do last holiday?", topic: "holidays", sample_answer_hint: "Last holiday, I visited the beach with my cousins." }
     ]
   },
@@ -208,10 +208,11 @@ export const speakingHub = {
       image_url: "/images/week33/w33_diff_scene_b.jpg"
     },
     differences: [
-      { id: "d1", name: "Warning Sign Shape", prompt_en: "In Picture A, the warning sign is tall and yellow, but in Picture B, it is smaller.", x: 20, y: 22 },
-      { id: "d2", name: "Wall Clock Time", prompt_en: "In Picture A, the clock shows ten o'clock, but in Picture B, it shows half past ten.", x: 78, y: 22 },
-      { id: "d3", name: "Student Bag Color", prompt_en: "In Picture A, the student bag is blue, but in Picture B, it is bright red.", x: 30, y: 64 },
-      { id: "d4", name: "First-Aid Box", prompt_en: "In Picture A, the first-aid box is on the wall, but in Picture B, it is missing.", x: 80, y: 70 }
+      { id: "d1", name: "Student Bag Color", prompt_en: "In Picture A, the bag on the bench is blue, but in Picture B, it is red.", prompt_vi: "Ở bức tranh A, chiếc cặp trên ghế màu xanh dương, nhưng ở bức tranh B, nó màu đỏ.", x: 9, y: 69 },
+      { id: "d2", name: "Potted Plant on Floor", prompt_en: "In Picture A, there is no plant on the floor, but in Picture B, there is a potted plant under the bench.", prompt_vi: "Ở bức tranh A, không có cây dưới sàn, nhưng ở bức tranh B, có một chậu cây dưới ghế.", x: 6, y: 90 },
+      { id: "d3", name: "Warning Sign Color", prompt_en: "In Picture A, the caution sign is yellow, but in Picture B, it is orange.", prompt_vi: "Ở bức tranh A, biển cảnh báo màu vàng, nhưng ở bức tranh B, nó màu cam.", x: 30, y: 63 },
+      { id: "d4", name: "Boy's T-shirt Color", prompt_en: "In Picture A, the boy walking is wearing a red T-shirt, but in Picture B, he is wearing a blue T-shirt.", prompt_vi: "Ở bức tranh A, cậu bé mặc áo phông đỏ, nhưng ở bức tranh B, cậu bé mặc áo phông xanh dương.", x: 50, y: 61 },
+      { id: "d5", name: "Hanging Coat Color", prompt_en: "In Picture A, the coat hanging on the wall is red, but in Picture B, it is green.", prompt_vi: "Ở bức tranh A, chiếc áo khoác treo trên tường màu đỏ, nhưng ở bức tranh B, nó màu xanh lá.", x: 73, y: 53 }
     ]
   }
 };
