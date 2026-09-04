@@ -64,14 +64,14 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
 
   // Sync saved story progress to Broadcast Studio on mount / progress update
   useEffect(() => {
-    // 5 canonical scene frames as fallback so prompter ALWAYS has 5 full scenes
+    // 5 canonical scene frames from writingData so prompter ALWAYS uses authentic weekly content
     const canonicalSteps = writingData?.picture_story?.steps || [];
     const defaultScenes = [
-      { id: 1, func: 'setting',  title: 'Scene 1: Setting 🔵', defaultText: canonicalSteps[0]?.frame_L1 || canonicalSteps[0]?.caption || "In the beginning, Jake was walking carefully down the school corridor after science class. He noticed the wet floor tiles near the science room." },
-      { id: 2, func: 'action',   title: 'Scene 2: Action 🟢',  defaultText: canonicalSteps[1]?.frame_L1 || canonicalSteps[1]?.caption || "Suddenly, a boy was running very fast past the science room. He lost his balance on the wet floor and slipped." },
-      { id: 3, func: 'problem',  title: 'Scene 3: Problem 🟠', defaultText: canonicalSteps[2]?.frame_L1 || canonicalSteps[2]?.caption || "Then, Jake stopped immediately to help his friend stay calm. He called the school nurse right away for help." },
-      { id: 4, func: 'climax',   title: 'Scene 4: Response 🟣', defaultText: canonicalSteps[3]?.frame_L1 || canonicalSteps[3]?.caption || "After that, the school nurse arrived quickly with a clean bandage. She placed a cold pack to treat the cut carefully." },
-      { id: 5, func: 'solution', title: 'Scene 5: Ending ⭐',  defaultText: canonicalSteps[4]?.frame_L1 || canonicalSteps[4]?.caption || "In the end, everyone felt relieved that Tom was safe. The headmaster reminded all students never to run in corridors." }
+      { id: 1, func: 'setting',  title: 'Scene 1: Setting 🔵', defaultText: canonicalSteps[0]?.frame_L1 || canonicalSteps[0]?.caption || "" },
+      { id: 2, func: 'action',   title: 'Scene 2: Action 🟢',  defaultText: canonicalSteps[1]?.frame_L1 || canonicalSteps[1]?.caption || "" },
+      { id: 3, func: 'problem',  title: 'Scene 3: Problem 🟠', defaultText: canonicalSteps[2]?.frame_L1 || canonicalSteps[2]?.caption || "" },
+      { id: 4, func: 'climax',   title: 'Scene 4: Response 🟣', defaultText: canonicalSteps[3]?.frame_L1 || canonicalSteps[3]?.caption || "" },
+      { id: 5, func: 'solution', title: 'Scene 5: Ending ⭐',  defaultText: canonicalSteps[4]?.frame_L1 || canonicalSteps[4]?.caption || "" }
     ];
 
     const panelTexts = (storySavedData?.panelTexts && Array.isArray(storySavedData.panelTexts)) ? storySavedData.panelTexts : [];
@@ -175,7 +175,7 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
       {!hideStationTabs && (
         <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
           <span className="font-black text-purple-950 flex items-center gap-1.5">
-            🎨 CREATOR STUDIO — Write your story, record your video, debate, or file your science report!
+            🎨 ZONE 4: CREATOR STUDIO — Write your story, record your video challenge, or practice info exchange!
           </span>
           <div className="px-3 py-1 bg-purple-600 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1">
             <Trophy size={14} className="text-amber-300" />
@@ -187,7 +187,7 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
       {/* Vibrant Multi-Color Subtabs Selector — hidden in task mode */}
       {!hideStationTabs && (
         <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full">
             <button
               type="button"
               onClick={() => handleTabSwitch('story_writer')}
@@ -198,17 +198,6 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
               }`}
             >
               ✏️ STORY WRITER
-            </button>
-            <button
-              type="button"
-              onClick={() => handleTabSwitch('brain_refresh')}
-              className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-                activeTab === 'brain_refresh'
-                  ? 'bg-amber-400 text-slate-950 shadow-md ring-2 ring-amber-300 scale-[1.02]'
-                  : 'bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100'
-              }`}
-            >
-              🎧 BRAIN REFRESH
             </button>
             <button
               type="button"
@@ -223,14 +212,14 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
             </button>
             <button
               type="button"
-              onClick={() => handleTabSwitch('science_report')}
+              onClick={() => handleTabSwitch('brain_refresh')}
               className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-                activeTab === 'science_report'
-                  ? 'bg-emerald-600 text-white shadow-md ring-2 ring-emerald-300 scale-[1.02]'
-                  : 'bg-emerald-50 text-emerald-900 border border-emerald-200 hover:bg-emerald-100'
+                activeTab === 'brain_refresh'
+                  ? 'bg-amber-400 text-slate-950 shadow-md ring-2 ring-amber-300 scale-[1.02]'
+                  : 'bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100'
               }`}
             >
-              🧪 SCIENCE REPORT
+              🎧 BRAIN REFRESH
             </button>
             <button
               type="button"

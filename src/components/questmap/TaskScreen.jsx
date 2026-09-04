@@ -21,6 +21,7 @@ import './TaskScreen.css';
 
 // Static direct imports — zero async suspense delay
 import StoryWorldZone from '../../modules/zones/StoryWorldZone';
+import KnowledgeLabZone from '../../modules/zones/KnowledgeLabZone';
 import BattleArenaZone from '../../modules/zones/BattleArenaZone';
 import CreatorStudioZone from '../../modules/zones/CreatorStudioZone';
 import BossBattleZone from '../../modules/zones/BossBattleZone';
@@ -28,25 +29,34 @@ import InfoExchangeZone from '../../modules/zones/InfoExchangeZone';
 
 import { getRotaryTaskLabel } from '../../config/bossRotarySchedule';
 
-// Map taskId to zone + gear/station params
+// Map taskId to zone + gear/station params — Standardized 15 Quests / 5 Zones
 const TASK_ROUTING = {
-  gear1_webtoon:    { zone: 'story',   gear: 1 },
-  gear2_karaoke:    { zone: 'story',   gear: 2 },
-  gear3_retell:     { zone: 'story',   gear: 3 },
-  gear4_clil:       { zone: 'story',   gear: 4 },
-  science_lab:      { zone: 'arena',   station: 'science_lab' },
-  science_report:   { zone: 'create',  station: 'science_report' }, // maps to ScienceReportCreator in CreatorStudioZone
-  word_blitz:       { zone: 'arena',   station: 'word_blitz' },
-  sentence_smash:   { zone: 'arena',   station: 'sentence_smash' },
-  math_quest:       { zone: 'arena',   station: 'math_quest' },
-  story_writer:       { zone: 'create',       station: 'writing' },
-  broadcast_studio:  { zone: 'create',       station: 'broadcast' },
-  ai_debate:         { zone: 'create',       station: 'ai_debate' },  // Legacy — kept for backward compat
-  info_exchange:     { zone: 'info_exchange' },  // Cambridge Speaking Part 2 (replaces Debate Arena)
-  boss_listening:   { zone: 'boss',    station: 'listening_boss' },
-  boss_reading:     { zone: 'boss',    station: 'rw_boss' },
-  weekly_review:    { zone: 'boss',    station: 'review' },
-  personal_questions: { zone: 'boss', station: 'personal_qs' },
+  // Zone 1: Story World (Day 1)
+  gear1_webtoon:    { zone: 'story',     gear: 1 },
+  gear2_karaoke:    { zone: 'story',     gear: 2 },
+  gear3_retell:     { zone: 'story',     gear: 3 },
+
+  // Zone 2: Knowledge Lab (Day 2)
+  gear4_clil:       { zone: 'knowledge', station: 'clil' },
+  science_lab:      { zone: 'knowledge', station: 'action_lab' },
+  science_report:   { zone: 'knowledge', station: 'discovery_report' },
+
+  // Zone 3: Battle Arena (Day 3)
+  word_blitz:       { zone: 'arena',     station: 'word_blitz' },
+  sentence_smash:   { zone: 'arena',     station: 'sentence_smash' },
+  math_quest:       { zone: 'arena',     station: 'math_quest' },
+
+  // Zone 4: Creator Studio (Day 4)
+  story_writer:     { zone: 'create',    station: 'writing' },
+  broadcast_studio: { zone: 'create',    station: 'broadcast' },
+  ai_debate:        { zone: 'create',    station: 'ai_debate' },  // Legacy — kept for backward compat
+  info_exchange:    { zone: 'info_exchange' },  // Cambridge Speaking Part 2
+
+  // Zone 5: Boss Castle (Day 5)
+  boss_listening:   { zone: 'boss',      station: 'listening_boss' },
+  boss_reading:     { zone: 'boss',      station: 'rw_boss' },
+  weekly_review:    { zone: 'boss',      station: 'review' },
+  personal_questions: { zone: 'boss',    station: 'personal_qs' },
 };
 
 class TaskErrorBoundary extends React.Component {
@@ -365,6 +375,14 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               weekNumber={weekId}
               forcedGear={routing.gear}
               hideGearTabs={true}
+            />
+          )}
+          {routing.zone === 'knowledge' && (
+            <KnowledgeLabZone
+              data={safeData}
+              weekNumber={weekId}
+              forcedStation={routing.station}
+              hideStationTabs={true}
             />
           )}
           {routing.zone === 'arena' && (

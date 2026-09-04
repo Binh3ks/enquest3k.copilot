@@ -7,7 +7,7 @@ export const CLIL_STAMPS = {
   science: {
     id: 'science',
     title: 'Science Explorer',
-    subject: 'Science Lab',
+    subject: 'Action Lab',
     levelTitle: 'CLIL Science Master',
     icon: Microscope,
     color: 'from-emerald-500 to-teal-600',
@@ -16,7 +16,7 @@ export const CLIL_STAMPS = {
     ringColor: 'ring-emerald-400/50',
     textColor: 'text-emerald-950',
     badgeBg: 'bg-emerald-600 text-white',
-    stampText: 'VERIFIED · SCIENCE LAB',
+    stampText: 'VERIFIED · ACTION LAB',
     desc: 'Mastered scientific principles, vocabulary, and inquiry in English.'
   },
   math: {

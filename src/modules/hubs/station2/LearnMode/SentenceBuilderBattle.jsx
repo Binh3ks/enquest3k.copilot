@@ -22,11 +22,11 @@ const WEEK33_GRAMMAR_DRILLS = [
   {
     id: "st2_w33_g01",
     grammar_tag: "past_continuous_while",
-    text_en: "While Jake was walking down the corridor, a boy slipped on the wet floor.",
-    word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "the", "wet", "floor", "."],
+    text_en: "While Jake was walking down the corridor, a boy slipped on wet tiles.",
+    word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "wet", "tiles", "."],
     valid_structures: [
-      ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "the", "wet", "floor", "."],
-      ["A", "boy", "slipped", "on", "the", "wet", "floor", "while", "Jake", "was", "walking", "down", "the", "corridor", "."]
+      ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "wet", "tiles", "."],
+      ["A", "boy", "slipped", "on", "wet", "tiles", "while", "Jake", "was", "walking", "down", "the", "corridor", "."]
     ],
     distractor_blocks: ["is", "slips", "walks"]
   },

@@ -97,54 +97,38 @@ export default function BattleArenaZone({ data, weekNumber, forcedStation = null
 
 
       {/* Vibrant Multi-Color Subtabs Selector — hidden in task mode */}
-      {!hideStationTabs && (() => {
-        // Enforce 3 featured games per week rotation to prevent cognitive overload
-        const isEvenWeek = (activeWeek || 0) % 2 === 0;
-        const featuredGames = isEvenWeek
-          ? ['word_blitz', 'sound_sniper', 'science_lab']
-          : ['word_blitz', 'sentence_smash', 'math_quest'];
-
-        return (
-          <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
-            <div className="flex items-center justify-between px-2 pb-1.5 text-[10px] font-black text-slate-500 uppercase tracking-wider">
-              <span>⚔️ Weekly 3 Featured Battle Games</span>
-              <span>Week {activeWeek} Rotation</span>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
-              {[
-                { id: 'word_blitz', label: '⚡ SPEED MATCH', activeBg: 'bg-amber-500 text-slate-950 ring-amber-300', inactiveBg: 'bg-amber-50 text-amber-900 border-amber-200' },
-                { id: 'sentence_smash', label: '🧱 GRAMMAR DUEL', activeBg: 'bg-purple-600 text-white ring-purple-300', inactiveBg: 'bg-purple-50 text-purple-900 border-purple-200' },
-                { id: 'sound_sniper', label: '🎧 SOUND SNIPER', activeBg: 'bg-blue-600 text-white ring-blue-300', inactiveBg: 'bg-blue-50 text-blue-900 border-blue-200' },
-                { id: 'math_quest', label: '📐 MATH QUEST', activeBg: 'bg-orange-500 text-white ring-orange-300', inactiveBg: 'bg-orange-50 text-orange-900 border-orange-200' },
-                { id: 'science_lab', label: '🧪 ACTION LAB', activeBg: 'bg-emerald-600 text-white ring-emerald-300', inactiveBg: 'bg-emerald-50 text-emerald-900 border-emerald-200' },
-              ].map((g) => {
-                const isFeatured = featuredGames.includes(g.id);
-                const isSelected = activeGame === g.id;
-
-                return (
-                  <button
-                    key={g.id}
-                    type="button"
-                    onClick={() => setActiveGame(g.id)}
-                    className={`w-full py-2.5 px-2.5 rounded-xl text-xs font-black transition flex flex-col items-center justify-center gap-0.5 text-center truncate ${
-                      isSelected
-                        ? `${g.activeBg} shadow-md ring-2 scale-[1.02]`
-                        : `${g.inactiveBg} border hover:bg-slate-200`
-                    }`}
-                  >
-                    <span>{g.label}</span>
-                    {!isFeatured && (
-                      <span className="text-[8px] font-extrabold px-1.5 py-0.2 bg-slate-200 text-slate-600 rounded-full">
-                        ⏳ Next Week
-                      </span>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
+      {!hideStationTabs && (
+        <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
+          <div className="flex items-center justify-between px-2 pb-1.5 text-[10px] font-black text-slate-500 uppercase tracking-wider">
+            <span>⚔️ ZONE 3: 3 BATTLE ARENA GAMES</span>
+            <span>Week {activeWeek}</span>
           </div>
-        );
-      })()}
+          <div className="grid grid-cols-3 gap-2 w-full">
+            {[
+              { id: 'word_blitz', label: '⚡ SPEED MATCH', activeBg: 'bg-amber-500 text-slate-950 ring-amber-300', inactiveBg: 'bg-amber-50 text-amber-900 border-amber-200' },
+              { id: 'sentence_smash', label: '🧱 GRAMMAR DUEL', activeBg: 'bg-purple-600 text-white ring-purple-300', inactiveBg: 'bg-purple-50 text-purple-900 border-purple-200' },
+              { id: 'math_quest', label: '📐 MATH QUEST', activeBg: 'bg-orange-500 text-white ring-orange-300', inactiveBg: 'bg-orange-50 text-orange-900 border-orange-200' },
+            ].map((g) => {
+              const isSelected = activeGame === g.id;
+
+              return (
+                <button
+                  key={g.id}
+                  type="button"
+                  onClick={() => setActiveGame(g.id)}
+                  className={`w-full py-2.5 px-2.5 rounded-xl text-xs font-black transition flex flex-col items-center justify-center gap-0.5 text-center truncate ${
+                    isSelected
+                      ? `${g.activeBg} shadow-md ring-2 scale-[1.02]`
+                      : `${g.inactiveBg} border hover:bg-slate-200`
+                  }`}
+                >
+                  <span>{g.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Active Sub-Component */}
       <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 border border-slate-200 shadow-md min-h-[360px]">

@@ -66,6 +66,7 @@ Run `npm run audit:week {N}`:
 5. **Quality Gates 1-17 Gatekeeper**: Every new week MUST pass all quality gates (Gate 1 through Gate 17) in `npm run audit:week <N>` before DoD signoff.
 6. **Hotspot Coordinate Doctrine Invariant**: All find-the-differences coordinates in `speaking_hub.find_differences.differences` MUST be stored strictly in **0–100% Image-Space**. Never bake container or crop offsets into data. `FindDifferencesInteractive.jsx` uses runtime mapping with container and natural image dimensions to render interactive targets and SVG rings. Gate 15 verifies production alignment $< 6\%$.
 7. **Scaffolding vs Micro-Decision Standard**: Every scaffolding level must provide 100% facts (via CLIL Data Card) while requiring >=1 active linguistic micro-decision (past-tense form + connectors `because`/`so`/`but`).
+8. **15-Task Universal Naming Standard**: Day 2 tasks are strictly **Action Lab** (`science_lab`) and **Discovery Report** (`science_report`), reflecting interdisciplinary CLIL (science, social studies, geography, history). Never display as 'Science Lab' on learner-facing screens. Day 3 tasks are **Speed Match**, **Grammar Duel**, **Math Quest**. Day 4 tasks are **Story Writer**, **Video Challenge**, **Info Exchange**.
 
 ### Step 8: Reviewer Verification & Git Push
 - Verify `docs/GATE15_SPEC.json` and run `node scripts/gate15_production_dom_assertions.mjs {N}` on production build.

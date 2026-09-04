@@ -129,26 +129,36 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
 #### Precedents từ W33 Golden Master (Commit 44c1cf13 → 60923a4e → ...):
 - BUG-1: `targetText` declared in map object nhưng không extract thành `const` → dùng `undefined` → sai 100%
 - BUG-2: `logAttempt` gọi kể cả `isAttempted: false` → data rác analytics
-## 🏰 MASTER 15-TASK / 4-HUB ARCHITECTURE INVARIANT (W33+) — 2026-08-22
+## 🏰 MASTER 15-TASK / 5-ZONE ARCHITECTURE INVARIANT (W33+) — 2026-08-22 (Updated 2026-09-04)
 **QUY TẮC BẤT BIẾN DUY NHẤT VỀ CẤU TRÚC TUẦN HỌC (W33+):**
-1. **Kiến trúc Duy nhất & Mới nhất**:
-   - Từ Tuần 33 trở đi, hệ thống **CHỈ HOẠT ĐỘNG TRÊN 15 TASKS / GEARS** phân bổ qua **5 Ngày học (4 Hubs / 4 Zones)** theo `src/config/questSchedule.js`.
-   - **4 Hub Dữ liệu Duy nhất per Week**:
-     - `reading_hub.js` (Zone 1 & 4: Scene Explorer, Voice Shadow, Story Retell, Fact Finder, Reading Shield)
-     - `listening_hub.js` (Zone 2 & 4: Action Lab, Speed Match, Grammar Duel, Math Quest, Listening Shield)
-     - `writing_hub.js` (Zone 3 & 4: Story Writer P7, Reading & Writing Shield)
-     - `speaking_hub.js` (Zone 3 & 4: Video Challenge, Info Exchange P2, Speaking & Passport)
+1. **Kiến trúc Duy nhất & Mới nhất — 5 Ngày Học = 5 Zones Tiêu Chuẩn**:
+   - Từ Tuần 33 trở đi, hệ thống **CHỈ HOẠT ĐỘNG TRÊN 15 TASKS / GEARS** phân bổ đều đặn qua **5 Ngày học = 5 Zones học tập** (mỗi ngày đúng 3 Quests), loại bỏ hoàn toàn cách gọi "Station" rời rạc và cách phân mảnh cũ.
+   - **4 Data Hubs Duy nhất per Week** (nơi lưu trữ dữ liệu tập trung):
+     - `reading_hub.js` (cung cấp dữ liệu cho Zone 1, 2, 5: Scene Explorer, Voice Shadow, Story Retell, Fact Finder, Reading Shield)
+     - `listening_hub.js` (cung cấp dữ liệu cho Zone 2, 3, 5: Action Lab, Speed Match, Grammar Duel, Math Quest, Listening Shield)
+     - `writing_hub.js` (cung cấp dữ liệu cho Zone 4, 5: Story Writer, Reading & Writing Shield)
+     - `speaking_hub.js` (cung cấp dữ liệu cho Zone 4, 5: Video Challenge, Info Exchange, Speaking & Passport)
 2. **CẤM TUYỆT ĐỐI Các Station Cũ (Legacy Prohibited)**:
    - Nghiêm cấm tạo mới hoặc phụ thuộc vào các file rác cũ như `explore.js`, `logic_lab.js`, `daily_watch.js`, `dictation.js` như một nguồn nội dung độc lập.
-   - Mọi câu hỏi, bài đọc, từ vựng và bài tập **BẮT BUỘC chỉ nằm trong 4 Hubs và 15 Quests**.
-3. **Bảng 15 Quests / Gears Tiêu Chuẩn**:
-   - **Day 1 (Story World — Zone 1)**: `gear1_webtoon` (Scene Explorer), `gear2_karaoke` (Voice Shadow), `gear3_retell` (Story Retell)
-   - **Day 2 (Knowledge Lab — Zones 1, 2, 3)**: `gear4_clil` (Fact Finder), `science_lab` (Action Lab), `science_report` (Discovery Report)
-   - **Day 3 (Battle Arena — Zone 2)**: `word_blitz` (Speed Match), `sentence_smash` (Grammar Duel), `math_quest` (Math Quest)
-   - **Day 4 (Creator Studio — Zone 3)**: `story_writer` (Story Writer), `broadcast_studio` (Video Challenge), `info_exchange` (Info Exchange)
-   - **Day 5 (Boss Castle — Zone 4)**: `boss_listening` (Listening Shield), `boss_reading` (Reading & Writing Shield), `weekly_review` (Speaking & Passport)
+   - Mọi câu hỏi, bài đọc, từ vựng và bài tập **BẮT BUỘC chỉ nằm trong 4 Hubs và phân bổ vào 15 Quests**.
+3. **Bảng 15 Quests / 5 Zones Chuẩn Hoá (1-to-1 Mapping)**:
+   - **Day 1 (Zone 1 — Story World)**: `gear1_webtoon` (Scene Explorer), `gear2_karaoke` (Voice Shadow), `gear3_retell` (Story Retell)
+   - **Day 2 (Zone 2 — Knowledge Lab)**: `gear4_clil` (Fact Finder), `science_lab` (Action Lab), `science_report` (Discovery Report)
+   - **Day 3 (Zone 3 — Battle Arena)**: `word_blitz` (Speed Match), `sentence_smash` (Grammar Duel), `math_quest` (Math Quest)
+   - **Day 4 (Zone 4 — Creator Studio)**: `story_writer` (Story Writer), `broadcast_studio` (Video Challenge), `info_exchange` (Info Exchange)
+   - **Day 5 (Zone 5 — Boss Castle)**: `boss_listening` (Listening Shield), `boss_reading` (Reading & Writing Shield), `weekly_review` (Speaking & Passport)
 4. **Quy trình Audit & Kiểm duyệt**:
-   - Mọi công cụ audit (`cefr_curriculum_guard.mjs`, `audit_all_w33_tasks.mjs`) BẮT BUỘC chỉ quét và xác thực 4 Hubs và 15 Quests này.
+   - Mọi công cụ audit (`cefr_curriculum_guard.mjs`, `audit_all_w33_tasks.mjs`) BẮT BUỘC chỉ quét và xác thực 4 Hubs và 15 Quests này theo 5 Zones.
+5. **Quy chuẩn Danh pháp 15 Tasks & Lý do Sư phạm CLIL (Task Naming Standardization Invariant — 2026-09-04)**:
+   - **`science_lab` BẮT BUỘC hiển thị là `Action Lab`**: CLIL không chỉ giới hạn ở môn Khoa học (Natural Science), mà bao gồm liên môn: Social Studies (Xã hội), Geography (Địa lý), History (Lịch sử) và Kỹ năng thực nghiệm / giải quyết vấn đề. Do đó, tên hiển thị trên toàn bộ UI, Component, Passport, Quest Schedule và tài liệu BẮT BUỘC là **Action Lab** (Tương tác thực hành / giải quyết vấn đề), CẤM hiển thị nhầm thành `Science Lab`. File component tương ứng là `ActionLab.jsx` (aliased từ `ScienceDragDropLab.jsx`).
+   - **`science_report` BẮT BUỘC hiển thị là `Discovery Report`**: Đúc kết phát hiện thực tế sau quá trình quan sát/điều tra, dùng danh xưng 'Discovery Detective' (Thám tử khám phá). File component tương ứng là `DiscoveryReportCreator.jsx`.
+   - **`sentence_smash` BẮT BUỘC hiển thị là `Grammar Duel`**: Đấu trường ngữ pháp, sắp xếp trật tự câu (tránh nhầm với Sentence Builder).
+   - **`math_quest` BẮT BUỘC hiển thị là `Math Quest`**: Toán tư duy & Bar Models (tránh nhầm với tên kỹ thuật Bar Model Quest).
+   - **`broadcast_studio` BẮT BUỘC hiển thị là `Video Challenge`**: Thử thách quay video/thuyết trình.
+6. **Chuẩn mực Sư phạm Story Retell Scaffolding (`full`, `half`, `chunks`)**:
+   - **`full` (Maximum Scaffolding)**: Hiển thị 100% câu mẫu chuẩn (`currentQ.sentence`) kèm nút nghe audio. Dành cho học sinh cần mô hình đầy đủ trước khi nói.
+   - **`half` (Moderate Scaffolding)**: Hiển thị 50% đầu câu (`w.slice(0, half).join(' ') + ' ___ ...'`). Đóng vai trò Sentence Starter để kích hoạt truy hồi vị ngữ/tân ngữ.
+   - **`chunks` (Linear Thinking ESL Collocation Scaffolding)**: CẤM TUYỆT ĐỐI che từ cơ học so le (`i % 2 === 0 ? word : '___'`). BẮT BUỘC hiển thị theo cụm từ Linear Thinking ESL (Semantic & Syntactic Sense Units / Collocations) dựa trên `currentQ.chips` và ranh giới ngữ pháp (e.g. `Jake was` `[walking carefully]` `down the` `[school corridor]` `[after science class.]`). Giúp học sinh định hình nhịp ngắt câu tự nhiên và truy hồi cụm từ trôi chảy khi nói vào microphone.
 
 ## 🎓 Master Curriculum CEFR Staging & Vocabulary Standard (W01–W156) — 2026-08-22
 **BẮT BUỘC áp dụng cho toàn bộ các tuần biên soạn và kiểm thử:**

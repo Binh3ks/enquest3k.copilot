@@ -170,7 +170,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                     activeTab === 'sentence_builder' ? 'bg-amber-500 text-white shadow-md ring-2 ring-amber-300' : 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50'
                   }`}
                 >
-                  🧠 Sentence Builder
+                  🧱 Grammar Duel
                 </button>
                 <button
                   type="button"
@@ -179,7 +179,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                     activeTab === 'bar_model' ? 'bg-amber-500 text-white shadow-md ring-2 ring-amber-300' : 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50'
                   }`}
                 >
-                  📐 Bar Model Quest
+                  📐 Math Quest
                 </button>
                 <button
                   type="button"
@@ -189,15 +189,6 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                   }`}
                 >
                   ⚡ Speed Match
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('science_lab')}
-                  className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-                    activeTab === 'science_lab' ? 'bg-amber-500 text-white shadow-md ring-2 ring-amber-300' : 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50'
-                  }`}
-                >
-                  🧪 Science Lab
                 </button>
               </div>
             </div>

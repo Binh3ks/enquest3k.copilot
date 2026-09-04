@@ -76,11 +76,11 @@ function DropZone({ id, label, currentPlaced, isCorrect, targetInfo, isTargeted,
 }
 
 const DEFAULT_SCIENCE_DATA = {
-  experimentTitle: "Interactive Science Lab",
+  experimentTitle: "Interactive Action Lab",
   diagramImage: "",
   labels: [],
   targets: [],
-  explanation: "Interactive science exploration."
+  explanation: "Interactive action & CLIL exploration."
 };
 
 export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onComplete }) {
@@ -94,9 +94,9 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
   const labData = useMemo(() => {
     if (!scienceData) return DEFAULT_SCIENCE_DATA;
 
-    const experimentTitle = scienceData.title_en || scienceData.experimentTitle || "Interactive Science Lab";
+    const experimentTitle = scienceData.title_en || scienceData.experimentTitle || "Interactive Action Lab";
     const diagramImage = scienceData.background_image || scienceData.diagramImage || "";
-    const explanation = scienceData.description_en || scienceData.explanation || "Interactive science exploration.";
+    const explanation = scienceData.description_en || scienceData.explanation || "Interactive action exploration.";
 
     let targets = [];
     let labels = [];
@@ -248,7 +248,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             🧪
           </div>
           <div className="min-w-0">
-            <h3 className="text-xs sm:text-sm font-black text-slate-900 truncate">{labData.experimentTitle || 'Interactive Science Lab'}</h3>
+            <h3 className="text-xs sm:text-sm font-black text-slate-900 truncate">{labData.experimentTitle || 'Interactive Action Lab'}</h3>
           </div>
         </div>
 
@@ -296,7 +296,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
           </div>
           <div className="space-y-1">
             <h3 className="text-base sm:text-lg font-black text-slate-900 leading-tight">
-              READY FOR<br />SCIENCE LAB?
+              READY FOR<br />ACTION LAB?
             </h3>
           </div>
           <button
@@ -313,7 +313,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
       {gameState === 'paused' && (
         <div className="p-3 bg-teal-50 border border-teal-300 rounded-2xl flex items-center justify-between animate-in fade-in">
           <span className="text-xs font-black text-teal-900 flex items-center gap-2">
-            <Pause size={16} className="text-teal-600 animate-pulse" /> Timer Paused — Take your time to inspect the experiment diagram!
+            <Pause size={16} className="text-teal-600 animate-pulse" /> Timer Paused — Take your time to inspect the action diagram!
           </span>
           <button
             type="button"
@@ -330,7 +330,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
         <div className="p-8 bg-gradient-to-br from-teal-50 to-emerald-50 border-2 border-teal-300 rounded-3xl text-center space-y-4 shadow-inner animate-in zoom-in-95">
           <Trophy size={56} className="mx-auto text-teal-600 animate-bounce" />
           <h3 className="text-2xl font-black text-slate-900">
-            {score > 0 ? 'SCIENCE LAB COMPLETE!' : 'TIME EXPIRED — TRY AGAIN!'}
+            {score > 0 ? 'ACTION LAB COMPLETE!' : 'TIME EXPIRED — TRY AGAIN!'}
           </h3>
           <p className="text-xs sm:text-sm text-slate-700 max-w-md mx-auto leading-relaxed font-bold">
             {labData.explanation}
@@ -344,7 +344,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             onClick={handleStartGame}
             className="px-6 py-3.5 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 text-white rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
           >
-            <RotateCcw size={18} /> Play Science Lab Again
+            <RotateCcw size={18} /> Play Action Lab Again
           </button>
         </div>
       )}
@@ -357,7 +357,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             <div className="p-2.5 sm:p-4 bg-teal-50 rounded-xl sm:rounded-2xl border border-teal-200">
               <h4 className="text-xs sm:text-sm font-black text-teal-950">{labData.experimentTitle}</h4>
               <p className="text-[11px] sm:text-xs text-teal-800 mt-0.5">
-                Drag or tap the science labels into the correct position on the diagram!
+                Drag or tap the action labels into the correct position on the diagram!
               </p>
             </div>
 

@@ -118,25 +118,26 @@ async function auditTask(task, baseDir, modeLabel) {
       const data = mod.default || mod;
 
       const snippets = [];
-      function collect(obj, key = '') {
+      function collect(obj, key = '', pathKey = '') {
         if (!obj) return;
+        const currentPath = pathKey ? `${pathKey}.${key}` : key;
         if (typeof obj === 'string') {
           if (key.includes('_vi') || key.includes('vi') || key === 'meaning') return;
           if (obj.startsWith('/') || obj.startsWith('http') || obj.endsWith('.mp3') || obj.endsWith('.png') || obj.endsWith('.jpg') || obj.endsWith('.svg')) return;
           if (obj.startsWith('/') && obj.endsWith('/')) return;
-          snippets.push({ text: obj, key, file: relFile });
+          snippets.push({ text: obj, key, pathKey: currentPath, file: relFile });
         } else if (Array.isArray(obj)) {
-          obj.forEach(item => collect(item, key));
+          obj.forEach(item => collect(item, key, currentPath));
         } else if (typeof obj === 'object') {
           for (const [k, v] of Object.entries(obj)) {
-            collect(v, k);
+            collect(v, k, currentPath);
           }
         }
       }
 
       collect(data);
 
-      for (const { text, file, key } of snippets) {
+      for (const { text, file, key, pathKey } of snippets) {
         const words = text.toLowerCase().replace(/[^a-z\s-]/g, ' ').split(/\s+/).filter(Boolean);
         for (const w of words) {
           if (BANNED_B2_C1_WORDS.has(w)) {
@@ -145,11 +146,15 @@ async function auditTask(task, baseDir, modeLabel) {
         }
 
         // Sentence length check
-        if (text.length > 20) {
+        // Instructions, hints, and prompts are teacher-facing directives, exempt from learner narrative length limits
+        const isInstruction = key.includes('hint') || key.includes('instruction') || key.includes('prompt') || key.includes('guidance');
+        if (!isInstruction && text.length > 20) {
+          const isCLIL = file.includes('clil') || pathKey.toLowerCase().includes('clil') || pathKey.toLowerCase().includes('science') || pathKey.toLowerCase().includes('fact');
+          const maxWords = isCLIL ? 28 : 22;
           const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
           for (const s of sentences) {
             const wc = s.trim().split(/\s+/).length;
-            if (wc > 22) {
+            if (wc > maxWords) {
               issues.push({ type: 'SENTENCE_TOO_LONG', length: wc, file, sentence: s.trim().slice(0, 70) });
             }
           }

@@ -346,7 +346,20 @@ export const readingHubData = {
 
   // ─── R&W Part 4: Grammar MCQ — 10 standalone 3-option questions (Cambridge Flyers exact spec) —───
   rw_part4: {
-    instructions: "Read the sentences. Choose the correct word and write the letter A, B or C.",
+    instructions: "Read the story. Choose the correct words from the dropdowns.",
+    text_template: "Students walk down the corridor [1] every morning. When floors are wet, there is less [2] between shoes and tiles. It is important to [3] warning signs placed near doors. Yesterday, Jake [4] another boy who was running too fast. The boy slipped and [5] down heavily near the stairs. Jake [6] immediately to assist his classmate. He ran to [7] the school nurse for quick help. The nurse applied a clean bandage [8] his injured knee. Everyone learned to walk [9] inside school buildings. Safe habits make school a [10] place for all children.",
+    example: { blank: 1, correct: "carefully", options: ["carefully", "careful", "careless"] },
+    blanks: [
+      { id: 2, correct: "friction", options: ["friction", "frictional", "frictions"] },
+      { id: 3, correct: "notice", options: ["notice", "notices", "noticed"] },
+      { id: 4, correct: "saw", options: ["see", "saw", "seen"] },
+      { id: 5, correct: "fell", options: ["fall", "fell", "fallen"] },
+      { id: 6, correct: "stopped", options: ["stop", "stops", "stopped"] },
+      { id: 7, correct: "call", options: ["call", "calls", "called"] },
+      { id: 8, correct: "on", options: ["on", "in", "at"] },
+      { id: 9, correct: "safely", options: ["safe", "safely", "safer"] },
+      { id: 10, correct: "better", options: ["good", "better", "best"] }
+    ],
     questions: [
       {
         id: 0,
@@ -434,7 +447,7 @@ export const readingHubData = {
         },
         {
           id: 3,
-          text: "After school, the headmaster called everyone to the main hall for the end-of-day assembly. He praised Jake in front of all the students for following school safety rules and helping his classmate quickly and calmly. He also reminded every student to walk slowly in the corridor and always look at the floor for wet tiles or warning signs. All the students listened carefully and felt happy and safe. They all promised to walk carefully down the corridor every single day and to look after each other at school."
+          text: "After school, the headmaster called everyone to the main hall for the end-of-day assembly. He praised Jake in front of all the students for following school safety rules and helping his classmate quickly and calmly. He also reminded students to walk slowly in the corridor. He told everyone to look at the floor for wet tiles or warning signs. All the students listened carefully and felt happy and safe. They all promised to walk carefully down the corridor every single day and to look after each other at school."
         }
       ]
     },

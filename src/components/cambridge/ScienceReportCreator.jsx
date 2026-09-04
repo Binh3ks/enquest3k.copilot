@@ -37,7 +37,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       name: 'Yellow Caution Sign',
       x: '75%',
       y: '50%',
-      fact: 'Observation: Cleaners mopped the wet floor and placed a yellow warning sign to alert everyone.'
+      fact: 'Observation: Cleaners mopped the slippery tiles and placed a yellow warning sign to alert everyone.'
     }
   ], []);
 
@@ -136,7 +136,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         <div>
           <div className="flex items-center gap-2">
             <span className="px-3 py-1 bg-amber-400 text-slate-950 font-black text-xs rounded-xl shadow-xs flex items-center gap-1.5">
-              <Search size={14} /> SCIENCE DETECTIVE
+              <Search size={14} /> DISCOVERY DETECTIVE
             </span>
             <span className="text-xs font-bold text-purple-700">Week {weekNumber} • Discovery Report</span>
           </div>
@@ -239,7 +239,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               disabled={!observedHotspot}
               className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:opacity-40 text-white font-black text-sm rounded-2xl shadow-md transition flex items-center gap-2"
             >
-              Next: Pick Science Clue <ChevronRight size={16} />
+              Next: Pick Discovery Clue <ChevronRight size={16} />
             </button>
           </div>
         </div>
@@ -250,7 +250,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         <div className="space-y-4 animate-in fade-in duration-200">
           <div className="p-3 bg-purple-50 rounded-2xl border border-purple-200">
             <p className="text-xs sm:text-sm font-bold text-purple-900">
-              💡 <strong>Step 2:</strong> What scientific principle explains why the boy slipped on the wet corridor floor?
+              💡 <strong>Step 2:</strong> What discovery clue explains why the boy slipped on the wet corridor floor?
             </p>
           </div>
 
@@ -315,7 +315,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         <div className="space-y-4 animate-in fade-in duration-200">
           <div className="p-3 bg-purple-50 rounded-2xl border border-purple-200">
             <p className="text-xs sm:text-sm font-bold text-purple-900">
-              🧩 <strong>Step 3:</strong> Tap the word pills in order to snap your official scientific discovery sentence together!
+              🧩 <strong>Step 3:</strong> Tap the word pills in order to snap your official discovery sentence together!
             </p>
           </div>
 
@@ -333,7 +333,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
             <div className="min-h-16 p-3 bg-black/40 rounded-2xl border border-purple-400/40 flex flex-wrap items-center gap-2">
               {assembledPills.length === 0 ? (
                 <span className="text-xs text-purple-300/70 italic">
-                  Tap the magnetic word pills below to build your science sentence...
+                  Tap the magnetic word pills below to build your discovery sentence...
                 </span>
               ) : (
                 assembledPills.map(p => (
@@ -417,7 +417,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               <span className="w-2.5 h-2.5 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
               <span className="w-2.5 h-2.5 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
               <span className="text-[10px] sm:text-[11px] font-black uppercase text-amber-900 tracking-wider ml-1">
-                📓 Nova's Official Science Detective Notebook
+                📓 Nova's Official Discovery Field Notebook
               </span>
             </div>
 
@@ -426,7 +426,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
                 <h3 className="text-base sm:text-xl font-black text-slate-900">
                   Corridor Friction & Safety Field Report
                 </h3>
-                <p className="text-xs text-amber-800 font-bold">Investigator: Junior Science Detective</p>
+                <p className="text-xs text-amber-800 font-bold">Investigator: Junior Discovery Detective</p>
               </div>
               <button
                 type="button"
@@ -453,7 +453,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
                 🥇
               </div>
               <div>
-                <h4 className="font-black text-sm uppercase tracking-wide">Certified Science Detective</h4>
+                <h4 className="font-black text-sm uppercase tracking-wide">Certified Discovery Detective</h4>
                 <p className="text-xs text-slate-800 font-bold">Corridor Physics & Safety Mastery Badge Earned</p>
               </div>
             </div>

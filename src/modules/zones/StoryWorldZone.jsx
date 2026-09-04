@@ -1486,7 +1486,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                             </div>
                           </div>
 
-                          <p className="text-sm sm:text-base font-bold text-slate-800 leading-relaxed text-left">
+                          <div className="text-sm sm:text-base font-bold text-slate-800 leading-relaxed text-left">
                             {studyScaffold === 'full' && currentQ.sentence}
                             {studyScaffold === 'half' && (() => {
                               const w = currentQ.sentence.split(/\s+/);
@@ -1494,10 +1494,37 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                               return `${w.slice(0, half).join(' ')} ___ ...`;
                             })()}
                             {studyScaffold === 'chunks' && (() => {
-                              const w = currentQ.sentence.split(/\s+/);
-                              return w.map((word, i) => (i % 2 === 0 ? word : '___')).join(' ');
+                              const sentence = currentQ.sentence || '';
+                              const chips = currentQ.chips || [];
+                              if (chips.length > 0) {
+                                const pattern = new RegExp(`(${chips.map(c => c.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')).join('|')})`, 'gi');
+                                const parts = sentence.split(pattern);
+                                return (
+                                  <span className="flex flex-wrap items-center gap-1.5 leading-loose">
+                                    {parts.map((part, idx) => {
+                                      if (!part.trim()) return null;
+                                      const isChip = chips.some(c => c.toLowerCase() === part.toLowerCase());
+                                      return isChip ? (
+                                        <span key={idx} className="px-2 py-0.5 bg-indigo-100 text-indigo-950 border border-indigo-300 rounded-md font-black shadow-2xs">
+                                          [{part}]
+                                        </span>
+                                      ) : (
+                                        <span key={idx} className="px-1 py-0.5 text-slate-600 font-bold">
+                                          {part}
+                                        </span>
+                                      );
+                                    })}
+                                  </span>
+                                );
+                              }
+                              const words = sentence.split(/\s+/);
+                              const chunksArr = [];
+                              for (let i = 0; i < words.length; i += 3) {
+                                chunksArr.push(words.slice(i, i + 3).join(' '));
+                              }
+                              return chunksArr.map(c => `[${c}]`).join(' ');
                             })()}
-                          </p>
+                          </div>
                         </div>
                       ) : (
                         <div className="flex justify-center">

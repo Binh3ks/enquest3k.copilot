@@ -1,10 +1,11 @@
 /**
  * Zone Data Mapper for EngQuest3K W33+
- * Transforms canonical 4-Hub weekData into 4 Experiential Zones:
- * - Zone 1: Story World (Discovery, Context & CLIL)
- * - Zone 2: Battle Arena (Speed, Grammar Drills, Singapore Math & Science Lab)
- * - Zone 3: Creator Studio (Story Writing, Voice Retelling, Podcast Shadowing & AI Debate)
- * - Zone 4: Boss Battle (Cambridge A2 Flyers 15-Shield Rotary Exam Simulation)
+ * Transforms canonical 4-Hub weekData into 5 Experiential Learning Zones:
+ * - Zone 1: Story World (Scene Explorer, Voice Shadow, Story Retell)
+ * - Zone 2: Knowledge Lab (Fact Finder, Action Lab, Discovery Report)
+ * - Zone 3: Battle Arena (Speed Match, Grammar Duel, Math Quest)
+ * - Zone 4: Creator Studio (Story Writer, Video Challenge, Info Exchange)
+ * - Zone 5: Boss Castle (Cambridge A2 Flyers 15-Shield Rotary Exam Simulation)
  */
 
 export function mapDataToZones(weekData, weekNumber = 33) {
@@ -42,7 +43,7 @@ export function mapDataToZones(weekData, weekNumber = 33) {
     speaking_hub: speakingHub,
     skill_practice_hub: skillPracticeHub,
 
-    // ZONE 1: STORY WORLD
+    // ZONE 1: STORY WORLD (Day 1)
     storyWorld: {
       storyScenes: readingHub.story_scenes || readingHub.read_explore?.story_scenes || [],
       clilArticle: readingHub.clil_article || readingHub.read_explore?.clil_article || null,
@@ -53,7 +54,17 @@ export function mapDataToZones(weekData, weekNumber = 33) {
       readExplore: readingHub.read_explore || null,
     },
 
-    // ZONE 2: BATTLE ARENA
+    // ZONE 2: KNOWLEDGE LAB (Day 2)
+    knowledgeLab: {
+      clilArticle: readingHub.clil_article || readingHub.read_explore?.clil_article || null,
+      actionLab: skillPracticeHub.science_lab || listeningHub.science_lab || null,
+      discoveryReport: {
+        title_en: readingHub.clil_article?.title_en || "Corridor Friction & Safety Discovery Report",
+        article: readingHub.clil_article || null,
+      }
+    },
+
+    // ZONE 3: BATTLE ARENA (Day 3)
     battleArena: {
       flashArena: skillPracticeHub.flash_arena || listeningHub.flash_arena || readingHub.vocab || weekData.vocab || [],
       wordPower: weekData.stations?.word_power || weekData.word_power || readingHub.word_power || null,

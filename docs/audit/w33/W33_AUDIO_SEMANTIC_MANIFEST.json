@@ -13,11 +13,11 @@
       "part": "CLIL",
       "source_file": "src/data/weeks/week_33/reading_hub.js",
       "source_key": "clil_article.content_en",
-      "transcript": "Why do people slip on wet floors? The answer is a science force called friction. Friction is the grip between two surfaces that stops things from sliding. When a student walks on dry tiles, shoe soles grip the floor firmly and the student stays balanced. But water on smooth tiles creates a thin slippery layer. This water layer reduces friction, so shoes slide easily.\n\nThis morning in our school corridor, Jake was walking carefully while the cleaner was drying the floor. Tom was running quickly to class, so he slipped on the wet tiles. Rubber soles provide strong grip because rubber holds surfaces better than plastic. Yellow warning signs remind students to walk slowly. Understanding friction keeps everyone safe!",
-      "expected_transcript": "Why do people slip on wet floors? The answer is a science force called friction. Friction is the grip between two surfaces that stops things from sliding. When a student walks on dry tiles, shoe soles grip the floor firmly and the student stays balanced. But water on smooth tiles creates a thin slippery layer. This water layer reduces friction, so shoes slide easily.\n\nThis morning in our school corridor, Jake was walking carefully while the cleaner was drying the floor. Tom was running quickly to class, so he slipped on the wet tiles. Rubber soles provide strong grip because rubber holds surfaces better than plastic. Yellow warning signs remind students to walk slowly. Understanding friction keeps everyone safe!",
-      "canonical_transcript": "Why do people slip on wet floors? The answer is a science force called friction. Friction is the grip between two surfaces that stops things from sliding. When a student walks on dry tiles, shoe soles grip the floor firmly and the student stays balanced. But water on smooth tiles creates a thin slippery layer. This water layer reduces friction, so shoes slide easily.\n\nThis morning in our school corridor, Jake was walking carefully while the cleaner was drying the floor. Tom was running quickly to class, so he slipped on the wet tiles. Rubber soles provide strong grip because rubber holds surfaces better than plastic. Yellow warning signs remind students to walk slowly. Understanding friction keeps everyone safe!",
+      "transcript": "Did you ever wonder why wet floors turn into ice rinks? The secret is an invisible science force called friction! Friction is the friendly grip between your shoe soles and the floor that stops you from sliding. When you walk on dry, smooth tiles, your shoes grip firmly and your body stays balanced. But when water spills, it spreads out into a thin slippery layer. This water layer reduces friction, turning safe floors into a slippery slide!\n\nThis morning in our school corridor, Tom was running in a big hurry to science class. Suddenly—whoosh! He slipped on the wet tiles because his old sneakers had smooth plastic soles with no grip! Luckily, Jake was walking carefully nearby. When Jake rushed to help Tom up, he noticed something amazing: his own rubber soles gripped the floor tightly without sliding at all! The school nurse smiled and pointed to the bright yellow warning sign: \"Tom, rubber gives a strong grip, but water always steals your friction!\" Tom rubbed his sore knee and laughed, \"From now on, I will walk like a smart scientist!\"",
+      "expected_transcript": "Did you ever wonder why wet floors turn into ice rinks? The secret is an invisible science force called friction! Friction is the friendly grip between your shoe soles and the floor that stops you from sliding. When you walk on dry, smooth tiles, your shoes grip firmly and your body stays balanced. But when water spills, it spreads out into a thin slippery layer. This water layer reduces friction, turning safe floors into a slippery slide!\n\nThis morning in our school corridor, Tom was running in a big hurry to science class. Suddenly—whoosh! He slipped on the wet tiles because his old sneakers had smooth plastic soles with no grip! Luckily, Jake was walking carefully nearby. When Jake rushed to help Tom up, he noticed something amazing: his own rubber soles gripped the floor tightly without sliding at all! The school nurse smiled and pointed to the bright yellow warning sign: \"Tom, rubber gives a strong grip, but water always steals your friction!\" Tom rubbed his sore knee and laughed, \"From now on, I will walk like a smart scientist!\"",
+      "canonical_transcript": "Did you ever wonder why wet floors turn into ice rinks? The secret is an invisible science force called friction! Friction is the friendly grip between your shoe soles and the floor that stops you from sliding. When you walk on dry, smooth tiles, your shoes grip firmly and your body stays balanced. But when water spills, it spreads out into a thin slippery layer. This water layer reduces friction, turning safe floors into a slippery slide!\n\nThis morning in our school corridor, Tom was running in a big hurry to science class. Suddenly—whoosh! He slipped on the wet tiles because his old sneakers had smooth plastic soles with no grip! Luckily, Jake was walking carefully nearby. When Jake rushed to help Tom up, he noticed something amazing: his own rubber soles gripped the floor tightly without sliding at all! The school nurse smiled and pointed to the bright yellow warning sign: \"Tom, rubber gives a strong grip, but water always steals your friction!\" Tom rubbed his sore knee and laughed, \"From now on, I will walk like a smart scientist!\"",
       "transcript_provenance": "SOURCE_DATA",
-      "source_fingerprint": "2a58ecec05ae999d36299072df16546e9f6b814c06e7d9b174b4c9e2e2b4d803",
+      "source_fingerprint": "cb5165a34b53985b2d76673278c7e2f73beaf4084efbe2105b58c8cbc62b830c",
       "required_anchors": [
         "friction",
         "slip",
@@ -44,11 +44,11 @@
       "part": "STORY",
       "source_file": "src/data/weeks/week_33/read.js",
       "source_key": "content_en",
-      "transcript": "Jake was walking carefully down the school corridor after science class. Suddenly, a boy running fast slipped on the wet floor and fell down heavily. He hurt his knee and lost his balance completely. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. She explained that wet floors have low friction. Everyone felt relieved and praised Jake for following safety rules. The headmaster reminded all students never to run in corridors and always watch for yellow warning signs.",
-      "expected_transcript": "Jake was walking carefully down the school corridor after science class. Suddenly, a boy running fast slipped on the wet floor and fell down heavily. He hurt his knee and lost his balance completely. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. She explained that wet floors have low friction. Everyone felt relieved and praised Jake for following safety rules. The headmaster reminded all students never to run in corridors and always watch for yellow warning signs.",
-      "canonical_transcript": "Jake was walking carefully down the school corridor after science class. Suddenly, a boy running fast slipped on the wet floor and fell down heavily. He hurt his knee and lost his balance completely. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. She explained that wet floors have low friction. Everyone felt relieved and praised Jake for following safety rules. The headmaster reminded all students never to run in corridors and always watch for yellow warning signs.",
+      "transcript": "Jake was walking carefully down the school corridor after science class. A boy was running very fast past the science room. Suddenly, he lost his balance on the wet floor and slipped. He fell down heavily and hurt his knee. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. Everyone felt relieved, and the headmaster reminded all students never to run in corridors.",
+      "expected_transcript": "Jake was walking carefully down the school corridor after science class. A boy was running very fast past the science room. Suddenly, he lost his balance on the wet floor and slipped. He fell down heavily and hurt his knee. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. Everyone felt relieved, and the headmaster reminded all students never to run in corridors.",
+      "canonical_transcript": "Jake was walking carefully down the school corridor after science class. A boy was running very fast past the science room. Suddenly, he lost his balance on the wet floor and slipped. He fell down heavily and hurt his knee. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. Everyone felt relieved, and the headmaster reminded all students never to run in corridors.",
       "transcript_provenance": "SOURCE_DATA",
-      "source_fingerprint": "bc4d43126977fadf569225facec35277ad7ea5063a315d1e71b73741e544b41b",
+      "source_fingerprint": "61a53f187945d6ab57f7e0095bdbe847f20b26c908c22cc3c03a0b15cb4618fc",
       "required_anchors": [
         "Jake",
         "corridor",
@@ -554,6 +554,31 @@
         "Jake",
         "quick",
         "action"
+      ],
+      "optional_anchors": [],
+      "required": true
+    },
+    {
+      "asset": "/audio/week33/info_exchange_q5.mp3",
+      "filesystem_path": "public/audio/week33/info_exchange_q5.mp3",
+      "file": "public/audio/week33/info_exchange_q5.mp3",
+      "absolute_or_repo_path": "public/audio/week33/info_exchange_q5.mp3",
+      "category": "QUESTION_AUDIO",
+      "part": "S2",
+      "source_file": "src/data/weeks/week_33/speaking_hub.js",
+      "source_key": "speakingHub.info_exchange_cards.table_b.fields[4].nova_question",
+      "transcript": "What safety rule did the headmaster remind all students?",
+      "expected_transcript": "What safety rule did the headmaster remind all students?",
+      "canonical_transcript": "What safety rule did the headmaster remind all students?",
+      "transcript_provenance": "SOURCE_DATA",
+      "source_fingerprint": "2141375f0a94cab0f4f87e61e7e3076d85e9d5b7639843b9ae904b009b57f25e",
+      "required_anchors": [
+        "What",
+        "safety",
+        "rule",
+        "headmaster",
+        "remind",
+        "students"
       ],
       "optional_anchors": [],
       "required": true
@@ -1356,5 +1381,5 @@
       "required": true
     }
   ],
-  "source_fingerprint_root": "1b13ac3cd68ed381fcf553b65c0370854442fd23600474d1f617007279a46ccd"
+  "source_fingerprint_root": "75c8c0b92947b69eee921244f69fbf433f477bf241185e8849ddc7a3b89a1750"
 }

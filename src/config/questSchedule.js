@@ -21,8 +21,8 @@
  *   sentence_smash  : 🧱 Grammar Duel          (Đấu trường sắp xếp cú pháp câu)
  *   math_quest      : 📐 Math Quest            (Tư duy toán học, định lượng & sơ đồ)
  *   story_writer    : ✏️ Story Writer          (Sáng tác truyện 3 cảnh chuẩn Cambridge P7)
- *   broadcast_studio: 📻 Hot Mic               (Thu âm podcast / dẫn chuyện phát thanh)
- *   ai_debate       : 🎭 Debate Arena          (Tranh biện phản biện đa chiều cùng AI)
+ *   broadcast_studio: 📹 Video Challenge       (Thử thách quay video / thuyết trình đa phương tiện)
+ *   info_exchange   : 🔄 Info Exchange          (Trao đổi thông tin hỏi - đáp Cambridge S2)
  *   boss_listening  : 🎧 Listening Shield      (Đánh giá năng lực Nghe 5 Khiên)
  *   boss_reading    : 📖 Reading & Writing Shield (Đánh giá năng lực Đọc - Viết 5 Khiên)
  *   weekly_review   : 🏆 Speaking & Passport   (Đánh giá năng lực Nói & Chứng nhận 15 Khiên)
@@ -42,36 +42,36 @@ export const QUEST_SCHEDULE = [
     day: 2,
     label: '🔬 Knowledge Lab',
     quests: [
-      { id: 'gear4_clil',     label: 'Fact Finder',      zone: 1, gearIndex: 3, station: null,              icon: '🌐', minutes: 8, xp: 0, isMilestone: true },
-      { id: 'science_lab',    label: 'Action Lab',       zone: 2, gearIndex: null, station: 'science_lab',  icon: '🧪', minutes: 6, xp: 50, isMilestone: false },
-      { id: 'science_report', label: 'Discovery Report', zone: 3, gearIndex: null, station: 'science_report', icon: '📝', minutes: 7, xp: 50, isMilestone: false },
+      { id: 'gear4_clil',     label: 'Fact Finder',      zone: 2, gearIndex: null, station: 'clil',             icon: '🌐', minutes: 8, xp: 0, isMilestone: true },
+      { id: 'science_lab',    label: 'Action Lab',       zone: 2, gearIndex: null, station: 'action_lab',       icon: '🧪', minutes: 6, xp: 50, isMilestone: false },
+      { id: 'science_report', label: 'Discovery Report', zone: 2, gearIndex: null, station: 'discovery_report',icon: '📝', minutes: 7, xp: 50, isMilestone: false },
     ],
   },
   {
     day: 3,
     label: '⚔️ Battle Arena',
     quests: [
-      { id: 'word_blitz',     label: 'Speed Match',      zone: 2, gearIndex: null, station: 'word_blitz',     icon: '⚡', minutes: 5, xp: 45, isMilestone: false },
-      { id: 'sentence_smash', label: 'Grammar Duel',     zone: 2, gearIndex: null, station: 'sentence_smash', icon: '🧱', minutes: 5, xp: 50, isMilestone: false },
-      { id: 'math_quest',     label: 'Math Quest',       zone: 2, gearIndex: null, station: 'math_quest',     icon: '📐', minutes: 6, xp: 40, isMilestone: false },
+      { id: 'word_blitz',     label: 'Speed Match',      zone: 3, gearIndex: null, station: 'word_blitz',     icon: '⚡', minutes: 5, xp: 45, isMilestone: false },
+      { id: 'sentence_smash', label: 'Grammar Duel',     zone: 3, gearIndex: null, station: 'sentence_smash', icon: '🧱', minutes: 5, xp: 50, isMilestone: false },
+      { id: 'math_quest',     label: 'Math Quest',       zone: 3, gearIndex: null, station: 'math_quest',     icon: '📐', minutes: 6, xp: 40, isMilestone: false },
     ],
   },
   {
     day: 4,
     label: '✍️ Creator Studio',
     quests: [
-      { id: 'story_writer',     label: 'Story Writer',    zone: 3, gearIndex: null, station: 'writing',     icon: '✏️', minutes: 10, xp: 50, isMilestone: false },
-      { id: 'broadcast_studio', label: 'Video Challenge', zone: 3, gearIndex: null, station: 'broadcast',   icon: '📹', minutes: 7, xp: 50, isMilestone: false },
-      { id: 'info_exchange',    label: 'Info Exchange',   zone: 3, gearIndex: null, station: null,          icon: '🔄', minutes: 7, xp: 20, isMilestone: false },
+      { id: 'story_writer',     label: 'Story Writer',    zone: 4, gearIndex: null, station: 'writing',       icon: '✏️', minutes: 10, xp: 50, isMilestone: false },
+      { id: 'broadcast_studio', label: 'Video Challenge', zone: 4, gearIndex: null, station: 'broadcast',     icon: '📹', minutes: 7, xp: 50, isMilestone: false },
+      { id: 'info_exchange',    label: 'Info Exchange',   zone: 4, gearIndex: null, station: 'info_exchange', icon: '🔄', minutes: 7, xp: 20, isMilestone: false },
     ],
   },
   {
     day: 5,
     label: '🏰 Boss Castle',
     quests: [
-      { id: 'boss_listening', label: 'Listening Shield',          zone: 4, gearIndex: null, station: 'listening_boss', icon: '🎧', minutes: 10, xp: 0, isMilestone: true },
-      { id: 'boss_reading',   label: 'Reading & Writing Shield',  zone: 4, gearIndex: null, station: 'rw_boss',        icon: '📖', minutes: 10, xp: 0, isMilestone: true },
-      { id: 'weekly_review',  label: 'Speaking & Passport',       zone: 4, gearIndex: null, station: 'review',         icon: '🏆', minutes: 15, xp: 0, isMilestone: true },
+      { id: 'boss_listening', label: 'Listening Shield',          zone: 5, gearIndex: null, station: 'listening_boss', icon: '🎧', minutes: 10, xp: 0, isMilestone: true },
+      { id: 'boss_reading',   label: 'Reading & Writing Shield',  zone: 5, gearIndex: null, station: 'rw_boss',        icon: '📖', minutes: 10, xp: 0, isMilestone: true },
+      { id: 'weekly_review',  label: 'Speaking & Passport',       zone: 5, gearIndex: null, station: 'review',         icon: '🏆', minutes: 15, xp: 0, isMilestone: true },
     ],
   },
 ];
