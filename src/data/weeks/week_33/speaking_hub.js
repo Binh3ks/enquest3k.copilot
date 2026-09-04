@@ -213,7 +213,7 @@ export const speakingHub = {
       { id: "d3", name: "Warning Sign Color", prompt_en: "In Picture A, the caution sign is yellow, but in Picture B, it is orange.", prompt_vi: "Ở bức tranh A, biển cảnh báo màu vàng, nhưng ở bức tranh B, nó màu cam.", x: 30, y: 63 },
       { id: "d4", name: "Boy's T-shirt Color", prompt_en: "In Picture A, the boy walking is wearing a red T-shirt, but in Picture B, he is wearing a blue T-shirt.", prompt_vi: "Ở bức tranh A, cậu bé mặc áo phông đỏ, nhưng ở bức tranh B, cậu bé mặc áo phông xanh dương.", x: 50, y: 61 },
       { id: "d5", name: "Hanging Coat Color", prompt_en: "In Picture A, the coat hanging on the wall is red, but in Picture B, it is green.", prompt_vi: "Ở bức tranh A, chiếc áo khoác treo trên tường màu đỏ, nhưng ở bức tranh B, nó màu xanh lá.", x: 73, y: 53 },
-      { id: "d6", name: "Wall Clock Time", prompt_en: "In Picture A, the clock shows three o'clock, but in Picture B, it shows ten past twelve.", prompt_vi: "Ở bức tranh A, đồng hồ chỉ 3 giờ, nhưng ở bức tranh B, đồng hồ chỉ 12 giờ 10.", x: 71, y: 20 }
+      { id: "d6", name: "Wall Clock Time", prompt_en: "In Picture A, the clock shows nine o'clock, but in Picture B, it shows ten o'clock.", prompt_vi: "Ở bức tranh A, đồng hồ chỉ 9 giờ, nhưng ở bức tranh B, đồng hồ chỉ 10 giờ.", x: 61, y: 20 }
     ]
   }
 };
