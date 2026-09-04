@@ -168,7 +168,7 @@ export const speakingHub = {
       {
         id: 2,
         image_url: "/images/week33/ps_2.png",
-        narrator_prompt: "Suddenly, a boy ran fast and slipped on the wet floor."
+        narrator_prompt: "Suddenly, he lost his balance on the wet floor and slipped."
       },
       {
         id: 3,

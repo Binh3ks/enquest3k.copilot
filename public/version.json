@@ -1,9 +1,9 @@
 {
-  "commit": "7c7ae0c6da565b2e063ececa8b9429d900ccdd50",
-  "git_commit": "7c7ae0c6da565b2e063ececa8b9429d900ccdd50",
-  "shortCommit": "7c7ae0c6",
-  "message": "fix(w33): correct story logic sequence and pre-generate static audios for scene explorer & voice shadow",
-  "builtAt": "2026-09-04T03:38:24.127Z",
-  "build_timestamp": "2026-09-04T03:38:24.128Z",
+  "commit": "3c622a1597aa5197c212a715d2cc97270d68da83",
+  "git_commit": "3c622a1597aa5197c212a715d2cc97270d68da83",
+  "shortCommit": "3c622a15",
+  "message": "fix(w33): recalibrate find differences hotspots, fix mobile image clipping, and sync story scenes across writer and challenge",
+  "builtAt": "2026-09-04T03:58:32.317Z",
+  "build_timestamp": "2026-09-04T03:58:32.319Z",
   "env": "production"
 }

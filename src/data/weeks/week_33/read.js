@@ -29,15 +29,15 @@ export default {
     {
       scene_id: "scene_2",
       scene_number: 2,
-      title_en: "Scene 2: Running Fast & Slipping on Wet Floor",
-      description_en: "A boy was **running very fast** past the **science room**, **lost his balance**, and **slipped**.",
-      description: "A boy was **running very fast** past the **science room**, **lost his balance**, and **slipped**.",
+      title_en: "Scene 2: Slipping on Wet Floor",
+      description_en: "Suddenly, he **lost his balance** on the **wet floor** and **slipped**.",
+      description: "Suddenly, he **lost his balance** on the **wet floor** and **slipped**.",
       image_url: "/images/week33/webtoon_scene_2.png",
       audio_url: "/audio/week33/scene_2.mp3",
       lexical_chunks: [
-        { word: "running", chunk: "running very fast", vi: "chạy rất nhanh", x: 62, y: 45 },
-        { word: "science", chunk: "science room", vi: "phòng khoa học", x: 88, y: 30 },
-        { word: "balance", chunk: "lost his balance", vi: "mất thăng bằng", x: 58, y: 82 }
+        { word: "balance", chunk: "lost his balance", vi: "mất thăng bằng", x: 62, y: 45 },
+        { word: "floor", chunk: "wet floor", vi: "sàn ướt", x: 74, y: 68 },
+        { word: "slipped", chunk: "slipped", vi: "trượt chân", x: 58, y: 82 }
       ]
     },
     {
@@ -94,10 +94,10 @@ export default {
     },
     {
       step: 2,
-      question_vi: 'Cậu bé kia đã làm gì và điều gì xảy ra trên sàn ướt?',
-      question_en: 'What did the other boy do, and what happened on the wet floor?',
-      chips: ['running very fast', 'lost his balance', 'slipped'],
-      sentence: 'A boy was running very fast past the science room, lost his balance, and slipped.'
+      question_vi: 'Điều gì đã xảy ra đột ngột trên sàn ướt?',
+      question_en: 'What happened suddenly on the wet floor?',
+      chips: ['lost his balance', 'wet floor', 'slipped'],
+      sentence: 'Suddenly, he lost his balance on the wet floor and slipped.'
     },
     {
       step: 3,
