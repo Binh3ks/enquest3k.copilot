@@ -14,15 +14,16 @@ export const writingHubData = {
         scene: 1,
         ladder_stage: "MODEL",
         badge_label: "MODEL",
-        title: "Scene 1: Walking in the Corridor",
+        title: "Scene 1: Walking Down the Corridor",
         image_url: "/images/week33/writing_panel_1.png",
-        caption: "Jake was walking carefully down the corridor while a boy ran fast.",
-        frame_L1: "In the beginning, Jake was walking carefully down the school corridor. Suddenly, a boy was running very fast past the science room.",
-        connectors: ["In the beginning,", "Suddenly,", "Then,", "and"],
-        sentence_hint: "Write 2 sentences: (1) Where Jake was walking, and (2) who ran past the science room.",
-        ordered_chips: ["Jake", "was walking carefully", "down the school corridor", "a boy was running very fast", "past the science room"],
-        pills: ["was walking carefully", "down the school corridor", "a boy was running very fast", "past the science room", "noticed the warning sign", "Jake", "ran past him"],
-        audio: "In the beginning, Jake was walking carefully down the school corridor. Suddenly, a boy was running very fast past the science room."
+        caption: "Jake was walking carefully down the school corridor after science class.",
+        frame_L1: "In the beginning, Jake was walking carefully down the school corridor after science class. He noticed the wet floor tiles near the science room.",
+        connectors: ["In the beginning,", "On Monday morning,", "First,", "and"],
+        sentence_hint: "Write 2 sentences: (1) Where Jake was walking after science class, and (2) what he noticed near the science room.",
+        ordered_chips: ["Jake", "was walking carefully", "down the school corridor", "after science class", "noticed the wet floor tiles"],
+        pills: ["was walking carefully", "down the school corridor", "after science class", "noticed the wet floor tiles", "near the science room", "walked slowly", "Jake"],
+        sentence_frame: "In the beginning, Jake [was walking carefully] [down the school corridor] [after science class]. He [noticed the wet floor tiles] [near the science room].",
+        audio: "In the beginning, Jake was walking carefully down the school corridor after science class. He noticed the wet floor tiles near the science room."
       },
       {
         scene: 2,
@@ -30,16 +31,17 @@ export const writingHubData = {
         badge_label: "BUILD",
         title: "Scene 2: Slipping on Wet Floor",
         image_url: "/images/week33/writing_panel_2.png",
-        caption: "Suddenly, the running boy lost his balance on the wet tiles, slipped, and fell down heavily.",
-        frame_L1: "Suddenly, the running boy lost his balance on the wet floor and slipped. He fell down heavily and hurt his knee badly.",
-        sentence_hint: "Write 2 sentences: (1) The boy lost his balance and slipped, and (2) how he fell and hurt his knee.",
-        connectors: ["Suddenly,", "Right away,", "Then,", "and", "because"],
+        caption: "Suddenly, he lost his balance on the wet floor and slipped.",
+        frame_L1: "Suddenly, a boy was running very fast past the science room. He lost his balance on the wet floor and slipped.",
+        sentence_hint: "Write 2 sentences: (1) Who was running very fast, and (2) how he lost his balance and slipped on the wet floor.",
+        connectors: ["Suddenly,", "At that moment,", "Then,", "and", "because"],
         display_chips: [
-          "hurt his knee badly", "the running boy", "lost his balance", "on the wet floor and slipped", "fell down heavily"
+          "a boy was running very fast", "past the science room", "lost his balance", "on the wet floor", "slipped heavily"
         ],
-        pills: ["hurt his knee badly", "the running boy", "lost his balance", "on the wet floor and slipped", "fell down heavily", "cried out in pain", "dropped his heavy schoolbag"],
-        correct_order: ["the running boy", "lost his balance", "on the wet floor and slipped", "he", "fell down heavily", "and", "hurt his knee badly"],
-        audio: "Suddenly, the running boy lost his balance on the wet floor and slipped. He fell down heavily and hurt his knee badly."
+        pills: ["a boy was running very fast", "past the science room", "lost his balance", "on the wet floor", "slipped heavily", "fell down", "dropped his books"],
+        correct_order: ["a boy was running very fast", "past the science room", "he", "lost his balance", "on the wet floor", "and", "slipped heavily"],
+        sentence_frame: "Suddenly, [a boy was running very fast] [past the science room]. He [lost his balance] [on the wet floor] and [slipped heavily].",
+        audio: "Suddenly, a boy was running very fast past the science room. He lost his balance on the wet floor and slipped."
       },
       {
         scene: 3,
@@ -49,26 +51,26 @@ export const writingHubData = {
         image_url: "/images/week33/writing_panel_3.png",
         caption: "Jake stopped immediately to help his friend and called the school nurse.",
         frame_L1: "Then, Jake stopped immediately to help his friend stay calm. He called the school nurse right away for help.",
-        sentence_hint: "Write 2 sentences: (1) Jake stopped to help his friend stay calm, and (2) he called the school nurse right away.",
+        sentence_hint: "Write 2 sentences: (1) Jake stopped immediately to help his friend, and (2) he called the school nurse right away.",
         connectors: ["Then,", "Right away,", "Immediately,", "and", "so"],
-        keywords: ["stopped immediately", "help his friend stay calm", "called the school nurse", "right away for help", "stayed with his hurt classmate"],
-        pills: ["stopped immediately", "help his friend stay calm", "called the school nurse", "right away for help", "stayed with his hurt classmate", "the school nurse arrived quickly", "on the wooden bench", "Jake"],
-        sentence_frame: "Then, Jake [stopped immediately] to [help his friend stay calm]. He [called the school nurse] [right away for help].",
+        keywords: ["stopped immediately", "help his friend", "stay calm", "called the school nurse", "right away for help"],
+        pills: ["stopped immediately", "to help his friend", "stay calm", "called the school nurse", "right away for help", "cried in pain", "hurt his knee", "Jake"],
+        sentence_frame: "Then, Jake [stopped immediately] to [help his friend] [stay calm]. He [called the school nurse] [right away for help].",
         audio: "Then, Jake stopped immediately to help his friend stay calm. He called the school nurse right away for help."
       },
       {
         scene: 4,
         ladder_stage: "EXPAND",
         badge_label: "EXPAND",
-        title: "Scene 4: Nurse Treating the Cut",
+        title: "Scene 4: Nurse Arriving with Bandage",
         image_url: "/images/week33/writing_panel_4.png",
         caption: "The nurse arrived quickly with a clean bandage and a cold pack to treat the cut.",
         frame_L1: "After that, the school nurse arrived quickly with a clean bandage. She placed a cold pack to treat the cut carefully.",
-        sentence_hint: "Write 2 sentences: (1) The nurse arrived quickly with a clean bandage, and (2) she treated the cut with a cold pack.",
-        connectors: ["After that,", "Next,", "Quickly,", "and", "then"],
-        keywords: ["school nurse arrived quickly", "clean bandage", "cold pack", "treat the cut", "first-aid kit"],
-        pills: ["school nurse arrived quickly", "clean bandage", "cold pack", "treat the cut", "first-aid kit", "pointed to the yellow warning sign", "spoke to all the students"],
-        sentence_frame: "After that, the [school nurse arrived quickly] with a [clean bandage]. She placed a [cold pack] to [treat the cut] carefully.",
+        sentence_hint: "Write 2 sentences: (1) The nurse arrived quickly with a clean bandage, and (2) she placed a cold pack to treat the cut.",
+        connectors: ["After that,", "Next,", "Soon,", "and", "so"],
+        keywords: ["the school nurse arrived quickly", "with a clean bandage", "placed a cold pack", "to treat the cut", "first-aid kit"],
+        pills: ["the school nurse arrived quickly", "with a clean bandage", "placed a cold pack", "to treat the cut", "sat on the wooden bench", "first-aid kit", "felt much better"],
+        sentence_frame: "After that, [the school nurse arrived quickly] [with a clean bandage]. She [placed a cold pack] [to treat the cut] carefully.",
         audio: "After that, the school nurse arrived quickly with a clean bandage. She placed a cold pack to treat the cut carefully."
       },
       {
@@ -78,25 +80,29 @@ export const writingHubData = {
         title: "Scene 5: Relief & Safety Reminder",
         image_url: "/images/week33/writing_panel_5.png",
         caption: "Everyone felt relieved, and the headmaster reminded all students never to run in corridors.",
-        frame_L1: "In the end, everyone felt relieved at the school assembly. The headmaster reminded all students never to run in corridors and gave Jake a safety award.",
+        frame_L1: "In the end, everyone felt relieved that Tom was safe. The headmaster reminded all students never to run in corridors.",
         sentence_hint: "Write 2 sentences: (1) How everyone felt relieved, and (2) what the headmaster reminded all students.",
         connectors: ["In the end,", "Finally,", "At last,", "and", "because"],
-        keywords: ["everyone felt relieved", "headmaster reminded all students", "never to run in corridors", "gave Jake a special safety award", "were clapping loudly"],
-        pills: ["everyone felt relieved", "headmaster reminded all students", "never to run in corridors", "gave Jake a special safety award", "were clapping loudly", "at the school assembly", "promised to walk carefully"],
-        sentence_frame: "In the end, [everyone felt relieved] [at the school assembly]. The [headmaster reminded all students] [never to run in corridors] and [gave Jake a special safety award].",
-        audio: "In the end, everyone felt relieved at the school assembly. The headmaster reminded all students never to run in corridors and gave Jake a safety award."
+        keywords: ["everyone felt relieved", "the headmaster reminded all students", "never to run in corridors", "that Tom was safe", "clapped happily"],
+        pills: ["everyone felt relieved", "the headmaster reminded all students", "never to run in corridors", "that Tom was safe", "gave a thumbs up", "clapped happily", "walked safely"],
+        sentence_frame: "In the end, [everyone felt relieved] [that Tom was safe]. The [headmaster reminded all students] [never to run in corridors].",
+        audio: "In the end, everyone felt relieved that Tom was safe. The headmaster reminded all students never to run in corridors."
       }
     ],
     panels: [
-      { image_url: "/images/week33/writing_panel_1.png", caption: "Jake was walking carefully down the corridor while a student ran fast.", pills: ["Jake was walking carefully", "down the school corridor", "near the warning sign", "a student was running fast"] },
-      { image_url: "/images/week33/writing_panel_2.png", caption: "Suddenly, the boy slipped on the wet floor and hurt his knee.", pills: ["slipped on the wet floor", "fell down heavily", "hurt his knee badly", "lost his balance"] },
-      { image_url: "/images/week33/writing_panel_3.png", caption: "Jake called the school nurse, who arrived quickly with a clean bandage.", pills: ["called the school nurse", "with a clean bandage", "felt relieved", "praised Jake"] }
+      { image_url: "/images/week33/writing_panel_1.png", caption: "Jake was walking carefully down the school corridor after science class.", pills: ["was walking carefully", "down the school corridor", "after science class", "noticed the wet floor tiles"] },
+      { image_url: "/images/week33/writing_panel_2.png", caption: "Suddenly, he lost his balance on the wet floor and slipped.", pills: ["a boy was running very fast", "lost his balance", "on the wet floor", "slipped heavily"] },
+      { image_url: "/images/week33/writing_panel_3.png", caption: "Jake stopped immediately to help his friend and called the school nurse.", pills: ["stopped immediately", "help his friend", "stay calm", "called the school nurse"] },
+      { image_url: "/images/week33/writing_panel_4.png", caption: "The nurse arrived quickly with a clean bandage and a cold pack to treat the cut.", pills: ["the school nurse arrived quickly", "with a clean bandage", "placed a cold pack", "to treat the cut"] },
+      { image_url: "/images/week33/writing_panel_5.png", caption: "Everyone felt relieved, and the headmaster reminded all students never to run in corridors.", pills: ["everyone felt relieved", "the headmaster reminded all students", "never to run in corridors", "that Tom was safe"] }
     ],
-    word_bank: ["corridor", "slipped", "fell", "nurse", "bandage", "relieved", "careful", "warning", "floor", "knee"],
+    word_bank: ["corridor", "slipped", "balance", "nurse", "bandage", "cold pack", "relieved", "headmaster", "warning", "carefully"],
     sentence_frames: [
-      "While Jake was walking in the corridor, a student was running fast.",
-      "Suddenly, the boy slipped on the wet floor and hurt his knee.",
-      "Jake called the school nurse, who arrived with a clean bandage."
+      "Jake was walking carefully down the school corridor after science class.",
+      "Suddenly, he lost his balance on the wet floor and slipped.",
+      "Jake stopped immediately to help his friend and called the school nurse.",
+      "The nurse arrived quickly with a clean bandage and a cold pack to treat the cut.",
+      "Everyone felt relieved, and the headmaster reminded all students never to run in corridors."
     ],
     min_words: 20
   },

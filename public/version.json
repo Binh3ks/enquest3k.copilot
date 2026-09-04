@@ -1,9 +1,9 @@
 {
-  "commit": "bfa5cf80aadb1694b70cca4f4b5f5214d13d3ce0",
-  "git_commit": "bfa5cf80aadb1694b70cca4f4b5f5214d13d3ce0",
-  "shortCommit": "bfa5cf80",
-  "message": "feat(speaking): enable 6th difference for wall clock and align Cambridge scoring target (4 diffs)",
-  "builtAt": "2026-09-04T05:55:52.242Z",
-  "build_timestamp": "2026-09-04T05:55:52.242Z",
+  "commit": "8f0cefbb59c0f15b3253cdfdc4e0d8d3368ea65e",
+  "git_commit": "8f0cefbb59c0f15b3253cdfdc4e0d8d3368ea65e",
+  "shortCommit": "8f0cefbb",
+  "message": "fix(speaking): recalibrate wall clock hotspot to exact circular clock coordinates (x: 61%, y: 20%)",
+  "builtAt": "2026-09-04T06:34:26.999Z",
+  "build_timestamp": "2026-09-04T06:34:26.999Z",
   "env": "production"
 }

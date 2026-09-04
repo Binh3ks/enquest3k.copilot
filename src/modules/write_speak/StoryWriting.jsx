@@ -798,16 +798,16 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
                 placeholder={
                   currentStepIdx === 0
                     ? "Start with 'In the beginning,' and describe Scene 1..."
-                    : currentStepIdx === 1
-                    ? "Choose a connector (Then / Suddenly) and describe Scene 2..."
-                    : "Choose a connector (Finally / In the end) and describe Scene 3..."
+                    : currentStepIdx === steps.length - 1
+                    ? `Choose a connector (In the end / Finally) and describe Scene ${currentStepIdx + 1}...`
+                    : `Choose a connector (Then / After that) and describe Scene ${currentStepIdx + 1}...`
                 }
                 className="w-full p-2.5 sm:p-3 bg-slate-50 border-2 border-slate-200 rounded-xl text-xs sm:text-sm font-medium text-slate-900 focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none resize-none transition leading-normal"
               />
 
               <div className="flex items-center justify-between text-[10.5px] sm:text-xs text-slate-500 font-bold">
                 <span>
-                  {stepWordCount} words in scene {currentStepIdx === 2 && '(min: 5)'}
+                  {stepWordCount} words in scene (min: 5)
                 </span>
                 <span>Total: {wordCount} words (min: 20)</span>
               </div>

@@ -67,11 +67,11 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
     // 5 canonical scene frames as fallback so prompter ALWAYS has 5 full scenes
     const canonicalSteps = writingData?.picture_story?.steps || [];
     const defaultScenes = [
-      { id: 1, func: 'setting',  title: 'Scene 1: Setting 🔵', defaultText: canonicalSteps[0]?.frame_L1 || canonicalSteps[0]?.caption || "In the beginning, Jake was walking carefully down the school corridor. Suddenly, a boy was running very fast past the science room." },
-      { id: 2, func: 'action',   title: 'Scene 2: Action 🟢',  defaultText: canonicalSteps[1]?.frame_L1 || canonicalSteps[1]?.caption || "Suddenly, the running boy lost his balance on the wet floor and slipped. He fell down heavily and hurt his knee badly." },
+      { id: 1, func: 'setting',  title: 'Scene 1: Setting 🔵', defaultText: canonicalSteps[0]?.frame_L1 || canonicalSteps[0]?.caption || "In the beginning, Jake was walking carefully down the school corridor after science class. He noticed the wet floor tiles near the science room." },
+      { id: 2, func: 'action',   title: 'Scene 2: Action 🟢',  defaultText: canonicalSteps[1]?.frame_L1 || canonicalSteps[1]?.caption || "Suddenly, a boy was running very fast past the science room. He lost his balance on the wet floor and slipped." },
       { id: 3, func: 'problem',  title: 'Scene 3: Problem 🟠', defaultText: canonicalSteps[2]?.frame_L1 || canonicalSteps[2]?.caption || "Then, Jake stopped immediately to help his friend stay calm. He called the school nurse right away for help." },
       { id: 4, func: 'climax',   title: 'Scene 4: Response 🟣', defaultText: canonicalSteps[3]?.frame_L1 || canonicalSteps[3]?.caption || "After that, the school nurse arrived quickly with a clean bandage. She placed a cold pack to treat the cut carefully." },
-      { id: 5, func: 'solution', title: 'Scene 5: Ending ⭐',  defaultText: canonicalSteps[4]?.frame_L1 || canonicalSteps[4]?.caption || "In the end, everyone felt relieved at the school assembly. The headmaster reminded all students never to run in corridors and gave Jake a safety award." }
+      { id: 5, func: 'solution', title: 'Scene 5: Ending ⭐',  defaultText: canonicalSteps[4]?.frame_L1 || canonicalSteps[4]?.caption || "In the end, everyone felt relieved that Tom was safe. The headmaster reminded all students never to run in corridors." }
     ];
 
     const panelTexts = (storySavedData?.panelTexts && Array.isArray(storySavedData.panelTexts)) ? storySavedData.panelTexts : [];

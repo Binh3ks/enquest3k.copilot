@@ -6,12 +6,12 @@ export default {
   min_sentences: 3,
   min_words: 20,
   max_words: 60,
-  model_sentence: "While Jake was walking carefully down the corridor, a boy slipped on the wet floor and hurt his knee. Jake stopped immediately and called the school nurse. The nurse arrived quickly with a clean bandage and a cold pack. Everyone felt relieved and praised Jake.",
+  model_sentence: "Jake was walking carefully down the school corridor after science class. Suddenly, a boy lost his balance on the wet floor and slipped. Jake stopped immediately to help his friend and called the school nurse. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. Everyone felt relieved, and the headmaster reminded all students never to run in corridors.",
   picture_story: [
     {
       panel_id: 'panel_1',
-      title_en: 'Panel 1: Running in the Corridor',
-      title_vi: 'Cảnh 1: Chạy Nhảy Tại Hành Lang Trường',
+      title_en: 'Panel 1: Walking Down the Corridor',
+      title_vi: 'Cảnh 1: Đi Bộ Cẩn Thận Tại Hành Lang',
       image_url: '/images/week33/writing_panel_1.png'
     },
     {
@@ -22,23 +22,35 @@ export default {
     },
     {
       panel_id: 'panel_3',
-      title_en: 'Panel 3: Nurse Applying Bandage',
-      title_vi: 'Cảnh 3: Y Tá Băng Bó Và Dọn Dẹp',
+      title_en: 'Panel 3: Helping Friend & Calling Nurse',
+      title_vi: 'Cảnh 3: Giúp Bạn Và Gọi Y Tá',
       image_url: '/images/week33/writing_panel_3.png'
+    },
+    {
+      panel_id: 'panel_4',
+      title_en: 'Panel 4: Nurse Arriving with Bandage',
+      title_vi: 'Cảnh 4: Y Tá Băng Bó Vết Thương',
+      image_url: '/images/week33/writing_panel_4.png'
+    },
+    {
+      panel_id: 'panel_5',
+      title_en: 'Panel 5: Relief & Safety Reminder',
+      title_vi: 'Cảnh 5: Nhẹ Nhõm Và Nhắc Nhở An Toàn',
+      image_url: '/images/week33/writing_panel_5.png'
     }
   ],
   word_bank_pills: {
-    action_verbs: ['slipped', 'fell down', 'hurt knee', 'called nurse', 'applied bandage', 'helped clean', 'walked carefully'],
-    connectors: ['first', 'suddenly', 'then', 'while', 'because', 'so', 'finally'],
-    cumulative_chunks: ['slipped on wet floor', 'hurt his knee', 'called the school nurse', 'applied a clean bandage', 'cleaned the wet floor'],
-    grammar_boosters: ['was running', 'was walking carefully', 'were helping', 'had slipped']
+    action_verbs: ['was walking carefully', 'lost his balance', 'slipped heavily', 'stopped immediately', 'called the school nurse', 'arrived quickly', 'felt relieved', 'reminded all students'],
+    connectors: ['In the beginning,', 'Suddenly,', 'Then,', 'After that,', 'In the end,', 'and', 'because', 'so'],
+    cumulative_chunks: ['down the school corridor', 'after science class', 'on the wet floor', 'help his friend', 'clean bandage', 'cold pack', 'treat the cut', 'never to run in corridors'],
+    grammar_boosters: ['was walking carefully', 'was running fast', 'stopped immediately', 'had slipped']
   },
   sentence_frames: [
-    { template: "While Jake was walking in the ___, a boy slipped.", answers: ["corridor"] },
-    { template: "The boy fell down and hurt his ___.", answers: ["knee"] },
-    { template: "Jake called the school ___ immediately.", answers: ["nurse"] },
-    { template: "The nurse brought a clean ___ and cold pack.", answers: ["bandage"] },
-    { template: "Everyone felt ___ and praised Jake.", answers: ["relieved"] }
+    { template: "Jake was walking carefully down the school ___.", answers: ["corridor"] },
+    { template: "Suddenly, he lost his balance on the wet floor and ___.", answers: ["slipped"] },
+    { template: "Jake stopped immediately to help and called the school ___.", answers: ["nurse"] },
+    { template: "The nurse brought a clean ___ and a cold pack.", answers: ["bandage"] },
+    { template: "Everyone felt ___ and the headmaster reminded all students.", answers: ["relieved"] }
   ],
   picture_mode: {
     type: "picture",
@@ -47,47 +59,60 @@ export default {
       {
         id: 1,
         image_url: "/images/week33/writing_panel_1.png",
-        caption: "Panel 1: Jake walks carefully while another student runs",
-        character_guide: "Jake (walking carefully) vs. Student (running fast)",
-        action_tags: ["running", "walking", "corridor", "warning sign"],
-        nova_question_en: "Where does the story begin? Look closely — Jake was walking carefully, but what was another student doing?",
-        pills: ["was walking carefully,", "down the school corridor,", "a student was running fast,", "near the yellow warning sign,", "On a Monday morning,"],
-        grammar_hint: "Past Continuous: was/were + verb-ing (e.g. was walking, was running)",
-        sentence_frame: "Jake was walking carefully when a student ran fast past him.",
+        caption: "Panel 1: Jake walks carefully down the school corridor",
+        action_tags: ["walking", "corridor", "science class", "carefully"],
+        pills: ["was walking carefully,", "down the school corridor,", "after science class,", "noticed the wet floor tiles,"],
+        sentence_frame: "In the beginning, Jake was walking carefully down the school corridor.",
         pill_color: "blue",
       },
       {
         id: 2,
         image_url: "/images/week33/writing_panel_2.png",
-        caption: "Panel 2: Slipping on wet floor",
-        action_tags: ["slipping", "falling", "wet floor", "knee hurt"],
-        nova_question_en: "Uh oh! What happened suddenly? Describe the problem you see in this picture!",
-        pills: ["slipped on the wet floor,", "fell down heavily,", "hurt his knee badly,", "Suddenly,", "lost his balance,"],
-        grammar_hint: "Simple Past: slipped / fell / hurt (no -ing here!)",
-        sentence_frame: "Suddenly, he slipped on the wet floor and...",
+        caption: "Panel 2: Running fast and slipping on wet floor",
+        action_tags: ["running", "slipping", "wet floor", "balance"],
+        pills: ["a boy was running very fast,", "lost his balance,", "on the wet floor,", "slipped heavily,"],
+        sentence_frame: "Suddenly, a boy was running very fast, lost his balance, and slipped.",
         pill_color: "amber",
       },
       {
         id: 3,
         image_url: "/images/week33/writing_panel_3.png",
-        caption: "Panel 3: Nurse applying bandage",
-        action_tags: ["nurse", "bandage", "helping", "relieved"],
-        nova_question_en: "How does the story end? Who came to help, and how did everyone feel?",
-        pills: ["called the school nurse,", "with a clean bandage,", "felt relieved,", "Everyone praised", "arrived quickly,"],
-        grammar_hint: "Simple Past + Feeling: called / arrived / felt / praised",
-        sentence_frame: "Jake called the school nurse, who arrived with...",
+        caption: "Panel 3: Helping friend and calling nurse",
+        action_tags: ["stopped", "helping", "calling", "nurse"],
+        pills: ["stopped immediately,", "to help his friend,", "stay calm,", "called the school nurse,"],
+        sentence_frame: "Then, Jake stopped immediately to help his friend and called the school nurse.",
         pill_color: "purple",
+      },
+      {
+        id: 4,
+        image_url: "/images/week33/writing_panel_4.png",
+        caption: "Panel 4: Nurse arrives with bandage and cold pack",
+        action_tags: ["nurse", "bandage", "cold pack", "treat"],
+        pills: ["the school nurse arrived quickly,", "with a clean bandage,", "placed a cold pack,", "to treat the cut,"],
+        sentence_frame: "After that, the school nurse arrived quickly with a clean bandage and a cold pack.",
+        pill_color: "emerald",
+      },
+      {
+        id: 5,
+        image_url: "/images/week33/writing_panel_5.png",
+        caption: "Panel 5: Relief and safety reminder",
+        action_tags: ["relieved", "headmaster", "reminded", "corridors"],
+        pills: ["everyone felt relieved,", "the headmaster reminded all students,", "never to run in corridors,", "that Tom was safe,"],
+        sentence_frame: "In the end, everyone felt relieved, and the headmaster reminded all students never to run in corridors.",
+        pill_color: "rose",
       }
     ],
-    word_bank: ["corridor", "slipped", "fell", "nurse", "bandage", "relieved", "careful"],
+    word_bank: ["corridor", "slipped", "balance", "nurse", "bandage", "cold pack", "relieved", "headmaster", "carefully"],
     sentence_frames: [
-      "While a student was running in the corridor, he...",
-      "Suddenly, he slipped on the wet floor and...",
-      "Jake called the school nurse, who arrived with..."
+      "Jake was walking carefully down the school corridor after science class.",
+      "Suddenly, he lost his balance on the wet floor and slipped.",
+      "Jake stopped immediately to help his friend and called the school nurse.",
+      "The nurse arrived quickly with a clean bandage and a cold pack to treat the cut.",
+      "Everyone felt relieved, and the headmaster reminded all students never to run in corridors."
     ],
     writing_prompts: {
-      en: "Describe what happened in the 3 picture panels using past continuous and past simple verbs.",
-      vi: "Mô tả điều xảy ra trong 3 bức tranh dùng động từ quá khứ tiếp diễn và quá khứ đơn."
+      en: "Describe what happened across the 5 pictures using past continuous and past simple verbs.",
+      vi: "Mô tả điều xảy ra trong 5 bức tranh bằng động từ quá khứ tiếp diễn và quá khứ đơn."
     }
   },
   hints: {
