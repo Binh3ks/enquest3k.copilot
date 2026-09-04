@@ -424,7 +424,8 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
     try { VoiceService.pauseTTS(); } catch (_) {}
     setActiveSentenceIdx(null);
     setActiveWordIdx(null);
-    speakText(fullStoryText, null, 1.0, null, 'shadowing', activeWeek);
+    const fullAudioUrl = readExplore?.audio_url || `/audio/week${activeWeek || 33}/read_stem.mp3`;
+    speakText(fullStoryText, fullAudioUrl, 1.0, null, 'shadowing', activeWeek);
   };
 
   // Gear 2: Shadowing = Instant Model Audio + Parallel Mic Recording (Exact Same Audio Path)
@@ -957,7 +958,10 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
 
                   <button
                     type="button"
-                    onClick={() => speakText(currentSceneText)}
+                    onClick={() => {
+                      const sceneAudioUrl = currentScene?.audio_url || `/audio/week${activeWeek || 33}/scene_${currentScene?.scene_number || (activeFrameIndex + 1)}.mp3`;
+                      speakText(currentSceneText, sceneAudioUrl, 1.0, null, 'read', activeWeek);
+                    }}
                     className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 px-2.5 py-1.5 sm:px-4 sm:py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl shadow-md transition flex items-center gap-1 sm:gap-1.5 font-black text-[11px] sm:text-xs border border-white/40 z-10 backdrop-blur-xs active:scale-95"
                   >
                     <Volume2 size={14} className="sm:w-4 sm:h-4" /> <span>Listen to Scene</span>
