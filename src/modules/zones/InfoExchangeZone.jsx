@@ -19,7 +19,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
   const routeParams = useParams();
   const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;
 
-  const [phase, setPhase] = useState('table_a'); // 'table_a' | 'table_b' | 'complete'
+  const [phase, setPhase] = useState('table_b'); // 'table_b' (Card 1: Answer Examiner) -> 'table_a' (Card 2: Ask Examiner) -> 'complete'
   
   // Phase 1 (Table A) State
   const [cueIdxA, setCueIdxA] = useState(0);
@@ -182,8 +182,17 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
     if (cueIdxA + 1 < cuesA.length) {
       setCueIdxA(i => i + 1);
     } else {
-      setShields(1);
-      setPhase('table_b');
+      setShields(2);
+      setPhase('complete');
+      if (activeWeek) {
+        useDailyQuestStore.getState().completeQuest(activeWeek, 'info_exchange');
+        emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
+          weekNumber: activeWeek,
+          taskId: 'info_exchange',
+          timestamp: new Date().toISOString()
+        });
+      }
+      if (onComplete) onComplete(100, '');
     }
   };
 
@@ -268,17 +277,8 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
     if (fieldIdxB + 1 < fieldsB.length) {
       setFieldIdxB(i => i + 1);
     } else {
-      setShields(2);
-      setPhase('complete');
-      if (activeWeek) {
-        useDailyQuestStore.getState().completeQuest(activeWeek, 'info_exchange');
-        emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
-          weekNumber: activeWeek,
-          taskId: 'info_exchange',
-          timestamp: new Date().toISOString()
-        });
-      }
-      if (onComplete) onComplete(100, '');
+      setShields(1);
+      setPhase('table_a');
     }
   };
 
@@ -343,18 +343,18 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
       {/* Top Banner & Phase Navigation */}
       <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3 w-full sm:w-auto">
-          <LexioMascot size={42} mood="happy" />
+          <LexioMascot size={36} mood="happy" />
           <div>
-            <div className="flex items-center gap-2 mb-0.5">
-              <span className="text-xs font-bold text-purple-600 font-mono uppercase bg-purple-50 px-2 py-0.5 rounded">
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-0.5 bg-purple-100 text-purple-800 font-black text-[10px] uppercase tracking-wider rounded-md">
                 Speaking Practice
               </span>
               <span className="text-xs font-bold text-slate-500">
-                {phase === 'table_a' ? `Cue ${cueIdxA + 1} / ${cuesA.length}` : `Question ${fieldIdxB + 1} / ${fieldsB.length}`}
+                {phase === 'table_b' ? `Question ${fieldIdxB + 1} / ${fieldsB.length}` : `Cue ${cueIdxA + 1} / ${cuesA.length}`}
               </span>
             </div>
-            <h1 className="text-base sm:text-lg font-black text-slate-900">
-              {phase === 'table_a' ? 'Phase 1: Ask Questions from Cues' : 'Phase 2: Answer Examiner’s Questions'}
+            <h1 className="text-base sm:text-lg font-black text-slate-900 mt-0.5">
+              {phase === 'table_b' ? "Phase 1: Answer Examiner's Questions" : "Phase 2: Ask Questions from Cues"}
             </h1>
           </div>
         </div>
@@ -363,23 +363,23 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
         <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
           <button
             type="button"
-            onClick={() => setPhase('table_a')}
+            onClick={() => setPhase('table_b')}
             className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 cursor-pointer ${
-              phase === 'table_a' ? 'bg-indigo-600 text-white shadow-sm' : 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
+              phase === 'table_b' ? 'bg-purple-600 text-white shadow-sm ring-2 ring-purple-300' : 'bg-purple-100 text-purple-800 hover:bg-purple-200'
             }`}
           >
-            <span>📋 Table A (You Ask)</span>
-            {phase === 'table_b' && <CheckCircle2 size={13} />}
+            <span>🎙️ Card 1 (You Answer)</span>
+            {(fieldIdxB >= fieldsB.length || phase === 'table_a') && <CheckCircle2 size={13} className="text-emerald-300" />}
           </button>
           <ArrowRight size={14} className="text-slate-300" />
           <button
             type="button"
-            onClick={() => setPhase('table_b')}
+            onClick={() => setPhase('table_a')}
             className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 cursor-pointer ${
-              phase === 'table_b' ? 'bg-purple-600 text-white shadow-sm' : 'bg-slate-100 text-slate-400 hover:bg-slate-200'
+              phase === 'table_a' ? 'bg-indigo-600 text-white shadow-sm ring-2 ring-indigo-300' : 'bg-slate-100 text-slate-400 hover:bg-slate-200'
             }`}
           >
-            <span>🎙️ Table B (You Answer)</span>
+            <span>📋 Card 2 (You Ask)</span>
           </button>
         </div>
       </div>
@@ -411,22 +411,71 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
       {/* Main Responsive Layout: Stack vertically on Mobile (<1024px), Side-by-side on Desktop */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
         
-        {/* ── LEFT COLUMN: Cambridge Candidate Booklet (7 Cols - Expanded) ── */}
+        {/* ── LEFT COLUMN: Cambridge Candidate Booklet (7 Cols - Authentic 2-Column Table) ── */}
         <div className="w-full lg:col-span-7 bg-white rounded-3xl border-2 border-indigo-200 shadow-md overflow-hidden">
           <div className={`px-4 sm:px-5 py-3.5 sm:py-4 flex flex-col gap-0.5 text-white ${
-            phase === 'table_a' ? 'bg-gradient-to-r from-indigo-600 to-indigo-700' : 'bg-gradient-to-r from-purple-600 to-purple-700'
+            phase === 'table_b' ? 'bg-gradient-to-r from-purple-600 to-purple-700' : 'bg-gradient-to-r from-indigo-600 to-indigo-700'
           }`}>
             <span className="font-black text-sm sm:text-base flex items-center gap-2">
               <span>📄</span>
-              <span>{phase === 'table_a' ? tableA.title : tableB.title}</span>
+              <span>{phase === 'table_b' ? `Card 1: ${tableB.title}` : `Card 2: ${tableA.title}`}</span>
             </span>
-            <span className="text-[10px] sm:text-[11px] font-bold text-indigo-200 uppercase tracking-wider">
-              {phase === 'table_a' ? (tableA.subtitle || "Candidate's Question Card") : (tableB.subtitle || "Candidate's Information Sheet")}
+            <span className="text-[10px] sm:text-[11px] font-bold text-indigo-100 uppercase tracking-wider">
+              {phase === 'table_b' ? (tableB.subtitle || "Candidate's Information Sheet — Answer Examiner's Questions") : (tableA.subtitle || "Candidate's Question Card — Ask Examiner Nova")}
             </span>
           </div>
 
-          <div className="space-y-2 p-3">
-            {phase === 'table_a' ? (
+          {/* Cambridge 2-Column Table Header */}
+          <div className="bg-slate-100/90 border-b border-slate-200 px-4 py-2 flex items-center justify-between text-[11px] font-black uppercase tracking-wider text-slate-500">
+            <span className="w-5/12 sm:w-1/2">WH- Cues / Prompts</span>
+            <span className="w-7/12 sm:w-1/2 text-right sm:text-left">{phase === 'table_b' ? 'Information / Facts' : 'Questions / Answers'}</span>
+          </div>
+
+          <div className="divide-y divide-slate-100 p-2">
+            {phase === 'table_b' ? (
+              fieldsB.map((f, idx) => {
+                const isActive = fieldIdxB === idx;
+                const isPassed = fieldIdxB > idx;
+                const cueText = f.cue_prompt || f.topic || f.label || `prompt ${idx + 1}`;
+
+                return (
+                  <div
+                    key={f.id || idx}
+                    className={`px-3 sm:px-4 py-3 rounded-xl transition flex items-center justify-between gap-3 ${
+                      isActive
+                        ? 'bg-purple-50 border-2 border-purple-300 shadow-xs ring-1 ring-purple-200'
+                        : isPassed
+                        ? 'bg-emerald-50/50'
+                        : 'bg-white hover:bg-slate-50/70'
+                    }`}
+                  >
+                    {/* Left Cell: WH- Cue with Speaker */}
+                    <div className="w-5/12 sm:w-1/2 flex items-center gap-1.5 min-w-0">
+                      <span className="text-[10px] sm:text-[11px] font-mono font-bold text-slate-400 shrink-0">0{idx + 1}.</span>
+                      <span className="text-xs sm:text-sm font-black text-purple-900 font-mono lowercase truncate">
+                        {cueText}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => speakText(f.nova_question || f.label)}
+                        className="p-1 hover:bg-purple-200 text-purple-600 rounded transition shrink-0 cursor-pointer"
+                        title="Replay Examiner Nova's question"
+                      >
+                        <Volume2 size={12} />
+                      </button>
+                    </div>
+
+                    {/* Right Cell: Fact / Answer */}
+                    <div className="w-7/12 sm:w-1/2 flex items-center justify-end sm:justify-start gap-2 text-right sm:text-left">
+                      <span className="text-xs sm:text-sm font-black text-slate-900 leading-snug">
+                        {f.value}
+                      </span>
+                      {isPassed && <CheckCircle2 size={16} className="text-emerald-600 shrink-0 ml-auto" />}
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
               cuesA.map((cue, idx) => {
                 const isTarget = currentCueA?.id === cue.id;
                 const isDone = completedIdsA.has(cue.id);
@@ -434,85 +483,36 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                 return (
                   <div
                     key={cue.id}
-                    className={`px-4 py-3 sm:py-3.5 rounded-2xl transition flex items-center justify-between gap-3 border ${
+                    className={`px-3 sm:px-4 py-3 rounded-xl transition flex items-center justify-between gap-3 ${
                       isTarget
-                        ? 'bg-amber-50/90 border-amber-300 shadow-sm ring-2 ring-amber-200'
+                        ? 'bg-amber-50 border-2 border-amber-300 shadow-xs ring-1 ring-amber-200'
                         : isDone
-                        ? 'bg-emerald-50/60 border-emerald-200'
-                        : 'bg-white border-slate-100 hover:border-slate-200'
+                        ? 'bg-emerald-50/50'
+                        : 'bg-white hover:bg-slate-50/70'
                     }`}
                   >
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <span className="text-[11px] font-mono font-bold text-slate-400 shrink-0">0{idx + 1}.</span>
-                      <span className="text-xs sm:text-sm font-black text-slate-800 lowercase tracking-wide font-mono truncate">
+                    {/* Left Cell: WH- Cue */}
+                    <div className="w-5/12 sm:w-1/2 flex items-center gap-1.5 min-w-0">
+                      <span className="text-[10px] sm:text-[11px] font-mono font-bold text-slate-400 shrink-0">0{idx + 1}.</span>
+                      <span className="text-xs sm:text-sm font-black text-slate-800 font-mono lowercase truncate">
                         {cue.label}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-2 text-right shrink-0">
+                    {/* Right Cell: Question Status / Nova Answer */}
+                    <div className="w-7/12 sm:w-1/2 flex items-center justify-end sm:justify-start gap-2 text-right sm:text-left">
                       {isDone ? (
                         <div className="flex items-center gap-1.5 text-emerald-800 font-bold text-xs sm:text-sm">
-                          <span className="max-w-[200px] sm:max-w-[280px] truncate">{cue.nova_reply?.split('.')[0]}</span>
-                          <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
+                          <span className="truncate">{cue.nova_reply?.split('.')[0]}</span>
+                          <CheckCircle2 size={16} className="text-emerald-600 shrink-0 ml-auto" />
                         </div>
                       ) : (
-                        <span className={`px-3 py-0.5 rounded-md text-xs font-black ${
+                        <span className={`px-2.5 py-0.5 rounded-md text-xs font-black ${
                           isTarget ? 'bg-amber-400 text-slate-950 animate-pulse ring-2 ring-amber-300' : 'bg-slate-100 text-slate-400'
                         }`}>
                           ?
                         </span>
                       )}
-                    </div>
-                  </div>
-                );
-              })
-            ) : fieldsB.length === 0 ? (
-              <div className="p-3 bg-rose-50 border border-rose-300 rounded-xl text-rose-700 text-xs font-bold">
-                ⚠️ Missing Table B fields in speaking_hub data — check data configuration!
-              </div>
-            ) : (
-              fieldsB.map((f, idx) => {
-                const isActive = fieldIdxB === idx;
-                const isPassed = fieldIdxB > idx;
-                const topicLabel = f.topic || f.short_label || f.label.replace(/^WHAT |^WHERE |^HOW FAST |^WHO |\?$/gi, '').trim();
-
-                return (
-                  <div
-                    key={f.id || idx}
-                    className={`px-4 py-3 sm:py-3.5 rounded-2xl transition border ${
-                      isActive
-                        ? 'bg-purple-50/90 border-purple-300 shadow-sm ring-2 ring-purple-200'
-                        : isPassed
-                        ? 'bg-emerald-50/60 border-emerald-200'
-                        : 'bg-white border-slate-100 hover:border-slate-200'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <div className="flex items-center gap-2 min-w-0">
-                        <span className="text-[11px] font-mono font-bold text-slate-400 shrink-0">0{idx + 1}.</span>
-                        <span className="text-[10.5px] sm:text-xs font-black uppercase tracking-wider text-purple-700 bg-purple-100/90 px-2.5 py-0.5 rounded-md truncate">
-                          {topicLabel}
-                        </span>
-                      </div>
-                      <button
-                        type="button"
-                        data-testid="ie-audio-btn"
-                        onClick={() => {
-                          speakText(f.nova_question || f.label);
-                        }}
-                        className="px-2 py-0.5 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-lg text-[10.5px] font-bold flex items-center gap-1 transition shrink-0 cursor-pointer"
-                        title="Listen to Examiner Question"
-                      >
-                        <Volume2 size={12} />
-                        <span className="hidden sm:inline">Hear question</span>
-                      </button>
-                    </div>
-
-                    <div className="flex items-center justify-between gap-2 pl-6">
-                      <span className="text-xs sm:text-sm font-black text-slate-900 leading-snug">
-                        {f.value}
-                      </span>
-                      {isPassed && <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />}
                     </div>
                   </div>
                 );
@@ -688,7 +688,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                       onClick={handleNextCueA}
                       className="w-full py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-white font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2"
                     >
-                      {cueIdxA + 1 < cuesA.length ? 'Next Cue →' : '✓ Table A Complete! Go to Table B →'}
+                      {cueIdxA + 1 < cuesA.length ? 'Next Cue →' : '🏆 Complete Cambridge Speaking Part 2!'}
                     </button>
                   )}
                 </div>
@@ -730,7 +730,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                     </p>
                   ) : (
                     <span className="text-xs text-purple-600 italic">
-                      [Question hidden — look at Table B on the left to answer!]
+                      [Question hidden — look at Card 1 on the left to answer!]
                     </span>
                   )}
                   <button
@@ -738,8 +738,8 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                     onClick={() => setShowQuestionTextB(p => !p)}
                     className="text-[11px] font-bold text-purple-700 hover:text-purple-900 flex items-center gap-1 underline"
                   >
-                    {showQuestionTextB ? <EyeOff size={13} /> : <Eye size={13} />}
-                    {showQuestionTextB ? 'Hide text' : 'Peek question text'}
+                    {showQuestionTextB ? <EyeOff size={12} /> : <Eye size={12} />}
+                    {showQuestionTextB ? 'Hide question text' : 'Peek question text'}
                   </button>
                 </div>
               </div>
@@ -756,7 +756,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                           className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 hover:from-purple-500 text-white flex flex-col items-center justify-center gap-1 shadow-2xl shadow-purple-500/30 transition hover:scale-105 active:scale-95"
                         >
                           <Mic size={36} className="animate-pulse" />
-                          <span className="text-[10px] font-black uppercase tracking-wider">ANSWER</span>
+                          <span className="text-[11px] font-black uppercase tracking-wider">Answer</span>
                         </button>
                       ) : (
                         <button
@@ -765,7 +765,6 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                           className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-rose-600 hover:bg-rose-500 text-white flex flex-col items-center justify-center gap-1 shadow-2xl shadow-rose-500/40 animate-bounce"
                         >
                           <Square size={32} fill="currentColor" />
-                          <span className="text-[10px] font-black uppercase tracking-wider">STOP</span>
                         </button>
                       )}
                       <p className="text-xs font-black text-slate-600">
@@ -848,7 +847,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                       onClick={handleNextQuestionB}
                       className="w-full sm:flex-1 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2"
                     >
-                      {fieldIdxB + 1 < fieldsB.length ? 'Next Question →' : '🏆 Complete Cambridge Speaking Part 2!'}
+                      {fieldIdxB + 1 < fieldsB.length ? 'Next Question →' : '✓ Card 1 Complete! Go to Card 2 (You Ask) →'}
                     </button>
                   </div>
                 </div>

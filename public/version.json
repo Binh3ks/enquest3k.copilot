@@ -1,9 +1,9 @@
 {
-  "commit": "531d56f5d3bba53cf0f79f8b0a02f9c084069426",
-  "git_commit": "531d56f5d3bba53cf0f79f8b0a02f9c084069426",
-  "shortCommit": "531d56f5",
-  "message": "fix(story_writer): align all 5 scenes, inputs, hints and pills with canonical scene explorer narrative",
-  "builtAt": "2026-09-04T07:33:10.819Z",
-  "build_timestamp": "2026-09-04T07:33:10.819Z",
+  "commit": "243c5d38f6a343506f2f9915364bf8034e43bfbd",
+  "git_commit": "243c5d38f6a343506f2f9915364bf8034e43bfbd",
+  "shortCommit": "243c5d38",
+  "message": "fix(info_exchange): upgrade to 5-question Cambridge Flyers standard, widen card booklet, and fix Table B text overlap",
+  "builtAt": "2026-09-04T08:33:17.839Z",
+  "build_timestamp": "2026-09-04T08:33:17.840Z",
   "env": "production"
 }
