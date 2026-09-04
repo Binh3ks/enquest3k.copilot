@@ -303,6 +303,37 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     }
   };
 
+  const handleReturnToMap = React.useCallback(() => {
+    if (typeof onBackToMap === 'function') {
+      onBackToMap();
+    } else {
+      navigate(`/week/${activeWeek || 33}/hub/1`);
+    }
+  }, [onBackToMap, navigate, activeWeek]);
+
+  const getUnifiedTitle = React.useCallback(() => {
+    if (forcedStation === 'listening_boss' || currentTask?.paper === PAPER.LISTENING) {
+      return stationTasks.length > 1 ? 'Listening Part 1 & 2' : 'Listening Part 1';
+    }
+    if (forcedStation === 'rw_boss' || currentTask?.paper === PAPER.READING_WRITING) {
+      return 'Reading & Writing Part 1';
+    }
+    if (forcedStation === 'review' || currentTask?.paper === PAPER.SPEAKING) {
+      return 'Speaking Part 1';
+    }
+    return currentTask?.displayName || 'Boss Castle';
+  }, [forcedStation, currentTask?.paper, currentTask?.displayName, stationTasks.length]);
+
+  const getHeaderTheme = React.useCallback(() => {
+    if (currentTask?.paper === PAPER.LISTENING) {
+      return 'bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border-indigo-200 text-indigo-950';
+    }
+    if (currentTask?.paper === PAPER.READING_WRITING) {
+      return 'bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 border-emerald-200 text-emerald-950';
+    }
+    return 'bg-gradient-to-r from-amber-50 via-orange-50 to-yellow-50 border-amber-200 text-amber-950';
+  }, [currentTask?.paper]);
+
   // ── BossIntro screen ─────────────────────────────────────────────────────
   if (!hasStarted) {
     return (
@@ -406,37 +437,6 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
   }
 
   const activeTaskId = requestedTaskId || currentTask?.partId;
-
-  const handleReturnToMap = React.useCallback(() => {
-    if (typeof onBackToMap === 'function') {
-      onBackToMap();
-    } else {
-      navigate(`/week/${activeWeek || 33}/hub/1`);
-    }
-  }, [onBackToMap, navigate, activeWeek]);
-
-  const getUnifiedTitle = React.useCallback(() => {
-    if (forcedStation === 'listening_boss' || currentTask?.paper === PAPER.LISTENING) {
-      return stationTasks.length > 1 ? 'Listening Part 1 & 2' : 'Listening Part 1';
-    }
-    if (forcedStation === 'rw_boss' || currentTask?.paper === PAPER.READING_WRITING) {
-      return 'Reading & Writing Part 1';
-    }
-    if (forcedStation === 'review' || currentTask?.paper === PAPER.SPEAKING) {
-      return 'Speaking Part 1';
-    }
-    return currentTask?.displayName || 'Boss Castle';
-  }, [forcedStation, currentTask?.paper, currentTask?.displayName, stationTasks.length]);
-
-  const getHeaderTheme = React.useCallback(() => {
-    if (currentTask?.paper === PAPER.LISTENING) {
-      return 'bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border-indigo-200 text-indigo-950';
-    }
-    if (currentTask?.paper === PAPER.READING_WRITING) {
-      return 'bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 border-emerald-200 text-emerald-950';
-    }
-    return 'bg-gradient-to-r from-amber-50 via-orange-50 to-yellow-50 border-amber-200 text-amber-950';
-  }, [currentTask?.paper]);
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans">

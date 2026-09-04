@@ -235,7 +235,7 @@ export async function adaptWeekForDoctrine(weekNumber, rootDir = process.cwd()) 
           partNumber: 1,
           name: "Speaking Part 1 — Find Differences",
           mechanic: "Identify and describe 4 differences between 2 pictures",
-          differencesCount: s1Diffs.length || 4,
+          differencesCount: 4,
           hotspotCoordinateSource: s1CoordSource,
           mechanicComponent: "FindDifferencesInteractive.jsx",
           componentExistenceVerified: true

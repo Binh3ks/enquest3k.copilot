@@ -1,9 +1,9 @@
 {
-  "commit": "3c622a1597aa5197c212a715d2cc97270d68da83",
-  "git_commit": "3c622a1597aa5197c212a715d2cc97270d68da83",
-  "shortCommit": "3c622a15",
-  "message": "fix(w33): recalibrate find differences hotspots, fix mobile image clipping, and sync story scenes across writer and challenge",
-  "builtAt": "2026-09-04T03:58:32.317Z",
-  "build_timestamp": "2026-09-04T03:58:32.319Z",
+  "commit": "4da17b33619a93f43eaf5650860a7db81dd9d7f2",
+  "git_commit": "4da17b33619a93f43eaf5650860a7db81dd9d7f2",
+  "shortCommit": "4da17b33",
+  "message": "fix(w33): use canonical voice shadow sentence for scene 2 in scene explorer and retell",
+  "builtAt": "2026-09-04T05:47:31.626Z",
+  "build_timestamp": "2026-09-04T05:47:31.627Z",
   "env": "production"
 }

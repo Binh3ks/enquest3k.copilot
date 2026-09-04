@@ -70,9 +70,7 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
   }, []);
 
   const handleHotspotClick = (hs) => {
-    if (!foundHotspots.includes(hs.id)) {
-      setFoundHotspots([...foundHotspots, hs.id]);
-    }
+    setFoundHotspots(prev => (prev.includes(hs.id) ? prev : [...prev, hs.id]));
     setActiveHotspot(hs);
     setShowHint(false);
   };
@@ -138,9 +136,12 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
     } catch (_) {}
   };
 
+  const TARGET_DIFFERENCES = 4; // Cambridge A2 Flyers standard: 4 differences
+
   const handleCheck = () => {
     const foundCount = foundHotspots.length;
-    const finalScore = Math.round((foundCount / differencesData.hotspots.length) * 100);
+    // Score based on Cambridge target of 4 differences (up to 6 discoverable)
+    const finalScore = Math.min(100, Math.round((foundCount / TARGET_DIFFERENCES) * 100));
     setScore(finalScore);
     setIsSubmitted(true);
 
