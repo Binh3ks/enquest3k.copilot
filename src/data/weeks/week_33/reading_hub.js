@@ -258,14 +258,15 @@ export const readingHubData = {
   // Cambridge Reading Part 3 Story (Story Gap-Fill & Best Title Choice)
   reading_part3_story: {
     example: { blank: 0, answer: "science" },
-    story_text: "Jake was walking carefully down the school corridor after [0]_____ class. Suddenly, Tom ran past him very [1]_____. Tom didn't notice the yellow [2]_____ sign on the wet floor. He slipped heavily and hurt his [3]_____. He also dropped all his books on the ground and cried out in pain. Jake stopped immediately and called the school [4]_____. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. She told Tom to rest and not walk fast. Headmaster Brown came to see Tom and reminded all students to walk slowly in the corridor. He said that safety rules are very important for everyone at school.",
-    word_bank: ["science", "fast", "warning", "knee", "nurse", "library", "running", "happy", "cold", "loud"],
+    story_text: "Jake was walking carefully down the school corridor after [0]_____ class. Suddenly, Tom ran past him very [1]_____. Tom didn't notice the yellow [2]_____ sign on the wet floor. He slipped heavily and hurt his [3]_____. He also dropped all his books on the ground and cried out in pain. Jake stopped immediately and called the school [4]_____. The nurse arrived quickly with a clean [5]_____ and a cold pack to treat the cut. She told Tom to rest and not walk fast. Headmaster Brown came to see Tom and reminded all students to walk slowly in the corridor. He said that safety rules are very important for everyone at school.",
+    word_bank: ["science", "fast", "warning", "knee", "nurse", "bandage", "library", "running", "happy", "cold"],
     answers: {
       "0": "science",
       "1": "fast",
       "2": "warning",
       "3": "knee",
-      "4": "nurse"
+      "4": "nurse",
+      "5": "bandage"
     },
     title_options: [
       { id: 1, title: "A Day in the School Library", target: false },
@@ -347,18 +348,19 @@ export const readingHubData = {
   // ─── R&W Part 4: Grammar MCQ — 10 standalone 3-option questions (Cambridge Flyers exact spec) —───
   rw_part4: {
     instructions: "Read the story. Choose the correct words from the dropdowns.",
-    text_template: "Students walk down the corridor [1] every morning. When floors are wet, there is less [2] between shoes and tiles. It is important to [3] warning signs placed near doors. Yesterday, Jake [4] another boy who was running too fast. The boy slipped and [5] down heavily near the stairs. Jake [6] immediately to assist his classmate. He ran to [7] the school nurse for quick help. The nurse applied a clean bandage [8] his injured knee. Everyone learned to walk [9] inside school buildings. Safe habits make school a [10] place for all children.",
-    example: { blank: 1, correct: "carefully", options: ["carefully", "careful", "careless"] },
+    text_template: "Students walk down the corridor [0] every morning. When floors are wet, there is less [1] between shoes and tiles. It is important to [2] warning signs placed near doors. Yesterday, Jake [3] another boy who was running too fast. The boy slipped and [4] down heavily near the stairs. Jake [5] immediately to assist his classmate. He ran to [6] the school nurse for quick help. The nurse applied a clean bandage [7] his injured knee. Everyone learned to walk [8] inside school buildings. Safe habits make school a [9] place for all children. Students should [10] remember to walk slowly.",
+    example: { blank: 0, correct: "carefully", options: ["carefully", "careful", "careless"] },
     blanks: [
-      { id: 2, correct: "friction", options: ["friction", "frictional", "frictions"] },
-      { id: 3, correct: "notice", options: ["notice", "notices", "noticed"] },
-      { id: 4, correct: "saw", options: ["see", "saw", "seen"] },
-      { id: 5, correct: "fell", options: ["fall", "fell", "fallen"] },
-      { id: 6, correct: "stopped", options: ["stop", "stops", "stopped"] },
-      { id: 7, correct: "call", options: ["call", "calls", "called"] },
-      { id: 8, correct: "on", options: ["on", "in", "at"] },
-      { id: 9, correct: "safely", options: ["safe", "safely", "safer"] },
-      { id: 10, correct: "better", options: ["good", "better", "best"] }
+      { id: 1, correct: "friction", options: ["friction", "frictional", "frictions"] },
+      { id: 2, correct: "notice", options: ["notice", "notices", "noticed"] },
+      { id: 3, correct: "saw", options: ["see", "saw", "seen"] },
+      { id: 4, correct: "fell", options: ["fall", "fell", "fallen"] },
+      { id: 5, correct: "stopped", options: ["stop", "stops", "stopped"] },
+      { id: 6, correct: "call", options: ["call", "calls", "called"] },
+      { id: 7, correct: "on", options: ["on", "in", "at"] },
+      { id: 8, correct: "safely", options: ["safe", "safely", "safer"] },
+      { id: 9, correct: "better", options: ["good", "better", "best"] },
+      { id: 10, correct: "always", options: ["always", "never", "seldom"] }
     ],
     questions: [
       {

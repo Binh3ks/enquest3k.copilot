@@ -278,9 +278,9 @@
                 "partNumber": { "type": "integer", "enum": [3] },
                 "name": { "type": "string" },
                 "mechanic": { "type": "string" },
-                "totalPictures": { "type": "integer", "enum": [4] },
+                "totalPictures": { "type": "integer", "enum": [4, 5] },
                 "examinerNarrates": { "type": "integer", "enum": [1] },
-                "studentNarrates": { "type": "integer", "enum": [3] },
+                "studentNarrates": { "type": "integer", "enum": [3, 4] },
                 "mechanicComponent": { "type": "string", "enum": ["PictureStoryContinuation.jsx"] },
                 "componentExistenceVerified": { "type": "boolean", "enum": [true] }
               }

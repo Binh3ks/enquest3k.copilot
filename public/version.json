@@ -1,9 +1,9 @@
 {
-  "commit": "c23ebe5755f849d92b19058d802844743df39b58",
-  "git_commit": "c23ebe5755f849d92b19058d802844743df39b58",
-  "shortCommit": "c23ebe57",
-  "message": "fix(info_exchange): align order with Cambridge standard (Card 1 Answer first, Card 2 Ask second) and render authentic 2-column table",
-  "builtAt": "2026-09-04T12:33:29.047Z",
-  "build_timestamp": "2026-09-04T12:33:29.048Z",
+  "commit": "bc3051afc2535bea8efa5340977ed3821d711610",
+  "git_commit": "bc3051afc2535bea8efa5340977ed3821d711610",
+  "shortCommit": "bc3051af",
+  "message": "feat(zones): standardize 15 Quests / 5 Zones architecture, Action Lab naming, and resolve audit findings",
+  "builtAt": "2026-09-04T13:38:36.689Z",
+  "build_timestamp": "2026-09-04T13:38:36.689Z",
   "env": "production"
 }

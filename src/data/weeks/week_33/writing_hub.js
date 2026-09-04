@@ -170,18 +170,19 @@ export const writingHubData = {
     ]
   },
   rw_part_4: {
-    text_template: "Students walk down the corridor [1] every morning. When floors are wet, there is less [2] between shoes and tiles. It is important to [3] warning signs placed near doors. Yesterday, Jake [4] another boy who was running too fast. The boy slipped and [5] down heavily near the stairs. Jake [6] immediately to assist his classmate. He ran to [7] the school nurse for quick help. The nurse applied a clean bandage [8] his injured knee. Everyone learned to walk [9] inside school buildings. Safe habits make school a [10] place for all children.",
-    example: { blank: 1, correct: "carefully", options: ["carefully", "careful", "careless"] },
+    text_template: "Students walk down the corridor [0] every morning. When floors are wet, there is less [1] between shoes and tiles. It is important to [2] warning signs placed near doors. Yesterday, Jake [3] another boy who was running too fast. The boy slipped and [4] down heavily near the stairs. Jake [5] immediately to assist his classmate. He ran to [6] the school nurse for quick help. The nurse applied a clean bandage [7] his injured knee. Everyone learned to walk [8] inside school buildings. Safe habits make school a [9] place for all children. Students should [10] remember to walk slowly.",
+    example: { blank: 0, correct: "carefully", options: ["carefully", "careful", "careless"] },
     blanks: [
-      { id: 2, correct: "friction", options: ["friction", "frictional", "frictions"] },
-      { id: 3, correct: "notice", options: ["notice", "notices", "noticed"] },
-      { id: 4, correct: "saw", options: ["see", "saw", "seen"] },
-      { id: 5, correct: "fell", options: ["fall", "fell", "fallen"] },
-      { id: 6, correct: "stopped", options: ["stop", "stops", "stopped"] },
-      { id: 7, correct: "call", options: ["call", "calls", "called"] },
-      { id: 8, correct: "on", options: ["on", "in", "at"] },
-      { id: 9, correct: "safely", options: ["safe", "safely", "safer"] },
-      { id: 10, correct: "better", options: ["good", "better", "best"] }
+      { id: 1, correct: "friction", options: ["friction", "frictional", "frictions"] },
+      { id: 2, correct: "notice", options: ["notice", "notices", "noticed"] },
+      { id: 3, correct: "saw", options: ["see", "saw", "seen"] },
+      { id: 4, correct: "fell", options: ["fall", "fell", "fallen"] },
+      { id: 5, correct: "stopped", options: ["stop", "stops", "stopped"] },
+      { id: 6, correct: "call", options: ["call", "calls", "called"] },
+      { id: 7, correct: "on", options: ["on", "in", "at"] },
+      { id: 8, correct: "safely", options: ["safe", "safely", "safer"] },
+      { id: 9, correct: "better", options: ["good", "better", "best"] },
+      { id: 10, correct: "always", options: ["always", "never", "seldom"] }
     ]
   },
   rw_part_5: {

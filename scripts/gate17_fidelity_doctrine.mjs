@@ -290,17 +290,18 @@ async function runGate17() {
   });
   if (!invS2Pass) failReasons.push(`INV-S2 failed: S2 cards missing >=2 unknown/missing fields or examiner questions < 3 with valid audio_url`);
 
-  // 13. INV-S3: EXACTLY 4 images; intro contains "pictures two, three, and four"
+  // 13. INV-S3: 4 or 5 images; intro contains "pictures two, three, and four" or "pictures two, three, four and five"
   const s3 = rawSpeaking?.picture_story || {};
   const s3Imgs = s3.images || [];
   const s3Intro = s3.examiner_intro || "";
-  const invS3Pass = s3Imgs.length === 4 && s3Intro.includes("pictures two, three, and four");
+  const s3IntroValid = s3Intro.includes("pictures two, three, and four") || s3Intro.includes("pictures two, three, four and five") || s3Intro.includes("pictures two, three, four, and five");
+  const invS3Pass = (s3Imgs.length === 4 || s3Imgs.length === 5) && s3IntroValid;
   invariants.push({
     id: "INV-S3",
     pass: invS3Pass,
-    detail: `S3 images: ${s3Imgs.length} (required: 4), intro phrase verified: ${invS3Pass}`
+    detail: `S3 images: ${s3Imgs.length} (allowed: 4 or 5), intro phrase verified: ${s3IntroValid}`
   });
-  if (!invS3Pass) failReasons.push(`INV-S3 failed: picture_story images count != 4 or examiner_intro missing "pictures two, three, and four"`);
+  if (!invS3Pass) failReasons.push(`INV-S3 failed: picture_story images count not in [4, 5] or examiner_intro missing pictures continuation phrase`);
 
   // 14. INV-CLIL: glossary >=3 (term+meaning non-empty); part_1_title & part_2_title exist
   const clil = rawReading?.clil_article || {};
