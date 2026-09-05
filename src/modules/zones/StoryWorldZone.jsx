@@ -1419,7 +1419,6 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                 })}
               </div>
             )}
-          )}
           </div>
         </div>
       )}

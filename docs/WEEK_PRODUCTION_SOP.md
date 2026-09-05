@@ -37,6 +37,10 @@ Every week created for EngQuest3K (from Week 01 to Week 156) must adhere strictl
      $$\text{Play 1} \longrightarrow \text{"Now listen to Part X again."} \longrightarrow \text{3-second pause} \longrightarrow \text{Play 2} \longrightarrow \text{"That is the end of Part X."}$$
 8. **Speaking Part 3 (Picture Story) Standard**:
    - Supports 4 or 5 images. Examiner introduces Picture 1; student narrates subsequent pictures (Pictures 2–4 or Pictures 2–5).
+9. **Action Lab 3-Scenario Depth Standard**:
+   - The Action Lab must feature 3 distinct interactive scenarios/diagrams (`stages: [Stage 1, Stage 2, Stage 3]`) covering physical causes, materials comparison, and safety/first aid procedures. Never ship a single-image trivial lab.
+10. **Canonical Audio Fallback Hierarchy Invariant**:
+   - Pre-generated Static MP3 (in `public/audio/week{N}/` & Cloudflare R2 CDN) $\rightarrow$ Client IndexedDB Cache (`TTSCache.get`) $\rightarrow$ Google Cloud TTS Direct (only when uncached or live dynamic) $\rightarrow$ Browser TTS fallback (only on fatal error). All components must supply valid `audioUrl` parameters.
 
 ---
 

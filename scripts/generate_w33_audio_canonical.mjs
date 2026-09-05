@@ -188,6 +188,20 @@ export async function generateCanonicalW33Audio() {
   saveAudio(path.join(OUT_DIR_W33, 'clil_friction.mp3'), clilBuf);
   record('public/audio/week33/clil_friction.mp3', 'ARTICLE', 'src/data/weeks/week_33/reading_hub.js', 'clil_article.content_en', clilText, 'en-US-Journey-F');
 
+  // 3b. Discovery Report Hotspots & Final Report Audio
+  console.log('▶️ [1b/8] Generating Discovery Report Hotspots & Final Audio...');
+  const discoveryItems = [
+    { id: 'discovery_hotspot_1', text: 'Observation: Water on smooth corridor tiles forms a thin slippery layer that greatly reduces friction.' },
+    { id: 'discovery_hotspot_2', text: 'Observation: Jake wore rubber soles with strong grip and high friction, helping him walk safely.' },
+    { id: 'discovery_hotspot_3', text: 'Observation: Cleaners mopped the slippery tiles and placed a yellow warning sign to alert everyone.' },
+    { id: 'discovery_report_final', text: 'While investigating the corridor, we discovered that water on the smooth tiles reduced surface friction, so Tom slipped while running in a hurry. Jake walked carefully with rubber soles that provided strong grip. The cleaners dried the floor and put up a yellow warning sign to keep everyone safe.' }
+  ];
+  for (const item of discoveryItems) {
+    const buf = await synthesizeGoogleTTS(item.text, 'narrator');
+    saveAudio(path.join(OUT_DIR_W33, `${item.id}.mp3`), buf);
+    record(`public/audio/week33/${item.id}.mp3`, 'DISCOVERY_REPORT', 'src/components/cambridge/ScienceReportCreator.jsx', item.id, item.text, 'en-US-Journey-F');
+  }
+
   // 4. Dictation 1-5
   console.log('▶️ [2/8] Generating Dictation 1-5...');
   const dictItems = skillHub.dictation?.items || skillHub.dictation || [];

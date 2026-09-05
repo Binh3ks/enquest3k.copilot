@@ -103,64 +103,113 @@ export default function VoiceShadowDictation({
     if (!userInput.trim()) return;
 
     const userWords = userInput.trim().split(/\s+/).filter(Boolean);
+    const n = targetWords.length;
+    const m = userWords.length;
+    const clean = (w) => (w || '').replace(/[.,!?;:"]+/g, '').toLowerCase();
+
+    const matchScore = (t, u) => {
+      const ct = clean(t);
+      const cu = clean(u);
+      if (!ct || !cu) return -2;
+      if (ct === cu) return 3; // exact match
+      const dist = levenshteinDistance(ct, cu);
+      const maxLen = Math.max(ct.length, cu.length);
+      if (dist <= 2 && dist <= maxLen / 2) {
+        return 1.5 - (dist * 0.4); // typo score bonus
+      }
+      return -2; // distinct words
+    };
+
+    const GAP_PENALTY = -1;
+    const dp = Array.from({ length: n + 1 }, () => Array(m + 1).fill(0));
+    for (let i = 0; i <= n; i++) dp[i][0] = i * GAP_PENALTY;
+    for (let j = 0; j <= m; j++) dp[0][j] = j * GAP_PENALTY;
+
+    for (let i = 1; i <= n; i++) {
+      for (let j = 1; j <= m; j++) {
+        const scoreDiag = dp[i - 1][j - 1] + matchScore(targetWords[i - 1], userWords[j - 1]);
+        const scoreUp = dp[i - 1][j] + GAP_PENALTY; // target deleted (missing)
+        const scoreLeft = dp[i][j - 1] + GAP_PENALTY; // user inserted (extra)
+        dp[i][j] = Math.max(scoreDiag, scoreUp, scoreLeft);
+      }
+    }
+
+    // Backtrack from dp[n][m]
+    let i = n;
+    let j = m;
+    const aligned = [];
+
+    while (i > 0 || j > 0) {
+      const currentScore = dp[i][j];
+      if (i > 0 && j > 0 && currentScore === dp[i - 1][j - 1] + matchScore(targetWords[i - 1], userWords[j - 1])) {
+        aligned.unshift({ target: targetWords[i - 1], user: userWords[j - 1] });
+        i--;
+        j--;
+      } else if (i > 0 && currentScore === dp[i - 1][j] + GAP_PENALTY) {
+        aligned.unshift({ target: targetWords[i - 1], user: null });
+        i--;
+      } else {
+        aligned.unshift({ target: null, user: userWords[j - 1] });
+        j--;
+      }
+    }
+
     const results = [];
     let correctCount = 0;
 
-    targetWords.forEach((targetWord, idx) => {
-      const userWord = userWords[idx] || '';
-      const cleanTarget = targetWord.replace(/[.,!?;:"]+/g, '').toLowerCase();
-      const cleanUser = userWord.replace(/[.,!?;:"]+/g, '').toLowerCase();
+    aligned.forEach(item => {
+      const targetWord = item.target;
+      const userWord = item.user;
 
       if (!userWord) {
-        // Missing word
+        // Missing word from target
         results.push({
           type: 'missing',
           expected: targetWord,
           actual: '',
           message: 'Missing word',
         });
-      } else if (cleanUser === cleanTarget) {
-        // Correct (check case difference as minor warning)
-        correctCount += 1;
-        const isCaseExact = userWord.replace(/[.,!?;:"]+/g, '') === targetWord.replace(/[.,!?;:"]+/g, '');
-        results.push({
-          type: isCaseExact ? 'correct' : 'case_warn',
-          expected: targetWord,
-          actual: userWord,
-          message: isCaseExact ? 'Correct' : 'Check capitalization',
-        });
-      } else {
-        // Check if typo (distance <= 2)
-        const dist = levenshteinDistance(cleanUser, cleanTarget);
-        if (dist <= 2) {
-          results.push({
-            type: 'typo',
-            expected: targetWord,
-            actual: userWord,
-            message: `Spelling typo (expected "${targetWord}")`,
-          });
-        } else {
-          results.push({
-            type: 'wrong',
-            expected: targetWord,
-            actual: userWord,
-            message: `Wrong word (expected "${targetWord}")`,
-          });
-        }
-      }
-    });
-
-    // Handle any extra words typed beyond target length
-    if (userWords.length > targetWords.length) {
-      for (let i = targetWords.length; i < userWords.length; i++) {
+      } else if (!targetWord) {
+        // Extra word entered by user
         results.push({
           type: 'extra',
           expected: '',
-          actual: userWords[i],
+          actual: userWord,
           message: 'Extra word',
         });
+      } else {
+        const cleanTarget = clean(targetWord);
+        const cleanUser = clean(userWord);
+
+        if (cleanUser === cleanTarget) {
+          correctCount += 1;
+          const isCaseExact = userWord.replace(/[.,!?;:"]+/g, '') === targetWord.replace(/[.,!?;:"]+/g, '');
+          results.push({
+            type: isCaseExact ? 'correct' : 'case_warn',
+            expected: targetWord,
+            actual: userWord,
+            message: isCaseExact ? 'Correct' : 'Check capitalization',
+          });
+        } else {
+          const dist = levenshteinDistance(cleanUser, cleanTarget);
+          if (dist <= 2 && dist <= Math.max(cleanUser.length, cleanTarget.length) / 2) {
+            results.push({
+              type: 'typo',
+              expected: targetWord,
+              actual: userWord,
+              message: `Spelling typo (expected "${targetWord}")`,
+            });
+          } else {
+            results.push({
+              type: 'wrong',
+              expected: targetWord,
+              actual: userWord,
+              message: `Wrong word (expected "${targetWord}")`,
+            });
+          }
+        }
       }
-    }
+    });
 
     const accuracyScore = Math.round((correctCount / targetWords.length) * 100);
     const isPerfect = accuracyScore === 100 && userWords.length === targetWords.length;

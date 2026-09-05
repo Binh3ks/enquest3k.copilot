@@ -85,61 +85,80 @@ const DEFAULT_SCIENCE_DATA = {
 
 export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onComplete }) {
   const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'paused' | 'gameover'
+  const [currentStageIdx, setCurrentStageIdx] = useState(0);
+  const [completedStages, setCompletedStages] = useState({}); // { [stageIdx]: true }
   const [placedItems, setPlacedItems] = useState({});
   const [selectedLabelId, setSelectedLabelId] = useState(null);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(80); // 80s total (20s per drag target for ages 6-10)
+  const [timeLeft, setTimeLeft] = useState(120); // 120s total for 3 scenarios
+  const [stageCleared, setStageCleared] = useState(false);
+
+  const stages = useMemo(() => {
+    if (scienceData?.stages && Array.isArray(scienceData.stages) && scienceData.stages.length > 0) {
+      return scienceData.stages;
+    }
+    // Single stage fallback
+    return [{
+      id: scienceData?.id || 'stage_1',
+      stageNumber: 1,
+      title: scienceData?.title_en || scienceData?.experimentTitle || "Interactive Action Lab",
+      diagramImage: scienceData?.background_image || scienceData?.diagramImage || "",
+      explanation: scienceData?.description_en || scienceData?.explanation || "Interactive action exploration.",
+      zones: scienceData?.zones || [],
+      labels: scienceData?.labels || []
+    }];
+  }, [scienceData]);
 
   const labData = useMemo(() => {
-    if (!scienceData) return DEFAULT_SCIENCE_DATA;
-
-    const experimentTitle = scienceData.title_en || scienceData.experimentTitle || "Interactive Action Lab";
-    const diagramImage = scienceData.background_image || scienceData.diagramImage || "";
-    const explanation = scienceData.description_en || scienceData.explanation || "Interactive action exploration.";
+    const stage = stages[currentStageIdx] || stages[0] || DEFAULT_SCIENCE_DATA;
+    const experimentTitle = stage.title || stage.title_en || stage.experimentTitle || `Stage ${currentStageIdx + 1}`;
+    const diagramImage = stage.diagramImage || stage.background_image || "";
+    const explanation = stage.explanation || stage.description_en || "";
 
     let targets = [];
     let labels = [];
 
-    if (scienceData.zones && Array.isArray(scienceData.zones)) {
-      targets = scienceData.zones.map((z, idx) => ({
+    if (stage.zones && Array.isArray(stage.zones)) {
+      targets = stage.zones.map((z, idx) => ({
         id: z.id || `target_${idx + 1}`,
         name: z.label || `Zone ${idx + 1}`,
         x: z.x || 50,
-        y: z.y || 50
+        y: z.y || 50,
+        micro_explanation: z.micro_explanation || ''
       }));
 
-      labels = scienceData.zones.map((z, idx) => ({
-        id: `lbl_${idx + 1}`,
+      labels = stage.zones.map((z, idx) => ({
+        id: `lbl_${currentStageIdx}_${idx + 1}`,
         text: z.correct_label || z.label || `Label ${idx + 1}`,
         targetId: z.id || `target_${idx + 1}`
       }));
-    } else if (scienceData.targets && Array.isArray(scienceData.targets)) {
-      targets = scienceData.targets;
-      labels = scienceData.labels || [];
+    } else if (stage.targets && Array.isArray(stage.targets)) {
+      targets = stage.targets;
+      labels = stage.labels || [];
     } else {
       targets = DEFAULT_SCIENCE_DATA.targets;
       labels = DEFAULT_SCIENCE_DATA.labels;
     }
 
-    return { experimentTitle, diagramImage, explanation, targets, labels };
-  }, [scienceData]);
+    return { experimentTitle, diagramImage, explanation, targets, labels, stageNumber: currentStageIdx + 1 };
+  }, [stages, currentStageIdx]);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
     useSensor(TouchSensor, { activationConstraint: { delay: 100, tolerance: 5 } })
   );
 
-  // 80s Timer Engine (Linear 1s countdown, independent of score changes)
+  // 120s Timer Engine
   useEffect(() => {
-    if (gameState !== 'playing') return;
+    if (gameState !== 'playing' || stageCleared) return;
 
     const timer = setInterval(() => {
       setTimeLeft(prev => Math.max(0, prev - 1));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [gameState]);
+  }, [gameState, stageCleared]);
 
   // Timeout trigger when timeLeft hits 0
   useEffect(() => {
@@ -149,11 +168,14 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
   }, [timeLeft, gameState]);
 
   const handleStartGame = () => {
+    setCurrentStageIdx(0);
+    setCompletedStages({});
     setPlacedItems({});
     setSelectedLabelId(null);
     setScore(0);
     setStreak(0);
-    setTimeLeft(80);
+    setTimeLeft(120);
+    setStageCleared(false);
     setGameState('playing');
   };
 
@@ -163,7 +185,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
 
   const finishGame = () => {
     setGameState('gameover');
-    const xpEarned = score > 0 ? 45 : 0; // Anti-cheat: 0 XP if AFK or 0 score!
+    setStageCleared(false);
 
     if (score > 0) {
       playVictoryFanfare();
@@ -173,14 +195,27 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
     if (onComplete) onComplete(score);
   };
 
+  const handleNextStage = () => {
+    playButtonClick();
+    if (currentStageIdx < stages.length - 1) {
+      setCurrentStageIdx(prev => prev + 1);
+      setPlacedItems({});
+      setSelectedLabelId(null);
+      setStageCleared(false);
+      setTimeLeft(prev => prev + 30); // bonus 30s
+    } else {
+      finishGame();
+    }
+  };
+
   const handleLabelClick = (labelId) => {
-    if (gameState !== 'playing') return;
+    if (gameState !== 'playing' || stageCleared) return;
     playButtonClick();
     setSelectedLabelId(prev => (prev === labelId ? null : labelId));
   };
 
   const handleTargetClick = (target) => {
-    if (gameState !== 'playing' || !selectedLabelId) return;
+    if (gameState !== 'playing' || !selectedLabelId || stageCleared) return;
 
     const labelItem = labData.labels.find(l => l.id === selectedLabelId);
     if (!labelItem) return;
@@ -199,7 +234,12 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
 
       const totalCorrect = Object.values(newPlaced).filter(p => p.isCorrect).length;
       if (totalCorrect === labData.targets.length) {
-        finishGame();
+        setCompletedStages(prev => ({ ...prev, [currentStageIdx]: true }));
+        setStageCleared(true);
+        playVictoryFanfare();
+        if (currentStageIdx === stages.length - 1) {
+          finishGame();
+        }
       }
     } else {
       playWrongSound();
@@ -209,7 +249,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
-    if (!over || gameState !== 'playing') return;
+    if (!over || gameState !== 'playing' || stageCleared) return;
 
     const labelItem = labData.labels.find(l => l.id === active.id);
     const targetInfo = labData.targets.find(t => t.id === over.id);
@@ -229,7 +269,12 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
 
       const totalCorrect = Object.values(newPlaced).filter(p => p.isCorrect).length;
       if (totalCorrect === labData.targets.length) {
-        finishGame();
+        setCompletedStages(prev => ({ ...prev, [currentStageIdx]: true }));
+        setStageCleared(true);
+        playVictoryFanfare();
+        if (currentStageIdx === stages.length - 1) {
+          finishGame();
+        }
       }
     } else {
       playWrongSound();
@@ -237,7 +282,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
     }
   };
 
-  const xpEarned = score > 0 ? 45 : 0;
+  const xpEarned = score > 0 ? 50 : 0;
 
   return (
     <div className="w-full max-w-4xl mx-auto p-3.5 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border-2 border-teal-300 shadow-xl space-y-3 text-slate-900 font-sans">
@@ -353,11 +398,71 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
       {gameState === 'playing' && (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
           <div className="space-y-2.5 sm:space-y-4">
+            {/* Multi-Stage Stepper Tabs (3 Scenarios) */}
+            {stages.length > 1 && (
+              <div className="flex items-center gap-2 p-1.5 bg-teal-50 border border-teal-200 rounded-xl overflow-x-auto">
+                <span className="text-[10px] font-black uppercase text-teal-800 px-2 shrink-0">
+                  Scenarios:
+                </span>
+                {stages.map((stg, idx) => {
+                  const isCurrent = currentStageIdx === idx;
+                  const isDone = completedStages[idx];
+                  return (
+                    <button
+                      key={stg.id || idx}
+                      type="button"
+                      onClick={() => {
+                        playButtonClick();
+                        setCurrentStageIdx(idx);
+                        setPlacedItems({});
+                        setSelectedLabelId(null);
+                        setStageCleared(false);
+                      }}
+                      className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                        isCurrent
+                          ? 'bg-teal-600 text-white shadow-sm ring-2 ring-teal-300 scale-[1.02]'
+                          : isDone
+                          ? 'bg-emerald-100 text-emerald-900 hover:bg-emerald-200'
+                          : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                      }`}
+                    >
+                      {isDone ? <CheckCircle2 size={13} className="text-emerald-700" /> : <span>{idx + 1}.</span>}
+                      <span>{stg.title ? stg.title.split(':')[0] : `Stage ${idx + 1}`}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+
+            {/* Stage Cleared Next Scenario Banner */}
+            {stageCleared && currentStageIdx < stages.length - 1 && (
+              <div className="p-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-lg animate-in zoom-in-95">
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 size={24} className="text-emerald-200 shrink-0" />
+                  <div>
+                    <h4 className="font-black text-sm sm:text-base">Scenario {currentStageIdx + 1} Cleared!</h4>
+                    <p className="text-xs text-emerald-100 font-medium">
+                      {currentStageIdx === 0
+                        ? 'Great! Now compare shoe sole grip and friction in Scenario 2.'
+                        : 'Awesome! Now investigate first aid care in Scenario 3.'}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleNextStage}
+                  className="px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs sm:text-sm shadow-md transition transform hover:scale-105 active:scale-95 shrink-0 flex items-center gap-1.5"
+                >
+                  Next Scenario: Stage {currentStageIdx + 2} ▶
+                </button>
+              </div>
+            )}
+
             {/* Title */}
             <div className="p-2.5 sm:p-4 bg-teal-50 rounded-xl sm:rounded-2xl border border-teal-200">
               <h4 className="text-xs sm:text-sm font-black text-teal-950">{labData.experimentTitle}</h4>
               <p className="text-[11px] sm:text-xs text-teal-800 mt-0.5">
-                Drag or tap the action labels into the correct position on the diagram!
+                {labData.explanation || 'Drag or tap the action labels into the correct position on the diagram!'}
               </p>
             </div>
 

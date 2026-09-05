@@ -63,7 +63,8 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       name: 'Wet Corridor Floor',
       x: '50%',
       y: '78%',
-      fact: 'Observation: Water on smooth corridor tiles forms a thin slippery layer that greatly reduces friction.'
+      fact: 'Observation: Water on smooth corridor tiles forms a thin slippery layer that greatly reduces friction.',
+      audio_url: '/audio/week33/discovery_hotspot_1.mp3'
     },
     {
       id: 'rubber_shoes',
@@ -71,7 +72,8 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       name: 'Rubber Shoe Soles',
       x: '28%',
       y: '65%',
-      fact: 'Observation: Jake wore rubber soles with strong grip and high friction, helping him walk safely.'
+      fact: 'Observation: Jake wore rubber soles with strong grip and high friction, helping him walk safely.',
+      audio_url: '/audio/week33/discovery_hotspot_2.mp3'
     },
     {
       id: 'warning_sign',
@@ -79,7 +81,8 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       name: 'Yellow Caution Sign',
       x: '75%',
       y: '50%',
-      fact: 'Observation: Cleaners mopped the slippery tiles and placed a yellow warning sign to alert everyone.'
+      fact: 'Observation: Cleaners mopped the slippery tiles and placed a yellow warning sign to alert everyone.',
+      audio_url: '/audio/week33/discovery_hotspot_3.mp3'
     }
   ], []);
 
@@ -126,10 +129,9 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
   const handleHotspotClick = (hs) => {
     playButtonClick();
     setObservedHotspot(hs);
-    // 🎧 Hotspot Tap: play discovery fact audio via speakText (AudioHelper)
-    // speakText(text, audioUrl, rate, onEnd, station)
+    // 🎧 Hotspot Tap: play discovery fact pre-generated static audio via speakText
     if (hs?.fact) {
-      speakText(hs.fact, null, 1.0, null, 'read');
+      speakText(hs.fact, hs.audio_url || `/audio/week33/${hs.id}.mp3`, 1.0, null, 'read');
     }
   };
 
@@ -262,7 +264,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
                 </span>
                 <button
                   type="button"
-                  onClick={() => speakText(observedHotspot.fact)}
+                  onClick={() => speakText(observedHotspot.fact, observedHotspot.audio_url || `/audio/week33/${observedHotspot.id}.mp3`, 1.0, null, 'read')}
                   className="px-2.5 py-1 bg-amber-200 hover:bg-amber-300 text-amber-950 rounded-lg text-xs font-bold transition flex items-center gap-1"
                 >
                   <Volume2 size={13} /> Listen
@@ -472,7 +474,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               </div>
               <button
                 type="button"
-                onClick={() => speakText(finalReportText)}
+                onClick={() => speakText(finalReportText, '/audio/week33/discovery_report_final.mp3', 1.0, null, 'read')}
                 className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs shadow transition flex items-center gap-1.5"
               >
                 <Volume2 size={13} /> Listen Report

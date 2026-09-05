@@ -160,6 +160,18 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
    - **`full` (Maximum Scaffolding)**: Hiển thị 100% câu mẫu chuẩn (`currentQ.sentence`) kèm nút nghe audio. Dành cho học sinh cần mô hình đầy đủ trước khi nói.
    - **`half` (Moderate Scaffolding)**: Hiển thị 50% đầu câu (`w.slice(0, half).join(' ') + ' ___ ...'`). Đóng vai trò Sentence Starter để kích hoạt truy hồi vị ngữ/tân ngữ.
    - **`chunks` (Linear Thinking ESL Collocation Scaffolding)**: CẤM TUYỆT ĐỐI che từ cơ học so le (`i % 2 === 0 ? word : '___'`). BẮT BUỘC hiển thị theo cụm từ Linear Thinking ESL (Semantic & Syntactic Sense Units / Collocations) dựa trên `currentQ.chips` và ranh giới ngữ pháp (e.g. `Jake was` `[walking carefully]` `down the` `[school corridor]` `[after science class.]`). Giúp học sinh định hình nhịp ngắt câu tự nhiên và truy hồi cụm từ trôi chảy khi nói vào microphone.
+7. **Action Lab 3-Scenario Invariant (2026-09-05)**:
+   - Action Lab (`ActionLab.jsx` / `ScienceDragDropLab.jsx`) KHÔNG được phép chỉ là 1 hình sơ sài.
+   - BẮT BUỘC cung cấp tối thiểu 3 kịch bản / diagram tương tác (`stages: [Stage 1, Stage 2, Stage 3]`) để khai thác sâu sắc kiến thức liên môn CLIL:
+     - Scenario 1: Hiện tượng / Nguyên nhân vật lý (e.g. Sàn ướt & Vùng giảm ma sát).
+     - Scenario 2: So sánh vật liệu / Cơ chế đối ứng (e.g. Đế cao su ma sát cao vs đế nhựa trơn trượt).
+     - Scenario 3: Quy trình xử lý thực tế / Sơ cứu / An toàn (e.g. Túi chườm lạnh, băng gạc, chăm sóc y tế).
+   - Component hỗ trợ Stepper bar chuyển scenario, thanh đếm giờ liên tục và chỉ cấp điểm + XP khi hoàn thành cả 3 kịch bản.
+8. **Audio Fallback Hierarchy Invariant (Pre-generated MP3 > Cache > GG TTS Direct > Browser TTS) (2026-09-05)**:
+   - **TẦNG 0 (Pre-generated Static MP3 / R2 CDN)**: 100% audio nội dung bài học (Story, Dictation, Listening Parts 1-5, Explore, CLIL, Discovery Hotspots & Report, Model Dialogue, Video Prompts) BẮT BUỘC phải có file vật lý MP3 trong `public/audio/week{N}/` và sync lên Cloudflare R2 CDN. MỌI component khi gọi `speakText(text, audioUrl)` hoặc `VoiceService.speak(text, station, { audioUrl })` BẮT BUỘC truyền `audioUrl` hợp lệ, CẤM truyền `null` khi đã có file tĩnh.
+   - **TẦNG 1 (Local Client / IndexedDB Cache)**: Kiểm tra `TTSCache.get()` với key `(cleanedText, station, voice, audioUrl)` (0ms latency, không tốn API call).
+   - **TẦNG 2 (Google Cloud TTS Direct Synthesis)**: CHỈ được kích hoạt khi `audioUrl` vắng mặt hoặc asset chưa có trong cache (Dynamic user content / live tutoring). Sau khi sinh thành công, BẮT BUỘC lưu ngay vào IndexedDB `TTSCache.set()`.
+   - **TẦNG 3 (Browser SpeechSynthesis Fallback)**: CHỈ kích hoạt khi mất mạng hoàn toàn hoặc cả Google TTS API và Worker đều fail.
 
 ## 🎓 Master Curriculum CEFR Staging & Vocabulary Standard (W01–W156) — 2026-08-22
 **BẮT BUỘC áp dụng cho toàn bộ các tuần biên soạn và kiểm thử:**

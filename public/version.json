@@ -1,9 +1,9 @@
 {
-  "commit": "e50bf2f369753c9fe68ca3438d6d990c9a7a8b29",
-  "git_commit": "e50bf2f369753c9fe68ca3438d6d990c9a7a8b29",
-  "shortCommit": "e50bf2f3",
-  "message": "feat(gamification): Priority 1 upgrades — XP sink, streak milestones, at-risk banner [multi-agent-review]",
-  "builtAt": "2026-09-05T08:05:01.321Z",
-  "build_timestamp": "2026-09-05T08:05:01.322Z",
+  "commit": "63fdfd93fe009e28609ae8099b0cd1cb2651087d",
+  "git_commit": "63fdfd93fe009e28609ae8099b0cd1cb2651087d",
+  "shortCommit": "63fdfd93",
+  "message": "feat(w33-features): Voice Shadow Dictation mode, Discovery Report Inquiry challenge, SRS Leitner, Quick Write, and Milestone templates [multi-agent-review]",
+  "builtAt": "2026-09-05T08:43:41.897Z",
+  "build_timestamp": "2026-09-05T08:43:41.897Z",
   "env": "production"
 }

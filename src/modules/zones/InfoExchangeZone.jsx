@@ -441,33 +441,48 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                 return (
                   <div
                     key={f.id || idx}
-                    className={`px-3 sm:px-4 py-3 rounded-xl transition flex items-center justify-between gap-3 ${
+                    onClick={() => {
+                      setFieldIdxB(idx);
+                      setEvalResultB(null);
+                      setTranscriptB('');
+                      setManualTextB('');
+                      setShowQuestionTextB(false);
+                    }}
+                    className={`px-3 sm:px-4 py-3 rounded-xl transition-all cursor-pointer flex items-center justify-between gap-3 ${
                       isActive
-                        ? 'bg-purple-50 border-2 border-purple-300 shadow-xs ring-1 ring-purple-200'
+                        ? 'bg-gradient-to-r from-purple-100 via-indigo-50 to-purple-50 border-2 border-purple-600 shadow-lg ring-4 ring-purple-400/40 scale-[1.01]'
                         : isPassed
-                        ? 'bg-emerald-50/50'
-                        : 'bg-white hover:bg-slate-50/70'
+                        ? 'bg-emerald-50/70 border border-emerald-200 hover:bg-emerald-100/50'
+                        : 'bg-white hover:bg-slate-50 border border-transparent'
                     }`}
                   >
-                    {/* Left Cell: WH- Cue with Speaker */}
+                    {/* Left Cell: WH- Cue with Speaker & Active Tag */}
                     <div className="w-5/12 sm:w-1/2 flex items-center gap-1.5 min-w-0">
-                      <span className="text-[10px] sm:text-[11px] font-mono font-bold text-slate-400 shrink-0">0{idx + 1}.</span>
-                      <span className="text-xs sm:text-sm font-black text-purple-900 font-mono lowercase truncate">
+                      <span className={`text-[10px] sm:text-[11px] font-mono font-bold shrink-0 ${isActive ? 'text-purple-700' : 'text-slate-400'}`}>0{idx + 1}.</span>
+                      <span className={`text-xs sm:text-sm font-black font-mono lowercase truncate ${isActive ? 'text-purple-950 font-black' : 'text-purple-900'}`}>
                         {cueText}
                       </span>
                       <button
                         type="button"
-                        onClick={() => speakText(f.nova_question || f.label)}
-                        className="p-1 hover:bg-purple-200 text-purple-600 rounded transition shrink-0 cursor-pointer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          speakText(f.nova_question || f.label);
+                        }}
+                        className={`p-1 rounded transition shrink-0 cursor-pointer ${isActive ? 'bg-purple-600 text-white hover:bg-purple-700 shadow-sm' : 'hover:bg-purple-200 text-purple-600'}`}
                         title="Replay Examiner Nova's question"
                       >
                         <Volume2 size={12} />
                       </button>
+                      {isActive && (
+                        <span className="hidden sm:inline-flex items-center px-2 py-0.5 bg-purple-600 text-white rounded-full text-[9px] font-black uppercase tracking-wider shrink-0 animate-pulse">
+                          👉 Current
+                        </span>
+                      )}
                     </div>
 
                     {/* Right Cell: Fact / Answer */}
                     <div className="w-7/12 sm:w-1/2 flex items-center justify-end sm:justify-start gap-2 text-right sm:text-left">
-                      <span className="text-xs sm:text-sm font-black text-slate-900 leading-snug">
+                      <span className={`text-xs sm:text-sm leading-snug ${isActive ? 'font-black text-purple-950 underline decoration-purple-400 decoration-2' : 'font-bold text-slate-800'}`}>
                         {f.value}
                       </span>
                       {isPassed && <CheckCircle2 size={16} className="text-emerald-600 shrink-0 ml-auto" />}
@@ -483,20 +498,31 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                 return (
                   <div
                     key={cue.id}
-                    className={`px-3 sm:px-4 py-3 rounded-xl transition flex items-center justify-between gap-3 ${
+                    onClick={() => {
+                      setCueIdxA(idx);
+                      setEvalResultA(null);
+                      setTranscriptA('');
+                      setManualTextA('');
+                    }}
+                    className={`px-3 sm:px-4 py-3 rounded-xl transition-all cursor-pointer flex items-center justify-between gap-3 ${
                       isTarget
-                        ? 'bg-amber-50 border-2 border-amber-300 shadow-xs ring-1 ring-amber-200'
+                        ? 'bg-gradient-to-r from-amber-100 via-orange-50 to-amber-50 border-2 border-amber-500 shadow-lg ring-4 ring-amber-400/40 scale-[1.01]'
                         : isDone
-                        ? 'bg-emerald-50/50'
-                        : 'bg-white hover:bg-slate-50/70'
+                        ? 'bg-emerald-50/70 border border-emerald-200 hover:bg-emerald-100/50'
+                        : 'bg-white hover:bg-slate-50 border border-transparent'
                     }`}
                   >
                     {/* Left Cell: WH- Cue */}
                     <div className="w-5/12 sm:w-1/2 flex items-center gap-1.5 min-w-0">
-                      <span className="text-[10px] sm:text-[11px] font-mono font-bold text-slate-400 shrink-0">0{idx + 1}.</span>
-                      <span className="text-xs sm:text-sm font-black text-slate-800 font-mono lowercase truncate">
+                      <span className={`text-[10px] sm:text-[11px] font-mono font-bold shrink-0 ${isTarget ? 'text-amber-700' : 'text-slate-400'}`}>0{idx + 1}.</span>
+                      <span className={`text-xs sm:text-sm font-black font-mono lowercase truncate ${isTarget ? 'text-amber-950 font-black' : 'text-slate-800'}`}>
                         {cue.label}
                       </span>
+                      {isTarget && (
+                        <span className="hidden sm:inline-flex items-center px-2 py-0.5 bg-amber-500 text-slate-950 rounded-full text-[9px] font-black uppercase tracking-wider shrink-0 animate-pulse">
+                          👉 Ask This
+                        </span>
+                      )}
                     </div>
 
                     {/* Right Cell: Question Status / Nova Answer */}

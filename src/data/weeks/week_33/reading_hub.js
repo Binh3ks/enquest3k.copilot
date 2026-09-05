@@ -134,7 +134,7 @@ export const readingHubData = {
     ],
     critical_thinking: {
       question_en: "Why is it much safer to walk in rubber-soled sports shoes than in smooth plastic shoes on a wet corridor floor?",
-      hint_en: "Think about friction: rubber soles have strong grip that holds surfaces tightly, while smooth plastic soles have no grip and slide easily over the water layer."
+      hint_en: "Rubber soles have strong grip that holds surfaces tightly. Smooth plastic soles have no grip and slide over water."
     }
   },
   interactive_story: {
