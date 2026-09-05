@@ -72,8 +72,8 @@ const ReviewDashboard = ({ themeColor, reviewItems, setReviewItems, onWeekComple
         e?.preventDefault();
         console.log('[ReviewDashboard] handleNextLesson clicked, canContinue=', canContinue, 'weekId=', currentWeekId);
         if (canContinue) {
-            console.log('[ReviewDashboard] Navigating to /week/' + currentWeekId + '/read_explore');
-            navigate(`/week/${currentWeekId}/read_explore`);
+            console.log('[ReviewDashboard] Navigating to /week/' + currentWeekId + '/hub/1');
+            navigate(`/week/${currentWeekId}/hub/1`);
         } else {
             console.warn('[ReviewDashboard] Cannot proceed: still have', itemsLeft, 'items left');
         }

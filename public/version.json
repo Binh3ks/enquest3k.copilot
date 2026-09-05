@@ -1,9 +1,9 @@
 {
-  "commit": "14faed07cd82a77401fa9377395753e5c5be3cc5",
-  "git_commit": "14faed07cd82a77401fa9377395753e5c5be3cc5",
-  "shortCommit": "14faed07",
-  "message": "fix(ui): 2-column story retell, remove black borders in boss listening, remove duplicate map button in action lab, expand arena battle, and update tom dictation",
-  "builtAt": "2026-09-05T11:35:59.274Z",
-  "build_timestamp": "2026-09-05T11:35:59.275Z",
+  "commit": "fe1f83518576dec4aeb8f04464d4ffff48783d46",
+  "git_commit": "fe1f83518576dec4aeb8f04464d4ffff48783d46",
+  "shortCommit": "fe1f8351",
+  "message": "fix(audit): zero-scroll laptop fit, hide grammar duel answer, sync speed match vocab, and scale typography",
+  "builtAt": "2026-09-05T11:41:55.570Z",
+  "build_timestamp": "2026-09-05T11:41:55.570Z",
   "env": "production"
 }

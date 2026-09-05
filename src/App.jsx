@@ -91,9 +91,58 @@ const checkpointLoaders = {
 
 const StationLoading = () => <div className="p-10 text-center text-slate-400 font-black italic">Station loading...</div>;
 
+const LegacyReadExploreRedirect = () => {
+  const { weekId } = useParams();
+  return <Navigate to={`/week/${weekId || 33}/hub/1`} replace />;
+};
+
+const LegacyStationRedirect = () => {
+  const { weekId, stationId } = useParams();
+  const STATION_TO_TASK = {
+    read_explore: 'gear1_webtoon',
+    read: 'gear1_webtoon',
+    story: 'gear1_webtoon',
+    shadowing: 'gear2_karaoke',
+    karaoke: 'gear2_karaoke',
+    dictation: 'gear2_karaoke',
+    retell: 'gear3_retell',
+    explore: 'gear4_clil',
+    clil: 'gear4_clil',
+    science_lab: 'science_lab',
+    science_report: 'science_report',
+    word_blitz: 'word_blitz',
+    sentence_smash: 'sentence_smash',
+    math_quest: 'math_quest',
+    bar_model: 'math_quest',
+    writing: 'story_writer',
+    story_writer: 'story_writer',
+    broadcast: 'broadcast_studio',
+    video_challenge: 'broadcast_studio',
+    info_exchange: 'info_exchange',
+    boss_listening: 'boss_listening',
+    boss_reading: 'boss_reading',
+    weekly_review: 'weekly_review'
+  };
+  const targetTask = STATION_TO_TASK[stationId];
+  if (targetTask) {
+    return <Navigate to={`/week/${weekId || 33}/task/${targetTask}`} replace />;
+  }
+  return <Navigate to={`/week/${weekId || 33}/hub/1`} replace />;
+};
+
 const RootRedirect = () => {
-  const { login, register, guestLogin } = useUserStore();
+  const { login, register, guestLogin, currentUser } = useUserStore();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (currentUser) {
+      if (currentUser.role === 'parent') {
+        navigate('/dashboard', { replace: true });
+      } else {
+        navigate('/week/33/hub/1', { replace: true });
+      }
+    }
+  }, [currentUser, navigate]);
 
   const handleLogin = async (email, password) => {
     const res = await login(email, password);
@@ -102,7 +151,7 @@ const RootRedirect = () => {
       if (user?.role === 'parent') {
         navigate('/dashboard');
       } else {
-        navigate('/week/33/read_explore');
+        navigate('/week/33/hub/1');
       }
     }
     return res;
@@ -110,13 +159,13 @@ const RootRedirect = () => {
 
   const handleGuest = () => {
     guestLogin();
-    navigate('/week/33/read_explore');
+    navigate('/week/33/hub/1');
   };
 
   const handleRegister = async (data) => {
     const res = await register(data);
     if (res?.success) {
-      navigate('/week/33/read_explore');
+      navigate('/week/33/hub/1');
     }
     return res;
   };
@@ -398,10 +447,21 @@ const App = () => {
       <Route path="/placement" element={<PlacementTest />} />
       <Route path="/placementtest" element={<PlacementTest />} />
       <Route path="/parent/children" element={<ParentChildrenPage />} />
+      <Route path="/dashboard" element={<React.Suspense fallback={<StationLoading />}><ParentDashboard /></React.Suspense>} />
+      <Route path="/admin" element={<React.Suspense fallback={<StationLoading />}><AdminDashboard /></React.Suspense>} />
+      <Route path="/worksheet" element={<React.Suspense fallback={<StationLoading />}><WorksheetGenerator /></React.Suspense>} />
       <Route path="/week/:weekId" element={<QuestMapRoute />} />
       <Route path="/week/:weekId/hub/:hubId" element={<QuestMapRoute />} />
       <Route path="/week/:weekId/task/:taskId" element={<TaskRoute />} />
       <Route path="/week/:weekId/practice" element={<PracticeRoute />} />
+
+      {/* Legacy route redirects to prevent blank screen / 404 */}
+      <Route path="/week/:weekId/hub" element={<LegacyReadExploreRedirect />} />
+      <Route path="/week/:weekId/read_explore" element={<LegacyReadExploreRedirect />} />
+      <Route path="/week/:weekId/read" element={<LegacyReadExploreRedirect />} />
+      <Route path="/week/:weekId/story" element={<LegacyReadExploreRedirect />} />
+      <Route path="/week/:weekId/station/:stationId" element={<LegacyStationRedirect />} />
+      <Route path="/read_explore" element={<LegacyReadExploreRedirect />} />
 
       <Route path="/gamehub/:weekId" element={<GameHubLayout />} />
       <Route path="/collection" element={<CollectionBoard />} />
@@ -411,6 +471,9 @@ const App = () => {
       <Route path="/hub/station-2" element={<ArenaHub data={week33Data?.listeningHub} weekNumber={33} />} />
       <Route path="/hub/station-3" element={<WritingStudioHub data={week33Data?.writingHub} weekNumber={33} />} />
       <Route path="/hub/station-4" element={<NovaTalkShowHub data={week33Data?.speakingHub} weekNumber={33} />} />
+
+      {/* Wildcard catch-all fallback to avoid blank screen on unknown routes */}
+      <Route path="*" element={<Navigate to="/week/33/hub/1" replace />} />
     </Routes>
     
     {/* Global AI Tutor Widget - V5 Premium */}

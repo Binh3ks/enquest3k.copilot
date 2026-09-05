@@ -475,7 +475,7 @@ export default function ParentDashboard() {
         {/* 📚 Buttons */}
         <div className="flex items-center gap-2">
           <button
-            onClick={() => navigate('/week/33/read_explore')}
+            onClick={() => navigate('/week/33/hub/1')}
             className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-black shadow-md transition-colors"
           >
             🎮 Vào Học Ngay
