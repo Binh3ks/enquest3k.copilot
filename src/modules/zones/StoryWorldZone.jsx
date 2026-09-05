@@ -144,7 +144,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   const streakDays = rawStreak ? (JSON.parse(rawStreak).days || 0) : 3;
   const novaStage = getNovaStage(streakDays);
 
-  const scenes = storyData.storyScenes || data?.reading_hub?.read_explore?.story_scenes || data?.readingHubData?.read_explore?.story_scenes || data?.reading_hub?.story_scenes || [];
+  const scenes = storyData.storyScenes || data?.storyWorld?.storyScenes || data?.reading_hub?.story_scenes || data?.readingHub?.story_scenes || data?.reading_hub?.read_explore?.story_scenes || data?.readingHubData?.story_scenes || data?.readingHubData?.read_explore?.story_scenes || data?.stations?.read_explore?.story_scenes || [];
   const clilArticle = storyData.clilArticle || data?.reading_hub?.clil_article || data?.readingHubData?.clil_article || data?.reading_hub?.read_explore?.clil_article || data?.readingHubData?.read_explore?.clil_article || null;
   const grammarRegex = storyData.grammarRegex || data?.reading_hub?.grammarRegex || [];
   const readExplore = storyData.readExplore || data?.reading_hub?.read_explore || data?.readingHubData?.read_explore || data?.stations?.read_explore || data?.read_explore || data?.rawWeekData?.readExplore || data?.rawWeekData?.stations?.read_explore || {};
@@ -263,8 +263,12 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   // 🚀 Background Pre-cache all story sentences & dictation dialogue into IndexedDB for 0ms latency on click
   useEffect(() => {
     if (storySentences && storySentences.length > 0) {
-      storySentences.forEach((sentence) => {
-        VoiceService.prefetch?.(sentence, 'shadowing', null, activeWeek).catch(() => {});
+      storySentences.forEach((sentence, idx) => {
+        const text = typeof sentence === 'object' ? (sentence.text || sentence.text_en) : sentence;
+        const url = (typeof sentence === 'object' && sentence.audio_url) ? sentence.audio_url : `/audio/week${activeWeek || 33}/shadowing_${idx + 1}.mp3`;
+        if (text) {
+          VoiceService.prefetch?.(text, 'shadowing', url, activeWeek).catch(() => {});
+        }
       });
     }
     if (dictationList && dictationList.length > 0) {
@@ -857,8 +861,8 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
             {currentScene && (
               <div className="space-y-2.5">
                 <div
-                  className="relative rounded-2xl overflow-hidden bg-slate-900 border-2 border-slate-200 shadow-md mx-auto"
-                  style={{ maxHeight: '44vh', aspectRatio: '16 / 9', width: 'auto' }}
+                  className="relative rounded-2xl overflow-hidden bg-slate-900 border-2 border-slate-200 shadow-md mx-auto w-full max-w-4xl lg:max-w-5xl aspect-video"
+                  style={{ maxHeight: '56vh' }}
                 >
                   <img
                     src={currentScene.image_url}
@@ -1482,12 +1486,12 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-5 lg:gap-6">
                       {/* Left Column (lg:col-span-6): Large Scene Visual Anchor + Nova Question Bubble */}
                       <div className="lg:col-span-6 space-y-2.5 sm:space-y-3 flex flex-col">
-                        <div className="relative w-full h-48 sm:h-64 lg:h-[300px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 border border-purple-200 shadow-inner">
+                        <div className="relative w-full h-56 sm:h-72 lg:h-[340px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 border border-purple-200 shadow-inner">
                           <img
-                            src={scenes[retellStepIdx]?.image_url || `/images/week${weekNum}/webtoon_scene_${retellStepIdx + 1}.png`}
+                            src={scenes[retellStepIdx]?.image_url || `/images/week${activeWeek || 33}/webtoon_scene_${retellStepIdx + 1}.png`}
                             alt={`Scene ${retellStepIdx + 1}`}
                             className="w-full h-full object-cover"
-                            onError={(e) => { e.target.onerror = null; e.target.src = `/images/week${weekNum}/webtoon_scene_1.png`; }}
+                            onError={(e) => { e.target.onerror = null; e.target.src = `/images/week${activeWeek || 33}/webtoon_scene_1.png`; }}
                           />
                           <div className="absolute top-2 left-2 px-2.5 py-1 bg-purple-900/90 text-white rounded-lg text-xs font-black uppercase tracking-wider shadow">
                             Scene {retellStepIdx + 1}/{RETELL_QUESTIONS.length}

@@ -18,12 +18,13 @@ import './QuickWritePanel.css';
 export default function QuickWritePanel({
   prompt = 'Write 1 sentence about what you learned.',
   scaffoldPills = [],
-  minWords = 3,
-  maxWords = 20,
+  minWords = 15,
+  maxWords = 25,
   onSubmit,
   isLiteMode = false,
+  defaultExpanded = true,
 }) {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const [text, setText] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -56,7 +57,7 @@ export default function QuickWritePanel({
         </div>
         {isExpanded && (
           <div className="qw-lite-content">
-            <p className="qw-lite-text">Vẽ một bức tranh và nói 1 câu tiếng Anh! 🖍️</p>
+            <p className="qw-lite-text">Draw a picture and say an English sentence! 🖍️</p>
           </div>
         )}
       </div>
@@ -107,7 +108,7 @@ export default function QuickWritePanel({
           {/* Word count + submit */}
           <div className="qw-footer">
             <span className={`qw-word-count ${isValid ? 'qw-valid' : ''}`}>
-              {wordCount}/{maxWords} từ {wordCount < minWords && `(tối thiểu ${minWords})`}
+              {wordCount}/{maxWords} words {wordCount < minWords && `(min ${minWords})`}
             </span>
             <button
               type="button"
@@ -116,7 +117,7 @@ export default function QuickWritePanel({
               disabled={!isValid}
             >
               <Send size={14} />
-              <span>Gửi</span>
+              <span>Submit</span>
             </button>
           </div>
         </div>
@@ -125,7 +126,7 @@ export default function QuickWritePanel({
       {/* Submitted feedback */}
       {submitted && (
         <div className="qw-feedback">
-          <span>Tuyệt vời! Bạn đã viết {wordCount} từ! 🌟</span>
+          <span>Great job! You wrote {wordCount} words! 🌟</span>
         </div>
       )}
     </div>

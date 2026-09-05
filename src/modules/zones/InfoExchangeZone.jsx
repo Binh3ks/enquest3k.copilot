@@ -67,8 +67,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
 
   const playQuestionAudioB = () => {
     if (currentFieldB?.audio_url) {
-      const a = new Audio(currentFieldB.audio_url);
-      a.play().catch(() => speakText(currentFieldB?.nova_question || ''));
+      speakText(currentFieldB.nova_question || '', currentFieldB.audio_url);
     } else {
       speakText(currentFieldB?.nova_question || '');
     }
@@ -121,7 +120,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
         setEvalResultA(evalRes);
         if (evalRes.isCorrect) {
           setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
-          setTimeout(() => speakText(currentCueA.nova_reply), 600);
+          setTimeout(() => speakText(currentCueA.nova_reply, currentCueA.reply_audio_url), 600);
         } else {
           setRetryCountA(prev => prev + 1);
         }
@@ -157,7 +156,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
     setEvalResultA(evalRes);
     if (evalRes.isCorrect) {
       setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
-      setTimeout(() => speakText(currentCueA.nova_reply), 600);
+      setTimeout(() => speakText(currentCueA.nova_reply, currentCueA.reply_audio_url), 600);
     } else {
       setRetryCountA(prev => prev + 1);
     }
@@ -172,7 +171,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
 
   const handleForceAcceptA = () => {
     setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
-    speakText(currentCueA.nova_reply);
+    speakText(currentCueA.nova_reply, currentCueA.reply_audio_url);
     setEvalResultA({ isCorrect: true, score: 75, feedback: "Learned with Model Guide!" });
   };
 
@@ -278,6 +277,10 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
     } else {
       setShields(1);
       setPhase('table_a');
+      if (activeWeek) {
+        useDailyQuestStore.getState().completeQuest(activeWeek, 'info_exchange', { score: 50 });
+        saveProgress({ phase: 'table_a', shields: 1, completedCard1: true }, false, 50);
+      }
     }
   };
 
@@ -404,8 +407,8 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
           data-testid="ie-model-dialogue-btn"
           onClick={() => {
             const url = infoExData?.audio_url || `/audio/week${activeWeek || 33}/exam_intro_S2.mp3`;
-            VoiceService.speak("Listen to the model dialogue", 'story', { audioUrl: url }).catch(() => {
-              speakText("Where did the accident happen? It happened in the school corridor.");
+            VoiceService.speak("Where did the accident happen? It happened in the school corridor.", 'story', url).catch(() => {
+              speakText("Where did the accident happen? It happened in the school corridor.", url);
             });
           }}
           className="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-xl text-xs font-black transition flex items-center gap-2 shadow-sm active:scale-95 cursor-pointer"
@@ -474,7 +477,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
-                          speakText(f.nova_question || f.label);
+                          speakText(f.nova_question || f.label, f.audio_url);
                         }}
                         className={`p-1 rounded transition shrink-0 cursor-pointer ${isActive ? 'bg-purple-600 text-white hover:bg-purple-700 shadow-sm' : 'hover:bg-purple-200 text-purple-600'}`}
                         title="Replay Examiner Nova's question"
@@ -598,7 +601,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                         type="button"
                         onClick={() => {
                           const spoken = (currentCueA?.acceptable_questions?.slice(0, 2) || []).join('. Or: ');
-                          speakText(spoken);
+                          speakText(spoken, currentCueA?.model_audio_url || currentCueA?.audio_url);
                         }}
                         className="p-1.5 bg-amber-300 hover:bg-amber-400 text-amber-950 rounded-lg transition shrink-0 flex items-center gap-1 text-xs font-bold"
                         title="Listen to model question(s)"
@@ -666,7 +669,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                           setEvalResultA(evalRes);
                           if (evalRes.isCorrect) {
                             setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
-                            setTimeout(() => speakText(currentCueA.nova_reply), 600);
+                            setTimeout(() => speakText(currentCueA.nova_reply, currentCueA.reply_audio_url), 600);
                           } else {
                             setRetryCountA(prev => prev + 1);
                           }
@@ -717,7 +720,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                           </span>
                           <button
                             type="button"
-                            onClick={() => speakText(currentCueA?.nova_reply || '')}
+                            onClick={() => speakText(currentCueA?.nova_reply || '', currentCueA?.reply_audio_url)}
                             className="p-1 bg-emerald-200 hover:bg-emerald-300 text-emerald-900 rounded-lg transition active:scale-95"
                           >
                             <Volume2 size={16} />
@@ -909,7 +912,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                     </div>
                     <button
                       type="button"
-                      onClick={() => speakText(currentFieldB?.acceptable_answers?.[0] || '')}
+                      onClick={() => speakText(currentFieldB?.acceptable_answers?.[0] || '', currentFieldB?.answer_audio_url)}
                       className="p-2 bg-emerald-200 hover:bg-emerald-300 text-emerald-900 rounded-lg transition shrink-0"
                     >
                       <Volume2 size={16} />

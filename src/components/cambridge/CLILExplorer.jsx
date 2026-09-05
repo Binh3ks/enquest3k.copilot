@@ -341,26 +341,26 @@ export default function CLILExplorer({
       {activeHighlightMode === 'vocab' && (
         <div className="p-2.5 sm:p-4 bg-emerald-50/90 border border-emerald-300 rounded-xl sm:rounded-2xl space-y-2 shadow-xs animate-in fade-in">
           <div className="flex items-center justify-between">
-            <span className="text-[11px] sm:text-xs font-black uppercase text-emerald-900 tracking-wider flex items-center gap-1">
-              <Sparkles size={13} className="text-emerald-700" /> Key Chunks ({vocabPills.length})
+            <span className="text-xs sm:text-sm font-black uppercase text-emerald-900 tracking-wider flex items-center gap-1">
+              <Sparkles size={14} className="text-emerald-700" /> Key Chunks ({vocabPills.length})
             </span>
-            <span className="text-[10px] sm:text-xs font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-300">
+            <span className="text-[11px] sm:text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-300">
               Word Bank
             </span>
           </div>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-2">
             {vocabPills.map((w, idx) => (
               <div
                 key={idx}
-                className="px-3 py-1.5 bg-white hover:bg-emerald-50/80 border border-emerald-300 text-emerald-950 font-black text-xs sm:text-sm rounded-xl shadow-2xs transition flex items-center gap-1.5"
+                className="px-3.5 py-2 bg-white hover:bg-emerald-50/80 border border-emerald-300 text-emerald-950 font-black text-sm sm:text-base rounded-xl shadow-2xs transition flex items-center gap-2"
               >
                 <button
                   type="button"
                   onClick={(e) => { e.stopPropagation(); speakText(w); }}
                   title={`Tap to hear: ${w}`}
-                  className="p-0.5 hover:bg-emerald-100 rounded text-emerald-700 transition cursor-pointer shrink-0"
+                  className="p-1 hover:bg-emerald-100 rounded text-emerald-700 transition cursor-pointer shrink-0"
                 >
-                  <Volume2 size={11} />
+                  <Volume2 size={13} />
                 </button>
                 <span className="cursor-pointer">{renderParsedText(w, 'emerald', null, false, 'vocab', [w])}</span>
               </div>
@@ -371,31 +371,28 @@ export default function CLILExplorer({
 
       {/* CLIL Glossary Section */}
       {Array.isArray(clilData?.glossary) && clilData.glossary.length > 0 && (
-        <div className="p-2.5 sm:p-4 bg-teal-50/90 border border-teal-200 rounded-xl sm:rounded-2xl space-y-2 shadow-xs">
+        <div className="p-2.5 sm:p-4 bg-teal-50/90 border border-teal-200 rounded-xl sm:rounded-2xl space-y-2.5 shadow-xs">
           <div className="flex items-center justify-between flex-wrap gap-1">
-            <span className="text-[11px] sm:text-xs font-black uppercase text-teal-900 tracking-wider flex items-center gap-1">
-              <BookOpen size={13} className="text-teal-700" /> Glossary
-            </span>
-            <span className="text-[10px] sm:text-xs font-bold text-teal-800 bg-teal-100 px-2 py-0.5 rounded-full border border-teal-300">
-              Click term for dictionary
+            <span className="text-xs sm:text-sm font-black uppercase text-teal-900 tracking-wider flex items-center gap-1">
+              <BookOpen size={14} className="text-teal-700" /> Glossary
             </span>
           </div>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-2">
             {clilData.glossary.map((item, idx) => {
               const termStr = item.term || item.word || '';
               return (
                 <div
                   key={idx}
                   data-testid="clil-glossary-chip"
-                  className="px-3 py-1.5 bg-white border border-teal-300 text-teal-950 rounded-xl text-xs sm:text-sm font-bold shadow-2xs flex items-center gap-1.5 hover:bg-teal-50/80 transition"
+                  className="px-3.5 py-2 bg-white border border-teal-300 text-teal-950 rounded-xl text-sm sm:text-base font-bold shadow-2xs flex items-center gap-2 hover:bg-teal-50/80 transition"
                 >
                   <button
                     type="button"
                     onClick={(e) => { e.stopPropagation(); speakText(termStr); }}
                     title={`Tap to hear: ${termStr}`}
-                    className="p-0.5 hover:bg-teal-100 rounded text-teal-700 transition cursor-pointer shrink-0"
+                    className="p-1 hover:bg-teal-100 rounded text-teal-700 transition cursor-pointer shrink-0"
                   >
-                    <Volume2 size={11} />
+                    <Volume2 size={13} />
                   </button>
                   <span className="font-black text-teal-900 shrink-0 cursor-pointer">
                     {renderParsedText(termStr, 'teal', null, false, 'vocab', [termStr])}:

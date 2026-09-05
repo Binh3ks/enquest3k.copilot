@@ -281,6 +281,15 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
     navigate(`/week/${weekId}/hub/1`);
   };
 
+  const handleTaskComplete = (score = 100) => {
+    if (weekId && taskId) {
+      useDailyQuestStore.getState().completeQuest(weekId, taskId, { score });
+      useUserStore.getState().updateLocalProgress(weekId, taskId, { isCompleted: true, score });
+      useUserStore.getState().syncProgressToServer({ weekId, stationId: taskId, isCompleted: true, score });
+    }
+    navigate(`/week/${weekId}/hub/1`);
+  };
+
   if (!routing || !taskInfo) {
     return (
       <div className="ts-container">
@@ -401,7 +410,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               forcedGear={routing.gear}
               hideGearTabs={true}
               onBackToMap={handleBackToMap}
-              onComplete={handleBackToMap}
+              onComplete={handleTaskComplete}
             />
           )}
           {routing.zone === 'knowledge' && (
@@ -411,7 +420,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               forcedStation={routing.station}
               hideStationTabs={true}
               onBackToMap={handleBackToMap}
-              onComplete={handleBackToMap}
+              onComplete={handleTaskComplete}
             />
           )}
           {routing.zone === 'arena' && (
@@ -421,7 +430,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               forcedStation={routing.station}
               hideStationTabs={true}
               onBackToMap={handleBackToMap}
-              onComplete={handleBackToMap}
+              onComplete={handleTaskComplete}
             />
           )}
           {routing.zone === 'create' && (
@@ -431,7 +440,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               forcedStation={routing.station}
               hideStationTabs={true}
               onBackToMap={handleBackToMap}
-              onComplete={handleBackToMap}
+              onComplete={handleTaskComplete}
             />
           )}
           {routing.zone === 'boss' && (
@@ -441,7 +450,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               forcedStation={routing.station}
               hideStationTabs={true}
               onBackToMap={handleBackToMap}
-              onComplete={handleBackToMap}
+              onComplete={handleTaskComplete}
             />
           )}
           {routing.zone === 'info_exchange' && (
@@ -449,7 +458,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               data={safeData}
               weekNumber={weekId}
               onBackToMap={handleBackToMap}
-              onComplete={handleBackToMap}
+              onComplete={handleTaskComplete}
             />
           )}
         </TaskErrorBoundary>

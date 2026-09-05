@@ -4,7 +4,6 @@ import { Globe, Trophy, Sparkles, Microscope, FileText, FlaskConical } from 'luc
 import CLILExplorer from '../../components/cambridge/CLILExplorer';
 import ScienceDragDropLab from '../hubs/station2/LearnMode/ScienceDragDropLab';
 import ScienceReportCreator from '../../components/cambridge/ScienceReportCreator';
-import QuickWritePanel from '../../components/common/QuickWritePanel';
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
@@ -193,30 +192,6 @@ export default function KnowledgeLabZone({
           />
         )}
       </div>
-
-      {/* Quick Write Panel — micro-writing after each quest */}
-      <QuickWritePanel
-        prompt={activeTab === 'clil' ? 'Write 1 sentence about what you just learned from the article.' : activeTab === 'action_lab' ? 'Write 1 sentence about what happened in the experiment.' : 'Write 1 sentence about your discovery.'}
-        scaffoldPills={[
-          'I learned that',
-          'The article says',
-          'This is interesting because',
-          'I noticed',
-          'In the experiment,',
-        ]}
-        minWords={3}
-        maxWords={25}
-        isLiteMode={activeWeek <= 16}
-        onSubmit={(text) => {
-          console.log(`[QUICK_WRITE] Zone2 ${activeTab}: "${text}"`);
-          emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
-            weekNumber: activeWeek,
-            taskId: 'quick_write_zone2',
-            timestamp: new Date().toISOString(),
-            text,
-          });
-        }}
-      />
     </div>
   );
 }

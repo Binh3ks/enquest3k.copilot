@@ -3,6 +3,7 @@ import { Sparkles, CheckCircle2, AlertTriangle, Trophy, ChevronRight, ChevronLef
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { playButtonClick, playCorrectSound, playVictoryFanfare } from '../../utils/soundEffects';
 import { speakText } from '../../utils/AudioHelper';
+import QuickWritePanel from '../common/QuickWritePanel';
 
 export default function ScienceReportCreator({ reportTopic, customConfig, weekNumber = 33, onComplete }) {
   const [currentStep, setCurrentStep] = useState(1); // 1: OBSERVE, 2: PICK CLUE, 3: SNAP SENTENCE, 4: SEE REPORT
@@ -223,8 +224,8 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
           </div>
 
           <div
-            className="relative rounded-2xl overflow-hidden bg-slate-900 border-2 border-purple-200 shadow-md mx-auto"
-            style={{ maxHeight: '44vh', aspectRatio: '16 / 9', width: 'auto' }}
+            className="relative rounded-2xl overflow-hidden bg-slate-900 border-2 border-purple-200 shadow-md mx-auto w-full max-w-4xl lg:max-w-5xl aspect-video"
+            style={{ maxHeight: '56vh' }}
           >
             <img
               src="/images/week33/read_cover_w33.jpg"
@@ -552,6 +553,25 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
                   <span>{inquiryFeedback}</span>
                 </div>
               )}
+            </div>
+
+            {/* Quick Write Scientific Report Submission */}
+            <div className="pt-1">
+              <QuickWritePanel
+                prompt="Write a 15–25 word scientific discovery report explaining why friction keeps corridor floors safe."
+                scaffoldPills={[
+                  "Friction provides grip",
+                  "Water reduces friction",
+                  "Rubber shoe soles prevent slipping",
+                  "We must walk carefully",
+                  "The warning sign keeps students safe"
+                ]}
+                minWords={15}
+                maxWords={25}
+                onSubmit={(txt) => {
+                  console.log(`[DISCOVERY_REPORT_QUICK_WRITE] Report written: "${txt}"`);
+                }}
+              />
             </div>
 
             {/* Detective Badge */}

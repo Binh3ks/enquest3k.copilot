@@ -29,7 +29,10 @@ export const speakingHub = {
             "Where did he slip?",
             "Where did the accident happen?"
           ],
-          nova_reply: "Tom got injured in the main school corridor near the science lab, and Jake helped him there."
+          nova_reply: "Tom got injured in the main school corridor near the science lab, and Jake helped him there.",
+          audio_url: "/audio/week33/info_exchange_a1_model.mp3",
+          model_audio_url: "/audio/week33/info_exchange_a1_model.mp3",
+          reply_audio_url: "/audio/week33/info_exchange_reply_1.mp3"
         },
         {
           id: "field_a2",
@@ -45,7 +48,10 @@ export const speakingHub = {
             "Which part of his body did he hurt?",
             "What was hurt?"
           ],
-          nova_reply: "Tom hurt his right knee when he fell on the wet floor."
+          nova_reply: "Tom hurt his right knee when he fell on the wet floor.",
+          audio_url: "/audio/week33/info_exchange_a2_model.mp3",
+          model_audio_url: "/audio/week33/info_exchange_a2_model.mp3",
+          reply_audio_url: "/audio/week33/info_exchange_reply_2.mp3"
         },
         {
           id: "field_a3",
@@ -61,7 +67,10 @@ export const speakingHub = {
             "What time did the accident happen?",
             "When did he fall down?"
           ],
-          nova_reply: "It happened this morning right after science class."
+          nova_reply: "It happened this morning right after science class.",
+          audio_url: "/audio/week33/info_exchange_a3_model.mp3",
+          model_audio_url: "/audio/week33/info_exchange_a3_model.mp3",
+          reply_audio_url: "/audio/week33/info_exchange_reply_3.mp3"
         },
         {
           id: "field_a4",
@@ -77,7 +86,10 @@ export const speakingHub = {
             "Who helped him?",
             "Who stopped to help?"
           ],
-          nova_reply: "Jake stopped walking and called the school nurse right away."
+          nova_reply: "Jake stopped walking and called the school nurse right away.",
+          audio_url: "/audio/week33/info_exchange_a4_model.mp3",
+          model_audio_url: "/audio/week33/info_exchange_a4_model.mp3",
+          reply_audio_url: "/audio/week33/info_exchange_reply_4.mp3"
         },
         {
           id: "field_a5",
@@ -94,7 +106,10 @@ export const speakingHub = {
             "How is he feeling now?",
             "Is Tom feeling better now?"
           ],
-          nova_reply: "Tom feels much better now and his knee is recovering well."
+          nova_reply: "Tom feels much better now and his knee is recovering well.",
+          audio_url: "/audio/week33/info_exchange_a5_model.mp3",
+          model_audio_url: "/audio/week33/info_exchange_a5_model.mp3",
+          reply_audio_url: "/audio/week33/info_exchange_reply_5.mp3"
         }
       ]
     },
@@ -113,6 +128,7 @@ export const speakingHub = {
           value: "Near the science room.",
           nova_question: "Where did Jake help his friend?",
           audio_url: "/audio/week33/info_exchange_q1.mp3",
+          answer_audio_url: "/audio/week33/info_exchange_b1_answer.mp3",
           hint: "Check your card — where was Jake standing when he helped?",
           acceptable_answers: [
             "Near the science room.",
@@ -143,6 +159,7 @@ export const speakingHub = {
           value: "A clean bandage and a cold pack.",
           nova_question: "What first aid items did the nurse use?",
           audio_url: "/audio/week33/info_exchange_q2.mp3",
+          answer_audio_url: "/audio/week33/info_exchange_b2_answer.mp3",
           hint: "Look at your card — two items are listed.",
           acceptable_answers: [
             "A clean bandage and a cold pack.",
@@ -173,6 +190,7 @@ export const speakingHub = {
           value: "Within two minutes.",
           nova_question: "How fast did the school nurse arrive to help?",
           audio_url: "/audio/week33/info_exchange_q3.mp3",
+          answer_audio_url: "/audio/week33/info_exchange_b3_answer.mp3",
           hint: "Your card says the nurse was very quick — how many minutes?",
           acceptable_answers: [
             "Within two minutes.",
@@ -206,6 +224,7 @@ export const speakingHub = {
           value: "The headmaster praised him in the school assembly.",
           nova_question: "Who praised Jake for his quick action?",
           audio_url: "/audio/week33/info_exchange_q4.mp3",
+          answer_audio_url: "/audio/week33/info_exchange_b4_answer.mp3",
           hint: "Who spoke about Jake in front of the whole school?",
           acceptable_answers: [
             "The headmaster praised him in the school assembly.",
@@ -237,6 +256,7 @@ export const speakingHub = {
           value: "Never run in school corridors.",
           nova_question: "What safety rule did the headmaster remind all students?",
           audio_url: "/audio/week33/info_exchange_q5.mp3",
+          answer_audio_url: "/audio/week33/info_exchange_b5_answer.mp3",
           hint: "Look at your card — what must students never do inside?",
           acceptable_answers: [
             "Never run in school corridors.",

@@ -133,17 +133,17 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
   };
 
   return (
-    <div className="w-full max-w-2xl sm:max-w-3xl mx-auto my-1 p-2.5 sm:p-3.5 bg-gradient-to-b from-amber-50 to-orange-50/50 rounded-2xl border-2 border-amber-200 shadow-md font-sans space-y-2">
+    <div className="w-full max-w-4xl mx-auto my-0.5 p-2.5 sm:p-3 bg-gradient-to-b from-amber-50 to-orange-50/50 rounded-2xl border-2 border-amber-200 shadow-md font-sans space-y-1.5">
       {/* Visual Spiral Binding top holes */}
-      <div className="flex justify-around items-center px-4 py-1 border-b-2 border-dashed border-amber-300">
-        {[...Array(12)].map((_, i) => (
+      <div className="flex justify-around items-center px-4 py-0.5 border-b-2 border-dashed border-amber-300">
+        {[...Array(14)].map((_, i) => (
           <div key={i} className="w-2 h-2 rounded-full bg-amber-700 shadow-inner"></div>
         ))}
       </div>
 
-      <div className="pt-1">
+      <div className="pt-0.5">
         {/* Cambridge Exam Header */}
-        <div className="bg-gradient-to-r from-amber-900 to-slate-900 text-white px-3.5 py-1.5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-1 shadow-sm mb-2">
+        <div className="bg-gradient-to-r from-amber-900 to-slate-900 text-white px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-1 shadow-sm mb-1.5">
           <div>
             <h2 className="text-xs sm:text-sm font-bold text-slate-300 flex items-center gap-1.5">
               🎧 Flyers Practice
@@ -155,7 +155,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
         </div>
 
         {/* Compact Header & Audio Bar */}
-        <div className="flex items-center justify-between border-b border-amber-200 pb-1.5 mb-2 flex-wrap gap-2">
+        <div className="flex items-center justify-between border-b border-amber-200 pb-1 mb-1.5 flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <FlyersListeningPlayButton
               partNumber={2}
@@ -177,20 +177,20 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
           </button>
         </div>
 
-        {/* Notes Form List */}
-        <div className="space-y-1.5">
+        {/* Notes Form 2-Column Responsive Grid (Left: Example, 1, 2 | Right: 3, 4, 5) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {/* Worked Example Row */}
           <div data-testid="example-row" className="p-1.5 sm:p-2 bg-amber-100/80 rounded-xl border-2 border-amber-300 shadow-2xs space-y-0.5">
             <div className="flex items-center gap-1.5 flex-wrap justify-between">
               <div className="flex items-center gap-1.5">
-                <span className="px-2 py-0.5 rounded-md bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider shadow-2xs">
+                <span className="px-1.5 py-0.5 rounded-md bg-amber-500 text-white font-black text-[9.5px] uppercase tracking-wider shadow-2xs">
                   ★ EXAMPLE
                 </span>
                 <span className="text-xs font-black text-amber-950">
                   {exampleObj.label}:
                 </span>
               </div>
-              <span className="text-[10px] font-bold text-amber-800 bg-amber-200/80 px-1.5 py-0.5 rounded uppercase">
+              <span className="text-[9.5px] font-bold text-amber-800 bg-amber-200/80 px-1.5 py-0.5 rounded uppercase">
                 Locked Example
               </span>
             </div>
@@ -200,7 +200,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
                 type="text"
                 disabled={true}
                 value={exampleObj.answer}
-                className="flex-1 w-full px-3 py-1 rounded-lg border border-amber-300 font-black text-xs sm:text-sm text-amber-950 bg-amber-50/90 cursor-not-allowed"
+                className="flex-1 w-full px-2.5 py-0.5 sm:py-1 rounded-lg border border-amber-300 font-black text-xs sm:text-sm text-amber-950 bg-amber-50/90 cursor-not-allowed"
               />
               <CheckCircle2 className="w-4 h-4 text-amber-600 flex-shrink-0" />
             </div>
@@ -214,7 +214,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
             return (
               <div key={note.id} className="p-1.5 sm:p-2 bg-white rounded-xl border border-amber-200 shadow-2xs space-y-0.5">
                 <div className="flex items-center gap-1.5 flex-wrap">
-                  <span className="w-5 h-5 rounded-md bg-amber-200 text-amber-950 font-black text-[11px] flex items-center justify-center shrink-0">
+                  <span className="w-4 h-4 rounded-md bg-amber-200 text-amber-950 font-black text-[10.5px] flex items-center justify-center shrink-0">
                     {index + 1}
                   </span>
                   <span className="text-xs font-black text-amber-950">
@@ -228,8 +228,8 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
                     disabled={isSubmitted}
                     value={answers[note.id] || ''}
                     onChange={(e) => setAnswers({ ...answers, [note.id]: e.target.value })}
-                    placeholder="Type note answer here..."
-                    className={`flex-1 w-full px-3 py-1 rounded-lg border font-bold text-xs sm:text-sm text-slate-900 focus:outline-none transition-all ${
+                    placeholder="Type answer..."
+                    className={`flex-1 w-full px-2.5 py-0.5 sm:py-1 rounded-lg border font-bold text-xs sm:text-sm text-slate-900 focus:outline-none transition-all ${
                       isSubmitted
                         ? isCorrect
                           ? 'border-emerald-500 bg-emerald-50 text-emerald-950'
@@ -239,11 +239,11 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
                   />
                   {isSubmitted && (
                     isCorrect ? (
-                      <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
                     ) : (
                       <div className="flex items-center gap-0.5 shrink-0">
-                        <AlertCircle className="w-5 h-5 text-rose-500 flex-shrink-0" />
-                        <span className="text-[11px] font-bold text-rose-600">({note.target})</span>
+                        <AlertCircle className="w-4 h-4 text-rose-500 flex-shrink-0" />
+                        <span className="text-[10.5px] font-bold text-rose-600">({note.target})</span>
                       </div>
                     )
                   )}

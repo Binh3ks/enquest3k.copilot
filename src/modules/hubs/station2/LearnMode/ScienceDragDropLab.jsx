@@ -487,20 +487,12 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
               </div>
             )}
 
-            {/* Title */}
-            <div className="p-2.5 sm:p-4 bg-teal-50 rounded-xl sm:rounded-2xl border border-teal-200">
-              <h4 className="text-xs sm:text-sm font-black text-teal-950">{labData.experimentTitle}</h4>
-              <p className="text-[11px] sm:text-xs text-teal-800 mt-0.5">
-                {labData.explanation || 'Drag or tap the action labels into the correct position on the diagram!'}
-              </p>
-            </div>
-
-            {/* Diagram Area with Drop Zones — Preserves natural 1264x848 aspect ratio without squishing or cropping */}
-            <div className="relative w-full max-w-4xl mx-auto aspect-[1264/848] max-h-[48vh] rounded-2xl overflow-hidden bg-slate-950 border-2 border-teal-300 shadow-md">
+            {/* Diagram Area with Drop Zones — Preserves natural 1264x848 aspect ratio with zero black side bars */}
+            <div className="relative w-full max-w-5xl mx-auto aspect-[1264/848] max-h-[58vh] rounded-2xl overflow-hidden border-2 border-teal-300 shadow-md">
               <img
                 src={labData.diagramImage}
                 alt={labData.experimentTitle}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
                 onError={(e) => { e.target.src = '/images/scenes/default_story.jpg'; }}
               />
 

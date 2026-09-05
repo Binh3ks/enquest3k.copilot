@@ -149,7 +149,7 @@ export const skillPracticeHub = {
             label: "Wet Floor Puddle",
             correct_label: "Low Friction Zone",
             x: 58,
-            y: 84,
+            y: 75,
             micro_explanation: "⚠️ Water forms a thin layer that drastically lowers tile friction."
           },
           {
@@ -164,8 +164,8 @@ export const skillPracticeHub = {
             id: "z1_3",
             label: "Yellow Caution Sign",
             correct_label: "Hazard Alert",
-            x: 76,
-            y: 68,
+            x: 74,
+            y: 65,
             micro_explanation: "💡 Bright yellow sign warns everyone to slow down and walk carefully."
           },
           {
@@ -173,7 +173,7 @@ export const skillPracticeHub = {
             label: "Dry Floor Tiles",
             correct_label: "Firm Walking Area",
             x: 24,
-            y: 78,
+            y: 71,
             micro_explanation: "🧱 Dry tiles provide normal friction so students walk steadily."
           }
         ],

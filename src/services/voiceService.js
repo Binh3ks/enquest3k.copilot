@@ -386,13 +386,19 @@ export const VoiceService = {
     // Volume compensation: bass male voices are quieter than female voices
     this._speakGain = VOICE_GAIN_BOOST[deepgramVoice] || 1.0;
     
+    // Defensively unwrap audioUrl if passed as { audioUrl: '...' } or { url: '...' }
+    let rawAudioUrl = audioUrl;
+    if (typeof audioUrl === 'object' && audioUrl !== null) {
+      rawAudioUrl = audioUrl.audioUrl || audioUrl.url || null;
+    }
+
     // 🎵 TIER 0: Pre-generated Static Multi-Voice MP3 priority (if live on CDN/Storage)
-    if (audioUrl) {
+    if (rawAudioUrl && typeof rawAudioUrl === 'string') {
       const candidates = [];
-      if (audioUrl.startsWith('http')) {
-        candidates.push(audioUrl);
+      if (rawAudioUrl.startsWith('http')) {
+        candidates.push(rawAudioUrl);
       } else {
-        const cleanRelPath = audioUrl.startsWith('/') ? audioUrl : `/audio/week${weekNumber || 33}/${audioUrl}`;
+        const cleanRelPath = rawAudioUrl.startsWith('/') ? rawAudioUrl : `/audio/week${weekNumber || 33}/${rawAudioUrl}`;
         // 1. Same-origin local static audio asset (fastest, guaranteed CORS on Cloudflare Pages)
         candidates.push(cleanRelPath);
         // 2. Cloudflare R2 CDN URL
@@ -407,6 +413,11 @@ export const VoiceService = {
           return;
         } catch (staticErr) {
           console.warn(`[TTS] Static MP3 candidate unavailable (${candidatePath}): ${staticErr.message}`);
+          if (staticErr.name === 'NotAllowedError') {
+            console.warn('[TTS] Autoplay blocked by browser policy, falling back to browser speech');
+            this.webFallback(cleanedText);
+            return;
+          }
         }
       }
     }
@@ -604,7 +615,26 @@ export const VoiceService = {
   async prefetch(text, station = 'read', audioPath = null, weekNumber = null, mode = 'advanced', voice = null) {
     const cleanedText = this.cleanTextForTTS(text);
 
-    // 🎓 GOOGLE CLOUD TTS DIRECT PREFETCH OVERRIDE (Enabled for all 36 weeks)
+    // 🎵 TIER 0: Pre-generated Static Physical MP3 Priority
+    let rawAudioPath = audioPath;
+    if (typeof audioPath === 'object' && audioPath !== null) {
+      rawAudioPath = audioPath.audioUrl || audioPath.url || null;
+    }
+    if (rawAudioPath && typeof rawAudioPath === 'string') {
+      const cleanRelPath = rawAudioPath.startsWith('/') ? rawAudioPath : `/audio/week${weekNumber || 33}/${rawAudioPath}`;
+      const candidates = [cleanRelPath, `${CDN_URL}${cleanRelPath}`];
+      for (const cand of candidates) {
+        try {
+          const resp = await fetch(cand, { method: 'HEAD' });
+          if (resp.ok) {
+            console.log(`[Prefetch] 🎵 Static physical MP3 verified for ${station}: ${cand}`);
+            return;
+          }
+        } catch (_) {}
+      }
+    }
+
+    // 🎓 GOOGLE CLOUD TTS DIRECT PREFETCH OVERRIDE (Enabled ONLY when physical MP3 is missing)
     const useGoogleDirect = true;
     if (useGoogleDirect) {
       const voiceConfig = await getVoiceConfigForWeek(weekNumber);

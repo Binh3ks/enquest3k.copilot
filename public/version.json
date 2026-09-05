@@ -1,9 +1,9 @@
 {
-  "commit": "24f43f2bdee4c6da8bb01100d20c51b3da565501",
-  "git_commit": "24f43f2bdee4c6da8bb01100d20c51b3da565501",
-  "shortCommit": "24f43f2b",
-  "message": "fix(auth): redirect login to /week/33/hub/1 and add legacy route aliases for read_explore",
-  "builtAt": "2026-09-05T13:21:30.114Z",
-  "build_timestamp": "2026-09-05T13:21:30.114Z",
+  "commit": "fb21b591aea6970c1db55c76894143e9e1300119",
+  "git_commit": "fb21b591aea6970c1db55c76894143e9e1300119",
+  "shortCommit": "fb21b591",
+  "message": "fix(ui): polish grammar duel english cues, scale fact finder and boss reading fonts, calibrate action lab aspect ratio, tighten discovery report, and enrich info exchange acceptable answers",
+  "builtAt": "2026-09-05T15:14:17.239Z",
+  "build_timestamp": "2026-09-05T15:14:17.240Z",
   "env": "production"
 }
