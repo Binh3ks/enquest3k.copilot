@@ -1,9 +1,9 @@
 # 🏭 ENGQUEST3K — WEEK PRODUCTION SOP (STANDARD OPERATING PROCEDURE)
 
 **Document Reference**: `docs/WEEK_PRODUCTION_SOP.md`  
-**Version**: 2.0.0 (Unified 15 Quests / 5 Zones, 4 Central Hubs & 3-Tier Quality Gates)  
-**Governing Standard**: Cambridge CEFR & W33 Golden Standard Architecture  
-**Effective Date**: 2026-09-04  
+**Version**: 2.1.0 (Unified 15 Quests / 5 Zones, Multi-Level Assessment & 28-Mock Test Cadence)  
+**Governing Standard**: Cambridge CEFR (Pre-A1 to B2) & W33 Golden Standard Architecture  
+**Effective Date**: 2026-09-05  
 **Status**: 🟢 **CANONICAL PRODUCTION SOP**
 
 ---
@@ -20,18 +20,21 @@ Every week created for EngQuest3K (from Week 01 to Week 156) must adhere strictl
 3. **Zero-Cloning & Single-Source Invariant**:
    - Weeks are authored from the authoritative syllabus (`docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` and `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`).
    - Copying raw content or hardcoded strings from older weeks without adapting them to the new week's theme is strictly prohibited.
-4. **Standard Task Naming & CLIL Sư Phạm Invariant**:
+4. **Hai Hình Thái Tuần Học (Two Production Modalities)**:
+   - **Type A: Tuần Luyện Tập Xoay Vòng (Rotary Practice Week — 80% số tuần)**: Zone 5 trên Day 5 đánh giá quá trình tập trung sâu vào **4 Cambridge Parts xoay vòng**.
+   - **Type B: Tuần Thi Thử Trọn Vẹn (Full Mock Test Week — 28 tuần trên toàn khóa)**: Cờ `isFullMock: true` trong `index.js`. Zone 5 kích hoạt toàn bộ bài thi chuẩn hóa có đếm ngược thời gian nghiêm ngặt.
+5. **Standard Task Naming & CLIL Sư Phạm Invariant**:
    - **`science_lab` MUST be displayed as `Action Lab`** on all UI screens, reflecting interdisciplinary CLIL (science, social studies, geography, history, and experimental problem-solving). Never display as "Science Lab".
    - **`science_report` MUST be displayed as `Discovery Report`**.
    - **`sentence_smash` MUST be displayed as `Grammar Duel`**.
    - **`math_quest` MUST be displayed as `Math Quest`**.
    - **`broadcast_studio` MUST be displayed as `Video Challenge`**.
-5. **No-Fallback & Fail-Loud Invariant**:
+6. **No-Fallback & Fail-Loud Invariant**:
    - Interactive components must never use silent dummy text fallbacks. If required data is missing from the hub, render an explicit warning banner and fail loudly during audit.
-6. **Authentic Cambridge 2-Play Loop Invariant**:
+7. **Authentic Cambridge 2-Play Loop Invariant**:
    - Listening Part 1–5 audios must follow the authentic Cambridge cycle:
      $$\text{Play 1} \longrightarrow \text{"Now listen to Part X again."} \longrightarrow \text{3-second pause} \longrightarrow \text{Play 2} \longrightarrow \text{"That is the end of Part X."}$$
-7. **Speaking Part 3 (Picture Story) Standard**:
+8. **Speaking Part 3 (Picture Story) Standard**:
    - Supports 4 or 5 images. Examiner introduces Picture 1; student narrates subsequent pictures (Pictures 2–4 or Pictures 2–5).
 
 ---
@@ -57,14 +60,55 @@ WEEKLY STRUCTURE (15 TASKS / 5 DAYS):
 │    ├── Quest 2: broadcast_studio   ──> Video Challenge (Webcam presentation & recording)
 │    └── Quest 3: info_exchange      ──> Info Exchange (2-way Q&A cue cards with info gaps)
 └── DAY 5: Zone 5 — Boss Castle (Summative Assessment)
-     ├── Quest 1: boss_listening     ──> Listening Shield (Cambridge Parts 1–5 rotary)
-     ├── Quest 2: boss_reading       ──> Reading & Writing Shield (Cambridge Parts 1–6 rotary)
-     └── Quest 3: weekly_review      ──> Speaking & Passport (Speaking Parts 1–4 & Ceremony)
+     ├── Quest 1: boss_listening     ──> Listening Shield (Cambridge Parts 1–5 rotary / Mock)
+     ├── Quest 2: boss_reading       ──> Reading & Writing Shield (Parts 1–6 rotary / Mock)
+     └── Quest 3: weekly_review      ──> Speaking & Passport (Speaking Parts 1–4 / Debate)
 ```
 
 ---
 
-## 3. Productive Tasks Scaffolding Standard
+## 3. Ba Thế Hệ Khảo Thí Zone 5 (Day 5: Boss Castle)
+
+Tùy thuộc vào tuần đang sản xuất thuộc giai đoạn nào, Zone 5 sẽ nạp dữ liệu theo đúng chuẩn khảo thí của thế hệ đó:
+
+1. **Thế hệ 1 (Weeks 01–72): Cambridge Young Learners (Starters $\rightarrow$ Movers $\rightarrow$ Flyers)**:
+   - `boss_listening`: Listening Parts 1–5 (vẽ đường nối, ghi chép notepad, nối thẻ A-H, trắc nghiệm 3 tranh, tô màu và viết).
+   - `boss_reading`: Reading Parts 1–6 + Part 7 Writing truyện 3 tranh $\ge 20$ từ.
+   - `weekly_review`: Speaking Parts 1–4 (tìm điểm khác, info exchange, kể tiếp truyện tranh, phỏng vấn). Thang điểm **15 Khiên Cambridge**.
+2. **Thế hệ 2 (Weeks 73–112): Cambridge B1 Preliminary (PET) & CLIL STEM Lab**:
+   - `boss_listening`: PET Listening Parts 1–4 (7 hội thoại ngắn, note completion thông báo, phỏng vấn độc thoại dài, hội thoại quan điểm).
+   - `boss_reading`: PET Reading Parts 1–6 (biển báo, matching người-văn bản, gapped text điền câu, open cloze) + Writing viết email/bài báo $\ge 100$ từ.
+   - `weekly_review`: PET Speaking Parts 1–4 + Vấn đáp thực nghiệm khoa học **CLIL CER Viva Voce**. Thang điểm **Cambridge English Scale 140–160**.
+3. **Thế hệ 3 (Weeks 113–156): Cambridge B2 First (FCE) & Acellus US K-12 Standardized Assessment**:
+   - `boss_listening`: FCE Listening 4 Parts + Acellus Video Lecture trích xuất dữ liệu khoa học.
+   - `boss_reading`: FCE Use of English 7 Parts (Word Formation, Key Word Transformation) + Viết luận nghị luận 5 đoạn ($\ge 140–190$ từ).
+   - `weekly_review`: Tranh biện nghị viện trực tiếp 1-1 (**Parliamentary Debate**) + Thuyết trình bảo vệ đề tài Capstone. Thang điểm **Cambridge Scale 160–180 + GPA Mỹ 4.0**.
+
+---
+
+## 4. Chu Kỳ 28 Tuần Full Mock Test
+
+Khi biên soạn tuần có mã `★ FULL MOCK`, tác giả bắt buộc phải khai báo:
+```javascript
+// src/data/weeks/week_XX/index.js
+export default {
+  weekNumber: XX,
+  isFullMock: true,
+  mockExamType: "FLYERS" // hoặc "STARTERS", "MOVERS", "B1_PET", "B2_FCE_ACELLUS"
+  // ...
+};
+```
+
+### Danh mục 28 Tuần Mock Test:
+- **Starters (1 Mock)**: W16
+- **Movers (2 Mocks)**: W24, W32
+- **Flyers (8 Mocks - Nhịp 4+1)**: W37, W42, W47, W52, W57, W62, W67, W72 (Official Flyers Gate)
+- **B1 PET & CLIL (8 Mocks - Nhịp 4+1)**: W77, W82, W87, W92, W97, W102, W107, W112 (Official PET Gate)
+- **B2 FCE & Acellus (9 Mocks - Nhịp 4+1)**: W117, W122, W127, W132, W137, W142, W147, W152, W156 (Final Capstone & Graduation)
+
+---
+
+## 5. Productive Tasks Scaffolding Standard
 
 All creative and productive tasks must provide a **3-Level Scaffolding Engine** so learners never face a blank canvas:
 
@@ -83,13 +127,13 @@ All creative and productive tasks must provide a **3-Level Scaffolding Engine** 
 3. **Level 3 (Autonomous / Open)**:
    - **`story_retell`**: Key character and verb prompt outline.
    - **`discovery_report`**: Full CER Canvas (Claim, Evidence, Reasoning) with transition word bank.
-   - **`story_writer`**: Open 3-picture composition with word counter gauge and 5-Shield rubric checklist.
+   - **`story_writer`**: Open 3-picture composition with word counter gauge and Rubric checklist.
    - **`broadcast_studio`**: Bulleted talking point cue cards and presentation timer.
    - **`info_exchange`**: Raw cue cards with only field names given; student forms questions independently.
 
 ---
 
-## 4. The Dictation 3-Step Engine
+## 6. The Dictation 3-Step Engine
 
 Whenever dictation exercises occur (Cambridge Listening Part 2 notepad note-taking, spelling, and everyday dialogue):
 1. **Step 1: Authentic Two-Play Listening**:
@@ -103,11 +147,11 @@ Whenever dictation exercises occur (Cambridge Listening Part 2 notepad note-taki
 
 ---
 
-## 5. The 7-Step Production Workflow for New Weeks
+## 7. The 7-Step Production Workflow for New Weeks
 
 ```mermaid
 graph TD
-    Step1[1. Extract Syllabus Row from Digital Map] --> Step2[2. Create Week Directory & 4 Central Hubs]
+    Step1[1. Extract Syllabus Row & Week Type from Digital Map] --> Step2[2. Create Week Directory & 4 Central Hubs]
     Step2 --> Step3[3. Generate Authentic Media Assets & Calibrate Coordinates]
     Step3 --> Step4[4. Execute Tier 1: CEFR Curriculum Guard]
     Step4 --> Step5[5. Execute Tier 2: 15-Task Purity & Completeness Audit]
@@ -117,31 +161,16 @@ graph TD
 
 ### Step 1: Extract Parameters from Digital Syllabus Map
 - Read `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md` for Week $N$.
+- Check whether Week $N$ is a **Rotary Practice Week** or a **Full Mock Test Week**.
 - Extract: `theme`, `cefr_stage`, `exam_milestone`, `clil_stem_module`, `scaffolding_tier`, `target_vocab`, `grammar_focus`.
 
 ### Step 2: Author the 4 Central Hubs
 Create directory `src/data/weeks/week_{N}/` containing:
-- `index.js`: Week metadata, title, CEFR level, export bundling.
-- `reading_hub.js`:
-  - `webtoon_scenes`: 5 comic panels with dialogue, character names, and audio URLs.
-  - `retell_questions`: Story retell sentences with Linear Thinking ESL `chips` (collocation chunks).
-  - `clil_article`: Non-fiction passage with `part_1_title`, `part_2_title`, and `glossary` ($\ge 3$ entries).
-  - `rw_part1` through `rw_part6`: Exact Cambridge Reading & Writing parts for assessment.
-- `listening_hub.js`:
-  - `action_lab`: Interdisciplinary experiment parameters (Action Lab).
-  - `singapore_math`: 5 C.U.B.E.S. word problems with Bar Model SVG paths.
-  - `word_blitz`: 8–10 speed match vocabulary pairs.
-  - `sentence_smash`: 5–8 grammar duel scramble sentences.
-  - `listening_p1` through `listening_p5`: Exact Cambridge Listening parts (1 example + 5 scored + 1 distractor for L1; 2-play loop).
-- `writing_hub.js`:
-  - `picture_story`: 3 pictures with 3-level scaffolding (`pills`, `collocations`, `open`).
-  - `rw_part_7`: Cambridge Part 7 story writing ($\ge 20$ words).
-- `speaking_hub.js`:
-  - `broadcast_studio`: Video challenge teleprompter script and speaker cues.
-  - `info_exchange_cards`: Candidate Card A + Examiner Card B with $\ge 2$ unknown info gaps and examiner audio questions.
-  - `find_differences`: 4–6 differences with calibrated hotspot coordinates (0–100% image space).
-  - `picture_story`: 4 or 5 story pictures with examiner intro and picture 1 narration.
-  - `personal_questions`: 3–5 examiner interview questions across family, school, and hobbies.
+- `index.js`: Week metadata, title, CEFR level, `isFullMock`, export bundling.
+- `reading_hub.js`: Webtoon panels, retell collocations, CLIL article, and reading assessment parts.
+- `listening_hub.js`: Action Lab experiment, Singapore Math problems & SVGs, Speed Match, Grammar Duel, and listening assessment parts.
+- `writing_hub.js`: Creative story writing with 3-level scaffolding and writing assessment parts.
+- `speaking_hub.js`: Video Challenge teleprompter, Info Exchange cue cards, Spot-Differences with calibrated coordinates, and speaking assessment parts.
 
 ### Step 3: Produce Authentic Media Assets & Calibrate Coordinates
 - **Webtoon Images**: Save 5 story panels in `public/images/week{N}/`.
@@ -151,14 +180,13 @@ Create directory `src/data/weeks/week_{N}/` containing:
 
 ---
 
-## 6. The 3-Tier Quality Gates Pipeline
+## 8. The 3-Tier Quality Gates Pipeline
 
 Every week MUST pass all 3 automated gates before being merged:
 
 ### Tier 1: CEFR Curriculum Guard
 ```bash
 npm run audit:cefr {N}
-# or: node scripts/cefr_curriculum_guard.mjs {N}
 ```
 - **Pass Criteria**:
   - 0 B2/C1 vocabulary violations for Stage 1 (W01–W72).
@@ -167,7 +195,6 @@ npm run audit:cefr {N}
 ### Tier 2: 15-Task Purity & Completeness Audit
 ```bash
 node scripts/audit_all_w33_tasks.mjs
-# or week-specific runner
 ```
 - **Pass Criteria**:
   - 100% PASS across all 15 tasks (0 issues).
@@ -180,15 +207,15 @@ node scripts/gate17_fidelity_doctrine.mjs {N}
 node scripts/gate16_content_quality.mjs {N}
 ```
 - **Pass Criteria**:
-  - `schemaValid: true`, 0 schema errors against `schemas/cambridge-flyers-fidelity-doctrine.schema.json`.
-  - All 14 Invariants PASS (`INV-HUB`, `INV-L1`, `INV-L4`, `INV-L5`, `INV-R1`..`INV-R6`, `INV-S1`, `INV-S2`, `INV-S3`, `INV-CLIL`).
+  - `schemaValid: true`, 0 schema errors against schema definition.
+  - All 14 Invariants PASS.
   - 100% Component existence verified.
   - Single-source Singapore Math equality 5/5 matched.
   - S3 Speaking Part 3 accepts 4 or 5 images.
 
 ---
 
-## 7. Multi-Agent Review Protocol & Verification Checklist
+## 9. Multi-Agent Review Protocol & Verification Checklist
 
 Before pushing to production, the authoring agent must execute the **Multi-Agent Review Checklist**:
 
@@ -197,10 +224,4 @@ Before pushing to production, the authoring agent must execute the **Multi-Agent
 - [ ] **Data Integrity**: `logAttempt` called only when `isAttempted: true`.
 - [ ] **Build Verification**: `npm run build` exits with code 0.
 - [ ] **Manifest Drift Test**: `npm run test:manifest:drift` passes.
-- [ ] **Reviewer Report**: Documented in commit message or PR summary with:
-  ```markdown
-  ## 📋 Multi-Agent Review Report — Commit <hash>
-  ### 🔴 CRITICAL BUGS: 0
-  ### 🟡 HIGH RISKS: 0
-  ### ✅ PASSED: 15/15 Quests Verified & 3-Tier Gates Passed
-  ```
+- [ ] **Reviewer Report**: Documented in commit message or PR summary.

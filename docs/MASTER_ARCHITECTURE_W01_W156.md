@@ -1,9 +1,9 @@
 # 🏛️ ENGQUEST3K — MASTER CURRICULUM & SYSTEM ARCHITECTURE (W01–W156)
 
 **Document Reference**: `docs/MASTER_ARCHITECTURE_W01_W156.md`  
-**Version**: 2.0.0 (Unified 15 Quests / 5 Zones & 3-Year EMI Roadmap)  
-**Governing Standard**: Cambridge CEFR & US K-12 EMI (English as a Medium of Instruction) Standard  
-**Effective Date**: 2026-09-04  
+**Version**: 2.1.0 (Unified 15 Quests / 5 Zones, Multi-Level Assessment & 28-Mock Test Cadence)  
+**Governing Standard**: Cambridge CEFR (Pre-A1 to B2) & US K-12 EMI (English as a Medium of Instruction) Standard  
+**Effective Date**: 2026-09-05  
 **Status**: 🟢 **CANONICAL MASTER ARCHITECTURE**
 
 ---
@@ -14,15 +14,20 @@ EngQuest3K is a 3-year, 156-week integrated educational platform designed to tra
 
 ```
        [ W01 – W16 ] Pre-A1 Starters (Phonics, Word Naming, Visual Anchors)
+            │         └── 1 Mock Test at W16 (Starters Shield Festival)
             │
        [ W17 – W32 ] A1 Movers (Sentence Builders, Notepad Dictation, 4-Pic Sequence)
+            │         └── 2 Mock Tests at W24 (Mid-Movers) & W32 (Final Movers)
             │
        [ W33 – W72 ] A2 Flyers ★ NORTH STAR 1: 15/15 Shields Cambridge Flyers
+            │         └── Strict 4+1 Rotary Cycle (8 Full Mock Tests)
             │
-       [ W73 – W112] B1 / B1+ CLIL STEM (CER Framework, Scientific Inquiry, AWL)
+       [ W73 – W112] LEVEL 1 HẬU FLYERS: Cambridge B1 Preliminary (PET) & CLIL STEM
+            │         └── Strict 4+1 Cycle (8 Full Mock Tests & CER Science Practical)
             │
-       [ W113 – W156] B2 Academic EMI ★ NORTH STAR 2: US K-12 / Acellus Readiness
-                     (5-Paragraph Argumentative Essay, Formal Debate, Capstone)
+       [ W113 – W156] LEVEL 2 HẬU FLYERS: Cambridge B2 First (FCE) & Acellus US K-12
+                      ★ NORTH STAR 2: US K-12 / Acellus Readiness & Debate Defense
+                      └── Strict 4+1 Cycle (9 Full Mock Tests & Capstone Graduation)
 ```
 
 ### 🎯 North Star 1 (Milestone at Week 72): Cambridge A2 Flyers 15/15 Shields
@@ -88,213 +93,145 @@ graph TD
     Week --> Day5
 ```
 
-### 15-Quest Master Registry Table
+### Hai Hình Thái Tuần Học (Two Week Modalities)
 
-| Day | Zone Name | Quest Key | Learner-Facing Name | Pedagogical Objective & Interaction | Primary Component |
-| :---: | :--- | :--- | :--- | :--- | :--- |
-| **Day 1** | **Zone 1: Story World** | `gear1_webtoon` | **Scene Explorer** | Visual immersion, tap-to-listen dialogue, character comic panels | `StoryWorldZone.jsx` |
-| **Day 1** | **Zone 1: Story World** | `gear2_karaoke` | **Voice Shadow** | Acoustic shadow, word-level karaoke sync, pitch & rhythm matching | `VoiceShadow.jsx` |
-| **Day 1** | **Zone 1: Story World** | `gear3_retell` | **Story Retell** | Linear Thinking ESL collocation chunk speaking with 3 scaffolding tiers | `StoryRetell.jsx` |
-| **Day 2** | **Zone 2: Knowledge Lab** | `gear4_clil` | **Fact Finder** | CLIL non-fiction article, audio glossary, concept comprehension | `FactFinder.jsx` |
-| **Day 2** | **Zone 2: Knowledge Lab** | `science_lab` | **Action Lab** | Interdisciplinary experiment / simulation / cause-and-effect problem solving | `ActionLab.jsx` |
-| **Day 2** | **Zone 2: Knowledge Lab** | `science_report` | **Discovery Report** | Scientific report synthesis with 1-tap word pills, observation data card | `DiscoveryReportCreator.jsx` |
-| **Day 3** | **Zone 3: Battle Arena** | `word_blitz` | **Speed Match** | High-velocity vocabulary pairing under time pressure | `SpeedMatch.jsx` |
-| **Day 3** | **Zone 3: Battle Arena** | `sentence_smash`| **Grammar Duel** | Sentence structure ordering, syntax battle vs AI bot | `SentenceBuilderBattle.jsx` |
-| **Day 3** | **Zone 3: Battle Arena** | `math_quest` | **Math Quest** | Singapore Math C.U.B.E.S. word problem solving with Bar Model SVGs | `BarModelQuest.jsx` |
-| **Day 4** | **Zone 4: Creator Studio** | `story_writer` | **Story Writer** | Creative continuous narrative writing (Cambridge Part 7 aligned) | `PictureStoryWriter.jsx` |
-| **Day 4** | **Zone 4: Creator Studio** | `broadcast_studio`| **Video Challenge** | Virtual webcam podcast presentation, teleprompter, speaking recording | `BroadcastStudio.jsx` |
-| **Day 4** | **Zone 4: Creator Studio** | `info_exchange` | **Info Exchange** | Interactive 2-way question asking and answering (Cambridge Speaking Part 2) | `InfoExchangeZone.jsx` |
-| **Day 5** | **Zone 5: Boss Castle** | `boss_listening`| **Listening Shield** | Official Cambridge 2-play loop summative test (Parts 1–5 rotary) | `BossListeningShield.jsx` |
-| **Day 5** | **Zone 5: Boss Castle** | `boss_reading` | **Reading Shield** | Official Cambridge Reading & Writing exam test (Parts 1–6 rotary) | `BossReadingShield.jsx` |
-| **Day 5** | **Zone 5: Boss Castle** | `weekly_review` | **Speaking & Passport**| Examiner interview, 15-Shield passport ceremony, badge awards | `SpeakingPassportZone.jsx` |
+1. **Tuần Luyện Tập Xoay Vòng (Rotary Practice Weeks — 80% số tuần)**:
+   - **Quests 1–12 (Days 1–4)**: Học kiến thức mới, khám phá cốt truyện, thí nghiệm Action Lab, đấu trường Battle Arena, sáng tạo Creator Studio.
+   - **Quests 13–15 (Day 5 — Zone 5)**: Đánh giá quá trình tập trung sâu vào **4 Cambridge Parts** xoay vòng mỗi tuần (ví dụ: W33 luyện L1, L2, R1, S1; W34 luyện L3, R2, R3, S2...). Học sinh được mài giũa kỹ lưỡng từng kỹ năng thành phần mà không bị quá tải.
+2. **Tuần Thi Thử Trọn Vẹn (Full Mock Test Weeks — 20% số tuần / 28 tuần trên toàn khóa)**:
+   - **Quests 1–12 (Days 1–4)**: Ôn tập tổng hợp theo chuyên đề (Review & Priming), hệ thống hóa lỗi sai thường gặp (Error Analysis), mô phỏng kỹ năng phòng thi.
+   - **Quests 13–15 (Day 5 — Zone 5)**: Kích hoạt **Bài Thi Chuẩn Hóa Toàn Phần (Full Complete Examination)** với đồng hồ đếm ngược nghiêm ngặt:
+     - `boss_listening`: Toàn bộ các phần Listening của cấp độ đó.
+     - `boss_reading`: Toàn bộ các phần Reading & Writing của cấp độ đó.
+     - `weekly_review`: Toàn bộ các phần Speaking hoặc Vấn đáp / Tranh luận trực tiếp.
 
 ---
 
 ## 3. Four Central Data Hubs Architecture
 
-To eliminate legacy file fragmentation, each week's content is stored exclusively in **4 Data Hubs** in `src/data/weeks/week_XX/`:
+Mọi dữ liệu của mỗi tuần được lưu trữ tập trung trong **4 Data Hubs** tại `src/data/weeks/week_XX/`:
 
 ```
 src/data/weeks/week_XX/
- ├── reading_hub.js       ──> Powers Zone 1 (Webtoon, Retell), Zone 2 (Fact Finder), Zone 5 (Reading Shield R1–R6)
- ├── listening_hub.js     ──> Powers Zone 2 (Action Lab), Zone 3 (Speed Match, Grammar Duel, Math Quest), Zone 5 (Listening Shield L1–L5)
- ├── writing_hub.js       ──> Powers Zone 4 (Story Writer), Zone 5 (Reading & Writing Shield R7)
- └── speaking_hub.js      ──> Powers Zone 4 (Video Challenge, Info Exchange), Zone 5 (Speaking & Passport S1–S4)
+ ├── reading_hub.js       ──> Powers Zone 1 (Webtoon, Retell), Zone 2 (Fact Finder), Zone 5 (Reading Shield R1–R6 / PET Reading)
+ ├── listening_hub.js     ──> Powers Zone 2 (Action Lab), Zone 3 (Speed Match, Grammar Duel, Math Quest), Zone 5 (Listening Shield L1–L5 / PET Listening)
+ ├── writing_hub.js       ──> Powers Zone 4 (Story Writer), Zone 5 (Reading & Writing Shield R7 / PET Writing / Argumentative Essay)
+ └── speaking_hub.js      ──> Powers Zone 4 (Video Challenge, Info Exchange), Zone 5 (Speaking & Passport S1–S4 / PET Speaking / Debate)
 ```
-
-### Data Flow Invariants:
-1. **Single Source of Truth**: All Cambridge assessment parts and learning scaffolds draw directly from the 4 hubs without duplicating data objects.
-2. **Zero Hardcoded Strings**: All UI labels, prompt cues, and word banks are fed dynamically from the Hubs.
-3. **Fail-Loud Safety**: If an expected data key is missing, components must render an explicit error banner rather than displaying silent dummy text.
 
 ---
 
-## 4. Evolutionary Calibration Across the 5 Stages
+## 4. Hệ thống Khảo thí Đa Cấp độ ở Zone 5 (Day 5: Boss Castle)
 
-The curriculum evolves seamlessly across 5 distinct developmental stages, matching children's cognitive and linguistic growth:
+Sau khi hoàn thành mục tiêu 15 Khiên Flyers ở Tuần 72, Zone 5 được nâng cấp qua **2 Cấp độ Khảo thí Quốc tế Cao cấp**:
 
 ```mermaid
-timeline
-    title 3-Year Pedagogical Progression
-    Stage 1A (W01–W16) : Pre-A1 Starters : Phonics, 1-Word Touch-and-Say, Visual TPR
-    Stage 1B (W17–W32) : A1 Movers : 4-Pic Stories, Notepad Dictation, Sentence Scaffolding
-    Stage 1C (W33–W72) : A2 Flyers (15 Shields) : 2-Play Listening Loop, 5-Panel Narration, 20+w Writing, Info Exchange
-    Stage 2 (W73–W112) : B1/B1+ CLIL STEM : CER Framework, AWL Vocabulary, Scientific Method, Passive Voice
-    Stage 3 (W113–W156) : B2 Academic EMI : 5-Paragraph Essays, Formal Debates, Acellus US K-12 Readiness
+graph LR
+    subgraph Gen1 [Thế Hệ 1: Cambridge Young Learners W01-72]
+        Starters[Pre-A1 Starters: Nhận diện & Từ đơn]
+        Movers[A1 Movers: Điền Notepad & 4 Tranh]
+        Flyers[A2 Flyers: 16 Parts & 15 Khiên]
+    end
+
+    subgraph Gen2 [Thế Hệ 2: B1 Preliminary & CLIL Lab W73-112]
+        PET_L[PET Listening 4 Parts]
+        PET_RW[PET Reading 6 Parts + Writing 100w]
+        PET_S[PET Speaking 4 Parts + CLIL Viva Voce]
+    end
+
+    subgraph Gen3 [Thế Hệ 3: B2 First & Acellus US W113-156]
+        FCE_Use[FCE Reading & Use of English 7 Parts]
+        Acellus_Exam[Acellus US Grade 7-8 Battery]
+        Debate_Live[Parliamentary Debate & Capstone Defense]
+    end
+
+    Gen1 --> Gen2 --> Gen3
 ```
 
-### Detailed Stage Breakdown
+### Bảng Tiến Hóa Định Dạng Khảo Thí Zone 5 theo 3 Thế Hệ
 
-#### 1. Stage 1A: Pre-A1 Starters (Weeks 01–16)
-- **Learner Profile**: Young learners (Ages 6–7), emergent readers.
-- **Language Focus**: Letter-sound correspondence (Phonics), basic sight words, simple naming, colors, numbers 1–20, classroom commands.
-- **Pedagogical Adaptation in 15 Quests**:
-  - `gear1_webtoon`: High visual ratio, 1–2 short sentences per panel.
-  - `gear2_karaoke`: Slow acoustic pacing (0.75x speed), clear syllable enunciation.
-  - `gear3_retell`: Touch-to-speak single words and 2-word noun phrases.
-  - `science_lab`: Sensory observation (hot/cold, sinking/floating, colors mixing).
-  - `math_quest`: Single-digit counting, concrete picture bar models.
-  - `story_writer`: Fill-in-the-blank with 1-tap word choices; tracing and letter assembly.
-  - `boss_listening`: Starters listening mechanics (identify objects, draw lines to colors).
-
-#### 2. Stage 1B: A1 Movers (Weeks 17–32)
-- **Learner Profile**: Primary students (Ages 7–8) gaining sentence-level confidence.
-- **Language Focus**: Present Simple vs Continuous, past of *to be* (was/were), basic adjectives and prepositions, everyday routines.
-- **Pedagogical Adaptation in 15 Quests**:
-  - `gear3_retell`: 50% Sentence starter scaffolding (`Jake was walking...`).
-  - `science_report`: Simple 2-sentence discovery reports using guided word pills.
-  - `math_quest`: 2-digit addition/subtraction, part-whole bar models with C.U.B.E.S.
-  - `info_exchange`: 1-way questioning practice with explicit question stems (`Where is...?`, `How old is...?`).
-  - `story_writer`: 3-picture sequencing, writing 1 sentence per picture (10–15 words).
-  - `boss_listening`: Movers Part 2 notepad note-taking (spelling names, recording single numbers).
-
-#### 3. Stage 1C: A2 Flyers — Golden Master (Weeks 33–72)
-- **Learner Profile**: Upper primary (Ages 8–10), fluent paragraph readers.
-- **Language Focus**: Past Simple regular and irregular verbs, Past Continuous, comparatives/superlatives, modals (*should, must, could*), future with *going to*.
-- **Pedagogical Invariant**: Strict compliance with `schemas/cambridge-flyers-fidelity-doctrine.schema.json` and 16 Cambridge Exam Parts.
-- **Pedagogical Adaptation in 15 Quests**:
-  - `gear2_karaoke`: Natural speech rate (1.0x), linking sounds and intonation contours.
-  - `gear3_retell`: Linear Thinking ESL Collocation chunk scaffolding.
-  - `science_lab`: Scientific variable manipulation (friction, water surface tension, simple circuits).
-  - `science_report`: Discovery Detective reports with observation data card and cause-effect reasoning.
-  - `math_quest`: Comparison bar models, 2-step word problems, fraction concepts.
-  - `story_writer`: 3-panel continuous story writing with $\ge 20$ words scored on 5 Shields.
-  - `info_exchange`: Full 2-way information exchange (Candidate Card A + Examiner Card B) with 2+ unknown info gaps.
-  - `boss_castle`: Full Cambridge 2-play loop listening, 6 Reading parts + Part 7 Writing, 4 Speaking parts.
-
-#### 4. Stage 2: B1 / B1+ CLIL STEM & Academic Bridge (Weeks 73–112)
-- **Learner Profile**: Late primary / early secondary (Ages 10–12).
-- **Language Focus**: Academic Word List (AWL Tier 2), Passive Voice (*was discovered by, is heated to*), Conditionals Type 1 & 2, relative clauses, compound-complex sentences.
-- **Pedagogical Adaptation in 15 Quests**:
-  - `gear4_clil`: In-depth scientific and social studies articles (Plate tectonics, Photosynthesis, Ancient Civilizations, Supply & Demand).
-  - `science_lab`: Multi-variable interactive experiments with hypothesis testing.
-  - `science_report`: Formal **CER Framework (Claim, Evidence, Reasoning)** with data analysis.
-  - `sentence_smash`: Complex syntax transformation (active $\rightarrow$ passive, combining sentences with subordinate conjunctions).
-  - `math_quest`: Ratios, percentages, algebraic thinking, multi-step Singapore bar models.
-  - `story_writer`: Expository paragraph writing, cause-and-effect explanations ($\ge 50$ words).
-  - `broadcast_studio`: Scientific documentary presentations, explaining diagrams and charts.
-
-#### 5. Stage 3: B2 Academic EMI & US K-12 Readiness (Weeks 113–156)
-- **Learner Profile**: Secondary school students (Ages 12–14), preparing for international study.
-- **Language Focus**: Advanced argumentative structures, nuance and hedging (*it could be argued that, evidence suggests*), Conditionals Type 3 and mixed, rhetorical devices.
-- **Pedagogical Adaptation in 15 Quests**:
-  - `gear4_clil`: Multi-perspective texts, primary source documents, ethical dilemmas in science & technology.
-  - `science_report`: Research paper synthesis, laboratory experimental write-ups.
-  - `math_quest`: Pre-algebra, rate problems, statistical interpretation (line graphs, pie charts).
-  - `story_writer`: **5-Paragraph Argumentative Essay** (Introduction with Thesis $\rightarrow$ Body Paragraph 1 $\rightarrow$ Body Paragraph 2 $\rightarrow$ Counterargument & Rebuttal $\rightarrow$ Conclusion).
-  - `broadcast_studio`: Parliamentary debate speeches (Affirmative vs Negative), cross-examination, impromptu rebuttal.
-  - `info_exchange`: Complex academic interviews, peer project peer-review consultations.
-  - `boss_castle`: Academic reading comprehension (TOEFL Junior / KET / PET / Acellus Grade 6–8 level), timed essay writing, oral defense.
+| Đặc tả Khảo thí | Thế hệ 1: Young Learners (W01–W72) | Thế hệ 2: B1 Preliminary & CLIL (W73–W112) | Thế hệ 3: B2 First & Acellus EMI (W113–W156) |
+| :--- | :--- | :--- | :--- |
+| **Độ tuổi Mục tiêu** | 6 – 10 tuổi (Tiểu học) | 10 – 12 tuổi (Cuối tiểu học & Lớp 6–7) | 12 – 14 tuổi (Lớp 7, 8, 9) |
+| **Mục tiêu Khảo thí** | 15/15 Khiên Starters, Movers, Flyers | Chứng chỉ Cambridge B1 PET (Merit/Distinction) $\approx$ IELTS 4.5–5.5 | Cambridge B2 FCE $\approx$ IELTS 6.0–6.5 & Acellus US K-12 Grade 7–8 Ready |
+| **Định dạng Listening** (`boss_listening`) | 5 Parts thiếu nhi (vẽ đường nối, ghi số/tên notepad, nối tranh, trắc nghiệm 3 tranh, tô màu) | 4 Parts B1 PET (7 hội thoại ngắn, điền form thông báo, phỏng vấn độc thoại dài, đối thoại quan điểm) | 4 Parts FCE + Nghe bài giảng khoa học Acellus Video Lecture trích xuất dữ liệu |
+| **Định dạng Reading** (`boss_reading`) | 6 Parts (định nghĩa từ vựng, hội thoại A-H, đục lỗ truyện, dropdown ngữ pháp, trích xuất tóm tắt, open cloze) | 6 Parts Reading B1 (biển báo thực tế, ghép người-văn bản, bài đọc dài, gapped text điền câu, trắc nghiệm từ, open cloze) | 7 Parts FCE Use of English (biến đổi từ loại Word Formation, viết lại câu Key Word Transformation, gapped text dài) |
+| **Định dạng Writing** (`boss_reading`) | Part 7: Viết truyện theo 3 tranh liên hoàn ($\ge 20$ từ) | Part 1: Viết email phản hồi ($\ge 100$ từ); Part 2: Viết bài văn/bài báo theo chủ đề ($\ge 100$ từ) | Viết bài luận nghị luận học thuật 5 đoạn (Argumentative Essay $\ge 140–190$ từ) với Thesis, luận cứ & phản biện |
+| **Định dạng Speaking** (`weekly_review`) | 4 Parts (tìm điểm khác, hỏi đáp cue cards, kể tiếp câu chuyện tranh, phỏng vấn cá nhân) | 4 Parts PET (hỏi đáp cá nhân, miêu tả tranh chi tiết, thảo luận tình huống, thảo luận mở rộng) + CLIL CER Viva Voce | Tranh biện nghị viện trực tiếp (Parliamentary Debate 1-1 với AI/Peer) + Thuyết trình bảo vệ đề tài (Capstone Defense) |
+| **Thang điểm & Vinh danh** | **Hệ thống 15 Khiên Cambridge** (Max 5 Nghe, 5 Đọc & Viết, 5 Nói) | **Cambridge English Scale (140–160)** + Báo cáo Khoa học CER 4 Tiêu chí | **Cambridge English Scale (160–180)** + Điểm GPA Mỹ (A/B/C/D, 4.0) + Speaker Points Tranh biện |
 
 ---
 
-## 5. Universal 3-Level Scaffolding Matrix across Productive Tasks
+## 5. Bản đồ Chu kỳ 28 Tuần Mock Test trên Toàn Khóa (156 Tuần)
 
-Productive tasks (`story_writer`, `discovery_report`, `broadcast_studio`, `info_exchange`, `gear3_retell`) must **never leave the learner with a blank page**. Every productive task incorporates a 3-tier scaffolding engine:
+Chu kỳ Mock Test được thiết kế tối ưu theo tâm sinh lý lứa tuổi: **Giãn cách ở giai đoạn đầu để xây dựng sự tự tin $\rightarrow$ Tăng tốc chu kỳ 4+1 ở các giai đoạn sau để rèn luyện sức bền phòng thi**.
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+│                            BẢNG PHÂN BỔ 28 TUẦN FULL MOCK TEST TOÀN DIỆN                    │
+├───────────────┬──────────────┬────────────────────────┬─────────────────────────────────────┤
+│ Giai đoạn     │ Trình độ     │ Số lượng Mock Test     │ Vị trí Tuần Thi Thử (Full Mock)     │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W01 – W16     │ Pre-A1       │ 1 Mock Test Duy nhất   │ W16 (Starters Graduation Shield)    │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W17 – W32     │ A1 Movers    │ 2 Mock Tests           │ W24 (Mid-Movers), W32 (Final Movers)│
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W33 – W72     │ A2 Flyers    │ 8 Mock Tests (Nhịp 4+1)│ W37, W42, W47, W52, W57, W62, W67,  │
+│               │              │                        │ W72 (Official Flyers Gate)          │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W73 – W112    │ B1 PET       │ 8 Mock Tests (Nhịp 4+1)│ W77, W82, W87, W92, W97, W102, W107,│
+│               │ & CLIL Lab   │                        │ W112 (B1 PET Official Gate)         │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W113 – W156   │ B2 FCE       │ 9 Mock Tests (Nhịp 4+1)│ W117, W122, W127, W132, W137, W142, │
+│               │ & Acellus US │                        │ W147, W152, W156 (Final Capstone)   │
+└───────────────┴──────────────┴────────────────────────┴─────────────────────────────────────┘
+```
+
+### Chi tiết 28 Mốc Khảo Thí:
+
+1. **W16**: `★ Starters Graduation Mock` — Ngày hội nhận Khiên Starters đầu tiên cho học sinh 6–7 tuổi.
+2. **W24**: `★ Movers Mid-Way Mock 1` — Đo lường tiến độ giữa kỳ, rà soát lỗi chính tả Notepad Part 2.
+3. **W32**: `★ Movers Final Mock 2` — Khảo sát toàn diện cấp Chứng chỉ Movers trước khi bước vào Flyers.
+4. **W37, W42, W47, W52, W57, W62, W67**: Các kỳ `★ Flyers Full Mock Test` chu kỳ 5 tuần (4 tuần luyện 4 parts xoay vòng + 1 tuần gộp trọn bộ 16 parts có bấm giờ).
+5. **W72**: `★ CAMBRIDGE FLYERS OFFICIAL GATE` — Kỳ thi chính thức chốt mục tiêu **15/15 Khiên Flyers**.
+6. **W77, W82, W87, W92, W97, W102, W107**: Các kỳ `★ B1 PET & CLIL Lab Mock` chu kỳ 5 tuần.
+7. **W112**: `★ CAMBRIDGE B1 PET OFFICIAL GATE` — Kỳ thi chính thức chốt chuẩn **B1 Preliminary with Merit/Distinction**.
+8. **W117, W122, W127, W132, W137, W142, W147, W152**: Các kỳ `★ B2 FCE & Acellus US Standardized Mock`.
+9. **W156**: `★ 3-YEAR CAPSTONE PUBLIC DEFENSE & GRADUATION` — Bảo vệ luận án khoa học và hoàn thành xuất sắc chuẩn **B2 EMI / Acellus US K-12 Ready**.
+
+---
+
+## 6. Universal 3-Level Scaffolding Matrix across Productive Tasks
+
+Mọi bài tập sáng tạo (`story_writer`, `discovery_report`, `broadcast_studio`, `info_exchange`, `gear3_retell`) đều tích hợp giàn giáo 3 cấp độ:
 
 ```
 [ Level 1: Full Scaffolding ]  ──>  [ Level 2: Guided Chunks ]  ──>  [ Level 3: Autonomous ]
   (100% Model + 1-Tap Pills)         (Collocation Sense Units)         (Criteria & Outline)
 ```
 
-### Comprehensive Scaffolding Matrix
-
 | Task / Quest | Level 1: Full Scaffolding (Novice / Starters) | Level 2: Guided Chunks (Intermediate / Movers-Flyers) | Level 3: Autonomous (Advanced / CLIL B1-B2) |
 | :--- | :--- | :--- | :--- |
-| **`story_retell`** (`gear3_retell`) | **Full Model**: Displays 100% of the sentence with native audio playback button for imitation. | **Linear Thinking ESL Chunks**: Displays key collocations in semantic brackets: `Jake was [walking carefully] down the [school corridor].` | **Keyword Outline**: Only character names and verbs given: `Jake / walk / wet floor / slip / help`. |
-| **`discovery_report`** (`science_report`) | **1-Tap Word Pills**: Sentence frames provided with clickable pill options. Zero typing friction. | **Sentence Starters + Data Card**: `The experiment showed that... because the data proved...` with reference to data table. | **Full CER Canvas**: Blank Claim, Evidence, and Reasoning boxes with academic transition word bank (`Consequently`, `Furthermore`). |
-| **`story_writer`** (`story_writer`) | **Guided Cloze Frame**: 3 pictures with 2–3 missing key phrases per picture and word choices. | **Collocation Keyword Bank**: 4–5 multi-word phrase pills per picture (`slipped heavily`, `first-aid kit`). | **Open Composition**: 3 pictures with a word count gauge ($\ge 20$ / $\ge 50$ words) and 5-Shield rubric checklist. |
-| **`broadcast_studio`** (`broadcast_studio`) | **Full Teleprompter**: Complete script scrolls automatically with karaoke highlight at reading speed. | **Chunk-Segmented Prompter**: Sentence chunks with breath pause markers `//` for natural intonation. | **Speaker Cue Cards**: Bulleted talking points and presentation timer for spontaneous delivery. |
-| **`info_exchange`** (`info_exchange`) | **Direct Question Prompts**: Full question given (`What is the boy's name?`); tap to hear model. | **Question Scaffolding Stems**: `Where / school?` $\rightarrow$ learner constructs `Where is the school?` with hint toggle. | **Raw Cue Card**: Only field names given (`School name: ?`, `Students: ?`); student forms questions independently. |
+| **`story_retell`** (`gear3_retell`) | **Full Model**: Hiển thị 100% câu mẫu chuẩn kèm nút nghe audio. | **Linear Thinking ESL Chunks**: Hiển thị cụm từ Collocations trong ngoặc: `Jake was [walking carefully] down the [school corridor].` | **Keyword Outline**: Chỉ cung cấp danh từ và động từ chính: `Jake / walk / wet floor / slip / help`. |
+| **`discovery_report`** (`science_report`) | **1-Tap Word Pills**: Điền từ qua các thẻ từ có sẵn, không phải gõ phím. | **Sentence Starters + Data Card**: `The data proves that... because...` dựa trên bảng số liệu. | **Full CER Canvas**: Khung luận điểm Claim, Evidence, Reasoning kèm ngân hàng từ nối học thuật. |
+| **`story_writer`** (`story_writer`) | **Guided Cloze Frame**: 3 tranh có sẵn câu khung và từ gợi ý. | **Collocation Keyword Bank**: 4–5 thẻ cụm từ per tranh (`slipped heavily`, `first-aid kit`). | **Open Composition**: Viết tự do 3 tranh với bộ đếm từ ($\ge 20$ hoặc $\ge 100$ từ) và Rubric chấm điểm. |
+| **`broadcast_studio`** (`broadcast_studio`) | **Full Teleprompter**: Kịch bản chạy chữ tự động theo nhịp đọc. | **Chunk-Segmented Prompter**: Đánh dấu nhịp ngắt nghỉ tự nhiên bằng ký hiệu `//`. | **Speaker Cue Cards**: Thẻ ghi chú luận điểm chính và đồng hồ bấm giờ thuyết trình. |
+| **`info_exchange`** (`info_exchange`) | **Direct Question Prompts**: Câu hỏi mẫu đầy đủ kèm audio hướng dẫn. | **Question Scaffolding Stems**: Gợi ý từ khóa để tự đặt câu (`Where / school?` $\rightarrow$ `Where is the school?`). | **Raw Cue Card**: Thẻ thông tin gốc chỉ có tên trường dữ liệu; học sinh tự đặt và trả lời câu hỏi 100%. |
 
 ---
 
-## 6. The Dictation 3-Step Engine
+## 7. The Dictation 3-Step Engine
 
-Integrated into Cambridge Listening Part 2 (Notepad Note-Taking) and everyday dialogue practice, the Dictation Engine follows a strict **3-Step Pedagogical Loop**:
-
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Learner
-    participant System as Audio Engine
-    participant UI as Notepad Diff UI
-    participant TTS as Voice Shadow
-    
-    Note over Learner,System: STEP 1: Authentic Two-Play Listening
-    System->>Learner: Play 1 (Authentic dialogue / Examiner audio)
-    Note over Learner: 3-second thinking pause
-    System->>Learner: "Now listen again." (Play 2 - Exact identical audio)
-    Learner->>UI: Types notes into notepad lines without visual hints
-    
-    Note over Learner,UI: STEP 2: Visual Diff Verification
-    Learner->>UI: Submits transcription
-    UI-->>Learner: Instant character-level Visual Diff (Green = Match, Red = Missing/Typo)
-    
-    Note over Learner,TTS: STEP 3: Listen & Shadow Loop
-    TTS->>Learner: Plays target sentence model
-    Learner->>TTS: Records voice echoing speech rhythm and spelling
-    TTS-->>Learner: Feedback on pronunciation and phoneme accuracy
-```
-
-### Dictation Engine Focus Areas by Stage:
-- **Movers (W17–W32)**: Single numbers (ages, bus numbers), spelling simple proper names (`S-M-I-T-H`).
-- **Flyers (W33–W72)**: Addresses, days of the week, times, quantities, compound names (`Green Street`, `14th October`).
-- **CLIL Bridge (W73–W156)**: Scientific measurements, formulas, technical vocabulary, dictogloss of key lecture points.
+Quy trình chép chính tả 3 bước bắt buộc cho Cambridge Listening Part 2 và hội thoại hàng ngày:
+1. **Bước 1: Authentic Two-Play Listening**: Nghe Play 1 $\rightarrow$ nghỉ 3 giây $\rightarrow$ Play 2 $\rightarrow$ gõ thông tin vào Notepad mà không có gợi ý chữ.
+2. **Bước 2: Visual Diff Verification**: Hệ thống so khớp ký tự màu sắc phát hiện ngay lỗi chính tả (Xanh = Đúng, Đỏ = Sai ký tự/thiếu chữ).
+3. **Bước 3: Listen & Shadow Loop**: Nghe câu mẫu chuẩn và ghi âm nhại lại (Shadowing) để hoàn thiện nhịp điệu và ngữ điệu.
 
 ---
 
-## 7. Three-Tier Quality Assurance & Anti-Hallucination Gatekeeper
+## 8. Ba Tầng Kiểm Thử Tự Động (3-Tier Automated Gates)
 
-Every week authored in the system must pass through 3 automated quality gates before entering production:
-
-```
-[ Tier 1: CEFR Guard ]  ──>  [ Tier 2: Task Completeness ]  ──>  [ Tier 3: Fidelity Doctrine ]
- (0 level violations)          (15 tasks, 0 missing data)         (16 Cambridge Parts schema)
-```
-
-1. **Tier 1: CEFR Curriculum Guard (`node scripts/cefr_curriculum_guard.mjs <week>`)**:
-   - Zero tolerance for B2/C1 academic jargon in Stage 1 (W01–W72).
-   - Sentence length strictly $\le 24$ words for narrative and $\le 28$ words for CLIL scientific text.
-2. **Tier 2: 15-Task Purity & Completeness (`node scripts/audit_all_w33_tasks.mjs`)**:
-   - Scans all 15 tasks across all 5 zones.
-   - Validates that every interactive component receives authentic data without static hardcoded fallbacks.
-3. **Tier 3: Cambridge Mechanic Fidelity Doctrine (`node scripts/gate17_fidelity_doctrine.mjs <week>`)**:
-   - Machine-enforces all 14 invariants (`INV-HUB` through `INV-CLIL`).
-   - Validates against `schemas/cambridge-flyers-fidelity-doctrine.schema.json`.
-   - Verifies 100% component existence and single-source Singapore Math equality.
-
----
-
-## 8. Summary of Architectural Invariants
-
-1. **15 Quests / 5 Zones Invariant**: Exactly 5 Zones per week, 3 Quests per Zone. Never display "Station" or omit Quests.
-2. **Standard Task Naming Invariant**:
-   - Day 2 Quest 2 is strictly **Action Lab** (`science_lab` / `ActionLab.jsx`).
-   - Day 2 Quest 3 is strictly **Discovery Report** (`science_report` / `DiscoveryReportCreator.jsx`).
-   - Day 3 Quest 2 is strictly **Grammar Duel** (`sentence_smash`).
-   - Day 3 Quest 3 is strictly **Math Quest** (`math_quest`).
-   - Day 4 Quest 2 is strictly **Video Challenge** (`broadcast_studio`).
-3. **Linear Thinking ESL Chunk Invariant**: Cheating-proof, collocation-based phrase chunking in `gear3_retell` and `story_writer`. Never use mechanical alternating word blanks (`i % 2 === 0`).
-4. **Authentic Two-Play Loop Invariant**: Cambridge Listening Part 1–5 must execute: Play 1 $\rightarrow$ "Now listen to Part X again" $\rightarrow$ 3s pause $\rightarrow$ Play 2 $\rightarrow$ "That is the end of Part X".
-5. **Single-Source Data Hub Invariant**: All week data lives strictly in `reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `speaking_hub.js`. Zero duplicate copies.
+Mọi tuần học mới bắt buộc phải vượt qua 3 cổng kiểm thử trước khi đóng băng:
+1. **Tier 1: CEFR Curriculum Guard (`npm run audit:cefr <N>`)**: 0 lỗi vượt cấp từ vựng, độ dài câu $\le 24$ từ (truyện) hoặc $\le 28$ từ (khoa học CLIL).
+2. **Tier 2: 15-Task Purity & Completeness Audit (`node scripts/audit_all_w33_tasks.mjs`)**: 15/15 Quests pass, 0 fallback tĩnh, 0 màn hình trắng.
+3. **Tier 3: Mechanic Fidelity Doctrine & Content Quality (`node scripts/gate17_fidelity_doctrine.mjs <N>` & `gate16`)**: 100% pass schema và các bất biến khảo thí quốc tế.

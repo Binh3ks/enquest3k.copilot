@@ -3,276 +3,270 @@
 **Document Reference**: `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`  
 **Baseline Strategic Document**: `docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` (Frozen Pedagogical Foundation)  
 **System Architecture**: 15 Quests / 5 Zones per Week (1 Day = 1 Zone, 3 Quests/Day)  
-**Effective Date**: 2026-09-04  
-**Version**: 2.0.0
+**Assessment Generations**: Starters/Movers/Flyers (W01–72) $\rightarrow$ B1 PET & CLIL Lab (W73–112) $\rightarrow$ B2 FCE & Acellus US K-12 (W113–156)  
+**Mock Test Cadence**: 28 Full Mock Test Weeks on a strict pedagogical cycle  
+**Effective Date**: 2026-09-05  
+**Version**: 2.1.0
 
 ---
 
 ## 1. Architectural Bridge Overview
 
-This document bridges the strategic 3-year curriculum (`1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt`) directly into the software architecture of EngQuest3K. It translates the thematic and grammar roadmap into concrete data structures for the **15 Quests / 5 Zones / 4 Central Hubs** platform.
+Tài liệu này đóng vai trò là cây cầu nối số (Digital Bridge) chuyển hóa toàn bộ khung chương trình 3 năm 156 tuần (`1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt`) vào kiến trúc kỹ thuật của hệ thống EngQuest3K (**15 Quests / 5 Zones / 4 Central Hubs**).
 
-### The 5 Technical Architectural Fields per Week:
-1. `cefr_stage`: CEFR Proficiency Level (Pre-A1 Starters $\rightarrow$ A1 Movers $\rightarrow$ A2 Flyers $\rightarrow$ B1 $\rightarrow$ B1+ $\rightarrow$ B2 EMI).
-2. `exam_milestone`: Cambridge Young Learners / KET / PET / Acellus US K-12 benchmark.
-3. `clil_stem_module`: Interdisciplinary inquiry theme driving Day 2: **Action Lab** (`science_lab`) and **Discovery Report** (`science_report`).
-4. `scaffolding_tier`: Production scaffolding level (Tier 1: Full 1-Tap Pills $\rightarrow$ Tier 2: ESL Collocation Chunks $\rightarrow$ Tier 3: Autonomous CER/Essay).
-5. `zone_distribution`: 15-Quest mapping across Zone 1 (Story World), Zone 2 (Knowledge Lab), Zone 3 (Battle Arena), Zone 4 (Creator Studio), and Zone 5 (Boss Castle).
+### Hai Hình Thái Tuần Học (Two Week Modalities):
+1. **Tuần Luyện Tập Xoay Vòng (Rotary Practice Weeks)**: 4 ngày đầu học kiến thức mới & sáng tạo (Quests 1–12); ngày thứ 5 (Zone 5) đánh giá quá trình tập trung sâu vào **4 Cambridge Parts xoay vòng**.
+2. **Tuần Thi Thử Trọn Vẹn (Full Mock Test Weeks — 28 tuần)**: 4 ngày đầu ôn tập chuyên đề và sửa lỗi; ngày thứ 5 (Zone 5) kích hoạt **Bài thi Chuẩn hóa Toàn phần** có đồng hồ đếm ngược (Full Complete Exam Battery).
 
 ---
 
-## 2. Master Curriculum Overview (156 Weeks across 3 Phases)
+## 2. Bảng Phân Bổ 28 Tuần Full Mock Test
 
 ```
-PHASE 1: FOUNDATIONAL FLUENCY & CAMBRIDGE FLYERS (WEEKS 01–72)
-  ├── Block A: The "Here & Now" (W01–W18) ──────────> Pre-A1 Starters Milestone (W16)
-  ├── Block B: The "First Steps Back" (W19–W36) ─────> A1 Movers Milestone (W32)
-  ├── Block C: CLIL Foundations & Physics (W37–W54) ─> A2 Flyers Entry
-  └── Block D: Cambridge Flyers Mastery (W55–W72) ────> ★ NORTH STAR 1: FLYERS 15 SHIELDS (W72)
-
-PHASE 2: ACADEMIC APPLICATION & CLIL STEM (WEEKS 73–120)
-  ├── Block E: Logical Reasoning & Math (W73–W88) ───> B1 Preliminary Entry / AWL Tier 2
-  ├── Block F: Natural Systems & Society (W89–W104) ──> B1+ Intermediate / CER Framework
-  └── Block G: Interdisciplinary Innovation (W105–W120)> KET/PET Benchmark & Lab Reports
-
-PHASE 3: ADVANCED SYNTHESIS, DEBATE & EMI (WEEKS 121–156)
-  ├── Cycle 3.1: Tech & Education Debate (W121–W132) ─> 5-Paragraph Argumentative Essay
-  ├── Cycle 3.2: Society & Ethics Debate (W133–W144) ─> Cross-Examination & Rebuttal
-  └── Cycle 3.3: Capstone & Defense (W145–W156) ──────> ★ NORTH STAR 2: B2 EMI / ACELLUS K-12 READY
+┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+│                            BẢNG PHÂN BỔ 28 TUẦN FULL MOCK TEST TOÀN DIỆN                    │
+├───────────────┬──────────────┬────────────────────────┬─────────────────────────────────────┤
+│ Giai đoạn     │ Trình độ     │ Số lượng Mock Test     │ Vị trí Tuần Thi Thử (Full Mock)     │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W01 – W16     │ Pre-A1       │ 1 Mock Test Duy nhất   │ W16 (Starters Graduation Shield)    │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W17 – W32     │ A1 Movers    │ 2 Mock Tests           │ W24 (Mid-Movers), W32 (Final Movers)│
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W33 – W72     │ A2 Flyers    │ 8 Mock Tests (Nhịp 4+1)│ W37, W42, W47, W52, W57, W62, W67,  │
+│               │              │                        │ W72 (Official Flyers Gate)          │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W73 – W112    │ B1 PET       │ 8 Mock Tests (Nhịp 4+1)│ W77, W82, W87, W92, W97, W102, W107,│
+│               │ & CLIL Lab   │                        │ W112 (B1 PET Official Gate)         │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W113 – W156   │ B2 FCE       │ 9 Mock Tests (Nhịp 4+1)│ W117, W122, W127, W132, W137, W142, │
+│               │ & Acellus US │                        │ W147, W152, W156 (Final Capstone)   │
+└───────────────┴──────────────┴────────────────────────┴─────────────────────────────────────┘
 ```
 
 ---
 
-## 3. Detailed Weekly Mapping Matrix (W01–W156)
+## 3. Bản Đồ Chi Tiết 156 Tuần Học (W01–W156)
 
-### PHASE 1: FOUNDATIONAL FLUENCY (Weeks 01–72)
+### PHASE 1: FOUNDATIONAL FLUENCY & CAMBRIDGE FLYERS (WEEKS 01–72)
 
 #### Block A: The "Here & Now" — Pre-A1 Starters (Weeks 01–18)
-*Focus: Personal identity, family, school objects, daily routines, Present Simple, high-visual scaffolding.*
+*Focus: Bản sắc cá nhân, gia đình, lớp học, Present Simple, giàn giáo trực quan 100%.*
 
-| Week | Thematic Title | CEFR & Milestone | CLIL STEM Module | Scaffolding Tier | Grammar & Hub Focus |
+| Tuần | Tên Chủ Đề Tuần | CEFR & Phân Loại Tuần | CLIL STEM Module | Giàn Giáo | Ngữ Pháp Trọng Tâm & Dữ Liệu Hub |
 | :---: | :--- | :---: | :--- | :---: | :--- |
-| **W01** | Hello, World! (Identity) | Pre-A1 Starters | Self-Identity & Body Landmarks | Tier 1 (Full) | "I am...", names, age, numbers 1–10; `reading_hub` 1-word touch-and-say |
-| **W02** | My Family Squad (Roles) | Pre-A1 Starters | Family Trees & Social Units | Tier 1 (Full) | "This is my...", possessives; `speaking_hub` photo pointing |
-| **W03** | The Mirror Game (Appearance) | Pre-A1 Starters | Biology: Human Features | Tier 1 (Full) | "He is tall" vs "She has curly hair"; `listening_hub` color matching |
-| **W04** | My Happy Jar (Emotions) | Pre-A1 Starters | Psychology: Basic Emotions | Tier 1 (Full) | "I like + V-ing", feelings; `writing_hub` emotion faces matching |
-| **W05** | The Mystery House (Rooms) | Pre-A1 Starters | Architecture: Home Spaces | Tier 1 (Full) | Prepositions of place (in, on, under); `listening_hub` room drag-and-drop |
-| **W06** | The Classroom Toolkit | Pre-A1 Starters | Measurement: School Tools | Tier 1 (Full) | "There is / There are...", plurals; `math_quest` counting items 1–20 |
-| **W07** | My Neighborhood Map | Pre-A1 Starters | Geography: Local Places | Tier 1 (Full) | Directional words (next to, between); `reading_hub` map icons |
-| **W08** | Review & Showcase 1 | Pre-A1 Starters | Portfolio Curation: My Identity | Tier 1 (Full) | Consolidation of Units 1–7; `weekly_review` Starters Speaking Part 1 |
-| **W09** | Clockwork Day (Routines) | Pre-A1 $\rightarrow$ A1 | Chronology: Hours & Minutes | Tier 1 (Full) | Present Simple ("I wake up at 7:00"); `listening_hub` audio clock match |
-| **W10** | Food Fuel (Nutrition) | Pre-A1 $\rightarrow$ A1 | Biology: Healthy Eating Plate | Tier 1 (Full) | Countable vs Uncountable (apples vs milk); `science_lab` food sort |
-| **W11** | Animal Kingdom (Habitats) | Pre-A1 $\rightarrow$ A1 | Zoology: Wild Animal Homes | Tier 1 (Full) | "Can / Cannot", animal abilities; `speaking_hub` animal sounds/shadow |
-| **W12** | Weather Wonders (Seasons) | Pre-A1 $\rightarrow$ A1 | Meteorology: Sun, Rain, Wind | Tier 1 (Full) | "It is sunny today", weather adjectives; `math_quest` temperature bar graph |
-| **W13** | Clothes for All Seasons | Pre-A1 $\rightarrow$ A1 | Materials: Wool, Cotton, Raincoat| Tier 1 (Full) | "He is wearing...", present continuous; `listening_hub` dress character |
-| **W14** | The Action Arena | Pre-A1 $\rightarrow$ A1 | Physics: Pushing and Pulling | Tier 1 (Full) | Present Continuous actions; `science_lab` force experiments |
-| **W15** | The Busy Park (Real-time) | A1 Movers Entry | Community: Shared Parks | Tier 2 (Chunks) | Present Continuous dialogue; `gear3_retell` 2-word verb chunks |
-| **W16** | **Starters Milestone Showcase** | **★ Starters Shield** | **Starters Capstone Portfolio** | **Tier 1 (Check)** | **Summative Starters Mock: L1–L4, R1–R5, S1–S3; Badge Ceremony** |
-| **W17** | Hobbies & Talent Show | A1 Movers | Music & Art: Instruments | Tier 2 (Chunks) | Adverbs of frequency (always, sometimes); `sentence_smash` syntax battle |
-| **W18** | Transportation Station | A1 Movers | Engineering: Land, Air, Water | Tier 2 (Chunks) | Means of transport ("by bus, on foot"); `math_quest` vehicle speed graph |
+| **W01** | Hello, World! (Identity) | Pre-A1 · Rotary Practice | Bản sắc cá nhân & Các bộ phận cơ thể | Tier 1 (Full) | "I am...", tên, tuổi, số 1–10; `reading_hub` 1-word touch-and-say |
+| **W02** | My Family Squad (Roles) | Pre-A1 · Rotary Practice | Cây gia đình & Đơn vị xã hội | Tier 1 (Full) | "This is my...", đại từ sở hữu; `speaking_hub` chỉ ảnh nói |
+| **W03** | The Mirror Game (Appearance) | Pre-A1 · Rotary Practice | Sinh học: Đặc điểm ngoại hình người | Tier 1 (Full) | "He is tall" vs "She has curly hair"; `listening_hub` nối màu sắc |
+| **W04** | My Happy Jar (Emotions) | Pre-A1 · Rotary Practice | Tâm lý học: Cảm xúc cơ bản | Tier 1 (Full) | "I like + V-ing", từ vựng cảm xúc; `writing_hub` ghép mặt cảm xúc |
+| **W05** | The Mystery House (Rooms) | Pre-A1 · Rotary Practice | Kiến trúc: Không gian phòng ở | Tier 1 (Full) | Giới từ vị trí (in, on, under); `listening_hub` kéo thả đồ đạc |
+| **W06** | The Classroom Toolkit | Pre-A1 · Rotary Practice | Đo lường: Đồ dùng học tập | Tier 1 (Full) | "There is / There are...", danh từ số nhiều; `math_quest` đếm 1–20 |
+| **W07** | My Neighborhood Map | Pre-A1 · Rotary Practice | Địa lý: Địa điểm công cộng | Tier 1 (Full) | Từ chỉ phương hướng (next to, between); `reading_hub` biểu tượng bản đồ |
+| **W08** | Review & Showcase 1 | Pre-A1 · Rotary Practice | Hồ sơ năng lực: Giới thiệu bản thân | Tier 1 (Full) | Củng cố Units 1–7; `weekly_review` Starters Speaking Part 1 |
+| **W09** | Clockwork Day (Routines) | Pre-A1 $\rightarrow$ A1 · Rotary | Đo thời gian: Giờ và phút | Tier 1 (Full) | Hiện tại đơn ("I wake up at 7:00"); `listening_hub` nghe giờ đồng hồ |
+| **W10** | Food Fuel (Nutrition) | Pre-A1 $\rightarrow$ A1 · Rotary | Sinh học: Đĩa thức ăn dinh dưỡng | Tier 1 (Full) | Đếm được vs Không đếm được (apples/milk); `science_lab` phân loại thực phẩm |
+| **W11** | Animal Kingdom (Habitats) | Pre-A1 $\rightarrow$ A1 · Rotary | Động vật học: Nơi ở động vật hoang dã | Tier 1 (Full) | "Can / Cannot", khả năng động vật; `speaking_hub` nhại tiếng & từ vựng |
+| **W12** | Weather Wonders (Seasons) | Pre-A1 $\rightarrow$ A1 · Rotary | Khí tượng học: Nắng, mưa, gió, tuyết | Tier 1 (Full) | "It is sunny today", tính từ thời tiết; `math_quest` biểu đồ nhiệt độ |
+| **W13** | Clothes for All Seasons | Pre-A1 $\rightarrow$ A1 · Rotary | Vật liệu: Vải len, cotton, áo mưa | Tier 1 (Full) | "He is wearing...", hiện tại tiếp diễn; `listening_hub` mặc đồ nhân vật |
+| **W14** | The Action Arena | Pre-A1 $\rightarrow$ A1 · Rotary | Vật lý: Lực đẩy và lực kéo cơ bản | Tier 1 (Full) | Động từ hành động tiếp diễn; `science_lab` thí nghiệm lực đẩy/kéo |
+| **W15** | The Busy Park (Real-time) | A1 Movers Entry · Rotary | Cộng đồng: Hoạt động công viên | Tier 2 (Chunks) | Đối thoại thời gian thực; `gear3_retell` cụm từ 2 chữ collocations |
+| **W16** | **Starters Shield Festival** | **★ FULL MOCK 01 (Starters)** | **Starters Capstone Portfolio** | **Tier 1 (Festival)**| **Bài thi thử Starters trọn vẹn: L1–L4, R1–R5, S1–S3; Lễ trao Khiên Starters** |
+| **W17** | Hobbies & Talent Show | A1 Movers · Rotary Practice | Nghệ thuật & Âm nhạc: Nhạc cụ | Tier 2 (Chunks) | Trạng từ tần suất (always, sometimes); `sentence_smash` sắp xếp câu |
+| **W18** | Transportation Station | A1 Movers · Rotary Practice | Kỹ thuật: Phương tiện giao thông | Tier 2 (Chunks) | Giới từ di chuyển ("by bus, on foot"); `math_quest` biểu đồ tốc độ |
 
 ---
 
 #### Block B: The "First Steps Back" — A1 Movers (Weeks 19–36)
-*Focus: Past of to be (was/were), Past Simple regular/irregular, narrative sequencing, notepad note-taking.*
+*Focus: Quá khứ đơn was/were, động từ quy tắc/bất quy tắc, chép chính tả Notepad, 2 Mock Tests.*
 
-| Week | Thematic Title | CEFR & Milestone | CLIL STEM Module | Scaffolding Tier | Grammar & Hub Focus |
+| Tuần | Tên Chủ Đề Tuần | CEFR & Phân Loại Tuần | CLIL STEM Module | Giàn Giáo | Ngữ Pháp Trọng Tâm & Dữ Liệu Hub |
 | :---: | :--- | :---: | :--- | :---: | :--- |
-| **W19** | Yesterday's Ghost Town | A1 Movers | History: Old vs Modern Towns | Tier 2 (Chunks) | "There was / There were", past state; `reading_hub` old town story |
-| **W20** | Where Were You? (Alibi) | A1 Movers | Logic: Time Logs & Detective | Tier 2 (Chunks) | Past questions ("Were you at home?"); `info_exchange` detective alibi |
-| **W21** | The Dinosaur Dig | A1 Movers | Paleontology: Fossil Hunting | Tier 2 (Chunks) | Past Simple -ed regular verbs; `science_lab` virtual fossil brush |
-| **W22** | Castle in the Past | A1 Movers | History: Medieval Castles | Tier 2 (Chunks) | Regular past narrative; `story_writer` 3-picture castle escape |
-| **W23** | Yesterday at the Zoo | A1 Movers | Zoology: Animal Behaviors | Tier 2 (Chunks) | Irregular verbs (saw, ate, went); `listening_hub` Movers Part 2 dictation |
-| **W24** | The Camping Trip Adventure | A1 Movers | Survival Science: Campfire & Map| Tier 2 (Chunks) | Irregular verbs (made, slept, found); `gear2_karaoke` campfire song |
-| **W25** | The Lost Treasure Map | A1 Movers | Geography: Compass Points | Tier 2 (Chunks) | Directional past ("We walked north"); `science_report` treasure log |
-| **W26** | A Busy Weekend (Timeline) | A1 Movers | Social Studies: Leisure Time | Tier 2 (Chunks) | Time connectives (First, Then, After that); `gear3_retell` timeline chunks |
-| **W27** | Space Explorers (Apollo) | A1 Movers | Astronomy: Moon Landing | Tier 2 (Chunks) | Past Simple questions ("Did they land?"); `broadcast_studio` moon report |
-| **W28** | The Great Inventions | A1 Movers | Technology: Wheel to Lightbulb | Tier 2 (Chunks) | Passive hint ("was invented by"); `math_quest` invention timeline bar |
-| **W29** | Health & The Human Body | A1 Movers | Anatomy: Bones & Muscles | Tier 2 (Chunks) | Illnesses ("had a cold, hurt my leg"); `info_exchange` doctor clinic cards |
-| **W30** | The Clean-Up Hero | A1 Movers | Ecology: Recycling Plastics | Tier 2 (Chunks) | "We collected / We sorted"; `science_lab` sorting trash into bins |
-| **W31** | The Rainy Day Mystery | A1 Movers | Meteorology: Water Cycle Intro | Tier 2 (Chunks) | Past Continuous intro ("It was raining"); `reading_hub` rain mystery |
-| **W32** | **Movers Milestone Showcase** | **★ Movers Shield** | **Movers Capstone Assessment** | **Tier 2 (Check)** | **Summative Movers Mock: L1–L5, R1–R6, S1–S4; 15-Shield Ceremony** |
-| **W33** | **Corridor Safety & Friction** | **A2 Flyers Entry** | **Physics: Friction & Floor Surfaces**| **Tier 2 (Golden)** | **Irregular Past (slipped, broke, hurt); Cambridge Flyers 16-Part Golden Master** |
-| **W34** | The Science Fair Challenge | A2 Flyers | Chemistry: Density & Floating | Tier 2 (Chunks) | Comparative / Superlative adjectives; Cambridge Rotation Cycle 2 |
-| **W35** | Wild Forest Rangers | A2 Flyers | Ecology: Food Chains & Predators| Tier 2 (Chunks) | Past Continuous + Past Simple ("While Jake was..."); Cycle 3 |
-| **W36** | The Hospital Visit | A2 Flyers | Medicine: First Aid & Recovery | Tier 2 (Chunks) | Modal verbs (should, must, have to); Cambridge Rotation Cycle 4 |
+| **W19** | Yesterday's Ghost Town | A1 Movers · Rotary Practice | Lịch sử: Thị trấn xưa và nay | Tier 2 (Chunks) | "There was / There were", quá khứ to be; `reading_hub` truyện thị trấn |
+| **W20** | Where Were You? (Alibi) | A1 Movers · Rotary Practice | Logic: Nhật ký thời gian thám tử | Tier 2 (Chunks) | Câu hỏi quá khứ ("Were you at home?"); `info_exchange` chứng cứ ngoại phạm |
+| **W21** | The Dinosaur Dig | A1 Movers · Rotary Practice | Cổ sinh vật học: Khai quật hóa thạch | Tier 2 (Chunks) | Động từ quá khứ có quy tắc (-ed); `science_lab` chổi quét hóa thạch |
+| **W22** | Castle in the Past | A1 Movers · Rotary Practice | Lịch sử: Lâu đài thời trung cổ | Tier 2 (Chunks) | Tường thuật quá khứ; `story_writer` viết truyện thoát khỏi lâu đài |
+| **W23** | Yesterday at the Zoo | A1 Movers · Rotary Practice | Động vật học: Tập tính thú nuôi | Tier 2 (Chunks) | Động từ bất quy tắc (saw, ate, went); `listening_hub` chép chính tả Notepad |
+| **W24** | **Movers Mid-Way Assessment** | **★ FULL MOCK 02 (Movers)** | **Survival Science: Campfire Log** | **Tier 2 (Exam)** | **Full Mock Movers 1: Đánh giá giữa kỳ L1–L5, R1–R6, S1–S4; Kiểm tra Notepad** |
+| **W25** | The Lost Treasure Map | A1 Movers · Rotary Practice | Địa lý: 4 hướng la bàn & tọa độ | Tier 2 (Chunks) | Chỉ đường trong quá khứ ("We walked north"); `science_report` nhật ký kho báu |
+| **W26** | A Busy Weekend (Timeline) | A1 Movers · Rotary Practice | Xã hội học: Thời gian biểu cuối tuần| Tier 2 (Chunks) | Từ nối thời gian (First, Then, After that); `gear3_retell` cụm từ mốc thời gian |
+| **W27** | Space Explorers (Apollo) | A1 Movers · Rotary Practice | Thiên văn học: Cuộc đổ bộ mặt trăng | Tier 2 (Chunks) | Câu hỏi nghi vấn Did ("Did they land?"); `broadcast_studio` tin tức vũ trụ |
+| **W28** | The Great Inventions | A1 Movers · Rotary Practice | Công nghệ: Bánh xe đến bóng đèn | Tier 2 (Chunks) | Dạng bị động đơn giản ("was invented by"); `math_quest` trục mốc thời gian |
+| **W29** | Health & The Human Body | A1 Movers · Rotary Practice | Giải phẫu học: Xương và cơ bắp | Tier 2 (Chunks) | Tên các loại bệnh ("had a cold, hurt my leg"); `info_exchange` thẻ khám bệnh |
+| **W30** | The Clean-Up Hero | A1 Movers · Rotary Practice | Sinh thái học: Phân loại rác nhựa | Tier 2 (Chunks) | Quá khứ đơn hành động ("We collected, We sorted"); `science_lab` nhặt rác |
+| **W31** | The Rainy Day Mystery | A1 Movers · Rotary Practice | Khí tượng học: Vòng tuần hoàn nước | Tier 2 (Chunks) | Quá khứ tiếp diễn đơn giản ("It was raining"); `reading_hub` truyện trời mưa |
+| **W32** | **Movers Final Showcase** | **★ FULL MOCK 03 (Movers)** | **Movers Capstone Assessment** | **Tier 2 (Official)**| **Full Mock Movers 2: Cấp Chứng chỉ Hoàn thành Movers; Lễ phong Khiên A1** |
+| **W33** | **Corridor Safety & Friction** | **A2 Flyers · Rotary 1** | **Vật lý: Ma sát & Bề mặt sàn trơn** | **Tier 2 (Golden)** | **Quá khứ bất quy tắc (slipped, broke, hurt); Golden Master 16 Parts Cycle 1** |
+| **W34** | The Science Fair Challenge | A2 Flyers · Rotary 2 | Hóa học: Độ nổi và khối lượng riêng | Tier 2 (Chunks) | Tính từ so sánh hơn và so sánh nhất; Cambridge Rotary Cycle 2 |
+| **W35** | Wild Forest Rangers | A2 Flyers · Rotary 3 | Sinh thái học: Chuỗi thức ăn | Tier 2 (Chunks) | Quá khứ tiếp diễn + Quá khứ đơn ("While Jake was..."); Cycle 3 |
+| **W36** | The Hospital Visit | A2 Flyers · Rotary 4 | Y học: Sơ cứu và hồi phục chấn thương| Tier 2 (Chunks) | Động từ khuyết thiếu (should, must, have to); Cambridge Rotary Cycle 4 |
 
 ---
 
-#### Block C: CLIL Foundations & Scientific Inquiry — A2 Flyers (Weeks 37–54)
-*Focus: Authentic Cambridge Flyers 16 Parts, physical science, comparative bar models, 20+ words narrative.*
+#### Block C: CLIL Foundations & Cambridge Flyers (Weeks 37–54)
+*Focus: Chu kỳ nghiêm ngặt 4+1 (4 tuần Rotary + 1 tuần Full Mock), Singapore Math, viết truyện $\ge 20$ từ.*
 
-| Week | Thematic Title | CEFR & Milestone | CLIL STEM Module | Scaffolding Tier | Grammar & Hub Focus |
+| Tuần | Tên Chủ Đề Tuần | CEFR & Phân Loại Tuần | CLIL STEM Module | Giàn Giáo | Ngữ Pháp Trọng Tâm & Dữ Liệu Hub |
 | :---: | :--- | :---: | :--- | :---: | :--- |
-| **W37** | **Full Cambridge Mock 1** | **A2 Flyers Check** | **Interdisciplinary Mock 1** | **Tier 2 (Exam)** | **Full 16-Part Exam Test across all 3 Papers; 15-Shield Evaluation** |
-| **W38** | Energy All Around | A2 Flyers | Physics: Solar, Wind, Kinetic | Tier 2 (Chunks) | Cause & effect with *because*; `action_lab` solar panel angle |
-| **W39** | Ocean Depths & Coral Reefs | A2 Flyers | Marine Biology: Coral Ecosystems| Tier 2 (Chunks) | Superlatives (*deepest, most dangerous*); `story_writer` submarine dive |
-| **W40** | The Secret Garden (Botany) | A2 Flyers | Botany: Seed Germination | Tier 2 (Chunks) | Future with *will* & *going to*; `discovery_report` plant growth chart |
-| **W41** | Weather Disasters & Safety | A2 Flyers | Earth Science: Storms & Floods | Tier 2 (Chunks) | Imperatives for safety; `broadcast_studio` weather emergency news |
-| **W42** | Simple Machines at Work | A2 Flyers | Engineering: Levers & Pulleys | Tier 2 (Chunks) | "It makes work easier because..."; `action_lab` pulley weight lift |
-| **W43** | Ancient Egypt & Pyramids | A2 Flyers | History: Archaeology & Tombs | Tier 2 (Chunks) | Past Simple passive (*were built*); `reading_hub` pyramid cloze |
-| **W44** | Maps & Navigation | A2 Flyers | Cartography: Scale & Legends | Tier 2 (Chunks) | Prepositions of movement (*through, across, along*); `math_quest` scale |
-| **W45** | The Sound Studio (Acoustics)| A2 Flyers | Physics: Sound Waves & Pitch | Tier 2 (Chunks) | Adverbs of manner (*loudly, softly, clearly*); `action_lab` sound wave frequency |
-| **W46** | Light & Shadows | A2 Flyers | Optics: Transparent vs Opaque | Tier 2 (Chunks) | Relative pronouns (*which, that, who*); `discovery_report` shadow length |
-| **W47** | Money & The Marketplace | A2 Flyers | Economics: Barter to Currency | Tier 2 (Chunks) | Quantifiers (*a few, several, enough*); `math_quest` multi-step currency |
-| **W48** | Food Preservation Science | A2 Flyers | Food Tech: Drying, Salt, Freezing| Tier 2 (Chunks) | Zero Conditional (*If you freeze water, it turns to ice*); `science_lab` |
-| **W49** | Animal Camouflage | A2 Flyers | Evolutionary Biology: Adaptation | Tier 2 (Chunks) | Purpose clauses (*in order to, so that*); `story_writer` chameleon hunt |
-| **W50** | Transportation of Tomorrow | A2 Flyers | Tech: Electric Cars & Hyperloop | Tier 2 (Chunks) | First Conditional (*If we use clean energy...*); `broadcast_studio` EV car |
-| **W51** | Our Solar System | A2 Flyers | Astronomy: Planets & Orbits | Tier 2 (Chunks) | Order of adjectives; `reading_hub` planetary facts extraction |
-| **W52** | The Detective's Clues | A2 Flyers | Forensic Science: Fingerprints | Tier 2 (Chunks) | Modal deduction (*must be, can't be*); `info_exchange` suspect cards |
-| **W53** | Wonders of the World | A2 Flyers | World Heritage: Taj Mahal, Wall | Tier 2 (Chunks) | Present Perfect intro (*Have you ever visited...?*); `speaking_hub` travel |
-| **W54** | **Full Cambridge Mock 2** | **A2 Flyers Check** | **Interdisciplinary Mock 2** | **Tier 2 (Exam)** | **Comprehensive 16-Part Flyers Simulation; Progress Tracker Update** |
+| **W37** | **Full Cambridge Mock 1** | **★ FULL MOCK 04 (Flyers)** | **Khoa học Liên môn Mock 1** | **Tier 2 (Exam)** | **Full Mock Flyers 1: Trọn vẹn 16 Parts Cambridge (L1–L5, R1–R7, S1–S4)** |
+| **W38** | Energy All Around | A2 Flyers · Rotary 1 | Vật lý: Năng lượng mặt trời, gió | Tier 2 (Chunks) | Mối quan hệ nguyên nhân - kết quả với *because*; `action_lab` góc pin mặt trời |
+| **W39** | Ocean Depths & Coral Reefs | A2 Flyers · Rotary 2 | Sinh học biển: Rạn san hô & Áp suất | Tier 2 (Chunks) | Tính từ tuyệt đối (*deepest, most dangerous*); `story_writer` lặn tàu ngầm |
+| **W40** | The Secret Garden (Botany) | A2 Flyers · Rotary 3 | Thực vật học: Sự nảy mầm của hạt | Tier 2 (Chunks) | Tương lai với *will* và *going to*; `discovery_report` biểu đồ tăng trưởng |
+| **W41** | Weather Disasters & Safety | A2 Flyers · Rotary 4 | Địa chất: Bão nhiệt đới và lũ lụt | Tier 2 (Chunks) | Câu mệnh lệnh an toàn; `broadcast_studio` bản tin thời tiết khẩn cấp |
+| **W42** | **Full Cambridge Mock 2** | **★ FULL MOCK 05 (Flyers)** | **Khoa học Liên môn Mock 2** | **Tier 2 (Exam)** | **Full Mock Flyers 2: Bấm giờ 3 bài thi chính thức; Cập nhật Hộ chiếu Khiên** |
+| **W43** | Ancient Egypt & Pyramids | A2 Flyers · Rotary 1 | Lịch sử: Khảo cổ học và kim tự tháp | Tier 2 (Chunks) | Bị động quá khứ đơn (*were built*); `reading_hub` đục lỗ văn bản lăng mộ |
+| **W44** | Maps & Navigation | A2 Flyers · Rotary 2 | Bản đồ học: Tỷ lệ xích và ký hiệu | Tier 2 (Chunks) | Giới từ chuyển động (*through, across, along*); `math_quest` tính khoảng cách |
+| **W45** | The Sound Studio (Acoustics)| A2 Flyers · Rotary 3 | Vật lý: Sóng âm thanh và cao độ | Tier 2 (Chunks) | Trạng từ chỉ cách thức (*loudly, softly, clearly*); `action_lab` tần số âm |
+| **W46** | Light & Shadows | A2 Flyers · Rotary 4 | Quang học: Vật liệu trong suốt/mờ | Tier 2 (Chunks) | Đại từ quan hệ (*which, that, who*); `discovery_report` chiều dài bóng râm |
+| **W47** | **Full Cambridge Mock 3** | **★ FULL MOCK 06 (Flyers)** | **Khoa học Liên môn Mock 3** | **Tier 2 (Exam)** | **Full Mock Flyers 3: Rà soát lỗi đọc Part 5 (1-4 từ) và viết Part 7** |
+| **W48** | Food Preservation Science | A2 Flyers · Rotary 1 | Công nghệ thực phẩm: Sấy khô, ướp | Tier 2 (Chunks) | Câu điều kiện loại 0 (*If you freeze water...*); `science_lab` thí nghiệm ướp muối |
+| **W49** | Animal Camouflage | A2 Flyers · Rotary 2 | Sinh học tiến hóa: Sự ngụy trang | Tier 2 (Chunks) | Mệnh đề chỉ mục đích (*in order to, so that*); `story_writer` tắc kè hoa săn mồi |
+| **W50** | Transportation of Tomorrow | A2 Flyers · Rotary 3 | Công nghệ: Xe điện & Tàu đệm từ | Tier 2 (Chunks) | Câu điều kiện loại 1 (*If we use clean energy...*); `broadcast_studio` xe điện |
+| **W51** | Our Solar System | A2 Flyers · Rotary 4 | Thiên văn học: 8 hành tinh & Quỹ đạo | Tier 2 (Chunks) | Trật tự của tính từ; `reading_hub` trích xuất số liệu các hành tinh |
+| **W52** | **Full Cambridge Mock 4** | **★ FULL MOCK 07 (Flyers)** | **Khoa học Liên môn Mock 4** | **Tier 2 (Exam)** | **Full Mock Flyers 4: Đo lường tốc độ làm bài và độ chính xác Speaking** |
+| **W53** | The Detective's Clues | A2 Flyers · Rotary 1 | Khoa học pháp y: Dấu vân tay | Tier 2 (Chunks) | Động từ khuyết thiếu suy đoán (*must be, can't be*); `info_exchange` thẻ nghi phạm |
+| **W54** | Wonders of the World | A2 Flyers · Rotary 2 | Di sản thế giới: Taj Mahal, Vạn Lý | Tier 2 (Chunks) | Hiện tại hoàn thành giới thiệu (*Have you ever visited...?*); `speaking_hub` |
 
 ---
 
-#### Block D: Cambridge Flyers Mastery — Milestone Target (Weeks 55–72)
-*Focus: 100% Flyers Exam compliance, 15 Shields target, fast-paced speed match, full dialogue completion.*
+#### Block D: Cambridge Flyers Mastery — Bứt Phá 15 Khiên (Weeks 55–72)
+*Focus: Chu kỳ 4+1, hoàn thiện kỹ năng phòng thi, chốt hạ mục tiêu 15/15 Khiên Flyers tại W72.*
 
-| Week | Thematic Title | CEFR & Milestone | CLIL STEM Module | Scaffolding Tier | Grammar & Hub Focus |
+| Tuần | Tên Chủ Đề Tuần | CEFR & Phân Loại Tuần | CLIL STEM Module | Giàn Giáo | Ngữ Pháp Trọng Tâm & Dữ Liệu Hub |
 | :---: | :--- | :---: | :--- | :---: | :--- |
-| **W55** | Cause & Effect Master | A2 Flyers $\rightarrow$ KET | Logic: Domino Chains in Nature | Tier 2 (Chunks) | Conjunctions *so / because / therefore*; `discovery_report` chain reaction |
-| **W56** | Problem & Solution Squad | A2 Flyers $\rightarrow$ KET | Urban Planning: Traffic Jams | Tier 2 (Chunks) | Problem-solution paragraph; `story_writer` bike lane proposal |
-| **W57** | Formal Letters & Requests | A2 Flyers $\rightarrow$ KET | Civics: Writing to City Mayor | Tier 2 (Chunks) | Formal register (*Dear Sir/Madam, I would like to...*); `writing_hub` |
-| **W58** | The Great Debate (Pets) | A2 Flyers $\rightarrow$ KET | Ethics: Dogs vs Cats as Pets | Tier 2 (Chunks) | Opinion phrases (*In my opinion, I believe*); `broadcast_studio` pet debate |
-| **W59** | Water Cycle & Purification | A2 Flyers $\rightarrow$ KET | Chemistry: Filter, Evaporate | Tier 2 (Chunks) | Passive voice in scientific process; `action_lab` sand charcoal filter |
-| **W60** | Electricity in Circuits | A2 Flyers $\rightarrow$ KET | Physics: Series & Parallel | Tier 2 (Chunks) | Conditional logic (*If circuit is broken, current stops*); `action_lab` |
-| **W61** | Earth's Layers & Volcanoes | A2 Flyers $\rightarrow$ KET | Geology: Crust, Mantle, Core | Tier 2 (Chunks) | Descriptive expository writing; `discovery_report` magma chamber |
-| **W62** | Ecosystem Balance & Wolves | A2 Flyers $\rightarrow$ KET | Ecology: Trophic Cascades | Tier 2 (Chunks) | Complex causal chains; `reading_hub` Yellowstone wolf reintroduction |
-| **W63** | Human Respiratory System | A2 Flyers $\rightarrow$ KET | Biology: Lungs & Oxygen | Tier 2 (Chunks) | Process explanation; `dictation` lung capacity measurements |
-| **W64** | Ancient Rome & Aqueducts | A2 Flyers $\rightarrow$ KET | Engineering History: Waterways | Tier 2 (Chunks) | Past Passive (*aqueducts were constructed*); `math_quest` water volume |
-| **W65** | Renewable Energy Transition | A2 Flyers $\rightarrow$ KET | Environmental Science: Turbines | Tier 2 (Chunks) | Persuasive writing; `broadcast_studio` green city presentation |
-| **W66** | Space Rovers & Mars Colonization| A2 Flyers $\rightarrow$ KET | Space Exploration: Curiosity | Tier 2 (Chunks) | Future possibilities (*could support human life*); `story_writer` Mars |
-| **W67** | The Media & Advertising | A2 Flyers $\rightarrow$ KET | Media Literacy: Slogans & Logos| Tier 2 (Chunks) | Persuasive techniques; `info_exchange` product feature pitch |
-| **W68** | Genetics & Hereditary Traits | A2 Flyers $\rightarrow$ KET | Genetics: Eye Color & DNA Intro| Tier 2 (Chunks) | Comparison & probability; `math_quest` Punnett square ratio |
-| **W69** | Microscopic World (Bacteria) | A2 Flyers $\rightarrow$ KET | Microbiology: Good vs Bad Germs | Tier 2 (Chunks) | Health advice with modals; `discovery_report` agar plate bacteria |
-| **W70** | Cambridge Flyers Intensive 1 | A2 Flyers (Target) | Cambridge Exam Techniques | Tier 2 (Exam) | Listening Parts 1–5 speed tuning; Reading Part 5 text extraction |
-| **W71** | Cambridge Flyers Intensive 2 | A2 Flyers (Target) | Cambridge Exam Techniques | Tier 2 (Exam) | Speaking Parts 1–4 examiner roleplay; Writing Part 7 narrative score |
-| **W72** | **CAMBRIDGE FLYERS OFFICIAL GATE**| **★ 15 SHIELDS FLYERS**| **OFFICIAL A2 FLYERS EXAM MASTER**| **Tier 2 (Official)**| **Summative Cambridge Flyers Official Benchmark — Goal: 15/15 Shields!** |
+| **W55** | Cause & Effect Master | A2 Flyers · Rotary 3 | Logic: Chuỗi domino trong tự nhiên | Tier 2 (Chunks) | Liên từ *so / because / therefore*; `discovery_report` phản ứng dây chuyền |
+| **W56** | Problem & Solution Squad | A2 Flyers · Rotary 4 | Quy hoạch đô thị: Ùn tắc giao thông| Tier 2 (Chunks) | Đoạn văn vấn đề - giải pháp; `story_writer` đề xuất làn đường xe đạp |
+| **W57** | **Full Cambridge Mock 5** | **★ FULL MOCK 08 (Flyers)** | **Khoa học Liên môn Mock 5** | **Tier 2 (Exam)** | **Full Mock Flyers 5: Bắt đầu áp dụng chuẩn chấm gắt gao của giám khảo Cambridge** |
+| **W58** | The Great Debate (Pets) | A2 Flyers · Rotary 1 | Đạo đức học: Chó hay mèo là thú cưng| Tier 2 (Chunks) | Cụm từ nêu quan điểm (*In my opinion, I believe*); `broadcast_studio` tranh luận |
+| **W59** | Water Cycle & Purification | A2 Flyers · Rotary 2 | Hóa học: Lọc cát than hoạt tính | Tier 2 (Chunks) | Thể bị động trong quy trình kỹ thuật; `action_lab` hệ thống lọc nước bẩn |
+| **W60** | Electricity in Circuits | A2 Flyers · Rotary 3 | Vật lý: Mạch nối tiếp và song song | Tier 2 (Chunks) | Logic điều kiện mạch điện; `action_lab` đóng ngắt công tắc bóng đèn |
+| **W61** | Earth's Layers & Volcanoes | A2 Flyers · Rotary 4 | Địa chất học: Vỏ, manti, lõi trái đất | Tier 2 (Chunks) | Văn bản giải thích miêu tả; `discovery_report` buồng magma núi lửa |
+| **W62** | **Full Cambridge Mock 6** | **★ FULL MOCK 09 (Flyers)** | **Khoa học Liên môn Mock 6** | **Tier 2 (Exam)** | **Full Mock Flyers 6: Đánh giá độ ổn định 15 Khiên trên cả 3 bài thi** |
+| **W63** | Human Respiratory System | A2 Flyers · Rotary 1 | Sinh học: Phổi và dung tích trao đổi khí| Tier 2 (Chunks) | Giải thích quy trình sinh học; `dictation` số đo dung tích phổi |
+| **W64** | Ancient Rome & Aqueducts | A2 Flyers · Rotary 2 | Lịch sử kỹ thuật: Cầu dẫn nước La Mã | Tier 2 (Chunks) | Bị động quá khứ (*aqueducts were constructed*); `math_quest` thể tích nước |
+| **W65** | Renewable Energy Transition | A2 Flyers · Rotary 3 | Môi trường: Cánh quạt điện gió | Tier 2 (Chunks) | Văn bản thuyết phục; `broadcast_studio` thuyết trình thành phố xanh |
+| **W66** | Space Rovers & Mars Colonization| A2 Flyers · Rotary 4 | Vũ trụ học: Xe tự hành Curiosity | Tier 2 (Chunks) | Khả năng tương lai (*could support human life*); `story_writer` thuộc địa sao Hỏa |
+| **W67** | **Full Cambridge Mock 7** | **★ FULL MOCK 10 (Flyers)** | **Khoa học Liên môn Mock 7** | **Tier 2 (Exam)** | **Full Mock Flyers 7: Tiền tổng duyệt trước kỳ thi chính thức** |
+| **W68** | Genetics & Hereditary Traits | A2 Flyers · Rotary 1 | Di truyền học: Màu mắt và ADN | Tier 2 (Chunks) | So sánh và xác suất; `math_quest` tỷ lệ bảng di truyền Punnett |
+| **W69** | Microscopic World (Bacteria) | A2 Flyers · Rotary 2 | Vi sinh vật học: Lợi khuẩn & vi khuẩn hại| Tier 2 (Chunks) | Lời khuyên sức khỏe với modals; `discovery_report` đĩa thạch vi khuẩn |
+| **W70** | Cambridge Flyers Intensive 1 | A2 Flyers · Rotary 3 | Chiến thuật làm bài thi Listening & Reading| Tier 2 (Exam Prep)| Tăng tốc độ bắt từ chìa khóa Part 1-5; Đọc hiểu trích xuất Part 5 |
+| **W71** | Cambridge Flyers Intensive 2 | A2 Flyers · Rotary 4 | Chiến thuật làm bài thi Speaking & Writing | Tier 2 (Exam Prep)| Phỏng vấn mô phỏng với giám khảo bản xứ; Chấm điểm viết Part 7 |
+| **W72** | **CAMBRIDGE FLYERS OFFICIAL GATE**| **★ FULL MOCK 11 (OFFICIAL)**| **OFFICIAL A2 FLYERS EXAMINATION** | **Tier 2 (Official)**| **KỲ THI CHÍNH THỨC CAMBRIDGE FLYERS — MỤC TIÊU TUYỆT ĐỐI 15/15 KHIÊN!** |
 
 ---
 
-### PHASE 2: ACADEMIC APPLICATION & CLIL STEM (Weeks 73–120)
+### PHASE 2: ACADEMIC APPLICATION & CLIL STEM (WEEKS 73–120)
 
-#### Block E: Logical Reasoning & Scientific Inquiry — B1 Intermediate (Weeks 73–96)
-*Focus: CER (Claim, Evidence, Reasoning), Academic Word List (AWL), passive voice in science, Singapore Math multi-step algebra.*
+#### Block E: B1 Preliminary (PET) & Khung Lập Luận CER (Weeks 73–96)
+*Focus: Chu kỳ 4+1, mô hình CER (Claim-Evidence-Reasoning), Từ vựng học thuật AWL Tier 2, bài thi Cambridge B1 Preliminary.*
 
-| Week | Thematic Title | CEFR & Milestone | CLIL STEM Module | Scaffolding Tier | Grammar & Hub Focus |
+| Tuần | Tên Chủ Đề Tuần | CEFR & Phân Loại Tuần | CLIL STEM Module | Giàn Giáo | Ngữ Pháp Trọng Tâm & Dữ Liệu Hub |
 | :---: | :--- | :---: | :--- | :---: | :--- |
-| **W73** | Transition to Academic English | B1 Entry | Academic Inquiry: Scientific Method| Tier 3 (Guided CER)| AWL Vocabulary (*hypothesis, variable, analyze*); `discovery_report` CER |
-| **W74** | Plate Tectonics & Earthquakes | B1 Preliminary | Geology: Fault Lines & Richter Scale| Tier 3 (Guided CER)| Passive voice (*plates are forced together*); `action_lab` seismograph |
-| **W75** | Photosynthesis & Cellular Energy| B1 Preliminary | Biochemistry: Sunlight to Glucose | Tier 3 (Guided CER)| Chemical formula explanation; `reading_hub` chlorophyll absorption |
-| **W76** | Force, Mass & Newton's Laws | B1 Preliminary | Physics: $F=ma$, Inertia | Tier 3 (Guided CER)| Math-language integration; `math_quest` force calculation word problems |
-| **W77** | The Water Table & Aquifers | B1 Preliminary | Hydrology: Ground Water Depletion | Tier 3 (Guided CER)| Cause-consequence structure; `discovery_report` aquifer recharge rate |
-| **W78** | Global Climates & Biomes | B1 Preliminary | Geography: Rainforest vs Tundra | Tier 3 (Guided CER)| Contrastive essays (*In contrast to tropical biomes...*); `writing_hub` |
-| **W79** | The Industrial Revolution | B1 Preliminary | World History: Steam & Factories | Tier 3 (Guided CER)| Historical cause & impact; `broadcast_studio` documentary narration |
-| **W80** | Supply, Demand & Market Prices | B1 Preliminary | Economics: Equilibrium Price | Tier 3 (Guided CER)| If-then conditional logic in economics; `math_quest` supply curve graph |
-| **W81** | Cellular Biology (Plant vs Animal)| B1 Preliminary | Cytology: Nucleus, Mitochondria | Tier 3 (Guided CER)| Comparative analysis table; `science_lab` cell organelle labeling |
-| **W82** | Heat Transfer (Conduction, etc.)| B1 Preliminary | Thermodynamics: Convection Currents| Tier 3 (Guided CER)| Process explanation with transitional signals; `action_lab` thermal leak |
-| **W83** | Waves: Sound, Light, Seismic | B1 Preliminary | Wave Mechanics: Frequency, Wave | Tier 3 (Guided CER)| Scientific terminology; `listening_hub` audio spectrum analysis |
-| **W84** | World Religions & Cultures | B1 Preliminary | Anthropology: Sacred Architecture | Tier 3 (Guided CER)| Culturally neutral academic discourse; `reading_hub` comparative text |
-| **W85** | The Digestive Engine | B1 Preliminary | Physiology: Enzymes & Nutrients | Tier 3 (Guided CER)| Sequence markers (*initially, subsequently, ultimately*); `discovery_report` |
-| **W86** | Space Exploration: Telescopes | B1 Preliminary | Astrophysics: Hubble to James Webb | Tier 3 (Guided CER)| Speculative language (*may indicate the presence of*); `broadcast_studio` |
-| **W87** | Governments & Democracy | B1 Preliminary | Civics: 3 Branches of Government | Tier 3 (Guided CER)| Legal and political vocabulary; `sentence_smash` checks & balances |
-| **W88** | Circular Economy & Waste | B1 Preliminary | Ecology: Cradle to Cradle Design | Tier 3 (Guided CER)| Persuasive essay with policy proposals; `writing_hub` zero-waste plan |
-| **W89** | Chemical Reactions & Bonds | B1+ Intermediate | Chemistry: Exothermic vs Endothermic| Tier 3 (Guided CER)| Reaction descriptions; `action_lab` chemical temperature probe |
-| **W90** | Genetics: CRISPR & Gene Editing | B1+ Intermediate | Bioethics: Genetic Engineering | Tier 3 (Guided CER)| Ethical debates (*Should scientists modify...?*); `broadcast_studio` |
-| **W91** | Globalization & Trade Routes | B1+ Intermediate | Geography: Suez & Panama Canals | Tier 3 (Guided CER)| Economic interdependence; `math_quest` shipping container logistics |
-| **W92** | Renewable Energy Storage | B1+ Intermediate | Energy Tech: Lithium Batteries | Tier 3 (Guided CER)| Technical problem-solution synthesis; `discovery_report` battery cycle |
-| **W93** | The Human Brain & Neuroplasticity| B1+ Intermediate | Neuroscience: Synapses & Memory | Tier 3 (Guided CER)| Academic reading synthesis across two medical abstracts; `reading_hub` |
-| **W94** | Urbanization & Megacities | B1+ Intermediate | Sociology: Slums to Smart Cities | Tier 3 (Guided CER)| Data interpretation from census charts; `math_quest` population density |
-| **W95** | Ocean Acidification & Coral Loss| B1+ Intermediate | Marine Chemistry: pH Scale & Carbon | Tier 3 (Guided CER)| Full CER Report with statistical evidence; `discovery_report` |
-| **W96** | **Mid-Phase 2 Assessment & KET** | **B1 Benchmark** | **B1 Cambridge KET/PET Mock** | **Tier 3 (Exam)** | **Full B1 Summative Assessment; Academic Writing & Speaking Evaluation** |
+| **W73** | Transition to Academic English | B1 Entry · Rotary 1 | Phương pháp khoa học & Nghiên cứu học thuật| Tier 3 (Guided CER)| Từ vựng AWL (*hypothesis, variable, analyze*); `discovery_report` CER |
+| **W74** | Plate Tectonics & Earthquakes | B1 PET · Rotary 2 | Địa chất học: Đứt gãy mảng & Thang Richter | Tier 3 (Guided CER)| Thể bị động nâng cao (*plates are forced together*); `action_lab` địa chấn kế |
+| **W75** | Photosynthesis & Cellular Energy| B1 PET · Rotary 3 | Hóa sinh: Năng lượng mặt trời thành glucose | Tier 3 (Guided CER)| Giải thích phương trình hóa học; `reading_hub` quang phổ diệp lục |
+| **W76** | Force, Mass & Newton's Laws | B1 PET · Rotary 4 | Vật lý: Định luật 2 Newton $F=ma$ | Tier 3 (Guided CER)| Tích hợp toán - ngôn ngữ; `math_quest` toán lời văn tính gia tốc |
+| **W77** | **B1 PET & CLIL Mock 1** | **★ FULL MOCK 12 (PET)** | **Đánh giá Thực nghiệm Khoa học 1** | **Tier 3 (Exam)** | **Full Mock B1 PET 1 (4 Parts Listening, 6 Parts Reading, 2 Parts Writing, Speaking)** |
+| **W78** | Global Climates & Biomes | B1 PET · Rotary 1 | Địa lý: Rừng nhiệt đới vs Lãnh nguyên | Tier 3 (Guided CER)| Bài luận tương phản (*In contrast to tropical biomes...*); `writing_hub` |
+| **W79** | The Industrial Revolution | B1 PET · Rotary 2 | Lịch sử thế giới: Động cơ hơi nước & Nhà máy| Tier 3 (Guided CER)| Nguyên nhân & tác động lịch sử; `broadcast_studio` phim tài liệu lịch sử |
+| **W80** | Supply, Demand & Market Prices | B1 PET · Rotary 3 | Kinh tế học: Giá cân bằng thị trường | Tier 3 (Guided CER)| Logic điều kiện kinh tế; `math_quest` biểu đồ đường cung - cầu |
+| **W81** | Cellular Biology (Plant vs Animal)| B1 PET · Rotary 4 | Sinh học tế bào: Nhân, ti thể, màng | Tier 3 (Guided CER)| Bảng phân tích so sánh; `science_lab` dán nhãn bào quan tế bào |
+| **W82** | **B1 PET & CLIL Mock 2** | **★ FULL MOCK 13 (PET)** | **Đánh giá Thực nghiệm Khoa học 2** | **Tier 3 (Exam)** | **Full Mock B1 PET 2: Chấm bài viết email 100 từ và bài đọc dài Part 3** |
+| **W83** | Waves: Sound, Light, Seismic | B1 PET · Rotary 1 | Cơ học sóng: Tần số, bước sóng, biên độ | Tier 3 (Guided CER)| Thuật ngữ chuyên ngành sóng; `listening_hub` phân tích phổ âm thanh |
+| **W84** | World Religions & Cultures | B1 PET · Rotary 2 | Nhân học: Kiến trúc tôn giáo thế giới | Tier 3 (Guided CER)| Văn phong học thuật trung lập; `reading_hub` đọc hiểu đối chiếu văn hóa |
+| **W85** | The Digestive Engine | B1 PET · Rotary 3 | Sinh lý học: Enzyme và hấp thụ dinh dưỡng | Tier 3 (Guided CER)| Từ nối chuỗi thời gian (*initially, subsequently, ultimately*); `discovery_report` |
+| **W86** | Space Exploration: Telescopes | B1 PET · Rotary 4 | Vật lý thiên văn: Kính thiên văn James Webb | Tier 3 (Guided CER)| Ngôn ngữ phỏng đoán (*may indicate the presence of*); `broadcast_studio` |
+| **W87** | **B1 PET & CLIL Mock 3** | **★ FULL MOCK 14 (PET)** | **Đánh giá Thực nghiệm Khoa học 3** | **Tier 3 (Exam)** | **Full Mock B1 PET 3: Đánh giá khả năng thảo luận hai chiều Speaking Part 3** |
+| **W88** | Circular Economy & Waste | B1 PET · Rotary 1 | Sinh thái học: Thiết kế từ nôi đến nôi | Tier 3 (Guided CER)| Bài luận thuyết phục với đề xuất chính sách; `writing_hub` kế hoạch rác thải |
+| **W89** | Chemical Reactions & Bonds | B1+ PET · Rotary 2 | Hóa học: Phản ứng tỏa nhiệt & thu nhiệt | Tier 3 (Guided CER)| Miêu tả phản ứng phân tử; `action_lab` đầu dò nhiệt độ phản ứng hóa học |
+| **W90** | Genetics: CRISPR & Gene Editing | B1+ PET · Rotary 3 | Đạo đức sinh học: Kỹ thuật chỉnh sửa gen | Tier 3 (Guided CER)| Tranh luận đạo đức (*Should scientists modify...?*); `broadcast_studio` |
+| **W91** | Globalization & Trade Routes | B1+ PET · Rotary 4 | Địa lý kinh tế: Kênh đào Suez và Panama | Tier 3 (Guided CER)| Sự phụ thuộc kinh tế lẫn nhau; `math_quest` chuỗi cung ứng container |
+| **W92** | **B1 PET & CLIL Mock 4** | **★ FULL MOCK 15 (PET)** | **Đánh giá Thực nghiệm Khoa học 4** | **Tier 3 (Exam)** | **Full Mock B1 PET 4: Nâng cao độ khó bài đọc Gapped Text (Part 4)** |
+| **W93** | The Human Brain & Memory | B1+ PET · Rotary 1 | Khoa học thần kinh: Khớp thần kinh & Trí nhớ| Tier 3 (Guided CER)| Tổng hợp 2 bản tóm tắt y khoa đối lập; `reading_hub` bài báo y khoa |
+| **W94** | Urbanization & Megacities | B1+ PET · Rotary 2 | Xã hội học: Siêu đô thị và biến đổi xã hội | Tier 3 (Guided CER)| Diễn giải biểu đồ dân số; `math_quest` mật độ dân số trên diện tích |
+| **W95** | Ocean Acidification & Carbon | B1+ PET · Rotary 3 | Hóa học biển: Thang đo pH và hấp thụ CO2 | Tier 3 (Guided CER)| Báo cáo CER đầy đủ với bằng chứng thống kê; `discovery_report` |
+| **W96** | Preparation for Mid-Phase Gate | B1+ PET · Rotary 4 | Chiến thuật làm bài thi Cambridge B1 PET | Tier 3 (Exam Prep)| Ôn tập trọng tâm các lỗi ngữ pháp B1 thường gặp |
 
 ---
 
-#### Block F: Interdisciplinary Innovation & Global Systems (Weeks 97–120)
-*Focus: Extended expository essays, research synthesis, lab reports, statistical interpretation, PET readiness.*
+#### Block F: Đổi Mới Liên Môn & Chứng Chỉ B1 PET (Weeks 97–112)
+*Focus: Chu kỳ 4+1, viết bài báo cáo khoa học độc lập, kỳ thi chính thức Cambridge B1 PET tại W112.*
 
-| Week | Thematic Title | CEFR & Milestone | CLIL STEM Module | Scaffolding Tier | Grammar & Hub Focus |
+| Tuần | Tên Chủ Đề Tuần | CEFR & Phân Loại Tuần | CLIL STEM Module | Giàn Giáo | Ngữ Pháp Trọng Tâm & Dữ Liệu Hub |
 | :---: | :--- | :---: | :--- | :---: | :--- |
-| **W97** | Artificial Intelligence & Algorithms| B1+ Intermediate | Computer Science: Neural Networks | Tier 3 (Autonomous)| Defining abstract concepts (*An algorithm is defined as...*); `action_lab` |
-| **W98** | Climate Modeling & Greenhouse Gases| B1+ Intermediate | Climatology: $CO_2$ vs Methane PPM | Tier 3 (Autonomous)| Interpreting multi-line graphs; `discovery_report` temperature anomalies |
-| **W99** | Ancient Greece & Philosophical Logic| B1+ Intermediate | Philosophy: Socratic Questioning | Tier 3 (Autonomous)| Rhetorical fallacies; `sentence_smash` syllogism logic structures |
-| **W100**| Epidemiology & Pandemic Control | B1+ Intermediate | Public Health: $R_0$ Reproduction | Tier 3 (Autonomous)| Mathematical modeling in health; `math_quest` viral spread rate |
-| **W101**| Space Settlement: Moon to Mars | B1+ Intermediate | Aerospace: Life Support Systems | Tier 3 (Autonomous)| Engineering feasibility study; `writing_hub` lunar base proposal |
-| **W102**| Cyber Security & Digital Privacy | B1+ Intermediate | InfoSec: Encryption & Data Mining | Tier 3 (Autonomous)| Complex conditionals (*Were user data not encrypted...*); `broadcast_studio` |
-| **W103**| Agriculture & GMO Crops | B1+ Intermediate | Agronomy: Food Security vs Ecology | Tier 3 (Autonomous)| Multi-perspective synthesis essay; `reading_hub` drought-resistant rice |
-| **W104**| Renewable Energy: Nuclear Power? | B1+ Intermediate | Nuclear Physics: Fission vs Fusion | Tier 3 (Autonomous)| Balanced argument structure (Pros vs Cons); `broadcast_studio` nuclear debate |
-| **W105**| Microplastics in Marine Trophic Chains| B1+ Intermediate | Environmental Chemistry: Bioaccumulation| Tier 3 (Autonomous)| Formal laboratory report with methodology; `discovery_report` |
-| **W106**| Monetary Policy & Inflation | B1+ Intermediate | Macroeconomics: Central Banks | Tier 3 (Autonomous)| Economic indicators; `math_quest` inflation rate compound calculations |
-| **W107**| Quantum Computing Intro | B1+ Intermediate | Quantum Physics: Qubits vs Bits | Tier 3 (Autonomous)| Analogous explanation skills; `broadcast_studio` TED-style youth talk |
-| **W108**| Clean Water Desalination | B1+ Intermediate | Chemical Engineering: Reverse Osmosis| Tier 3 (Autonomous)| Process flowchart explanation; `action_lab` membrane pressure simulation |
-| **W109**| Evolutionary Biology: Speciation | B1+ Intermediate | Biology: Darwin's Finches & Isolations| Tier 3 (Autonomous)| Academic abstract reading; `reading_hub` Galapagos field notes |
-| **W110**| Space Debris & Orbital Cleanup | B1+ Intermediate | Orbital Mechanics: Kessler Syndrome | Tier 3 (Autonomous)| Policy proposal writing; `writing_hub` UN outer space treaty memo |
-| **W111**| The Psychology of Learning & Focus | B1+ Intermediate | Cognitive Science: Executive Function| Tier 3 (Autonomous)| Self-regulation research synthesis; `info_exchange` cognitive interview |
-| **W112**| Endangered Languages & Culture | B1+ Intermediate | Linguistics: Language Preservation | Tier 3 (Autonomous)| Expository essay on cultural heritage; `broadcast_studio` audio documentary |
-| **W113**| Renewable Infrastructure Design | B1+ Intermediate | Civil Engineering: Smart Power Grids | Tier 3 (Autonomous)| Cost-benefit analysis; `math_quest` grid load balancing bar model |
-| **W114**| Infectious Diseases & Antibiotics | B1+ Intermediate | Pharmacology: Superbug Resistance | Tier 3 (Autonomous)| Scientific hypothesis testing; `discovery_report` antibiotic resistance |
-| **W115**| Autonomous Vehicles & Ethics | B1+ Intermediate | Robotics: The Trolley Problem | Tier 3 (Autonomous)| Ethical reasoning essays; `story_writer` self-driving moral dilemma |
-| **W116**| Ocean Currents & El Niño | B1+ Intermediate | Oceanography: Thermohaline Circulation| Tier 3 (Autonomous)| Systems dynamics explanation; `reading_hub` atmospheric teleconnections |
-| **W117**| International Space Station Politics| B1+ Intermediate | Geopolitics: Orbital Diplomacy | Tier 3 (Autonomous)| Academic summary of treaties; `sentence_smash` diplomatic clauses |
-| **W118**| Biodiversity & Habitat Fragmentation| B1+ Intermediate | Conservation Biology: Wildlife Corridors| Tier 3 (Autonomous)| Environmental impact assessment report; `discovery_report` |
-| **W119**| PET Cambridge Academic Benchmark | B1+ Intermediate | Academic English Benchmark | Tier 3 (Exam) | Comprehensive Cambridge PET 4-Skills Evaluation; Score Verification |
-| **W120**| **PHASE 2 CAPSTONE LAB SHOWCASE** | **★ B1+ CLIL PASS** | **Student Independent Research Fair** | **Tier 3 (Capstone)**| **Public Presentation of Independent Scientific Paper & Viva Voce Defense** |
+| **W97** | **B1 PET & CLIL Mock 5** | **★ FULL MOCK 16 (PET)** | **Đánh giá Thực nghiệm Khoa học 5** | **Tier 3 (Exam)** | **Full Mock B1 PET 5: Đánh giá độc lập trên thang điểm Cambridge English Scale** |
+| **W98** | Climate Modeling & Greenhouse | B1+ PET · Rotary 1 | Khí hậu học: Nồng độ PPM của CO2 & Methane | Tier 3 (Autonomous)| Diễn giải biểu đồ đa đường; `discovery_report` dị thường nhiệt độ |
+| **W99** | Ancient Greece & Philosophical Logic| B1+ PET · Rotary 2 | Triết học: Phương pháp vấn đáp Socrates | Tier 3 (Autonomous)| Ngụy biện logic học; `sentence_smash` cấu trúc tam đoạn luận |
+| **W100**| Epidemiology & Pandemic Control | B1+ PET · Rotary 3 | Y tế công cộng: Hệ số lây nhiễm R0 | Tier 3 (Autonomous)| Mô hình hóa toán học dịch bệnh; `math_quest` tốc độ lây lan virus |
+| **W101**| Space Settlement: Moon to Mars | B1+ PET · Rotary 4 | Hàng không vũ trụ: Hệ thống duy trì sự sống| Tier 3 (Autonomous)| Nghiên cứu tính khả thi kỹ thuật; `writing_hub` đề án căn cứ mặt trăng |
+| **W102**| **B1 PET & CLIL Mock 6** | **★ FULL MOCK 17 (PET)** | **Đánh giá Thực nghiệm Khoa học 6** | **Tier 3 (Exam)** | **Full Mock B1 PET 6: Chấm bài viết bài báo 100 từ Part 2** |
+| **W103**| Cyber Security & Digital Privacy | B1+ PET · Rotary 1 | An toàn thông tin: Mã hóa & Khai thác data | Tier 3 (Autonomous)| Câu điều kiện hỗn hợp và đảo ngữ (*Were user data not encrypted...*) |
+| **W104**| Renewable Energy: Nuclear Power? | B1+ PET · Rotary 2 | Vật lý hạt nhân: Phân hạch vs Nhiệt hạch | Tier 3 (Autonomous)| Cấu trúc cân bằng lập luận (Ưu vs Nhược); `broadcast_studio` điện hạt nhân |
+| **W105**| Microplastics in Marine Chains | B1+ PET · Rotary 3 | Hóa học môi trường: Tích tụ sinh học | Tier 3 (Autonomous)| Báo cáo thí nghiệm chính thức với phương pháp nghiên cứu; `discovery_report` |
+| **W106**| Monetary Policy & Inflation | B1+ PET · Rotary 4 | Kinh tế học vĩ mô: Ngân hàng trung ương | Tier 3 (Autonomous)| Chỉ số kinh tế; `math_quest` tính lãi suất kép và tỷ lệ lạm phát |
+| **W107**| **B1 PET & CLIL Mock 7** | **★ FULL MOCK 18 (PET)** | **Đánh giá Thực nghiệm Khoa học 7** | **Tier 3 (Exam)** | **Full Mock B1 PET 7: Tổng duyệt kỹ năng làm bài trước kỳ thi chính thức** |
+| **W108**| Quantum Computing Intro | B1+ PET · Rotary 1 | Vật lý lượng tử: Qubit so với Bit nhị phân | Tier 3 (Autonomous)| Kỹ năng giải thích bằng phép loại suy; `broadcast_studio` TED Talk thiếu nhi |
+| **W109**| Clean Water Desalination | B1+ PET · Rotary 2 | Kỹ thuật hóa học: Màng lọc thẩm thấu ngược | Tier 3 (Autonomous)| Giải thích lưu đồ quy trình; `action_lab` mô phỏng áp suất lọc màng |
+| **W110**| Space Debris & Orbital Cleanup | B1+ PET · Rotary 3 | Cơ học quỹ đạo: Hội chứng va chạm Kessler | Tier 3 (Autonomous)| Soạn thảo đề xuất chính sách; `writing_hub` hiệp ước không gian LHQ |
+| **W111**| Intensive PET Exam Master | B1+ PET · Rotary 4 | Tối ưu hóa điểm số kỳ thi B1 Preliminary | Tier 3 (Exam Prep)| Luyện đề tốc độ cao, bẫy trắc nghiệm từ đồng nghĩa |
+| **W112**| **CAMBRIDGE B1 PET OFFICIAL GATE**| **★ FULL MOCK 19 (OFFICIAL)**| **OFFICIAL CAMBRIDGE B1 PET BENCHMARK** | **Tier 3 (Official)**| **KỲ THI CHÍNH THỨC B1 PET — MỤC TIÊU: PASS WITH MERIT / DISTINCTION!** |
 
 ---
 
-### PHASE 3: ADVANCED SYNTHESIS, DEBATE & EMI (Weeks 121–156)
+### PHASE 3: ADVANCED SYNTHESIS, DEBATE & EMI (WEEKS 121–156)
 
-#### Block G: Formal Argumentation & Debate (Weeks 121–144)
-*Focus: 5-Paragraph Argumentative Essays, Parliamentary Debate (Affirmative/Negative), counterarguments & rebuttals, primary source synthesis.*
+#### Block G: B2 First (FCE), Tranh Biện Nghị Viện & Viết Luận 5 Đoạn (Weeks 121–144)
+*Focus: Chu kỳ 4+1, bài luận 5 đoạn (Argumentative Essay $\ge 140–190$ từ), Tranh biện trực tiếp, Acellus US Grade 7–8.*
 
-| Week | Thematic Debate Project | CEFR & Milestone | Project Research Focus | Scaffolding Tier | Genre & Language Output |
+| Tuần | Tên Chủ Đề Dự Án Tranh Biện | CEFR & Phân Loại Tuần | Nội Dung Nghiên Cứu Học Thuật | Giàn Giáo | Sản Phẩm Đầu Ra & Thể Loại Ngôn Ngữ |
 | :---: | :--- | :---: | :--- | :---: | :--- |
-| **W121**| Debate 1: Homework in Primary School| B2 Academic | Educational Research: Sleep & Retention| Tier 3 (Debate) | Introduction & Thesis Statement writing; `writing_hub` |
-| **W122**| Debate 1: Constructing Arguments | B2 Academic | Empirical Evidence: OECD Pisa Scores | Tier 3 (Debate) | Body Paragraph 1 & 2 (PEEL: Point, Evidence, Explain, Link) |
-| **W123**| Debate 1: Anticipating Counterclaims| B2 Academic | Parental Perspective vs Mental Health | Tier 3 (Debate) | Counterargument framing (*Critics contend that... However...*) |
-| **W124**| Debate 1: Live Tournament Round 1 | B2 Academic | Formal Debate Protocol (3-min speeches)| Tier 3 (Debate) | `broadcast_studio` Live Affirmative vs Negative debate recording |
-| **W125**| Debate 2: Video Games & Cognition | B2 Academic | Neurobiology: Reaction Time vs Addiction| Tier 3 (Debate) | Synthesizing conflicting scientific papers; `reading_hub` |
-| **W126**| Debate 2: Data & Statistical Claims | B2 Academic | Screen Time Data & Psychological Health| Tier 3 (Debate) | `math_quest` interpreting correlation vs causation graphs |
-| **W127**| Debate 2: Rebuttal & Cross-Exam | B2 Academic | Logical Fallacies (Ad Hominem, Strawman)| Tier 3 (Debate) | `sentence_smash` rapid rebuttal syntax templates |
-| **W128**| Debate 2: Live Tournament Round 2 | B2 Academic | Cross-Examination & Speaker Points | Tier 3 (Debate) | `broadcast_studio` debate duel with timer & audience poll |
-| **W129**| Debate 3: Smartphones Under 12? | B2 Academic | Developmental Psychology: Social Media | Tier 3 (Debate) | Drafting 5-paragraph position paper; `writing_hub` |
-| **W130**| Debate 3: Global Legislative Models | B2 Academic | Comparative Law: France & Florida Bans | Tier 3 (Debate) | Legal precedent citation; `reading_hub` statutory summaries |
-| **W131**| Debate 3: Rhetorical Persuasion | B2 Academic | Ethos, Pathos, Logos in Public Speaking| Tier 3 (Debate) | Voice modulation, emphatic stress; `gear2_karaoke` historic speeches |
-| **W132**| Debate 3: Live Tournament Round 3 | B2 Academic | Parliamentary Championship Debate | Tier 3 (Debate) | 5-min championship debate match; peer score evaluation |
-| **W133**| Project 4: AI in Classroom Testing | B2 Academic | Generative AI & Academic Integrity | Tier 3 (Debate) | Literature review drafting; `discovery_report` AI detector bias |
-| **W134**| Project 4: Empirical Survey Design | B2 Academic | Social Survey: Polling School Peers | Tier 3 (Debate) | Questionnaire construction; `info_exchange` survey interviews |
-| **W135**| Project 4: Data Visualization Paper | B2 Academic | Statistical Presentation in Essays | Tier 3 (Debate) | Embedding bar charts & callout boxes in academic text |
-| **W136**| Project 4: Live Policy Defense | B2 Academic | School Board Mock Public Hearing | Tier 3 (Debate) | `broadcast_studio` presenting policy recommendations to Board |
-| **W137**| Acellus US K-12 Science Alignment 1| B2 EMI Ready | US Grade 7 Science: Genetics & Cells | Tier 3 (EMI US) | Acellus lesson comprehension & quiz mastery; `reading_hub` |
-| **W138**| Acellus US K-12 Science Alignment 2| B2 EMI Ready | US Grade 7 Science: Earth & Space | Tier 3 (EMI US) | Specialized US science vocabulary & diagram completion |
-| **W139**| Acellus US K-12 Social Studies 1 | B2 EMI Ready | US Grade 7 Civics: US Constitution | Tier 3 (EMI US) | Primary text analysis (Bill of Rights, Preamble); `sentence_smash` |
-| **W140**| Acellus US K-12 Social Studies 2 | B2 EMI Ready | US Grade 7 History: American Republic | Tier 3 (EMI US) | Historical document DBQ (Document-Based Questions); `writing_hub` |
-| **W141**| Acellus US K-12 Mathematics 1 | B2 EMI Ready | Pre-Algebra: Linear Equations & Slope | Tier 3 (EMI US) | English mathematical word problems; `math_quest` $y=mx+b$ |
-| **W142**| Acellus US K-12 Mathematics 2 | B2 EMI Ready | Pre-Algebra: Geometry & Coordinate Plane| Tier 3 (EMI US) | Perimeter, Area, Volume explanations; `action_lab` 3D geometry |
-| **W143**| Advanced Genre Review: Narrative | B2 Academic | Creative Fiction: Flashbacks & Pacing | Tier 3 (Autonomous)| High-level short story writing ($\ge 200$ words); `story_writer` |
-| **W144**| Advanced Genre Review: Expository | B2 Academic | Academic Exposition: Cause & Solution | Tier 3 (Autonomous)| Rigorous expository article with citations; `discovery_report` |
+| **W121**| Debate 1: Homework in Primary School| B2 Entry · Rotary 1 | Nghiên cứu giáo dục: Giấc ngủ & Ghi nhớ | Tier 3 (Debate) | Viết Mở bài & Câu luận đề (Thesis Statement); `writing_hub` |
+| **W122**| Debate 1: Constructing Arguments | B2 Entry · Rotary 2 | Bằng chứng thực nghiệm: Điểm số OECD PISA | Tier 3 (Debate) | Viết Thân bài 1 & 2 theo mô hình PEEL; `discovery_report` |
+| **W123**| Debate 1: Anticipating Counterclaims| B2 Entry · Rotary 3 | Góc nhìn phụ huynh vs Sức khỏe tâm lý | Tier 3 (Debate) | Đặt luận điểm đối lập (*Critics contend that... However...*) |
+| **W124**| Debate 1: Live Tournament Round 1 | B2 Entry · Rotary 4 | Quy thức tranh biện chính thức (lượt 3 phút)| Tier 3 (Debate) | `broadcast_studio` Ghi hình trận tranh biện Ủng hộ vs Phản đối |
+| **W125**| Debate 2: Video Games & Cognition | B2 Academic · Rotary 1 | Sinh học thần kinh: Phản xạ so với nghiện | Tier 3 (Debate) | Tổng hợp 2 bài báo khoa học mâu thuẫn nhau; `reading_hub` |
+| **W126**| Debate 2: Data & Statistical Claims | B2 Academic · Rotary 2 | Dữ liệu thời gian màn hình & Sức khỏe | Tier 3 (Debate) | `math_quest` phân biệt tương quan vs quan hệ nhân quả |
+| **W127**| **B2 FCE & Acellus Mock 1** | **★ FULL MOCK 20 (B2/US)**| **Khảo sát Năng lực Chuẩn hóa B2/US 1** | **Tier 3 (Exam)** | **Full Mock B2 FCE 1: Reading & Use of English (Word Formation, Key Word Transform)** |
+| **W128**| Debate 2: Live Tournament Round 2 | B2 Academic · Rotary 1 | Chất vấn chéo & Điểm số diễn giả | Tier 3 (Debate) | `broadcast_studio` đấu tranh biện trực tiếp có đồng hồ và bình chọn |
+| **W129**| Debate 3: Smartphones Under 12? | B2 Academic · Rotary 2 | Tâm lý phát triển: Tác động mạng xã hội | Tier 3 (Debate) | Soạn thảo bài lập luận vị thế 5 đoạn hoàn chỉnh; `writing_hub` |
+| **W130**| Debate 3: Global Legislative Models | B2 Academic · Rotary 3 | Luật so sánh: Lệnh cấm của Pháp và Florida | Tier 3 (Debate) | Trích dẫn tiền lệ pháp lý; `reading_hub` tóm tắt văn bản luật |
+| **W131**| Debate 3: Rhetorical Persuasion | B2 Academic · Rotary 4 | Ethos, Pathos, Logos trong hùng biện | Tier 3 (Debate) | Ngữ điệu và trọng âm nhấn mạnh; `gear2_karaoke` bài diễn văn lịch sử |
+| **W132**| **B2 FCE & Acellus Mock 2** | **★ FULL MOCK 21 (B2/US)**| **Khảo sát Năng lực Chuẩn hóa B2/US 2** | **Tier 3 (Exam)** | **Full Mock B2 FCE 2: Chấm bài luận 5 đoạn Argumentative Essay theo Cambridge Rubric** |
+| **W133**| Project 4: AI in Classroom Testing | B2 Academic · Rotary 1 | Trí tuệ nhân tạo và liêm chính học thuật | Tier 3 (Debate) | Soạn thảo tổng quan tài liệu; `discovery_report` độ lệch AI detector |
+| **W134**| Project 4: Empirical Survey Design | B2 Academic · Rotary 2 | Khảo sát xã hội học: Phỏng vấn bạn học | Tier 3 (Debate) | Xây dựng bảng hỏi; `info_exchange` phỏng vấn khảo sát dữ liệu |
+| **W135**| Project 4: Data Visualization Paper | B2 Academic · Rotary 3 | Trực quan hóa dữ liệu thống kê trong bài luận| Tier 3 (Debate) | Nhúng biểu đồ cột và bảng số liệu vào bài viết học thuật |
+| **W136**| Project 4: Live Policy Defense | B2 Academic · Rotary 4 | Phiên điều trần giả định trước Hội đồng trường| Tier 3 (Debate) | `broadcast_studio` thuyết trình khuyến nghị chính sách |
+| **W137**| **B2 FCE & Acellus Mock 3** | **★ FULL MOCK 22 (B2/US)**| **Acellus US Grade 7 Science Battery 1** | **Tier 3 (Exam)** | **Bài thi chuẩn hóa Acellus K-12: Di truyền học, Tế bào & Vật lý cơ bản** |
+| **W138**| Acellus US K-12 Science Alignment | B2 EMI Ready · Rotary 1 | Khoa học Trái đất & Thiên văn học US G7 | Tier 3 (EMI US) | Thuật ngữ chuyên sâu khoa học Mỹ & giải thích sơ đồ phức tạp |
+| **W139**| Acellus US K-12 Civics & History | B2 EMI Ready · Rotary 2 | Giáo dục công dân Mỹ: Hiến pháp & Quyền lợi | Tier 3 (EMI US) | Phân tích văn bản gốc (Tuyên ngôn Nhân quyền, Lời mở đầu Hiến pháp) |
+| **W140**| Acellus US K-12 History DBQ | B2 EMI Ready · Rotary 3 | Lịch sử nước Mỹ: Câu hỏi dựa trên tài liệu | Tier 3 (EMI US) | Kỹ năng viết DBQ (Document-Based Questions); `writing_hub` |
+| **W141**| Acellus US K-12 Pre-Algebra | B2 EMI Ready · Rotary 4 | Tiền Đại số: Phương trình bậc nhất & Độ dốc | Tier 3 (EMI US) | Toán lời văn bằng tiếng Anh; `math_quest` phương trình $y=mx+b$ |
+| **W142**| **B2 FCE & Acellus Mock 4** | **★ FULL MOCK 23 (B2/US)**| **Acellus US Grade 7 Social Studies & Math**| **Tier 3 (Exam)** | **Bài thi chuẩn hóa Acellus K-12: Lịch sử, Địa lý & Toán Tiền đại số** |
+| **W143**| Advanced Genre: Academic Narrative | B2 EMI Ready · Rotary 1 | Văn học hư cấu: Kỹ thuật Flashbacks | Tier 3 (Autonomous)| Viết truyện ngắn văn học ($\ge 200$ từ); `story_writer` |
+| **W144**| Advanced Genre: Expository Paper | B2 EMI Ready · Rotary 2 | Văn giải thích học thuật: Nguyên nhân & Giải pháp| Tier 3 (Autonomous)| Bài báo khoa học giải thích có trích dẫn nguồn; `discovery_report` |
 
 ---
 
-#### Block H: Capstone Project, Defense & Graduation (Weeks 145–156)
-*Focus: Capstone research project, oral defense, timed writing, Acellus online simulation, graduation showcase.*
+#### Block H: Khóa Luận Tốt Nghiệp Capstone, Bảo Vệ Luận Điểm & Tốt Nghiệp (Weeks 145–156)
+*Focus: Chu kỳ 4+1, khóa luận nghiên cứu độc lập 1.000 từ, bảo vệ luận điểm trực tiếp, chuẩn bị tốt nghiệp B2 EMI.*
 
-| Week | Thematic Milestone | CEFR & Milestone | Capstone Project Focus | Scaffolding Tier | Final Output & Certification |
+| Tuần | Tên Mốc Khóa Luận Tốt Nghiệp | CEFR & Phân Loại Tuần | Nội Dung Dự Án Capstone Độc Lập | Giàn Giáo | Sản Phẩm Đầu Ra & Chứng Nhận Tốt Nghiệp |
 | :---: | :--- | :---: | :--- | :---: | :--- |
-| **W145**| Capstone Project: Topic Selection | B2 EMI Ready | Independent Research: Student Passion | Tier 3 (Capstone)| Research Proposal & Annotated Bibliography (3 academic sources) |
-| **W146**| Capstone Project: Methodology | B2 EMI Ready | Research Design: Experiment or Survey | Tier 3 (Capstone)| Methodology section draft; peer review rubric in `info_exchange` |
-| **W147**| Capstone Project: Data Collection | B2 EMI Ready | Quantitative / Qualitative Data Log | Tier 3 (Capstone)| Raw data recording; `math_quest` statistical mean, median, mode |
-| **W148**| Capstone Project: First Draft | B2 EMI Ready | 1,000-word Academic Paper Draft | Tier 3 (Capstone)| Full manuscript submission: Abstract, Intro, Body, Conclusion |
-| **W149**| Capstone Project: Peer Review | B2 EMI Ready | Academic Critique & Revision | Tier 3 (Capstone)| Line-by-line editorial feedback and revisions; citation checking |
-| **W150**| Impromptu Speaking & Viva Voce | B2 EMI Ready | Oral Defense Simulation | Tier 3 (Capstone)| `broadcast_studio` answering unscripted academic questions (2 mins) |
-| **W151**| Timed Synthesis Essay Writing | B2 EMI Ready | Simulated International Exam (TOEFL/IELTS)| Tier 3 (Capstone)| 45-minute timed essay on unannounced academic prompt; `writing_hub` |
-| **W152**| Acellus US K-12 Final Exam Sim | B2 EMI Ready | US Middle School Grade 7/8 Battery | Tier 3 (Capstone)| Simulated US standard test (ELA, Science, Social Studies, Math) |
-| **W153**| Slide Deck Design & Presentation | B2 EMI Ready | Visual Rhetoric: Keynote Slide Deck | Tier 3 (Capstone)| 10-slide visual deck synthesis for public defense; `action_lab` |
-| **W154**| Dress Rehearsal & Defense | B2 EMI Ready | Formal Academic Presentation (10 mins) | Tier 3 (Capstone)| Complete mock defense recorded with teleprompter & slides |
-| **W155**| Graduation Portfolio Curation | B2 EMI Ready | 3-Year Master Learning Portfolio | Tier 3 (Capstone)| Digital compilation: Starters, Movers, Flyers 15 Shields + Capstone |
-| **W156**| **GRADUATION CEREMONY & SHOWCASE**| **★ B2 EMI MASTER**| **3-YEAR CAPSTONE PUBLIC DEFENSE** | **★ GRADUATION** | **Public Defense before Academic Board & Parents; B2 EMI Certification!** |
+| **W145**| Capstone Project: Topic Selection | B2 EMI Ready · Rotary 1 | Đề xuất nghiên cứu đề tài đam mê của học sinh| Tier 3 (Capstone)| Bản đề cương nghiên cứu & Thư mục tài liệu (3 nguồn học thuật) |
+| **W146**| Capstone Project: Methodology | B2 EMI Ready · Rotary 2 | Thiết kế phương pháp: Thực nghiệm hay Khảo sát| Tier 3 (Capstone)| Soạn thảo phần Phương pháp nghiên cứu; phản biện chéo `info_exchange` |
+| **W147**| **B2 FCE & Acellus Mock 5** | **★ FULL MOCK 24 (B2/US)**| **Tổng duyệt Khảo thí B2 FCE Toàn diện** | **Tier 3 (Exam)** | **Full Mock FCE: 4 Kỹ năng Nghe, Nói, Đọc, Viết theo chuẩn B2 quốc tế** |
+| **W148**| Capstone Project: Data Collection | B2 EMI Ready · Rotary 1 | Thu thập số liệu định lượng & định tính | Tier 3 (Capstone)| Ghi nhật ký số liệu thô; `math_quest` thống kê trung bình, trung vị |
+| **W149**| Capstone Project: Full First Draft | B2 EMI Ready · Rotary 2 | Bản thảo đầu tiên Khóa luận 1.000 từ | Tier 3 (Capstone)| Nộp toàn văn bản thảo: Tóm tắt (Abstract), Mở bài, Thân bài, Kết luận |
+| **W150**| Capstone Project: Peer Review | B2 EMI Ready · Rotary 3 | Phản biện học thuật & Chỉnh sửa bài | Tier 3 (Capstone)| Biên tập chi tiết từng dòng, kiểm tra trích dẫn chuẩn APA |
+| **W151**| Impromptu Speaking & Viva Voce | B2 EMI Ready · Rotary 4 | Mô phỏng buổi vấn đáp bảo vệ luận án | Tier 3 (Capstone)| `broadcast_studio` trả lời ứng biến các câu hỏi hóc búa (2 phút) |
+| **W152**| **Acellus US Final Battery Mock** | **★ FULL MOCK 25 (ACELLUS)**| **Acellus US Middle School Comprehensive** | **Tier 3 (Exam)** | **Bài thi chuẩn hóa tổng hợp Acellus Grade 8 (Toán, Khoa học, ELA, Xã hội)** |
+| **W153**| Slide Deck Design & Presentation | B2 EMI Ready · Rotary 1 | Thiết kế slide thuyết trình khóa luận | Tier 3 (Capstone)| Bộ slide 10 trang trực quan tóm lược luận điểm; `action_lab` |
+| **W154**| Dress Rehearsal & Mock Defense | B2 EMI Ready · Rotary 2 | Tổng duyệt buổi thuyết trình bảo vệ (10 phút) | Tier 3 (Capstone)| Ghi hình toàn bộ bài nói với máy quay và slide, chỉnh sửa lần cuối |
+| **W155**| Master Portfolio Curation | B2 EMI Ready · Rotary 3 | Hoàn thiện Hồ sơ Năng lực 3 Năm | Tier 3 (Capstone)| Tập hợp thành tích: Starters, Movers, Flyers 15 Khiên, PET, FCE, Capstone |
+| **W156**| **GRADUATION CEREMONY & SHOWCASE**| **★ FULL MOCK 26 / GRADUATION**| **3-YEAR CAPSTONE PUBLIC DEFENSE** | **★ GRADUATION** | **LỄ TỐT NGHIỆP — BẢO VỆ LUẬN ÁN TRƯỚC HỘI ĐỒNG HỌC THUẬT & NHẬN BẰNG B2 EMI!** |
 
 ---
 
-## 4. Technical Validation Invariant
+## 4. Bất Biến Kiểm Duyệt Kỹ Thuật Số (Digital Audit Invariant)
 
-1. **Pre-Production Audit**: Any new week generated must validate against the curriculum mapping in this file.
-2. **Schema Verification**: Every week file in `src/data/weeks/week_XX/` must reflect the assigned `cefr_stage`, `exam_milestone`, `clil_stem_module`, and `scaffolding_tier`.
-3. **No Drift with Baseline**: This document supplements and operationalizes `docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` without deleting or overwriting the original pedagogical philosophy.
+1. **Tuân Thủ Tuyệt Đối Cấu Trúc Tuần**: Mọi script tự động (`week_pipeline`, `cefr_curriculum_guard.mjs`, `audit_all_w33_tasks.mjs`) BẮT BUỘC chỉ đọc 4 Hubs và 15 Quests theo đúng bảng map này.
+2. **Khai Báo Cột Milestone**: Các tuần có gắn mác `★ FULL MOCK` bắt buộc phải cấu hình cờ `isFullMock: true` trong file metadata `index.js` của tuần đó, kích hoạt chế độ tính giờ làm bài và bộ đề thi trọn gói tại Zone 5.
+3. **Bảo Tồn Bản Gốc**: File map này không thay thế hoặc làm biến dạng triết lý trong [`docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt`](file:///Users/binhnguyen/projects/Engquest3k/docs/1.%20NEW-FINAL_Khung%20CT_SYLLABUS_3yrs%20copy.txt), mà hiện thực hóa nó thành dữ liệu kỹ thuật số có thể kiểm thử tự động.

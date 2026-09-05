@@ -1,9 +1,9 @@
 {
-  "commit": "bc3051afc2535bea8efa5340977ed3821d711610",
-  "git_commit": "bc3051afc2535bea8efa5340977ed3821d711610",
-  "shortCommit": "bc3051af",
-  "message": "feat(zones): standardize 15 Quests / 5 Zones architecture, Action Lab naming, and resolve audit findings",
-  "builtAt": "2026-09-04T13:38:36.689Z",
-  "build_timestamp": "2026-09-04T13:38:36.689Z",
+  "commit": "027e43d1fddfb9fe87b7c2f81b2c4f257d36a177",
+  "git_commit": "027e43d1fddfb9fe87b7c2f81b2c4f257d36a177",
+  "shortCommit": "027e43d1",
+  "message": "feat(curriculum): master architecture W01-156, digital syllabus bridge map, and SOP v2.0",
+  "builtAt": "2026-09-05T01:00:35.859Z",
+  "build_timestamp": "2026-09-05T01:00:35.860Z",
   "env": "production"
 }
