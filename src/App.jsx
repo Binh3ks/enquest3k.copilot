@@ -67,6 +67,7 @@ import SubscriptionModal from './components/subscription/SubscriptionModal';
 import useArcadeStore from './stores/useArcadeStore';
 import ArcadeModal from './components/games/ArcadeModal';
 import ArcadeBreakPromptModal from './components/games/ArcadeBreakPromptModal';
+import StreakMilestoneToast from './components/gamification/StreakMilestoneToast';
 
 // Lazy-loaded heavy pages
 const GameHub = React.lazy(() => import('./pages/GameHub/GameHub'));
@@ -414,6 +415,9 @@ const App = () => {
     
     {/* Global AI Tutor Widget - V5 Premium */}
     <AITutorWidget />
+
+    {/* Streak Milestone Celebration Toast — global singleton */}
+    <StreakMilestoneToast />
 
     {/* Production Sandbox QA Tools Panel */}
     <SandboxQAPanel isOpen={isSandboxQAOpen} onClose={() => setIsSandboxQAOpen(false)} />

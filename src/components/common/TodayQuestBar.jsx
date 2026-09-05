@@ -6,6 +6,7 @@ import { useUserStore } from '../../stores/useUserStore';
 import { DAILY_BONUS_XP, TOTAL_QUEST_DAYS } from '../../config/questSchedule';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import ClassLeaderboardModal from './ClassLeaderboardModal';
+import StreakAtRiskBanner from '../gamification/StreakAtRiskBanner';
 
 /**
  * TodayQuestBar — Persistent bar showing today's 3 quests + daily progress.
@@ -158,6 +159,17 @@ export default function TodayQuestBar({ weekId }) {
           </button>
         </div>
       </div>
+
+      {/* Streak At-Risk Banner — shown above quests when streak endangered */}
+      <StreakAtRiskBanner
+        weekId={weekId}
+        onStartQuest={() => {
+          const firstIncomplete = todayData.quests.find(q => !isQuestCompleted(weekId, q.id));
+          if (firstIncomplete) {
+            window.location.href = getQuestLink(firstIncomplete);
+          }
+        }}
+      />
 
       {/* Quest Cards */}
       <div className="px-4 py-3">

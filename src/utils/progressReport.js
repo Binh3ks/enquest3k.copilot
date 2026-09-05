@@ -202,6 +202,80 @@ export function recordDailyStreak() {
 }
 
 /**
+ * STREAK_MILESTONES — Ordered list of milestone thresholds.
+ * Each milestone fires once (tracked in localStorage 'engquest_streak_milestones').
+ */
+export const STREAK_MILESTONES = [
+  { days: 7,   badge: 'streak_7d',   label: '🔥 7-Day Streak!',   xpBonus: 75,  rareCard: false },
+  { days: 30,  badge: 'streak_30d',  label: '🏆 30-Day Streak!',  xpBonus: 200, rareCard: true  },
+  { days: 100, badge: 'streak_100d', label: '💎 100-Day Legend!', xpBonus: 500, rareCard: true  },
+  { days: 365, badge: 'streak_365d', label: '👑 365-Day Champion!',xpBonus: 2000,rareCard: true  },
+];
+
+/**
+ * checkStreakMilestone(currentDays)
+ * Returns the milestone object if this streak count crosses a NEW milestone threshold,
+ * or null if no milestone applies (already claimed, or not at a threshold).
+ *
+ * Callers must persist the reward (XP, badge) themselves via useUserStore.awardIdempotentXP.
+ * This function only detects and marks the milestone as seen.
+ *
+ * @param {number} currentDays - Current streak day count after recording today
+ * @returns {{ days, badge, label, xpBonus, rareCard } | null}
+ */
+export function checkStreakMilestone(currentDays) {
+  try {
+    const raw = localStorage.getItem('engquest_streak_milestones');
+    const claimed = raw ? JSON.parse(raw) : [];
+
+    const milestone = STREAK_MILESTONES.find(
+      (m) => currentDays >= m.days && !claimed.includes(m.badge)
+    );
+    if (!milestone) return null;
+
+    // Mark as claimed immediately to prevent double-firing
+    localStorage.setItem(
+      'engquest_streak_milestones',
+      JSON.stringify([...claimed, milestone.badge])
+    );
+    return milestone;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * isStreakAtRisk()
+ * Returns { atRisk: boolean, hoursLeft: number, streakDays: number }
+ * "At risk" = learner has an active streak (>0 days), has NOT studied today,
+ * and it is past 20:00 local time (less than 4 hours to midnight).
+ */
+export function isStreakAtRisk() {
+  try {
+    const raw = localStorage.getItem('engquest_streak');
+    if (!raw) return { atRisk: false, hoursLeft: 0, streakDays: 0 };
+
+    const { days, lastDate } = JSON.parse(raw);
+    if (!days || days < 2) return { atRisk: false, hoursLeft: 0, streakDays: days || 0 };
+
+    const today = getLocalDateString();
+    if (lastDate === today) return { atRisk: false, hoursLeft: 0, streakDays: days }; // already studied
+
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
+    const hoursLeft = (midnight - now) / 3600000;
+
+    // At risk if streak > 0, hasn't studied today, and < 4h to midnight
+    const atRisk = hoursLeft < 4;
+    return { atRisk, hoursLeft: Math.round(hoursLeft * 10) / 10, streakDays: days };
+  } catch {
+    return { atRisk: false, hoursLeft: 0, streakDays: 0 };
+  }
+}
+
+
+/**
  * buildStudentContext(weekId)
  * Returns a concise student-profile string to inject into every Nova system prompt.
  * Called by aiRouter.js — keeps personalisation in one place.

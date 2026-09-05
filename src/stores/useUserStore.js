@@ -6,6 +6,8 @@ import { calculateWeekStars, getNewlyEarnedBadges } from '../utils/scoringSystem
 import { COLLECTIONS } from '../data/collectionConfig.js';
 import { saveProgressWithBackup } from '../utils/progressBackup.js';
 import { recordAuthoritativeStreak } from '../utils/progressReport.js';
+import { checkStreakMilestone } from '../utils/progressReport.js';
+
 import {
   DAILY_BONUS_XP,
   PERFECT_WEEK_XP,
@@ -68,6 +70,10 @@ const useUserStore = create(
       token: null,
       learningMode: 'easy',
       
+      // PLACEMENT TEST STATE
+      startingWeek: 1,                   // Set by Diagnostic Placement Test
+      placementTestCompleted: false,     // True after first placement test
+
       // UNIVERSAL PROGRESS SYSTEM STATE
       progressCache: {}, // Structure: { weekId: { stationId: { data, isCompleted, score } } }
       weekCompletion: {}, // Structure: { weekId: percentage }
@@ -486,6 +492,20 @@ const useUserStore = create(
         Object.keys(cached).forEach(weekId => {
           get().recalculateWeekCompletion(parseInt(weekId));
         });
+      },
+
+      /**
+       * Set starting week from Diagnostic Placement Test result.
+       */
+      setStartingWeek: (week) => {
+        set({ startingWeek: Math.max(1, Math.min(156, week)) });
+      },
+
+      /**
+       * Mark Placement Test as completed.
+       */
+      setPlacementTestCompleted: (completed = true) => {
+        set({ placementTestCompleted: completed });
       },
       
       /**
@@ -1003,11 +1023,37 @@ export function initGamificationListeners() {
     });
 
     // Record learning day streak strictly upon task completion
-    recordAuthoritativeStreak({
+    const newStreakDays = recordAuthoritativeStreak({
       date: payload.timestamp || new Date(),
       streakFreezeActive: store.streakFreezeActive,
       onFreezeConsumed: () => useUserStore.setState({ streakFreezeActive: false })
     });
+
+    // ── Streak Milestone Check ──────────────────────────────────────────────
+    // Fires once per milestone threshold (7/30/100/365 days).
+    // checkStreakMilestone marks the badge as claimed in localStorage immediately.
+    const milestone = checkStreakMilestone(newStreakDays);
+    if (milestone) {
+      const milestoneTxKey = `tx_streak_milestone_${uid}_${milestone.badge}`;
+      store.awardIdempotentXP({
+        userId: uid,
+        transactionKey: milestoneTxKey,
+        amount: milestone.xpBonus,
+        reason: `Streak milestone: ${milestone.label}`,
+        metadata: { badge: milestone.badge, days: newStreakDays },
+      });
+      // Add badge to earnedBadges (idempotent via Set)
+      const currentBadges = useUserStore.getState().earnedBadges || [];
+      if (!currentBadges.includes(milestone.badge)) {
+        useUserStore.setState({ earnedBadges: [...currentBadges, milestone.badge] });
+      }
+      // Emit event so UI (StreakMilestoneToast) can react
+      gamificationEventBus.emit?.(GAMIFICATION_EVENTS.STREAK_MILESTONE_REACHED, {
+        milestone,
+        streakDays: newStreakDays,
+        userId: uid,
+      });
+    }
   });
 
   // 2. Daily Bonus Handler
