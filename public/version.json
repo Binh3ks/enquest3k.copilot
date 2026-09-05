@@ -1,9 +1,9 @@
 {
-  "commit": "0106ce00699137b0518163b4c1bfcb3a80ad4afa",
-  "git_commit": "0106ce00699137b0518163b4c1bfcb3a80ad4afa",
-  "shortCommit": "0106ce00",
-  "message": "fix(w33): fix dictation diff alignment, wire static audio to discovery report, expand action lab to 3 scenarios, and dynamic info exchange highlight [multi-agent-review]",
-  "builtAt": "2026-09-05T09:11:43.744Z",
-  "build_timestamp": "2026-09-05T09:11:43.744Z",
+  "commit": "9d95e6779953aa2d1f7d550e6139eb2337dc9a25",
+  "git_commit": "9d95e6779953aa2d1f7d550e6139eb2337dc9a25",
+  "shortCommit": "9d95e677",
+  "message": "fix(ui): expand task container to max-w-7xl, implement 2-line mobile layout for info exchange, and eliminate bubble truncation in action lab",
+  "builtAt": "2026-09-05T09:40:46.523Z",
+  "build_timestamp": "2026-09-05T09:40:46.524Z",
   "env": "production"
 }

@@ -396,6 +396,8 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               weekNumber={weekId}
               forcedGear={routing.gear}
               hideGearTabs={true}
+              onBackToMap={handleBackToMap}
+              onComplete={handleBackToMap}
             />
           )}
           {routing.zone === 'knowledge' && (
@@ -404,6 +406,8 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               weekNumber={weekId}
               forcedStation={routing.station}
               hideStationTabs={true}
+              onBackToMap={handleBackToMap}
+              onComplete={handleBackToMap}
             />
           )}
           {routing.zone === 'arena' && (
@@ -412,6 +416,8 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               weekNumber={weekId}
               forcedStation={routing.station}
               hideStationTabs={true}
+              onBackToMap={handleBackToMap}
+              onComplete={handleBackToMap}
             />
           )}
           {routing.zone === 'create' && (
@@ -420,6 +426,8 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               weekNumber={weekId}
               forcedStation={routing.station}
               hideStationTabs={true}
+              onBackToMap={handleBackToMap}
+              onComplete={handleBackToMap}
             />
           )}
           {routing.zone === 'boss' && (
@@ -429,12 +437,15 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               forcedStation={routing.station}
               hideStationTabs={true}
               onBackToMap={handleBackToMap}
+              onComplete={handleBackToMap}
             />
           )}
           {routing.zone === 'info_exchange' && (
             <InfoExchangeZone
               data={safeData}
               weekNumber={weekId}
+              onBackToMap={handleBackToMap}
+              onComplete={handleBackToMap}
             />
           )}
         </TaskErrorBoundary>

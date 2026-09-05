@@ -637,9 +637,14 @@ const useUserStore = create(
                   }
                 }
                 // 2. Push any local completed quests up to cloud if missing
-                const weekQuests = dailyStore.completedQuests[weekId] || {};
+                const weekQuests = dailyStore.completedQuests[`w${weekId}`] || dailyStore.completedQuests[weekId] || {};
                 for (const [qId, isDone] of Object.entries(weekQuests)) {
                   if (isDone && !cloudData[qId]) {
+                    get().updateLocalProgress(weekId, qId, {
+                      isCompleted: true,
+                      score: 100,
+                      data: { completedFromDaily: true }
+                    });
                     progressAPI.saveProgress({
                       weekId,
                       stationId: qId,

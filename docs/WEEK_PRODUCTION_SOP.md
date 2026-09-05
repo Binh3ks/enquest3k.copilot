@@ -40,7 +40,11 @@ Every week created for EngQuest3K (from Week 01 to Week 156) must adhere strictl
 9. **Action Lab 3-Scenario Depth Standard**:
    - The Action Lab must feature 3 distinct interactive scenarios/diagrams (`stages: [Stage 1, Stage 2, Stage 3]`) covering physical causes, materials comparison, and safety/first aid procedures. Never ship a single-image trivial lab.
 10. **Canonical Audio Fallback Hierarchy Invariant**:
-   - Pre-generated Static MP3 (in `public/audio/week{N}/` & Cloudflare R2 CDN) $\rightarrow$ Client IndexedDB Cache (`TTSCache.get`) $\rightarrow$ Google Cloud TTS Direct (only when uncached or live dynamic) $\rightarrow$ Browser TTS fallback (only on fatal error). All components must supply valid `audioUrl` parameters.
+    - Pre-generated Static MP3 (in `public/audio/week{N}/` & Cloudflare R2 CDN) $\rightarrow$ Client IndexedDB Cache (`TTSCache.get`) $\rightarrow$ Google Cloud TTS Direct (only when uncached or live dynamic) $\rightarrow$ Browser TTS fallback (only on fatal error). All components must supply valid `audioUrl` parameters.
+11. **Dual-Store Universal Progress Persistence & Return-to-Map Navigation Invariant (2026-09-05)**:
+    - All 15 Quests must save completion to both `useDailyQuestStore` (`completedQuests['w' + weekId][questId]`) and `useUserStore` (`progressCache[weekId][stationId]` + Supabase cloud backup).
+    - `useDailyQuestStore.completeQuest` is the single canonical entry point with automatic alias mapping (`science_lab` $\leftrightarrow$ `action_lab`, `story_writer` $\leftrightarrow$ `story_writing`, `broadcast_studio` $\leftrightarrow$ `video_challenge`, `gear4_clil` $\leftrightarrow$ `clil`).
+    - Every Quest component must accept `onBackToMap` / `onComplete` and provide a clean, celebratory return path to the Quest Map (`/week/{weekId}/hub/1`) without getting trapped.
 
 ---
 
@@ -309,3 +313,40 @@ node scripts/gate18_feature_compliance.mjs <weekNumber>
 **Enforcement timeline:**
 - **W33–W48**: Warnings only (transition period, gate exits 0)
 - **W49+**: Strict enforcement (gate exits 1 on missing data)
+
+---
+
+## 11. Universal Progress Persistence & Return-to-Map Navigation Standards (W01–W156)
+
+### 11.1 The Dual-Store Architecture
+EngQuest3K uses two synchronized state stores for user progress:
+1. **`useDailyQuestStore` (`src/stores/useDailyQuestStore.js`)**:
+   - Manages Day 1–5 unlock progression, 15 Quests completion matrix (`completedQuests['w' + weekId][questId]`), and XP/streak gamification.
+   - Authoritative dispatcher: `completeQuest(weekId, questId, options)`.
+   - Built-in `QUEST_ALIAS_MAP` automatically harmonizes technical station IDs and quest names:
+     - `science_lab` $\leftrightarrow$ `action_lab`
+     - `story_writer` $\leftrightarrow$ `story_writing`
+     - `broadcast_studio` $\leftrightarrow$ `video_challenge`
+     - `gear4_clil` $\leftrightarrow$ `clil`
+     - `science_report` $\leftrightarrow$ `discovery_report`
+     - `word_blitz` $\leftrightarrow$ `speed_match`
+     - `sentence_smash` $\leftrightarrow$ `grammar_duel`
+     - `math_quest` $\leftrightarrow$ `bar_model`
+2. **`useUserStore` (`src/stores/useUserStore.js`)**:
+   - Manages user profile, local progress cache (`progressCache[weekId][stationId]`), and Supabase cloud persistence (`syncProgressToServer`).
+   - Auto-updated by `useDailyQuestStore.completeQuest` on every quest completion.
+3. **`useStationProgress` Hook (`src/hooks/useStationProgress.js`)**:
+   - Provides station-level state (`saveProgress`, `isCompleted`, `score`).
+   - Automatically synchronizes with `useDailyQuestStore.completeQuest` whenever `saveProgress(partialData, true, score)` is invoked.
+
+### 11.2 15-Quest Completion & Navigation Checklist
+Every component representing one of the 15 Quests MUST implement the following UX pattern:
+1. **Prop Acceptance**: Accept `onBackToMap` and `onComplete` passed down from `TaskScreen.jsx` and Zone containers.
+2. **Completion Recognition**: Read both stores on mount (`useDailyQuestStore.isQuestCompleted` or `useStationProgress.isCompleted`). If already completed:
+   - Display a prominent `✓ Completed` badge in the header or hero card.
+   - Allow the student to replay/review freely without losing completion state.
+3. **Finish Action**: Upon completing the quest activity:
+   - Call `useDailyQuestStore.getState().completeQuest(weekId, questId, { score })` or `saveProgress(..., true, score)`.
+   - Provide an explicit, prominent button: e.g. `✓ Return to Map (+50 XP)` or `✓ Finish Quest & Return to Map`.
+   - Trigger `onBackToMap()` or `onComplete()` to navigate cleanly back to `/week/${weekId}/hub/1`. Never leave the student trapped on a static screen.
+

@@ -8,6 +8,7 @@ import GrammarHintButton from '../../components/common/GrammarHintButton';
 import MicFallbackInput from '../../components/common/MicFallbackInput';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
+import { useStationProgress } from '../../hooks/useStationProgress';
 import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
 
 
@@ -15,9 +16,12 @@ import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificat
  * InfoExchangeZone — Authentic Cambridge A2 Flyers Speaking Part 2
  * Fully responsive: Mobile stacked layout (375px), Tablet (1024px), Laptop (1440px).
  */
-export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
+export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackToMap }) {
   const routeParams = useParams();
   const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;
+
+  const wasAlreadyCompleted = useDailyQuestStore((s) => s.isQuestCompleted(activeWeek, 'info_exchange'));
+  const { savedData, saveProgress } = useStationProgress(activeWeek, 'info_exchange');
 
   const [phase, setPhase] = useState('table_b'); // 'table_b' (Card 1: Answer Examiner) -> 'table_a' (Card 2: Ask Examiner) -> 'complete'
   
@@ -185,14 +189,9 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
       setShields(2);
       setPhase('complete');
       if (activeWeek) {
-        useDailyQuestStore.getState().completeQuest(activeWeek, 'info_exchange');
-        emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
-          weekNumber: activeWeek,
-          taskId: 'info_exchange',
-          timestamp: new Date().toISOString()
-        });
+        useDailyQuestStore.getState().completeQuest(activeWeek, 'info_exchange', { score: 100 });
+        saveProgress({ phase: 'complete', shields: 2 }, true, 100);
       }
-      if (onComplete) onComplete(100, '');
     }
   };
 
@@ -326,13 +325,16 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
           type="button"
           onClick={() => {
             if (activeWeek) {
-              useDailyQuestStore.getState().completeQuest(activeWeek, 'info_exchange');
+              useDailyQuestStore.getState().completeQuest(activeWeek, 'info_exchange', { score: 100 });
+              saveProgress({ phase: 'complete', shields: 2 }, true, 100);
             }
-            if (onComplete) onComplete(100, '');
+            if (onBackToMap) onBackToMap();
+            else if (onComplete) onComplete(100, '');
           }}
-          className="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-black text-base rounded-2xl shadow-xl shadow-purple-500/30 transition active:scale-95"
+          className="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-black text-base rounded-2xl shadow-xl shadow-purple-500/30 transition active:scale-95 flex items-center gap-2 mx-auto"
         >
-          ✓ Finish Quest (+50 XP)
+          <CheckCircle2 size={20} />
+          <span>✓ Finish Quest & Return to Map (+50 XP)</span>
         </button>
       </div>
     );
@@ -345,10 +347,15 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
         <div className="flex items-center gap-3 w-full sm:w-auto">
           <LexioMascot size={36} mood="happy" />
           <div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="px-2.5 py-0.5 bg-purple-100 text-purple-800 font-black text-[10px] uppercase tracking-wider rounded-md">
                 Speaking Practice
               </span>
+              {wasAlreadyCompleted && (
+                <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-black text-[10px] rounded-md flex items-center gap-1">
+                  <CheckCircle2 size={11} className="text-emerald-700" /> Done
+                </span>
+              )}
               <span className="text-xs font-bold text-slate-500">
                 {phase === 'table_b' ? `Question ${fieldIdxB + 1} / ${fieldsB.length}` : `Cue ${cueIdxA + 1} / ${cuesA.length}`}
               </span>

@@ -9,7 +9,7 @@ import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
 
-export default function BattleArenaZone({ data, weekNumber, forcedStation = null, hideStationTabs = false }) {
+export default function BattleArenaZone({ data, weekNumber, forcedStation = null, hideStationTabs = false, onBackToMap, onComplete }) {
   const [searchParams] = useSearchParams();
   const routeParams = useParams();
   const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;

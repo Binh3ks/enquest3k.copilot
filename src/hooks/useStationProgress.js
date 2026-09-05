@@ -25,6 +25,7 @@
 
 import { useEffect, useCallback, useRef, useMemo } from 'react';
 import { useUserStore } from '../stores/useUserStore';
+import useDailyQuestStore from '../stores/useDailyQuestStore';
 
 // Debounce utility (inline to avoid lodash dependency)
 function debounce(func, wait) {
@@ -190,6 +191,16 @@ export const useStationProgress = (weekId, stationId, learningMode = null) => {
 
     // C. Queue server sync (debounced) - use storageKey as stationId
     debouncedSyncRef.current(weekId, storageKey, newData, completed, score);
+
+    // D. Dual-Store Invariant: sync to useDailyQuestStore if completed
+    if (completed) {
+      try {
+        const dailyStore = useDailyQuestStore?.getState?.();
+        if (dailyStore && !dailyStore.isQuestCompleted(weekId, storageKey)) {
+          dailyStore.completeQuest(weekId, storageKey, { score, data: newData });
+        }
+      } catch (_) {}
+    }
   }, [weekId, storageKey, savedData, isCompleted, savedScore, updateLocalProgress]);
 
   // Flush pending save immediately on unmount (prevents loss when user switches tabs quickly)

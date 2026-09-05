@@ -21,7 +21,9 @@ export default function KnowledgeLabZone({
   data,
   weekNumber,
   forcedStation = null,
-  hideStationTabs = false
+  hideStationTabs = false,
+  onBackToMap,
+  onComplete
 }) {
   const [searchParams] = useSearchParams();
   const routeParams = useParams();
@@ -171,7 +173,11 @@ export default function KnowledgeLabZone({
           <ScienceDragDropLab
             scienceData={actionLabData}
             weekNumber={activeWeek}
-            onComplete={(pts) => handleQuestComplete('science_lab', pts > 0 ? 50 : 0)}
+            onComplete={(pts) => {
+              handleQuestComplete('science_lab', pts > 0 ? 50 : 0);
+              if (onComplete) onComplete(pts);
+            }}
+            onBackToMap={onBackToMap}
           />
         )}
 
@@ -179,7 +185,11 @@ export default function KnowledgeLabZone({
           <ScienceReportCreator
             reportTopic={reportTopic}
             weekNumber={activeWeek}
-            onComplete={(pts) => handleQuestComplete('science_report', pts > 0 ? 50 : 0)}
+            onComplete={(pts) => {
+              handleQuestComplete('science_report', pts > 0 ? 50 : 0);
+              if (onComplete) onComplete(pts);
+            }}
+            onBackToMap={onBackToMap}
           />
         )}
       </div>

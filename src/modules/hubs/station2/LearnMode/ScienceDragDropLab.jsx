@@ -11,6 +11,7 @@ import { useDraggable, useDroppable } from '@dnd-kit/core';
 import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, Trophy, HelpCircle, Lightbulb, Timer, Flame, Play, Pause, RotateCcw, MousePointerClick } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 import { useUserStore } from '../../../../stores/useUserStore';
+import useDailyQuestStore from '../../../../stores/useDailyQuestStore';
 import { playButtonClick, playCorrectSound, playWrongSound, playVictoryFanfare } from '../../../../utils/soundEffects';
 
 function DraggableLabel({ id, text, isPlaced, disabled, isSelected, onClick }) {
@@ -85,7 +86,8 @@ const DEFAULT_SCIENCE_DATA = {
   explanation: "Interactive action & CLIL exploration."
 };
 
-export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onComplete }) {
+export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onComplete, onBackToMap }) {
+  const wasAlreadyCompleted = useDailyQuestStore((s) => s.isQuestCompleted(weekNumber, 'science_lab'));
   const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'paused' | 'gameover'
   const [currentStageIdx, setCurrentStageIdx] = useState(0);
   const [completedStages, setCompletedStages] = useState({}); // { [stageIdx]: true }
@@ -194,7 +196,12 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
       fireCelebrationConfetti('ScienceLab_Victory');
     }
 
-    if (onComplete) onComplete(score);
+    useDailyQuestStore.getState().completeQuest(weekNumber, 'science_lab', {
+      score: score > 0 ? score : 100,
+      data: { finalScore: score, completedStages, completedAt: new Date().toISOString() }
+    });
+
+    if (onComplete) onComplete(score > 0 ? score : 50);
   };
 
   const handleNextStage = () => {
@@ -345,14 +352,31 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             <h3 className="text-base sm:text-lg font-black text-slate-900 leading-tight">
               READY FOR<br />ACTION LAB?
             </h3>
+            {wasAlreadyCompleted && (
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-100 text-emerald-800 border border-emerald-300 rounded-full text-xs font-black">
+                <CheckCircle2 size={13} className="text-emerald-700" />
+                <span>✓ Quest Completed — Practice / Replay Anytime</span>
+              </div>
+            )}
           </div>
-          <button
-            type="button"
-            onClick={handleStartGame}
-            className="px-6 py-2.5 sm:py-3 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 text-white rounded-xl font-black text-sm shadow-lg inline-flex items-center gap-1.5 transition hover:scale-105 active:scale-95"
-          >
-            <Play size={18} fill="currentColor" /> ▶ START
-          </button>
+          <div className="flex items-center justify-center gap-2 flex-wrap pt-1">
+            <button
+              type="button"
+              onClick={handleStartGame}
+              className="px-6 py-2.5 sm:py-3 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 text-white rounded-xl font-black text-sm shadow-lg inline-flex items-center gap-1.5 transition hover:scale-105 active:scale-95"
+            >
+              <Play size={18} fill="currentColor" /> {wasAlreadyCompleted ? '▶ REPLAY LAB' : '▶ START'}
+            </button>
+            {wasAlreadyCompleted && onBackToMap && (
+              <button
+                type="button"
+                onClick={onBackToMap}
+                className="px-5 py-2.5 sm:py-3 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-xl font-black text-sm shadow-sm inline-flex items-center gap-1.5 transition hover:scale-105"
+              >
+                ← Back to Map
+              </button>
+            )}
+          </div>
         </div>
       )}
 
@@ -386,13 +410,25 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             <div>Score: <span className="text-xl font-black text-teal-600">{score} PTS</span></div>
             <div>XP Earned: <span className={`text-xl font-black ${xpEarned > 0 ? 'text-emerald-600' : 'text-slate-400'}`}>+{xpEarned} XP</span></div>
           </div>
-          <button
-            type="button"
-            onClick={handleStartGame}
-            className="px-6 py-3.5 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 text-white rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
-          >
-            <RotateCcw size={18} /> Play Action Lab Again
-          </button>
+          <div className="flex items-center justify-center gap-3 flex-wrap pt-2">
+            <button
+              type="button"
+              onClick={() => {
+                if (onBackToMap) onBackToMap();
+                else if (onComplete) onComplete(score > 0 ? score : 50);
+              }}
+              className="px-6 py-3.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105 active:scale-95"
+            >
+              <CheckCircle2 size={18} /> ✓ Return to Map (+50 XP)
+            </button>
+            <button
+              type="button"
+              onClick={handleStartGame}
+              className="px-5 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-2xl font-black text-sm shadow-sm inline-flex items-center gap-2 transition hover:scale-105"
+            >
+              <RotateCcw size={18} /> Play Action Lab Again
+            </button>
+          </div>
         </div>
       )}
 

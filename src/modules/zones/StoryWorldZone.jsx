@@ -19,7 +19,7 @@ import { useUserStore } from '../../stores/useUserStore';
 import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
 import VoiceShadowDictation from '../../components/common/VoiceShadowDictation';
 
-export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hideGearTabs = false }) {
+export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hideGearTabs = false, onBackToMap, onComplete }) {
   const navigate = useNavigate();
   const routeParams = useParams();
   const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;

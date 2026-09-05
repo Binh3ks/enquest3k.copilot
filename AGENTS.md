@@ -172,6 +172,16 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
    - **TẦNG 1 (Local Client / IndexedDB Cache)**: Kiểm tra `TTSCache.get()` với key `(cleanedText, station, voice, audioUrl)` (0ms latency, không tốn API call).
    - **TẦNG 2 (Google Cloud TTS Direct Synthesis)**: CHỈ được kích hoạt khi `audioUrl` vắng mặt hoặc asset chưa có trong cache (Dynamic user content / live tutoring). Sau khi sinh thành công, BẮT BUỘC lưu ngay vào IndexedDB `TTSCache.set()`.
    - **TẦNG 3 (Browser SpeechSynthesis Fallback)**: CHỈ kích hoạt khi mất mạng hoàn toàn hoặc cả Google TTS API và Worker đều fail.
+9. **Dual-Store Universal Progress Persistence & Navigation Invariant (W01–W156) — 2026-09-05**:
+   - **Cơ chế Lưu trữ Kép Đồng Bộ Tuyệt Đối (Dual-Store Synchronous Bridge)**:
+     - Hệ thống tiến độ EngQuest3K vận hành đồng thời 2 kho lưu trữ: `useDailyQuestStore` (phục vụ Daily Quest Map 5 Zones / 15 Quests, key dạng `completedQuests['w' + weekId][questId]`) và `useUserStore` (phục vụ Global Profile, Progress Cache `progressCache[weekId][stationId]`, và đồng bộ Supabase Cloud DB).
+     - **Dispatcher Duy Nhất**: `useDailyQuestStore.getState().completeQuest(weekId, questId, options)` là đầu mối ghi nhận completion chuẩn duy nhất. Hàm này TỰ ĐỘNG giải mã bí danh (Alias Resolution qua `QUEST_ALIAS_MAP`: `science_lab` $\leftrightarrow$ `action_lab`, `story_writer` $\leftrightarrow$ `story_writing`, `broadcast_studio` $\leftrightarrow$ `video_challenge`, `gear4_clil` $\leftrightarrow$ `clil`), ghi đồng thời vào `completedQuests`, cập nhật `useUserStore.getState().updateLocalProgress` và kích hoạt `syncProgressToServer` với payload cloud.
+     - **Hook `useStationProgress` Tích Hợp Sâu**: Khi bất kỳ màn hình nào gọi `saveProgress(partialData, true, score)`, hook tự động đồng bộ sang `useDailyQuestStore.completeQuest` nếu quest chưa hoàn thành.
+   - **Chuẩn Mực Điều Hướng Quay Lại Bản Đồ (Return-to-Map Navigation Contract)**:
+     - 100% các màn hình Quest / Station (đặc biệt là Action Lab, Info Exchange, Discovery Report, Speed Match...) BẮT BUỘC nhận prop `onBackToMap` và `onComplete` từ `TaskScreen.jsx` và Zone container.
+     - Khi học sinh hoàn thành màn hình hoặc bấm nút chiến thắng (e.g. `✓ Return to Map (+50 XP)` / `✓ Finish Quest & Return to Map (+50 XP)`), component PHẢI lưu trạng thái vào Dual-Store TRƯỚC, sau đó kích hoạt callback `onBackToMap()` / `onComplete()` để điều hướng mượt mà về `/week/${weekId}/hub/1` mà không bị gián đoạn hay kẹt màn hình.
+     - Khi vào lại một quest đã hoàn thành trước đó, màn hình BẮT BUỘC hiển thị huy hiệu `✓ Đã Hoàn Thành` (`CompletedBadge` / `DoneBadge`) và cho phép học sinh chơi lại (Replay) nếu muốn mà không mất tiến độ đã lưu.
+
 
 ## 🎓 Master Curriculum CEFR Staging & Vocabulary Standard (W01–W156) — 2026-08-22
 **BẮT BUỘC áp dụng cho toàn bộ các tuần biên soạn và kiểm thử:**
