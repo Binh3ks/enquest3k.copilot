@@ -285,7 +285,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
     : (typeof currentDrill?.template === 'string' ? currentDrill.template : 'Build a correct sentence');
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-3.5 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border-2 border-indigo-200 shadow-xl space-y-3 text-slate-900 font-sans">
+    <div className="w-full max-w-7xl mx-auto p-4 sm:p-6 lg:p-7 bg-white rounded-2xl sm:rounded-3xl border-2 border-indigo-200 shadow-xl space-y-4 text-slate-900 font-sans">
       {/* Header Info */}
       <div className="flex items-center justify-between pb-2.5 border-b border-slate-200 flex-wrap gap-2">
         <div className="flex items-center gap-2 min-w-0">

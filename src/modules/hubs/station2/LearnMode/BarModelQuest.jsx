@@ -212,7 +212,7 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
   const xpEarned = score > 0 ? 40 : 0;
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-3.5 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border-2 border-amber-300 shadow-xl space-y-3 text-slate-900 font-sans">
+    <div className="w-full max-w-7xl mx-auto p-4 sm:p-6 lg:p-7 bg-white rounded-2xl sm:rounded-3xl border-2 border-amber-300 shadow-xl space-y-4 text-slate-900 font-sans">
       {/* Header Dashboard */}
       <div className="flex items-center justify-between flex-wrap gap-2 border-b border-amber-100 pb-2.5">
         <div className="flex items-center gap-2 min-w-0">

@@ -177,47 +177,47 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
   }, [selectedEn, selectedVi, gameState]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-3.5 sm:p-5 bg-slate-950 text-white rounded-2xl sm:rounded-3xl border-2 border-amber-500/40 shadow-2xl space-y-3 font-sans">
+    <div className="w-full max-w-7xl mx-auto p-4 sm:p-6 lg:p-7 bg-slate-950 text-white rounded-2xl sm:rounded-3xl border-2 border-amber-500/40 shadow-2xl space-y-4 font-sans">
       {/* Top Arcade Status Bar */}
-      <div className="flex items-center justify-between flex-wrap gap-2 border-b border-slate-800 pb-2.5">
-        <div className="flex items-center gap-2 min-w-0">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-base shadow-sm shrink-0">
+      <div className="flex items-center justify-between flex-wrap gap-2 border-b border-slate-800 pb-3">
+        <div className="flex items-center gap-2.5 min-w-0">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-sm shrink-0">
             ⚡
           </div>
           <div className="min-w-0">
-            <span className="text-[10px] font-black uppercase text-amber-400 block truncate">
+            <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-amber-400 block truncate">
               Round {currentRoundIdx + 1}/{rounds.length} • {currentRound.name}
             </span>
           </div>
         </div>
 
         {/* Dashboard Stats */}
-        <div className="flex items-center gap-1.5 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap">
           {gameState === 'playing' && (
             <button
               type="button"
               onClick={handleTogglePause}
-              className="p-1.5 bg-slate-900 hover:bg-slate-800 text-slate-300 rounded-lg border border-slate-800 transition"
+              className="p-2 bg-slate-900 hover:bg-slate-800 text-slate-300 rounded-xl border border-slate-800 transition"
               title="Pause Timer"
             >
-              <Pause size={14} />
+              <Pause size={15} />
             </button>
           )}
 
           {streak > 1 && (
-            <div className="px-2 py-0.5 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full text-white font-black text-[10px] flex items-center gap-1 shadow-sm">
-              <Flame size={12} /> {streak}x
+            <div className="px-2.5 py-1 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full text-white font-black text-xs flex items-center gap-1 shadow-sm">
+              <Flame size={14} /> {streak}x
             </div>
           )}
 
-          <div className="px-2.5 py-1 bg-slate-900 rounded-lg border border-slate-800 flex items-center gap-1">
-            <Timer className={timeLeft <= 10 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-amber-400'} size={13} />
-            <span className={`text-xs font-black font-mono ${timeLeft <= 10 ? 'text-rose-400' : 'text-amber-300'}`}>
+          <div className="px-3 py-1.5 bg-slate-900 rounded-xl border border-slate-800 flex items-center gap-1.5">
+            <Timer className={timeLeft <= 10 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-amber-400'} size={15} />
+            <span className={`text-xs sm:text-sm font-black font-mono ${timeLeft <= 10 ? 'text-rose-400' : 'text-amber-300'}`}>
               {timeLeft}s
             </span>
           </div>
 
-          <div className="px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded-lg border border-amber-400/40 font-black text-xs font-mono">
+          <div className="px-3 py-1.5 bg-amber-500/20 text-amber-300 rounded-xl border border-amber-400/40 font-black text-xs sm:text-sm font-mono">
             {score} PTS
           </div>
         </div>
@@ -225,7 +225,7 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
 
       {/* Stepper Progress Bar */}
       {gameState === 'playing' && (
-        <div className="w-full h-1.5 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+        <div className="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
           <div
             className="h-full bg-gradient-to-r from-amber-500 via-orange-500 to-emerald-500 transition-all duration-300 rounded-full"
             style={{ width: `${((currentRoundIdx + (matchedIds.length / activePairs.length)) / rounds.length) * 100}%` }}
@@ -235,21 +235,21 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
 
       {/* Start Screen (Idle) */}
       {gameState === 'idle' && (
-        <div className="p-5 sm:p-6 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-slate-900 border-2 border-amber-400 rounded-2xl text-center space-y-3 shadow-inner">
-          <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-2xl mx-auto shadow-md">
+        <div className="p-6 sm:p-8 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-slate-900 border-2 border-amber-400 rounded-2xl text-center space-y-4 shadow-inner">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-3xl mx-auto shadow-md">
             ⚡
           </div>
           <div className="space-y-1">
-            <h3 className="text-base sm:text-lg font-black text-amber-300 leading-tight">
+            <h3 className="text-lg sm:text-2xl font-black text-amber-300 leading-tight">
               READY FOR<br />WORD BLITZ?
             </h3>
           </div>
           <button
             type="button"
             onClick={handleStartGame}
-            className="px-6 py-2.5 sm:py-3 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-xl font-black text-sm shadow-lg inline-flex items-center gap-1.5 transition hover:scale-105 active:scale-95"
+            className="px-8 py-3 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-xl font-black text-base shadow-lg inline-flex items-center gap-2 transition hover:scale-105 active:scale-95"
           >
-            <Play size={18} fill="currentColor" /> ▶ START
+            <Play size={20} fill="currentColor" /> ▶ START
           </button>
         </div>
       )}
@@ -322,12 +322,12 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
 
       {/* Active Match Screen: 3-4 Compact Pairs */}
       {gameState === 'playing' && (
-        <div className="grid grid-cols-2 gap-2 sm:gap-3 pt-1">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 pt-1">
           {/* English Column */}
-          <div className="space-y-1.5 sm:space-y-2">
-            <div className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-amber-400 px-1 flex items-center justify-between">
+          <div className="space-y-2 sm:space-y-3">
+            <div className="text-xs sm:text-sm font-black uppercase tracking-wider text-amber-400 px-1 flex items-center justify-between">
               <span>ENGLISH TARGET</span>
-              <span className="text-[9px] text-slate-400 hidden xs:inline">Select English</span>
+              <span className="text-[10px] sm:text-xs text-slate-400 hidden xs:inline">Select English</span>
             </div>
             {shuffledEn.map((item) => {
               const isMatched = matchedIds.includes(item.id);
@@ -336,7 +336,7 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
                 return (
                   <div
                     key={item.id}
-                    className="w-full p-2 sm:p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 font-black text-[11px] sm:text-sm flex items-center justify-between opacity-40"
+                    className="w-full p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 font-black text-xs sm:text-base lg:text-lg flex items-center justify-between opacity-40"
                   >
                     <span className="truncate">✓ {item.en}</span>
                   </div>
@@ -348,24 +348,24 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
                   key={item.id}
                   type="button"
                   onClick={() => setSelectedEn(item)}
-                  className={`w-full p-2 sm:p-3 rounded-xl font-black text-[11px] sm:text-sm transition-all border text-left flex items-center justify-between shadow-xs active:scale-95 ${
+                  className={`w-full p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl font-black text-xs sm:text-base lg:text-lg transition-all border text-left flex items-center justify-between shadow-xs active:scale-95 cursor-pointer ${
                     isSelected
                       ? 'bg-amber-500 text-slate-950 border-amber-300 ring-2 ring-amber-400/50 scale-[1.01] shadow-lg'
                       : 'bg-slate-900 hover:bg-slate-800 text-white border-slate-700 hover:border-amber-400'
                   }`}
                 >
                   <span className="truncate">{item.en}</span>
-                  {isSelected && <Sparkles size={13} className="text-slate-950 animate-spin shrink-0" />}
+                  {isSelected && <Sparkles size={16} className="text-slate-950 animate-spin shrink-0" />}
                 </button>
               );
             })}
           </div>
 
           {/* Meaning / Definition Column */}
-          <div className="space-y-1.5 sm:space-y-2">
-            <div className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-cyan-400 px-1 flex items-center justify-between">
+          <div className="space-y-2 sm:space-y-3">
+            <div className="text-xs sm:text-sm font-black uppercase tracking-wider text-cyan-400 px-1 flex items-center justify-between">
               <span>MEANING / DEFINITION</span>
-              <span className="text-[9px] text-slate-400 hidden xs:inline">Match Meaning</span>
+              <span className="text-[10px] sm:text-xs text-slate-400 hidden xs:inline">Match Meaning</span>
             </div>
             {shuffledVi.map((item) => {
               const isMatched = matchedIds.includes(item.id);
@@ -374,7 +374,7 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
                 return (
                   <div
                     key={item.id}
-                    className="w-full p-2 sm:p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 font-black text-[11px] sm:text-sm flex items-center justify-between opacity-40"
+                    className="w-full p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 font-black text-xs sm:text-base lg:text-lg flex items-center justify-between opacity-40"
                   >
                     <span className="truncate">✓ {item.vi}</span>
                   </div>
@@ -386,14 +386,14 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
                   key={item.id}
                   type="button"
                   onClick={() => setSelectedVi(item)}
-                  className={`w-full p-2 sm:p-3 rounded-xl font-black text-[11px] sm:text-sm transition-all border text-left flex items-center justify-between shadow-xs active:scale-95 ${
+                  className={`w-full p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl font-black text-xs sm:text-base lg:text-lg transition-all border text-left flex items-center justify-between shadow-xs active:scale-95 cursor-pointer ${
                     isSelected
                       ? 'bg-cyan-500 text-slate-950 border-cyan-300 ring-2 ring-cyan-400/50 scale-[1.01] shadow-lg'
                       : 'bg-slate-900 hover:bg-slate-800 text-slate-100 border-slate-700 hover:border-cyan-400'
                   }`}
                 >
                   <span className="truncate">{item.vi}</span>
-                  {isSelected && <CheckCircle2 size={13} className="text-slate-950 shrink-0" />}
+                  {isSelected && <CheckCircle2 size={16} className="text-slate-950 shrink-0" />}
                 </button>
               );
             })}

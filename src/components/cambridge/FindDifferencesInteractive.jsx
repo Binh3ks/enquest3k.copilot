@@ -207,11 +207,11 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
       {/* Side-by-Side Dual Picture Scenes with Interactive SVG Circles */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {/* Picture A Viewport */}
-        <div ref={containerARef} className="relative aspect-[1264/848] w-full bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-slate-800">
+        <div ref={containerARef} className="relative aspect-[1264/848] w-full bg-slate-100 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-slate-200">
           <img
             src={differencesData.picA.image_url}
             alt={differencesData.picA.title}
-            className="w-full h-full object-contain pointer-events-none"
+            className="w-full h-full object-cover pointer-events-none"
           />
           <div className="absolute top-2 sm:top-3 left-2 sm:left-3 px-2.5 sm:px-3 py-1 bg-slate-950/80 text-white rounded-xl text-[11px] sm:text-xs font-black backdrop-blur-md">
             Picture A
@@ -243,11 +243,11 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
         </div>
 
         {/* Picture B Viewport */}
-        <div ref={containerBRef} className="relative aspect-[1264/848] w-full bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-slate-800">
+        <div ref={containerBRef} className="relative aspect-[1264/848] w-full bg-slate-100 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-slate-200">
           <img
             src={differencesData.picB.image_url}
             alt={differencesData.picB.title}
-            className="w-full h-full object-contain pointer-events-none"
+            className="w-full h-full object-cover pointer-events-none"
           />
           <div className="absolute top-2 sm:top-3 left-2 sm:left-3 px-2.5 sm:px-3 py-1 bg-rose-600 text-white rounded-xl text-[11px] sm:text-xs font-black backdrop-blur-md">
             Picture B

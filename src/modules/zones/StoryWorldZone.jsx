@@ -1454,234 +1454,238 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                     </div>
                   </div>
 
-                  {/* Main Story Card */}
-                  <div className="bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 border border-purple-200 shadow-md space-y-3.5 sm:space-y-5 text-center">
-                    {/* Scene Visual Anchor Thumbnail + Nova Question Bubble */}
-                    <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-purple-50 border border-purple-200 rounded-xl sm:rounded-2xl text-left">
-                      {scenes[retellStepIdx] && (
-                        <div className="w-full sm:w-44 md:w-52 h-28 sm:h-28 md:h-32 rounded-xl overflow-hidden shadow-sm shrink-0 border border-purple-300 bg-slate-100">
+                  {/* Main Story Card — 2-Column Responsive Layout (Large Scene on Left, Recording on Right) */}
+                  <div className="bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 lg:p-6 border border-purple-200 shadow-md">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-5 lg:gap-6">
+                      {/* Left Column (lg:col-span-6): Large Scene Visual Anchor + Nova Question Bubble */}
+                      <div className="lg:col-span-6 space-y-2.5 sm:space-y-3 flex flex-col">
+                        <div className="relative w-full h-48 sm:h-64 lg:h-[300px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 border border-purple-200 shadow-inner">
                           <img
                             src={scenes[retellStepIdx]?.image_url || `/images/week${weekNum}/webtoon_scene_${retellStepIdx + 1}.png`}
                             alt={`Scene ${retellStepIdx + 1}`}
                             className="w-full h-full object-cover"
                             onError={(e) => { e.target.onerror = null; e.target.src = `/images/week${weekNum}/webtoon_scene_1.png`; }}
                           />
-                        </div>
-                      )}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2">
-                          <p className="text-sm sm:text-base font-black text-slate-900 leading-snug">
-                            "{currentQ.question_en}"
-                          </p>
+                          <div className="absolute top-2 left-2 px-2.5 py-1 bg-purple-900/90 text-white rounded-lg text-xs font-black uppercase tracking-wider shadow">
+                            Scene {retellStepIdx + 1}/{RETELL_QUESTIONS.length}
+                          </div>
                           <button
                             type="button"
                             onClick={() => speakText(currentQ.question_en)}
-                            className="p-1 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-lg transition active:scale-95 shadow-2xs shrink-0"
-                            title="Listen"
+                            className="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-950/85 hover:bg-slate-950 text-white rounded-lg text-xs font-bold shadow backdrop-blur-md flex items-center gap-1.5 transition active:scale-95 border border-white/20 cursor-pointer"
+                            title="Listen to question"
                           >
-                            <Volume2 size={14} />
+                            <Volume2 size={13} className="text-amber-400" /> <span>Listen</span>
                           </button>
                         </div>
-                      </div>
-                    </div>
 
-                    {/* Scaffolded Input Chips */}
-                    <div className="pt-0.5">
-                      <div className="flex flex-wrap items-center justify-center gap-1.5">
-                        {currentQ.chips.map((chip, idx) => (
-                          <button
-                            key={idx}
-                            type="button"
-                            onClick={() => speakText(chip)}
-                            className="px-2.5 py-1 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 rounded-lg text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs"
-                          >
-                            <Volume2 size={11} className="text-indigo-500" />
-                            {chip}
-                          </button>
-                        ))}
+                        {/* Nova Question Bubble */}
+                        <div className="p-3 bg-purple-50/90 rounded-xl border border-purple-200 text-left flex items-start gap-2.5">
+                          <span className="text-xl shrink-0">🤖</span>
+                          <div className="flex-1 min-w-0">
+                            <span className="text-[10px] font-black uppercase text-purple-700 tracking-wider block">Nova's Question:</span>
+                            <p className="text-xs sm:text-sm lg:text-base font-black text-purple-950 leading-snug">
+                              "{currentQ.question_en}"
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Hint Scaffolding Section with 10s Timer & Audio Listen Button */}
-                    <div className="space-y-2">
-                      {hintSecondsLeft !== null ? (
-                        <div className="p-4 bg-amber-50 border border-amber-300 rounded-2xl space-y-3 animate-in fade-in">
-                          <div className="flex items-center justify-between flex-wrap gap-2">
-                            <span className="px-2.5 py-0.5 bg-amber-200 text-amber-900 font-black text-[10px] rounded-lg animate-pulse">
-                              ⏳ Hint closes in: {hintSecondsLeft}s
-                            </span>
-                            <div className="flex items-center gap-2">
-                              {/* Audio Listen Button inside Hint */}
+                      {/* Right Column (lg:col-span-6): Word Bank, Hints & Mic Recording */}
+                      <div className="lg:col-span-6 space-y-2.5 sm:space-y-3">
+                        {/* Scaffolded Input Chips (Word Bank) */}
+                        <div className="space-y-1 text-left">
+                          <span className="text-[11px] sm:text-xs font-black uppercase text-slate-500 tracking-wider block">
+                            💡 Word Bank (Tap to hear):
+                          </span>
+                          <div className="flex flex-wrap gap-1.5">
+                            {currentQ.chips.map((chip, idx) => (
                               <button
+                                key={idx}
                                 type="button"
-                                onClick={() => speakText(currentQ.sentence)}
-                                className="px-3 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded-lg text-xs font-black flex items-center gap-1 shadow-sm transition active:scale-95"
+                                onClick={() => speakText(chip)}
+                                className="px-2.5 py-1 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 rounded-lg text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs"
                               >
-                                <Volume2 size={13} /> Listen Sentence
+                                <Volume2 size={11} className="text-indigo-500" />
+                                {chip}
                               </button>
-                              <div className="flex items-center gap-1">
-                                {[
-                                  { id: 'full', label: 'Full' },
-                                  { id: 'half', label: 'Half' },
-                                  { id: 'chunks', label: 'Chunks' },
-                                ].map(({ id, label }) => (
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Hint Scaffolding Section with 10s Timer & Audio Listen Button */}
+                        <div>
+                          {hintSecondsLeft !== null ? (
+                            <div className="p-3 bg-amber-50 border border-amber-300 rounded-xl space-y-2 animate-in fade-in">
+                              <div className="flex items-center justify-between flex-wrap gap-1.5">
+                                <span className="px-2 py-0.5 bg-amber-200 text-amber-900 font-black text-[10px] rounded-md animate-pulse">
+                                  ⏳ Hint closes: {hintSecondsLeft}s
+                                </span>
+                                <div className="flex items-center gap-1.5">
                                   <button
-                                    key={id}
                                     type="button"
-                                    onClick={() => setStudyScaffold(id)}
-                                    className={`px-2 py-0.5 rounded text-[10px] font-black transition ${
-                                      studyScaffold === id ? 'bg-amber-700 text-white' : 'bg-white text-amber-900 border border-amber-200'
-                                    }`}
+                                    onClick={() => speakText(currentQ.sentence)}
+                                    className="px-2.5 py-0.5 bg-amber-600 hover:bg-amber-500 text-white rounded-md text-[11px] font-black flex items-center gap-1 shadow-xs transition active:scale-95"
                                   >
-                                    {label}
+                                    <Volume2 size={12} /> Model
                                   </button>
-                                ))}
+                                  <div className="flex items-center gap-1">
+                                    {[
+                                      { id: 'full', label: 'Full' },
+                                      { id: 'half', label: 'Half' },
+                                      { id: 'chunks', label: 'Chunks' },
+                                    ].map(({ id, label }) => (
+                                      <button
+                                        key={id}
+                                        type="button"
+                                        onClick={() => setStudyScaffold(id)}
+                                        className={`px-2 py-0.5 rounded text-[10px] font-black transition ${
+                                          studyScaffold === id ? 'bg-amber-700 text-white' : 'bg-white text-amber-900 border border-amber-200'
+                                        }`}
+                                      >
+                                        {label}
+                                      </button>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="text-xs sm:text-sm font-bold text-slate-800 leading-relaxed text-left">
+                                {studyScaffold === 'full' && currentQ.sentence}
+                                {studyScaffold === 'half' && (() => {
+                                  const w = currentQ.sentence.split(/\s+/);
+                                  const half = Math.ceil(w.length / 2);
+                                  return `${w.slice(0, half).join(' ')} ___ ...`;
+                                })()}
+                                {studyScaffold === 'chunks' && (() => {
+                                  const sentence = currentQ.sentence || '';
+                                  const chips = currentQ.chips || [];
+                                  if (chips.length > 0) {
+                                    const pattern = new RegExp(`(${chips.map(c => c.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')).join('|')})`, 'gi');
+                                    const parts = sentence.split(pattern);
+                                    return (
+                                      <span className="flex flex-wrap items-center gap-1 leading-snug">
+                                        {parts.map((part, idx) => {
+                                          if (!part.trim()) return null;
+                                          const isChip = chips.some(c => c.toLowerCase() === part.toLowerCase());
+                                          return isChip ? (
+                                            <span key={idx} className="px-1.5 py-0.5 bg-indigo-100 text-indigo-950 border border-indigo-300 rounded font-black text-xs">
+                                              [{part}]
+                                            </span>
+                                          ) : (
+                                            <span key={idx} className="text-slate-600 font-bold text-xs">
+                                              {part}
+                                            </span>
+                                          );
+                                        })}
+                                      </span>
+                                    );
+                                  }
+                                  const words = sentence.split(/\s+/);
+                                  const chunksArr = [];
+                                  for (let i = 0; i < words.length; i += 3) {
+                                    chunksArr.push(words.slice(i, i + 3).join(' '));
+                                  }
+                                  return chunksArr.map(c => `[${c}]`).join(' ');
+                                })()}
                               </div>
                             </div>
-                          </div>
-
-                          <div className="text-sm sm:text-base font-bold text-slate-800 leading-relaxed text-left">
-                            {studyScaffold === 'full' && currentQ.sentence}
-                            {studyScaffold === 'half' && (() => {
-                              const w = currentQ.sentence.split(/\s+/);
-                              const half = Math.ceil(w.length / 2);
-                              return `${w.slice(0, half).join(' ')} ___ ...`;
-                            })()}
-                            {studyScaffold === 'chunks' && (() => {
-                              const sentence = currentQ.sentence || '';
-                              const chips = currentQ.chips || [];
-                              if (chips.length > 0) {
-                                const pattern = new RegExp(`(${chips.map(c => c.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')).join('|')})`, 'gi');
-                                const parts = sentence.split(pattern);
-                                return (
-                                  <span className="flex flex-wrap items-center gap-1.5 leading-loose">
-                                    {parts.map((part, idx) => {
-                                      if (!part.trim()) return null;
-                                      const isChip = chips.some(c => c.toLowerCase() === part.toLowerCase());
-                                      return isChip ? (
-                                        <span key={idx} className="px-2 py-0.5 bg-indigo-100 text-indigo-950 border border-indigo-300 rounded-md font-black shadow-2xs">
-                                          [{part}]
-                                        </span>
-                                      ) : (
-                                        <span key={idx} className="px-1 py-0.5 text-slate-600 font-bold">
-                                          {part}
-                                        </span>
-                                      );
-                                    })}
-                                  </span>
-                                );
-                              }
-                              const words = sentence.split(/\s+/);
-                              const chunksArr = [];
-                              for (let i = 0; i < words.length; i += 3) {
-                                chunksArr.push(words.slice(i, i + 3).join(' '));
-                              }
-                              return chunksArr.map(c => `[${c}]`).join(' ');
-                            })()}
-                          </div>
+                          ) : (
+                            <button
+                              type="button"
+                              onClick={() => setHintSecondsLeft(10)}
+                              className="w-full py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 border border-slate-200 shadow-2xs"
+                            >
+                              💡 Show Sentence Hint (10s)
+                            </button>
+                          )}
                         </div>
-                      ) : (
-                        <div className="flex justify-center">
-                          <button
-                            type="button"
-                            onClick={() => setHintSecondsLeft(10)}
-                            className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-black transition flex items-center gap-1.5 border border-slate-200 shadow-sm"
-                          >
-                            💡 Show Sentence Hint (10s)
-                          </button>
+
+                        {/* Central Mic Button */}
+                        <div className="flex flex-col items-center justify-center gap-1.5 py-1">
+                          {!isRecording ? (
+                            <button
+                              type="button"
+                              onClick={startRetellRecording}
+                              className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 hover:from-purple-500 text-white flex flex-col items-center justify-center gap-1 shadow-xl shadow-purple-500/25 transition hover:scale-105 active:scale-95 cursor-pointer"
+                            >
+                              <Mic size={30} className="animate-pulse" />
+                              <span className="text-[9px] font-black uppercase tracking-wider">RECORD</span>
+                            </button>
+                          ) : (
+                            <button
+                              type="button"
+                              onClick={stopRetellRecording}
+                              className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-rose-600 hover:bg-rose-500 text-white flex flex-col items-center justify-center gap-1 shadow-xl shadow-rose-500/30 transition animate-bounce cursor-pointer"
+                            >
+                              <Square size={26} fill="currentColor" />
+                              <span className="text-[9px] font-black uppercase tracking-wider">STOP</span>
+                            </button>
+                          )}
+                          <p className="text-xs font-black text-slate-600">
+                            {isRecording ? '🔴 Recording... Speak your answer!' : 'Tap RECORD to answer Nova'}
+                          </p>
                         </div>
-                      )}
-                    </div>
 
-                    {/* Big Central Mic Button */}
-                    <div className="py-2 space-y-3">
-                      <div className="flex flex-col items-center justify-center gap-2">
-                        {!isRecording ? (
-                          <button
-                            type="button"
-                            onClick={startRetellRecording}
-                            className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 hover:from-purple-500 text-white flex flex-col items-center justify-center gap-1 shadow-2xl shadow-purple-500/30 transition hover:scale-105 active:scale-95"
-                          >
-                            <Mic size={36} className="animate-pulse" />
-                            <span className="text-[10px] font-black uppercase tracking-wider">RECORD</span>
-                          </button>
-                        ) : (
-                          <button
-                            type="button"
-                            onClick={stopRetellRecording}
-                            className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-rose-600 hover:bg-rose-500 text-white flex flex-col items-center justify-center gap-1 shadow-2xl shadow-rose-500/40 transition animate-bounce"
-                          >
-                            <Square size={32} fill="currentColor" />
-                            <span className="text-[10px] font-black uppercase tracking-wider">STOP</span>
-                          </button>
-                        )}
-                        <p className="text-xs font-black text-slate-600">
-                          {isRecording ? '🔴 Recording... Speak your answer now!' : 'Tap RECORD to answer Nova'}
-                        </p>
-                      </div>
-
-
-                      {/* Recorded Audio & AI Evaluation Feedback */}
-                      {retellEvaluations[retellStepIdx] && (
-                        <div className="space-y-2 max-w-md mx-auto animate-in fade-in">
-                          <div className={`p-3.5 rounded-2xl border ${
+                        {/* Recorded Audio & AI Evaluation Feedback */}
+                        {retellEvaluations[retellStepIdx] && (
+                          <div className={`p-2.5 rounded-xl border ${
                             retellEvaluations[retellStepIdx].evalResult.isCorrect
                               ? 'bg-emerald-50 border-emerald-300 text-emerald-950'
                               : 'bg-amber-50 border-amber-300 text-amber-950'
-                          } text-left space-y-1`}>
+                          } text-left space-y-1 animate-in fade-in`}>
                             <div className="flex items-center justify-between text-xs font-black">
                               <span>{retellEvaluations[retellStepIdx].evalResult.feedback}</span>
                               <span>Score: {retellEvaluations[retellStepIdx].evalResult.score}%</span>
                             </div>
                             {retellEvaluations[retellStepIdx].transcript && (
-                              <p className="text-xs font-medium italic">
+                              <p className="text-xs font-medium italic text-slate-700">
                                 You said: "{retellEvaluations[retellStepIdx].transcript}"
                               </p>
                             )}
                           </div>
+                        )}
+
+                        {/* Fallback Keyboard Input */}
+                        <div className="pt-0.5">
+                          <MicFallbackInput
+                            onSubmit={handleManualRetellSubmit}
+                            placeholder={`e.g. ${currentQ.sentence}`}
+                            buttonLabel="Submit Retell Sentence →"
+                            color="purple"
+                          />
                         </div>
-                      )}
 
-                      {/* Fallback Keyboard Input */}
-                      <div className="pt-1 max-w-md mx-auto">
-                        <MicFallbackInput
-                          onSubmit={handleManualRetellSubmit}
-                          placeholder={`e.g. ${currentQ.sentence}`}
-                          buttonLabel="Submit Retell Sentence →"
-                          color="purple"
-                        />
+                        {/* Step Navigation */}
+                        <div className="flex items-center justify-between pt-2 border-t border-slate-100">
+                          <button
+                            type="button"
+                            disabled={retellStepIdx === 0}
+                            onClick={() => setRetellStepIdx(prev => prev - 1)}
+                            className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 disabled:opacity-30 text-slate-700 rounded-xl text-xs font-bold transition cursor-pointer"
+                          >
+                            ◀ Previous
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={() => {
+                              if (isLastStep) {
+                                setRetellStepIdx(RETELL_QUESTIONS.length);
+                                if (activeWeek) {
+                                  useDailyQuestStore.getState().completeQuest(activeWeek, 'gear3_retell');
+                                }
+                                fireCelebrationConfetti('Retell_Master');
+                              } else {
+                                setRetellStepIdx(prev => prev + 1);
+                              }
+                            }}
+                            className="px-5 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-xl text-xs sm:text-sm font-black shadow-md transition active:scale-95 cursor-pointer"
+                          >
+                            {isLastStep ? 'Complete Retell ▶' : 'Next Question ▶'}
+                          </button>
+                        </div>
                       </div>
-                    </div>
-
-
-                    {/* Step Navigation */}
-                    <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                      <button
-                        type="button"
-                        disabled={retellStepIdx === 0}
-                        onClick={() => setRetellStepIdx(prev => prev - 1)}
-                        className="px-4 py-2 bg-slate-100 hover:bg-slate-200 disabled:opacity-30 text-slate-700 rounded-xl text-xs font-bold transition"
-                      >
-                        ◀ Previous
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => {
-                          if (isLastStep) {
-                            setRetellStepIdx(RETELL_QUESTIONS.length);
-                            if (activeWeek) {
-                              useDailyQuestStore.getState().completeQuest(activeWeek, 'gear3_retell');
-                            }
-                            fireCelebrationConfetti('Retell_Master');
-                          } else {
-                            setRetellStepIdx(prev => prev + 1);
-                          }
-                        }}
-                        className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-xl text-xs sm:text-sm font-black shadow-md transition active:scale-95"
-                      >
-                        {isLastStep ? 'Complete Retell ▶' : 'Next Question ▶'}
-                      </button>
                     </div>
                   </div>
                 </div>

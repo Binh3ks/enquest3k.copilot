@@ -1,9 +1,9 @@
 {
-  "commit": "067261e49fb0a48c884bd830af5a1211027ece98",
-  "git_commit": "067261e49fb0a48c884bd830af5a1211027ece98",
-  "shortCommit": "067261e4",
-  "message": "fix(progress): implement universal dual-store persistence, return-to-map UX for action lab & info exchange, and update SOP",
-  "builtAt": "2026-09-05T09:57:22.341Z",
-  "build_timestamp": "2026-09-05T09:57:22.342Z",
+  "commit": "7f833dac67ad352a9a7675b675d49953c7e0f281",
+  "git_commit": "7f833dac67ad352a9a7675b675d49953c7e0f281",
+  "shortCommit": "7f833dac",
+  "message": "fix(ui): eliminate nested cards, scale responsive typography, enhance mobile info exchange, and update dictation everyday dialogue",
+  "builtAt": "2026-09-05T10:52:38.595Z",
+  "build_timestamp": "2026-09-05T10:52:38.596Z",
   "env": "production"
 }

@@ -367,15 +367,6 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             >
               <Play size={18} fill="currentColor" /> {wasAlreadyCompleted ? '▶ REPLAY LAB' : '▶ START'}
             </button>
-            {wasAlreadyCompleted && onBackToMap && (
-              <button
-                type="button"
-                onClick={onBackToMap}
-                className="px-5 py-2.5 sm:py-3 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-xl font-black text-sm shadow-sm inline-flex items-center gap-1.5 transition hover:scale-105"
-              >
-                ← Back to Map
-              </button>
-            )}
           </div>
         </div>
       )}

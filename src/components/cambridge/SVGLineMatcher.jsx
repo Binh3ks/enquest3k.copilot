@@ -270,16 +270,23 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
         {/* ══════════════════════════════════════════════════════════════
             🖼️ SVG ViewBox Canvas — Image + Pins + Lines in ONE coordinate space
             overflow: visible allows dashed lines to cross through the frame and connect to names above.
+            Aspect ratio matches 1264/848 perfectly so image fills edge-to-edge with ZERO black space.
            ══════════════════════════════════════════════════════════════ */}
-        <div className="relative z-20">
+        <div className="relative z-20 flex justify-center w-full">
           <svg
             ref={svgRef}
             viewBox={`0 0 ${VB_W} ${VB_H}`}
             preserveAspectRatio="xMidYMid meet"
-            className={`w-full h-auto block rounded-2xl border-2 transition-all ${
-              selectedName ? 'cursor-crosshair border-indigo-400' : 'border-slate-800 cursor-default'
+            className={`mx-auto block rounded-2xl border-2 transition-all shadow-md ${
+              selectedName ? 'cursor-crosshair border-indigo-500 ring-4 ring-indigo-200' : 'border-slate-200 cursor-default'
             }`}
-            style={{ background: '#0f172a', overflow: 'visible', maxHeight: '62vh' }}
+            style={{
+              aspectRatio: `${VB_W} / ${VB_H}`,
+              maxHeight: '56vh',
+              width: 'auto',
+              maxWidth: '100%',
+              overflow: 'visible'
+            }}
           >
             {/* Background image — fills full viewBox, no stretch issues */}
             <image
