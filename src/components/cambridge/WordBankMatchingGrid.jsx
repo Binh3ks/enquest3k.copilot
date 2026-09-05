@@ -103,7 +103,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
   return (
     <div
       data-testid="word-bank-matching"
-      className="word-bank-grid w-full max-w-5xl mx-auto my-1 sm:my-2 p-3 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2.5 sm:space-y-3"
+      className="word-bank-grid w-full max-w-7xl mx-auto my-1 sm:my-2 p-3 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2.5 sm:space-y-3"
     >
       <CompletionModal
         isOpen={isSubmitted && (score || 0) >= 50}

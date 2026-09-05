@@ -99,16 +99,22 @@ async function buildInventory() {
   for (let i = 1; i <= 5; i++) {
     addMedia('gear1_webtoon', `scene_${i}`, `scene_${i}_visual`, `images/week${weekNum}/webtoon_scene_${i}.png`, true);
   }
-  for (let i = 1; i <= 14; i++) {
-    addMedia('gear2_karaoke', `sentence_${i}`, `audio`, `audio/week${weekNum}/shadowing_${i}.mp3`, i <= 8);
+  for (let i = 1; i <= 8; i++) {
+    addMedia('gear2_karaoke', `sentence_${i}`, `audio`, `audio/week${weekNum}/shadowing_${i}.mp3`, true);
   }
-  addMedia('gear3_retell', 'story_full', 'full_audio', `audio/week${weekNum}/read_full.mp3`, true);
+  const readAudio = fs.existsSync(path.join(rootDir, `public/audio/week${weekNum}/read_stem.mp3`))
+    ? `audio/week${weekNum}/read_stem.mp3`
+    : `audio/week${weekNum}/read_full.mp3`;
+  addMedia('gear3_retell', 'story_full', 'full_audio', readAudio, true);
 
   // 2. Day 2: Knowledge Lab (gear4_clil, science_lab, science_report)
   addMedia('gear4_clil', 'article', 'cover_image', `images/week${weekNum}/explore_cover_w${weekNum}.jpg`, true);
   addMedia('gear4_clil', 'article', 'audio', `audio/week${weekNum}/explore.mp3`, true);
   addMedia('science_lab', 'physics_sim', 'cover_image', `images/week${weekNum}/explore_cover_w${weekNum}.jpg`, true);
-  addMedia('science_report', 'report', 'audio', `audio/week${weekNum}/explore.mp3`, true);
+  addMedia('science_report', 'report', 'audio', `audio/week${weekNum}/discovery_report_final.mp3`, false);
+  for (let i = 1; i <= 3; i++) {
+    addMedia('science_report', `hotspot_${i}`, 'audio', `audio/week${weekNum}/discovery_hotspot_${i}.mp3`, false);
+  }
 
   // 3. Day 3: Battle Arena (word_blitz, sentence_smash, math_quest)
   for (let i = 1; i <= 20; i++) {
@@ -128,9 +134,7 @@ async function buildInventory() {
   // 5. Day 5: Boss Castle (boss_listening, boss_reading, weekly_review)
   // --- Boss Listening ---
   addMedia('boss_listening', 'p1_draw_lines', 'scene_image', `images/week${weekNum}/read_cover_w${weekNum}.jpg`, true);
-  for (let i = 1; i <= 5; i++) {
-    addMedia('boss_listening', 'p1_draw_lines', `target_${i}_audio`, `audio/week${weekNum}/listening_p1_target${i}.mp3`, true);
-  }
+  addMedia('boss_listening', 'p1_draw_lines', 'full_audio', `audio/week${weekNum}/listening_p1_full.mp3`, true);
   addMedia('boss_listening', 'p2_note_taking', 'full_audio', `audio/week${weekNum}/listening_p2_full.mp3`, true);
   for (let i = 1; i <= 5; i++) {
     addMedia('boss_listening', 'p3_match_days', `item_${i}_audio`, `audio/week${weekNum}/listening_p3_item${i}.mp3`, true);

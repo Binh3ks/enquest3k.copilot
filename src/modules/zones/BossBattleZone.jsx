@@ -337,7 +337,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
   // ── BossIntro screen ─────────────────────────────────────────────────────
   if (!hasStarted) {
     return (
-      <div className="w-full max-w-5xl mx-auto font-sans">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 font-sans">
         <BossIntro
           rotaryConfig={rotaryConfig}
           onStartBattle={() => setHasStarted(true)}
@@ -351,7 +351,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
   // ── Exam Finished / Victory Screen ──────────────────────────────────────
   if (examFinished) {
     return (
-      <div className="w-full max-w-4xl mx-auto p-8 sm:p-10 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 border-2 border-amber-400 text-white rounded-3xl text-center space-y-6 shadow-2xl animate-in zoom-in-95">
+      <div className="w-full max-w-5xl mx-auto p-8 sm:p-10 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 border-2 border-amber-400 text-white rounded-3xl text-center space-y-6 shadow-2xl animate-in zoom-in-95">
         <Trophy size={64} className="mx-auto text-amber-400 animate-bounce" />
         <div className="space-y-2">
           <span className="px-3 py-1 bg-amber-500/30 text-amber-300 rounded-full text-xs font-black uppercase tracking-wider">
@@ -439,7 +439,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
   const activeTaskId = requestedTaskId || currentTask?.partId;
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-3 animate-in fade-in duration-200 font-sans">
       {/* Unified Boss Assessment Header with Themed Box and Map Return Button */}
       <div
         data-testid="boss-assessment-header"

@@ -103,7 +103,7 @@ export const skillPracticeHub = {
             label: "Running Fast",
             correct_label: "Forward Motion",
             x: 50,
-            y: 28,
+            y: 22,
             micro_explanation: "⚡ Running fast builds speed that cannot stop without floor grip."
           },
           {
@@ -111,12 +111,12 @@ export const skillPracticeHub = {
             label: "Yellow Caution Sign",
             correct_label: "Hazard Alert",
             x: 20,
-            y: 68,
+            y: 64,
             micro_explanation: "💡 Bright yellow sign warns everyone to slow down."
           },
           {
             id: "z1_4",
-            label: "First Aid Treatment",
+            label: "First Aid Care",
             correct_label: "Cold Pack & Bandage",
             x: 82,
             y: 55,
@@ -142,15 +142,15 @@ export const skillPracticeHub = {
             id: "z2_1",
             label: "Rubber Sole Tread",
             correct_label: "Strong Grip Friction",
-            x: 32,
-            y: 74,
+            x: 30,
+            y: 76,
             micro_explanation: "👟 Textured rubber grooves grip floor tiles and prevent slipping."
           },
           {
             id: "z2_2",
             label: "Smooth Plastic Sole",
             correct_label: "Zero Grip Hazard",
-            x: 72,
+            x: 76,
             y: 78,
             micro_explanation: "⚠️ Smooth soles slide right over water without catching the floor."
           },
@@ -158,8 +158,8 @@ export const skillPracticeHub = {
             id: "z2_3",
             label: "Dry Ceramic Floor",
             correct_label: "Firm Footing Area",
-            x: 18,
-            y: 42,
+            x: 16,
+            y: 38,
             micro_explanation: "🧱 Dry tiles provide normal friction so students walk steadily."
           },
           {
@@ -167,7 +167,7 @@ export const skillPracticeHub = {
             label: "Careful Walking Pace",
             correct_label: "Balanced Body Motion",
             x: 50,
-            y: 30,
+            y: 20,
             micro_explanation: "🚶 Walking at a sensible pace keeps your center of mass balanced."
           }
         ],
@@ -190,32 +190,32 @@ export const skillPracticeHub = {
             id: "z3_1",
             label: "Ice Cold Pack",
             correct_label: "Reduces Swelling",
-            x: 48,
-            y: 65,
+            x: 42,
+            y: 70,
             micro_explanation: "🧊 Applying cold ice constricts blood vessels and eases joint pain."
           },
           {
             id: "z3_2",
             label: "Clean Bandage",
             correct_label: "Protects Skin Cut",
-            x: 76,
-            y: 70,
+            x: 74,
+            y: 74,
             micro_explanation: "🩹 A clean bandage shields skin wounds from dust and germs."
           },
           {
             id: "z3_3",
             label: "School Nurse Care",
             correct_label: "Medical Assessment",
-            x: 74,
-            y: 32,
+            x: 78,
+            y: 26,
             micro_explanation: "👩‍⚕️ Nurse assesses injury severity and comforts the student."
           },
           {
             id: "z3_4",
             label: "Resting On Bench",
             correct_label: "Safe Recovery Rest",
-            x: 24,
-            y: 48,
+            x: 20,
+            y: 42,
             micro_explanation: "🪑 Sitting still prevents further stress on the hurt knee joint."
           }
         ],

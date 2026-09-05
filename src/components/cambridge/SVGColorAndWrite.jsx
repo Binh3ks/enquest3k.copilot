@@ -159,7 +159,7 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-4 p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans">
+    <div className="w-full max-w-7xl mx-auto space-y-4 p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
         <div>

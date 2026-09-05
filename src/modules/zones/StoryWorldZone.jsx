@@ -817,7 +817,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   const [foundItems, setFoundItems] = useState([]);
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-5 animate-in fade-in duration-300 font-sans">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-5 animate-in fade-in duration-300 font-sans">
       {/* 4-Gear Story World Progression Bar */}
       {/* 4-Gear Story World Progression Bar — hidden in task mode */}
       {!hideGearTabs && (

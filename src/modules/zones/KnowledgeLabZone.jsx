@@ -99,7 +99,7 @@ export default function KnowledgeLabZone({
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-4 animate-in fade-in duration-300 font-sans">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-4 animate-in fade-in duration-300 font-sans">
       {/* Slim Header Banner — only visible in full zone mode */}
       {!hideStationTabs && (
         <div className="p-3 bg-teal-50 border border-teal-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">

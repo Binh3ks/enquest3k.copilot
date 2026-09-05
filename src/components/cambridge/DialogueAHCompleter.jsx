@@ -119,7 +119,7 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
   const starsEarned = (score || 0) >= 80 ? 3 : (score || 0) >= 60 ? 2 : 1;
 
   return (
-    <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
+    <div className="w-full max-w-7xl mx-auto my-4 p-4 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
       <CompletionModal
         isOpen={isSubmitted && (score || 0) >= 50}
         onClose={() => {}}

@@ -409,7 +409,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
   const isPhase2Active = flowState === 'phase2_intro' || flowState === 'phase2_q';
 
   return (
-    <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-slate-900 text-white rounded-3xl border border-purple-500/30 shadow-2xl font-sans space-y-6 relative overflow-hidden">
+    <div className="w-full max-w-7xl mx-auto my-4 p-4 sm:p-8 bg-slate-900 text-white rounded-3xl border border-purple-500/30 shadow-2xl font-sans space-y-6 relative overflow-hidden">
       <CompletionModal
         isOpen={flowState === 'completed'}
         onClose={() => {}}

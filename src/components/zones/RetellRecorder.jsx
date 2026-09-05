@@ -585,7 +585,7 @@ export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplet
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-2 font-sans text-slate-900 animate-in fade-in duration-200">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 space-y-2 font-sans text-slate-900 animate-in fade-in duration-200">
       {/* ── Mode Switch & Instruction Bar ── */}
       <div className="p-2 sm:p-2.5 bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-xl flex items-center justify-between gap-1.5 text-xs">
         <div className="flex items-center gap-1.5 min-w-0">

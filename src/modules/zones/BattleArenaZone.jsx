@@ -81,7 +81,7 @@ export default function BattleArenaZone({ data, weekNumber, forcedStation = null
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-5 animate-in fade-in duration-300 font-sans">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-5 animate-in fade-in duration-300 font-sans">
       {/* Slim Session XP bar — only in full zone mode */}
       {!hideStationTabs && (
         <div className="flex items-center justify-between px-4 py-2.5 bg-amber-50 border border-amber-300 rounded-2xl text-xs shadow-sm">

@@ -339,7 +339,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-3 sm:px-6 py-4 sm:py-6 space-y-5">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-5">
       {/* Top Banner & Phase Navigation */}
       <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -427,8 +427,9 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
 
           {/* Cambridge 2-Column Table Header */}
           <div className="bg-slate-100/90 border-b border-slate-200 px-4 py-2 flex items-center justify-between text-[11px] font-black uppercase tracking-wider text-slate-500">
-            <span className="w-5/12 sm:w-1/2">WH- Cues / Prompts</span>
-            <span className="w-7/12 sm:w-1/2 text-right sm:text-left">{phase === 'table_b' ? 'Information / Facts' : 'Questions / Answers'}</span>
+            <span className="hidden sm:inline-block sm:w-1/2">WH- Cues / Prompts</span>
+            <span className="hidden sm:inline-block sm:w-1/2 text-left">{phase === 'table_b' ? 'Information / Facts' : 'Questions / Answers'}</span>
+            <span className="sm:hidden w-full text-center">{phase === 'table_b' ? 'Card 1: Prompts & Facts' : 'Card 2: Cues & Questions'}</span>
           </div>
 
           <div className="divide-y divide-slate-100 p-2">
@@ -448,7 +449,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                       setManualTextB('');
                       setShowQuestionTextB(false);
                     }}
-                    className={`px-3 sm:px-4 py-3 rounded-xl transition-all cursor-pointer flex items-center justify-between gap-3 ${
+                    className={`px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl transition-all cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 ${
                       isActive
                         ? 'bg-gradient-to-r from-purple-100 via-indigo-50 to-purple-50 border-2 border-purple-600 shadow-lg ring-4 ring-purple-400/40 scale-[1.01]'
                         : isPassed
@@ -456,10 +457,10 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                         : 'bg-white hover:bg-slate-50 border border-transparent'
                     }`}
                   >
-                    {/* Left Cell: WH- Cue with Speaker & Active Tag */}
-                    <div className="w-5/12 sm:w-1/2 flex items-center gap-1.5 min-w-0">
-                      <span className={`text-[10px] sm:text-[11px] font-mono font-bold shrink-0 ${isActive ? 'text-purple-700' : 'text-slate-400'}`}>0{idx + 1}.</span>
-                      <span className={`text-xs sm:text-sm font-black font-mono lowercase truncate ${isActive ? 'text-purple-950 font-black' : 'text-purple-900'}`}>
+                    {/* Line 1 (Mobile) / Left Cell (Desktop): WH- Cue with Speaker & Active Tag */}
+                    <div className="flex-1 flex items-center gap-1.5 min-w-0 flex-wrap sm:flex-nowrap">
+                      <span className={`text-[11px] font-mono font-bold shrink-0 ${isActive ? 'text-purple-700' : 'text-slate-400'}`}>0{idx + 1}.</span>
+                      <span className={`text-xs sm:text-sm font-black font-mono lowercase whitespace-normal break-words ${isActive ? 'text-purple-950 font-black' : 'text-purple-900'}`}>
                         {cueText}
                       </span>
                       <button
@@ -471,18 +472,18 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                         className={`p-1 rounded transition shrink-0 cursor-pointer ${isActive ? 'bg-purple-600 text-white hover:bg-purple-700 shadow-sm' : 'hover:bg-purple-200 text-purple-600'}`}
                         title="Replay Examiner Nova's question"
                       >
-                        <Volume2 size={12} />
+                        <Volume2 size={13} />
                       </button>
                       {isActive && (
-                        <span className="hidden sm:inline-flex items-center px-2 py-0.5 bg-purple-600 text-white rounded-full text-[9px] font-black uppercase tracking-wider shrink-0 animate-pulse">
+                        <span className="inline-flex items-center px-2 py-0.5 bg-purple-600 text-white rounded-full text-[9px] font-black uppercase tracking-wider shrink-0 animate-pulse">
                           👉 Current
                         </span>
                       )}
                     </div>
 
-                    {/* Right Cell: Fact / Answer */}
-                    <div className="w-7/12 sm:w-1/2 flex items-center justify-end sm:justify-start gap-2 text-right sm:text-left">
-                      <span className={`text-xs sm:text-sm leading-snug ${isActive ? 'font-black text-purple-950 underline decoration-purple-400 decoration-2' : 'font-bold text-slate-800'}`}>
+                    {/* Line 2 (Mobile with top border) / Right Cell (Desktop): Fact / Answer */}
+                    <div className="flex-1 flex items-center justify-between sm:justify-start gap-2 pt-1 sm:pt-0 border-t sm:border-t-0 border-purple-100/80 sm:border-transparent text-left">
+                      <span className={`text-xs sm:text-sm leading-snug whitespace-normal break-words ${isActive ? 'font-black text-purple-950 underline decoration-purple-400 decoration-2' : 'font-bold text-slate-800'}`}>
                         {f.value}
                       </span>
                       {isPassed && <CheckCircle2 size={16} className="text-emerald-600 shrink-0 ml-auto" />}
@@ -504,7 +505,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                       setTranscriptA('');
                       setManualTextA('');
                     }}
-                    className={`px-3 sm:px-4 py-3 rounded-xl transition-all cursor-pointer flex items-center justify-between gap-3 ${
+                    className={`px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl transition-all cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 ${
                       isTarget
                         ? 'bg-gradient-to-r from-amber-100 via-orange-50 to-amber-50 border-2 border-amber-500 shadow-lg ring-4 ring-amber-400/40 scale-[1.01]'
                         : isDone
@@ -512,24 +513,24 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                         : 'bg-white hover:bg-slate-50 border border-transparent'
                     }`}
                   >
-                    {/* Left Cell: WH- Cue */}
-                    <div className="w-5/12 sm:w-1/2 flex items-center gap-1.5 min-w-0">
-                      <span className={`text-[10px] sm:text-[11px] font-mono font-bold shrink-0 ${isTarget ? 'text-amber-700' : 'text-slate-400'}`}>0{idx + 1}.</span>
-                      <span className={`text-xs sm:text-sm font-black font-mono lowercase truncate ${isTarget ? 'text-amber-950 font-black' : 'text-slate-800'}`}>
+                    {/* Line 1 (Mobile) / Left Cell (Desktop): WH- Cue */}
+                    <div className="flex-1 flex items-center gap-1.5 min-w-0 flex-wrap sm:flex-nowrap">
+                      <span className={`text-[11px] font-mono font-bold shrink-0 ${isTarget ? 'text-amber-700' : 'text-slate-400'}`}>0{idx + 1}.</span>
+                      <span className={`text-xs sm:text-sm font-black font-mono lowercase whitespace-normal break-words ${isTarget ? 'text-amber-950 font-black' : 'text-slate-800'}`}>
                         {cue.label}
                       </span>
                       {isTarget && (
-                        <span className="hidden sm:inline-flex items-center px-2 py-0.5 bg-amber-500 text-slate-950 rounded-full text-[9px] font-black uppercase tracking-wider shrink-0 animate-pulse">
+                        <span className="inline-flex items-center px-2 py-0.5 bg-amber-500 text-slate-950 rounded-full text-[9px] font-black uppercase tracking-wider shrink-0 animate-pulse">
                           👉 Ask This
                         </span>
                       )}
                     </div>
 
-                    {/* Right Cell: Question Status / Nova Answer */}
-                    <div className="w-7/12 sm:w-1/2 flex items-center justify-end sm:justify-start gap-2 text-right sm:text-left">
+                    {/* Line 2 (Mobile) / Right Cell (Desktop): Question Status / Nova Answer */}
+                    <div className="flex-1 flex items-center justify-between sm:justify-start gap-2 pt-1 sm:pt-0 border-t sm:border-t-0 border-amber-100/80 sm:border-transparent text-left">
                       {isDone ? (
                         <div className="flex items-center gap-1.5 text-emerald-800 font-bold text-xs sm:text-sm">
-                          <span className="truncate">{cue.nova_reply?.split('.')[0]}</span>
+                          <span className="whitespace-normal break-words">{cue.nova_reply?.split('.')[0]}</span>
                           <CheckCircle2 size={16} className="text-emerald-600 shrink-0 ml-auto" />
                         </div>
                       ) : (
@@ -749,20 +750,20 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                 </div>
 
                 {/* Question Text (Hidden by default, revealable on toggle) */}
-                <div className="pt-1 border-t border-purple-200/60 flex items-center justify-between">
+                <div className="pt-1.5 border-t border-purple-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                   {showQuestionTextB ? (
-                    <p className="text-sm font-black text-purple-950 animate-in fade-in">
+                    <p className="text-xs sm:text-sm font-black text-purple-950 animate-in fade-in leading-snug">
                       "{currentFieldB?.nova_question}"
                     </p>
                   ) : (
-                    <span className="text-xs text-purple-600 italic">
+                    <span className="text-[11px] sm:text-xs text-purple-600 italic">
                       [Question hidden — look at Card 1 on the left to answer!]
                     </span>
                   )}
                   <button
                     type="button"
                     onClick={() => setShowQuestionTextB(p => !p)}
-                    className="text-[11px] font-bold text-purple-700 hover:text-purple-900 flex items-center gap-1 underline"
+                    className="text-[11px] font-bold text-purple-700 hover:text-purple-900 flex items-center gap-1 underline self-end sm:self-auto cursor-pointer shrink-0"
                   >
                     {showQuestionTextB ? <EyeOff size={12} /> : <Eye size={12} />}
                     {showQuestionTextB ? 'Hide question text' : 'Peek question text'}

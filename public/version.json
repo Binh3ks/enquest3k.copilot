@@ -1,9 +1,9 @@
 {
-  "commit": "63fdfd93fe009e28609ae8099b0cd1cb2651087d",
-  "git_commit": "63fdfd93fe009e28609ae8099b0cd1cb2651087d",
-  "shortCommit": "63fdfd93",
-  "message": "feat(w33-features): Voice Shadow Dictation mode, Discovery Report Inquiry challenge, SRS Leitner, Quick Write, and Milestone templates [multi-agent-review]",
-  "builtAt": "2026-09-05T08:43:41.897Z",
-  "build_timestamp": "2026-09-05T08:43:41.897Z",
+  "commit": "0106ce00699137b0518163b4c1bfcb3a80ad4afa",
+  "git_commit": "0106ce00699137b0518163b4c1bfcb3a80ad4afa",
+  "shortCommit": "0106ce00",
+  "message": "fix(w33): fix dictation diff alignment, wire static audio to discovery report, expand action lab to 3 scenarios, and dynamic info exchange highlight [multi-agent-review]",
+  "builtAt": "2026-09-05T09:11:43.744Z",
+  "build_timestamp": "2026-09-05T09:11:43.744Z",
   "env": "production"
 }

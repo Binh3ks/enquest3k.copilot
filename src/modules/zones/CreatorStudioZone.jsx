@@ -170,7 +170,7 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-4 animate-in fade-in duration-300 font-sans">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-4 animate-in fade-in duration-300 font-sans">
       {/* Slim Game Instruction Bar — only in full zone mode */}
       {!hideStationTabs && (
         <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">

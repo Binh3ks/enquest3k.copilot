@@ -96,7 +96,7 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto my-1 p-2.5 sm:p-4 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2.5">
+    <div className="w-full max-w-7xl mx-auto my-1 p-2.5 sm:p-4 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2.5">
       {/* Compact Header & Audio Control Bar */}
       <div className="flex items-center justify-between gap-2 pb-2 border-b border-slate-200 flex-wrap">
         <div className="flex items-center gap-2">
