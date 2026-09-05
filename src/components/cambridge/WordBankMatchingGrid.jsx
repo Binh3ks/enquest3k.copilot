@@ -120,10 +120,10 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
           <span className="px-2.5 py-0.5 bg-indigo-100 text-indigo-900 text-[10.5px] font-black rounded-full uppercase tracking-wider">
             Flyers Practice
           </span>
-          <h2 className="text-base sm:text-lg font-black text-slate-900 mt-0.5">
+          <h2 className="text-lg sm:text-xl font-black text-slate-900 mt-0.5">
             Word Bank Matching
           </h2>
-          <p className="text-[11px] sm:text-xs text-indigo-700 font-bold">
+          <p className="text-xs sm:text-sm text-indigo-700 font-bold">
             Look and read. Choose the correct words and write them on the lines. There is one example.
           </p>
         </div>
@@ -135,10 +135,10 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
       {/* 📦 Floating 15-Word Bank Pool (Compact 2-Column Mobile Grid, Sticky Dock) */}
       <div className="sticky top-1 z-20 p-2 sm:p-2.5 bg-slate-50/95 backdrop-blur-md rounded-xl border-2 border-indigo-200 shadow-sm space-y-1">
         <div className="flex items-center justify-between">
-          <span className="text-[10.5px] sm:text-[11.5px] font-black text-indigo-800 uppercase tracking-wider flex items-center gap-1">
-            <Layers size={13} /> 15-Word Bank:
+          <span className="text-xs sm:text-sm font-black text-indigo-800 uppercase tracking-wider flex items-center gap-1.5">
+            <Layers size={14} /> 15-Word Bank:
           </span>
-          <span className="text-[9.5px] font-bold text-slate-500 italic">
+          <span className="text-[11px] font-bold text-slate-500 italic">
             Tap word pill, then tap slot below
           </span>
         </div>
@@ -153,7 +153,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
                 key={word}
                 disabled={isSubmitted || isUsed}
                 onClick={() => handleSelectWord(word)}
-                className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md sm:rounded-lg text-[10.5px] sm:text-[11.5px] font-bold transition-all flex items-center justify-between border shadow-2xs ${
+                className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-between border shadow-2xs ${
                   isUsed
                     ? 'opacity-40 line-through bg-slate-200 text-slate-500 border-slate-300 cursor-not-allowed'
                     : isSelected
@@ -162,7 +162,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
                 }`}
               >
                 <span className="truncate">{word}</span>
-                {isUsed && <span className="text-[8.5px] font-mono text-slate-400">✓</span>}
+                {isUsed && <span className="text-[10px] font-mono text-slate-400">✓</span>}
               </button>
             );
           })}
@@ -180,7 +180,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
             <span className="px-1.5 py-0.5 rounded-md bg-amber-500 text-white font-black text-[9px] uppercase tracking-wider shrink-0 mt-0.5 shadow-2xs">
               ★ EX
             </span>
-            <div className="text-xs sm:text-[13px] font-medium text-slate-800 leading-snug">
+            <div className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
               {activeData?.example?.text || "A quiet room in school with books where students read and borrow stories."}
             </div>
           </div>
@@ -215,17 +215,17 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
               }`}
             >
               <div className="flex items-start gap-2 flex-1">
-                <span className="w-5 h-5 rounded-md bg-indigo-100 text-indigo-900 text-[11px] font-black flex items-center justify-center shrink-0 mt-0.5">
+                <span className="w-5 h-5 rounded-md bg-indigo-100 text-indigo-900 text-xs font-black flex items-center justify-center shrink-0 mt-0.5">
                   {idx + 1}
                 </span>
-                <div className="text-xs sm:text-sm font-medium text-slate-800 leading-snug">
+                <div className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
                   {renderParsedText(def.text, 'indigo', null, true)}
                 </div>
               </div>
 
               <div className="flex items-center gap-1.5 self-end sm:self-auto shrink-0">
                 <div
-                  className={`min-w-[110px] sm:min-w-[130px] px-2.5 py-1 rounded-lg border-2 text-xs font-black text-center flex items-center justify-between gap-1.5 shadow-inner transition-all ${
+                  className={`min-w-[120px] sm:min-w-[140px] px-3 py-1.5 rounded-xl border-2 text-xs sm:text-sm font-black text-center flex items-center justify-between gap-1.5 shadow-inner transition-all ${
                     assignedWord
                       ? 'bg-white border-indigo-400 text-indigo-950'
                       : 'bg-slate-100 border-dashed border-slate-300 text-slate-400'

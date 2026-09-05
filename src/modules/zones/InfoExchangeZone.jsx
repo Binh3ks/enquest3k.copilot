@@ -581,11 +581,31 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                 </p>
 
                 {/* Mobile & Desktop Inline Model Question Peek & Starter Hint */}
-                <div className="pt-2 border-t border-amber-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                <div className="pt-2 border-t border-amber-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   {showHintA ? (
-                    <p className="text-xs sm:text-sm font-black text-amber-950 animate-in fade-in leading-snug">
-                      💡 Model: "{currentCueA?.acceptable_questions?.[0]}"
-                    </p>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <div className="text-xs sm:text-sm font-black text-amber-950 animate-in fade-in leading-snug space-y-1">
+                        {(currentCueA?.acceptable_questions?.slice(0, 2) || []).map((q, idx) => (
+                          <div key={idx} className="flex items-center gap-1.5">
+                            <span className="text-[10px] uppercase font-black px-1.5 py-0.5 bg-amber-200 text-amber-900 rounded">
+                              Model {idx + 1}:
+                            </span>
+                            <span>"{q}"</span>
+                          </div>
+                        ))}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const spoken = (currentCueA?.acceptable_questions?.slice(0, 2) || []).join('. Or: ');
+                          speakText(spoken);
+                        }}
+                        className="p-1.5 bg-amber-300 hover:bg-amber-400 text-amber-950 rounded-lg transition shrink-0 flex items-center gap-1 text-xs font-bold"
+                        title="Listen to model question(s)"
+                      >
+                        <Volume2 size={14} /> Listen
+                      </button>
+                    </div>
                   ) : (
                     <div className="text-[11px] sm:text-xs text-amber-800 font-bold flex items-center gap-1.5">
                       <span>💡 Hint starter:</span>
@@ -682,25 +702,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                     </p>
                   </div>
 
-                  {/* Model Question For Student Learning */}
-                  <div className="p-3.5 bg-indigo-50 border border-indigo-200 rounded-xl flex items-center justify-between gap-2">
-                    <div className="flex-1">
-                      <span className="text-[10px] font-black uppercase text-indigo-700 block mb-0.5">
-                        📖 Model Question (Cambridge Standard):
-                      </span>
-                      <p className="text-sm font-black text-indigo-950">
-                        "{currentCueA?.acceptable_questions?.[0]}"
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => speakText(currentCueA?.acceptable_questions?.[0] || '')}
-                      className="p-2 bg-indigo-200 hover:bg-indigo-300 text-indigo-900 rounded-lg transition shrink-0"
-                      title="Listen to model question"
-                    >
-                      <Volume2 size={16} />
-                    </button>
-                  </div>
+
 
                   {/* Nova's Live Reply (If Correct or Accepted) */}
                   {evalResultA.isCorrect ? (
@@ -794,9 +796,14 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                       "{currentFieldB?.nova_question}"
                     </p>
                   ) : (
-                    <span className="text-[11px] sm:text-xs text-purple-600 italic">
-                      [Question hidden — look at Card 1 on the left to answer!]
-                    </span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[10px] font-black uppercase bg-purple-200 text-purple-950 px-1.5 py-0.5 rounded">
+                        Prompt:
+                      </span>
+                      <span className="text-xs sm:text-sm font-black text-purple-900">
+                        {currentFieldB?.label || currentFieldB?.short_label || currentFieldB?.cue_prompt}
+                      </span>
+                    </div>
                   )}
                   <button
                     type="button"

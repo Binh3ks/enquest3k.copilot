@@ -131,8 +131,8 @@ export const skillPracticeHub = {
     experimentTitle: "Corridor Friction & Safety Physics Lab",
     title_en: "Corridor Friction & Safety Physics Lab",
     title_vi: "Phòng Thí Nghiệm Vật Lý Ma Sát & An Toàn Hành Lang",
-    diagramImage: "/images/week33/read_cover_w33.jpg",
-    background_image: "/images/week33/read_cover_w33.jpg",
+    diagramImage: "/images/week33/webtoon_scene_2.png",
+    background_image: "/images/week33/webtoon_scene_2.png",
     explanation: "Drag the physics principles and safety tools to the correct positions across 3 scenarios to discover how friction protects everyone in school corridors!",
     description_en: "Drag the physics principles and safety tools to the correct positions across 3 scenarios to discover how friction protects everyone in school corridors!",
     stages: [
@@ -140,15 +140,15 @@ export const skillPracticeHub = {
         id: "stage_1_puddle",
         stageNumber: 1,
         title: "Stage 1: Wet Floor & Low Friction Hazard",
-        diagramImage: "/images/week33/read_cover_w33.jpg",
-        background_image: "/images/week33/read_cover_w33.jpg",
+        diagramImage: "/images/week33/webtoon_scene_2.png",
+        background_image: "/images/week33/webtoon_scene_2.png",
         explanation: "Explore how spilled water reduces friction between shoes and smooth corridor tiles!",
         zones: [
           {
             id: "z1_1",
             label: "Wet Floor Puddle",
             correct_label: "Low Friction Zone",
-            x: 50,
+            x: 58,
             y: 84,
             micro_explanation: "⚠️ Water forms a thin layer that drastically lowers tile friction."
           },
@@ -156,32 +156,32 @@ export const skillPracticeHub = {
             id: "z1_2",
             label: "Running Fast",
             correct_label: "Forward Motion",
-            x: 50,
-            y: 22,
-            micro_explanation: "⚡ Running fast builds speed that cannot stop without floor grip."
+            x: 64,
+            y: 38,
+            micro_explanation: "⚡ Running fast builds momentum that cannot stop without floor grip."
           },
           {
             id: "z1_3",
             label: "Yellow Caution Sign",
             correct_label: "Hazard Alert",
-            x: 20,
-            y: 64,
-            micro_explanation: "💡 Bright yellow sign warns everyone to slow down."
+            x: 76,
+            y: 68,
+            micro_explanation: "💡 Bright yellow sign warns everyone to slow down and walk carefully."
           },
           {
             id: "z1_4",
-            label: "First Aid Care",
-            correct_label: "Cold Pack & Bandage",
-            x: 82,
-            y: 55,
-            micro_explanation: "🩹 Cold pack cools swelling and clean bandage protects the cut."
+            label: "Dry Floor Tiles",
+            correct_label: "Firm Walking Area",
+            x: 24,
+            y: 78,
+            micro_explanation: "🧱 Dry tiles provide normal friction so students walk steadily."
           }
         ],
         labels: [
           { id: "lbl_1_1", text: "Low Friction Zone", targetId: "z1_1" },
           { id: "lbl_1_2", text: "Forward Motion", targetId: "z1_2" },
           { id: "lbl_1_3", text: "Hazard Alert", targetId: "z1_3" },
-          { id: "lbl_1_4", text: "Cold Pack & Bandage", targetId: "z1_4" }
+          { id: "lbl_1_4", text: "Firm Walking Area", targetId: "z1_4" }
         ]
       },
       {

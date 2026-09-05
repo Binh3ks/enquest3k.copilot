@@ -292,7 +292,7 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
                   {isStealthMode ? `Difference #${foundHotspots.indexOf(activeHotspot.id) + 1} Found` : `Difference Found: ${activeHotspot.name}`}
                 </span>
                 <span className="text-xs font-bold text-rose-700">
-                  Describe this difference / Hãy mô tả điểm khác biệt này
+                  Describe this difference
                 </span>
               </div>
             </div>

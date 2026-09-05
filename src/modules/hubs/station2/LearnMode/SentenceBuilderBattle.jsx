@@ -23,8 +23,6 @@ const WEEK33_GRAMMAR_DRILLS = [
     id: "st2_w33_g01",
     grammar_tag: "past_continuous_while",
     text_en: "While Jake was walking down the corridor, Tom slipped on the wet floor.",
-    instruction: "Sắp xếp các khối từ miêu tả sự việc khi Jake đang đi bộ:",
-    prompt_vi: "Khi Jake đang đi bộ dọc hành lang, Tom bị trượt chân trên sàn ướt.",
     prompt_en: "While Jake was walking down the corridor, Tom slipped on the wet floor.",
     word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "Tom", "slipped", "on", "the", "wet", "floor", "."],
     valid_structures: [
@@ -37,8 +35,6 @@ const WEEK33_GRAMMAR_DRILLS = [
     id: "st2_w33_g02",
     grammar_tag: "past_continuous_while",
     text_en: "While Tom was running in a hurry, he slipped and hurt his knee.",
-    instruction: "Sắp xếp các khối từ miêu tả hành động vội vàng của Tom:",
-    prompt_vi: "Khi Tom đang vội vàng chạy, cậu ấy bị trượt ngã và đau đầu gối.",
     prompt_en: "While Tom was running in a hurry, he slipped and hurt his knee.",
     word_blocks: ["While", "Tom", "was", "running", "in", "a", "hurry", ",", "he", "slipped", "and", "hurt", "his", "knee", "."],
     valid_structures: [
@@ -51,8 +47,6 @@ const WEEK33_GRAMMAR_DRILLS = [
     id: "st2_w33_g03",
     grammar_tag: "past_continuous_while",
     text_en: "While Jake was helping Tom, Nurse Sarah arrived quickly.",
-    instruction: "Sắp xếp các khối từ miêu tả sự xuất hiện kịp thời của cô y tá:",
-    prompt_vi: "Trong khi Jake đang giúp đỡ Tom, cô y tá Sarah đã nhanh chóng đến nơi.",
     prompt_en: "While Jake was helping Tom, Nurse Sarah arrived quickly.",
     word_blocks: ["While", "Jake", "was", "helping", "Tom", ",", "Nurse", "Sarah", "arrived", "quickly", "."],
     valid_structures: [
@@ -65,8 +59,6 @@ const WEEK33_GRAMMAR_DRILLS = [
     id: "st2_w33_g04",
     grammar_tag: "past_continuous_while",
     text_en: "While Nurse Sarah was treating his ankle, Tom felt very relieved.",
-    instruction: "Sắp xếp các khối từ miêu tả việc sơ cứu cho Tom:",
-    prompt_vi: "Trong khi cô y tá Sarah đang chăm sóc mắt cá chân, Tom cảm thấy rất nhẹ nhõm.",
     prompt_en: "While Nurse Sarah was treating his ankle, Tom felt very relieved.",
     word_blocks: ["While", "Nurse", "Sarah", "was", "treating", "his", "ankle", ",", "Tom", "felt", "very", "relieved", "."],
     valid_structures: [
@@ -79,8 +71,6 @@ const WEEK33_GRAMMAR_DRILLS = [
     id: "st2_w33_g05",
     grammar_tag: "past_continuous_while",
     text_en: "While the cleaners were drying the floor, the headmaster praised Jake.",
-    instruction: "Sắp xếp các khối từ miêu tả hành động của thầy hiệu trưởng:",
-    prompt_vi: "Trong khi các cô chú lao công đang lau khô sàn, thầy hiệu trưởng đã khen ngợi Jake.",
     prompt_en: "While the cleaners were drying the floor, the headmaster praised Jake.",
     word_blocks: ["While", "the", "cleaners", "were", "drying", "the", "floor", ",", "the", "headmaster", "praised", "Jake", "."],
     valid_structures: [
@@ -294,9 +284,8 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
     }
   };
 
-  // Safe prompt/instruction render — NEVER print text_en to prevent spoiling the answer!
-  const drillInstruction = currentDrill?.instruction || 'Sắp xếp các khối từ thành câu hoàn chỉnh:';
-  const drillMeaning = currentDrill?.prompt_vi || currentDrill?.meaning_vi || '';
+  // Instruction in pure English — zero Vietnamese sentence prompt!
+  const drillInstruction = 'Arrange the word blocks to build the correct sentence:';
 
   return (
     <div className="w-full max-w-7xl mx-auto p-4 sm:p-6 lg:p-7 bg-white rounded-2xl sm:rounded-3xl border-2 border-indigo-200 shadow-xl space-y-4 text-slate-900 font-sans">
@@ -308,10 +297,10 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
           </div>
           <div className="min-w-0">
             <div className="text-[11px] sm:text-xs font-black text-indigo-600 uppercase tracking-wider">
-              Grammar Duel • Câu {currentDrillIndex + 1}/{totalDrillsCount}
+              Grammar Duel • Round {currentDrillIndex + 1}/{totalDrillsCount}
             </div>
             <h3 className="text-sm sm:text-base lg:text-lg font-black text-slate-900 truncate">
-              {drillMeaning ? `🎯 "${drillMeaning}"` : drillInstruction}
+              {drillInstruction}
             </h3>
           </div>
         </div>

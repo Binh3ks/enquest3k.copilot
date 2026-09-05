@@ -1,9 +1,9 @@
 {
-  "commit": "fe1f83518576dec4aeb8f04464d4ffff48783d46",
-  "git_commit": "fe1f83518576dec4aeb8f04464d4ffff48783d46",
-  "shortCommit": "fe1f8351",
-  "message": "fix(audit): zero-scroll laptop fit, hide grammar duel answer, sync speed match vocab, and scale typography",
-  "builtAt": "2026-09-05T11:41:55.570Z",
-  "build_timestamp": "2026-09-05T11:41:55.570Z",
+  "commit": "24f43f2bdee4c6da8bb01100d20c51b3da565501",
+  "git_commit": "24f43f2bdee4c6da8bb01100d20c51b3da565501",
+  "shortCommit": "24f43f2b",
+  "message": "fix(auth): redirect login to /week/33/hub/1 and add legacy route aliases for read_explore",
+  "builtAt": "2026-09-05T13:21:30.114Z",
+  "build_timestamp": "2026-09-05T13:21:30.114Z",
   "env": "production"
 }

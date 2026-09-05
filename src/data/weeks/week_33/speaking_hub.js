@@ -21,12 +21,15 @@ export const speakingHub = {
           grammar_scaffold: "Where did Tom get injured?",
           acceptable_questions: [
             "Where did Tom get injured?",
+            "Where did Jake help his friend?",
+            "Where did Jake help Tom?",
+            "Where did he get injured?",
             "Where was Tom injured?",
             "Where did he get hurt?",
             "Where did he slip?",
             "Where did the accident happen?"
           ],
-          nova_reply: "Tom got injured in the main school corridor near the science lab."
+          nova_reply: "Tom got injured in the main school corridor near the science lab, and Jake helped him there."
         },
         {
           id: "field_a2",
@@ -112,10 +115,22 @@ export const speakingHub = {
           audio_url: "/audio/week33/info_exchange_q1.mp3",
           hint: "Check your card — where was Jake standing when he helped?",
           acceptable_answers: [
-            "He helped him near the science room.",
             "Near the science room.",
+            "Near the science room",
+            "Near the science lab.",
+            "Near the science lab",
+            "He helped him near the science room.",
+            "He helped his friend near the science room.",
+            "Jake helped his friend near the science room.",
+            "Jake helped Tom near the science room.",
+            "Jake helped him near the science room.",
+            "In the school corridor near the science room.",
             "In the school corridor near the science lab.",
-            "Near the science lab."
+            "In the school corridor.",
+            "In the corridor near the science room.",
+            "Where did Jake help his friend?",
+            "Where did he help his friend?",
+            "Where did Jake help Tom?"
           ]
         },
         {
@@ -130,10 +145,22 @@ export const speakingHub = {
           audio_url: "/audio/week33/info_exchange_q2.mp3",
           hint: "Look at your card — two items are listed.",
           acceptable_answers: [
-            "The nurse used a clean bandage and a cold pack.",
             "A clean bandage and a cold pack.",
+            "A clean bandage and a cold pack",
+            "Clean bandage and a cold pack.",
             "Clean bandage and cold pack.",
-            "She used a bandage and a cold pack."
+            "A bandage and a cold pack.",
+            "Bandage and a cold pack.",
+            "Bandage and cold pack.",
+            "The nurse used a clean bandage and a cold pack.",
+            "The nurse used a bandage and a cold pack.",
+            "She used a clean bandage and a cold pack.",
+            "She used a bandage and a cold pack.",
+            "A clean bandage.",
+            "A cold pack.",
+            "What first aid items did the nurse use?",
+            "What items did the nurse use?",
+            "What did the nurse use?"
           ]
         },
         {
@@ -148,11 +175,25 @@ export const speakingHub = {
           audio_url: "/audio/week33/info_exchange_q3.mp3",
           hint: "Your card says the nurse was very quick — how many minutes?",
           acceptable_answers: [
-            "She arrived within two minutes.",
             "Within two minutes.",
-            "In about two minutes.",
+            "Within two minutes",
+            "Within 2 minutes.",
+            "Within 2 minutes",
             "Two minutes.",
-            "In two minutes."
+            "Two minutes",
+            "2 minutes.",
+            "2 minutes",
+            "In two minutes.",
+            "In 2 minutes.",
+            "In about two minutes.",
+            "In about 2 minutes.",
+            "She arrived within two minutes.",
+            "She arrived in two minutes.",
+            "The nurse arrived within two minutes.",
+            "The school nurse arrived within two minutes.",
+            "How fast did the school nurse arrive to help?",
+            "How fast did the nurse arrive to help?",
+            "How fast did the nurse arrive?"
           ]
         },
         {
@@ -167,11 +208,23 @@ export const speakingHub = {
           audio_url: "/audio/week33/info_exchange_q4.mp3",
           hint: "Who spoke about Jake in front of the whole school?",
           acceptable_answers: [
+            "The headmaster praised him in the school assembly.",
             "The headmaster praised him in school assembly.",
-            "Headmaster Brown in the assembly.",
+            "The headmaster praised Jake in the school assembly.",
+            "The headmaster praised Jake in school assembly.",
+            "The headmaster praised him.",
+            "The headmaster praised Jake.",
+            "The headmaster in the school assembly.",
+            "The headmaster in school assembly.",
             "The headmaster.",
+            "Headmaster Brown in the assembly.",
+            "Headmaster Brown in the school assembly.",
             "Headmaster Brown praised Jake.",
-            "The headmaster praised him."
+            "Headmaster Brown praised him.",
+            "Headmaster Brown.",
+            "Who praised Jake for his quick action?",
+            "Who praised Jake?",
+            "Who praised him?"
           ]
         },
         {
@@ -187,10 +240,23 @@ export const speakingHub = {
           hint: "Look at your card — what must students never do inside?",
           acceptable_answers: [
             "Never run in school corridors.",
+            "Never run in the school corridors.",
+            "Never run in corridors.",
+            "Never run in the corridor.",
+            "Students must never run in school corridors.",
             "Students must never run in corridors.",
             "Never run inside the school.",
+            "Do not run in school corridors.",
+            "Don't run in school corridors.",
+            "Do not run in corridors.",
+            "Don't run in corridors.",
             "Walk carefully and never run inside.",
-            "Always walk carefully in corridors."
+            "Always walk carefully in corridors.",
+            "Walk carefully in school corridors.",
+            "What safety rule did the headmaster remind all students?",
+            "What safety rule did the headmaster remind students?",
+            "What is the safety rule?",
+            "What was the safety rule?"
           ]
         }
       ]

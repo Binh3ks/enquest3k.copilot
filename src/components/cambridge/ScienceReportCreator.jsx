@@ -174,17 +174,11 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
   const finalReportText = "While investigating the corridor, we discovered that water on the smooth tiles reduced surface friction, so Tom slipped while running in a hurry. Jake walked carefully with rubber soles that provided strong grip. The cleaners dried the floor and put up a yellow warning sign to keep everyone safe.";
 
   return (
-    <div className="max-w-3xl mx-auto bg-white rounded-3xl p-4 sm:p-7 border border-purple-200 shadow-xl space-y-6">
+    <div className="max-w-3xl mx-auto bg-white rounded-3xl p-3 sm:p-5 border border-purple-200 shadow-xl space-y-3.5">
       {/* Top Detective Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-4 border-b border-purple-100">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pb-2.5 border-b border-purple-100">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="px-3 py-1 bg-amber-400 text-slate-950 font-black text-xs rounded-xl shadow-xs flex items-center gap-1.5">
-              <Search size={14} /> DISCOVERY DETECTIVE
-            </span>
-            <span className="text-xs font-bold text-purple-700">Week {weekNumber} • Discovery Report</span>
-          </div>
-          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+          <h2 className="text-sm sm:text-base font-black text-slate-900">
             Corridor Friction & Safety Discovery Report
           </h2>
         </div>

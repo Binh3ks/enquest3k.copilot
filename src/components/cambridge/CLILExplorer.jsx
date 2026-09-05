@@ -352,7 +352,7 @@ export default function CLILExplorer({
             {vocabPills.map((w, idx) => (
               <div
                 key={idx}
-                className="px-2.5 py-1 bg-white hover:bg-emerald-50/80 border border-emerald-300 text-emerald-950 font-black text-[11px] sm:text-xs rounded-lg sm:rounded-xl shadow-2xs transition flex items-center gap-1"
+                className="px-3 py-1.5 bg-white hover:bg-emerald-50/80 border border-emerald-300 text-emerald-950 font-black text-xs sm:text-sm rounded-xl shadow-2xs transition flex items-center gap-1.5"
               >
                 <button
                   type="button"
@@ -387,7 +387,7 @@ export default function CLILExplorer({
                 <div
                   key={idx}
                   data-testid="clil-glossary-chip"
-                  className="px-2.5 py-1 bg-white border border-teal-300 text-teal-950 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold shadow-2xs flex items-center gap-1 hover:bg-teal-50/80 transition"
+                  className="px-3 py-1.5 bg-white border border-teal-300 text-teal-950 rounded-xl text-xs sm:text-sm font-bold shadow-2xs flex items-center gap-1.5 hover:bg-teal-50/80 transition"
                 >
                   <button
                     type="button"
@@ -425,7 +425,7 @@ export default function CLILExplorer({
             <div className="flex items-center gap-2 text-[11px] sm:text-xs font-black uppercase tracking-wider text-emerald-700 border-b border-slate-100 pb-1.5">
               <span>📖 PARAGRAPH 1: {(clilData?.part_1_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
-            <p className="text-sm sm:text-base lg:text-lg text-slate-900 font-bold leading-relaxed sm:leading-loose">
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-slate-900 font-bold leading-relaxed sm:leading-loose">
               {renderParsedText(paragraphs[0], 'emerald', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? [activeScopedPattern].filter(Boolean) : vocabPills)}
             </p>
 
@@ -442,7 +442,7 @@ export default function CLILExplorer({
                   return (
                     <div key={q.id} className="p-2.5 sm:p-3.5 bg-white rounded-xl sm:rounded-2xl border border-emerald-200 space-y-2 shadow-2xs">
                       <div className="flex items-center justify-between flex-wrap gap-1">
-                        <p className="text-xs sm:text-sm lg:text-base font-black text-slate-900">{q.question}</p>
+                        <p className="text-sm sm:text-base lg:text-lg font-black text-slate-900">{q.question}</p>
                         {selected && (
                           <span className={`text-[10px] sm:text-xs font-black px-2 py-0.5 rounded-lg flex items-center gap-1 animate-in zoom-in-95 ${
                             isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'
@@ -458,7 +458,7 @@ export default function CLILExplorer({
                             key={i}
                             type="button"
                             onClick={() => handleSelectAnswer(q.id, opt, q.correct)}
-                            className={`p-2 sm:px-3 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition border text-left flex items-center gap-1.5 cursor-pointer ${
+                            className={`p-2.5 sm:px-3.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition border text-left flex items-center gap-2 cursor-pointer ${
                               selected === opt
                                 ? isCorrect
                                   ? 'bg-emerald-600 text-white border-emerald-500 font-black shadow-xs scale-[1.01]'
@@ -507,7 +507,7 @@ export default function CLILExplorer({
             <div className="flex items-center gap-2 text-[11px] sm:text-xs font-black uppercase tracking-wider text-teal-700 border-b border-slate-100 pb-1.5">
               <span>📖 PARAGRAPH 2: {(clilData?.part_2_title || clilData?.title || 'CLIL ARTICLE').toUpperCase()}</span>
             </div>
-            <p className="text-sm sm:text-base lg:text-lg text-slate-900 font-bold leading-relaxed sm:leading-loose">
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-slate-900 font-bold leading-relaxed sm:leading-loose">
               {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, activeHighlightMode, activeHighlightMode === 'grammar' ? [activeScopedPattern].filter(Boolean) : vocabPills)}
             </p>
 
@@ -524,7 +524,7 @@ export default function CLILExplorer({
                   return (
                     <div key={q.id} className="p-2.5 sm:p-3.5 bg-white rounded-xl sm:rounded-2xl border border-teal-200 space-y-2 shadow-2xs">
                       <div className="flex items-center justify-between flex-wrap gap-1">
-                        <p className="text-xs sm:text-sm lg:text-base font-black text-slate-900">{q.question}</p>
+                        <p className="text-sm sm:text-base lg:text-lg font-black text-slate-900">{q.question}</p>
                         {selected && (
                           <span className={`text-[10px] sm:text-xs font-black px-2 py-0.5 rounded-lg flex items-center gap-1 animate-in zoom-in-95 ${
                             isCorrect ? 'bg-teal-100 text-teal-800' : 'bg-rose-100 text-rose-800'
@@ -540,7 +540,7 @@ export default function CLILExplorer({
                             key={i}
                             type="button"
                             onClick={() => handleSelectAnswer(q.id, opt, q.correct)}
-                            className={`p-2 sm:px-3 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition border text-left flex items-center gap-1.5 cursor-pointer ${
+                            className={`p-2.5 sm:px-3.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition border text-left flex items-center gap-2 cursor-pointer ${
                               selected === opt
                                 ? isCorrect
                                   ? 'bg-teal-600 text-white border-teal-500 font-black shadow-xs scale-[1.01]'

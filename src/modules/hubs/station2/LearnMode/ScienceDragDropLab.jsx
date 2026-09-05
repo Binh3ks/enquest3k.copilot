@@ -495,12 +495,12 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
               </p>
             </div>
 
-            {/* Diagram Area with Drop Zones */}
-            <div className="relative w-full h-[260px] xs:h-[300px] sm:h-[350px] md:h-[400px] max-h-[44vh] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border-2 border-teal-300 shadow-md">
+            {/* Diagram Area with Drop Zones — Preserves natural 1264x848 aspect ratio without squishing or cropping */}
+            <div className="relative w-full max-w-4xl mx-auto aspect-[1264/848] max-h-[48vh] rounded-2xl overflow-hidden bg-slate-950 border-2 border-teal-300 shadow-md">
               <img
                 src={labData.diagramImage}
                 alt={labData.experimentTitle}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 onError={(e) => { e.target.src = '/images/scenes/default_story.jpg'; }}
               />
 
