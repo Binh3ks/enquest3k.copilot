@@ -11,15 +11,54 @@ export const skillPracticeHub = {
     { id: 7, text: "I will call her now and give you a clean bandage.", audio_url: "/audio/week33/dictation_7.mp3" },
     { id: 8, text: "Thank you Nurse Sarah, see you this Friday morning!", audio_url: "/audio/week33/dictation_8.mp3" }
   ],
+  flash_arena: {
+    set1_nouns_adj: [
+      { id: 'fa_n1', en: 'corridor', vi: 'hành lang' },
+      { id: 'fa_n2', en: 'bandage', vi: 'băng gạc' },
+      { id: 'fa_n3', en: 'nurse', vi: 'y tá' },
+      { id: 'fa_n4', en: 'puddle', vi: 'vũng nước' },
+      { id: 'fa_n5', en: 'tiles', vi: 'gạch lát sàn' },
+      { id: 'fa_n6', en: 'friction', vi: 'lực ma sát' },
+      { id: 'fa_n7', en: 'warning sign', vi: 'biển cảnh báo' },
+      { id: 'fa_n8', en: 'rubber soles', vi: 'đế giày cao su' }
+    ],
+    set2_verbs: [
+      { id: 'fa_v1', en: 'slipped', vi: 'trượt chân' },
+      { id: 'fa_v2', en: 'walked', vi: 'đi bộ' },
+      { id: 'fa_v3', en: 'hurried', vi: 'vội vã' },
+      { id: 'fa_v4', en: 'helped', vi: 'giúp đỡ' },
+      { id: 'fa_v5', en: 'treated', vi: 'chữa trị' },
+      { id: 'fa_v6', en: 'praised', vi: 'khen ngợi' },
+      { id: 'fa_v7', en: 'lost balance', vi: 'mất thăng bằng' },
+      { id: 'fa_v8', en: 'recovered', vi: 'hồi phục' }
+    ],
+    set3_chunks: [
+      { id: 'fa_c1', en: 'wet floor', vi: 'sàn nhà ướt' },
+      { id: 'fa_c2', en: 'rubber soles', vi: 'đế cao su chống trượt' },
+      { id: 'fa_c3', en: 'ice pack', vi: 'túi chườm đá' },
+      { id: 'fa_c4', en: 'clean bandage', vi: 'băng gạc sạch' },
+      { id: 'fa_c5', en: 'smooth tiles', vi: 'nền gạch trơn nhẵn' },
+      { id: 'fa_c6', en: 'walk carefully', vi: 'đi bộ cẩn thận' }
+    ],
+    set4_definitions: [
+      { id: 'fa_d1', en: 'friction', vi: 'lực cản ngăn ngừa trơn trượt' },
+      { id: 'fa_d2', en: 'bandage', vi: 'dải băng gạc băng bó vết thương' },
+      { id: 'fa_d3', en: 'nurse', vi: 'người chăm sóc y tế tại trường' },
+      { id: 'fa_d4', en: 'corridor', vi: 'lối đi dài nối các lớp học' }
+    ]
+  },
   grammar_drills: [
     {
       id: "st2_w33_g01",
       grammar_tag: "past_continuous_while",
-      text_en: "While Jake was walking down the corridor, a boy slipped on the wet floor.",
-      word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "the", "wet", "floor", "."],
+      text_en: "While Jake was walking down the corridor, Tom slipped on the wet floor.",
+      instruction: "Sắp xếp các khối từ để miêu tả sự việc khi Jake đang đi bộ:",
+      prompt_vi: "Khi Jake đang đi bộ dọc hành lang, Tom bị trượt chân trên sàn ướt.",
+      prompt_en: "While Jake was walking down the corridor, Tom slipped on the wet floor.",
+      word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "Tom", "slipped", "on", "the", "wet", "floor", "."],
       valid_structures: [
-        ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "the", "wet", "floor", "."],
-        ["A", "boy", "slipped", "on", "the", "wet", "floor", "while", "Jake", "was", "walking", "down", "the", "corridor", "."]
+        ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "Tom", "slipped", "on", "the", "wet", "floor", "."],
+        ["Tom", "slipped", "on", "the", "wet", "floor", "while", "Jake", "was", "walking", "down", "the", "corridor", "."]
       ],
       distractor_blocks: ["is", "slips", "walks"]
     },
@@ -27,6 +66,9 @@ export const skillPracticeHub = {
       id: "st2_w33_g02",
       grammar_tag: "past_continuous_while",
       text_en: "While Tom was running in a hurry, he slipped and hurt his knee.",
+      instruction: "Sắp xếp các khối từ để miêu tả hành động vội vàng của Tom:",
+      prompt_vi: "Khi Tom đang vội vàng chạy, cậu ấy bị trượt ngã và đau đầu gối.",
+      prompt_en: "While Tom was running in a hurry, he slipped and hurt his knee.",
       word_blocks: ["While", "Tom", "was", "running", "in", "a", "hurry", ",", "he", "slipped", "and", "hurt", "his", "knee", "."],
       valid_structures: [
         ["While", "Tom", "was", "running", "in", "a", "hurry", ",", "he", "slipped", "and", "hurt", "his", "knee", "."],
@@ -37,22 +79,28 @@ export const skillPracticeHub = {
     {
       id: "st2_w33_g03",
       grammar_tag: "past_continuous_while",
-      text_en: "While Jake was helping his classmate, the school nurse arrived quickly.",
-      word_blocks: ["While", "Jake", "was", "helping", "his", "classmate", ",", "the", "school", "nurse", "arrived", "quickly", "."],
+      text_en: "While Jake was helping Tom, Nurse Sarah arrived quickly.",
+      instruction: "Sắp xếp các khối từ miêu tả sự xuất hiện kịp thời của cô y tá:",
+      prompt_vi: "Trong khi Jake đang giúp đỡ Tom, cô y tá Sarah đã nhanh chóng đến nơi.",
+      prompt_en: "While Jake was helping Tom, Nurse Sarah arrived quickly.",
+      word_blocks: ["While", "Jake", "was", "helping", "Tom", ",", "Nurse", "Sarah", "arrived", "quickly", "."],
       valid_structures: [
-        ["While", "Jake", "was", "helping", "his", "classmate", ",", "the", "school", "nurse", "arrived", "quickly", "."],
-        ["The", "school", "nurse", "arrived", "quickly", "while", "Jake", "was", "helping", "his", "classmate", "."]
+        ["While", "Jake", "was", "helping", "Tom", ",", "Nurse", "Sarah", "arrived", "quickly", "."],
+        ["Nurse", "Sarah", "arrived", "quickly", "while", "Jake", "was", "helping", "Tom", "."]
       ],
       distractor_blocks: ["is", "helps", "arrives"]
     },
     {
       id: "st2_w33_g04",
       grammar_tag: "past_continuous_while",
-      text_en: "While the nurse was treating his knee, Tom felt very relieved.",
-      word_blocks: ["While", "the", "nurse", "was", "treating", "his", "knee", ",", "Tom", "felt", "very", "relieved", "."],
+      text_en: "While Nurse Sarah was treating his ankle, Tom felt very relieved.",
+      instruction: "Sắp xếp các khối từ miêu tả việc sơ cứu cho Tom:",
+      prompt_vi: "Trong khi cô y tá Sarah đang chăm sóc mắt cá chân, Tom cảm thấy rất nhẹ nhõm.",
+      prompt_en: "While Nurse Sarah was treating his ankle, Tom felt very relieved.",
+      word_blocks: ["While", "Nurse", "Sarah", "was", "treating", "his", "ankle", ",", "Tom", "felt", "very", "relieved", "."],
       valid_structures: [
-        ["While", "the", "nurse", "was", "treating", "his", "knee", ",", "Tom", "felt", "very", "relieved", "."],
-        ["Tom", "felt", "very", "relieved", "while", "the", "nurse", "was", "treating", "his", "knee", "."]
+        ["While", "Nurse", "Sarah", "was", "treating", "his", "ankle", ",", "Tom", "felt", "very", "relieved", "."],
+        ["Tom", "felt", "very", "relieved", "while", "Nurse", "Sarah", "was", "treating", "his", "ankle", "."]
       ],
       distractor_blocks: ["treats", "feels", "is"]
     },
@@ -60,6 +108,9 @@ export const skillPracticeHub = {
       id: "st2_w33_g05",
       grammar_tag: "past_continuous_while",
       text_en: "While the cleaners were drying the floor, the headmaster praised Jake.",
+      instruction: "Sắp xếp các khối từ miêu tả hành động của thầy hiệu trưởng:",
+      prompt_vi: "Trong khi các cô chú lao công đang lau khô sàn, thầy hiệu trưởng đã khen ngợi Jake.",
+      prompt_en: "While the cleaners were drying the floor, the headmaster praised Jake.",
       word_blocks: ["While", "the", "cleaners", "were", "drying", "the", "floor", ",", "the", "headmaster", "praised", "Jake", "."],
       valid_structures: [
         ["While", "the", "cleaners", "were", "drying", "the", "floor", ",", "the", "headmaster", "praised", "Jake", "."],

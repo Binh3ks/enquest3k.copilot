@@ -13,6 +13,8 @@ import './VoiceShadowDictation.css';
  */
 export default function VoiceShadowDictation({
   sentence = '',
+  audioUrl = null,
+  speaker = null,
   sentenceIdx = 0,
   totalSentences = 1,
   activeWeek = 33,
@@ -52,7 +54,7 @@ export default function VoiceShadowDictation({
     setIsPlayingAudio(true);
     setPlayCount(prev => prev + 1);
 
-    const sentenceAudioUrl = `/audio/week${activeWeek || 33}/shadowing_${sentenceIdx + 1}.mp3`;
+    const sentenceAudioUrl = audioUrl || `/audio/week${activeWeek || 33}/dictation_${sentenceIdx + 1}.mp3`;
 
     speakText(
       cleanTargetText,
@@ -61,7 +63,7 @@ export default function VoiceShadowDictation({
       () => {
         setIsPlayingAudio(false);
       },
-      'shadowing',
+      'dictation',
       activeWeek
     );
   };
@@ -245,6 +247,11 @@ export default function VoiceShadowDictation({
           <span className="vsd-pill vsd-pill-badge">
             ✍️ DICTATION NOTEPAD
           </span>
+          {speaker && (
+            <span className="vsd-pill" style={{ background: '#e0e7ff', color: '#3730a3', border: '1px solid #c7d2fe', fontWeight: 800 }}>
+              🗣️ {speaker}
+            </span>
+          )}
           <span className="vsd-stepper-label">
             Sentence {sentenceIdx + 1} of {totalSentences}
           </span>

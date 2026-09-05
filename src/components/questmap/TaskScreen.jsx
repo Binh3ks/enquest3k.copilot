@@ -222,14 +222,18 @@ function getSafeTaskData(weekData, weekId) {
 
   const cue_card_info_exchange = adaptInfoExchangeCards(rawInfoExchange);
 
+  const dictationData = skillPracticeHub.dictation || weekData.stations?.dictation || weekData.dictation || [];
+
   return {
     ...weekData,
     weekNumber: weekData.weekNumber || weekId || 33,
-    storyWorld: weekData.storyWorld || { storyScenes: [], vocab: [], grammarDrills: [] },
+    dictation: dictationData,
+    storyWorld: weekData.storyWorld || { storyScenes: [], vocab: [], grammarDrills: [], dictation: dictationData },
     battleArena: weekData.battleArena || {
-      vocab: [],
+      vocab: weekData.stations?.new_words || weekData.vocab || [],
+      vocabList: weekData.stations?.new_words || weekData.vocab || [],
       grammarDrills: skillPracticeHub.grammar_drills || [],
-      flashArena: skillPracticeHub.flash_arena || null,
+      flashArena: skillPracticeHub.flash_arena || weekData.stations?.new_words || null,
       barModel: skillPracticeHub.singapore_math || [],
       scienceLab: skillPracticeHub.science_lab || null
     },

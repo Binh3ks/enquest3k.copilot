@@ -1,9 +1,9 @@
 {
-  "commit": "7f833dac67ad352a9a7675b675d49953c7e0f281",
-  "git_commit": "7f833dac67ad352a9a7675b675d49953c7e0f281",
-  "shortCommit": "7f833dac",
-  "message": "fix(ui): eliminate nested cards, scale responsive typography, enhance mobile info exchange, and update dictation everyday dialogue",
-  "builtAt": "2026-09-05T10:52:38.595Z",
-  "build_timestamp": "2026-09-05T10:52:38.596Z",
+  "commit": "14faed07cd82a77401fa9377395753e5c5be3cc5",
+  "git_commit": "14faed07cd82a77401fa9377395753e5c5be3cc5",
+  "shortCommit": "14faed07",
+  "message": "fix(ui): 2-column story retell, remove black borders in boss listening, remove duplicate map button in action lab, expand arena battle, and update tom dictation",
+  "builtAt": "2026-09-05T11:35:59.274Z",
+  "build_timestamp": "2026-09-05T11:35:59.275Z",
   "env": "production"
 }

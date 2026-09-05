@@ -327,8 +327,8 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
         <div className="space-y-3 sm:space-y-5">
           {/* Question Text */}
           <div className="p-3 sm:p-5 bg-amber-50/80 rounded-xl sm:rounded-2xl border border-amber-200 space-y-0.5 sm:space-y-1">
-            <h4 className="text-[10px] sm:text-xs font-black uppercase text-amber-800 tracking-wider">{currentQ.title}</h4>
-            <p className="text-sm sm:text-base font-bold text-slate-900 leading-relaxed">
+            <h4 className="text-xs sm:text-sm font-black uppercase text-amber-800 tracking-wider">{currentQ.title}</h4>
+            <p className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 leading-relaxed">
               {renderParsedText(currentQ.problemText, 'amber')}
             </p>
           </div>
@@ -341,7 +341,7 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
               <img
                 src={currentQ.svg_url}
                 alt={currentQ.title}
-                className="w-full h-auto max-h-[190px] sm:max-h-[260px] object-contain drop-shadow-md"
+                className="w-full h-auto max-h-[190px] sm:max-h-[250px] object-contain drop-shadow-md"
                 onError={(e) => {
                   e.target.style.display = 'none';
                 }}
@@ -357,20 +357,20 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder="Enter numerical answer..."
-                className="w-full p-3 sm:p-3.5 bg-slate-50 text-slate-900 rounded-2xl border-2 border-slate-300 font-mono text-base font-black outline-none focus:border-amber-500 focus:ring-4 focus:ring-amber-200 transition"
+                className="w-full p-3.5 sm:p-4 bg-slate-50 text-slate-900 rounded-2xl border-2 border-slate-300 font-mono text-base sm:text-lg font-black outline-none focus:border-amber-500 focus:ring-4 focus:ring-amber-200 transition"
               />
               <button
                 type="button"
                 onClick={() => setShowHint(!showHint)}
-                className="absolute right-2 p-2 text-amber-600 hover:text-amber-800 transition"
+                className="absolute right-3 p-2 text-amber-600 hover:text-amber-800 transition cursor-pointer"
                 title="Show Hint"
               >
-                <HelpCircle size={20} />
+                <HelpCircle size={22} />
               </button>
             </div>
             <button
               type="submit"
-              className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-slate-950 font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2 shrink-0"
+              className="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-slate-950 font-black text-sm sm:text-base rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2 shrink-0 cursor-pointer"
             >
               <span>Submit Answer ▶</span>
             </button>

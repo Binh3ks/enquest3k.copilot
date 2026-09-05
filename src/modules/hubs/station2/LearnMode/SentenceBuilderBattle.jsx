@@ -22,11 +22,14 @@ const WEEK33_GRAMMAR_DRILLS = [
   {
     id: "st2_w33_g01",
     grammar_tag: "past_continuous_while",
-    text_en: "While Jake was walking down the corridor, a boy slipped on wet tiles.",
-    word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "wet", "tiles", "."],
+    text_en: "While Jake was walking down the corridor, Tom slipped on the wet floor.",
+    instruction: "Sắp xếp các khối từ miêu tả sự việc khi Jake đang đi bộ:",
+    prompt_vi: "Khi Jake đang đi bộ dọc hành lang, Tom bị trượt chân trên sàn ướt.",
+    prompt_en: "While Jake was walking down the corridor, Tom slipped on the wet floor.",
+    word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "Tom", "slipped", "on", "the", "wet", "floor", "."],
     valid_structures: [
-      ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "on", "wet", "tiles", "."],
-      ["A", "boy", "slipped", "on", "wet", "tiles", "while", "Jake", "was", "walking", "down", "the", "corridor", "."]
+      ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "Tom", "slipped", "on", "the", "wet", "floor", "."],
+      ["Tom", "slipped", "on", "the", "wet", "floor", "while", "Jake", "was", "walking", "down", "the", "corridor", "."]
     ],
     distractor_blocks: ["is", "slips", "walks"]
   },
@@ -34,6 +37,9 @@ const WEEK33_GRAMMAR_DRILLS = [
     id: "st2_w33_g02",
     grammar_tag: "past_continuous_while",
     text_en: "While Tom was running in a hurry, he slipped and hurt his knee.",
+    instruction: "Sắp xếp các khối từ miêu tả hành động vội vàng của Tom:",
+    prompt_vi: "Khi Tom đang vội vàng chạy, cậu ấy bị trượt ngã và đau đầu gối.",
+    prompt_en: "While Tom was running in a hurry, he slipped and hurt his knee.",
     word_blocks: ["While", "Tom", "was", "running", "in", "a", "hurry", ",", "he", "slipped", "and", "hurt", "his", "knee", "."],
     valid_structures: [
       ["While", "Tom", "was", "running", "in", "a", "hurry", ",", "he", "slipped", "and", "hurt", "his", "knee", "."],
@@ -44,22 +50,28 @@ const WEEK33_GRAMMAR_DRILLS = [
   {
     id: "st2_w33_g03",
     grammar_tag: "past_continuous_while",
-    text_en: "While Jake was helping his classmate, the school nurse arrived quickly.",
-    word_blocks: ["While", "Jake", "was", "helping", "his", "classmate", ",", "the", "school", "nurse", "arrived", "quickly", "."],
+    text_en: "While Jake was helping Tom, Nurse Sarah arrived quickly.",
+    instruction: "Sắp xếp các khối từ miêu tả sự xuất hiện kịp thời của cô y tá:",
+    prompt_vi: "Trong khi Jake đang giúp đỡ Tom, cô y tá Sarah đã nhanh chóng đến nơi.",
+    prompt_en: "While Jake was helping Tom, Nurse Sarah arrived quickly.",
+    word_blocks: ["While", "Jake", "was", "helping", "Tom", ",", "Nurse", "Sarah", "arrived", "quickly", "."],
     valid_structures: [
-      ["While", "Jake", "was", "helping", "his", "classmate", ",", "the", "school", "nurse", "arrived", "quickly", "."],
-      ["The", "school", "nurse", "arrived", "quickly", "while", "Jake", "was", "helping", "his", "classmate", "."]
+      ["While", "Jake", "was", "helping", "Tom", ",", "Nurse", "Sarah", "arrived", "quickly", "."],
+      ["Nurse", "Sarah", "arrived", "quickly", "while", "Jake", "was", "helping", "Tom", "."]
     ],
     distractor_blocks: ["is", "helps", "arrives"]
   },
   {
     id: "st2_w33_g04",
     grammar_tag: "past_continuous_while",
-    text_en: "While the nurse was treating his knee, Tom felt very relieved.",
-    word_blocks: ["While", "the", "nurse", "was", "treating", "his", "knee", ",", "Tom", "felt", "very", "relieved", "."],
+    text_en: "While Nurse Sarah was treating his ankle, Tom felt very relieved.",
+    instruction: "Sắp xếp các khối từ miêu tả việc sơ cứu cho Tom:",
+    prompt_vi: "Trong khi cô y tá Sarah đang chăm sóc mắt cá chân, Tom cảm thấy rất nhẹ nhõm.",
+    prompt_en: "While Nurse Sarah was treating his ankle, Tom felt very relieved.",
+    word_blocks: ["While", "Nurse", "Sarah", "was", "treating", "his", "ankle", ",", "Tom", "felt", "very", "relieved", "."],
     valid_structures: [
-      ["While", "the", "nurse", "was", "treating", "his", "knee", ",", "Tom", "felt", "very", "relieved", "."],
-      ["Tom", "felt", "very", "relieved", "while", "the", "nurse", "was", "treating", "his", "knee", "."]
+      ["While", "Nurse", "Sarah", "was", "treating", "his", "ankle", ",", "Tom", "felt", "very", "relieved", "."],
+      ["Tom", "felt", "very", "relieved", "while", "Nurse", "Sarah", "was", "treating", "his", "ankle", "."]
     ],
     distractor_blocks: ["treats", "feels", "is"]
   },
@@ -67,6 +79,9 @@ const WEEK33_GRAMMAR_DRILLS = [
     id: "st2_w33_g05",
     grammar_tag: "past_continuous_while",
     text_en: "While the cleaners were drying the floor, the headmaster praised Jake.",
+    instruction: "Sắp xếp các khối từ miêu tả hành động của thầy hiệu trưởng:",
+    prompt_vi: "Trong khi các cô chú lao công đang lau khô sàn, thầy hiệu trưởng đã khen ngợi Jake.",
+    prompt_en: "While the cleaners were drying the floor, the headmaster praised Jake.",
     word_blocks: ["While", "the", "cleaners", "were", "drying", "the", "floor", ",", "the", "headmaster", "praised", "Jake", "."],
     valid_structures: [
       ["While", "the", "cleaners", "were", "drying", "the", "floor", ",", "the", "headmaster", "praised", "Jake", "."],
@@ -279,29 +294,35 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
     }
   };
 
-  // Safe string title render
-  const drillTitleText = typeof currentDrill?.text_en === 'string'
-    ? currentDrill.text_en
-    : (typeof currentDrill?.template === 'string' ? currentDrill.template : 'Build a correct sentence');
+  // Safe prompt/instruction render — NEVER print text_en to prevent spoiling the answer!
+  const drillInstruction = currentDrill?.instruction || 'Sắp xếp các khối từ thành câu hoàn chỉnh:';
+  const drillMeaning = currentDrill?.prompt_vi || currentDrill?.meaning_vi || '';
 
   return (
     <div className="w-full max-w-7xl mx-auto p-4 sm:p-6 lg:p-7 bg-white rounded-2xl sm:rounded-3xl border-2 border-indigo-200 shadow-xl space-y-4 text-slate-900 font-sans">
       {/* Header Info */}
-      <div className="flex items-center justify-between pb-2.5 border-b border-slate-200 flex-wrap gap-2">
-        <div className="flex items-center gap-2 min-w-0">
-          <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-black text-base shadow-sm shrink-0">
+      <div className="flex items-center justify-between pb-3 border-b border-slate-200 flex-wrap gap-2">
+        <div className="flex items-center gap-3 min-w-0">
+          <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-black text-xl shadow-sm shrink-0">
             🧱
           </div>
-          <h3 className="text-xs sm:text-sm font-black text-slate-900 truncate">{drillTitleText}</h3>
+          <div className="min-w-0">
+            <div className="text-[11px] sm:text-xs font-black text-indigo-600 uppercase tracking-wider">
+              Grammar Duel • Câu {currentDrillIndex + 1}/{totalDrillsCount}
+            </div>
+            <h3 className="text-sm sm:text-base lg:text-lg font-black text-slate-900 truncate">
+              {drillMeaning ? `🎯 "${drillMeaning}"` : drillInstruction}
+            </h3>
+          </div>
         </div>
 
         <div className="flex items-center gap-1.5 flex-wrap">
           {grammarLesson && (
             <button
               onClick={() => setShowGrammarModal(true)}
-              className="px-2.5 py-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 text-white text-[11px] font-black rounded-lg shadow-sm flex items-center gap-1 transition active:scale-95"
+              className="px-3 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 text-white text-xs font-black rounded-xl shadow-sm flex items-center gap-1 transition active:scale-95"
             >
-              <BookOpen size={12} className="text-amber-300" /> 📘 Rules
+              <BookOpen size={13} className="text-amber-300" /> 📘 Rules
             </button>
           )}
 
@@ -403,9 +424,9 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
       {/* Active Game Display */}
       {(gameState === 'playing' || gameState === 'paused') && (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-          <div className="space-y-2">
+          <div className="space-y-3">
             {/* Target Drop Zone Area */}
-            <div className="p-2 sm:p-3 bg-indigo-50/70 border border-indigo-200 rounded-xl min-h-[48px] sm:min-h-[56px] flex flex-wrap items-center gap-1.5 shadow-inner">
+            <div className="p-3 sm:p-4 bg-indigo-50/70 border-2 border-dashed border-indigo-300 rounded-2xl min-h-[60px] sm:min-h-[72px] flex flex-wrap items-center gap-2 shadow-inner">
               {targetBlocks.length > 0 && (
                 <SortableContext items={targetBlocks.map((b) => b.id)} strategy={horizontalListSortingStrategy}>
                   {targetBlocks.map((block) => (
@@ -416,8 +437,8 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
             </div>
 
             {/* Word Bank Dock */}
-            <div className="p-2 sm:p-3 bg-slate-50 border border-slate-200 rounded-xl">
-              <div className="flex flex-wrap gap-1.5">
+            <div className="p-3 sm:p-4 bg-slate-50 border border-slate-200 rounded-2xl">
+              <div className="flex flex-wrap gap-2">
                 {bankBlocks.map((block) => (
                   <WordBlock key={block.id} id={block.id} word={block.word} onClick={() => handleBlockClick(block)} />
                 ))}
@@ -430,16 +451,16 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
                 type="button"
                 onClick={handleCheckAnswer}
                 disabled={targetBlocks.length === 0}
-                className="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white font-black rounded-xl text-xs shadow-md flex items-center gap-1.5 transition active:scale-95"
+                className="px-7 py-3 sm:py-3.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white font-black rounded-xl text-sm sm:text-base shadow-md flex items-center gap-2 transition active:scale-95 cursor-pointer"
               >
-                <Sparkles size={16} /> Check Sentence
+                <Sparkles size={18} /> Check Sentence
               </button>
 
               {feedback && (
-                <div className={`p-3 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
+                <div className={`p-3 sm:p-3.5 rounded-xl border text-xs sm:text-sm font-black flex items-center gap-2 animate-in fade-in ${
                   feedback.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
                 }`}>
-                  {feedback.isCorrect ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
+                  {feedback.isCorrect ? <CheckCircle2 size={18} /> : <AlertCircle size={18} />}
                   {feedback.text}
                 </div>
               )}

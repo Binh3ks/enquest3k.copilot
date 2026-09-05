@@ -228,7 +228,10 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
             </p>
           </div>
 
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-900 border-2 border-purple-200 shadow-md">
+          <div
+            className="relative rounded-2xl overflow-hidden bg-slate-900 border-2 border-purple-200 shadow-md mx-auto"
+            style={{ maxHeight: '44vh', aspectRatio: '16 / 9', width: 'auto' }}
+          >
             <img
               src="/images/week33/read_cover_w33.jpg"
               alt="Corridor Observation Scene"

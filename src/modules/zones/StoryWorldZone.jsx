@@ -149,6 +149,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   const grammarRegex = storyData.grammarRegex || data?.reading_hub?.grammarRegex || [];
   const readExplore = storyData.readExplore || data?.reading_hub?.read_explore || data?.readingHubData?.read_explore || data?.stations?.read_explore || data?.read_explore || data?.rawWeekData?.readExplore || data?.rawWeekData?.stations?.read_explore || {};
   const atomicSentences = storyData.shadowingData?.sentences || storyData.shadowing?.sentences || data?.reading_hub?.shadowingData?.sentences || data?.readingHubData?.shadowingData?.sentences || data?.stations?.shadowing?.sentences || data?.stations?.shadowing?.shadowingData?.sentences || data?.shadowing?.sentences || data?.rawWeekData?.stations?.shadowing?.sentences || null;
+  const dictationList = data?.dictation || storyData?.dictation || data?.stations?.dictation || data?.skill_practice_hub?.dictation || [];
 
   const fullStoryText = readExplore.content_en || readExplore.text_en || readExplore.text || (atomicSentences ? atomicSentences.map(s => s.text).join(' ') : "");
 
@@ -259,14 +260,23 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   // Playback ID Mutex to prevent race conditions on rapid double-taps
   const currentPlaybackId = useRef(0);
 
-  // 🚀 Background Pre-cache all story sentences into IndexedDB for 0ms latency on click
+  // 🚀 Background Pre-cache all story sentences & dictation dialogue into IndexedDB for 0ms latency on click
   useEffect(() => {
     if (storySentences && storySentences.length > 0) {
       storySentences.forEach((sentence) => {
         VoiceService.prefetch?.(sentence, 'shadowing', null, activeWeek).catch(() => {});
       });
     }
-  }, [currentGear, storySentences, activeWeek]);
+    if (dictationList && dictationList.length > 0) {
+      dictationList.forEach((item, idx) => {
+        const text = item.sentence || item.text;
+        const url = item.audio_url || `/audio/week${activeWeek || 33}/dictation_${idx + 1}.mp3`;
+        if (text) {
+          VoiceService.prefetch?.(text, 'dictation', url, activeWeek).catch(() => {});
+        }
+      });
+    }
+  }, [currentGear, storySentences, dictationList, activeWeek]);
 
   // Word-by-Word Karaoke Highlighting Simulation (Real-Time Audio Sync & Weighted Pacing)
   const handleSpeakSentence = (sentenceText, idx, playbackId = null, onAudioStartCallback = null, caller = 'unknown') => {
@@ -843,10 +853,13 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
           </div>
 
           {/* Webtoon Viewer */}
-          <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 border border-slate-200 shadow-md space-y-3 sm:space-y-4">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-4 border border-slate-200 shadow-md space-y-2.5">
             {currentScene && (
-              <div className="space-y-3">
-                <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-900 border-2 border-slate-200 shadow-md">
+              <div className="space-y-2.5">
+                <div
+                  className="relative rounded-2xl overflow-hidden bg-slate-900 border-2 border-slate-200 shadow-md mx-auto"
+                  style={{ maxHeight: '44vh', aspectRatio: '16 / 9', width: 'auto' }}
+                >
                   <img
                     src={currentScene.image_url}
                     alt={currentScene.title_en || 'Scene image'}
@@ -964,14 +977,14 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                       const sceneAudioUrl = currentScene?.audio_url || `/audio/week${activeWeek || 33}/scene_${currentScene?.scene_number || (activeFrameIndex + 1)}.mp3`;
                       speakText(currentSceneText, sceneAudioUrl, 1.0, null, 'read', activeWeek);
                     }}
-                    className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 px-2.5 py-1.5 sm:px-4 sm:py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl shadow-md transition flex items-center gap-1 sm:gap-1.5 font-black text-[11px] sm:text-xs border border-white/40 z-10 backdrop-blur-xs active:scale-95"
+                    className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 px-3 py-1.5 sm:px-4 sm:py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl shadow-md transition flex items-center gap-1.5 font-black text-xs sm:text-sm border border-white/40 z-10 backdrop-blur-xs active:scale-95"
                   >
-                    <Volume2 size={14} className="sm:w-4 sm:h-4" /> <span>Listen to Scene</span>
+                    <Volume2 size={16} /> <span>Listen to Scene</span>
                   </button>
                 </div>
 
-                <div className="p-3 sm:p-4 bg-blue-50/70 rounded-xl sm:rounded-2xl border border-blue-200/80">
-                  <div className="text-sm sm:text-base font-bold text-slate-900 leading-relaxed">
+                <div className="p-3 bg-blue-50/70 rounded-xl sm:rounded-2xl border border-blue-200/80">
+                  <div className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 leading-relaxed text-center">
                     {renderParsedText(currentSceneText, 'blue', null, false, highlightMode, grammarRegex)}
                   </div>
                 </div>
@@ -982,16 +995,16 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                     type="button"
                     disabled={activeFrameIndex === 0}
                     onClick={() => setActiveFrameIndex(prev => Math.max(0, prev - 1))}
-                    className="px-4 py-2 bg-slate-100 hover:bg-slate-200 disabled:opacity-40 text-slate-800 rounded-xl text-xs font-black"
+                    className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 disabled:opacity-40 text-slate-800 rounded-xl text-xs sm:text-sm font-black"
                   >
                     ◀ Previous
                   </button>
-                  <span className="text-xs font-bold text-slate-500">Scene {activeFrameIndex + 1} of {scenes.length}</span>
+                  <span className="text-xs sm:text-sm font-black text-slate-500">Scene {activeFrameIndex + 1} of {scenes.length}</span>
                   {activeFrameIndex < scenes.length - 1 ? (
                     <button
                       type="button"
                       onClick={() => setActiveFrameIndex(prev => Math.min(scenes.length - 1, prev + 1))}
-                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-black shadow"
+                      className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs sm:text-sm font-black shadow"
                     >
                       Next ▶
                     </button>
@@ -1005,7 +1018,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                         fireCelebrationConfetti('Quest_Completed');
                         navigate(`/week/${activeWeek || 1}/hub/1`);
                       }}
-                      className="px-5 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-xl text-xs font-black shadow-lg animate-bounce"
+                      className="px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-xl text-xs sm:text-sm font-black shadow-lg animate-bounce"
                     >
                       🎉 Hoàn thành & Về map ▶
                     </button>
@@ -1013,7 +1026,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                     <button
                       type="button"
                       disabled={true}
-                      className="px-4 py-2 bg-slate-100 opacity-40 text-slate-500 rounded-xl text-xs font-black"
+                      className="px-5 py-2.5 bg-slate-100 opacity-40 text-slate-500 rounded-xl text-xs sm:text-sm font-black"
                     >
                       Hết cảnh
                     </button>
@@ -1096,37 +1109,47 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
             </div>
 
             {/* ── Mode Switch: Dictation Notepad vs Voice Shadow (Stepper/List) ── */}
-            {voiceShadowMode === 'dictation' ? (
-              <VoiceShadowDictation
-                sentence={storySentences[stepperIdx]}
-                sentenceIdx={stepperIdx}
-                totalSentences={storySentences.length}
-                activeWeek={activeWeek}
-                onCompleteSentence={({ sentenceIdx: sIdx, score }) => {
-                  setCompletedKaraokeSentences(prev => {
-                    const updated = { ...prev, [sIdx]: true };
-                    const completedCount = Object.keys(updated).length;
-                    if (completedCount === storySentences.length) {
-                      fireCelebrationConfetti?.('Gear2_Dictation_Master');
+            {voiceShadowMode === 'dictation' ? (() => {
+              const currentDictation = dictationList[stepperIdx] || null;
+              const dictSentence = currentDictation?.sentence || currentDictation?.text || storySentences[stepperIdx] || '';
+              const dictAudioUrl = currentDictation?.audio_url || `/audio/week${activeWeek || 33}/dictation_${stepperIdx + 1}.mp3`;
+              const dictSpeaker = currentDictation?.speaker || null;
+              const totalDictCount = dictationList.length > 0 ? dictationList.length : storySentences.length;
+
+              return (
+                <VoiceShadowDictation
+                  sentence={dictSentence}
+                  audioUrl={dictAudioUrl}
+                  speaker={dictSpeaker}
+                  sentenceIdx={stepperIdx}
+                  totalSentences={totalDictCount}
+                  activeWeek={activeWeek}
+                  onCompleteSentence={({ sentenceIdx: sIdx, score }) => {
+                    setCompletedKaraokeSentences(prev => {
+                      const updated = { ...prev, [sIdx]: true };
+                      const completedCount = Object.keys(updated).length;
+                      if (completedCount === totalDictCount) {
+                        fireCelebrationConfetti?.('Gear2_Dictation_Master');
+                      }
+                      return updated;
+                    });
+                    setKaraokeStreak(prev => prev + 1);
+                  }}
+                  onNext={() => {
+                    if (stepperIdx < totalDictCount - 1) {
+                      setStepperIdx(prev => prev + 1);
+                    } else {
+                      handleNextGear(3);
                     }
-                    return updated;
-                  });
-                  setKaraokeStreak(prev => prev + 1);
-                }}
-                onNext={() => {
-                  if (stepperIdx < storySentences.length - 1) {
-                    setStepperIdx(prev => prev + 1);
-                  } else {
-                    handleNextGear(3);
-                  }
-                }}
-                onPrev={() => {
-                  if (stepperIdx > 0) {
-                    setStepperIdx(prev => prev - 1);
-                  }
-                }}
-              />
-            ) : hideGearTabs ? (
+                  }}
+                  onPrev={() => {
+                    if (stepperIdx > 0) {
+                      setStepperIdx(prev => prev - 1);
+                    }
+                  }}
+                />
+              );
+            })() : hideGearTabs ? (
               <div className="space-y-3">
                 {/* Stepper Header */}
                 <div className="flex items-center justify-between px-1">

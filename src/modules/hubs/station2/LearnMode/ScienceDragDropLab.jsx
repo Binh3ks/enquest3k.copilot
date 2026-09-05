@@ -37,11 +37,11 @@ function DraggableLabel({ id, text, isPlaced, disabled, isSelected, onClick }) {
       {...listeners}
       {...attributes}
       onClick={onClick}
-      className={`px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r ${
+      className={`px-3.5 py-2 sm:px-4 sm:py-2.5 bg-gradient-to-r ${
         isSelected
           ? 'from-amber-500 to-amber-600 ring-4 ring-amber-300 scale-105 border-amber-300'
           : 'from-teal-600 to-emerald-600 border-teal-400 hover:scale-105'
-      } border-2 text-white font-black text-[11px] sm:text-xs rounded-xl shadow-md active:scale-95 cursor-grab active:cursor-grabbing transition select-none ${
+      } border-2 text-white font-black text-xs sm:text-sm lg:text-base rounded-xl shadow-md active:scale-95 cursor-grab active:cursor-grabbing transition select-none ${
         isDragging ? 'opacity-50 ring-4 ring-teal-300' : ''
       }`}
     >
@@ -496,7 +496,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             </div>
 
             {/* Diagram Area with Drop Zones */}
-            <div className="relative w-full h-[290px] xs:h-[330px] sm:h-[480px] md:h-[540px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border-2 border-teal-300 shadow-md">
+            <div className="relative w-full h-[260px] xs:h-[300px] sm:h-[350px] md:h-[400px] max-h-[44vh] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border-2 border-teal-300 shadow-md">
               <img
                 src={labData.diagramImage}
                 alt={labData.experimentTitle}
