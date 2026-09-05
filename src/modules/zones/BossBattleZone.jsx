@@ -506,7 +506,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
       </div>
 
       {/* Task Content Card */}
-      <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 border border-slate-200 shadow-md min-h-[360px]">
+      <div className={hideStationTabs ? "w-full" : "bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 border border-slate-200 shadow-md min-h-[360px]"}>
         {/* LISTENING P1 */}
         {activeTaskId === 'list_p1' && (
           <SVGLineMatcher

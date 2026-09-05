@@ -2,11 +2,14 @@
 // Contains Day 2 Action Lab, Day 3 Grammar Duel & Singapore Math, and Dictation
 export const skillPracticeHub = {
   dictation: [
-    { id: 1, text: "Jake was walking carefully down the corridor.", audio_url: "/audio/week33/dictation_1.mp3" },
-    { id: 2, text: "A boy ran fast and slipped on the wet floor.", audio_url: "/audio/week33/dictation_2.mp3" },
-    { id: 3, text: "Jake stopped immediately to help his classmate.", audio_url: "/audio/week33/dictation_3.mp3" },
-    { id: 4, text: "The school nurse arrived quickly with a bandage.", audio_url: "/audio/week33/dictation_4.mp3" },
-    { id: 5, text: "Everyone felt relieved and followed safety rules.", audio_url: "/audio/week33/dictation_5.mp3" }
+    { id: 1, text: "Hello Jake, please come into Room 4B.", audio_url: "/audio/week33/dictation_1.mp3" },
+    { id: 2, text: "Tom slipped on the wet floor at 10:15 this morning.", audio_url: "/audio/week33/dictation_2.mp3" },
+    { id: 3, text: "Let's put an ice pack on his ankle for 15 minutes.", audio_url: "/audio/week33/dictation_3.mp3" },
+    { id: 4, text: "Can he walk back to class on Monday afternoon?", audio_url: "/audio/week33/dictation_4.mp3" },
+    { id: 5, text: "No, he must rest at home for 2 days.", audio_url: "/audio/week33/dictation_5.mp3" },
+    { id: 6, text: "Please call his mother on 0988 123 456.", audio_url: "/audio/week33/dictation_6.mp3" },
+    { id: 7, text: "I will call her now and give him a clean bandage.", audio_url: "/audio/week33/dictation_7.mp3" },
+    { id: 8, text: "Thank you Nurse Sarah, see you this Friday!", audio_url: "/audio/week33/dictation_8.mp3" }
   ],
   grammar_drills: [
     {

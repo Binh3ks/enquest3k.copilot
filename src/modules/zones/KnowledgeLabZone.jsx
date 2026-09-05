@@ -160,7 +160,7 @@ export default function KnowledgeLabZone({
       )}
 
       {/* Active Sub-Component Area */}
-      <div className="bg-white rounded-2xl sm:rounded-3xl p-2 sm:p-5 border border-slate-200 shadow-md min-h-[420px]">
+      <div className={hideStationTabs ? "w-full" : "bg-white rounded-2xl sm:rounded-3xl p-2 sm:p-5 border border-slate-200 shadow-md min-h-[420px]"}>
         {activeTab === 'clil' && (
           <CLILExplorer
             clilData={clilData}

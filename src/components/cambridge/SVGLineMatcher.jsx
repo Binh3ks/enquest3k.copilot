@@ -200,15 +200,15 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
 
   /* ── Render ── */
   return (
-    <div className="w-full max-w-7xl mx-auto my-1 p-2.5 sm:p-4 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2.5">
+    <div className="w-full max-w-7xl mx-auto my-1 p-3 sm:p-5 lg:p-6 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-3">
       {/* Cambridge Exam Header */}
-      <div className="bg-gradient-to-r from-indigo-900 to-slate-900 text-white px-3.5 py-2 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 shadow-sm">
+      <div className="bg-gradient-to-r from-indigo-900 to-slate-900 text-white px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 shadow-sm">
         <div>
-          <h2 className="text-xs sm:text-sm font-bold text-slate-300 flex items-center gap-1.5">
+          <h2 className="text-xs sm:text-sm lg:text-base font-bold text-slate-300 flex items-center gap-1.5">
             🎧 Flyers Practice
           </h2>
         </div>
-        <p className="text-xs sm:text-sm font-black text-amber-300">
+        <p className="text-xs sm:text-sm lg:text-base font-black text-amber-300">
           👉 Listen and draw lines. There is one example.
         </p>
       </div>
@@ -227,18 +227,18 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
             type="button"
             onClick={() => { setDrawnLines([]); setSelectedName(null); }}
             disabled={isSubmitted || drawnLines.length === 0}
-            className="px-2.5 sm:px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 font-black text-xs rounded-xl border border-rose-200 transition disabled:opacity-40 flex items-center gap-1 shadow-2xs whitespace-nowrap shrink-0"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-rose-50 hover:bg-rose-100 text-rose-700 font-black text-xs sm:text-sm rounded-xl border border-rose-200 transition disabled:opacity-40 flex items-center gap-1.5 shadow-2xs whitespace-nowrap shrink-0 cursor-pointer"
           >
-            <Trash2 size={13} /> Clear Lines
+            <Trash2 size={14} /> Clear Lines
           </button>
         </div>
       </div>
 
       {/* ── Interactive Matching Area (Names Ribbon + SVG Canvas) ── */}
-      <div onMouseMove={handleSVGMouseMove} className="space-y-2 relative">
+      <div onMouseMove={handleSVGMouseMove} className="space-y-2.5 relative">
         {/* ── Name Selection Ribbon ── */}
-        <div className="p-1.5 sm:p-2 bg-slate-50 border border-slate-200 rounded-xl relative z-10">
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
+        <div className="p-2 sm:p-2.5 bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl relative z-10">
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5 sm:gap-2">
             {sceneData.names.map(name => {
               const hasLine = drawnLines.some(l => l.nameId === name.id);
               const isSelected = selectedName?.id === name.id;
@@ -248,7 +248,7 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
                   disabled={isSubmitted || name.isExample}
                   onClick={() => handleSelectName(name)}
                   data-testid={name.isExample ? 'example-row' : undefined}
-                  className={`px-2 py-1 rounded-lg text-xs font-black transition-all flex items-center justify-center gap-1 border shadow-2xs w-full ${
+                  className={`px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm lg:text-base font-black transition-all flex items-center justify-center gap-1.5 border shadow-2xs w-full cursor-pointer ${
                     name.isExample
                       ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-1 ring-amber-300'
                       : isSelected
@@ -258,9 +258,9 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
                       : 'bg-white text-slate-900 border-slate-300 hover:border-indigo-400 hover:bg-indigo-50'
                   }`}
                 >
-                  <span className="text-[10px] sm:text-xs font-black break-words leading-tight text-center">{name.text}</span>
-                  {name.isExample && <span className="text-[9px] bg-amber-500 text-white px-1 rounded uppercase font-black shrink-0">★ EX</span>}
-                  {hasLine && !name.isExample && <CheckCircle2 size={12} className="text-emerald-700 shrink-0" />}
+                  <span className="text-xs sm:text-sm lg:text-base font-black break-words leading-tight text-center">{name.text}</span>
+                  {name.isExample && <span className="text-[9px] sm:text-[10px] bg-amber-500 text-white px-1.5 py-0.5 rounded uppercase font-black shrink-0">★ EX</span>}
+                  {hasLine && !name.isExample && <CheckCircle2 size={14} className="text-emerald-700 shrink-0" />}
                 </button>
               );
             })}
@@ -279,7 +279,7 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
             className={`w-full h-auto block rounded-2xl border-2 transition-all ${
               selectedName ? 'cursor-crosshair border-indigo-400' : 'border-slate-800 cursor-default'
             }`}
-            style={{ background: '#0f172a', overflow: 'visible', maxHeight: '52vh' }}
+            style={{ background: '#0f172a', overflow: 'visible', maxHeight: '62vh' }}
           >
             {/* Background image — fills full viewBox, no stretch issues */}
             <image
@@ -398,8 +398,8 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
       <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
         {!isSubmitted ? (
           <button onClick={handleCheck} disabled={drawnLines.length === 0}
-            className="w-full sm:w-auto px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs sm:text-sm rounded-xl shadow-md transition active:scale-95 flex items-center justify-center gap-1.5 disabled:opacity-40"
-          ><Sparkles size={16} /> Check Line Matches</button>
+            className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs sm:text-base rounded-xl sm:rounded-2xl shadow-md transition active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 cursor-pointer"
+          ><Sparkles size={18} /> Check Line Matches</button>
         ) : (
           <div className="w-full flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-200">
             <div className="flex items-center gap-2">

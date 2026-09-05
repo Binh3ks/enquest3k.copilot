@@ -237,7 +237,7 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
       )}
 
       {/* Active Sub-Component */}
-      <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 border border-slate-200 shadow-md min-h-[360px]">
+      <div className={hideStationTabs ? "w-full" : "bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 border border-slate-200 shadow-md min-h-[360px]"}>
         {activeTab === 'story_writer' && (
           <StoryWriting
             content={data?.writing_hub || data?.rawWeekData?.writing_hub || studioData?.writingHub || null}

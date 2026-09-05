@@ -45,6 +45,11 @@ Every week created for EngQuest3K (from Week 01 to Week 156) must adhere strictl
     - All 15 Quests must save completion to both `useDailyQuestStore` (`completedQuests['w' + weekId][questId]`) and `useUserStore` (`progressCache[weekId][stationId]` + Supabase cloud backup).
     - `useDailyQuestStore.completeQuest` is the single canonical entry point with automatic alias mapping (`science_lab` $\leftrightarrow$ `action_lab`, `story_writer` $\leftrightarrow$ `story_writing`, `broadcast_studio` $\leftrightarrow$ `video_challenge`, `gear4_clil` $\leftrightarrow$ `clil`).
     - Every Quest component must accept `onBackToMap` / `onComplete` and provide a clean, celebratory return path to the Quest Map (`/week/{weekId}/hub/1`) without getting trapped.
+12. **Everyday Conversation & Cambridge Exam Dictation Invariant (2026-09-05)**:
+    - Dictation must NEVER copy or duplicate Shadowing sentences or CLIL scientific texts.
+    - Dictation consists of 8 short turns forming an authentic everyday conversation dialogue between characters/friends related to the week's theme.
+    - Mandatory inclusion of Cambridge Movers/Flyers tested entities: numbers (times, rooms, phone digits, durations), days of the week, dates, names, places, and everyday conversational collocations/chunks.
+
 
 ---
 

@@ -559,19 +559,50 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
         <div className="w-full lg:col-span-5 space-y-4">
           {phase === 'table_a' ? (
             /* PHASE 1: CANDIDATE FORMS & SPEAKS QUESTION */
-            <div className="bg-white rounded-3xl p-5 sm:p-7 border border-amber-200 shadow-md space-y-5">
+            <div className="bg-white rounded-3xl p-4 sm:p-7 border border-amber-200 shadow-md space-y-4 sm:space-y-5">
               {/* Cue Display (Cambridge Format) */}
-              <div className="p-4 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl space-y-2">
-                <span className="text-[11px] font-black uppercase text-amber-800 tracking-wider flex items-center gap-1.5">
-                  <HelpCircle size={14} className="text-amber-600" />
-                  CUE PROMPT ({cueIdxA + 1}/{cuesA.length}):
-                </span>
+              <div className="p-4 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl space-y-2.5">
+                <div className="flex items-center justify-between flex-wrap gap-1">
+                  <span className="text-[11px] font-black uppercase text-amber-800 tracking-wider flex items-center gap-1.5">
+                    <HelpCircle size={14} className="text-amber-600" />
+                    CURRENT CUE (0{cueIdxA + 1}/{cuesA.length}):
+                  </span>
+                  <span className="px-2 py-0.5 bg-amber-200/80 text-amber-950 font-black text-[10px] rounded uppercase">
+                    {currentCueA?.cue_word?.toUpperCase()} QUESTION
+                  </span>
+                </div>
+
                 <p className="text-xl sm:text-2xl font-black text-amber-950 font-mono">
                   {currentCueA?.cue_prompt}
                 </p>
+
                 <p className="text-xs font-bold text-amber-800">
                   Formulate and ask a complete question using this cue!
                 </p>
+
+                {/* Mobile & Desktop Inline Model Question Peek & Starter Hint */}
+                <div className="pt-2 border-t border-amber-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                  {showHintA ? (
+                    <p className="text-xs sm:text-sm font-black text-amber-950 animate-in fade-in leading-snug">
+                      💡 Model: "{currentCueA?.acceptable_questions?.[0]}"
+                    </p>
+                  ) : (
+                    <div className="text-[11px] sm:text-xs text-amber-800 font-bold flex items-center gap-1.5">
+                      <span>💡 Hint starter:</span>
+                      <span className="font-mono font-black text-amber-950 px-2 py-0.5 bg-amber-200 rounded">
+                        {currentCueA?.cue_word?.toUpperCase()} did ... ?
+                      </span>
+                    </div>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => setShowHintA(p => !p)}
+                    className="text-[11px] font-bold text-amber-800 hover:text-amber-950 flex items-center gap-1 underline self-end sm:self-auto cursor-pointer shrink-0"
+                  >
+                    {showHintA ? <EyeOff size={12} /> : <Eye size={12} />}
+                    {showHintA ? 'Hide model question' : 'Peek model question'}
+                  </button>
+                </div>
               </div>
 
               {/* Reusable Grammar Structure Hint */}
@@ -776,6 +807,18 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                     {showQuestionTextB ? 'Hide question text' : 'Peek question text'}
                   </button>
                 </div>
+
+                {/* Mobile-Friendly Current Fact Display so student sees answer fact without scrolling */}
+                {currentFieldB?.value && (
+                  <div className="pt-2 border-t border-purple-200/60 flex items-center justify-between flex-wrap gap-1.5">
+                    <span className="text-[11px] font-bold text-purple-800">
+                      📋 Fact on your card:
+                    </span>
+                    <span className="px-2.5 py-0.5 bg-purple-200/90 text-purple-950 font-black text-xs sm:text-sm rounded-lg border border-purple-300">
+                      {currentFieldB.value}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Big Answer Mic Button / Keyboard fallback */}

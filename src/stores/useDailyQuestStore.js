@@ -6,42 +6,58 @@ import { emitLearningEvent, GAMIFICATION_EVENTS } from '../services/gamification
 
 import { useUserStore } from './useUserStore';
 
-// Canonical Quest ID and alias normalization map
-const QUEST_ALIAS_MAP = {
-  // Zone 2
-  action_lab: 'science_lab',
-  science_lab: 'action_lab',
-  discovery_report: 'science_report',
-  science_report: 'discovery_report',
-  clil: 'gear4_clil',
-  fact_finder: 'gear4_clil',
-  gear4_clil: 'clil',
+// Comprehensive 15-Quest Synonym Groups (Day 1 - Day 5)
+// Ensures 100% equivalence across canonical quest IDs, UI names, router slugs, and legacy station keys
+export const QUEST_SYNONYM_GROUPS = [
+  // Day 1 (Story World)
+  ['gear1_webtoon', 'webtoon', 'scene_explorer', 'gear1'],
+  ['gear2_karaoke', 'karaoke', 'voice_shadow', 'gear2', 'shadowing'],
+  ['gear3_retell', 'retell', 'story_retell', 'gear3'],
 
-  // Zone 3
-  speed_match: 'word_blitz',
-  word_blitz: 'speed_match',
-  grammar_duel: 'sentence_smash',
-  sentence_smash: 'grammar_duel',
-  bar_model: 'math_quest',
-  math_quest: 'bar_model',
+  // Day 2 (Knowledge Lab)
+  ['gear4_clil', 'clil', 'fact_finder', 'gear4', 'explore'],
+  ['science_lab', 'action_lab', 'science_drag_drop', 'lab'],
+  ['science_report', 'discovery_report', 'report'],
 
-  // Zone 4
-  story_writing: 'story_writer',
-  writing: 'story_writer',
-  story_writer: 'story_writing',
-  broadcast: 'broadcast_studio',
-  video_challenge: 'broadcast_studio',
-  broadcast_studio: 'video_challenge',
-  podcast_creator: 'broadcast_studio',
+  // Day 3 (Battle Arena)
+  ['word_blitz', 'speed_match', 'vocab_arena', 'vocab', 'word_match'],
+  ['sentence_smash', 'grammar_duel', 'sentence_builder', 'grammar'],
+  ['math_quest', 'bar_model', 'logic_lab', 'math'],
 
-  // Zone 5
-  listening_boss: 'boss_listening',
-  boss_listening: 'listening_boss',
-  rw_boss: 'boss_reading',
-  boss_reading: 'rw_boss',
-  review: 'weekly_review',
-  weekly_review: 'review',
-};
+  // Day 4 (Creator Studio)
+  ['story_writer', 'story_writing', 'writing', 'tell_your_story'],
+  ['broadcast_studio', 'broadcast', 'video_challenge', 'podcast_creator', 'video'],
+  ['info_exchange', 'speaking_part2', 'info_cards', 'ai_debate'],
+
+  // Day 5 (Boss Castle)
+  ['boss_listening', 'listening_boss', 'listening_shield'],
+  ['boss_reading', 'rw_boss', 'reading_shield'],
+  ['weekly_review', 'review', 'speaking_passport', 'personal_questions', 'personal_qs'],
+];
+
+// Bidirectional alias lookup dictionary
+const ALIAS_LOOKUP = {};
+for (const group of QUEST_SYNONYM_GROUPS) {
+  for (const id of group) {
+    ALIAS_LOOKUP[id] = group;
+  }
+}
+
+/**
+ * Returns all synonymous identifiers for a given quest ID.
+ */
+export function getAllQuestAliases(questId) {
+  return ALIAS_LOOKUP[questId] || [questId];
+}
+
+// Backward compatibility map
+export const QUEST_ALIAS_MAP = {};
+for (const group of QUEST_SYNONYM_GROUPS) {
+  const canonical = group[0];
+  for (const id of group) {
+    QUEST_ALIAS_MAP[id] = (id === canonical && group[1]) ? group[1] : canonical;
+  }
+}
 
 /**
  * Today's Quest Store — Daily pacing system
@@ -118,22 +134,41 @@ const useDailyQuestStore = create(
 
       /**
        * Check if a specific quest is completed for this week.
+       * Uses getAllQuestAliases + fallback to useUserStore progressCache.
        */
       isQuestCompleted: (weekId, questId) => {
         const weekKey = `w${weekId}`;
+        const numericWeekId = parseInt(weekId) || weekId;
         const weekData = get().completedQuests[weekKey] || {};
-        const alias = QUEST_ALIAS_MAP[questId];
-        return Boolean(weekData[questId] || (alias && weekData[alias]));
+        const aliases = getAllQuestAliases(questId);
+        
+        // 1. Direct check in useDailyQuestStore completedQuests
+        if (aliases.some((id) => Boolean(weekData[id]))) {
+          return true;
+        }
+
+        // 2. Dual-Store Fallback: check useUserStore progressCache
+        try {
+          const userProgress = useUserStore?.getState?.()?.progressCache?.[numericWeekId];
+          if (userProgress) {
+            return aliases.some((id) => Boolean(userProgress[id]?.isCompleted));
+          }
+        } catch {
+          // ignore
+        }
+
+        return false;
       },
 
       /**
        * Mark a quest as completed.
        * Enforces Dual-Store Invariant: syncs to useUserStore + cloud database
+       * and marks all synonyms in completedQuests.
        */
       completeQuest: (weekId, questId, options = {}) => {
         const weekKey = `w${weekId}`;
         const numericWeekId = parseInt(weekId) || weekId;
-        const alias = QUEST_ALIAS_MAP[questId];
+        const aliases = getAllQuestAliases(questId);
 
         set((state) => {
           const currentWeekQuests = state.completedQuests[weekKey] || {};
@@ -141,8 +176,8 @@ const useDailyQuestStore = create(
             ...currentWeekQuests,
             [questId]: true,
           };
-          if (alias) {
-            updatedWeekQuests[alias] = true;
+          for (const aliasId of aliases) {
+            updatedWeekQuests[aliasId] = true;
           }
           return {
             completedQuests: {
@@ -179,14 +214,14 @@ const useDailyQuestStore = create(
               data: options.data || { completedAt: new Date().toISOString() }
             };
             userStore.updateLocalProgress(numericWeekId, questId, payload);
-            if (alias) {
-              userStore.updateLocalProgress(numericWeekId, alias, payload);
+            for (const aliasId of aliases) {
+              userStore.updateLocalProgress(numericWeekId, aliasId, payload);
             }
           }
           if (userStore?.syncProgressToServer) {
             userStore.syncProgressToServer({
               weekId: numericWeekId,
-              stationId: questId,
+              stationId: aliases[0] || questId,
               isCompleted: true,
               score: options.score ?? 100,
               data: options.data || { completedAt: new Date().toISOString() }
@@ -230,9 +265,9 @@ const useDailyQuestStore = create(
        * Returns -1 if not found.
        */
       getQuestDayIndex: (questId) => {
-        const alias = QUEST_ALIAS_MAP[questId];
+        const aliases = getAllQuestAliases(questId);
         for (let i = 0; i < QUEST_SCHEDULE.length; i++) {
-          if (QUEST_SCHEDULE[i].quests.some((q) => q.id === questId || (alias && q.id === alias))) return i;
+          if (QUEST_SCHEDULE[i].quests.some((q) => aliases.includes(q.id))) return i;
         }
         return -1;
       },

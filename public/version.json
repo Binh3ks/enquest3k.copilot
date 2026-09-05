@@ -1,9 +1,9 @@
 {
-  "commit": "9d95e6779953aa2d1f7d550e6139eb2337dc9a25",
-  "git_commit": "9d95e6779953aa2d1f7d550e6139eb2337dc9a25",
-  "shortCommit": "9d95e677",
-  "message": "fix(ui): expand task container to max-w-7xl, implement 2-line mobile layout for info exchange, and eliminate bubble truncation in action lab",
-  "builtAt": "2026-09-05T09:40:46.523Z",
-  "build_timestamp": "2026-09-05T09:40:46.524Z",
+  "commit": "067261e49fb0a48c884bd830af5a1211027ece98",
+  "git_commit": "067261e49fb0a48c884bd830af5a1211027ece98",
+  "shortCommit": "067261e4",
+  "message": "fix(progress): implement universal dual-store persistence, return-to-map UX for action lab & info exchange, and update SOP",
+  "builtAt": "2026-09-05T09:57:22.341Z",
+  "build_timestamp": "2026-09-05T09:57:22.342Z",
   "env": "production"
 }

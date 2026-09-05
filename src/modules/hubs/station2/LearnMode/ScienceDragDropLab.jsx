@@ -294,7 +294,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
   const xpEarned = score > 0 ? 50 : 0;
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-3.5 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border-2 border-teal-300 shadow-xl space-y-3 text-slate-900 font-sans">
+    <div className="w-full max-w-7xl mx-auto p-3.5 sm:p-6 lg:p-7 bg-white rounded-2xl sm:rounded-3xl border-2 border-teal-300 shadow-xl space-y-3.5 text-slate-900 font-sans">
       {/* Top Arcade Status Bar */}
       <div className="flex items-center justify-between flex-wrap gap-2 border-b border-teal-100 pb-2.5">
         <div className="flex items-center gap-2 min-w-0">
@@ -302,7 +302,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             🧪
           </div>
           <div className="min-w-0">
-            <h3 className="text-xs sm:text-sm font-black text-slate-900 truncate">{labData.experimentTitle || 'Interactive Action Lab'}</h3>
+            <h3 className="text-xs sm:text-base lg:text-lg font-black text-slate-900 truncate">{labData.experimentTitle || 'Interactive Action Lab'}</h3>
           </div>
         </div>
 

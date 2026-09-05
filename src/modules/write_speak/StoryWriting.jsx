@@ -419,7 +419,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
   // ─────────────────────────────────────────────────────────────
   if (isReview) {
     return (
-      <div className="w-full max-w-4xl mx-auto space-y-4 animate-in fade-in duration-300 font-sans text-slate-900">
+      <div className="w-full max-w-7xl mx-auto space-y-4 animate-in fade-in duration-300 font-sans text-slate-900">
         {showConfetti && <Confetti recycle={false} numberOfPieces={200} />}
 
         {/* Cambridge Exam Review Header */}
@@ -600,38 +600,38 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-2 sm:space-y-3 animate-in fade-in duration-200 font-sans text-slate-900">
+    <div className="w-full max-w-7xl mx-auto space-y-3 sm:space-y-4 animate-in fade-in duration-200 font-sans text-slate-900">
       {/* Cambridge Exam Header */}
-      <div className="pb-1.5 border-b border-slate-200 flex items-center justify-between flex-wrap gap-1">
-        <span className="px-2.5 py-0.5 bg-indigo-100 text-indigo-900 text-[10px] sm:text-[11px] font-black rounded-full uppercase tracking-wider">
+      <div className="pb-2 border-b border-slate-200 flex items-center justify-between flex-wrap gap-2">
+        <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs sm:text-sm lg:text-base font-black rounded-full uppercase tracking-wider">
           Write 2-3 sentences to describe the scenes
         </span>
-        <p className="text-[11px] text-indigo-700 font-bold hidden sm:block">
+        <p className="text-xs sm:text-sm lg:text-base text-indigo-700 font-bold hidden sm:block">
           Look at the pictures. Write 40 or more words.
         </p>
       </div>
 
       {/* Mini-Ladder Stage Selector & Step Progress Bar */}
-      <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-1.5 p-1.5 sm:px-4 sm:py-2 bg-white border border-slate-200 rounded-xl sm:rounded-2xl shadow-xs">
-        <div className="flex items-center gap-1.5">
+      <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-2 p-2 sm:px-4 sm:py-2.5 bg-white border border-slate-200 rounded-xl sm:rounded-2xl shadow-xs">
+        <div className="flex items-center gap-2">
           <span
             data-testid="ladder-badge"
-            className={`text-[9.5px] sm:text-[10px] font-black uppercase px-2 py-0.5 rounded-md border shadow-2xs ${stageBadgeColors[stage] || 'bg-indigo-50 text-indigo-800 border-indigo-200'}`}
+            className={`text-[10px] sm:text-xs lg:text-sm font-black uppercase px-2.5 py-1 rounded-md border shadow-2xs ${stageBadgeColors[stage] || 'bg-indigo-50 text-indigo-800 border-indigo-200'}`}
           >
             {stage}
           </span>
-          <span className="text-[10.5px] sm:text-xs font-black text-slate-700">
+          <span className="text-xs sm:text-sm lg:text-base font-black text-slate-700">
             Scene {currentStepIdx + 1} of {steps.length}
           </span>
         </div>
 
         {activeLevel === 'L5' && (
-          <div className="flex items-center gap-1.5 text-xs font-mono font-black text-rose-600 bg-rose-50 px-2 py-0.5 rounded-lg border border-rose-200">
-            <Clock size={12} /> {Math.floor(timeLeftSec / 60)}:{String(timeLeftSec % 60).padStart(2, '0')}
+          <div className="flex items-center gap-1.5 text-xs sm:text-sm font-mono font-black text-rose-600 bg-rose-50 px-2.5 py-1 rounded-lg border border-rose-200">
+            <Clock size={14} /> {Math.floor(timeLeftSec / 60)}:{String(timeLeftSec % 60).padStart(2, '0')}
           </div>
         )}
 
-        <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto max-w-full py-0.5">
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto max-w-full py-0.5">
           {steps.map((s, i) => (
             <button
               key={i}
@@ -645,7 +645,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
                 });
                 setCurrentStepIdx(i);
               }}
-              className={`px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] font-black flex items-center gap-1 border transition shrink-0 cursor-pointer ${
+              className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-black flex items-center gap-1.5 border transition shrink-0 cursor-pointer ${
                 i === currentStepIdx
                   ? 'bg-indigo-600 text-white border-indigo-400 scale-105 shadow-xs'
                   : panelTexts[i]?.trim()
@@ -654,7 +654,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
               }`}
             >
               <span>{i + 1}</span>
-              <span className="text-[9px] uppercase opacity-80 hidden sm:inline">
+              <span className="text-[10px] sm:text-xs uppercase opacity-80 hidden sm:inline">
                 {s.ladder_stage || (i === 0 ? 'MODEL' : i === 1 ? 'BUILD' : 'WRITE')}
               </span>
             </button>
@@ -663,57 +663,57 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
       </div>
 
       {/* Step Container: 2-Column Responsive Layout (Side-by-side on desktop, Ultra-compact on mobile) */}
-      <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 border border-slate-200 shadow-md">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 sm:gap-4">
-          {/* Left Column (md:col-span-5): Image & Scene Context */}
-          <div className="md:col-span-5 space-y-2 flex flex-col">
-            <div className="relative w-full h-36 sm:h-44 md:h-full md:min-h-[220px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-inner">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 lg:p-6 border border-slate-200 shadow-md">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-5 lg:gap-6">
+          {/* Left Column (lg:col-span-5): Image & Scene Context */}
+          <div className="lg:col-span-5 space-y-2.5 sm:space-y-3 flex flex-col">
+            <div className="relative w-full h-44 sm:h-56 lg:h-full lg:min-h-[300px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-inner">
               <img
                 src={currentStep.image_url}
                 alt={`Scene ${currentStepIdx + 1}`}
                 className="w-full h-full object-cover"
                 onError={(e) => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
               />
-              <div className="absolute top-1.5 left-1.5 sm:top-2.5 sm:left-2.5 px-2 py-0.5 sm:px-2.5 sm:py-1 bg-amber-400/95 text-slate-950 rounded-md sm:rounded-lg text-[9.5px] sm:text-[11px] font-black uppercase tracking-wider shadow border border-amber-300 backdrop-blur-xs">
+              <div className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2.5 py-1 sm:px-3 sm:py-1.5 bg-amber-400/95 text-slate-950 rounded-lg text-xs sm:text-sm font-black uppercase tracking-wider shadow border border-amber-300 backdrop-blur-xs">
                 Scene {currentStepIdx + 1}/{steps.length} • {stage}
               </div>
 
               <button
                 type="button"
                 onClick={handleListenScene}
-                className="absolute bottom-1.5 right-1.5 sm:bottom-2.5 sm:right-2.5 px-2 py-0.5 sm:px-2.5 sm:py-1 bg-slate-950/85 hover:bg-slate-950 text-white rounded-md sm:rounded-lg text-[10px] sm:text-xs font-bold shadow backdrop-blur-md flex items-center gap-1 transition active:scale-95 border border-white/20 cursor-pointer"
+                className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 px-2.5 py-1 sm:px-3 sm:py-1.5 bg-slate-950/85 hover:bg-slate-950 text-white rounded-lg text-xs sm:text-sm font-bold shadow backdrop-blur-md flex items-center gap-1.5 transition active:scale-95 border border-white/20 cursor-pointer"
                 title="Listen to scene audio"
               >
-                <Volume2 size={12} className="text-amber-400" /> <span>Listen</span>
+                <Volume2 size={14} className="text-amber-400" /> <span>Listen</span>
               </button>
             </div>
 
             {/* Sentence Target Guidance */}
             {currentStep.sentence_hint && (
-              <div className="px-2.5 py-1.5 bg-indigo-50/90 rounded-xl border border-indigo-200 text-[10.5px] sm:text-xs font-bold text-indigo-900 flex items-start gap-1.5">
-                <span className="shrink-0">📝</span>
-                <span className="leading-tight">{currentStep.sentence_hint}</span>
+              <div className="p-2.5 sm:p-3 bg-indigo-50/90 rounded-xl border border-indigo-200 text-xs sm:text-sm font-bold text-indigo-900 flex items-start gap-2">
+                <span className="shrink-0 text-sm sm:text-base">📝</span>
+                <span className="leading-snug">{currentStep.sentence_hint}</span>
               </div>
             )}
           </div>
 
-          {/* Right Column (md:col-span-7): Connectors, Word Bank & Input Area */}
-          <div className="md:col-span-7 space-y-2 sm:space-y-2.5">
-            {/* M2: Dedicated Connector Row ("🔗 LINK YOUR SENTENCES") */}
+          {/* Right Column (lg:col-span-7): Connectors, Word Bank & Input Area */}
+          <div className="lg:col-span-7 space-y-2.5 sm:space-y-3.5">
+            {/* Dedicated Connector Row ("🔗 LINK YOUR SENTENCES") */}
             <div
               data-testid="connector-row"
-              className="p-2 sm:p-2.5 bg-purple-50/80 rounded-xl sm:rounded-2xl border border-purple-200 space-y-1"
+              className="p-2.5 sm:p-3.5 bg-purple-50/80 rounded-xl sm:rounded-2xl border border-purple-200 space-y-1.5"
             >
               <div className="flex items-center justify-between">
-                <span className="text-[9.5px] sm:text-[10px] font-black uppercase text-purple-900 tracking-wider flex items-center gap-1">
-                  <Link2 size={12} className="text-purple-700" /> 🔗 Connectors:
+                <span className="text-[11px] sm:text-xs lg:text-sm font-black uppercase text-purple-900 tracking-wider flex items-center gap-1.5">
+                  <Link2 size={14} className="text-purple-700" /> 🔗 Connectors:
                 </span>
-                <span className="text-[9.5px] font-medium text-purple-700 italic hidden sm:inline">
+                <span className="text-[11px] sm:text-xs font-medium text-purple-700 italic hidden sm:inline">
                   Join pictures into ONE story
                 </span>
               </div>
 
-              {/* Connectors for linking sentences within this scene (unified selectable buttons) */}
+              {/* Connectors for linking sentences within this scene */}
               {(() => {
                 const rawConnectors = [
                   ...(currentStep.locked_connector ? [currentStep.locked_connector] : []),
@@ -723,13 +723,13 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
                 if (uniqueConnectors.length === 0) return null;
 
                 return (
-                  <div className="flex flex-wrap gap-1.5 pt-0.5" data-testid="connector-options">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-0.5" data-testid="connector-options">
                     {uniqueConnectors.map((conn, cIdx) => (
                       <button
                         key={cIdx}
                         type="button"
                         onClick={() => handleInsertConnector(conn)}
-                        className="px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-black bg-purple-100 hover:bg-purple-200 text-purple-950 border border-purple-300 shadow-2xs transition active:scale-95 flex items-center gap-1 cursor-pointer"
+                        className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm lg:text-base font-black bg-purple-100 hover:bg-purple-200 text-purple-950 border border-purple-300 shadow-2xs transition active:scale-95 flex items-center gap-1 cursor-pointer"
                         data-testid="connector-btn"
                       >
                         🔗 + {conn}
@@ -742,17 +742,17 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
 
             {/* Content Chips Row — flat word bank for this scene */}
             {Array.isArray(chipsToDisplay) && chipsToDisplay.length > 0 && (
-              <div className="space-y-1">
-                <span className="text-[9.5px] sm:text-[10px] font-black uppercase text-slate-500 tracking-wider block">
+              <div className="space-y-1.5">
+                <span className="text-[11px] sm:text-xs font-black uppercase text-slate-500 tracking-wider block">
                   💡 WORD BANK (tap words to insert):
                 </span>
-                <div className="flex flex-wrap gap-1.5" data-testid="content-chips">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2" data-testid="content-chips">
                   {chipsToDisplay.map((chip, pIdx) => (
                     <button
                       key={pIdx}
                       type="button"
                       onClick={() => handleInsertPill(chip)}
-                      className={`px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-bold border transition shadow-2xs active:scale-95 cursor-pointer ${colorScheme.pill}`}
+                      className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm lg:text-base font-bold border transition shadow-2xs active:scale-95 cursor-pointer ${colorScheme.pill}`}
                       data-testid="content-chip"
                     >
                       + {chip}
@@ -763,29 +763,29 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
             )}
 
             {/* Writing Input Area */}
-            <div className="space-y-1.5">
+            <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <label className="text-[10.5px] sm:text-[11px] font-black uppercase text-slate-700 tracking-wider">
+                <label className="text-xs sm:text-sm font-black uppercase text-slate-700 tracking-wider">
                   Scene {currentStepIdx + 1} ({stage}):
                 </label>
                 <button
                   type="button"
                   onClick={() => setShowHint(!showHint)}
-                  className="text-[10px] sm:text-[11px] font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 cursor-pointer"
+                  className="text-xs sm:text-sm font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 cursor-pointer"
                 >
-                  <Lightbulb size={11} /> {showHint ? 'Hide Hint' : 'Hint'}
+                  <Lightbulb size={13} /> {showHint ? 'Hide Hint' : 'Hint'}
                 </button>
               </div>
 
               {showHint && currentStep.frame_L1 && (
-                <div className="p-2 bg-amber-50 rounded-xl border border-amber-200 text-[11px] font-medium text-amber-900 italic animate-in fade-in">
+                <div className="p-2.5 sm:p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs sm:text-sm font-medium text-amber-900 italic animate-in fade-in">
                   💡 Hint frame: &ldquo;{currentStep.frame_L1}&rdquo;
                 </div>
               )}
 
               <textarea
                 ref={textareaRef}
-                rows={2}
+                rows={3}
                 value={panelTexts[currentStepIdx] || ''}
                 onChange={(e) => {
                   const val = e.target.value;
@@ -802,10 +802,10 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
                     ? `Choose a connector (In the end / Finally) and describe Scene ${currentStepIdx + 1}...`
                     : `Choose a connector (Then / After that) and describe Scene ${currentStepIdx + 1}...`
                 }
-                className="w-full p-2.5 sm:p-3 bg-slate-50 border-2 border-slate-200 rounded-xl text-xs sm:text-sm font-medium text-slate-900 focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none resize-none transition leading-normal"
+                className="w-full p-3 sm:p-4 bg-slate-50 border-2 border-slate-200 rounded-xl sm:rounded-2xl text-xs sm:text-base lg:text-lg font-medium text-slate-900 focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none resize-none transition leading-relaxed min-h-[90px] sm:min-h-[110px] lg:min-h-[130px]"
               />
 
-              <div className="flex items-center justify-between text-[10.5px] sm:text-xs text-slate-500 font-bold">
+              <div className="flex items-center justify-between text-xs sm:text-sm text-slate-500 font-bold">
                 <span>
                   {stepWordCount} words in scene (min: 5)
                 </span>
@@ -816,26 +816,26 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
         </div>
 
         {/* Navigation Step Buttons */}
-        <div className="flex items-center justify-between pt-2 mt-2 border-t border-slate-100">
+        <div className="flex items-center justify-between pt-3 mt-3 border-t border-slate-100">
           <button
             type="button"
             onClick={handlePrevStep}
             disabled={currentStepIdx === 0}
-            className="px-3.5 py-1.5 sm:py-2 rounded-xl border border-slate-300 text-xs font-black text-slate-600 hover:bg-slate-100 disabled:opacity-30 transition flex items-center gap-1 cursor-pointer"
+            className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-black text-slate-700 hover:bg-slate-100 disabled:opacity-30 transition flex items-center gap-1 cursor-pointer"
           >
-            <ChevronLeft size={14} /> Previous
+            <ChevronLeft size={16} /> Previous
           </button>
 
           <button
             type="button"
             onClick={handleNextStep}
             disabled={!isCurrentStepValid}
-            className="px-4.5 py-1.5 sm:py-2 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white rounded-xl text-xs font-black shadow-md transition active:scale-95 flex items-center gap-1.5 cursor-pointer"
+            className="px-5 py-2 sm:px-6 sm:py-2.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white rounded-xl text-xs sm:text-sm font-black shadow-md transition active:scale-95 flex items-center gap-1.5 cursor-pointer"
           >
             {currentStepIdx < steps.length - 1 ? (
-              <>Next Scene <ArrowRight size={14} /></>
+              <>Next Scene <ArrowRight size={16} /></>
             ) : (
-              <>Review Story <Sparkles size={14} /></>
+              <>Review Story <Sparkles size={16} /></>
             )}
           </button>
         </div>

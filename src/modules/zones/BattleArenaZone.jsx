@@ -131,7 +131,7 @@ export default function BattleArenaZone({ data, weekNumber, forcedStation = null
       )}
 
       {/* Active Sub-Component */}
-      <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 border border-slate-200 shadow-md min-h-[360px]">
+      <div className={hideStationTabs ? "w-full" : "bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 border border-slate-200 shadow-md min-h-[360px]"}>
         {activeGame === 'word_blitz' && (
           <FlashArena
             customSets={flashArenaData}
