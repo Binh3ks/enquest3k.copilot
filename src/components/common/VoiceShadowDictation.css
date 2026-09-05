@@ -1,0 +1,464 @@
+/* ─── Voice Shadow Dictation Styles ─── */
+.vsd-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  font-family: inherit;
+}
+
+.vsd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.vsd-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vsd-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #78350f;
+  font-size: 11px;
+  font-weight: 900;
+  border-radius: 9999px;
+  border: 1px solid #f59e0b;
+  letter-spacing: 0.02em;
+}
+
+.vsd-stepper-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #475569;
+}
+
+.vsd-audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vsd-speed-toggle {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 2px;
+  border: 1px solid #e2e8f0;
+}
+
+.vsd-speed-btn {
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vsd-speed-btn.active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.vsd-listen-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(217, 119, 6, 0.2);
+  transition: all 0.15s ease;
+}
+
+.vsd-listen-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  transform: translateY(-1px);
+}
+
+.vsd-listen-btn.playing {
+  animation: vsd-pulse 1s infinite;
+  background: #dc2626;
+}
+
+@keyframes vsd-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(0.98); }
+}
+
+/* ─── Notepad Card ─── */
+.vsd-pad-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #fde68a;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.08);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vsd-pad-instruction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vsd-instruction-text {
+  font-size: 13px;
+  color: #334155;
+}
+
+.vsd-hint-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #d97706;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.vsd-hint-box {
+  padding: 8px 12px;
+  background: #fffbeb;
+  border: 1px dashed #f59e0b;
+  border-radius: 10px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vsd-hint-title {
+  font-weight: 900;
+  color: #92400e;
+  font-size: 11px;
+}
+
+.vsd-hint-content {
+  font-family: monospace;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+  color: #b45309;
+}
+
+/* ─── Input Area ─── */
+.vsd-input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vsd-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #cbd5e1;
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+  resize: vertical;
+  transition: border-color 0.2s, background 0.2s;
+  box-sizing: border-box;
+}
+
+.vsd-textarea:focus {
+  outline: none;
+  border-color: #f59e0b;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+.vsd-input-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vsd-word-count {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.vsd-check-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+  transition: all 0.15s ease;
+}
+
+.vsd-check-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #34d399, #10b981);
+  transform: translateY(-1px);
+}
+
+.vsd-check-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── Diff Area ─── */
+.vsd-diff-area {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: vsd-fadeIn 0.25s ease-out;
+}
+
+@keyframes vsd-fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.vsd-score-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.vsd-score-pill {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.vsd-score-perfect {
+  color: #047857;
+}
+
+.vsd-score-good {
+  color: #b45309;
+}
+
+.vsd-score-retry {
+  color: #b91c1c;
+}
+
+.vsd-diff-legend {
+  display: flex;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.legend-green { color: #059669; }
+.legend-red { color: #dc2626; }
+
+.vsd-diff-words {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  min-height: 52px;
+}
+
+.vsd-word-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.vsd-word-correct {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.vsd-word-case {
+  background: #fef9c3;
+  color: #854d0e;
+  border: 1px solid #fde047;
+}
+
+.vsd-word-typo {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.vsd-word-missing {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px dashed #ef4444;
+  font-style: italic;
+}
+
+.vsd-word-wrong {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #f87171;
+}
+
+.vsd-strike {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.vsd-expected {
+  font-weight: 900;
+  color: #047857;
+}
+
+.vsd-target-ref {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.vsd-ref-label {
+  font-weight: 900;
+  color: #1d4ed8;
+}
+
+.vsd-ref-text {
+  flex: 1;
+  font-weight: 700;
+  color: #1e3a8a;
+  min-width: 200px;
+}
+
+.vsd-ref-listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.vsd-diff-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.vsd-action-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.vsd-action-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(29, 78, 216, 0.2);
+}
+
+/* ─── Nav Footer ─── */
+.vsd-nav-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4px;
+}
+
+.vsd-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.vsd-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.vsd-nav-counter {
+  font-size: 11px;
+  font-weight: 800;
+  color: #64748b;
+}

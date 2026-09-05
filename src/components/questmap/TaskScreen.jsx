@@ -9,6 +9,8 @@ import useArcadeStore from '../../stores/useArcadeStore';
 import { useUserStore } from '../../stores/useUserStore';
 import ArcadeModal from '../games/ArcadeModal';
 import { CLILSealStamp, GrandStampModal } from '../cambridge/ExplorerPassport';
+import SRSFlashcardReview from '../common/SRSFlashcardReview';
+import srsService from '../../services/srsService';
 import './TaskScreen.css';
 
 /**
@@ -310,6 +312,25 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
 
   const [showPassportModal, setShowPassportModal] = useState(false);
   const qaNonce = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('qa_nonce') : null;
+
+  // SRS Daily Warm-up — show once per day before first quest
+  const [showSRSWarmup, setShowSRSWarmup] = useState(false);
+  const [srsChecked, setSrsChecked] = useState(false);
+
+  useEffect(() => {
+    if (srsChecked) return;
+    setSrsChecked(true);
+    if (!srsService.isDailyReviewDone()) {
+      const dueCount = srsService.getDueWords(1).length;
+      if (dueCount > 0) {
+        setShowSRSWarmup(true);
+      }
+    }
+  }, [srsChecked]);
+
+  if (showSRSWarmup) {
+    return <SRSFlashcardReview onComplete={() => setShowSRSWarmup(false)} />;
+  }
 
   return (
     <div className="ts-container relative">

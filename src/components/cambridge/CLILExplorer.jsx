@@ -7,6 +7,7 @@ import { speakText } from '../../utils/AudioHelper';
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import InferenceQuestion from './InferenceQuestion';
 
 export default function CLILExplorer({
   clilData,
@@ -675,6 +676,31 @@ export default function CLILExplorer({
               )}
             </div>
           </div>
+
+          {/* ── Inference Questions ("Why?") ── */}
+          {Array.isArray(clilData?.inference_questions) && clilData.inference_questions.length > 0 && (
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 border border-purple-200 shadow-md space-y-3">
+              <div className="flex items-center gap-1.5 border-b border-slate-100 pb-2">
+                <span className="text-lg">🤔</span>
+                <div>
+                  <h4 className="text-sm sm:text-base font-black text-slate-900">Inference Challenge</h4>
+                  <p className="text-[11px] sm:text-xs text-slate-500 font-medium">
+                    Answer "Why?" questions about the text
+                  </p>
+                </div>
+              </div>
+              {clilData.inference_questions.map((iq, idx) => (
+                <InferenceQuestion
+                  key={iq.id || idx}
+                  question={iq}
+                  isCheckMode={false}
+                  onComplete={(result) => {
+                    console.log(`[CLIL_INFERENCE] Q${idx}: score=${result.score}`);
+                  }}
+                />
+              ))}
+            </div>
+          )}
 
           <div className="flex items-center justify-between pt-2">
             <button

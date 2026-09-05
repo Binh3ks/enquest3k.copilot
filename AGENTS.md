@@ -129,10 +129,11 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
 #### Precedents từ W33 Golden Master (Commit 44c1cf13 → 60923a4e → ...):
 - BUG-1: `targetText` declared in map object nhưng không extract thành `const` → dùng `undefined` → sai 100%
 - BUG-2: `logAttempt` gọi kể cả `isAttempted: false` → data rác analytics
-## 🏰 MASTER 15-TASK / 5-ZONE ARCHITECTURE INVARIANT (W33+) — 2026-08-22 (Updated 2026-09-04)
-**QUY TẮC BẤT BIẾN DUY NHẤT VỀ CẤU TRÚC TUẦN HỌC (W33+):**
+## 🏰 MASTER 15-TASK / 5-ZONE ARCHITECTURE INVARIANT (W17+) — 2026-08-22 (Updated 2026-09-05)
+**QUY TẮC BẤT BIẾN DUY NHẤT VỀ CẤU TRÚC TUẦN HỌC (W17+):**
 1. **Kiến trúc Duy nhất & Mới nhất — 5 Ngày Học = 5 Zones Tiêu Chuẩn**:
-   - Từ Tuần 33 trở đi, hệ thống **CHỈ HOẠT ĐỘNG TRÊN 15 TASKS / GEARS** phân bổ đều đặn qua **5 Ngày học = 5 Zones học tập** (mỗi ngày đúng 3 Quests), loại bỏ hoàn toàn cách gọi "Station" rời rạc và cách phân mảnh cũ.
+   - Từ Tuần 17 trở đi, hệ thống **CHỈ HOẠT ĐỘNG TRÊN 15 TASKS / GEARS** phân bổ đều đặn qua **5 Ngày học = 5 Zones học tập** (mỗi ngày đúng 3 Quests), loại bỏ hoàn toàn cách gọi "Station" rời rạc và cách phân mảnh cũ.
+   - **⚠️ LITE MODE EXCEPTION (W01–W16):** Tuần 01–16 (Pre-A1 Starters, trẻ 6–7 tuổi) hoạt động ở chế độ **10 Quests / 5 Zones (2 Quests/Day)** do giới hạn attention span và cognitive load. 5 quests bị giản lược: `gear3_retell` → tích hợp vào `gear2_karaoke`, `science_report` → Draw & Say, `math_quest` → Count & Match, `broadcast_studio` → Listen & Repeat, `boss_reading` → tích hợp vào `boss_listening`. Xem `docs/MASTER_ARCHITECTURE_W01_W156.md` §9 để biết chi tiết. **CẤM áp dụng full 15-quest invariant cho W01–W16.**
    - **4 Data Hubs Duy nhất per Week** (nơi lưu trữ dữ liệu tập trung):
      - `reading_hub.js` (cung cấp dữ liệu cho Zone 1, 2, 5: Scene Explorer, Voice Shadow, Story Retell, Fact Finder, Reading Shield)
      - `listening_hub.js` (cung cấp dữ liệu cho Zone 2, 3, 5: Action Lab, Speed Match, Grammar Duel, Math Quest, Listening Shield)

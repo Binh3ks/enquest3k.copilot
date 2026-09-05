@@ -17,6 +17,7 @@ import PronunciationCoachCard, { getWordIpaList } from '../../components/common/
 import { loadIpaData } from '../shadowing/ipaUtils';
 import { useUserStore } from '../../stores/useUserStore';
 import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
+import VoiceShadowDictation from '../../components/common/VoiceShadowDictation';
 
 export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hideGearTabs = false }) {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   const [currentGear, setCurrentGear] = useState(forcedGear || 1);
   const [completedGears, setCompletedGears] = useState([1]);
   const [stepperIdx, setStepperIdx] = useState(0);
+  const [voiceShadowMode, setVoiceShadowMode] = useState('shadow'); // 'shadow' | 'dictation'
 
   // If forcedGear changes, update
   useEffect(() => {
@@ -1047,9 +1049,31 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
           <div className="bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 border border-slate-200 shadow-md space-y-3 font-sans">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2.5 flex-wrap gap-2">
               <div className="flex items-center gap-2">
-                <span className="text-xs sm:text-sm font-black text-indigo-600">
-                  🎙️ Tap any sentence to listen & practice word-by-word karaoke
-                </span>
+                {/* Segmented Mode Selector: Voice Shadow vs Dictation Notepad */}
+                <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+                  <button
+                    type="button"
+                    onClick={() => setVoiceShadowMode('shadow')}
+                    className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
+                      voiceShadowMode === 'shadow'
+                        ? 'bg-white shadow text-purple-700'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    <Mic size={13} /> Voice Shadow
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setVoiceShadowMode('dictation')}
+                    className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
+                      voiceShadowMode === 'dictation'
+                        ? 'bg-white shadow text-amber-700'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    <span>✍️</span> Dictation Notepad
+                  </button>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 {/* Gamified Progress & Streak */}
@@ -1071,8 +1095,38 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
               </div>
             </div>
 
-            {/* ── TaskScreen Stepper Mode (1 sentence per screen) OR Legacy List Mode ── */}
-            {hideGearTabs ? (
+            {/* ── Mode Switch: Dictation Notepad vs Voice Shadow (Stepper/List) ── */}
+            {voiceShadowMode === 'dictation' ? (
+              <VoiceShadowDictation
+                sentence={storySentences[stepperIdx]}
+                sentenceIdx={stepperIdx}
+                totalSentences={storySentences.length}
+                activeWeek={activeWeek}
+                onCompleteSentence={({ sentenceIdx: sIdx, score }) => {
+                  setCompletedKaraokeSentences(prev => {
+                    const updated = { ...prev, [sIdx]: true };
+                    const completedCount = Object.keys(updated).length;
+                    if (completedCount === storySentences.length) {
+                      fireCelebrationConfetti?.('Gear2_Dictation_Master');
+                    }
+                    return updated;
+                  });
+                  setKaraokeStreak(prev => prev + 1);
+                }}
+                onNext={() => {
+                  if (stepperIdx < storySentences.length - 1) {
+                    setStepperIdx(prev => prev + 1);
+                  } else {
+                    handleNextGear(3);
+                  }
+                }}
+                onPrev={() => {
+                  if (stepperIdx > 0) {
+                    setStepperIdx(prev => prev - 1);
+                  }
+                }}
+              />
+            ) : hideGearTabs ? (
               <div className="space-y-3">
                 {/* Stepper Header */}
                 <div className="flex items-center justify-between px-1">
@@ -1365,6 +1419,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                 })}
               </div>
             )}
+          )}
           </div>
         </div>
       )}

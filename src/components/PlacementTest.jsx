@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ChevronRight, CheckCircle, XCircle, Star, BookOpen, Pencil, Brain } from 'lucide-react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { ChevronRight, CheckCircle, XCircle, Star, BookOpen, Pencil, Brain, Clock, SkipForward } from 'lucide-react';
 import { PLACEMENT_DATA, computePlacementResult } from '../data/placementTest';
 import { useNavigate } from 'react-router-dom';
 import { useUserStore } from '../stores/useUserStore';
@@ -15,10 +15,49 @@ const MODULE_META = {
 
 export default function PlacementTest({ onComplete }) {
   const navigate = useNavigate();
-  const { setLearningMode } = useUserStore();
+  const { setStartingWeek, setPlacementTestCompleted } = useUserStore();
 
   const [phase, setPhase] = useState('welcome');
   const [scores, setScores] = useState({ vocab: 0, grammar: 0, reading: 0, writing: 0 });
+
+  // ─── Per-question timer (30 seconds) ─────────────────────────────────────
+  const QUESTION_TIME_LIMIT = 30;
+  const [timeLeft, setTimeLeft] = useState(QUESTION_TIME_LIMIT);
+  const timerRef = useRef(null);
+  const [totalElapsed, setTotalElapsed] = useState(0);
+  const startTimeRef = useRef(Date.now());
+
+  // Reset timer when question changes
+  const resetTimer = useCallback(() => {
+    setTimeLeft(QUESTION_TIME_LIMIT);
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(timerRef.current);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  }, []);
+
+  // Start timer when entering test phases
+  useEffect(() => {
+    if (['vocab', 'grammar', 'reading'].includes(phase)) {
+      resetTimer();
+    } else {
+      if (timerRef.current) clearInterval(timerRef.current);
+    }
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [phase, mcqLevel, readingQIdx, resetTimer]);
+
+  // Track total elapsed time
+  useEffect(() => {
+    if (phase !== 'welcome' && phase !== 'result') {
+      startTimeRef.current = Date.now();
+    }
+  }, [phase]);
 
   // Vocab / Grammar adaptive state
   const [mcqLevel, setMcqLevel] = useState(1);
@@ -163,13 +202,37 @@ export default function PlacementTest({ onComplete }) {
     setPhase('result');
   };
 
+  // ─── Auto-skip on timer expiry ──────────────────────────────────────────
+  useEffect(() => {
+    if (timeLeft !== 0 || answered) return;
+    // Timer expired — auto-skip current question
+    if (phase === 'vocab' || phase === 'grammar') {
+      finishMcq(phase, mcqLevel - 1);
+    } else if (phase === 'reading') {
+      // Mark current as wrong, advance
+      const data = getReadingData();
+      const isLastQ = readingQIdx === data.questions.length - 1;
+      if (!isLastQ) {
+        setReadingQIdx(i => i + 1);
+        resetTimer();
+      } else {
+        const readScore = readingStage === 'easy' ? readingCorrect : 2 + (readingCorrect === data.questions.length ? 1 : 0);
+        setScores(prev => ({ ...prev, reading: readScore }));
+        setPhase('writing');
+      }
+    }
+  }, [timeLeft]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // ─── Navigation handlers ─────────────────────────────────────────────────
   const handleGoToStart = () => {
     if (!result) return;
+    // Persist to user store
+    setStartingWeek(result.startWeek);
+    setPlacementTestCompleted(true);
     if (onComplete) {
       onComplete(result);
     } else {
-      navigate(`/week/${result.startWeek}/read_explore`);
+      navigate(`/week/${result.startWeek}/hub/1`);
     }
   };
 
@@ -180,7 +243,20 @@ export default function PlacementTest({ onComplete }) {
       completedAt: new Date().toISOString(),
       skipped: true,
     }));
-    navigate('/week/1/read_explore');
+    setStartingWeek(1);
+    setPlacementTestCompleted(true);
+    navigate('/week/1/hub/1');
+  };
+
+  // ─── Skip current module handler ─────────────────────────────────────────
+  const handleSkipModule = () => {
+    if (phase === 'vocab' || phase === 'grammar') {
+      finishMcq(phase, Math.max(0, mcqLevel - 1));
+    } else if (phase === 'reading') {
+      const readScore = readingStage === 'easy' ? readingCorrect : 2;
+      setScores(prev => ({ ...prev, reading: readScore }));
+      setPhase('writing');
+    }
   };
 
   // ─── Render phases ────────────────────────────────────────────────────────
@@ -223,13 +299,27 @@ export default function PlacementTest({ onComplete }) {
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-xl max-w-lg w-full p-8">
           {/* Header */}
-          <div className="flex items-center gap-3 mb-6">
-            <div className={`w-10 h-10 rounded-xl bg-${meta.color}-100 flex items-center justify-center`}>
-              <Icon className={`w-5 h-5 text-${meta.color}-600`} />
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-3">
+              <div className={`w-10 h-10 rounded-xl bg-${meta.color}-100 flex items-center justify-center`}>
+                <Icon className={`w-5 h-5 text-${meta.color}-600`} />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-wide">{meta.label}</p>
+                <p className="text-xs text-slate-400">Level {mcqLevel} of {PLACEMENT_DATA[phase].length}</p>
+              </div>
             </div>
-            <div>
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-wide">{meta.label}</p>
-              <p className="text-xs text-slate-400">Level {mcqLevel} of {PLACEMENT_DATA[phase].length}</p>
+            <div className="flex items-center gap-3">
+              <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold ${timeLeft <= 10 ? 'bg-rose-100 text-rose-600' : 'bg-slate-100 text-slate-500'}`}>
+                <Clock className="w-3.5 h-3.5" />
+                {timeLeft}s
+              </div>
+              <button
+                onClick={handleSkipModule}
+                className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 text-xs font-bold transition-colors"
+              >
+                <SkipForward className="w-3.5 h-3.5" /> Skip
+              </button>
             </div>
           </div>
 
@@ -268,13 +358,27 @@ export default function PlacementTest({ onComplete }) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-xl max-w-lg w-full p-8">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
-              <BookOpen className="w-5 h-5 text-emerald-600" />
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
+                <BookOpen className="w-5 h-5 text-emerald-600" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-slate-400 uppercase">Reading</p>
+                <p className="text-xs text-slate-400 capitalize">{readingStage} passage · Q{readingQIdx + 1}/{data.questions.length}</p>
+              </div>
             </div>
-            <div>
-              <p className="text-xs font-bold text-slate-400 uppercase">Reading</p>
-              <p className="text-xs text-slate-400 capitalize">{readingStage} passage · Q{readingQIdx + 1}/{data.questions.length}</p>
+            <div className="flex items-center gap-3">
+              <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold ${timeLeft <= 10 ? 'bg-rose-100 text-rose-600' : 'bg-slate-100 text-slate-500'}`}>
+                <Clock className="w-3.5 h-3.5" />
+                {timeLeft}s
+              </div>
+              <button
+                onClick={handleSkipModule}
+                className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 text-xs font-bold transition-colors"
+              >
+                <SkipForward className="w-3.5 h-3.5" /> Skip
+              </button>
             </div>
           </div>
 

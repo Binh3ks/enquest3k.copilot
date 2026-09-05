@@ -34,6 +34,16 @@ Agent(
     - grammar.js: exactly 20 exercises, answer: not correct:
     - voiceConfig in index.js: 5 distinct voices
     - After each file edit, hook auto-validates (content_lint, sgmath types, dict lint)
+    
+    5-FEATURE DATA CONTRACTS (v2.0.0):
+    - vocab[] in reading_hub.js: EXACTLY 20 items with word, definition_en, definition_vi (SRS Leitner auto-enrollment)
+    - clil_article.inference_questions[] in reading_hub.js: ≥2 items (≥3 for W113+)
+      - At least 1 × mcq_with_evidence (with options[], correct index, scaffoldHint)
+      - At least 1 × open_response (with modelAnswer, acceptableKeywords[])
+      - Question id format: "infer_1", "infer_2", etc.
+      - Question text format: "Why did [character]...?" or "What can we learn...?"
+    - retellData.questions[].chips[] in reading_hub.js: Linear Thinking ESL collocation chunks
+    - Reference template: production_kit/templates/template_flyers_rotary.js (or appropriate template for week range)
     """
 )
 ```
@@ -57,6 +67,7 @@ Agent(
 - **[W33+] Listening P1 Pins**: Tạo ảnh scene → deploy → dùng 🎯 Calibrate Pins tool trên browser → copy JSON → paste vào `listening_hub.js` (xem skill `listening-p1-pins`)
 - Fetch transcripts: `node tools/fetch_video_transcripts.js --only N` (if new video)
 - Clean + split: `node tools/clean_transcripts.mjs && python3 tools/split_transcripts.py`
+- **5-Feature compliance**: `node scripts/gate18_feature_compliance.mjs N`
 - Build: `rm -rf node_modules/.vite dist && npm run build`
 
 **Audio is on-demand** (no batch generation for W16+). The Deepgram Worker generates + caches on first user play.
@@ -86,6 +97,7 @@ Agent(
 | Pre-flight | ✅ | Syllabus read |
 | Content-writer | ✅/❌ | 39 files created (19 ADV + 19 Easy + 1 Real) |
 | Quality-reviewer | ✅/❌ | 7/7 validators PASS |
+| Gate 18 (5-feature) | ✅/⚠️ | inference_questions, vocab SRS, retell chips |
 | Bar models | ✅/⏭ skipped | N images generated |
 | Daily watch | ✅ | N videos found |
 | Images | ✅/⏭ | N generated, R2 uploaded |

@@ -2,11 +2,11 @@
 
 **Document Reference**: `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`  
 **Baseline Strategic Document**: `docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` (Frozen Pedagogical Foundation)  
-**System Architecture**: 15 Quests / 5 Zones per Week (1 Day = 1 Zone, 3 Quests/Day)  
-**Assessment Generations**: Starters/Movers/Flyers (W01–72) $\rightarrow$ B1 PET & CLIL Lab (W73–112) $\rightarrow$ B2 FCE & Acellus US K-12 (W113–156)  
+**System Architecture**: 15 Quests / 5 Zones per Week (W17–W156) + Lite Mode 10 Quests (W01–W16)  
+**Assessment Generations**: Starters/Movers/Flyers (W01–72) $\rightarrow$ B1 PET & CLIL Lab (W73–112) $\rightarrow$ B1+ Academic Reading & Structured Opinion (W113–156)  
 **Mock Test Cadence**: 28 Full Mock Test Weeks on a strict pedagogical cycle  
 **Effective Date**: 2026-09-05  
-**Version**: 2.1.0
+**Version**: 2.2.0
 
 ---
 
@@ -50,7 +50,7 @@ Tài liệu này đóng vai trò là cây cầu nối số (Digital Bridge) chuy
 ### PHASE 1: FOUNDATIONAL FLUENCY & CAMBRIDGE FLYERS (WEEKS 01–72)
 
 #### Block A: The "Here & Now" — Pre-A1 Starters (Weeks 01–18)
-*Focus: Bản sắc cá nhân, gia đình, lớp học, Present Simple, giàn giáo trực quan 100%.*
+*Focus: Bản sắc cá nhân, gia đình, lớp học, Present Simple, giàn giáo trực quan 100%. **LITE MODE: 10 Quests/tuần cho W01–W16.***
 
 | Tuần | Tên Chủ Đề Tuần | CEFR & Phân Loại Tuần | CLIL STEM Module | Giàn Giáo | Ngữ Pháp Trọng Tâm & Dữ Liệu Hub |
 | :---: | :--- | :---: | :--- | :---: | :--- |
@@ -211,57 +211,57 @@ Tài liệu này đóng vai trò là cây cầu nối số (Digital Bridge) chuy
 
 ---
 
-### PHASE 3: ADVANCED SYNTHESIS, DEBATE & EMI (WEEKS 121–156)
+### PHASE 3: ADVANCED SYNTHESIS & ACADEMIC OPINION (WEEKS 121–156)
 
-#### Block G: B2 First (FCE), Tranh Biện Nghị Viện & Viết Luận 5 Đoạn (Weeks 121–144)
-*Focus: Chu kỳ 4+1, bài luận 5 đoạn (Argumentative Essay $\ge 140–190$ từ), Tranh biện trực tiếp, Acellus US Grade 7–8.*
+#### Block G: B1+ Academic Reading, Structured Opinion Projects & Opinion Essay (Weeks 121–144)
+*Focus: Chu kỳ 4+1, bài luận quan điểm (Opinion Essay $\ge 140–190$ từ), Dự án nghiên cứu có cấu trúc, Thuyết trình quan điểm ghi hình.*
 
-| Tuần | Tên Chủ Đề Dự Án Tranh Biện | CEFR & Phân Loại Tuần | Nội Dung Nghiên Cứu Học Thuật | Giàn Giáo | Sản Phẩm Đầu Ra & Thể Loại Ngôn Ngữ |
+| Tuần | Tên Chủ Đề Dự Án Quan Điểm | CEFR & Phân Loại Tuần | Nội Dung Nghiên Cứu Học Thuật | Giàn Giáo | Sản Phẩm Đầu Ra & Thể Loại Ngôn Ngữ |
 | :---: | :--- | :---: | :--- | :---: | :--- |
-| **W121**| Debate 1: Homework in Primary School| B2 Entry · Rotary 1 | Nghiên cứu giáo dục: Giấc ngủ & Ghi nhớ | Tier 3 (Debate) | Viết Mở bài & Câu luận đề (Thesis Statement); `writing_hub` |
-| **W122**| Debate 1: Constructing Arguments | B2 Entry · Rotary 2 | Bằng chứng thực nghiệm: Điểm số OECD PISA | Tier 3 (Debate) | Viết Thân bài 1 & 2 theo mô hình PEEL; `discovery_report` |
-| **W123**| Debate 1: Anticipating Counterclaims| B2 Entry · Rotary 3 | Góc nhìn phụ huynh vs Sức khỏe tâm lý | Tier 3 (Debate) | Đặt luận điểm đối lập (*Critics contend that... However...*) |
-| **W124**| Debate 1: Live Tournament Round 1 | B2 Entry · Rotary 4 | Quy thức tranh biện chính thức (lượt 3 phút)| Tier 3 (Debate) | `broadcast_studio` Ghi hình trận tranh biện Ủng hộ vs Phản đối |
-| **W125**| Debate 2: Video Games & Cognition | B2 Academic · Rotary 1 | Sinh học thần kinh: Phản xạ so với nghiện | Tier 3 (Debate) | Tổng hợp 2 bài báo khoa học mâu thuẫn nhau; `reading_hub` |
-| **W126**| Debate 2: Data & Statistical Claims | B2 Academic · Rotary 2 | Dữ liệu thời gian màn hình & Sức khỏe | Tier 3 (Debate) | `math_quest` phân biệt tương quan vs quan hệ nhân quả |
-| **W127**| **B2 FCE & Acellus Mock 1** | **★ FULL MOCK 20 (B2/US)**| **Khảo sát Năng lực Chuẩn hóa B2/US 1** | **Tier 3 (Exam)** | **Full Mock B2 FCE 1: Reading & Use of English (Word Formation, Key Word Transform)** |
-| **W128**| Debate 2: Live Tournament Round 2 | B2 Academic · Rotary 1 | Chất vấn chéo & Điểm số diễn giả | Tier 3 (Debate) | `broadcast_studio` đấu tranh biện trực tiếp có đồng hồ và bình chọn |
-| **W129**| Debate 3: Smartphones Under 12? | B2 Academic · Rotary 2 | Tâm lý phát triển: Tác động mạng xã hội | Tier 3 (Debate) | Soạn thảo bài lập luận vị thế 5 đoạn hoàn chỉnh; `writing_hub` |
-| **W130**| Debate 3: Global Legislative Models | B2 Academic · Rotary 3 | Luật so sánh: Lệnh cấm của Pháp và Florida | Tier 3 (Debate) | Trích dẫn tiền lệ pháp lý; `reading_hub` tóm tắt văn bản luật |
-| **W131**| Debate 3: Rhetorical Persuasion | B2 Academic · Rotary 4 | Ethos, Pathos, Logos trong hùng biện | Tier 3 (Debate) | Ngữ điệu và trọng âm nhấn mạnh; `gear2_karaoke` bài diễn văn lịch sử |
-| **W132**| **B2 FCE & Acellus Mock 2** | **★ FULL MOCK 21 (B2/US)**| **Khảo sát Năng lực Chuẩn hóa B2/US 2** | **Tier 3 (Exam)** | **Full Mock B2 FCE 2: Chấm bài luận 5 đoạn Argumentative Essay theo Cambridge Rubric** |
-| **W133**| Project 4: AI in Classroom Testing | B2 Academic · Rotary 1 | Trí tuệ nhân tạo và liêm chính học thuật | Tier 3 (Debate) | Soạn thảo tổng quan tài liệu; `discovery_report` độ lệch AI detector |
-| **W134**| Project 4: Empirical Survey Design | B2 Academic · Rotary 2 | Khảo sát xã hội học: Phỏng vấn bạn học | Tier 3 (Debate) | Xây dựng bảng hỏi; `info_exchange` phỏng vấn khảo sát dữ liệu |
-| **W135**| Project 4: Data Visualization Paper | B2 Academic · Rotary 3 | Trực quan hóa dữ liệu thống kê trong bài luận| Tier 3 (Debate) | Nhúng biểu đồ cột và bảng số liệu vào bài viết học thuật |
-| **W136**| Project 4: Live Policy Defense | B2 Academic · Rotary 4 | Phiên điều trần giả định trước Hội đồng trường| Tier 3 (Debate) | `broadcast_studio` thuyết trình khuyến nghị chính sách |
-| **W137**| **B2 FCE & Acellus Mock 3** | **★ FULL MOCK 22 (B2/US)**| **Acellus US Grade 7 Science Battery 1** | **Tier 3 (Exam)** | **Bài thi chuẩn hóa Acellus K-12: Di truyền học, Tế bào & Vật lý cơ bản** |
-| **W138**| Acellus US K-12 Science Alignment | B2 EMI Ready · Rotary 1 | Khoa học Trái đất & Thiên văn học US G7 | Tier 3 (EMI US) | Thuật ngữ chuyên sâu khoa học Mỹ & giải thích sơ đồ phức tạp |
-| **W139**| Acellus US K-12 Civics & History | B2 EMI Ready · Rotary 2 | Giáo dục công dân Mỹ: Hiến pháp & Quyền lợi | Tier 3 (EMI US) | Phân tích văn bản gốc (Tuyên ngôn Nhân quyền, Lời mở đầu Hiến pháp) |
-| **W140**| Acellus US K-12 History DBQ | B2 EMI Ready · Rotary 3 | Lịch sử nước Mỹ: Câu hỏi dựa trên tài liệu | Tier 3 (EMI US) | Kỹ năng viết DBQ (Document-Based Questions); `writing_hub` |
-| **W141**| Acellus US K-12 Pre-Algebra | B2 EMI Ready · Rotary 4 | Tiền Đại số: Phương trình bậc nhất & Độ dốc | Tier 3 (EMI US) | Toán lời văn bằng tiếng Anh; `math_quest` phương trình $y=mx+b$ |
-| **W142**| **B2 FCE & Acellus Mock 4** | **★ FULL MOCK 23 (B2/US)**| **Acellus US Grade 7 Social Studies & Math**| **Tier 3 (Exam)** | **Bài thi chuẩn hóa Acellus K-12: Lịch sử, Địa lý & Toán Tiền đại số** |
-| **W143**| Advanced Genre: Academic Narrative | B2 EMI Ready · Rotary 1 | Văn học hư cấu: Kỹ thuật Flashbacks | Tier 3 (Autonomous)| Viết truyện ngắn văn học ($\ge 200$ từ); `story_writer` |
-| **W144**| Advanced Genre: Expository Paper | B2 EMI Ready · Rotary 2 | Văn giải thích học thuật: Nguyên nhân & Giải pháp| Tier 3 (Autonomous)| Bài báo khoa học giải thích có trích dẫn nguồn; `discovery_report` |
+| **W121**| Opinion Project 1: Homework in Primary School| B1+ Academic · Rotary 1 | Nghiên cứu giáo dục: Giấc ngủ & Ghi nhớ | Tier 3 (Opinion) | Viết Mở bài & Câu luận đề (Thesis Statement); `writing_hub` |
+| **W122**| Opinion Project 1: Constructing Arguments | B1+ Academic · Rotary 2 | Bằng chứng thực nghiệm: Điểm số OECD PISA | Tier 3 (Opinion) | Viết Thân bài 1 & 2 theo mô hình PEEL; `discovery_report` |
+| **W123**| Opinion Project 1: Anticipating Counterclaims| B1+ Academic · Rotary 3 | Góc nhìn phụ huynh vs Sức khỏe tâm lý | Tier 3 (Opinion) | Đặt luận điểm đối lập (*Critics contend that... However...*) |
+| **W124**| Opinion Project 1: Recorded Presentation | B1+ Academic · Rotary 4 | Thuyết trình quan điểm có chuẩn bị (3–5 phút)| Tier 3 (Opinion) | `broadcast_studio` Ghi hình thuyết trình quan điểm Ủng hộ vs Phản đối |
+| **W125**| Opinion Project 2: Video Games & Cognition | B1+ Academic · Rotary 1 | Sinh học thần kinh: Phản xạ so với nghiện | Tier 3 (Opinion) | Tổng hợp 2 bài báo khoa học mâu thuẫn nhau; `reading_hub` |
+| **W126**| Opinion Project 2: Data & Statistical Claims | B1+ Academic · Rotary 2 | Dữ liệu thời gian màn hình & Sức khỏe | Tier 3 (Opinion) | `math_quest` phân biệt tương quan vs quan hệ nhân quả |
+| **W127**| **B1+ Academic Assessment Mock 1** | **★ FULL MOCK 20 (B1+)**| **Khảo sát Năng lực Chuẩn hóa B1+ 1** | **Tier 3 (Exam)** | **Full Mock B1+ Academic 1: Reading 500–800w passages + Opinion Essay 140–190w** |
+| **W128**| Opinion Project 2: Recorded Presentation | B1+ Academic · Rotary 1 | Thuyết trình phân tích dữ liệu & điểm số | Tier 3 (Opinion) | `broadcast_studio` thuyết trình quan điểm với biểu đồ minh họa |
+| **W129**| Opinion Project 3: Smartphones Under 12? | B1+ Academic · Rotary 2 | Tâm lý phát triển: Tác động mạng xã hội | Tier 3 (Opinion) | Soạn thảo bài luận quan điểm hoàn chỉnh; `writing_hub` |
+| **W130**| Opinion Project 3: Comparing Global Approaches | B1+ Academic · Rotary 3 | Luật so sánh: Lệnh cấm của Pháp và Florida | Tier 3 (Opinion) | Trích dẫn nguồn thông tin; `reading_hub` tóm tắt văn bản |
+| **W131**| Opinion Project 3: Persuasive Techniques | B1+ Academic · Rotary 4 | Ethos, Pathos, Logos trong thuyết phục | Tier 3 (Opinion) | Ngữ điệu và trọng âm nhấn mạnh; `gear2_karaoke` bài diễn văn lịch sử |
+| **W132**| **B1+ Academic Assessment Mock 2** | **★ FULL MOCK 21 (B1+)**| **Khảo sát Năng lực Chuẩn hóa B1+ 2** | **Tier 3 (Exam)** | **Full Mock B1+ Academic 2: Chấm bài luận Opinion Essay theo Rubric** |
+| **W133**| Research Project 4: AI in Education | B1+ Academic · Rotary 1 | Trí tuệ nhân tạo và liêm chính học thuật | Tier 3 (Research) | Soạn thảo tổng quan tài liệu; `discovery_report` độ lệch AI detector |
+| **W134**| Research Project 4: Survey Design | B1+ Academic · Rotary 2 | Khảo sát xã hội học: Phỏng vấn bạn học | Tier 3 (Research) | Xây dựng bảng hỏi; `info_exchange` phỏng vấn khảo sát dữ liệu |
+| **W135**| Research Project 4: Data in Essays | B1+ Academic · Rotary 3 | Trực quan hóa dữ liệu thống kê trong bài luận| Tier 3 (Research) | Nhúng biểu đồ cột và bảng số liệu vào bài viết học thuật |
+| **W136**| Research Project 4: Recorded Presentation | B1+ Academic · Rotary 4 | Thuyết trình kết quả nghiên cứu (3–5 phút)| Tier 3 (Research) | `broadcast_studio` thuyết trình kết quả dự án với slide |
+| **W137**| **B1+ Academic Assessment Mock 3** | **★ FULL MOCK 22 (B1+)**| **Khảo sát Năng lực Chuẩn hóa B1+ 3** | **Tier 3 (Exam)** | **Full Mock B1+ Academic 3: Đọc bài khoa học 600w + Nghe bài giảng + Opinion Essay** |
+| **W138**| Academic Reading: Earth Science | B1+ Academic · Rotary 1 | Khoa học Trái đất & Thiên văn học | Tier 3 (Academic) | Thuật ngữ chuyên sâu khoa học & giải thích sơ đồ phức tạp |
+| **W139**| Academic Reading: World History | B1+ Academic · Rotary 2 | Lịch sử thế giới: Văn minh cổ đại & Hiện đại | Tier 3 (Academic) | Phân tích văn bản lịch sử; `reading_hub` tóm tắt sự kiện |
+| **W140**| Academic Reading: Document Analysis | B1+ Academic · Rotary 3 | Phân tích tài liệu nguồn (Document-Based) | Tier 3 (Academic) | Kỹ năng trích xuất luận điểm từ nguồn; `writing_hub` |
+| **W141**| Academic Reading: Math Word Problems | B1+ Academic · Rotary 4 | Toán lời văn bằng tiếng Anh nâng cao | Tier 3 (Academic) | `math_quest` phương trình và biểu đồ |
+| **W142**| **B1+ Academic Assessment Mock 4** | **★ FULL MOCK 23 (B1+)**| **Khảo sát Năng lực Chuẩn hóa B1+ 4** | **Tier 3 (Exam)** | **Full Mock B1+ Academic 4: Đọc liên môn + Toán lời văn + Opinion Essay** |
+| **W143**| Advanced Genre: Academic Narrative | B1+ Academic · Rotary 1 | Văn học hư cấu: Kỹ thuật Flashbacks | Tier 3 (Autonomous)| Viết truyện ngắn văn học ($\ge 200$ từ); `story_writer` |
+| **W144**| Advanced Genre: Expository Paper | B1+ Academic · Rotary 2 | Văn giải thích học thuật: Nguyên nhân & Giải pháp| Tier 3 (Autonomous)| Bài báo khoa học giải thích có trích dẫn nguồn; `discovery_report` |
 
 ---
 
-#### Block H: Khóa Luận Tốt Nghiệp Capstone, Bảo Vệ Luận Điểm & Tốt Nghiệp (Weeks 145–156)
-*Focus: Chu kỳ 4+1, khóa luận nghiên cứu độc lập 1.000 từ, bảo vệ luận điểm trực tiếp, chuẩn bị tốt nghiệp B2 EMI.*
+#### Block H: Dự Án Cuối Khóa (Extended Project), Thuyết Trình & Tốt Nghiệp (Weeks 145–156)
+*Focus: Chu kỳ 4+1, báo cáo dự án nghiên cứu độc lập 500–800 từ, thuyết trình ghi hình, chuẩn bị tốt nghiệp B1+ Academic.*
 
-| Tuần | Tên Mốc Khóa Luận Tốt Nghiệp | CEFR & Phân Loại Tuần | Nội Dung Dự Án Capstone Độc Lập | Giàn Giáo | Sản Phẩm Đầu Ra & Chứng Nhận Tốt Nghiệp |
+| Tuần | Tên Mốc Dự Án Cuối Khóa | CEFR & Phân Loại Tuần | Nội Dung Dự Án Extended Project | Giàn Giáo | Sản Phẩm Đầu Ra & Chứng Nhận Tốt Nghiệp |
 | :---: | :--- | :---: | :--- | :---: | :--- |
-| **W145**| Capstone Project: Topic Selection | B2 EMI Ready · Rotary 1 | Đề xuất nghiên cứu đề tài đam mê của học sinh| Tier 3 (Capstone)| Bản đề cương nghiên cứu & Thư mục tài liệu (3 nguồn học thuật) |
-| **W146**| Capstone Project: Methodology | B2 EMI Ready · Rotary 2 | Thiết kế phương pháp: Thực nghiệm hay Khảo sát| Tier 3 (Capstone)| Soạn thảo phần Phương pháp nghiên cứu; phản biện chéo `info_exchange` |
-| **W147**| **B2 FCE & Acellus Mock 5** | **★ FULL MOCK 24 (B2/US)**| **Tổng duyệt Khảo thí B2 FCE Toàn diện** | **Tier 3 (Exam)** | **Full Mock FCE: 4 Kỹ năng Nghe, Nói, Đọc, Viết theo chuẩn B2 quốc tế** |
-| **W148**| Capstone Project: Data Collection | B2 EMI Ready · Rotary 1 | Thu thập số liệu định lượng & định tính | Tier 3 (Capstone)| Ghi nhật ký số liệu thô; `math_quest` thống kê trung bình, trung vị |
-| **W149**| Capstone Project: Full First Draft | B2 EMI Ready · Rotary 2 | Bản thảo đầu tiên Khóa luận 1.000 từ | Tier 3 (Capstone)| Nộp toàn văn bản thảo: Tóm tắt (Abstract), Mở bài, Thân bài, Kết luận |
-| **W150**| Capstone Project: Peer Review | B2 EMI Ready · Rotary 3 | Phản biện học thuật & Chỉnh sửa bài | Tier 3 (Capstone)| Biên tập chi tiết từng dòng, kiểm tra trích dẫn chuẩn APA |
-| **W151**| Impromptu Speaking & Viva Voce | B2 EMI Ready · Rotary 4 | Mô phỏng buổi vấn đáp bảo vệ luận án | Tier 3 (Capstone)| `broadcast_studio` trả lời ứng biến các câu hỏi hóc búa (2 phút) |
-| **W152**| **Acellus US Final Battery Mock** | **★ FULL MOCK 25 (ACELLUS)**| **Acellus US Middle School Comprehensive** | **Tier 3 (Exam)** | **Bài thi chuẩn hóa tổng hợp Acellus Grade 8 (Toán, Khoa học, ELA, Xã hội)** |
-| **W153**| Slide Deck Design & Presentation | B2 EMI Ready · Rotary 1 | Thiết kế slide thuyết trình khóa luận | Tier 3 (Capstone)| Bộ slide 10 trang trực quan tóm lược luận điểm; `action_lab` |
-| **W154**| Dress Rehearsal & Mock Defense | B2 EMI Ready · Rotary 2 | Tổng duyệt buổi thuyết trình bảo vệ (10 phút) | Tier 3 (Capstone)| Ghi hình toàn bộ bài nói với máy quay và slide, chỉnh sửa lần cuối |
-| **W155**| Master Portfolio Curation | B2 EMI Ready · Rotary 3 | Hoàn thiện Hồ sơ Năng lực 3 Năm | Tier 3 (Capstone)| Tập hợp thành tích: Starters, Movers, Flyers 15 Khiên, PET, FCE, Capstone |
-| **W156**| **GRADUATION CEREMONY & SHOWCASE**| **★ FULL MOCK 26 / GRADUATION**| **3-YEAR CAPSTONE PUBLIC DEFENSE** | **★ GRADUATION** | **LỄ TỐT NGHIỆP — BẢO VỆ LUẬN ÁN TRƯỚC HỘI ĐỒNG HỌC THUẬT & NHẬN BẰNG B2 EMI!** |
+| **W145**| Extended Project: Topic Selection | B1+ Academic · Rotary 1 | Đề xuất nghiên cứu đề tài đam mê của học sinh| Tier 3 (Project)| Bản đề cương nghiên cứu & Thư mục tài liệu (3 nguồn) |
+| **W146**| Extended Project: Research & Outline | B1+ Academic · Rotary 2 | Thu thập thông tin và lập dàn ý chi tiết| Tier 3 (Project)| Soạn thảo dàn ý; phản biện chéo `info_exchange` |
+| **W147**| **B1+ Academic Assessment Mock 5** | **★ FULL MOCK 24 (B1+)**| **Tổng duyệt Khảo thí B1+ Academic Toàn diện** | **Tier 3 (Exam)** | **Full Mock B1+: 4 Kỹ năng Nghe, Nói, Đọc, Viết theo chuẩn B1+ học thuật** |
+| **W148**| Extended Project: Data & Evidence | B1+ Academic · Rotary 1 | Thu thập số liệu & bằng chứng | Tier 3 (Project)| Ghi nhật ký số liệu; `math_quest` thống kê trung bình, trung vị |
+| **W149**| Extended Project: Full First Draft | B1+ Academic · Rotary 2 | Bản thảo đầu tiên 500–800 từ | Tier 3 (Project)| Nộp toàn văn bản thảo: Mở bài, Thân bài, Kết luận |
+| **W150**| Extended Project: Peer Review | B1+ Academic · Rotary 3 | Phản biện & Chỉnh sửa bài | Tier 3 (Project)| Biên tập chi tiết từng dòng, kiểm tra trích dẫn |
+| **W151**| Extended Project: Recorded Presentation | B1+ Academic · Rotary 4 | Ghi hình bài thuyết trình 3–5 phút | Tier 3 (Project)| `broadcast_studio` thuyết trình dự án với slide và biểu đồ |
+| **W152**| **B1+ Academic Final Assessment** | **★ FULL MOCK 25 (B1+)**| **Khảo sát Tổng hợp B1+ Academic Cuối Khóa** | **Tier 3 (Exam)** | **Full Mock B1+ Academic Tổng hợp: Đọc 800w + Opinion Essay + Nghe bài giảng + Thuyết trình** |
+| **W153**| Portfolio Showcase: Best Works | B1+ Academic · Rotary 1 | Chọn lọc bài viết & dự án xuất sắc nhất | Tier 3 (Portfolio)| Bộ Portfolio 3 năm: Bài luận, Báo cáo, Video thuyết trình |
+| **W154**| Portfolio Showcase: Reflection Essay | B1+ Academic · Rotary 2 | Viết bài tự nhận xét hành trình 3 năm | Tier 3 (Portfolio)| Bài Reflection Essay ($\ge 200$ từ); ghi hình chia sẻ cảm xúc |
+| **W155**| Master Portfolio Curation | B1+ Academic · Rotary 3 | Hoàn thiện Hồ sơ Năng lực 3 Năm | Tier 3 (Portfolio)| Tập hợp thành tích: Starters, Movers, Flyers 15 Khiên, PET, B1+ Academic |
+| **W156**| **GRADUATION CEREMONY & SHOWCASE**| **★ FULL MOCK 26 / GRADUATION**| **3-YEAR EXTENDED PROJECT SHOWCASE** | **★ GRADUATION** | **LỄ TỐT NGHIỆP — TRÌNH BÀY EXTENDED PROJECT & NHẬN BẰNG B1+ ACADEMIC PROFICIENCY!** |
 
 ---
 

@@ -1,0 +1,257 @@
+/* ─── Inference Question Styles ─── */
+
+.inf-container {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(99, 102, 241, 0.06));
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.inf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inf-question {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e1b4b;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+/* ─── Hint ─── */
+.inf-hint-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  color: #d97706;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: all 0.2s;
+}
+.inf-hint-btn:hover {
+  background: rgba(245, 158, 11, 0.18);
+}
+
+.inf-hint-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  color: #92400e;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+/* ─── MCQ Options ─── */
+.inf-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inf-option {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid rgba(99, 102, 241, 0.12);
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+.inf-option:hover:not(:disabled) {
+  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(99, 102, 241, 0.04);
+}
+
+.inf-option-selected {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.06);
+}
+
+.inf-option-correct {
+  border-color: #22c55e !important;
+  background: rgba(34, 197, 94, 0.08) !important;
+  color: #166534;
+}
+
+.inf-option-wrong {
+  border-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.06) !important;
+  color: #991b1b;
+}
+
+.inf-option-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.inf-option-correct .inf-option-letter {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+}
+
+.inf-option-wrong .inf-option-letter {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+}
+
+.inf-option-text {
+  flex: 1;
+}
+
+.inf-icon-correct {
+  color: #22c55e;
+  flex-shrink: 0;
+}
+
+.inf-icon-wrong {
+  color: #ef4444;
+  flex-shrink: 0;
+}
+
+/* ─── Evidence Highlight ─── */
+.inf-evidence {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(34, 197, 94, 0.06);
+  border-left: 3px solid #22c55e;
+  font-size: 12px;
+}
+
+.inf-evidence-label {
+  font-weight: 800;
+  color: #166534;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.inf-evidence-text {
+  font-style: italic;
+  color: #15803d;
+  font-weight: 500;
+}
+
+/* ─── Open Response ─── */
+.inf-open-response {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inf-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid rgba(99, 102, 241, 0.15);
+  background: white;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 500;
+  color: #334155;
+  resize: none;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.inf-textarea:focus {
+  border-color: #6366f1;
+}
+.inf-textarea:disabled {
+  background: #f8fafc;
+  opacity: 0.8;
+}
+
+.inf-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-end;
+}
+.inf-submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+.inf-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.inf-open-feedback {
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.inf-feedback-good {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #166534;
+  background: rgba(34, 197, 94, 0.08);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.inf-feedback-try {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #92400e;
+  background: rgba(245, 158, 11, 0.08);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}

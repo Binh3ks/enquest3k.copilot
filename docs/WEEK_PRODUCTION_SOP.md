@@ -1,8 +1,8 @@
 # 🏭 ENGQUEST3K — WEEK PRODUCTION SOP (STANDARD OPERATING PROCEDURE)
 
 **Document Reference**: `docs/WEEK_PRODUCTION_SOP.md`  
-**Version**: 2.1.0 (Unified 15 Quests / 5 Zones, Multi-Level Assessment & 28-Mock Test Cadence)  
-**Governing Standard**: Cambridge CEFR (Pre-A1 to B2) & W33 Golden Standard Architecture  
+**Version**: 2.2.0 (Unified 15 Quests / 5 Zones + Lite Mode W01–W16, Multi-Level Assessment & 28-Mock Test Cadence)  
+**Governing Standard**: Cambridge CEFR (Pre-A1 to B1+) & W33 Golden Standard Architecture  
 **Effective Date**: 2026-09-05  
 **Status**: 🟢 **CANONICAL PRODUCTION SOP**
 
@@ -12,9 +12,10 @@
 
 Every week created for EngQuest3K (from Week 01 to Week 156) must adhere strictly to these fundamental principles:
 
-1. **Master 15-Quest / 5-Zone Invariant**:
-   - Every week operates on **exactly 5 Days = 5 Zones = 15 Quests** (3 Quests per day).
+1. **Master 15-Quest / 5-Zone Invariant (W17–W156)**:
+   - Every week from W17 onward operates on **exactly 5 Days = 5 Zones = 15 Quests** (3 Quests per day).
    - Fragmented legacy "stations" (`explore.js`, `dictation.js`, `daily_watch.js`, `logic_lab.js`) are **strictly prohibited** as standalone data files.
+   - **⚠️ LITE MODE (W01–W16)**: Pre-A1 Starters weeks operate on **10 Quests / 5 Zones (2 Quests/Day)** due to cognitive load constraints for 6–7 year olds. See MASTER_ARCHITECTURE §9 for details.
 2. **Four Central Data Hubs Invariant**:
    - All week content lives exclusively in **4 Data Hubs**: `reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `speaking_hub.js`.
 3. **Zero-Cloning & Single-Source Invariant**:
@@ -79,10 +80,10 @@ Tùy thuộc vào tuần đang sản xuất thuộc giai đoạn nào, Zone 5 s�
    - `boss_listening`: PET Listening Parts 1–4 (7 hội thoại ngắn, note completion thông báo, phỏng vấn độc thoại dài, hội thoại quan điểm).
    - `boss_reading`: PET Reading Parts 1–6 (biển báo, matching người-văn bản, gapped text điền câu, open cloze) + Writing viết email/bài báo $\ge 100$ từ.
    - `weekly_review`: PET Speaking Parts 1–4 + Vấn đáp thực nghiệm khoa học **CLIL CER Viva Voce**. Thang điểm **Cambridge English Scale 140–160**.
-3. **Thế hệ 3 (Weeks 113–156): Cambridge B2 First (FCE) & Acellus US K-12 Standardized Assessment**:
-   - `boss_listening`: FCE Listening 4 Parts + Acellus Video Lecture trích xuất dữ liệu khoa học.
-   - `boss_reading`: FCE Use of English 7 Parts (Word Formation, Key Word Transformation) + Viết luận nghị luận 5 đoạn ($\ge 140–190$ từ).
-   - `weekly_review`: Tranh biện nghị viện trực tiếp 1-1 (**Parliamentary Debate**) + Thuyết trình bảo vệ đề tài Capstone. Thang điểm **Cambridge Scale 160–180 + GPA Mỹ 4.0**.
+3. **Thế hệ 3 (Weeks 113–156): B1+ Strong Academic Reading & Structured Opinion**:
+   - `boss_listening`: B1+ Academic Listening 4 Parts (nghe bài giảng khoa học, note-taking podcast học thuật, hội thoại chuyên đề dài).
+   - `boss_reading`: B1+ Academic Reading 6 Parts (đọc bài văn 500–800 từ, trích xuất luận điểm, inference questions, gapped text) + Writing Opinion Essay $\ge 140–190$ từ và Extended Project Report $\ge 500$ từ.
+   - `weekly_review`: Thuyết trình quan điểm có chuẩn bị (Structured Opinion Presentation 3–5 phút) + Ghi hình Extended Project Report + Phỏng vấn học thuật. Thang điểm **B1+ Academic Proficiency Scale + Portfolio Grade (A/B/C/D)**.
 
 ---
 
@@ -105,6 +106,8 @@ export default {
 - **Flyers (8 Mocks - Nhịp 4+1)**: W37, W42, W47, W52, W57, W62, W67, W72 (Official Flyers Gate)
 - **B1 PET & CLIL (8 Mocks - Nhịp 4+1)**: W77, W82, W87, W92, W97, W102, W107, W112 (Official PET Gate)
 - **B2 FCE & Acellus (9 Mocks - Nhịp 4+1)**: W117, W122, W127, W132, W137, W142, W147, W152, W156 (Final Capstone & Graduation)
+
+> **Note**: Giai đoạn W113–W156 mục tiêu điều chỉnh thành **B1+ Academic Reading & Structured Opinion** (thay vì B2 FCE/Acellus). Mock Test labels trên UI hiển thị là `★ B1+ Academic Assessment Mock`.
 
 ---
 
@@ -224,4 +227,81 @@ Before pushing to production, the authoring agent must execute the **Multi-Agent
 - [ ] **Data Integrity**: `logAttempt` called only when `isAttempted: true`.
 - [ ] **Build Verification**: `npm run build` exits with code 0.
 - [ ] **Manifest Drift Test**: `npm run test:manifest:drift` passes.
+- [ ] **5-Feature Compliance**: `node scripts/gate18_feature_compliance.mjs N` exits with code 0 (or ⚠️ warnings-only for W33–W48).
 - [ ] **Reviewer Report**: Documented in commit message or PR summary.
+
+---
+
+## 10. 5-Feature Data Contracts (v2.0.0 — 2026-09-05)
+
+The following features require specific data contracts in week hub files. Content-writer subagents and human authors MUST include these contracts when producing new weeks.
+
+### 10.1 Feature-to-Data Mapping
+
+| Feature | Data Location | Required Fields | First Week Required |
+|---|---|---|---|
+| **SRS Leitner 5-Box** | `reading_hub.js → vocab[]` | `word`, `definition_en`, `definition_vi` | W17 (auto-enroll) |
+| **Inference Questions** | `reading_hub.js → clil_article.inference_questions[]` | `id`, `text`, `type`, + type-specific fields | W38 (optional), **W49+ enforced** |
+| **Quick Write Panel** | None (dynamic prompts from context) | — | — |
+| **Placement Test** | `data/placementTest.js` (one-time) | — | — |
+| **Parent Dashboard Radar** | Computed from quest completion data | — | — |
+
+### 10.2 Inference Questions Contract
+
+Each `clil_article` in `reading_hub.js` MUST include an `inference_questions` array:
+
+```javascript
+inference_questions: [
+  {
+    id: 'infer_1',                           // Must start with "infer_"
+    text: 'Why did Jake help the new student?', // "Why?" or "What can we learn?" format
+    type: 'mcq_with_evidence',               // or 'open_response'
+    options: ['Because...', 'Since...', 'Due to...'], // 3–4 options (MCQ only)
+    correct: 0,                              // index of correct answer (MCQ only)
+    scaffoldHint: 'Look at paragraph 2...',  // optional scaffold for Learn mode
+  },
+  {
+    id: 'infer_2',
+    text: 'What can we learn from this experiment?',
+    type: 'open_response',
+    modelAnswer: 'We can learn that...',     // required for open_response
+    acceptableKeywords: ['friction', 'force', 'surface'], // required for scoring
+  },
+]
+```
+
+**Minimum counts by generation:**
+- Gen 1 (W33–W72, A2 Flyers): ≥2 items
+- Gen 2 (W73–W112, B1 PET): ≥2 items
+- Gen 3 (W113–W156, B1+ Academic): ≥3 items (deeper analytical types)
+
+### 10.3 Vocab SRS Contract
+
+The `vocab` array in `reading_hub.js` MUST have **exactly 20 items**, each with:
+- `word` (string) — the target vocabulary word
+- `definition_en` (string) — English definition
+- `definition_vi` (string) — Vietnamese definition with full diacritics
+
+These fields are consumed by the SRS Leitner 5-Box system for automatic flashcard enrollment.
+
+### 10.4 Golden Templates
+
+Reference templates for content-writer subagents:
+
+| Template | Range | Path |
+|---|---|---|
+| Flyers Rotary (80% of weeks) | W33–W72 | `production_kit/templates/template_flyers_rotary.js` |
+| Flyers Full Mock (20%) | W37, W42, ... W72 | `production_kit/templates/template_flyers_mock.js` |
+| PET Transition | W73–W112 | `production_kit/templates/template_pet_transition.js` |
+| B1+ Academic Transition | W113–W156 | `production_kit/templates/template_b1plus_transition.js` |
+
+### 10.5 Automated Gate Validation
+
+```bash
+# Run after content creation, before commit
+node scripts/gate18_feature_compliance.mjs <weekNumber>
+```
+
+**Enforcement timeline:**
+- **W33–W48**: Warnings only (transition period, gate exits 0)
+- **W49+**: Strict enforcement (gate exits 1 on missing data)

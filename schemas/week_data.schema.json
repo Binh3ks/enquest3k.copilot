@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "EngQuest3K Master Week Data Schema",
-  "description": "Standard schema contract for 4 Hubs and 15 Quests (W33+ Master Architecture)",
+  "description": "Standard schema contract for 4 Hubs and 15 Quests (W33+ Master Architecture). v2.0.0: Added inference_questions to clil_article.",
   "type": "object",
   "required": ["week", "theme", "reading_hub", "listening_hub", "writing_hub", "speaking_hub"],
   "properties": {
@@ -65,7 +65,45 @@
                 "content_en": { "type": "string", "minLength": 100 },
                 "content_vi": { "type": "string", "minLength": 100 },
                 "cover_image": { "type": "string", "pattern": "^/images/week[0-9]+/.*\\.(jpg|png|webp)$" },
-                "audio_url": { "type": "string", "pattern": "^/audio/week[0-9]+/.*\\.mp3$" }
+                "audio_url": { "type": "string", "pattern": "^/audio/week[0-9]+/.*\\.mp3$" },
+                "inference_questions": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 4,
+                  "x-pedagogical-note": "2 MCQ (Tier 1 scaffold) + 1-2 open_response (Tier 3 advanced). Optional W33-W48, required W49+ via gate18.",
+                  "items": {
+                    "type": "object",
+                    "required": ["id", "text", "type"],
+                    "properties": {
+                      "id": { "type": "string", "pattern": "^infer_" },
+                      "text": { "type": "string", "minLength": 10 },
+                      "type": { "type": "string", "enum": ["mcq_with_evidence", "open_response"] },
+                      "options": {
+                        "type": "array",
+                        "minItems": 3,
+                        "maxItems": 4,
+                        "items": { "type": "string" }
+                      },
+                      "correct": { "type": "integer", "minimum": 0, "maximum": 3 },
+                      "scaffoldHint": { "type": "string" },
+                      "modelAnswer": { "type": "string" },
+                      "acceptableKeywords": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      }
+                    },
+                    "allOf": [
+                      {
+                        "if": { "properties": { "type": { "const": "mcq_with_evidence" } } },
+                        "then": { "required": ["options", "correct"] }
+                      },
+                      {
+                        "if": { "properties": { "type": { "const": "open_response" } } },
+                        "then": { "required": ["modelAnswer", "acceptableKeywords"] }
+                      }
+                    ]
+                  }
+                }
               }
             }
           }

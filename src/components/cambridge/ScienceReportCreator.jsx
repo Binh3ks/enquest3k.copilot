@@ -13,6 +13,48 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
   const [sentenceError, setSentenceError] = useState(null);
   const [isCompleted, setIsCompleted] = useState(false);
 
+  // ── Step 4 Inquiry ("Why?") State & Data ──────────────────────────────────
+  const [selectedInquiryOption, setSelectedInquiryOption] = useState(null);
+  const [inquiryPassed, setInquiryPassed] = useState(false);
+  const [inquiryFeedback, setInquiryFeedback] = useState(null);
+
+  const defaultInquiryData = useMemo(() => ({
+    question: "Why was Jake able to walk safely down the wet corridor while Tom slipped and fell?",
+    options: [
+      {
+        text: "Jake's textured rubber shoe soles provided strong friction and grip against the wet tiles.",
+        isCorrect: true,
+        explanation: "💡 Correct! Textured rubber material creates high surface friction with floor tiles, preventing sliding even when wet."
+      },
+      {
+        text: "Jake was running much faster than Tom, so the water did not have time to make him slip.",
+        isCorrect: false,
+        explanation: "⚠️ Science Tip: Running fast makes it harder to stop and makes slipping much more dangerous!"
+      },
+      {
+        text: "The floor tiles absorbed all the water where Jake walked, making the surface completely dry.",
+        isCorrect: false,
+        explanation: "⚠️ Science Tip: Smooth ceramic tiles do not absorb water; water stays on the surface forming a slippery film."
+      }
+    ]
+  }), []);
+
+  const inquiryData = customConfig?.inquiryQuestion || defaultInquiryData;
+
+  const handleSelectInquiryOption = (oIdx, opt) => {
+    setSelectedInquiryOption(oIdx);
+    if (opt.isCorrect) {
+      playCorrectSound();
+      setInquiryPassed(true);
+      setInquiryFeedback(opt.explanation);
+      fireCelebrationConfetti('Inquiry_Solved');
+    } else {
+      playButtonClick();
+      setInquiryPassed(false);
+      setInquiryFeedback(opt.explanation);
+    }
+  };
+
   // ── Step 1: Hotspot Data ──────────────────────────────────────────────────
   const hotspots = useMemo(() => [
     {
@@ -445,6 +487,72 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               <p>
                 <strong>Scientific Conclusion:</strong> Jake walked carefully with rubber shoe soles that provided strong grip. The cleaners mopped the floor dry and put up a yellow warning sign to protect all students!
               </p>
+            </div>
+
+            {/* ── 🔬 Deep Inquiry ("Why?") Challenge ── */}
+            <div className="p-3.5 sm:p-5 bg-purple-50/90 rounded-2xl border-2 border-purple-200 space-y-3">
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">🤔</span>
+                  <div>
+                    <h4 className="text-xs sm:text-sm font-black text-purple-950 uppercase tracking-wide">
+                      Deep Inquiry Challenge: Why did this happen?
+                    </h4>
+                    <p className="text-[11px] text-purple-700 font-medium">
+                      Apply scientific reasoning to explain the friction cause & effect
+                    </p>
+                  </div>
+                </div>
+                {inquiryPassed && (
+                  <span className="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 text-[11px] font-black rounded-lg border border-emerald-300 flex items-center gap-1">
+                    <CheckCircle2 size={12} /> Solved
+                  </span>
+                )}
+              </div>
+
+              <p className="text-xs sm:text-sm font-bold text-slate-800">
+                {inquiryData.question}
+              </p>
+
+              <div className="space-y-2 pt-1">
+                {inquiryData.options.map((opt, oIdx) => {
+                  const isSelected = selectedInquiryOption === oIdx;
+                  const isCorrectOption = opt.isCorrect;
+                  let btnStyle = "bg-white hover:bg-purple-100/50 border-purple-200 text-slate-800";
+                  if (isSelected) {
+                    btnStyle = isCorrectOption
+                      ? "bg-emerald-50 border-emerald-500 text-emerald-950 ring-2 ring-emerald-300 font-black"
+                      : "bg-rose-50 border-rose-400 text-rose-950 ring-2 ring-rose-200";
+                  }
+
+                  return (
+                    <button
+                      key={oIdx}
+                      type="button"
+                      onClick={() => handleSelectInquiryOption(oIdx, opt)}
+                      className={`w-full p-2.5 sm:p-3 rounded-xl border text-left text-xs sm:text-sm font-medium transition flex items-center justify-between gap-2 ${btnStyle}`}
+                    >
+                      <span>{opt.text}</span>
+                      {isSelected && (
+                        isCorrectOption ? (
+                          <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
+                        ) : (
+                          <AlertTriangle size={16} className="text-rose-600 shrink-0" />
+                        )
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {inquiryFeedback && (
+                <div className={`p-2.5 rounded-xl text-xs font-bold flex items-center gap-2 ${
+                  inquiryPassed ? 'bg-emerald-100 text-emerald-900 border border-emerald-200' : 'bg-rose-100 text-rose-900 border border-rose-200'
+                }`}>
+                  {inquiryPassed ? <CheckCircle2 size={14} className="text-emerald-700 shrink-0" /> : <AlertTriangle size={14} className="text-rose-600 shrink-0" />}
+                  <span>{inquiryFeedback}</span>
+                </div>
+              )}
             </div>
 
             {/* Detective Badge */}

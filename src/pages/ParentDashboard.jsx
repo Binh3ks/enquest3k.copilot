@@ -6,6 +6,8 @@ import { useUserStore } from '../stores/useUserStore';
 import { parentAPI, assessmentAPI, pushAPI } from '../services/api';
 import { getWeekCEFR } from '../data/weekData';
 import ParentQuizGenerator from '../components/parent/ParentQuizGenerator';
+import SkillRadarChart from '../components/parent/SkillRadarChart';
+import srsService from '../services/srsService';
 
 // ── Station hints for parents ───────────────────────────────────────────────
 const STATION_HINTS = [
@@ -665,6 +667,67 @@ export default function ParentDashboard() {
             </div>
           </div>
         )}
+
+        {/* ── 4 Skills Radar + SRS Vocab Summary ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+            <p className="text-sm font-black text-slate-400 uppercase tracking-wide mb-4">📊 4 Kỹ Năng</p>
+            <SkillRadarChart
+              skills={{
+                listening: Math.min(5, Math.round((report?.listening_score || 0) / 20)),
+                reading: Math.min(5, Math.round((report?.reading_score || 0) / 20)),
+                writing: Math.min(5, Math.round((report?.writing_score || 0) / 20)),
+                speaking: Math.min(5, Math.round((report?.speaking_score || 0) / 20)),
+              }}
+              size={200}
+            />
+          </div>
+
+          <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+            <p className="text-sm font-black text-slate-400 uppercase tracking-wide mb-4">📚 Từ Vựng (SRS Leitner)</p>
+            {(() => {
+              const srsStats = srsService.getStats();
+              const masteredPct = srsStats.totalWords > 0 ? Math.round((srsStats.masteredWords / srsStats.totalWords) * 100) : 0;
+              return (
+                <div className="space-y-4">
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="text-center bg-slate-50 rounded-xl p-3">
+                      <p className="text-2xl font-black text-slate-800">{srsStats.totalWords}</p>
+                      <p className="text-[10px] font-bold text-slate-400">Tổng từ</p>
+                    </div>
+                    <div className="text-center bg-emerald-50 rounded-xl p-3">
+                      <p className="text-2xl font-black text-emerald-700">{srsStats.masteredWords}</p>
+                      <p className="text-[10px] font-bold text-emerald-500">Thuộc lòng</p>
+                    </div>
+                    <div className="text-center bg-amber-50 rounded-xl p-3">
+                      <p className="text-2xl font-black text-amber-700">{srsStats.dueNow}</p>
+                      <p className="text-[10px] font-bold text-amber-500">Cần ôn</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between text-xs font-bold text-slate-400 mb-1">
+                      <span>Tiến độ thuộc từ</span>
+                      <span>{masteredPct}%</span>
+                    </div>
+                    <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full transition-all" style={{ width: `${masteredPct}%` }} />
+                    </div>
+                  </div>
+                  <div className="flex gap-1">
+                    {[1,2,3,4,5].map(box => (
+                      <div key={box} className="flex-1 text-center">
+                        <div className="h-8 bg-slate-50 rounded-lg flex items-center justify-center">
+                          <span className="text-xs font-black text-slate-600">{srsStats[`box${box}`]}</span>
+                        </div>
+                        <p className="text-[9px] font-bold text-slate-400 mt-1">Box {box}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
+          </div>
+        </div>
 
         {/* ── Push notification opt-in banner ── */}
         {isParent && pushSupported && pushStatus === 'idle' && (
