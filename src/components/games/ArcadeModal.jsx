@@ -357,6 +357,85 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
           </div>
         )}
 
+        {/* The Lexio Chronicles Feature Banner (W17+) */}
+        {Number(weekNumber) >= 17 && (
+          <div style={{
+            margin: '0 0 16px',
+            padding: '12px 16px',
+            borderRadius: '16px',
+            background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(99, 102, 241, 0.15))',
+            border: '1.5px solid rgba(251, 191, 36, 0.4)',
+            boxShadow: '0 4px 20px rgba(245, 158, 11, 0.12)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '12px',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '12px',
+                background: 'rgba(251, 191, 36, 0.2)',
+                border: '1px solid rgba(251, 191, 36, 0.4)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '22px',
+                flexShrink: 0,
+              }}>
+                🦊
+              </div>
+              <div style={{ textAlign: 'left' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ fontSize: '14px', fontWeight: 900, color: '#fef08a' }}>The Lexio Chronicles Adventure</span>
+                  <span style={{
+                    fontSize: '10px',
+                    fontWeight: 900,
+                    background: 'rgba(251, 191, 36, 0.25)',
+                    color: '#fbbf24',
+                    border: '1px solid rgba(251, 191, 36, 0.4)',
+                    borderRadius: '6px',
+                    padding: '1px 6px',
+                  }}>NEW RPG</span>
+                </div>
+                <p style={{ margin: '2px 0 0', fontSize: '11px', color: '#cbd5e1' }}>
+                  Daily Chambers, 10-Question Boss Gauntlet, Mascot Shop & Relic Crystals!
+                </p>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                onClose && onClose();
+                window.location.href = `/week/${weekNumber}/chronicles`;
+              }}
+              style={{
+                padding: '8px 18px',
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #f59e0b, #eab308)',
+                color: '#0f172a',
+                border: 'none',
+                fontWeight: 900,
+                fontSize: '12px',
+                cursor: 'pointer',
+                boxShadow: '0 2px 10px rgba(245, 158, 11, 0.3)',
+                transition: 'transform 0.1s',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                whiteSpace: 'nowrap',
+              }}
+              onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
+              onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+            >
+              <span>Enter Chronicles ⚡</span>
+              <span>→</span>
+            </button>
+          </div>
+        )}
+
         {/* Game Grid */}
         <div style={{ overflowY: 'auto', flex: 1 }}>
           <div style={{

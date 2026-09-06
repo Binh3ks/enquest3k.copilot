@@ -1,9 +1,9 @@
 {
-  "commit": "fc5202476f4526992d7dbcf272b7a1d3237ed385",
-  "git_commit": "fc5202476f4526992d7dbcf272b7a1d3237ed385",
-  "shortCommit": "fc520247",
-  "message": "fix(audio): regenerate cue 4 and cue 5 model 2 audios with exact UI text and verify in Chrome",
-  "builtAt": "2026-09-06T12:56:22.123Z",
-  "build_timestamp": "2026-09-06T12:56:22.124Z",
+  "commit": "cd35cba4e0a922f82805f999e96916facd0cd349",
+  "git_commit": "cd35cba4e0a922f82805f999e96916facd0cd349",
+  "shortCommit": "cd35cba4",
+  "message": "feat(chronicles): ship Lexio Chronicles with 6 mini-games, boss gauntlet, mascot shop & relic collection",
+  "builtAt": "2026-09-06T13:46:15.468Z",
+  "build_timestamp": "2026-09-06T13:46:15.469Z",
   "env": "production"
 }
