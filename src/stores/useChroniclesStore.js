@@ -46,33 +46,33 @@ export function getChapterForWeek(weekNumber) {
 export const DOOR_ROTATION = [
   // dayIndex 0 (Day 1: Story World)
   [
-    { id: 'arcane_bubble', type: 'vocab',       duration: 60, label: 'Arcane Bubble Pop' },
-    { id: 'spell_train',   type: 'grammar',     duration: 90, label: 'Spell Sentence Train' },
-    { id: 'lexical_det',   type: 'integration', duration: 90, label: 'Lexical Detective' },
+    { id: 'arcane_bubble', type: 'vocab',       duration: 60, label: 'Arcane Bubble Pop', gameNameVi: 'Bong Bóng Từ Vựng', icon: '🔮' },
+    { id: 'spell_train',   type: 'grammar',     duration: 90, label: 'Spell Sentence Train', gameNameVi: 'Đoàn Tàu Ngữ Pháp', icon: '🚂' },
+    { id: 'lexical_det',   type: 'integration', duration: 90, label: 'Lexical Detective', gameNameVi: 'Thám Tử Từ Vựng', icon: '🕵️‍♂️' },
   ],
   // dayIndex 1 (Day 2: Knowledge Lab)
   [
-    { id: 'crystal_match', type: 'vocab',       duration: 75, label: 'Crystal Memory Match' },
-    { id: 'rune_forge',    type: 'grammar',     duration: 75, label: 'Rune Forge' },
-    { id: 'ancient_scroll',type: 'integration', duration: 120, label: 'Ancient Scroll Fill' },
+    { id: 'crystal_match', type: 'vocab',       duration: 75, label: 'Crystal Memory Match', gameNameVi: 'Lật Thẻ Tinh Thể', icon: '💎' },
+    { id: 'rune_forge',    type: 'grammar',     duration: 75, label: 'Rune Forge', gameNameVi: 'Lò Rèn Cổ Tự', icon: '⚒️' },
+    { id: 'ancient_scroll',type: 'integration', duration: 120, label: 'Ancient Scroll Fill', gameNameVi: 'Cuộn Giấy Cổ', icon: '📜' },
   ],
   // dayIndex 2 (Day 3: Battle Arena)
   [
-    { id: 'shadow_reveal', type: 'vocab',       duration: 60, label: 'Shadow Reveal' },
-    { id: 'echo_chamber',  type: 'grammar',     duration: 90, label: 'Echo Chamber' },
-    { id: 'sound_portal',  type: 'integration', duration: 90, label: 'Sound Portal' },
+    { id: 'crystal_match', type: 'vocab',       duration: 75, label: 'Crystal Memory Match', gameNameVi: 'Lật Thẻ Tinh Thể', icon: '💎' },
+    { id: 'spell_train',   type: 'grammar',     duration: 90, label: 'Spell Sentence Train', gameNameVi: 'Đoàn Tàu Ngữ Pháp', icon: '🚂' },
+    { id: 'lexical_det',   type: 'integration', duration: 90, label: 'Lexical Detective', gameNameVi: 'Thám Tử Từ Vựng', icon: '🕵️‍♂️' },
   ],
   // dayIndex 3 (Day 4: Creator Studio)
   [
-    { id: 'arcane_bubble', type: 'vocab',       duration: 60, label: 'Arcane Bubble Pop' },
-    { id: 'spell_train',   type: 'grammar',     duration: 90, label: 'Spell Sentence Train' },
-    { id: 'lexical_det',   type: 'integration', duration: 90, label: 'Lexical Detective' },
+    { id: 'arcane_bubble', type: 'vocab',       duration: 60, label: 'Arcane Bubble Pop', gameNameVi: 'Bong Bóng Từ Vựng', icon: '🔮' },
+    { id: 'rune_forge',    type: 'grammar',     duration: 75, label: 'Rune Forge', gameNameVi: 'Lò Rèn Cổ Tự', icon: '⚒️' },
+    { id: 'ancient_scroll',type: 'integration', duration: 120, label: 'Ancient Scroll Fill', gameNameVi: 'Cuộn Giấy Cổ', icon: '📜' },
   ],
   // dayIndex 4 (Day 5: Boss Castle — comprehensive)
   [
-    { id: 'crystal_match', type: 'vocab',       duration: 75, label: 'Crystal Memory Match' },
-    { id: 'rune_forge',    type: 'grammar',     duration: 75, label: 'Rune Forge' },
-    { id: 'ancient_scroll',type: 'integration', duration: 120, label: 'Ancient Scroll Fill' },
+    { id: 'crystal_match', type: 'vocab',       duration: 75, label: 'Crystal Memory Match', gameNameVi: 'Lật Thẻ Tinh Thể', icon: '💎' },
+    { id: 'spell_train',   type: 'grammar',     duration: 90, label: 'Spell Sentence Train', gameNameVi: 'Đoàn Tàu Ngữ Pháp', icon: '🚂' },
+    { id: 'ancient_scroll',type: 'integration', duration: 120, label: 'Ancient Scroll Fill', gameNameVi: 'Cuộn Giấy Cổ', icon: '📜' },
   ],
 ];
 
@@ -234,6 +234,11 @@ export const useChroniclesStore = create((set, get) => ({
   getRoomStars: (weekId, dayIndex) => {
     const room = get().roomStars[`w${weekId}_d${dayIndex}`] || {};
     return (room.door0 || 0) + (room.door1 || 0) + (room.door2 || 0);
+  },
+
+  getDoorStars: (weekId, dayIndex) => {
+    const room = get().roomStars[`w${weekId}_d${dayIndex}`] || {};
+    return [room.door0 || 0, room.door1 || 0, room.door2 || 0];
   },
 
   getTotalWeekStars: (weekId) => {

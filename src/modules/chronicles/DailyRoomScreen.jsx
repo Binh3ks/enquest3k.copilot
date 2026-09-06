@@ -42,19 +42,21 @@ const DEFAULT_NPC = {
 
 // ─── Door Status Icons ─────────────────────────────────────────────────────
 
-function DoorIcon({ doorIndex, status, stars }) {
+function DoorIcon({ doorIndex, status, stars, doorDef }) {
   const icons = ['🔵', '🟡', '🔴'];
   const labels = ['Vocab Door', 'Grammar Door', 'Integration Door'];
+  const gameIcon = doorDef?.icon || icons[doorIndex];
+  const gameName = doorDef?.gameNameVi || doorDef?.label || labels[doorIndex];
   return (
     <div className={`dr-door-indicator ${status}`}>
-      <div className="dr-door-icon">{icons[doorIndex]}</div>
+      <div className="dr-door-icon">{gameIcon}</div>
       <div className="dr-door-label">{labels[doorIndex]}</div>
+      <div className="dr-door-game-name">{gameName}</div>
       <div className="dr-door-stars">
         {[1, 2, 3].map((n) => (
           <span key={n} className={`dr-mini-star ${n <= stars ? 'earned' : ''}`}>★</span>
         ))}
       </div>
-      {status === 'locked' && <div className="dr-door-lock">🔒</div>}
       {status === 'cleared' && <div className="dr-door-cleared">✓</div>}
     </div>
   );
@@ -70,7 +72,7 @@ export default function DailyRoomScreen({
   onRoomComplete,
   onExit,
 }) {
-  const { recordDoorStars, completeRoom, getRoomStars } = useChroniclesStore();
+  const { recordDoorStars, completeRoom, getDoorStars } = useChroniclesStore();
 
   // Extract curriculum content once
   const { vocabItems, grammarSentences } = useMemo(
@@ -84,7 +86,9 @@ export default function DailyRoomScreen({
   // Room state machine
   // 'map' → 'door_0' | 'door_1' | 'door_2' → 'npc' → 'cleared'
   const [phase, setPhase] = useState('map');
-  const [doorStars, setDoorStars] = useState([0, 0, 0]); // stars per door (0-3)
+  const [doorStars, setDoorStars] = useState(() => {
+    return useChroniclesStore.getState().getDoorStars(weekNumber, dayIndex);
+  });
   const [activeDoor, setActiveDoor] = useState(null);    // 0, 1, or 2
   const [npcLine, setNpcLine] = useState(0);
   const [coinsEarned, setCoinsEarned] = useState(0);
@@ -94,21 +98,16 @@ export default function DailyRoomScreen({
   const npc = npcDialogue || DEFAULT_NPC;
   const totalStars = doorStars.reduce((a, b) => a + b, 0);
 
-  // Load any pre-existing stars for this room (if replaying)
+  // Sync stars from store when week or day changes
   useEffect(() => {
-    // (stars are persisted per door in store; display-only here)
-    const existingRoomStars = getRoomStars(weekNumber, dayIndex);
-    if (existingRoomStars > 0) {
-      // Room already partially done — just show map
-    }
-  }, []); // eslint-disable-line
+    const saved = useChroniclesStore.getState().getDoorStars(weekNumber, dayIndex);
+    setDoorStars(saved);
+  }, [weekNumber, dayIndex]);
 
-  // Determine which doors are unlocked (must clear doors in order)
+  // All 3 doors are open for the student to explore freely in any order
   function getDoorStatus(idx) {
     if (doorStars[idx] > 0) return 'cleared';
-    if (idx === 0) return 'active';
-    if (doorStars[idx - 1] > 0) return 'active';
-    return 'locked';
+    return 'active';
   }
 
   // ── Handle door complete ──────────────────────────────────────────────────
@@ -243,10 +242,10 @@ export default function DailyRoomScreen({
       <div className={`daily-room-screen ${themeClass}`}>
         <div className="dr-game-header">
           <button className="dr-back-btn" onClick={() => { setPhase('map'); setActiveDoor(null); }}>
-            ← Room
+            ← Phòng
           </button>
           <span className="dr-game-label">
-            {['🔵 Vocab Door', '🟡 Grammar Door', '🔴 Integration Door'][activeDoor]}
+            {doorDefs[activeDoor]?.icon} {doorDefs[activeDoor]?.gameNameVi || ['🔵 Vocab Door', '🟡 Grammar Door', '🔴 Integration Door'][activeDoor]}
           </span>
           <span className="dr-day-badge">Day {dayIndex + 1}</span>
         </div>
@@ -366,9 +365,9 @@ export default function DailyRoomScreen({
       <div className="dr-instruction-banner">
         <div className="dr-ib-icon">🦊</div>
         <div className="dr-ib-text">
-          <div className="dr-ib-title">Khám phá 3 cánh cửa thử thách hôm nay:</div>
+          <div className="dr-ib-title">Khám phá 3 cánh cửa với 3 thể loại game khác nhau:</div>
           <div className="dr-ib-sub">
-            🔵 Cửa 1 (Từ vựng) • 🟡 Cửa 2 (Ngữ pháp) • 🔴 Cửa 3 (Tổng hợp). Đạt ≥6★ để nhận Cổ vật!
+            🔵 Cửa 1: {doorDefs[0]?.gameNameVi} • 🟡 Cửa 2: {doorDefs[1]?.gameNameVi} • 🔴 Cửa 3: {doorDefs[2]?.gameNameVi}
           </div>
         </div>
       </div>
@@ -379,15 +378,13 @@ export default function DailyRoomScreen({
           const status = getDoorStatus(idx);
           return (
             <div key={idx} className="dr-door-slot">
-              <DoorIcon doorIndex={idx} status={status} stars={doorStars[idx]} />
+              <DoorIcon doorIndex={idx} status={status} stars={doorStars[idx]} doorDef={door} />
               <button
                 className={`dr-door-enter-btn ${status}`}
                 onClick={() => enterDoor(idx)}
-                disabled={status === 'locked'}
               >
-                {status === 'locked' && '🔒'}
-                {status === 'active' && '⚡ Enter'}
-                {status === 'cleared' && '↺ Retry'}
+                {status === 'active' && '⚡ Vào thử thách'}
+                {status === 'cleared' && '↺ Chơi lại'}
               </button>
             </div>
           );
