@@ -71,6 +71,7 @@ import StreakMilestoneToast from './components/gamification/StreakMilestoneToast
 
 // Lazy-loaded heavy pages
 const GameHub = React.lazy(() => import('./pages/GameHub/GameHub'));
+const ChroniclesScreen = React.lazy(() => import('./modules/chronicles/ChroniclesScreen'));
 const ParentDashboard = React.lazy(() => import('./pages/ParentDashboard'));
 const WordTreasury = React.lazy(() => import('./pages/WordTreasury'));
 const AdminDashboard = React.lazy(() => import('./components/common/AdminDashboard'));
@@ -464,6 +465,7 @@ const App = () => {
       <Route path="/read_explore" element={<LegacyReadExploreRedirect />} />
 
       <Route path="/gamehub/:weekId" element={<GameHubLayout />} />
+      <Route path="/week/:weekId/chronicles" element={<React.Suspense fallback={<StationLoading />}><ChroniclesScreen /></React.Suspense>} />
       <Route path="/collection" element={<CollectionBoard />} />
       <Route path="/word-treasury" element={<WordTreasury />} />
       <Route path="/passport" element={<PassportTracker />} />

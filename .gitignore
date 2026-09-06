@@ -21,6 +21,7 @@ dist-ssr
 !.vscode/settings.json
 !.vscode/prompts/
 .idea
+.gemini/
 .DS_Store
 *.suo
 *.ntvs*

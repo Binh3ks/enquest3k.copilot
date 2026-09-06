@@ -1,0 +1,515 @@
+/**
+ * BossBattleScreen.css — Styles for Boss Battle system
+ *
+ * Themes: bbs-theme-library | ocean | storm | forest | forge | space | throne
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+
+/* ─── Screen base ──────────────────────────────────────────────────────────── */
+
+.bbs-screen {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  font-family: 'Outfit', sans-serif;
+  color: #f1f5f9;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ── Theme backgrounds ── */
+.bbs-theme-storm   { background: radial-gradient(ellipse at 50% 20%, #1a1340 0%, #0f172a 100%); }
+.bbs-theme-library { background: radial-gradient(ellipse at 50% 20%, #1a0f40 0%, #0f172a 100%); }
+.bbs-theme-ocean   { background: radial-gradient(ellipse at 50% 20%, #0c2340 0%, #0f172a 100%); }
+.bbs-theme-forest  { background: radial-gradient(ellipse at 50% 20%, #0d2b1a 0%, #0f172a 100%); }
+.bbs-theme-forge   { background: radial-gradient(ellipse at 50% 20%, #2b0f0f 0%, #0f172a 100%); }
+.bbs-theme-space   { background: radial-gradient(ellipse at 50% 20%, #0f1040 0%, #0a0a1a 100%); }
+.bbs-theme-throne  { background: radial-gradient(ellipse at 50% 20%, #2b2200 0%, #0f172a 100%); }
+
+/* ─── INTRO ────────────────────────────────────────────────────────────────── */
+
+.bbs-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 420px;
+  width: 100%;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.bbs-boss-sprite {
+  font-size: 5rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 24px rgba(239,68,68,0.6));
+}
+
+.bbs-boss-sprite.intro-pulse {
+  animation: bossPulse 2s ease-in-out infinite;
+}
+
+@keyframes bossPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 24px rgba(239,68,68,0.6)); }
+  50%       { transform: scale(1.08); filter: drop-shadow(0 0 40px rgba(239,68,68,0.9)); }
+}
+
+.bbs-boss-sprite.combat {
+  font-size: 4rem;
+  margin: 8px 0;
+  transition: transform 0.1s;
+}
+
+.bbs-boss-sprite.shake {
+  animation: bossShake 0.4s ease;
+}
+
+@keyframes bossShake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-12px) rotate(-4deg); }
+  40%       { transform: translateX(12px) rotate(4deg); }
+  60%       { transform: translateX(-8px); }
+  80%       { transform: translateX(8px); }
+}
+
+.bbs-boss-name {
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bbs-boss-subtitle {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.bbs-tier-badge {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.bbs-tier-sub {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.bbs-tier-perks {
+  color: #fbbf24;
+  font-size: 0.85rem;
+}
+
+.bbs-start-btn {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: 0 4px 20px rgba(239,68,68,0.4);
+  transition: transform 0.15s, box-shadow 0.15s;
+  width: 100%;
+  max-width: 320px;
+}
+
+.bbs-start-btn:hover { transform: scale(1.03); box-shadow: 0 6px 30px rgba(239,68,68,0.6); }
+
+.bbs-back-link {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  padding: 8px;
+}
+.bbs-back-link:hover { color: #94a3b8; }
+
+/* ─── HP BARS ──────────────────────────────────────────────────────────────── */
+
+.bbs-hpbars {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.bbs-hp-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bbs-hp-icon { font-size: 1.2rem; width: 28px; text-align: center; }
+
+.bbs-hp-bar-wrap {
+  flex: 1;
+  height: 12px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bbs-hp-bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bbs-hp-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  width: 36px;
+  text-align: right;
+}
+
+/* ─── COMBAT ───────────────────────────────────────────────────────────────── */
+
+.bbs-question-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 4px 0;
+  align-items: center;
+}
+
+.bbs-q-type {
+  background: rgba(255,255,255,0.06);
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+}
+
+.bbs-timer-wrap {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.bbs-timer-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  transition: width 1s linear, background 1s;
+}
+
+/* re-use the wrap element flex for parent */
+.bbs-timer-wrap { position: relative; }
+.bbs-timer-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  min-width: 28px;
+  text-align: right;
+}
+
+.bbs-question-box {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 16px 20px;
+  text-align: center;
+  margin: 6px 0;
+}
+
+.bbs-question-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  line-height: 1.5;
+  color: #f1f5f9;
+}
+
+.bbs-question-hint {
+  font-size: 0.75rem;
+  color: #64748b;
+  background: rgba(255,255,255,0.04);
+  padding: 2px 10px;
+  border-radius: 8px;
+}
+
+.bbs-options-grid {
+  width: 100%;
+  max-width: 480px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.bbs-option {
+  background: rgba(255,255,255,0.06);
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 12px 10px;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  min-height: 60px;
+  justify-content: center;
+}
+
+.bbs-option:hover:not(:disabled) {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+.bbs-option.correct {
+  background: rgba(16,185,129,0.2);
+  border-color: #10b981;
+  color: #6ee7b7;
+}
+
+.bbs-option.wrong {
+  background: rgba(239,68,68,0.2);
+  border-color: #ef4444;
+  color: #fca5a5;
+  animation: optionShake 0.3s ease;
+}
+
+.bbs-option.selected-right {
+  background: rgba(16,185,129,0.15);
+  border-color: #10b981;
+}
+
+@keyframes optionShake {
+  0%, 100% { transform: translateX(0); }
+  30%       { transform: translateX(-6px); }
+  70%       { transform: translateX(6px); }
+}
+
+.bbs-opt-letter {
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: #64748b;
+  background: rgba(255,255,255,0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.bbs-opt-text {
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.bbs-feedback {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1rem;
+  font-weight: 900;
+  padding: 12px 24px;
+  border-radius: 14px;
+  z-index: 100;
+  animation: feedbackPop 0.3s ease;
+  pointer-events: none;
+}
+
+.bbs-feedback.right {
+  background: rgba(16,185,129,0.95);
+  color: #fff;
+}
+
+.bbs-feedback.wrong {
+  background: rgba(239,68,68,0.95);
+  color: #fff;
+}
+
+@keyframes feedbackPop {
+  0%   { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
+  60%  { transform: translate(-50%, -50%) scale(1.05); }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+.bbs-damage-flash {
+  position: fixed;
+  inset: 0;
+  background: rgba(239,68,68,0.12);
+  pointer-events: none;
+  z-index: 50;
+  animation: damageFlash 0.4s ease forwards;
+}
+
+@keyframes damageFlash {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ─── VICTORY ──────────────────────────────────────────────────────────────── */
+
+.bbs-victory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 420px;
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.bbs-victory-fireworks {
+  font-size: 2rem;
+  animation: fireworksBounce 1s ease infinite;
+}
+
+@keyframes fireworksBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.bbs-crystal-reveal {
+  font-size: 4rem;
+  animation: crystalGlow 1.5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 20px rgba(167,139,250,0.8));
+}
+
+@keyframes crystalGlow {
+  0%   { filter: drop-shadow(0 0 16px rgba(167,139,250,0.5)); transform: scale(1); }
+  100% { filter: drop-shadow(0 0 36px rgba(167,139,250,1)); transform: scale(1.08); }
+}
+
+.bbs-victory-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bbs-victory-crystal {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.bbs-victory-stats,
+.bbs-defeat-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.bbs-stat-pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.bbs-return-btn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 36px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 4px 20px rgba(245,158,11,0.4);
+  transition: transform 0.15s;
+}
+
+.bbs-return-btn:hover { transform: scale(1.03); }
+
+/* ─── DEFEAT ───────────────────────────────────────────────────────────────── */
+
+.bbs-defeat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 420px;
+  width: 100%;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.bbs-defeat-icon { font-size: 4rem; }
+
+.bbs-defeat-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0;
+  color: #ef4444;
+}
+
+.bbs-defeat-msg {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 300px;
+}
+
+.bbs-retry-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 36px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  width: 100%;
+  max-width: 320px;
+  transition: transform 0.15s;
+}
+
+.bbs-retry-btn:hover { transform: scale(1.03); }
+
+/* ─── Mobile ───────────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .bbs-options-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .bbs-option { padding: 10px 8px; font-size: 0.8rem; min-height: 52px; }
+  .bbs-boss-sprite { font-size: 3.5rem; }
+  .bbs-boss-name { font-size: 1.3rem; }
+}

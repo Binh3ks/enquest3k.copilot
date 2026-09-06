@@ -1,9 +1,9 @@
 {
-  "commit": "64e392711aba28fae6a9298ff9ef8ebcbfb03f8f",
-  "git_commit": "64e392711aba28fae6a9298ff9ef8ebcbfb03f8f",
-  "shortCommit": "64e39271",
-  "message": "feat(games): audit & add 3 W01-W32 mini-games, fix SRS mobile overflow & Lexio reactions, update info exchange audios",
-  "builtAt": "2026-09-06T06:35:49.291Z",
-  "build_timestamp": "2026-09-06T06:35:49.291Z",
+  "commit": "fc5202476f4526992d7dbcf272b7a1d3237ed385",
+  "git_commit": "fc5202476f4526992d7dbcf272b7a1d3237ed385",
+  "shortCommit": "fc520247",
+  "message": "fix(audio): regenerate cue 4 and cue 5 model 2 audios with exact UI text and verify in Chrome",
+  "builtAt": "2026-09-06T12:56:22.123Z",
+  "build_timestamp": "2026-09-06T12:56:22.124Z",
   "env": "production"
 }
