@@ -36,13 +36,13 @@ const audiosToGenerate = [
   { name: 'info_exchange_a3_m1.mp3', text: 'When did the accident happen?', voice: 'en-US-Journey-F' },
   { name: 'info_exchange_a3_m2.mp3', text: 'When did Tom slip?', voice: 'en-US-Journey-F' },
 
-  { name: 'info_exchange_a4_model.mp3', text: 'Who helped Tom? Or: Who helped him?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a4_model.mp3', text: 'Who helped Tom? Or: Who helped Tom immediately?', voice: 'en-US-Journey-F' },
   { name: 'info_exchange_a4_m1.mp3', text: 'Who helped Tom?', voice: 'en-US-Journey-F' },
-  { name: 'info_exchange_a4_m2.mp3', text: 'Who helped him?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a4_m2.mp3', text: 'Who helped Tom immediately?', voice: 'en-US-Journey-F' },
 
-  { name: 'info_exchange_a5_model.mp3', text: 'How does Tom feel now? Or: How is he feeling now?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a5_model.mp3', text: 'How does Tom feel now? Or: How does he feel now?', voice: 'en-US-Journey-F' },
   { name: 'info_exchange_a5_m1.mp3', text: 'How does Tom feel now?', voice: 'en-US-Journey-F' },
-  { name: 'info_exchange_a5_m2.mp3', text: 'How is he feeling now?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a5_m2.mp3', text: 'How does he feel now?', voice: 'en-US-Journey-F' },
 
   // 2. Info Exchange Nova Replies (Card 2 / Table A)
   { name: 'info_exchange_reply_1.mp3', text: 'Tom got injured in the main school corridor near the science lab, and Jake helped him there.', voice: 'en-US-Journey-F' },
@@ -120,16 +120,22 @@ async function synthesizeGoogleTTS(text, voiceName = 'en-US-Journey-F') {
 }
 
 async function run() {
-  console.log(`🚀 Synthesizing ${audiosToGenerate.length} Week 33 Audio Assets...`);
+  const force = process.argv.includes('--force');
+  const targetFilter = process.argv.find(arg => arg.startsWith('--files='))?.split('=')[1]?.split(',') || null;
+
+  console.log(`🚀 Synthesizing ${audiosToGenerate.length} Week 33 Audio Assets (force=${force})...`);
 
   let count = 0;
   for (const item of audiosToGenerate) {
+    if (targetFilter && !targetFilter.includes(item.name)) {
+      continue;
+    }
     const dest = path.join(outputDir, item.name);
-    if (fs.existsSync(dest) && fs.statSync(dest).size > 1000) {
+    if (!force && fs.existsSync(dest) && fs.statSync(dest).size > 1000) {
       console.log(`   ⏭️ Exists: ${item.name} (${(fs.statSync(dest).size / 1024).toFixed(1)} KB)`);
       continue;
     }
-    console.log(`Generating ${item.name} (${item.voice}): "${item.text.substring(0, 35)}..."`);
+    console.log(`Generating ${item.name} (${item.voice}): "${item.text.substring(0, 45)}..."`);
     try {
       const buffer = await synthesizeGoogleTTS(item.text, item.voice);
       fs.writeFileSync(dest, buffer);

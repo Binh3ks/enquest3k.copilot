@@ -1,9 +1,9 @@
 {
-  "commit": "30b8c7daf582fe8d1f954e00bd4bf0c35355dda2",
-  "git_commit": "30b8c7daf582fe8d1f954e00bd4bf0c35355dda2",
-  "shortCommit": "30b8c7da",
-  "message": "fix(pedagogy-w33): dual model audio for info exchange, complete zero-L1 in QuickWrite, and restructure 4-tier cause-effect science logic",
-  "builtAt": "2026-09-06T06:04:05.488Z",
-  "build_timestamp": "2026-09-06T06:04:05.489Z",
+  "commit": "64e392711aba28fae6a9298ff9ef8ebcbfb03f8f",
+  "git_commit": "64e392711aba28fae6a9298ff9ef8ebcbfb03f8f",
+  "shortCommit": "64e39271",
+  "message": "feat(games): audit & add 3 W01-W32 mini-games, fix SRS mobile overflow & Lexio reactions, update info exchange audios",
+  "builtAt": "2026-09-06T06:35:49.291Z",
+  "build_timestamp": "2026-09-06T06:35:49.291Z",
   "env": "production"
 }
