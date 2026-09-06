@@ -38,6 +38,16 @@ export function getChapterForWeek(weekNumber) {
 
 // ─── ROOM DOOR DEFINITIONS ────────────────────────────────────────────────────
 
+// ─── CHAMBER / ROOM METADATA ─────────────────────────────────────────────────
+
+export const CHAMBER_METADATA = [
+  { chamberName: 'Mật Thất Cổ Tự',    chamberEn: 'Chamber of Tales',  icon: '📜', zoneRef: 'Day 1' },
+  { chamberName: 'Phòng Luyện Kim',   chamberEn: 'Alchemy Lab',       icon: '⚗️', zoneRef: 'Day 2' },
+  { chamberName: 'Đấu Trường Sấm',   chamberEn: 'Thunder Arena',     icon: '⚡', zoneRef: 'Day 3' },
+  { chamberName: 'Thánh Điện Lò Rèn', chamberEn: 'Rune Sanctum',      icon: '⚒️', zoneRef: 'Day 4' },
+  { chamberName: 'Đỉnh Tháp Bão Tố',  chamberEn: 'Apex Spire',        icon: '🏰', zoneRef: 'Day 5' },
+];
+
 /**
  * 3 challenge doors per room.
  * Each room maps to 1 zone/day.

@@ -251,7 +251,15 @@
   cursor: pointer;
   font-family: var(--font-main);
 }
-.dr-room-title { font-size: 1rem; font-weight: 700; }
+.dr-room-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+.dr-room-title { font-size: 1rem; font-weight: 800; color: #f8fafc; }
+.dr-room-sub-title { font-size: 0.7rem; color: #94a3b8; font-weight: 600; }
 .dr-pp-badge { background: rgba(245,158,11,0.15); border: 1px solid var(--storm-accent); color: var(--gold); border-radius: 8px; padding: 6px 12px; font-size: 0.8rem; font-weight: 700; }
 
 /* Game header (inside mini-game) */

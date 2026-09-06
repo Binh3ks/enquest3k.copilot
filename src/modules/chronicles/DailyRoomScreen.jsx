@@ -19,7 +19,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { extractQuestVocab } from './extractQuestVocab';
-import useChroniclesStore, { DOOR_ROTATION, calculateStars } from '../../stores/useChroniclesStore';
+import useChroniclesStore, { DOOR_ROTATION, CHAMBER_METADATA, calculateStars } from '../../stores/useChroniclesStore';
 import ArcaneBubbleGame        from './games/ArcaneBubbleGame';
 import SpellTrainGame          from './games/SpellTrainGame';
 import LexicalDetectiveGame    from './games/LexicalDetectiveGame';
@@ -336,8 +336,15 @@ export default function DailyRoomScreen({
     <div className={`daily-room-screen ${themeClass}`}>
       {/* Header */}
       <div className="dr-header">
-        <button className="dr-exit-btn" onClick={onExit}>← Map</button>
-        <h2 className="dr-room-title">Day {dayIndex + 1} Chamber</h2>
+        <button className="dr-exit-btn" onClick={onExit}>← Bản đồ</button>
+        <div className="dr-room-title-block">
+          <h2 className="dr-room-title">
+            {CHAMBER_METADATA[dayIndex]?.icon} Tầng {dayIndex + 1}: {CHAMBER_METADATA[dayIndex]?.chamberName}
+          </h2>
+          <span className="dr-room-sub-title">
+            {CHAMBER_METADATA[dayIndex]?.chamberEn} • (Ôn tập {CHAMBER_METADATA[dayIndex]?.zoneRef})
+          </span>
+        </div>
         <div className="dr-pp-badge">⚡ {totalStars * 10} PP</div>
       </div>
 
@@ -393,7 +400,7 @@ export default function DailyRoomScreen({
 
       {/* Room description */}
       <div className="dr-room-desc">
-        <p>Clear all 3 doors to summon the NPC and complete this chamber!</p>
+        <p>Vượt qua cả 3 cánh cửa thử thách để gặp NPC và hoàn thành tầng tháp này!</p>
       </div>
     </div>
   );

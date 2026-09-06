@@ -11,26 +11,17 @@ import useChroniclesStore, {
   getChapterForWeek,
   BOSS_ACCESS_THRESHOLDS,
   MAX_PP_PER_WEEK,
+  CHAMBER_METADATA,
 } from '../../stores/useChroniclesStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import MascotShopPanel from './MascotShopPanel';
 import ChapterFragmentPanel from './ChapterFragmentPanel';
 import './ChroniclesWorldMap.css';
 
-// ─── Day Labels ────────────────────────────────────────────────────────────
-
-const DAY_LABELS = [
-  { icon: '📖', label: 'Story World',    theme: 'story' },
-  { icon: '🔬', label: 'Knowledge Lab',  theme: 'lab' },
-  { icon: '⚔️', label: 'Battle Arena',  theme: 'battle' },
-  { icon: '✍️', label: 'Creator Studio', theme: 'creator' },
-  { icon: '🏰', label: 'Boss Castle',    theme: 'boss' },
-];
-
 // ─── Room Node ─────────────────────────────────────────────────────────────
 
 function RoomNode({ dayIndex, weekNumber, isUnlocked, isCompleted, totalStars, onClick }) {
-  const day = DAY_LABELS[dayIndex];
+  const chamber = CHAMBER_METADATA[dayIndex] || { chamberName: `Chamber ${dayIndex + 1}`, chamberEn: `Floor ${dayIndex + 1}`, icon: '🏰', zoneRef: `Day ${dayIndex + 1}` };
   const status = isCompleted ? 'completed' : isUnlocked ? 'unlocked' : 'locked';
 
   return (
@@ -38,11 +29,12 @@ function RoomNode({ dayIndex, weekNumber, isUnlocked, isCompleted, totalStars, o
       className={`cwm-room-node day-${dayIndex} ${status}`}
       onClick={() => isUnlocked && onClick(dayIndex)}
       disabled={!isUnlocked}
-      aria-label={`${day.label} — ${status}`}
+      aria-label={`${chamber.chamberName} — ${status}`}
     >
-      <div className="cwm-room-icon">{day.icon}</div>
-      <div className="cwm-room-label">Day {dayIndex + 1}</div>
-      <div className="cwm-room-sub">{day.label}</div>
+      <div className="cwm-room-icon">{chamber.icon}</div>
+      <div className="cwm-room-label">Tầng {dayIndex + 1}</div>
+      <div className="cwm-room-sub">{chamber.chamberName}</div>
+      <div className="cwm-room-zone-ref">({chamber.chamberEn})</div>
 
       {/* Stars */}
       {isCompleted && (
@@ -55,8 +47,8 @@ function RoomNode({ dayIndex, weekNumber, isUnlocked, isCompleted, totalStars, o
 
       {/* Status badge */}
       {status === 'locked' && <div className="cwm-lock-badge">🔒</div>}
-      {status === 'unlocked' && <div className="cwm-enter-badge">⚡ Enter</div>}
-      {status === 'completed' && <div className="cwm-done-badge">✓ Done</div>}
+      {status === 'unlocked' && <div className="cwm-enter-badge">⚡ Vào chơi</div>}
+      {status === 'completed' && <div className="cwm-done-badge">✓ Hoàn thành</div>}
     </button>
   );
 }
@@ -66,7 +58,7 @@ function RoomNode({ dayIndex, weekNumber, isUnlocked, isCompleted, totalStars, o
 function BossChamberNode({ weekNumber, tier, weeklyPP, isBossDefeated, onClick }) {
   const isUnlocked = tier !== 'none';
   const tierColors = { none: '#6b7280', bronze: '#b45309', silver: '#6b7280', gold: '#d97706' };
-  const tierLabels = { none: '🔒 Need 150⚡', bronze: '🥉 Bronze', silver: '🥈 Silver', gold: '🥇 Gold' };
+  const tierLabels = { none: '🔒 Cần 150⚡', bronze: '🥉 Bronze', silver: '🥈 Silver', gold: '🥇 Gold' };
 
   return (
     <button
@@ -76,11 +68,12 @@ function BossChamberNode({ weekNumber, tier, weeklyPP, isBossDefeated, onClick }
       style={{ '--tier-color': tierColors[tier] }}
     >
       <div className="cwm-boss-icon">👾</div>
-      <div className="cwm-boss-label">Week Boss</div>
+      <div className="cwm-boss-label">Hộ Vệ Bão Tố</div>
+      <div className="cwm-boss-sub">Storm Titan Boss</div>
       <div className="cwm-boss-tier" style={{ color: tierColors[tier] }}>
         {tierLabels[tier]}
       </div>
-      {isBossDefeated && <div className="cwm-boss-defeated">⚔️ DEFEATED</div>}
+      {isBossDefeated && <div className="cwm-boss-defeated">⚔️ ĐÃ HẠ GỤC</div>}
     </button>
   );
 }
@@ -251,7 +244,7 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
       {/* Footer */}
       <div className="cwm-footer">
         <p className="cwm-footer-hint">
-          Complete each day's quests to unlock the next room 🔓
+          Hoàn thành nhiệm vụ bài học mỗi ngày để mở khóa Tầng Tháp thử thách tiếp theo 🔓
         </p>
       </div>
         </>
