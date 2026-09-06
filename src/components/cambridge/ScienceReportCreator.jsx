@@ -125,15 +125,15 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
 
   const scaffoldData = useMemo(() => ({
     starters: [
-      "When water is on the floor,",
-      "Jake walked safely because",
-      "Friction is essential because",
-      "Rubber shoe soles help because"
+      "When water spills on corridor tiles,",
+      "Jake walked safely across the corridor because",
+      "Tom slipped and hurt his knee because",
+      "Friction is essential in school corridors because"
     ],
     chunks: [
-      "water reduces friction and grip",
+      "smooth floor tiles lose surface friction",
       "textured rubber soles provide strong grip",
-      "smooth corridor tiles become very slippery"
+      "wet surfaces make walking dangerous"
     ],
     connectors: [
       ", so",
@@ -142,9 +142,9 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       "and"
     ],
     actions: [
-      "we must walk carefully.",
-      "the warning sign keeps students safe.",
-      "it prevents dangerous slipping."
+      "everyone must always walk carefully.",
+      "cleaners put up a yellow caution sign.",
+      "wearing proper shoes prevents slipping."
     ]
   }), []);
 
@@ -345,7 +345,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
           <QuickWritePanel
             prompt="Write a 15–25 word scientific discovery report explaining why friction keeps corridor floors safe."
             scaffoldGroups={scaffoldData}
-            modelSentence="When water reduces surface friction, rubber shoe soles provide grip, so we must walk carefully."
+            modelSentence="When water spills on corridor tiles, smooth floor tiles lose surface friction, so everyone must always walk carefully."
             minWords={15}
             maxWords={25}
             initialValue={studentReportText}
@@ -426,7 +426,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
                   </button>
                 </div>
                 <p className="text-xs sm:text-sm font-bold text-slate-900 bg-amber-50/70 p-3 rounded-xl border border-amber-100 italic leading-relaxed">
-                  "{studentReportText || "When water reduces surface friction, rubber shoe soles provide grip, so we must walk carefully."}"
+                  "{studentReportText || "When water spills on corridor tiles, smooth floor tiles lose surface friction, so everyone must always walk carefully."}"
                 </p>
               </div>
 

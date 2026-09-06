@@ -99,7 +99,7 @@ export default function QuickWritePanel({
       <div className="qw-header" onClick={() => !submitted && setIsExpanded(!isExpanded)}>
         <div className="qw-header-left">
           {submitted ? <CheckCircle size={15} className="text-emerald-600" /> : <PenTool size={15} className="text-indigo-600" />}
-          <span className="font-black">{submitted ? 'Quick Write ✅' : '✏️ Quick Write — Viết báo cáo khoa học'}</span>
+          <span className="font-black">{submitted ? 'Quick Write Completed ✅' : '✏️ Quick Write — Scientific Discovery Report'}</span>
         </div>
         {!submitted && (isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />)}
       </div>
@@ -116,7 +116,7 @@ export default function QuickWritePanel({
               {groups.starters && groups.starters.length > 0 && (
                 <div className="space-y-1">
                   <span className="text-[11px] font-black uppercase text-indigo-700 flex items-center gap-1">
-                    🚀 Mở đầu câu (Sentence Starters):
+                    🚀 SENTENCE STARTERS:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {groups.starters.map((pill, i) => (
@@ -137,7 +137,7 @@ export default function QuickWritePanel({
               {groups.chunks && groups.chunks.length > 0 && (
                 <div className="space-y-1">
                   <span className="text-[11px] font-black uppercase text-sky-700 flex items-center gap-1">
-                    🔬 Ý chính khoa học (Core Chunks):
+                    🔬 CORE SCIENCE CHUNKS:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {groups.chunks.map((pill, i) => (
@@ -158,7 +158,7 @@ export default function QuickWritePanel({
               {groups.connectors && groups.connectors.length > 0 && (
                 <div className="space-y-1">
                   <span className="text-[11px] font-black uppercase text-amber-700 flex items-center gap-1">
-                    🔗 Từ nối logic (Connectors):
+                    🔗 LOGICAL CONNECTORS:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {groups.connectors.map((pill, i) => (
@@ -179,7 +179,7 @@ export default function QuickWritePanel({
               {groups.actions && groups.actions.length > 0 && (
                 <div className="space-y-1">
                   <span className="text-[11px] font-black uppercase text-emerald-700 flex items-center gap-1">
-                    🛡️ Kết luận & Hành động an toàn (Actions):
+                    🛡️ ACTIONS & SAFETY CONCLUSIONS:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {groups.actions.map((pill, i) => (
@@ -207,7 +207,7 @@ export default function QuickWritePanel({
                 className="text-xs text-indigo-700 hover:text-indigo-900 font-bold flex items-center gap-1 cursor-pointer transition"
               >
                 <Lightbulb size={13} className="text-amber-500" />
-                <span>{showModel ? 'Ẩn câu mẫu' : '💡 Xem gợi ý câu hoàn chỉnh mẫu (Exemplar)'}</span>
+                <span>{showModel ? 'Hide Model Sentence' : '💡 View Model Exemplar Sentence'}</span>
               </button>
               {showModel && (
                 <div className="mt-1.5 p-2 bg-indigo-50 border border-indigo-200 rounded-xl text-xs text-indigo-950 font-medium leading-relaxed animate-in fade-in flex items-center justify-between gap-2">
@@ -216,9 +216,9 @@ export default function QuickWritePanel({
                     type="button"
                     onClick={() => setText(modelSentence)}
                     className="px-2 py-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-[11px] font-bold shrink-0 cursor-pointer"
-                    title="Chèn câu mẫu vào bài viết"
+                    title="Insert model sentence into text area"
                   >
-                    Dùng mẫu này
+                    Use This Model
                   </button>
                 </div>
               )}
@@ -229,7 +229,7 @@ export default function QuickWritePanel({
           <div className="relative">
             <textarea
               className="qw-textarea"
-              placeholder="Chạm các thẻ từ ở trên hoặc gõ bài viết của bạn tại đây..."
+              placeholder="Tap word pills above or type your report here..."
               value={text}
               onChange={(e) => setText(e.target.value)}
               rows={3}
@@ -239,7 +239,7 @@ export default function QuickWritePanel({
                 type="button"
                 onClick={handleClear}
                 className="absolute top-2 right-2 p-1 text-slate-400 hover:text-rose-600 transition rounded-lg hover:bg-rose-50"
-                title="Xóa viết lại"
+                title="Clear text"
               >
                 <RotateCcw size={13} />
               </button>
@@ -250,7 +250,7 @@ export default function QuickWritePanel({
           <div className="qw-footer">
             <div className="flex items-center gap-2">
               <span className={`qw-word-count ${isValid ? 'qw-valid font-black text-emerald-600' : 'text-slate-500 font-bold'}`}>
-                {wordCount}/{maxWords} từ {wordCount < minWords ? `(tối thiểu ${minWords} từ)` : wordCount > maxWords ? '(vượt quá giới hạn)' : '✓ Đủ điều kiện'}
+                {wordCount}/{maxWords} words {wordCount < minWords ? `(minimum ${minWords} words)` : wordCount > maxWords ? '(exceeds limit)' : '✓ Valid Length'}
               </span>
             </div>
 
@@ -261,7 +261,7 @@ export default function QuickWritePanel({
               disabled={!isValid}
             >
               <Send size={14} />
-              <span>Gửi báo cáo (+30 XP)</span>
+              <span>Submit Report (+30 XP)</span>
             </button>
           </div>
         </div>
@@ -270,7 +270,7 @@ export default function QuickWritePanel({
       {/* Submitted Feedback */}
       {submitted && (
         <div className="qw-feedback p-3 bg-emerald-50 text-emerald-950 rounded-xl border border-emerald-200 flex items-center justify-between">
-          <span>🌟 Tuyệt vời! Bạn đã hoàn thành bài viết khoa học gồm <strong>{wordCount} từ</strong>!</span>
+          <span>🌟 Fantastic! You completed your scientific report with <strong>{wordCount} words</strong>!</span>
           <span className="font-mono font-black text-xs text-emerald-700 bg-emerald-100 px-2 py-1 rounded-md">+30 XP</span>
         </div>
       )}

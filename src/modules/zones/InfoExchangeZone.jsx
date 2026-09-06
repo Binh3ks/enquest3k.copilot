@@ -587,13 +587,24 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                 <div className="pt-2 border-t border-amber-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   {showHintA ? (
                     <div className="flex items-center gap-2 flex-wrap">
-                      <div className="text-xs sm:text-sm font-black text-amber-950 animate-in fade-in leading-snug space-y-1">
+                      <div className="text-xs sm:text-sm font-black text-amber-950 animate-in fade-in leading-snug space-y-1.5">
                         {(currentCueA?.acceptable_questions?.slice(0, 2) || []).map((q, idx) => (
                           <div key={idx} className="flex items-center gap-1.5">
                             <span className="text-[10px] uppercase font-black px-1.5 py-0.5 bg-amber-200 text-amber-900 rounded">
                               Model {idx + 1}:
                             </span>
                             <span>"{q}"</span>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                const indAudio = idx === 0 ? '/audio/week33/info_exchange_a1_m1.mp3' : (idx === 1 ? '/audio/week33/info_exchange_a1_m2.mp3' : null);
+                                speakText(q, indAudio);
+                              }}
+                              className="px-1.5 py-0.5 hover:bg-amber-300/80 bg-amber-200/60 text-amber-950 rounded-md transition flex items-center gap-1 text-[11px] font-bold cursor-pointer"
+                              title={`Listen to Model ${idx + 1}`}
+                            >
+                              <Volume2 size={12} />
+                            </button>
                           </div>
                         ))}
                       </div>
@@ -603,10 +614,10 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                           const spoken = (currentCueA?.acceptable_questions?.slice(0, 2) || []).join('. Or: ');
                           speakText(spoken, currentCueA?.model_audio_url || currentCueA?.audio_url);
                         }}
-                        className="p-1.5 bg-amber-300 hover:bg-amber-400 text-amber-950 rounded-lg transition shrink-0 flex items-center gap-1 text-xs font-bold"
-                        title="Listen to model question(s)"
+                        className="p-1.5 bg-amber-300 hover:bg-amber-400 text-amber-950 rounded-lg transition shrink-0 flex items-center gap-1 text-xs font-bold cursor-pointer"
+                        title="Listen to all model questions"
                       >
-                        <Volume2 size={14} /> Listen
+                        <Volume2 size={14} /> Listen Both
                       </button>
                     </div>
                   ) : (

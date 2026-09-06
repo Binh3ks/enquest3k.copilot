@@ -24,7 +24,9 @@ if (!fs.existsSync(outputDir)) {
 
 const audiosToGenerate = [
   // 1. Info Exchange Model Questions (Card 2 / Table A)
-  { name: 'info_exchange_a1_model.mp3', text: 'Where did the accident happen?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a1_model.mp3', text: 'Where did Tom get injured? Or: Where did Jake help his friend?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a1_m1.mp3', text: 'Where did Tom get injured?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a1_m2.mp3', text: 'Where did Jake help his friend?', voice: 'en-US-Journey-F' },
   { name: 'info_exchange_a2_model.mp3', text: 'What did Tom hurt?', voice: 'en-US-Journey-F' },
   { name: 'info_exchange_a3_model.mp3', text: 'When did the accident happen?', voice: 'en-US-Journey-F' },
   { name: 'info_exchange_a4_model.mp3', text: 'Who helped Tom?', voice: 'en-US-Journey-F' },

@@ -1,9 +1,9 @@
 {
-  "commit": "fc0f93d13538914c0a48f8852a6279b651d102b5",
-  "git_commit": "fc0f93d13538914c0a48f8852a6279b651d102b5",
-  "shortCommit": "fc0f93d1",
-  "message": "fix(w33-audit): enforce 4-tier audio invariant, zero-scroll framing, progress persistence & layout fixes [multi-agent-review]",
-  "builtAt": "2026-09-06T03:00:15.109Z",
-  "build_timestamp": "2026-09-06T03:00:15.110Z",
+  "commit": "b093a5b7203649d0da7a253b6336da057ff856fb",
+  "git_commit": "b093a5b7203649d0da7a253b6336da057ff856fb",
+  "shortCommit": "b093a5b7",
+  "message": "feat(w33-pedagogy): overhaul SRS warmup, info exchange audio, listening framing, and elevate Quick Write to Step 3 in Discovery Report",
+  "builtAt": "2026-09-06T05:30:01.013Z",
+  "build_timestamp": "2026-09-06T05:30:01.014Z",
   "env": "production"
 }
