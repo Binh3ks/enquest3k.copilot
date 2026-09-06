@@ -362,6 +362,17 @@ export default function DailyRoomScreen({
         <span className="dr-stars-total">{totalStars}/9</span>
       </div>
 
+      {/* Guidance Banner */}
+      <div className="dr-instruction-banner">
+        <div className="dr-ib-icon">🦊</div>
+        <div className="dr-ib-text">
+          <div className="dr-ib-title">Khám phá 3 cánh cửa thử thách hôm nay:</div>
+          <div className="dr-ib-sub">
+            🔵 Cửa 1 (Từ vựng) • 🟡 Cửa 2 (Ngữ pháp) • 🔴 Cửa 3 (Tổng hợp). Đạt ≥6★ để nhận Cổ vật!
+          </div>
+        </div>
+      </div>
+
       {/* 3 Challenge Doors */}
       <div className="dr-doors-row">
         {doorDefs.map((door, idx) => {

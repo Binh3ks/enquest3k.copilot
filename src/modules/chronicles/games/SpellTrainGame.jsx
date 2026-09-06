@@ -8,6 +8,15 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { calculateStars } from '../../../stores/useChroniclesStore';
+import GameInstructionModal from './GameInstructionModal';
+import { HelpCircle, Volume2 } from 'lucide-react';
+
+const FALLBACK_SENTENCES = [
+  { sentence: 'Friction keeps your feet on the ground.', hint: 'Subject + Verb + Object' },
+  { sentence: 'Rubber soles have strong grip.', hint: 'Noun phrase + Verb + Adjective + Noun' },
+  { sentence: 'Be careful on the wet floor.', hint: 'Imperative sentence' },
+  { sentence: 'Ice has very little friction.', hint: 'Subject + Verb + Object' },
+];
 
 export default function SpellTrainGame({ grammarSentences = [], onComplete, duration = 90 }) {
   const [phase, setPhase] = useState('intro');
@@ -19,9 +28,24 @@ export default function SpellTrainGame({ grammarSentences = [], onComplete, dura
   const [stars, setStars] = useState(0);
   const [feedback, setFeedback] = useState(null); // 'correct' | 'wrong' | null
   const [startTime, setStartTime] = useState(null);
+  const [showHelp, setShowHelp] = useState(false);
   const timerRef = useRef(null);
 
-  const questions = grammarSentences.filter((s) => s.sentence && s.sentence.length > 4);
+  const rawQuestions = grammarSentences.filter((s) => s.sentence && s.sentence.length > 4);
+  const questions = rawQuestions.length > 0 ? rawQuestions : FALLBACK_SENTENCES;
+
+  const speakSentence = (text) => {
+    if (!text) return;
+    try {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-US';
+        u.rate = 0.9;
+        window.speechSynthesis.speak(u);
+      }
+    } catch (_) {}
+  };
 
   const loadQuestion = useCallback((idx) => {
     if (idx >= questions.length) {
@@ -45,13 +69,14 @@ export default function SpellTrainGame({ grammarSentences = [], onComplete, dura
     setTimeLeft(duration);
     setScore({ correct: 0, wrong: 0, total: 0 });
     setStartTime(Date.now());
+    setShowHelp(false);
     loadQuestion(0);
   }, [duration, loadQuestion]);
 
   // ── Timer ──────────────────────────────────────────────────────────────────
 
   useEffect(() => {
-    if (phase !== 'playing') return;
+    if (phase !== 'playing' || showHelp) return;
     timerRef.current = setInterval(() => {
       setTimeLeft((t) => {
         if (t <= 1) { clearInterval(timerRef.current); endGame(false); return 0; }
@@ -59,12 +84,13 @@ export default function SpellTrainGame({ grammarSentences = [], onComplete, dura
       });
     }, 1000);
     return () => clearInterval(timerRef.current);
-  }, [phase]); // eslint-disable-line
+  }, [phase, showHelp]); // eslint-disable-line
 
   // ── Tap word to add to sentence ────────────────────────────────────────────
 
   const handleWordTap = (wordObj) => {
     if (wordObj.used || feedback) return;
+    speakSentence(wordObj.word);
     setShuffledWords((prev) => prev.map((w) => w.id === wordObj.id ? { ...w, used: true } : w));
     setSelectedWords((prev) => [...prev, wordObj]);
   };
@@ -87,6 +113,8 @@ export default function SpellTrainGame({ grammarSentences = [], onComplete, dura
     const isCorrect = playerWords.join(' ').toLowerCase() === correctWords.join(' ').toLowerCase();
 
     setFeedback(isCorrect ? 'correct' : 'wrong');
+    if (isCorrect) speakSentence(currentQ.sentence);
+
     setScore((prev) => ({
       correct: prev.correct + (isCorrect ? 1 : 0),
       wrong: prev.wrong + (isCorrect ? 0 : 1),
@@ -95,51 +123,45 @@ export default function SpellTrainGame({ grammarSentences = [], onComplete, dura
 
     setTimeout(() => {
       loadQuestion(questionIndex + 1);
-    }, isCorrect ? 1000 : 1500);
+    }, isCorrect ? 1000 : 1600);
   }, [questions, questionIndex, selectedWords, loadQuestion]);
 
-  // ── Auto-check when all words placed ──────────────────────────────────────
-
+  // Auto-check when all words are placed
   useEffect(() => {
     if (phase !== 'playing' || feedback) return;
-    const allUsed = shuffledWords.length > 0 && shuffledWords.every((w) => w.used);
-    if (allUsed && selectedWords.length === shuffledWords.length) {
+    if (shuffledWords.length > 0 && selectedWords.length === shuffledWords.length) {
       checkAnswer();
     }
-  }, [shuffledWords, selectedWords, phase, feedback, checkAnswer]);
+  }, [selectedWords, shuffledWords, phase, feedback, checkAnswer]);
 
-  function endGame(allDone = false) {
+  // ── End game ───────────────────────────────────────────────────────────────
+
+  const endGame = (clearedAll = false) => {
     clearInterval(timerRef.current);
     setPhase('result');
+    const elapsed = startTime ? (Date.now() - startTime) / 1000 : duration;
     setScore((prev) => {
-      const elapsed = startTime ? (Date.now() - startTime) / 1000 : duration;
-      const earned = calculateStars(prev.correct, Math.max(prev.total, 1), elapsed, duration);
+      const earned = calculateStars(
+        prev.correct,
+        Math.max(questions.length, 1),
+        elapsed,
+        duration
+      );
       setStars(earned);
       return prev;
     });
-  }
+  };
 
   // ── Render ─────────────────────────────────────────────────────────────────
 
-  if (questions.length === 0) {
-    return (
-      <div className="chronicles-game-intro">
-        <p>No grammar sentences available for this zone.</p>
-        <button className="cg-continue-btn" onClick={() => onComplete && onComplete(1, {})}>
-          → Skip (1★)
-        </button>
-      </div>
-    );
-  }
-
   if (phase === 'intro') {
     return (
-      <div className="chronicles-game-intro">
-        <div className="cg-mascot">🚂</div>
-        <h3 className="cg-title">Spell Sentence Train</h3>
-        <p className="cg-desc">Tap the word carriages in the correct order to cast the sentence spell!</p>
-        <button className="cg-start-btn" onClick={startGame}>⚡ Start Challenge</button>
-      </div>
+      <GameInstructionModal
+        isOpen={true}
+        isIntro={true}
+        gameType="spell_train"
+        onStart={startGame}
+      />
     );
   }
 
@@ -151,28 +173,35 @@ export default function SpellTrainGame({ grammarSentences = [], onComplete, dura
             <span key={n} className={`cgr-star ${n <= stars ? 'earned' : 'empty'}`}>★</span>
           ))}
         </div>
-        <h3 className="cgr-title">{stars >= 2 ? '🎉 Spells Cast!' : stars === 1 ? '✅ Passed!' : '😅 Retry!'}</h3>
-        <p className="cgr-score">{score.correct} / {Math.max(score.total, 1)} correct</p>
+        <h3 className="cgr-title">{stars >= 2 ? '🎉 Xuất sắc! Đoàn tàu đã về đích!' : stars === 1 ? '✅ Đã vượt qua!' : '😅 Hãy thử lại nhé!'}</h3>
+        <p className="cgr-score">{score.correct} / {Math.max(score.total, 1)} câu đúng</p>
         <div className="cgr-actions">
-          {stars === 0 && <button className="cg-retry-btn" onClick={startGame}>🔄 Retry</button>}
+          {stars === 0 && <button className="cg-retry-btn" onClick={startGame}>🔄 Thử lại</button>}
           <button
             className="cg-continue-btn"
             onClick={() => onComplete && onComplete(stars, score)}
             disabled={stars === 0}
           >
-            {stars > 0 ? '→ Continue' : '🔒 Need 1 Star'}
+            {stars > 0 ? '→ Tiếp tục' : '🔒 Cần ít nhất 1★'}
           </button>
         </div>
       </div>
     );
   }
 
-  const currentQ = questions[questionIndex];
+  const currentQ = questions[questionIndex] || questions[0];
   const timerPct = (timeLeft / duration) * 100;
   const allPlaced = shuffledWords.every((w) => w.used);
 
   return (
     <div className="chronicles-game spell-train">
+      <GameInstructionModal
+        isOpen={showHelp}
+        isIntro={false}
+        gameType="spell_train"
+        onClose={() => setShowHelp(false)}
+      />
+
       {/* HUD */}
       <div className="cg-hud">
         <div className="cg-timer-bar">
@@ -180,22 +209,31 @@ export default function SpellTrainGame({ grammarSentences = [], onComplete, dura
         </div>
         <div className="cg-hud-stats">
           <span className="cg-score-correct">✓ {score.correct}</span>
-          <span className="cg-time">{timeLeft}s</span>
+          <span className="cg-time">⏱️ {timeLeft}s</span>
+          <button
+            type="button"
+            className="cg-help-trigger-btn"
+            onClick={() => setShowHelp(true)}
+            title="Xem hướng dẫn chơi"
+          >
+            <HelpCircle size={14} />
+            <span>Cách chơi</span>
+          </button>
           <span className="cg-q-count">{questionIndex + 1}/{questions.length}</span>
         </div>
       </div>
 
       {/* Hint */}
-      {currentQ.hint && (
-        <div className="cg-grammar-hint">💡 {currentQ.hint}</div>
+      {currentQ?.hint && (
+        <div className="cg-grammar-hint">💡 Gợi ý: {currentQ.hint}</div>
       )}
 
       {/* Train track — answer area */}
       <div className={`cg-train-track ${feedback === 'correct' ? 'track-correct' : feedback === 'wrong' ? 'track-wrong' : ''}`}>
-        <div className="cg-track-label">🚂 Your sentence:</div>
+        <div className="cg-track-label">🚂 Đoàn tàu ngữ pháp của bạn (Chạm từ bên dưới để ghép):</div>
         <div className="cg-selected-words">
           {selectedWords.length === 0 && (
-            <span className="cg-track-placeholder">Tap words below...</span>
+            <span className="cg-track-placeholder">Chạm lần lượt vào các từ bên dưới...</span>
           )}
           {selectedWords.map((w) => (
             <button
@@ -207,10 +245,10 @@ export default function SpellTrainGame({ grammarSentences = [], onComplete, dura
             </button>
           ))}
         </div>
-        {feedback === 'correct' && <div className="cg-correct-flash">✨ Correct spell!</div>}
+        {feedback === 'correct' && <div className="cg-correct-flash">✨ Ghép câu chuẩn xác!</div>}
         {feedback === 'wrong' && (
           <div className="cg-wrong-flash">
-            ✗ Correct: <em>{currentQ.sentence}</em>
+            ✗ Đáp án đúng: <em>{currentQ.sentence}</em>
           </div>
         )}
       </div>
@@ -220,21 +258,34 @@ export default function SpellTrainGame({ grammarSentences = [], onComplete, dura
         {shuffledWords.map((w) => (
           <button
             key={w.id}
-            className={`cg-word-carriage ${w.used ? 'used' : ''}`}
+            className={`cg-word-carriage available ${w.used ? 'used' : ''}`}
             onClick={() => handleWordTap(w)}
-            disabled={w.used}
+            disabled={w.used || Boolean(feedback)}
           >
             {w.word}
           </button>
         ))}
       </div>
 
-      {/* Manual check if not all auto-placed */}
-      {selectedWords.length > 0 && !allPlaced && !feedback && (
-        <button className="cg-check-btn" onClick={checkAnswer}>
-          ⚡ Check Spell
+      {/* Submit / skip button if stuck */}
+      <div className="cg-spell-actions">
+        <button
+          className="cg-listen-sentence-btn"
+          onClick={() => speakSentence(currentQ.sentence)}
+          title="Nghe câu mẫu"
+        >
+          <Volume2 size={16} />
+          <span>Nghe câu mẫu</span>
         </button>
-      )}
+        {!allPlaced && (
+          <button
+            className="cg-skip-btn"
+            onClick={() => loadQuestion(questionIndex + 1)}
+          >
+            Bỏ qua →
+          </button>
+        )}
+      </div>
     </div>
   );
 }

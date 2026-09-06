@@ -2,34 +2,36 @@
  * ArcaneBubbleGame.jsx — Door 1 "Vocab" Mini-Game
  *
  * Bubbles float upward from the bottom. Each bubble contains a word.
- * Player hears/sees a definition prompt and must tap the correct bubble
- * before it floats off screen. 60-second time limit.
+ * Player sees the target word and definition clue, hears the pronunciation,
+ * and taps the correct bubble before it floats off screen. 60-second time limit.
  *
  * Star scoring: calculateStars(correct, total, timeTaken, 60)
  */
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { calculateStars } from '../../../stores/useChroniclesStore';
+import GameInstructionModal from './GameInstructionModal';
+import { Volume2, HelpCircle } from 'lucide-react';
 
 // ─── Bubble Physics ─────────────────────────────────────────────────────────
 
 function createBubble(item, index, containerWidth) {
   const x = 10 + Math.random() * (containerWidth - 120);
-  const speed = 0.4 + Math.random() * 0.4;
+  const speed = 0.35 + Math.random() * 0.35;
   const wobble = (Math.random() - 0.5) * 0.3;
-  const size = 70 + Math.random() * 20;
+  const size = 74 + Math.random() * 22;
   return {
-    id: `bubble_${index}_${Date.now()}`,
+    id: `bubble_${index}_${Date.now()}_${Math.random()}`,
     word: item.word,
     type: item.type,
     x,
-    y: 110,           // start below screen (%)
+    y: 105,           // start below screen (%)
     speed,
     wobble,
     size,
     opacity: 1,
     popped: false,
-    isTarget: false,  // set by game logic
+    isTarget: Boolean(item.isTarget),
   };
 }
 
@@ -38,12 +40,13 @@ function createBubble(item, index, containerWidth) {
 export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration = 60 }) {
   const [phase, setPhase] = useState('intro'); // intro | playing | result
   const [bubbles, setBubbles] = useState([]);
-  const [prompt, setPrompt] = useState(null);       // { text, targetWord }
+  const [prompt, setPrompt] = useState(null);       // { targetWord, definition }
   const [score, setScore] = useState({ correct: 0, wrong: 0, total: 0 });
   const [timeLeft, setTimeLeft] = useState(duration);
   const [stars, setStars] = useState(0);
   const [feedback, setFeedback] = useState(null);    // { correct: bool, word: string }
   const [startTime, setStartTime] = useState(null);
+  const [showHelp, setShowHelp] = useState(false);
 
   const containerRef = useRef(null);
   const animFrameRef = useRef(null);
@@ -51,14 +54,35 @@ export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration
   const promptQueueRef = useRef([]);
   const activePromptRef = useRef(null);
 
+  // ── Speech Synthesizer Helper ──────────────────────────────────────────────
+
+  const speakWord = useCallback((text) => {
+    if (!text) return;
+    try {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-US';
+        u.rate = 0.9;
+        window.speechSynthesis.speak(u);
+      }
+    } catch (_) {}
+  }, []);
+
   // ── Prepare prompts ────────────────────────────────────────────────────────
 
   const buildPrompts = useCallback(() => {
-    const shuffled = [...vocabItems].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, Math.min(10, shuffled.length)).map((item, i) => ({
+    const rawList = vocabItems.length > 0 ? vocabItems : [
+      { word: 'friction', definition: 'The force that slows down sliding' },
+      { word: 'shoe soles', definition: 'Bottom part of footwear' },
+      { word: 'slippery', definition: 'Difficult to stand on when wet' },
+      { word: 'balanced', definition: 'Staying steady without falling' },
+    ];
+    const shuffled = [...rawList].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, Math.min(12, shuffled.length)).map((item, i) => ({
       id: i,
       word: item.word,
-      definition: item.definition || `Tap the correct word!`,
+      definition: item.definition && item.definition !== item.word ? item.definition : '',
       used: false,
     }));
   }, [vocabItems]);
@@ -73,16 +97,17 @@ export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration
     setScore({ correct: 0, wrong: 0, total: 0 });
     setStartTime(Date.now());
     setBubbles([]);
+    setShowHelp(false);
   }, [buildPrompts, duration]);
 
   // ── Spawn bubbles ──────────────────────────────────────────────────────────
 
   useEffect(() => {
-    if (phase !== 'playing') return;
+    if (phase !== 'playing' || showHelp) return;
     const container = containerRef.current;
     if (!container) return;
 
-    // Issue new prompt + spawn bubbles every ~4s
+    // Issue new prompt + spawn bubbles every ~4.5s
     const spawnRound = () => {
       const pending = promptQueueRef.current.filter((p) => !p.used);
       if (pending.length === 0) return;
@@ -91,36 +116,45 @@ export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration
         p.id === target.id ? { ...p, used: true } : p
       );
       activePromptRef.current = target;
-      setPrompt({ text: target.definition || `Find: "${target.word}"`, targetWord: target.word });
+      setPrompt({
+        targetWord: target.word,
+        definition: target.definition || '',
+      });
+
+      // Automatically speak the target word so student connects phonetics with text
+      speakWord(target.word);
 
       // Spawn 3–5 bubbles: 1 correct + 2–4 distractors
-      const distractors = vocabItems
-        .filter((v) => v.word !== target.word)
+      const pool = vocabItems.length >= 3 ? vocabItems : [
+        { word: 'friction' }, { word: 'smooth' }, { word: 'balance' }, { word: 'motion' }
+      ];
+      const distractors = pool
+        .filter((v) => v.word.toLowerCase() !== target.word.toLowerCase())
         .sort(() => Math.random() - 0.5)
         .slice(0, 3 + Math.floor(Math.random() * 2));
-      const allItems = [{ word: target.word, isTarget: true }, ...distractors.map((d) => ({ ...d, isTarget: false }))];
+
+      const allItems = [
+        { word: target.word, isTarget: true },
+        ...distractors.map((d) => ({ word: d.word, isTarget: false })),
+      ];
       const shuffledItems = allItems.sort(() => Math.random() - 0.5);
       const w = container.offsetWidth || 360;
 
       setBubbles((prev) => [
         ...prev.filter((b) => !b.popped && b.y > -10),
-        ...shuffledItems.map((item, idx) => ({
-          ...createBubble(item, idx, w),
-          isTarget: item.isTarget,
-          word: item.word,
-        })),
+        ...shuffledItems.map((item, idx) => createBubble(item, idx, w)),
       ]);
     };
 
     spawnRound();
-    const interval = setInterval(spawnRound, 4500);
+    const interval = setInterval(spawnRound, 4800);
     return () => clearInterval(interval);
-  }, [phase, vocabItems]);
+  }, [phase, showHelp, vocabItems, speakWord]);
 
   // ── Float animation ────────────────────────────────────────────────────────
 
   useEffect(() => {
-    if (phase !== 'playing') return;
+    if (phase !== 'playing' || showHelp) return;
     let lastTime = performance.now();
 
     const animate = (now) => {
@@ -139,12 +173,12 @@ export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration
     };
     animFrameRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animFrameRef.current);
-  }, [phase]);
+  }, [phase, showHelp]);
 
   // ── Timer ──────────────────────────────────────────────────────────────────
 
   useEffect(() => {
-    if (phase !== 'playing') return;
+    if (phase !== 'playing' || showHelp) return;
     timerRef.current = setInterval(() => {
       setTimeLeft((t) => {
         if (t <= 1) {
@@ -156,7 +190,7 @@ export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration
       });
     }, 1000);
     return () => clearInterval(timerRef.current);
-  }, [phase]); // eslint-disable-line
+  }, [phase, showHelp]); // eslint-disable-line
 
   // ── End game ───────────────────────────────────────────────────────────────
 
@@ -176,12 +210,11 @@ export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration
 
   const handleBubbleTap = useCallback((bubble) => {
     if (bubble.popped) return;
-    const isCorrect = bubble.word === activePromptRef.current?.word;
+    const isCorrect = bubble.word.toLowerCase() === activePromptRef.current?.word.toLowerCase();
+
     setBubbles((prev) =>
-      prev.map((b) => (b.id === bubble.id ? { ...b, popped: true, opacity: 0 } : b))
+      prev.map((b) => (b.id === bubble.id ? { ...b, popped: true } : b))
     );
-    setFeedback({ correct: isCorrect, word: bubble.word });
-    setTimeout(() => setFeedback(null), 800);
 
     setScore((prev) => ({
       correct: prev.correct + (isCorrect ? 1 : 0),
@@ -189,27 +222,28 @@ export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration
       total: prev.total + 1,
     }));
 
-    if (isCorrect) {
-      // Auto-advance to next prompt
-      const pending = promptQueueRef.current.filter((p) => !p.used);
-      if (pending.length === 0) {
-        setTimeout(endGame, 800);
+    setFeedback({ correct: isCorrect, word: bubble.word });
+    setTimeout(() => setFeedback(null), 900);
+
+    // If 10 correct reached, finish early
+    setScore((prev) => {
+      if (prev.correct >= 10) {
+        setTimeout(endGame, 400);
       }
-    }
+      return prev;
+    });
   }, [endGame]);
 
   // ── Render ─────────────────────────────────────────────────────────────────
 
   if (phase === 'intro') {
     return (
-      <div className="chronicles-game-intro">
-        <div className="cg-mascot">🔮</div>
-        <h3 className="cg-title">Arcane Bubble Pop</h3>
-        <p className="cg-desc">Tap the correct bubble before it floats away!</p>
-        <button className="cg-start-btn" onClick={startGame}>
-          ⚡ Start Challenge
-        </button>
-      </div>
+      <GameInstructionModal
+        isOpen={true}
+        isIntro={true}
+        gameType="arcane_bubble"
+        onStart={startGame}
+      />
     );
   }
 
@@ -221,18 +255,18 @@ export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration
             <span key={n} className={`cgr-star ${n <= stars ? 'earned' : 'empty'}`}>★</span>
           ))}
         </div>
-        <h3 className="cgr-title">{stars >= 2 ? '🎉 Excellent!' : stars === 1 ? '✅ Passed!' : '😅 Try Again!'}</h3>
-        <p className="cgr-score">{score.correct} / {Math.max(score.total, 1)} correct</p>
+        <h3 className="cgr-title">{stars >= 2 ? '🎉 Xuất sắc!' : stars === 1 ? '✅ Đã vượt qua!' : '😅 Thử lại nhé!'}</h3>
+        <p className="cgr-score">{score.correct} / {Math.max(score.total, 1)} câu đúng</p>
         <div className="cgr-actions">
           {stars === 0 && (
-            <button className="cg-retry-btn" onClick={startGame}>🔄 Retry</button>
+            <button className="cg-retry-btn" onClick={startGame}>🔄 Thử lại</button>
           )}
           <button
             className="cg-continue-btn"
             onClick={() => onComplete && onComplete(stars, score)}
             disabled={stars === 0}
           >
-            {stars > 0 ? '→ Continue' : '🔒 Need 1 Star'}
+            {stars > 0 ? '→ Tiếp tục' : '🔒 Cần ít nhất 1★'}
           </button>
         </div>
       </div>
@@ -244,6 +278,14 @@ export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration
 
   return (
     <div className="chronicles-game arcane-bubble" ref={containerRef}>
+      {/* Instructions Modal (can open during gameplay) */}
+      <GameInstructionModal
+        isOpen={showHelp}
+        isIntro={false}
+        gameType="arcane_bubble"
+        onClose={() => setShowHelp(false)}
+      />
+
       {/* HUD */}
       <div className="cg-hud">
         <div className="cg-timer-bar">
@@ -254,23 +296,54 @@ export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration
         </div>
         <div className="cg-hud-stats">
           <span className="cg-score-correct">✓ {score.correct}</span>
-          <span className="cg-time">{timeLeft}s</span>
+          <span className="cg-time">⏱️ {timeLeft}s</span>
+          <button
+            type="button"
+            className="cg-help-trigger-btn"
+            onClick={() => setShowHelp(true)}
+            title="Xem hướng dẫn chơi"
+          >
+            <HelpCircle size={14} />
+            <span>Cách chơi</span>
+          </button>
           <span className="cg-score-wrong">✗ {score.wrong}</span>
         </div>
       </div>
 
-      {/* Prompt */}
+      {/* Target Word Prompt Box */}
       {prompt && (
-        <div className="cg-prompt">
-          <span className="cg-prompt-label">🎯 Find:</span>
-          <span className="cg-prompt-text">{prompt.text}</span>
+        <div className="cg-prompt arcane-prompt">
+          <div className="cg-prompt-header-row">
+            <span className="cg-prompt-target-badge">🎯 BẮT BONG BÓNG CHỨA TỪ:</span>
+            <button
+              type="button"
+              className="cg-prompt-audio-btn"
+              onClick={() => speakWord(prompt.targetWord)}
+              title="Bấm để nghe phát âm"
+            >
+              <Volume2 size={16} />
+              <span>Nghe</span>
+            </button>
+          </div>
+          <div className="cg-prompt-target-word">
+            "{prompt.targetWord}"
+          </div>
+          {prompt.definition ? (
+            <div className="cg-prompt-clue">
+              💡 Gợi ý: {prompt.definition}
+            </div>
+          ) : (
+            <div className="cg-prompt-clue">
+              👆 Chạm vào bong bóng có chữ <strong>"{prompt.targetWord}"</strong> đang bay lên!
+            </div>
+          )}
         </div>
       )}
 
       {/* Feedback flash */}
       {feedback && (
         <div className={`cg-feedback ${feedback.correct ? 'correct' : 'wrong'}`}>
-          {feedback.correct ? '✨ Correct!' : '✗ Wrong!'}
+          {feedback.correct ? `✨ Đúng rồi! "${feedback.word}"` : '✗ Sai rồi, hãy chọn lại!'}
         </div>
       )}
 
@@ -281,7 +354,7 @@ export default function ArcaneBubbleGame({ vocabItems = [], onComplete, duration
             key={bubble.id}
             className={`cg-bubble ${bubble.popped ? 'popped' : ''}`}
             style={{
-              left: `${Math.max(2, Math.min(85, bubble.x / 3.6))}%`,
+              left: `${Math.max(2, Math.min(84, bubble.x / 3.6))}%`,
               bottom: `${bubble.y}%`,
               width: bubble.size,
               height: bubble.size,

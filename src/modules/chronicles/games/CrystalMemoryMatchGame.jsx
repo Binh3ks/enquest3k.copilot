@@ -13,6 +13,8 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { calculateStars } from '../../../stores/useChroniclesStore';
+import GameInstructionModal from './GameInstructionModal';
+import { HelpCircle } from 'lucide-react';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -22,10 +24,17 @@ function buildCards(vocabItems) {
     .filter(item => item.word && (item.definition || item.type))
     .slice(0, 4);
 
+  const list = pairs.length >= 3 ? pairs : [
+    { word: 'friction', definition: 'Lực ma sát cản trở trượt' },
+    { word: 'shoe soles', definition: 'Đế giày tiếp xúc mặt sàn' },
+    { word: 'slippery', definition: 'Trơn trượt dễ ngã' },
+    { word: 'balanced', definition: 'Giữ thăng bằng vững vàng' },
+  ];
+
   const cards = [];
-  pairs.forEach((item, pairIdx) => {
-    cards.push({ id: `w${pairIdx}`, pairId: pairIdx, face: item.word,       side: 'word',       item });
-    cards.push({ id: `d${pairIdx}`, pairId: pairIdx, face: item.definition || `(${item.type})`, side: 'def', item });
+  list.slice(0, 4).forEach((item, pairIdx) => {
+    cards.push({ id: `w${pairIdx}`, pairId: pairIdx, face: item.word, side: 'word', item });
+    cards.push({ id: `d${pairIdx}`, pairId: pairIdx, face: item.definition || `(${item.type || 'vocab'})`, side: 'def', item });
   });
 
   // Shuffle Fisher-Yates
@@ -53,17 +62,26 @@ export default function CrystalMemoryMatchGame({
   const [lockBoard, setLockBoard] = useState(false);
   const [lastPair, setLastPair]   = useState(null);   // 'match' | 'miss'
   const [startTime, setStartTime] = useState(null);
+  const [showHelp, setShowHelp]   = useState(false);
   const timerRef = useRef(null);
+
+  const speakText = (text) => {
+    if (!text) return;
+    try {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-US';
+        u.rate = 0.9;
+        window.speechSynthesis.speak(u);
+      }
+    } catch (_) {}
+  };
 
   // ── Start ─────────────────────────────────────────────────────────────────
 
   const startGame = useCallback(() => {
-    const builtCards = buildCards(vocabItems.length >= 4 ? vocabItems : [
-      { word: 'word', definition: 'a unit of language', type: 'vocab' },
-      { word: 'match', definition: 'to find the pair', type: 'vocab' },
-      { word: 'crystal', definition: 'a clear, hard mineral', type: 'vocab' },
-      { word: 'memory', definition: 'the ability to remember', type: 'vocab' },
-    ]);
+    const builtCards = buildCards(vocabItems);
     setCards(builtCards);
     setFlipped([]);
     setMatched(new Set());
@@ -73,12 +91,13 @@ export default function CrystalMemoryMatchGame({
     setLastPair(null);
     setStartTime(Date.now());
     setPhase('playing');
+    setShowHelp(false);
   }, [vocabItems, duration]);
 
   // ── Timer ─────────────────────────────────────────────────────────────────
 
   useEffect(() => {
-    if (phase !== 'playing') return;
+    if (phase !== 'playing' || showHelp) return;
     timerRef.current = setInterval(() => {
       setTimeLeft(t => {
         if (t <= 1) {
@@ -90,17 +109,15 @@ export default function CrystalMemoryMatchGame({
       });
     }, 1000);
     return () => clearInterval(timerRef.current);
-  }, [phase]); // eslint-disable-line
+  }, [phase, showHelp]); // eslint-disable-line
 
   // ── End game ──────────────────────────────────────────────────────────────
 
   const endGame = useCallback((timeout = false) => {
     clearInterval(timerRef.current);
-    const timeTaken = (Date.now() - (startTime || Date.now())) / 1000;
     const correct = matched.size; // number of pairs matched
     const total   = cards.length / 2;
 
-    // Stars based on mistakes
     let earnedStars;
     if (timeout && correct < total) {
       earnedStars = correct === 0 ? 0 : 1;
@@ -110,14 +127,9 @@ export default function CrystalMemoryMatchGame({
 
     setStars(earnedStars);
     setPhase('result');
+  }, [matched.size, cards.length, mistakes]);
 
-    // Small delay then report
-    setTimeout(() => {
-      onComplete && onComplete(earnedStars, { correct, total, mistakes, timeTaken });
-    }, 2000);
-  }, [matched, cards, mistakes, startTime, onComplete]); // eslint-disable-line
-
-  // ── Flip card ─────────────────────────────────────────────────────────────
+  // ── Flip Card ─────────────────────────────────────────────────────────────
 
   const flipCard = useCallback((idx) => {
     if (lockBoard) return;
@@ -127,25 +139,28 @@ export default function CrystalMemoryMatchGame({
     const newFlipped = [...flipped, idx];
     setFlipped(newFlipped);
 
+    if (cards[idx]?.side === 'word') {
+      speakText(cards[idx].face);
+    }
+
     if (newFlipped.length === 2) {
       setLockBoard(true);
-      const [a, b] = newFlipped;
-      const cardA = cards[a];
-      const cardB = cards[b];
+      const [firstIdx, secondIdx] = newFlipped;
+      const c1 = cards[firstIdx];
+      const c2 = cards[secondIdx];
 
-      if (cardA.pairId === cardB.pairId && cardA.side !== cardB.side) {
+      if (c1.pairId === c2.pairId && c1.side !== c2.side) {
         // Match!
         setLastPair('match');
-        const newMatched = new Set(matched);
-        newMatched.add(cardA.pairId);
-        setMatched(newMatched);
+        const nextMatched = new Set(matched);
+        nextMatched.add(c1.pairId);
+        setMatched(nextMatched);
 
         setTimeout(() => {
           setFlipped([]);
           setLockBoard(false);
           setLastPair(null);
-          // Check win
-          if (newMatched.size === cards.length / 2) {
+          if (nextMatched.size >= cards.length / 2) {
             endGame(false);
           }
         }, 800);
@@ -165,24 +180,12 @@ export default function CrystalMemoryMatchGame({
   // ─── INTRO ────────────────────────────────────────────────────────────────
   if (phase === 'intro') {
     return (
-      <div className="chronicles-game crystal-match">
-        <div className="cg-intro-screen">
-          <div className="cg-game-icon">🔮</div>
-          <h2 className="cg-game-title">Crystal Memory Match</h2>
-          <p className="cg-game-desc">
-            Tap two crystals that match — a word and its meaning!<br />
-            Match all pairs before time runs out.
-          </p>
-          <div className="cg-rules">
-            <span>⏱ {duration}s</span>
-            <span>🃏 4 pairs</span>
-            <span>⭐ Fewer mistakes = more stars</span>
-          </div>
-          <button id="cm-start-btn" className="cg-start-btn" onClick={startGame}>
-            ⚡ Start Challenge
-          </button>
-        </div>
-      </div>
+      <GameInstructionModal
+        isOpen={true}
+        isIntro={true}
+        gameType="crystal_match"
+        onStart={startGame}
+      />
     );
   }
 
@@ -197,11 +200,21 @@ export default function CrystalMemoryMatchGame({
             ))}
           </div>
           <div className="cg-result-title">
-            {stars === 3 ? '💎 Crystal Master!' : stars === 2 ? '🔷 Well Matched!' : stars === 1 ? '🔹 Keep Practising!' : '💤 Time\'s Up!'}
+            {stars === 3 ? '💎 Bậc Thầy Tinh Thể!' : stars === 2 ? '🔷 Ghép Đôi Xuất Sắc!' : stars === 1 ? '🔹 Hoàn Thành Thử Thách!' : '💤 Hết Giờ Rồi!'}
           </div>
           <div className="cg-result-stats">
-            <span>✅ {matched.size}/{cards.length / 2} pairs</span>
-            <span>❌ {mistakes} mistakes</span>
+            <span>✅ {matched.size}/{cards.length / 2} cặp hoàn thành</span>
+            <span>❌ {mistakes} lần lật sai</span>
+          </div>
+          <div className="cgr-actions" style={{ marginTop: '16px' }}>
+            {stars === 0 && <button className="cg-retry-btn" onClick={startGame}>🔄 Thử lại</button>}
+            <button
+              className="cg-continue-btn"
+              onClick={() => onComplete && onComplete(stars, { mistakes, matched: matched.size })}
+              disabled={stars === 0}
+            >
+              {stars > 0 ? '→ Tiếp tục' : '🔒 Cần ít nhất 1★'}
+            </button>
           </div>
         </div>
       </div>
@@ -214,20 +227,36 @@ export default function CrystalMemoryMatchGame({
 
   return (
     <div className="chronicles-game crystal-match">
+      <GameInstructionModal
+        isOpen={showHelp}
+        isIntro={false}
+        gameType="crystal_match"
+        onClose={() => setShowHelp(false)}
+      />
+
       {/* HUD */}
       <div className="cg-hud">
-        <span className="cg-hud-stat correct">✅ {matched.size}/{cards.length / 2}</span>
+        <span className="cg-hud-stat correct">💎 {matched.size}/{cards.length / 2}</span>
         <div className="cg-timer-bar-wrap">
           <div className="cg-timer-bar" style={{ width: `${pct}%`, background: timerColor }} />
         </div>
-        <span className="cg-hud-timer">{timeLeft}s</span>
+        <span className="cg-hud-timer">⏱️ {timeLeft}s</span>
+        <button
+          type="button"
+          className="cg-help-trigger-btn"
+          onClick={() => setShowHelp(true)}
+          title="Xem hướng dẫn chơi"
+        >
+          <HelpCircle size={14} />
+          <span>Cách chơi</span>
+        </button>
         <span className="cg-hud-stat wrong">❌ {mistakes}</span>
       </div>
 
       {/* Feedback flash */}
       {lastPair && (
         <div className={`cm-feedback ${lastPair}`}>
-          {lastPair === 'match' ? '✨ Match!' : '🔄 Try again!'}
+          {lastPair === 'match' ? '✨ Ghép chuẩn xác!' : '🔄 Chưa khớp, hãy nhớ vị trí!'}
         </div>
       )}
 

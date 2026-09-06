@@ -13,6 +13,8 @@
  */
 
 import React, { useState, useCallback, useMemo } from 'react';
+import GameInstructionModal from './GameInstructionModal';
+import { HelpCircle } from 'lucide-react';
 
 // ─── Build passage from hub data ──────────────────────────────────────────────
 
@@ -145,12 +147,13 @@ export default function AncientScrollFillGame({
     return words;
   }, [scrollData]);
 
-  const [phase, setPhase]         = useState('intro'); // intro | filling | result
-  const [selections, setSelections] = useState({}); // { blankIdx: word }
-  const [selectedBlank, setSelectedBlank] = useState(null); // which blank is selected
-  const [usedWords, setUsedWords]  = useState(new Set()); // words placed in blanks
-  const [submitted, setSubmitted]  = useState(false);
-  const [stars, setStars]          = useState(0);
+  const [phase, setPhase]                 = useState('intro'); // intro | filling | result
+  const [selections, setSelections]       = useState({});      // { [blankIdx]: 'placedWord' }
+  const [selectedBlank, setSelectedBlank] = useState(null);    // idx of currently active blank
+  const [usedWords, setUsedWords]         = useState(new Set()); // Set of placed words
+  const [stars, setStars]                 = useState(0);
+  const [submitted, setSubmitted]         = useState(false);
+  const [showHelp, setShowHelp]           = useState(false);
 
   const allFilled = scrollData.blanks.every(b => selections[b.idx] !== undefined);
 
@@ -224,24 +227,12 @@ export default function AncientScrollFillGame({
   // ─── INTRO ────────────────────────────────────────────────────────────────
   if (phase === 'intro') {
     return (
-      <div className="chronicles-game ancient-scroll">
-        <div className="cg-intro-screen">
-          <div className="cg-game-icon">📜</div>
-          <h2 className="cg-game-title">Ancient Scroll Fill</h2>
-          <p className="cg-game-desc">
-            Read the ancient scroll carefully.<br />
-            Tap a <span className="asf-blank-demo">___blank___</span> then tap the correct word from the Word Bank below to fill it!
-          </p>
-          <div className="cg-rules">
-            <span>📖 5 blanks</span>
-            <span>🧩 8 word tiles</span>
-            <span>✏️ Tap blank → tap word</span>
-          </div>
-          <button id="asf-start-btn" className="cg-start-btn" onClick={() => setPhase('filling')}>
-            ⚡ Open the Scroll
-          </button>
-        </div>
-      </div>
+      <GameInstructionModal
+        isOpen={true}
+        isIntro={true}
+        gameType="ancient_scroll"
+        onStart={() => setPhase('filling')}
+      />
     );
   }
 
@@ -280,6 +271,16 @@ export default function AncientScrollFillGame({
               );
             })}
           </div>
+          <div className="cgr-actions" style={{ marginTop: '16px', display: 'flex', gap: '10px', justifyContent: 'center' }}>
+            {stars === 0 && <button className="cg-retry-btn" onClick={() => setPhase('filling')}>🔄 Thử lại</button>}
+            <button
+              className="cg-continue-btn"
+              onClick={() => onComplete && onComplete(stars, { correct, total: 5 })}
+              disabled={stars === 0}
+            >
+              {stars > 0 ? '→ Tiếp tục' : '🔒 Cần ít nhất 1★'}
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -289,13 +290,31 @@ export default function AncientScrollFillGame({
 
   return (
     <div className="chronicles-game ancient-scroll">
+      <GameInstructionModal
+        isOpen={showHelp}
+        isIntro={false}
+        gameType="ancient_scroll"
+        onClose={() => setShowHelp(false)}
+      />
+
       <div className="asf-header">
-        <h3 className="asf-title">📜 {scrollData.passageTitle}</h3>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+          <h3 className="asf-title">📜 {scrollData.passageTitle}</h3>
+          <button
+            type="button"
+            className="cg-help-trigger-btn"
+            onClick={() => setShowHelp(true)}
+            title="Xem hướng dẫn chơi"
+          >
+            <HelpCircle size={14} />
+            <span>Cách chơi</span>
+          </button>
+        </div>
         {selectedBlank !== null && (
-          <div className="asf-instruction">Tap a word tile to fill blank #{selectedBlank + 1}</div>
+          <div className="asf-instruction">Chạm vào một từ vựng bên dưới để điền vào ô #{selectedBlank + 1}</div>
         )}
         {selectedBlank === null && !allFilled && (
-          <div className="asf-instruction">Tap a blank in the scroll to select it</div>
+          <div className="asf-instruction">Chạm vào một ô trống trên cuộn giấy để bắt đầu điền</div>
         )}
       </div>
 

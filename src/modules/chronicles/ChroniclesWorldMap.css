@@ -566,6 +566,113 @@
 .cg-prompt-label { font-size: 0.75rem; font-weight: 700; color: #a78bfa; }
 .cg-prompt-text  { font-size: 0.9rem; color: var(--text-main); }
 
+/* Arcane Prompt Box with Target Word & Clue */
+.cg-prompt.arcane-prompt {
+  flex-direction: column;
+  align-items: stretch;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.22), rgba(245, 158, 11, 0.16));
+  border: 2px solid rgba(251, 191, 36, 0.5);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+  padding: 12px 16px;
+  gap: 6px;
+}
+
+.cg-prompt-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cg-prompt-target-badge {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: #fbbf24;
+  text-transform: uppercase;
+}
+
+.cg-prompt-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(251, 191, 36, 0.2);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  color: #fef08a;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cg-prompt-audio-btn:hover {
+  background: rgba(251, 191, 36, 0.35);
+  transform: scale(1.05);
+}
+
+.cg-prompt-target-word {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(251, 191, 36, 0.6);
+  letter-spacing: 0.02em;
+}
+
+.cg-prompt-clue {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  background: rgba(15, 23, 42, 0.5);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border-left: 3px solid #818cf8;
+}
+
+.cg-help-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e2e8f0;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.cg-help-trigger-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.dr-instruction-banner {
+  margin: 12px 16px 16px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(245, 158, 11, 0.15));
+  border: 1.5px solid rgba(251, 191, 36, 0.35);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+.dr-ib-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+.dr-ib-title {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #fbbf24;
+  margin-bottom: 2px;
+}
+.dr-ib-sub {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
 /* Feedback flash */
 .cg-feedback {
   text-align: center;

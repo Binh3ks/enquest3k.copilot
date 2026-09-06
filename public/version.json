@@ -1,9 +1,4 @@
 {
-  "commit": "cd35cba4e0a922f82805f999e96916facd0cd349",
-  "git_commit": "cd35cba4e0a922f82805f999e96916facd0cd349",
-  "shortCommit": "cd35cba4",
-  "message": "feat(chronicles): ship Lexio Chronicles with 6 mini-games, boss gauntlet, mascot shop & relic collection",
-  "builtAt": "2026-09-06T13:46:15.468Z",
-  "build_timestamp": "2026-09-06T13:46:15.469Z",
-  "env": "production"
+  "version": "2.4.0",
+  "timestamp": "2026-09-06T14:23:37.705Z"
 }

@@ -13,43 +13,41 @@
 
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { calculateStars } from '../../../stores/useChroniclesStore';
+import GameInstructionModal from './GameInstructionModal';
+import { HelpCircle } from 'lucide-react';
 
-// ─── Helpers ─────────────────────────────────────────────────────────────────
-
-/**
- * Build fill-in-blank items from grammar sentences.
- * Removes one "interesting" word (length > 3, not stopword) from each sentence.
- */
 const STOPWORDS = new Set(['the','a','an','is','are','was','were','be','been','being',
   'and','but','or','not','with','of','in','on','at','to','for','from','by','as','it',
   'its','this','that','he','she','they','we','you','i','me','him','her','us','them']);
 
 function buildFillItems(grammarSentences) {
   const items = [];
-  for (const entry of grammarSentences) {
+  const list = grammarSentences.length > 0 ? grammarSentences : [
+    { sentence: 'Friction keeps shoes firmly on the floor.' },
+    { sentence: 'Rubber soles have strong grip.' },
+    { sentence: 'Water makes the smooth floor very slippery.' },
+  ];
+
+  for (const entry of list) {
     const sentence = typeof entry === 'string' ? entry : (entry.sentence || '');
     if (!sentence.trim()) continue;
 
     const words = sentence.split(/\s+/);
-    // Find candidate words: len>3, not stopword, alphabetic
     const candidates = words
       .map((w, i) => ({ w: w.replace(/[^a-zA-Z]/g, '').toLowerCase(), i, raw: w }))
       .filter(({ w }) => w.length > 3 && !STOPWORDS.has(w));
 
     if (!candidates.length) continue;
 
-    // Pick a random candidate
     const target = candidates[Math.floor(Math.random() * candidates.length)];
     const displayWord = target.raw.replace(/[^a-zA-Z]/g, '');
     const punctuation = target.raw.replace(/[a-zA-Z]/g, '');
 
-    // Build display sentence with blank
     const displayWords = [...words];
     displayWords[target.i] = `_____${punctuation}`;
     const displaySentence = displayWords.join(' ');
 
-    // Build distractors — 3 random words from other sentences
-    const otherWords = grammarSentences
+    const otherWords = list
       .map(s => typeof s === 'string' ? s : (s.sentence || ''))
       .join(' ')
       .split(/\s+/)
@@ -57,151 +55,134 @@ function buildFillItems(grammarSentences) {
       .filter(w => w.length > 3 && !STOPWORDS.has(w) && w !== displayWord.toLowerCase());
 
     const shuffledDistractors = [...new Set(otherWords)].sort(() => Math.random() - 0.5).slice(0, 3);
+    const fallbacks = ['friction', 'balance', 'danger', 'grip'];
     while (shuffledDistractors.length < 3) {
-      shuffledDistractors.push(['quickly', 'carefully', 'bright', 'strong'][shuffledDistractors.length]);
+      const fb = fallbacks.find(f => f !== displayWord.toLowerCase() && !shuffledDistractors.includes(f));
+      shuffledDistractors.push(fb || 'motion');
     }
 
-    // 4 options with answer shuffled in
-    const options = [...shuffledDistractors, displayWord].sort(() => Math.random() - 0.5);
+    const options = [displayWord, ...shuffledDistractors].sort(() => Math.random() - 0.5);
 
     items.push({
       sentence: displaySentence,
-      answer:   displayWord.toLowerCase(),
+      answer: displayWord,
       options,
-      hint:     entry.hint || '',
+      fullSentence: sentence,
+      hint: typeof entry === 'object' && entry.hint ? entry.hint : '',
     });
   }
+
   return items.slice(0, 5);
 }
-
-// Rune stone colour palette — cycles per question index
-const RUNE_COLORS = ['#6366f1', '#8b5cf6', '#0ea5e9', '#f59e0b'];
-
-// ─── Component ────────────────────────────────────────────────────────────────
 
 export default function RuneForgeGame({
   grammarSentences = [],
   onComplete,
-  duration = 75,
+  duration = 60,
 }) {
-  const [phase, setPhase]         = useState('intro');
-  const [items, setItems]         = useState([]);
-  const [current, setCurrent]     = useState(0);
-  const [forgeHP, setForgeHP]     = useState(3);   // lives
-  const [correct, setCorrect]     = useState(0);
-  const [feedback, setFeedback]   = useState(null); // { type:'right'|'wrong', word }
-  const [timeLeft, setTimeLeft]   = useState(duration);
-  const [stars, setStars]         = useState(0);
+  const [phase, setPhase]     = useState('intro'); // intro | playing | result
+  const [items, setItems]     = useState([]);
+  const [current, setCurrent] = useState(0);
+  const [forgeHP, setForgeHP] = useState(3);       // 3 lives
+  const [correct, setCorrect] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(duration);
+  const [stars, setStars]     = useState(0);
+  const [feedback, setFeedback] = useState(null);  // { type: 'right'|'wrong', word }
   const [startTime, setStartTime] = useState(null);
+  const [showHelp, setShowHelp] = useState(false);
   const timerRef = useRef(null);
 
   // ── Start ─────────────────────────────────────────────────────────────────
 
   const startGame = useCallback(() => {
-    const source = grammarSentences.length >= 3 ? grammarSentences : [
-      { sentence: 'Water reduces friction on wet tiles.', hint: 'Cause & Effect' },
-      { sentence: 'Jake walked carefully down the corridor.', hint: 'Adverb' },
-      { sentence: 'The nurse carried a bandage to the student.', hint: 'Past Simple' },
-      { sentence: 'Rubber soles provide strong grip on the floor.', hint: 'Adjective' },
-      { sentence: 'Tom slipped because his shoes were slippery.', hint: 'Cause clause' },
-    ];
-    const built = buildFillItems(source);
-    setItems(built.length >= 3 ? built : [
-      { sentence: 'She walked _____down the hall.', answer: 'carefully', options: ['carefully', 'slippery', 'friction', 'rubber'], hint: 'Adverb' },
-      { sentence: 'The floor was _____ after the rain.', answer: 'slippery', options: ['slippery', 'careful', 'corridor', 'balanced'], hint: 'Adjective' },
-      { sentence: 'Jake picked up the _____ from the bench.', answer: 'bandage', options: ['bandage', 'reduce', 'provide', 'corridor'], hint: 'Noun' },
-    ]);
+    const built = buildFillItems(grammarSentences);
+    setItems(built);
     setCurrent(0);
     setForgeHP(3);
     setCorrect(0);
-    setFeedback(null);
     setTimeLeft(duration);
+    setFeedback(null);
     setStartTime(Date.now());
     setPhase('playing');
+    setShowHelp(false);
   }, [grammarSentences, duration]);
 
   // ── Timer ─────────────────────────────────────────────────────────────────
 
   useEffect(() => {
-    if (phase !== 'playing') return;
+    if (phase !== 'playing' || showHelp) return;
     timerRef.current = setInterval(() => {
       setTimeLeft(t => {
-        if (t <= 1) { clearInterval(timerRef.current); endGame(true); return 0; }
+        if (t <= 1) {
+          clearInterval(timerRef.current);
+          endGame(false, 0);
+          return 0;
+        }
         return t - 1;
       });
     }, 1000);
     return () => clearInterval(timerRef.current);
-  }, [phase]); // eslint-disable-line
+  }, [phase, showHelp]); // eslint-disable-line
 
-  // ── End ───────────────────────────────────────────────────────────────────
+  // ── End Game ──────────────────────────────────────────────────────────────
 
-  const endGame = useCallback((timeout = false) => {
+  const endGame = useCallback((cleared = false, finalHP = forgeHP) => {
     clearInterval(timerRef.current);
     const timeTaken = (Date.now() - (startTime || Date.now())) / 1000;
-    const total = items.length || 3;
-    const earned = calculateStars(correct, total, timeTaken, duration);
-    setStars(earned);
+    const earnedStars = calculateStars(correct + (cleared ? 1 : 0), items.length || 5, timeTaken, duration);
+    setStars(finalHP === 0 ? 0 : earnedStars);
     setPhase('result');
-    setTimeout(() => {
-      onComplete && onComplete(earned, { correct, total, timeTaken });
-    }, 2000);
-  }, [correct, items, duration, startTime, onComplete]);
+  }, [correct, items.length, forgeHP, startTime, duration]);
 
-  // ── Tap rune ──────────────────────────────────────────────────────────────
+  // ── Tap Option ────────────────────────────────────────────────────────────
 
-  const tapRune = useCallback((option) => {
-    if (feedback) return; // locked during feedback
+  const pickOption = useCallback((word) => {
+    if (feedback) return;
     const item = items[current];
     if (!item) return;
 
-    const isRight = option.toLowerCase() === item.answer.toLowerCase();
-    setFeedback({ type: isRight ? 'right' : 'wrong', word: option });
+    const isRight = word.toLowerCase() === item.answer.toLowerCase();
 
     if (isRight) {
-      setCorrect(c => c + 1);
-    } else {
-      setForgeHP(hp => {
-        if (hp <= 1) {
-          // No lives left — end
-          setTimeout(() => endGame(false), 900);
-          return 0;
-        }
-        return hp - 1;
-      });
-    }
+      setFeedback({ type: 'right', word });
+      const nextCorrect = correct + 1;
+      setCorrect(nextCorrect);
 
-    setTimeout(() => {
-      setFeedback(null);
-      const next = current + 1;
-      if (next >= items.length) {
-        endGame(false);
-      } else {
-        setCurrent(next);
-      }
-    }, 900);
-  }, [feedback, items, current, endGame]);
+      setTimeout(() => {
+        setFeedback(null);
+        if (current + 1 >= items.length) {
+          endGame(true, forgeHP);
+        } else {
+          setCurrent(c => c + 1);
+        }
+      }, 700);
+    } else {
+      setFeedback({ type: 'wrong', word });
+      const nextHP = forgeHP - 1;
+      setForgeHP(nextHP);
+
+      setTimeout(() => {
+        setFeedback(null);
+        if (nextHP <= 0) {
+          endGame(false, 0);
+        } else if (current + 1 >= items.length) {
+          endGame(false, nextHP);
+        } else {
+          setCurrent(c => c + 1);
+        }
+      }, 900);
+    }
+  }, [feedback, items, current, correct, forgeHP, endGame]);
 
   // ─── INTRO ────────────────────────────────────────────────────────────────
   if (phase === 'intro') {
     return (
-      <div className="chronicles-game rune-forge">
-        <div className="cg-intro-screen">
-          <div className="cg-game-icon">⚗️</div>
-          <h2 className="cg-game-title">Rune Forge</h2>
-          <p className="cg-game-desc">
-            Complete the sentence! Tap the correct rune stone to fill the blank.<br />
-            3 mistakes and the forge breaks! ⚒️
-          </p>
-          <div className="cg-rules">
-            <span>⏱ {duration}s</span>
-            <span>❤️ 3 HP</span>
-            <span>📝 {Math.min(grammarSentences.length || 5, 5)} sentences</span>
-          </div>
-          <button id="rf-start-btn" className="cg-start-btn" onClick={startGame}>
-            ⚡ Start Challenge
-          </button>
-        </div>
-      </div>
+      <GameInstructionModal
+        isOpen={true}
+        isIntro={true}
+        gameType="rune_forge"
+        onStart={startGame}
+      />
     );
   }
 
@@ -216,11 +197,21 @@ export default function RuneForgeGame({
             ))}
           </div>
           <div className="cg-result-title">
-            {stars === 3 ? '⚗️ Master Forger!' : stars === 2 ? '🔥 Forge Complete!' : stars >= 1 ? '🔩 Apprentice Rune!' : '💔 Forge Broken!'}
+            {stars === 3 ? '⚗️ Thợ Rèn Cổ Tự Bậc Thầy!' : stars === 2 ? '🔥 Rèn Thành Công!' : stars >= 1 ? '🔩 Đã Vượt Qua!' : '💔 Lò Rèn Bị Vỡ!'}
           </div>
           <div className="cg-result-stats">
-            <span>✅ {correct}/{items.length || 3} correct</span>
-            <span>❤️ {forgeHP}/3 HP left</span>
+            <span>✅ {correct}/{items.length || 3} câu đúng</span>
+            <span>❤️ {forgeHP}/3 HP còn lại</span>
+          </div>
+          <div className="cgr-actions" style={{ marginTop: '16px' }}>
+            {stars === 0 && <button className="cg-retry-btn" onClick={startGame}>🔄 Thử lại</button>}
+            <button
+              className="cg-continue-btn"
+              onClick={() => onComplete && onComplete(stars, { correct, forgeHP })}
+              disabled={stars === 0}
+            >
+              {stars > 0 ? '→ Tiếp tục' : '🔒 Cần ít nhất 1★'}
+            </button>
           </div>
         </div>
       </div>
@@ -236,29 +227,45 @@ export default function RuneForgeGame({
 
   return (
     <div className="chronicles-game rune-forge">
+      <GameInstructionModal
+        isOpen={showHelp}
+        isIntro={false}
+        gameType="rune_forge"
+        onClose={() => setShowHelp(false)}
+      />
+
       {/* HUD */}
       <div className="cg-hud">
         <span className="cg-hud-stat correct">✅ {correct}/{items.length}</span>
         <div className="cg-timer-bar-wrap">
           <div className="cg-timer-bar" style={{ width: `${pct}%`, background: timerColor }} />
         </div>
-        <span className="cg-hud-timer">{timeLeft}s</span>
+        <span className="cg-hud-timer">⏱️ {timeLeft}s</span>
+        <button
+          type="button"
+          className="cg-help-trigger-btn"
+          onClick={() => setShowHelp(true)}
+          title="Xem hướng dẫn chơi"
+        >
+          <HelpCircle size={14} />
+          <span>Cách chơi</span>
+        </button>
         <span className="rf-hp">{'❤️'.repeat(forgeHP)}{'🖤'.repeat(3 - forgeHP)}</span>
       </div>
 
       {/* Sentence with blank */}
       <div className="rf-sentence-box">
-        {item.hint && <div className="rf-hint-label">💡 {item.hint}</div>}
+        {item.hint && <div className="rf-hint-label">💡 Gợi ý: {item.hint}</div>}
         <div className="rf-sentence">{item.sentence}</div>
         <div className="rf-fill-target">
-          Tap the correct rune to fill: <strong>_____</strong>
+          Chạm vào viên đá chứa từ phù hợp để điền vào chỗ trống: <strong>_____</strong>
         </div>
       </div>
 
       {/* Feedback flash */}
       {feedback && (
         <div className={`cg-feedback ${feedback.type === 'right' ? 'correct' : 'wrong'}`}>
-          {feedback.type === 'right' ? `✨ "${feedback.word}" — Correct!` : `❌ "${feedback.word}" — Wrong!`}
+          {feedback.type === 'right' ? `✨ "${feedback.word}" — Chính xác!` : `❌ "${feedback.word}" — Sai rồi!`}
         </div>
       )}
 
@@ -269,25 +276,17 @@ export default function RuneForgeGame({
           const isWrong = feedback?.type === 'wrong' && opt === feedback?.word;
           return (
             <button
-              key={`${current}_${i}`}
+              key={i}
               id={`rf-rune-${i}`}
-              className={`rf-rune-stone ${isRight ? 'correct' : ''} ${isWrong ? 'wrong' : ''}`}
-              style={{ '--rune-color': RUNE_COLORS[i] }}
-              onClick={() => tapRune(opt)}
-              disabled={!!feedback}
+              className={`rf-rune-btn ${isRight ? 'rune-correct' : ''} ${isWrong ? 'rune-wrong' : ''}`}
+              onClick={() => pickOption(opt)}
+              disabled={Boolean(feedback)}
             >
-              <span className="rf-rune-glyph">᚛</span>
-              <span className="rf-rune-word">{opt}</span>
+              <span className="rf-rune-icon">⚗️</span>
+              <span className="rf-rune-text">{opt}</span>
             </button>
           );
         })}
-      </div>
-
-      {/* Progress dots */}
-      <div className="cg-progress-dots">
-        {items.map((_, i) => (
-          <span key={i} className={`cg-dot ${i < current ? 'done' : i === current ? 'active' : ''}`} />
-        ))}
       </div>
     </div>
   );
