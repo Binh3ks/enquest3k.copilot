@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, Suspense } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, Suspense } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Trophy, Flame, Sparkles } from 'lucide-react';
 import { QUEST_SCHEDULE } from '../../config/questSchedule';
@@ -341,8 +341,12 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
     }
   }, [srsChecked]);
 
+  const handleSRSWarmupComplete = useCallback(() => {
+    setShowSRSWarmup(false);
+  }, []);
+
   if (showSRSWarmup) {
-    return <SRSFlashcardReview onComplete={() => setShowSRSWarmup(false)} />;
+    return <SRSFlashcardReview onComplete={handleSRSWarmupComplete} weekNumber={weekId || 33} />;
   }
 
   return (

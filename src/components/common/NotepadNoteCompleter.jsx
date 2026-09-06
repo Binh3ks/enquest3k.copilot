@@ -142,38 +142,31 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
       </div>
 
       <div className="pt-0.5">
-        {/* Cambridge Exam Header */}
-        <div className="bg-gradient-to-r from-amber-900 to-slate-900 text-white px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-1 shadow-sm mb-1.5">
-          <div>
-            <h2 className="text-xs sm:text-sm font-bold text-slate-300 flex items-center gap-1.5">
-              🎧 Flyers Practice
-            </h2>
-          </div>
-          <p className="text-xs sm:text-sm font-black text-amber-300">
-            👉 Listen and write words or numbers. There is one example.
-          </p>
-        </div>
-
-        {/* Compact Header & Audio Bar */}
-        <div className="flex items-center justify-between border-b border-amber-200 pb-1 mb-1.5 flex-wrap gap-2">
-          <div className="flex items-center gap-2">
+        {/* Unified Control & Instruction Bar */}
+        <div className="flex items-center justify-between border-b border-amber-200 p-2 mb-2 bg-amber-100/60 rounded-xl gap-3">
+          <div className="flex items-center gap-2 shrink-0">
             <FlyersListeningPlayButton
               partNumber={2}
               audioUrl={audioUrl}
               script={fullAudioPassage || notepadTitle}
               weekNumber={weekNumber || 33}
             />
-            <h3 className="text-xs sm:text-sm font-black text-amber-950">
-              {notepadTitle} (5 Notes)
+            <h3 className="text-xs sm:text-sm font-black text-amber-950 hidden md:block">
+              {notepadTitle}
             </h3>
-          </div> 
+          </div>
+
+          <p className="text-xs sm:text-sm font-black text-amber-950 text-center flex-1">
+            👉 Listen and write words or numbers. There is one example.
+          </p>
+
           <button
             type="button"
             onClick={handleReplayMasterAudio}
-            className="p-1.5 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-lg text-xs transition border border-amber-300 active:scale-95"
+            className="p-1.5 sm:p-2 bg-amber-200 hover:bg-amber-300 text-amber-950 rounded-lg text-xs font-bold transition border border-amber-300 active:scale-95 shrink-0 flex items-center gap-1 cursor-pointer"
             title="Replay from start"
           >
-            <RotateCcw size={13} />
+            <RotateCcw size={13} /> Replay
           </button>
         </div>
 

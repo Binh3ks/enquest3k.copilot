@@ -1,9 +1,9 @@
 {
-  "commit": "fb21b591aea6970c1db55c76894143e9e1300119",
-  "git_commit": "fb21b591aea6970c1db55c76894143e9e1300119",
-  "shortCommit": "fb21b591",
-  "message": "fix(ui): polish grammar duel english cues, scale fact finder and boss reading fonts, calibrate action lab aspect ratio, tighten discovery report, and enrich info exchange acceptable answers",
-  "builtAt": "2026-09-05T15:14:17.239Z",
-  "build_timestamp": "2026-09-05T15:14:17.240Z",
+  "commit": "fc0f93d13538914c0a48f8852a6279b651d102b5",
+  "git_commit": "fc0f93d13538914c0a48f8852a6279b651d102b5",
+  "shortCommit": "fc0f93d1",
+  "message": "fix(w33-audit): enforce 4-tier audio invariant, zero-scroll framing, progress persistence & layout fixes [multi-agent-review]",
+  "builtAt": "2026-09-06T03:00:15.109Z",
+  "build_timestamp": "2026-09-06T03:00:15.110Z",
   "env": "production"
 }

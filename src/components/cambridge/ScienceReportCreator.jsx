@@ -6,12 +6,12 @@ import { speakText } from '../../utils/AudioHelper';
 import QuickWritePanel from '../common/QuickWritePanel';
 
 export default function ScienceReportCreator({ reportTopic, customConfig, weekNumber = 33, onComplete }) {
-  const [currentStep, setCurrentStep] = useState(1); // 1: OBSERVE, 2: PICK CLUE, 3: SNAP SENTENCE, 4: SEE REPORT
+  const [currentStep, setCurrentStep] = useState(1); // 1: OBSERVE, 2: PICK CLUE, 3: QUICK WRITE, 4: SEE REPORT
   const [observedHotspot, setObservedHotspot] = useState(null);
   const [selectedClue, setSelectedClue] = useState(null);
   const [clueError, setClueError] = useState(null);
-  const [assembledPills, setAssembledPills] = useState([]);
-  const [sentenceError, setSentenceError] = useState(null);
+  const [studentReportText, setStudentReportText] = useState('');
+  const [isReportSubmitted, setIsReportSubmitted] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
 
   // ── Step 4 Inquiry ("Why?") State & Data ──────────────────────────────────
@@ -103,34 +103,10 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
     }
   ], []);
 
-  // ── Step 3: Sentence Word Pills (Shuffled on Initial Display) ─────────────
-  const rawWordPills = useMemo(() => [
-    { id: 'p1', text: 'Water on the smooth corridor tiles', correctOrder: 1 },
-    { id: 'p2', text: 'greatly reduced surface friction,', correctOrder: 2 },
-    { id: 'p3', text: 'so Tom slipped while running in a hurry.', correctOrder: 3 },
-    { id: 'p_dist', text: 'because of heavy rain inside the classroom.', correctOrder: -1 } // distractor
-  ], []);
-
-  const [shuffledWordPills, setShuffledWordPills] = useState([]);
-
-  useEffect(() => {
-    // Fisher-Yates deterministic/randomized initial shuffle so pills are never pre-sorted
-    const pills = [...rawWordPills];
-    for (let i = pills.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [pills[i], pills[j]] = [pills[j], pills[i]];
-    }
-    setShuffledWordPills(pills);
-  }, [rawWordPills]);
-
-  const requiredPillCount = 3;
-  const isSentenceComplete = assembledPills.length === requiredPillCount;
-
   // ── Handlers ──────────────────────────────────────────────────────────────
   const handleHotspotClick = (hs) => {
     playButtonClick();
     setObservedHotspot(hs);
-    // 🎧 Hotspot Tap: play discovery fact pre-generated static audio via speakText
     if (hs?.fact) {
       speakText(hs.fact, hs.audio_url || `/audio/week33/${hs.id}.mp3`, 1.0, null, 'read');
     }
@@ -147,23 +123,30 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
     }
   };
 
-  const handleAddPill = (pill) => {
-    if (pill.correctOrder === -1) {
-      playButtonClick();
-      setSentenceError('⚠️ That fact is not part of the corridor physics report. Pick the friction cause and effect!');
-      return;
-    }
-    if (assembledPills.some(p => p.id === pill.id)) return;
-
-    playCorrectSound();
-    setSentenceError(null);
-    setAssembledPills(prev => [...prev, pill]);
-  };
-
-  const handleRemovePill = (pillId) => {
-    playButtonClick();
-    setAssembledPills(prev => prev.filter(p => p.id !== pillId));
-  };
+  const scaffoldData = useMemo(() => ({
+    starters: [
+      "When water is on the floor,",
+      "Jake walked safely because",
+      "Friction is essential because",
+      "Rubber shoe soles help because"
+    ],
+    chunks: [
+      "water reduces friction and grip",
+      "textured rubber soles provide strong grip",
+      "smooth corridor tiles become very slippery"
+    ],
+    connectors: [
+      ", so",
+      ", but",
+      ". Therefore,",
+      "and"
+    ],
+    actions: [
+      "we must walk carefully.",
+      "the warning sign keeps students safe.",
+      "it prevents dangerous slipping."
+    ]
+  }), []);
 
   const handleFinalSubmit = () => {
     setIsCompleted(true);
@@ -171,8 +154,6 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
     fireCelebrationConfetti('ScienceDetective_Complete');
     if (onComplete) onComplete(50);
   };
-
-  const finalReportText = "While investigating the corridor, we discovered that water on the smooth tiles reduced surface friction, so Tom slipped while running in a hurry. Jake walked carefully with rubber soles that provided strong grip. The cleaners dried the floor and put up a yellow warning sign to keep everyone safe.";
 
   return (
     <div className="max-w-3xl mx-auto bg-white rounded-3xl p-3 sm:p-5 border border-purple-200 shadow-xl space-y-3.5">
@@ -189,14 +170,14 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
           {[
             { num: 1, label: 'Observe' },
             { num: 2, label: 'Clue' },
-            { num: 3, label: 'Sentence' },
+            { num: 3, label: 'Quick Write' },
             { num: 4, label: 'Report' }
           ].map(s => (
             <button
               key={s.num}
               type="button"
               onClick={() => {
-                if (s.num < currentStep || (s.num === 2 && observedHotspot) || (s.num === 3 && selectedClue) || (s.num === 4 && isSentenceComplete)) {
+                if (s.num < currentStep || (s.num === 2 && observedHotspot) || (s.num === 3 && selectedClue) || (s.num === 4 && (isReportSubmitted || studentReportText))) {
                   setCurrentStep(s.num);
                 }
               }}
@@ -248,7 +229,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
                 }`}
               >
                 <span>{hs.icon}</span>
-                <span className="hidden sm:inline">{hs.name}</span>
+                <span>{hs.name}</span>
               </button>
             ))}
           </div>
@@ -346,104 +327,54 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               disabled={!selectedClue}
               className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:opacity-40 text-white font-black text-sm rounded-2xl shadow-md transition flex items-center gap-2"
             >
-              Next: Snap Sentence <ChevronRight size={16} />
+              Next: Quick Write Report <ChevronRight size={16} />
             </button>
           </div>
         </div>
       )}
 
-      {/* ── STEP 3: SNAP SENTENCE ────────────────────────────────────────── */}
+      {/* ── STEP 3: QUICK WRITE DISCOVERY REPORT ─────────────────────────── */}
       {currentStep === 3 && (
         <div className="space-y-4 animate-in fade-in duration-200">
           <div className="p-3 bg-purple-50 rounded-2xl border border-purple-200">
             <p className="text-xs sm:text-sm font-bold text-purple-900">
-              🧩 <strong>Step 3:</strong> Tap the word pills in order to snap your official discovery sentence together!
+              ✍️ <strong>Step 3:</strong> Use the sentence starters & science chunks below to write your official discovery report!
             </p>
           </div>
 
-          {/* Target Sentence Drop Area */}
-          <div className="p-3.5 sm:p-5 bg-gradient-to-br from-indigo-900 to-purple-950 rounded-2xl sm:rounded-3xl border border-purple-400 text-white space-y-2 sm:space-y-3 shadow-inner">
-            <div className="flex items-center justify-between">
-              <span className="text-[10.5px] sm:text-[11px] font-black uppercase text-amber-300 tracking-wider">
-                📝 Discovery Sentence:
-              </span>
-              <span className="text-xs text-purple-200 font-bold">
-                {assembledPills.length} / {requiredPillCount} words connected
-              </span>
-            </div>
+          <QuickWritePanel
+            prompt="Write a 15–25 word scientific discovery report explaining why friction keeps corridor floors safe."
+            scaffoldGroups={scaffoldData}
+            modelSentence="When water reduces surface friction, rubber shoe soles provide grip, so we must walk carefully."
+            minWords={15}
+            maxWords={25}
+            initialValue={studentReportText}
+            onSubmit={(txt) => {
+              setStudentReportText(txt);
+              setIsReportSubmitted(true);
+              playCorrectSound();
+              fireCelebrationConfetti('QuickWrite_Complete');
+              setCurrentStep(4);
+            }}
+          />
 
-            <div className="min-h-16 p-3 bg-black/40 rounded-2xl border border-purple-400/40 flex flex-wrap items-center gap-2">
-              {assembledPills.length === 0 ? (
-                <span className="text-xs text-purple-300/70 italic">
-                  Tap the magnetic word pills below to build your discovery sentence...
-                </span>
-              ) : (
-                assembledPills.map(p => (
-                  <button
-                    key={p.id}
-                    type="button"
-                    onClick={() => handleRemovePill(p.id)}
-                    className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 rounded-xl text-xs font-black shadow transition active:scale-95 flex items-center gap-1.5"
-                    title="Tap to remove"
-                  >
-                    <span>{p.text}</span>
-                    <span className="text-[10px] text-slate-700">✕</span>
-                  </button>
-                ))
-              )}
-            </div>
-          </div>
-
-          {sentenceError && (
-            <div className="p-3 bg-rose-50 border border-rose-200 text-rose-800 rounded-xl text-xs font-bold flex items-center gap-2">
-              <AlertTriangle size={15} className="text-rose-600 shrink-0" />
-              <span>{sentenceError}</span>
-            </div>
-          )}
-
-          {/* Magnetic Word Pills Bank */}
-          <div className="space-y-2 pt-1">
-            <span className="text-xs font-black uppercase text-slate-600 tracking-wider block">
-              Tap Word Pills to Insert:
-            </span>
-            <div className="flex flex-wrap gap-2">
-              {shuffledWordPills.map(pill => {
-                const isSelected = assembledPills.some(p => p.id === pill.id);
-                return (
-                  <button
-                    key={pill.id}
-                    type="button"
-                    disabled={isSelected}
-                    onClick={() => handleAddPill(pill)}
-                    className={`px-4 py-2.5 rounded-2xl text-xs font-bold transition shadow-xs border ${
-                      isSelected
-                        ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed'
-                        : 'bg-white hover:bg-purple-50 text-slate-900 border-purple-200 hover:border-purple-400 active:scale-95'
-                    }`}
-                  >
-                    + {pill.text}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between pt-4">
+          <div className="flex items-center justify-between pt-2">
             <button
               type="button"
               onClick={() => setCurrentStep(2)}
               className="px-4 py-2 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold hover:bg-slate-50 flex items-center gap-1"
             >
-              <ChevronLeft size={14} /> Back
+              <ChevronLeft size={14} /> Back to Clue
             </button>
-            <button
-              type="button"
-              onClick={() => setCurrentStep(4)}
-              disabled={!isSentenceComplete}
-              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:opacity-40 text-white font-black text-sm rounded-2xl shadow-md transition flex items-center gap-2"
-            >
-              Next: View Official Report <ChevronRight size={16} />
-            </button>
+            {(isReportSubmitted || studentReportText) && (
+              <button
+                type="button"
+                onClick={() => setCurrentStep(4)}
+                className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-2xl text-xs font-black shadow transition flex items-center gap-1.5"
+              >
+                Next: View Official Report <ChevronRight size={14} />
+              </button>
+            )}
           </div>
         </div>
       )}
@@ -472,7 +403,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               </div>
               <button
                 type="button"
-                onClick={() => speakText(finalReportText, '/audio/week33/discovery_report_final.mp3', 1.0, null, 'read')}
+                onClick={() => speakText(`Discovery Report: ${studentReportText}`, '/audio/week33/discovery_report_final.mp3', 1.0, null, 'read')}
                 className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs shadow transition flex items-center gap-1.5"
               >
                 <Volume2 size={13} /> Listen Report
@@ -480,13 +411,33 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
             </div>
 
             {/* Official Report Findings Paragraph */}
-            <div className="p-3 sm:p-4 bg-white/90 rounded-xl sm:rounded-2xl border border-amber-200 text-slate-900 leading-relaxed font-serif text-xs sm:text-base space-y-1.5 sm:space-y-2">
-              <p>
-                <strong>Observation:</strong> While investigating the corridor, we discovered that <em>water on the smooth tiles greatly reduced surface friction</em>, so Tom slipped while running in a hurry.
-              </p>
-              <p>
-                <strong>Scientific Conclusion:</strong> Jake walked carefully with rubber shoe soles that provided strong grip. The cleaners mopped the floor dry and put up a yellow warning sign to protect all students!
-              </p>
+            <div className="p-3.5 sm:p-5 bg-white/90 rounded-xl sm:rounded-2xl border border-amber-200 text-slate-900 space-y-3 shadow-xs">
+              <div>
+                <div className="flex items-center justify-between text-xs font-black uppercase text-amber-900 tracking-wider mb-1.5">
+                  <span className="flex items-center gap-1.5">
+                    <Sparkles size={14} className="text-amber-500" /> Your Discovery Report:
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setCurrentStep(3)}
+                    className="text-[11px] text-purple-700 hover:text-purple-900 underline font-bold"
+                  >
+                    ✏️ Edit Writing
+                  </button>
+                </div>
+                <p className="text-xs sm:text-sm font-bold text-slate-900 bg-amber-50/70 p-3 rounded-xl border border-amber-100 italic leading-relaxed">
+                  "{studentReportText || "When water reduces surface friction, rubber shoe soles provide grip, so we must walk carefully."}"
+                </p>
+              </div>
+
+              <div className="pt-2 border-t border-amber-100 text-xs sm:text-sm text-slate-700 leading-relaxed font-medium space-y-1">
+                <p>
+                  <strong>Observation:</strong> While investigating the corridor, we discovered that <em>water on the smooth tiles greatly reduced surface friction</em>, so Tom slipped while running in a hurry.
+                </p>
+                <p>
+                  <strong>Scientific Conclusion:</strong> Jake walked carefully with rubber shoe soles that provided strong grip. The cleaners mopped the floor dry and put up a yellow warning sign to protect all students!
+                </p>
+              </div>
             </div>
 
             {/* ── 🔬 Deep Inquiry ("Why?") Challenge ── */}
@@ -555,25 +506,6 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               )}
             </div>
 
-            {/* Quick Write Scientific Report Submission */}
-            <div className="pt-1">
-              <QuickWritePanel
-                prompt="Write a 15–25 word scientific discovery report explaining why friction keeps corridor floors safe."
-                scaffoldPills={[
-                  "Friction provides grip",
-                  "Water reduces friction",
-                  "Rubber shoe soles prevent slipping",
-                  "We must walk carefully",
-                  "The warning sign keeps students safe"
-                ]}
-                minWords={15}
-                maxWords={25}
-                onSubmit={(txt) => {
-                  console.log(`[DISCOVERY_REPORT_QUICK_WRITE] Report written: "${txt}"`);
-                }}
-              />
-            </div>
-
             {/* Detective Badge */}
             <div className="p-4 bg-gradient-to-r from-amber-400 to-yellow-300 rounded-2xl text-slate-950 flex items-center gap-3 shadow-md border border-amber-300">
               <div className="w-12 h-12 rounded-2xl bg-white/90 shadow flex items-center justify-center text-2xl shrink-0">
@@ -593,7 +525,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               onClick={() => setCurrentStep(3)}
               className="px-4 py-2 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold hover:bg-slate-50 flex items-center gap-1"
             >
-              <ChevronLeft size={14} /> Back to Sentence
+              <ChevronLeft size={14} /> Back to Quick Write
             </button>
 
             {!isCompleted ? (

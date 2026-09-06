@@ -1,23 +1,31 @@
 import React, { useState, useCallback } from 'react';
-import { PenTool, ChevronDown, ChevronUp, CheckCircle, Send } from 'lucide-react';
+import { PenTool, ChevronDown, ChevronUp, CheckCircle, Send, Lightbulb, RotateCcw } from 'lucide-react';
 import './QuickWritePanel.css';
 
 /**
- * QuickWritePanel — Collapsible mini-writing panel embedded in quests.
- * Encourages daily micro-writing with scaffold pills.
+ * QuickWritePanel — Enhanced Micro-Writing Panel with Structured Scaffolding.
+ * Provides multi-tier inputs:
+ *   - Sentence Starters (Mở đầu câu)
+ *   - Scientific / Content Chunks (Ý chính & Kiến thức)
+ *   - Connectors & Conjunctions (Từ nối logic)
+ *   - Safe Actions & Conclusions (Hành động & Kết luận)
  *
  * Props:
- *   prompt       — Writing prompt text (e.g. "Write 1 sentence about what happened")
- *   scaffoldPills — Array of word/phrase suggestions student can tap to insert
- *   minWords     — Minimum words required (default 3)
- *   maxWords     — Maximum words (default 20)
- *   onSubmit     — (text: string) => void — called when student submits
- *   isLiteMode   — If true, show Draw & Say (placeholder for W01–W16)
+ *   prompt         — Writing prompt text
+ *   scaffoldGroups — { starters: [], chunks: [], connectors: [], actions: [] }
+ *   scaffoldPills  — (legacy fallback) string[]
+ *   modelSentence  — Target exemplar sentence (e.g. 15-20 words)
+ *   minWords       — Minimum word requirement (default 15)
+ *   maxWords       — Maximum word limit (default 25)
+ *   onSubmit       — (text: string) => void
+ *   isLiteMode     — If true, show Draw & Say (W01–W16)
  */
 
 export default function QuickWritePanel({
-  prompt = 'Write 1 sentence about what you learned.',
+  prompt = 'Write 1-2 meaningful sentences about your scientific discovery.',
+  scaffoldGroups,
   scaffoldPills = [],
+  modelSentence,
   minWords = 15,
   maxWords = 25,
   onSubmit,
@@ -27,15 +35,33 @@ export default function QuickWritePanel({
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const [text, setText] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [showModel, setShowModel] = useState(false);
 
   const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
   const isValid = wordCount >= minWords && wordCount <= maxWords;
 
-  const handlePillClick = useCallback((pill) => {
+  // Smart insertion: attaches commas/connectors cleanly without awkward double spaces
+  const handleInsertPill = useCallback((pill) => {
     setText(prev => {
       const trimmed = prev.trim();
-      return trimmed ? `${trimmed} ${pill}` : pill;
+      if (!trimmed) return pill;
+
+      // If pill starts with punctuation like comma or period
+      if (pill.startsWith(',') || pill.startsWith('.')) {
+        return `${trimmed}${pill}`;
+      }
+
+      // If previous text ends with comma or period
+      if (trimmed.endsWith(',') || trimmed.endsWith('.')) {
+        return `${trimmed} ${pill}`;
+      }
+
+      return `${trimmed} ${pill}`;
     });
+  }, []);
+
+  const handleClear = useCallback(() => {
+    setText('');
   }, []);
 
   const handleSubmit = useCallback(() => {
@@ -43,6 +69,9 @@ export default function QuickWritePanel({
     setSubmitted(true);
     onSubmit?.(text.trim());
   }, [isValid, submitted, text, onSubmit]);
+
+  // Normalize groups
+  const groups = scaffoldGroups || (scaffoldPills.length > 0 ? { chunks: scaffoldPills } : null);
 
   // Lite Mode: Draw & Say placeholder
   if (isLiteMode) {
@@ -66,67 +95,183 @@ export default function QuickWritePanel({
 
   return (
     <div className={`qw-container ${submitted ? 'qw-submitted' : ''}`}>
-      {/* Collapsible header */}
+      {/* Collapsible Header */}
       <div className="qw-header" onClick={() => !submitted && setIsExpanded(!isExpanded)}>
         <div className="qw-header-left">
-          {submitted ? <CheckCircle size={14} /> : <PenTool size={14} />}
-          <span>{submitted ? 'Quick Write ✅' : '✏️ Quick Write'}</span>
+          {submitted ? <CheckCircle size={15} className="text-emerald-600" /> : <PenTool size={15} className="text-indigo-600" />}
+          <span className="font-black">{submitted ? 'Quick Write ✅' : '✏️ Quick Write — Viết báo cáo khoa học'}</span>
         </div>
         {!submitted && (isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />)}
       </div>
 
-      {/* Expanded content */}
+      {/* Expanded Body */}
       {isExpanded && !submitted && (
-        <div className="qw-body">
-          <p className="qw-prompt">{prompt}</p>
+        <div className="qw-body space-y-3">
+          <p className="qw-prompt font-semibold text-slate-700">{prompt}</p>
 
-          {/* Scaffold pills */}
-          {scaffoldPills.length > 0 && (
-            <div className="qw-pills">
-              {scaffoldPills.map((pill, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  className="qw-pill"
-                  onClick={() => handlePillClick(pill)}
-                >
-                  {pill}
-                </button>
-              ))}
+          {/* Structured Scaffolding Categories */}
+          {groups ? (
+            <div className="space-y-2 bg-slate-50/80 p-2.5 rounded-xl border border-slate-200">
+              {/* 1. Sentence Starters */}
+              {groups.starters && groups.starters.length > 0 && (
+                <div className="space-y-1">
+                  <span className="text-[11px] font-black uppercase text-indigo-700 flex items-center gap-1">
+                    🚀 Mở đầu câu (Sentence Starters):
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {groups.starters.map((pill, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className="px-2.5 py-1 rounded-lg bg-indigo-100 hover:bg-indigo-200 text-indigo-900 border border-indigo-200 text-xs font-bold transition active:scale-95 cursor-pointer"
+                        onClick={() => handleInsertPill(pill)}
+                      >
+                        + {pill}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* 2. Core Scientific Chunks */}
+              {groups.chunks && groups.chunks.length > 0 && (
+                <div className="space-y-1">
+                  <span className="text-[11px] font-black uppercase text-sky-700 flex items-center gap-1">
+                    🔬 Ý chính khoa học (Core Chunks):
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {groups.chunks.map((pill, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className="px-2.5 py-1 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-900 border border-sky-200 text-xs font-bold transition active:scale-95 cursor-pointer"
+                        onClick={() => handleInsertPill(pill)}
+                      >
+                        + {pill}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* 3. Connectors */}
+              {groups.connectors && groups.connectors.length > 0 && (
+                <div className="space-y-1">
+                  <span className="text-[11px] font-black uppercase text-amber-700 flex items-center gap-1">
+                    🔗 Từ nối logic (Connectors):
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {groups.connectors.map((pill, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className="px-2 py-0.5 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 text-xs font-extrabold transition active:scale-95 cursor-pointer font-mono"
+                        onClick={() => handleInsertPill(pill)}
+                      >
+                        + {pill}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* 4. Action Conclusions */}
+              {groups.actions && groups.actions.length > 0 && (
+                <div className="space-y-1">
+                  <span className="text-[11px] font-black uppercase text-emerald-700 flex items-center gap-1">
+                    🛡️ Kết luận & Hành động an toàn (Actions):
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {groups.actions.map((pill, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className="px-2.5 py-1 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-200 text-xs font-bold transition active:scale-95 cursor-pointer"
+                        onClick={() => handleInsertPill(pill)}
+                      >
+                        + {pill}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : null}
+
+          {/* Model Sentence Helper Toggle */}
+          {modelSentence && (
+            <div>
+              <button
+                type="button"
+                onClick={() => setShowModel(prev => !prev)}
+                className="text-xs text-indigo-700 hover:text-indigo-900 font-bold flex items-center gap-1 cursor-pointer transition"
+              >
+                <Lightbulb size={13} className="text-amber-500" />
+                <span>{showModel ? 'Ẩn câu mẫu' : '💡 Xem gợi ý câu hoàn chỉnh mẫu (Exemplar)'}</span>
+              </button>
+              {showModel && (
+                <div className="mt-1.5 p-2 bg-indigo-50 border border-indigo-200 rounded-xl text-xs text-indigo-950 font-medium leading-relaxed animate-in fade-in flex items-center justify-between gap-2">
+                  <span>"{modelSentence}"</span>
+                  <button
+                    type="button"
+                    onClick={() => setText(modelSentence)}
+                    className="px-2 py-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-[11px] font-bold shrink-0 cursor-pointer"
+                    title="Chèn câu mẫu vào bài viết"
+                  >
+                    Dùng mẫu này
+                  </button>
+                </div>
+              )}
             </div>
           )}
 
-          {/* Text area */}
-          <textarea
-            className="qw-textarea"
-            placeholder="Write here..."
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            rows={2}
-          />
+          {/* Text Area */}
+          <div className="relative">
+            <textarea
+              className="qw-textarea"
+              placeholder="Chạm các thẻ từ ở trên hoặc gõ bài viết của bạn tại đây..."
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              rows={3}
+            />
+            {text && (
+              <button
+                type="button"
+                onClick={handleClear}
+                className="absolute top-2 right-2 p-1 text-slate-400 hover:text-rose-600 transition rounded-lg hover:bg-rose-50"
+                title="Xóa viết lại"
+              >
+                <RotateCcw size={13} />
+              </button>
+            )}
+          </div>
 
           {/* Word count + submit */}
           <div className="qw-footer">
-            <span className={`qw-word-count ${isValid ? 'qw-valid' : ''}`}>
-              {wordCount}/{maxWords} words {wordCount < minWords && `(min ${minWords})`}
-            </span>
+            <div className="flex items-center gap-2">
+              <span className={`qw-word-count ${isValid ? 'qw-valid font-black text-emerald-600' : 'text-slate-500 font-bold'}`}>
+                {wordCount}/{maxWords} từ {wordCount < minWords ? `(tối thiểu ${minWords} từ)` : wordCount > maxWords ? '(vượt quá giới hạn)' : '✓ Đủ điều kiện'}
+              </span>
+            </div>
+
             <button
               type="button"
-              className="qw-submit-btn"
+              className="qw-submit-btn cursor-pointer flex items-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 text-white font-bold rounded-xl shadow transition"
               onClick={handleSubmit}
               disabled={!isValid}
             >
               <Send size={14} />
-              <span>Submit</span>
+              <span>Gửi báo cáo (+30 XP)</span>
             </button>
           </div>
         </div>
       )}
 
-      {/* Submitted feedback */}
+      {/* Submitted Feedback */}
       {submitted && (
-        <div className="qw-feedback">
-          <span>Great job! You wrote {wordCount} words! 🌟</span>
+        <div className="qw-feedback p-3 bg-emerald-50 text-emerald-950 rounded-xl border border-emerald-200 flex items-center justify-between">
+          <span>🌟 Tuyệt vời! Bạn đã hoàn thành bài viết khoa học gồm <strong>{wordCount} từ</strong>!</span>
+          <span className="font-mono font-black text-xs text-emerald-700 bg-emerald-100 px-2 py-1 rounded-md">+30 XP</span>
         </div>
       )}
     </div>

@@ -55,11 +55,27 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
   const recalcNamePositions = useCallback(() => {
     if (!svgRef.current) return;
     const next = {};
+    const svgRect = svgRef.current.getBoundingClientRect();
+    const svgCenterX = svgRect.left + svgRect.width / 2;
+
     sceneData.names.forEach(n => {
       const btn = nameButtonRefs.current[n.id];
       if (!btn) return;
       const r = btn.getBoundingClientRect();
-      const svgPt = screenToSVG(svgRef.current, r.left + r.width / 2, r.top + r.height / 2);
+      let anchorX = r.left + r.width / 2;
+      const anchorY = r.top + r.height / 2;
+
+      // Smart anchor: if button is docked to left of image, line starts at right edge
+      // If button is docked to right of image, line starts at left edge
+      if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+        if (r.right <= svgCenterX + 20) {
+          anchorX = r.right - 4;
+        } else if (r.left >= svgCenterX - 20) {
+          anchorX = r.left + 4;
+        }
+      }
+
+      const svgPt = screenToSVG(svgRef.current, anchorX, anchorY);
       next[n.id] = { x: svgPt.x, y: svgPt.y };
     });
     setNamePosVB(next);
@@ -127,167 +143,95 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
     setDrawnLines([]); setSelectedName(null); setIsSubmitted(false); setScore(null);
   };
 
-  /* ── Flyers-authentic double-play ── */
-  // Cambridge A2 Flyers spec: each Listening part is played TWICE.
-  // Between the two plays there is a short pause (~5 seconds).
-  const PAUSE_BETWEEN_PLAYS_MS = 5000; // 5 second pause
-
-  const handleDoublePlay = useCallback(async () => {
-    if (playStatus === 'playing-1' || playStatus === 'playing-2') {
-      // Stop current playback
-      VoiceService.stop();
-      doublePlayAbortRef.current = true;
-      setPlayStatus('idle');
-      return;
-    }
-
-    doublePlayAbortRef.current = false;
-    const audioUrl = sceneData?.audio_url || `/audio/week${weekNumber || 33}/listening_p1_full.mp3`;
-    const script = sceneData?.passage_audio_script || fullListeningScript;
-
-    try {
-      // ── PLAY 1 ──
-      setPlayStatus('playing-1');
-      await VoiceService.speak(script, 'questions', audioUrl, weekNumber || 33);
-
-      if (doublePlayAbortRef.current) { setPlayStatus('idle'); return; }
-
-      // ── PAUSE ──
-      setPlayStatus('pausing');
-      await new Promise(resolve => {
-        const t = setTimeout(resolve, PAUSE_BETWEEN_PLAYS_MS);
-        // Allow abort during pause
-        const check = setInterval(() => {
-          if (doublePlayAbortRef.current) { clearTimeout(t); clearInterval(check); resolve(); }
-        }, 100);
-        setTimeout(() => clearInterval(check), PAUSE_BETWEEN_PLAYS_MS + 200);
-      });
-
-      if (doublePlayAbortRef.current) { setPlayStatus('idle'); return; }
-
-      // ── PLAY 2 ──
-      setPlayStatus('playing-2');
-      await VoiceService.speak(script, 'questions', audioUrl, weekNumber || 33);
-
-    } catch (err) {
-      console.warn('[DoublePlay] error:', err);
-    } finally {
-      setPlayStatus('done');
-      // Reset to idle after 3s so button is usable again
-      setTimeout(() => setPlayStatus('idle'), 3000);
-    }
-  }, [playStatus, sceneData, fullListeningScript, weekNumber]);
-
-  const handleCopyCalibratedJSON = () => {
-    // Export as ready-to-paste listening_hub.js targets array
-    const out = calibratedTargets.map(t => ({
-      id: t.id,
-      label: t.label || '',
-      x: t.x,
-      y: t.y,
-      ...(t.isExample ? { isExample: true } : {})
-    }));
-    navigator.clipboard.writeText(JSON.stringify(out, null, 2));
-    setCopiedToast(true);
-    setTimeout(() => setCopiedToast(false), 2500);
-  };
-
   /* ── Derived: example connection endpoints ── */
   const exampleName   = sceneData.names.find(n => n.isExample);
   const exampleTarget = activeTargets.find(t => t.isExample || t.id === exampleName?.target_id);
   const exNameVB  = exampleName   ? namePosVB[exampleName.id]   : null;
   const exTargVB  = exampleTarget ? { x: pctToVB(exampleTarget.x, VB_W), y: pctToVB(exampleTarget.y, VB_H) } : null;
 
+  // Split names into Left Dock (first 4) and Right Dock (remaining 3)
+  const leftNames = sceneData.names.slice(0, 4);
+  const rightNames = sceneData.names.slice(4);
+
+  // Helper to render individual character name pill
+  const renderNamePill = (name) => {
+    const hasLine = drawnLines.some(l => l.nameId === name.id);
+    const isSelected = selectedName?.id === name.id;
+    return (
+      <button
+        key={name.id}
+        ref={el => (nameButtonRefs.current[name.id] = el)}
+        disabled={isSubmitted || name.isExample}
+        onClick={() => handleSelectName(name)}
+        data-testid={name.isExample ? 'example-row' : undefined}
+        className={`px-3 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-between gap-1.5 border shadow-2xs w-full cursor-pointer ${
+          name.isExample
+            ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-1 ring-amber-300'
+            : isSelected
+            ? 'bg-indigo-600 text-white border-indigo-700 ring-2 ring-indigo-200 scale-102 shadow-md animate-pulse'
+            : hasLine
+            ? 'bg-emerald-100 text-emerald-950 border-emerald-400'
+            : 'bg-white text-slate-900 border-slate-300 hover:border-indigo-400 hover:bg-indigo-50 shadow-sm'
+        }`}
+      >
+        <span className="text-xs sm:text-sm font-black break-words leading-tight text-left">{name.text}</span>
+        {name.isExample && <span className="text-[9px] sm:text-[10px] bg-amber-500 text-white px-1.5 py-0.5 rounded uppercase font-black shrink-0">★ EX</span>}
+        {hasLine && !name.isExample && <CheckCircle2 size={15} className="text-emerald-700 shrink-0" />}
+      </button>
+    );
+  };
+
   /* ── Render ── */
   return (
-    <div className="w-full max-w-7xl mx-auto my-0.5 p-2.5 sm:p-3.5 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2">
-      {/* Cambridge Exam Header */}
-      <div className="bg-gradient-to-r from-indigo-900 to-slate-900 text-white px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-1 shadow-sm">
-        <div>
-          <h2 className="text-xs sm:text-sm font-bold text-slate-300 flex items-center gap-1.5">
-            🎧 Flyers Practice
-          </h2>
-        </div>
-        <p className="text-xs sm:text-sm font-black text-amber-300">
+    <div className="w-full max-w-7xl mx-auto my-0.5 p-2.5 sm:p-3 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2">
+      {/* Unified Action & Instruction Bar (Without Redundant Banner) */}
+      <div className="flex items-center justify-between gap-3 p-2 bg-slate-100 rounded-xl border border-slate-200">
+        <FlyersListeningPlayButton
+          partNumber={1}
+          audioUrl={sceneData?.audio_url || `/audio/week${weekNumber || 33}/listening_p1_full.mp3`}
+          script={sceneData?.passage_audio_script || fullListeningScript}
+          weekNumber={weekNumber || 33}
+        />
+
+        <p className="text-xs sm:text-sm md:text-base font-black text-indigo-950 text-center tracking-tight flex-1">
           👉 Listen and draw lines. There is one example.
         </p>
+
+        <button
+          type="button"
+          onClick={() => { setDrawnLines([]); setSelectedName(null); }}
+          disabled={isSubmitted || drawnLines.length === 0}
+          className="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 font-black text-xs sm:text-sm rounded-xl border border-rose-200 transition disabled:opacity-40 flex items-center gap-1.5 shadow-2xs whitespace-nowrap shrink-0 cursor-pointer"
+        >
+          <Trash2 size={13} /> Clear Lines
+        </button>
       </div>
 
-      {/* Control Bar */}
-      <div className="flex items-center justify-between gap-2 pb-1.5 border-b border-slate-200">
-        <div className="flex items-center justify-between w-full gap-2">
-          <FlyersListeningPlayButton
-            partNumber={1}
-            audioUrl={sceneData?.audio_url || `/audio/week${weekNumber || 33}/listening_p1_full.mp3`}
-            script={sceneData?.passage_audio_script || fullListeningScript}
-            weekNumber={weekNumber || 33}
-          />
-
-          <button
-            type="button"
-            onClick={() => { setDrawnLines([]); setSelectedName(null); }}
-            disabled={isSubmitted || drawnLines.length === 0}
-            className="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 font-black text-xs sm:text-sm rounded-xl border border-rose-200 transition disabled:opacity-40 flex items-center gap-1.5 shadow-2xs whitespace-nowrap shrink-0 cursor-pointer"
-          >
-            <Trash2 size={13} /> Clear Lines
-          </button>
-        </div>
-      </div>
-
-      {/* ── Interactive Matching Area (Names Ribbon + SVG Canvas) ── */}
-      <div onMouseMove={handleSVGMouseMove} className="space-y-1.5 relative">
-        {/* ── Name Selection Ribbon ── */}
-        <div className="p-1.5 sm:p-2 bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl relative z-10">
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
-            {sceneData.names.map(name => {
-              const hasLine = drawnLines.some(l => l.nameId === name.id);
-              const isSelected = selectedName?.id === name.id;
-              return (
-                <button key={name.id}
-                  ref={el => (nameButtonRefs.current[name.id] = el)}
-                  disabled={isSubmitted || name.isExample}
-                  onClick={() => handleSelectName(name)}
-                  data-testid={name.isExample ? 'example-row' : undefined}
-                  className={`px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-1 border shadow-2xs w-full cursor-pointer ${
-                    name.isExample
-                      ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-1 ring-amber-300'
-                      : isSelected
-                      ? 'bg-indigo-600 text-white border-indigo-700 ring-2 ring-indigo-200 scale-102 shadow-sm animate-pulse'
-                      : hasLine
-                      ? 'bg-emerald-100 text-emerald-950 border-emerald-400'
-                      : 'bg-white text-slate-900 border-slate-300 hover:border-indigo-400 hover:bg-indigo-50'
-                  }`}
-                >
-                  <span className="text-xs sm:text-sm font-black break-words leading-tight text-center">{name.text}</span>
-                  {name.isExample && <span className="text-[9px] sm:text-[10px] bg-amber-500 text-white px-1.5 py-0.5 rounded uppercase font-black shrink-0">★ EX</span>}
-                  {hasLine && !name.isExample && <CheckCircle2 size={14} className="text-emerald-700 shrink-0" />}
-                </button>
-              );
-            })}
+      {/* ── Interactive Matching Area: Left Names + Center Canvas + Right Names ── */}
+      <div onMouseMove={handleSVGMouseMove} className="relative">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3 w-full">
+          {/* Left Dock: Character Names (4 items) */}
+          <div className="w-full md:w-44 flex flex-row md:flex-col gap-2 shrink-0 justify-center">
+            {leftNames.map(renderNamePill)}
           </div>
-        </div>
 
-        {/* ══════════════════════════════════════════════════════════════
-            🖼️ SVG ViewBox Canvas — Image + Pins + Lines in ONE coordinate space
-            overflow: visible allows dashed lines to cross through the frame and connect to names above.
-            Aspect ratio matches 1264/848 perfectly so image fills edge-to-edge with ZERO black space.
-           ══════════════════════════════════════════════════════════════ */}
-        <div className="relative z-20 flex justify-center w-full">
-          <svg
-            ref={svgRef}
-            viewBox={`0 0 ${VB_W} ${VB_H}`}
-            preserveAspectRatio="xMidYMid meet"
-            className={`mx-auto block rounded-2xl border-2 transition-all shadow-md ${
-              selectedName ? 'cursor-crosshair border-indigo-500 ring-4 ring-indigo-200' : 'border-slate-200 cursor-default'
-            }`}
-            style={{
-              aspectRatio: `${VB_W} / ${VB_H}`,
-              maxHeight: '44vh',
-              width: 'auto',
-              maxWidth: '100%',
-              overflow: 'visible'
-            }}
-          >
+          {/* Center Column: SVG ViewBox Canvas (Scaled Up to 58vh) */}
+          <div className="relative z-20 flex justify-center flex-1 w-full max-w-4xl">
+            <svg
+              ref={svgRef}
+              viewBox={`0 0 ${VB_W} ${VB_H}`}
+              preserveAspectRatio="xMidYMid meet"
+              className={`mx-auto block rounded-2xl border-2 transition-all shadow-md ${
+                selectedName ? 'cursor-crosshair border-indigo-500 ring-4 ring-indigo-200' : 'border-slate-200 cursor-default'
+              }`}
+              style={{
+                aspectRatio: `${VB_W} / ${VB_H}`,
+                maxHeight: '58vh',
+                width: 'auto',
+                maxWidth: '100%',
+                overflow: 'visible'
+              }}
+            >
             {/* Background image — fills full viewBox, no stretch issues */}
             <image
               href={sceneData.image_url}
@@ -397,9 +341,15 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
             </g>
           );
         })}
-      </svg>
-    </div>
-  </div>
+            </svg>
+          </div>
+
+          {/* Right Dock: Character Names (3 items) */}
+          <div className="w-full md:w-48 flex flex-row md:flex-col gap-2 shrink-0 justify-center">
+            {rightNames.map(renderNamePill)}
+          </div>
+        </div>
+      </div>
 
       {/* Footer Check & Score */}
       <div className="pt-2 border-t border-slate-200 flex items-center justify-between">

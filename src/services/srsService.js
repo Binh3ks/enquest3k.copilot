@@ -26,58 +26,78 @@ const BOX_INTERVALS_MS = {
 
 const MAX_BOX = 5;
 
-// Default fallback SRS words for cold-start
-const DEFAULT_PAST_SRS_WORDS = [
-  { word: 'rescue', box: 1, week: 32, definition: 'cứu hộ / giải cứu', nextReview: 0 },
-  { word: 'danger', box: 2, week: 31, definition: 'mối nguy hiểm', nextReview: 0 },
-  { word: 'hospital', box: 1, week: 32, definition: 'bệnh viện', nextReview: 0 },
-  { word: 'caution', box: 2, week: 30, definition: 'sự cẩn trọng', nextReview: 0 },
-  { word: 'emergency', box: 1, week: 31, definition: 'tình huống khẩn cấp', nextReview: 0 }
-];
+import { PAST_WEEKS_SRS_VOCAB } from '../data/syllabus/past_weeks_srs_vocab';
+
+// Default fallback SRS words for cold-start (derived from official syllabus)
+const DEFAULT_PAST_SRS_WORDS = PAST_WEEKS_SRS_VOCAB.slice(0, 10);
 
 class SRSService {
   constructor() {
     this.srsMap = this.loadSRSData();
+    this.ensureSyllabusWords();
+  }
+
+  /**
+   * Ensure syllabus words from W01-W32 are present in the SRS map.
+   */
+  ensureSyllabusWords() {
+    let changed = false;
+    PAST_WEEKS_SRS_VOCAB.forEach((item) => {
+      const key = item.word.toLowerCase();
+      if (!this.srsMap[key]) {
+        this.srsMap[key] = {
+          ...item,
+          lastReviewed: Date.now() - (item.box * 86400000),
+          nextReview: Date.now() - 1000 // Ready for review
+        };
+        changed = true;
+      }
+    });
+    if (changed) {
+      this.saveSRSData();
+    }
   }
 
   /**
    * Load SRS data, migrating from v1 (3-box) to v2 (5-box) if needed.
    */
   loadSRSData() {
+    let data = null;
     try {
       const raw = localStorage.getItem(SRS_STORAGE_KEY);
-      if (raw) return JSON.parse(raw);
+      if (raw) data = JSON.parse(raw);
     } catch (_) {}
 
-    // Attempt v1 migration
-    try {
-      const v1Raw = localStorage.getItem(SRS_V1_KEY);
-      if (v1Raw) {
-        const v1Data = JSON.parse(v1Raw);
-        // Migrate: v1 had boxes 1-3, map to v2 boxes 1-5
-        // Box 1 → Box 1, Box 2 → Box 3, Box 3 → Box 5
-        const migrated = {};
-        for (const [key, entry] of Object.entries(v1Data)) {
-          const oldBox = entry.box || 1;
-          const newBox = oldBox === 1 ? 1 : oldBox === 2 ? 3 : 5;
-          migrated[key] = { ...entry, box: newBox };
+    // Attempt v1 migration if v2 not found
+    if (!data) {
+      try {
+        const v1Raw = localStorage.getItem(SRS_V1_KEY);
+        if (v1Raw) {
+          const v1Data = JSON.parse(v1Raw);
+          const migrated = {};
+          for (const [key, entry] of Object.entries(v1Data)) {
+            const oldBox = entry.box || 1;
+            const newBox = oldBox === 1 ? 1 : oldBox === 2 ? 3 : 5;
+            migrated[key] = { ...entry, box: newBox };
+          }
+          localStorage.setItem(SRS_STORAGE_KEY, JSON.stringify(migrated));
+          data = migrated;
         }
-        // Save as v2 and keep v1 as backup
-        localStorage.setItem(SRS_STORAGE_KEY, JSON.stringify(migrated));
-        return migrated;
-      }
-    } catch (_) {}
+      } catch (_) {}
+    }
 
-    // Cold start: initialize with defaults
-    const initialMap = {};
-    DEFAULT_PAST_SRS_WORDS.forEach((item) => {
-      initialMap[item.word.toLowerCase()] = {
-        ...item,
-        lastReviewed: Date.now(),
-        nextReview: Date.now() - 1000 // Ready for review
-      };
-    });
-    return initialMap;
+    if (!data || Object.keys(data).length === 0) {
+      data = {};
+      PAST_WEEKS_SRS_VOCAB.forEach((item) => {
+        data[item.word.toLowerCase()] = {
+          ...item,
+          lastReviewed: Date.now() - (item.box * 86400000),
+          nextReview: Date.now() - 1000
+        };
+      });
+    }
+
+    return data;
   }
 
   saveSRSData() {
@@ -112,17 +132,27 @@ class SRSService {
 
   /**
    * Returns due SRS review words, prioritized by box (Box 1 first).
+   * Prioritizes words learned in past weeks (W01–W32) for daily warm-up.
    * @param {number} count - max words to return
+   * @param {number} currentWeek - current week number (defaults to 33)
    * @returns {Array} due word entries
    */
-  getDueWords(count = 10) {
+  getDueWords(count = 10, currentWeek = 33) {
     const now = Date.now();
     const entries = Object.values(this.srsMap);
-    const due = entries.filter((item) => item.nextReview <= now);
+    
+    // Filter due words
+    let due = entries.filter((item) => item.nextReview <= now);
 
-    // Sort: Box 1 (most urgent) first, then by oldest nextReview
+    // Prefer past week words (week < currentWeek) for SRS review
     due.sort((a, b) => {
+      // Prioritize Box 1 (urgent)
       if (a.box !== b.box) return a.box - b.box;
+      // Then prioritize past weeks over current week
+      const aIsPast = (a.week || 0) < currentWeek;
+      const bIsPast = (b.week || 0) < currentWeek;
+      if (aIsPast !== bIsPast) return aIsPast ? -1 : 1;
+      // Then oldest nextReview
       return a.nextReview - b.nextReview;
     });
 
@@ -130,12 +160,18 @@ class SRSService {
       return due.slice(0, count);
     }
 
-    // If fewer due words than requested, pad with defaults (cold start only)
-    if (due.length === 0 && Object.keys(this.srsMap).length <= DEFAULT_PAST_SRS_WORDS.length) {
-      return DEFAULT_PAST_SRS_WORDS.slice(0, count);
-    }
+    // If fewer due words than requested, top up with past syllabus words
+    const seenWords = new Set(due.map(d => d.word.toLowerCase()));
+    const pastCandidates = entries.filter(e => (e.week || 0) < currentWeek && !seenWords.has(e.word.toLowerCase()));
+    
+    // Sort candidates by lowest box, then oldest lastReviewed
+    pastCandidates.sort((a, b) => {
+      if (a.box !== b.box) return a.box - b.box;
+      return (a.lastReviewed || 0) - (b.lastReviewed || 0);
+    });
 
-    return due;
+    const combined = [...due, ...pastCandidates.slice(0, count - due.length)];
+    return combined.slice(0, count);
   }
 
   /**
