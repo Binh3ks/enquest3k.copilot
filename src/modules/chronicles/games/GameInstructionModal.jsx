@@ -191,87 +191,92 @@ export default function GameInstructionModal({
   };
 
   return (
-    <div className="fixed inset-0 z-[100] bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200">
-      <div className="relative w-full max-w-lg bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 border-2 border-indigo-500/40 rounded-3xl p-6 sm:p-7 text-white shadow-2xl text-left max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-[100] bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 animate-in fade-in duration-200">
+      <div className="relative w-full max-w-lg bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 border-2 border-indigo-500/40 rounded-3xl p-5 sm:p-6 text-white shadow-2xl text-left max-h-[92vh] flex flex-col">
         {/* Close button (only when viewing while playing) */}
         {!isIntro && (
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition"
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition z-10"
           >
             <X className="w-5 h-5" />
           </button>
         )}
 
-        {/* Header */}
-        <div className="flex items-center gap-4 mb-5 border-b border-indigo-500/20 pb-4">
-          <div className="w-16 h-16 rounded-2xl bg-indigo-500/20 border border-indigo-400/40 flex items-center justify-center text-4xl shadow-inner shrink-0">
-            {guide.icon}
-          </div>
-          <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-indigo-400/15 border border-indigo-400/30 text-indigo-300 text-[11px] font-bold uppercase tracking-wider mb-1">
-              <span>{guide.doorType}</span>
+        {/* Scrollable Content Container */}
+        <div className="overflow-y-auto pr-1 flex-1">
+          {/* Header */}
+          <div className="flex items-center gap-3.5 mb-3.5 border-b border-indigo-500/20 pb-3">
+            <div className="w-14 h-14 rounded-2xl bg-indigo-500/20 border border-indigo-400/40 flex items-center justify-center text-3xl shadow-inner shrink-0">
+              {guide.icon}
             </div>
-            <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-              {guide.title}
-            </h3>
-            <p className="text-xs text-indigo-300 font-semibold">{guide.titleEn}</p>
-          </div>
-        </div>
-
-        {/* Mission Box */}
-        <div className="bg-amber-500/10 border border-amber-400/30 rounded-2xl p-3.5 mb-5 flex items-start gap-3">
-          <Sparkles className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-          <div>
-            <div className="text-xs font-black text-amber-300 uppercase tracking-wider mb-0.5">
-              Nhiệm vụ của bạn:
-            </div>
-            <p className="text-xs sm:text-sm text-amber-100/90 leading-relaxed">
-              {guide.mission}
-            </p>
-          </div>
-        </div>
-
-        {/* Step-by-Step Guide */}
-        <div className="mb-5">
-          <div className="text-xs font-black text-slate-300 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span>Hướng dẫn từng bước (How to play):</span>
-          </div>
-          <div className="space-y-2.5">
-            {guide.steps.map((step) => (
-              <div
-                key={step.num}
-                className="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-3 flex items-start gap-3"
-              >
-                <div className="w-6 h-6 rounded-full bg-indigo-600 text-white font-black text-xs flex items-center justify-center shrink-0 mt-0.5">
-                  {step.num}
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-white mb-0.5">{step.label}</div>
-                  <div className="text-xs text-slate-300 leading-relaxed">{step.desc}</div>
-                </div>
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-indigo-400/15 border border-indigo-400/30 text-indigo-300 text-[10px] font-bold uppercase tracking-wider mb-0.5">
+                <span>{guide.doorType}</span>
               </div>
-            ))}
+              <h3 className="text-lg sm:text-xl font-black text-white tracking-tight">
+                {guide.title}
+              </h3>
+              <p className="text-[11px] text-indigo-300 font-semibold">{guide.titleEn}</p>
+            </div>
+          </div>
+
+          {/* Mission Box */}
+          <div className="bg-amber-500/10 border border-amber-400/30 rounded-2xl p-3 mb-3.5 flex items-start gap-2.5">
+            <Sparkles className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <div>
+              <div className="text-[11px] font-black text-amber-300 uppercase tracking-wider mb-0.5">
+                Nhiệm vụ của bạn:
+              </div>
+              <p className="text-xs sm:text-sm text-amber-100/90 leading-relaxed">
+                {guide.mission}
+              </p>
+            </div>
+          </div>
+
+          {/* Step-by-Step Guide */}
+          <div className="mb-3.5">
+            <div className="text-[11px] font-black text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Hướng dẫn từng bước (How to play):</span>
+            </div>
+            <div className="space-y-2">
+              {guide.steps.map((step) => (
+                <div
+                  key={step.num}
+                  className="bg-slate-800/60 border border-slate-700/60 rounded-xl p-2.5 flex items-start gap-2.5"
+                >
+                  <div className="w-5 h-5 rounded-full bg-indigo-600 text-white font-black text-[11px] flex items-center justify-center shrink-0 mt-0.5">
+                    {step.num}
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-white mb-0.5">{step.label}</div>
+                    <div className="text-[11px] text-slate-300 leading-relaxed">{step.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Stars Criteria */}
+          <div className="bg-slate-800/80 border border-indigo-400/30 rounded-xl p-2.5 mb-3.5 flex items-center gap-2.5">
+            <Trophy className="w-4 h-4 text-amber-400 shrink-0" />
+            <div className="text-[11px] text-slate-200">
+              <strong className="text-amber-300">Tiêu chuẩn sao: </strong>
+              {guide.starsGuide}
+            </div>
           </div>
         </div>
 
-        {/* Stars Criteria */}
-        <div className="bg-slate-800/80 border border-indigo-400/30 rounded-2xl p-3 mb-6 flex items-center gap-3">
-          <Trophy className="w-5 h-5 text-amber-400 shrink-0" />
-          <div className="text-xs text-slate-200">
-            <strong className="text-amber-300">Tiêu chuẩn sao: </strong>
-            {guide.starsGuide}
-          </div>
+        {/* Action Button (Always pinned at bottom) */}
+        <div className="pt-3 border-t border-indigo-500/20">
+          <button
+            onClick={handleAction}
+            className="w-full py-3 px-6 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-600 to-amber-500 hover:from-indigo-400 hover:to-amber-400 text-white font-black text-sm sm:text-base shadow-lg shadow-indigo-500/30 active:scale-98 transition-all flex items-center justify-center gap-2 gim-start-btn cursor-pointer"
+          >
+            <span>{isIntro ? '⚡ Đã hiểu, Bắt đầu chơi ngay!' : '✓ Đóng hướng dẫn & Tiếp tục'}</span>
+          </button>
         </div>
-
-        {/* Action Button */}
-        <button
-          onClick={handleAction}
-          className="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-600 to-amber-500 hover:from-indigo-400 hover:to-amber-400 text-white font-black text-sm sm:text-base shadow-lg shadow-indigo-500/30 active:scale-98 transition-all flex items-center justify-center gap-2"
-        >
-          <span>{isIntro ? '⚡ Đã hiểu, Bắt đầu chơi ngay!' : '✓ Đóng hướng dẫn & Tiếp tục'}</span>
-        </button>
       </div>
     </div>
   );
