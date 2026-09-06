@@ -201,7 +201,7 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
 
       {/* 5 Room Nodes */}
       <div className="cwm-rooms-grid" style={{ paddingLeft: 16, paddingRight: 16 }}>
-        {DAY_LABELS.map((_, idx) => {
+        {CHAMBER_METADATA.map((_, idx) => {
           // Day 1 always unlocked; other days: previous zone complete OR manually unlocked
           const unlocked = idx === 0
             ? true
