@@ -27,10 +27,22 @@ const audiosToGenerate = [
   { name: 'info_exchange_a1_model.mp3', text: 'Where did Tom get injured? Or: Where did Jake help his friend?', voice: 'en-US-Journey-F' },
   { name: 'info_exchange_a1_m1.mp3', text: 'Where did Tom get injured?', voice: 'en-US-Journey-F' },
   { name: 'info_exchange_a1_m2.mp3', text: 'Where did Jake help his friend?', voice: 'en-US-Journey-F' },
-  { name: 'info_exchange_a2_model.mp3', text: 'What did Tom hurt?', voice: 'en-US-Journey-F' },
-  { name: 'info_exchange_a3_model.mp3', text: 'When did the accident happen?', voice: 'en-US-Journey-F' },
-  { name: 'info_exchange_a4_model.mp3', text: 'Who helped Tom?', voice: 'en-US-Journey-F' },
-  { name: 'info_exchange_a5_model.mp3', text: 'How does Tom feel now?', voice: 'en-US-Journey-F' },
+
+  { name: 'info_exchange_a2_model.mp3', text: 'What did Tom hurt? Or: What did he hurt?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a2_m1.mp3', text: 'What did Tom hurt?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a2_m2.mp3', text: 'What did he hurt?', voice: 'en-US-Journey-F' },
+
+  { name: 'info_exchange_a3_model.mp3', text: 'When did the accident happen? Or: When did Tom slip?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a3_m1.mp3', text: 'When did the accident happen?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a3_m2.mp3', text: 'When did Tom slip?', voice: 'en-US-Journey-F' },
+
+  { name: 'info_exchange_a4_model.mp3', text: 'Who helped Tom? Or: Who helped him?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a4_m1.mp3', text: 'Who helped Tom?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a4_m2.mp3', text: 'Who helped him?', voice: 'en-US-Journey-F' },
+
+  { name: 'info_exchange_a5_model.mp3', text: 'How does Tom feel now? Or: How is he feeling now?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a5_m1.mp3', text: 'How does Tom feel now?', voice: 'en-US-Journey-F' },
+  { name: 'info_exchange_a5_m2.mp3', text: 'How is he feeling now?', voice: 'en-US-Journey-F' },
 
   // 2. Info Exchange Nova Replies (Card 2 / Table A)
   { name: 'info_exchange_reply_1.mp3', text: 'Tom got injured in the main school corridor near the science lab, and Jake helped him there.', voice: 'en-US-Journey-F' },

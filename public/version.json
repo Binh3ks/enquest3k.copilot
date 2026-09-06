@@ -1,9 +1,9 @@
 {
-  "commit": "b093a5b7203649d0da7a253b6336da057ff856fb",
-  "git_commit": "b093a5b7203649d0da7a253b6336da057ff856fb",
-  "shortCommit": "b093a5b7",
-  "message": "feat(w33-pedagogy): overhaul SRS warmup, info exchange audio, listening framing, and elevate Quick Write to Step 3 in Discovery Report",
-  "builtAt": "2026-09-06T05:30:01.013Z",
-  "build_timestamp": "2026-09-06T05:30:01.014Z",
+  "commit": "30b8c7daf582fe8d1f954e00bd4bf0c35355dda2",
+  "git_commit": "30b8c7daf582fe8d1f954e00bd4bf0c35355dda2",
+  "shortCommit": "30b8c7da",
+  "message": "fix(pedagogy-w33): dual model audio for info exchange, complete zero-L1 in QuickWrite, and restructure 4-tier cause-effect science logic",
+  "builtAt": "2026-09-06T06:04:05.488Z",
+  "build_timestamp": "2026-09-06T06:04:05.489Z",
   "env": "production"
 }

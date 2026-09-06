@@ -597,7 +597,8 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                             <button
                               type="button"
                               onClick={() => {
-                                const indAudio = idx === 0 ? '/audio/week33/info_exchange_a1_m1.mp3' : (idx === 1 ? '/audio/week33/info_exchange_a1_m2.mp3' : null);
+                                const cueNum = (cueIdxA || 0) + 1;
+                                const indAudio = `/audio/week33/info_exchange_a${cueNum}_m${idx + 1}.mp3`;
                                 speakText(q, indAudio);
                               }}
                               className="px-1.5 py-0.5 hover:bg-amber-300/80 bg-amber-200/60 text-amber-950 rounded-md transition flex items-center gap-1 text-[11px] font-bold cursor-pointer"
@@ -611,8 +612,9 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                       <button
                         type="button"
                         onClick={() => {
+                          const cueNum = (cueIdxA || 0) + 1;
                           const spoken = (currentCueA?.acceptable_questions?.slice(0, 2) || []).join('. Or: ');
-                          speakText(spoken, currentCueA?.model_audio_url || currentCueA?.audio_url);
+                          speakText(spoken, `/audio/week33/info_exchange_a${cueNum}_model.mp3`);
                         }}
                         className="p-1.5 bg-amber-300 hover:bg-amber-400 text-amber-950 rounded-lg transition shrink-0 flex items-center gap-1 text-xs font-bold cursor-pointer"
                         title="Listen to all model questions"

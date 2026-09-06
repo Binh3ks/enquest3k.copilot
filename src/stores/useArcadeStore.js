@@ -22,18 +22,21 @@ import { create } from 'zustand';
  */
 
 export const ARCADE_GAMES = [
-  { id: 'bubble_pop',        num: 1,  title: 'Bubble Pop Dash',       icon: '🫧', minWeek: 1,   colorA: '#0284c7', colorB: '#0369a1', desc: 'Pop bubbles floating with 2D physics.' },
-  { id: 'meteor_smasher',    num: 2,  title: 'Meteor Smasher',        icon: '🛸', minWeek: 11,  colorA: '#7c3aed', colorB: '#581c87', desc: 'Turret laser defense matching definitions.' },
-  { id: 'physics_drift',     num: 3,  title: 'Highway Road Runner',   icon: '🏎️', minWeek: 21,  colorA: '#059669', colorB: '#065f46', desc: 'Collect target word stars on the vertical highway.' },
-  { id: 'chunk_catapult',    num: 4,  title: 'Chunk Catapult Match',  icon: '🧩', minWeek: 31,  colorA: '#d97706', colorB: '#92400e', desc: 'Grammar, bilingual chunk & definition match.' },
-  { id: 'neon_rider',        num: 5,  title: 'Neon Gravity Rider',    icon: '⚡', minWeek: 41,  colorA: '#ec4899', colorB: '#be185d', desc: 'Invert gravity jumping across syllable platforms.' },
-  { id: 'castle_defense',    num: 6,  title: 'Castle Tower Defense',  icon: '🏰', minWeek: 51,  colorA: '#1d4ed8', colorB: '#1e293b', desc: 'Place towers to stop antonym/synonym word armies.' },
-  { id: 'lightning_connect', num: 7,  title: 'Lightning Connect',     icon: '⚡', minWeek: 61,  colorA: '#ca8a04', colorB: '#b45309', desc: 'Chain lightning through semantic word networks.' },
-  { id: 'potion_lab',        num: 8,  title: 'Potion Chemistry Lab',   icon: '🧪', minWeek: 71,  colorA: '#0d9488', colorB: '#059669', desc: 'Mix prefix/root/suffix to brew perfect word potions.' },
-  { id: 'temple_runner',     num: 9,  title: 'Temple Runner Chunks',  icon: '🏃', minWeek: 81,  colorA: '#c2410c', colorB: '#b91c1c', desc: 'Sprint through gates choosing the right linkers.' },
-  { id: 'galaxy_orbit',      num: 10, title: 'Galaxy Word Orbit',      icon: '🌌', minWeek: 91,  colorA: '#4338ca', colorB: '#7e22ce', desc: 'Hold planets matching syllable stress patterns.' },
-  { id: 'dragon_duel',       num: 11, title: 'Dragon Spell Duel',      icon: '🐉', minWeek: 101, colorA: '#b91c1c', colorB: '#92400e', desc: 'Type-battle the shadow dragon with perfect spelling.' },
-  { id: 'grand_arena',       num: 12, title: 'Grand Master Arena',     icon: '👑', minWeek: 111, colorA: '#b45309', colorB: '#7e22ce', desc: 'The ultimate 4-skills boss battle championship.' }
+  { id: 'bubble_pop',        num: 1,  title: 'Bubble Pop Dash',         icon: '🫧', minWeek: 1,   colorA: '#0284c7', colorB: '#0369a1', desc: 'Pop bubbles floating with 2D physics.' },
+  { id: 'phonics_bubble',    num: 2,  title: 'Phonics Sound Blaster',   icon: '🔊', minWeek: 1,   colorA: '#06b6d4', colorB: '#0284c7', desc: 'Audio phonics & phonemic awareness blaster.' },
+  { id: 'sentence_train',    num: 3,  title: 'Sentence Choo-Choo',      icon: '🚂', minWeek: 1,   colorA: '#f59e0b', colorB: '#d97706', desc: 'Linear syntax, word order & collocation train.' },
+  { id: 'odd_one_out',       num: 4,  title: 'Lexical Detective',       icon: '🕵️', minWeek: 1,   colorA: '#10b981', colorB: '#059669', desc: 'Spot semantic intruders across lexical categories.' },
+  { id: 'meteor_smasher',    num: 5,  title: 'Meteor Smasher',          icon: '🛸', minWeek: 11,  colorA: '#7c3aed', colorB: '#581c87', desc: 'Turret laser defense matching definitions.' },
+  { id: 'physics_drift',     num: 6,  title: 'Highway Road Runner',     icon: '🏎️', minWeek: 21,  colorA: '#059669', colorB: '#065f46', desc: 'Collect target word stars on the vertical highway.' },
+  { id: 'chunk_catapult',    num: 7,  title: 'Chunk Catapult Match',    icon: '🧩', minWeek: 31,  colorA: '#d97706', colorB: '#92400e', desc: 'Grammar, bilingual chunk & definition match.' },
+  { id: 'neon_rider',        num: 8,  title: 'Neon Gravity Rider',      icon: '⚡', minWeek: 41,  colorA: '#ec4899', colorB: '#be185d', desc: 'Invert gravity jumping across syllable platforms.' },
+  { id: 'castle_defense',    num: 9,  title: 'Castle Tower Defense',    icon: '🏰', minWeek: 51,  colorA: '#1d4ed8', colorB: '#1e293b', desc: 'Place towers to stop antonym/synonym word armies.' },
+  { id: 'lightning_connect', num: 10, title: 'Lightning Connect',       icon: '⚡', minWeek: 61,  colorA: '#ca8a04', colorB: '#b45309', desc: 'Chain lightning through semantic word networks.' },
+  { id: 'potion_lab',        num: 11, title: 'Potion Chemistry Lab',     icon: '🧪', minWeek: 71,  colorA: '#0d9488', colorB: '#059669', desc: 'Mix prefix/root/suffix to brew perfect word potions.' },
+  { id: 'temple_runner',     num: 12, title: 'Temple Runner Chunks',    icon: '🏃', minWeek: 81,  colorA: '#c2410c', colorB: '#b91c1c', desc: 'Sprint through gates choosing the right linkers.' },
+  { id: 'galaxy_orbit',      num: 13, title: 'Galaxy Word Orbit',        icon: '🌌', minWeek: 91,  colorA: '#4338ca', colorB: '#7e22ce', desc: 'Hold planets matching syllable stress patterns.' },
+  { id: 'dragon_duel',       num: 14, title: 'Dragon Spell Duel',        icon: '🐉', minWeek: 101, colorA: '#b91c1c', colorB: '#92400e', desc: 'Type-battle the shadow dragon with perfect spelling.' },
+  { id: 'grand_arena',       num: 15, title: 'Grand Master Arena',       icon: '👑', minWeek: 111, colorA: '#b45309', colorB: '#7e22ce', desc: 'The ultimate 4-skills boss battle championship.' }
 ];
 
 export const ARCADE_GAME_CATALOG = ARCADE_GAMES;

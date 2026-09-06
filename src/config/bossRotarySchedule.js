@@ -120,12 +120,13 @@ export const BOSS_ROTARY_CYCLES = {
  * @returns {{ weekNumber, cycleNumber, cycleName, activeParts, partCount, ... }}
  */
 export function getBossRotaryConfig(weekNumber = 33) {
-  const relativeIndex = (weekNumber - 33 + 1);
-  const cycleKey = relativeIndex % 5;
-  const cycle = BOSS_ROTARY_CYCLES[cycleKey];
+  const w = parseInt(weekNumber) || 33;
+  const offset = ((w - 33) % 5 + 5) % 5;
+  const cycleKey = offset + 1;
+  const cycle = BOSS_ROTARY_CYCLES[cycleKey] || BOSS_ROTARY_CYCLES[1];
   return {
-    weekNumber,
-    cycleNumber: cycleKey === 0 ? 5 : cycleKey,
+    weekNumber: w,
+    cycleNumber: cycleKey,
     ...cycle,
     shieldCount: cycle.partCount,
     testedSkills: cycle.activeParts.map(ap => ap.partId),

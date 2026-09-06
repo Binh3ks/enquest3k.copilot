@@ -3,6 +3,7 @@ import { X, RotateCcw, CheckCircle, XCircle, Volume2, Brain, Sparkles, ChevronRi
 import srsService from '../../services/srsService';
 import useTTSStore from '../../stores/useTTSStore';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import LexioMascot from '../mascot/LexioMascot';
 import './SRSFlashcardReview.css';
 
 /**
@@ -24,6 +25,11 @@ export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
   const [results, setResults] = useState([]); // { word, remembered: boolean }[]
   const [phase, setPhase] = useState('review'); // 'review' | 'summary'
 
+  // Mascot reaction state
+  const [mascotMood, setMascotMood] = useState('happy');
+  const [mascotBubble, setMascotBubble] = useState(null);
+  const mascotTimeoutRef = useRef(null);
+
   // Match Blitz state
   const [selectedWord, setSelectedWord] = useState(null);
   const [matchedIds, setMatchedIds] = useState(new Set());
@@ -35,6 +41,33 @@ export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
 
   const { speak } = useTTSStore();
   const cardRef = useRef(null);
+
+  // Trigger Lexio mascot reaction
+  const triggerMascotReaction = useCallback((isCorrect, customMsg = null) => {
+    if (mascotTimeoutRef.current) clearTimeout(mascotTimeoutRef.current);
+    if (isCorrect) {
+      const praises = ['Tuyệt đỉnh! 🌟', 'Xuất sắc! 🎉', 'Chính xác! ✨', 'Đỉnh quá! 🚀'];
+      const msg = customMsg || praises[Math.floor(Math.random() * praises.length)];
+      setMascotMood('celebrate');
+      setMascotBubble(msg);
+    } else {
+      const encourages = ['Cố lên nhé! 💪', 'Xem kỹ nghĩa nào! 🧐', 'Ôn lại là nhớ ngay! 🌱'];
+      const msg = customMsg || encourages[Math.floor(Math.random() * encourages.length)];
+      setMascotMood('thinking');
+      setMascotBubble(msg);
+    }
+    mascotTimeoutRef.current = setTimeout(() => {
+      setMascotMood('happy');
+      setMascotBubble(null);
+    }, 1300);
+  }, []);
+
+  // Clean up timer
+  useEffect(() => {
+    return () => {
+      if (mascotTimeoutRef.current) clearTimeout(mascotTimeoutRef.current);
+    };
+  }, []);
 
   // Load due words once on mount
   useEffect(() => {
@@ -64,6 +97,9 @@ export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
   const handleAnswer = useCallback((remembered) => {
     if (!currentCard) return;
 
+    // Trigger mascot reaction
+    triggerMascotReaction(remembered);
+
     // Record in SRS engine
     srsService.recordReview(currentCard.word, remembered);
 
@@ -80,7 +116,7 @@ export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
       fireCelebrationConfetti();
       setPhase('summary');
     }
-  }, [currentCard, currentIndex, cards.length]);
+  }, [currentCard, currentIndex, cards.length, triggerMascotReaction]);
 
   const handleFinish = useCallback(() => {
     onComplete?.();
@@ -112,6 +148,7 @@ export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
 
       if (selectedWord.id === item.id) {
         // Correct match!
+        triggerMascotReaction(true, 'Khớp rồi! ✨');
         srsService.recordReview(selectedWord.id, true);
         setResults(prev => [...prev, { word: selectedWord.id, remembered: true }]);
         const nextMatched = new Set(matchedIds);
@@ -130,6 +167,7 @@ export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
         }
       } else {
         // Wrong match
+        triggerMascotReaction(false, 'Chưa khớp! 🤔');
         setWrongPair({ wordId: selectedWord.id, defId: item.id });
         srsService.recordReview(selectedWord.id, false);
         setTimeout(() => {
@@ -158,6 +196,7 @@ export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
     setQuizAnswered(true);
     setSelectedOption(opt);
     const isCorrect = opt === currentCard.definition;
+    triggerMascotReaction(isCorrect, isCorrect ? 'Chính xác! 🎯' : 'Xem lại nghĩa nhé! 💡');
     setTimeout(() => {
       handleAnswer(isCorrect);
     }, 650);
@@ -174,9 +213,15 @@ export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
     return (
       <div className="srs-overlay">
         <div className="srs-modal srs-summary">
-          <div className="srs-summary-icon">
-            <Sparkles size={44} />
+          {/* Lexio Celebrating Mascot */}
+          <div className="srs-summary-mascot flex flex-col items-center justify-center my-2">
+            <LexioMascot
+              size={96}
+              mood="celebrate"
+              showSpeechBubble={false}
+            />
           </div>
+
           <h2 className="srs-summary-title">Khởi động hoàn tất! 🎉</h2>
           <p className="srs-summary-score">
             {remembered}/{total} từ ôn tập thành công ({percentage}%) · <strong>+50 XP</strong>
@@ -208,7 +253,7 @@ export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
           </div>
 
           <button type="button" className="srs-continue-btn cursor-pointer" onClick={handleFinish}>
-            <span>Bắt đầu học ngay! 🚀</span>
+            <span>Bắt đầu bài học ngay! 🚀</span>
             <ChevronRight size={18} />
           </button>
         </div>
@@ -220,51 +265,52 @@ export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
   return (
     <div className="srs-overlay">
       <div className="srs-modal">
-        {/* Top Header & Mode Switcher */}
+        {/* Top Header & Mode Switcher (Fully Responsive 2-Row Layout) */}
         <div className="srs-header">
-          <div className="srs-header-left">
-            <Brain size={20} className="text-indigo-400" />
-            <span>SRS Daily Warm-up</span>
+          <div className="srs-header-top">
+            <div className="srs-header-left">
+              <Brain size={18} className="text-indigo-400 shrink-0" />
+              <span>SRS Daily Warm-up</span>
+            </div>
+            <div className="srs-header-right">
+              <span className="srs-counter">{currentIndex + 1}/{cards.length}</span>
+              <button type="button" className="srs-skip-btn cursor-pointer" onClick={handleFinish} title="Bỏ qua warm-up">
+                <X size={18} />
+              </button>
+            </div>
           </div>
 
           {/* Mode Switcher Tabs */}
-          <div className="flex items-center gap-1 bg-white/10 p-1 rounded-xl border border-white/15">
+          <div className="srs-mode-tabs">
             <button
               type="button"
               onClick={() => setGameMode('flip')}
-              className={`px-2 py-0.5 rounded-lg text-xs font-bold transition flex items-center gap-1 cursor-pointer ${
-                gameMode === 'flip' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-300 hover:text-white'
+              className={`srs-tab-btn cursor-pointer ${
+                gameMode === 'flip' ? 'srs-tab-active-flip' : 'srs-tab-inactive'
               }`}
               title="Thẻ 3D Leitner"
             >
-              <Layers size={13} /> Thẻ 3D
+              <Layers size={13} /> <span>Thẻ 3D</span>
             </button>
             <button
               type="button"
               onClick={() => setGameMode('match')}
-              className={`px-2 py-0.5 rounded-lg text-xs font-bold transition flex items-center gap-1 cursor-pointer ${
-                gameMode === 'match' ? 'bg-amber-500 text-slate-950 font-black shadow-sm' : 'text-slate-300 hover:text-white'
+              className={`srs-tab-btn cursor-pointer ${
+                gameMode === 'match' ? 'srs-tab-active-match' : 'srs-tab-inactive'
               }`}
               title="Ghép Nhanh 60s"
             >
-              <Zap size={13} /> Nối từ
+              <Zap size={13} /> <span>Nối từ</span>
             </button>
             <button
               type="button"
               onClick={() => setGameMode('quiz')}
-              className={`px-2 py-0.5 rounded-lg text-xs font-bold transition flex items-center gap-1 cursor-pointer ${
-                gameMode === 'quiz' ? 'bg-emerald-500 text-slate-950 font-black shadow-sm' : 'text-slate-300 hover:text-white'
+              className={`srs-tab-btn cursor-pointer ${
+                gameMode === 'quiz' ? 'srs-tab-active-quiz' : 'srs-tab-inactive'
               }`}
               title="Chọn Nhanh"
             >
-              <Target size={13} /> Trắc nghiệm
-            </button>
-          </div>
-
-          <div className="srs-header-right">
-            <span className="srs-counter">{currentIndex + 1}/{cards.length}</span>
-            <button type="button" className="srs-skip-btn cursor-pointer" onClick={handleFinish} title="Bỏ qua warm-up">
-              <X size={18} />
+              <Target size={13} /> <span>Trắc nghiệm</span>
             </button>
           </div>
         </div>
@@ -285,6 +331,21 @@ export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
               {box}
             </div>
           ))}
+        </div>
+
+        {/* Mascot Companion Reaction Bar */}
+        <div className={`srs-mascot-bar ${mascotMood === 'celebrate' ? 'srs-mascot-celebrate' : mascotMood === 'thinking' ? 'srs-mascot-thinking' : ''}`}>
+          <LexioMascot
+            size={42}
+            mood={mascotMood}
+            showSpeechBubble={false}
+          />
+          <div className="srs-mascot-text">
+            <span className="srs-mascot-name">Lexio Buddy 🦊</span>
+            <span className="srs-mascot-msg">
+              {mascotBubble || (gameMode === 'flip' ? '👉 Chạm thẻ để lật & xem nghĩa nhé!' : gameMode === 'match' ? '⚡ Nhanh tay chạm đúng cặp từ!' : '🎯 Chọn 1 trong 3 đáp án đúng nhất!')}
+            </span>
+          </div>
         </div>
 
         {/* ══════════════════════════════════════════════════════════════

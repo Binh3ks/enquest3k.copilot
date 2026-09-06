@@ -8,6 +8,9 @@ import BubblePopGame from './BubblePopGame';
 import MeteorSmasherGame from './MeteorSmasherGame';
 import PhysicsDriftGame from './PhysicsDriftGame';
 import CatapultChunkGame from './CatapultChunkGame';
+import PhonicsBubbleGame from './PhonicsBubbleGame';
+import SentenceChooChooGame from './SentenceChooChooGame';
+import OddOneOutGame from './OddOneOutGame';
 
 export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, ownerBypass = false }) {
   const {
@@ -58,7 +61,7 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
   const [selectedGame, setSelectedGame] = useState(null);
 
   const effectiveOwnerBypass = isOwnerModeActive;
-  const unlockedCount = effectiveOwnerBypass ? 12 : getUnlockedGameCount(weekNumber);
+  const unlockedCount = effectiveOwnerBypass ? ARCADE_GAME_CATALOG.length : getUnlockedGameCount(weekNumber);
   const focusCycleReq = getFocusCycleSeconds(weekNumber);
   const isBatteryCharged = effectiveOwnerBypass || playEnergySeconds > 0;
 
@@ -188,6 +191,9 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
         {/* Full-height game area */}
         <div style={{ flex: 1, overflow: 'hidden', padding: '12px', display: 'flex', flexDirection: 'column' }}>
           {selectedGame === 'bubble_pop' && <BubblePopGame weekNumber={weekNumber} onExit={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'phonics_bubble' && <PhonicsBubbleGame weekNumber={weekNumber} onExit={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'sentence_train' && <SentenceChooChooGame weekNumber={weekNumber} onExit={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'odd_one_out' && <OddOneOutGame weekNumber={weekNumber} onExit={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
           {selectedGame === 'meteor_smasher' && <MeteorSmasherGame weekNumber={weekNumber} onExit={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
           {selectedGame === 'physics_drift' && <PhysicsDriftGame weekNumber={weekNumber} onExit={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
           {selectedGame === 'chunk_catapult' && <CatapultChunkGame weekNumber={weekNumber} onExit={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
@@ -236,7 +242,7 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
                   color: '#60a5fa', border: '1px solid rgba(96,165,250,0.3)',
                   borderRadius: '8px', padding: '2px 8px', fontWeight: 800
                 }}>
-                  {unlockedCount}/12 UNLOCKED
+                  {unlockedCount}/{ARCADE_GAME_CATALOG.length} UNLOCKED
                 </span>
                 <button
                   type="button"
