@@ -272,13 +272,13 @@ export default function AncientScrollFillGame({
             })}
           </div>
           <div className="cgr-actions" style={{ marginTop: '16px', display: 'flex', gap: '10px', justifyContent: 'center' }}>
-            {stars === 0 && <button className="cg-retry-btn" onClick={() => setPhase('filling')}>🔄 Thử lại</button>}
+            {stars === 0 && <button className="cg-retry-btn" onClick={() => setPhase('filling')}>🔄 Retry</button>}
             <button
               className="cg-continue-btn"
               onClick={() => onComplete && onComplete(stars, { correct, total: 5 })}
               disabled={stars === 0}
             >
-              {stars > 0 ? '→ Tiếp tục' : '🔒 Cần ít nhất 1★'}
+              {stars > 0 ? '→ Continue' : '🔒 Need at least 1★'}
             </button>
           </div>
         </div>
@@ -304,17 +304,17 @@ export default function AncientScrollFillGame({
             type="button"
             className="cg-help-trigger-btn"
             onClick={() => setShowHelp(true)}
-            title="Xem hướng dẫn chơi"
+            title="How to play"
           >
             <HelpCircle size={14} />
-            <span>Cách chơi</span>
+            <span>How to Play</span>
           </button>
         </div>
         {selectedBlank !== null && (
-          <div className="asf-instruction">Chạm vào một từ vựng bên dưới để điền vào ô #{selectedBlank + 1}</div>
+          <div className="asf-instruction">Tap a word from the bank below to fill blank #{selectedBlank + 1}</div>
         )}
         {selectedBlank === null && !allFilled && (
-          <div className="asf-instruction">Chạm vào một ô trống trên cuộn giấy để bắt đầu điền</div>
+          <div className="asf-instruction">Tap any blank on the scroll to start filling</div>
         )}
       </div>
 

@@ -12,7 +12,8 @@
  */
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { calculateStars } from '../../../stores/useChroniclesStore';
+import useChroniclesStore, { calculateStars } from '../../../stores/useChroniclesStore';
+import { speakText } from '../../../utils/AudioHelper';
 import GameInstructionModal from './GameInstructionModal';
 import { HelpCircle } from 'lucide-react';
 
@@ -65,18 +66,7 @@ export default function CrystalMemoryMatchGame({
   const [showHelp, setShowHelp]   = useState(false);
   const timerRef = useRef(null);
 
-  const speakText = (text) => {
-    if (!text) return;
-    try {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const u = new SpeechSynthesisUtterance(text);
-        u.lang = 'en-US';
-        u.rate = 0.9;
-        window.speechSynthesis.speak(u);
-      }
-    } catch (_) {}
-  };
+  const recordPersonalBest = useChroniclesStore((s) => s.recordPersonalBest);
 
   // ── Start ─────────────────────────────────────────────────────────────────
 
@@ -200,20 +190,20 @@ export default function CrystalMemoryMatchGame({
             ))}
           </div>
           <div className="cg-result-title">
-            {stars === 3 ? '💎 Bậc Thầy Tinh Thể!' : stars === 2 ? '🔷 Ghép Đôi Xuất Sắc!' : stars === 1 ? '🔹 Hoàn Thành Thử Thách!' : '💤 Hết Giờ Rồi!'}
+            {stars === 3 ? '💎 CRYSTAL MASTER!' : stars === 2 ? '🔷 EXCELLENT MATCHES!' : stars === 1 ? '🔹 CHALLENGE CLEARED!' : '💤 TIME EXPIRED!'}
           </div>
           <div className="cg-result-stats">
-            <span>✅ {matched.size}/{cards.length / 2} cặp hoàn thành</span>
-            <span>❌ {mistakes} lần lật sai</span>
+            <span>✅ {matched.size}/{cards.length / 2} Pairs Completed</span>
+            <span>❌ {mistakes} Mistakes</span>
           </div>
           <div className="cgr-actions" style={{ marginTop: '16px' }}>
-            {stars === 0 && <button className="cg-retry-btn" onClick={startGame}>🔄 Thử lại</button>}
+            {stars === 0 && <button className="cg-retry-btn" onClick={startGame}>🔄 Retry</button>}
             <button
               className="cg-continue-btn"
               onClick={() => onComplete && onComplete(stars, { mistakes, matched: matched.size })}
               disabled={stars === 0}
             >
-              {stars > 0 ? '→ Tiếp tục' : '🔒 Cần ít nhất 1★'}
+              {stars > 0 ? '→ Continue' : '🔒 Need at least 1★'}
             </button>
           </div>
         </div>
@@ -245,10 +235,10 @@ export default function CrystalMemoryMatchGame({
           type="button"
           className="cg-help-trigger-btn"
           onClick={() => setShowHelp(true)}
-          title="Xem hướng dẫn chơi"
+          title="How to play"
         >
           <HelpCircle size={14} />
-          <span>Cách chơi</span>
+          <span>How to Play</span>
         </button>
         <span className="cg-hud-stat wrong">❌ {mistakes}</span>
       </div>
@@ -256,7 +246,7 @@ export default function CrystalMemoryMatchGame({
       {/* Feedback flash */}
       {lastPair && (
         <div className={`cm-feedback ${lastPair}`}>
-          {lastPair === 'match' ? '✨ Ghép chuẩn xác!' : '🔄 Chưa khớp, hãy nhớ vị trí!'}
+          {lastPair === 'match' ? '✨ Perfect Match!' : '🔄 Not a match, remember positions!'}
         </div>
       )}
 

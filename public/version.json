@@ -1,4 +1,9 @@
 {
-  "version": "2.4.4",
-  "timestamp": "2026-09-06T14:41:56.666Z"
+  "commit": "5cc6ac468826474025d61571800e43e50d37b82d",
+  "git_commit": "5cc6ac468826474025d61571800e43e50d37b82d",
+  "shortCommit": "5cc6ac46",
+  "message": "fix(chronicles): map over CHAMBER_METADATA instead of undefined DAY_LABELS",
+  "builtAt": "2026-09-07T00:43:21.292Z",
+  "build_timestamp": "2026-09-07T00:43:21.293Z",
+  "env": "production"
 }

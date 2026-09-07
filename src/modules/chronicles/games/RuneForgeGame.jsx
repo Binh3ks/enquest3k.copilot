@@ -197,20 +197,20 @@ export default function RuneForgeGame({
             ))}
           </div>
           <div className="cg-result-title">
-            {stars === 3 ? '⚗️ Thợ Rèn Cổ Tự Bậc Thầy!' : stars === 2 ? '🔥 Rèn Thành Công!' : stars >= 1 ? '🔩 Đã Vượt Qua!' : '💔 Lò Rèn Bị Vỡ!'}
+            {stars === 3 ? '⚗️ MASTER RUNE SMITH!' : stars === 2 ? '🔥 FORGE SUCCESS!' : stars >= 1 ? '🔩 CHALLENGE PASSED!' : '💔 THE FORGE BROKE!'}
           </div>
           <div className="cg-result-stats">
-            <span>✅ {correct}/{items.length || 3} câu đúng</span>
-            <span>❤️ {forgeHP}/3 HP còn lại</span>
+            <span>✅ {correct}/{items.length || 3} Runes Forged</span>
+            <span>❤️ {forgeHP}/3 HP Remaining</span>
           </div>
           <div className="cgr-actions" style={{ marginTop: '16px' }}>
-            {stars === 0 && <button className="cg-retry-btn" onClick={startGame}>🔄 Thử lại</button>}
+            {stars === 0 && <button className="cg-retry-btn" onClick={startGame}>🔄 Retry</button>}
             <button
               className="cg-continue-btn"
               onClick={() => onComplete && onComplete(stars, { correct, forgeHP })}
               disabled={stars === 0}
             >
-              {stars > 0 ? '→ Tiếp tục' : '🔒 Cần ít nhất 1★'}
+              {stars > 0 ? '→ Continue' : '🔒 Need at least 1★'}
             </button>
           </div>
         </div>
@@ -245,27 +245,27 @@ export default function RuneForgeGame({
           type="button"
           className="cg-help-trigger-btn"
           onClick={() => setShowHelp(true)}
-          title="Xem hướng dẫn chơi"
+          title="How to play"
         >
           <HelpCircle size={14} />
-          <span>Cách chơi</span>
+          <span>How to Play</span>
         </button>
         <span className="rf-hp">{'❤️'.repeat(forgeHP)}{'🖤'.repeat(3 - forgeHP)}</span>
       </div>
 
       {/* Sentence with blank */}
       <div className="rf-sentence-box">
-        {item.hint && <div className="rf-hint-label">💡 Gợi ý: {item.hint}</div>}
+        {item.hint && <div className="rf-hint-label">💡 Clue: {item.hint}</div>}
         <div className="rf-sentence">{item.sentence}</div>
         <div className="rf-fill-target">
-          Chạm vào viên đá chứa từ phù hợp để điền vào chỗ trống: <strong>_____</strong>
+          Tap the glowing rune with the correct word to fill the blank: <strong>_____</strong>
         </div>
       </div>
 
       {/* Feedback flash */}
       {feedback && (
         <div className={`cg-feedback ${feedback.type === 'right' ? 'correct' : 'wrong'}`}>
-          {feedback.type === 'right' ? `✨ "${feedback.word}" — Chính xác!` : `❌ "${feedback.word}" — Sai rồi!`}
+          {feedback.type === 'right' ? `✨ "${feedback.word}" — Correct!` : `❌ "${feedback.word}" — Try again!`}
         </div>
       )}
 

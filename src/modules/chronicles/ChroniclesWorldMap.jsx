@@ -16,6 +16,7 @@ import useChroniclesStore, {
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import MascotShopPanel from './MascotShopPanel';
 import ChapterFragmentPanel from './ChapterFragmentPanel';
+import HallOfFameModal from './HallOfFameModal';
 import './ChroniclesWorldMap.css';
 
 // ─── Room Node ─────────────────────────────────────────────────────────────
@@ -32,7 +33,7 @@ function RoomNode({ dayIndex, weekNumber, isUnlocked, isCompleted, totalStars, o
       aria-label={`${chamber.chamberName} — ${status}`}
     >
       <div className="cwm-room-icon">{chamber.icon}</div>
-      <div className="cwm-room-label">Tầng {dayIndex + 1}</div>
+      <div className="cwm-room-label">Floor {dayIndex + 1}</div>
       <div className="cwm-room-sub">{chamber.chamberName}</div>
       <div className="cwm-room-zone-ref">({chamber.chamberEn})</div>
 
@@ -47,8 +48,8 @@ function RoomNode({ dayIndex, weekNumber, isUnlocked, isCompleted, totalStars, o
 
       {/* Status badge */}
       {status === 'locked' && <div className="cwm-lock-badge">🔒</div>}
-      {status === 'unlocked' && <div className="cwm-enter-badge">⚡ Vào chơi</div>}
-      {status === 'completed' && <div className="cwm-done-badge">✓ Hoàn thành</div>}
+      {status === 'unlocked' && <div className="cwm-enter-badge">⚡ Enter Chamber</div>}
+      {status === 'completed' && <div className="cwm-done-badge">✓ Completed</div>}
     </button>
   );
 }
@@ -58,7 +59,7 @@ function RoomNode({ dayIndex, weekNumber, isUnlocked, isCompleted, totalStars, o
 function BossChamberNode({ weekNumber, tier, weeklyPP, isBossDefeated, onClick }) {
   const isUnlocked = tier !== 'none';
   const tierColors = { none: '#6b7280', bronze: '#b45309', silver: '#6b7280', gold: '#d97706' };
-  const tierLabels = { none: '🔒 Cần 150⚡', bronze: '🥉 Bronze', silver: '🥈 Silver', gold: '🥇 Gold' };
+  const tierLabels = { none: '🔒 Need 150⚡', bronze: '🥉 Bronze', silver: '🥈 Silver', gold: '🥇 Gold' };
 
   return (
     <button
@@ -68,12 +69,12 @@ function BossChamberNode({ weekNumber, tier, weeklyPP, isBossDefeated, onClick }
       style={{ '--tier-color': tierColors[tier] }}
     >
       <div className="cwm-boss-icon">👾</div>
-      <div className="cwm-boss-label">Hộ Vệ Bão Tố</div>
-      <div className="cwm-boss-sub">Storm Titan Boss</div>
+      <div className="cwm-boss-label">Storm Titan Guardian</div>
+      <div className="cwm-boss-sub">Weekly Boss Battle</div>
       <div className="cwm-boss-tier" style={{ color: tierColors[tier] }}>
         {tierLabels[tier]}
       </div>
-      {isBossDefeated && <div className="cwm-boss-defeated">⚔️ ĐÃ HẠ GỤC</div>}
+      {isBossDefeated && <div className="cwm-boss-defeated">⚔️ DEFEATED</div>}
     </button>
   );
 }
@@ -100,6 +101,7 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
   const bossDefeated = isBossDefeated(weekNumber);
 
   const [activeTab, setActiveTab] = useState('map');
+  const [showHallOfFame, setShowHallOfFame] = useState(false);
   const lexioCoins = useChroniclesStore((s) => s.lexioCoins || 0);
   const chapterFragKey = `chapter${chapter.id}`;
   const fragmentsCount = useChroniclesStore((s) => s.bossFragments[chapterFragKey] || 0);
@@ -159,6 +161,12 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
         >
           <span>💎 Fragments</span>
           <span className="cwm-tab-frag-badge">{fragmentsCount}/4</span>
+        </button>
+        <button
+          className="cwm-tab-btn"
+          onClick={() => setShowHallOfFame(true)}
+        >
+          <span>🏆 Hall of Fame</span>
         </button>
       </div>
 
@@ -244,11 +252,17 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
       {/* Footer */}
       <div className="cwm-footer">
         <p className="cwm-footer-hint">
-          Hoàn thành nhiệm vụ bài học mỗi ngày để mở khóa Tầng Tháp thử thách tiếp theo 🔓
+          Complete daily quest zones to unlock the next challenge tower floor 🔓
         </p>
       </div>
         </>
       )}
+      
+      {/* Speedrunner Hall of Fame Modal */}
+      <HallOfFameModal
+        isOpen={showHallOfFame}
+        onClose={() => setShowHallOfFame(false)}
+      />
     </div>
   );
 }

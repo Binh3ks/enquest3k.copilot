@@ -7,7 +7,8 @@
  */
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { calculateStars } from '../../../stores/useChroniclesStore';
+import useChroniclesStore, { calculateStars } from '../../../stores/useChroniclesStore';
+import { speakText } from '../../../utils/AudioHelper';
 import GameInstructionModal from './GameInstructionModal';
 import { HelpCircle, Volume2 } from 'lucide-react';
 
@@ -64,17 +65,11 @@ export default function LexicalDetectiveGame({ vocabItems = [], onComplete, dura
   const [showHelp, setShowHelp] = useState(false);
   const timerRef = useRef(null);
 
+  const recordPersonalBest = useChroniclesStore((s) => s.recordPersonalBest);
+
   const speakWord = (text) => {
     if (!text) return;
-    try {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const u = new SpeechSynthesisUtterance(text);
-        u.lang = 'en-US';
-        u.rate = 0.9;
-        window.speechSynthesis.speak(u);
-      }
-    } catch (_) {}
+    speakText(text, null, 1.0, null, 'vocabulary');
   };
 
   const startGame = useCallback(() => {
@@ -167,17 +162,17 @@ export default function LexicalDetectiveGame({ vocabItems = [], onComplete, dura
           ))}
         </div>
         <h3 className="cgr-title">
-          {stars >= 2 ? '🔍 Vụ án đã được phá!' : stars === 1 ? '✅ Thám tử giỏi!' : '😅 Hãy quan sát kỹ hơn nhé!'}
+          {stars >= 2 ? '🔍 CASE SOLVED!' : stars === 1 ? '✅ GREAT DETECTIVE WORK!' : '😅 KEEP YOUR EYES SHARP!'}
         </h3>
-        <p className="cgr-score">{score.correct} / {Math.max(score.total, 1)} vụ đúng</p>
+        <p className="cgr-score">{score.correct} / {Math.max(score.total, 1)} Cases Solved</p>
         <div className="cgr-actions">
-          {stars === 0 && <button className="cg-retry-btn" onClick={startGame}>🔄 Thử lại</button>}
+          {stars === 0 && <button className="cg-retry-btn" onClick={startGame}>🔄 Retry</button>}
           <button
             className="cg-continue-btn"
             onClick={() => onComplete && onComplete(stars, score)}
             disabled={stars === 0}
           >
-            {stars > 0 ? '→ Mở Cửa Hoàn Tất!' : '🔒 Cần ít nhất 1★'}
+            {stars > 0 ? '→ Continue' : '🔒 Need at least 1★'}
           </button>
         </div>
       </div>
@@ -209,10 +204,10 @@ export default function LexicalDetectiveGame({ vocabItems = [], onComplete, dura
             type="button"
             className="cg-help-trigger-btn"
             onClick={() => setShowHelp(true)}
-            title="Xem hướng dẫn chơi"
+            title="How to play"
           >
             <HelpCircle size={14} />
-            <span>Cách chơi</span>
+            <span>How to Play</span>
           </button>
           <span className="cg-q-count">{questionIndex + 1}/{questions.length}</span>
         </div>
@@ -222,8 +217,8 @@ export default function LexicalDetectiveGame({ vocabItems = [], onComplete, dura
       <div className="cg-detective-prompt">
         <span className="cg-detective-icon">🕵️‍♂️</span>
         <div>
-          <strong className="text-amber-300">Nhiệm vụ Thám Tử:</strong>
-          <span className="ml-1 text-slate-200">Tìm 1 từ KHÔNG CÙNG NHÓM với 3 từ còn lại!</span>
+          <strong className="text-amber-300">Detective Mission:</strong>
+          <span className="ml-1 text-slate-200">Find the 1 ODD WORD OUT that does NOT fit the group!</span>
         </div>
       </div>
 
@@ -247,7 +242,7 @@ export default function LexicalDetectiveGame({ vocabItems = [], onComplete, dura
             >
               <div className="cg-ooo-word">{card.word}</div>
               {revealed && card.isOdd && (
-                <div className="cg-ooo-badge">🎯 Từ lạc quẻ</div>
+                <div className="cg-ooo-badge">🎯 Odd One Out</div>
               )}
             </button>
           );
@@ -256,12 +251,10 @@ export default function LexicalDetectiveGame({ vocabItems = [], onComplete, dura
 
       {/* Feedback text */}
       {feedback === 'correct' && (
-        <div className="cg-feedback correct">✨ Xuất sắc! Bạn đã tìm đúng từ lạc quẻ!</div>
+        <div className="cg-feedback correct">✨ Excellent! You busted the imposter!</div>
       )}
       {feedback === 'wrong' && (
-        <div className="cg-feedback wrong">
-          ✗ Chưa chính xác. Từ lạc quẻ là từ được đánh dấu đỏ!
-        </div>
+        <div className="cg-feedback wrong">❌ That word belonged to the group. Keep looking!</div>
       )}
     </div>
   );

@@ -38,51 +38,50 @@ export function getChapterForWeek(weekNumber) {
 
 // ─── ROOM DOOR DEFINITIONS ────────────────────────────────────────────────────
 
-// ─── CHAMBER / ROOM METADATA ─────────────────────────────────────────────────
+// ─── CHAMBER / ROOM METADATA (100% ENGLISH IMMERSION) ────────────────────────
 
 export const CHAMBER_METADATA = [
-  { chamberName: 'Mật Thất Cổ Tự',    chamberEn: 'Chamber of Tales',  icon: '📜', zoneRef: 'Day 1' },
-  { chamberName: 'Phòng Luyện Kim',   chamberEn: 'Alchemy Lab',       icon: '⚗️', zoneRef: 'Day 2' },
-  { chamberName: 'Đấu Trường Sấm',   chamberEn: 'Thunder Arena',     icon: '⚡', zoneRef: 'Day 3' },
-  { chamberName: 'Thánh Điện Lò Rèn', chamberEn: 'Rune Sanctum',      icon: '⚒️', zoneRef: 'Day 4' },
-  { chamberName: 'Đỉnh Tháp Bão Tố',  chamberEn: 'Apex Spire',        icon: '🏰', zoneRef: 'Day 5' },
+  { chamberName: 'Chamber of Tales',  chamberEn: 'Story World Review',    icon: '📜', zoneRef: 'Day 1' },
+  { chamberName: 'Alchemy Lab',       chamberEn: 'Knowledge Lab Review',  icon: '⚗️', zoneRef: 'Day 2' },
+  { chamberName: 'Thunder Arena',     chamberEn: 'Battle Arena Review',   icon: '⚡', zoneRef: 'Day 3' },
+  { chamberName: 'Rune Sanctum',      chamberEn: 'Creator Studio Review', icon: '⚒️', zoneRef: 'Day 4' },
+  { chamberName: 'Apex Spire',        chamberEn: 'Boss Castle Review',    icon: '🏰', zoneRef: 'Day 5' },
 ];
 
 /**
  * 3 challenge doors per room.
- * Each room maps to 1 zone/day.
- * Door mini-game types rotate by dayIndex (0-4).
+ * 15 unique games across 5 floors.
  */
 export const DOOR_ROTATION = [
-  // dayIndex 0 (Day 1: Story World)
+  // Floor 1 (Day 1: Story World)
   [
-    { id: 'arcane_bubble', type: 'vocab',       duration: 60, label: 'Arcane Bubble Pop', gameNameVi: 'Bong Bóng Từ Vựng', icon: '🔮' },
-    { id: 'spell_train',   type: 'grammar',     duration: 90, label: 'Spell Sentence Train', gameNameVi: 'Đoàn Tàu Ngữ Pháp', icon: '🚂' },
-    { id: 'lexical_det',   type: 'integration', duration: 90, label: 'Lexical Detective', gameNameVi: 'Thám Tử Từ Vựng', icon: '🕵️‍♂️' },
+    { id: 'arcane_bubble', type: 'vocab',       duration: 60, label: 'Arcane Bubble Pop',     gameName: 'Arcane Bubble Pop',     icon: '🔮' },
+    { id: 'spell_train',   type: 'grammar',     duration: 90, label: 'Spell Sentence Train',   gameName: 'Spell Sentence Train',   icon: '🚂' },
+    { id: 'lexical_det',   type: 'integration', duration: 90, label: 'Lexical Detective',     gameName: 'Lexical Detective',     icon: '🕵️‍♂️' },
   ],
-  // dayIndex 1 (Day 2: Knowledge Lab)
+  // Floor 2 (Day 2: Knowledge Lab)
   [
-    { id: 'crystal_match', type: 'vocab',       duration: 75, label: 'Crystal Memory Match', gameNameVi: 'Lật Thẻ Tinh Thể', icon: '💎' },
-    { id: 'rune_forge',    type: 'grammar',     duration: 75, label: 'Rune Forge', gameNameVi: 'Lò Rèn Cổ Tự', icon: '⚒️' },
-    { id: 'ancient_scroll',type: 'integration', duration: 120, label: 'Ancient Scroll Fill', gameNameVi: 'Cuộn Giấy Cổ', icon: '📜' },
+    { id: 'crystal_match', type: 'vocab',       duration: 75, label: 'Crystal Memory Match',  gameName: 'Crystal Memory Match',  icon: '💎' },
+    { id: 'rune_forge',    type: 'grammar',     duration: 75, label: 'Rune Forge',            gameName: 'Rune Forge',            icon: '⚒️' },
+    { id: 'ancient_scroll',type: 'integration', duration: 120, label: 'Ancient Scroll Cloze', gameName: 'Ancient Scroll Cloze', icon: '📜' },
   ],
-  // dayIndex 2 (Day 3: Battle Arena)
+  // Floor 3 (Day 3: Battle Arena)
   [
-    { id: 'crystal_match', type: 'vocab',       duration: 75, label: 'Crystal Memory Match', gameNameVi: 'Lật Thẻ Tinh Thể', icon: '💎' },
-    { id: 'spell_train',   type: 'grammar',     duration: 90, label: 'Spell Sentence Train', gameNameVi: 'Đoàn Tàu Ngữ Pháp', icon: '🚂' },
-    { id: 'lexical_det',   type: 'integration', duration: 90, label: 'Lexical Detective', gameNameVi: 'Thám Tử Từ Vựng', icon: '🕵️‍♂️' },
+    { id: 'phonics_bubble',type: 'vocab',       duration: 60, label: 'Phonics Sound Blaster', gameName: 'Phonics Sound Blaster', icon: '🔊' },
+    { id: 'chunk_catapult',type: 'grammar',     duration: 75, label: 'Chunk Catapult Match',  gameName: 'Chunk Catapult Match',  icon: '🧩' },
+    { id: 'meteor_smasher',type: 'integration', duration: 90, label: 'Meteor Smasher',       gameName: 'Meteor Smasher',       icon: '🛸' },
   ],
-  // dayIndex 3 (Day 4: Creator Studio)
+  // Floor 4 (Day 4: Creator Studio)
   [
-    { id: 'arcane_bubble', type: 'vocab',       duration: 60, label: 'Arcane Bubble Pop', gameNameVi: 'Bong Bóng Từ Vựng', icon: '🔮' },
-    { id: 'rune_forge',    type: 'grammar',     duration: 75, label: 'Rune Forge', gameNameVi: 'Lò Rèn Cổ Tự', icon: '⚒️' },
-    { id: 'ancient_scroll',type: 'integration', duration: 120, label: 'Ancient Scroll Fill', gameNameVi: 'Cuộn Giấy Cổ', icon: '📜' },
+    { id: 'highway_runner',type: 'vocab',       duration: 60, label: 'Highway Word Runner',   gameName: 'Highway Word Runner',   icon: '🏎️' },
+    { id: 'spell_train_express',type:'grammar', duration: 90, label: 'Syntax Express 4-Car',  gameName: 'Syntax Express 4-Car',  icon: '🚆' },
+    { id: 'lexical_riddle',type: 'integration', duration: 90, label: 'Mystery Riddle Detective',gameName:'Mystery Riddle Detective',icon:'🔍' },
   ],
-  // dayIndex 4 (Day 5: Boss Castle — comprehensive)
+  // Floor 5 (Day 5: Boss Castle — comprehensive)
   [
-    { id: 'crystal_match', type: 'vocab',       duration: 75, label: 'Crystal Memory Match', gameNameVi: 'Lật Thẻ Tinh Thể', icon: '💎' },
-    { id: 'spell_train',   type: 'grammar',     duration: 90, label: 'Spell Sentence Train', gameNameVi: 'Đoàn Tàu Ngữ Pháp', icon: '🚂' },
-    { id: 'ancient_scroll',type: 'integration', duration: 120, label: 'Ancient Scroll Fill', gameNameVi: 'Cuộn Giấy Cổ', icon: '📜' },
+    { id: 'grand_matrix',  type: 'vocab',       duration: 90, label: 'Grand Master Matrix',   gameName: 'Grand Master Matrix',   icon: '👑' },
+    { id: 'titan_forge',   type: 'grammar',     duration: 90, label: 'Titan Grammar Forge',   gameName: 'Titan Grammar Forge',   icon: '⚡' },
+    { id: 'cambridge_cloze',type:'integration', duration: 120, label: 'Cambridge Cloze Gauntlet',gameName:'Cambridge Cloze Gauntlet',icon:'🏆' },
   ],
 ];
 
@@ -146,6 +145,8 @@ function loadState(uid = getActiveUserId()) {
     bossFragments: {},
     // Which chapter boss has been completed
     chapterBossCompleted: {},
+    // Fastest completion times per mini-game in seconds: { [gameId]: 24.5 }
+    personalBests: {},
   };
 
   if (typeof localStorage === 'undefined') return defaults;
@@ -169,6 +170,7 @@ function saveState(uid, state) {
       collectiblesFound:    state.collectiblesFound,
       bossFragments:        state.bossFragments,
       chapterBossCompleted: state.chapterBossCompleted,
+      personalBests:        state.personalBests || {},
     }));
   } catch (_) {}
 }
@@ -257,6 +259,28 @@ export const useChroniclesStore = create((set, get) => ({
       total += get().getRoomStars(weekId, d);
     }
     return total;
+  },
+
+  /**
+   * Record personal best completion time for a mini-game.
+   * Returns true if a new record was set.
+   */
+  recordPersonalBest: (gameId, timeTaken) => {
+    if (!gameId || typeof timeTaken !== 'number' || timeTaken <= 0) return false;
+    const state = get();
+    const currentPB = state.personalBests[gameId] || 9999;
+    const roundedTime = parseFloat(timeTaken.toFixed(1));
+    if (roundedTime < currentPB) {
+      const nextPB = { ...state.personalBests, [gameId]: roundedTime };
+      set({ personalBests: nextPB });
+      saveState(state.activeUserId, { ...state, personalBests: nextPB });
+      return true; // New record!
+    }
+    return false;
+  },
+
+  getPersonalBest: (gameId) => {
+    return get().personalBests[gameId] || null;
   },
 
   // ─── Room Clear ───────────────────────────────────────────────────────────

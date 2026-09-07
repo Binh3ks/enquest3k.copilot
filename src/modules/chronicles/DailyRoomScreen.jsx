@@ -27,6 +27,7 @@ import CrystalMemoryMatchGame  from './games/CrystalMemoryMatchGame';
 import RuneForgeGame           from './games/RuneForgeGame';
 import AncientScrollFillGame   from './games/AncientScrollFillGame';
 import CollectorPopup          from './CollectorPopup';
+import HallOfFameModal         from './HallOfFameModal';
 import './DailyRoomScreen.css';
 
 // ─── NPC Default Dialogue (fallback if none provided) ─────────────────────
@@ -44,9 +45,9 @@ const DEFAULT_NPC = {
 
 function DoorIcon({ doorIndex, status, stars, doorDef }) {
   const icons = ['🔵', '🟡', '🔴'];
-  const labels = ['Vocab Door', 'Grammar Door', 'Integration Door'];
+  const labels = ['VOCAB DOOR', 'GRAMMAR DOOR', 'INTEGRATION DOOR'];
   const gameIcon = doorDef?.icon || icons[doorIndex];
-  const gameName = doorDef?.gameNameVi || doorDef?.label || labels[doorIndex];
+  const gameName = doorDef?.gameName || doorDef?.label || labels[doorIndex];
   return (
     <div className={`dr-door-indicator ${status}`}>
       <div className="dr-door-icon">{gameIcon}</div>
@@ -94,6 +95,7 @@ export default function DailyRoomScreen({
   const [coinsEarned, setCoinsEarned] = useState(0);
   const [showCliffhanger, setShowCliffhanger] = useState(false);
   const [showCollector, setShowCollector] = useState(false);
+  const [showHallOfFame, setShowHallOfFame] = useState(false);
 
   const npc = npcDialogue || DEFAULT_NPC;
   const totalStars = doorStars.reduce((a, b) => a + b, 0);
@@ -188,17 +190,17 @@ export default function DailyRoomScreen({
     };
 
     switch (door.id) {
-      // ── Day 1 / Day 3-4 games ─────────────────────────────────────────
+      // ── Floor 1: Chamber of Tales ──────────────────────────────────────
       case 'arcane_bubble':
-        return <ArcaneBubbleGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+        return <ArcaneBubbleGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
 
       case 'spell_train':
-        return <SpellTrainGame grammarSentences={grammarSentences} duration={door.duration} {...commonProps} />;
+        return <SpellTrainGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
 
       case 'lexical_det':
         return <LexicalDetectiveGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
 
-      // ── Day 2 / Day 5 games ───────────────────────────────────────────
+      // ── Floor 2: Alchemy Lab ───────────────────────────────────────────
       case 'crystal_match':
         return <CrystalMemoryMatchGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
 
@@ -208,21 +210,40 @@ export default function DailyRoomScreen({
       case 'ancient_scroll':
         return <AncientScrollFillGame vocabItems={vocabItems} grammarSentences={grammarSentences} duration={door.duration} {...commonProps} />;
 
-      // ── Day 3 placeholder games (audio-based — Phase 4) ───────────────
-      case 'shadow_reveal':
-        // Fallback to ArcaneBubble until audio games ship
-        return <ArcaneBubbleGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+      // ── Floor 3: Thunder Arena ─────────────────────────────────────────
+      case 'phonics_bubble':
+        return <ArcaneBubbleGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
 
-      case 'echo_chamber':
-        return <SpellTrainGame grammarSentences={grammarSentences} duration={door.duration} {...commonProps} />;
+      case 'chunk_catapult':
+        return <SpellTrainGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
 
-      case 'sound_portal':
+      case 'meteor_smasher':
         return <LexicalDetectiveGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+
+      // ── Floor 4: Rune Sanctum ──────────────────────────────────────────
+      case 'highway_runner':
+        return <CrystalMemoryMatchGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+
+      case 'spell_train_express':
+        return <SpellTrainGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
+
+      case 'lexical_riddle':
+        return <LexicalDetectiveGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+
+      // ── Floor 5: Apex Spire ────────────────────────────────────────────
+      case 'grand_matrix':
+        return <CrystalMemoryMatchGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+
+      case 'titan_forge':
+        return <RuneForgeGame grammarSentences={grammarSentences} duration={door.duration} {...commonProps} />;
+
+      case 'cambridge_cloze':
+        return <AncientScrollFillGame vocabItems={vocabItems} grammarSentences={grammarSentences} duration={door.duration} {...commonProps} />;
 
       // ── Fallback by legacy door.type ──────────────────────────────────
       default:
-        if (door.type === 'vocab')       return <ArcaneBubbleGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
-        if (door.type === 'grammar')     return <SpellTrainGame grammarSentences={grammarSentences} duration={door.duration} {...commonProps} />;
+        if (door.type === 'vocab')       return <ArcaneBubbleGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
+        if (door.type === 'grammar')     return <SpellTrainGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
         if (door.type === 'integration') return <LexicalDetectiveGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
         return null;
     }
@@ -242,12 +263,12 @@ export default function DailyRoomScreen({
       <div className={`daily-room-screen ${themeClass}`}>
         <div className="dr-game-header">
           <button className="dr-back-btn" onClick={() => { setPhase('map'); setActiveDoor(null); }}>
-            ← Phòng
+            ← Chamber
           </button>
           <span className="dr-game-label">
-            {doorDefs[activeDoor]?.icon} {doorDefs[activeDoor]?.gameNameVi || ['🔵 Vocab Door', '🟡 Grammar Door', '🔴 Integration Door'][activeDoor]}
+            {doorDefs[activeDoor]?.icon} {doorDefs[activeDoor]?.gameName || ['🔵 Vocab Door', '🟡 Grammar Door', '🔴 Integration Door'][activeDoor]}
           </span>
-          <span className="dr-day-badge">Day {dayIndex + 1}</span>
+          <span className="dr-day-badge">Floor {dayIndex + 1}</span>
         </div>
         <div className="dr-game-area">
           {renderActiveGame()}
@@ -301,7 +322,7 @@ export default function DailyRoomScreen({
               <span key={n} className={`dr-clear-star ${n <= totalStars ? 'earned' : ''}`}>★</span>
             ))}
           </div>
-          <h2 className="dr-clear-title">🏆 Room Cleared!</h2>
+          <h2 className="dr-clear-title">🏆 Chamber Cleared!</h2>
           <div className="dr-clear-stats">
             <div className="dr-stat">
               <span className="dr-stat-label">Stars</span>
@@ -336,16 +357,33 @@ export default function DailyRoomScreen({
     <div className={`daily-room-screen ${themeClass}`}>
       {/* Header */}
       <div className="dr-header">
-        <button className="dr-exit-btn" onClick={onExit}>← Bản đồ</button>
+        <button className="dr-exit-btn" onClick={onExit}>← World Map</button>
         <div className="dr-room-title-block">
           <h2 className="dr-room-title">
-            {CHAMBER_METADATA[dayIndex]?.icon} Tầng {dayIndex + 1}: {CHAMBER_METADATA[dayIndex]?.chamberName}
+            {CHAMBER_METADATA[dayIndex]?.icon} Floor {dayIndex + 1}: {CHAMBER_METADATA[dayIndex]?.chamberName}
           </h2>
           <span className="dr-room-sub-title">
-            {CHAMBER_METADATA[dayIndex]?.chamberEn} • (Ôn tập {CHAMBER_METADATA[dayIndex]?.zoneRef})
+            {CHAMBER_METADATA[dayIndex]?.chamberEn} • ({CHAMBER_METADATA[dayIndex]?.zoneRef})
           </span>
         </div>
-        <div className="dr-pp-badge">⚡ {totalStars * 10} PP</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <button
+            onClick={() => setShowHallOfFame(true)}
+            style={{
+              padding: '6px 12px',
+              borderRadius: '8px',
+              background: 'rgba(245, 158, 11, 0.2)',
+              border: '1px solid rgba(245, 158, 11, 0.4)',
+              color: '#fcd34d',
+              fontWeight: 800,
+              fontSize: '12px',
+              cursor: 'pointer',
+            }}
+          >
+            🏆 Hall of Fame
+          </button>
+          <div className="dr-pp-badge">⚡ {totalStars * 10} PP</div>
+        </div>
       </div>
 
       {/* Lexio walks the room */}
@@ -372,9 +410,9 @@ export default function DailyRoomScreen({
       <div className="dr-instruction-banner">
         <div className="dr-ib-icon">🦊</div>
         <div className="dr-ib-text">
-          <div className="dr-ib-title">Khám phá 3 cánh cửa với 3 thể loại game khác nhau:</div>
+          <div className="dr-ib-title">Discover 3 distinct challenge doors on this floor:</div>
           <div className="dr-ib-sub">
-            🔵 Cửa 1: {doorDefs[0]?.gameNameVi} • 🟡 Cửa 2: {doorDefs[1]?.gameNameVi} • 🔴 Cửa 3: {doorDefs[2]?.gameNameVi}
+            🔵 Door 1: {doorDefs[0]?.gameName} • 🟡 Door 2: {doorDefs[1]?.gameName} • 🔴 Door 3: {doorDefs[2]?.gameName}
           </div>
         </div>
       </div>
@@ -390,8 +428,8 @@ export default function DailyRoomScreen({
                 className={`dr-door-enter-btn ${status}`}
                 onClick={() => enterDoor(idx)}
               >
-                {status === 'active' && '⚡ Vào thử thách'}
-                {status === 'cleared' && '↺ Chơi lại'}
+                {status === 'active' && '⚡ Enter Challenge'}
+                {status === 'cleared' && '↺ Replay'}
               </button>
             </div>
           );
@@ -400,8 +438,14 @@ export default function DailyRoomScreen({
 
       {/* Room description */}
       <div className="dr-room-desc">
-        <p>Vượt qua cả 3 cánh cửa thử thách để gặp NPC và hoàn thành tầng tháp này!</p>
+        <p>Clear all 3 challenge doors to meet the Chamber Guardian and complete this floor!</p>
       </div>
+
+      {/* Hall of Fame Modal */}
+      <HallOfFameModal
+        isOpen={showHallOfFame}
+        onClose={() => setShowHallOfFame(false)}
+      />
     </div>
   );
 }
