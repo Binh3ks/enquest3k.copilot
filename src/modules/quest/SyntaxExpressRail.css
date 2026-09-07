@@ -1,0 +1,232 @@
+/* SyntaxExpressRail.css — High-Speed Canyon Rail Theme */
+
+.syntax-rail-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  background: radial-gradient(ellipse at 50% 100%, #1e122b 0%, #0d0714 60%, #050208 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* Objective Banner */
+.syntax-rail-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(22, 14, 34, 0.92);
+  border: 2px solid rgba(168, 85, 247, 0.4);
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(168, 85, 247, 0.2);
+  backdrop-filter: blur(8px);
+  max-width: 90%;
+}
+
+.syntax-banner-icon {
+  color: #c084fc;
+}
+
+.syntax-sentence-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.syntax-stem-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f3e8ff;
+}
+
+.syntax-blank-highlight {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #facc15;
+  background: rgba(250, 204, 21, 0.15);
+  border: 1px dashed #facc15;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.train-gauge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #d8b4fe;
+}
+
+.train-gauge-bar {
+  width: 80px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.train-gauge-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #a855f7 0%, #ec4899 100%);
+  transition: width 0.2s linear;
+}
+
+/* Feedback Toast */
+.syntax-feedback-toast {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  animation: bounce-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.syntax-feedback-toast.feedback-correct {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #fff;
+  border: 1px solid #4ade80;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.syntax-feedback-toast.feedback-wrong {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: 1px solid #f87171;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+/* Viewport */
+.syntax-rail-viewport {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Distant Train */
+.distant-express-train {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 2.2rem;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 12px rgba(192, 132, 252, 0.6));
+  transition: transform 0.2s linear;
+}
+
+.train-steam {
+  font-size: 1.4rem;
+  animation: steam-puff 1s infinite alternate;
+}
+
+@keyframes steam-puff {
+  0% { opacity: 0.4; transform: translateY(0) scale(0.8); }
+  100% { opacity: 0.9; transform: translateY(-8px) scale(1.2); }
+}
+
+/* Platforms */
+.rail-platform {
+  position: absolute;
+  z-index: 5;
+}
+
+.rail-ground {
+  background: linear-gradient(180deg, #2e1065 0%, #170b2c 100%);
+  border-top: 3px solid #c084fc;
+  box-shadow: 0 -4px 15px rgba(192, 132, 252, 0.3);
+}
+
+.rail-gantry {
+  background: linear-gradient(180deg, #3b0764 0%, #1e1b4b 100%);
+  border-top: 3px solid #e879f9;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Switch Levers */
+.rail-switch-entity {
+  position: absolute;
+  width: 150px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.rail-switch-entity:hover {
+  transform: translateY(-4px);
+}
+
+.rail-clause-plaque {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: #f5f3ff;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: 2px solid #ddd6fe;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rail-lever-arm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.lever-icon {
+  font-size: 1.8rem;
+}
+
+.lever-hint {
+  font-size: 0.65rem;
+  font-weight: 900;
+  background: #eab308;
+  color: #422006;
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+/* Modals */
+.syntax-cleared-modal,
+.syntax-ko-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: rgba(8, 4, 14, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

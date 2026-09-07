@@ -1,0 +1,203 @@
+/* RiddleRunMaze.css — Ancient Labyrinth Maze Theme */
+
+.riddle-maze-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  background: radial-gradient(ellipse at 50% 100%, #1c1917 0%, #0c0a09 60%, #040303 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* Objective Banner */
+.riddle-maze-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(28, 25, 23, 0.92);
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(245, 158, 11, 0.2);
+  backdrop-filter: blur(8px);
+  max-width: 90%;
+}
+
+.riddle-banner-icon {
+  color: #f59e0b;
+}
+
+.riddle-prompt-box {
+  display: flex;
+  align-items: center;
+}
+
+.riddle-prompt-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fef3c7;
+  font-style: italic;
+  letter-spacing: 0.2px;
+}
+
+.riddle-round-chip {
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+/* Feedback Toast */
+.riddle-feedback-toast {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  animation: bounce-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.riddle-feedback-toast.feedback-correct {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #fff;
+  border: 1px solid #4ade80;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.riddle-feedback-toast.feedback-wrong {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: 1px solid #f87171;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+/* Maze Viewport */
+.riddle-maze-viewport {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Platforms */
+.maze-platform {
+  position: absolute;
+  z-index: 5;
+}
+
+.maze-ground {
+  background: linear-gradient(180deg, #292524 0%, #1c1917 100%);
+  border-top: 3px solid #78716c;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.maze-tier {
+  background: linear-gradient(180deg, #44403c 0%, #292524 100%);
+  border-top: 3px solid #a8a29e;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Vault Doors */
+.vault-door-entity {
+  position: absolute;
+  width: 120px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.vault-door-entity:hover {
+  transform: translateY(-4px);
+}
+
+.vault-door-plaque {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #fffbeb;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 3px 12px;
+  border-radius: 10px;
+  border: 2px solid #fef3c7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+}
+
+.vault-door-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.door-arch {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.6));
+}
+
+.door-prompt {
+  font-size: 0.65rem;
+  font-weight: 900;
+  background: #f59e0b;
+  color: #1c1917;
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+/* Chaser Beast */
+.chaser-beast-sprite {
+  position: absolute;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.8));
+}
+
+.beast-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: #dc2626;
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+/* Modals */
+.riddle-cleared-modal,
+.riddle-ko-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: rgba(12, 10, 9, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

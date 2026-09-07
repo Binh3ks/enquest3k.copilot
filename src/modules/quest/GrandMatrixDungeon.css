@@ -1,0 +1,228 @@
+/* GrandMatrixDungeon.css — Apex Spire Celestial Cyber Matrix Theme */
+
+.matrix-dungeon-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  background: radial-gradient(ellipse at 50% 10%, #0c1a30 0%, #060e1c 60%, #02050b 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* Objective Banner */
+.matrix-dungeon-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(8, 20, 40, 0.92);
+  border: 2px solid rgba(56, 189, 248, 0.4);
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(56, 189, 248, 0.2);
+  backdrop-filter: blur(8px);
+  max-width: 90%;
+}
+
+.matrix-banner-icon {
+  color: #38bdf8;
+}
+
+.matrix-def-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.matrix-def-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #7dd3fc;
+}
+
+.matrix-def-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f0f9ff;
+  font-style: italic;
+}
+
+.matrix-round-chip {
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: rgba(56, 189, 248, 0.2);
+  color: #bae6fd;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+/* Feedback Toast */
+.matrix-feedback-toast {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  animation: bounce-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.matrix-feedback-toast.feedback-correct {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #fff;
+  border: 1px solid #4ade80;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.matrix-feedback-toast.feedback-wrong {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: 1px solid #f87171;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+/* Matrix Viewport */
+.matrix-arena-viewport {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.matrix-grid-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* Platforms */
+.matrix-platform {
+  position: absolute;
+  z-index: 5;
+}
+
+.matrix-floor {
+  background: linear-gradient(180deg, #0f274a 0%, #09172c 100%);
+  border-top: 3px solid #38bdf8;
+  box-shadow: 0 -4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.matrix-node-beam {
+  background: linear-gradient(180deg, #173866 0%, #0c203b 100%);
+  border-top: 3px solid #60a5fa;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.matrix-apex {
+  background: linear-gradient(180deg, #1e40af 0%, #172554 100%);
+  border-top: 3px solid #93c5fd;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(147, 197, 253, 0.5);
+}
+
+/* Glyph Nodes */
+.matrix-glyph-entity {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.15s ease;
+}
+
+.matrix-glyph-entity:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.glyph-core-ring {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  border: 2px solid #7dd3fc;
+  border-radius: 12px;
+  padding: 4px 12px;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+  animation: glyph-glow 2s infinite alternate ease-in-out;
+}
+
+@keyframes glyph-glow {
+  0% { box-shadow: 0 0 10px rgba(56, 189, 248, 0.4); }
+  100% { box-shadow: 0 0 22px rgba(56, 189, 248, 0.9); }
+}
+
+.glyph-text {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #f0f9ff;
+  letter-spacing: 0.5px;
+}
+
+.glyph-prompt {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: #38bdf8;
+  color: #0c203b;
+  padding: 1px 6px;
+  border-radius: 6px;
+  margin-top: 2px;
+}
+
+/* Glitch Sentinel */
+.glitch-sentinel-sprite {
+  position: absolute;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  filter: drop-shadow(0 0 12px rgba(244, 63, 94, 0.8));
+  animation: glitch-flicker 0.2s infinite alternate;
+}
+
+@keyframes glitch-flicker {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px) skewX(2deg); }
+}
+
+.sentinel-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: #e11d48;
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+/* Modals */
+.matrix-cleared-modal,
+.matrix-ko-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: rgba(2, 5, 11, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

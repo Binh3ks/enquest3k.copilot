@@ -36,3 +36,14 @@ export { default as EchoArenaShooter }      from './EchoArenaShooter';
 export { default as CatapultCommander }     from './CatapultCommander';
 export { default as StormShieldDefense }    from './StormShieldDefense';
 
+// Floor 4 Games (Sprint 4)
+export { default as HighwaySprint }         from './HighwaySprint';
+export { default as SyntaxExpressRail }     from './SyntaxExpressRail';
+export { default as RiddleRunMaze }         from './RiddleRunMaze';
+
+// Floor 5 Games (Sprint 4)
+export { default as GrandMatrixDungeon }    from './GrandMatrixDungeon';
+export { default as TitanGrammarForge }     from './TitanGrammarForge';
+export { default as CambridgeClozeGauntlet } from './CambridgeClozeGauntlet';
+
+

@@ -1,9 +1,9 @@
 {
-  "commit": "7735f3274d374d857482e4e336e0070d1cbe4dca",
-  "git_commit": "7735f3274d374d857482e4e336e0070d1cbe4dca",
-  "shortCommit": "7735f327",
-  "message": "feat(quest): Sprint 2 — Floor 1 mini-games refactor (BubbleStormChase, WordWagonJump, ShadowVaultInfiltrate)",
-  "builtAt": "2026-09-07T09:52:28.629Z",
-  "build_timestamp": "2026-09-07T09:52:28.629Z",
+  "commit": "7b11d26a82d8d6cbc320a5da361588f712d9ce9c",
+  "git_commit": "7b11d26a82d8d6cbc320a5da361588f712d9ce9c",
+  "shortCommit": "7b11d26a",
+  "message": "feat(quest): Sprint 3 — Floor 2 & 3 mini-games refactor (6 games)",
+  "builtAt": "2026-09-07T11:04:48.455Z",
+  "build_timestamp": "2026-09-07T11:04:48.455Z",
   "env": "production"
 }

@@ -17,6 +17,13 @@ import ScrollChamberDecode from './ScrollChamberDecode';
 import EchoArenaShooter from './EchoArenaShooter';
 import CatapultCommander from './CatapultCommander';
 import StormShieldDefense from './StormShieldDefense';
+import HighwaySprint from './HighwaySprint';
+import SyntaxExpressRail from './SyntaxExpressRail';
+import RiddleRunMaze from './RiddleRunMaze';
+import GrandMatrixDungeon from './GrandMatrixDungeon';
+import TitanGrammarForge from './TitanGrammarForge';
+import CambridgeClozeGauntlet from './CambridgeClozeGauntlet';
+
 
 const DEMO_VOCAB = [
   { word: 'laboratory', definition: 'A special room for scientific experiments' },
@@ -87,6 +94,12 @@ export default function QuestDemoScreen() {
           <option value="echo_arena">Floor 3 Door 1: Echo Arena Shooter</option>
           <option value="catapult_commander">Floor 3 Door 2: Catapult Commander</option>
           <option value="storm_shield">Floor 3 Door 3: Storm Shield Defense</option>
+          <option value="highway_sprint">Floor 4 Door 1: Highway Sprint</option>
+          <option value="syntax_express">Floor 4 Door 2: Syntax Express Rail</option>
+          <option value="riddle_maze">Floor 4 Door 3: Riddle Run Maze</option>
+          <option value="grand_matrix">Floor 5 Door 1: Grand Matrix Dungeon</option>
+          <option value="titan_forge">Floor 5 Door 2: Titan Grammar Forge</option>
+          <option value="cambridge_cloze">Floor 5 Door 3: Cambridge Cloze Gauntlet</option>
         </select>
 
         {activeGame === 'dungeon' && (
@@ -206,6 +219,58 @@ export default function QuestDemoScreen() {
         {activeGame === 'storm_shield' && (
           <StormShieldDefense
             duration={90}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'highway_sprint' && (
+          <HighwaySprint
+            vocabItems={DEMO_VOCAB}
+            duration={90}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'syntax_express' && (
+          <SyntaxExpressRail
+            grammarSentences={DEMO_SENTENCES}
+            duration={90}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'riddle_maze' && (
+          <RiddleRunMaze
+            duration={90}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'grand_matrix' && (
+          <GrandMatrixDungeon
+            vocabItems={DEMO_VOCAB}
+            duration={180}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'titan_forge' && (
+          <TitanGrammarForge
+            grammarSentences={DEMO_SENTENCES}
+            duration={90}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'cambridge_cloze' && (
+          <CambridgeClozeGauntlet
+            duration={120}
             weekNumber={33}
             onComplete={(stars, score) => setCompleteResult({ stars, score })}
           />

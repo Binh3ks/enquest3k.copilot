@@ -1,0 +1,261 @@
+/* TitanGrammarForge.css — Mechanical Clockwork Titan Theme */
+
+.titan-forge-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  background: radial-gradient(ellipse at 50% 100%, #291b0f 0%, #150d07 60%, #080502 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* Objective Banner */
+.titan-forge-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(30, 20, 12, 0.92);
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(245, 158, 11, 0.2);
+  backdrop-filter: blur(8px);
+  max-width: 90%;
+}
+
+.titan-banner-icon {
+  color: #f59e0b;
+  animation: cog-spin 6s infinite linear;
+}
+
+@keyframes cog-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.titan-sentence-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.titan-stem-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fef3c7;
+}
+
+.titan-blank-highlight {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #f97316;
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px dashed #f97316;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.titan-round-chip {
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+/* Feedback Toast */
+.titan-feedback-toast {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  animation: bounce-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.titan-feedback-toast.feedback-correct {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #fff;
+  border: 1px solid #4ade80;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.titan-feedback-toast.feedback-wrong {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: 1px solid #f87171;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+/* Viewport */
+.titan-forge-viewport {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Giant Background Gears */
+.background-titan-gears {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.giant-gear {
+  position: absolute;
+  font-size: 8rem;
+  opacity: 0.12;
+  animation: giant-cog-rotate 20s infinite linear;
+}
+
+.gear-left {
+  top: 80px;
+  left: 60px;
+}
+
+.gear-right {
+  top: 60px;
+  right: 60px;
+  animation-direction: reverse;
+}
+
+@keyframes giant-cog-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Platforms */
+.titan-platform {
+  position: absolute;
+  z-index: 5;
+}
+
+.titan-ground {
+  background: linear-gradient(180deg, #382415 0%, #1f140b 100%);
+  border-top: 3px solid #b45309;
+  box-shadow: 0 -4px 15px rgba(180, 83, 9, 0.3);
+}
+
+.titan-cog-deck {
+  background: linear-gradient(180deg, #452b19 0%, #291a0f 100%);
+  border-top: 3px solid #d97706;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.titan-heart-deck {
+  background: linear-gradient(180deg, #78350f 0%, #451a03 100%);
+  border-top: 3px solid #f59e0b;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+/* Steam Vent Hazard */
+.steam-vent-entity {
+  position: absolute;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 8;
+}
+
+.steam-blast {
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: #fff;
+  background: rgba(239, 68, 68, 0.7);
+  padding: 4px 10px;
+  border-radius: 8px;
+  animation: steam-erupt 0.4s infinite alternate;
+}
+
+@keyframes steam-erupt {
+  0% { transform: translateY(0) scale(0.9); opacity: 0.7; }
+  100% { transform: translateY(-12px) scale(1.15); opacity: 1; }
+}
+
+/* Gear Cogs */
+.titan-gear-entity {
+  position: absolute;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.15s ease;
+}
+
+.titan-gear-entity:hover {
+  transform: translateY(-4px);
+}
+
+.titan-clause-plaque {
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+  color: #fffbeb;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: 2px solid #fef3c7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.titan-cog-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.cog-symbol {
+  font-size: 1.8rem;
+}
+
+.cog-prompt {
+  font-size: 0.65rem;
+  font-weight: 900;
+  background: #f59e0b;
+  color: #1c1917;
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+/* Modals */
+.titan-cleared-modal,
+.titan-ko-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: rgba(14, 9, 4, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

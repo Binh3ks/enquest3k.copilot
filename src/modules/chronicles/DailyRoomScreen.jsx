@@ -27,7 +27,10 @@ import {
   BubbleStormChase, WordWagonJump, ShadowVaultInfiltrate,
   PotionFlipDungeon, AnvilRushGrammar, ScrollChamberDecode,
   EchoArenaShooter, CatapultCommander, StormShieldDefense,
+  HighwaySprint, SyntaxExpressRail, RiddleRunMaze,
+  GrandMatrixDungeon, TitanGrammarForge, CambridgeClozeGauntlet,
 } from '../quest';
+
 
 import CollectorPopup          from './CollectorPopup';
 import HallOfFameModal         from './HallOfFameModal';
@@ -270,23 +273,24 @@ export default function DailyRoomScreen({
 
       // ── Floor 4: Rune Sanctum ──────────────────────────────────────────
       case 'highway_runner':
-        return <HighwayRunnerGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
+        return <HighwaySprint vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'spell_train_express':
-        return <SyntaxExpressGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
+        return <SyntaxExpressRail grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'lexical_riddle':
-        return <RiddleDetectiveGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
+        return <RiddleRunMaze duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       // ── Floor 5: Apex Spire ────────────────────────────────────────────
       case 'grand_matrix':
-        return <GrandMasterMatrixGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
+        return <GrandMatrixDungeon vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'titan_forge':
-        return <TitanForgeGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
+        return <TitanGrammarForge grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'cambridge_cloze':
-        return <CambridgeClozeGame vocabItems={vocabItems} grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
+        return <CambridgeClozeGauntlet duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
+
 
       // ── Fallback by legacy door.type ──────────────────────────────────
       default:
