@@ -1,9 +1,9 @@
 {
-  "commit": "996eb1dcf635195d655fd8d19a5cc3e88be778b4",
-  "git_commit": "996eb1dcf635195d655fd8d19a5cc3e88be778b4",
-  "shortCommit": "996eb1dc",
-  "message": "fix(chronicles): Sprint 0 — fix 5 bugs B1-B5 before Leo physics refactor",
-  "builtAt": "2026-09-07T08:58:11.647Z",
-  "build_timestamp": "2026-09-07T08:58:11.648Z",
+  "commit": "f8daae7ebec2f186174020f44641b3a1ee5a76b8",
+  "git_commit": "f8daae7ebec2f186174020f44641b3a1ee5a76b8",
+  "shortCommit": "f8daae7e",
+  "message": "feat(quest): Sprint 1 — Leo physics foundation (8 components)",
+  "builtAt": "2026-09-07T09:10:20.752Z",
+  "build_timestamp": "2026-09-07T09:10:20.752Z",
   "env": "production"
 }
