@@ -51,11 +51,11 @@ export function getBossType(weekNumber) {
 // ─── CHAMBER / ROOM METADATA (100% ENGLISH IMMERSION) ────────────────────────
 
 export const CHAMBER_METADATA = [
-  { chamberName: 'Chamber of Tales',  chamberEn: 'Story World Review',    icon: '📜', zoneRef: 'Day 1' },
-  { chamberName: 'Alchemy Lab',       chamberEn: 'Knowledge Lab Review',  icon: '⚗️', zoneRef: 'Day 2' },
-  { chamberName: 'Thunder Arena',     chamberEn: 'Battle Arena Review',   icon: '⚡', zoneRef: 'Day 3' },
-  { chamberName: 'Rune Sanctum',      chamberEn: 'Creator Studio Review', icon: '⚒️', zoneRef: 'Day 4' },
-  { chamberName: 'Apex Spire',        chamberEn: 'Boss Castle Review',    icon: '🏰', zoneRef: 'Day 5' },
+  { chamberName: 'Chamber of Tales',  chamberEn: 'Story World',    icon: '📜', zoneRef: 'Day 1' },
+  { chamberName: 'Alchemy Lab',       chamberEn: 'Knowledge Lab',  icon: '⚗️', zoneRef: 'Day 2' },
+  { chamberName: 'Thunder Arena',     chamberEn: 'Battle Arena',   icon: '⚡', zoneRef: 'Day 3' },
+  { chamberName: 'Rune Sanctum',      chamberEn: 'Creator Studio', icon: '⚒️', zoneRef: 'Day 4' },
+  { chamberName: 'Apex Spire',        chamberEn: 'Boss Castle',    icon: '🏰', zoneRef: 'Day 5' },
 ];
 
 /**
@@ -89,7 +89,7 @@ export const DOOR_ROTATION = [
   ],
   // Floor 5 (Day 5: Boss Castle — comprehensive)
   [
-    { id: 'grand_matrix',  type: 'vocab',       duration: 90, label: 'Grand Master Matrix',   gameName: 'Grand Master Matrix',   icon: '👑' },
+    { id: 'grand_matrix',  type: 'vocab',       duration: 180, label: 'Grand Master Matrix',   gameName: 'Grand Master Matrix',   icon: '👑' },
     { id: 'titan_forge',   type: 'grammar',     duration: 90, label: 'Titan Grammar Forge',   gameName: 'Titan Grammar Forge',   icon: '⚡' },
     { id: 'cambridge_cloze',type:'integration', duration: 120, label: 'Cambridge Cloze Gauntlet',gameName:'Cambridge Cloze Gauntlet',icon:'🏆' },
   ],

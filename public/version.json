@@ -1,9 +1,9 @@
 {
-  "commit": "8a682baa9f9fd5bc844dbe9fea7c371a52a581bd",
-  "git_commit": "8a682baa9f9fd5bc844dbe9fea7c371a52a581bd",
-  "shortCommit": "8a682baa",
-  "message": "feat(chronicles): complete phases A-G with 15 mini-games, boss battle variety, gamification layer, and automated audits",
-  "builtAt": "2026-09-07T06:23:51.535Z",
-  "build_timestamp": "2026-09-07T06:23:51.535Z",
+  "commit": "852472f8f3e2c10e8eba486e6dc0e0f354aee0be",
+  "git_commit": "852472f8f3e2c10e8eba486e6dc0e0f354aee0be",
+  "shortCommit": "852472f8",
+  "message": "feat(chronicles): enable owner and test bypass for all floors and boss battle in world map",
+  "builtAt": "2026-09-07T08:47:43.098Z",
+  "build_timestamp": "2026-09-07T08:47:43.099Z",
   "env": "production"
 }

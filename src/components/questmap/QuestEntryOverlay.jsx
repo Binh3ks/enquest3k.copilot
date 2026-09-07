@@ -29,11 +29,11 @@ export default function QuestEntryOverlay({ taskId, taskLabel, weekId, onDismiss
   const lore = QUEST_LORE[taskId] || DEFAULT_LORE;
 
   useEffect(() => {
-    // Auto-dismiss after 1500ms
+    // Auto-dismiss after 4000ms — long enough for students to read the overlay
     const timer = setTimeout(() => {
       setVisible(false);
       setTimeout(onDismiss, 300); // Wait for fade-out animation
-    }, 1500);
+    }, 4000);
     return () => clearTimeout(timer);
   }, [onDismiss]);
 

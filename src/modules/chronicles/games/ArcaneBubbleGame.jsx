@@ -292,7 +292,7 @@ export default function ArcaneBubbleGame({
 
       {/* ── Main Gameplay Screen ── */}
       {phase === 'playing' && (
-        <div className="flex-1 flex flex-col justify-between p-4 relative overflow-hidden">
+        <div className="flex-1 flex flex-col p-4 overflow-hidden">
           {/* Glowing Spellbook Target Card */}
           <div className="z-10 max-w-lg mx-auto w-full bg-gradient-to-r from-indigo-950/90 via-slate-900/90 to-purple-950/90 border-2 border-indigo-500/50 rounded-2xl p-4 shadow-xl shadow-indigo-500/15 backdrop-blur flex items-center justify-between">
             <div className="min-w-0 pr-3">
@@ -322,7 +322,7 @@ export default function ArcaneBubbleGame({
           </div>
 
           {/* Floating Crystal Bubbles Canvas */}
-          <div className="absolute inset-0 pointer-events-auto">
+          <div className="flex-1 relative overflow-hidden pointer-events-auto mt-3">
             {bubbles.map((b) => (
               <button
                 key={b.id}

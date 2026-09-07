@@ -190,6 +190,22 @@ export default function DailyRoomScreen({
     setPhase(`door_${idx}`);
   };
 
+  // ── Safe exit: reset phase state before navigating away (B3 fix) ──────────
+
+  const handleExit = () => {
+    // Guard: only navigate out from a stable phase (map or cleared)
+    // If called during door/npc phase, reset to map first then exit
+    if (phase.startsWith('door_')) {
+      setPhase('map');
+      setActiveDoor(null);
+      // Small delay to avoid React state-flush race before unmount
+      setTimeout(() => { onExit && onExit(); }, 50);
+    } else {
+      onExit && onExit();
+    }
+  };
+
+
   // ── Render active mini-game ────────────────────────────────────────────────
 
   const renderActiveGame = () => {
@@ -375,7 +391,7 @@ export default function DailyRoomScreen({
     <div className={`daily-room-screen ${themeClass}`}>
       {/* Header */}
       <div className="dr-header">
-        <button className="dr-exit-btn" onClick={onExit}>← World Map</button>
+        <button className="dr-exit-btn" onClick={handleExit}>← World Map</button>
         <div className="dr-room-title-block">
           <h2 className="dr-room-title">
             {CHAMBER_METADATA[dayIndex]?.icon} Floor {dayIndex + 1}: {CHAMBER_METADATA[dayIndex]?.chamberName}
