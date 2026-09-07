@@ -1,9 +1,9 @@
 {
-  "commit": "308b198f4179b2879eb0602b9c12164077c6d7a4",
-  "git_commit": "308b198f4179b2879eb0602b9c12164077c6d7a4",
-  "shortCommit": "308b198f",
-  "message": "docs: save session handoff for chronicles mini-games overhaul",
-  "builtAt": "2026-09-07T05:20:55.988Z",
-  "build_timestamp": "2026-09-07T05:20:55.988Z",
+  "commit": "8a682baa9f9fd5bc844dbe9fea7c371a52a581bd",
+  "git_commit": "8a682baa9f9fd5bc844dbe9fea7c371a52a581bd",
+  "shortCommit": "8a682baa",
+  "message": "feat(chronicles): complete phases A-G with 15 mini-games, boss battle variety, gamification layer, and automated audits",
+  "builtAt": "2026-09-07T06:23:51.535Z",
+  "build_timestamp": "2026-09-07T06:23:51.535Z",
   "env": "production"
 }

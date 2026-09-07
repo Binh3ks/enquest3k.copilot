@@ -14,6 +14,7 @@ import useChroniclesStore, {
   CHAMBER_METADATA,
 } from '../../stores/useChroniclesStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
+import { useUserStore } from '../../stores/useUserStore';
 import MascotShopPanel from './MascotShopPanel';
 import ChapterFragmentPanel from './ChapterFragmentPanel';
 import HallOfFameModal from './HallOfFameModal';
@@ -56,23 +57,29 @@ function RoomNode({ dayIndex, weekNumber, isUnlocked, isCompleted, totalStars, o
 
 // ─── Boss Chamber Node ─────────────────────────────────────────────────────
 
-function BossChamberNode({ weekNumber, tier, weeklyPP, isBossDefeated, onClick }) {
-  const isUnlocked = tier !== 'none';
+function BossChamberNode({ weekNumber, tier, weeklyPP, isBossDefeated, isOwnerBypass, onClick }) {
+  const isUnlocked = isOwnerBypass || tier !== 'none';
+  const effectiveTier = (isOwnerBypass && tier === 'none') ? 'gold' : tier;
   const tierColors = { none: '#6b7280', bronze: '#b45309', silver: '#6b7280', gold: '#d97706' };
-  const tierLabels = { none: '🔒 Need 150⚡', bronze: '🥉 Bronze', silver: '🥈 Silver', gold: '🥇 Gold' };
+  const tierLabels = {
+    none: isOwnerBypass ? '👑 Test Access (Gold)' : '🔒 Need 150⚡',
+    bronze: '🥉 Bronze',
+    silver: '🥈 Silver',
+    gold: isOwnerBypass && tier === 'none' ? '👑 Test Access (Gold)' : '🥇 Gold',
+  };
 
   return (
     <button
       className={`cwm-boss-node ${isUnlocked ? 'unlocked' : 'locked'} ${isBossDefeated ? 'defeated' : ''}`}
-      onClick={() => isUnlocked && onClick()}
+      onClick={() => isUnlocked && onClick(effectiveTier)}
       disabled={!isUnlocked}
-      style={{ '--tier-color': tierColors[tier] }}
+      style={{ '--tier-color': tierColors[effectiveTier] }}
     >
       <div className="cwm-boss-icon">👾</div>
       <div className="cwm-boss-label">Storm Titan Guardian</div>
       <div className="cwm-boss-sub">Weekly Boss Battle</div>
-      <div className="cwm-boss-tier" style={{ color: tierColors[tier] }}>
-        {tierLabels[tier]}
+      <div className="cwm-boss-tier" style={{ color: tierColors[effectiveTier] }}>
+        {tierLabels[effectiveTier]}
       </div>
       {isBossDefeated && <div className="cwm-boss-defeated">⚔️ DEFEATED</div>}
     </button>
@@ -99,6 +106,10 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
   const totalStars = getTotalWeekStars(weekNumber);
   const bossTier = getBossAccessTier(weekNumber);
   const bossDefeated = isBossDefeated(weekNumber);
+
+  const { currentUser } = useUserStore();
+  const BYPASS_ROLES = ['super_admin', 'admin', 'teacher', 'team_leader', 'center_director'];
+  const isOwnerBypass = BYPASS_ROLES.includes(currentUser?.role) || (typeof window !== 'undefined' && localStorage.getItem('arcade_owner_bypass') === 'true');
 
   const [activeTab, setActiveTab] = useState('map');
   const [showHallOfFame, setShowHallOfFame] = useState(false);
@@ -210,10 +221,10 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
       {/* 5 Room Nodes */}
       <div className="cwm-rooms-grid" style={{ paddingLeft: 16, paddingRight: 16 }}>
         {CHAMBER_METADATA.map((_, idx) => {
-          // Day 1 always unlocked; other days: previous zone complete OR manually unlocked
+          // Day 1 always unlocked; other days: owner bypass OR previous zone complete OR manually unlocked
           const unlocked = idx === 0
             ? true
-            : isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx);
+            : isOwnerBypass || isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx);
           const stars = getRoomStars(weekNumber, idx);
           const completed = stars > 0;
           return (
@@ -245,7 +256,8 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
           tier={bossTier}
           weeklyPP={weeklyPP}
           isBossDefeated={bossDefeated}
-          onClick={() => onEnterBoss && onEnterBoss(bossTier)}
+          isOwnerBypass={isOwnerBypass}
+          onClick={(selectedTier) => onEnterBoss && onEnterBoss(selectedTier || bossTier)}
         />
       </div>
 
