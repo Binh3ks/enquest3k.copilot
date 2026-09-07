@@ -1,9 +1,9 @@
 {
-  "commit": "cbbb19c6b7752dad2f95968dbcc4a28f0128025f",
-  "git_commit": "cbbb19c6b7752dad2f95968dbcc4a28f0128025f",
-  "shortCommit": "cbbb19c6",
-  "message": "fix(quest): polish Leo SVG mascot, fix movement & jump physics, wrap definition text, and flame knockback",
-  "builtAt": "2026-09-07T14:07:29.323Z",
-  "build_timestamp": "2026-09-07T14:07:29.324Z",
+  "commit": "3df1b76b28b40cb6c5837ac686867dd9bc244abf",
+  "git_commit": "3df1b76b28b40cb6c5837ac686867dd9bc244abf",
+  "shortCommit": "3df1b76b",
+  "message": "feat(quest): revamp Highway Word Runner into 3D vertical perspective runner with audio-first definition, 8 rounds, and jump/slide obstacles",
+  "builtAt": "2026-09-07T15:04:00.742Z",
+  "build_timestamp": "2026-09-07T15:04:00.742Z",
   "env": "production"
 }

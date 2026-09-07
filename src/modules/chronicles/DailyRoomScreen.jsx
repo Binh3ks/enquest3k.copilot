@@ -420,7 +420,7 @@ export default function DailyRoomScreen({
             {CHAMBER_METADATA[dayIndex]?.icon} Floor {dayIndex + 1}: {CHAMBER_METADATA[dayIndex]?.chamberName}
           </h2>
           <span className="dr-room-sub-title">
-            {CHAMBER_METADATA[dayIndex]?.chamberEn} • ({CHAMBER_METADATA[dayIndex]?.zoneRef})
+            {CHAMBER_METADATA[dayIndex]?.zoneRef}
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

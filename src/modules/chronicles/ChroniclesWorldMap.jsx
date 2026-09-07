@@ -36,7 +36,6 @@ function RoomNode({ dayIndex, weekNumber, isUnlocked, isCompleted, totalStars, o
       <div className="cwm-room-icon">{chamber.icon}</div>
       <div className="cwm-room-label">Floor {dayIndex + 1}</div>
       <div className="cwm-room-sub">{chamber.chamberName}</div>
-      <div className="cwm-room-zone-ref">({chamber.chamberEn})</div>
 
       {/* Stars */}
       {isCompleted && (

@@ -79,6 +79,10 @@ async function playtestHighway3D() {
   await page.screenshot({ path: path.join(SCREENSHOT_DIR, 'highway_3d_01_landing.png') });
   console.log('📸 Captured: highway_3d_01_landing.png');
 
+  // Wait for the reading_definition phase to finish (3.5s)
+  console.log('Waiting 3.5s for reading_definition phase to end...');
+  await new Promise(r => setTimeout(r, 4000)); // slightly longer to be safe
+
   // 4. Steer Leo to Left Lane
   console.log('Steering Leo to Left Lane (ArrowLeft)...');
   await page.keyboard.press('ArrowLeft');
