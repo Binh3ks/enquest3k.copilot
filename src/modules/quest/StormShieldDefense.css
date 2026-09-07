@@ -1,0 +1,274 @@
+/* StormShieldDefense.css — Arcane Rooftop Lightning Theme */
+
+.storm-shield-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  background: radial-gradient(ellipse at 50% 0%, #1e1b4b 0%, #0f172a 60%, #020617 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* Objective Banner */
+.storm-objective-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 2px solid rgba(147, 197, 253, 0.4);
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(8px);
+  max-width: 90%;
+}
+
+.storm-banner-icon {
+  color: #60a5fa;
+  animation: lightning-pulse 2s infinite ease-in-out;
+}
+
+@keyframes lightning-pulse {
+  0%, 100% { filter: drop-shadow(0 0 4px #3b82f6); }
+  50% { filter: drop-shadow(0 0 12px #93c5fd); }
+}
+
+.storm-battery-gauge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.battery-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #bfdbfe;
+}
+
+.battery-bar-track {
+  width: 110px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.battery-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 50%, #facc15 100%);
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.8);
+  transition: width 0.3s ease;
+}
+
+.battery-pct {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #facc15;
+}
+
+.storm-hint-chip {
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: rgba(250, 204, 21, 0.15);
+  color: #fef08a;
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+/* Feedback Toast */
+.storm-feedback-toast {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  animation: bounce-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.storm-feedback-toast.feedback-correct {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #fff;
+  border: 1px solid #4ade80;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.storm-feedback-toast.feedback-wrong {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: 1px solid #f87171;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+/* Spire Viewport */
+.storm-spire-viewport {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Thunderstorm Clouds */
+.storm-cloud-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(180deg, #1e1b4b 0%, rgba(30, 27, 75, 0.6) 80%, transparent 100%);
+  pointer-events: none;
+}
+
+.lightning-flash-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  animation: thunder-flash 7s infinite ease-in-out;
+}
+
+@keyframes thunder-flash {
+  0%, 92%, 100% { opacity: 0; }
+  93% { opacity: 0.8; }
+  94% { opacity: 0.1; }
+  95% { opacity: 0.6; }
+  96% { opacity: 0; }
+}
+
+/* Platforms */
+.spire-platform {
+  position: absolute;
+  z-index: 5;
+}
+
+.spire-main-roof {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border-top: 3px solid #38bdf8;
+  box-shadow: 0 -4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.spire-battery-deck {
+  background: linear-gradient(180deg, #312e81 0%, #1e1b4b 100%);
+  border-top: 3px solid #818cf8;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.spire-battery-pylon {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #facc15;
+  animation: pylon-sparkle 1s infinite alternate ease-in-out;
+}
+
+@keyframes pylon-sparkle {
+  0% { transform: translateX(-50%) scale(1); filter: drop-shadow(0 0 4px #eab308); }
+  100% { transform: translateX(-50%) scale(1.3); filter: drop-shadow(0 0 12px #facc15); }
+}
+
+/* Falling Meteors */
+.falling-meteor-entity {
+  position: absolute;
+  width: 120px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.meteor-trail {
+  width: 6px;
+  height: 30px;
+  border-radius: 3px;
+  margin-bottom: -4px;
+}
+
+.meteor-core {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+.meteor-golden .meteor-trail {
+  background: linear-gradient(to top, rgba(234, 179, 8, 0.9), transparent);
+}
+
+.meteor-golden .meteor-core {
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+  border: 2px solid #fef08a;
+  color: #422006;
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.8);
+}
+
+.meteor-hazard .meteor-trail {
+  background: linear-gradient(to top, rgba(239, 68, 68, 0.9), transparent);
+}
+
+.meteor-hazard .meteor-core {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  border: 2px solid #fca5a5;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.8);
+}
+
+.meteor-word {
+  letter-spacing: 0.3px;
+}
+
+/* Shield Aura */
+.leo-shield-wrapper {
+  position: absolute;
+  z-index: 15;
+}
+
+.aegis-shield-aura {
+  position: absolute;
+  pointer-events: none;
+  color: #60a5fa;
+  filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.8));
+  animation: aegis-rotate 3s infinite linear;
+}
+
+@keyframes aegis-rotate {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.08) rotate(4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Modals */
+.storm-cleared-modal,
+.storm-ko-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: rgba(2, 6, 23, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,275 @@
+/* EchoArenaShooter.css — Acoustic Resonance Theme */
+
+.echo-arena-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  background: radial-gradient(ellipse at 50% 50%, #1e1035 0%, #0d0617 60%, #06020c 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* Objective Banner */
+.echo-objective-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(19, 10, 34, 0.92);
+  border: 2px solid rgba(192, 132, 252, 0.4);
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(192, 132, 252, 0.2);
+  backdrop-filter: blur(8px);
+  max-width: 90%;
+}
+
+.echo-listen-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  box-shadow: 0 2px 8px rgba(168, 85, 247, 0.4);
+}
+
+.echo-listen-btn:hover {
+  transform: scale(1.05);
+}
+
+.echo-target-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.echo-target-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d8b4fe;
+}
+
+.echo-target-phoneme {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #f0abfc;
+  letter-spacing: 1px;
+}
+
+.echo-round-tag {
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e9d5ff;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+/* Feedback Toast */
+.echo-feedback-toast {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  animation: bounce-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.echo-feedback-toast.feedback-correct {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #fff;
+  border: 1px solid #4ade80;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.echo-feedback-toast.feedback-wrong {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: 1px solid #f87171;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+/* Arena Viewport */
+.echo-arena-viewport {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Acoustic Background Rings */
+.acoustic-rings-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 90%, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Floating Acoustic Orbs */
+.acoustic-orb-entity {
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #a855f7 0%, #6b21a8 70%, #3b0764 100%);
+  border: 2px solid #e9d5ff;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.15s ease;
+  animation: orb-pulse 2s infinite alternate ease-in-out;
+}
+
+.acoustic-orb-entity:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 28px rgba(192, 132, 252, 0.9);
+}
+
+@keyframes orb-pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+.orb-word-text {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+
+/* Noise Gremlin */
+.noise-gremlin-sprite {
+  position: absolute;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  filter: drop-shadow(0 0 12px rgba(239, 68, 68, 0.7));
+}
+
+.gremlin-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: #dc2626;
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+/* Slingshot Aim Line */
+.slingshot-aim-line {
+  position: absolute;
+  width: 3px;
+  height: 60px;
+  background: linear-gradient(to top, rgba(234, 179, 8, 0.8), transparent);
+  transform-origin: bottom center;
+  pointer-events: none;
+  z-index: 8;
+}
+
+/* Resonance Bolts */
+.resonance-bolt-entity {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #facc15;
+  color: #78350f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.9);
+  pointer-events: none;
+}
+
+/* Controls Wrapper & Aim Sliders */
+.echo-controls-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.echo-aim-sliders {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.aim-btn {
+  background: rgba(30, 27, 75, 0.85);
+  border: 1px solid #818cf8;
+  color: #e0e7ff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 8px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.aim-fire-btn {
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+  border: 2px solid #fef08a;
+  color: #422006;
+  font-size: 0.95rem;
+  font-weight: 900;
+  padding: 8px 24px;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(234, 179, 8, 0.5);
+  transition: transform 0.1s ease;
+}
+
+.aim-fire-btn:active {
+  transform: scale(0.95);
+}
+
+/* Modals */
+.echo-cleared-modal,
+.echo-ko-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: rgba(9, 3, 18, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

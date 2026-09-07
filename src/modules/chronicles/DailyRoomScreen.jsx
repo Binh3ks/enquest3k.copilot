@@ -23,19 +23,12 @@ import useChroniclesStore, { DOOR_ROTATION, CHAMBER_METADATA, calculateStars } f
 import ArcaneBubbleGame        from './games/ArcaneBubbleGame';
 import SpellTrainGame          from './games/SpellTrainGame';
 import LexicalDetectiveGame    from './games/LexicalDetectiveGame';
-import { BubbleStormChase, WordWagonJump, ShadowVaultInfiltrate } from '../quest';
-import CrystalMemoryMatchGame  from './games/CrystalMemoryMatchGame';
-import RuneForgeGame           from './games/RuneForgeGame';
-import AncientScrollFillGame   from './games/AncientScrollFillGame';
-import PhonicsBubbleGame       from './games/PhonicsBubbleGame';
-import ChunkCatapultGame       from './games/ChunkCatapultGame';
-import MeteorSmasherGame       from './games/MeteorSmasherGame';
-import HighwayRunnerGame       from './games/HighwayRunnerGame';
-import SyntaxExpressGame       from './games/SyntaxExpressGame';
-import RiddleDetectiveGame     from './games/RiddleDetectiveGame';
-import GrandMasterMatrixGame   from './games/GrandMasterMatrixGame';
-import TitanForgeGame          from './games/TitanForgeGame';
-import CambridgeClozeGame      from './games/CambridgeClozeGame';
+import {
+  BubbleStormChase, WordWagonJump, ShadowVaultInfiltrate,
+  PotionFlipDungeon, AnvilRushGrammar, ScrollChamberDecode,
+  EchoArenaShooter, CatapultCommander, StormShieldDefense,
+} from '../quest';
+
 import CollectorPopup          from './CollectorPopup';
 import HallOfFameModal         from './HallOfFameModal';
 import './DailyRoomScreen.css';
@@ -216,7 +209,13 @@ export default function DailyRoomScreen({
     const gameId = door.gameId || door.id;
 
     const commonProps = {
-      onComplete: (stars, score) => handleDoorComplete(activeDoor, stars, score),
+      onComplete: (arg1, arg2) => {
+        if (typeof arg1 === 'object' && arg1 !== null) {
+          handleDoorComplete(activeDoor, arg1.stars || 1, arg1.score || 0);
+        } else {
+          handleDoorComplete(activeDoor, arg1 || 1, arg2 || 0);
+        }
+      },
     };
 
     switch (gameId) {
@@ -232,23 +231,42 @@ export default function DailyRoomScreen({
 
       // ── Floor 2: Alchemy Lab ───────────────────────────────────────────
       case 'crystal_match':
-        return <CrystalMemoryMatchGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+        return <PotionFlipDungeon vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'rune_forge':
-        return <RuneForgeGame grammarSentences={grammarSentences} duration={door.duration} {...commonProps} />;
+        return <AnvilRushGrammar grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'ancient_scroll':
-        return <AncientScrollFillGame vocabItems={vocabItems} grammarSentences={grammarSentences} duration={door.duration} {...commonProps} />;
+        return (
+          <ScrollChamberDecode
+            scrollData={{
+              title: 'The Principles of Friction & Safety',
+              fullSentence: grammarSentences[0]?.fullSentence || 'Rubber shoes create strong friction to prevent dangerous slips.',
+              blanks: [
+                { id: 'b0', word: vocabItems[0]?.word || 'Rubber' },
+                { id: 'b1', word: vocabItems[1]?.word || 'friction' },
+                { id: 'b2', word: vocabItems[2]?.word || 'prevent' },
+                { id: 'b3', word: vocabItems[3]?.word || 'slips' },
+              ],
+              distractors: ['Smooth', 'ice', 'cause', 'falls'],
+            }}
+            duration={door.duration}
+            weekNumber={weekNumber}
+            onExit={handleExit}
+            {...commonProps}
+          />
+        );
 
       // ── Floor 3: Thunder Arena ─────────────────────────────────────────
       case 'phonics_bubble':
-        return <PhonicsBubbleGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
+        return <EchoArenaShooter duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'chunk_catapult':
-        return <ChunkCatapultGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
+        return <CatapultCommander duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'meteor_smasher':
-        return <MeteorSmasherGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
+        return <StormShieldDefense duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
+
 
       // ── Floor 4: Rune Sanctum ──────────────────────────────────────────
       case 'highway_runner':

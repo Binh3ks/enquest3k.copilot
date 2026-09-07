@@ -25,3 +25,14 @@ export { createEnemy, updateEnemyPatrol, freezeAllEnemies, speedupAllEnemies, EN
 export { default as BubbleStormChase }      from './BubbleStormChase';
 export { default as WordWagonJump }         from './WordWagonJump';
 export { default as ShadowVaultInfiltrate } from './ShadowVaultInfiltrate';
+
+// Floor 2 Games (Sprint 3)
+export { default as PotionFlipDungeon }     from './PotionFlipDungeon';
+export { default as AnvilRushGrammar }      from './AnvilRushGrammar';
+export { default as ScrollChamberDecode }   from './ScrollChamberDecode';
+
+// Floor 3 Games (Sprint 3)
+export { default as EchoArenaShooter }      from './EchoArenaShooter';
+export { default as CatapultCommander }     from './CatapultCommander';
+export { default as StormShieldDefense }    from './StormShieldDefense';
+

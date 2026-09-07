@@ -11,6 +11,12 @@ import DungeonRoom from './DungeonRoom';
 import BubbleStormChase from './BubbleStormChase';
 import WordWagonJump from './WordWagonJump';
 import ShadowVaultInfiltrate from './ShadowVaultInfiltrate';
+import PotionFlipDungeon from './PotionFlipDungeon';
+import AnvilRushGrammar from './AnvilRushGrammar';
+import ScrollChamberDecode from './ScrollChamberDecode';
+import EchoArenaShooter from './EchoArenaShooter';
+import CatapultCommander from './CatapultCommander';
+import StormShieldDefense from './StormShieldDefense';
 
 const DEMO_VOCAB = [
   { word: 'laboratory', definition: 'A special room for scientific experiments' },
@@ -43,7 +49,7 @@ const DEMO_SENTENCES = [
 ];
 
 export default function QuestDemoScreen() {
-  const [activeGame, setActiveGame] = useState('dungeon'); // 'dungeon' | 'bubble_storm' | 'word_wagon' | 'shadow_vault'
+  const [activeGame, setActiveGame] = useState('dungeon');
   const [theme, setTheme] = useState('chamber-of-tales');
   const [completeResult, setCompleteResult] = useState(null);
 
@@ -75,6 +81,12 @@ export default function QuestDemoScreen() {
           <option value="bubble_storm">Floor 1 Door 1: Bubble Storm Chase</option>
           <option value="word_wagon">Floor 1 Door 2: Word Wagon Jump</option>
           <option value="shadow_vault">Floor 1 Door 3: Shadow Vault Infiltrate</option>
+          <option value="potion_flip">Floor 2 Door 1: Potion Flip Dungeon</option>
+          <option value="anvil_rush">Floor 2 Door 2: Anvil Rush Grammar</option>
+          <option value="scroll_chamber">Floor 2 Door 3: Scroll Chamber Decode</option>
+          <option value="echo_arena">Floor 3 Door 1: Echo Arena Shooter</option>
+          <option value="catapult_commander">Floor 3 Door 2: Catapult Commander</option>
+          <option value="storm_shield">Floor 3 Door 3: Storm Shield Defense</option>
         </select>
 
         {activeGame === 'dungeon' && (
@@ -96,7 +108,7 @@ export default function QuestDemoScreen() {
 
         {completeResult && (
           <span style={{ color: '#22c55e', marginLeft: 'auto', fontWeight: 'bold' }}>
-            Cleared! Stars: {'⭐'.repeat(completeResult.stars)} | Score: {completeResult.score} XP
+            Cleared! Stars: {'⭐'.repeat(completeResult.stars || 1)} | Score: {completeResult.score} XP
           </span>
         )}
       </header>
@@ -148,7 +160,58 @@ export default function QuestDemoScreen() {
             onComplete={(stars, score) => setCompleteResult({ stars, score })}
           />
         )}
+
+        {activeGame === 'potion_flip' && (
+          <PotionFlipDungeon
+            vocabItems={DEMO_VOCAB}
+            duration={90}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'anvil_rush' && (
+          <AnvilRushGrammar
+            grammarSentences={DEMO_SENTENCES}
+            duration={90}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'scroll_chamber' && (
+          <ScrollChamberDecode
+            duration={100}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'echo_arena' && (
+          <EchoArenaShooter
+            duration={90}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'catapult_commander' && (
+          <CatapultCommander
+            duration={90}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'storm_shield' && (
+          <StormShieldDefense
+            duration={90}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
       </div>
     </div>
   );
 }
+

@@ -1,0 +1,252 @@
+/* CatapultCommander.css — Castle Rampart Defense Theme */
+
+.catapult-commander-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  background: radial-gradient(ellipse at 50% 100%, #1c2738 0%, #0c121e 60%, #05080e 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* Objective Banner */
+.catapult-objective-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 2px solid rgba(59, 130, 246, 0.4);
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(8px);
+  max-width: 90%;
+}
+
+.catapult-banner-icon {
+  color: #60a5fa;
+}
+
+.catapult-sentence-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.catapult-stem-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.catapult-missing-chunk {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: 1px dashed #38bdf8;
+}
+
+.catapult-gate-hp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #cbd5e1;
+}
+
+.gate-hp-bar {
+  width: 90px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gate-hp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ef4444 0%, #22c55e 100%);
+  transition: width 0.3s ease;
+}
+
+/* Feedback Toast */
+.catapult-feedback-toast {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  animation: bounce-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.catapult-feedback-toast.feedback-correct {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #fff;
+  border: 1px solid #4ade80;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.catapult-feedback-toast.feedback-wrong {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: 1px solid #f87171;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+/* Rampart Viewport */
+.catapult-rampart-viewport {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Distant Horizon & Goblins */
+.distant-horizon {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.goblin-horde-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.8rem;
+  letter-spacing: 12px;
+  transition: transform 0.2s linear;
+}
+
+.horde-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #f87171;
+  letter-spacing: normal;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 10px;
+  border-radius: 8px;
+  margin-top: 4px;
+}
+
+/* Platforms */
+.rampart-platform {
+  position: absolute;
+  z-index: 5;
+}
+
+.rampart-lower {
+  background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+  border-top: 3px solid #64748b;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.catapult-tower {
+  background: linear-gradient(180deg, #475569 0%, #334155 100%);
+  border-top: 3px solid #94a3b8;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Catapult Entity */
+.catapult-entity {
+  position: absolute;
+  width: 140px;
+  height: 70px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.15s ease;
+}
+
+.catapult-entity:hover {
+  transform: translateY(-3px);
+}
+
+.catapult-chunk-plaque {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #f0f9ff;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: 2px solid #bae6fd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.catapult-machine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.catapult-emoji {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.launch-trigger-tag {
+  font-size: 0.65rem;
+  font-weight: 900;
+  background: #f59e0b;
+  color: #1c1917;
+  padding: 1px 6px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Firing Animation */
+.catapult-entity.catapult-firing {
+  animation: catapult-recoil 0.4s ease-out;
+}
+
+@keyframes catapult-recoil {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(8px) scale(0.95); }
+  100% { transform: translateY(0); }
+}
+
+/* Modals */
+.catapult-cleared-modal,
+.catapult-ko-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: rgba(8, 12, 19, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

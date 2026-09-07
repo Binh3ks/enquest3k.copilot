@@ -106,8 +106,15 @@ export function circleRectOverlap(circle, rect) {
  * Mutates entity in place (vy updated, bounded by MAX_FALL_SPEED)
  * @param {{ vy: number }} entity
  */
-export function applyGravity(entity) {
-  entity.vy = Math.min(entity.vy + GRAVITY, MAX_FALL_SPEED);
+export function applyGravity(entity, gravity = GRAVITY, dt = 1) {
+  if (typeof entity === 'number') {
+    return Math.min(entity + (gravity * dt), MAX_FALL_SPEED);
+  }
+  if (entity && typeof entity === 'object') {
+    entity.vy = Math.min((entity.vy || 0) + GRAVITY, MAX_FALL_SPEED);
+    return entity.vy;
+  }
+  return 0;
 }
 
 /**

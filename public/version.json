@@ -1,9 +1,9 @@
 {
-  "commit": "0485af506028e76e406c19062eb877d025642c1b",
-  "git_commit": "0485af506028e76e406c19062eb877d025642c1b",
-  "shortCommit": "0485af50",
-  "message": "feat(quest): add QuestDemoScreen test harness and audit suite",
-  "builtAt": "2026-09-07T09:33:37.914Z",
-  "build_timestamp": "2026-09-07T09:33:37.915Z",
+  "commit": "7735f3274d374d857482e4e336e0070d1cbe4dca",
+  "git_commit": "7735f3274d374d857482e4e336e0070d1cbe4dca",
+  "shortCommit": "7735f327",
+  "message": "feat(quest): Sprint 2 — Floor 1 mini-games refactor (BubbleStormChase, WordWagonJump, ShadowVaultInfiltrate)",
+  "builtAt": "2026-09-07T09:52:28.629Z",
+  "build_timestamp": "2026-09-07T09:52:28.629Z",
   "env": "production"
 }
