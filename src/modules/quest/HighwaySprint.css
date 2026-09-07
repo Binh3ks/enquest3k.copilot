@@ -1,11 +1,11 @@
-/* HighwaySprint.css — Cyber Neon 3-Lane Highway Theme */
+/* HighwaySprint.css — 3D Vertical Perspective Runner */
 
-.highway-sprint-root {
+.highway-3d-root {
   position: relative;
   width: 100%;
   height: 100%;
   min-height: 540px;
-  background: radial-gradient(ellipse at 50% 50%, #150d2a 0%, #0a0614 60%, #030206 100%);
+  background: radial-gradient(ellipse at 50% 15%, #231244 0%, #0f0721 55%, #05020c 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,197 +14,581 @@
   font-family: 'Outfit', 'Inter', system-ui, sans-serif;
 }
 
-/* Objective Banner */
-.highway-objective-banner {
+/* ─── Top Target Definition Banner (Audio-First, Large & High Contrast) ─── */
+.highway-3d-banner {
   position: absolute;
-  top: 52px;
+  top: 14px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 40;
+  z-index: 60;
   display: flex;
   align-items: center;
-  gap: 16px;
-  background: rgba(18, 12, 36, 0.92);
-  border: 2px solid rgba(236, 72, 153, 0.4);
-  border-radius: 24px;
-  padding: 8px 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(236, 72, 153, 0.2);
-  backdrop-filter: blur(8px);
-  max-width: 90%;
+  gap: 20px;
+  width: 860px;
+  max-width: 92%;
+  background: rgba(15, 7, 33, 0.94);
+  border: 2.5px solid #a855f7;
+  border-radius: 20px;
+  padding: 10px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 0 24px rgba(168, 85, 247, 0.35);
+  backdrop-filter: blur(10px);
 }
 
-.highway-banner-icon {
-  color: #ec4899;
+.banner-left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 130px;
 }
 
-.highway-definition-box {
+.banner-badge-box {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
-.highway-def-label {
-  font-size: 0.85rem;
+.banner-target-tag {
+  background: #7e22ce;
+  color: #f5d0fe;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+}
+
+.banner-streak-badge {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 8px;
+  animation: streak-glow 1.2s infinite alternate;
+}
+
+@keyframes streak-glow {
+  0% { box-shadow: 0 0 6px #f59e0b; }
+  100% { box-shadow: 0 0 16px #f59e0b; }
+}
+
+.banner-audio-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1.5px solid #c084fc;
+  color: #f3e8ff;
+  font-size: 0.82rem;
   font-weight: 800;
-  color: #f472b6;
-}
-
-.highway-def-text {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #fdf2f8;
-  font-style: italic;
-}
-
-.highway-round-chip {
-  font-size: 0.8rem;
-  font-weight: 800;
-  background: rgba(236, 72, 153, 0.2);
-  color: #fbcfe8;
-  border: 1px solid rgba(236, 72, 153, 0.4);
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
 
-/* Feedback Toast */
-.highway-feedback-toast {
+.banner-audio-btn:hover {
+  background: #a855f7;
+  color: #ffffff;
+  transform: scale(1.04);
+}
+
+.volume-icon-pulse {
+  animation: audio-pulse 1.4s infinite;
+}
+
+@keyframes audio-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); color: #facc15; }
+}
+
+.banner-definition-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.def-instruction-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #c084fc;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.def-main-text {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.3;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* ─── Feedback Toast ──────────────────────────────────────────────────────── */
+.highway-3d-toast {
   position: absolute;
-  top: 108px;
+  top: 94px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 50;
-  padding: 8px 20px;
+  z-index: 70;
+  padding: 8px 22px;
   border-radius: 16px;
-  font-weight: 800;
   font-size: 0.95rem;
-  animation: bounce-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-weight: 800;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  animation: toast-pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.highway-feedback-toast.feedback-correct {
-  background: linear-gradient(135deg, #16a34a, #15803d);
-  color: #fff;
-  border: 1px solid #4ade80;
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+.toast-correct {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border: 1.5px solid #6ee7b7;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-.highway-feedback-toast.feedback-wrong {
-  background: linear-gradient(135deg, #dc2626, #b91c1c);
-  color: #fff;
-  border: 1px solid #f87171;
-  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+.toast-wrong {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border: 1.5px solid #fca5a5;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Highway Viewport */
-.highway-viewport {
+@keyframes toast-pop {
+  from { opacity: 0; transform: translate(-50%, -10px) scale(0.9); }
+  to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+/* ─── 3D Perspective Runway Viewport ──────────────────────────────────────── */
+.highway-3d-viewport {
   position: relative;
   width: 900px;
   height: 600px;
   max-width: 100%;
   max-height: 100%;
-  overflow: hidden;
   margin-top: auto;
   margin-bottom: auto;
+  overflow: hidden;
+  perspective: 500px;
 }
 
-/* Lanes */
-.highway-lane-strip {
+/* Horizon Ambient Glow */
+.horizon-glow {
   position: absolute;
-  left: 0;
-  right: 0;
-  height: 80px;
-  border-bottom: 2px dashed rgba(236, 72, 153, 0.25);
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 60px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.45) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 5;
 }
 
-.highway-lane-line {
+/* 3D Runway Plane (Trapezoid Runway) */
+.perspective-track {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.4), transparent);
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 760px;
+  height: 480px;
+  clip-path: polygon(24% 0%, 76% 0%, 100% 100%, 0% 100%);
+  background: linear-gradient(to bottom, #190a33 0%, #0f0521 60%, #080212 100%);
+  box-shadow: inset 0 0 60px rgba(147, 51, 234, 0.4);
+  border-bottom: 4px solid #a855f7;
 }
 
-.highway-lane-tag {
-  font-size: 0.7rem;
-  font-weight: 800;
-  color: rgba(236, 72, 153, 0.4);
+/* Neon Speed Lines (Moving Downward) */
+.speed-lines-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background: repeating-linear-gradient(to bottom, transparent, transparent 30px, #06b6d4 30px, #06b6d4 70px);
+  animation: speed-lines-move 0.6s linear infinite;
+  box-shadow: 0 0 16px #06b6d4;
+}
+
+.speed-lines-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+  background: repeating-linear-gradient(to bottom, transparent, transparent 30px, #06b6d4 30px, #06b6d4 70px);
+  animation: speed-lines-move 0.6s linear infinite;
+  box-shadow: 0 0 16px #06b6d4;
+}
+
+@keyframes speed-lines-move {
+  0% { transform: translateY(-70px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Lane Dividers */
+.track-lane-divider {
+  position: absolute;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: repeating-linear-gradient(to bottom, transparent, transparent 24px, rgba(168, 85, 247, 0.6) 24px, rgba(168, 85, 247, 0.6) 60px);
+  animation: speed-lines-move 0.6s linear infinite;
+}
+
+.track-divider-1 {
+  left: 36%;
+  transform: rotate(-5deg);
+}
+
+.track-divider-2 {
+  right: 36%;
+  transform: rotate(5deg);
+}
+
+/* Ground Lane Guides at Bottom */
+.ground-lane-guide {
+  position: absolute;
+  bottom: 12px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: rgba(168, 85, 247, 0.45);
   letter-spacing: 1px;
 }
 
-/* Incoming Items */
-.highway-item-entity {
+.guide-left { left: 14%; }
+.guide-center { left: 46%; }
+.guide-right { right: 14%; }
+
+/* ─── 3D Incoming Objects ─────────────────────────────────────────────────── */
+.obj-3d-entity {
   position: absolute;
+  pointer-events: none;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 12px;
-  font-weight: 900;
-  font-size: 0.85rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  white-space: nowrap;
-  z-index: 10;
-  transition: transform 0.1s linear;
+  justify-content: center;
+  transition: transform 0.05s linear;
 }
 
-.item-target {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  border: 2px solid #6ee7b7;
-  color: #fff;
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.7);
-  animation: target-pulse 1.2s infinite alternate ease-in-out;
-}
-
-@keyframes target-pulse {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.08); filter: drop-shadow(0 0 10px #34d399); }
-}
-
-.item-distractor {
-  background: linear-gradient(135deg, #475569 0%, #334155 100%);
-  border: 2px solid #94a3b8;
-  color: #e2e8f0;
-}
-
-.item-barrier {
-  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
-  border: 2px solid #fca5a5;
-  color: #fff;
-  box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
-}
-
-.barrier-zap {
-  animation: zap-spin 0.4s infinite alternate;
-}
-
-@keyframes zap-spin {
-  0% { transform: scale(0.9); }
-  100% { transform: scale(1.2); }
-}
-
-/* Leo Runner */
-.highway-leo-wrapper {
-  position: absolute;
-  z-index: 20;
-  transition: top 0.15s ease-out;
-}
-
-.highway-leo-wrapper.leo-in-air {
-  animation: jump-shadow 0.45s ease-in-out;
-}
-
-/* Modals */
-.highway-cleared-modal,
-.highway-ko-modal {
-  position: absolute;
-  inset: 0;
-  z-index: 100;
-  background: rgba(10, 6, 20, 0.88);
-  backdrop-filter: blur(10px);
+/* TARGET WORD GEM (Emerald / Teal Neon) */
+.gem-target-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.gem-target-glow {
+  position: absolute;
+  inset: -8px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.6) 0%, transparent 75%);
+  border-radius: 20px;
+  animation: gem-pulse 1s infinite alternate ease-in-out;
+}
+
+@keyframes gem-pulse {
+  0% { transform: scale(0.95); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+.gem-target-body {
+  position: relative;
+  background: linear-gradient(135deg, #059669 0%, #047857 60%, #064e3b 100%);
+  border: 2.5px solid #34d399;
+  border-radius: 14px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 18px rgba(52, 211, 153, 0.8);
+}
+
+.gem-sparkle-icon {
+  color: #a7f3d0;
+  animation: gem-spin 2s linear infinite;
+}
+
+@keyframes gem-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.gem-target-word {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* DISTRACTOR WORD ORB (Purple / Magenta) */
+.orb-distractor-container {
+  background: linear-gradient(135deg, #3b0764 0%, #1e1b4b 100%);
+  border: 2px solid #a855f7;
+  border-radius: 12px;
+  padding: 6px 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+.orb-distractor-word {
+  color: #e9d5ff;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+/* LOW HURDLE (MUST JUMP) */
+.barrier-low-box {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  border: 2px solid #f87171;
+  border-radius: 8px;
+  padding: 5px 16px;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.8);
+}
+
+.laser-sparks-low {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #fef08a;
+  box-shadow: 0 0 8px #facc15;
+}
+
+.barrier-low-box .barrier-label {
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+/* HIGH LASER (MUST SLIDE) */
+.barrier-high-box {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  border: 2px solid #38bdf8;
+  border-radius: 8px;
+  padding: 5px 16px;
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.8);
+  margin-top: -30px; /* Hovers above ground */
+}
+
+.laser-beam-high {
+  position: absolute;
+  bottom: -6px;
+  left: -10px;
+  right: -10px;
+  height: 4px;
+  background: #38bdf8;
+  box-shadow: 0 0 12px #38bdf8;
+}
+
+.barrier-high-box .barrier-label {
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+/* SOLID PILLAR (MUST DODGE) */
+.barrier-pillar-box {
+  background: linear-gradient(135deg, #78350f 0%, #451a03 100%);
+  border: 2.5px solid #d97706;
+  border-radius: 10px;
+  padding: 10px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+}
+
+.barrier-pillar-box .pillar-block {
+  color: #fef3c7;
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+/* ─── Leo Character 3D Runner Anchor ──────────────────────────────────────── */
+.leo-3d-runner-anchor {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Jump Offset in 3D Space */
+.leo-anchor-jump {
+  transform: translate(-50%, -100%) translateY(-70px) !important;
+  transition: transform 0.22s cubic-bezier(0.15, 0.85, 0.35, 1.2) !important;
+}
+
+/* Slide Offset in 3D Space */
+.leo-anchor-slide {
+  transform: translate(-50%, -100%) translateY(16px) !important;
+  transition: transform 0.12s ease !important;
+}
+
+/* Wind / Speed Trails behind Leo */
+.leo-wind-trails {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 12px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.4) 0%, transparent 70%);
+  filter: blur(2px);
+  animation: wind-trail-flicker 0.15s infinite alternate;
+}
+
+@keyframes wind-trail-flicker {
+  0% { transform: translateX(-50%) scale(0.9); opacity: 0.5; }
+  100% { transform: translateX(-50%) scale(1.1); opacity: 0.9; }
+}
+
+/* ─── Modals (Cleared / Game Over) ────────────────────────────────────────── */
+.highway-3d-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: rgba(5, 2, 12, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highway-3d-modal-card {
+  width: 460px;
+  max-width: 90%;
+  background: linear-gradient(135deg, #1e1035 0%, #0f0721 100%);
+  border: 2.5px solid #a855f7;
+  border-radius: 24px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.9), 0 0 32px rgba(168, 85, 247, 0.4);
+  animation: modal-enter 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-card-ko {
+  border-color: #ef4444;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.9), 0 0 32px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes modal-enter {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-trophy-gold {
+  color: #facc15;
+  filter: drop-shadow(0 0 16px rgba(250, 204, 21, 0.6));
+  margin-bottom: 12px;
+}
+
+.modal-ko-icon {
+  color: #ef4444;
+  filter: drop-shadow(0 0 16px rgba(239, 68, 68, 0.6));
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.modal-subtitle {
+  margin: 0 0 20px 0;
+  font-size: 0.92rem;
+  color: #c084fc;
+  line-height: 1.4;
+}
+
+.modal-stats-grid {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.modal-stat-box {
+  flex: 1;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: 14px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: #d8b4fe;
+  font-weight: 700;
+}
+
+.stat-val {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #facc15;
+}
+
+.modal-continue-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #a855f7, #7e22ce);
+  border: none;
+  border-radius: 14px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 16px rgba(168, 85, 247, 0.5);
+}
+
+.modal-continue-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(168, 85, 247, 0.7);
+}
+
+.modal-btn-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.modal-retry-btn {
+  flex: 2;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border: none;
+  border-radius: 14px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.modal-exit-btn {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
 }

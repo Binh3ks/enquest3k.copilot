@@ -74,18 +74,15 @@
   outline: none;
 }
 
-/* ─── JUMP Button ────────────────────────────────────────────────────────── */
-.vdpad-jump-btn {
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
+/* ─── Action Buttons Group (Right Side) ──────────────────────────────────── */
+.vdpad-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.vdpad-action-btn {
   border: none;
-  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
-  border: 2.5px solid rgba(167, 139, 250, 0.6);
-  box-shadow:
-    0 0 20px rgba(139, 92, 246, 0.5),
-    0 4px 12px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -97,6 +94,41 @@
   pointer-events: auto;
   -webkit-tap-highlight-color: transparent;
   transition: transform 0.08s, box-shadow 0.08s;
+}
+
+/* ─── SLIDE Button ───────────────────────────────────────────────────────── */
+.vdpad-slide-btn {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  border: 2.5px solid rgba(56, 189, 248, 0.7);
+  box-shadow:
+    0 0 18px rgba(14, 165, 233, 0.45),
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.vdpad-slide-btn:active,
+.vdpad-slide-btn:focus {
+  transform: scale(0.9);
+  box-shadow:
+    0 0 28px rgba(14, 165, 233, 0.8),
+    0 2px 6px rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+
+/* ─── JUMP Button ────────────────────────────────────────────────────────── */
+.vdpad-jump-btn {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  border: 2.5px solid rgba(167, 139, 250, 0.6);
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .vdpad-jump-btn:active,

@@ -1,9 +1,9 @@
 {
-  "commit": "0f12c8f7b5be3ea2912f0de86ebfd4e5ec33af1c",
-  "git_commit": "0f12c8f7b5be3ea2912f0de86ebfd4e5ec33af1c",
-  "shortCommit": "0f12c8f7",
-  "message": "feat(quest): Sprint 4 — Floor 4 & 5 mini-games refactor (6 games)",
-  "builtAt": "2026-09-07T13:02:04.876Z",
-  "build_timestamp": "2026-09-07T13:02:04.877Z",
+  "commit": "cbbb19c6b7752dad2f95968dbcc4a28f0128025f",
+  "git_commit": "cbbb19c6b7752dad2f95968dbcc4a28f0128025f",
+  "shortCommit": "cbbb19c6",
+  "message": "fix(quest): polish Leo SVG mascot, fix movement & jump physics, wrap definition text, and flame knockback",
+  "builtAt": "2026-09-07T14:07:29.323Z",
+  "build_timestamp": "2026-09-07T14:07:29.324Z",
   "env": "production"
 }

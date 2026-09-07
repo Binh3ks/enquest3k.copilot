@@ -135,3 +135,14 @@
   0% { opacity: 0.35; filter: brightness(1.8) drop-shadow(0 0 8px #facc15); }
   100% { opacity: 1; filter: brightness(1); }
 }
+
+/* ─── Sliding / Ducking Animation ────────────────────────────────────────── */
+.leo-anim-sliding .leo-svg-container {
+  transform: scale(1.15, 0.55) translateY(24px) !important;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.7));
+}
+
+.leo-anim-sliding .leo-shadow {
+  transform: scale(1.4, 0.8);
+  opacity: 0.85;
+}

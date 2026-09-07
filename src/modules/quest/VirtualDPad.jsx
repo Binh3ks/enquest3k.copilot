@@ -23,6 +23,7 @@ export default function VirtualDPad({
   onUp, onUpRelease,
   onDown, onDownRelease,
   onJump, onJumpRelease,
+  onSlide, onSlideRelease,
   visible = true,
 }) {
   if (!visible) return null;
@@ -74,15 +75,27 @@ export default function VirtualDPad({
         >▼</button>
       </div>
 
-      {/* ── JUMP button (right side) ─────────────────────────────────── */}
-      <button
-        className="vdpad-jump-btn"
-        {...makeHandlers(onJump, onJumpRelease)}
-        aria-label="Jump"
-      >
-        <span className="vdpad-jump-icon">JUMP</span>
-        <span className="vdpad-jump-emoji" aria-hidden="true">🚀</span>
-      </button>
+      {/* ── Action Buttons (right side) ─────────────────────────────────── */}
+      <div className="vdpad-actions-group">
+        {onSlide && (
+          <button
+            className="vdpad-action-btn vdpad-slide-btn"
+            {...makeHandlers(onSlide, onSlideRelease)}
+            aria-label="Slide"
+          >
+            <span className="vdpad-jump-icon">SLIDE</span>
+            <span className="vdpad-jump-emoji" aria-hidden="true">🛹</span>
+          </button>
+        )}
+        <button
+          className="vdpad-action-btn vdpad-jump-btn"
+          {...makeHandlers(onJump, onJumpRelease)}
+          aria-label="Jump"
+        >
+          <span className="vdpad-jump-icon">JUMP</span>
+          <span className="vdpad-jump-emoji" aria-hidden="true">🚀</span>
+        </button>
+      </div>
     </div>
   );
 }

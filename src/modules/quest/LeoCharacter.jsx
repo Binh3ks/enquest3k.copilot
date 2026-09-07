@@ -24,6 +24,7 @@ export default function LeoCharacter({
 }) {
   const isRunning = state === 'run' || state === 'run_r' || state === 'run_l';
   const isJumping = state === 'jump';
+  const isSliding = state === 'slide';
   const isFalling = state === 'fall';
   const isHit = state === 'hit';
 
@@ -34,6 +35,7 @@ export default function LeoCharacter({
     invincible ? 'leo-invincible' : '',
     isRunning ? 'leo-anim-running' : '',
     isJumping ? 'leo-anim-jumping' : '',
+    isSliding ? 'leo-anim-sliding' : '',
   ].filter(Boolean).join(' ');
 
   return (

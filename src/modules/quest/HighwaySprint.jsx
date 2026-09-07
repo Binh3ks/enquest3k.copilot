@@ -1,22 +1,26 @@
 /**
- * HighwaySprint.jsx — Floor 4, Door 1 (Vocab) Mini-Game for Lexio's Quest
- * GDD §2 Floor 4 Room A: "HIGHWAY SPRINT"
+ * HighwaySprint.jsx — 3D Vertical Perspective Runner for Lexio's Quest (Floor 4, Door 1)
  *
- * Replaces static clicking with 3-Lane Cosmic Highway Runner:
- * - Cybernetic Rune Sanctum highway with 3 lanes (Top, Middle, Bottom)
- * - Target definition displayed on top banner (e.g. "Resistance when surfaces slide")
- * - Word orbs appear in lanes along with energy barriers (hazards)
- * - Leo shifts lanes (Up / Down) and Jumps (Space / Jump) over barriers
- * - Colliding with correct word orb: Energy surge, +30 XP, TTS speech
- * - Colliding with barrier or wrong word: -1 Heart, Leo flickers invincible
- * - Virtual D-Pad (mobile) + Arrow Keys / WASD + Spacebar (desktop)
+ * Major Revamp:
+ * - 3D Vertical Perspective Runway (Subway Surfers / Temple Run style)
+ * - 3 Lanes (Left, Center, Right) radiating from Horizon vanishing point
+ * - Audio-First Pedagogy: Definition is spoken aloud via TTS BEFORE words appear
+ * - Large, prominent Target Definition Banner with high contrast and readable text
+ * - 8 High-Energy Rounds (full weekly vocabulary coverage, 90–120s playtime)
+ * - Real Runner Obstacles:
+ *    * Low Electric Hurdle: Must JUMP over (Space / ArrowUp / JUMP button)
+ *    * High Laser Beam: Must SLIDE under (ArrowDown / SLIDE button)
+ *    * Solid Pillar: Must CHANGE LANE to avoid
+ *    * Target Word Gem: Collect for +35 XP and sparkling combo
+ *    * Distractor Word: Avoid or take damage
+ * - Adaptive Wave Escalation: Speed ramps up across rounds for thrilling flow state
+ * - Desktop (WASD / Arrows / Space) + Mobile (Virtual D-Pad with JUMP & SLIDE buttons)
  */
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Compass, Trophy, RotateCcw, ArrowRight, Zap, Sparkles, AlertTriangle, Shield } from 'lucide-react';
+import { Compass, Volume2, Sparkles, AlertTriangle, Shield, Zap, Trophy, RotateCcw, ArrowRight } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
-import { clamp, INVINCIBILITY_MS } from './LeoPhysics';
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
@@ -25,39 +29,57 @@ import './HighwaySprint.css';
 const ROOM_WIDTH = 900;
 const ROOM_HEIGHT = 600;
 
-// 3 Lane Y coordinates
-const LANES = [
-  { id: 0, y: 220, label: 'Top Lane' },
-  { id: 1, y: 340, label: 'Mid Lane' },
-  { id: 2, y: 460, label: 'Bottom Lane' },
-];
+// 3 Lane Lateral Centers at Leo's baseline (Y = 470)
+const LANE_X_BOTTOM = [210, 450, 690];
+// 3 Lane Lateral Centers at Horizon (Y = 120)
+const LANE_X_HORIZON = [340, 450, 560];
 
 const DEFAULT_HIGHWAY_ROUNDS = [
   {
     targetWord: 'friction',
     definition: 'Force that resists motion when two surfaces touch',
-    distractors: ['gravity', 'magnetism', 'velocity'],
+    distractors: ['gravity', 'velocity', 'magnetism'],
+  },
+  {
+    targetWord: 'slippery',
+    definition: 'Difficult to stand or walk on because it is wet or smooth',
+    distractors: ['sticky', 'bumpy', 'freezing'],
+  },
+  {
+    targetWord: 'rubber',
+    definition: 'A tough, elastic material used to make shoes grip the floor',
+    distractors: ['plastic', 'metal', 'cotton'],
   },
   {
     targetWord: 'corridor',
-    definition: 'A long passage in a building from which doors lead into rooms',
+    definition: 'A long hallway or passage inside a school or building',
     distractors: ['balcony', 'basement', 'courtyard'],
+  },
+  {
+    targetWord: 'laboratory',
+    definition: 'A room specially equipped for scientific experiments',
+    distractors: ['cafeteria', 'gymnasium', 'dormitory'],
+  },
+  {
+    targetWord: 'traction',
+    definition: 'The grip of shoes or tires on a surface to stop slipping',
+    distractors: ['motion', 'weight', 'speed'],
+  },
+  {
+    targetWord: 'prevent',
+    definition: 'To stop something dangerous or painful from happening',
+    distractors: ['allow', 'create', 'forget'],
   },
   {
     targetWord: 'polished',
     definition: 'Made smooth and shiny by rubbing or waxing',
-    distractors: ['rough', 'broken', 'freezing'],
-  },
-  {
-    targetWord: 'laboratory',
-    definition: 'A room or building equipped for scientific experiments',
-    distractors: ['cafeteria', 'gymnasium', 'dormitory'],
+    distractors: ['rough', 'dusty', 'cracked'],
   },
 ];
 
 export default function HighwaySprint({
   vocabItems = [],
-  duration = 90,
+  duration = 120,
   weekNumber = 33,
   onComplete,
   onExit,
@@ -65,19 +87,33 @@ export default function HighwaySprint({
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('highway_sprint') || 0;
 
-  // Build rounds from vocabItems if present
+  // Build 8 Rounds from weekly vocab + fallbacks
   const rounds = useMemo(() => {
-    if (vocabItems && vocabItems.length >= 3) {
-      return vocabItems.slice(0, 4).map((item, idx) => {
-        const others = vocabItems.filter((_, i) => i !== idx).map(v => v.word || 'word');
-        return {
-          targetWord: item.word || 'friction',
-          definition: item.definition || 'A scientific principle or object',
-          distractors: others.slice(0, 3),
-        };
-      });
-    }
-    return DEFAULT_HIGHWAY_ROUNDS;
+    const valid = (vocabItems || []).filter(v => v.word && v.definition);
+    const pool = [...valid, ...DEFAULT_HIGHWAY_ROUNDS];
+    // De-duplicate by word
+    const uniqueMap = new Map();
+    pool.forEach(item => {
+      const w = (item.word || '').trim().toLowerCase();
+      if (w && !uniqueMap.has(w)) {
+        uniqueMap.set(w, {
+          targetWord: item.word,
+          definition: item.definition || item.def || 'A scientific or everyday term',
+          distractors: item.distractors || ['option_a', 'option_b'],
+        });
+      }
+    });
+
+    const uniqueList = Array.from(uniqueMap.values());
+    const selected = uniqueList.slice(0, 8);
+    // Ensure 3 distractors per round
+    return selected.map((r, idx) => {
+      const otherWords = uniqueList.filter((_, i) => i !== idx).map(u => u.targetWord);
+      return {
+        ...r,
+        distractors: otherWords.slice(0, 3),
+      };
+    });
   }, [vocabItems]);
 
   const [phase, setPhase] = useState('playing'); // 'playing' | 'cleared' | 'ko'
@@ -85,201 +121,302 @@ export default function HighwaySprint({
   const [hearts, setHearts] = useState(3);
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(duration);
+  const [streak, setStreak] = useState(0);
   const [feedback, setFeedback] = useState(null);
+  const [definitionSpoken, setDefinitionSpoken] = useState(false);
 
   const currentRound = rounds[roundIdx % rounds.length] || DEFAULT_HIGHWAY_ROUNDS[0];
 
-  // Leo's state
-  const [currentLane, setCurrentLane] = useState(1); // 0, 1, 2
+  // Leo Movement State
+  const [currentLane, setCurrentLane] = useState(1); // 0 = Left, 1 = Center, 2 = Right
   const [isJumping, setIsJumping] = useState(false);
+  const [isSliding, setIsSliding] = useState(false);
   const [invincible, setInvincible] = useState(false);
   const invincibleUntil = useRef(0);
 
-  // Highway incoming objects: [{ id, x, lane, type: 'target'|'distractor'|'barrier', word }]
-  const [highwayObjects, setHighwayObjects] = useState([]);
-  const spawnTimer = useRef(0);
+  // Incoming Objects Array: [{ id, lane, type, word, progress: 0.0 -> 1.2 }]
+  const [objects, setObjects] = useState([]);
+  const roundStartTime = useRef(Date.now());
+  const roundSpawning = useRef(false);
 
-  // ── Keyboard controls ──────────────────────────────────────────────────
+  // Jump Action Trigger
+  const triggerJump = useCallback(() => {
+    if (isJumping || isSliding) return;
+    setIsJumping(true);
+    setTimeout(() => {
+      setIsJumping(false);
+    }, 550);
+  }, [isJumping, isSliding]);
+
+  // Slide Action Trigger
+  const triggerSlide = useCallback(() => {
+    if (isJumping || isSliding) return;
+    setIsSliding(true);
+    setTimeout(() => {
+      setIsSliding(false);
+    }, 550);
+  }, [isJumping, isSliding]);
+
+  // Read Definition via TTS aloud whenever round changes
+  const speakCurrentDefinition = useCallback(() => {
+    if (!currentRound?.definition) return;
+    setDefinitionSpoken(true);
+    speakText(`Find the word: ${currentRound.definition}`, null, 1.0, null, 'sentence', weekNumber);
+  }, [currentRound, weekNumber]);
+
+  // Audio First: Trigger TTS on round change
   useEffect(() => {
+    if (phase !== 'playing') return;
+    speakCurrentDefinition();
+  }, [roundIdx, phase, speakCurrentDefinition]);
+
+  // Spawn New Wave for Current Round after audio brief (1.2s delay)
+  const spawnRoundWave = useCallback(() => {
+    // 3 Lanes permutation
+    const lanes = [0, 1, 2].sort(() => Math.random() - 0.5);
+
+    // Pick obstacle type based on round progression:
+    // Round 1-2: Low barrier (jump)
+    // Round 3-5: High laser (slide) or Low barrier
+    // Round 6-8: Pillar or High laser or Low barrier
+    let obstacleType = 'barrier_low';
+    if (roundIdx >= 5) {
+      const r = Math.random();
+      obstacleType = r < 0.35 ? 'barrier_pillar' : r < 0.7 ? 'barrier_high' : 'barrier_low';
+    } else if (roundIdx >= 2) {
+      obstacleType = Math.random() > 0.5 ? 'barrier_high' : 'barrier_low';
+    }
+
+    const newWave = [
+      {
+        id: `tgt_${Date.now()}_0`,
+        lane: lanes[0],
+        type: 'target',
+        word: currentRound.targetWord,
+        progress: 0.0,
+      },
+      {
+        id: `dist_${Date.now()}_1`,
+        lane: lanes[1],
+        type: 'distractor',
+        word: currentRound.distractors[0] || 'wrong',
+        progress: 0.0,
+      },
+      {
+        id: `barr_${Date.now()}_2`,
+        lane: lanes[2],
+        type: obstacleType,
+        word: obstacleType === 'barrier_low' ? '⚡ JUMP OVER' : obstacleType === 'barrier_high' ? '🛹 SLIDE UNDER' : '🧱 PILLAR (DODGE)',
+        progress: 0.0,
+      },
+    ];
+
+    setObjects(newWave);
+    roundSpawning.current = false;
+  }, [roundIdx, currentRound]);
+
+  // Initialize round wave with audio-lead delay
+  useEffect(() => {
+    if (phase !== 'playing') return;
+    setObjects([]);
+    roundSpawning.current = true;
+    const delayTimer = setTimeout(() => {
+      spawnRoundWave();
+    }, 1400); // 1.4s delay giving time to hear definition first
+
+    return () => clearTimeout(delayTimer);
+  }, [roundIdx, phase, spawnRoundWave]);
+
+  // ── Keyboard Controls ────────────────────────────────────────────────────
+  useEffect(() => {
+    if (phase !== 'playing') return;
+
     const onKeyDown = (e) => {
-      if (['ArrowUp', 'KeyW'].includes(e.code)) {
+      if (['ArrowLeft', 'KeyA'].includes(e.code)) {
         e.preventDefault();
-        setCurrentLane(l => clamp(l - 1, 0, 2));
+        setCurrentLane(l => Math.max(0, l - 1));
+      }
+      if (['ArrowRight', 'KeyD'].includes(e.code)) {
+        e.preventDefault();
+        setCurrentLane(l => Math.min(2, l + 1));
+      }
+      if (['ArrowUp', 'KeyW', 'Space'].includes(e.code)) {
+        e.preventDefault();
+        triggerJump();
       }
       if (['ArrowDown', 'KeyS'].includes(e.code)) {
         e.preventDefault();
-        setCurrentLane(l => clamp(l + 1, 0, 2));
-      }
-      if (['Space', 'KeyJ'].includes(e.code) && !isJumping) {
-        e.preventDefault();
-        triggerJump();
+        triggerSlide();
       }
     };
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [isJumping]);
+  }, [phase, triggerJump, triggerSlide]);
 
-  const triggerJump = useCallback(() => {
-    setIsJumping(true);
-    setTimeout(() => {
-      setIsJumping(false);
-    }, 450);
-  }, []);
-
-  // Spawn new wave of items for current round
-  useEffect(() => {
-    // Reset incoming objects on round change
-    const words = [currentRound.targetWord, ...currentRound.distractors];
-    // Randomize which lane gets target
-    const lanesShuffled = [0, 1, 2].sort(() => Math.random() - 0.5);
-
-    const initialSpawn = [
-      {
-        id: `tgt_${roundIdx}`,
-        x: ROOM_WIDTH + 80,
-        lane: lanesShuffled[0],
-        type: 'target',
-        word: currentRound.targetWord,
-      },
-      {
-        id: `dist_${roundIdx}_1`,
-        x: ROOM_WIDTH + 80,
-        lane: lanesShuffled[1],
-        type: 'distractor',
-        word: currentRound.distractors[0] || 'distractor',
-      },
-      {
-        id: `barr_${roundIdx}`,
-        x: ROOM_WIDTH + 80,
-        lane: lanesShuffled[2],
-        type: 'barrier',
-        word: '⚡ BARRIER',
-      },
-    ];
-    setHighwayObjects(initialSpawn);
-  }, [roundIdx, currentRound]);
-
-  // ── Game Loop (Highway scrolling and collision) ────────────────────────
+  // ── Main Game Loop (Wave Motion & 3D Collisions) ──────────────────────────
   useEffect(() => {
     if (phase !== 'playing') return;
 
     let lastTime = performance.now();
     let animId;
 
-    const gameTick = (now) => {
+    const tick = (now) => {
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
       const nowMs = Date.now();
 
       setInvincible(nowMs < invincibleUntil.current);
 
-      setHighwayObjects(prev => {
-        const nextObjs = [];
-        const speed = 280; // px/sec
+      // Adaptive speed: escalates with roundIdx
+      // Round 0: 0.34 / sec -> Round 7: 0.52 / sec
+      const speed = 0.34 + (roundIdx * 0.024);
+
+      setObjects(prev => {
+        if (prev.length === 0) return prev;
+
+        const next = [];
+        let hitTarget = false;
 
         for (const obj of prev) {
-          const nx = obj.x - speed * dt;
+          const np = obj.progress + speed * dt;
 
-          // Leo is located at X = 150
-          const leoX = 150;
-          const distLeo = Math.abs(nx - leoX);
+          // Leo is stationed at progress ≈ 0.85
+          const inHitZone = np >= 0.78 && np <= 0.94;
+          const sameLane = obj.lane === currentLane;
 
-          // Collision Check
-          if (distLeo < 40 && obj.lane === currentLane) {
-            // If it's a barrier and Leo is jumping, he safely leaps over it!
-            if (obj.type === 'barrier' && isJumping) {
-              // Safely jumped over barrier!
-              setScore(s => s + 10);
-              setFeedback({ type: 'correct', text: '🦘 Leaped over barrier! (+10 XP)' });
-              setTimeout(() => setFeedback(null), 1200);
-              continue;
-            }
-
+          if (inHitZone && sameLane) {
+            // ── 1. TARGET WORD GEM ─────────────────────────────────────────
             if (obj.type === 'target') {
-              // HIT TARGET WORD!
-              speakText(obj.word);
-              setScore(s => s + 35);
-              setFeedback({ type: 'correct', text: `✨ ACCELERATION! Matched "${obj.word}"!` });
-              setTimeout(() => setFeedback(null), 1500);
+              hitTarget = true;
+              speakText(obj.word, null, 1.1, null, 'word', weekNumber);
+              const comboBonus = Math.min(3, streak + 1);
+              const xpGained = 35 * comboBonus;
 
-              // Round advance
+              setScore(s => s + xpGained);
+              setStreak(st => st + 1);
+              setFeedback({
+                type: 'correct',
+                text: `✨ ACCELERATION! Matched "${obj.word}"! (+${xpGained} XP ${comboBonus > 1 ? `Combo x${comboBonus}!` : ''})`,
+              });
+
               setTimeout(() => {
-                if (roundIdx + 1 < rounds.length) {
-                  setRoundIdx(r => r + 1);
-                } else {
-                  // ALL ROUNDS CLEARED
+                setFeedback(null);
+                const nextRound = roundIdx + 1;
+                if (nextRound >= rounds.length) {
                   setPhase('cleared');
-                  const finalScore = score + (timeLeft * 2) + 50;
+                  const finalScore = score + xpGained + (timeLeft * 2) + 100;
                   setScore(finalScore);
                   recordPersonalBest('highway_sprint', finalScore);
-                  speakText('Cosmic highway sprint completed!');
+                  speakText('Cosmic Highway Champion! All words cleared!');
+                } else {
+                  setRoundIdx(nextRound);
                 }
-              }, 400);
-              continue;
+              }, 600);
+              continue; // remove collected target
             }
 
-            if (obj.type === 'distractor' || obj.type === 'barrier') {
-              // HIT HAZARD / WRONG WORD
-              if (nowMs > invincibleUntil.current) {
-                invincibleUntil.current = nowMs + INVINCIBILITY_MS;
+            // ── 2. LOW BARRIER (Must JUMP) ──────────────────────────────────
+            if (obj.type === 'barrier_low') {
+              if (isJumping) {
+                // Safely jumped over hurdle!
+                setScore(s => s + 10);
+                setFeedback({ type: 'correct', text: '🦘 LEAPED OVER HURDLE! (+10 XP)' });
+                setTimeout(() => setFeedback(null), 1000);
+                continue;
+              } else if (nowMs > invincibleUntil.current) {
+                // Tripped on low hurdle
+                invincibleUntil.current = nowMs + 1800;
+                setStreak(0);
                 setHearts(h => {
-                  const next = Math.max(0, h - 1);
-                  if (next === 0) setPhase('ko');
-                  return next;
+                  const nh = Math.max(0, h - 1);
+                  if (nh <= 0) setPhase('ko');
+                  return nh;
                 });
-                setFeedback({ type: 'wrong', text: `💥 COLLISION with ${obj.word}! (-1 Heart)` });
-                setTimeout(() => setFeedback(null), 1200);
+                setFeedback({ type: 'wrong', text: '💥 TRIPPED! Press UP / JUMP to clear hurdles! (-1 Heart)' });
+                setTimeout(() => setFeedback(null), 1400);
+                continue;
               }
-              continue;
+            }
+
+            // ── 3. HIGH LASER (Must SLIDE) ─────────────────────────────────
+            if (obj.type === 'barrier_high') {
+              if (isSliding) {
+                // Safely slid under laser beam!
+                setScore(s => s + 10);
+                setFeedback({ type: 'correct', text: '🛹 SLICK SLIDE UNDER LASER! (+10 XP)' });
+                setTimeout(() => setFeedback(null), 1000);
+                continue;
+              } else if (nowMs > invincibleUntil.current) {
+                // Hit overhead laser
+                invincibleUntil.current = nowMs + 1800;
+                setStreak(0);
+                setHearts(h => {
+                  const nh = Math.max(0, h - 1);
+                  if (nh <= 0) setPhase('ko');
+                  return nh;
+                });
+                setFeedback({ type: 'wrong', text: '💥 LASER STRUCK! Press DOWN / SLIDE to duck! (-1 Heart)' });
+                setTimeout(() => setFeedback(null), 1400);
+                continue;
+              }
+            }
+
+            // ── 4. SOLID PILLAR (Must CHANGE LANE) ─────────────────────────
+            if (obj.type === 'barrier_pillar') {
+              if (nowMs > invincibleUntil.current) {
+                invincibleUntil.current = nowMs + 1800;
+                setStreak(0);
+                setHearts(h => {
+                  const nh = Math.max(0, h - 1);
+                  if (nh <= 0) setPhase('ko');
+                  return nh;
+                });
+                setFeedback({ type: 'wrong', text: '💥 CRASHED INTO PILLAR! Steer left/right to dodge! (-1 Heart)' });
+                setTimeout(() => setFeedback(null), 1400);
+                continue;
+              }
+            }
+
+            // ── 5. DISTRACTOR (Wrong Word) ──────────────────────────────────
+            if (obj.type === 'distractor') {
+              if (nowMs > invincibleUntil.current) {
+                invincibleUntil.current = nowMs + 1800;
+                setStreak(0);
+                setHearts(h => {
+                  const nh = Math.max(0, h - 1);
+                  if (nh <= 0) setPhase('ko');
+                  return nh;
+                });
+                setFeedback({ type: 'wrong', text: `⚠️ Wrong Word "${obj.word}"! Look for: "${currentRound.definition}"` });
+                setTimeout(() => setFeedback(null), 1400);
+                continue;
+              }
             }
           }
 
-          // Off-screen respawn if passed
-          if (nx > -100) {
-            nextObjs.push({ ...obj, x: nx });
+          // Keep in bounds if not off bottom
+          if (np < 1.15 && !hitTarget) {
+            next.push({ ...obj, progress: np });
           }
         }
 
-        // If all objects passed without hit, respawn round wave
-        if (nextObjs.length === 0) {
-          const lanesShuffled = [0, 1, 2].sort(() => Math.random() - 0.5);
-          return [
-            {
-              id: `tgt_${Date.now()}`,
-              x: ROOM_WIDTH + 60,
-              lane: lanesShuffled[0],
-              type: 'target',
-              word: currentRound.targetWord,
-            },
-            {
-              id: `dist_${Date.now()}`,
-              x: ROOM_WIDTH + 60,
-              lane: lanesShuffled[1],
-              type: 'distractor',
-              word: currentRound.distractors[0] || 'distractor',
-            },
-            {
-              id: `barr_${Date.now()}`,
-              x: ROOM_WIDTH + 60,
-              lane: lanesShuffled[2],
-              type: 'barrier',
-              word: '⚡ BARRIER',
-            },
-          ];
+        // If all items passed without hitting the target, respawn the wave
+        if (next.length === 0 && !roundSpawning.current && phase === 'playing') {
+          spawnRoundWave();
         }
 
-        return nextObjs;
+        return next;
       });
 
-      animId = requestAnimationFrame(gameTick);
+      animId = requestAnimationFrame(tick);
     };
 
-    animId = requestAnimationFrame(gameTick);
+    animId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(animId);
-  }, [phase, currentLane, isJumping, roundIdx, rounds.length, currentRound, score, timeLeft, recordPersonalBest]);
+  }, [phase, currentLane, isJumping, isSliding, roundIdx, rounds.length, currentRound, score, streak, timeLeft, recordPersonalBest, spawnRoundWave, weekNumber]);
 
-  // Timer loop
+  // Countdown Timer
   useEffect(() => {
     if (phase !== 'playing') return;
     const timer = setInterval(() => {
@@ -294,12 +431,14 @@ export default function HighwaySprint({
     return () => clearInterval(timer);
   }, [phase]);
 
-  // Mobile D-Pad handlers
+  // Mobile D-Pad handlers with both JUMP & SLIDE
   const dpadHandlers = {
-    onLeftPress: () => setCurrentLane(l => clamp(l - 1, 0, 2)),
-    onRightPress: () => setCurrentLane(l => clamp(l + 1, 0, 2)),
-    onJumpPress: triggerJump,
-    onActionPress: triggerJump,
+    onLeft: () => setCurrentLane(l => Math.max(0, l - 1)),
+    onRight: () => setCurrentLane(l => Math.min(2, l + 1)),
+    onUp: triggerJump,
+    onDown: triggerSlide,
+    onJump: triggerJump,
+    onSlide: triggerSlide,
   };
 
   const handleRetry = () => {
@@ -309,77 +448,166 @@ export default function HighwaySprint({
     setRoundIdx(0);
     setCurrentLane(1);
     setIsJumping(false);
+    setIsSliding(false);
+    setStreak(0);
     setPhase('playing');
   };
 
   const handleFinalFinish = () => {
-    if (onComplete) onComplete({ score, stars: calculateStars(score, rounds.length * 35) });
+    const stars = calculateStars(score, rounds.length * 35);
+    recordPersonalBest('highway_sprint', score);
+    if (onComplete) onComplete(stars, score);
     else if (onExit) onExit();
   };
 
-  const leoY = LANES[currentLane].y + (isJumping ? -65 : 0);
+  // Leo's 3D Display Coordinates
+  const leoX = LANE_X_BOTTOM[currentLane];
+  const leoY = 460;
+  const leoAnimState = isJumping ? 'jump' : isSliding ? 'slide' : 'run';
 
   return (
-    <div className="highway-sprint-root">
-      {/* ── Top Objective Banner ───────────────────────────────────────── */}
-      <div className="highway-objective-banner">
-        <Compass size={22} className="highway-banner-icon" />
-        <div className="highway-definition-box">
-          <span className="highway-def-label">Definition:</span>
-          <span className="highway-def-text">"{currentRound.definition}"</span>
+    <div className="highway-3d-root">
+      {/* ── Top Target Definition Banner (Audio-First, Large & High Contrast) ── */}
+      <header className="highway-3d-banner" role="banner">
+        <div className="banner-left-section">
+          <div className="banner-badge-box">
+            <span className="banner-target-tag">WORD {roundIdx + 1} / {rounds.length}</span>
+            {streak > 1 && <span className="banner-streak-badge">⚡ Combo x{Math.min(3, streak)}</span>}
+          </div>
+          <button
+            className="banner-audio-btn"
+            onClick={speakCurrentDefinition}
+            aria-label="Listen to definition again"
+            title="Listen to definition"
+          >
+            <Volume2 size={20} className="volume-icon-pulse" />
+            <span>Listen</span>
+          </button>
         </div>
-        <div className="highway-round-chip">Word {roundIdx + 1} / {rounds.length}</div>
-      </div>
 
-      {/* ── Feedback Toast ───────────────────────────────────────────── */}
+        <div className="banner-definition-center">
+          <span className="def-instruction-label">🎯 FIND THE WORD FOR THIS DEFINITION:</span>
+          <h2 className="def-main-text">"{currentRound.definition}"</h2>
+        </div>
+      </header>
+
+      {/* ── Feedback Toast ─────────────────────────────────────────────────── */}
       {feedback && (
-        <div className={`highway-feedback-toast feedback-${feedback.type}`}>
+        <div className={`highway-3d-toast toast-${feedback.type}`}>
           {feedback.text}
         </div>
       )}
 
-      {/* ── Highway Viewport ─────────────────────────────────────────── */}
-      <div className="highway-viewport">
-        {/* 3 Highway Lanes with neon tracks */}
-        {LANES.map(lane => (
-          <div key={lane.id} className="highway-lane-strip" style={{ top: `${lane.y}px` }}>
-            <div className="highway-lane-line" />
-            <span className="highway-lane-tag">{lane.label}</span>
-          </div>
-        ))}
+      {/* ── 3D Perspective Runway Viewport ─────────────────────────────────── */}
+      <main className="highway-3d-viewport" role="main" aria-label="3D Cosmic Highway">
+        {/* Horizon Sky Glow */}
+        <div className="horizon-glow" />
 
-        {/* Incoming Highway Objects */}
-        {highwayObjects.map(obj => {
-          const laneY = LANES[obj.lane].y;
+        {/* 3D Runway Plane */}
+        <div className="perspective-track">
+          {/* Moving Lane Stripes (creating sensation of high speed) */}
+          <div className="speed-lines-left" />
+          <div className="speed-lines-right" />
+          <div className="track-lane-divider track-divider-1" />
+          <div className="track-lane-divider track-divider-2" />
+
+          {/* 3 Lane Indicators on Ground */}
+          <div className="ground-lane-guide guide-left">LANE 1</div>
+          <div className="ground-lane-guide guide-center">LANE 2</div>
+          <div className="ground-lane-guide guide-right">LANE 3</div>
+        </div>
+
+        {/* ── Incoming 3D Objects ───────────────────────────────────────────── */}
+        {objects.map(obj => {
+          const p = obj.progress;
+          // Calculate 3D coordinates based on progress (0.0 at horizon -> 1.0 at Leo)
+          const horizonX = LANE_X_HORIZON[obj.lane];
+          const bottomX = LANE_X_BOTTOM[obj.lane];
+          const curX = horizonX + p * (bottomX - horizonX);
+          const curY = 120 + p * (510 - 120);
+          const scale = 0.28 + p * (1.08 - 0.28);
+          const opacity = Math.min(1, p * 3.5);
+
           return (
             <div
               key={obj.id}
-              className={`highway-item-entity item-${obj.type}`}
-              style={{ left: `${obj.x}px`, top: `${laneY - 24}px` }}
+              className={`obj-3d-entity obj-${obj.type} lane-${obj.lane}`}
+              style={{
+                left: `${curX}px`,
+                top: `${curY}px`,
+                transform: `translate(-50%, -50%) scale(${scale})`,
+                opacity: opacity,
+                zIndex: Math.floor(10 + p * 40),
+              }}
             >
-              {obj.type === 'target' && <Sparkles size={16} className="item-sparkle" />}
-              {obj.type === 'barrier' && <Zap size={18} className="barrier-zap" />}
-              <span className="highway-item-label">{obj.word}</span>
+              {/* TARGET WORD GEM */}
+              {obj.type === 'target' && (
+                <div className="gem-target-container">
+                  <div className="gem-target-glow" />
+                  <div className="gem-target-body">
+                    <Sparkles size={16} className="gem-sparkle-icon" />
+                    <span className="gem-target-word">{obj.word}</span>
+                  </div>
+                </div>
+              )}
+
+              {/* DISTRACTOR WORD ORB */}
+              {obj.type === 'distractor' && (
+                <div className="orb-distractor-container">
+                  <span className="orb-distractor-word">{obj.word}</span>
+                </div>
+              )}
+
+              {/* LOW HURDLE (MUST JUMP) */}
+              {obj.type === 'barrier_low' && (
+                <div className="barrier-low-box">
+                  <div className="laser-sparks-low" />
+                  <div className="barrier-label">⚡ JUMP!</div>
+                </div>
+              )}
+
+              {/* HIGH LASER (MUST SLIDE) */}
+              {obj.type === 'barrier_high' && (
+                <div className="barrier-high-box">
+                  <div className="laser-beam-high" />
+                  <div className="barrier-label">🛹 SLIDE!</div>
+                </div>
+              )}
+
+              {/* SOLID PILLAR (MUST CHANGE LANE) */}
+              {obj.type === 'barrier_pillar' && (
+                <div className="barrier-pillar-box">
+                  <div className="pillar-block">🧱 BLOCK</div>
+                </div>
+              )}
             </div>
           );
         })}
 
-        {/* Leo Runner Sprite */}
+        {/* ── Leo Character (Stationed at Bottom Center, Running Forward) ─── */}
         <div
-          className={`highway-leo-wrapper ${isJumping ? 'leo-in-air' : ''}`}
-          style={{ left: '150px', top: `${leoY - 20}px` }}
+          className={`leo-3d-runner-anchor ${isJumping ? 'leo-anchor-jump' : ''} ${isSliding ? 'leo-anchor-slide' : ''}`}
+          style={{
+            left: `${leoX}px`,
+            top: `${leoY}px`,
+            transition: 'left 0.16s cubic-bezier(0.2, 0.9, 0.3, 1.2)',
+          }}
         >
+          {/* Speed Wind / Dust Trails behind Leo */}
+          <div className="leo-wind-trails" />
+
+          {/* Leo Explorer Vector Mascot */}
           <LeoCharacter
             x={0}
             y={0}
-            state={isJumping ? 'jump' : 'run'}
+            state={leoAnimState}
             facingRight={true}
             invincible={invincible}
           />
         </div>
-      </div>
+      </main>
 
-      {/* ── HUD ──────────────────────────────────────────────────────── */}
+      {/* ── HUD Overlay (Hearts, XP, Timer) ────────────────────────────────── */}
       <HUDOverlay
         hearts={hearts}
         score={score}
@@ -387,45 +615,57 @@ export default function HighwaySprint({
         wordsCollected={roundIdx}
         totalWords={rounds.length}
         floorNumber={4}
-        doorLabel="Door 1 — Highway Sprint"
+        doorLabel="Door 1 — Highway Word Runner"
       />
 
-      {/* ── Virtual D-Pad ────────────────────────────────────────────── */}
+      {/* ── Virtual D-Pad with both JUMP 🚀 & SLIDE 🛹 Buttons ────────────── */}
       <VirtualDPad {...dpadHandlers} visible={phase === 'playing'} />
 
-      {/* ── Cleared Modal ────────────────────────────────────────────── */}
+      {/* ── Cleared Modal ──────────────────────────────────────────────────── */}
       {phase === 'cleared' && (
-        <div className="highway-cleared-modal">
-          <div className="cleared-card">
-            <Trophy size={48} className="trophy-icon" />
-            <h2>HIGHWAY SPRINT MASTERED!</h2>
-            <div className="cleared-stars">
-              {'⭐'.repeat(calculateStars(score, rounds.length * 35))}
+        <div className="highway-3d-modal-backdrop">
+          <div className="highway-3d-modal-card">
+            <Trophy size={56} className="modal-trophy-gold" />
+            <h2 className="modal-title">🏆 HIGHWAY RUNNER CHAMPION!</h2>
+            <p className="modal-subtitle">
+              You decoded all {rounds.length} scientific definitions with lightning reflexes!
+            </p>
+            <div className="modal-stats-grid">
+              <div className="modal-stat-box">
+                <span className="stat-label">Final Score</span>
+                <span className="stat-val">{score} XP</span>
+              </div>
+              <div className="modal-stat-box">
+                <span className="stat-label">Max Combo</span>
+                <span className="stat-val">x{Math.max(1, streak)}</span>
+              </div>
+              <div className="modal-stat-box">
+                <span className="stat-label">Personal Best</span>
+                <span className="stat-val">{Math.max(score, personalBest)} XP</span>
+              </div>
             </div>
-            <p className="cleared-score">Score: <strong>{score} XP</strong></p>
-            {score > personalBest && (
-              <div className="cleared-record">🏆 New Personal Best!</div>
-            )}
-            <button className="finish-door-btn" onClick={handleFinalFinish}>
-              Return to Chamber <ArrowRight size={18} />
+            <button className="modal-continue-btn" onClick={handleFinalFinish}>
+              Return to Chamber →
             </button>
           </div>
         </div>
       )}
 
-      {/* ── Knockout Modal ───────────────────────────────────────────── */}
+      {/* ── Game Over / KO Modal ───────────────────────────────────────────── */}
       {phase === 'ko' && (
-        <div className="highway-ko-modal">
-          <div className="ko-card">
-            <AlertTriangle size={48} className="ko-icon" />
-            <h2>CRASHED OUT!</h2>
-            <p>Highway obstacles drained Leo's energy!</p>
-            <div className="ko-actions">
-              <button className="retry-btn" onClick={handleRetry}>
+        <div className="highway-3d-modal-backdrop">
+          <div className="highway-3d-modal-card modal-card-ko">
+            <AlertTriangle size={56} className="modal-ko-icon" />
+            <h2 className="modal-title">HIGHWAY CRASH!</h2>
+            <p className="modal-subtitle">
+              The cosmic highway moves fast! Remember: Jump over low hurdles, slide under high beams, and dodge pillars!
+            </p>
+            <div className="modal-btn-row">
+              <button className="modal-retry-btn" onClick={handleRetry}>
                 <RotateCcw size={18} /> Try Again
               </button>
-              <button className="exit-btn" onClick={handleFinalFinish}>
-                Retreat to Chamber
+              <button className="modal-exit-btn" onClick={onExit || handleFinalFinish}>
+                Chamber
               </button>
             </div>
           </div>
