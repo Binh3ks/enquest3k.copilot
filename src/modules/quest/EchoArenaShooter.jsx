@@ -208,7 +208,7 @@ export default function EchoArenaShooter({
       const leo = leoRef.current;
       const keys = keysPressed.current;
 
-      // Leo movement
+      // Leo movement (per-frame)
       if (keys.left) {
         leo.vx = -LEO_SPEED;
         leo.facingRight = false;
@@ -216,11 +216,10 @@ export default function EchoArenaShooter({
         leo.vx = LEO_SPEED;
         leo.facingRight = true;
       } else {
-        leo.vx *= 0.8;
+        leo.vx = 0;
       }
 
-      leo.x += leo.vx * dt;
-      leo.x = clamp(leo.x, 20, ROOM_WIDTH - LEO_HITBOX.width - 20);
+      leo.x = clamp(leo.x + leo.vx, 20, ROOM_WIDTH - LEO_HITBOX.width - 20);
 
       // Update Bolts
       setBolts(prevBolts => {

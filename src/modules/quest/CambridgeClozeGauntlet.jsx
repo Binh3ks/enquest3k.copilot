@@ -71,16 +71,16 @@ export default function CambridgeClozeGauntlet({
       ...distractors.map((d, i) => ({ id: `crys_dist_${i}`, word: d, targetBlankId: null })),
     ];
     const coords = [
-      { x: 80,  y: 370 },
-      { x: 170, y: 370 },
-      { x: 670, y: 370 },
-      { x: 770, y: 370 },
-      { x: 70,  y: 130 },
-      { x: 760, y: 130 },
-      { x: 140, y: 485 },
-      { x: 720, y: 485 },
-      { x: 260, y: 485 },
-      { x: 600, y: 485 },
+      { x: 95,  y: 370 }, // Mid Left shelf
+      { x: 725, y: 370 }, // Mid Right shelf
+      { x: 95,  y: 130 }, // Upper Left shelf
+      { x: 725, y: 130 }, // Upper Right shelf
+      { x: 350, y: 220 }, // Center Tier Left
+      { x: 520, y: 220 }, // Center Tier Right
+      { x: 80,  y: 485 }, // Ground Far Left
+      { x: 240, y: 485 }, // Ground Mid Left
+      { x: 640, y: 485 }, // Ground Mid Right
+      { x: 780, y: 485 }, // Ground Far Right
     ];
     return raw.map((item, idx) => ({
       ...item,
@@ -272,23 +272,21 @@ export default function CambridgeClozeGauntlet({
         leo.vx = LEO_SPEED;
         leo.facingRight = true;
       } else {
-        leo.vx *= 0.8;
+        leo.vx = 0;
       }
 
       if (keys.up && leo.isGrounded) {
-        leo.vy = -LEO_JUMP_FORCE;
+        leo.vy = LEO_JUMP_FORCE;
         leo.isGrounded = false;
       }
 
       applyGravity(leo);
 
-      leo.x += leo.vx * dt;
-      leo.y += leo.vy * dt;
-
-      leo.x = clamp(leo.x, 15, ROOM_WIDTH - LEO_HITBOX.width - 15);
+      leo.x = clamp(leo.x + leo.vx, 15, ROOM_WIDTH - LEO_HITBOX.width - 15);
+      leo.y += leo.vy;
 
       // Platform collisions
-      const prevY = leo.y - leo.vy * dt;
+      const prevY = leo.y - leo.vy;
       const landing = checkPlatformLanding(
         { x: leo.x, y: leo.y, width: LEO_HITBOX.width, height: LEO_HITBOX.height, vy: leo.vy },
         GAUNTLET_PLATFORMS,

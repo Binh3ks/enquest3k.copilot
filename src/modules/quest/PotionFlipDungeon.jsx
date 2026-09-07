@@ -400,7 +400,7 @@ export default function PotionFlipDungeon({
             )}
             {/* Cauldron Sprite */}
             <div className="cauldron-pot">
-              <span className="pot-icon">{c.matched ? '🧪' : '🫕'}</span>
+              <span className="pot-icon">{c.matched ? '✨' : '⚗️'}</span>
               <div className="potion-bubbles-steam" />
             </div>
           </div>

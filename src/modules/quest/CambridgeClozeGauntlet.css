@@ -219,6 +219,8 @@
   border: 2px solid #facc15;
   border-radius: 10px;
   padding: 4px 10px;
+  max-width: 140px;
+  text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 12px rgba(250, 204, 21, 0.4);
   transition: transform 0.15s ease;
 }
@@ -232,6 +234,10 @@
   font-size: 0.8rem;
   font-weight: 800;
   color: #fef08a;
+  display: block;
+  white-space: normal;
+  word-break: normal;
+  line-height: 1.25;
 }
 
 /* Overhead Badge */

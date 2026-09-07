@@ -151,23 +151,21 @@ export default function StormShieldDefense({
         leo.vx = LEO_SPEED;
         leo.facingRight = true;
       } else {
-        leo.vx *= 0.8;
+        leo.vx = 0;
       }
 
       if (keys.up && leo.isGrounded) {
-        leo.vy = -LEO_JUMP_FORCE;
+        leo.vy = LEO_JUMP_FORCE;
         leo.isGrounded = false;
       }
 
       applyGravity(leo);
 
-      leo.x += leo.vx * dt;
-      leo.y += leo.vy * dt;
-
-      leo.x = clamp(leo.x, 20, ROOM_WIDTH - LEO_HITBOX.width - 20);
+      leo.x = clamp(leo.x + leo.vx, 20, ROOM_WIDTH - LEO_HITBOX.width - 20);
+      leo.y += leo.vy;
 
       // Platform collisions
-      const prevY = leo.y - leo.vy * dt;
+      const prevY = leo.y - leo.vy;
       const landing = checkPlatformLanding(
         { x: leo.x, y: leo.y, width: LEO_HITBOX.width, height: LEO_HITBOX.height, vy: leo.vy },
         SPIRE_PLATFORMS,

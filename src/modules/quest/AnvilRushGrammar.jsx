@@ -232,8 +232,14 @@ export default function AnvilRushGrammar({
         const horizOverlap = leo.x + LEO_HITBOX.width > anvil.x + 10 && leo.x < anvil.x + 60;
 
         if (horizOverlap && leoFoot >= anvilTop && leoFoot <= anvilTop + 20 && leo.vy >= 0) {
+          if (anvil.cooldownUntil && now < anvil.cooldownUntil) continue;
+          anvil.cooldownUntil = now + 2000;
+
           handleAnvilStrike(anvil, i);
-          leo.vy = -6; // bounce up on strike!
+          // High bounce and knockback away from anvil center to clear fire
+          const dir = leo.x < anvil.x + 35 ? -1 : 1;
+          leo.vx = dir * 6;
+          leo.vy = -10;
           break;
         }
       }
@@ -244,10 +250,14 @@ export default function AnvilRushGrammar({
           const anvil = anvils[Number(idxStr)];
           if (anvil) {
             const dist = Math.hypot((leo.x + 20) - (anvil.x + 35), (leo.y + 30) - anvil.y);
-            if (dist < 40) {
+            if (dist < 36) {
               leo.hearts = Math.max(0, leo.hearts - 1);
               leo.invincibleUntil = now + INVINCIBILITY_MS;
               leo.animState = 'hit';
+              // Knockback away from flame hazard
+              const dir = leo.x < anvil.x + 35 ? -1 : 1;
+              leo.vx = dir * 7;
+              leo.vy = -8;
               setHearts(leo.hearts);
               if (leo.hearts <= 0) {
                 setPhase('ko');
@@ -321,8 +331,8 @@ export default function AnvilRushGrammar({
       // Wrong Anvil: Erupt into flames!
       setFeedback(`🔥 Wrong Verb Form! Watch out for fire!`);
       const now = Date.now();
-      setAnvilFlames(f => ({ ...f, [anvilIdx]: now + 3500 }));
-      setTimeout(() => setFeedback(null), 2000);
+      setAnvilFlames(f => ({ ...f, [anvilIdx]: now + 2000 }));
+      setTimeout(() => setFeedback(null), 1500);
     }
   };
 

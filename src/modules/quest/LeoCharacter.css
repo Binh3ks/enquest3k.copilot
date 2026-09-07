@@ -1,6 +1,6 @@
-/* LeoCharacter.css — Leo sprite styles & animations */
+/* LeoCharacter.css — Official Vector SVG Mascot Styles & Animations */
 
-/* ─── Base Character ─────────────────────────────────────────────────────── */
+/* ─── Base Character Container ────────────────────────────────────────────── */
 .leo-character {
   position: absolute;
   width: 48px;
@@ -10,124 +10,128 @@
   align-items: center;
   justify-content: flex-end;
   pointer-events: none;
-  z-index: 20;
+  z-index: 25;
   transform-origin: bottom center;
-  transition: none; /* positions controlled by game loop, no CSS transition */
+  transition: none; /* Game loop controls positioning directly */
 }
 
-/* ─── Sprite Emoji ───────────────────────────────────────────────────────── */
-.leo-sprite {
-  font-size: 36px;
-  line-height: 1;
+/* ─── SVG Container & Facing ──────────────────────────────────────────────── */
+.leo-svg-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  transition: transform 0.12s ease;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.45));
+}
+
+.leo-vector {
   display: block;
-  position: relative;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-  transition: transform 0.1s;
 }
 
-/* ─── Explorer Hat ───────────────────────────────────────────────────────── */
-.leo-hat {
-  position: absolute;
-  top: -4px;
-  font-size: 20px;
-  pointer-events: none;
-}
-
-/* ─── Facing Direction ───────────────────────────────────────────────────── */
-.leo-face-right .leo-sprite {
-  transform: scaleX(1);
-}
-.leo-face-left .leo-sprite {
-  transform: scaleX(-1);
-}
-
-/* ─── Ground Shadow ─────────────────────────────────────────────────────── */
+/* ─── Ground Shadow ───────────────────────────────────────────────────────── */
 .leo-shadow {
-  width: 36px;
-  height: 8px;
-  background: radial-gradient(ellipse, rgba(0,0,0,0.35) 0%, transparent 70%);
+  width: 32px;
+  height: 6px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, transparent 75%);
   border-radius: 50%;
-  margin-top: 2px;
+  margin-top: -2px;
   flex-shrink: 0;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
-/* ─── State Animations ───────────────────────────────────────────────────── */
-
-/* Jump — slight squish upward */
-.leo-jump .leo-sprite {
-  animation: leoJumpSquish 0.15s ease-out;
-}
-@keyframes leoJumpSquish {
-  0%   { transform: scaleX(1) scaleY(0.8); }
-  100% { transform: scaleX(1) scaleY(1); }
-}
-.leo-face-left.leo-jump .leo-sprite {
-  animation: leoJumpSquishFlip 0.15s ease-out;
-}
-@keyframes leoJumpSquishFlip {
-  0%   { transform: scaleX(-1) scaleY(0.8); }
-  100% { transform: scaleX(-1) scaleY(1); }
+/* ─── Running Animation ──────────────────────────────────────────────────── */
+.leo-anim-running .leo-svg-container {
+  animation: leo-running-bob 0.28s infinite alternate ease-in-out;
 }
 
-/* Run — slight bob */
-.leo-run_r .leo-sprite,
-.leo-run_l .leo-sprite {
-  animation: leoRunBob 0.25s steps(2) infinite;
-}
-@keyframes leoRunBob {
-  0%   { transform: scaleX(1) translateY(0px); }
-  50%  { transform: scaleX(1) translateY(-3px); }
-  100% { transform: scaleX(1) translateY(0px); }
-}
-.leo-face-left.leo-run_l .leo-sprite {
-  animation: leoRunBobFlip 0.25s steps(2) infinite;
-}
-@keyframes leoRunBobFlip {
-  0%   { transform: scaleX(-1) translateY(0px); }
-  50%  { transform: scaleX(-1) translateY(-3px); }
-  100% { transform: scaleX(-1) translateY(0px); }
+.leo-anim-running .leo-leg-front {
+  transform-origin: 28px 44px;
+  animation: leo-leg-stride-front 0.28s infinite alternate ease-in-out;
 }
 
-/* Invincibility — rapid white flash (2s duration) */
+.leo-anim-running .leo-leg-back {
+  transform-origin: 18px 44px;
+  animation: leo-leg-stride-back 0.28s infinite alternate ease-in-out;
+}
+
+.leo-anim-running .leo-arm-front {
+  transform-origin: 31px 27px;
+  animation: leo-arm-swing-front 0.28s infinite alternate ease-in-out;
+}
+
+.leo-anim-running .leo-arm-back {
+  transform-origin: 12px 27px;
+  animation: leo-arm-swing-back 0.28s infinite alternate ease-in-out;
+}
+
+@keyframes leo-running-bob {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-4px); }
+}
+
+@keyframes leo-leg-stride-front {
+  0% { transform: rotate(-24deg); }
+  100% { transform: rotate(24deg); }
+}
+
+@keyframes leo-leg-stride-back {
+  0% { transform: rotate(24deg); }
+  100% { transform: rotate(-24deg); }
+}
+
+@keyframes leo-arm-swing-front {
+  0% { transform: rotate(28deg); }
+  100% { transform: rotate(-28deg); }
+}
+
+@keyframes leo-arm-swing-back {
+  0% { transform: rotate(-28deg); }
+  100% { transform: rotate(28deg); }
+}
+
+/* ─── Jumping Animation ──────────────────────────────────────────────────── */
+.leo-anim-jumping .leo-svg-container {
+  transform: translateY(-2px) scale(0.96, 1.05);
+}
+
+.leo-anim-jumping .leo-leg-front {
+  transform-origin: 28px 44px;
+  transform: rotate(20deg) translateY(-2px);
+}
+
+.leo-anim-jumping .leo-leg-back {
+  transform-origin: 18px 44px;
+  transform: rotate(-18deg) translateY(-2px);
+}
+
+.leo-anim-jumping .leo-arm-front {
+  transform-origin: 31px 27px;
+  transform: rotate(-45deg);
+}
+
+.leo-anim-jumping .leo-shadow {
+  transform: scale(0.65);
+  opacity: 0.3;
+}
+
+/* ─── Hit / Damage Flash ─────────────────────────────────────────────────── */
+.leo-hit .leo-svg-container {
+  animation: leo-hit-shake 0.3s ease;
+}
+
+@keyframes leo-hit-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px) rotate(-8deg); }
+  75% { transform: translateX(5px) rotate(8deg); }
+}
+
+/* ─── Invincibility Strobing ─────────────────────────────────────────────── */
 .leo-invincible {
-  animation: leoInvincibleFlash 0.15s steps(1) infinite;
-}
-@keyframes leoInvincibleFlash {
-  0%   { filter: brightness(1) saturate(1); opacity: 1; }
-  50%  { filter: brightness(5) saturate(0); opacity: 0.4; }
-  100% { filter: brightness(1) saturate(1); opacity: 1; }
+  animation: leo-invincible-pulse 0.15s infinite alternate;
 }
 
-/* Collect — sparkle pop */
-.leo-collect .leo-sprite {
-  animation: leoCollectPop 0.4s ease-out;
-}
-@keyframes leoCollectPop {
-  0%   { transform: scale(1); }
-  30%  { transform: scale(1.4) rotate(-10deg); }
-  60%  { transform: scale(0.9) rotate(5deg); }
-  100% { transform: scale(1) rotate(0deg); }
-}
-
-/* Hit — shake */
-.leo-hit .leo-sprite {
-  animation: leoHitShake 0.3s ease-out;
-}
-@keyframes leoHitShake {
-  0%   { transform: translateX(0); }
-  20%  { transform: translateX(-6px); }
-  40%  { transform: translateX(6px); }
-  60%  { transform: translateX(-4px); }
-  80%  { transform: translateX(4px); }
-  100% { transform: translateX(0); }
-}
-
-/* Fall — slight rotation suggesting tumbling */
-.leo-fall .leo-sprite {
-  animation: leoFall 0.3s ease-in infinite;
-}
-@keyframes leoFall {
-  0%   { transform: rotate(0deg); }
-  50%  { transform: rotate(-10deg); }
-  100% { transform: rotate(0deg); }
+@keyframes leo-invincible-pulse {
+  0% { opacity: 0.35; filter: brightness(1.8) drop-shadow(0 0 8px #facc15); }
+  100% { opacity: 1; filter: brightness(1); }
 }

@@ -243,25 +243,23 @@ export default function CatapultCommander({
         leo.vx = LEO_SPEED;
         leo.facingRight = true;
       } else {
-        leo.vx *= 0.8;
+        leo.vx = 0;
       }
 
       // Jump
       if (keys.up && leo.isGrounded) {
-        leo.vy = -LEO_JUMP_FORCE;
+        leo.vy = LEO_JUMP_FORCE;
         leo.isGrounded = false;
       }
 
       // Gravity
       applyGravity(leo);
 
-      leo.x += leo.vx * dt;
-      leo.y += leo.vy * dt;
-
-      leo.x = clamp(leo.x, 15, ROOM_WIDTH - LEO_HITBOX.width - 15);
+      leo.x = clamp(leo.x + leo.vx, 15, ROOM_WIDTH - LEO_HITBOX.width - 15);
+      leo.y += leo.vy;
 
       // Platform collisions
-      const prevY = leo.y - leo.vy * dt;
+      const prevY = leo.y - leo.vy;
       const landing = checkPlatformLanding(
         { x: leo.x, y: leo.y, width: LEO_HITBOX.width, height: LEO_HITBOX.height, vy: leo.vy },
         RAMPART_PLATFORMS,

@@ -242,7 +242,9 @@
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   border: 2px solid #38bdf8;
   border-radius: 10px;
-  padding: 4px 12px;
+  padding: 5px 12px;
+  max-width: 150px;
+  text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 12px rgba(56, 189, 248, 0.3);
   transition: transform 0.15s ease;
 }
@@ -253,9 +255,13 @@
 }
 
 .rune-stone-word {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 800;
   color: #e0f2fe;
+  display: block;
+  white-space: normal;
+  word-break: normal;
+  line-height: 1.25;
 }
 
 /* Overhead Carrying Badge */

@@ -78,16 +78,16 @@ export default function ScrollChamberDecode({
       ...targets.map(t => ({ id: `stone_${t.id}`, word: t.word, targetBlankId: t.id })),
       ...distractors.map((d, i) => ({ id: `stone_dist_${i}`, word: d, targetBlankId: null })),
     ];
-    // Preset spawn coordinates across shelves
+    // Preset spawn coordinates across shelves & floor (well-spaced, 1 per shelf to avoid overlap)
     const coords = [
-      { x: 80,  y: 350 },
-      { x: 170, y: 350 },
-      { x: 670, y: 350 },
-      { x: 770, y: 350 },
-      { x: 70,  y: 130 },
-      { x: 760, y: 130 },
-      { x: 180, y: 485 },
-      { x: 680, y: 485 },
+      { x: 95,  y: 350 }, // Lower Left shelf
+      { x: 725, y: 350 }, // Lower Right shelf
+      { x: 95,  y: 130 }, // Upper Left shelf
+      { x: 725, y: 130 }, // Upper Right shelf
+      { x: 80,  y: 485 }, // Ground Far Left
+      { x: 260, y: 485 }, // Ground Mid Left
+      { x: 580, y: 485 }, // Ground Mid Right
+      { x: 760, y: 485 }, // Ground Far Right
     ];
     return raw.map((item, idx) => ({
       ...item,
@@ -287,22 +287,19 @@ export default function ScrollChamberDecode({
 
       // Jump
       if (keys.up && leo.isGrounded) {
-        leo.vy = -LEO_JUMP_FORCE;
+        leo.vy = LEO_JUMP_FORCE;
         leo.isGrounded = false;
       }
 
       // Gravity
       applyGravity(leo);
 
-      // Move Leo
-      leo.x += leo.vx * dt;
-      leo.y += leo.vy * dt;
-
-      // Clamp X
-      leo.x = clamp(leo.x, 10, ROOM_WIDTH - LEO_HITBOX.width - 10);
+      // Move Leo (per-frame movement)
+      leo.x = clamp(leo.x + leo.vx, 10, ROOM_WIDTH - LEO_HITBOX.width - 10);
+      leo.y += leo.vy;
 
       // Check Platform Collisions
-      const prevY = leo.y - leo.vy * dt;
+      const prevY = leo.y - leo.vy;
       const landing = checkPlatformLanding(
         { x: leo.x, y: leo.y, width: LEO_HITBOX.width, height: LEO_HITBOX.height, vy: leo.vy },
         LIBRARY_PLATFORMS,
