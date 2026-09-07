@@ -1,71 +1,44 @@
-/* HighwaySprint.css — True CSS 3D Runner */
+/* ═════════════════════════════════════════════════════════════════════════════
+   HighwaySprint.css — True 3D Vertical Perspective Runner
+   ═════════════════════════════════════════════════════════════════════════════ */
 
 .highway-3d-root {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 100svh;
-  background: radial-gradient(ellipse at 50% 15%, #231244 0%, #0f0721 55%, #05020c 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 50% 30%, #17072b 0%, #0c0217 65%, #05000a 100%);
   overflow: hidden;
-  user-select: none;
   font-family: 'Outfit', 'Inter', system-ui, sans-serif;
-}
-
-.highway-read-overlay {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px 40px;
-  border-radius: 20px;
-  border: 2px solid #a855f7;
-  color: white;
-  animation: pulse-overlay 1s infinite alternate;
-}
-
-@keyframes pulse-overlay {
-  from { box-shadow: 0 0 10px #a855f7; }
-  to { box-shadow: 0 0 30px #a855f7; }
-}
-
-.highway-read-overlay h2 { margin: 0; font-size: 2rem; color: #facc15; }
-.highway-read-overlay p { margin: 10px 0 0 0; font-size: 1.2rem; }
-
-.reading-paused .scene-3d {
-  filter: blur(4px) brightness(0.6);
+  user-select: none;
+  touch-action: manipulation;
 }
 
 /* ─── Top Target Definition Banner ─── */
 .highway-3d-banner {
   position: absolute;
-  top: 14px;
+  top: 18px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 60;
   display: flex;
   align-items: center;
   gap: 20px;
-  width: 90%;
-  max-width: 860px;
-  background: rgba(15, 7, 33, 0.94);
+  width: 92%;
+  max-width: 880px;
+  background: rgba(18, 9, 38, 0.95);
   border: 2.5px solid #a855f7;
   border-radius: 20px;
   padding: 10px 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 0 24px rgba(168, 85, 247, 0.35);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.75), 0 0 24px rgba(168, 85, 247, 0.35);
+  backdrop-filter: blur(12px);
 }
 
 .banner-left-section {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  min-width: 130px;
+  min-width: 140px;
 }
 
 .banner-badge-box {
@@ -77,7 +50,7 @@
 .banner-target-tag {
   background: #7e22ce;
   color: #f5d0fe;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 900;
   padding: 3px 8px;
   border-radius: 8px;
@@ -87,7 +60,7 @@
 .banner-streak-badge {
   background: linear-gradient(135deg, #f59e0b, #d97706);
   color: #fff;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 900;
   padding: 3px 8px;
   border-radius: 8px;
@@ -106,9 +79,9 @@
   background: rgba(168, 85, 247, 0.2);
   border: 1.5px solid #c084fc;
   color: #f3e8ff;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 800;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -146,20 +119,20 @@
 
 .def-main-text {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.3;
+  line-height: 1.35;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 /* Responsive Banner */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .highway-3d-banner {
     flex-direction: column;
-    padding: 12px;
-    gap: 10px;
-    text-align: center;
+    padding: 10px 14px;
+    gap: 8px;
+    top: 10px;
   }
   .banner-left-section {
     align-items: center;
@@ -168,109 +141,100 @@
     width: 100%;
   }
   .def-main-text {
-    font-size: 1rem;
+    font-size: 0.98rem;
+    text-align: center;
+  }
+  .def-instruction-label {
+    text-align: center;
   }
 }
 
 /* ─── Feedback Toast ─── */
 .highway-3d-toast {
   position: absolute;
-  top: 130px;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 70;
-  padding: 8px 22px;
+  padding: 10px 24px;
   border-radius: 16px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 800;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
   animation: toast-pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .toast-correct {
   background: linear-gradient(135deg, #10b981, #059669);
-  border: 1.5px solid #6ee7b7;
+  border: 2px solid #6ee7b7;
   color: #ffffff;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .toast-wrong {
   background: linear-gradient(135deg, #ef4444, #dc2626);
-  border: 1.5px solid #fca5a5;
+  border: 2px solid #fca5a5;
   color: #ffffff;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes toast-pop {
-  from { opacity: 0; transform: translate(-50%, -10px) scale(0.9); }
+  from { opacity: 0; transform: translate(-50%, -12px) scale(0.9); }
   to { opacity: 1; transform: translate(-50%, 0) scale(1); }
 }
 
 /* ─── True 3D Viewport ─── */
 .highway-3d-viewport {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   overflow: hidden;
-  perspective: 800px; /* The camera lens */
+  perspective: 750px; /* Camera lens setting */
   display: flex;
-  align-items: flex-end; /* Keep horizon near top third */
+  align-items: flex-end; /* Ground perspective aligns with bottom */
   justify-content: center;
 }
 
 .horizon-glow {
   position: absolute;
-  top: 25%;
+  top: 32%;
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  height: 100px;
-  background: radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.6) 0%, transparent 70%);
+  height: 120px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.65) 0%, transparent 70%);
   pointer-events: none;
   z-index: 5;
 }
 
-/* The 3D World Container */
-.scene-3d {
-  position: absolute;
-  width: 0; /* Anchor point */
-  height: 0;
-  top: 65%; /* Origin point height on screen */
-  transform-style: preserve-3d; /* Children inherit 3D space */
-  transition: filter 0.3s ease;
-}
-
-/* The Flat Runway rotated into distance */
+/* ─── The Perspective Track ─── */
 .perspective-track {
-  position: absolute;
-  width: 600px;
-  height: 3000px; /* Very long */
-  left: -300px; /* Center */
-  bottom: 0; /* Origin at bottom */
+  position: relative;
+  width: 560px;
+  max-width: 90vw;
+  height: 2800px; /* Long runway */
   transform-origin: bottom center;
-  transform: rotateX(80deg); /* Tilt the floor almost flat */
-  background: linear-gradient(to top, #190a33 0%, #0f0521 60%, #05020c 100%);
-  border-left: 6px solid #a855f7;
-  border-right: 6px solid #a855f7;
-  box-shadow: inset 0 0 80px rgba(147, 51, 234, 0.4), 0 0 40px rgba(168, 85, 247, 0.4);
+  transform: rotateX(78deg); /* Tilted back into distance */
+  transform-style: preserve-3d;
+  background: linear-gradient(to top, #210c3b 0%, #120526 50%, #050110 100%);
+  border-left: 5px solid #a855f7;
+  border-right: 5px solid #a855f7;
+  box-shadow: inset 0 0 80px rgba(147, 51, 234, 0.45), 0 0 50px rgba(168, 85, 247, 0.45);
 }
 
 /* Grid Lines moving towards player */
 .track-grid {
   position: absolute;
   width: 100%;
-  height: 200%; /* Double height for seamless scrolling */
+  height: 200%;
   bottom: 0;
   background-image: 
-    linear-gradient(rgba(168, 85, 247, 0.3) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(168, 85, 247, 0.1) 2px, transparent 2px);
+    linear-gradient(rgba(168, 85, 247, 0.35) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.12) 2px, transparent 2px);
   background-size: 100px 100px;
 }
 
 .track-moving .track-grid {
-  animation: grid-scroll 0.3s linear infinite;
+  animation: grid-scroll 0.35s linear infinite;
 }
 
 @keyframes grid-scroll {
@@ -282,200 +246,268 @@
   position: absolute;
   width: 4px;
   height: 100%;
-  background: rgba(168, 85, 247, 0.6);
+  background: rgba(168, 85, 247, 0.55);
   box-shadow: 0 0 10px #c084fc;
 }
 
-.track-divider-1 { left: 33%; }
-.track-divider-2 { left: 66%; }
+.track-divider-1 { left: 33.33%; }
+.track-divider-2 { left: 66.66%; }
 
-/* ─── 3D Entities & Billboarding ─── */
-.obj-3d-entity {
+/* ─── Transparent 1-Tap Lane Click Zones ─── */
+.track-tap-grid {
   position: absolute;
-  pointer-events: none;
-  transform-style: preserve-3d;
-  /* `transform: translate3d(X, Y, Z)` applied inline by React */
+  inset: 0;
+  display: flex;
+  z-index: 45;
 }
 
-/* Counter-rotate elements so they face the camera straight on */
-.billboard {
+.track-tap-lane {
+  flex: 1;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* ─── 3D Billboards on Track Surface ─── */
+.track-billboard-entity {
   position: absolute;
-  transform: rotateX(-15deg); /* Counter-rotation against camera perspective */
   transform-origin: bottom center;
-}
-
-/* TARGET GEM */
-.gem-target-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(-50%, -100%); /* Bottom center origin */
-}
-
-.gem-target-glow {
-  position: absolute;
-  inset: -12px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.6) 0%, transparent 75%);
-  border-radius: 50%;
-  animation: gem-pulse 1s infinite alternate;
-}
-
-.gem-target-body {
-  position: relative;
-  background: linear-gradient(135deg, #059669 0%, #047857 60%, #064e3b 100%);
-  border: 3px solid #34d399;
-  border-radius: 14px;
-  padding: 8px 18px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9), 0 0 18px rgba(52, 211, 153, 0.8);
-}
-
-.gem-sparkle-icon { color: #a7f3d0; }
-.gem-target-word { color: #ffffff; font-size: 1.2rem; font-weight: 900; }
-
-/* DISTRACTOR ORB */
-.orb-distractor-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(-50%, -100%);
-  background: linear-gradient(135deg, #3b0764 0%, #1e1b4b 100%);
-  border: 2px solid #a855f7;
-  border-radius: 12px;
-  padding: 8px 18px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(168, 85, 247, 0.4);
-}
-
-.orb-distractor-word { color: #e9d5ff; font-size: 1.1rem; font-weight: 800; }
-
-/* ── CSS 3D Box Obstacles (Real Volumes!) ── */
-.3d-box {
-  position: absolute;
-  transform-style: preserve-3d;
-}
-
-/* Low Barrier (Jump) */
-.barrier-low-box {
-  transform: translate3d(-60px, -20px, 0); /* Centered and sitting on floor */
-}
-.barrier-front {
-  position: absolute;
-  width: 120px;
-  height: 40px;
-  background: rgba(220, 38, 38, 0.8);
-  border: 2px solid #f87171;
-  display: flex; align-items: center; justify-content: center;
-  color: white; font-weight: 900;
-  box-shadow: 0 0 15px #ef4444;
-  /* Face camera slightly */
-  transform: rotateX(-30deg);
-  transform-origin: bottom;
-}
-
-/* High Laser (Slide) */
-.hover-high {
-  transform: translate3d(-60px, -110px, 0); /* Floats high above track */
-}
-.barrier-high-box .barrier-front {
-  position: absolute;
-  width: 120px;
-  height: 20px;
-  background: rgba(2, 132, 199, 0.9);
-  border: 2px solid #38bdf8;
-  display: flex; align-items: center; justify-content: center;
-  color: white; font-weight: 900; font-size: 0.8rem;
-  box-shadow: 0 0 25px #0ea5e9;
-  transform: rotateX(-30deg);
-}
-
-/* Pillar (Dodge) */
-.barrier-pillar-box {
-  transform: translate3d(-30px, -120px, 0);
-}
-.pillar-front {
-  position: absolute;
-  width: 60px;
-  height: 120px;
-  background: #78350f;
-  border: 3px solid #d97706;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem;
-  transform: rotateX(-20deg);
-  transform-origin: bottom;
-}
-
-/* ─── Leo Runner Anchor ─── */
-.leo-3d-runner-anchor {
-  position: absolute;
+  transform: translateX(-50%) rotateX(-78deg); /* Counter-rotates to stand 100% upright */
   pointer-events: none;
+  z-index: 30;
+}
+
+/* TARGET WORD BADGE */
+.target-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #059669 0%, #047857 60%, #064e3b 100%);
+  border: 3.5px solid #34d399;
+  border-radius: 16px;
+  padding: 10px 26px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85), 0 0 25px rgba(52, 211, 153, 0.85);
+  white-space: nowrap;
+}
+
+.gem-sparkle-icon {
+  color: #a7f3d0;
+  animation: pulse-gem 1s infinite alternate;
+}
+
+@keyframes pulse-gem {
+  0% { transform: scale(1); filter: drop-shadow(0 0 2px #34d399); }
+  100% { transform: scale(1.2); filter: drop-shadow(0 0 8px #6ee7b7); }
+}
+
+/* DISTRACTOR WORD BADGE */
+.distractor-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #581c87 0%, #3b0764 60%, #1e1b4b 100%);
+  border: 3px solid #c084fc;
+  border-radius: 16px;
+  padding: 10px 24px;
+  color: #f3e8ff;
+  font-size: 1.4rem;
+  font-weight: 900;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(168, 85, 247, 0.5);
+  white-space: nowrap;
+}
+
+/* HURDLE (MUST JUMP) */
+.hurdle-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  border: 3px solid #f87171;
+  border-radius: 10px;
+  padding: 8px 30px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 900;
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.9);
+  white-space: nowrap;
+}
+
+/* HIGH LASER (MUST SLIDE) */
+.laser-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  border: 3px solid #38bdf8;
+  border-radius: 10px;
+  padding: 8px 28px;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 900;
+  transform: translateY(-80px); /* Floats high above track surface */
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.95);
+  white-space: nowrap;
+}
+
+/* PILLAR (MUST DODGE) */
+.pillar-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #78350f 0%, #451a03 100%);
+  border: 3.5px solid #d97706;
+  border-radius: 14px;
+  padding: 24px 18px;
+  color: #fef3c7;
+  font-size: 1.3rem;
+  font-weight: 900;
+  box-shadow: 0 0 22px rgba(217, 119, 6, 0.7);
+  white-space: nowrap;
+}
+
+/* ─── Leo Runner on Track ─── */
+.track-leo-anchor {
+  position: absolute;
+  bottom: 450px;
+  width: 80px;
+  height: 100px;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotateX(-78deg);
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: left 0.18s cubic-bezier(0.2, 0.9, 0.3, 1.2);
   z-index: 50;
-  transition: transform 0.16s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+  pointer-events: none;
 }
 
 .leo-anchor-jump {
-  transform: translate3d(var(--current-x, 0), -100px, 0) !important;
-  transition: transform 0.25s cubic-bezier(0.15, 0.85, 0.35, 1.2) !important;
+  transform: translateX(-50%) translateY(-110px) rotateX(-78deg) !important;
+  transition: transform 0.28s cubic-bezier(0.15, 0.85, 0.35, 1.2) !important;
 }
 
 .leo-anchor-slide {
-  transform: translate3d(var(--current-x, 0), 0px, 0) !important;
-  /* Slide logic is handled inside LeoCharacterBack which shrinks his scaleY */
+  transform: translateX(-50%) scaleY(0.45) rotateX(-78deg) !important;
+  transition: transform 0.15s ease !important;
 }
 
-/* ─── Modals (Cleared / Game Over) ─── */
+/* ─── Modals (Cleared / KO) ─── */
 .highway-3d-modal-backdrop {
   position: absolute;
   inset: 0;
-  z-index: 100;
-  background: rgba(5, 2, 12, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(8, 2, 18, 0.88);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 80;
+  backdrop-filter: blur(8px);
+  animation: modal-fade 0.3s ease;
+}
+
+@keyframes modal-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .highway-3d-modal-card {
-  width: 460px;
-  max-width: 90%;
-  background: linear-gradient(135deg, #1e1035 0%, #0f0721 100%);
-  border: 2.5px solid #a855f7;
+  background: linear-gradient(145deg, #1f0d3d 0%, #120524 100%);
+  border: 2px solid #a855f7;
   border-radius: 24px;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 36px 32px;
+  max-width: 480px;
+  width: 90%;
   text-align: center;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.9), 0 0 32px rgba(168, 85, 247, 0.4);
-  animation: modal-enter 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(168, 85, 247, 0.3);
 }
 
 .modal-card-ko {
   border-color: #ef4444;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.9), 0 0 32px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(239, 68, 68, 0.3);
 }
 
-@keyframes modal-enter {
-  from { opacity: 0; transform: scale(0.85); }
-  to { opacity: 1; transform: scale(1); }
+.modal-trophy-gold { color: #facc15; margin: 0 auto 12px; }
+.modal-ko-icon { color: #ef4444; margin: 0 auto 12px; }
+
+.modal-title {
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin: 0 0 8px;
 }
 
-.modal-trophy-gold { color: #facc15; filter: drop-shadow(0 0 16px rgba(250, 204, 21, 0.6)); margin-bottom: 12px; }
-.modal-ko-icon { color: #ef4444; filter: drop-shadow(0 0 16px rgba(239, 68, 68, 0.6)); margin-bottom: 12px; }
+.modal-subtitle {
+  color: #d8b4fe;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0 0 20px;
+}
 
-.modal-title { margin: 0 0 8px 0; font-size: 1.4rem; font-weight: 900; color: #ffffff; }
-.modal-subtitle { margin: 0 0 20px 0; font-size: 0.92rem; color: #c084fc; line-height: 1.4; }
+.modal-stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
 
-.modal-stats-grid { display: flex; gap: 12px; width: 100%; margin-bottom: 24px; }
-.modal-stat-box { flex: 1; background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 14px; padding: 10px 8px; display: flex; flex-direction: column; gap: 4px; }
+.modal-stat-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 12px;
+  padding: 10px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 
-.stat-label { font-size: 0.72rem; color: #d8b4fe; font-weight: 700; }
-.stat-val { font-size: 1.15rem; font-weight: 900; color: #facc15; }
+.stat-label { font-size: 0.75rem; color: #c084fc; text-transform: uppercase; font-weight: 800; }
+.stat-val { font-size: 1.3rem; color: #ffffff; font-weight: 900; }
 
-.modal-continue-btn { width: 100%; background: linear-gradient(135deg, #a855f7, #7e22ce); border: none; border-radius: 14px; padding: 12px; color: #ffffff; font-size: 1rem; font-weight: 800; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; box-shadow: 0 4px 16px rgba(168, 85, 247, 0.5); }
-.modal-continue-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(168, 85, 247, 0.7); }
+.modal-continue-btn, .modal-retry-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  color: white;
+  font-weight: 900;
+  font-size: 1.05rem;
+  padding: 12px 28px;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  transition: all 0.2s ease;
+}
 
-.modal-btn-row { display: flex; gap: 12px; width: 100%; }
-.modal-retry-btn { flex: 2; background: linear-gradient(135deg, #ef4444, #dc2626); border: none; border-radius: 14px; padding: 12px; color: #ffffff; font-size: 0.95rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
-.modal-exit-btn { flex: 1; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 14px; padding: 12px; color: #ffffff; font-size: 0.95rem; font-weight: 800; cursor: pointer; }
+.modal-retry-btn {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+.modal-continue-btn:hover, .modal-retry-btn:hover {
+  transform: scale(1.04);
+}
+
+.modal-btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.modal-exit-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: #d1d5db;
+  font-weight: 800;
+  padding: 12px 22px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.modal-exit-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}

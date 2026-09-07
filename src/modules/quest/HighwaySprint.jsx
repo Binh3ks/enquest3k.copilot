@@ -3,13 +3,16 @@
  *
  * Major Revamp:
  * - True 3D perspective via CSS (objects scale and converge naturally)
- * - Audio-First Pedagogy: Definition is spoken aloud via TTS BEFORE gameplay resumes
- * - New LeoCharacterBack: Mascot faces into the screen, running forward
- * - Expanded Vocabulary Bank for longer playtime (1-2 mins)
+ * - Audio-First Pedagogy: Definition is spoken aloud via TTS
+ * - Comfortable speed (6+ seconds reaction time, 3.5s in prime reading zone)
+ * - True upright billboarding on the track surface (no sinking or clipping)
+ * - 1-Tap Lane Steering: Tap left, center, or right lane to move Leo instantly
+ * - Jump hurdles, slide under high lasers, steer around rock pillars
+ * - Rear-view Leo mascot running into the screen
  */
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Volume2, Sparkles, AlertTriangle, Shield, Trophy, RotateCcw, ArrowRight } from 'lucide-react';
+import { Volume2, Sparkles, AlertTriangle, Trophy, RotateCcw } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
 import LeoCharacterBack from './LeoCharacterBack';
@@ -17,22 +20,22 @@ import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
 import './HighwaySprint.css';
 
-// Words Bank to ensure longer playtime
+// Words Bank to ensure rich curriculum content & long playtime
 const DEFAULT_HIGHWAY_ROUNDS = [
-  { targetWord: 'friction', definition: 'Force that resists motion when two surfaces touch', distractors: ['gravity', 'velocity', 'magnetism'] },
-  { targetWord: 'slippery', definition: 'Difficult to stand or walk on because it is wet or smooth', distractors: ['sticky', 'bumpy', 'freezing'] },
+  { targetWord: 'friction', definition: 'The force that slows things down when surfaces slide together', distractors: ['gravity', 'velocity', 'magnetism'] },
+  { targetWord: 'safety', definition: 'The state of being protected from danger or injury', distractors: ['hazard', 'accident', 'risk'] },
+  { targetWord: 'slippery', definition: 'Difficult to stand or walk on because it is wet or smooth', distractors: ['sticky', 'bumpy', 'rough'] },
   { targetWord: 'rubber', definition: 'A tough, elastic material used to make shoes grip the floor', distractors: ['plastic', 'metal', 'cotton'] },
   { targetWord: 'corridor', definition: 'A long hallway or passage inside a school or building', distractors: ['balcony', 'basement', 'courtyard'] },
   { targetWord: 'laboratory', definition: 'A room specially equipped for scientific experiments', distractors: ['cafeteria', 'gymnasium', 'dormitory'] },
-  { targetWord: 'traction', definition: 'The grip of shoes or tires on a surface to stop slipping', distractors: ['motion', 'weight', 'speed'] },
+  { targetWord: 'traction', definition: 'The grip between shoes or tires and the floor to stop slipping', distractors: ['motion', 'weight', 'speed'] },
   { targetWord: 'prevent', definition: 'To stop something dangerous or painful from happening', distractors: ['allow', 'create', 'forget'] },
   { targetWord: 'polished', definition: 'Made smooth and shiny by rubbing or waxing', distractors: ['rough', 'dusty', 'cracked'] },
-  { targetWord: 'surface', definition: 'The outside part or uppermost layer of something', distractors: ['core', 'inside', 'bottom'] },
-  { targetWord: 'balance', definition: 'An even distribution of weight enabling someone to remain upright', distractors: ['fall', 'stumble', 'wobble'] },
+  { targetWord: 'bandage', definition: 'A strip of clean cloth used to cover and protect a wound', distractors: ['blanket', 'ribbon', 'napkin'] },
 ];
 
-// Lane Positions in CSS 3D Space (X offsets)
-const LANE_OFFSETS = [-200, 0, 200];
+// Lane horizontal positions across the track (% width)
+const LANE_PCTS = ['16.66%', '50%', '83.33%'];
 
 export default function HighwaySprint({
   vocabItems = [],
@@ -44,29 +47,31 @@ export default function HighwaySprint({
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('highway_sprint') || 0;
 
-  // Build 10 Rounds
+  // Build 10 Rounds from vocabItems + DEFAULT_HIGHWAY_ROUNDS
   const rounds = useMemo(() => {
-    const valid = (vocabItems || []).filter(v => v.word && v.definition);
+    const valid = (vocabItems || []).filter(v => v.word && v.definition && v.word.length > 2);
     const pool = [...valid, ...DEFAULT_HIGHWAY_ROUNDS];
     const uniqueMap = new Map();
+
     pool.forEach(item => {
       const w = (item.word || '').trim().toLowerCase();
       if (w && !uniqueMap.has(w)) {
         uniqueMap.set(w, {
-          targetWord: item.word,
-          definition: item.definition || item.def || 'A scientific or everyday term',
-          distractors: item.distractors || ['option_a', 'option_b'],
+          targetWord: w,
+          definition: item.definition || item.meaning || 'A scientific or everyday concept',
+          distractors: item.distractors || [],
         });
       }
     });
 
     const uniqueList = Array.from(uniqueMap.values());
     const selected = uniqueList.slice(0, 10);
+
     return selected.map((r, idx) => {
       const otherWords = uniqueList.filter((_, i) => i !== idx).map(u => u.targetWord);
       return {
         ...r,
-        distractors: otherWords.slice(0, 3),
+        distractors: otherWords.length >= 2 ? otherWords.slice(0, 3) : ['hazard', 'obstacle'],
       };
     });
   }, [vocabItems]);
@@ -88,7 +93,8 @@ export default function HighwaySprint({
   const [invincible, setInvincible] = useState(false);
   const invincibleUntil = useRef(0);
 
-  // Incoming Objects Array: [{ id, lane, type, word, zOffset }]
+  // Incoming Objects Array: [{ id, lane, type, word, dist }]
+  // dist = distance along runway (from 2600px down to 50px at Leo)
   const [objects, setObjects] = useState([]);
   const roundSpawning = useRef(false);
 
@@ -101,11 +107,11 @@ export default function HighwaySprint({
   useEffect(() => {
     if (phase === 'reading_definition') {
       speakCurrentDefinition();
-      // Wait for audio to finish (approx 3.5s) then start playing
+      // Brief 2.2s intro pause so student hears the clue, then start incoming wave
       const t = setTimeout(() => {
         setPhase('playing');
         roundSpawning.current = true;
-      }, 3500);
+      }, 2200);
       return () => clearTimeout(t);
     }
   }, [phase, roundIdx, speakCurrentDefinition]);
@@ -114,19 +120,19 @@ export default function HighwaySprint({
   const triggerJump = useCallback(() => {
     if (isJumping || isSliding || phase !== 'playing') return;
     setIsJumping(true);
-    setTimeout(() => setIsJumping(false), 550);
+    setTimeout(() => setIsJumping(false), 600);
   }, [isJumping, isSliding, phase]);
 
   const triggerSlide = useCallback(() => {
     if (isJumping || isSliding || phase !== 'playing') return;
     setIsSliding(true);
-    setTimeout(() => setIsSliding(false), 550);
+    setTimeout(() => setIsSliding(false), 600);
   }, [isJumping, isSliding, phase]);
 
-  // Spawning Wave
+  // Spawning Wave at far end of runway (dist = 2600px)
   const spawnRoundWave = useCallback(() => {
     const lanes = [0, 1, 2].sort(() => Math.random() - 0.5);
-    
+
     let obstacleType = 'barrier_low';
     if (roundIdx >= 4) {
       const r = Math.random();
@@ -135,11 +141,12 @@ export default function HighwaySprint({
       obstacleType = Math.random() > 0.5 ? 'barrier_high' : 'barrier_low';
     }
 
-    // In true CSS 3D, zOffset starts far away (e.g. -2000) and moves to 0 (Leo's position)
+    const distractorWord = currentRound.distractors[0] || 'hazard';
+
     const newWave = [
-      { id: `tgt_${Date.now()}_0`, lane: lanes[0], type: 'target', word: currentRound.targetWord, zOffset: -2500 },
-      { id: `dist_${Date.now()}_1`, lane: lanes[1], type: 'distractor', word: currentRound.distractors[0] || 'wrong', zOffset: -2500 },
-      { id: `barr_${Date.now()}_2`, lane: lanes[2], type: obstacleType, word: '', zOffset: -2500 },
+      { id: `tgt_${Date.now()}_0`, lane: lanes[0], type: 'target', word: currentRound.targetWord, dist: 2800 },
+      { id: `dist_${Date.now()}_1`, lane: lanes[1], type: 'distractor', word: distractorWord, dist: 2800 },
+      { id: `barr_${Date.now()}_2`, lane: lanes[2], type: obstacleType, word: '', dist: 2800 },
     ];
 
     setObjects(newWave);
@@ -154,7 +161,7 @@ export default function HighwaySprint({
     }
   }, [phase, spawnRoundWave]);
 
-  // Keyboard
+  // Keyboard controls
   useEffect(() => {
     if (phase !== 'playing') return;
     const onKeyDown = (e) => {
@@ -167,7 +174,8 @@ export default function HighwaySprint({
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [phase, triggerJump, triggerSlide]);
 
-  // Game Loop
+  // Game Loop: Smooth 60fps movement
+  // Speed is gentle (360px/s) giving ~6.5s travel time and 3.5s readable window
   useEffect(() => {
     if (phase !== 'playing') return;
 
@@ -180,8 +188,8 @@ export default function HighwaySprint({
       const nowMs = Date.now();
       setInvincible(nowMs < invincibleUntil.current);
 
-      // Speed increases per round (Z-units per second)
-      const speed = 1500 + (roundIdx * 150);
+      // Gentle speed progression: 360px/s up to 460px/s max
+      const speed = 360 + Math.min(roundIdx, 8) * 12;
 
       setObjects(prev => {
         if (prev.length === 0) return prev;
@@ -189,10 +197,10 @@ export default function HighwaySprint({
         let hitTarget = false;
 
         for (const obj of prev) {
-          const nz = obj.zOffset + speed * dt;
+          const newDist = obj.dist - speed * dt;
 
-          // Collision Check Zone (Z between -100 and +100 relative to Leo at 0)
-          const inHitZone = nz >= -80 && nz <= 80;
+          // Collision Check Zone (at Leo's position of 450px: between 410px and 490px)
+          const inHitZone = newDist <= 490 && newDist >= 410;
           const sameLane = obj.lane === currentLane;
 
           if (inHitZone && sameLane) {
@@ -214,21 +222,23 @@ export default function HighwaySprint({
                   speakText('Cosmic Highway Champion! All words cleared!');
                 } else {
                   setRoundIdx(nextRound);
-                  setPhase('reading_definition'); // Re-enter reading phase for next word!
+                  setPhase('reading_definition');
                 }
-              }, 600);
+              }, 700);
               continue;
             }
 
             if (obj.type === 'barrier_low') {
               if (isJumping) {
                 setScore(s => s + 10);
+                setFeedback({ type: 'correct', text: '⚡ Hurdle Cleared! (+10 XP)' });
+                setTimeout(() => setFeedback(null), 800);
                 continue;
               } else if (nowMs > invincibleUntil.current) {
                 invincibleUntil.current = nowMs + 1800;
                 setStreak(0);
                 setHearts(h => { const nh = Math.max(0, h - 1); if (nh <= 0) setPhase('ko'); return nh; });
-                setFeedback({ type: 'wrong', text: '💥 TRIPPED! Press UP / JUMP to clear hurdles!' });
+                setFeedback({ type: 'wrong', text: '💥 TRIPPED! Press UP or JUMP for hurdles!' });
                 setTimeout(() => setFeedback(null), 1400);
                 continue;
               }
@@ -237,12 +247,14 @@ export default function HighwaySprint({
             if (obj.type === 'barrier_high') {
               if (isSliding) {
                 setScore(s => s + 10);
+                setFeedback({ type: 'correct', text: '🛹 Ducked Laser! (+10 XP)' });
+                setTimeout(() => setFeedback(null), 800);
                 continue;
               } else if (nowMs > invincibleUntil.current) {
                 invincibleUntil.current = nowMs + 1800;
                 setStreak(0);
                 setHearts(h => { const nh = Math.max(0, h - 1); if (nh <= 0) setPhase('ko'); return nh; });
-                setFeedback({ type: 'wrong', text: '💥 LASER STRUCK! Press DOWN / SLIDE to duck!' });
+                setFeedback({ type: 'wrong', text: '💥 LASER STRUCK! Press DOWN or SLIDE to duck!' });
                 setTimeout(() => setFeedback(null), 1400);
                 continue;
               }
@@ -253,19 +265,25 @@ export default function HighwaySprint({
                 invincibleUntil.current = nowMs + 1800;
                 setStreak(0);
                 setHearts(h => { const nh = Math.max(0, h - 1); if (nh <= 0) setPhase('ko'); return nh; });
-                setFeedback({ type: 'wrong', text: obj.type === 'distractor' ? `⚠️ Wrong Word "${obj.word}"!` : '💥 CRASHED! Steer to dodge!' });
+                setFeedback({
+                  type: 'wrong',
+                  text: obj.type === 'distractor'
+                    ? `⚠️ That was "${obj.word}"! Target is "${currentRound.targetWord}"!`
+                    : '💥 CRASHED! Steer to dodge pillars!'
+                });
                 setTimeout(() => setFeedback(null), 1400);
                 continue;
               }
             }
           }
 
-          // Keep if it hasn't passed behind camera (Z > 300)
-          if (nz < 300 && !hitTarget) {
-            next.push({ ...obj, zOffset: nz });
+          // Keep object while it is on the track (dist > -50)
+          if (newDist > -50 && !hitTarget) {
+            next.push({ ...obj, dist: newDist });
           }
         }
 
+        // If whole wave passed without picking target: respawn wave or advance
         if (next.length === 0 && !roundSpawning.current && phase === 'playing') {
           spawnRoundWave();
         }
@@ -278,8 +296,9 @@ export default function HighwaySprint({
 
     animId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(animId);
-  }, [phase, currentLane, isJumping, isSliding, roundIdx, rounds.length, streak, timeLeft, weekNumber, spawnRoundWave]);
+  }, [phase, currentLane, isJumping, isSliding, roundIdx, rounds.length, streak, timeLeft, weekNumber, spawnRoundWave, currentRound]);
 
+  // Timer
   useEffect(() => {
     if (phase !== 'playing') return;
     const t = setInterval(() => {
@@ -308,7 +327,7 @@ export default function HighwaySprint({
 
   return (
     <div className={`highway-3d-root ${phase === 'reading_definition' ? 'reading-paused' : ''}`}>
-      
+
       {/* ── Top Target Definition Banner ── */}
       <header className="highway-3d-banner" role="banner">
         <div className="banner-left-section">
@@ -316,7 +335,7 @@ export default function HighwaySprint({
             <span className="banner-target-tag">WORD {roundIdx + 1} / {rounds.length}</span>
             {streak > 1 && <span className="banner-streak-badge">⚡ Combo x{Math.min(3, streak)}</span>}
           </div>
-          <button className="banner-audio-btn" onClick={speakCurrentDefinition}>
+          <button className="banner-audio-btn" onClick={speakCurrentDefinition} title="Listen again">
             <Volume2 size={20} className="volume-icon-pulse" />
             <span>Listen</span>
           </button>
@@ -327,96 +346,105 @@ export default function HighwaySprint({
         </div>
       </header>
 
-      {/* ── Status Messages / Toast ── */}
-      {phase === 'reading_definition' && (
-        <div className="highway-read-overlay">
-          <h2>Listen Carefully!</h2>
-          <p>Get ready to run...</p>
-        </div>
-      )}
-
+      {/* ── Feedback Toast ── */}
       {feedback && <div className={`highway-3d-toast toast-${feedback.type}`}>{feedback.text}</div>}
 
       {/* ── True CSS 3D Viewport ── */}
       <main className="highway-3d-viewport" role="main">
         <div className="horizon-glow" />
-        
-        {/* 3D Space Container */}
-        <div className="scene-3d">
-          {/* Ground Track */}
-          <div className={`perspective-track ${phase === 'playing' ? 'track-moving' : ''}`}>
-            <div className="track-grid" />
-            <div className="track-lane-divider track-divider-1" />
-            <div className="track-lane-divider track-divider-2" />
+
+        {/* The 3D Track */}
+        <div className={`perspective-track ${phase === 'playing' ? 'track-moving' : ''}`}>
+          <div className="track-grid" />
+          <div className="track-lane-divider track-divider-1" />
+          <div className="track-lane-divider track-divider-2" />
+
+          {/* Transparent 1-Tap Lane Click Zones */}
+          <div className="track-tap-grid">
+            <div className="track-tap-lane" onClick={() => setCurrentLane(0)} title="Move to Left Lane" />
+            <div className="track-tap-lane" onClick={() => setCurrentLane(1)} title="Move to Center Lane" />
+            <div className="track-tap-lane" onClick={() => setCurrentLane(2)} title="Move to Right Lane" />
           </div>
 
-          {/* 3D Objects */}
+          {/* Incoming 3D Objects on Track */}
           {objects.map(obj => {
             const isTarget = obj.type === 'target';
             const isDistractor = obj.type === 'distractor';
-            
+
             return (
               <div
                 key={obj.id}
-                className={`obj-3d-entity obj-${obj.type}`}
+                className="track-billboard-entity"
                 style={{
-                  transform: `translate3d(${LANE_OFFSETS[obj.lane]}px, 0px, ${obj.zOffset}px)`,
+                  left: LANE_PCTS[obj.lane],
+                  bottom: `${obj.dist}px`,
                 }}
               >
                 {isTarget && (
-                  <div className="gem-target-container billboard">
-                    <div className="gem-target-glow" />
-                    <div className="gem-target-body">
-                      <Sparkles size={16} className="gem-sparkle-icon" />
-                      <span className="gem-target-word">{obj.word}</span>
-                    </div>
+                  <div className="target-badge">
+                    <Sparkles size={20} className="gem-sparkle-icon" />
+                    <span>{obj.word}</span>
                   </div>
                 )}
                 {isDistractor && (
-                  <div className="orb-distractor-container billboard">
-                    <span className="orb-distractor-word">{obj.word}</span>
+                  <div className="distractor-badge">
+                    <span>{obj.word}</span>
                   </div>
                 )}
                 {obj.type === 'barrier_low' && (
-                  <div className="barrier-low-box 3d-box">
-                    <div className="barrier-front">⚡ JUMP</div>
-                    <div className="barrier-top"></div>
+                  <div className="hurdle-badge">
+                    <span>⚡ JUMP!</span>
                   </div>
                 )}
                 {obj.type === 'barrier_high' && (
-                  <div className="barrier-high-box 3d-box hover-high">
-                    <div className="barrier-front">🛹 SLIDE</div>
-                    <div className="barrier-bottom"></div>
+                  <div className="laser-badge">
+                    <span>🛹 SLIDE!</span>
                   </div>
                 )}
                 {obj.type === 'barrier_pillar' && (
-                  <div className="barrier-pillar-box 3d-box">
-                    <div className="pillar-front">🧱</div>
-                    <div className="pillar-side"></div>
+                  <div className="pillar-badge">
+                    <span>🧱 DODGE</span>
                   </div>
                 )}
               </div>
             );
           })}
 
-          {/* Leo Character (Billboarded) */}
+          {/* Leo Character stationed at bottom = 50px */}
           <div
-            className={`leo-3d-runner-anchor ${isJumping ? 'leo-anchor-jump' : ''} ${isSliding ? 'leo-anchor-slide' : ''}`}
+            className={`track-leo-anchor ${isJumping ? 'leo-anchor-jump' : ''} ${isSliding ? 'leo-anchor-slide' : ''}`}
             style={{
-              transform: `translate3d(${LANE_OFFSETS[currentLane]}px, 0px, 0px)`,
+              left: LANE_PCTS[currentLane],
             }}
           >
-            <div className="billboard">
-              <LeoCharacterBack state={leoAnimState} invincible={invincible} scale={1.2} />
-            </div>
+            <LeoCharacterBack state={leoAnimState} invincible={invincible} scale={1.25} />
           </div>
         </div>
       </main>
 
-      <HUDOverlay hearts={hearts} score={score} timeLeft={timeLeft} wordsCollected={roundIdx} totalWords={rounds.length} floorNumber={4} doorLabel="Door 1 — Highway Word Runner" />
+      {/* ── HUD Overlay (Hearts, Score, Timer) ── */}
+      <HUDOverlay
+        hearts={hearts}
+        score={score}
+        timeLeft={timeLeft}
+        wordsCollected={roundIdx}
+        totalWords={rounds.length}
+        floorNumber={4}
+        doorLabel="Door 1 — Highway Word Runner"
+      />
 
-      <VirtualDPad onLeft={() => setCurrentLane(l => Math.max(0, l - 1))} onRight={() => setCurrentLane(l => Math.min(2, l + 1))} onUp={triggerJump} onDown={triggerSlide} onJump={triggerJump} onSlide={triggerSlide} visible={phase === 'playing'} />
+      {/* ── Virtual D-Pad with Jump & Slide ── */}
+      <VirtualDPad
+        onLeft={() => setCurrentLane(l => Math.max(0, l - 1))}
+        onRight={() => setCurrentLane(l => Math.min(2, l + 1))}
+        onUp={triggerJump}
+        onDown={triggerSlide}
+        onJump={triggerJump}
+        onSlide={triggerSlide}
+        visible={phase === 'playing'}
+      />
 
+      {/* ── Cleared Modal ── */}
       {phase === 'cleared' && (
         <div className="highway-3d-modal-backdrop">
           <div className="highway-3d-modal-card">
@@ -432,12 +460,13 @@ export default function HighwaySprint({
         </div>
       )}
 
+      {/* ── Game Over / KO Modal ── */}
       {phase === 'ko' && (
         <div className="highway-3d-modal-backdrop">
           <div className="highway-3d-modal-card modal-card-ko">
             <AlertTriangle size={56} className="modal-ko-icon" />
             <h2 className="modal-title">HIGHWAY CRASH!</h2>
-            <p className="modal-subtitle">The cosmic highway moves fast! Remember: Jump over low hurdles, slide under high beams, and dodge pillars!</p>
+            <p className="modal-subtitle">Remember: Tap or press UP to jump hurdles, DOWN to slide under lasers, and steer away from pillars!</p>
             <div className="modal-btn-row">
               <button className="modal-retry-btn" onClick={handleRetry}><RotateCcw size={18} /> Try Again</button>
               <button className="modal-exit-btn" onClick={onExit || handleFinalFinish}>Chamber</button>

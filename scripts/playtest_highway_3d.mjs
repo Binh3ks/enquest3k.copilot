@@ -57,8 +57,7 @@ async function playtestHighway3D() {
     const banner = document.querySelector('.highway-3d-banner');
     const defText = document.querySelector('.def-main-text')?.textContent;
     const track = document.querySelector('.perspective-track');
-    const leo = document.querySelector('.leo-3d-runner-anchor');
-    const dpad = document.querySelector('.vdpad-overlay');
+    const leo = document.querySelector('.track-leo-anchor');
     const slideBtn = document.querySelector('.vdpad-slide-btn');
     const jumpBtn = document.querySelector('.vdpad-jump-btn');
 
@@ -70,7 +69,6 @@ async function playtestHighway3D() {
       hasSlideBtn: !!slideBtn,
       hasJumpBtn: !!jumpBtn,
       leoLeft: leo?.style?.left,
-      leoTop: leo?.style?.top,
     };
   });
   console.log('Highway 3D UI Audit:', uiAudit);
@@ -79,16 +77,16 @@ async function playtestHighway3D() {
   await page.screenshot({ path: path.join(SCREENSHOT_DIR, 'highway_3d_01_landing.png') });
   console.log('📸 Captured: highway_3d_01_landing.png');
 
-  // Wait for the reading_definition phase to finish (3.5s)
-  console.log('Waiting 3.5s for reading_definition phase to end...');
-  await new Promise(r => setTimeout(r, 4000)); // slightly longer to be safe
+  // Wait 2.5s for reading phase to end and wave to start approaching
+  console.log('Waiting 2.5s for wave to spawn and approach...');
+  await new Promise(r => setTimeout(r, 2600));
 
   // 4. Steer Leo to Left Lane
   console.log('Steering Leo to Left Lane (ArrowLeft)...');
   await page.keyboard.press('ArrowLeft');
   await new Promise(r => setTimeout(r, 400));
   const leoLeftPos = await page.evaluate(() => {
-    const leo = document.querySelector('.leo-3d-runner-anchor');
+    const leo = document.querySelector('.track-leo-anchor');
     return leo?.style?.left;
   });
   console.log('Leo Left Lane Position:', leoLeftPos);
@@ -101,7 +99,7 @@ async function playtestHighway3D() {
   await page.keyboard.press('ArrowRight');
   await new Promise(r => setTimeout(r, 400));
   const leoRightPos = await page.evaluate(() => {
-    const leo = document.querySelector('.leo-3d-runner-anchor');
+    const leo = document.querySelector('.track-leo-anchor');
     return leo?.style?.left;
   });
   console.log('Leo Right Lane Position:', leoRightPos);
@@ -115,11 +113,9 @@ async function playtestHighway3D() {
   await new Promise(r => setTimeout(r, 220));
 
   const jumpState = await page.evaluate(() => {
-    const anchor = document.querySelector('.leo-3d-runner-anchor');
-    const leoChar = document.querySelector('.leo-character');
+    const anchor = document.querySelector('.track-leo-anchor');
     return {
       hasJumpClass: anchor?.classList?.contains('leo-anchor-jump'),
-      charState: leoChar?.className,
     };
   });
   console.log('Leo Jump State:', jumpState);
@@ -133,11 +129,9 @@ async function playtestHighway3D() {
   await new Promise(r => setTimeout(r, 200));
 
   const slideState = await page.evaluate(() => {
-    const anchor = document.querySelector('.leo-3d-runner-anchor');
-    const leoChar = document.querySelector('.leo-character');
+    const anchor = document.querySelector('.track-leo-anchor');
     return {
       hasSlideClass: anchor?.classList?.contains('leo-anchor-slide'),
-      charState: leoChar?.className,
     };
   });
   console.log('Leo Slide State:', slideState);
@@ -150,21 +144,16 @@ async function playtestHighway3D() {
   await new Promise(r => setTimeout(r, 1200));
 
   const incomingAudit = await page.evaluate(() => {
-    const objs = Array.from(document.querySelectorAll('.obj-3d-entity'));
+    const objs = Array.from(document.querySelectorAll('.track-billboard-entity'));
     return objs.map(o => {
-      const rect = o.getBoundingClientRect();
       return {
-        type: o.className,
-        text: o.textContent?.trim(),
+        bottom: o.style.bottom,
         left: o.style.left,
-        top: o.style.top,
-        transform: o.style.transform,
-        width: Math.round(rect.width),
+        text: o.innerText?.trim(),
       };
     });
   });
-  console.log('Incoming 3D Objects Audit:', JSON.stringify(incomingAudit, null, 2));
-
+  console.log('Incoming 3D Wave Audit:', incomingAudit);
   await page.screenshot({ path: path.join(SCREENSHOT_DIR, 'highway_3d_06_wave_incoming.png') });
 
   await browser.close();

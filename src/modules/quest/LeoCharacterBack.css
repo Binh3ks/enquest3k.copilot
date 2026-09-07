@@ -1,7 +1,8 @@
 /* LeoCharacterBack.css */
 
 .leo-back-character {
-  position: absolute;
+  position: relative;
+  display: inline-block;
   transform-origin: bottom center;
   transition: transform 0.15s ease-out;
   will-change: transform;
