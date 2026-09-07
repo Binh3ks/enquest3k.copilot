@@ -1,0 +1,141 @@
+/* WordCrystal.css — Floating collectible word crystal styles */
+
+/* ─── Base Crystal ───────────────────────────────────────────────────────── */
+.word-crystal {
+  position: absolute;
+  width: 60px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 12;
+  transform-origin: center center;
+}
+
+/* ─── Floating Animation (idle) ──────────────────────────────────────────── */
+.crystal-idle {
+  animation: crystalFloat 2.8s ease-in-out infinite;
+}
+@keyframes crystalFloat {
+  0%, 100% { transform: translateY(0px)   rotate(-3deg); }
+  50%       { transform: translateY(-12px) rotate(3deg);  }
+}
+
+/* ─── Glow Ring ──────────────────────────────────────────────────────────── */
+.crystal-glow-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(167, 139, 250, 0.4);
+  animation: crystalGlowPulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes crystalGlowPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1);    }
+  50%       { opacity: 0.8; transform: scale(1.08); }
+}
+
+/* ─── Crystal Body & Gem ─────────────────────────────────────────────────── */
+.crystal-body {
+  position: relative;
+  z-index: 2;
+}
+.crystal-gem {
+  font-size: 28px;
+  line-height: 1;
+  display: block;
+  filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.8));
+}
+
+/* ─── Word Label ─────────────────────────────────────────────────────────── */
+.crystal-word {
+  font-size: 10px;
+  font-weight: 900;
+  color: #e9d5ff;
+  text-align: center;
+  max-width: 56px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.2;
+  margin-top: 2px;
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.9), 0 1px 2px rgba(0,0,0,0.8);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ─── Nearby State — stronger pulse ─────────────────────────────────────── */
+.crystal-nearby {
+  animation: crystalNearbyFloat 1.2s ease-in-out infinite;
+}
+@keyframes crystalNearbyFloat {
+  0%, 100% { transform: translateY(0px) scale(1.05) rotate(-3deg); }
+  50%       { transform: translateY(-8px) scale(1.12) rotate(3deg); }
+}
+.crystal-nearby .crystal-gem {
+  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 1)) drop-shadow(0 0 6px rgba(167, 139, 250, 0.9));
+  animation: crystalNearbyGemPulse 0.6s ease-in-out infinite;
+}
+@keyframes crystalNearbyGemPulse {
+  0%, 100% { font-size: 28px; }
+  50%       { font-size: 32px; }
+}
+
+.crystal-pulse-ring {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 3px solid rgba(245, 158, 11, 0.7);
+  animation: crystalPulseRingExpand 0.7s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes crystalPulseRingExpand {
+  0%   { opacity: 0.9; transform: scale(0.9); }
+  100% { opacity: 0;   transform: scale(1.5); }
+}
+
+/* ─── Collected State — burst ────────────────────────────────────────────── */
+.crystal-collected {
+  pointer-events: none;
+  animation: crystalCollectedPop 0.5s ease-out forwards;
+}
+@keyframes crystalCollectedPop {
+  0%   { transform: scale(1);    opacity: 1; }
+  30%  { transform: scale(1.5);  opacity: 1; }
+  100% { transform: scale(0);    opacity: 0; }
+}
+
+/* ─── Burst Particles ────────────────────────────────────────────────────── */
+.crystal-burst {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.crystal-particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 14px;
+  animation: crystalParticleFly 0.6s ease-out forwards;
+}
+.crystal-particle-0 { animation-delay: 0ms;   --dx: 40px;  --dy: -50px; }
+.crystal-particle-1 { animation-delay: 40ms;  --dx: -40px; --dy: -40px; }
+.crystal-particle-2 { animation-delay: 80ms;  --dx: 50px;  --dy: 20px;  }
+.crystal-particle-3 { animation-delay: 0ms;   --dx: -30px; --dy: 40px;  }
+.crystal-particle-4 { animation-delay: 60ms;  --dx: 10px;  --dy: -60px; }
+
+@keyframes crystalParticleFly {
+  0%   { transform: translate(-50%, -50%) scale(0);   opacity: 1; }
+  60%  { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.2); opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--dx) * 1.6), calc(-50% + var(--dy) * 1.6)) scale(0); opacity: 0; }
+}
+
+/* ─── Color Variants ─────────────────────────────────────────────────────── */
+.crystal-purple .crystal-gem { filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.9)); }
+.crystal-cyan   .crystal-gem { filter: drop-shadow(0 0 10px rgba(6,  182, 212, 0.9)); }
+.crystal-amber  .crystal-gem { filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.9)); }
+.crystal-green  .crystal-gem { filter: drop-shadow(0 0 10px rgba(34,  197, 94, 0.9)); }
+.crystal-rose   .crystal-gem { filter: drop-shadow(0 0 10px rgba(244, 63,  94, 0.9)); }

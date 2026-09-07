@@ -1,0 +1,173 @@
+/* HUDOverlay.css — Game HUD styles */
+
+/* ─── Overlay Container ──────────────────────────────────────────────────── */
+.hud-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+
+/* ─── Top Bar ────────────────────────────────────────────────────────────── */
+.hud-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px 6px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
+}
+
+/* ─── Hearts ─────────────────────────────────────────────────────────────── */
+.hud-hearts {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.hud-heart {
+  font-size: 22px;
+  line-height: 1;
+  transition: transform 0.2s, opacity 0.3s;
+}
+.hud-heart-empty {
+  opacity: 0.4;
+  filter: grayscale(1);
+}
+.hud-hearts-low .hud-heart-full {
+  animation: heartLowPulse 0.8s ease-in-out infinite;
+}
+@keyframes heartLowPulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50%       { transform: scale(1.3); filter: brightness(1.4) drop-shadow(0 0 6px rgba(239,68,68,0.9)); }
+}
+
+/* ─── Room Info ──────────────────────────────────────────────────────────── */
+.hud-room-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.hud-floor-badge {
+  font-size: 10px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.hud-door-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ─── Timer ──────────────────────────────────────────────────────────────── */
+.hud-timer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0,0,0,0.4);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+.hud-timer-icon { font-size: 14px; }
+.hud-timer-value {
+  font-size: 16px;
+  font-weight: 900;
+  color: #e2e8f0;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.5px;
+}
+.hud-timer-urgent {
+  border-color: rgba(239, 68, 68, 0.6);
+  animation: hudTimerUrgentBorder 0.5s ease-in-out infinite;
+}
+.hud-timer-urgent .hud-timer-value {
+  color: #ef4444;
+  animation: hudTimerUrgentPulse 0.5s ease-in-out infinite;
+}
+@keyframes hudTimerUrgentBorder {
+  0%, 100% { box-shadow: none; }
+  50%       { box-shadow: 0 0 12px rgba(239, 68, 68, 0.5); }
+}
+@keyframes hudTimerUrgentPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.1); }
+}
+
+/* ─── Score Strip ────────────────────────────────────────────────────────── */
+.hud-score-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 14px;
+  background: rgba(0,0,0,0.3);
+}
+
+/* Score */
+.hud-score {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.hud-score-icon { font-size: 14px; }
+.hud-score-value {
+  font-size: 15px;
+  font-weight: 900;
+  color: #fcd34d;
+  font-variant-numeric: tabular-nums;
+}
+.hud-score-unit {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(252, 211, 77, 0.6);
+  text-transform: uppercase;
+}
+
+/* Word Progress Dots */
+.hud-word-progress {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.hud-word-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  transition: background 0.3s, transform 0.2s;
+  flex-shrink: 0;
+}
+.hud-word-dot-collected {
+  background: #a78bfa;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 6px rgba(139, 92, 246, 0.6);
+  transform: scale(1.2);
+}
+
+/* Crystal Count */
+.hud-crystal-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+}
+
+/* ─── Progress Bar ───────────────────────────────────────────────────────── */
+.hud-progress-track {
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.hud-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+  border-radius: 0 2px 2px 0;
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 6px rgba(139, 92, 246, 0.5);
+}

@@ -1,9 +1,9 @@
 {
-  "commit": "852472f8f3e2c10e8eba486e6dc0e0f354aee0be",
-  "git_commit": "852472f8f3e2c10e8eba486e6dc0e0f354aee0be",
-  "shortCommit": "852472f8",
-  "message": "feat(chronicles): enable owner and test bypass for all floors and boss battle in world map",
-  "builtAt": "2026-09-07T08:47:43.098Z",
-  "build_timestamp": "2026-09-07T08:47:43.099Z",
+  "commit": "996eb1dcf635195d655fd8d19a5cc3e88be778b4",
+  "git_commit": "996eb1dcf635195d655fd8d19a5cc3e88be778b4",
+  "shortCommit": "996eb1dc",
+  "message": "fix(chronicles): Sprint 0 — fix 5 bugs B1-B5 before Leo physics refactor",
+  "builtAt": "2026-09-07T08:58:11.647Z",
+  "build_timestamp": "2026-09-07T08:58:11.648Z",
   "env": "production"
 }

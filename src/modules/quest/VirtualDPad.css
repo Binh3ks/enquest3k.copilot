@@ -1,0 +1,135 @@
+/* VirtualDPad.css — Mobile D-Pad & JUMP button styles */
+
+/* ─── Overlay ────────────────────────────────────────────────────────────── */
+.vdpad-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 16px;
+  pointer-events: none; /* children re-enable pointer-events */
+  z-index: 50;
+}
+
+/* ─── D-Pad Container ────────────────────────────────────────────────────── */
+.vdpad-dpad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  pointer-events: auto;
+}
+
+.vdpad-middle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.vdpad-center {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+  user-select: none;
+}
+
+/* ─── D-Pad Buttons ──────────────────────────────────────────────────────── */
+.vdpad-btn {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  user-select: none;
+  transition: background 0.08s, transform 0.08s;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.vdpad-btn:active,
+.vdpad-btn:focus {
+  background: rgba(139, 92, 246, 0.45);
+  border-color: rgba(167, 139, 250, 0.7);
+  transform: scale(0.92);
+  outline: none;
+}
+
+/* ─── JUMP Button ────────────────────────────────────────────────────────── */
+.vdpad-jump-btn {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  border: 2.5px solid rgba(167, 139, 250, 0.6);
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  touch-action: none;
+  user-select: none;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+
+.vdpad-jump-btn:active,
+.vdpad-jump-btn:focus {
+  transform: scale(0.9);
+  box-shadow:
+    0 0 30px rgba(139, 92, 246, 0.8),
+    0 2px 6px rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+
+.vdpad-jump-icon {
+  font-size: 11px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.vdpad-jump-emoji {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* ─── Desktop hiding (D-Pad only shown on mobile/touch) ──────────────────── */
+@media (hover: hover) and (pointer: fine) {
+  /* On desktop, show D-Pad with lower opacity as visual hint */
+  .vdpad-overlay {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .vdpad-overlay:hover {
+    opacity: 0.7;
+    pointer-events: auto;
+  }
+}
