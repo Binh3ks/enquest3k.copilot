@@ -513,3 +513,373 @@
   .bbs-boss-sprite { font-size: 3.5rem; }
   .bbs-boss-name { font-size: 1.3rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PHASE C ADDITIONS — Boss Types, Speech, Ability Overlay, Attack Animations
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Boss Name (dynamic color via CSS var) ─────────────────────────────── */
+.bbs-boss-name {
+  --boss-color: #ef4444;
+  background: linear-gradient(135deg, var(--boss-color), #f59e0b) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* ─── Boss Type Badge (intro screen) ───────────────────────────────────── */
+.bbs-boss-type-badge {
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 10px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.04);
+}
+.bbs-ability-teaser {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* ─── Start button dynamic color ───────────────────────────────────────── */
+.bbs-start-btn {
+  background: linear-gradient(135deg, var(--boss-color, #ef4444), color-mix(in srgb, var(--boss-color, #ef4444) 70%, #000)) !important;
+}
+
+/* ─── Boss Type Idle Animations ─────────────────────────────────────────── */
+
+/* Sorcerer — floating mystic glow */
+.bbs-boss-sorcerer.intro-pulse,
+.bbs-boss-sorcerer.boss-idle {
+  animation: sorcererFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 28px rgba(139,92,246,0.7));
+}
+@keyframes sorcererFloat {
+  0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 28px rgba(139,92,246,0.7)); }
+  50%       { transform: translateY(-10px) scale(1.06); filter: drop-shadow(0 0 48px rgba(139,92,246,1)); }
+}
+
+/* Golem — heavy stomp pulse */
+.bbs-boss-golem.intro-pulse,
+.bbs-boss-golem.boss-idle {
+  animation: golemStomp 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(120,113,108,0.6));
+}
+@keyframes golemStomp {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  30%       { transform: scale(1.04) rotate(-2deg); }
+  60%       { transform: scale(0.97) rotate(2deg); }
+}
+
+/* Dragon — flickering fire glow */
+.bbs-boss-dragon.intro-pulse,
+.bbs-boss-dragon.boss-idle {
+  animation: dragonFlare 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 24px rgba(239,68,68,0.8));
+}
+@keyframes dragonFlare {
+  0%, 100% { filter: drop-shadow(0 0 24px rgba(239,68,68,0.8)); transform: scale(1); }
+  40%       { filter: drop-shadow(0 0 50px rgba(239,68,68,1)) drop-shadow(0 0 12px #fbbf24); transform: scale(1.07); }
+  70%       { filter: drop-shadow(0 0 30px rgba(239,68,68,0.6)); }
+}
+
+/* Sphinx — slow golden shimmer */
+.bbs-boss-sphinx.intro-pulse,
+.bbs-boss-sphinx.boss-idle {
+  animation: sphinxShimmer 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 28px rgba(245,158,11,0.7));
+}
+@keyframes sphinxShimmer {
+  0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 28px rgba(245,158,11,0.7)); }
+  50%       { transform: scale(1.05) rotate(1deg); filter: drop-shadow(0 0 50px rgba(245,158,11,1)); }
+}
+
+/* Guardian — ethereal pulse */
+.bbs-boss-guardian.intro-pulse,
+.bbs-boss-guardian.boss-idle {
+  animation: guardianPulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(99,102,241,0.8));
+}
+@keyframes guardianPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 30px rgba(99,102,241,0.8)); opacity: 1; }
+  50%       { transform: scale(1.06); filter: drop-shadow(0 0 55px rgba(99,102,241,1)); opacity: 0.9; }
+}
+
+/* Enraged modifier */
+.bbs-boss-sprite.enraged {
+  animation: enragedPulse 0.6s ease-in-out infinite !important;
+}
+@keyframes enragedPulse {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(239,68,68,0.9)); }
+  50%       { filter: drop-shadow(0 0 50px rgba(239,68,68,1)) brightness(1.3); }
+}
+
+/* ─── BOSS SPEECH SCREEN ────────────────────────────────────────────────── */
+
+.bbs-speech-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.bbs-boss-sprite-large {
+  font-size: 7rem;
+  line-height: 1;
+}
+
+.bbs-boss-speech-name {
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.bbs-speech-bubble {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 18px;
+  padding: 18px 24px;
+  max-width: 340px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #f1f5f9;
+  position: relative;
+  transition: opacity 0.4s ease;
+}
+.bbs-speech-bubble.visible { opacity: 1; animation: speechAppear 0.4s ease; }
+.bbs-speech-bubble.hidden  { opacity: 0; }
+
+@keyframes speechAppear {
+  0%   { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.bbs-speech-tail {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.2);
+}
+
+.bbs-skip-speech {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #64748b;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  transition: color 0.2s;
+}
+.bbs-skip-speech:hover { color: #94a3b8; border-color: rgba(255,255,255,0.25); }
+
+/* ─── ABILITY OVERLAY ───────────────────────────────────────────────────── */
+
+.bbs-ability-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  animation: abilityIn 0.4s ease forwards;
+  backdrop-filter: blur(8px);
+}
+
+@keyframes abilityIn {
+  0%   { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.bbs-ability-1 { background: radial-gradient(ellipse at center, rgba(139,92,246,0.85) 0%, rgba(15,23,42,0.9) 100%); }
+.bbs-ability-2 { background: radial-gradient(ellipse at center, rgba(120,113,108,0.85) 0%, rgba(15,23,42,0.9) 100%); }
+.bbs-ability-3 { background: radial-gradient(ellipse at center, rgba(239,68,68,0.85) 0%, rgba(15,23,42,0.9) 100%); }
+.bbs-ability-4 { background: radial-gradient(ellipse at center, rgba(245,158,11,0.85) 0%, rgba(15,23,42,0.9) 100%); }
+.bbs-ability-5 { background: radial-gradient(ellipse at center, rgba(99,102,241,0.85) 0%, rgba(15,23,42,0.9) 100%); }
+
+.bbs-ability-icon {
+  font-size: 5rem;
+  animation: abilityIconSpin 0.6s ease;
+}
+@keyframes abilityIconSpin {
+  0%   { transform: rotate(-15deg) scale(0.5); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.bbs-ability-name {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 12px 0 8px;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.bbs-ability-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+/* ─── ABILITY ACTIVE BADGE (combat) ────────────────────────────────────── */
+
+.bbs-ability-active-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid currentColor;
+  border-radius: 10px;
+  padding: 2px 10px;
+  opacity: 0.8;
+  margin: 2px 0;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+@keyframes badgePulse {
+  0%, 100% { opacity: 0.8; }
+  50%       { opacity: 1; }
+}
+
+/* ─── ENRAGE BADGE ──────────────────────────────────────────────────────── */
+
+.bbs-enrage-badge {
+  font-size: 0.72rem;
+  font-weight: 900;
+  animation: enrageBadgeFlash 0.5s ease-in-out infinite alternate;
+}
+@keyframes enrageBadgeFlash {
+  0%   { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* ─── BOSS ATTACK ANIMATIONS ────────────────────────────────────────────── */
+
+.bbs-boss-attack {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 80;
+}
+
+/* Lightning (Sorcerer) */
+.bbs-attack-lightning {
+  background: radial-gradient(ellipse at 50% 30%, rgba(139,92,246,0.25) 0%, transparent 70%);
+  animation: lightningStrike 0.6s ease forwards;
+}
+@keyframes lightningStrike {
+  0%  { opacity: 0; }
+  15% { opacity: 1; background: radial-gradient(ellipse at 50% 30%, rgba(139,92,246,0.5) 0%, transparent 60%); }
+  30% { opacity: 0.3; }
+  45% { opacity: 0.9; }
+  100%{ opacity: 0; }
+}
+
+/* Slam (Golem) */
+.bbs-attack-slam {
+  background: linear-gradient(to top, rgba(120,113,108,0.4) 0%, transparent 50%);
+  animation: golemSlam 0.5s ease forwards;
+}
+@keyframes golemSlam {
+  0%  { opacity: 0; transform: translateY(20px); }
+  40% { opacity: 1; transform: translateY(0); }
+  100%{ opacity: 0; }
+}
+
+/* Fire (Dragon) */
+.bbs-attack-fire {
+  background: radial-gradient(ellipse at 50% 60%, rgba(239,68,68,0.4) 0%, rgba(251,191,36,0.1) 50%, transparent 80%);
+  animation: dragonBreath 0.6s ease forwards;
+}
+@keyframes dragonBreath {
+  0%  { opacity: 0; transform: scaleX(0.3); }
+  40% { opacity: 1; transform: scaleX(1); }
+  100%{ opacity: 0; }
+}
+
+/* Roar (Sphinx) */
+.bbs-attack-roar {
+  background: radial-gradient(ellipse at center, rgba(245,158,11,0.25) 0%, transparent 70%);
+  animation: sphinxRoar 0.7s ease forwards;
+}
+@keyframes sphinxRoar {
+  0%   { opacity: 0; transform: scale(0.8); }
+  50%  { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+/* Pulse (Guardian) */
+.bbs-attack-pulse {
+  background: radial-gradient(ellipse at center, rgba(99,102,241,0.3) 0%, transparent 70%);
+  animation: guardianMindPulse 0.6s ease forwards;
+}
+@keyframes guardianMindPulse {
+  0%   { opacity: 0; }
+  30%  { opacity: 1; }
+  60%  { opacity: 0.4; }
+  100% { opacity: 0; }
+}
+
+/* ─── MIND FOG (Type 5) ─────────────────────────────────────────────────── */
+
+.bbs-fog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(99,102,241,0.08);
+  pointer-events: none;
+  z-index: 10;
+  backdrop-filter: blur(1px);
+  animation: fogDrift 6s ease-in-out infinite;
+}
+
+@keyframes fogDrift {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+
+/* Dim whole screen slightly when fog is active */
+.bbs-fog-active { filter: contrast(0.92) brightness(0.92); }
+
+/* ─── 5-OPTION GRID (Mirror Spell) ─────────────────────────────────────── */
+
+.bbs-options-5 {
+  grid-template-columns: 1fr 1fr 1fr !important;
+}
+.bbs-options-5 .bbs-option:last-child {
+  grid-column: 2;         /* center the 5th option */
+}
+
+/* ─── DEFEAT boss sprite ────────────────────────────────────────────────── */
+
+.bbs-defeat-boss-sprite {
+  font-size: 3rem;
+  opacity: 0.4;
+  filter: grayscale(1);
+  margin-bottom: -8px;
+}
+
+/* ─── Mobile Phase C additions ──────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .bbs-boss-sprite-large { font-size: 5rem; }
+  .bbs-ability-name      { font-size: 1.4rem; }
+  .bbs-speech-bubble     { font-size: 0.95rem; padding: 14px 18px; }
+  .bbs-options-5         { grid-template-columns: 1fr 1fr !important; }
+  .bbs-options-5 .bbs-option:last-child { grid-column: auto; }
+}

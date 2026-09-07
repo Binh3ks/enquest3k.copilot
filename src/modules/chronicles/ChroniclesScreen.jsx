@@ -15,6 +15,7 @@ import ChroniclesWorldMap from './ChroniclesWorldMap';
 import DailyRoomScreen    from './DailyRoomScreen';
 import BossBattleScreen   from './BossBattleScreen';
 import useChroniclesStore from '../../stores/useChroniclesStore';
+import { getWeekChroniclesConfig } from '../../data/chronicles';
 
 // NPC dialogues per day, week 33 (pilot) — later move to data file
 const W33_NPC_DIALOGUES = [
@@ -161,9 +162,12 @@ export default function ChroniclesScreen() {
 
   // ROOM SCREEN
   if (screen === 'room' && activeDayIndex !== null) {
-    const npcDialogue = weekNumber === 33
+    const weekConfig = getWeekChroniclesConfig(weekNumber);
+    const floorConfig = weekConfig?.floors?.[activeDayIndex];
+    const npcDialogue = floorConfig?.npcDialogue || (weekNumber === 33
       ? W33_NPC_DIALOGUES[activeDayIndex]
-      : undefined; // other weeks use default
+      : undefined); // other weeks use default
+    const cliffhanger = floorConfig?.cliffhanger;
 
     return (
       <DailyRoomScreen
@@ -171,6 +175,8 @@ export default function ChroniclesScreen() {
         dayIndex={activeDayIndex}
         weekData={weekData}
         npcDialogue={npcDialogue}
+        cliffhanger={cliffhanger}
+        floorConfig={floorConfig}
         onRoomComplete={handleRoomComplete}
         onExit={handleExit}
       />

@@ -1,0 +1,125 @@
+/* src/components/questmap/DoorUnlockCeremony.css */
+
+.duc-overlay {
+  position: fixed; inset: 0; z-index: 9700;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 20px; padding: 24px;
+  background: #0a0a1a;
+  animation: ducFadeIn 0.5s ease both;
+}
+.duc-overlay.duc-exit { animation: ducFadeOut 0.5s ease forwards; }
+
+@keyframes ducFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ducFadeOut { to { opacity: 0; } }
+
+/* Corridor background — stone texture via CSS */
+.duc-corridor-bg {
+  position: absolute; inset: 0;
+  background: 
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, transparent 1px, transparent 40px),
+    linear-gradient(180deg, #0f0c1a 0%, #1a0f2e 50%, #0f0c1a 100%);
+}
+
+/* Zone badge */
+.duc-zone-badge {
+  background: rgba(16,185,129,0.2);
+  border: 2px solid #10b981;
+  border-radius: 999px;
+  padding: 6px 20px;
+  font-weight: 900; font-size: 0.8rem; color: #6ee7b7;
+  letter-spacing: 0.08em;
+  position: relative; z-index: 2;
+  animation: ducBadgePop 0.4s cubic-bezier(0.34,1.56,0.64,1) 0.1s both;
+}
+@keyframes ducBadgePop {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* ─── THE DOOR ─────────────────────────────────────────── */
+.duc-door-container {
+  position: relative; z-index: 2;
+  width: 200px; height: 280px;
+  perspective: 800px;
+}
+
+/* Door halves — split vertically */
+.duc-door-left, .duc-door-right {
+  position: absolute; top: 0; height: 100%; width: 50%;
+  transform-style: preserve-3d;
+  transition: transform 1.0s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.duc-door-left  { left: 0;  transform-origin: left center; }
+.duc-door-right { right: 0; transform-origin: right center; }
+
+/* Door panels */
+.duc-door-panel-l, .duc-door-panel-r {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #374151, #1f2937);
+  border: 2px solid rgba(156,163,175,0.3);
+  display: flex; align-items: center; justify-content: center;
+}
+.duc-door-panel-l {
+  border-radius: 8px 0 0 8px;
+  background: linear-gradient(135deg, #4b5563, #374151);
+}
+.duc-door-panel-r {
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(135deg, #374151, #1f2937);
+}
+.duc-door-handle-l { font-size: 1.5rem; }
+
+/* Crack — center light */
+.duc-door-crack {
+  position: absolute; left: 50%; top: 0;
+  transform: translateX(-50%);
+  width: 2px; height: 100%;
+  background: var(--theme);
+  box-shadow: 0 0 20px var(--theme), 0 0 40px var(--theme);
+  transition: width 0.8s ease, box-shadow 0.8s ease;
+}
+.duc-crack-wide {
+  width: 20px;
+  box-shadow: 0 0 60px var(--theme), 0 0 120px var(--theme);
+}
+
+/* OPEN state — doors swing apart */
+.duc-door-container.open .duc-door-left  { transform: rotateY(-75deg); }
+.duc-door-container.open .duc-door-right { transform: rotateY(75deg); }
+.duc-door-container.reveal .duc-door-left  { transform: rotateY(-90deg); }
+.duc-door-container.reveal .duc-door-right { transform: rotateY(90deg); }
+
+/* Floor reveal */
+.duc-floor-reveal {
+  display: flex; align-items: center; gap: 16px;
+  position: relative; z-index: 2;
+  animation: ducReveal 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes ducReveal {
+  from { transform: scale(0.6) translateY(30px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+.duc-floor-icon { font-size: 3rem; filter: drop-shadow(0 0 20px var(--theme)); }
+.duc-floor-info { display: flex; flex-direction: column; gap: 4px; }
+.duc-floor-label { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--theme); font-weight: 900; }
+.duc-floor-name  { font-size: 1.1rem; font-weight: 900; color: #fff; }
+.duc-floor-cta   { font-size: 0.8rem; color: rgba(255,255,255,0.6); font-style: italic; }
+
+/* PP earned hint */
+.duc-pp-earned {
+  position: relative; z-index: 2;
+  font-size: 0.8rem; color: rgba(167,139,250,0.9);
+  font-weight: 700;
+  animation: ducReveal 0.4s ease 0.3s both;
+}
+
+/* Skip */
+.duc-skip {
+  position: absolute; bottom: 20px;
+  background: transparent; border: none;
+  color: rgba(255,255,255,0.3); font-size: 0.75rem;
+  cursor: pointer; font-weight: 700;
+}
+.duc-skip:hover { color: rgba(255,255,255,0.7); }

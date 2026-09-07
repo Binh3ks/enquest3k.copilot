@@ -12,6 +12,9 @@ import { CLILSealStamp, GrandStampModal } from '../cambridge/ExplorerPassport';
 import SRSFlashcardReview from '../common/SRSFlashcardReview';
 import srsService from '../../services/srsService';
 import ChroniclesFAB from './ChroniclesFAB';
+import QuestEntryOverlay from './QuestEntryOverlay';
+import QuestCompleteFanfare from './QuestCompleteFanfare';
+import StreakCornerBadge from './StreakCornerBadge';
 import './TaskScreen.css';
 
 /**
@@ -282,14 +285,39 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
     navigate(`/week/${weekId}/hub/1`);
   };
 
-  const handleTaskComplete = (score = 100) => {
+  // Gamification Layer states (Part 9)
+  const [showEntryOverlay, setShowEntryOverlay] = useState(true);
+  const [overlayDismissed, setOverlayDismissed] = useState(false);
+  const [showFanfare, setShowFanfare] = useState(false);
+  const [fanfareScore, setFanfareScore] = useState(100);
+
+  const handleOverlayDismiss = useCallback(() => {
+    setShowEntryOverlay(false);
+    setOverlayDismissed(true);
+  }, []);
+
+  // Intercept handleTaskComplete to trigger Moment 3 Fanfare before navigating
+  const handleTaskComplete = useCallback((score = 100) => {
     if (weekId && taskId) {
       useDailyQuestStore.getState().completeQuest(weekId, taskId, { score });
       useUserStore.getState().updateLocalProgress(weekId, taskId, { isCompleted: true, score });
       useUserStore.getState().syncProgressToServer({ weekId, stationId: taskId, isCompleted: true, score });
     }
+    setFanfareScore(score);
+    setShowFanfare(true);
+  }, [weekId, taskId]);
+
+  const handleFanfareComplete = useCallback(() => {
+    setShowFanfare(false);
     navigate(`/week/${weekId}/hub/1`);
-  };
+  }, [weekId, navigate]);
+
+  useEffect(() => {
+    window.__triggerTaskComplete = handleTaskComplete;
+    return () => {
+      delete window.__triggerTaskComplete;
+    };
+  }, [handleTaskComplete]);
 
   if (!routing || !taskInfo) {
     return (
@@ -352,6 +380,31 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
 
   return (
     <div className="ts-container relative">
+      {/* Moment 1: Cinematic Quest Entry Overlay (1.5s auto-dismiss) */}
+      {showEntryOverlay && !overlayDismissed && (
+        <QuestEntryOverlay
+          taskId={taskId}
+          taskLabel={taskInfo?.label || ''}
+          weekId={weekId}
+          onDismiss={handleOverlayDismiss}
+        />
+      )}
+
+      {/* Moment 2: Live Pulse Streak Corner Badge */}
+      <StreakCornerBadge streak={0} score={100} xp={taskInfo?.xp || 0} />
+
+      {/* Moment 3: Quest Complete Fanfare (intercepts completion before navigation) */}
+      {showFanfare && (
+        <QuestCompleteFanfare
+          taskId={taskId}
+          taskLabel={taskInfo?.label || ''}
+          score={fanfareScore}
+          xpEarned={taskInfo?.xp || 0}
+          weekId={weekId}
+          onComplete={handleFanfareComplete}
+        />
+      )}
+
       {/* QA Nonce Banner */}
       {qaNonce && (
         <div

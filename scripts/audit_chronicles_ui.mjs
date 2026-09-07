@@ -8,7 +8,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUT_DIR = path.join(__dirname, '../.gemini/antigravity-ide/brain/f875fff5-035d-4b7d-9f40-9d8daf173aeb/screenshots');
+const OUT_DIR = '/Users/binhnguyen/.gemini/antigravity-ide/brain/ad18b61f-917e-430a-93ab-ecaa9f37ac43/screenshots';
 mkdirSync(OUT_DIR, { recursive: true });
 
 const BASE = 'http://localhost:5173';
@@ -21,6 +21,13 @@ const browser = await puppeteer.launch({
 
 const page = await browser.newPage();
 await page.setViewport({ width: 390, height: 844 }); // iPhone 14 viewport
+
+// Pre-seed localStorage to bypass onboarding in automated tests
+await page.evaluateOnNewDocument(() => {
+  localStorage.setItem('engquest_onboarded', 'true');
+  localStorage.setItem('arcade_owner_bypass', 'true');
+  localStorage.setItem('engquest3k_srs_daily_reviewed', new Date().toISOString().slice(0, 10));
+});
 
 // Capture console errors
 page.on('console', (msg) => {
@@ -85,12 +92,23 @@ if (doorBtns.length > 0) {
     const dom3 = await domText();
     console.log('DOM (Mini-game intro):\n', dom3);
 
-    // Click START button
-    const startBtn = await page.$('.cg-start-btn');
+    // Click START button (supports both .cg-start-btn and modal start challenge button)
+    let startBtn = await page.$('.cg-start-btn');
+    if (!startBtn) {
+      const allBtns = await page.$$('button');
+      for (const btn of allBtns) {
+        const txt = await page.evaluate(el => el.innerText, btn);
+        if (txt && (txt.includes('START CHALLENGE') || txt.includes('Understood'))) {
+          startBtn = btn;
+          break;
+        }
+      }
+    }
     if (startBtn) {
+      console.log('Clicking START CHALLENGE button...');
       await startBtn.click();
-      await new Promise(r => setTimeout(r, 1500));
-      await snap('04_mini_game_playing');
+      await new Promise(r => setTimeout(r, 2000));
+      const s4 = await snap('04_mini_game_playing');
       const dom4 = await domText();
       console.log('DOM (Game playing):\n', dom4);
     }
@@ -102,6 +120,32 @@ console.log('\n=== STEP 4: Fresh reload ===');
 await page.goto(`${BASE}/week/33/chronicles`, { waitUntil: 'networkidle0', timeout: 10000 });
 await new Promise(r => setTimeout(r, 1500));
 await snap('05_world_map_reload');
+
+// ── STEP 5: Unlock and audit Boss Battle Screen ────────────────────────────
+console.log('\n=== STEP 5: Unlock and audit Boss Battle Screen ===');
+await page.evaluate(() => {
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith('engquest_chronicles_')) {
+      const state = JSON.parse(localStorage.getItem(k) || '{}');
+      state.weeklyPP = { ...state.weeklyPP, w33: 360 };
+      localStorage.setItem(k, JSON.stringify(state));
+    }
+  }
+});
+await page.reload({ waitUntil: 'networkidle0' });
+await new Promise(r => setTimeout(r, 1500));
+const bossBtn = await page.$('.cwm-boss-node.unlocked');
+if (bossBtn) {
+  console.log('Boss unlocked at Gold tier! Clicking Boss node...');
+  await bossBtn.click();
+  await new Promise(r => setTimeout(r, 2000));
+  await snap('06_boss_battle_entered');
+  const dom5 = await domText();
+  console.log('DOM (Boss Battle):\n', dom5);
+} else {
+  console.log('⚠ Boss button not unlocked yet');
+}
 
 await browser.close();
 

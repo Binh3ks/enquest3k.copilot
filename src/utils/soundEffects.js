@@ -316,3 +316,38 @@ export function initGlobalClickSound() {
   }, { passive: true });
 }
 
+/**
+ * 10. Micro Particle Burst — tiny DOM confetti for single correct answer
+ * Lighter than fireCelebrationConfetti (5 particles vs 70, 0.5s vs 2.5s)
+ */
+export function playMicroParticleBurst(anchorEl = null) {
+  if (typeof window === 'undefined') return;
+  const x = anchorEl
+    ? anchorEl.getBoundingClientRect().left + anchorEl.offsetWidth / 2
+    : window.innerWidth / 2;
+  const y = anchorEl
+    ? anchorEl.getBoundingClientRect().top
+    : window.innerHeight / 2;
+
+  const colors = ['#f59e0b', '#10b981', '#6366f1', '#ec4899'];
+  for (let i = 0; i < 5; i++) {
+    const el = document.createElement('div');
+    const angle = (Math.PI * 2 * i) / 5;
+    const dist = 40 + Math.random() * 20;
+    el.style.cssText = `
+      position: fixed; left: ${x}px; top: ${y}px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: ${colors[i % colors.length]};
+      pointer-events: none; z-index: 99998;
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    `;
+    document.body.appendChild(el);
+    requestAnimationFrame(() => {
+      el.style.transform = `translate(${Math.cos(angle) * dist}px, ${Math.sin(angle) * dist - 30}px)`;
+      el.style.opacity = '0';
+    });
+    setTimeout(() => el.remove(), 550);
+  }
+}
+
+

@@ -169,6 +169,267 @@ const GAME_GUIDES = {
     ],
     starsGuide: '1★: 1 Blank Correct | 2★: 2 Blanks Correct | 3★: All Blanks Perfect',
   },
+  phonics_bubble: {
+    icon: '🔊',
+    title: 'Phonics Sound Blaster',
+    doorType: '🔵 VOCAB / PHONICS DOOR',
+    mission: 'Listen carefully to the target English sound and pop the matching word bubbles across 5 rounds!',
+    steps: [
+      {
+        num: '1',
+        label: 'Listen to Target Sound',
+        desc: 'Pay attention to the target phoneme displayed and pronounced at the top.',
+      },
+      {
+        num: '2',
+        label: 'Preview Audio on Bubbles',
+        desc: 'Tap the speaker button on any bubble to hear its native pronunciation first.',
+      },
+      {
+        num: '3',
+        label: 'Blast Matching Bubbles',
+        desc: 'Tap bubbles that contain the target sound before they float away.',
+      },
+      {
+        num: '4',
+        label: 'Maintain Combo',
+        desc: 'Pop consecutive correct bubbles without errors to trigger combo score multipliers.',
+      },
+    ],
+    starsGuide: '1★: 3 Rounds Cleared | 2★: 4 Rounds Cleared | 3★: 5 Rounds with High Accuracy',
+  },
+  chunk_catapult: {
+    icon: '🧩',
+    title: 'Chunk Catapult Match',
+    doorType: '🟡 GRAMMAR DOOR',
+    mission: 'Launch sentence starters into their matching predicate completions using the magical catapult!',
+    steps: [
+      {
+        num: '1',
+        label: 'Select Starter Chunk',
+        desc: 'Tap a sentence starter card in the left column to load it into the catapult chamber.',
+      },
+      {
+        num: '2',
+        label: 'Aim at Completion',
+        desc: 'Tap the matching predicate chunk in the right column to launch your projectile.',
+      },
+      {
+        num: '3',
+        label: 'Form Full Collocations',
+        desc: 'Connected pairs lock in green energy, reinforcing syntactic and semantic coherence.',
+      },
+      {
+        num: '4',
+        label: 'Clear All Pairs',
+        desc: 'Link all 5 sentence chunks accurately before the catapult timer expires.',
+      },
+    ],
+    starsGuide: '1★: 3 Pairs Matched | 2★: 4 Pairs Matched | 3★: 5 Pairs with ≤1 Mistake',
+  },
+  meteor_smasher: {
+    icon: '🛸',
+    title: 'Meteor Smasher',
+    doorType: '🔴 INTEGRATION DOOR',
+    mission: 'Defend the station by blasting incoming cosmic meteors that carry matching definitions or words!',
+    steps: [
+      {
+        num: '1',
+        label: 'Check Target HUD',
+        desc: 'Look at the target display at the top to see the active word or definition.',
+      },
+      {
+        num: '2',
+        label: 'Identify Incoming Meteor',
+        desc: 'Three meteors plunge simultaneously. Scan their contents rapidly.',
+      },
+      {
+        num: '3',
+        label: 'Blast the Correct Rock',
+        desc: 'Tap the correct meteor to trigger a particle explosion and score points.',
+      },
+      {
+        num: '4',
+        label: 'Trigger Meteor Storm',
+        desc: 'Destroy 3 meteors in a row to unleash a Meteor Storm screen clear!',
+      },
+    ],
+    starsGuide: '1★: 4–6 Hits | 2★: 7–9 Hits | 3★: 10+ Hits in 45 Seconds',
+  },
+  highway_runner: {
+    icon: '🏎️',
+    title: 'Highway Word Runner',
+    doorType: '🔵 VOCAB DOOR',
+    mission: 'Steer your race car through 3 highway lanes to collect target vocabulary stars and dodge hazards!',
+    steps: [
+      {
+        num: '1',
+        label: 'Read Highway Objective',
+        desc: 'Observe the target meaning or category shown on your racing dashboard.',
+      },
+      {
+        num: '2',
+        label: 'Steer Between 3 Lanes',
+        desc: 'Use the Left / Right arrow keys or touch buttons to change lanes smoothly.',
+      },
+      {
+        num: '3',
+        label: 'Collect Target Stars',
+        desc: 'Drive into glowing word stars that match the target definition for turbo points.',
+      },
+      {
+        num: '4',
+        label: 'Dodge Hazard Obstacles',
+        desc: 'Avoid wrong word barriers; hitting obstacles spins your vehicle and consumes lives.',
+      },
+    ],
+    starsGuide: '1★: 5+ Collects | 2★: 10+ Collects | 3★: 15+ Collects with Surviving Lives',
+  },
+  spell_train_express: {
+    icon: '🚆',
+    title: 'Syntax Express 4-Car',
+    doorType: '🟡 GRAMMAR DOOR',
+    mission: 'Hitch complex 4-part syntactic carriages to the high-speed bullet train before departure whistle!',
+    steps: [
+      {
+        num: '1',
+        label: 'Inspect 4-Car Sequence',
+        desc: 'Review [Subject] ➔ [Verb] ➔ [Object] ➔ [Adverbial / Clause] requirements.',
+      },
+      {
+        num: '2',
+        label: 'Filter Out Distractors',
+        desc: 'The platform contains 2 distractor carts. Ignore irrelevant words.',
+      },
+      {
+        num: '3',
+        label: 'Hitch in Exact Order',
+        desc: 'Tap carriages in sequence to link them to the futuristic locomotive.',
+      },
+      {
+        num: '4',
+        label: 'Express Route Bonus',
+        desc: 'Assemble carriages without unhitching to earn the zero-undo speedrunner bonus.',
+      },
+    ],
+    starsGuide: '1★: 2 Trains Cleared | 2★: 3 Trains Cleared | 3★: 4 Trains with 0 Strikes',
+  },
+  lexical_riddle: {
+    icon: '🔍',
+    title: 'Mystery Riddle Detective',
+    doorType: '🔴 INTEGRATION DOOR',
+    mission: 'Solve 5 mystery case files by deducing secret words from progressive context clues!',
+    steps: [
+      {
+        num: '1',
+        label: 'Read Initial Clue',
+        desc: 'Analyze Clue #1. Guess early for maximum detective prestige points (+30 pts)!',
+      },
+      {
+        num: '2',
+        label: 'Request More Clues',
+        desc: 'Need evidence? Tap Reveal Next Clue to uncover narrower descriptive clues.',
+      },
+      {
+        num: '3',
+        label: 'Inspect Suspect Cards',
+        desc: 'Select the matching vocabulary suspect from the 4 clue cards below.',
+      },
+      {
+        num: '4',
+        label: 'Close All 5 Cases',
+        desc: 'Crack all 5 mystery dossiers before the detective timer runs out.',
+      },
+    ],
+    starsGuide: '1★: 3 Cases Solved | 2★: 4 Cases Solved | 3★: 5 Cases with Early Deductions',
+  },
+  grand_matrix: {
+    icon: '👑',
+    title: 'Grand Master Matrix',
+    doorType: '🔵 VOCAB ELITE DOOR',
+    mission: 'Solve the 4×4 master grid by grouping all 4 dimensions of each vocabulary item together!',
+    steps: [
+      {
+        num: '1',
+        label: 'Understand 4 Dimensions',
+        desc: 'Each word has: Word card, Definition, Example Sentence, and Part-of-Speech tag.',
+      },
+      {
+        num: '2',
+        label: 'Select 4 Matching Cards',
+        desc: 'Tap 4 cards in the 16-card matrix that correspond to the exact same vocabulary entry.',
+      },
+      {
+        num: '3',
+        label: 'Lock Matrix Group',
+        desc: 'Hit LOCK GROUP to verify. Correct sets blast off the board in golden light.',
+      },
+      {
+        num: '4',
+        label: 'Clear All 4 Groups',
+        desc: 'Complete all 4 groups before exhausting your remaining stabilization attempts.',
+      },
+    ],
+    starsGuide: '1★: Cleared with ≤4 Retries | 2★: Cleared with ≤2 Retries | 3★: Flawless Matrix Clear',
+  },
+  titan_forge: {
+    icon: '⚡',
+    title: 'Titan Grammar Forge',
+    doorType: '🟡 GRAMMAR ELITE DOOR',
+    mission: 'Spot grammar errors on the ancient Titan tablet and forge the perfect corrections with your hammer!',
+    steps: [
+      {
+        num: '1',
+        label: 'Spot the Error Word',
+        desc: 'Read the inscribed sentence on the Titan stone tablet and tap the word containing the error.',
+      },
+      {
+        num: '2',
+        label: 'Choose Correction Rune',
+        desc: 'Select the grammatically accurate replacement rune from the 4 forge choices below.',
+      },
+      {
+        num: '3',
+        label: 'Titan Forge Strike',
+        desc: 'Correct replacements imbue the stone tablet with golden fire and repair the sentence.',
+      },
+      {
+        num: '4',
+        label: 'Repair 6 Inscriptions',
+        desc: 'Overcome tense, agreement, article, and preposition errors across 6 trials.',
+      },
+    ],
+    starsGuide: '1★: 3 Inscriptions Forged | 2★: 4 Inscriptions Forged | 3★: 5–6 Perfect Forges',
+  },
+  cambridge_cloze: {
+    icon: '🏆',
+    title: 'Cambridge Cloze Gauntlet',
+    doorType: '🔴 INTEGRATION ELITE DOOR',
+    mission: 'Type missing English words directly into the gauntlet passage to deplete the Boss HP bar!',
+    steps: [
+      {
+        num: '1',
+        label: 'Read Connected Story',
+        desc: 'Examine the multi-sentence passage and determine missing syntactic and lexical keys.',
+      },
+      {
+        num: '2',
+        label: 'Type the Exact Word',
+        desc: 'Tap each blank input field and type the answer directly via keyboard.',
+      },
+      {
+        num: '3',
+        label: 'Use Hint Sparingly',
+        desc: 'Stuck? Press the 💡 Hint button to reveal a starting letter (costs 10 score points).',
+      },
+      {
+        num: '4',
+        label: 'Submit Gauntlet',
+        desc: 'Submit your completed passage to deal lethal damage to the chamber guardian.',
+      },
+    ],
+    starsGuide: '1★: 3/5 Blanks Correct | 2★: 4/5 Blanks Correct | 3★: 5/5 Full Gauntlet Mastery',
+  },
 };
 
 export default function GameInstructionModal({

@@ -36,6 +36,16 @@ export function getChapterForWeek(weekNumber) {
   return CHAPTER_CONFIG.find((c) => w >= c.weeks[0] && w <= c.weeks[1]) || CHAPTER_CONFIG[2];
 }
 
+/**
+ * Returns boss type 1-5 for a given week number.
+ * Cycles sequentially through 5 boss archetypes:
+ * 1 = Ancient Sorcerer, 2 = Stone Golem, 3 = Sound Dragon, 4 = Cloze Sphinx, 5 = Memory Guardian
+ */
+export function getBossType(weekNumber) {
+  const w = parseInt(weekNumber) || 33;
+  return ((w - 17) % 5) + 1;
+}
+
 // ─── ROOM DOOR DEFINITIONS ────────────────────────────────────────────────────
 
 // ─── CHAMBER / ROOM METADATA (100% ENGLISH IMMERSION) ────────────────────────
@@ -145,6 +155,8 @@ function loadState(uid = getActiveUserId()) {
     bossFragments: {},
     // Which chapter boss has been completed
     chapterBossCompleted: {},
+    // Which chapter final boss has been defeated: { chapter3: true, c3: true }
+    chapterFinalBossDefeated: {},
     // Fastest completion times per mini-game in seconds: { [gameId]: 24.5 }
     personalBests: {},
   };
@@ -161,16 +173,17 @@ function saveState(uid, state) {
   if (typeof localStorage === 'undefined') return;
   try {
     localStorage.setItem(getStorageKey(uid), JSON.stringify({
-      unlockedRooms:        state.unlockedRooms,
-      roomStars:            state.roomStars,
-      weeklyPP:             state.weeklyPP,
-      bossDefeated:         state.bossDefeated,
-      bossAccessTier:       state.bossAccessTier,
-      lexioCoins:           state.lexioCoins,
-      collectiblesFound:    state.collectiblesFound,
-      bossFragments:        state.bossFragments,
-      chapterBossCompleted: state.chapterBossCompleted,
-      personalBests:        state.personalBests || {},
+      unlockedRooms:            state.unlockedRooms,
+      roomStars:                state.roomStars,
+      weeklyPP:                 state.weeklyPP,
+      bossDefeated:             state.bossDefeated,
+      bossAccessTier:           state.bossAccessTier,
+      lexioCoins:               state.lexioCoins,
+      collectiblesFound:        state.collectiblesFound,
+      bossFragments:            state.bossFragments,
+      chapterBossCompleted:     state.chapterBossCompleted,
+      chapterFinalBossDefeated: state.chapterFinalBossDefeated || {},
+      personalBests:            state.personalBests || {},
     }));
   } catch (_) {}
 }
@@ -348,14 +361,18 @@ export const useChroniclesStore = create((set, get) => ({
     const nextCoins = (state.lexioCoins || 0) + coinsEarned;
     // Fragment: award 1 fragment for silver+
     const earnedFragment = tier === 'silver' || tier === 'gold';
-    const chapterFragKey = `c${getChapterForWeek(weekId).id}`;
-    const currentFrags   = state.bossFragments[chapterFragKey] || 0;
+    const chapterId      = getChapterForWeek(weekId).id;
+    const longFragKey    = `chapter${chapterId}`;
+    const shortFragKey   = `c${chapterId}`;
+    const currentFrags   = state.bossFragments[longFragKey] ?? state.bossFragments[shortFragKey] ?? 0;
+    const nextFragVal    = earnedFragment ? currentFrags + 1 : currentFrags;
 
     const nextBossDefeated   = { ...state.bossDefeated,   [weekKey]: true };
     const nextBossAccessTier = { ...state.bossAccessTier, [weekKey]: tier };
     const nextFragments      = {
       ...state.bossFragments,
-      [chapterFragKey]: earnedFragment ? currentFrags + 1 : currentFrags,
+      [longFragKey]: nextFragVal,
+      [shortFragKey]: nextFragVal,
     };
 
     set({
@@ -375,7 +392,51 @@ export const useChroniclesStore = create((set, get) => ({
     return coinsEarned;
   },
 
+  /** Alias / wrapper for defeatBoss matching component calls */
+  recordBossDefeat: (weekId, tier, _coins) => {
+    return get().defeatBoss(weekId, tier);
+  },
+
   isBossDefeated: (weekId) => Boolean(get().bossDefeated[`w${weekId}`]),
+
+  // ─── Chapter Final Boss ──────────────────────────────────────────────────
+
+  recordChapterBossDefeat: (chapterId) => {
+    const state = get();
+    const id = typeof chapterId === 'object' && chapterId !== null ? chapterId.id : chapterId;
+    const longKey  = `chapter${id}`;
+    const shortKey = `c${id}`;
+    const nextDefeated = {
+      ...(state.chapterFinalBossDefeated || {}),
+      [longKey]: true,
+      [shortKey]: true,
+    };
+    const nextCompleted = {
+      ...(state.chapterBossCompleted || {}),
+      [longKey]: true,
+      [shortKey]: true,
+    };
+    set({
+      chapterFinalBossDefeated: nextDefeated,
+      chapterBossCompleted: nextCompleted,
+    });
+    saveState(state.activeUserId, {
+      ...state,
+      chapterFinalBossDefeated: nextDefeated,
+      chapterBossCompleted: nextCompleted,
+    });
+  },
+
+  isChapterBossDefeated: (chapterId) => {
+    const state = get();
+    const id = typeof chapterId === 'object' && chapterId !== null ? chapterId.id : chapterId;
+    return Boolean(
+      state.chapterFinalBossDefeated?.[`chapter${id}`] ||
+      state.chapterFinalBossDefeated?.[`c${id}`] ||
+      state.chapterBossCompleted?.[`chapter${id}`] ||
+      state.chapterBossCompleted?.[`c${id}`]
+    );
+  },
 
   // ─── Coins ────────────────────────────────────────────────────────────────
 

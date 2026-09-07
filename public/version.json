@@ -1,9 +1,9 @@
 {
-  "commit": "7a86c32740ebbb78786a4c2f1311b58ae655f519",
-  "git_commit": "7a86c32740ebbb78786a4c2f1311b58ae655f519",
-  "shortCommit": "7a86c327",
-  "message": "feat(chronicles): complete overhaul with 15 unique mini-games, 100% English immersion, animated steam train, and speedrunner hall of fame",
-  "builtAt": "2026-09-07T00:50:11.514Z",
-  "build_timestamp": "2026-09-07T00:50:11.514Z",
+  "commit": "308b198f4179b2879eb0602b9c12164077c6d7a4",
+  "git_commit": "308b198f4179b2879eb0602b9c12164077c6d7a4",
+  "shortCommit": "308b198f",
+  "message": "docs: save session handoff for chronicles mini-games overhaul",
+  "builtAt": "2026-09-07T05:20:55.988Z",
+  "build_timestamp": "2026-09-07T05:20:55.988Z",
   "env": "production"
 }

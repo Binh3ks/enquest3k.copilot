@@ -1,0 +1,894 @@
+/**
+ * ChapterFinalBossScreen.css — Styles for Chapter Final Boss Battle
+ *
+ * Themes inherit from BossBattleScreen themes (bbs-theme-*) but use cfb- prefix.
+ * New: Phase 2 enraged BG, Phase 3 red vignette, crystal forge ceremony.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+
+/* ─── Screen Base ──────────────────────────────────────────────────────────── */
+
+.cfb-screen {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 16px;
+  font-family: 'Outfit', sans-serif;
+  color: #f1f5f9;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: background 1.5s ease;
+}
+
+/* Inherit boss battle themes */
+.cfb-theme-storm   { background: radial-gradient(ellipse at 50% 20%, #1a1340 0%, #0f172a 100%); }
+.cfb-theme-library { background: radial-gradient(ellipse at 50% 20%, #1a0f40 0%, #0f172a 100%); }
+.cfb-theme-ocean   { background: radial-gradient(ellipse at 50% 20%, #0c2340 0%, #0f172a 100%); }
+.cfb-theme-forest  { background: radial-gradient(ellipse at 50% 20%, #0d2b1a 0%, #0f172a 100%); }
+.cfb-theme-forge   { background: radial-gradient(ellipse at 50% 20%, #2b0f0f 0%, #0f172a 100%); }
+.cfb-theme-space   { background: radial-gradient(ellipse at 50% 20%, #0f1040 0%, #0a0a1a 100%); }
+.cfb-theme-throne  { background: radial-gradient(ellipse at 50% 20%, #2b2200 0%, #0f172a 100%); }
+
+/* Enraged background pulse */
+.cfb-enraged-bg {
+  animation: enragedBGPulse 2s ease-in-out infinite;
+}
+@keyframes enragedBGPulse {
+  0%, 100% { filter: brightness(1); }
+  50%       { filter: brightness(1.1) saturate(1.2); }
+}
+
+/* Phase 3 red vignette */
+.cfb-vignette::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  box-shadow: inset 0 0 120px rgba(239, 68, 68, 0.35);
+  pointer-events: none;
+  z-index: 1;
+  animation: vignettePulse 1s ease-in-out infinite alternate;
+}
+@keyframes vignettePulse {
+  0%   { box-shadow: inset 0 0 100px rgba(239,68,68,0.25); }
+  100% { box-shadow: inset 0 0 150px rgba(239,68,68,0.5); }
+}
+
+/* ─── RITUAL / INTRO ───────────────────────────────────────────────────────── */
+
+.cfb-ritual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-width: 440px;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cfb-ritual-fragments {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.cfb-ritual-fragments.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cfb-ritual-frag-row {
+  display: flex;
+  gap: 10px;
+}
+
+.cfb-ritual-frag {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.7));
+  animation: fragGlow 1.5s ease-in-out infinite alternate;
+}
+.cfb-ritual-frag.empty {
+  opacity: 0.25;
+  filter: none;
+  animation: none;
+}
+@keyframes fragGlow {
+  0%   { filter: drop-shadow(0 0 8px rgba(251,191,36,0.5)); }
+  100% { filter: drop-shadow(0 0 24px rgba(251,191,36,1)); }
+}
+
+.cfb-ritual-frag-label {
+  font-size: 0.8rem;
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+.cfb-ritual-boss-sprite {
+  font-size: 5rem;
+  line-height: 1;
+  animation: ritualBossFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(239,68,68,0.6));
+}
+@keyframes ritualBossFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-12px) scale(1.06); }
+}
+
+.cfb-ritual-title {
+  font-size: 1.7rem;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cfb-ritual-desc {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.cfb-ritual-chapter {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cfb-ritual-phase-preview {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.cfb-pp-phase {
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+.cfb-pp-p2 { color: #fbbf24; }
+.cfb-pp-p3 { color: #ef4444; }
+
+.cfb-ritual-reward-teaser {
+  font-size: 0.9rem;
+  color: #fbbf24;
+  background: rgba(251,191,36,0.08);
+  border: 1px solid rgba(251,191,36,0.2);
+  border-radius: 12px;
+  padding: 10px 16px;
+}
+
+.cfb-begin-btn {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: 0 4px 24px rgba(239,68,68,0.5);
+  transition: transform 0.15s;
+  width: 100%;
+  max-width: 320px;
+}
+.cfb-begin-btn:hover { transform: scale(1.03); }
+
+/* ─── HP BARS ──────────────────────────────────────────────────────────────── */
+
+.cfb-hpbars {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.cfb-hp-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cfb-hp-icon { font-size: 1.2rem; width: 28px; text-align: center; }
+
+.cfb-hp-bar-wrap {
+  flex: 1;
+  height: 14px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.cfb-hp-bar {
+  height: 100%;
+  border-radius: 7px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.cfb-hp-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  width: 36px;
+  text-align: right;
+}
+
+/* ─── PHASE LABEL ──────────────────────────────────────────────────────────── */
+
+.cfb-phase-label {
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 12px;
+  border-radius: 8px;
+  margin: 2px 0;
+}
+.cfb-phase-label.phase1 { background: rgba(99,102,241,0.15); color: #818cf8; }
+.cfb-phase-label.phase2 { background: rgba(251,191,36,0.15); color: #fbbf24; animation: phaseFlicker 0.8s ease-in-out infinite alternate; }
+.cfb-phase-label.phase3 { background: rgba(239,68,68,0.2);   color: #ef4444; animation: phaseFlicker 0.4s ease-in-out infinite alternate; }
+@keyframes phaseFlicker {
+  0%   { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+/* ─── BOSS SPRITE ──────────────────────────────────────────────────────────── */
+
+.cfb-boss-sprite {
+  font-size: 4.5rem;
+  line-height: 1;
+  margin: 4px 0;
+  filter: drop-shadow(0 0 24px rgba(239,68,68,0.6));
+  transition: filter 0.3s, transform 0.1s;
+}
+
+.cfb-boss-sprite.shake {
+  animation: bossShakeAnim 0.4s ease;
+}
+@keyframes bossShakeAnim {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-12px) rotate(-3deg); }
+  40%       { transform: translateX(12px) rotate(3deg); }
+  60%       { transform: translateX(-8px); }
+  80%       { transform: translateX(8px); }
+}
+
+.cfb-boss-sprite.enraged {
+  animation: finalEnraged 0.7s ease-in-out infinite;
+  filter: drop-shadow(0 0 40px rgba(239,68,68,1)) hue-rotate(15deg);
+}
+@keyframes finalEnraged {
+  0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 40px rgba(239,68,68,0.9)); }
+  30%       { transform: scale(1.06) rotate(-2deg); filter: drop-shadow(0 0 60px rgba(239,68,68,1)) brightness(1.3); }
+  70%       { transform: scale(0.96) rotate(2deg); }
+}
+
+/* ─── COMBAT UI ────────────────────────────────────────────────────────────── */
+
+.cfb-question-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 2px 0;
+  align-items: center;
+}
+
+.cfb-q-type {
+  background: rgba(255,255,255,0.06);
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+}
+
+.cfb-timer-wrap {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 2px 0;
+}
+
+.cfb-timer-bar {
+  flex: 1;
+  height: 7px;
+  border-radius: 4px;
+  transition: width 1s linear, background 1s;
+}
+
+.cfb-timer-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  min-width: 28px;
+  text-align: right;
+}
+
+.cfb-question-box {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 14px 18px;
+  text-align: center;
+  margin: 4px 0;
+}
+
+.cfb-question-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  line-height: 1.5;
+}
+
+.cfb-question-hint {
+  font-size: 0.75rem;
+  color: #64748b;
+  background: rgba(255,255,255,0.04);
+  padding: 2px 10px;
+  border-radius: 8px;
+}
+
+.cfb-options-grid {
+  width: 100%;
+  max-width: 480px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+.cfb-option {
+  background: rgba(255,255,255,0.06);
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 12px 10px;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  color: #f1f5f9;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  min-height: 58px;
+  justify-content: center;
+}
+
+.cfb-option:hover:not(:disabled) {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+.cfb-option.correct { background: rgba(16,185,129,0.2); border-color: #10b981; color: #6ee7b7; }
+.cfb-option.wrong   { background: rgba(239,68,68,0.2);  border-color: #ef4444; color: #fca5a5; animation: optionShk 0.3s ease; }
+.cfb-option.selected-right { background: rgba(16,185,129,0.15); border-color: #10b981; }
+@keyframes optionShk {
+  0%, 100% { transform: translateX(0); }
+  30%       { transform: translateX(-6px); }
+  70%       { transform: translateX(6px); }
+}
+
+.cfb-opt-letter {
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: #64748b;
+  background: rgba(255,255,255,0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.cfb-opt-text { font-size: 0.82rem; line-height: 1.3; }
+
+/* ─── FEEDBACK OVERLAY ─────────────────────────────────────────────────────── */
+
+.cfb-feedback {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.05rem;
+  font-weight: 900;
+  padding: 12px 24px;
+  border-radius: 14px;
+  z-index: 120;
+  animation: feedbackPop 0.3s ease;
+  pointer-events: none;
+}
+.cfb-feedback.right { background: rgba(16,185,129,0.95); color: #fff; }
+.cfb-feedback.wrong { background: rgba(239,68,68,0.95);  color: #fff; }
+@keyframes feedbackPop {
+  0%   { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
+  60%  { transform: translate(-50%, -50%) scale(1.05); }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* ─── DAMAGE FLASH ─────────────────────────────────────────────────────────── */
+
+.cfb-damage-flash {
+  position: fixed;
+  inset: 0;
+  background: rgba(239,68,68,0.15);
+  pointer-events: none;
+  z-index: 50;
+  animation: damageFlashAnim 0.4s ease forwards;
+}
+@keyframes damageFlashAnim {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ─── BOSS ATTACK FLASH ────────────────────────────────────────────────────── */
+
+.cfb-attack-flash {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+}
+
+.cfb-attack-final {
+  background: radial-gradient(ellipse at center, rgba(239,68,68,0.35) 0%, transparent 70%);
+  animation: finalAttack 0.7s ease forwards;
+}
+@keyframes finalAttack {
+  0%   { opacity: 0; transform: scale(0.8); }
+  30%  { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+/* ─── OVERDRIVE ────────────────────────────────────────────────────────────── */
+
+.cfb-overdrive-offer {
+  position: fixed;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(16,185,129,0.15);
+  border: 2px solid #10b981;
+  border-radius: 16px;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 110;
+  max-width: 320px;
+  animation: overdrivePop 0.4s ease;
+}
+@keyframes overdrivePop {
+  0%   { transform: translateX(-50%) scale(0.8); opacity: 0; }
+  100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+.cfb-od-icon { font-size: 2rem; }
+.cfb-od-text { font-size: 0.8rem; color: #6ee7b7; text-align: center; line-height: 1.4; }
+
+.cfb-od-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cfb-overdrive-active {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16,185,129,0.1);
+  border: 1px solid #10b981;
+  border-radius: 10px;
+  padding: 3px 12px;
+  animation: overdriveBadgePulse 1s ease-in-out infinite;
+}
+@keyframes overdriveBadgePulse {
+  0%, 100% { opacity: 0.8; }
+  50%       { opacity: 1; }
+}
+
+/* ─── PHASE TRANSITION ─────────────────────────────────────────────────────── */
+
+.cfb-phase-transition {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  animation: phaseTransIn 0.3s ease, phaseTransOut 0.4s ease 1.4s forwards;
+}
+@keyframes phaseTransIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes phaseTransOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; pointer-events: none; }
+}
+
+.cfb-pt-phase2 { background: radial-gradient(ellipse at center, rgba(251,191,36,0.9) 0%, rgba(15,23,42,0.95) 100%); }
+.cfb-pt-phase3 { background: radial-gradient(ellipse at center, rgba(239,68,68,0.9) 0%, rgba(15,23,42,0.95) 100%); }
+
+.cfb-pt-flash {
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  animation: phaseFlashPulse 0.3s ease;
+}
+@keyframes phaseFlashPulse {
+  0%   { opacity: 0.8; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.cfb-pt-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 1;
+  animation: phaseContentIn 0.5s ease 0.2s both;
+}
+@keyframes phaseContentIn {
+  0%   { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.cfb-pt-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(255,255,255,0.5);
+}
+
+.cfb-pt-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+}
+
+/* ─── CRYSTAL FORGE CEREMONY ───────────────────────────────────────────────── */
+
+.cfb-forge-ceremony {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+  padding: 20px;
+}
+
+.cfb-boss-shatter {
+  animation: bossShatter 0.8s ease forwards;
+}
+@keyframes bossShatter {
+  0%   { transform: scale(1); opacity: 1; }
+  40%  { transform: scale(1.4) rotate(10deg); filter: brightness(2); }
+  100% { transform: scale(0); opacity: 0; }
+}
+.cfb-shatter-sprite { font-size: 5rem; }
+
+/* 4 fragments from 4 corners */
+.cfb-fragments-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cfb-fragment {
+  position: absolute;
+  font-size: 2rem;
+  animation: fragConverge 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.cfb-frag-0 { top: 10%;  left: 10%;  animation-delay: 0s;    --end-x: 35vw;  --end-y: 30vh; }
+.cfb-frag-1 { top: 10%;  right: 10%; animation-delay: 0.1s;  --end-x: -35vw; --end-y: 30vh; }
+.cfb-frag-2 { bottom: 20%; left: 10%;  animation-delay: 0.15s; --end-x: 35vw;  --end-y: -20vh; }
+.cfb-frag-3 { bottom: 20%; right: 10%; animation-delay: 0.2s;  --end-x: -35vw; --end-y: -20vh; }
+
+@keyframes fragConverge {
+  0%   { transform: translate(0, 0) scale(0.8); opacity: 0.5; }
+  60%  { opacity: 1; }
+  100% { transform: translate(var(--end-x), var(--end-y)) scale(1.2); opacity: 1; }
+}
+
+.cfb-merge-flash {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  animation: mergeFlash 0.5s ease forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+@keyframes mergeFlash {
+  0%   { opacity: 0.9; }
+  100% { opacity: 0; }
+}
+
+.cfb-crystal-materialize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.cfb-crystal-icon {
+  font-size: 5rem;
+}
+
+/* Re-use crystal forge flash from spec */
+.crystal-forge-flash {
+  animation: crystalForgeAnim 2s ease-out forwards;
+}
+@keyframes crystalForgeAnim {
+  0%   { transform: scale(0.3); filter: brightness(6); opacity: 1; }
+  30%  { transform: scale(1.5); filter: brightness(3); }
+  60%  { transform: scale(1);   filter: brightness(1.8); }
+  100% { transform: scale(1);   filter: brightness(1); }
+}
+
+.cfb-crystal-rays {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: conic-gradient(
+    rgba(167,139,250,0.4) 0deg,
+    transparent 45deg,
+    rgba(167,139,250,0.4) 90deg,
+    transparent 135deg,
+    rgba(167,139,250,0.4) 180deg,
+    transparent 225deg,
+    rgba(167,139,250,0.4) 270deg,
+    transparent 315deg,
+    rgba(167,139,250,0.4) 360deg
+  );
+  border-radius: 50%;
+  animation: crystalRaysSpin 3s linear infinite;
+  opacity: 0.6;
+  z-index: -1;
+}
+@keyframes crystalRaysSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.cfb-forge-text {
+  text-align: center;
+  animation: forgeTextAppear 0.6s ease;
+}
+@keyframes forgeTextAppear {
+  0%   { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.cfb-forge-chapter {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cfb-forge-crystal {
+  font-size: 1.2rem;
+  color: #e2e8f0;
+  margin-top: 8px;
+}
+
+.cfb-forge-crystal-name {
+  font-size: 1.8rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cfb-reward-shower {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  animation: rewardShower 0.6s ease;
+}
+@keyframes rewardShower {
+  0%   { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ─── VICTORY ──────────────────────────────────────────────────────────────── */
+
+.cfb-victory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 420px;
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.cfb-victory-fireworks {
+  font-size: 2.2rem;
+  animation: vfBounce 1s ease infinite;
+}
+@keyframes vfBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.cfb-victory-crystal {
+  font-size: 4.5rem;
+  animation: victoryCrystalGlow 1.5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 24px rgba(167,139,250,0.9));
+}
+@keyframes victoryCrystalGlow {
+  0%   { filter: drop-shadow(0 0 20px rgba(167,139,250,0.6)); transform: scale(1); }
+  100% { filter: drop-shadow(0 0 50px rgba(167,139,250,1));   transform: scale(1.08); }
+}
+
+.cfb-victory-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cfb-victory-crystal-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #a78bfa;
+  margin: 0;
+}
+
+.cfb-victory-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.cfb-stat-pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.cfb-next-chapter-teaser {
+  font-size: 0.88rem;
+  color: #fbbf24;
+  background: rgba(251,191,36,0.06);
+  border: 1px solid rgba(251,191,36,0.18);
+  border-radius: 12px;
+  padding: 10px 16px;
+}
+
+.cfb-return-btn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 36px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 4px 24px rgba(245,158,11,0.4);
+  transition: transform 0.15s;
+}
+.cfb-return-btn:hover { transform: scale(1.03); }
+
+/* ─── DEFEAT ───────────────────────────────────────────────────────────────── */
+
+.cfb-defeat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-width: 420px;
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.cfb-defeat-sprite { font-size: 3.5rem; opacity: 0.35; filter: grayscale(1); }
+.cfb-defeat-icon   { font-size: 3.5rem; }
+
+.cfb-defeat-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 0;
+  color: #ef4444;
+}
+
+.cfb-defeat-msg {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 300px;
+}
+
+.cfb-defeat-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.cfb-retry-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  width: 100%;
+  max-width: 320px;
+  transition: transform 0.15s;
+}
+.cfb-retry-btn:hover { transform: scale(1.03); }
+
+.cfb-back-link {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  padding: 8px;
+}
+.cfb-back-link:hover { color: #94a3b8; }
+
+/* ─── MOBILE ───────────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .cfb-options-grid { gap: 8px; }
+  .cfb-option       { padding: 10px 8px; font-size: 0.8rem; min-height: 52px; }
+  .cfb-boss-sprite  { font-size: 3.5rem; }
+  .cfb-pt-title     { font-size: 1.8rem; }
+  .cfb-ritual-boss-sprite { font-size: 4rem; }
+  .cfb-forge-crystal-name { font-size: 1.4rem; }
+}

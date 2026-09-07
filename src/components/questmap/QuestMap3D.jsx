@@ -12,6 +12,7 @@ import LexioMascot from '../mascot/LexioMascot';
 import ParentPINGate from '../common/ParentPINGate';
 import { STATION_NAMES } from '../../config/stationLabels';
 import ChroniclesFAB from './ChroniclesFAB';
+import DoorUnlockCeremony from './DoorUnlockCeremony';
 import questMapBg from '../../assets/quest-map-forest.jpg';
 import './QuestMap3D.css';
 
@@ -146,10 +147,49 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
   const [mascotQuoteIndex, setMascotQuoteIndex] = useState(0);
   const prevSuggestedIdxRef = useRef(-1);
 
-  const { isQuestCompleted, getWeekQuestCount, isDayUnlocked } = useDailyQuestStore();
+  const { isQuestCompleted, getWeekQuestCount, isDayUnlocked, isDayComplete } = useDailyQuestStore();
   const weekQuestCount = getWeekQuestCount(weekId);
   const totalQuests = TOTAL_QUEST_DAYS * 3;
   const progressPercent = Math.round((weekQuestCount / totalQuests) * 100);
+
+  // Moment 4: Door Unlock Ceremony state & session-change detection
+  const [unlockCeremonyDay, setUnlockCeremonyDay] = useState(null);
+  const prevDayCompleteRef = useRef({});
+  const isFirstMountRef = useRef(true);
+
+  useEffect(() => {
+    if (isFirstMountRef.current) {
+      // Seed existing completion on initial mount without triggering ceremony
+      for (let d = 0; d < 5; d++) {
+        const key = `${weekId}_d${d}`;
+        prevDayCompleteRef.current[key] = Boolean(isDayComplete(weekId, d + 1));
+      }
+      isFirstMountRef.current = false;
+      return;
+    }
+
+    // Detect newly completed day during this active session
+    for (let d = 0; d < 5; d++) {
+      const key = `${weekId}_d${d}`;
+      const isNowComplete = Boolean(isDayComplete(weekId, d + 1));
+      const wasComplete = Boolean(prevDayCompleteRef.current[key]);
+      if (isNowComplete && !wasComplete) {
+        prevDayCompleteRef.current[key] = true;
+        setUnlockCeremonyDay(d);
+        break;
+      }
+      if (isNowComplete) {
+        prevDayCompleteRef.current[key] = true;
+      }
+    }
+  }, [weekId, isDayComplete, weekQuestCount]);
+
+  useEffect(() => {
+    window.__triggerDoorUnlockCeremony = (day = 0) => setUnlockCeremonyDay(day);
+    return () => {
+      delete window.__triggerDoorUnlockCeremony;
+    };
+  }, []);
 
   // Owner / super_admin: all stations always unlocked — no sequential gate
   const { currentUser } = useUserStore();
@@ -804,6 +844,15 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
         title="Unlock Station"
         subtitle="Ask parent to enter PIN to unlock"
       />
+
+      {/* Moment 4: Zone Complete Door Unlock Ceremony */}
+      {unlockCeremonyDay !== null && (
+        <DoorUnlockCeremony
+          dayIndex={unlockCeremonyDay}
+          weekId={weekId}
+          onDone={() => setUnlockCeremonyDay(null)}
+        />
+      )}
     </div>
   );
 }

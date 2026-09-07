@@ -26,6 +26,15 @@ import LexicalDetectiveGame    from './games/LexicalDetectiveGame';
 import CrystalMemoryMatchGame  from './games/CrystalMemoryMatchGame';
 import RuneForgeGame           from './games/RuneForgeGame';
 import AncientScrollFillGame   from './games/AncientScrollFillGame';
+import PhonicsBubbleGame       from './games/PhonicsBubbleGame';
+import ChunkCatapultGame       from './games/ChunkCatapultGame';
+import MeteorSmasherGame       from './games/MeteorSmasherGame';
+import HighwayRunnerGame       from './games/HighwayRunnerGame';
+import SyntaxExpressGame       from './games/SyntaxExpressGame';
+import RiddleDetectiveGame     from './games/RiddleDetectiveGame';
+import GrandMasterMatrixGame   from './games/GrandMasterMatrixGame';
+import TitanForgeGame          from './games/TitanForgeGame';
+import CambridgeClozeGame      from './games/CambridgeClozeGame';
 import CollectorPopup          from './CollectorPopup';
 import HallOfFameModal         from './HallOfFameModal';
 import './DailyRoomScreen.css';
@@ -70,6 +79,8 @@ export default function DailyRoomScreen({
   dayIndex,
   weekData,
   npcDialogue,
+  cliffhanger,
+  floorConfig,
   onRoomComplete,
   onExit,
 }) {
@@ -81,8 +92,8 @@ export default function DailyRoomScreen({
     [weekData, dayIndex]
   );
 
-  // Door rotation for this day
-  const doorDefs = DOOR_ROTATION[dayIndex] || DOOR_ROTATION[0];
+  // Door rotation for this day (uses floorConfig doors if provided, else defaults)
+  const doorDefs = floorConfig?.doors || DOOR_ROTATION[dayIndex] || DOOR_ROTATION[0];
 
   // Room state machine
   // 'map' → 'door_0' | 'door_1' | 'door_2' → 'npc' → 'cleared'
@@ -185,11 +196,13 @@ export default function DailyRoomScreen({
     const door = doorDefs[activeDoor];
     if (!door) return null;
 
+    const gameId = door.gameId || door.id;
+
     const commonProps = {
       onComplete: (stars, score) => handleDoorComplete(activeDoor, stars, score),
     };
 
-    switch (door.id) {
+    switch (gameId) {
       // ── Floor 1: Chamber of Tales ──────────────────────────────────────
       case 'arcane_bubble':
         return <ArcaneBubbleGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
@@ -212,33 +225,33 @@ export default function DailyRoomScreen({
 
       // ── Floor 3: Thunder Arena ─────────────────────────────────────────
       case 'phonics_bubble':
-        return <ArcaneBubbleGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
+        return <PhonicsBubbleGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
 
       case 'chunk_catapult':
-        return <SpellTrainGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
+        return <ChunkCatapultGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
 
       case 'meteor_smasher':
-        return <LexicalDetectiveGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+        return <MeteorSmasherGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
 
       // ── Floor 4: Rune Sanctum ──────────────────────────────────────────
       case 'highway_runner':
-        return <CrystalMemoryMatchGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+        return <HighwayRunnerGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
 
       case 'spell_train_express':
-        return <SpellTrainGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
+        return <SyntaxExpressGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
 
       case 'lexical_riddle':
-        return <LexicalDetectiveGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+        return <RiddleDetectiveGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
 
       // ── Floor 5: Apex Spire ────────────────────────────────────────────
       case 'grand_matrix':
-        return <CrystalMemoryMatchGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+        return <GrandMasterMatrixGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
 
       case 'titan_forge':
-        return <RuneForgeGame grammarSentences={grammarSentences} duration={door.duration} {...commonProps} />;
+        return <TitanForgeGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
 
       case 'cambridge_cloze':
-        return <AncientScrollFillGame vocabItems={vocabItems} grammarSentences={grammarSentences} duration={door.duration} {...commonProps} />;
+        return <CambridgeClozeGame vocabItems={vocabItems} grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} gameParams={door.gameParams} {...commonProps} />;
 
       // ── Fallback by legacy door.type ──────────────────────────────────
       default:
@@ -266,7 +279,8 @@ export default function DailyRoomScreen({
             ← Chamber
           </button>
           <span className="dr-game-label">
-            {doorDefs[activeDoor]?.icon} {doorDefs[activeDoor]?.gameName || ['🔵 Vocab Door', '🟡 Grammar Door', '🔴 Integration Door'][activeDoor]}
+            {doorDefs[activeDoor]?.icon || doorDefs[activeDoor]?.doorIcon}{' '}
+            {doorDefs[activeDoor]?.gameName || doorDefs[activeDoor]?.doorLabel || doorDefs[activeDoor]?.label || ['🔵 Vocab Door', '🟡 Grammar Door', '🔴 Integration Door'][activeDoor]}
           </span>
           <span className="dr-day-badge">Floor {dayIndex + 1}</span>
         </div>
@@ -304,12 +318,16 @@ export default function DailyRoomScreen({
   // ROOM CLEARED
   if (phase === 'cleared') {
     if (showCliffhanger) {
+      const activeCliff = cliffhanger || floorConfig?.cliffhanger;
       return (
-        <div className={`daily-room-screen ${themeClass} cliffhanger`}>
+        <div
+          className={`daily-room-screen ${themeClass} cliffhanger`}
+          style={activeCliff?.bgMoodColor ? { backgroundColor: activeCliff.bgMoodColor } : {}}
+        >
           <div className="dr-cliffhanger">
             <div className="dr-cliff-lexio">🦊</div>
-            <p className="dr-cliff-text">A strange door glows ahead...</p>
-            <p className="dr-cliff-sub">Come back tomorrow! 🌟</p>
+            <p className="dr-cliff-text">{activeCliff?.text || 'A strange door glows ahead...'}</p>
+            <p className="dr-cliff-sub">{activeCliff?.subText || 'Come back tomorrow! 🌟'}</p>
           </div>
         </div>
       );
