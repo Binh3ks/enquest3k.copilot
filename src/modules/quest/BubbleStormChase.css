@@ -1,0 +1,344 @@
+/* BubbleStormChase.css — Floor 1 Door 1 styles */
+
+.bubble-storm-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  min-height: 540px;
+  background: radial-gradient(circle at 50% 20%, #1e1b4b 0%, #0b0a1d 75%, #05050f 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ─── Top Target Spellbook Banner ────────────────────────────────────────── */
+.target-spellbook-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(30, 27, 75, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 30px;
+  padding: 6px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(168, 85, 247, 0.25);
+  max-width: 90%;
+}
+
+.spellbook-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(168, 85, 247, 0.3);
+  border: 1px solid rgba(168, 85, 247, 0.6);
+  color: #f3e8ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.sparkle-icon {
+  color: #facc15;
+  animation: sparkle-spin 3s ease-in-out infinite;
+}
+
+@keyframes sparkle-spin {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(15deg); }
+}
+
+.target-word-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.target-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.06em;
+}
+
+.target-word-text {
+  font-size: 17px;
+  font-weight: 800;
+  color: #fde047;
+  text-shadow: 0 0 10px rgba(253, 224, 71, 0.5);
+  letter-spacing: 0.03em;
+}
+
+.target-audio-btn {
+  background: rgba(250, 204, 21, 0.2);
+  border: 1px solid rgba(250, 204, 21, 0.5);
+  color: #fde047;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.target-audio-btn:hover {
+  background: rgba(250, 204, 21, 0.4);
+  transform: scale(1.1);
+}
+
+.target-hint-text {
+  font-size: 12px;
+  color: #cbd5e1;
+  max-width: 260px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 10px;
+}
+
+/* ─── Viewport ───────────────────────────────────────────────────────────── */
+.storm-world-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  min-height: 540px;
+  overflow: hidden;
+}
+
+/* ─── Background Parallax ────────────────────────────────────────────────── */
+.storm-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(ellipse at 50% 100%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
+    linear-gradient(to bottom, transparent 60%, rgba(15, 23, 42, 0.8) 100%);
+  pointer-events: none;
+}
+
+/* ─── Platforms ──────────────────────────────────────────────────────────── */
+.storm-platform {
+  position: absolute;
+  border-radius: 4px;
+}
+
+.platform-floor {
+  background: linear-gradient(to bottom, #54391e 0%, #30200e 40%, #170e06 100%);
+  border-top: 3px solid #855c32;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.platform-floating {
+  background: linear-gradient(to bottom, #6d4b27 0%, #4a3219 50%, #2e1d0d 100%);
+  border: 1px solid #8c6033;
+  border-top: 3px solid #b8864e;
+  border-radius: 6px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ─── Crystal Floating Bubbles ───────────────────────────────────────────── */
+.storm-crystal-bubble {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-sizing: border-box;
+}
+
+.storm-crystal-bubble:hover {
+  transform: scale(1.12);
+}
+
+.bubble-word {
+  background: radial-gradient(circle at 35% 30%, rgba(168, 85, 247, 0.7) 0%, rgba(99, 102, 241, 0.4) 60%, rgba(30, 27, 75, 0.6) 100%);
+  border: 2px solid rgba(192, 132, 252, 0.8);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5), inset 0 0 14px rgba(255, 255, 255, 0.5);
+  animation: bubble-gentle-pulse 2.4s ease-in-out infinite alternate;
+}
+
+.bubble-bomb {
+  background: radial-gradient(circle at 35% 30%, rgba(239, 68, 68, 0.85) 0%, rgba(153, 27, 27, 0.6) 60%, rgba(69, 10, 10, 0.8) 100%);
+  border: 2px solid #f87171;
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.7), inset 0 0 16px rgba(255, 100, 100, 0.6);
+  animation: bomb-hazard-pulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes bubble-gentle-pulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  100% { transform: scale(1.06); filter: brightness(1.15); }
+}
+
+@keyframes bomb-hazard-pulse {
+  0% { transform: scale(0.96); box-shadow: 0 0 15px rgba(239, 68, 68, 0.5); }
+  100% { transform: scale(1.08); box-shadow: 0 0 30px rgba(239, 68, 68, 0.9); }
+}
+
+.bubble-inner-glow {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.bubble-word-text {
+  position: relative;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 0 8px;
+  pointer-events: none;
+  word-break: break-word;
+}
+
+/* ─── Slime Enemies ──────────────────────────────────────────────────────── */
+.storm-slime-enemy {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.2s ease;
+}
+
+.slime-sprite {
+  font-size: 32px;
+  display: inline-block;
+  animation: slime-squish 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes slime-squish {
+  0% { transform: scale(1, 0.85); }
+  100% { transform: scale(0.9, 1.1); }
+}
+
+.enemy-frozen .slime-sprite {
+  animation: none;
+  filter: drop-shadow(0 0 8px #67e8f9);
+}
+
+.enemy-speed .slime-sprite {
+  animation-duration: 0.35s;
+  filter: drop-shadow(0 0 10px #ef4444);
+}
+
+/* ─── Cleared Modal ──────────────────────────────────────────────────────── */
+.storm-cleared-modal,
+.storm-ko-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 80;
+  background: rgba(5, 5, 15, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: modal-fade-in 0.3s ease-out;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.cleared-card,
+.ko-card {
+  background: linear-gradient(135deg, #1e1b4b 0%, #17172e 100%);
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  border-radius: 20px;
+  padding: 32px 40px;
+  text-align: center;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.trophy-icon {
+  color: #fbbf24;
+  margin-bottom: 12px;
+}
+
+.ko-icon {
+  color: #ef4444;
+  margin-bottom: 12px;
+}
+
+.cleared-stars {
+  font-size: 32px;
+  margin: 12px 0;
+}
+
+.cleared-score {
+  font-size: 16px;
+  color: #cbd5e1;
+}
+
+.cleared-record {
+  color: #fbbf24;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.finish-door-btn,
+.retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 24px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 4px 16px rgba(168, 85, 247, 0.4);
+  transition: transform 0.15s ease;
+}
+
+.finish-door-btn:hover,
+.retry-btn:hover {
+  transform: scale(1.05);
+}
+
+.exit-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #94a3b8;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.exit-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}

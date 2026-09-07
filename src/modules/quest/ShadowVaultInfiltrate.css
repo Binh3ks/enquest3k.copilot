@@ -1,0 +1,308 @@
+/* ShadowVaultInfiltrate.css — Floor 1 Door 3 styles */
+
+.shadow-vault-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  min-height: 540px;
+  background: radial-gradient(circle at 50% 25%, #18181b 0%, #09090b 75%, #000000 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ─── Top Mission Banner ─────────────────────────────────────────────────── */
+.vault-mission-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: rgba(24, 24, 27, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(234, 179, 8, 0.5);
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px rgba(234, 179, 8, 0.2);
+  max-width: 90%;
+}
+
+.vault-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(234, 179, 8, 0.25);
+  border: 1px solid rgba(234, 179, 8, 0.6);
+  color: #fef08a;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 12px;
+}
+
+.carrying-cargo-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #fef08a;
+}
+
+.key-icon {
+  color: #eab308;
+  animation: key-wiggle 1.5s ease-in-out infinite;
+}
+
+@keyframes key-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+.cargo-arrow {
+  color: #ca8a04;
+  font-weight: 800;
+}
+
+.retrieve-cargo-box {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.vault-feedback-alert {
+  font-size: 12px;
+  font-weight: 700;
+  color: #facc15;
+  animation: feedback-slide 0.3s ease-out;
+}
+
+@keyframes feedback-slide {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── World Viewport ─────────────────────────────────────────────────────── */
+.vault-world-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  min-height: 540px;
+  overflow: hidden;
+}
+
+/* ─── Vault Grid Background ──────────────────────────────────────────────── */
+.vault-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  pointer-events: none;
+}
+
+/* ─── Platforms ──────────────────────────────────────────────────────────── */
+.vault-platform {
+  position: absolute;
+  border-radius: 4px;
+}
+
+.vault-floor {
+  background: linear-gradient(to bottom, #27272a 0%, #18181b 50%, #09090b 100%);
+  border-top: 3px solid #52525b;
+  box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.8);
+}
+
+.vault-ledge {
+  background: linear-gradient(to bottom, #3f3f46 0%, #27272a 100%);
+  border: 1px solid #71717a;
+  border-top: 3px solid #a1a1aa;
+  border-radius: 6px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+
+/* ─── Safes ──────────────────────────────────────────────────────────────── */
+.vault-safe {
+  position: absolute;
+  cursor: pointer;
+  z-index: 15;
+  transition: transform 0.15s ease;
+}
+
+.vault-safe:hover {
+  transform: scale(1.06);
+}
+
+.safe-door-frame {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #27272a 0%, #18181b 100%);
+  border: 2px solid #ca8a04;
+  border-radius: 10px;
+  padding: 6px 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  color: #fff;
+  min-width: 130px;
+}
+
+.right-frame {
+  border-color: #38bdf8;
+  max-width: 175px;
+}
+
+.safe-icon {
+  font-size: 18px;
+}
+
+.safe-word-label {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fde047;
+  text-shadow: 0 0 6px rgba(253, 224, 71, 0.5);
+}
+
+.safe-def-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #e2e8f0;
+  line-height: 1.2;
+}
+
+/* Solved Safe */
+.safe-solved .safe-door-frame {
+  border-color: #22c55e;
+  background: linear-gradient(135deg, #052e16 0%, #022c22 100%);
+  box-shadow: 0 0 16px rgba(34, 197, 94, 0.5);
+}
+
+.safe-selected .safe-door-frame {
+  border-color: #facc15;
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.8);
+  animation: safe-glow-pulse 1s infinite alternate;
+}
+
+@keyframes safe-glow-pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+/* ─── Shadow Guards ──────────────────────────────────────────────────────── */
+.shadow-guard-entity {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 18;
+}
+
+.guard-robot-sprite {
+  font-size: 32px;
+  filter: drop-shadow(0 0 8px #ef4444);
+}
+
+.guard-laser-beam {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 18px;
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.8) 0%, rgba(239, 68, 68, 0.1) 80%, transparent 100%);
+  transform-origin: left center;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+/* ─── Floating Cargo Badge ───────────────────────────────────────────────── */
+.leo-floating-cargo {
+  position: absolute;
+  z-index: 30;
+  background: rgba(234, 179, 8, 0.9);
+  color: #0f172a;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  animation: cargo-bob 1s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes cargo-bob {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+/* ─── Modals ─────────────────────────────────────────────────────────────── */
+.vault-cleared-modal,
+.vault-ko-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 80;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cleared-card,
+.ko-card {
+  background: linear-gradient(135deg, #18181b 0%, #09090b 100%);
+  border: 1px solid rgba(234, 179, 8, 0.5);
+  border-radius: 20px;
+  padding: 32px 40px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  color: #fff;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+}
+
+.trophy-icon { color: #eab308; margin-bottom: 12px; }
+.ko-icon { color: #ef4444; margin-bottom: 12px; }
+.cleared-stars { font-size: 32px; margin: 12px 0; }
+.cleared-score { font-size: 16px; color: #cbd5e1; }
+.cleared-record { color: #facc15; font-size: 14px; font-weight: 700; margin-top: 6px; }
+
+.finish-door-btn,
+.retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ca8a04 0%, #a16207 100%);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 24px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 4px 16px rgba(202, 138, 4, 0.4);
+}
+
+.finish-door-btn:hover,
+.retry-btn:hover { transform: scale(1.05); }
+
+.exit-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #94a3b8;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 20px;
+}

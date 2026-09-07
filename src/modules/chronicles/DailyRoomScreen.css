@@ -1,2 +1,13 @@
 /* DailyRoomScreen.css — re-exports Chronicles system CSS */
 @import './ChroniclesWorldMap.css';
+
+.dr-game-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 56px);
+  min-height: 0;
+}

@@ -20,3 +20,8 @@ export { generateMCQChoices }       from './MCQBlitzPopup';
 export { default as EnemyLayer }    from './EnemyAI';
 export { EnemySprite }              from './EnemyAI';
 export { createEnemy, updateEnemyPatrol, freezeAllEnemies, speedupAllEnemies, ENEMY_TYPES } from './EnemyAI';
+
+// Floor 1 Games (Sprint 2)
+export { default as BubbleStormChase }      from './BubbleStormChase';
+export { default as WordWagonJump }         from './WordWagonJump';
+export { default as ShadowVaultInfiltrate } from './ShadowVaultInfiltrate';

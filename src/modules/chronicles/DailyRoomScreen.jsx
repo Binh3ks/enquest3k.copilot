@@ -23,6 +23,7 @@ import useChroniclesStore, { DOOR_ROTATION, CHAMBER_METADATA, calculateStars } f
 import ArcaneBubbleGame        from './games/ArcaneBubbleGame';
 import SpellTrainGame          from './games/SpellTrainGame';
 import LexicalDetectiveGame    from './games/LexicalDetectiveGame';
+import { BubbleStormChase, WordWagonJump, ShadowVaultInfiltrate } from '../quest';
 import CrystalMemoryMatchGame  from './games/CrystalMemoryMatchGame';
 import RuneForgeGame           from './games/RuneForgeGame';
 import AncientScrollFillGame   from './games/AncientScrollFillGame';
@@ -221,13 +222,13 @@ export default function DailyRoomScreen({
     switch (gameId) {
       // ── Floor 1: Chamber of Tales ──────────────────────────────────────
       case 'arcane_bubble':
-        return <ArcaneBubbleGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
+        return <BubbleStormChase vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'spell_train':
-        return <SpellTrainGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} {...commonProps} />;
+        return <WordWagonJump grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'lexical_det':
-        return <LexicalDetectiveGame vocabItems={vocabItems} duration={door.duration} {...commonProps} />;
+        return <ShadowVaultInfiltrate vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       // ── Floor 2: Alchemy Lab ───────────────────────────────────────────
       case 'crystal_match':

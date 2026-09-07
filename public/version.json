@@ -1,9 +1,9 @@
 {
-  "commit": "f8daae7ebec2f186174020f44641b3a1ee5a76b8",
-  "git_commit": "f8daae7ebec2f186174020f44641b3a1ee5a76b8",
-  "shortCommit": "f8daae7e",
-  "message": "feat(quest): Sprint 1 — Leo physics foundation (8 components)",
-  "builtAt": "2026-09-07T09:10:20.752Z",
-  "build_timestamp": "2026-09-07T09:10:20.752Z",
+  "commit": "0485af506028e76e406c19062eb877d025642c1b",
+  "git_commit": "0485af506028e76e406c19062eb877d025642c1b",
+  "shortCommit": "0485af50",
+  "message": "feat(quest): add QuestDemoScreen test harness and audit suite",
+  "builtAt": "2026-09-07T09:33:37.914Z",
+  "build_timestamp": "2026-09-07T09:33:37.915Z",
   "env": "production"
 }
