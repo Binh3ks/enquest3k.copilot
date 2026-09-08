@@ -28,7 +28,7 @@ export default class HubScene {
 
   preload() {
     // All textures generated procedurally — no dependency on external PNG files.
-    const gfx = new Phaser.GameObjects.Graphics(this);
+    const gfx = this.make.graphics({ x: 0, y: 0, add: false });
 
     // ── Floor Tile (64×64) ─────────────────────────────────────────────────
     gfx.clear();

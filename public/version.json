@@ -1,9 +1,9 @@
 {
-  "commit": "abe32754d1a13ed8bcb5b968b3beecda874e5449",
-  "git_commit": "abe32754d1a13ed8bcb5b968b3beecda874e5449",
-  "shortCommit": "abe32754",
-  "message": "fix(quest): resolve mobile touch holding movement, header collisions, and MCQ choices",
-  "builtAt": "2026-09-08T08:12:00.244Z",
-  "build_timestamp": "2026-09-08T08:12:00.244Z",
+  "commit": "c0e520ae3115a19b7fb0081ebabe6684de0b4194",
+  "git_commit": "c0e520ae3115a19b7fb0081ebabe6684de0b4194",
+  "shortCommit": "c0e520ae",
+  "message": "fix(chronicles): make Phaser Hub default ON, fix Highway Runner assets & label sync",
+  "builtAt": "2026-09-08T08:43:11.963Z",
+  "build_timestamp": "2026-09-08T08:43:11.964Z",
   "env": "production"
 }

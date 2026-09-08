@@ -100,7 +100,7 @@ export default class ChunkCatapultScene {
     // 8. Slingshot Drag Input
     this.input.on('pointerdown', (pointer) => {
       if (this.isLaunched) return;
-      const d = Phaser.Math.Distance.Between(pointer.x, pointer.y, this.slingshotBase.x, this.slingshotBase.y);
+      const d = Math.hypot(pointer.x - this.slingshotBase.x, pointer.y - this.slingshotBase.y);
       if (d < 70) {
         this.isDragging = true;
       }

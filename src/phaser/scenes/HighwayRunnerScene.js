@@ -40,7 +40,7 @@ export default class HighwayRunnerScene {
   preload() {
     // Generate all textures procedurally — no external PNG files needed.
     // This prevents solid-color placeholder blocks and works even if /phaser-assets/ is missing.
-    const gfx = new Phaser.GameObjects.Graphics(this);
+    const gfx = this.make.graphics({ x: 0, y: 0, add: false });
 
     // ── Player Car (top-down view, 48×64) ──────────────────────────────────
     gfx.clear();
@@ -170,8 +170,8 @@ export default class HighwayRunnerScene {
 
     // 8. Controls: Keyboard
     this.cursors = this.input.keyboard.createCursorKeys();
-    this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
-    this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    this.keyA = this.input.keyboard.addKey('A');
+    this.keyD = this.input.keyboard.addKey('D');
 
     // Controls: Touch / Pointer Tap
     this.input.on('pointerdown', (pointer) => {
@@ -223,7 +223,7 @@ export default class HighwayRunnerScene {
   spawnWave() {
     if (this.isGameOver) return;
 
-    const correctLane = Phaser.Math.Between(0, 2);
+    const correctLane = Math.floor(Math.random() * 3);
     const otherWords = this.vocabItems.filter((v) => v.word !== this.currentTarget.word).map((v) => v.word);
     const pool = this.vocabItems.map((v) => v.word);
     const validated = validateMCQOptions(otherWords, this.currentTarget.word, pool, 3);
@@ -292,9 +292,14 @@ export default class HighwayRunnerScene {
     if (this.isGameOver) return;
 
     // Keyboard inputs
-    if (Phaser.Input.Keyboard.JustDown(this.cursors.left) || Phaser.Input.Keyboard.JustDown(this.keyA)) {
+    const justDown = (key) => {
+      if (!key) return false;
+      const phaserJustDown = window.Phaser?.Input?.Keyboard?.JustDown;
+      return phaserJustDown ? phaserJustDown(key) : false;
+    };
+    if (justDown(this.cursors.left) || justDown(this.keyA)) {
       this.steerLeft();
-    } else if (Phaser.Input.Keyboard.JustDown(this.cursors.right) || Phaser.Input.Keyboard.JustDown(this.keyD)) {
+    } else if (justDown(this.cursors.right) || justDown(this.keyD)) {
       this.steerRight();
     }
 

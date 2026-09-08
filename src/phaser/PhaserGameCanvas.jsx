@@ -20,6 +20,9 @@ export async function loadPhaser() {
   if (!cachedPhaser) {
     const mod = await import('phaser');
     cachedPhaser = mod.default || mod;
+    if (typeof window !== 'undefined') {
+      window.Phaser = cachedPhaser;
+    }
   }
   return cachedPhaser;
 }
