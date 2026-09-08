@@ -1,9 +1,9 @@
 {
-  "commit": "d7d8e456fcb6ec0a8ede7cb2dc4b6ac4b832f2e6",
-  "git_commit": "d7d8e456fcb6ec0a8ede7cb2dc4b6ac4b832f2e6",
-  "shortCommit": "d7d8e456",
-  "message": "fix(chronicles): remove parenthetical zone names from chamber cards and push Highway Runner 3D overhaul",
-  "builtAt": "2026-09-07T15:15:25.863Z",
-  "build_timestamp": "2026-09-07T15:15:25.864Z",
+  "commit": "4f23955b95833d5aab474ffc8f81c418f2b28d66",
+  "git_commit": "4f23955b95833d5aab474ffc8f81c418f2b28d66",
+  "shortCommit": "4f23955b",
+  "message": "fix(quest): tune Highway Word Runner speed to gentle 360px/s, ground upright 3D badges on track, and enable 1-tap lane controls",
+  "builtAt": "2026-09-08T02:31:12.933Z",
+  "build_timestamp": "2026-09-08T02:31:12.934Z",
   "env": "production"
 }

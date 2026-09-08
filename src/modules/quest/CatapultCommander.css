@@ -250,3 +250,5 @@
   align-items: center;
   justify-content: center;
 }
+
+@import './game-mobile.css';

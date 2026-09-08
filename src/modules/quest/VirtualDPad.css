@@ -165,3 +165,57 @@
     pointer-events: auto;
   }
 }
+
+/* ─── Mobile Viewport Scaling (<= 600px) ─────────────────────────────────── */
+@media (max-width: 600px) {
+  .vdpad-overlay {
+    height: 105px;
+    padding: 0 10px 10px;
+    background: linear-gradient(to top, rgba(10, 3, 22, 0.6) 0%, transparent 100%);
+  }
+
+  .vdpad-dpad {
+    gap: 1px;
+  }
+
+  .vdpad-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .vdpad-center {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .vdpad-actions-group {
+    gap: 8px;
+  }
+
+  .vdpad-slide-btn {
+    width: 52px;
+    height: 52px;
+  }
+  .vdpad-slide-btn .vdpad-jump-icon {
+    font-size: 8px;
+  }
+  .vdpad-slide-btn .vdpad-jump-emoji {
+    font-size: 16px;
+  }
+
+  .vdpad-jump-btn {
+    width: 60px;
+    height: 60px;
+  }
+  .vdpad-jump-btn .vdpad-jump-icon {
+    font-size: 9px;
+  }
+  .vdpad-jump-btn .vdpad-jump-emoji {
+    font-size: 18px;
+  }
+}
+

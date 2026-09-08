@@ -24,6 +24,7 @@ import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import MCQBlitzPopup, { generateMCQChoices } from './MCQBlitzPopup';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './BubbleStormChase.css';
 
 const ROOM_WIDTH = 900;
@@ -56,6 +57,9 @@ export default function BubbleStormChase({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('bubble_storm_chase') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   // Build target waves
   const waves = useMemo(() => {
@@ -443,7 +447,7 @@ export default function BubbleStormChase({
   };
 
   return (
-    <div className="bubble-storm-container" role="region" aria-label="Bubble Storm Chase">
+    <div className="bubble-storm-container" role="region" aria-label="Bubble Storm Chase" ref={gameContainerRef}>
       {/* ── Top Target Banner ────────────────────────────────────────── */}
       <div className="target-spellbook-banner">
         <div className="spellbook-badge">
@@ -467,7 +471,7 @@ export default function BubbleStormChase({
       </div>
 
       {/* ── Game World (Canvas/DOM Viewport) ─────────────────────────── */}
-      <div className="storm-world-viewport">
+      <div className="storm-world-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Background Parallax Layer */}
         <div className="storm-bg-layer" />
 

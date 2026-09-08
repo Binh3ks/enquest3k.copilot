@@ -23,6 +23,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './PotionFlipDungeon.css';
 
 const ROOM_WIDTH = 900;
@@ -53,6 +54,9 @@ export default function PotionFlipDungeon({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('potion_flip_dungeon') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   // Build 4 pairs (8 cauldrons total)
   const cauldronsInitial = useMemo(() => {
@@ -352,7 +356,7 @@ export default function PotionFlipDungeon({
   };
 
   return (
-    <div className="potion-flip-container" role="region" aria-label="Potion Flip Dungeon">
+    <div className="potion-flip-container" role="region" ref={gameContainerRef} aria-label="Potion Flip Dungeon">
       {/* ── Top Objective Banner ────────────────────────────────────── */}
       <div className="potion-mission-banner">
         <div className="potion-badge">
@@ -368,7 +372,7 @@ export default function PotionFlipDungeon({
       </div>
 
       {/* ── Game World ──────────────────────────────────────────────── */}
-      <div className="potion-world-viewport">
+      <div className="potion-world-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Alchemy Ambient Background */}
         <div className="potion-bg-glow" />
 

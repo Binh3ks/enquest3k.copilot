@@ -967,3 +967,163 @@
   animation: shake 0.4s ease-in-out;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   📱 MOBILE-FIRST RESPONSIVE OVERRIDES (≤ 600px)
+   Priority: Mobile is the primary play device.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+
+  /* ── World Map: tighter layout ── */
+  .chronicles-world-map {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  /* Compact chapter header */
+  .cwm-chapter-header {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .cwm-chapter-icon { font-size: 1.5rem; }
+  .cwm-chapter-title { font-size: 0.85rem; }
+  .cwm-chapter-crystal { font-size: 0.68rem; }
+  .cwm-week-badge { font-size: 0.7rem; padding: 3px 8px; }
+
+  /* PP Bar: tighter */
+  .cwm-pp-section { padding: 8px 10px; }
+  .cwm-pp-label { font-size: 0.75rem; margin-bottom: 5px; }
+  .cwm-pp-bar { height: 10px; }
+  .cwm-pp-hint { font-size: 0.65rem; }
+
+  /* Floor cards: 2-column wrap grid instead of horizontal scroll */
+  .cwm-rooms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 0;
+    overflow-x: unset;
+  }
+
+  /* Path connectors hide on mobile (no room in grid layout) */
+  .cwm-path-connector { display: none; }
+
+  /* Floor cards: taller, full width in cell */
+  .cwm-room-node {
+    min-width: unset;
+    width: 100%;
+    padding: 12px 6px;
+    border-radius: 12px;
+  }
+  .cwm-room-icon { font-size: 1.4rem; }
+  .cwm-room-sub { font-size: 0.7rem; }
+  .cwm-room-label { font-size: 0.62rem; }
+  .cwm-enter-badge, .cwm-done-badge {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+  }
+
+  /* Boss Chamber: occupy full row */
+  .cwm-boss-section {
+    border-radius: 12px;
+  }
+
+  /* ── Daily Room Screen: tighter layout ── */
+
+  /* Header: shrink */
+  .dr-header {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+  .dr-exit-btn {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+  .dr-room-title {
+    font-size: 0.85rem;
+  }
+  .dr-room-sub-title {
+    font-size: 0.65rem;
+  }
+  .dr-pp-badge {
+    font-size: 0.7rem;
+    padding: 3px 7px;
+  }
+
+  /* Room scene: smaller */
+  .dr-room-scene { min-height: 40px; }
+  .dr-lexio-fox { font-size: 1.6rem; }
+
+  /* Stars row: compact */
+  .dr-stars-row {
+    gap: 8px;
+    padding: 6px 10px;
+  }
+  .dr-star-pip { font-size: 0.65rem; }
+  .dr-stars-total { font-size: 0.7rem; }
+
+  /* Instruction banner: hide on mobile to save vertical space */
+  .dr-instruction-banner { display: none; }
+
+  /* Doors row: 3-column flex, full width, no overflow */
+  .dr-doors-row {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    padding: 8px;
+    justify-content: stretch;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .dr-door-slot {
+    flex: 1;
+    min-width: 0;
+    gap: 5px;
+  }
+  .dr-door-indicator {
+    width: 100%;
+    padding: 8px 4px;
+    min-height: 90px;
+  }
+  .dr-door-icon { font-size: 1.4rem; }
+  .dr-door-label {
+    font-size: 0.55rem;
+    letter-spacing: 0;
+  }
+  .dr-door-game-name {
+    font-size: 0.62rem;
+    min-height: 22px;
+    line-height: 1.2;
+  }
+  .dr-door-enter-btn {
+    width: 100%;
+    font-size: 0.65rem;
+    padding: 7px 2px;
+    border-radius: 8px;
+  }
+
+  /* Room desc: hidden */
+  .dr-room-desc { display: none; }
+
+  /* NPC scene: compact */
+  .dr-npc-bubble { padding: 14px 12px; }
+  .dr-npc-text { font-size: 0.9rem; }
+  .dr-npc-avatar { font-size: 2.2rem; }
+
+  /* Room cleared: compact */
+  .dr-clear-title { font-size: 1.2rem; }
+  .dr-clear-stats { gap: 10px; }
+  .dr-stat-label { font-size: 0.7rem; }
+  .dr-stat-value { font-size: 1.1rem; }
+  .dr-continue-btn { font-size: 0.85rem; padding: 10px 20px; }
+
+  /* Tab bar: full width, smaller */
+  .cwm-tab-bar {
+    margin: 0 0 10px;
+    padding: 5px 6px;
+    border-radius: 14px;
+  }
+  .cwm-tab-btn {
+    font-size: 0.7rem;
+    padding: 5px 8px;
+  }
+}

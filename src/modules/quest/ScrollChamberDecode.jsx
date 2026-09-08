@@ -24,6 +24,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './ScrollChamberDecode.css';
 
 const ROOM_WIDTH = 900;
@@ -67,6 +68,9 @@ export default function ScrollChamberDecode({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('scroll_chamber_decode') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   // Blanks & word runes
   const targets = scrollData.blanks || DEFAULT_SCROLL_DATA.blanks;
@@ -416,7 +420,7 @@ export default function ScrollChamberDecode({
   };
 
   return (
-    <div className="scroll-chamber-root">
+    <div className="scroll-chamber-root" ref={gameContainerRef}>
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="scroll-objective-banner">
         <BookOpen size={20} className="scroll-banner-icon" />
@@ -441,7 +445,7 @@ export default function ScrollChamberDecode({
       )}
 
       {/* ── Main Chamber Canvas ──────────────────────────────────────── */}
-      <div className="scroll-chamber-viewport">
+      <div className="scroll-chamber-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Light Beams from Chandeliers */}
         {LIGHT_BEAMS.map(b => (
           <div

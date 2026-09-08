@@ -23,6 +23,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './TitanGrammarForge.css';
 
 const ROOM_WIDTH = 900;
@@ -80,6 +81,9 @@ export default function TitanGrammarForge({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('titan_grammar_forge') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   const rounds = useMemo(() => {
     if (grammarSentences && grammarSentences.length > 0) {
@@ -367,7 +371,7 @@ export default function TitanGrammarForge({
   };
 
   return (
-    <div className="titan-forge-root">
+    <div className="titan-forge-root" ref={gameContainerRef}>
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="titan-forge-banner">
         <Cog size={22} className="titan-banner-icon" />
@@ -386,7 +390,7 @@ export default function TitanGrammarForge({
       )}
 
       {/* ── Titan Chamber Viewport ───────────────────────────────────── */}
-      <div className="titan-forge-viewport">
+      <div className="titan-forge-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Background Gigantic Rotating Gears */}
         <div className="background-titan-gears">
           <div className="giant-gear gear-left">⚙️</div>

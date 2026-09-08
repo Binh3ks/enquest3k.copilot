@@ -24,6 +24,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './EchoArenaShooter.css';
 
 const ROOM_WIDTH = 900;
@@ -74,6 +75,9 @@ export default function EchoArenaShooter({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('echo_arena_shooter') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   const rounds = phonicsRounds && phonicsRounds.length > 0 ? phonicsRounds : DEFAULT_PHONICS_ROUNDS;
 
@@ -372,7 +376,7 @@ export default function EchoArenaShooter({
   };
 
   return (
-    <div className="echo-arena-root">
+    <div className="echo-arena-root" ref={gameContainerRef}>
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="echo-objective-banner">
         <button className="echo-listen-btn" onClick={() => speakText(`Sound: ${currentRound.targetSound}`)}>
@@ -393,7 +397,7 @@ export default function EchoArenaShooter({
       )}
 
       {/* ── Main Arena Viewport ──────────────────────────────────────── */}
-      <div className="echo-arena-viewport">
+      <div className="echo-arena-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Acoustic Wavefield Background Effect */}
         <div className="acoustic-rings-overlay" />
 

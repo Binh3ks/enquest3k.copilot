@@ -118,6 +118,24 @@
   overflow: hidden;
 }
 
+/* Scale 900px game world to fit phone screen */
+@media (max-width: 600px) {
+  .bubble-storm-container {
+    position: fixed;
+    inset: 0;
+  }
+  .storm-world-viewport {
+    position: absolute;
+    left: 50%;
+    transform-origin: top left;
+    /* JS sets --game-scale via inline style, default fallback: */
+    transform: translateX(-50%) scale(var(--game-scale, 0.43));
+    width: 900px;
+    height: 600px;
+    min-height: unset;
+  }
+}
+
 /* ─── Background Parallax ────────────────────────────────────────────────── */
 .storm-bg-layer {
   position: absolute;
@@ -342,3 +360,5 @@
   color: #fff;
   border-color: rgba(255, 255, 255, 0.4);
 }
+
+@import './game-mobile.css';

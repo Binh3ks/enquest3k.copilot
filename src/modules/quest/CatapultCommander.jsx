@@ -23,6 +23,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './CatapultCommander.css';
 
 const ROOM_WIDTH = 900;
@@ -78,6 +79,9 @@ export default function CatapultCommander({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('catapult_commander') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   const waves = wavesData && wavesData.length > 0 ? wavesData : DEFAULT_WAVES;
 
@@ -355,7 +359,7 @@ export default function CatapultCommander({
   };
 
   return (
-    <div className="catapult-commander-root">
+    <div className="catapult-commander-root" ref={gameContainerRef}>
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="catapult-objective-banner">
         <Shield size={20} className="catapult-banner-icon" />
@@ -379,7 +383,7 @@ export default function CatapultCommander({
       )}
 
       {/* ── Main Rampart Viewport ────────────────────────────────────── */}
-      <div className="catapult-rampart-viewport">
+      <div className="catapult-rampart-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Horizon Sky & Advancing Goblin Wave */}
         <div className="distant-horizon">
           <div

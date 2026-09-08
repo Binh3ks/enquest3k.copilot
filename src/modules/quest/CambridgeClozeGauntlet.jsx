@@ -23,6 +23,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './CambridgeClozeGauntlet.css';
 
 const ROOM_WIDTH = 900;
@@ -60,6 +61,9 @@ export default function CambridgeClozeGauntlet({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('cambridge_cloze_gauntlet') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   const blanks = clozeData.blanks || DEFAULT_GAUNTLET_PASSAGE.blanks;
   const distractors = clozeData.distractors || DEFAULT_GAUNTLET_PASSAGE.distractors;
@@ -390,7 +394,7 @@ export default function CambridgeClozeGauntlet({
   };
 
   return (
-    <div className="gauntlet-cloze-root">
+    <div className="gauntlet-cloze-root" ref={gameContainerRef}>
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="gauntlet-objective-banner">
         <Crown size={22} className="gauntlet-banner-icon" />
@@ -410,7 +414,7 @@ export default function CambridgeClozeGauntlet({
       )}
 
       {/* ── Pinnacle Viewport ────────────────────────────────────────── */}
-      <div className="gauntlet-viewport">
+      <div className="gauntlet-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Cosmic Aurora Background */}
         <div className="cosmic-aurora-glow" />
 

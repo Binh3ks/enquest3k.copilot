@@ -327,3 +327,5 @@
   color: #422006;
   font-weight: 900;
 }
+
+@import './game-mobile.css';

@@ -126,26 +126,84 @@
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-/* Responsive Banner */
+/* Responsive Banner — Mobile-First */
 @media (max-width: 650px) {
+  /* Compact single-row pill ≤ 58px tall */
   .highway-3d-banner {
-    flex-direction: column;
-    padding: 10px 14px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 6px 10px;
     gap: 8px;
-    top: 10px;
+    top: 8px;
+    width: 96%;
+    align-items: center;
+    min-height: unset;
+    max-height: 58px;
+    overflow: hidden;
   }
   .banner-left-section {
-    align-items: center;
     flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    gap: 5px;
+    min-width: unset;
+    flex-shrink: 0;
   }
-  .def-main-text {
-    font-size: 0.98rem;
-    text-align: center;
+  .banner-target-tag {
+    font-size: 0.62rem;
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  .banner-streak-badge {
+    font-size: 0.62rem;
+    padding: 2px 5px;
+  }
+  .banner-audio-btn {
+    padding: 3px 7px;
+    font-size: 0.7rem;
+    border-radius: 8px;
+  }
+  .banner-definition-center {
+    flex: 1;
+    gap: 1px;
   }
   .def-instruction-label {
-    text-align: center;
+    font-size: 0.6rem;
+    letter-spacing: 0;
+  }
+  .def-main-text {
+    font-size: 0.82rem;
+    line-height: 1.2;
+    /* Truncate if too long — readable snippet */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Badge sizing on mobile: prevent overlap */
+@media (max-width: 600px) {
+  .target-badge,
+  .distractor-badge {
+    font-size: 1rem;
+    padding: 7px 12px;
+    border-radius: 12px;
+    max-width: 90px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hurdle-badge {
+    font-size: 0.9rem;
+    padding: 6px 18px;
+  }
+  .laser-badge {
+    font-size: 0.9rem;
+    padding: 6px 14px;
+  }
+  .pillar-badge {
+    font-size: 0.9rem;
+    padding: 16px 10px;
   }
 }
 

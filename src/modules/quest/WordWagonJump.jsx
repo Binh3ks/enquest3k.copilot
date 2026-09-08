@@ -25,6 +25,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './WordWagonJump.css';
 
 const ROOM_WIDTH = 900;
@@ -73,6 +74,9 @@ export default function WordWagonJump({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('word_wagon_jump') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   // Process grammar rounds from props or defaults
   const sentenceRounds = useMemo(() => {
@@ -450,7 +454,7 @@ export default function WordWagonJump({
   };
 
   return (
-    <div className="word-wagon-container" role="region" aria-label="Word Wagon Jump">
+    <div className="word-wagon-container" role="region" ref={gameContainerRef} aria-label="Word Wagon Jump">
       {/* ── Top Sentence Banner ─────────────────────────────────────── */}
       <div className="wagon-sentence-banner">
         <div className="sentence-train-badge">
@@ -492,7 +496,7 @@ export default function WordWagonJump({
       </div>
 
       {/* ── Game World ───────────────────────────────────────────────── */}
-      <div className="wagon-world-viewport">
+      <div className="wagon-world-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Train Tracks Layer */}
         <div className="wagon-tracks-layer" style={{ top: `${TRACK_Y}px` }}>
           <div className="steel-rail-top" />

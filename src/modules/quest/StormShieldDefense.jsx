@@ -25,6 +25,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './StormShieldDefense.css';
 
 const ROOM_WIDTH = 900;
@@ -57,6 +58,9 @@ export default function StormShieldDefense({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('storm_shield_defense') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   const vocabList = meteorVocabulary && meteorVocabulary.length > 0 ? meteorVocabulary : DEFAULT_METEOR_WORDS;
 
@@ -323,7 +327,7 @@ export default function StormShieldDefense({
   };
 
   return (
-    <div className="storm-shield-root">
+    <div className="storm-shield-root" ref={gameContainerRef}>
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="storm-objective-banner">
         <CloudLightning size={22} className="storm-banner-icon" />
@@ -345,7 +349,7 @@ export default function StormShieldDefense({
       )}
 
       {/* ── Main Spire Viewport ──────────────────────────────────────── */}
-      <div className="storm-spire-viewport">
+      <div className="storm-spire-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Arcane Lightning Clouds */}
         <div className="storm-cloud-layer">
           <div className="lightning-flash-overlay" />

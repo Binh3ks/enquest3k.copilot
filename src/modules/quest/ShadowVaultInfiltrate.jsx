@@ -23,6 +23,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './ShadowVaultInfiltrate.css';
 
 const ROOM_WIDTH = 900;
@@ -61,6 +62,9 @@ export default function ShadowVaultInfiltrate({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('shadow_vault_infiltrate') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   // Build 4 matching pairs
   const pairs = useMemo(() => {
@@ -386,7 +390,7 @@ export default function ShadowVaultInfiltrate({
   };
 
   return (
-    <div className="shadow-vault-container" role="region" aria-label="Shadow Vault Infiltrate">
+    <div className="shadow-vault-container" role="region" ref={gameContainerRef} aria-label="Shadow Vault Infiltrate">
       {/* ── Top Objective Banner ────────────────────────────────────── */}
       <div className="vault-mission-banner">
         <div className="vault-badge">
@@ -415,7 +419,7 @@ export default function ShadowVaultInfiltrate({
       </div>
 
       {/* ── Game World ──────────────────────────────────────────────── */}
-      <div className="vault-world-viewport">
+      <div className="vault-world-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Atmospheric Vault Background */}
         <div className="vault-bg-grid" />
 

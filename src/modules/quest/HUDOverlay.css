@@ -171,3 +171,24 @@
   transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0 0 6px rgba(139, 92, 246, 0.5);
 }
+
+/* ─── Mobile Compact HUD (<= 600px) ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hud-top-bar {
+    padding: 4px 8px 3px;
+  }
+  .hud-heart { font-size: 14px; }
+  .hud-hearts { gap: 2px; }
+  .hud-floor-badge { font-size: 8px; letter-spacing: 0.5px; }
+  .hud-door-label { font-size: 10px; }
+  .hud-timer { padding: 2px 6px; border-radius: 7px; gap: 3px; }
+  .hud-timer-icon { font-size: 10px; }
+  .hud-timer-value { font-size: 12px; }
+  .hud-score-strip { padding: 2px 8px; }
+  .hud-score-icon { font-size: 10px; }
+  .hud-score-value { font-size: 11px; }
+  .hud-score-unit { font-size: 7px; }
+  .hud-word-dot { width: 5px; height: 5px; }
+  .hud-word-progress { gap: 3px; }
+  .hud-crystal-count { font-size: 9px; }
+}

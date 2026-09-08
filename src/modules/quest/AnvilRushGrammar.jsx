@@ -24,6 +24,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './AnvilRushGrammar.css';
 
 const ROOM_WIDTH = 900;
@@ -63,6 +64,9 @@ export default function AnvilRushGrammar({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('anvil_rush_grammar') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   // Process rounds
   const rounds = useMemo(() => {
@@ -366,7 +370,7 @@ export default function AnvilRushGrammar({
   };
 
   return (
-    <div className="anvil-rush-container" role="region" aria-label="Anvil Rush Grammar">
+    <div className="anvil-rush-container" role="region" ref={gameContainerRef} aria-label="Anvil Rush Grammar">
       {/* ── Top Sentence Banner ─────────────────────────────────────── */}
       <div className="anvil-sentence-banner">
         <div className="forge-badge">
@@ -385,7 +389,7 @@ export default function AnvilRushGrammar({
       </div>
 
       {/* ── Game World ──────────────────────────────────────────────── */}
-      <div className="anvil-world-viewport">
+      <div className="anvil-world-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Lava Forge Ambient Glow */}
         <div className="forge-lava-glow" />
 

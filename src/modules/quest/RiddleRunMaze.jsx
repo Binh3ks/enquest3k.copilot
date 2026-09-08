@@ -24,6 +24,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './RiddleRunMaze.css';
 
 const ROOM_WIDTH = 900;
@@ -66,6 +67,9 @@ export default function RiddleRunMaze({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('riddle_run_maze') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   const riddles = riddlesData && riddlesData.length > 0 ? riddlesData : DEFAULT_RIDDLES;
 
@@ -338,7 +342,7 @@ export default function RiddleRunMaze({
   };
 
   return (
-    <div className="riddle-maze-root">
+    <div className="riddle-maze-root" ref={gameContainerRef}>
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="riddle-maze-banner">
         <HelpCircle size={22} className="riddle-banner-icon" />
@@ -356,7 +360,7 @@ export default function RiddleRunMaze({
       )}
 
       {/* ── Labyrinth Viewport ───────────────────────────────────────── */}
-      <div className="riddle-maze-viewport">
+      <div className="riddle-maze-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Maze Platforms */}
         {MAZE_PLATFORMS.map((p, idx) => (
           <div

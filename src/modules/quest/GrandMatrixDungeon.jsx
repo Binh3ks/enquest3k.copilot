@@ -25,6 +25,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './GrandMatrixDungeon.css';
 
 const ROOM_WIDTH = 900;
@@ -73,6 +74,9 @@ export default function GrandMatrixDungeon({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('grand_matrix_dungeon') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   const rounds = useMemo(() => {
     if (vocabItems && vocabItems.length >= 3) {
@@ -370,7 +374,7 @@ export default function GrandMatrixDungeon({
   };
 
   return (
-    <div className="matrix-dungeon-root">
+    <div className="matrix-dungeon-root" ref={gameContainerRef}>
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="matrix-dungeon-banner">
         <Grid size={22} className="matrix-banner-icon" />
@@ -389,7 +393,7 @@ export default function GrandMatrixDungeon({
       )}
 
       {/* ── Matrix Arena Viewport ────────────────────────────────────── */}
-      <div className="matrix-arena-viewport">
+      <div className="matrix-arena-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Cyber Celestial Grid Lines in background */}
         <div className="matrix-grid-bg-overlay" />
 

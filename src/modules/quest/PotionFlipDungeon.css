@@ -244,3 +244,5 @@
   margin-left: 10px;
   margin-top: 20px;
 }
+
+@import './game-mobile.css';

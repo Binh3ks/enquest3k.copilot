@@ -23,6 +23,7 @@ import {
 import LeoCharacter from './LeoCharacter';
 import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
+import useGameScale from './useGameScale';
 import './SyntaxExpressRail.css';
 
 const ROOM_WIDTH = 900;
@@ -78,6 +79,9 @@ export default function SyntaxExpressRail({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('syntax_express_rail') || 0;
+
+  // Mobile scale: fit 900×600 game world into any phone viewport
+  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
 
   const rounds = useMemo(() => {
     if (grammarSentences && grammarSentences.length > 0) {
@@ -355,7 +359,7 @@ export default function SyntaxExpressRail({
   };
 
   return (
-    <div className="syntax-rail-root">
+    <div className="syntax-rail-root" ref={gameContainerRef}>
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="syntax-rail-banner">
         <Train size={22} className="syntax-banner-icon" />
@@ -379,7 +383,7 @@ export default function SyntaxExpressRail({
       )}
 
       {/* ── Canyon Railway Viewport ──────────────────────────────────── */}
-      <div className="syntax-rail-viewport">
+      <div className="syntax-rail-viewport" style={scale < 1 ? scaleStyle : undefined}>
         {/* Approaching Express Train in background */}
         <div className="distant-express-train" style={{ transform: `scale(${0.6 + trainDist * 0.005})` }}>
           <span className="train-emoji">🚆</span>
