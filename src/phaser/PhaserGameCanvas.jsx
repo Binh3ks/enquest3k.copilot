@@ -39,6 +39,7 @@ export default function PhaserGameCanvas({
   const containerRef = useRef(null);
   const gameRef = useRef(null);
   const [isLoading, setIsLoading] = useState(!cachedPhaser);
+  const [errorMsg, setErrorMsg] = useState(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -96,6 +97,7 @@ export default function PhaserGameCanvas({
           scene: [BridgedScene],
         };
 
+        console.log('[HubWorld] Phaser game instantiated', config);
         const game = new Phaser.Game(config);
         gameRef.current = game;
 
@@ -103,6 +105,10 @@ export default function PhaserGameCanvas({
         game.scene.start('BridgedScene', sceneData);
       } catch (err) {
         console.error('[PhaserGameCanvas] Failed to initialize Phaser game:', err);
+        if (isMounted) {
+          setIsLoading(false);
+          setErrorMsg(err?.message || String(err));
+        }
       }
     }
 
@@ -166,6 +172,47 @@ export default function PhaserGameCanvas({
           />
           <span>Loading Engine...</span>
           <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+        </div>
+      )}
+      {errorMsg && (
+        <div
+          className="phaser-error-banner"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            background: 'rgba(15, 23, 42, 0.95)',
+            border: '2px solid #ef4444',
+            borderRadius: '12px',
+            color: '#f87171',
+            padding: '24px',
+            textAlign: 'center',
+            zIndex: 20,
+          }}
+        >
+          <div style={{ fontSize: '20px', fontWeight: 700 }}>⚠️ Lỗi khởi tạo Hub World</div>
+          <div style={{ fontSize: '13px', color: '#fca5a5', maxWidth: '85%', wordBreak: 'break-word', fontFamily: 'monospace' }}>
+            {errorMsg}
+          </div>
+          <button
+            onClick={() => window.location.reload()}
+            style={{
+              marginTop: '12px',
+              padding: '6px 16px',
+              borderRadius: '8px',
+              background: '#ef4444',
+              color: '#fff',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: 600,
+            }}
+          >
+            Thử lại
+          </button>
         </div>
       )}
     </div>

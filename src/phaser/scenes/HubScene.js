@@ -361,7 +361,7 @@ export default class HubScene {
 
   setupPlayer(W, H) {
     const spawnX = 400;
-    const spawnY = 410;
+    const spawnY = 340;
 
     // Shadow underneath
     this.playerShadow = this.add.ellipse(spawnX, spawnY + 16, 24, 8, 0x000000, 0.4).setDepth(29);

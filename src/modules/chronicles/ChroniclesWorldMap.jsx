@@ -18,75 +18,9 @@ import { useUserStore } from '../../stores/useUserStore';
 import MascotShopPanel from './MascotShopPanel';
 import ChapterFragmentPanel from './ChapterFragmentPanel';
 import HallOfFameModal from './HallOfFameModal';
-import { FEATURES } from '../../config/featureFlags';
 import PhaserGameCanvas from '../../phaser/PhaserGameCanvas';
 import HubScene from '../../phaser/scenes/HubScene';
 import './ChroniclesWorldMap.css';
-
-// ─── Room Node ─────────────────────────────────────────────────────────────
-
-function RoomNode({ dayIndex, weekNumber, isUnlocked, isCompleted, totalStars, onClick }) {
-  const chamber = CHAMBER_METADATA[dayIndex] || { chamberName: `Chamber ${dayIndex + 1}`, chamberEn: `Floor ${dayIndex + 1}`, icon: '🏰', zoneRef: `Day ${dayIndex + 1}` };
-  const status = isCompleted ? 'completed' : isUnlocked ? 'unlocked' : 'locked';
-
-  return (
-    <button
-      className={`cwm-room-node day-${dayIndex} ${status}`}
-      onClick={() => isUnlocked && onClick(dayIndex)}
-      disabled={!isUnlocked}
-      aria-label={`${chamber.chamberName} — ${status}`}
-    >
-      <div className="cwm-room-icon">{chamber.icon}</div>
-      <div className="cwm-room-label">Floor {dayIndex + 1}</div>
-      <div className="cwm-room-sub">{chamber.chamberName}</div>
-
-      {/* Stars */}
-      {isCompleted && (
-        <div className="cwm-room-stars">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
-            <span key={n} className={`cwm-star ${n <= totalStars ? 'earned' : ''}`}>★</span>
-          ))}
-        </div>
-      )}
-
-      {/* Status badge */}
-      {status === 'locked' && <div className="cwm-lock-badge">🔒</div>}
-      {status === 'unlocked' && <div className="cwm-enter-badge">⚡ Enter Chamber</div>}
-      {status === 'completed' && <div className="cwm-done-badge">✓ Completed</div>}
-    </button>
-  );
-}
-
-// ─── Boss Chamber Node ─────────────────────────────────────────────────────
-
-function BossChamberNode({ weekNumber, tier, weeklyPP, isBossDefeated, isOwnerBypass, onClick }) {
-  const isUnlocked = isOwnerBypass || tier !== 'none';
-  const effectiveTier = (isOwnerBypass && tier === 'none') ? 'gold' : tier;
-  const tierColors = { none: '#6b7280', bronze: '#b45309', silver: '#6b7280', gold: '#d97706' };
-  const tierLabels = {
-    none: isOwnerBypass ? '👑 Test Access (Gold)' : '🔒 Need 150⚡',
-    bronze: '🥉 Bronze',
-    silver: '🥈 Silver',
-    gold: isOwnerBypass && tier === 'none' ? '👑 Test Access (Gold)' : '🥇 Gold',
-  };
-
-  return (
-    <button
-      className={`cwm-boss-node ${isUnlocked ? 'unlocked' : 'locked'} ${isBossDefeated ? 'defeated' : ''}`}
-      onClick={() => isUnlocked && onClick(effectiveTier)}
-      disabled={!isUnlocked}
-      style={{ '--tier-color': tierColors[effectiveTier] }}
-    >
-      <div className="cwm-boss-icon">👾</div>
-      <div className="cwm-boss-label">Storm Titan Guardian</div>
-      <div className="cwm-boss-sub">Weekly Boss Battle</div>
-      <div className="cwm-boss-tier" style={{ color: tierColors[effectiveTier] }}>
-        {tierLabels[effectiveTier]}
-      </div>
-      {isBossDefeated && <div className="cwm-boss-defeated">⚔️ DEFEATED</div>}
-    </button>
-  );
-}
 
 // ─── Main Component ────────────────────────────────────────────────────────
 
@@ -118,6 +52,13 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
   const lexioCoins = useChroniclesStore((s) => s.lexioCoins || 0);
   const chapterFragKey = `chapter${chapter.id}`;
   const fragmentsCount = useChroniclesStore((s) => s.bossFragments[chapterFragKey] || 0);
+
+  // Cleanup any legacy toggle flags from localStorage
+  React.useEffect(() => {
+    if (typeof window !== 'undefined' && localStorage.getItem('ff_phaser_hub')) {
+      localStorage.removeItem('ff_phaser_hub');
+    }
+  }, []);
 
   // Sync room unlock with zone completion
   // Day 1 (dayIndex=0) is ALWAYS accessible, like the quest map.
@@ -181,21 +122,6 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
         >
           <span>🏆 Hall of Fame</span>
         </button>
-        <button
-          className="cwm-tab-btn"
-          style={{ fontSize: '11px', opacity: 0.85, background: FEATURES.PHASER_HUB_WORLD ? 'rgba(99, 102, 241, 0.2)' : 'transparent' }}
-          onClick={() => {
-            if (FEATURES.PHASER_HUB_WORLD) {
-              localStorage.setItem('ff_phaser_hub', 'false');
-            } else {
-              localStorage.removeItem('ff_phaser_hub');
-            }
-            window.location.reload();
-          }}
-          title="Toggle Phaser 2D RPG Hub vs Standard Grid"
-        >
-          <span>{FEATURES.PHASER_HUB_WORLD ? '🎮 Hub: 2D RPG ✓' : '🗺️ Hub: Map Grid'}</span>
-        </button>
       </div>
 
       {activeTab === 'shop' && <MascotShopPanel weekNumber={weekNumber} />}
@@ -235,97 +161,50 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
         <span className="cwm-stars-text">{totalStars} / 45 stars this week</span>
       </div>
 
-      {FEATURES.PHASER_HUB_WORLD ? (
-        <div
-          className="cwm-phaser-hub-wrapper"
-          style={{
-            width: '100%',
-            maxWidth: '800px',
-            height: '500px',
-            margin: '0 auto 20px auto',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            border: '2px solid rgba(99, 102, 241, 0.5)',
-            boxShadow: '0 12px 36px rgba(0,0,0,0.6)',
+      <div
+        className="cwm-phaser-hub-wrapper"
+        style={{
+          width: '100%',
+          maxWidth: '800px',
+          height: '500px',
+          margin: '0 auto 20px auto',
+          borderRadius: '16px',
+          overflow: 'hidden',
+          border: '2px solid rgba(99, 102, 241, 0.5)',
+          boxShadow: '0 12px 36px rgba(0,0,0,0.6)',
+        }}
+      >
+        <PhaserGameCanvas
+          sceneClass={HubScene}
+          width={800}
+          height={500}
+          sceneData={{
+            weekNumber,
+            weeklyPP,
+            bossTier,
+            isBossDefeated: bossDefeated,
+            isOwnerBypass,
+            roomStatuses: CHAMBER_METADATA.map((m, idx) => ({
+              dayIndex: idx,
+              chamberName: m.chamberName,
+              chamberEn: m.chamberEn,
+              icon: m.icon,
+              unlocked: idx === 0 ? true : isOwnerBypass || isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx),
+              stars: getRoomStars(weekNumber, idx),
+              completed: getRoomStars(weekNumber, idx) > 0,
+            })),
           }}
-        >
-          <PhaserGameCanvas
-            sceneClass={HubScene}
-            width={800}
-            height={500}
-            sceneData={{
-              weekNumber,
-              weeklyPP,
-              bossTier,
-              isBossDefeated: bossDefeated,
-              isOwnerBypass,
-              roomStatuses: CHAMBER_METADATA.map((m, idx) => ({
-                dayIndex: idx,
-                chamberName: m.chamberName,
-                chamberEn: m.chamberEn,
-                icon: m.icon,
-                unlocked: idx === 0 ? true : isOwnerBypass || isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx),
-                stars: getRoomStars(weekNumber, idx),
-                completed: getRoomStars(weekNumber, idx) > 0,
-              })),
-            }}
-            onSceneEvent={(eventName, data) => {
-              if (eventName === 'door_enter') {
-                if (data.isBoss) {
-                  if (onEnterBoss) onEnterBoss(bossTier);
-                } else {
-                  if (onEnterRoom) onEnterRoom(data.dayIndex);
-                }
+          onSceneEvent={(eventName, data) => {
+            if (eventName === 'door_enter') {
+              if (data.isBoss) {
+                if (onEnterBoss) onEnterBoss(bossTier);
+              } else {
+                if (onEnterRoom) onEnterRoom(data.dayIndex);
               }
-            }}
-          />
-        </div>
-      ) : (
-        <>
-          {/* 5 Room Nodes */}
-          <div className="cwm-rooms-grid" style={{ paddingLeft: 16, paddingRight: 16 }}>
-            {CHAMBER_METADATA.map((_, idx) => {
-              // Day 1 always unlocked; other days: owner bypass OR previous zone complete OR manually unlocked
-              const unlocked = idx === 0
-                ? true
-                : isOwnerBypass || isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx);
-              const stars = getRoomStars(weekNumber, idx);
-              const completed = stars > 0;
-              return (
-                <React.Fragment key={idx}>
-                  <RoomNode
-                    dayIndex={idx}
-                    weekNumber={weekNumber}
-                    isUnlocked={unlocked}
-                    isCompleted={completed}
-                    totalStars={stars}
-                    onClick={(di) => onEnterRoom && onEnterRoom(di)}
-                  />
-                  {/* Path connector between rooms */}
-                  {idx < 4 && (
-                    <div className={`cwm-path-connector ${unlocked ? 'lit' : 'dim'}`}>
-                      <span>···</span>
-                    </div>
-                  )}
-                </React.Fragment>
-              );
-            })}
-          </div>
-
-          {/* Boss Chamber */}
-          <div className="cwm-boss-section">
-            <div className="cwm-boss-path">▼</div>
-            <BossChamberNode
-              weekNumber={weekNumber}
-              tier={bossTier}
-              weeklyPP={weeklyPP}
-              isBossDefeated={bossDefeated}
-              isOwnerBypass={isOwnerBypass}
-              onClick={(selectedTier) => onEnterBoss && onEnterBoss(selectedTier || bossTier)}
-            />
-          </div>
-        </>
-      )}
+            }
+          }}
+        />
+      </div>
 
       {/* Footer */}
       <div className="cwm-footer">
