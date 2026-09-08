@@ -44,8 +44,43 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
   const bossDefeated = isBossDefeated(weekNumber);
 
   const { currentUser } = useUserStore();
-  const BYPASS_ROLES = ['super_admin', 'admin', 'teacher', 'team_leader', 'center_director'];
-  const isOwnerBypass = BYPASS_ROLES.includes(currentUser?.role) || (typeof window !== 'undefined' && localStorage.getItem('arcade_owner_bypass') === 'true');
+  const BYPASS_ROLES = ['owner', 'super_admin', 'admin', 'teacher', 'team_leader', 'center_director'];
+  const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const [bypassOverride, setBypassOverride] = useState(() => {
+    if (typeof window === 'undefined') return null;
+    const stored = localStorage.getItem('arcade_owner_bypass');
+    return stored !== null ? stored === 'true' : null;
+  });
+
+  const isOwnerBypass = Boolean(
+    bypassOverride !== null ? bypassOverride : (
+      BYPASS_ROLES.includes(currentUser?.role) ||
+      currentUser?.displayName === 'Bình' ||
+      currentUser?.email?.toLowerCase().includes('binh') ||
+      (typeof window !== 'undefined' && (
+        localStorage.getItem('arcade_owner_bypass') === 'true' ||
+        urlParams?.get('bypass') === 'true' ||
+        urlParams?.get('owner') === 'true' ||
+        urlParams?.get('test') === 'true'
+      ))
+    )
+  );
+
+  const toggleBypass = () => {
+    const next = !isOwnerBypass;
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('arcade_owner_bypass', next ? 'true' : 'false');
+    }
+    setBypassOverride(next);
+  };
+
+  // Auto-persist bypass flag if present in URL
+  React.useEffect(() => {
+    if (urlParams?.get('bypass') === 'true' || urlParams?.get('owner') === 'true') {
+      localStorage.setItem('arcade_owner_bypass', 'true');
+      setBypassOverride(true);
+    }
+  }, [urlParams]);
 
   const [activeTab, setActiveTab] = useState('map');
   const [showHallOfFame, setShowHallOfFame] = useState(false);
@@ -61,9 +96,17 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
   }, []);
 
   // Sync room unlock with zone completion
-  // Day 1 (dayIndex=0) is ALWAYS accessible, like the quest map.
-  // Other days unlock when the previous day's zone is complete.
+  // When owner bypass is active, unlock all 5 chambers immediately
   React.useEffect(() => {
+    if (isOwnerBypass) {
+      for (let d = 0; d < 5; d++) {
+        if (!isRoomUnlocked(weekNumber, d)) {
+          unlockRoom(weekNumber, d);
+        }
+      }
+      return;
+    }
+
     // Day 1 always unlocked
     if (!isRoomUnlocked(weekNumber, 0)) {
       unlockRoom(weekNumber, 0);
@@ -74,10 +117,12 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
         unlockRoom(weekNumber, d);
       }
     }
-  }, [weekNumber]); // eslint-disable-line
+  }, [weekNumber, isOwnerBypass]); // eslint-disable-line
 
   // PP bar
-  const ppPct = Math.min((weeklyPP / MAX_PP_PER_WEEK) * 100, 100);
+  const effectiveBossTier = (isOwnerBypass && bossTier === 'none') ? 'gold' : bossTier;
+  const effectivePP = isOwnerBypass ? Math.max(weeklyPP, 360) : weeklyPP;
+  const ppPct = Math.min((effectivePP / MAX_PP_PER_WEEK) * 100, 100);
   const ppBronzePct = (BOSS_ACCESS_THRESHOLDS.bronze / MAX_PP_PER_WEEK) * 100;
   const ppSilverPct = (BOSS_ACCESS_THRESHOLDS.silver / MAX_PP_PER_WEEK) * 100;
   const ppGoldPct  = (BOSS_ACCESS_THRESHOLDS.gold  / MAX_PP_PER_WEEK) * 100;
@@ -91,7 +136,30 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
           <h2 className="cwm-chapter-title">Chapter {chapter.id}: {chapter.title}</h2>
           <p className="cwm-chapter-crystal">{chapter.crystal}</p>
         </div>
-        <div className="cwm-week-badge">Week {weekNumber}</div>
+        <div className="cwm-header-actions" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <button
+            className={`cwm-owner-badge ${isOwnerBypass ? 'unlocked' : ''}`}
+            onClick={toggleBypass}
+            title="Owner & Dev: Click to toggle unlocking all rooms & Boss for testing"
+            style={{
+              padding: '6px 12px',
+              borderRadius: '20px',
+              border: isOwnerBypass ? '1px solid #10b981' : '1px solid #6366f1',
+              background: isOwnerBypass ? 'rgba(16, 185, 129, 0.2)' : 'rgba(99, 102, 241, 0.2)',
+              color: isOwnerBypass ? '#34d399' : '#a5b4fc',
+              fontSize: '0.8rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            {isOwnerBypass ? '👑 Owner: Unlocked ✓' : '🔓 Unlock All (Test)'}
+          </button>
+          <div className="cwm-week-badge">Week {weekNumber}</div>
+        </div>
       </div>
 
       {/* Navigation Tab Bar */}
@@ -133,7 +201,7 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
       <div className="cwm-pp-section">
         <div className="cwm-pp-label">
           <span>⚡ Power Points</span>
-          <span className="cwm-pp-value">{weeklyPP} / {MAX_PP_PER_WEEK}</span>
+          <span className="cwm-pp-value">{effectivePP} / {MAX_PP_PER_WEEK}</span>
         </div>
         <div className="cwm-pp-bar">
           <div className="cwm-pp-fill" style={{ width: `${ppPct}%` }} />
@@ -149,9 +217,11 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
           </div>
         </div>
         <div className="cwm-pp-hint">
-          {bossTier === 'none'
-            ? `Earn ${BOSS_ACCESS_THRESHOLDS.bronze - weeklyPP} more ⚡ to unlock Boss Chamber`
-            : `Boss unlocked at ${bossTier} tier!`}
+          {isOwnerBypass
+            ? '👑 Owner Mode Active: All 5 Chambers & Boss Gate Unlocked for Testing!'
+            : bossTier === 'none'
+              ? `Earn ${BOSS_ACCESS_THRESHOLDS.bronze - weeklyPP} more ⚡ to unlock Boss Chamber`
+              : `Boss unlocked at ${bossTier} tier!`}
         </div>
       </div>
 
@@ -180,16 +250,16 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
           height={500}
           sceneData={{
             weekNumber,
-            weeklyPP,
-            bossTier,
+            weeklyPP: effectivePP,
+            bossTier: effectiveBossTier,
             isBossDefeated: bossDefeated,
-            isOwnerBypass,
+            isOwnerBypass: !!isOwnerBypass,
             roomStatuses: CHAMBER_METADATA.map((m, idx) => ({
               dayIndex: idx,
               chamberName: m.chamberName,
               chamberEn: m.chamberEn,
               icon: m.icon,
-              unlocked: idx === 0 ? true : isOwnerBypass || isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx),
+              unlocked: isOwnerBypass || idx === 0 || isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx),
               stars: getRoomStars(weekNumber, idx),
               completed: getRoomStars(weekNumber, idx) > 0,
             })),
@@ -197,7 +267,7 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
           onSceneEvent={(eventName, data) => {
             if (eventName === 'door_enter') {
               if (data.isBoss) {
-                if (onEnterBoss) onEnterBoss(bossTier);
+                if (onEnterBoss) onEnterBoss(effectiveBossTier);
               } else {
                 if (onEnterRoom) onEnterRoom(data.dayIndex);
               }

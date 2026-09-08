@@ -94,15 +94,17 @@ export default function PhaserGameCanvas({
               debug: false,
             },
           },
-          scene: [BridgedScene],
         };
 
         console.log('[HubWorld] Phaser game instantiated', config);
         const game = new Phaser.Game(config);
         gameRef.current = game;
+        if (typeof window !== 'undefined') {
+          window.__PHASER_GAME__ = game;
+        }
 
-        // Pass sceneData to initial scene
-        game.scene.start('BridgedScene', sceneData);
+        // Add and start BridgedScene with initial sceneData
+        game.scene.add('BridgedScene', BridgedScene, true, sceneData);
       } catch (err) {
         console.error('[PhaserGameCanvas] Failed to initialize Phaser game:', err);
         if (isMounted) {
@@ -126,6 +128,20 @@ export default function PhaserGameCanvas({
       }
     };
   }, [sceneClass, width, height]);
+
+  // Dynamically update active scene when sceneData changes (e.g. owner bypass toggle)
+  useEffect(() => {
+    if (gameRef.current) {
+      try {
+        const scene = gameRef.current.scene?.getScene('BridgedScene');
+        if (scene && scene.scene && scene.scene.restart) {
+          scene.scene.restart(sceneData);
+        }
+      } catch (e) {
+        console.warn('[PhaserGameCanvas] Scene restart skipped:', e);
+      }
+    }
+  }, [sceneData]);
 
   return (
     <div

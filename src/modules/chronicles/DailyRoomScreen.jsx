@@ -83,7 +83,9 @@ export default function DailyRoomScreen({
   floorConfig,
   onRoomComplete,
   onExit,
+  onBackToMap,
 }) {
+  const exitHandler = onExit || onBackToMap;
   const { recordDoorStars, completeRoom, getDoorStars } = useChroniclesStore();
 
   // Extract curriculum content once
@@ -199,9 +201,9 @@ export default function DailyRoomScreen({
       setPhase('map');
       setActiveDoor(null);
       // Small delay to avoid React state-flush race before unmount
-      setTimeout(() => { onExit && onExit(); }, 50);
+      setTimeout(() => { exitHandler && exitHandler(); }, 50);
     } else {
-      onExit && onExit();
+      exitHandler && exitHandler();
     }
   };
 

@@ -1,9 +1,9 @@
 {
-  "commit": "bd57e2f2a93b2f9e6b885bb090238b67261b28ff",
-  "git_commit": "bd57e2f2a93b2f9e6b885bb090238b67261b28ff",
-  "shortCommit": "bd57e2f2",
-  "message": "feat(chronicles): upgrade 2D RPG Grand Citadel Hall v5.0 with Fauna animated spritesheet & fix Highway Runner HUD",
-  "builtAt": "2026-09-08T09:24:20.868Z",
-  "build_timestamp": "2026-09-08T09:24:20.870Z",
+  "commit": "dcda70ee58d08964a624209324e0ef1117c011af",
+  "git_commit": "dcda70ee58d08964a624209324e0ef1117c011af",
+  "shortCommit": "dcda70ee",
+  "message": "fix(chronicles): eliminate dual-track toggle, make 2D RPG Hub sole canonical path, add instantiation logs and error banner",
+  "builtAt": "2026-09-08T10:37:48.056Z",
+  "build_timestamp": "2026-09-08T10:37:48.056Z",
   "env": "production"
 }
