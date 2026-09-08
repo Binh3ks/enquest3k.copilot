@@ -126,10 +126,12 @@ export default function WordWagonJump({
   const blankParts = currentRound.parts.filter(p => p.isBlank);
   const currentTargetBlank = blankParts[activeBlankIdx] || blankParts[0];
 
-  // Leo Physics
+  const PLATFORM_Y = TRACK_Y - 45; // Station platform height (385px)
+
+  // Leo Physics — start directly on the station platform
   const leoRef = useRef({
-    x: 80,
-    y: FLOOR_Y - LEO_HITBOX.height,
+    x: 90,
+    y: PLATFORM_Y - LEO_HITBOX.height,
     vx: 0,
     vy: 0,
     onGround: true,
@@ -141,7 +143,7 @@ export default function WordWagonJump({
   });
 
   const [leoDisplay, setLeoDisplay] = useState({
-    x: 80, y: FLOOR_Y - LEO_HITBOX.height, animState: 'idle', facingRight: true, invincible: false
+    x: 90, y: PLATFORM_Y - LEO_HITBOX.height, animState: 'idle', facingRight: true, invincible: false
   });
 
   // Wagons train state
@@ -313,10 +315,24 @@ export default function WordWagonJump({
         }
       }
 
-      // Ground landing
-      if (!landedOnWagon) {
-        if (leo.y >= FLOOR_Y - LEO_HITBOX.height) {
-          leo.y = FLOOR_Y - LEO_HITBOX.height;
+      // Station Platform landing (left side of tracks)
+      let onStationPlatform = false;
+      if (leo.x < 220) {
+        const leoFoot = leo.y + LEO_HITBOX.height;
+        if (leoFoot >= PLATFORM_Y && leoFoot <= PLATFORM_Y + 18 && leo.vy >= 0) {
+          leo.y = PLATFORM_Y - LEO_HITBOX.height;
+          leo.vy = 0;
+          leo.onGround = true;
+          leo.onWagonId = null;
+          onStationPlatform = true;
+        }
+      }
+
+      // Track Bed Ground landing
+      const TRACK_GROUND_Y = TRACK_Y + 40;
+      if (!landedOnWagon && !onStationPlatform) {
+        if (leo.y >= TRACK_GROUND_Y - LEO_HITBOX.height) {
+          leo.y = TRACK_GROUND_Y - LEO_HITBOX.height;
           leo.vy = 0;
           leo.onGround = true;
           leo.onWagonId = null;
@@ -449,23 +465,27 @@ export default function WordWagonJump({
     setPhase('playing');
   };
 
-  // Gesture Controls for WordWagonJump
+  // Gesture Controls for WordWagonJump — Continuous holding movement + jump
   const { gestureRef } = useGestureControls({
+    onMoveLeftStart: () => { inputRef.current.left = true; },
+    onMoveLeftEnd:   () => { inputRef.current.left = false; },
+    onMoveRightStart: () => { inputRef.current.right = true; },
+    onMoveRightEnd:   () => { inputRef.current.right = false; },
     onTapLeft: () => {
       inputRef.current.left = true;
-      setTimeout(() => { inputRef.current.left = false; }, 240);
+      setTimeout(() => { inputRef.current.left = false; }, 260);
     },
     onTapRight: () => {
       inputRef.current.right = true;
-      setTimeout(() => { inputRef.current.right = false; }, 240);
+      setTimeout(() => { inputRef.current.right = false; }, 260);
     },
     onDoubleTap: () => {
       inputRef.current.jump = true;
-      setTimeout(() => { inputRef.current.jump = false; }, 200);
+      setTimeout(() => { inputRef.current.jump = false; }, 220);
     },
     onSwipeUp: () => {
       inputRef.current.jump = true;
-      setTimeout(() => { inputRef.current.jump = false; }, 200);
+      setTimeout(() => { inputRef.current.jump = false; }, 220);
     },
     onSwipeLeft: () => {
       inputRef.current.left = true;

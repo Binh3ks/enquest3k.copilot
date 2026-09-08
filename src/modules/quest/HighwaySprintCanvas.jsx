@@ -157,11 +157,18 @@ export default function HighwaySprintCanvas({
     setTargetLane(l => Math.min(2, l + 1));
   }, []);
 
-  // Gesture Controls setup
+  // Direct Lane Select
+  const setLaneDirect = useCallback((lane) => {
+    setTargetLane(Math.max(0, Math.min(2, lane)));
+  }, []);
+
+  // Gesture Controls setup — 3-zone tap & hold for instant steering + swipe jump/slide
   const { gestureRef } = useGestureControls({
-    onTapLeft: moveLeft,
-    onTapRight: moveRight,
-    onTapCenter: triggerJump,
+    onMoveLeftStart: () => setLaneDirect(0),
+    onMoveRightStart: () => setLaneDirect(2),
+    onTapLeft: () => setLaneDirect(0),
+    onTapCenter: () => setLaneDirect(1),
+    onTapRight: () => setLaneDirect(2),
     onDoubleTap: triggerJump,
     onSwipeUp: triggerJump,
     onSwipeDown: triggerSlide,
@@ -199,89 +206,82 @@ export default function HighwaySprintCanvas({
     }
   }, [roundIdx, currentRound]);
 
-  // Spawn entities for current round
-  const spawnEntitiesForRound = useCallback((round) => {
-    const newEntities = [];
-    const target = round.targetWord;
-    const distractors = round.distractors || ['hazard', 'obstacle'];
+  // Procedural Continuous Wave Spawner
+  const waveCounterRef = useRef(0);
 
-    // Sequence of encounters:
-    // Wave 1: Obstacle (barrier or laser or pillar)
-    // Wave 2: Word Billboard (target + distractor in other lanes)
-    // Wave 3: Second obstacle
-    // Wave 4: Target Word Billboard again to ensure collectibility
+  const spawnNextWave = useCallback((round, atZ = 0.05) => {
+    if (!round) return;
+    waveCounterRef.current += 1;
+    const waveNum = waveCounterRef.current;
+    const isWordWave = waveNum % 2 === 0;
+    const target = round.targetWord || 'friction';
+    const distractors = (round.distractors && round.distractors.length > 0)
+      ? round.distractors
+      : ['hazard', 'obstacle', 'gravity'];
+    const newItems = [];
 
-    let baseZ = 0.05;
-    const gapZ = 0.35;
+    if (isWordWave) {
+      // Spawn Word Billboard wave: Target word + distractor in another lane
+      const targetLaneIdx = Math.floor(Math.random() * 3);
+      const distractorLaneIdx = (targetLaneIdx + 1 + Math.floor(Math.random() * 2)) % 3;
+      const distractorWord = distractors[Math.floor(Math.random() * distractors.length)] || 'hazard';
 
-    // Item 1: Random obstacle
-    const obsTypes = ['barrier', 'laser', 'barrel'];
-    const obsType1 = obsTypes[Math.floor(Math.random() * obsTypes.length)];
-    const obsLane1 = Math.floor(Math.random() * 3);
-    newEntities.push({
-      id: `obs_1_${Date.now()}`,
-      type: obsType1,
-      lane: obsLane1,
-      z: baseZ,
-      passed: false,
-    });
+      newItems.push({
+        id: `target_${Date.now()}_${Math.random()}`,
+        type: 'target_word',
+        word: target,
+        lane: targetLaneIdx,
+        z: atZ,
+        passed: false,
+        collected: false,
+      });
 
-    // Item 2: Word tokens (Target in one lane, distractor in another)
-    baseZ += gapZ;
-    const targetLaneIdx = Math.floor(Math.random() * 3);
-    const distractorLaneIdx = (targetLaneIdx + 1 + Math.floor(Math.random() * 2)) % 3;
+      newItems.push({
+        id: `distractor_${Date.now()}_${Math.random()}`,
+        type: 'distractor_word',
+        word: distractorWord,
+        lane: distractorLaneIdx,
+        z: atZ,
+        passed: false,
+        collected: false,
+      });
+    } else {
+      // Spawn Obstacle wave: 1 or 2 hazards in random lanes
+      const obsTypes = ['barrier', 'laser', 'barrel'];
+      const obsType = obsTypes[Math.floor(Math.random() * obsTypes.length)];
+      const lane1 = Math.floor(Math.random() * 3);
+      newItems.push({
+        id: `obs_${Date.now()}_${Math.random()}`,
+        type: obsType,
+        lane: lane1,
+        z: atZ,
+        passed: false,
+      });
+      // 30% chance for a second obstacle in another lane (leaving 1 lane always safe)
+      if (Math.random() < 0.35) {
+        const lane2 = (lane1 + 1 + Math.floor(Math.random() * 2)) % 3;
+        const obsType2 = obsTypes[Math.floor(Math.random() * obsTypes.length)];
+        newItems.push({
+          id: `obs2_${Date.now()}_${Math.random()}`,
+          type: obsType2,
+          lane: lane2,
+          z: atZ + 0.08,
+          passed: false,
+        });
+      }
+    }
 
-    newEntities.push({
-      id: `target_word_${Date.now()}`,
-      type: 'target_word',
-      word: target,
-      lane: targetLaneIdx,
-      z: baseZ,
-      passed: false,
-      collected: false,
-    });
-
-    newEntities.push({
-      id: `distractor_word_${Date.now()}`,
-      type: 'distractor_word',
-      word: distractors[0] || 'hazard',
-      lane: distractorLaneIdx,
-      z: baseZ,
-      passed: false,
-      collected: false,
-    });
-
-    // Item 3: Secondary obstacle
-    baseZ += gapZ;
-    const obsType2 = obsTypes[(obsTypes.indexOf(obsType1) + 1) % obsTypes.length];
-    newEntities.push({
-      id: `obs_2_${Date.now()}`,
-      type: obsType2,
-      lane: (targetLaneIdx + 1) % 3,
-      z: baseZ,
-      passed: false,
-    });
-
-    // Item 4: Backup target word
-    baseZ += gapZ;
-    const backupLane = (distractorLaneIdx + 1) % 3;
-    newEntities.push({
-      id: `target_word_backup_${Date.now()}`,
-      type: 'target_word',
-      word: target,
-      lane: backupLane,
-      z: baseZ,
-      passed: false,
-      collected: false,
-    });
-
-    entitiesRef.current = newEntities;
+    entitiesRef.current = [...entitiesRef.current, ...newItems];
   }, []);
 
   // Trigger initial round spawning
   useEffect(() => {
-    spawnEntitiesForRound(currentRound);
-  }, [roundIdx, currentRound, spawnEntitiesForRound]);
+    waveCounterRef.current = 0;
+    entitiesRef.current = [];
+    spawnNextWave(currentRound, 0.05);
+    spawnNextWave(currentRound, 0.35);
+    spawnNextWave(currentRound, 0.65);
+  }, [roundIdx, currentRound, spawnNextWave]);
 
   // Particle explosion helper
   const spawnExplosion = (x, y, color) => {
@@ -350,6 +350,15 @@ export default function HighwaySprintCanvas({
       ctx.fillStyle = skyGrad;
       ctx.fillRect(0, 0, W, horizonY);
 
+      // Distant Twinkling Stars
+      for (let s = 0; s < 24; s++) {
+        const sx = ((s * 47) % W);
+        const sy = ((s * 31) % Math.floor(horizonY - 12));
+        const sSize = (s % 3) === 0 ? 2 : 1.2;
+        ctx.fillStyle = s % 2 === 0 ? 'rgba(255, 255, 255, 0.75)' : 'rgba(192, 132, 252, 0.85)';
+        ctx.fillRect(sx, sy, sSize, sSize);
+      }
+
       // Distant Neon Horizon Glow
       const glowGrad = ctx.createRadialGradient(cx, horizonY, 10, cx, horizonY, W * 0.6);
       glowGrad.addColorStop(0, 'rgba(168, 85, 247, 0.7)');
@@ -416,14 +425,50 @@ export default function HighwaySprintCanvas({
         }
       }
 
+      // ── Roadside Neon Light Pillars (3D perspective) ──
+      const numPillars = 8;
+      for (let p = 0; p < numPillars; p++) {
+        const pillarZ = ((p + roadPhaseRef.current * 2) % numPillars) / numPillars;
+        const pPZ = Math.pow(pillarZ, 1.8);
+        const pY = horizonY + (H - horizonY) * pPZ;
+        const pRoadW = horizonRoadWidth + (bottomRoadWidth - horizonRoadWidth) * pPZ;
+        const pHeight = 32 * pPZ + 6;
+
+        // Left pillar (Cyan neon)
+        ctx.fillStyle = 'rgba(6, 182, 212, 0.7)';
+        ctx.fillRect(cx - pRoadW / 2 - 8 * pPZ - 2, pY - pHeight, Math.max(2, 4 * pPZ), pHeight);
+        ctx.fillStyle = '#67e8f9';
+        ctx.beginPath();
+        ctx.arc(cx - pRoadW / 2 - 8 * pPZ, pY - pHeight, Math.max(2, 5 * pPZ), 0, Math.PI * 2);
+        ctx.fill();
+
+        // Right pillar (Magenta neon)
+        ctx.fillStyle = 'rgba(236, 72, 153, 0.7)';
+        ctx.fillRect(cx + pRoadW / 2 + 8 * pPZ - 2, pY - pHeight, Math.max(2, 4 * pPZ), pHeight);
+        ctx.fillStyle = '#f472b6';
+        ctx.beginPath();
+        ctx.arc(cx + pRoadW / 2 + 8 * pPZ, pY - pHeight, Math.max(2, 5 * pPZ), 0, Math.PI * 2);
+        ctx.fill();
+      }
+
       // ── 3. Update & Draw Road Entities (Sorted far → near) ───────────────────
       const RUNNER_SPEED = 0.24; // speed in Z units per second
-      const entities = entitiesRef.current;
+      let entities = entitiesRef.current;
 
       // Advance Z
       entities.forEach(ent => {
         ent.z += RUNNER_SPEED * dt;
       });
+
+      // Filter out entities that passed well behind player (z > 1.35)
+      entities = entities.filter(ent => ent.z <= 1.35);
+      entitiesRef.current = entities;
+
+      // Continuous Procedural Spawning: if closest entity to horizon is past z = 0.30, spawn new wave ahead!
+      const minZ = entities.length > 0 ? Math.min(...entities.map(e => e.z)) : 1.0;
+      if (minZ > 0.30 || entities.length < 3) {
+        spawnNextWave(currentRound, Math.max(0.04, minZ - 0.32));
+      }
 
       // Sort by Z so farthest objects render first
       const sortedEntities = [...entities].sort((a, b) => a.z - b.z);
@@ -823,20 +868,14 @@ export default function HighwaySprintCanvas({
         aria-label="3D Highway Runner"
       />
 
-      {/* ── Leo Mascot CSS Overlay (Synced with Canvas coordinates) ── */}
-      <div
-        className="highway-leo-layer"
-        style={{
-          left: `${leoPos.x}px`,
-          top: `${leoPos.y}px`,
-        }}
-      >
-        <LeoCharacterBack
-          state={leoAnimState}
-          invincible={invincible}
-          scale={leoPos.scale}
-        />
-      </div>
+      {/* ── Leo Mascot Overlay (Synced with 3D road lane) ── */}
+      <LeoCharacterBack
+        x={leoPos.x}
+        y={leoPos.y}
+        state={leoAnimState}
+        invincible={invincible}
+        scale={leoPos.scale}
+      />
 
       {/* ── Touch Gesture Transparent Overlay (3-zone tap & swipe) ── */}
       <div

@@ -8,27 +8,95 @@ import './MCQBlitzPopup.css';
 
 const TOTAL_TIME_MS = 5000;
 
+export const CURRICULUM_DEFINITIONS = {
+  'friction': 'The force that slows things down when surfaces slide together',
+  'invisible science force': 'An unseen scientific force like friction that affects motion',
+  'shoe soles': 'The bottom part of shoes that touches the ground',
+  'smooth tiles': 'Flat, slippery ceramic pieces covering a floor',
+  'slippery layer': 'A thin layer of water that makes surfaces slick',
+  'reduces friction': 'Decreases the grip between two sliding surfaces',
+  'stays balanced': 'Remains steady on feet without falling over',
+  'school corridor': 'A long hallway inside a school building',
+  'corridor': 'A long passage inside a building with doors on each side',
+  'wet tiles': 'Floor tiles covered with spilled water or liquid',
+  'plastic soles': 'Shoe bottoms made of hard plastic that slide easily',
+  'rubber soles': 'Shoe bottoms made of rubber that give strong grip',
+  'strong grip': 'A firm hold that stops slipping or falling',
+  'yellow warning sign': 'A bright sign warning people of a wet, slippery floor',
+  'bandage': 'A strip of clean cloth used to cover and protect a wound',
+  'slipped': 'Slid accidentally on a wet surface and lost balance',
+  'nurse': 'A trained medical person who cares for sick or injured people',
+  'safe': 'Protected from danger, injury, or accidents',
+  'mistake': 'An incorrect action or careless decision',
+  'traction': 'The grip between shoes or tires and the floor',
+  'laboratory': 'A room equipped for scientific experiments',
+  'prevent': 'To stop something dangerous or painful from happening',
+  'polished': 'Made smooth and shiny by rubbing or cleaning',
+  'ice rink': 'A smooth frozen sheet of ice for skating',
+  'careful': 'Taking great care to avoid danger or mistakes',
+  'gravity': 'The force that pulls objects toward the earth',
+  'hazard': 'A dangerous condition that can cause harm',
+};
+
+const PEDAGOGICAL_DISTRACTORS = [
+  'A tool used by scientists to measure temperature',
+  'A strong magnetic field that attracts metallic objects',
+  'The speed at which objects fall through the air',
+  'A protective helmet worn during laboratory experiments',
+  'A chemical reaction producing bubbles of gas',
+  'A musical sound wave traveling through water',
+  'A measurement of how heavy an object feels',
+  'A special microscope used to view tiny bacteria',
+  'A bright light used to signal emergency vehicles',
+];
+
 /**
  * Generate MCQ choices for a vocabulary word
- * Picks 1 correct + 2 wrong from vocabPool
+ * Picks 1 correct + 2 wrong from vocabPool or curated pedagogical distractors
  *
- * @param {{ word: string, definition: string }} targetWord
+ * @param {{ word: string, definition: string, def?: string, meaning?: string }} targetWord
  * @param {Array<{ word: string, definition: string }>} vocabPool  — all available words
  * @returns {Array<{ label: string, isCorrect: boolean }>}
  */
-export function generateMCQChoices(targetWord, vocabPool) {
-  const correct = { label: targetWord.definition, isCorrect: true };
+export function generateMCQChoices(targetWord, vocabPool = []) {
+  const wordKey = (targetWord?.word || '').trim().toLowerCase();
+  let correctDef = targetWord?.definition || targetWord?.def || targetWord?.meaning;
+  // If definition is missing or in Vietnamese, resolve to Cambridge English definition
+  if (!correctDef || typeof correctDef !== 'string' || correctDef.trim() === '' || /[\u00C0-\u1EF9]/.test(correctDef)) {
+    correctDef = CURRICULUM_DEFINITIONS[wordKey] ||
+      `The natural force or property related to "${targetWord?.word || 'this word'}"`;
+  }
 
-  // Pick 2 wrong distractors from pool (different word)
-  const distractors = vocabPool
-    .filter(v => v.word !== targetWord.word && v.definition)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 2)
-    .map(v => ({ label: v.definition, isCorrect: false }));
+  const correct = { label: correctDef, isCorrect: true };
 
-  // Fill with fallback distractors if pool too small
-  while (distractors.length < 2) {
-    distractors.push({ label: '(none of the above)', isCorrect: false });
+  // Collect pool definitions
+  const poolDefs = (vocabPool || [])
+    .filter(v => (v?.word || '').trim().toLowerCase() !== wordKey)
+    .map(v => {
+      const w = (v?.word || '').trim().toLowerCase();
+      let d = v?.definition || v?.def || CURRICULUM_DEFINITIONS[w];
+      if (typeof d === 'string' && /[\u00C0-\u1EF9]/.test(d)) {
+        d = CURRICULUM_DEFINITIONS[w] || null;
+      }
+      return d;
+    })
+    .filter(d => Boolean(d) && d !== correctDef);
+
+  const uniquePoolDefs = Array.from(new Set(poolDefs)).sort(() => Math.random() - 0.5);
+
+  const distractors = [];
+  for (const def of uniquePoolDefs) {
+    if (distractors.length >= 2) break;
+    distractors.push({ label: def, isCorrect: false });
+  }
+
+  // Fill with pedagogical distractors if pool too small — NEVER use '(none of the above)'
+  const shuffledFallback = [...PEDAGOGICAL_DISTRACTORS].sort(() => Math.random() - 0.5);
+  for (const fb of shuffledFallback) {
+    if (distractors.length >= 2) break;
+    if (fb !== correctDef && !distractors.some(d => d.label === fb)) {
+      distractors.push({ label: fb, isCorrect: false });
+    }
   }
 
   // Shuffle correct answer into random position

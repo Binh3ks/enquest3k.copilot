@@ -126,19 +126,19 @@ export default function SyntaxExpressRail({
 
   const currentRound = rounds[roundIdx % rounds.length] || DEFAULT_SYNTAX_ROUNDS[0];
 
-  // Levers on the 3 elevated gantries
+  // Levers on the 3 elevated gantries (planted on gantry platforms)
   const levers = useMemo(() => {
     const opts = currentRound.options;
     return [
-      { id: 'lever_0', x: 150, y: 305, option: opts[0] },
-      { id: 'lever_1', x: 410, y: 265, option: opts[1] },
-      { id: 'lever_2', x: 670, y: 305, option: opts[2] },
+      { id: 'lever_0', x: 190, y: 350, option: opts[0] },
+      { id: 'lever_1', x: 450, y: 310, option: opts[1] },
+      { id: 'lever_2', x: 710, y: 350, option: opts[2] },
     ];
   }, [currentRound]);
 
-  // Leo physics
+  // Leo physics — starting on Mid Gantry at x = 380 (beside lever_1 at 450)
   const leoRef = useRef({
-    x: 420,
+    x: 380,
     y: 250,
     vx: 0,
     vy: 0,
@@ -147,7 +147,7 @@ export default function SyntaxExpressRail({
   });
 
   const [leoDisplay, setLeoDisplay] = useState({
-    x: 420,
+    x: 380,
     y: 250,
     facingRight: true,
     animState: 'idle',
@@ -273,16 +273,11 @@ export default function SyntaxExpressRail({
       leo.y += leo.vy;
 
       // Platform collisions
-      const prevY = leo.y - leo.vy;
-      const landing = checkPlatformLanding(
-        { x: leo.x, y: leo.y, width: LEO_HITBOX.width, height: LEO_HITBOX.height, vy: leo.vy },
-        RAIL_PLATFORMS,
-        prevY
-      );
+      leo.width = LEO_HITBOX.width;
+      leo.height = LEO_HITBOX.height;
+      const landed = checkPlatformLanding(leo, RAIL_PLATFORMS);
 
-      if (landing.landed) {
-        leo.y = landing.platformY - LEO_HITBOX.height;
-        leo.vy = 0;
+      if (landed) {
         leo.isGrounded = true;
       } else if (leo.y >= FLOOR_Y - LEO_HITBOX.height) {
         leo.y = FLOOR_Y - LEO_HITBOX.height;
@@ -342,24 +337,28 @@ export default function SyntaxExpressRail({
     return () => clearInterval(timer);
   }, [phase]);
 
-  // Gesture Controls for SyntaxExpressRail
+  // Gesture Controls for SyntaxExpressRail — Continuous holding movement + jump + strike
   const { gestureRef } = useGestureControls({
+    onMoveLeftStart: () => { keysPressed.current.left = true; },
+    onMoveLeftEnd:   () => { keysPressed.current.left = false; },
+    onMoveRightStart: () => { keysPressed.current.right = true; },
+    onMoveRightEnd:   () => { keysPressed.current.right = false; },
     onTapLeft: () => {
       keysPressed.current.left = true;
-      setTimeout(() => { keysPressed.current.left = false; }, 240);
+      setTimeout(() => { keysPressed.current.left = false; }, 260);
     },
     onTapRight: () => {
       keysPressed.current.right = true;
-      setTimeout(() => { keysPressed.current.right = false; }, 240);
+      setTimeout(() => { keysPressed.current.right = false; }, 260);
     },
     onTapCenter: handleTriggerNearLever,
     onDoubleTap: () => {
       keysPressed.current.up = true;
-      setTimeout(() => { keysPressed.current.up = false; }, 200);
+      setTimeout(() => { keysPressed.current.up = false; }, 220);
     },
     onSwipeUp: () => {
       keysPressed.current.up = true;
-      setTimeout(() => { keysPressed.current.up = false; }, 200);
+      setTimeout(() => { keysPressed.current.up = false; }, 220);
     },
     onSwipeLeft: () => {
       keysPressed.current.left = true;
@@ -378,7 +377,7 @@ export default function SyntaxExpressRail({
     setTimeLeft(duration);
     setRoundIdx(0);
     setTrainDist(0);
-    leoRef.current = { x: 420, y: 250, vx: 0, vy: 0, isGrounded: true, facingRight: true };
+    leoRef.current = { x: 380, y: 250, vx: 0, vy: 0, isGrounded: true, facingRight: true };
     setPhase('playing');
   };
 
@@ -399,10 +398,13 @@ export default function SyntaxExpressRail({
 
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="syntax-rail-banner">
-        <Train size={22} className="syntax-banner-icon" />
+        <div className="syntax-banner-train-badge">
+          <Train size={14} />
+          <span>R{roundIdx + 1}/{rounds.length}</span>
+        </div>
         <div className="syntax-sentence-box">
           <span className="syntax-stem-text">{currentRound.stem}</span>
-          <span className="syntax-blank-highlight">[ ___ ? ___ ]</span>
+          <span className="syntax-blank-highlight">[ ? ]</span>
         </div>
         <div className="train-gauge">
           <span>Junction:</span>

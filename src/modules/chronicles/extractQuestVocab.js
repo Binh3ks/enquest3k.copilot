@@ -17,6 +17,8 @@
 
 import { generateStubVocab } from './generateStubVocab';
 
+import { CURRICULUM_DEFINITIONS } from '../quest/MCQBlitzPopup';
+
 /**
  * Build a flat list of {word, definition?, type} items from a string array or object array.
  */
@@ -24,12 +26,27 @@ function normalizeItems(raw = [], type = 'vocab') {
   return raw
     .filter(Boolean)
     .map((item) => {
-      if (typeof item === 'string') return { word: item, type };
-      if (item.word || item.term || item.text)
-        return { word: item.word || item.term || item.text, definition: item.definition || item.meaning || item.vi || '', type };
-      if (item.phrase || item.chunk)
-        return { word: item.phrase || item.chunk, definition: item.meaning || '', type: 'phrase' };
-      return null;
+      let word = '';
+      let def = '';
+
+      if (typeof item === 'string') {
+        word = item;
+      } else if (item.word || item.term || item.text) {
+        word = item.word || item.term || item.text;
+        def = item.definition_en || item.definition || item.meaning || item.vi || '';
+      } else if (item.phrase || item.chunk) {
+        word = item.phrase || item.chunk;
+        def = item.definition_en || item.meaning || '';
+      }
+
+      if (!word) return null;
+      const lower = word.trim().toLowerCase();
+      // If definition is missing or in Vietnamese, fallback to CURRICULUM_DEFINITIONS
+      if (!def || /[\u00C0-\u1EF9]/.test(def)) {
+        def = CURRICULUM_DEFINITIONS?.[lower] || def || `Related to ${word}`;
+      }
+
+      return { word, definition: def, type };
     })
     .filter(Boolean);
 }

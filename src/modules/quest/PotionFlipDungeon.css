@@ -17,39 +17,47 @@
 /* ─── Top Mission Banner ─────────────────────────────────────────────────── */
 .potion-mission-banner {
   position: absolute;
-  top: 52px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 40;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  background: rgba(6, 78, 59, 0.9);
+  justify-content: space-between;
+  gap: 8px;
+  background: rgba(6, 78, 59, 0.94);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(52, 211, 153, 0.5);
-  border-radius: 24px;
-  padding: 8px 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px rgba(52, 211, 153, 0.25);
-  max-width: 90%;
+  border: 1.5px solid rgba(52, 211, 153, 0.5);
+  border-radius: 20px;
+  padding: 6px 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 14px rgba(52, 211, 153, 0.2);
+  width: calc(100% - 32px);
+  max-width: 540px;
+  box-sizing: border-box;
 }
 
 .potion-badge {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   background: rgba(52, 211, 153, 0.25);
   border: 1px solid rgba(52, 211, 153, 0.6);
   color: #a7f3d0;
   font-size: 11px;
-  font-weight: 700;
-  padding: 2px 10px;
-  border-radius: 12px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
 }
 
 .potion-hint-text {
-  font-size: 13px;
+  font-size: 0.82rem;
+  font-weight: 700;
   color: #e2e8f0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
   text-align: center;
 }
 

@@ -1,9 +1,9 @@
 {
-  "commit": "5e65ca0cfffdb32bb51f9f9c07a3dd4f98515ec9",
-  "git_commit": "5e65ca0cfffdb32bb51f9f9c07a3dd4f98515ec9",
-  "shortCommit": "5e65ca0c",
-  "message": "feat(quest): implement mobile game engine redesign v2 across all 15 mini-games",
-  "builtAt": "2026-09-08T03:34:10.852Z",
-  "build_timestamp": "2026-09-08T03:34:10.852Z",
+  "commit": "71fc932b5f161d9a0178e9ca6e98418d80e43703",
+  "git_commit": "71fc932b5f161d9a0178e9ca6e98418d80e43703",
+  "shortCommit": "71fc932b",
+  "message": "docs: update latest_handoff.md to reflect completed mobile engine redesign v2",
+  "builtAt": "2026-09-08T04:03:29.285Z",
+  "build_timestamp": "2026-09-08T04:03:29.285Z",
   "env": "production"
 }

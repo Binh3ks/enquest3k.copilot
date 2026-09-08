@@ -1,5 +1,6 @@
 /* AnvilRushGrammar.css — Rune Forge Volcanic Theme */
 
+.anvil-rush-container,
 .anvil-rush-grammar-root {
   position: relative;
   width: 100%;
@@ -8,29 +9,61 @@
   background: radial-gradient(ellipse at 50% 100%, #2a0808 0%, #120303 60%, #080202 100%);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
   user-select: none;
   font-family: 'Outfit', 'Inter', system-ui, sans-serif;
 }
 
 /* Objective Banner */
+.anvil-sentence-banner,
 .anvil-objective-banner {
   position: absolute;
-  top: 52px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 40;
   display: flex;
   align-items: center;
-  gap: 12px;
-  background: rgba(26, 8, 8, 0.92);
-  border: 2px solid rgba(249, 115, 22, 0.4);
-  border-radius: 24px;
-  padding: 8px 24px;
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.25), inset 0 0 12px rgba(249, 115, 22, 0.1);
-  backdrop-filter: blur(8px);
-  max-width: 90%;
+  justify-content: space-between;
+  gap: 8px;
+  background: rgba(26, 8, 8, 0.94);
+  border: 1.5px solid rgba(249, 115, 22, 0.5);
+  border-radius: 20px;
+  padding: 6px 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), inset 0 0 12px rgba(249, 115, 22, 0.2);
+  backdrop-filter: blur(10px);
+  width: calc(100% - 32px);
+  max-width: 580px;
+  box-sizing: border-box;
+}
+
+.forge-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(249, 115, 22, 0.25);
+  border: 1px solid rgba(249, 115, 22, 0.6);
+  color: #ffedd5;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.forge-target-sentence {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.forge-action-instruction {
+  display: none;
 }
 
 .forge-banner-icon {

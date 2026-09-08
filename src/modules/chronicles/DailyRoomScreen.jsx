@@ -309,21 +309,11 @@ export default function DailyRoomScreen({
   // RENDER
   // ═══════════════════════════════════════════════════════════════════════════
 
-  // ACTIVE MINI-GAME
+  // ACTIVE MINI-GAME (Fullscreen immersive gameplay with game's native HUD & FloatingExitBtn)
   if (phase.startsWith('door_') && activeDoor !== null) {
     return (
-      <div className={`daily-room-screen ${themeClass}`}>
-        <div className="dr-game-header">
-          <button className="dr-back-btn" onClick={() => { setPhase('map'); setActiveDoor(null); }}>
-            ← Chamber
-          </button>
-          <span className="dr-game-label">
-            {doorDefs[activeDoor]?.icon || doorDefs[activeDoor]?.doorIcon}{' '}
-            {doorDefs[activeDoor]?.gameName || doorDefs[activeDoor]?.doorLabel || doorDefs[activeDoor]?.label || ['🔵 Vocab Door', '🟡 Grammar Door', '🔴 Integration Door'][activeDoor]}
-          </span>
-          <span className="dr-day-badge">Floor {dayIndex + 1}</span>
-        </div>
-        <div className="dr-game-area">
+      <div className={`daily-room-screen ${themeClass} dr-in-game-fullscreen`}>
+        <div className="dr-game-area dr-game-area-fullscreen">
           {renderActiveGame()}
         </div>
       </div>

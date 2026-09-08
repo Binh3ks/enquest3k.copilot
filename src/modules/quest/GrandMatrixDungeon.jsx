@@ -363,35 +363,39 @@ export default function GrandMatrixDungeon({
   // Camera follow Leo horizontally
   const cameraX = Math.max(0, Math.min(ROOM_WIDTH - containerWidth, leoDisplay.x - containerWidth / 2));
 
-  // Mobile gesture controls
+  // Mobile gesture controls — Continuous holding movement + jump
   const { gestureRef } = useGestureControls({
+    onMoveLeftStart: () => { keysPressed.current.left = true; },
+    onMoveLeftEnd:   () => { keysPressed.current.left = false; },
+    onMoveRightStart: () => { keysPressed.current.right = true; },
+    onMoveRightEnd:   () => { keysPressed.current.right = false; },
     onTapLeft: () => {
       keysPressed.current.left = true;
-      setTimeout(() => { keysPressed.current.left = false; }, 200);
+      setTimeout(() => { keysPressed.current.left = false; }, 260);
     },
     onTapRight: () => {
       keysPressed.current.right = true;
-      setTimeout(() => { keysPressed.current.right = false; }, 200);
+      setTimeout(() => { keysPressed.current.right = false; }, 260);
     },
     onDoubleTap: () => {
       if (leoRef.current.isGrounded) {
         keysPressed.current.up = true;
-        setTimeout(() => { keysPressed.current.up = false; }, 200);
+        setTimeout(() => { keysPressed.current.up = false; }, 220);
       }
     },
     onSwipeUp: () => {
       if (leoRef.current.isGrounded) {
         keysPressed.current.up = true;
-        setTimeout(() => { keysPressed.current.up = false; }, 200);
+        setTimeout(() => { keysPressed.current.up = false; }, 220);
       }
     },
     onSwipeLeft: () => {
       keysPressed.current.left = true;
-      setTimeout(() => { keysPressed.current.left = false; }, 300);
+      setTimeout(() => { keysPressed.current.left = false; }, 360);
     },
     onSwipeRight: () => {
       keysPressed.current.right = true;
-      setTimeout(() => { keysPressed.current.right = false; }, 300);
+      setTimeout(() => { keysPressed.current.right = false; }, 360);
     },
     onTapCenter: handleTriggerNearNode,
     enabled: phase === 'playing',

@@ -7,8 +7,10 @@ const FloatingUpgradeWrapper = () => {
   const [showModal, setShowModal] = useState(false);
   const { isPaid, effectivePlan } = usePlanAccess();
 
-  // Hide if already paid or plan is unlimited
-  if (isPaid || effectivePlan === 'unlimited') return null;
+  // Hide if already paid, plan is unlimited, or inside interactive chronicles/quest game screens
+  const isGameRoute = typeof window !== 'undefined' && 
+    (window.location.pathname.includes('/chronicles') || window.location.pathname.includes('/quest'));
+  if (isPaid || effectivePlan === 'unlimited' || isGameRoute) return null;
 
   return (
     <>

@@ -194,8 +194,29 @@ export default function EchoArenaShooter({
     fireBoltTowards(tapX, tapY);
   };
 
-  // ── Gesture Controls: Swipe to move Leo, tap to reposition ──────────────────
+  // ── Gesture Controls: Hold Left/Right to move Leo, Tap to shoot ──────────────────
   const { gestureRef } = useGestureControls({
+    onMoveLeftStart: () => {
+      leoRef.current.movingLeft = true;
+    },
+    onMoveLeftEnd: () => {
+      leoRef.current.movingLeft = false;
+    },
+    onMoveRightStart: () => {
+      leoRef.current.movingRight = true;
+    },
+    onMoveRightEnd: () => {
+      leoRef.current.movingRight = false;
+    },
+    onTapLeft: () => {
+      leoRef.current.targetX = clamp(leoRef.current.x - 80, 20, arenaSize.width - LEO_HITBOX.width - 20);
+    },
+    onTapRight: () => {
+      leoRef.current.targetX = clamp(leoRef.current.x + 80, 20, arenaSize.width - LEO_HITBOX.width - 20);
+    },
+    onTapCenter: () => {
+      fireBoltTowards();
+    },
     onSwipeLeft: () => {
       leoRef.current.targetX = clamp(leoRef.current.x - 120, 20, arenaSize.width - LEO_HITBOX.width - 20);
     },
@@ -248,10 +269,17 @@ export default function EchoArenaShooter({
       const leo = leoRef.current;
       const { width: aWidth, height: aHeight } = arenaSize;
 
+      // Handle continuous holding movement
+      if (leo.movingLeft) {
+        leo.targetX = clamp(leo.targetX - 8, 20, aWidth - LEO_HITBOX.width - 20);
+      } else if (leo.movingRight) {
+        leo.targetX = clamp(leo.targetX + 8, 20, aWidth - LEO_HITBOX.width - 20);
+      }
+
       // Smoothly steer Leo towards targetX
       const dx = leo.targetX - leo.x;
       if (Math.abs(dx) > 4) {
-        leo.vx = Math.sign(dx) * Math.min(Math.abs(dx) * 8, LEO_SPEED * 1.5);
+        leo.vx = Math.sign(dx) * Math.min(Math.abs(dx) * 8, LEO_SPEED * 1.8);
         leo.x = clamp(leo.x + leo.vx * dt * 60, 20, aWidth - LEO_HITBOX.width - 20);
         leo.facingRight = dx > 0;
       } else {

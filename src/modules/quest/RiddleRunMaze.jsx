@@ -326,24 +326,28 @@ export default function RiddleRunMaze({
     return () => clearInterval(timer);
   }, [phase]);
 
-  // Gesture Controls for RiddleRunMaze
+  // Gesture Controls for RiddleRunMaze — Continuous holding movement + jump + enter door
   const { gestureRef } = useGestureControls({
+    onMoveLeftStart: () => { keysPressed.current.left = true; },
+    onMoveLeftEnd:   () => { keysPressed.current.left = false; },
+    onMoveRightStart: () => { keysPressed.current.right = true; },
+    onMoveRightEnd:   () => { keysPressed.current.right = false; },
     onTapLeft: () => {
       keysPressed.current.left = true;
-      setTimeout(() => { keysPressed.current.left = false; }, 240);
+      setTimeout(() => { keysPressed.current.left = false; }, 260);
     },
     onTapRight: () => {
       keysPressed.current.right = true;
-      setTimeout(() => { keysPressed.current.right = false; }, 240);
+      setTimeout(() => { keysPressed.current.right = false; }, 260);
     },
     onTapCenter: handleTriggerNearDoor,
     onDoubleTap: () => {
       keysPressed.current.up = true;
-      setTimeout(() => { keysPressed.current.up = false; }, 200);
+      setTimeout(() => { keysPressed.current.up = false; }, 220);
     },
     onSwipeUp: () => {
       keysPressed.current.up = true;
-      setTimeout(() => { keysPressed.current.up = false; }, 200);
+      setTimeout(() => { keysPressed.current.up = false; }, 220);
     },
     onSwipeLeft: () => {
       keysPressed.current.left = true;

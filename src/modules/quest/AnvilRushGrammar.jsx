@@ -365,23 +365,27 @@ export default function AnvilRushGrammar({
     setPhase('playing');
   };
 
-  // Gesture Controls for AnvilRushGrammar
+  // Gesture Controls for AnvilRushGrammar — Continuous holding movement + jump
   const { gestureRef } = useGestureControls({
+    onMoveLeftStart: () => { inputRef.current.left = true; },
+    onMoveLeftEnd:   () => { inputRef.current.left = false; },
+    onMoveRightStart: () => { inputRef.current.right = true; },
+    onMoveRightEnd:   () => { inputRef.current.right = false; },
     onTapLeft: () => {
       inputRef.current.left = true;
-      setTimeout(() => { inputRef.current.left = false; }, 240);
+      setTimeout(() => { inputRef.current.left = false; }, 260);
     },
     onTapRight: () => {
       inputRef.current.right = true;
-      setTimeout(() => { inputRef.current.right = false; }, 240);
+      setTimeout(() => { inputRef.current.right = false; }, 260);
     },
     onDoubleTap: () => {
       inputRef.current.jump = true;
-      setTimeout(() => { inputRef.current.jump = false; }, 200);
+      setTimeout(() => { inputRef.current.jump = false; }, 220);
     },
     onSwipeUp: () => {
       inputRef.current.jump = true;
-      setTimeout(() => { inputRef.current.jump = false; }, 200);
+      setTimeout(() => { inputRef.current.jump = false; }, 220);
     },
     onSwipeLeft: () => {
       inputRef.current.left = true;
