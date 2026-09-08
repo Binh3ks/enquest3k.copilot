@@ -69,16 +69,33 @@ import ArcadeModal from './components/games/ArcadeModal';
 import ArcadeBreakPromptModal from './components/games/ArcadeBreakPromptModal';
 import StreakMilestoneToast from './components/gamification/StreakMilestoneToast';
 
-// Lazy-loaded heavy pages
-const GameHub = React.lazy(() => import('./pages/GameHub/GameHub'));
-const ChroniclesScreen = React.lazy(() => import('./modules/chronicles/ChroniclesScreen'));
-const QuestDemoScreen = React.lazy(() => import('./modules/quest/QuestDemoScreen'));
-const ParentDashboard = React.lazy(() => import('./pages/ParentDashboard'));
-const WordTreasury = React.lazy(() => import('./pages/WordTreasury'));
-const AdminDashboard = React.lazy(() => import('./components/common/AdminDashboard'));
-const WorksheetGenerator = React.lazy(() => import('./components/common/WorksheetGenerator'));
-const ReviewDashboardPage = React.lazy(() => import('./modules/review/ReviewDashboard'));
-const PassportTracker = React.lazy(() => import('./pages/PassportTracker'));
+// Helper to automatically recover from stale chunk 404 errors when a new deployment occurs
+function lazyWithRetry(factory) {
+  return React.lazy(() =>
+    factory().catch((error) => {
+      if (typeof window !== 'undefined') {
+        const key = 'chunk_reload_' + window.location.pathname;
+        const hasRetried = window.sessionStorage.getItem(key);
+        if (!hasRetried) {
+          window.sessionStorage.setItem(key, String(Date.now()));
+          window.location.reload();
+        }
+      }
+      throw error;
+    })
+  );
+}
+
+// Lazy-loaded heavy pages with auto-recovery on deploy
+const GameHub = lazyWithRetry(() => import('./pages/GameHub/GameHub'));
+const ChroniclesScreen = lazyWithRetry(() => import('./modules/chronicles/ChroniclesScreen'));
+const QuestDemoScreen = lazyWithRetry(() => import('./modules/quest/QuestDemoScreen'));
+const ParentDashboard = lazyWithRetry(() => import('./pages/ParentDashboard'));
+const WordTreasury = lazyWithRetry(() => import('./pages/WordTreasury'));
+const AdminDashboard = lazyWithRetry(() => import('./components/common/AdminDashboard'));
+const WorksheetGenerator = lazyWithRetry(() => import('./components/common/WorksheetGenerator'));
+const ReviewDashboardPage = lazyWithRetry(() => import('./modules/review/ReviewDashboard'));
+const PassportTracker = lazyWithRetry(() => import('./pages/PassportTracker'));
 import week33Data from './data/weeks/week_33/index.js';
 import { getCollectionByWeek } from './data/collectionConfig';
 

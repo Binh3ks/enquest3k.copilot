@@ -1,9 +1,9 @@
 {
-  "commit": "0e3bf20b767bf08e31da355a51de8b03b906f87b",
-  "git_commit": "0e3bf20b767bf08e31da355a51de8b03b906f87b",
-  "shortCommit": "0e3bf20b",
-  "message": "revert(chronicles): set PHASER_HUB_WORLD default to false to restore clean standard grid on production",
-  "builtAt": "2026-09-08T09:12:59.413Z",
-  "build_timestamp": "2026-09-08T09:12:59.413Z",
+  "commit": "bd57e2f2a93b2f9e6b885bb090238b67261b28ff",
+  "git_commit": "bd57e2f2a93b2f9e6b885bb090238b67261b28ff",
+  "shortCommit": "bd57e2f2",
+  "message": "feat(chronicles): upgrade 2D RPG Grand Citadel Hall v5.0 with Fauna animated spritesheet & fix Highway Runner HUD",
+  "builtAt": "2026-09-08T09:24:20.868Z",
+  "build_timestamp": "2026-09-08T09:24:20.870Z",
   "env": "production"
 }
