@@ -1,9 +1,9 @@
 {
-  "commit": "5cd2c32152042e866f1c62d4c7b7e3eeba085ef4",
-  "git_commit": "5cd2c32152042e866f1c62d4c7b7e3eeba085ef4",
-  "shortCommit": "5cd2c321",
-  "message": "fix(phaser): replace Phaser global with this.make.graphics() in preload() — fixes ReferenceError",
-  "builtAt": "2026-09-08T08:52:47.724Z",
-  "build_timestamp": "2026-09-08T08:52:47.724Z",
+  "commit": "0e3bf20b767bf08e31da355a51de8b03b906f87b",
+  "git_commit": "0e3bf20b767bf08e31da355a51de8b03b906f87b",
+  "shortCommit": "0e3bf20b",
+  "message": "revert(chronicles): set PHASER_HUB_WORLD default to false to restore clean standard grid on production",
+  "builtAt": "2026-09-08T09:12:59.413Z",
+  "build_timestamp": "2026-09-08T09:12:59.413Z",
   "env": "production"
 }

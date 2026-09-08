@@ -186,15 +186,15 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
           style={{ fontSize: '11px', opacity: 0.85, background: FEATURES.PHASER_HUB_WORLD ? 'rgba(99, 102, 241, 0.2)' : 'transparent' }}
           onClick={() => {
             if (FEATURES.PHASER_HUB_WORLD) {
-              localStorage.removeItem('ff_phaser_hub');
+              localStorage.setItem('ff_phaser_hub', 'false');
             } else {
-              localStorage.setItem('ff_phaser_hub', 'true');
+              localStorage.removeItem('ff_phaser_hub');
             }
             window.location.reload();
           }}
-          title="Toggle Phaser 2D Hub Engine vs Standard Grid"
+          title="Toggle Phaser 2D RPG Hub vs Standard Grid"
         >
-          <span>{FEATURES.PHASER_HUB_WORLD ? '🎮 Hub: 2D (Test)' : '🗺️ Hub: Map Grid'}</span>
+          <span>{FEATURES.PHASER_HUB_WORLD ? '🎮 Hub: 2D RPG ✓' : '🗺️ Hub: Map Grid'}</span>
         </button>
       </div>
 
@@ -240,20 +240,34 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
           className="cwm-phaser-hub-wrapper"
           style={{
             width: '100%',
-            height: '520px',
+            maxWidth: '800px',
+            height: '500px',
+            margin: '0 auto 20px auto',
             borderRadius: '16px',
             overflow: 'hidden',
-            border: '1.5px solid rgba(99, 102, 241, 0.4)',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
-            marginBottom: '20px',
+            border: '2px solid rgba(99, 102, 241, 0.5)',
+            boxShadow: '0 12px 36px rgba(0,0,0,0.6)',
           }}
         >
           <PhaserGameCanvas
             sceneClass={HubScene}
+            width={800}
+            height={500}
             sceneData={{
               weekNumber,
               weeklyPP,
               bossTier,
+              isBossDefeated: bossDefeated,
+              isOwnerBypass,
+              roomStatuses: CHAMBER_METADATA.map((m, idx) => ({
+                dayIndex: idx,
+                chamberName: m.chamberName,
+                chamberEn: m.chamberEn,
+                icon: m.icon,
+                unlocked: idx === 0 ? true : isOwnerBypass || isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx),
+                stars: getRoomStars(weekNumber, idx),
+                completed: getRoomStars(weekNumber, idx) > 0,
+              })),
             }}
             onSceneEvent={(eventName, data) => {
               if (eventName === 'door_enter') {
