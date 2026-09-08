@@ -27,10 +27,57 @@ export default class HubScene {
   }
 
   preload() {
-    this.load.image('floor_tile', '/phaser-assets/floor_tile.png');
-    this.load.image('wall_tile', '/phaser-assets/wall_tile.png');
-    this.load.image('player', '/phaser-assets/player.png');
-    this.load.image('door_chamber', '/phaser-assets/door_chamber.png');
+    // All textures generated procedurally — no dependency on external PNG files.
+    const gfx = new Phaser.GameObjects.Graphics(this);
+
+    // ── Floor Tile (64×64) ─────────────────────────────────────────────────
+    gfx.clear();
+    gfx.fillStyle(0x1e293b); gfx.fillRect(0, 0, 64, 64);
+    gfx.lineStyle(1, 0x334155, 0.8);
+    gfx.strokeRect(0, 0, 64, 64);
+    // Subtle cross-hatch accent
+    gfx.lineStyle(1, 0x38bdf8, 0.06);
+    gfx.lineBetween(0, 0, 64, 64);
+    gfx.lineBetween(64, 0, 0, 64);
+    gfx.generateTexture('floor_tile', 64, 64);
+
+    // ── Wall Tile (64×64) ──────────────────────────────────────────────────
+    gfx.clear();
+    gfx.fillStyle(0x0f172a); gfx.fillRect(0, 0, 64, 64);
+    gfx.lineStyle(2, 0x6366f1, 0.5); gfx.strokeRect(2, 2, 60, 60);
+    gfx.fillStyle(0x312e81, 0.4); gfx.fillRect(8, 8, 48, 48);
+    gfx.generateTexture('wall_tile', 64, 64);
+
+    // ── Player Sprite (48×48) ─────────────────────────────────────────────
+    gfx.clear();
+    // Shadow
+    gfx.fillStyle(0x000000, 0.4); gfx.fillEllipse(24, 40, 36, 10);
+    // Body
+    gfx.fillStyle(0x7c3aed); gfx.fillRoundedRect(12, 8, 24, 30, 8);
+    // Head
+    gfx.fillStyle(0xfbbf24); gfx.fillCircle(24, 10, 10);
+    // Eyes
+    gfx.fillStyle(0x1e293b); gfx.fillCircle(20, 9, 2.5); gfx.fillCircle(28, 9, 2.5);
+    // Legs
+    gfx.fillStyle(0x4c1d95);
+    gfx.fillRoundedRect(13, 36, 9, 10, 3);
+    gfx.fillRoundedRect(26, 36, 9, 10, 3);
+    gfx.generateTexture('player', 48, 48);
+
+    // ── Door / Chamber Portal (80×80) ─────────────────────────────────────
+    gfx.clear();
+    // Outer glow
+    gfx.fillStyle(0x4f46e5, 0.3); gfx.fillCircle(40, 40, 40);
+    // Door frame
+    gfx.fillStyle(0x1e1b4b); gfx.fillRoundedRect(8, 8, 64, 64, 10);
+    gfx.lineStyle(3, 0x818cf8, 1); gfx.strokeRoundedRect(8, 8, 64, 64, 10);
+    // Inner portal glow
+    gfx.fillStyle(0x312e81, 0.9); gfx.fillRoundedRect(14, 14, 52, 52, 8);
+    gfx.fillStyle(0x6366f1, 0.5); gfx.fillCircle(40, 40, 20);
+    gfx.fillStyle(0xa5b4fc, 0.7); gfx.fillCircle(40, 40, 10);
+    gfx.generateTexture('door_chamber', 80, 80);
+
+    gfx.destroy();
   }
 
   create() {

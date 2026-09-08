@@ -5,7 +5,9 @@
 
 export const FEATURES = {
   // Hub World Phaser Canvas Engine (vs legacy CSS grid room nodes)
-  // Default: false (stable legacy CSS map).
-  // Toggle in dev/test via: localStorage.setItem('ff_phaser_hub', 'true')
-  PHASER_HUB_WORLD: typeof window !== 'undefined' && window.localStorage?.getItem('ff_phaser_hub') === 'true',
+  // Default: true — Phaser 2D Hub is the primary experience.
+  // Override via: localStorage.setItem('ff_phaser_hub', 'false') to revert to legacy grid.
+  PHASER_HUB_WORLD: typeof window !== 'undefined'
+    ? window.localStorage?.getItem('ff_phaser_hub') !== 'false'
+    : true,
 };
