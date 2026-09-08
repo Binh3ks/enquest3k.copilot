@@ -1,0 +1,23 @@
+.three-hub-container {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.three-hub-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+
+.three-hub-error-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f87171;
+  background: #0f172a;
+  font-family: Outfit, system-ui, sans-serif;
+  font-size: 1rem;
+}

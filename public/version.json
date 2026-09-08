@@ -1,9 +1,9 @@
 {
-  "commit": "dcda70ee58d08964a624209324e0ef1117c011af",
-  "git_commit": "dcda70ee58d08964a624209324e0ef1117c011af",
-  "shortCommit": "dcda70ee",
-  "message": "fix(chronicles): eliminate dual-track toggle, make 2D RPG Hub sole canonical path, add instantiation logs and error banner",
-  "builtAt": "2026-09-08T10:37:48.056Z",
-  "build_timestamp": "2026-09-08T10:37:48.056Z",
+  "commit": "7573d4d1440a03152210fdc0b8fbf686ea6060e3",
+  "git_commit": "7573d4d1440a03152210fdc0b8fbf686ea6060e3",
+  "shortCommit": "7573d4d1",
+  "message": "docs: add v5.1 owner unlock walkthrough report",
+  "builtAt": "2026-09-08T11:17:37.106Z",
+  "build_timestamp": "2026-09-08T11:17:37.106Z",
   "env": "production"
 }

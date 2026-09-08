@@ -18,8 +18,7 @@ import { useUserStore } from '../../stores/useUserStore';
 import MascotShopPanel from './MascotShopPanel';
 import ChapterFragmentPanel from './ChapterFragmentPanel';
 import HallOfFameModal from './HallOfFameModal';
-import PhaserGameCanvas from '../../phaser/PhaserGameCanvas';
-import HubScene from '../../phaser/scenes/HubScene';
+import ThreeHubCanvas from './three/ThreeHubCanvas';
 import './ChroniclesWorldMap.css';
 
 // ─── Main Component ────────────────────────────────────────────────────────
@@ -244,33 +243,26 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
           boxShadow: '0 12px 36px rgba(0,0,0,0.6)',
         }}
       >
-        <PhaserGameCanvas
-          sceneClass={HubScene}
-          width={800}
-          height={500}
-          sceneData={{
-            weekNumber,
-            weeklyPP: effectivePP,
-            bossTier: effectiveBossTier,
-            isBossDefeated: bossDefeated,
-            isOwnerBypass: !!isOwnerBypass,
-            roomStatuses: CHAMBER_METADATA.map((m, idx) => ({
-              dayIndex: idx,
-              chamberName: m.chamberName,
-              chamberEn: m.chamberEn,
-              icon: m.icon,
-              unlocked: isOwnerBypass || idx === 0 || isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx),
-              stars: getRoomStars(weekNumber, idx),
-              completed: getRoomStars(weekNumber, idx) > 0,
-            })),
-          }}
-          onSceneEvent={(eventName, data) => {
-            if (eventName === 'door_enter') {
-              if (data.isBoss) {
-                if (onEnterBoss) onEnterBoss(effectiveBossTier);
-              } else {
-                if (onEnterRoom) onEnterRoom(data.dayIndex);
-              }
+        <ThreeHubCanvas
+          weekNumber={weekNumber}
+          weeklyPP={effectivePP}
+          bossTier={effectiveBossTier}
+          isBossDefeated={bossDefeated}
+          isOwnerBypass={!!isOwnerBypass}
+          roomStatuses={CHAMBER_METADATA.map((m, idx) => ({
+            dayIndex: idx,
+            chamberName: m.chamberName,
+            chamberEn: m.chamberEn,
+            icon: m.icon,
+            unlocked: isOwnerBypass || idx === 0 || isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx),
+            stars: getRoomStars(weekNumber, idx),
+            completed: getRoomStars(weekNumber, idx) > 0,
+          }))}
+          onPortalEnter={(portalData) => {
+            if (portalData?.isBoss) {
+              if (onEnterBoss) onEnterBoss(effectiveBossTier);
+            } else if (portalData?.dayIndex !== undefined) {
+              if (onEnterRoom) onEnterRoom(portalData.dayIndex);
             }
           }}
         />
