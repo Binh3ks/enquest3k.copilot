@@ -15,6 +15,7 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { HelpCircle, Volume2, Trophy, Timer, AlertTriangle, ArrowRight, RotateCcw, Sparkles } from 'lucide-react';
 import { speakText } from '../../../utils/AudioHelper';
 import useChroniclesStore from '../../../stores/useChroniclesStore';
+import { sanitizeChunkText } from '../../../utils/textSanitize';
 import GameInstructionModal from './GameInstructionModal';
 import HallOfFameModal from '../HallOfFameModal';
 
@@ -78,11 +79,11 @@ function parseSentenceToSyntaxChunks(sentence, index) {
     return {
       fullSentence: sentence,
       chunks: [
-        { role: 'Subject', text: words[0] },
-        { role: 'Verb', text: words[1] },
-        { role: 'Object', text: words.slice(2).join(' ') + '.' },
+        { role: 'Subject', text: sanitizeChunkText(words[0]) },
+        { role: 'Verb', text: sanitizeChunkText(words[1]) },
+        { role: 'Object', text: sanitizeChunkText(words.slice(2).join(' ')) },
       ],
-      distractor,
+      distractor: sanitizeChunkText(distractor),
     };
   }
 
@@ -97,12 +98,12 @@ function parseSentenceToSyntaxChunks(sentence, index) {
   return {
     fullSentence: sentence,
     chunks: [
-      { role: 'Subject', text: words.slice(0, sLen).join(' ') },
-      { role: 'Verb', text: words.slice(sLen, sLen + vLen).join(' ') },
-      { role: 'Object', text: oWords.join(' ') },
-      { role: 'Place / Time', text: (mWords.length > 0 ? mWords.join(' ') : 'today') + '.' },
+      { role: 'Subject', text: sanitizeChunkText(words.slice(0, sLen).join(' ')) },
+      { role: 'Verb', text: sanitizeChunkText(words.slice(sLen, sLen + vLen).join(' ')) },
+      { role: 'Object', text: sanitizeChunkText(oWords.join(' ')) },
+      { role: 'Place / Time', text: sanitizeChunkText(mWords.length > 0 ? mWords.join(' ') : 'today') },
     ],
-    distractor,
+    distractor: sanitizeChunkText(distractor),
   };
 }
 

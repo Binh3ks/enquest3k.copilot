@@ -13,6 +13,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Timer, Zap, Trophy, HelpCircle, RotateCcw, Flame, Sparkles } from 'lucide-react';
 import { speakText } from '../../../utils/AudioHelper';
+import { validateMCQOptions } from '../../../utils/quizValidation';
 import { playLaserSound, playPopSound, playCorrectSound, playWrongSound, playVictoryFanfare } from '../../../utils/soundEffects';
 import useChroniclesStore from '../../../stores/useChroniclesStore';
 import GameInstructionModal from './GameInstructionModal';
@@ -66,18 +67,14 @@ export default function MeteorSmasherGame({
 
   // Spawn 3 falling meteors for active target
   const spawnMeteors = useCallback((target) => {
-    const otherWords = targets.filter((t) => t.word !== target.word);
-    const distractors = otherWords.sort(() => Math.random() - 0.5).slice(0, 2);
+    const rawOptions = targets.filter((t) => t.word !== target.word).map((t) => t.definition);
+    const fallbackPool = targets.map((t) => t.definition);
+    const validatedDefs = validateMCQOptions(rawOptions, target.definition, fallbackPool, 3);
 
-    const pool = [
-      { text: target.definition, isCorrect: true },
-      ...distractors.map((d) => ({ text: d.definition, isCorrect: false })),
-    ].sort(() => Math.random() - 0.5);
-
-    const spawned = pool.map((item, idx) => ({
+    const spawned = validatedDefs.map((defText, idx) => ({
       id: `m_${idx}_${Date.now()}`,
-      text: item.text,
-      isCorrect: item.isCorrect,
+      text: defText,
+      isCorrect: defText.trim().toLowerCase() === target.definition.trim().toLowerCase(),
       x: 15 + idx * 30 + (Math.random() * 8 - 4),
       y: -10 - idx * 12,
       speed: 0.35 + Math.random() * 0.15,

@@ -14,6 +14,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { HelpCircle, Search, Trophy, Timer, Sparkles, CheckCircle2, RotateCcw, FileText, ChevronRight } from 'lucide-react';
 import { speakText } from '../../../utils/AudioHelper';
+import { validateMCQOptions } from '../../../utils/quizValidation';
 import { playCorrectSound, playWrongSound, playLaserSound, playVictoryFanfare } from '../../../utils/soundEffects';
 import useChroniclesStore from '../../../stores/useChroniclesStore';
 import GameInstructionModal from './GameInstructionModal';
@@ -77,8 +78,12 @@ export default function RiddleDetectiveGame({
   const personalBest = getPersonalBest('lexical_riddle');
 
   const riddles = useMemo(() => {
-    return DEFAULT_RIDDLES;
-  }, []);
+    const fallbackWords = vocabItems.map(v => v.word);
+    return DEFAULT_RIDDLES.map(r => ({
+      ...r,
+      options: validateMCQOptions(r.options, r.answer, fallbackWords, 4),
+    }));
+  }, [vocabItems]);
 
   const [phase, setPhase] = useState('intro'); // 'intro' | 'playing' | 'result'
   const [caseIndex, setCaseIndex] = useState(0);

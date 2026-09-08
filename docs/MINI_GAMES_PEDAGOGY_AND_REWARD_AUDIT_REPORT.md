@@ -66,27 +66,27 @@ Nhằm lấp đầy 3 khoảng trống sư phạm trên, 3 game mới được x
 
 ---
 
-## 3. BẢNG DANH MỤC 15 MINI-GAMES TOÀN DIỆN (ROADMAP W01–W111+)
+## 3. MA TRẬN PHẢN BIỆN SƯ PHẠM VÀ ĐỀ XUẤT CƠ CHẾ 15 MINI-GAMES (PEDAGOGY VS. MECHANICS MATRIX)
 
-Hệ thống danh mục đã được nâng cấp từ 12 lên **15 Games tiêu chuẩn**, mở khóa theo bậc thang phát triển nhận thức:
+Dưới đây là bảng phân tích phản biện sâu về mục tiêu học tập của tất cả 15 mini-games. Đặc biệt, báo cáo tập trung rà soát và mổ xẻ lỗi **"Cơ học lấn át Sư phạm" (Action-oriented Mechanics > Content-oriented Learning)** ở các game tốc độ cao (Runner/Shooter), nơi tốc độ game khiến người chơi không kịp tiếp thu kiến thức.
 
-| ID Game | Mã Số | Tên Game | Trọng Tâm Sư Phạm | Cấp Độ & Tuần Mở | Trạng Thái Code |
-|---|---|---|---|---|---|
-| `bubble_pop` | G#1 | **Bubble Pop Dash** 🫧 | Nhận diện từ vựng 2D cơ bản | Starters (W01+) | ✅ Sẵn sàng chơi |
-| `phonics_bubble` | G#2 | **Phonics Sound Blaster** 🔊 | Nhận thức ngữ âm & Phonics Audio | Starters (W01+) | ✅ **Mới hoàn thành** |
-| `sentence_train` | G#3 | **Sentence Choo-Choo** 🚂 | Cú pháp câu & Cụm từ Collocation | Starters/Movers (W01+) | ✅ **Mới hoàn thành** |
-| `odd_one_out` | G#4 | **Lexical Detective** 🕵️ | Phân loại trường nghĩa & Loại từ lạc bầy | Starters/Movers (W01+) | ✅ **Mới hoàn thành** |
-| `meteor_smasher` | G#5 | **Meteor Smasher** 🛸 | Nối định nghĩa tiếng Anh tốc độ cao | Movers (W11+) | ✅ Sẵn sàng chơi |
-| `physics_drift` | G#6 | **Highway Road Runner** 🏎️ | Thu thập ngôi sao từ vựng trên xa lộ | Movers (W21+) | ✅ Sẵn sàng chơi |
-| `chunk_catapult` | G#7 | **Chunk Catapult Match** 🧩 | Ghép cụm từ ngữ pháp song ngữ | Flyers (W31+) | ✅ Sẵn sàng chơi |
-| `neon_rider` | G#8 | **Neon Gravity Rider** ⚡ | Trọng lực âm tiết (Syllables & Rhythm) | Flyers/KET (W41+) | 📋 Blueprint |
-| `castle_defense` | G#9 | **Castle Tower Defense** 🏰 | Từ đồng nghĩa & trái nghĩa (Synonym/Antonym) | KET (W51+) | 📋 Blueprint |
-| `lightning_connect` | G#10 | **Lightning Connect** ⚡ | Mạng lưới từ đồng trường nghĩa nâng cao | KET (W61+) | 📋 Blueprint |
-| `potion_lab` | G#11 | **Potion Chemistry Lab** 🧪 | Tiền tố, hậu tố & gốc từ (Prefix/Suffix/Root) | KET/PET (W71+) | 📋 Blueprint |
-| `temple_runner` | G#12 | **Temple Runner Chunks** 🏃 | Từ nối liên kết đoạn văn (Discourse Linkers) | PET (W81+) | 📋 Blueprint |
-| `galaxy_orbit` | G#13 | **Galaxy Word Orbit** 🌌 | Trọng âm câu & ngữ điệu (Sentence Stress) | PET (W91+) | 📋 Blueprint |
-| `dragon_duel` | G#14 | **Dragon Spell Duel** 🐉 | Đấu phép chính tả Cambridge (Spelling Duel) | PET/FCE (W101+) | 📋 Blueprint |
-| `grand_arena` | G#15 | **Grand Master Arena** 👑 | Đấu trường tổng hợp 4 kỹ năng Vô địch | FCE (W111+) | 📋 Blueprint |
+| ID / Tên Game | Trọng Tâm Sư Phạm | Phản Biện Hiện Trạng (Tại sao chưa hiệu quả/Thiếu động não?) | Đề Xuất Cải Tiến Cơ Chế Học Tập Sâu (Deep Learning) |
+|---|---|---|---|
+| `bubble_pop`<br>**Bubble Pop Dash** 🫧 | Nhận diện từ vựng 2D cơ bản | **Quá dễ & Bị động:** Bóng bay lên có chữ. Người chơi chỉ cần đối chiếu "mặt chữ" trên bóng với "mặt chữ" yêu cầu để bấm. Không cần hiểu nghĩa, không cần nhớ âm thanh. Tư duy cơ học hoàn toàn. | 🔄 **Nghe trước - Bắn sau:** Chuyển hóa thành **Phonics Sound Blaster**. Bắt buộc phải nghe phát âm (Audio-first). Bóng bay lên chỉ có chữ. Học sinh phải tự kết nối âm thanh với mặt chữ và phân biệt với các từ có mặt chữ giống nhưng phát âm khác. |
+| `phonics_bubble`<br>**Phonics Sound Blaster** 🔊 | Nhận thức ngữ âm | Cơ chế cơ bản tốt nhưng dễ trở nên đơn điệu nếu chỉ nghe 1 âm lặp lại quá nhiều. | 🔄 Tích hợp đa dạng: Yêu cầu phân biệt Rhymes (vần), CVC words. Thêm cơ chế "Bóng đỏ" (từ gây nhiễu) - chọn sai Lexio sẽ nhắc lại âm sai để so sánh. |
+| `sentence_train`<br>**Sentence Choo-Choo** 🚂 | Cú pháp câu & Collocation | Đang làm rất tốt việc yêu cầu tư duy cấu trúc ngữ pháp (S+V+O) chậm rãi, bắt buộc phải đọc và phân tích cấu trúc. | 🔄 Giữ nguyên core loop. Nâng cấp bằng cách chèn thêm các "Toa hàng giả" (Sai từ loại, sai thì). Học sinh phải "động não" loại bỏ toa giả trước khi xếp vào tàu. |
+| `odd_one_out`<br>**Lexical Detective** 🕵️ | Phân loại trường nghĩa | Game tĩnh, đòi hỏi phân tích logic phân loại từ vựng tốt (Odd One Out). Rất phù hợp. | 🔄 Nâng cao: Đòi hỏi học sinh giải thích/chọn lý do tại sao lại chọn từ đó (chọn Tag trường nghĩa) sau khi tìm ra "kẻ đột lốt". |
+| `meteor_smasher`<br>**Meteor Smasher** 🛸 | Nối định nghĩa tiếng Anh tốc độ cao | **Quá tải nhận thức (Cognitive Overload):** Thiên thạch mang theo từ tiếng Anh rơi quá nhanh. Người chơi cuống cuồng bắn bừa mà không kịp đọc định nghĩa dài ngoằng bên dưới. Gây ức chế, nản chí và chỉ bấm lụi. | 🔄 **Slow-mo Targeting & Micro-Chunks:** Khi người chơi bắt đầu nhắm bắn, thời gian sẽ chậm lại (Bullet Time) cung cấp 3-5 giây để đọc. Thay thế "Định nghĩa dài" bằng Từ đồng nghĩa (Synonyms) hoặc Trái nghĩa (Antonyms) ngắn gọn. |
+| `physics_drift`<br>**Highway Road Runner** 🏎️ | Thu thập ngôi sao từ vựng | **Zero Brain-work (Lỗi cốt lõi):** Tốc độ xe lạng lách trên cao tốc quá cao. Học sinh dành 95% sự chú ý để né xe tải/chướng ngại vật, chỉ bắt sao theo phản xạ. Dòng định nghĩa hiện lên HUD hoàn toàn bị phớt lờ vì không có thời gian đọc. Đây là "chơi game thuần túy", không có tác dụng học tập. | 🔄 **Checkpoint Gates (Cổng Lựa Chọn Chậm):** Thay vì ăn sao trên đường, cứ mỗi đoạn xa lộ sẽ có "2 Cổng Thu Phí" (ví dụ: Cổng A - Danh từ, Cổng B - Động từ; hoặc Cổng A - Past Tense, Cổng B - Present Tense). Xe tự động giảm tốc ở khu vực này, học sinh buộc phải đọc từ trên xe và bẻ lái vào đúng Cổng. Lái sai xe bị "choáng". Ép người chơi phải **đọc - suy luận - quyết định**. |
+| `chunk_catapult`<br>**Chunk Catapult** 🧩 | Ghép cụm từ ngữ pháp song ngữ | **Vật lý lấn át Ngôn ngữ:** Việc tính toán góc kéo súng cao su, lực căng dây chiếm quá nhiều nỗ lực so với việc "ghép Chunk A vào Chunk B". | 🔄 **Tối giản Hóa Vật Lý:** Bỏ yêu cầu chỉnh lực phức tạp. Người chơi chỉ cần chọn "Viên Đạn" (Chunk A) và nhắm thẳng vào mục tiêu (Chunk B). Trọng tâm dồn 100% vào việc ghép thành một câu hoàn chỉnh có nghĩa. |
+| `neon_rider`<br>**Neon Gravity Rider** ⚡ | Trọng lực âm tiết (Syllables) | Dễ lặp lại vết xe đổ của Highway Runner nếu tốc độ quá nhanh, người chơi sẽ bấm chuyển làn loạn xạ mà không kịp đếm âm tiết. | 🔄 **Rhythm Mechanics:** Cơ chế nghe từ đọc lên. Người chơi phải `Tap` chuyển làn đường theo đúng **số âm tiết** (1, 2, 3 làn). Tốc độ duy trì ổn định, tập trung vào nhịp điệu (Rhythm) thay vì lách chướng ngại vật. |
+| `castle_defense`<br>**Castle Tower Defense** 🏰 | Từ đồng nghĩa & trái nghĩa | Nếu quái vật ra quá đông, người chơi sẽ không kịp đọc từ trên đầu quái vật để chọn tháp tương ứng. | 🔄 **Chiến thuật chậm (Turn-based / Slow pacing):** Tower Defense yêu cầu suy nghĩ cẩn thận. Mỗi loại Tháp (Tower) chỉ bắn được Quái vật mang "Từ Đồng Nghĩa" hoặc "Từ Trái Nghĩa" tương ứng. Tốc độ quái rất chậm để trẻ kịp đọc và đặt tháp. |
+| `lightning_connect`<br>**Lightning Connect** ⚡ | Mạng lưới từ (Semantic Web) | Nối các điểm chòm sao. Dễ biến thành game tìm đường đi cơ học. | 🔄 Đề cao tư duy mạng lưới. Bắt buộc phải nối các từ có liên quan về nghĩa (ví dụ: Apple -> Fruit -> Tree -> Leaf) để tạo thành mạch điện. |
+| `potion_lab`<br>**Potion Chemistry Lab** 🧪 | Tiền tố, hậu tố & gốc từ | Cơ chế kéo thả nguyên liệu dễ đoán nếu chỉ có 1 công thức đúng được định sẵn. | 🔄 **Cơ chế Thử & Sai (Trial & Error):** Cung cấp các lọ Gốc từ (Root) và Tiền/Hậu tố (Affix). Cho phép học sinh kết hợp tự do. Hợp lệ = Vạc nổ pháo hoa. Không hợp lệ = Vạc xịt khói. Đẩy mạnh việc khám phá cấu tạo từ. |
+| `temple_runner`<br>**Temple Runner Chunks** 🏃 | Từ nối liên kết đoạn văn | Giống Highway Runner, nếu vừa chạy vừa né bẫy sẽ không kịp đọc câu văn dài để điền từ nối. | 🔄 **Cơ chế Đoạn văn gãy (Broken Bridge):** Nhân vật chạy đến một Vực thẳm/Ngã ba, thời gian dừng lại. Một câu văn thiếu từ nối hiện ra (ví dụ: "... ___, it rained heavily"). Hai ngã rẽ ghi "However" và "Therefore". Chọn đúng ngã rẽ, cầu mới nối lại để chạy tiếp. |
+| `galaxy_orbit`<br>**Galaxy Word Orbit** 🌌 | Trọng âm câu (Stress) | Chỉ bay quanh hành tinh lượn vòng có thể gây nhàm chán. | 🔄 **Audio-Sync Boost:** Nhấn hoặc giữ nút đẩy phản lực đúng ngay thời điểm "Trọng âm" (Stressed syllable) của câu được phát ra để tàu bay được gia tốc. |
+| **G#14 Dragon Duel** 🐉 | Đấu phép chính tả | Đánh máy nhanh (Typing) có thể gây áp lực cho trẻ nhỏ không quen gõ bàn phím. | 🔄 Thay vì Typing toàn bộ, game yêu cầu **Nhận diện lỗi sai**. Câu thần chú của rồng hiện lên có 1 từ viết sai chính tả. Chạm đúng từ sai để phản đòn ma thuật. |
+| **G#15 Grand Arena** 👑 | Tổng hợp 4 kỹ năng | Đánh Boss liên tục không có thời gian nghỉ dễ làm quá tải. | 🔄 **Cơ chế Phase:** Boss chia làm nhiều Phase. Phase 1: Tránh đòn bằng cách Nghe đúng; Phase 2: Phản công bằng cách Đọc-Hiểu cấu trúc; Phase 3: Đấu phép Từ vựng. Hoàn toàn Turn-based. |
 
 ---
 

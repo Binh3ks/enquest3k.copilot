@@ -4,6 +4,7 @@
  * Outcomes: Correct → enemy FREEZE ❄️ 3s | Wrong → enemy SPEED UP 💨 5s
  */
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { validateMCQOptions } from '../../utils/quizValidation';
 import './MCQBlitzPopup.css';
 
 const TOTAL_TIME_MS = 5000;
@@ -82,26 +83,13 @@ export function generateMCQChoices(targetWord, vocabPool = []) {
     })
     .filter(d => Boolean(d) && d !== correctDef);
 
-  const uniquePoolDefs = Array.from(new Set(poolDefs)).sort(() => Math.random() - 0.5);
+  const fallbackDefs = [...poolDefs, ...PEDAGOGICAL_DISTRACTORS];
+  const validatedLabels = validateMCQOptions(poolDefs, correctDef, fallbackDefs, 3);
 
-  const distractors = [];
-  for (const def of uniquePoolDefs) {
-    if (distractors.length >= 2) break;
-    distractors.push({ label: def, isCorrect: false });
-  }
-
-  // Fill with pedagogical distractors if pool too small — NEVER use '(none of the above)'
-  const shuffledFallback = [...PEDAGOGICAL_DISTRACTORS].sort(() => Math.random() - 0.5);
-  for (const fb of shuffledFallback) {
-    if (distractors.length >= 2) break;
-    if (fb !== correctDef && !distractors.some(d => d.label === fb)) {
-      distractors.push({ label: fb, isCorrect: false });
-    }
-  }
-
-  // Shuffle correct answer into random position
-  const choices = [correct, ...distractors].sort(() => Math.random() - 0.5);
-  return choices;
+  return validatedLabels.map(label => ({
+    label,
+    isCorrect: label.trim().toLowerCase() === correctDef.trim().toLowerCase(),
+  }));
 }
 
 /**

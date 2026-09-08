@@ -23,6 +23,11 @@ import RiddleRunMaze from './RiddleRunMaze';
 import GrandMatrixDungeon from './GrandMatrixDungeon';
 import TitanGrammarForge from './TitanGrammarForge';
 import CambridgeClozeGauntlet from './CambridgeClozeGauntlet';
+import PhaserGameCanvas from '../../phaser/PhaserGameCanvas';
+import HubScene from '../../phaser/scenes/HubScene';
+import HighwayRunnerScene from '../../phaser/scenes/HighwayRunnerScene';
+import ChunkCatapultScene from '../../phaser/scenes/ChunkCatapultScene';
+import BossCombatScene from '../../phaser/scenes/BossCombatScene';
 
 
 const DEMO_VOCAB = [
@@ -100,6 +105,11 @@ export default function QuestDemoScreen() {
           <option value="grand_matrix">Floor 5 Door 1: Grand Matrix Dungeon</option>
           <option value="titan_forge">Floor 5 Door 2: Titan Grammar Forge</option>
           <option value="cambridge_cloze">Floor 5 Door 3: Cambridge Cloze Gauntlet</option>
+          <option disabled>────────── PHASER 3 ENGINES (v4.0) ──────────</option>
+          <option value="phaser_hub">🎮 Phaser: Hub World 2D</option>
+          <option value="phaser_highway">🎮 Phaser: Highway Runner</option>
+          <option value="phaser_catapult">🎮 Phaser: Chunk Catapult</option>
+          <option value="phaser_boss">🎮 Phaser: Boss Combat (Ancient Sorcerer)</option>
         </select>
 
         {activeGame === 'dungeon' && (
@@ -273,6 +283,51 @@ export default function QuestDemoScreen() {
             duration={120}
             weekNumber={33}
             onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'phaser_hub' && (
+          <PhaserGameCanvas
+            sceneClass={HubScene}
+            sceneData={{ weekNumber: 33, weeklyPP: 250, bossTier: 'bronze' }}
+            onSceneEvent={(evt, data) => console.log('[Phaser Hub Event]:', evt, data)}
+          />
+        )}
+
+        {activeGame === 'phaser_highway' && (
+          <PhaserGameCanvas
+            sceneClass={HighwayRunnerScene}
+            sceneData={{ vocabItems: DEMO_VOCAB, duration: 60 }}
+            onSceneEvent={(evt, data) => {
+              if (evt === 'game_complete') setCompleteResult({ stars: data.stars, score: data.score });
+            }}
+          />
+        )}
+
+        {activeGame === 'phaser_catapult' && (
+          <PhaserGameCanvas
+            sceneClass={ChunkCatapultScene}
+            sceneData={{
+              pairs: [
+                { starter: 'Jake was walking', completion: 'down the corridor' },
+                { starter: 'Water on tiles', completion: 'reduces friction' },
+                { starter: 'Rubber shoe soles', completion: 'provide strong grip' },
+              ],
+              duration: 60,
+            }}
+            onSceneEvent={(evt, data) => {
+              if (evt === 'game_complete') setCompleteResult({ stars: data.stars, score: data.score });
+            }}
+          />
+        )}
+
+        {activeGame === 'phaser_boss' && (
+          <PhaserGameCanvas
+            sceneClass={BossCombatScene}
+            sceneData={{ playerDamage: 15, tier: 'silver' }}
+            onSceneEvent={(evt, data) => {
+              if (evt === 'boss_victory') setCompleteResult({ stars: 3, score: 100 });
+            }}
           />
         )}
       </div>

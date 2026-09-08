@@ -18,7 +18,7 @@
  */
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { extractQuestVocab } from './extractQuestVocab';
+import { extractQuestVocab, extractCatapultPairs } from './extractQuestVocab';
 import useChroniclesStore, { DOOR_ROTATION, CHAMBER_METADATA, calculateStars } from '../../stores/useChroniclesStore';
 import ArcaneBubbleGame        from './games/ArcaneBubbleGame';
 import SpellTrainGame          from './games/SpellTrainGame';
@@ -34,6 +34,9 @@ import {
 
 import CollectorPopup          from './CollectorPopup';
 import HallOfFameModal         from './HallOfFameModal';
+import PhaserGameCanvas        from '../../phaser/PhaserGameCanvas';
+import HighwayRunnerScene      from '../../phaser/scenes/HighwayRunnerScene';
+import ChunkCatapultScene      from '../../phaser/scenes/ChunkCatapultScene';
 import './DailyRoomScreen.css';
 
 // ─── NPC Default Dialogue (fallback if none provided) ─────────────────────
@@ -265,7 +268,43 @@ export default function DailyRoomScreen({
         return <EchoArenaShooter duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'chunk_catapult':
-        return <CatapultCommander duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
+        const catapultPairs = extractCatapultPairs(weekData, dayIndex, weekNumber);
+        return (
+          <div style={{ position: 'relative', width: '100vw', height: '100vh', background: '#0a0d18' }}>
+            <button
+              onClick={handleExit}
+              style={{
+                position: 'absolute',
+                top: 16,
+                left: 16,
+                zIndex: 20,
+                background: 'rgba(30, 27, 75, 0.85)',
+                color: '#e2e8f0',
+                border: '1px solid #6366f1',
+                borderRadius: '8px',
+                padding: '6px 14px',
+                fontSize: '13px',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
+            >
+              ← Exit Room
+            </button>
+            <PhaserGameCanvas
+              sceneClass={ChunkCatapultScene}
+              sceneData={{
+                pairs: catapultPairs,
+                duration: door.duration || 90,
+                weekNumber,
+              }}
+              onSceneEvent={(name, payload) => {
+                if (name === 'game_complete') {
+                  commonProps.onComplete(payload.stars || 3, payload.score || 50, 1);
+                }
+              }}
+            />
+          </div>
+        );
 
       case 'meteor_smasher':
         return <StormShieldDefense duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
@@ -273,7 +312,42 @@ export default function DailyRoomScreen({
 
       // ── Floor 4: Rune Sanctum ──────────────────────────────────────────
       case 'highway_runner':
-        return <HighwaySprint vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
+        return (
+          <div style={{ position: 'relative', width: '100vw', height: '100vh', background: '#0a0d18' }}>
+            <button
+              onClick={handleExit}
+              style={{
+                position: 'absolute',
+                top: 16,
+                left: 16,
+                zIndex: 20,
+                background: 'rgba(30, 27, 75, 0.85)',
+                color: '#e2e8f0',
+                border: '1px solid #6366f1',
+                borderRadius: '8px',
+                padding: '6px 14px',
+                fontSize: '13px',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
+            >
+              ← Exit Room
+            </button>
+            <PhaserGameCanvas
+              sceneClass={HighwayRunnerScene}
+              sceneData={{
+                vocabItems,
+                duration: door.duration || 60,
+                weekNumber,
+              }}
+              onSceneEvent={(name, payload) => {
+                if (name === 'game_complete') {
+                  commonProps.onComplete(payload.stars || 3, payload.score || 50, payload.maxCombo || 1);
+                }
+              }}
+            />
+          </div>
+        );
 
       case 'spell_train_express':
         return <SyntaxExpressRail grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;

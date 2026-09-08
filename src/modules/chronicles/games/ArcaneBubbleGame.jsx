@@ -14,6 +14,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Volume2, HelpCircle, Trophy, Timer, Sparkles, Flame, CheckCircle2 } from 'lucide-react';
 import { speakText } from '../../../utils/AudioHelper';
+import { validateMCQOptions } from '../../../utils/quizValidation';
 import useChroniclesStore from '../../../stores/useChroniclesStore';
 import GameInstructionModal from './GameInstructionModal';
 import HallOfFameModal from '../HallOfFameModal';
@@ -69,16 +70,17 @@ export default function ArcaneBubbleGame({
     const rect = containerRef.current.getBoundingClientRect();
     const width = rect.width > 0 ? rect.width : 400;
 
-    // Distractor words
+    // Distractor words & validated options (scoped to waves/vocabItems)
     const otherWords = waves
       .filter((w) => w.word !== targetItem.word)
       .map((w) => w.word);
-    const distractors = otherWords.length >= 3 ? otherWords.slice(0, 3) : ['pencil', 'bottle', 'backpack'];
+    const fallbackPool = waves.map((w) => w.word);
+    const validatedWords = validateMCQOptions(otherWords, targetItem.word, fallbackPool, 4);
 
-    const itemsToSpawn = [
-      { word: targetItem.word, isTarget: true },
-      ...distractors.map((w) => ({ word: w, isTarget: false })),
-    ].sort(() => Math.random() - 0.5);
+    const itemsToSpawn = validatedWords.map((word) => ({
+      word,
+      isTarget: word.trim().toLowerCase() === targetItem.word.trim().toLowerCase(),
+    }));
 
     const newBubbles = itemsToSpawn.map((item, idx) => ({
       id: `b_${waveIndex}_${idx}_${Date.now()}`,

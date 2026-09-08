@@ -458,7 +458,7 @@ export default function SyntaxExpressRail({
             </div>
             {/* Lever Switch Rig */}
             <div className="rail-lever-arm">
-              <span className="lever-icon">🕹️</span>
+              <span className="lever-icon">🎚️</span>
               <span className="lever-hint">STRIKE / TAP</span>
             </div>
           </div>

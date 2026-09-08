@@ -17,6 +17,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Shield, Trophy, RotateCcw, ArrowRight, Zap, Sparkles, AlertTriangle, CloudLightning } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
+import { validateMCQOptions } from '../../utils/quizValidation';
 import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
 import {
   LEO_SPEED, LEO_JUMP_FORCE, GRAVITY, FLOOR_Y,
@@ -72,7 +73,21 @@ export default function StormShieldDefense({
     return () => window.removeEventListener('resize', updateW);
   }, []);
 
-  const vocabList = meteorVocabulary && meteorVocabulary.length > 0 ? meteorVocabulary : DEFAULT_METEOR_WORDS;
+  const rawList = meteorVocabulary && meteorVocabulary.length > 0 ? meteorVocabulary : DEFAULT_METEOR_WORDS;
+  const vocabList = useMemo(() => {
+    const targets = rawList.filter(v => v.isTarget).map(v => v.word);
+    const distractors = rawList.filter(v => !v.isTarget).map(v => v.word);
+    const primary = targets[0] || 'friction';
+    const fallback = DEFAULT_METEOR_WORDS.map(v => v.word);
+    const validated = validateMCQOptions([...targets, ...distractors], primary, fallback, 8);
+    return validated.map(w => {
+      const match = rawList.find(v => v.word === w);
+      return {
+        word: w,
+        isTarget: match ? match.isTarget : targets.includes(w),
+      };
+    });
+  }, [rawList]);
 
   const [phase, setPhase] = useState('playing'); // 'playing' | 'cleared' | 'ko'
   const [batteryCharge, setBatteryCharge] = useState(0); // 0 to 100%

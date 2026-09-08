@@ -14,6 +14,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { HelpCircle, Trophy, Timer, CheckCircle2, RotateCcw, Lock, Layers, Sparkles } from 'lucide-react';
 import { speakText } from '../../../utils/AudioHelper';
+import { validateMCQOptions, shuffleArray } from '../../../utils/quizValidation';
 import { playCorrectSound, playWrongSound, playLaserSound, playVictoryFanfare } from '../../../utils/soundEffects';
 import useChroniclesStore from '../../../stores/useChroniclesStore';
 import GameInstructionModal from './GameInstructionModal';
@@ -88,8 +89,8 @@ export default function GrandMasterMatrixGame({
       rawCards.push({ id: `${g.groupId}_b`, groupId: g.groupId, type: 'Grammar Tag', text: g.badge });
     });
 
-    // Shuffle
-    const shuffled = rawCards.sort(() => Math.random() - 0.5);
+    // Validated Fisher-Yates Shuffle
+    const shuffled = shuffleArray(rawCards);
     setCards(shuffled);
     setSelectedCardIds([]);
     setClearedGroupIds(new Set());

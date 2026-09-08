@@ -16,7 +16,7 @@
  */
 
 import { generateStubVocab } from './generateStubVocab';
-
+import { sanitizeChunkText } from '../../utils/textSanitize';
 import { CURRICULUM_DEFINITIONS } from '../quest/MCQBlitzPopup';
 
 /**
@@ -30,12 +30,12 @@ function normalizeItems(raw = [], type = 'vocab') {
       let def = '';
 
       if (typeof item === 'string') {
-        word = item;
+        word = sanitizeChunkText(item);
       } else if (item.word || item.term || item.text) {
-        word = item.word || item.term || item.text;
+        word = sanitizeChunkText(item.word || item.term || item.text);
         def = item.definition_en || item.definition || item.meaning || item.vi || '';
       } else if (item.phrase || item.chunk) {
-        word = item.phrase || item.chunk;
+        word = sanitizeChunkText(item.phrase || item.chunk);
         def = item.definition_en || item.meaning || '';
       }
 
@@ -286,3 +286,24 @@ function dedup(items) {
     return true;
   });
 }
+
+/**
+ * Extract paired chunks for Chunk Catapult game (starter chunk ↔ completion chunk).
+ * 
+ * TODO [CONTENT]: Curriculum team needs to author dedicated starter↔completion sentence chunk pairs
+ * for Chunk Catapult (e.g. "Jake was walking" ↔ "down the corridor").
+ * Currently falls back to week-scoped word ↔ definition pairs.
+ *
+ * @param {object} weekData
+ * @param {number} zoneIndex
+ * @param {number} [weekId]
+ * @returns {Array<{ starter: string, completion: string }>}
+ */
+export function extractCatapultPairs(weekData, zoneIndex, weekId) {
+  const { vocabItems } = extractQuestVocab(weekData, zoneIndex, weekId);
+  return (vocabItems || []).slice(0, 6).map((v) => ({
+    starter: sanitizeChunkText(v.word),
+    completion: sanitizeChunkText(v.definition_vi || v.definition || `Meaning of ${v.word}`),
+  }));
+}
+

@@ -1,0 +1,122 @@
+[
+  {
+    "sceneIdx": 1,
+    "shotPath": "/Users/binhnguyen/.gemini/antigravity-ide/brain/f875fff5-035d-4b7d-9f40-9d8daf173aeb/story_writer_scene_1.png",
+    "badge": "MODEL",
+    "sceneTitle": "Scene 1 of 5",
+    "img": "http://127.0.0.1:5173/images/week33/writing_panel_1.png",
+    "hint": "Write 2 sentences: (1) Where Jake was walking after science class, and (2) what he noticed near the science room.",
+    "connectorBtns": [
+      "🔗 + In the beginning,",
+      "🔗 + On Monday morning,",
+      "🔗 + First,",
+      "🔗 + and"
+    ],
+    "chips": [
+      "+ after science class",
+      "+ down the school corridor",
+      "+ was walking carefully",
+      "+ Jake",
+      "+ walked slowly",
+      "+ near the science room",
+      "+ noticed the wet floor tiles"
+    ]
+  },
+  {
+    "sceneIdx": 2,
+    "shotPath": "/Users/binhnguyen/.gemini/antigravity-ide/brain/f875fff5-035d-4b7d-9f40-9d8daf173aeb/story_writer_scene_2.png",
+    "badge": "BUILD",
+    "sceneTitle": "Scene 2 of 5",
+    "img": "http://127.0.0.1:5173/images/week33/writing_panel_2.png",
+    "hint": "Write 2 sentences: (1) Who was running very fast, and (2) how he lost his balance and slipped on the wet floor.",
+    "connectorBtns": [
+      "🔗 + Suddenly,",
+      "🔗 + At that moment,",
+      "🔗 + Then,",
+      "🔗 + and",
+      "🔗 + because"
+    ],
+    "chips": [
+      "+ past the science room",
+      "+ slipped heavily",
+      "+ lost his balance",
+      "+ on the wet floor",
+      "+ dropped his books",
+      "+ a boy was running very fast",
+      "+ fell down"
+    ]
+  },
+  {
+    "sceneIdx": 3,
+    "shotPath": "/Users/binhnguyen/.gemini/antigravity-ide/brain/f875fff5-035d-4b7d-9f40-9d8daf173aeb/story_writer_scene_3.png",
+    "badge": "WRITE",
+    "sceneTitle": "Scene 3 of 5",
+    "img": "http://127.0.0.1:5173/images/week33/writing_panel_3.png",
+    "hint": "Write 2 sentences: (1) Jake stopped immediately to help his friend, and (2) he called the school nurse right away.",
+    "connectorBtns": [
+      "🔗 + Then,",
+      "🔗 + Right away,",
+      "🔗 + Immediately,",
+      "🔗 + and",
+      "🔗 + so"
+    ],
+    "chips": [
+      "+ cried in pain",
+      "+ Jake",
+      "+ called the school nurse",
+      "+ stopped immediately",
+      "+ right away for help",
+      "+ hurt his knee",
+      "+ stay calm",
+      "+ to help his friend"
+    ]
+  },
+  {
+    "sceneIdx": 4,
+    "shotPath": "/Users/binhnguyen/.gemini/antigravity-ide/brain/f875fff5-035d-4b7d-9f40-9d8daf173aeb/story_writer_scene_4.png",
+    "badge": "EXPAND",
+    "sceneTitle": "Scene 4 of 5",
+    "img": "http://127.0.0.1:5173/images/week33/writing_panel_4.png",
+    "hint": "Write 2 sentences: (1) The nurse arrived quickly with a clean bandage, and (2) she placed a cold pack to treat the cut.",
+    "connectorBtns": [
+      "🔗 + After that,",
+      "🔗 + Next,",
+      "🔗 + Soon,",
+      "🔗 + and",
+      "🔗 + so"
+    ],
+    "chips": [
+      "+ first-aid kit",
+      "+ sat on the wooden bench",
+      "+ the school nurse arrived quickly",
+      "+ felt much better",
+      "+ to treat the cut",
+      "+ placed a cold pack",
+      "+ with a clean bandage"
+    ]
+  },
+  {
+    "sceneIdx": 5,
+    "shotPath": "/Users/binhnguyen/.gemini/antigravity-ide/brain/f875fff5-035d-4b7d-9f40-9d8daf173aeb/story_writer_scene_5.png",
+    "badge": "REFLECT",
+    "sceneTitle": "Scene 5 of 5",
+    "img": "http://127.0.0.1:5173/images/week33/writing_panel_5.png",
+    "hint": "Write 2 sentences: (1) How everyone felt relieved, and (2) what the headmaster reminded all students.",
+    "connectorBtns": [
+      "🔗 + In the end,",
+      "🔗 + Finally,",
+      "🔗 + At last,",
+      "🔗 + and",
+      "🔗 + because"
+    ],
+    "chips": [
+      "+ everyone felt relieved",
+      "+ the headmaster reminded all students",
+      "+ walked safely",
+      "+ gave a thumbs up",
+      "+ clapped happily",
+      "+ never to run in corridors",
+      "+ that Tom was safe"
+    ]
+  }
+]

@@ -14,6 +14,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Timer, Heart, Trophy, HelpCircle, RotateCcw, ArrowLeft, ArrowRight, Zap } from 'lucide-react';
 import { speakText } from '../../../utils/AudioHelper';
+import { validateMCQOptions } from '../../../utils/quizValidation';
 import { playDriftSound, playCorrectSound, playWrongSound, playVictoryFanfare, playCoinSound } from '../../../utils/soundEffects';
 import useChroniclesStore from '../../../stores/useChroniclesStore';
 import GameInstructionModal from './GameInstructionModal';
@@ -71,8 +72,11 @@ export default function HighwayRunnerGame({
 
     let text = currentTarget.word;
     if (!isTarget) {
-      const distractors = pool.filter((p) => p.word !== currentTarget.word);
-      text = distractors[Math.floor(Math.random() * distractors.length)]?.word || 'hazard';
+      const rawDistractors = pool.filter((p) => p.word !== currentTarget.word).map(p => p.word);
+      const fallbackPool = pool.map(p => p.word);
+      const validatedPool = validateMCQOptions(rawDistractors, currentTarget.word, fallbackPool, 4);
+      const distractors = validatedPool.filter(w => w.toLowerCase() !== currentTarget.word.toLowerCase());
+      text = distractors[Math.floor(Math.random() * distractors.length)] || 'hazard';
     }
 
     const newItem = {

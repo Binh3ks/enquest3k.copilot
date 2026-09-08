@@ -52,6 +52,7 @@ export default defineConfig({
         // referencing an old hashed chunk that no longer exists after a new deploy.
         manualChunks(id) {
           if (id.includes('node_modules')) {
+            if (id.includes('phaser')) return 'vendor-phaser';
             if (id.includes('lucide-react')) return 'vendor-lucide';
             if (id.includes('katex') || id.includes('canvas-confetti')) return 'vendor-libs';
             return 'vendor';

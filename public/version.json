@@ -1,9 +1,9 @@
 {
-  "commit": "71fc932b5f161d9a0178e9ca6e98418d80e43703",
-  "git_commit": "71fc932b5f161d9a0178e9ca6e98418d80e43703",
-  "shortCommit": "71fc932b",
-  "message": "docs: update latest_handoff.md to reflect completed mobile engine redesign v2",
-  "builtAt": "2026-09-08T04:03:29.285Z",
-  "build_timestamp": "2026-09-08T04:03:29.285Z",
+  "commit": "abe32754d1a13ed8bcb5b968b3beecda874e5449",
+  "git_commit": "abe32754d1a13ed8bcb5b968b3beecda874e5449",
+  "shortCommit": "abe32754",
+  "message": "fix(quest): resolve mobile touch holding movement, header collisions, and MCQ choices",
+  "builtAt": "2026-09-08T08:12:00.244Z",
+  "build_timestamp": "2026-09-08T08:12:00.244Z",
   "env": "production"
 }

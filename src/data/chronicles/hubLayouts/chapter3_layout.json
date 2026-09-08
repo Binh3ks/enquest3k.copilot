@@ -1,0 +1,77 @@
+{
+  "chapterId": 3,
+  "title": "Citadel of Friction & Forces",
+  "bounds": {
+    "width": 1200,
+    "height": 800
+  },
+  "spawn": {
+    "x": 200,
+    "y": 400
+  },
+  "walls": [
+    { "x": 600, "y": 16, "w": 1200, "h": 32 },
+    { "x": 600, "y": 784, "w": 1200, "h": 32 },
+    { "x": 16, "y": 400, "w": 32, "h": 800 },
+    { "x": 1184, "y": 400, "w": 32, "h": 800 },
+    { "x": 420, "y": 240, "w": 28, "h": 380 },
+    { "x": 780, "y": 560, "w": 28, "h": 380 }
+  ],
+  "doors": [
+    {
+      "id": "room_0",
+      "dayIndex": 0,
+      "name": "Story World Chamber",
+      "subtitle": "Floor 1 • Lexical Origins",
+      "x": 220,
+      "y": 140,
+      "requiredPP": 0
+    },
+    {
+      "id": "room_1",
+      "dayIndex": 1,
+      "name": "Knowledge Lab Chamber",
+      "subtitle": "Floor 2 • Friction & Grip",
+      "x": 600,
+      "y": 140,
+      "requiredPP": 120
+    },
+    {
+      "id": "room_2",
+      "dayIndex": 2,
+      "name": "Battle Arena Chamber",
+      "subtitle": "Floor 3 • Collocation Gauntlet",
+      "x": 980,
+      "y": 140,
+      "requiredPP": 240
+    },
+    {
+      "id": "room_3",
+      "dayIndex": 3,
+      "name": "Creator Studio Chamber",
+      "subtitle": "Floor 4 • Syntax & Velocity",
+      "x": 220,
+      "y": 660,
+      "requiredPP": 360
+    },
+    {
+      "id": "room_4",
+      "dayIndex": 4,
+      "name": "Grand Sanctuary Chamber",
+      "subtitle": "Floor 5 • Master Synthesis",
+      "x": 580,
+      "y": 660,
+      "requiredPP": 480
+    },
+    {
+      "id": "boss_citadel",
+      "dayIndex": 5,
+      "isBoss": true,
+      "name": "Sorcerer's Throne",
+      "subtitle": "Weekly Pinnacle Battle",
+      "x": 1020,
+      "y": 620,
+      "requiredPP": 500
+    }
+  ]
+}

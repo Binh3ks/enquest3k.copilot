@@ -9,13 +9,14 @@
  * Week data is lazy-loaded from src/data/weeks/week_XX/
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import ChroniclesWorldMap from './ChroniclesWorldMap';
-import DailyRoomScreen    from './DailyRoomScreen';
-import BossBattleScreen   from './BossBattleScreen';
 import useChroniclesStore from '../../stores/useChroniclesStore';
 import { getWeekChroniclesConfig } from '../../data/chronicles';
+
+const ChroniclesWorldMap = React.lazy(() => import('./ChroniclesWorldMap'));
+const DailyRoomScreen    = React.lazy(() => import('./DailyRoomScreen'));
+const BossBattleScreen   = React.lazy(() => import('./BossBattleScreen'));
 
 // NPC dialogues per day, week 33 (pilot) — later move to data file
 const W33_NPC_DIALOGUES = [
@@ -150,13 +151,15 @@ export default function ChroniclesScreen() {
   // BOSS SCREEN
   if (screen === 'boss') {
     return (
-      <BossBattleScreen
-        weekNumber={weekNumber}
-        pp={weeklyPP}
-        weekData={weekData}
-        onBackToMap={() => setScreen('map')}
-        onDefeat={() => setScreen('map')}
-      />
+      <Suspense fallback={<div className="cwm-loading-fallback" style={{ minHeight: '100vh', background: '#0a0d18', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a78bfa' }}>Loading Boss Chamber...</div>}>
+        <BossBattleScreen
+          weekNumber={weekNumber}
+          pp={weeklyPP}
+          weekData={weekData}
+          onBackToMap={() => setScreen('map')}
+          onDefeat={() => setScreen('map')}
+        />
+      </Suspense>
     );
   }
 
@@ -170,25 +173,29 @@ export default function ChroniclesScreen() {
     const cliffhanger = floorConfig?.cliffhanger;
 
     return (
-      <DailyRoomScreen
-        weekNumber={weekNumber}
-        dayIndex={activeDayIndex}
-        weekData={weekData}
-        npcDialogue={npcDialogue}
-        cliffhanger={cliffhanger}
-        floorConfig={floorConfig}
-        onRoomComplete={handleRoomComplete}
-        onExit={handleExit}
-      />
+      <Suspense fallback={<div className="cwm-loading-fallback" style={{ minHeight: '100vh', background: '#0a0d18', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a78bfa' }}>Loading Room...</div>}>
+        <DailyRoomScreen
+          weekNumber={weekNumber}
+          dayIndex={activeDayIndex}
+          weekData={weekData}
+          npcDialogue={npcDialogue}
+          cliffhanger={cliffhanger}
+          floorConfig={floorConfig}
+          onRoomComplete={handleRoomComplete}
+          onBackToMap={() => setScreen('map')}
+        />
+      </Suspense>
     );
   }
 
-  // WORLD MAP (default)
+  // WORLD MAP SCREEN (default)
   return (
-    <ChroniclesWorldMap
-      weekNumber={weekNumber}
-      onEnterRoom={handleEnterRoom}
-      onEnterBoss={handleEnterBoss}
-    />
+    <Suspense fallback={<div className="cwm-loading-fallback" style={{ minHeight: '100vh', background: '#0a0d18', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a78bfa' }}>Loading World Map...</div>}>
+      <ChroniclesWorldMap
+        weekNumber={weekNumber}
+        onEnterRoom={handleEnterRoom}
+        onEnterBoss={handleEnterBoss}
+      />
+    </Suspense>
   );
 }

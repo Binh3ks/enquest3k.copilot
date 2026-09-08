@@ -12,6 +12,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Volume2, Trophy, RotateCcw, ArrowRight, Zap, AlertTriangle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
+import { validateMCQOptions } from '../../utils/quizValidation';
 import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
 import { LEO_SPEED, LEO_HITBOX, clamp } from './LeoPhysics';
 import LeoCharacter from './LeoCharacter';
@@ -136,18 +137,31 @@ export default function EchoArenaShooter({
   // Setup round orbs when roundIdx or arenaSize changes
   useEffect(() => {
     speakText(`Sound: ${currentRound.targetSound}`);
-    const orbCount = currentRound.orbs.length;
+    const correctOrbs = currentRound.orbs.filter(o => o.isCorrect);
+    const primaryCorrect = correctOrbs[0]?.label || currentRound.targetWord;
+    const rawOptions = currentRound.orbs.map(o => o.label);
+    const fallbackPool = DEFAULT_PHONICS_ROUNDS.flatMap(r => r.orbs.map(o => o.label));
+    const validatedLabels = validateMCQOptions(rawOptions, primaryCorrect, fallbackPool, Math.max(4, currentRound.orbs.length));
+
+    const orbCount = validatedLabels.length;
     const spacing = arenaSize.width / (orbCount + 1);
 
     setOrbs(
-      currentRound.orbs.map((orb, i) => ({
-        ...orb,
-        x: spacing * (i + 1) - 34,
-        y: 80 + (i % 2) * 45,
-        vx: (i % 2 === 0 ? 1 : -1) * 1.1,
-        vy: 0.3,
-        popped: false,
-      }))
+      validatedLabels.map((label, i) => {
+        const existing = currentRound.orbs.find(o => o.label === label);
+        const isCorrect = existing ? existing.isCorrect : (label === primaryCorrect);
+        return {
+          id: existing?.id || `orb_${roundIdx}_${i}`,
+          label,
+          sound: existing?.sound || currentRound.targetSound,
+          isCorrect,
+          x: spacing * (i + 1) - 34,
+          y: 80 + (i % 2) * 45,
+          vx: (i % 2 === 0 ? 1 : -1) * 1.1,
+          vy: 0.3,
+          popped: false,
+        };
+      })
     );
   }, [roundIdx, currentRound, arenaSize.width]);
 

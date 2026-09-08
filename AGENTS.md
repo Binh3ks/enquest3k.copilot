@@ -67,6 +67,18 @@ KHÔNG được phép tuyên bố "quest X hoạt động tốt" nếu chưa qua
 - **2026-09-01 (Puppeteer audit v1)**: Agent (Gemini Flash) chạy Puppeteer headless, chụp landing screen 16 quests, đánh `success: true` cho tất cả bao gồm quest có lỗi camera (`⚠️ Camera not available`), không click ▶ START ở bất kỳ quest nào, không embed screenshot nào, rồi viết báo cáo 500 dòng kết luận "sẵn sàng đóng băng Golden Standard" — đây là FALSE POSITIVE hoàn chỉnh.
 - **Root cause chung**: Gemini narrative generation + incomplete evidence + confirmation bias ("không crash = hoạt động tốt") → báo cáo sai 100%.
 
+## 💾 MANDATORY ARTIFACT PERSISTENCE PROTOCOL — 2026-09-08
+**MỨC ƯU TIÊN CAO — ÁP DỤNG TRƯỚC KHI KẾT THÚC BẤT KỲ PHIÊN LÀM VIỆC NÀO.**
+
+**CẤM TUYỆT ĐỐI** việc lưu trữ các tài liệu thiết kế (Design Specs), báo cáo phân tích (Audits), Blueprint, hoặc Schema vào thư mục temporary artifact của Antigravity (`.gemini/antigravity-ide/brain/`). Những file này có tính chất tạm thời (ephemeral) và sẽ bị mất liên kết knowledge base khi sang session mới.
+
+**Quy tắc Bắt buộc:**
+Tất cả các tài liệu `.md`, `.json` quan trọng (ngoại trừ các file hệ thống sinh ra bởi IDE như `task.md`, `implementation_plan.md`, `walkthrough.md`) BẮT BUỘC phải được tạo và lưu trực tiếp vào source code của dự án tại:
+- `docs/agent_artifacts/` (cho các file audit, báo cáo session, log review)
+- `docs/` (cho các master spec, architecture document quy mô lớn)
+
+Luôn luôn ưu tiên commit các tài liệu này lên Git để duy trì Knowledge Base đồng bộ.
+
 ## 🧠 Model Routing & Task Delegation Protocol — 2026-08-17
 **Quan trọng — Giới hạn thực tế:** Agent KHÔNG thể tự động switch model trong IDE. Cơ chế routing là **tư vấn + thông báo**: agent phân loại task, báo tier, và yêu cầu user đổi model nếu cần.
 

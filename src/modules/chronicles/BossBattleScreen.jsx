@@ -29,11 +29,14 @@
 
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { extractQuestVocab } from './extractQuestVocab';
+import { validateMCQOptions } from '../../utils/quizValidation';
 import useChroniclesStore, {
   BOSS_ACCESS_THRESHOLDS,
   COINS_PER_BOSS_DEFEAT,
   getChapterForWeek,
 } from '../../stores/useChroniclesStore';
+import PhaserGameCanvas from '../../phaser/PhaserGameCanvas';
+import BossCombatScene from '../../phaser/scenes/BossCombatScene';
 import './BossBattleScreen.css';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -159,7 +162,7 @@ function buildQuestions(vocabItems, grammarSentences) {
 
     if (distractors.length < 3) continue;
 
-    const options = [...distractors, item.definition].sort(() => Math.random() - 0.5);
+    const options = validateMCQOptions(distractors, item.definition, vocabPool.map(v => v.definition), 4);
     questions.push({
       type:    'vocab',
       prompt:  `What does "${item.word}" mean?`,
@@ -192,7 +195,7 @@ function buildQuestions(vocabItems, grammarSentences) {
     const otherWords = vocabPool.slice(0, 3).map(v => v.word).filter(w => w !== clean);
     while (otherWords.length < 3) otherWords.push(['quickly', 'carefully', 'strong'][otherWords.length]);
 
-    const options = [...otherWords.slice(0, 3), clean].sort(() => Math.random() - 0.5);
+    const options = validateMCQOptions(otherWords, clean, vocabPool.map(v => v.word), 4);
     questions.push({
       type:       'grammar',
       prompt:     blanked,
@@ -216,7 +219,7 @@ function buildQuestions(vocabItems, grammarSentences) {
       .map(v => v.word);
     if (distractors.length < 3) continue;
 
-    const options = [...distractors, item.word].sort(() => Math.random() - 0.5);
+    const options = validateMCQOptions(distractors, item.word, vocabPool.map(v => v.word), 4);
     questions.push({
       type:       'reverse',
       prompt:     `Which word means: "${item.definition}"?`,
@@ -646,6 +649,35 @@ export default function BossBattleScreen({
   }
 
   // ─── COMBAT ──────────────────────────────────────────────────────────────
+  if (bossType === 1) {
+    return (
+      <div className={`bbs-screen bbs-theme-${chapter.theme}`} style={{ position: 'relative', width: '100vw', height: '100vh', background: '#070913', overflow: 'hidden' }}>
+        <button
+          className="bbs-back-link"
+          style={{ position: 'absolute', top: 16, left: 16, zIndex: 30, background: 'rgba(15, 23, 42, 0.8)', padding: '6px 12px', borderRadius: '8px' }}
+          onClick={onBackToMap}
+        >
+          ← Exit Citadel
+        </button>
+        <PhaserGameCanvas
+          sceneClass={BossCombatScene}
+          sceneData={{
+            questions,
+            playerDamage: PLAYER_DAMAGE[tier] || 15,
+            tier,
+          }}
+          onSceneEvent={(eventName, payload) => {
+            if (eventName === 'boss_victory') {
+              handleVictory();
+            } else if (eventName === 'boss_defeat') {
+              setPhase('defeat');
+            }
+          }}
+        />
+      </div>
+    );
+  }
+
   const q          = questions[current];
   const options    = getOptions(q);
   const pct        = (timeLeft / effectiveTimeLimit) * 100;
