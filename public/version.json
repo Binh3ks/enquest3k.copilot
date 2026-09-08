@@ -1,9 +1,9 @@
 {
-  "commit": "aba03bbb67a5550466cfad9f94fd7fb0553afb64",
-  "git_commit": "aba03bbb67a5550466cfad9f94fd7fb0553afb64",
-  "shortCommit": "aba03bbb",
-  "message": "feat(mobile): mobile-first redesign for all 15 mini-games + navigation",
-  "builtAt": "2026-09-08T03:09:37.832Z",
-  "build_timestamp": "2026-09-08T03:09:37.832Z",
+  "commit": "5e65ca0cfffdb32bb51f9f9c07a3dd4f98515ec9",
+  "git_commit": "5e65ca0cfffdb32bb51f9f9c07a3dd4f98515ec9",
+  "shortCommit": "5e65ca0c",
+  "message": "feat(quest): implement mobile game engine redesign v2 across all 15 mini-games",
+  "builtAt": "2026-09-08T03:34:10.852Z",
+  "build_timestamp": "2026-09-08T03:34:10.852Z",
   "env": "production"
 }
