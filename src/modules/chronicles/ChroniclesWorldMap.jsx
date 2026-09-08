@@ -185,17 +185,16 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
           className="cwm-tab-btn"
           style={{ fontSize: '11px', opacity: 0.85, background: FEATURES.PHASER_HUB_WORLD ? 'rgba(99, 102, 241, 0.2)' : 'transparent' }}
           onClick={() => {
-            // New default is true (Phaser ON). Toggle sets 'false' to revert to legacy grid.
             if (FEATURES.PHASER_HUB_WORLD) {
-              localStorage.setItem('ff_phaser_hub', 'false');
+              localStorage.removeItem('ff_phaser_hub');
             } else {
-              localStorage.removeItem('ff_phaser_hub'); // back to default (true)
+              localStorage.setItem('ff_phaser_hub', 'true');
             }
             window.location.reload();
           }}
-          title="Toggle Phaser 2D Hub Engine vs Legacy Grid"
+          title="Toggle Phaser 2D Hub Engine vs Standard Grid"
         >
-          <span>{FEATURES.PHASER_HUB_WORLD ? '🎮 Hub: 2D ✓' : '📱 Hub: Grid (Legacy)'}</span>
+          <span>{FEATURES.PHASER_HUB_WORLD ? '🎮 Hub: 2D (Test)' : '🗺️ Hub: Map Grid'}</span>
         </button>
       </div>
 

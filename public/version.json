@@ -1,9 +1,9 @@
 {
-  "commit": "c0e520ae3115a19b7fb0081ebabe6684de0b4194",
-  "git_commit": "c0e520ae3115a19b7fb0081ebabe6684de0b4194",
-  "shortCommit": "c0e520ae",
-  "message": "fix(chronicles): make Phaser Hub default ON, fix Highway Runner assets & label sync",
-  "builtAt": "2026-09-08T08:43:11.963Z",
-  "build_timestamp": "2026-09-08T08:43:11.964Z",
+  "commit": "5cd2c32152042e866f1c62d4c7b7e3eeba085ef4",
+  "git_commit": "5cd2c32152042e866f1c62d4c7b7e3eeba085ef4",
+  "shortCommit": "5cd2c321",
+  "message": "fix(phaser): replace Phaser global with this.make.graphics() in preload() — fixes ReferenceError",
+  "builtAt": "2026-09-08T08:52:47.724Z",
+  "build_timestamp": "2026-09-08T08:52:47.724Z",
   "env": "production"
 }
