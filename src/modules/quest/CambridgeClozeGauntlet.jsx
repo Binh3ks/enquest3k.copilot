@@ -21,9 +21,9 @@ import {
   LEO_HITBOX, INVINCIBILITY_MS, clamp, applyGravity, checkPlatformLanding
 } from './LeoPhysics';
 import LeoCharacter from './LeoCharacter';
-import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
-import useGameScale from './useGameScale';
+import FloatingExitBtn from './FloatingExitBtn';
+import useGestureControls from './useGestureControls';
 import './CambridgeClozeGauntlet.css';
 
 const ROOM_WIDTH = 900;
@@ -62,8 +62,20 @@ export default function CambridgeClozeGauntlet({
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('cambridge_cloze_gauntlet') || 0;
 
-  // Mobile scale: fit 900×600 game world into any phone viewport
-  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
+  // Viewport tracking & responsive camera
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(ROOM_WIDTH);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth || ROOM_WIDTH);
+      }
+    };
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
 
   const blanks = clozeData.blanks || DEFAULT_GAUNTLET_PASSAGE.blanks;
   const distractors = clozeData.distractors || DEFAULT_GAUNTLET_PASSAGE.distractors;
@@ -366,16 +378,42 @@ export default function CambridgeClozeGauntlet({
     return () => clearInterval(timer);
   }, [phase]);
 
-  // D-Pad handlers
-  const dpadHandlers = {
-    onLeftPress: () => { keysPressed.current.left = true; },
-    onLeftRelease: () => { keysPressed.current.left = false; },
-    onRightPress: () => { keysPressed.current.right = true; },
-    onRightRelease: () => { keysPressed.current.right = false; },
-    onJumpPress: () => { keysPressed.current.up = true; },
-    onJumpRelease: () => { keysPressed.current.up = false; },
-    onActionPress: handleInteractAction,
-  };
+  // Camera follow Leo horizontally
+  const cameraX = Math.max(0, Math.min(ROOM_WIDTH - containerWidth, leoDisplay.x - containerWidth / 2));
+
+  // Mobile gesture controls
+  const { gestureRef } = useGestureControls({
+    onTapLeft: () => {
+      keysPressed.current.left = true;
+      setTimeout(() => { keysPressed.current.left = false; }, 200);
+    },
+    onTapRight: () => {
+      keysPressed.current.right = true;
+      setTimeout(() => { keysPressed.current.right = false; }, 200);
+    },
+    onDoubleTap: () => {
+      if (leoRef.current.isGrounded) {
+        keysPressed.current.up = true;
+        setTimeout(() => { keysPressed.current.up = false; }, 200);
+      }
+    },
+    onSwipeUp: () => {
+      if (leoRef.current.isGrounded) {
+        keysPressed.current.up = true;
+        setTimeout(() => { keysPressed.current.up = false; }, 200);
+      }
+    },
+    onSwipeLeft: () => {
+      keysPressed.current.left = true;
+      setTimeout(() => { keysPressed.current.left = false; }, 300);
+    },
+    onSwipeRight: () => {
+      keysPressed.current.right = true;
+      setTimeout(() => { keysPressed.current.right = false; }, 300);
+    },
+    onTapCenter: handleInteractAction,
+    enabled: phase === 'playing',
+  });
 
   const handleRetry = () => {
     setHearts(3);
@@ -394,7 +432,10 @@ export default function CambridgeClozeGauntlet({
   };
 
   return (
-    <div className="gauntlet-cloze-root" ref={gameContainerRef}>
+    <div className="gauntlet-cloze-root" ref={containerRef}>
+      {/* ── Always Accessible Floating Exit Button ─────────────────────── */}
+      <FloatingExitBtn onExit={onExit} />
+
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="gauntlet-objective-banner">
         <Crown size={22} className="gauntlet-banner-icon" />
@@ -413,8 +454,16 @@ export default function CambridgeClozeGauntlet({
         </div>
       )}
 
-      {/* ── Pinnacle Viewport ────────────────────────────────────────── */}
-      <div className="gauntlet-viewport" style={scale < 1 ? scaleStyle : undefined}>
+      {/* ── Pinnacle Viewport with Camera Tracking ───────────────────── */}
+      <div
+        className="gauntlet-viewport"
+        style={{
+          transform: containerWidth < ROOM_WIDTH ? `translateX(-${cameraX}px)` : 'none',
+        }}
+      >
+        {/* Mobile touch gesture capture layer */}
+        <div className="gauntlet-gesture-layer" ref={gestureRef} />
+
         {/* Cosmic Aurora Background */}
         <div className="cosmic-aurora-glow" />
 
@@ -511,8 +560,6 @@ export default function CambridgeClozeGauntlet({
         doorLabel="Door 3 — Cambridge Cloze Gauntlet"
       />
 
-      {/* ── Virtual D-Pad ────────────────────────────────────────────── */}
-      <VirtualDPad {...dpadHandlers} visible={phase === 'playing'} />
 
       {/* ── Cleared Modal (Grand Finale) ─────────────────────────────── */}
       {phase === 'cleared' && (

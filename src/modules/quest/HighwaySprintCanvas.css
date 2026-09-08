@@ -1,0 +1,245 @@
+/* HighwaySprintCanvas.css — 3D Canvas Highway Runner Styles */
+
+.highway-canvas-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  background: #090314;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  touch-action: none;
+}
+
+/* Definition Pill Banner */
+.highway-definition-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(19, 10, 36, 0.94);
+  border: 1.5px solid rgba(168, 85, 247, 0.5);
+  border-radius: 24px;
+  padding: 8px 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(168, 85, 247, 0.3);
+  backdrop-filter: blur(10px);
+  max-width: 90%;
+  pointer-events: auto;
+}
+
+.highway-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(168, 85, 247, 0.4);
+  transition: transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.highway-audio-btn:hover {
+  transform: scale(1.05);
+}
+
+.highway-def-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.highway-def-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #c084fc;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.highway-def-text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 320px;
+}
+
+.highway-round-pill {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #e9d5ff;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 3px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* Toast Feedback */
+.highway-toast-pill {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 8px 22px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  animation: pop-toast 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.highway-toast-pill.toast-correct {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  border: 1.5px solid #6ee7b7;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+}
+
+.highway-toast-pill.toast-wrong {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+  border: 1.5px solid #fca5a5;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+}
+
+@keyframes pop-toast {
+  0% { transform: translateX(-50%) scale(0.8); opacity: 0; }
+  100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+/* 3D Canvas Element */
+.highway-3d-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Leo Character CSS Overlay */
+.highway-leo-layer {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  z-index: 25;
+  transition: left 0.15s ease-out;
+}
+
+/* Transparent 3-Zone Touch Controls */
+.highway-touch-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+}
+
+.highway-touch-zone {
+  flex: 1;
+  height: 100%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Controls Guide Strip at Bottom */
+.highway-controls-guide {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  padding: 4px 14px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #c084fc;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Modals */
+.highway-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: rgba(6, 2, 14, 0.88);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highway-modal-card {
+  background: linear-gradient(135deg, #1e113a, #0f0722);
+  border: 2px solid #a855f7;
+  border-radius: 24px;
+  padding: 32px 28px;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(168, 85, 247, 0.4);
+}
+
+.highway-modal-card.modal-ko {
+  border-color: #ef4444;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(239, 68, 68, 0.4);
+}
+
+.modal-trophy-gold {
+  color: #facc15;
+  filter: drop-shadow(0 0 16px rgba(250, 204, 21, 0.8));
+  margin-bottom: 12px;
+}
+
+.modal-ko-icon {
+  color: #ef4444;
+  filter: drop-shadow(0 0 16px rgba(239, 68, 68, 0.8));
+  margin-bottom: 12px;
+}
+
+.highway-modal-card h2 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+
+.highway-modal-card p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+
+.modal-stat-box {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 10px 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  color: #f1f5f9;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+}
+
+@import './game-mobile.css';

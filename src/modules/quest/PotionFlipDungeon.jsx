@@ -21,9 +21,9 @@ import {
   LEO_HITBOX, INVINCIBILITY_MS, clamp, applyGravity, checkPlatformLanding
 } from './LeoPhysics';
 import LeoCharacter from './LeoCharacter';
-import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
-import useGameScale from './useGameScale';
+import FloatingExitBtn from './FloatingExitBtn';
+import useGestureControls from './useGestureControls';
 import './PotionFlipDungeon.css';
 
 const ROOM_WIDTH = 900;
@@ -54,9 +54,19 @@ export default function PotionFlipDungeon({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('potion_flip_dungeon') || 0;
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 900);
 
-  // Mobile scale: fit 900×600 game world into any phone viewport
-  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
+  useEffect(() => {
+    const updateW = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth || window.innerWidth);
+      }
+    };
+    updateW();
+    window.addEventListener('resize', updateW);
+    return () => window.removeEventListener('resize', updateW);
+  }, []);
 
   // Build 4 pairs (8 cauldrons total)
   const cauldronsInitial = useMemo(() => {
@@ -341,22 +351,45 @@ export default function PotionFlipDungeon({
     setPhase('playing');
   };
 
-  // D-Pad handlers
-  const dpadHandlers = {
-    onLeft: () => { inputRef.current.left = true; },
-    onLeftRelease: () => { inputRef.current.left = false; },
-    onRight: () => { inputRef.current.right = true; },
-    onRightRelease: () => { inputRef.current.right = false; },
-    onUp: () => { inputRef.current.jump = true; },
-    onUpRelease: () => { inputRef.current.jump = false; },
-    onDown: () => {},
-    onDownRelease: () => {},
-    onJump: () => { inputRef.current.jump = true; },
-    onJumpRelease: () => { inputRef.current.jump = false; },
-  };
+  // Gesture Controls for PotionFlipDungeon
+  const { gestureRef } = useGestureControls({
+    onTapLeft: () => {
+      inputRef.current.left = true;
+      setTimeout(() => { inputRef.current.left = false; }, 240);
+    },
+    onTapRight: () => {
+      inputRef.current.right = true;
+      setTimeout(() => { inputRef.current.right = false; }, 240);
+    },
+    onDoubleTap: () => {
+      inputRef.current.jump = true;
+      setTimeout(() => { inputRef.current.jump = false; }, 200);
+    },
+    onSwipeUp: () => {
+      inputRef.current.jump = true;
+      setTimeout(() => { inputRef.current.jump = false; }, 200);
+    },
+    onSwipeLeft: () => {
+      inputRef.current.left = true;
+      setTimeout(() => { inputRef.current.left = false; }, 360);
+    },
+    onSwipeRight: () => {
+      inputRef.current.right = true;
+      setTimeout(() => { inputRef.current.right = false; }, 360);
+    },
+    enabled: phase === 'playing',
+  });
+
+  const cameraX = Math.max(0, Math.min(ROOM_WIDTH - containerWidth, leoDisplay.x - containerWidth / 2));
 
   return (
-    <div className="potion-flip-container" role="region" ref={gameContainerRef} aria-label="Potion Flip Dungeon">
+    <div className="potion-flip-container" role="region" ref={containerRef} aria-label="Potion Flip Dungeon">
+      {/* ── Floating Exit Button (Always visible) ── */}
+      <FloatingExitBtn onExit={onExit || handleFinalFinish} label="← Chamber" />
+
+      {/* ── Gesture Touch Layer ── */}
+      <div ref={gestureRef} className="potion-gesture-layer" />
+
       {/* ── Top Objective Banner ────────────────────────────────────── */}
       <div className="potion-mission-banner">
         <div className="potion-badge">
@@ -371,8 +404,14 @@ export default function PotionFlipDungeon({
         )}
       </div>
 
-      {/* ── Game World ──────────────────────────────────────────────── */}
-      <div className="potion-world-viewport" style={scale < 1 ? scaleStyle : undefined}>
+      {/* ── Game World (Canvas/DOM Viewport with smooth Camera follow) ─ */}
+      <div
+        className="potion-world-viewport"
+        style={{
+          width: `${ROOM_WIDTH}px`,
+          transform: containerWidth < ROOM_WIDTH ? `translateX(-${cameraX}px)` : 'none',
+        }}
+      >
         {/* Alchemy Ambient Background */}
         <div className="potion-bg-glow" />
 
@@ -438,9 +477,6 @@ export default function PotionFlipDungeon({
         floorNumber={2}
         doorLabel="Door 1 — Potion Flip Dungeon"
       />
-
-      {/* ── Virtual D-Pad ────────────────────────────────────────────── */}
-      <VirtualDPad {...dpadHandlers} visible={phase === 'playing'} />
 
       {/* ── Cleared Modal ────────────────────────────────────────────── */}
       {phase === 'cleared' && (

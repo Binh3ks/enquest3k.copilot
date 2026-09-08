@@ -22,9 +22,9 @@ import {
   LEO_HITBOX, INVINCIBILITY_MS, clamp, applyGravity, checkPlatformLanding
 } from './LeoPhysics';
 import LeoCharacter from './LeoCharacter';
-import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
-import useGameScale from './useGameScale';
+import FloatingExitBtn from './FloatingExitBtn';
+import useGestureControls from './useGestureControls';
 import './ScrollChamberDecode.css';
 
 const ROOM_WIDTH = 900;
@@ -68,9 +68,19 @@ export default function ScrollChamberDecode({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('scroll_chamber_decode') || 0;
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 900);
 
-  // Mobile scale: fit 900×600 game world into any phone viewport
-  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
+  useEffect(() => {
+    const updateW = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth || window.innerWidth);
+      }
+    };
+    updateW();
+    window.addEventListener('resize', updateW);
+    return () => window.removeEventListener('resize', updateW);
+  }, []);
 
   // Blanks & word runes
   const targets = scrollData.blanks || DEFAULT_SCROLL_DATA.blanks;
@@ -392,16 +402,35 @@ export default function ScrollChamberDecode({
     return () => clearInterval(timer);
   }, [phase]);
 
-  // D-Pad handlers for mobile
-  const dpadHandlers = {
-    onLeftPress: () => { keysPressed.current.left = true; },
-    onLeftRelease: () => { keysPressed.current.left = false; },
-    onRightPress: () => { keysPressed.current.right = true; },
-    onRightRelease: () => { keysPressed.current.right = false; },
-    onJumpPress: () => { keysPressed.current.up = true; },
-    onJumpRelease: () => { keysPressed.current.up = false; },
-    onActionPress: handleInteractAction,
-  };
+  // Gesture Controls for ScrollChamberDecode
+  const { gestureRef } = useGestureControls({
+    onTapLeft: () => {
+      keysPressed.current.left = true;
+      setTimeout(() => { keysPressed.current.left = false; }, 240);
+    },
+    onTapRight: () => {
+      keysPressed.current.right = true;
+      setTimeout(() => { keysPressed.current.right = false; }, 240);
+    },
+    onTapCenter: handleInteractAction,
+    onDoubleTap: () => {
+      keysPressed.current.up = true;
+      setTimeout(() => { keysPressed.current.up = false; }, 200);
+    },
+    onSwipeUp: () => {
+      keysPressed.current.up = true;
+      setTimeout(() => { keysPressed.current.up = false; }, 200);
+    },
+    onSwipeLeft: () => {
+      keysPressed.current.left = true;
+      setTimeout(() => { keysPressed.current.left = false; }, 360);
+    },
+    onSwipeRight: () => {
+      keysPressed.current.right = true;
+      setTimeout(() => { keysPressed.current.right = false; }, 360);
+    },
+    enabled: phase === 'playing',
+  });
 
   const handleRetry = () => {
     setHearts(3);
@@ -419,8 +448,16 @@ export default function ScrollChamberDecode({
     else if (onExit) onExit();
   };
 
+  const cameraX = Math.max(0, Math.min(ROOM_WIDTH - containerWidth, leoDisplay.x - containerWidth / 2));
+
   return (
-    <div className="scroll-chamber-root" ref={gameContainerRef}>
+    <div className="scroll-chamber-root" ref={containerRef}>
+      {/* ── Floating Exit Button (Always visible) ── */}
+      <FloatingExitBtn onExit={onExit || handleFinalFinish} label="← Chamber" />
+
+      {/* ── Gesture Touch Layer ── */}
+      <div ref={gestureRef} className="scroll-gesture-layer" />
+
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="scroll-objective-banner">
         <BookOpen size={20} className="scroll-banner-icon" />
@@ -444,8 +481,14 @@ export default function ScrollChamberDecode({
         </div>
       )}
 
-      {/* ── Main Chamber Canvas ──────────────────────────────────────── */}
-      <div className="scroll-chamber-viewport" style={scale < 1 ? scaleStyle : undefined}>
+      {/* ── Main Chamber Canvas with smooth Camera follow ────────────── */}
+      <div
+        className="scroll-chamber-viewport"
+        style={{
+          width: `${ROOM_WIDTH}px`,
+          transform: containerWidth < ROOM_WIDTH ? `translateX(-${cameraX}px)` : 'none',
+        }}
+      >
         {/* Light Beams from Chandeliers */}
         {LIGHT_BEAMS.map(b => (
           <div
@@ -551,9 +594,6 @@ export default function ScrollChamberDecode({
         floorNumber={2}
         doorLabel="Door 3 — Scroll Chamber Decode"
       />
-
-      {/* ── Virtual D-Pad ────────────────────────────────────────────── */}
-      <VirtualDPad {...dpadHandlers} visible={phase === 'playing'} />
 
       {/* ── Cleared Modal ────────────────────────────────────────────── */}
       {phase === 'cleared' && (

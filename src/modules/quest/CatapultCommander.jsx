@@ -21,9 +21,9 @@ import {
   LEO_HITBOX, clamp, applyGravity, checkPlatformLanding
 } from './LeoPhysics';
 import LeoCharacter from './LeoCharacter';
-import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
-import useGameScale from './useGameScale';
+import FloatingExitBtn from './FloatingExitBtn';
+import useGestureControls from './useGestureControls';
 import './CatapultCommander.css';
 
 const ROOM_WIDTH = 900;
@@ -79,9 +79,19 @@ export default function CatapultCommander({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('catapult_commander') || 0;
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 900);
 
-  // Mobile scale: fit 900×600 game world into any phone viewport
-  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
+  useEffect(() => {
+    const updateW = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth || window.innerWidth);
+      }
+    };
+    updateW();
+    window.addEventListener('resize', updateW);
+    return () => window.removeEventListener('resize', updateW);
+  }, []);
 
   const waves = wavesData && wavesData.length > 0 ? wavesData : DEFAULT_WAVES;
 
@@ -331,16 +341,35 @@ export default function CatapultCommander({
     return () => clearInterval(timer);
   }, [phase]);
 
-  // Mobile D-Pad handlers
-  const dpadHandlers = {
-    onLeftPress: () => { keysPressed.current.left = true; },
-    onLeftRelease: () => { keysPressed.current.left = false; },
-    onRightPress: () => { keysPressed.current.right = true; },
-    onRightRelease: () => { keysPressed.current.right = false; },
-    onJumpPress: () => { keysPressed.current.up = true; },
-    onJumpRelease: () => { keysPressed.current.up = false; },
-    onActionPress: handleTriggerNearCatapult,
-  };
+  // Gesture Controls for CatapultCommander
+  const { gestureRef } = useGestureControls({
+    onTapLeft: () => {
+      keysPressed.current.left = true;
+      setTimeout(() => { keysPressed.current.left = false; }, 240);
+    },
+    onTapRight: () => {
+      keysPressed.current.right = true;
+      setTimeout(() => { keysPressed.current.right = false; }, 240);
+    },
+    onTapCenter: handleTriggerNearCatapult,
+    onDoubleTap: () => {
+      keysPressed.current.up = true;
+      setTimeout(() => { keysPressed.current.up = false; }, 200);
+    },
+    onSwipeUp: () => {
+      keysPressed.current.up = true;
+      setTimeout(() => { keysPressed.current.up = false; }, 200);
+    },
+    onSwipeLeft: () => {
+      keysPressed.current.left = true;
+      setTimeout(() => { keysPressed.current.left = false; }, 360);
+    },
+    onSwipeRight: () => {
+      keysPressed.current.right = true;
+      setTimeout(() => { keysPressed.current.right = false; }, 360);
+    },
+    enabled: phase === 'playing',
+  });
 
   const handleRetry = () => {
     setGateHealth(100);
@@ -358,8 +387,16 @@ export default function CatapultCommander({
     else if (onExit) onExit();
   };
 
+  const cameraX = Math.max(0, Math.min(ROOM_WIDTH - containerWidth, leoDisplay.x - containerWidth / 2));
+
   return (
-    <div className="catapult-commander-root" ref={gameContainerRef}>
+    <div className="catapult-commander-root" ref={containerRef}>
+      {/* ── Floating Exit Button (Always visible) ── */}
+      <FloatingExitBtn onExit={onExit || handleFinalFinish} label="← Chamber" />
+
+      {/* ── Gesture Touch Layer ── */}
+      <div ref={gestureRef} className="catapult-gesture-layer" />
+
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="catapult-objective-banner">
         <Shield size={20} className="catapult-banner-icon" />
@@ -382,8 +419,14 @@ export default function CatapultCommander({
         </div>
       )}
 
-      {/* ── Main Rampart Viewport ────────────────────────────────────── */}
-      <div className="catapult-rampart-viewport" style={scale < 1 ? scaleStyle : undefined}>
+      {/* ── Main Rampart Viewport with smooth Camera follow ──────────── */}
+      <div
+        className="catapult-rampart-viewport"
+        style={{
+          width: `${ROOM_WIDTH}px`,
+          transform: containerWidth < ROOM_WIDTH ? `translateX(-${cameraX}px)` : 'none',
+        }}
+      >
         {/* Horizon Sky & Advancing Goblin Wave */}
         <div className="distant-horizon">
           <div
@@ -446,9 +489,6 @@ export default function CatapultCommander({
         floorNumber={3}
         doorLabel="Door 2 — Catapult Commander"
       />
-
-      {/* ── Virtual D-Pad ────────────────────────────────────────────── */}
-      <VirtualDPad {...dpadHandlers} visible={phase === 'playing'} />
 
       {/* ── Cleared Modal ────────────────────────────────────────────── */}
       {phase === 'cleared' && (

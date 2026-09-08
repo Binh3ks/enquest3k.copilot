@@ -1,34 +1,24 @@
 /**
  * EchoArenaShooter.jsx — Floor 3, Door 1 (Phonics/Vocab) Mini-Game for Lexio's Quest
- * GDD §2 Floor 3 Room A: "ECHO ARENA SHOOTER"
- *
- * Replaces static phonics tapping with 360° Slingshot Aim & Launch:
- * - Arcane acoustic arena with floating acoustic resonance orbs
- * - Target phonics sound or word prompt played via AudioHelper TTS
- * - Leo operates an acoustic energy launcher (runs left/right, aims slingshot angle, fires resonance bolts)
- * - Acoustic orbs drift down with phoneme labels (e.g. /ʃ/ - shoe, /tʃ/ - chair, /θ/ - think)
- * - Matching orb popped: crystalline chime, XP burst, target word audio!
- * - Distractor orb popped: discord pulse, -1 Heart
- * - Noise Gremlins fly in zig-zags attempting to absorb bolts
- * - Virtual D-Pad + Aim/Fire buttons + Keyboard controls
+ * Mobile-First Native Viewport Redesign:
+ * - 100% responsive arena width and height (NO fixed 900x600, NO scaling artifacts)
+ * - Tap anywhere to Aim & Fire resonance bolt directly at touch coordinates
+ * - Tap directly on an orb to pop it with crystal chime
+ * - Swipe or tap sides to reposition Leo
+ * - Zero virtual D-Pad clutter: 100% screen devoted to gameplay
+ * - Always-visible FloatingExitBtn for seamless Chamber navigation
  */
 
-import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Volume2, Trophy, RotateCcw, ArrowRight, Sparkles, Target, Zap, AlertTriangle } from 'lucide-react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { Volume2, Trophy, RotateCcw, ArrowRight, Zap, AlertTriangle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
-import {
-  LEO_SPEED, LEO_JUMP_FORCE, GRAVITY, FLOOR_Y,
-  LEO_HITBOX, clamp, applyGravity, checkPlatformLanding
-} from './LeoPhysics';
+import { LEO_SPEED, LEO_HITBOX, clamp } from './LeoPhysics';
 import LeoCharacter from './LeoCharacter';
-import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
-import useGameScale from './useGameScale';
+import FloatingExitBtn from './FloatingExitBtn';
+import useGestureControls from './useGestureControls';
 import './EchoArenaShooter.css';
-
-const ROOM_WIDTH = 900;
-const ROOM_HEIGHT = 600;
 
 const DEFAULT_PHONICS_ROUNDS = [
   {
@@ -76,8 +66,11 @@ export default function EchoArenaShooter({
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('echo_arena_shooter') || 0;
 
-  // Mobile scale: fit 900×600 game world into any phone viewport
-  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
+  const arenaRef = useRef(null);
+  const [arenaSize, setArenaSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 800,
+    height: 500,
+  });
 
   const rounds = phonicsRounds && phonicsRounds.length > 0 ? phonicsRounds : DEFAULT_PHONICS_ROUNDS;
 
@@ -90,140 +83,181 @@ export default function EchoArenaShooter({
 
   const currentRound = rounds[roundIdx % rounds.length] || DEFAULT_PHONICS_ROUNDS[0];
 
-  // Active floating orbs
-  const [orbs, setOrbs] = useState(() => {
-    return currentRound.orbs.map((orb, i) => ({
-      ...orb,
-      x: 100 + i * 200,
-      y: 90 + (i % 2) * 50,
-      vx: (i % 2 === 0 ? 1 : -1) * 1.2,
-      vy: 0.4,
-      popped: false,
-    }));
-  });
+  // Measure arena size dynamically on mount & resize
+  useEffect(() => {
+    const updateSize = () => {
+      if (arenaRef.current) {
+        const { clientWidth, clientHeight } = arenaRef.current;
+        if (clientWidth > 0 && clientHeight > 0) {
+          setArenaSize({ width: clientWidth, height: clientHeight });
+        }
+      }
+    };
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
+  // Active floating orbs positioned proportionally to arena size
+  const [orbs, setOrbs] = useState([]);
 
   // Projectiles fired by Leo
   const [bolts, setBolts] = useState([]); // [{ id, x, y, vx, vy }]
 
   // Noise Gremlin enemy flying across top
-  const [gremlin, setGremlin] = useState({ x: 80, y: 160, vx: 2.5, dir: 1 });
+  const [gremlin, setGremlin] = useState({ x: 80, y: 130, vx: 2.2, dir: 1 });
 
-  // Aiming angle (degrees: 45 to 135, pointing upwards)
+  // Aiming angle (degrees: pointing upwards)
   const [aimAngle, setAimAngle] = useState(90);
 
   // Leo physics state
+  const floorY = arenaSize.height - LEO_HITBOX.height - 12;
   const leoRef = useRef({
-    x: 420,
-    y: FLOOR_Y - LEO_HITBOX.height,
+    x: arenaSize.width / 2 - LEO_HITBOX.width / 2,
+    y: floorY,
     vx: 0,
-    vy: 0,
-    isGrounded: true,
+    targetX: arenaSize.width / 2 - LEO_HITBOX.width / 2,
     facingRight: true,
   });
 
   const [leoDisplay, setLeoDisplay] = useState({
-    x: 420,
-    y: FLOOR_Y - LEO_HITBOX.height,
+    x: arenaSize.width / 2 - LEO_HITBOX.width / 2,
+    y: floorY,
     facingRight: true,
     animState: 'idle',
   });
 
-  const keysPressed = useRef({ left: false, right: false, up: false, aimLeft: false, aimRight: false });
-  const animFrameId = useRef(null);
+  // Keep Leo within arena bounds on size change
+  useEffect(() => {
+    leoRef.current.y = floorY;
+    leoRef.current.x = clamp(leoRef.current.x, 20, arenaSize.width - LEO_HITBOX.width - 20);
+  }, [floorY, arenaSize.width]);
 
-  // Play target sound on round start
+  // Setup round orbs when roundIdx or arenaSize changes
   useEffect(() => {
     speakText(`Sound: ${currentRound.targetSound}`);
-    // Reset orbs for new round
-    setOrbs(currentRound.orbs.map((orb, i) => ({
-      ...orb,
-      x: 120 + i * 190,
-      y: 90 + (i % 2) * 45,
-      vx: (i % 2 === 0 ? 1 : -1) * 1.2,
-      vy: 0.4,
-      popped: false,
-    })));
-  }, [roundIdx, currentRound]);
+    const orbCount = currentRound.orbs.length;
+    const spacing = arenaSize.width / (orbCount + 1);
 
-  // ── Keyboard controls ──────────────────────────────────────────────────
-  useEffect(() => {
-    const onKeyDown = (e) => {
-      if (['ArrowLeft', 'KeyA'].includes(e.code)) {
-        e.preventDefault();
-        keysPressed.current.left = true;
-      }
-      if (['ArrowRight', 'KeyD'].includes(e.code)) {
-        e.preventDefault();
-        keysPressed.current.right = true;
-      }
-      if (['ArrowUp', 'KeyW'].includes(e.code)) {
-        e.preventDefault();
-        setAimAngle(a => clamp(a - 6, 35, 145));
-      }
-      if (['ArrowDown', 'KeyS'].includes(e.code)) {
-        e.preventDefault();
-        setAimAngle(a => clamp(a + 6, 35, 145));
-      }
-      if (['Space', 'KeyF', 'Enter'].includes(e.code)) {
-        e.preventDefault();
-        fireBolt();
-      }
-    };
+    setOrbs(
+      currentRound.orbs.map((orb, i) => ({
+        ...orb,
+        x: spacing * (i + 1) - 34,
+        y: 80 + (i % 2) * 45,
+        vx: (i % 2 === 0 ? 1 : -1) * 1.1,
+        vy: 0.3,
+        popped: false,
+      }))
+    );
+  }, [roundIdx, currentRound, arenaSize.width]);
 
-    const onKeyUp = (e) => {
-      if (['ArrowLeft', 'KeyA'].includes(e.code)) keysPressed.current.left = false;
-      if (['ArrowRight', 'KeyD'].includes(e.code)) keysPressed.current.right = false;
-    };
-
-    window.addEventListener('keydown', onKeyDown);
-    window.addEventListener('keyup', onKeyUp);
-    return () => {
-      window.removeEventListener('keydown', onKeyDown);
-      window.removeEventListener('keyup', onKeyUp);
-    };
-  }, [aimAngle]);
-
-  // ── Fire Bolt Action ───────────────────────────────────────────────────
-  const fireBolt = useCallback(() => {
+  // ── Fire Bolt Action towards (targetX, targetY) or current aim angle ─────────
+  const fireBoltTowards = useCallback((targetX, targetY) => {
     if (phase !== 'playing') return;
     const leo = leoRef.current;
-    // Angle in radians (0 is right, 90 is straight up, 180 is left)
-    const rad = (aimAngle * Math.PI) / 180;
-    const speed = 12;
-    const vx = Math.cos(rad) * speed;
-    const vy = -Math.sin(rad) * speed;
+    const originX = leo.x + LEO_HITBOX.width / 2;
+    const originY = leo.y + 10;
+
+    let vx, vy;
+    if (targetX !== undefined && targetY !== undefined) {
+      const dx = targetX - originX;
+      const dy = targetY - originY;
+      const dist = Math.hypot(dx, dy) || 1;
+      const speed = 14;
+      vx = (dx / dist) * speed;
+      vy = (dy / dist) * speed;
+      // Face towards target
+      leo.facingRight = dx >= 0;
+      setAimAngle((Math.atan2(-dy, dx) * 180) / Math.PI);
+    } else {
+      const rad = (aimAngle * Math.PI) / 180;
+      const speed = 14;
+      vx = Math.cos(rad) * speed;
+      vy = -Math.sin(rad) * speed;
+    }
 
     setBolts(prev => [
       ...prev,
-      { id: `bolt_${Date.now()}_${Math.random()}`, x: leo.x + 20, y: leo.y, vx, vy }
+      { id: `bolt_${Date.now()}_${Math.random()}`, x: originX, y: originY, vx, vy },
     ]);
   }, [aimAngle, phase]);
 
-  // ── Physics & Game Loop ────────────────────────────────────────────────
+  // ── Handle Tap on Arena (Shoots directly at tap position) ────────────────────
+  const handleArenaClick = (e) => {
+    if (phase !== 'playing') return;
+    if (!arenaRef.current) return;
+    const rect = arenaRef.current.getBoundingClientRect();
+    const tapX = e.clientX - rect.left;
+    const tapY = e.clientY - rect.top;
+
+    // Fire bolt directly at tap
+    fireBoltTowards(tapX, tapY);
+  };
+
+  // ── Gesture Controls: Swipe to move Leo, tap to reposition ──────────────────
+  const { gestureRef } = useGestureControls({
+    onSwipeLeft: () => {
+      leoRef.current.targetX = clamp(leoRef.current.x - 120, 20, arenaSize.width - LEO_HITBOX.width - 20);
+    },
+    onSwipeRight: () => {
+      leoRef.current.targetX = clamp(leoRef.current.x + 120, 20, arenaSize.width - LEO_HITBOX.width - 20);
+    },
+    enabled: phase === 'playing',
+  });
+
+  // ── Direct Orb Click/Tap (Accessibility & Fast Mobile Tap) ───────────────────
+  const handleOrbDirectPop = useCallback((orb) => {
+    if (phase !== 'playing' || orb.popped) return;
+    // Launch a bolt aimed directly at the orb
+    fireBoltTowards(orb.x + 34, orb.y + 34);
+  }, [phase, fireBoltTowards]);
+
+  // ── Keyboard controls ───────────────────────────────────────────────────────
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      const leo = leoRef.current;
+      if (['ArrowLeft', 'KeyA'].includes(e.code)) {
+        e.preventDefault();
+        leo.targetX = clamp(leo.x - 80, 20, arenaSize.width - LEO_HITBOX.width - 20);
+      }
+      if (['ArrowRight', 'KeyD'].includes(e.code)) {
+        e.preventDefault();
+        leo.targetX = clamp(leo.x + 80, 20, arenaSize.width - LEO_HITBOX.width - 20);
+      }
+      if (['Space', 'KeyF', 'Enter'].includes(e.code)) {
+        e.preventDefault();
+        fireBoltTowards();
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [arenaSize.width, fireBoltTowards]);
+
+  // ── Physics & Game Loop ─────────────────────────────────────────────────────
   useEffect(() => {
     if (phase !== 'playing') return;
 
     let lastTime = performance.now();
+    let animId;
 
     const updateGame = (now) => {
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
 
       const leo = leoRef.current;
-      const keys = keysPressed.current;
+      const { width: aWidth, height: aHeight } = arenaSize;
 
-      // Leo movement (per-frame)
-      if (keys.left) {
-        leo.vx = -LEO_SPEED;
-        leo.facingRight = false;
-      } else if (keys.right) {
-        leo.vx = LEO_SPEED;
-        leo.facingRight = true;
+      // Smoothly steer Leo towards targetX
+      const dx = leo.targetX - leo.x;
+      if (Math.abs(dx) > 4) {
+        leo.vx = Math.sign(dx) * Math.min(Math.abs(dx) * 8, LEO_SPEED * 1.5);
+        leo.x = clamp(leo.x + leo.vx * dt * 60, 20, aWidth - LEO_HITBOX.width - 20);
+        leo.facingRight = dx > 0;
       } else {
         leo.vx = 0;
+        leo.x = leo.targetX;
       }
-
-      leo.x = clamp(leo.x + leo.vx, 20, ROOM_WIDTH - LEO_HITBOX.width - 20);
 
       // Update Bolts
       setBolts(prevBolts => {
@@ -232,35 +266,32 @@ export default function EchoArenaShooter({
           const nx = b.x + b.vx * (dt * 60);
           const ny = b.y + b.vy * (dt * 60);
 
-          // Check boundary
-          if (nx < 0 || nx > ROOM_WIDTH || ny < 0) continue;
+          // Boundary check
+          if (nx < 0 || nx > aWidth || ny < 0 || ny > aHeight) continue;
 
           // Check collision with Noise Gremlin
           const distGremlin = Math.hypot(nx - (gremlin.x + 20), ny - (gremlin.y + 20));
           if (distGremlin < 28) {
-            // Gremlin absorbed bolt!
             setFeedback({ type: 'wrong', text: '👾 Noise Gremlin absorbed bolt!' });
             setTimeout(() => setFeedback(null), 1200);
-            continue; // bolt destroyed
+            continue;
           }
 
           // Check collision with orbs
           let boltUsed = false;
-          setOrbs(prevOrbs => {
-            return prevOrbs.map(orb => {
+          setOrbs(prevOrbs =>
+            prevOrbs.map(orb => {
               if (orb.popped) return orb;
-              const distOrb = Math.hypot(nx - (orb.x + 25), ny - (orb.y + 25));
-              if (distOrb < 34 && !boltUsed) {
+              const distOrb = Math.hypot(nx - (orb.x + 34), ny - (orb.y + 34));
+              if (distOrb < 38 && !boltUsed) {
                 boltUsed = true;
                 if (orb.isCorrect) {
-                  // CORRECT POP!
                   speakText(orb.label);
                   setScore(s => s + 35);
                   setFeedback({ type: 'correct', text: `🎯 "${orb.label}" matches /${currentRound.targetSound}/!` });
-                  setTimeout(() => setFeedback(null), 1500);
+                  setTimeout(() => setFeedback(null), 1400);
                   return { ...orb, popped: true };
                 } else {
-                  // WRONG POP!
                   speakText(orb.label);
                   setHearts(h => {
                     const next = Math.max(0, h - 1);
@@ -268,13 +299,13 @@ export default function EchoArenaShooter({
                     return next;
                   });
                   setFeedback({ type: 'wrong', text: `❌ "${orb.label}" does NOT match!` });
-                  setTimeout(() => setFeedback(null), 1500);
+                  setTimeout(() => setFeedback(null), 1400);
                   return { ...orb, popped: true };
                 }
               }
               return orb;
-            });
-          });
+            })
+          );
 
           if (!boltUsed) {
             nextBolts.push({ ...b, x: nx, y: ny });
@@ -287,10 +318,16 @@ export default function EchoArenaShooter({
       setOrbs(prevOrbs =>
         prevOrbs.map(orb => {
           if (orb.popped) return orb;
-          let nx = orb.x + orb.vx * (dt * 50);
+          let nx = orb.x + orb.vx * (dt * 45);
           let nvx = orb.vx;
-          if (nx < 30) { nx = 30; nvx = Math.abs(orb.vx); }
-          if (nx > ROOM_WIDTH - 80) { nx = ROOM_WIDTH - 80; nvx = -Math.abs(orb.vx); }
+          if (nx < 20) {
+            nx = 20;
+            nvx = Math.abs(orb.vx);
+          }
+          if (nx > aWidth - 75) {
+            nx = aWidth - 75;
+            nvx = -Math.abs(orb.vx);
+          }
           return { ...orb, x: nx, vx: nvx };
         })
       );
@@ -299,8 +336,14 @@ export default function EchoArenaShooter({
       setGremlin(g => {
         let nx = g.x + g.vx * g.dir;
         let ndir = g.dir;
-        if (nx < 40) { nx = 40; ndir = 1; }
-        if (nx > ROOM_WIDTH - 80) { nx = ROOM_WIDTH - 80; ndir = -1; }
+        if (nx < 30) {
+          nx = 30;
+          ndir = 1;
+        }
+        if (nx > aWidth - 70) {
+          nx = aWidth - 70;
+          ndir = -1;
+        }
         return { ...g, x: nx, dir: ndir };
       });
 
@@ -311,24 +354,23 @@ export default function EchoArenaShooter({
         animState: Math.abs(leo.vx) > 10 ? 'run' : 'idle',
       });
 
-      animFrameId.current = requestAnimationFrame(updateGame);
+      animId = requestAnimationFrame(updateGame);
     };
 
-    animFrameId.current = requestAnimationFrame(updateGame);
-    return () => cancelAnimationFrame(animFrameId.current);
-  }, [phase, gremlin, currentRound]);
+    animId = requestAnimationFrame(updateGame);
+    return () => cancelAnimationFrame(animId);
+  }, [phase, gremlin, currentRound, arenaSize]);
 
-  // Check round progression: if all correct orbs are popped
+  // Check round progression
   useEffect(() => {
     const correctRemaining = orbs.filter(o => o.isCorrect && !o.popped).length;
-    if (correctRemaining === 0 && phase === 'playing') {
+    if (correctRemaining === 0 && orbs.length > 0 && phase === 'playing') {
       if (roundIdx + 1 < rounds.length) {
         setRoundIdx(r => r + 1);
         setScore(s => s + 50);
       } else {
-        // CLEARED ALL ROUNDS
         setPhase('cleared');
-        const finalScore = score + (timeLeft * 2) + 60;
+        const finalScore = score + timeLeft * 2 + 60;
         setScore(finalScore);
         recordPersonalBest('echo_arena_shooter', finalScore);
       }
@@ -350,54 +392,57 @@ export default function EchoArenaShooter({
     return () => clearInterval(timer);
   }, [phase]);
 
-  // Mobile D-Pad handlers
-  const dpadHandlers = {
-    onLeftPress: () => { keysPressed.current.left = true; },
-    onLeftRelease: () => { keysPressed.current.left = false; },
-    onRightPress: () => { keysPressed.current.right = true; },
-    onRightRelease: () => { keysPressed.current.right = false; },
-    onJumpPress: () => setAimAngle(a => clamp(a - 12, 35, 145)),
-    onActionPress: fireBolt,
-  };
-
   const handleRetry = () => {
+    setPhase('playing');
+    setRoundIdx(0);
     setHearts(3);
     setScore(0);
     setTimeLeft(duration);
-    setRoundIdx(0);
-    setBolts([]);
-    leoRef.current = { x: 420, y: FLOOR_Y - LEO_HITBOX.height, vx: 0, vy: 0, isGrounded: true, facingRight: true };
-    setPhase('playing');
   };
 
   const handleFinalFinish = () => {
-    if (onComplete) onComplete({ score, stars: calculateStars(score, rounds.length * 70) });
-    else if (onExit) onExit();
+    const earnedStars = calculateStars(score, rounds.length * 70);
+    onComplete && onComplete(earnedStars, score);
   };
 
   return (
-    <div className="echo-arena-root" ref={gameContainerRef}>
-      {/* ── Top Objective Banner ───────────────────────────────────────── */}
+    <div className="echo-arena-root" ref={gestureRef}>
+      {/* ── Floating Exit Button (Always visible) ── */}
+      <FloatingExitBtn onExit={onExit || handleFinalFinish} label="← Chamber" />
+
+      {/* ── Top Objective Banner ── */}
       <div className="echo-objective-banner">
-        <button className="echo-listen-btn" onClick={() => speakText(`Sound: ${currentRound.targetSound}`)}>
-          <Volume2 size={20} /> Listen Sound
+        <button
+          type="button"
+          className="echo-listen-btn"
+          onClick={(e) => {
+            e.stopPropagation();
+            speakText(`Sound: ${currentRound.targetSound}`);
+          }}
+        >
+          <Volume2 size={18} /> Listen
         </button>
         <div className="echo-target-display">
-          <span className="echo-target-label">Target Sound:</span>
+          <span className="echo-target-label">Sound:</span>
           <span className="echo-target-phoneme">/{currentRound.targetSound}/</span>
         </div>
-        <div className="echo-round-tag">Round {roundIdx + 1} / {rounds.length}</div>
+        <div className="echo-round-tag">{roundIdx + 1}/{rounds.length}</div>
       </div>
 
-      {/* ── Feedback Toast ───────────────────────────────────────────── */}
+      {/* ── Feedback Toast ── */}
       {feedback && (
         <div className={`echo-feedback-toast feedback-${feedback.type}`}>
           {feedback.text}
         </div>
       )}
 
-      {/* ── Main Arena Viewport ──────────────────────────────────────── */}
-      <div className="echo-arena-viewport" style={scale < 1 ? scaleStyle : undefined}>
+      {/* ── Main Arena Viewport (100% Native Viewport) ── */}
+      <div
+        className="echo-arena-viewport"
+        ref={arenaRef}
+        onClick={handleArenaClick}
+        title="Tap anywhere to shoot bolt!"
+      >
         {/* Acoustic Wavefield Background Effect */}
         <div className="acoustic-rings-overlay" />
 
@@ -409,14 +454,11 @@ export default function EchoArenaShooter({
               key={orb.id}
               className="acoustic-orb-entity"
               style={{ left: `${orb.x}px`, top: `${orb.y}px` }}
-              onClick={() => {
-                // Also allow direct tap for accessibility
-                if (orb.isCorrect) {
-                  speakText(orb.label);
-                  setScore(s => s + 35);
-                  setOrbs(prev => prev.map(o => o.id === orb.id ? { ...o, popped: true } : o));
-                }
+              onClick={(e) => {
+                e.stopPropagation();
+                handleOrbDirectPop(orb);
               }}
+              title={`Tap to pop: ${orb.label}`}
             >
               <div className="orb-crystal-glow" />
               <span className="orb-word-text">{orb.label}</span>
@@ -437,16 +479,6 @@ export default function EchoArenaShooter({
           <span className="gremlin-tag">JAMMER</span>
         </div>
 
-        {/* Slingshot Aim Guide Line from Leo */}
-        <div
-          className="slingshot-aim-line"
-          style={{
-            left: `${leoDisplay.x + 20}px`,
-            top: `${leoDisplay.y + 10}px`,
-            transform: `rotate(${-(aimAngle - 90)}deg)`,
-          }}
-        />
-
         {/* Flying Resonance Bolts */}
         {bolts.map(b => (
           <div
@@ -458,7 +490,7 @@ export default function EchoArenaShooter({
           </div>
         ))}
 
-        {/* Leo Character */}
+        {/* Leo Character positioned on bottom floor */}
         <LeoCharacter
           x={leoDisplay.x}
           y={leoDisplay.y}
@@ -467,7 +499,12 @@ export default function EchoArenaShooter({
         />
       </div>
 
-      {/* ── HUD ──────────────────────────────────────────────────────── */}
+      {/* ── Mobile Tip ── */}
+      <div className="echo-mobile-tip">
+        <span>⚡ Tap any orb or tap screen to shoot! Swipe to steer Leo.</span>
+      </div>
+
+      {/* ── HUD ── */}
       <HUDOverlay
         hearts={hearts}
         score={score}
@@ -478,34 +515,7 @@ export default function EchoArenaShooter({
         doorLabel="Door 1 — Echo Arena Shooter"
       />
 
-      {/* ── Virtual D-Pad + Aim Controls ──────────────────────────────── */}
-      <div className="echo-controls-wrapper">
-        <VirtualDPad {...dpadHandlers} visible={phase === 'playing'} />
-        {phase === 'playing' && (
-          <div className="echo-aim-sliders">
-            <button
-              className="aim-btn"
-              onClick={() => setAimAngle(a => clamp(a + 10, 35, 145))}
-            >
-              📐 Aim Left
-            </button>
-            <button
-              className="aim-fire-btn"
-              onClick={fireBolt}
-            >
-              ⚡ FIRE BOLT
-            </button>
-            <button
-              className="aim-btn"
-              onClick={() => setAimAngle(a => clamp(a - 10, 35, 145))}
-            >
-              Aim Right 📐
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* ── Cleared Modal ────────────────────────────────────────────── */}
+      {/* ── Cleared Modal ── */}
       {phase === 'cleared' && (
         <div className="echo-cleared-modal">
           <div className="cleared-card">
@@ -525,7 +535,7 @@ export default function EchoArenaShooter({
         </div>
       )}
 
-      {/* ── Knockout Modal ───────────────────────────────────────────── */}
+      {/* ── Knockout Modal ── */}
       {phase === 'ko' && (
         <div className="echo-ko-modal">
           <div className="ko-card">
@@ -536,7 +546,7 @@ export default function EchoArenaShooter({
               <button className="retry-btn" onClick={handleRetry}>
                 <RotateCcw size={18} /> Try Again
               </button>
-              <button className="exit-btn" onClick={handleFinalFinish}>
+              <button className="exit-btn" onClick={onExit || handleFinalFinish}>
                 Retreat to Chamber
               </button>
             </div>

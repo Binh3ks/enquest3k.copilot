@@ -1,0 +1,56 @@
+.floating-exit-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #f1f5f9;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), 0 0 10px rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.floating-exit-btn:hover {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.floating-exit-btn:active {
+  transform: translateY(1px) scale(0.96);
+  background: rgba(15, 23, 42, 1);
+}
+
+.floating-exit-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.floating-exit-text {
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .floating-exit-btn {
+    top: 8px;
+    left: 8px;
+    padding: 5px 11px;
+    font-size: 0.75rem;
+    gap: 4px;
+  }
+}

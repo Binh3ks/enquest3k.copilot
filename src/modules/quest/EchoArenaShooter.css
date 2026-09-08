@@ -109,16 +109,33 @@
   box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
 }
 
-/* Arena Viewport */
+/* Arena Viewport — Native Responsive Canvas */
 .echo-arena-viewport {
   position: relative;
-  width: 900px;
-  height: 600px;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  flex: 1;
+  min-height: 380px;
   overflow: hidden;
-  margin-top: auto;
-  margin-bottom: auto;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+/* Mobile Quick Tip */
+.echo-mobile-tip {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  color: #c084fc;
+  font-weight: 700;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 /* Acoustic Background Rings */
@@ -210,55 +227,6 @@
   z-index: 20;
   box-shadow: 0 0 15px rgba(250, 204, 21, 0.9);
   pointer-events: none;
-}
-
-/* Controls Wrapper & Aim Sliders */
-.echo-controls-wrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-  z-index: 30;
-}
-
-.echo-aim-sliders {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 12px;
-  pointer-events: auto;
-}
-
-.aim-btn {
-  background: rgba(30, 27, 75, 0.85);
-  border: 1px solid #818cf8;
-  color: #e0e7ff;
-  font-size: 0.85rem;
-  font-weight: 800;
-  padding: 8px 14px;
-  border-radius: 14px;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-}
-
-.aim-fire-btn {
-  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
-  border: 2px solid #fef08a;
-  color: #422006;
-  font-size: 0.95rem;
-  font-weight: 900;
-  padding: 8px 24px;
-  border-radius: 16px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(234, 179, 8, 0.5);
-  transition: transform 0.1s ease;
-}
-
-.aim-fire-btn:active {
-  transform: scale(0.95);
 }
 
 /* Modals */

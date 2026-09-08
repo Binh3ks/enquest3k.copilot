@@ -93,11 +93,18 @@
   position: relative;
   width: 900px;
   height: 600px;
-  max-width: 100%;
-  max-height: 100%;
-  overflow: hidden;
+  flex-shrink: 0;
+  overflow: visible;
   margin-top: auto;
   margin-bottom: auto;
+  transition: transform 0.05s linear;
+}
+
+.gauntlet-gesture-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  touch-action: none;
 }
 
 .cosmic-aurora-glow {
@@ -326,6 +333,21 @@
   background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
   color: #422006;
   font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  .gauntlet-objective-banner {
+    top: 48px;
+    padding: 6px 14px;
+    gap: 8px;
+  }
+  .gauntlet-title {
+    font-size: 0.8rem;
+  }
+  .gauntlet-viewport {
+    height: 100%;
+    margin: 0;
+  }
 }
 
 @import './game-mobile.css';

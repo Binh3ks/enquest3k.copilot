@@ -7,10 +7,12 @@
 export * from './LeoPhysics';
 
 // Core components
-export { default as DungeonRoom }   from './DungeonRoom';
-export { default as LeoCharacter }  from './LeoCharacter';
-export { default as VirtualDPad }   from './VirtualDPad';
-export { default as HUDOverlay }    from './HUDOverlay';
+export { default as DungeonRoom }       from './DungeonRoom';
+export { default as LeoCharacter }      from './LeoCharacter';
+export { default as VirtualDPad }       from './VirtualDPad';
+export { default as FloatingExitBtn }   from './FloatingExitBtn';
+export { default as useGestureControls } from './useGestureControls';
+export { default as HUDOverlay }        from './HUDOverlay';
 export { default as WordCrystal }   from './WordCrystal';
 export { WordCrystalLayer }         from './WordCrystal';
 export { default as MCQBlitzPopup } from './MCQBlitzPopup';
@@ -38,6 +40,7 @@ export { default as StormShieldDefense }    from './StormShieldDefense';
 
 // Floor 4 Games (Sprint 4)
 export { default as HighwaySprint }         from './HighwaySprint';
+export { default as HighwaySprintCanvas }   from './HighwaySprintCanvas';
 export { default as SyntaxExpressRail }     from './SyntaxExpressRail';
 export { default as RiddleRunMaze }         from './RiddleRunMaze';
 

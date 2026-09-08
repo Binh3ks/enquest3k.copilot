@@ -23,9 +23,9 @@ import {
   LEO_HITBOX, INVINCIBILITY_MS, clamp, applyGravity, checkPlatformLanding
 } from './LeoPhysics';
 import LeoCharacter from './LeoCharacter';
-import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
-import useGameScale from './useGameScale';
+import FloatingExitBtn from './FloatingExitBtn';
+import useGestureControls from './useGestureControls';
 import './GrandMatrixDungeon.css';
 
 const ROOM_WIDTH = 900;
@@ -75,8 +75,20 @@ export default function GrandMatrixDungeon({
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('grand_matrix_dungeon') || 0;
 
-  // Mobile scale: fit 900×600 game world into any phone viewport
-  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
+  // Viewport tracking & responsive camera
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(ROOM_WIDTH);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth || ROOM_WIDTH);
+      }
+    };
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
 
   const rounds = useMemo(() => {
     if (vocabItems && vocabItems.length >= 3) {
@@ -348,16 +360,42 @@ export default function GrandMatrixDungeon({
     return () => clearInterval(timer);
   }, [phase]);
 
-  // D-Pad handlers
-  const dpadHandlers = {
-    onLeftPress: () => { keysPressed.current.left = true; },
-    onLeftRelease: () => { keysPressed.current.left = false; },
-    onRightPress: () => { keysPressed.current.right = true; },
-    onRightRelease: () => { keysPressed.current.right = false; },
-    onJumpPress: () => { keysPressed.current.up = true; },
-    onJumpRelease: () => { keysPressed.current.up = false; },
-    onActionPress: handleTriggerNearNode,
-  };
+  // Camera follow Leo horizontally
+  const cameraX = Math.max(0, Math.min(ROOM_WIDTH - containerWidth, leoDisplay.x - containerWidth / 2));
+
+  // Mobile gesture controls
+  const { gestureRef } = useGestureControls({
+    onTapLeft: () => {
+      keysPressed.current.left = true;
+      setTimeout(() => { keysPressed.current.left = false; }, 200);
+    },
+    onTapRight: () => {
+      keysPressed.current.right = true;
+      setTimeout(() => { keysPressed.current.right = false; }, 200);
+    },
+    onDoubleTap: () => {
+      if (leoRef.current.isGrounded) {
+        keysPressed.current.up = true;
+        setTimeout(() => { keysPressed.current.up = false; }, 200);
+      }
+    },
+    onSwipeUp: () => {
+      if (leoRef.current.isGrounded) {
+        keysPressed.current.up = true;
+        setTimeout(() => { keysPressed.current.up = false; }, 200);
+      }
+    },
+    onSwipeLeft: () => {
+      keysPressed.current.left = true;
+      setTimeout(() => { keysPressed.current.left = false; }, 300);
+    },
+    onSwipeRight: () => {
+      keysPressed.current.right = true;
+      setTimeout(() => { keysPressed.current.right = false; }, 300);
+    },
+    onTapCenter: handleTriggerNearNode,
+    enabled: phase === 'playing',
+  });
 
   const handleRetry = () => {
     setHearts(3);
@@ -374,7 +412,10 @@ export default function GrandMatrixDungeon({
   };
 
   return (
-    <div className="matrix-dungeon-root" ref={gameContainerRef}>
+    <div className="matrix-dungeon-root" ref={containerRef}>
+      {/* ── Always Accessible Floating Exit Button ─────────────────────── */}
+      <FloatingExitBtn onExit={onExit} />
+
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="matrix-dungeon-banner">
         <Grid size={22} className="matrix-banner-icon" />
@@ -392,8 +433,16 @@ export default function GrandMatrixDungeon({
         </div>
       )}
 
-      {/* ── Matrix Arena Viewport ────────────────────────────────────── */}
-      <div className="matrix-arena-viewport" style={scale < 1 ? scaleStyle : undefined}>
+      {/* ── Matrix Arena Viewport with Camera Tracking ───────────────── */}
+      <div
+        className="matrix-arena-viewport"
+        style={{
+          transform: containerWidth < ROOM_WIDTH ? `translateX(-${cameraX}px)` : 'none',
+        }}
+      >
+        {/* Mobile touch gesture capture layer */}
+        <div className="matrix-gesture-layer" ref={gestureRef} />
+
         {/* Cyber Celestial Grid Lines in background */}
         <div className="matrix-grid-bg-overlay" />
 
@@ -454,9 +503,6 @@ export default function GrandMatrixDungeon({
         floorNumber={5}
         doorLabel="Door 1 — Grand Matrix Dungeon"
       />
-
-      {/* ── Virtual D-Pad ────────────────────────────────────────────── */}
-      <VirtualDPad {...dpadHandlers} visible={phase === 'playing'} />
 
       {/* ── Cleared Modal ────────────────────────────────────────────── */}
       {phase === 'cleared' && (

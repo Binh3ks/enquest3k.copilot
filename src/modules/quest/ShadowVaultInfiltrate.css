@@ -97,6 +97,14 @@
   overflow: hidden;
 }
 
+.vault-gesture-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 35;
+  touch-action: none;
+  pointer-events: auto;
+}
+
 /* ─── Vault Grid Background ──────────────────────────────────────────────── */
 .vault-bg-grid {
   position: absolute;

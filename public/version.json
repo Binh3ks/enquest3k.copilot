@@ -1,9 +1,9 @@
 {
-  "commit": "4f23955b95833d5aab474ffc8f81c418f2b28d66",
-  "git_commit": "4f23955b95833d5aab474ffc8f81c418f2b28d66",
-  "shortCommit": "4f23955b",
-  "message": "fix(quest): tune Highway Word Runner speed to gentle 360px/s, ground upright 3D badges on track, and enable 1-tap lane controls",
-  "builtAt": "2026-09-08T02:31:12.933Z",
-  "build_timestamp": "2026-09-08T02:31:12.934Z",
+  "commit": "aba03bbb67a5550466cfad9f94fd7fb0553afb64",
+  "git_commit": "aba03bbb67a5550466cfad9f94fd7fb0553afb64",
+  "shortCommit": "aba03bbb",
+  "message": "feat(mobile): mobile-first redesign for all 15 mini-games + navigation",
+  "builtAt": "2026-09-08T03:09:37.832Z",
+  "build_timestamp": "2026-09-08T03:09:37.832Z",
   "env": "production"
 }

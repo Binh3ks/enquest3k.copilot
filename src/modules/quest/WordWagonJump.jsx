@@ -23,9 +23,9 @@ import {
   LEO_HITBOX, INVINCIBILITY_MS, clamp, applyGravity, checkPlatformLanding
 } from './LeoPhysics';
 import LeoCharacter from './LeoCharacter';
-import VirtualDPad from './VirtualDPad';
 import HUDOverlay from './HUDOverlay';
-import useGameScale from './useGameScale';
+import FloatingExitBtn from './FloatingExitBtn';
+import useGestureControls from './useGestureControls';
 import './WordWagonJump.css';
 
 const ROOM_WIDTH = 900;
@@ -74,9 +74,19 @@ export default function WordWagonJump({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('word_wagon_jump') || 0;
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 900);
 
-  // Mobile scale: fit 900×600 game world into any phone viewport
-  const { containerRef: gameContainerRef, scaleStyle, scale } = useGameScale(ROOM_WIDTH, ROOM_HEIGHT);
+  useEffect(() => {
+    const updateW = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth || window.innerWidth);
+      }
+    };
+    updateW();
+    window.addEventListener('resize', updateW);
+    return () => window.removeEventListener('resize', updateW);
+  }, []);
 
   // Process grammar rounds from props or defaults
   const sentenceRounds = useMemo(() => {
@@ -439,22 +449,45 @@ export default function WordWagonJump({
     setPhase('playing');
   };
 
-  // D-Pad handlers
-  const dpadHandlers = {
-    onLeft: () => { inputRef.current.left = true; },
-    onLeftRelease: () => { inputRef.current.left = false; },
-    onRight: () => { inputRef.current.right = true; },
-    onRightRelease: () => { inputRef.current.right = false; },
-    onUp: () => { inputRef.current.jump = true; },
-    onUpRelease: () => { inputRef.current.jump = false; },
-    onDown: () => {},
-    onDownRelease: () => {},
-    onJump: () => { inputRef.current.jump = true; },
-    onJumpRelease: () => { inputRef.current.jump = false; },
-  };
+  // Gesture Controls for WordWagonJump
+  const { gestureRef } = useGestureControls({
+    onTapLeft: () => {
+      inputRef.current.left = true;
+      setTimeout(() => { inputRef.current.left = false; }, 240);
+    },
+    onTapRight: () => {
+      inputRef.current.right = true;
+      setTimeout(() => { inputRef.current.right = false; }, 240);
+    },
+    onDoubleTap: () => {
+      inputRef.current.jump = true;
+      setTimeout(() => { inputRef.current.jump = false; }, 200);
+    },
+    onSwipeUp: () => {
+      inputRef.current.jump = true;
+      setTimeout(() => { inputRef.current.jump = false; }, 200);
+    },
+    onSwipeLeft: () => {
+      inputRef.current.left = true;
+      setTimeout(() => { inputRef.current.left = false; }, 360);
+    },
+    onSwipeRight: () => {
+      inputRef.current.right = true;
+      setTimeout(() => { inputRef.current.right = false; }, 360);
+    },
+    enabled: phase === 'playing',
+  });
+
+  const cameraX = Math.max(0, Math.min(ROOM_WIDTH - containerWidth, leoDisplay.x - containerWidth / 2));
 
   return (
-    <div className="word-wagon-container" role="region" ref={gameContainerRef} aria-label="Word Wagon Jump">
+    <div className="word-wagon-container" role="region" ref={containerRef} aria-label="Word Wagon Jump">
+      {/* ── Floating Exit Button (Always visible) ── */}
+      <FloatingExitBtn onExit={onExit || handleFinalFinish} label="← Chamber" />
+
+      {/* ── Gesture Touch Layer ── */}
+      <div ref={gestureRef} className="wagon-gesture-layer" />
+
       {/* ── Top Sentence Banner ─────────────────────────────────────── */}
       <div className="wagon-sentence-banner">
         <div className="sentence-train-badge">
@@ -495,8 +528,14 @@ export default function WordWagonJump({
         )}
       </div>
 
-      {/* ── Game World ───────────────────────────────────────────────── */}
-      <div className="wagon-world-viewport" style={scale < 1 ? scaleStyle : undefined}>
+      {/* ── Game World (Canvas/DOM Viewport with smooth Camera follow) ─ */}
+      <div
+        className="wagon-world-viewport"
+        style={{
+          width: `${ROOM_WIDTH}px`,
+          transform: containerWidth < ROOM_WIDTH ? `translateX(-${cameraX}px)` : 'none',
+        }}
+      >
         {/* Train Tracks Layer */}
         <div className="wagon-tracks-layer" style={{ top: `${TRACK_Y}px` }}>
           <div className="steel-rail-top" />
@@ -573,9 +612,6 @@ export default function WordWagonJump({
         floorNumber={1}
         doorLabel="Door 2 — Word Wagon Jump"
       />
-
-      {/* ── Virtual D-Pad ────────────────────────────────────────────── */}
-      <VirtualDPad {...dpadHandlers} visible={phase === 'playing'} />
 
       {/* ── Cleared Modal ────────────────────────────────────────────── */}
       {phase === 'cleared' && (
