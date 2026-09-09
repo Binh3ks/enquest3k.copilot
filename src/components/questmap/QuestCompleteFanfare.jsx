@@ -30,7 +30,7 @@ export default function QuestCompleteFanfare({ taskId, taskLabel, score = 100, x
   
   // Read PP hint from chronicles store
   const weeklyPP = useChroniclesStore(s => s.weeklyPP?.[`w${weekId}`] || 0);
-  const ppEarnedHint = `+${Math.min(30, Math.max(10, Math.floor(score/10)))} ⚡ Power Points for Chronicles!`;
+  const ppEarnedHint = `+${Math.min(30, Math.max(10, Math.floor(score/10)))} ⚡ Boss Energy for Super Leo!`;
 
   useEffect(() => {
     // Phase timing

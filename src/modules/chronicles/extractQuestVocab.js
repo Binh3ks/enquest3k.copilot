@@ -15,7 +15,7 @@
  *   Stub Mode (no hub data): Falls back to generateStubVocab theme banks.
  */
 
-import { generateStubVocab } from './generateStubVocab';
+import { generateStubVocab, generateStubCatapultPairs } from './generateStubVocab';
 import { sanitizeChunkText } from '../../utils/textSanitize';
 import { CURRICULUM_DEFINITIONS } from '../quest/MCQBlitzPopup';
 
@@ -288,11 +288,98 @@ function dedup(items) {
 }
 
 /**
+ * Curated Story Retell Chunks & Collocations for validated weeks (W33–W37).
+ * Conforms to Cambridge Young Learners & Linear Thinking ESL standards.
+ */
+export const WEEKLY_CATAPULT_PAIRS = {
+  33: [
+    { starter: 'Jake was walking carefully down', completion: 'the school corridor' },
+    { starter: 'Suddenly, he lost his balance on', completion: 'the wet floor' },
+    { starter: 'Jake stopped immediately and called', completion: 'the school nurse' },
+    { starter: 'The nurse arrived quickly with', completion: 'a clean bandage' },
+    { starter: 'The headmaster reminded all students', completion: 'never to run in corridors' },
+    { starter: 'Rubber shoe soles provide', completion: 'a strong grip' },
+  ],
+  34: [
+    { starter: 'One warm afternoon, a huge lion was sleeping under', completion: 'a shady tree' },
+    { starter: 'While he was sleeping, a tiny mouse ran across', completion: 'his front paw' },
+    { starter: 'The tiny mouse promised to', completion: 'help him one day' },
+    { starter: 'Two hunters trapped the lion in', completion: 'a heavy net' },
+    { starter: 'The mouse chewed through', completion: 'the thick ropes' },
+    { starter: 'The tiny mouse and mighty lion became', completion: 'best friends' },
+  ],
+  35: [
+    { starter: 'The family packed backpacks and drove to', completion: 'Pine Valley Mountain' },
+    { starter: 'While parents set up the tent, the children collected', completion: 'dry pine branches' },
+    { starter: 'In the afternoon, they went hiking along', completion: 'a crystal clear stream' },
+    { starter: 'While walking in the forest, they spotted', completion: 'two playful squirrels' },
+    { starter: 'They sat around the warm campfire and roasted', completion: 'sweet marshmallows' },
+    { starter: 'Looking up at the night sky, they saw', completion: 'bright constellations' },
+  ],
+  36: [
+    { starter: 'Young authors write and illustrate', completion: 'their own trip stories' },
+    { starter: 'Last month, Leo wrote an adventure book about', completion: 'a trip to the beach' },
+    { starter: 'He packed his backpack with', completion: 'a camera and notebook' },
+    { starter: 'When they arrived at the coast, they saw', completion: 'colourful seashells' },
+    { starter: 'Leo took beautiful photos of', completion: 'the ocean waves' },
+    { starter: 'He bound the pages together with', completion: 'a shiny ribbon' },
+  ],
+  37: [
+    { starter: 'A puppy is a living thing because it breathes', completion: 'fresh air every day' },
+    { starter: 'A green tree needs water and sunlight to', completion: 'grow bigger and survive' },
+    { starter: 'A grey rock is non-living because it does not', completion: 'breathe, grow, or eat' },
+    { starter: 'A plastic toy car is non-living because it cannot', completion: 'move by itself' },
+    { starter: 'Living things absorb nutrients to carry out', completion: 'vital life processes' },
+    { starter: 'Young scientists use clues in nature to classify', completion: 'living and non-living things' },
+  ],
+};
+
+/**
+ * Dynamically extract { starter, completion } pairs from retell_questions containing chips.
+ */
+function extractFromRetellQuestions(retellQuestions) {
+  const pairs = [];
+  for (const rq of retellQuestions) {
+    const s = rq.sentence || '';
+    const chips = rq.chips || [];
+    let matchedChip = null;
+    let matchIdx = -1;
+
+    for (const chip of chips) {
+      const idx = s.toLowerCase().indexOf(chip.toLowerCase());
+      if (idx > 6) {
+        if (!matchedChip || (chip.includes(' ') && !matchedChip.includes(' ')) || idx > matchIdx) {
+          matchedChip = chip;
+          matchIdx = idx;
+        }
+      }
+    }
+
+    if (matchedChip && matchIdx > 0) {
+      let starter = s.substring(0, matchIdx).trim();
+      let completion = s.substring(matchIdx, matchIdx + matchedChip.length).trim();
+      const artMatch = starter.match(/^(.*)\s+(the|a|an)$/i);
+      if (artMatch) {
+        starter = artMatch[1];
+        completion = `${artMatch[2].toLowerCase()} ${completion}`;
+      }
+      starter = starter.replace(/[,;:]$/, '').trim();
+      completion = completion.replace(/[,;.!?]$/, '').trim();
+      pairs.push({
+        starter: sanitizeChunkText(starter),
+        completion: sanitizeChunkText(completion),
+      });
+    }
+  }
+  return pairs;
+}
+
+/**
  * Extract paired chunks for Chunk Catapult game (starter chunk ↔ completion chunk).
- * 
- * TODO [CONTENT]: Curriculum team needs to author dedicated starter↔completion sentence chunk pairs
- * for Chunk Catapult (e.g. "Jake was walking" ↔ "down the corridor").
- * Currently falls back to week-scoped word ↔ definition pairs.
+ * Priority:
+ * 1. Curated week-specific chunks from Story Retell / CLIL (W33–W37)
+ * 2. Dynamic extraction from read.retell_questions chips
+ * 3. Fallback to week-scoped word ↔ definition pairs (to be replaced in Part 2)
  *
  * @param {object} weekData
  * @param {number} zoneIndex
@@ -300,10 +387,35 @@ function dedup(items) {
  * @returns {Array<{ starter: string, completion: string }>}
  */
 export function extractCatapultPairs(weekData, zoneIndex, weekId) {
-  const { vocabItems } = extractQuestVocab(weekData, zoneIndex, weekId);
-  return (vocabItems || []).slice(0, 6).map((v) => ({
-    starter: sanitizeChunkText(v.word),
-    completion: sanitizeChunkText(v.definition_vi || v.definition || `Meaning of ${v.word}`),
+  const wk = parseInt(weekId) || 33;
+
+  // 1. Curated Story Retell & Collocation pairs for validated weeks
+  if (WEEKLY_CATAPULT_PAIRS[wk]) {
+    return WEEKLY_CATAPULT_PAIRS[wk].map((p) => ({
+      starter: sanitizeChunkText(p.starter),
+      completion: sanitizeChunkText(p.completion),
+    }));
+  }
+
+  // 2. Dynamic extraction from weekData retell_questions if available
+  const read = weekData?.reading_hub?.read_explore 
+    || weekData?.stations?.read_explore 
+    || weekData?.read_explore 
+    || weekData?.readingHub?.read_explore;
+
+  if (Array.isArray(read?.retell_questions) && read.retell_questions.length > 0) {
+    const dynamicPairs = extractFromRetellQuestions(read.retell_questions);
+    if (dynamicPairs.length >= 4) {
+      return dynamicPairs.slice(0, 6);
+    }
+  }
+
+  // 3. Theme-aware Chunk Catapult pairs (Pre-A1 Lite Mode + 7 Chapters)
+  return generateStubCatapultPairs(wk, 6).map((p) => ({
+    starter: sanitizeChunkText(p.starter),
+    completion: sanitizeChunkText(p.completion),
   }));
 }
+
+
 

@@ -340,21 +340,13 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
                 type="button"
                 onClick={() => navigate(`/week/${weekId}/chronicles`)}
                 className="qm3d-action-btn bg-gradient-to-r from-amber-50 to-indigo-50 border border-amber-300 hover:border-amber-400 shadow-xs"
-                title="The Lexio Chronicles RPG"
+                title="Super Leo RPG"
               >
                 <span className="text-sm">🦊</span>
-                <span className="text-xs font-black text-amber-900">Chronicles</span>
+                <span className="text-xs font-black text-amber-900">Super Leo</span>
               </button>
             )}
-            <button
-              type="button"
-              onClick={() => setArcadeOpen(true)}
-              className="qm3d-action-btn"
-              title="Arcade Room"
-            >
-              <Gamepad2 size={16} className="text-indigo-600" />
-              <span className="text-xs font-black text-slate-700">Arcade</span>
-            </button>
+
             <button
               type="button"
               onClick={() => navigate('/word-treasury')}
@@ -757,7 +749,7 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-black text-slate-900 text-sm flex items-center gap-1.5">
-                      <span>Lexio Chronicles</span>
+                      <span>Super Leo</span>
                       <span className="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.5 rounded-full font-bold">RPG</span>
                     </div>
                     <p className="text-xs text-slate-500 truncate">Daily Rooms, Boss Gauntlet & Mascot Shop</p>
@@ -765,28 +757,6 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
                   <span className="text-amber-500 text-sm font-black">→</span>
                 </button>
               )}
-
-              {/* 1. Arcade Room */}
-              <button
-                type="button"
-                onClick={() => {
-                  setShowMobileQuickHub(false);
-                  setArcadeOpen(true);
-                }}
-                className="flex items-center gap-3.5 p-3 rounded-2xl bg-gradient-to-r from-indigo-50 to-blue-50 border border-indigo-200 hover:border-indigo-300 text-left transition active:scale-98 shadow-xs"
-              >
-                <div className="w-11 h-11 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-sm shrink-0">
-                  🎮
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="font-black text-indigo-950 text-sm flex items-center gap-1.5">
-                    <span>Arcade Room</span>
-                    <span className="text-[10px] bg-indigo-200 text-indigo-800 px-1.5 py-0.5 rounded-full font-bold">Games</span>
-                  </div>
-                  <p className="text-xs text-slate-500 truncate">Play English learning mini-games</p>
-                </div>
-                <span className="text-slate-400 text-sm font-black">→</span>
-              </button>
 
               {/* 2. Word Treasury */}
               <button

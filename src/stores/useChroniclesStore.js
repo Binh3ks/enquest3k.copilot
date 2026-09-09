@@ -336,6 +336,25 @@ export const useChroniclesStore = create((set, get) => ({
   markCollectibleFound: (weekId, dayIndex) =>
     get().collectItem(weekId, dayIndex),
 
+  claimSecretReward: (weekId, secretId) => {
+    const state = get();
+    const key = `w${weekId}_secret_${secretId}`;
+    if (state.collectiblesFound && state.collectiblesFound[key]) {
+      return { alreadyClaimed: true, coins: 0 };
+    }
+    const rewardCoins = 5;
+    const nextCoins = (state.lexioCoins || 0) + rewardCoins;
+    const nextCollectibles = { ...(state.collectiblesFound || {}), [key]: true };
+    set({ lexioCoins: nextCoins, collectiblesFound: nextCollectibles });
+    saveState(state.activeUserId, { ...state, lexioCoins: nextCoins, collectiblesFound: nextCollectibles });
+    return { alreadyClaimed: false, coins: rewardCoins };
+  },
+
+  isSecretClaimed: (weekId, secretId) => {
+    const key = `w${weekId}_secret_${secretId}`;
+    return Boolean(get().collectiblesFound?.[key]);
+  },
+
   // ─── Boss Access ──────────────────────────────────────────────────────────
 
   /**

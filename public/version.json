@@ -1,9 +1,9 @@
 {
-  "commit": "7573d4d1440a03152210fdc0b8fbf686ea6060e3",
-  "git_commit": "7573d4d1440a03152210fdc0b8fbf686ea6060e3",
-  "shortCommit": "7573d4d1",
-  "message": "docs: add v5.1 owner unlock walkthrough report",
-  "builtAt": "2026-09-08T11:17:37.106Z",
-  "build_timestamp": "2026-09-08T11:17:37.106Z",
+  "commit": "feccd8e3c61a0c0fa76710c02797542d30256438",
+  "git_commit": "feccd8e3c61a0c0fa76710c02797542d30256438",
+  "shortCommit": "feccd8e3",
+  "message": "feat(chronicles): v7.2 Grand Citadel Hall 3D static scene with constrained OrbitControls for inspection",
+  "builtAt": "2026-09-09T08:56:57.519Z",
+  "build_timestamp": "2026-09-09T08:56:57.519Z",
   "env": "production"
 }

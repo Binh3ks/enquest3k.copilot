@@ -37,6 +37,7 @@ import useChroniclesStore, {
 } from '../../stores/useChroniclesStore';
 import PhaserGameCanvas from '../../phaser/PhaserGameCanvas';
 import BossCombatScene from '../../phaser/scenes/BossCombatScene';
+import VoiceService from '../../services/voiceService';
 import './BossBattleScreen.css';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -67,6 +68,8 @@ const BOSS_TYPE_CONFIG = {
   1: {
     sprite:           '🧙‍♂️',
     enragedSprite:    '🧙',
+    sadSprite:        '🤕',
+    happySprite:      '😈',
     name:             'Ancient Sorcerer',
     cssClass:         'bbs-boss-sorcerer',
     attackAnim:       'bbs-attack-lightning',
@@ -81,24 +84,28 @@ const BOSS_TYPE_CONFIG = {
     ],
   },
   2: {
-    sprite:           '🗿',
-    enragedSprite:    '🗿',
-    name:             'Stone Golem',
+    sprite:           '🧛‍♂️',
+    enragedSprite:    '🦇',
+    sadSprite:        '😡',
+    happySprite:      '😈',
+    name:             'Lord of Echoes',
     cssClass:         'bbs-boss-golem',
     attackAnim:       'bbs-attack-slam',
     themeColor:       '#78716C',
-    abilityName:      '🪨 Stone Shuffle',
+    abilityName:      '🦇 Swarm of Bats',
     abilityThreshold: 30,
-    abilityDesc:      'The Golem enrages! Time limit reduced by 3 seconds!',
+    abilityDesc:      'The Vampire Lord enrages! Time limit reduced by 3 seconds!',
     introLines: [
-      "My body is built from unbreakable grammar.",
-      "Every sentence I speak shakes the ground.",
+      "Welcome to my chamber of darkness...",
+      "Your vocabulary is no match for my ancient power.",
       "You cannot outrun the rules of language!",
     ],
   },
   3: {
     sprite:           '🐉',
     enragedSprite:    '🔥',
+    sadSprite:        '🦎',
+    happySprite:      '🦖',
     name:             'Sound Dragon',
     cssClass:         'bbs-boss-dragon',
     attackAnim:       'bbs-attack-fire',
@@ -115,6 +122,8 @@ const BOSS_TYPE_CONFIG = {
   4: {
     sprite:           '🦁',
     enragedSprite:    '😾',
+    sadSprite:        '😿',
+    happySprite:      '😸',
     name:             'Cloze Sphinx',
     cssClass:         'bbs-boss-sphinx',
     attackAnim:       'bbs-attack-roar',
@@ -131,6 +140,8 @@ const BOSS_TYPE_CONFIG = {
   5: {
     sprite:           '🔮',
     enragedSprite:    '👁️',
+    sadSprite:        '💢',
+    happySprite:      '🧿',
     name:             'Memory Guardian',
     cssClass:         'bbs-boss-guardian',
     attackAnim:       'bbs-attack-pulse',
@@ -261,10 +272,14 @@ function HPBar({ label, hp, maxHp, color, icon }) {
   );
 }
 
-// ─── Boss Speech Bubble ────────────────────────────────────────────────────────
+// ─── Boss Speech Bubble Component ─────────────────────────────────────────────
 
 function BossSpeechBubble({ line, onDone }) {
   const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    if (line) VoiceService.speak(line, 'boss');
+  }, [line]);
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -341,6 +356,7 @@ export default function BossBattleScreen({
   // ── State ─────────────────────────────────────────────────────────────────
   const [phase, setPhase]               = useState('intro');   // intro|boss_speech|ability_trigger|combat|victory|defeat
   const [speechLineIdx, setSpeechLineIdx] = useState(0);
+  const [bossReaction, setBossReaction] = useState(null); // 'sad' | 'happy' | null
   const [current, setCurrent]           = useState(0);
   const [bossHP, setBossHP]             = useState(BOSS_HP_START);
   const [playerHP, setPlayerHP]         = useState(PLAYER_HP_START);
@@ -379,6 +395,13 @@ export default function BossBattleScreen({
 
   useEffect(() => {
     if (phase !== 'combat' || feedback !== null) return;
+    
+    // Speak the question text
+    const currentQ = questions[current];
+    if (currentQ) {
+      VoiceService.speak(currentQ.prompt, 'boss');
+    }
+
     setTimeLeft(effectiveTimeLimit);
     timerRef.current = setInterval(() => {
       setTimeLeft(t => {
@@ -390,7 +413,7 @@ export default function BossBattleScreen({
         return t - 1;
       });
     }, 1000);
-    return () => clearInterval(timerRef.current);
+    return () => clearTimeout(timerRef.current);
   }, [phase, current, feedback, effectiveTimeLimit]); // eslint-disable-line
 
   // ── Trigger special ability ────────────────────────────────────────────────
@@ -422,6 +445,12 @@ export default function BossBattleScreen({
     setFeedback(isRight ? 'right' : 'wrong');
 
     if (isRight) {
+      setBossReaction('sad');
+      VoiceService.speak(`<speak>
+  <prosody pitch="-4st" rate="75%">Arghh! <break time="500ms"/></prosody>
+  <prosody pitch="+2st" rate="90%">Uh... <break time="200ms"/> No... </prosody>
+  <prosody pitch="-1st" rate="80%"><break time="400ms"/> *Sigh*... You actually managed to hit me?</prosody>
+</speak>`, 'boss');
       setCorrectCount(c => c + 1);
       const newBossHP = Math.max(0, bossHP - DAMAGE_TO_BOSS);
       setBossHP(newBossHP);
@@ -438,6 +467,11 @@ export default function BossBattleScreen({
         return;
       }
     } else {
+      setBossReaction('happy');
+      VoiceService.speak(`<speak>
+  <prosody pitch="-2st" rate="90%">Mwahahaha! <break time="300ms"/> Ha. Ha. Ha. Ha!</prosody>
+  <prosody pitch="+1st" rate="105%">You dare challenge me? Your points are gone! <prosody pitch="-3st" rate="85%">Hahaha!</prosody></prosody>
+</speak>`, 'boss');
       // Boss attacks!
       setShowAttack(true);
       setTimeout(() => setShowAttack(false), 600);
@@ -456,6 +490,7 @@ export default function BossBattleScreen({
 
     // Next question after feedback
     setTimeout(() => {
+      setBossReaction(null);
       setFeedback(null);
       setChosen(null);
       const next = current + 1;
@@ -495,7 +530,7 @@ export default function BossBattleScreen({
     return q.options;
   }, [bossType, mirrorActive]);
 
-  // ─── INTRO ────────────────────────────────────────────────────────────────
+  // ─── Setup ────────────────────────────────────────────────────────────────
   if (phase === 'intro') {
     const tierEmoji = tier === 'gold' ? '🥇' : tier === 'silver' ? '🥈' : '🥉';
     const tierLabel = tier === 'gold' ? 'Gold Challenger' : tier === 'silver' ? 'Silver Challenger' : 'Bronze Challenger';
@@ -519,7 +554,7 @@ export default function BossBattleScreen({
 
           <div className="bbs-tier-badge">
             {tierEmoji} You enter as <strong>{tierLabel}</strong>
-            <div className="bbs-tier-sub">PP: {pp} — {TOTAL_QUESTIONS} questions await</div>
+            <div className="bbs-tier-sub">⚡ Boss Energy: {pp} — {TOTAL_QUESTIONS} questions await</div>
           </div>
 
           <div className="bbs-tier-perks">
@@ -606,12 +641,12 @@ export default function BossBattleScreen({
     return (
       <div className={`bbs-screen bbs-theme-${chapter.theme}`}>
         <div className="bbs-defeat">
-          <div className="bbs-defeat-boss-sprite">{config.sprite}</div>
+          <div className="bbs-defeat-boss-sprite">{config.happySprite}</div>
           <div className="bbs-defeat-icon">💔</div>
           <h1 className="bbs-defeat-title">Defeated...</h1>
           <p className="bbs-defeat-msg">
             <span style={{ color: config.themeColor }}>{config.name}</span> was too powerful this time.
-            <br />Your PP is safe — practice more and return stronger! 🦊
+            <br />Your ⚡ Boss Energy is safe — practice more and return stronger! 🦊
           </p>
           <div className="bbs-defeat-stats">
             <div className="bbs-stat-pill">🎯 {correctCount}/{questions.length} correct</div>
@@ -682,7 +717,17 @@ export default function BossBattleScreen({
   const options    = getOptions(q);
   const pct        = (timeLeft / effectiveTimeLimit) * 100;
   const timerColor = pct > 60 ? '#10b981' : pct > 30 ? '#f59e0b' : '#ef4444';
-  const currentSprite = isEnraged ? config.enragedSprite : config.sprite;
+  
+  let currentSprite = isEnraged ? config.enragedSprite : config.sprite;
+  if (bossReaction === 'sad') currentSprite = config.sadSprite;
+  if (bossReaction === 'happy') currentSprite = config.happySprite;
+
+  // Calculate dynamic boss scale based on HP advantage
+  // Start at scale 1.0, scales down to 0.5 when bossHP is 0
+  // Scales up to 1.3 when playerHP is 0
+  const bossHP_ratio = bossHP / BOSS_HP_START;
+  const playerHP_ratio = playerHP / PLAYER_HP_START;
+  const dynamicScale = 0.8 + (0.5 * bossHP_ratio) + (0.3 * (1 - playerHP_ratio));
 
   return (
     <div className={`bbs-screen bbs-theme-${chapter.theme} ${fogActive ? 'bbs-fog-active' : ''}`}>
@@ -710,7 +755,10 @@ export default function BossBattleScreen({
       </div>
 
       {/* Boss sprite */}
-      <div className={`bbs-boss-sprite combat ${config.cssClass} ${bossShake ? 'shake' : ''} ${isEnraged ? 'enraged' : ''}`}>
+      <div 
+        className={`bbs-boss-sprite combat ${config.cssClass} ${bossShake ? 'shake' : ''} ${isEnraged ? 'enraged' : ''}`}
+        style={{ transform: `scale(${dynamicScale})`, transition: 'transform 0.5s ease-out' }}
+      >
         {currentSprite}
       </div>
 
@@ -742,8 +790,24 @@ export default function BossBattleScreen({
 
       {/* Question prompt */}
       <div className="bbs-question-box">
-        <p className="bbs-question-text">{q.prompt}</p>
-        {q.hint && <span className="bbs-question-hint">💡 {q.hint}</span>}
+        <h2 className="bbs-question-text">
+          <button 
+            className="bbs-replay-audio"
+            onClick={() => VoiceService.speak(q.prompt, 'boss')}
+            style={{ 
+              background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.2rem', 
+              marginRight: '12px', verticalAlign: 'middle',
+              filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.4))'
+            }}
+            title="Listen again"
+          >
+            🔊
+          </button>
+          {q.prompt}
+        </h2>
+        <div className="bbs-question-hint">
+          💡 {q.hint}
+        </div>
       </div>
 
       {/* Player shake / damage overlay */}

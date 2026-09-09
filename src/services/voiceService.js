@@ -133,6 +133,8 @@ const GOOGLE_TO_DEEPGRAM_VOICE = {
   // Male voices
   'en-US-Neural2-B': 'aura-helios-en',    // Clean, clear, friendly (mindmap, ask-ai — week 16+)
   'en-US-Neural2-D': 'aura-orion-en',     // Deep, authoritative (legacy narration)
+  'en-GB-Neural2-B': 'aura-orion-en',     // Deep male / Boss
+  'en-GB-Wavenet-D': 'aura-orion-en',     // Deep male / Boss Wavenet
   'en-US-Neural2-J': 'aura-zeus-en',      // Energetic, engaging (questions)
   'en-US-Neural2-A': 'aura-orion-en',     // Fallback male
   'en-US-Neural2-I': 'aura-zeus-en',      // Fallback energetic
@@ -154,6 +156,7 @@ const STATION_VOICE_KEY = {
   'mindmap_speaking': 'mindmap',
   'ai_tutor': null,  // Dynamic content, uses saved voice preference
   'gamehub': 'questions',
+  'boss': 'boss',
   'freetalk': null,  // Dynamic content
 };
 
@@ -254,7 +257,8 @@ function getVoiceConfigForWeek(weekNumber) {
     dictation: 'en-US-Neural2-F',
     shadowing: 'en-US-Journey-F',
     questions: 'en-US-Neural2-D',
-    mindmap: 'en-US-Neural2-D'
+    mindmap: 'en-US-Neural2-D',
+    boss: 'en-GB-Wavenet-D'
   };
 }
 
@@ -1199,12 +1203,16 @@ export const VoiceService = {
     }
 
     const fetchPromise = (async () => {
+      const isSSML = text.trim().startsWith('<speak>');
+      const langCode = safeVoice.startsWith('en-GB') ? 'en-GB' : 'en-US';
+      const inputObj = isSSML ? { ssml: text } : { text };
+
       const res = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          input: { text },
-          voice: { languageCode: 'en-US', name: safeVoice },
+          input: inputObj,
+          voice: { languageCode: langCode, name: safeVoice },
           audioConfig: { audioEncoding: 'MP3' }
         })
       });

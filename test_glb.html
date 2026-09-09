@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><body>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+  const loader = new GLTFLoader();
+  const files = [
+    'tower-square-arch.glb',
+    'wall-doorway.glb',
+    'gate.glb',
+    'metal-gate.glb',
+    'stairs-stone.glb',
+    'wall-pillar.glb',
+    'wall-half.glb'
+  ];
+
+  async function check() {
+    for (const f of files) {
+      try {
+        const gltf = await loader.loadAsync('http://localhost:5173/models/kenney_castle/Models/GLB%20format/' + f);
+        const box = new THREE.Box3().setFromObject(gltf.scene);
+        const size = new THREE.Vector3();
+        box.getSize(size);
+        
+        const meshes = [];
+        gltf.scene.traverse(c => { if(c.isMesh) meshes.push(c.name); });
+        
+        console.log(`FILE: ${f}`);
+        console.log(`- Size: X=${size.x.toFixed(2)}, Y=${size.y.toFixed(2)}, Z=${size.z.toFixed(2)}`);
+        console.log(`- Meshes: ${meshes.join(', ')}`);
+      } catch(e) {
+        console.log(`FILE: ${f} - ERROR: ${e.message}`);
+      }
+    }
+    console.log("DONE");
+  }
+  check();
+</script>
+</body></html>

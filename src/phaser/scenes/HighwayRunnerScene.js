@@ -368,7 +368,7 @@ export default class HighwayRunnerScene {
       color: '#e2e8f0',
     }).setOrigin(0.5).setDepth(201);
 
-    this.add.text(width / 2, height / 2 + 20, `Reward: ★${earnedStars} Stars  •  +${earnedPP} Power Points`, {
+    this.add.text(width / 2, height / 2 + 20, `Reward: ★${earnedStars} Stars  •  +${earnedPP} ⚡ Boss Energy`, {
       fontFamily: 'system-ui, -apple-system, sans-serif',
       fontSize: '13px',
       fontStyle: 'bold',

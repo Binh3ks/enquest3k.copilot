@@ -71,7 +71,7 @@ export default function DoorUnlockCeremony({ dayIndex, weekId, onDone }) {
       {/* PP earned */}
       {phase === 'reveal' && (
         <div className="duc-pp-earned">
-          ⚡ Power Points earned this zone → Boss Chamber closer!
+          ⚡ Boss Energy earned this zone → Boss Chamber closer!
         </div>
       )}
 

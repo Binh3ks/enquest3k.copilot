@@ -189,7 +189,7 @@ export default function ChapterFragmentPanel({ weekNumber = 33 }) {
             </p>
 
             <p className="text-sm text-slate-300 leading-relaxed mb-6">
-              The sacred 15-question supreme trial against the Chapter Guardian is being forged in Phase 5! Continue mastering daily rooms and collecting Power Points to prepare your Nova!
+              The sacred 15-question supreme trial against the Chapter Guardian is being forged in Phase 5! Continue mastering daily rooms and charging ⚡ Boss Energy to prepare your Nova!
             </p>
 
             <button

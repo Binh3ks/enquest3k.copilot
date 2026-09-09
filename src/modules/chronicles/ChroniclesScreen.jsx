@@ -18,6 +18,7 @@ import { getWeekChroniclesConfig } from '../../data/chronicles';
 const ChroniclesWorldMap = React.lazy(() => import('./ChroniclesWorldMap'));
 const DailyRoomScreen    = React.lazy(() => import('./DailyRoomScreen'));
 const BossBattleScreen   = React.lazy(() => import('./BossBattleScreen'));
+const SecretChamberScreen = React.lazy(() => import('./SecretChamberScreen'));
 
 // NPC dialogues per day, week 33 (pilot) — later move to data file
 const W33_NPC_DIALOGUES = [
@@ -91,8 +92,20 @@ export default function ChroniclesScreen() {
   const weekNumber = parseInt(weekId) || 33;
   const navigate = useNavigate();
 
-  const [screen, setScreen] = useState('map'); // 'map' | 'room' | 'boss'
-  const [activeDayIndex, setActiveDayIndex] = useState(null);
+  const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const initialRoomParam = urlParams?.get('room');
+
+  const [screen, setScreen] = useState(() => {
+    if (initialRoomParam !== null && initialRoomParam !== undefined) return 'room';
+    return 'map';
+  }); // 'map' | 'room' | 'boss'
+  const [activeDayIndex, setActiveDayIndex] = useState(() => {
+    if (initialRoomParam !== null && initialRoomParam !== undefined) {
+      const parsed = parseInt(initialRoomParam);
+      return !isNaN(parsed) ? parsed : 0;
+    }
+    return null;
+  });
   const [weekData, setWeekData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -108,7 +121,6 @@ export default function ChroniclesScreen() {
   const weeklyPP = useChroniclesStore(s => s.weeklyPP[`w${weekNumber}`] || 0);
   const { currentUser } = useUserStore();
   const BYPASS_ROLES = ['owner', 'super_admin', 'admin', 'teacher', 'team_leader', 'center_director'];
-  const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
   const isOwnerBypass = Boolean(
     BYPASS_ROLES.includes(currentUser?.role) ||
     currentUser?.displayName === 'Bình' ||
@@ -180,8 +192,20 @@ export default function ChroniclesScreen() {
     );
   }
 
-  // ROOM SCREEN
+  // ROOM SCREEN (Daily Chambers or Secret Vaults)
   if (screen === 'room' && activeDayIndex !== null) {
+    if (activeDayIndex >= 5) {
+      return (
+        <Suspense fallback={<div className="cwm-loading-fallback" style={{ minHeight: '100vh', background: '#0a0d18', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a78bfa' }}>Loading Secret Chamber...</div>}>
+          <SecretChamberScreen
+            weekNumber={weekNumber}
+            doorIndex={activeDayIndex}
+            onExit={() => setScreen('map')}
+            onBackToMap={() => setScreen('map')}
+          />
+        </Suspense>
+      );
+    }
     const weekConfig = getWeekChroniclesConfig(weekNumber);
     const floorConfig = weekConfig?.floors?.[activeDayIndex];
     const npcDialogue = floorConfig?.npcDialogue || (weekNumber === 33

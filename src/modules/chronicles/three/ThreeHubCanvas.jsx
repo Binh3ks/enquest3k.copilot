@@ -124,15 +124,14 @@ export default function ThreeHubCanvas({
             setErrorMessage(err?.message || String(err));
           }}
         >
-          {/* Isometric-Influenced Perspective Camera */}
+          {/* Camera: FOV=52, Z=22 (xa hơn để thấy cửa ở Ground Floor) */}
           <PerspectiveCamera
             makeDefault
-            fov={43}
-            position={[0, 9.2, 12.0]}
-            rotation={[-0.56, 0, 0]}
+            fov={52}
+            position={[0, 6.5, 22]}
           />
 
-          {/* Free Inspection Orbit Camera with Constraints */}
+          {/* Free Inspection Orbit Camera */}
           <OrbitControls
             makeDefault
             enableRotate={true}
@@ -140,60 +139,20 @@ export default function ThreeHubCanvas({
             enableZoom={true}
             enableDamping={true}
             dampingFactor={0.06}
-            minPolarAngle={0.2}
-            maxPolarAngle={Math.PI / 2 - 0.08}
-            minAzimuthAngle={-Math.PI / 2.2}
-            maxAzimuthAngle={Math.PI / 2.2}
-            minDistance={4.5}
-            maxDistance={22}
-            target={[0, 1.6, -1.8]}
+            minPolarAngle={0.05}
+            maxPolarAngle={Math.PI / 2 - 0.05}
+            minAzimuthAngle={-Math.PI / 1.5}
+            maxAzimuthAngle={Math.PI / 1.5}
+            minDistance={1.8}
+            maxDistance={25}
+            target={[0, 2.5, -2.0]}
           />
 
           <SceneManager sceneRef={sceneRef} glRef={glRef}>
-            <CitadelHallScene
-              weekNumber={weekNumber}
-              weeklyPP={weeklyPP}
-              bossTier={bossTier}
-              isBossDefeated={isBossDefeated}
-              isOwnerBypass={isOwnerBypass}
-              roomStatuses={roomStatuses}
-              onPortalEnter={onPortalEnter}
-            />
+            <CitadelHallScene roomStatuses={roomStatuses} onPortalEnter={onPortalEnter} />
           </SceneManager>
         </Canvas>
       )}
-
-      {/* 3D Hub Quick Instructions Overlay */}
-      <div
-        className="three-hub-overlay-badge"
-        style={{
-          position: 'absolute',
-          bottom: '12px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: 'rgba(15, 23, 42, 0.85)',
-          border: '1px solid rgba(245, 158, 11, 0.5)',
-          backdropFilter: 'blur(8px)',
-          borderRadius: '20px',
-          padding: '6px 18px',
-          color: '#fef08a',
-          fontSize: '0.8rem',
-          fontWeight: 600,
-          pointerEvents: 'none',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.5)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-        }}
-      >
-        <span>🏰 Grand Citadel Hall 3D (Khung cảnh tĩnh)</span>
-        <span style={{ color: '#94a3b8' }}>•</span>
-        <span style={{ color: '#38bdf8' }}>🖱️ Chuột trái: Xoay</span>
-        <span style={{ color: '#94a3b8' }}>•</span>
-        <span style={{ color: '#34d399' }}>📜 Cuộn: Zoom</span>
-        <span style={{ color: '#94a3b8' }}>•</span>
-        <span style={{ color: '#fbbf24' }}>🖱️ Chuột phải: Kéo (Pan)</span>
-      </div>
     </div>
   );
 }

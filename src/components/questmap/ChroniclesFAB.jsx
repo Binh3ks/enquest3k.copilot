@@ -28,7 +28,7 @@ export default function ChroniclesFAB({ weekId }) {
       id="chronicles-fab-btn"
       type="button"
       onClick={handleClick}
-      title={`The Lexio Chronicles RPG — ${weeklyPP} Power Points`}
+      title={`Super Leo — ${weeklyPP} ⚡ Boss Energy`}
       style={{
         position: 'fixed',
         bottom: 24,

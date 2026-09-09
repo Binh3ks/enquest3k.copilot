@@ -36,7 +36,9 @@ import CollectorPopup          from './CollectorPopup';
 import HallOfFameModal         from './HallOfFameModal';
 import PhaserGameCanvas        from '../../phaser/PhaserGameCanvas';
 import HighwayRunnerScene      from '../../phaser/scenes/HighwayRunnerScene';
-import ChunkCatapultScene      from '../../phaser/scenes/ChunkCatapultScene';
+import ChunkCatapultCanvas     from './games/ChunkCatapultCanvas';
+import useDailyQuestStore      from '../../stores/useDailyQuestStore';
+import { QUEST_SCHEDULE }      from '../../config/questSchedule';
 import './DailyRoomScreen.css';
 
 // ─── NPC Default Dialogue (fallback if none provided) ─────────────────────
@@ -52,9 +54,9 @@ const DEFAULT_NPC = {
 
 // ─── Door Status Icons ─────────────────────────────────────────────────────
 
-function DoorIcon({ doorIndex, status, stars, doorDef }) {
-  const icons = ['🔵', '🟡', '🔴'];
-  const labels = ['VOCAB DOOR', 'GRAMMAR DOOR', 'INTEGRATION DOOR'];
+function TreasureChestIcon({ doorIndex, status, stars, doorDef }) {
+  const icons = ['🧰', '💎', '🏺'];
+  const labels = ['VOCAB CHEST', 'GRAMMAR CHEST', 'INTEGRATION CHEST'];
   const gameIcon = doorDef?.icon || icons[doorIndex];
   const gameName = doorDef?.gameName || doorDef?.label || labels[doorIndex];
   return (
@@ -68,6 +70,7 @@ function DoorIcon({ doorIndex, status, stars, doorDef }) {
         ))}
       </div>
       {status === 'cleared' && <div className="dr-door-cleared">✓</div>}
+      {status === 'locked' && <div className="dr-door-lock">🔒</div>}
     </div>
   );
 }
@@ -119,10 +122,40 @@ export default function DailyRoomScreen({
     setDoorStars(saved);
   }, [weekNumber, dayIndex]);
 
-  // All 3 doors are open for the student to explore freely in any order
+  // URL params / Owner bypass check
+  const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const isOwnerBypass = Boolean(
+    typeof window !== 'undefined' && (
+      localStorage.getItem('arcade_owner_bypass') === 'true' ||
+      urlParams?.get('bypass') === 'true' ||
+      urlParams?.get('owner') === 'true'
+    )
+  );
+
+  // Micro-reward Gating: Count quests completed in this day's zone
+  const daySchedule = QUEST_SCHEDULE[dayIndex] || QUEST_SCHEDULE[0];
+  const completedQuestCount = useMemo(() => {
+    if (isOwnerBypass) return 3;
+    const isQuestDone = useDailyQuestStore.getState().isQuestCompleted;
+    return daySchedule.quests.filter((q) => isQuestDone(weekNumber, q.id)).length;
+  }, [weekNumber, dayIndex, phase, isOwnerBypass, daySchedule]);
+
+  // Number of unique doors with > 0 stars in this room
+  const clearedDoorsCount = doorStars.filter((s) => s > 0).length;
+
+  /**
+   * Micro-reward Door Gating Logic:
+   * 1. If door is already cleared (stars > 0) -> 'cleared' (Replay always open)
+   * 2. If Owner Bypass is active -> 'active'
+   * 3. If completedQuestCount > clearedDoorsCount -> student has an unused key,
+   *    so ANY uncleared door is 'active' to choose!
+   * 4. Otherwise -> 'locked' (Requires completing another daily quest on the map)
+   */
   function getDoorStatus(idx) {
     if (doorStars[idx] > 0) return 'cleared';
-    return 'active';
+    if (isOwnerBypass) return 'active';
+    if (completedQuestCount > clearedDoorsCount) return 'active';
+    return 'locked';
   }
 
   // ── Handle door complete ──────────────────────────────────────────────────
@@ -269,44 +302,21 @@ export default function DailyRoomScreen({
       case 'phonics_bubble':
         return <EchoArenaShooter duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
-      case 'chunk_catapult':
+      case 'chunk_catapult': {
         const catapultPairs = extractCatapultPairs(weekData, dayIndex, weekNumber);
         return (
-          <div style={{ position: 'relative', width: '100vw', height: '100vh', background: '#0a0d18' }}>
-            <button
-              onClick={handleExit}
-              style={{
-                position: 'absolute',
-                top: 16,
-                left: 16,
-                zIndex: 20,
-                background: 'rgba(30, 27, 75, 0.85)',
-                color: '#e2e8f0',
-                border: '1px solid #6366f1',
-                borderRadius: '8px',
-                padding: '6px 14px',
-                fontSize: '13px',
-                fontWeight: 600,
-                cursor: 'pointer',
-              }}
-            >
-              ← Exit Room
-            </button>
-            <PhaserGameCanvas
-              sceneClass={ChunkCatapultScene}
-              sceneData={{
-                pairs: catapultPairs,
-                duration: door.duration || 90,
-                weekNumber,
-              }}
-              onSceneEvent={(name, payload) => {
-                if (name === 'game_complete') {
-                  commonProps.onComplete(payload.stars || 3, payload.score || 50, 1);
-                }
-              }}
-            />
-          </div>
+          <ChunkCatapultCanvas
+            pairs={catapultPairs}
+            duration={door.duration || 90}
+            weekNumber={weekNumber}
+            doorIndex={1}
+            onExit={handleExit}
+            onComplete={(stars, score, dIdx) => {
+              commonProps.onComplete(stars, score, dIdx);
+            }}
+          />
         );
+      }
 
       case 'meteor_smasher':
         return <StormShieldDefense duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
@@ -386,6 +396,21 @@ export default function DailyRoomScreen({
   // ═══════════════════════════════════════════════════════════════════════════
 
   // ACTIVE MINI-GAME (Fullscreen immersive gameplay with game's native HUD & FloatingExitBtn)
+  if (dayIndex >= 5) {
+    return (
+      <div className={`daily-room-screen ${themeClass}`}>
+        <div className="dr-room-clear" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+          <div style={{ fontSize: '4rem', marginBottom: '20px' }}>🕸️</div>
+          <h2 className="dr-clear-title" style={{ color: '#94a3b8' }}>Nothing's here!</h2>
+          <p style={{ color: '#64748b', marginBottom: '30px' }}>This chamber is completely empty...</p>
+          <button className="dr-exit-btn" onClick={handleExit} style={{ marginTop: '20px' }}>
+            ← Return to Hall
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   if (phase.startsWith('door_') && activeDoor !== null) {
     return (
       <div className={`daily-room-screen ${themeClass} dr-in-game-fullscreen`}>
@@ -452,7 +477,7 @@ export default function DailyRoomScreen({
               <span className="dr-stat-value">{totalStars}/9</span>
             </div>
             <div className="dr-stat">
-              <span className="dr-stat-label">Power Points</span>
+              <span className="dr-stat-label">⚡ Boss Energy</span>
               <span className="dr-stat-value">+{totalStars * 10} ⚡</span>
             </div>
             <div className="dr-stat">
@@ -505,7 +530,7 @@ export default function DailyRoomScreen({
           >
             🏆 Hall of Fame
           </button>
-          <div className="dr-pp-badge">⚡ {totalStars * 10} PP</div>
+          <div className="dr-pp-badge">⚡ {totalStars * 10} Boss Energy</div>
         </div>
       </div>
 
@@ -533,9 +558,15 @@ export default function DailyRoomScreen({
       <div className="dr-instruction-banner">
         <div className="dr-ib-icon">🦊</div>
         <div className="dr-ib-text">
-          <div className="dr-ib-title">Discover 3 distinct challenge doors on this floor:</div>
+          <div className="dr-ib-title">
+            {completedQuestCount > clearedDoorsCount
+              ? `🗝️ Key ready! Choose any chest to unlock (${clearedDoorsCount}/3 cleared)`
+              : clearedDoorsCount === 3
+                ? '🏆 All 3 chests cleared! Floor completed!'
+                : `🔒 Complete Quest ${clearedDoorsCount + 1} on the Map to earn your next Key! (${completedQuestCount}/3 Quests done)`}
+          </div>
           <div className="dr-ib-sub">
-            🔵 Door 1: {doorDefs[0]?.gameName} • 🟡 Door 2: {doorDefs[1]?.gameName} • 🔴 Door 3: {doorDefs[2]?.gameName}
+            🧰 Chest 1: {doorDefs[0]?.gameName} • 💎 Chest 2: {doorDefs[1]?.gameName} • 🏺 Chest 3: {doorDefs[2]?.gameName}
           </div>
         </div>
       </div>
@@ -546,13 +577,15 @@ export default function DailyRoomScreen({
           const status = getDoorStatus(idx);
           return (
             <div key={idx} className="dr-door-slot">
-              <DoorIcon doorIndex={idx} status={status} stars={doorStars[idx]} doorDef={door} />
+              <TreasureChestIcon doorIndex={idx} status={status} stars={doorStars[idx]} doorDef={door} />
               <button
                 className={`dr-door-enter-btn ${status}`}
                 onClick={() => enterDoor(idx)}
+                disabled={status === 'locked'}
               >
-                {status === 'active' && '⚡ Enter Challenge'}
+                {status === 'active' && '🔑 Open Chest'}
                 {status === 'cleared' && '↺ Replay'}
+                {status === 'locked' && '🔒 Need Key'}
               </button>
             </div>
           );
@@ -561,7 +594,7 @@ export default function DailyRoomScreen({
 
       {/* Room description */}
       <div className="dr-room-desc">
-        <p>Clear all 3 challenge doors to meet the Chamber Guardian and complete this floor!</p>
+        <p>Unlock all 3 treasure chests to meet the Chamber Guardian and complete this floor!</p>
       </div>
 
       {/* Hall of Fame Modal */}

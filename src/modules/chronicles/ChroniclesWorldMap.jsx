@@ -137,6 +137,26 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
         </div>
         <div className="cwm-header-actions" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <button
+            onClick={() => navigate(`/week/${weekNumber}/hub/1`)}
+            className="cwm-back-btn"
+            style={{
+              padding: '6px 12px',
+              borderRadius: '20px',
+              border: '1px solid #4b5563',
+              background: 'rgba(75, 85, 99, 0.2)',
+              color: '#d1d5db',
+              fontSize: '0.8rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            ⬅️ Exit to Hub
+          </button>
+          <button
             className={`cwm-owner-badge ${isOwnerBypass ? 'unlocked' : ''}`}
             onClick={toggleBypass}
             title="Owner & Dev: Click to toggle unlocking all rooms & Boss for testing"
@@ -167,7 +187,7 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
           className={`cwm-tab-btn ${activeTab === 'map' ? 'active' : ''}`}
           onClick={() => setActiveTab('map')}
         >
-          <span>🗺️ Map</span>
+          <span>🏰 Citadel</span>
         </button>
         <button
           className={`cwm-tab-btn ${activeTab === 'shop' ? 'active' : ''}`}
@@ -199,7 +219,7 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
       {/* Power Points Bar */}
       <div className="cwm-pp-section">
         <div className="cwm-pp-label">
-          <span>⚡ Power Points</span>
+          <span>⚡ Boss Energy</span>
           <span className="cwm-pp-value">{effectivePP} / {MAX_PP_PER_WEEK}</span>
         </div>
         <div className="cwm-pp-bar">
@@ -219,7 +239,7 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
           {isOwnerBypass
             ? '👑 Owner Mode Active: All 5 Chambers & Boss Gate Unlocked for Testing!'
             : bossTier === 'none'
-              ? `Earn ${BOSS_ACCESS_THRESHOLDS.bronze - weeklyPP} more ⚡ to unlock Boss Chamber`
+              ? `Earn ${BOSS_ACCESS_THRESHOLDS.bronze - weeklyPP} more ⚡ Boss Energy to unlock Boss Chamber`
               : `Boss unlocked at ${bossTier} tier!`}
         </div>
       </div>
@@ -233,13 +253,15 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
       <div
         className="cwm-phaser-hub-wrapper"
         style={{
-          width: '100%',
-          maxWidth: '800px',
-          height: '500px',
+          width: '100vw',
+          marginLeft: 'calc(-50vw + 50%)',
+          height: '65vh',
+          minHeight: '500px',
           margin: '0 auto 20px auto',
-          borderRadius: '16px',
+          borderRadius: '0', // Full width shouldn't have border radius on sides
           overflow: 'hidden',
-          border: '2px solid rgba(99, 102, 241, 0.5)',
+          borderTop: '2px solid rgba(99, 102, 241, 0.5)',
+          borderBottom: '2px solid rgba(99, 102, 241, 0.5)',
           boxShadow: '0 12px 36px rgba(0,0,0,0.6)',
         }}
       >
@@ -254,7 +276,7 @@ export default function ChroniclesWorldMap({ weekNumber, onEnterRoom, onEnterBos
             chamberName: m.chamberName,
             chamberEn: m.chamberEn,
             icon: m.icon,
-            unlocked: isOwnerBypass || idx === 0 || isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx),
+            unlocked: isOwnerBypass || idx === 0 || isRoomUnlocked(weekNumber, idx) || isDayComplete(weekNumber, idx) || useDailyQuestStore.getState().isDayUnlocked(weekNumber, idx),
             stars: getRoomStars(weekNumber, idx),
             completed: getRoomStars(weekNumber, idx) > 0,
           }))}

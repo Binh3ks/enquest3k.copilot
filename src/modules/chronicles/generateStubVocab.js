@@ -170,6 +170,76 @@ const THEME_GRAMMAR = {
   ],
 };
 
+// ─── Theme Catapult Pairs (Curriculum Approved) ──────────────────────────────
+
+export const LITE_CATAPULT_PAIRS = [
+  { starter: 'The cute cat sat', completion: 'on the mat' },
+  { starter: 'Children like to play', completion: 'in the park' },
+  { starter: 'She is wearing', completion: 'a red hat' },
+  { starter: 'He puts his books in', completion: 'a school bag' },
+  { starter: 'The yellow sun shines', completion: 'in the sky' },
+  { starter: 'The happy dog is', completion: 'running fast' },
+];
+
+export const THEME_CATAPULT_PAIRS = {
+  library: [
+    { starter: 'The famous author wrote', completion: 'a wonderful story' },
+    { starter: 'The friendly librarian organized', completion: 'books on the shelf' },
+    { starter: 'Read the chapter title on', completion: 'the front cover' },
+    { starter: 'Look up difficult words in', completion: 'the back index' },
+    { starter: 'She borrowed three novels from', completion: 'the quiet library' },
+    { starter: 'A fiction story is about', completion: 'imaginary characters' },
+  ],
+  ocean: [
+    { starter: 'The submarine dived', completion: 'deep into the ocean' },
+    { starter: 'Colourful coral reefs grow', completion: 'in warm waters' },
+    { starter: 'Sea creatures swim with', completion: 'strong ocean currents' },
+    { starter: 'Water pressure increases at', completion: 'extreme depths' },
+    { starter: 'Sailors navigate their ship', completion: 'across the blue sea' },
+    { starter: 'Tiny plankton float near', completion: 'the water surface' },
+  ],
+  storm: [
+    { starter: 'Heavy rain made the corridor floor', completion: 'very slippery' },
+    { starter: 'Water on smooth tiles always', completion: 'reduces friction' },
+    { starter: 'Rubber shoe soles provide', completion: 'a strong grip' },
+    { starter: 'The school nurse wrapped', completion: 'a clean bandage' },
+    { starter: 'Students walked carefully past', completion: 'the warning sign' },
+    { starter: 'Tom wiped the spilled water to', completion: 'keep everyone safe' },
+  ],
+  forest: [
+    { starter: 'Green leaves absorb sunlight for', completion: 'photosynthesis' },
+    { starter: 'Tall tree roots grow deep', completion: 'into the soil' },
+    { starter: 'Wild forest animals protect', completion: 'their natural habitat' },
+    { starter: 'Rainforests produce fresh oxygen for', completion: 'all living things' },
+    { starter: 'Birds build safe nests in', completion: 'the high canopy' },
+    { starter: 'Decomposers return rich nutrients to', completion: 'the forest ground' },
+  ],
+  forge: [
+    { starter: 'The master blacksmith swings his hammer onto', completion: 'the glowing anvil' },
+    { starter: 'Bright golden sparks fly across', completion: 'the stone workshop' },
+    { starter: 'Leo carefully carves magic letters onto', completion: 'the iron shield' },
+    { starter: 'The apprentice pulls the hot rune from', completion: 'the burning furnace' },
+    { starter: 'Cold water hisses loudly around', completion: 'the polished metal' },
+    { starter: 'The completed word inscription shines brightly in', completion: 'the dark chamber' },
+  ],
+  space: [
+    { starter: 'Earth travels in an orbit', completion: 'around the Sun' },
+    { starter: 'Astronomers use a telescope to', completion: 'observe distant stars' },
+    { starter: 'The pull of gravity keeps', completion: 'planets in orbit' },
+    { starter: 'Astronauts float weightlessly inside', completion: 'the space station' },
+    { starter: 'A shooting meteor burns up in', completion: 'the thick atmosphere' },
+    { starter: 'Bright star constellations form', completion: 'pictures in the night sky' },
+  ],
+  throne: [
+    { starter: 'A confident speaker delivers', completion: 'an inspiring speech' },
+    { starter: 'The academic debate ended with', completion: 'a logical conclusion' },
+    { starter: 'Scholars examine evidence to prove', completion: 'their main thesis' },
+    { starter: 'Critical thinkers distinguish facts from', completion: 'personal opinions' },
+    { starter: 'Advanced readers synthesize ideas from', completion: 'multiple reliable sources' },
+    { starter: 'Fluent English mastery opens', completion: 'limitless global opportunities' },
+  ],
+};
+
 // ─── Public API ────────────────────────────────────────────────────────────────
 
 /**
@@ -210,3 +280,23 @@ export function generateStubVocab(weekId, zoneIndex, count = 12) {
 
   return { vocabItems, grammarSentences };
 }
+
+/**
+ * Generate theme-aware Chunk Catapult pairs for fallback weeks.
+ *
+ * @param {number} weekId
+ * @param {number} [count=6]
+ * @returns {Array<{ starter: string, completion: string }>}
+ */
+export function generateStubCatapultPairs(weekId, count = 6) {
+  const isLite = weekId <= 16;
+  if (isLite) {
+    return LITE_CATAPULT_PAIRS.slice(0, count);
+  }
+
+  const chapter = getChapterForWeek(weekId);
+  const theme = chapter?.theme || 'storm';
+  const pairs = THEME_CATAPULT_PAIRS[theme] || THEME_CATAPULT_PAIRS.storm;
+  return pairs.slice(0, count);
+}
+

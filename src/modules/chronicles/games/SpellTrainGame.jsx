@@ -485,7 +485,7 @@ export default function SpellTrainGame({
             {isDeparting && (
               <div className="text-center mt-3 animate-bounce">
                 <span className="px-4 py-1.5 rounded-full bg-emerald-500 text-slate-950 font-black text-xs tracking-wider uppercase shadow-lg shadow-emerald-500/30">
-                  🎉 Toot Toot! Train Departing on Time! (+25 PP)
+                  🎉 Toot Toot! Train Departing on Time! (+25 ⚡ Boss Energy)
                 </span>
               </div>
             )}

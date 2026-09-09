@@ -13,7 +13,7 @@ const QUEST_LORE = {
   science_report:   { hook: "Report your discoveries! Your findings light up the Knowledge Lab doorway.", icon: "📝", color: "#f59e0b" },
   word_blitz:       { hook: "⚡ Speed Match is LIVE! Hit 10 words in 60 seconds — the Battle Arena gate cracks open!", icon: "⚡", color: "#f59e0b" },
   sentence_smash:   { hook: "Grammar Duel begins! Arrange the sentence swords — defeat 5 duels to unlock the Storm Rune.", icon: "🧱", color: "#ef4444" },
-  math_quest:       { hook: "Math Quest countdown! Solve the Bar Models — each solution charges a Power Point.", icon: "📐", color: "#8b5cf6" },
+  math_quest:       { hook: "Math Quest countdown! Solve the Bar Models — each solution charges ⚡ Boss Energy.", icon: "📐", color: "#8b5cf6" },
   story_writer:     { hook: "The pen is mightier! Write your 3-scene story — the Creator Studio seal awaits.", icon: "✏️", color: "#6366f1" },
   broadcast_studio: { hook: "Cameras rolling! Your Video Challenge unlocks the final Creator Studio fragment.", icon: "📹", color: "#ec4899" },
   info_exchange:    { hook: "Nova is waiting! Ask and answer — complete the Info Exchange to forge the Speaking Key.", icon: "🔄", color: "#14b8a6" },

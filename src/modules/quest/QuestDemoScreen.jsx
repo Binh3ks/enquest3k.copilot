@@ -26,7 +26,7 @@ import CambridgeClozeGauntlet from './CambridgeClozeGauntlet';
 import PhaserGameCanvas from '../../phaser/PhaserGameCanvas';
 import HubScene from '../../phaser/scenes/HubScene';
 import HighwayRunnerScene from '../../phaser/scenes/HighwayRunnerScene';
-import ChunkCatapultScene from '../../phaser/scenes/ChunkCatapultScene';
+import ChunkCatapultCanvas from '../chronicles/games/ChunkCatapultCanvas';
 import BossCombatScene from '../../phaser/scenes/BossCombatScene';
 
 
@@ -305,19 +305,15 @@ export default function QuestDemoScreen() {
         )}
 
         {activeGame === 'phaser_catapult' && (
-          <PhaserGameCanvas
-            sceneClass={ChunkCatapultScene}
-            sceneData={{
-              pairs: [
-                { starter: 'Jake was walking', completion: 'down the corridor' },
-                { starter: 'Water on tiles', completion: 'reduces friction' },
-                { starter: 'Rubber shoe soles', completion: 'provide strong grip' },
-              ],
-              duration: 60,
-            }}
-            onSceneEvent={(evt, data) => {
-              if (evt === 'game_complete') setCompleteResult({ stars: data.stars, score: data.score });
-            }}
+          <ChunkCatapultCanvas
+            pairs={[
+              { starter: 'Jake was walking', completion: 'down the corridor' },
+              { starter: 'Water on tiles', completion: 'reduces friction' },
+              { starter: 'Rubber shoe soles', completion: 'provide strong grip' },
+            ]}
+            duration={60}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+            onExit={() => setActiveGame(null)}
           />
         )}
 
