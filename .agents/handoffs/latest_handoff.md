@@ -1,7 +1,7 @@
 # 🤝 Session Handoff Report
 **Date**: 18:30:00 11/9/2026
 **Branch**: `main`
-**Latest Commit**: `e2d50a00 docs(chronicles): document task VV resolution with visual and computed style evidence`
+**Latest Commit**: `6637a73f docs(chronicles): document Task WW 3-point occlusion and HUD clearance measurements`
 
 ---
 
@@ -18,14 +18,9 @@
    - **Việc UU**: Đọc trực tiếp câu văn và Round qua DOM (`page.$eval`). Khắc phục bug trích xuất động ngẫu nhiên làm W35 bị 4 câu (bổ sung `WEEK_35_CONNECTOR_QUESTIONS` 5 câu chuẩn sư phạm và đệm padding bảo vệ 5 rounds cố định). Chạy lại 4/4 tổ hợp đạt 100% khớp tuyệt đối giữa log và ảnh chụp live.
 4. **Hạng #3: Word Forge Carry Engine (HOÀN THÀNH 100%)**:
    - Triển khai Phương án B: Platformer bưng bê rune chữ cái lên đe rèn ma thuật Arcane Anvil. 4/4 tổ hợp playtest và Anti-leak đều đạt 100%.
-5. **Hạng #4: Question Quest (HOÀN THÀNH 100%) & Việc VV (ĐIỀU TRA & FIX BUG PLAQUE RỖNG CỔNG GIỮA — PASS 100%)**:
-   - **Điều tra Việc VV**: Text CÓ tồn tại trong DOM (`Where was Jake going?` / `Who drove the yellow bus?`) với `opacity: 1`, `color: rgb(224, 231, 255)`.
-   - **Nguyên nhân gốc rễ**: Spatial overlap & Z-index occlusion. Cổng giữa đặt ở `y: 95px` bị Top Banner (`top: 52px, bottom: 113px, z-index: 40`) đè 18px phía trên; khi feedback toast xuất hiện ở `top: 108px, z-index: 50`, nó đè nốt toàn bộ phần chữ của Plaque giữa.
-   - **Khắc phục triệt để**:
-     - Hạ High Apex Altar platform từ `y: 185` $\rightarrow$ `y: 220`.
-     - Hạ Door 1 từ `y: 95` $\rightarrow$ `y: 130`. Plaque nằm từ `y = 130px` đến `178px`. Khoảng cách an toàn với Banner là 28px.
-     - Di chuyển Toast lên `top: 6px; z-index: 50;` (Dynamic Island ngang HUD), hoàn toàn không che bất kỳ Plaque hay Platform nào.
-     - Bổ sung assertion `inspectAndAssertPlaques` kiểm tra `elementFromPoint` tại tâm cả 3 plaques: bắt buộc `isPlaqueOrChild === true`.
+5. **Hạng #4: Question Quest (HOÀN THÀNH 100%) & Việc VV / WW — PASS 100%**:
+   - **Việc VV**: Điều tra và khắc phục triệt để bug che khuất plaque cổng giữa do banner và feedback toast. Hạ High Apex Altar platform xuống `y: 220` và Door 1 xuống `y: 130`. Đưa Toast lên `top: 6px`.
+   - **Việc WW**: Nâng cấp assertion kiểm tra occlusion tại 3 điểm mỗi plaque (tổng 9/9 điểm clear 100%). Đo đạc và xác minh Toast không overlap Tim (clearance $\ge 37px$), Timer (clearance $\ge 150px$) hay XP của HUD. Toast cách xa Cổng Trái và Cổng Phải 238px thẳng đứng, hoàn toàn không che khuất. Chạy lại full playtest đạt PASS 100%.
    - Đạt chuẩn 4/4 tổ hợp playtest và Anti-leak với ảnh chụp xác nhận trực quan cả 3 plaques đều có chữ rõ ràng 100%.
 
 ---
