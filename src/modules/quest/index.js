@@ -49,4 +49,7 @@ export { default as GrandMatrixDungeon }    from './GrandMatrixDungeon';
 export { default as TitanGrammarForge }     from './TitanGrammarForge';
 export { default as CambridgeClozeGauntlet } from './CambridgeClozeGauntlet';
 
+// Floor 6 Games (Redesign Sprint)
+export { default as SynonymStormDefense }   from './SynonymStormDefense';
+
 

@@ -1,0 +1,451 @@
+/* SynonymStormDefense.css — High Gale Spire Arcane Storm Theme */
+@import './game-mobile.css';
+
+.synonym-storm-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  background: radial-gradient(ellipse at 50% 0%, #064e3b 0%, #0f172a 55%, #020617 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+@media (max-width: 900px) {
+  .synonym-storm-root {
+    align-items: flex-start;
+  }
+}
+
+/* ── Top Objective Banner ── */
+.synonym-objective-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(15, 23, 42, 0.94);
+  border: 2px solid rgba(52, 211, 153, 0.5);
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.7), inset 0 0 16px rgba(16, 185, 129, 0.25);
+  backdrop-filter: blur(10px);
+  max-width: 92%;
+}
+
+.synonym-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.synonym-wind-icon {
+  color: #34d399;
+  animation: wind-swirl 2.5s infinite ease-in-out;
+}
+
+@keyframes wind-swirl {
+  0%, 100% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 4px #10b981); }
+  50% { transform: rotate(12deg) scale(1.15); filter: drop-shadow(0 0 12px #6ee7b7); }
+}
+
+.synonym-target-prompt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.synonym-target-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+
+.synonym-root-word {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #fef08a;
+  background: rgba(234, 179, 8, 0.2);
+  border: 1px solid rgba(250, 204, 21, 0.5);
+  border-radius: 8px;
+  padding: 2px 10px;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.3);
+}
+
+/* Battery Gauge */
+.synonym-battery-gauge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 14px;
+}
+
+.battery-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #6ee7b7;
+}
+
+.battery-bar-track {
+  width: 110px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.battery-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #34d399 50%, #facc15 100%);
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.8);
+  transition: width 0.35s ease-out;
+}
+
+.battery-pct {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #facc15;
+  min-width: 36px;
+}
+
+.synonym-round-chip {
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: rgba(16, 185, 129, 0.2);
+  color: #a7f3d0;
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+/* ── Feedback Toast ── */
+.synonym-feedback-toast {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 8px 22px;
+  border-radius: 18px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  animation: toast-pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes toast-pop {
+  0% { transform: translateX(-50%) scale(0.8); opacity: 0; }
+  100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+.synonym-feedback-toast.feedback-correct {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: #fff;
+  border: 1px solid #34d399;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+}
+
+.synonym-feedback-toast.feedback-wrong {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: 1px solid #f87171;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+}
+
+/* ── Viewport & Gesture Layer ── */
+.synonym-storm-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  min-height: 540px;
+  overflow: hidden;
+}
+
+.storm-gesture-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 35;
+  touch-action: none;
+  pointer-events: auto;
+}
+
+/* Storm Clouds */
+.storm-cloud-drift {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  pointer-events: none;
+}
+
+.cloud-1 {
+  background: linear-gradient(180deg, rgba(6, 78, 59, 0.6) 0%, rgba(15, 23, 42, 0.4) 70%, transparent 100%);
+}
+
+.cloud-2 {
+  background: radial-gradient(circle at 70% 20%, rgba(52, 211, 153, 0.15) 0%, transparent 60%);
+  animation: aurora-drift 6s infinite alternate ease-in-out;
+}
+
+@keyframes aurora-drift {
+  0% { opacity: 0.3; transform: scaleX(1); }
+  100% { opacity: 0.8; transform: scaleX(1.15); }
+}
+
+/* Platforms */
+.spire-platform {
+  position: absolute;
+  z-index: 5;
+}
+
+.spire-roof {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border-top: 3px solid #34d399;
+  box-shadow: 0 -4px 18px rgba(52, 211, 153, 0.35);
+}
+
+.battery-spire {
+  background: linear-gradient(180deg, #064e3b 0%, #022c22 100%);
+  border-top: 3px solid #6ee7b7;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+}
+
+.spire-crystal-node {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #facc15;
+  animation: node-sparkle 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes node-sparkle {
+  0% { transform: translateX(-50%) scale(1); filter: drop-shadow(0 0 3px #10b981); }
+  100% { transform: translateX(-50%) scale(1.25); filter: drop-shadow(0 0 10px #facc15); }
+}
+
+/* Falling Synonym & Hazard Meteors */
+.falling-synonym-meteor {
+  position: absolute;
+  width: 130px;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.meteor-trail {
+  width: 6px;
+  height: 32px;
+  border-radius: 3px;
+  margin-bottom: -4px;
+}
+
+.meteor-core {
+  padding: 5px 14px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+
+/* Correct Synonym Meteor: Emerald / Golden Glow */
+.meteor-synonym .meteor-trail {
+  background: linear-gradient(to top, rgba(52, 211, 153, 0.95), transparent);
+}
+
+.meteor-synonym .meteor-core {
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #facc15 100%);
+  border: 2px solid #a7f3d0;
+  color: #022c22;
+  font-weight: 900;
+  box-shadow: 0 0 18px rgba(52, 211, 153, 0.85);
+}
+
+/* Hazard / Antonym Meteor: Crimson Hazard Glow */
+.meteor-hazard .meteor-trail {
+  background: linear-gradient(to top, rgba(239, 68, 68, 0.95), transparent);
+}
+
+.meteor-hazard .meteor-core {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  border: 2px solid #fca5a5;
+  color: #fff;
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.85);
+}
+
+.meteor-word {
+  letter-spacing: 0.3px;
+}
+
+/* Shield Aura */
+.leo-shield-wrapper {
+  position: absolute;
+  z-index: 15;
+}
+
+.aegis-shield-aura {
+  position: absolute;
+  pointer-events: none;
+  color: #34d399;
+  filter: drop-shadow(0 0 12px rgba(52, 211, 153, 0.85));
+  animation: aegis-swirl 2.5s infinite linear;
+}
+
+@keyframes aegis-swirl {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.08) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* ── Modals ── */
+.storm-cleared-modal,
+.storm-ko-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cleared-card,
+.ko-card {
+  background: #0f172a;
+  border: 2px solid rgba(52, 211, 153, 0.5);
+  border-radius: 20px;
+  padding: 32px 40px;
+  text-align: center;
+  max-width: 420px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.ko-card {
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.trophy-icon {
+  color: #facc15;
+  margin-bottom: 12px;
+}
+
+.ko-icon {
+  color: #ef4444;
+  margin-bottom: 12px;
+}
+
+.cleared-stars {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.cleared-full-text {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.cleared-score {
+  color: #f8fafc;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.cleared-record {
+  color: #facc15;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.finish-door-btn,
+.retry-btn,
+.exit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.finish-door-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+}
+
+.retry-btn {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #fff;
+}
+
+.exit-btn {
+  background: #334155;
+  color: #cbd5e1;
+}
+
+.ko-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+  .synonym-objective-banner {
+    top: 44px;
+    padding: 4px 10px;
+    gap: 6px;
+    border-radius: 14px;
+    max-width: 96%;
+    white-space: nowrap;
+  }
+
+  .synonym-wind-icon {
+    display: none;
+  }
+
+  .battery-title {
+    font-size: 0.72rem;
+  }
+
+  .battery-bar-track {
+    width: 60px;
+    height: 10px;
+  }
+
+  .battery-pct {
+    font-size: 0.74rem;
+  }
+
+  .synonym-root-word {
+    font-size: 0.95rem;
+    padding: 1px 6px;
+  }
+
+  .synonym-round-chip {
+    font-size: 0.68rem;
+    padding: 2px 6px;
+  }
+}

@@ -18,7 +18,7 @@
  */
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { extractQuestVocab, extractCatapultPairs } from './extractQuestVocab';
+import { getWeeklyPoolWithReview } from '../../services/contentService';
 import useChroniclesStore, { DOOR_ROTATION, CHAMBER_METADATA, calculateStars } from '../../stores/useChroniclesStore';
 import ArcaneBubbleGame        from './games/ArcaneBubbleGame';
 import SpellTrainGame          from './games/SpellTrainGame';
@@ -29,16 +29,24 @@ import {
   EchoArenaShooter, CatapultCommander, StormShieldDefense,
   HighwaySprint, SyntaxExpressRail, RiddleRunMaze,
   GrandMatrixDungeon, TitanGrammarForge, CambridgeClozeGauntlet,
+  SynonymStormDefense,
 } from '../quest';
 
 
 import CollectorPopup          from './CollectorPopup';
 import HallOfFameModal         from './HallOfFameModal';
 import PhaserGameCanvas        from '../../phaser/PhaserGameCanvas';
-import HighwayRunnerScene      from '../../phaser/scenes/HighwayRunnerScene';
 import ChunkCatapultCanvas     from './games/ChunkCatapultCanvas';
+import SynonymStormGame        from './games/SynonymStormGame';
+import WordForgeScrambleGame   from './games/WordForgeScrambleGame';
+import ConnectorRelayGame      from './games/ConnectorRelayGame';
+import QuestionQuestGame       from './games/QuestionQuestGame';
+import StorySequencerGame      from './games/StorySequencerGame';
+import WordClassDuelGame       from './games/WordClassDuelGame';
 import useDailyQuestStore      from '../../stores/useDailyQuestStore';
 import { QUEST_SCHEDULE }      from '../../config/questSchedule';
+import { WEEKLY_CATAPULT_PAIRS } from './extractQuestVocab';
+import { generateStubCatapultPairs } from './generateStubVocab';
 import './DailyRoomScreen.css';
 
 // ─── NPC Default Dialogue (fallback if none provided) ─────────────────────
@@ -91,11 +99,28 @@ export default function DailyRoomScreen({
   const exitHandler = onExit || onBackToMap;
   const { recordDoorStars, completeRoom, getDoorStars } = useChroniclesStore();
 
-  // Extract curriculum content once
-  const { vocabItems, grammarSentences } = useMemo(
-    () => extractQuestVocab(weekData, dayIndex),
-    [weekData, dayIndex]
-  );
+  // Extract curriculum content via SRS ContentService
+  const [pools, setPools] = useState({ vocab: [], grammar: [], integration: [], loaded: false });
+
+  useEffect(() => {
+    let isMounted = true;
+    async function fetchPools() {
+      const vocabRes = await getWeeklyPoolWithReview(weekNumber, 'vocab');
+      const grammarRes = await getWeeklyPoolWithReview(weekNumber, 'grammar');
+      const integrationRes = await getWeeklyPoolWithReview(weekNumber, 'integration');
+      
+      if (isMounted) {
+        setPools({
+          vocab: vocabRes.items || [],
+          grammar: grammarRes.items || [],
+          integration: integrationRes.items || [],
+          loaded: true
+        });
+      }
+    }
+    fetchPools();
+    return () => { isMounted = false; };
+  }, [weekNumber]);
 
   // Door rotation for this day (uses floorConfig doors if provided, else defaults)
   const doorDefs = floorConfig?.doors || DOOR_ROTATION[dayIndex] || DOOR_ROTATION[0];
@@ -112,6 +137,11 @@ export default function DailyRoomScreen({
   const [showCliffhanger, setShowCliffhanger] = useState(false);
   const [showCollector, setShowCollector] = useState(false);
   const [showHallOfFame, setShowHallOfFame] = useState(false);
+
+  // Determine current active items based on activeDoor (0=Vocab, 1=Grammar, 2=Integration)
+  const rawVocab = activeDoor === 2 ? pools.integration : pools.vocab;
+  const vocabItems = (rawVocab || []).filter(item => item.type !== 'grammar' && !item.sentence && !item.definition?.startsWith('Related to'));
+  const grammarSentences = pools.grammar;
 
   const npc = npcDialogue || DEFAULT_NPC;
   const totalStars = doorStars.reduce((a, b) => a + b, 0);
@@ -303,7 +333,13 @@ export default function DailyRoomScreen({
         return <EchoArenaShooter duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
       case 'chunk_catapult': {
-        const catapultPairs = extractCatapultPairs(weekData, dayIndex, weekNumber);
+        // Pedagogy Guard: Never split sentences mechanically in half.
+        // Only accept verified semantic chunk pairs ({ starter, completion }).
+        const validPairs = grammarSentences.filter(item => Boolean(item.starter && item.completion));
+        const catapultPairs = validPairs.length >= 4 
+          ? validPairs 
+          : (WEEKLY_CATAPULT_PAIRS[weekNumber] || generateStubCatapultPairs(weekNumber, 6));
+
         return (
           <ChunkCatapultCanvas
             pairs={catapultPairs}
@@ -319,44 +355,19 @@ export default function DailyRoomScreen({
       }
 
       case 'meteor_smasher':
-        return <StormShieldDefense duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
+        return <StormShieldDefense meteorVocabulary={vocabItems} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
 
       // ── Floor 4: Rune Sanctum ──────────────────────────────────────────
       case 'highway_runner':
         return (
           <div style={{ position: 'relative', width: '100vw', height: '100vh', background: '#0a0d18' }}>
-            <button
-              onClick={handleExit}
-              style={{
-                position: 'absolute',
-                top: 16,
-                left: 16,
-                zIndex: 20,
-                background: 'rgba(30, 27, 75, 0.85)',
-                color: '#e2e8f0',
-                border: '1px solid #6366f1',
-                borderRadius: '8px',
-                padding: '6px 14px',
-                fontSize: '13px',
-                fontWeight: 600,
-                cursor: 'pointer',
-              }}
-            >
-              ← Exit Room
-            </button>
-            <PhaserGameCanvas
-              sceneClass={HighwayRunnerScene}
-              sceneData={{
-                vocabItems,
-                duration: door.duration || 60,
-                weekNumber,
-              }}
-              onSceneEvent={(name, payload) => {
-                if (name === 'game_complete') {
-                  commonProps.onComplete(payload.stars || 3, payload.score || 50, payload.maxCombo || 1);
-                }
-              }}
+            <HighwaySprint
+              vocabItems={vocabItems}
+              duration={door.duration || 120}
+              weekNumber={weekNumber}
+              onExit={handleExit}
+              {...commonProps}
             />
           </div>
         );
@@ -377,6 +388,25 @@ export default function DailyRoomScreen({
       case 'cambridge_cloze':
         return <CambridgeClozeGauntlet duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
+      // ── Floor 6: Arcane Skyway ─────────────────────────────────────────
+      case 'synonym_storm':
+        return <SynonymStormDefense duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
+
+      case 'connector_relay':
+        return <ConnectorRelayGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
+
+      case 'story_sequencer':
+        return <StorySequencerGame duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
+
+      // ── Floor 7: Master Sanctum ────────────────────────────────────────
+      case 'word_forge_scramble':
+        return <WordForgeScrambleGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
+
+      case 'question_quest':
+        return <QuestionQuestGame duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
+
+      case 'rune_balance_scale':
+        return <WordClassDuelGame duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
 
       // ── Fallback by legacy door.type ──────────────────────────────────
       default:
@@ -396,12 +426,12 @@ export default function DailyRoomScreen({
   // ═══════════════════════════════════════════════════════════════════════════
 
   // ACTIVE MINI-GAME (Fullscreen immersive gameplay with game's native HUD & FloatingExitBtn)
-  if (dayIndex >= 5) {
+  if (dayIndex >= 7) {
     return (
       <div className={`daily-room-screen ${themeClass}`}>
         <div className="dr-room-clear" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
           <div style={{ fontSize: '4rem', marginBottom: '20px' }}>🕸️</div>
-          <h2 className="dr-clear-title" style={{ color: '#94a3b8' }}>Nothing's here!</h2>
+          <h2 className="dr-clear-title" style={{ color: '#94a3b8' }}>Nothing&apos;s here!</h2>
           <p style={{ color: '#64748b', marginBottom: '30px' }}>This chamber is completely empty...</p>
           <button className="dr-exit-btn" onClick={handleExit} style={{ marginTop: '20px' }}>
             ← Return to Hall
