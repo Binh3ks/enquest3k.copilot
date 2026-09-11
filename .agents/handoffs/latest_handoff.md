@@ -34,13 +34,18 @@
   - Xác lập quy trình `git add <explicit-files>`.
 - **Sửa Bảng Xếp Hạng**:
   - Đã cập nhật 2 artifact: `BAO_CAO_THUC_THI_REDESIGN_F6_F7_PHASE0_PHASE1A_2026_09_11.md` và `BAO_CAO_XAC_MINH_HH_GG_II_JJ_VA_COMMIT_KK_2026_09_11.md`.
-- **Giai đoạn 1b (Connector Relay Canvas)**:
+- **Giai đoạn 1b (Connector Relay Canvas) & Việc SS / TT**:
   - Tạo `ConnectorRelayCanvas.jsx` và `ConnectorRelayCanvas.css`.
-  - Script playtest: `scripts/test_connector_relay_playtest.mjs`.
-  - Minh chứng screenshots:
+  - **Việc SS (Audit Tim)**: Chứng minh code có trừ Tim thật (`ConnectorRelayCanvas:535`), DOM HUD và aria-label giảm từ 3 xuống 2 tại t = 50ms. Fix lỗi stale closure bằng `heartsRef`, `scoreRef`, `roundIdxRef`.
+  - **Việc TT (Playtest 4/4 Tổ Hợp & Gateway Transition)**:
+    - Làm rõ: mỗi câu hỏi là 1 Question Gateway, game có 5 Gateway tương ứng với 5 Chặng. Chuyển Gateway 1 sang 2 pass dọn rác 100%.
+    - Playtest đủ 4/4 tổ hợp (W33 Success, W33 Hazard, W35 Success, W35 Hazard) đều PASS tuyệt đối.
+  - Minh chứng screenshots (4 ảnh):
     - `docs/agent_artifacts/screenshots/w33_connector_relay_success_live.png`
+    - `docs/agent_artifacts/screenshots/w33_connector_relay_hazard_live.png`
+    - `docs/agent_artifacts/screenshots/w35_connector_relay_success_live.png`
     - `docs/agent_artifacts/screenshots/w35_connector_relay_hazard_live.png`
-  - Báo cáo tổng hợp: `docs/agent_artifacts/BAO_CAO_THUC_THI_OO_PP_SUA_BANG_VA_GIAI_DOAN_1B_2026_09_11.md`.
+  - Báo cáo chi tiết: `docs/agent_artifacts/BAO_CAO_THUC_THI_OO_PP_SUA_BANG_VA_GIAI_DOAN_1B_2026_09_11.md`.
 
 ---
 
