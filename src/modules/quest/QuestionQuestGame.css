@@ -1,0 +1,230 @@
+/* QuestionQuestGame.css — Sanctum Labyrinth Theme with 220px Plaques */
+@import './game-mobile.css';
+
+.question-quest-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  background: radial-gradient(ellipse at 50% 100%, #1e1b4b 0%, #0f172a 60%, #020617 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+@media (max-width: 900px) {
+  .question-quest-root {
+    align-items: flex-start;
+  }
+}
+
+/* ── Top Objective Narrative Banner ── */
+.question-quest-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(15, 23, 42, 0.94);
+  border: 2px solid rgba(129, 140, 248, 0.4);
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(8px);
+  max-width: 92%;
+}
+
+.question-banner-icon {
+  color: #818cf8;
+  flex-shrink: 0;
+}
+
+.question-prompt-box {
+  display: flex;
+  align-items: center;
+}
+
+.question-quest-banner-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e0e7ff;
+  font-style: italic;
+  letter-spacing: 0.2px;
+  line-height: 1.35;
+}
+
+.question-quest-round-pill {
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: rgba(99, 102, 241, 0.25);
+  color: #c7d2fe;
+  border: 1px solid rgba(129, 140, 248, 0.5);
+  padding: 4px 12px;
+  border-radius: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Feedback Toast ── */
+.question-feedback-toast {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: bounce-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.question-feedback-toast.feedback-correct {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #fff;
+  border: 1px solid #4ade80;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.question-feedback-toast.feedback-wrong {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: 1px solid #f87171;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+/* ── Labyrinth Maze Viewport ── */
+.question-maze-viewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 600px;
+  pointer-events: auto;
+}
+
+/* Platforms */
+.maze-stone-platform {
+  position: absolute;
+  background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+  border-top: 3px solid #94a3b8;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ── Sanctuary Vault Doors (Biển 220px) ── */
+.question-vault-door {
+  position: absolute;
+  width: 220px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.question-vault-door:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 0 12px rgba(129, 140, 248, 0.6));
+}
+
+/* Biển chỉ dẫn 220px (width: 220px chuẩn invariant) */
+.vault-door-plaque-220 {
+  width: 220px;
+  min-height: 48px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #4338ca 0%, #312e81 100%);
+  color: #e0e7ff;
+  font-weight: 800;
+  font-size: 0.84rem;
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 2px solid #818cf8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), inset 0 0 8px rgba(165, 180, 252, 0.2);
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vault-question-text {
+  word-break: break-word;
+}
+
+.vault-door-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.door-portal-glow {
+  font-size: 2.4rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  animation: pulse-glow 2s infinite alternate ease-in-out;
+}
+
+.door-portal-arch {
+  display: block;
+}
+
+.door-action-prompt {
+  font-size: 0.7rem;
+  font-weight: 900;
+  background: #6366f1;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-top: 2px;
+  border: 1px solid #a5b4fc;
+}
+
+/* Leo layer in maze */
+.question-leo-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  transition: transform 0.05s linear;
+}
+
+/* Help Button inside HUD */
+.question-help-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  color: #c7d2fe;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.question-help-btn:hover {
+  background: rgba(99, 102, 241, 0.3);
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(1); filter: drop-shadow(0 0 6px rgba(129, 140, 248, 0.4)); }
+  100% { transform: scale(1.05); filter: drop-shadow(0 0 16px rgba(129, 140, 248, 0.8)); }
+}
+
+@keyframes bounce-in {
+  0% { transform: translate(-50%, -10px) scale(0.9); opacity: 0; }
+  100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+}
