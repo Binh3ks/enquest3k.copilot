@@ -1,7 +1,7 @@
 # 🤝 Session Handoff Report
-**Date**: 18:30:00 11/9/2026
+**Date**: 19:12:00 11/9/2026
 **Branch**: `main`
-**Latest Commit**: `167888aa docs(chronicles): document Task XX distractor forensic investigation and visual evidence`
+**Latest Commit**: `b0bf6943 docs(chronicles): document Việc YY unanswerable distractor audit report [YY]`
 
 ---
 
@@ -33,12 +33,21 @@
 - **Việc VV (Fix Bug Plaque Rỗng Cổng Giữa & Visibility Assertions)**:
   - Commit Fix: `fe501373 fix(chronicles): resolve middle vault plaque overlap and enforce visibility assertions [VV]`
   - Commit Docs: `e2d50a00 docs(chronicles): document task VV resolution with visual and computed style evidence`
-  - Minh chứng screenshots (4 ảnh mới sau khi fix):
-    - `docs/agent_artifacts/screenshots/w33_question_quest_success_live.png`
-    - `docs/agent_artifacts/screenshots/w33_question_quest_hazard_live.png`
-    - `docs/agent_artifacts/screenshots/w35_question_quest_success_live.png`
-    - `docs/agent_artifacts/screenshots/w35_question_quest_hazard_live.png`
-  - Báo cáo chi tiết: `docs/agent_artifacts/BAO_CAO_DIEU_TRA_VA_FIX_BUG_PLAQUE_RONG_QUESTION_QUEST_2026_09_11.md`.
+- **Việc WW (3-point occlusion assertions + HUD clearance)**:
+  - Commit: `11256e99 test(chronicles): enforce 3-point plaque occlusion checks and HUD clearance assertions [WW]`
+  - Commit Docs: `6637a73f docs(chronicles): document Task WW 3-point occlusion and HUD clearance measurements`
+- **Việc XX (Forensic Investigation & Fix Distractors W33/W34/W35)**:
+  - Commit Fix: `f07b3da7 fix(chronicles): align Question Quest distractors strictly with week narratives [XX]`
+  - Commit Docs: `167888aa docs(chronicles): document Task XX distractor forensic investigation and visual evidence`
+- **Việc YY (Sửa Triệt Để Unanswerable Distractors — 20/20 entries)**:
+  - **Root cause được phát hiện**: Sau khi fix XX, các distractor đã cùng chủ đề/cốt truyện nhưng vẫn hỏi về thông tin ĐÃ CÓ trong câu (answerable) → học sinh có thể đoán đúng bất kỳ option nào.
+  - **Quy tắc mới**: Mỗi câu: 1 correct option (answerable) + 2 distractor (unanswerable — hỏi thông tin KHÔNG có trong câu như lý do, thời gian, số lượng, tên, công cụ... không được đề cập).
+  - **Đã sửa**: W33 (5 câu) + W34 (5 câu) + W35 (5 câu) + GENERIC (5 câu) = 20/20 entries.
+  - **Evidence**: Node.js validation 20/20 PASS (verbatim stdout), build exit 0.
+  - **Note**: Browser tool bị blocked do Playwright driver 404 từ Azure CDN — cần user playtest thủ công tại http://localhost:5174.
+  - Commit Fix: `d231cb11 fix(chronicles): enforce unanswerable distractors in all WH-question pools [YY]`
+  - Commit Docs: `b0bf6943 docs(chronicles): document Việc YY unanswerable distractor audit report [YY]`
+  - Báo cáo: `docs/agent_artifacts/BAO_CAO_VIEC_YY_UNANSWERABLE_DISTRACTORS_2026_09_11.md`
 
 ---
 
