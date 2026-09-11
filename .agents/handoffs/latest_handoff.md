@@ -1,7 +1,7 @@
 # 🤝 Session Handoff Report
 **Date**: 18:30:00 11/9/2026
 **Branch**: `main`
-**Latest Commit**: `6637a73f docs(chronicles): document Task WW 3-point occlusion and HUD clearance measurements`
+**Latest Commit**: `167888aa docs(chronicles): document Task XX distractor forensic investigation and visual evidence`
 
 ---
 
@@ -18,10 +18,9 @@
    - **Việc UU**: Đọc trực tiếp câu văn và Round qua DOM (`page.$eval`). Khắc phục bug trích xuất động ngẫu nhiên làm W35 bị 4 câu (bổ sung `WEEK_35_CONNECTOR_QUESTIONS` 5 câu chuẩn sư phạm và đệm padding bảo vệ 5 rounds cố định). Chạy lại 4/4 tổ hợp đạt 100% khớp tuyệt đối giữa log và ảnh chụp live.
 4. **Hạng #3: Word Forge Carry Engine (HOÀN THÀNH 100%)**:
    - Triển khai Phương án B: Platformer bưng bê rune chữ cái lên đe rèn ma thuật Arcane Anvil. 4/4 tổ hợp playtest và Anti-leak đều đạt 100%.
-5. **Hạng #4: Question Quest (HOÀN THÀNH 100%) & Việc VV / WW — PASS 100%**:
-   - **Việc VV**: Điều tra và khắc phục triệt để bug che khuất plaque cổng giữa do banner và feedback toast. Hạ High Apex Altar platform xuống `y: 220` và Door 1 xuống `y: 130`. Đưa Toast lên `top: 6px`.
-   - **Việc WW**: Nâng cấp assertion kiểm tra occlusion tại 3 điểm mỗi plaque (tổng 9/9 điểm clear 100%). Đo đạc và xác minh Toast không overlap Tim (clearance $\ge 37px$), Timer (clearance $\ge 150px$) hay XP của HUD. Toast cách xa Cổng Trái và Cổng Phải 238px thẳng đứng, hoàn toàn không che khuất. Chạy lại full playtest đạt PASS 100%.
-   - Đạt chuẩn 4/4 tổ hợp playtest và Anti-leak với ảnh chụp xác nhận trực quan cả 3 plaques đều có chữ rõ ràng 100%.
+5. **Hạng #4: Question Quest (HOÀN THÀNH 100%) & Việc VV / WW / XX — PASS 100%**:
+   - **Việc VV & WW**: Khắc phục triệt để lỗi che khuất plaque cổng giữa do banner/toast. Nâng cấp assertion kiểm tra occlusion 3 điểm mỗi plaque (9/9 điểm clear). Đo đạc HUD clearance xác nhận không overlap.
+   - **Việc XX (Chuẩn Hóa Sư Phạm Distractors Toàn Diện)**: Điều tra gốc rễ "Who drove the yellow bus?" là do ad-hoc hardcode tùy tiện. Đã rà soát toàn bộ W33, W34, W35 và Generic Fallback: loại bỏ 100% distractors chứa thực thể lạ/ngoài cốt truyện ("yellow bus", "brown bear", "cooked fish", "hunter's house"...). Chuẩn hóa 100% distractors sinh ra từ chính câu chuyện của tuần đó (cùng chủ thể/ngữ cảnh nhưng đổi đại từ nghi vấn WH khác nhau: When/Where/What/Who/Why/How). Playtest W33, W34, W35 đều pass tuyệt đối với ảnh chụp live minh chứng.
 
 ---
 
