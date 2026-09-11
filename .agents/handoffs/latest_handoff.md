@@ -1,12 +1,12 @@
 # 🤝 Session Handoff Report
-**Date**: 17:08:00 11/9/2026
+**Date**: 17:16:00 11/9/2026
 **Branch**: `main`
-**Latest Commit**: `2d33444c feat(chronicles): implement WordForgeCarryEngine.jsx (Rank #3) with physical carry and 2-tier matching`
+**Latest Commit**: `b229df25 fix(chronicles): stabilize W35 connector questions and read sentences from DOM in playtest [UU]`
 
 ---
 
 ## 1. 📌 Executive Summary
-Đã hoàn thành xuất sắc và toàn diện toàn bộ 4 nhiệm vụ được giao:
+Đã hoàn thành xuất sắc và toàn diện toàn bộ các nhiệm vụ được giao:
 1. **Việc OO (Retest đúng kịch bản Round 3 $\rightarrow$ Round 5 — PASS 100%)**:
    - Viết kịch bản stress-test cố ý tái tạo lỗi: R3 sinh `slid` (`target: slipped`) deflect thành công, dọn dẹp sau round `meteors.length === 0`. Sang R5 (`target: rapid`), tiêm thiên thạch cũ `slid` cho Leo đâm trúng: game reject tuyệt đối (`toast = ""`, `scoreDelta = +0 XP`). Sau đó R5 deflect đúng `quick` $\rightarrow$ `rapid`. Toàn bộ log và screenshot đã lưu. Việc NN chính thức được đóng với bằng chứng forensic.
 2. **Việc PP (Git Blame 12 File & Chiến lược Cách ly — PASS 100%)**:
@@ -15,13 +15,12 @@
 3. **Sửa bảng xếp hạng Hạng #5 và #6 (Chuẩn hóa kết luận MM)**:
    - Xóa bỏ "Fork GrandMatrixDungeon / TitanGrammarForge".
    - Khôi phục kết luận: #5 (Story Sequencer) dựng mới puzzle đẩy phiến đá/cuộn giấy vào bệ thờ; #6 (Word Class Duel) dựng mới cơ chế đĩa cân đối kháng.
-4. **Giai đoạn 1b (Connector Relay Canvas — HOÀN THÀNH & PASS 100%)**:
-   - Đã tạo `src/modules/quest/ConnectorRelayCanvas.jsx` (888 lines) và `ConnectorRelayCanvas.css`.
-   - Chuẩn hóa 3 làn đường (Left = 0, Center = 1, Right = 2) với các cổng liên từ Arcane Gateway.
-   - Áp dụng ngay cơ chế Anti-Leak Invariant: gắn `targetRoundId` cho từng gate, dọn sạch mảng `entitiesRef.current = []` ngay khi round chuyển đổi.
-   - Export tại `src/modules/quest/index.js`, mount tại `DailyRoomScreen.jsx:396`.
-   - Chạy `npm run build` exit code 0 (`built in 13.91s`).
-   - Playtest Puppeteer thành công 100% trên W33 (chọn đúng "because" $\rightarrow$ Bridge Energized, +40 XP), W35 (va chạm distractor "so" $\rightarrow$ Wrong Connector toast) và Anti-Leak check (0 stale entities).
+4. **Giai đoạn 1b (Connector Relay Canvas) & Việc SS / TT / UU — HOÀN THÀNH TOÀN DIỆN 100%**:
+   - **Việc SS**: Xác minh game có trừ Tim thật khi va chạm sai, giải quyết stale closure bằng live refs.
+   - **Việc TT**: Làm rõ Gateway Question transition, bổ sung đủ 4/4 tổ hợp playtest.
+   - **Việc UU**: Đọc trực tiếp câu văn và Round qua DOM (`page.$eval`). Khắc phục bug trích xuất động ngẫu nhiên làm W35 bị 4 câu (bổ sung `WEEK_35_CONNECTOR_QUESTIONS` 5 câu chuẩn sư phạm và đệm padding bảo vệ 5 rounds cố định). Chạy lại 4/4 tổ hợp đạt 100% khớp tuyệt đối giữa log và ảnh chụp.
+5. **Hạng #3 (Word Forge Carry Engine — HOÀN THÀNH 100%)**:
+   - Triển khai Phương án B: Platformer bưng bê rune chữ cái lên đe rèn ma thuật Arcane Anvil. 4/4 tổ hợp playtest và Anti-leak đều đạt 100%.
 
 ---
 
@@ -34,18 +33,21 @@
   - Xác lập quy trình `git add <explicit-files>`.
 - **Sửa Bảng Xếp Hạng**:
   - Đã cập nhật 2 artifact: `BAO_CAO_THUC_THI_REDESIGN_F6_F7_PHASE0_PHASE1A_2026_09_11.md` và `BAO_CAO_XAC_MINH_HH_GG_II_JJ_VA_COMMIT_KK_2026_09_11.md`.
-- **Giai đoạn 1b (Connector Relay Canvas) & Việc SS / TT**:
+- **Giai đoạn 1b (Connector Relay Canvas) & Việc SS / TT / UU**:
   - Tạo `ConnectorRelayCanvas.jsx` và `ConnectorRelayCanvas.css`.
   - **Việc SS (Audit Tim)**: Chứng minh code có trừ Tim thật (`ConnectorRelayCanvas:535`), DOM HUD và aria-label giảm từ 3 xuống 2 tại t = 50ms. Fix lỗi stale closure bằng `heartsRef`, `scoreRef`, `roundIdxRef`.
   - **Việc TT (Playtest 4/4 Tổ Hợp & Gateway Transition)**:
     - Làm rõ: mỗi câu hỏi là 1 Question Gateway, game có 5 Gateway tương ứng với 5 Chặng. Chuyển Gateway 1 sang 2 pass dọn rác 100%.
-    - Playtest đủ 4/4 tổ hợp (W33 Success, W33 Hazard, W35 Success, W35 Hazard) đều PASS tuyệt đối.
+  - **Việc UU (DOM Verification & W35 Round Stabilization)**:
+    - Sửa `test_connector_relay_playtest.mjs` đọc câu văn và số round trực tiếp từ `.connector-sentence-text` và `.connector-round-pill` bằng `page.$eval`.
+    - Điều tra và sửa dứt điểm bug W35 bị 4 câu do shuffle ngẫu nhiên: thêm `WEEK_35_CONNECTOR_QUESTIONS` 5 câu chuẩn sư phạm và đệm padding cố định 5 câu cho toàn bộ các tuần tương lai.
+    - Chạy lại đủ 4/4 tổ hợp, câu văn và số round khớp 100% giữa log và ảnh chụp live.
   - Minh chứng screenshots (4 ảnh):
     - `docs/agent_artifacts/screenshots/w33_connector_relay_success_live.png`
     - `docs/agent_artifacts/screenshots/w33_connector_relay_hazard_live.png`
     - `docs/agent_artifacts/screenshots/w35_connector_relay_success_live.png`
     - `docs/agent_artifacts/screenshots/w35_connector_relay_hazard_live.png`
-  - Báo cáo chi tiết: `docs/agent_artifacts/BAO_CAO_THUC_THI_OO_PP_SUA_BANG_VA_GIAI_DOAN_1B_2026_09_11.md`.
+  - Báo cáo chi tiết: `docs/agent_artifacts/BAO_CAO_XAC_MINH_VIEC_UU_CONNECTOR_RELAY_2026_09_11.md`.
 - **Hạng #3: Word Forge Carry Engine (Floor 7 Door 1 — Vocab — HOÀN THÀNH 100%)**:
   - Triển khai Phương án B: Platformer mang vác rune chữ cái lên đe rèn ma thuật Arcane Anvil.
   - Khớp 2 tầng (2-tier matching): Tier 1 lọc distractors, Tier 2 đúng thứ tự chữ cái tiếp theo.
