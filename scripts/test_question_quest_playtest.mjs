@@ -11,10 +11,11 @@ if (!fs.existsSync(SCREENSHOT_DIR)) {
 }
 
 /**
- * Task VV Verification Helper:
+ * Task WW Verification Helper:
  * 1. Chụp lại state DOM đầy đủ của cả 3 vault plaques tại đúng thời điểm chụp ảnh (lúc feedback toast hiển thị)
  * 2. Kiểm tra text non-empty, visible (offsetParent !== null), opacity === '1', color, backgroundColor
- * 3. Kiểm tra occlusion bằng elementFromPoint tại tâm của từng plaque để chắc chắn không bị che khuất
+ * 3. Kiểm tra occlusion tại ÍT NHẤT 3 ĐIỂM mỗi plaque (top-center cách đỉnh ~6px, center, bottom-center cách đáy ~6px)
+ * 4. Đo đạc toastRect, HUD clearances (Tim, Timer) xác nhận không có bất kỳ sự che khuất nào
  */
 async function inspectAndAssertPlaques(page, label) {
   const plaqueStates = await page.$$eval('.vault-door-plaque-220', els => els.map((e, idx) => ({
@@ -41,39 +42,78 @@ async function inspectAndAssertPlaques(page, label) {
     };
   }));
 
+  // Kiểm tra occlusion tại 3 điểm mỗi plaque: top-center (top + 6px), center, bottom-center (bottom - 6px)
   const occlusion = await page.evaluate((positions) => {
     return positions.map(p => {
-      const cx = p.rect.left + p.rect.width / 2;
-      const cy = p.rect.top + p.rect.height / 2;
-      const el = document.elementFromPoint(cx, cy);
       const plaqueEl = document.querySelectorAll('.vault-door-plaque-220')[p.doorIndex];
-      const isPlaqueOrChild = el && (el === plaqueEl || plaqueEl.contains(el));
+      const points = [
+        { name: 'top-center', x: Math.round(p.rect.left + p.rect.width / 2), y: Math.round(p.rect.top + 6) },
+        { name: 'center', x: Math.round(p.rect.left + p.rect.width / 2), y: Math.round(p.rect.top + p.rect.height / 2) },
+        { name: 'bottom-center', x: Math.round(p.rect.left + p.rect.width / 2), y: Math.round(p.rect.bottom - 6) },
+      ];
+
+      const pointChecks = points.map(pt => {
+        const el = document.elementFromPoint(pt.x, pt.y);
+        const isClear = el && (el === plaqueEl || plaqueEl.contains(el));
+        return {
+          pointName: pt.name,
+          coords: { x: pt.x, y: pt.y },
+          isClear: Boolean(isClear),
+          hitTag: el?.tagName,
+          hitClass: el?.className,
+          hitText: el?.textContent?.trim()?.slice(0, 30)
+        };
+      });
+
       return {
         doorIndex: p.doorIndex,
-        point: { cx, cy },
-        isPlaqueOrChild: Boolean(isPlaqueOrChild),
-        hitTag: el?.tagName,
-        hitClass: el?.className,
-        hitText: el?.textContent?.trim()?.slice(0, 40)
+        allThreePointsClear: pointChecks.every(pt => pt.isClear),
+        points: pointChecks
       };
     });
   }, plaquePositions);
+
+  // Đo đạc Toast và HUD clearances
+  const hudToastMetrics = await page.evaluate(() => {
+    const getR = sel => {
+      const el = document.querySelector(sel);
+      if (!el) return null;
+      const r = el.getBoundingClientRect();
+      return { top: Math.round(r.top), bottom: Math.round(r.bottom), left: Math.round(r.left), right: Math.round(r.right), width: Math.round(r.width), height: Math.round(r.height) };
+    };
+
+    const toast = getR('.question-feedback-toast');
+    const hudHearts = getR('.hud-hearts');
+    const hudTimer = getR('.hud-timer');
+    const hudTopBar = getR('.hud-top-bar');
+
+    return {
+      toast,
+      hudHearts,
+      hudTimer,
+      clearanceToHearts: toast && hudHearts ? toast.left - hudHearts.right : null,
+      clearanceToTimer: toast && hudTimer ? hudTimer.left - toast.right : null,
+    };
+  });
 
   console.log(`[${label} 3-Plaque DOM State & Computed Style]:`);
   console.log(JSON.stringify(plaqueStates, null, 2));
   console.log(`[${label} Plaque Bounding Rectangles]:`);
   console.log(JSON.stringify(plaquePositions, null, 2));
-  console.log(`[${label} Occlusion Check (elementFromPoint at center)]:`);
+  console.log(`[${label} 3-Point Occlusion Check (top, center, bottom)]:`);
   console.log(JSON.stringify(occlusion, null, 2));
+  console.log(`[${label} Toast & HUD Metrics]:`);
+  console.log(JSON.stringify(hudToastMetrics, null, 2));
 
   const countOk = plaqueStates.length === 3;
   const allVisibleAndNonEmpty = countOk && plaqueStates.every(p => p.text && p.text.length > 0 && p.visible && p.opacity === '1');
-  const noneOccluded = occlusion.every(o => o.isPlaqueOrChild);
+  const allNinePointsClear = occlusion.every(o => o.allThreePointsClear);
+  const toastClearOfHud = hudToastMetrics.clearanceToHearts >= 0 && hudToastMetrics.clearanceToTimer >= 0;
 
-  const passed = allVisibleAndNonEmpty && noneOccluded;
-  console.log(`[${label} Plaque Visibility & Non-Empty Assertion]: all 3 visible, non-empty, opacity=1, not occluded? => ${passed ? 'PASS ✅' : 'FAIL ❌'}`);
+  const passed = allVisibleAndNonEmpty && allNinePointsClear && toastClearOfHud;
+  console.log(`[${label} Rigorous 3-Point Occlusion & HUD Clearance Assertion]: all 3 plaques visible, non-empty, 9/9 points clear, toast clears HUD? => ${passed ? 'PASS ✅' : 'FAIL ❌'}`);
 
-  return { plaqueStates, occlusion, passed };
+  return { plaqueStates, occlusion, hudToastMetrics, passed };
 }
 
 async function runFullQuestionQuestSuite() {
