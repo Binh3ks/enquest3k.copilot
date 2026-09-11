@@ -10,10 +10,10 @@ if (!fs.existsSync(SCREENSHOT_DIR)) {
   fs.mkdirSync(SCREENSHOT_DIR, { recursive: true });
 }
 
-async function runConnectorRelayPlaytest() {
-  console.log('\n========================================================================');
-  console.log('>>> GIAI ĐOẠN 1b: PUPPETEER PLAYTEST CONNECTOR RELAY CANVAS (W33 & W35) <<<');
-  console.log('========================================================================\n');
+async function runFullConnectorRelaySuite() {
+  console.log('\n================================================================================');
+  console.log('>>> VIỆC SS & TT: PLAYTEST TOÀN DIỆN CONNECTOR RELAY (4/4 TỔ HỢP + ANTI-LEAK) <<<');
+  console.log('================================================================================\n');
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -25,167 +25,283 @@ async function runConnectorRelayPlaytest() {
     await page.setViewport({ width: 1200, height: 750 });
 
     // ─────────────────────────────────────────────────────────────────────────
-    // PHẦN 1: PLAYTEST W33 — CHỌN ĐÚNG CỔNG LIÊN TỪ ("because")
+    // TỔ HỢP 1: W33 — CHỌN ĐÚNG CỔNG LIÊN TỪ ("because") -> SUCCESS
     // ─────────────────────────────────────────────────────────────────────────
-    console.log('--- PHẦN 1: PLAYTEST W33 (Success Deflect / Energize Bridge) ---');
-    console.log('Step 1.1: Navigating to W33 Chronicles Room 5...');
+    console.log('--- TỔ HỢP 1: W33 SUCCESS (Chọn đúng làn "because" -> Bridge Energized) ---');
     await page.goto(`${BASE_URL}/week/33/chronicles?room=5&bypass=true`, { waitUntil: 'networkidle0' });
     await new Promise(r => setTimeout(r, 600));
 
-    const doorBtnsW33 = await page.$$('.dr-door-enter-btn');
-    if (!doorBtnsW33 || doorBtnsW33.length < 2) throw new Error('Door buttons not found on W33 Room 5');
-
-    console.log('Step 1.2: Clicking Door 2 (Connector Relay)...');
-    await doorBtnsW33[1].click(); // Door 2
+    let doorBtns = await page.$$('.dr-door-enter-btn');
+    if (!doorBtns || doorBtns.length < 2) throw new Error('Door buttons not found on W33 Room 5');
+    await doorBtns[1].click(); // Door 2 (Connector Relay)
     await new Promise(r => setTimeout(r, 800));
 
-    console.log('Step 1.3: Verifying ConnectorRelayCanvas mounted on W33 & testing correct lane...');
-    const w33TestResult = await page.evaluate(async () => {
+    const w33Success = await page.evaluate(async () => {
       const hook = window.__CONNECTOR_RELAY_TEST_HOOK__;
-      if (!hook) return { error: 'Test hook __CONNECTOR_RELAY_TEST_HOOK__ not mounted' };
-
-      const q = hook.getCurrentQuestion();
       hook.clearEntities();
-      hook.setTargetLane(1);
+      hook.setHeartsVal(3);
       hook.resetInvincible();
+      hook.setTargetLane(1);
       window.__CONNECTOR_RELAY_EVENT_LOG__ = [];
       await new Promise(r => setTimeout(r, 100));
 
-      const initialScoreDOM = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
-      const initialHearts = hook.getHearts();
+      const initialScore = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
+      const initialHeartsDOM = document.querySelectorAll('.hud-heart-full').length;
+      const initialHeartsHook = hook.getHearts();
 
-      // Inject Gate wave: Lane 0 = 'although' (wrong), Lane 1 = 'because' (correct), Lane 2 = 'unless' (wrong)
-      // Placed at z = 0.86
+      // Inject correct gate 'because' at center lane (lane 1)
       hook.injectGateWave(0.86, [
         { text: 'although', isCorrect: false },
         { text: 'because', isCorrect: true },
         { text: 'unless', isCorrect: false }
       ]);
 
-      // Wait 250ms for collision frame and toast render
-      await new Promise(r => setTimeout(r, 250));
+      await new Promise(r => setTimeout(r, 200));
 
       const toast = document.querySelector('.connector-toast-pill')?.innerText?.trim() || '';
-      const scoreDOMAfter = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
-      const heartsAfter = hook.getHearts();
-      const eventLog = window.__CONNECTOR_RELAY_EVENT_LOG__ || [];
+      const scoreAfter = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
+      const heartsDOMAfter = document.querySelectorAll('.hud-heart-full').length;
+      const heartsHookAfter = hook.getHearts();
 
       return {
-        sentence: q?.sentence,
-        answer: q?.answer,
-        initialScore: initialScoreDOM,
-        scoreAfter: scoreDOMAfter,
-        scoreDelta: scoreDOMAfter - initialScoreDOM,
-        initialHearts,
-        heartsAfter,
+        question: hook.getCurrentQuestion()?.sentence,
+        answer: hook.getCurrentQuestion()?.answer,
+        initialScore,
+        scoreAfter,
+        scoreDelta: scoreAfter - initialScore,
+        initialHeartsDOM,
+        heartsDOMAfter,
+        initialHeartsHook,
+        heartsHookAfter,
         toast,
-        lastEvent: eventLog[eventLog.length - 1] || null
       };
     });
 
-    console.log('[W33 Question]:', w33TestResult.sentence);
-    console.log('[W33 Target Answer]:', w33TestResult.answer);
-    console.log('[W33 Collision Toast]:', `"${w33TestResult.toast}"`);
-    console.log(`[W33 Score HUD]: ${w33TestResult.initialScore} -> ${w33TestResult.scoreAfter} (+${w33TestResult.scoreDelta} XP)`);
-    console.log(`[W33 Hearts]: ${w33TestResult.initialHearts} -> ${w33TestResult.heartsAfter}`);
+    console.log('[W33 Question]:', w33Success.question);
+    console.log('[W33 Target Answer]:', w33Success.answer);
+    console.log('[W33 Collision Toast]:', `"${w33Success.toast}"`);
+    console.log(`[W33 Score HUD]: ${w33Success.initialScore} -> ${w33Success.scoreAfter} (+${w33Success.scoreDelta} XP)`);
+    console.log(`[W33 Hearts DOM]: ${w33Success.initialHeartsDOM} -> ${w33Success.heartsDOMAfter} (Hook: ${w33Success.initialHeartsHook} -> ${w33Success.heartsHookAfter})`);
 
-    const w33Pass = w33TestResult.scoreDelta === 40 &&
-                    w33TestResult.toast.includes('BRIDGE ENERGIZED') &&
-                    w33TestResult.toast.includes('because');
-    console.log(`[W33 Assertion]: Correct connector passed & energized? => ${w33Pass ? 'PASS ✅' : 'FAIL ❌'}\n`);
+    const pass1 = w33Success.scoreDelta === 40 &&
+                  w33Success.heartsDOMAfter === 3 &&
+                  w33Success.toast.includes('BRIDGE ENERGIZED') &&
+                  w33Success.toast.includes('because');
+    console.log(`[Tổ hợp 1 Assertion]: Bridge energized & +40 XP & no heart penalty? => ${pass1 ? 'PASS ✅' : 'FAIL ❌'}\n`);
 
-    const w33ScreenshotPath = path.join(SCREENSHOT_DIR, 'w33_connector_relay_success_live.png');
-    await page.screenshot({ path: w33ScreenshotPath });
-    console.log(`[Screenshot saved]: ${w33ScreenshotPath}`);
-
-    const brainW33Path = path.join(BRAIN_DIR, 'w33_connector_relay_success_live.png');
-    fs.copyFileSync(w33ScreenshotPath, brainW33Path);
+    const shot1 = path.join(SCREENSHOT_DIR, 'w33_connector_relay_success_live.png');
+    await page.screenshot({ path: shot1 });
+    fs.copyFileSync(shot1, path.join(BRAIN_DIR, 'w33_connector_relay_success_live.png'));
 
     // ─────────────────────────────────────────────────────────────────────────
-    // PHẦN 2: PLAYTEST W35 — VA CHẠM NHẦM CỔNG LIÊN TỪ SAI (Hazard / Wrong Lane)
+    // TỔ HỢP 2: W33 — VA CHẠM CỔNG LIÊN TỪ SAI ("although") -> HAZARD / -1 TIM
     // ─────────────────────────────────────────────────────────────────────────
-    console.log('--- PHẦN 2: PLAYTEST W35 (Hazard Collide / Wrong Connector) ---');
-    console.log('Step 2.1: Navigating to W35 Chronicles Room 5...');
-    await page.goto(`${BASE_URL}/week/35/chronicles?room=5&bypass=true`, { waitUntil: 'networkidle0' });
+    console.log('--- TỔ HỢP 2: W33 HAZARD (Va chạm nhầm cổng "although" -> Trừ 1 Tim) ---');
+    await page.goto(`${BASE_URL}/week/33/chronicles?room=5&bypass=true`, { waitUntil: 'networkidle0' });
     await new Promise(r => setTimeout(r, 600));
 
-    const doorBtnsW35 = await page.$$('.dr-door-enter-btn');
-    if (!doorBtnsW35 || doorBtnsW35.length < 2) throw new Error('Door buttons not found on W35 Room 5');
-
-    console.log('Step 2.2: Clicking Door 2 (Connector Relay)...');
-    await doorBtnsW35[1].click(); // Door 2
+    doorBtns = await page.$$('.dr-door-enter-btn');
+    await doorBtns[1].click(); // Door 2
     await new Promise(r => setTimeout(r, 800));
 
-    console.log('Step 2.3: Verifying ConnectorRelayCanvas mounted on W35 & injecting distractor collision...');
-    const w35TestResult = await page.evaluate(async () => {
+    const w33Hazard = await page.evaluate(async () => {
       const hook = window.__CONNECTOR_RELAY_TEST_HOOK__;
-      if (!hook) return { error: 'Test hook __CONNECTOR_RELAY_TEST_HOOK__ not mounted' };
-
-      const q = hook.getCurrentQuestion();
       hook.clearEntities();
+      hook.setHeartsVal(3);
       hook.resetInvincible();
       hook.setTargetLane(1);
       window.__CONNECTOR_RELAY_EVENT_LOG__ = [];
       await new Promise(r => setTimeout(r, 100));
 
-      const initialScoreDOM = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
-      const initialHearts = hook.getHearts();
+      const initialScore = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
+      const initialHeartsDOM = document.querySelectorAll('.hud-heart-full').length;
+      const initialHeartsHook = hook.getHearts();
 
-      // Inject Gate wave: Lane 1 has DISTRACTOR connector 'so' (wrong), z = 0.86
+      // Inject wrong gate 'although' at center lane (lane 1)
       hook.injectGateWave(0.86, [
-        { text: 'while', isCorrect: true },
-        { text: 'so', isCorrect: false }, // Center lane (Leo hit this!)
+        { text: 'because', isCorrect: true },
+        { text: 'although', isCorrect: false },
         { text: 'unless', isCorrect: false }
       ]);
 
-      // Wait 250ms for collision frame to execute
-      await new Promise(r => setTimeout(r, 250));
+      await new Promise(r => setTimeout(r, 200));
 
       const toast = document.querySelector('.connector-toast-pill')?.innerText?.trim() || '';
-      const scoreDOMAfter = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
-      const heartsAfter = hook.getHearts();
-      const eventLog = window.__CONNECTOR_RELAY_EVENT_LOG__ || [];
+      const scoreAfter = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
+      const heartsDOMAfter = document.querySelectorAll('.hud-heart-full').length;
+      const heartsHookAfter = hook.getHearts();
 
       return {
-        sentence: q?.sentence,
-        answer: q?.answer,
-        initialScore: initialScoreDOM,
-        scoreAfter: scoreDOMAfter,
-        scoreDelta: scoreDOMAfter - initialScoreDOM,
-        initialHearts,
-        heartsAfter,
+        initialScore,
+        scoreAfter,
+        scoreDelta: scoreAfter - initialScore,
+        initialHeartsDOM,
+        heartsDOMAfter,
+        initialHeartsHook,
+        heartsHookAfter,
         toast,
-        lastEvent: eventLog[eventLog.length - 1] || null
       };
     });
 
-    console.log('[W35 Question]:', w35TestResult.sentence);
-    console.log('[W35 Target Answer]:', w35TestResult.answer);
-    console.log('[W35 Collision Toast]:', `"${w35TestResult.toast}"`);
-    console.log(`[W35 Score HUD]: ${w35TestResult.initialScore} -> ${w35TestResult.scoreAfter} (+${w35TestResult.scoreDelta} XP)`);
-    console.log(`[W35 Hearts]: ${w35TestResult.initialHearts} -> ${w35TestResult.heartsAfter}`);
+    console.log('[W33 Hazard Collision Toast]:', `"${w33Hazard.toast}"`);
+    console.log(`[W33 Hazard Score HUD]: ${w33Hazard.initialScore} -> ${w33Hazard.scoreAfter} (+${w33Hazard.scoreDelta} XP)`);
+    console.log(`[W33 Hazard Hearts DOM]: ${w33Hazard.initialHeartsDOM} -> ${w33Hazard.heartsDOMAfter} (Expected: 3 -> 2)`);
+    console.log(`[W33 Hazard Hearts Hook]: ${w33Hazard.initialHeartsHook} -> ${w33Hazard.heartsHookAfter} (Expected: 3 -> 2)`);
 
-    const w35Pass = w35TestResult.toast.includes('WRONG CONNECTOR') &&
-                    w35TestResult.lastEvent?.type === 'wrong';
-    console.log(`[W35 Assertion]: Distractor connector triggered heart penalty & warning toast? => ${w35Pass ? 'PASS ✅' : 'FAIL ❌'}\n`);
+    const pass2 = w33Hazard.scoreDelta === 0 &&
+                  w33Hazard.heartsDOMAfter === 2 &&
+                  w33Hazard.heartsHookAfter === 2 &&
+                  w33Hazard.toast.includes('WRONG CONNECTOR');
+    console.log(`[Tổ hợp 2 Assertion]: Distractor triggered heart penalty (-1 heart) & warning toast? => ${pass2 ? 'PASS ✅' : 'FAIL ❌'}\n`);
 
-    const w35ScreenshotPath = path.join(SCREENSHOT_DIR, 'w35_connector_relay_hazard_live.png');
-    await page.screenshot({ path: w35ScreenshotPath });
-    console.log(`[Screenshot saved]: ${w35ScreenshotPath}`);
-
-    const brainW35Path = path.join(BRAIN_DIR, 'w35_connector_relay_hazard_live.png');
-    fs.copyFileSync(w35ScreenshotPath, brainW35Path);
+    const shot2 = path.join(SCREENSHOT_DIR, 'w33_connector_relay_hazard_live.png');
+    await page.screenshot({ path: shot2 });
+    fs.copyFileSync(shot2, path.join(BRAIN_DIR, 'w33_connector_relay_hazard_live.png'));
 
     // ─────────────────────────────────────────────────────────────────────────
-    // PHẦN 3: TEST DỌN SẠCH STATE CUỐI ROUND (ANTI-LEAK INVARIANT)
+    // TỔ HỢP 3: W35 — CHỌN ĐÚNG CỔNG LIÊN TỪ ("While") -> SUCCESS
     // ─────────────────────────────────────────────────────────────────────────
-    console.log('--- PHẦN 3: ANTI-LEAK INVARIANT VERIFICATION ---');
-    const antiLeakResult = await page.evaluate(async () => {
+    console.log('--- TỔ HỢP 3: W35 SUCCESS (Chọn đúng làn "While" -> Bridge Energized) ---');
+    await page.goto(`${BASE_URL}/week/35/chronicles?room=5&bypass=true`, { waitUntil: 'networkidle0' });
+    await new Promise(r => setTimeout(r, 600));
+
+    doorBtns = await page.$$('.dr-door-enter-btn');
+    if (!doorBtns || doorBtns.length < 2) throw new Error('Door buttons not found on W35 Room 5');
+    await doorBtns[1].click(); // Door 2 (Connector Relay)
+    await new Promise(r => setTimeout(r, 800));
+
+    const w35Success = await page.evaluate(async () => {
+      const hook = window.__CONNECTOR_RELAY_TEST_HOOK__;
+      hook.clearEntities();
+      hook.setHeartsVal(3);
+      hook.resetInvincible();
+      hook.setTargetLane(1);
+      window.__CONNECTOR_RELAY_EVENT_LOG__ = [];
+      await new Promise(r => setTimeout(r, 100));
+
+      const initialScore = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
+      const initialHeartsDOM = document.querySelectorAll('.hud-heart-full').length;
+      const initialHeartsHook = hook.getHearts();
+      const targetAns = hook.getCurrentQuestion()?.answer || 'While';
+
+      // Inject correct gate at center lane (lane 1)
+      hook.injectGateWave(0.86, [
+        { text: 'Because', isCorrect: false },
+        { text: targetAns, isCorrect: true },
+        { text: 'So', isCorrect: false }
+      ]);
+
+      await new Promise(r => setTimeout(r, 200));
+
+      const toast = document.querySelector('.connector-toast-pill')?.innerText?.trim() || '';
+      const scoreAfter = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
+      const heartsDOMAfter = document.querySelectorAll('.hud-heart-full').length;
+      const heartsHookAfter = hook.getHearts();
+
+      return {
+        question: hook.getCurrentQuestion()?.sentence,
+        answer: targetAns,
+        initialScore,
+        scoreAfter,
+        scoreDelta: scoreAfter - initialScore,
+        initialHeartsDOM,
+        heartsDOMAfter,
+        initialHeartsHook,
+        heartsHookAfter,
+        toast,
+      };
+    });
+
+    console.log('[W35 Question]:', w35Success.question);
+    console.log('[W35 Target Answer]:', w35Success.answer);
+    console.log('[W35 Collision Toast]:', `"${w35Success.toast}"`);
+    console.log(`[W35 Score HUD]: ${w35Success.initialScore} -> ${w35Success.scoreAfter} (+${w35Success.scoreDelta} XP)`);
+    console.log(`[W35 Hearts DOM]: ${w35Success.initialHeartsDOM} -> ${w35Success.heartsDOMAfter} (Hook: ${w35Success.initialHeartsHook} -> ${w35Success.heartsHookAfter})`);
+
+    const pass3 = w35Success.scoreDelta === 40 &&
+                  w35Success.heartsDOMAfter === 3 &&
+                  w35Success.toast.includes('BRIDGE ENERGIZED');
+    console.log(`[Tổ hợp 3 Assertion]: W35 Bridge energized & +40 XP & no heart penalty? => ${pass3 ? 'PASS ✅' : 'FAIL ❌'}\n`);
+
+    const shot3 = path.join(SCREENSHOT_DIR, 'w35_connector_relay_success_live.png');
+    await page.screenshot({ path: shot3 });
+    fs.copyFileSync(shot3, path.join(BRAIN_DIR, 'w35_connector_relay_success_live.png'));
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // TỔ HỢP 4: W35 — VA CHẠM CỔNG LIÊN TỪ SAI ("so") -> HAZARD / -1 TIM
+    // ─────────────────────────────────────────────────────────────────────────
+    console.log('--- TỔ HỢP 4: W35 HAZARD (Va chạm nhầm cổng "so" -> Trừ 1 Tim) ---');
+    await page.goto(`${BASE_URL}/week/35/chronicles?room=5&bypass=true`, { waitUntil: 'networkidle0' });
+    await new Promise(r => setTimeout(r, 600));
+
+    doorBtns = await page.$$('.dr-door-enter-btn');
+    await doorBtns[1].click(); // Door 2
+    await new Promise(r => setTimeout(r, 800));
+
+    const w35Hazard = await page.evaluate(async () => {
+      const hook = window.__CONNECTOR_RELAY_TEST_HOOK__;
+      hook.clearEntities();
+      hook.setHeartsVal(3);
+      hook.resetInvincible();
+      hook.setTargetLane(1);
+      window.__CONNECTOR_RELAY_EVENT_LOG__ = [];
+      await new Promise(r => setTimeout(r, 100));
+
+      const initialScore = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
+      const initialHeartsDOM = document.querySelectorAll('.hud-heart-full').length;
+      const initialHeartsHook = hook.getHearts();
+
+      // Inject wrong gate 'so' at center lane (lane 1)
+      hook.injectGateWave(0.86, [
+        { text: 'while', isCorrect: true },
+        { text: 'so', isCorrect: false },
+        { text: 'unless', isCorrect: false }
+      ]);
+
+      await new Promise(r => setTimeout(r, 200));
+
+      const toast = document.querySelector('.connector-toast-pill')?.innerText?.trim() || '';
+      const scoreAfter = parseInt(document.querySelector('.hud-score-value')?.innerText || '0', 10);
+      const heartsDOMAfter = document.querySelectorAll('.hud-heart-full').length;
+      const heartsHookAfter = hook.getHearts();
+
+      return {
+        initialScore,
+        scoreAfter,
+        scoreDelta: scoreAfter - initialScore,
+        initialHeartsDOM,
+        heartsDOMAfter,
+        initialHeartsHook,
+        heartsHookAfter,
+        toast,
+      };
+    });
+
+    console.log('[W35 Hazard Collision Toast]:', `"${w35Hazard.toast}"`);
+    console.log(`[W35 Hazard Score HUD]: ${w35Hazard.initialScore} -> ${w35Hazard.scoreAfter} (+${w35Hazard.scoreDelta} XP)`);
+    console.log(`[W35 Hazard Hearts DOM]: ${w35Hazard.initialHeartsDOM} -> ${w35Hazard.heartsDOMAfter} (Expected: 3 -> 2)`);
+    console.log(`[W35 Hazard Hearts Hook]: ${w35Hazard.initialHeartsHook} -> ${w35Hazard.heartsHookAfter} (Expected: 3 -> 2)`);
+
+    const pass4 = w35Hazard.scoreDelta === 0 &&
+                  w35Hazard.heartsDOMAfter === 2 &&
+                  w35Hazard.heartsHookAfter === 2 &&
+                  w35Hazard.toast.includes('WRONG CONNECTOR');
+    console.log(`[Tổ hợp 4 Assertion]: Distractor triggered heart penalty (-1 heart) & warning toast? => ${pass4 ? 'PASS ✅' : 'FAIL ❌'}\n`);
+
+    const shot4 = path.join(SCREENSHOT_DIR, 'w35_connector_relay_hazard_live.png');
+    await page.screenshot({ path: shot4 });
+    fs.copyFileSync(shot4, path.join(BRAIN_DIR, 'w35_connector_relay_hazard_live.png'));
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // PHẦN 5: ANTI-LEAK GATEWAY QUESTION TRANSITION VERIFICATION
+    // ─────────────────────────────────────────────────────────────────────────
+    console.log('--- PHẦN 5: ANTI-LEAK GATEWAY QUESTION TRANSITION VERIFICATION ---');
+    const antiLeak = await page.evaluate(async () => {
       const hook = window.__CONNECTOR_RELAY_TEST_HOOK__;
       const initialRound = hook.getRoundIdx();
       const initialRoundId = initialRound + 1;
-      
-      // Inject some dummy gates specifically tagged for initialRoundId
+
+      // Inject dummy gates tagged with initialRoundId
       hook.injectGateWave(0.4, [
         { text: 'and', isCorrect: true },
         { text: 'or', isCorrect: false },
@@ -193,36 +309,38 @@ async function runConnectorRelayPlaytest() {
       ]);
       const initialStaleCount = hook.getStaleEntities(initialRoundId).length;
 
-      // Advance round (transition from Round 0 to Round 1)
+      // Advance to next Question Gateway (Gateway 0 -> Gateway 1)
       hook.advanceToRound(initialRound + 1);
       await new Promise(r => setTimeout(r, 400));
 
-      // Check whether ANY entity from the old round still exists
-      const remainingOldEntities = hook.getStaleEntities(initialRoundId);
-      const newRoundEntities = hook.getCurrentEntities();
+      const newRound = hook.getRoundIdx();
+      const remainingOldCount = hook.getStaleEntities(initialRoundId).length;
+      const newRoundEntities = hook.getCurrentEntities().length;
 
       return {
         initialRound,
-        newRound: hook.getRoundIdx(),
+        newRound,
         initialStaleCount,
-        remainingOldCount: remainingOldEntities.length,
-        newRoundCount: newRoundEntities.length
+        remainingOldCount,
+        newRoundEntities
       };
     });
 
-    console.log(`[Round Transition]: Round ${antiLeakResult.initialRound} -> Round ${antiLeakResult.newRound}`);
-    console.log(`[Old Round Entities Before]: ${antiLeakResult.initialStaleCount}`);
-    console.log(`[Old Round Entities Remaining After Transition]: ${antiLeakResult.remainingOldCount} (Expected: 0)`);
-    console.log(`[New Round Spawned Entities]: ${antiLeakResult.newRoundCount} (active for new round)`);
-    const antiLeakPass = antiLeakResult.remainingOldCount === 0;
-    console.log(`[Anti-Leak Assertion]: All old round entities purged from memory on transition? => ${antiLeakPass ? 'PASS ✅' : 'FAIL ❌'}\n`);
+    console.log(`[Question Gateway Transition]: Gateway Chặng ${antiLeak.initialRound + 1} (idx: ${antiLeak.initialRound}) -> Gateway Chặng ${antiLeak.newRound + 1} (idx: ${antiLeak.newRound})`);
+    console.log(`[Old Gateway Entities Before]: ${antiLeak.initialStaleCount}`);
+    console.log(`[Old Gateway Entities Remaining After Transition]: ${antiLeak.remainingOldCount} (Expected: 0)`);
+    console.log(`[New Gateway Spawned Entities]: ${antiLeak.newRoundEntities} (active for new gateway)`);
 
-    if (w33Pass && w35Pass && antiLeakPass) {
-      console.log('========================================================================');
-      console.log('>>> TẤT CẢ CÁC BƯỚC PLAYTEST GIAI ĐOẠN 1b ĐÃ PASS 100%! <<<');
-      console.log('========================================================================\n');
+    const passAntiLeak = antiLeak.newRound === antiLeak.initialRound + 1 &&
+                         antiLeak.remainingOldCount === 0;
+    console.log(`[Anti-Leak Assertion]: Transition advanced correctly & old entities memory purged? => ${passAntiLeak ? 'PASS ✅' : 'FAIL ❌'}\n`);
+
+    if (pass1 && pass2 && pass3 && pass4 && passAntiLeak) {
+      console.log('================================================================================');
+      console.log('>>> HOÀN THÀNH 100%: TẤT CẢ 4/4 TỔ HỢP VÀ ANTI-LEAK ĐỀU PASS TUYỆT ĐỐI! <<<');
+      console.log('================================================================================\n');
     } else {
-      console.error('>>> CÓ BƯỚC PLAYTEST THẤT BẠI! KIỂM TRA LẠI! <<<\n');
+      console.error('>>> CÓ TỔ HỢP THẤT BẠI! KIỂM TRA LẠI! <<<\n');
       process.exit(1);
     }
 
@@ -231,7 +349,7 @@ async function runConnectorRelayPlaytest() {
   }
 }
 
-runConnectorRelayPlaytest().catch(err => {
-  console.error('[PLAYTEST ERROR]:', err);
+runFullConnectorRelaySuite().catch(err => {
+  console.error('[PLAYTEST SUITE ERROR]:', err);
   process.exit(1);
 });

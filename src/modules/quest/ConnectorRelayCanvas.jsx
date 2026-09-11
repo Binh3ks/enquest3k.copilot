@@ -82,6 +82,16 @@ export default function ConnectorRelayCanvas({
   const [leoPos, setLeoPos] = useState({ x: 0, y: 0, jumpOffset: 0, scale: 1 });
   const [leoAnimState, setLeoAnimState] = useState('run');
 
+  // Live tracking refs for accurate real-time test hooks
+  const heartsRef = useRef(hearts);
+  heartsRef.current = hearts;
+  const scoreRef = useRef(score);
+  scoreRef.current = score;
+  const roundIdxRef = useRef(roundIdx);
+  roundIdxRef.current = roundIdx;
+  const targetLaneRef = useRef(targetLane);
+  targetLaneRef.current = targetLane;
+
   // Game Engine Entities (Road objects: z from 0.05 to 1.2)
   const entitiesRef = useRef([]); // [{ id, type, lane, z, word, isCorrect, targetRoundId, passed, collected }]
   const particlesRef = useRef([]); // Visual energy sparks
@@ -274,12 +284,12 @@ export default function ConnectorRelayCanvas({
       window.__CONNECTOR_RELAY_EVENT_LOG__ = window.__CONNECTOR_RELAY_EVENT_LOG__ || [];
       window.__CONNECTOR_RELAY_TEST_HOOK__ = {
         setTargetLane: (lane) => setTargetLane(lane),
-        getTargetLane: () => targetLane,
+        getTargetLane: () => targetLaneRef.current,
         getCurrentEntities: () => entitiesRef.current,
-        getRoundIdx: () => roundIdx,
+        getRoundIdx: () => roundIdxRef.current,
         getCurrentQuestion: () => currentQ,
-        getScore: () => score,
-        getHearts: () => hearts,
+        getScore: () => scoreRef.current,
+        getHearts: () => heartsRef.current,
         resetInvincible: () => {
           invincibleUntil.current = 0;
           setInvincible(false);
