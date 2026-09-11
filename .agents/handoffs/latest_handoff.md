@@ -1,7 +1,7 @@
 # 🤝 Session Handoff Report
-**Date**: 16:56:00 11/9/2026
+**Date**: 17:08:00 11/9/2026
 **Branch**: `main`
-**Latest Commit**: `4c4ac84f feat(chronicles): implement SynonymStormDefense.jsx and SynonymStormDefense.css for Floor 6 Door 1`
+**Latest Commit**: `2d33444c feat(chronicles): implement WordForgeCarryEngine.jsx (Rank #3) with physical carry and 2-tier matching`
 
 ---
 
@@ -46,21 +46,28 @@
     - `docs/agent_artifacts/screenshots/w35_connector_relay_success_live.png`
     - `docs/agent_artifacts/screenshots/w35_connector_relay_hazard_live.png`
   - Báo cáo chi tiết: `docs/agent_artifacts/BAO_CAO_THUC_THI_OO_PP_SUA_BANG_VA_GIAI_DOAN_1B_2026_09_11.md`.
+- **Hạng #3: Word Forge Carry Engine (Floor 7 Door 1 — Vocab — HOÀN THÀNH 100%)**:
+  - Triển khai Phương án B: Platformer mang vác rune chữ cái lên đe rèn ma thuật Arcane Anvil.
+  - Khớp 2 tầng (2-tier matching): Tier 1 lọc distractors, Tier 2 đúng thứ tự chữ cái tiếp theo.
+  - Đúng: +25 XP, khóa vào ô slot; Sai: rơi về origin, trừ 1 Tim (3 -> 2); Đủ từ: +50 XP thưởng.
+  - Đạt chuẩn 4/4 tổ hợp playtest (W33 Success, W33 Hazard, W35 Success, W35 Hazard) ngay từ lần chạy đầu tiên.
+  - Anti-leak round transition pass 100% (xóa sạch runes cũ).
+  - Minh chứng screenshots (4 ảnh):
+    - `docs/agent_artifacts/screenshots/w33_word_forge_success_live.png`
+    - `docs/agent_artifacts/screenshots/w33_word_forge_hazard_live.png`
+    - `docs/agent_artifacts/screenshots/w35_word_forge_success_live.png`
+    - `docs/agent_artifacts/screenshots/w35_word_forge_hazard_live.png`
+  - Báo cáo chi tiết: `docs/agent_artifacts/BAO_CAO_THUC_THI_HANG_3_WORD_FORGE_CARRY_ENGINE_2026_09_11.md`.
 
 ---
 
 ## 3. 🟡 Pending / Next Steps
 - **Tiếp tục theo lộ trình Trục Hybrid đã duyệt**:
-  - **Hạng #3: Word Forge Scramble (Floor 7 Door 1 — Vocab)**:
-    - Fork từ `src/modules/quest/ScrollChamberDecode.jsx` $\rightarrow$ `src/modules/quest/WordForgeScrambleGame.jsx`.
-    - Tạo `WordForgeScrambleGame.css`.
-    - Triển khai Phương án B: 4–8 ký tự, 2-tier matching, nhặt rune chữ cái theo đúng thứ tự để đúc từ trên đe rèn.
-    - Áp dụng cơ chế Anti-Leak dọn sạch tile thừa khi chuyển round.
-    - Mount vào `DailyRoomScreen.jsx:403` (`case 'word_forge_scramble':`).
-    - Build & Puppeteer playtest W33 / W35.
   - **Hạng #4: Question Quest (Floor 7 Door 2 — Grammar)**:
     - Fork từ `src/modules/quest/RiddleRunMaze.jsx` $\rightarrow$ `src/modules/quest/QuestionQuestGame.jsx`.
-    - Triển khai biển chỉ dẫn 220px, chọn cổng WH-question (Who, Where, Why, When).
+    - Triển khai biển chỉ dẫn 220px, chọn cổng WH-question (Who, Where, Why, When, Which).
+    - Áp dụng ngay: Anti-leak state, playtest đủ 4 tổ hợp (2 tuần x đúng/sai) ngay lần chạy đầu tiên.
+    - Mount vào `DailyRoomScreen.jsx:406` (`case 'question_quest':`).
   - **Hạng #5: Story Sequencer (Floor 6 Door 3 — Integration)**: Dựng mới bệ thờ cuộn giấy.
   - **Hạng #6: Word Class Duel (Floor 7 Door 3 — Integration)**: Dựng mới đĩa cân đối kháng Noun vs Verb.
 
@@ -68,13 +75,13 @@
 
 ## 4. 🧪 System Verification Status
 - **Git Branch**: `main`
-- **Build Status**: `npm run build` PASS (exit code 0, 13.91s)
+- **Build Status**: `npm run build` PASS (exit code 0, 15.29s)
 - **Dev Server**: Running on `http://localhost:5173`
 - **Artifacts Saved**:
-  - `docs/agent_artifacts/BAO_CAO_THUC_THI_OO_PP_SUA_BANG_VA_GIAI_DOAN_1B_2026_09_11.md`
-  - 3 screenshots bằng chứng đã lưu và sync sang brain artifact dir.
+  - `docs/agent_artifacts/BAO_CAO_THUC_THI_HANG_3_WORD_FORGE_CARRY_ENGINE_2026_09_11.md`
+  - 8 screenshots bằng chứng live (Connector Relay 4/4 + Word Forge 4/4).
 
 ---
 
 ## 🚀 Quickstart for Next Session (`/start`)
-Run `/start` at the beginning of the next session to automatically load this handoff and proceed to Hạng #3 (Word Forge Scramble).
+Run `/start` at the beginning of the next session to automatically load this handoff and proceed to Hạng #4 (Question Quest).
