@@ -435,8 +435,8 @@ export const WEEK_34_WH_QUESTIONS = [
     sentence: "On a warm afternoon, the mighty lion was sleeping peacefully under the trees.",
     options: [
       { text: "What was the mighty lion doing under the trees?", isCorrect: true },
-      { text: "Where did the hunters go?", isCorrect: false },
-      { text: "Who woke up the hunters?", isCorrect: false },
+      { text: "Where was the mighty lion sleeping?", isCorrect: false },
+      { text: "When was the mighty lion sleeping peacefully?", isCorrect: false },
     ],
     hint: "Notice the continuous action: 'was sleeping peacefully'."
   },
@@ -445,8 +445,8 @@ export const WEEK_34_WH_QUESTIONS = [
     sentence: "While the lion was resting, a tiny mouse ran across the lion's big front paw.",
     options: [
       { text: "What ran across the lion's big front paw?", isCorrect: true },
-      { text: "Why was the lion running?", isCorrect: false },
-      { text: "Where did the mouse sleep?", isCorrect: false },
+      { text: "What was the lion doing when the mouse ran by?", isCorrect: false },
+      { text: "Where did the tiny mouse run across?", isCorrect: false },
     ],
     hint: "Ask about the subject performing the sudden action: 'a tiny mouse'."
   },
@@ -455,8 +455,8 @@ export const WEEK_34_WH_QUESTIONS = [
     sentence: "The mouse begged for mercy and promised to help the lion one day if he let him go.",
     options: [
       { text: "What did the mouse promise to do?", isCorrect: true },
-      { text: "When did the lion trap the mouse?", isCorrect: false },
-      { text: "Who caught the hunters?", isCorrect: false },
+      { text: "Who begged the mighty lion for mercy?", isCorrect: false },
+      { text: "Why did the mouse ask the lion to let him go?", isCorrect: false },
     ],
     hint: "Focus on the promise made by the mouse: 'to help the lion'."
   },
@@ -465,8 +465,8 @@ export const WEEK_34_WH_QUESTIONS = [
     sentence: "A few days later, hunters trapped the lion in a strong net made of thick ropes.",
     options: [
       { text: "Who trapped the lion in a strong net?", isCorrect: true },
-      { text: "Why did the mouse roar loudly?", isCorrect: false },
-      { text: "What did the lion eat?", isCorrect: false },
+      { text: "What did the hunters trap the lion with?", isCorrect: false },
+      { text: "When did the hunters trap the mighty lion?", isCorrect: false },
     ],
     hint: "Identify who set the trap: 'hunters'."
   },
@@ -475,8 +475,8 @@ export const WEEK_34_WH_QUESTIONS = [
     sentence: "The little mouse quickly chewed through the ropes and set the lion completely free.",
     options: [
       { text: "How did the little mouse set the lion free?", isCorrect: true },
-      { text: "Where was the hunter's house?", isCorrect: false },
-      { text: "Why was the mouse afraid of the net?", isCorrect: false },
+      { text: "Who chewed through the thick ropes?", isCorrect: false },
+      { text: "What did the little mouse chew through?", isCorrect: false },
     ],
     hint: "Notice the method used: 'quickly chewed through the ropes'."
   }
@@ -488,8 +488,8 @@ export const GENERIC_WH_QUESTIONS = [
     sentence: "The brave astronaut floated silently in the zero-gravity training chamber.",
     options: [
       { text: "What was the astronaut doing in the chamber?", isCorrect: true },
-      { text: "Where did the rocket launch?", isCorrect: false },
-      { text: "Why was the mission cancelled?", isCorrect: false },
+      { text: "Where was the brave astronaut floating?", isCorrect: false },
+      { text: "How did the astronaut float in the chamber?", isCorrect: false },
     ],
     hint: "Ask about the activity: 'floated silently'."
   },
@@ -498,8 +498,8 @@ export const GENERIC_WH_QUESTIONS = [
     sentence: "Suddenly, the warning buzzer beeped because the oxygen gauge fluctuated.",
     options: [
       { text: "Why did the warning buzzer beep?", isCorrect: true },
-      { text: "Who pressed the emergency button?", isCorrect: false },
-      { text: "When did the rocket return?", isCorrect: false },
+      { text: "What happened suddenly in the training chamber?", isCorrect: false },
+      { text: "What fluctuated and caused the warning buzzer to beep?", isCorrect: false },
     ],
     hint: "Look for the cause introduced by 'because'."
   },
@@ -508,8 +508,8 @@ export const GENERIC_WH_QUESTIONS = [
     sentence: "The chief engineer calibrated the solar panels before the lunar eclipse.",
     options: [
       { text: "What did the chief engineer calibrate?", isCorrect: true },
-      { text: "Who discovered the new planet?", isCorrect: false },
-      { text: "Why did the lights flicker?", isCorrect: false },
+      { text: "Who calibrated the solar panels?", isCorrect: false },
+      { text: "When were the solar panels calibrated?", isCorrect: false },
     ],
     hint: "Focus on the object being calibrated: 'the solar panels'."
   },
@@ -518,8 +518,8 @@ export const GENERIC_WH_QUESTIONS = [
     sentence: "Dr. Nova discovered a sparkling crystal deep inside the lunar crater.",
     options: [
       { text: "Where did Dr. Nova find the crystal?", isCorrect: true },
-      { text: "How many crew members landed?", isCorrect: false },
-      { text: "When was the satellite launched?", isCorrect: false },
+      { text: "Who discovered the sparkling crystal?", isCorrect: false },
+      { text: "What did Dr. Nova discover in the lunar crater?", isCorrect: false },
     ],
     hint: "Identify the location: 'deep inside the lunar crater'."
   },
@@ -528,10 +528,63 @@ export const GENERIC_WH_QUESTIONS = [
     sentence: "The mission commander awarded gold badges to all crew members for courage.",
     options: [
       { text: "Why did the commander award gold badges?", isCorrect: true },
-      { text: "Where was the command centre?", isCorrect: false },
-      { text: "What time was the landing?", isCorrect: false },
+      { text: "What did the commander award to the crew members?", isCorrect: false },
+      { text: "Who received the gold badges for courage?", isCorrect: false },
     ],
     hint: "Look for the reason: 'for courage'."
+  }
+];
+
+export const WEEK_35_WH_QUESTIONS = [
+  {
+    id: 'w35_wh_1',
+    sentence: "Early in the morning, the family packed their gear and drove towards Pine Mountain.",
+    options: [
+      { text: "Where did the family drive towards?", isCorrect: true },
+      { text: "When did the family pack their gear?", isCorrect: false },
+      { text: "What did the family pack early in the morning?", isCorrect: false },
+    ],
+    hint: "Identify the destination: 'towards Pine Mountain'."
+  },
+  {
+    id: 'w35_wh_2',
+    sentence: "While Dad was pitching the camp tent, the children collected dry firewood.",
+    options: [
+      { text: "What was Dad doing while the children collected wood?", isCorrect: true },
+      { text: "Who collected dry firewood for the camp?", isCorrect: false },
+      { text: "What did the children collect while Dad was busy?", isCorrect: false },
+    ],
+    hint: "Notice the continuous action: 'was pitching the camp tent'."
+  },
+  {
+    id: 'w35_wh_3',
+    sentence: "They spotted two playful squirrels while hiking along the mountain stream.",
+    options: [
+      { text: "What did they spot along the stream?", isCorrect: true },
+      { text: "Where were they hiking when they saw the squirrels?", isCorrect: false },
+      { text: "How many playful squirrels did the family spot?", isCorrect: false },
+    ],
+    hint: "Look at the animals seen: 'two playful squirrels'."
+  },
+  {
+    id: 'w35_wh_4',
+    sentence: "Dad lit the warm campfire when the golden sun sank behind the ridges.",
+    options: [
+      { text: "When did Dad light the campfire?", isCorrect: true },
+      { text: "Who lit the warm campfire in the evening?", isCorrect: false },
+      { text: "Where did the golden sun sink?", isCorrect: false },
+    ],
+    hint: "Focus on the time clause: 'when the golden sun sank'."
+  },
+  {
+    id: 'w35_wh_5',
+    sentence: "Under the starry night sky, they roasted sweet marshmallows and sang happy songs.",
+    options: [
+      { text: "What did they roast under the starry night sky?", isCorrect: true },
+      { text: "Where did they roast sweet marshmallows and sing songs?", isCorrect: false },
+      { text: "What did they sing under the starry night sky?", isCorrect: false },
+    ],
+    hint: "Identify the camp treat: 'sweet marshmallows'."
   }
 ];
 
@@ -539,6 +592,7 @@ export function getWhQuestionsForWeek(weekNumber, weekData = null) {
   const w = parseInt(weekNumber) || 33;
   if (w === 33) return WEEK_33_WH_QUESTIONS;
   if (w === 34) return WEEK_34_WH_QUESTIONS;
+  if (w === 35) return WEEK_35_WH_QUESTIONS;
 
   // Try extracting comprehension_questions from weekData if available
   const compQuestions = weekData?.stations?.read_explore?.comprehension_questions
