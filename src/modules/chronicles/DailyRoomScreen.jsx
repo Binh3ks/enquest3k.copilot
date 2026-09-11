@@ -40,7 +40,8 @@ import ChunkCatapultCanvas     from './games/ChunkCatapultCanvas';
 import SynonymStormGame        from './games/SynonymStormGame';
 import WordForgeScrambleGame   from './games/WordForgeScrambleGame';
 import ConnectorRelayGame      from './games/ConnectorRelayGame';
-import StorySequencerGame      from './games/StorySequencerGame';
+import StorySequencerGame      from './games/StorySequencerGame';  // legacy — kept for fallback
+import StoryAltarPuzzle        from '../quest/StoryAltarPuzzle';
 import WordClassDuelGame       from './games/WordClassDuelGame';
 import useDailyQuestStore      from '../../stores/useDailyQuestStore';
 import { QUEST_SCHEDULE }      from '../../config/questSchedule';
@@ -395,7 +396,7 @@ export default function DailyRoomScreen({
         return <ConnectorRelayCanvas grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
 
       case 'story_sequencer':
-        return <StorySequencerGame duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
+        return <StoryAltarPuzzle duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
 
       // ── Floor 7: Master Sanctum ────────────────────────────────────────
       case 'word_forge_scramble':
