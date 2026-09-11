@@ -103,9 +103,17 @@ export default function SynonymStormDefense({
         },
         getLeoX: () => leoRef.current.x,
         getCurrentMeteors: () => meteors,
+        getRoundIdx: () => roundIdx,
+        getCurrentPair: () => currentPair,
+        injectMeteor: (m) => setMeteors(prev => [...prev, m]),
+        advanceToRound: (newIdx) => {
+          setFeedback(null);
+          setMeteors([]);
+          setRoundIdx(newIdx);
+        },
       };
     }
-  }, [meteors]);
+  }, [meteors, roundIdx, currentPair]);
 
   // Leo physics
   const leoRef = useRef({
@@ -261,6 +269,7 @@ export default function SynonymStormDefense({
             vy: 95 + Math.random() * 45,
             word: chosenWord,
             isTarget: isTargetMeteor,
+            targetRoot: currentPair.word,
           }
         ]);
       }
@@ -272,10 +281,10 @@ export default function SynonymStormDefense({
         for (const m of prevMeteors) {
           const ny = m.y + m.vy * dt;
 
-          // Check collision with Leo's Aegis Shield
+          // Check collision with Leo's Aegis Shield (ignore stale meteors from previous round)
           const distLeo = Math.hypot((leo.x + 20) - (m.x + 35), (leo.y + 24) - (ny + 20));
 
-          if (distLeo < 52) {
+          if (distLeo < 52 && (!m.targetRoot || m.targetRoot === currentPair.word)) {
             // Intercepted with Shield!
             if (m.isTarget) {
               // DEFLECTED CORRECT SYNONYM!
@@ -311,9 +320,10 @@ export default function SynonymStormDefense({
                 });
               }
 
-              // Advance round after brief delay
+              // Advance round after brief delay and clear old round's falling meteors
               setTimeout(() => {
                 setFeedback(null);
+                setMeteors([]);
                 setRoundIdx(r => (r + 1 < rounds.length ? r + 1 : r));
               }, 1200);
 

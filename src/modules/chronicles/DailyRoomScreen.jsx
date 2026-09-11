@@ -29,7 +29,7 @@ import {
   EchoArenaShooter, CatapultCommander, StormShieldDefense,
   HighwaySprint, SyntaxExpressRail, RiddleRunMaze,
   GrandMatrixDungeon, TitanGrammarForge, CambridgeClozeGauntlet,
-  SynonymStormDefense,
+  SynonymStormDefense, ConnectorRelayCanvas,
 } from '../quest';
 
 
@@ -393,7 +393,7 @@ export default function DailyRoomScreen({
         return <SynonymStormDefense duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
 
       case 'connector_relay':
-        return <ConnectorRelayGame grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
+        return <ConnectorRelayCanvas grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
 
       case 'story_sequencer':
         return <StorySequencerGame duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;

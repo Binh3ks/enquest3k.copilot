@@ -51,5 +51,6 @@ export { default as CambridgeClozeGauntlet } from './CambridgeClozeGauntlet';
 
 // Floor 6 Games (Redesign Sprint)
 export { default as SynonymStormDefense }   from './SynonymStormDefense';
+export { default as ConnectorRelayCanvas }  from './ConnectorRelayCanvas';
 
 

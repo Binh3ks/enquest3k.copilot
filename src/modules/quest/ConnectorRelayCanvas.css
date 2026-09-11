@@ -1,0 +1,400 @@
+/* ConnectorRelayCanvas.css — Arcane Skyway Bridge Pseudo-3D Runner Styles */
+@import './game-mobile.css';
+
+.connector-relay-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  background: #040714;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  touch-action: none;
+}
+
+/* Sentence Banner with Blank Pill */
+.connector-sentence-banner {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(12, 22, 48, 0.94);
+  border: 1.5px solid rgba(56, 189, 248, 0.5);
+  border-radius: 24px;
+  padding: 8px 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(56, 189, 248, 0.25);
+  backdrop-filter: blur(10px);
+  max-width: 90%;
+  pointer-events: auto;
+}
+
+.connector-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+  transition: transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.connector-audio-btn:hover {
+  transform: scale(1.05);
+}
+
+.connector-sentence-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.connector-icon {
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+.connector-sentence-text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 480px;
+}
+
+.connector-blank-pill {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.25);
+  color: #fbbf24;
+  border: 1px dashed #f59e0b;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 900;
+  margin: 0 4px;
+  animation: pulse-blank 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulse-blank {
+  from {
+    box-shadow: 0 0 4px rgba(245, 158, 11, 0.4);
+    border-color: #f59e0b;
+  }
+  to {
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.8);
+    border-color: #fbbf24;
+  }
+}
+
+.connector-round-pill {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #bae6fd;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 3px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Toast Feedback */
+.connector-toast-pill {
+  position: absolute;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 8px 22px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  animation: pop-toast 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.connector-toast-pill.toast-correct {
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.95), rgba(4, 120, 87, 0.95));
+  border: 1.5px solid #34d399;
+  color: #ecfdf5;
+}
+
+.connector-toast-pill.toast-wrong {
+  background: linear-gradient(135deg, rgba(127, 29, 29, 0.95), rgba(185, 28, 28, 0.95));
+  border: 1.5px solid #f87171;
+  color: #fef2f2;
+}
+
+@keyframes pop-toast {
+  0% { transform: translate(-50%, -12px) scale(0.85); opacity: 0; }
+  100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+}
+
+/* 3D Canvas */
+.connector-relay-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 10;
+}
+
+/* Leo Mascot CSS Overlay */
+.connector-leo-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 30;
+  pointer-events: none;
+  transition: transform 0.05s linear;
+}
+
+.connector-leo-layer.leo-invincible {
+  animation: flicker-invincible 0.15s infinite alternate;
+}
+
+@keyframes flicker-invincible {
+  from { opacity: 0.35; }
+  to { opacity: 0.95; }
+}
+
+/* Gesture Overlay */
+.connector-gesture-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  touch-action: none;
+}
+
+/* Control Guide */
+.connector-controls-guide {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 35;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #94a3b8;
+  border-radius: 12px;
+  padding: 4px 14px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Help Guide Button */
+.connector-help-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(56, 189, 248, 0.5);
+  color: #7dd3fc;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.connector-help-btn:hover {
+  transform: scale(1.05);
+  background: rgba(14, 116, 144, 0.95);
+  color: #fff;
+}
+
+/* Modals */
+.connector-cleared-modal,
+.connector-ko-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 90;
+  background: rgba(4, 7, 20, 0.88);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cleared-card,
+.ko-card {
+  background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+  border: 2px solid #38bdf8;
+  border-radius: 24px;
+  padding: 32px 28px;
+  text-align: center;
+  max-width: 440px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.3);
+}
+
+.cleared-card h2 {
+  color: #38bdf8;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 10px 0 6px;
+}
+
+.cleared-stars {
+  font-size: 1.8rem;
+  margin: 8px 0;
+}
+
+.cleared-full-text {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.cleared-score {
+  font-size: 1.1rem;
+  color: #f8fafc;
+  margin-bottom: 14px;
+}
+
+.finish-door-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.5);
+  transition: transform 0.15s ease;
+}
+
+.finish-door-btn:hover {
+  transform: scale(1.05);
+}
+
+.ko-card {
+  border-color: #ef4444;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(239, 68, 68, 0.3);
+}
+
+.ko-card h2 {
+  color: #f87171;
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin: 8px 0;
+}
+
+.ko-card p {
+  color: #94a3b8;
+  font-size: 0.88rem;
+  margin-bottom: 18px;
+}
+
+.ko-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.exit-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 8px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .connector-sentence-banner {
+    top: 46px;
+    padding: 6px 10px;
+    gap: 8px;
+    width: 95%;
+    max-width: 95%;
+    border-radius: 16px;
+  }
+
+  .connector-audio-btn {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+    gap: 4px;
+    border-radius: 8px;
+  }
+
+  .connector-sentence-text {
+    font-size: 0.78rem;
+    line-height: 1.25;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 220px;
+  }
+
+  .connector-round-pill {
+    padding: 2px 6px;
+    font-size: 0.7rem;
+  }
+
+  .connector-help-btn {
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .connector-controls-guide {
+    font-size: 0.62rem;
+    padding: 3px 8px;
+    max-width: 96%;
+    bottom: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

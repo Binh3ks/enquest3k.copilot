@@ -1,47 +1,75 @@
-# Session Handoff — Mobile Game Engine Redesign v2 (Completed)
-**Date**: 2026-09-08T10:35+07:00
-**Branch**: `main` @ commit `ff7b8e27`
-**Build Status**: `npm run build` PASS (exit code 0)
+# 🤝 Session Handoff Report
+**Date**: 16:56:00 11/9/2026
+**Branch**: `main`
+**Latest Commit**: `4c4ac84f feat(chronicles): implement SynonymStormDefense.jsx and SynonymStormDefense.css for Floor 6 Door 1`
 
 ---
 
-## 🎯 Status: Mobile-First Game Redesign v2 — COMPLETED
-
-All 5 core complaints from real mobile devices have been addressed and verified:
-1. ✅ **D-Pad & JUMP/SLIDE buttons completely removed**: `VirtualDPad.jsx` deprecated from game scenes.
-2. ✅ **Game world viewport fixed**: `useGameScale` removed across all games; replaced with 60fps native `cameraX` tracking and responsive CSS viewports filling the mobile screen.
-3. ✅ **FloatingExitBtn**: Universal `FloatingExitBtn.jsx` (position:fixed, top-left, z-index:9999) mounted in all 15 mini-games so players can always cleanly exit.
-4. ✅ **HighwaySprintCanvas 60fps pseudo-3D engine**: Full rewrite in `HighwaySprintCanvas.jsx` featuring Canvas 2D pseudo-3D road rendering, visual 3D-projected obstacles (barriers, laser beams, barrels), 3D billboard word badges, audio-first definition cue, and 8 rapid rounds.
-5. ✅ **useGestureControls**: Touch gesture lock hook supporting swipe down (slide), double-tap (jump), and 3-zone tap controls.
-6. ✅ **EchoArenaShooter & Platformers**: Fixed responsive arena bounds using dynamic window dimensions instead of hardcoded 900px coordinates.
-
----
-
-## 📁 Key File Map
-
-| File | Status | Notes |
-|------|--------|-------|
-| `src/modules/quest/FloatingExitBtn.jsx` | NEW | Universal always-on exit button (z-index 9999) |
-| `src/modules/quest/useGestureControls.js` | NEW | Native swipe, double-tap, tap-zone gesture listener |
-| `src/modules/quest/HighwaySprintCanvas.jsx` | NEW | 60fps Canvas 2D pseudo-3D endless runner |
-| `src/modules/quest/VirtualDPad.jsx` | DEPRECATED | Removed from all 15 mini-games |
-| `src/modules/quest/EchoArenaShooter.jsx` | REFACTORED | Dynamic viewport bounds, direct tap-to-shoot |
-| `src/modules/chronicles/DailyRoomScreen.jsx` | UPDATED | Routes to all 15 games with clean exit handler (B3 fix) |
-| `src/modules/chronicles/ChroniclesWorldMap.jsx` | UPDATED | Owner/tester bypass, 100% English immersion |
-| `src/modules/chronicles/ChroniclesWorldMap.css` | UPDATED | Mobile-first responsive overrides (≤ 600px) |
+## 1. 📌 Executive Summary
+Đã hoàn thành xuất sắc và toàn diện toàn bộ 4 nhiệm vụ được giao:
+1. **Việc OO (Retest đúng kịch bản Round 3 $\rightarrow$ Round 5 — PASS 100%)**:
+   - Viết kịch bản stress-test cố ý tái tạo lỗi: R3 sinh `slid` (`target: slipped`) deflect thành công, dọn dẹp sau round `meteors.length === 0`. Sang R5 (`target: rapid`), tiêm thiên thạch cũ `slid` cho Leo đâm trúng: game reject tuyệt đối (`toast = ""`, `scoreDelta = +0 XP`). Sau đó R5 deflect đúng `quick` $\rightarrow$ `rapid`. Toàn bộ log và screenshot đã lưu. Việc NN chính thức được đóng với bằng chứng forensic.
+2. **Việc PP (Git Blame 12 File & Chiến lược Cách ly — PASS 100%)**:
+   - `git blame` / `git log -3` xác minh 12 file production: 100% thay đổi đến từ commit gốc `5e65ca0cf` / `0f12c8f7b` (tháng 9/2026 bởi `binh4k`), không bị sửa nhầm bởi Floor 6-7.
+   - Thiết lập chiến lược cách ly tường minh (Explicit Path Staging): cấm `git add .` / `git add -A`, chỉ commit các file mã nguồn liên quan trực tiếp đến Floor 6-7.
+3. **Sửa bảng xếp hạng Hạng #5 và #6 (Chuẩn hóa kết luận MM)**:
+   - Xóa bỏ "Fork GrandMatrixDungeon / TitanGrammarForge".
+   - Khôi phục kết luận: #5 (Story Sequencer) dựng mới puzzle đẩy phiến đá/cuộn giấy vào bệ thờ; #6 (Word Class Duel) dựng mới cơ chế đĩa cân đối kháng.
+4. **Giai đoạn 1b (Connector Relay Canvas — HOÀN THÀNH & PASS 100%)**:
+   - Đã tạo `src/modules/quest/ConnectorRelayCanvas.jsx` (888 lines) và `ConnectorRelayCanvas.css`.
+   - Chuẩn hóa 3 làn đường (Left = 0, Center = 1, Right = 2) với các cổng liên từ Arcane Gateway.
+   - Áp dụng ngay cơ chế Anti-Leak Invariant: gắn `targetRoundId` cho từng gate, dọn sạch mảng `entitiesRef.current = []` ngay khi round chuyển đổi.
+   - Export tại `src/modules/quest/index.js`, mount tại `DailyRoomScreen.jsx:396`.
+   - Chạy `npm run build` exit code 0 (`built in 13.91s`).
+   - Playtest Puppeteer thành công 100% trên W33 (chọn đúng "because" $\rightarrow$ Bridge Energized, +40 XP), W35 (va chạm distractor "so" $\rightarrow$ Wrong Connector toast) và Anti-Leak check (0 stale entities).
 
 ---
 
-## 🧪 Verification Results
-
-- `npm run build` → exit code 0 (11.41s)
-- Git tree clean, synchronized with `origin/main` (`ff7b8e27`)
-- No console errors or scale layout clipping detected on mobile viewport audit.
+## 2. ✅ Work Completed in This Session
+- **Việc OO (Forensic Stress-Test Round 3 $\rightarrow$ Round 5)**:
+  - Script: `scripts/test_reproduce_round3_to_round5_cross_leak.mjs`.
+  - Minh chứng screenshot: `docs/agent_artifacts/screenshots/w33_round3_to_round5_forensic_verified.png`.
+- **Việc PP (Git Forensics & Cách ly 40+ File)**:
+  - Kiểm tra 12 file production, xác nhận không bị sửa nhầm.
+  - Xác lập quy trình `git add <explicit-files>`.
+- **Sửa Bảng Xếp Hạng**:
+  - Đã cập nhật 2 artifact: `BAO_CAO_THUC_THI_REDESIGN_F6_F7_PHASE0_PHASE1A_2026_09_11.md` và `BAO_CAO_XAC_MINH_HH_GG_II_JJ_VA_COMMIT_KK_2026_09_11.md`.
+- **Giai đoạn 1b (Connector Relay Canvas)**:
+  - Tạo `ConnectorRelayCanvas.jsx` và `ConnectorRelayCanvas.css`.
+  - Script playtest: `scripts/test_connector_relay_playtest.mjs`.
+  - Minh chứng screenshots:
+    - `docs/agent_artifacts/screenshots/w33_connector_relay_success_live.png`
+    - `docs/agent_artifacts/screenshots/w35_connector_relay_hazard_live.png`
+  - Báo cáo tổng hợp: `docs/agent_artifacts/BAO_CAO_THUC_THI_OO_PP_SUA_BANG_VA_GIAI_DOAN_1B_2026_09_11.md`.
 
 ---
 
-## 🚀 Next Session Directives (`/start`)
-- Run `/start` to load this handoff context.
-- Test and observe live gameplay on production devices via `https://app.bkbacademy.vn/week/33/chronicles`.
-- Proceed with any curriculum updates, additional visual polish, or audio enhancements as requested by user.
+## 3. 🟡 Pending / Next Steps
+- **Tiếp tục theo lộ trình Trục Hybrid đã duyệt**:
+  - **Hạng #3: Word Forge Scramble (Floor 7 Door 1 — Vocab)**:
+    - Fork từ `src/modules/quest/ScrollChamberDecode.jsx` $\rightarrow$ `src/modules/quest/WordForgeScrambleGame.jsx`.
+    - Tạo `WordForgeScrambleGame.css`.
+    - Triển khai Phương án B: 4–8 ký tự, 2-tier matching, nhặt rune chữ cái theo đúng thứ tự để đúc từ trên đe rèn.
+    - Áp dụng cơ chế Anti-Leak dọn sạch tile thừa khi chuyển round.
+    - Mount vào `DailyRoomScreen.jsx:403` (`case 'word_forge_scramble':`).
+    - Build & Puppeteer playtest W33 / W35.
+  - **Hạng #4: Question Quest (Floor 7 Door 2 — Grammar)**:
+    - Fork từ `src/modules/quest/RiddleRunMaze.jsx` $\rightarrow$ `src/modules/quest/QuestionQuestGame.jsx`.
+    - Triển khai biển chỉ dẫn 220px, chọn cổng WH-question (Who, Where, Why, When).
+  - **Hạng #5: Story Sequencer (Floor 6 Door 3 — Integration)**: Dựng mới bệ thờ cuộn giấy.
+  - **Hạng #6: Word Class Duel (Floor 7 Door 3 — Integration)**: Dựng mới đĩa cân đối kháng Noun vs Verb.
 
+---
+
+## 4. 🧪 System Verification Status
+- **Git Branch**: `main`
+- **Build Status**: `npm run build` PASS (exit code 0, 13.91s)
+- **Dev Server**: Running on `http://localhost:5173`
+- **Artifacts Saved**:
+  - `docs/agent_artifacts/BAO_CAO_THUC_THI_OO_PP_SUA_BANG_VA_GIAI_DOAN_1B_2026_09_11.md`
+  - 3 screenshots bằng chứng đã lưu và sync sang brain artifact dir.
+
+---
+
+## 🚀 Quickstart for Next Session (`/start`)
+Run `/start` at the beginning of the next session to automatically load this handoff and proceed to Hạng #3 (Word Forge Scramble).

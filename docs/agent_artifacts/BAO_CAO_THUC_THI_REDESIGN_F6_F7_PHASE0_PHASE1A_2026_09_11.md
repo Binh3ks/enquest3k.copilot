@@ -232,8 +232,8 @@ Sau khi hoàn thành Giai đoạn 0 và Giai đoạn 1a:
 | **#2** | **Connector Relay** | Floor 6 Door 2 | Quiz tĩnh | Fork `HighwaySprintCanvas.jsx` | 3 Làn Canvas Runner | ⏳ **KẾ TIẾP (Sẵn sàng code)** |
 | **#3** | **Word Forge Scramble** | Floor 7 Door 1 | Quiz tĩnh | Fork `ScrollChamberDecode.jsx` | Phương án B (4–8 ký tự, 2-tier matching, ~240 d.) | 📝 Đã duyệt scope Phương án B |
 | **#4** | **Question Quest** | Floor 7 Door 2 | Quiz tĩnh | Fork `RiddleRunMaze.jsx` | Sanctuary Vault (Door 220px, WH-adapter) | 🔍 Đã xác minh (Fork bắt buộc) |
-| **#5** | **Story Sequencer** | Floor 6 Door 3 | Drag-list | Fork `GrandMatrixDungeon.jsx` | Dọn dẹp Timeline Vault | 📋 Chờ audit chi tiết |
-| **#6** | **Word Class Duel** | Floor 7 Door 3 | Bập bênh tĩnh | Fork `TitanGrammarForge.jsx` | Song đấu ngữ pháp | 📋 Chờ audit chi tiết |
+| **#5** | **Story Sequencer** | Floor 6 Door 3 | Drag-list | Không có asset phù hợp — cần dựng mới từ đầu | Cơ chế đẩy phiến đá/cuộn giấy theo thứ tự vào bệ thờ | 📋 Kết luận MM: Dựng mới |
+| **#6** | **Word Class Duel** | Floor 7 Door 3 | Bập bênh tĩnh | Không có asset phù hợp — cần dựng mới từ đầu | Cơ chế đĩa cân đối kháng Rune Balance Scale (chưa có ở bất kỳ engine nào) | 📋 Kết luận MM: Dựng mới |
 
 ---
 
