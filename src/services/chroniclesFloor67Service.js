@@ -378,52 +378,72 @@ export function getStoryScenesForWeek(weekNumber, weekData = null) {
 
 export const WEEK_33_WH_QUESTIONS = [
   {
+    // Sentence info: WHO(Jake) + WHAT(was walking carefully) + WHERE(school corridor) + WHEN(after science class)
+    // Correct: WHAT — answerable from sentence
+    // Distractor 1: WHERE going (destination) — NOT in sentence (only location, not destination)
+    // Distractor 2: WHY walking carefully — NOT in sentence (reason not stated)
     id: 'w33_wh_1',
     sentence: "Jake was walking carefully down the school corridor after science class.",
     options: [
-      { text: "What was Jake doing?", isCorrect: true },
-      { text: "Where was Jake going?", isCorrect: false },
-      { text: "When was Jake walking?", isCorrect: false },
+      { text: "What was Jake doing in the corridor?", isCorrect: true },
+      { text: "Where was Jake going after the corridor?", isCorrect: false },
+      { text: "Why was Jake walking so carefully?", isCorrect: false },
     ],
     hint: "Notice the past continuous tense: 'was walking carefully'."
   },
   {
+    // Sentence info: WHEN(Suddenly) + WHO(he) + WHAT(lost balance on wet floor, slipped)
+    // Correct: WHAT — answerable from sentence
+    // Distractor 1: Who warned him — NOT in sentence (no warning mentioned)
+    // Distractor 2: How long he lay on the floor — NOT in sentence (duration not stated)
     id: 'w33_wh_2',
     sentence: "Suddenly, he lost his balance on the wet floor and slipped.",
     options: [
       { text: "What happened suddenly?", isCorrect: true },
-      { text: "Why did he slip?", isCorrect: false },
-      { text: "Where did he fall?", isCorrect: false },
+      { text: "Who warned him about the wet floor?", isCorrect: false },
+      { text: "How long did he stay on the floor after slipping?", isCorrect: false },
     ],
     hint: "Look at the time adverb 'Suddenly' at the start of the event."
   },
   {
+    // Sentence info: WHO(Jake) + WHEN(immediately) + WHAT(stopped to help friend, called nurse)
+    // Correct: WHAT — answerable from sentence
+    // Distractor 1: Friend's name — NOT in sentence (name not given)
+    // Distractor 2: Where nurse's office was — NOT in sentence (location not stated)
     id: 'w33_wh_3',
     sentence: "Jake stopped immediately to help his friend and called the school nurse.",
     options: [
-      { text: "What did Jake do?", isCorrect: true },
-      { text: "Who did Jake help?", isCorrect: false },
-      { text: "When did Jake stop?", isCorrect: false },
+      { text: "What did Jake do immediately?", isCorrect: true },
+      { text: "What was his friend's name?", isCorrect: false },
+      { text: "Where was the school nurse's office?", isCorrect: false },
     ],
     hint: "This question asks about the primary action Jake took."
   },
   {
+    // Sentence info: WHO(nurse) + HOW(quickly) + WHAT(bandage + cold pack) + WHY(treat the cut)
+    // Correct: WHAT brought — answerable from sentence
+    // Distractor 1: Where the cut was on the body — NOT in sentence (body part not stated)
+    // Distractor 2: How nurse heard about the accident — NOT in sentence (not mentioned)
     id: 'w33_wh_4',
     sentence: "The nurse arrived quickly with a clean bandage and a cold pack to treat the cut.",
     options: [
-      { text: "What did the nurse bring?", isCorrect: true },
-      { text: "Who did the nurse help?", isCorrect: false },
-      { text: "When did the nurse arrive?", isCorrect: false },
+      { text: "What did the nurse bring to the corridor?", isCorrect: true },
+      { text: "Where was the cut on the student's body?", isCorrect: false },
+      { text: "How did the nurse hear about the accident?", isCorrect: false },
     ],
     hint: "Notice the supplies brought: 'a clean bandage and a cold pack'."
   },
   {
+    // Sentence info: WHO(Everyone, headmaster) + WHAT(felt relieved, reminded never to run)
+    // Correct: WHAT reminded about — answerable from sentence
+    // Distractor 1: Why everyone felt relieved — NOT in sentence (reason not stated)
+    // Distractor 2: Where headmaster spoke — NOT in sentence (location not stated)
     id: 'w33_wh_5',
     sentence: "Everyone felt relieved, and the headmaster reminded all students never to run.",
     options: [
       { text: "What did the headmaster remind everyone about?", isCorrect: true },
       { text: "Why did everyone feel relieved?", isCorrect: false },
-      { text: "Who did the headmaster talk to?", isCorrect: false },
+      { text: "Where did the headmaster speak to the students?", isCorrect: false },
     ],
     hint: "Look at the advice given by the headmaster in the corridor."
   }
@@ -431,52 +451,72 @@ export const WEEK_33_WH_QUESTIONS = [
 
 export const WEEK_34_WH_QUESTIONS = [
   {
+    // Sentence info: WHEN(on a warm afternoon) + WHO(mighty lion) + WHAT(was sleeping peacefully) + WHERE(under the trees)
+    // Correct: WHAT doing — answerable from sentence
+    // Distractor 1: Why sleeping so deeply — NOT in sentence (reason not stated)
+    // Distractor 2: How long sleeping — NOT in sentence (duration not stated)
     id: 'w34_wh_1',
     sentence: "On a warm afternoon, the mighty lion was sleeping peacefully under the trees.",
     options: [
-      { text: "What was the mighty lion doing under the trees?", isCorrect: true },
-      { text: "Where was the mighty lion sleeping?", isCorrect: false },
-      { text: "When was the mighty lion sleeping peacefully?", isCorrect: false },
+      { text: "What was the mighty lion doing on the warm afternoon?", isCorrect: true },
+      { text: "Why was the mighty lion sleeping so deeply?", isCorrect: false },
+      { text: "How long had the mighty lion been sleeping?", isCorrect: false },
     ],
     hint: "Notice the continuous action: 'was sleeping peacefully'."
   },
   {
+    // Sentence info: CONTEXT(lion resting) + WHO-ran(tiny mouse) + WHERE(across front paw)
+    // Correct: WHAT ran — answerable from sentence
+    // Distractor 1: Why mouse was running — NOT in sentence (reason not stated)
+    // Distractor 2: Where mouse was trying to go — NOT in sentence (destination not stated)
     id: 'w34_wh_2',
     sentence: "While the lion was resting, a tiny mouse ran across the lion's big front paw.",
     options: [
       { text: "What ran across the lion's big front paw?", isCorrect: true },
-      { text: "What was the lion doing when the mouse ran by?", isCorrect: false },
-      { text: "Where did the tiny mouse run across?", isCorrect: false },
+      { text: "Why was the tiny mouse running so fast?", isCorrect: false },
+      { text: "Where was the tiny mouse trying to go?", isCorrect: false },
     ],
     hint: "Ask about the subject performing the sudden action: 'a tiny mouse'."
   },
   {
+    // Sentence info: WHO(mouse) + WHAT(begged mercy, promised to help if let go)
+    // Correct: WHAT promised — answerable from sentence
+    // Distractor 1: How mouse planned to help — NOT in sentence (method not stated)
+    // Distractor 2: Where mouse hid after being let go — NOT in sentence (not mentioned)
     id: 'w34_wh_3',
     sentence: "The mouse begged for mercy and promised to help the lion one day if he let him go.",
     options: [
       { text: "What did the mouse promise to do?", isCorrect: true },
-      { text: "Who begged the mighty lion for mercy?", isCorrect: false },
-      { text: "Why did the mouse ask the lion to let him go?", isCorrect: false },
+      { text: "How did the mouse plan to help the lion?", isCorrect: false },
+      { text: "Where did the mouse hide after the lion let him go?", isCorrect: false },
     ],
     hint: "Focus on the promise made by the mouse: 'to help the lion'."
   },
   {
+    // Sentence info: WHEN(a few days later) + WHO(hunters) + WHOM(lion) + WHAT-with(strong net, thick ropes)
+    // Correct: WHO trapped — answerable from sentence
+    // Distractor 1: How many hunters set the trap — NOT in sentence (number not stated)
+    // Distractor 2: Where hunters went after trapping — NOT in sentence (not mentioned)
     id: 'w34_wh_4',
     sentence: "A few days later, hunters trapped the lion in a strong net made of thick ropes.",
     options: [
       { text: "Who trapped the lion in a strong net?", isCorrect: true },
-      { text: "What did the hunters trap the lion with?", isCorrect: false },
-      { text: "When did the hunters trap the mighty lion?", isCorrect: false },
+      { text: "How many hunters set the trap for the lion?", isCorrect: false },
+      { text: "Where did the hunters go after trapping the lion?", isCorrect: false },
     ],
     hint: "Identify who set the trap: 'hunters'."
   },
   {
+    // Sentence info: WHO(little mouse) + HOW(quickly chewed ropes) + OUTCOME(set lion free)
+    // Correct: HOW set free — answerable from sentence
+    // Distractor 1: How long it took to chew — NOT in sentence (duration not stated)
+    // Distractor 2: Where lion ran after being freed — NOT in sentence (not mentioned)
     id: 'w34_wh_5',
     sentence: "The little mouse quickly chewed through the ropes and set the lion completely free.",
     options: [
       { text: "How did the little mouse set the lion free?", isCorrect: true },
-      { text: "Who chewed through the thick ropes?", isCorrect: false },
-      { text: "What did the little mouse chew through?", isCorrect: false },
+      { text: "How long did it take the mouse to chew through the ropes?", isCorrect: false },
+      { text: "Where did the lion run after being set free?", isCorrect: false },
     ],
     hint: "Notice the method used: 'quickly chewed through the ropes'."
   }
@@ -484,52 +524,72 @@ export const WEEK_34_WH_QUESTIONS = [
 
 export const GENERIC_WH_QUESTIONS = [
   {
+    // Sentence info: WHO(brave astronaut) + WHAT(floated silently) + WHERE(zero-gravity training chamber) + HOW(silently)
+    // Correct: WHAT doing — answerable from sentence
+    // Distractor 1: Why chosen for training — NOT in sentence (reason not stated)
+    // Distractor 2: How long training session lasted — NOT in sentence (duration not stated)
     id: 'gen_wh_1',
     sentence: "The brave astronaut floated silently in the zero-gravity training chamber.",
     options: [
       { text: "What was the astronaut doing in the chamber?", isCorrect: true },
-      { text: "Where was the brave astronaut floating?", isCorrect: false },
-      { text: "How did the astronaut float in the chamber?", isCorrect: false },
+      { text: "Why was the astronaut chosen for the training?", isCorrect: false },
+      { text: "How long did the training session last?", isCorrect: false },
     ],
     hint: "Ask about the activity: 'floated silently'."
   },
   {
+    // Sentence info: WHEN(Suddenly) + WHAT(warning buzzer beeped) + WHY(oxygen gauge fluctuated)
+    // Correct: WHY beeped — answerable from sentence
+    // Distractor 1: Who fixed the problem — NOT in sentence (person not mentioned)
+    // Distractor 2: Where the oxygen gauge was located — NOT in sentence (location not stated)
     id: 'gen_wh_2',
     sentence: "Suddenly, the warning buzzer beeped because the oxygen gauge fluctuated.",
     options: [
       { text: "Why did the warning buzzer beep?", isCorrect: true },
-      { text: "What happened suddenly in the training chamber?", isCorrect: false },
-      { text: "What fluctuated and caused the warning buzzer to beep?", isCorrect: false },
+      { text: "Who fixed the oxygen gauge problem?", isCorrect: false },
+      { text: "Where was the oxygen gauge located on the spacecraft?", isCorrect: false },
     ],
     hint: "Look for the cause introduced by 'because'."
   },
   {
+    // Sentence info: WHO(chief engineer) + WHAT(calibrated solar panels) + WHEN(before lunar eclipse)
+    // Correct: WHAT calibrated — answerable from sentence
+    // Distractor 1: Why calibration was needed — NOT in sentence (reason not stated)
+    // Distractor 2: How long calibration took — NOT in sentence (duration not stated)
     id: 'gen_wh_3',
     sentence: "The chief engineer calibrated the solar panels before the lunar eclipse.",
     options: [
       { text: "What did the chief engineer calibrate?", isCorrect: true },
-      { text: "Who calibrated the solar panels?", isCorrect: false },
-      { text: "When were the solar panels calibrated?", isCorrect: false },
+      { text: "Why did the solar panels need to be calibrated?", isCorrect: false },
+      { text: "How long did the calibration process take?", isCorrect: false },
     ],
     hint: "Focus on the object being calibrated: 'the solar panels'."
   },
   {
+    // Sentence info: WHO(Dr. Nova) + WHAT(discovered sparkling crystal) + WHERE(deep inside lunar crater)
+    // Correct: WHERE found — answerable from sentence
+    // Distractor 1: When Dr. Nova arrived at the crater — NOT in sentence (time not stated)
+    // Distractor 2: How Dr. Nova reached the crater — NOT in sentence (method not stated)
     id: 'gen_wh_4',
     sentence: "Dr. Nova discovered a sparkling crystal deep inside the lunar crater.",
     options: [
-      { text: "Where did Dr. Nova find the crystal?", isCorrect: true },
-      { text: "Who discovered the sparkling crystal?", isCorrect: false },
-      { text: "What did Dr. Nova discover in the lunar crater?", isCorrect: false },
+      { text: "Where did Dr. Nova find the sparkling crystal?", isCorrect: true },
+      { text: "When did Dr. Nova arrive at the lunar crater?", isCorrect: false },
+      { text: "How did Dr. Nova reach the bottom of the crater?", isCorrect: false },
     ],
     hint: "Identify the location: 'deep inside the lunar crater'."
   },
   {
+    // Sentence info: WHO(mission commander) + WHAT(awarded gold badges) + TO-WHOM(all crew members) + WHY(for courage)
+    // Correct: WHY awarded — answerable from sentence
+    // Distractor 1: When the award ceremony took place — NOT in sentence (time not stated)
+    // Distractor 2: How many gold badges were awarded — NOT in sentence (number not stated)
     id: 'gen_wh_5',
     sentence: "The mission commander awarded gold badges to all crew members for courage.",
     options: [
       { text: "Why did the commander award gold badges?", isCorrect: true },
-      { text: "What did the commander award to the crew members?", isCorrect: false },
-      { text: "Who received the gold badges for courage?", isCorrect: false },
+      { text: "When did the award ceremony take place?", isCorrect: false },
+      { text: "How many gold badges were awarded in total?", isCorrect: false },
     ],
     hint: "Look for the reason: 'for courage'."
   }
@@ -537,52 +597,72 @@ export const GENERIC_WH_QUESTIONS = [
 
 export const WEEK_35_WH_QUESTIONS = [
   {
+    // Sentence info: WHEN(early in morning) + WHO(family) + WHAT(packed gear, drove) + WHERE(towards Pine Mountain)
+    // Correct: WHERE drove towards — answerable from sentence
+    // Distractor 1: How many people in family — NOT in sentence (number not stated)
+    // Distractor 2: How far Pine Mountain was — NOT in sentence (distance not stated)
     id: 'w35_wh_1',
     sentence: "Early in the morning, the family packed their gear and drove towards Pine Mountain.",
     options: [
       { text: "Where did the family drive towards?", isCorrect: true },
-      { text: "When did the family pack their gear?", isCorrect: false },
-      { text: "What did the family pack early in the morning?", isCorrect: false },
+      { text: "How many people were in the family?", isCorrect: false },
+      { text: "How far was Pine Mountain from their home?", isCorrect: false },
     ],
     hint: "Identify the destination: 'towards Pine Mountain'."
   },
   {
+    // Sentence info: WHO-dad(was pitching tent) + WHO-children(collected dry firewood)
+    // Correct: WHAT Dad doing — answerable from sentence
+    // Distractor 1: What color was the tent — NOT in sentence (color not stated)
+    // Distractor 2: How many children helped collect wood — NOT in sentence (number not stated)
     id: 'w35_wh_2',
     sentence: "While Dad was pitching the camp tent, the children collected dry firewood.",
     options: [
       { text: "What was Dad doing while the children collected wood?", isCorrect: true },
-      { text: "Who collected dry firewood for the camp?", isCorrect: false },
-      { text: "What did the children collect while Dad was busy?", isCorrect: false },
+      { text: "What color was the camp tent?", isCorrect: false },
+      { text: "How many children helped collect the firewood?", isCorrect: false },
     ],
     hint: "Notice the continuous action: 'was pitching the camp tent'."
   },
   {
+    // Sentence info: WHAT spotted(two playful squirrels) + WHERE hiking(along mountain stream)
+    // Correct: WHAT spotted — answerable from sentence
+    // Distractor 1: What squirrels were eating — NOT in sentence (not mentioned)
+    // Distractor 2: How deep the mountain stream was — NOT in sentence (depth not stated)
     id: 'w35_wh_3',
     sentence: "They spotted two playful squirrels while hiking along the mountain stream.",
     options: [
       { text: "What did they spot along the stream?", isCorrect: true },
-      { text: "Where were they hiking when they saw the squirrels?", isCorrect: false },
-      { text: "How many playful squirrels did the family spot?", isCorrect: false },
+      { text: "What were the two squirrels eating?", isCorrect: false },
+      { text: "How deep was the mountain stream?", isCorrect: false },
     ],
     hint: "Look at the animals seen: 'two playful squirrels'."
   },
   {
+    // Sentence info: WHO(Dad) + WHAT(lit warm campfire) + WHEN(when golden sun sank behind ridges)
+    // Correct: WHEN lit campfire — answerable from sentence
+    // Distractor 1: What tool Dad used to light fire — NOT in sentence (tool not stated)
+    // Distractor 2: How long the campfire burned — NOT in sentence (duration not stated)
     id: 'w35_wh_4',
     sentence: "Dad lit the warm campfire when the golden sun sank behind the ridges.",
     options: [
       { text: "When did Dad light the campfire?", isCorrect: true },
-      { text: "Who lit the warm campfire in the evening?", isCorrect: false },
-      { text: "Where did the golden sun sink?", isCorrect: false },
+      { text: "What tool did Dad use to light the campfire?", isCorrect: false },
+      { text: "How long did the warm campfire burn that night?", isCorrect: false },
     ],
     hint: "Focus on the time clause: 'when the golden sun sank'."
   },
   {
+    // Sentence info: WHERE(under starry night sky) + WHAT roasted(sweet marshmallows) + WHAT sang(happy songs)
+    // Correct: WHAT roasted — answerable from sentence
+    // Distractor 1: Which specific song they sang — NOT in sentence (song name not stated)
+    // Distractor 2: How many marshmallows each person roasted — NOT in sentence (number not stated)
     id: 'w35_wh_5',
     sentence: "Under the starry night sky, they roasted sweet marshmallows and sang happy songs.",
     options: [
       { text: "What did they roast under the starry night sky?", isCorrect: true },
-      { text: "Where did they roast sweet marshmallows and sing songs?", isCorrect: false },
-      { text: "What did they sing under the starry night sky?", isCorrect: false },
+      { text: "Which song did the family sing together?", isCorrect: false },
+      { text: "How many marshmallows did each person roast?", isCorrect: false },
     ],
     hint: "Identify the camp treat: 'sweet marshmallows'."
   }
