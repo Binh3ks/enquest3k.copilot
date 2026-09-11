@@ -328,7 +328,9 @@ export default function ConnectorRelayCanvas({
               collected: false,
             });
           }
-          entitiesRef.current = [...entitiesRef.current, ...newGates];
+          // Clear any ambient obstacle hazards so gate testing is purely isolated
+          const existingWithoutObstacles = entitiesRef.current.filter(e => e.type === 'target_connector' || e.type === 'distractor_connector');
+          entitiesRef.current = [...existingWithoutObstacles, ...newGates];
         },
       };
     }
