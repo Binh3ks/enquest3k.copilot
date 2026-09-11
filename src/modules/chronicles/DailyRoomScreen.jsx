@@ -29,7 +29,7 @@ import {
   EchoArenaShooter, CatapultCommander, StormShieldDefense,
   HighwaySprint, SyntaxExpressRail, RiddleRunMaze,
   GrandMatrixDungeon, TitanGrammarForge, CambridgeClozeGauntlet,
-  SynonymStormDefense, ConnectorRelayCanvas,
+  SynonymStormDefense, ConnectorRelayCanvas, WordForgeCarryEngine,
 } from '../quest';
 
 
@@ -400,7 +400,7 @@ export default function DailyRoomScreen({
 
       // ── Floor 7: Master Sanctum ────────────────────────────────────────
       case 'word_forge_scramble':
-        return <WordForgeScrambleGame vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
+        return <WordForgeCarryEngine vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
 
       case 'question_quest':
         return <QuestionQuestGame duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;

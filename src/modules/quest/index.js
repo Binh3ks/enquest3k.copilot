@@ -53,4 +53,8 @@ export { default as CambridgeClozeGauntlet } from './CambridgeClozeGauntlet';
 export { default as SynonymStormDefense }   from './SynonymStormDefense';
 export { default as ConnectorRelayCanvas }  from './ConnectorRelayCanvas';
 
+// Floor 7 Games (Redesign Sprint)
+export { default as WordForgeCarryEngine }  from './WordForgeCarryEngine';
+
+
 
