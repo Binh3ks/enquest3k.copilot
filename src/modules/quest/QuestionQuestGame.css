@@ -24,20 +24,20 @@
 /* ── Top Objective Narrative Banner ── */
 .question-quest-banner {
   position: absolute;
-  top: 52px;
+  top: 48px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 40;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   background: rgba(15, 23, 42, 0.94);
   border: 2px solid rgba(129, 140, 248, 0.4);
-  border-radius: 24px;
-  padding: 8px 24px;
+  border-radius: 20px;
+  padding: 6px 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(99, 102, 241, 0.2);
   backdrop-filter: blur(8px);
-  max-width: 92%;
+  max-width: 90%;
 }
 
 .question-banner-icon {
@@ -51,12 +51,12 @@
 }
 
 .question-quest-banner-text {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: #e0e7ff;
   font-style: italic;
   letter-spacing: 0.2px;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 .question-quest-round-pill {
@@ -65,27 +65,29 @@
   background: rgba(99, 102, 241, 0.25);
   color: #c7d2fe;
   border: 1px solid rgba(129, 140, 248, 0.5);
-  padding: 4px 12px;
+  padding: 3px 12px;
   border-radius: 12px;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
-/* ── Feedback Toast ── */
+/* ── Feedback Toast (Placed safely at top: 6px so it never occludes middle vault plaque) ── */
 .question-feedback-toast {
   position: absolute;
-  top: 108px;
+  top: 6px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
-  padding: 8px 20px;
-  border-radius: 16px;
+  padding: 6px 20px;
+  border-radius: 14px;
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   display: flex;
   align-items: center;
   gap: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75);
   animation: bounce-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  white-space: nowrap;
 }
 
 .question-feedback-toast.feedback-correct {

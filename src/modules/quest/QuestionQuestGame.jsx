@@ -39,7 +39,7 @@ const MAZE_PLATFORMS = [
   { x: 50,  y: 370,     width: 220,        height: 18 },  // Left Vault Tier (Door 0)
   { x: 340, y: 310,     width: 220,        height: 18 },  // Central Spawn Perch (Leo spawn)
   { x: 630, y: 370,     width: 220,        height: 18 },  // Right Vault Tier (Door 2)
-  { x: 340, y: 185,     width: 220,        height: 18 },  // High Apex Altar (Door 1)
+  { x: 340, y: 220,     width: 220,        height: 18 },  // High Apex Altar (Door 1)
   { x: 200, y: 450,     width: 140,        height: 16 },  // Step Left
   { x: 560, y: 450,     width: 140,        height: 16 },  // Step Right
 ];
@@ -110,7 +110,7 @@ export default function QuestionQuestGame({
       {
         id: `door_1_r${currentRoundId}`,
         x: 340,
-        y: 95,
+        y: 130,
         text: rotated[1]?.text || '',
         isCorrect: Boolean(rotated[1]?.isCorrect),
         targetRoundId: currentRoundId,
