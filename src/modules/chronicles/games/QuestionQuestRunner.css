@@ -1,0 +1,227 @@
+/* QuestionQuestRunner.css — Chaser & Branching Paths Theme */
+.qq-runner-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  background: radial-gradient(ellipse at 50% 100%, #1e1b4b 0%, #0f172a 60%, #020617 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* ── Top Narrative Context Banner ── */
+.qq-runner-banner {
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 2px solid rgba(129, 140, 248, 0.4);
+  border-radius: 20px;
+  padding: 8px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(8px);
+  max-width: 90%;
+}
+
+.qq-runner-round-pill {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.qq-runner-banner-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e0e7ff;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* ── Proximity Warning Aura ── */
+.qq-warden-warning {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 20;
+  box-shadow: inset 30px 0 50px rgba(239, 68, 68, 0.35);
+  animation: pulse-danger 0.8s infinite alternate;
+}
+
+@keyframes pulse-danger {
+  from { opacity: 0.4; }
+  to { opacity: 0.9; }
+}
+
+/* ── Canvas Container ── */
+.qq-canvas-container {
+  position: relative;
+  width: 960px;
+  height: 560px;
+  max-width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+}
+
+.qq-runner-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Lane Action Badges on Top of Canvas ── */
+.qq-lane-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.qq-branch-card {
+  position: absolute;
+  transform: translateY(-50%);
+  background: rgba(15, 23, 42, 0.95);
+  border: 2px solid rgba(99, 102, 241, 0.6);
+  border-radius: 12px;
+  padding: 6px 14px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.2s, transform 0.2s;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.qq-branch-card.active-lane {
+  border-color: #fbbf24;
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+  transform: translateY(-50%) scale(1.04);
+}
+
+.qq-branch-card.correct-lane {
+  border-color: #22c55e;
+  background: rgba(20, 83, 45, 0.9);
+  color: #86efac;
+}
+
+.qq-branch-card.wrong-lane {
+  border-color: #ef4444;
+  background: rgba(127, 29, 29, 0.9);
+  color: #fca5a5;
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  25% { transform: translateY(-50%) translateX(-6px); }
+  75% { transform: translateY(-50%) translateX(6px); }
+}
+
+/* ── On-screen Virtual D-Pad for Mobile ── */
+.qq-virtual-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qq-ctrl-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(30, 41, 59, 0.85);
+  border: 2px solid rgba(129, 140, 248, 0.6);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  touch-action: manipulation;
+}
+
+.qq-ctrl-btn:active {
+  background: #6366f1;
+  transform: scale(0.95);
+}
+
+/* ── Cleared / KO Modals ── */
+.qq-overlay-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+}
+
+.qq-overlay-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.qq-overlay-sub {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
+.qq-overlay-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.4);
+  transition: transform 0.15s;
+}
+
+.qq-overlay-btn:hover {
+  transform: scale(1.05);
+}

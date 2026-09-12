@@ -40,6 +40,7 @@ import ChunkCatapultCanvas     from './games/ChunkCatapultCanvas';
 import SynonymStormGame        from './games/SynonymStormGame';
 import WordForgeScrambleGame   from './games/WordForgeScrambleGame';
 import ConnectorRelayGame      from './games/ConnectorRelayGame';
+import QuestionQuestRunner     from './games/QuestionQuestRunner';
 import StorySequencerGame      from './games/StorySequencerGame';  // legacy — kept for fallback
 import StoryAltarPuzzle        from '../quest/StoryAltarPuzzle';
 import WordClassDuelGame       from './games/WordClassDuelGame';
@@ -403,7 +404,7 @@ export default function DailyRoomScreen({
         return <WordForgeCarryEngine vocabItems={vocabItems} duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
 
       case 'question_quest':
-        return <QuestionQuestGame duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
+        return <QuestionQuestRunner duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
 
       case 'rune_balance_scale':
         return <WordClassDuelGame duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
