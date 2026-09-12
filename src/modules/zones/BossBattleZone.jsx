@@ -227,16 +227,18 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
 
   // QA Hook for Victory Screen verification
   React.useEffect(() => {
-    window.__triggerBossVictory = (customCompletedParts) => {
-      setHasStarted(true);
-      setExamFinished(true);
-      if (customCompletedParts && Array.isArray(customCompletedParts)) {
-        setCompletedPartIds(customCompletedParts);
-      } else {
-        setCompletedPartIds(['list_p1', 'list_p2', 'list_p3']);
-      }
-    };
-    return () => { delete window.__triggerBossVictory; };
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
+      window.__triggerBossVictory = (customCompletedParts) => {
+        setHasStarted(true);
+        setExamFinished(true);
+        if (customCompletedParts && Array.isArray(customCompletedParts)) {
+          setCompletedPartIds(customCompletedParts);
+        } else {
+          setCompletedPartIds(['list_p1', 'list_p2', 'list_p3']);
+        }
+      };
+      return () => { delete window.__triggerBossVictory; };
+    }
   }, []);
 
   const currentTask = currentTasks[activeTaskIndex] || currentTasks[0];

@@ -313,10 +313,12 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
   }, [weekId, navigate]);
 
   useEffect(() => {
-    window.__triggerTaskComplete = handleTaskComplete;
-    return () => {
-      delete window.__triggerTaskComplete;
-    };
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
+      window.__triggerTaskComplete = handleTaskComplete;
+      return () => {
+        delete window.__triggerTaskComplete;
+      };
+    }
   }, [handleTaskComplete]);
 
   if (!routing || !taskInfo) {

@@ -185,10 +185,12 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
   }, [weekId, isDayComplete, weekQuestCount]);
 
   useEffect(() => {
-    window.__triggerDoorUnlockCeremony = (day = 0) => setUnlockCeremonyDay(day);
-    return () => {
-      delete window.__triggerDoorUnlockCeremony;
-    };
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
+      window.__triggerDoorUnlockCeremony = (day = 0) => setUnlockCeremonyDay(day);
+      return () => {
+        delete window.__triggerDoorUnlockCeremony;
+      };
+    }
   }, []);
 
   // Owner / super_admin: all stations always unlocked — no sequential gate
