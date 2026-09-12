@@ -43,7 +43,8 @@ import ConnectorRelayGame      from './games/ConnectorRelayGame';
 import QuestionQuestRunner     from './games/QuestionQuestRunner';
 import StorySequencerGame      from './games/StorySequencerGame';  // legacy — kept for fallback
 import StoryAltarPuzzle        from '../quest/StoryAltarPuzzle';
-import WordClassDuelGame       from './games/WordClassDuelGame';
+import WordClassDuelGame       from './games/WordClassDuelGame';  // legacy — kept for fallback
+import WordClassBalanceGame    from './games/WordClassBalanceGame';
 import useDailyQuestStore      from '../../stores/useDailyQuestStore';
 import { QUEST_SCHEDULE }      from '../../config/questSchedule';
 import { WEEKLY_CATAPULT_PAIRS } from './extractQuestVocab';
@@ -407,7 +408,7 @@ export default function DailyRoomScreen({
         return <QuestionQuestRunner duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
 
       case 'rune_balance_scale':
-        return <WordClassDuelGame duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
+        return <WordClassBalanceGame duration={door.duration} weekNumber={weekNumber} weekData={weekData} onExit={handleExit} {...commonProps} />;
 
       // ── Fallback by legacy door.type ──────────────────────────────────
       default:
