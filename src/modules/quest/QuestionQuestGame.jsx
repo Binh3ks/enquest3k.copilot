@@ -290,7 +290,7 @@ export default function QuestionQuestGame({
 
       // Jump
       if (keysPressed.current.up && leo.isGrounded) {
-        leo.vy = -LEO_JUMP_FORCE * 1.08;
+        leo.vy = -Math.abs(LEO_JUMP_FORCE) * 1.08;
         leo.isGrounded = false;
       }
 
@@ -300,7 +300,8 @@ export default function QuestionQuestGame({
       leo.y += leo.vy;
 
       // Platform Collisions
-      checkPlatformLanding(leo, MAZE_PLATFORMS, LEO_HITBOX);
+      const landed = checkPlatformLanding(leo, MAZE_PLATFORMS, LEO_HITBOX);
+      leo.isGrounded = landed;
 
       // Boundaries
       leo.x = clamp(leo.x, 0, ROOM_WIDTH - LEO_HITBOX.width);
