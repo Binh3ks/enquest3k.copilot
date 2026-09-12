@@ -256,8 +256,8 @@ export default function StoryAltarPuzzle({
 
   // ── test hook (ref-based, no stale closure) ──────────────────────────────
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    window.__STORY_ALTAR_TEST_HOOK__ = {
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
+      window.__STORY_ALTAR_TEST_HOOK__ = {
       getRoundId:    () => roundIdRef.current,
       getHearts:     () => heartsRef.current,
       getScore:      () => scoreRef.current,
@@ -333,7 +333,8 @@ export default function StoryAltarPuzzle({
       // Anti-leak check
       getStaleSlabs: (rid) => altarsRef.current.filter(a => a.slab?.placedRoundId === rid),
     };
-    return () => { delete window.__STORY_ALTAR_TEST_HOOK__; };
+      return () => { delete window.__STORY_ALTAR_TEST_HOOK__; };
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // mount only — all state accessed via refs or functional setters
 

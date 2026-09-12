@@ -280,7 +280,7 @@ export default function ConnectorRelayCanvas({
 
   // ── Expose test hooks for automated verification ─────────────────────────
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
       window.__CONNECTOR_RELAY_EVENT_LOG__ = window.__CONNECTOR_RELAY_EVENT_LOG__ || [];
       window.__CONNECTOR_RELAY_TEST_HOOK__ = {
         setTargetLane: (lane) => setTargetLane(lane),

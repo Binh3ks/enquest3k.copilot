@@ -494,7 +494,7 @@ export default function WordForgeCarryEngine({
 
   // ── Expose Test Hook for Automated Verification ─────────────────────────
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
       window.__WORD_FORGE_EVENT_LOG__ = window.__WORD_FORGE_EVENT_LOG__ || [];
       window.__WORD_FORGE_TEST_HOOK__ = {
         getScore: () => scoreRef.current,

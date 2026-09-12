@@ -95,7 +95,7 @@ export default function SynonymStormDefense({
   const hazardStreakRef = useRef(0);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
       window.__SYNONYM_STORM_EVENT_LOG__ = window.__SYNONYM_STORM_EVENT_LOG__ || [];
       window.__SYNONYM_STORM_TEST_HOOK__ = {
         setLeoX: (newX) => {

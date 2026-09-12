@@ -347,7 +347,7 @@ export default function QuestionQuestGame({
 
   // ── Expose test hooks for automated verification ─────────────────────────
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
       window.__QUESTION_QUEST_TEST_HOOK__ = {
         getRoundIdx: () => roundIdxRef.current,
         getScore: () => scoreRef.current,
