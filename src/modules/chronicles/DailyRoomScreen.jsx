@@ -29,7 +29,7 @@ import {
   EchoArenaShooter, CatapultCommander, StormShieldDefense,
   HighwaySprint, SyntaxExpressRail, RiddleRunMaze,
   GrandMatrixDungeon, TitanGrammarForge, CambridgeClozeGauntlet,
-  SynonymStormDefense, ConnectorRelayCanvas, WordForgeCarryEngine, QuestionQuestGame,
+  SynonymStormDefense, ConnectorRelayCanvas, WordForgeCarryEngine,
 } from '../quest';
 
 
@@ -43,7 +43,6 @@ import ConnectorRelayGame      from './games/ConnectorRelayGame';
 import QuestionQuestRunner     from './games/QuestionQuestRunner';
 import StorySequencerGame      from './games/StorySequencerGame';  // legacy — kept for fallback
 import StoryAltarPuzzle        from '../quest/StoryAltarPuzzle';
-import WordClassDuelGame       from './games/WordClassDuelGame';  // legacy — kept for fallback
 import WordClassBalanceGame    from './games/WordClassBalanceGame';
 import useDailyQuestStore      from '../../stores/useDailyQuestStore';
 import { QUEST_SCHEDULE }      from '../../config/questSchedule';
