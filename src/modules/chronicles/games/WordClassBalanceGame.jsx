@@ -329,18 +329,14 @@ export default function WordClassBalanceGame({
             // Missed check: orb drops past the beam
             if (orb.y >= beamSurfaceY + 25) {
               // Orb dropped onto the scale without strike!
-              sim.screenShake = 0.3;
-              // Add tilt towards the dropped side
-              if (beamRelX < 0) {
-                sim.targetTilt = Math.max(-28, sim.targetTilt - 13);
-              } else {
-                sim.targetTilt = Math.min(28, sim.targetTilt + 13);
-              }
+              sim.screenShake = 0.4;
+              // Immediate critical tilt (> 25°)
+              sim.targetTilt = beamRelX < 0 ? -26 : 26;
 
               setStreak(0);
               setFeedback({
                 isCorrect: false,
-                text: `⚠️ DROPPED ORB! "${orb.word}" was not sorted! Scale tilted!`,
+                text: `⚠️ DROPPED ORB! "${orb.word}" fell! Scale overturned!`,
               });
 
               // Create impact particles
@@ -380,7 +376,7 @@ export default function WordClassBalanceGame({
               if (isCorrect) {
                 // ── CORRECT SORT ──────────────────────────────────────────
                 // Scale auto-balances: tilt pulls back towards level!
-                sim.targetTilt = sim.targetTilt * 0.35;
+                sim.targetTilt = 0;
                 setScore(s => s + 100);
 
                 const nextStreak = streakRef.current + 1;
@@ -414,18 +410,13 @@ export default function WordClassBalanceGame({
                 }
               } else {
                 // ── WRONG SORT ────────────────────────────────────────────
-                // Imbalance: wrong plate takes heavy weight!
-                if (orb.targetPan === 'NOUN') {
-                  sim.targetTilt = Math.max(-28, sim.targetTilt - 14);
-                } else {
-                  sim.targetTilt = Math.min(28, sim.targetTilt + 14);
-                }
-
-                sim.screenShake = 0.35;
+                // Imbalance: wrong plate takes heavy weight -> triggers critical tilt > 25°!
+                sim.targetTilt = orb.targetPan === 'NOUN' ? -26 : 26;
+                sim.screenShake = 0.4;
                 setStreak(0);
                 setFeedback({
                   isCorrect: false,
-                  text: `💥 IMBALANCE! "${orb.word}" is a ${orb.role}, not a ${orb.targetPan}! Scale tilts!`,
+                  text: `💥 IMBALANCE! "${orb.word}" is a ${orb.role}, not a ${orb.targetPan}! Scale overturned!`,
                 });
 
                 // Negative shock particles
@@ -889,19 +880,37 @@ export default function WordClassBalanceGame({
         </div>
       )}
 
-      {/* ── Mobile / Touch Controls ───────────────────────────────────────── */}
+      {/* ── Virtual Movement & Strike Controls ────────────────────────────── */}
       <div className="wcb-controls-bar">
         <button
-          className="wcb-control-btn strike-noun"
-          onClick={() => strikeOrb('left')}
+          type="button"
+          className="wcb-control-btn aim-noun"
+          onClick={() => {
+            simRef.current.facing = 'left';
+            simRef.current.leoX = Math.max(-270, simRef.current.leoX - 35);
+          }}
+          aria-label="Move Left and Aim NOUN"
         >
-          <ArrowLeft size={16} /> Strike NOUN (◄)
+          <ArrowLeft size={16} /> Aim NOUN (◄)
         </button>
         <button
-          className="wcb-control-btn strike-verb"
-          onClick={() => strikeOrb('right')}
+          type="button"
+          className="wcb-control-btn strike-action"
+          onClick={() => strikeOrb()}
+          aria-label="Strike with Space"
         >
-          Strike VERB (►) <ArrowRight size={16} />
+          <Zap size={16} /> SPACE (Strike)
+        </button>
+        <button
+          type="button"
+          className="wcb-control-btn aim-verb"
+          onClick={() => {
+            simRef.current.facing = 'right';
+            simRef.current.leoX = Math.min(270, simRef.current.leoX + 35);
+          }}
+          aria-label="Move Right and Aim VERB"
+        >
+          Aim VERB (►) <ArrowRight size={16} />
         </button>
       </div>
 

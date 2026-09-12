@@ -292,14 +292,21 @@
   transform: translateY(-2px);
 }
 
-.wcb-control-btn.strike-noun {
+.wcb-control-btn.aim-noun {
   border-color: rgba(56, 189, 248, 0.4);
   color: #7dd3fc;
 }
 
-.wcb-control-btn.strike-verb {
+.wcb-control-btn.aim-verb {
   border-color: rgba(249, 115, 22, 0.4);
   color: #fdba74;
+}
+
+.wcb-control-btn.strike-action {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.95) 0%, rgba(3, 105, 161, 0.95) 100%);
+  border-color: rgba(56, 189, 248, 0.8);
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
 }
 
 /* ── Modals / End Screens ────────────────────────────────────────────────── */
