@@ -21,6 +21,7 @@ import './HUDOverlay.css';
  */
 export default function HUDOverlay({
   hearts = 3,
+  maxHearts = 3,
   score = 0,
   timeLeft = 60,
   wordsCollected = 0,
@@ -28,6 +29,7 @@ export default function HUDOverlay({
   roomName,
   floorNumber,
   doorLabel,
+  rightActions,
 }) {
   const isLowTime  = timeLeft <= 15;
   const isLowHP    = hearts <= 1;
@@ -45,7 +47,7 @@ export default function HUDOverlay({
 
         {/* Hearts */}
         <div className={`hud-hearts ${isLowHP ? 'hud-hearts-low' : ''}`} aria-label={`${hearts} hearts remaining`}>
-          {[1, 2, 3].map(n => (
+          {Array.from({ length: maxHearts }, (_, i) => i + 1).map(n => (
             <span
               key={n}
               className={`hud-heart ${n <= hearts ? 'hud-heart-full' : 'hud-heart-empty'}`}
@@ -64,10 +66,14 @@ export default function HUDOverlay({
           </div>
         )}
 
-        {/* Timer */}
-        <div className={`hud-timer ${isLowTime ? 'hud-timer-urgent' : ''}`} aria-label={`${timeStr} remaining`}>
-          <span className="hud-timer-icon" aria-hidden="true">⏱️</span>
-          <span className="hud-timer-value">{timeStr}</span>
+        {/* Right controls: actions + timer */}
+        <div className="hud-top-right-controls">
+          {rightActions}
+          {/* Timer */}
+          <div className={`hud-timer ${isLowTime ? 'hud-timer-urgent' : ''}`} aria-label={`${timeStr} remaining`}>
+            <span className="hud-timer-icon" aria-hidden="true">⏱️</span>
+            <span className="hud-timer-value">{timeStr}</span>
+          </div>
         </div>
       </div>
 

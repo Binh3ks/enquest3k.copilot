@@ -58,7 +58,7 @@ export default function StoryAltarPuzzle({
   // ── gameplay state ─────────────────────────────────────────────────────────
   const [heldSlabIdx, setHeldSlabIdx] = useState(null);  // index into slabs[]
   const [phase, setPhase]             = useState('loading'); // loading|playing|cleared|ko
-  const [hearts, setHearts]           = useState(3);
+  const [hearts, setHearts]           = useState(2);
   const [score, setScore]             = useState(0);
   const [timeLeft, setTimeLeft]       = useState(duration);
   const [verified, setVerified]       = useState(false);     // post-verify mode
@@ -97,7 +97,7 @@ export default function StoryAltarPuzzle({
       setAltars(Array.from({ length: 5 }, (_, i) => ({ pos: i + 1, slab: null, wrongBlink: false })));
       setHeldSlabIdx(null);
       setPhase('playing');
-      setHearts(3);
+      setHearts(2);
       setScore(0);
       setTimeLeft(duration);
       setVerified(false);
@@ -238,7 +238,7 @@ export default function StoryAltarPuzzle({
     setSlabs(scramble(scenes));
     setAltars(Array.from({ length: 5 }, (_, i) => ({ pos: i + 1, slab: null, wrongBlink: false })));
     setHeldSlabIdx(null);
-    setHearts(3);
+    setHearts(2);
     setScore(0);
     setTimeLeft(duration);
     setVerified(false);
@@ -348,6 +348,7 @@ export default function StoryAltarPuzzle({
       <HUDOverlay
         score={score}
         hearts={hearts}
+        maxHearts={2}
         timeLeft={timeLeft}
         totalTime={duration}
         stars={stars}
