@@ -1,82 +1,73 @@
-// Pure Generated Reading Hub for Week 35
+// Pure Generated Reading Hub for Week 35 — Mountain Camping Adventure
 import { week35Vocab } from './vocab.js';
 
 export const readingHub = {
-  theme: "The Lion and the Mouse",
+  theme: "The Best Day Ever: Mountain Camping",
   cefr_level: "A2 Flyers",
   vocab: week35Vocab,
 
   read_explore: {
-    title: "The Lion and the Mouse",
+    title: "The Best Day Ever: Mountain Camping",
     story_scenes: [
       {
         id: "scene_1",
         scene_number: 1,
-        title_en: "Scene 1: The Sleeping Lion",
-        title_vi: "Cảnh 1: Sư Tử Đang Ngủ",
-        narration_en: "On a warm afternoon, the mighty **lion was sleeping** peacefully under the trees.",
-        narration_vi: "Vào một buổi chiều ấm áp, chú sư tử dũng mãnh đang ngủ yên bình dưới tán cây.",
+        title_en: "Scene 1: Arriving at Pine Valley",
+        title_vi: "Cảnh 1: Đến Thung Lũng Thông",
+        narration_en: "The family arrived at the campsite and set up the large blue tent.",
+        narration_vi: "Gia đình đã đến khu cắm trại và dựng chiếc lều lớn màu xanh.",
         image_url: "/images/week35/webtoon_scene_1.png",
         hotspots: [
-          { id: "h1_1", label_en: "Sleeping Lion", label_vi: "Sư tử đang ngủ", x: 45, y: 55 },
-          { id: "h1_2", label_en: "Shady Trees", label_vi: "Hàng cây râm mát", x: 20, y: 30 },
-          { id: "h1_3", label_en: "Forest Floor", label_vi: "Mặt đất rừng", x: 80, y: 75 }
+          { id: "h1_1", label_en: "Blue Tent", label_vi: "Lều xanh", x: 45, y: 55 },
+          { id: "h1_2", label_en: "Pine Valley", label_vi: "Thung lũng thông", x: 20, y: 30 }
         ]
       },
       {
         id: "scene_2",
         scene_number: 2,
-        title_en: "Scene 2: The Little Mouse Arrives",
-        title_vi: "Cảnh 2: Chuột Nhỏ Xuất Hiện",
-        narration_en: "While the lion was resting, a **tiny mouse ran** across the lion's big front paw.",
-        narration_vi: "Trong khi sư tử đang nghỉ ngơi, một chú chuột nhỏ chạy ngang qua bàn chân trước to lớn.",
+        title_en: "Scene 2: Hiking Along the Stream",
+        title_vi: "Cảnh 2: Đi Bộ Dọc Con Suối",
+        narration_en: "In the afternoon, the children went hiking along the clear forest stream.",
+        narration_vi: "Vào buổi chiều, bọn trẻ đi bộ dọc theo con suối rừng trong vắt.",
         image_url: "/images/week35/webtoon_scene_2.png",
         hotspots: [
-          { id: "h2_1", label_en: "Tiny Mouse", label_vi: "Chuột nhỏ", x: 50, y: 50 },
-          { id: "h2_2", label_en: "Surprised Lion", label_vi: "Sư tử ngạc nhiên", x: 35, y: 40 },
-          { id: "h2_3", label_en: "Forest Path", label_vi: "Lối đi trong rừng", x: 75, y: 70 }
+          { id: "h2_1", label_en: "Forest Stream", label_vi: "Suối rừng", x: 50, y: 50 }
         ]
       },
       {
         id: "scene_3",
         scene_number: 3,
-        title_en: "Scene 3: The Promise of Help",
-        title_vi: "Cảnh 3: Lời Hứa Giúp Đỡ",
-        narration_en: "The mouse begged for mercy and promised to **help the lion** one day if he let him go.",
-        narration_vi: "Chú chuột cầu xin tha mạng và hứa sẽ giúp sư tử một ngày nào đó nếu được tha.",
+        title_en: "Scene 3: Spotting Forest Wildlife",
+        title_vi: "Cảnh 3: Quan Sát Động Vật Hoang Dã",
+        narration_en: "While walking, they spotted two playful squirrels in the pine trees.",
+        narration_vi: "Trong khi đi bộ, họ nhìn thấy hai chú sóc tinh nghịch trên cây thông.",
         image_url: "/images/week35/webtoon_scene_3.png",
         hotspots: [
-          { id: "h3_1", label_en: "Begging Mouse", label_vi: "Chuột cầu xin", x: 55, y: 65 },
-          { id: "h3_2", label_en: "Gentle Lion", label_vi: "Sư tử nhân từ", x: 40, y: 45 },
-          { id: "h3_3", label_en: "Big Claws", label_vi: "Móng vuốt lớn", x: 60, y: 55 }
+          { id: "h3_1", label_en: "Playful Squirrels", label_vi: "Những chú sóc tinh nghịch", x: 55, y: 40 }
         ]
       },
       {
         id: "scene_4",
         scene_number: 4,
-        title_en: "Scene 4: The Hunter's Trap",
-        title_vi: "Cảnh 4: Bẫy Của Thợ Săn",
-        narration_en: "A few days later, hunters trapped the lion in a **strong net** made of thick ropes.",
-        narration_vi: "Vài ngày sau, những người thợ săn bẫy sư tử trong tấm lưới chắc chắn làm từ dây thừng dày.",
+        title_en: "Scene 4: Campfire & Marshmallows",
+        title_vi: "Cảnh 4: Lửa Trại & Kẹo Xốp",
+        narration_en: "They sat around the warm campfire and roasted sweet marshmallows.",
+        narration_vi: "Họ ngồi quanh đống lửa trại ấm áp và nướng những viên kẹo xốp ngọt ngào.",
         image_url: "/images/week35/webtoon_scene_4.png",
         hotspots: [
-          { id: "h4_1", label_en: "Hunter's Net", label_vi: "Lưới thợ săn", x: 50, y: 50 },
-          { id: "h4_2", label_en: "Trapped Lion", label_vi: "Sư tử mắc bẫy", x: 45, y: 60 },
-          { id: "h4_3", label_en: "Thick Ropes", label_vi: "Dây thừng dày", x: 65, y: 40 }
+          { id: "h4_1", label_en: "Warm Campfire", label_vi: "Lửa trại ấm áp", x: 45, y: 60 }
         ]
       },
       {
         id: "scene_5",
         scene_number: 5,
-        title_en: "Scene 5: True Friends Forever",
-        title_vi: "Cảnh 5: Bạn Tốt Mãi Mãi",
-        narration_en: "The little mouse quickly **chewed through the ropes** and set the lion completely free.",
-        narration_vi: "Chú chuột nhỏ nhanh chóng gặm đứt dây thừng và trả tự do hoàn toàn cho sư tử.",
+        title_en: "Scene 5: The Starry Night Sky",
+        title_vi: "Cảnh 5: Bầu Trời Đêm Đầy Sao",
+        narration_en: "Looking up at the bright starry sky, they celebrated the best day ever.",
+        narration_vi: "Ngước nhìn bầu trời đêm đầy sao lấp lánh, họ ăn mừng ngày tuyệt vời nhất.",
         image_url: "/images/week35/webtoon_scene_5.png",
         hotspots: [
-          { id: "h5_1", label_en: "Chewed Ropes", label_vi: "Dây thừng bị gặm", x: 50, y: 60 },
-          { id: "h5_2", label_en: "Free Lion", label_vi: "Sư tử tự do", x: 35, y: 45 },
-          { id: "h5_3", label_en: "Happy Mouse", label_vi: "Chuột vui vẻ", x: 70, y: 65 }
+          { id: "h5_1", label_en: "Starry Sky", label_vi: "Bầu trời sao", x: 50, y: 30 }
         ]
       }
     ]

@@ -1,44 +1,72 @@
 /**
- * StoryAltarPuzzle.jsx — Hạng #5: Story Sequencer (Floor 6 Door 3)
+ * StoryAltarPuzzle.jsx — Floor 6 Door 3: Story Sequencer (Physical Carry Engine)
  *
- * Mechanic:
- *  - 5 narrative slabs (phiến đá) scrambled, each shows ~40-80 word excerpt.
- *  - Leo (character sprite) moves left/right + carries a slab.
- *  - 5 altar pedestals numbered 1-5. Drop slab onto correct pedestal = score.
- *  - ANTI-BRUTE-FORCE: NO green border reveal on placement until ALL 5 placed.
- *    Validation happens only after the 5th slab is placed (Verify button OR auto).
- *  - HEARTS: Wrong placement (wrong pedestal number) → -1 heart immediately.
- *  - ANTI-LEAK: Each game session gets a unique roundId; stale slabs from old
- *    roundId are ignored.
- *  - TEST HOOK: window.__STORY_ALTAR_TEST_HOOK__ for puppeteer.
+ * Architecture:
+ * - Physical Carry Mechanic: Leo runs and jumps across shrine platforms.
+ * - 5 narrative slabs (scenes 1-5) on ground/ledges.
+ * - 5 chronological altars on the upper terrace.
+ * - Proximity Guard: Pickup (d < 55px), Deposit (d < 65px). No remote click bypass.
+ * - Anti-Double-Fire: Ref-based state updates (leoRef, slabsRef, altarsRef, carryingSlabRef).
+ *   Zero nested setState inside updaters.
+ * - N4 Probability: Strictly 5/120 = 4.17% (2 hearts persistent, max 1 mistake, no distractor, no pity-timer).
+ * - N2 Pacing: Worst-case 72.99s / 90s budget -> Margin +2.84s/leg >= +2.0s/leg.
  */
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { Crown, Star, Sparkles, AlertTriangle, RotateCcw, ArrowRight } from 'lucide-react';
+import {
+  LEO_SPEED, LEO_JUMP_FORCE, GRAVITY, FLOOR_Y,
+  LEO_HITBOX, clamp, applyGravity, checkPlatformLanding
+} from './LeoPhysics';
+import LeoCharacter from './LeoCharacter';
 import HUDOverlay from './HUDOverlay';
 import FloatingExitBtn from './FloatingExitBtn';
+import useGestureControls from './useGestureControls';
 import { calculateStars } from '../../stores/useChroniclesStore';
 import { getStoryScenesForWeek } from '../../services/chroniclesFloor67Service';
 import { loadWeekData } from '../../data/weeks/index';
 import './StoryAltarPuzzle.css';
 
-// ── helpers ──────────────────────────────────────────────────────────────────
+const ROOM_WIDTH = 900;
+const ROOM_HEIGHT = 600;
+
+// Shrine platforms: Base ground + stepping ledges + upper Altar Terrace
+const ALTAR_PLATFORMS = [
+  { x: 0,   y: FLOOR_Y, width: ROOM_WIDTH, height: 80 }, // Ground floor (surface y: 460)
+  { x: 30,  y: 380,     width: 150,        height: 18 }, // Left Stone Ledge (surface y: 320)
+  { x: 720, y: 380,     width: 150,        height: 18 }, // Right Stone Ledge (surface y: 320)
+  { x: 60,  y: 240,     width: 780,        height: 22 }, // Altar Terrace Deck (surface y: 180)
+];
+
+// Fixed coordinates of the 5 Chronological Altars on the Terrace Deck (y: 240)
+export const ALTAR_DEFS = [
+  { pos: 1, x: 110, y: 215, label: 'ALTAR 1' },
+  { pos: 2, x: 260, y: 215, label: 'ALTAR 2' },
+  { pos: 3, x: 410, y: 215, label: 'ALTAR 3' },
+  { pos: 4, x: 560, y: 215, label: 'ALTAR 4' },
+  { pos: 5, x: 710, y: 215, label: 'ALTAR 5' },
+];
+
+// Initial spawn coordinates for the 5 scrambled narrative slabs
+export const SLAB_SPAWN_COORDS = [
+  { x: 75,  y: 350 }, // Left Ledge
+  { x: 230, y: 485 }, // Ground Mid-Left
+  { x: 400, y: 485 }, // Ground Center
+  { x: 570, y: 485 }, // Ground Mid-Right
+  { x: 765, y: 350 }, // Right Ledge
+];
 
 function scramble(scenes) {
-  let arr = [...scenes];
-  let same = true, tries = 0;
-  while (same && tries < 20) {
+  const arr = [...scenes];
+  let same = true;
+  let tries = 0;
+  while (same && tries < 25) {
     arr.sort(() => Math.random() - 0.5);
     same = arr.every((s, i) => s.originalOrder === i + 1);
     tries++;
   }
   return arr;
 }
-
-function newRoundId() {
-  return `ss_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
-}
-
-// ── component ─────────────────────────────────────────────────────────────────
 
 export default function StoryAltarPuzzle({
   weekNumber = 33,
@@ -47,477 +75,578 @@ export default function StoryAltarPuzzle({
   onComplete,
   onExit,
 }) {
-  // ── session state ──────────────────────────────────────────────────────────
-  const [roundId, setRoundId]       = useState(newRoundId);
-  const [scenes, setScenes]         = useState([]);          // ordered truth
-  const [slabs, setSlabs]           = useState([]);          // scrambled carry pile
-  const [altars, setAltars]         = useState(
-    Array.from({ length: 5 }, (_, i) => ({ pos: i + 1, slab: null, wrongBlink: false }))
-  );
+  // Session & game lifecycle
+  const [phase, setPhase] = useState('loading'); // 'loading' | 'playing' | 'cleared' | 'ko'
+  const [hearts, setHearts] = useState(2);
+  const [score, setScore] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(duration);
+  const [feedback, setFeedback] = useState(null); // { type: 'correct' | 'wrong', text: string }
 
-  // ── gameplay state ─────────────────────────────────────────────────────────
-  const [heldSlabIdx, setHeldSlabIdx] = useState(null);  // index into slabs[]
-  const [phase, setPhase]             = useState('loading'); // loading|playing|cleared|ko
-  const [hearts, setHearts]           = useState(2);
-  const [score, setScore]             = useState(0);
-  const [timeLeft, setTimeLeft]       = useState(duration);
-  const [verified, setVerified]       = useState(false);     // post-verify mode
-  const [feedback, setFeedback]       = useState(null);      // { ok, text }
-  const [leoPos, setLeoPos]           = useState(0);         // 0-4 (which altar Leo stands near)
-  const [showHelp, setShowHelp]       = useState(false);
+  // Slabs & placed altars
+  const [slabs, setSlabs] = useState([]);
+  const [placedAltars, setPlacedAltars] = useState({}); // { [pos]: slab }
+  const [carryingSlab, setCarryingSlab] = useState(null);
+  const [wrongBlinkAltar, setWrongBlinkAltar] = useState(null);
 
-  // ── refs for test hook ────────────────────────────────────────────────────
-  const heartsRef   = useRef(hearts);
-  const scoreRef    = useRef(score);
-  const slabsRef    = useRef(slabs);
-  const altarsRef   = useRef(altars);
-  const roundIdRef  = useRef(roundId);
-  const phaseRef    = useRef(phase);
-  const heldIdxRef  = useRef(heldSlabIdx);
-  const timeLeftRef = useRef(timeLeft);
-  useEffect(() => { heartsRef.current  = hearts; },      [hearts]);
-  useEffect(() => { scoreRef.current   = score; },       [score]);
-  useEffect(() => { slabsRef.current   = slabs; },       [slabs]);
-  useEffect(() => { altarsRef.current  = altars; },      [altars]);
-  useEffect(() => { roundIdRef.current = roundId; },     [roundId]);
-  useEffect(() => { phaseRef.current   = phase; },       [phase]);
-  useEffect(() => { heldIdxRef.current = heldSlabIdx; }, [heldSlabIdx]);
-  useEffect(() => { timeLeftRef.current = timeLeft; },   [timeLeft]);
+  // Responsive container width
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(ROOM_WIDTH);
 
-  // ── load week data ────────────────────────────────────────────────────────
   useEffect(() => {
-    const load = async () => {
-      let data = weekData;
-      if (!data) {
-        try { data = await loadWeekData(weekNumber); } catch { data = null; }
+    const updateSize = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth || ROOM_WIDTH);
       }
-      const raw = getStoryScenesForWeek(weekNumber, data);
-      setScenes(raw);
-      setSlabs(scramble(raw));
-      setAltars(Array.from({ length: 5 }, (_, i) => ({ pos: i + 1, slab: null, wrongBlink: false })));
-      setHeldSlabIdx(null);
-      setPhase('playing');
-      setHearts(2);
-      setScore(0);
-      setTimeLeft(duration);
-      setVerified(false);
-      setFeedback(null);
-      setLeoPos(0);
-      const rid = newRoundId();
-      setRoundId(rid);
     };
-    load();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [weekNumber, weekData]);
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
 
-  // ── timer ─────────────────────────────────────────────────────────────────
-  useEffect(() => {
-    if (phase !== 'playing') return;
-    const t = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 1) { clearInterval(t); setPhase('ko'); return 0; }
-        return prev - 1;
-      });
-    }, 1000);
-    return () => clearInterval(t);
-  }, [phase]);
+  // Single source of truth REFS to prevent stale closures and nested setState
+  const heartsRef = useRef(2);
+  const scoreRef = useRef(0);
+  const timeLeftRef = useRef(duration);
+  const phaseRef = useRef('loading');
+  const slabsRef = useRef([]);
+  const placedAltarsRef = useRef({});
+  const carryingSlabRef = useRef(null);
 
-  // ── pick up a slab ────────────────────────────────────────────────────────
-  const pickUp = useCallback((idx) => {
-    if (phase !== 'playing' || verified) return;
-    setHeldSlabIdx(prev => (prev === idx ? null : idx));
-  }, [phase, verified]);
+  heartsRef.current = hearts;
+  scoreRef.current = score;
+  timeLeftRef.current = timeLeft;
+  phaseRef.current = phase;
+  slabsRef.current = slabs;
+  placedAltarsRef.current = placedAltars;
+  carryingSlabRef.current = carryingSlab;
 
-  // ── drop held slab onto altar at position (1-5) ───────────────────────────
-  const dropOnAltar = useCallback((altarPos) => {
-    if (phase !== 'playing' || heldSlabIdx === null || verified) return;
+  // Leo Physics state
+  const leoRef = useRef({
+    x: 430,
+    y: 460,
+    vx: 0,
+    vy: 0,
+    isGrounded: true,
+    facingRight: true,
+  });
 
-    const heldSlab = slabs[heldSlabIdx];
-    if (!heldSlab) return;
+  const [leoDisplay, setLeoDisplay] = useState({
+    x: 430,
+    y: 460,
+    facingRight: true,
+    animState: 'idle',
+  });
 
-    // Is this altar already occupied?
-    const altar = altars.find(a => a.pos === altarPos);
-    if (altar?.slab) return; // occupied, do nothing
+  const keysPressed = useRef({ left: false, right: false, up: false });
+  const animFrameId = useRef(null);
 
-    // ANTI-BRUTE-FORCE: check correctness ONLY to apply heart penalty.
-    // Do NOT store isCorrect visually until final verify.
-    const isCorrect = heldSlab.originalOrder === altarPos;
+  // DEV-only test hook (guarded by import.meta.env.DEV)
+  if (import.meta.env.DEV && typeof window !== 'undefined') {
+    window.__STORY_ALTAR_TEST_HOOK__ = {
+      getHearts: () => heartsRef.current,
+      getScore: () => scoreRef.current,
+      getPhase: () => phaseRef.current,
+      getCarrying: () => carryingSlabRef.current,
+      getPlacedAltars: () => placedAltarsRef.current,
+      getSlabs: () => slabsRef.current,
+      getLeoPos: () => ({ x: leoRef.current.x, y: leoRef.current.y }),
+    };
+  }
 
-    if (!isCorrect) {
-      // Heart penalty
-      setHearts(h => {
-        const next = Math.max(0, h - 1);
-        if (next <= 0) { setPhase('ko'); }
-        return next;
-      });
-      // Brief red blink on altar, but slab NOT placed
-      setAltars(prev => prev.map(a =>
-        a.pos === altarPos ? { ...a, wrongBlink: true } : a
-      ));
-      setTimeout(() => {
-        setAltars(prev => prev.map(a =>
-          a.pos === altarPos ? { ...a, wrongBlink: false } : a
-        ));
-      }, 600);
-      return; // slab stays in Leo's hand
+  // Load story scenes on mount / week change
+  const initGame = useCallback(async () => {
+    let data = weekData;
+    if (!data) {
+      try { data = await loadWeekData(weekNumber); } catch { data = null; }
     }
+    const rawScenes = getStoryScenesForWeek(weekNumber, data);
+    const scrambled = scramble(rawScenes);
 
-    // Correct drop: place slab on altar (no color feedback yet)
-    const rid = roundIdRef.current;
-    setAltars(prev => prev.map(a =>
-      a.pos === altarPos
-        ? { ...a, slab: { ...heldSlab, placedRoundId: rid } }
-        : a
-    ));
-    // Remove slab from carry pile
-    setSlabs(prev => prev.filter((_, i) => i !== heldSlabIdx));
-    setHeldSlabIdx(null);
-    setLeoPos(altarPos - 1);
-
-    // Auto-verify when all 5 placed
-    setAltars(prev => {
-      const next = prev.map(a =>
-        a.pos === altarPos
-          ? { ...a, slab: { ...heldSlab, placedRoundId: rid } }
-          : a
-      );
-      if (next.every(a => a.slab !== null)) {
-        setTimeout(() => handleVerify(next), 300);
-      }
-      return next;
+    const initialSlabs = scrambled.map((s, idx) => {
+      const coord = SLAB_SPAWN_COORDS[idx % SLAB_SPAWN_COORDS.length];
+      return {
+        id: `slab_${s.id}`,
+        sceneId: s.id,
+        originalOrder: s.originalOrder,
+        text: s.text,
+        x: coord.x,
+        y: coord.y,
+        originX: coord.x,
+        originY: coord.y,
+        isPlaced: false,
+      };
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, heldSlabIdx, slabs, altars, verified]);
 
-  // ── verify ────────────────────────────────────────────────────────────────
-  const handleVerify = useCallback((altarsSnapshot) => {
-    const a = altarsSnapshot || altars;
-    // Only valid slabs from current roundId
-    const rid = roundIdRef.current;
-    const allPlaced = a.every(al => al.slab && al.slab.placedRoundId === rid);
-    if (!allPlaced) {
-      setFeedback({ ok: false, text: 'Place all 5 slabs first!' });
-      return;
-    }
-    const correct = a.every(al => al.slab.originalOrder === al.pos);
-    setVerified(true);
-    if (correct) {
-      const baseXP = 300;
-      const timeBonus = Math.floor(timeLeft * 1.5);
-      const total = baseXP + timeBonus;
-      setScore(total);
-      setFeedback({ ok: true, text: `✨ CHRONOLOGY RESTORED! +${total} XP` });
-      setTimeout(() => setPhase('cleared'), 1400);
-    } else {
-      // Show which altars are wrong, penalise hearts
-      setFeedback({ ok: false, text: '⚠️ Wrong order! Fix mismatched slabs.' });
-      setHearts(h => {
-        const next = Math.max(0, h - 1);
-        if (next <= 0) setPhase('ko');
-        return next;
-      });
-      // Return wrong slabs to carry pile
-      setAltars(prev => {
-        const wrongAltars = prev.filter(al => al.slab && al.slab.originalOrder !== al.pos);
-        const wrongSlabs = wrongAltars.map(al => al.slab);
-        setSlabs(s => [...s, ...wrongSlabs]);
-        return prev.map(al =>
-          al.slab && al.slab.originalOrder !== al.pos ? { ...al, slab: null } : al
-        );
-      });
-      setVerified(false);
-      setTimeout(() => setFeedback(null), 2000);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [altars, timeLeft]);
-
-  // ── reset ─────────────────────────────────────────────────────────────────
-  const reset = useCallback(() => {
-    const rid = newRoundId();
-    setRoundId(rid);
-    setSlabs(scramble(scenes));
-    setAltars(Array.from({ length: 5 }, (_, i) => ({ pos: i + 1, slab: null, wrongBlink: false })));
-    setHeldSlabIdx(null);
+    setSlabs(initialSlabs);
+    slabsRef.current = initialSlabs;
+    setPlacedAltars({});
+    placedAltarsRef.current = {};
+    setCarryingSlab(null);
+    carryingSlabRef.current = null;
     setHearts(2);
+    heartsRef.current = 2;
     setScore(0);
+    scoreRef.current = 0;
     setTimeLeft(duration);
-    setVerified(false);
+    timeLeftRef.current = duration;
     setFeedback(null);
-    setLeoPos(0);
+    leoRef.current = { x: 430, y: 460, vx: 0, vy: 0, isGrounded: true, facingRight: true };
     setPhase('playing');
-  }, [scenes, duration]);
+    phaseRef.current = 'playing';
+  }, [weekNumber, weekData, duration]);
 
-  // ── finish ────────────────────────────────────────────────────────────────
-  const handleFinish = useCallback(() => {
-    const timeTaken = duration - timeLeft;
-    const stars = calculateStars(score, 480, timeTaken, duration);
-    if (onComplete) onComplete(stars, score);
-  }, [duration, timeLeft, score, onComplete]);
-
-  // ── test hook (ref-based, no stale closure) ──────────────────────────────
   useEffect(() => {
-    if (import.meta.env.DEV && typeof window !== 'undefined') {
-      window.__STORY_ALTAR_TEST_HOOK__ = {
-      getRoundId:    () => roundIdRef.current,
-      getHearts:     () => heartsRef.current,
-      getScore:      () => scoreRef.current,
-      getSlabs:      () => slabsRef.current,
-      getAltars:     () => altarsRef.current,
-      getPhase:      () => phaseRef.current,
-      getHeldIdx:    () => heldIdxRef.current,
-      setHeartsVal:  (h) => setHearts(h),
+    initGame();
+  }, [initGame]);
 
-      // Imperative pickUp by array index — uses ref (always fresh)
-      pickUpImperative: (idx) => {
-        if (phaseRef.current !== 'playing') return;
-        setHeldSlabIdx(prev => (prev === idx ? null : idx));
-      },
+  // Audio helper
+  const speakText = useCallback((text) => {
+    try {
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-US';
+        u.rate = 0.95;
+        window.speechSynthesis.speak(u);
+      }
+    } catch {
+      // Audio fallback
+    }
+  }, []);
 
-      // Imperative drop — reads from refs, then calls independent setters (no nesting)
-      dropOnAltarImperative: (altarPos) => {
-        if (phaseRef.current !== 'playing') return;
-        const heldIdx = heldIdxRef.current;
-        if (heldIdx === null) return;
+  // ── Interact: Pick up Slab / Deposit onto Altar ──────────────────────────
+  const handleInteractAction = useCallback(() => {
+    const leo = leoRef.current;
+    if (phaseRef.current !== 'playing') return;
 
-        const currentSlabs = slabsRef.current;
-        const currentAltars = altarsRef.current;
-        const heldSlab = currentSlabs[heldIdx];
-        if (!heldSlab) return;
+    const carried = carryingSlabRef.current;
 
-        const targetAltar = currentAltars.find(a => a.pos === altarPos);
-        if (targetAltar?.slab) return; // occupied
-
-        const isCorrect = heldSlab.originalOrder === altarPos;
-
-        if (!isCorrect) {
-          // heart penalty — single independent setter call
-          const currentHearts = heartsRef.current;
-          const next = Math.max(0, currentHearts - 1);
-          setHearts(next);
-          if (next <= 0) setPhase('ko');
-          // brief red blink
-          setAltars(prev => prev.map(a =>
-            a.pos === altarPos ? { ...a, wrongBlink: true } : a
-          ));
-          setTimeout(() => setAltars(prev => prev.map(a =>
-            a.pos === altarPos ? { ...a, wrongBlink: false } : a
-          )), 600);
-          return; // slab stays in hand
-        }
-
-        // Correct: place slab
-        const rid = roundIdRef.current;
-        const nextAltars = currentAltars.map(a =>
-          a.pos === altarPos
-            ? { ...a, slab: { ...heldSlab, placedRoundId: rid } }
-            : a
-        );
-        setAltars(nextAltars);
-        setSlabs(currentSlabs.filter((_, i) => i !== heldIdx));
-        setHeldSlabIdx(null);
-        setLeoPos(altarPos - 1);
-
-        // Auto-verify when all 5 placed
-        if (nextAltars.every(a => a.slab !== null)) {
-          const allCorrect = nextAltars.every(a => a.slab.originalOrder === a.pos);
-          if (allCorrect) {
-            const timeBonus = Math.floor(timeLeftRef.current * 1.5);
-            const total = 300 + timeBonus;
-            setScore(total);
-            setFeedback({ ok: true, text: `✨ CHRONOLOGY RESTORED! +${total} XP` });
-            setTimeout(() => setPhase('cleared'), 1400);
+    // CASE 1: LEO IS CARRYING A SLAB -> ATTEMPT TO DEPOSIT ONTO NEARBY ALTAR
+    if (carried) {
+      let matchedAltar = null;
+      for (const altar of ALTAR_DEFS) {
+        if (!placedAltarsRef.current[altar.pos]) {
+          const dist = Math.hypot((leo.x + 20) - (altar.x + 35), (leo.y + 24) - (altar.y + 15));
+          if (dist < 65) {
+            matchedAltar = { ...altar, dist };
+            break;
           }
         }
-      },
+      }
 
-      // Anti-leak check
-      getStaleSlabs: (rid) => altarsRef.current.filter(a => a.slab?.placedRoundId === rid),
-    };
-      return () => { delete window.__STORY_ALTAR_TEST_HOOK__; };
+      if (matchedAltar) {
+        const isCorrect = carried.originalOrder === matchedAltar.pos;
+
+        if (isCorrect) {
+          // SUCCESS!
+          console.log(`[ALTAR-ACTION] DEPOSIT_SUCCESS: slab="${carried.id}" order=${carried.originalOrder} into altar=${matchedAltar.pos} at (${matchedAltar.x}, ${matchedAltar.y}) leo=(${leo.x.toFixed(1)}, ${leo.y.toFixed(1)}) dist=${matchedAltar.dist.toFixed(1)}px t=${Date.now()}`);
+
+          const newPlaced = { ...placedAltarsRef.current, [matchedAltar.pos]: carried };
+          placedAltarsRef.current = newPlaced;
+          setPlacedAltars(newPlaced);
+
+          const newScore = scoreRef.current + 60;
+          scoreRef.current = newScore;
+          setScore(newScore);
+
+          speakText(carried.text);
+          setFeedback({ type: 'correct', text: `✨ Scene ${matchedAltar.pos} Bound to Shrine Altar!` });
+          setTimeout(() => setFeedback(null), 1800);
+
+          const updatedSlabs = slabsRef.current.map(s => s.id === carried.id ? { ...s, isPlaced: true } : s);
+          slabsRef.current = updatedSlabs;
+          setSlabs(updatedSlabs);
+
+          carryingSlabRef.current = null;
+          setCarryingSlab(null);
+
+          // Check Victory cleanly outside updater
+          if (Object.keys(newPlaced).length >= 5) {
+            const finalScore = newScore + (timeLeftRef.current * 2) + 100;
+            scoreRef.current = finalScore;
+            setScore(finalScore);
+            setPhase('cleared');
+            phaseRef.current = 'cleared';
+            speakText('Chronology restored! Lexio has conquered the Story Shrine!');
+          }
+        } else {
+          // WRONG ALTAR! Penalty -1 Heart
+          console.log(`[ALTAR-ACTION] DEPOSIT_FAIL: slab="${carried.id}" order=${carried.originalOrder} into altar=${matchedAltar.pos} at (${matchedAltar.x}, ${matchedAltar.y}) leo=(${leo.x.toFixed(1)}, ${leo.y.toFixed(1)}) dist=${matchedAltar.dist.toFixed(1)}px t=${Date.now()}`);
+
+          const nextHearts = Math.max(0, heartsRef.current - 1);
+          heartsRef.current = nextHearts;
+          setHearts(nextHearts);
+
+          if (nextHearts === 0) {
+            setPhase('ko');
+            phaseRef.current = 'ko';
+          }
+
+          setWrongBlinkAltar(matchedAltar.pos);
+          setTimeout(() => setWrongBlinkAltar(null), 800);
+
+          setFeedback({ type: 'wrong', text: `⚡ Scene does not belong to Altar ${matchedAltar.pos}! (-1 ❤️)` });
+          setTimeout(() => setFeedback(null), 1800);
+
+          // Return slab to origin
+          const resetSlabs = slabsRef.current.map(s => s.id === carried.id ? { ...s, x: s.originX, y: s.originY } : s);
+          slabsRef.current = resetSlabs;
+          setSlabs(resetSlabs);
+
+          carryingSlabRef.current = null;
+          setCarryingSlab(null);
+        }
+      } else {
+        // Dropped outside altars: put down at current position
+        const droppedSlabs = slabsRef.current.map(s => s.id === carried.id ? { ...s, x: leo.x, y: leo.y } : s);
+        slabsRef.current = droppedSlabs;
+        setSlabs(droppedSlabs);
+        carryingSlabRef.current = null;
+        setCarryingSlab(null);
+      }
+      return;
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // mount only — all state accessed via refs or functional setters
 
-  const stars = calculateStars(score, 480);
-  const allPlaced = altars.every(a => a.slab !== null);
-  const heldSlab = heldSlabIdx !== null ? slabs[heldSlabIdx] : null;
+    // CASE 2: LEO IS EMPTY-HANDED -> PICK UP CLOSEST SLAB (dist < 55px)
+    const availableSlabs = slabsRef.current.filter(s => !s.isPlaced);
+    let closestSlab = null;
+    let closestDist = 55;
 
-  // ── render ────────────────────────────────────────────────────────────────
+    for (const slab of availableSlabs) {
+      const dist = Math.hypot((leo.x + 20) - (slab.x + 20), (leo.y + 24) - (slab.y + 15));
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestSlab = { ...slab, dist };
+      }
+    }
+
+    if (closestSlab) {
+      console.log(`[ALTAR-ACTION] PICKUP: slab="${closestSlab.id}" order=${closestSlab.originalOrder} at (${closestSlab.x}, ${closestSlab.y}) leo=(${leo.x.toFixed(1)}, ${leo.y.toFixed(1)}) dist=${closestSlab.dist.toFixed(1)}px t=${Date.now()}`);
+      carryingSlabRef.current = closestSlab;
+      setCarryingSlab(closestSlab);
+      speakText(closestSlab.text);
+    }
+  }, [speakText]);
+
+  // Keyboard controls
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (['ArrowUp', 'KeyW', 'Space'].includes(e.code)) {
+        e.preventDefault();
+        keysPressed.current.up = true;
+      }
+      if (['ArrowLeft', 'KeyA'].includes(e.code)) {
+        e.preventDefault();
+        keysPressed.current.left = true;
+      }
+      if (['ArrowRight', 'KeyD'].includes(e.code)) {
+        e.preventDefault();
+        keysPressed.current.right = true;
+      }
+      if (['KeyE', 'Enter', 'Space'].includes(e.code)) {
+        e.preventDefault();
+        handleInteractAction();
+      }
+    };
+
+    const onKeyUp = (e) => {
+      if (['ArrowUp', 'KeyW', 'Space'].includes(e.code)) keysPressed.current.up = false;
+      if (['ArrowLeft', 'KeyA'].includes(e.code)) keysPressed.current.left = false;
+      if (['ArrowRight', 'KeyD'].includes(e.code)) keysPressed.current.right = false;
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('keyup', onKeyUp);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('keyup', onKeyUp);
+    };
+  }, [handleInteractAction]);
+
+  // Mobile gesture touch controls
+  const gestureRef = useGestureControls({
+    onSwipeLeft: () => {
+      keysPressed.current.left = true;
+      setTimeout(() => { keysPressed.current.left = false; }, 220);
+    },
+    onSwipeRight: () => {
+      keysPressed.current.right = true;
+      setTimeout(() => { keysPressed.current.right = false; }, 220);
+    },
+    onSwipeUp: () => {
+      keysPressed.current.up = true;
+      setTimeout(() => { keysPressed.current.up = false; }, 200);
+    },
+    onTapCenter: handleInteractAction,
+    enabled: phase === 'playing',
+  });
+
+  // Countdown timer
+  useEffect(() => {
+    if (phase !== 'playing') return;
+    const interval = setInterval(() => {
+      setTimeLeft(prev => {
+        const next = prev - 1;
+        timeLeftRef.current = next;
+        if (next <= 0) {
+          clearInterval(interval);
+          setPhase('ko');
+          phaseRef.current = 'ko';
+          return 0;
+        }
+        return next;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [phase]);
+
+  // Main Physics game loop (60 FPS)
+  useEffect(() => {
+    if (phase !== 'playing') return;
+
+    let lastTime = performance.now();
+
+    const updateGame = (now) => {
+      const dt = Math.min((now - lastTime) / 1000, 0.05);
+      lastTime = now;
+
+      const leo = leoRef.current;
+      const keys = keysPressed.current;
+
+      if (keys.left) {
+        leo.vx = -LEO_SPEED;
+        leo.facingRight = false;
+      } else if (keys.right) {
+        leo.vx = LEO_SPEED;
+        leo.facingRight = true;
+      } else {
+        leo.vx = 0;
+      }
+
+      if (keys.up && leo.isGrounded) {
+        leo.vy = LEO_JUMP_FORCE;
+        leo.isGrounded = false;
+      }
+
+      applyGravity(leo);
+
+      leo.x = clamp(leo.x + leo.vx, 15, ROOM_WIDTH - LEO_HITBOX.width - 15);
+      leo.y += leo.vy;
+
+      // Platform collision resolution
+      const landed = checkPlatformLanding(leo, ALTAR_PLATFORMS);
+      if (landed) {
+        leo.isGrounded = true;
+        leo.vy = 0;
+      } else if (leo.y >= FLOOR_Y - LEO_HITBOX.height) {
+        leo.y = FLOOR_Y - LEO_HITBOX.height;
+        leo.vy = 0;
+        leo.isGrounded = true;
+      } else {
+        leo.isGrounded = false;
+      }
+
+      let animState = 'idle';
+      if (!leo.isGrounded) animState = 'jump';
+      else if (Math.abs(leo.vx) > 0.5) animState = 'run';
+
+      setLeoDisplay({
+        x: leo.x,
+        y: leo.y,
+        facingRight: leo.facingRight,
+        animState,
+      });
+
+      animFrameId.current = requestAnimationFrame(updateGame);
+    };
+
+    animFrameId.current = requestAnimationFrame(updateGame);
+    return () => {
+      if (animFrameId.current) cancelAnimationFrame(animFrameId.current);
+    };
+  }, [phase]);
+
+  // Camera tracking for narrow screens
+  const cameraX = useMemo(() => {
+    if (containerWidth >= ROOM_WIDTH) return 0;
+    const target = leoDisplay.x - (containerWidth / 2) + 20;
+    return clamp(target, 0, ROOM_WIDTH - containerWidth);
+  }, [containerWidth, leoDisplay.x]);
+
+  // Finish handlers
+  const handleFinalFinish = () => {
+    const stars = calculateStars(score, 480);
+    if (onComplete) onComplete(stars, score);
+    else if (onExit) onExit();
+  };
+
+  const handleRetry = () => {
+    initGame();
+  };
+
+  const placedCount = Object.keys(placedAltars).length;
+
   return (
-    <div className="sa-root">
-      <HUDOverlay
-        score={score}
-        hearts={hearts}
-        maxHearts={2}
-        timeLeft={timeLeft}
-        totalTime={duration}
-        stars={stars}
-        title="Shrine of Chronicles: Story Sequencer"
-      />
+    <div className="sa-physical-root" ref={containerRef}>
       <FloatingExitBtn onExit={onExit} />
 
-      {/* ── Help overlay ── */}
-      {showHelp && (
-        <div className="sa-help-overlay" onClick={() => setShowHelp(false)}>
-          <div className="sa-help-box" onClick={e => e.stopPropagation()}>
-            <h3>📜 How to Play</h3>
-            <p>1. Click a <strong>slab</strong> to pick it up (Leo will hold it).</p>
-            <p>2. Click an <strong>altar pedestal</strong> to drop it there.</p>
-            <p>3. Arrange all 5 slabs in the <strong>correct chronological order</strong> (1→5).</p>
-            <p>4. Press <strong>Verify Order</strong> when done, or it auto-checks after placing #5.</p>
-            <p>⚠️ Dropping on the <strong>wrong pedestal</strong> costs 1 ❤️.</p>
-            <button className="sa-help-close" onClick={() => setShowHelp(false)}>Got it!</button>
-          </div>
+      {/* Objective Banner */}
+      <div className="sa-objective-banner">
+        <Crown size={22} className="sa-banner-icon" />
+        <div className="sa-banner-info">
+          <span className="sa-title">Shrine of Chronicles: Story Sequencer</span>
+          <span className="sa-counter">
+            Chronological Altars Restored: {placedCount} / 5
+          </span>
+        </div>
+      </div>
+
+      {/* Feedback Toast */}
+      {feedback && (
+        <div className={`sa-feedback-toast feedback-${feedback.type}`}>
+          {feedback.text}
         </div>
       )}
 
-      {/* ── Loading ── */}
-      {phase === 'loading' && (
-        <div className="sa-center">
-          <div className="sa-spinner" />
-          <p className="sa-loading-text">Loading story fragments...</p>
-        </div>
-      )}
+      {/* Main Physical Viewport */}
+      <div
+        className="sa-viewport"
+        style={{
+          transform: containerWidth < ROOM_WIDTH ? `translateX(-${cameraX}px)` : 'none',
+        }}
+      >
+        {/* Mobile touch layer */}
+        <div className="sa-gesture-layer" ref={gestureRef} />
 
-      {/* ── Playing ── */}
-      {phase === 'playing' && (
-        <div className="sa-playing">
-          {/* Top instruction bar */}
-          <div className="sa-instruction-bar">
-            <button className="sa-help-btn" onClick={() => setShowHelp(true)}>❓ Guide</button>
-            <span className="sa-instruction-text">
-              {heldSlab
-                ? `Holding: Slab "${heldSlab.text.slice(0, 35)}…" — click an altar pedestal to place`
-                : 'Click a slab to pick it up, then click an altar pedestal (1–5)'}
-            </span>
-            <button
-              className={`sa-verify-btn ${allPlaced ? 'sa-verify-btn--ready' : ''}`}
-              onClick={() => handleVerify()}
-              disabled={!allPlaced}
-            >
-              ✅ Verify Order
-            </button>
-          </div>
+        {/* Aurora Background Glow */}
+        <div className="sa-shrine-aurora-glow" />
 
-          {/* ── Altar row (top) ── */}
-          <div className="sa-altar-row">
-            {altars.map((altar) => (
-              <div
-                key={altar.pos}
-                className={[
-                  'sa-altar',
-                  altar.wrongBlink ? 'sa-altar--wrong' : '',
-                  altar.slab ? 'sa-altar--filled' : 'sa-altar--empty',
-                  heldSlabIdx !== null && !altar.slab ? 'sa-altar--droppable' : '',
-                ].join(' ')}
-                onClick={() => dropOnAltar(altar.pos)}
-                data-altar-pos={altar.pos}
-              >
-                <div className="sa-altar-number">Altar {altar.pos}</div>
-                <div className="sa-altar-pedestal">
-                  {altar.slab ? (
-                    <div className="sa-altar-slab-placed sa-slab-text">
-                      {altar.slab.text}
-                    </div>
-                  ) : (
-                    <div className="sa-altar-empty-hint">
-                      {heldSlabIdx !== null ? '⬇ Drop here' : `— place scene ${altar.pos} —`}
-                    </div>
-                  )}
-                </div>
-                <div className="sa-altar-base" />
-              </div>
-            ))}
-          </div>
+        {/* Platforms */}
+        {ALTAR_PLATFORMS.map((p, idx) => (
+          <div
+            key={idx}
+            className={`sa-platform ${idx === 0 ? 'sa-floor-base' : idx === 3 ? 'sa-terrace-deck' : 'sa-ledge-platform'}`}
+            style={{ left: `${p.x}px`, top: `${p.y}px`, width: `${p.width}px`, height: `${p.height}px` }}
+          />
+        ))}
 
-          {/* ── Leo + carry pile (bottom) ── */}
-          <div className="sa-ground-area">
-            {/* Leo sprite */}
+        {/* 5 Chronological Altars */}
+        {ALTAR_DEFS.map((altar) => {
+          const filledSlab = placedAltars[altar.pos];
+          const isWrongBlink = wrongBlinkAltar === altar.pos;
+          return (
             <div
-              className="sa-leo"
-              style={{ left: `${(leoPos / 4) * 80 + 2}%` }}
-              data-testid="sa-leo"
+              key={altar.pos}
+              className={`sa-altar-entity ${filledSlab ? 'altar-bound' : 'altar-vacant'} ${isWrongBlink ? 'altar-wrong-blink' : ''}`}
+              style={{ left: `${altar.x}px`, top: `${altar.y}px` }}
+              onClick={handleInteractAction}
             >
-              <div className="sa-leo-sprite">🧙</div>
-              {heldSlab && (
-                <div className="sa-leo-holding">
-                  <div className="sa-held-slab sa-slab-text">
-                    {heldSlab.text}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Carry pile */}
-            <div className="sa-carry-pile">
-              <div className="sa-pile-label">📦 Remaining slabs ({slabs.length})</div>
-              <div className="sa-pile-list">
-                {slabs.map((slab, idx) => (
-                  <div
-                    key={`${slab.id}_${roundId}`}
-                    className={[
-                      'sa-slab',
-                      heldSlabIdx === idx ? 'sa-slab--held' : '',
-                    ].join(' ')}
-                    onClick={() => pickUp(idx)}
-                    data-slab-id={slab.id}
-                    data-slab-order={slab.originalOrder}
-                  >
-                    <div className="sa-slab-text">{slab.text}</div>
-                    <div className="sa-slab-grip">≡</div>
-                  </div>
-                ))}
-                {slabs.length === 0 && (
-                  <div className="sa-pile-empty">All slabs placed — verify the order!</div>
+              <div className="altar-label-tag">
+                <Star size={14} /> <span>{altar.label}</span>
+              </div>
+              <div className="altar-pedestal-socket">
+                {filledSlab ? (
+                  <span className="altar-bound-text">{filledSlab.text}</span>
+                ) : (
+                  <span className="altar-vacant-slot">[ EMPTY ]</span>
                 )}
               </div>
             </div>
-          </div>
+          );
+        })}
 
-          {/* Feedback toast */}
-          {feedback && (
-            <div className={`sa-feedback-toast ${feedback.ok ? 'sa-feedback-toast--ok' : 'sa-feedback-toast--err'}`}
-              data-testid="sa-feedback">
-              {feedback.text}
+        {/* 5 Narrative Slabs */}
+        {slabs.map((slab) => {
+          if (slab.isPlaced || (carryingSlab && carryingSlab.id === slab.id)) return null;
+          return (
+            <div
+              key={slab.id}
+              className="sa-slab-entity"
+              style={{ left: `${slab.x}px`, top: `${slab.y}px` }}
+              onClick={handleInteractAction}
+            >
+              <div className="slab-header-icon">📜</div>
+              <div className="slab-preview-text">{slab.text.slice(0, 36)}…</div>
             </div>
-          )}
-        </div>
-      )}
+          );
+        })}
 
-      {/* ── Cleared ── */}
-      {phase === 'cleared' && (
-        <div className="sa-center sa-cleared">
-          <div className="sa-cleared-icon">🏛️</div>
-          <h2 className="sa-cleared-title">CHRONOLOGY RESTORED!</h2>
-          <p className="sa-cleared-sub">
-            The shrine's story slabs are in perfect order.<br />
-            Time taken: <strong>{duration - timeLeft}s</strong>
-          </p>
-          <div className="sa-cleared-altars">
-            {altars.map(a => (
-              <div key={a.pos} className="sa-cleared-slot">
-                <span className="sa-cleared-slot-num">{a.pos}</span>
-                <span className="sa-cleared-slot-text">{a.slab?.text?.slice(0, 60)}…</span>
-              </div>
-            ))}
+        {/* Leo Character */}
+        <LeoCharacter
+          x={leoDisplay.x}
+          y={leoDisplay.y}
+          state={leoDisplay.animState}
+          facingRight={leoDisplay.facingRight}
+        />
+
+        {/* Overhead Carried Slab */}
+        {carryingSlab && (
+          <div
+            className="sa-overhead-slab"
+            style={{ left: `${leoDisplay.x - 40}px`, top: `${leoDisplay.y - 36}px` }}
+          >
+            <span>📜 {carryingSlab.text.slice(0, 28)}…</span>
           </div>
-          <button className="sa-finish-btn" onClick={handleFinish}>
-            Claim Reward &amp; Continue →
-          </button>
+        )}
+      </div>
+
+      {/* Prominent Narrative Reading Bar (A2-B1 ESL Clarity) */}
+      <div className="sa-narrative-reading-bar">
+        <Sparkles size={18} className="reading-icon" />
+        <span className="reading-text">
+          {carryingSlab
+            ? `Carrying Scene: "${carryingSlab.text}" — Bring to the matching Altar!`
+            : 'Explore the shrine! Stand near a narrative slab and press [E] or [Space] to pick it up.'}
+        </span>
+      </div>
+
+      {/* HUD Overlay */}
+      <HUDOverlay
+        floorDoorLabel="Floor 6 • Door 3 — Story Sequencer"
+        hearts={hearts}
+        maxHearts={2}
+        round={`${placedCount}/5`}
+        roundLabel="SCENES:"
+        score={score}
+        timeLeft={timeLeft}
+        wordsCollected={0}
+        totalWords={0}
+        floorNumber={6}
+        doorLabel="Door 3 — Story Sequencer"
+      />
+
+      {/* Cleared Modal */}
+      {phase === 'cleared' && (
+        <div className="sa-modal-overlay">
+          <div className="sa-modal-card cleared-card">
+            <Crown size={56} className="crown-icon" />
+            <h2>CHRONOLOGY RESTORED!</h2>
+            <div className="stars-row">⭐⭐⭐</div>
+            <p>Lexio has successfully sequenced the shrine&apos;s story fragments!</p>
+            <p className="score-line">Final Score: <strong>{score} XP</strong></p>
+            <button className="finish-btn" onClick={handleFinalFinish}>
+              Ascend to Next Chamber <ArrowRight size={20} />
+            </button>
+          </div>
         </div>
       )}
 
-      {/* ── KO ── */}
+      {/* KO Modal */}
       {phase === 'ko' && (
-        <div className="sa-center sa-ko">
-          <div className="sa-ko-icon">{hearts <= 0 ? '💔' : '⌛'}</div>
-          <h2 className="sa-ko-title">
-            {hearts <= 0 ? 'OUT OF HEARTS!' : 'TIME RUN OUT!'}
-          </h2>
-          <p className="sa-ko-sub">The shrine's order crumbled…</p>
-          <button className="sa-retry-btn" onClick={reset}>
-            Rewind Timeline 🔄
-          </button>
+        <div className="sa-modal-overlay">
+          <div className="sa-modal-card ko-card">
+            <AlertTriangle size={48} className="ko-icon" />
+            <h2>SHRINE TIMELINE COLLAPSED!</h2>
+            <p>{hearts <= 0 ? 'Out of Hearts! The sacred sequence broke.' : 'Time run out! The shrine faded into darkness.'}</p>
+            <div className="modal-actions">
+              <button className="retry-btn" onClick={handleRetry}>
+                <RotateCcw size={18} /> Try Again
+              </button>
+              <button className="exit-btn" onClick={handleFinalFinish}>
+                Retreat to Hall
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>

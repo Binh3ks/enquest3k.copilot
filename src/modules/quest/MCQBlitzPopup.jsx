@@ -37,6 +37,13 @@ export const CURRICULUM_DEFINITIONS = {
   'careful': 'Taking great care to avoid danger or mistakes',
   'gravity': 'The force that pulls objects toward the earth',
   'hazard': 'A dangerous condition that can cause harm',
+  'cold pack': 'A chilled gel pack placed on an injury to soothe pain and swelling',
+  'cold_pack': 'A chilled gel pack placed on an injury to soothe pain and swelling',
+  'puddle': 'A small pool of liquid left on a floor or ground',
+  'playground': 'An outdoor recreation area where students play during break time',
+  'cafeteria': 'A dining room at school where children eat lunch and talk',
+  'headmaster': 'The school leader in charge of managing teachers and students',
+  'stairs': 'Steps inside a building used to walk between different floors',
 };
 
 const PEDAGOGICAL_DISTRACTORS = [

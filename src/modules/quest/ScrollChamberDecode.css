@@ -1,4 +1,5 @@
 /* ScrollChamberDecode.css — Ancient Library Archive Theme */
+@import './game-mobile.css';
 
 .scroll-chamber-root {
   position: relative;
@@ -12,6 +13,12 @@
   overflow: hidden;
   user-select: none;
   font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+@media (max-width: 900px) {
+  .scroll-chamber-root {
+    align-items: flex-start;
+  }
 }
 
 /* Objective Banner */
@@ -193,58 +200,95 @@
   text-transform: uppercase;
 }
 
-.scroll-cloze-line {
+.scroll-sentence-flow {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 8px;
-}
-
-.scroll-blank-slot {
-  flex: 1;
-  min-height: 32px;
-  padding: 4px 8px;
-  border-radius: 8px;
-  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  gap: 4px 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #78350f;
+  line-height: 1.8;
+  text-align: center;
+  padding: 4px 8px;
 }
 
-.slot-empty {
+.scroll-plain-text {
+  color: #78350f;
+  font-weight: 700;
+  white-space: pre-wrap;
+}
+
+.scroll-inline-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 84px;
+  height: 32px;
+  padding: 2px 10px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.scroll-inline-slot.slot-empty {
   background: rgba(180, 83, 9, 0.15);
   border: 2px dashed #b45309;
+  color: #92400e;
 }
 
-.slot-empty:hover {
-  background: rgba(180, 83, 9, 0.25);
-  border-color: #f59e0b;
+.scroll-inline-slot.slot-focused {
+  border-color: #eab308;
+  background: rgba(234, 179, 8, 0.35);
+  box-shadow: 0 0 14px rgba(234, 179, 8, 0.7);
+  transform: scale(1.06);
+}
+
+.scroll-inline-slot.slot-filled {
+  background: #15803d;
+  border: 2px solid #4ade80;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.4);
 }
 
 .blank-placeholder {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: #92400e;
 }
 
-.slot-filled {
-  background: #15803d;
-  border: 2px solid #4ade80;
-  box-shadow: 0 0 10px rgba(74, 222, 128, 0.4);
-}
-
 .placed-word {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 900;
   color: #ffffff;
+}
+
+.slot-action-tag {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f59e0b;
+  color: #1e1b4b;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  animation: pulse-tag 0.8s infinite alternate ease-in-out;
+  pointer-events: none;
+  z-index: 25;
 }
 
 /* Rune Stones */
 .rune-stone-entity {
   position: absolute;
   z-index: 12;
-  cursor: pointer;
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   border: 2px solid #38bdf8;
   border-radius: 10px;
@@ -252,12 +296,36 @@
   max-width: 150px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 12px rgba(56, 189, 248, 0.3);
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.rune-stone-entity:hover {
-  transform: translateY(-3px) scale(1.05);
-  border-color: #7dd3fc;
+.rune-stone-entity.stone-focused {
+  border-color: #38bdf8;
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.8), 0 4px 12px rgba(0, 0, 0, 0.6);
+  transform: translateY(-4px) scale(1.08);
+}
+
+.stone-interact-prompt {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #38bdf8;
+  color: #0f172a;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  animation: pulse-tag 0.8s infinite alternate ease-in-out;
+  pointer-events: none;
+  z-index: 25;
+}
+
+@keyframes pulse-tag {
+  0% { transform: translateX(-50%) translateY(0); }
+  100% { transform: translateX(-50%) translateY(-3px); }
 }
 
 .rune-stone-word {
@@ -354,5 +422,3 @@
   margin: 14px 0;
   line-height: 1.5;
 }
-
-@import './game-mobile.css';

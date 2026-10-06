@@ -1,0 +1,18 @@
+{
+  "testName": "F5D2 Gear_1 High Crown Deck Physical Keyboard Reachability & Margin",
+  "timestamp": "2026-09-28T02:47:09.480Z",
+  "pedestalTested": "gear_1 (High Crown Deck, x=390, y=105, platform y=170)",
+  "correctAnswerText": "could not stop in time",
+  "physicalJumpMethod": "page.keyboard.down(\"Space\", 100ms) -> up(\"Space\")",
+  "physicalMoveDurationSec": 0.55,
+  "leoLandingPos": {
+    "x": 430,
+    "y": 110,
+    "isGrounded": true
+  },
+  "r1ToastFeedback": "⚙️ TITAN HEART ENGAGED! \"could not stop in time\"",
+  "finalHUDTimeLeftSec": 30,
+  "totalMarginRemainingSec": 30,
+  "requirementMet": true,
+  "screenshot": "f5d2_gear1_crown_deck_verified.png"
+}

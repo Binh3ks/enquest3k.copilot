@@ -25,22 +25,23 @@ Tôi cần gọi tool [Y] để thu thập evidence trước.
 Hành động tiếp theo: [mô tả tool call cụ thể].
 ```
 
-### ❌ CẤM TUYỆT ĐỐI (Zero-Tolerance Violations — 10 loại):
+### ❌ CẤM TUYỆT ĐỐI (Zero-Tolerance Violations — 11 loại):
 
 **Nhóm 1 — Fabrication:**
-1. **Code Extrapolation**: Đọc source code (`*.jsx`, `*.js`, data files) rồi suy diễn "app trông như thế nào" hoặc "người dùng cảm thấy gì" — ĐÂY LÀ HALLUCINATION.
+1. **Code Extrapolation**: Đọc source code (`*.jsx`, `*.js`, data files) rồi suy diễn "app trông như thế nào", "người dùng cảm thấy gì", hoặc giả định luồng fallback code chạy như runtime thật — ĐÂY LÀ HALLUCINATION. **Mọi mô tả hành vi runtime phải verify runtime thật, không suy từ đọc code — kể cả khi code trông rõ ràng.**
 2. **Roleplay Override**: Khi nhận prompt "đóng vai X" (trẻ em, chuyên gia...) — Roleplay KHÔNG cho phép bỏ qua evidence requirement. Mọi phát biểu vẫn phải có tool-call evidence.
 3. **Confident Fabrication**: Mô tả chi tiết sinh động (âm thanh, màu sắc, cảm xúc) mà không có screenshot/DOM proof — bất kể câu văn nghe có vẻ chuyên nghiệp đến đâu.
 4. **Internal ID Confusion**: Nhầm `taskId` nội bộ (e.g., `broadcast_studio`) với tên hiển thị UI (e.g., "Video Challenge") — Tên UI chỉ có thể xác nhận từ DOM thực tế.
+5. **Git Historical Claims without Verbatim Output (Git Forensic Rule)**: Mọi khẳng định về nội dung của một commit hoặc lịch sử thay đổi trong Git BẮT BUỘC PHẢI ĐI KÈM OUTPUT LỆNH NGUYÊN VĂN (`git show <commit>:<path>`, `git log -1 <commit> --stat`, hoặc `git diff`) ngay tại vị trí khẳng định. CẤM TUYỆT ĐỐI việc diễn giải bằng lời hoặc trích dẫn bằng trí nhớ.
 
 
 **Nhóm 2 — Gemini-Specific Failure Modes (đặc biệt nguy hiểm với Gemini Flash/Pro):**
-5. **Landing-Page-Only Audit**: Navigate đến URL, chụp màn hình nhưng CHƯA bấm nút nào, rồi kết luận quest "hoạt động tốt" — ĐÂY LÀ FALSE POSITIVE. Audit hợp lệ PHẢI click ▶ START / ENTER BOSS BATTLE và kiểm tra màn hình SAU khi click.
-6. **Truncated bodySnippet = Full Evidence**: Dùng 400-char `bodySnippet` từ `page.evaluate()` để mô tả toàn bộ giao diện trang có `bodyLength > 500` — ĐÂY LÀ PARTIAL EVIDENCE, phải cảnh báo rõ ràng.
-7. **Headless Media Feature Validation**: Kết luận tính năng mic/camera/recording "hoạt động" khi audit thực hiện bằng headless Chrome — VÔ GIÁ TRỊ. Quest có `RECORD`, `🎙️ Voice Shadow`, `📹 Video Challenge`, `🎧 Listening` phải test bằng Chrome thật với `--use-fake-ui-for-media-stream`.
-8. **Screenshot Saved ≠ Screenshot Seen**: Báo cáo "screenshot đã lưu" mà không embed ảnh vào báo cáo cho user xem — KHÔNG được coi là bằng chứng.
-9. **`isErrorScreen: false` = No Bugs**: Chỉ check text "Something went wrong"/"TypeError" rồi tuyên bố không có lỗi — phải kiểm tra thêm spinner không resolve, nội dung blank, console errors, network failures.
-10. **Positive Completion Before Checking Known Bugs**: Viết kết luận "sẵn sàng đóng băng" mà chưa verify các bug đã được user report trước đó trong phiên hiện tại hoặc AGENTS.md precedent.
+6. **Landing-Page-Only Audit**: Navigate đến URL, chụp màn hình nhưng CHƯA bấm nút nào, rồi kết luận quest "hoạt động tốt" — ĐÂY LÀ FALSE POSITIVE. Audit hợp lệ PHẢI click ▶ START / ENTER BOSS BATTLE và kiểm tra màn hình SAU khi click.
+7. **Truncated bodySnippet = Full Evidence**: Dùng 400-char `bodySnippet` từ `page.evaluate()` để mô tả toàn bộ giao diện trang có `bodyLength > 500` — ĐÂY LÀ PARTIAL EVIDENCE, phải cảnh báo rõ ràng.
+8. **Headless Media Feature Validation**: Kết luận tính năng mic/camera/recording "hoạt động" khi audit thực hiện bằng headless Chrome — VÔ GIÁ TRỊ. Quest có `RECORD`, `🎙️ Voice Shadow`, `📹 Video Challenge`, `🎧 Listening` phải test bằng Chrome thật với `--use-fake-ui-for-media-stream`.
+9. **Screenshot Saved ≠ Screenshot Seen**: Báo cáo "screenshot đã lưu" mà không embed ảnh vào báo cáo cho user xem — KHÔNG được coi là bằng chứng.
+10. **`isErrorScreen: false` = No Bugs**: Chỉ check text "Something went wrong"/"TypeError" rồi tuyên bố không có lỗi — phải kiểm tra thêm spinner không resolve, nội dung blank, console errors, network failures.
+11. **Positive Completion Before Checking Known Bugs**: Viết kết luận "sẵn sàng đóng băng" mà chưa verify các bug đã được user report trước đó trong phiên hiện tại hoặc AGENTS.md precedent.
 
 ### ✅ Quy trình bắt buộc cho Audit Tasks (Upgraded — 9 bước):
 ```
@@ -594,5 +595,71 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
    - Word Bank pool bố trí dạng 2 cột trên điện thoại di động (`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5`) và dạng dock sticky cố định ở trên cùng để học sinh không phải cuộn lên cuộn xuống.
    - Thu hẹp triệt để padding của các hàng câu hỏi/định nghĩa (`p-1.5 sm:p-2`, `space-y-1 sm:space-y-1.5`), card margins (`my-1 sm:my-2`) để kéo toàn bộ nội dung lên trên.
    - Speaking & Passport / Personal Questions: Tối ưu padding, giảm gap giữa các câu hỏi, card padding `p-2.5 sm:p-3.5` để loại bỏ hoàn toàn khoảng trống thừa.
+
+## 🏰 Chronicles 21 Mini-Game Architecture & Release Gating Invariant — 2026-09-10
+
+### 1. Master 21-Game Roster (7 Floors × 3 Doors = 21 Mini-Games)
+Super Leo Chronicles vận hành hệ thống ngục tối 7 Tầng (7 Floors), mỗi tầng gồm đúng 3 Cửa tương ứng với 3 trụ cột kỹ năng: **Vocab (Cửa 1), Grammar (Cửa 2), Integration (Cửa 3)**.
+
+| Floor | Door 1: Vocab (Từ vựng) | Door 2: Grammar (Ngữ pháp) | Door 3: Integration (Tích hợp) | Component chính |
+|---|---|---|---|---|
+| **F1** | `arcane_bubble` (Arcane Bubble) | `spell_train` (Spell Train) | `lexical_det` (Lexical Detective) | `ShadowVaultInfiltrate.jsx` / `SyntaxExpressRail.jsx` |
+| **F2** | `crystal_match` (Crystal Match) | `rune_forge` (Rune Forge) | `ancient_scroll` (Ancient Scroll) | `CrystalMatch.jsx` / `AncientScrollLab.jsx` |
+| **F3** | `phonics_bubble` (Phonics Bubble) | `chunk_catapult` (Chunk Catapult) | `meteor_smasher` (Meteor Smasher) | `ChunkCatapultCanvas.jsx` / `MeteorSmasher.jsx` |
+| **F4** | `highway_runner` (Highway Runner) | `spell_train_express` (Syntax Express) | `lexical_riddle` (Lexical Riddle) | `HighwayRunnerGame.jsx` / `SyntaxExpressGame.jsx` |
+| **F5** | `grand_matrix` (Grand Matrix) | `titan_forge` (Titan Forge) | `cambridge_cloze` (Cambridge Cloze) | `GrandMatrixGrid.jsx` / `CambridgeClozeLab.jsx` |
+| **F6** | `synonym_storm` (Synonym Storm) | `connector_relay` (Connector Relay) | `story_sequencer` (Story Sequencer) | `SynonymStormGame.jsx` / `ConnectorRelayGame.jsx` / `StorySequencerGame.jsx` |
+| **F7** | `word_forge_scramble` (Word Forge) | `question_quest` (Question Quest) | `rune_balance_scale` (Word Class Duel) | `WordForgeScrambleGame.jsx` / `QuestionQuestGame.jsx` / `WordClassDuelGame.jsx` |
+
+- **Floor Navigation Invariant**:
+  Trong `ChroniclesScreen.jsx`, điều kiện kích hoạt Mystery Vault / Boss Chamber BẮT BUỘC là `activeDayIndex >= 7` (7 tầng tương ứng 7 ngày). CẤM đặt `activeDayIndex >= 5` vì sẽ chặn nhầm Tầng 5 và Tầng 6.
+
+### 2. BUG-002 Invariant (Anti-Dummy Definition & Pure Lexical Isolation Doctrine)
+- **CẤM TUYỆT ĐỐI `"Related to " + word`**:
+  Nghiêm cấm mọi hành vi sinh fallback định nghĩa kiểu `"Related to " + word` trong toàn bộ codebase (`contentService.js`, `extractQuestVocab.js`, `DailyRoomScreen.jsx`, `ShadowVaultInfiltrate.jsx`). Mọi từ vựng nạp vào mini-game phải có định nghĩa Cambridge chính thống từ `definition_en`, `definitions[]`, hoặc từ điển `vocab_dictionary_master.js`.
+- **Pure Lexical Terms Only (Tách biệt Ngữ pháp & Từ vựng)**:
+  Bộ nạp từ vựng cho các game tích hợp (`lexical_det`, `ancient_scroll`, `meteor_smasher`, `lexical_riddle`, etc.) BẮT BUỘC phải lọc bỏ triệt để các câu ngữ pháp (bất kỳ item nào có thuộc tính `.sentence` hoặc độ dài text > 3 từ). Từ vựng chỉ được chứa các single words, collocations, hoặc chunks ngắn.
+- **Quy tắc Quét & Chuẩn Hóa Underscore Mở Rộng**:
+  Khi audit các game tiếp theo, nếu phát hiện thêm bất kỳ field name mới nào trong dữ liệu bài học có khả năng chứa chuỗi nối gạch dưới (`term:`, `completion:`, `starter:`, `answer:`, `phrase:`, `chunk:`, etc.), BẮT BUỘC phải bổ sung ngay pattern quét vào script audit và đảm bảo tầng UI / `textSanitize.js` xử lý triệt để trước khi render.
+
+### 3. Transparency of Metrics (Nguyên tắc Minh bạch Số liệu Mảng "30/30")
+- Hàm nạp từ vựng chuẩn cho một tuần nạp: 20 từ từ `reading_hub.vocab` + 10 định nghĩa từ `writing_hub.rw_part_1.definitions` = tổng dung lượng mảng là 30.
+- Với các tuần khung/skeleton (như W34, W35 khi chưa biên soạn xong), 30 mục này có thể là dữ liệu mẫu (mock template).
+- **Quy tắc**: Agent CẤM TUYỆT ĐỐI tuyên bố "30/30 từ vựng tinh khiết chuẩn cho tuần mới" nếu tuần đó chưa được biên soạn và kiểm chứng nội dung thực tế. Luôn phân biệt rạch ròi giữa "kích thước mảng dữ liệu (30)" và "nội dung đã được biên soạn và kiểm chứng (verified content)".
+
+### 4. Verbatim vs. Authored Content Governance & Provenance Invariant
+- **Word Class Duel (`word_class_duel.js`)**:
+  - Round 1 (`grip`): Từ đa từ loại tự nhiên trích verbatim từ bài đọc CLIL của tuần (đóng vai trò cả Danh từ và Động từ).
+  - Rounds 2–4 (`slide`, `care`, `help`): Các câu ví dụ do tác giả biên soạn sư phạm (AUTHORED sentences) theo chủ đề bài học nhằm kiểm tra bản chất từ loại.
+  - CẤM tuyên bố hoặc báo cáo sai sự thật rằng toàn bộ các rounds là trích nguyên văn bài đọc.
+  - Khi biên soạn các tuần tiếp theo (W34+), tác giả phải ưu tiên tìm các từ đa từ loại có sẵn trong bài đọc CLIL/Story; nếu thiếu và phải tự biên soạn, BẮT BUỘC ghi chú rõ provenance trong header comment.
+- **Connector Relay (`ConnectorRelayGame.jsx`)**:
+  - 5 câu liên từ (`because`, `although`, `so`, `unless`, `and`) là nội dung biên soạn sư phạm phục vụ luyện tập liên từ phụ thuộc và độc lập.
+
+### 5. Header Comments & Release Status Honesty
+- BẤT KỲ file dữ liệu nào chưa qua bước thẩm định sư phạm của con người (Human Pedagogical Review) BẮT BUỘC phải ghi comment chính trực:
+  `// Pre-generated WH Questions — pending pedagogy review before release`
+  `// Word Class Duel draft — pending pedagogy review before release`
+- CẤM TUYỆT ĐỐI tự ý gắn nhãn "Pedagogy-Reviewed", "Golden Verified" khi việc thẩm định chưa diễn ra trên thực tế.
+
+### 6. WH-Question Generator & Algorithm Integrity Rules
+- **Suffix regex phát hiện động từ quá khứ đơn**: BẮT BUỘC dùng `-ed` (`clean.length >= 4 && clean.endsWith('ed')`), CẤM dùng `-d` đơn lẻ vì sẽ bắt nhầm danh từ (`friend`, `David`, `sound`).
+- **Double possessive prevention**: Hàm xử lý danh từ riêng tuyệt đối không sinh dạng lặp `'s's` (ví dụ: `Maria's's`).
+- **Compound sentences**: Chỉ sinh câu hỏi dạng `"What did ... remind ... about?"` khi mệnh đề thực sự chứa động từ `remind`/`reminded`. Với các động từ hành động khác, sinh câu hỏi chuẩn `"What did [S] do?"`.
+- **Build-time Pre-generation**: WH-questions cho các tuần BẮT BUỘC được sinh và lưu tĩnh vào `src/data/weeks/week_{N}/wh_questions.js`, CẤM dùng regex heuristic sinh động tại runtime trong game.
+
+### 7. React Purity & ESLint Invariants in Mini-Games
+- **CẤM `Math.random()` trong `useMemo` / render**: Vi phạm react purity và gây lỗi ESLint. Bắt buộc dùng dịch chuyển xoay vòng tất định (`(roundIdx * step) % array.length`).
+- **CẤM `setState` đồng bộ trong `useEffect` khi đổi vòng**: Tránh cascading re-renders. Bắt buộc dùng callback hàm chuyển vòng có hẹn giờ (`advanceToNextRound()`).
+- **JSX Quotes**: Trong JSX, ký tự ngoặc kép `"` hiển thị văn bản bắt buộc dùng `&ldquo;...&rdquo;` hoặc `&quot;`.
+
+### 8. Mandatory Chronicles Release Gating Checklist (Human Sign-Off)
+Trước khi kích hoạt feature flag cho học sinh thật tham gia Chronicles mini-games của một tuần mới:
+- [ ] 1. **Word Class Duel**: Duyệt sư phạm 4 cặp từ và 8 câu ví dụ trong `word_class_duel.js`.
+- [ ] 2. **Connector Relay**: Duyệt sư phạm 5 câu liên từ và các distractors trong `ConnectorRelayGame.jsx` (hoặc weekly connector config).
+- [ ] 3. **WH-Questions**: Duyệt sư phạm 5 câu hỏi và tokens trong `wh_questions.js` (câu hỏi tự nhiên, token chuẩn, hint hữu ích).
+- [ ] 4. **Pure Vocab Verification**: Quét kiểm tra Floor 1–7 không chứa fallback `"Related to "` và không chứa câu văn ngữ pháp dài.
+- [ ] 5. **Zero Regression**: `npx eslint src/modules/chronicles/games/*.jsx` exit 0, `npm run build` exit 0.
+
 
 

@@ -156,7 +156,7 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  z-index: 10;
+  z-index: 40;
   transition: transform 0.15s ease;
 }
 
@@ -234,9 +234,47 @@
   justify-content: center;
 }
 
+/* Guide / Help Button */
+.matrix-help-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(12, 26, 48, 0.88);
+  border: 1.5px solid rgba(56, 189, 248, 0.5);
+  color: #7dd3fc;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.matrix-help-btn:hover {
+  transform: scale(1.05);
+  background: rgba(15, 39, 74, 0.95);
+  border-color: #38bdf8;
+  color: #f0f9ff;
+}
+
 @media (max-width: 768px) {
+  .matrix-dungeon-root {
+    align-items: flex-start;
+  }
+  .matrix-help-btn {
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
   .matrix-dungeon-banner {
-    top: 48px;
+    top: 60px;
     padding: 6px 14px;
     gap: 8px;
   }
@@ -249,7 +287,9 @@
   .matrix-arena-viewport {
     height: 100%;
     margin: 0;
+    align-self: flex-start;
   }
 }
 
 @import './game-mobile.css';
+

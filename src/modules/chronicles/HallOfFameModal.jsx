@@ -19,12 +19,34 @@ const ACADEMY_SPEEDRUNNERS = [
 ];
 
 const GAME_NAMES = {
-  spell_train: 'Spell Sentence Train',
+  // Floor 1
   arcane_bubble: 'Arcane Bubble Pop',
+  spell_train: 'Spell Sentence Train',
   lexical_det: 'Lexical Detective',
+  // Floor 2
   crystal_match: 'Crystal Memory Match',
   rune_forge: 'Rune Forge',
   ancient_scroll: 'Ancient Scroll Cloze',
+  // Floor 3
+  phonics_bubble: 'Phonics Sound Blaster',
+  chunk_catapult: 'Chunk Catapult Match',
+  meteor_smasher: 'Meteor Smasher',
+  // Floor 4
+  highway_runner: 'Highway Word Runner',
+  spell_train_express: 'Syntax Express 4-Car',
+  lexical_riddle: 'Mystery Riddle Detective',
+  // Floor 5
+  grand_matrix: 'Grand Master Matrix',
+  titan_forge: 'Titan Grammar Forge',
+  cambridge_cloze: 'Cambridge Cloze Gauntlet',
+  // Floor 6
+  synonym_storm: 'Synonym Storm',
+  connector_relay: 'Connector Relay',
+  story_sequencer: 'Story Sequencer',
+  // Floor 7
+  word_forge_scramble: 'Word Forge Scramble',
+  question_quest: 'Question Quest',
+  rune_balance_scale: 'Word Class Duel',
 };
 
 export default function HallOfFameModal({ isOpen, onClose, currentGameId = 'spell_train', playerTime = null }) {

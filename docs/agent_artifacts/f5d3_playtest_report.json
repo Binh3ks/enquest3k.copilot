@@ -1,0 +1,132 @@
+{
+  "gameId": "cambridge_cloze_gauntlet",
+  "floor": 5,
+  "door": 3,
+  "timestamp": "2026-09-30T04:11:20.656Z",
+  "grounding": {
+    "leoSpeedPxPerSec": 240,
+    "jumpForce": -14,
+    "gravity": 0.6,
+    "watcherSpeedPxPerSec": 132,
+    "watcherPatrolSpanPx": 540,
+    "watcherHalfCycleSec": 4.09,
+    "passageWordCount": 45,
+    "tReadSec": 30.15
+  },
+  "cycles": [
+    {
+      "slotIndex": 0,
+      "targetWord": "investigation",
+      "motionDurationMs": 2468,
+      "evasionDurationMs": 0,
+      "depositDurationMs": 408,
+      "totalCycleDurationMs": 3530,
+      "hearts": 3,
+      "score": 45
+    },
+    {
+      "slotIndex": 1,
+      "targetWord": "dangerous",
+      "motionDurationMs": 1536,
+      "evasionDurationMs": 0,
+      "depositDurationMs": 400,
+      "totalCycleDurationMs": 2442,
+      "hearts": 2,
+      "score": 90
+    },
+    {
+      "slotIndex": 2,
+      "targetWord": "friction",
+      "motionDurationMs": 2466,
+      "evasionDurationMs": 0,
+      "depositDurationMs": 400,
+      "totalCycleDurationMs": 3366,
+      "hearts": 2,
+      "score": 135
+    },
+    {
+      "slotIndex": 3,
+      "targetWord": "rubber",
+      "motionDurationMs": 2588,
+      "evasionDurationMs": 0,
+      "depositDurationMs": 400,
+      "totalCycleDurationMs": 3488,
+      "hearts": 2,
+      "score": 180
+    },
+    {
+      "slotIndex": 4,
+      "targetWord": "safety",
+      "motionDurationMs": 1450,
+      "evasionDurationMs": 0,
+      "depositDurationMs": 400,
+      "totalCycleDurationMs": 2450,
+      "hearts": 2,
+      "score": 225
+    }
+  ],
+  "evasionEvents": [],
+  "wrongDepositTest": {
+    "testedWord": "eating",
+    "attemptedSlot": 1,
+    "macroTimerAtEvent": "1:50",
+    "heartsBefore": 3,
+    "heartsAfter": 2,
+    "penaltyVerified": true,
+    "returnedToOriginVerified": true,
+    "toast": "⚡ \"eating\" rejected by Zenith seal!"
+  },
+  "watcherKnockbackTest": {
+    "macroTimerAtEvent": "1:49",
+    "toast": "🔮 Repelled by Astral Watcher!",
+    "heartsBefore": 2,
+    "heartsAfter": 2,
+    "zeroDamageVerified": true
+  },
+  "victoryResult": {
+    "phase": "cleared",
+    "finalScore": 521,
+    "modalDetails": {
+      "title": "CHRONICLES CONQUERED!",
+      "scoreStrong": "521 XP",
+      "stars": "⭐⭐⭐"
+    },
+    "boundWords": [
+      "investigation",
+      "dangerous",
+      "friction",
+      "rubber",
+      "safety"
+    ],
+    "totalBlanksRestored": 5
+  },
+  "screenshots": {
+    "initialState": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f5d3/f5d3_01_initial_state.png",
+    "carryingCrystal": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f5d3/f5d3_02_carrying_crystal.png",
+    "wrongDepositPenalty": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f5d3/f5d3_03_wrong_deposit_penalty.png",
+    "watcherKnockback": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f5d3/f5d3_04_watcher_knockback_zero_damage.png",
+    "victoryModal": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f5d3/f5d3_05_victory_modal.png"
+  },
+  "pacingSummary": {
+    "measuredPhysicalAction": {
+      "totalCycleDurationSec": 15.28,
+      "pureMotionSec": 10.51,
+      "depositInteractionSec": 2.01,
+      "evasionHoldSec": 0.0,
+      "methodology": "Runtime measured in headful Chrome GUI across 5 complete cycles"
+    },
+    "estimatedReadingTime": {
+      "wordCount": 45,
+      "standardReadingSec": 30.15,
+      "rateSecPerWord": 0.67,
+      "methodology": "CEFR standard formula (0.67s/word for Cambridge Cloze text)"
+    },
+    "combinedPacingAudit": {
+      "totalCombinedDurationSec": 45.43,
+      "timeBudgetSec": 120.0,
+      "marginRemainingSec": 74.57,
+      "marginRatioPercent": 62.14,
+      "n2Status": "PASS (Margin +74.57s >> +2.0s requirement)"
+    }
+  }
+}

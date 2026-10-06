@@ -19,6 +19,7 @@ import { playCorrectSound, playWrongSound, playLaserSound, playVictoryFanfare } 
 import useChroniclesStore from '../../../stores/useChroniclesStore';
 import GameInstructionModal from './GameInstructionModal';
 
+// Fallback rounds (chapter_pool) — used only when grammarSentences prop is empty
 const DEFAULT_EXPRESS_ROUNDS = [
   {
     fullSentence: 'Jake walked carefully down the school hallway after class.',
@@ -62,6 +63,71 @@ const DEFAULT_EXPRESS_ROUNDS = [
   },
 ];
 
+/** ROLE labels for auto-classification based on position in sentence */
+const ROLE_LABELS = ['Subject', 'Verb Phrase', 'Object / Complement', 'Adverbial / Time'];
+
+/**
+ * Build express rounds from grammarSentences prop (week-specific data).
+ * Each sentence is split into up to 4 chunks based on chips/word groups.
+ * Falls back to DEFAULT_EXPRESS_ROUNDS when sentences prop is empty.
+ *
+ * @param {Array} grammarSentences - from extractQuestVocab or getContentPool
+ * @returns {Array} rounds compatible with SyntaxExpressGame state machine
+ */
+function buildExpressRounds(grammarSentences) {
+  // If no real data, use fallback
+  const validSentences = (grammarSentences || []).filter(
+    (s) => (typeof s === 'string' ? s : s?.sentence || s?.fullSentence || '').length > 10
+  );
+  if (validSentences.length < 2) return DEFAULT_EXPRESS_ROUNDS;
+
+  const rounds = validSentences.slice(0, 6).map((entry, idx) => {
+    const sentence = typeof entry === 'string'
+      ? entry
+      : (entry.sentence || entry.fullSentence || entry.prompt || '');
+    const chips = (typeof entry === 'object' && entry.chips) ? entry.chips : null;
+
+    let chunks;
+    if (chips && chips.length >= 2) {
+      // Use existing chips as syntactic units (most accurate)
+      chunks = chips.slice(0, 4).map((chip, i) => ({
+        role: ROLE_LABELS[i] || `Part ${i + 1}`,
+        text: chip,
+      }));
+    } else {
+      // Auto-split: divide words into 3–4 groups by rough word-count boundaries
+      const words = sentence.split(/\s+/);
+      const n = words.length;
+      const groupSize = Math.max(1, Math.ceil(n / 4));
+      const groups = [];
+      for (let i = 0; i < n; i += groupSize) {
+        groups.push(words.slice(i, i + groupSize).join(' '));
+      }
+      chunks = groups.slice(0, 4).map((text, i) => ({
+        role: ROLE_LABELS[i] || `Part ${i + 1}`,
+        text,
+      }));
+    }
+
+    // Distractors: borrow 2 chunks from a different sentence
+    const otherIdx = (idx + 1) % validSentences.length;
+    const otherEntry = validSentences[otherIdx];
+    const otherSentence = typeof otherEntry === 'string'
+      ? otherEntry
+      : (otherEntry.sentence || otherEntry.fullSentence || '');
+    const otherWords = otherSentence.split(/\s+/);
+    const half = Math.ceil(otherWords.length / 2);
+    const distractors = [
+      otherWords.slice(0, half).join(' '),
+      otherWords.slice(half).join(' '),
+    ].filter(Boolean).slice(0, 2);
+
+    return { fullSentence: sentence, chunks, distractors };
+  });
+
+  return rounds;
+}
+
 export default function SyntaxExpressGame({
   grammarSentences = [],
   duration = 90,
@@ -73,8 +139,9 @@ export default function SyntaxExpressGame({
   const personalBest = getPersonalBest('spell_train_express');
 
   const rounds = useMemo(() => {
-    return DEFAULT_EXPRESS_ROUNDS;
-  }, []);
+    // FIX: Use week-specific grammarSentences instead of hardcoded W33 content
+    return buildExpressRounds(grammarSentences);
+  }, [grammarSentences]);
 
   const [phase, setPhase] = useState('intro'); // 'intro' | 'playing' | 'result'
   const [trainIndex, setTrainIndex] = useState(0);

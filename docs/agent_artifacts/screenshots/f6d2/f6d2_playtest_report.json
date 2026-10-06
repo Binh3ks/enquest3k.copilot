@@ -1,0 +1,65 @@
+{
+  "game": "F6D2 — Connector Relay",
+  "timestamp": "2026-09-19T09:35:05.858Z",
+  "attempt1_questions": [
+    "Clean up any water spills _____ someone slips and falls.",
+    "Jake slipped on the tile _____ he was not looking ahead.",
+    "Hold the handrail tightly _____ you walk down the stairs.",
+    "The nurse arrived immediately, _____ she quickly wrapped a clean bandage around his knee.",
+    "Put an ice pack on the bruise _____ it will reduce swelling.",
+    "Jake walked carefully down the corridor _____ the floor was wet after science class."
+  ],
+  "retry1_questions": [
+    "The floor was slippery _____ water spilled from the science bucket.",
+    "Jake walked slowly _____ floors were wet.",
+    "Students should always walk slowly _____ dangerous slips can be avoided.",
+    "You will slip on the smooth corridor tiles _____ you wear shoes with strong rubber grip.",
+    "Tom lost his balance _____ rubber shoes normally provide good friction.",
+    "Walk very carefully _____ you will slip on the slick tiles."
+  ],
+  "overlap_count": 0,
+  "n2_timing": [
+    {
+      "round": 1,
+      "approachTimeSec": 19.558,
+      "targetWord": "unless",
+      "marginVsWorstCase": 5.327999999999999
+    },
+    {
+      "round": 2,
+      "approachTimeSec": 19.496,
+      "targetWord": "because",
+      "marginVsWorstCase": 5.265999999999998
+    },
+    {
+      "round": 3,
+      "approachTimeSec": 19.513,
+      "targetWord": "when",
+      "marginVsWorstCase": 5.283000000000001
+    },
+    {
+      "round": 4,
+      "approachTimeSec": 19.527,
+      "targetWord": "and",
+      "marginVsWorstCase": 5.297000000000001
+    },
+    {
+      "round": 5,
+      "approachTimeSec": 19.512,
+      "targetWord": "so",
+      "marginVsWorstCase": 5.282
+    }
+  ],
+  "macro_timer": {
+    "budget_sec": 160,
+    "attempt1_elapsed_sec": 147.86,
+    "retry1_elapsed_sec": 130.09,
+    "measured_avg_approach_sec": 19.52,
+    "clean_run_time_consumed_sec": 132.13,
+    "clean_run_margin_sec": 27.87,
+    "one_retry_time_consumed_sec": 151.65,
+    "one_retry_margin_sec": 8.35,
+    "dom_timer_remaining_sec": 29
+  },
+  "passed": true
+}

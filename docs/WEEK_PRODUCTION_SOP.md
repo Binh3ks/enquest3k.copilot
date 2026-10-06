@@ -355,3 +355,57 @@ Every component representing one of the 15 Quests MUST implement the following U
    - Provide an explicit, prominent button: e.g. `✓ Return to Map (+50 XP)` or `✓ Finish Quest & Return to Map`.
    - Trigger `onBackToMap()` or `onComplete()` to navigate cleanly back to `/week/${weekId}/hub/1`. Never leave the student trapped on a static screen.
 
+---
+
+## 12. Chronicles 21 Mini-Game Mode Architecture & Release Gating Standards
+
+### 12.1 The Master 21 Mini-Game Roster (7 Floors × 3 Doors)
+Super Leo Chronicles organizes gamified dungeon crawling across 7 Floors (Days 1–7), with each floor presenting exactly 3 doors:
+
+| Floor | Door 1: Vocab | Door 2: Grammar | Door 3: Integration | Component File |
+|---|---|---|---|---|
+| **F1** | `arcane_bubble` (Arcane Bubble) | `spell_train` (Spell Train) | `lexical_det` (Lexical Detective) | `ShadowVaultInfiltrate.jsx` / `SyntaxExpressRail.jsx` |
+| **F2** | `crystal_match` (Crystal Match) | `rune_forge` (Rune Forge) | `ancient_scroll` (Ancient Scroll) | `CrystalMatch.jsx` / `AncientScrollLab.jsx` |
+| **F3** | `phonics_bubble` (Phonics Bubble) | `chunk_catapult` (Chunk Catapult) | `meteor_smasher` (Meteor Smasher) | `ChunkCatapultCanvas.jsx` / `MeteorSmasher.jsx` |
+| **F4** | `highway_runner` (Highway Runner) | `spell_train_express` (Syntax Express) | `lexical_riddle` (Lexical Riddle) | `HighwayRunnerGame.jsx` / `SyntaxExpressGame.jsx` |
+| **F5** | `grand_matrix` (Grand Matrix) | `titan_forge` (Titan Forge) | `cambridge_cloze` (Cambridge Cloze) | `GrandMatrixGrid.jsx` / `CambridgeClozeLab.jsx` |
+| **F6** | `synonym_storm` (Synonym Storm) | `connector_relay` (Connector Relay) | `story_sequencer` (Story Sequencer) | `SynonymStormGame.jsx` / `ConnectorRelayGame.jsx` / `StorySequencerGame.jsx` |
+| **F7** | `word_forge_scramble` (Word Forge) | `question_quest` (Question Quest) | `rune_balance_scale` (Word Class Duel) | `WordForgeScrambleGame.jsx` / `QuestionQuestGame.jsx` / `WordClassDuelGame.jsx` |
+
+- **Floor Navigation Invariant**:
+  In `ChroniclesScreen.jsx`, the condition to intercept for Mystery Vault / Boss Chamber MUST be `activeDayIndex >= 7` (representing all 7 daily rooms). Setting `activeDayIndex >= 5` prematurely blocks access to Floors 5 and 6.
+
+### 12.2 Required Weekly Chronicles Content Assets (W34+)
+Every newly authored week must supply two dedicated files alongside the 4 Data Hubs:
+1. **`src/data/weeks/week_{N}/wh_questions.js`**:
+   - 5 pre-generated WH-questions based on the week's Story Scenes & CLIL Article.
+   - Suffix verb detection MUST strictly check `-ed` (`length >= 4 && endsWith('ed')`). Never match bare `-d`.
+   - Never generate double possessives (`Maria's's`).
+   - Only query "What did ... remind ... about?" if the clause explicitly contains the verb `remind`.
+   - Pre-generate questions at build-time; never rely on naive runtime heuristics.
+   - Header comment: `// Pre-generated WH Questions — pending pedagogy review before release`.
+2. **`src/data/weeks/week_{N}/word_class_duel.js`**:
+   - 4 target dual-class words (e.g. `grip`, `slide`, `care`, `help`).
+   - Round 1 should prioritize genuine dual-class words from CLIL reading.
+   - For authored contextual sentences (Rounds 2–4), document provenance clearly in comments.
+   - Header comment: `// Word Class Duel draft — pending pedagogy review before release`.
+
+### 12.3 BUG-002 Prevention & Pure Lexical Isolation
+- **No Dummy Fallbacks**: CẤM TUYỆT ĐỐI `"Related to " + word` fallback in `contentService.js`, `extractQuestVocab.js`, `DailyRoomScreen.jsx`, and `ShadowVaultInfiltrate.jsx`.
+- **Lexical Isolation**: Integration mini-game vocab extractors must filter out any item containing `.sentence` or text with $> 3$ words to prevent grammar sentences from polluting vocabulary pools.
+
+### 12.4 Transparent Data Sizing & Assessment Metrics
+- Standard week vocab loader imports: 20 words from `reading_hub.vocab` + 10 definitions from `writing_hub.rw_part_1.definitions` = 30 total array slots.
+- For template/skeleton weeks (W34, W35), these 30 items are mock template entries until content is authored.
+- Agents must never report 30/30 as "30 verified custom definitions" for unauthored weeks.
+
+### 12.5 Release Gating & Pedagogical Sign-off Protocol
+- While game engine code and components are frozen and pass all automated tests, **the content in `wh_questions.js`, `word_class_duel.js`, and Connector Relay MUST undergo human pedagogical review before being enabled for real students**.
+- Pre-release gate checklist:
+  - [ ] Human review of dual-class sentences in `word_class_duel.js`.
+  - [ ] Human review of WH questions and hints in `wh_questions.js`.
+  - [ ] Human review of conjunction drills in `ConnectorRelayGame.jsx`.
+  - [ ] Verification of pure definitions across Floors 1–7 (0 `"Related to "` instances).
+  - [ ] `npx eslint src/modules/chronicles/games/*.jsx` exit 0, `npm run build` exit 0.
+
+

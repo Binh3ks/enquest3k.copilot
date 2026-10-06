@@ -40,15 +40,28 @@ const SPIRE_PLATFORMS = [
 ];
 
 const DEFAULT_METEOR_WORDS = [
-  { word: 'friction',     isTarget: true },
-  { word: 'rubber shoes', isTarget: true },
-  { word: 'strong grip',  isTarget: true },
-  { word: 'prevent slips',isTarget: true },
-  { word: 'polished tiles', isTarget: true },
-  { word: 'ice slick',    isTarget: false },
-  { word: 'oil spill',    isTarget: false },
-  { word: 'banana peel',  isTarget: false },
+  { word: 'friction',       isTarget: true },
+  { word: 'rubber shoes',   isTarget: true },
+  { word: 'strong grip',    isTarget: true },
+  { word: 'ice slick',      isTarget: false },
+  { word: 'oil spill',      isTarget: false },
+  { word: 'banana peel',    isTarget: false },
+  { word: 'wet floor',      isTarget: false },
+  { word: 'loose gravel',   isTarget: false },
+  { word: 'soapy water',    isTarget: false },
 ];
+
+/**
+ * Fisher-Yates (Knuth) Shuffle algorithm for unpredictable, uniform random permutation
+ */
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 export default function StormShieldDefense({
   meteorVocabulary = DEFAULT_METEOR_WORDS,
@@ -75,18 +88,37 @@ export default function StormShieldDefense({
 
   const rawList = meteorVocabulary && meteorVocabulary.length > 0 ? meteorVocabulary : DEFAULT_METEOR_WORDS;
   const vocabList = useMemo(() => {
-    const targets = rawList.filter(v => v.isTarget).map(v => v.word);
-    const distractors = rawList.filter(v => !v.isTarget).map(v => v.word);
+    const hasExplicitTargets = rawList.some(v => typeof v.isTarget === 'boolean');
+    let targets = [];
+    let distractors = [];
+
+    if (hasExplicitTargets) {
+      targets = rawList.filter(v => v.isTarget).map(v => v.word);
+      distractors = rawList.filter(v => !v.isTarget).map(v => v.word);
+    } else {
+      // Unpredictable pseudo-random selection via Fisher-Yates shuffle
+      const uniqueWords = Array.from(
+        new Set(rawList.map(v => (typeof v === 'string' ? v : v.word)).filter(Boolean))
+      );
+      const shuffled = shuffleArray(uniqueWords);
+
+      // Maintain target ratio at 1/3 (p = 0.333, N4 = 4.53% with 3 hearts)
+      const targetCount = Math.max(1, Math.min(shuffled.length - 1, Math.round(shuffled.length * (1 / 3))));
+      targets = shuffled.slice(0, targetCount);
+      distractors = shuffled.slice(targetCount);
+
+      if (distractors.length === 0) {
+        distractors = DEFAULT_METEOR_WORDS.filter(d => !d.isTarget).map(d => d.word);
+      }
+    }
+
     const primary = targets[0] || 'friction';
     const fallback = DEFAULT_METEOR_WORDS.map(v => v.word);
     const validated = validateMCQOptions([...targets, ...distractors], primary, fallback, 8);
-    return validated.map(w => {
-      const match = rawList.find(v => v.word === w);
-      return {
-        word: w,
-        isTarget: match ? match.isTarget : targets.includes(w),
-      };
-    });
+    return validated.map(w => ({
+      word: w,
+      isTarget: targets.includes(w),
+    }));
   }, [rawList]);
 
   const [phase, setPhase] = useState('playing'); // 'playing' | 'cleared' | 'ko'
@@ -96,10 +128,49 @@ export default function StormShieldDefense({
   const [timeLeft, setTimeLeft] = useState(duration);
   const [feedback, setFeedback] = useState(null);
   const [shieldActive, setShieldActive] = useState(true);
+  const [deflectCount, setDeflectCount] = useState(0);
+
+  // Sync refs to avoid re-triggering updateGame effect on every tick or score change
+  const batteryRef = useRef(0);
+  const scoreRef = useRef(0);
+  const heartsRef = useRef(3);
+  const timeLeftRef = useRef(duration);
+  const consumedMeteorsRef = useRef(new Set());
 
   // Active falling meteors: [{ id, x, y, vy, word, isTarget }]
   const [meteors, setMeteors] = useState([]);
+  const meteorsRef = useRef([]);
   const meteorSpawnTimer = useRef(0);
+  const targetStreakRef = useRef(0);
+  const hazardStreakRef = useRef(0);
+  const sessionStartTimeRef = useRef(Date.now());
+
+  useEffect(() => {
+    sessionStartTimeRef.current = Date.now();
+    batteryRef.current = 0;
+    scoreRef.current = 0;
+    heartsRef.current = 3;
+    timeLeftRef.current = duration;
+    consumedMeteorsRef.current.clear();
+    meteorsRef.current = [];
+    setMeteors([]);
+    setDeflectCount(0);
+    console.log(`[STORM-SHIELD-START] Duration: ${duration}s | Battery Goal: 100% (5 hits) | Hearts: 3 | p = 1/3 (N4 = 4.53%)`);
+    if (typeof window !== 'undefined') window.__F3D3_EVENT_LOG__ = [];
+  }, [duration]);
+
+  // DEV-only test hook for deterministic playtest verification
+  if (import.meta.env.DEV && typeof window !== 'undefined') {
+    window.__setStormLeo = (x, y) => {
+      if (leoRef.current) {
+        leoRef.current.x = x;
+        leoRef.current.y = y;
+        leoRef.current.vx = 0;
+        leoRef.current.vy = 0;
+        leoRef.current.isGrounded = true;
+      }
+    };
+  }
 
   // Leo physics
   const leoRef = useRef({
@@ -217,78 +288,150 @@ export default function StormShieldDefense({
       meteorSpawnTimer.current += dt;
       if (meteorSpawnTimer.current > 1.8) {
         meteorSpawnTimer.current = 0;
-        const randomItem = vocabList[Math.floor(Math.random() * vocabList.length)] || DEFAULT_METEOR_WORDS[0];
-        const spawnX = 60 + Math.random() * (ROOM_WIDTH - 140);
-        setMeteors(prev => [
-          ...prev,
-          {
-            id: `meteor_${Date.now()}_${Math.random()}`,
-            x: spawnX,
-            y: 40,
-            vy: 90 + Math.random() * 50,
-            word: randomItem.word,
-            isTarget: randomItem.isTarget,
+
+        const targetItems = vocabList.filter(v => v.isTarget);
+        const hazardItems = vocabList.filter(v => !v.isTarget);
+
+        let chosenItem;
+        // Streak prevention: avoid consecutive streaks of > 2 targets or > 3 hazards
+        if (targetStreakRef.current >= 2 && hazardItems.length > 0) {
+          chosenItem = hazardItems[Math.floor(Math.random() * hazardItems.length)];
+          targetStreakRef.current = 0;
+          hazardStreakRef.current += 1;
+        } else if (hazardStreakRef.current >= 3 && targetItems.length > 0) {
+          chosenItem = targetItems[Math.floor(Math.random() * targetItems.length)];
+          hazardStreakRef.current = 0;
+          targetStreakRef.current += 1;
+        } else {
+          // Weighted pseudo-random pick (1/3 target, 2/3 hazard) -> N4 = 4.53%
+          const pickTarget = Math.random() < (1 / 3);
+          if (pickTarget && targetItems.length > 0) {
+            chosenItem = targetItems[Math.floor(Math.random() * targetItems.length)];
+            targetStreakRef.current += 1;
+            hazardStreakRef.current = 0;
+          } else if (hazardItems.length > 0) {
+            chosenItem = hazardItems[Math.floor(Math.random() * hazardItems.length)];
+            hazardStreakRef.current += 1;
+            targetStreakRef.current = 0;
+          } else {
+            chosenItem = vocabList[Math.floor(Math.random() * vocabList.length)] || DEFAULT_METEOR_WORDS[0];
           }
-        ]);
+        }
+
+        const spawnX = 60 + Math.random() * (ROOM_WIDTH - 140);
+        const newMeteor = {
+          id: `meteor_${Date.now()}_${Math.random()}`,
+          x: spawnX,
+          y: 115,
+          vy: 90 + Math.random() * 50,
+          word: chosenItem.word,
+          isTarget: chosenItem.isTarget,
+        };
+        meteorsRef.current.push(newMeteor);
       }
 
-      // Update Meteors & Collision Check
+      // Update Meteors & Synchronous Collision Detection
       const nowMs = Date.now();
-      setMeteors(prevMeteors => {
-        const nextMeteors = [];
-        for (const m of prevMeteors) {
-          const ny = m.y + m.vy * dt;
+      const survivingMeteors = [];
 
-          // Check collision with Leo's Aegis Shield
-          const distLeo = Math.hypot((leo.x + 20) - (m.x + 35), (leo.y + 24) - (ny + 20));
+      for (const m of meteorsRef.current) {
+        m.y += m.vy * dt;
 
-          if (distLeo < 52) {
-            // Intercepted with Shield!
+        // Check collision with Leo's Aegis Shield
+        const distLeo = Math.hypot((leo.x + 20) - (m.x + 35), (leo.y + 24) - (m.y + 20));
+
+        if (distLeo < 52) {
+          // Guard against multiple hits for the same meteor entity
+          if (!consumedMeteorsRef.current.has(m.id)) {
+            consumedMeteorsRef.current.add(m.id);
+            const elapsedSec = (nowMs - sessionStartTimeRef.current) / 1000;
+
             if (m.isTarget) {
               // DEFLECTED TARGET METEOR!
               speakText(m.word);
-              setScore(s => s + 30);
-              setBatteryCharge(b => {
-                const next = Math.min(100, b + 20);
-                if (next >= 100) {
-                  // BATTERY FULLY CHARGED!
-                  setPhase('cleared');
-                  const finalScore = score + 60 + (timeLeft * 2);
-                  setScore(finalScore);
-                  recordPersonalBest('storm_shield_defense', finalScore);
-                  speakText('Storm battery fully charged! Arcane vortex unlocked!');
-                }
-                return next;
-              });
-              setFeedback({ type: 'correct', text: `⚡ DEFLECTED "${m.word}" (+20% Battery)` });
+              scoreRef.current += 30;
+              setScore(scoreRef.current);
+              setDeflectCount(c => c + 1);
+
+              const nextBattery = Math.min(100, batteryRef.current + 20);
+              batteryRef.current = nextBattery;
+              setBatteryCharge(nextBattery);
+
+              console.log(`[STORM-SHIELD-ACTION] Deflected Target: "${m.word}" | Battery: ${nextBattery}% (+20%) | Time Spent: ${elapsedSec.toFixed(2)}s | HUD timeLeft: ${timeLeftRef.current}s`);
+
+              if (nextBattery >= 100) {
+                // BATTERY FULLY CHARGED!
+                consumedMeteorsRef.current.clear();
+                meteorsRef.current = [];
+                setMeteors([]);
+                setPhase('cleared');
+                const finalScore = scoreRef.current + 60 + (timeLeftRef.current * 2);
+                scoreRef.current = finalScore;
+                setScore(finalScore);
+                recordPersonalBest('storm_shield_defense', finalScore);
+                speakText('Storm battery fully charged! Arcane vortex unlocked!');
+                console.log(`[STORM-SHIELD-CLEARED] Battery 100% | Time Spent: ${elapsedSec.toFixed(2)}s | Budget: ${duration}s | Margin: ${(duration - elapsedSec).toFixed(2)}s`);
+              }
+
+              const fbText = `⚡ DEFLECTED "${m.word}" (+20% Battery)`;
+              setFeedback({ type: 'correct', text: fbText });
+              if (typeof window !== 'undefined') {
+                window.__F3D3_EVENT_LOG__ = window.__F3D3_EVENT_LOG__ || [];
+                window.__F3D3_EVENT_LOG__.push({
+                  type: 'correct',
+                  word: m.word,
+                  deltaBattery: '+20%',
+                  timestamp: nowMs,
+                  text: fbText
+                });
+              }
               setTimeout(() => setFeedback(null), 1500);
-              continue; // meteor consumed
             } else {
               // HIT HAZARD METEOR!
               if (nowMs > leo.invincibleUntil) {
                 leo.invincibleUntil = nowMs + INVINCIBILITY_MS;
-                setHearts(h => {
-                  const next = Math.max(0, h - 1);
-                  if (next === 0) setPhase('ko');
-                  return next;
-                });
-                setBatteryCharge(b => Math.max(0, b - 10));
-                setFeedback({ type: 'wrong', text: `💥 HAZARD HIT! "${m.word}" cracked shield! (-1 Heart)` });
+                heartsRef.current = Math.max(0, heartsRef.current - 1);
+                setHearts(heartsRef.current);
+
+                const nextBattery = Math.max(0, batteryRef.current - 10);
+                batteryRef.current = nextBattery;
+                setBatteryCharge(nextBattery);
+
+                console.log(`[STORM-SHIELD-ACTION] Hit Hazard: "${m.word}" | Hearts: ${heartsRef.current} (-1) | Time Spent: ${elapsedSec.toFixed(2)}s | HUD timeLeft: ${timeLeftRef.current}s`);
+
+                if (heartsRef.current === 0) {
+                  setPhase('ko');
+                }
+
+                const fbText = `💥 HAZARD HIT! "${m.word}" cracked shield! (-1 Heart)`;
+                setFeedback({ type: 'wrong', text: fbText });
+                if (typeof window !== 'undefined') {
+                  window.__F3D3_EVENT_LOG__ = window.__F3D3_EVENT_LOG__ || [];
+                  window.__F3D3_EVENT_LOG__.push({
+                    type: 'hazard',
+                    word: m.word,
+                    deltaBattery: '-10%',
+                    timestamp: nowMs,
+                    text: fbText
+                  });
+                }
                 setTimeout(() => setFeedback(null), 1500);
               }
-              continue;
             }
           }
-
-          // Off-screen ground hit
-          if (ny > FLOOR_Y + 10) {
-            continue;
-          }
-
-          nextMeteors.push({ ...m, y: ny });
+          continue; // Meteor consumed
         }
-        return nextMeteors;
-      });
+
+        // Off-screen ground hit
+        if (m.y > FLOOR_Y + 10) {
+          continue;
+        }
+
+        survivingMeteors.push(m);
+      }
+
+      meteorsRef.current = survivingMeteors;
+      setMeteors([...survivingMeteors]);
 
       // Update Leo visuals
       let animState = 'idle';
@@ -308,7 +451,7 @@ export default function StormShieldDefense({
 
     animFrameId.current = requestAnimationFrame(updateGame);
     return () => cancelAnimationFrame(animFrameId.current);
-  }, [phase, vocabList, score, timeLeft, recordPersonalBest]);
+  }, [phase, vocabList, recordPersonalBest, duration]);
 
   // Timer loop
   useEffect(() => {
@@ -316,10 +459,13 @@ export default function StormShieldDefense({
     const timer = setInterval(() => {
       setTimeLeft(t => {
         if (t <= 1) {
+          timeLeftRef.current = 0;
           setPhase('ko');
           return 0;
         }
-        return t - 1;
+        const nextTime = t - 1;
+        timeLeftRef.current = nextTime;
+        return nextTime;
       });
     }, 1000);
     return () => clearInterval(timer);
@@ -360,11 +506,19 @@ export default function StormShieldDefense({
   });
 
   const handleRetry = () => {
+    if (typeof window !== 'undefined') window.__F3D3_EVENT_LOG__ = [];
+    batteryRef.current = 0;
+    scoreRef.current = 0;
+    heartsRef.current = 3;
+    timeLeftRef.current = duration;
+    consumedMeteorsRef.current.clear();
     setBatteryCharge(0);
     setHearts(3);
     setScore(0);
     setTimeLeft(duration);
+    meteorsRef.current = [];
     setMeteors([]);
+    setDeflectCount(0);
     leoRef.current = { x: 430, y: FLOOR_Y - LEO_HITBOX.height, vx: 0, vy: 0, isGrounded: true, facingRight: true, invincibleUntil: 0 };
     setPhase('playing');
   };
@@ -433,7 +587,7 @@ export default function StormShieldDefense({
         ))}
 
         {/* Falling Meteors */}
-        {meteors.map(m => (
+        {phase === 'playing' && meteors.map(m => (
           <div
             key={m.id}
             className={`falling-meteor-entity ${m.isTarget ? 'meteor-golden' : 'meteor-hazard'}`}
@@ -470,11 +624,14 @@ export default function StormShieldDefense({
 
       {/* ── HUD ──────────────────────────────────────────────────────── */}
       <HUDOverlay
+        floorDoorLabel="Floor 3 • Door 3 — Storm Shield Defense"
         hearts={hearts}
+        round={`${deflectCount}`}
+        roundLabel="DEFLECTED:"
         score={score}
         timeLeft={timeLeft}
-        wordsCollected={Math.round(batteryCharge / 20)}
-        totalWords={5}
+        wordsCollected={0}
+        totalWords={0}
         floorNumber={3}
         doorLabel="Door 3 — Storm Shield Defense"
       />

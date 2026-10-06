@@ -11,6 +11,9 @@
  */
 export function sanitizeChunkText(raw) {
   if (typeof raw !== 'string') return '';
-  // Trim edge whitespace and trailing/leading sentence punctuation (.,!?:;"'()[]{})
-  return raw.trim().replace(/^[\s.,!?:;"'()[\]{}]+|[\s.,!?:;"'()[\]{}]+$/g, '');
+  // Convert underscores to spaces (e.g. cold_pack -> cold pack)
+  // and trim edge whitespace and trailing/leading sentence punctuation (.,!?:;"'()[]{})
+  return raw.trim()
+    .replace(/_/g, ' ')
+    .replace(/^[\s.,!?:;"'()[\]{}]+|[\s.,!?:;"'()[\]{}]+$/g, '');
 }

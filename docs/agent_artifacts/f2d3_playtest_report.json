@@ -1,0 +1,137 @@
+{
+  "gameId": "scroll_chamber_decode",
+  "floor": 2,
+  "door": 3,
+  "timestamp": "2026-10-01T01:20:05.111Z",
+  "grounding": {
+    "leoSpeedPxPerSec": 240,
+    "jumpForce": -14,
+    "gravity": 0.6,
+    "wraith1SpeedPxPerSec": 108,
+    "wraith1PatrolSpanPx": 320,
+    "wraith1CycleSec": 5.93,
+    "wraith2SpeedPxPerSec": 132,
+    "wraith2PatrolSpanPx": 370,
+    "wraith2CycleSec": 5.61,
+    "sentenceWordCount": 13,
+    "titleWordCount": 5,
+    "stoneWordsCount": 8,
+    "totalWordCount": 26,
+    "tReadSec": 17.42
+  },
+  "cycles": [
+    {
+      "slotIndex": 0,
+      "targetWord": "Rubber",
+      "motionDurationMs": 3013,
+      "depositDurationMs": 8,
+      "totalCycleDurationMs": 3036,
+      "hearts": 3,
+      "score": 40
+    },
+    {
+      "slotIndex": 1,
+      "targetWord": "friction",
+      "motionDurationMs": 4625,
+      "depositDurationMs": 6,
+      "totalCycleDurationMs": 4649,
+      "hearts": 3,
+      "score": 80
+    },
+    {
+      "slotIndex": 2,
+      "targetWord": "prevent",
+      "motionDurationMs": 3062,
+      "depositDurationMs": 6,
+      "totalCycleDurationMs": 3912,
+      "hearts": 3,
+      "score": 120
+    },
+    {
+      "slotIndex": 3,
+      "targetWord": "slips",
+      "motionDurationMs": 2681,
+      "depositDurationMs": 11,
+      "totalCycleDurationMs": 2708,
+      "hearts": 3,
+      "score": 420
+    }
+  ],
+  "wrongDepositTest": {
+    "testedWord": "ice",
+    "attemptedSlot": 0,
+    "macroTimerAtEvent": "1:53",
+    "heartsBefore": 3,
+    "heartsAfter": 2,
+    "penaltyVerified": true,
+    "returnedToOriginVerified": true,
+    "toast": "⚡ \"ice\" rejected by ancient seal!"
+  },
+  "watcherKnockbackTest": {
+    "macroTimerAtEvent": "1:48",
+    "toast": "👻 Repelled by Shadow Wraith!",
+    "heartsBefore": 2,
+    "heartsAfter": 2,
+    "zeroDamageVerified": true
+  },
+  "koTest": {
+    "triggeredKO": true,
+    "hearts": 0
+  },
+  "retryTest": {
+    "resetSuccess": true,
+    "hearts": 3,
+    "score": 0
+  },
+  "victoryResult": {
+    "phase": "cleared",
+    "finalScore": 420,
+    "modalDetails": {
+      "title": "ANCIENT SCROLL RESTORED!",
+      "scoreStrong": "420 XP",
+      "stars": "⭐⭐⭐",
+      "fullText": "\"Rubber shoes create strong friction to prevent dangerous slips on wet corridor floors.\""
+    },
+    "boundWords": [
+      "Rubber",
+      "friction",
+      "prevent",
+      "slips"
+    ],
+    "totalBlanksRestored": 4
+  },
+  "screenshots": {
+    "frame01": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_01_spawn_sentence_flow.png",
+    "frame02": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_02_proximity_prompt_pickup.png",
+    "frame03": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_03_carrying_overhead_stone.png",
+    "frame04": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_04_proximity_prompt_insert.png",
+    "frame05": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_05_penalty_heart_lost.png",
+    "frame06": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_06_ko_game_over.png",
+    "frame07": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_07_retry_reset_success.png",
+    "frame08": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_08_blank_1_bound.png",
+    "frame09": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_09_blank_2_bound.png",
+    "frame10": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_10_blank_3_bound.png",
+    "frame11": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_11_victory_modal.png"
+  },
+  "pacingSummary": {
+    "measuredPhysicalAction": {
+      "totalCycleDurationSec": 14.3,
+      "pureMotionSec": 13.38,
+      "depositInteractionSec": 0.03,
+      "methodology": "Runtime measured in headful Chrome GUI across 4 complete cycles via keyboard navigation"
+    },
+    "estimatedReadingTime": {
+      "wordCount": 26,
+      "standardReadingSec": 17.42,
+      "rateSecPerWord": 0.67,
+      "methodology": "CEFR standard formula (0.67s/word for sentence + title + 8 stones)"
+    },
+    "combinedPacingAudit": {
+      "totalCombinedDurationSec": 31.73,
+      "timeBudgetSec": 120,
+      "marginRemainingSec": 88.28,
+      "marginRatioPercent": 73.56,
+      "n2Status": "PASS (Margin > +2.0s requirement)"
+    }
+  }
+}

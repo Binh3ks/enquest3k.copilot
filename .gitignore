@@ -1,35 +1,42 @@
-# ====== BUILD OUTPUT ======
-logs
+# ====== BUILD OUTPUT & DEPENDENCIES ======
+node_modules/
+dist/
+dist-ssr/
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-node_modules
-dist
-dist-ssr
 *.local
 
-# ====== ENV / SECRETS ======
+# ====== ENV & SECRETS ======
 .env
 .env.local
+API keys.txt
+.frontend.pid
+.server.pid
 
-# ====== EDITOR / IDE ======
+# ====== EDITOR & IDE ======
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
 !.vscode/prompts/
-.idea
+.idea/
 .gemini/
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-# ====== BINARY FILES (not code — use R2/CDN for assets) ======
+# ====== MACOS & OS FILES ======
+.DS_Store
+Icon
+Icon?
+
+# ====== BINARY & LARGE FILES ======
 *.pdf
 *.zip
 *.tar
@@ -42,34 +49,36 @@ dist-ssr
 *.ttf
 *.otf
 
-# ====== PUBLIC STATIC ASSETS (served from R2 CDN) ======
-public/images/     # → R2: engquest-images bucket
-public/audio/      # → R2: engquest-audio bucket
+# ====== PUBLIC STATIC ASSETS (Served from R2 / YouTube) ======
+# R2: engquest-images bucket
+public/images/
+
+# R2: engquest-audio bucket
+public/audio/
 public/audio_cache/
 public/audio copy/
-public/videos/week*/  # Week videos served from YouTube/R2
 
-# Design/source screenshots (archived locally, not in repo)
+# Week videos served from YouTube/R2
+public/videos/week*/
+
+# Design assets
 Shadowing redesign/
 Shadowing format.jpg
 
-# ====== WRANGLER / CLOUDFLARE ======
+# ====== WRANGLER & CLOUDFLARE ======
 .wrangler/
 
-# ====== BACKEND/SERVER (not needed for frontend deploy) ======
+# ====== BACKEND & SERVER ======
 esl_server/
 mcp-server/node_modules/
 
-# ====== BACKUP & DOCUMENTATION ======
+# ====== TEMP FILES & AUDIO DOWNLOADS ======
+tmp/
+
+# ====== BACKUPS & DEPRECATED ======
 Backup/
 _backup*/
 *.backup
-Production_FINAL/
-!Production_FINAL/MASTER PROMPT/
-!Production_FINAL/1. FINAL MASS PRODUCTION/
-!Production_FINAL/1. FINAL MASS PRODUCTION/**
-!Production_FINAL/IMAGE PROMPTS/
-!Production_FINAL/IMAGE PROMPTS/**
 MASS_Final/
 Production_FINAL_DEPRECATED/
 .debris/
@@ -79,7 +88,15 @@ debris/
 *SYLLABUS*.txt
 .gitignore.bak
 
-# ====== LEGACY ROOT-LEVEL DOCS (should not be tracked) ======
+# Selective backup rules
+Production_FINAL/
+!Production_FINAL/MASTER PROMPT/
+!Production_FINAL/1. FINAL MASS PRODUCTION/
+!Production_FINAL/1. FINAL MASS PRODUCTION/**
+!Production_FINAL/IMAGE PROMPTS/
+!Production_FINAL/IMAGE PROMPTS/**
+
+# ====== LEGACY ROOT-LEVEL DOCS ======
 AI_TUTOR_*.md
 AI_TUTOR_*.txt
 AI_PROVIDER_*.md
@@ -100,7 +117,7 @@ docs/English-Dictionaries-*
 docs/ARCHITECTURE.md
 _update_*.py
 
-# ====== AI AGENT RUNTIME (local only) ======
+# ====== AI AGENT RUNTIME & LOCAL MEMORY ======
 .ai/memory/SESSION.md
 .ai/memory/HISTORY.md
 .ai/context/README.md
@@ -108,24 +125,12 @@ _update_*.py
 .ai/research/
 .ai/implementation/
 
-# ====== DEV TOOLS (not production code) ======
-# Keep frozen pipeline spec
-!production_kit/workflow/SHADOWING_PIPELINE_FROZEN.md
+# ====== DEV TOOLS & LOCAL STATE ======
 .devin/
 .cocoindex_code/
 repair_log/
 cline_mcp_settings.json
 skills-lock.json
 
-# ====== TEMP AUDIO (Deepgram downloads) ======
-tmp/*.mp3
-tmp/*.wav
-
-# ====== MACOS ======
-Icon
-Icon?
-
-# ====== PID / TEMP ======
-API keys.txt
-.frontend.pid
-.server.pid
+# Keep frozen pipeline spec
+!production_kit/workflow/SHADOWING_PIPELINE_FROZEN.md

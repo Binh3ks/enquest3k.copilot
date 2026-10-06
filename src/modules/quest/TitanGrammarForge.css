@@ -1,4 +1,5 @@
 /* TitanGrammarForge.css — Mechanical Clockwork Titan Theme */
+@import './game-mobile.css';
 
 .titan-forge-root {
   position: relative;
@@ -8,7 +9,7 @@
   background: radial-gradient(ellipse at 50% 100%, #291b0f 0%, #150d07 60%, #080502 100%);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
   user-select: none;
   font-family: 'Outfit', 'Inter', system-ui, sans-serif;
@@ -211,7 +212,7 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  z-index: 10;
+  z-index: 40;
   transition: transform 0.15s ease;
 }
 
@@ -267,19 +268,58 @@
   justify-content: center;
 }
 
+/* Help / Instructions Button inside HUD top-right flex header */
+.titan-help-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(30, 20, 12, 0.88);
+  border: 1.5px solid rgba(245, 158, 11, 0.5);
+  color: #fef3c7;
+  border-radius: 10px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  transition: transform 0.15s ease, background 0.15s ease;
+  pointer-events: auto;
+}
+
+.titan-help-btn:hover {
+  transform: scale(1.05);
+  background: rgba(45, 27, 15, 0.95);
+}
+
 @media (max-width: 768px) {
+  .titan-help-btn {
+    padding: 3px 7px;
+    font-size: 0.72rem;
+  }
   .titan-forge-banner {
     top: 48px;
     padding: 6px 14px;
     gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 94%;
   }
   .titan-stem-text {
     font-size: 0.8rem;
+    text-align: center;
+  }
+  .titan-sentence-box {
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .titan-forge-viewport {
     height: 100%;
     margin: 0;
   }
+  .titan-clause-plaque {
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    max-width: 140px;
+  }
 }
-
-@import './game-mobile.css';

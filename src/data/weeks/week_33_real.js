@@ -16,7 +16,7 @@ export default {
     "corridor", "slipped", "nurse", "bandage", "relieved",
     "mistake", "accident", "fix", "sorry", "careful",
     "clumsy", "arm", "knee", "leg", "head",
-    "cold_pack", "recover", "explain", "lesson", "terrible"
+    "cold pack", "recover", "explain", "lesson", "terrible"
   ],
   sentences: [
     { id: 1, text: "Jake was walking carefully down the corridor.", vi: "Jake đang đi bộ cẩn thận xuống hành lang." },

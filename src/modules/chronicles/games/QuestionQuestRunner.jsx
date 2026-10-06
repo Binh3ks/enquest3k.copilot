@@ -31,38 +31,101 @@ const CANVAS_WIDTH = 960;
 const CANVAS_HEIGHT = 560;
 const TOTAL_ROUNDS = 6;
 const INITIAL_HEARTS = 2;
-const BASE_LEO_SPEED = 220; // px/s
-const BASE_WARDEN_SPEED = 170; // px/s
-const WARDEN_RUSH_SPEED = 240; // px/s
-const INITIAL_SAFE_DIST = 350; // px
+const BASE_LEO_SPEED = 30; // px/s (Calibrated for N2: D = 1110px / 30px/s = 37.00s, Margin = +4.35s)
+const BASE_WARDEN_SPEED = 24; // px/s (Relative pursuit: maintains 200-250px tension gap)
+const WARDEN_RUSH_SPEED = 36; // px/s (Accelerates if safe distance closes or Leo hesitates)
+const INITIAL_SAFE_DIST = 320; // px
+const JUNCTION_DISTANCE = 1110; // px (D = 1110px -> T_avail = 37.00s)
 
 // 3 Lanes (Y coordinates)
 const LANES_Y = [190, 310, 430];
 
+export const DEFAULT_WH_KERNEL_ROUNDS = [
+  {
+    sentence: "Jake walked on wet floor.",
+    options: [
+      { text: "Where did Jake walk?", isCorrect: true },
+      { text: "Who called the nurse?", isCorrect: false },
+      { text: "When did Jake sleep?", isCorrect: false },
+    ],
+  },
+  {
+    sentence: "Suddenly he slipped and fell.",
+    options: [
+      { text: "What happened to him?", isCorrect: true },
+      { text: "Where did he run?", isCorrect: false },
+      { text: "Why was he late?", isCorrect: false },
+    ],
+  },
+  {
+    sentence: "Jake stopped to help him.",
+    options: [
+      { text: "What did Jake do?", isCorrect: true },
+      { text: "Who went home early?", isCorrect: false },
+      { text: "Where did they hide?", isCorrect: false },
+    ],
+  },
+  {
+    sentence: "Nurse brought a cold pack.",
+    options: [
+      { text: "What did she bring?", isCorrect: true },
+      { text: "Who made the bed?", isCorrect: false },
+      { text: "When did they leave?", isCorrect: false },
+    ],
+  },
+  {
+    sentence: "They treated the small cut.",
+    options: [
+      { text: "What did they treat?", isCorrect: true },
+      { text: "Where did they play?", isCorrect: false },
+      { text: "Why did they shout?", isCorrect: false },
+    ],
+  },
+  {
+    sentence: "Everyone felt safe and happy.",
+    options: [
+      { text: "How did they feel?", isCorrect: true },
+      { text: "Who ran outside fast?", isCorrect: false },
+      { text: "Where did they study?", isCorrect: false },
+    ],
+  },
+];
+
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 export default function QuestionQuestRunner({
   weekNumber = 33,
   weekData = null,
-  duration = 90,
+  duration = 240,
   onComplete,
   onExit,
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const canvasRef = useRef(null);
 
-  // Load questions for this week
-  const rawQuestions = useMemo(() => {
-    return getWhQuestionsForWeek(weekNumber, weekData);
-  }, [weekNumber, weekData]);
-
-  // Expand or cycle questions to ensure at least 6 rounds
+  // Load questions for this week (guarantees 6 distinct Cambridge WH questions with 0% repetition)
   const questions = useMemo(() => {
-    if (!rawQuestions || rawQuestions.length === 0) return [];
-    const list = [];
-    for (let i = 0; i < TOTAL_ROUNDS; i++) {
-      list.push(rawQuestions[i % rawQuestions.length]);
+    const rawQuestions = getWhQuestionsForWeek(weekNumber, weekData);
+    if (Array.isArray(rawQuestions) && rawQuestions.length >= TOTAL_ROUNDS) {
+      return rawQuestions.slice(0, TOTAL_ROUNDS);
     }
-    return list;
-  }, [rawQuestions]);
+    // If rawQuestions is short (< 6), pad with distinct non-repeating items
+    const pool = Array.isArray(rawQuestions) ? [...rawQuestions] : [];
+    for (const item of DEFAULT_WH_KERNEL_ROUNDS) {
+      if (pool.length >= TOTAL_ROUNDS) break;
+      if (!pool.some(q => q.sentence === item.sentence)) {
+        pool.push(item);
+      }
+    }
+    return pool.slice(0, TOTAL_ROUNDS);
+  }, [weekNumber, weekData]);
 
   const [phase, setPhase] = useState('playing'); // 'playing' | 'cleared' | 'ko'
   const [roundIdx, setRoundIdx] = useState(0); // 0 to 5
@@ -96,7 +159,7 @@ export default function QuestionQuestRunner({
     leoX: 420,
     wardenDist: INITIAL_SAFE_DIST,
     speedBoost: 0,
-    junctionX: 500, // distance from Leo to upcoming junction
+    junctionX: JUNCTION_DISTANCE, // distance from Leo to upcoming junction (780px -> 15.60s)
     junctionActive: true,
     crumblingLane: null,
     lastTime: 0,
@@ -115,14 +178,9 @@ export default function QuestionQuestRunner({
     const distractor1 = wrongOpts[0] || { text: 'When did it occur?', isCorrect: false };
     const distractor2 = wrongOpts[1] || { text: 'Where was everyone?', isCorrect: false };
 
-    // Deterministic shuffle based on roundIdx to randomize branch lanes
+    // Unbiased Fisher-Yates shuffle to randomize candidate options across the 3 lanes
     const candidates = [correctOpt, distractor1, distractor2];
-    const shift = (roundIdx * 2 + 1) % 3;
-    const shuffled = [
-      candidates[shift],
-      candidates[(shift + 1) % 3],
-      candidates[(shift + 2) % 3],
-    ];
+    const shuffled = shuffleArray(candidates);
 
     return shuffled.map((opt, laneIdx) => ({
       lane: laneIdx,
@@ -156,8 +214,8 @@ export default function QuestionQuestRunner({
       } else if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') {
         steerLane('down');
       } else if (e.key === ' ' || e.key === 'Spacebar' || e.key === 'e' || e.key === 'E') {
-        // Boost sprint
-        runnerStateRef.current.speedBoost = 80;
+        // Boost sprint (scaled to v=50px/s)
+        runnerStateRef.current.speedBoost = 20;
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -239,7 +297,7 @@ export default function QuestionQuestRunner({
 
           if (branch && branch.isCorrect) {
             // ── CORRECT BRANCH ──────────────────────────────────────────
-            sim.speedBoost = 120;
+            sim.speedBoost = 30;
             sim.wardenDist = Math.min(sim.wardenDist + 140, 420); // Repel Warden
             setScore(s => s + 100);
             setFeedback({ ok: true, text: `✨ EXCELLENT! "${branch.text}" (+100 XP)` });
@@ -251,7 +309,7 @@ export default function QuestionQuestRunner({
             } else {
               setRoundIdx(nextRound);
               // Reset junction for next round
-              sim.junctionX = 520;
+              sim.junctionX = JUNCTION_DISTANCE;
               sim.junctionActive = true;
               sim.crumblingLane = null;
             }
@@ -273,7 +331,7 @@ export default function QuestionQuestRunner({
             // Reset junction with penalty delay
             setTimeout(() => {
               if (phaseRef.current === 'playing') {
-                sim.junctionX = 460;
+                sim.junctionX = JUNCTION_DISTANCE;
                 sim.junctionActive = true;
                 sim.crumblingLane = null;
               }
@@ -508,6 +566,7 @@ export default function QuestionQuestRunner({
       window.__QUESTION_QUEST_RUNNER_TEST_HOOK__ = {
         getPhase: () => phaseRef.current,
         getRound: () => roundIdxRef.current + 1,
+        getRoundIdx: () => roundIdxRef.current,
         getHearts: () => heartsRef.current,
         getScore: () => scoreRef.current,
         getActiveLane: () => activeLaneRef.current,
@@ -538,6 +597,7 @@ export default function QuestionQuestRunner({
         score={score}
         hearts={hearts}
         maxHearts={INITIAL_HEARTS}
+        round={`${roundIdx + 1}/${TOTAL_ROUNDS}`}
         timeLeft={timeLeft}
         totalTime={duration}
         stars={Math.min(3, Math.floor(score / 200) + 1)}
@@ -648,7 +708,7 @@ export default function QuestionQuestRunner({
               setScore(0);
               setTimeLeft(duration);
               setWardenDist(INITIAL_SAFE_DIST);
-              runnerStateRef.current.junctionX = 500;
+              runnerStateRef.current.junctionX = JUNCTION_DISTANCE;
               runnerStateRef.current.junctionActive = true;
               runnerStateRef.current.wardenDist = INITIAL_SAFE_DIST;
               runnerStateRef.current.crumblingLane = null;

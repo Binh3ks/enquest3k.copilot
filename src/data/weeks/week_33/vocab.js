@@ -152,7 +152,7 @@ export default [
   },
   { 
     id: 16, 
-    word: "cold_pack", 
+    word: "cold pack", 
     definition_en: "a gel bag chilled in ice used to reduce swelling", 
     definition_vi: "túi chườm lạnh", 
     example_en: "The nurse placed a cold pack on his knee to reduce pain.",

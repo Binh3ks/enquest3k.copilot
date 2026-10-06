@@ -1,79 +1,402 @@
-# 🤝 Session Handoff Report — Floor 6-7 Redesign Final Closure
-**Date**: 18:07:00 12/9/2026
+# 🤝 Session Handoff Report
+**Date**: 13:39:38 14/9/2026
 **Branch**: `main`
-**Latest Commit**: `c19a42e7 chore(chronicles): remove dead unused imports QuestionQuestGame and WordClassDuelGame`
-**Status**: 🏁 **PROJECT CLOSED & COMPLETED (6/6 Games Approved by Owner)**
+**Latest Commit**: `fba660d6 docs(handoff): finalize Floor 6-7 redesign project with 6/6 games approved by Owner`
 
 ---
 
 ## 1. 📌 Executive Summary
-Dự án Redesign toàn bộ 6/6 minigame Floor 6–7 (Chamber of Illusions & Master Sanctum) đã **CHÍNH THỨC HOÀN THÀNH VÀ ĐƯỢC OWNER PHÊ DUYỆT 100%**.
-- 100% các lỗ hổng đoán mò (brute-force / blind guessing) đã được triệt tiêu dưới ngưỡng an toàn $P < 5\%$.
-- 100% test hooks và QA backdoor triggers đã được bọc `import.meta.env.DEV` và loại bỏ hoàn toàn khỏi production bundle.
-- Các file engine cũ đã được ngắt import hoàn toàn, xác nhận là dead code giữ lại để tham khảo lịch sử.
-- Production build `npm run build` đạt Exit Code 0, xác nhận bundle sạch 100%.
+Hoàn tất 100% Baseline Audit 21/21 mini-games trên Real Chrome GUI (Batches 1-5); tổng hợp danh sách ưu tiên Backlog Redesign (6 P0, 4 P1) vào CONSOLIDATED_REDESIGN_BACKLOG_21_GAMES.md
 
 ---
 
-## 2. 🎮 Bảng Ánh Xạ Engine Hoạt Động Cuối Cùng (6/6 Games Floor 6–7)
-
-| Game # | Floor / Door | Tên Game & Mã Cửa | File Engine Hoạt Động Cuối Cùng | File Cũ Đã Được Thay Thế | Cơ Chế Vận Hành & Xác Suất Đoán Mò |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **#1** | Floor 6 Door 1 | **Synonym Storm** (`synonym_storm`) | `src/modules/quest/SynonymStormDefense.jsx`<br>*(aliased qua `SynonymStormGame.jsx`)* | Mini-game text/Phaser cũ | Khiên phòng thủ chủ động bắt thiên thạch đồng nghĩa. Kiểm tra nghiêm ngặt `targetRoot`, 5 rounds, 4 hearts. |
-| **#2** | Floor 6 Door 2 | **Connector Relay** (`connector_relay`) | `src/modules/quest/ConnectorRelayCanvas.jsx`<br>*(aliased qua `ConnectorRelayGame.jsx`)* | Text runner cũ | Runner 3 làn năng lượng, lái Leo bằng phím Arrow, 5 câu chuẩn sư phạm, mất tim tức thì khi đâm chướng ngại. |
-| **#3** | Floor 7 Door 1 | **Word Forge** (`word_forge_scramble`) | `src/modules/quest/WordForgeCarryEngine.jsx`<br>*(aliased qua `WordForgeScrambleGame.jsx`)* | Letter scramble UI cũ | Platformer bưng vác cổ ngữ Runes đặt lên Đe Ma Thuật (Arcane Anvil), 2-tier matching từ vựng. |
-| **#4** | Floor 7 Door 2 | **Question Quest** (`question_quest`) | `src/modules/chronicles/games/QuestionQuestRunner.jsx` | `src/modules/quest/QuestionQuestGame.jsx`<br>*(Sanctum Maze cũ)* | **Chaser & Branching Paths**: Giám ngục Warden đuổi phía sau, rẽ 3 nhánh làn chạy, 6 rounds, 2 hearts ($P = 1.37\% < 5\%$). |
-| **#5** | Floor 6 Door 3 | **Story Sequencer** (`story_sequencer`) | `src/modules/quest/StoryAltarPuzzle.jsx` | `src/modules/chronicles/games/StorySequencerGame.jsx`<br>*(Drag-drop cũ)* | Bệ thờ cổ ngữ Chrono Altar xếp 5 sự kiện cốt truyện, 2 hearts ($P = 4.17\% < 5\%$), unanswerable distractor order. |
-| **#6** | Floor 7 Door 3 | **Word Class Duel** (`rune_balance_scale`) | `src/modules/chronicles/games/WordClassBalanceGame.jsx` | `src/modules/chronicles/games/WordClassDuelGame.jsx`<br>*(Wizard projectile cũ)* | **Dual-Scale Tilt Arena**: Đĩa cân đối kháng Noun vs Verb, thắng ở chuỗi 8-streak / 45s, sai 1 lần trượt đĩa mất tim ($P = 0.78\% \ll 5\%$), tách rời Aim (◄/►) và Strike (SPACE). |
+## 2. ✅ Work Completed in This Session
+- **Commits & Fixes**: `fba660d6 docs(handoff): finalize Floor 6-7 redesign project with 6/6 games approved by Owner`
+- **File System State**:
+  - `M AGENTS.md`
+  - ` M docs/WEEK_CONTENT_SOP_W34_PLUS.md`
+  - ` M docs/WEEK_PRODUCTION_SOP.md`
+  - ` D docs/agent_artifacts/evidence/01_hub_world.png`
+  - ` D docs/agent_artifacts/evidence/02_highway_runner.png`
+  - ` D docs/agent_artifacts/evidence/03_chunk_catapult.png`
+  - ` D docs/agent_artifacts/evidence/04_boss_combat.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc1_01_world_map_boss_energy.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc1_02_daily_room_0_quests_locked.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc1_03_daily_room_1_quest_key_icon.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc1_03_daily_room_1_quest_unlocked.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc1_04_daily_room_1_door_cleared.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc2_01_mystery_vault_unopened.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc2_02_mystery_vault_claimed.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc2_03_return_to_citadel.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc3_01_catapult_idle.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc3_02_catapult_bullet_time_drag.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc3_03_catapult_in_flight.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc3_04_catapult_hit_reaction.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc3_05_catapult_correct_hit_score.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc3_06_catapult_mobile_portrait_notice.png`
+  - ` D docs/agent_artifacts/evidence/hangmuc3_07_catapult_mobile_portrait_gameplay.png`
+  - ` D docs/agent_artifacts/evidence/prod_hangmuc3_01_floor3_chamber_view.png`
+  - ` D docs/agent_artifacts/evidence/prod_hangmuc3_02_catapult_in_room_idle.png`
+  - ` D docs/agent_artifacts/evidence/prod_hangmuc3_03_catapult_drag_bullet_time.png`
+  - ` D docs/agent_artifacts/evidence/prod_hangmuc3_04_catapult_projectile_flight.png`
+  - ` D docs/agent_artifacts/evidence/prod_hangmuc3_05_catapult_target_impact.png`
+  - ` D docs/agent_artifacts/evidence/prod_hangmuc3_06_return_to_floor3.png`
+  - ` D docs/agent_artifacts/evidence/prod_w01_catapult_pre_a1.png`
+  - ` D docs/agent_artifacts/evidence/prod_w17_catapult_library.png`
+  - ` D docs/agent_artifacts/evidence/prod_w33_catapult_01_retell_stem.png`
+  - ` D docs/agent_artifacts/evidence/prod_w33_catapult_02_retell_drag.png`
+  - ` D docs/agent_artifacts/evidence/prod_w33_catapult_03_retell_flight.png`
+  - ` D docs/agent_artifacts/evidence/prod_w33_catapult_04_retell_hit.png`
+  - ` D docs/agent_artifacts/evidence/prod_w50_catapult_forge.png`
+  - ` M docs/agent_artifacts/screenshots/sa_33_correct_live.png`
+  - ` M docs/agent_artifacts/screenshots/sa_33_playing_initial.png`
+  - ` M docs/agent_artifacts/screenshots/sa_33_wrong_live.png`
+  - ` M docs/agent_artifacts/screenshots/sa_35_correct_live.png`
+  - ` M docs/agent_artifacts/screenshots/sa_35_playing_initial.png`
+  - ` M docs/agent_artifacts/screenshots/sa_35_wrong_live.png`
+  - ` D docs/agent_artifacts/screenshots/w33_connector_relay_hazard_live.png`
+  - ` D docs/agent_artifacts/screenshots/w33_connector_relay_success_live.png`
+  - ` D docs/agent_artifacts/screenshots/w33_question_quest_hazard_live.png`
+  - ` D docs/agent_artifacts/screenshots/w33_question_quest_success_live.png`
+  - ` D docs/agent_artifacts/screenshots/w33_round3_to_round5_forensic_verified.png`
+  - ` D docs/agent_artifacts/screenshots/w33_word_forge_hazard_live.png`
+  - ` D docs/agent_artifacts/screenshots/w33_word_forge_success_live.png`
+  - ` D docs/agent_artifacts/screenshots/w34_question_quest_context_verified.png`
+  - ` D docs/agent_artifacts/screenshots/w35_connector_relay_hazard_live.png`
+  - ` D docs/agent_artifacts/screenshots/w35_connector_relay_success_live.png`
+  - ` D docs/agent_artifacts/screenshots/w35_question_quest_hazard_live.png`
+  - ` D docs/agent_artifacts/screenshots/w35_question_quest_success_live.png`
+  - ` D docs/agent_artifacts/screenshots/w35_word_forge_hazard_live.png`
+  - ` D docs/agent_artifacts/screenshots/w35_word_forge_success_live.png`
+  - ` D docs/agent_artifacts/screenshots/zz_33_hazard_live.png`
+  - ` D docs/agent_artifacts/screenshots/zz_33_success_live.png`
+  - ` D docs/agent_artifacts/screenshots/zz_35_hazard_live.png`
+  - ` D docs/agent_artifacts/screenshots/zz_35_success_live.png`
+  - ` D docs/agent_artifacts/screenshots/zz_debug_room6_initial.png`
+  - ` M package.json`
+  - ` M production_kit/workflow/week_pipeline_sop.md`
+  - ` M public/version.json`
+  - ` M src/components/questmap/QuestSidebar.jsx`
+  - ` M src/data/chronicles/index.js`
+  - ` M src/data/chronicles/week33_config.js`
+  - ` M src/data/weeks/week_33/vocab.js`
+  - ` M src/data/weeks/week_33/week_33_real.js`
+  - ` M src/data/weeks/week_33_real.js`
+  - ` M src/data/weeks/week_35/reading_hub.js`
+  - ` M src/modules/chronicles/ChroniclesScreen.jsx`
+  - ` M src/modules/chronicles/HallOfFameModal.jsx`
+  - ` M src/modules/chronicles/extractQuestVocab.js`
+  - ` M src/modules/chronicles/games/ChunkCatapultCanvas.jsx`
+  - ` M src/modules/chronicles/games/GameInstructionModal.jsx`
+  - ` M src/modules/chronicles/games/HighwayRunnerGame.jsx`
+  - ` M src/modules/chronicles/games/QuestionQuestRunner.jsx`
+  - ` M src/modules/chronicles/games/SyntaxExpressGame.jsx`
+  - ` M src/modules/chronicles/three/CitadelHallScene.jsx`
+  - ` M src/modules/quest/CambridgeClozeGauntlet.css`
+  - ` M src/modules/quest/ConnectorRelayCanvas.jsx`
+  - ` M src/modules/quest/GrandMatrixDungeon.css`
+  - ` M src/modules/quest/GrandMatrixDungeon.jsx`
+  - ` M src/modules/quest/HUDOverlay.css`
+  - ` M src/modules/quest/HUDOverlay.jsx`
+  - ` M src/modules/quest/HighwaySprintCanvas.css`
+  - ` M src/modules/quest/HighwaySprintCanvas.jsx`
+  - ` M src/modules/quest/MCQBlitzPopup.jsx`
+  - ` M src/modules/quest/RiddleRunMaze.css`
+  - ` M src/modules/quest/RiddleRunMaze.jsx`
+  - ` M src/modules/quest/ScrollChamberDecode.css`
+  - ` M src/modules/quest/ScrollChamberDecode.jsx`
+  - ` M src/modules/quest/ShadowVaultInfiltrate.jsx`
+  - ` M src/modules/quest/StormShieldDefense.css`
+  - ` M src/modules/quest/StormShieldDefense.jsx`
+  - ` M src/modules/quest/SyntaxExpressRail.css`
+  - ` M src/modules/quest/SyntaxExpressRail.jsx`
+  - ` M src/modules/quest/TitanGrammarForge.css`
+  - ` M src/modules/quest/TitanGrammarForge.jsx`
+  - ` M src/stores/useChroniclesStore.js`
+  - ` M src/utils/textSanitize.js`
+  - `?? .agents/handoffs/handoff_2026-09-11T08-47-45-946Z.md`
+  - `?? docs/Claude_handoff.txt`
+  - `?? docs/agent_artifacts/AUDIT_MECHANICS_FLOOR_6_7_REDESIGN_2026_09_11.md`
+  - `?? docs/agent_artifacts/BAO_CAO_AUDIT_TOAN_BO_21_GAMES_THEO_KHUNG_THIET_KE_2026_09_12.md`
+  - `?? docs/agent_artifacts/BAO_CAO_AUDIT_VERIFICATION_4_GAMES_2026_09_11.md`
+  - `?? docs/agent_artifacts/BAO_CAO_HOAN_THANH_21_MINIGAME_CHRONICLES_2026_09_10.md`
+  - `?? docs/agent_artifacts/BAO_CAO_MO_TA_CO_CHE_21_GAMES_2026_09_12.md`
+  - `?? docs/agent_artifacts/BAO_CAO_PHAN_LOAI_CO_CHE_5_GAMES_F1_F2_2026_09_11.md`
+  - `?? docs/agent_artifacts/BAO_CAO_PLAYTEST_BATCH1_RUNNERS_REAL_CHROME.md`
+  - `?? docs/agent_artifacts/BAO_CAO_PLAYTEST_BATCH2_CHAMBERS_REAL_CHROME.md`
+  - `?? docs/agent_artifacts/BAO_CAO_PLAYTEST_BATCH3_REAL_CHROME.md`
+  - `?? docs/agent_artifacts/BAO_CAO_PLAYTEST_BATCH4_DEFENSE_REAL_CHROME.md`
+  - `?? docs/agent_artifacts/BAO_CAO_PLAYTEST_BATCH5_FINAL_REAL_CHROME.md`
+  - `?? docs/agent_artifacts/BAO_CAO_REFACTOR_F3D3_F4D3_2026_09_10.md`
+  - `?? docs/agent_artifacts/BAO_CAO_SUA_LOI_CROSS_WEEK_FALLBACKS_FLOOR_6_7_2026_09_11.md`
+  - `?? docs/agent_artifacts/BAO_CAO_XU_LY_3_VIEC_AUDIT_2026_09_12.md`
+  - `?? docs/agent_artifacts/CHRONICLES_GAME_MODE_AND_SUPER_LEO_STATUS_REPORT.md`
+  - `?? docs/agent_artifacts/CONSOLIDATED_REDESIGN_BACKLOG_21_GAMES.md`
+  - `?? docs/agent_artifacts/CONTENT_ARCHITECTURE_AUDIT_STEP1.md`
+  - `?? docs/agent_artifacts/CONTENT_ARCHITECTURE_DESIGN_STEP2.md`
+  - `?? docs/agent_artifacts/CROSS_WEEK_RISK_TRACKING_LOG.md`
+  - `?? docs/agent_artifacts/ENGQUEST3K_KHUNG_THIET_KE_21_GAMES.md`
+  - `?? docs/agent_artifacts/ENGQUEST3K_REDESIGN_THEO_NHOM_CO_CHE.md`
+  - `?? docs/agent_artifacts/GIAI_TRINH_NGUON_GOC_SENTENCE_POOL_VA_TIMER_F2D2_2026_09_11.md`
+  - `?? docs/agent_artifacts/KE_HOACH_TRIEN_KHAI_21_MINIGAME_CHRONICLES_2026_09_10.md`
+  - `?? docs/agent_artifacts/KHAO_SAT_NHANH_5_GAMES_FLOOR_6_7_2026_09_11.md`
+  - `?? docs/agent_artifacts/KIEM_CHUNG_HIEN_TRANG_GAME_MODE_2026_09_10.md`
+  - `?? docs/agent_artifacts/PHASE0_PHASE1_GAME_AUDIT_2026_09_10.md`
+  - `?? docs/agent_artifacts/STEP10_CATAPULT_HIGHWAY_INTEGRATION_REPORT.md`
+  - `?? docs/agent_artifacts/TICKET_RISK_CW02_EXPANDED_CROSS_WEEK_FALLBACKS.md`
+  - `?? docs/agent_artifacts/W33_CHRONICLES_21_GAMES_CONTENT_MANUAL_REVIEW.md`
+  - `?? docs/agent_artifacts/content_service_audit_H1_H2_H3.md`
+  - `?? docs/agent_artifacts/content_service_audit_I1_I2.md`
+  - `?? docs/agent_artifacts/implementation_plan.md`
+  - `?? docs/agent_artifacts/implementation_plan_redesign_shapes.md`
+  - `?? docs/agent_artifacts/screenshots/audit_all_21_games_results.json`
+  - `?? docs/agent_artifacts/screenshots/b1_connector_relay_frame1_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b1_connector_relay_frame2_action.png`
+  - `?? docs/agent_artifacts/screenshots/b1_connector_relay_frame3_kinematics.png`
+  - `?? docs/agent_artifacts/screenshots/b1_highway_sprint_frame1_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b1_highway_sprint_frame2_action.png`
+  - `?? docs/agent_artifacts/screenshots/b1_highway_sprint_frame3_kinematics.png`
+  - `?? docs/agent_artifacts/screenshots/b1_qq_runner_frame1_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b1_qq_runner_frame2_action.png`
+  - `?? docs/agent_artifacts/screenshots/b1_qq_runner_frame3_kinematics.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_connector_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_connector_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_connector_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_highway_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_highway_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_highway_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_qq_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_qq_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_qq_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_syntax_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_syntax_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b1_real_syntax_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b1_syntax_express_frame1_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b1_syntax_express_frame2_action.png`
+  - `?? docs/agent_artifacts/screenshots/b1_syntax_express_frame3_kinematics.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_cloze_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_cloze_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_cloze_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_potion_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_potion_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_potion_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_scroll_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_scroll_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_scroll_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_shadow_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_shadow_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b2_real_shadow_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_anvil_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_anvil_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_anvil_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_bubble_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_bubble_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_bubble_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_riddle_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_riddle_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_riddle_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_titan_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_titan_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_titan_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_wagon_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_wagon_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b3_real_wagon_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_catapult_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_catapult_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_catapult_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_echo_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_echo_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_echo_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_storm_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_storm_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_storm_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_synonym_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_synonym_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b4_real_synonym_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_balance_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_balance_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_balance_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_forge_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_forge_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_forge_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_matrix_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_matrix_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_matrix_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_sequencer_correct.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_sequencer_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/b5_real_sequencer_wrong.png`
+  - `?? docs/agent_artifacts/screenshots/f1d1_bubble_chase_action.png`
+  - `?? docs/agent_artifacts/screenshots/f1d1_bubble_chase_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f1d2_wagon_jump_action.png`
+  - `?? docs/agent_artifacts/screenshots/f1d2_wagon_jump_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f1d3_shadow_vault_action.png`
+  - `?? docs/agent_artifacts/screenshots/f1d3_shadow_vault_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f2d1_potion_flip_action.png`
+  - `?? docs/agent_artifacts/screenshots/f2d1_potion_flip_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f2d2_anvil_rush_action.png`
+  - `?? docs/agent_artifacts/screenshots/f2d2_anvil_rush_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f2d3_scroll_chamber_action.png`
+  - `?? docs/agent_artifacts/screenshots/f2d3_scroll_chamber_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f3d1_echo_arena_action.png`
+  - `?? docs/agent_artifacts/screenshots/f3d1_echo_arena_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f3d2_chunk_catapult_action.png`
+  - `?? docs/agent_artifacts/screenshots/f3d2_chunk_catapult_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f3d3_storm_shield_action.png`
+  - `?? docs/agent_artifacts/screenshots/f3d3_storm_shield_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f4d1_highway_runner_action.png`
+  - `?? docs/agent_artifacts/screenshots/f4d1_highway_runner_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f4d2_syntax_express_action.png`
+  - `?? docs/agent_artifacts/screenshots/f4d2_syntax_express_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f4d3_riddle_run_action.png`
+  - `?? docs/agent_artifacts/screenshots/f4d3_riddle_run_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f5d1_grand_matrix_action.png`
+  - `?? docs/agent_artifacts/screenshots/f5d1_grand_matrix_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f5d2_titan_forge_action.png`
+  - `?? docs/agent_artifacts/screenshots/f5d2_titan_forge_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f5d3_cambridge_cloze_action.png`
+  - `?? docs/agent_artifacts/screenshots/f5d3_cambridge_cloze_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f6d1_synonym_storm_action.png`
+  - `?? docs/agent_artifacts/screenshots/f6d1_synonym_storm_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f6d2_connector_relay_action.png`
+  - `?? docs/agent_artifacts/screenshots/f6d2_connector_relay_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f6d3_story_sequencer_action.png`
+  - `?? docs/agent_artifacts/screenshots/f6d3_story_sequencer_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f7d1_word_forge_action.png`
+  - `?? docs/agent_artifacts/screenshots/f7d1_word_forge_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f7d2_question_quest_action.png`
+  - `?? docs/agent_artifacts/screenshots/f7d2_question_quest_initial.png`
+  - `?? docs/agent_artifacts/screenshots/f7d3_word_class_balance_action.png`
+  - `?? docs/agent_artifacts/screenshots/f7d3_word_class_balance_initial.png`
+  - `?? docs/agent_artifacts/screenshots/qq_A_initial_leo430.png`
+  - `?? docs/agent_artifacts/screenshots/qq_B_far_no_vault_open.png`
+  - `?? docs/agent_artifacts/screenshots/qq_C_near_door0_vault_response.png`
+  - `?? docs/agent_artifacts/screenshots/qq_D_correct_vault_sanctuary_unlocked.png`
+  - `?? docs/agent_artifacts/screenshots/qq_D_fixed_correct_vault_round_advance.png`
+  - `?? docs/agent_artifacts/screenshots/qq_D_iso_step1_spawn_1789141288.png`
+  - `?? docs/agent_artifacts/screenshots/qq_D_iso_step2_toast_1789141288.png`
+  - `?? docs/agent_artifacts/screenshots/qq_D_iso_step3_advance_1789141288.png`
+  - `?? docs/agent_artifacts/screenshots/qq_E_leo_teleported_near_door0.png`
+  - `?? docs/agent_artifacts/screenshots/qq_E_real_key_feedback_toast.png`
+  - `?? docs/agent_artifacts/screenshots/qq_E_round_advanced_to_2.png`
+  - `?? docs/agent_artifacts/screenshots/qq_frame1_before_move.png`
+  - `?? docs/agent_artifacts/screenshots/qq_frame2_after_move.png`
+  - `?? docs/agent_artifacts/screenshots/qq_frame3_vault_entry.png`
+  - `?? docs/agent_artifacts/screenshots/qq_real_A_spawn.png`
+  - `?? docs/agent_artifacts/screenshots/qq_real_B_before_E.png`
+  - `?? docs/agent_artifacts/screenshots/qq_real_C_after_E.png`
+  - `?? docs/agent_artifacts/screenshots/qq_real_r1_door0_left.png`
+  - `?? docs/agent_artifacts/screenshots/qq_real_r2_door2_right.png`
+  - `?? docs/agent_artifacts/screenshots/qq_real_r3_door1_apex.png`
+  - `?? scratch/room2_door2.png`
+  - `?? scratch/test_before_click.png`
+  - `?? scratch/test_content_service.js`
+  - `?? scratch/test_naive_split.js`
+  - `?? scratch/test_outside_weeks.js`
+  - `?? scratch_k1_sim.js`
+  - `?? scratch_k1_sim_v2.js`
+  - `?? scripts/audit_21_games_mechanics.mjs`
+  - `?? scripts/audit_all_21_games_schema.mjs`
+  - `?? scripts/audit_all_games.mjs`
+  - `?? scripts/audit_c1_chunk_catapult.mjs`
+  - `?? scripts/audit_c2_highway_runner_3d.mjs`
+  - `?? scripts/audit_c3_syntax_express_rail.mjs`
+  - `?? scripts/audit_c4_lexical_riddle.mjs`
+  - `?? scripts/audit_c5_grand_matrix.mjs`
+  - `?? scripts/audit_c5_grand_matrix_v2.mjs`
+  - `?? scripts/audit_c6_mobile_interactive.mjs`
+  - `?? scripts/audit_c6_titan_grammar_forge.mjs`
+  - `?? scripts/audit_chamber_architecture.mjs`
+  - `?? scripts/audit_f7d1_clean_lifecycle.mjs`
+  - `?? scripts/audit_fix_4_games_evidence.mjs`
+  - `?? scripts/audit_floor_1_2_precise.mjs`
+  - `?? scripts/audit_games_deep.mjs`
+  - `?? scripts/capture_all_4_rounds_word_class_duel.mjs`
+  - `?? scripts/capture_audit_b0_screenshots.mjs`
+  - `?? scripts/capture_balance_single_session.mjs`
+  - `?? scripts/capture_c1_mobile_details.mjs`
+  - `?? scripts/capture_c1_mobile_fixed.mjs`
+  - `?? scripts/capture_echo_correct_wrong.mjs`
+  - `?? scripts/capture_new_6_games.mjs`
+  - `?? scripts/capture_storm_correct_wrong.mjs`
+  - `?? scripts/capture_wagon_correct.mjs`
+  - `?? scripts/count_batch1_words.mjs`
+  - `?? scripts/count_week33_curriculum.mjs`
+  - `?? scripts/debug_balance.mjs`
+  - `?? scripts/fix_timing_and_f7d1.mjs`
+  - `?? scripts/fix_wagon_wrong.mjs`
+  - `?? scripts/game_audit_results.json`
+  - `?? scripts/game_deep_audit_results.json`
+  - `?? scripts/inspect_boss_combat_scene.mjs`
+  - `?? scripts/interactive_real_batch3.mjs`
+  - `?? scripts/interactive_real_chrome_batch1.mjs`
+  - `?? scripts/interactive_real_chrome_batch2.mjs`
+  - `?? scripts/playtest_batch1_runners.mjs`
+  - `?? scripts/playtest_qq_duration.mjs`
+  - `?? scripts/playtest_real_chrome_batch2.mjs`
+  - `?? scripts/playtest_real_chrome_batch3.mjs`
+  - `?? scripts/quick_audit_floor_6_7.mjs`
+  - `?? scripts/quick_fix_f7d3_shot.mjs`
+  - `?? scripts/real_chrome_playtest_batch1.mjs`
+  - `?? scripts/real_chrome_playtest_batch4.mjs`
+  - `?? scripts/real_chrome_playtest_batch5.mjs`
+  - `?? scripts/recapture_catapult_single_session.mjs`
+  - `?? scripts/recapture_sequencer_single_session.mjs`
+  - `?? scripts/recapture_shadow_wrong.mjs`
+  - `?? scripts/refine_b3_shots.mjs`
+  - `?? scripts/refine_echo_shots.mjs`
+  - `?? scripts/solve_f7d1.mjs`
+  - `?? scripts/survey_floor_6_7_games.mjs`
+  - `?? scripts/test_balance_hook.mjs`
+  - `?? scripts/test_batch2_scroll.mjs`
+  - `?? scripts/test_bug002_verification.mjs`
+  - `?? scripts/test_cloze_counter.mjs`
+  - `?? scripts/test_cloze_counter_v2.mjs`
+  - `?? scripts/test_cloze_v3_direct.mjs`
+  - `?? scripts/test_cross_combinations_synonym_storm.mjs`
+  - `?? scripts/test_forge_hook.mjs`
+  - `?? scripts/test_meteor_bug002.mjs`
+  - `?? scripts/test_meteor_started.mjs`
+  - `?? scripts/test_story_sequencer.mjs`
+  - `?? scripts/test_synonym_storm_active_deflect.mjs`
+  - `?? scripts/test_synonym_storm_deflect_direct.mjs`
+  - `?? scripts/test_synonym_storm_redesign_playtest.mjs`
+  - `?? scripts/test_syntax_click.mjs`
+  - `?? scripts/test_wh_generator_fixed.mjs`
+  - `?? scripts/test_word_forge.mjs`
+  - `?? scripts/verify_batch1_runner_content.mjs`
+  - `?? scripts/verify_c1_guide_modal.mjs`
+  - `?? scripts/verify_c5_4rounds.mjs`
+  - `?? scripts/verify_cross_week_content.mjs`
+  - `?? scripts/verify_highway_steering.mjs`
+  - `?? scripts/verify_lexical_det_fix.mjs`
+  - `?? scripts/verify_shadow_spawn.mjs`
+  - `?? scripts/verify_story_sequencer_fix.mjs`
+  - `?? scripts/verify_week35_and_synonym_storm.mjs`
+  - `?? scripts/verify_wordwagon_content_length.mjs`
+  - `?? src/data/weeks/week_33/wh_questions.js`
+  - `?? src/data/weeks/week_33/word_class_duel.js`
+  - `?? src/modules/chronicles/games/ConnectorRelayGame.jsx`
+  - `?? src/modules/chronicles/games/QuestionQuestGame.jsx`
+  - `?? src/modules/chronicles/games/StorySequencerGame.jsx`
+  - `?? src/modules/chronicles/games/SynonymStormGame.jsx`
+  - `?? src/modules/chronicles/games/WordClassDuelGame.jsx`
+  - `?? src/modules/chronicles/games/WordForgeScrambleGame.jsx`
+  - `?? src/services/contentService.js`
+  - `?? src/utils/gameBalance.js`
 
 ---
 
-## 3. 🪦 Trạng Thái Các File Cũ (Dead Code — Kept for Historical Reference)
-- `src/modules/quest/QuestionQuestGame.jsx`: Đã "chết", không còn bất kỳ import hoặc route nào trỏ tới trong luồng ứng dụng (`DailyRoomScreen.jsx` render trực tiếp `QuestionQuestRunner`). Giữ lại làm tham khảo lịch sử.
-- `src/modules/chronicles/games/WordClassDuelGame.jsx`: Đã "chết", không còn bất kỳ import hoặc route nào trỏ tới (`DailyRoomScreen.jsx` render trực tiếp `WordClassBalanceGame`). Giữ lại làm tham khảo lịch sử.
+## 3. 🟡 Pending / Next Steps
+- Continue verifying application functionality on Cloudflare / local server.
+- Run `npm run audit:week <N>` and `npm run build` before making further commits.
 
 ---
 
-## 4. 🛡️ Bảo Mật & Production Verification
-- `npm run build`: Exit code 0 (`✓ built in 26.19s`).
-- Grep kiểm toán `window.__` trên toàn bộ production bundle `dist/assets/*.js`:
-  - 100% test hooks (`__SYNONYM_STORM_TEST_HOOK__`, `__CONNECTOR_RELAY_TEST_HOOK__`, `__WORD_FORGE_TEST_HOOK__`, `__QUESTION_QUEST_TEST_HOOK__`, `__QUESTION_QUEST_RUNNER_TEST_HOOK__`, `__STORY_ALTAR_TEST_HOOK__`, `__WORD_CLASS_DUEL_TEST_HOOK__`, `__WORD_CLASS_BALANCE_TEST_HOOK__`) **HOÀN TOÀN BIẾN MẤT**.
-  - 100% QA backdoor triggers (`__triggerBossVictory`, `__triggerTaskComplete`, `__triggerDoorUnlockCeremony`) **HOÀN TOÀN BIẾN MẤT**.
-  - Chỉ còn lại các passive telemetry log arrays (`__EVENT_LOG__`, `__ttsInvocations`) và biến nội bộ của thư viện vendor (Three.js, React Router, Phaser).
+## 4. 🧪 System Verification Status
+- **Git Branch**: `main`
+- **Uncommitted Files**: 370
 
 ---
 
-## 5. 📜 Lịch Sử Commits Dự Án Floor 6–7 Redesign (33 commits)
-1. `c19a42e7` chore(chronicles): remove dead unused imports QuestionQuestGame and WordClassDuelGame
-2. `a21b9d98` fix(game-6): tighten tilt penalty to instant slip on error and decouple aiming from striking
-3. `b1ff6377` feat(game-6): redesign Word Class Duel with dual-scale tilt arena (Option 1)
-4. `0213843a` feat(game-4): redesign Question Quest with chaser & branching paths (Option A2)
-5. `dce01e0b` fix(game-5): reduce starting hearts from 3 to 2 in StoryAltarPuzzle
-6. `682e0674` fix(security): guard 3 QA backdoor triggers with DEV environment check
-7. `733deae6` security(quest): guard test hooks with import.meta.env.DEV to eliminate from production bundle
-8. `ff2267a8` fix(quest): correct jump velocity sign and grounding in QuestionQuestGame
-9. `147327b8` fix(test): remove stale *_unmounted.png (room=6 bug), add sa_*_playing_initial.png [Hạng #5 evidence cleanup]
-10. `8da22299` feat(chronicles): StoryAltarPuzzle — new anti-brute-force engine [Hạng #5]
-11. `0c64e22c` test(chronicles): semantic keyword validation + puppeteer playtest 4 combos [ZZ]
-12. `3cf6a0a7` docs(handoff): update handoff record with Việc YY completion status [YY]
-13. `b0bf6943` docs(chronicles): document Việc YY unanswerable distractor audit report [YY]
-14. `d231cb11` fix(chronicles): enforce unanswerable distractors in all WH-question pools [YY]
-15. `10f9401b` docs(handoff): update handoff record with Task XX completion status
-16. `167888aa` docs(chronicles): document Task XX distractor forensic investigation and visual evidence
-17. `f07b3da7` fix(chronicles): align Question Quest distractors strictly with week narratives [XX]
-18. `5dc29059` docs(handoff): update handoff record with Task WW verification results
-19. `6637a73f` docs(chronicles): document Task WW 3-point occlusion and HUD clearance measurements
-20. `11256e99` test(chronicles): enforce 3-point plaque occlusion checks and HUD clearance assertions [WW]
-21. `9e8cf649` docs(handoff): update handoff record with Task VV completion and verification status
-22. `e2d50a00` docs(chronicles): document task VV resolution with visual and computed style evidence
-23. `fe501373` fix(chronicles): resolve middle vault plaque overlap and enforce visibility assertions [VV]
-24. `6a47513f` docs(chronicles): document Question Quest implementation and 4/4 playtest results
-25. `f085bb94` feat(chronicles): implement QuestionQuestGame.jsx (Rank #4) with physical maze and 220px signboards
-26. `c4a9dbe7` docs(chronicles): document task UU findings and updated connector relay evidence
-27. `b229df25` fix(chronicles): stabilize W35 connector questions and read sentences from DOM in playtest [UU]
-28. `a44bcfed` docs(chronicles): document Word Forge Carry Engine implementation and 4/4 playtest results
-29. `2d33444c` feat(chronicles): implement WordForgeCarryEngine.jsx (Rank #3) with physical carry and 2-tier matching
-30. `28b9f1b8` docs(chronicles): update audit report and handoff with SS hearts audit and TT 4/4 playtest suite
-31. `a45d882d` fix(chronicles): resolve hearts closure in ConnectorRelayCanvas test hook and add 4/4 playtest suite [SS-TT]
-32. `80581ce7` feat(chronicles): implement ConnectorRelayCanvas.jsx and close tasks OO, PP, ranking updates
-33. `4c4ac84f` feat(chronicles): implement SynonymStormDefense.jsx and SynonymStormDefense.css for Floor 6 Door 1
+## 🚀 Quickstart for Next Session (`/start`)
+Run `/start` at the beginning of the next session to automatically load this handoff and initialize context.

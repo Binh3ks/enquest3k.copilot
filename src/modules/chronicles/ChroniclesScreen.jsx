@@ -194,7 +194,7 @@ export default function ChroniclesScreen() {
 
   // ROOM SCREEN (Daily Chambers or Secret Vaults)
   if (screen === 'room' && activeDayIndex !== null) {
-    if (activeDayIndex >= 5) {
+    if (activeDayIndex >= 7) {
       return (
         <Suspense fallback={<div className="cwm-loading-fallback" style={{ minHeight: '100vh', background: '#0a0d18', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a78bfa' }}>Loading Secret Chamber...</div>}>
           <SecretChamberScreen

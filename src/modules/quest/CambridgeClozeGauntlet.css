@@ -1,4 +1,5 @@
 /* CambridgeClozeGauntlet.css — Zenith Spire Cosmic Aurora Finale Theme */
+@import './game-mobile.css';
 
 .gauntlet-cloze-root {
   position: relative;
@@ -14,10 +15,16 @@
   font-family: 'Outfit', 'Inter', system-ui, sans-serif;
 }
 
+@media (max-width: 900px) {
+  .gauntlet-cloze-root {
+    align-items: flex-start;
+  }
+}
+
 /* Objective Banner */
 .gauntlet-objective-banner {
   position: absolute;
-  top: 52px;
+  top: 92px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 40;
@@ -63,7 +70,7 @@
 /* Feedback Toast */
 .gauntlet-feedback-toast {
   position: absolute;
-  top: 108px;
+  top: 156px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
@@ -349,5 +356,3 @@
     margin: 0;
   }
 }
-
-@import './game-mobile.css';

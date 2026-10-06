@@ -90,30 +90,71 @@ export default function SynonymStormDefense({
 
   // Active falling meteors: [{ id, x, y, vy, word, isTarget }]
   const [meteors, setMeteors] = useState([]);
+  const meteorsRef = useRef([]);
+  const consumedMeteorsRef = useRef(new Set());
+  const batteryRef = useRef(0);
+  const scoreRef = useRef(0);
+  const heartsRef = useRef(3);
+  const timeLeftRef = useRef(duration);
+  const roundIdxRef = useRef(0);
+  const sessionStartTimeRef = useRef(Date.now());
   const meteorSpawnTimer = useRef(0);
   const targetStreakRef = useRef(0);
   const hazardStreakRef = useRef(0);
 
   useEffect(() => {
+    sessionStartTimeRef.current = Date.now();
+    batteryRef.current = 0;
+    scoreRef.current = 0;
+    heartsRef.current = 3;
+    timeLeftRef.current = duration;
+    roundIdxRef.current = 0;
+    consumedMeteorsRef.current.clear();
+    meteorsRef.current = [];
+    setMeteors([]);
+    console.log(`[SYNONYM-STORM-START] Duration: ${duration}s | Rounds: ${rounds.length} | Hearts: 3 | p = 1/4 (N4 = 1.29%)`);
+    if (typeof window !== 'undefined') window.__SYNONYM_STORM_EVENT_LOG__ = [];
+  }, [duration, rounds.length]);
+
+  useEffect(() => {
+    roundIdxRef.current = roundIdx;
+  }, [roundIdx]);
+
+  useEffect(() => {
     if (import.meta.env.DEV && typeof window !== 'undefined') {
       window.__SYNONYM_STORM_EVENT_LOG__ = window.__SYNONYM_STORM_EVENT_LOG__ || [];
+      window.__setSynonymLeo = (x, y) => {
+        if (leoRef.current) {
+          leoRef.current.x = x;
+          leoRef.current.y = y;
+          leoRef.current.vx = 0;
+          leoRef.current.vy = 0;
+          leoRef.current.isGrounded = true;
+        }
+      };
       window.__SYNONYM_STORM_TEST_HOOK__ = {
         setLeoX: (newX) => {
           leoRef.current.x = newX;
         },
         getLeoX: () => leoRef.current.x,
-        getCurrentMeteors: () => meteors,
+        getCurrentMeteors: () => meteorsRef.current,
         getRoundIdx: () => roundIdx,
         getCurrentPair: () => currentPair,
-        injectMeteor: (m) => setMeteors(prev => [...prev, m]),
+        injectMeteor: (m) => {
+          meteorsRef.current.push(m);
+          setMeteors([...meteorsRef.current]);
+        },
         advanceToRound: (newIdx) => {
           setFeedback(null);
+          consumedMeteorsRef.current.clear();
+          meteorsRef.current = [];
           setMeteors([]);
+          roundIdxRef.current = newIdx;
           setRoundIdx(newIdx);
         },
       };
     }
-  }, [meteors, roundIdx, currentPair]);
+  }, [roundIdx, currentPair]);
 
   // Leo physics
   const leoRef = useRef({
@@ -233,19 +274,19 @@ export default function SynonymStormDefense({
         let chosenWord;
         let isTargetMeteor;
 
-        // Balance target vs hazard spawn (45% target, 55% hazard, avoid consecutive > 2)
+        // Balance target vs hazard spawn (1 in 4 target, 3 in 4 hazard matching vocabulary options) -> N4 = 1.29%
         if (targetStreakRef.current >= 2) {
           chosenWord = distractors[Math.floor(Math.random() * distractors.length)];
           isTargetMeteor = false;
           targetStreakRef.current = 0;
           hazardStreakRef.current += 1;
-        } else if (hazardStreakRef.current >= 2) {
+        } else if (hazardStreakRef.current >= 3) {
           chosenWord = targetWord;
           isTargetMeteor = true;
           hazardStreakRef.current = 0;
           targetStreakRef.current += 1;
         } else {
-          const pickTarget = Math.random() < 0.45;
+          const pickTarget = Math.random() < 0.25;
           if (pickTarget) {
             chosenWord = targetWord;
             isTargetMeteor = true;
@@ -260,50 +301,60 @@ export default function SynonymStormDefense({
         }
 
         const spawnX = 60 + Math.random() * (ROOM_WIDTH - 140);
-        setMeteors(prev => [
-          ...prev,
-          {
-            id: `meteor_${Date.now()}_${Math.random()}`,
-            x: spawnX,
-            y: 110,
-            vy: 95 + Math.random() * 45,
-            word: chosenWord,
-            isTarget: isTargetMeteor,
-            targetRoot: currentPair.word,
-          }
-        ]);
+        const newMeteor = {
+          id: `meteor_${Date.now()}_${Math.random()}`,
+          x: spawnX,
+          y: 110,
+          vy: 95 + Math.random() * 45,
+          word: chosenWord,
+          isTarget: isTargetMeteor,
+          targetRoot: currentPair.word,
+        };
+        meteorsRef.current.push(newMeteor);
       }
 
-      // Update Meteors & Collision Check
+      // Update Meteors & Synchronous Collision Check (Eliminating Double-Fire)
       const nowMs = Date.now();
-      setMeteors(prevMeteors => {
-        const nextMeteors = [];
-        for (const m of prevMeteors) {
-          const ny = m.y + m.vy * dt;
+      const survivingMeteors = [];
 
-          // Check collision with Leo's Aegis Shield (ignore stale meteors from previous round)
-          const distLeo = Math.hypot((leo.x + 20) - (m.x + 35), (leo.y + 24) - (ny + 20));
+      for (const m of meteorsRef.current) {
+        m.y += m.vy * dt;
 
-          if (distLeo < 52 && (!m.targetRoot || m.targetRoot === currentPair.word)) {
-            // Intercepted with Shield!
+        // Check collision with Leo's Aegis Shield (ignore stale meteors from previous round)
+        const distLeo = Math.hypot((leo.x + 20) - (m.x + 35), (leo.y + 24) - (m.y + 20));
+
+        if (distLeo < 52 && (!m.targetRoot || m.targetRoot === currentPair.word)) {
+          // Intercepted with Shield! Guard against multiple hits on same meteor entity
+          if (!consumedMeteorsRef.current.has(m.id)) {
+            consumedMeteorsRef.current.add(m.id);
+            const elapsedSec = (nowMs - sessionStartTimeRef.current) / 1000;
+
             if (m.isTarget) {
               // DEFLECTED CORRECT SYNONYM!
               speakText(m.word);
-              setScore(s => s + 50);
+              scoreRef.current += 50;
+              setScore(scoreRef.current);
 
               const chargeStep = Math.round(100 / rounds.length);
-              setBatteryCharge(b => {
-                const next = Math.min(100, b + chargeStep);
-                if (next >= 100 || roundIdx + 1 >= rounds.length) {
-                  // ALL ROUNDS DEFENDED!
-                  setPhase('cleared');
-                  const finalScore = score + 60 + (timeLeft * 2);
-                  setScore(finalScore);
-                  recordPersonalBest('synonym_storm', finalScore);
-                  speakText('Gale battery fully charged! All synonyms mastered!');
-                }
-                return next;
-              });
+              const nextBattery = Math.min(100, batteryRef.current + chargeStep);
+              batteryRef.current = nextBattery;
+              setBatteryCharge(nextBattery);
+
+              console.log(`[SYNONYM-STORM-ACTION] Deflected Target Synonym: "${m.word}" (matches "${currentPair.word}") | Round: ${roundIdxRef.current + 1}/${rounds.length} | Battery: ${nextBattery}% | Time Spent: ${elapsedSec.toFixed(2)}s | HUD timeLeft: ${timeLeftRef.current}s`);
+
+              if (nextBattery >= 100 || roundIdxRef.current + 1 >= rounds.length) {
+                // ALL ROUNDS DEFENDED!
+                consumedMeteorsRef.current.clear();
+                meteorsRef.current = [];
+                setMeteors([]);
+                setPhase('cleared');
+                const finalScore = scoreRef.current + 60 + (timeLeftRef.current * 2);
+                scoreRef.current = finalScore;
+                setScore(finalScore);
+                recordPersonalBest('synonym_storm', finalScore);
+                speakText('Gale battery fully charged! All synonyms mastered!');
+                console.log(`[SYNONYM-STORM-CLEARED] Battery 100% | Time Spent: ${elapsedSec.toFixed(2)}s | Budget: ${duration}s | Margin: ${(duration - elapsedSec).toFixed(2)}s`);
+              }
 
               const fbText = `✨ SYNONYM DEFLECTED! "${m.word}" matches "${currentPair.word}"!`;
               setFeedback({ type: 'correct', text: fbText });
@@ -314,7 +365,7 @@ export default function SynonymStormDefense({
                   type: 'correct',
                   word: m.word,
                   targetRoot: currentPair.word,
-                  round: roundIdx + 1,
+                  round: roundIdxRef.current + 1,
                   timestamp: nowMs,
                   text: fbText
                 });
@@ -323,48 +374,61 @@ export default function SynonymStormDefense({
               // Advance round after brief delay and clear old round's falling meteors
               setTimeout(() => {
                 setFeedback(null);
+                consumedMeteorsRef.current.clear();
+                meteorsRef.current = [];
                 setMeteors([]);
-                setRoundIdx(r => (r + 1 < rounds.length ? r + 1 : r));
+                setRoundIdx(r => {
+                  const nr = r + 1 < rounds.length ? r + 1 : r;
+                  roundIdxRef.current = nr;
+                  return nr;
+                });
               }, 1200);
 
-              continue; // meteor consumed
             } else {
               // HIT HAZARD / ANTONYM METEOR!
               if (nowMs > leo.invincibleUntil) {
                 leo.invincibleUntil = nowMs + INVINCIBILITY_MS;
-                setHearts(h => {
-                  const next = Math.max(0, h - 1);
-                  if (next === 0) setPhase('ko');
-                  return next;
-                });
+                heartsRef.current = Math.max(0, heartsRef.current - 1);
+                setHearts(heartsRef.current);
+
+                console.log(`[SYNONYM-STORM-ACTION] Hit Hazard: "${m.word}" (wrong for "${currentPair.word}") | Hearts: ${heartsRef.current} (-1) | Time Spent: ${elapsedSec.toFixed(2)}s | HUD timeLeft: ${timeLeftRef.current}s`);
+
+                if (heartsRef.current === 0) {
+                  setPhase('ko');
+                }
+
                 const fbText = `⚡ HAZARD! "${m.word}" is an ANTONYM / WRONG WORD for "${currentPair.word}"!`;
                 setFeedback({ type: 'wrong', text: fbText });
+
                 if (typeof window !== 'undefined') {
                   window.__SYNONYM_STORM_EVENT_LOG__ = window.__SYNONYM_STORM_EVENT_LOG__ || [];
                   window.__SYNONYM_STORM_EVENT_LOG__.push({
-                    type: 'wrong',
+                    type: 'hazard',
                     word: m.word,
                     targetRoot: currentPair.word,
-                    round: roundIdx + 1,
+                    round: roundIdxRef.current + 1,
+                    hearts: heartsRef.current,
                     timestamp: nowMs,
                     text: fbText
                   });
                 }
                 setTimeout(() => setFeedback(null), 1400);
               }
-              continue; // meteor consumed
             }
           }
-
-          // Despawn if hit bottom
-          if (ny > FLOOR_Y + 50) {
-            continue;
-          }
-
-          nextMeteors.push({ ...m, y: ny });
+          continue; // meteor consumed
         }
-        return nextMeteors;
-      });
+
+        // Despawn if hit bottom
+        if (m.y > FLOOR_Y + 50) {
+          continue;
+        }
+
+        survivingMeteors.push(m);
+      }
+
+      meteorsRef.current = survivingMeteors;
+      setMeteors([...survivingMeteors]);
 
       // Leo animation state
       let animState = 'idle';
@@ -392,10 +456,13 @@ export default function SynonymStormDefense({
     const timer = setInterval(() => {
       setTimeLeft(t => {
         if (t <= 1) {
+          timeLeftRef.current = 0;
           setPhase('ko');
           return 0;
         }
-        return t - 1;
+        const nextTime = t - 1;
+        timeLeftRef.current = nextTime;
+        return nextTime;
       });
     }, 1000);
     return () => clearInterval(timer);
@@ -435,6 +502,14 @@ export default function SynonymStormDefense({
   });
 
   const handleRetry = () => {
+    if (typeof window !== 'undefined') window.__SYNONYM_STORM_EVENT_LOG__ = [];
+    batteryRef.current = 0;
+    scoreRef.current = 0;
+    heartsRef.current = 3;
+    timeLeftRef.current = duration;
+    roundIdxRef.current = 0;
+    consumedMeteorsRef.current.clear();
+    meteorsRef.current = [];
     setHearts(3);
     setScore(0);
     setRoundIdx(0);
@@ -519,7 +594,7 @@ export default function SynonymStormDefense({
         ))}
 
         {/* Falling Meteors */}
-        {meteors.map(m => (
+        {phase === 'playing' && meteors.map(m => (
           <div
             key={m.id}
             className={`falling-synonym-meteor ${m.isTarget ? 'meteor-synonym' : 'meteor-hazard'}`}
@@ -552,11 +627,13 @@ export default function SynonymStormDefense({
 
       {/* ── HUD ── */}
       <HUDOverlay
+        floorDoorLabel="Floor 6 • Door 1 — Synonym Storm (Gale Spire)"
         hearts={hearts}
+        round={`${roundIdx + 1}/${rounds.length}`}
         score={score}
         timeLeft={timeLeft}
-        wordsCollected={roundIdx}
-        totalWords={rounds.length}
+        wordsCollected={roundIdx + 1}
+        totalWords={0}
         floorNumber={6}
         doorLabel="Door 1 — Synonym Storm (Gale Spire)"
       />

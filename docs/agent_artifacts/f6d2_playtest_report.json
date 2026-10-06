@@ -1,0 +1,335 @@
+{
+  "testName": "F6D2 Connector Burst Real Chrome Playtest (Child-Pace Simulation)",
+  "timestamp": "2026-09-29T09:27:19.593Z",
+  "invariants": {
+    "explicitHearts": true,
+    "floorDoorLabel": true,
+    "roundPillFormat": true,
+    "macroTimerPresent": true,
+    "heartDeductionOnWrong": true,
+    "heartsResetOnRetry": true,
+    "sessionExclusionZeroOverlap": true
+  },
+  "rounds": [
+    {
+      "roundIndex": 1,
+      "sentence": "Water spilled out, _____ we cleaned it.",
+      "keyPressed": "1",
+      "isCorrect": true,
+      "heartsBefore": 2,
+      "heartsAfter": 2,
+      "timestampEpoch": 1790674052011,
+      "macroTimerAtEvent": "1:52",
+      "options": [
+        "so",
+        "although",
+        "because"
+      ],
+      "correctSlot": 0,
+      "targetAnswer": "so",
+      "optionChosen": "so",
+      "slotIndex": 0,
+      "inputMethod": "keyboard_1",
+      "remainingSeconds": 112,
+      "thinkingTimeMs": 8015
+    },
+    {
+      "roundIndex": 2,
+      "sentence": "She cleaned cuts, _____ she applied cream.",
+      "keyPressed": "1",
+      "isCorrect": false,
+      "heartsBefore": 2,
+      "heartsAfter": 1,
+      "timestampEpoch": 1790674062174,
+      "macroTimerAtEvent": "1:41",
+      "options": [
+        "because",
+        "and",
+        "but"
+      ],
+      "correctSlot": 1,
+      "targetAnswer": "and",
+      "optionChosen": "because",
+      "slotIndex": 0,
+      "inputMethod": "keyboard_1",
+      "remainingSeconds": 101,
+      "thinkingTimeMs": 8004
+    },
+    {
+      "roundIndex": 3,
+      "sentence": "He wore boots _____ it rained outside.",
+      "keyPressed": "2",
+      "isCorrect": true,
+      "heartsBefore": 1,
+      "heartsAfter": 1,
+      "timestampEpoch": 1790674071924,
+      "macroTimerAtEvent": "1:32",
+      "options": [
+        "so",
+        "because",
+        "although"
+      ],
+      "correctSlot": 1,
+      "targetAnswer": "because",
+      "optionChosen": "because",
+      "slotIndex": 1,
+      "inputMethod": "keyboard_2",
+      "remainingSeconds": 92,
+      "thinkingTimeMs": 8005
+    },
+    {
+      "roundIndex": 4,
+      "sentence": "Hold the handrail _____ you walk down.",
+      "keyPressed": "1",
+      "isCorrect": true,
+      "heartsBefore": 1,
+      "heartsAfter": 1,
+      "timestampEpoch": 1790674081527,
+      "macroTimerAtEvent": "1:22",
+      "options": [
+        "while",
+        "although",
+        "so"
+      ],
+      "correctSlot": 0,
+      "targetAnswer": "while",
+      "optionChosen": "while",
+      "slotIndex": 0,
+      "inputMethod": "keyboard_1",
+      "remainingSeconds": 82,
+      "thinkingTimeMs": 7999
+    },
+    {
+      "roundIndex": 5,
+      "sentence": "The floor was wet, _____ Jake slipped.",
+      "keyPressed": "2",
+      "isCorrect": true,
+      "heartsBefore": 1,
+      "heartsAfter": 1,
+      "timestampEpoch": 1790674091127,
+      "macroTimerAtEvent": "1:12",
+      "options": [
+        "because",
+        "so",
+        "although"
+      ],
+      "correctSlot": 1,
+      "targetAnswer": "so",
+      "optionChosen": "so",
+      "slotIndex": 1,
+      "inputMethod": "keyboard_2",
+      "remainingSeconds": 72,
+      "thinkingTimeMs": 7995
+    },
+    {
+      "roundIndex": 6,
+      "sentence": "Jake walked slowly _____ tiles were slick.",
+      "keyPressed": "1",
+      "isCorrect": true,
+      "heartsBefore": 1,
+      "heartsAfter": 1,
+      "timestampEpoch": 1790674100730,
+      "macroTimerAtEvent": "1:03",
+      "options": [
+        "because",
+        "although",
+        "so"
+      ],
+      "correctSlot": 0,
+      "targetAnswer": "because",
+      "optionChosen": "because",
+      "slotIndex": 0,
+      "inputMethod": "keyboard_1",
+      "remainingSeconds": 63,
+      "thinkingTimeMs": 7998
+    }
+  ],
+  "retryRounds": [
+    {
+      "retrySetIndex": 2,
+      "roundIndex": 1,
+      "sentence": "Tom slipped down _____ he was careful.",
+      "keyPressed": "1",
+      "isCorrect": true,
+      "heartsBefore": 2,
+      "heartsAfter": 2,
+      "timestampEpoch": 1790674111751,
+      "macroTimerAtEvent": "1:52",
+      "options": [
+        "although",
+        "because",
+        "so"
+      ],
+      "correctSlot": 0,
+      "targetAnswer": "although",
+      "optionChosen": "although",
+      "slotIndex": 0,
+      "inputMethod": "keyboard_1",
+      "remainingSeconds": 112,
+      "thinkingTimeMs": 8003
+    },
+    {
+      "retrySetIndex": 2,
+      "roundIndex": 2,
+      "sentence": "Jake rested quietly _____ pain went away.",
+      "keyPressed": "1",
+      "isCorrect": true,
+      "heartsBefore": 2,
+      "heartsAfter": 2,
+      "timestampEpoch": 1790674121357,
+      "macroTimerAtEvent": "1:42",
+      "options": [
+        "until",
+        "so",
+        "although"
+      ],
+      "correctSlot": 0,
+      "targetAnswer": "until",
+      "optionChosen": "until",
+      "slotIndex": 0,
+      "inputMethod": "keyboard_1",
+      "remainingSeconds": 102,
+      "thinkingTimeMs": 8001
+    },
+    {
+      "retrySetIndex": 2,
+      "roundIndex": 3,
+      "sentence": "Wear rubber shoes, _____ you might slip.",
+      "keyPressed": "2",
+      "isCorrect": true,
+      "heartsBefore": 2,
+      "heartsAfter": 2,
+      "timestampEpoch": 1790674130960,
+      "macroTimerAtEvent": "1:33",
+      "options": [
+        "although",
+        "or",
+        "because"
+      ],
+      "correctSlot": 1,
+      "targetAnswer": "or",
+      "optionChosen": "or",
+      "slotIndex": 1,
+      "inputMethod": "keyboard_2",
+      "remainingSeconds": 93,
+      "thinkingTimeMs": 7998
+    },
+    {
+      "retrySetIndex": 2,
+      "roundIndex": 4,
+      "sentence": "Put on ice _____ swelling goes down.",
+      "keyPressed": "2",
+      "isCorrect": true,
+      "heartsBefore": 2,
+      "heartsAfter": 2,
+      "timestampEpoch": 1790674140565,
+      "macroTimerAtEvent": "1:23",
+      "options": [
+        "although",
+        "until",
+        "so"
+      ],
+      "correctSlot": 1,
+      "targetAnswer": "until",
+      "optionChosen": "until",
+      "slotIndex": 1,
+      "inputMethod": "keyboard_2",
+      "remainingSeconds": 83,
+      "thinkingTimeMs": 8000
+    },
+    {
+      "retrySetIndex": 2,
+      "roundIndex": 5,
+      "sentence": "The bell rang, _____ students walked out.",
+      "keyPressed": "3",
+      "isCorrect": true,
+      "heartsBefore": 2,
+      "heartsAfter": 2,
+      "timestampEpoch": 1790674150166,
+      "macroTimerAtEvent": "1:13",
+      "options": [
+        "because",
+        "but",
+        "and"
+      ],
+      "correctSlot": 2,
+      "targetAnswer": "and",
+      "optionChosen": "and",
+      "slotIndex": 2,
+      "inputMethod": "keyboard_3",
+      "remainingSeconds": 73,
+      "thinkingTimeMs": 7996
+    },
+    {
+      "retrySetIndex": 2,
+      "roundIndex": 6,
+      "sentence": "You will slip _____ you walk carefully.",
+      "keyPressed": "3",
+      "isCorrect": true,
+      "heartsBefore": 2,
+      "heartsAfter": 2,
+      "timestampEpoch": 1790674159771,
+      "macroTimerAtEvent": "1:04",
+      "options": [
+        "because",
+        "so",
+        "unless"
+      ],
+      "correctSlot": 2,
+      "targetAnswer": "unless",
+      "optionChosen": "unless",
+      "slotIndex": 2,
+      "inputMethod": "keyboard_3",
+      "remainingSeconds": 64,
+      "thinkingTimeMs": 8001
+    }
+  ],
+  "scoreBreakdown": {
+    "roundsCompleted": 6,
+    "correctAnswers": 5,
+    "baseXP": 250,
+    "bonusXP": 126,
+    "totalScore": 376,
+    "remainingSeconds": 63
+  },
+  "retryVerification": {
+    "attempt1": {
+      "startTimeEpoch": 1790674043858,
+      "round1Sentence": "Water spilled out, _____ we cleaned it.",
+      "sentences": [
+        "Water spilled out, _____ we cleaned it.",
+        "She cleaned cuts, _____ she applied cream.",
+        "He wore boots _____ it rained outside.",
+        "Hold the handrail _____ you walk down.",
+        "The floor was wet, _____ Jake slipped.",
+        "Jake walked slowly _____ tiles were slick."
+      ],
+      "hearts": 2
+    },
+    "attempt2": {
+      "startTimeEpoch": 1790674102623,
+      "round1Sentence": "Tom slipped down _____ he was careful.",
+      "sentences": [
+        "Tom slipped down _____ he was careful.",
+        "Jake rested quietly _____ pain went away.",
+        "Wear rubber shoes, _____ you might slip.",
+        "Put on ice _____ swelling goes down.",
+        "The bell rang, _____ students walked out.",
+        "You will slip _____ you walk carefully."
+      ],
+      "hearts": 2
+    },
+    "overlapCount": 0,
+    "overlappingSentences": [],
+    "calculatedZeroOverlap": true
+  },
+  "screenshots": [
+    "f6d2_01_round1_initial.png",
+    "f6d2_02_round1_correct_energized.png",
+    "f6d2_03_round2_wrong_heart_drop.png",
+    "f6d2_04_cleared_victory_modal.png",
+    "f6d2_05_retry_session_exclusion.png"
+  ],
+  "isCleared": true,
+  "victoryStars": 3
+}

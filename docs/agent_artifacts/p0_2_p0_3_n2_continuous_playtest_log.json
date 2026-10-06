@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-09-14T14:40:46.540Z",
+  "titanForge": {
+    "photo1ReadingMidPhase": {
+      "stage": "MID_READING_PHASE",
+      "roundPill": "ROUND 3/4",
+      "roundChip": "Gear 3 / 4",
+      "stem": "Had Jake not noticed the warning sign, he",
+      "hasToast": false,
+      "hearts": 3,
+      "xpText": "80",
+      "timerText": "⏱️\n1:04",
+      "steamBlastText": "💨 STEAM BLAST 💨",
+      "leoY": 363,
+      "ventY": 593,
+      "verticalSeparationPx": 230,
+      "isCompletelySafeFromVent": true
+    },
+    "photo2AnswerClickedPhase": {
+      "stage": "ANSWER_CLICKED_PHASE",
+      "roundPill": "ROUND 3/4",
+      "roundChip": "Gear 3 / 4",
+      "feedbackToast": "⚙️ TITAN HEART ENGAGED! \"might have suffered an injury\"",
+      "hearts": 3,
+      "xpText": "120",
+      "timerText": "⏱️\n0:47",
+      "actualTimeSpentInR3Sec": 20.36,
+      "roundBudgetSec": 25,
+      "verifiedSafetyMarginSec": 4.64,
+      "rawConsoleLog": "[TITAN-FORGE-ROUND-ACTION] Round 3 | Action: CORRECT | Time Spent: 20.36s | Budget: 25s | Margin: 4.64s | HUD timeLeft: 47s"
+    }
+  },
+  "riddleRunMaze": {
+    "photo3AnswerClickedPhase": {
+      "roundPill": "ROUND 4/4",
+      "prompt": "\"I am cold and applied to an ankle to reduce swelling after a slip. What am I?\"",
+      "selectedDoor": "Ice pack",
+      "feedbackToast": "✨ SANCTUARY UNLOCKED! \"Ice pack\" is correct!",
+      "hearts": 3,
+      "xpText": "160",
+      "timerText": "⏱️\n0:25",
+      "actualTimeSpentInR4Sec": 19.12,
+      "roundBudgetSec": 22.5,
+      "verifiedSafetyMarginSec": 3.38,
+      "rawConsoleLog": "[RIDDLE-RUN-ROUND-ACTION] Riddle 4 | Action: CORRECT | Time Spent: 19.12s | Budget: 22.5s | Margin: 3.38s | HUD timeLeft: 25s"
+    }
+  },
+  "consoleLogs": [
+    {
+      "text": "[TITAN-FORGE-ROUND-START] Round 1/4 started | timeLeft: 100s | stem: \"Without sufficient friction, the vehicle\"",
+      "time": 1789396726830
+    },
+    {
+      "text": "[TITAN-FORGE-ROUND-START] Round 1/4 started | timeLeft: 100s | stem: \"Without sufficient friction, the vehicle\"",
+      "time": 1789396726831
+    },
+    {
+      "text": "[TITAN-FORGE-ROUND-ACTION] Round 1 | Action: CORRECT | Time Spent: 14.71s | Budget: 25s | Margin: 10.29s | HUD timeLeft: 86s",
+      "time": 1789396741540
+    },
+    {
+      "text": "[TITAN-FORGE-ROUND-START] Round 2/4 started | timeLeft: 84s | stem: \"The engineer designed rubber soles so that\"",
+      "time": 1789396743151
+    },
+    {
+      "text": "[TITAN-FORGE-ROUND-ACTION] Round 2 | Action: CORRECT | Time Spent: 15.13s | Budget: 25s | Margin: 9.87s | HUD timeLeft: 69s",
+      "time": 1789396758279
+    },
+    {
+      "text": "[TITAN-FORGE-ROUND-START] Round 3/4 started | timeLeft: 67s | stem: \"Had Jake not noticed the warning sign, he\"",
+      "time": 1789396759881
+    },
+    {
+      "text": "[TITAN-FORGE-ROUND-ACTION] Round 3 | Action: CORRECT | Time Spent: 20.36s | Budget: 25s | Margin: 4.64s | HUD timeLeft: 47s",
+      "time": 1789396780241
+    },
+    {
+      "text": "[RIDDLE-RUN-ROUND-START] Riddle 1/4 started | timeLeft: 90s | prompt: \"I am the invisible force that stops shoes from slipping on wet tiles. What am I?\"",
+      "time": 1789396780427
+    },
+    {
+      "text": "[RIDDLE-RUN-ROUND-START] Riddle 1/4 started | timeLeft: 90s | prompt: \"I am the invisible force that stops shoes from slipping on wet tiles. What am I?\"",
+      "time": 1789396780427
+    },
+    {
+      "text": "[RIDDLE-RUN-ROUND-ACTION] Riddle 1 | Action: CORRECT | Time Spent: 14.71s | Budget: 22.5s | Margin: 7.79s | HUD timeLeft: 76s",
+      "time": 1789396795137
+    },
+    {
+      "text": "[RIDDLE-RUN-ROUND-START] Riddle 2/4 started | timeLeft: 74s | prompt: \"I have soles made of special rubber that give strong grip on wet floors. What am I?\"",
+      "time": 1789396796646
+    },
+    {
+      "text": "[RIDDLE-RUN-ROUND-ACTION] Riddle 2 | Action: CORRECT | Time Spent: 14.81s | Budget: 22.5s | Margin: 7.69s | HUD timeLeft: 59s",
+      "time": 1789396811452
+    },
+    {
+      "text": "[RIDDLE-RUN-ROUND-START] Riddle 3/4 started | timeLeft: 58s | prompt: \"I am a room filled with test tubes where students investigate science. What am I?\"",
+      "time": 1789396812957
+    },
+    {
+      "text": "[RIDDLE-RUN-ROUND-ACTION] Riddle 3 | Action: CORRECT | Time Spent: 12.81s | Budget: 22.5s | Margin: 9.69s | HUD timeLeft: 45s",
+      "time": 1789396825766
+    },
+    {
+      "text": "[RIDDLE-RUN-ROUND-START] Riddle 4/4 started | timeLeft: 44s | prompt: \"I am cold and applied to an ankle to reduce swelling after a slip. What am I?\"",
+      "time": 1789396827270
+    },
+    {
+      "text": "[RIDDLE-RUN-ROUND-ACTION] Riddle 4 | Action: CORRECT | Time Spent: 19.12s | Budget: 22.5s | Margin: 3.38s | HUD timeLeft: 25s",
+      "time": 1789396846386
+    }
+  ]
+}

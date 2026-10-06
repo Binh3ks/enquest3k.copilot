@@ -1,6 +1,12 @@
 /**
- * HUDOverlay.jsx — Game HUD: hearts, score, timer, word progress
- * GDD §1.2 — "❤️❤️❤️ — 3 tim, hiển thị HUD góc trên trái"
+ * HUDOverlay.jsx — Game HUD: hearts, score/xp, timer, round, floorDoorLabel
+ * Based on ENGQUEST3K_REDESIGN_THEO_NHOM_CO_CHE.md §2 (Formula 3 / Shared HUD Component)
+ *
+ * 4 Mandatory Invariant Props:
+ * 1. floorDoorLabel (e.g. "Floor 6 Door 2 — Connector Relay")
+ * 2. hearts (number of active hearts remaining)
+ * 3. round (current round string, e.g. "1/5", "3/6")
+ * 4. xp (current session accumulated XP)
  */
 import React from 'react';
 import './HUDOverlay.css';
@@ -9,34 +15,74 @@ import './HUDOverlay.css';
  * HUDOverlay — fixed HUD displayed on top of the dungeon room during gameplay
  *
  * @param {{
- *   hearts: number,          — 0–3
- *   score: number,           — XP accumulated in this room
- *   timeLeft: number,        — seconds remaining
- *   wordsCollected: number,  — crystals collected so far
- *   totalWords: number,      — total crystals in room
- *   roomName?: string,       — e.g. "Chamber of Tales"
- *   floorNumber?: number,    — 1–5
- *   doorLabel?: string,      — e.g. "Vocab Door"
+ *   floorDoorLabel?: string,
+ *   hearts: number,
+ *   round?: string | number,
+ *   xp?: number,
+ *   maxHearts?: number,
+ *   score?: number,
+ *   timeLeft?: number,
+ *   wordsCollected?: number,
+ *   totalWords?: number,
+ *   roomName?: string,
+ *   floorNumber?: number,
+ *   doorLabel?: string,
+ *   title?: string,
+ *   rightActions?: React.ReactNode,
  * }} props
  */
 export default function HUDOverlay({
-  hearts = 3,
-  maxHearts = 3,
-  score = 0,
+  floorDoorLabel,
+  hearts,
+  round,
+  roundLabel,
+  xp,
+  maxHearts,
+  score,
   timeLeft = 60,
   wordsCollected = 0,
   totalWords = 6,
   roomName,
   floorNumber,
   doorLabel,
+  title,
   rightActions,
 }) {
+  // Resolve unified 4 props with backward compatibility
+  const resolvedFloorDoor = floorDoorLabel || 
+    (floorNumber && doorLabel ? `Floor ${floorNumber} • ${doorLabel}` : 
+    (floorNumber ? `Floor ${floorNumber}` : 
+    (doorLabel || title || roomName || '')));
+
+  const resolvedHearts = hearts !== undefined && hearts !== null ? hearts : 3;
+
+  // Derive maxHearts safely: if not explicitly provided, anchor to initial hearts on mount (fallback 3)
+  const initialHeartsRef = React.useRef(resolvedHearts);
+  const resolvedMaxHearts = maxHearts !== undefined && maxHearts !== null ? maxHearts : initialHeartsRef.current;
+
+  const resolvedRound = round !== undefined && round !== null ? 
+    (typeof round === 'object' ? `${round.current || 0}/${round.total || 0}` : String(round).replace(/^Round\s*/i, '')) : 
+    (totalWords ? `${wordsCollected}/${totalWords}` : '');
+
+  const resolvedXP = xp !== undefined && xp !== null ? xp : (score !== undefined && score !== null ? score : 0);
+
+  // Strict 4-prop validation check (Development Warning / Assertion)
+  const missing = [];
+  if (!floorDoorLabel && !(floorNumber && doorLabel) && !title && !roomName) missing.push('floorDoorLabel');
+  if (hearts === undefined || hearts === null) missing.push('hearts');
+  if (round === undefined && round === null && (wordsCollected === undefined || totalWords === undefined)) missing.push('round');
+  if (xp === undefined && score === undefined) missing.push('xp');
+
+  if (missing.length > 0 && typeof console !== 'undefined') {
+    console.error(`🚨 [HUDOverlay Missing Props Violation] Missing required props: ${missing.join(', ')}. Game must supply all 4 mandatory props: floorDoorLabel, hearts, round, xp.`);
+  }
+
   const isLowTime  = timeLeft <= 15;
-  const isLowHP    = hearts <= 1;
+  const isLowHP    = resolvedHearts <= 1;
   const progress   = totalWords > 0 ? wordsCollected / totalWords : 0;
 
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = String(timeLeft % 60).padStart(2, '0');
+  const minutes = Math.floor(Math.max(0, timeLeft) / 60);
+  const seconds = String(Math.max(0, timeLeft) % 60).padStart(2, '0');
   const timeStr = `${minutes}:${seconds}`;
 
   return (
@@ -46,25 +92,31 @@ export default function HUDOverlay({
       <div className="hud-top-bar">
 
         {/* Hearts */}
-        <div className={`hud-hearts ${isLowHP ? 'hud-hearts-low' : ''}`} aria-label={`${hearts} hearts remaining`}>
-          {Array.from({ length: maxHearts }, (_, i) => i + 1).map(n => (
+        <div className={`hud-hearts ${isLowHP ? 'hud-hearts-low' : ''}`} aria-label={`${resolvedHearts} hearts remaining`}>
+          {Array.from({ length: resolvedMaxHearts }, (_, i) => i + 1).map(n => (
             <span
               key={n}
-              className={`hud-heart ${n <= hearts ? 'hud-heart-full' : 'hud-heart-empty'}`}
+              className={`hud-heart ${n <= resolvedHearts ? 'hud-heart-full' : 'hud-heart-empty'}`}
               aria-hidden="true"
             >
-              {n <= hearts ? '❤️' : '🖤'}
+              {n <= resolvedHearts ? '❤️' : '🖤'}
             </span>
           ))}
         </div>
 
-        {/* Center: Room info */}
-        {(roomName || floorNumber) && (
-          <div className="hud-room-info">
-            {floorNumber && <span className="hud-floor-badge">Floor {floorNumber}</span>}
-            {doorLabel   && <span className="hud-door-label">{doorLabel}</span>}
-          </div>
-        )}
+        {/* Center: Floor + Door info & Round Badge */}
+        <div className="hud-room-info">
+          {resolvedFloorDoor && (
+            <span className="hud-floor-badge" title={resolvedFloorDoor}>
+              {resolvedFloorDoor}
+            </span>
+          )}
+          {resolvedRound && (
+            <span className="hud-round-pill">
+              {roundLabel !== undefined ? (roundLabel ? `${roundLabel} ${resolvedRound}` : resolvedRound) : `ROUND ${resolvedRound}`}
+            </span>
+          )}
+        </div>
 
         {/* Right controls: actions + timer */}
         <div className="hud-top-right-controls">
@@ -82,32 +134,38 @@ export default function HUDOverlay({
         {/* XP score */}
         <div className="hud-score">
           <span className="hud-score-icon" aria-hidden="true">⚡</span>
-          <span className="hud-score-value">{score}</span>
+          <span className="hud-score-value">{resolvedXP}</span>
           <span className="hud-score-unit">XP</span>
         </div>
 
-        {/* Word progress dots */}
-        <div className="hud-word-progress" aria-label={`${wordsCollected} of ${totalWords} words collected`}>
-          {Array.from({ length: totalWords }).map((_, i) => (
-            <span
-              key={i}
-              className={`hud-word-dot ${i < wordsCollected ? 'hud-word-dot-collected' : ''}`}
-              aria-hidden="true"
-            />
-          ))}
-        </div>
+        {/* Word progress dots (if multi-word collection) */}
+        {totalWords > 0 && (
+          <div className="hud-word-progress" aria-label={`${wordsCollected} of ${totalWords} items collected`}>
+            {Array.from({ length: totalWords }).map((_, i) => (
+              <span
+                key={i}
+                className={`hud-word-dot ${i < wordsCollected ? 'hud-word-dot-collected' : ''}`}
+                aria-hidden="true"
+              />
+            ))}
+          </div>
+        )}
 
-        {/* Crystal count */}
-        <div className="hud-crystal-count" aria-label={`Crystals: ${wordsCollected}/${totalWords}`}>
-          <span aria-hidden="true">💎</span>
-          <span>{wordsCollected}/{totalWords}</span>
-        </div>
+        {/* Item count */}
+        {totalWords > 0 && (
+          <div className="hud-crystal-count" aria-label={`Progress: ${wordsCollected}/${totalWords}`}>
+            <span aria-hidden="true">💎</span>
+            <span>{wordsCollected}/{totalWords}</span>
+          </div>
+        )}
       </div>
 
-      {/* ── Word progress bar ───────────────────────────────────────── */}
-      <div className="hud-progress-track" aria-hidden="true">
-        <div className="hud-progress-fill" style={{ width: `${progress * 100}%` }} />
-      </div>
+      {/* ── Progress bar ───────────────────────────────────────── */}
+      {totalWords > 0 && (
+        <div className="hud-progress-track" aria-hidden="true">
+          <div className="hud-progress-fill" style={{ width: `${progress * 100}%` }} />
+        </div>
+      )}
     </div>
   );
 }

@@ -15,13 +15,14 @@
  */
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Volume2, Trophy, RotateCcw, AlertTriangle, Sparkles, ArrowRight } from 'lucide-react';
+import { Volume2, Trophy, RotateCcw, AlertTriangle, Sparkles, ArrowRight, HelpCircle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
 import LeoCharacterBack from './LeoCharacterBack';
 import HUDOverlay from './HUDOverlay';
 import FloatingExitBtn from './FloatingExitBtn';
 import useGestureControls from './useGestureControls';
+import GameInstructionModal from '../chronicles/games/GameInstructionModal';
 import './HighwaySprintCanvas.css';
 
 const DEFAULT_HIGHWAY_ROUNDS = [
@@ -34,8 +35,62 @@ const DEFAULT_HIGHWAY_ROUNDS = [
   { targetWord: 'traction', definition: 'The grip between shoes or tires and the floor to stop slipping', distractors: ['motion', 'weight', 'speed'] },
   { targetWord: 'prevent', definition: 'To stop something dangerous or painful from happening', distractors: ['allow', 'create', 'forget'] },
   { targetWord: 'polished', definition: 'Made smooth and shiny by rubbing or waxing', distractors: ['rough', 'dusty', 'cracked'] },
-  { targetWord: 'bandage', definition: 'A strip of clean cloth used to cover and protect a wound', distractors: ['blanket', 'ribbon', 'napkin'] },
 ];
+
+const MAX_HEARTS = 2; // Locked N4 invariant for Floor 4 Door 1
+
+// ── Wave Word Distinction & Anti-Duplicate Lemma Utility ───────────────────────
+function getWordStem(str) {
+  if (!str) return '';
+  const clean = str.trim().toLowerCase().replace(/[^a-z]/g, '');
+  return clean
+    .replace(/(?:ing|edly|ingly|tion|ment|able|ible|ness|less|ful|ers|est|ed|ly|es|s)$/, '')
+    .slice(0, 5);
+}
+
+function areWordsNearDuplicate(w1, w2) {
+  if (!w1 || !w2) return false;
+  const s1 = w1.trim().toLowerCase();
+  const s2 = w2.trim().toLowerCase();
+  if (s1 === s2) return true;
+  if (s1.includes(s2) || s2.includes(s1)) return true;
+  const stem1 = getWordStem(s1);
+  const stem2 = getWordStem(s2);
+  if (stem1.length >= 3 && stem2.length >= 3 && stem1 === stem2) return true;
+  return false;
+}
+
+export function validateWaveDistinction(targetWord, candidateDistractors, fallbackPool = []) {
+  const chosenDistractors = [];
+  const target = (targetWord || '').trim().toLowerCase();
+  const candidateList = [...(candidateDistractors || []), ...fallbackPool];
+
+  for (const rawCand of candidateList) {
+    if (chosenDistractors.length >= 2) break;
+    const cand = (typeof rawCand === 'string' ? rawCand : rawCand?.word || rawCand?.targetWord || '').trim().toLowerCase();
+    if (!cand || cand.length < 2) continue;
+    
+    // Check against target
+    if (areWordsNearDuplicate(target, cand)) continue;
+
+    // Check against already chosen distractors
+    const collidesWithChosen = chosenDistractors.some(existing => areWordsNearDuplicate(existing, cand));
+    if (collidesWithChosen) continue;
+
+    chosenDistractors.push(cand);
+  }
+
+  // Safe Fallback pool if distractors are insufficient
+  const safeFallbacks = ['hazard', 'obstacle', 'velocity', 'gravity', 'magnetism', 'friction', 'safety', 'traction'];
+  for (const fb of safeFallbacks) {
+    if (chosenDistractors.length >= 2) break;
+    if (!areWordsNearDuplicate(target, fb) && !chosenDistractors.some(d => areWordsNearDuplicate(d, fb))) {
+      chosenDistractors.push(fb);
+    }
+  }
+
+  return chosenDistractors.slice(0, 2);
+}
 
 export default function HighwaySprintCanvas({
   vocabItems = [],
@@ -47,9 +102,9 @@ export default function HighwaySprintCanvas({
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('highway_sprint') || 0;
 
-  // Build rounds from vocabItems + defaults
+  // Build rounds from vocabItems + defaults (locked to 6 rounds for R=6, h=2 -> N4 = 5/729 ≈ 0.686%)
   const rounds = useMemo(() => {
-    const valid = (vocabItems || []).filter(v => v.word && v.definition && v.word.length > 2);
+    const valid = (vocabItems || []).filter(v => v.word && (v.definition || v.definition_en || v.meaning) && v.word.length > 2);
     const pool = [...valid, ...DEFAULT_HIGHWAY_ROUNDS];
     const uniqueMap = new Map();
 
@@ -58,31 +113,45 @@ export default function HighwaySprintCanvas({
       if (w && !uniqueMap.has(w)) {
         uniqueMap.set(w, {
           targetWord: w,
-          definition: item.definition || item.meaning || 'A scientific concept',
+          definition: item.definition || item.definition_en || item.meaning || 'A scientific concept',
           distractors: item.distractors || [],
         });
       }
     });
 
     const uniqueList = Array.from(uniqueMap.values());
-    const selected = uniqueList.slice(0, 10);
+    const selected = uniqueList.slice(0, 6);
 
     return selected.map((r, idx) => {
       const otherWords = uniqueList.filter((_, i) => i !== idx).map(u => u.targetWord);
+      const validatedDistractors = validateWaveDistinction(r.targetWord, r.distractors, otherWords);
       return {
         ...r,
-        distractors: otherWords.length >= 2 ? otherWords.slice(0, 3) : ['hazard', 'obstacle'],
+        distractors: validatedDistractors,
       };
     });
   }, [vocabItems]);
 
   const [phase, setPhase] = useState('playing'); // 'playing' | 'cleared' | 'ko'
+  const [showHelp, setShowHelp] = useState(false);
   const [roundIdx, setRoundIdx] = useState(0);
-  const [hearts, setHearts] = useState(3);
+  const [hearts, setHearts] = useState(MAX_HEARTS);
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(duration);
   const [streak, setStreak] = useState(0);
   const [feedback, setFeedback] = useState(null);
+  const [isFrenzy, setIsFrenzy] = useState(false);
+  const isFrenzyRef = useRef(false);
+  const roundIdxRef = useRef(roundIdx);
+  const timeLeftRef = useRef(timeLeft);
+
+  useEffect(() => {
+    roundIdxRef.current = roundIdx;
+  }, [roundIdx]);
+
+  useEffect(() => {
+    timeLeftRef.current = timeLeft;
+  }, [timeLeft]);
 
   const currentRound = rounds[roundIdx % rounds.length] || DEFAULT_HIGHWAY_ROUNDS[0];
 
@@ -96,6 +165,11 @@ export default function HighwaySprintCanvas({
 
   // Leo Movement State
   const [targetLane, setTargetLane] = useState(1); // 0 = Left, 1 = Center, 2 = Right
+  const targetLaneRef = useRef(1);
+  const smoothLaneRef = useRef(1);
+  const isJumpingRef = useRef(false);
+  const isSlidingRef = useRef(false);
+  const lastStuntActionTime = useRef(0);
   const [isJumping, setIsJumping] = useState(false);
   const [isSliding, setIsSliding] = useState(false);
   const [invincible, setInvincible] = useState(false);
@@ -128,38 +202,54 @@ export default function HighwaySprintCanvas({
 
   // Jump Action
   const triggerJump = useCallback(() => {
-    if (isJumping || isSliding || phase !== 'playing') return;
+    if (isJumpingRef.current || isSlidingRef.current || phase !== 'playing') return;
+    lastStuntActionTime.current = Date.now();
+    isJumpingRef.current = true;
     setIsJumping(true);
     setLeoAnimState('jump');
     setTimeout(() => {
+      isJumpingRef.current = false;
       setIsJumping(false);
       setLeoAnimState('run');
     }, 650);
-  }, [isJumping, isSliding, phase]);
+  }, [phase]);
 
   // Slide Action
   const triggerSlide = useCallback(() => {
-    if (isSliding || isJumping || phase !== 'playing') return;
+    if (isSlidingRef.current || isJumpingRef.current || phase !== 'playing') return;
+    lastStuntActionTime.current = Date.now();
+    isSlidingRef.current = true;
     setIsSliding(true);
     setLeoAnimState('slide');
     setTimeout(() => {
+      isSlidingRef.current = false;
       setIsSliding(false);
       setLeoAnimState('run');
     }, 650);
-  }, [isSliding, isJumping, phase]);
+  }, [phase]);
 
   // Move Lane Action
   const moveLeft = useCallback(() => {
-    setTargetLane(l => Math.max(0, l - 1));
+    setTargetLane(l => {
+      const next = Math.max(0, l - 1);
+      targetLaneRef.current = next;
+      return next;
+    });
   }, []);
 
   const moveRight = useCallback(() => {
-    setTargetLane(l => Math.min(2, l + 1));
+    setTargetLane(l => {
+      const next = Math.min(2, l + 1);
+      targetLaneRef.current = next;
+      return next;
+    });
   }, []);
 
   // Direct Lane Select
   const setLaneDirect = useCallback((lane) => {
-    setTargetLane(Math.max(0, Math.min(2, lane)));
+    const next = Math.max(0, Math.min(2, lane));
+    targetLaneRef.current = next;
+    setTargetLane(next);
   }, []);
 
   // Gesture Controls setup — 3-zone tap & hold for instant steering + swipe jump/slide
@@ -174,12 +264,13 @@ export default function HighwaySprintCanvas({
     onSwipeDown: triggerSlide,
     onSwipeLeft: moveLeft,
     onSwipeRight: moveRight,
-    enabled: phase === 'playing',
+    enabled: phase === 'playing' && !showHelp,
   });
 
   // Keyboard controls
   useEffect(() => {
     const onKeyDown = (e) => {
+      if (showHelp) return;
       if (['ArrowLeft', 'KeyA'].includes(e.code)) {
         e.preventDefault();
         moveLeft();
@@ -197,7 +288,7 @@ export default function HighwaySprintCanvas({
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [moveLeft, moveRight, triggerJump, triggerSlide]);
+  }, [moveLeft, moveRight, triggerJump, triggerSlide, showHelp]);
 
   // Announce definition when round starts
   useEffect(() => {
@@ -212,75 +303,121 @@ export default function HighwaySprintCanvas({
   const spawnNextWave = useCallback((round, atZ = 0.05) => {
     if (!round) return;
     waveCounterRef.current += 1;
-    const waveNum = waveCounterRef.current;
-    const isWordWave = waveNum % 2 === 0;
-    const target = round.targetWord || 'friction';
-    const distractors = (round.distractors && round.distractors.length > 0)
-      ? round.distractors
-      : ['hazard', 'obstacle', 'gravity'];
-    const newItems = [];
 
-    if (isWordWave) {
-      // Spawn Word Billboard wave: Target word + distractor in another lane
-      const targetLaneIdx = Math.floor(Math.random() * 3);
-      const distractorLaneIdx = (targetLaneIdx + 1 + Math.floor(Math.random() * 2)) % 3;
-      const distractorWord = distractors[Math.floor(Math.random() * distractors.length)] || 'hazard';
+    // INVARIANT RULE F4D1: Only 'target_word' and 'distractor_word' are permitted.
+    // Platforming obstacles (hurdles/lasers) with heart penalties are strictly FORBIDDEN
+    // to protect the closed-form N4 = 0.686% linguistic model (see Claude_handoff.txt F4D1).
+    const target = (round.targetWord || 'friction').trim().toLowerCase();
+    const validatedDistractors = validateWaveDistinction(
+      target,
+      round.distractors || [],
+      rounds.map(r => r.targetWord)
+    );
 
-      newItems.push({
-        id: `target_${Date.now()}_${Math.random()}`,
-        type: 'target_word',
-        word: target,
-        lane: targetLaneIdx,
-        z: atZ,
-        passed: false,
-        collected: false,
-      });
-
-      newItems.push({
-        id: `distractor_${Date.now()}_${Math.random()}`,
-        type: 'distractor_word',
-        word: distractorWord,
-        lane: distractorLaneIdx,
-        z: atZ,
-        passed: false,
-        collected: false,
-      });
-    } else {
-      // Spawn Obstacle wave: 1 or 2 hazards in random lanes
-      const obsTypes = ['barrier', 'laser', 'barrel'];
-      const obsType = obsTypes[Math.floor(Math.random() * obsTypes.length)];
-      const lane1 = Math.floor(Math.random() * 3);
-      newItems.push({
-        id: `obs_${Date.now()}_${Math.random()}`,
-        type: obsType,
-        lane: lane1,
-        z: atZ,
-        passed: false,
-      });
-      // 30% chance for a second obstacle in another lane (leaving 1 lane always safe)
-      if (Math.random() < 0.35) {
-        const lane2 = (lane1 + 1 + Math.floor(Math.random() * 2)) % 3;
-        const obsType2 = obsTypes[Math.floor(Math.random() * obsTypes.length)];
-        newItems.push({
-          id: `obs2_${Date.now()}_${Math.random()}`,
-          type: obsType2,
-          lane: lane2,
-          z: atZ + 0.08,
-          passed: false,
-        });
-      }
+    // 3 word options distributed across 3 lanes
+    const options = [
+      { type: 'target_word', word: target },
+      { type: 'distractor_word', word: validatedDistractors[0] },
+      { type: 'distractor_word', word: validatedDistractors[1] },
+    ];
+    // Fisher-Yates shuffle lane assignment [0, 1, 2]
+    const lanes = [0, 1, 2];
+    for (let i = lanes.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [lanes[i], lanes[j]] = [lanes[j], lanes[i]];
     }
 
+    const newItems = options.map((opt, idx) => ({
+      id: `${opt.type}_${Date.now()}_${idx}_${Math.random()}`,
+      type: opt.type,
+      word: opt.word,
+      lane: lanes[idx],
+      z: atZ,
+      passed: false,
+      collected: false,
+    }));
+
     entitiesRef.current = [...entitiesRef.current, ...newItems];
-  }, []);
+  }, [rounds]);
+
+  // ── Frenzy Dash (PA1 + PA2): 3.0s Sprint replacing legacy 600ms transition delay ──
+  const triggerFrenzyDash = useCallback(() => {
+    isFrenzyRef.current = true;
+    setIsFrenzy(true);
+
+    // Clear word entities so only gold coins stream during Frenzy Dash
+    entitiesRef.current = [];
+
+    // Spawn 6 Frenzy Gold Coins staggered from 0.76 down to 0.23 (stream over 3.0s at v=0.24)
+    const frenzyCoins = [
+      { id: `coin_${Date.now()}_0`, type: 'gold_coin', lane: 1, z: 0.76, floating: false, passed: false, collected: false },
+      { id: `coin_${Date.now()}_1`, type: 'gold_coin', lane: 0, z: 0.65, floating: true, passed: false, collected: false },
+      { id: `coin_${Date.now()}_2`, type: 'gold_coin', lane: 2, z: 0.54, floating: false, passed: false, collected: false },
+      { id: `coin_${Date.now()}_3`, type: 'gold_coin', lane: 1, z: 0.43, floating: true, passed: false, collected: false },
+      { id: `coin_${Date.now()}_4`, type: 'gold_coin', lane: 0, z: 0.32, floating: false, passed: false, collected: false },
+      { id: `coin_${Date.now()}_5`, type: 'gold_coin', lane: 2, z: 0.23, floating: false, passed: false, collected: false },
+    ];
+    entitiesRef.current = frenzyCoins;
+
+    // 3000ms Frenzy Dash Duration (Replaces legacy 600ms transition overhead)
+    setTimeout(() => {
+      isFrenzyRef.current = false;
+      setIsFrenzy(false);
+      entitiesRef.current = [];
+
+      if (roundIdxRef.current + 1 < rounds.length) {
+        setRoundIdx(r => r + 1);
+      } else {
+        // 6th Frenzy Dash after Round 6 completed -> Show Victory Modal!
+        setPhase('cleared');
+        setScore(s => {
+          const final = s + 100 + timeLeftRef.current * 2;
+          recordPersonalBest('highway_sprint', final);
+          return final;
+        });
+      }
+    }, 3000);
+  }, [rounds.length, recordPersonalBest]);
+
+  // DEV Test Hook
+  useEffect(() => {
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
+      window.__HIGHWAY_TEST_HOOK__ = {
+        getActiveEntities: () => entitiesRef.current,
+        getCurrentRound: () => currentRound,
+        getHearts: () => hearts,
+        getScore: () => score,
+        getPhase: () => phase,
+        getTimeLeft: () => timeLeft,
+        getRoundIdx: () => roundIdx,
+        getRounds: () => rounds,
+        getStreak: () => streak,
+        isFrenzy: () => isFrenzyRef.current,
+        triggerJump: () => triggerJump(),
+        triggerSlide: () => triggerSlide(),
+        setLane: (lane) => setLaneDirect(lane),
+        injectRound: (customRound) => {
+          if (!customRound) return;
+          rounds[roundIdx] = {
+            targetWord: customRound.targetWord.trim().toLowerCase(),
+            definition: customRound.definition,
+            distractors: customRound.distractors || ['hazard', 'obstacle'],
+          };
+          entitiesRef.current = [];
+          spawnNextWave(rounds[roundIdx], 0.05);
+        },
+      };
+      return () => {
+        delete window.__HIGHWAY_TEST_HOOK__;
+      };
+    }
+  }, [currentRound, hearts, score, phase, timeLeft, roundIdx, rounds, streak, setLaneDirect, spawnNextWave, triggerJump, triggerSlide]);
 
   // Trigger initial round spawning
   useEffect(() => {
     waveCounterRef.current = 0;
     entitiesRef.current = [];
     spawnNextWave(currentRound, 0.05);
-    spawnNextWave(currentRound, 0.35);
-    spawnNextWave(currentRound, 0.65);
   }, [roundIdx, currentRound, spawnNextWave]);
 
   // Particle explosion helper
@@ -313,10 +450,9 @@ export default function HighwaySprintCanvas({
 
     let animId;
     let lastTime = performance.now();
-    let currentSmoothLane = targetLane;
 
     const runFrame = (now) => {
-      const dt = Math.min((now - lastTime) / 1000, 0.05);
+      const dt = showHelp ? 0 : Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
 
       // Update resolution matching display
@@ -327,8 +463,9 @@ export default function HighwaySprintCanvas({
         canvas.height = H;
       }
 
-      // Smooth lane transition
-      currentSmoothLane += (targetLane - currentSmoothLane) * Math.min(1, dt * 14);
+      // Smooth lane transition using stable ref
+      smoothLaneRef.current += (targetLaneRef.current - smoothLaneRef.current) * Math.min(1, dt * 14);
+      const currentSmoothLane = smoothLaneRef.current;
 
       // Road Geometry Definition
       const horizonY = H * 0.26;
@@ -337,8 +474,8 @@ export default function HighwaySprintCanvas({
       const bottomRoadWidth = W * 0.94;
       const cx = W / 2;
 
-      // Advance road phase for 60fps running sensation
-      roadPhaseRef.current = (roadPhaseRef.current + dt * 1.8) % 1;
+      // Advance road phase for 60fps running sensation (accelerated during Frenzy)
+      roadPhaseRef.current = (roadPhaseRef.current + dt * (isFrenzyRef.current ? 5.5 : 1.8)) % 1;
 
       // ── 1. Clear & Draw Sci-Fi Sky / Horizon ─────────────────────────────────
       ctx.clearRect(0, 0, W, H);
@@ -452,7 +589,9 @@ export default function HighwaySprintCanvas({
       }
 
       // ── 3. Update & Draw Road Entities (Sorted far → near) ───────────────────
-      const RUNNER_SPEED = 0.24; // speed in Z units per second
+      // Calibrated v_z = 0.040 Z-units/s for T_avail = 19.00s in normal play.
+      // Accelerated v_z = 0.24 Z-units/s during 3.0s Frenzy Dash (PA1 kinetic sprint).
+      const RUNNER_SPEED = isFrenzyRef.current ? 0.24 : 0.040;
       let entities = entitiesRef.current;
 
       // Advance Z
@@ -464,10 +603,28 @@ export default function HighwaySprintCanvas({
       entities = entities.filter(ent => ent.z <= 1.35);
       entitiesRef.current = entities;
 
-      // Continuous Procedural Spawning: if closest entity to horizon is past z = 0.30, spawn new wave ahead!
+      // Continuous Procedural Spawning: only during normal play when closest entity is past z = 0.30
       const minZ = entities.length > 0 ? Math.min(...entities.map(e => e.z)) : 1.0;
-      if (minZ > 0.30 || entities.length < 3) {
+      if (!isFrenzyRef.current && (minZ > 0.30 || entities.length < 3)) {
         spawnNextWave(currentRound, Math.max(0.04, minZ - 0.32));
+      }
+
+      // Radial Warp Speed Lines during Frenzy Dash
+      if (isFrenzyRef.current) {
+        ctx.save();
+        ctx.strokeStyle = 'rgba(250, 204, 21, 0.45)';
+        ctx.lineWidth = 2.5;
+        for (let l = 0; l < 10; l++) {
+          const angle = (l / 10) * Math.PI * 2;
+          const linePhase = ((now / 80 + l * 0.1) % 1);
+          const r1 = W * 0.08 + linePhase * W * 0.45;
+          const r2 = r1 + W * 0.12;
+          ctx.beginPath();
+          ctx.moveTo(cx + Math.cos(angle) * r1, horizonY + Math.sin(angle) * r1 * 0.6);
+          ctx.lineTo(cx + Math.cos(angle) * r2, horizonY + Math.sin(angle) * r2 * 0.6);
+          ctx.stroke();
+        }
+        ctx.restore();
       }
 
       // Sort by Z so farthest objects render first
@@ -491,7 +648,7 @@ export default function HighwaySprintCanvas({
         const isNearPlayerZ = Math.abs(ent.z - playerZ) < hitToleranceZ;
         const isSameLane = Math.abs(currentSmoothLane - ent.lane) < 0.55;
 
-        if (isNearPlayerZ && isSameLane && !ent.passed && !ent.collected) {
+        if (!showHelp && isNearPlayerZ && isSameLane && !ent.passed && !ent.collected) {
           ent.passed = true;
 
           // Check Invincibility
@@ -501,26 +658,26 @@ export default function HighwaySprintCanvas({
             // Correct Target Word Collected!
             ent.collected = true;
             speakText(ent.word);
-            setScore(s => s + 50);
+
+            // PA2: Super Stunt Catch bonus (Jumping or Sliding while collecting target word)
+            const isStunt = isJumpingRef.current || isSlidingRef.current || (Date.now() - lastStuntActionTime.current < 900);
+            const wordXp = isStunt ? 75 : 50;
+            setScore(s => s + wordXp);
             setStreak(s => s + 1);
-            setFeedback({ type: 'correct', text: `💎 "${ent.word.toUpperCase()}" COLLECTED! +50 XP` });
-            spawnExplosion(entityX, entityY - 30, '#10b981');
+
+            if (isStunt) {
+              setFeedback({ type: 'stunt', text: `⭐ SUPER STUNT CATCH! +75 XP` });
+            } else {
+              setFeedback({ type: 'correct', text: `💎 "${ent.word.toUpperCase()}" COLLECTED! +50 XP` });
+            }
+            spawnExplosion(entityX, entityY - 30, isStunt ? '#f59e0b' : '#10b981');
             setTimeout(() => setFeedback(null), 1500);
 
-            // Advance to next round!
-            setTimeout(() => {
-              if (roundIdx + 1 < rounds.length) {
-                setRoundIdx(r => r + 1);
-              } else {
-                setPhase('cleared');
-                const final = score + 100 + timeLeft * 2;
-                setScore(final);
-                recordPersonalBest('highway_sprint', final);
-              }
-            }, 600);
+            // PA1: Trigger Frenzy Dash (REPLACES legacy 600ms overhead completely)
+            triggerFrenzyDash();
           } else if (ent.type === 'distractor_word') {
             if (!isInv) {
-              // Hit distractor word
+              // Hit distractor word: deduct heart (only vocabulary mistake causes heart loss)
               ent.collected = true;
               speakText(ent.word);
               setHearts(h => {
@@ -536,59 +693,13 @@ export default function HighwaySprintCanvas({
               setInvincible(true);
               setTimeout(() => setInvincible(false), 1500);
             }
-          } else if (ent.type === 'barrier') {
-            // Hurdle: MUST JUMP
-            if (!isJumping && !isInv) {
-              setHearts(h => {
-                const next = Math.max(0, h - 1);
-                if (next === 0) setPhase('ko');
-                return next;
-              });
-              setStreak(0);
-              setFeedback({ type: 'wrong', text: '⚡ OUCH! Jump over barriers!' });
-              spawnExplosion(entityX, entityY - 20, '#f97316');
-              setTimeout(() => setFeedback(null), 1200);
-              invincibleUntil.current = Date.now() + 1500;
-              setInvincible(true);
-              setTimeout(() => setInvincible(false), 1500);
-            } else if (isJumping) {
-              setScore(s => s + 15);
-              spawnExplosion(entityX, entityY - 30, '#38bdf8');
-            }
-          } else if (ent.type === 'laser') {
-            // Laser beam: MUST SLIDE
-            if (!isSliding && !isInv) {
-              setHearts(h => {
-                const next = Math.max(0, h - 1);
-                if (next === 0) setPhase('ko');
-                return next;
-              });
-              setStreak(0);
-              setFeedback({ type: 'wrong', text: '🛹 OUCH! Slide under laser beams!' });
-              spawnExplosion(entityX, entityY - 30, '#ec4899');
-              setTimeout(() => setFeedback(null), 1200);
-              invincibleUntil.current = Date.now() + 1500;
-              setInvincible(true);
-              setTimeout(() => setInvincible(false), 1500);
-            } else if (isSliding) {
-              setScore(s => s + 15);
-              spawnExplosion(entityX, entityY - 10, '#a855f7');
-            }
-          } else if (ent.type === 'barrel') {
-            // Barrel / Pillar: MUST DODGE
-            if (!isInv) {
-              setHearts(h => {
-                const next = Math.max(0, h - 1);
-                if (next === 0) setPhase('ko');
-                return next;
-              });
-              setStreak(0);
-              setFeedback({ type: 'wrong', text: '🧱 CRASH! Steer lanes to dodge barrels!' });
-              spawnExplosion(entityX, entityY - 20, '#eab308');
-              setTimeout(() => setFeedback(null), 1200);
-              invincibleUntil.current = Date.now() + 1500;
-              setInvincible(true);
-              setTimeout(() => setInvincible(false), 1500);
+          } else if (ent.type === 'gold_coin') {
+            // PA1: Frenzy Dash Gold Coin (No heart loss, pure kinetic XP reward)
+            const canCatch = !ent.floating || isJumpingRef.current;
+            if (canCatch) {
+              ent.collected = true;
+              setScore(s => s + 10);
+              spawnExplosion(entityX, entityY + (ent.floating ? -48 : -14), '#fbbf24');
             }
           }
         }
@@ -600,112 +711,7 @@ export default function HighwaySprintCanvas({
         ctx.translate(entityX, entityY);
         ctx.scale(entityScale, entityScale);
 
-        if (ent.type === 'barrier') {
-          // ── BARRIER (Hurdle: Striped Bar + Posts) ──
-          const bW = 86;
-          const bH = 28;
-
-          // Wooden/Metal Side Posts
-          ctx.fillStyle = '#64748b';
-          ctx.fillRect(-bW / 2 - 4, -bH, 8, bH);
-          ctx.fillRect(bW / 2 - 4, -bH, 8, bH);
-
-          // Diagonal Hazard Stripes Bar
-          ctx.save();
-          ctx.beginPath();
-          ctx.roundRect(-bW / 2, -bH + 4, bW, 16, 4);
-          ctx.clip();
-
-          ctx.fillStyle = '#ef4444';
-          ctx.fillRect(-bW / 2, -bH + 4, bW, 16);
-
-          ctx.fillStyle = '#f8fafc';
-          for (let s = -bW / 2 - 20; s < bW / 2 + 20; s += 16) {
-            ctx.beginPath();
-            ctx.moveTo(s, -bH + 4);
-            ctx.lineTo(s + 8, -bH + 4);
-            ctx.lineTo(s - 4, -bH + 20);
-            ctx.lineTo(s - 12, -bH + 20);
-            ctx.fill();
-          }
-          ctx.restore();
-
-          // Action Label Hint
-          ctx.font = 'bold 9px sans-serif';
-          ctx.fillStyle = '#fbbf24';
-          ctx.textAlign = 'center';
-          ctx.fillText('⚡ JUMP', 0, -bH - 4);
-
-        } else if (ent.type === 'laser') {
-          // ── LASER BEAM (Suspended Glowing Electric Line) ──
-          const lW = 96;
-          const lY = -48; // High elevation
-
-          // Neon Posts
-          ctx.strokeStyle = '#06b6d4';
-          ctx.lineWidth = 3;
-          ctx.beginPath();
-          ctx.moveTo(-lW / 2, 0);
-          ctx.lineTo(-lW / 2, lY);
-          ctx.moveTo(lW / 2, 0);
-          ctx.lineTo(lW / 2, lY);
-          ctx.stroke();
-
-          // Glowing Laser Line
-          ctx.shadowColor = '#f43f5e';
-          ctx.shadowBlur = 18;
-          ctx.strokeStyle = '#fb7185';
-          ctx.lineWidth = 6;
-          ctx.beginPath();
-          ctx.moveTo(-lW / 2, lY);
-          ctx.lineTo(lW / 2, lY);
-          ctx.stroke();
-
-          // White Laser Core
-          ctx.strokeStyle = '#ffffff';
-          ctx.lineWidth = 2;
-          ctx.stroke();
-          ctx.shadowBlur = 0;
-
-          // Slide Label Hint
-          ctx.font = 'bold 9px sans-serif';
-          ctx.fillStyle = '#38bdf8';
-          ctx.textAlign = 'center';
-          ctx.fillText('🛹 SLIDE', 0, lY - 6);
-
-        } else if (ent.type === 'barrel') {
-          // ── BARREL / ROCK PILLAR (Must Dodge) ──
-          const bRadius = 18;
-          const bH = 44;
-
-          // 3D Cylinder
-          const barrelGrad = ctx.createLinearGradient(-bRadius, 0, bRadius, 0);
-          barrelGrad.addColorStop(0, '#78350f');
-          barrelGrad.addColorStop(0.5, '#f59e0b');
-          barrelGrad.addColorStop(1, '#451a03');
-
-          ctx.fillStyle = barrelGrad;
-          ctx.beginPath();
-          ctx.roundRect(-bRadius, -bH, bRadius * 2, bH, 6);
-          ctx.fill();
-
-          // Barrel Bands
-          ctx.strokeStyle = '#1e293b';
-          ctx.lineWidth = 3;
-          ctx.strokeRect(-bRadius, -bH + 8, bRadius * 2, 4);
-          ctx.strokeRect(-bRadius, -14, bRadius * 2, 4);
-
-          // Hazard Icon
-          ctx.font = 'bold 12px sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText('⚠️', 0, -bH / 2 + 4);
-
-          // Dodge hint
-          ctx.font = 'bold 8px sans-serif';
-          ctx.fillStyle = '#fde047';
-          ctx.fillText('DODGE', 0, -bH - 4);
-
-        } else if (ent.type === 'target_word' || ent.type === 'distractor_word') {
+        if (ent.type === 'target_word' || ent.type === 'distractor_word') {
           // ── 3D WORD BILLBOARDS (Floating Crystal Plate) ──
           const isTarget = ent.type === 'target_word';
           const cardW = 100;
@@ -746,6 +752,47 @@ export default function HighwaySprintCanvas({
           ctx.fillStyle = isTarget ? '#ecfdf5' : '#e0e7ff';
           ctx.textAlign = 'center';
           ctx.fillText(ent.word, isTarget ? 6 : 0, floatY + 22);
+        } else if (ent.type === 'gold_coin') {
+          // ── 3D GLOWING GOLD COIN (PA1 Frenzy Dash) ──
+          const floatY = ent.floating ? (-48 + Math.sin(now / 150 + ent.lane) * 6) : -14;
+          const coinR = 14;
+
+          ctx.shadowColor = '#facc15';
+          ctx.shadowBlur = 16;
+
+          // Outer gold rim
+          ctx.fillStyle = '#f59e0b';
+          ctx.beginPath();
+          ctx.arc(0, floatY, coinR, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Inner gold shine
+          const coinGrad = ctx.createLinearGradient(-coinR, floatY - coinR, coinR, floatY + coinR);
+          coinGrad.addColorStop(0, '#fef08a');
+          coinGrad.addColorStop(0.5, '#fbbf24');
+          coinGrad.addColorStop(1, '#d97706');
+          ctx.fillStyle = coinGrad;
+          ctx.beginPath();
+          ctx.arc(0, floatY, coinR - 2.5, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Star symbol on coin
+          ctx.shadowBlur = 0;
+          ctx.fillStyle = '#78350f';
+          ctx.font = 'bold 12px sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('★', 0, floatY);
+
+          // If floating, draw a subtle tether / beam of light to the road
+          if (ent.floating) {
+            ctx.strokeStyle = 'rgba(250, 204, 21, 0.35)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(0, floatY + coinR);
+            ctx.lineTo(0, 0);
+            ctx.stroke();
+          }
         }
 
         ctx.restore();
@@ -779,8 +826,8 @@ export default function HighwaySprintCanvas({
       const playerLaneW = playerRoadW / 3;
       const playerX = cx - playerRoadW / 2 + playerLaneW * (currentSmoothLane + 0.5);
 
-      const jumpOffset = isJumping ? -65 * Math.sin((Date.now() % 650) / 650 * Math.PI) : 0;
-      const slideScale = isSliding ? 0.75 : 1;
+      const jumpOffset = isJumpingRef.current ? -65 * Math.sin((Date.now() % 650) / 650 * Math.PI) : 0;
+      const slideScale = isSlidingRef.current ? 0.75 : 1;
 
       setLeoPos({
         x: playerX,
@@ -794,11 +841,11 @@ export default function HighwaySprintCanvas({
 
     animId = requestAnimationFrame(runFrame);
     return () => cancelAnimationFrame(animId);
-  }, [phase, targetLane, isJumping, isSliding, roundIdx, rounds.length, score, timeLeft, viewSize]);
+  }, [phase, roundIdx, rounds.length, viewSize]);
 
   // Timer loop
   useEffect(() => {
-    if (phase !== 'playing') return;
+    if (phase !== 'playing' || showHelp) return;
     const timer = setInterval(() => {
       setTimeLeft(t => {
         if (t <= 1) {
@@ -813,14 +860,20 @@ export default function HighwaySprintCanvas({
 
   const handleRetry = () => {
     setPhase('playing');
-    setHearts(3);
+    setHearts(MAX_HEARTS);
     setScore(0);
     setRoundIdx(0);
     setTimeLeft(duration);
     setTargetLane(1);
     setIsJumping(false);
     setIsSliding(false);
+    isFrenzyRef.current = false;
+    setIsFrenzy(false);
     setLeoAnimState('run');
+    setFeedback(null);
+    entitiesRef.current = [];
+    particlesRef.current = [];
+    spawnNextWave(rounds[0] || DEFAULT_HIGHWAY_ROUNDS[0], 0.05);
   };
 
   const handleFinalFinish = () => {
@@ -832,6 +885,13 @@ export default function HighwaySprintCanvas({
     <div className="highway-canvas-root" ref={containerRef}>
       {/* ── Floating Exit Button (Always visible) ── */}
       <FloatingExitBtn onExit={onExit || handleFinalFinish} label="← Chamber" />
+
+      {/* ── Game Instruction Modal ── */}
+      <GameInstructionModal
+        gameId="highway_runner"
+        isOpen={showHelp}
+        onClose={() => setShowHelp(false)}
+      />
 
       {/* ── Top Target Definition Pill Banner ── */}
       <div className="highway-definition-banner">
@@ -857,6 +917,15 @@ export default function HighwaySprintCanvas({
       {feedback && (
         <div className={`highway-toast-pill toast-${feedback.type}`}>
           {feedback.text}
+        </div>
+      )}
+
+      {/* ── Frenzy Dash Banner ── */}
+      {isFrenzy && (
+        <div className="highway-frenzy-banner">
+          <Sparkles size={20} className="frenzy-sparkle" />
+          <span>⚡ FRENZY DASH! COLLECT GOLD COINS! ⚡</span>
+          <Sparkles size={20} className="frenzy-sparkle" />
         </div>
       )}
 
@@ -896,12 +965,22 @@ export default function HighwaySprintCanvas({
       {/* ── HUD ── */}
       <HUDOverlay
         hearts={hearts}
+        maxHearts={MAX_HEARTS}
+        round={`${roundIdx + 1}/${rounds.length}`}
         score={score}
         timeLeft={timeLeft}
-        wordsCollected={roundIdx}
-        totalWords={rounds.length}
         floorNumber={4}
         doorLabel="Door 1 — Highway 3D Word Runner"
+        rightActions={
+          <button
+            type="button"
+            className="highway-help-btn"
+            onClick={() => setShowHelp(true)}
+            title="Game Instructions"
+          >
+            <HelpCircle size={16} /> Guide
+          </button>
+        }
       />
 
       {/* ── Cleared Modal ── */}
@@ -928,7 +1007,7 @@ export default function HighwaySprintCanvas({
           <div className="highway-modal-card modal-ko">
             <AlertTriangle size={56} className="modal-ko-icon" />
             <h2>RUNWAY CRASH!</h2>
-            <p>Remember to jump over hurdles, slide under high lasers, and dodge warning barrels!</p>
+            <p>Remember to steer into the lane matching the target word and dodge wrong distractor gates!</p>
             <div className="modal-actions">
               <button className="retry-btn" onClick={handleRetry}>
                 <RotateCcw size={18} /> Try Again

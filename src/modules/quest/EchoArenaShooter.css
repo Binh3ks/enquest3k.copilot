@@ -158,7 +158,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  pointer-events: none;
   z-index: 10;
   transition: transform 0.15s ease;
   animation: orb-pulse 2s infinite alternate ease-in-out;
@@ -213,19 +213,19 @@
   z-index: 8;
 }
 
-/* Resonance Bolts */
+/* Resonance Bolts — High-visibility plasma projectile */
 .resonance-bolt-entity {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background: #facc15;
+  background: radial-gradient(circle, #fef08a 0%, #facc15 60%, #eab308 100%);
   color: #78350f;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 20;
-  box-shadow: 0 0 15px rgba(250, 204, 21, 0.9);
+  z-index: 35;
+  box-shadow: 0 0 20px rgba(250, 204, 21, 1), 0 0 35px rgba(234, 179, 8, 0.8);
   pointer-events: none;
 }
 

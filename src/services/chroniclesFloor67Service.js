@@ -13,137 +13,530 @@
  * and universal dynamic extraction / generic fallbacks for any week W01–W156.
  */
 
-// ─── 1. CONNECTOR RELAY QUESTIONS (F6D2) ───────────────────────────────────
+// ─── 1. CONNECTOR RELAY QUESTIONS (F6D2: CONNECTOR BURST) ──────────────────
+
+export const DEFAULT_CONNECTOR_QUESTIONS = [
+  {
+    sentence: "Jake walked slowly _____ floors were wet.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "Jake walked slowly because floors were wet."
+  },
+  {
+    sentence: "Tom lost balance _____ rubber gripped well.",
+    answer: "although",
+    options: ["although","because","so"],
+    fullSentence: "Tom lost balance although rubber gripped well."
+  },
+  {
+    sentence: "Walk very carefully, _____ you will slip.",
+    answer: "or",
+    options: ["or","because","although"],
+    fullSentence: "Walk very carefully, or you will slip."
+  },
+  {
+    sentence: "She cleaned cuts, _____ she applied cream.",
+    answer: "and",
+    options: ["and","but","because"],
+    fullSentence: "She cleaned cuts, and she applied cream."
+  },
+  {
+    sentence: "Wear rubber sneakers _____ floors are slick.",
+    answer: "when",
+    options: ["when","so","although"],
+    fullSentence: "Wear rubber sneakers when floors are slick."
+  },
+  {
+    sentence: "You will fall _____ you hold rails.",
+    answer: "unless",
+    options: ["unless","because","so"],
+    fullSentence: "You will fall unless you hold rails."
+  },
+  {
+    sentence: "Water spilled down, _____ tiles became slippery.",
+    answer: "so",
+    options: ["so","because","although"],
+    fullSentence: "Water spilled down, so tiles became slippery."
+  },
+  {
+    sentence: "Jake slipped down _____ he looked away.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "Jake slipped down because he looked away."
+  },
+  {
+    sentence: "Apply cold ice _____ bruises swell up.",
+    answer: "when",
+    options: ["when","so","although"],
+    fullSentence: "Apply cold ice when bruises swell up."
+  },
+  {
+    sentence: "Hold handrails _____ you walk down.",
+    answer: "while",
+    options: ["while","so","although"],
+    fullSentence: "Hold handrails while you walk down."
+  },
+  {
+    sentence: "He called the nurse, _____ she arrived.",
+    answer: "and",
+    options: ["and","but","because"],
+    fullSentence: "He called the nurse, and she arrived."
+  },
+  {
+    sentence: "Wipe the floor, _____ someone slips down.",
+    answer: "before",
+    options: ["before","so","although"],
+    fullSentence: "Wipe the floor, before someone slips down."
+  }
+];
 
 export const WEEK_33_CONNECTOR_QUESTIONS = [
   {
-    sentence: "Jake walked carefully down the corridor _____ the floor was wet after science class.",
-    answer: "because",
-    options: ["because", "although", "so", "unless"],
-    hint: "The second clause explains the cause/reason for walking carefully."
-  },
-  {
-    sentence: "The nurse arrived immediately, _____ she quickly wrapped a clean bandage around his knee.",
-    answer: "and",
-    options: ["and", "but", "although", "because"],
-    hint: "Connecting two consecutive actions in the sequence."
-  },
-  {
-    sentence: "Tom lost his balance _____ rubber shoes normally provide good friction.",
-    answer: "although",
-    options: ["although", "because", "so", "unless"],
-    hint: "Contrast between normal expectation and the actual outcome."
-  },
-  {
-    sentence: "Students should always walk slowly _____ dangerous slips can be avoided.",
+    sentence: "The floor was wet, _____ Jake slipped.",
     answer: "so",
-    options: ["so", "because", "although", "since"],
-    hint: "Shows the intended result or purpose of walking slowly."
+    options: ["so","because","although"],
+    fullSentence: "The floor was wet, so Jake slipped."
   },
   {
-    sentence: "You will slip on the smooth corridor tiles _____ you wear shoes with strong rubber grip.",
+    sentence: "Hold the handrail _____ you walk down.",
+    answer: "while",
+    options: ["while","so","although"],
+    fullSentence: "Hold the handrail while you walk down."
+  },
+  {
+    sentence: "She cleaned cuts, _____ she applied cream.",
+    answer: "and",
+    options: ["and","but","because"],
+    fullSentence: "She cleaned cuts, and she applied cream."
+  },
+  {
+    sentence: "Jake walked slowly _____ tiles were slick.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "Jake walked slowly because tiles were slick."
+  },
+  {
+    sentence: "Wear rubber shoes, _____ you might slip.",
+    answer: "or",
+    options: ["or","because","although"],
+    fullSentence: "Wear rubber shoes, or you might slip."
+  },
+  {
+    sentence: "You will slip _____ you walk carefully.",
     answer: "unless",
-    options: ["unless", "because", "although", "so"],
-    hint: "'Unless' means 'except if'."
+    options: ["unless","because","so"],
+    fullSentence: "You will slip unless you walk carefully."
+  },
+  {
+    sentence: "Put on ice _____ swelling goes down.",
+    answer: "until",
+    options: ["until","so","although"],
+    fullSentence: "Put on ice until swelling goes down."
+  },
+  {
+    sentence: "Water spilled out, _____ we cleaned it.",
+    answer: "so",
+    options: ["so","because","although"],
+    fullSentence: "Water spilled out, so we cleaned it."
+  },
+  {
+    sentence: "Jake rested quietly _____ pain went away.",
+    answer: "until",
+    options: ["until","so","although"],
+    fullSentence: "Jake rested quietly until pain went away."
+  },
+  {
+    sentence: "The bell rang, _____ students walked out.",
+    answer: "and",
+    options: ["and","but","because"],
+    fullSentence: "The bell rang, and students walked out."
+  },
+  {
+    sentence: "He wore boots _____ it rained outside.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "He wore boots because it rained outside."
+  },
+  {
+    sentence: "Tom slipped down _____ he was careful.",
+    answer: "although",
+    options: ["although","because","so"],
+    fullSentence: "Tom slipped down although he was careful."
   }
 ];
 
 export const WEEK_34_CONNECTOR_QUESTIONS = [
   {
-    sentence: "_____ the lion was sleeping, a tiny mouse ran across his front paw.",
-    answer: "While",
-    options: ["While", "Because", "So", "Unless"],
-    hint: "Shows an ongoing background action interrupted by a sudden event."
+    sentence: "The lion slept _____ a mouse ran.",
+    answer: "when",
+    options: ["when","so","because"],
+    fullSentence: "The lion slept when a mouse ran."
   },
   {
-    sentence: "The lion caught the mouse _____ let him go free because he begged for mercy.",
+    sentence: "Mice chewed ropes, _____ the lion escaped.",
+    answer: "so",
+    options: ["so","although","because"],
+    fullSentence: "Mice chewed ropes, so the lion escaped."
+  },
+  {
+    sentence: "The lion caught him, _____ he freed him.",
     answer: "but",
-    options: ["but", "and", "so", "because"],
-    hint: "Connects contrasting ideas: capturing the mouse vs releasing him."
+    options: ["but","so","because"],
+    fullSentence: "The lion caught him, but he freed him."
   },
   {
-    sentence: "He chewed through the thick ropes _____ set the trapped lion completely free.",
-    answer: "and",
-    options: ["and", "but", "although", "because"],
-    hint: "Connects two consecutive actions in the story sequence."
-  },
-  {
-    sentence: "The scared mouse cried loudly _____ he was afraid the mighty lion would eat him.",
+    sentence: "The mouse begged _____ he was scared.",
     answer: "because",
-    options: ["because", "although", "so", "unless"],
-    hint: "Explains the reason why the little mouse cried."
+    options: ["because","so","although"],
+    fullSentence: "The mouse begged because he was scared."
   },
   {
-    sentence: "_____ animals help one another in nature, the entire forest stays healthy.",
-    answer: "When",
-    options: ["When", "Although", "Unless", "So"],
-    hint: "Indicates the condition or time when a positive outcome happens."
+    sentence: "Hunters set nets, _____ they caught him.",
+    answer: "and",
+    options: ["and","but","because"],
+    fullSentence: "Hunters set nets, and they caught him."
+  },
+  {
+    sentence: "He roared loud _____ the ropes held.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "He roared loud because the ropes held."
+  },
+  {
+    sentence: "The lion roared, _____ the mouse ran.",
+    answer: "so",
+    options: ["so","because","although"],
+    fullSentence: "The lion roared, so the mouse ran."
+  },
+  {
+    sentence: "The mouse was small, _____ he was brave.",
+    answer: "but",
+    options: ["but","so","because"],
+    fullSentence: "The mouse was small, but he was brave."
+  },
+  {
+    sentence: "He escaped _____ the ropes were cut.",
+    answer: "after",
+    options: ["after","so","although"],
+    fullSentence: "He escaped after the ropes were cut."
+  },
+  {
+    sentence: "He kept chewing _____ the ropes broke.",
+    answer: "until",
+    options: ["until","because","so"],
+    fullSentence: "He kept chewing until the ropes broke."
+  },
+  {
+    sentence: "The lion smiled, _____ he thanked him.",
+    answer: "and",
+    options: ["and","but","because"],
+    fullSentence: "The lion smiled, and he thanked him."
+  },
+  {
+    sentence: "He spared him _____ he was tiny.",
+    answer: "although",
+    options: ["although","because","so"],
+    fullSentence: "He spared him although he was tiny."
   }
 ];
 
 export const WEEK_35_CONNECTOR_QUESTIONS = [
   {
-    sentence: "_____ parents were setting up the tent, the children collected dry firewood.",
-    answer: "While",
-    options: ["While", "Because", "So", "Unless"],
-    hint: "Shows an ongoing background action during camping."
+    sentence: "Campers set tents _____ darkness fell down.",
+    answer: "before",
+    options: ["before","so","although"],
+    fullSentence: "Campers set tents before darkness fell down."
   },
   {
-    sentence: "They spotted two playful squirrels _____ they were hiking along the mountain stream.",
-    answer: "while",
-    options: ["while", "because", "so", "if"],
-    hint: "Shows an action happening at the same time in the woods."
-  },
-  {
-    sentence: "Dad was lighting the warm campfire _____ the golden sun sank behind the mountains.",
-    answer: "when",
-    options: ["when", "although", "unless", "so"],
-    hint: "Indicates the specific moment an event occurred."
-  },
-  {
-    sentence: "They decided to pack extra warm blankets _____ the forest nights can be chilly.",
+    sentence: "They lit a fire _____ nights were chilly.",
     answer: "because",
-    options: ["because", "although", "so", "unless"],
-    hint: "Explains the reason for bringing warm blankets."
+    options: ["because","so","although"],
+    fullSentence: "They lit a fire because nights were chilly."
   },
   {
-    sentence: "The young campers packed their backpacks early _____ they could start the hiking trail at sunrise.",
+    sentence: "It was cold, _____ the campfire gave warmth.",
+    answer: "but",
+    options: ["but","so","because"],
+    fullSentence: "It was cold, but the campfire gave warmth."
+  },
+  {
+    sentence: "Rain poured down, _____ everyone ran inside.",
     answer: "so",
-    options: ["so", "because", "although", "since"],
-    hint: "Shows the purpose or intended result of packing early."
+    options: ["so","because","although"],
+    fullSentence: "Rain poured down, so everyone ran inside."
+  },
+  {
+    sentence: "Lock the food, _____ bears will come.",
+    answer: "or",
+    options: ["or","because","although"],
+    fullSentence: "Lock the food, or bears will come."
+  },
+  {
+    sentence: "You will shiver _____ you wear jackets.",
+    answer: "unless",
+    options: ["unless","because","so"],
+    fullSentence: "You will shiver unless you wear jackets."
+  },
+  {
+    sentence: "Children sang songs _____ dad cooked stew.",
+    answer: "while",
+    options: ["while","so","although"],
+    fullSentence: "Children sang songs while dad cooked stew."
+  },
+  {
+    sentence: "He brought flashlights _____ trails were dark.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "He brought flashlights because trails were dark."
+  },
+  {
+    sentence: "Stars shone bright _____ clouds blew away.",
+    answer: "when",
+    options: ["when","so","although"],
+    fullSentence: "Stars shone bright when clouds blew away."
+  },
+  {
+    sentence: "They ate snacks _____ they cooked dinner.",
+    answer: "after",
+    options: ["after","so","although"],
+    fullSentence: "They ate snacks after they cooked dinner."
+  },
+  {
+    sentence: "Boil river water _____ you drink it.",
+    answer: "before",
+    options: ["before","so","although"],
+    fullSentence: "Boil river water before you drink it."
+  },
+  {
+    sentence: "They hiked far _____ their legs ached.",
+    answer: "although",
+    options: ["although","because","so"],
+    fullSentence: "They hiked far although their legs ached."
+  }
+];
+
+export const WEEK_36_CONNECTOR_QUESTIONS = [
+  {
+    sentence: "The sun shines, _____ space is dark.",
+    answer: "but",
+    options: ["but","so","because"],
+    fullSentence: "The sun shines, but space is dark."
+  },
+  {
+    sentence: "The rocket launched _____ engines fired hot.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "The rocket launched because engines fired hot."
+  },
+  {
+    sentence: "Fuel ran out, _____ thrusters shut down.",
+    answer: "so",
+    options: ["so","because","although"],
+    fullSentence: "Fuel ran out, so thrusters shut down."
+  },
+  {
+    sentence: "Wear space suits _____ you go outside.",
+    answer: "when",
+    options: ["when","until","or"],
+    fullSentence: "Wear space suits when you go outside."
+  },
+  {
+    sentence: "You cannot breathe _____ you wear helmets.",
+    answer: "unless",
+    options: ["unless","because","so"],
+    fullSentence: "You cannot breathe unless you wear helmets."
+  },
+  {
+    sentence: "Astronauts float free _____ gravity is zero.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "Astronauts float free because gravity is zero."
+  },
+  {
+    sentence: "The telescope turned, _____ it spotted stars.",
+    answer: "and",
+    options: ["and","but","because"],
+    fullSentence: "The telescope turned, and it spotted stars."
+  },
+  {
+    sentence: "He looked out _____ the ship orbited.",
+    answer: "while",
+    options: ["while","so","although"],
+    fullSentence: "He looked out while the ship orbited."
+  },
+  {
+    sentence: "The comet flew, _____ it left trails.",
+    answer: "and",
+    options: ["and","but","because"],
+    fullSentence: "The comet flew, and it left trails."
+  },
+  {
+    sentence: "The moon has craters _____ rocks hit it.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "The moon has craters because rocks hit it."
+  },
+  {
+    sentence: "Check your oxygen, _____ you might faint.",
+    answer: "or",
+    options: ["or","because","although"],
+    fullSentence: "Check your oxygen, or you might faint."
+  },
+  {
+    sentence: "The ship stayed cold _____ the sun shone.",
+    answer: "although",
+    options: ["although","because","so"],
+    fullSentence: "The ship stayed cold although the sun shone."
+  }
+];
+
+export const WEEK_37_CONNECTOR_QUESTIONS = [
+  {
+    sentence: "Fish swim deep _____ the water cools.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "Fish swim deep because the water cools."
+  },
+  {
+    sentence: "The whale jumped, _____ it splashed down.",
+    answer: "and",
+    options: ["and","but","because"],
+    fullSentence: "The whale jumped, and it splashed down."
+  },
+  {
+    sentence: "Sharks swim constantly, _____ gills need water.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "Sharks swim constantly, because gills need water."
+  },
+  {
+    sentence: "Coral looks stony, _____ it is alive.",
+    answer: "but",
+    options: ["but","so","because"],
+    fullSentence: "Coral looks stony, but it is alive."
+  },
+  {
+    sentence: "The crab hid, _____ a shark swam.",
+    answer: "when",
+    options: ["when","so","although"],
+    fullSentence: "The crab hid, when a shark swam."
+  },
+  {
+    sentence: "The tide went out, _____ seashells were exposed.",
+    answer: "so",
+    options: ["so","because","although"],
+    fullSentence: "The tide went out, so seashells were exposed."
+  },
+  {
+    sentence: "Dolphins call out _____ they hunt together.",
+    answer: "while",
+    options: ["while","so","although"],
+    fullSentence: "Dolphins call out while they hunt together."
+  },
+  {
+    sentence: "Wear swim fins, _____ you swim faster.",
+    answer: "so",
+    options: ["so","because","although"],
+    fullSentence: "Wear swim fins, so you swim faster."
+  },
+  {
+    sentence: "Protect reefs, _____ corals get hurt.",
+    answer: "or",
+    options: ["or","because","although"],
+    fullSentence: "Protect reefs, or corals get hurt."
+  },
+  {
+    sentence: "The squid shot ink, _____ it escaped.",
+    answer: "and",
+    options: ["and","but","because"],
+    fullSentence: "The squid shot ink, and it escaped."
+  },
+  {
+    sentence: "Water was dark, _____ the fish saw.",
+    answer: "although",
+    options: ["although","because","so"],
+    fullSentence: "Water was dark, although the fish saw."
+  },
+  {
+    sentence: "The turtle stayed down _____ air was needed.",
+    answer: "until",
+    options: ["until","so","although"],
+    fullSentence: "The turtle stayed down until air was needed."
   }
 ];
 
 export const GENERIC_CONNECTOR_QUESTIONS = [
   {
-    sentence: "The students listened carefully _____ the teacher explained the experiment.",
+    sentence: "Students listened _____ the teacher spoke.",
     answer: "while",
-    options: ["while", "because", "so", "unless"],
-    hint: "Indicates an action happening at the same time."
+    options: ["while","so","although"],
+    fullSentence: "Students listened while the teacher spoke."
   },
   {
-    sentence: "She studied hard for the test, _____ she received the highest score.",
+    sentence: "She studied, _____ she passed the test.",
     answer: "so",
-    options: ["so", "because", "although", "since"],
-    hint: "Shows the result of studying hard."
+    options: ["so","because","although"],
+    fullSentence: "She studied, so she passed the test."
   },
   {
-    sentence: "We went outside to play _____ the weather was rather cold.",
-    answer: "although",
-    options: ["although", "because", "so", "unless"],
-    hint: "Shows contrast between the cold weather and playing outside."
+    sentence: "The weather was cold, _____ we played outside.",
+    answer: "but",
+    options: ["but","so","because"],
+    fullSentence: "The weather was cold, but we played outside."
   },
   {
-    sentence: "You will miss the school bus _____ you wake up on time.",
-    answer: "unless",
-    options: ["unless", "because", "although", "so"],
-    hint: "'Unless' means 'except if'."
+    sentence: "Run to the bus, _____ you miss it.",
+    answer: "or",
+    options: ["or","because","although"],
+    fullSentence: "Run to the bus, or you miss it."
   },
   {
-    sentence: "He opened his backpack _____ took out a pencil and notebook.",
+    sentence: "He opened his bag, _____ he took pens.",
     answer: "and",
-    options: ["and", "but", "although", "because"],
-    hint: "Connects two actions in sequential order."
+    options: ["and","but","because"],
+    fullSentence: "He opened his bag, and he took pens."
+  },
+  {
+    sentence: "The match stopped _____ rain fell hard.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "The match stopped because rain fell hard."
+  },
+  {
+    sentence: "She took an umbrella _____ skies darkened.",
+    answer: "because",
+    options: ["because","so","although"],
+    fullSentence: "She took an umbrella because skies darkened."
+  },
+  {
+    sentence: "He practiced, _____ he won a prize.",
+    answer: "so",
+    options: ["so","because","although"],
+    fullSentence: "He practiced, so he won a prize."
+  },
+  {
+    sentence: "Put on goggles _____ you enter the lab.",
+    answer: "before",
+    options: ["before","so","although"],
+    fullSentence: "Put on goggles before you enter the lab."
+  },
+  {
+    sentence: "Kids played, _____ their parents watched.",
+    answer: "while",
+    options: ["while","so","although"],
+    fullSentence: "Kids played, while their parents watched."
+  },
+  {
+    sentence: "She read books _____ she finished work.",
+    answer: "after",
+    options: ["after","so","although"],
+    fullSentence: "She read books after she finished work."
+  },
+  {
+    sentence: "He ran fast _____ his legs hurt.",
+    answer: "although",
+    options: ["although","because","so"],
+    fullSentence: "He ran fast although his legs hurt."
   }
 ];
 
@@ -152,58 +545,10 @@ export function getConnectorQuestionsForWeek(weekNumber, grammarSentences = []) 
   if (w === 33) return WEEK_33_CONNECTOR_QUESTIONS;
   if (w === 34) return WEEK_34_CONNECTOR_QUESTIONS;
   if (w === 35) return WEEK_35_CONNECTOR_QUESTIONS;
-
-  // For any other week, try to extract connector questions from passed grammar sentences
-  if (Array.isArray(grammarSentences) && grammarSentences.length > 0) {
-    const connectors = [
-      { word: 'because', options: ['because', 'although', 'so', 'unless'], hint: 'Explains the reason or cause.' },
-      { word: 'although', options: ['although', 'because', 'so', 'while'], hint: 'Shows contrast between two clauses.' },
-      { word: 'while', options: ['while', 'because', 'so', 'if'], hint: 'Shows an ongoing action in the background.' },
-      { word: 'when', options: ['when', 'although', 'unless', 'so'], hint: 'Indicates the time of an event.' },
-      { word: 'so', options: ['so', 'because', 'although', 'since'], hint: 'Shows the result or consequence.' },
-      { word: 'unless', options: ['unless', 'because', 'although', 'if'], hint: "'Unless' means 'except if'." },
-      { word: 'and', options: ['and', 'but', 'although', 'because'], hint: 'Connects two actions in sequence.' },
-      { word: 'but', options: ['but', 'and', 'so', 'because'], hint: 'Connects two contrasting statements.' },
-    ];
-
-    const extracted = [];
-    for (const item of grammarSentences) {
-      const sent = typeof item === 'string' ? item : (item.sentence || item.text || '');
-      if (!sent || sent.length < 15) continue;
-
-      for (const c of connectors) {
-        const regex = new RegExp(`\\b${c.word}\\b`, 'i');
-        if (regex.test(sent)) {
-          const replaced = sent.replace(regex, '_____');
-          const isCapital = /^[A-Z]/.test(sent.match(regex)?.[0] || '');
-          const correctAns = isCapital ? c.word.charAt(0).toUpperCase() + c.word.slice(1) : c.word.toLowerCase();
-          const options = c.options.map(o => isCapital ? o.charAt(0).toUpperCase() + o.slice(1) : o.toLowerCase());
-
-          extracted.push({
-            sentence: replaced,
-            answer: correctAns,
-            options,
-            hint: c.hint
-          });
-          break;
-        }
-      }
-      if (extracted.length >= 5) break;
-    }
-
-    if (extracted.length >= 5) {
-      return extracted.slice(0, 5);
-    }
-    if (extracted.length >= 3) {
-      // Pad to exactly 5 questions with generic questions to keep stable 5 rounds
-      const needed = 5 - extracted.length;
-      return [...extracted, ...GENERIC_CONNECTOR_QUESTIONS.slice(0, needed)];
-    }
-  }
-
+  if (w === 36) return WEEK_36_CONNECTOR_QUESTIONS;
+  if (w === 37) return WEEK_37_CONNECTOR_QUESTIONS;
   return GENERIC_CONNECTOR_QUESTIONS;
 }
-
 
 // ─── 2. STORY SEQUENCER SCENES (F6D3) ──────────────────────────────────────
 
@@ -446,6 +791,16 @@ export const WEEK_33_WH_QUESTIONS = [
       { text: "Where did the headmaster speak to the students?", isCorrect: false },
     ],
     hint: "Look at the advice given by the headmaster in the corridor."
+  },
+  {
+    id: 'w33_wh_6',
+    sentence: "The janitor placed a bright yellow sign near the puddle.",
+    options: [
+      { text: "What did the janitor place near the puddle?", isCorrect: true },
+      { text: "Who painted the yellow sign?", isCorrect: false },
+      { text: "When did the janitor go home?", isCorrect: false },
+    ],
+    hint: "Notice the item placed on the wet floor: 'a bright yellow sign'."
   }
 ];
 
@@ -519,6 +874,16 @@ export const WEEK_34_WH_QUESTIONS = [
       { text: "Where did the lion run after being set free?", isCorrect: false },
     ],
     hint: "Notice the method used: 'quickly chewed through the ropes'."
+  },
+  {
+    id: 'w34_wh_6',
+    sentence: "The grateful lion thanked the little mouse for saving his life.",
+    options: [
+      { text: "Who did the grateful lion thank?", isCorrect: true },
+      { text: "Where did the lion find fresh water?", isCorrect: false },
+      { text: "Why did the hunters return to the forest?", isCorrect: false },
+    ],
+    hint: "Focus on the person being thanked: 'the little mouse'."
   }
 ];
 
@@ -592,6 +957,16 @@ export const GENERIC_WH_QUESTIONS = [
       { text: "How many gold badges were awarded in total?", isCorrect: false },
     ],
     hint: "Look for the reason: 'for courage'."
+  },
+  {
+    id: 'gen_wh_6',
+    sentence: "The crew boarded the exploration shuttle to return to Earth station.",
+    options: [
+      { text: "Where was the crew returning to?", isCorrect: true },
+      { text: "Who fixed the broken rover wheel?", isCorrect: false },
+      { text: "When did the rocket launch into orbit?", isCorrect: false },
+    ],
+    hint: "Look for the destination: 'Earth station'."
   }
 ];
 
@@ -665,6 +1040,16 @@ export const WEEK_35_WH_QUESTIONS = [
       { text: "How many marshmallows did each person roast?", isCorrect: false },
     ],
     hint: "Identify the camp treat: 'sweet marshmallows'."
+  },
+  {
+    id: 'w35_wh_6',
+    sentence: "After singing camp songs, the tired family crawled into their sleeping bags.",
+    options: [
+      { text: "What did the family do after singing?", isCorrect: true },
+      { text: "Who caught a fish in the river?", isCorrect: false },
+      { text: "Where did the children leave their boots?", isCorrect: false },
+    ],
+    hint: "Notice what they did after singing: 'crawled into their sleeping bags'."
   }
 ];
 

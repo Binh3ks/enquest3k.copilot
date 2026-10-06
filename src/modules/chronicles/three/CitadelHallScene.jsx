@@ -18,7 +18,7 @@
  *   X: -7 đến +7 (rộng 14m)
  *   Y: 0 đến 10 (cao 10m, tầng 2 ở y=4)
  *
- * Cửa phòng (5 cổng): 2 trái + 2 phải (hành lang tầng 1) + 1 Boss (tầng 2)
+ * Cửa phòng & Boss: 5 Chamber (Floor 1-5, 3 rương/game mỗi phòng = 15 game-slot) + 1 Weekly Boss Gate (tầng 2)
  */
 
 import React, { useEffect, useMemo, useState, useRef } from 'react';

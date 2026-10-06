@@ -307,11 +307,27 @@ Ghi vào `docs/weekNN_build_manifest.md`:
   - `labels[]`: 4 nhãn, ngôn ngữ A2 (KHÔNG dùng B2+ như `"Physical Balance & Stability Aid"`)
   - Tất cả concepts PHẢI từ `clil_article.vocab_focus[]`
 
+#### 2F. Chronicles Companion Data Files: `wh_questions.js` & `word_class_duel.js`
+
+- **`wh_questions.js` (Floor 7 Door 2 - Question Quest)**:
+  - 5 pre-generated WH-questions based on the week's Story Scenes & CLIL Article.
+  - Suffix rule: Verb detection strictly requires `-ed` (`length >= 4 && endsWith('ed')`), NEVER bare `-d`.
+  - Double possessives prohibited: NEVER produce `Maria's's`.
+  - Compound sentence rule: Only generate "remind ... about" when `remind(ed)` is present.
+  - Header: `// Pre-generated WH Questions — pending pedagogy review before release`.
+- **`word_class_duel.js` (Floor 7 Door 3 - Word Class Duel)**:
+  - 4 target dual-class words (NOUN vs VERB, NOUN vs ADJECTIVE).
+  - Round 1 should prioritize genuine dual-class words directly from CLIL article.
+  - Rounds 2-4: Contextual sentences adhering strictly to A2 vocabulary and week theme.
+  - Provenance: Document verbatim vs authored rounds clearly.
+  - Header: `// Word Class Duel draft — pending pedagogy review before release`.
+
 **Gate 2 — Pre-Asset:**
 ```bash
 node scripts/cefr_curriculum_guard.mjs NN   # 0 violations
 node scripts/audit_chunks.js NN              # 0 chunking errors
 grep -rn "handrail\|lubricant\|predominantly\|mechanism\|sterile" src/data/weeks/weekNN/ # → ZERO
+grep -rn "Related to " src/data/weeks/weekNN/ # → ZERO (BUG-002 Guard)
 ```
 
 ---
@@ -402,7 +418,7 @@ Push chỉ khi 0 CRITICAL BUGS.
 1. **Phase 2 TRƯỚC Phase 3** — Không có audio script → không có audio
 2. **Rotary Lookup TRƯỚC Boss data** — Chỉ sinh Shield thuộc `testedSkills[cycleNumber]`
 3. **15 Quests ≠ Cambridge Shields** — Quests = daily gamification; Shields = Day 5 Cambridge exam format
-4. **5 Hubs là tất cả** — Không tạo file data ngoài 5 hubs
+4. **4 Hubs + 2 Chronicles Companion Files** — Không tạo file data ngoài 4 hubs và 2 file companion (`wh_questions.js`, `word_class_duel.js`)
 5. **`check_questions[]` luôn có `question_en`** — Component fallback: `q.question || q.question_en || q.prompt`
 6. **L3 cards không có `location_name`** — Sẽ override `name` và gây mismatch UI
 7. **Story Writer Scene 3 phải có động từ quá khứ** — `"washed the wound"`, `"put on a bandage"`, etc.
@@ -415,3 +431,8 @@ Push chỉ khi 0 CRITICAL BUGS.
 14. **KET là WARN không phải PASS** — KET-only words không được tính là core Flyers A2 vocabulary
 15. **Extra Shield data trong hub ≠ active Shield** — Chỉ `testedSkills[cycleNumber]` mới là active Quest 5 Shields
 16. **Week 5 Mock = 16 Cambridge parts** — Khác hoàn toàn với weekly Shield rotation, có full timing
+17. **BUG-002 Invariant (Anti-Dummy Definition)** — CẤM TUYỆT ĐỐI `"Related to " + word` fallback. Từ vựng nạp vào mini-games bắt buộc lấy từ Cambridge definition_en hoặc từ điển chuẩn. CẤM để câu ngữ pháp (chứa `.sentence` hoặc độ dài > 3 từ) lọt vào vocabulary pool.
+18. **WH-Questions & Word Class Duel Invariant** — WH-questions pre-generated tại build-time với strict `-ed` suffix check (không dùng `-d`), không double possessive (`'s's`). Word Class Duel ưu tiên từ đa từ loại tự nhiên trong CLIL, ghi rõ provenance nếu có câu authored.
+19. **Pedagogy Review Release Gating** — Toàn bộ nội dung authored trong Chronicles mini-games (`wh_questions.js`, `word_class_duel.js`, `ConnectorRelayGame.jsx`) BẮT BUỘC ghi comment `pending pedagogy review before release` và phải có phê duyệt của chuyên gia sư phạm trước khi bật feature flag cho học sinh.
+20. **Minh bạch số liệu (30/30)** — 30 từ vựng là kích thước mảng nạp chuẩn (20 từ reading + 10 từ writing). CẤM Agent đồng nhất kích thước mảng template với nội dung đã được verify.
+

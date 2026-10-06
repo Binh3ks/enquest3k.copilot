@@ -23,6 +23,8 @@ import RiddleRunMaze from './RiddleRunMaze';
 import GrandMatrixDungeon from './GrandMatrixDungeon';
 import TitanGrammarForge from './TitanGrammarForge';
 import CambridgeClozeGauntlet from './CambridgeClozeGauntlet';
+import SynonymStormDefense from './SynonymStormDefense';
+import ConnectorRelayCanvas from './ConnectorRelayCanvas';
 import PhaserGameCanvas from '../../phaser/PhaserGameCanvas';
 import HubScene from '../../phaser/scenes/HubScene';
 import HighwayRunnerScene from '../../phaser/scenes/HighwayRunnerScene';
@@ -105,6 +107,8 @@ export default function QuestDemoScreen() {
           <option value="grand_matrix">Floor 5 Door 1: Grand Matrix Dungeon</option>
           <option value="titan_forge">Floor 5 Door 2: Titan Grammar Forge</option>
           <option value="cambridge_cloze">Floor 5 Door 3: Cambridge Cloze Gauntlet</option>
+          <option value="synonym_storm">Floor 6 Door 1: Synonym Storm Defense</option>
+          <option value="connector_relay">Floor 6 Door 2: Connector Burst</option>
           <option disabled>────────── PHASER 3 ENGINES (v4.0) ──────────</option>
           <option value="phaser_hub">🎮 Phaser: Hub World 2D</option>
           <option value="phaser_highway">🎮 Phaser: Highway Runner</option>
@@ -272,7 +276,7 @@ export default function QuestDemoScreen() {
         {activeGame === 'titan_forge' && (
           <TitanGrammarForge
             grammarSentences={DEMO_SENTENCES}
-            duration={90}
+            duration={100}
             weekNumber={33}
             onComplete={(stars, score) => setCompleteResult({ stars, score })}
           />
@@ -280,6 +284,23 @@ export default function QuestDemoScreen() {
 
         {activeGame === 'cambridge_cloze' && (
           <CambridgeClozeGauntlet
+            duration={120}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'synonym_storm' && (
+          <SynonymStormDefense
+            duration={90}
+            weekNumber={33}
+            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+          />
+        )}
+
+        {activeGame === 'connector_relay' && (
+          <ConnectorRelayCanvas
+            grammarSentences={DEMO_SENTENCES}
             duration={120}
             weekNumber={33}
             onComplete={(stars, score) => setCompleteResult({ stars, score })}
@@ -310,6 +331,8 @@ export default function QuestDemoScreen() {
               { starter: 'Jake was walking', completion: 'down the corridor' },
               { starter: 'Water on tiles', completion: 'reduces friction' },
               { starter: 'Rubber shoe soles', completion: 'provide strong grip' },
+              { starter: 'A clear hypothesis helps', completion: 'guide the scientific method' },
+              { starter: 'Careful thinking leads to', completion: 'logical new conclusions' },
             ]}
             duration={60}
             onComplete={(stars, score) => setCompleteResult({ stars, score })}

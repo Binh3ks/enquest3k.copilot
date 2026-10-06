@@ -56,11 +56,13 @@ export const CHAMBER_METADATA = [
   { chamberName: 'Thunder Arena',     chamberEn: 'Battle Arena',   icon: '⚡', zoneRef: 'Day 3' },
   { chamberName: 'Rune Sanctum',      chamberEn: 'Creator Studio', icon: '⚒️', zoneRef: 'Day 4' },
   { chamberName: 'Apex Spire',        chamberEn: 'Boss Castle',    icon: '🏰', zoneRef: 'Day 5' },
+  { chamberName: 'Arcane Skyway',     chamberEn: 'Arcane Skyway',  icon: '🌪️', zoneRef: 'Day 6' },
+  { chamberName: 'Master Sanctum',    chamberEn: 'Master Sanctum', icon: '👑', zoneRef: 'Day 7' },
 ];
 
 /**
  * 3 challenge doors per room.
- * 15 unique games across 5 floors.
+ * 21 unique games across 7 floors (7 Vocab / 7 Grammar / 7 Integration).
  */
 export const DOOR_ROTATION = [
   // Floor 1 (Day 1: Story World)
@@ -83,15 +85,27 @@ export const DOOR_ROTATION = [
   ],
   // Floor 4 (Day 4: Creator Studio)
   [
-    { id: 'highway_runner',type: 'vocab',       duration: 60, label: 'Highway Word Runner',   gameName: 'Highway Word Runner',   icon: '🏎️' },
-    { id: 'spell_train_express',type:'grammar', duration: 90, label: 'Syntax Express 4-Car',  gameName: 'Syntax Express 4-Car',  icon: '🚆' },
+    { id: 'highway_runner',type: 'vocab',       duration: 150, label: 'Highway Word Runner',   gameName: 'Highway Word Runner',   icon: '🏎️' },
+    { id: 'spell_train_express',type:'grammar', duration: 140, label: 'Syntax Express 4-Car',  gameName: 'Syntax Express 4-Car',  icon: '🚆' },
     { id: 'lexical_riddle',type: 'integration', duration: 90, label: 'Mystery Riddle Detective',gameName:'Mystery Riddle Detective',icon:'🔍' },
   ],
   // Floor 5 (Day 5: Boss Castle — comprehensive)
   [
     { id: 'grand_matrix',  type: 'vocab',       duration: 180, label: 'Grand Master Matrix',   gameName: 'Grand Master Matrix',   icon: '👑' },
-    { id: 'titan_forge',   type: 'grammar',     duration: 90, label: 'Titan Grammar Forge',   gameName: 'Titan Grammar Forge',   icon: '⚡' },
+    { id: 'titan_forge',   type: 'grammar',     duration: 100, label: 'Titan Grammar Forge',   gameName: 'Titan Grammar Forge',   icon: '⚡' },
     { id: 'cambridge_cloze',type:'integration', duration: 120, label: 'Cambridge Cloze Gauntlet',gameName:'Cambridge Cloze Gauntlet',icon:'🏆' },
+  ],
+  // Floor 6 — Staging Sandbox (Pool Extension: not part of standard 5-day weekly student flow)
+  [
+    { id: 'synonym_storm',    type: 'vocab',       duration: 75, label: 'Synonym Storm',          gameName: 'Synonym Storm',          icon: '🌪️' },
+    { id: 'connector_relay',  type: 'grammar',     duration: 160, label: 'Connector Relay',        gameName: 'Connector Relay',        icon: '🌉' },
+    { id: 'story_sequencer',  type: 'integration', duration: 60, label: 'Story Sequencer',        gameName: 'Story Sequencer',        icon: '📖' },
+  ],
+  // Floor 7 — Staging Sandbox (Pool Extension: not part of standard 5-day weekly student flow)
+  [
+    { id: 'word_forge_scramble', type: 'vocab',    duration: 75, label: 'Word Forge Scramble',    gameName: 'Word Forge Scramble',    icon: '⚒️' },
+    { id: 'question_quest',      type: 'grammar',  duration: 240, label: 'Question Quest',        gameName: 'Question Quest',        icon: '❓' },
+    { id: 'rune_balance_scale',  type: 'integration', duration: 75, label: 'Word Class Duel',     gameName: 'Word Class Duel',        icon: '⚖️' },
   ],
 ];
 
@@ -120,9 +134,10 @@ export const MAX_PP_PER_WEEK        = 450; // 5 rooms × 9 stars × 10 PP
  */
 export function calculateStars(correct, total, timeTaken, maxTime) {
   if (total === 0) return 0;
-  const accuracy  = correct / total;
-  const timeBonus = Math.max(0, 1 - (timeTaken / maxTime));
-  const score     = accuracy * 0.7 + timeBonus * 0.3;
+  const accuracy = correct / total;
+  const hasTime = timeTaken != null && maxTime != null && maxTime > 0;
+  const timeBonus = hasTime ? Math.max(0, 1 - (timeTaken / maxTime)) : 1;
+  const score = hasTime ? (accuracy * 0.7 + timeBonus * 0.3) : accuracy;
   if (score >= 0.85) return 3;
   if (score >= 0.65) return 2;
   if (score >= 0.40) return 1;

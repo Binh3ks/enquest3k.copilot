@@ -20,12 +20,12 @@ import useChroniclesStore from '../../../stores/useChroniclesStore';
 import GameInstructionModal from './GameInstructionModal';
 
 const DEFAULT_HIGHWAY_ITEMS = [
-  { word: 'corridor', definition: 'A long hallway connecting rooms in a building' },
-  { word: 'friction', definition: 'The force that stops things from sliding easily' },
-  { word: 'traction', definition: 'The grip between shoes and a floor surface' },
-  { word: 'slippery', definition: 'Very smooth or wet and easy to slide on' },
-  { word: 'bandage',  definition: 'A strip of cloth to wrap and cover a cut' },
-  { word: 'ice pack', definition: 'Cold therapy pouch placed on a sprained ankle' },
+  { word: 'explore', definition: 'To travel around a new place to learn about it' },
+  { word: 'discover', definition: 'To find or learn something for the first time' },
+  { word: 'journey', definition: 'An act of traveling from one place to another' },
+  { word: 'challenge', definition: 'Something new and difficult that tests your ability' },
+  { word: 'victory', definition: 'Success in a game, contest, or struggle' },
+  { word: 'champion', definition: 'A person who has defeated all rivals in a contest' },
 ];
 
 export default function HighwayRunnerGame({
@@ -34,6 +34,7 @@ export default function HighwayRunnerGame({
   weekNumber = 33,
   gameParams = {},
   onComplete,
+  onExit,
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('highway_runner');
@@ -41,11 +42,18 @@ export default function HighwayRunnerGame({
   const pool = useMemo(() => {
     const valid = vocabItems.filter((v) => v.word && (v.definition || v.meaning));
     if (valid.length >= 4) {
-      return valid.map((v) => ({ word: v.word, definition: v.definition || v.meaning }));
+      return valid.map((v) => ({ 
+        word: v.word, 
+        definition: v.definition || v.meaning,
+        isReview: Boolean(v.isReview)
+      }));
     }
-    return DEFAULT_HIGHWAY_ITEMS;
+    return DEFAULT_HIGHWAY_ITEMS.map(i => ({ ...i, isReview: false }));
   }, [vocabItems]);
 
+  const [currentWeekCollects, setCurrentWeekCollects] = useState(0);
+  const [reviewBonusScore, setReviewBonusScore] = useState(0);
+  const [bonusPopup, setBonusPopup] = useState(null);
   const [phase, setPhase] = useState('intro'); // 'intro' | 'playing' | 'result'
   const [currentLane, setCurrentLane] = useState(1); // 0 = left, 1 = center, 2 = right
   const [targetIdx, setTargetIdx] = useState(0);
@@ -85,6 +93,7 @@ export default function HighwayRunnerGame({
       y: -12, // top percentage
       text,
       isTarget,
+      isReview: Boolean(currentTarget.isReview),
       speed: 0.85,
     };
 
@@ -104,9 +113,8 @@ export default function HighwayRunnerGame({
 
   // Keyboard navigation
   useEffect(() => {
-    if (phase !== 'playing') return;
-
     const handleKeyDown = (e) => {
+      if (phase !== 'playing') return;
       if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
         steerLeft();
       } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
@@ -125,6 +133,8 @@ export default function HighwayRunnerGame({
     setLives(3);
     setScore(0);
     setCollects(0);
+    setCurrentWeekCollects(0);
+    setReviewBonusScore(0);
     setTimeLeft(duration);
     setRoadItems([]);
     setTargetIdx(0);
@@ -172,7 +182,19 @@ export default function HighwayRunnerGame({
               // Collected Target!
               playCoinSound();
               playCorrectSound();
-              setScore((s) => s + 20);
+              if (item.isReview) {
+                setReviewBonusScore((b) => b + 30);
+                setScore((s) => s + 30);
+                setBonusPopup({
+                  title: '✨ SPIRAL REVIEW BONUS!',
+                  xp: '+30 XP',
+                  desc: 'Ôn tập tuần trước (Điểm thưởng phụ)',
+                });
+                setTimeout(() => setBonusPopup(null), 2500);
+              } else {
+                setCurrentWeekCollects((c) => c + 1);
+                setScore((s) => s + 20);
+              }
               setCollects((c) => {
                 const updated = c + 1;
                 if (updated % 4 === 0) {
@@ -219,10 +241,13 @@ export default function HighwayRunnerGame({
     const elapsed = sessionStartTime ? parseFloat(((Date.now() - sessionStartTime) / 1000).toFixed(1)) : duration;
     setTotalElapsedTime(elapsed);
 
+    // Pedagogy Policy: Main stars strictly calculated from current-week items.
+    // Review items grant bonus score and coins without gating room star progress.
     let earnedStars = 0;
-    if (collects >= 14 && lives >= 2) earnedStars = 3;
-    else if (collects >= 9) earnedStars = 2;
-    else if (collects >= 5) earnedStars = 1;
+    const baseTargetCount = currentWeekCollects > 0 ? currentWeekCollects : collects;
+    if (baseTargetCount >= 10 && lives >= 2) earnedStars = 3;
+    else if (baseTargetCount >= 6) earnedStars = 2;
+    else if (baseTargetCount >= 3) earnedStars = 1;
 
     if (earnedStars >= 1) {
       playVictoryFanfare();
@@ -230,7 +255,14 @@ export default function HighwayRunnerGame({
     }
 
     if (onComplete) {
-      onComplete(earnedStars, { collects, livesLeft: lives, score, time: elapsed });
+      onComplete(earnedStars, { 
+        collects, 
+        currentWeekCollects, 
+        reviewBonusScore, 
+        livesLeft: lives, 
+        score, 
+        time: elapsed 
+      });
     }
   };
 
@@ -242,6 +274,14 @@ export default function HighwayRunnerGame({
       {/* Top HUD */}
       <div className="flex items-center justify-between px-4 py-2.5 bg-slate-900/90 border-b border-rose-500/20 shrink-0 z-20 backdrop-blur">
         <div className="flex items-center gap-3">
+          {onExit && (
+            <button
+              onClick={onExit}
+              className="flex items-center gap-1 px-3 py-1 bg-slate-800 hover:bg-slate-700 text-xs font-semibold rounded-lg border border-slate-700 text-slate-300 transition-colors"
+            >
+              <ArrowLeft size={14} /> Exit
+            </button>
+          )}
           <span className="text-xl">🏎️</span>
           <div>
             <div className="text-[10px] uppercase font-black tracking-widest text-rose-400">
@@ -278,13 +318,20 @@ export default function HighwayRunnerGame({
 
       {/* Target Definition Dashboard */}
       {phase === 'playing' && (
-        <div className="px-4 py-2 bg-gradient-to-r from-rose-950/80 via-slate-900 to-rose-950/80 border-b border-rose-500/30 flex items-center justify-center text-center z-10">
+        <div className="px-4 py-2 bg-gradient-to-r from-rose-950/80 via-slate-900 to-rose-950/80 border-b border-rose-500/30 flex items-center justify-center text-center z-10 relative">
           <div className="flex items-center gap-2 max-w-lg">
             <span className="text-xs font-black uppercase text-rose-400 shrink-0">Drive Into:</span>
             <span className="text-xs font-bold text-slate-200 truncate">
               "{currentTarget.definition}"
             </span>
           </div>
+          {bonusPopup && (
+            <div className="absolute top-11 px-4 py-1.5 bg-amber-400 text-slate-950 rounded-xl font-black text-xs shadow-2xl flex items-center gap-2 border-2 border-amber-200 animate-bounce z-50">
+              <span>{bonusPopup.title}</span>
+              <span className="bg-slate-950 text-amber-300 px-2 py-0.5 rounded-md">{bonusPopup.xp}</span>
+              <span className="text-[10px] font-semibold text-slate-900">{bonusPopup.desc}</span>
+            </div>
+          )}
         </div>
       )}
 

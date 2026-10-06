@@ -429,6 +429,77 @@ public/audio/weekXX/
 7. **Word Bank Matching**:
    - Compact 2-column mobile word pool (`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5`), sticky dock at the top, tight definition padding (`p-2 sm:p-2.5`).
 
+## 🏰 Chronicles 21 Mini-Game Weekly Content Requirements (W34–W72)
+
+Super Leo Chronicles operates across 7 Floors with 21 Mini-Games (7 Vocab, 7 Grammar, 7 Integration). To support Chronicles mode for W34+, each week requires specific dedicated data files alongside the 4 central Hubs:
+
+### 1. Pre-generated WH Questions (`src/data/weeks/weekXX/wh_questions.js`)
+- **Purpose**: Feeds Floor 7 Door 2 (`QuestionQuestGame.jsx` / `question_quest`).
+- **Quantity**: Exactly 5 pre-generated WH-questions derived from the week's Story Scenes & CLIL Article.
+- **Schema**:
+```javascript
+// Pre-generated WH Questions — pending pedagogy review before release
+export const WEEKXX_WH_QUESTIONS = [
+  {
+    id: 'wh_1',
+    sentence: "Jake was walking down the hallway when he slipped.",
+    question: "What was Jake doing when he slipped?",
+    answer: "walking down the hallway",
+    tokens: ["What", "was", "Jake", "doing", "when", "he", "slipped", "?"],
+    hint: "Think about the action in progress (Past Continuous).",
+    targetFocus: "Past Continuous action"
+  },
+  // 4 more items (wh_2 to wh_5)
+];
+```
+- **Authoring Rules**:
+  - Suffix rule: Past tense verbs must strictly match `-ed` (`length >= 4 && endsWith('ed')`). NEVER match bare `-d` (avoids falsely flagging nouns like `friend`, `David`, `sound`).
+  - Double possessives prohibited: Never produce `Maria's's`.
+  - Compound sentence handling: Only use "What did ... remind ... about?" if the clause explicitly uses `remind(ed)`. Otherwise, use standard action queries ("What did [S] do?").
+  - Pre-generation invariant: Questions MUST be pre-generated at build-time in this file, NOT generated via naive regex at runtime.
+  - Header comment MUST state: `// Pre-generated WH Questions — pending pedagogy review before release`.
+
+### 2. Word Class Duel Data (`src/data/weeks/weekXX/word_class_duel.js`)
+- **Purpose**: Feeds Floor 7 Door 3 (`WordClassDuelGame.jsx` / `rune_balance_scale`).
+- **Quantity**: Exactly 4 dual-class target words (words functioning as both NOUN and VERB, or NOUN and ADJECTIVE, appropriate for Cambridge A2 Flyers).
+- **Schema**:
+```javascript
+// Word Class Duel draft — pending pedagogy review before release
+export const WEEKXX_WORD_CLASS_DUEL = [
+  {
+    id: 'wcd_1',
+    targetWord: 'grip',
+    sentenceA: 'The rubber soles provide good grip on wet floors.',
+    correctClassA: 'NOUN',
+    sentenceB: 'Be sure to grip the handrail tightly.',
+    correctClassB: 'VERB',
+    hint: 'A noun is a thing/force; a verb is an action you do.',
+    explanation: 'In sentence A, grip is a noun (the ability to hold). In sentence B, grip is an action verb.'
+  },
+  // 3 more items (wcd_2 to wcd_4)
+];
+```
+- **Authoring Rules**:
+  - Prioritize extracting natural dual-class occurrences directly from the week's `clil_article` and `story_scenes`.
+  - For any supplementary authored sentences, document provenance clearly in the header comment (e.g. `// Round 1: verbatim CLIL; Rounds 2-4: authored contextual sentences`).
+  - Sentences must use strictly A2 Flyers vocabulary and relevant weekly themes.
+  - Header comment MUST state: `// Word Class Duel draft — pending pedagogy review before release`.
+
+### 3. Connector Relay Integration (`ConnectorRelayGame.jsx` / `connector_relay`)
+- **Purpose**: Feeds Floor 6 Door 2.
+- **Coverage**: Tests subordinating and coordinating conjunctions (`because`, `although`, `so`, `unless`, `and`, `while`, `when`).
+- **Data Integrity**: Sentences must have clear semantic relationships where only the target conjunction makes logical and grammatical sense.
+
+### 4. Pure Lexical Integrity & BUG-002 Prevention Invariant
+- Every week's `reading_hub.js` (`vocab`: 20 items) and `writing_hub.js` (`rw_part_1.definitions`: 10 items) MUST supply 100% genuine Cambridge definitions.
+- **ZERO TOLERANCE for `"Related to " + word`** dummy fallbacks across all services and screens.
+- Grammar sentences (`.sentence` property or text > 3 words) MUST NEVER be placed in or leak into the vocabulary pool for Integration games (`lexical_det`, `ancient_scroll`, `meteor_smasher`, `lexical_riddle`).
+
+### 5. Mandatory Human Pedagogical Review Gating
+- Code and components are frozen and verified.
+- However, for every new week produced (W34+), the Chronicles data assets (`wh_questions.js`, `word_class_duel.js`, and connector configs) **CANNOT be marked as "reviewed" until a human educator validates them**.
+- Pre-release checklist requires explicit pedagogical sign-off before enabling student access.
+
 ## 🔄 Mandatory Continuous Handoff & Maintenance Doctrine (Invariant)
 > **BẮT BUỘC ÁP DỤNG TỪ NAY VỀ SAU**:
 > Bất kỳ review, tinh chỉnh phương pháp luận, sửa đổi cấu trúc (architecture) hay chuẩn hóa dữ liệu nào được User phê duyệt trên Tuần 33 (Golden Standard) **BẮT BUỘC PHẢI ĐƯỢC CẬP NHẬT ĐỒNG BỘ NGAY LẬP TỨC** vào:
@@ -436,3 +507,4 @@ public/audio/weekXX/
 > 2. `docs/WEEK_CONTENT_SOP_W34_PLUS.md` (Standard Operating Procedure cho W34–W72)
 > 
 > Tuyệt đối không để xảy ra tình trạng "sửa xong trong code mà quên cập nhật tài liệu chuẩn", đảm bảo mọi Agent trong các phiên làm việc tiếp theo luôn thừa hưởng kiến trúc mới nhất 100%!
+

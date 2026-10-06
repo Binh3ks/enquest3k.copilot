@@ -1,0 +1,38 @@
+{
+  "method": "Phuong An B (Headful Chrome)",
+  "totalElapsedSec": 9.49,
+  "initialTimeLeft": 99,
+  "finalTimeLeftSec": 91,
+  "actualTimeExpended": 9,
+  "roundMetrics": [
+    {
+      "round": 1,
+      "stem": "Without sufficient friction, the vehicle",
+      "correctText": "could not stop in time",
+      "hudTimeLeft": 99,
+      "durationSec": 2.31
+    },
+    {
+      "round": 2,
+      "stem": "The engineer designed rubber soles so that",
+      "correctText": "workers would stay safe",
+      "hudTimeLeft": 97,
+      "durationSec": 2.31
+    },
+    {
+      "round": 3,
+      "stem": "When the corridor floor was slippery, Jake",
+      "correctText": "walked very carefully",
+      "hudTimeLeft": 95,
+      "durationSec": 2.41
+    },
+    {
+      "round": 4,
+      "stem": "Unless the janitor cleans the wet floor,",
+      "correctText": "students may slip and fall",
+      "hudTimeLeft": 92,
+      "durationSec": 2.31
+    }
+  ],
+  "timestamp": "2026-09-19T12:56:50.951Z"
+}

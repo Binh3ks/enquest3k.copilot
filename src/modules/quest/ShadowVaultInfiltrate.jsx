@@ -78,7 +78,7 @@ export default function ShadowVaultInfiltrate({
 
   // Build 4 matching pairs
   const pairs = useMemo(() => {
-    const valid = vocabItems.filter(v => v.word && v.definition);
+    const valid = vocabItems.filter(v => v.word && v.definition && v.type !== 'grammar' && !v.sentence && !v.definition.startsWith('Related to'));
     const pool = valid.length >= 4 ? valid : [...valid, ...FALLBACK_PAIRS];
     return pool.slice(0, 4).map((item, idx) => ({
       id: `pair_${idx}`,

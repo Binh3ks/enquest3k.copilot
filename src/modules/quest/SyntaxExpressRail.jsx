@@ -13,7 +13,7 @@
  */
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Train, Trophy, RotateCcw, ArrowRight, Zap, Sparkles, AlertTriangle, GitCommit } from 'lucide-react';
+import { Train, Trophy, RotateCcw, ArrowRight, Zap, Sparkles, AlertTriangle, GitCommit, HelpCircle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
 import {
@@ -24,6 +24,7 @@ import LeoCharacter from './LeoCharacter';
 import HUDOverlay from './HUDOverlay';
 import FloatingExitBtn from './FloatingExitBtn';
 import useGestureControls from './useGestureControls';
+import GameInstructionModal from '../chronicles/games/GameInstructionModal';
 import './SyntaxExpressRail.css';
 
 const ROOM_WIDTH = 900;
@@ -43,9 +44,9 @@ const DEFAULT_SYNTAX_ROUNDS = [
     correctClause: 'will slip easily',
     fullSentence: 'If corridor floors are wet, people will slip easily.',
     options: [
-      { id: 'opt_0', text: 'will slip easily',   isCorrect: true },
-      { id: 'opt_1', text: 'slipped yesterday',   isCorrect: false },
-      { id: 'opt_2', text: 'are slipping now',   isCorrect: false },
+      { id: 'opt_0', text: 'will slip easily',     isCorrect: true },
+      { id: 'opt_1', text: 'had slipped yesterday', isCorrect: false },
+      { id: 'opt_2', text: 'are slipping now',     isCorrect: false },
     ],
   },
   {
@@ -53,9 +54,9 @@ const DEFAULT_SYNTAX_ROUNDS = [
     correctClause: 'walked without falling',
     fullSentence: 'Because friction was increased by rubber, Jake walked without falling.',
     options: [
-      { id: 'opt_3', text: 'fall down quickly',  isCorrect: false },
+      { id: 'opt_3', text: 'fall down quickly',    isCorrect: false },
       { id: 'opt_4', text: 'walked without falling', isCorrect: true },
-      { id: 'opt_5', text: 'will fall tomorrow', isCorrect: false },
+      { id: 'opt_5', text: 'will fall tomorrow',   isCorrect: false },
     ],
   },
   {
@@ -63,16 +64,46 @@ const DEFAULT_SYNTAX_ROUNDS = [
     correctClause: 'were very dangerous',
     fullSentence: 'Although polished tiles looked clean, they were very dangerous.',
     options: [
-      { id: 'opt_6', text: 'is safe today',      isCorrect: false },
-      { id: 'opt_7', text: 'were very dangerous', isCorrect: true },
-      { id: 'opt_8', text: 'was sticky honey',   isCorrect: false },
+      { id: 'opt_6', text: 'is safe today',        isCorrect: false },
+      { id: 'opt_7', text: 'were very dangerous',  isCorrect: true },
+      { id: 'opt_8', text: 'was sticky honey',     isCorrect: false },
+    ],
+  },
+  {
+    stem: 'When the wet floor was dried, students',
+    correctClause: 'walked safely again',
+    fullSentence: 'When the wet floor was dried, students walked safely again.',
+    options: [
+      { id: 'opt_9',  text: 'walked safely again', isCorrect: true },
+      { id: 'opt_10', text: 'jumped very high',    isCorrect: false },
+      { id: 'opt_11', text: 'ran inside fast',     isCorrect: false },
+    ],
+  },
+  {
+    stem: 'Unless you wear strong rubber soles, you',
+    correctClause: 'might slide down',
+    fullSentence: 'Unless you wear strong rubber soles, you might slide down.',
+    options: [
+      { id: 'opt_12', text: 'might slide down',    isCorrect: true },
+      { id: 'opt_13', text: 'stood there still',   isCorrect: false },
+      { id: 'opt_14', text: 'can fly away',        isCorrect: false },
+    ],
+  },
+  {
+    stem: 'Because the school nurse helped Jake, he',
+    correctClause: 'felt much better',
+    fullSentence: 'Because the school nurse helped Jake, he felt much better.',
+    options: [
+      { id: 'opt_15', text: 'felt much better',    isCorrect: true },
+      { id: 'opt_16', text: 'slept all night',     isCorrect: false },
+      { id: 'opt_17', text: 'swam in water',       isCorrect: false },
     ],
   },
 ];
 
 export default function SyntaxExpressRail({
   grammarSentences = [],
-  duration = 90,
+  duration = 140,
   weekNumber = 33,
   onComplete,
   onExit,
@@ -94,31 +125,50 @@ export default function SyntaxExpressRail({
   }, []);
 
   const rounds = useMemo(() => {
-    if (grammarSentences && grammarSentences.length > 0) {
-      return grammarSentences.slice(0, 3).map((item, idx) => {
-        const full = item.fullSentence || 'If surfaces are smooth, objects slide easily.';
-        const words = full.split(' ');
-        const mid = Math.floor(words.length / 2);
-        const stem = words.slice(0, mid).join(' ');
-        const tail = words.slice(mid).join(' ');
-        return {
-          stem,
-          correctClause: tail,
-          fullSentence: full,
-          options: [
-            { id: `opt_${idx}_0`, text: tail, isCorrect: true },
-            { id: `opt_${idx}_1`, text: 'stopped completely', isCorrect: false },
-            { id: `opt_${idx}_2`, text: 'is floating in air', isCorrect: false },
-          ].sort(() => Math.random() - 0.5),
-        };
-      });
+    if (weekNumber === 33 || !grammarSentences || grammarSentences.length === 0) {
+      return DEFAULT_SYNTAX_ROUNDS;
     }
+    const validItems = grammarSentences.filter(item => Boolean(item.starter && item.completion) || item.sentence?.length > 10);
+    if (validItems.length > 0) {
+      const selected = [];
+      for (let i = 0; i < 6; i++) {
+        selected.push(validItems[i % validItems.length]);
+      }
+      return selected.map((item, idx) => {
+          const full = item.fullSentence || item.sentence || `${item.starter || ''} ${item.completion || ''}`.trim();
+          const words = full.split(' ');
+          const mid = Math.floor(words.length / 2);
+          const stem = item.starter || item.stem || words.slice(0, mid).join(' ');
+          const tail = item.completion || item.correctClause || words.slice(mid).join(' ');
+
+          // Pool distractors from other sentences in the same week
+          const otherTails = validItems
+            .filter((_, i) => i !== idx)
+            .map(other => other.completion || other.correctClause)
+            .filter(Boolean);
+
+          const distractor1 = otherTails[0] || 'stopped moving immediately';
+          const distractor2 = otherTails[1] || 'could not hold the grip';
+
+          return {
+            stem,
+            correctClause: tail,
+            fullSentence: full,
+            options: [
+              { id: `opt_${idx}_0`, text: tail, isCorrect: true },
+              { id: `opt_${idx}_1`, text: distractor1, isCorrect: false },
+              { id: `opt_${idx}_2`, text: distractor2, isCorrect: false },
+            ].sort(() => Math.random() - 0.5),
+          };
+        });
+      }
     return DEFAULT_SYNTAX_ROUNDS;
   }, [grammarSentences]);
 
   const [phase, setPhase] = useState('playing'); // 'playing' | 'cleared' | 'ko'
+  const [showHelp, setShowHelp] = useState(false);
   const [roundIdx, setRoundIdx] = useState(0);
-  const [hearts, setHearts] = useState(3);
+  const [hearts, setHearts] = useState(2);
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(duration);
   const [feedback, setFeedback] = useState(null);
@@ -156,44 +206,34 @@ export default function SyntaxExpressRail({
   const keysPressed = useRef({ left: false, right: false, up: false });
   const animFrameId = useRef(null);
 
-  // ── Keyboard controls ──────────────────────────────────────────────────
-  useEffect(() => {
-    const onKeyDown = (e) => {
-      if (['ArrowUp', 'KeyW', 'Space'].includes(e.code)) {
-        e.preventDefault();
-        keysPressed.current.up = true;
-      }
-      if (['ArrowLeft', 'KeyA'].includes(e.code)) {
-        e.preventDefault();
-        keysPressed.current.left = true;
-      }
-      if (['ArrowRight', 'KeyD'].includes(e.code)) {
-        e.preventDefault();
-        keysPressed.current.right = true;
-      }
-      if (['KeyE', 'Enter'].includes(e.code)) {
-        e.preventDefault();
-        handleTriggerNearLever();
-      }
-    };
+  const cameraX = Math.max(0, Math.min(ROOM_WIDTH - containerWidth, leoDisplay.x - containerWidth / 2));
 
-    const onKeyUp = (e) => {
-      if (['ArrowUp', 'KeyW', 'Space'].includes(e.code)) keysPressed.current.up = false;
-      if (['ArrowLeft', 'KeyA'].includes(e.code)) keysPressed.current.left = false;
-      if (['ArrowRight', 'KeyD'].includes(e.code)) keysPressed.current.right = false;
-    };
+  // Dynamic clamp: ensures lever plaques/arms remain at least 10px from screen edges on any viewport
+  const getLeverClampedStyle = useCallback((lev) => {
+    const screenX = lev.x - cameraX;
+    const halfWidth = containerWidth < 640 ? 65 : 75;
+    const minScreenX = 10 + halfWidth;
+    const maxScreenX = containerWidth - 10 - halfWidth;
 
-    window.addEventListener('keydown', onKeyDown);
-    window.addEventListener('keyup', onKeyUp);
-    return () => {
-      window.removeEventListener('keydown', onKeyDown);
-      window.removeEventListener('keyup', onKeyUp);
+    let offset = 0;
+    if (screenX > -100 && screenX < containerWidth + 100) {
+      if (screenX < minScreenX) {
+        offset = minScreenX - screenX;
+      } else if (screenX > maxScreenX) {
+        offset = maxScreenX - screenX;
+      }
+    }
+
+    return {
+      left: `${lev.x}px`,
+      top: `${lev.y}px`,
+      transform: offset !== 0 ? `translate(calc(-50% + ${Math.round(offset)}px), -100%)` : undefined,
     };
-  }, [levers]);
+  }, [cameraX, containerWidth]);
 
   // ── Switch Lever Trigger ───────────────────────────────────────────────
   const triggerLever = useCallback((lever) => {
-    if (phase !== 'playing') return;
+    if (phase !== 'playing' || showHelp) return;
 
     if (lever.option.isCorrect) {
       // CORRECT SWITCH!
@@ -226,18 +266,54 @@ export default function SyntaxExpressRail({
       setFeedback({ type: 'wrong', text: `💥 ROUGH TRACKS! "${lever.option.text}" is grammatically invalid!` });
       setTimeout(() => setFeedback(null), 1600);
     }
-  }, [phase, currentRound, roundIdx, rounds.length, score, timeLeft, recordPersonalBest]);
+  }, [phase, showHelp, currentRound, roundIdx, rounds.length, score, timeLeft, recordPersonalBest]);
 
   const handleTriggerNearLever = useCallback(() => {
     const leo = leoRef.current;
     for (const lev of levers) {
       const dist = Math.hypot((leo.x + 20) - (lev.x + 35), (leo.y + 24) - (lev.y + 20));
-      if (dist < 75) {
+      if (dist < 115) {
         triggerLever(lev);
         break;
       }
     }
   }, [levers, triggerLever]);
+
+  // ── Keyboard controls ──────────────────────────────────────────────────
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (showHelp) return;
+      if (['ArrowUp', 'KeyW', 'Space'].includes(e.code)) {
+        e.preventDefault();
+        keysPressed.current.up = true;
+      }
+      if (['ArrowLeft', 'KeyA'].includes(e.code)) {
+        e.preventDefault();
+        keysPressed.current.left = true;
+      }
+      if (['ArrowRight', 'KeyD'].includes(e.code)) {
+        e.preventDefault();
+        keysPressed.current.right = true;
+      }
+      if (['KeyE', 'Enter'].includes(e.code)) {
+        e.preventDefault();
+        handleTriggerNearLever();
+      }
+    };
+
+    const onKeyUp = (e) => {
+      if (['ArrowUp', 'KeyW', 'Space'].includes(e.code)) keysPressed.current.up = false;
+      if (['ArrowLeft', 'KeyA'].includes(e.code)) keysPressed.current.left = false;
+      if (['ArrowRight', 'KeyD'].includes(e.code)) keysPressed.current.right = false;
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('keyup', onKeyUp);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('keyup', onKeyUp);
+    };
+  }, [handleTriggerNearLever, showHelp]);
 
   // ── Physics Game Loop ──────────────────────────────────────────────────
   useEffect(() => {
@@ -246,7 +322,7 @@ export default function SyntaxExpressRail({
     let lastTime = performance.now();
 
     const updateGame = (now) => {
-      const dt = Math.min((now - lastTime) / 1000, 0.05);
+      const dt = showHelp ? 0 : Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
 
       const leo = leoRef.current;
@@ -298,9 +374,9 @@ export default function SyntaxExpressRail({
         animState,
       });
 
-      // Train approaches junction
+      // Train approaches junction (calibrated to reach junction in 15.60s: 100% / 15.60s = 6.41%/s)
       setTrainDist(d => {
-        const next = d + dt * 3.5;
+        const next = d + dt * 6.41;
         if (next >= 100) {
           // Train reached junction without switch!
           setHearts(h => {
@@ -324,7 +400,7 @@ export default function SyntaxExpressRail({
 
   // Timer loop
   useEffect(() => {
-    if (phase !== 'playing') return;
+    if (phase !== 'playing' || showHelp) return;
     const timer = setInterval(() => {
       setTimeLeft(t => {
         if (t <= 1) {
@@ -368,7 +444,7 @@ export default function SyntaxExpressRail({
       keysPressed.current.right = true;
       setTimeout(() => { keysPressed.current.right = false; }, 360);
     },
-    enabled: phase === 'playing',
+    enabled: phase === 'playing' && !showHelp,
   });
 
   const handleRetry = () => {
@@ -386,12 +462,27 @@ export default function SyntaxExpressRail({
     else if (onExit) onExit();
   };
 
-  const cameraX = Math.max(0, Math.min(ROOM_WIDTH - containerWidth, leoDisplay.x - containerWidth / 2));
-
   return (
     <div className="syntax-rail-root" ref={containerRef}>
       {/* ── Floating Exit Button (Always visible) ── */}
       <FloatingExitBtn onExit={onExit || handleFinalFinish} label="← Chamber" />
+
+      {/* ── Help / Instructions Button ── */}
+      <button
+        type="button"
+        className="syntax-help-btn"
+        onClick={() => setShowHelp(true)}
+        title="Game Instructions"
+      >
+        <HelpCircle size={16} /> Guide
+      </button>
+
+      {/* ── Game Instruction Modal ── */}
+      <GameInstructionModal
+        gameId="spell_train_express"
+        isOpen={showHelp}
+        onClose={() => setShowHelp(false)}
+      />
 
       {/* ── Gesture Touch Layer ── */}
       <div ref={gestureRef} className="syntax-rail-gesture-layer" />
@@ -444,12 +535,15 @@ export default function SyntaxExpressRail({
           />
         ))}
 
-        {/* 3 Mechanical Switch Levers */}
+        {/* 3 Mechanical Switch Levers with edge clamping and test attributes */}
         {levers.map(lev => (
           <div
             key={lev.id}
             className="rail-switch-entity"
-            style={{ left: `${lev.x}px`, top: `${lev.y}px` }}
+            data-lever-id={lev.id}
+            data-is-correct={lev.option.isCorrect ? 'true' : 'false'}
+            data-lever-text={lev.option.text}
+            style={getLeverClampedStyle(lev)}
             onClick={() => triggerLever(lev)}
           >
             {/* Clause Label Plaque */}
@@ -476,10 +570,10 @@ export default function SyntaxExpressRail({
       {/* ── HUD ──────────────────────────────────────────────────────── */}
       <HUDOverlay
         hearts={hearts}
+        maxHearts={2}
+        round={`${roundIdx + 1}/${rounds.length}`}
         score={score}
         timeLeft={timeLeft}
-        wordsCollected={roundIdx}
-        totalWords={rounds.length}
         floorNumber={4}
         doorLabel="Door 2 — Syntax Express Rail"
       />

@@ -19,6 +19,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { getWeeklyPoolWithReview } from '../../services/contentService';
+import { getAncientScrollDataForWeek } from '../../services/chroniclesFloor2Service';
 import useChroniclesStore, { DOOR_ROTATION, CHAMBER_METADATA, calculateStars } from '../../stores/useChroniclesStore';
 import ArcaneBubbleGame        from './games/ArcaneBubbleGame';
 import SpellTrainGame          from './games/SpellTrainGame';
@@ -162,6 +163,16 @@ export default function DailyRoomScreen({
       urlParams?.get('owner') === 'true'
     )
   );
+
+  useEffect(() => {
+    const doorParam = urlParams?.get('door');
+    if (doorParam !== null && doorParam !== undefined && phase === 'map') {
+      const idx = parseInt(doorParam, 10);
+      if (!isNaN(idx) && idx >= 0 && idx <= 2) {
+        enterDoor(idx);
+      }
+    }
+  }, [phase]);
 
   // Micro-reward Gating: Count quests completed in this day's zone
   const daySchedule = QUEST_SCHEDULE[dayIndex] || QUEST_SCHEDULE[0];
@@ -308,26 +319,18 @@ export default function DailyRoomScreen({
       case 'rune_forge':
         return <AnvilRushGrammar grammarSentences={grammarSentences} duration={door.duration} weekNumber={weekNumber} onExit={handleExit} {...commonProps} />;
 
-      case 'ancient_scroll':
+      case 'ancient_scroll': {
+        const scrollData = getAncientScrollDataForWeek(weekNumber, grammarSentences, vocabItems);
         return (
           <ScrollChamberDecode
-            scrollData={{
-              title: 'The Principles of Friction & Safety',
-              fullSentence: grammarSentences[0]?.fullSentence || 'Rubber shoes create strong friction to prevent dangerous slips.',
-              blanks: [
-                { id: 'b0', word: vocabItems[0]?.word || 'Rubber' },
-                { id: 'b1', word: vocabItems[1]?.word || 'friction' },
-                { id: 'b2', word: vocabItems[2]?.word || 'prevent' },
-                { id: 'b3', word: vocabItems[3]?.word || 'slips' },
-              ],
-              distractors: ['Smooth', 'ice', 'cause', 'falls'],
-            }}
+            scrollData={scrollData}
             duration={door.duration}
             weekNumber={weekNumber}
             onExit={handleExit}
             {...commonProps}
           />
         );
+      }
 
       // ── Floor 3: Thunder Arena ─────────────────────────────────────────
       case 'phonics_bubble':
@@ -337,7 +340,7 @@ export default function DailyRoomScreen({
         // Pedagogy Guard: Never split sentences mechanically in half.
         // Only accept verified semantic chunk pairs ({ starter, completion }).
         const validPairs = grammarSentences.filter(item => Boolean(item.starter && item.completion));
-        const catapultPairs = validPairs.length >= 4 
+        const catapultPairs = validPairs.length >= 5 
           ? validPairs 
           : (WEEKLY_CATAPULT_PAIRS[weekNumber] || generateStubCatapultPairs(weekNumber, 6));
 
@@ -365,7 +368,7 @@ export default function DailyRoomScreen({
           <div style={{ position: 'relative', width: '100vw', height: '100vh', background: '#0a0d18' }}>
             <HighwaySprint
               vocabItems={vocabItems}
-              duration={door.duration || 120}
+              duration={door.duration || 150}
               weekNumber={weekNumber}
               onExit={handleExit}
               {...commonProps}

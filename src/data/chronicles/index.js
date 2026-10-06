@@ -12,7 +12,12 @@ export const CHRONICLES_WEEK_REGISTRY = {
  */
 export function getWeekChroniclesConfig(weekNumber) {
   const w = parseInt(weekNumber) || 33;
-  return CHRONICLES_WEEK_REGISTRY[w] || null;
+  if (CHRONICLES_WEEK_REGISTRY[w]) return CHRONICLES_WEEK_REGISTRY[w];
+  // Fallback to maintain the 7-floor / 21-game chamber structure for any week W01-W156
+  return {
+    ...WEEK33_CHRONICLES_CONFIG,
+    weekNumber: w,
+  };
 }
 
 export { WEEK33_CHRONICLES_CONFIG };

@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/generate_version.mjs && vite",
-    "build": "node scripts/generate_version.mjs && vite build",
+    "build": "node scripts/generate_version.mjs && node scripts/verify_wordwagon_content_length.mjs && node scripts/verify_batch1_runner_content.mjs && vite build",
+    "content:verify:wordwagon": "node scripts/verify_wordwagon_content_length.mjs",
+    "content:verify:batch1": "node scripts/verify_batch1_runner_content.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "context:build": "node scripts/build-context.mjs",

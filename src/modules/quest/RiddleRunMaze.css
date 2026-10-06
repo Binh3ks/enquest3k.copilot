@@ -1,4 +1,5 @@
 /* RiddleRunMaze.css — Ancient Labyrinth Maze Theme */
+@import './game-mobile.css';
 
 .riddle-maze-root {
   position: relative;
@@ -12,6 +13,12 @@
   overflow: hidden;
   user-select: none;
   font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+@media (max-width: 900px) {
+  .riddle-maze-root {
+    align-items: flex-start;
+  }
 }
 
 /* Objective Banner */
@@ -130,7 +137,7 @@
 .vault-door-entity {
   position: absolute;
   width: 120px;
-  z-index: 10;
+  z-index: 40;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,12 +153,18 @@
   background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
   color: #fffbeb;
   font-weight: 800;
-  font-size: 0.85rem;
-  padding: 3px 12px;
+  font-size: 0.82rem;
+  padding: 4px 10px;
   border-radius: 10px;
-  border: 2px solid #fef3c7;
+  border: 1.5px solid #fef3c7;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+  width: max-content;
+  max-width: 130px;
+  box-sizing: border-box;
+  word-break: normal;
 }
 
 .vault-door-frame {
@@ -195,6 +208,35 @@
   border-radius: 6px;
 }
 
+/* Leo character stacking */
+.riddle-maze-viewport .leo-character {
+  z-index: 30;
+}
+
+/* Guide Button inside HUD top-right flex header */
+.riddle-help-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(41, 37, 36, 0.85);
+  border: 1.5px solid rgba(245, 158, 11, 0.5);
+  color: #fde68a;
+  border-radius: 10px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  transition: transform 0.15s ease, background 0.15s ease;
+  pointer-events: auto;
+}
+
+.riddle-help-btn:hover {
+  transform: scale(1.05);
+  background: rgba(68, 64, 60, 0.95);
+}
+
 /* Modals */
 .riddle-cleared-modal,
 .riddle-ko-modal {
@@ -208,4 +250,38 @@
   justify-content: center;
 }
 
-@import './game-mobile.css';
+@media (max-width: 640px) {
+  .riddle-help-btn {
+    padding: 3px 8px;
+    font-size: 0.72rem;
+  }
+
+  .riddle-maze-banner {
+    top: 46px;
+    padding: 4px 10px;
+    gap: 6px;
+    width: 96%;
+    max-width: 96%;
+    border-radius: 14px;
+  }
+
+  .riddle-prompt-text {
+    font-size: 0.76rem;
+    max-width: 210px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .riddle-round-chip {
+    font-size: 0.72rem;
+    padding: 2px 6px;
+  }
+
+  .vault-door-plaque {
+    font-size: 0.74rem;
+    padding: 3px 6px;
+    max-width: 110px;
+  }
+}

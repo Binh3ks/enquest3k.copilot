@@ -1,4 +1,5 @@
 /* StormShieldDefense.css — Arcane Rooftop Lightning Theme */
+@import './game-mobile.css';
 
 .storm-shield-root {
   position: relative;
@@ -12,6 +13,12 @@
   overflow: hidden;
   user-select: none;
   font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+@media (max-width: 900px) {
+  .storm-shield-root {
+    align-items: flex-start;
+  }
 }
 
 /* Objective Banner */
@@ -197,7 +204,7 @@
 .falling-meteor-entity {
   position: absolute;
   width: 120px;
-  z-index: 10;
+  z-index: 25;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -279,4 +286,37 @@
   justify-content: center;
 }
 
-@import './game-mobile.css';
+@media (max-width: 600px) {
+  .storm-objective-banner {
+    top: 44px;
+    padding: 4px 10px;
+    gap: 6px;
+    border-radius: 14px;
+    max-width: 96%;
+    white-space: nowrap;
+  }
+
+  .storm-banner-icon {
+    display: none;
+  }
+
+  .battery-title {
+    font-size: 0.74rem;
+  }
+
+  .battery-bar-track {
+    width: 65px;
+    height: 10px;
+  }
+
+  .battery-pct {
+    font-size: 0.76rem;
+  }
+
+  .storm-hint-chip {
+    font-size: 0.68rem;
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
+}
+

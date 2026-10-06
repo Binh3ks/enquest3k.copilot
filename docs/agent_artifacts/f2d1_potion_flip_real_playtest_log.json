@@ -1,0 +1,633 @@
+{
+  "testDate": "2026-09-17T04:37:32.531Z",
+  "epochs": {
+    "tPlayStart": 1789619822109,
+    "tPeekStart": 1789619822110,
+    "tPeekEnd": 1789619835366,
+    "peekDurationMs": 13256,
+    "tCommitStart": 1789619835366,
+    "tCommitEnd": 1789619850637,
+    "commitDurationMs": 15271,
+    "totalActiveDurationMs": 28528
+  },
+  "structuredLogs": [
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 1: \"school corridor\" ← source=week33",
+      "timestamp": "2026-09-17T04:36:38.078Z",
+      "clientEpoch": 1789619798084
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 2: \"nurse\" ← source=week33",
+      "timestamp": "2026-09-17T04:36:38.086Z",
+      "clientEpoch": 1789619798086
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 3: \"yellow warning sign\" ← source=week33",
+      "timestamp": "2026-09-17T04:36:38.086Z",
+      "clientEpoch": 1789619798086
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 4: \"knee\" ← source=week33",
+      "timestamp": "2026-09-17T04:36:38.087Z",
+      "clientEpoch": 1789619798087
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 5: \"get better\" ← source=week33",
+      "timestamp": "2026-09-17T04:36:38.087Z",
+      "clientEpoch": 1789619798087
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] slot layout: [{\"x\":540,\"y\":190},{\"x\":90,\"y\":360},{\"x\":650,\"y\":190},{\"x\":630,\"y\":360},{\"x\":740,\"y\":360},{\"x\":310,\"y\":190},{\"x\":370,\"y\":320},{\"x\":470,\"y\":320},{\"x\":210,\"y\":360},{\"x\":200,\"y\":190}]",
+      "timestamp": "2026-09-17T04:36:38.087Z",
+      "clientEpoch": 1789619798087
+    },
+    {
+      "type": "warn",
+      "text": "[PROXIMITY_GUARD_REJECTED] Leo distance 540.2px > 55px for cauldron w_2_1789619798078 epoch=1789619800631",
+      "timestamp": "2026-09-17T04:36:40.632Z",
+      "clientEpoch": 1789619800632
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_3_1789619798078 text=\"the joint between the thigh and lower leg\" epoch=1789619801018",
+      "timestamp": "2026-09-17T04:36:41.018Z",
+      "clientEpoch": 1789619801018
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_3_1789619798078 text=\"knee\" epoch=1789619801384",
+      "timestamp": "2026-09-17T04:36:41.384Z",
+      "clientEpoch": 1789619801384
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_1_1789619798078 text=\"A trained medical worker at school who helps students when they get hurt.\" epoch=1789619801751",
+      "timestamp": "2026-09-17T04:36:41.752Z",
+      "clientEpoch": 1789619801752
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_4_1789619798078 text=\"to become healthy and well again after being sick or hurt\" epoch=1789619802351",
+      "timestamp": "2026-09-17T04:36:42.352Z",
+      "clientEpoch": 1789619802352
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_2_1789619798078 text=\"yellow warning sign\" epoch=1789619802900",
+      "timestamp": "2026-09-17T04:36:42.901Z",
+      "clientEpoch": 1789619802901
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] SELECT_CAULDRON id=w_2_1789619798078 text=\"yellow warning sign\"",
+      "timestamp": "2026-09-17T04:36:44.039Z",
+      "clientEpoch": 1789619804039
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_4_1789619798078 text=\"to become healthy and well again after being sick or hurt\" epoch=1789619804934",
+      "timestamp": "2026-09-17T04:36:44.935Z",
+      "clientEpoch": 1789619804935
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_3_1789619798078 text=\"knee\" epoch=1789619805550",
+      "timestamp": "2026-09-17T04:36:45.551Z",
+      "clientEpoch": 1789619805551
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_3_1789619798078 text=\"the joint between the thigh and lower leg\" epoch=1789619806034",
+      "timestamp": "2026-09-17T04:36:46.035Z",
+      "clientEpoch": 1789619806035
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [MISMATCH] MISMATCH_PENALTY heartsLeft=1 pairA=pair_2_1789619798078 pairB=pair_3_1789619798078 epoch=1789619806579",
+      "timestamp": "2026-09-17T04:36:46.579Z",
+      "clientEpoch": 1789619806579
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] SELECT_CAULDRON id=d_3_1789619798078 text=\"the joint between the thigh and lower leg\"",
+      "timestamp": "2026-09-17T04:36:48.404Z",
+      "clientEpoch": 1789619808404
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_2_1789619798078 text=\"A bright sign warning people of a wet, slippery floor\" epoch=1789619809018",
+      "timestamp": "2026-09-17T04:36:49.018Z",
+      "clientEpoch": 1789619809018
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_4_1789619798078 text=\"to become healthy and well again after being sick or hurt\" epoch=1789619809834",
+      "timestamp": "2026-09-17T04:36:49.835Z",
+      "clientEpoch": 1789619809835
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_0_1789619798078 text=\"school corridor\" epoch=1789619810118",
+      "timestamp": "2026-09-17T04:36:50.118Z",
+      "clientEpoch": 1789619810118
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_2_1789619798078 text=\"yellow warning sign\" epoch=1789619810367",
+      "timestamp": "2026-09-17T04:36:50.368Z",
+      "clientEpoch": 1789619810368
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [MISMATCH] MISMATCH_PENALTY heartsLeft=0 pairA=pair_3_1789619798078 pairB=pair_2_1789619798078 epoch=1789619810940",
+      "timestamp": "2026-09-17T04:36:50.940Z",
+      "clientEpoch": 1789619810940
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] KO_TRIGGERED hearts=0 epoch=1789619810940",
+      "timestamp": "2026-09-17T04:36:50.940Z",
+      "clientEpoch": 1789619810940
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [RETRY] handleRetry epoch=1789619812113",
+      "timestamp": "2026-09-17T04:36:52.114Z",
+      "clientEpoch": 1789619812114
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 1: \"stays balanced\" ← source=week33",
+      "timestamp": "2026-09-17T04:36:52.114Z",
+      "clientEpoch": 1789619812114
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 2: \"explain\" ← source=week33",
+      "timestamp": "2026-09-17T04:36:52.114Z",
+      "clientEpoch": 1789619812114
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 3: \"shoe soles\" ← source=week33",
+      "timestamp": "2026-09-17T04:36:52.115Z",
+      "clientEpoch": 1789619812115
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 4: \"school corridor\" ← source=week33",
+      "timestamp": "2026-09-17T04:36:52.115Z",
+      "clientEpoch": 1789619812115
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 5: \"knee\" ← source=week33",
+      "timestamp": "2026-09-17T04:36:52.115Z",
+      "clientEpoch": 1789619812115
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] slot layout: [{\"x\":370,\"y\":320},{\"x\":650,\"y\":190},{\"x\":470,\"y\":320},{\"x\":630,\"y\":360},{\"x\":740,\"y\":360},{\"x\":540,\"y\":190},{\"x\":210,\"y\":360},{\"x\":310,\"y\":190},{\"x\":200,\"y\":190},{\"x\":90,\"y\":360}]",
+      "timestamp": "2026-09-17T04:36:52.115Z",
+      "clientEpoch": 1789619812115
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_2_1789619812113 text=\"The bottom part of shoes that touches the ground\" epoch=1789619813201",
+      "timestamp": "2026-09-17T04:36:53.211Z",
+      "clientEpoch": 1789619813211
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_0_1789619812113 text=\"Remains steady on feet without falling over\" epoch=1789619813567",
+      "timestamp": "2026-09-17T04:36:53.568Z",
+      "clientEpoch": 1789619813568
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_4_1789619812113 text=\"the joint between the thigh and lower leg\" epoch=1789619813984",
+      "timestamp": "2026-09-17T04:36:53.984Z",
+      "clientEpoch": 1789619813984
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_4_1789619812113 text=\"knee\" epoch=1789619814434",
+      "timestamp": "2026-09-17T04:36:54.434Z",
+      "clientEpoch": 1789619814434
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] SELECT_CAULDRON id=w_4_1789619812113 text=\"knee\"",
+      "timestamp": "2026-09-17T04:36:54.912Z",
+      "clientEpoch": 1789619814912
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_1_1789619812113 text=\"explain\" epoch=1789619816050",
+      "timestamp": "2026-09-17T04:36:56.051Z",
+      "clientEpoch": 1789619816051
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_0_1789619812113 text=\"stays balanced\" epoch=1789619816167",
+      "timestamp": "2026-09-17T04:36:56.168Z",
+      "clientEpoch": 1789619816168
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_1_1789619812113 text=\"to make something clear by giving detail and reason\" epoch=1789619816383",
+      "timestamp": "2026-09-17T04:36:56.384Z",
+      "clientEpoch": 1789619816384
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [MISMATCH] MISMATCH_PENALTY heartsLeft=1 pairA=pair_4_1789619812113 pairB=pair_1_1789619812113 epoch=1789619816854",
+      "timestamp": "2026-09-17T04:36:56.854Z",
+      "clientEpoch": 1789619816854
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] SELECT_CAULDRON id=d_1_1789619812113 text=\"to make something clear by giving detail and reason\"",
+      "timestamp": "2026-09-17T04:36:58.256Z",
+      "clientEpoch": 1789619818256
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_0_1789619812113 text=\"stays balanced\" epoch=1789619818767",
+      "timestamp": "2026-09-17T04:36:58.767Z",
+      "clientEpoch": 1789619818767
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_4_1789619812113 text=\"knee\" epoch=1789619819534",
+      "timestamp": "2026-09-17T04:36:59.534Z",
+      "clientEpoch": 1789619819534
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [MISMATCH] MISMATCH_PENALTY heartsLeft=0 pairA=pair_1_1789619812113 pairB=pair_4_1789619812113 epoch=1789619820088",
+      "timestamp": "2026-09-17T04:37:00.088Z",
+      "clientEpoch": 1789619820089
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] KO_TRIGGERED hearts=0 epoch=1789619820088",
+      "timestamp": "2026-09-17T04:37:00.089Z",
+      "clientEpoch": 1789619820089
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [RETRY] handleRetry epoch=1789619821103",
+      "timestamp": "2026-09-17T04:37:01.103Z",
+      "clientEpoch": 1789619821103
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 1: \"accident\" ← source=week33",
+      "timestamp": "2026-09-17T04:37:01.103Z",
+      "clientEpoch": 1789619821103
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 2: \"nurse\" ← source=week33",
+      "timestamp": "2026-09-17T04:37:01.103Z",
+      "clientEpoch": 1789619821103
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 3: \"yellow warning sign\" ← source=week33",
+      "timestamp": "2026-09-17T04:37:01.103Z",
+      "clientEpoch": 1789619821103
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 4: \"knee\" ← source=week33",
+      "timestamp": "2026-09-17T04:37:01.103Z",
+      "clientEpoch": 1789619821103
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] pair 5: \"get better\" ← source=week33",
+      "timestamp": "2026-09-17T04:37:01.103Z",
+      "clientEpoch": 1789619821103
+    },
+    {
+      "type": "log",
+      "text": "[POTION-INIT] slot layout: [{\"x\":210,\"y\":360},{\"x\":540,\"y\":190},{\"x\":310,\"y\":190},{\"x\":200,\"y\":190},{\"x\":650,\"y\":190},{\"x\":90,\"y\":360},{\"x\":470,\"y\":320},{\"x\":630,\"y\":360},{\"x\":740,\"y\":360},{\"x\":370,\"y\":320}]",
+      "timestamp": "2026-09-17T04:37:01.103Z",
+      "clientEpoch": 1789619821103
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_3_1789619821103 text=\"the joint between the thigh and lower leg\" epoch=1789619822183",
+      "timestamp": "2026-09-17T04:37:02.184Z",
+      "clientEpoch": 1789619822184
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_3_1789619821103 text=\"knee\" epoch=1789619822551",
+      "timestamp": "2026-09-17T04:37:02.551Z",
+      "clientEpoch": 1789619822551
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_0_1789619821103 text=\"an unfortunate incident that happens unexpectedly\" epoch=1789619823050",
+      "timestamp": "2026-09-17T04:37:03.050Z",
+      "clientEpoch": 1789619823050
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_4_1789619821103 text=\"get better\" epoch=1789619823134",
+      "timestamp": "2026-09-17T04:37:03.134Z",
+      "clientEpoch": 1789619823134
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_1_1789619821103 text=\"nurse\" epoch=1789619823484",
+      "timestamp": "2026-09-17T04:37:03.484Z",
+      "clientEpoch": 1789619823484
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_4_1789619821103 text=\"to become healthy and well again after being sick or hurt\" epoch=1789619824083",
+      "timestamp": "2026-09-17T04:37:04.084Z",
+      "clientEpoch": 1789619824084
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_1_1789619821103 text=\"nurse\" epoch=1789619824917",
+      "timestamp": "2026-09-17T04:37:04.917Z",
+      "clientEpoch": 1789619824917
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_4_1789619821103 text=\"get better\" epoch=1789619825133",
+      "timestamp": "2026-09-17T04:37:05.133Z",
+      "clientEpoch": 1789619825133
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_0_1789619821103 text=\"an unfortunate incident that happens unexpectedly\" epoch=1789619825784",
+      "timestamp": "2026-09-17T04:37:05.784Z",
+      "clientEpoch": 1789619825784
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_4_1789619821103 text=\"get better\" epoch=1789619826316",
+      "timestamp": "2026-09-17T04:37:06.317Z",
+      "clientEpoch": 1789619826317
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_2_1789619821103 text=\"yellow warning sign\" epoch=1789619827083",
+      "timestamp": "2026-09-17T04:37:07.084Z",
+      "clientEpoch": 1789619827084
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_4_1789619821103 text=\"to become healthy and well again after being sick or hurt\" epoch=1789619827300",
+      "timestamp": "2026-09-17T04:37:07.301Z",
+      "clientEpoch": 1789619827301
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_2_1789619821103 text=\"A bright sign warning people of a wet, slippery floor\" epoch=1789619827750",
+      "timestamp": "2026-09-17T04:37:07.751Z",
+      "clientEpoch": 1789619827751
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_4_1789619821103 text=\"to become healthy and well again after being sick or hurt\" epoch=1789619828334",
+      "timestamp": "2026-09-17T04:37:08.334Z",
+      "clientEpoch": 1789619828334
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_1_1789619821103 text=\"nurse\" epoch=1789619829100",
+      "timestamp": "2026-09-17T04:37:09.100Z",
+      "clientEpoch": 1789619829100
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_3_1789619821103 text=\"knee\" epoch=1789619829717",
+      "timestamp": "2026-09-17T04:37:09.717Z",
+      "clientEpoch": 1789619829717
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_3_1789619821103 text=\"the joint between the thigh and lower leg\" epoch=1789619830200",
+      "timestamp": "2026-09-17T04:37:10.200Z",
+      "clientEpoch": 1789619830200
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_0_1789619821103 text=\"an unfortunate incident that happens unexpectedly\" epoch=1789619830834",
+      "timestamp": "2026-09-17T04:37:10.834Z",
+      "clientEpoch": 1789619830834
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_4_1789619821103 text=\"get better\" epoch=1789619831550",
+      "timestamp": "2026-09-17T04:37:11.551Z",
+      "clientEpoch": 1789619831551
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_2_1789619821103 text=\"yellow warning sign\" epoch=1789619832017",
+      "timestamp": "2026-09-17T04:37:12.017Z",
+      "clientEpoch": 1789619832017
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_0_1789619821103 text=\"accident\" epoch=1789619832817",
+      "timestamp": "2026-09-17T04:37:12.817Z",
+      "clientEpoch": 1789619832817
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_1_1789619821103 text=\"A trained medical worker at school who helps students when they get hurt.\" epoch=1789619833450",
+      "timestamp": "2026-09-17T04:37:13.451Z",
+      "clientEpoch": 1789619833451
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_2_1789619821103 text=\"A bright sign warning people of a wet, slippery floor\" epoch=1789619833950",
+      "timestamp": "2026-09-17T04:37:13.950Z",
+      "clientEpoch": 1789619833951
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_2_1789619821103 text=\"yellow warning sign\" epoch=1789619834566",
+      "timestamp": "2026-09-17T04:37:14.567Z",
+      "clientEpoch": 1789619834567
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_1_1789619821103 text=\"nurse\" epoch=1789619835017",
+      "timestamp": "2026-09-17T04:37:15.017Z",
+      "clientEpoch": 1789619835017
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_3_1789619821103 text=\"knee\" epoch=1789619835883",
+      "timestamp": "2026-09-17T04:37:15.884Z",
+      "clientEpoch": 1789619835884
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] SELECT_CAULDRON id=w_3_1789619821103 text=\"knee\"",
+      "timestamp": "2026-09-17T04:37:16.236Z",
+      "clientEpoch": 1789619836236
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_3_1789619821103 text=\"the joint between the thigh and lower leg\" epoch=1789619836817",
+      "timestamp": "2026-09-17T04:37:16.817Z",
+      "clientEpoch": 1789619836817
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [MATCH] MATCH_SUCCESS pair=pair_3_1789619821103 score=20 epoch=1789619837198",
+      "timestamp": "2026-09-17T04:37:17.198Z",
+      "clientEpoch": 1789619837198
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_0_1789619821103 text=\"an unfortunate incident that happens unexpectedly\" epoch=1789619837967",
+      "timestamp": "2026-09-17T04:37:17.967Z",
+      "clientEpoch": 1789619837967
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_4_1789619821103 text=\"get better\" epoch=1789619838733",
+      "timestamp": "2026-09-17T04:37:18.733Z",
+      "clientEpoch": 1789619838733
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_2_1789619821103 text=\"yellow warning sign\" epoch=1789619839183",
+      "timestamp": "2026-09-17T04:37:19.184Z",
+      "clientEpoch": 1789619839184
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_4_1789619821103 text=\"to become healthy and well again after being sick or hurt\" epoch=1789619839400",
+      "timestamp": "2026-09-17T04:37:19.400Z",
+      "clientEpoch": 1789619839400
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] SELECT_CAULDRON id=d_4_1789619821103 text=\"to become healthy and well again after being sick or hurt\"",
+      "timestamp": "2026-09-17T04:37:19.787Z",
+      "clientEpoch": 1789619839787
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_1_1789619821103 text=\"nurse\" epoch=1789619840700",
+      "timestamp": "2026-09-17T04:37:20.700Z",
+      "clientEpoch": 1789619840700
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_4_1789619821103 text=\"get better\" epoch=1789619840983",
+      "timestamp": "2026-09-17T04:37:20.984Z",
+      "clientEpoch": 1789619840984
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [MATCH] MATCH_SUCCESS pair=pair_4_1789619821103 score=40 epoch=1789619841284",
+      "timestamp": "2026-09-17T04:37:21.285Z",
+      "clientEpoch": 1789619841285
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_0_1789619821103 text=\"an unfortunate incident that happens unexpectedly\" epoch=1789619842017",
+      "timestamp": "2026-09-17T04:37:22.017Z",
+      "clientEpoch": 1789619842017
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] SELECT_CAULDRON id=d_0_1789619821103 text=\"an unfortunate incident that happens unexpectedly\"",
+      "timestamp": "2026-09-17T04:37:22.344Z",
+      "clientEpoch": 1789619842344
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_2_1789619821103 text=\"yellow warning sign\" epoch=1789619843633",
+      "timestamp": "2026-09-17T04:37:23.634Z",
+      "clientEpoch": 1789619843634
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_0_1789619821103 text=\"accident\" epoch=1789619844233",
+      "timestamp": "2026-09-17T04:37:24.234Z",
+      "clientEpoch": 1789619844234
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [MATCH] MATCH_SUCCESS pair=pair_0_1789619821103 score=60 epoch=1789619844479",
+      "timestamp": "2026-09-17T04:37:24.480Z",
+      "clientEpoch": 1789619844480
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_2_1789619821103 text=\"A bright sign warning people of a wet, slippery floor\" epoch=1789619845166",
+      "timestamp": "2026-09-17T04:37:25.167Z",
+      "clientEpoch": 1789619845167
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] SELECT_CAULDRON id=d_2_1789619821103 text=\"A bright sign warning people of a wet, slippery floor\"",
+      "timestamp": "2026-09-17T04:37:25.403Z",
+      "clientEpoch": 1789619845403
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_2_1789619821103 text=\"yellow warning sign\" epoch=1789619846450",
+      "timestamp": "2026-09-17T04:37:26.450Z",
+      "clientEpoch": 1789619846450
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [MATCH] MATCH_SUCCESS pair=pair_2_1789619821103 score=80 epoch=1789619846628",
+      "timestamp": "2026-09-17T04:37:26.628Z",
+      "clientEpoch": 1789619846628
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=d_1_1789619821103 text=\"A trained medical worker at school who helps students when they get hurt.\" epoch=1789619848000",
+      "timestamp": "2026-09-17T04:37:28.000Z",
+      "clientEpoch": 1789619848000
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] SELECT_CAULDRON id=d_1_1789619821103 text=\"A trained medical worker at school who helps students when they get hurt.\"",
+      "timestamp": "2026-09-17T04:37:28.301Z",
+      "clientEpoch": 1789619848301
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [PEEK] id=w_1_1789619821103 text=\"nurse\" epoch=1789619849850",
+      "timestamp": "2026-09-17T04:37:29.850Z",
+      "clientEpoch": 1789619849850
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] [MATCH] MATCH_SUCCESS pair=pair_1_1789619821103 score=100 epoch=1789619850135",
+      "timestamp": "2026-09-17T04:37:30.136Z",
+      "clientEpoch": 1789619850136
+    },
+    {
+      "type": "log",
+      "text": "[POTION-ACTION] ALL_PAIRS_CLEARED epoch=1789619850135",
+      "timestamp": "2026-09-17T04:37:30.136Z",
+      "clientEpoch": 1789619850136
+    }
+  ]
+}

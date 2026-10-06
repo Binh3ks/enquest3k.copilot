@@ -13,7 +13,7 @@
  */
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Cog, Trophy, RotateCcw, ArrowRight, Zap, Sparkles, AlertTriangle, Flame } from 'lucide-react';
+import { Cog, Trophy, RotateCcw, ArrowRight, Zap, Sparkles, AlertTriangle, Flame, HelpCircle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
 import {
@@ -24,6 +24,7 @@ import LeoCharacter from './LeoCharacter';
 import HUDOverlay from './HUDOverlay';
 import FloatingExitBtn from './FloatingExitBtn';
 import useGestureControls from './useGestureControls';
+import GameInstructionModal from '../chronicles/games/GameInstructionModal';
 import './TitanGrammarForge.css';
 
 const ROOM_WIDTH = 900;
@@ -32,11 +33,12 @@ const ROOM_HEIGHT = 600;
 // Clockwork Titan Platforms
 const TITAN_PLATFORMS = [
   { x: 0,   y: FLOOR_Y, width: ROOM_WIDTH, height: 80 },  // Lower Machine Floor
-  { x: 80,  y: 360,     width: 190,        height: 20 },  // Left Cog Deck
+  { x: 60,  y: 360,     width: 200,        height: 20 },  // Left Cog Deck
   { x: 350, y: 300,     width: 200,        height: 20 },  // Center Titan Heart Deck
-  { x: 630, y: 360,     width: 190,        height: 20 },  // Right Cog Deck
-  { x: 220, y: 440,     width: 120,        height: 16 },  // Step Gear Left
-  { x: 560, y: 440,     width: 120,        height: 16 },  // Step Gear Right
+  { x: 640, y: 360,     width: 200,        height: 20 },  // Right Cog Deck
+  { x: 370, y: 170,     width: 160,        height: 18 },  // High Crown Cog Deck
+  { x: 210, y: 440,     width: 120,        height: 16 },  // Step Gear Left
+  { x: 570, y: 440,     width: 120,        height: 16 },  // Step Gear Right
 ];
 
 const DEFAULT_TITAN_ROUNDS = [
@@ -48,6 +50,7 @@ const DEFAULT_TITAN_ROUNDS = [
       { id: 'cog_0', text: 'could not stop in time', isCorrect: true },
       { id: 'cog_1', text: 'stops immediately now',   isCorrect: false },
       { id: 'cog_2', text: 'will stopped yesterday',  isCorrect: false },
+      { id: 'cog_3', text: 'is stopping tomorrow',    isCorrect: false },
     ],
   },
   {
@@ -55,26 +58,39 @@ const DEFAULT_TITAN_ROUNDS = [
     correctClause: 'workers would stay safe',
     fullSentence: 'The engineer designed rubber soles so that workers would stay safe.',
     options: [
-      { id: 'cog_3', text: 'tiles are slippery',      isCorrect: false },
-      { id: 'cog_4', text: 'workers would stay safe',  isCorrect: true },
-      { id: 'cog_5', text: 'everyone falling down',   isCorrect: false },
+      { id: 'cog_4', text: 'tiles are slippery',      isCorrect: false },
+      { id: 'cog_5', text: 'workers would stay safe',  isCorrect: true },
+      { id: 'cog_6', text: 'everyone falling down',   isCorrect: false },
+      { id: 'cog_7', text: 'shoes having no grip',    isCorrect: false },
     ],
   },
   {
-    stem: 'Had Jake not noticed the warning sign, he',
-    correctClause: 'might have suffered an injury',
-    fullSentence: 'Had Jake not noticed the warning sign, he might have suffered an injury.',
+    stem: 'When the corridor floor was slippery, Jake',
+    correctClause: 'walked very carefully',
+    fullSentence: 'When the corridor floor was slippery, Jake walked very carefully.',
     options: [
-      { id: 'cog_6', text: 'walks happily away',       isCorrect: false },
-      { id: 'cog_7', text: 'is safe right now',        isCorrect: false },
-      { id: 'cog_8', text: 'might have suffered an injury', isCorrect: true },
+      { id: 'cog_8',  text: 'runs fast outside',         isCorrect: false },
+      { id: 'cog_9',  text: 'walked very carefully',     isCorrect: true },
+      { id: 'cog_10', text: 'falling down yesterday',   isCorrect: false },
+      { id: 'cog_11', text: 'will slipping easily',      isCorrect: false },
+    ],
+  },
+  {
+    stem: 'Unless the janitor cleans the wet floor,',
+    correctClause: 'students may slip and fall',
+    fullSentence: 'Unless the janitor cleans the wet floor, students may slip and fall.',
+    options: [
+      { id: 'cog_12', text: 'students may slip and fall', isCorrect: true },
+      { id: 'cog_13', text: 'the hallway dry quickly',    isCorrect: false },
+      { id: 'cog_14', text: 'everyone will be careful',   isCorrect: false },
+      { id: 'cog_15', text: 'friction increases greatly', isCorrect: false },
     ],
   },
 ];
 
 export default function TitanGrammarForge({
   grammarSentences = [],
-  duration = 90,
+  duration = 100,
   weekNumber = 33,
   onComplete,
   onExit,
@@ -84,12 +100,12 @@ export default function TitanGrammarForge({
 
   // Viewport tracking & responsive camera
   const containerRef = useRef(null);
-  const [containerWidth, setContainerWidth] = useState(ROOM_WIDTH);
+  const [containerWidth, setContainerWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : ROOM_WIDTH);
 
   useEffect(() => {
     const updateSize = () => {
       if (containerRef.current) {
-        setContainerWidth(containerRef.current.clientWidth || ROOM_WIDTH);
+        setContainerWidth(containerRef.current.clientWidth || window.innerWidth || ROOM_WIDTH);
       }
     };
     updateSize();
@@ -97,25 +113,15 @@ export default function TitanGrammarForge({
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
+  // Enforce at least 4 rounds for N4 <= 3.76% (R=4, p=0.25, L=2)
   const rounds = useMemo(() => {
-    if (grammarSentences && grammarSentences.length > 0) {
-      return grammarSentences.slice(0, 3).map((item, idx) => {
-        const full = item.fullSentence || 'Friction prevents dangerous slips across wet surfaces.';
-        const words = full.split(' ');
-        const mid = Math.floor(words.length / 2);
-        const stem = words.slice(0, mid).join(' ');
-        const tail = words.slice(mid).join(' ');
-        return {
-          stem,
-          correctClause: tail,
-          fullSentence: full,
-          options: [
-            { id: `cog_${idx}_0`, text: tail, isCorrect: true },
-            { id: `cog_${idx}_1`, text: 'stopped unexpectedly', isCorrect: false },
-            { id: `cog_${idx}_2`, text: 'is falling fast', isCorrect: false },
-          ].sort(() => Math.random() - 0.5),
-        };
-      });
+    if (grammarSentences && grammarSentences.length >= 4) {
+      const validCustomRounds = grammarSentences.filter(item => 
+        item && item.stem && Array.isArray(item.options) && item.options.length >= 4
+      );
+      if (validCustomRounds.length >= 4) {
+        return validCustomRounds.slice(0, 4);
+      }
     }
     return DEFAULT_TITAN_ROUNDS;
   }, [grammarSentences]);
@@ -126,16 +132,23 @@ export default function TitanGrammarForge({
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(duration);
   const [feedback, setFeedback] = useState(null);
+  const [showHelp, setShowHelp] = useState(false);
 
   const currentRound = rounds[roundIdx % rounds.length] || DEFAULT_TITAN_ROUNDS[0];
 
-  // 3 Gear Cogs
+  // 4 Gear Cogs: Left Deck, High Crown Deck, Right Deck, Lower Machine Deck (p = 0.25)
   const cogs = useMemo(() => {
-    const opts = currentRound.options;
+    // Fisher-Yates shuffle for true uniform 25% distribution across all 4 pedestals
+    const opts = [...currentRound.options];
+    for (let i = opts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [opts[i], opts[j]] = [opts[j], opts[i]];
+    }
     return [
-      { id: 'gear_0', x: 120, y: 315, option: opts[0] },
-      { id: 'gear_1', x: 400, y: 255, option: opts[1] },
-      { id: 'gear_2', x: 670, y: 315, option: opts[2] },
+      { id: 'gear_0', x: 110, y: 295, option: opts[0] },
+      { id: 'gear_1', x: 390, y: 105, option: opts[1] },
+      { id: 'gear_2', x: 670, y: 295, option: opts[2] },
+      { id: 'gear_3', x: 390, y: 445, option: opts[3] },
     ];
   }, [currentRound]);
 
@@ -149,6 +162,23 @@ export default function TitanGrammarForge({
     facingRight: true,
     invincibleUntil: 0,
   });
+
+  useEffect(() => {
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
+      window.__setTitanLeo = (x, y) => {
+        if (leoRef.current) {
+          leoRef.current.x = x;
+          leoRef.current.y = y;
+          leoRef.current.vx = 0;
+          leoRef.current.vy = 0;
+          leoRef.current.isGrounded = true;
+        }
+      };
+    }
+    return () => {
+      if (import.meta.env.DEV && typeof window !== 'undefined') delete window.__setTitanLeo;
+    };
+  }, []);
 
   const [leoDisplay, setLeoDisplay] = useState({
     x: 430,
@@ -212,8 +242,21 @@ export default function TitanGrammarForge({
   const activateCog = useCallback((cog) => {
     if (phase !== 'playing') return;
 
+    const elapsedSec = (Date.now() - roundStartTimeRef.current) / 1000;
+    const roundBudgetSec = +(duration / rounds.length).toFixed(2);
+    const marginSec = +(roundBudgetSec - elapsedSec).toFixed(2);
+    console.log(`[TITAN-FORGE-ROUND-ACTION] Round ${roundIdx + 1} | Action: ${cog.option.isCorrect ? 'CORRECT' : 'WRONG'} | Time Spent: ${elapsedSec.toFixed(2)}s | Budget: ${roundBudgetSec}s | Margin: ${marginSec}s | HUD timeLeft: ${timeLeft}s`);
+
     if (cog.option.isCorrect) {
       // CORRECT GEAR
+      if (import.meta.env.DEV && typeof window !== 'undefined') {
+        window.__ttsInvocations = window.__ttsInvocations || [];
+        window.__ttsInvocations.push({
+          text: currentRound.fullSentence,
+          station: 'chronicles',
+          timestamp: Date.now()
+        });
+      }
       speakText(currentRound.fullSentence);
       setScore(s => s + 40);
       setFeedback({ type: 'correct', text: `⚙️ TITAN HEART ENGAGED! "${cog.option.text}"` });
@@ -248,12 +291,23 @@ export default function TitanGrammarForge({
     const leo = leoRef.current;
     for (const cog of cogs) {
       const dist = Math.hypot((leo.x + 20) - (cog.x + 35), (leo.y + 24) - (cog.y + 20));
-      if (dist < 75) {
+      if (dist < 85) {
         activateCog(cog);
         break;
       }
     }
   }, [cogs, activateCog]);
+
+  const handleCogClick = useCallback((cog) => {
+    const leo = leoRef.current;
+    const dist = Math.hypot((leo.x + 20) - (cog.x + 35), (leo.y + 24) - (cog.y + 20));
+    if (dist > 85) {
+      setFeedback({ type: 'wrong', text: '⚠️ Leo is too far! Leap close to the Gear Cog first!' });
+      setTimeout(() => setFeedback(null), 1200);
+      return;
+    }
+    activateCog(cog);
+  }, [activateCog]);
 
   // ── Physics Game Loop ──────────────────────────────────────────────────
   useEffect(() => {
@@ -289,16 +343,8 @@ export default function TitanGrammarForge({
       leo.y += leo.vy;
 
       // Platform collisions
-      const prevY = leo.y - leo.vy;
-      const landing = checkPlatformLanding(
-        { x: leo.x, y: leo.y, width: LEO_HITBOX.width, height: LEO_HITBOX.height, vy: leo.vy },
-        TITAN_PLATFORMS,
-        prevY
-      );
-
-      if (landing.landed) {
-        leo.y = landing.platformY - LEO_HITBOX.height;
-        leo.vy = 0;
+      const landed = checkPlatformLanding(leo, TITAN_PLATFORMS);
+      if (landed) {
         leo.isGrounded = true;
       } else if (leo.y >= FLOOR_Y - LEO_HITBOX.height) {
         leo.y = FLOOR_Y - LEO_HITBOX.height;
@@ -308,17 +354,15 @@ export default function TitanGrammarForge({
         leo.isGrounded = false;
       }
 
-      // Steam Hazard Collision (in the center vent at x: 420-480, y: FLOOR_Y - 60)
+      // Steam Hazard Collision (in the right floor vent at x: 520-580, y: FLOOR_Y - 50)
       const nowMs = Date.now();
       if (steamActive && nowMs > leo.invincibleUntil) {
-        if (leo.x >= 400 && leo.x <= 500 && leo.y >= FLOOR_Y - 90) {
-          leo.invincibleUntil = nowMs + INVINCIBILITY_MS;
-          setHearts(h => {
-            const next = Math.max(0, h - 1);
-            if (next === 0) setPhase('ko');
-            return next;
-          });
-          setFeedback({ type: 'wrong', text: '💨 Scalded by Titan Steam Vent! (-1 Heart)' });
+        if (leo.x >= 520 && leo.x <= 580 && leo.y >= FLOOR_Y - 50) {
+          leo.invincibleUntil = nowMs + 1000;
+          leo.vx = -6;
+          leo.vy = -6;
+          leo.x = 505; // Knockback safely to the left outside vent
+          setFeedback({ type: 'wrong', text: '💨 Whoosh! Blown back by Titan Steam Vent!' });
           setTimeout(() => setFeedback(null), 1200);
         }
       }
@@ -360,6 +404,31 @@ export default function TitanGrammarForge({
   // Camera follow Leo horizontally
   const cameraX = Math.max(0, Math.min(ROOM_WIDTH - containerWidth, leoDisplay.x - containerWidth / 2));
 
+  // Dynamic clamp: ensures gear plaques remain at least 10px from screen edges on any viewport
+  const getCogClampedStyle = useCallback((cog) => {
+    const cogCenterX = cog.x + 75;
+    const screenCenterX = cogCenterX - cameraX;
+    const halfWidth = 75;
+    const edgeMargin = 15;
+    const minScreenX = edgeMargin + halfWidth;
+    const maxScreenX = containerWidth - edgeMargin - halfWidth;
+
+    let offset = 0;
+    if (screenCenterX > -100 && screenCenterX < containerWidth + 100) {
+      if (screenCenterX < minScreenX) {
+        offset = minScreenX - screenCenterX;
+      } else if (screenCenterX > maxScreenX) {
+        offset = maxScreenX - screenCenterX;
+      }
+    }
+
+    return {
+      left: `${cog.x}px`,
+      top: `${cog.y}px`,
+      transform: offset !== 0 ? `translateX(${Math.round(offset)}px)` : undefined,
+    };
+  }, [cameraX, containerWidth]);
+
   // Mobile gesture controls — Continuous holding movement + jump + trigger
   const { gestureRef } = useGestureControls({
     onMoveLeftStart: () => { keysPressed.current.left = true; },
@@ -395,7 +464,7 @@ export default function TitanGrammarForge({
       setTimeout(() => { keysPressed.current.right = false; }, 360);
     },
     onTapCenter: handleTriggerNearCog,
-    enabled: phase === 'playing',
+    enabled: phase === 'playing' && !showHelp,
   });
 
   const handleRetry = () => {
@@ -403,6 +472,8 @@ export default function TitanGrammarForge({
     setScore(0);
     setTimeLeft(duration);
     setRoundIdx(0);
+    setFeedback(null);
+    setSteamActive(false);
     leoRef.current = { x: 430, y: 240, vx: 0, vy: 0, isGrounded: true, facingRight: true, invincibleUntil: 0 };
     setPhase('playing');
   };
@@ -412,10 +483,23 @@ export default function TitanGrammarForge({
     else if (onExit) onExit();
   };
 
+  const roundStartTimeRef = useRef(Date.now());
+  useEffect(() => {
+    roundStartTimeRef.current = Date.now();
+    console.log(`[TITAN-FORGE-ROUND-START] Round ${roundIdx + 1}/${rounds.length} started | timeLeft: ${timeLeft}s | stem: "${currentRound.stem}"`);
+  }, [roundIdx]);
+
   return (
     <div className="titan-forge-root" ref={containerRef}>
       {/* ── Always Accessible Floating Exit Button ─────────────────────── */}
       <FloatingExitBtn onExit={onExit} />
+
+      {/* ── Game Instruction Modal ── */}
+      <GameInstructionModal
+        gameId="titan_forge"
+        isOpen={showHelp}
+        onClose={() => setShowHelp(false)}
+      />
 
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="titan-forge-banner">
@@ -459,18 +543,20 @@ export default function TitanGrammarForge({
           />
         ))}
 
-        {/* Steam Vent Hazard in Center Ground */}
-        <div className={`steam-vent-entity ${steamActive ? 'vent-active' : ''}`} style={{ left: '425px', top: `${FLOOR_Y - 50}px` }}>
+        {/* Steam Vent Hazard in Right Ground */}
+        <div className={`steam-vent-entity ${steamActive ? 'vent-active' : ''}`} style={{ left: '550px', top: `${FLOOR_Y - 50}px` }}>
           {steamActive && <div className="steam-blast">💨 STEAM BLAST 💨</div>}
         </div>
 
-        {/* 3 Gear Cogs */}
+        {/* 4 Gear Cogs */}
         {cogs.map(cog => (
           <div
             key={cog.id}
             className="titan-gear-entity"
-            style={{ left: `${cog.x}px`, top: `${cog.y}px` }}
-            onClick={() => activateCog(cog)}
+            data-gear-id={cog.id}
+            data-is-correct={cog.option.isCorrect}
+            style={getCogClampedStyle(cog)}
+            onClick={() => handleCogClick(cog)}
           >
             {/* Clause Label Plaque */}
             <div className="titan-clause-plaque">
@@ -499,10 +585,19 @@ export default function TitanGrammarForge({
         hearts={hearts}
         score={score}
         timeLeft={timeLeft}
-        wordsCollected={roundIdx}
-        totalWords={rounds.length}
+        round={{ current: roundIdx + 1, total: rounds.length }}
         floorNumber={5}
         doorLabel="Door 2 — Titan Grammar Forge"
+        rightActions={
+          <button
+            type="button"
+            className="titan-help-btn"
+            onClick={() => setShowHelp(true)}
+            title="Game Instructions"
+          >
+            <HelpCircle size={15} /> Guide
+          </button>
+        }
       />
 
       {/* ── Cleared Modal ────────────────────────────────────────────── */}

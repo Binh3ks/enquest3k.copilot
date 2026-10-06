@@ -12,15 +12,16 @@
  */
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { RotateCcw, Volume2, ArrowLeft, Trophy, Sparkles, Smartphone } from 'lucide-react';
+import { RotateCcw, Volume2, ArrowLeft, Trophy, Sparkles, Smartphone, HelpCircle, Heart, AlertCircle } from 'lucide-react';
+import GameInstructionModal from './GameInstructionModal';
 
 // Default pedagogical pairs if none provided
 const DEFAULT_PAIRS = [
-  { starter: 'Jake was walking', completion: 'down the corridor' },
-  { starter: 'Water on tiles', completion: 'reduces friction' },
-  { starter: 'Rubber shoe soles', completion: 'provide strong grip' },
-  { starter: 'Nurse Sarah wrapped', completion: 'a sterile bandage' },
-  { starter: 'Be careful because', completion: 'the floor is slippery' },
+  { starter: 'Young scientists conduct', completion: 'careful daily experiments' },
+  { starter: 'The research team gathered', completion: 'reliable scientific evidence' },
+  { starter: 'Students write their observations in', completion: 'their blue lab notebooks' },
+  { starter: 'A clear hypothesis helps', completion: 'guide the scientific method' },
+  { starter: 'Careful thinking leads to', completion: 'logical new conclusions' },
 ];
 
 export default function ChunkCatapultCanvas({
@@ -32,7 +33,19 @@ export default function ChunkCatapultCanvas({
   onSceneEvent,
   onExit,
 }) {
-  const activePairs = (pairs && pairs.length > 0) ? pairs : DEFAULT_PAIRS;
+  // Ensure at least 5 pairs for N4 <= 4.53% compliance (Negative Binomial R>=5, p=1/3, L=2)
+  const activePairs = (() => {
+    const list = (pairs && pairs.length > 0) ? [...pairs] : [...DEFAULT_PAIRS];
+    if (list.length < 5) {
+      for (const p of DEFAULT_PAIRS) {
+        if (list.length >= 5) break;
+        if (!list.some(item => item.starter === p.starter)) {
+          list.push(p);
+        }
+      }
+    }
+    return list;
+  })();
 
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
@@ -42,11 +55,13 @@ export default function ChunkCatapultCanvas({
   const [currentPairIdx, setCurrentPairIdx] = useState(0);
   const [languageScore, setLanguageScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(duration);
+  const [hearts, setHearts] = useState(3);
   const [isGameOver, setIsGameOver] = useState(false);
   const [gameResult, setGameResult] = useState(null);
   const [bulletTimeActive, setBulletTimeActive] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
   const [ignorePortraitWarning, setIgnorePortraitWarning] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
 
   // References for live animation loop
   const gameStateRef = useRef({
@@ -55,6 +70,7 @@ export default function ChunkCatapultCanvas({
     currentPairIdx: 0,
     attemptsOnCurrentPair: 0,
     timeLeft: duration,
+    hearts: 3,
     isDragging: false,
     isLaunched: false,
     slingshotBase: { x: 130, y: 380 },
@@ -63,7 +79,7 @@ export default function ChunkCatapultCanvas({
     baskets: [],
     particles: [],
     popups: [],
-    lastTime: performance.now(),
+    lastTime: 0,
     isComplete: false,
   });
 
@@ -117,7 +133,9 @@ export default function ChunkCatapultCanvas({
         osc.start();
         osc.stop(audioCtx.currentTime + 0.2);
       }
-    } catch (_) {}
+    } catch (_err) {
+      // AudioContext unavailable or blocked by autoplay
+    }
   }, []);
 
   // Setup baskets for a specific pair index
@@ -139,9 +157,9 @@ export default function ChunkCatapultCanvas({
     const shuffled = [...candidates].sort(() => Math.random() - 0.5);
 
     const positions = [
-      { x: 440, y: 165 },
-      { x: 610, y: 220 },
-      { x: 730, y: 310 },
+      { x: 420, y: 165 },
+      { x: 560, y: 220 },
+      { x: 680, y: 295 },
     ];
 
     gameStateRef.current.baskets = positions.map((pos, idx) => ({
@@ -175,7 +193,7 @@ export default function ChunkCatapultCanvas({
     setupBaskets(0);
   }, [setupBaskets]);
 
-  // Complete game handler
+  // Complete game handler (Victory)
   const handleEndGame = useCallback((finalLangScore, remainingSecs) => {
     if (gameStateRef.current.isComplete) return;
     gameStateRef.current.isComplete = true;
@@ -191,6 +209,7 @@ export default function ChunkCatapultCanvas({
     const stars = totalScore >= 80 ? 3 : totalScore >= 60 ? 2 : totalScore >= 40 ? 1 : 0;
 
     const result = {
+      isKO: false,
       stars,
       score: totalScore,
       languageScore: finalLangScore,
@@ -206,6 +225,50 @@ export default function ChunkCatapultCanvas({
       onSceneEvent('game_complete', { stars, score: totalScore });
     }
   }, [doorIndex, duration, onComplete, onSceneEvent]);
+
+  // KO / Game Over when hearts run out
+  const handleGameOverKO = useCallback((finalLangScore, remainingSecs) => {
+    if (gameStateRef.current.isComplete) return;
+    gameStateRef.current.isComplete = true;
+    setIsGameOver(true);
+
+    const result = {
+      isKO: true,
+      stars: 0,
+      score: Math.max(0, finalLangScore),
+      languageScore: finalLangScore,
+      speedBonus: 0,
+      timeLeft: remainingSecs,
+    };
+    setGameResult(result);
+
+    if (onSceneEvent) {
+      onSceneEvent('game_over', { reason: 'out_of_hearts', score: finalLangScore });
+    }
+  }, [onSceneEvent]);
+
+  // Restart / Try Again handler
+  const handleRestart = useCallback(() => {
+    gameStateRef.current.isComplete = false;
+    gameStateRef.current.score = 0;
+    gameStateRef.current.languageScore = 0;
+    gameStateRef.current.currentPairIdx = 0;
+    gameStateRef.current.attemptsOnCurrentPair = 0;
+    gameStateRef.current.timeLeft = duration;
+    gameStateRef.current.hearts = 3;
+    gameStateRef.current.isDragging = false;
+    gameStateRef.current.isLaunched = false;
+
+    setHearts(3);
+    setCurrentPairIdx(0);
+    setLanguageScore(0);
+    setTimeLeft(duration);
+    setIsGameOver(false);
+    setGameResult(null);
+
+    setupBaskets(0);
+    resetBullet();
+  }, [duration, setupBaskets]);
 
   // Timer loop with Bullet Time slowdown
   useEffect(() => {
@@ -240,7 +303,7 @@ export default function ChunkCatapultCanvas({
 
   // Pointer Down (Mouse / Touch)
   const handlePointerDown = (e) => {
-    if (isGameOver || gameStateRef.current.isLaunched) return;
+    if (isGameOver || gameStateRef.current.hearts <= 0 || gameStateRef.current.isLaunched) return;
     const clientX = e.clientX || e.touches?.[0]?.clientX;
     const clientY = e.clientY || e.touches?.[0]?.clientY;
     if (clientX === undefined || clientY === undefined) return;
@@ -408,18 +471,28 @@ export default function ChunkCatapultCanvas({
               b.shake = 12;
               state.attemptsOnCurrentPair++;
 
+              // Deduct 1 heart (persistent across session)
+              state.hearts = Math.max(0, state.hearts - 1);
+              setHearts(state.hearts);
+
               state.popups.push({
                 x: b.x,
                 y: b.y - 20,
-                text: 'MISS! Try Again',
+                text: `MISS! -1 ❤️ (${state.hearts} left)`,
                 color: '#f87171',
                 life: 0.9,
               });
 
-              // Reset after brief pause
-              setTimeout(() => {
-                resetBullet();
-              }, 500);
+              if (state.hearts <= 0) {
+                setTimeout(() => {
+                  handleGameOverKO(state.languageScore, Math.ceil(state.timeLeft));
+                }, 600);
+              } else {
+                // Reset after brief pause
+                setTimeout(() => {
+                  resetBullet();
+                }, 500);
+              }
             }
             break;
           }
@@ -429,14 +502,25 @@ export default function ChunkCatapultCanvas({
         if (state.bullet.y > 450 || state.bullet.x > 840 || state.bullet.x < -40) {
           state.isLaunched = false;
           state.attemptsOnCurrentPair++;
+          state.hearts = Math.max(0, state.hearts - 1);
+          setHearts(state.hearts);
+          playSfx('hit_wrong');
+
           state.popups.push({
             x: Math.min(Math.max(state.bullet.x, 80), 720),
             y: 400,
-            text: 'Off Target!',
-            color: '#cbd5e1',
+            text: `Off Target! -1 ❤️ (${state.hearts} left)`,
+            color: '#f87171',
             life: 0.8,
           });
-          setTimeout(resetBullet, 350);
+
+          if (state.hearts <= 0) {
+            setTimeout(() => {
+              handleGameOverKO(state.languageScore, Math.ceil(state.timeLeft));
+            }, 600);
+          } else {
+            setTimeout(resetBullet, 350);
+          }
         }
       }
 
@@ -662,27 +746,48 @@ export default function ChunkCatapultCanvas({
           pointerEvents: 'none',
         }}
       >
-        <button
-          onClick={onExit}
-          style={{
-            pointerEvents: 'auto',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            background: 'rgba(30, 41, 59, 0.85)',
-            color: '#e2e8f0',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            borderRadius: '8px',
-            padding: '6px 14px',
-            fontSize: '13px',
-            fontWeight: 600,
-            cursor: 'pointer',
-            backdropFilter: 'blur(4px)',
-          }}
-        >
-          <ArrowLeft size={16} />
-          <span>Exit</span>
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', pointerEvents: 'auto' }}>
+          <button
+            onClick={onExit}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              background: 'rgba(30, 41, 59, 0.85)',
+              color: '#e2e8f0',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '8px',
+              padding: '6px 14px',
+              fontSize: '13px',
+              fontWeight: 600,
+              cursor: 'pointer',
+              backdropFilter: 'blur(4px)',
+            }}
+          >
+            <ArrowLeft size={16} />
+            <span>Exit</span>
+          </button>
+          <button
+            onClick={() => setShowHelp(true)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              background: 'rgba(30, 41, 59, 0.85)',
+              color: '#fde047',
+              border: '1px solid rgba(250, 204, 21, 0.4)',
+              borderRadius: '8px',
+              padding: '6px 12px',
+              fontSize: '13px',
+              fontWeight: 700,
+              cursor: 'pointer',
+              backdropFilter: 'blur(4px)',
+            }}
+          >
+            <HelpCircle size={16} />
+            <span>Guide</span>
+          </button>
+        </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           {/* Bullet Time Badge */}
@@ -705,6 +810,35 @@ export default function ChunkCatapultCanvas({
               ⏳ Bullet Time (Slow Clock)
             </div>
           )}
+
+          {/* Hearts Display (Persistent H=3, L=2) */}
+          <div
+            data-testid="chunk-catapult-hearts"
+            style={{
+              background: 'rgba(15, 23, 42, 0.85)',
+              border: '1px solid rgba(239, 68, 68, 0.4)',
+              borderRadius: '8px',
+              padding: '6px 12px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              fontSize: '14px',
+            }}
+          >
+            {[...Array(3)].map((_, i) => (
+              <span
+                key={i}
+                data-testid={`heart-icon-${i}`}
+                style={{
+                  opacity: i < hearts ? 1 : 0.25,
+                  filter: i < hearts ? 'none' : 'grayscale(100%)',
+                  transition: 'opacity 0.3s ease, filter 0.3s ease',
+                }}
+              >
+                ❤️
+              </span>
+            ))}
+          </div>
 
           {/* HUD Score & Timer */}
           <div
@@ -749,7 +883,7 @@ export default function ChunkCatapultCanvas({
           CHUNK CATAPULT — PULL SLINGSHOT & AIM AT THE MATCHING COMPLETION:
         </div>
         <div style={{ fontSize: '18px', color: '#facc15', fontWeight: 800, marginTop: '2px' }}>
-          "{currentPair.starter} ... ?"
+          &ldquo;{currentPair.starter} ... ?&rdquo;
         </div>
       </div>
 
@@ -801,10 +935,10 @@ export default function ChunkCatapultCanvas({
             📱 ↻
           </div>
           <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#facc15', marginBottom: '8px' }}>
-            Xoay Ngang Màn Hình Để Bắn Ná
+            Rotate Device for Best Catapult Aim
           </h2>
           <p style={{ color: '#cbd5e1', fontSize: '0.95rem', maxWidth: '340px', lineHeight: 1.5, marginBottom: '24px' }}>
-            Quỹ đạo parabol cần không gian ngang rộng rãi để ngắm trúng rổ mục tiêu chuẩn xác nhất! 🦊🎯
+            Parabolic trajectory needs wide horizontal space to aim at target baskets accurately! 🦊🎯
           </p>
           <button
             onClick={() => setIgnorePortraitWarning(true)}
@@ -819,12 +953,12 @@ export default function ChunkCatapultCanvas({
               cursor: 'pointer',
             }}
           >
-            Tiếp tục chơi dọc (Play in Portrait)
+            Continue in Portrait Mode
           </button>
         </div>
       )}
 
-      {/* ─── Game Complete Victory Modal ─── */}
+      {/* ─── Game Complete / KO Modal ─── */}
       {isGameOver && gameResult && (
         <div
           style={{
@@ -839,93 +973,191 @@ export default function ChunkCatapultCanvas({
             padding: '16px',
           }}
         >
-          <div
-            style={{
-              background: 'linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%)',
-              border: '2px solid #6366f1',
-              borderRadius: '20px',
-              padding: '28px 32px',
-              maxWidth: '420px',
-              width: '100%',
-              textAlign: 'center',
-              boxShadow: '0 16px 40px rgba(0,0,0,0.6)',
-            }}
-          >
-            <Trophy size={48} className="text-amber-400" style={{ margin: '0 auto 12px auto' }} />
-            <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#ffffff', marginBottom: '4px' }}>
-              Catapult Master!
-            </h2>
-            <p style={{ color: '#a5b4fc', fontSize: '0.9rem', marginBottom: '16px' }}>
-              All grammar chunks matched successfully!
-            </p>
-
-            {/* Stars Display */}
-            <div style={{ fontSize: '2rem', marginBottom: '16px', color: '#facc15' }}>
-              {[1, 2, 3].map((s) => (
-                <span key={s} style={{ opacity: s <= gameResult.stars ? 1 : 0.25, margin: '0 4px' }}>
-                  ★
-                </span>
-              ))}
-            </div>
-
-            {/* 80/20 Score Breakdown */}
+          {gameResult.isKO ? (
+            /* KO / Out of Hearts Modal */
             <div
+              data-testid="chunk-catapult-ko-modal"
               style={{
-                background: 'rgba(15, 23, 42, 0.7)',
-                borderRadius: '12px',
-                padding: '12px 16px',
-                marginBottom: '20px',
-                textAlign: 'left',
-                fontSize: '13px',
-                color: '#cbd5e1',
-                lineHeight: 1.8,
+                background: 'linear-gradient(145deg, #3b0764 0%, #0f172a 100%)',
+                border: '2px solid #ef4444',
+                borderRadius: '20px',
+                padding: '28px 32px',
+                maxWidth: '420px',
+                width: '100%',
+                textAlign: 'center',
+                boxShadow: '0 16px 40px rgba(239, 68, 68, 0.3)',
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span>🎯 Language Accuracy (80%):</span>
-                <strong style={{ color: '#4ade80' }}>+{gameResult.languageScore} pts</strong>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span>⚡ Speed Bonus (20%):</span>
-                <strong style={{ color: '#38bdf8' }}>+{gameResult.speedBonus} pts</strong>
-              </div>
+              <div style={{ fontSize: '3rem', marginBottom: '8px' }}>💔</div>
+              <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#f87171', marginBottom: '4px' }}>
+                Catapult Out of Energy!
+              </h2>
+              <p style={{ color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '20px', lineHeight: 1.5 }}>
+                You ran out of energy hearts. Keep practicing the grammar chunks to aim accurately!
+              </p>
+
               <div
                 style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  borderTop: '1px solid rgba(255,255,255,0.1)',
-                  marginTop: '6px',
-                  paddingTop: '6px',
-                  fontWeight: 800,
-                  fontSize: '15px',
-                  color: '#ffffff',
+                  background: 'rgba(15, 23, 42, 0.7)',
+                  borderRadius: '12px',
+                  padding: '12px 16px',
+                  marginBottom: '20px',
+                  textAlign: 'left',
+                  fontSize: '13px',
+                  color: '#cbd5e1',
+                  lineHeight: 1.8,
                 }}
               >
-                <span>Total Score:</span>
-                <span style={{ color: '#facc15' }}>{gameResult.score} / 100</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Completed Pairs:</span>
+                  <strong style={{ color: '#facc15' }}>{currentPairIdx} / {activePairs.length}</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Language Score:</span>
+                  <strong style={{ color: '#4ade80' }}>{gameResult.languageScore} pts</strong>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <button
+                  data-testid="btn-try-again"
+                  onClick={handleRestart}
+                  style={{
+                    flex: 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
+                    background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '10px',
+                    padding: '12px 16px',
+                    fontSize: '14px',
+                    fontWeight: 800,
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 16px rgba(99, 102, 241, 0.4)',
+                  }}
+                >
+                  <RotateCcw size={16} />
+                  <span>Try Again</span>
+                </button>
+                <button
+                  data-testid="btn-exit-ko"
+                  onClick={onExit}
+                  style={{
+                    background: 'rgba(51, 65, 85, 0.8)',
+                    color: '#cbd5e1',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    borderRadius: '10px',
+                    padding: '12px 20px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                  }}
+                >
+                  Exit
+                </button>
               </div>
             </div>
-
-            <button
-              onClick={onExit}
+          ) : (
+            /* Victory Modal */
+            <div
+              data-testid="chunk-catapult-victory-modal"
               style={{
-                background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
-                color: '#1e1b4b',
-                border: 'none',
-                borderRadius: '10px',
-                padding: '10px 24px',
-                fontSize: '15px',
-                fontWeight: 800,
-                cursor: 'pointer',
-                boxShadow: '0 4px 16px rgba(245, 158, 11, 0.4)',
+                background: 'linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%)',
+                border: '2px solid #6366f1',
+                borderRadius: '20px',
+                padding: '28px 32px',
+                maxWidth: '420px',
                 width: '100%',
+                textAlign: 'center',
+                boxShadow: '0 16px 40px rgba(0,0,0,0.6)',
               }}
             >
-              Continue to Chamber
-            </button>
-          </div>
+              <Trophy size={48} className="text-amber-400" style={{ margin: '0 auto 12px auto' }} />
+              <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#ffffff', marginBottom: '4px' }}>
+                Catapult Master!
+              </h2>
+              <p style={{ color: '#a5b4fc', fontSize: '0.9rem', marginBottom: '16px' }}>
+                All grammar chunks matched successfully!
+              </p>
+
+              {/* Stars Display */}
+              <div style={{ fontSize: '2rem', marginBottom: '16px', color: '#facc15' }}>
+                {[1, 2, 3].map((s) => (
+                  <span key={s} style={{ opacity: s <= gameResult.stars ? 1 : 0.25, margin: '0 4px' }}>
+                    ★
+                  </span>
+                ))}
+              </div>
+
+              {/* 80/20 Score Breakdown */}
+              <div
+                style={{
+                  background: 'rgba(15, 23, 42, 0.7)',
+                  borderRadius: '12px',
+                  padding: '12px 16px',
+                  marginBottom: '20px',
+                  textAlign: 'left',
+                  fontSize: '13px',
+                  color: '#cbd5e1',
+                  lineHeight: 1.8,
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>🎯 Language Accuracy (80%):</span>
+                  <strong style={{ color: '#4ade80' }}>+{gameResult.languageScore} pts</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>⚡ Speed Bonus (20%):</span>
+                  <strong style={{ color: '#38bdf8' }}>+{gameResult.speedBonus} pts</strong>
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    borderTop: '1px solid rgba(255,255,255,0.1)',
+                    marginTop: '6px',
+                    paddingTop: '6px',
+                    fontWeight: 800,
+                    fontSize: '15px',
+                    color: '#ffffff',
+                  }}
+                >
+                  <span>Total Score:</span>
+                  <span style={{ color: '#facc15' }}>{gameResult.score} / 100</span>
+                </div>
+              </div>
+
+              <button
+                data-testid="btn-continue-victory"
+                onClick={onExit}
+                style={{
+                  background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+                  color: '#1e1b4b',
+                  border: 'none',
+                  borderRadius: '10px',
+                  padding: '10px 24px',
+                  fontSize: '15px',
+                  fontWeight: 800,
+                  cursor: 'pointer',
+                  boxShadow: '0 4px 16px rgba(245, 158, 11, 0.4)',
+                  width: '100%',
+                }}
+              >
+                Continue to Chamber
+              </button>
+            </div>
+          )}
         </div>
       )}
+
+      <GameInstructionModal
+        gameId="chunk_catapult"
+        isOpen={showHelp}
+        onClose={() => setShowHelp(false)}
+      />
     </div>
   );
 }

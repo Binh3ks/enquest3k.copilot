@@ -87,12 +87,12 @@ export default function CambridgeClozeGauntlet({
       ...distractors.map((d, i) => ({ id: `crys_dist_${i}`, word: d, targetBlankId: null })),
     ];
     const coords = [
-      { x: 95,  y: 370 }, // Mid Left shelf
-      { x: 725, y: 370 }, // Mid Right shelf
+      { x: 95,  y: 370 }, // Mid Left shelf (inner)
+      { x: 195, y: 370 }, // Mid Left shelf (outer)
       { x: 95,  y: 130 }, // Upper Left shelf
-      { x: 725, y: 130 }, // Upper Right shelf
-      { x: 350, y: 220 }, // Center Tier Left
-      { x: 520, y: 220 }, // Center Tier Right
+      { x: 735, y: 130 }, // Upper Right shelf
+      { x: 665, y: 370 }, // Mid Right shelf (inner)
+      { x: 765, y: 370 }, // Mid Right shelf (outer)
       { x: 80,  y: 485 }, // Ground Far Left
       { x: 240, y: 485 }, // Ground Mid Left
       { x: 640, y: 485 }, // Ground Mid Right
@@ -127,6 +127,19 @@ export default function CambridgeClozeGauntlet({
     facingRight: true,
     invincibleUntil: 0,
   });
+
+  // DEV-only test hook for deterministic playtest verification
+  if (import.meta.env.DEV && typeof window !== 'undefined') {
+    window.__setGauntletLeo = (x, y) => {
+      if (leoRef.current) {
+        leoRef.current.x = x;
+        leoRef.current.y = y;
+        leoRef.current.vx = 0;
+        leoRef.current.vy = 0;
+        leoRef.current.isGrounded = true;
+      }
+    };
+  }
 
   // Astral Watcher patrolling apex
   const watcherRef = useRef({
@@ -166,7 +179,7 @@ export default function CambridgeClozeGauntlet({
         e.preventDefault();
         keysPressed.current.right = true;
       }
-      if (['KeyE', 'Enter'].includes(e.code)) {
+      if (['KeyE', 'Enter', 'Space'].includes(e.code)) {
         e.preventDefault();
         handleInteractAction();
       }
@@ -208,6 +221,7 @@ export default function CambridgeClozeGauntlet({
           if (dist < 65) {
             if (carryingCrystal.targetBlankId === slot.id) {
               // SUCCESS!
+              console.log(`[CLOZE-ACTION] DEPOSIT_SUCCESS: crystal="${carryingCrystal.word}" slot="${slot.id}" at (${slot.x}, ${slot.y}) leo=(${leo.x.toFixed(1)}, ${leo.y.toFixed(1)}) dist=${dist.toFixed(1)}px t=${Date.now()}`);
               setPlacedBlanks(prev => ({ ...prev, [slot.id]: carryingCrystal.word }));
               setScore(s => s + 45);
               speakText(carryingCrystal.word);
@@ -220,6 +234,7 @@ export default function CambridgeClozeGauntlet({
               break;
             } else {
               // WRONG SLOT / DISTRACTOR
+              console.log(`[CLOZE-ACTION] DEPOSIT_FAIL: crystal="${carryingCrystal.word}" slot="${slot.id}" at (${slot.x}, ${slot.y}) leo=(${leo.x.toFixed(1)}, ${leo.y.toFixed(1)}) dist=${dist.toFixed(1)}px t=${Date.now()}`);
               setHearts(h => {
                 const next = Math.max(0, h - 1);
                 if (next === 0) setPhase('ko');
@@ -248,6 +263,7 @@ export default function CambridgeClozeGauntlet({
       if (!c.isPlaced) {
         const dist = Math.hypot((leo.x + 20) - (c.x + 20), (leo.y + 24) - (c.y + 15));
         if (dist < 55) {
+          console.log(`[CLOZE-ACTION] PICKUP: crystal="${c.word}" at (${c.x}, ${c.y}) leo=(${leo.x.toFixed(1)}, ${leo.y.toFixed(1)}) dist=${dist.toFixed(1)}px t=${Date.now()}`);
           setCarryingCrystal(c);
           speakText(c.word);
           break;
@@ -302,17 +318,10 @@ export default function CambridgeClozeGauntlet({
       leo.y += leo.vy;
 
       // Platform collisions
-      const prevY = leo.y - leo.vy;
-      const landing = checkPlatformLanding(
-        { x: leo.x, y: leo.y, width: LEO_HITBOX.width, height: LEO_HITBOX.height, vy: leo.vy },
-        GAUNTLET_PLATFORMS,
-        prevY
-      );
-
-      if (landing.landed) {
-        leo.y = landing.platformY - LEO_HITBOX.height;
-        leo.vy = 0;
+      const landed = checkPlatformLanding(leo, GAUNTLET_PLATFORMS);
+      if (landed) {
         leo.isGrounded = true;
+        leo.vy = 0;
       } else if (leo.y >= FLOOR_Y - LEO_HITBOX.height) {
         leo.y = FLOOR_Y - LEO_HITBOX.height;
         leo.vy = 0;
@@ -333,13 +342,12 @@ export default function CambridgeClozeGauntlet({
       if (nowMs > leo.invincibleUntil) {
         const distW = Math.hypot((leo.x + 20) - (watcher.x + 20), (leo.y + 24) - (watcher.y + 20));
         if (distW < 45) {
+          // Repelled by Astral Watcher: Physical knockback obstacle without deducting hearts (N1 & N4 compliance)
           leo.invincibleUntil = nowMs + INVINCIBILITY_MS;
-          setHearts(h => {
-            const next = Math.max(0, h - 1);
-            if (next === 0) setPhase('ko');
-            return next;
-          });
-          setFeedback({ type: 'wrong', text: '🔮 Drained by Astral Watcher! (-1 Heart)' });
+          leo.vx = watcher.dir * 7;
+          leo.vy = -5;
+          leo.isGrounded = false;
+          setFeedback({ type: 'wrong', text: '🔮 Repelled by Astral Watcher!' });
           setTimeout(() => setFeedback(null), 1200);
         }
       }
@@ -555,11 +563,14 @@ export default function CambridgeClozeGauntlet({
 
       {/* ── HUD ──────────────────────────────────────────────────────── */}
       <HUDOverlay
+        floorDoorLabel="Floor 5 • Door 3 — Cambridge Cloze Gauntlet"
         hearts={hearts}
+        round={`${Object.keys(placedBlanks).length}/${blanks.length}`}
+        roundLabel="SEALS:"
         score={score}
         timeLeft={timeLeft}
-        wordsCollected={Object.keys(placedBlanks).length}
-        totalWords={blanks.length}
+        wordsCollected={0}
+        totalWords={0}
         floorNumber={5}
         doorLabel="Door 3 — Cambridge Cloze Gauntlet"
       />

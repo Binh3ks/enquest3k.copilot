@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-09-15T03:08:44.629Z",
+  "ticket": "P1-2",
+  "game": "Storm Shield Defense (Floor 3 Door 3)",
+  "n4Math": {
+    "formula": "Negative Binomial R=5, p=1/3, L=2",
+    "exactN4": "11/243 = 4.53%",
+    "targetBound": "<= 5.0%",
+    "isPass": true
+  },
+  "frames": {
+    "frame1Spawn": {
+      "hearts": 3,
+      "batteryText": "0%",
+      "timer": "⏱️\n1:29",
+      "score": "0",
+      "meteorsPresent": 0
+    },
+    "frame2Deflect": {
+      "feedbackToast": "⚡ DEFLECTED \"strong grip\" (+20% Battery)",
+      "batteryText": "20%",
+      "hearts": 3,
+      "timer": "⏱️\n1:28",
+      "rawConsoleLog": "[STORM-SHIELD-ACTION] Deflected Target: \"strong grip\" | Battery: 20% (+20%) | Time Spent: 2.71s | HUD timeLeft: 88s"
+    },
+    "frame3Hazard": {
+      "feedbackToast": "💥 HAZARD HIT! \"banana peel\" cracked shield! (-1 Heart)",
+      "batteryText": "10%",
+      "hearts": 2,
+      "timer": "⏱️\n1:26",
+      "rawConsoleLog": "[STORM-SHIELD-ACTION] Hit Hazard: \"banana peel\" | Hearts: 2 (-1) | Time Spent: 4.78s | HUD timeLeft: 86s"
+    },
+    "frame4Cleared": {
+      "modalTitle": "ASTRAL VORTEX CHARGED!",
+      "score": "Score: 362 XP",
+      "timer": "⏱️\n1:01",
+      "actualTimeSpentSec": 29.66,
+      "budgetSec": 90,
+      "verifiedSafetyMarginSec": 60.34,
+      "rawConsoleLog": "[STORM-SHIELD-CLEARED] Battery 100% | Time Spent: 29.66s | Budget: 90s | Margin: 60.34s"
+    }
+  },
+  "consoleLogs": [
+    {
+      "text": "[STORM-SHIELD-START] Duration: 90s | Battery Goal: 100% (5 hits) | Hearts: 3 | p = 1/3 (N4 = 4.53%)",
+      "time": 1789441694262
+    },
+    {
+      "text": "[STORM-SHIELD-START] Duration: 90s | Battery Goal: 100% (5 hits) | Hearts: 3 | p = 1/3 (N4 = 4.53%)",
+      "time": 1789441694263
+    },
+    {
+      "text": "[STORM-SHIELD-ACTION] Deflected Target: \"strong grip\" | Battery: 20% (+20%) | Time Spent: 2.71s | HUD timeLeft: 88s",
+      "time": 1789441696978
+    },
+    {
+      "text": "[STORM-SHIELD-ACTION] Hit Hazard: \"banana peel\" | Hearts: 2 (-1) | Time Spent: 4.78s | HUD timeLeft: 86s",
+      "time": 1789441699044
+    },
+    {
+      "text": "[STORM-SHIELD-ACTION] Deflected Target: \"strong grip\" | Battery: 30% (+20%) | Time Spent: 6.67s | HUD timeLeft: 84s",
+      "time": 1789441700927
+    },
+    {
+      "text": "[STORM-SHIELD-ACTION] Deflected Target: \"strong grip\" | Battery: 50% (+20%) | Time Spent: 13.31s | HUD timeLeft: 77s",
+      "time": 1789441707577
+    },
+    {
+      "text": "[STORM-SHIELD-ACTION] Deflected Target: \"friction\" | Battery: 70% (+20%) | Time Spent: 20.58s | HUD timeLeft: 70s",
+      "time": 1789441714844
+    },
+    {
+      "text": "[STORM-SHIELD-ACTION] Deflected Target: \"strong grip\" | Battery: 90% (+20%) | Time Spent: 25.73s | HUD timeLeft: 65s",
+      "time": 1789441719993
+    },
+    {
+      "text": "[STORM-SHIELD-ACTION] Deflected Target: \"friction\" | Battery: 100% (+20%) | Time Spent: 29.66s | HUD timeLeft: 61s",
+      "time": 1789441723927
+    },
+    {
+      "text": "[STORM-SHIELD-CLEARED] Battery 100% | Time Spent: 29.66s | Budget: 90s | Margin: 60.34s",
+      "time": 1789441723927
+    }
+  ]
+}

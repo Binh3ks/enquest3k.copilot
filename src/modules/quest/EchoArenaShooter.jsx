@@ -9,7 +9,7 @@
  * - Always-visible FloatingExitBtn for seamless Chamber navigation
  */
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Volume2, Trophy, RotateCcw, ArrowRight, Zap, AlertTriangle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { validateMCQOptions } from '../../utils/quizValidation';
@@ -28,9 +28,9 @@ const DEFAULT_PHONICS_ROUNDS = [
     promptAudio: 'sh',
     orbs: [
       { id: 'o1', label: 'shoe', sound: 'sh', isCorrect: true },
-      { id: 'o2', label: 'ship', sound: 'sh', isCorrect: true },
-      { id: 'o3', label: 'chair', sound: 'ch', isCorrect: false },
-      { id: 'o4', label: 'think', sound: 'th', isCorrect: false },
+      { id: 'o2', label: 'chair', sound: 'ch', isCorrect: false },
+      { id: 'o3', label: 'think', sound: 'th', isCorrect: false },
+      { id: 'o4', label: 'chin', sound: 'ch', isCorrect: false },
     ],
   },
   {
@@ -38,21 +38,32 @@ const DEFAULT_PHONICS_ROUNDS = [
     targetWord: 'chair',
     promptAudio: 'ch',
     orbs: [
-      { id: 'o5', label: 'cheese', sound: 'ch', isCorrect: true },
-      { id: 'o6', label: 'chalk', sound: 'ch', isCorrect: true },
-      { id: 'o7', label: 'sheep', sound: 'sh', isCorrect: false },
-      { id: 'o8', label: 'thumb', sound: 'th', isCorrect: false },
+      { id: 'o5', label: 'chair', sound: 'ch', isCorrect: true },
+      { id: 'o6', label: 'sheep', sound: 'sh', isCorrect: false },
+      { id: 'o7', label: 'thumb', sound: 'th', isCorrect: false },
+      { id: 'o8', label: 'shoe', sound: 'sh', isCorrect: false },
     ],
   },
   {
     targetSound: 'th',
-    targetWord: 'thin',
+    targetWord: 'thick',
     promptAudio: 'th',
     orbs: [
       { id: 'o9', label: 'thick', sound: 'th', isCorrect: true },
-      { id: 'o10', label: 'thumb', sound: 'th', isCorrect: true },
-      { id: 'o11', label: 'shin', sound: 'sh', isCorrect: false },
-      { id: 'o12', label: 'chin', sound: 'ch', isCorrect: false },
+      { id: 'o10', label: 'shin', sound: 'sh', isCorrect: false },
+      { id: 'o11', label: 'chalk', sound: 'ch', isCorrect: false },
+      { id: 'o12', label: 'cheese', sound: 'ch', isCorrect: false },
+    ],
+  },
+  {
+    targetSound: 'wh',
+    targetWord: 'wheel',
+    promptAudio: 'wh',
+    orbs: [
+      { id: 'o13', label: 'wheel', sound: 'wh', isCorrect: true },
+      { id: 'o14', label: 'heel', sound: 'h', isCorrect: false },
+      { id: 'o15', label: 'feel', sound: 'f', isCorrect: false },
+      { id: 'o16', label: 'peel', sound: 'p', isCorrect: false },
     ],
   },
 ];
@@ -73,7 +84,28 @@ export default function EchoArenaShooter({
     height: 500,
   });
 
-  const rounds = phonicsRounds && phonicsRounds.length > 0 ? phonicsRounds : DEFAULT_PHONICS_ROUNDS;
+  const rounds = useMemo(() => {
+    if (phonicsRounds && phonicsRounds.length >= 4) {
+      return phonicsRounds.slice(0, 4).map((r, rIdx) => {
+        const correct = (r.orbs || []).filter(o => o.isCorrect);
+        const wrong = (r.orbs || []).filter(o => !o.isCorrect);
+        const target = correct[0] || { id: `c_${rIdx}`, label: r.targetWord || 'target', isCorrect: true };
+        const distractors = wrong.slice(0, 3);
+        const fallbackWords = ['chair', 'sheep', 'thumb', 'wheel', 'think', 'shin', 'heel', 'chalk'];
+        while (distractors.length < 3) {
+          const fallbackLabel = fallbackWords[distractors.length] || `option_${distractors.length}`;
+          distractors.push({ id: `d_${rIdx}_${distractors.length}`, label: fallbackLabel, isCorrect: false });
+        }
+        return {
+          targetSound: r.targetSound || 'sh',
+          targetWord: target.label,
+          promptAudio: r.promptAudio || r.targetSound || 'sh',
+          orbs: [target, ...distractors.slice(0, 3)]
+        };
+      });
+    }
+    return DEFAULT_PHONICS_ROUNDS;
+  }, [phonicsRounds]);
 
   const [phase, setPhase] = useState('playing'); // 'playing' | 'cleared' | 'ko'
   const [roundIdx, setRoundIdx] = useState(0);
@@ -101,12 +133,14 @@ export default function EchoArenaShooter({
 
   // Active floating orbs positioned proportionally to arena size
   const [orbs, setOrbs] = useState([]);
+  const orbsRef = useRef([]);
 
   // Projectiles fired by Leo
   const [bolts, setBolts] = useState([]); // [{ id, x, y, vx, vy }]
+  const boltsRef = useRef([]);
 
-  // Noise Gremlin enemy flying across top
-  const [gremlin, setGremlin] = useState({ x: 80, y: 130, vx: 2.2, dir: 1 });
+  // Noise Gremlin enemy flying across mid-air (altitude y=235 guarantees >=47px vertical clearance below all orbs)
+  const [gremlin, setGremlin] = useState({ x: 80, y: 235, vx: 2.2, dir: 1 });
 
   // Aiming angle (degrees: pointing upwards)
   const [aimAngle, setAimAngle] = useState(90);
@@ -135,35 +169,40 @@ export default function EchoArenaShooter({
   }, [floorY, arenaSize.width]);
 
   // Setup round orbs when roundIdx or arenaSize changes
-  useEffect(() => {
-    speakText(`Sound: ${currentRound.targetSound}`);
-    const correctOrbs = currentRound.orbs.filter(o => o.isCorrect);
-    const primaryCorrect = correctOrbs[0]?.label || currentRound.targetWord;
-    const rawOptions = currentRound.orbs.map(o => o.label);
+  const initOrbsForRound = useCallback((rIdx) => {
+    const round = rounds[rIdx % rounds.length] || DEFAULT_PHONICS_ROUNDS[0];
+    speakText(`Sound: ${round.targetSound}`);
+    const correctOrbs = round.orbs.filter(o => o.isCorrect);
+    const primaryCorrect = correctOrbs[0]?.label || round.targetWord;
+    const rawOptions = round.orbs.map(o => o.label);
     const fallbackPool = DEFAULT_PHONICS_ROUNDS.flatMap(r => r.orbs.map(o => o.label));
-    const validatedLabels = validateMCQOptions(rawOptions, primaryCorrect, fallbackPool, Math.max(4, currentRound.orbs.length));
+    const validatedLabels = validateMCQOptions(rawOptions, primaryCorrect, fallbackPool, Math.max(4, round.orbs.length));
 
     const orbCount = validatedLabels.length;
     const spacing = arenaSize.width / (orbCount + 1);
 
-    setOrbs(
-      validatedLabels.map((label, i) => {
-        const existing = currentRound.orbs.find(o => o.label === label);
-        const isCorrect = existing ? existing.isCorrect : (label === primaryCorrect);
-        return {
-          id: existing?.id || `orb_${roundIdx}_${i}`,
-          label,
-          sound: existing?.sound || currentRound.targetSound,
-          isCorrect,
-          x: spacing * (i + 1) - 34,
-          y: 80 + (i % 2) * 45,
-          vx: (i % 2 === 0 ? 1 : -1) * 1.1,
-          vy: 0.3,
-          popped: false,
-        };
-      })
-    );
-  }, [roundIdx, currentRound, arenaSize.width]);
+    const initialOrbs = validatedLabels.map((label, i) => {
+      const existing = round.orbs.find(o => o.label === label);
+      const isCorrect = existing ? existing.isCorrect : (label === primaryCorrect);
+      return {
+        id: existing?.id || `orb_${rIdx}_${i}`,
+        label,
+        sound: existing?.sound || round.targetSound,
+        isCorrect,
+        x: spacing * (i + 1) - 34,
+        y: 80 + (i % 2) * 45,
+        vx: (i % 2 === 0 ? 1 : -1) * 1.1,
+        vy: 0.3,
+        popped: false,
+      };
+    });
+    orbsRef.current = initialOrbs;
+    setOrbs(initialOrbs);
+  }, [rounds, arenaSize.width]);
+
+  useEffect(() => {
+    initOrbsForRound(roundIdx);
+  }, [roundIdx, initOrbsForRound]);
 
   // ── Fire Bolt Action towards (targetX, targetY) or current aim angle ─────────
   const fireBoltTowards = useCallback((targetX, targetY) => {
@@ -190,10 +229,9 @@ export default function EchoArenaShooter({
       vy = -Math.sin(rad) * speed;
     }
 
-    setBolts(prev => [
-      ...prev,
-      { id: `bolt_${Date.now()}_${Math.random()}`, x: originX, y: originY, vx, vy },
-    ]);
+    const newBolt = { id: `bolt_${Date.now()}_${Math.random()}`, x: originX, y: originY, vx, vy };
+    boltsRef.current = [...boltsRef.current, newBolt];
+    setBolts(boltsRef.current);
   }, [aimAngle, phase]);
 
   // ── Handle Tap on Arena (Shoots directly at tap position) ────────────────────
@@ -239,13 +277,6 @@ export default function EchoArenaShooter({
     },
     enabled: phase === 'playing',
   });
-
-  // ── Direct Orb Click/Tap (Accessibility & Fast Mobile Tap) ───────────────────
-  const handleOrbDirectPop = useCallback((orb) => {
-    if (phase !== 'playing' || orb.popped) return;
-    // Launch a bolt aimed directly at the orb
-    fireBoltTowards(orb.x + 34, orb.y + 34);
-  }, [phase, fireBoltTowards]);
 
   // ── Keyboard controls ───────────────────────────────────────────────────────
   useEffect(() => {
@@ -302,79 +333,76 @@ export default function EchoArenaShooter({
       }
 
       // Update Bolts
-      setBolts(prevBolts => {
-        const nextBolts = [];
-        for (const b of prevBolts) {
-          const nx = b.x + b.vx * (dt * 60);
-          const ny = b.y + b.vy * (dt * 60);
+      const nextBolts = [];
+      const currentBolts = boltsRef.current;
+      for (const b of currentBolts) {
+        const nx = b.x + b.vx * (dt * 60);
+        const ny = b.y + b.vy * (dt * 60);
 
-          // Boundary check
-          if (nx < 0 || nx > aWidth || ny < 0 || ny > aHeight) continue;
+        // Boundary check
+        if (nx < 0 || nx > aWidth || ny < 0 || ny > aHeight) continue;
 
-          // Check collision with Noise Gremlin
-          const distGremlin = Math.hypot(nx - (gremlin.x + 20), ny - (gremlin.y + 20));
-          if (distGremlin < 28) {
-            setFeedback({ type: 'wrong', text: '👾 Noise Gremlin absorbed bolt!' });
-            setTimeout(() => setFeedback(null), 1200);
-            continue;
-          }
+        // Check collision with Noise Gremlin
+        const distGremlin = Math.hypot(nx - (gremlin.x + 20), ny - (gremlin.y + 20));
+        if (distGremlin < 28) {
+          setFeedback({ type: 'wrong', text: '👾 Noise Gremlin absorbed bolt!' });
+          setTimeout(() => setFeedback(null), 1200);
+          continue;
+        }
 
-          // Check collision with orbs
-          let boltUsed = false;
-          setOrbs(prevOrbs =>
-            prevOrbs.map(orb => {
-              if (orb.popped) return orb;
-              const distOrb = Math.hypot(nx - (orb.x + 34), ny - (orb.y + 34));
-              if (distOrb < 38 && !boltUsed) {
-                boltUsed = true;
-                if (orb.isCorrect) {
-                  speakText(orb.label);
-                  setScore(s => s + 35);
-                  setFeedback({ type: 'correct', text: `🎯 "${orb.label}" matches /${currentRound.targetSound}/!` });
-                  setTimeout(() => setFeedback(null), 1400);
-                  return { ...orb, popped: true };
-                } else {
-                  speakText(orb.label);
-                  setHearts(h => {
-                    const next = Math.max(0, h - 1);
-                    if (next === 0) setPhase('ko');
-                    return next;
-                  });
-                  setFeedback({ type: 'wrong', text: `❌ "${orb.label}" does NOT match!` });
-                  setTimeout(() => setFeedback(null), 1400);
-                  return { ...orb, popped: true };
-                }
-              }
-              return orb;
-            })
-          );
-
-          if (!boltUsed) {
-            nextBolts.push({ ...b, x: nx, y: ny });
+        // Check collision with orbs
+        let boltUsed = false;
+        for (const orb of orbsRef.current) {
+          if (orb.popped) continue;
+          const distOrb = Math.hypot(nx - (orb.x + 34), ny - (orb.y + 34));
+          if (distOrb < 38) {
+            boltUsed = true;
+            orb.popped = true;
+            if (orb.isCorrect) {
+              speakText(orb.label);
+              setScore(s => s + 35);
+              setFeedback({ type: 'correct', text: `🎯 "${orb.label}" matches /${currentRound.targetSound}/!` });
+              setTimeout(() => setFeedback(null), 1400);
+            } else {
+              speakText(orb.label);
+              setHearts(h => {
+                const next = Math.max(0, h - 1);
+                if (next === 0) setPhase('ko');
+                return next;
+              });
+              setFeedback({ type: 'wrong', text: `❌ "${orb.label}" does NOT match!` });
+              setTimeout(() => setFeedback(null), 1400);
+            }
+            break;
           }
         }
-        return nextBolts;
-      });
+
+        if (!boltUsed) {
+          nextBolts.push({ ...b, x: nx, y: ny });
+        }
+      }
+      boltsRef.current = nextBolts;
+      setBolts(nextBolts);
 
       // Update Orbs floating movement
-      setOrbs(prevOrbs =>
-        prevOrbs.map(orb => {
-          if (orb.popped) return orb;
-          let nx = orb.x + orb.vx * (dt * 45);
-          let nvx = orb.vx;
-          if (nx < 20) {
-            nx = 20;
-            nvx = Math.abs(orb.vx);
-          }
-          if (nx > aWidth - 75) {
-            nx = aWidth - 75;
-            nvx = -Math.abs(orb.vx);
-          }
-          return { ...orb, x: nx, vx: nvx };
-        })
-      );
+      for (const orb of orbsRef.current) {
+        if (orb.popped) continue;
+        let nx = orb.x + orb.vx * (dt * 45);
+        let nvx = orb.vx;
+        if (nx < 20) {
+          nx = 20;
+          nvx = Math.abs(orb.vx);
+        }
+        if (nx > aWidth - 75) {
+          nx = aWidth - 75;
+          nvx = -Math.abs(orb.vx);
+        }
+        orb.x = nx;
+        orb.vx = nvx;
+      }
+      setOrbs([...orbsRef.current]);
 
-      // Update Noise Gremlin patrol
+      // Update Noise Gremlin patrol at mid-air altitude y=235 (>=47px vertical clearance below orbs)
       setGremlin(g => {
         let nx = g.x + g.vx * g.dir;
         let ndir = g.dir;
@@ -386,7 +414,7 @@ export default function EchoArenaShooter({
           nx = aWidth - 70;
           ndir = -1;
         }
-        return { ...g, x: nx, dir: ndir };
+        return { ...g, x: nx, y: 235, dir: ndir };
       });
 
       setLeoDisplay({
@@ -439,7 +467,12 @@ export default function EchoArenaShooter({
     setRoundIdx(0);
     setHearts(3);
     setScore(0);
+    setFeedback(null);
+    boltsRef.current = [];
+    setBolts([]);
+    setGremlin({ x: 80, y: 235, vx: 2.2, dir: 1 });
     setTimeLeft(duration);
+    initOrbsForRound(0);
   };
 
   const handleFinalFinish = () => {
@@ -488,19 +521,18 @@ export default function EchoArenaShooter({
         {/* Acoustic Wavefield Background Effect */}
         <div className="acoustic-rings-overlay" />
 
-        {/* Floating Resonance Orbs */}
+        {/* Floating Resonance Orbs (N1 Guarded: Direct Click exploit removed, bolts must be fired from Leo) */}
         {orbs.map(orb => {
           if (orb.popped) return null;
           return (
             <div
               key={orb.id}
               className="acoustic-orb-entity"
+              data-orb-id={orb.id}
+              data-orb-label={orb.label}
+              data-is-correct={orb.isCorrect ? 'true' : 'false'}
               style={{ left: `${orb.x}px`, top: `${orb.y}px` }}
-              onClick={(e) => {
-                e.stopPropagation();
-                handleOrbDirectPop(orb);
-              }}
-              title={`Tap to pop: ${orb.label}`}
+              title={`Acoustic Orb: ${orb.label}`}
             >
               <div className="orb-crystal-glow" />
               <span className="orb-word-text">{orb.label}</span>
@@ -508,25 +540,33 @@ export default function EchoArenaShooter({
           );
         })}
 
-        {/* Noise Gremlin */}
+        {/* Noise Gremlin with upright un-mirrored label */}
         <div
           className="noise-gremlin-sprite"
           style={{
             left: `${gremlin.x}px`,
             top: `${gremlin.y}px`,
-            transform: gremlin.dir < 0 ? 'scaleX(-1)' : 'none',
           }}
         >
-          <span>🦇</span>
+          <span
+            className="gremlin-icon"
+            style={{
+              display: 'inline-block',
+              transform: gremlin.dir < 0 ? 'scaleX(-1)' : 'none',
+            }}
+          >
+            🦇
+          </span>
           <span className="gremlin-tag">JAMMER</span>
         </div>
 
-        {/* Flying Resonance Bolts */}
+        {/* Flying Resonance Bolts (Centered glowing plasma projectile) */}
         {bolts.map(b => (
           <div
             key={b.id}
             className="resonance-bolt-entity"
-            style={{ left: `${b.x}px`, top: `${b.y}px` }}
+            data-bolt-id={b.id}
+            style={{ left: `${b.x - 13}px`, top: `${b.y - 13}px` }}
           >
             <Zap size={16} />
           </div>
@@ -543,18 +583,21 @@ export default function EchoArenaShooter({
 
       {/* ── Mobile Tip ── */}
       <div className="echo-mobile-tip">
-        <span>⚡ Tap any orb or tap screen to shoot! Swipe to steer Leo.</span>
+        <span>⚡ Tap screen to aim & shoot bolt! Swipe or tap sides to steer Leo.</span>
       </div>
 
       {/* ── HUD ── */}
       <HUDOverlay
+        floorDoorLabel="Floor 3 Door 1 — Echo Arena Shooter"
         hearts={hearts}
+        round={`${roundIdx + 1}/${rounds.length}`}
+        xp={score}
         score={score}
         timeLeft={timeLeft}
-        wordsCollected={roundIdx}
+        wordsCollected={roundIdx + 1}
         totalWords={rounds.length}
         floorNumber={3}
-        doorLabel="Door 1 — Echo Arena Shooter"
+        doorLabel="Floor 3 Door 1 — Echo Arena Shooter"
       />
 
       {/* ── Cleared Modal ── */}

@@ -43,7 +43,187 @@ const FALLBACK_PAIRS = [
   { id: 'p2', word: 'laboratory', def: 'Room for science experiments' },
   { id: 'p3', word: 'traction',   def: 'Grip of shoes on the floor' },
   { id: 'p4', word: 'slippery',   def: 'Difficult to hold or walk on' },
+  { id: 'p5', word: 'gravity',    def: 'Force pulling objects down' },
 ];
+
+const CAULDRON_SLOTS = [
+  { x: 90,  y: 360 }, // Tier 1 Left
+  { x: 210, y: 360 }, // Tier 1 Left
+  { x: 370, y: 320 }, // Tier 1 Mid
+  { x: 470, y: 320 }, // Tier 1 Mid
+  { x: 630, y: 360 }, // Tier 1 Right
+  { x: 740, y: 360 }, // Tier 1 Right
+  { x: 200, y: 190 }, // Tier 2 Left
+  { x: 310, y: 190 }, // Tier 2 Left
+  { x: 540, y: 190 }, // Tier 2 Right
+  { x: 650, y: 190 }, // Tier 2 Right
+];
+
+function normalizeText(str) {
+  return (str || '').trim().toLowerCase().replace(/[.,!?;:'"\\-]/g, '').replace(/\s+/g, ' ');
+}
+
+function fisherYatesShuffle(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function isNearDuplicate(itemA, itemB) {
+  if (!itemA || !itemB) return false;
+  const wA = (itemA.word || '').toLowerCase().trim();
+  const wB = (itemB.word || '').toLowerCase().trim();
+  if (!wA || !wB) return false;
+
+  // 1. Substring containment (e.g. "corridor" in "school corridor", "warning sign" in "yellow warning sign")
+  if (wA.includes(wB) || wB.includes(wA)) {
+    return true;
+  }
+
+  // 2. Shared root noun in compound phrases (e.g. soles, tiles, sign)
+  const getTokens = (str) => str.replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean);
+  const tokensA = getTokens(wA);
+  const tokensB = getTokens(wB);
+  const shared = tokensA.filter(t => tokensB.includes(t) && t.length >= 4);
+  if (shared.length > 0) {
+    return true;
+  }
+
+  // 3. Definition Jaccard similarity >= 0.25 (catches rewrites describing the same concept)
+  const dA = (itemA.def || itemA.definition || itemA.definition_en || '').toLowerCase();
+  const dB = (itemB.def || itemB.definition || itemB.definition_en || '').toLowerCase();
+  if (dA && dB) {
+    const defA = new Set(getTokens(dA).filter(t => t.length > 3));
+    const defB = new Set(getTokens(dB).filter(t => t.length > 3));
+    let inter = 0;
+    for (const t of defA) if (defB.has(t)) inter++;
+    const union = new Set([...defA, ...defB]).size;
+    if (union > 0 && inter / union >= 0.25) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function generateCauldrons(vocabItems = [], weekNumber = 33) {
+  const valid = vocabItems.filter(v => v.word && (v.definition || v.def || v.definition_en));
+  
+  // Build unique distinct pools separated by week
+  const currentWeekPool = [];
+  const reviewPool = [];
+  const seenWords = new Set();
+  const seenDefs = new Set();
+
+  for (const item of valid) {
+    const rawWord = item.word;
+    const rawDef = item.definition || item.def || item.definition_en;
+    const normWord = normalizeText(rawWord);
+    const normDef = normalizeText(rawDef);
+    if (!normWord || !normDef) continue;
+
+    if (!seenWords.has(normWord) && !seenDefs.has(normDef)) {
+      seenWords.add(normWord);
+      seenDefs.add(normDef);
+      const entry = {
+        word: rawWord.trim(),
+        def: rawDef.trim(),
+        source: !item.isReview ? `week${weekNumber}` : (item.weekId ? `review(w${item.weekId})` : 'review'),
+      };
+      if (!item.isReview) {
+        currentWeekPool.push(entry);
+      } else {
+        reviewPool.push(entry);
+      }
+    }
+  }
+
+  // Fisher-Yates shuffle current week items with near-duplicate guard
+  const shuffledCurrent = fisherYatesShuffle(currentWeekPool);
+  const selected = [];
+  for (const item of shuffledCurrent) {
+    if (!selected.some(sel => isNearDuplicate(item, sel))) {
+      selected.push(item);
+      if (selected.length >= 5) break;
+    }
+  }
+
+  // If current week has < 5, supplement from reviewPool (guarded against near-duplicates)
+  if (selected.length < 5) {
+    const shuffledReview = fisherYatesShuffle(reviewPool);
+    for (const item of shuffledReview) {
+      if (!selected.some(sel => isNearDuplicate(item, sel))) {
+        selected.push(item);
+        if (selected.length >= 5) break;
+      }
+    }
+  }
+
+  // If still < 5, supplement from FALLBACK_PAIRS (guarded against near-duplicates)
+  if (selected.length < 5) {
+    for (const fb of FALLBACK_PAIRS) {
+      const normWord = normalizeText(fb.word);
+      const normDef = normalizeText(fb.def);
+      if (!seenWords.has(normWord) && !seenDefs.has(normDef)) {
+        seenWords.add(normWord);
+        seenDefs.add(normDef);
+        const fbEntry = {
+          word: fb.word,
+          def: fb.def,
+          source: 'FALLBACK',
+        };
+        if (!selected.some(sel => isNearDuplicate(fbEntry, sel))) {
+          selected.push(fbEntry);
+        }
+      }
+      if (selected.length >= 5) break;
+    }
+  }
+
+  // Safe degradation: if still < 5, fill from FALLBACK_PAIRS
+  if (selected.length < 5) {
+    console.error(`[PotionFlipDungeon Error] Fewer than 5 distinct pairs (${selected.length}). Degrading safely with fallbacks.`);
+    for (const fb of FALLBACK_PAIRS) {
+      if (selected.length >= 5) break;
+      selected.push({
+        word: fb.word,
+        def: fb.def,
+        source: 'FALLBACK',
+      });
+    }
+  }
+
+  // Log each pair with its exact source
+  selected.forEach((p, idx) => {
+    console.log(`[POTION-INIT] pair ${idx + 1}: "${p.word}" ← source=${p.source}`);
+  });
+
+  const cards = [];
+  const epochSalt = Date.now();
+  selected.forEach((item, idx) => {
+    cards.push({ id: `w_${idx}_${epochSalt}`, pairId: `pair_${idx}_${epochSalt}`, text: item.word, isWord: true });
+    cards.push({ id: `d_${idx}_${epochSalt}`, pairId: `pair_${idx}_${epochSalt}`, text: item.def, isWord: false });
+  });
+
+  // Fisher-Yates shuffle both cards and cauldron platform slots
+  const shuffledCards = fisherYatesShuffle(cards);
+  const shuffledSlots = fisherYatesShuffle(CAULDRON_SLOTS);
+
+  const finalCauldrons = shuffledCards.map((c, i) => ({
+    ...c,
+    x: shuffledSlots[i].x,
+    y: shuffledSlots[i].y,
+    matched: false,
+  }));
+
+  // Forensic logging of slot layout coordinates
+  console.log(`[POTION-INIT] slot layout: [${finalCauldrons.map(c => `{"x":${c.x},"y":${c.y}}`).join(',')}]`);
+
+  return finalCauldrons;
+}
 
 export default function PotionFlipDungeon({
   vocabItems = [],
@@ -68,51 +248,57 @@ export default function PotionFlipDungeon({
     return () => window.removeEventListener('resize', updateW);
   }, []);
 
-  // Build 4 pairs (8 cauldrons total)
-  const cauldronsInitial = useMemo(() => {
-    const valid = vocabItems.filter(v => v.word && v.definition);
-    const pool = valid.length >= 4 ? valid : [...valid, ...FALLBACK_PAIRS];
-    const selected = pool.slice(0, 4);
+  const initializedWithRealVocabRef = useRef(false);
 
-    const cards = [];
-    selected.forEach((item, idx) => {
-      cards.push({ id: `w_${idx}`, pairId: `pair_${idx}`, text: item.word, isWord: true });
-      cards.push({ id: `d_${idx}`, pairId: `pair_${idx}`, text: item.definition || item.def, isWord: false });
-    });
-
-    // Positions across the platforms
-    const slots = [
-      { x: 100, y: 360 }, // on Tier 1 Left
-      { x: 210, y: 360 },
-      { x: 380, y: 320 }, // on Tier 1 Mid
-      { x: 470, y: 320 },
-      { x: 640, y: 360 }, // on Tier 1 Right
-      { x: 740, y: 360 },
-      { x: 220, y: 190 }, // on Tier 2 Left
-      { x: 570, y: 190 }, // on Tier 2 Right
-    ];
-
-    const shuffledCards = [...cards].sort(() => Math.random() - 0.5);
-    return shuffledCards.map((c, i) => ({
-      ...c,
-      x: slots[i].x,
-      y: slots[i].y,
-      flipped: false,
-      matched: false,
-      cooldownUntil: 0,
-    }));
-  }, [vocabItems]);
+  // Lazy initial state: if vocabItems already provided, generate immediately; else wait for async data
+  const [cauldronsDisplay, setCauldronsDisplay] = useState(() => {
+    if (vocabItems && vocabItems.length > 0) {
+      initializedWithRealVocabRef.current = true;
+      return generateCauldrons(vocabItems, weekNumber);
+    }
+    return [];
+  });
 
   const [phase, setPhase] = useState('playing'); // 'playing' | 'cleared' | 'ko'
-  const [hearts, setHearts] = useState(3);
+  const [hearts, setHearts] = useState(2);
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(duration);
   const [feedback, setFeedback] = useState(null);
 
   // Cauldrons state
-  const cauldronsRef = useRef(cauldronsInitial);
-  const [cauldronsDisplay, setCauldronsDisplay] = useState(cauldronsInitial);
+  const cauldronsRef = useRef(cauldronsDisplay);
   const [activeCauldronId, setActiveCauldronId] = useState(null);
+  const [nearbyCauldronId, setNearbyCauldronId] = useState(null);
+  const lastSpokenCauldronRef = useRef(null);
+  const handleInteractRef = useRef(null);
+
+  // One-time initialization when async vocabItems arrive from parent
+  useEffect(() => {
+    if (!initializedWithRealVocabRef.current) {
+      if (vocabItems && vocabItems.length > 0) {
+        initializedWithRealVocabRef.current = true;
+        const fresh = generateCauldrons(vocabItems, weekNumber);
+        cauldronsRef.current = fresh;
+        setCauldronsDisplay(fresh);
+      } else {
+        const timer = setTimeout(() => {
+          if (!initializedWithRealVocabRef.current) {
+            initializedWithRealVocabRef.current = true;
+            const fresh = generateCauldrons([], weekNumber);
+            cauldronsRef.current = fresh;
+            setCauldronsDisplay(fresh);
+          }
+        }, 400);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [vocabItems, weekNumber]);
+
+  useEffect(() => {
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
+      window.__CAULDRONS__ = cauldronsRef.current;
+    }
+  }, [cauldronsDisplay]);
 
   // Leo Physics
   const leoRef = useRef({
@@ -121,7 +307,7 @@ export default function PotionFlipDungeon({
     vx: 0,
     vy: 0,
     onGround: true,
-    hearts: 3,
+    hearts: 2,
     invincibleUntil: 0,
     animState: 'idle',
     facingRight: true,
@@ -167,6 +353,9 @@ export default function PotionFlipDungeon({
       if (['ArrowRight', 'KeyD'].includes(e.code)) inputRef.current.right = true;
       if (['ArrowUp', 'KeyW', 'Space'].includes(e.code)) {
         if (!e.repeat) inputRef.current.jump = true;
+      }
+      if (['KeyE', 'Enter', 'KeyF'].includes(e.code)) {
+        if (!e.repeat) handleInteractRef.current?.();
       }
     };
     const handleKeyUp = (e) => {
@@ -237,18 +426,30 @@ export default function PotionFlipDungeon({
       else if (input.left || input.right) leo.animState = leo.facingRight ? 'run_r' : 'run_l';
       else leo.animState = 'idle';
 
-      // 7. Cauldron Landing Detection (Jump onto cauldron top)
+      // 7. Cauldron Proximity Detection (Peek when close: dist < 55px)
+      let foundNearby = null;
       for (const c of cauldrons) {
-        if (c.matched || c.flipped) continue;
+        if (c.matched) continue;
         const leoCenter = { x: leo.x + 20, y: leo.y + 30 };
-        const cCenter = { x: c.x + 35, y: c.y + 30 };
+        const cCenter = { x: c.x + 25, y: c.y + 25 };
         const dist = Math.hypot(leoCenter.x - cCenter.x, leoCenter.y - cCenter.y);
 
-        if (dist < 42 && now > c.cooldownUntil) {
-          handleCauldronFlip(c);
-          c.cooldownUntil = now + 1200;
+        if (dist < 55) {
+          foundNearby = c;
           break;
         }
+      }
+
+      if (foundNearby) {
+        if (lastSpokenCauldronRef.current !== foundNearby.id) {
+          lastSpokenCauldronRef.current = foundNearby.id;
+          console.log(`[POTION-ACTION] [PEEK] id=${foundNearby.id} text="${foundNearby.text}" epoch=${Date.now()}`);
+          speakText(foundNearby.text, null, 1.0, null, foundNearby.isWord ? 'word' : 'sentence', weekNumber);
+        }
+        setNearbyCauldronId(foundNearby.id);
+      } else {
+        lastSpokenCauldronRef.current = null;
+        setNearbyCauldronId(null);
       }
 
       // 8. Gremlin Enemy Collision
@@ -263,6 +464,7 @@ export default function PotionFlipDungeon({
           leo.animState = 'hit';
           setHearts(leo.hearts);
           if (leo.hearts <= 0) {
+            console.log('[POTION-ACTION] KO_TRIGGERED gremlin');
             setPhase('ko');
             return;
           }
@@ -291,47 +493,103 @@ export default function PotionFlipDungeon({
 
     animFrameRef.current = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(animFrameRef.current);
-  }, [phase, activeCauldronId]);
+  }, [phase, activeCauldronId, weekNumber]);
 
-  // Handle Cauldron Flip
-  const handleCauldronFlip = (cauldron) => {
-    cauldron.flipped = true;
-
-    if (cauldron.isWord) {
-      speakText(cauldron.text, null, 1.0, null, 'word', weekNumber);
-    }
+  // Handle Cauldron Commit / Action
+  const handleCauldronAction = useCallback((c) => {
+    if (phase !== 'playing' || c.matched) return;
 
     if (!activeCauldronId) {
-      // First cauldron of pair
-      setActiveCauldronId(cauldron.id);
-      setFeedback(`Revealed: "${cauldron.text}". Now jump to its match!`);
+      // Step 1: Select active cauldron
+      setActiveCauldronId(c.id);
+      setFeedback(`Selected: "${c.text}". Now find and interact with its match!`);
+      console.log(`[POTION-ACTION] SELECT_CAULDRON id=${c.id} text="${c.text}"`);
+    } else if (activeCauldronId === c.id) {
+      // Deselect
+      setActiveCauldronId(null);
+      setFeedback(`Deselected: "${c.text}"`);
+      console.log(`[POTION-ACTION] DESELECT_CAULDRON id=${c.id}`);
     } else {
-      // Second cauldron of pair
-      const firstCauldron = cauldronsRef.current.find(c => c.id === activeCauldronId);
-      if (firstCauldron && firstCauldron.pairId === cauldron.pairId) {
-        // MATCH!
+      // Step 2: Commit match between activeCauldron and c
+      const firstCauldron = cauldronsRef.current.find(item => item.id === activeCauldronId);
+      if (!firstCauldron) return;
+
+      if (firstCauldron.pairId === c.pairId) {
+        // MATCH SUCCESS!
         firstCauldron.matched = true;
-        cauldron.matched = true;
+        c.matched = true;
         setActiveCauldronId(null);
-        setScore(s => s + 25);
-        setFeedback(`✨ POTION BREWED! Matched "${cauldron.text}" (+25 XP)`);
+        setScore(s => s + 20);
+        console.log(`[POTION-ACTION] [MATCH] MATCH_SUCCESS pair=${c.pairId} score=${score + 20} epoch=${Date.now()}`);
+        setFeedback(`✨ POTION BREWED! Matched "${firstCauldron.text}" ↔ "${c.text}" (+20 XP)`);
 
         // Check if all matched
-        const allMatched = cauldronsRef.current.every(c => c.matched);
+        const allMatched = cauldronsRef.current.every(item => item.matched);
         if (allMatched) {
+          console.log(`[POTION-ACTION] ALL_PAIRS_CLEARED epoch=${Date.now()}`);
           setTimeout(() => setPhase('cleared'), 1200);
         }
       } else {
-        // MISMATCH
-        setFeedback('🧪 Poison gas! Cauldrons closing in 1.5s...');
+        // MISMATCH PENALTY
+        const nextHearts = Math.max(0, leoRef.current.hearts - 1);
+        leoRef.current.hearts = nextHearts;
+        setHearts(nextHearts);
+        console.log(`[POTION-ACTION] [MISMATCH] MISMATCH_PENALTY heartsLeft=${nextHearts} pairA=${firstCauldron.pairId} pairB=${c.pairId} epoch=${Date.now()}`);
+        setFeedback('🧪 POISON GAS! Mismatch (-1 Heart). Selection reset!');
+
+        if (nextHearts <= 0) {
+          console.log(`[POTION-ACTION] KO_TRIGGERED hearts=0 epoch=${Date.now()}`);
+          setPhase('ko');
+          return;
+        }
+
         setTimeout(() => {
-          if (firstCauldron) firstCauldron.flipped = false;
-          cauldron.flipped = false;
           setActiveCauldronId(null);
           setFeedback(null);
-        }, 1500);
+        }, 1200);
       }
     }
+  }, [phase, activeCauldronId]);
+
+  const handleInteractWithNearby = useCallback(() => {
+    if (phase !== 'playing') return;
+    const leo = leoRef.current;
+    const leoCenter = { x: leo.x + 20, y: leo.y + 30 };
+    const cauldrons = cauldronsRef.current;
+
+    let target = null;
+    let minDist = 55;
+    for (const c of cauldrons) {
+      if (c.matched) continue;
+      const cCenter = { x: c.x + 25, y: c.y + 25 };
+      const dist = Math.hypot(leoCenter.x - cCenter.x, leoCenter.y - cCenter.y);
+      if (dist < minDist) {
+        minDist = dist;
+        target = c;
+      }
+    }
+
+    if (target) {
+      handleCauldronAction(target);
+    }
+  }, [phase, handleCauldronAction]);
+
+  useEffect(() => {
+    handleInteractRef.current = handleInteractWithNearby;
+  }, [handleInteractWithNearby]);
+
+  const handleCauldronClick = (c) => {
+    const leo = leoRef.current;
+    const leoCenter = { x: leo.x + 20, y: leo.y + 30 };
+    const cCenter = { x: c.x + 25, y: c.y + 25 };
+    const dist = Math.hypot(leoCenter.x - cCenter.x, leoCenter.y - cCenter.y);
+
+    if (dist > 55) {
+      console.warn(`[PROXIMITY_GUARD_REJECTED] Leo distance ${dist.toFixed(1)}px > 55px for cauldron ${c.id} epoch=${Date.now()}`);
+      setFeedback('Leo is too far! Move closer to inspect or select this cauldron.');
+      return;
+    }
+    handleCauldronAction(c);
   };
 
   const matchedCount = cauldronsDisplay.filter(c => c.matched).length / 2;
@@ -343,11 +601,21 @@ export default function PotionFlipDungeon({
   };
 
   const handleRetry = () => {
-    setHearts(3);
+    console.log(`[POTION-ACTION] [RETRY] handleRetry epoch=${Date.now()}`);
+    setHearts(2);
+    leoRef.current.hearts = 2;
+    leoRef.current.x = 80;
+    leoRef.current.y = FLOOR_Y - LEO_HITBOX.height;
+    leoRef.current.vx = 0;
+    leoRef.current.vy = 0;
     setScore(0);
     setTimeLeft(duration);
-    cauldronsRef.current.forEach(c => { c.flipped = false; c.matched = false; });
+    const freshCauldrons = generateCauldrons(vocabItems, weekNumber);
+    cauldronsRef.current = freshCauldrons;
+    setCauldronsDisplay(freshCauldrons);
     setActiveCauldronId(null);
+    setNearbyCauldronId(null);
+    lastSpokenCauldronRef.current = null;
     setPhase('playing');
   };
 
@@ -398,10 +666,10 @@ export default function PotionFlipDungeon({
       <div className="potion-mission-banner">
         <div className="potion-badge">
           <FlaskConical size={14} />
-          <span>{matchedCount}/4 BREWED</span>
+          <span>{matchedCount}/5 BREWED</span>
         </div>
         <div className="potion-hint-text">
-          {feedback || "Jump on cauldrons to match pairs!"}
+          {feedback || "Walk near cauldrons to peek, press [E] to select & match!"}
         </div>
       </div>
 
@@ -426,29 +694,45 @@ export default function PotionFlipDungeon({
         ))}
 
         {/* Cauldrons */}
-        {cauldronsDisplay.map((c) => (
-          <div
-            key={c.id}
-            className={`cauldron-entity ${c.flipped ? 'cauldron-flipped' : ''} ${c.matched ? 'cauldron-matched' : ''}`}
-            style={{ left: `${c.x}px`, top: `${c.y}px` }}
-            onClick={() => handleCauldronFlip(c)}
-            role="button"
-            tabIndex={0}
-            aria-label={`Cauldron: ${c.flipped ? c.text : 'hidden'}`}
-          >
-            {/* Revealed Card Bubble */}
-            {c.flipped && (
-              <div className="cauldron-card-reveal">
-                <span>{c.text}</span>
+        {cauldronsDisplay.map((c) => {
+          const isPeeked = nearbyCauldronId === c.id;
+          const isSelected = activeCauldronId === c.id;
+          const isVisible = isPeeked || isSelected || c.matched;
+
+          return (
+            <div
+              key={c.id}
+              data-id={c.id}
+              data-pair-id={c.pairId}
+              className={`cauldron-entity ${isSelected ? 'cauldron-active' : ''} ${c.matched ? 'cauldron-matched' : ''}`}
+              style={{ left: `${c.x}px`, top: `${c.y}px` }}
+              onClick={() => handleCauldronClick(c)}
+              role="button"
+              tabIndex={0}
+              aria-label={`Cauldron: ${isVisible ? c.text : 'hidden'}`}
+            >
+              {/* Proximity Interact Prompt Badge */}
+              {isPeeked && !c.matched && (
+                <div className="cauldron-interact-badge">
+                  {isSelected ? '[E] Deselect' : (activeCauldronId ? '[E] Match' : '[E] Select')}
+                </div>
+              )}
+
+              {/* Revealed Card Bubble */}
+              {isVisible && (
+                <div className="cauldron-card-reveal">
+                  <span>{c.text}</span>
+                </div>
+              )}
+
+              {/* Cauldron Sprite */}
+              <div className="cauldron-pot">
+                <span className="pot-icon">{c.matched ? '✨' : (isSelected ? '🔮' : '⚗️')}</span>
+                <div className="potion-bubbles-steam" />
               </div>
-            )}
-            {/* Cauldron Sprite */}
-            <div className="cauldron-pot">
-              <span className="pot-icon">{c.matched ? '✨' : '⚗️'}</span>
-              <div className="potion-bubbles-steam" />
             </div>
-          </div>
-        ))}
+          );
+        })}
 
         {/* Lab Gremlin Enemy */}
         <div
@@ -470,13 +754,12 @@ export default function PotionFlipDungeon({
 
       {/* ── HUD ──────────────────────────────────────────────────────── */}
       <HUDOverlay
+        floorDoorLabel="Floor 2 • Door 1 — Potion Flip Dungeon"
         hearts={hearts}
+        maxHearts={2}
         score={score}
         timeLeft={timeLeft}
-        wordsCollected={matchedCount}
-        totalWords={4}
-        floorNumber={2}
-        doorLabel="Door 1 — Potion Flip Dungeon"
+        totalWords={0}
       />
 
       {/* ── Cleared Modal ────────────────────────────────────────────── */}

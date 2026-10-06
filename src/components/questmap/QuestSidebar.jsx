@@ -174,41 +174,6 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
             <ChevronRight size={16} className="text-slate-400" />
           </button>
 
-          {/* Arcade Room */}
-          <button
-            className="qs-nav-item"
-            onClick={() => {
-              useArcadeStore.getState().setArcadeOpen(true);
-              onClose();
-            }}
-            style={{ position: 'relative' }}
-          >
-            <div className={`qs-nav-icon ${arcadeReady ? 'bg-blue-100 text-blue-700' : 'bg-slate-100 text-slate-500'}`}>
-              <Gamepad2 size={18} />
-            </div>
-            <div className="qs-nav-text">
-              <div className="qs-nav-title" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                🕹️ Arcade Room
-                {arcadeReady && (
-                  <span style={{ fontSize: '9px', background: '#60a5fa', color: '#fff', borderRadius: '8px', padding: '1px 6px', fontWeight: 900, letterSpacing: '0.03em' }}>
-                    READY
-                  </span>
-                )}
-              </div>
-              <div className="qs-nav-desc">
-                {isOwner
-                  ? `Owner Mode · ${unlockedGames}/12 games`
-                  : arcadeReady
-                  ? `Battery: ${arcadeFormatEnergy(playEnergySeconds)} · ${unlockedGames} games`
-                  : `Study 15m to unlock · ${unlockedGames} games available`
-                }
-              </div>
-            </div>
-            {arcadeReady
-              ? <BatteryCharging size={16} className="text-blue-400" style={{ flexShrink: 0 }} />
-              : <Lock size={14} className="text-slate-400" style={{ flexShrink: 0 }} />
-            }
-          </button>
 
           {/* Teacher's Panel (Only for Staff / Teacher / Owner) */}
           {isTeacher && (

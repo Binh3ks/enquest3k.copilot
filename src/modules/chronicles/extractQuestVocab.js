@@ -43,7 +43,7 @@ function normalizeItems(raw = [], type = 'vocab') {
       const lower = word.trim().toLowerCase();
       // If definition is missing or in Vietnamese, fallback to CURRICULUM_DEFINITIONS
       if (!def || /[\u00C0-\u1EF9]/.test(def)) {
-        def = CURRICULUM_DEFINITIONS?.[lower] || def || `Related to ${word}`;
+        def = CURRICULUM_DEFINITIONS?.[lower] || (item.definition_en || item.definition || item.meaning || '');
       }
 
       return { word, definition: def, type };
@@ -418,4 +418,242 @@ export function extractCatapultPairs(weekData, zoneIndex, weekId) {
 }
 
 
+// ─── Content Service — getContentPool() ──────────────────────────────────────
+
+/**
+ * Convert a raw {word, definition} or {starter, completion} object to a ContentItem.
+ * ContentItem.id is a deterministic hash for anti-repetition tracking.
+ *
+ * @param {'vocab'|'chunk_pair'|'grammar_cloze'|'syntax_order'} type
+ * @param {number} weekId
+ * @param {string} prompt   — word or sentence starter
+ * @param {string} answer   — definition or sentence completion
+ * @param {string[]} distractors
+ * @param {'week_real'|'curated'|'chapter_pool'} source
+ * @returns {ContentItem}
+ */
+function toContentItem(type, weekId, prompt, answer, distractors = [], source = 'week_real') {
+  // Simple deterministic id: avoids crypto dependency
+  const raw = `${weekId}|${type}|${prompt}|${answer}`;
+  let h = 0;
+  for (let i = 0; i < raw.length; i++) {
+    h = (Math.imul(31, h) + raw.charCodeAt(i)) | 0;
+  }
+  const id = `ci_${(h >>> 0).toString(36)}`;
+
+  const wk = parseInt(weekId) || 33;
+  // Difficulty by week range: 1=Pre-A1, 2=Movers A1, 3=Flyers A2
+  const difficulty = wk <= 16 ? 1 : wk <= 72 ? 2 : 3;
+
+  return { id, type, prompt, answer, distractors, weekId: wk, source, difficulty };
+}
+
+/**
+ * Extract vocab items from weekData as ContentItem[] for vocab-type games.
+ */
+function extractVocabAsItems(weekData, weekId, zoneIndex) {
+  const wk = parseInt(weekId) || 33;
+
+  if (wk <= 16) {
+    const { vocabItems } = generateStubVocab(wk, zoneIndex, 8);
+    return vocabItems.map((v) =>
+      toContentItem('vocab', wk, v.word, v.definition || '', [], 'chapter_pool')
+    );
+  }
+
+  const { reading_hub: r = {}, listening_hub: l = {}, writing_hub: w = {}, speaking_hub: s = {} } = weekData || {};
+
+  let vocabItems = [];
+  switch (zoneIndex) {
+    case 0: vocabItems = extractZone1Vocab(r); break;
+    case 1: vocabItems = extractZone2Vocab(r, l); break;
+    case 2: vocabItems = extractZone3Vocab(l); break;
+    case 3: vocabItems = extractZone4Vocab(w, s); break;
+    case 4: vocabItems = extractZone5Vocab(r, l, w, s); break;
+    default: vocabItems = extractZone1Vocab(r);
+  }
+
+  const source = vocabItems.length >= 4 ? 'week_real' : 'chapter_pool';
+
+  if (vocabItems.length < 4) {
+    const { vocabItems: stub } = generateStubVocab(wk, zoneIndex, 8);
+    vocabItems = dedup([...vocabItems, ...stub]).slice(0, 8);
+  }
+
+  // Build distractors: other words from same pool
+  const allWords = vocabItems.map((v) => v.word);
+  return vocabItems.map((v) => {
+    const distractors = allWords
+      .filter((w2) => w2.toLowerCase() !== v.word.toLowerCase())
+      .slice(0, 3);
+    return toContentItem('vocab', wk, v.word, v.definition || '', distractors, source);
+  });
+}
+
+/**
+ * Extract grammar sentences from weekData as ContentItem[] for cloze-type games.
+ */
+function extractGrammarAsItems(weekData, weekId, zoneIndex) {
+  const wk = parseInt(weekId) || 33;
+  const { reading_hub: r = {}, listening_hub: l = {} } = weekData || {};
+  const sentences = extractGrammarSentences(r, l, zoneIndex);
+
+  const source = sentences.length >= 2 ? 'week_real' : 'chapter_pool';
+
+  const final = sentences.length >= 2 ? sentences : (() => {
+    const { grammarSentences: stub } = generateStubVocab(wk, zoneIndex, 8);
+    return stub;
+  })();
+
+  return final.slice(0, 8).map((s) => {
+    const sentence = typeof s === 'string' ? s : (s.sentence || s.fullSentence || '');
+    // For cloze: prompt = sentence with blank placeholder, answer = full sentence
+    return toContentItem('grammar_cloze', wk, sentence, sentence, [], source);
+  });
+}
+
+/**
+ * Extract syntax ordering items from retell_questions for SyntaxExpress game.
+ * Each item: prompt = shuffled words array (as JSON string), answer = correct sentence.
+ */
+function extractSyntaxItems(weekData, weekId) {
+  const wk = parseInt(weekId) || 33;
+
+  // Try real retell_questions first (have full sentence + chips)
+  const read = weekData?.reading_hub?.read_explore
+    || weekData?.read_explore
+    || weekData?.readingHub?.read_explore;
+
+  const retellQs = read?.retell_questions;
+
+  if (Array.isArray(retellQs) && retellQs.length > 0) {
+    const items = retellQs.slice(0, 6).map((rq) => {
+      const sentence = rq.sentence || '';
+      const chips = rq.chips || [];
+      // Use chips as the syntax units to order; distractors = other chips from pool
+      const allChips = retellQs.flatMap((q) => q.chips || []);
+      const distractors = allChips.filter((c) => !chips.includes(c)).slice(0, 2);
+      return toContentItem('syntax_order', wk, sentence, sentence, distractors, 'week_real');
+    });
+    if (items.length >= 3) return items;
+  }
+
+  // Fallback: grammar sentences → treat as syntax ordering
+  const { grammarSentences } = generateStubVocab(wk, 0, 6);
+  return grammarSentences.slice(0, 4).map((s) => {
+    const sentence = typeof s === 'string' ? s : (s.sentence || s.fullSentence || '');
+    return toContentItem('syntax_order', wk, sentence, sentence, [], 'chapter_pool');
+  });
+}
+
+/**
+ * Route content extraction by game type.
+ * @private
+ */
+function extractByGameType(weekData, weekId, gameType, zoneIndex = 0) {
+  switch (gameType) {
+    case 'chunk_catapult': {
+      const pairs = extractCatapultPairs(weekData, zoneIndex, weekId);
+      const src = WEEKLY_CATAPULT_PAIRS[parseInt(weekId)] ? 'curated'
+                : (pairs.length > 0 ? 'week_real' : 'chapter_pool');
+      return pairs.map((p) =>
+        toContentItem('chunk_pair', weekId, p.starter, p.completion, [], src)
+      );
+    }
+
+    case 'syntax_express':
+    case 'spell_train':
+    case 'spell_train_express':
+      return extractSyntaxItems(weekData, weekId);
+
+    case 'rune_forge':
+    case 'titan_forge':
+    case 'ancient_scroll':
+    case 'cambridge_cloze':
+      return extractGrammarAsItems(weekData, weekId, zoneIndex);
+
+    // All vocab-type games share the same pool
+    case 'highway_runner':
+    case 'meteor_smasher':
+    case 'arcane_bubble':
+    case 'lexical_detective':
+    case 'crystal_match':
+    case 'grand_matrix':
+    case 'phonics_bubble':
+    case 'lexical_riddle':
+    default:
+      return extractVocabAsItems(weekData, weekId, zoneIndex);
+  }
+}
+
+/** Fisher-Yates shuffle (in-place, returns array) */
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/**
+ * getContentPool — Single entry point for all mini-game content.
+ *
+ * Replaces direct calls to extractQuestVocab() / extractCatapultPairs() in DailyRoomScreen.
+ * Implements session-level anti-repetition: fresh items are served first.
+ *
+ * @param {object} weekData   - { reading_hub, listening_hub, writing_hub, speaking_hub }
+ * @param {number} weekId     - Week number (1–156)
+ * @param {object} options
+ * @param {'chest'|'boss_day'|'boss_week'|'mock_test'} [options.context='chest']
+ * @param {string}  [options.gameType='arcane_bubble']
+ * @param {number}  [options.zoneIndex=0]
+ * @param {number}  [options.count]        - Override default count for context
+ * @param {Set}     [options.usedIds]      - Item IDs already shown this session
+ * @returns {ContentItem[]}
+ */
+export function getContentPool(weekData, weekId, {
+  context = 'chest',
+  gameType = 'arcane_bubble',
+  zoneIndex = 0,
+  count,
+  usedIds = new Set(),
+} = {}) {
+  // Default count by context (Bước 2 §2 — Mock Test = Option D fixed 25)
+  const defaultCount = {
+    chest:     10,
+    boss_day:  15,
+    boss_week: 20,
+    mock_test: 25,
+  }[context] ?? 10;
+  const n = count ?? defaultCount;
+
+  // For boss_week and mock_test: gather items from multiple zones
+  let rawItems;
+  if (context === 'boss_week') {
+    // Aggregate from all 5 zones, deduplicate by id
+    const allIds = new Set();
+    rawItems = [0, 1, 2, 3, 4].flatMap((z) => {
+      const zItems = extractByGameType(weekData, weekId, gameType, z);
+      return zItems.filter((item) => {
+        if (allIds.has(item.id)) return false;
+        allIds.add(item.id);
+        return true;
+      });
+    });
+  } else if (context === 'mock_test') {
+    // Fixed pool: use zone 0 (broadest) with count=25
+    // In practice DailyRoomScreen will pass weekData for each of the 4 weeks
+    rawItems = extractByGameType(weekData, weekId, gameType, zoneIndex);
+  } else {
+    rawItems = extractByGameType(weekData, weekId, gameType, zoneIndex);
+  }
+
+  // Anti-repetition: fresh items first, already-seen items fill remainder
+  const fresh = rawItems.filter((item) => !usedIds.has(item.id));
+  const seen  = rawItems.filter((item) =>  usedIds.has(item.id));
+  const pool  = [...shuffle(fresh), ...shuffle(seen)];
+
+  return pool.slice(0, n);
+}
 

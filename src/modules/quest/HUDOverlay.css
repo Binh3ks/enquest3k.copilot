@@ -15,8 +15,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 14px 6px 92px;
+  padding: 8px 14px 6px 130px;
+  gap: 12px;
   background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
+}
+
+.hud-top-right-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
 }
 
 /* ─── Hearts ─────────────────────────────────────────────────────────────── */
@@ -50,16 +58,28 @@
   gap: 2px;
 }
 .hud-floor-badge {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 900;
-  color: rgba(255,255,255,0.5);
+  color: #38bdf8;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
 }
 .hud-door-label {
   font-size: 12px;
   font-weight: 700;
   color: rgba(255,255,255,0.75);
+}
+.hud-round-pill {
+  font-size: 11px;
+  font-weight: 800;
+  background: rgba(234, 179, 8, 0.2);
+  border: 1px solid rgba(234, 179, 8, 0.5);
+  color: #fef08a;
+  padding: 1px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 6px rgba(234, 179, 8, 0.3);
 }
 
 /* ─── Timer ──────────────────────────────────────────────────────────────── */
@@ -175,7 +195,11 @@
 /* ─── Mobile Compact HUD (<= 600px) ─────────────────────────────────────── */
 @media (max-width: 600px) {
   .hud-top-bar {
-    padding: 4px 8px 3px 84px;
+    padding: 4px 8px 3px 128px;
+    gap: 8px;
+  }
+  .hud-top-right-controls {
+    gap: 6px;
   }
   .hud-heart { font-size: 14px; }
   .hud-hearts { gap: 2px; }

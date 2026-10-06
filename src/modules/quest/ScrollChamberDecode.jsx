@@ -17,6 +17,7 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { Scroll, BookOpen, Sparkles, Trophy, RotateCcw, ArrowRight, Sun, Shield, AlertTriangle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
+import { getAncientScrollDataForWeek } from '../../services/chroniclesFloor2Service';
 import {
   LEO_SPEED, LEO_JUMP_FORCE, GRAVITY, FLOOR_Y,
   LEO_HITBOX, INVINCIBILITY_MS, clamp, applyGravity, checkPlatformLanding
@@ -60,8 +61,8 @@ const DEFAULT_SCROLL_DATA = {
 };
 
 export default function ScrollChamberDecode({
-  scrollData = DEFAULT_SCROLL_DATA,
-  duration = 100,
+  scrollData: customScrollData,
+  duration = 120,
   weekNumber = 33,
   onComplete,
   onExit,
@@ -70,6 +71,13 @@ export default function ScrollChamberDecode({
   const personalBest = getPersonalBest('scroll_chamber_decode') || 0;
   const containerRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 900);
+
+  const scrollData = useMemo(() => {
+    if (customScrollData && customScrollData.blanks && customScrollData.blanks.length === 4) {
+      return customScrollData;
+    }
+    return getAncientScrollDataForWeek(weekNumber);
+  }, [customScrollData, weekNumber]);
 
   useEffect(() => {
     const updateW = () => {
@@ -85,6 +93,7 @@ export default function ScrollChamberDecode({
   // Blanks & word runes
   const targets = scrollData.blanks || DEFAULT_SCROLL_DATA.blanks;
   const distractors = scrollData.distractors || DEFAULT_SCROLL_DATA.distractors;
+  const sentenceText = scrollData.sentence || scrollData.fullSentence || DEFAULT_SCROLL_DATA.fullSentence;
 
   // Prepare 8 stones
   const initialStones = useMemo(() => {
@@ -153,10 +162,164 @@ export default function ScrollChamberDecode({
   const keysPressed = useRef({ left: false, right: false, up: false, down: false, interact: false });
   const animFrameId = useRef(null);
 
+  // ── Contextual Sentence Flow Segments & Blank Slots ─────────────────────
+  const displaySegments = useMemo(() => {
+    if (Array.isArray(scrollData.segments) && scrollData.segments.length > 0) {
+      return scrollData.segments;
+    }
+    // Fallback: construct segments from sentenceText and targets
+    if (!sentenceText) {
+      return targets.map(t => ({ text: '', isBlank: true, blankId: t.id, expectedWord: t.word }));
+    }
+    const found = [];
+    targets.forEach(t => {
+      const idx = sentenceText.toLowerCase().indexOf(t.word.toLowerCase());
+      if (idx !== -1) {
+        found.push({ ...t, startIdx: idx, endIdx: idx + t.word.length });
+      }
+    });
+    found.sort((a, b) => a.startIdx - b.startIdx);
+    if (found.length === targets.length) {
+      const segs = [];
+      let cursor = 0;
+      found.forEach(t => {
+        if (t.startIdx > cursor) {
+          segs.push({ text: sentenceText.slice(cursor, t.startIdx), isBlank: false });
+        }
+        segs.push({ text: '', isBlank: true, blankId: t.id, expectedWord: t.word });
+        cursor = t.endIdx;
+      });
+      if (cursor < sentenceText.length) {
+        segs.push({ text: sentenceText.slice(cursor), isBlank: false });
+      }
+      return segs;
+    }
+    return targets.map(t => ({ text: '', isBlank: true, blankId: t.id, expectedWord: t.word }));
+  }, [scrollData.segments, targets, sentenceText]);
+
+  const blankSlots = useMemo(() => [
+    { id: targets[0]?.id || 'b0', x: 240, y: 215 },
+    { id: targets[1]?.id || 'b1', x: 360, y: 215 },
+    { id: targets[2]?.id || 'b2', x: 480, y: 215 },
+    { id: targets[3]?.id || 'b3', x: 600, y: 215 },
+  ], [targets]);
+
+  // Proximity: closest unplaced stone within d < 55px (when NOT carrying)
+  const nearStoneId = useMemo(() => {
+    if (carryingStone || phase !== 'playing') return null;
+    const leoCenterX = leoDisplay.x + 20;
+    const leoCenterY = leoDisplay.y + 24;
+    let closestId = null;
+    let closestDist = Infinity;
+    for (const st of stones) {
+      if (!st.isPlaced) {
+        const dist = Math.hypot(leoCenterX - (st.x + 20), leoCenterY - (st.y + 15));
+        if (dist < 55 && dist < closestDist) {
+          closestDist = dist;
+          closestId = st.id;
+        }
+      }
+    }
+    return closestId;
+  }, [carryingStone, phase, leoDisplay.x, leoDisplay.y, stones]);
+
+  // Proximity: closest unfilled slot within d < 65px (when carrying)
+  const nearSlotId = useMemo(() => {
+    if (!carryingStone || phase !== 'playing') return null;
+    const leoCenterX = leoDisplay.x + 20;
+    const leoCenterY = leoDisplay.y + 24;
+    let closestId = null;
+    let closestDist = Infinity;
+    for (const slot of blankSlots) {
+      if (!placedBlanks[slot.id]) {
+        const dist = Math.hypot(leoCenterX - (slot.x + 30), leoCenterY - (slot.y + 15));
+        if (dist < 65 && dist < closestDist) {
+          closestDist = dist;
+          closestId = slot.id;
+        }
+      }
+    }
+    return closestId;
+  }, [carryingStone, phase, leoDisplay.x, leoDisplay.y, blankSlots, placedBlanks]);
+
+  // ── Interact Action (Pick up stone / Drop into blank) ───────────────────
+  const handleInteractAction = useCallback(() => {
+    const leo = leoRef.current;
+    if (phase !== 'playing') return;
+
+    // If carrying a stone: check closest unfilled blank slot within d < 65px
+    if (carryingStone) {
+      let closestSlot = null;
+      let closestDist = Infinity;
+      for (const slot of blankSlots) {
+        if (!placedBlanks[slot.id]) {
+          const dist = Math.hypot((leo.x + 20) - (slot.x + 30), (leo.y + 24) - (slot.y + 15));
+          if (dist < 65 && dist < closestDist) {
+            closestDist = dist;
+            closestSlot = slot;
+          }
+        }
+      }
+
+      if (closestSlot) {
+        const slotIndex = blankSlots.findIndex(s => s.id === closestSlot.id);
+        if (carryingStone.targetBlankId === closestSlot.id) {
+          // SUCCESS!
+          console.log(`[MATCH_SUCCESS] epoch=${Date.now()} slotIndex=${slotIndex} blankId=${closestSlot.id} word="${carryingStone.word}"`);
+          setPlacedBlanks(prev => ({ ...prev, [closestSlot.id]: carryingStone.word }));
+          setScore(prev => prev + 40);
+          speakText(carryingStone.word);
+          setFeedback({ type: 'correct', text: `✨ "${carryingStone.word}" Bound to Scroll!` });
+          setTimeout(() => setFeedback(null), 1800);
+
+          setStones(prev => prev.map(s => s.id === carryingStone.id ? { ...s, isPlaced: true } : s));
+          setCarryingStone(null);
+        } else {
+          // WRONG SLOT / DISTRACTOR
+          console.log(`[MATCH_REJECTED] epoch=${Date.now()} slotIndex=${slotIndex} blankId=${closestSlot.id} attemptedWord="${carryingStone.word}"`);
+          setHearts(h => {
+            const next = Math.max(0, h - 1);
+            if (next === 0) setPhase('ko');
+            return next;
+          });
+          setFeedback({ type: 'wrong', text: `⚡ "${carryingStone.word}" rejected by ancient seal!` });
+          setTimeout(() => setFeedback(null), 1800);
+          // Return stone to origin
+          setStones(prev => prev.map(s => s.id === carryingStone.id ? { ...s, x: s.originX, y: s.originY } : s));
+          setCarryingStone(null);
+        }
+        return;
+      }
+
+      // If dropped in open air (not at blank slot), put down at current position
+      setStones(prev => prev.map(s => s.id === carryingStone.id ? { ...s, x: leo.x, y: leo.y } : s));
+      setCarryingStone(null);
+      return;
+    }
+
+    // If NOT carrying: find closest unplaced stone within d < 55px
+    let closestStone = null;
+    let closestDist = Infinity;
+    for (const st of stones) {
+      if (!st.isPlaced) {
+        const dist = Math.hypot((leo.x + 20) - (st.x + 20), (leo.y + 24) - (st.y + 15));
+        if (dist < 55 && dist < closestDist) {
+          closestDist = dist;
+          closestStone = st;
+        }
+      }
+    }
+
+    if (closestStone) {
+      setCarryingStone(closestStone);
+      speakText(closestStone.word);
+    }
+  }, [carryingStone, stones, placedBlanks, blankSlots, phase]);
+
   // ── Keyboard controls ──────────────────────────────────────────────────
   useEffect(() => {
     const onKeyDown = (e) => {
-      if (['ArrowUp', 'KeyW', 'Space'].includes(e.code)) {
+      if (['ArrowUp', 'KeyW'].includes(e.code)) {
         e.preventDefault();
         keysPressed.current.up = true;
       }
@@ -168,14 +331,14 @@ export default function ScrollChamberDecode({
         e.preventDefault();
         keysPressed.current.right = true;
       }
-      if (['KeyE', 'Enter'].includes(e.code)) {
+      if (['KeyE', 'Enter', 'Space'].includes(e.code)) {
         e.preventDefault();
         handleInteractAction();
       }
     };
 
     const onKeyUp = (e) => {
-      if (['ArrowUp', 'KeyW', 'Space'].includes(e.code)) keysPressed.current.up = false;
+      if (['ArrowUp', 'KeyW'].includes(e.code)) keysPressed.current.up = false;
       if (['ArrowLeft', 'KeyA'].includes(e.code)) keysPressed.current.left = false;
       if (['ArrowRight', 'KeyD'].includes(e.code)) keysPressed.current.right = false;
     };
@@ -186,82 +349,7 @@ export default function ScrollChamberDecode({
       window.removeEventListener('keydown', onKeyDown);
       window.removeEventListener('keyup', onKeyUp);
     };
-  }, [carryingStone, stones, placedBlanks]);
-
-  // ── Interact Action (Pick up stone / Drop into blank) ───────────────────
-  const handleInteractAction = useCallback(() => {
-    const leo = leoRef.current;
-    if (phase !== 'playing') return;
-
-    // If carrying a stone, check if near Scroll Blanks on upper altar deck (y between 200 and 260)
-    if (carryingStone) {
-      // Scroll Altar blanks positions on deck (deck y: 240, blanks around x: 230, 350, 470, 590)
-      const blankSlots = [
-        { id: targets[0]?.id || 'b0', x: 240, y: 215 },
-        { id: targets[1]?.id || 'b1', x: 360, y: 215 },
-        { id: targets[2]?.id || 'b2', x: 480, y: 215 },
-        { id: targets[3]?.id || 'b3', x: 600, y: 215 },
-      ];
-
-      // Find if Leo is within proximity of any empty blank
-      let placedMatch = false;
-      for (const slot of blankSlots) {
-        if (!placedBlanks[slot.id]) {
-          const dist = Math.hypot((leo.x + 20) - (slot.x + 30), (leo.y + 24) - (slot.y + 15));
-          if (dist < 65) {
-            // Check if stone belongs here
-            if (carryingStone.targetBlankId === slot.id) {
-              // SUCCESS!
-              setPlacedBlanks(prev => ({ ...prev, [slot.id]: carryingStone.word }));
-              setScore(prev => prev + 40);
-              speakText(carryingStone.word);
-              setFeedback({ type: 'correct', text: `✨ "${carryingStone.word}" Bound to Scroll!` });
-              setTimeout(() => setFeedback(null), 1800);
-
-              // Mark stone as placed
-              setStones(prev => prev.map(s => s.id === carryingStone.id ? { ...s, isPlaced: true } : s));
-              setCarryingStone(null);
-              placedMatch = true;
-              break;
-            } else {
-              // WRONG SLOT / DISTRACTOR
-              setHearts(h => {
-                const next = Math.max(0, h - 1);
-                if (next === 0) setPhase('ko');
-                return next;
-              });
-              setFeedback({ type: 'wrong', text: `⚡ "${carryingStone.word}" rejected by ancient seal!` });
-              setTimeout(() => setFeedback(null), 1800);
-              // Return stone to origin
-              setStones(prev => prev.map(s => s.id === carryingStone.id ? { ...s, x: s.originX, y: s.originY } : s));
-              setCarryingStone(null);
-              placedMatch = true;
-              break;
-            }
-          }
-        }
-      }
-
-      // If dropped in open air (not at blank slot), put down at current position
-      if (!placedMatch) {
-        setStones(prev => prev.map(s => s.id === carryingStone.id ? { ...s, x: leo.x, y: leo.y } : s));
-        setCarryingStone(null);
-      }
-      return;
-    }
-
-    // If NOT carrying: check if near an unplaced stone to pick up
-    for (const st of stones) {
-      if (!st.isPlaced) {
-        const dist = Math.hypot((leo.x + 20) - (st.x + 20), (leo.y + 24) - (st.y + 15));
-        if (dist < 55) {
-          setCarryingStone(st);
-          speakText(st.word);
-          break;
-        }
-      }
-    }
-  }, [carryingStone, stones, placedBlanks, targets, phase]);
+  }, [handleInteractAction]);
 
   // Check victory condition
   useEffect(() => {
@@ -271,9 +359,9 @@ export default function ScrollChamberDecode({
       const finalScore = score + (timeLeft * 2) + 50;
       setScore(finalScore);
       recordPersonalBest('scroll_chamber_decode', finalScore);
-      speakText(scrollData.fullSentence || 'Ancient scroll successfully decoded!');
+      speakText(sentenceText || 'Ancient scroll successfully decoded!');
     }
-  }, [placedBlanks, targets, phase, score, timeLeft, recordPersonalBest, scrollData]);
+  }, [placedBlanks, targets, phase, score, timeLeft, recordPersonalBest, sentenceText]);
 
   // ── Game Physics Loop ──────────────────────────────────────────────────
   useEffect(() => {
@@ -313,16 +401,8 @@ export default function ScrollChamberDecode({
       leo.y += leo.vy;
 
       // Check Platform Collisions
-      const prevY = leo.y - leo.vy;
-      const landing = checkPlatformLanding(
-        { x: leo.x, y: leo.y, width: LEO_HITBOX.width, height: LEO_HITBOX.height, vy: leo.vy },
-        LIBRARY_PLATFORMS,
-        prevY
-      );
-
-      if (landing.landed) {
-        leo.y = landing.platformY - LEO_HITBOX.height;
-        leo.vy = 0;
+      const landed = checkPlatformLanding(leo, LIBRARY_PLATFORMS);
+      if (landed) {
         leo.isGrounded = true;
       } else if (leo.y >= FLOOR_Y - LEO_HITBOX.height) {
         leo.y = FLOOR_Y - LEO_HITBOX.height;
@@ -351,15 +431,13 @@ export default function ScrollChamberDecode({
         if (!inLight && nowMs > leo.invincibleUntil) {
           const dist = Math.hypot((leo.x + 20) - (nx + 20), (leo.y + 24) - (wr.y + 20));
           if (dist < 42) {
-            // Hit by Wraith!
-            leo.invincibleUntil = nowMs + INVINCIBILITY_MS;
-            setHearts(h => {
-              const next = Math.max(0, h - 1);
-              if (next === 0) setPhase('ko');
-              return next;
-            });
-            setFeedback({ type: 'wrong', text: '👻 Cursed by Shadow Wraith! (-1 Heart)' });
-            setTimeout(() => setFeedback(null), 1500);
+            // Repelled by Wraith! Physical knockback obstacle without deducting hearts (N1 & N4 compliance)
+            leo.invincibleUntil = nowMs + 1200;
+            leo.vx = wr.dir * 8;
+            leo.vy = -6;
+            leo.isGrounded = false;
+            setFeedback({ type: 'wrong', text: '👻 Repelled by Shadow Wraith!' });
+            setTimeout(() => setFeedback(null), 1200);
           }
         }
         return { ...wr, x: nx, dir: ndir };
@@ -452,6 +530,49 @@ export default function ScrollChamberDecode({
     else if (onExit) onExit();
   };
 
+  // ── DEV-only Test Hook for Playtest Verification ───────────────────────────
+  useEffect(() => {
+    return () => {
+      if (typeof window !== 'undefined' && import.meta.env.DEV) {
+        delete window.__SCROLL_CHAMBER_DECODE_TEST_HOOK__;
+      }
+    };
+  }, []);
+
+  if (typeof window !== 'undefined' && import.meta.env.DEV) {
+    window.__SCROLL_CHAMBER_DECODE_TEST_HOOK__ = {
+      getState: () => ({
+        phase,
+        hearts,
+        score,
+        timeLeft,
+        placedBlanks,
+        carryingStone: carryingStone ? { id: carryingStone.id, word: carryingStone.word, targetBlankId: carryingStone.targetBlankId } : null,
+        leo: { x: leoRef.current.x, y: leoRef.current.y, vx: leoRef.current.vx, vy: leoRef.current.vy, isGrounded: leoRef.current.isGrounded },
+        stones: stones.map(s => ({ id: s.id, word: s.word, x: s.x, y: s.y, isPlaced: s.isPlaced, originX: s.originX, originY: s.originY })),
+        targets,
+        distractors,
+        sentenceText,
+        scrollTitle: scrollData.title,
+        nearStoneId,
+        nearSlotId,
+      }),
+      triggerInteract: handleInteractAction,
+      triggerRetry: handleRetry,
+      triggerDamage: () => {
+        setHearts(h => {
+          const next = Math.max(0, h - 1);
+          if (next === 0) setPhase('ko');
+          return next;
+        });
+      },
+      triggerKO: () => {
+        setHearts(0);
+        setPhase('ko');
+      },
+    };
+  }
+
   const cameraX = Math.max(0, Math.min(ROOM_WIDTH - containerWidth, leoDisplay.x - containerWidth / 2));
 
   return (
@@ -518,21 +639,34 @@ export default function ScrollChamberDecode({
           <div className="scroll-ribbon-header">
             <Scroll size={18} /> <span>SACRED ARCHIVE SCROLL</span>
           </div>
-          <div className="scroll-cloze-line">
-            {targets.map((tgt, i) => {
-              const isFilled = placedBlanks[tgt.id];
+          <div className="scroll-sentence-flow">
+            {displaySegments.map((seg, idx) => {
+              if (!seg.isBlank) {
+                return (
+                  <span key={idx} className="scroll-plain-text">
+                    {seg.text}
+                  </span>
+                );
+              }
+              const isFilled = Boolean(placedBlanks[seg.blankId]);
+              const isFocused = nearSlotId === seg.blankId;
               return (
-                <div
-                  key={tgt.id}
-                  className={`scroll-blank-slot ${isFilled ? 'slot-filled' : 'slot-empty'}`}
-                  onClick={handleInteractAction}
+                <span
+                  key={seg.blankId || idx}
+                  className={`scroll-inline-slot ${isFilled ? 'slot-filled' : 'slot-empty'} ${isFocused ? 'slot-focused' : ''}`}
                 >
                   {isFilled ? (
-                    <span className="placed-word">{placedBlanks[tgt.id]}</span>
+                    <span className="placed-word">{placedBlanks[seg.blankId]}</span>
                   ) : (
-                    <span className="blank-placeholder">[{tgt.word ? '?' : `___`}]</span>
+                    <span className="blank-placeholder">
+                      {isFocused && carryingStone ? (
+                        <span className="slot-action-tag">[E] Insert</span>
+                      ) : (
+                        '[ ___ ]'
+                      )}
+                    </span>
                   )}
-                </div>
+                </span>
               );
             })}
           </div>
@@ -541,13 +675,16 @@ export default function ScrollChamberDecode({
         {/* Word Stones Scattered */}
         {stones.map(st => {
           if (st.isPlaced || (carryingStone && carryingStone.id === st.id)) return null;
+          const isNear = nearStoneId === st.id;
           return (
             <div
               key={st.id}
-              className="rune-stone-entity"
+              className={`rune-stone-entity ${isNear ? 'stone-focused' : ''}`}
               style={{ left: `${st.x}px`, top: `${st.y}px` }}
-              onClick={handleInteractAction}
             >
+              {isNear && (
+                <span className="stone-interact-prompt">[E] Take</span>
+              )}
               <span className="rune-stone-word">{st.word}</span>
             </div>
           );
@@ -557,6 +694,7 @@ export default function ScrollChamberDecode({
         {wraithsDisplay.map(wr => (
           <div
             key={wr.id}
+            data-wraith-id={wr.id}
             className="curse-wraith-sprite"
             style={{
               left: `${wr.x}px`,
@@ -590,13 +728,16 @@ export default function ScrollChamberDecode({
 
       {/* ── HUD ──────────────────────────────────────────────────────── */}
       <HUDOverlay
+        floorDoorLabel="Floor 2 • Door 3 — Ancient Scroll Cloze"
         hearts={hearts}
+        round={`${Object.keys(placedBlanks).length}/${targets.length}`}
+        roundLabel="SCROLL:"
         score={score}
         timeLeft={timeLeft}
         wordsCollected={Object.keys(placedBlanks).length}
         totalWords={targets.length}
         floorNumber={2}
-        doorLabel="Door 3 — Scroll Chamber Decode"
+        doorLabel="Door 3 — Ancient Scroll Cloze"
       />
 
       {/* ── Cleared Modal ────────────────────────────────────────────── */}
@@ -608,7 +749,7 @@ export default function ScrollChamberDecode({
             <div className="cleared-stars">
               {'⭐'.repeat(calculateStars(score, targets.length * 40))}
             </div>
-            <p className="cleared-full-text">"{scrollData.fullSentence}"</p>
+            <p className="cleared-full-text">"{sentenceText}"</p>
             <p className="cleared-score">Score: <strong>{score} XP</strong></p>
             {score > personalBest && (
               <div className="cleared-record">🏆 New Personal Best!</div>
@@ -625,8 +766,12 @@ export default function ScrollChamberDecode({
         <div className="scroll-ko-modal">
           <div className="ko-card">
             <AlertTriangle size={48} className="ko-icon" />
-            <h2>LOST TO THE SHADOWS!</h2>
-            <p>Curse wraiths drained Leo's knowledge energy!</p>
+            <h2>SEAL COLLAPSED!</h2>
+            <p>
+              {timeLeft <= 0
+                ? 'Time expired before the sacred inscription could be restored!'
+                : 'The ancient seal rejected too many incorrect runes!'}
+            </p>
             <div className="ko-actions">
               <button className="retry-btn" onClick={handleRetry}>
                 <RotateCcw size={18} /> Try Again

@@ -32,6 +32,8 @@ const ROOM_HEIGHT = 600;
 
 const FORGE_PLATFORMS = [
   { x: 0,   y: FLOOR_Y, width: ROOM_WIDTH, height: 80 },  // Ground
+  { x: 40,  y: 410,     width: 100,        height: 16 },  // Step Left
+  { x: 760, y: 410,     width: 100,        height: 16 },  // Step Right
   { x: 100, y: 320,     width: 180,        height: 18 },  // High Beam Left
   { x: 360, y: 270,     width: 180,        height: 18 },  // High Beam Mid
   { x: 620, y: 320,     width: 180,        height: 18 },  // High Beam Right
@@ -41,17 +43,22 @@ const DEFAULT_GRAMMAR_ROUNDS = [
   {
     sentence: 'Jake ___ carefully down the school corridor.',
     blankWord: 'walked',
-    options: ['walk', 'walked', 'walking'],
+    options: ['walk', 'walked', 'walking', 'walks'],
   },
   {
     sentence: 'Rubber shoes ___ strong grip on wet floor.',
     blankWord: 'give',
-    options: ['gives', 'give', 'giving'],
+    options: ['gives', 'give', 'giving', 'gave'],
   },
   {
     sentence: 'Water on tiles ___ the friction quickly.',
     blankWord: 'reduces',
-    options: ['reduces', 'reduce', 'reduced'],
+    options: ['reduces', 'reduce', 'reducing', 'reduced'],
+  },
+  {
+    sentence: 'The wet floor warning sign ___ students to walk slowly.',
+    blankWord: 'reminds',
+    options: ['reminded', 'reminds', 'remind', 'reminding'],
   },
 ];
 
@@ -78,17 +85,21 @@ export default function AnvilRushGrammar({
     return () => window.removeEventListener('resize', updateW);
   }, []);
 
-  // Process rounds
+  // Process rounds (Enforce R >= 4, 4 options per round for N4 = 3.76%)
   const rounds = useMemo(() => {
-    if (grammarSentences && grammarSentences.length > 0) {
-      return grammarSentences.slice(0, 3).map((item, idx) => {
+    if (grammarSentences && grammarSentences.length >= 4) {
+      return grammarSentences.slice(0, 4).map((item) => {
         const full = item.fullSentence || item.sentence || 'Jake walked down the corridor.';
         const words = full.split(' ');
         const target = words[1] || 'walked';
+        let opts = item.options;
+        if (!opts || opts.length < 4) {
+          opts = [target, `${target}s`, `${target}ing`, `${target}ed`];
+        }
         return {
           sentence: full.replace(target, '___'),
           blankWord: target,
-          options: [target, `${target}s`, `${target}ing`],
+          options: opts.slice(0, 4),
         };
       });
     }
@@ -105,14 +116,15 @@ export default function AnvilRushGrammar({
 
   const currentRound = rounds[roundIdx % rounds.length] || DEFAULT_GRAMMAR_ROUNDS[0];
 
-  // 3 Anvils setup
+  // 4 Anvils setup (p = 0.25 across platforms)
   const anvils = useMemo(() => {
     const opts = currentRound.options;
     const shuffled = [...opts].sort(() => Math.random() - 0.5);
     return [
-      { id: 'anvil_0', x: 150, y: 465, word: shuffled[0], isCorrect: shuffled[0] === currentRound.blankWord },
-      { id: 'anvil_1', x: 425, y: 465, word: shuffled[1], isCorrect: shuffled[1] === currentRound.blankWord },
-      { id: 'anvil_2', x: 700, y: 465, word: shuffled[2], isCorrect: shuffled[2] === currentRound.blankWord },
+      { id: 'anvil_0', x: 145, y: 265, word: shuffled[0], isCorrect: shuffled[0] === currentRound.blankWord }, // Left beam
+      { id: 'anvil_1', x: 405, y: 215, word: shuffled[1], isCorrect: shuffled[1] === currentRound.blankWord }, // Mid beam
+      { id: 'anvil_2', x: 665, y: 265, word: shuffled[2], isCorrect: shuffled[2] === currentRound.blankWord }, // Right beam
+      { id: 'anvil_3', x: 405, y: 445, word: shuffled[3], isCorrect: shuffled[3] === currentRound.blankWord }, // Ground center
     ];
   }, [currentRound]);
 
@@ -239,22 +251,24 @@ export default function AnvilRushGrammar({
       else leo.animState = 'idle';
 
       // 7. Anvil Strike Detection (Landing down on anvil)
-      for (let i = 0; i < anvils.length; i++) {
-        const anvil = anvils[i];
-        const leoFoot = leo.y + LEO_HITBOX.height;
-        const anvilTop = anvil.y;
-        const horizOverlap = leo.x + LEO_HITBOX.width > anvil.x + 10 && leo.x < anvil.x + 60;
+      if (!invincible) {
+        for (let i = 0; i < anvils.length; i++) {
+          const anvil = anvils[i];
+          const leoFoot = leo.y + LEO_HITBOX.height;
+          const anvilTop = anvil.y;
+          const horizOverlap = leo.x + LEO_HITBOX.width > anvil.x + 10 && leo.x < anvil.x + 60;
 
-        if (horizOverlap && leoFoot >= anvilTop && leoFoot <= anvilTop + 20 && leo.vy >= 0) {
-          if (anvil.cooldownUntil && now < anvil.cooldownUntil) continue;
-          anvil.cooldownUntil = now + 2000;
+          if (horizOverlap && leoFoot >= anvilTop && leoFoot <= anvilTop + 20 && leo.vy >= 0) {
+            if (anvil.cooldownUntil && now < anvil.cooldownUntil) continue;
+            anvil.cooldownUntil = now + 2500;
 
-          handleAnvilStrike(anvil, i);
-          // High bounce and knockback away from anvil center to clear fire
-          const dir = leo.x < anvil.x + 35 ? -1 : 1;
-          leo.vx = dir * 6;
-          leo.vy = -10;
-          break;
+            handleAnvilStrike(anvil, i);
+            // High bounce and knockback away from anvil center to clear fire
+            const dir = leo.x < anvil.x + 35 ? -1 : 1;
+            leo.vx = dir * 6;
+            leo.vy = -10;
+            break;
+          }
         }
       }
 
@@ -324,7 +338,7 @@ export default function AnvilRushGrammar({
   }, [phase, anvils, anvilFlames]);
 
   // Handle Anvil Strike
-  const handleAnvilStrike = (anvil, anvilIdx) => {
+  const handleAnvilStrike = useCallback((anvil, anvilIdx) => {
     if (anvil.isCorrect) {
       // Correct Anvil!
       setScore(s => s + 30);
@@ -342,13 +356,38 @@ export default function AnvilRushGrammar({
         }
       }, 1500);
     } else {
-      // Wrong Anvil: Erupt into flames!
-      setFeedback(`🔥 Wrong Verb Form! Watch out for fire!`);
+      // Wrong Anvil: Deduct Heart immediately and Erupt into flames!
       const now = Date.now();
+      anvil.cooldownUntil = now + 2500;
+      setHearts(h => {
+        const next = Math.max(0, h - 1);
+        if (next === 0) setPhase('ko');
+        return next;
+      });
+      leoRef.current.hearts = Math.max(0, leoRef.current.hearts - 1);
+      leoRef.current.invincibleUntil = now + INVINCIBILITY_MS;
+      leoRef.current.animState = 'hit';
+      const dir = leoRef.current.x < anvil.x + 35 ? -1 : 1;
+      leoRef.current.vx = dir * 6;
+      leoRef.current.vy = -8;
+      setFeedback(`🔥 Wrong Verb Form! "${anvil.word}" is incorrect! (-1 Heart)`);
       setAnvilFlames(f => ({ ...f, [anvilIdx]: now + 2000 }));
       setTimeout(() => setFeedback(null), 1500);
     }
-  };
+  }, [currentRound, roundIdx, rounds.length, weekNumber]);
+
+  // N1 Proximity guard: prevent remote click exploit (must be within 75px)
+  const handleAnvilClick = useCallback((anvil, idx) => {
+    if (phase !== 'playing') return;
+    const leo = leoRef.current;
+    const dist = Math.hypot((leo.x + 20) - (anvil.x + 35), (leo.y + 24) - (anvil.y + 20));
+    if (dist > 75) {
+      setFeedback('⚠️ Leo is too far! Approach the anvil to jump-strike!');
+      setTimeout(() => setFeedback(null), 1200);
+      return;
+    }
+    handleAnvilStrike(anvil, idx);
+  }, [phase, handleAnvilStrike]);
 
   const handleFinalFinish = () => {
     const stars = calculateStars(score, rounds.length * 30);
@@ -358,10 +397,17 @@ export default function AnvilRushGrammar({
 
   const handleRetry = () => {
     setHearts(3);
+    leoRef.current.hearts = 3;
     setScore(0);
     setRoundIdx(0);
+    setFeedback(null);
     setAnvilFlames({});
     setTimeLeft(duration);
+    leoRef.current.x = 80;
+    leoRef.current.y = FLOOR_Y - LEO_HITBOX.height;
+    leoRef.current.vx = 0;
+    leoRef.current.vy = 0;
+    leoRef.current.invincibleUntil = Date.now() + 3000;
     setPhase('playing');
   };
 
@@ -420,10 +466,16 @@ export default function AnvilRushGrammar({
         <div className="forge-action-instruction">
           Climb high and Jump-Strike the anvil with the correct verb form!
         </div>
-        {feedback && (
-          <div className="forge-feedback-toast">{feedback}</div>
-        )}
       </div>
+
+      {/* ── Feedback Toast (Separated cleanly below top banner, NO OVERLAP) ── */}
+      {feedback && (
+        <div className={`forge-feedback-toast ${
+          feedback.includes('✨') ? 'toast-correct' : feedback.includes('⚠️') ? 'toast-warn' : 'toast-wrong'
+        }`}>
+          {feedback}
+        </div>
+      )}
 
       {/* ── Game World (Canvas/DOM Viewport with smooth Camera follow) ─ */}
       <div
@@ -445,15 +497,18 @@ export default function AnvilRushGrammar({
           />
         ))}
 
-        {/* 3 Anvils */}
+        {/* 4 Anvils (p = 0.25) */}
         {anvils.map((anvil, idx) => {
           const isFlames = anvilFlames[idx] && Date.now() < anvilFlames[idx];
           return (
             <div
               key={anvil.id}
               className={`anvil-entity ${isFlames ? 'anvil-burning' : ''}`}
+              data-anvil-id={anvil.id}
+              data-anvil-word={anvil.word}
+              data-is-correct={anvil.isCorrect ? 'true' : 'false'}
               style={{ left: `${anvil.x}px`, top: `${anvil.y}px` }}
-              onClick={() => handleAnvilStrike(anvil, idx)}
+              onClick={() => handleAnvilClick(anvil, idx)}
             >
               {isFlames && (
                 <div className="anvil-flame-burst">
@@ -498,7 +553,7 @@ export default function AnvilRushGrammar({
         wordsCollected={roundIdx}
         totalWords={rounds.length}
         floorNumber={2}
-        doorLabel="Door 2 — Anvil Rush Grammar"
+        doorLabel="Floor 2 Door 2 — Anvil Rush Grammar"
       />
 
       {/* ── Cleared Modal ────────────────────────────────────────────── */}

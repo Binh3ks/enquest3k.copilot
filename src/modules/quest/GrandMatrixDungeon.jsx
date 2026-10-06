@@ -15,16 +15,18 @@
  */
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Grid, Trophy, RotateCcw, ArrowRight, Zap, Sparkles, AlertTriangle, Shield } from 'lucide-react';
+import { Grid, Trophy, RotateCcw, ArrowRight, Zap, Sparkles, AlertTriangle, Shield, HelpCircle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
 import {
   LEO_SPEED, LEO_JUMP_FORCE, GRAVITY, FLOOR_Y,
   LEO_HITBOX, INVINCIBILITY_MS, clamp, applyGravity, checkPlatformLanding
 } from './LeoPhysics';
+import { CURRICULUM_DEFINITIONS } from './MCQBlitzPopup';
 import LeoCharacter from './LeoCharacter';
 import HUDOverlay from './HUDOverlay';
 import FloatingExitBtn from './FloatingExitBtn';
+import GameInstructionModal from '../chronicles/games/GameInstructionModal';
 import useGestureControls from './useGestureControls';
 import './GrandMatrixDungeon.css';
 
@@ -44,24 +46,24 @@ const MATRIX_PLATFORMS = [
 
 const DEFAULT_MATRIX_ROUNDS = [
   {
-    targetWord: 'equilibrium',
-    definition: 'A state in which opposing forces or influences are balanced',
-    distractors: ['turbulence', 'friction', 'inertia'],
+    targetWord: 'corridor',
+    definition: 'a long passage in a building with doors on each side',
+    distractors: ['stairs', 'cafeteria', 'playground'],
   },
   {
-    targetWord: 'velocity',
-    definition: 'The speed of something in a given direction',
-    distractors: ['mass', 'gravity', 'density'],
+    targetWord: 'slipped',
+    definition: 'slid accidentally on a wet surface and lost balance',
+    distractors: ['jumped', 'walked', 'stopped'],
   },
   {
-    targetWord: 'momentum',
-    definition: 'The quantity of motion of a moving body',
-    distractors: ['friction', 'vacuum', 'charge'],
+    targetWord: 'bandage',
+    definition: 'a strip of material used to bind a wound or cut',
+    distractors: ['cold pack', 'first-aid kit', 'puddle'],
   },
   {
-    targetWord: 'dimension',
-    definition: 'A measurable extent of some kind, such as length or breadth',
-    distractors: ['illusion', 'shadow', 'echo'],
+    targetWord: 'nurse',
+    definition: 'a person trained to care for sick or injured people',
+    distractors: ['headmaster', 'teacher', 'doctor'],
   },
 ];
 
@@ -91,17 +93,77 @@ export default function GrandMatrixDungeon({
   }, []);
 
   const rounds = useMemo(() => {
-    if (vocabItems && vocabItems.length >= 3) {
-      return vocabItems.slice(0, 4).map((v, i) => {
-        const others = vocabItems.filter((_, idx) => idx !== i).map(o => o.word || 'word');
-        return {
-          targetWord: v.word || 'equilibrium',
-          definition: v.definition || 'A fundamental physical concept',
-          distractors: others.slice(0, 3),
-        };
-      });
+    // Phương án B: Ưu tiên 100% từ vựng cốt lõi thuần Cambridge từ vocab.js (định nghĩa viết thường nhất quán)
+    const candidateRounds = [];
+    const pool = Array.isArray(vocabItems) ? vocabItems : [];
+
+    for (const v of pool) {
+      if (!v) continue;
+      const rawWord = typeof v === 'string' ? v : (v.word || v.term || v.text || '');
+      const cleanWord = rawWord.trim().replace(/_/g, ' ');
+      // Must be a valid single word or short term (<= 2 words, not long phrases)
+      if (!cleanWord || cleanWord.split(/\s+/).length > 2 || cleanWord.length < 3) continue;
+
+      let def = '';
+      const isCoreVocab = Boolean(v.definition_en || v.audio_word);
+      if (typeof v === 'object' && v.definition_en && typeof v.definition_en === 'string') {
+        def = v.definition_en.trim();
+      } else if (typeof v === 'object' && v.definition && typeof v.definition === 'string') {
+        def = v.definition.trim();
+      }
+
+      // Check if definition is genuine (non-generic, non-Vietnamese, non-fallback)
+      if (def && def.length > 5 && !def.startsWith('Related to') && !/[\u00C0-\u1EF9]/.test(def) && def !== 'A fundamental physical concept') {
+        // Enforce consistent lowercase start for definition (Cambridge style)
+        const normalizedDef = def.charAt(0).toLowerCase() + def.slice(1);
+        candidateRounds.push({
+          targetWord: cleanWord,
+          definition: normalizedDef,
+          isCoreVocab
+        });
+      }
     }
-    return DEFAULT_MATRIX_ROUNDS;
+
+    // Sort to prioritize core vocab items from vocab.js
+    candidateRounds.sort((a, b) => (b.isCoreVocab ? 1 : 0) - (a.isCoreVocab ? 1 : 0));
+
+    // Dedup by lowercased targetWord
+    const uniqueRounds = [];
+    const seen = new Set();
+    for (const r of candidateRounds) {
+      const key = r.targetWord.toLowerCase();
+      if (!seen.has(key)) {
+        seen.add(key);
+        uniqueRounds.push(r);
+      }
+    }
+
+    // If fewer than 4 valid rounds, supplement with DEFAULT_MATRIX_ROUNDS (also lowercase)
+    const finalTargets = [...uniqueRounds];
+    for (const d of DEFAULT_MATRIX_ROUNDS) {
+      if (finalTargets.length >= 4) break;
+      if (!seen.has(d.targetWord.toLowerCase())) {
+        seen.add(d.targetWord.toLowerCase());
+        finalTargets.push(d);
+      }
+    }
+
+    // Collect all available words for distractors, all with sanitized underscores
+    const distractorBank = [
+      ...finalTargets.map(t => t.targetWord),
+      ...DEFAULT_MATRIX_ROUNDS.map(d => d.targetWord),
+      'corridor', 'slipped', 'bandage', 'nurse', 'safe', 'mistake', 'accident', 'cold pack'
+    ].map(w => w.replace(/_/g, ' '));
+
+    return finalTargets.slice(0, 4).map((r) => {
+      const others = distractorBank.filter(w => w.toLowerCase() !== r.targetWord.toLowerCase());
+      const uniqueOthers = Array.from(new Set(others));
+      return {
+        targetWord: r.targetWord,
+        definition: r.definition,
+        distractors: uniqueOthers.slice(0, 3),
+      };
+    });
   }, [vocabItems]);
 
   const [phase, setPhase] = useState('playing'); // 'playing' | 'cleared' | 'ko'
@@ -110,6 +172,7 @@ export default function GrandMatrixDungeon({
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(duration);
   const [feedback, setFeedback] = useState(null);
+  const [showHelp, setShowHelp] = useState(false);
 
   const currentRound = rounds[roundIdx % rounds.length] || DEFAULT_MATRIX_ROUNDS[0];
 
@@ -129,8 +192,8 @@ export default function GrandMatrixDungeon({
       id: `node_${idx}`,
       x: coords[idx].x,
       y: coords[idx].y,
-      word: w,
-      isTarget: w === currentRound.targetWord,
+      word: (w || '').replace(/_/g, ' '),
+      isTarget: (w || '').trim().toLowerCase() === currentRound.targetWord.trim().toLowerCase(),
     }));
   }, [currentRound]);
 
@@ -249,6 +312,19 @@ export default function GrandMatrixDungeon({
       }
     }
   }, [glyphNodes, harvestNode]);
+
+  // N1 Proximity guard: prevent remote click exploit (must be within 65px)
+  const handleNodeClick = useCallback((node) => {
+    if (phase !== 'playing') return;
+    const leo = leoRef.current;
+    const dist = Math.hypot((leo.x + 20) - (node.x + 35), (leo.y + 24) - (node.y + 20));
+    if (dist > 65) {
+      setFeedback({ type: 'wrong', text: '⚠️ Leo is too far! Climb close to the matrix glyph to harvest!' });
+      setTimeout(() => setFeedback(null), 1200);
+      return;
+    }
+    harvestNode(node);
+  }, [phase, harvestNode]);
 
   // ── Physics Game Loop ──────────────────────────────────────────────────
   useEffect(() => {
@@ -406,6 +482,7 @@ export default function GrandMatrixDungeon({
     setScore(0);
     setTimeLeft(duration);
     setRoundIdx(0);
+    setFeedback(null);
     leoRef.current = { x: 430, y: FLOOR_Y - LEO_HITBOX.height, vx: 0, vy: 0, isGrounded: true, facingRight: true, invincibleUntil: 0 };
     setPhase('playing');
   };
@@ -419,6 +496,22 @@ export default function GrandMatrixDungeon({
     <div className="matrix-dungeon-root" ref={containerRef}>
       {/* ── Always Accessible Floating Exit Button ─────────────────────── */}
       <FloatingExitBtn onExit={onExit} />
+
+      {/* ── Guide Modal Trigger ── */}
+      <button
+        className="matrix-help-btn"
+        onClick={() => setShowHelp(true)}
+        title="Game Instructions"
+      >
+        <HelpCircle size={16} /> Guide
+      </button>
+
+      {/* ── Game Instruction Modal ── */}
+      <GameInstructionModal
+        gameId="grand_matrix"
+        isOpen={showHelp}
+        onClose={() => setShowHelp(false)}
+      />
 
       {/* ── Top Objective Banner ───────────────────────────────────────── */}
       <div className="matrix-dungeon-banner">
@@ -464,8 +557,11 @@ export default function GrandMatrixDungeon({
           <div
             key={node.id}
             className="matrix-glyph-entity"
+            data-node-id={node.id}
+            data-node-word={node.word}
+            data-is-target={node.isTarget ? 'true' : 'false'}
             style={{ left: `${node.x}px`, top: `${node.y}px` }}
-            onClick={() => harvestNode(node)}
+            onClick={() => handleNodeClick(node)}
           >
             <div className="glyph-core-ring">
               <span className="glyph-text">{node.word}</span>
@@ -474,16 +570,15 @@ export default function GrandMatrixDungeon({
           </div>
         ))}
 
-        {/* Glitch Sentinel */}
+        {/* Glitch Sentinel with upright un-mirrored label */}
         <div
           className="glitch-sentinel-sprite"
           style={{
             left: `${glitchDisplay.x}px`,
             top: `${glitchDisplay.y}px`,
-            transform: glitchDisplay.dir < 0 ? 'scaleX(-1)' : 'none',
           }}
         >
-          <span>👁️</span>
+          <span className="sentinel-icon" style={{ display: 'inline-block', transform: glitchDisplay.dir < 0 ? 'scaleX(-1)' : 'none' }}>👁️</span>
           <span className="sentinel-tag">GLITCH</span>
         </div>
 

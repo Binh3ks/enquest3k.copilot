@@ -1,9 +1,9 @@
 {
-  "commit": "feccd8e3c61a0c0fa76710c02797542d30256438",
-  "git_commit": "feccd8e3c61a0c0fa76710c02797542d30256438",
-  "shortCommit": "feccd8e3",
-  "message": "feat(chronicles): v7.2 Grand Citadel Hall 3D static scene with constrained OrbitControls for inspection",
-  "builtAt": "2026-09-09T08:56:57.519Z",
-  "build_timestamp": "2026-09-09T08:56:57.519Z",
+  "commit": "fba660d60da3ddcaaef2f8a13675ee556e51bd9d",
+  "git_commit": "fba660d60da3ddcaaef2f8a13675ee556e51bd9d",
+  "shortCommit": "fba660d6",
+  "message": "docs(handoff): finalize Floor 6-7 redesign project with 6/6 games approved by Owner",
+  "builtAt": "2026-10-02T07:01:08.165Z",
+  "build_timestamp": "2026-10-02T07:01:08.165Z",
   "env": "production"
 }
