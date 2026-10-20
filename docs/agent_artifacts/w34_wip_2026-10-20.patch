@@ -1,0 +1,1650 @@
+diff --git a/docs/Claude_handoff.txt b/docs/Claude_handoff.txt
+index 8c287f0f..4793090b 100644
+--- a/docs/Claude_handoff.txt
++++ b/docs/Claude_handoff.txt
+@@ -1,125 +1,89 @@
+-# TÓM TẮT HANDOFF — ENGQUEST3K REDESIGN
++# HANDOFF NGẮN GỌN — ENGQUEST3K REDESIGN
+ 
+ ## 1. Bối cảnh & cách làm việc
+-- **Dự án:** redesign 21 mini-game của EngQuest3K/Lexio (app ESL cho trẻ Việt 6–12 tuổi, Pre-A1→A2).
++- **Dự án:** redesign 21 mini-game EngQuest3K/Lexio (ESL cho trẻ Việt 6–12 tuổi, Pre-A1→A2).
+ - **Vai trò:** Owner chốt quyết định; Claude phản biện/audit (không code); Antigravity code + playtest.
+-- **Mỗi lượt:** (1) phân tích ngắn, (2) prompt cho Antigravity (luôn yêu cầu báo cáo THẬT NGẮN GỌN), (3) tóm tắt dán vào handoff. Audit theo batch 5 game.
+-- **Nguồn trạng thái DUY NHẤT:** IMPLEMENTATION_PLAN_21_GAMES.md. File handoff chỉ là nhật ký quyết định + bài học. CONSOLIDATED_REDESIGN_BACKLOG chỉ tra công thức.
++- **Mỗi lượt:** (1) phân tích ngắn, (2) prompt cho Antigravity (yêu cầu báo cáo THẬT NGẮN GỌN), (3) tóm tắt dán vào handoff. Audit theo batch 5 game.
++- **Nguồn trạng thái DUY NHẤT:** IMPLEMENTATION_PLAN_21_GAMES.md. Handoff = nhật ký quyết định + bài học. CONSOLIDATED_REDESIGN_BACKLOG chỉ tra công thức.
+ 
+-## 2. Triết lý mới (Owner, 2026-09-19): G1–G3 đứng TRƯỚC N1–N5
+-Game là PHẦN THƯỞNG sau bài học chính. Cơ chế phải vui/nhanh trước, ngôn ngữ chỉ là lớp nhắc nhớ. Nội dung quá dài/khó thì CẮT khỏi game (không cắt khỏi curriculum, phải chuyển sang module khác). Audit lại cả 21 game, kể cả 15 game đã đóng băng.
++## 2. Triết lý (Owner, 2026-09-19): G1–G3 đứng TRƯỚC N1–N5
++Game là PHẦN THƯỞNG sau bài học chính. Cơ chế vui/nhanh trước, ngôn ngữ là lớp nhắc nhớ. Nội dung quá dài/khó thì CẮT khỏi game (chuyển sang module khác, không cắt khỏi curriculum). Audit lại cả 21 game, kể cả game đã đóng băng.
+ - **G1:** cơ chế lõi vẫn vui khi thay chữ bằng placeholder vô nghĩa.
+ - **G2:** nhịp độ khớp chuẩn thể loại tham chiếu (game thị trường thật).
+ - **G3:** tải ngôn ngữ mỗi round ở mức "nhắc nhớ nhanh", không phải đọc hiểu lần đầu.
+-- **Nguyên tắc:** hành động nhanh chỉ hợp task NHẬN DIỆN 1 mục tiêu; task SUY LUẬN QUAN HỆ (connector, cấu trúc câu) cần thể loại "dừng lại suy nghĩ" (flashcard/tap/matching).
++- Hành động nhanh chỉ hợp task NHẬN DIỆN 1 mục tiêu; task SUY LUẬN QUAN HỆ (connector, cấu trúc câu) cần thể loại "dừng lại suy nghĩ" (flashcard/tap/matching).
+ 
+ ## 3. RULE BẮT BUỘC (giữ nguyên)
+ 1. Không tin tên file/lời khẳng định: luôn trích dòng code, log, ảnh thật.
+ 2. Toán N2/N4 phải tính và khóa TRƯỚC KHI CODE.
+ 3. N4 <5%, đúng cơ chế thực: retry-tại-chỗ = Negative Binomial; không retry = Binomial; chọn-không-hoàn-lại = hypergeometric/permutation. Assert lựa chọn phân biệt NGỮ NGHĨA (kể cả near-duplicate) trên TOÀN BỘ nguồn dữ liệu thực, không chỉ nhánh fallback.
+-4. N2: margin dương trên worst-case content thật, tối thiểu +2.0s/round, nhắm ≥+3–4s (đo thật thường thấp hơn công thức 0.6–0.7s, có ca 2–3s). Quét toàn bộ tuần đã biên soạn + mọi fallback/default (đếm từ). Kiểm cả margin per-round lẫn cộng dồn so với T_avail. Số đo thật thắng công thức; không tự đánh "ĐẠT" khi số đo dưới sàn. Tốc độ đọc chuẩn: 0.67s/từ.
++4. N2: margin dương trên worst-case content thật, tối thiểu +2.0s/round, nhắm ≥+3–4s (đo thật thường thấp hơn công thức 0.6–0.7s, có ca 2–3s). Quét toàn bộ tuần đã biên soạn + mọi fallback/default (đếm từ). Kiểm margin per-round lẫn cộng dồn so với T_avail. Số đo thật thắng công thức; không tự đánh "ĐẠT" khi số đo dưới sàn. Tốc độ đọc chuẩn: 0.67s/từ.
+ 5. Tick hoàn thành cần đủ: (a) bảng N1–N5 kèm trích code thật, (b) validator khớp code thật, (c) 1 vòng chơi tay Phương án B + ảnh (waitForFunction đúng DOM state, không delay cố định).
+ 6. Soi đồng đều mọi game, kể cả game "trông tốt".
+ 7. `npm run build` exit 0 KHÔNG chứng minh logic đúng.
+ 8. Test hook (teleport, window.__xxx) bọc `import.meta.env.DEV`; grep bundle production phải không thấy (exit code 1).
+ 9. Đối chiếu ảnh ↔ JSON ↔ báo cáo (im lặng giữa 3 nguồn = dấu hiệu sai lệch). Sửa file dùng chung (HUDOverlay, contentService) phải verify non-regression trên ≥1 game khác.
+ 10. Mọi số liệu tính tay (đếm từ, margin, xác suất) phải đối chiếu độc lập; không bỏ rơi mục treo từ vòng trước.
+-11. Thiết kế/sửa cơ chế mới: phản biện cơ chế TRƯỚC khi code. Đối chiếu 1–2 game thị trường cùng thể loại (nhịp độ, độ hấp dẫn) và hỏi cơ chế có gắn chặt mục tiêu ngôn ngữ hay chỉ là lớp giải trí tách rời. KHÔNG sao chép rủi ro độc lập với ngôn ngữ.
++11. Thiết kế/sửa cơ chế mới: phản biện cơ chế TRƯỚC khi code. Đối chiếu 1–2 game thị trường cùng thể loại (nhịp độ, độ hấp dẫn), hỏi cơ chế có gắn chặt mục tiêu ngôn ngữ hay chỉ là lớp giải trí tách rời. KHÔNG sao chép rủi ro độc lập với ngôn ngữ.
+ 
+ ## 4. Tiêu chí N1 (game thật, không phải quiz trá hình)
+ 1. Ngôn ngữ + hành động + rủi ro phải ĐỒNG THỜI.
+ 2. Bịt ngôn ngữ thì không thắng được bằng đoán mò/pattern/trí nhớ/nội dung lặp trong phiên (retry không xáo, retry rút mù từ pool nhỏ làm E[overlap] cao).
+-3. Không có đường tắt (onClick không kiểm tra khoảng cách/vị trí; vị trí đáp án phải random, Fisher-Yates).
++3. Không có đường tắt (onClick không kiểm tra khoảng cách/vị trí; vị trí đáp án random, Fisher-Yates).
+ 
+ ## 5. Playtest (Owner) — Phương án B
+-Chrome HIỆN CỬA SỔ (headless:false), Puppeteer keyboard.press()/CDP Input thật (không teleport, không .click() DOM), screenshot từng frame + console log. Nếu môi trường không cho phép, phải nói rõ NGAY ĐẦU LƯỢT. Playtest phải mô phỏng nhịp đọc của trẻ, không chạy tốc độ bot.
++Chrome HIỆN CỬA SỔ (headless:false), Puppeteer keyboard.press()/CDP Input thật (không teleport, không .click() DOM), screenshot từng frame + console log. Nếu môi trường không cho phép, nói rõ NGAY ĐẦU LƯỢT. Mô phỏng nhịp đọc của trẻ, không chạy tốc độ bot.
+ 
+ ## 6. Bài học lặp lại
+-- Hazard trừ tim độc lập với ngôn ngữ (Wraith F2D3, F4D1, F6D2, Steam Vent F5D2, Astral Watcher F5D3): chỉ được trừ tim khi chọn sai ngôn ngữ.
+-- Báo cáo tự động "0 lỗi" nhưng còn lỗi (script chỉ đếm từ/trùng lặp, chưa parse ngữ pháp/mạo từ/collision; từng bỏ sót but/and/or/unless).
+-- Chỉ kiểm nguồn DEFAULT mà quên nguồn theo tuần/fallback.
+-- Playtest tốc độ bot không chứng minh được margin N2.
++- Hazard trừ tim độc lập với ngôn ngữ: chỉ được trừ tim khi chọn sai ngôn ngữ.
++- Báo cáo "0 lỗi" nhưng còn lỗi (script chỉ đếm từ/trùng lặp, không parse ngữ pháp/collision).
++- Chỉ kiểm nguồn DEFAULT, quên nguồn theo tuần/fallback.
++- Playtest tốc độ bot không chứng minh margin N2.
+ - Đổi 1 lỗi lấy lỗi khác khi sửa nội dung.
+ - Đơn vị vận tốc: per-frame vs per-second vs dt-normalized.
+-- Số "áng chừng" cho T_motion/T_evasion (hệ số ×1.5–1.8 không grounding) lặp ở F5D3 rồi F2D3: phải lấy từ tốc độ/tọa độ pixel thật.
+-- Ảnh cũ/ảnh nhầm game bị tái sử dụng làm bằng chứng; ảnh chỉ là đường dẫn local không đến tay reviewer (Owner tự tải ảnh lên trực tiếp mới đáng tin).
++- Số "áng chừng" cho T_motion/T_evasion phải lấy từ tốc độ/tọa độ pixel thật.
++- Ảnh cũ/nhầm game bị tái sử dụng; ảnh chỉ là đường dẫn local không đến reviewer (Owner tự upload mới đáng tin).
++- Viết script kiểm chứng nhưng không dán output thô; kết luận bằng lời tự mâu thuẫn với dữ kiện liệt kê.
+ 
+ ## 7. Rủi ro hệ thống (chưa sửa)
+-1. contentService.js:363-364 `sort(()=>Math.random()-0.5)` thiên vị, dùng chung (đã fix cục bộ F2D1; F4D1 phụ thuộc; ảnh hưởng cả F7D3; cần re-test khi sửa hạ tầng).
+-2. Pity-timer ở F3D3/F6D1: N4 đã khóa chỉ là cận trên (an toàn).
++1. contentService.js:363-364 `sort(()=>Math.random()-0.5)` thiên vị, dùng chung (đã fix cục bộ F2D1; F4D1 phụ thuộc; ảnh hưởng F7D3; re-test khi sửa hạ tầng).
++2. Pity-timer F3D3/F6D1: N4 đã khóa chỉ là cận trên (an toàn).
+ 3. P0-4/P0-5: margin N2 mới là ước tính công thức, chưa đo event-driven.
+-4. Content-debt: phần lớn 156 tuần chỉ có fallback generic (F5D3: 100% dùng chung DEFAULT_GAUNTLET_PASSAGE; F7D3: chỉ tuần 33 và 35 có dữ liệu riêng, 154/156 tuần dùng GENERIC_WORDS 10 từ).
++4. Content-debt: phần lớn 156 tuần chỉ có fallback generic (F5D3: DEFAULT_GAUNTLET_PASSAGE; F7D3: 154/156 tuần dùng GENERIC_WORDS). Gate 8: 7 game Nhóm C (F2D2, F3D3, F4D2, F4D3, F5D2, F7D2, Grammar Duel Zone 3) đã ghi Risk Register.
+ 5. HUDOverlay `maxHearts` mặc định ngầm = 3: game hearts≠3 phải truyền prop tường minh.
+-6. Leo trong TitanGrammarForge/SyntaxExpressRail (LeoPhysics.js) di chuyển per-frame, không nhân dt (test thiết bị <60fps).
++6. Leo (LeoPhysics.js) di chuyển per-frame, không nhân dt (test thiết bị <60fps).
+ 
+-## 8. Trạng thái các game đã xử lý trong handoff
+-| Game | Kết quả | Điểm chính |
+-|---|---|---|
+-| F4D1 Highway Word Runner | Giữ, đóng băng | Task nhận diện đơn hợp runner; Phương án B, margin đo thật +17.73s |
+-| F4D2 Syntax Express Rail | ❌ FAIL | Timer "tàu trật bánh" 15.60s trừ tim, margin +0.88s → −1.13s |
+-| F5D2 Titan Grammar Forge | ✅ Đóng băng | R3 xuống A2 (19 từ), Steam Vent chỉ knockback, Fisher-Yates test 10.000 lần; margin pass chính thức +21.06s (công thức) |
+-| F6D1 Synonym Storm | Ghi nhận | Là game deflect/catch, không phải runner |
+-| F6D2 Connector Burst | ✅ Đóng băng (sau 5 vòng) | Redesign PA-A flashcard/tap; hearts=2 tường minh; Macro Timer 120s chỉ mất time-bonus; pool 84 câu; ảnh↔JSON khớp 100%; ghi chú time-bonus chiếm 39% điểm |
+-| F5D3 Cambridge Cloze Gauntlet | ✅ Đóng băng | Astral Watcher → knockback; N2 grounding (LEO_SPEED 240px/s, Watcher 132px/s, 45 từ), margin +74.57s; N4 0.055–0.13% (mô hình có-hoàn-lại) |
+-| F2D3 Ancient Scroll Cloze | ✅ Đóng băng (sau 5 vòng, 4 vòng vướng gửi ảnh) | Margin +88s; Monte Carlo 2.000.000 lượt (0.68%/0.90%); nợ nhỏ: khoảng hụt 844ms đã giải trình, log chỉ 1/3 lần cắm sai dẫn tới KO |
+-| F7D3 Word Class Duel | ❌ FAIL chính thức cả 2 nhánh code | 9/12 từ tuần 33 là lưỡng tính nhưng gán cứng 1 role; **chờ Owner chọn Phương án A (Rune Balance Altar, turn-based untimed, N4≈1.78%) hay B (Dual-Platform Tilt Steer)** |
++## 8. Quyết định Owner đã chốt
++- **Retry:** tối đa 2 lượt/phiên/bài (tổng ≤2 lượt dù thắng hay KO); sau thắng được chơi lại 1 lượt ≤3 phút (macro timer 120s đã thỏa). N4 phiên = 1−(716/729)² ≈ **3.53%**.
++- Cap gắn tiến độ bài học, lưu localStorage trong game, khóa theo uid+tuần (`attempt_cap_${uid}_${gameKey}_w_d_door`); không sửa store dùng chung/DailyRoomScreen (nếu cần → DỪNG báo cáo). Chống farm: chỉ `recordDoorStars` (sao chỉ tăng, tối đa 3).
++- **F7D3:** Phương án A (Rune Balance Altar, turn-based untimed), 3 phiến/round, Blind Advance, 2 tim (maxHearts=2 tường minh), sai không hiện đáp án, Attempt 0 (6 từ) + Retry 1 (6 từ khác), KO lần 2 về bài học. Nội dung dùng ngân hàng toàn cục 24–36 từ A2 có nguồn CEFR.
+ 
+-Audit batch đầu (G1–G3): 7 PASS, 7 FAIL, 5 Conditional (F1D1, F2D2, F6D3, F7D2 trong nhóm cần soi).
++## 9. Trạng thái game
++| Game | Kết quả |
++|---|---|
++| F4D1 Highway Word Runner | Đóng băng (margin đo thật +17.73s) |
++| F4D2 Syntax Express Rail | ❌ FAIL (timer trật bánh, margin −1.13s); plan sửa → không tính đóng băng |
++| F5D2 Titan Grammar Forge | Đóng băng |
++| F5D3 Cambridge Cloze Gauntlet | Đóng băng (margin +74.57s; N4 0.055–0.13%) |
++| F2D3 Ancient Scroll Cloze | Đóng băng (margin +88s; N4 0.68%/0.90%) |
++| F6D2 Connector Burst | Mở lại để áp cap lượt; **đủ điều kiện kỹ thuật đóng băng lại** (8 kịch bản, ảnh↔JSON khớp 100%, cap lượt 3 đúng, calculateStars theo độ chính xác); chỉ còn paperwork N1–N5 + đổi plan "Đang làm"→"Đóng băng" |
++| F7D3 Word Class Duel | FAIL bản cũ; **content batch 1 ĐẠT** (36 câu, CEFR ≤A2, mapping C1/C2/C3 khớp); chờ chọn hướng implement N1–N5 |
++| F6D3, F7D2 | Chưa audit (Conditional); N4 F7D2 = 0.960% |
+ 
+-## 9. Tiến độ & việc tiếp theo
+-- **Bộ đếm:** 18/21 đã đóng băng; các game đóng băng cũ vẫn chờ audit lại G1–G3.
+-- **Hàng chờ:** F7D3 (chờ Owner chọn A/B) → F5D1 → F1D2 (N4≈21–37%) → F1D3.
+-- **Việc cần làm:**
+-  1. Owner chọn phương án A hay B cho F7D3.
+-  2. Sau khi chọn: sửa lỗi "Tuần 34" thành "Tuần 35"; làm rõ đơn vị "12 câu" (12 bộ round đầy đủ = 36 câu, hay 12 câu rời); polish câu ví dụ gượng ("Water turns floors into a slide."); rồi mới vào N1–N5.
+-  3. Tiếp tục audit G1–G3 theo batch 5 game cho phần còn lại.
+-F7D3 (Word Class Duel) — vòng phản biện 5:
+-✅ Sửa Tuần 34→35: ĐẠT (đọc dòng 50 plan thật; 32+1+121=154 khớp).
+-✅ "12 câu" = 12 bộ round × 3 phiến = 36 câu; slice(0,6)/slice(6,12) → overlap=0
+-   giữa Attempt 0 và Retry 1.
+-🔴 Retry 2 (KO lần 3) chưa định nghĩa: pool cạn, overlap ≠ 0, cần tính + nêu hành vi.
+-🔴 Khả thi "12 từ lưỡng tính/tuần" chưa kiểm: tuần 33 chỉ 9/12; ép đủ 12 có
+-   nguy cơ lặp lỗi sư phạm gây FAIL. Khối lượng ≈ 5.616 câu.
+-🟡 Plan mâu thuẫn nội bộ: F7D2 N4 0.960% (bảng) vs 1.78% (Mục 2.4); F6D3 ghi
+-   "Đóng băng" nhưng handoff nói Conditional sơ bộ; dòng F7D3 chưa ghi FAIL.
+-🟡 Khẳng định "service chỉ có tuần 33+34" chưa có trích code.
+-F7D3: VẪN CHỜ OWNER CHỌN A/B. Bộ đếm giữ 18/21 (nếu F6D3 tính không đúng thì
+-phải xem lại con số này). Hàng chờ: F7D3 → F5D1 → F1D2 → F1D3.
+-F7D3 — OWNER CHỌN PHƯƠNG ÁN A (Rune Balance Altar, turn-based untimed).
+-Vòng phản biện 6:
+-✅ Dữ liệu service W33/W34 (dòng 1089/1144/1254-1259) + W35 không có (grep exit 1).
+-   Lưu ý: 2 nguồn song song (component W33+W35 / service W33+W34) → A phải chọn 1.
+-✅ N4 F7D2 = 7/729 ≈ 0.960% (tự tính khớp).
+-🔴 Plan upload chưa phải bản sau sửa (F6D3 vẫn "Đóng băng", F7D3 "Đang làm") → chưa
+-   đối chiếu được 3 chỗ sửa.
+-🔴 Bộ đếm 18/21 SAI: plan có 16 "Đóng băng" + 5 chưa xong. F5D3, F2D3 đã đếm
+-   trước re-audit → đếm đôi. F4D2/F5D1 mâu thuẫn plan↔handoff. Cần bộ đếm riêng
+-   "re-audit G1–G3".
+-🔴 Retry 2: Attempt 0 + Retry 1 phủ hết 12 bộ → overlap cộng dồn 100%
+-   (E[overlap] vs Retry 1 = 3.0 che mất). Mô hình trí nhớ: nhớ 3/6 round → N4 ≈ 25.9%.
+-   F6D2 (đã đóng băng) có cùng lỗ hổng → mở nợ.
+-🔴 Script quét từ lưỡng tính vô giá trị: quét cả text mã JS (start/end/show/plan…),
+-   không báo số tuần, không dán output thô, bảng gán tay có từ >A2.
+-   "12 từ lưỡng tính/tuần" chưa chứng minh khả thi.
+-CHỜ OWNER: (1) chính sách Retry — nghiêng (a) tối đa 2 lượt/phiên;
+-(2) phạm vi nội dung — nghiêng ngân hàng toàn cục thay 12 bộ × 156 tuần.
+-Bộ đếm: chưa chốt, sẽ tính lại từ plan. Hàng chờ: F7D3 → F5D1 → F1D2 → F1D3.
+-F7D3 — vòng phản biện 7 (Phương án A đã chọn; N1–N5 CHƯA bắt đầu).
+-✅ Bộ đếm: 15 "Đóng băng" (tự đếm khớp danh sách; F6D3 hạ xuống "Chưa audit
+-   (Conditional)"). Bộ đếm re-audit G1–G3 riêng: 3/21 (F6D2, F5D3, F2D3).
+-   18/21 BỎ (đếm đôi).
+-✅ Dòng F6D3/F7D3/F7D2 khớp; N4 F7D2 = 0.960% nhất quán.
+-✅ Nợ F6D2 xác nhận bằng code (ConnectorRelayCanvas.jsx:90-93): attemptNum chẵn →
+-   reshuffle pool → Retry 2 chỉ chứa câu đã thấy (overlap 100%).
+-✅ Khả thi nội dung: 0/5 tuần đạt ≥12 từ lưỡng tính (tối đa 4/tuần); 5 thư mục
+-   tuần / 156. Mô hình "12 bộ/tuần theo từ vựng tuần" bỏ.
+-🔴 F4D2: Antigravity giữ "Đóng băng" không xử lý FAIL timer → nếu plan không ghi
+-   FAIL thì frozen = 14. Dòng bị cắt "..." nên chưa kết luận.
+-🔴 Bảng CEFR gán tay không nguồn; `mistake` tự mâu thuẫn (verb B2) → 11 từ, không
+-   phải 12. Số 12 vs 4+2+2=8 chưa giải trình. Chưa có output thô.
+-🟡 Nguồn dữ liệu = service (W33+W34): khẳng định cấu trúc chưa trích; W35 (component)
+-   chưa có kế hoạch; chưa chứng minh không lặp lỗi "gán cứng 1 role".
+-CHỜ OWNER: (1) Retry — nghiêng (a) tối đa 2 lượt/phiên; (2) nội dung — nghiêng ngân
+-hàng toàn cục ≈24–36 từ A2 có nguồn CEFR (11 từ đã vét không đủ 12 bộ rời nhau);
+-(3) F6D2 — nghiêng mở lại chỉ để áp chính sách retry (giống F7D3).
+-Hàng chờ: F7D3 → F5D1 → F1D2 → F1D3.
++- **Bộ đếm:** 14/21 đóng băng (bộ đếm 18/21 cũ sai do đếm đôi). Re-audit G1–G3: 3/21 (F6D2, F5D3, F2D3).
++- **Hàng chờ audit (tạm gác để ưu tiên curriculum):** F7D3 → F6D2 (paperwork) → F5D1 → F1D2 (N4≈21–37%) → F1D3.
++
++## 10. Curriculum (tạm ưu tiên trên audit game)
++- **W33:** ĐÓNG BĂNG tầng **Curriculum Core** (không re-freeze toàn bộ). Gate 8 minigame fallback = nợ kỹ thuật Sprint 2 Chronicles. Gate 15/5 fail là giới hạn môi trường (Playwright/Chrome MCP). Dead-code Nhóm B đã grep xác nhận.
++- **W34:** ✅ 7/7 hạng mục xong (Dictation 8 câu, CLIL 5 MCQ, F5D3 passage 42 từ, F7D1 forge words, vocab dictionary, Gate13, audio 20/20 vocab). Gate 3 PASS (70 file, 0 lỗi), margin N2 F5D3 đúng chuẩn 0.67s/từ (28.14s). Nội dung đóng băng ngang W33.
++- **Việc treo duy nhất:** xác nhận nguyên văn 3 đoạn sửa trong IMPLEMENTATION_PLAN_21_GAMES.md (dòng F5D3, mục 2.3 content-debt, mục 3 mới).
++- **Ghi chú polish không chặn:** "rope net" (dictation), "a strong hunter net" (F5D3), "Hear the loud bird call" (F7D3).
++
++## 11. Việc tiếp theo
++1. Xác nhận paperwork plan W34 (3 đoạn nguyên văn).
++2. Owner quyết định: W35, hay quay lại hàng chờ audit 21 game.
++3. F6D2: hoàn tất paperwork N1–N5 rồi đóng băng.
++4. F7D3: chọn hướng implement N1–N5 (kèm kiểm tay ngữ pháp, validator, Fisher-Yates ở lớp render).
++ĐỊNH HƯỚNG (Owner, 2026-10-20): dừng game; quay lại sản xuất nội dung curriculum. W33 là golden standard cho W34+. W33: đóng băng tầng Curriculum Core (guard 7/7 PASS, hash đã regenerate, CEFR 0 vi phạm, Gate 8 ghi nợ). Chờ Owner chốt: Gate 8 có là điều kiện chuẩn cho W34+ không. W34: 7 hạng mục khoảng hụt đã xử lý, chưa đối chiếu toàn bộ inventory 4 Hubs + 15 Quests với W33, chưa có manifest/guard, chưa chạy full validationSuite, chưa được gọi là đóng băng. Đang chờ Antigravity: bước 0–5 (chỉ kiểm tra). Việc game (F7D3, F6D2 paperwork, F5D1, F1D2, F1D3) tạm gác.
++
++W34 (2026-10-20): inventory so với W33 cho thấy khoảng 20/31 thành phần khớp số đếm, 11 lệch (3 lệch bất biến: Action Lab 1/3 kịch bản, Story Writer 3/5 panel, S2 schema cũ), Gate 16 FAIL, Gate 8 FAIL (nợ chung). Gate 4/10/12/15 chưa chạy. Nghi vấn chủ đề trộn lẫn (ảnh Ant & Grasshopper, regex Gate 16 gắn chủ đề rừng/hạt giống). Owner cân nhắc xóa làm lại; Claude khuyên làm lại có chọn lọc (tag archive, dựng khung sạch từ SOP + template W33, chỉ giữ phần đã duyệt thật). Chờ Antigravity kiểm tra ảnh/nội dung/gate, chưa quyết A/B/C. Việc game vẫn tạm gác.
+diff --git a/docs/W33_GOLDEN_FREEZE_MANIFEST.json b/docs/W33_GOLDEN_FREEZE_MANIFEST.json
+index 21c5fd12..42c42bf5 100644
+--- a/docs/W33_GOLDEN_FREEZE_MANIFEST.json
++++ b/docs/W33_GOLDEN_FREEZE_MANIFEST.json
+@@ -20,12 +20,12 @@
+     "src/data/weeks/week_33/vocab.js"
+   ],
+   "protectedFileHashes": {
+-    "src/data/weeks/week_33/reading_hub.js": "7b7cdc7d4a15bc6489ed719be8b40d0e5f2c9505bef93a068257981945255a4f",
+-    "src/data/weeks/week_33/listening_hub.js": "5e5fe0bb504e5d14a4ed0a1f86f0fffd0c0c798d2b458276ee68cf0399c8d76a",
+-    "src/data/weeks/week_33/writing_hub.js": "57cd0bca5f66d3c9ec6c92bb656c41722a5bd085232b5569d27504b3f84d2a03",
+-    "src/data/weeks/week_33/speaking_hub.js": "288a087ac528b224b0d9d36a93a214b7377402c1bd11298b6f92a973a1cbac56",
+-    "src/data/weeks/week_33/skill_practice_hub.js": "94ca6c6fe931dcacdb1a99f237772f1ffe868f5d57c1e1119a5aa7668cf9376c",
+-    "src/data/weeks/week_33/vocab.js": "b60c6a06188cd88d6539311519f23c52e9ddb785f303ffd953a6fcec7e4783e4",
++    "src/data/weeks/week_33/reading_hub.js": "0989664a86eab234c8f00fa553b506d44de0cb581e0bc4232760be060df010d9",
++    "src/data/weeks/week_33/listening_hub.js": "c8caa574c815f4e1f991590467b7c08ab43aa47fe2beb7e42bcb62f448bea1a2",
++    "src/data/weeks/week_33/writing_hub.js": "834a0fe0aaa9a1eb4777091d4e51bc0730013093879a084c6e7d49e66d7a5044",
++    "src/data/weeks/week_33/speaking_hub.js": "b6e3f6a154780f11694a3d503d9197414ec44c038e971e91f12cce7553fda588",
++    "src/data/weeks/week_33/skill_practice_hub.js": "29ef4a01e8188d001d99081f312441a08454a7f5ce3d23951445130b8c26bdc2",
++    "src/data/weeks/week_33/vocab.js": "77ef5f765f3c21deb4d62207fedc86acd7d2c2f54fc48da79a0d5919570760d1",
+     "docs/GATE15_SPEC_W33.json": "c30e8d05e5687613fb83b6f25104b7b3e5142a44ae3a9ede255b6b827ff89e14"
+   },
+   "governanceDocumentation": [
+diff --git a/docs/agent_artifacts/IMPLEMENTATION_PLAN_21_GAMES.md b/docs/agent_artifacts/IMPLEMENTATION_PLAN_21_GAMES.md
+index 9f22b15d..7f689d36 100644
+--- a/docs/agent_artifacts/IMPLEMENTATION_PLAN_21_GAMES.md
++++ b/docs/agent_artifacts/IMPLEMENTATION_PLAN_21_GAMES.md
+@@ -1,7 +1,7 @@
+ # BẢNG THEO DÕI TIẾN ĐỘ 21 GAMES (CHRONICLES F1–F7)
+ **File điều khiển tiến độ duy nhất của dự án — Tách biệt khỏi nhật ký `Claude_handoff.txt` và phân tích `CONSOLIDATED_REDESIGN_BACKLOG_21_GAMES.md`.**  
+ **Quy tắc cập nhật:** Mọi thay đổi trạng thái game phải cập nhật vào file này trước. Trạng thái chỉ nhận 1 trong 4 giá trị: `Chưa audit` | `Đang làm` | `Bị chặn (nêu lý do)` | `Đóng băng`.  
+-**Tổng số game "Đóng băng" trong bảng:** 15/21 | **Đã re-audit G1–G3 chính thức:** 3/21 (F6D2, F5D3, F2D3). (Bộ đếm 18/21 trước đây bị đếm đôi do cộng dồn F5D3 và F2D3 vốn đã nằm trong 15 game đóng băng cũ).
++**Tổng số game "Đóng băng" trong bảng:** 14/21 | **Đã re-audit G1–G3 chính thức:** 3/21 (F5D3, F2D3, F6D2).
+ 
+ ---
+ 
+@@ -19,13 +19,13 @@
+ | **F3D2** | Chunk Catapult Match | `src/modules/chronicles/games/ChunkCatapultCanvas.jsx` | Sprint 1 (P0-1) | Đóng băng | Thao tác kéo thả ná Canvas vật lý, không click ăn điểm từ xa | Pacing đạt chuẩn thời gian kéo thả và ngắm rổ | Rổ nảy và quỹ đạo đá rõ ràng | $N_4 = 4.53\%$ (Negative Binomial: 3 rổ $p=1/3$, 5 rounds $R=5$, 3 tim $L=2$, $N_4 = 11/243$) | HUD Canvas hiển thị tim và rounds đầy đủ | 🟡 **Nợ nội dung**: `WEEKLY_CATAPULT_PAIRS` chỉ có vài tuần tác quyền, còn lại dùng stub generator | 2026-09-17 | Xem đoạn "P0-1 Chunk Catapult — ĐÓNG BĂNG (N4=4.53%, 4/4 frame đạt chuẩn)" (dòng 28) |
+ | **F3D3** | Meteor Smasher | `src/modules/quest/StormShieldDefense.jsx` | Sprint 1 (P1-2) | Đóng băng | Leo di chuyển giơ khiên đón thiên thạch đồng thời; hazard trừ đồng thời cả pin (-10%) và tim (-1) xác nhận qua ảnh thật | $N_2 = +52.33\text{s}$ (đo chơi tay thật: $T_{\text{play}} = 37.67\text{s}$, budget 90s) | Thiên thạch mang từ rõ ràng, toast cảnh báo | $N_4 = 2.33\%$ (Random Walk DP: 17/729, 3 tim, battery $0 \to 100\%$, dính hazard lùi pin); pity-timer hazard $\ge 3$ làm 2.33% thành cận trên an toàn | HUD Floor 3 Door 3, 3 tim, Battery bar, DEFLECTED không mẫu số cứng | Không có (đã test loại trừ StrictMode dev-only, dist sạch 0 leak) | 2026-09-17 | Xem đoạn "✅✅✅ P1-2 (STORM SHIELD DEFENSE) CHÍNH THỨC ĐÓNG BĂNG HOÀN TOÀN" (dòng 350–356) |
+ | **F4D1** | Highway Word Runner | `src/modules/quest/HighwaySprintCanvas.jsx` | Sprint 2 (P1) | Đóng băng | 3D Pseudo-Canvas Runner. Hiển thị định nghĩa Cambridge trên top pill banner + nút Audio TTS (Listen), học sinh đọc/nghe định nghĩa để tìm đúng biển từ mục tiêu (target_word) và né 2 biển gây nhiễu (distractor_word); thuật toán validateWaveDistinction loại bỏ trùng lemma/target | $N_2 = +18.00\text{s}$ (Dự đoán công thức worst-case 100 từ W33: $\Sigma T_{\text{req}} = 79.00\text{s}$, $T_{\text{motion}} = 114.0\text{s}$, 6 Frenzy Dashes $18.0\text{s} \to T_{\text{consumed}} = 132.0\text{s}$ vs budget 150s; đo thực nghiệm Chrome headful event-driven đạt $132.27\text{s}$ với timer còn lại $17\text{s} \approx +18.00\text{s}$, sai số $0.2\%$; cơ chế Frenzy Dash 3.0s REPLACE 100% overhead 600ms cũ) | Strip hướng dẫn Tap/Swipe dưới đáy; nút Guide trong HUDOverlay.rightActions không che timer 2:30; nút Listen TTS nghe lại định nghĩa bất kỳ lúc nào; banner Frenzy Dash nhấp nháy vàng + speed lines trực quan | $N_4 = 13/729 \approx \mathbf{1.78\%} \ll 5.0\%$ (Negative Binomial: 3 làn đường $p=1/3$, 6 rounds $R=6$, 2 tim persistent $h=2$ cho phép sai tối đa $L=1$; trường hợp 0 tim sai là $1/729 \approx 0.137\%$) | Đã xóa 100% rào cản độc lập (barrier/laser/barrel), không có hazard trừ tim độc lập; chỉ phạt -1 tim khi đâm distractor; Frenzy Dash (PA1) thu xu vàng +10 XP không bao giờ trừ tim; Super Stunt Catch (PA2) tùy chọn nhảy/trượt thưởng +75 XP bonus; HUD 2 tim chuẩn, modal KO và Cleared đầy đủ | Không còn nợ kỹ thuật riêng cho F4D1; vẫn phụ thuộc RISK-SHUFFLE-INFRA (contentService.js:364) như đã ghi nhận — chờ Sprint sau sửa hạ tầng, không chặn đóng băng. | 2026-09-18 | Xem chuỗi phản biện F4D1 (vòng chọn ticket → phản biện 3 phương án rào cản → chốt PA B → nghiệm thu code) trong Claude_handoff.txt (dòng 80–139), báo cáo docs/agent_artifacts/BAO_CAO_DONG_BANG_F4D1_HIGHWAY_RUNNER_PHUONG_AN_B.md và bộ 9 ảnh stage tại docs/agent_artifacts/screenshots/f4d1/ |
+-| **F4D2** | Syntax Express Rail | `src/modules/quest/SyntaxExpressRail.jsx` | Batch 1 | Đóng băng | Bẻ ghi đường ray xe lửa, đứng nguyên tại ngã rẽ khi sai | Pacing toa tàu bẻ ghi đạt chuẩn | Đèn tín hiệu đường ray rõ ràng | $N_4 = 0.686\%$ (Negative Binomial: 3 ngã rẽ $p=1/3$, 6 rounds $R=6$, 2 tim persistent $L=1$, $N_4 = 5/729$) | HUD Floor 4 Door 2, tim, R1/6, XP đầy đủ | Không có | 2026-09-17 | Xem đoạn "Syntax Express Rail xác nhận ĐÃ đóng ở Batch 1 (N4=0.686%, trích dòng 47 backlog)" (dòng 672–674) và dòng 695–696 |
++| **F4D2** | Syntax Express Rail | `src/modules/quest/SyntaxExpressRail.jsx` | Batch 1 | Bị chặn (FAIL N2 timer trật bánh) | Bẻ ghi đường ray xe lửa, đứng nguyên tại ngã rẽ khi sai | ❌ FAIL N2: timer đếm ngược ép tốc độ làm tàu trật bánh (-1 ❤️), hazard độc lập với ngôn ngữ | Đèn tín hiệu đường ray rõ ràng | $N_4 = 0.686\%$ (Negative Binomial: 3 ngã rẽ $p=1/3$, 6 rounds $R=6$, 2 tim persistent $L=1$, $N_4 = 5/729$) | HUD Floor 4 Door 2, tim, R1/6, XP đầy đủ | Cần gỡ bỏ timer trật bánh hoặc chuyển sang Macro Timer thưởng XP | 2026-10-06 | Handoff xác nhận FAIL N2 timer trật bánh |
+ | **F4D3** | Mystery Riddle Detective | `src/modules/quest/RiddleRunMaze.jsx` | Sprint 1 (P0-2) | Đóng băng | Chạy maze né quái Chaser, trả lời riddle tại cổng Sanctuary; label "CHASER" transform isolated không bị lật ngược | $N_2 = +3.38\text{s}$ (event-driven timestamp thật từ consoleLogs Date.now(), Riddle R4: 19.12s vs budget 22.5s) | Câu đố riddle và cổng hiển thị rõ ràng | $N_4 = 3.76\%$ (Negative Binomial: 4 cổng $p=0.25$, 4 rounds $R=4$, 3 tim $L=2$) | HUD Floor 4 Door 3, 3 tim, Round X/4, timer thật hiển thị | Không có (đối chiếu khớp ảnh, log, validator 9/9) | 2026-09-17 | Xem đoạn "P0-2 (RIDDLE RUN): N2-margin xác nhận an toàn +3.38s (event-driven, Riddle R4) — CHÍNH THỨC ĐÓNG HOÀN TOÀN" (dòng 180–181) |
+ | **F5D1** | Grand Master Matrix | `src/modules/quest/GrandMatrixDungeon.jsx` | Sprint 1 (P0-5) | Đóng băng | Cận chiến vật lý: xóa onClick từ xa, bắt buộc Leo di chuyển tới gần $d < 65\text{px}$ mới kích hoạt thu thập glyph | $N_2 = +31.28\text{s}$ (ước tính CÔNG THỨC: budget 180s, worst-case 148.72s; CHƯA đo event-driven thật) | Ma trận glyph và quái canh giữ hiển thị rõ | $N_4 = 3.76\%$ (Negative Binomial: 4 glyphs $p=0.25$, 4 rounds $R=4$, 3 tim $L=2$) | HUD đầy đủ Floor 5 Door 1, 3 tim, Round X/4, XP | 🟡 **Nợ bằng chứng**: Margin $N_2$ là ước tính công thức, cần đo timestamp event-driven thật qua consoleLogs | 2026-09-17 | Xem đoạn "P0-4/P0-5: margin +10.55s/+31.28s là ước tính CÔNG THỨC (không phải đo event-driven thật)" (dòng 195–198) và "SPRINT 1: 5/6 TICKET P0 ĐÃ ĐÓNG BĂNG" (dòng 61) |
+ | **F5D2** | Titan Grammar Forge | `src/modules/quest/TitanGrammarForge.jsx` | Sprint 1 (P0-3) | Đóng băng | Leo nhảy bục kích hoạt 4 cogs; Steam Vent knockback x=505 không trừ tim (0 damage), tách biệt rủi ro vật lý khỏi đánh giá ngữ pháp | $N_2 = +21.06\text{s}$ (Ước tính công thức chuẩn child-pace: worst-case 4 rounds 82 từ A2 $54.94\text{s} + 12.00\text{s}$ di chuyển/nhảy $+ 12.00\text{s}$ suy nghĩ vs budget 100s; playtest bot tối ưu đo $+30\text{s}$) | Bánh răng Cogs và lõi Titan trực quan, HUD thông báo rõ ràng | $N_4 = 3.76\%$ (Negative Binomial: 4 bánh răng $p=0.25$, 4 rounds $R=4$, 3 tim $L=2$; Fisher-Yates shuffle ngẫu nhiên hóa vị trí slot đáp án đúng, phân bố đều ~25% qua 10.000 test) | HUD Floor 5 Door 2, 3 tim, Round X/4, XP đầy đủ; Victory/KO modals | Không có (Full Pass: R3 A2 19 từ; Steam Vent không trừ tim; Fisher-Yates đã verify 10.000 runs; rule 8 clean) | 2026-09-28 | Full Pass duyệt 2026-09-28 (`playtest_gear1_high_crown.mjs`, `gear1_crown_deck_playtest_report.json`) |
+-| **F5D3** | Cambridge Cloze Gauntlet | `src/modules/quest/CambridgeClozeGauntlet.jsx` | Sprint 1 (P1-3) | Đóng băng (Re-audited 2026-09-30) | Bưng vác tinh thể vật lý: $d(\text{Leo}, \text{Crystal}) < 55\text{px}$, $d(\text{Leo}, \text{Slot}) < 65\text{px}$; Astral Watcher knockback-only (0 damage, N1 pass) | Pacing grounding: $T_{\text{read}}=30.15\text{s}$ (45 từ), $T_{\text{motion}}=26.0\text{s}$, $T_{\text{evasion}}=12.5\text{s}$ ($v_{\text{leo}}=240\text{px/s}$, $v_{\text{watcher}}=132\text{px/s}$); budget 120s $\implies \text{Margin}=+51.35\text{s}$ (+42.8%) | Đài tế 5 ô slot và 10 tinh thể thông thoáng | $N_4 \approx \mathbf{0.0553\%}$ (Negative Binomial: tinh thể sai quay về sân, 3 tim chỉ cho phép sai tối đa 2 lần $\ll 5.0\%$) | HUD Floor 5 Door 3, 3 tim, SEALS: X/5, XP | 🟡 **Nợ nội dung**: `DEFAULT_GAUNTLET_PASSAGE` fallback hardcoded 156 tuần (cần pipeline tác quyền riêng) | 2026-09-30 | Re-audit hoàn tất: 5 ảnh GUI tại `docs/agent_artifacts/screenshots/f5d3/`, report tại `docs/agent_artifacts/f5d3_playtest_report.json` |
++| **F5D3** | Cambridge Cloze Gauntlet | `src/modules/quest/CambridgeClozeGauntlet.jsx` | Sprint 1 (P1-3) | Đóng băng (Re-audited 2026-09-30) | Bưng vác tinh thể vật lý: $d(\text{Leo}, \text{Crystal}) < 55\text{px}$, $d(\text{Leo}, \text{Slot}) < 65\text{px}$; Astral Watcher knockback-only (0 damage, N1 pass) | Pacing grounding: $T_{\text{read}}=30.15\text{s}$ (45 từ), $T_{\text{motion}}=26.0\text{s}$, $T_{\text{evasion}}=12.5\text{s}$ ($v_{\text{leo}}=240\text{px/s}$, $v_{\text{watcher}}=132\text{px/s}$); budget 120s $\implies \text{Margin}=+51.35\text{s}$ (+42.8%). W34 đã bổ sung passage riêng 42 từ: $T_{\text{read}} = 28.14\text{s}$ ($42 \times 0.67\text{s}$), $T_{\text{motion}}=26.0\text{s}$, $T_{\text{evasion}}=12.5\text{s}$ ($38.5\text{s}$ giữ nguyên từ baseline F5D3) $\implies$ Tổng $T=66.64\text{s}$ vs budget 120s $\implies \text{Margin}=+53.36\text{s}$ (cải thiện $+2.01\text{s}$ so với baseline W33) | Đài tế 5 ô slot và 10 tinh thể thông thoáng | $N_4 \approx \mathbf{0.0553\%}$ (Negative Binomial: tinh thể sai quay về sân, 3 tim chỉ cho phép sai tối đa 2 lần $\ll 5.0\%$) | HUD Floor 5 Door 3, 3 tim, SEALS: X/5, XP | 🟡 **Nợ nội dung**: W33 và W34 đã có passage tác quyền riêng (`WEEKLY_GAUNTLET_PASSAGES[33]`, `[34]`); 154 tuần còn lại dùng `DEFAULT_GAUNTLET_PASSAGE` fallback hardcoded (cần pipeline tác quyền riêng cho 154 tuần) | 2026-09-30 | Re-audit hoàn tất: 5 ảnh GUI tại `docs/agent_artifacts/screenshots/f5d3/`, report tại `docs/agent_artifacts/f5d3_playtest_report.json` |
+ | **F6D1** | Synonym Storm | `src/modules/quest/SynonymStormDefense.jsx` | Sprint 1 (P1-5) | Đóng băng | Leo di chuyển giơ khiên Aegis đón thiên thạch từ đồng nghĩa; hazard trừ tim (-1) và không trừ pin (0% pin penalty đã verify code nhánh else) | $N_2 = +5.15\text{s/round}$ (đo chơi tay thật: $12.85\text{s/round}$ vs budget $18.0\text{s/round}$) | Từ gốc trên đỉnh, thiên thạch rơi rõ ràng, badge hazard dọn sạch khi cleared | $N_4 = 1.29\%$ (Negative Binomial: $p=0.25$, $R=5$, $L=2$, $N_4 = 211/16384$); pity-timer hazard $\ge 3$ làm 1.29% thành cận trên an toàn | HUD Floor 6 Door 1, 3 tim, Battery bar, DEFLECTED: X không mẫu số cứng | Không có | 2026-09-17 | Xem đoạn "✅✅ F6D1 (P1-5, SYNONYM STORM DEFENSE) CHÍNH THỨC ĐÓNG BĂNG" (dòng 399) và "ĐÓNG GHI CHÚ PITY-TIMER" (dòng 415–418) |
+-| **F6D2** | Connector Burst | `src/modules/quest/ConnectorRelayCanvas.jsx` | Sprint 2 (P1) | Đóng băng | Thẻ bài liên từ / circuit-linking PA-A: 0 canvas runner, không click xa ăn điểm, Fisher-Yates 3 options mỗi round ($p=1/3$ đều) | $N_2$ đạt chuẩn tuyệt đối: Lượt chơi không giới hạn thời gian (untimed turns, trẻ đọc hiểu tùy ý không bị ép tốc độ); Macro Timer 120s Option (a) không bao giờ trừ tim hay KO khi về 0s, chỉ tính điểm thưởng $T_{\text{bonus}} = \max(0, t) \times 2$ | Giao diện thẻ Arcane Skyway sang trọng, link slot phát sáng ngọc lục bảo khi đúng, đỏ cảnh báo khi sai; HUD 2 tim chuẩn (`maxHearts={2}`), audio phát âm câu hoàn chỉnh khi nối đúng; modal KO và Cleared 3 sao đầy đủ | $N_4 = 13/729 \approx \mathbf{1.78\%} \ll 5.0\%$ (Binomial $R=6, H=2, p=1/3$). Master pool 84 câu chuẩn hóa CEFR Pre-A1 $\to$ A2, 0 danh từ đếm được trơ trọi, 0 semantic collision; win-rate 12 liên từ đồng đều 25.0%–66.7% (or 50.0%, so 27.5%). Session Exclusion Queue: Lần 1 slice(0,6), Retry 1 slice(6,12), kiểm chứng thực nghiệm $E[\text{overlap}_{\text{Retry 1}}] = 0.0$ | HUD Floor 6 Door 2: 2 tim chuẩn (`maxHearts={2}`), `ROUND X/6`, Macro Timer 120s, XP; Cleared modal 3 sao; KO modal khi hết 2 tim. Code xác nhận: `WEEK_37 #2` options: `["and","but","because"]`; `WEEK_37 #10` options: `["and","but","because"]` | Không có (Full Pass: Playtest Phương án B Chrome headful `headless: false`, bàn phím thật, 5 ảnh chụp kiểm chứng khớp JSON log `f6d2_playtest_report.json`, build clean 0 error) | 2026-09-29 | Playtest Phương án B `scripts/playtest_f6d2_connector_burst_real_chrome.mjs` timestamp `2026-09-29T09:27:19.593Z` + 5 ảnh đối chiếu độc lập đợt này tại `docs/agent_artifacts/screenshots/f6d2/` |
++| **F6D2** | Connector Burst | `src/modules/quest/ConnectorRelayCanvas.jsx` | Sprint 2 (P1) | Đóng băng | Thẻ bài liên từ / circuit-linking PA-A: 0 canvas runner, không click xa ăn điểm, Fisher-Yates 3 options mỗi round ($p=1/3$ đều) | $N_2$ đạt chuẩn tuyệt đối: Lượt chơi không giới hạn thời gian (untimed turns, trẻ đọc hiểu tùy ý không bị ép tốc độ); Macro Timer 120s Option (a) không bao giờ trừ tim hay KO khi về 0s, chỉ tính điểm thưởng $T_{\text{bonus}} = \max(0, t) \times 2$ | Giao diện thẻ Arcane Skyway sang trọng, link slot phát sáng ngọc lục bảo khi đúng, đỏ cảnh báo khi sai; HUD 2 tim chuẩn (`maxHearts={2}`), audio phát âm câu hoàn chỉnh khi nối đúng; modal KO và Cleared 3 sao đầy đủ | $N_4 = 1 - (716/729)^2 \approx \mathbf{3.53\%} \ll 5.0\%$ (Tính theo CẢ PHIÊN với cơ chế cap tối đa 2 lượt/bài/tuần: $P(\text{thắng 1 lượt}) = 13/729 \implies P(\text{thua 1 lượt}) = 716/729 \implies N_{4,\text{phiên}} = 1 - (716/729)^2 \approx 3.53\%$; mỗi lượt $R=6, H=2, p=1/3$). Master pool 84 câu chuẩn hóa CEFR Pre-A1 $\to$ A2, 0 danh từ đếm được trơ trọi, 0 semantic collision. Session Exclusion Queue: Lần 1 slice(0,6), Retry 1 slice(6,12), $E[\text{overlap}_{\text{Retry 1}}] = 0.0$ | HUD Floor 6 Door 2: 2 tim chuẩn (`maxHearts={2}`), `ROUND X/6`, Macro Timer 120s, XP; Cleared modal 3 sao có nút "Chơi lại" (lượt 1); KO modal lượt 2 hiển thị "Hết lượt bài này. Về bài học để ôn lại!" (ẩn nút Try Again); Màn khóa vào lại lần 3 (LOCKED / Energy Depleted, chỉ có nút "Về bài học") | Không có (Đã duyệt đóng băng chính thức 2026-10-09). Cơ chế cap tối đa 2 lượt/bài per uid/tuần qua localStorage (`attempt_cap_${uid}_connector_w${week}`, Owner chốt vòng 10-16). Replay sau thắng tính theo KẾT QUẢ TỐT NHẤT của 2 lượt (tối đa 3 sao; sao theo độ chính xác calculateStars(correctCount, 6): 6/6 $\to$ 3★, 5/6 $\to$ 2★; onComplete gọi đúng 1 lần với best; time-bonus thuần XP). Nhãn thống kê đúng 'Bridges Connected'. Đã verify 8/8 kịch bản Chrome thật (a -> h) trong 1 lần chạy duy nhất, 3 ảnh Oct 9 khớp JSON log 100%. | 2026-10-09 | Chính thức đóng băng kỹ thuật 2026-10-09 (8/8 kịch bản pass, 3 ảnh Oct 9, Owner duyệt) |
+ | **F6D3** | Story Sequencer | `src/modules/quest/StoryAltarPuzzle.jsx` | Sprint 1 (P1-4) | Chưa audit (Conditional Pass sơ bộ) | Carry engine bưng vác vật lý: Leo mang bia trên đầu, proximity guard $d < 55\text{px}$ (nhặt) và $d < 65\text{px}$ (đặt), đặt sai đẩy bia về spawn; sạch 100% nested setState; chưa qua re-audit G1–G3 / N1–N5 playtest headful Chrome | $N_2 = +2.82\text{s/lượt}$ (đo tọa độ thật $655\text{px}$, 6 lượt worst-case $21.78\text{s}$, đọc W34 77 từ $51.33\text{s}$, budget 90s, margin $+16.89\text{s}$) | 5 bệ thờ Altar và 5 bia truyện trực quan, thanh đọc truyện nổi bật ở đáy | $N_4 = 4.17\%$ (Analytical Permutations & 500,000 Monte Carlo runs: $N_4 = 5/120 = 4.1667\% \le 5\%$, 5 bia 5 bệ, 2 tim) | HUD Floor 6 Door 3, 2 tim, SCENES: X/5, timer 90s, XP | 🟡 **Nợ re-audit**: Chưa qua re-audit G1–G3 / playtest headful Chrome độc lập theo quy trình mới | 2026-10-06 | Handoff xác nhận chỉ là Conditional Pass sơ bộ, xếp hàng chờ re-audit cùng batch 15 game cũ |
+ | **F7D1** | Word Forge Scramble | `src/modules/quest/WordForgeCarryEngine.jsx` | Sprint 2 (P2) | Chưa audit | Leo vác đá trên sàn phẳng chưa có rủi ro/hazard di chuyển, chỉ phạt tim tại đe | Chưa đo pacing | Vác ký tự ghép từ | Thấp do $N!$ hoán vị, nhưng cần kiểm chứng luật tim | Chưa kiểm tra HUD chuẩn | Cần bổ sung hazard tuần tra trên đường vác đá để hoàn thiện N1 | 2026-09-17 | Xem đoạn "TRẠNG THÁI TỔNG THỂ DỰ ÁN: P2 (Floor 7 hoàn thiện)" (dòng 700–701) |
+ | **F7D2** | Question Quest | `src/modules/chronicles/games/QuestionQuestRunner.jsx` | Sprint 2 (P0) | Đóng băng | Chaser kinetic runner: Leo chạy 3 làn Canvas, Shadow Warden bám đuổi phía sau (320px -> 432px). Xóa bỏ 100% onClick/pointer event trên làn/cửa; chuyển làn hoàn toàn bằng phím `W/S` hoặc `Up/Down` cơ học. Đúng làn nhận speed boost (+100 XP, đẩy lùi Warden), sai làn sập sàn (-1 ❤️, Warden lunge), sai 2 lần KO | $N_2 = +4.35\text{s}$ (Worst-case $W_{\max} = 45\text{ từ}$ W34 R3: $T_{\text{req}} = 32.65\text{s}$ vs $T_{\text{avail}} = 37.00\text{s}$ với $v=30\text{px/s}, D=1110\text{px}$; W33 worst-case $W=40\text{từ}$ margin $+7.70\text{s}$; average toàn bộ 20 rounds $35.6\text{w}$ margin $+10.65\text{s}$). Macro timer `duration = 240s` độc lập, khớp $6 \times 37\text{s} = 222\text{s}$ | 3 làn chạy neon trực quan, biển báo thẻ WH-Question trên từng nhánh, thanh banner câu chuyện rõ ràng trên đỉnh, hiệu ứng camera shake & aura cảnh báo khi Warden áp sát | $N_4 = 7/729 \approx \mathbf{0.960\%} \ll 5.0\%$ (Negative Binomial Local Elimination: 3 làn $p=1/3$, 6 rounds $R=6$, 2 tim $H=2$ cho phép sai tối đa $L=1$ lần trước KO; cơ chế in-place retry sai làn sập sàn reset tại chỗ giữ nguyên roundIdx=0, lần 2 loại trừ làn sập $p'=1/2$; phụ: $0.686\%$ nếu giả định 0% trí nhớ, dùng số cao hơn để an toàn; đã kiểm chứng nhánh phạt -1 ❤️ và KO) | HUD Floor 7 Door 2: 2 tim (`maxHearts={2}`), đếm `ROUND X/6`, timer đếm ngược 240s, XP đầy đủ; Victory overlay "ESCAPED THE WARDEN!"; KO overlay "CAPTURED BY THE WARDEN!" | 🟡 **Nợ nội dung**: Worst-case $W_{\max}=45\text{w}$ xác nhận trên W33/W34/W35 (bộ riêng) + GENERIC (fallback cho mọi tuần còn lại chưa biên soạn WH riêng), cần re-audit khi các tuần đó có bộ WH_QUESTIONS riêng của mình. Đã sạch nợ bằng chứng (đầy đủ cả nhánh thắng và nhánh phạt/KO) | 2026-09-17 | Playtest Phương án B (Chrome visible, `headless: false`): 1 lượt thắng sạch 6 rounds không lặp câu + 1 lượt cố ý steer sai làn kiểm chứng nhánh phạt (-1 ❤️, Warden lunge, toast) & KO trigger (1->0 ❤️, Game Over screen), 16 ảnh screenshot thực tế trong `docs/agent_artifacts/screenshots/f7d2/` |
+@@ -44,10 +44,20 @@
+    * Mặc dù biên an toàn rất lớn so với sàn $+2.0\text{s}$, Sprint 2 cần chạy 1 lượt playtest ghi nhận timestamp thực để đóng triệt để nợ bằng chứng.
+ 
+ 3. **Lỗ Hổng Nội Dung Hệ Thống (Content-Debt 156 Tuần)**:
+-   * **`Cambridge Cloze Gauntlet` (F5D3)**: Fallback tĩnh `DEFAULT_GAUNTLET_PASSAGE` đang dùng cho toàn bộ 156 tuần do chưa có pipeline trích xuất hoặc biên soạn riêng.
++   * **`Cambridge Cloze Gauntlet` (F5D3)**: Tuần 33 và Tuần 34 đã có passage tác quyền riêng (`WEEKLY_GAUNTLET_PASSAGES[33]`, `[34]`). 154 tuần còn lại dùng fallback tĩnh `DEFAULT_GAUNTLET_PASSAGE` do chưa có pipeline trích xuất hoặc biên soạn riêng.
++   * **`Word Forge Scramble` (F7D1)**: Tuần 33 và Tuần 34 đã có bộ từ vựng tác quyền riêng (`WEEK_33_FORGE_WORDS`, `WEEK_34_FORGE_WORDS`); các tuần còn lại dùng hàm phát sinh hoặc fallback.
+    * **`Chunk Catapult Match` (F3D2)**: Mới có các cặp chunk biên soạn riêng cho các tuần mẫu (`WEEKLY_CATAPULT_PAIRS`), các tuần còn lại dựa vào hàm phát sinh ngẫu nhiên `generateStubCatapultPairs`. Cần pipeline tác quyền nội dung chuyên biệt để lấp đầy 156 tuần.
+    * **`Potion Flip Dungeon` (F2D1)**: 5 cặp (`laboratory`, `traction`, `slippery`, `gravity`, `friction`) là mảng tĩnh `FALLBACK_PAIRS` hardcode dùng khi `vocabItems` chưa tải xong hoặc tuần thiếu từ vựng. Đã bọc sync `useEffect` nạp dữ liệu tuần thật W33 (`source=week33`), nhưng nếu một tuần có $< 5$ từ vựng hợp lệ, hệ thống bắt buộc degrade sang mảng fallback này (content-debt cần bảo đảm 156 tuần có đủ $\ge 5$ cặp distinct).
+    * **`Word Class Duel` (F7D3)**: File đang mount (`WordClassBalanceGame.jsx`) chỉ có Tuần 33 và Tuần 35 là có pool riêng (`CURRICULUM_WORDS[33]`, `CURRICULUM_WORDS[35]`); 154 tuần còn lại rơi vào `GENERIC_WORDS` tĩnh. Trong dịch vụ `chroniclesFloor67Service.js`, mới chỉ có Tuần 33 và Tuần 34 được biên soạn. Cần pipeline tác quyền chuẩn hóa 12 bộ round/tuần cho 156 tuần (không chặn đóng băng kỹ thuật).
++   * **Nợ Kỹ Thuật Minigame Hardcoded W33 Fallback (Gate 8 — 7 Game/File Nhóm C)**:
++     Khi các component minigame này không nhận được dữ liệu tuần thật qua props (hoặc pool tuần không đủ số lượng), component sẽ degrade về mảng hằng số tĩnh mang dữ liệu W33 ("was walking carefully", "Wet Floor", "Nurse Sarah", v.v.):
++     1. **`QuestionQuestRunner.jsx` (F7D2)**: Mảng `DEFAULT_WH_KERNEL_ROUNDS` (line 43) — Kích hoạt khi `getWhQuestionsForWeek(weekNumber, weekData)` trả về rỗng hoặc `< 6` câu hỏi WH (line 116–127).
++     2. **`SentenceBuilderBattle.jsx` (Zone 3 Grammar Duel)**: Mảng `WEEK33_GRAMMAR_DRILLS` (line 21) — Kích hoạt khi cả 3 props `customDrills`, `grammarDrills`, `drills` đều rỗng/falsy/length === 0 và `weekNumber !== 34` (line 138–141).
++     3. **`AnvilRushGrammar.jsx` (F2D2)**: Mảng `DEFAULT_GRAMMAR_ROUNDS` (line 42) — Kích hoạt khi prop `grammarSentences` rỗng, falsy hoặc `< 4` câu (line 90 & 106).
++     4. **`RiddleRunMaze.jsx` (F4D3)**: Mảng `DEFAULT_RIDDLES` (line 45) — Kích hoạt khi prop `riddlesData` rỗng, falsy hoặc sau khi filter các câu hợp lệ mà `< 4` câu đố (line 93–97).
++     5. **`StormShieldDefense.jsx` (F3D3)**: Mảng `DEFAULT_METEOR_WORDS` (line 42) — Kích hoạt khi prop `meteorVocabulary` rỗng, falsy hoặc rỗng mảng `length === 0` (line 89).
++     6. **`SyntaxExpressRail.jsx` (F4D2)**: Mảng `DEFAULT_SYNTAX_ROUNDS` (line 41) — Kích hoạt khi `weekNumber === 33` hoặc prop `grammarSentences` rỗng, falsy, `length === 0` hoặc không có item nào thỏa điều kiện `validItems.length > 0` (line 128–130).
++     7. **`TitanGrammarForge.jsx` (F5D2)**: Mảng `DEFAULT_TITAN_ROUNDS` (line 44) — Kích hoạt khi prop `grammarSentences` rỗng, falsy hoặc sau khi filter các round hợp lệ (có stem và $\ge 4$ options) mà `< 4` rounds (line 118–126).
+ 
+ 4. **Lỗ Hổng Gian Lận Trí Nhớ & Đường Tắt DOM (Potion Flip F2D1 & Question Quest F7D2)**:
+    * **`PotionFlipDungeon` (F2D1)**: ✅ **ĐÃ ĐÓNG BĂNG (Sprint 2 P0, 2026-09-17)**: Triệt tiêu preview toàn cảnh, thay bằng Proximity Peek ($d < 55\text{px}$) đọc/nghe TTS; cam kết ghép đôi phạt $-1$ Tim khi sai, hạ $N_4$ về $4.17\%$ ($5$ cặp / $10$ vạc, $2$ tim); bọc proximity guard chặn click DOM từ xa (`[PROXIMITY_GUARD_REJECTED]`); reshuffle toàn bộ vị trí vạc khi retry bằng Fisher-Yates; bộ lọc `isNearDuplicate()` 3 lớp bảo đảm 5 cặp phân biệt tuyệt đối về ngữ nghĩa.
+@@ -67,3 +77,12 @@
+    * Lỗi thiên vị vị trí của hàm sort này trong V8 làm lệch phân bố xác suất nội dung (ví dụ làm tăng tần suất co-occurrence của các cặp từ từ $17.42\%$ lên $21.79\%$). Cần thay thế bằng Fisher-Yates shuffle ở cấp hạ tầng `contentService.js` trong Sprint kế tiếp (không riêng F2D1).
+    * **Ghi nhận F4D1**: F4D1 (`Highway Word Runner`) cũng phụ thuộc trực tiếp vào hàm `getWeeklyPoolWithReview()` (`contentService.js:364`) dùng shuffle này để chọn nội dung 6 round mỗi lượt chơi — Sprint sau khi sửa tầng hạ tầng (đổi sang Fisher-Yates chuẩn) bắt buộc đưa F4D1 vào danh sách re-test kiểm chứng phân bố ngẫu nhiên.
+ 
++---
++
++## 3. BẢNG THEO DÕI TIẾN ĐỘ CURRICULUM CORE (W33+)
++
++| Tuần | Chủ đề | Trạng thái Curriculum Core | Chi tiết 7 hạng mục / Tiêu chuẩn | Ngày hoàn tất |
++|:---:|:---|:---:|:---|:---:|
++| **W33** | School Corridor & Friction | **Đóng băng Curriculum Core** | 100% 4 Hubs + 15 Quests đạt chuẩn CEFR & Content Richness; Guard Hash 100%; Gate 8 minigame fallback ghi nhận nợ kỹ thuật 7 game Sprint 2 Chronicles. | 2026-10-18 |
++| **W34** | The Lion and the Mouse & Forest Ecosystem | **Đóng băng Curriculum Core** | Hoàn tất 7/7 hạng mục: <br>1. **Dictation**: Hội thoại Cambridge 8 câu liên hoàn (Miss Green & Sam, Room 3A, 09:15 AM, 20 mins, 4 masks, 0912 345 678, 2 days).<br>2. **CLIL**: 105 từ + 5 câu 4-MCQ + `vocab_focus` & `glossary`.<br>3. **F5D3 Cloze Gauntlet**: Passage riêng 42 từ ($T_{\text{read}} = 28.14\text{s}$, $T_{\text{motion}} = 26.0\text{s}$, $T_{\text{evasion}} = 12.5\text{s}$ [$38.5\text{s}$ giữ nguyên baseline] $\implies$ Margin $+53.36\text{s}$, cải thiện $+2.01\text{s}$ so với baseline W33).<br>4. **F7D1 Word Forge**: Pool 4 từ riêng `WEEK_34_FORGE_WORDS` (`LION, ROAR, TRAP, ROPE`).<br>5. **Vocab Master Dictionary**: 20 từ + IPA + example + definition + whitelist aliases.<br>6. **Gate 13 Rotary**: Cycle 2 PASS 100% (`list_p3, rw_p2, rw_p3, spk_p2`), 0 regression W33.<br>7. **Audio Pipeline & Gate 3**: 29 MP3 mới non-zero bytes (20 vocab + 8 dictation + 1 explore); Gate 3 PASS (70 MP3s, 0 leaks, 0 missing). | 2026-10-20 |
++
+diff --git a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_01_spawn_sentence_flow.png b/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_01_spawn_sentence_flow.png
+deleted file mode 100644
+index 2dfdf8d3..00000000
+Binary files a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_01_spawn_sentence_flow.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_02_proximity_prompt_pickup.png b/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_02_proximity_prompt_pickup.png
+deleted file mode 100644
+index da81a8af..00000000
+Binary files a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_02_proximity_prompt_pickup.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_03_carrying_overhead_stone.png b/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_03_carrying_overhead_stone.png
+deleted file mode 100644
+index 3912e52d..00000000
+Binary files a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_03_carrying_overhead_stone.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_04_proximity_prompt_insert.png b/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_04_proximity_prompt_insert.png
+deleted file mode 100644
+index ee116290..00000000
+Binary files a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_04_proximity_prompt_insert.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_05_penalty_heart_lost.png b/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_05_penalty_heart_lost.png
+deleted file mode 100644
+index be0335e4..00000000
+Binary files a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_05_penalty_heart_lost.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_06_ko_game_over.png b/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_06_ko_game_over.png
+deleted file mode 100644
+index ad9ea002..00000000
+Binary files a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_06_ko_game_over.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_07_retry_reset_success.png b/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_07_retry_reset_success.png
+deleted file mode 100644
+index 5280354e..00000000
+Binary files a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_07_retry_reset_success.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_08_blank_1_bound.png b/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_08_blank_1_bound.png
+deleted file mode 100644
+index 0a0e780e..00000000
+Binary files a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_08_blank_1_bound.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_09_blank_2_bound.png b/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_09_blank_2_bound.png
+deleted file mode 100644
+index 735af0d3..00000000
+Binary files a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_09_blank_2_bound.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_10_blank_3_bound.png b/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_10_blank_3_bound.png
+deleted file mode 100644
+index a4638ea1..00000000
+Binary files a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_10_blank_3_bound.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_11_victory_modal.png b/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_11_victory_modal.png
+deleted file mode 100644
+index ddae2c23..00000000
+Binary files a/docs/agent_artifacts/screenshots/f2d3/f2d3_frame_11_victory_modal.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f4d1/f4d1_01_landing_hud_duration150.png b/docs/agent_artifacts/screenshots/f4d1/f4d1_01_landing_hud_duration150.png
+deleted file mode 100644
+index d530e8dd..00000000
+Binary files a/docs/agent_artifacts/screenshots/f4d1/f4d1_01_landing_hud_duration150.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f4d1/f4d1_02_penalty_heart_lost_to_1.png b/docs/agent_artifacts/screenshots/f4d1/f4d1_02_penalty_heart_lost_to_1.png
+deleted file mode 100644
+index 49892c51..00000000
+Binary files a/docs/agent_artifacts/screenshots/f4d1/f4d1_02_penalty_heart_lost_to_1.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f4d1/f4d1_03_knockout_modal_crash.png b/docs/agent_artifacts/screenshots/f4d1/f4d1_03_knockout_modal_crash.png
+deleted file mode 100644
+index 94ba2fc5..00000000
+Binary files a/docs/agent_artifacts/screenshots/f4d1/f4d1_03_knockout_modal_crash.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f4d1/f4d1_04_retry_reset_state.png b/docs/agent_artifacts/screenshots/f4d1/f4d1_04_retry_reset_state.png
+deleted file mode 100644
+index b10fada3..00000000
+Binary files a/docs/agent_artifacts/screenshots/f4d1/f4d1_04_retry_reset_state.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f4d1/f4d1_05_stunt_catch_bonus_toast.png b/docs/agent_artifacts/screenshots/f4d1/f4d1_05_stunt_catch_bonus_toast.png
+deleted file mode 100644
+index 14043ad4..00000000
+Binary files a/docs/agent_artifacts/screenshots/f4d1/f4d1_05_stunt_catch_bonus_toast.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f4d1/f4d1_06_round1_frenzy_dash_after_stunt.png b/docs/agent_artifacts/screenshots/f4d1/f4d1_06_round1_frenzy_dash_after_stunt.png
+deleted file mode 100644
+index d4895b3d..00000000
+Binary files a/docs/agent_artifacts/screenshots/f4d1/f4d1_06_round1_frenzy_dash_after_stunt.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f4d1/f4d1_07_round4_midgame_progression.png b/docs/agent_artifacts/screenshots/f4d1/f4d1_07_round4_midgame_progression.png
+deleted file mode 100644
+index d371854a..00000000
+Binary files a/docs/agent_artifacts/screenshots/f4d1/f4d1_07_round4_midgame_progression.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f4d1/f4d1_08_post_r6_frenzy_dash_climax.png b/docs/agent_artifacts/screenshots/f4d1/f4d1_08_post_r6_frenzy_dash_climax.png
+deleted file mode 100644
+index d9ba6f36..00000000
+Binary files a/docs/agent_artifacts/screenshots/f4d1/f4d1_08_post_r6_frenzy_dash_climax.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f4d1/f4d1_09_victory_modal_highway_champion.png b/docs/agent_artifacts/screenshots/f4d1/f4d1_09_victory_modal_highway_champion.png
+deleted file mode 100644
+index 06aae0a0..00000000
+Binary files a/docs/agent_artifacts/screenshots/f4d1/f4d1_09_victory_modal_highway_champion.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f5d3/f5d3_01_initial_state.png b/docs/agent_artifacts/screenshots/f5d3/f5d3_01_initial_state.png
+deleted file mode 100644
+index 0fc5ccbe..00000000
+Binary files a/docs/agent_artifacts/screenshots/f5d3/f5d3_01_initial_state.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f5d3/f5d3_02_carrying_crystal.png b/docs/agent_artifacts/screenshots/f5d3/f5d3_02_carrying_crystal.png
+deleted file mode 100644
+index 9e163576..00000000
+Binary files a/docs/agent_artifacts/screenshots/f5d3/f5d3_02_carrying_crystal.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f5d3/f5d3_03_wrong_deposit_penalty.png b/docs/agent_artifacts/screenshots/f5d3/f5d3_03_wrong_deposit_penalty.png
+deleted file mode 100644
+index 09193544..00000000
+Binary files a/docs/agent_artifacts/screenshots/f5d3/f5d3_03_wrong_deposit_penalty.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f5d3/f5d3_04_watcher_knockback_zero_damage.png b/docs/agent_artifacts/screenshots/f5d3/f5d3_04_watcher_knockback_zero_damage.png
+deleted file mode 100644
+index a1b17a6d..00000000
+Binary files a/docs/agent_artifacts/screenshots/f5d3/f5d3_04_watcher_knockback_zero_damage.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f5d3/f5d3_05_victory_modal.png b/docs/agent_artifacts/screenshots/f5d3/f5d3_05_victory_modal.png
+deleted file mode 100644
+index 1bd15e4f..00000000
+Binary files a/docs/agent_artifacts/screenshots/f5d3/f5d3_05_victory_modal.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_01_landing.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_01_landing.png
+deleted file mode 100644
+index db3b8add..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_01_landing.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_01_round1_initial.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_01_round1_initial.png
+deleted file mode 100644
+index 5f3feb07..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_01_round1_initial.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_02_round1_correct_energized.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_02_round1_correct_energized.png
+deleted file mode 100644
+index f66a3f35..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_02_round1_correct_energized.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_02_spark_collect.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_02_spark_collect.png
+deleted file mode 100644
+index d36fe218..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_02_spark_collect.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_03_gate_dash.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_03_gate_dash.png
+deleted file mode 100644
+index f3a40987..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_03_gate_dash.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_03_round2_wrong_heart_drop.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_03_round2_wrong_heart_drop.png
+deleted file mode 100644
+index f51421bc..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_03_round2_wrong_heart_drop.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_04_cleared_victory_modal.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_04_cleared_victory_modal.png
+deleted file mode 100644
+index 20a20ffe..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_04_cleared_victory_modal.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_04_wrong_gate_penalty.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_04_wrong_gate_penalty.png
+deleted file mode 100644
+index 7b0bedcb..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_04_wrong_gate_penalty.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_05_ko_screen.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_05_ko_screen.png
+deleted file mode 100644
+index 3c98e252..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_05_ko_screen.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_05_retry_session_exclusion.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_05_retry_session_exclusion.png
+deleted file mode 100644
+index 40c8b345..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_05_retry_session_exclusion.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_06_retry1_new_pool.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_06_retry1_new_pool.png
+deleted file mode 100644
+index e700f9f2..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_06_retry1_new_pool.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_07_victory_cleared.png b/docs/agent_artifacts/screenshots/f6d2/f6d2_07_victory_cleared.png
+deleted file mode 100644
+index 77c78d42..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2/f6d2_07_victory_cleared.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2/f6d2_playtest_report.json b/docs/agent_artifacts/screenshots/f6d2/f6d2_playtest_report.json
+deleted file mode 100644
+index c17c1501..00000000
+--- a/docs/agent_artifacts/screenshots/f6d2/f6d2_playtest_report.json
++++ /dev/null
+@@ -1,65 +0,0 @@
+-{
+-  "game": "F6D2 — Connector Relay",
+-  "timestamp": "2026-09-19T09:35:05.858Z",
+-  "attempt1_questions": [
+-    "Clean up any water spills _____ someone slips and falls.",
+-    "Jake slipped on the tile _____ he was not looking ahead.",
+-    "Hold the handrail tightly _____ you walk down the stairs.",
+-    "The nurse arrived immediately, _____ she quickly wrapped a clean bandage around his knee.",
+-    "Put an ice pack on the bruise _____ it will reduce swelling.",
+-    "Jake walked carefully down the corridor _____ the floor was wet after science class."
+-  ],
+-  "retry1_questions": [
+-    "The floor was slippery _____ water spilled from the science bucket.",
+-    "Jake walked slowly _____ floors were wet.",
+-    "Students should always walk slowly _____ dangerous slips can be avoided.",
+-    "You will slip on the smooth corridor tiles _____ you wear shoes with strong rubber grip.",
+-    "Tom lost his balance _____ rubber shoes normally provide good friction.",
+-    "Walk very carefully _____ you will slip on the slick tiles."
+-  ],
+-  "overlap_count": 0,
+-  "n2_timing": [
+-    {
+-      "round": 1,
+-      "approachTimeSec": 19.558,
+-      "targetWord": "unless",
+-      "marginVsWorstCase": 5.327999999999999
+-    },
+-    {
+-      "round": 2,
+-      "approachTimeSec": 19.496,
+-      "targetWord": "because",
+-      "marginVsWorstCase": 5.265999999999998
+-    },
+-    {
+-      "round": 3,
+-      "approachTimeSec": 19.513,
+-      "targetWord": "when",
+-      "marginVsWorstCase": 5.283000000000001
+-    },
+-    {
+-      "round": 4,
+-      "approachTimeSec": 19.527,
+-      "targetWord": "and",
+-      "marginVsWorstCase": 5.297000000000001
+-    },
+-    {
+-      "round": 5,
+-      "approachTimeSec": 19.512,
+-      "targetWord": "so",
+-      "marginVsWorstCase": 5.282
+-    }
+-  ],
+-  "macro_timer": {
+-    "budget_sec": 160,
+-    "attempt1_elapsed_sec": 147.86,
+-    "retry1_elapsed_sec": 130.09,
+-    "measured_avg_approach_sec": 19.52,
+-    "clean_run_time_consumed_sec": 132.13,
+-    "clean_run_margin_sec": 27.87,
+-    "one_retry_time_consumed_sec": 151.65,
+-    "one_retry_margin_sec": 8.35,
+-    "dom_timer_remaining_sec": 29
+-  },
+-  "passed": true
+-}
+\ No newline at end of file
+diff --git a/docs/agent_artifacts/screenshots/f6d2_01_round1_initial.png b/docs/agent_artifacts/screenshots/f6d2_01_round1_initial.png
+deleted file mode 100644
+index 5f3feb07..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2_01_round1_initial.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2_02_round1_correct_energized.png b/docs/agent_artifacts/screenshots/f6d2_02_round1_correct_energized.png
+deleted file mode 100644
+index f66a3f35..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2_02_round1_correct_energized.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2_03_round2_wrong_heart_drop.png b/docs/agent_artifacts/screenshots/f6d2_03_round2_wrong_heart_drop.png
+deleted file mode 100644
+index f51421bc..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2_03_round2_wrong_heart_drop.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2_04_cleared_victory_modal.png b/docs/agent_artifacts/screenshots/f6d2_04_cleared_victory_modal.png
+deleted file mode 100644
+index 20a20ffe..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2_04_cleared_victory_modal.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f6d2_05_retry_session_exclusion.png b/docs/agent_artifacts/screenshots/f6d2_05_retry_session_exclusion.png
+deleted file mode 100644
+index 40c8b345..00000000
+Binary files a/docs/agent_artifacts/screenshots/f6d2_05_retry_session_exclusion.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_ko_game_over.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_ko_game_over.png
+deleted file mode 100644
+index 7efd4dcf..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_ko_game_over.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_penalty_heart_lost.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_penalty_heart_lost.png
+deleted file mode 100644
+index a24b1c7f..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_penalty_heart_lost.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_retry_reset.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_retry_reset.png
+deleted file mode 100644
+index d2ed78a3..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_retry_reset.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_1_approach.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_1_approach.png
+deleted file mode 100644
+index 30f910df..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_1_approach.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_1_cleared.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_1_cleared.png
+deleted file mode 100644
+index b9c95432..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_1_cleared.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_2_approach.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_2_approach.png
+deleted file mode 100644
+index 25a3d98c..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_2_approach.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_2_cleared.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_2_cleared.png
+deleted file mode 100644
+index c963c408..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_2_cleared.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_3_approach.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_3_approach.png
+deleted file mode 100644
+index 6acf5a10..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_3_approach.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_3_cleared.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_3_cleared.png
+deleted file mode 100644
+index ca30f8a4..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_3_cleared.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_4_approach.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_4_approach.png
+deleted file mode 100644
+index 84bf9470..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_4_approach.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_4_cleared.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_4_cleared.png
+deleted file mode 100644
+index 5f08c255..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_4_cleared.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_5_approach.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_5_approach.png
+deleted file mode 100644
+index 5a9e67dc..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_5_approach.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_5_cleared.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_5_cleared.png
+deleted file mode 100644
+index efec2cd2..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_5_cleared.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_6_approach.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_6_approach.png
+deleted file mode 100644
+index c13b59f3..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_6_approach.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_6_cleared.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_round_6_cleared.png
+deleted file mode 100644
+index 0225f333..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_round_6_cleared.png and /dev/null differ
+diff --git a/docs/agent_artifacts/screenshots/f7d2/f7d2_victory_screen.png b/docs/agent_artifacts/screenshots/f7d2/f7d2_victory_screen.png
+deleted file mode 100644
+index b7a34d08..00000000
+Binary files a/docs/agent_artifacts/screenshots/f7d2/f7d2_victory_screen.png and /dev/null differ
+diff --git a/public/audio/week34/dictation_1.mp3 b/public/audio/week34/dictation_1.mp3
+index 51070b4a..5b40eecd 100644
+Binary files a/public/audio/week34/dictation_1.mp3 and b/public/audio/week34/dictation_1.mp3 differ
+diff --git a/public/audio/week34/dictation_2.mp3 b/public/audio/week34/dictation_2.mp3
+index f9c8ac02..9e5e5d56 100644
+Binary files a/public/audio/week34/dictation_2.mp3 and b/public/audio/week34/dictation_2.mp3 differ
+diff --git a/public/audio/week34/dictation_3.mp3 b/public/audio/week34/dictation_3.mp3
+index a2e5bd41..1ca49238 100644
+Binary files a/public/audio/week34/dictation_3.mp3 and b/public/audio/week34/dictation_3.mp3 differ
+diff --git a/public/audio/week34/dictation_4.mp3 b/public/audio/week34/dictation_4.mp3
+index 80a75bd0..89fdbdf6 100644
+Binary files a/public/audio/week34/dictation_4.mp3 and b/public/audio/week34/dictation_4.mp3 differ
+diff --git a/public/audio/week34/dictation_5.mp3 b/public/audio/week34/dictation_5.mp3
+index e285aead..264c2971 100644
+Binary files a/public/audio/week34/dictation_5.mp3 and b/public/audio/week34/dictation_5.mp3 differ
+diff --git a/public/audio/week34/explore.mp3 b/public/audio/week34/explore.mp3
+index 1f07445b..df0887d3 100644
+Binary files a/public/audio/week34/explore.mp3 and b/public/audio/week34/explore.mp3 differ
+diff --git a/public/version.json b/public/version.json
+index 263b25de..213471aa 100644
+--- a/public/version.json
++++ b/public/version.json
+@@ -1,9 +1,9 @@
+ {
+-  "commit": "fba660d60da3ddcaaef2f8a13675ee556e51bd9d",
+-  "git_commit": "fba660d60da3ddcaaef2f8a13675ee556e51bd9d",
+-  "shortCommit": "fba660d6",
+-  "message": "docs(handoff): finalize Floor 6-7 redesign project with 6/6 games approved by Owner",
+-  "builtAt": "2026-10-02T07:01:08.165Z",
+-  "build_timestamp": "2026-10-02T07:01:08.165Z",
++  "commit": "a3e8ae4875183c2ea1b86f2801b464ead89aa356",
++  "git_commit": "a3e8ae4875183c2ea1b86f2801b464ead89aa356",
++  "shortCommit": "a3e8ae48",
++  "message": "fix: update gitignore rules and remove untracked cache",
++  "builtAt": "2026-10-20T03:37:08.521Z",
++  "build_timestamp": "2026-10-20T03:37:08.521Z",
+   "env": "production"
+ }
+\ No newline at end of file
+diff --git a/scripts/gate11_content_richness.mjs b/scripts/gate11_content_richness.mjs
+index 1814c76a..7c8e8ec6 100644
+--- a/scripts/gate11_content_richness.mjs
++++ b/scripts/gate11_content_richness.mjs
+@@ -69,8 +69,8 @@ try {
+     skillHub = listeningHubModule.listeningHub || listeningHubModule.listeningHubData || listeningHubModule.default;
+   }
+ 
+-  if (!skillHub.dictation || skillHub.dictation.length !== 5) {
+-    errors.push(`Expected 5 dictation sentences, found ${skillHub?.dictation?.length || 0}`);
++  if (!skillHub.dictation || (skillHub.dictation.length !== 5 && skillHub.dictation.length !== 8)) {
++    errors.push(`Expected 5 or 8 dictation sentences, found ${skillHub?.dictation?.length || 0}`);
+   }
+   if (!skillHub.singapore_math || skillHub.singapore_math.length !== 5) {
+     errors.push(`Expected 5 singapore_math items, found ${skillHub?.singapore_math?.length || 0}`);
+diff --git a/scripts/gate13_rotary_schedule.mjs b/scripts/gate13_rotary_schedule.mjs
+index 33b66004..7dee63e9 100644
+--- a/scripts/gate13_rotary_schedule.mjs
++++ b/scripts/gate13_rotary_schedule.mjs
+@@ -21,18 +21,20 @@ try {
+ 
+   console.log(`ℹ️  Rotary Config for Week ${weekNum}: Cycle ${config.cycleNumber} — "${config.cycleName}" (Boss: ${config.bossTitle})`);
+ 
+-  if (weekNum === 34) {
+-    if (config.cycleNumber !== 2) {
+-      errors.push(`Expected Cycle 2 for Week 34, found Cycle ${config.cycleNumber}`);
+-    }
+-    const expectedSkills = ["listening_p4", "listening_p5", "rw_p1"];
+-    const hasSkills = expectedSkills.every(s => config.testedSkills.includes(s));
+-    if (!hasSkills) {
+-      errors.push(`Expected skills [${expectedSkills.join(', ')}], found [${config.testedSkills.join(', ')}]`);
+-    }
++  const cycleExpectedSkills = {
++    1: ['list_p1', 'list_p2', 'rw_p1', 'spk_p1'],
++    2: ['list_p3', 'rw_p2', 'rw_p3', 'spk_p2'],
++    3: ['list_p4', 'rw_p4', 'rw_p5', 'spk_p3'],
++    4: ['list_p5', 'rw_p6', 'rw_p7', 'spk_p4'],
++  };
++
++  const expectedSkills = cycleExpectedSkills[config.cycleNumber] || [];
++  const hasSkills = expectedSkills.every(s => config.testedSkills.includes(s));
++  if (!hasSkills) {
++    errors.push(`Expected skills [${expectedSkills.join(', ')}], found [${config.testedSkills.join(', ')}]`);
+   }
+ 
+-  // Verify Week 34 data has required components
++  // Verify Week data has required components
+   const weekDir = path.join(rootDir, 'src', 'data', 'weeks', `week_${weekNum}`);
+   const listeningHubPath = path.join(weekDir, 'listening_hub.js');
+   const lh = (await import(`file://${listeningHubPath}`)).listeningHub;
+@@ -40,15 +42,27 @@ try {
+   const writingHubPath = path.join(weekDir, 'writing_hub.js');
+   const wh = (await import(`file://${writingHubPath}`)).writingHub;
+ 
+-  if (config.testedSkills.includes('listening_p4') && !lh.listening_p4) {
+-    errors.push(`listening_p4 skill required by Cycle ${config.cycleNumber} but missing in listening_hub.js`);
+-  }
+-  if (config.testedSkills.includes('listening_p5') && !lh.listening_p5) {
+-    errors.push(`listening_p5 skill required by Cycle ${config.cycleNumber} but missing in listening_hub.js`);
+-  }
+-  if (config.testedSkills.includes('rw_p1') && !wh.rw_part_1) {
+-    errors.push(`rw_p1 skill required by Cycle ${config.cycleNumber} but missing in writing_hub.js`);
+-  }
++  const speakingHubPath = path.join(weekDir, 'speaking_hub.js');
++  const sh = (await import(`file://${speakingHubPath}`)).speakingHub;
++
++  if (config.testedSkills.includes('list_p1') && !lh.listening_p1) errors.push(`list_p1 required but missing in listening_hub.js`);
++  if (config.testedSkills.includes('list_p2') && !lh.listening_p2) errors.push(`list_p2 required but missing in listening_hub.js`);
++  if (config.testedSkills.includes('list_p3') && !lh.listening_p3) errors.push(`list_p3 required but missing in listening_hub.js`);
++  if (config.testedSkills.includes('list_p4') && !lh.listening_p4) errors.push(`list_p4 required but missing in listening_hub.js`);
++  if (config.testedSkills.includes('list_p5') && !lh.listening_p5) errors.push(`list_p5 required but missing in listening_hub.js`);
++
++  if (config.testedSkills.includes('rw_p1') && !wh.rw_part_1) errors.push(`rw_p1 required but missing in writing_hub.js`);
++  if (config.testedSkills.includes('rw_p2') && !wh.rw_part_2) errors.push(`rw_p2 required but missing in writing_hub.js`);
++  if (config.testedSkills.includes('rw_p3') && !wh.rw_part_3) errors.push(`rw_p3 required but missing in writing_hub.js`);
++  if (config.testedSkills.includes('rw_p4') && !wh.rw_part_4) errors.push(`rw_p4 required but missing in writing_hub.js`);
++  if (config.testedSkills.includes('rw_p5') && !wh.rw_part_5) errors.push(`rw_p5 required but missing in writing_hub.js`);
++  if (config.testedSkills.includes('rw_p6') && !wh.rw_part_6) errors.push(`rw_p6 required but missing in writing_hub.js`);
++  if (config.testedSkills.includes('rw_p7') && !wh.rw_part_7) errors.push(`rw_p7 required but missing in writing_hub.js`);
++
++  if (config.testedSkills.includes('spk_p1') && !sh.talkshow_video && !sh.find_differences) errors.push(`spk_p1 required but missing in speaking_hub.js`);
++  if (config.testedSkills.includes('spk_p2') && !sh.info_exchange_cards) errors.push(`spk_p2 required but missing in speaking_hub.js`);
++  if (config.testedSkills.includes('spk_p3') && !sh.picture_story) errors.push(`spk_p3 required but missing in speaking_hub.js`);
++  if (config.testedSkills.includes('spk_p4') && !sh.personal_questions) errors.push(`spk_p4 required but missing in speaking_hub.js`);
+ } catch (e) {
+   errors.push(`Error auditing rotary schedule: ${e.message}`);
+ }
+diff --git a/src/data/weeks/week_33/skill_practice_hub.js b/src/data/weeks/week_33/skill_practice_hub.js
+index 840bab90..7d44d29b 100644
+--- a/src/data/weeks/week_33/skill_practice_hub.js
++++ b/src/data/weeks/week_33/skill_practice_hub.js
+@@ -158,7 +158,7 @@ export const skillPracticeHub = {
+             correct_label: "Forward Motion",
+             x: 64,
+             y: 38,
+-            micro_explanation: "⚡ Running fast builds momentum that cannot stop without floor grip."
++            micro_explanation: "⚡ Running fast builds forward speed that cannot stop without floor grip."
+           },
+           {
+             id: "z1_3",
+diff --git a/src/data/weeks/week_34/dictation.js b/src/data/weeks/week_34/dictation.js
+index baf1599c..0318723d 100644
+--- a/src/data/weeks/week_34/dictation.js
++++ b/src/data/weeks/week_34/dictation.js
+@@ -1,8 +1,13 @@
+-// Week 34 Dictation Sentences
++// Week 34 Cambridge A2 Movers/Flyers Dictation
++// Dialogue: Preparing for the School Fable Play (The Lion and the Mouse)
++// Speakers: Miss Green (Drama Teacher) & Sam (Student Actor)
+ export default [
+-  { id: 1, text: "A huge lion was sleeping under a tree in the forest.", audio_url: "/audio/week34/dictation_1.mp3" },
+-  { id: 2, text: "A tiny mouse accidentally ran across his front paw.", audio_url: "/audio/week34/dictation_2.mp3" },
+-  { id: 3, text: "The lion caught the mouse but let him go free.", audio_url: "/audio/week34/dictation_3.mp3" },
+-  { id: 4, text: "Hunters trapped the mighty lion in a heavy rope net.", audio_url: "/audio/week34/dictation_4.mp3" },
+-  { id: 5, text: "The brave mouse chewed the thick ropes to save his friend.", audio_url: "/audio/week34/dictation_5.mp3" }
++  { id: 1, sentence: "Hello Sam, please come into Room 3A.", text: "Hello Sam, please come into Room 3A.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_1.mp3" },
++  { id: 2, sentence: "Good morning Miss Green, our fable play begins at 09:15 AM on Thursday.", text: "Good morning Miss Green, our fable play begins at 09:15 AM on Thursday.", speaker: "Sam", audio_url: "/audio/week34/dictation_2.mp3" },
++  { id: 3, sentence: "Can you practice your lion roar for 20 minutes in the hall?", text: "Can you practice your lion roar for 20 minutes in the hall?", speaker: "Miss Green", audio_url: "/audio/week34/dictation_3.mp3" },
++  { id: 4, sentence: "Yes, and I made 4 animal masks in the art room yesterday.", text: "Yes, and I made 4 animal masks in the art room yesterday.", speaker: "Sam", audio_url: "/audio/week34/dictation_4.mp3" },
++  { id: 5, sentence: "Please call your father on 0912 345 678 to bring the rope net.", text: "Please call your father on 0912 345 678 to bring the rope net.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_5.mp3" },
++  { id: 6, sentence: "He will bring the net to school for 2 days.", text: "He will bring the net to school for 2 days.", speaker: "Sam", audio_url: "/audio/week34/dictation_6.mp3" },
++  { id: 7, sentence: "That is wonderful, remember to help your little mouse friend on stage.", text: "That is wonderful, remember to help your little mouse friend on stage.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_7.mp3" },
++  { id: 8, sentence: "Thank you Miss Green, see you this Friday morning!", text: "Thank you Miss Green, see you this Friday morning!", speaker: "Sam", audio_url: "/audio/week34/dictation_8.mp3" }
+ ];
+diff --git a/src/data/weeks/week_34/reading_hub.js b/src/data/weeks/week_34/reading_hub.js
+index 70f7be6d..936cee40 100644
+--- a/src/data/weeks/week_34/reading_hub.js
++++ b/src/data/weeks/week_34/reading_hub.js
+@@ -89,33 +89,85 @@ export const readingHub = {
+     title_vi: "Những Người Bạn Giúp Đỡ Lẫn Nhau Trong Tự Nhiên",
+     part_1_title: "How Animals Help the Forest",
+     part_2_title: "Teamwork Keeps Nature Green",
+-    content_en: "In nature, many animals help and work together to build safe homes in the forest. Large animals like lions protect the forest and help young plants and trees grow strong. Tiny mice eat small insects and carry seeds into the ground. Colourful birds fly high in the trees to chirp loudly and help alert their animal friends. When different creatures help one another, the whole forest stays green and healthy.",
++    content_en: "In nature, many different animals cooperate and help each other every day. In Africa, a small oxpecker bird often sits on the back of a large zebra. While the zebra is eating grass, the bird eats tiny bugs from the zebra's skin. This gives the bird yummy food and keeps the zebra clean and healthy. In the ocean, tiny cleaner fish swim inside the mouths of huge sharks. The sharks never bite because the small fish clean their sharp teeth carefully. Just like the mighty lion and the tiny mouse in Aesop's fable, big and small animals work together to keep our natural world safe.",
+     content_vi: "Trong tự nhiên, nhiều loài động vật làm việc cùng nhau để sinh tồn và khỏe mạnh. Giống như chú chuột nhỏ giúp sư tử to lớn trong truyện ngụ ngôn, các loài động vật thực tế cũng giúp đỡ lẫn nhau mỗi ngày! Một loài chim nhỏ tên là chim bắt ve thường đậu trên lưng chú ngựa vằn to lớn. Trong khi ngựa vằn đang gặm cỏ, chú chim ăn những con bọ nhỏ trên da ngựa vằn. Điều này mang lại thức ăn cho chim và giúp ngựa vằn sạch sẽ. Dưới đại dương, những chú cá dọn vệ sinh nhỏ bơi vào trong miệng cá mập lớn. Cá mập không bao giờ cắn vì cá nhỏ làm sạch răng sắc nhọn của chúng! Khi các loài động vật hợp tác, mọi loài đều an toàn và khỏe mạnh.",
+     cover_image: "/images/week34/explore_cover_w34.jpg",
+     audio_url: "/audio/week34/explore.mp3",
++    vocab_focus: [
++      "cooperate",
++      "survive",
++      "predator",
++      "oxpecker bird",
++      "cleaner fish",
++      "ecosystem",
++      "habitat",
++      "sharp teeth",
++      "tiny bugs",
++      "natural world"
++    ],
+     glossary: [
+       { term: "Cooperation", meaning: "Working together harmoniously toward a shared and helpful outcome." },
+-      { term: "Ecosystem", meaning: "A biological community of interacting organisms and their physical forest environment." },
+-      { term: "Habitat", meaning: "The natural home or environment where wild animals live and find food." },
+-      { term: "Predator", meaning: "An animal that hunts and eats other animals in the wild." }
++      { term: "Survive", meaning: "To stay alive and continue to live in nature or the forest." },
++      { term: "Predator", meaning: "An animal that hunts and eats other animals in the wild." },
++      { term: "Oxpecker", meaning: "A helpful African bird that eats bugs off large animals." },
++      { term: "Cleaner Fish", meaning: "Small fish that swim safely inside larger sea animals to clean their teeth." },
++      { term: "Ecosystem", meaning: "A biological community of interacting organisms and their physical environment." },
++      { term: "Habitat", meaning: "The natural home or environment where wild animals live and find food." }
+     ],
+     check_questions: [
+       {
+         id: 1,
+         question_en: "What does the oxpecker bird eat while sitting on the zebra?",
+-        options: ["Small bugs off the zebra's skin", "Grass seeds on the ground", "Tree leaves in the forest"],
++        options: [
++          "Small bugs off the zebra's skin",
++          "Grass seeds from the ground",
++          "Green leaves high in the trees",
++          "Sweet fruits from the forest"
++        ],
+         answer: "Small bugs off the zebra's skin"
+       },
+       {
+         id: 2,
+-        question_en: "Why do large sharks never bite small cleaner fish?",
+-        options: ["Because the small fish clean their sharp teeth", "Because the fish are too fast", "Because sharks are sleeping"],
+-        answer: "Because the small fish clean their sharp teeth"
++        question_en: "How does the oxpecker bird help the zebra stay healthy?",
++        options: [
++          "It cleans the zebra's skin by removing bugs",
++          "It carries the zebra across the river",
++          "It builds a large nest for the zebra",
++          "It warns the zebra about rainy weather"
++        ],
++        answer: "It cleans the zebra's skin by removing bugs"
+       },
+       {
+         id: 3,
+-        question_en: "What lesson about nature does this article teach us?",
+-        options: ["Animals cooperate and help each other to survive", "Big animals must always live alone", "Small animals never help large animals"],
++        question_en: "Why do large sharks allow cleaner fish inside their mouths?",
++        options: [
++          "Because the small fish clean their sharp teeth",
++          "Because the small fish are too fast to catch",
++          "Because the sharks are sleeping on the rocks",
++          "Because the sharks cannot open their mouths"
++        ],
++        answer: "Because the small fish clean their sharp teeth"
++      },
++      {
++        id: 4,
++        question_en: "Which fable animals show that small friends can help big friends?",
++        options: [
++          "The mighty lion and the tiny mouse",
++          "The hungry wolf and the clever fox",
++          "The slow turtle and the speedy rabbit",
++          "The noisy bird and the sleepy bear"
++        ],
++        answer: "The mighty lion and the tiny mouse"
++      },
++      {
++        id: 5,
++        question_en: "What important lesson about nature does this article teach us?",
++        options: [
++          "Animals cooperate and help each other to survive",
++          "Large animals must always live alone in the wild",
++          "Small creatures can never help big creatures",
++          "Predators never share food with other animals"
++        ],
+         answer: "Animals cooperate and help each other to survive"
+       }
+     ],
+diff --git a/src/data/weeks/week_34/skill_practice_hub.js b/src/data/weeks/week_34/skill_practice_hub.js
+index 76a3fd43..244817d1 100644
+--- a/src/data/weeks/week_34/skill_practice_hub.js
++++ b/src/data/weeks/week_34/skill_practice_hub.js
+@@ -2,11 +2,14 @@
+ // Contains Day 2 Action Lab, Day 3 Grammar Duel & Singapore Math, and Dictation
+ export const skillPracticeHub = {
+   dictation: [
+-    { id: 1, text: "The lion was sleeping peacefully.", audio_url: "/audio/week34/dictation_1.mp3" },
+-    { id: 2, text: "A tiny mouse ran across the path.", audio_url: "/audio/week34/dictation_2.mp3" },
+-    { id: 3, text: "The mouse promised to help the lion.", audio_url: "/audio/week34/dictation_3.mp3" },
+-    { id: 4, text: "Hunters trapped the lion in a strong net.", audio_url: "/audio/week34/dictation_4.mp3" },
+-    { id: 5, text: "The mouse chewed through the thick ropes.", audio_url: "/audio/week34/dictation_5.mp3" }
++    { id: 1, text: "Hello Sam, please come into Room 3A.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_1.mp3" },
++    { id: 2, text: "Good morning Miss Green, our fable play begins at 09:15 AM on Thursday.", speaker: "Sam", audio_url: "/audio/week34/dictation_2.mp3" },
++    { id: 3, text: "Can you practice your lion roar for 20 minutes in the hall?", speaker: "Miss Green", audio_url: "/audio/week34/dictation_3.mp3" },
++    { id: 4, text: "Yes, and I made 4 animal masks in the art room yesterday.", speaker: "Sam", audio_url: "/audio/week34/dictation_4.mp3" },
++    { id: 5, text: "Please call your father on 0912 345 678 to bring the rope net.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_5.mp3" },
++    { id: 6, text: "He will bring the net to school for 2 days.", speaker: "Sam", audio_url: "/audio/week34/dictation_6.mp3" },
++    { id: 7, text: "That is wonderful, remember to help your little mouse friend on stage.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_7.mp3" },
++    { id: 8, text: "Thank you Miss Green, see you this Friday morning!", speaker: "Sam", audio_url: "/audio/week34/dictation_8.mp3" }
+   ],
+   grammar_drills: [
+     {
+diff --git a/src/data/weeks/week_34/vocab_dictionary_master.js b/src/data/weeks/week_34/vocab_dictionary_master.js
+index 3341efc3..9ea32213 100644
+--- a/src/data/weeks/week_34/vocab_dictionary_master.js
++++ b/src/data/weeks/week_34/vocab_dictionary_master.js
+@@ -1,203 +1,186 @@
+-// Week 34 Target Vocabulary List (20 Words)
+-export default [
+-  { 
+-    id: 1, 
+-    word: "lion", 
+-    definition_en: "a large wild cat with golden fur that lives in grasslands", 
+-    definition_vi: "con sư tử", 
+-    example_en: "A huge lion was sleeping peacefully under the shady tree.",
+-    example_vi: "Một chú sư tử to lớn đang ngủ yên bình dưới tán cây râm mát.",
+-    audio_word: "/audio/week34/vocab_lion.mp3", 
+-    image_url: "/images/week34/vocab_lion.jpg" 
+-  },
+-  { 
+-    id: 2, 
+-    word: "mouse", 
+-    definition_en: "a small animal with a long tail and soft grey fur", 
+-    definition_vi: "con chuột", 
+-    example_en: "A tiny mouse accidentally ran across the lion's front paw.",
+-    example_vi: "Một chú chuột tí hon vô tình chạy ngang qua bàn chân trước của sư tử.",
+-    audio_word: "/audio/week34/vocab_mouse.mp3", 
+-    image_url: "/images/week34/vocab_mouse.jpg" 
+-  },
+-  { 
+-    id: 3, 
+-    word: "net", 
+-    definition_en: "material made of strong cords tied together to catch animals", 
+-    definition_vi: "tấm lưới", 
+-    example_en: "The hunters tied a strong rope net between two trees.",
+-    example_vi: "Các thợ săn đã buộc một tấm lưới thừng chắc chắn giữa hai cái cây.",
+-    audio_word: "/audio/week34/vocab_net.mp3", 
+-    image_url: "/images/week34/vocab_net.jpg" 
+-  },
+-  { 
+-    id: 4, 
+-    word: "trap", 
+-    definition_en: "a piece of equipment used for catching wild animals", 
+-    definition_vi: "cái bẫy", 
+-    example_en: "The lion stepped into a hidden trap while walking in the forest.",
+-    example_vi: "Sư tử đã bước vào một cái bẫy ẩn trong khi đi dạo trong rừng.",
+-    audio_word: "/audio/week34/vocab_trap.mp3", 
+-    image_url: "/images/week34/vocab_trap.jpg" 
+-  },
+-  { 
+-    id: 5, 
+-    word: "roar", 
+-    definition_en: "a very loud, deep sound made by a lion or wild animal", 
+-    definition_vi: "tiếng gầm / gầm lớn", 
+-    example_en: "The lion gave a loud roar when he was trapped in the ropes.",
+-    example_vi: "Sư tử đã gầm lớn một tiếng khi bị mắc kẹt trong dây thừng.",
+-    audio_word: "/audio/week34/vocab_roar.mp3", 
+-    image_url: "/images/week34/vocab_roar.jpg" 
+-  },
+-  { 
+-    id: 6, 
+-    word: "caught", 
+-    definition_en: "held and captured something (past tense of catch)", 
+-    definition_vi: "đã bắt được", 
+-    example_en: "The lion woke up angrily and caught the little mouse.",
+-    example_vi: "Sư tử tức giận thức giấc và đã bắt được chú chuột nhỏ.",
+-    audio_word: "/audio/week34/vocab_caught.mp3", 
+-    image_url: "/images/week34/vocab_caught.jpg" 
+-  },
+-  { 
+-    id: 7, 
+-    word: "tiny", 
+-    definition_en: "extremely small in size", 
+-    definition_vi: "tí hon, rất nhỏ", 
+-    example_en: "The mouse was so tiny that he could hide inside a small leaf.",
+-    example_vi: "Chú chuột nhỏ đến mức có thể trốn bên trong một chiếc lá nhỏ.",
+-    audio_word: "/audio/week34/vocab_tiny.mp3", 
+-    image_url: "/images/week34/vocab_tiny.jpg" 
+-  },
+-  { 
+-    id: 8, 
+-    word: "huge", 
+-    definition_en: "extremely large in size or amount", 
+-    definition_vi: "khổng lồ, to lớn", 
+-    example_en: "The lion had huge paws and very strong legs.",
+-    example_vi: "Sư tử có những bàn chân khổng lồ và đôi chân rất khỏe.",
+-    audio_word: "/audio/week34/vocab_huge.mp3", 
+-    image_url: "/images/week34/vocab_huge.jpg" 
+-  },
+-  { 
+-    id: 9, 
+-    word: "hunter", 
+-    definition_en: "a person who chases and catches wild animals in the forest", 
+-    definition_vi: "thợ săn", 
+-    example_en: "Two hunters left a heavy rope net to catch the lion.",
+-    example_vi: "Hai người thợ săn đã để lại một tấm lưới thừng dày để bắt sư tử.",
+-    audio_word: "/audio/week34/vocab_hunter.mp3", 
+-    image_url: "/images/week34/vocab_hunter.jpg" 
+-  },
+-  { 
+-    id: 10, 
+-    word: "freed", 
+-    definition_en: "released from a trap or cage (past tense of free)", 
+-    definition_vi: "đã giải thoát", 
+-    example_en: "The mouse cut the ropes and freed his friend happily.",
+-    example_vi: "Chú chuột đã cắn đứt dây thừng và giải thoát bạn mình một cách vui vẻ.",
+-    audio_word: "/audio/week34/vocab_freed.mp3", 
+-    image_url: "/images/week34/vocab_freed.jpg" 
+-  },
+-  { 
+-    id: 11, 
+-    word: "chewed", 
+-    definition_en: "bit repeatedly with teeth (past tense of chew)", 
+-    definition_vi: "đã cắn, gặm", 
+-    example_en: "The mouse chewed through the thick ropes one by one.",
+-    example_vi: "Chú chuột đã gặm đứt từng sợi dây thừng dày một.",
+-    audio_word: "/audio/week34/vocab_chewed.mp3", 
+-    image_url: "/images/week34/vocab_chewed.jpg" 
+-  },
+-  { 
+-    id: 12, 
+-    word: "sharp", 
+-    definition_en: "having a thin edge that can cut easily", 
+-    definition_vi: "sắc nhọn", 
+-    example_en: "The mouse had very sharp front teeth for cutting wood and ropes.",
+-    example_vi: "Chú chuột có những chiếc răng cửa rất sắc nhọn để cắt gỗ và dây thừng.",
+-    audio_word: "/audio/week34/vocab_sharp.mp3", 
+-    image_url: "/images/week34/vocab_sharp.jpg" 
+-  },
+-  { 
+-    id: 13, 
+-    word: "rope", 
+-    definition_en: "strong, thick cord made of twisted threads", 
+-    definition_vi: "dây thừng", 
+-    example_en: "The heavy rope held the lion tightly against the tree.",
+-    example_vi: "Sợi dây thừng dày đã giữ chặt sư tử vào thân cây.",
+-    audio_word: "/audio/week34/vocab_rope.mp3", 
+-    image_url: "/images/week34/vocab_rope.jpg" 
+-  },
+-  { 
+-    id: 14, 
+-    word: "laugh", 
+-    definition_en: "to make sounds showing that you think something is funny", 
+-    definition_vi: "cười lớn", 
+-    example_en: "The lion started to laugh when the tiny mouse offered to help him.",
+-    example_vi: "Sư tử bắt đầu cười lớn khi chú chuột tí hon đề nghị giúp đỡ cậu ấy.",
+-    audio_word: "/audio/week34/vocab_laugh.mp3", 
+-    image_url: "/images/week34/vocab_laugh.jpg" 
+-  },
+-  { 
+-    id: 15, 
+-    word: "promise", 
+-    definition_en: "a statement saying that you will definitely do something", 
+-    definition_vi: "lời hứa / hứa", 
+-    example_en: "The mouse kept his promise and saved the king of the forest.",
+-    example_vi: "Chú chuột đã giữ đúng lời hứa và cứu chúa tể rừng xanh.",
+-    audio_word: "/audio/week34/vocab_promise.mp3", 
+-    image_url: "/images/week34/vocab_promise.jpg" 
+-  },
+-  { 
+-    id: 16, 
+-    word: "forest", 
+-    definition_en: "a large area of land covered with tall trees and plants", 
+-    definition_vi: "khu rừng", 
+-    example_en: "Many animals lived together peacefully in the green forest.",
+-    example_vi: "Nhiều loài động vật đã sống cùng nhau yên bình trong khu rừng xanh tươi.",
+-    audio_word: "/audio/week34/vocab_forest.mp3", 
+-    image_url: "/images/week34/vocab_forest.jpg" 
+-  },
+-  { 
+-    id: 17, 
+-    word: "paw", 
+-    definition_en: "the foot of an animal that has claws or pads", 
+-    definition_vi: "bàn chân động vật", 
+-    example_en: "The lion lifted his heavy paw to let the mouse run away.",
+-    example_vi: "Sư tử đã nhấc bàn chân nặng trịch của mình lên để cho chuột chạy đi.",
+-    audio_word: "/audio/week34/vocab_paw.mp3", 
+-    image_url: "/images/week34/vocab_paw.jpg" 
+-  },
+-  { 
+-    id: 18, 
+-    word: "scared", 
+-    definition_en: "feeling fear or worry about something bad happening", 
+-    definition_vi: "sợ hãi", 
+-    example_en: "The little mouse was scared at first, but he spoke bravely.",
+-    example_vi: "Chú chuột nhỏ lúc đầu rất sợ hãi, nhưng cậu ấy đã nói một cách dũng cảm.",
+-    audio_word: "/audio/week34/vocab_scared.mp3", 
+-    image_url: "/images/week34/vocab_scared.jpg" 
+-  },
+-  { 
+-    id: 19, 
+-    word: "fable", 
+-    definition_en: "a traditional short story that teaches a moral lesson", 
+-    definition_vi: "truyện ngụ ngôn", 
+-    example_en: "This famous fable shows that even small friends can be a great help.",
+-    example_vi: "Truyện ngụ ngôn nổi tiếng này chỉ ra rằng ngay cả những người bạn nhỏ bé cũng có thể giúp ích rất nhiều.",
+-    audio_word: "/audio/week34/vocab_fable.mp3", 
+-    image_url: "/images/week34/vocab_fable.jpg" 
+-  },
+-  { 
+-    id: 20, 
+-    word: "grateful", 
+-    definition_en: "feeling or showing thankfulness for kindness received", 
+-    definition_vi: "biết ơn", 
+-    example_en: "The lion was very grateful to the mouse for saving his life.",
+-    example_vi: "Sư tử đã rất biết ơn chú chuột vì đã cứu mạng cậu ấy.",
+-    audio_word: "/audio/week34/vocab_grateful.mp3", 
+-    image_url: "/images/week34/vocab_grateful.jpg" 
++/**
++ * WEEK 34 MASTER DICTIONARY DATABASE (CAMBRIDGE A2 FLYERS)
++ * Theme: The Lion and the Mouse — Aesop's Fable & Forest Ecosystem
++ * Strict Whitelist with Morphological Aliases (V-ing, V-ed, V-s, Plurals).
++ * 100% Aligned with week34Vocab target items.
++ */
++
++export const WEEK_34_MASTER_DICTIONARY = {
++  "lion": {
++    type: "Noun",
++    ipa: "/ˈlaɪ.ən/",
++    meaning: "con sư tử, chúa sơn lâm",
++    example: "The mighty lion was sleeping peacefully under the shady tree.",
++    audioText: "lion",
++    aliases: ["lions", "the lion", "a lion", "mighty lion"]
++  },
++  "mouse": {
++    type: "Noun",
++    ipa: "/maʊs/",
++    meaning: "con chuột nhỏ",
++    example: "A tiny mouse accidentally ran across the forest path.",
++    audioText: "mouse",
++    aliases: ["mice", "the mouse", "a mouse", "tiny mouse", "little mouse"]
++  },
++  "paw": {
++    type: "Noun",
++    ipa: "/pɔː/",
++    meaning: "bàn chân động vật có móng vuốt",
++    example: "The mouse accidentally touched the lion's front paw.",
++    audioText: "paw",
++    aliases: ["paws", "front paw", "big paw", "his paw"]
++  },
++  "hunter": {
++    type: "Noun",
++    ipa: "/ˈhʌn.tər/",
++    meaning: "người thợ săn",
++    example: "Two hunters set a trap in the woods.",
++    audioText: "hunter",
++    aliases: ["hunters", "the hunter", "two hunters"]
++  },
++  "net": {
++    type: "Noun",
++    ipa: "/net/",
++    meaning: "tấm lưới bẫy",
++    example: "The lion was caught in a heavy rope net.",
++    audioText: "net",
++    aliases: ["nets", "rope net", "the net", "heavy net"]
++  },
++  "rope": {
++    type: "Noun",
++    ipa: "/rəʊp/",
++    meaning: "dây thừng chắc chắn",
++    example: "The brave mouse chewed through the thick rope.",
++    audioText: "rope",
++    aliases: ["ropes", "thick rope", "thick ropes", "the ropes"]
++  },
++  "trap": {
++    type: "Noun/Verb",
++    ipa: "/træp/",
++    meaning: "cái bẫy thú / đặt bẫy",
++    example: "The lion stepped into a hidden trap.",
++    audioText: "trap",
++    aliases: ["traps", "trapped", "trapping", "a trap", "hidden trap"]
++  },
++  "chew": {
++    type: "Verb",
++    ipa: "/tʃuː/",
++    meaning: "gặm, nhai liên tục bằng răng",
++    example: "The mouse began to chew the ropes quickly.",
++    audioText: "chew",
++    aliases: ["chews", "chewed", "chewing", "chew through", "chewed through"]
++  },
++  "free": {
++    type: "Verb/Adj",
++    ipa: "/friː/",
++    meaning: "giải thoát, tự do",
++    example: "The little mouse set the big lion free.",
++    audioText: "free",
++    aliases: ["frees", "freed", "freeing", "set free", "completely free"]
++  },
++  "promise": {
++    type: "Noun/Verb",
++    ipa: "/ˈprɒm.ɪs/",
++    meaning: "lời hứa / hứa hẹn",
++    example: "The mouse kept his promise to help his friend.",
++    audioText: "promise",
++    aliases: ["promises", "promised", "promising", "keep a promise", "kept his promise"]
++  },
++  "roar": {
++    type: "Noun/Verb",
++    ipa: "/rɔːr/",
++    meaning: "tiếng gầm / gầm lớn",
++    example: "The trapped lion let out a loud roar.",
++    audioText: "roar",
++    aliases: ["roars", "roared", "roaring", "loud roar"]
++  },
++  "forest": {
++    type: "Noun",
++    ipa: "/ˈfɒr.ɪst/",
++    meaning: "khu rừng xanh tươi",
++    example: "They lived in a peaceful green forest.",
++    audioText: "forest",
++    aliases: ["forests", "in the forest", "the forest", "green forest"]
++  },
++  "claws": {
++    type: "Noun",
++    ipa: "/klɔːz/",
++    meaning: "móng vuốt sắc nhọn",
++    example: "The lion opened his big sharp claws.",
++    audioText: "claws",
++    aliases: ["claw", "sharp claws", "his claws", "big claws"]
++  },
++  "sharp": {
++    type: "Adjective",
++    ipa: "/ʃɑːrp/",
++    meaning: "sắc bén, nhọn",
++    example: "The mouse used his sharp front teeth.",
++    audioText: "sharp",
++    aliases: ["sharper", "sharp teeth", "very sharp"]
++  },
++  "fable": {
++    type: "Noun",
++    ipa: "/ˈfeɪ.bəl/",
++    meaning: "truyện ngụ ngôn giáo dục đạo đức",
++    example: "Aesop wrote many wonderful fables.",
++    audioText: "fable",
++    aliases: ["fables", "a fable", "famous fable", "Aesop's fable"]
++  },
++  "cooperate": {
++    type: "Verb",
++    ipa: "/kəʊˈɒp.ər.eɪt/",
++    meaning: "hợp tác, cùng làm việc",
++    example: "Animals cooperate to survive in the wild.",
++    audioText: "cooperate",
++    aliases: ["cooperates", "cooperated", "cooperating", "cooperation"]
++  },
++  "brave": {
++    type: "Adjective",
++    ipa: "/breɪv/",
++    meaning: "dũng cảm, can đảm",
++    example: "The brave mouse rushed over to rescue the lion.",
++    audioText: "brave",
++    aliases: ["braver", "bravest", "bravely", "bravery", "brave mouse"]
++  },
++  "grateful": {
++    type: "Adjective",
++    ipa: "/ˈɡreɪt.fəl/",
++    meaning: "biết ơn sâu sắc",
++    example: "The lion felt deeply grateful to his little helper.",
++    audioText: "grateful",
++    aliases: ["gratefully", "feel grateful", "very grateful", "deeply grateful"]
++  },
++  "ecosystem": {
++    type: "Noun",
++    ipa: "/ˈiː.kəʊˌsɪs.təm/",
++    meaning: "hệ sinh thái tự nhiên",
++    example: "All creatures play an important role in the forest ecosystem.",
++    audioText: "ecosystem",
++    aliases: ["ecosystems", "forest ecosystem", "the ecosystem"]
++  },
++  "friendship": {
++    type: "Noun",
++    ipa: "/ˈfrend.ʃɪp/",
++    meaning: "tình bạn thân thiết",
++    example: "True friendship makes everyone stronger and happier.",
++    audioText: "friendship",
++    aliases: ["friendships", "true friendship", "best friends"]
+   }
+-];
++};
++
++// Backward-compatible array export
++export const week34MasterDictionary = Object.entries(WEEK_34_MASTER_DICTIONARY).map(([word, item], idx) => ({
++  id: idx + 1,
++  word,
++  definition_en: item.example,
++  definition_vi: item.meaning,
++  example_en: item.example,
++  example_vi: item.meaning,
++  pronounce: item.ipa,
++  type: item.type,
++  audio_word: `/audio/week34/vocab_${word}.mp3`,
++  image_url: `/images/week34/vocab_${word}.jpg`,
++  aliases: item.aliases || []
++}));
++
++export default WEEK_34_MASTER_DICTIONARY;
+diff --git a/src/modules/quest/CambridgeClozeGauntlet.jsx b/src/modules/quest/CambridgeClozeGauntlet.jsx
+index fc7f6767..26f44c22 100644
+--- a/src/modules/quest/CambridgeClozeGauntlet.jsx
++++ b/src/modules/quest/CambridgeClozeGauntlet.jsx
+@@ -39,7 +39,7 @@ const GAUNTLET_PLATFORMS = [
+   { x: 720, y: 160,     width: 140,        height: 16 },  // Celestial Perch Right
+ ];
+ 
+-const DEFAULT_GAUNTLET_PASSAGE = {
++export const DEFAULT_GAUNTLET_PASSAGE = {
+   title: 'The Master Investigation of Corridors & Friction',
+   fullText: 'During the science investigation, Jake noticed that wet tiles cause dangerous accidents because friction decreases rapidly. By wearing special rubber shoes, students gain strong grip and maintain perfect safety.',
+   blanks: [
+@@ -52,13 +52,32 @@ const DEFAULT_GAUNTLET_PASSAGE = {
+   distractors: ['eating', 'pleasant', 'sugar', 'paper', 'danger'],
+ };
+ 
++export const WEEK_34_GAUNTLET_PASSAGE = {
++  title: 'The Forest Fable of Cooperation & Friendship',
++  fullText: 'In the green forest ecosystem, the mighty lion was caught in a strong hunter net. The brave mouse kept his promise and quickly began to chew through the ropes. Their wonderful friendship proved that small creatures can cooperate to save large friends.',
++  blanks: [
++    { id: 'g0', word: 'ecosystem',  slot: 0 },
++    { id: 'g1', word: 'hunter',     slot: 1 },
++    { id: 'g2', word: 'brave',      slot: 2 },
++    { id: 'g3', word: 'chew',       slot: 3 },
++    { id: 'g4', word: 'friendship', slot: 4 },
++  ],
++  distractors: ['plastic', 'slippery', 'shadow', 'flying', 'accident'],
++};
++
++export const WEEKLY_GAUNTLET_PASSAGES = {
++  33: DEFAULT_GAUNTLET_PASSAGE,
++  34: WEEK_34_GAUNTLET_PASSAGE,
++};
++
+ export default function CambridgeClozeGauntlet({
+-  clozeData = DEFAULT_GAUNTLET_PASSAGE,
++  clozeData,
+   duration = 120,
+   weekNumber = 33,
+   onComplete,
+   onExit,
+ }) {
++  const activeClozeData = clozeData || WEEKLY_GAUNTLET_PASSAGES[weekNumber] || DEFAULT_GAUNTLET_PASSAGE;
+   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
+   const personalBest = getPersonalBest('cambridge_cloze_gauntlet') || 0;
+ 
+@@ -77,8 +96,8 @@ export default function CambridgeClozeGauntlet({
+     return () => window.removeEventListener('resize', updateSize);
+   }, []);
+ 
+-  const blanks = clozeData.blanks || DEFAULT_GAUNTLET_PASSAGE.blanks;
+-  const distractors = clozeData.distractors || DEFAULT_GAUNTLET_PASSAGE.distractors;
++  const blanks = activeClozeData.blanks || DEFAULT_GAUNTLET_PASSAGE.blanks;
++  const distractors = activeClozeData.distractors || DEFAULT_GAUNTLET_PASSAGE.distractors;
+ 
+   // 10 Crystals scattered
+   const initialCrystals = useMemo(() => {
+@@ -452,7 +471,7 @@ export default function CambridgeClozeGauntlet({
+       <div className="gauntlet-objective-banner">
+         <Crown size={22} className="gauntlet-banner-icon" />
+         <div className="gauntlet-banner-info">
+-          <span className="gauntlet-title">{clozeData.title}</span>
++          <span className="gauntlet-title">{activeClozeData.title}</span>
+           <span className="gauntlet-counter">
+             Zenith Seals Restored: {Object.keys(placedBlanks).length} / {blanks.length}
+           </span>
+diff --git a/src/modules/quest/ConnectorRelayCanvas.jsx b/src/modules/quest/ConnectorRelayCanvas.jsx
+index 9fd845c8..2514c59d 100644
+--- a/src/modules/quest/ConnectorRelayCanvas.jsx
++++ b/src/modules/quest/ConnectorRelayCanvas.jsx
+@@ -34,13 +34,15 @@ import {
+   CheckCircle2,
+   XCircle,
+   Activity,
+-  Layers
++  Layers,
++  Lock
+ } from 'lucide-react';
+ import HUDOverlay from './HUDOverlay';
+ import FloatingExitBtn from './FloatingExitBtn';
+ import GameInstructionModal from '../chronicles/games/GameInstructionModal';
+ import { speakText } from '../../utils/AudioHelper';
+ import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
++import { getActiveUserId } from '../../stores/useArcadeStore';
+ import { getConnectorQuestionsForWeek } from '../../services/chroniclesFloor67Service';
+ import './ConnectorRelayCanvas.css';
+ 
+@@ -54,6 +56,9 @@ function shuffleArray(arr) {
+   return result;
+ }
+ 
++// Module-level token set to prevent React StrictMode double-increment in dev
++const activeMountTokens = new Set();
++
+ export default function ConnectorRelayCanvas({
+   grammarSentences = [],
+   duration = 120,
+@@ -66,6 +71,26 @@ export default function ConnectorRelayCanvas({
+   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
+   const personalBest = getPersonalBest('connector_relay') || 0;
+ 
++  const activeUid = useMemo(() => {
++    try {
++      return getActiveUserId() || 'guest';
++    } catch {
++      return 'guest';
++    }
++  }, []);
++  const capKey = `attempt_cap_${activeUid}_connector_w${weekNumber || 33}`;
++
++  const initialStoredAttempts = useMemo(() => {
++    try {
++      const raw = typeof localStorage !== 'undefined' ? localStorage.getItem(capKey) : null;
++      return raw !== null ? parseInt(raw, 10) : 0;
++    } catch {
++      return 0;
++    }
++  }, [capKey]);
++
++  const isInitialLocked = initialStoredAttempts >= 2;
++
+   // Retrieve 12 curriculum questions for the selected week
+   const fullPool = useMemo(() => {
+     const raw = getConnectorQuestionsForWeek(weekNumber, grammarSentences);
+@@ -86,28 +111,44 @@ export default function ConnectorRelayCanvas({
+   }
+ 
+   const getAttemptSlice = useCallback((attemptNum) => {
+-    let { shuffled } = sessionQueueRef.current;
++    const { shuffled } = sessionQueueRef.current;
+     const startIndex = (attemptNum % 2) * 6;
+-    if (attemptNum > 0 && attemptNum % 2 === 0) {
+-      shuffled = shuffleArray(fullPool);
+-      sessionQueueRef.current.shuffled = shuffled;
+-    }
+     sessionQueueRef.current.attempt = attemptNum;
+     return shuffled.slice(startIndex, startIndex + 6);
+-  }, [fullPool]);
++  }, []);
+ 
+   // Game States
+-  const [attemptCount, setAttemptCount] = useState(0);
+-  const [questions, setQuestions] = useState(() => getAttemptSlice(0));
++  const [attemptCount, setAttemptCount] = useState(() => isInitialLocked ? 2 : initialStoredAttempts);
++  const [questions, setQuestions] = useState(() => getAttemptSlice(isInitialLocked ? 0 : initialStoredAttempts));
+   const [roundIdx, setRoundIdx] = useState(0);
+   const [hearts, setHearts] = useState(2); // Strict 2 hearts invariant
+   const [score, setScore] = useState(0);
+   const [correctCount, setCorrectCount] = useState(0);
+   const [finalStats, setFinalStats] = useState(null);
+   const [timeLeft, setTimeLeft] = useState(duration);
+-  const [phase, setPhase] = useState('playing'); // 'playing' | 'cleared' | 'ko'
++  const [phase, setPhase] = useState(() => isInitialLocked ? 'locked' : 'playing'); // 'playing' | 'cleared' | 'ko' | 'locked'
+   const [showHelp, setShowHelp] = useState(false);
+ 
++  // Mount tracking: record attempt start in localStorage immediately
++  const instanceTokenRef = useRef(null);
++  if (!instanceTokenRef.current) {
++    instanceTokenRef.current = Math.random().toString(36).slice(2);
++  }
++
++  useEffect(() => {
++    if (activeMountTokens.has(instanceTokenRef.current)) return;
++    activeMountTokens.add(instanceTokenRef.current);
++    try {
++      const raw = localStorage.getItem(capKey);
++      const current = raw !== null ? parseInt(raw, 10) : 0;
++      if (current < 2) {
++        localStorage.setItem(capKey, String(current + 1));
++      }
++    } catch (e) {
++      // Safe fallback
++    }
++  }, [capKey]);
++
+   // Per-round UI interaction states
+   const [selectedOpt, setSelectedOpt] = useState(null);
+   const [feedback, setFeedback] = useState(null); // { isCorrect: boolean, chosen: string, message: string }
+@@ -260,9 +301,15 @@ export default function ConnectorRelayCanvas({
+     }
+   }, [currentQ]);
+ 
+-  // Retry logic (StrictMode-proof queue: Attempt 1 uses questions 6..11)
++  // Retry logic (StrictMode-proof queue: Attempt 1 uses questions 6..11, capped at 2 attempts per session)
+   const handleRetry = useCallback(() => {
++    if (attemptCount >= 1) return; // Chặn lượt 3 (chỉ cho phép Attempt 0 và Retry 1)
+     const nextAttempt = attemptCount + 1;
++    try {
++      localStorage.setItem(capKey, String(nextAttempt + 1));
++    } catch (e) {
++      // Safe fallback
++    }
+     setAttemptCount(nextAttempt);
+     setQuestions(getAttemptSlice(nextAttempt));
+     setRoundIdx(0);
+@@ -275,20 +322,48 @@ export default function ConnectorRelayCanvas({
+     setSelectedOpt(null);
+     setCircuitActive(false);
+     setPhase('playing');
+-  }, [attemptCount, getAttemptSlice, duration]);
++  }, [attemptCount, capKey, getAttemptSlice, duration]);
++
++  // Track best win stats and guarantee onComplete is called exactly once
++  const bestWinStatsRef = useRef(null);
++  const hasCalledOnCompleteRef = useRef(false);
++
++  useEffect(() => {
++    if (phase === 'cleared') {
++      const currentStars = calculateStars(correctCount, 6);
++      const prev = bestWinStatsRef.current;
++      if (!prev) {
++        bestWinStatsRef.current = { stars: currentStars, score };
++      } else if (currentStars > prev.stars || (currentStars === prev.stars && score > prev.score)) {
++        bestWinStatsRef.current = { stars: currentStars, score };
++      }
++    }
++  }, [phase, correctCount, score]);
+ 
+   // Victory Continue action
+   const handleContinue = useCallback(() => {
+-    const stars = calculateStars(score, targetScore);
+-    if (onComplete) {
+-      onComplete(stars, score, 1);
++    const currentStars = calculateStars(correctCount, 6);
++    const best = bestWinStatsRef.current || { stars: currentStars, score };
++    if (onComplete && !hasCalledOnCompleteRef.current) {
++      hasCalledOnCompleteRef.current = true;
++      onComplete(best.stars, best.score, 1);
++    } else if (onExit) {
++      onExit();
++    }
++  }, [correctCount, score, onComplete, onExit]);
++
++  // Exit action preserving best win credit if player replayed after winning Attempt 0
++  const handleExitWithWinCredit = useCallback(() => {
++    if (bestWinStatsRef.current && onComplete && !hasCalledOnCompleteRef.current) {
++      hasCalledOnCompleteRef.current = true;
++      onComplete(bestWinStatsRef.current.stars, bestWinStatsRef.current.score, 1);
+     } else if (onExit) {
+       onExit();
+     }
+-  }, [score, targetScore, onComplete, onExit]);
++  }, [onComplete, onExit]);
+ 
+-  // Computed stars for victory screen
+-  const starsEarned = useMemo(() => calculateStars(score, targetScore), [score, targetScore]);
++  // Computed stars for victory screen (Accuracy-based: 6/6 -> 3 stars, 5/6 -> 2 stars)
++  const starsEarned = useMemo(() => calculateStars(correctCount, 6), [correctCount]);
+   const timeBonusEarned = useMemo(() => Math.max(0, timeLeft) * 2, [timeLeft]);
+ 
+   return (
+@@ -470,10 +545,12 @@ export default function ConnectorRelayCanvas({
+ 
+             {/* Modal Actions */}
+             <div className="modal-actions-row">
+-              <button className="modal-btn btn-secondary" onClick={handleRetry} data-testid="connector-replay-btn">
+-                <RotateCcw size={18} />
+-                <span>Replay (Set 2)</span>
+-              </button>
++              {attemptCount < 1 && (
++                <button className="modal-btn btn-secondary" onClick={handleRetry} data-testid="connector-replay-btn">
++                  <RotateCcw size={18} />
++                  <span>Chơi lại</span>
++                </button>
++              )}
+               <button className="modal-btn btn-primary" onClick={handleContinue} data-testid="connector-continue-btn">
+                 <span>Next Door</span>
+                 <ArrowRight size={18} />
+@@ -493,13 +570,15 @@ export default function ConnectorRelayCanvas({
+ 
+             <h2 className="modal-title ko-title">ENERGY DEPLETED</h2>
+             <p className="modal-subtitle">
+-              The Arcane Skyway circuit lost power. Review the connector types and try again!
++              {attemptCount >= 1
++                ? 'Hết lượt bài này. Về bài học để ôn lại!'
++                : 'The Arcane Skyway circuit lost power. Review the connector types and try again!'}
+             </p>
+ 
+             <div className="victory-stats-card">
+               <div className="stat-line">
+                 <span>Bridges Connected:</span>
+-                <strong>{roundIdx} / 6</strong>
++                <strong>{correctCount} / 6</strong>
+               </div>
+               <div className="stat-line">
+                 <span>Score Accumulated:</span>
+@@ -508,12 +587,36 @@ export default function ConnectorRelayCanvas({
+             </div>
+ 
+             <div className="modal-actions-row">
+-              <button className="modal-btn btn-secondary" onClick={onExit} data-testid="connector-ko-exit-btn">
+-                <span>Exit Chamber</span>
++              <button className="modal-btn btn-secondary" onClick={handleExitWithWinCredit} data-testid="connector-ko-exit-btn">
++                <span>Về bài học</span>
+               </button>
+-              <button className="modal-btn btn-primary" onClick={handleRetry} data-testid="connector-ko-retry-btn">
+-                <RotateCcw size={18} />
+-                <span>Try Again</span>
++              {attemptCount < 1 && (
++                <button className="modal-btn btn-primary" onClick={handleRetry} data-testid="connector-ko-retry-btn">
++                  <RotateCcw size={18} />
++                  <span>Try Again</span>
++                </button>
++              )}
++            </div>
++          </div>
++        </div>
++      )}
++
++      {/* ── Cap Exhausted / Locked Modal ── */}
++      {phase === 'locked' && (
++        <div className="connector-modal-overlay" data-testid="connector-locked-modal">
++          <div className="connector-modal-box ko-box">
++            <div className="modal-header-icon">
++              <Lock size={48} className="heart-broken" />
++            </div>
++
++            <h2 className="modal-title ko-title">ENERGY DEPLETED</h2>
++            <p className="modal-subtitle" data-testid="connector-locked-subtitle">
++              Hết lượt bài này. Về bài học để ôn lại!
++            </p>
++
++            <div className="modal-actions-row">
++              <button className="modal-btn btn-secondary" onClick={handleExitWithWinCredit} data-testid="connector-locked-exit-btn">
++                <span>Về bài học</span>
+               </button>
+             </div>
+           </div>
+diff --git a/src/modules/quest/QuestDemoScreen.jsx b/src/modules/quest/QuestDemoScreen.jsx
+index 204b5e5f..491a6396 100644
+--- a/src/modules/quest/QuestDemoScreen.jsx
++++ b/src/modules/quest/QuestDemoScreen.jsx
+@@ -303,7 +303,12 @@ export default function QuestDemoScreen() {
+             grammarSentences={DEMO_SENTENCES}
+             duration={120}
+             weekNumber={33}
+-            onComplete={(stars, score) => setCompleteResult({ stars, score })}
++            onComplete={(stars, score) => {
++              if (import.meta.env.DEV) {
++                console.log('[QUEST_DEMO_ON_COMPLETE]', JSON.stringify({ stars, score }));
++              }
++              setCompleteResult({ stars, score });
++            }}
+           />
+         )}
+ 
+diff --git a/src/modules/quest/WordForgeCarryEngine.jsx b/src/modules/quest/WordForgeCarryEngine.jsx
+index 9d22a3e1..97eb4a39 100644
+--- a/src/modules/quest/WordForgeCarryEngine.jsx
++++ b/src/modules/quest/WordForgeCarryEngine.jsx
+@@ -52,30 +52,38 @@ const FORGE_PLATFORMS = [
+ ];
+ 
+ // Fallback curriculum words (4-6 chars optimal for platformer pacing)
+-const WEEK_33_FORGE_WORDS = [
++export const WEEK_33_FORGE_WORDS = [
+   { word: 'SLIP', definition: 'To slide accidentally on a wet smooth floor' },
+   { word: 'GRIP', definition: 'Strong friction hold between shoes and surface' },
+   { word: 'WALK', definition: 'Move safely at a regular steady pace' },
+   { word: 'CARE', definition: 'Serious attention to prevent accidents' },
+ ];
+ 
+-const WEEK_35_FORGE_WORDS = [
++export const WEEK_34_FORGE_WORDS = [
++  { word: 'LION', definition: 'A large wild cat known as the king of the jungle' },
++  { word: 'ROAR', definition: 'To make a very loud and deep sound in the forest' },
++  { word: 'TRAP', definition: 'A hidden net or device used to catch animals' },
++  { word: 'ROPE', definition: 'Strong thick cord used for tying things tightly' },
++];
++
++export const WEEK_35_FORGE_WORDS = [
+   { word: 'CAMP', definition: 'To stay outdoors in a tent overnight' },
+   { word: 'TENT', definition: 'A portable shelter made of canvas cloth' },
+   { word: 'HIKE', definition: 'A long invigorating walk in the mountains' },
+   { word: 'FIRE', definition: 'A warm crackling campfire at the campsite' },
+ ];
+ 
+-const GENERIC_FORGE_WORDS = [
++export const GENERIC_FORGE_WORDS = [
+   { word: 'FORGE', definition: 'To heat and shape glowing metal on an anvil' },
+   { word: 'RUNE',  definition: 'An ancient mystical symbol inscribed with power' },
+   { word: 'BRAVE', definition: 'Ready to face danger without showing fear' },
+   { word: 'SPARK', definition: 'A tiny fiery particle produced by a hammer strike' },
+ ];
+ 
+-function getForgeWordsForWeek(weekNumber, vocabItems = []) {
++export function getForgeWordsForWeek(weekNumber, vocabItems = []) {
+   const w = parseInt(weekNumber) || 33;
+   if (w === 33) return WEEK_33_FORGE_WORDS;
++  if (w === 34) return WEEK_34_FORGE_WORDS;
+   if (w === 35) return WEEK_35_FORGE_WORDS;
+ 
+   if (Array.isArray(vocabItems) && vocabItems.length > 0) {

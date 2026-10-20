@@ -52,30 +52,38 @@ const FORGE_PLATFORMS = [
 ];
 
 // Fallback curriculum words (4-6 chars optimal for platformer pacing)
-const WEEK_33_FORGE_WORDS = [
+export const WEEK_33_FORGE_WORDS = [
   { word: 'SLIP', definition: 'To slide accidentally on a wet smooth floor' },
   { word: 'GRIP', definition: 'Strong friction hold between shoes and surface' },
   { word: 'WALK', definition: 'Move safely at a regular steady pace' },
   { word: 'CARE', definition: 'Serious attention to prevent accidents' },
 ];
 
-const WEEK_35_FORGE_WORDS = [
+export const WEEK_34_FORGE_WORDS = [
+  { word: 'LION', definition: 'A large wild cat known as the king of the jungle' },
+  { word: 'ROAR', definition: 'To make a very loud and deep sound in the forest' },
+  { word: 'TRAP', definition: 'A hidden net or device used to catch animals' },
+  { word: 'ROPE', definition: 'Strong thick cord used for tying things tightly' },
+];
+
+export const WEEK_35_FORGE_WORDS = [
   { word: 'CAMP', definition: 'To stay outdoors in a tent overnight' },
   { word: 'TENT', definition: 'A portable shelter made of canvas cloth' },
   { word: 'HIKE', definition: 'A long invigorating walk in the mountains' },
   { word: 'FIRE', definition: 'A warm crackling campfire at the campsite' },
 ];
 
-const GENERIC_FORGE_WORDS = [
+export const GENERIC_FORGE_WORDS = [
   { word: 'FORGE', definition: 'To heat and shape glowing metal on an anvil' },
   { word: 'RUNE',  definition: 'An ancient mystical symbol inscribed with power' },
   { word: 'BRAVE', definition: 'Ready to face danger without showing fear' },
   { word: 'SPARK', definition: 'A tiny fiery particle produced by a hammer strike' },
 ];
 
-function getForgeWordsForWeek(weekNumber, vocabItems = []) {
+export function getForgeWordsForWeek(weekNumber, vocabItems = []) {
   const w = parseInt(weekNumber) || 33;
   if (w === 33) return WEEK_33_FORGE_WORDS;
+  if (w === 34) return WEEK_34_FORGE_WORDS;
   if (w === 35) return WEEK_35_FORGE_WORDS;
 
   if (Array.isArray(vocabItems) && vocabItems.length > 0) {

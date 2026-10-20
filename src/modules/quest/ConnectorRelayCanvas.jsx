@@ -34,13 +34,15 @@ import {
   CheckCircle2,
   XCircle,
   Activity,
-  Layers
+  Layers,
+  Lock
 } from 'lucide-react';
 import HUDOverlay from './HUDOverlay';
 import FloatingExitBtn from './FloatingExitBtn';
 import GameInstructionModal from '../chronicles/games/GameInstructionModal';
 import { speakText } from '../../utils/AudioHelper';
 import useChroniclesStore, { calculateStars } from '../../stores/useChroniclesStore';
+import { getActiveUserId } from '../../stores/useArcadeStore';
 import { getConnectorQuestionsForWeek } from '../../services/chroniclesFloor67Service';
 import './ConnectorRelayCanvas.css';
 
@@ -54,6 +56,9 @@ function shuffleArray(arr) {
   return result;
 }
 
+// Module-level token set to prevent React StrictMode double-increment in dev
+const activeMountTokens = new Set();
+
 export default function ConnectorRelayCanvas({
   grammarSentences = [],
   duration = 120,
@@ -65,6 +70,26 @@ export default function ConnectorRelayCanvas({
 }) {
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('connector_relay') || 0;
+
+  const activeUid = useMemo(() => {
+    try {
+      return getActiveUserId() || 'guest';
+    } catch {
+      return 'guest';
+    }
+  }, []);
+  const capKey = `attempt_cap_${activeUid}_connector_w${weekNumber || 33}`;
+
+  const initialStoredAttempts = useMemo(() => {
+    try {
+      const raw = typeof localStorage !== 'undefined' ? localStorage.getItem(capKey) : null;
+      return raw !== null ? parseInt(raw, 10) : 0;
+    } catch {
+      return 0;
+    }
+  }, [capKey]);
+
+  const isInitialLocked = initialStoredAttempts >= 2;
 
   // Retrieve 12 curriculum questions for the selected week
   const fullPool = useMemo(() => {
@@ -86,27 +111,43 @@ export default function ConnectorRelayCanvas({
   }
 
   const getAttemptSlice = useCallback((attemptNum) => {
-    let { shuffled } = sessionQueueRef.current;
+    const { shuffled } = sessionQueueRef.current;
     const startIndex = (attemptNum % 2) * 6;
-    if (attemptNum > 0 && attemptNum % 2 === 0) {
-      shuffled = shuffleArray(fullPool);
-      sessionQueueRef.current.shuffled = shuffled;
-    }
     sessionQueueRef.current.attempt = attemptNum;
     return shuffled.slice(startIndex, startIndex + 6);
-  }, [fullPool]);
+  }, []);
 
   // Game States
-  const [attemptCount, setAttemptCount] = useState(0);
-  const [questions, setQuestions] = useState(() => getAttemptSlice(0));
+  const [attemptCount, setAttemptCount] = useState(() => isInitialLocked ? 2 : initialStoredAttempts);
+  const [questions, setQuestions] = useState(() => getAttemptSlice(isInitialLocked ? 0 : initialStoredAttempts));
   const [roundIdx, setRoundIdx] = useState(0);
   const [hearts, setHearts] = useState(2); // Strict 2 hearts invariant
   const [score, setScore] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [finalStats, setFinalStats] = useState(null);
   const [timeLeft, setTimeLeft] = useState(duration);
-  const [phase, setPhase] = useState('playing'); // 'playing' | 'cleared' | 'ko'
+  const [phase, setPhase] = useState(() => isInitialLocked ? 'locked' : 'playing'); // 'playing' | 'cleared' | 'ko' | 'locked'
   const [showHelp, setShowHelp] = useState(false);
+
+  // Mount tracking: record attempt start in localStorage immediately
+  const instanceTokenRef = useRef(null);
+  if (!instanceTokenRef.current) {
+    instanceTokenRef.current = Math.random().toString(36).slice(2);
+  }
+
+  useEffect(() => {
+    if (activeMountTokens.has(instanceTokenRef.current)) return;
+    activeMountTokens.add(instanceTokenRef.current);
+    try {
+      const raw = localStorage.getItem(capKey);
+      const current = raw !== null ? parseInt(raw, 10) : 0;
+      if (current < 2) {
+        localStorage.setItem(capKey, String(current + 1));
+      }
+    } catch (e) {
+      // Safe fallback
+    }
+  }, [capKey]);
 
   // Per-round UI interaction states
   const [selectedOpt, setSelectedOpt] = useState(null);
@@ -260,9 +301,15 @@ export default function ConnectorRelayCanvas({
     }
   }, [currentQ]);
 
-  // Retry logic (StrictMode-proof queue: Attempt 1 uses questions 6..11)
+  // Retry logic (StrictMode-proof queue: Attempt 1 uses questions 6..11, capped at 2 attempts per session)
   const handleRetry = useCallback(() => {
+    if (attemptCount >= 1) return; // Chặn lượt 3 (chỉ cho phép Attempt 0 và Retry 1)
     const nextAttempt = attemptCount + 1;
+    try {
+      localStorage.setItem(capKey, String(nextAttempt + 1));
+    } catch (e) {
+      // Safe fallback
+    }
     setAttemptCount(nextAttempt);
     setQuestions(getAttemptSlice(nextAttempt));
     setRoundIdx(0);
@@ -275,20 +322,48 @@ export default function ConnectorRelayCanvas({
     setSelectedOpt(null);
     setCircuitActive(false);
     setPhase('playing');
-  }, [attemptCount, getAttemptSlice, duration]);
+  }, [attemptCount, capKey, getAttemptSlice, duration]);
+
+  // Track best win stats and guarantee onComplete is called exactly once
+  const bestWinStatsRef = useRef(null);
+  const hasCalledOnCompleteRef = useRef(false);
+
+  useEffect(() => {
+    if (phase === 'cleared') {
+      const currentStars = calculateStars(correctCount, 6);
+      const prev = bestWinStatsRef.current;
+      if (!prev) {
+        bestWinStatsRef.current = { stars: currentStars, score };
+      } else if (currentStars > prev.stars || (currentStars === prev.stars && score > prev.score)) {
+        bestWinStatsRef.current = { stars: currentStars, score };
+      }
+    }
+  }, [phase, correctCount, score]);
 
   // Victory Continue action
   const handleContinue = useCallback(() => {
-    const stars = calculateStars(score, targetScore);
-    if (onComplete) {
-      onComplete(stars, score, 1);
+    const currentStars = calculateStars(correctCount, 6);
+    const best = bestWinStatsRef.current || { stars: currentStars, score };
+    if (onComplete && !hasCalledOnCompleteRef.current) {
+      hasCalledOnCompleteRef.current = true;
+      onComplete(best.stars, best.score, 1);
     } else if (onExit) {
       onExit();
     }
-  }, [score, targetScore, onComplete, onExit]);
+  }, [correctCount, score, onComplete, onExit]);
 
-  // Computed stars for victory screen
-  const starsEarned = useMemo(() => calculateStars(score, targetScore), [score, targetScore]);
+  // Exit action preserving best win credit if player replayed after winning Attempt 0
+  const handleExitWithWinCredit = useCallback(() => {
+    if (bestWinStatsRef.current && onComplete && !hasCalledOnCompleteRef.current) {
+      hasCalledOnCompleteRef.current = true;
+      onComplete(bestWinStatsRef.current.stars, bestWinStatsRef.current.score, 1);
+    } else if (onExit) {
+      onExit();
+    }
+  }, [onComplete, onExit]);
+
+  // Computed stars for victory screen (Accuracy-based: 6/6 -> 3 stars, 5/6 -> 2 stars)
+  const starsEarned = useMemo(() => calculateStars(correctCount, 6), [correctCount]);
   const timeBonusEarned = useMemo(() => Math.max(0, timeLeft) * 2, [timeLeft]);
 
   return (
@@ -470,10 +545,12 @@ export default function ConnectorRelayCanvas({
 
             {/* Modal Actions */}
             <div className="modal-actions-row">
-              <button className="modal-btn btn-secondary" onClick={handleRetry} data-testid="connector-replay-btn">
-                <RotateCcw size={18} />
-                <span>Replay (Set 2)</span>
-              </button>
+              {attemptCount < 1 && (
+                <button className="modal-btn btn-secondary" onClick={handleRetry} data-testid="connector-replay-btn">
+                  <RotateCcw size={18} />
+                  <span>Chơi lại</span>
+                </button>
+              )}
               <button className="modal-btn btn-primary" onClick={handleContinue} data-testid="connector-continue-btn">
                 <span>Next Door</span>
                 <ArrowRight size={18} />
@@ -493,13 +570,15 @@ export default function ConnectorRelayCanvas({
 
             <h2 className="modal-title ko-title">ENERGY DEPLETED</h2>
             <p className="modal-subtitle">
-              The Arcane Skyway circuit lost power. Review the connector types and try again!
+              {attemptCount >= 1
+                ? 'Hết lượt bài này. Về bài học để ôn lại!'
+                : 'The Arcane Skyway circuit lost power. Review the connector types and try again!'}
             </p>
 
             <div className="victory-stats-card">
               <div className="stat-line">
                 <span>Bridges Connected:</span>
-                <strong>{roundIdx} / 6</strong>
+                <strong>{correctCount} / 6</strong>
               </div>
               <div className="stat-line">
                 <span>Score Accumulated:</span>
@@ -508,12 +587,36 @@ export default function ConnectorRelayCanvas({
             </div>
 
             <div className="modal-actions-row">
-              <button className="modal-btn btn-secondary" onClick={onExit} data-testid="connector-ko-exit-btn">
-                <span>Exit Chamber</span>
+              <button className="modal-btn btn-secondary" onClick={handleExitWithWinCredit} data-testid="connector-ko-exit-btn">
+                <span>Về bài học</span>
               </button>
-              <button className="modal-btn btn-primary" onClick={handleRetry} data-testid="connector-ko-retry-btn">
-                <RotateCcw size={18} />
-                <span>Try Again</span>
+              {attemptCount < 1 && (
+                <button className="modal-btn btn-primary" onClick={handleRetry} data-testid="connector-ko-retry-btn">
+                  <RotateCcw size={18} />
+                  <span>Try Again</span>
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── Cap Exhausted / Locked Modal ── */}
+      {phase === 'locked' && (
+        <div className="connector-modal-overlay" data-testid="connector-locked-modal">
+          <div className="connector-modal-box ko-box">
+            <div className="modal-header-icon">
+              <Lock size={48} className="heart-broken" />
+            </div>
+
+            <h2 className="modal-title ko-title">ENERGY DEPLETED</h2>
+            <p className="modal-subtitle" data-testid="connector-locked-subtitle">
+              Hết lượt bài này. Về bài học để ôn lại!
+            </p>
+
+            <div className="modal-actions-row">
+              <button className="modal-btn btn-secondary" onClick={handleExitWithWinCredit} data-testid="connector-locked-exit-btn">
+                <span>Về bài học</span>
               </button>
             </div>
           </div>

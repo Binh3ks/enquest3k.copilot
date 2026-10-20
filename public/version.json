@@ -1,9 +1,9 @@
 {
-  "commit": "fba660d60da3ddcaaef2f8a13675ee556e51bd9d",
-  "git_commit": "fba660d60da3ddcaaef2f8a13675ee556e51bd9d",
-  "shortCommit": "fba660d6",
-  "message": "docs(handoff): finalize Floor 6-7 redesign project with 6/6 games approved by Owner",
-  "builtAt": "2026-10-02T07:01:08.165Z",
-  "build_timestamp": "2026-10-02T07:01:08.165Z",
+  "commit": "a3e8ae4875183c2ea1b86f2801b464ead89aa356",
+  "git_commit": "a3e8ae4875183c2ea1b86f2801b464ead89aa356",
+  "shortCommit": "a3e8ae48",
+  "message": "fix: update gitignore rules and remove untracked cache",
+  "builtAt": "2026-10-20T03:37:08.521Z",
+  "build_timestamp": "2026-10-20T03:37:08.521Z",
   "env": "production"
 }

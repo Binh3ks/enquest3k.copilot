@@ -1,0 +1,146 @@
+{
+  "help": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "call": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "stop": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "watch": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "walk": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "light": {
+    "noun": "A1",
+    "verb": "A2"
+  },
+  "sleep": {
+    "noun": "A2",
+    "verb": "A1"
+  },
+  "care": {
+    "noun": "A2",
+    "verb": "A2"
+  },
+  "cook": {
+    "noun": "A2",
+    "verb": "A1"
+  },
+  "drink": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "smile": {
+    "noun": "A2",
+    "verb": "A2"
+  },
+  "rain": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "snow": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "dance": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "fish": {
+    "noun": "A1",
+    "verb": "A2"
+  },
+  "paint": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "play": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "change": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "plan": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "stay": {
+    "noun": "A2",
+    "verb": "A1"
+  },
+  "visit": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "taste": {
+    "noun": "A2",
+    "verb": "A2"
+  },
+  "work": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "look": {
+    "noun": "A2",
+    "verb": "A1"
+  },
+  "talk": {
+    "noun": "A2",
+    "verb": "A1"
+  },
+  "love": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "hope": {
+    "noun": "A2",
+    "verb": "A1"
+  },
+  "jump": {
+    "noun": "A2",
+    "verb": "A2"
+  },
+  "answer": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "question": {
+    "noun": "A1",
+    "verb": "A2"
+  },
+  "start": {
+    "noun": "A2",
+    "verb": "A1"
+  },
+  "shout": {
+    "noun": "A2",
+    "verb": "A2"
+  },
+  "plant": {
+    "noun": "A1",
+    "verb": "A2"
+  },
+  "end": {
+    "noun": "A1",
+    "verb": "A1"
+  },
+  "cross": {
+    "noun": "A2",
+    "verb": "A2"
+  },
+  "show": {
+    "noun": "A1",
+    "verb": "A1"
+  }
+}

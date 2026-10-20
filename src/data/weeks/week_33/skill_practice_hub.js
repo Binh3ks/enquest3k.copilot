@@ -158,7 +158,7 @@ export const skillPracticeHub = {
             correct_label: "Forward Motion",
             x: 64,
             y: 38,
-            micro_explanation: "⚡ Running fast builds momentum that cannot stop without floor grip."
+            micro_explanation: "⚡ Running fast builds forward speed that cannot stop without floor grip."
           },
           {
             id: "z1_3",

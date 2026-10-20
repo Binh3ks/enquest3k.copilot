@@ -1,0 +1,850 @@
+[
+  {
+    "word": "a",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/a_1",
+    "pos": "indefinite article",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:01.538224Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "all",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/all_1",
+    "pos": "determiner",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:00.786369Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "always",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/always_1",
+    "pos": "adverb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:00.906038Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "and",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/and_1",
+    "pos": "conjunction",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:02.257282Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "ask",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/ask_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:00.392091Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "at",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/at_1",
+    "pos": "preposition",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:01.285743Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "baby",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/baby_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:01.126400Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "be",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/be_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:02.579584Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "bed",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/bed_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:01.646716Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "bright",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/bright_1",
+    "pos": "adjective",
+    "level": "A2",
+    "timestamp": "2026-10-08T07:52:01.705270Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "brother",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/brother_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:01.906807Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "call",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/call_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:02.439064Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "can",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/can_1",
+    "pos": "modal verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:02.752555Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "cat",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/cat_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:02.284810Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "child",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/child_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:02.854890Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "clever",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/clever_1",
+    "pos": "adjective",
+    "level": "A2",
+    "timestamp": "2026-10-08T07:52:03.270170Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "cloud",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/cloud_1",
+    "pos": "noun",
+    "level": "A2",
+    "timestamp": "2026-10-08T07:52:02.806534Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "cook",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/cook_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:02.994208Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "dance",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/dance_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:03.273814Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "dark",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/dark_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:03.273077Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "day",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/day_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:04.024989Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "dry",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/dry_1",
+    "pos": "adjective",
+    "level": "A2",
+    "timestamp": "2026-10-08T07:52:03.444810Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "each",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/each_1",
+    "pos": "determiner",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:03.899938Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "easy",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/easy_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:03.887097Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "every",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/every_1",
+    "pos": "determiner",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:04.316620Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "family",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/family_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:03.866188Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "far",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/far_1",
+    "pos": "adverb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:04.012387Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "farmer",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/farmer_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:04.844488Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "fast",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/fast_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:04.380406Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "flower",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/flower_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:04.413394Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "for",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/for_1",
+    "pos": "preposition",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:05.364547Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "fresh",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/fresh_1",
+    "pos": "adjective",
+    "level": "A2",
+    "timestamp": "2026-10-08T07:52:04.529693Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "frog",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/frog_1",
+    "pos": "noun",
+    "level": "A2",
+    "timestamp": "2026-10-08T07:52:05.323724Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "good",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/good_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:05.146695Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "green",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/green_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:04.893383Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "happy",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/happy_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:05.457623Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "he",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/he_1",
+    "pos": "pronoun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:05.376848Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "healthy",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/healthy_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:05.895862Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "help",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/help_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:05.843826Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "here",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/here_1",
+    "pos": "adverb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:05.894720Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "high",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/high_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:05.985663Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "i",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/i_1",
+    "pos": "pronoun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:05.993612Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "it",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/it_1",
+    "pos": "pronoun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:06.588213Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "join",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/join_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:06.413816Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "jump",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/jump_1",
+    "pos": "verb",
+    "level": "A2",
+    "timestamp": "2026-10-08T07:52:06.520751Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "keep",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/keep_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:06.636481Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "kind",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/kind_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:06.491771Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "laugh",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/laugh_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:06.554356Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "learn",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/learn_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:07.512265Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "like",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/like_1",
+    "pos": "preposition",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:07.166305Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "little",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/little_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:07.053306Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "long",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/long_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:07.211249Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "look",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/look_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:07.417792Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "make",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/make_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:07.471024Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "me",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/me_1",
+    "pos": "pronoun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:07.642362Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "music",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/music_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:08.150800Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "my",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/my_1",
+    "pos": "determiner",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:08.468900Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "need",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/need_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:07.989121Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "new",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/new_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:08.877658Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "now",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/now_1",
+    "pos": "adverb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:08.045289Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "often",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/often_1",
+    "pos": "adverb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:08.544852Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "old",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/old_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:09.055872Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "on",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/on_1",
+    "pos": "preposition",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:08.988534Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "our",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/our_1",
+    "pos": "determiner",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:09.033063Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "paint",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/paint_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:09.034605Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "party",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/party_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:09.110487Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "plan",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/plan_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:09.512447Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "plant",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/plant_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:09.570057Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "pretty",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/pretty_1",
+    "pos": "adverb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:09.566959Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "quiet",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/quiet_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:09.567397Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "rain",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/rain_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:09.585230Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "really",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/really_1",
+    "pos": "adverb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:10.039095Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "she",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/she_1",
+    "pos": "pronoun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:10.036930Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "shout",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/shout_1",
+    "pos": "verb",
+    "level": "A2",
+    "timestamp": "2026-10-08T07:52:10.118454Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "sister",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/sister_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:10.610879Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "sleep",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/sleep_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:10.124808Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "smile",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/smile_1",
+    "pos": "verb",
+    "level": "A2",
+    "timestamp": "2026-10-08T07:52:10.096240Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "some",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/some_1",
+    "pos": "determiner",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:10.623807Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "soup",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/soup_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:10.602734Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "spring",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/spring_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:10.614182Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "student",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/student_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:11.084997Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "study",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/study_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:10.649271Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "summer",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/summer_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:11.128382Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "sweet",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/sweet_1",
+    "pos": "adjective",
+    "level": "A2",
+    "timestamp": "2026-10-08T07:52:11.256293Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "teacher",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/teacher_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:11.659438Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "that",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/that_1",
+    "pos": "determiner",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:11.485791Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "the",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/the_1",
+    "pos": "definite article",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:12.247469Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "they",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/they_1",
+    "pos": "pronoun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:12.188768Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "this",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/this_1",
+    "pos": "determiner",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:11.672640Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "to",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/to_1",
+    "pos": "preposition",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:12.342238Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "today",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/today_1",
+    "pos": "adverb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:12.013165Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "tree",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/tree_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:12.726852Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "uncle",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/uncle_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:12.699343Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "us",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/us_1",
+    "pos": "pronoun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:12.656230Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "use",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/use_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:12.745953Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "very",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/very_1",
+    "pos": "adverb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:12.751724Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "wake",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/wake_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:12.853427Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "walk",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/walk_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:13.241821Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "wall",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/wall_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:13.238443Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "warm",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/warm_1",
+    "pos": "adjective",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:13.229362Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "water",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/water_1",
+    "pos": "noun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:13.305247Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "we",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/we_1",
+    "pos": "pronoun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:13.757044Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "well",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/well_1",
+    "pos": "adverb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:13.459073Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "work",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/work_1",
+    "pos": "verb",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:13.868969Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "you",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/you_1",
+    "pos": "pronoun",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:14.853691Z",
+    "status": "FETCH_SUCCESS"
+  },
+  {
+    "word": "your",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/your_1",
+    "pos": "determiner",
+    "level": "A1",
+    "timestamp": "2026-10-08T07:52:15.714254Z",
+    "status": "FETCH_SUCCESS"
+  }
+]

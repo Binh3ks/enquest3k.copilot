@@ -89,33 +89,85 @@ export const readingHub = {
     title_vi: "Những Người Bạn Giúp Đỡ Lẫn Nhau Trong Tự Nhiên",
     part_1_title: "How Animals Help the Forest",
     part_2_title: "Teamwork Keeps Nature Green",
-    content_en: "In nature, many animals help and work together to build safe homes in the forest. Large animals like lions protect the forest and help young plants and trees grow strong. Tiny mice eat small insects and carry seeds into the ground. Colourful birds fly high in the trees to chirp loudly and help alert their animal friends. When different creatures help one another, the whole forest stays green and healthy.",
+    content_en: "In nature, many different animals cooperate and help each other every day. In Africa, a small oxpecker bird often sits on the back of a large zebra. While the zebra is eating grass, the bird eats tiny bugs from the zebra's skin. This gives the bird yummy food and keeps the zebra clean and healthy. In the ocean, tiny cleaner fish swim inside the mouths of huge sharks. The sharks never bite because the small fish clean their sharp teeth carefully. Just like the mighty lion and the tiny mouse in Aesop's fable, big and small animals work together to keep our natural world safe.",
     content_vi: "Trong tự nhiên, nhiều loài động vật làm việc cùng nhau để sinh tồn và khỏe mạnh. Giống như chú chuột nhỏ giúp sư tử to lớn trong truyện ngụ ngôn, các loài động vật thực tế cũng giúp đỡ lẫn nhau mỗi ngày! Một loài chim nhỏ tên là chim bắt ve thường đậu trên lưng chú ngựa vằn to lớn. Trong khi ngựa vằn đang gặm cỏ, chú chim ăn những con bọ nhỏ trên da ngựa vằn. Điều này mang lại thức ăn cho chim và giúp ngựa vằn sạch sẽ. Dưới đại dương, những chú cá dọn vệ sinh nhỏ bơi vào trong miệng cá mập lớn. Cá mập không bao giờ cắn vì cá nhỏ làm sạch răng sắc nhọn của chúng! Khi các loài động vật hợp tác, mọi loài đều an toàn và khỏe mạnh.",
     cover_image: "/images/week34/explore_cover_w34.jpg",
     audio_url: "/audio/week34/explore.mp3",
+    vocab_focus: [
+      "cooperate",
+      "survive",
+      "predator",
+      "oxpecker bird",
+      "cleaner fish",
+      "ecosystem",
+      "habitat",
+      "sharp teeth",
+      "tiny bugs",
+      "natural world"
+    ],
     glossary: [
       { term: "Cooperation", meaning: "Working together harmoniously toward a shared and helpful outcome." },
-      { term: "Ecosystem", meaning: "A biological community of interacting organisms and their physical forest environment." },
-      { term: "Habitat", meaning: "The natural home or environment where wild animals live and find food." },
-      { term: "Predator", meaning: "An animal that hunts and eats other animals in the wild." }
+      { term: "Survive", meaning: "To stay alive and continue to live in nature or the forest." },
+      { term: "Predator", meaning: "An animal that hunts and eats other animals in the wild." },
+      { term: "Oxpecker", meaning: "A helpful African bird that eats bugs off large animals." },
+      { term: "Cleaner Fish", meaning: "Small fish that swim safely inside larger sea animals to clean their teeth." },
+      { term: "Ecosystem", meaning: "A biological community of interacting organisms and their physical environment." },
+      { term: "Habitat", meaning: "The natural home or environment where wild animals live and find food." }
     ],
     check_questions: [
       {
         id: 1,
         question_en: "What does the oxpecker bird eat while sitting on the zebra?",
-        options: ["Small bugs off the zebra's skin", "Grass seeds on the ground", "Tree leaves in the forest"],
+        options: [
+          "Small bugs off the zebra's skin",
+          "Grass seeds from the ground",
+          "Green leaves high in the trees",
+          "Sweet fruits from the forest"
+        ],
         answer: "Small bugs off the zebra's skin"
       },
       {
         id: 2,
-        question_en: "Why do large sharks never bite small cleaner fish?",
-        options: ["Because the small fish clean their sharp teeth", "Because the fish are too fast", "Because sharks are sleeping"],
-        answer: "Because the small fish clean their sharp teeth"
+        question_en: "How does the oxpecker bird help the zebra stay healthy?",
+        options: [
+          "It cleans the zebra's skin by removing bugs",
+          "It carries the zebra across the river",
+          "It builds a large nest for the zebra",
+          "It warns the zebra about rainy weather"
+        ],
+        answer: "It cleans the zebra's skin by removing bugs"
       },
       {
         id: 3,
-        question_en: "What lesson about nature does this article teach us?",
-        options: ["Animals cooperate and help each other to survive", "Big animals must always live alone", "Small animals never help large animals"],
+        question_en: "Why do large sharks allow cleaner fish inside their mouths?",
+        options: [
+          "Because the small fish clean their sharp teeth",
+          "Because the small fish are too fast to catch",
+          "Because the sharks are sleeping on the rocks",
+          "Because the sharks cannot open their mouths"
+        ],
+        answer: "Because the small fish clean their sharp teeth"
+      },
+      {
+        id: 4,
+        question_en: "Which fable animals show that small friends can help big friends?",
+        options: [
+          "The mighty lion and the tiny mouse",
+          "The hungry wolf and the clever fox",
+          "The slow turtle and the speedy rabbit",
+          "The noisy bird and the sleepy bear"
+        ],
+        answer: "The mighty lion and the tiny mouse"
+      },
+      {
+        id: 5,
+        question_en: "What important lesson about nature does this article teach us?",
+        options: [
+          "Animals cooperate and help each other to survive",
+          "Large animals must always live alone in the wild",
+          "Small creatures can never help big creatures",
+          "Predators never share food with other animals"
+        ],
         answer: "Animals cooperate and help each other to survive"
       }
     ],

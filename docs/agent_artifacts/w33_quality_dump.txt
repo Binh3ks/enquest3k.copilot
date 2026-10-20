@@ -1,0 +1,168 @@
+========================================================================
+📊 W33 QUALITY DUMP (INDEPENDENT DATA EXTRACTION)
+========================================================================
+
+### A. 20 VOCABULARY WORDS (word | definition_en | example_en)
+| # | Word | Definition (EN) | Example (EN) |
+|---|---|---|---|
+| 1 | corridor | a long passage in a building with doors on each side | Jake walked carefully down the school corridor after class. |
+| 2 | slipped | slid accidentally on a wet surface and lost balance | Tom slipped on the wet tiles near the science room. |
+| 3 | nurse | a person trained to care for sick or injured people | The school nurse arrived quickly with medical supplies. |
+| 4 | bandage | a strip of material used to bind a wound or cut | She wrapped a clean white bandage around his swollen knee. |
+| 5 | safe | not in danger or at risk of getting hurt | Everyone was happy when Tom was safe and smiling again. |
+| 6 | mistake | an action or decision that is wrong or incorrect | Running on the wet floor was a dangerous mistake. |
+| 7 | accident | an unfortunate incident that happens unexpectedly | Jake helped his classmate immediately after the accident. |
+| 8 | fix | to repair or mend something that is broken or damaged | The nurse used first aid tools to fix his injured leg. |
+| 9 | sorry | feeling sadness or regret for a mistake made | Tom said sorry for forgetting the corridor safety rules. |
+| 10 | careful | giving serious attention to avoid danger or mistakes | Students must always be careful when walking near stairs. |
+| 11 | clumsy | moving or acting awkwardly without grace or balance | He felt clumsy when his books fell all over the floor. |
+| 12 | arm | the upper limb of the human body from shoulder to hand | He held the handrail tightly with his strong arm. |
+| 13 | knee | the joint between the thigh and lower leg | Tom hurt his right knee when he slipped on the floor. |
+| 14 | leg | each of the limbs on which a person walks and stands | He rested his leg on a soft cushion in the nurse room. |
+| 15 | head | the upper part of the body containing brain and eyes | Fortunately, he did not bump his head during the fall. |
+| 16 | cold pack | a gel bag chilled in ice used to reduce swelling | The nurse placed a cold pack on his knee to reduce pain. |
+| 17 | get better | to become healthy and well again after being sick or hurt | Tom started to get better after the nurse put a cold pack on his knee. |
+| 18 | explain | to make something clear by giving detail and reason | The teacher explained why walking safely in hallways is important. |
+| 19 | lesson | a period of learning or a moral learned from experience | All students learned a valuable lesson about corridor safety. |
+| 20 | terrible | extremely bad, unpleasant, or serious | He felt terrible after the fall, but the nurse helped him right away. |
+
+### B. CLIL QUESTIONS & CONTENT OVERLAP AUDIT
+Question 1: What is the invisible science force that stops shoes from sliding on floors?
+  Option 1: Friction [CORRECT]
+  Option 2: Gravity
+  Option 3: Wind power
+  Option 4: Magnetic force
+  Answer: Friction (Position: Option 1)
+
+Question 2: What happens when water spills onto dry smooth tiles?
+  Option 1: It creates a thin slippery layer that reduces friction [CORRECT]
+  Option 2: It makes the tiles sticky and hard to move
+  Option 3: It increases friction and stops all movement
+  Option 4: It turns the smooth floor into rough sandpaper
+  Answer: It creates a thin slippery layer that reduces friction (Position: Option 1)
+
+Question 3: Why did Tom slip when running fast to science class?
+  Option 1: His sneakers had smooth plastic soles with no grip [CORRECT]
+  Option 2: His shoes were too big for his feet
+  Option 3: He was carrying a heavy school backpack
+  Option 4: His shoelaces were tied together tightly
+  Answer: His sneakers had smooth plastic soles with no grip (Position: Option 1)
+
+Question 4: Why was Jake able to walk safely without sliding on the wet floor?
+  Option 1: His rubber soles gripped the floor tightly [CORRECT]
+  Option 2: He held onto the wall with both hands
+  Option 3: He jumped over the wet area
+  Option 4: He walked very fast so he did not touch the water
+  Answer: His rubber soles gripped the floor tightly (Position: Option 1)
+
+Question 5: What did the school nurse remind Tom about the yellow warning sign?
+  Option 1: Rubber gives strong grip, but water steals friction [CORRECT]
+  Option 2: Running fast is good exercise in the corridor
+  Option 3: Always take off shoes before walking on wet tiles
+  Option 4: Yellow signs mean the floor is completely dry and safe
+  Answer: Rubber gives strong grip, but water steals friction (Position: Option 1)
+
+--- Overlap Analysis (>=3 content words between Answer(Qi) and Question/Options(Qj)) ---
+None: 0 question pairs share >= 3 content words between answer and other question/options.
+
+### C. PICTURE STORY / STORY WRITER STEP CONSISTENCY AUDIT
+Step 1 (Scene 1):
+  caption    : "Jake was walking carefully down the school corridor after science class."
+  frame text : "In the beginning, Jake was walking carefully down the school corridor after science class. He noticed the wet floor tiles near the science room."
+  audio text : "In the beginning, Jake was walking carefully down the school corridor after science class. He noticed the wet floor tiles near the science room."
+  Consistency:
+    - caption vs frame : MISMATCH (Caption is single-clause summary; Frame is 2-sentence scaffold)
+    - frame vs audio   : MATCH (100% Identical)
+    - caption vs audio : MISMATCH
+
+Step 2 (Scene 2):
+  caption    : "Suddenly, he lost his balance on the wet floor and slipped."
+  frame text : "Suddenly, a boy was running very fast past the science room. He lost his balance on the wet floor and slipped."
+  audio text : "Suddenly, a boy was running very fast past the science room. He lost his balance on the wet floor and slipped."
+  Consistency:
+    - caption vs frame : MISMATCH (Caption is single-clause summary; Frame is 2-sentence scaffold)
+    - frame vs audio   : MATCH (100% Identical)
+    - caption vs audio : MISMATCH
+
+Step 3 (Scene 3):
+  caption    : "Jake stopped immediately to help his friend and called the school nurse."
+  frame text : "Then, Jake stopped immediately to help his friend stay calm. He called the school nurse right away for help."
+  audio text : "Then, Jake stopped immediately to help his friend stay calm. He called the school nurse right away for help."
+  Consistency:
+    - caption vs frame : MISMATCH (Caption is single-clause summary; Frame is 2-sentence scaffold)
+    - frame vs audio   : MATCH (100% Identical)
+    - caption vs audio : MISMATCH
+
+Step 4 (Scene 4):
+  caption    : "The nurse arrived quickly with a clean bandage and a cold pack to treat the cut."
+  frame text : "After that, the school nurse arrived quickly with a clean bandage. She placed a cold pack to treat the cut carefully."
+  audio text : "After that, the school nurse arrived quickly with a clean bandage. She placed a cold pack to treat the cut carefully."
+  Consistency:
+    - caption vs frame : MISMATCH (Caption is single-clause summary; Frame is 2-sentence scaffold)
+    - frame vs audio   : MATCH (100% Identical)
+    - caption vs audio : MISMATCH
+
+Step 5 (Scene 5):
+  caption    : "Everyone felt relieved, and the headmaster reminded all students never to run in corridors."
+  frame text : "In the end, everyone felt relieved that Tom was safe. The headmaster reminded all students never to run in corridors."
+  audio text : "In the end, everyone felt relieved that Tom was safe. The headmaster reminded all students never to run in corridors."
+  Consistency:
+    - caption vs frame : MISMATCH (Caption is single-clause summary; Frame is 2-sentence scaffold)
+    - frame vs audio   : MATCH (100% Identical)
+    - caption vs audio : MISMATCH
+
+### D. HOTSPOTS ACROSS SCENES (id | x | y | is multiple of 5)
+Scene 1:
+  - id: "corridor" | chunk: "school corridor" | x: 45 (mult 5: true) | y: 40 (mult 5: true)
+  - id: "carefully" | chunk: "walking carefully" | x: 62 (mult 5: false) | y: 55 (mult 5: true)
+  - id: "after" | chunk: "after science class" | x: 22 (mult 5: false) | y: 72 (mult 5: false)
+Scene 2:
+  - id: "balance" | chunk: "lost his balance" | x: 62 (mult 5: false) | y: 45 (mult 5: true)
+  - id: "floor" | chunk: "wet floor" | x: 74 (mult 5: false) | y: 68 (mult 5: false)
+  - id: "slipped" | chunk: "slipped" | x: 58 (mult 5: false) | y: 82 (mult 5: false)
+Scene 3:
+  - id: "stopped" | chunk: "stopped immediately" | x: 46 (mult 5: false) | y: 62 (mult 5: false)
+  - id: "nurse" | chunk: "called the school nurse" | x: 53 (mult 5: false) | y: 39 (mult 5: false)
+  - id: "help" | chunk: "help his friend" | x: 34 (mult 5: false) | y: 62 (mult 5: false)
+Scene 4:
+  - id: "nurse" | chunk: "arrived quickly" | x: 27 (mult 5: false) | y: 42 (mult 5: false)
+  - id: "bandage" | chunk: "clean bandage" | x: 38 (mult 5: false) | y: 68 (mult 5: false)
+  - id: "cut" | chunk: "treat the cut" | x: 46 (mult 5: false) | y: 69 (mult 5: false)
+Scene 5:
+  - id: "headmaster" | chunk: "headmaster" | x: 58 (mult 5: false) | y: 32 (mult 5: false)
+  - id: "relieved" | chunk: "felt relieved" | x: 78 (mult 5: false) | y: 50 (mult 5: true)
+  - id: "reminded" | chunk: "reminded all students" | x: 44 (mult 5: false) | y: 52 (mult 5: false)
+
+Speaking Hub: Find Differences (S1):
+  - id: "d1" | name: "Student Bag Color" | x: 9 (mult 5: false) | y: 69 (mult 5: false)
+  - id: "d2" | name: "Potted Plant on Floor" | x: 6 (mult 5: false) | y: 90 (mult 5: true)
+  - id: "d3" | name: "Warning Sign Color" | x: 30 (mult 5: true) | y: 63 (mult 5: false)
+  - id: "d4" | name: "Boy's T-shirt Color" | x: 50 (mult 5: true) | y: 61 (mult 5: false)
+  - id: "d5" | name: "Hanging Coat Color" | x: 73 (mult 5: false) | y: 53 (mult 5: false)
+  - id: "d6" | name: "Wall Clock Time" | x: 61 (mult 5: false) | y: 20 (mult 5: true)
+
+Hotspots Summary: Total coordinates checked: 42. Coordinates that are multiples of 5: 9 (21.4%).
+
+### E. DICTATION 8 SENTENCES & ENTITIES (Numbers, Dates, Times)
+Sentence 1: "Hello Tom, please come into Room 4B."
+  Entities (Numbers/Dates/Times): 4
+Sentence 2: "Thank you Nurse Sarah, I slipped on the wet floor at 10:15 AM."
+  Entities (Numbers/Dates/Times): 10:15 AM
+Sentence 3: "Let me put an ice pack on your ankle for 15 minutes."
+  Entities (Numbers/Dates/Times): 15
+Sentence 4: "Can I walk back to class on Monday afternoon?"
+  Entities (Numbers/Dates/Times): Monday
+Sentence 5: "No, you should rest your foot at home for 2 days."
+  Entities (Numbers/Dates/Times): 2
+Sentence 6: "Please call my mother on 0988 123 456."
+  Entities (Numbers/Dates/Times): 0988, 123, 456
+Sentence 7: "I will call her now and give you a clean bandage."
+  Entities (Numbers/Dates/Times): None
+Sentence 8: "Thank you Nurse Sarah, see you this Friday morning!"
+  Entities (Numbers/Dates/Times): Friday
+
+### F. AUDIO REFERENCE VERIFICATION AUDIT
+Total unique audio URLs referenced: 57
+Valid existing files: 57
+Missing files: 0
+✅ 100% of referenced audio files physically exist in public/ (0 missing).

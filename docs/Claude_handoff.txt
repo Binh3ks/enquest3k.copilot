@@ -1,125 +1,141 @@
-# TÓM TẮT HANDOFF — ENGQUEST3K REDESIGN
+# HANDOFF NGẮN GỌN — ENGQUEST3K REDESIGN
 
 ## 1. Bối cảnh & cách làm việc
-- **Dự án:** redesign 21 mini-game của EngQuest3K/Lexio (app ESL cho trẻ Việt 6–12 tuổi, Pre-A1→A2).
+- **Dự án:** redesign 21 mini-game EngQuest3K/Lexio (ESL cho trẻ Việt 6–12 tuổi, Pre-A1→A2).
 - **Vai trò:** Owner chốt quyết định; Claude phản biện/audit (không code); Antigravity code + playtest.
-- **Mỗi lượt:** (1) phân tích ngắn, (2) prompt cho Antigravity (luôn yêu cầu báo cáo THẬT NGẮN GỌN), (3) tóm tắt dán vào handoff. Audit theo batch 5 game.
-- **Nguồn trạng thái DUY NHẤT:** IMPLEMENTATION_PLAN_21_GAMES.md. File handoff chỉ là nhật ký quyết định + bài học. CONSOLIDATED_REDESIGN_BACKLOG chỉ tra công thức.
+- **Mỗi lượt:** (1) phân tích ngắn, (2) prompt cho Antigravity (yêu cầu báo cáo THẬT NGẮN GỌN), (3) tóm tắt dán vào handoff. Audit theo batch 5 game.
+- **Nguồn trạng thái DUY NHẤT:** IMPLEMENTATION_PLAN_21_GAMES.md. Handoff = nhật ký quyết định + bài học. CONSOLIDATED_REDESIGN_BACKLOG chỉ tra công thức.
 
-## 2. Triết lý mới (Owner, 2026-09-19): G1–G3 đứng TRƯỚC N1–N5
-Game là PHẦN THƯỞNG sau bài học chính. Cơ chế phải vui/nhanh trước, ngôn ngữ chỉ là lớp nhắc nhớ. Nội dung quá dài/khó thì CẮT khỏi game (không cắt khỏi curriculum, phải chuyển sang module khác). Audit lại cả 21 game, kể cả 15 game đã đóng băng.
+## 2. Triết lý (Owner, 2026-09-19): G1–G3 đứng TRƯỚC N1–N5
+Game là PHẦN THƯỞNG sau bài học chính. Cơ chế vui/nhanh trước, ngôn ngữ là lớp nhắc nhớ. Nội dung quá dài/khó thì CẮT khỏi game (chuyển sang module khác, không cắt khỏi curriculum). Audit lại cả 21 game, kể cả game đã đóng băng.
 - **G1:** cơ chế lõi vẫn vui khi thay chữ bằng placeholder vô nghĩa.
 - **G2:** nhịp độ khớp chuẩn thể loại tham chiếu (game thị trường thật).
 - **G3:** tải ngôn ngữ mỗi round ở mức "nhắc nhớ nhanh", không phải đọc hiểu lần đầu.
-- **Nguyên tắc:** hành động nhanh chỉ hợp task NHẬN DIỆN 1 mục tiêu; task SUY LUẬN QUAN HỆ (connector, cấu trúc câu) cần thể loại "dừng lại suy nghĩ" (flashcard/tap/matching).
+- Hành động nhanh chỉ hợp task NHẬN DIỆN 1 mục tiêu; task SUY LUẬN QUAN HỆ (connector, cấu trúc câu) cần thể loại "dừng lại suy nghĩ" (flashcard/tap/matching).
 
 ## 3. RULE BẮT BUỘC (giữ nguyên)
 1. Không tin tên file/lời khẳng định: luôn trích dòng code, log, ảnh thật.
 2. Toán N2/N4 phải tính và khóa TRƯỚC KHI CODE.
 3. N4 <5%, đúng cơ chế thực: retry-tại-chỗ = Negative Binomial; không retry = Binomial; chọn-không-hoàn-lại = hypergeometric/permutation. Assert lựa chọn phân biệt NGỮ NGHĨA (kể cả near-duplicate) trên TOÀN BỘ nguồn dữ liệu thực, không chỉ nhánh fallback.
-4. N2: margin dương trên worst-case content thật, tối thiểu +2.0s/round, nhắm ≥+3–4s (đo thật thường thấp hơn công thức 0.6–0.7s, có ca 2–3s). Quét toàn bộ tuần đã biên soạn + mọi fallback/default (đếm từ). Kiểm cả margin per-round lẫn cộng dồn so với T_avail. Số đo thật thắng công thức; không tự đánh "ĐẠT" khi số đo dưới sàn. Tốc độ đọc chuẩn: 0.67s/từ.
+4. N2: margin dương trên worst-case content thật, tối thiểu +2.0s/round, nhắm ≥+3–4s (đo thật thường thấp hơn công thức 0.6–0.7s, có ca 2–3s). Quét toàn bộ tuần đã biên soạn + mọi fallback/default (đếm từ). Kiểm margin per-round lẫn cộng dồn so với T_avail. Số đo thật thắng công thức; không tự đánh "ĐẠT" khi số đo dưới sàn. Tốc độ đọc chuẩn: 0.67s/từ.
 5. Tick hoàn thành cần đủ: (a) bảng N1–N5 kèm trích code thật, (b) validator khớp code thật, (c) 1 vòng chơi tay Phương án B + ảnh (waitForFunction đúng DOM state, không delay cố định).
 6. Soi đồng đều mọi game, kể cả game "trông tốt".
 7. `npm run build` exit 0 KHÔNG chứng minh logic đúng.
 8. Test hook (teleport, window.__xxx) bọc `import.meta.env.DEV`; grep bundle production phải không thấy (exit code 1).
 9. Đối chiếu ảnh ↔ JSON ↔ báo cáo (im lặng giữa 3 nguồn = dấu hiệu sai lệch). Sửa file dùng chung (HUDOverlay, contentService) phải verify non-regression trên ≥1 game khác.
 10. Mọi số liệu tính tay (đếm từ, margin, xác suất) phải đối chiếu độc lập; không bỏ rơi mục treo từ vòng trước.
-11. Thiết kế/sửa cơ chế mới: phản biện cơ chế TRƯỚC khi code. Đối chiếu 1–2 game thị trường cùng thể loại (nhịp độ, độ hấp dẫn) và hỏi cơ chế có gắn chặt mục tiêu ngôn ngữ hay chỉ là lớp giải trí tách rời. KHÔNG sao chép rủi ro độc lập với ngôn ngữ.
+11. Thiết kế/sửa cơ chế mới: phản biện cơ chế TRƯỚC khi code. Đối chiếu 1–2 game thị trường cùng thể loại (nhịp độ, độ hấp dẫn), hỏi cơ chế có gắn chặt mục tiêu ngôn ngữ hay chỉ là lớp giải trí tách rời. KHÔNG sao chép rủi ro độc lập với ngôn ngữ.
 
 ## 4. Tiêu chí N1 (game thật, không phải quiz trá hình)
 1. Ngôn ngữ + hành động + rủi ro phải ĐỒNG THỜI.
 2. Bịt ngôn ngữ thì không thắng được bằng đoán mò/pattern/trí nhớ/nội dung lặp trong phiên (retry không xáo, retry rút mù từ pool nhỏ làm E[overlap] cao).
-3. Không có đường tắt (onClick không kiểm tra khoảng cách/vị trí; vị trí đáp án phải random, Fisher-Yates).
+3. Không có đường tắt (onClick không kiểm tra khoảng cách/vị trí; vị trí đáp án random, Fisher-Yates).
 
 ## 5. Playtest (Owner) — Phương án B
-Chrome HIỆN CỬA SỔ (headless:false), Puppeteer keyboard.press()/CDP Input thật (không teleport, không .click() DOM), screenshot từng frame + console log. Nếu môi trường không cho phép, phải nói rõ NGAY ĐẦU LƯỢT. Playtest phải mô phỏng nhịp đọc của trẻ, không chạy tốc độ bot.
+Chrome HIỆN CỬA SỔ (headless:false), Puppeteer keyboard.press()/CDP Input thật (không teleport, không .click() DOM), screenshot từng frame + console log. Nếu môi trường không cho phép, nói rõ NGAY ĐẦU LƯỢT. Mô phỏng nhịp đọc của trẻ, không chạy tốc độ bot.
 
 ## 6. Bài học lặp lại
-- Hazard trừ tim độc lập với ngôn ngữ (Wraith F2D3, F4D1, F6D2, Steam Vent F5D2, Astral Watcher F5D3): chỉ được trừ tim khi chọn sai ngôn ngữ.
-- Báo cáo tự động "0 lỗi" nhưng còn lỗi (script chỉ đếm từ/trùng lặp, chưa parse ngữ pháp/mạo từ/collision; từng bỏ sót but/and/or/unless).
-- Chỉ kiểm nguồn DEFAULT mà quên nguồn theo tuần/fallback.
-- Playtest tốc độ bot không chứng minh được margin N2.
+- Hazard trừ tim độc lập với ngôn ngữ: chỉ được trừ tim khi chọn sai ngôn ngữ.
+- Báo cáo "0 lỗi" nhưng còn lỗi (script chỉ đếm từ/trùng lặp, không parse ngữ pháp/collision).
+- Chỉ kiểm nguồn DEFAULT, quên nguồn theo tuần/fallback.
+- Playtest tốc độ bot không chứng minh margin N2.
 - Đổi 1 lỗi lấy lỗi khác khi sửa nội dung.
 - Đơn vị vận tốc: per-frame vs per-second vs dt-normalized.
-- Số "áng chừng" cho T_motion/T_evasion (hệ số ×1.5–1.8 không grounding) lặp ở F5D3 rồi F2D3: phải lấy từ tốc độ/tọa độ pixel thật.
-- Ảnh cũ/ảnh nhầm game bị tái sử dụng làm bằng chứng; ảnh chỉ là đường dẫn local không đến tay reviewer (Owner tự tải ảnh lên trực tiếp mới đáng tin).
+- Số "áng chừng" cho T_motion/T_evasion phải lấy từ tốc độ/tọa độ pixel thật.
+- Ảnh cũ/nhầm game bị tái sử dụng; ảnh chỉ là đường dẫn local không đến reviewer (Owner tự upload mới đáng tin).
+- Viết script kiểm chứng nhưng không dán output thô; kết luận bằng lời tự mâu thuẫn với dữ kiện liệt kê.
 
 ## 7. Rủi ro hệ thống (chưa sửa)
-1. contentService.js:363-364 `sort(()=>Math.random()-0.5)` thiên vị, dùng chung (đã fix cục bộ F2D1; F4D1 phụ thuộc; ảnh hưởng cả F7D3; cần re-test khi sửa hạ tầng).
-2. Pity-timer ở F3D3/F6D1: N4 đã khóa chỉ là cận trên (an toàn).
+1. contentService.js:363-364 `sort(()=>Math.random()-0.5)` thiên vị, dùng chung (đã fix cục bộ F2D1; F4D1 phụ thuộc; ảnh hưởng F7D3; re-test khi sửa hạ tầng).
+2. Pity-timer F3D3/F6D1: N4 đã khóa chỉ là cận trên (an toàn).
 3. P0-4/P0-5: margin N2 mới là ước tính công thức, chưa đo event-driven.
-4. Content-debt: phần lớn 156 tuần chỉ có fallback generic (F5D3: 100% dùng chung DEFAULT_GAUNTLET_PASSAGE; F7D3: chỉ tuần 33 và 35 có dữ liệu riêng, 154/156 tuần dùng GENERIC_WORDS 10 từ).
+4. Content-debt: phần lớn 156 tuần chỉ có fallback generic (F5D3: DEFAULT_GAUNTLET_PASSAGE; F7D3: 154/156 tuần dùng GENERIC_WORDS). Gate 8: 7 game Nhóm C (F2D2, F3D3, F4D2, F4D3, F5D2, F7D2, Grammar Duel Zone 3) đã ghi Risk Register.
 5. HUDOverlay `maxHearts` mặc định ngầm = 3: game hearts≠3 phải truyền prop tường minh.
-6. Leo trong TitanGrammarForge/SyntaxExpressRail (LeoPhysics.js) di chuyển per-frame, không nhân dt (test thiết bị <60fps).
+6. Leo (LeoPhysics.js) di chuyển per-frame, không nhân dt (test thiết bị <60fps).
 
-## 8. Trạng thái các game đã xử lý trong handoff
-| Game | Kết quả | Điểm chính |
-|---|---|---|
-| F4D1 Highway Word Runner | Giữ, đóng băng | Task nhận diện đơn hợp runner; Phương án B, margin đo thật +17.73s |
-| F4D2 Syntax Express Rail | ❌ FAIL | Timer "tàu trật bánh" 15.60s trừ tim, margin +0.88s → −1.13s |
-| F5D2 Titan Grammar Forge | ✅ Đóng băng | R3 xuống A2 (19 từ), Steam Vent chỉ knockback, Fisher-Yates test 10.000 lần; margin pass chính thức +21.06s (công thức) |
-| F6D1 Synonym Storm | Ghi nhận | Là game deflect/catch, không phải runner |
-| F6D2 Connector Burst | ✅ Đóng băng (sau 5 vòng) | Redesign PA-A flashcard/tap; hearts=2 tường minh; Macro Timer 120s chỉ mất time-bonus; pool 84 câu; ảnh↔JSON khớp 100%; ghi chú time-bonus chiếm 39% điểm |
-| F5D3 Cambridge Cloze Gauntlet | ✅ Đóng băng | Astral Watcher → knockback; N2 grounding (LEO_SPEED 240px/s, Watcher 132px/s, 45 từ), margin +74.57s; N4 0.055–0.13% (mô hình có-hoàn-lại) |
-| F2D3 Ancient Scroll Cloze | ✅ Đóng băng (sau 5 vòng, 4 vòng vướng gửi ảnh) | Margin +88s; Monte Carlo 2.000.000 lượt (0.68%/0.90%); nợ nhỏ: khoảng hụt 844ms đã giải trình, log chỉ 1/3 lần cắm sai dẫn tới KO |
-| F7D3 Word Class Duel | ❌ FAIL chính thức cả 2 nhánh code | 9/12 từ tuần 33 là lưỡng tính nhưng gán cứng 1 role; **chờ Owner chọn Phương án A (Rune Balance Altar, turn-based untimed, N4≈1.78%) hay B (Dual-Platform Tilt Steer)** |
+## 8. Quyết định Owner đã chốt
+- **Retry:** tối đa 2 lượt/phiên/bài (tổng ≤2 lượt dù thắng hay KO); sau thắng được chơi lại 1 lượt ≤3 phút (macro timer 120s đã thỏa). N4 phiên = 1−(716/729)² ≈ **3.53%**.
+- Cap gắn tiến độ bài học, lưu localStorage trong game, khóa theo uid+tuần (`attempt_cap_${uid}_${gameKey}_w_d_door`); không sửa store dùng chung/DailyRoomScreen (nếu cần → DỪNG báo cáo). Chống farm: chỉ `recordDoorStars` (sao chỉ tăng, tối đa 3).
+- **F7D3:** Phương án A (Rune Balance Altar, turn-based untimed), 3 phiến/round, Blind Advance, 2 tim (maxHearts=2 tường minh), sai không hiện đáp án, Attempt 0 (6 từ) + Retry 1 (6 từ khác), KO lần 2 về bài học. Nội dung dùng ngân hàng toàn cục 24–36 từ A2 có nguồn CEFR.
 
-Audit batch đầu (G1–G3): 7 PASS, 7 FAIL, 5 Conditional (F1D1, F2D2, F6D3, F7D2 trong nhóm cần soi).
+## 9. Trạng thái game
+| Game | Kết quả |
+|---|---|
+| F4D1 Highway Word Runner | Đóng băng (margin đo thật +17.73s) |
+| F4D2 Syntax Express Rail | ❌ FAIL (timer trật bánh, margin −1.13s); plan sửa → không tính đóng băng |
+| F5D2 Titan Grammar Forge | Đóng băng |
+| F5D3 Cambridge Cloze Gauntlet | Đóng băng (margin +74.57s; N4 0.055–0.13%) |
+| F2D3 Ancient Scroll Cloze | Đóng băng (margin +88s; N4 0.68%/0.90%) |
+| F6D2 Connector Burst | Mở lại để áp cap lượt; **đủ điều kiện kỹ thuật đóng băng lại** (8 kịch bản, ảnh↔JSON khớp 100%, cap lượt 3 đúng, calculateStars theo độ chính xác); chỉ còn paperwork N1–N5 + đổi plan "Đang làm"→"Đóng băng" |
+| F7D3 Word Class Duel | FAIL bản cũ; **content batch 1 ĐẠT** (36 câu, CEFR ≤A2, mapping C1/C2/C3 khớp); chờ chọn hướng implement N1–N5 |
+| F6D3, F7D2 | Chưa audit (Conditional); N4 F7D2 = 0.960% |
 
-## 9. Tiến độ & việc tiếp theo
-- **Bộ đếm:** 18/21 đã đóng băng; các game đóng băng cũ vẫn chờ audit lại G1–G3.
-- **Hàng chờ:** F7D3 (chờ Owner chọn A/B) → F5D1 → F1D2 (N4≈21–37%) → F1D3.
-- **Việc cần làm:**
-  1. Owner chọn phương án A hay B cho F7D3.
-  2. Sau khi chọn: sửa lỗi "Tuần 34" thành "Tuần 35"; làm rõ đơn vị "12 câu" (12 bộ round đầy đủ = 36 câu, hay 12 câu rời); polish câu ví dụ gượng ("Water turns floors into a slide."); rồi mới vào N1–N5.
-  3. Tiếp tục audit G1–G3 theo batch 5 game cho phần còn lại.
-F7D3 (Word Class Duel) — vòng phản biện 5:
-✅ Sửa Tuần 34→35: ĐẠT (đọc dòng 50 plan thật; 32+1+121=154 khớp).
-✅ "12 câu" = 12 bộ round × 3 phiến = 36 câu; slice(0,6)/slice(6,12) → overlap=0
-   giữa Attempt 0 và Retry 1.
-🔴 Retry 2 (KO lần 3) chưa định nghĩa: pool cạn, overlap ≠ 0, cần tính + nêu hành vi.
-🔴 Khả thi "12 từ lưỡng tính/tuần" chưa kiểm: tuần 33 chỉ 9/12; ép đủ 12 có
-   nguy cơ lặp lỗi sư phạm gây FAIL. Khối lượng ≈ 5.616 câu.
-🟡 Plan mâu thuẫn nội bộ: F7D2 N4 0.960% (bảng) vs 1.78% (Mục 2.4); F6D3 ghi
-   "Đóng băng" nhưng handoff nói Conditional sơ bộ; dòng F7D3 chưa ghi FAIL.
-🟡 Khẳng định "service chỉ có tuần 33+34" chưa có trích code.
-F7D3: VẪN CHỜ OWNER CHỌN A/B. Bộ đếm giữ 18/21 (nếu F6D3 tính không đúng thì
-phải xem lại con số này). Hàng chờ: F7D3 → F5D1 → F1D2 → F1D3.
-F7D3 — OWNER CHỌN PHƯƠNG ÁN A (Rune Balance Altar, turn-based untimed).
-Vòng phản biện 6:
-✅ Dữ liệu service W33/W34 (dòng 1089/1144/1254-1259) + W35 không có (grep exit 1).
-   Lưu ý: 2 nguồn song song (component W33+W35 / service W33+W34) → A phải chọn 1.
-✅ N4 F7D2 = 7/729 ≈ 0.960% (tự tính khớp).
-🔴 Plan upload chưa phải bản sau sửa (F6D3 vẫn "Đóng băng", F7D3 "Đang làm") → chưa
-   đối chiếu được 3 chỗ sửa.
-🔴 Bộ đếm 18/21 SAI: plan có 16 "Đóng băng" + 5 chưa xong. F5D3, F2D3 đã đếm
-   trước re-audit → đếm đôi. F4D2/F5D1 mâu thuẫn plan↔handoff. Cần bộ đếm riêng
-   "re-audit G1–G3".
-🔴 Retry 2: Attempt 0 + Retry 1 phủ hết 12 bộ → overlap cộng dồn 100%
-   (E[overlap] vs Retry 1 = 3.0 che mất). Mô hình trí nhớ: nhớ 3/6 round → N4 ≈ 25.9%.
-   F6D2 (đã đóng băng) có cùng lỗ hổng → mở nợ.
-🔴 Script quét từ lưỡng tính vô giá trị: quét cả text mã JS (start/end/show/plan…),
-   không báo số tuần, không dán output thô, bảng gán tay có từ >A2.
-   "12 từ lưỡng tính/tuần" chưa chứng minh khả thi.
-CHỜ OWNER: (1) chính sách Retry — nghiêng (a) tối đa 2 lượt/phiên;
-(2) phạm vi nội dung — nghiêng ngân hàng toàn cục thay 12 bộ × 156 tuần.
-Bộ đếm: chưa chốt, sẽ tính lại từ plan. Hàng chờ: F7D3 → F5D1 → F1D2 → F1D3.
-F7D3 — vòng phản biện 7 (Phương án A đã chọn; N1–N5 CHƯA bắt đầu).
-✅ Bộ đếm: 15 "Đóng băng" (tự đếm khớp danh sách; F6D3 hạ xuống "Chưa audit
-   (Conditional)"). Bộ đếm re-audit G1–G3 riêng: 3/21 (F6D2, F5D3, F2D3).
-   18/21 BỎ (đếm đôi).
-✅ Dòng F6D3/F7D3/F7D2 khớp; N4 F7D2 = 0.960% nhất quán.
-✅ Nợ F6D2 xác nhận bằng code (ConnectorRelayCanvas.jsx:90-93): attemptNum chẵn →
-   reshuffle pool → Retry 2 chỉ chứa câu đã thấy (overlap 100%).
-✅ Khả thi nội dung: 0/5 tuần đạt ≥12 từ lưỡng tính (tối đa 4/tuần); 5 thư mục
-   tuần / 156. Mô hình "12 bộ/tuần theo từ vựng tuần" bỏ.
-🔴 F4D2: Antigravity giữ "Đóng băng" không xử lý FAIL timer → nếu plan không ghi
-   FAIL thì frozen = 14. Dòng bị cắt "..." nên chưa kết luận.
-🔴 Bảng CEFR gán tay không nguồn; `mistake` tự mâu thuẫn (verb B2) → 11 từ, không
-   phải 12. Số 12 vs 4+2+2=8 chưa giải trình. Chưa có output thô.
-🟡 Nguồn dữ liệu = service (W33+W34): khẳng định cấu trúc chưa trích; W35 (component)
-   chưa có kế hoạch; chưa chứng minh không lặp lỗi "gán cứng 1 role".
-CHỜ OWNER: (1) Retry — nghiêng (a) tối đa 2 lượt/phiên; (2) nội dung — nghiêng ngân
-hàng toàn cục ≈24–36 từ A2 có nguồn CEFR (11 từ đã vét không đủ 12 bộ rời nhau);
-(3) F6D2 — nghiêng mở lại chỉ để áp chính sách retry (giống F7D3).
-Hàng chờ: F7D3 → F5D1 → F1D2 → F1D3.
+- **Bộ đếm:** 14/21 đóng băng (bộ đếm 18/21 cũ sai do đếm đôi). Re-audit G1–G3: 3/21 (F6D2, F5D3, F2D3).
+- **Hàng chờ audit (tạm gác để ưu tiên curriculum):** F7D3 → F6D2 (paperwork) → F5D1 → F1D2 (N4≈21–37%) → F1D3.
+
+## 10. Curriculum (tạm ưu tiên trên audit game)
+- **W33:** ĐÓNG BĂNG tầng **Curriculum Core** (không re-freeze toàn bộ). Gate 8 minigame fallback = nợ kỹ thuật Sprint 2 Chronicles. Gate 15/5 fail là giới hạn môi trường (Playwright/Chrome MCP). Dead-code Nhóm B đã grep xác nhận.
+- **W34:** ✅ 7/7 hạng mục xong (Dictation 8 câu, CLIL 5 MCQ, F5D3 passage 42 từ, F7D1 forge words, vocab dictionary, Gate13, audio 20/20 vocab). Gate 3 PASS (70 file, 0 lỗi), margin N2 F5D3 đúng chuẩn 0.67s/từ (28.14s). Nội dung đóng băng ngang W33.
+- **Việc treo duy nhất:** xác nhận nguyên văn 3 đoạn sửa trong IMPLEMENTATION_PLAN_21_GAMES.md (dòng F5D3, mục 2.3 content-debt, mục 3 mới).
+- **Ghi chú polish không chặn:** "rope net" (dictation), "a strong hunter net" (F5D3), "Hear the loud bird call" (F7D3).
+
+## 11. Việc tiếp theo
+1. Xác nhận paperwork plan W34 (3 đoạn nguyên văn).
+2. Owner quyết định: W35, hay quay lại hàng chờ audit 21 game.
+3. F6D2: hoàn tất paperwork N1–N5 rồi đóng băng.
+4. F7D3: chọn hướng implement N1–N5 (kèm kiểm tay ngữ pháp, validator, Fisher-Yates ở lớp render).
+ĐỊNH HƯỚNG (Owner, 2026-10-20): dừng game; quay lại sản xuất nội dung curriculum. W33 là golden standard cho W34+. W33: đóng băng tầng Curriculum Core (guard 7/7 PASS, hash đã regenerate, CEFR 0 vi phạm, Gate 8 ghi nợ). Chờ Owner chốt: Gate 8 có là điều kiện chuẩn cho W34+ không. W34: 7 hạng mục khoảng hụt đã xử lý, chưa đối chiếu toàn bộ inventory 4 Hubs + 15 Quests với W33, chưa có manifest/guard, chưa chạy full validationSuite, chưa được gọi là đóng băng. Đang chờ Antigravity: bước 0–5 (chỉ kiểm tra). Việc game (F7D3, F6D2 paperwork, F5D1, F1D2, F1D3) tạm gác.
+
+HANDOFF CURRICULUM — cập nhật 2026-10-20. Game track tách riêng, làm sau.
+
+NGUỒN SỰ THẬT (Owner chốt): bản production trên GitHub (commit đang chạy tại app.bkbacademy.vn). Working tree local có thay đổi chưa commit và KHÔNG là chuẩn. Gate chạy trong git worktree sạch tại commit production.
+- App: app.bkbacademy.vn (W33 hub /week/33/hub/1: 5 zone, TRIP 33 · 0/15). Repo local: /Users/binhnguyen/projects/Engquest3k.
+- W33: đã sản xuất xong, hoàn thiện, đóng băng làm chuẩn. Toolkit (gate/pipeline) đã tinh chỉnh từ chính quá trình sản xuất W33.
+- Antigravity tự tìm lại hồ sơ nó đã lưu (pipeline, gates, implementation plan, kiến trúc, SOP). Claude không giả định tên file hay tập file chuẩn.
+
+PHẠM VI: chỉ curriculum. weeks_easy không đọc. Gate 8 và Gate 15 chỉ ngoài phạm vi nếu hồ sơ của Antigravity ghi như vậy (cần trích dòng).
+
+RULE CURRICULUM (đề xuất, Owner duyệt):
+ C1 Trích file:dòng hoặc output thô (RULE 1).
+ C2 Mỗi lệnh riêng, dán output thô, không nối ||; không dán kết luận thay output.
+ C3 Gate PASS chỉ có giá trị khi biết script quét file nào.
+ C4 Số liệu đếm sinh từ một script cố định, cùng cho mọi tuần (RULE 10).
+ C5 Sửa script/file dùng chung → chạy lại W33 (RULE 9).
+ C6 Soi đồng đều, kể cả W33 (RULE 6).
+ C7 Chữ hiển thị = audio = dữ liệu; sửa chữ thì tạo lại audio.
+ C8 Không dùng nội dung/đường dẫn nhánh cũ.
+ C9 build exit 0 không chứng minh nội dung đúng (RULE 7).
+ C10 Đối chiếu ảnh ↔ JSON ↔ báo cáo (RULE 9).
+ C11 Chỉ kết luận dựa trên commit production; không đoán, không "nếu có".
+
+QUAN SÁT TỪ BÁO CÁO G1 (cần xác minh bằng nguồn sự thật, chưa là kết luận):
+- Working tree local: skill_practice_hub.js (W33) và manifest ở trạng thái ' M'; gate11, gate13 ' M'. Chưa biết commit production có chứa thay đổi này không.
+- Lần chạy Gate 15 trước ghi production e8dbc53… khác local HEAD a3e8ae4…; cần đo lại.
+- Hai syllabus nêu chủ đề W34 khác nhau (Fable Lion & Mouse vs Science Fair); chưa rõ tài liệu nào là nguồn sản xuất W34.
+- W33 có ≈25 file legacy chưa khóa; Gate 17 có 3 nhánh weekNum===33; chưa rõ chúng nằm trong hồ sơ như thế nào.
+- Chuẩn nội dung W33 đã thu: picture_story 5 step 2 câu, frame=audio; hotspot story 5/30 bội số của 5; Dictation 8 câu; CLIL kiểm trùng ý = 0; MCQ đáp án option 1 ở 5/5 (chờ kiểm có xáo lúc chạy không).
+
+THỨ TỰ: [đang làm] Antigravity báo cáo nguồn sự thật (prompt A-E) → Owner duyệt bản chuẩn W33 + toolkit → đối chiếu W34 → dựng/cập nhật W34.
+W34: chưa động. Tag lưu trữ archive/w34-draft-2026-10-20 (cần bổ sung snapshot tgz cho file chưa commit).
+ĐANG CHỜ: Antigravity chạy prompt A-E. Chưa sửa/xóa/commit/push.
+HANDOFF CURRICULUM — cập nhật 2026-10-20 (sau khi Owner chụp hồ sơ docs/).
+
+VẤN ĐỀ: Owner không còn biết đâu là sự thật cuối cùng. Ảnh chụp thư mục docs/ cho thấy hồ sơ W33 do Antigravity lưu rất đầy đủ (docs/: 136 file, 8 thư mục; docs/audit/w33: 85 file), trong khi báo cáo G1/G1C chỉ liệt kê ~10 tài liệu.
+
+PHÁT HIỆN TỪ ẢNH (cần Antigravity xác minh bằng lệnh, ngày file chỉ là gợi ý):
+- Hồ sơ đóng băng chưa được đọc: W33_FINAL_CLOSURE_RATIFICATION, MASTER_SOURCE_OF_TRUTH_MATRIX, STEP1H_GENERATOR_AUTHORITY_GRAPH, FINAL_DEPENDENCY_GRAPH, AUDIT_FALSE_PASS_CATALOG, HUMAN_SIGNOFF_CHECKLIST, GOLDEN_WEEKLY_ARCHITECTURE, DAY5_ARCHITECTURE_DECISION_EVIDENCE, ASSET_MANIFEST_SPEC, các bước STEP1C-1I (validator, manifest contract, audio pipeline, E2E harness).
+- Nhiều file W33 có hai bản (docs/ và docs/audit/w33, copy hàng loạt 30/8 16:17); có cặp khác size (FINDINGS_LEDGER 10KB vs 13KB; FINAL_CLOSURE_MATRIX 11KB vs 10KB). W33_GOLDEN_FREEZE_MANIFEST có ở cả hai nơi; guard đọc bản ở docs/.
+- Manifest ở docs/ sửa 9/10 (local, chưa commit). SOP ghi 10/9 và 5/9.
+- Hồ sơ W34/W35 cũ 24-26/8 (trước golden 28/8): week34_conformance_matrix, quarantine_w34, week34_runtime_asset_truth, week34_media_inventory, week34_hotspot_calibration, week35_hotspot_calibration, week_34_project/qa/mqa. Nguy cơ dùng nhầm cho W34 mới.
+- ~30 file GAMIFICATION_* + SUPER_LEO/MINI_GAMES/ARCADE là hồ sơ game: chỉ phân loại.
+- Chưa rõ thư mục: week_33_project, week_33_qa, MASS (tháng 5), agent_artifacts.
+
+ĐIỀU CHỈNH LẬP TRƯỜNG (Claude): trước đó coi production là sự thật cho mọi thứ; thực tế có ba tầng:
+ (i) Runtime: commit production e8dbc532 (09/09) = origin/main.
+ (ii) Chuẩn/quy trình: hồ sơ đóng băng đã phê duyệt 28-30/8 và cập nhật sau (cần xác định bản có thẩm quyền).
+ (iii) Công cụ: script/gate có thể mới hơn production (21 commit docs + 10 commit scripts sau 9/9) — tách "chuẩn mới đã duyệt" khỏi "sửa dở chưa duyệt".
+
+THỨ TỰ: G1D (đọc hồ sơ, lập sổ đăng ký nguồn sự thật, timeline đóng băng, bản đồ miền dữ liệu, toolchain đã đóng, kho điểm mù, hồ sơ W34/W35 cũ, chuẩn mới vs sửa dở; có backup bước 0) -> Owner duyệt sổ đăng ký -> G1C (ba lớp production/local) -> phát hành W33 curriculum-only + khóa lại -> toolkit v1 -> đối chiếu W34 -> dựng W34.
+QUY TẮC: Antigravity chỉ kết luận từ hồ sơ mình đã ghi (trích file:dòng); không đoán theo tên file; game chỉ phân loại, không đọc.
+W34: chưa động. Draft + tag archive chỉ ở local cho tới khi backup bước 0 chạy.
+ĐANG CHỜ: Antigravity chạy G1D (10 bước). Chưa sửa/xóa/di chuyển/push main.

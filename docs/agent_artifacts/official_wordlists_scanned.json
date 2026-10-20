@@ -1,0 +1,426 @@
+[
+  {
+    "word": "a",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "all",
+    "tier": "A2 (KET)"
+  },
+  {
+    "word": "always",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "and",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "ask",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "at",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "baby",
+    "tier": "A2 (KET)"
+  },
+  {
+    "word": "be",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "bed",
+    "tier": "A2 (KET)"
+  },
+  {
+    "word": "bright",
+    "tier": "A2 (KET)"
+  },
+  {
+    "word": "brother",
+    "tier": "A2 (KET)"
+  },
+  {
+    "word": "call",
+    "tier": "A2 (KET)"
+  },
+  {
+    "word": "can",
+    "tier": "A2 (KET)"
+  },
+  {
+    "word": "cat",
+    "tier": "Pre-A1 (Starters)"
+  },
+  {
+    "word": "child",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "clever",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "cloud",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "cook",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "dance",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "dark",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "day",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "dry",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "each",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "easy",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "every",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "family",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "far",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "farmer",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "fast",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "flower",
+    "tier": "Pre-A1 (Starters)"
+  },
+  {
+    "word": "for",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "fresh",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "frog",
+    "tier": "Pre-A1 (Starters)"
+  },
+  {
+    "word": "good",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "green",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "happy",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "he",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "healthy",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "help",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "here",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "high",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "i",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "it",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "join",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "jump",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "keep",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "kind",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "laugh",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "learn",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "like",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "little",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "long",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "look",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "make",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "me",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "music",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "my",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "need",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "new",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "now",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "often",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "old",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "on",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "our",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "paint",
+    "tier": "A2 (Flyers)"
+  },
+  {
+    "word": "party",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "plan",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "plant",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "pretty",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "quiet",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "rain",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "really",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "she",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "shout",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "sister",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "sleep",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "smile",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "some",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "soup",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "spring",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "student",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "study",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "summer",
+    "tier": "A2 (Flyers)"
+  },
+  {
+    "word": "sweet",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "teacher",
+    "tier": "Pre-A1 (Starters)"
+  },
+  {
+    "word": "that",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "the",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "they",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "this",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "to",
+    "tier": "A2 (KET)"
+  },
+  {
+    "word": "today",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "tree",
+    "tier": "Pre-A1 (Starters)"
+  },
+  {
+    "word": "uncle",
+    "tier": "A1 (Movers)"
+  },
+  {
+    "word": "us",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "use",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "very",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "wake",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "walk",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "wall",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "warm",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "water",
+    "tier": "Pre-A1 (Starters)"
+  },
+  {
+    "word": "we",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "well",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "work",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "you",
+    "tier": "NOT_IN_LIST"
+  },
+  {
+    "word": "your",
+    "tier": "NOT_IN_LIST"
+  }
+]

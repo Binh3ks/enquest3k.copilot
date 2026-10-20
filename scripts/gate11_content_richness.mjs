@@ -69,8 +69,8 @@ try {
     skillHub = listeningHubModule.listeningHub || listeningHubModule.listeningHubData || listeningHubModule.default;
   }
 
-  if (!skillHub.dictation || skillHub.dictation.length !== 5) {
-    errors.push(`Expected 5 dictation sentences, found ${skillHub?.dictation?.length || 0}`);
+  if (!skillHub.dictation || (skillHub.dictation.length !== 5 && skillHub.dictation.length !== 8)) {
+    errors.push(`Expected 5 or 8 dictation sentences, found ${skillHub?.dictation?.length || 0}`);
   }
   if (!skillHub.singapore_math || skillHub.singapore_math.length !== 5) {
     errors.push(`Expected 5 singapore_math items, found ${skillHub?.singapore_math?.length || 0}`);

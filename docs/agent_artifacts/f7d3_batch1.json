@@ -1,0 +1,290 @@
+[
+  {
+    "id": "f7d3_r01",
+    "word": "help",
+    "targetRole": "VERB",
+    "prompt": "Which sentence uses 'help' as a VERB?",
+    "cards": [
+      {
+        "text": "We help our teacher today.",
+        "role": "VERB",
+        "isCorrect": true
+      },
+      {
+        "text": "They need some help now.",
+        "role": "NOUN",
+        "isCorrect": false
+      },
+      {
+        "text": "He asks us for help.",
+        "role": "NOUN",
+        "isCorrect": false
+      }
+    ],
+    "hint": "'Help' is an action when you do something useful for someone."
+  },
+  {
+    "id": "f7d3_r02",
+    "word": "call",
+    "targetRole": "NOUN",
+    "prompt": "Which sentence uses 'call' as a NOUN?",
+    "cards": [
+      {
+        "text": "I often call my uncle.",
+        "role": "VERB",
+        "isCorrect": false
+      },
+      {
+        "text": "A call woke the baby.",
+        "role": "NOUN",
+        "isCorrect": true
+      },
+      {
+        "text": "Children always shout and call.",
+        "role": "VERB",
+        "isCorrect": false
+      }
+    ],
+    "hint": "A 'call' is a sound, shout, or phone conversation."
+  },
+  {
+    "id": "f7d3_r03",
+    "word": "dance",
+    "targetRole": "VERB",
+    "prompt": "Which sentence uses 'dance' as a VERB?",
+    "cards": [
+      {
+        "text": "This dance is very easy.",
+        "role": "NOUN",
+        "isCorrect": false
+      },
+      {
+        "text": "They joined a new dance.",
+        "role": "NOUN",
+        "isCorrect": false
+      },
+      {
+        "text": "Happy children dance to music.",
+        "role": "VERB",
+        "isCorrect": true
+      }
+    ],
+    "hint": "'Dance' is an action when moving your body to music."
+  },
+  {
+    "id": "f7d3_r04",
+    "word": "rain",
+    "targetRole": "NOUN",
+    "prompt": "Which sentence uses 'rain' as a NOUN?",
+    "cards": [
+      {
+        "text": "It can rain all day.",
+        "role": "VERB",
+        "isCorrect": false
+      },
+      {
+        "text": "I like the rain today.",
+        "role": "NOUN",
+        "isCorrect": true
+      },
+      {
+        "text": "Dark clouds make it rain.",
+        "role": "VERB",
+        "isCorrect": false
+      }
+    ],
+    "hint": "'Rain' as a noun is water drops falling from clouds."
+  },
+  {
+    "id": "f7d3_r05",
+    "word": "cook",
+    "targetRole": "VERB",
+    "prompt": "Which sentence uses 'cook' as a VERB?",
+    "cards": [
+      {
+        "text": "My older brothers can cook.",
+        "role": "VERB",
+        "isCorrect": true
+      },
+      {
+        "text": "The cook made fresh soup.",
+        "role": "NOUN",
+        "isCorrect": false
+      },
+      {
+        "text": "He is a cook today.",
+        "role": "NOUN",
+        "isCorrect": false
+      }
+    ],
+    "hint": "'Cook' is an action when preparing food with heat."
+  },
+  {
+    "id": "f7d3_r06",
+    "word": "sleep",
+    "targetRole": "NOUN",
+    "prompt": "Which sentence uses 'sleep' as a NOUN?",
+    "cards": [
+      {
+        "text": "Cats sleep on warm beds.",
+        "role": "VERB",
+        "isCorrect": false
+      },
+      {
+        "text": "Quiet babies often sleep here.",
+        "role": "VERB",
+        "isCorrect": false
+      },
+      {
+        "text": "He needs a good sleep.",
+        "role": "NOUN",
+        "isCorrect": true
+      }
+    ],
+    "hint": "'Sleep' as a noun is the rest period in bed."
+  },
+  {
+    "id": "f7d3_r07",
+    "word": "paint",
+    "targetRole": "VERB",
+    "prompt": "Which sentence uses 'paint' as a VERB?",
+    "cards": [
+      {
+        "text": "The bright paint dried fast.",
+        "role": "NOUN",
+        "isCorrect": false
+      },
+      {
+        "text": "We paint walls every summer.",
+        "role": "VERB",
+        "isCorrect": true
+      },
+      {
+        "text": "They use green paint today.",
+        "role": "NOUN",
+        "isCorrect": false
+      }
+    ],
+    "hint": "'Paint' is an action when coloring with a brush."
+  },
+  {
+    "id": "f7d3_r08",
+    "word": "smile",
+    "targetRole": "NOUN",
+    "prompt": "Which sentence uses 'smile' as a NOUN?",
+    "cards": [
+      {
+        "text": "Your smile looks very sweet.",
+        "role": "NOUN",
+        "isCorrect": true
+      },
+      {
+        "text": "Kind sisters smile at me.",
+        "role": "VERB",
+        "isCorrect": false
+      },
+      {
+        "text": "Happy children laugh and smile.",
+        "role": "VERB",
+        "isCorrect": false
+      }
+    ],
+    "hint": "A 'smile' is the pleased expression on someone's face."
+  },
+  {
+    "id": "f7d3_r09",
+    "word": "jump",
+    "targetRole": "VERB",
+    "prompt": "Which sentence uses 'jump' as a VERB?",
+    "cards": [
+      {
+        "text": "This jump is really high.",
+        "role": "NOUN",
+        "isCorrect": false
+      },
+      {
+        "text": "He made a long jump.",
+        "role": "NOUN",
+        "isCorrect": false
+      },
+      {
+        "text": "Green frogs jump very far.",
+        "role": "VERB",
+        "isCorrect": true
+      }
+    ],
+    "hint": "'Jump' is an action when leaping off the ground."
+  },
+  {
+    "id": "f7d3_r10",
+    "word": "plan",
+    "targetRole": "NOUN",
+    "prompt": "Which sentence uses 'plan' as a NOUN?",
+    "cards": [
+      {
+        "text": "Our new plan works well.",
+        "role": "NOUN",
+        "isCorrect": true
+      },
+      {
+        "text": "They plan a family party.",
+        "role": "VERB",
+        "isCorrect": false
+      },
+      {
+        "text": "Clever students study and plan.",
+        "role": "VERB",
+        "isCorrect": false
+      }
+    ],
+    "hint": "A 'plan' is a set of ideas decided for the future."
+  },
+  {
+    "id": "f7d3_r11",
+    "word": "walk",
+    "targetRole": "VERB",
+    "prompt": "Which sentence uses 'walk' as a VERB?",
+    "cards": [
+      {
+        "text": "A walk keeps you healthy.",
+        "role": "NOUN",
+        "isCorrect": false
+      },
+      {
+        "text": "Little children learn to walk.",
+        "role": "VERB",
+        "isCorrect": true
+      },
+      {
+        "text": "They need a walk today.",
+        "role": "NOUN",
+        "isCorrect": false
+      }
+    ],
+    "hint": "'Walk' is an action when moving forward on foot."
+  },
+  {
+    "id": "f7d3_r12",
+    "word": "plant",
+    "targetRole": "NOUN",
+    "prompt": "Which sentence uses 'plant' as a NOUN?",
+    "cards": [
+      {
+        "text": "Farmers plant trees each spring.",
+        "role": "VERB",
+        "isCorrect": false
+      },
+      {
+        "text": "Children often plant pretty flowers.",
+        "role": "VERB",
+        "isCorrect": false
+      },
+      {
+        "text": "She waters that green plant.",
+        "role": "NOUN",
+        "isCorrect": true
+      }
+    ],
+    "hint": "A 'plant' is a living thing that grows in soil."
+  }
+]
