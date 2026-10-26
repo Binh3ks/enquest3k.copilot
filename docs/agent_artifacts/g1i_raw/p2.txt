@@ -1,0 +1,239 @@
+### STEP: p2
+### CMD: bash -c 
+commits=(a3e8ae48 8da22299 0c64e22c 11256e99 fe501373 f085bb94 b229df25 2d33444c a45d882d 80581ce7)
+for c in "${commits[@]}"; do
+  echo "========================================================================"
+  echo "COMMIT: $c"
+  git show -s --format="%H %cd %s" $c
+  echo "--- STAT FOR W33 DATA ---"
+  git show --stat $c -- src/data/weeks/week_33
+  echo "--- RAW DIFF FOR W33 DATA ---"
+  git diff ${c}~1 $c -- src/data/weeks/week_33
+done
+
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T03:02:45Z
+### ----- OUTPUT -----
+========================================================================
+COMMIT: a3e8ae48
+a3e8ae4875183c2ea1b86f2801b464ead89aa356 Tue Oct 6 13:35:41 2026 +0700 fix: update gitignore rules and remove untracked cache
+--- STAT FOR W33 DATA ---
+commit a3e8ae4875183c2ea1b86f2801b464ead89aa356
+Author: binh4k <binh4k@users.noreply.github.com>
+Date:   Tue Oct 6 13:35:41 2026 +0700
+
+    fix: update gitignore rules and remove untracked cache
+
+ src/data/weeks/week_33/vocab.js           |  2 +-
+ src/data/weeks/week_33/week_33_real.js    |  2 +-
+ src/data/weeks/week_33/wh_questions.js    | 59 ++++++++++++++++++++++++++++++
+ src/data/weeks/week_33/word_class_duel.js | 61 +++++++++++++++++++++++++++++++
+ 4 files changed, 122 insertions(+), 2 deletions(-)
+--- RAW DIFF FOR W33 DATA ---
+diff --git a/src/data/weeks/week_33/vocab.js b/src/data/weeks/week_33/vocab.js
+index d9d9e794..792e7345 100644
+--- a/src/data/weeks/week_33/vocab.js
++++ b/src/data/weeks/week_33/vocab.js
+@@ -152,7 +152,7 @@ export default [
+   },
+   { 
+     id: 16, 
+-    word: "cold_pack", 
++    word: "cold pack", 
+     definition_en: "a gel bag chilled in ice used to reduce swelling", 
+     definition_vi: "túi chườm lạnh", 
+     example_en: "The nurse placed a cold pack on his knee to reduce pain.",
+diff --git a/src/data/weeks/week_33/week_33_real.js b/src/data/weeks/week_33/week_33_real.js
+index e936595f..37fd8cab 100644
+--- a/src/data/weeks/week_33/week_33_real.js
++++ b/src/data/weeks/week_33/week_33_real.js
+@@ -16,7 +16,7 @@ export default {
+     "corridor", "slipped", "nurse", "bandage", "relieved",
+     "mistake", "accident", "fix", "sorry", "careful",
+     "clumsy", "arm", "knee", "leg", "head",
+-    "cold_pack", "recover", "explain", "lesson", "terrible"
++    "cold pack", "recover", "explain", "lesson", "terrible"
+   ],
+   sentences: [
+     { id: 1, text: "Jake was walking carefully down the corridor.", vi: "Jake đang đi bộ cẩn thận xuống hành lang." },
+diff --git a/src/data/weeks/week_33/wh_questions.js b/src/data/weeks/week_33/wh_questions.js
+new file mode 100644
+index 00000000..4a250357
+--- /dev/null
++++ b/src/data/weeks/week_33/wh_questions.js
+@@ -0,0 +1,59 @@
++/**
++ * Pre-generated WH Questions — pending pedagogy review before release
++ * Used by Question Quest (G7 mini-game).
++ * Build-time generated draft for Week 33.
++ */
++export const WEEK_33_WH_QUESTIONS = [
++  {
++    id: 'w33_wh_1',
++    sentence: "Jake was walking carefully down the school corridor after science class.",
++    options: [
++      { text: "What was Jake doing?", isCorrect: true },
++      { text: "Where was Jake going?", isCorrect: false },
++      { text: "When was Jake walking?", isCorrect: false },
++    ],
++    hint: "Notice the past continuous tense: 'was walking carefully'."
++  },
++  {
++    id: 'w33_wh_2',
++    sentence: "Suddenly, he lost his balance on the wet floor and slipped.",
++    options: [
++      { text: "What happened suddenly?", isCorrect: true },
++      { text: "Why did he slip?", isCorrect: false },
++      { text: "Where did he fall?", isCorrect: false },
++    ],
++    hint: "Look at the time adverb 'Suddenly' at the start of the event."
++  },
++  {
++    id: 'w33_wh_3',
++    sentence: "Jake stopped immediately to help his friend and called the school nurse.",
++    options: [
++      { text: "What did Jake do?", isCorrect: true },
++      { text: "Who did Jake help?", isCorrect: false },
++      { text: "When did Jake stop?", isCorrect: false },
++    ],
++    hint: "This question asks about the primary action Jake took."
++  },
++  {
++    id: 'w33_wh_4',
++    sentence: "The nurse arrived quickly with a clean bandage and a cold pack to treat the cut.",
++    options: [
++      { text: "What did the nurse bring?", isCorrect: true },
++      { text: "Who did the nurse help?", isCorrect: false },
++      { text: "When did the nurse arrive?", isCorrect: false },
++    ],
++    hint: "Notice the supplies brought: 'a clean bandage and a cold pack'."
++  },
++  {
++    id: 'w33_wh_5',
++    sentence: "Everyone felt relieved, and the headmaster reminded all students never to run.",
++    options: [
++      { text: "What did the headmaster remind everyone about?", isCorrect: true },
++      { text: "Why did everyone feel relieved?", isCorrect: false },
++      { text: "Who did the headmaster talk to?", isCorrect: false },
++    ],
++    hint: "Look at the advice given by the headmaster in the corridor."
++  }
++];
++
++export default WEEK_33_WH_QUESTIONS;
+diff --git a/src/data/weeks/week_33/word_class_duel.js b/src/data/weeks/week_33/word_class_duel.js
+new file mode 100644
+index 00000000..b130411b
+--- /dev/null
++++ b/src/data/weeks/week_33/word_class_duel.js
+@@ -0,0 +1,61 @@
++/**
++ * Word Class Duel (I7 mini-game) Annotated Content for Week 33
++ * Target words with dual-class usage (Noun vs Verb) in Cambridge context.
++ * Note: Round 1 (grip) is verbatim from W33 CLIL; Rounds 2-4 (slide, care, help) are authored draft context pending pedagogy review before release.
++ */
++export const WEEK_33_WORD_CLASS_DUEL = [
++  {
++    id: 'w33_wcd_1',
++    word: 'grip',
++    targetRole: 'VERB',
++    prompt: "Which sentence uses 'grip' as a VERB (hành động)?",
++    cards: [
++      { id: 'c1', text: "Your rubber shoes grip firmly on dry corridor tiles.", role: 'VERB', isCorrect: true },
++      { id: 'c2', text: "Rubber gives a strong grip on clean floors.", role: 'NOUN', isCorrect: false },
++      { id: 'c3', text: "Plastic soles with no grip can cause accidents.", role: 'NOUN', isCorrect: false },
++      { id: 'c4', text: "The friendly grip between soles and floor keeps you safe.", role: 'NOUN', isCorrect: false },
++    ],
++    hint: "Look for the sentence where 'grip' describes an action done by the shoes."
++  },
++  {
++    id: 'w33_wcd_2',
++    word: 'slide',
++    targetRole: 'NOUN',
++    prompt: "Which sentence uses 'slide' as a NOUN (danh từ)?",
++    cards: [
++      { id: 'c1', text: "Water turns safe corridors into a dangerous slide.", role: 'NOUN', isCorrect: true },
++      { id: 'c2', text: "Smooth soles slide easily across wet tiles.", role: 'VERB', isCorrect: false },
++      { id: 'c3', text: "Children might slide and fall when running.", role: 'VERB', isCorrect: false },
++      { id: 'c4', text: "Friction stops you before you slide too far.", role: 'VERB', isCorrect: false },
++    ],
++    hint: "Notice 'a dangerous slide' — 'slide' is preceded by an article and adjective."
++  },
++  {
++    id: 'w33_wcd_3',
++    word: 'care',
++    targetRole: 'VERB',
++    prompt: "Which sentence uses 'care' as a VERB (hành động)?",
++    cards: [
++      { id: 'c1', text: "Teachers care deeply about student safety.", role: 'VERB', isCorrect: true },
++      { id: 'c2', text: "Take great care when walking down the corridor.", role: 'NOUN', isCorrect: false },
++      { id: 'c3', text: "School safety and care are our responsibility.", role: 'NOUN', isCorrect: false },
++      { id: 'c4', text: "The nurse provided gentle medical care.", role: 'NOUN', isCorrect: false },
++    ],
++    hint: "Find the sentence where 'care' tells what teachers do."
++  },
++  {
++    id: 'w33_wcd_4',
++    word: 'help',
++    targetRole: 'NOUN',
++    prompt: "Which sentence uses 'help' as a NOUN (danh từ)?",
++    cards: [
++      { id: 'c1', text: "Jake called the nurse for immediate help.", role: 'NOUN', isCorrect: true },
++      { id: 'c2', text: "Good students help each other when someone falls.", role: 'VERB', isCorrect: false },
++      { id: 'c3', text: "Cold packs help reduce painful swelling.", role: 'VERB', isCorrect: false },
++      { id: 'c4', text: "Warning signs help students stay alert.", role: 'VERB', isCorrect: false },
++    ],
++    hint: "'immediate help' — 'help' functions as the object of the preposition 'for'."
++  }
++];
++
++export default WEEK_33_WORD_CLASS_DUEL;
+========================================================================
+COMMIT: 8da22299
+8da222995c5322d0c2d29846bd188e77f577e426 Fri Sep 11 20:58:26 2026 +0700 feat(chronicles): StoryAltarPuzzle — new anti-brute-force engine [Hạng #5]
+--- STAT FOR W33 DATA ---
+--- RAW DIFF FOR W33 DATA ---
+========================================================================
+COMMIT: 0c64e22c
+0c64e22cef72ad60d76ecbcf3a0fd73a572ef63e Fri Sep 11 19:41:14 2026 +0700 test(chronicles): semantic keyword validation + puppeteer playtest 4 combos [ZZ]
+--- STAT FOR W33 DATA ---
+--- RAW DIFF FOR W33 DATA ---
+========================================================================
+COMMIT: 11256e99
+11256e99d06753fb56125976c5813cbbec76f300 Fri Sep 11 18:48:03 2026 +0700 test(chronicles): enforce 3-point plaque occlusion checks and HUD clearance assertions [WW]
+--- STAT FOR W33 DATA ---
+--- RAW DIFF FOR W33 DATA ---
+========================================================================
+COMMIT: fe501373
+fe5013739c33c8d05db5c22418359a3f33b67517 Fri Sep 11 18:26:19 2026 +0700 fix(chronicles): resolve middle vault plaque overlap and enforce visibility assertions [VV]
+--- STAT FOR W33 DATA ---
+--- RAW DIFF FOR W33 DATA ---
+========================================================================
+COMMIT: f085bb94
+f085bb94ca0ae739ec06c418168e920034d5c72a Fri Sep 11 17:21:08 2026 +0700 feat(chronicles): implement QuestionQuestGame.jsx (Rank #4) with physical maze and 220px signboards
+--- STAT FOR W33 DATA ---
+--- RAW DIFF FOR W33 DATA ---
+========================================================================
+COMMIT: b229df25
+b229df259191081bf0aed8a3e0eaa06ceece0d69 Fri Sep 11 17:16:24 2026 +0700 fix(chronicles): stabilize W35 connector questions and read sentences from DOM in playtest [UU]
+--- STAT FOR W33 DATA ---
+--- RAW DIFF FOR W33 DATA ---
+========================================================================
+COMMIT: 2d33444c
+2d33444c7595de570c5ea9c7be0858281422e458 Fri Sep 11 17:06:58 2026 +0700 feat(chronicles): implement WordForgeCarryEngine.jsx (Rank #3) with physical carry and 2-tier matching
+--- STAT FOR W33 DATA ---
+--- RAW DIFF FOR W33 DATA ---
+========================================================================
+COMMIT: a45d882d
+a45d882deaeea196690e5a8b8543ccfbf93c2414 Fri Sep 11 17:02:37 2026 +0700 fix(chronicles): resolve hearts closure in ConnectorRelayCanvas test hook and add 4/4 playtest suite [SS-TT]
+--- STAT FOR W33 DATA ---
+--- RAW DIFF FOR W33 DATA ---
+========================================================================
+COMMIT: 80581ce7
+80581ce7885893cdf9cf4013cae9e36790de7234 Fri Sep 11 16:56:17 2026 +0700 feat(chronicles): implement ConnectorRelayCanvas.jsx and close tasks OO, PP, ranking updates
+--- STAT FOR W33 DATA ---
+--- RAW DIFF FOR W33 DATA ---
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T03:02:45Z

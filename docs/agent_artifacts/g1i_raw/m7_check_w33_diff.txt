@@ -1,0 +1,22 @@
+### STEP: m7_check_w33_diff
+### CMD: git diff src/data/weeks/week_33/
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T02:55:38Z
+### ----- OUTPUT -----
+diff --git a/src/data/weeks/week_33/skill_practice_hub.js b/src/data/weeks/week_33/skill_practice_hub.js
+index 840bab90..7d44d29b 100644
+--- a/src/data/weeks/week_33/skill_practice_hub.js
++++ b/src/data/weeks/week_33/skill_practice_hub.js
+@@ -158,7 +158,7 @@ export const skillPracticeHub = {
+             correct_label: "Forward Motion",
+             x: 64,
+             y: 38,
+-            micro_explanation: "⚡ Running fast builds momentum that cannot stop without floor grip."
++            micro_explanation: "⚡ Running fast builds forward speed that cannot stop without floor grip."
+           },
+           {
+             id: "z1_3",
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T02:55:38Z

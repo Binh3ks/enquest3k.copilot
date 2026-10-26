@@ -1,0 +1,10 @@
+### STEP: q26_check_metadata
+### CMD: grep -n -E -C 10 34:\s*\{ src/data/metadata.js
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:45:20Z
+### ----- OUTPUT -----
+grep: src/data/metadata.js: No such file or directory
+### ----- END -----
+### EXIT: 2
+### END_UTC: 2026-10-23T09:45:20Z

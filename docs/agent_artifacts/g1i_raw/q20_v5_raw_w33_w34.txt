@@ -1,0 +1,60 @@
+### STEP: q20_v5_raw_w33_w34
+### CMD: sed -n 2650,2700p _syllabus_v5_raw.txt
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:43:50Z
+### ----- OUTPUT -----
+▶ Listening Part 3 format introduced: match 5 people to injury/activity (5 minutes).
+-> Teacher reads: 'Tom hurt his knee. Anna broke her arm. Sam bit his tongue...'
+-> Students match: name card ↔ body part card on a 5-row table. Formal practice: Week 51.
+★  CAMBRIDGE INTEGRATION — WRITING — Writing Part 6 Seed: Informal Note Format (2nd Exposure)
+▶ Cambridge Writing Part 6 format seed (5 minutes): short note from a friend, 4 gaps.
+-> "Dear ___(1), I am at the hospital because I hurt my ___(2). The doctor says I should _____(3). Come and visit me? Love, ___(4)."
+-> Gaps: (1) name / (2) body part (arm/leg/head) / (3) verb phrase (rest/use crutches) / (4) name.
+▶ This combines W33 health vocabulary (body parts, injury) with Writing Part 6 format.
+-> Format rule: Part 6 ALWAYS specifies the REGISTER (informal=Hi/Dear + Love | formal=Dear + Yours sincerely).
+33.6  SPIRAL REVIEW
+Grammar: ALL 5 irregular verb groups W29–33 | Adverbs W29–31 | Passive seeding W32–33
+Vocabulary: Body/health W33 (new) | Materials W31–32 | Occupations W29–30 | Transport W28
+33.7  HOMEWORK
+Grammar: Write 3 sentences for each irregular verb group (W29–33) — 15 sentences total.
+Cambridge: Draw and label 8 body parts. Write 1 accident verb sentence for each body part.
+Vocabulary: Learn and spell 8 health/body words from today's vocabulary set.
+WEEK 34: STORYTELLING PRACTICE 1 (Fable)
+Tuần 34: Luyện Kể chuyện 1 — Truyện Ngụ ngôn
+SESSION OVERVIEW: Fable creation using all 5 irregular verb groups. Relative clauses seeded in definitions. Reading Part 1 and Writing Part 7 formally introduced this week.
+34.1  READING INPUT
+Title: "The Ant and the Grasshopper" | 120 words | Type: Fable
+Story: In summer, the ant worked hard. She built a house, made food, and put away seeds. The grasshopper sang songs and danced all day. 'Come and play!' he said. But the ant did not stop. Winter came. The grasshopper had no food and no home. He went to the ant's house. 'Please help me!' he said. The ant gave him food and taught him a lesson.
+Grammar in context: all 5 irregular verb groups represented — worked, built, made, put, sang, came, had, went, gave, taught
+★  CAMBRIDGE INTEGRATION — READING — Relative Clauses in Story Definitions (Seeding)
+▶ Story expanded: 3 character descriptions use relative clause format (underlined):
+-> "The ant is an insect THAT works very hard."
+-> "The grasshopper is an insect THAT sings and dances."
+-> "A fable is a story THAT teaches a lesson."
+▶ Teacher highlights 'that': 'What does THAT refer to? (the word before it — the noun).'
+-> Formal relative clauses: Week 41 (seeding) -> Week 42 (formal teaching). This = first exposure.
+34.2  GRAMMAR FOCUS
+Topic: Storytelling Language — using all 5 irregular verb groups in one story
+Review chart: Group 1 (movement) | Group 2 (consumption) | Group 3 (perception) | Group 4 (tasks) | Group 5 (accidents)
+Activity: Story sorting — match each sentence to its irregular verb group
+★  CAMBRIDGE INTEGRATION — GRAMMAR — Relative Clause Seeding: 'that / who / which'
+▶ Pattern: noun + relative pronoun + verb phrase
+-> "An ant is an insect THAT works hard."  (that = for things/animals)
+-> "A farmer is a person WHO grows food."  (who = for people)
+-> "A bicycle is a vehicle WHICH has two wheels."  (which = for things, formal)
+▶ Noticing task: Find 2 sentences in the story that use 'that'. Underline them.
+-> Why this matters: relative clauses appear in ALL Cambridge Reading Part 1 definitions.
+34.3  VOCABULARY FOCUS (10 core words)
+Core words: ant, grasshopper, seed, winter, harvest, shelter, lazy, generous, selfish, lesson
+★  CAMBRIDGE INTEGRATION — VOCABULARY — Occupations + Transport: Combined Definition Practice
+▶ Cambridge Reading Part 1 format: students write 2 definition sentences using relative clauses.
+-> "It is a person WHO flies airplanes." -> pilot
+-> "It is a vehicle THAT travels on water." -> boat
+▶ Activity: Teacher gives word card, students write definition using 'It is a ___ that/who...'
+-> 5 words practised: pilot, doctor, boat, tractor, chef — mix of occupations + transport.
+34.4  WRITING TASK
+Task: Create your own fable using all 5 irregular verb groups.
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T09:43:50Z

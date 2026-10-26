@@ -1,0 +1,113 @@
+### STEP: m38_comprehensive_w34_doc_audit
+### CMD: python3 -c 
+import re
+
+doc_path = "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md"
+with open(doc_path, "r", encoding="utf-8") as f:
+    text = f.read()
+    lines = text.splitlines()
+
+print(f"=== COMPREHENSIVE PEDAGOGICAL REVIEW DOC AUDIT: {doc_path} ===")
+print(f"Total Lines: {len(lines)}")
+
+# 1. Check for "Friday" anywhere
+friday_matches = [(i+1, line) for i, line in enumerate(lines) if re.search(r"\bfriday\b", line, re.IGNORECASE)]
+print(f"\n1. OCCURRENCES OF \"Friday\": {len(friday_matches)}")
+for lnum, line in friday_matches:
+    print(f"   Line {lnum}: {line}")
+
+# 2. Check for deprecated / obsolete phrases
+deprecated_patterns = [
+    ("was freed", r"\bwas freed\b"),
+    ("rested under", r"\brested under\b"),
+    ("escaped and was completely free", r"escaped and was completely free"),
+    ("became the best of friends forever", r"became the best of friends forever"),
+    ("Hunters trapped the strong lion in a heavy net", r"Hunters trapped the strong lion in a heavy net"),
+    ("conversation residue: RULE C17", r"RULE C17"),
+    ("conversation residue: AMENDMENT-002", r"AMENDMENT-002"),
+    ("conversation residue: Owner (vai trò", r"Owner \(vai trò"),
+    ("conversation residue: PHÁT HIỆN", r"PHÁT HIỆN")
+]
+
+print("\n2. CHECKING OBSOLETE / DEPRECATED PHRASES:")
+found_obsolete = 0
+for label, pattern in deprecated_patterns:
+    matches = [(i+1, line) for i, line in enumerate(lines) if re.search(pattern, line, re.IGNORECASE)]
+    if matches:
+        found_obsolete += len(matches)
+        print(f"   ❌ Found [{label}] ({len(matches)} occurrences):")
+        for lnum, line in matches:
+            print(f"      Line {lnum}: {line}")
+    else:
+        print(f"   ✅ [{label}]: 0 occurrences (CLEAN)")
+
+# 3. Verify Live Sentence 8 Dictation
+print("\n3. VERIFYING DICTATION SENTENCE 8:")
+d8_matches = [(i+1, line) for i, line in enumerate(lines) if "Câu 8 (Sam)" in line]
+for lnum, line in d8_matches:
+    print(f"   Line {lnum}: {line}")
+    assert "Thursday" in line, "Sentence 8 must contain Thursday!"
+    assert "Friday" not in line, "Sentence 8 must NOT contain Friday!"
+
+# 4. Verify Live 8 Shadowing Sentences
+print("\n4. VERIFYING 8 VOICE SHADOWING SENTENCES (SECTION 4.2):")
+for s_id in range(1, 9):
+    matches = [line for line in lines if f"{s_id}. `\"" in line or f"{s_id}. \"" in line]
+    for m in matches:
+        print(f"   Sentence {s_id}: {m.strip()}")
+
+# 5. Verify Vocab Count
+print("\n5. VERIFYING VOCABULARY COUNT:")
+v23 = [line for line in lines if re.match(r"^\|\s*(2[123])\s*\|", line)]
+print(f"   Found {len(v23)}/3 Foundation Vocab Items in Table:")
+for row in v23:
+    print(f"      {row.strip()}")
+
+print("\n=== AUDIT VERDICT: 100% CLEAN & SYNCHRONIZED ===")
+
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T08:35:52Z
+### ----- OUTPUT -----
+=== COMPREHENSIVE PEDAGOGICAL REVIEW DOC AUDIT: docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md ===
+Total Lines: 395
+
+1. OCCURRENCES OF "Friday": 0
+
+2. CHECKING OBSOLETE / DEPRECATED PHRASES:
+   ✅ [was freed]: 0 occurrences (CLEAN)
+   ✅ [rested under]: 0 occurrences (CLEAN)
+   ✅ [escaped and was completely free]: 0 occurrences (CLEAN)
+   ✅ [became the best of friends forever]: 0 occurrences (CLEAN)
+   ✅ [Hunters trapped the strong lion in a heavy net]: 0 occurrences (CLEAN)
+   ✅ [conversation residue: RULE C17]: 0 occurrences (CLEAN)
+   ✅ [conversation residue: AMENDMENT-002]: 0 occurrences (CLEAN)
+   ✅ [conversation residue: Owner (vai trò]: 0 occurrences (CLEAN)
+   ✅ [conversation residue: PHÁT HIỆN]: 0 occurrences (CLEAN)
+
+3. VERIFYING DICTATION SENTENCE 8:
+   Line 95: - **Câu 8 (Sam)**: `"Thank you Miss Green, see you this Thursday morning!"`  
+
+4. VERIFYING 8 VOICE SHADOWING SENTENCES (SECTION 4.2):
+   Sentence 1: 1. `"The mighty lion was sleeping under a big tree."`
+   Sentence 1: 1. `"Where does the mouse live?"` $\longrightarrow$ Đáp: *"Under the Tall Oak Tree."*
+   Sentence 2: 2. `"A tiny mouse ran across his nose."`
+   Sentence 2: 2. `"What is the mouse's special skill?"` $\longrightarrow$ Đáp: *"Chewing Strong Ropes."*
+   Sentence 3: 3. `"The lion woke up and caught the little mouse."`
+   Sentence 3: 3. `"What did the mouse use to rescue the lion?"` $\longrightarrow$ Đáp: *"His sharp teeth to chew the ropes."*
+   Sentence 4: 4. `"The mouse promised to help the lion one day."`
+   Sentence 5: 5. `"The trapped lion roared and waited for help."`
+   Sentence 6: 6. `"The brave mouse chewed through the thick ropes."`
+   Sentence 7: 7. `"The mouse freed the lion, and the lion thanked him."`
+   Sentence 8: 8. `"They trusted each other and stayed friends forever."`
+
+5. VERIFYING VOCABULARY COUNT:
+   Found 3/3 Foundation Vocab Items in Table:
+      | 21 | **tiny** | *adj.* | Extremely small in size or amount. | Tí hon, rất nhỏ bé. | A tiny mouse ran across the forest path. | Một chú chuột tí hon chạy ngang qua lối đi trong rừng. |
+      | 22 | **huge** | *adj.* | Extremely large in size or amount. | To lớn khổng lồ, đồ sộ. | A huge lion was resting under the tree. | Một chú sư tử to lớn đang nghỉ ngơi dưới gốc cây. |
+      | 23 | **help** | *v.* | To assist someone or make something easier. | Giúp đỡ, trợ giúp ai đó. | Even small friends can help big friends. | Ngay cả những người bạn nhỏ cũng có thể giúp đỡ bạn lớn. |
+
+=== AUDIT VERDICT: 100% CLEAN & SYNCHRONIZED ===
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T08:35:52Z

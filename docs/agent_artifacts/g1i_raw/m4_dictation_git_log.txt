@@ -1,0 +1,47 @@
+### STEP: m4_dictation_git_log
+### CMD: bash -c 
+echo "=== 1. git log -S \"Dictation gồm đúng 8 câu ngắn\" --oneline AGENTS.md ==="
+git log -S "Dictation gồm đúng 8 câu ngắn" --oneline AGENTS.md
+
+echo "=== 2. git log -S \"Dictation consists of 8 short turns\" --oneline docs/WEEK_PRODUCTION_SOP.md ==="
+git log -S "Dictation consists of 8 short turns" --oneline docs/WEEK_PRODUCTION_SOP.md
+
+echo "=== 3. DETAIL OF COMMITS FOUND ==="
+for c in $(git log -S "Dictation gồm đúng 8 câu ngắn" --format="%h" AGENTS.md); do
+  git show -s --format="%H %cd %s" $c
+  git show $c -- AGENTS.md | grep -n -C 3 "Dictation gồm đúng 8 câu ngắn"
+done
+
+for c in $(git log -S "Dictation consists of 8 short turns" --format="%h" docs/WEEK_PRODUCTION_SOP.md); do
+  git show -s --format="%H %cd %s" $c
+  git show $c -- docs/WEEK_PRODUCTION_SOP.md | grep -n -C 3 "Dictation consists of 8 short turns"
+done
+
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T04:51:03Z
+### ----- OUTPUT -----
+=== 1. git log -S "Dictation gồm đúng 8 câu ngắn" --oneline AGENTS.md ===
+7f833dac fix(ui): eliminate nested cards, scale responsive typography, enhance mobile info exchange, and update dictation everyday dialogue
+=== 2. git log -S "Dictation consists of 8 short turns" --oneline docs/WEEK_PRODUCTION_SOP.md ===
+7f833dac fix(ui): eliminate nested cards, scale responsive typography, enhance mobile info exchange, and update dictation everyday dialogue
+=== 3. DETAIL OF COMMITS FOUND ===
+7f833dac67ad352a9a7675b675d49953c7e0f281 Sat Sep 5 17:04:08 2026 +0700 fix(ui): eliminate nested cards, scale responsive typography, enhance mobile info exchange, and update dictation everyday dialogue
+15-+10. **Everyday Conversation & Cambridge Exam Dictation Invariant (W01–W156) — 2026-09-05**:
+16-+   - **Mục đích Sư phạm Bắt buộc**: Dictation KHÔNG PHẢI là chép lại 8 câu bài đọc Shadowing hay văn bản khoa học CLIL!
+17-+   - **Chuẩn Mực Khảo Thí Cambridge Movers / Flyers (Listening Part 2 & Writing)**:
+18:+     - Dictation gồm đúng 8 câu ngắn liên hoàn tạo thành 1 cuộc hội thoại giao tiếp đời thường hoàn chỉnh (Everyday English Conversation Dialogue) xoay quanh chủ đề của tuần.
+19-+     - Bắt buộc lồng ghép các thực thể khảo thí cốt lõi:
+20-+       - **Numbers & Time**: Giờ giấc (`10:15 AM`, `half past two`), số phòng (`Room 4B`), số điện thoại, số lượng (`15 minutes`, `2 days`).
+21-+       - **Days & Dates**: Thứ trong tuần (`Monday afternoon`, `this Friday`), ngày tháng.
+7f833dac67ad352a9a7675b675d49953c7e0f281 Sat Sep 5 17:04:08 2026 +0700 fix(ui): eliminate nested cards, scale responsive typography, enhance mobile info exchange, and update dictation everyday dialogue
+14-     - Every Quest component must accept `onBackToMap` / `onComplete` and provide a clean, celebratory return path to the Quest Map (`/week/{weekId}/hub/1`) without getting trapped.
+15-+12. **Everyday Conversation & Cambridge Exam Dictation Invariant (2026-09-05)**:
+16-+    - Dictation must NEVER copy or duplicate Shadowing sentences or CLIL scientific texts.
+17:+    - Dictation consists of 8 short turns forming an authentic everyday conversation dialogue between characters/friends related to the week's theme.
+18-+    - Mandatory inclusion of Cambridge Movers/Flyers tested entities: numbers (times, rooms, phone digits, durations), days of the week, dates, names, places, and everyday conversational collocations/chunks.
+19-+
+20- 
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T04:51:03Z

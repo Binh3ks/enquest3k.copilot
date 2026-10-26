@@ -1,0 +1,106 @@
+### STEP: s1
+### CMD: bash -c 
+echo "=== srsService.js:34-60 (init/ensureSyllabusWords) ==="
+sed -n "34,60p" src/services/srsService.js
+echo "=== srsService.js:140-165 (getDueWords) ==="
+sed -n "140,165p" src/services/srsService.js
+echo "=== srsService.js:232-254 (isDailyReviewDone) ==="
+sed -n "232,254p" src/services/srsService.js
+echo "=== past_weeks_srs_vocab.js:48-55 (detective) ==="
+sed -n "48,55p" src/data/syllabus/past_weeks_srs_vocab.js
+
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T02:55:54Z
+### ----- OUTPUT -----
+=== srsService.js:34-60 (init/ensureSyllabusWords) ===
+class SRSService {
+  constructor() {
+    this.srsMap = this.loadSRSData();
+    this.ensureSyllabusWords();
+  }
+
+  /**
+   * Ensure syllabus words from W01-W32 are present in the SRS map.
+   */
+  ensureSyllabusWords() {
+    let changed = false;
+    PAST_WEEKS_SRS_VOCAB.forEach((item) => {
+      const key = item.word.toLowerCase();
+      if (!this.srsMap[key]) {
+        this.srsMap[key] = {
+          ...item,
+          lastReviewed: Date.now() - (item.box * 86400000),
+          nextReview: Date.now() - 1000 // Ready for review
+        };
+        changed = true;
+      }
+    });
+    if (changed) {
+      this.saveSRSData();
+    }
+  }
+
+=== srsService.js:140-165 (getDueWords) ===
+  getDueWords(count = 10, currentWeek = 33) {
+    const now = Date.now();
+    const entries = Object.values(this.srsMap);
+    
+    // Filter due words
+    let due = entries.filter((item) => item.nextReview <= now);
+
+    // Prefer past week words (week < currentWeek) for SRS review
+    due.sort((a, b) => {
+      // Prioritize Box 1 (urgent)
+      if (a.box !== b.box) return a.box - b.box;
+      // Then prioritize past weeks over current week
+      const aIsPast = (a.week || 0) < currentWeek;
+      const bIsPast = (b.week || 0) < currentWeek;
+      if (aIsPast !== bIsPast) return aIsPast ? -1 : 1;
+      // Then oldest nextReview
+      return a.nextReview - b.nextReview;
+    });
+
+    if (due.length >= count) {
+      return due.slice(0, count);
+    }
+
+    // If fewer due words than requested, top up with past syllabus words
+    const seenWords = new Set(due.map(d => d.word.toLowerCase()));
+    const pastCandidates = entries.filter(e => (e.week || 0) < currentWeek && !seenWords.has(e.word.toLowerCase()));
+=== srsService.js:232-254 (isDailyReviewDone) ===
+  /**
+   * Check if daily SRS warm-up has been completed today.
+   */
+  isDailyReviewDone() {
+    try {
+      const lastDate = localStorage.getItem(SRS_DAILY_KEY);
+      const todayStr = new Date().toISOString().slice(0, 10);
+      return lastDate === todayStr;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  /**
+   * Mark daily SRS warm-up as completed for today.
+   */
+  markDailyReviewDone() {
+    try {
+      const todayStr = new Date().toISOString().slice(0, 10);
+      localStorage.setItem(SRS_DAILY_KEY, todayStr);
+    } catch (_) {}
+  }
+
+=== past_weeks_srs_vocab.js:48-55 (detective) ===
+  { word: "building", week: 19, definition: "tòa nhà", phonetic: "/ˈbɪldɪŋ/", box: 2 },
+  { word: "village", week: 19, definition: "ngôi làng", phonetic: "/ˈvɪlɪdʒ/", box: 2 },
+  { word: "library", week: 20, definition: "thư viện", phonetic: "/ˈlaɪbrəri/", box: 2 },
+  { word: "detective", week: 20, definition: "thám tử", phonetic: "/dɪˈtektɪv/", box: 1 },
+  { word: "fossil", week: 21, definition: "hóa thạch", phonetic: "/ˈfɒsl/", box: 2 },
+  { word: "ground", week: 21, definition: "mặt đất", phonetic: "/ɡraʊnd/", box: 2 },
+  { word: "castle", week: 22, definition: "lâu đài", phonetic: "/ˈkɑːsl/", box: 2 },
+  { word: "bridge", week: 22, definition: "cây cầu", phonetic: "/brɪdʒ/", box: 2 },
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T02:55:54Z

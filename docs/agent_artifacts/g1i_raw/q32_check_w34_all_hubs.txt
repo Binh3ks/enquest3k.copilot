@@ -1,0 +1,72 @@
+### STEP: q32_check_w34_all_hubs
+### CMD: grep -n -E -C 2 theme:|title: src/data/weeks/week_34/listening_hub.js src/data/weeks/week_34/speaking_hub.js src/data/weeks/week_34/writing_hub.js
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:46:22Z
+### ----- OUTPUT -----
+src/data/weeks/week_34/listening_hub.js-38-
+src/data/weeks/week_34/listening_hub.js-39-  listening_p2: {
+src/data/weeks/week_34/listening_hub.js:40:    title: "The Forest Wildlife Project",
+src/data/weeks/week_34/listening_hub.js-41-    audio_url: "/audio/week34/listening_p2_full.mp3",
+src/data/weeks/week_34/listening_hub.js-42-    example: { field_label: "Fable story title", answer: "The Lion and Mouse" },
+--
+src/data/weeks/week_34/speaking_hub.js-3-  talkshow_video: {
+src/data/weeks/week_34/speaking_hub.js-4-    video_id: "forest_cooperation_w34",
+src/data/weeks/week_34/speaking_hub.js:5:    title: "Animal Friendship & Teamwork in Nature"
+src/data/weeks/week_34/speaking_hub.js-6-  },
+src/data/weeks/week_34/speaking_hub.js-7-  info_exchange_cards: {
+src/data/weeks/week_34/speaking_hub.js-8-    candidate_card: {
+src/data/weeks/week_34/speaking_hub.js:9:      title: "The Lion's Home (Leo)",
+src/data/weeks/week_34/speaking_hub.js-10-      fields: [
+src/data/weeks/week_34/speaking_hub.js-11-        { label: "Location", value: "Green Valley Forest", known: true },
+--
+src/data/weeks/week_34/speaking_hub.js-16-    },
+src/data/weeks/week_34/speaking_hub.js-17-    examiner_card: {
+src/data/weeks/week_34/speaking_hub.js:18:      title: "The Mouse's Home (Milo)",
+src/data/weeks/week_34/speaking_hub.js-19-      fields: [
+src/data/weeks/week_34/speaking_hub.js-20-        { label: "Location", value: "Under the Tall Oak Tree", known: true },
+--
+src/data/weeks/week_34/speaking_hub.js-43-  },
+src/data/weeks/week_34/speaking_hub.js-44-  picture_story: {
+src/data/weeks/week_34/speaking_hub.js:45:    title: "The Lion and the Little Mouse",
+src/data/weeks/week_34/speaking_hub.js-46-    examiner_intro: "Look at these four pictures. They tell a story about a lion and a little mouse. First, I'll tell you about picture one. Then you tell me about pictures two, three, and four.",
+src/data/weeks/week_34/speaking_hub.js-47-    images: [
+--
+src/data/weeks/week_34/speaking_hub.js-63-  find_differences: {
+src/data/weeks/week_34/speaking_hub.js-64-    picA: {
+src/data/weeks/week_34/speaking_hub.js:65:      title: "Picture A (Forest Afternoon)",
+src/data/weeks/week_34/speaking_hub.js-66-      image_url: "/images/week34/w34_diff_scene_a.svg"
+src/data/weeks/week_34/speaking_hub.js-67-    },
+src/data/weeks/week_34/speaking_hub.js-68-    picB: {
+src/data/weeks/week_34/speaking_hub.js:69:      title: "Picture B (Forest Afternoon Difference)",
+src/data/weeks/week_34/speaking_hub.js-70-      image_url: "/images/week34/w34_diff_scene_b.svg"
+src/data/weeks/week_34/speaking_hub.js-71-    },
+--
+src/data/weeks/week_34/writing_hub.js-4-export const writingHub = {
+src/data/weeks/week_34/writing_hub.js-5-  week: Number(34),
+src/data/weeks/week_34/writing_hub.js:6:  theme: "The Lion and the Mouse",
+src/data/weeks/week_34/writing_hub.js-7-  picture_story: {
+src/data/weeks/week_34/writing_hub.js:8:    title: "The Lion and the Brave Mouse",
+src/data/weeks/week_34/writing_hub.js-9-    panels: [
+src/data/weeks/week_34/writing_hub.js-10-      { image_url: "/images/week34/webtoon_scene_1.png", caption: "The mighty lion was sleeping peacefully under a tree." },
+--
+src/data/weeks/week_34/writing_hub.js-17-        ladder_stage: "MODEL",
+src/data/weeks/week_34/writing_hub.js-18-        badge_label: "MODEL",
+src/data/weeks/week_34/writing_hub.js:19:        title: "Scene 1: Lion in the Forest",
+src/data/weeks/week_34/writing_hub.js-20-        image_url: "/images/week34/webtoon_scene_1.png",
+src/data/weeks/week_34/writing_hub.js-21-        caption: "The mighty lion was resting under a shady green tree.",
+--
+src/data/weeks/week_34/writing_hub.js-30-        ladder_stage: "BUILD",
+src/data/weeks/week_34/writing_hub.js-31-        badge_label: "BUILD",
+src/data/weeks/week_34/writing_hub.js:32:        title: "Scene 2: Trapped in Heavy Net",
+src/data/weeks/week_34/writing_hub.js-33-        image_url: "/images/week34/webtoon_scene_4.png",
+src/data/weeks/week_34/writing_hub.js-34-        caption: "Two hunters trapped the lion in a heavy net.",
+--
+src/data/weeks/week_34/writing_hub.js-44-        ladder_stage: "WRITE",
+src/data/weeks/week_34/writing_hub.js-45-        badge_label: "WRITE",
+src/data/weeks/week_34/writing_hub.js:46:        title: "Scene 3: Mouse Frees the Lion",
+src/data/weeks/week_34/writing_hub.js-47-        image_url: "/images/week34/webtoon_scene_5.png",
+src/data/weeks/week_34/writing_hub.js-48-        caption: "The brave mouse chewed the thick ropes and freed the lion.",
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T09:46:22Z

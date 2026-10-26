@@ -1,0 +1,204 @@
+### STEP: m13_gate17_w34
+### CMD: node scripts/gate17_fidelity_doctrine.mjs 34
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T03:05:23Z
+### ----- OUTPUT -----
+[GATE 17 CHECK] Part L1  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGLineMatcher.jsx : EXISTS
+[GATE 17 CHECK] Part L2  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/NotepadNoteCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part L3  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/VisualMatchingAH.jsx : EXISTS
+[GATE 17 CHECK] Part L4  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/MultipleChoice3Pic.jsx : EXISTS
+[GATE 17 CHECK] Part L5  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGColorAndWrite.jsx : EXISTS
+[GATE 17 CHECK] Part R1  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/WordBankMatchingGrid.jsx : EXISTS
+[GATE 17 CHECK] Part R2  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/DialogueAHCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R3  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/RWPart3ClozeWithTitle.jsx : EXISTS
+[GATE 17 CHECK] Part R4  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InlineTextClozeDropdown.jsx : EXISTS
+[GATE 17 CHECK] Part R5  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/TextExtractionCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R6  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/OpenClozeCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R7  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/StoryWriting.jsx : EXISTS
+[GATE 17 CHECK] Part S1  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/FindDifferencesInteractive.jsx : EXISTS
+[GATE 17 CHECK] Part S2  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InformationExchangeP2.jsx : EXISTS
+[GATE 17 CHECK] Part S3  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PictureStoryContinuation.jsx : EXISTS
+[GATE 17 CHECK] Part S4  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PersonalQuestionsCompleter.jsx : EXISTS
+{
+  "week": 34,
+  "schemaVersion": "1.0.0",
+  "schemaValid": true,
+  "schemaErrors": [],
+  "invariants": [
+    {
+      "id": "INV-HUB",
+      "pass": true,
+      "detail": "listening_hub pure: true, skill_practice 4 modules: true, math match: true"
+    },
+    {
+      "id": "INV-L1",
+      "pass": true,
+      "detail": "L1 names: 1 ex + 5 scored + 1 null; targets: 6/6"
+    },
+    {
+      "id": "INV-L4",
+      "pass": true,
+      "detail": "L4 questions: 1 ex + 5 scored, 3 options each: true"
+    },
+    {
+      "id": "INV-L5",
+      "pass": true,
+      "detail": "L5 instructions: 1 ex + 3 color + 2 write"
+    },
+    {
+      "id": "INV-R1",
+      "pass": true,
+      "detail": "R1 example: true, word_bank: 15/15, defs: 10/10, no target dup: true"
+    },
+    {
+      "id": "INV-R2",
+      "pass": true,
+      "detail": "R2 example: true, turns: 5/5, options: 8/8, options valid: true"
+    },
+    {
+      "id": "INV-R3",
+      "pass": true,
+      "detail": "R3 example: true, blanks: 5/5, title_options: 3/3"
+    },
+    {
+      "id": "INV-R4",
+      "pass": true,
+      "detail": "R4 example blank 0: true, blanks 1-10 with 3 options: true (10/10)"
+    },
+    {
+      "id": "INV-R5",
+      "pass": true,
+      "detail": "R5 example: true, questions: 7/7, no options field: true"
+    },
+    {
+      "id": "INV-R6",
+      "pass": true,
+      "detail": "R6 example: true, answers: 6 (min 5)"
+    },
+    {
+      "id": "INV-S1",
+      "pass": true,
+      "detail": "S1 diffs: 4 (target: 4), match calibration centroids +-1%: true"
+    },
+    {
+      "id": "INV-S2",
+      "pass": true,
+      "detail": "S2 candidate unknown: 2>=2 (from 4 fields), examiner questions: 3>=3 with audio: true"
+    },
+    {
+      "id": "INV-S3",
+      "pass": true,
+      "detail": "S3 images: 4 (allowed: 4 or 5), intro phrase verified: true"
+    },
+    {
+      "id": "INV-CLIL",
+      "pass": true,
+      "detail": "CLIL glossary: 7>=3 valid: true, part titles present: true"
+    }
+  ],
+  "componentExistence": [
+    {
+      "part": "L1",
+      "file": "SVGLineMatcher.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGLineMatcher.jsx",
+      "exists": true
+    },
+    {
+      "part": "L2",
+      "file": "NotepadNoteCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/NotepadNoteCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "L3",
+      "file": "VisualMatchingAH.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/VisualMatchingAH.jsx",
+      "exists": true
+    },
+    {
+      "part": "L4",
+      "file": "MultipleChoice3Pic.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/MultipleChoice3Pic.jsx",
+      "exists": true
+    },
+    {
+      "part": "L5",
+      "file": "SVGColorAndWrite.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGColorAndWrite.jsx",
+      "exists": true
+    },
+    {
+      "part": "R1",
+      "file": "WordBankMatchingGrid.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/WordBankMatchingGrid.jsx",
+      "exists": true
+    },
+    {
+      "part": "R2",
+      "file": "DialogueAHCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/DialogueAHCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R3",
+      "file": "RWPart3ClozeWithTitle.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/RWPart3ClozeWithTitle.jsx",
+      "exists": true
+    },
+    {
+      "part": "R4",
+      "file": "InlineTextClozeDropdown.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InlineTextClozeDropdown.jsx",
+      "exists": true
+    },
+    {
+      "part": "R5",
+      "file": "TextExtractionCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/TextExtractionCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R6",
+      "file": "OpenClozeCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/OpenClozeCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R7",
+      "file": "StoryWriting.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/StoryWriting.jsx",
+      "exists": true
+    },
+    {
+      "part": "S1",
+      "file": "FindDifferencesInteractive.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/FindDifferencesInteractive.jsx",
+      "exists": true
+    },
+    {
+      "part": "S2",
+      "file": "InformationExchangeP2.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InformationExchangeP2.jsx",
+      "exists": true
+    },
+    {
+      "part": "S3",
+      "file": "PictureStoryContinuation.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PictureStoryContinuation.jsx",
+      "exists": true
+    },
+    {
+      "part": "S4",
+      "file": "PersonalQuestionsCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PersonalQuestionsCompleter.jsx",
+      "exists": true
+    }
+  ],
+  "openDeviations": [],
+  "finalVerdict": "PASS",
+  "failReasons": []
+}
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T03:05:23Z

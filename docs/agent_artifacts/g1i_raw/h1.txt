@@ -1,0 +1,114 @@
+### STEP: h1
+### CMD: node docs/agent_artifacts/g1i_scripts/h_shuffle_bench.mjs
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T03:00:20Z
+### ----- OUTPUT -----
+========================================================================
+BENCHMARK SHUFFLE ALGORITHMS ON REAL W33 DATA (10,000 ITERATIONS)
+Node version: v22.23.1
+V8 version:   12.4.254.21-node.56
+OS:           darwin arm64
+========================================================================
+
+--- [1/5] SOURCE: src/components/cambridge/CLILExplorer.jsx:100 ---
+      question: q.question || q.question_en || q.prompt || `Question ${idx + 1}`,
+      options: q.options || [],
+      shuffledOptions: [...(q.options || [])].sort(() => 0.5 - Math.random()),
+      correct: q.answer || (q.options && q.options[0]) || ""
+    }));
+
+--- [2/5] SOURCE: src/components/common/SRSFlashcardReview.jsx:182-192 ---
+  const quizOptions = useMemo(() => {
+    if (!currentCard || cards.length === 0) return [];
+    const correct = currentCard.definition;
+    const otherDefs = cards
+      .filter(c => c.word !== currentCard.word)
+      .map(c => c.definition);
+    // Shuffle distractors
+    const shuffledOthers = [...otherDefs].sort(() => Math.random() - 0.5).slice(0, 2);
+    const all = [correct, ...shuffledOthers].sort(() => Math.random() - 0.5);
+    return all;
+  }, [currentCard, cards]);
+
+--- [3/5] SOURCE: src/modules/hubs/station2/LearnMode/FlashArena.jsx:96-97 ---
+    const r = rounds[roundIdx] || rounds[0];
+    const pairs = r.pairs;
+    setShuffledEn([...pairs].sort(() => 0.5 - Math.random()));
+    setShuffledVi([...pairs].sort(() => 0.5 - Math.random()));
+  };
+
+--- [4/5] SOURCE: src/modules/hubs/station2/LearnMode/SentenceBuilderBattle.jsx:158-162 ---
+    const correctWords = Array.isArray(drill.word_blocks) ? drill.word_blocks : [];
+    const distractors = Array.isArray(drill.distractor_blocks) ? drill.distractor_blocks : [];
+    const allWords = [...correctWords, ...[...distractors].sort(() => Math.random() - 0.5)];
+
+    const shuffled = allWords
+      .map((word, index) => ({ id: `block-${index}-${word}`, word }))
+      .sort(() => Math.random() - 0.5);
+
+
+--- [5/5] SOURCE: src/modules/write_speak/StoryWriting.jsx:164-171 ---
+  const chipsToDisplay = useMemo(() => {
+    const raw = currentStep.pills || currentStep.display_chips || currentStep.keywords || currentStep.ordered_chips || [];
+    if (!Array.isArray(raw) || raw.length === 0) return [];
+    const arr = [...raw];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const hash = ((i * 37 + (arr[i].charCodeAt(0) || 0) * 19 + currentStepIdx * 13) ^ 0x5a5a) % (i + 1);
+      [arr[i], arr[hash]] = [arr[hash], arr[i]];
+    }
+    return arr;
+  }, [currentStep, currentStepIdx]);
+
+
+========================================================================
+H1: CLILExplorer.jsx:100 — Options Shuffle
+========================================================================
+Question: "undefined"
+Original options: [ 'Friction', 'Gravity', 'Wind power', 'Magnetic force' ]
+Correct answer: "Friction" (Original index: 0)
+Results over 10000 runs:
+  Index 0: 3574 times (35.74%)
+  Index 1: 1701 times (17.01%)
+  Index 2: 1612 times (16.12%)
+  Index 3: 3113 times (31.13%)
+
+========================================================================
+H2: SRSFlashcardReview.jsx:182-192 — Speed Quiz Options
+========================================================================
+Current card: "corridor" -> "hành lang"
+Results over 10000 runs:
+  Index 0: 4302 times (43.02%)
+  Index 1: 1880 times (18.80%)
+  Index 2: 3818 times (38.18%)
+
+========================================================================
+H3: FlashArena.jsx:96-97 — Matching Pairs Alignment
+========================================================================
+Pairs count: 4
+Average matching pairs at same row: 1.1257 / 4
+Observed probability (p): 0.2814 (Expected: 0.2500)
+Games with 100% pairs directly aligned (cheat risk): 876 / 10000 (8.76%)
+
+========================================================================
+H4: SentenceBuilderBattle.jsx:158-162 — Word Scramble
+========================================================================
+Target sentence: [ 'Jake', 'was', 'walking', 'down', 'the', 'corridor' ]
+Distractors: [ 'runs', 'slowly' ]
+Average blocks keeping original position: 0.9321 / 6
+Probability of unscrambled original sentence order: 123 / 10000 (1.23%)
+
+========================================================================
+H5: write_speak/StoryWriting.jsx:164-171 — Pills Deterministic Shuffle
+========================================================================
+Loaded 5 steps from writing_hub.js
+| Step | Original Pills | Shuffled Output | Different From Original? |
+| :--- | :--- | :--- | :--- |
+| Step 1 | [was walking carefully, down the school corridor, after science class, noticed the wet floor tiles, near the science room, walked slowly, Jake] | [after science class, down the school corridor, was walking carefully, Jake, walked slowly, near the science room, noticed the wet floor tiles] | ✅ KHÁC (Đã xáo) |
+| Step 2 | [a boy was running very fast, past the science room, lost his balance, on the wet floor, slipped heavily, fell down, dropped his books] | [past the science room, slipped heavily, lost his balance, on the wet floor, dropped his books, a boy was running very fast, fell down] | ✅ KHÁC (Đã xáo) |
+| Step 3 | [stopped immediately, to help his friend, stay calm, called the school nurse, right away for help, cried in pain, hurt his knee, Jake] | [cried in pain, Jake, called the school nurse, stopped immediately, right away for help, hurt his knee, stay calm, to help his friend] | ✅ KHÁC (Đã xáo) |
+| Step 4 | [the school nurse arrived quickly, with a clean bandage, placed a cold pack, to treat the cut, sat on the wooden bench, first-aid kit, felt much better] | [first-aid kit, sat on the wooden bench, the school nurse arrived quickly, felt much better, to treat the cut, placed a cold pack, with a clean bandage] | ✅ KHÁC (Đã xáo) |
+| Step 5 | [everyone felt relieved, the headmaster reminded all students, never to run in corridors, that Tom was safe, gave a thumbs up, clapped happily, walked safely] | [everyone felt relieved, the headmaster reminded all students, walked safely, gave a thumbs up, clapped happily, never to run in corridors, that Tom was safe] | ✅ KHÁC (Đã xáo) |
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T03:00:20Z

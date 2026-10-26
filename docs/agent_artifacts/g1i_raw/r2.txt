@@ -1,0 +1,71 @@
+### STEP: r2
+### CMD: bash -c 
+cd /Users/binhnguyen/projects/engquest3k_r2_dry
+echo "Applying patch in $(pwd)..."
+git apply --check /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/g1i_scripts/w33_r2_curriculum.patch
+echo "Check exit code: $?"
+git apply /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/g1i_scripts/w33_r2_curriculum.patch
+echo "Apply exit code: $?"
+echo "=== git status -s ==="
+git status -s
+echo "=== git diff ==="
+git diff
+
+### CWD: /Users/binhnguyen/projects/engquest3k_r2_dry
+### GIT_HEAD: e8dbc5326ecbae24f70317a5f56c81cfdad45d36
+### START_UTC: 2026-10-23T03:04:08Z
+### ----- OUTPUT -----
+Applying patch in /Users/binhnguyen/projects/engquest3k_r2_dry...
+Check exit code: 0
+/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/g1i_scripts/w33_r2_curriculum.patch:23: trailing whitespace.
+    word: "cold pack", 
+warning: 1 line adds whitespace errors.
+Apply exit code: 0
+=== git status -s ===
+ M src/data/weeks/week_33/skill_practice_hub.js
+ M src/data/weeks/week_33/vocab.js
+ M src/data/weeks/week_33/week_33_real.js
+?? fs_trace.cjs
+=== git diff ===
+diff --git a/src/data/weeks/week_33/skill_practice_hub.js b/src/data/weeks/week_33/skill_practice_hub.js
+index 840bab90..7d44d29b 100644
+--- a/src/data/weeks/week_33/skill_practice_hub.js
++++ b/src/data/weeks/week_33/skill_practice_hub.js
+@@ -158,7 +158,7 @@ export const skillPracticeHub = {
+             correct_label: "Forward Motion",
+             x: 64,
+             y: 38,
+-            micro_explanation: "⚡ Running fast builds momentum that cannot stop without floor grip."
++            micro_explanation: "⚡ Running fast builds forward speed that cannot stop without floor grip."
+           },
+           {
+             id: "z1_3",
+diff --git a/src/data/weeks/week_33/vocab.js b/src/data/weeks/week_33/vocab.js
+index d9d9e794..792e7345 100644
+--- a/src/data/weeks/week_33/vocab.js
++++ b/src/data/weeks/week_33/vocab.js
+@@ -152,7 +152,7 @@ export default [
+   },
+   { 
+     id: 16, 
+-    word: "cold_pack", 
++    word: "cold pack", 
+     definition_en: "a gel bag chilled in ice used to reduce swelling", 
+     definition_vi: "túi chườm lạnh", 
+     example_en: "The nurse placed a cold pack on his knee to reduce pain.",
+diff --git a/src/data/weeks/week_33/week_33_real.js b/src/data/weeks/week_33/week_33_real.js
+index e936595f..37fd8cab 100644
+--- a/src/data/weeks/week_33/week_33_real.js
++++ b/src/data/weeks/week_33/week_33_real.js
+@@ -16,7 +16,7 @@ export default {
+     "corridor", "slipped", "nurse", "bandage", "relieved",
+     "mistake", "accident", "fix", "sorry", "careful",
+     "clumsy", "arm", "knee", "leg", "head",
+-    "cold_pack", "recover", "explain", "lesson", "terrible"
++    "cold pack", "recover", "explain", "lesson", "terrible"
+   ],
+   sentences: [
+     { id: 1, text: "Jake was walking carefully down the corridor.", vi: "Jake đang đi bộ cẩn thận xuống hành lang." },
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T03:04:08Z

@@ -1,0 +1,43 @@
+### STEP: m24_clil_article_text
+### CMD: bash -c node -e "const rh = await import('./src/data/weeks/week_34/reading_hub.js'); console.log('CONTENT_EN:'); console.log(rh.readingHubData.clil_article.content_en); console.log('\nGLOSSARY:'); console.log(JSON.stringify(rh.readingHubData.clil_article.glossary, null, 2));"
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T04:52:21Z
+### ----- OUTPUT -----
+CONTENT_EN:
+In nature, animals show wonderful cooperation when they help each other find food every day. In Africa, an oxpecker bird eats tiny bugs to help the zebra and find tasty food in its wild habitat. In the ocean, tiny cleaner fish swim safely inside the mouth of a shark to clean its sharp teeth. The giant predator never hurts these small animal helpers that cooperate so everyone can survive. Just like the lion and the mouse, big and small creatures work together. Together, big and small animals help protect the forest trees and keep the whole ecosystem strong and green.
+
+GLOSSARY:
+[
+  {
+    "term": "Cooperation",
+    "meaning": "Working together harmoniously toward a shared and helpful outcome."
+  },
+  {
+    "term": "Survive",
+    "meaning": "To stay alive and continue to live in nature or the forest."
+  },
+  {
+    "term": "Predator",
+    "meaning": "An animal that hunts and eats other animals in the wild."
+  },
+  {
+    "term": "Oxpecker",
+    "meaning": "A helpful African bird that eats bugs off large animals."
+  },
+  {
+    "term": "Cleaner Fish",
+    "meaning": "Small fish that swim safely inside larger sea animals to clean their teeth."
+  },
+  {
+    "term": "Ecosystem",
+    "meaning": "A biological community of interacting organisms and their physical environment."
+  },
+  {
+    "term": "Habitat",
+    "meaning": "The natural home or environment where wild animals live and find food."
+  }
+]
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T04:52:21Z

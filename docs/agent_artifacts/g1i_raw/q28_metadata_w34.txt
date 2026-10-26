@@ -1,0 +1,23 @@
+### STEP: q28_metadata_w34
+### CMD: grep -n -C 10 34: src/data/weeks/metadata.js
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:45:32Z
+### ----- OUTPUT -----
+1-// Week metadata - W33+ only (W01-32 archived at v1-w01-w32-final-20260820)
+2-export const weekTitles = {
+3-  33: { title_en: "Corridor Safety & School Care", title_vi: "An Toàn Hành Lang & Chăm Sóc Trường Học", cefr_level: "A2 Flyers", cambridge_prep: "YLE Flyers" },
+4:  34: { title_en: "The Lion and the Mouse", title_vi: "Sư Tử và Chuột — Truyện Ngụ Ngôn", cefr_level: "A2 Flyers", cambridge_prep: "YLE Flyers" },
+5-  35: { title_en: "The Best Day Ever", title_vi: "Ngày Tuyệt Vời Nhất — Kể Lại Kỷ Niệm Cá Nhân", cefr_level: "A2 Flyers", cambridge_prep: "YLE Flyers" },
+6-  36: { title_en: "My Adventure Book", title_vi: "Sách Phiêu Lưu Của Em — Dự Án 3", cefr_level: "A2 Flyers", cambridge_prep: "YLE Flyers" },
+7-  37: { title_en: "Living vs. Non-Living", title_vi: "Vật Sống & Không Sống — CLIL Unit 6", cefr_level: "A2 Flyers", cambridge_prep: "YLE Flyers" },
+8-};
+9-
+10-export const getWeekTitle = (weekId, lang = 'en') => {
+11-  const meta = weekTitles[weekId];
+12-  if (meta) {
+13-    return lang === 'vi' ? meta.title_vi : meta.title_en;
+14-  }
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T09:45:32Z

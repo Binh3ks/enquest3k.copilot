@@ -1,0 +1,15 @@
+### STEP: m6_apply_amendment002_patch
+### CMD: git apply --check docs/agent_artifacts/g1i_scripts/w33_r2_curriculum.patch
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T02:55:28Z
+### ----- OUTPUT -----
+error: patch failed: src/data/weeks/week_33/skill_practice_hub.js:158
+error: src/data/weeks/week_33/skill_practice_hub.js: patch does not apply
+error: patch failed: src/data/weeks/week_33/vocab.js:152
+error: src/data/weeks/week_33/vocab.js: patch does not apply
+error: patch failed: src/data/weeks/week_33/week_33_real.js:16
+error: src/data/weeks/week_33/week_33_real.js: patch does not apply
+### ----- END -----
+### EXIT: 1
+### END_UTC: 2026-10-26T02:55:28Z

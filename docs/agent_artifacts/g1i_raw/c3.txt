@@ -1,0 +1,55 @@
+### STEP: c3
+### CMD: bash -c 
+echo "=== git cat-file -t ==="
+for h in 096057a6 6b3cbe82 e1dd6984; do
+  echo -n "$h: "
+  git cat-file -t $h 2>&1
+done
+
+echo "=== git show -s ==="
+for h in fc520247 bfa5cf80 33da40f8 fe1f8351 c23ebe57 df023efe 1218f5af; do
+  echo -n "$h: "
+  git show -s --format="%H %cd %s" $h 2>&1
+done
+
+echo "=== git merge-base --is-ancestor 1218f5af <hash> ==="
+for h in 096057a6 6b3cbe82 e1dd6984 fc520247 bfa5cf80 33da40f8 fe1f8351 c23ebe57 df023efe 1218f5af; do
+  git merge-base --is-ancestor 1218f5af $h 2>&1
+  code=$?
+  echo "1218f5af is ancestor of $h ? Exit code: $code"
+done
+
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T02:51:10Z
+### ----- OUTPUT -----
+=== git cat-file -t ===
+096057a6: fatal: Not a valid object name 096057a6
+6b3cbe82: fatal: Not a valid object name 6b3cbe82
+e1dd6984: blob
+=== git show -s ===
+fc520247: fc5202476f4526992d7dbcf272b7a1d3237ed385 Sun Sep 6 13:36:27 2026 +0700 fix(audio): regenerate cue 4 and cue 5 model 2 audios with exact UI text and verify in Chrome
+bfa5cf80: bfa5cf80aadb1694b70cca4f4b5f5214d13d3ce0 Fri Sep 4 12:47:47 2026 +0700 feat(speaking): enable 6th difference for wall clock and align Cambridge scoring target (4 diffs)
+33da40f8: 33da40f8d66f79389289b156dddcd07b42332153 Tue Sep 1 12:10:11 2026 +0700 fix(w33-content): resolve all 6 Cambridge audit findings
+fe1f8351: fe1f83518576dec4aeb8f04464d4ffff48783d46 Sat Sep 5 18:37:57 2026 +0700 fix(audit): zero-scroll laptop fit, hide grammar duel answer, sync speed match vocab, and scale typography
+c23ebe57: c23ebe5755f849d92b19058d802844743df39b58 Fri Sep 4 15:37:32 2026 +0700 fix(info_exchange): align order with Cambridge standard (Card 1 Answer first, Card 2 Ask second) and render authentic 2-column table
+df023efe: df023efebb924f932c0d11ac819d3c328ea6ece9 Sun Aug 30 18:33:24 2026 +0700 docs(w33): ratify final golden closure
+1218f5af: 1218f5af5bd2e078137ba04ca812bb3561c774d5 Sun Aug 30 20:38:35 2026 +0700 fix(audit): swap gate15 Playwright → Chrome MCP in audit_week.mjs + audit_golden_w33.mjs
+=== git merge-base --is-ancestor 1218f5af <hash> ===
+fatal: Not a valid object name 096057a6
+1218f5af is ancestor of 096057a6 ? Exit code: 128
+fatal: Not a valid object name 6b3cbe82
+1218f5af is ancestor of 6b3cbe82 ? Exit code: 128
+error: object e1dd69849f1f8c00ccec02fb57a1939a2c45b674 is a blob, not a commit
+fatal: Not a valid commit name e1dd6984
+1218f5af is ancestor of e1dd6984 ? Exit code: 128
+1218f5af is ancestor of fc520247 ? Exit code: 0
+1218f5af is ancestor of bfa5cf80 ? Exit code: 0
+1218f5af is ancestor of 33da40f8 ? Exit code: 0
+1218f5af is ancestor of fe1f8351 ? Exit code: 0
+1218f5af is ancestor of c23ebe57 ? Exit code: 0
+1218f5af is ancestor of df023efe ? Exit code: 1
+1218f5af is ancestor of 1218f5af ? Exit code: 0
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T02:51:10Z

@@ -1,0 +1,25 @@
+### STEP: m35_whisper_shadowing_updated
+### CMD: python3 -c 
+import whisper
+model = whisper.load_model('base')
+for f in ['shadowing_5.mp3', 'shadowing_7.mp3', 'shadowing_8.mp3']:
+    path = f'public/audio/week34/{f}'
+    res = model.transcribe(path)
+    print(f, '->', res['text'].strip())
+
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T08:14:54Z
+### ----- OUTPUT -----
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+shadowing_5.mp3 -> The trapped lion roared and waited for help.
+shadowing_7.mp3 -> The mouse freed the lion and the lion thanked him.
+shadowing_8.mp3 -> They trusted each other and stayed friends forever.
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T08:14:57Z

@@ -1,0 +1,280 @@
+### STEP: m36_retest_all_gates_w34
+### CMD: bash -c node scripts/gate3_media_integrity.mjs 34 && node scripts/gate11_content_richness.mjs 34 && node scripts/gate12_comprehensive_cefr.mjs 34 && node scripts/gate16_content_quality.mjs 34 && node scripts/gate17_fidelity_doctrine.mjs 34 && node scripts/guard_golden_w33_freeze.mjs
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T08:15:24Z
+### ----- OUTPUT -----
+
+========================================================================
+🛡️  GATE 3: MEDIA REFERENCE & ASSET INTEGRITY AUDIT (WEEK 34)
+========================================================================
+📁 Checking Local Images Directory: /Users/binhnguyen/projects/Engquest3k/public/images/week34...
+| Asset Name | Status | Size | Path |
+|---|---|---|---|
+| `webtoon_scene_1.png` | ✅ VALID | 1.25 MB | `/images/week34/webtoon_scene_1.png` |
+| `webtoon_scene_2.png` | ✅ VALID | 1.21 MB | `/images/week34/webtoon_scene_2.png` |
+| `webtoon_scene_3.png` | ✅ VALID | 1.15 MB | `/images/week34/webtoon_scene_3.png` |
+| `webtoon_scene_4.png` | ✅ VALID | 1.31 MB | `/images/week34/webtoon_scene_4.png` |
+| `webtoon_scene_5.png` | ✅ VALID | 1.18 MB | `/images/week34/webtoon_scene_5.png` |
+| `barmodel_w34_adv_p1.svg` | ✅ VALID | 2.7 KB | `/images/week34/barmodel_w34_adv_p1.svg` |
+| `barmodel_w34_adv_p2.svg` | ✅ VALID | 2.7 KB | `/images/week34/barmodel_w34_adv_p2.svg` |
+| `barmodel_w34_adv_p3.svg` | ✅ VALID | 2.3 KB | `/images/week34/barmodel_w34_adv_p3.svg` |
+| `barmodel_w34_adv_p4.svg` | ✅ VALID | 2.7 KB | `/images/week34/barmodel_w34_adv_p4.svg` |
+| `barmodel_w34_adv_p5.svg` | ✅ VALID | 3.0 KB | `/images/week34/barmodel_w34_adv_p5.svg` |
+| `read_cover_w34.jpg` | ✅ VALID | 1.65 MB | `/images/week34/read_cover_w34.jpg` |
+| `explore_cover_w34.jpg` | ✅ VALID | 1.79 MB | `/images/week34/explore_cover_w34.jpg` |
+
+🎧 Checking Local Audio Directory: /Users/binhnguyen/projects/Engquest3k/public/audio/week34...
+   Found 73 MP3 files.
+   ✅ Audio assets complete (73 files).
+
+🔍 Scanning Data Files for Cross-Week Asset References...
+   ✅ Data files scan complete (0 cross-week asset leaks).
+
+🌐 Checking Referenced Assets in Cambridge Hubs (L1, L3, L4, L5, S1)...
+   ✅ Verified 27 referenced Cambridge assets (0 missing, 0 empty).
+
+------------------------------------------------------------------------
+✅ GATE 3 PASSED: 100% Media Reference & Asset Integrity!
+========================================================================
+🛡️  GATE 11: CONTENT RICHNESS & VOLUME AUDIT (WEEK 34)
+========================================================================
+✅ GATE 11 PASSED: Content Richness & Volume Standard 100% Met!
+========================================================================
+🛡️  GATE 12: COMPREHENSIVE CEFR & FORBIDDEN JARGON GUARD (WEEK 34)
+========================================================================
+✅ GATE 12 PASSED: 0 CEFR / Stage 1 Academic Jargon Violations!
+
+========================================================================
+🛡️  GATE 16: CONTENT QUALITY & DATA PURITY AUDIT (WEEK 34)
+========================================================================
+  ✅ CLIL Fact Units: 5 verified (min: 3)
+  ✅ CLIL Glossary: 7 entries verified (min: 3)
+  ✅ writing_chunks: 4 groups verified with 0 banned patterns
+  ✅ science_report Data Card: 3 rows verified
+  ✅ science_report Purpose: verified
+  ✅ science_report & CLIL Keyword Overlap: 24 words [protect, forest, nature, keep, other, animals]
+  ✅ picture_story Steps: 3 steps verified
+  ✅ Singapore Math Single-Source Equality: 5/5 problems 100% matched
+  ✅ Examiner Audio Questions: 3 audio URLs verified
+  ✅ Gate 17 Fidelity Doctrine: 16-Part Schema & Invariants PASS
+
+========================================================================
+🎉 GATE 16 PASSED: 100% Content Quality & Single-Source Data Purity!
+========================================================================
+
+[GATE 17 CHECK] Part L1  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGLineMatcher.jsx : EXISTS
+[GATE 17 CHECK] Part L2  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/NotepadNoteCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part L3  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/VisualMatchingAH.jsx : EXISTS
+[GATE 17 CHECK] Part L4  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/MultipleChoice3Pic.jsx : EXISTS
+[GATE 17 CHECK] Part L5  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGColorAndWrite.jsx : EXISTS
+[GATE 17 CHECK] Part R1  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/WordBankMatchingGrid.jsx : EXISTS
+[GATE 17 CHECK] Part R2  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/DialogueAHCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R3  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/RWPart3ClozeWithTitle.jsx : EXISTS
+[GATE 17 CHECK] Part R4  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InlineTextClozeDropdown.jsx : EXISTS
+[GATE 17 CHECK] Part R5  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/TextExtractionCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R6  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/OpenClozeCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R7  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/StoryWriting.jsx : EXISTS
+[GATE 17 CHECK] Part S1  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/FindDifferencesInteractive.jsx : EXISTS
+[GATE 17 CHECK] Part S2  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InformationExchangeP2.jsx : EXISTS
+[GATE 17 CHECK] Part S3  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PictureStoryContinuation.jsx : EXISTS
+[GATE 17 CHECK] Part S4  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PersonalQuestionsCompleter.jsx : EXISTS
+{
+  "week": 34,
+  "schemaVersion": "1.0.0",
+  "schemaValid": true,
+  "schemaErrors": [],
+  "invariants": [
+    {
+      "id": "INV-HUB",
+      "pass": true,
+      "detail": "listening_hub pure: true, skill_practice 4 modules: true, math match: true"
+    },
+    {
+      "id": "INV-L1",
+      "pass": true,
+      "detail": "L1 names: 1 ex + 5 scored + 1 null; targets: 6/6"
+    },
+    {
+      "id": "INV-L4",
+      "pass": true,
+      "detail": "L4 questions: 1 ex + 5 scored, 3 options each: true"
+    },
+    {
+      "id": "INV-L5",
+      "pass": true,
+      "detail": "L5 instructions: 1 ex + 3 color + 2 write"
+    },
+    {
+      "id": "INV-R1",
+      "pass": true,
+      "detail": "R1 example: true, word_bank: 15/15, defs: 10/10, no target dup: true"
+    },
+    {
+      "id": "INV-R2",
+      "pass": true,
+      "detail": "R2 example: true, turns: 5/5, options: 8/8, options valid: true"
+    },
+    {
+      "id": "INV-R3",
+      "pass": true,
+      "detail": "R3 example: true, blanks: 5/5, title_options: 3/3"
+    },
+    {
+      "id": "INV-R4",
+      "pass": true,
+      "detail": "R4 example blank 0: true, blanks 1-10 with 3 options: true (10/10)"
+    },
+    {
+      "id": "INV-R5",
+      "pass": true,
+      "detail": "R5 example: true, questions: 7/7, no options field: true"
+    },
+    {
+      "id": "INV-R6",
+      "pass": true,
+      "detail": "R6 example: true, answers: 6 (min 5)"
+    },
+    {
+      "id": "INV-S1",
+      "pass": true,
+      "detail": "S1 diffs: 4 (target: 4), match calibration centroids +-1%: true"
+    },
+    {
+      "id": "INV-S2",
+      "pass": true,
+      "detail": "S2 candidate unknown: 2>=2 (from 4 fields), examiner questions: 3>=3 with audio: true"
+    },
+    {
+      "id": "INV-S3",
+      "pass": true,
+      "detail": "S3 images: 4 (allowed: 4 or 5), intro phrase verified: true"
+    },
+    {
+      "id": "INV-CLIL",
+      "pass": true,
+      "detail": "CLIL glossary: 7>=3 valid: true, part titles present: true"
+    }
+  ],
+  "componentExistence": [
+    {
+      "part": "L1",
+      "file": "SVGLineMatcher.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGLineMatcher.jsx",
+      "exists": true
+    },
+    {
+      "part": "L2",
+      "file": "NotepadNoteCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/NotepadNoteCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "L3",
+      "file": "VisualMatchingAH.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/VisualMatchingAH.jsx",
+      "exists": true
+    },
+    {
+      "part": "L4",
+      "file": "MultipleChoice3Pic.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/MultipleChoice3Pic.jsx",
+      "exists": true
+    },
+    {
+      "part": "L5",
+      "file": "SVGColorAndWrite.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGColorAndWrite.jsx",
+      "exists": true
+    },
+    {
+      "part": "R1",
+      "file": "WordBankMatchingGrid.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/WordBankMatchingGrid.jsx",
+      "exists": true
+    },
+    {
+      "part": "R2",
+      "file": "DialogueAHCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/DialogueAHCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R3",
+      "file": "RWPart3ClozeWithTitle.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/RWPart3ClozeWithTitle.jsx",
+      "exists": true
+    },
+    {
+      "part": "R4",
+      "file": "InlineTextClozeDropdown.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InlineTextClozeDropdown.jsx",
+      "exists": true
+    },
+    {
+      "part": "R5",
+      "file": "TextExtractionCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/TextExtractionCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R6",
+      "file": "OpenClozeCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/OpenClozeCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R7",
+      "file": "StoryWriting.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/StoryWriting.jsx",
+      "exists": true
+    },
+    {
+      "part": "S1",
+      "file": "FindDifferencesInteractive.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/FindDifferencesInteractive.jsx",
+      "exists": true
+    },
+    {
+      "part": "S2",
+      "file": "InformationExchangeP2.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InformationExchangeP2.jsx",
+      "exists": true
+    },
+    {
+      "part": "S3",
+      "file": "PictureStoryContinuation.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PictureStoryContinuation.jsx",
+      "exists": true
+    },
+    {
+      "part": "S4",
+      "file": "PersonalQuestionsCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PersonalQuestionsCompleter.jsx",
+      "exists": true
+    }
+  ],
+  "openDeviations": [],
+  "finalVerdict": "PASS",
+  "failReasons": []
+}
+========================================================================
+🛡️  ENGQUEST3K — W33 GOLDEN FREEZE CRYPTOGRAPHIC INTEGRITY GUARD
+🔖 Manifest Version: 1.0.0 | Standard Version: 1.0.0
+========================================================================
+
+  ✅ [LOCKED] src/data/weeks/week_33/reading_hub.js (SHA-256: 0989664a86eab234...)
+  ✅ [LOCKED] src/data/weeks/week_33/listening_hub.js (SHA-256: c8caa574c815f4e1...)
+  ✅ [LOCKED] src/data/weeks/week_33/writing_hub.js (SHA-256: 834a0fe0aaa9a1eb...)
+  ✅ [LOCKED] src/data/weeks/week_33/speaking_hub.js (SHA-256: b6e3f6a154780f11...)
+  ✅ [LOCKED] src/data/weeks/week_33/skill_practice_hub.js (SHA-256: 29ef4a01e8188d00...)
+  ✅ [LOCKED] src/data/weeks/week_33/vocab.js (SHA-256: 77ef5f765f3c21de...)
+  ✅ [LOCKED] docs/GATE15_SPEC_W33.json (SHA-256: f78a2edcc1036b99...)
+
+------------------------------------------------------------------------
+🎉 W33 GOLDEN MASTER INTEGRITY VERIFIED: 100% OF PROTECTED FILES LOCKED!
+------------------------------------------------------------------------
+
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T08:15:25Z

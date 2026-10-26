@@ -1,0 +1,236 @@
+### STEP: g1
+### CMD: node --require ./fs_trace.cjs /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/g1i_scripts/gate15_runner_srs_bypass.mjs 33
+### CWD: /Users/binhnguyen/projects/engquest3k_w_e8dbc532
+### GIT_HEAD: e8dbc5326ecbae24f70317a5f56c81cfdad45d36
+### START_UTC: 2026-10-23T02:52:53Z
+### ----- OUTPUT -----
+
+========================================================================
+🛡️  GATE 15 — PRODUCTION DOM ASSERTIONS (SPEC-DRIVEN v2.0) — WEEK 33
+🌐 Target: https://app.bkbacademy.vn
+📄 Spec:   /Users/binhnguyen/projects/engquest3k_w_e8dbc532/docs/GATE15_SPEC_W33.json
+🔒 SHA256: c30e8d05e5687613fb83b6f25104b7b3e5142a44ae3a9ede255b6b827ff89e14  /Users/binhnguyen/projects/engquest3k_w_e8dbc532/docs/GATE15_SPEC_W33.json
+📅 Timestamp: 2026-10-23T02:52:53.313Z
+========================================================================
+
+🔖 Production commit: e8dbc5326ecbae24f70317a5f56c81cfdad45d36
+🔖 Git HEAD:          e8dbc5326ecbae24f70317a5f56c81cfdad45d36
+✅ Version check: Production matches local HEAD (e8dbc532)
+
+🔍 Production Asset HEAD Check: verifying 26 referenced URLs on https://app.bkbacademy.vn...
+   ✅ 100% of 26 referenced assets verified!
+
+
+[1/15] gear1_webtoon  →  https://app.bkbacademy.vn/week/33/task/gear1_webtoon
+[gear1_webtoon] NEG=ok POS=ok
+  ✅ CHECK: "W33 blueprint keyword in DOM (Jake OR corridor)"
+     SNIPPET: ? ? Listen to Scene Jake was walking carefully down the school corridor after science class. ◀ Previous Scene 1 of 5 Nex
+  ✅ CHECK: "3 pins mini-game present (Found indicator)"
+     SNIPPET: den story items! 🔍 0/3 Found (+20 XP) ? ? ? Listen to Scene Jake was walking carefully down the school corridor after s
+
+[2/15] gear2_karaoke  →  https://app.bkbacademy.vn/week/33/task/gear2_karaoke
+[gear2_karaoke] NEG=ok POS=ok
+  ✅ CHECK: "karaoke/shadowing blueprint keyword present"
+     SNIPPET:  the voices! Shadow Jake's words — each perfect echo charges a Thunder Rune." 🔐 Complete this quest → unlock the next 
+
+[3/15] gear3_retell  →  https://app.bkbacademy.vn/week/33/task/gear3_retell
+[gear3_retell] NEG=ok POS=ok
+  ✅ CHECK: "retell blueprint keyword present"
+     SNIPPET: after science class walking carefully school corridor 💡 Show Sentence Hint (10s) RECORD Tap RECORD to answer Nova Mic
+
+[4/15] gear4_clil  →  https://app.bkbacademy.vn/week/33/task/gear4_clil
+[gear4_clil] NEG=ok POS=ok
+  ✅ CHECK: "part title contains Friction/Surfaces/Safety (NOT Animal/Seed)"
+     SNIPPET: ppery layer reduces friction stays balanced school corridor wet tiles plastic soles rubber soles strong grip yellow warning sign GLOSSARY Fr
+  ✅ CHECK: "banned animal labels absent"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED 🌐 Fact Finder "New knowledge incoming! The Alchemy Lab door opens only to true Fact Finders." 🔐 Complete this quest 
+  ✅ CHECK: "generic reading part title absent"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED 🌐 Fact Finder "New knowledge incoming! The Alchemy Lab door opens only to true Fact Finders." 🔐 Complete this quest 
+  ✅ CHECK: "Vocab Focus button clicked reveals >=5 vocab pills"
+     SNIPPET: [matches (45): smooth, tiles, friction, tiles, rubber]
+  ✅ CHECK: "Grammar X-Ray inline: >=3 highlight marks INSIDE paragraph"
+     SNIPPET: Found 6 element(s) matching 'p mark, p span[class*='amber'], p span[class*='highlight']' (min: 3)
+  ✅ CHECK: "CLIL glossary chips rendered (>=3)"
+     SNIPPET: Found 8 element(s) matching '[data-testid='clil-glossary-chip']' (min: 3, all textContent >= 10 chars)
+
+[5/15] science_lab  →  https://app.bkbacademy.vn/week/33/task/science_lab
+[science_lab] NEG=ok POS=ok
+  ✅ CHECK: "lab title contains Friction/Surface/Forces (NOT Animal)"
+     SNIPPET:  1: Wet Floor & Low Friction Hazard 119s 0 PTS SCENARIOS: 1. Stage 1 2. Stage 2 3. Stage 3 WET FLOOR PUDDLE 📍 Drop RUNNING FAST 📍 Drop YEL
+  ✅ CHECK: ">=2 themed label pills present after START"
+     SNIPPET: [hits: Dry Floor, Friction, Floor] AUTION SIGN 📍 Drop DRY FLOOR TILES 📍 Drop TAP OR DRAG LABELS TO EXPERIMENT DIAGRAM: 🏷️ Low Friction Zo
+
+[6/15] science_report  →  https://app.bkbacademy.vn/week/33/task/science_report
+[science_report] NEG=ok POS=ok
+  ✅ CHECK: "title Friction / Surface Safety Report"
+     SNIPPET: ort +50 XP Corridor Friction & Safety Discovery Report 1. Observe 2. Clue 3. Quick Write 4. Report 🔍 Step 1: Tap an evidence spot on the co
+  ✅ CHECK: "CLIL Observation & Evidence present"
+     SNIPPET: MISSION UNLOCKED 📝 Discovery Report "Report your discoveries! Your findings light up the Knowledge Lab doorway." 🔐 Complete this quest → u
+  ✅ CHECK: "3 steps present (Observation/Scientific/Conclusion)"
+     SNIPPET: ty Discovery Report 1. Observe 2. Clue 3. Quick Write 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to observe what happ
+  ✅ CHECK: "science_report pills reuse >=2 keywords from CLIL facts"
+     SNIPPET: [keyword overlap (19): mission, unlocked, knowledge, complete, quest, unlock]
+  ✅ CHECK: "chips do not contain base verbs (bury / drink / hide)"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED 📝 Discovery Report "Report your discoveries! Your findings light up the Knowledge Lab doorway." 🔐 Complete this ques
+  ✅ CHECK: "DOM contains Detective / Discovery Topic"
+     SNIPPET: MISSION UNLOCKED 📝 Discovery Report "Report your discoveries! Your findings light up the Knowledge Lab doorway." 🔐 Complete this quest → u
+
+[7/15] word_blitz  →  https://app.bkbacademy.vn/week/33/task/word_blitz
+[word_blitz] NEG=ok POS=FAIL(Found only 1/4 words: [slipped])
+  ❌ CHECK: ">=4 W33 blueprint words present"
+     SNIPPET: Map ⚡ Speed Match +45 XP ⚡ ROUND 1/6 • ⚔️ ACTION VERBS ATTACK 59s 0 PTS ENGLISH TARGET helped walked slipped hurried MEANING / DEFINITION đi
+     REASON:  Found only 1/4 words: [slipped]
+
+[8/15] sentence_smash  →  https://app.bkbacademy.vn/week/33/task/sentence_smash
+[sentence_smash] NEG=ok POS=ok
+  ✅ CHECK: "grammar drill tiles contain >=2 W33 blueprint keywords"
+     SNIPPET: [hits: Jake, corridor, walking, slipped, while, floor] 0 PTS 1/5 Tom While Jake walks , walking down on slips wet was the floor is slipped t
+
+[9/15] math_quest  →  https://app.bkbacademy.vn/week/33/task/math_quest
+[math_quest] NEG=ok POS=ok
+  ✅ CHECK: "Bar Model UI rendered"
+     SNIPPET: 0 XP 📐 Math Quest (Singapore Bar Model) 149s 0 PTS 1/5 PROBLEM 1: SINGAPORE BAR MODEL Jake walked 40 meters. The corridor is 100 meters lon
+  ✅ CHECK: "math problem text contains W33 blueprint keywords"
+     SNIPPET: INGAPORE BAR MODEL Jake walked 40 meters. The corridor is 100 meters long. How many meters are left? Submit Answer ▶ 🦊
+  ✅ CHECK: "problem numbers overlap bar model (>=2 shared integers)"
+     SNIPPET: Found numbers in bar model DOM: [40, 0, 1, 5, 100]
+
+[10/15] story_writer  →  https://app.bkbacademy.vn/week/33/task/story_writer
+[story_writer] NEG=ok POS=FAIL(Pattern /(Scene 1 of 3|Scene \d+ of 3|Panel \d+ of 3)/ not found; Pattern /LINK YOUR SENTENCES/ not found; Step 3 chips expected <=4 with base verbs (chew/free/bandage), got [cried in pain, Jake, called the school nurse, stopped immediately, right away for help, hurt his knee, stay calm, to help his friend])
+  ❌ CHECK: "step wizard: đúng 1 <img> scene + indicator 'Scene X of 3'"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED ✏️ Story Writer "The pen is mightier! Write your 3-scene story — the Creator Studio seal awaits." 🔐 Complete this que
+     REASON:  Pattern /(Scene 1 of 3|Scene \d+ of 3|Panel \d+ of 3)/ not found
+  ✅ CHECK: "story writer interface loaded with W33 content"
+     SNIPPET: htier! Write your 3-scene story — the Creator Studio seal awaits." 🔐 Complete this quest → unlock the next door Tap an
+  ✅ CHECK: "DOM contains ladder stage badges (MODEL / BUILD / WRITE)"
+     SNIPPET: N UNLOCKED ✏️ Story Writer "The pen is mightier! Write your 3-scene story — the Creator Studio seal awaits." 🔐 Complete this quest → unlock
+  ✅ CHECK: "Step 1: locked connector present ('In the beginning,')"
+     SNIPPET: into ONE story 🔗 + In the beginning, 🔗 + On Monday morning, 🔗 + First, 🔗 + and 💡 WORD BANK (TAP WORDS TO INSERT): + after science class
+  ❌ CHECK: "dedicated LINK YOUR SENTENCES connector row present"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED ✏️ Story Writer "The pen is mightier! Write your 3-scene story — the Creator Studio seal awaits." 🔐 Complete this que
+     REASON:  Pattern /LINK YOUR SENTENCES/ not found
+  ✅ CHECK: "Step 1: chips in correct data order"
+     SNIPPET: [hits: Jake, was walking carefully, down the school corridor] entences: (1) Where Jake was walking after science class, and (2) what he noti
+  ✅ CHECK: "story scenes ratio 16:9 assertion"
+     SNIPPET: All 9 story scenes verified 16:9 [webtoon_scene_1.png: 1264x848 (r=1.49), webtoon_scene_2.png: 1264x848 (r=1.49), webtoon_scene_3.png: 1264x
+  ❌ CHECK: "story writer mini-ladder test (Step 1-3 progression & review widgets)"
+     REASON:  Step 3 chips expected <=4 with base verbs (chew/free/bandage), got [cried in pain, Jake, called the school nurse, stopped immediately, right away for help, hurt his knee, stay calm, to help his friend]
+
+[11/15] broadcast_studio  →  https://app.bkbacademy.vn/week/33/task/broadcast_studio
+[broadcast_studio] NEG=ok POS=ok
+  ✅ CHECK: "video recording interface loaded"
+     SNIPPET: MISSION UNLOCKED 📹 Video Challenge "Cameras rolling! Your Video Challenge unlocks the final Creator Studio fragment." 🔐 Complete this ques
+  ✅ CHECK: "W33 blueprint keyword OR story context"
+     SNIPPET:  📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). Video Audio ⚠️ Camera not available or access denied. Swi
+
+[12/15] info_exchange  →  https://app.bkbacademy.vn/week/33/task/info_exchange
+[info_exchange] NEG=ok POS=FAIL(Pattern /(Tom's Accident|Table A|Table B|Candidate's Question Card)/ not found)
+  ✅ CHECK: "cue card exchange UI loaded with W33 content"
+     SNIPPET: Dialogue 📄 Card 1: Jake's First Aid Action CARD 1: INFORMATION CARD — ANSWER EXAMINER NOVA'S QUESTIONS WH- CUES / PROMPTS INFORMATION / FAC
+  ✅ CHECK: "cue rows have actual text (NOT empty '01. ? 02. ? 03. ?')"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED 🔄 Info Exchange "Nova is waiting! Ask and answer — complete the Info Exchange to forge the Speaking Key." 🔐 Complete
+  ✅ CHECK: "at least 1 cue text string >=9 chars"
+     SNIPPET: [matches (10): Questions, candidate, conversation, INFORMATION, QUESTIONS]
+  ✅ CHECK: "info_exchange DOM contains >=2 '?' gaps for unknown fields"
+     SNIPPET: [matches (7): ?, ?, ?, ?, ?]
+  ❌ CHECK: "table_a card title or table_b tab present"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED 🔄 Info Exchange "Nova is waiting! Ask and answer — complete the Info Exchange to forge the Speaking Key." 🔐 Complete
+     REASON:  Pattern /(Tom's Accident|Table A|Table B|Candidate's Question Card)/ not found
+
+[13/15] boss_listening  →  https://app.bkbacademy.vn/week/33/task/boss_listening
+[boss_listening] NEG=ok POS=FAIL(Pattern /Cambridge A2 Flyers — / not found; Found only 0/1 element(s) matching '[data-testid='exam-intro-audio']')
+  ❌ CHECK: "exam header Cambridge A2 Flyers"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED 🎧 Listening Shield (L1 & L2) "🎧 Listening Shield activated! 5 parts. Crack every audio challenge to defend the Castl
+     REASON:  Pattern /Cambridge A2 Flyers — / not found
+  ✅ CHECK: "header shows correct Cycle 1 task (Part 1 or Part 2 or Part 3)"
+     SNIPPET: MISSION UNLOCKED 🎧 Listening Shield (L1 & L2) "🎧 Listening Shield activated! 5 parts. Crack every audio challenge to defend the Castle." �
+  ✅ CHECK: "official Cambridge listening instruction sentence"
+     SNIPPET: Play Audio (2×) 👉 Listen and draw lines. There is one example. Clear Lines Jake ★ EX Tom Nurse Sarah Headmaster Brown ★ ★ EXAMPLE 📍 ? 📍 ?
+  ❌ CHECK: "exam intro audio button present"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED 🎧 Listening Shield (L1 & L2) "🎧 Listening Shield activated! 5 parts. Crack every audio challenge to defend the Castl
+     REASON:  Found only 0/1 element(s) matching '[data-testid='exam-intro-audio']'
+  ✅ CHECK: "boss listening worked example row present"
+     SNIPPET: Found 1 element(s) matching '[data-testid='example-row']' (min: 1)
+  ✅ CHECK: "object labels themed (NO Object N pattern)"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED 🎧 Listening Shield (L1 & L2) "🎧 Listening Shield activated! 5 parts. Crack every audio challenge to defend the Castl
+
+[14/15] boss_reading  →  https://app.bkbacademy.vn/week/33/task/boss_reading
+[boss_reading] NEG=ok POS=FAIL(Pattern /Cambridge A2 Flyers — / not found; Pattern /(Notepad|Note|NotepadNoteCompleter|Incident|Part 2|Listening Part 2|Cambridge A2 Flyers)/ not found)
+  ❌ CHECK: "exam header Cambridge A2 Flyers"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED 📖 Reading & Writing Shield (R1) "📖 Reading & Writing Shield — the Boss Castle final barrier. Seal it with your pen!"
+     REASON:  Pattern /Cambridge A2 Flyers — / not found
+  ❌ CHECK: "Cycle 1 boss_reading renders Note Completion (Listening P2 / RW)"
+     SNIPPET: 🦊 ⚡ MISSION UNLOCKED 📖 Reading & Writing Shield (R1) "📖 Reading & Writing Shield — the Boss Castle final barrier. Seal it with your pen!"
+     REASON:  Pattern /(Notepad|Note|NotepadNoteCompleter|Incident|Part 2|Listening Part 2|Cambridge A2 Flyers)/ not found
+  ✅ CHECK: "official Cambridge reading instruction sentence"
+     SNIPPET: Word Bank Matching Look and read. Choose the correct words and write them on the lines. There is one example. 10 Definitions · 15 Words 15-W
+  ✅ CHECK: "boss reading worked example row present"
+     SNIPPET: Found 1 element(s) matching '[data-testid='example-row']' (min: 1)
+
+[15/15] weekly_review  →  https://app.bkbacademy.vn/week/33/task/weekly_review
+[weekly_review] NEG=ok POS=FAIL(File docs/week33_hotspot_calibration.json does not contain '"mapped": 4'; Expected 4 diffs and 4 centroids, got 6 diffs and 6 centroids)
+  ✅ CHECK: "Cycle 1 weekly_review renders Cambridge Task"
+     SNIPPET: MISSION UNLOCKED 🏆 Speaking & Passport (S1) "🏆 Speaking & Passport — the final gate of the week! Clear it to earn your Chronicle Stars." �
+  ✅ CHECK: "W33 weekly_review S1 flow: Find Differences / Hotspots"
+     SNIPPET: nywhere to skip Map Speaking Part 1 FLYERS PRACTICE Find the Differences Look at the two pictures. They are the same, but there are some dif
+  ✅ CHECK: "official Cambridge speaking/review instruction sentence"
+     SNIPPET: nd the Differences Look at the two pictures. They are the same, but there are some differences. Tell me the differences. 🎧 Intro 0/6 differ
+  ❌ CHECK: "hotspot calibration file: 4 mapped regions"
+     SNIPPET: {   "week": 33,   "calibratedAt": "2026-09-04T12:40:00.000Z",   "regions": 6,   "mapped": 6,   "min_pairwise_distance": 17.7,   "max_error_p
+     REASON:  File docs/week33_hotspot_calibration.json does not contain '"mapped": 4'
+  ❌ CHECK: "hotspot mapper alignment <6% on both pictures"
+     REASON:  Expected 4 diffs and 4 centroids, got 6 diffs and 6 centroids
+
+========================================================================
+🔍 DATA CONSISTENCY ASSERTIONS
+========================================================================
+  ✅ CHECK: "listening_hub.singapore_math[i].problem_en === singapore_math.js problems[i].problemText (i=1..5)"
+     SNIPPET: 100% Identical 5 problems
+  ✅ CHECK: "speaking_hub.js info_exchange_cards.table_b fields audio_url exists"
+     SNIPPET: 5 questions with audio_url
+  ✅ CHECK: "writing_hub.js writing_chunks exists"
+     SNIPPET: 4 chunk groups verified
+
+========================================================================
+📋 GATE 15 CHECKLIST SUMMARY — WEEK 33:
+========================================================================
+✅ [gear1_webtoon] NEG=ok POS=ok
+✅ [gear2_karaoke] NEG=ok POS=ok
+✅ [gear3_retell] NEG=ok POS=ok
+✅ [gear4_clil] NEG=ok POS=ok
+✅ [science_lab] NEG=ok POS=ok
+✅ [science_report] NEG=ok POS=ok
+❌ [word_blitz] NEG=ok POS=FAIL
+✅ [sentence_smash] NEG=ok POS=ok
+✅ [math_quest] NEG=ok POS=ok
+❌ [story_writer] NEG=ok POS=FAIL
+✅ [broadcast_studio] NEG=ok POS=ok
+❌ [info_exchange] NEG=ok POS=FAIL
+❌ [boss_listening] NEG=ok POS=FAIL
+❌ [boss_reading] NEG=ok POS=FAIL
+❌ [weekly_review] NEG=ok POS=FAIL
+
+========================================================================
+🔒 SPEC SHA256: c30e8d05e5687613fb83b6f25104b7b3e5142a44ae3a9ede255b6b827ff89e14  /Users/binhnguyen/projects/engquest3k_w_e8dbc532/docs/GATE15_SPEC_W33.json
+🚨 GATE 15 FAILED: 9/15 passed
+❌ Fix failed quests before pushing to production
+
+--- [FS_TRACE AUDIT] CWD: /Users/binhnguyen/projects/engquest3k_w_e8dbc532 ---
+Project source/data files accessed: 10
+Inside worktree: 9
+Outside worktree: 1
+❌ LỖI ISOLATION: Đã truy cập 1 file bên ngoài worktree:
+   LEAK: /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/g1i_scripts/gate15_runner_srs_bypass.mjs
+Danh sách file tiêu biểu đã đọc trong worktree:
+   docs/GATE15_SPEC_W33.json
+   src/data/weeks/week_33/listening_hub.js
+   src/data/weeks/week_33/speaking_hub.js
+   public/images/week33
+   docs/week33_hotspot_calibration.json
+   src/data/weeks/week_33/skill_practice_hub.js
+   src/data/weeks/week_33/singapore_math.js
+   src/data/weeks/week_33/writing_hub.js
+   src/data/weeks/week_33/writing.js
+### ----- END -----
+### EXIT: 1
+### END_UTC: 2026-10-23T02:54:37Z

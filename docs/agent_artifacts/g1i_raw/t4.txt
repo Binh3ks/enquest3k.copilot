@@ -1,0 +1,12 @@
+### STEP: t4
+### CMD: git log --format=%h %ad %s --date=short --follow -- docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T02:49:39Z
+### ----- OUTPUT -----
+63fdfd93 2026-09-05 feat(w33-features): Voice Shadow Dictation mode, Discovery Report Inquiry challenge, SRS Leitner, Quick Write, and Milestone templates [multi-agent-review]
+0a817f65 2026-09-05 docs(curriculum): enshrine 28-mock test cadence and post-Flyers exams (PET & FCE/Acellus)
+027e43d1 2026-09-04 feat(curriculum): master architecture W01-156, digital syllabus bridge map, and SOP v2.0
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T02:49:39Z

@@ -1,0 +1,105 @@
+### STEP: m26_listening_p1_characters
+### CMD: bash -c node -e "const lh = await import('./src/data/weeks/week_34/listening_hub.js'); console.log('NAMES:'); console.log(JSON.stringify(lh.listeningHubData.listening_p1.names, null, 2)); console.log('\nTARGETS:'); console.log(JSON.stringify(lh.listeningHubData.listening_p1.targets, null, 2)); console.log('\nAUDIO SCRIPT:'); console.log(lh.listeningHubData.listening_p1.passage_audio_script);"
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T04:53:08Z
+### ----- OUTPUT -----
+NAMES:
+[
+  {
+    "id": "n1",
+    "text": "Leo the Lion",
+    "target_id": "t1",
+    "isExample": true
+  },
+  {
+    "id": "n2",
+    "text": "Milo the Mouse",
+    "target_id": "t2"
+  },
+  {
+    "id": "n3",
+    "text": "Hunter Jack",
+    "target_id": "t3"
+  },
+  {
+    "id": "n4",
+    "text": "Oliver the Owl",
+    "target_id": "t4"
+  },
+  {
+    "id": "n5",
+    "text": "Bella the Bird",
+    "target_id": "t5"
+  },
+  {
+    "id": "n6",
+    "text": "Sammy the Squirrel",
+    "target_id": "t6"
+  },
+  {
+    "id": "n7",
+    "text": "Rob the Rabbit",
+    "target_id": null
+  }
+]
+
+TARGETS:
+[
+  {
+    "id": "t1",
+    "label": "Leo (Large sleeping lion under tree)",
+    "x": 45,
+    "y": 55,
+    "isExample": true
+  },
+  {
+    "id": "t2",
+    "label": "Milo (Tiny mouse on mossy rock)",
+    "x": 30,
+    "y": 70
+  },
+  {
+    "id": "t3",
+    "label": "Hunter Jack (Man holding rope behind bush)",
+    "x": 80,
+    "y": 50
+  },
+  {
+    "id": "t4",
+    "label": "Oliver (Wise owl on high branch)",
+    "x": 65,
+    "y": 25
+  },
+  {
+    "id": "t5",
+    "label": "Bella (Colorful bird near stream)",
+    "x": 50,
+    "y": 18
+  },
+  {
+    "id": "t6",
+    "label": "Sammy (Squirrel gathering acorns on path)",
+    "x": 42,
+    "y": 78
+  }
+]
+
+AUDIO SCRIPT:
+Man: Look at Part 1. Now look at the picture. Listen and look. There is one example.
+Girl: I can see a big animal sleeping under the tree!
+Man: Yes, that is Leo the lion. He is resting peacefully.
+Girl: Can you see the example line? Now you listen and draw lines.
+Girl: Can you see the tiny mouse running near the lion's front paw?
+Man: Yes, that is Milo the mouse. He is looking for seeds.
+Girl: Who is that man hiding behind the bushes with a rope net?
+Man: That is Hunter Jack. He is setting a trap between the trees.
+Girl: Look up on the high branch! Who is that wise owl?
+Man: That is Oliver the owl. He is watching the whole forest.
+Girl: Look near the stream! There is a little bird singing.
+Man: That is Bella the bird. She has colorful feathers.
+Girl: Who is the white rabbit drinking water at the riverbank?
+Man: That is Rob the rabbit. He is hopping gently.
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T04:53:08Z

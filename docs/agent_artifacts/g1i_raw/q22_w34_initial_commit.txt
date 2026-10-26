@@ -1,0 +1,157 @@
+### STEP: q22_w34_initial_commit
+### CMD: git log --reverse --format=%h %cd %s -- src/data/weeks/week_34
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:44:23Z
+### ----- OUTPUT -----
+d5904c11 Sat May 23 07:39:08 2026 +0700 feat(W34): Storytellig Practice 1 — The Ant and the Grasshopper (Fable)
+fb5331e8 Sat May 23 07:52:03 2026 +0700 feat(W34): update daily watch videos + add bar model images
+e454a088 Sat May 23 09:37:43 2026 +0700 fix(W34): correct barmodel paths + regenerate images
+ce69176a Sat May 23 11:11:51 2026 +0700 fix(W34): singapore_math.js used 'questions' instead of 'problems'
+49691afc Sat May 23 12:42:36 2026 +0700 fix(sgmath): correct bar model labels for W31-W34
+9afc71c5 Sat May 23 12:45:17 2026 +0700 fix(sgmath): before_after bar model with 3 modes (find start/change/result)
+07814f41 Sat May 23 23:21:41 2026 +0700 feat(mindmap): restructure all 68 files to 2+2+2 stem format
+2a5fa240 Sat May 23 23:33:43 2026 +0700 fix(mindmap): correct 2-blank stems with paired answer branches
+f3859232 Thu May 28 10:06:25 2026 +0700 fix: spark talk hints display + W35/W31 compatibility for Weeks 30-35
+170c085b Thu May 28 11:05:25 2026 +0700 fix: add hint_en to spark frames for Weeks 30-35 (sentence chip display)
+81ea1c8b Fri May 29 12:55:30 2026 +0700 fix: spark talk frames W30-W35 + story mission audit fixes
+c65a55a7 Sat May 30 21:00:40 2026 +0700 fix: rewrite writing station W33-35 to W30 format standard
+1721bf66 Tue Jun 2 17:18:29 2026 +0700 fix(W28-W32): natural chunks/collocations in read.js, dictation, shadowing
+84d5f6be Tue Jun 2 21:29:56 2026 +0700 fix(W28-W35): remove false chunks, sync dictation/shadowing, B22 PASS
+d161d555 Tue Jun 2 22:43:20 2026 +0700 fix(W28-W35): auto-remove 357 false chunks, B22 + build PASS
+75206b88 Wed Jun 3 14:29:50 2026 +0700 feat(toolkit): Layer 4 LLM Judge + auto-fix 31 false chunks
+1ab53722 Thu Jun 4 14:13:14 2026 +0700 feat(audit): chunk/colloc validation for W1-W35 + workflow rules
+fd33886e Fri Jun 5 08:18:39 2026 +0700 feat(audit,ui,content): restore hover behavior + fix audit pipeline + rewrite chunks + dictionary coverage
+cb547a0d Fri Jun 5 09:05:38 2026 +0700 feat(audit): auto-bold valid chunks across W1-W35 + add missing dict entries
+710373f1 Fri Jun 5 12:46:44 2026 +0700 feat(audit): auto-bold v3 + 276 missing dictionary entries
+46fa967e Fri Jun 5 15:02:37 2026 +0700 fix(audit,content): grammar fix + capitalization + remove false-positive bolds + add Vietnamese meanings
+9ef66cff Fri Jun 5 16:22:12 2026 +0700 fix(audit): full SpaCy audit + restore valid bolds + fix broken spans
+fb07d6d3 Sat Jun 6 13:34:12 2026 +0700 fix(audit): auto-bold 49 missed valid chunks + fix 3 broken-bold + add 2 dict entries
+be2794da Sat Jun 6 21:46:45 2026 +0700 feat(audit): smart auto-bold v2 with span tracking — 350 bolds added W1-W35
+d833b197 Mon Jun 8 16:58:15 2026 +0700 fix(mindmap): ESL audit fixes — stem+branch semantic match W1-W35
+8b2a4bc7 Thu Jun 11 10:01:47 2026 +0700 feat(writing): Write & Speak station with picture-prompt + Viva Voce
+fc3bb115 Fri Jun 12 09:18:55 2026 +0700 feat(writing): align word banks + sentence frames with source stories (W16-W35)
+85ba725a Fri Jun 12 09:51:48 2026 +0700 fix(writing): progressive min_words, fix W18 title, fix UI data flow
+c7a82e4c Fri Jun 12 12:57:20 2026 +0700 refactor(writing): minimal sentence frames — coherence rails not fill-in-the-blank
+6a2e53d7 Fri Jun 12 19:50:44 2026 +0700 fix(write-speak): restore top-level frames for VideoChallenge + add flow UI
+57e21da6 Fri Jun 12 21:18:02 2026 +0700 restore(video-challenge): fully restore from SNAPSHOT_W1-W35_Progress save backup
+40d02b30 Fri Jun 12 23:47:56 2026 +0700 fix(write-speak): restore ADV W16-W35 writing.js from commit 3bf05998
+5ac28729 Sat Jun 13 10:30:41 2026 +0700 fix(write-speak): replace picture_mode.sentence_frames with minimal rails (no bold)
+267aa77a Sat Jun 13 15:15:40 2026 +0700 fix(video-challenge): W9-W15 wrap vocab_bank into hints, expand story frames W16-W35
+f103330c Sat Jun 13 21:04:01 2026 +0700 fix(video-challenge): fix W32-W34 ADV frames, final W1-W35 audit
+1ca55d94 Sun Jun 14 15:13:48 2026 +0700 feat(shadowing): redesign shadowing station with IPA display, dual-panel layout, and video curation
+0f67a675 Mon Jun 22 20:24:42 2026 +0700 refactor(shadowing): assign everyday conversation videos for W13-W35
+98d99c31 Wed Jul 8 17:32:40 2026 +0700 fix(shadowing): W22 + W34 - replace mismatched videos
+fcdf8eec Thu Jul 9 18:40:09 2026 +0700 feat(image-pipeline): orchestrator for W30-35 cover generation
+cbc098bb Wed Jul 15 23:32:27 2026 +0700 chore: untrack legacy planning docs (keep code only)
+854ead88 Thu Jul 23 22:17:20 2026 +0700 fix(w25,w34): replace 2 missing shadowing videos + revert W04/W24 mistakes
+708addf1 Fri Jul 24 19:23:13 2026 +0700 feat(w1-w35): Pipeline v4 — replace shadowing video IDs + Rule 4 audit
+08c6b78e Sat Jul 25 08:20:50 2026 +0700 fix: revert to working public youtube videoIds for all weeks (ADV & Easy)
+4bbf0a5d Wed Jul 29 15:58:58 2026 +0700 chore: batch pipeline complete — 20 weeks passed Phase 1-3
+cec676c5 Wed Jul 29 22:19:37 2026 +0700 fix: restore ALL TTS content from original commit 08c6b78e
+c2d54f14 Thu Jul 30 07:01:58 2026 +0700 fix: restore TTS content + add content_en to W34
+f0c6f9cd Sat Aug 1 09:26:46 2026 +0700 fix(shadowing): W34 update script to match actual video transcript (40 sentences)
+8fbc6d12 Sat Aug 1 11:21:39 2026 +0700 fix(shadowing): W34 replace video — Pinkfong Ant and the Grasshopper
+494ef434 Sat Aug 1 14:05:53 2026 +0700 fix(shadowing): restore W34 TTS content (ADV + Easy)
+98a3e9ac Sat Aug 1 16:51:04 2026 +0700 fix(shadowing): W34 fix videoId to match Pinkfong video + restore transcript
+56df9690 Tue Aug 4 13:17:00 2026 +0700 fix(shadowing): restore TTS content_en for 10 corrupted ADV weeks
+3b01b736 Thu Aug 6 18:41:00 2026 +0700 feat(ai_tutor): complete Batch 3 (Weeks 29-35) standardization according to 5-Tier Scaffolding Matrix (12 turns retell / 10 turns personal)
+b677e827 Thu Aug 6 18:51:04 2026 +0700 feat(data): complete chunking, bolding, and dictionary enrichment across all 36 weeks according to W36 Golden Standard
+b5e2155b Thu Aug 6 22:39:15 2026 +0700 feat(explore): complete deep audit & dictionary enrichment for Explore station chunks across all 36 weeks
+3ae02ab4 Thu Aug 6 22:45:41 2026 +0700 feat(data): merge and enrich bolded chunks and dictionary entries across BOTH Easy and Advanced modes for all 36 weeks
+551705cc Fri Aug 7 13:24:21 2026 +0700 fix(curriculum): audit and fix chunk_focus, bolding, and dictionary across all 36 weeks for both Advanced and Easy modes
+7cf15df6 Fri Aug 7 13:31:41 2026 +0700 fix(dictionary): eliminate 100% of dummy phrase entries across master dictionary.json and all 36 weeks read.js, explore.js, and index.js files for both modes
+c72bee5d Fri Aug 7 15:00:01 2026 +0700 feat(tts): rollout Google Cloud TTS Direct across all 36 weeks and update AI Tutor voice selector to Google voices
+2406baac Fri Aug 7 21:55:17 2026 +0700 fix(dict): sync chunk_focus and dictionary entries for all new pedagogical chunks across 36 weeks
+2897b113 Fri Aug 7 22:37:23 2026 +0700 feat(week37): produce full Week 37 content package (38 files) following Week 36 Golden Standard pipeline
+6de123a7 Sat Aug 8 00:25:10 2026 +0700 fix(week37): align index.js and real data exports with Week 36 Golden Standard schema
+2456d914 Sat Aug 8 00:28:49 2026 +0700 fix(week37): update Week 37 files to 100% match Golden Standard Week 36 dual-tab schema (read_stem/read_social)
+3cddba62 Sat Aug 8 09:43:43 2026 +0700 fix(week37): update content word counts to pass Phase 3 content_lint gate (145-220w)
+162c61cd Sat Aug 8 09:56:39 2026 +0700 fix(week37): update word_power, shadowing, and dictation schemas to 100% match Golden Standard Week 36
+85bdb4ee Sat Aug 8 13:10:47 2026 +0700 feat(week37): produce full rich content for all 19 stations in both ADV and EASY modes
+3b81fa3e Sat Aug 8 13:16:58 2026 +0700 fix(read_social): expand easyReadSocialEn to 147 words with 10 bolds and clear null image_url
+436a2449 Sat Aug 8 13:34:42 2026 +0700 fix(week37): upgrade Week 37 item counts across all 19 stations to match Week 36 100%
+57693fd3 Sat Aug 8 13:51:07 2026 +0700 fix(pipeline): complete 100% Blueprint & W36 Master Matrix alignment for Week 37 (36 mindmap branches, explore questions, writing story_prompts, unique educational videos)
+82f9c22f Sat Aug 8 14:05:38 2026 +0700 fix(pipeline): complete resolution of all 5 issues (custom W37 SVGs for Singapore Math, educational video for Shadowing, 3 AI Tutor missions & sports cards, full pipeline table in AGENTS.md)
+07f1c916 Sat Aug 8 14:19:23 2026 +0700 fix(shadowing & ai_tutor): generate video transcript for gf7OdFHCYfo enabling transcript toggle, update STEM science text in read.js, add spark_talk cards array in AI Tutor
+e9c054eb Sat Aug 8 14:32:19 2026 +0700 fix(pipeline): strictly enforce W36 pipeline rules (STEM speed science text, shadowing video Rlmms56uisw with pre-cleaned transcript, EXACTLY 2 Free Talk cards, 3 story missions mapped to STEM/Social/Personal)
+5f17bc65 Sat Aug 8 14:43:13 2026 +0700 fix(master): update Easy mode STEM story with readable text, set Shadowing video to unused bXtm-iBtsPo with full transcript, optimize AI Tutor prefetch for 0ms TTS delay
+e1783158 Sat Aug 8 14:52:33 2026 +0700 fix(pipeline): add Shadowing conversational video criteria to AGENTS.md, set video to aqMpREQdnCY, simplify Easy STEM story for A1 learners
+8c0de93e Sat Aug 8 15:43:17 2026 +0700 fix(pipeline-master): write dedicated STEM science passages without mixing old text, restore separated TTS reading summary in shadowing, set video to 100% UNUSED conversational g-uW_KheiEc
+ed7dee47 Sat Aug 8 15:57:02 2026 +0700 fix(stem-framework): enforce 3-step STEM Problem-Solving Cycle in read.js and AGENTS.md, fix grammar (was vs were)
+3725d83f Sat Aug 8 15:59:44 2026 +0700 fix(social-studies): apply 3-part History & Geography framework (Olympic Truce & Modern Olympics) to read_social, fix ESL chunking boundaries
+5e3a1d1b Sat Aug 8 16:04:53 2026 +0700 fix(explore-station): enforce Global World Horizon framework (Kenya Champion Runners) in explore.js and AGENTS.md
+6b60fc70 Sat Aug 8 16:50:02 2026 +0700 fix(ui-narrative-polish): clean text math formula (velocity = distance / time) and contextual keyword weaving for Saturday morning
+bc007ae8 Sat Aug 8 16:58:44 2026 +0700 fix(cascading-sync): update AI Tutor missions/free talk, writing.js, daily_watch.js, mindmap.js, and AGENTS.md for STEM/Social/Explore realignment
+ef0e3f07 Sat Aug 8 17:03:13 2026 +0700 fix(total-station-sync): 100% synchronize ALL stations (vocab, word_power, ask_ai, dictation, shadowing_ipa, games, logic_science, singapore_math, social_quiz, word_match, grammar) for ADV and EASY
+d5ccf7c5 Sat Aug 8 17:07:26 2026 +0700 fix(tts-prefetch-align): update voiceService prefetch for AI Tutor missions to match en-US-Journey-F and station story
+e8eb3ff0 Sat Aug 8 17:12:28 2026 +0700 fix(week-index-schema): fix week_37 index.js to export full weekData schema with stations wrapper for ADV and EASY
+87b657b8 Mon Aug 10 13:00:21 2026 +0700 fix(media): re-render 16 corrected images for Week 33, 34, 35 including read covers, remove duplicated vocab phrases, and fix emissions/famine/catch visual accuracy
+f6bb6c38 Mon Aug 10 13:09:09 2026 +0700 fix(vocab): add definition fallbacks on card flip UI, update famine definition to 'nạn đói / nạn chết đói', re-render famine 3D Pixar image, and align definition_en / definition_vi keys across all weeks in both Advanced and Easy modes
+02887015 Mon Aug 10 13:15:44 2026 +0700 fix(vocab): rewrite clean English definitions, Vietnamese translations, example sentences, and collocations matching Week 14 benchmark schema for Weeks 33, 34, 35 in both Advanced and Easy modes
+621c1b83 Mon Aug 10 13:23:39 2026 +0700 feat(vocab): expand New Words to 18 single core target vocabulary words and Word Power to 8 chunk phrases across Week 33, 34, 35 in both Advanced and Easy modes, complete with 12 new 3D Disney Pixar v7 images
+1b6a0f19 Mon Aug 10 13:35:13 2026 +0700 fix(media): re-render 7 corrected Pixar images for W33, W34, W35 including dedicated nurse, factory emissions smoke, tree planting make a difference, light switch act now, and replace duplicate learn a lesson in W34 with think ahead
+f7c85f5e Mon Aug 10 14:13:15 2026 +0700 fix(vocab): restore pure English definition_en across all 37 weeks in both Advanced and Easy modes, keeping Vietnamese definition_vi for sub-caption rendering
+c1b15a67 Mon Aug 10 16:15:21 2026 +0700 fix(write_speak): comprehensive audit & standardization of Easy (1 gap) vs Advanced (2 gaps) modes W01-W35+
+2e523ab5 Mon Aug 10 16:29:54 2026 +0700 fix(write_speak): master audit & fix Tab 1 Model Challenge for 0 adjacent gaps, 100% model_sentence, and roadmap sentence counts W01-W48+
+80fbf3dd Mon Aug 10 16:41:29 2026 +0700 fix(write_speak): zero space before punctuation and zero artificial adverbs across W01-W48+
+3da5ebdd Mon Aug 10 16:49:48 2026 +0700 fix(write_speak): explicit golden override for Week 09 and purge synthetic connective endings across all weeks
+077952f0 Mon Aug 10 16:58:52 2026 +0700 fix(write_speak): 100% clean rewrite of Tab 1 Model Challenge data across all weeks W01-W48+
+40a970da Mon Aug 10 21:18:44 2026 +0700 fix(write_speak): enforce single Full Mode for W33+, build 4-group cumulative word bank, and clean W33 Tab 1
+191bacf9 Tue Aug 11 09:07:19 2026 +0700 feat(data): sync Cambridge Full Mode accumulation story & 4-group word bank for W34-W37
+c2d4b643 Tue Aug 11 09:27:40 2026 +0700 fix(data): execute critical rewrite for Week 34 & Week 35 Read & Explore and Write & Speak
+1de08bfe Tue Aug 11 10:15:07 2026 +0700 feat(standardization): hard overwrite & standardize all 12 stations W33-W37 according to Cambridge Flyers A2 standards
+705ac6fa Tue Aug 11 10:28:13 2026 +0700 fix(reading): resolve dual-tab read_explore initialization hang and export read_stem/read_social for W33-W37
+f90edbd6 Tue Aug 11 10:39:39 2026 +0700 feat(cambridge): replace placeholder data with 100% real Cambridge A2 Flyers content W33-W37 and clean punctuation spacing
+f09e7d8c Tue Aug 11 10:54:32 2026 +0700 fix(grammar): add 20 full Cambridge exercises per week and resolve shadowing import syntax error
+6d0f9dc9 Tue Aug 11 11:06:07 2026 +0700 feat(w36): update all 12 stations to Cambridge A2 Flyers standard with MC options and fixes
+bdd78335 Tue Aug 11 11:16:33 2026 +0700 fix(w36): fix WordMatch auto-match bug, shuffle MC options, add live YouTube IDs, and use complete chunks in WordPower
+fcc8b1ed Tue Aug 11 12:22:19 2026 +0700 fix(w36): update WordPower with exact 10 action/cumulative chunks, fix Mindmap card rendering, fix Writing sentence_frames split crash
+cf00d755 Tue Aug 11 13:29:05 2026 +0700 feat(validator): upgrade validate_week.mjs to 16-module deep field validator and standardize Week 36 & 37 datasets to 100% PASS
+75b75f4b Thu Aug 13 15:27:43 2026 +0700 feat(w34-w37): restore W34-W37 Syllabus content, update MOCK-01 diagnostic labels, and add anti-drift guard
+d4fc3124 Thu Aug 13 15:28:25 2026 +0700 fix(w34-w37): update index titles to match restored Syllabus themes and fix NovaTalkShowHub JSX syntax
+48bf6578 Thu Aug 13 15:39:35 2026 +0700 fix(w34-w37): synchronize all runtime data sources, strengthen anti-drift guard, and separate Cambridge 20+ words from EngQuest stretch target
+204e31e9 Thu Aug 13 16:19:52 2026 +0700 fix(registry-anti-drift): synchronize metadata.js, fix W33 writing frames, register all 26 data sources in RuntimeDataSourceRegistry, and assign Webtoon image_url
+a5c27267 Mon Aug 24 14:44:39 2026 +0700 feat(w34): dry run create Week 34 with master 15-task / 4-hub architecture
+ed56a868 Mon Aug 24 18:07:05 2026 +0700 feat(pipeline): implement 7-gate automated quality suite & remediate week 34 content
+d0f4f8be Mon Aug 24 20:09:55 2026 +0700 feat(w34): reproduce pure Week 34 with SOP, 0 hardcoded fallbacks, authentic assets and 100% 10-gate pass
+d2b98ddf Mon Aug 24 20:48:23 2026 +0700 feat(w34): fix vocab example sentences with natural POS-aware contexts and implement Gate 10 example grammaticality auditor
+2b59cc39 Mon Aug 24 21:46:30 2026 +0700 fix(w34): comprehensive production remediation & 15-gate certification [anti-hallucination-v1]
+1f516d0d Mon Aug 24 22:11:53 2026 +0700 fix(w34): F-series remediation — F1-F7 blueprint clean + Gate15 gate script
+2794c206 Tue Aug 25 10:00:04 2026 +0700 fix(w34): implement G-series fixes (G1-G5) for Week 34 [multi-agent-review]
+d474a4f7 Tue Aug 25 10:05:41 2026 +0700 fix(w34): solve math_quest problemText, info_exchange 10+ char words, and FindDifferences data [multi-agent-review]
+02dd8617 Tue Aug 25 12:45:52 2026 +0700 fix(w34): apply Round H reviewer patches 1-4 [multi-agent-review]
+3a051827 Tue Aug 25 12:56:26 2026 +0700 fix(w34): apply Round H patches A and B (components and data) [multi-agent-review]
+347e5e4d Tue Aug 25 14:00:40 2026 +0700 feat(pedagogy): implement step wizard story writer, data card science report, and cambridge exam fidelity (w33+w34)
+f4a6533d Tue Aug 25 15:37:32 2026 +0700 feat(w33-w34-data): align exam item counts and calibration coordinates [Round K]
+fa1c9fa7 Tue Aug 25 16:33:02 2026 +0700 feat(data): add L1 worked examples, past-tense chips, and 16:9 story scenes for W33-W34 [round-l]
+e986da4a Tue Aug 25 16:45:05 2026 +0700 fix(science_report): use past-tense verbs in data_card for W33-W34 [round-l]
+40d49004 Tue Aug 25 16:54:10 2026 +0700 feat(data): add 3-stage mini-ladder steps (MODEL, BUILD, WRITE) for W33-W34 [round-m]
+3c776a59 Tue Aug 25 17:33:56 2026 +0700 feat(data): update Cambridge Flyers mechanics for W33-W34 (N1-N10) [round-n]
+8b437b30 Tue Aug 25 17:43:19 2026 +0700 refactor(hubs): separate skill_practice_hub from listening_hub for W33-W34 (N11) [round-n]
+abd41e39 Tue Aug 25 19:06:06 2026 +0700 fix(writing): apply strict derangement to Step 2 chips in W33 and W34 writing_hub [round-n.1]
+b93dedae Tue Aug 25 21:00:04 2026 +0700 fix(hotspots): single source calibration from speaking_hub coords [q2-hotspots]
+39f380d7 Tue Aug 25 21:16:58 2026 +0700 feat(pipeline): Q5 pure W34 regeneration from 4-hub generator pipeline [gate15-16-clean]
+3dd6d2d2 Tue Aug 25 22:05:44 2026 +0700 fix(audio-scripts): align Cambridge P1, P4, P5 and W34 read_stem scripts [w33-w34]
+5403b29e Tue Aug 25 22:15:13 2026 +0700 fix(schema): achieve 100% key symmetry between W33 and W34 across all 4 hubs
+f4325543 Tue Aug 25 22:19:52 2026 +0700 fix(index): export full station tree and skill_practice_hub in W34 index.js
+9a67e462 Wed Aug 26 08:54:28 2026 +0700 fix(w34): apply Round S data fixes to match W33 schema [round-s]
+e06b64c9 Wed Aug 26 09:00:39 2026 +0700 docs(agents): add Cambridge Mechanic Fidelity Doctrine
+97e83cad Wed Aug 26 09:07:41 2026 +0700 docs(agents): add Cambridge Mechanic Fidelity Doctrine
+e9b8b984 Wed Aug 26 09:21:07 2026 +0700 fix(examples): apply Round T example integrity fixes [round-t]
+5ce86a5e Wed Aug 26 09:27:33 2026 +0700 fix(w33/w34 L5): 3 color + 2 write per Flyers spec
+8bb9f695 Wed Aug 26 09:28:18 2026 +0700 fix(w33/w34 R4): 10 scored blanks + separate example
+b9fcab7c Wed Aug 26 09:29:23 2026 +0700 fix(S1 hotspots): single-source from calibration file
+2b4775c2 Wed Aug 26 09:30:45 2026 +0700 feat(S4): add PersonalQuestionsCompleter + fix S3 4-pics
+c464a61b Wed Aug 26 10:01:11 2026 +0700 fix(quality): complete Round V anti-hallucination fixes and 4-gate verification
+64d36485 Wed Aug 26 10:08:06 2026 +0700 fix(w34): complete L5 audio_script with inst_5 dialogue for 3c+2w balance [BUG-2]
+c5f94399 Wed Aug 26 10:36:36 2026 +0700 fix(quality): complete Round W consolidated anti-hallucination fixes and direct raw data doctrine
+6f342471 Wed Aug 26 11:13:07 2026 +0700 data(w34): update week 34 listening, reading, writing hubs verbatim [Round X]
+d070d607 Wed Aug 26 14:01:38 2026 +0700 fix(fidelity): replace W34 images with genuine AI visual assets and enable exact Cambridge direct part routing [round-y]
+7210cf5f Wed Aug 26 15:17:27 2026 +0700 fix(ui/ux): rebuild SVGColorAndWrite with interactive canvas, fix BossBattleZone routing for L3/L5/S1, refine S1 prompts [round-aa]
+6a0baaa9 Wed Aug 26 15:47:09 2026 +0700 fix(round-cc): ensure bulletproof example line rendering, replace ribbon with A2 mouse color, sync butterfly across S1 scenes
+6abb46ed Wed Aug 26 16:04:17 2026 +0700 fix(s1-fidelity): generate ultra-high-contrast Scene A and B with exact calibrated hotspot coordinates [round-cc-s1-fix]
+cc1564d5 Thu Aug 27 11:23:57 2026 +0700 fix(w33): Golden Learning & Assessment Standard v1.0 — resolve all P0 defects, regenerate audio, sync assets [multi-agent-review]
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T09:44:23Z

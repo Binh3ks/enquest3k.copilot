@@ -1,0 +1,93 @@
+### STEP: m3_browser_shuffle
+### CMD: node docs/agent_artifacts/g1i_scripts/playwright_shuffle_bench.mjs
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T04:50:41Z
+### ----- OUTPUT -----
+Starting Playwright Multi-Engine Shuffle Verification...
+
+========================================================================
+RUNNING SHUFFLE BENCHMARK ON: CHROMIUM (N = 300)
+========================================================================
+
+--- H3: FlashArena Matching Alignment (Chromium) ---
+Average matching pairs at same row: 0.9267 / 4 (Expected: 1.0000)
+Observed pair match probability (p): 0.2317 (Expected uniform: 0.2500)
+Distribution of aligned pairs per game:
+  0 pairs aligned: 116 / 300 (38.67%)
+  1 pairs aligned: 108 / 300 (36.00%)
+  2 pairs aligned: 67 / 300 (22.33%)
+  3 pairs aligned: 0 / 300 (0.00%)
+  4 pairs aligned: 9 / 300 (3.00%)
+Games with 4/4 pairs 100% aligned: 9 / 300 (3.00%)
+
+--- H4: SentenceBuilderBattle Scramble (Chromium) ---
+Average blocks keeping original position: 0.9600 / 6
+Games where target sentence was 100% unscrambled: 5 / 300 (1.67%)
+
+--- H5: StoryWriting Deterministic Shuffle (Chromium) ---
+Step 1: ✅ KHÁC (Đã xáo)
+  Original: [was walking carefully, down the school corridor, after science class ... ]
+  Shuffled: [after science class, down the school corridor, was walking carefully ... ]
+Step 2: ✅ KHÁC (Đã xáo)
+  Original: [a boy was running very fast, past the science room, lost his balance ... ]
+  Shuffled: [past the science room, slipped heavily, lost his balance ... ]
+Step 3: ✅ KHÁC (Đã xáo)
+  Original: [stopped immediately, to help his friend, stay calm ... ]
+  Shuffled: [cried in pain, Jake, called the school nurse ... ]
+Step 4: ✅ KHÁC (Đã xáo)
+  Original: [the school nurse arrived quickly, with a clean bandage, placed a cold pack ... ]
+  Shuffled: [first-aid kit, sat on the wooden bench, the school nurse arrived quickly ... ]
+Step 5: ✅ KHÁC (Đã xáo)
+  Original: [everyone felt relieved, the headmaster reminded all students, never to run in corridors ... ]
+  Shuffled: [everyone felt relieved, the headmaster reminded all students, walked safely ... ]
+
+========================================================================
+RUNNING SHUFFLE BENCHMARK ON: WEBKIT (N = 300)
+========================================================================
+
+--- H3: FlashArena Matching Alignment (WebKit) ---
+Average matching pairs at same row: 1.0600 / 4 (Expected: 1.0000)
+Observed pair match probability (p): 0.2650 (Expected uniform: 0.2500)
+Distribution of aligned pairs per game:
+  0 pairs aligned: 105 / 300 (35.00%)
+  1 pairs aligned: 106 / 300 (35.33%)
+  2 pairs aligned: 72 / 300 (24.00%)
+  3 pairs aligned: 0 / 300 (0.00%)
+  4 pairs aligned: 17 / 300 (5.67%)
+Games with 4/4 pairs 100% aligned: 17 / 300 (5.67%)
+
+--- H4: SentenceBuilderBattle Scramble (WebKit) ---
+Average blocks keeping original position: 1.0733 / 6
+Games where target sentence was 100% unscrambled: 2 / 300 (0.67%)
+
+--- H5: StoryWriting Deterministic Shuffle (WebKit) ---
+Step 1: ✅ KHÁC (Đã xáo)
+  Original: [was walking carefully, down the school corridor, after science class ... ]
+  Shuffled: [after science class, down the school corridor, was walking carefully ... ]
+Step 2: ✅ KHÁC (Đã xáo)
+  Original: [a boy was running very fast, past the science room, lost his balance ... ]
+  Shuffled: [past the science room, slipped heavily, lost his balance ... ]
+Step 3: ✅ KHÁC (Đã xáo)
+  Original: [stopped immediately, to help his friend, stay calm ... ]
+  Shuffled: [cried in pain, Jake, called the school nurse ... ]
+Step 4: ✅ KHÁC (Đã xáo)
+  Original: [the school nurse arrived quickly, with a clean bandage, placed a cold pack ... ]
+  Shuffled: [first-aid kit, sat on the wooden bench, the school nurse arrived quickly ... ]
+Step 5: ✅ KHÁC (Đã xáo)
+  Original: [everyone felt relieved, the headmaster reminded all students, never to run in corridors ... ]
+  Shuffled: [everyone felt relieved, the headmaster reminded all students, walked safely ... ]
+
+========================================================================
+FINAL CROSS-ENGINE COMPARISON SUMMARY
+========================================================================
+| Metric | Chromium (N=300) | WebKit (N=300) | Expected / Theoretical |
+| :--- | :---: | :---: | :---: |
+| H3 FlashArena Avg Aligned Pairs | 0.9267 | 1.0600 | 1.0000 |
+| H3 FlashArena 4/4 Align % | 3.00% | 5.67% | ~4.17% |
+| H4 SentenceBuilder Avg Blocks in Place | 0.9600 | 1.0733 | ~0.7500 |
+| H4 SentenceBuilder 100% Unscrambled % | 1.67% | 0.67% | ~0.005% |
+| H5 StoryWriting (5 Steps) | All 5 steps Diff | All 5 steps Diff | 100% Diff |
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T04:50:44Z

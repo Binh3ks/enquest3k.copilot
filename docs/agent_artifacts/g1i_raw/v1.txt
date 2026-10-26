@@ -1,0 +1,79 @@
+### STEP: v1
+### CMD: node docs/agent_artifacts/g1i_scripts/v_vocab_audio_audit.mjs
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T03:01:45Z
+### ----- OUTPUT -----
+========================================================================
+V1: AUDIT 20 VOCAB ITEMS IN vocab.js & MP3 FILES
+========================================================================
+
+| # | Word | Expected MP3 | Exists? | Bytes | Duration (ffprobe) |
+|---|---|---|:---:|---:|---:|
+| 1 | corridor | vocab_corridor.mp3 | ✅ | 3456 | 0.86s |
+| 2 | slipped | vocab_slipped.mp3 | ✅ | 2784 | 0.70s |
+| 3 | nurse | vocab_nurse.mp3 | ✅ | 3264 | 0.82s |
+| 4 | bandage | vocab_bandage.mp3 | ✅ | 3840 | 0.96s |
+| 5 | safe | vocab_safe.mp3 | ✅ | 2592 | 0.65s |
+| 6 | mistake | vocab_mistake.mp3 | ✅ | 3840 | 0.96s |
+| 7 | accident | vocab_accident.mp3 | ✅ | 2976 | 0.74s |
+| 8 | fix | vocab_fix.mp3 | ✅ | 2976 | 0.74s |
+| 9 | sorry | vocab_sorry.mp3 | ✅ | 2976 | 0.74s |
+| 10 | careful | vocab_careful.mp3 | ✅ | 2784 | 0.70s |
+| 11 | clumsy | vocab_clumsy.mp3 | ✅ | 3264 | 0.82s |
+| 12 | arm | vocab_arm.mp3 | ✅ | 2016 | 0.50s |
+| 13 | knee | vocab_knee.mp3 | ✅ | 2592 | 0.65s |
+| 14 | leg | vocab_leg.mp3 | ✅ | 2784 | 0.70s |
+| 15 | head | vocab_head.mp3 | ✅ | 2784 | 0.70s |
+| 16 | cold pack | vocab_cold_pack.mp3 | ✅ | 4032 | 1.01s |
+| 17 | get better | vocab_get_better.mp3 | ✅ | 4032 | 1.01s |
+| 18 | explain | vocab_explain.mp3 | ✅ | 4032 | 1.01s |
+| 19 | lesson | vocab_lesson.mp3 | ✅ | 2784 | 0.70s |
+| 20 | terrible | vocab_terrible.mp3 | ✅ | 3456 | 0.86s |
+
+========================================================================
+V2: ACTUAL FILES IN public/audio/week33 MATCHING '^vocab_'
+========================================================================
+
+Found 20 actual vocab_*.mp3 files:
+  - vocab_accident.mp3 (2976 bytes)
+  - vocab_arm.mp3 (2016 bytes)
+  - vocab_bandage.mp3 (3840 bytes)
+  - vocab_careful.mp3 (2784 bytes)
+  - vocab_clumsy.mp3 (3264 bytes)
+  - vocab_cold_pack.mp3 (4032 bytes)
+  - vocab_corridor.mp3 (3456 bytes)
+  - vocab_explain.mp3 (4032 bytes)
+  - vocab_fix.mp3 (2976 bytes)
+  - vocab_get_better.mp3 (4032 bytes)
+  - vocab_head.mp3 (2784 bytes)
+  - vocab_knee.mp3 (2592 bytes)
+  - vocab_leg.mp3 (2784 bytes)
+  - vocab_lesson.mp3 (2784 bytes)
+  - vocab_mistake.mp3 (3840 bytes)
+  - vocab_nurse.mp3 (3264 bytes)
+  - vocab_safe.mp3 (2592 bytes)
+  - vocab_slipped.mp3 (2784 bytes)
+  - vocab_sorry.mp3 (2976 bytes)
+  - vocab_terrible.mp3 (3456 bytes)
+
+========================================================================
+V3: CHECK AGAINST W33_AUDIO_SEMANTIC_MANIFEST.json
+========================================================================
+
+Manifest exists (82720 bytes). Checking keywords...
+  Keyword "safe" in semantic manifest: FOUND
+  Keyword "get_better" in semantic manifest: NOT FOUND
+  Keyword "recover" in semantic manifest: NOT FOUND
+  Keyword "relieved" in semantic manifest: FOUND
+  Keyword "cold_pack" in semantic manifest: NOT FOUND
+  Keyword "corridor" in semantic manifest: FOUND
+  Keyword "bandage" in semantic manifest: FOUND
+  Keyword "accident" in semantic manifest: FOUND
+
+--- DISCREPANCY ANALYSIS ---
+Missing from vocab.js expected list: []
+Extra files in directory (not in vocab.js): []
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T03:01:46Z

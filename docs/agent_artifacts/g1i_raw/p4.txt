@@ -1,0 +1,63 @@
+### STEP: p4
+### CMD: bash -c 
+cat << "EOF" > docs/agent_artifacts/g1i_scripts/w33_r2_curriculum.patch
+diff --git a/src/data/weeks/week_33/skill_practice_hub.js b/src/data/weeks/week_33/skill_practice_hub.js
+index ac630dbc..7d44d29b 100644
+--- a/src/data/weeks/week_33/skill_practice_hub.js
++++ b/src/data/weeks/week_33/skill_practice_hub.js
+@@ -158,7 +158,7 @@ export const skillPracticeHub = {
+             correct_label: "Forward Motion",
+             x: 64,
+             y: 38,
+-            micro_explanation: "⚡ Running fast builds momentum that cannot stop without floor grip."
++            micro_explanation: "⚡ Running fast builds forward speed that cannot stop without floor grip."
+           },
+           {
+             id: "z1_3",
+diff --git a/src/data/weeks/week_33/vocab.js b/src/data/weeks/week_33/vocab.js
+index 410e9fac..792e7345 100644
+--- a/src/data/weeks/week_33/vocab.js
++++ b/src/data/weeks/week_33/vocab.js
+@@ -152,7 +152,7 @@ export default [
+   },
+   { 
+     id: 16, 
+-    word: "cold_pack", 
++    word: "cold pack", 
+     definition_en: "a gel bag chilled in ice used to reduce swelling", 
+     definition_vi: "túi chườm lạnh", 
+     example_en: "The nurse placed a cold pack on his knee to reduce pain.",
+diff --git a/src/data/weeks/week_33/week_33_real.js b/src/data/weeks/week_33/week_33_real.js
+index e936595f..37fd8cab 100644
+--- a/src/data/weeks/week_33/week_33_real.js
++++ b/src/data/weeks/week_33/week_33_real.js
+@@ -16,7 +16,7 @@ export default {
+     "corridor", "slipped", "nurse", "bandage", "relieved",
+     "mistake", "accident", "fix", "sorry", "careful",
+     "clumsy", "arm", "knee", "leg", "head",
+-    "cold_pack", "recover", "explain", "lesson", "terrible"
++    "cold pack", "recover", "explain", "lesson", "terrible"
+   ],
+   sentences: [
+     { id: 1, text: "Jake was walking carefully down the corridor.", vi: "Jake đang đi bộ cẩn thận xuống hành lang." },
+EOF
+
+echo "Created patch at docs/agent_artifacts/g1i_scripts/w33_r2_curriculum.patch"
+git apply --check docs/agent_artifacts/g1i_scripts/w33_r2_curriculum.patch 2>&1
+echo "git apply --check on HEAD returned exit code: $?"
+
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T03:03:11Z
+### ----- OUTPUT -----
+Created patch at docs/agent_artifacts/g1i_scripts/w33_r2_curriculum.patch
+error: patch failed: src/data/weeks/week_33/skill_practice_hub.js:158
+error: src/data/weeks/week_33/skill_practice_hub.js: patch does not apply
+error: patch failed: src/data/weeks/week_33/vocab.js:152
+error: src/data/weeks/week_33/vocab.js: patch does not apply
+error: patch failed: src/data/weeks/week_33/week_33_real.js:16
+error: src/data/weeks/week_33/week_33_real.js: patch does not apply
+git apply --check on HEAD returned exit code: 1
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T03:03:11Z

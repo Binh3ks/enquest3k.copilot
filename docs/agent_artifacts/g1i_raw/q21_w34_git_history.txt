@@ -1,0 +1,54 @@
+### STEP: q21_w34_git_history
+### CMD: git log --stat -n 5 -- src/data/weeks/week_34 scripts/rebuild_w34_w37_syllabus_faithful.mjs scripts/audit_syllabus_drift.mjs
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:44:08Z
+### ----- OUTPUT -----
+commit cc1564d5fce2645a2dbc02efe4711fdfa4057645
+Author: binh4k <binh4k@users.noreply.github.com>
+Date:   Thu Aug 27 11:23:57 2026 +0700
+
+    fix(w33): Golden Learning & Assessment Standard v1.0 — resolve all P0 defects, regenerate audio, sync assets [multi-agent-review]
+
+ src/data/weeks/week_34/listening_hub.js | 2 +-
+ src/data/weeks/week_34/speaking_hub.js  | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 6abb46ed11b7aeb9bba815f405d962023089d2fd
+Author: binh4k <binh4k@users.noreply.github.com>
+Date:   Wed Aug 26 16:04:17 2026 +0700
+
+    fix(s1-fidelity): generate ultra-high-contrast Scene A and B with exact calibrated hotspot coordinates [round-cc-s1-fix]
+
+ src/data/weeks/week_34/speaking_hub.js | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 6a0baaa97391e942f0529b2873c7e6d870e22557
+Author: binh4k <binh4k@users.noreply.github.com>
+Date:   Wed Aug 26 15:47:09 2026 +0700
+
+    fix(round-cc): ensure bulletproof example line rendering, replace ribbon with A2 mouse color, sync butterfly across S1 scenes
+
+ src/data/weeks/week_34/speaking_hub.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 7210cf5f0148612f137bfa0dbdcd5e92cdeb79e4
+Author: binh4k <binh4k@users.noreply.github.com>
+Date:   Wed Aug 26 15:17:27 2026 +0700
+
+    fix(ui/ux): rebuild SVGColorAndWrite with interactive canvas, fix BossBattleZone routing for L3/L5/S1, refine S1 prompts [round-aa]
+
+ src/data/weeks/week_34/speaking_hub.js | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit d070d6075917897dc12531780fa64aeefcbe84c4
+Author: binh4k <binh4k@users.noreply.github.com>
+Date:   Wed Aug 26 14:01:38 2026 +0700
+
+    fix(fidelity): replace W34 images with genuine AI visual assets and enable exact Cambridge direct part routing [round-y]
+
+ src/data/weeks/week_34/speaking_hub.js | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T09:44:08Z

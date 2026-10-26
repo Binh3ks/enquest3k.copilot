@@ -1,0 +1,44 @@
+### STEP: q29_check_w34_reading_hub
+### CMD: head -n 35 src/data/weeks/week_34/reading_hub.js
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:45:50Z
+### ----- OUTPUT -----
+// Pure Generated Reading Hub for Week 34
+import { week34Vocab } from './vocab.js';
+
+export const readingHub = {
+  theme: "The Lion and the Mouse",
+  cefr_level: "A2 Flyers",
+  vocab: week34Vocab,
+
+  read_explore: {
+    title: "The Lion and the Mouse",
+    story_scenes: [
+      {
+        id: "scene_1",
+        scene_number: 1,
+        title_en: "Scene 1: The Sleeping Lion",
+        title_vi: "Cảnh 1: Sư Tử Đang Ngủ",
+        narration_en: "On a warm afternoon, the mighty **lion was sleeping** peacefully under the trees.",
+        narration_vi: "Vào một buổi chiều ấm áp, chú sư tử dũng mãnh đang ngủ yên bình dưới tán cây.",
+        image_url: "/images/week34/webtoon_scene_1.png",
+        hotspots: [
+          { id: "h1_1", label_en: "Sleeping Lion", label_vi: "Sư tử đang ngủ", x: 45, y: 55 },
+          { id: "h1_2", label_en: "Shady Trees", label_vi: "Hàng cây râm mát", x: 20, y: 30 },
+          { id: "h1_3", label_en: "Forest Floor", label_vi: "Mặt đất rừng", x: 80, y: 75 }
+        ]
+      },
+      {
+        id: "scene_2",
+        scene_number: 2,
+        title_en: "Scene 2: The Little Mouse Arrives",
+        title_vi: "Cảnh 2: Chuột Nhỏ Xuất Hiện",
+        narration_en: "While the lion was resting, a **tiny mouse ran** across the lion's big front paw.",
+        narration_vi: "Trong khi sư tử đang nghỉ ngơi, một chú chuột nhỏ chạy ngang qua bàn chân trước to lớn.",
+        image_url: "/images/week34/webtoon_scene_2.png",
+        hotspots: [
+          { id: "h2_1", label_en: "Tiny Mouse", label_vi: "Chuột nhỏ", x: 50, y: 50 },
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T09:45:50Z

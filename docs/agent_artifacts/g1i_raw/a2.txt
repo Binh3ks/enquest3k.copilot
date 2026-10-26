@@ -1,0 +1,81 @@
+### STEP: a2
+### CMD: bash -c 
+echo "=== 1. TASK TO COMPONENT MAPPING IN TaskScreen.jsx ==="
+sed -n "40,66p" src/components/questmap/TaskScreen.jsx
+
+echo "=== 2. TRACE IMPORTS OF grammar.js IN RUNTIME ==="
+git grep -n "grammar.js" src/
+
+echo "=== 3. TRACE IMPORTS OF singapore_math.js IN RUNTIME ==="
+git grep -n "singapore_math.js" src/
+
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T03:01:23Z
+### ----- OUTPUT -----
+=== 1. TASK TO COMPONENT MAPPING IN TaskScreen.jsx ===
+  // Zone 1: Story World (Day 1)
+  gear1_webtoon:    { zone: 'story',     gear: 1 },
+  gear2_karaoke:    { zone: 'story',     gear: 2 },
+  gear3_retell:     { zone: 'story',     gear: 3 },
+
+  // Zone 2: Knowledge Lab (Day 2)
+  gear4_clil:       { zone: 'knowledge', station: 'clil' },
+  science_lab:      { zone: 'knowledge', station: 'action_lab' },
+  science_report:   { zone: 'knowledge', station: 'discovery_report' },
+
+  // Zone 3: Battle Arena (Day 3)
+  word_blitz:       { zone: 'arena',     station: 'word_blitz' },
+  sentence_smash:   { zone: 'arena',     station: 'sentence_smash' },
+  math_quest:       { zone: 'arena',     station: 'math_quest' },
+
+  // Zone 4: Creator Studio (Day 4)
+  story_writer:     { zone: 'create',    station: 'writing' },
+  broadcast_studio: { zone: 'create',    station: 'broadcast' },
+  ai_debate:        { zone: 'create',    station: 'ai_debate' },  // Legacy — kept for backward compat
+  info_exchange:    { zone: 'info_exchange' },  // Cambridge Speaking Part 2
+
+  // Zone 5: Boss Castle (Day 5)
+  boss_listening:   { zone: 'boss',      station: 'listening_boss' },
+  boss_reading:     { zone: 'boss',      station: 'rw_boss' },
+  weekly_review:    { zone: 'boss',      station: 'review' },
+  personal_questions: { zone: 'boss',    station: 'personal_qs' },
+};
+=== 2. TRACE IMPORTS OF grammar.js IN RUNTIME ===
+src/contracts/RuntimeDataSourceRegistry.js:16:  { key: 'grammar', desc: 'Grammar exercises in src/data/weeks/week_XX/grammar.js' },
+src/contracts/RuntimeDataSourceRegistry.js:55:    { key: 'grammar', name: `week_${weekStr}/grammar.js`, filePath: path.join(weekDir, 'grammar.js') },
+src/data/weeks/week_33/index.js:7:import grammar from './grammar.js';
+src/data/weeks/week_34/index.js:7:import grammar from './grammar.js';
+src/data/weeks/week_35/index.js:7:import grammar from './grammar.js';
+src/data/weeks/week_36/grammar.js:1:// Week 36 grammar.js
+src/data/weeks/week_36/index.js:7:import grammar from './grammar.js';
+src/data/weeks/week_37/grammar.js:1:// Week 37 grammar.js
+src/data/weeks/week_37/index.js:7:import grammar from './grammar.js';
+src/data/weeks_easy/week_33/grammar.js:1:// Cambridge A2 Flyers grammar.js — Week 33
+src/data/weeks_easy/week_33/index.js:7:import grammar from './grammar.js';
+src/data/weeks_easy/week_34/grammar.js:1:// Cambridge A2 Flyers grammar.js — Week 34
+src/data/weeks_easy/week_34/index.js:7:import grammar from './grammar.js';
+src/data/weeks_easy/week_35/grammar.js:1:// Cambridge A2 Flyers grammar.js — Week 35
+src/data/weeks_easy/week_35/index.js:7:import grammar from './grammar.js';
+src/data/weeks_easy/week_36/grammar.js:1:// Cambridge A2 Flyers grammar.js — Week 36
+src/data/weeks_easy/week_36/index.js:7:import grammar from './grammar.js';
+src/data/weeks_easy/week_37/grammar.js:1:// Cambridge A2 Flyers grammar.js — Week 37
+src/data/weeks_easy/week_37/index.js:7:import grammar from './grammar.js';
+src/pages/GameHub/games/StoryRemixGame.jsx:12: * Data: grammar.js fill-type exercises — loaded dynamically via import.meta.glob
+src/pages/GameHub/games/StoryRemixGame.jsx:19:const advGrammar  = import.meta.glob('../../../data/weeks/*/grammar.js');
+src/pages/GameHub/games/StoryRemixGame.jsx:20:const easyGrammar = import.meta.glob('../../../data/weeks_easy/*/grammar.js');
+src/pages/GameHub/games/StoryRemixGame.jsx:165:  // ── Load grammar.js ───────────────────────────────────────────────────────
+src/pages/GameHub/games/StoryRemixGame.jsx:174:    const key    = `../../../data/${folder}/week_${pad}/grammar.js`;
+src/pages/GameHub/games/StoryRemixGame.jsx:175:    const loader = mods[key] ?? advGrammar[`../../../data/weeks/week_${pad}/grammar.js`] ?? null;
+=== 3. TRACE IMPORTS OF singapore_math.js IN RUNTIME ===
+src/contracts/RuntimeDataSourceRegistry.js:27:  { key: 'singapore_math', desc: 'Singapore bar model math in src/data/weeks/week_XX/singapore_math.js' },
+src/contracts/RuntimeDataSourceRegistry.js:66:    { key: 'singapore_math', name: `week_${weekStr}/singapore_math.js`, filePath: path.join(weekDir, 'singapore_math.js') },
+src/data/weeks/week_36/singapore_math.js:1:// Week 36 singapore_math.js
+src/data/weeks/week_37/singapore_math.js:1:// Week 37 singapore_math.js
+src/data/weeks_easy/week_34/singapore_math.js:1:// Cambridge A2 Flyers singapore_math.js — Week 34
+src/data/weeks_easy/week_35/singapore_math.js:1:// Cambridge A2 Flyers singapore_math.js — Week 35
+src/data/weeks_easy/week_36/singapore_math.js:1:// Cambridge A2 Flyers singapore_math.js — Week 36
+src/data/weeks_easy/week_37/singapore_math.js:1:// Cambridge A2 Flyers singapore_math.js — Week 37
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T03:01:23Z

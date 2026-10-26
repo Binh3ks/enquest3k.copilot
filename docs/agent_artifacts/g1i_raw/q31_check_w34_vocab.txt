@@ -1,0 +1,39 @@
+### STEP: q31_check_w34_vocab
+### CMD: head -n 30 src/data/weeks/week_34/vocab.js
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:46:14Z
+### ----- OUTPUT -----
+// Pure Generated Target Vocab for Week 34
+export const week34Vocab = [
+  {
+    "id": 1,
+    "word": "lion",
+    "definition_en": "A large wild cat known as the king of the jungle.",
+    "definition_vi": "Sư tử, loài mèo lớn được mệnh danh là vua rừng xanh.",
+    "example_en": "The mighty lion was sleeping under a shady tree.",
+    "example_vi": "Chú sư tử dũng mãnh đang ngủ dưới bóng cây râm mát.",
+    "audio_word": "/audio/week34/vocab_lion.mp3"
+  },
+  {
+    "id": 2,
+    "word": "mouse",
+    "definition_en": "A tiny furry animal with a long tail.",
+    "definition_vi": "Chú chuột nhỏ bé có đuôi dài và bộ lông mềm.",
+    "example_en": "A tiny mouse ran across the forest path.",
+    "example_vi": "Một chú chuột nhỏ chạy ngang qua lối đi trong rừng.",
+    "audio_word": "/audio/week34/vocab_mouse.mp3"
+  },
+  {
+    "id": 3,
+    "word": "paw",
+    "definition_en": "The foot of an animal that has claws.",
+    "definition_vi": "Bàn chân có móng vuốt của động vật.",
+    "example_en": "The mouse accidentally touched the lion's front paw.",
+    "example_vi": "Chú chuột vô tình chạm vào bàn chân trước của sư tử.",
+    "audio_word": "/audio/week34/vocab_paw.mp3"
+  },
+  {
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T09:46:14Z

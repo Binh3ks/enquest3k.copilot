@@ -1,0 +1,29 @@
+### STEP: m32_w33_vocab_list
+### CMD: node -e const v = await import('./src/data/weeks/week_33/vocab.js'); const list = v.default || v.week33Vocab || v; console.log(list.map((w, i) => (i+1) + '. ' + w.word).join('\n'));
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T08:12:02Z
+### ----- OUTPUT -----
+1. corridor
+2. slipped
+3. nurse
+4. bandage
+5. safe
+6. mistake
+7. accident
+8. fix
+9. sorry
+10. careful
+11. clumsy
+12. arm
+13. knee
+14. leg
+15. head
+16. cold pack
+17. get better
+18. explain
+19. lesson
+20. terrible
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T08:12:02Z

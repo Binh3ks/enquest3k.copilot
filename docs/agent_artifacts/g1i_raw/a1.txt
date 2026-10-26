@@ -1,0 +1,438 @@
+### STEP: a1
+### CMD: node docs/agent_artifacts/g1i_scripts/a1_scan_hub_answers.mjs
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T03:00:46Z
+### ----- OUTPUT -----
+[
+  {
+    "field_path": "reading_hub.clil_article.check_questions[0]",
+    "question": null,
+    "options_count": 4,
+    "correct_index": 0,
+    "correct_value": "Friction"
+  },
+  {
+    "field_path": "reading_hub.clil_article.check_questions[1]",
+    "question": null,
+    "options_count": 4,
+    "correct_index": 0,
+    "correct_value": "It creates a thin slippery layer that reduces friction"
+  },
+  {
+    "field_path": "reading_hub.clil_article.check_questions[2]",
+    "question": null,
+    "options_count": 4,
+    "correct_index": 0,
+    "correct_value": "His sneakers had smooth plastic soles with no grip"
+  },
+  {
+    "field_path": "reading_hub.clil_article.check_questions[3]",
+    "question": null,
+    "options_count": 4,
+    "correct_index": 0,
+    "correct_value": "His rubber soles gripped the floor tightly"
+  },
+  {
+    "field_path": "reading_hub.clil_article.check_questions[4]",
+    "question": null,
+    "options_count": 4,
+    "correct_index": 0,
+    "correct_value": "Rubber gives strong grip, but water steals friction"
+  },
+  {
+    "field_path": "reading_hub.check_mode_drills[0]",
+    "question": "Where was Jake walking after science class?",
+    "options_count": 4,
+    "correct_index": -1,
+    "correct_value": null
+  },
+  {
+    "field_path": "reading_hub.check_mode_drills[1]",
+    "question": "Why did Tom slip and fall down?",
+    "options_count": 4,
+    "correct_index": -1,
+    "correct_value": null
+  },
+  {
+    "field_path": "reading_hub.check_mode_drills[2]",
+    "question": "Which part of his body did Tom hurt when he fell?",
+    "options_count": 4,
+    "correct_index": -1,
+    "correct_value": null
+  },
+  {
+    "field_path": "reading_hub.check_mode_drills[3]",
+    "question": "Who did Jake call immediately to help Tom?",
+    "options_count": 4,
+    "correct_index": -1,
+    "correct_value": null
+  },
+  {
+    "field_path": "reading_hub.check_mode_drills[4]",
+    "question": "What two things did the school nurse bring to treat the injury?",
+    "options_count": 4,
+    "correct_index": -1,
+    "correct_value": null
+  },
+  {
+    "field_path": "reading_hub.check_mode_drills[5]",
+    "question": "What did Mia do near the yellow warning sign?",
+    "options_count": 4,
+    "correct_index": -1,
+    "correct_value": null
+  },
+  {
+    "field_path": "reading_hub.check_mode_drills[6]",
+    "question": "What rule did the headmaster remind all students to follow?",
+    "options_count": 4,
+    "correct_index": -1,
+    "correct_value": null
+  },
+  {
+    "field_path": "reading_hub.check_mode_drills[7]",
+    "question": "What is the past simple form of \"slip\"?",
+    "options_count": 4,
+    "correct_index": -1,
+    "correct_value": null
+  },
+  {
+    "field_path": "reading_hub.check_mode_drills[8]",
+    "question": "What is the past continuous form of \"walk\" for \"Jake\"?",
+    "options_count": 4,
+    "correct_index": -1,
+    "correct_value": null
+  },
+  {
+    "field_path": "reading_hub.check_mode_drills[9]",
+    "question": "How did everyone feel after Tom was safely treated?",
+    "options_count": 4,
+    "correct_index": -1,
+    "correct_value": null
+  },
+  {
+    "field_path": "reading_hub.rw_part4.blanks[0]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "friction"
+  },
+  {
+    "field_path": "reading_hub.rw_part4.blanks[1]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "notice"
+  },
+  {
+    "field_path": "reading_hub.rw_part4.blanks[2]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "saw"
+  },
+  {
+    "field_path": "reading_hub.rw_part4.blanks[3]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "fell"
+  },
+  {
+    "field_path": "reading_hub.rw_part4.blanks[4]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 2,
+    "correct_value": "stopped"
+  },
+  {
+    "field_path": "reading_hub.rw_part4.blanks[5]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "call"
+  },
+  {
+    "field_path": "reading_hub.rw_part4.blanks[6]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "on"
+  },
+  {
+    "field_path": "reading_hub.rw_part4.blanks[7]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "safely"
+  },
+  {
+    "field_path": "reading_hub.rw_part4.blanks[8]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "better"
+  },
+  {
+    "field_path": "reading_hub.rw_part4.blanks[9]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "always"
+  },
+  {
+    "field_path": "reading_hub.rw_part_4.blanks[0]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "friction"
+  },
+  {
+    "field_path": "reading_hub.rw_part_4.blanks[1]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "notice"
+  },
+  {
+    "field_path": "reading_hub.rw_part_4.blanks[2]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "saw"
+  },
+  {
+    "field_path": "reading_hub.rw_part_4.blanks[3]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "fell"
+  },
+  {
+    "field_path": "reading_hub.rw_part_4.blanks[4]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 2,
+    "correct_value": "stopped"
+  },
+  {
+    "field_path": "reading_hub.rw_part_4.blanks[5]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "call"
+  },
+  {
+    "field_path": "reading_hub.rw_part_4.blanks[6]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "on"
+  },
+  {
+    "field_path": "reading_hub.rw_part_4.blanks[7]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "safely"
+  },
+  {
+    "field_path": "reading_hub.rw_part_4.blanks[8]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "better"
+  },
+  {
+    "field_path": "reading_hub.rw_part_4.blanks[9]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "always"
+  },
+  {
+    "field_path": "listening_hub.listening_p4.questions[0]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": -1,
+    "correct_value": "A"
+  },
+  {
+    "field_path": "listening_hub.listening_p4.questions[1]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": -1,
+    "correct_value": "B"
+  },
+  {
+    "field_path": "listening_hub.listening_p4.questions[2]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": -1,
+    "correct_value": "A"
+  },
+  {
+    "field_path": "listening_hub.listening_p4.questions[3]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": -1,
+    "correct_value": "C"
+  },
+  {
+    "field_path": "listening_hub.listening_p4.questions[4]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": -1,
+    "correct_value": "B"
+  },
+  {
+    "field_path": "listening_hub.listening_p4.questions[5]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": -1,
+    "correct_value": "A"
+  },
+  {
+    "field_path": "writing_hub.rw_part_4.blanks[0]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "friction"
+  },
+  {
+    "field_path": "writing_hub.rw_part_4.blanks[1]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "notice"
+  },
+  {
+    "field_path": "writing_hub.rw_part_4.blanks[2]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "saw"
+  },
+  {
+    "field_path": "writing_hub.rw_part_4.blanks[3]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "fell"
+  },
+  {
+    "field_path": "writing_hub.rw_part_4.blanks[4]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 2,
+    "correct_value": "stopped"
+  },
+  {
+    "field_path": "writing_hub.rw_part_4.blanks[5]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "call"
+  },
+  {
+    "field_path": "writing_hub.rw_part_4.blanks[6]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "on"
+  },
+  {
+    "field_path": "writing_hub.rw_part_4.blanks[7]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "safely"
+  },
+  {
+    "field_path": "writing_hub.rw_part_4.blanks[8]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 1,
+    "correct_value": "better"
+  },
+  {
+    "field_path": "writing_hub.rw_part_4.blanks[9]",
+    "question": null,
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "always"
+  },
+  {
+    "field_path": "grammar.exercises[0]",
+    "question": "While Jake ___ down the corridor, he saw a boy fall.",
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "was walking"
+  },
+  {
+    "field_path": "grammar.exercises[1]",
+    "question": "A boy slipped while he ___ fast near the stairs.",
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "was running"
+  },
+  {
+    "field_path": "grammar.exercises[2]",
+    "question": "While the nurse was placing the bandage, Tom ___ better.",
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "felt"
+  },
+  {
+    "field_path": "grammar.exercises[3]",
+    "question": "He ___ his knee while playing football yesterday.",
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "hurt"
+  },
+  {
+    "field_path": "grammar.exercises[4]",
+    "question": "While we ___ lunch, the headmaster announced safety rules.",
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "were having"
+  },
+  {
+    "field_path": "grammar.exercises[5]",
+    "question": "Tom ___ his glasses when he knocked them off the desk.",
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "broke"
+  },
+  {
+    "field_path": "grammar.exercises[6]",
+    "question": "While Mia ___ the floor, Jake brought a dry towel.",
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "was cleaning"
+  },
+  {
+    "field_path": "grammar.exercises[7]",
+    "question": "The boy ___ his balance while turning around.",
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "lost"
+  },
+  {
+    "field_path": "grammar.exercises[8]",
+    "question": "While I ___ to class, I found a clean bandage.",
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "was going"
+  },
+  {
+    "field_path": "grammar.exercises[9]",
+    "question": "The nurse ___ quickly after Jake called her.",
+    "options_count": 3,
+    "correct_index": 0,
+    "correct_value": "arrived"
+  }
+]
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T03:00:46Z

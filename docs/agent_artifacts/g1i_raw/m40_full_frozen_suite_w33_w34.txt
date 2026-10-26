@@ -1,0 +1,555 @@
+### STEP: m40_full_frozen_suite_w33_w34
+### CMD: bash -c 
+  node scripts/gate3_media_integrity.mjs 34 && \
+  node scripts/gate11_content_richness.mjs 34 && \
+  node scripts/gate12_comprehensive_cefr.mjs 34 && \
+  node scripts/gate16_content_quality.mjs 34 && \
+  node scripts/gate17_fidelity_doctrine.mjs 34 && \
+  node scripts/guard_golden_w33_freeze.mjs && \
+  node scripts/guard_golden_w34_freeze.mjs && \
+  npm run build
+
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T08:37:15Z
+### ----- OUTPUT -----
+
+========================================================================
+🛡️  GATE 3: MEDIA REFERENCE & ASSET INTEGRITY AUDIT (WEEK 34)
+========================================================================
+📁 Checking Local Images Directory: /Users/binhnguyen/projects/Engquest3k/public/images/week34...
+| Asset Name | Status | Size | Path |
+|---|---|---|---|
+| `webtoon_scene_1.png` | ✅ VALID | 1.25 MB | `/images/week34/webtoon_scene_1.png` |
+| `webtoon_scene_2.png` | ✅ VALID | 1.21 MB | `/images/week34/webtoon_scene_2.png` |
+| `webtoon_scene_3.png` | ✅ VALID | 1.15 MB | `/images/week34/webtoon_scene_3.png` |
+| `webtoon_scene_4.png` | ✅ VALID | 1.31 MB | `/images/week34/webtoon_scene_4.png` |
+| `webtoon_scene_5.png` | ✅ VALID | 1.18 MB | `/images/week34/webtoon_scene_5.png` |
+| `barmodel_w34_adv_p1.svg` | ✅ VALID | 2.7 KB | `/images/week34/barmodel_w34_adv_p1.svg` |
+| `barmodel_w34_adv_p2.svg` | ✅ VALID | 2.7 KB | `/images/week34/barmodel_w34_adv_p2.svg` |
+| `barmodel_w34_adv_p3.svg` | ✅ VALID | 2.3 KB | `/images/week34/barmodel_w34_adv_p3.svg` |
+| `barmodel_w34_adv_p4.svg` | ✅ VALID | 2.7 KB | `/images/week34/barmodel_w34_adv_p4.svg` |
+| `barmodel_w34_adv_p5.svg` | ✅ VALID | 3.0 KB | `/images/week34/barmodel_w34_adv_p5.svg` |
+| `read_cover_w34.jpg` | ✅ VALID | 1.65 MB | `/images/week34/read_cover_w34.jpg` |
+| `explore_cover_w34.jpg` | ✅ VALID | 1.79 MB | `/images/week34/explore_cover_w34.jpg` |
+
+🎧 Checking Local Audio Directory: /Users/binhnguyen/projects/Engquest3k/public/audio/week34...
+   Found 73 MP3 files.
+   ✅ Audio assets complete (73 files).
+
+🔍 Scanning Data Files for Cross-Week Asset References...
+   ✅ Data files scan complete (0 cross-week asset leaks).
+
+🌐 Checking Referenced Assets in Cambridge Hubs (L1, L3, L4, L5, S1)...
+   ✅ Verified 27 referenced Cambridge assets (0 missing, 0 empty).
+
+------------------------------------------------------------------------
+✅ GATE 3 PASSED: 100% Media Reference & Asset Integrity!
+========================================================================
+🛡️  GATE 11: CONTENT RICHNESS & VOLUME AUDIT (WEEK 34)
+========================================================================
+✅ GATE 11 PASSED: Content Richness & Volume Standard 100% Met!
+========================================================================
+🛡️  GATE 12: COMPREHENSIVE CEFR & FORBIDDEN JARGON GUARD (WEEK 34)
+========================================================================
+✅ GATE 12 PASSED: 0 CEFR / Stage 1 Academic Jargon Violations!
+
+========================================================================
+🛡️  GATE 16: CONTENT QUALITY & DATA PURITY AUDIT (WEEK 34)
+========================================================================
+  ✅ CLIL Fact Units: 5 verified (min: 3)
+  ✅ CLIL Glossary: 7 entries verified (min: 3)
+  ✅ writing_chunks: 4 groups verified with 0 banned patterns
+  ✅ science_report Data Card: 3 rows verified
+  ✅ science_report Purpose: verified
+  ✅ science_report & CLIL Keyword Overlap: 24 words [protect, forest, nature, keep, other, animals]
+  ✅ picture_story Steps: 3 steps verified
+  ✅ Singapore Math Single-Source Equality: 5/5 problems 100% matched
+  ✅ Examiner Audio Questions: 3 audio URLs verified
+  ✅ Gate 17 Fidelity Doctrine: 16-Part Schema & Invariants PASS
+
+========================================================================
+🎉 GATE 16 PASSED: 100% Content Quality & Single-Source Data Purity!
+========================================================================
+
+[GATE 17 CHECK] Part L1  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGLineMatcher.jsx : EXISTS
+[GATE 17 CHECK] Part L2  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/NotepadNoteCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part L3  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/VisualMatchingAH.jsx : EXISTS
+[GATE 17 CHECK] Part L4  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/MultipleChoice3Pic.jsx : EXISTS
+[GATE 17 CHECK] Part L5  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGColorAndWrite.jsx : EXISTS
+[GATE 17 CHECK] Part R1  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/WordBankMatchingGrid.jsx : EXISTS
+[GATE 17 CHECK] Part R2  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/DialogueAHCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R3  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/RWPart3ClozeWithTitle.jsx : EXISTS
+[GATE 17 CHECK] Part R4  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InlineTextClozeDropdown.jsx : EXISTS
+[GATE 17 CHECK] Part R5  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/TextExtractionCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R6  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/OpenClozeCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R7  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/StoryWriting.jsx : EXISTS
+[GATE 17 CHECK] Part S1  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/FindDifferencesInteractive.jsx : EXISTS
+[GATE 17 CHECK] Part S2  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InformationExchangeP2.jsx : EXISTS
+[GATE 17 CHECK] Part S3  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PictureStoryContinuation.jsx : EXISTS
+[GATE 17 CHECK] Part S4  -> /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PersonalQuestionsCompleter.jsx : EXISTS
+{
+  "week": 34,
+  "schemaVersion": "1.0.0",
+  "schemaValid": true,
+  "schemaErrors": [],
+  "invariants": [
+    {
+      "id": "INV-HUB",
+      "pass": true,
+      "detail": "listening_hub pure: true, skill_practice 4 modules: true, math match: true"
+    },
+    {
+      "id": "INV-L1",
+      "pass": true,
+      "detail": "L1 names: 1 ex + 5 scored + 1 null; targets: 6/6"
+    },
+    {
+      "id": "INV-L4",
+      "pass": true,
+      "detail": "L4 questions: 1 ex + 5 scored, 3 options each: true"
+    },
+    {
+      "id": "INV-L5",
+      "pass": true,
+      "detail": "L5 instructions: 1 ex + 3 color + 2 write"
+    },
+    {
+      "id": "INV-R1",
+      "pass": true,
+      "detail": "R1 example: true, word_bank: 15/15, defs: 10/10, no target dup: true"
+    },
+    {
+      "id": "INV-R2",
+      "pass": true,
+      "detail": "R2 example: true, turns: 5/5, options: 8/8, options valid: true"
+    },
+    {
+      "id": "INV-R3",
+      "pass": true,
+      "detail": "R3 example: true, blanks: 5/5, title_options: 3/3"
+    },
+    {
+      "id": "INV-R4",
+      "pass": true,
+      "detail": "R4 example blank 0: true, blanks 1-10 with 3 options: true (10/10)"
+    },
+    {
+      "id": "INV-R5",
+      "pass": true,
+      "detail": "R5 example: true, questions: 7/7, no options field: true"
+    },
+    {
+      "id": "INV-R6",
+      "pass": true,
+      "detail": "R6 example: true, answers: 6 (min 5)"
+    },
+    {
+      "id": "INV-S1",
+      "pass": true,
+      "detail": "S1 diffs: 4 (target: 4), match calibration centroids +-1%: true"
+    },
+    {
+      "id": "INV-S2",
+      "pass": true,
+      "detail": "S2 candidate unknown: 2>=2 (from 4 fields), examiner questions: 3>=3 with audio: true"
+    },
+    {
+      "id": "INV-S3",
+      "pass": true,
+      "detail": "S3 images: 4 (allowed: 4 or 5), intro phrase verified: true"
+    },
+    {
+      "id": "INV-CLIL",
+      "pass": true,
+      "detail": "CLIL glossary: 7>=3 valid: true, part titles present: true"
+    }
+  ],
+  "componentExistence": [
+    {
+      "part": "L1",
+      "file": "SVGLineMatcher.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGLineMatcher.jsx",
+      "exists": true
+    },
+    {
+      "part": "L2",
+      "file": "NotepadNoteCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/NotepadNoteCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "L3",
+      "file": "VisualMatchingAH.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/VisualMatchingAH.jsx",
+      "exists": true
+    },
+    {
+      "part": "L4",
+      "file": "MultipleChoice3Pic.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/MultipleChoice3Pic.jsx",
+      "exists": true
+    },
+    {
+      "part": "L5",
+      "file": "SVGColorAndWrite.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/SVGColorAndWrite.jsx",
+      "exists": true
+    },
+    {
+      "part": "R1",
+      "file": "WordBankMatchingGrid.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/WordBankMatchingGrid.jsx",
+      "exists": true
+    },
+    {
+      "part": "R2",
+      "file": "DialogueAHCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/DialogueAHCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R3",
+      "file": "RWPart3ClozeWithTitle.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/RWPart3ClozeWithTitle.jsx",
+      "exists": true
+    },
+    {
+      "part": "R4",
+      "file": "InlineTextClozeDropdown.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InlineTextClozeDropdown.jsx",
+      "exists": true
+    },
+    {
+      "part": "R5",
+      "file": "TextExtractionCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/TextExtractionCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R6",
+      "file": "OpenClozeCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/OpenClozeCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R7",
+      "file": "StoryWriting.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/StoryWriting.jsx",
+      "exists": true
+    },
+    {
+      "part": "S1",
+      "file": "FindDifferencesInteractive.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/FindDifferencesInteractive.jsx",
+      "exists": true
+    },
+    {
+      "part": "S2",
+      "file": "InformationExchangeP2.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/InformationExchangeP2.jsx",
+      "exists": true
+    },
+    {
+      "part": "S3",
+      "file": "PictureStoryContinuation.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PictureStoryContinuation.jsx",
+      "exists": true
+    },
+    {
+      "part": "S4",
+      "file": "PersonalQuestionsCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/Engquest3k/src/components/cambridge/PersonalQuestionsCompleter.jsx",
+      "exists": true
+    }
+  ],
+  "openDeviations": [],
+  "finalVerdict": "PASS",
+  "failReasons": []
+}
+========================================================================
+🛡️  ENGQUEST3K — W33 GOLDEN FREEZE CRYPTOGRAPHIC INTEGRITY GUARD
+🔖 Manifest Version: 1.0.0 | Standard Version: 1.0.0
+========================================================================
+
+  ✅ [LOCKED] src/data/weeks/week_33/reading_hub.js (SHA-256: 0989664a86eab234...)
+  ✅ [LOCKED] src/data/weeks/week_33/listening_hub.js (SHA-256: c8caa574c815f4e1...)
+  ✅ [LOCKED] src/data/weeks/week_33/writing_hub.js (SHA-256: 834a0fe0aaa9a1eb...)
+  ✅ [LOCKED] src/data/weeks/week_33/speaking_hub.js (SHA-256: b6e3f6a154780f11...)
+  ✅ [LOCKED] src/data/weeks/week_33/skill_practice_hub.js (SHA-256: 29ef4a01e8188d00...)
+  ✅ [LOCKED] src/data/weeks/week_33/vocab.js (SHA-256: 77ef5f765f3c21de...)
+  ✅ [LOCKED] docs/GATE15_SPEC_W33.json (SHA-256: f78a2edcc1036b99...)
+
+------------------------------------------------------------------------
+🎉 W33 GOLDEN MASTER INTEGRITY VERIFIED: 100% OF PROTECTED FILES LOCKED!
+------------------------------------------------------------------------
+
+========================================================================
+🛡️  ENGQUEST3K — W34 GOLDEN FREEZE CRYPTOGRAPHIC INTEGRITY GUARD
+🔖 Manifest Version: 1.0.0 | Standard Version: 1.0.0
+========================================================================
+
+  ✅ [LOCKED] src/data/weeks/week_34/reading_hub.js (SHA-256: cc2de187d7b2dc5f...)
+  ✅ [LOCKED] src/data/weeks/week_34/listening_hub.js (SHA-256: 8ee174e2fb59d806...)
+  ✅ [LOCKED] src/data/weeks/week_34/writing_hub.js (SHA-256: 4a87e546ef1c7162...)
+  ✅ [LOCKED] src/data/weeks/week_34/speaking_hub.js (SHA-256: ffc9d2a483f73ed4...)
+  ✅ [LOCKED] src/data/weeks/week_34/skill_practice_hub.js (SHA-256: fd15cf8a52ac34f1...)
+  ✅ [LOCKED] src/data/weeks/week_34/vocab.js (SHA-256: 34315f91b873b8e4...)
+  ✅ [LOCKED] src/data/weeks/week_34/read.js (SHA-256: 7eeeedc475ba7c74...)
+  ✅ [LOCKED] src/data/weeks/week_34/dictation.js (SHA-256: 38290d49a3f2b462...)
+  ✅ [LOCKED] docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md (SHA-256: e86e98d4cc70bc64...)
+
+------------------------------------------------------------------------
+🎉 W34 GOLDEN MASTER INTEGRITY VERIFIED: 100% OF PROTECTED FILES LOCKED!
+------------------------------------------------------------------------
+
+
+> engquest3k@0.0.0 build
+> node scripts/generate_version.mjs && node scripts/verify_wordwagon_content_length.mjs && node scripts/verify_batch1_runner_content.mjs && vite build
+
+✅ Version stamp generated: a3e8ae48 (2026-10-26T08:37:16.522Z)
+🚂 [WordWagon Content Validator] Checking Length-Balanced Invariant (N <= 14)...
+  ✓ Round 1: Banner=6w, Options=[1, 1, 1]w, Total N=9w <= 14 (Safety Margin: +7.15s)
+  ✓ Round 2: Banner=6w, Options=[1, 1, 1]w, Total N=9w <= 14 (Safety Margin: +7.15s)
+  ✓ Round 3: Banner=7w, Options=[1, 1, 1]w, Total N=10w <= 14 (Safety Margin: +6.48s)
+  ✓ Round 4: Banner=6w, Options=[2, 2, 2]w, Total N=12w <= 14 (Safety Margin: +5.14s)
+  ✓ Round 5: Banner=5w, Options=[1, 1, 1]w, Total N=8w <= 14 (Safety Margin: +7.82s)
+  ✓ Round 6: Banner=5w, Options=[1, 1, 1]w, Total N=8w <= 14 (Safety Margin: +7.82s)
+  ⚠️ Warning: week_36/grammar.js exercise 1 has 13 words. Ensure WordWagonJump slices properly.
+----------------------------------------------------
+✅ [WordWagon Content Validator] PASSED (6 rounds verified).
+   All rounds strictly comply with: Banner <= 8, Wagon <= 2, Total N <= 14.
+🏃 [Batch 1 Runner Validator] Checking N_max & Length-Balanced Invariants...
+  ✓ QuestionQuestRunner: 6 rounds verified (N <= 17, Delta = 0)
+  ✓ SyntaxExpressRail: 6 rounds verified (N <= 17, Delta = 0)
+
+✅ [Batch 1 Runner Validator] Passed! Total items verified: 12
+
+vite v7.3.0 building client environment for production...
+transforming...
+Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+364 |  }
+365 |  
+366 |  @import './game-mobile.css';
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+367 |  
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+316 |  }
+317 |  
+318 |  @import './game-mobile.css';
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+319 |  
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+409 |  }
+410 |  
+411 |  @import './game-mobile.css';
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+412 |  
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+444 |  }
+445 |  
+446 |  @import './game-mobile.css';
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+447 |  
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+268 |  }
+269 |  
+270 |  @import './game-mobile.css';
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+271 |  
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+243 |  }
+244 |  
+245 |  @import './game-mobile.css';
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+246 |  
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+342 |  }
+343 |  
+344 |  @import './game-mobile.css';
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+345 |  
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+292 |  }
+293 |  
+294 |  @import './game-mobile.css';
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+295 |  
+296 |  
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+289 |  }
+290 |  
+291 |  @import './game-mobile.css';
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+292 |  
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+361 |  }
+362 |  
+363 |  @import './game-mobile.css';
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+364 |  
+✓ 3288 modules transformed.
+Circular chunk: mascot-shop-chunk -> cambridge-hubs -> mascot-shop-chunk. Please adjust the manual chunk logic for these chunks.
+rendering chunks...
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/stores/useDailyQuestStore.js is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/stores/useUserStore.js but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/App.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/cambridge/CLILExplorer.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/common/QuestMap.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/common/TodayQuestBar.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/questmap/QuestMap3D.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/questmap/QuestSidebar.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/questmap/TaskScreen.jsx, /Users/binhnguyen/projects/Engquest3k/src/hooks/useStationProgress.js, /Users/binhnguyen/projects/Engquest3k/src/modules/chronicles/ChroniclesWorldMap.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/chronicles/DailyRoomScreen.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/hubs/station2/LearnMode/ScienceDragDropLab.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/zones/BattleArenaZone.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/zones/BossBattleZone.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/zones/CreatorStudioZone.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/zones/InfoExchangeZone.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/zones/KnowledgeLabZone.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/zones/StoryWorldZone.jsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_33/week_33_real.js is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/components/parent/ParentQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/teacher/tools/PeriodicQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/teacher/tools/WarmUpQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/data/weekData.js but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/config/gameAdaptation.js, /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/FreeTalkTab.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/StoryMissionTab.jsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_34/week_34_real.js is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/components/parent/ParentQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/teacher/tools/PeriodicQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/teacher/tools/WarmUpQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/data/weekData.js but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/config/gameAdaptation.js, /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/FreeTalkTab.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/StoryMissionTab.jsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_35/week_35_real.js is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/components/parent/ParentQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/teacher/tools/PeriodicQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/teacher/tools/WarmUpQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/data/weekData.js but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/config/gameAdaptation.js, /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/FreeTalkTab.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/StoryMissionTab.jsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_36/week_36_real.js is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/components/parent/ParentQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/teacher/tools/PeriodicQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/teacher/tools/WarmUpQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/data/weekData.js but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/config/gameAdaptation.js, /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/FreeTalkTab.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/StoryMissionTab.jsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_37/week_37_real.js is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/components/parent/ParentQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/teacher/tools/PeriodicQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/teacher/tools/WarmUpQuizGenerator.jsx, /Users/binhnguyen/projects/Engquest3k/src/data/weekData.js but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/config/gameAdaptation.js, /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/FreeTalkTab.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/StoryMissionTab.jsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/config/gameAdaptation.js is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/FreeTalkTab.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/ai_tutor/tabs/FreeTalkTab.jsx but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/pages/GameHub/games/AskMeGame.jsx, /Users/binhnguyen/projects/Engquest3k/src/pages/GameHub/games/MakeSentenceGame.jsx, /Users/binhnguyen/projects/Engquest3k/src/pages/GameHub/games/ShowTellLadderGame.jsx, /Users/binhnguyen/projects/Engquest3k/src/pages/GameHub/hooks/useGameValidation.js, /Users/binhnguyen/projects/Engquest3k/src/services/ai_tutor/tutorPrompts.js?v=7, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/modules/zones/StoryWorldZone.jsx is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/components/questmap/QuestMap3D.jsx but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/App.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/questmap/TaskScreen.jsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/utils/shadowingStorage.js is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/modules/shadowing/Shadowing.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/shadowing/Shadowing.jsx, /Users/binhnguyen/projects/Engquest3k/src/modules/shadowing/Shadowing.jsx but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/hooks/useShadowingRecorder.js, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/modules/zones/CreatorStudioZone.jsx is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/components/questmap/QuestMap3D.jsx but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/App.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/questmap/TaskScreen.jsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/modules/zones/BossBattleZone.jsx is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/components/questmap/QuestMap3D.jsx but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/App.jsx, /Users/binhnguyen/projects/Engquest3k/src/components/questmap/TaskScreen.jsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/modules/zones/BattleArenaZone.jsx is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/components/questmap/QuestMap3D.jsx but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/components/questmap/TaskScreen.jsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /Users/binhnguyen/projects/Engquest3k/src/modules/zones/InfoExchangeZone.jsx is dynamically imported by /Users/binhnguyen/projects/Engquest3k/src/components/questmap/QuestMap3D.jsx but also statically imported by /Users/binhnguyen/projects/Engquest3k/src/components/questmap/TaskScreen.jsx, dynamic import will not move module into another chunk.
+
+computing gzip size...
+dist/index.html                                   5.42 kB │ gzip:   1.79 kB
+dist/assets/nova-letsgo-RAA06Myf.png             62.29 kB
+dist/assets/nova-listening-DtPGA18n.png          66.64 kB
+dist/assets/nova-encourage--uBntgQH.png          70.56 kB
+dist/assets/nova-happy-fj4irF3n.png              71.95 kB
+dist/assets/nova-achievement-DX6h5w_M.png        76.78 kB
+dist/assets/nova-landing-4glxILfs.png            77.22 kB
+dist/assets/nova-thinking-qYo5YAV4.png           77.35 kB
+dist/assets/nova-sidebar-4zb4ve8o.png           102.91 kB
+dist/assets/lexio-happy-Bj7zMzNW.jpg            418.97 kB
+dist/assets/lexio-waving-CRScnplT.jpg           447.60 kB
+dist/assets/lexio-encourage-DKmTiA6a.jpg        476.39 kB
+dist/assets/lexio-listening-B7uQR82t.jpg        532.74 kB
+dist/assets/lexio-thinking-grqCsrsX.jpg         558.86 kB
+dist/assets/lexio-celebrate-Zi099kxJ.jpg        566.77 kB
+dist/assets/quest-map-forest-uSbGO4ro.jpg     1,029.73 kB
+dist/assets/mascot-shop-chunk-BLUoDqjS.css        2.94 kB │ gzip:   0.97 kB
+dist/assets/cambridge-hubs-DH8-t1Do.css           3.61 kB │ gzip:   1.08 kB
+dist/assets/MCQBlitzPopup-FtSP-kiY.css            4.92 kB │ gzip:   1.54 kB
+dist/assets/BossBattleScreen-DlFqaUfm.css        15.66 kB │ gzip:   3.62 kB
+dist/assets/ChroniclesWorldMap-rcpa_LVE.css      24.38 kB │ gzip:   5.36 kB
+dist/assets/DailyRoomScreen-ZARm9eVy.css         53.03 kB │ gzip:  11.02 kB
+dist/assets/ChunkCatapultCanvas-CX_jnbFW.css    119.61 kB │ gzip:  20.59 kB
+dist/assets/index-q5fasHmq.css                5,467.45 kB │ gzip: 418.20 kB
+dist/assets/shadowing_ipa-l-F_ukYR.js             0.12 kB │ gzip:   0.13 kB │ map:      0.32 kB
+dist/assets/shadowing_ipa-j6S8OMaP.js             0.12 kB │ gzip:   0.13 kB │ map:      0.32 kB
+dist/assets/shadowing_ipa-B2upr2QV.js             0.14 kB │ gzip:   0.14 kB │ map:      0.36 kB
+dist/assets/index-Dxszx95V.js                     0.19 kB │ gzip:   0.18 kB │ map:      0.63 kB
+dist/assets/grammar-B7gR7sVh.js                   0.34 kB │ gzip:   0.25 kB │ map:      0.64 kB
+dist/assets/grammar-CbL9GK31.js                   0.34 kB │ gzip:   0.24 kB │ map:      0.65 kB
+dist/assets/shadowing_ipa-_dac3aS2.js             0.39 kB │ gzip:   0.28 kB │ map:      0.36 kB
+dist/assets/speaking_hub-COSyge1p.js              0.43 kB │ gzip:   0.31 kB │ map:      1.07 kB
+dist/assets/speaking_hub-pPhlm8pS.js              0.44 kB │ gzip:   0.31 kB │ map:      1.09 kB
+dist/assets/writing_hub-L0zTJdI8.js               0.78 kB │ gzip:   0.53 kB │ map:      1.42 kB
+dist/assets/writing_hub-DagVOkQS.js               0.79 kB │ gzip:   0.51 kB │ map:      1.44 kB
+dist/assets/shadowing_ipa-SjqCXrri.js             0.93 kB │ gzip:   0.60 kB │ map:      1.39 kB
+dist/assets/reading_hub-CvMTrsQa.js               1.11 kB │ gzip:   0.62 kB │ map:      1.94 kB
+dist/assets/reading_hub-vDLoGrUa.js               1.13 kB │ gzip:   0.62 kB │ map:      1.97 kB
+dist/assets/listening_hub-Bim7_iQg.js             1.18 kB │ gzip:   0.65 kB │ map:      2.42 kB
+dist/assets/listening_hub-6A9K3WLV.js             1.24 kB │ gzip:   0.66 kB │ map:      2.48 kB
+dist/assets/srsGenerator-Bj6Agzz2.js              1.62 kB │ gzip:   0.84 kB │ map:      7.09 kB
+dist/assets/grammar-BFqrmcGE.js                   2.01 kB │ gzip:   0.93 kB │ map:      3.49 kB
+dist/assets/week_36_index-QvGp7kS1.js             2.02 kB │ gzip:   1.01 kB │ map:      4.04 kB
+dist/assets/week_33_real-C1kE5sPR.js              2.09 kB │ gzip:   1.13 kB │ map:      3.28 kB
+dist/assets/week_37_index-D2MsFsFu.js             2.09 kB │ gzip:   1.00 kB │ map:      4.11 kB
+dist/assets/grammar-DvdlVO9s.js                   2.11 kB │ gzip:   0.96 kB │ map:      3.61 kB
+dist/assets/read-Dp1L2wfU.js                      2.15 kB │ gzip:   1.09 kB │ map:      2.81 kB
+dist/assets/read-CVZKuyr9.js                      2.38 kB │ gzip:   1.26 kB │ map:      3.03 kB
+dist/assets/shadowing-CkIlGqiP.js                 3.38 kB │ gzip:   1.30 kB │ map:      6.80 kB
+dist/assets/speaking_hub-Bso685Bz.js              3.79 kB │ gzip:   1.52 kB │ map:      6.71 kB
+dist/assets/speaking_hub-3Pqdfawp.js              3.82 kB │ gzip:   1.56 kB │ map:      6.77 kB
+dist/assets/WorksheetGenerator-CAXUaVM4.js        3.87 kB │ gzip:   1.35 kB │ map:      7.67 kB
+dist/assets/week_34_real-BjCIHHjU.js              4.20 kB │ gzip:   1.74 kB │ map:      8.29 kB
+dist/assets/AdminDashboard-Bh8PdKLW.js            4.26 kB │ gzip:   1.37 kB │ map:      8.99 kB
+dist/assets/week_35_real-B006fm42.js              4.40 kB │ gzip:   1.89 kB │ map:      8.49 kB
+dist/assets/week_36_real-BsO9nNXG.js              4.59 kB │ gzip:   1.99 kB │ map:      8.68 kB
+dist/assets/week_37_real-DCnOexo3.js              4.65 kB │ gzip:   1.87 kB │ map:      8.74 kB
+dist/assets/writing_hub-f2xQneiZ.js               4.69 kB │ gzip:   1.85 kB │ map:      7.82 kB
+dist/assets/PassportTracker-CXKU7Y3J.js           4.75 kB │ gzip:   1.82 kB │ map:     11.04 kB
+dist/assets/writing_hub-CgEO7G_Y.js               4.75 kB │ gzip:   1.93 kB │ map:      7.88 kB
+dist/assets/shadowing_ipa-DugC_9cl.js             5.00 kB │ gzip:   1.24 kB │ map:     12.42 kB
+dist/assets/read-CtdE8J-h.js                      5.02 kB │ gzip:   1.94 kB │ map:      7.82 kB
+dist/assets/WordTreasury-B8K9m8WW.js              5.54 kB │ gzip:   2.07 kB │ map:     13.12 kB
+dist/assets/HallOfFameModal-DRBj3fo_.js           6.26 kB │ gzip:   2.26 kB │ map:     12.61 kB
+dist/assets/shadowing_ipa-GALa4QdA.js             6.63 kB │ gzip:   1.38 kB │ map:     16.72 kB
+dist/assets/MCQBlitzPopup-BMNBZnoQ.js             6.93 kB │ gzip:   3.03 kB │ map:     20.77 kB
+dist/assets/grammar-ROO6a154.js                   7.03 kB │ gzip:   2.18 kB │ map:     13.05 kB
+dist/assets/grammar-BDjlUt5g.js                   7.06 kB │ gzip:   2.07 kB │ map:     13.09 kB
+dist/assets/grammar-D9rGs5h_.js                   7.15 kB │ gzip:   2.11 kB │ map:     13.18 kB
+dist/assets/grammar-DGxyJb-X.js                   7.27 kB │ gzip:   2.20 kB │ map:     13.30 kB
+dist/assets/grammar-D1mlcf8z.js                   7.33 kB │ gzip:   2.17 kB │ map:     13.37 kB
+dist/assets/shadowing_ipa-D-DJe1L-.js             7.54 kB │ gzip:   1.47 kB │ map:     18.70 kB
+dist/assets/SecretChamberScreen-CGdn6H1X.js       7.64 kB │ gzip:   2.95 kB │ map:     18.87 kB
+dist/assets/listening_hub-BzmJYYSw.js             8.58 kB │ gzip:   2.52 kB │ map:     14.97 kB
+dist/assets/listening_hub-Dp6mf3U0.js             8.67 kB │ gzip:   2.56 kB │ map:     15.08 kB
+dist/assets/read-BV3rhUAr.js                      9.83 kB │ gzip:   2.85 kB │ map:     14.02 kB
+dist/assets/BossCombatScene-BpJklRY9.js          10.24 kB │ gzip:   4.01 kB │ map:     28.20 kB
+dist/assets/ReviewDashboard-rJ4A8w8B.js          12.53 kB │ gzip:   4.41 kB │ map:     31.84 kB
+dist/assets/read-BIPNMSmW.js                     13.33 kB │ gzip:   2.57 kB │ map:     20.34 kB
+dist/assets/read-CR9ThhGS.js                     13.56 kB │ gzip:   2.65 kB │ map:     20.55 kB
+dist/assets/read-BkgNaC4X.js                     14.31 kB │ gzip:   2.87 kB │ map:     21.89 kB
+dist/assets/read-CF5mhF9y.js                     14.68 kB │ gzip:   2.78 kB │ map:     22.51 kB
+dist/assets/read-DLmyIYNt.js                     15.19 kB │ gzip:   2.83 kB │ map:     23.09 kB
+dist/assets/BossBattleScreen-SgOfnHNS.js         16.81 kB │ gzip:   6.18 kB │ map:     53.39 kB
+dist/assets/reading_hub-Bvk85W7l.js              17.09 kB │ gzip:   6.49 kB │ map:     29.19 kB
+dist/assets/ChroniclesScreen-Bf65QfFQ.js         19.01 kB │ gzip:   6.31 kB │ map:     35.80 kB
+dist/assets/week_35_index-L_St2eCC.js            19.26 kB │ gzip:   6.91 kB │ map:     32.52 kB
+dist/assets/reading_hub-pTwJ9c4n.js              19.41 kB │ gzip:   7.09 kB │ map:     33.35 kB
+dist/assets/extractQuestVocab-BLU2hw6x.js        19.88 kB │ gzip:   6.58 kB │ map:     61.08 kB
+dist/assets/week_34_index-BC3st1rn.js            22.71 kB │ gzip:   7.31 kB │ map:     40.55 kB
+dist/assets/week_35_easy_index-D2oXWphL.js       24.22 kB │ gzip:   6.22 kB │ map:     49.11 kB
+dist/assets/week_34_easy_index-CPQs7bN3.js       24.30 kB │ gzip:   6.04 kB │ map:     49.21 kB
+dist/assets/week_33_easy_index-BRO3JPWn.js       24.81 kB │ gzip:   6.32 kB │ map:     50.40 kB
+dist/assets/week_37_easy_index-CWGEoB_r.js       27.18 kB │ gzip:   6.81 kB │ map:     53.08 kB
+dist/assets/week_36_easy_index-B2rxhyEd.js       27.52 kB │ gzip:   6.77 kB │ map:     53.43 kB
+dist/assets/vendor-lucide-D-yS5GoE.js            32.84 kB │ gzip:  11.26 kB │ map:    134.63 kB
+dist/assets/ChroniclesWorldMap-BqrtEKsd.js       37.46 kB │ gzip:  10.79 kB │ map:    112.96 kB
+dist/assets/ParentDashboard-YMbEnsFr.js          44.68 kB │ gzip:  12.75 kB │ map:     99.76 kB
+dist/assets/QuestDemoScreen-CnafTCXP.js          54.33 kB │ gzip:  16.76 kB │ map:    181.40 kB
+dist/assets/game-hub-chunk-Bl-Pss9r.js           67.86 kB │ gzip:  19.21 kB │ map:    180.85 kB
+dist/assets/mascot-shop-chunk-C6LZWmwG.js        75.67 kB │ gzip:  20.43 kB │ map:    193.21 kB
+dist/assets/DailyRoomScreen-D-QGyhM9.js         100.65 kB │ gzip:  30.83 kB │ map:    335.17 kB
+dist/assets/teacher-parent-tools-IUfyKUSb.js    207.34 kB │ gzip:  54.61 kB │ map:    488.52 kB
+dist/assets/ChunkCatapultCanvas-CBosyMUy.js     265.67 kB │ gzip:  72.64 kB │ map:    884.97 kB
+dist/assets/ai-tutor-chunk-Dny78mFx.js          309.49 kB │ gzip: 131.39 kB │ map:    528.22 kB
+dist/assets/cambridge-hubs-CZW49ARN.js          373.11 kB │ gzip:  96.65 kB │ map:    961.04 kB
+dist/assets/dictionary-data-B6BtgR6X.js         870.67 kB │ gzip: 167.15 kB │ map:      0.11 kB
+dist/assets/vendor-phaser-lfjrd5S3.js         1,388.23 kB │ gzip: 370.14 kB │ map: 11,280.73 kB
+dist/assets/vendor-C2W9spwk.js                1,443.29 kB │ gzip: 404.65 kB │ map:  7,059.98 kB
+dist/assets/index-C_l3-lpN.js                 2,574.24 kB │ gzip: 641.91 kB │ map:  2,328.80 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 14.32s
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T08:37:31Z

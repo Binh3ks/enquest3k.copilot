@@ -1,0 +1,47 @@
+### STEP: m30_test_gate16_w33_w34
+### CMD: bash -c node scripts/gate16_content_quality.mjs 33 && node scripts/gate16_content_quality.mjs 34
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T05:45:54Z
+### ----- OUTPUT -----
+
+========================================================================
+🛡️  GATE 16: CONTENT QUALITY & DATA PURITY AUDIT (WEEK 33)
+========================================================================
+  ✅ CLIL Fact Units: 7 verified (min: 3)
+  ✅ CLIL Glossary: 8 entries verified (min: 3)
+  ✅ writing_chunks: 4 groups verified with 0 banned patterns
+  ✅ science_report Data Card: 3 rows verified
+  ✅ science_report Purpose: verified
+  ✅ science_report & CLIL Keyword Overlap: 12 words [tiles, water, friction, slipped, rubber, soles]
+  ✅ picture_story Steps: 5 steps verified
+  ✅ Singapore Math Single-Source Equality: 5/5 problems 100% matched
+  ✅ Examiner Audio Questions: 5 audio URLs verified
+  ✅ Gate 17 Fidelity Doctrine: 16-Part Schema & Invariants PASS
+
+========================================================================
+🎉 GATE 16 PASSED: 100% Content Quality & Single-Source Data Purity!
+========================================================================
+
+
+========================================================================
+🛡️  GATE 16: CONTENT QUALITY & DATA PURITY AUDIT (WEEK 34)
+========================================================================
+  ✅ CLIL Fact Units: 5 verified (min: 3)
+  ✅ CLIL Glossary: 7 entries verified (min: 3)
+  ✅ writing_chunks: 4 groups verified with 0 banned patterns
+  ✅ science_report Data Card: 3 rows verified
+  ✅ science_report Purpose: verified
+  ✅ science_report & CLIL Keyword Overlap: 24 words [protect, forest, nature, keep, other, animals]
+  ✅ picture_story Steps: 3 steps verified
+  ✅ Singapore Math Single-Source Equality: 5/5 problems 100% matched
+  ✅ Examiner Audio Questions: 3 audio URLs verified
+  ✅ Gate 17 Fidelity Doctrine: 16-Part Schema & Invariants PASS
+
+========================================================================
+🎉 GATE 16 PASSED: 100% Content Quality & Single-Source Data Purity!
+========================================================================
+
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T05:45:54Z

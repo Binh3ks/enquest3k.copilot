@@ -1,0 +1,166 @@
+### STEP: t6
+### CMD: bash -c 
+echo "=== WEEK_PRODUCTION_SOP.md at e8dbc532 (1-60) ==="
+git show e8dbc532:docs/WEEK_PRODUCTION_SOP.md 2>&1 | sed -n "1,60p"
+echo "=== WEEK_PRODUCTION_SOP.md grep ==="
+git show e8dbc532:docs/WEEK_PRODUCTION_SOP.md 2>&1 | grep -n -i -E "theme|topic|syllabus|digital map"
+echo "=== WEEK_CONTENT_SOP_W34_PLUS.md (1-60) ==="
+cat docs/WEEK_CONTENT_SOP_W34_PLUS.md 2>&1 | sed -n "1,60p"
+echo "=== WEEK_CONTENT_SOP_W34_PLUS.md grep ==="
+cat docs/WEEK_CONTENT_SOP_W34_PLUS.md 2>&1 | grep -n -i -E "theme|topic|syllabus|digital map"
+echo "=== ls docs matching framework|syllabus|khung ==="
+ls -1 docs | grep -i -E "framework|syllabus|khung"
+
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T02:49:56Z
+### ----- OUTPUT -----
+=== WEEK_PRODUCTION_SOP.md at e8dbc532 (1-60) ===
+# 🏭 ENGQUEST3K — WEEK PRODUCTION SOP (STANDARD OPERATING PROCEDURE)
+
+**Document Reference**: `docs/WEEK_PRODUCTION_SOP.md`  
+**Version**: 2.2.0 (Unified 15 Quests / 5 Zones + Lite Mode W01–W16, Multi-Level Assessment & 28-Mock Test Cadence)  
+**Governing Standard**: Cambridge CEFR (Pre-A1 to B1+) & W33 Golden Standard Architecture  
+**Effective Date**: 2026-09-05  
+**Status**: 🟢 **CANONICAL PRODUCTION SOP**
+
+---
+
+## 1. Core Production Philosophy & Master Invariants
+
+Every week created for EngQuest3K (from Week 01 to Week 156) must adhere strictly to these fundamental principles:
+
+1. **Master 15-Quest / 5-Zone Invariant (W17–W156)**:
+   - Every week from W17 onward operates on **exactly 5 Days = 5 Zones = 15 Quests** (3 Quests per day).
+   - Fragmented legacy "stations" (`explore.js`, `dictation.js`, `daily_watch.js`, `logic_lab.js`) are **strictly prohibited** as standalone data files.
+   - **⚠️ LITE MODE (W01–W16)**: Pre-A1 Starters weeks operate on **10 Quests / 5 Zones (2 Quests/Day)** due to cognitive load constraints for 6–7 year olds. See MASTER_ARCHITECTURE §9 for details.
+2. **Four Central Data Hubs Invariant**:
+   - All week content lives exclusively in **4 Data Hubs**: `reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `speaking_hub.js`.
+3. **Zero-Cloning & Single-Source Invariant**:
+   - Weeks are authored from the authoritative syllabus (`docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` and `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`).
+   - Copying raw content or hardcoded strings from older weeks without adapting them to the new week's theme is strictly prohibited.
+4. **Hai Hình Thái Tuần Học (Two Production Modalities)**:
+   - **Type A: Tuần Luyện Tập Xoay Vòng (Rotary Practice Week — 80% số tuần)**: Zone 5 trên Day 5 đánh giá quá trình tập trung sâu vào **4 Cambridge Parts xoay vòng**.
+   - **Type B: Tuần Thi Thử Trọn Vẹn (Full Mock Test Week — 28 tuần trên toàn khóa)**: Cờ `isFullMock: true` trong `index.js`. Zone 5 kích hoạt toàn bộ bài thi chuẩn hóa có đếm ngược thời gian nghiêm ngặt.
+5. **Standard Task Naming & CLIL Sư Phạm Invariant**:
+   - **`science_lab` MUST be displayed as `Action Lab`** on all UI screens, reflecting interdisciplinary CLIL (science, social studies, geography, history, and experimental problem-solving). Never display as "Science Lab".
+   - **`science_report` MUST be displayed as `Discovery Report`**.
+   - **`sentence_smash` MUST be displayed as `Grammar Duel`**.
+   - **`math_quest` MUST be displayed as `Math Quest`**.
+   - **`broadcast_studio` MUST be displayed as `Video Challenge`**.
+6. **No-Fallback & Fail-Loud Invariant**:
+   - Interactive components must never use silent dummy text fallbacks. If required data is missing from the hub, render an explicit warning banner and fail loudly during audit.
+7. **Authentic Cambridge 2-Play Loop Invariant**:
+   - Listening Part 1–5 audios must follow the authentic Cambridge cycle:
+     $$\text{Play 1} \longrightarrow \text{"Now listen to Part X again."} \longrightarrow \text{3-second pause} \longrightarrow \text{Play 2} \longrightarrow \text{"That is the end of Part X."}$$
+8. **Speaking Part 3 (Picture Story) Standard**:
+   - Supports 4 or 5 images. Examiner introduces Picture 1; student narrates subsequent pictures (Pictures 2–4 or Pictures 2–5).
+9. **Action Lab 3-Scenario Depth Standard**:
+   - The Action Lab must feature 3 distinct interactive scenarios/diagrams (`stages: [Stage 1, Stage 2, Stage 3]`) covering physical causes, materials comparison, and safety/first aid procedures. Never ship a single-image trivial lab.
+10. **Canonical Audio Fallback Hierarchy Invariant**:
+    - Pre-generated Static MP3 (in `public/audio/week{N}/` & Cloudflare R2 CDN) $\rightarrow$ Client IndexedDB Cache (`TTSCache.get`) $\rightarrow$ Google Cloud TTS Direct (only when uncached or live dynamic) $\rightarrow$ Browser TTS fallback (only on fatal error). All components must supply valid `audioUrl` parameters.
+11. **Dual-Store Universal Progress Persistence & Return-to-Map Navigation Invariant (2026-09-05)**:
+    - All 15 Quests must save completion to both `useDailyQuestStore` (`completedQuests['w' + weekId][questId]`) and `useUserStore` (`progressCache[weekId][stationId]` + Supabase cloud backup).
+    - `useDailyQuestStore.completeQuest` is the single canonical entry point with automatic alias mapping (`science_lab` $\leftrightarrow$ `action_lab`, `story_writer` $\leftrightarrow$ `story_writing`, `broadcast_studio` $\leftrightarrow$ `video_challenge`, `gear4_clil` $\leftrightarrow$ `clil`).
+    - Every Quest component must accept `onBackToMap` / `onComplete` and provide a clean, celebratory return path to the Quest Map (`/week/{weekId}/hub/1`) without getting trapped.
+12. **Everyday Conversation & Cambridge Exam Dictation Invariant (2026-09-05)**:
+    - Dictation must NEVER copy or duplicate Shadowing sentences or CLIL scientific texts.
+    - Dictation consists of 8 short turns forming an authentic everyday conversation dialogue between characters/friends related to the week's theme.
+    - Mandatory inclusion of Cambridge Movers/Flyers tested entities: numbers (times, rooms, phone digits, durations), days of the week, dates, names, places, and everyday conversational collocations/chunks.
+
+
+---
+
+## 2. Universal Weekly Structure: 15 Quests / 5 Zones
+
+```
+WEEKLY STRUCTURE (15 TASKS / 5 DAYS):
+├── DAY 1: Zone 1 — Story World
+=== WEEK_PRODUCTION_SOP.md grep ===
+22:   - Weeks are authored from the authoritative syllabus (`docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` and `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`).
+23:   - Copying raw content or hardcoded strings from older weeks without adapting them to the new week's theme is strictly prohibited.
+50:    - Dictation consists of 8 short turns forming an authentic everyday conversation dialogue between characters/friends related to the week's theme.
+170:    Step1[1. Extract Syllabus Row & Week Type from Digital Map] --> Step2[2. Create Week Directory & 4 Central Hubs]
+178:### Step 1: Extract Parameters from Digital Syllabus Map
+179:- Read `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md` for Week $N$.
+181:- Extract: `theme`, `cefr_stage`, `exam_milestone`, `clil_stem_module`, `scaffolding_tier`, `target_vocab`, `grammar_focus`.
+=== WEEK_CONTENT_SOP_W34_PLUS.md (1-60) ===
+# EngQuest3K — Week Content SOP for W34–W72
+## Cambridge A2 Flyers 2-Tier Architecture Standard
+
+> **Last Updated**: 2026-09-01 | **Golden Standard Reference**: W33
+
+## Architecture Overview
+
+TIER 1 — Days 1–4 (12 Quests): LEARNING MODE
+  - Purpose: Build vocabulary, grammar, CLIL content awareness
+  - Cambridge Alignment: Approximate (pedagogical, not exam-exact)
+
+TIER 2 — Day 5 (3 Quests): BOSS CASTLE
+  - Purpose: Authentic Cambridge A2 Flyers practice
+  - Cambridge Alignment: EXACT format, scoring, instructions
+  - Rotary: 4-week cycle covers all 16 parts → Week 5 = Full Mock Test
+
+## Day 4 → S3 Learning Mapping (Critical)
+
+  story_writer (Story Writer)       ← S3 Practice: WRITE the 5-picture story
+  broadcast_studio (Video Challenge) ← S3 Practice: NARRATE the story aloud
+  info_exchange (Info Exchange)      ← S2 Practice: info gap conversation
+
+  → Story Writer AND Video Challenge MUST use 5 panels/scenes (same as S3 Cambridge)
+
+## Rotary Schedule (Boss Castle)
+
+| Cycle | Weeks    | boss_listening   | boss_reading       | weekly_review (Speaking) |
+|-------|----------|------------------|--------------------|--------------------------|
+| Cyc 1 | W33,W37+ | L1 + L2          | R1 + R2 + R3       | S1 (Find Differences)    |
+| Cyc 2 | W34,W38+ | L3               | R2 + R3            | S2 (Info Exchange)       |
+| Cyc 3 | W35,W39+ | L4               | R4 + R5            | S3 (5-Picture Story)     |
+| Cyc 4 | W36,W40+ | L5               | R6 + R7            | S4 (Personal Questions)  |
+| Mock  | W37,W41+ | L1+L2+L3+L4+L5   | All R Parts        | S1+S2+S3+S4              |
+
+## Listening Hub Data Schemas
+
+### L1 — Draw Lines (5 people in scene)
+```js
+listening_p1: {
+  image_url: '/images/weekXX/listening_p1_scene.jpg',
+  audio_url: '/audio/weekXX/listening_p1_full.mp3',
+  passage_audio_script: '...',
+  dialogue_script: [...],
+  names: [    // 6 entries: 1 isExample + 5 scoreable
+    { id: 'n1', text: 'Name', target_id: 't1', isExample: true },
+    // n2-n6
+  ],
+  pins: [     // 6 character hotspots in image (x,y as % of container)
+    { id: 't1', x: 20, y: 45, label: 'Character 1' },
+  ]
+}
+```
+
+### L2 — Listen & Write (5 blanks in form/notes)
+```js
+listening_p2: {
+  title: 'Interview/Survey Title',
+  audio_url: '/audio/weekXX/listening_p2_full.mp3',
+  required_speakers: ['man', 'woman'],
+  dialogue_script: [...],
+=== WEEK_CONTENT_SOP_W34_PLUS.md grep ===
+127:  theme: 'Theme Title',
+156:  id: 'clil_wXX_theme',
+163:  audio_url: '/audio/weekXX/clil_theme.mp3',
+364:  questions: [  // 4 questions on personal topics
+365:    { id: 'q1', question: 'What is your favourite subject?', topic: 'school', sample_answer_hint: '...' },
+366:    { id: 'q2', question: 'What do you like to do after school?', topic: 'hobbies', sample_answer_hint: '...' },
+367:    { id: 'q3', question: 'Tell me about your best friend.', topic: 'friends', sample_answer_hint: '...' },
+368:    { id: 'q4', question: 'What do you want to be when you grow up?', topic: 'future', sample_answer_hint: '...' }
+381:  ps_1.png ... ps_5.png  # Speaking S3 - same theme as writing panels
+428:   - Vibrant, bright navigation bar theme with high-contrast part tabs.
+485:  - Sentences must use strictly A2 Flyers vocabulary and relevant weekly themes.
+=== ls docs matching framework|syllabus|khung ===
+1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt
+ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md
+Nâng cấp w33 và syllabus.txt
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T02:49:56Z

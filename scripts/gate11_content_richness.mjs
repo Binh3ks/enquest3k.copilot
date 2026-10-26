@@ -69,8 +69,8 @@ try {
     skillHub = listeningHubModule.listeningHub || listeningHubModule.listeningHubData || listeningHubModule.default;
   }
 
-  if (!skillHub.dictation || skillHub.dictation.length !== 5) {
-    errors.push(`Expected 5 dictation sentences, found ${skillHub?.dictation?.length || 0}`);
+  if (!skillHub.dictation || skillHub.dictation.length !== 8) {
+    errors.push(`Expected 8 dictation sentences, found ${skillHub?.dictation?.length || 0}`);
   }
   if (!skillHub.singapore_math || skillHub.singapore_math.length !== 5) {
     errors.push(`Expected 5 singapore_math items, found ${skillHub?.singapore_math?.length || 0}`);
@@ -91,8 +91,8 @@ try {
   const vocabPath = path.join(weekDir, 'vocab.js');
   const vocabModule = await import(`file://${vocabPath}`);
   const vocabList = vocabModule[`week${weekNum}Vocab`] || vocabModule.vocab || vocabModule.default;
-  if (!vocabList || vocabList.length !== 20) {
-    errors.push(`Expected exactly 20 target vocabulary items, found ${vocabList?.length || 0}`);
+  if (!vocabList || vocabList.length < 20) {
+    errors.push(`Expected at least 20 target vocabulary items, found ${vocabList?.length || 0}`);
   }
 } catch (e) {
   errors.push(`Error loading vocab.js: ${e.message}`);

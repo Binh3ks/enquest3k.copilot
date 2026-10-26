@@ -2,11 +2,14 @@
 // Contains Day 2 Action Lab, Day 3 Grammar Duel & Singapore Math, and Dictation
 export const skillPracticeHub = {
   dictation: [
-    { id: 1, text: "The lion was sleeping peacefully.", audio_url: "/audio/week34/dictation_1.mp3" },
-    { id: 2, text: "A tiny mouse ran across the path.", audio_url: "/audio/week34/dictation_2.mp3" },
-    { id: 3, text: "The mouse promised to help the lion.", audio_url: "/audio/week34/dictation_3.mp3" },
-    { id: 4, text: "Hunters trapped the lion in a strong net.", audio_url: "/audio/week34/dictation_4.mp3" },
-    { id: 5, text: "The mouse chewed through the thick ropes.", audio_url: "/audio/week34/dictation_5.mp3" }
+    { id: 1, text: "Hello Sam, please come into Room 3A.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_1.mp3" },
+    { id: 2, text: "Good morning Miss Green, our fable play begins at 09:15 AM on Thursday.", speaker: "Sam", audio_url: "/audio/week34/dictation_2.mp3" },
+    { id: 3, text: "Can you practice your lion roar for 20 minutes in the hall?", speaker: "Miss Green", audio_url: "/audio/week34/dictation_3.mp3" },
+    { id: 4, text: "Yes, and I made 4 animal masks in the art room yesterday.", speaker: "Sam", audio_url: "/audio/week34/dictation_4.mp3" },
+    { id: 5, text: "Please call your father on 0912 345 678 to bring the rope net.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_5.mp3" },
+    { id: 6, text: "He will bring the net to school for 2 days.", speaker: "Sam", audio_url: "/audio/week34/dictation_6.mp3" },
+    { id: 7, text: "That is wonderful, remember to help your little mouse friend on stage.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_7.mp3" },
+    { id: 8, text: "Thank you Miss Green, see you this Thursday morning!", speaker: "Sam", audio_url: "/audio/week34/dictation_8.mp3" }
   ],
   grammar_drills: [
     {

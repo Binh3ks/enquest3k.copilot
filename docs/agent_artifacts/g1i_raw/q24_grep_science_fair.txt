@@ -1,0 +1,12 @@
+### STEP: q24_grep_science_fair
+### CMD: grep -n -E -i science fair docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md src/ scripts/
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:44:51Z
+### ----- OUTPUT -----
+grep: src/: Is a directory
+grep: scripts/: Is a directory
+docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md:98:| **W34** | The Science Fair Challenge | A2 Flyers · Rotary 2 | Hóa học: Độ nổi và khối lượng riêng | Tier 2 (Chunks) | Tính từ so sánh hơn và so sánh nhất; Cambridge Rotary Cycle 2 |
+### ----- END -----
+### EXIT: 2
+### END_UTC: 2026-10-23T09:44:51Z

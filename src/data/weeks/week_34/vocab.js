@@ -165,6 +165,8 @@ export const week34Vocab = [
   {
     "id": 19,
     "word": "ecosystem",
+    "category": "CLIL_EXTENSION",
+    "note": "Intentional CLIL interdisciplinary vocabulary extension (A2/B1 Bridge)",
     "definition_en": "A community of living organisms interacting together in nature.",
     "definition_vi": "Hệ sinh thái, tập hợp các sinh vật sống tương tác cùng nhau trong tự nhiên.",
     "example_en": "All creatures play an important role in the forest ecosystem.",
@@ -179,8 +181,40 @@ export const week34Vocab = [
     "example_en": "True friendship makes everyone stronger and happier.",
     "example_vi": "Tình bạn chân thành giúp mọi người mạnh mẽ và hạnh phúc hơn.",
     "audio_word": "/audio/week34/vocab_friendship.mp3"
+  },
+  {
+    "id": 21,
+    "word": "tiny",
+    "tier": "foundation_review",
+    "definition_en": "Extremely small in size.",
+    "definition_vi": "Tí hon, rất nhỏ bé.",
+    "example_en": "A tiny mouse ran across the forest path.",
+    "example_vi": "Một chú chuột tí hon chạy ngang qua lối đi trong rừng.",
+    "audio_word": "/audio/week34/vocab_tiny.mp3"
+  },
+  {
+    "id": 22,
+    "word": "huge",
+    "tier": "foundation_review",
+    "definition_en": "Extremely large in size or amount.",
+    "definition_vi": "To lớn khổng lồ, đồ sộ.",
+    "example_en": "A huge lion was resting under the tree.",
+    "example_vi": "Một chú sư tử to lớn đang nghỉ ngơi dưới gốc cây.",
+    "audio_word": "/audio/week34/vocab_huge.mp3"
+  },
+  {
+    "id": 23,
+    "word": "help",
+    "tier": "foundation_review",
+    "definition_en": "To assist someone or make something easier.",
+    "definition_vi": "Giúp đỡ, trợ giúp ai đó.",
+    "example_en": "Even small friends can help big friends.",
+    "example_vi": "Ngay cả những người bạn nhỏ cũng có thể giúp đỡ bạn lớn.",
+    "audio_word": "/audio/week34/vocab_help.mp3"
   }
 ];
 
+export const week34FoundationVocab = week34Vocab.filter(v => v.tier === 'foundation_review');
+export const week34CoreVocab = week34Vocab.filter(v => v.tier !== 'foundation_review');
 export const vocabList = week34Vocab;
 export default week34Vocab;

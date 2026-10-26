@@ -1,0 +1,17 @@
+### STEP: t2
+### CMD: grep -n -E W3[1-6] docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T02:49:13Z
+### ----- OUTPUT -----
+33:│ W17 – W32     │ A1 Movers    │ 2 Mock Tests           │ W24 (Mid-Movers), W32 (Final Movers)│
+35:│ W33 – W72     │ A2 Flyers    │ 8 Mock Tests (Nhịp 4+1)│ W37, W42, W47, W52, W57, W62, W67,  │
+95:| **W31** | The Rainy Day Mystery | A1 Movers · Rotary Practice | Khí tượng học: Vòng tuần hoàn nước | Tier 2 (Chunks) | Quá khứ tiếp diễn đơn giản ("It was raining"); `reading_hub` truyện trời mưa |
+96:| **W32** | **Movers Final Showcase** | **★ FULL MOCK 03 (Movers)** | **Movers Capstone Assessment** | **Tier 2 (Official)**| **Full Mock Movers 2: Cấp Chứng chỉ Hoàn thành Movers; Lễ phong Khiên A1** |
+97:| **W33** | **Corridor Safety & Friction** | **A2 Flyers · Rotary 1** | **Vật lý: Ma sát & Bề mặt sàn trơn** | **Tier 2 (Golden)** | **Quá khứ bất quy tắc (slipped, broke, hurt); Golden Master 16 Parts Cycle 1** |
+98:| **W34** | The Science Fair Challenge | A2 Flyers · Rotary 2 | Hóa học: Độ nổi và khối lượng riêng | Tier 2 (Chunks) | Tính từ so sánh hơn và so sánh nhất; Cambridge Rotary Cycle 2 |
+99:| **W35** | Wild Forest Rangers | A2 Flyers · Rotary 3 | Sinh thái học: Chuỗi thức ăn | Tier 2 (Chunks) | Quá khứ tiếp diễn + Quá khứ đơn ("While Jake was..."); Cycle 3 |
+100:| **W36** | The Hospital Visit | A2 Flyers · Rotary 4 | Y học: Sơ cứu và hồi phục chấn thương| Tier 2 (Chunks) | Động từ khuyết thiếu (should, must, have to); Cambridge Rotary Cycle 4 |
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T02:49:13Z

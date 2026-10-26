@@ -1,0 +1,25 @@
+### STEP: m33_dictation_sentence_8
+### CMD: node -e const d = await import('./src/data/weeks/week_34/dictation.js'); const s8 = (d.default || d)[7]; console.log('DICTATION_JS_SENTENCE_8:'); console.log(JSON.stringify(s8, null, 2)); const sph = await import('./src/data/weeks/week_34/skill_practice_hub.js'); const sph_s8 = sph.skillPracticeHubData.dictation[7]; console.log('\nSKILL_PRACTICE_HUB_SENTENCE_8:'); console.log(JSON.stringify(sph_s8, null, 2));
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T08:12:14Z
+### ----- OUTPUT -----
+DICTATION_JS_SENTENCE_8:
+{
+  "id": 8,
+  "sentence": "Thank you Miss Green, see you this Thursday morning!",
+  "text": "Thank you Miss Green, see you this Thursday morning!",
+  "speaker": "Sam",
+  "audio_url": "/audio/week34/dictation_8.mp3"
+}
+
+SKILL_PRACTICE_HUB_SENTENCE_8:
+{
+  "id": 8,
+  "text": "Thank you Miss Green, see you this Thursday morning!",
+  "speaker": "Sam",
+  "audio_url": "/audio/week34/dictation_8.mp3"
+}
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T08:12:14Z

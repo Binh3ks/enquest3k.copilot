@@ -1,0 +1,14 @@
+### STEP: q5_check_candidates
+### CMD: wc -l 1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt _syllabus_v5_raw.txt docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md docs/MASTER_ARCHITECTURE_W01_W156.md
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:40:46Z
+### ----- OUTPUT -----
+    1203 1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt
+   10877 _syllabus_v5_raw.txt
+     272 docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md
+     289 docs/MASTER_ARCHITECTURE_W01_W156.md
+   12641 total
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T09:40:46Z

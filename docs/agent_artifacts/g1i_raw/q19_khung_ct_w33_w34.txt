@@ -1,0 +1,40 @@
+### STEP: q19_khung_ct_w33_w34
+### CMD: sed -n 290,320p 1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:43:19Z
+### ----- OUTPUT -----
+	•	Topic: What did you see/hear in the forest? (Chủ đề: Bạn đã thấy/nghe gì trong rừng?)
+	•	Key Learning Outcome: Describe sensory experiences in the past. (Kết quả: Miêu tả trải nghiệm giác quan trong quá khứ.)
+	•	Grammar Focus (Explicit): See -> Saw, Hear -> Heard, Feel -> Felt, Smell -> Smelt. (Ngữ pháp: See-Saw, Hear-Heard...)
+	•	Vocabulary Focus: bird, song, soft, hard, loud, beautiful.
+	•	Week 32: The Busy Day (Irregular Verbs 4: Tasks) (Tuần 32: Ngày Bận rộn - Động từ Bất quy tắc nhóm 4)
+	•	Topic: Doing chores and tasks. (Chủ đề: Làm việc nhà và nhiệm vụ.)
+	•	Key Learning Outcome: Describe completed tasks. (Kết quả: Miêu tả các nhiệm vụ đã hoàn thành.)
+	•	Grammar Focus (Explicit): Do -> Did, Make -> Made, Have -> Had, Take -> Took. (Ngữ pháp: Do-Did, Make-Made...)
+	•	Vocabulary Focus: homework, bed, breakfast, shower, mess, clean.
+	•	Week 33: The Mistake (Irregular Verbs 5: Accidents) (Tuần 33: Lỗi lầm - Động từ Bất quy tắc nhóm 5)
+	•	Topic: Accidents happen! (Chủ đề: Tai nạn xảy ra!)
+	•	Key Learning Outcome: Explain an accidental event. (Kết quả: Giải thích một sự cố ngẫu nhiên.)
+	•	Grammar Focus (Explicit): Break -> Broke, Fall -> Fell, Lose -> Lost, Hurt -> Hurt. (Ngữ pháp: Break-Broke, Fall-Fell...)
+	•	Vocabulary Focus: mistake, accident, fix, sorry, careful, clumsy.
+	•	Week 34: Storytelling Practice 1 (Fable) (Tuần 34: Luyện Kể chuyện 1 - Truyện Ngụ ngôn)
+	•	Topic: "The Lion and the Mouse". (Chủ đề: Sư tử và Chuột.)
+	•	Key Learning Outcome: Retell a story using mixed past tense verbs. (Kết quả: Kể lại chuyện dùng hỗn hợp động từ quá khứ.)
+	•	Skill Focus: Pronunciation of Past Tense endings and forms. (Kỹ năng: Phát âm đuôi và dạng quá khứ.)
+	•	Grammar Review: Mixed Regular and Irregular Verbs.
+	•	Vocabulary Focus: net, trap, roar, help, friend, tiny, huge.
+	•	Week 35: Storytelling Practice 2 (Personal Recount) (Tuần 35: Luyện Kể chuyện 2 - Kể lại trải nghiệm cá nhân)
+	•	Topic: "The Best Day Ever". (Chủ đề: Ngày tuyệt vời nhất.)
+	•	Key Learning Outcome: Write a short paragraph (5-6 sentences) about a personal memory. (Kết quả: Viết đoạn văn ngắn 5-6 câu về kỷ niệm cá nhân.)
+	•	Skill Focus: Using adjectives to make the story interesting. (Kỹ năng: Dùng tính từ để câu chuyện thú vị hơn.)
+	•	Grammar Focus: Past Simple + Adjectives.
+	•	Week 36: Review & Project 3: "My Adventure Book" (Tuần 36: Ôn tập & Dự án 3: "Sách Phiêu lưu của em")
+	•	Topic: Creating a mini-book. (Chủ đề: Tạo sách nhỏ.)
+	•	Key Learning Outcome: Produce a completed story with illustrations and text. (Kết quả: Sản xuất một câu chuyện hoàn chỉnh với hình minh họa và văn bản.)
+	•	Activity: Students write about an imaginary or real trip, using at least 5 irregular verbs.
+
+🟢 BLOCK C: CLIL FOUNDATIONS (KHOA HỌC, TOÁN & LOGIC) - WEEKS 37-54
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T09:43:19Z

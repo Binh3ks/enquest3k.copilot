@@ -1,0 +1,213 @@
+### STEP: m23_shadowing_sentences
+### CMD: bash -c node -e "const rh = await import('./src/data/weeks/week_34/reading_hub.js'); console.log(JSON.stringify(rh.readingHubData.shadowingData.sentences, null, 2));"
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T04:51:31Z
+### ----- OUTPUT -----
+[
+  {
+    "id": 1,
+    "text": "The mighty lion was sleeping under a big tree.",
+    "words": [
+      "The",
+      "mighty",
+      "lion",
+      "was",
+      "sleeping",
+      "under",
+      "a",
+      "big",
+      "tree."
+    ],
+    "ipa": [
+      "ðə",
+      "ˈmaɪ.ti",
+      "ˈlaɪ.ən",
+      "wɒz",
+      "ˈsliː.pɪŋ",
+      "ˈʌn.dər",
+      "ə",
+      "bɪɡ",
+      "triː"
+    ],
+    "audio_url": "/audio/week34/shadowing_1.mp3"
+  },
+  {
+    "id": 2,
+    "text": "A tiny mouse ran across his nose.",
+    "words": [
+      "A",
+      "tiny",
+      "mouse",
+      "ran",
+      "across",
+      "his",
+      "nose."
+    ],
+    "ipa": [
+      "ə",
+      "ˈtaɪ.ni",
+      "maʊs",
+      "ræn",
+      "əˈkrɒs",
+      "hɪz",
+      "nəʊz"
+    ],
+    "audio_url": "/audio/week34/shadowing_2.mp3"
+  },
+  {
+    "id": 3,
+    "text": "The lion woke up and caught the little mouse.",
+    "words": [
+      "The",
+      "lion",
+      "woke",
+      "up",
+      "and",
+      "caught",
+      "the",
+      "little",
+      "mouse."
+    ],
+    "ipa": [
+      "ðə",
+      "ˈlaɪ.ən",
+      "wəʊk",
+      "ʌp",
+      "ænd",
+      "kɔːt",
+      "ðə",
+      "ˈlɪt.əl",
+      "maʊs"
+    ],
+    "audio_url": "/audio/week34/shadowing_3.mp3"
+  },
+  {
+    "id": 4,
+    "text": "The mouse promised to help the lion one day.",
+    "words": [
+      "The",
+      "mouse",
+      "promised",
+      "to",
+      "help",
+      "the",
+      "lion",
+      "one",
+      "day."
+    ],
+    "ipa": [
+      "ðə",
+      "maʊs",
+      "ˈprɒm.ɪst",
+      "tuː",
+      "help",
+      "ðə",
+      "ˈlaɪ.ən",
+      "wʌn",
+      "deɪ"
+    ],
+    "audio_url": "/audio/week34/shadowing_4.mp3"
+  },
+  {
+    "id": 5,
+    "text": "Hunters trapped the strong lion in a heavy net.",
+    "words": [
+      "Hunters",
+      "trapped",
+      "the",
+      "strong",
+      "lion",
+      "in",
+      "a",
+      "heavy",
+      "net."
+    ],
+    "ipa": [
+      "ˈhʌn.tərz",
+      "træpt",
+      "ðə",
+      "strɒŋ",
+      "ˈlaɪ.ən",
+      "ɪn",
+      "ə",
+      "ˈhev.i",
+      "net"
+    ],
+    "audio_url": "/audio/week34/shadowing_5.mp3"
+  },
+  {
+    "id": 6,
+    "text": "The brave mouse chewed through the thick ropes.",
+    "words": [
+      "The",
+      "brave",
+      "mouse",
+      "chewed",
+      "through",
+      "the",
+      "thick",
+      "ropes."
+    ],
+    "ipa": [
+      "ðə",
+      "breɪv",
+      "maʊs",
+      "tʃuːd",
+      "θruː",
+      "ðə",
+      "θɪk",
+      "rəʊps"
+    ],
+    "audio_url": "/audio/week34/shadowing_6.mp3"
+  },
+  {
+    "id": 7,
+    "text": "The lion escaped and was completely free.",
+    "words": [
+      "The",
+      "lion",
+      "escaped",
+      "and",
+      "was",
+      "completely",
+      "free."
+    ],
+    "ipa": [
+      "ðə",
+      "ˈlaɪ.ən",
+      "ɪˈskeɪpt",
+      "ænd",
+      "wɒz",
+      "kəmˈpliːt.li",
+      "friː"
+    ],
+    "audio_url": "/audio/week34/shadowing_7.mp3"
+  },
+  {
+    "id": 8,
+    "text": "They became the best of friends forever.",
+    "words": [
+      "They",
+      "became",
+      "the",
+      "best",
+      "of",
+      "friends",
+      "forever."
+    ],
+    "ipa": [
+      "ðeɪ",
+      "bɪˈkeɪm",
+      "ðə",
+      "best",
+      "ɒv",
+      "frendz",
+      "fəˈrev.ər"
+    ],
+    "audio_url": "/audio/week34/shadowing_8.mp3"
+  }
+]
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T04:51:31Z

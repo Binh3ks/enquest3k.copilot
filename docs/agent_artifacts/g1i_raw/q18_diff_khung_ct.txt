@@ -1,0 +1,20 @@
+### STEP: q18_diff_khung_ct
+### CMD: diff -u 1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T09:43:04Z
+### ----- OUTPUT -----
+--- 1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt	2026-04-20 11:10:04
++++ docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt	2025-12-26 18:41:10
+@@ -5,7 +5,7 @@
+ This program is built on the core philosophy of Content and Language Integrated Learning (CLIL), where English is not just a subject to be learned, but a tool to explore the world. We teach academic subjects through English, enabling students to master both content and language simultaneously. Our methodology is rooted in modern pedagogical principles including Spaced Repetition (SRS) to ensure long-term retention, Project-Based Learning to make learning meaningful, and a Production-Oriented approach that requires students to actively use the language they acquire. (Chương trình này được xây dựng trên triết lý cốt lõi của Học Tích hợp Nội dung và Ngôn ngữ (CLIL), nơi tiếng Anh không chỉ là một môn học, mà là một công cụ để khám phá thế giới. Chúng tôi dạy các môn học thuật thông qua tiếng Anh, cho phép học sinh làm chủ cả nội dung và ngôn ngữ cùng một lúc. Phương pháp luận của chúng tôi bắt nguồn từ các nguyên tắc sư phạm hiện đại bao gồm Lặp lại Ngắt quãng (SRS) để đảm bảo ghi nhớ dài hạn, Học theo Dự án để việc học trở nên có ý nghĩa, và một phương pháp Lấy Sản phẩm làm Trung tâm yêu cầu học sinh phải chủ động sử dụng ngôn ngữ mà các em tiếp thu được.)
+ 
+ II. Overall Goal (Mục tiêu Tổng thể)
+-After 3 years (equivalent to ~156 weeks, ~624 guided learning hours), students will be able to use English as an academic tool to comprehend specialized texts, interpret complex data, solve multi-step word problems, and write structured expository and argumentative essays. (Sau 3 năm (tương đương ~156 tuần, ~624 giờ học có định hướng), học viên sẽ có khả năng sử dụng tiếng Anh như một công cụ học thuật để hiểu các văn bản chuyên ngành, diễn giải dữ liệu phức tạp, giải các bài toán có lời văn nhiều bước, và viết các bài luận giải thích cũng như nghị luận có cấu trúc.)
++After 3 years (equivalent to ~144 weeks, ~576 guided learning hours), students will be able to use English as an academic tool to comprehend specialized texts, interpret complex data, solve multi-step word problems, and write structured expository and argumentative essays. (Sau 3 năm (tương đương ~144 tuần, ~576 giờ học có định hướng), học viên sẽ có khả năng sử dụng tiếng Anh như một công cụ học thuật để hiểu các văn bản chuyên ngành, diễn giải dữ liệu phức tạp, giải các bài toán có lời văn nhiều bước, và viết các bài luận giải thích cũng như nghị luận có cấu trúc.)
+ The program equips students with the comprehensive skillset and confidence to achieve a B1+ (High Intermediate) level on the Common European Framework of Reference (CEFR), equivalent to an IELTS score of 5.0 - 5.5, a solid foundation for pursuing American elementary and middle school programs. (Chương trình trang bị cho học viên bộ kỹ năng toàn diện và sự tự tin để đạt được trình độ B1+ (High Intermediate) theo Khung tham chiếu Châu Âu (CEFR), tương đương mức điểm IELTS 5.0 - 5.5, một nền tảng vững chắc để theo học các chương trình giáo dục tiểu học và trung học cơ sở của Mỹ.)
+ 
+ III. Principles for Teaching Skills (WHAT to Teach) / Nguyên tắc về Kỹ năng Giảng dạy (WHAT to Teach)
+### ----- END -----
+### EXIT: 1
+### END_UTC: 2026-10-23T09:43:04Z

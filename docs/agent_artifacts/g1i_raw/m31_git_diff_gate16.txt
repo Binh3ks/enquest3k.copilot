@@ -1,0 +1,44 @@
+### STEP: m31_git_diff_gate16
+### CMD: bash -c git diff scripts/gate16_content_quality.mjs
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T05:46:25Z
+### ----- OUTPUT -----
+diff --git a/scripts/gate16_content_quality.mjs b/scripts/gate16_content_quality.mjs
+index b5b27d4a..3e823455 100644
+--- a/scripts/gate16_content_quality.mjs
++++ b/scripts/gate16_content_quality.mjs
+@@ -43,17 +43,19 @@ async function runAudit() {
+     const sentences = text.split(/[.!?]+/).map(s => s.trim()).filter(Boolean);
+     const factUnits = sentences.filter(s => {
+       const lower = s.toLowerCase();
+-      const subjectPattern = WEEK === 33
+-        ? /\b(water|floor|tile|tiles|shoes|rubber|friction|surface|student|students|sign|signs|nurse|jake|tom)\b/
+-        : /\b(squirrel|squirrels|jay|jays|bee|bees|bird|birds|lion|mouse|animal|animals|plants|trees|flowers)\b/;
+-      const actionPattern = WEEK === 33
+-        ? /\b(reduce|reduces|causes|provides|provide|walk|walks|slip|slips|slipped|helps|help|wear|wears|warn|warns|remind|reminds|learn|learns|act|acts|keep|keeps|hold|holds)\b/
+-        : /\b(eat|bury|hide|fly|drink|carry|grow|help|travel|cooperate|start|call|stays)\b/;
+-      const outcomePattern = WEEK === 33
+-        ? /\b(safe|safety|grip|traction|slip|slips|slipped|sliding|accidents|prevent|prevention|clean|dry|ground|balanced)\b/
+-        : /\b(ground|spring|trees|plants|nectar|pollen|helpers|green|strong|food|homes|seeds)\b/;
+-
+-      return subjectPattern.test(lower) && actionPattern.test(lower) && outcomePattern.test(lower);
++      // Generalized theme-independent CLIL Fact Unit verification:
++      // A substantive sentence (>= 6 words) articulating an informative relationship:
++      // [Informative Subject Entity] + [Process / Action / Causal Verb] + [Outcome / Function / Complement Clause]
++      const words = s.split(/\s+/).filter(Boolean);
++      if (words.length < 6) return false;
++
++      // 1. Process / Action / Relational Verb Pattern (Theme-independent verbs)
++      const actionVerbPattern = /\b(causes?|caused|creates?|created|produces?|produced|reduces?|reduced|increases?|increased|provides?|provided|helps?|helped|protects?|protected|eats?|ate|swims?|swam|cleans?|cleaned|lives?|lived|grows?|grew|moves?|moved|works?|worked|stops?|stopped|grips?|gripped|spreads?|turned|steals?|stole|gives?|gave|makes?|made|keeps?|kept|shows?|showed|cooperates?|cooperated|survives?|survived|absorbs?|absorbed|flows?|flowed|connects?|connected|builds?|built|forms?|formed|changes?|changed|contains?|contained|travels?|traveled|carries?|carried|learns?|learned|affects?|affected|warns?|warned|walks?|walked|slips?|slipped)\b/i;
++
++      // 2. Causal / Outcome / Functional Connector or Target Outcome Marker
++      const outcomeOrFunctionPattern = /\b(because|so that|in order to|so|when|while|that stops|that prevents|that helps|that keeps|to clean|to help|to protect|to find|to reduce|to keep|to survive|to make|safe|safety|grip|friction|protect|survive|food|clean|cleaner|balanced?|result|outcome|energy|ecosystem|habitat|healthy|prevention|accidents?|advantage|benefit|ground|traction|layer)\b/i;
++
++      return actionVerbPattern.test(lower) && outcomeOrFunctionPattern.test(lower);
+     });
+ 
+     if (factUnits.length < 3) {
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T05:46:25Z

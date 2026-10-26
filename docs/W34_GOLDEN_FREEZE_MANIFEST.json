@@ -1,0 +1,89 @@
+{
+  "manifestVersion": "1.0.0",
+  "goldenStandardVersion": "1.0.0",
+  "weekNumber": 34,
+  "theme": "The Lion and the Mouse & Forest Ecosystem",
+  "cefrLevel": "A2 Flyers / Stage 1 Young Learners (Ages 7–10)",
+  "freezeDate": "2026-10-26T15:37:00Z",
+  "lifecycleState": "GOLDEN_FROZEN",
+  "rotaryCycle": {
+    "cycleNumber": 1,
+    "testedSkills": ["listening_p1", "listening_p2", "listening_p3", "listening_p4", "listening_p5"],
+    "shieldCount": 3
+  },
+  "assessmentBridgeNote": "Applies Architectural Decision (2026-09-05): Format Scaffolding bridge for Rotary Cycle W33-36 where Days 1-4 maintain syllabus CEFR level (A1 Movers) while Zone 5 introduces Cambridge A2 Flyers exam task format without lexical overload.",
+  "protectedSourceFiles": [
+    "src/data/weeks/week_34/reading_hub.js",
+    "src/data/weeks/week_34/listening_hub.js",
+    "src/data/weeks/week_34/writing_hub.js",
+    "src/data/weeks/week_34/speaking_hub.js",
+    "src/data/weeks/week_34/skill_practice_hub.js",
+    "src/data/weeks/week_34/vocab.js",
+    "src/data/weeks/week_34/read.js",
+    "src/data/weeks/week_34/dictation.js",
+    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md"
+  ],
+  "protectedFileHashes": {
+    "src/data/weeks/week_34/reading_hub.js": "cc2de187d7b2dc5ff2ad1bb0548c408740953ea218c0cf09588ecc73572a7781",
+    "src/data/weeks/week_34/listening_hub.js": "8ee174e2fb59d8069607e326d1c3463c20c1eddbc242c5f1f8e6cc26a098d2f8",
+    "src/data/weeks/week_34/writing_hub.js": "4a87e546ef1c7162e805645c2f90efa474c9f8b327ea406bad43117581aa9713",
+    "src/data/weeks/week_34/speaking_hub.js": "ffc9d2a483f73ed4f6a5a46b97f6538b4ea473be5bb8713d39c511276abda774",
+    "src/data/weeks/week_34/skill_practice_hub.js": "fd15cf8a52ac34f17c8908d1e8186c8f9d1d14e3b614649f38b8ff273aaceca5",
+    "src/data/weeks/week_34/vocab.js": "34315f91b873b8e401072869b2c70e3a8df329a40f3629316f66210d782063ef",
+    "src/data/weeks/week_34/read.js": "7eeeedc475ba7c742265081c14f7a12bf8db81ca131e0d6c8f806e73a513fcd2",
+    "src/data/weeks/week_34/dictation.js": "38290d49a3f2b462c9d3d2596466de6c46d64770fa7a83795df8b70e3a8d23f8",
+    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md": "e86e98d4cc70bc6414597f126c0ec5ac5c37114ec4df48ae448dc3dc13b73007"
+  },
+  "governanceDocumentation": [
+    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md"
+  ],
+  "canonicalComponentImplementations": [
+    "src/components/cambridge/SVGLineMatcher.jsx",
+    "src/components/cambridge/NotepadNoteCompleter.jsx",
+    "src/components/cambridge/VisualMatchingAH.jsx",
+    "src/components/cambridge/MultipleChoice3Pic.jsx",
+    "src/components/cambridge/SVGColorAndWrite.jsx",
+    "src/components/cambridge/WordBankMatchingGrid.jsx",
+    "src/components/cambridge/DialogueAHCompleter.jsx",
+    "src/components/cambridge/RWPart3ClozeWithTitle.jsx",
+    "src/components/cambridge/InlineTextClozeDropdown.jsx",
+    "src/components/cambridge/TextExtractionCompleter.jsx",
+    "src/components/cambridge/OpenClozeCompleter.jsx",
+    "src/components/cambridge/StoryWriting.jsx",
+    "src/components/cambridge/FindDifferencesInteractive.jsx",
+    "src/components/cambridge/InformationExchangeP2.jsx",
+    "src/components/cambridge/PictureStoryContinuation.jsx",
+    "src/components/cambridge/PersonalQuestionsCompleter.jsx"
+  ],
+  "validationSuite": [
+    { "gate": "Gate 3", "script": "scripts/gate3_media_integrity.mjs 34", "target": "73/73 MP3s verified" },
+    { "gate": "Gate 11", "script": "scripts/gate11_content_richness.mjs 34", "target": "Word counts and variety standard" },
+    { "gate": "Gate 12", "script": "scripts/gate12_comprehensive_cefr.mjs 34", "target": "0 B1/B2 violations" },
+    { "gate": "Gate 16", "script": "scripts/gate16_content_quality.mjs 34", "target": "100% single-source content purity" },
+    { "gate": "Gate 17", "script": "scripts/gate17_fidelity_doctrine.mjs 34", "target": "16-part Cambridge schema & invariants PASS" },
+    { "gate": "W34 Freeze Guard", "script": "scripts/guard_golden_w34_freeze.mjs", "target": "SHA-256 integrity verification" }
+  ],
+  "taskInventory": [
+    { "id": "gear1_webtoon", "day": 1, "zone": 1, "name": "Scene Explorer", "type": "practice" },
+    { "id": "gear2_karaoke", "day": 1, "zone": 1, "name": "Voice Shadow", "type": "practice" },
+    { "id": "gear3_retell", "day": 1, "zone": 1, "name": "Story Retell", "type": "practice" },
+    { "id": "gear4_clil", "day": 2, "zone": 1, "name": "Fact Finder (CLIL)", "type": "practice" },
+    { "id": "science_lab", "day": 2, "zone": 2, "name": "Action Lab", "type": "practice" },
+    { "id": "science_report", "day": 2, "zone": 3, "name": "Discovery Report", "type": "practice" },
+    { "id": "word_blitz", "day": 3, "zone": 2, "name": "Speed Match", "type": "practice" },
+    { "id": "sentence_smash", "day": 3, "zone": 2, "name": "Grammar Duel", "type": "practice" },
+    { "id": "math_quest", "day": 3, "zone": 2, "name": "Math Quest (Singapore Bar Model)", "type": "practice" },
+    { "id": "story_writer", "day": 4, "zone": 3, "name": "Story Writer P7", "type": "practice" },
+    { "id": "broadcast_studio", "day": 4, "zone": 3, "name": "Video Challenge", "type": "practice" },
+    { "id": "info_exchange", "day": 4, "zone": 3, "name": "Info Exchange P2", "type": "practice" },
+    { "id": "boss_listening", "day": 5, "zone": 4, "name": "Boss Listening (Shield 1)", "type": "assessment" },
+    { "id": "boss_reading", "day": 5, "zone": 4, "name": "Boss Reading (Shield 2)", "type": "assessment" },
+    { "id": "weekly_review", "day": 5, "zone": 4, "name": "Boss Review (Shield 3)", "type": "assessment" }
+  ],
+  "criticalMediaSummary": {
+    "totalStaticMP3s": 73,
+    "barModelSVGs": 5,
+    "webtoonScenes": 5,
+    "covers": 2
+  }
+}

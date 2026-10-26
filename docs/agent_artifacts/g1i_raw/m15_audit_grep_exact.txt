@@ -1,0 +1,22 @@
+### STEP: m15_audit_grep_exact
+### CMD: zsh -c grep -rn "weekNum ===" scripts/; grep -rn "=== 33" scripts/; grep -rn "=== 34" scripts/
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T03:05:59Z
+### ----- OUTPUT -----
+scripts/generate_pure_week_data.mjs:346:      prompt: ${JSON.stringify(weekNum === 34 ? "Oliver and his sister Lily visited the animal wildlife park last ___" : "Richard went to visit a castle with his parents last ___")},
+scripts/calibrate_find_differences.mjs:137:      if (weekNum === 33) {
+scripts/gate16_content_quality.mjs:46:      const subjectPattern = WEEK === 33
+scripts/gate16_content_quality.mjs:49:      const actionPattern = WEEK === 33
+scripts/gate16_content_quality.mjs:52:      const outcomePattern = WEEK === 33
+scripts/gate16_content_quality.mjs:87:    const banned = WEEK === 33
+scripts/generate_week_audio_universal.mjs:12:if (targetWeek === 33) {
+scripts/build_real_cambridge_weeks_33_37.mjs:16:  if (weekId === 33) {
+scripts/calibrate_find_differences.mjs:137:      if (weekNum === 33) {
+scripts/gate15_production_dom_assertions.mjs:22:if (WEEK === 33 && fs.existsSync(path.resolve(rootDir, 'docs/GATE15_SPEC_W33.json'))) {
+scripts/generate_pure_week_data.mjs:346:      prompt: ${JSON.stringify(weekNum === 34 ? "Oliver and his sister Lily visited the animal wildlife park last ___" : "Richard went to visit a castle with his parents last ___")},
+scripts/build_real_cambridge_weeks_33_37.mjs:40:  if (weekId === 34) {
+scripts/gate15_production_dom_assertions.mjs:534:                    const s3Text = Number(WEEK) === 34
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T03:05:59Z

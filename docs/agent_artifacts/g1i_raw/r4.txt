@@ -1,0 +1,625 @@
+### STEP: r4
+### CMD: bash -c 
+cd /Users/binhnguyen/projects/engquest3k_r2_dry
+
+echo "=== 1. RUN FREEZE GUARD ==="
+node --require ./fs_trace.cjs scripts/guard_golden_w33_freeze.mjs 2>&1
+echo "Freeze Guard exit code: $?"
+
+echo "=== 2. RUN AUDIT GATES ==="
+gates=(
+  "scripts/gate3_media_integrity.mjs 33"
+  "scripts/gate4_chunk_bolding.mjs 33"
+  "scripts/gate10_example_grammaticality.mjs 33"
+  "scripts/gate11_content_richness.mjs 33"
+  "scripts/gate12_comprehensive_cefr.mjs 33"
+  "scripts/gate13_rotary_schedule.mjs 33"
+  "scripts/gate16_content_quality.mjs 33"
+  "scripts/gate17_fidelity_doctrine.mjs 33"
+  "scripts/cefr_curriculum_guard.mjs 33"
+)
+
+for g in "${gates[@]}"; do
+  echo "--- RUNNING: $g ---"
+  node --require ./fs_trace.cjs $g 2>&1
+  echo "Exit code: $?"
+done
+
+echo "=== 3. GIT MERGE-TREE DRY-RUN ==="
+echo "Running: git merge-tree --write-tree main r2-dryrun"
+git merge-tree --write-tree main r2-dryrun 2>&1
+echo "merge-tree exit code: $?"
+
+### CWD: /Users/binhnguyen/projects/engquest3k_r2_dry
+### GIT_HEAD: e8dbc5326ecbae24f70317a5f56c81cfdad45d36
+### START_UTC: 2026-10-23T03:04:41Z
+### ----- OUTPUT -----
+=== 1. RUN FREEZE GUARD ===
+========================================================================
+🛡️  ENGQUEST3K — W33 GOLDEN FREEZE CRYPTOGRAPHIC INTEGRITY GUARD
+🔖 Manifest Version: 1.0.0 | Standard Version: 1.0.0
+========================================================================
+
+  ❌ [CORRUPTED / MODIFIED] src/data/weeks/week_33/reading_hub.js
+     Expected SHA-256: 7b7cdc7d4a15bc6489ed719be8b40d0e5f2c9505bef93a068257981945255a4f
+     Actual SHA-256:   0989664a86eab234c8f00fa553b506d44de0cb581e0bc4232760be060df010d9
+  ❌ [CORRUPTED / MODIFIED] src/data/weeks/week_33/listening_hub.js
+     Expected SHA-256: 5e5fe0bb504e5d14a4ed0a1f86f0fffd0c0c798d2b458276ee68cf0399c8d76a
+     Actual SHA-256:   c8caa574c815f4e1f991590467b7c08ab43aa47fe2beb7e42bcb62f448bea1a2
+  ❌ [CORRUPTED / MODIFIED] src/data/weeks/week_33/writing_hub.js
+     Expected SHA-256: 57cd0bca5f66d3c9ec6c92bb656c41722a5bd085232b5569d27504b3f84d2a03
+     Actual SHA-256:   834a0fe0aaa9a1eb4777091d4e51bc0730013093879a084c6e7d49e66d7a5044
+  ❌ [CORRUPTED / MODIFIED] src/data/weeks/week_33/speaking_hub.js
+     Expected SHA-256: 288a087ac528b224b0d9d36a93a214b7377402c1bd11298b6f92a973a1cbac56
+     Actual SHA-256:   b6e3f6a154780f11694a3d503d9197414ec44c038e971e91f12cce7553fda588
+  ❌ [CORRUPTED / MODIFIED] src/data/weeks/week_33/skill_practice_hub.js
+     Expected SHA-256: 94ca6c6fe931dcacdb1a99f237772f1ffe868f5d57c1e1119a5aa7668cf9376c
+     Actual SHA-256:   29ef4a01e8188d001d99081f312441a08454a7f5ce3d23951445130b8c26bdc2
+  ❌ [CORRUPTED / MODIFIED] src/data/weeks/week_33/vocab.js
+     Expected SHA-256: b60c6a06188cd88d6539311519f23c52e9ddb785f303ffd953a6fcec7e4783e4
+     Actual SHA-256:   77ef5f765f3c21deb4d62207fedc86acd7d2c2f54fc48da79a0d5919570760d1
+  ✅ [LOCKED] docs/GATE15_SPEC_W33.json (SHA-256: c30e8d05e5687613...)
+
+------------------------------------------------------------------------
+🚨 GOLDEN FREEZE VIOLATION: 6 protected file(s) altered!
+Do NOT modify frozen W33 content without following the formal Change Control Procedure.
+See docs/W33_GOLDEN_BASELINE.md § Change Control Procedure.
+------------------------------------------------------------------------
+
+
+--- [FS_TRACE AUDIT] CWD: /Users/binhnguyen/projects/engquest3k_r2_dry ---
+Project source/data files accessed: 9
+Inside worktree: 9
+Outside worktree: 0
+✅ ISOLATION VERIFIED: 100% file đọc từ worktree hiện tại.
+Danh sách file tiêu biểu đã đọc trong worktree:
+   scripts/guard_golden_w33_freeze.mjs
+   docs/W33_GOLDEN_FREEZE_MANIFEST.json
+   src/data/weeks/week_33/reading_hub.js
+   src/data/weeks/week_33/listening_hub.js
+   src/data/weeks/week_33/writing_hub.js
+   src/data/weeks/week_33/speaking_hub.js
+   src/data/weeks/week_33/skill_practice_hub.js
+   src/data/weeks/week_33/vocab.js
+   docs/GATE15_SPEC_W33.json
+Freeze Guard exit code: 1
+=== 2. RUN AUDIT GATES ===
+--- RUNNING: scripts/gate3_media_integrity.mjs 33 ---
+
+========================================================================
+🛡️  GATE 3: MEDIA REFERENCE & ASSET INTEGRITY AUDIT (WEEK 33)
+========================================================================
+📁 Checking Local Images Directory: /Users/binhnguyen/projects/engquest3k_r2_dry/public/images/week33...
+| Asset Name | Status | Size | Path |
+|---|---|---|---|
+| `webtoon_scene_1.png` | ✅ VALID | 798.4 KB | `/images/week33/webtoon_scene_1.png` |
+| `webtoon_scene_2.png` | ✅ VALID | 811.9 KB | `/images/week33/webtoon_scene_2.png` |
+| `webtoon_scene_3.png` | ✅ VALID | 748.7 KB | `/images/week33/webtoon_scene_3.png` |
+| `webtoon_scene_4.png` | ✅ VALID | 1.40 MB | `/images/week33/webtoon_scene_4.png` |
+| `webtoon_scene_5.png` | ✅ VALID | 783.2 KB | `/images/week33/webtoon_scene_5.png` |
+| `barmodel_w33_adv_p1.svg` | ✅ VALID | 2.7 KB | `/images/week33/barmodel_w33_adv_p1.svg` |
+| `barmodel_w33_adv_p2.svg` | ✅ VALID | 2.5 KB | `/images/week33/barmodel_w33_adv_p2.svg` |
+| `barmodel_w33_adv_p3.svg` | ✅ VALID | 2.3 KB | `/images/week33/barmodel_w33_adv_p3.svg` |
+| `barmodel_w33_adv_p4.svg` | ✅ VALID | 2.5 KB | `/images/week33/barmodel_w33_adv_p4.svg` |
+| `barmodel_w33_adv_p5.svg` | ✅ VALID | 0.7 KB | `/images/week33/barmodel_w33_adv_p5.svg` |
+| `read_cover_w33.jpg` | ✅ VALID | 295.8 KB | `/images/week33/read_cover_w33.jpg` |
+| `explore_cover_w33.jpg` | ✅ VALID | 343.7 KB | `/images/week33/explore_cover_w33.jpg` |
+
+🎧 Checking Local Audio Directory: /Users/binhnguyen/projects/engquest3k_r2_dry/public/audio/week33...
+   Found 112 MP3 files.
+   ✅ Audio assets complete (112 files).
+
+🔍 Scanning Data Files for Cross-Week Asset References...
+   ✅ Data files scan complete (0 cross-week asset leaks).
+
+🌐 Checking Referenced Assets in Cambridge Hubs (L1, L3, L4, L5, S1)...
+   ✅ Verified 26 referenced Cambridge assets (0 missing, 0 empty).
+
+------------------------------------------------------------------------
+✅ GATE 3 PASSED: 100% Media Reference & Asset Integrity!
+
+--- [FS_TRACE AUDIT] CWD: /Users/binhnguyen/projects/engquest3k_r2_dry ---
+Project source/data files accessed: 66
+Inside worktree: 66
+Outside worktree: 0
+✅ ISOLATION VERIFIED: 100% file đọc từ worktree hiện tại.
+Danh sách file tiêu biểu đã đọc trong worktree:
+   scripts/gate3_media_integrity.mjs
+   public/images/week33/webtoon_scene_1.png
+   public/images/week33/webtoon_scene_2.png
+   public/images/week33/webtoon_scene_3.png
+   public/images/week33/webtoon_scene_4.png
+   public/images/week33/webtoon_scene_5.png
+   public/images/week33/barmodel_w33_adv_p1.svg
+   public/images/week33/barmodel_w33_adv_p2.svg
+   public/images/week33/barmodel_w33_adv_p3.svg
+   public/images/week33/barmodel_w33_adv_p4.svg
+   ... và 56 file khác.
+Exit code: 0
+--- RUNNING: scripts/gate4_chunk_bolding.mjs 33 ---
+
+========================================================================
+🛡️  GATE 4: ESL CHUNK BOLDING AUDIT (WEEK 33)
+========================================================================
+📖 Scanned read.js: Found 28 valid ESL bold chunks.
+
+------------------------------------------------------------------------
+✅ GATE 4 PASSED: 30 Chunks Checked (100% ESL Linear Thinking Standard)!
+
+--- [FS_TRACE AUDIT] CWD: /Users/binhnguyen/projects/engquest3k_r2_dry ---
+Project source/data files accessed: 3
+Inside worktree: 3
+Outside worktree: 0
+✅ ISOLATION VERIFIED: 100% file đọc từ worktree hiện tại.
+Danh sách file tiêu biểu đã đọc trong worktree:
+   scripts/gate4_chunk_bolding.mjs
+   src/data/weeks/week_33/read.js
+   src/data/weeks/week_33/reading_hub.js
+Exit code: 0
+--- RUNNING: scripts/gate10_example_grammaticality.mjs 33 ---
+
+========================================================================
+🛡️  GATE 10: EXAMPLE SENTENCE GRAMMATICALITY & DIVERSITY (WEEK 33)
+========================================================================
+🔍 Scanned 20 example sentences across Week 33 assets.
+
+------------------------------------------------------------------------
+✅ GATE 10 PASSED: 100% Grammatical, Natural & Diverse Example Sentences!
+
+--- [FS_TRACE AUDIT] CWD: /Users/binhnguyen/projects/engquest3k_r2_dry ---
+Project source/data files accessed: 3
+Inside worktree: 3
+Outside worktree: 0
+✅ ISOLATION VERIFIED: 100% file đọc từ worktree hiện tại.
+Danh sách file tiêu biểu đã đọc trong worktree:
+   scripts/gate10_example_grammaticality.mjs
+   src/data/weeks/week_33/vocab.js
+   src/data/weeks/week_33/blueprint.json
+Exit code: 0
+--- RUNNING: scripts/gate11_content_richness.mjs 33 ---
+========================================================================
+🛡️  GATE 11: CONTENT RICHNESS & VOLUME AUDIT (WEEK 33)
+========================================================================
+
+❌ GATE 11 FAILED with 1 errors:
+   1. Expected 5 dictation sentences, found 8
+
+--- [FS_TRACE AUDIT] CWD: /Users/binhnguyen/projects/engquest3k_r2_dry ---
+Project source/data files accessed: 5
+Inside worktree: 5
+Outside worktree: 0
+✅ ISOLATION VERIFIED: 100% file đọc từ worktree hiện tại.
+Danh sách file tiêu biểu đã đọc trong worktree:
+   scripts/gate11_content_richness.mjs
+   src/data/weeks/week_33/reading_hub.js
+   src/data/weeks/week_33/read.js
+   src/data/weeks/week_33/vocab.js
+   src/data/weeks/week_33/skill_practice_hub.js
+Exit code: 1
+--- RUNNING: scripts/gate12_comprehensive_cefr.mjs 33 ---
+========================================================================
+🛡️  GATE 12: COMPREHENSIVE CEFR & FORBIDDEN JARGON GUARD (WEEK 33)
+========================================================================
+✅ GATE 12 PASSED: 0 CEFR / Stage 1 Academic Jargon Violations!
+
+--- [FS_TRACE AUDIT] CWD: /Users/binhnguyen/projects/engquest3k_r2_dry ---
+Project source/data files accessed: 30
+Inside worktree: 30
+Outside worktree: 0
+✅ ISOLATION VERIFIED: 100% file đọc từ worktree hiện tại.
+Danh sách file tiêu biểu đã đọc trong worktree:
+   scripts/gate12_comprehensive_cefr.mjs
+   src/data/weeks/week_33
+   src/data/weeks/week_33/ask_ai.js
+   src/data/weeks/week_33/blueprint.json
+   src/data/weeks/week_33/daily_watch.js
+   src/data/weeks/week_33/dictation.js
+   src/data/weeks/week_33/explore.js
+   src/data/weeks/week_33/games.js
+   src/data/weeks/week_33/grammar.js
+   src/data/weeks/week_33/index.js
+   ... và 20 file khác.
+Exit code: 0
+--- RUNNING: scripts/gate13_rotary_schedule.mjs 33 ---
+========================================================================
+🛡️  GATE 13: BOSS ROTARY SCHEDULE & SKILLS AUDIT (WEEK 33)
+========================================================================
+ℹ️  Rotary Config for Week 33: Cycle 1 — "Listening, Lexicon & Differences Quests" (Boss: Master Soundwave Nova)
+✅ GATE 13 PASSED: Rotary Schedule & Required Skills 100% Verified!
+
+--- [FS_TRACE AUDIT] CWD: /Users/binhnguyen/projects/engquest3k_r2_dry ---
+Project source/data files accessed: 5
+Inside worktree: 5
+Outside worktree: 0
+✅ ISOLATION VERIFIED: 100% file đọc từ worktree hiện tại.
+Danh sách file tiêu biểu đã đọc trong worktree:
+   scripts/gate13_rotary_schedule.mjs
+   src/config/bossRotarySchedule.js
+   src/data/weeks/week_33/listening_hub.js
+   src/data/weeks/week_33/writing_hub.js
+   src/data/weeks/week_33/writing.js
+Exit code: 0
+--- RUNNING: scripts/gate16_content_quality.mjs 33 ---
+
+========================================================================
+🛡️  GATE 16: CONTENT QUALITY & DATA PURITY AUDIT (WEEK 33)
+========================================================================
+  ✅ CLIL Fact Units: 4 verified (min: 3)
+  ✅ CLIL Glossary: 8 entries verified (min: 3)
+  ✅ writing_chunks: 4 groups verified with 0 banned patterns
+  ✅ science_report Data Card: 3 rows verified
+  ✅ science_report Purpose: verified
+  ✅ science_report & CLIL Keyword Overlap: 12 words [tiles, water, friction, slipped, rubber, soles]
+  ✅ picture_story Steps: 5 steps verified
+  ✅ Singapore Math Single-Source Equality: 5/5 problems 100% matched
+  ✅ Examiner Audio Questions: 5 audio URLs verified
+  ✅ Gate 17 Fidelity Doctrine: 16-Part Schema & Invariants PASS
+
+========================================================================
+🎉 GATE 16 PASSED: 100% Content Quality & Single-Source Data Purity!
+========================================================================
+
+
+--- [FS_TRACE AUDIT] CWD: /Users/binhnguyen/projects/engquest3k_r2_dry ---
+Project source/data files accessed: 9
+Inside worktree: 9
+Outside worktree: 0
+✅ ISOLATION VERIFIED: 100% file đọc từ worktree hiện tại.
+Danh sách file tiêu biểu đã đọc trong worktree:
+   scripts/gate16_content_quality.mjs
+   src/data/weeks/week_33/reading_hub.js
+   src/data/weeks/week_33/read.js
+   src/data/weeks/week_33/vocab.js
+   src/data/weeks/week_33/writing_hub.js
+   src/data/weeks/week_33/writing.js
+   src/data/weeks/week_33/skill_practice_hub.js
+   src/data/weeks/week_33/singapore_math.js
+   src/data/weeks/week_33/speaking_hub.js
+Exit code: 0
+--- RUNNING: scripts/gate17_fidelity_doctrine.mjs 33 ---
+[GATE 17 CHECK] Part L1  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/SVGLineMatcher.jsx : EXISTS
+[GATE 17 CHECK] Part L2  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/NotepadNoteCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part L3  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/VisualMatchingAH.jsx : EXISTS
+[GATE 17 CHECK] Part L4  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/MultipleChoice3Pic.jsx : EXISTS
+[GATE 17 CHECK] Part L5  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/SVGColorAndWrite.jsx : EXISTS
+[GATE 17 CHECK] Part R1  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/WordBankMatchingGrid.jsx : EXISTS
+[GATE 17 CHECK] Part R2  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/DialogueAHCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R3  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/RWPart3ClozeWithTitle.jsx : EXISTS
+[GATE 17 CHECK] Part R4  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/InlineTextClozeDropdown.jsx : EXISTS
+[GATE 17 CHECK] Part R5  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/TextExtractionCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R6  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/OpenClozeCompleter.jsx : EXISTS
+[GATE 17 CHECK] Part R7  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/StoryWriting.jsx : EXISTS
+[GATE 17 CHECK] Part S1  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/FindDifferencesInteractive.jsx : EXISTS
+[GATE 17 CHECK] Part S2  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/InformationExchangeP2.jsx : EXISTS
+[GATE 17 CHECK] Part S3  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/PictureStoryContinuation.jsx : EXISTS
+[GATE 17 CHECK] Part S4  -> /Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/PersonalQuestionsCompleter.jsx : EXISTS
+{
+  "week": 33,
+  "schemaVersion": "1.0.0",
+  "schemaValid": true,
+  "schemaErrors": [],
+  "invariants": [
+    {
+      "id": "INV-HUB",
+      "pass": true,
+      "detail": "listening_hub pure: true, skill_practice 4 modules: true, math match: true"
+    },
+    {
+      "id": "INV-L1",
+      "pass": true,
+      "detail": "L1 names: 1 ex + 5 scored + 1 null; targets: 6/6"
+    },
+    {
+      "id": "INV-L4",
+      "pass": true,
+      "detail": "L4 questions: 1 ex + 5 scored, 3 options each: true"
+    },
+    {
+      "id": "INV-L5",
+      "pass": true,
+      "detail": "L5 instructions: 1 ex + 3 color + 2 write"
+    },
+    {
+      "id": "INV-R1",
+      "pass": true,
+      "detail": "R1 example: true, word_bank: 15/15, defs: 10/10, no target dup: true"
+    },
+    {
+      "id": "INV-R2",
+      "pass": true,
+      "detail": "R2 example: true, turns: 5/5, options: 8/8, options valid: true"
+    },
+    {
+      "id": "INV-R3",
+      "pass": true,
+      "detail": "R3 example: true, blanks: 5/5, title_options: 3/3"
+    },
+    {
+      "id": "INV-R4",
+      "pass": true,
+      "detail": "R4 example blank 0: true, blanks 1-10 with 3 options: true (10/10)"
+    },
+    {
+      "id": "INV-R5",
+      "pass": true,
+      "detail": "R5 example: true, questions: 7/7, no options field: true"
+    },
+    {
+      "id": "INV-R6",
+      "pass": true,
+      "detail": "R6 example: true, answers: 6 (min 5)"
+    },
+    {
+      "id": "INV-S1",
+      "pass": true,
+      "detail": "S1 diffs: 6 (target: 4), match calibration centroids +-1%: true"
+    },
+    {
+      "id": "INV-S2",
+      "pass": true,
+      "detail": "S2 candidate unknown: 5>=2 (from 5 fields), examiner questions: 5>=3 with audio: true"
+    },
+    {
+      "id": "INV-S3",
+      "pass": true,
+      "detail": "S3 images: 5 (allowed: 4 or 5), intro phrase verified: true"
+    },
+    {
+      "id": "INV-CLIL",
+      "pass": true,
+      "detail": "CLIL glossary: 8>=3 valid: true, part titles present: true"
+    }
+  ],
+  "componentExistence": [
+    {
+      "part": "L1",
+      "file": "SVGLineMatcher.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/SVGLineMatcher.jsx",
+      "exists": true
+    },
+    {
+      "part": "L2",
+      "file": "NotepadNoteCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/NotepadNoteCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "L3",
+      "file": "VisualMatchingAH.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/VisualMatchingAH.jsx",
+      "exists": true
+    },
+    {
+      "part": "L4",
+      "file": "MultipleChoice3Pic.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/MultipleChoice3Pic.jsx",
+      "exists": true
+    },
+    {
+      "part": "L5",
+      "file": "SVGColorAndWrite.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/SVGColorAndWrite.jsx",
+      "exists": true
+    },
+    {
+      "part": "R1",
+      "file": "WordBankMatchingGrid.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/WordBankMatchingGrid.jsx",
+      "exists": true
+    },
+    {
+      "part": "R2",
+      "file": "DialogueAHCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/DialogueAHCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R3",
+      "file": "RWPart3ClozeWithTitle.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/RWPart3ClozeWithTitle.jsx",
+      "exists": true
+    },
+    {
+      "part": "R4",
+      "file": "InlineTextClozeDropdown.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/InlineTextClozeDropdown.jsx",
+      "exists": true
+    },
+    {
+      "part": "R5",
+      "file": "TextExtractionCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/TextExtractionCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R6",
+      "file": "OpenClozeCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/OpenClozeCompleter.jsx",
+      "exists": true
+    },
+    {
+      "part": "R7",
+      "file": "StoryWriting.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/StoryWriting.jsx",
+      "exists": true
+    },
+    {
+      "part": "S1",
+      "file": "FindDifferencesInteractive.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/FindDifferencesInteractive.jsx",
+      "exists": true
+    },
+    {
+      "part": "S2",
+      "file": "InformationExchangeP2.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/InformationExchangeP2.jsx",
+      "exists": true
+    },
+    {
+      "part": "S3",
+      "file": "PictureStoryContinuation.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/PictureStoryContinuation.jsx",
+      "exists": true
+    },
+    {
+      "part": "S4",
+      "file": "PersonalQuestionsCompleter.jsx",
+      "absPath": "/Users/binhnguyen/projects/engquest3k_r2_dry/src/components/cambridge/PersonalQuestionsCompleter.jsx",
+      "exists": true
+    }
+  ],
+  "openDeviations": [],
+  "finalVerdict": "PASS",
+  "failReasons": []
+}
+
+--- [FS_TRACE AUDIT] CWD: /Users/binhnguyen/projects/engquest3k_r2_dry ---
+Project source/data files accessed: 13
+Inside worktree: 13
+Outside worktree: 0
+✅ ISOLATION VERIFIED: 100% file đọc từ worktree hiện tại.
+Danh sách file tiêu biểu đã đọc trong worktree:
+   scripts/gate17_fidelity_doctrine.mjs
+   scripts/lib/fidelityDoctrineAdapter.mjs
+   schemas/cambridge-flyers-fidelity-doctrine.schema.json
+   src/data/weeks/week_33/reading_hub.js
+   src/data/weeks/week_33/read.js
+   src/data/weeks/week_33/vocab.js
+   src/data/weeks/week_33/listening_hub.js
+   src/data/weeks/week_33/writing_hub.js
+   src/data/weeks/week_33/writing.js
+   src/data/weeks/week_33/speaking_hub.js
+   ... và 3 file khác.
+Exit code: 0
+--- RUNNING: scripts/cefr_curriculum_guard.mjs 33 ---
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 33
+🎯 Staging Standard: STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, ket_a2.json
+================================================================
+
+📂 Scanning WEEK 33 MASTER DATA: /Users/binhnguyen/projects/engquest3k_r2_dry/src/data/weeks/week_33
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 33:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+
+⚠️  KET EXTENSION WORDS DETECTED (not Core Flyers A2 — review if intentional):
+   These words are from KET A2 (not Starters/Movers/Flyers). They PASS the guard
+   but are NOT considered core Flyers A2 learner vocabulary:
+   • able
+   • across
+   • action
+   • adult
+   • advice
+   • afternoon
+   • against
+   • ago
+   • air
+   • all
+   • along
+   • already
+   • also
+   • amazing
+   • ancient
+   • angry
+   • ankle
+   • another
+   • answer
+   • anything
+   • apologize
+   • apply
+   • area
+   • around
+   • arrival
+   • arrive
+   • article
+   • attention
+   • avoid
+   • award
+   • back
+   • background
+   • backward
+   • bad
+   • badly
+   • bag
+   • balance
+   • bank
+   • bar
+   • beach
+   • because
+   • become
+   • bedroom
+   • before
+   • begin
+   • beginning
+   • bell
+   • bench
+   • beside
+   • best
+   • better
+   • between
+   • bicycle
+   • big
+   • birthday
+   • blood
+   • blue
+   • body
+   • bored
+   • boring
+   • borrow
+   • both
+   • bottom
+   • box
+   • brain
+   • break
+   • bright
+   • bring
+   • broken
+   • brother
+   • brown
+   • build
+   • but
+   • by
+   • cabinet
+   • cafeteria
+   • call
+   • calm
+   • can
+   • candidate
+   • suit
+   • to
+   → If these are CLIL domain terms, add them to clil_article.vocab_focus[].
+   → If they are core words, verify they appear in flyers_a2.json.
+✅ PASSED: Week 33 conforms to STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)!
+
+--- [FS_TRACE AUDIT] CWD: /Users/binhnguyen/projects/engquest3k_r2_dry ---
+Project source/data files accessed: 150
+Inside worktree: 150
+Outside worktree: 0
+✅ ISOLATION VERIFIED: 100% file đọc từ worktree hiện tại.
+Danh sách file tiêu biểu đã đọc trong worktree:
+   scripts/cefr_curriculum_guard.mjs
+   src/data/official_wordlists/starters_pre_a1.json
+   src/data/official_wordlists/movers_a1.json
+   src/data/official_wordlists/flyers_a2.json
+   src/data/official_wordlists/ket_a2.json
+   src/data/weeks/week_33
+   src/data/weeks/week_33/ask_ai.js
+   src/data/weeks/week_33/daily_watch.js
+   src/data/weeks/week_33/dictation.js
+   src/data/weeks/week_33/explore.js
+   ... và 140 file khác.
+Exit code: 0
+=== 3. GIT MERGE-TREE DRY-RUN ===
+Running: git merge-tree --write-tree main r2-dryrun
+a101907d89a7c5cb6a9e411e0366cc3b2c4dff4a
+merge-tree exit code: 0
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T03:04:42Z

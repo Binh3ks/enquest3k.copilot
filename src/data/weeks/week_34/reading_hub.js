@@ -89,33 +89,85 @@ export const readingHub = {
     title_vi: "Những Người Bạn Giúp Đỡ Lẫn Nhau Trong Tự Nhiên",
     part_1_title: "How Animals Help the Forest",
     part_2_title: "Teamwork Keeps Nature Green",
-    content_en: "In nature, many animals help and work together to build safe homes in the forest. Large animals like lions protect the forest and help young plants and trees grow strong. Tiny mice eat small insects and carry seeds into the ground. Colourful birds fly high in the trees to chirp loudly and help alert their animal friends. When different creatures help one another, the whole forest stays green and healthy.",
-    content_vi: "Trong tự nhiên, nhiều loài động vật làm việc cùng nhau để sinh tồn và khỏe mạnh. Giống như chú chuột nhỏ giúp sư tử to lớn trong truyện ngụ ngôn, các loài động vật thực tế cũng giúp đỡ lẫn nhau mỗi ngày! Một loài chim nhỏ tên là chim bắt ve thường đậu trên lưng chú ngựa vằn to lớn. Trong khi ngựa vằn đang gặm cỏ, chú chim ăn những con bọ nhỏ trên da ngựa vằn. Điều này mang lại thức ăn cho chim và giúp ngựa vằn sạch sẽ. Dưới đại dương, những chú cá dọn vệ sinh nhỏ bơi vào trong miệng cá mập lớn. Cá mập không bao giờ cắn vì cá nhỏ làm sạch răng sắc nhọn của chúng! Khi các loài động vật hợp tác, mọi loài đều an toàn và khỏe mạnh.",
+    content_en: "In nature, animals show wonderful cooperation when they help each other find food every day. In Africa, an oxpecker bird eats tiny bugs to help the zebra and find tasty food in its wild habitat. In the ocean, tiny cleaner fish swim safely inside the mouth of a shark to clean its sharp teeth. The giant predator never hurts these small animal helpers that cooperate so everyone can survive. Just like the lion and the mouse, big and small creatures work together. Together, big and small animals help protect the forest trees and keep the whole ecosystem strong and green.",
+    content_vi: "Trong tự nhiên, các loài động vật thể hiện sự hợp tác tuyệt vời khi giúp đỡ lẫn nhau tìm kiếm thức ăn mỗi ngày. Tại châu Phi, chú chim bắt ve ăn những con bọ nhỏ để giúp ngựa vằn và tìm kiếm thức ăn ngon trong môi trường sống tự nhiên. Dưới đại dương, những chú cá dọn vệ sinh nhỏ bơi an toàn vào trong miệng cá mập để làm sạch răng sắc nhọn. Kẻ săn mồi khổng lồ không bao giờ làm hại những người bạn nhỏ hợp tác cùng nhau để tất cả cùng sinh tồn. Giống như sư tử và chuột nhỏ, các sinh vật lớn và nhỏ cùng phối hợp. Cùng nhau, động vật lớn và nhỏ giúp bảo vệ cây rừng và giữ cho toàn bộ hệ sinh thái luôn vững mạnh và xanh tươi.",
     cover_image: "/images/week34/explore_cover_w34.jpg",
     audio_url: "/audio/week34/explore.mp3",
+    vocab_focus: [
+      "cooperate",
+      "survive",
+      "predator",
+      "oxpecker bird",
+      "cleaner fish",
+      "ecosystem",
+      "habitat",
+      "sharp teeth",
+      "tiny bugs",
+      "natural world"
+    ],
     glossary: [
       { term: "Cooperation", meaning: "Working together harmoniously toward a shared and helpful outcome." },
-      { term: "Ecosystem", meaning: "A biological community of interacting organisms and their physical forest environment." },
-      { term: "Habitat", meaning: "The natural home or environment where wild animals live and find food." },
-      { term: "Predator", meaning: "An animal that hunts and eats other animals in the wild." }
+      { term: "Survive", meaning: "To stay alive and continue to live in nature or the forest." },
+      { term: "Predator", meaning: "An animal that hunts and eats other animals in the wild." },
+      { term: "Oxpecker", meaning: "A helpful African bird that eats bugs off large animals." },
+      { term: "Cleaner Fish", meaning: "Small fish that swim safely inside larger sea animals to clean their teeth." },
+      { term: "Ecosystem", meaning: "A biological community of interacting organisms and their physical environment." },
+      { term: "Habitat", meaning: "The natural home or environment where wild animals live and find food." }
     ],
     check_questions: [
       {
         id: 1,
         question_en: "What does the oxpecker bird eat while sitting on the zebra?",
-        options: ["Small bugs off the zebra's skin", "Grass seeds on the ground", "Tree leaves in the forest"],
+        options: [
+          "Small bugs off the zebra's skin",
+          "Grass seeds from the ground",
+          "Green leaves high in the trees",
+          "Sweet fruits from the forest"
+        ],
         answer: "Small bugs off the zebra's skin"
       },
       {
         id: 2,
-        question_en: "Why do large sharks never bite small cleaner fish?",
-        options: ["Because the small fish clean their sharp teeth", "Because the fish are too fast", "Because sharks are sleeping"],
-        answer: "Because the small fish clean their sharp teeth"
+        question_en: "How does the oxpecker bird help the zebra stay healthy?",
+        options: [
+          "It cleans the zebra's skin by removing bugs",
+          "It carries the zebra across the river",
+          "It builds a large nest for the zebra",
+          "It warns the zebra about rainy weather"
+        ],
+        answer: "It cleans the zebra's skin by removing bugs"
       },
       {
         id: 3,
-        question_en: "What lesson about nature does this article teach us?",
-        options: ["Animals cooperate and help each other to survive", "Big animals must always live alone", "Small animals never help large animals"],
+        question_en: "Why do large sharks allow cleaner fish inside their mouths?",
+        options: [
+          "Because the small fish clean their sharp teeth",
+          "Because the small fish are too fast to catch",
+          "Because the sharks are sleeping on the rocks",
+          "Because the sharks cannot open their mouths"
+        ],
+        answer: "Because the small fish clean their sharp teeth"
+      },
+      {
+        id: 4,
+        question_en: "Which fable animals show that small friends can help big friends?",
+        options: [
+          "The mighty lion and the tiny mouse",
+          "The hungry wolf and the clever fox",
+          "The slow turtle and the speedy rabbit",
+          "The noisy bird and the sleepy bear"
+        ],
+        answer: "The mighty lion and the tiny mouse"
+      },
+      {
+        id: 5,
+        question_en: "What important lesson about nature does this article teach us?",
+        options: [
+          "Animals cooperate and help each other to survive",
+          "Large animals must always live alone in the wild",
+          "Small creatures can never help big creatures",
+          "Predators never share food with other animals"
+        ],
         answer: "Animals cooperate and help each other to survive"
       }
     ],
@@ -131,10 +183,10 @@ export const readingHub = {
       { id: 2, text: "A tiny mouse ran across his nose.", words: ["A", "tiny", "mouse", "ran", "across", "his", "nose."], ipa: ["ə", "ˈtaɪ.ni", "maʊs", "ræn", "əˈkrɒs", "hɪz", "nəʊz"], audio_url: "/audio/week34/shadowing_2.mp3" },
       { id: 3, text: "The lion woke up and caught the little mouse.", words: ["The", "lion", "woke", "up", "and", "caught", "the", "little", "mouse."], ipa: ["ðə", "ˈlaɪ.ən", "wəʊk", "ʌp", "ænd", "kɔːt", "ðə", "ˈlɪt.əl", "maʊs"], audio_url: "/audio/week34/shadowing_3.mp3" },
       { id: 4, text: "The mouse promised to help the lion one day.", words: ["The", "mouse", "promised", "to", "help", "the", "lion", "one", "day."], ipa: ["ðə", "maʊs", "ˈprɒm.ɪst", "tuː", "help", "ðə", "ˈlaɪ.ən", "wʌn", "deɪ"], audio_url: "/audio/week34/shadowing_4.mp3" },
-      { id: 5, text: "Hunters trapped the strong lion in a heavy net.", words: ["Hunters", "trapped", "the", "strong", "lion", "in", "a", "heavy", "net."], ipa: ["ˈhʌn.tərz", "træpt", "ðə", "strɒŋ", "ˈlaɪ.ən", "ɪn", "ə", "ˈhev.i", "net"], audio_url: "/audio/week34/shadowing_5.mp3" },
+      { id: 5, text: "The trapped lion roared and waited for help.", words: ["The", "trapped", "lion", "roared", "and", "waited", "for", "help."], ipa: ["ðə", "træpt", "ˈlaɪ.ən", "rɔːd", "ænd", "ˈweɪ.tɪd", "fɔːr", "help"], audio_url: "/audio/week34/shadowing_5.mp3" },
       { id: 6, text: "The brave mouse chewed through the thick ropes.", words: ["The", "brave", "mouse", "chewed", "through", "the", "thick", "ropes."], ipa: ["ðə", "breɪv", "maʊs", "tʃuːd", "θruː", "ðə", "θɪk", "rəʊps"], audio_url: "/audio/week34/shadowing_6.mp3" },
-      { id: 7, text: "The lion escaped and was completely free.", words: ["The", "lion", "escaped", "and", "was", "completely", "free."], ipa: ["ðə", "ˈlaɪ.ən", "ɪˈskeɪpt", "ænd", "wɒz", "kəmˈpliːt.li", "friː"], audio_url: "/audio/week34/shadowing_7.mp3" },
-      { id: 8, text: "They became the best of friends forever.", words: ["They", "became", "the", "best", "of", "friends", "forever."], ipa: ["ðeɪ", "bɪˈkeɪm", "ðə", "best", "ɒv", "frendz", "fəˈrev.ər"], audio_url: "/audio/week34/shadowing_8.mp3" }
+      { id: 7, text: "The mouse freed the lion, and the lion thanked him.", words: ["The", "mouse", "freed", "the", "lion,", "and", "the", "lion", "thanked", "him."], ipa: ["ðə", "maʊs", "friːd", "ðə", "ˈlaɪ.ən", "ænd", "ðə", "ˈlaɪ.ən", "θæŋkt", "hɪm"], audio_url: "/audio/week34/shadowing_7.mp3" },
+      { id: 8, text: "They trusted each other and stayed friends forever.", words: ["They", "trusted", "each", "other", "and", "stayed", "friends", "forever."], ipa: ["ðeɪ", "ˈtrʌs.tɪd", "iːtʃ", "ˈʌð.ər", "ænd", "steɪd", "frendz", "fəˈrev.ər"], audio_url: "/audio/week34/shadowing_8.mp3" }
     ]
   },
 

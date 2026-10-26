@@ -1,0 +1,236 @@
+### STEP: q34_check_7_words_in_w34
+### CMD: grep -n -E \b(net|trap|roar|help|friend|tiny|huge)\b src/data/weeks/week_34/ask_ai.js src/data/weeks/week_34/daily_watch.js src/data/weeks/week_34/dictation.js src/data/weeks/week_34/explore.js src/data/weeks/week_34/games.js src/data/weeks/week_34/grammar.js src/data/weeks/week_34/index.js src/data/weeks/week_34/listening_hub.js src/data/weeks/week_34/logic_lab.js src/data/weeks/week_34/logic_science.js src/data/weeks/week_34/mindmap.js src/data/weeks/week_34/read.js src/data/weeks/week_34/reading_hub.js src/data/weeks/week_34/shadowing.js src/data/weeks/week_34/shadowing_ipa.js src/data/weeks/week_34/singapore_math.js src/data/weeks/week_34/skill_practice_hub.js src/data/weeks/week_34/speaking_hub.js src/data/weeks/week_34/vocab.js src/data/weeks/week_34/vocab_dictionary_master.js src/data/weeks/week_34/week_34_real.js src/data/weeks/week_34/word_match.js src/data/weeks/week_34/word_power.js src/data/weeks/week_34/writing.js src/data/weeks/week_34/writing_hub.js
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-26T02:05:11Z
+### ----- OUTPUT -----
+src/data/weeks/week_34/ask_ai.js:6:    sample_question_en: "The huge lion was sleeping under the shady tree.",
+src/data/weeks/week_34/ask_ai.js:14:    sample_question_en: "A tiny mouse ran across the lion's front paw.",
+src/data/weeks/week_34/ask_ai.js:22:    sample_question_en: "The mouse promised to help the lion one day.",
+src/data/weeks/week_34/ask_ai.js:25:    word_bank: ["mouse", "promised", "help", "lion", "one", "day"]
+src/data/weeks/week_34/ask_ai.js:29:    title_en: "Turn 4: How did the hunters trap the lion?",
+src/data/weeks/week_34/ask_ai.js:30:    sample_question_en: "Hunters trapped the lion in a heavy rope net.",
+src/data/weeks/week_34/ask_ai.js:33:    word_bank: ["hunters", "trapped", "lion", "heavy", "rope", "net"]
+src/data/weeks/week_34/ask_ai.js:40:    answer: "Wonderful! Even small friends can be a great help.",
+src/data/weeks/week_34/ask_ai.js:58:    nova_answer_audio_text: "The huge lion was sleeping peacefully under a shady tree in the forest."
+src/data/weeks/week_34/ask_ai.js:72:    nova_answer_audio_text: "The scared mouse cried and promised that he would help the lion one day."
+src/data/weeks/week_34/ask_ai.js:76:    target_prompt_en: "How / the hunters / trap the lion in the forest?",
+src/data/weeks/week_34/ask_ai.js:79:    word_bank: ["How", "did", "the", "hunters", "trap", "the", "lion", "?"],
+src/data/weeks/week_34/ask_ai.js:80:    scrambled_words: ["trap", "How", "hunters", "lion", "the", "did", "?"],
+src/data/weeks/week_34/ask_ai.js:82:      "How did the hunters trap the lion?",
+src/data/weeks/week_34/ask_ai.js:86:    nova_answer_audio_text: "The hunters placed a strong rope net between two trees to trap the lion."
+src/data/weeks/week_34/ask_ai.js:100:    nova_answer_audio_text: "The mouse chewed through the thick ropes with his sharp teeth until the net broke."
+src/data/weeks/week_34/ask_ai.js:114:    nova_answer_audio_text: "Even the smallest friend can be a great help in times of trouble."
+src/data/weeks/week_34/ask_ai.js:125:      { label: "Trap Equipment", value: "Heavy rope net placed by two hunters" },
+src/data/weeks/week_34/ask_ai.js:126:      { label: "Roar Sound", value: "Loud roar heard from far across the forest" },
+src/data/weeks/week_34/ask_ai.js:127:      { label: "New Best Friend", value: "The tiny brave mouse with sharp teeth" }
+src/data/weeks/week_34/dictation.js:7:  { id: 3, sentence: "Can you practice your lion roar for 20 minutes in the hall?", text: "Can you practice your lion roar for 20 minutes in the hall?", speaker: "Miss Green", audio_url: "/audio/week34/dictation_3.mp3" },
+src/data/weeks/week_34/dictation.js:9:  { id: 5, sentence: "Please call your father on 0912 345 678 to bring the rope net.", text: "Please call your father on 0912 345 678 to bring the rope net.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_5.mp3" },
+src/data/weeks/week_34/dictation.js:10:  { id: 6, sentence: "He will bring the net to school for 2 days.", text: "He will bring the net to school for 2 days.", speaker: "Sam", audio_url: "/audio/week34/dictation_6.mp3" },
+src/data/weeks/week_34/dictation.js:11:  { id: 7, sentence: "That is wonderful, remember to help your little mouse friend on stage.", text: "That is wonderful, remember to help your little mouse friend on stage.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_7.mp3" },
+src/data/weeks/week_34/explore.js:6:  content_en: "In nature, many animals work together to stay healthy. In the fable, a tiny mouse helped a huge lion. Real animals in the wild also help each other every day! A small bird called the oxpecker sits on a zebra. While the zebra is grazing, the bird eats bugs off its skin. This gives the bird food and keeps the zebra clean. In the ocean, small cleaner fish swim inside shark mouths. Sharks never bite them because the fish clean their sharp teeth! When animals cooperate, everyone stays safe in nature.",
+src/data/weeks/week_34/explore.js:25:      options: ["Animals cooperate and help each other to survive", "Big animals must always live alone", "Small animals never help large animals"],
+src/data/weeks/week_34/explore.js:26:      answer: "Animals cooperate and help each other to survive"
+src/data/weeks/week_34/grammar.js:8:    "While the lion was sleeping, a tiny mouse ran across his paw.",
+src/data/weeks/week_34/grammar.js:9:    "While the hunters were setting the trap, the birds flew away.",
+src/data/weeks/week_34/grammar.js:10:    "The mouse heard a loud roar while he was looking for food."
+src/data/weeks/week_34/grammar.js:16:    { id: 4, prompt: "The hunters ___ a heavy rope net between two trees yesterday.", options: ["placed", "were placing", "place"], answer: "placed", type: "mc" },
+src/data/weeks/week_34/grammar.js:18:    { id: 6, prompt: "The lion ___ loudly when he felt the rope net pull tight.", options: ["roared", "was roaring", "roars"], answer: "roared", type: "mc" },
+src/data/weeks/week_34/listening_hub.js:10:Girl: Can you see the tiny mouse running near the lion's front paw?
+src/data/weeks/week_34/listening_hub.js:12:Girl: Who is that man hiding behind the bushes with a rope net?
+src/data/weeks/week_34/listening_hub.js:13:Man: That is Hunter Jack. He is setting a trap between the trees.
+src/data/weeks/week_34/listening_hub.js:45:      { id: "f2", field_label: "Running animal", answer: "tiny mouse" },
+src/data/weeks/week_34/listening_hub.js:46:      { id: "f3", field_label: "Hunter equipment", answer: "rope net" },
+src/data/weeks/week_34/listening_hub.js:48:      { id: "f5", field_label: "Story moral", answer: "small friends help" }
+src/data/weeks/week_34/listening_hub.js:106:        audio_script: `Boy: Question 2. What trapped the lion in the forest?\nGirl: The hunters placed a heavy rope net between the trees.`,
+src/data/weeks/week_34/listening_hub.js:109:          { letter: "B", text: "A heavy rope net", image_url: "/images/week34/webtoon_scene_4.png" },
+src/data/weeks/week_34/listening_hub.js:142:        audio_script: `Boy: Question 5. How did the lion feel after being freed?\nGirl: He felt grateful and relieved that his little friend saved him.`,
+src/data/weeks/week_34/logic_lab.js:8:      problemText: "The hunters had 60 meters of strong rope. They used 25 meters to make the net. How many meters of rope were left?",
+src/data/weeks/week_34/logic_lab.js:56:      problemText: "The net had 30 thick ropes. The mouse chewed 18 ropes in the morning. How many ropes were left to chew?",
+src/data/weeks/week_34/logic_science.js:25:      options: ["The net loses tension and the lion escapes safely", "The net gets tighter", "The tree falls"],
+src/data/weeks/week_34/logic_science.js:26:      answer: "The net loses tension and the lion escapes safely",
+src/data/weeks/week_34/logic_science.js:27:      explanation: "Cutting load-bearing knots removes mechanical tension across the entire net."
+src/data/weeks/week_34/mindmap.js:4:    { id: 'stem_1', title: 'The Lion', branches: ['Sleeping under tree', 'Huge front paws', 'Loud angry roar', 'Caught tiny mouse', 'Laughed out loud', 'Grateful for help'] },
+src/data/weeks/week_34/mindmap.js:5:    { id: 'stem_2', title: 'The Mouse', branches: ['Tiny soft body', 'Ran across paw', 'Made brave promise', 'Sharp front teeth', 'Chewed thick ropes', 'Best loyal friend'] },
+src/data/weeks/week_34/mindmap.js:6:    { id: 'stem_3', title: 'The Forest Trap', branches: ['Two clever hunters', 'Strong rope net', 'Hidden in bushes', 'Tied to two trees', 'Pulled very tight', 'Broken by teeth'] },
+src/data/weeks/week_34/mindmap.js:9:    { id: 'stem_6', title: 'Moral Lessons', branches: ['Small friends help', 'Always keep promises', 'Show great kindness', 'Do not laugh at others', 'True loyal friends', 'Cooperate to survive'] }
+src/data/weeks/week_34/read.js:6:  content_en: "One warm afternoon, a huge lion was sleeping under a shady tree in the green forest. While he was sleeping, a tiny mouse ran across his big front paw. The lion woke up and caught the little mouse with his sharp claws. 'Please do not eat me!' cried the scared mouse. 'If you let me go, I promise I will help you one day.' The lion was kind, so he lifted his paw and let the mouse go free. A few days later, hunters placed a strong rope net between two trees. While the lion was walking down the path, he stepped into the trap! The heavy net pulled tight around him. The lion roared loudly for help. The tiny mouse heard the roar and ran quickly to help. Using his sharp teeth, the mouse chewed through the thick ropes until the net broke open. The lion was freed safely. From that day on, they were best friends.",
+src/data/weeks/week_34/read.js:7:  text_en: "One warm afternoon, a huge lion was sleeping under a shady tree in the green forest. While he was sleeping, a tiny mouse ran across his big front paw. The lion woke up and caught the little mouse with his sharp claws. 'Please do not eat me!' cried the scared mouse. 'If you let me go, I promise I will help you one day.' The lion was kind, so he lifted his paw and let the mouse go free. A few days later, hunters placed a strong rope net between two trees. While the lion was walking down the path, he stepped into the trap! The heavy net pulled tight around him. The lion roared loudly for help. The tiny mouse heard the roar and ran quickly to help. Using his sharp teeth, the mouse chewed through the thick ropes until the net broke open. The lion was freed safely. From that day on, they were best friends.",
+src/data/weeks/week_34/read.js:18:      description: "A **huge lion** was **sleeping peacefully** when a **tiny mouse** ran across his front paw.",
+src/data/weeks/week_34/read.js:19:      description_en: "A **huge lion** was **sleeping peacefully** when a **tiny mouse** ran across his front paw.",
+src/data/weeks/week_34/read.js:22:        { word: "huge lion", chunk: "a huge lion sleeping peacefully", x: 45, y: 50 },
+src/data/weeks/week_34/read.js:23:        { word: "tiny mouse", chunk: "a tiny mouse running across", x: 28, y: 72 },
+src/data/weeks/week_34/read.js:52:        { word: "promise", chunk: "made a brave promise to help", x: 30, y: 68 },
+src/data/weeks/week_34/read.js:63:      description: "Hunters **trapped the lion** in a **heavy rope net**, and he **roared loudly** for help.",
+src/data/weeks/week_34/read.js:64:      description_en: "Hunters **trapped the lion** in a **heavy rope net**, and he **roared loudly** for help.",
+src/data/weeks/week_34/read.js:67:        { word: "trapped", chunk: "trapped in a hidden trap", x: 50, y: 52 },
+src/data/weeks/week_34/read.js:68:        { word: "heavy net", chunk: "strong rope net between trees", x: 68, y: 40 },
+src/data/weeks/week_34/read.js:69:        { word: "roared", chunk: "roared loudly for help", x: 32, y: 38 }
+src/data/weeks/week_34/read.js:83:        { word: "sharp teeth", chunk: "using tiny sharp teeth", x: 52, y: 54 },
+src/data/weeks/week_34/read.js:95:      chips: ["warm afternoon", "huge lion", "sleeping under a shady tree"],
+src/data/weeks/week_34/read.js:96:      sentence: "One warm afternoon, a huge lion was sleeping under a shady tree."
+src/data/weeks/week_34/read.js:102:      chips: ["tiny mouse", "ran across", "big front paw"],
+src/data/weeks/week_34/read.js:103:      sentence: "While he was sleeping, a tiny mouse accidentally ran across his front paw."
+src/data/weeks/week_34/read.js:109:      chips: ["caught the mouse", "made a promise", "help you one day"],
+src/data/weeks/week_34/read.js:110:      sentence: "The lion caught the mouse angrily, but the mouse promised to help him one day."
+src/data/weeks/week_34/read.js:116:      chips: ["two hunters", "trapped in a net", "roared loudly"],
+src/data/weeks/week_34/read.js:117:      sentence: "Hunters trapped the lion in a heavy rope net, and the lion roared loudly for help."
+src/data/weeks/week_34/read.js:122:      question_en: "How did the tiny mouse rescue the mighty lion?",
+src/data/weeks/week_34/read.js:131:      question_en: "What was the lion doing when the tiny mouse ran across his paw?",
+src/data/weeks/week_34/read.js:138:      options: ["He thought a tiny mouse could never help a big lion", "He was playing a fun forest game", "The mouse told a funny riddle"],
+src/data/weeks/week_34/read.js:139:      answer: "He thought a tiny mouse could never help a big lion"
+src/data/weeks/week_34/read.js:143:      question_en: "How did the hunters trap the lion in the forest?",
+src/data/weeks/week_34/read.js:144:      options: ["They placed a strong rope net between trees", "They dug a deep pit on the path", "They built a heavy wooden cage"],
+src/data/weeks/week_34/read.js:145:      answer: "They placed a strong rope net between trees"
+src/data/weeks/week_34/read.js:149:      question_en: "How did the tiny mouse free the lion from the trap?",
+src/data/weeks/week_34/read.js:150:      options: ["He chewed through the thick ropes with sharp teeth", "He asked other lions for help", "He pulled the ropes with his paws"],
+src/data/weeks/week_34/read.js:156:    question_en: "Why should we never underestimate smaller friends who offer to help?",
+src/data/weeks/week_34/read.js:157:    hint_en: "Even the smallest friend can have special abilities that can save or help big friends in unexpected ways."
+src/data/weeks/week_34/reading_hub.js:31:        narration_en: "While the lion was resting, a **tiny mouse ran** across the lion's big front paw.",
+src/data/weeks/week_34/reading_hub.js:45:        narration_en: "The mouse begged for mercy and promised to **help the lion** one day if he let him go.",
+src/data/weeks/week_34/reading_hub.js:59:        narration_en: "A few days later, hunters trapped the lion in a **strong net** made of thick ropes.",
+src/data/weeks/week_34/reading_hub.js:92:    content_en: "In nature, many different animals cooperate and help each other every day. In Africa, a small oxpecker bird often sits on the back of a large zebra. While the zebra is eating grass, the bird eats tiny bugs from the zebra's skin. This gives the bird yummy food and keeps the zebra clean and healthy. In the ocean, tiny cleaner fish swim inside the mouths of huge sharks. The sharks never bite because the small fish clean their sharp teeth carefully. Just like the mighty lion and the tiny mouse in Aesop's fable, big and small animals work together to keep our natural world safe.",
+src/data/weeks/week_34/reading_hub.js:105:      "tiny bugs",
+src/data/weeks/week_34/reading_hub.js:131:        question_en: "How does the oxpecker bird help the zebra stay healthy?",
+src/data/weeks/week_34/reading_hub.js:153:        question_en: "Which fable animals show that small friends can help big friends?",
+src/data/weeks/week_34/reading_hub.js:155:          "The mighty lion and the tiny mouse",
+src/data/weeks/week_34/reading_hub.js:160:        answer: "The mighty lion and the tiny mouse"
+src/data/weeks/week_34/reading_hub.js:166:          "Animals cooperate and help each other to survive",
+src/data/weeks/week_34/reading_hub.js:168:          "Small creatures can never help big creatures",
+src/data/weeks/week_34/reading_hub.js:171:        answer: "Animals cooperate and help each other to survive"
+src/data/weeks/week_34/reading_hub.js:183:      { id: 2, text: "A tiny mouse ran across his nose.", words: ["A", "tiny", "mouse", "ran", "across", "his", "nose."], ipa: ["ə", "ˈtaɪ.ni", "maʊs", "ræn", "əˈkrɒs", "hɪz", "nəʊz"], audio_url: "/audio/week34/shadowing_2.mp3" },
+src/data/weeks/week_34/reading_hub.js:185:      { id: 4, text: "The mouse promised to help the lion one day.", words: ["The", "mouse", "promised", "to", "help", "the", "lion", "one", "day."], ipa: ["ðə", "maʊs", "ˈprɒm.ɪst", "tuː", "help", "ðə", "ˈlaɪ.ən", "wʌn", "deɪ"], audio_url: "/audio/week34/shadowing_4.mp3" },
+src/data/weeks/week_34/reading_hub.js:186:      { id: 5, text: "Hunters trapped the strong lion in a heavy net.", words: ["Hunters", "trapped", "the", "strong", "lion", "in", "a", "heavy", "net."], ipa: ["ˈhʌn.tərz", "træpt", "ðə", "strɒŋ", "ˈlaɪ.ən", "ɪn", "ə", "ˈhev.i", "net"], audio_url: "/audio/week34/shadowing_5.mp3" },
+src/data/weeks/week_34/reading_hub.js:197:    text_template: "Dear Diary, today I read a wonderful fable. A huge lion was sleeping [0]_____ a shady tree in the forest. Suddenly, a tiny mouse ran across his [1]_____. The lion caught the mouse, but he let him go [2]_____ he was kind. A few days later, hunters caught the lion in a heavy [3]_____. The mouse chewed the ropes and [4]_____ the lion safely. They became [5]_____ friends!",
+src/data/weeks/week_34/reading_hub.js:202:      "3": "net",
+src/data/weeks/week_34/reading_hub.js:212:    text_template: "Today I wrote about the lion and the mouse. While the lion was [0]_____ under a tree, a tiny mouse ran [1]_____ his paw. The lion woke [2]_____ angrily. Later, hunters trapped the lion [3]_____ a net. The mouse helped him [4]_____ chewing the ropes. They stayed [5]_____ forever.",
+src/data/weeks/week_34/reading_hub.js:224:    { id: 'q1', prompt: "The huge lion was sleeping ___ a green tree in the forest.", options: ["under", "between", "above"], answer: "under" },
+src/data/weeks/week_34/reading_hub.js:225:    { id: 'q2', prompt: "A tiny mouse ran across the lion's front ___ by accident.", options: ["paw", "tail", "ear"], answer: "paw" },
+src/data/weeks/week_34/reading_hub.js:227:    { id: 'q4', prompt: "The scared mouse promised to ___ the mighty lion one day.", options: ["help", "eating", "fight"], answer: "help" },
+src/data/weeks/week_34/reading_hub.js:228:    { id: 'q5', prompt: "Two hunters placed a strong rope ___ to catch the wild animal.", options: ["net", "blanket", "towel"], answer: "net" },
+src/data/weeks/week_34/reading_hub.js:229:    { id: 'q6', prompt: "While the lion was walking, he stepped into a hidden ___.", options: ["trap", "cloud", "star"], answer: "trap" },
+src/data/weeks/week_34/reading_hub.js:232:    { id: 'q9', prompt: "The lion was ___ safely and thanked his little friend.", options: ["freed", "trapped", "lost"], answer: "freed" },
+src/data/weeks/week_34/reading_hub.js:233:    { id: 'q10', prompt: "Even the smallest friend can be a ___ help in times of need.", options: ["great", "scared", "dark"], answer: "great" }
+src/data/weeks/week_34/reading_hub.js:238:      "a lion", "a mouse", "a net", "a hunter", "a forest",
+src/data/weeks/week_34/reading_hub.js:239:      "sharp teeth", "a trap", "a rope", "a zebra", "a fable",
+src/data/weeks/week_34/reading_hub.js:246:      { id: 3, text: "Hunters tie this material between trees to catch animals.", target: "a net" },
+src/data/weeks/week_34/reading_hub.js:252:      { id: 9, text: "This is a hidden device placed in the woods to catch wild animals.", target: "a trap" },
+src/data/weeks/week_34/reading_hub.js:261:      { id: "q1", speaker_a: "Leo", text_a: "What can a tiny creature do for me?", correct_letter: "G" },
+src/data/weeks/week_34/reading_hub.js:262:      { id: "q2", speaker_a: "Milo", text_a: "One day, I might be able to help you!", correct_letter: "B" },
+src/data/weeks/week_34/reading_hub.js:264:      { id: "q4", speaker_a: "Leo", text_a: "Help! I am trapped in this net!", correct_letter: "F" },
+src/data/weeks/week_34/reading_hub.js:269:      { letter: "B", text: "Even small friends can be a great help." },
+src/data/weeks/week_34/reading_hub.js:273:      { letter: "F", text: "Please help me, little mouse!" },
+src/data/weeks/week_34/reading_hub.js:275:      { letter: "H", text: "I will call the other animals to help." }
+src/data/weeks/week_34/reading_hub.js:281:    story_text: "Harry was [0]_____ because he was reading about forest animals today. The lion was resting peacefully when a little mouse ran across his paw. 'I hope the lion will be [1]_____,' thought the mouse. The lion was very [2]_____ and let the mouse go. Later, hunters set a [3]_____ trap with thick ropes. The mouse arrived very [4]_____ and chewed through the net. 'You are the most [5]_____ friend ever,' roared the grateful lion.",
+src/data/weeks/week_34/reading_hub.js:301:    story_text: "Lions are powerful animals that live in [0]_____. They spend many hours [1]_____ during the hottest parts of the day. A tiny mouse is very small [2]_____ it has sharp front teeth. When the lion was trapped [3]_____ a rope net, the little mouse rushed [4]_____ help him immediately. He chewed [5]_____ the thick cords until the lion escaped. Animals in the wild often [6]_____ each other to stay safe. This fable teaches us [7]_____ even small friends can do great things. We should always [8]_____ kind to others because kindness is never [9]_____. They became [10]_____ friends forever.",
+src/data/weeks/week_34/reading_hub.js:309:      { id: 6, correct: "help", options: ["help", "helps", "helping"] },
+src/data/weeks/week_34/reading_hub.js:321:      { id: 6, target: "help", options: ["help", "helps", "helping"] },
+src/data/weeks/week_34/reading_hub.js:336:    story_text: "Last weekend, Oliver and his sister Lily visited the animal wildlife park. At the educational storytelling corner, a park guide was reading Aesop's famous fable to all the children. The guide explained that a huge lion lived in a peaceful forest with many tall trees. While the lion was sleeping, a tiny mouse accidentally ran across his paw. Instead of eating the mouse, the lion showed great kindness and let him go free. Later that week, hunters caught the lion in a heavy net. The mouse did not run away in fear; he rushed over and used his sharp teeth to cut the ropes. Oliver and Lily loved the story because it showed that even the smallest creature can do great things.",
+src/data/weeks/week_34/reading_hub.js:343:      { id: "q2", prompt: "How did the mouse free the lion from the net?", answer: "chewed the ropes" },
+src/data/weeks/week_34/reading_hub.js:344:      { id: "q3", prompt: "What did the lion promise the mouse?", answer: "to be his friend forever" },
+src/data/weeks/week_34/reading_hub.js:346:      { id: "q5", prompt: "What material was the net made of?", answer: "thick ropes" },
+src/data/weeks/week_34/reading_hub.js:347:      { id: "q6", prompt: "Why did the mouse help the lion?", answer: "because he promised to return the favor" },
+src/data/weeks/week_34/shadowing.js:8:      text: "One warm afternoon, a huge lion was sleeping under a shady tree.",
+src/data/weeks/week_34/shadowing.js:9:      words: ["One", "warm", "afternoon,", "a", "huge", "lion", "was", "sleeping", "under", "a", "shady", "tree."],
+src/data/weeks/week_34/shadowing.js:15:      text: "A tiny mouse ran across his big front paw by accident.",
+src/data/weeks/week_34/shadowing.js:16:      words: ["A", "tiny", "mouse", "ran", "across", "his", "big", "front", "paw", "by", "accident."],
+src/data/weeks/week_34/shadowing.js:29:      text: "The scared mouse promised to help the lion one day.",
+src/data/weeks/week_34/shadowing.js:30:      words: ["The", "scared", "mouse", "promised", "to", "help", "the", "lion", "one", "day."],
+src/data/weeks/week_34/shadowing.js:31:      ipa: ["/ðə/", "/skeəd/", "/maʊs/", "/ˈprɒmɪst/", "/tə/", "/help/", "/ðə/", "/ˈlaɪən/", "/wʌn/", "/deɪ/"],
+src/data/weeks/week_34/shadowing.js:43:      text: "A few days later, hunters trapped the lion in a heavy net.",
+src/data/weeks/week_34/shadowing.js:44:      words: ["A", "few", "days", "later,", "hunters", "trapped", "the", "lion", "in", "a", "heavy", "net."],
+src/data/weeks/week_34/shadowing.js:45:      ipa: ["/ə/", "/fjuː/", "/deɪz/", "/ˈleɪtər/", "/ˈhʌntərz/", "/træpt/", "/ðə/", "/ˈlaɪən/", "/ɪn/", "/ə/", "/ˈhevi/", "/net/"],
+src/data/weeks/week_34/shadowing.js:57:      text: "The tiny mouse heard the roar and ran quickly to the tree.",
+src/data/weeks/week_34/shadowing.js:58:      words: ["The", "tiny", "mouse", "heard", "the", "roar", "and", "ran", "quickly", "to", "the", "tree."],
+src/data/weeks/week_34/shadowing.js:71:      text: "The lion was freed safely and thanked his brave little friend.",
+src/data/weeks/week_34/shadowing.js:72:      words: ["The", "lion", "was", "freed", "safely", "and", "thanked", "his", "brave", "little", "friend."],
+src/data/weeks/week_34/singapore_math.js:8:      problemText: "The hunters had 60 meters of strong rope. They used 25 meters to make the net. How many meters of rope were left?",
+src/data/weeks/week_34/singapore_math.js:56:      problemText: "The net had 30 thick ropes. The mouse chewed 18 ropes in the morning. How many ropes were left to chew?",
+src/data/weeks/week_34/skill_practice_hub.js:7:    { id: 3, text: "Can you practice your lion roar for 20 minutes in the hall?", speaker: "Miss Green", audio_url: "/audio/week34/dictation_3.mp3" },
+src/data/weeks/week_34/skill_practice_hub.js:9:    { id: 5, text: "Please call your father on 0912 345 678 to bring the rope net.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_5.mp3" },
+src/data/weeks/week_34/skill_practice_hub.js:10:    { id: 6, text: "He will bring the net to school for 2 days.", speaker: "Sam", audio_url: "/audio/week34/dictation_6.mp3" },
+src/data/weeks/week_34/skill_practice_hub.js:11:    { id: 7, text: "That is wonderful, remember to help your little mouse friend on stage.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_7.mp3" },
+src/data/weeks/week_34/skill_practice_hub.js:19:      word_blocks: ["While", "the", "mighty", "lion", "was", "sleeping", ",", "a", "tiny", "mouse", "ran", "past", "."],
+src/data/weeks/week_34/skill_practice_hub.js:25:      text_en: "Build a sentence about the mouse promising help.",
+src/data/weeks/week_34/skill_practice_hub.js:26:      word_blocks: ["The", "little", "mouse", "promised", "to", "help", "the", "lion", "one", "day", "."],
+src/data/weeks/week_34/skill_practice_hub.js:33:      word_blocks: ["Hunters", "trapped", "the", "strong", "lion", "in", "a", "heavy", "rope", "net", "."],
+src/data/weeks/week_34/skill_practice_hub.js:34:      distractor_blocks: ["traps", "is", "tiny"]
+src/data/weeks/week_34/skill_practice_hub.js:52:    { id: 1, problem_en: "The hunters had 60 meters of strong rope. They used 25 meters to make the net. How many meters of rope were left?", bar_model_svg: "/images/week34/barmodel_w34_adv_p1.svg", answer_value: 35 },
+src/data/weeks/week_34/skill_practice_hub.js:55:    { id: 4, problem_en: "The net had 30 thick ropes. The mouse chewed 18 ropes in the morning. How many ropes were left to chew?", bar_model_svg: "/images/week34/barmodel_w34_adv_p4.svg", answer_value: 12 },
+src/data/weeks/week_34/skill_practice_hub.js:61:    explanation: "Match each forest job to the animal that does it. These are real jobs animals do to help the forest!",
+src/data/weeks/week_34/speaking_hub.js:49:      { id: 2, image_url: "/images/week34/webtoon_scene_2.png", narrator_prompt: "A tiny mouse ran across his paw and woke him up." },
+src/data/weeks/week_34/speaking_hub.js:50:      { id: 3, image_url: "/images/week34/webtoon_scene_3.png", narrator_prompt: "The lion caught him, but let him go after the mouse promised to help." },
+src/data/weeks/week_34/speaking_hub.js:59:      { id: "q3", question: "Tell me about your best friend.", topic: "friends", sample_answer_hint: "My best friend is kind and helps me with my homework." },
+src/data/weeks/week_34/vocab.js:15:    "definition_en": "A tiny furry animal with a long tail.",
+src/data/weeks/week_34/vocab.js:17:    "example_en": "A tiny mouse ran across the forest path.",
+src/data/weeks/week_34/vocab.js:35:    "example_en": "Two hunters set a trap in the woods.",
+src/data/weeks/week_34/vocab.js:41:    "word": "net",
+src/data/weeks/week_34/vocab.js:42:    "definition_en": "A strong trap made of twisted ropes.",
+src/data/weeks/week_34/vocab.js:44:    "example_en": "The lion was caught in a heavy rope net.",
+src/data/weeks/week_34/vocab.js:59:    "word": "trap",
+src/data/weeks/week_34/vocab.js:62:    "example_en": "The lion stepped into a hidden trap.",
+src/data/weeks/week_34/vocab.js:78:    "definition_en": "To release from a cage, trap or danger.",
+src/data/weeks/week_34/vocab.js:89:    "example_en": "The mouse kept his promise to help his friend.",
+src/data/weeks/week_34/vocab.js:95:    "word": "roar",
+src/data/weeks/week_34/vocab.js:98:    "example_en": "The trapped lion let out a loud roar.",
+src/data/weeks/week_34/vocab_dictionary_master.js:21:    example: "A tiny mouse accidentally ran across the forest path.",
+src/data/weeks/week_34/vocab_dictionary_master.js:23:    aliases: ["mice", "the mouse", "a mouse", "tiny mouse", "little mouse"]
+src/data/weeks/week_34/vocab_dictionary_master.js:37:    example: "Two hunters set a trap in the woods.",
+src/data/weeks/week_34/vocab_dictionary_master.js:41:  "net": {
+src/data/weeks/week_34/vocab_dictionary_master.js:43:    ipa: "/net/",
+src/data/weeks/week_34/vocab_dictionary_master.js:45:    example: "The lion was caught in a heavy rope net.",
+src/data/weeks/week_34/vocab_dictionary_master.js:46:    audioText: "net",
+src/data/weeks/week_34/vocab_dictionary_master.js:47:    aliases: ["nets", "rope net", "the net", "heavy net"]
+src/data/weeks/week_34/vocab_dictionary_master.js:57:  "trap": {
+src/data/weeks/week_34/vocab_dictionary_master.js:61:    example: "The lion stepped into a hidden trap.",
+src/data/weeks/week_34/vocab_dictionary_master.js:62:    audioText: "trap",
+src/data/weeks/week_34/vocab_dictionary_master.js:63:    aliases: ["traps", "trapped", "trapping", "a trap", "hidden trap"]
+src/data/weeks/week_34/vocab_dictionary_master.js:85:    example: "The mouse kept his promise to help his friend.",
+src/data/weeks/week_34/vocab_dictionary_master.js:89:  "roar": {
+src/data/weeks/week_34/vocab_dictionary_master.js:93:    example: "The trapped lion let out a loud roar.",
+src/data/weeks/week_34/vocab_dictionary_master.js:94:    audioText: "roar",
+src/data/weeks/week_34/vocab_dictionary_master.js:95:    aliases: ["roars", "roared", "roaring", "loud roar"]
+src/data/weeks/week_34/week_34_real.js:22:      prompt: "Share a time when you helped a friend or family member."
+src/data/weeks/week_34/word_match.js:4:  { id: 2, word: "mouse", match: "a tiny animal with a long tail", vi: "con chuột" },
+src/data/weeks/week_34/word_match.js:5:  { id: 3, word: "net", match: "strong cords tied to catch animals", vi: "tấm lưới" },
+src/data/weeks/week_34/word_match.js:6:  { id: 4, word: "trap", match: "equipment used to catch animals", vi: "cái bẫy" },
+src/data/weeks/week_34/word_match.js:7:  { id: 5, word: "roar", match: "a very loud deep sound", vi: "tiếng gầm" },
+src/data/weeks/week_34/word_match.js:9:  { id: 7, word: "tiny", match: "extremely small in size", vi: "tí hon" },
+src/data/weeks/week_34/word_match.js:10:  { id: 8, word: "huge", match: "extremely large in size", vi: "khổng lồ" },
+src/data/weeks/week_34/word_power.js:3:  { id: 1, base: "tiny", synonym: "very small", collocation: "tiny mouse", vi: "chú chuột tí hon" },
+src/data/weeks/week_34/word_power.js:4:  { id: 2, base: "huge", synonym: "enormous", collocation: "huge lion", vi: "sư tử khổng lồ" },
+src/data/weeks/week_34/word_power.js:6:  { id: 4, base: "strong", synonym: "tough", collocation: "strong rope net", vi: "lưới thừng chắc chắn" },
+src/data/weeks/week_34/word_power.js:7:  { id: 5, base: "brave", synonym: "courageous", collocation: "brave little friend", vi: "người bạn nhỏ dũng cảm" }
+src/data/weeks/week_34/writing.js:9:  model_sentence: "While a huge lion was sleeping under a tree, a tiny mouse ran across his paw. The lion caught the mouse but let him go free. Later, hunters trapped the lion in a heavy rope net. The brave mouse chewed the ropes with his sharp teeth and freed his friend.",
+src/data/weeks/week_34/writing.js:31:    action_verbs: ['was sleeping', 'ran across', 'caught mouse', 'let him go', 'trapped in net', 'chewed ropes', 'freed the lion'],
+src/data/weeks/week_34/writing.js:33:    cumulative_chunks: ['sleeping under a tree', 'ran across his paw', 'caught the tiny mouse', 'trapped in a heavy net', 'chewed through the ropes'],
+src/data/weeks/week_34/writing.js:34:    grammar_boosters: ['was sleeping', 'was walking', 'were setting a trap', 'had promised']
+src/data/weeks/week_34/writing.js:37:    { template: "While the lion was sleeping, a tiny ___ ran across his paw.", answers: ["mouse"] },
+src/data/weeks/week_34/writing.js:39:    { template: "Hunters trapped the lion in a strong rope ___.", answers: ["net"] },
+src/data/weeks/week_34/writing.js:50:        caption: "Panel 1: The tiny mouse runs across the sleeping lion's paw",
+src/data/weeks/week_34/writing.js:51:        character_guide: "Lion (sleeping under tree) vs. Mouse (tiny and fast)",
+src/data/weeks/week_34/writing.js:53:        nova_question_en: "Look at Panel 1: What was the huge lion doing when the tiny mouse ran across his paw?",
+src/data/weeks/week_34/writing.js:54:        pills: ["was sleeping under a tree,", "a tiny mouse ran across,", "on a warm afternoon,", "in the green forest,"],
+src/data/weeks/week_34/writing.js:56:        sentence_frame: "One warm afternoon, a huge lion was sleeping under a tree when a tiny mouse ran across his paw.",
+src/data/weeks/week_34/writing.js:62:        caption: "Panel 2: The lion is caught in the hunters' rope net",
+src/data/weeks/week_34/writing.js:63:        character_guide: "Lion (trapped and roaring) vs. Hunters (placed the trap)",
+src/data/weeks/week_34/writing.js:64:        action_tags: ["trapped", "net", "roaring", "ropes"],
+src/data/weeks/week_34/writing.js:66:        pills: ["was walking down the path,", "stepped into a hidden trap,", "a heavy rope net,", "roared loudly for help,"],
+src/data/weeks/week_34/writing.js:68:        sentence_frame: "A few days later, the lion stepped into a hidden rope net and roared loudly for help.",
+src/data/weeks/week_34/writing.js:77:        nova_question_en: "How did the little mouse help the mighty lion in Panel 3?",
+src/data/weeks/week_34/writing_hub.js:11:      { image_url: "/images/week34/webtoon_scene_4.png", caption: "Hunters trapped the lion in a heavy rope net." },
+src/data/weeks/week_34/writing_hub.js:34:        caption: "Two hunters trapped the lion in a heavy net.",
+src/data/weeks/week_34/writing_hub.js:35:        frame_L1: "Suddenly, two hunters trapped the lion in a heavy net.",
+src/data/weeks/week_34/writing_hub.js:37:        display_chips: ["in a heavy net", "two hunters", "trapped the lion"],
+src/data/weeks/week_34/writing_hub.js:38:        pills: ["in a heavy net", "two hunters", "trapped the lion"],
+src/data/weeks/week_34/writing_hub.js:39:        correct_order: ["two hunters", "trapped the lion", "in a heavy net"],
+src/data/weeks/week_34/writing_hub.js:40:        audio: "Suddenly, two hunters trapped the lion in a heavy net."
+src/data/weeks/week_34/writing_hub.js:59:      "hunters", "trapped", "heavy net", "thick ropes", "chewed",
+src/data/weeks/week_34/writing_hub.js:73:    action_manner: ["was sleeping peacefully", "ran quickly across", "chewed through ropes", "roared loudly for help"],
+src/data/weeks/week_34/writing_hub.js:74:    problem_event: ["stepped into a rope trap", "was caught in a heavy net", "felt scared and helpless"],
+src/data/weeks/week_34/writing_hub.js:91:      "🐭 Small Helpers": ["clean the forest floor", "plant new seeds", "help larger friends in trouble"]
+src/data/weeks/week_34/writing_hub.js:95:      "🤝 Teamwork Actions": ["animals work together in harmony", "different skills help everyone survive", "cooperation makes the forest safer"],
+src/data/weeks/week_34/writing_hub.js:100:      "🏆 Key Conclusion": ["true friendship and teamwork help all creatures", "size does not matter when helping friends", "cooperation keeps nature strong"],
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-26T02:05:11Z

@@ -1,0 +1,279 @@
+### STEP: c1
+### CMD: git log --reverse --format=%H|%cd|%s --date=iso --numstat v33-golden..e8dbc532 -- src/data/weeks/week_33 public/audio/week33 public/images/week33 docs/GATE15_SPEC_W33.json
+### CWD: /Users/binhnguyen/projects/Engquest3k
+### GIT_HEAD: a3e8ae4875183c2ea1b86f2801b464ead89aa356
+### START_UTC: 2026-10-23T02:50:21Z
+### ----- OUTPUT -----
+33da40f8d66f79389289b156dddcd07b42332153|2026-09-01 12:10:11 +0700|fix(w33-content): resolve all 6 Cambridge audit findings
+
+13	3	src/data/weeks/week_33/blueprint.json
+1	2	src/data/weeks/week_33/listening_hub.js
+81	44	src/data/weeks/week_33/reading_hub.js
+14	14	src/data/weeks/week_33/vocab.js
+4e9cc2ce8c938ddf1242ff51e82ea5cd93886f93|2026-09-01 20:46:24 +0700|fix(ux): English-only UI + video challenge intro + story writer scaffold upgrade
+
+46	25	src/data/weeks/week_33/writing_hub.js
+c4b14930380731b02f17022da3e4b94ee09c690e|2026-09-01 21:45:40 +0700|feat(s3): expand story writer + video challenge to 5-scene Cambridge S3 format
+
+-	-	public/images/week33/ps_5.png
+-	-	public/images/week33/writing_panel_4.png
+-	-	public/images/week33/writing_panel_5.png
+27	5	src/data/weeks/week_33/speaking_hub.js
+43	42	src/data/weeks/week_33/writing_hub.js
+5c70e8d8117727ceb8e627b55166fcb15655804f|2026-09-01 21:50:40 +0700|fix(image): writing_panel_3 - restore Tom's full body on bench
+
+-	-	public/images/week33/writing_panel_3.png
+57de2884d22ce90ff18eb5549e5ed4fb61545e4e|2026-09-02 14:20:59 +0700|fix(image): writing_panel_3 v3 — nurse faces Tom, no artifact legs
+
+-	-	public/images/week33/writing_panel_3.png
+2abf15235ea75e6a0ba3a78ef3f5b8ce9269ab98|2026-09-02 14:38:25 +0700|feat(story-writer): 2-sentence chips per scene + corrected story content
+
+33	17	src/data/weeks/week_33/writing_hub.js
+dcff2d991d48a2890b5aac55f9fa4e3be2b72b2c|2026-09-02 16:44:58 +0700|fix(story-writer): 1 scene = 1 textarea = flat word bank + connectors for all scenes
+
+5	14	src/data/weeks/week_33/writing_hub.js
+29c8f76b960b559e80891248c72bd8e246fd3d82|2026-09-02 18:46:01 +0700|fix(story-writer): smart cursor-based insertion for connectors and pills
+
+3	3	src/data/weeks/week_33/writing_hub.js
+aea70a7b35fed75f888494a45b4d78a81ef2d2bf|2026-09-02 19:22:46 +0700|fix(story-writer): shuffle pills & inputs across all 5 scenes
+
+6	10	src/data/weeks/week_33/writing_hub.js
+06aa72225cfe8b68d3fdc4cdb5fc2906b0323501|2026-09-02 19:52:34 +0700|feat(story-writer): collocations & chunks invariant across all 5 scenes + SOP/AGENTS.md rules
+
+14	14	src/data/weeks/week_33/writing_hub.js
+a95f4c24144b40f628f418f9af8dfab5f1515c29|2026-09-02 20:24:40 +0700|fix(progress & grammar): auto-save on typing/steps + align chunks to Past Continuous
+
+12	12	src/data/weeks/week_33/writing_hub.js
+c80e44eb23cd15e98330f7523935abc34ba2c1b6|2026-09-03 13:07:11 +0700|fix(audio): pre-generate static MP3s and restore Tier 0 static audio priority for mobile & desktop
+
+-	-	public/audio/week33/clil_friction_p1.mp3
+-	-	public/audio/week33/clil_friction_p2.mp3
+-	-	public/audio/week33/shadowing_1.mp3
+-	-	public/audio/week33/shadowing_2.mp3
+-	-	public/audio/week33/shadowing_3.mp3
+-	-	public/audio/week33/shadowing_4.mp3
+-	-	public/audio/week33/shadowing_5.mp3
+-	-	public/audio/week33/shadowing_6.mp3
+-	-	public/audio/week33/shadowing_7.mp3
+-	-	public/audio/week33/shadowing_8.mp3
+69565f01a53de1672f24359ff2577a9c2293dc27|2026-09-03 13:26:44 +0700|feat(clil): upgrade Fact Finder reading text to story-driven narrative & re-generate studio MP3s
+
+-	-	public/audio/week33/clil_friction.mp3
+-	-	public/audio/week33/clil_friction_p1.mp3
+-	-	public/audio/week33/clil_friction_p2.mp3
+-	-	public/audio/week33/shadowing_2.mp3
+-	-	public/audio/week33/shadowing_3.mp3
+-	-	public/audio/week33/shadowing_4.mp3
+-	-	public/audio/week33/shadowing_6.mp3
+-	-	public/audio/week33/shadowing_7.mp3
+-	-	public/audio/week33/shadowing_8.mp3
+4	4	src/data/weeks/week_33/reading_hub.js
+2a0ef74566fd9b07501d3da913648d8f52c0a791|2026-09-03 13:35:17 +0700|fix(clil): align check questions, sentence drills & critical thinking with story-driven narrative
+
+22	22	src/data/weeks/week_33/reading_hub.js
+3a9bf7f716262cf3d5db80836bb59ac5935053bc|2026-09-03 13:41:09 +0700|fix(clil): curate selective Grammar X-Ray patterns, polish Vocab Focus chunks & upgrade to 4-option MCQs
+
+39	17	src/data/weeks/week_33/reading_hub.js
+67524fd6c3e662bd7509370c5e67f7156017f884|2026-09-03 13:53:24 +0700|fix(dict): populate master dictionary with all new chunks/collocations & enforce dictionary invariant
+
+112	0	src/data/weeks/week_33/vocab_dictionary_master.js
+e4121a987707761dab0d97e25af76d60e0e6e77e|2026-09-03 14:22:21 +0700|fix(writer): restructure Story Writer 5 scenes with 2-sentence architecture & clean connectors
+
+136	0	src/data/weeks/week_33/vocab_dictionary_master.js
+37	43	src/data/weeks/week_33/writing_hub.js
+acc9edfd1456e3c7805d4d939cda452f043c1e57|2026-09-03 14:36:20 +0700|fix(writer): eliminate locked connector badge & unify all connectors as selectable options
+
+5	10	src/data/weeks/week_33/writing_hub.js
+6dc56793c38c64d976135ae8c1045e43133532ee|2026-09-03 16:00:25 +0700|fix(ui): overhaul task layouts, Boss Castle header, and 2-clause grammar across W33
+
+46	26	src/data/weeks/week_33/skill_practice_hub.js
+7c7ae0c6da565b2e063ececa8b9429d900ccdd50|2026-09-04 10:07:43 +0700|fix(w33): correct story logic sequence and pre-generate static audios for scene explorer & voice shadow
+
+-	-	public/audio/week33/read_stem.mp3
+-	-	public/audio/week33/scene_1.mp3
+-	-	public/audio/week33/scene_2.mp3
+-	-	public/audio/week33/scene_3.mp3
+-	-	public/audio/week33/scene_4.mp3
+-	-	public/audio/week33/scene_5.mp3
+-	-	public/audio/week33/shadowing_1.mp3
+-	-	public/audio/week33/shadowing_2.mp3
+-	-	public/audio/week33/shadowing_3.mp3
+-	-	public/audio/week33/shadowing_4.mp3
+-	-	public/audio/week33/shadowing_5.mp3
+-	-	public/audio/week33/shadowing_6.mp3
+-	-	public/audio/week33/shadowing_7.mp3
+-	-	public/audio/week33/shadowing_8.mp3
+32	27	src/data/weeks/week_33/read.js
+20	20	src/data/weeks/week_33/shadowing.js
+3c622a1597aa5197c212a715d2cc97270d68da83|2026-09-04 10:44:32 +0700|fix(w33): recalibrate find differences hotspots, fix mobile image clipping, and sync story scenes across writer and challenge
+
+-	-	public/audio/week33/read_stem.mp3
+-	-	public/audio/week33/scene_1.mp3
+-	-	public/audio/week33/scene_2.mp3
+-	-	public/audio/week33/scene_3.mp3
+-	-	public/audio/week33/scene_4.mp3
+-	-	public/audio/week33/scene_5.mp3
+-	-	public/audio/week33/shadowing_1.mp3
+-	-	public/audio/week33/shadowing_2.mp3
+-	-	public/audio/week33/shadowing_3.mp3
+-	-	public/audio/week33/shadowing_4.mp3
+-	-	public/audio/week33/shadowing_5.mp3
+-	-	public/audio/week33/shadowing_6.mp3
+-	-	public/audio/week33/shadowing_7.mp3
+-	-	public/audio/week33/shadowing_8.mp3
+42	42	src/data/weeks/week_33/read.js
+9	8	src/data/weeks/week_33/speaking_hub.js
+38	38	src/data/weeks/week_33/writing_hub.js
+4da17b33619a93f43eaf5650860a7db81dd9d7f2|2026-09-04 10:59:46 +0700|fix(w33): use canonical voice shadow sentence for scene 2 in scene explorer and retell
+
+-	-	public/audio/week33/scene_2.mp3
+10	10	src/data/weeks/week_33/read.js
+1	1	src/data/weeks/week_33/speaking_hub.js
+bfa5cf80aadb1694b70cca4f4b5f5214d13d3ce0|2026-09-04 12:47:47 +0700|feat(speaking): enable 6th difference for wall clock and align Cambridge scoring target (4 diffs)
+
+2	1	src/data/weeks/week_33/speaking_hub.js
+8f0cefbb59c0f15b3253cdfdc4e0d8d3368ea65e|2026-09-04 12:56:15 +0700|fix(speaking): recalibrate wall clock hotspot to exact circular clock coordinates (x: 61%, y: 20%)
+
+1	1	src/data/weeks/week_33/speaking_hub.js
+531d56f5d3bba53cf0f79f8b0a02f9c084069426|2026-09-04 13:35:50 +0700|fix(story_writer): align all 5 scenes, inputs, hints and pills with canonical scene explorer narrative
+
+-	-	public/images/week33/ps_1.png
+-	-	public/images/week33/ps_2.png
+-	-	public/images/week33/ps_3.png
+-	-	public/images/week33/ps_4.png
+-	-	public/images/week33/ps_5.png
+-	-	public/images/week33/writing_panel_1.png
+-	-	public/images/week33/writing_panel_2.png
+-	-	public/images/week33/writing_panel_3.png
+-	-	public/images/week33/writing_panel_4.png
+-	-	public/images/week33/writing_panel_5.png
+64	39	src/data/weeks/week_33/writing.js
+44	38	src/data/weeks/week_33/writing_hub.js
+243c5d38f6a343506f2f9915364bf8034e43bfbd|2026-09-04 14:34:58 +0700|fix(info_exchange): upgrade to 5-question Cambridge Flyers standard, widen card booklet, and fix Table B text overlap
+
+51	5	src/data/weeks/week_33/speaking_hub.js
+c23ebe5755f849d92b19058d802844743df39b58|2026-09-04 15:37:32 +0700|fix(info_exchange): align order with Cambridge standard (Card 1 Answer first, Card 2 Ask second) and render authentic 2-column table
+
+42	25	src/data/weeks/week_33/speaking_hub.js
+bc3051afc2535bea8efa5340977ed3821d711610|2026-09-04 19:34:31 +0700|feat(zones): standardize 15 Quests / 5 Zones architecture, Action Lab naming, and resolve audit findings
+
+15	2	src/data/weeks/week_33/reading_hub.js
+027e43d1fddfb9fe87b7c2f81b2c4f257d36a177|2026-09-04 20:39:31 +0700|feat(curriculum): master architecture W01-156, digital syllabus bridge map, and SOP v2.0
+
+2	1	src/data/weeks/week_33/listening_hub.js
+16	14	src/data/weeks/week_33/reading_hub.js
+12	11	src/data/weeks/week_33/writing_hub.js
+0106ce00699137b0518163b4c1bfcb3a80ad4afa|2026-09-05 15:44:32 +0700|fix(w33): fix dictation diff alignment, wire static audio to discovery report, expand action lab to 3 scenarios, and dynamic info exchange highlight [multi-agent-review]
+
+-	-	public/audio/week33/discovery_hotspot_1.mp3
+-	-	public/audio/week33/discovery_hotspot_2.mp3
+-	-	public/audio/week33/discovery_hotspot_3.mp3
+-	-	public/audio/week33/discovery_report_final.mp3
+-	-	public/audio/week33/info_exchange_q5.mp3
+1	1	src/data/weeks/week_33/reading_hub.js
+148	2	src/data/weeks/week_33/skill_practice_hub.js
+9d95e6779953aa2d1f7d550e6139eb2337dc9a25|2026-09-05 16:12:03 +0700|fix(ui): expand task container to max-w-7xl, implement 2-line mobile layout for info exchange, and eliminate bubble truncation in action lab
+
+17	17	src/data/weeks/week_33/skill_practice_hub.js
+7f833dac67ad352a9a7675b675d49953c7e0f281|2026-09-05 17:04:08 +0700|fix(ui): eliminate nested cards, scale responsive typography, enhance mobile info exchange, and update dictation everyday dialogue
+
+-	-	public/audio/week33/dictation_1.mp3
+-	-	public/audio/week33/dictation_2.mp3
+-	-	public/audio/week33/dictation_3.mp3
+-	-	public/audio/week33/dictation_4.mp3
+-	-	public/audio/week33/dictation_5.mp3
+-	-	public/audio/week33/dictation_6.mp3
+-	-	public/audio/week33/dictation_7.mp3
+-	-	public/audio/week33/dictation_8.mp3
+10	6	src/data/weeks/week_33/dictation.js
+8	5	src/data/weeks/week_33/skill_practice_hub.js
+14faed07cd82a77401fa9377395753e5c5be3cc5|2026-09-05 17:53:19 +0700|fix(ui): 2-column story retell, remove black borders in boss listening, remove duplicate map button in action lab, expand arena battle, and update tom dictation
+
+-	-	public/audio/week33/dictation_1.mp3
+-	-	public/audio/week33/dictation_2.mp3
+-	-	public/audio/week33/dictation_3.mp3
+-	-	public/audio/week33/dictation_4.mp3
+-	-	public/audio/week33/dictation_5.mp3
+-	-	public/audio/week33/dictation_6.mp3
+-	-	public/audio/week33/dictation_7.mp3
+-	-	public/audio/week33/dictation_8.mp3
+9	8	src/data/weeks/week_33/dictation.js
+8	8	src/data/weeks/week_33/skill_practice_hub.js
+fe1f83518576dec4aeb8f04464d4ffff48783d46|2026-09-05 18:37:57 +0700|fix(audit): zero-scroll laptop fit, hide grammar duel answer, sync speed match vocab, and scale typography
+
+63	12	src/data/weeks/week_33/skill_practice_hub.js
+fb21b591aea6970c1db55c76894143e9e1300119|2026-09-05 20:22:02 +0700|fix(ui): polish grammar duel english cues, scale fact finder and boss reading fonts, calibrate action lab aspect ratio, tighten discovery report, and enrich info exchange acceptable answers
+
+17	17	src/data/weeks/week_33/skill_practice_hub.js
+77	11	src/data/weeks/week_33/speaking_hub.js
+fc0f93d13538914c0a48f8852a6279b651d102b5|2026-09-05 22:14:41 +0700|fix(w33-audit): enforce 4-tier audio invariant, zero-scroll framing, progress persistence & layout fixes [multi-agent-review]
+
+-	-	public/audio/week33/info_exchange_a1_model.mp3
+-	-	public/audio/week33/info_exchange_a2_model.mp3
+-	-	public/audio/week33/info_exchange_a3_model.mp3
+-	-	public/audio/week33/info_exchange_a4_model.mp3
+-	-	public/audio/week33/info_exchange_a5_model.mp3
+-	-	public/audio/week33/info_exchange_b1_answer.mp3
+-	-	public/audio/week33/info_exchange_b2_answer.mp3
+-	-	public/audio/week33/info_exchange_b3_answer.mp3
+-	-	public/audio/week33/info_exchange_b4_answer.mp3
+-	-	public/audio/week33/info_exchange_b5_answer.mp3
+-	-	public/audio/week33/info_exchange_reply_1.mp3
+-	-	public/audio/week33/info_exchange_reply_2.mp3
+-	-	public/audio/week33/info_exchange_reply_3.mp3
+-	-	public/audio/week33/info_exchange_reply_4.mp3
+-	-	public/audio/week33/info_exchange_reply_5.mp3
+-	-	public/audio/week33/vocab_accident.mp3
+-	-	public/audio/week33/vocab_arm.mp3
+-	-	public/audio/week33/vocab_bandage.mp3
+-	-	public/audio/week33/vocab_careful.mp3
+-	-	public/audio/week33/vocab_clumsy.mp3
+-	-	public/audio/week33/vocab_cold_pack.mp3
+-	-	public/audio/week33/vocab_corridor.mp3
+-	-	public/audio/week33/vocab_explain.mp3
+-	-	public/audio/week33/vocab_fix.mp3
+-	-	public/audio/week33/vocab_get_better.mp3
+-	-	public/audio/week33/vocab_head.mp3
+-	-	public/audio/week33/vocab_knee.mp3
+-	-	public/audio/week33/vocab_leg.mp3
+-	-	public/audio/week33/vocab_lesson.mp3
+-	-	public/audio/week33/vocab_mistake.mp3
+-	-	public/audio/week33/vocab_nurse.mp3
+-	-	public/audio/week33/vocab_safe.mp3
+-	-	public/audio/week33/vocab_slipped.mp3
+-	-	public/audio/week33/vocab_sorry.mp3
+-	-	public/audio/week33/vocab_terrible.mp3
+4	4	src/data/weeks/week_33/skill_practice_hub.js
+25	5	src/data/weeks/week_33/speaking_hub.js
+b093a5b7203649d0da7a253b6336da057ff856fb|2026-09-06 10:04:24 +0700|feat(w33-pedagogy): overhaul SRS warmup, info exchange audio, listening framing, and elevate Quick Write to Step 3 in Discovery Report
+
+-	-	public/audio/week33/info_exchange_a1_model.mp3
+30b8c7daf582fe8d1f954e00bd4bf0c35355dda2|2026-09-06 12:30:37 +0700|fix(pedagogy-w33): dual model audio for info exchange, complete zero-L1 in QuickWrite, and restructure 4-tier cause-effect science logic
+
+-	-	public/audio/week33/info_exchange_a1_m1.mp3
+-	-	public/audio/week33/info_exchange_a1_m2.mp3
+-	-	public/audio/week33/info_exchange_a1_model.mp3
+64e392711aba28fae6a9298ff9ef8ebcbfb03f8f|2026-09-06 13:05:17 +0700|feat(games): audit & add 3 W01-W32 mini-games, fix SRS mobile overflow & Lexio reactions, update info exchange audios
+
+-	-	public/audio/week33/info_exchange_a2_m1.mp3
+-	-	public/audio/week33/info_exchange_a2_m2.mp3
+-	-	public/audio/week33/info_exchange_a2_model.mp3
+-	-	public/audio/week33/info_exchange_a3_m1.mp3
+-	-	public/audio/week33/info_exchange_a3_m2.mp3
+-	-	public/audio/week33/info_exchange_a3_model.mp3
+-	-	public/audio/week33/info_exchange_a4_m1.mp3
+-	-	public/audio/week33/info_exchange_a4_m2.mp3
+-	-	public/audio/week33/info_exchange_a4_model.mp3
+-	-	public/audio/week33/info_exchange_a5_m1.mp3
+-	-	public/audio/week33/info_exchange_a5_m2.mp3
+-	-	public/audio/week33/info_exchange_a5_model.mp3
+fc5202476f4526992d7dbcf272b7a1d3237ed385|2026-09-06 13:36:27 +0700|fix(audio): regenerate cue 4 and cue 5 model 2 audios with exact UI text and verify in Chrome
+
+-	-	public/audio/week33/info_exchange_a4_m1.mp3
+-	-	public/audio/week33/info_exchange_a4_m2.mp3
+-	-	public/audio/week33/info_exchange_a4_model.mp3
+-	-	public/audio/week33/info_exchange_a5_m2.mp3
+-	-	public/audio/week33/info_exchange_a5_model.mp3
+### ----- END -----
+### EXIT: 0
+### END_UTC: 2026-10-23T02:50:21Z

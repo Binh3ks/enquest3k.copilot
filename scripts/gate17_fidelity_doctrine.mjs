@@ -119,13 +119,14 @@ async function runGate17() {
     mathMatch = rawSkillPractice.singapore_math.every((item, idx) => {
       const orig = rawSgMath[idx];
       const ansVal = item.answer_value ?? item.correctAnswer;
-      const origAns = orig.answer_value ?? orig.correctAnswer;
+      const origAns = orig?.answer_value ?? orig?.correctAnswer;
       return ansVal === origAns;
     });
-  } else if (weekNum === 33) {
-    mathMatch = true; // W33 has legacy embedded structure already verified
+  } else if (spHas4 && (!rawSgMath || rawSgMath.length === 0)) {
+    // If singapore_math.js is not present as a separate file, skill_practice_hub is the single source of truth
+    mathMatch = true;
   }
-  const invHubPass = lHubIsPure && (weekNum === 33 || (spHas4 && mathMatch));
+  const invHubPass = lHubIsPure && spHas4 && mathMatch;
   invariants.push({
     id: "INV-HUB",
     pass: invHubPass,
@@ -203,13 +204,13 @@ async function runGate17() {
     if (!invR1Pass) failReasons.push(`INV-R1 failed: R1 example missing, word_bank != 15, defs != 10, or duplicate example target`);
 
     // 6. INV-R2
-    const r2 = rawReading?.rw_part2 || rawWriting?.rw_part_2 || {};
-    const r2Ex = r2.example;
-    const r2Turns = r2.turns || r2.dialogue || [];
-    const r2Options = r2.answer_options || r2.options || [];
+    const r2 = rawReading?.rw_part2 || rawReading?.rw_part_2 || rawWriting?.rw_part2 || rawWriting?.rw_part_2 || {};
+    const r2Ex = r2.example || rawWriting?.rw_part_2?.example || rawWriting?.rw_part2?.example;
+    const r2Turns = r2.turns || r2.dialogue || rawWriting?.rw_part_2?.turns || [];
+    const r2Options = r2.answer_options || r2.options || rawWriting?.rw_part_2?.answer_options || [];
     const r2OptValid = r2Options.length === 8 && r2Options.every(o => o.text && o.text.trim().length > 0);
-    const invR2Pass = (weekNum === 33 || !!r2Ex) && r2Turns.length === 5 && r2OptValid;
-    invariants.push({ id: 'INV-R2', pass: invR2Pass, detail: `R2 example: ${!!r2Ex || weekNum === 33}, turns: ${r2Turns.length}/5, options: ${r2Options.length}/8, options valid: ${r2OptValid}` });
+    const invR2Pass = !!r2Ex && r2Turns.length === 5 && r2OptValid;
+    invariants.push({ id: 'INV-R2', pass: invR2Pass, detail: `R2 example: ${!!r2Ex}, turns: ${r2Turns.length}/5, options: ${r2Options.length}/8, options valid: ${r2OptValid}` });
     if (!invR2Pass) failReasons.push(`INV-R2 failed: R2 example missing, turns != 5, or options != 8 valid text items`);
 
     // 7. INV-R3
@@ -231,12 +232,12 @@ async function runGate17() {
     if (!invR4Pass) failReasons.push(`INV-R4 failed: R4 example blank != 0 or blanks != 10 with 3 options each`);
 
     // 9. INV-R5
-    const r5 = rawReading?.rw_part5 || rawWriting?.rw_part_5 || {};
-    const r5Ex = !!r5.example;
-    const r5Qs = r5.questions || r5.summary_sentences || [];
+    const r5 = rawReading?.rw_part5 || rawReading?.rw_part_5 || rawWriting?.rw_part5 || rawWriting?.rw_part_5 || {};
+    const r5Ex = !!(r5.example || rawWriting?.rw_part_5?.example || rawWriting?.rw_part5?.example);
+    const r5Qs = r5.questions || r5.summary_sentences || rawWriting?.rw_part_5?.questions || [];
     const r5NoOptions = r5Qs.length === 7 && r5Qs.every(q => !q.options);
-    const invR5Pass = (weekNum === 33 || r5Ex) && r5NoOptions;
-    invariants.push({ id: 'INV-R5', pass: invR5Pass, detail: `R5 example: ${r5Ex || weekNum === 33}, questions: ${r5Qs.length}/7, no options field: ${r5NoOptions}` });
+    const invR5Pass = r5Ex && r5NoOptions;
+    invariants.push({ id: 'INV-R5', pass: invR5Pass, detail: `R5 example: ${r5Ex}, questions: ${r5Qs.length}/7, no options field: ${r5NoOptions}` });
     if (!invR5Pass) failReasons.push(`INV-R5 failed: R5 example missing, questions != 7, or contains forbidden options field`);
 
     // 10. INV-R6
