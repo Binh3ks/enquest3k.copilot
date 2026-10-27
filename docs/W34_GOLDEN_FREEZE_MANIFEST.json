@@ -32,7 +32,7 @@
     "src/data/weeks/week_34/vocab.js": "34315f91b873b8e401072869b2c70e3a8df329a40f3629316f66210d782063ef",
     "src/data/weeks/week_34/read.js": "7eeeedc475ba7c742265081c14f7a12bf8db81ca131e0d6c8f806e73a513fcd2",
     "src/data/weeks/week_34/dictation.js": "38290d49a3f2b462c9d3d2596466de6c46d64770fa7a83795df8b70e3a8d23f8",
-    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md": "05b440d415ce1771fc53767d1405ec33f484cc8bef6159f46a9d589ae1bc41de"
+    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md": "814ef60a348ce66b64731775276b1d277899c880f6e659ab2b7690449cfe96c9"
   },
   "governanceDocumentation": [
     "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md"
@@ -59,6 +59,7 @@
     { "gate": "Gate 3", "script": "scripts/gate3_media_integrity.mjs 34", "target": "73/73 MP3s verified" },
     { "gate": "Gate 11", "script": "scripts/gate11_content_richness.mjs 34", "target": "Word counts and variety standard" },
     { "gate": "Gate 12", "script": "scripts/gate12_comprehensive_cefr.mjs 34", "target": "0 B1/B2 violations" },
+    { "gate": "Gate 15", "script": "scripts/gate15_production_dom_assertions.mjs 34 --local", "target": "15/15 Quests live DOM PASS + screenshot dedup >= 15 unique hashes" },
     { "gate": "Gate 16", "script": "scripts/gate16_content_quality.mjs 34", "target": "100% single-source content purity" },
     { "gate": "Gate 17", "script": "scripts/gate17_fidelity_doctrine.mjs 34", "target": "16-part Cambridge schema & invariants PASS" },
     { "gate": "W34 Freeze Guard", "script": "scripts/guard_golden_w34_freeze.mjs", "target": "SHA-256 integrity verification" }

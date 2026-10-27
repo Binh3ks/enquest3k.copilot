@@ -664,4 +664,26 @@ dán diff trước khi gộp vào commit W34.
 3 commit riêng biệt (F6D2 / W34 / AMENDMENT-002 W33), (3) chạy lại toàn
 bộ gate suite 1 lần cuối trên trạng thái đã commit sạch, (4) chỉ push
 sau khi tất cả pass, báo cáo nhánh/đường dẫn test cho Owner.
+W34 đã đóng băng + push thành công lên production (commit 1fd67463,
+origin/main). Xác nhận qua đọc trực tiếp file manifest + đối chiếu với
+ảnh chụp đã tự kiểm chứng độc lập ở vòng trước — không phát hiện sai
+lệch. 3 commit tách riêng đúng yêu cầu (F6D2 / W34 / AMENDMENT-002 W33),
+đóng luôn được việc AMENDMENT-002 tồn đọng nhiều vòng. Toàn bộ gate suite
+(2 Freeze Guard + Gate 3/11/12/15/16/17 + build) PASS với log thật.
+
+🟡 Phát hiện nhỏ: mảng "validationSuite" trong chính file manifest THIẾU
+Gate 15 — gate quan trọng nhất, từng là nguyên nhân toàn bộ sự cố vừa
+qua. Cần bổ sung vào manifest trước khi dùng làm khuôn mẫu cho 136 tuần
+sau, nếu không rất dễ bị bỏ sót lặp lại ở các tuần tiếp theo. Đã yêu cầu
+Antigravity sửa 1 dòng, commit riêng, push — không cần chạy lại gate
+suite cho thay đổi thuần documentation này.
+
+Bước tiếp theo: Owner tự vào test trực tiếp 6 đường dẫn production được
+cung cấp (đây là lớp kiểm chứng cuối không gate nào thay thế được). Sau
+đó, việc cần bàn tiếp là câu hỏi chiến lược còn treo: Giai đoạn 1-2 của
+SOP (trích syllabus → blueprint, biên soạn 7 hạng mục sư phạm) hiện hoàn
+toàn thủ công, được chính Antigravity xác nhận là nút thắt cổ chai lớn
+nhất cho 136 tuần còn lại — cần quyết định có đầu tư xây tool tự động hóa
+trước khi chạy mass production hay không, trước khi duyệt Kế hoạch Triển
+khai 4 Làn sóng (TÀI LIỆU 3).
 
