@@ -5,7 +5,8 @@
   "theme": "The Lion and the Mouse & Forest Ecosystem",
   "cefrLevel": "A2 Flyers / Stage 1 Young Learners (Ages 7–10)",
   "freezeDate": "2026-10-26T15:37:00Z",
-  "lifecycleState": "GOLDEN_FROZEN",
+  "lifecycleState": "CONTENT_COMPLETE_PENDING_RUNTIME_VERIFICATION",
+  "downgradeReason": "Pending resolution of W34 audio mismatches (ASR token discrepancies, missing assets, and shared component W33 fallbacks)",
   "rotaryCycle": {
     "cycleNumber": 1,
     "testedSkills": ["listening_p1", "listening_p2", "listening_p3", "listening_p4", "listening_p5"],
