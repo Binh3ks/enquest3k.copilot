@@ -17,7 +17,7 @@ import './SRSFlashcardReview.css';
 
 const MAX_CARDS = 8;
 
-export default function SRSFlashcardReview({ onComplete, weekNumber = 33 }) {
+export default function SRSFlashcardReview({ onComplete, weekNumber }) {
   const [cards, setCards] = useState([]);
   const [gameMode, setGameMode] = useState('flip'); // 'flip' | 'match' | 'quiz'
   const [currentIndex, setCurrentIndex] = useState(0);

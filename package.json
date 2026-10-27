@@ -9,6 +9,7 @@
     "content:verify:wordwagon": "node scripts/verify_wordwagon_content_length.mjs",
     "content:verify:batch1": "node scripts/verify_batch1_runner_content.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:audio": "node scripts/lint_no_hardcoded_week_audio.mjs",
     "preview": "vite preview",
     "context:build": "node scripts/build-context.mjs",
     "context:log": "node scripts/context-log.mjs",

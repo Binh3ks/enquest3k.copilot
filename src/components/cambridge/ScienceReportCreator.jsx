@@ -5,7 +5,7 @@ import { playButtonClick, playCorrectSound, playVictoryFanfare } from '../../uti
 import { speakText } from '../../utils/AudioHelper';
 import QuickWritePanel from '../common/QuickWritePanel';
 
-export default function ScienceReportCreator({ reportTopic, customConfig, weekNumber = 33, onComplete }) {
+export default function ScienceReportCreator({ reportTopic, customConfig, weekNumber, onComplete }) {
   const [currentStep, setCurrentStep] = useState(1); // 1: OBSERVE, 2: PICK CLUE, 3: QUICK WRITE, 4: SEE REPORT
   const [observedHotspot, setObservedHotspot] = useState(null);
   const [selectedClue, setSelectedClue] = useState(null);
@@ -68,6 +68,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
     if (customConfig?.hotspots && Array.isArray(customConfig.hotspots)) {
       return customConfig.hotspots;
     }
+    const currentWeekNum = weekNumber || (isW34 ? 34 : 33);
     if (isW34) {
       return [
         {
@@ -77,7 +78,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
           x: '30%',
           y: '65%',
           fact: 'Observation: Large animals protect the forest territory and keep other creatures safe from danger.',
-          audio_url: '/audio/week34/discovery_hotspot_1.mp3'
+          audio_url: `/audio/week${currentWeekNum}/discovery_hotspot_1.mp3`
         },
         {
           id: 'mouse_seeds',
@@ -86,7 +87,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
           x: '75%',
           y: '70%',
           fact: 'Observation: Tiny mice clean the forest floor and bury seeds that grow into tall green trees.',
-          audio_url: '/audio/week34/discovery_hotspot_2.mp3'
+          audio_url: `/audio/week${currentWeekNum}/discovery_hotspot_2.mp3`
         },
         {
           id: 'forest_canopy',
@@ -95,7 +96,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
           x: '50%',
           y: '35%',
           fact: 'Observation: Tall trees give shelter and food, allowing big and small animals to cooperate harmoniously.',
-          audio_url: '/audio/week34/discovery_hotspot_3.mp3'
+          audio_url: `/audio/week${currentWeekNum}/discovery_hotspot_3.mp3`
         }
       ];
     }
@@ -107,7 +108,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         x: '50%',
         y: '78%',
         fact: 'Observation: Water on smooth corridor tiles forms a thin slippery layer that greatly reduces friction.',
-        audio_url: '/audio/week33/discovery_hotspot_1.mp3'
+        audio_url: `/audio/week${currentWeekNum}/discovery_hotspot_1.mp3`
       },
       {
         id: 'rubber_shoes',
@@ -116,7 +117,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         x: '28%',
         y: '65%',
         fact: 'Observation: Jake wore rubber soles with strong grip and high friction, helping him walk safely.',
-        audio_url: '/audio/week33/discovery_hotspot_2.mp3'
+        audio_url: `/audio/week${currentWeekNum}/discovery_hotspot_2.mp3`
       },
       {
         id: 'warning_sign',
@@ -125,10 +126,10 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         x: '75%',
         y: '50%',
         fact: 'Observation: Cleaners mopped the slippery tiles and placed a yellow warning sign to alert everyone.',
-        audio_url: '/audio/week33/discovery_hotspot_3.mp3'
+        audio_url: `/audio/week${currentWeekNum}/discovery_hotspot_3.mp3`
       }
     ];
-  }, [customConfig, isW34]);
+  }, [customConfig, isW34, weekNumber]);
 
   // ── Step 2: Clue Cards Data ───────────────────────────────────────────────
   const clueCards = useMemo(() => {
@@ -365,7 +366,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
                 </span>
                 <button
                   type="button"
-                  onClick={() => speakText(observedHotspot.fact, observedHotspot.audio_url || `/audio/week33/${observedHotspot.id}.mp3`, 1.0, null, 'read')}
+                  onClick={() => speakText(observedHotspot.fact, observedHotspot.audio_url || (weekNumber ? `/audio/week${weekNumber}/${observedHotspot.id}.mp3` : null), 1.0, null, 'read')}
                   className="px-2.5 py-1 bg-amber-200 hover:bg-amber-300 text-amber-950 rounded-lg text-xs font-bold transition flex items-center gap-1"
                 >
                   <Volume2 size={13} /> Listen
@@ -525,7 +526,10 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               </div>
               <button
                 type="button"
-                onClick={() => speakText(`Discovery Report: ${studentReportText}`, isW34 ? '/audio/week34/explore.mp3' : '/audio/week33/discovery_report_final.mp3', 1.0, null, 'read')}
+                onClick={() => {
+                  const finalAudioUrl = customConfig?.final_audio_url || (weekNumber ? `/audio/week${weekNumber}/discovery_report_final.mp3` : null);
+                  speakText(`Discovery Report: ${studentReportText}`, finalAudioUrl, 1.0, null, 'read');
+                }}
                 className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs shadow transition flex items-center gap-1.5"
               >
                 <Volume2 size={13} /> Listen Report

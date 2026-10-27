@@ -12,7 +12,7 @@ export function FlyersListeningPlayButton({
   partNumber = 1,
   audioUrl,
   script,
-  weekNumber = 33,
+  weekNumber,
   className = '',
   onComplete
 }) {

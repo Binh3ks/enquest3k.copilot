@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useSearchParams, useParams } from 'react-router-dom';
 import StoryWriting from '../write_speak/StoryWriting';
 import RetellRecorder from '../../components/zones/RetellRecorder';
@@ -17,14 +17,14 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
   const routeParams = useParams();
   const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;
 
-  const studioData = data?.creatorStudio || {};
+  const studioData = useMemo(() => data?.creatorStudio || {}, [data?.creatorStudio]);
   // Fallback: pull writing data from writing_hub (canonical W33+) or stations.writing
-  const writingData = data?.writing_hub || data?.stations?.writing || {};
-  const storyPrompts = studioData.storyPrompts || {
+  const writingData = useMemo(() => data?.writing_hub || data?.stations?.writing || null, [data?.writing_hub, data?.stations?.writing]);
+  const storyPrompts = useMemo(() => studioData.storyPrompts || {
     // W33+: writing_hub.picture_story maps to picture_mode
-    picture_mode: writingData.picture_story || writingData.picture_mode,
-    topic_mode:   writingData.topic_mode,
-  };
+    picture_mode: writingData?.picture_story || writingData?.picture_mode,
+    topic_mode:   writingData?.topic_mode,
+  }, [studioData, writingData]);
 
   const STATION_TO_TAB = {
     writing: 'story_writer',
@@ -88,10 +88,22 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
       };
     });
 
-    setStorySubmission({
-      mode: 'structured',
-      finalText: storySavedData?.text || podcastScenes.map(s => s.en).join(' '),
-      podcastScenes
+    const newFinalText = storySavedData?.text || podcastScenes.map(s => s.en).join(' ');
+
+    setStorySubmission(prev => {
+      if (
+        prev &&
+        prev.finalText === newFinalText &&
+        prev.podcastScenes?.length === podcastScenes.length &&
+        prev.podcastScenes.every((ps, idx) => ps.en === podcastScenes[idx].en)
+      ) {
+        return prev;
+      }
+      return {
+        mode: 'structured',
+        finalText: newFinalText,
+        podcastScenes
+      };
     });
   }, [storySavedData, writingData]);
 

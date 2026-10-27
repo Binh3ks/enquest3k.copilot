@@ -11,7 +11,7 @@ import InferenceQuestion from './InferenceQuestion';
 
 export default function CLILExplorer({
   clilData,
-  weekNumber = 33,
+  weekNumber,
   highlightMode = 'vocab',
   setHighlightMode,
   targetGrammarRegex = [],
@@ -177,7 +177,7 @@ export default function CLILExplorer({
     VoiceService.stop();
     setPlayingAudioType('whole');
     try {
-      const audioUrl = clilData?.audio_url || `/audio/week${weekNumber}/clil_friction.mp3`;
+      const audioUrl = clilData?.audio_url || (weekNumber ? `/audio/week${weekNumber}/clil_text.mp3` : null);
       await VoiceService.speak(fullText, 'explore', audioUrl, weekNumber);
     } catch (err) {
       console.warn('[CLIL Audio Whole] playback error:', err);
@@ -197,9 +197,13 @@ export default function CLILExplorer({
     VoiceService.stop();
     setPlayingAudioType('part');
     const partText = currentPhase === 1 ? paragraphs[0] : (paragraphs[1] || paragraphs[0]);
-    const partAudioUrl = currentPhase === 1
-      ? `/audio/week${weekNumber || 33}/clil_friction_p1.mp3`
-      : `/audio/week${weekNumber || 33}/clil_friction_p2.mp3`;
+    const derivedPartAudio = clilData?.audio_url
+      ? clilData.audio_url.replace(/\.mp3$/, currentPhase === 1 ? '_p1.mp3' : '_p2.mp3')
+      : null;
+    const partAudioUrl = (currentPhase === 1 ? (clilData?.part_1_audio_url || clilData?.audio_url_p1) : (clilData?.part_2_audio_url || clilData?.audio_url_p2))
+      || derivedPartAudio
+      || clilData?.audio_url
+      || (weekNumber ? `/audio/week${weekNumber}/clil_p${currentPhase}.mp3` : null);
     try {
       await VoiceService.speak(partText, 'explore', partAudioUrl, weekNumber);
     } catch (err) {

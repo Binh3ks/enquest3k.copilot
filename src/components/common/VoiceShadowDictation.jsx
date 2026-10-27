@@ -54,7 +54,7 @@ export default function VoiceShadowDictation({
     setIsPlayingAudio(true);
     setPlayCount(prev => prev + 1);
 
-    const sentenceAudioUrl = audioUrl || `/audio/week${activeWeek || 33}/dictation_${sentenceIdx + 1}.mp3`;
+    const sentenceAudioUrl = audioUrl || (activeWeek ? `/audio/week${activeWeek}/dictation_${sentenceIdx + 1}.mp3` : null);
 
     speakText(
       cleanTargetText,

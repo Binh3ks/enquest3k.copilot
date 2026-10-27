@@ -18,7 +18,7 @@ function shuffleArray(array) {
   return shuffled;
 }
 
-export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
+export function VisualMatchingAH({ customData, onComplete, weekNumber }) {
   const [answers, setAnswers] = useState({});
   const [selectedItem, setSelectedItem] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -102,9 +102,9 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber = 33 }) {
         <div className="flex items-center gap-2">
           <FlyersListeningPlayButton
             partNumber={3}
-            audioUrl={customData?.audio_url || `/audio/week${weekNumber || 33}/listening_p3_full.mp3`}
+            audioUrl={customData?.audio_url || (weekNumber ? `/audio/week${weekNumber}/listening_p3_full.mp3` : null)}
             script={customData?.passage_audio_script || fullPassageScript}
-            weekNumber={weekNumber || 33}
+            weekNumber={weekNumber}
           />
         </div>
 

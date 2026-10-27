@@ -8,7 +8,8 @@ import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 
 
-export function InformationExchangeP2({ customData, isStealthMode = false }) {
+export function InformationExchangeP2({ customData, isStealthMode = false, weekNumber, onComplete }) {
+  const resolvedWeek = weekNumber || customData?.weekNumber || customData?.week;
   // Adapter: speaking_hub format (candidate_card / examiner_card) → table_a / table_b format
   function adaptSpeakingHubData(raw) {
     if (!raw) return null;
@@ -435,7 +436,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
 
         <div className="flex items-center gap-2">
           <ExamIntroAudioButton
-            weekNumber={customData?.week || 33}
+            weekNumber={resolvedWeek}
             introId="exam_intro_S2"
             introText="Look at the questions. Ask and answer questions using the information cards."
           />

@@ -6,7 +6,7 @@ import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 
 import FlyersListeningPlayButton from '../common/FlyersListeningPlayButton';
 
-export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, onComplete }) {
+export default function MultipleChoice3Pic({ customData, data, weekNumber, onComplete }) {
   const p4Data = customData || data || {};
   const questions = p4Data.questions || [];
 
@@ -66,9 +66,9 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber = 34, 
         <div className="flex items-center gap-2">
           <FlyersListeningPlayButton
             partNumber={4}
-            audioUrl={p4Data?.audio_url || `/audio/week${weekNumber || 33}/listening_p4_full.mp3`}
+            audioUrl={p4Data?.audio_url || (weekNumber ? `/audio/week${weekNumber}/listening_p4_full.mp3` : null)}
             script={p4Data?.passage_audio_script || questions.map(q => q.audio_script || q.question_en).join('\n')}
-            weekNumber={weekNumber || 33}
+            weekNumber={weekNumber}
           />
           <div className="text-xs font-black text-blue-900 bg-white px-3 py-1 rounded-xl border border-blue-200">
             {currentQ.isExample ? "★ EXAMPLE" : `Question ${currentQIdx + 1} / ${questions.length}`}

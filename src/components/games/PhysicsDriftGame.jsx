@@ -11,7 +11,7 @@ import ArcadeFoxHelper from './ArcadeFoxHelper';
  * PhysicsDriftGame V3 — Highway Road Runner with Reflex Speed Metric & Speedrun Time Attack
  */
 
-export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, isStandalone = false }) {
+export default function PhysicsDriftGame({ weekNumber = 1, words = [], onExit, isStandalone = false }) {
   const weekData = getWeekArcadeData(weekNumber);
   const wordBank = useMemo(() => {
     const raw = (words && words.length >= 4) ? words : weekData.words;

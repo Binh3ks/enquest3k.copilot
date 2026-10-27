@@ -17,7 +17,7 @@ import VisualMatchingAH from '../../components/cambridge/VisualMatchingAH';
 import SVGColorAndWrite from '../../components/cambridge/SVGColorAndWrite';
 import ScienceDragDropLab from '../hubs/station2/LearnMode/ScienceDragDropLab';
 
-export default function ArenaHub({ data, weekNumber = 33 }) {
+export default function ArenaHub({ data, weekNumber }) {
   const userXP = useUserStore((state) => state.userXP || 0);
   const [showMascotStore, setShowMascotStore] = useState(false);
   const [viewMode, setViewMode] = useState('learn'); // 'learn' | 'check'
@@ -259,6 +259,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
             {activeTab === 'listening_p3' && (
               <VisualMatchingAH
                 customData={data?.listening_p3}
+                weekNumber={weekNumber}
                 onComplete={async (score) => {
                   const currentUser = useUserStore.getState().currentUser;
                   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';

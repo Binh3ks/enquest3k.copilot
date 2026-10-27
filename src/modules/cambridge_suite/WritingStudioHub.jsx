@@ -13,7 +13,7 @@ import { evaluateCambridgeCriteria, evaluateEssayStructure } from '../../utils/c
 import { generateWeeklyWorksheet } from '../../utils/pdfWorksheetGenerator';
 import { Printer, Download } from 'lucide-react';
 
-export default function WritingStudioHub({ data, weekNumber = 33 }) {
+export default function WritingStudioHub({ data, weekNumber }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
   const addXP = useUserStore((state) => state.addXP);

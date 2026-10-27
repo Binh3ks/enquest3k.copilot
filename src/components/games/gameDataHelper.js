@@ -50,8 +50,8 @@ const SRS_REVIEW_WORDS = [
   { word: 'adventure', definition_en: 'an unusual and exciting, typically hazardous experience', definition_vi: 'cuộc phiêu lưu', isSrs: true },
 ];
 
-export function getWeekArcadeData(weekNumber = 33) {
-  const wNum = parseInt(weekNumber) || 33;
+export function getWeekArcadeData(weekNumber = 1) {
+  const wNum = parseInt(weekNumber) || 1;
   const pad = String(wNum).padStart(2, '0');
 
   // Find matching vocab module

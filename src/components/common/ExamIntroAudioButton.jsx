@@ -8,7 +8,7 @@ import { Volume2 } from 'lucide-react';
  * In learning mode, renders a replay button with [data-testid="exam-intro-audio"].
  */
 export default function ExamIntroAudioButton({
-  weekNumber = 33,
+  weekNumber,
   introId = 'exam_intro_L1',
   introText = 'Listen and draw lines. There is one example.',
   isStealth = false,
@@ -16,9 +16,13 @@ export default function ExamIntroAudioButton({
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
-  const audioUrl = `/audio/week${weekNumber}/${introId}.mp3`;
+  const audioUrl = weekNumber ? `/audio/week${weekNumber}/${introId}.mp3` : null;
 
   const playAudio = () => {
+    if (!audioUrl) {
+      console.warn(`[ExamIntroAudioButton] Missing weekNumber for ${introId}; playback skipped.`);
+      return;
+    }
     try {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -39,6 +43,7 @@ export default function ExamIntroAudioButton({
   };
 
   useEffect(() => {
+    if (!audioUrl) return;
     // Auto-play 1 time on mount with small delay for smooth transition
     const t = setTimeout(() => {
       playAudio();

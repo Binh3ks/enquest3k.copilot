@@ -19,8 +19,8 @@ const NARRATIVE_STYLES = {
 };
 const FUNC_ORDER = ['setting', 'action', 'problem', 'climax', 'solution'];
 
-export default function RetellRecorder({ scenes = [], weekNumber = 33, onComplete }) {
-  const currentWeek = weekNumber || 33;
+export default function RetellRecorder({ scenes = [], weekNumber, onComplete }) {
+  const currentWeek = weekNumber;
   const { savedData, saveProgress, markComplete } = useStationProgress(currentWeek, 'broadcast_studio');
 
   const [recordMode, setRecordMode] = useState('video'); // 'video' | 'audio'

@@ -1,9 +1,9 @@
 {
-  "commit": "e4cd1c997eb1000f1ad08c72a7b6bc4ef84a7ea5",
-  "git_commit": "e4cd1c997eb1000f1ad08c72a7b6bc4ef84a7ea5",
-  "shortCommit": "e4cd1c99",
-  "message": "feat(week-34): content-complete + Golden Freeze v1.0.0",
-  "builtAt": "2026-10-26T15:09:55.607Z",
-  "build_timestamp": "2026-10-26T15:09:55.607Z",
+  "commit": "c3bfeda136f95bacf580043166e159271f4829a1",
+  "git_commit": "c3bfeda136f95bacf580043166e159271f4829a1",
+  "shortCommit": "c3bfeda1",
+  "message": "chore(w34): downgrade lifecycleState to CONTENT_COMPLETE_PENDING_RUNTIME_VERIFICATION",
+  "builtAt": "2026-10-27T09:12:18.587Z",
+  "build_timestamp": "2026-10-27T09:12:18.588Z",
   "env": "production"
 }

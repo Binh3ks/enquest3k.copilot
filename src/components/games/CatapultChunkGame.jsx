@@ -11,7 +11,7 @@ import ArcadeFoxHelper from './ArcadeFoxHelper';
  * CatapultChunkGame V3 — Multi-Mode Sentence & Definition Match with Speedrun Time Attack
  */
 
-export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalone = false }) {
+export default function CatapultChunkGame({ weekNumber = 1, onExit, isStandalone = false }) {
   const weekData = getWeekArcadeData(weekNumber);
   const sentenceRounds = weekData.sentenceRounds;
 

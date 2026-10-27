@@ -265,7 +265,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
     if (storySentences && storySentences.length > 0) {
       storySentences.forEach((sentence, idx) => {
         const text = typeof sentence === 'object' ? (sentence.text || sentence.text_en) : sentence;
-        const url = (typeof sentence === 'object' && sentence.audio_url) ? sentence.audio_url : `/audio/week${activeWeek || 33}/shadowing_${idx + 1}.mp3`;
+        const url = (typeof sentence === 'object' && sentence.audio_url) ? sentence.audio_url : (activeWeek ? `/audio/week${activeWeek}/shadowing_${idx + 1}.mp3` : null);
         if (text) {
           VoiceService.prefetch?.(text, 'shadowing', url, activeWeek).catch(() => {});
         }
@@ -274,7 +274,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
     if (dictationList && dictationList.length > 0) {
       dictationList.forEach((item, idx) => {
         const text = item.sentence || item.text;
-        const url = item.audio_url || `/audio/week${activeWeek || 33}/dictation_${idx + 1}.mp3`;
+        const url = item.audio_url || (activeWeek ? `/audio/week${activeWeek}/dictation_${idx + 1}.mp3` : null);
         if (text) {
           VoiceService.prefetch?.(text, 'dictation', url, activeWeek).catch(() => {});
         }
@@ -381,7 +381,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
       karaokeRafRef.current = requestAnimationFrame(tick);
     };
 
-    const sentenceAudioUrl = `/audio/week${activeWeek || 33}/shadowing_${idx + 1}.mp3`;
+    const sentenceAudioUrl = activeWeek ? `/audio/week${activeWeek}/shadowing_${idx + 1}.mp3` : null;
 
     speakText(
       sentenceText,
@@ -440,7 +440,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
     try { VoiceService.pauseTTS(); } catch (_) {}
     setActiveSentenceIdx(null);
     setActiveWordIdx(null);
-    const fullAudioUrl = readExplore?.audio_url || `/audio/week${activeWeek || 33}/read_stem.mp3`;
+    const fullAudioUrl = readExplore?.audio_url || (activeWeek ? `/audio/week${activeWeek}/read_stem.mp3` : null);
     speakText(fullStoryText, fullAudioUrl, 1.0, null, 'shadowing', activeWeek);
   };
 
@@ -978,7 +978,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                   <button
                     type="button"
                     onClick={() => {
-                      const sceneAudioUrl = currentScene?.audio_url || `/audio/week${activeWeek || 33}/scene_${currentScene?.scene_number || (activeFrameIndex + 1)}.mp3`;
+                      const sceneAudioUrl = currentScene?.audio_url || (activeWeek ? `/audio/week${activeWeek}/scene_${currentScene?.scene_number || (activeFrameIndex + 1)}.mp3` : null);
                       speakText(currentSceneText, sceneAudioUrl, 1.0, null, 'read', activeWeek);
                     }}
                     className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 px-3 py-1.5 sm:px-4 sm:py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl shadow-md transition flex items-center gap-1.5 font-black text-xs sm:text-sm border border-white/40 z-10 backdrop-blur-xs active:scale-95"
@@ -1116,7 +1116,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
             {voiceShadowMode === 'dictation' ? (() => {
               const currentDictation = dictationList[stepperIdx] || null;
               const dictSentence = currentDictation?.sentence || currentDictation?.text || storySentences[stepperIdx] || '';
-              const dictAudioUrl = currentDictation?.audio_url || `/audio/week${activeWeek || 33}/dictation_${stepperIdx + 1}.mp3`;
+              const dictAudioUrl = currentDictation?.audio_url || (activeWeek ? `/audio/week${activeWeek}/dictation_${stepperIdx + 1}.mp3` : null);
               const dictSpeaker = currentDictation?.speaker || null;
               const totalDictCount = dictationList.length > 0 ? dictationList.length : storySentences.length;
 
@@ -1488,10 +1488,10 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                       <div className="lg:col-span-6 space-y-2.5 sm:space-y-3 flex flex-col">
                         <div className="relative w-full h-56 sm:h-72 lg:h-[340px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 border border-purple-200 shadow-inner">
                           <img
-                            src={scenes[retellStepIdx]?.image_url || `/images/week${activeWeek || 33}/webtoon_scene_${retellStepIdx + 1}.png`}
+                            src={scenes[retellStepIdx]?.image_url || (activeWeek ? `/images/week${activeWeek}/webtoon_scene_${retellStepIdx + 1}.png` : '')}
                             alt={`Scene ${retellStepIdx + 1}`}
                             className="w-full h-full object-cover"
-                            onError={(e) => { e.target.onerror = null; e.target.src = `/images/week${activeWeek || 33}/webtoon_scene_1.png`; }}
+                            onError={(e) => { e.target.onerror = null; if (activeWeek) e.target.src = `/images/week${activeWeek}/webtoon_scene_1.png`; }}
                           />
                           <div className="absolute top-2 left-2 px-2.5 py-1 bg-purple-900/90 text-white rounded-lg text-xs font-black uppercase tracking-wider shadow">
                             Scene {retellStepIdx + 1}/{RETELL_QUESTIONS.length}

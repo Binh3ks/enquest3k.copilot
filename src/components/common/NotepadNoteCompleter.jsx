@@ -18,7 +18,7 @@ function normalizeNote(str) {
     .replace(/\s+/g, ' ');
 }
 
-export function NotepadNoteCompleter({ customData, data: propData, title, notes, passageAudioText, onComplete, weekNumber = 33 }) {
+export function NotepadNoteCompleter({ customData, data: propData, title, notes, passageAudioText, onComplete, weekNumber }) {
   const [answers, setAnswers] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
@@ -149,7 +149,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
               partNumber={2}
               audioUrl={audioUrl}
               script={fullAudioPassage || notepadTitle}
-              weekNumber={weekNumber || 33}
+              weekNumber={weekNumber}
             />
             <h3 className="text-xs sm:text-sm font-black text-amber-950 hidden md:block">
               {notepadTitle}

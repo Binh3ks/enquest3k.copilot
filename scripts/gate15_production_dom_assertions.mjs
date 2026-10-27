@@ -262,15 +262,31 @@ async function main() {
   });
   const page = await context.newPage();
 
+  // Intercept Supabase progress calls so QA runner always tests clean/initial quest state
+  await page.route('**/rest/v1/user_progress*', route => {
+    route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: '[]'
+    });
+  });
+
   // Auth bypass & SRS bypass — inject Zustand persist key + flags
   await page.addInitScript(() => {
     localStorage.setItem('engquest-user-storage', JSON.stringify({
       state: {
         currentUser: { id: 'qa-user-1', name: 'Gate15 QA', display_name: 'Gate15 QA', avatar: 'lion', role: 'owner' },
         token: 'qa-test-token',
-        learningMode: 'advanced'
+        learningMode: 'advanced',
+        progressCache: {}
       },
       version: 2
+    }));
+    localStorage.setItem('engquest-daily-quest-store', JSON.stringify({
+      state: {
+        completedQuests: {}
+      },
+      version: 1
     }));
     localStorage.setItem('engquest_onboarded', 'true');
     localStorage.setItem('arcade_owner_bypass', 'true');
@@ -553,8 +569,8 @@ async function main() {
                   const hasBaseVerb = step3ChipsText.some(t => /\b(chew|free|bandage|run|trap|hurt|nurse|call|stop|cry|calm|pain)\b/i.test(t));
                   
                   // Check Next button is disabled when textarea has <5 words
-                  const reviewBtn = page.locator('button:has-text("Review Complete Story")').first();
-                  const isDisabledInitial = await reviewBtn.isDisabled().catch(() => false);
+                  const advanceBtn = page.locator('button:has-text("Next Scene"), button:has-text("Review Complete Story")').first();
+                  const isDisabledInitial = await advanceBtn.isDisabled().catch(() => false);
 
                   if (!badge3.includes('WRITE')) {
                     result = { pass: false, snippet: '', reason: `Step 3 ladder badge expected WRITE, got "${badge3}"` };
@@ -572,12 +588,26 @@ async function main() {
                     await page.waitForTimeout(300);
 
                     // Check Next button is now enabled
-                    const isEnabledNow = !(await reviewBtn.isDisabled().catch(() => true));
+                    const isEnabledNow = !(await advanceBtn.isDisabled().catch(() => true));
                     if (!isEnabledNow) {
                       result = { pass: false, snippet: '', reason: `Step 3 Review button remained disabled after typing valid sentence` };
                     } else {
-                      await reviewBtn.click();
-                      await page.waitForTimeout(800);
+                      await advanceBtn.click();
+                      await page.waitForTimeout(600);
+
+                      // If there are more scenes before review (e.g. W33 has 5 scenes), advance through remaining scenes to enter review
+                      for (let stepIdx = 3; stepIdx < 5; stepIdx++) {
+                        const nextBtn = page.locator('button:has-text("Next Scene"), button:has-text("Review Complete Story")').first();
+                        const isVisible = await nextBtn.isVisible().catch(() => false);
+                        if (!isVisible) break;
+                        const ta = page.locator('textarea').first();
+                        if (await ta.isVisible().catch(() => false)) {
+                          await ta.fill("After that, the school nurse bandaged his knee carefully and everyone felt relieved.");
+                          await page.waitForTimeout(200);
+                        }
+                        await nextBtn.click();
+                        await page.waitForTimeout(600);
+                      }
 
                       // REVIEW SCREEN: Check total words counter + connector counter
                       const totalWordsEl = page.locator('[data-testid="total-words-counter"]').first();

@@ -11,7 +11,7 @@ import ArcadeFoxHelper from './ArcadeFoxHelper';
  * BubblePopGame V3 — Realistic Floating Bubbles with Speedrun Time Attack & Reflex Metric
  */
 
-export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isStandalone = false }) {
+export default function BubblePopGame({ weekNumber = 1, words = [], onExit, isStandalone = false }) {
   const weekData = getWeekArcadeData(weekNumber);
   const activeWordObjects = (words && words.length >= 4)
     ? words.map(w => typeof w === 'string' ? { word: w, audio_word: null } : w)

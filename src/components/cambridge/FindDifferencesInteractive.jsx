@@ -9,7 +9,7 @@ import MicFallbackInput from '../common/MicFallbackInput';
 import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 import { getCalibratedCentroids } from '../../utils/calibrationAdapter';
 
-export function FindDifferencesInteractive({ customData, onComplete, isStealthMode = false, weekNumber = 33 }) {
+export function FindDifferencesInteractive({ customData, onComplete, isStealthMode = false, weekNumber }) {
   const [foundHotspots, setFoundHotspots] = useState([]); // [hotspotId]
   const [activeHotspot, setActiveHotspot] = useState(null);
   const [isRecording, setIsRecording] = useState(false);

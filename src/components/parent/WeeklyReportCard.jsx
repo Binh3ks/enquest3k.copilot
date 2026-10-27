@@ -19,7 +19,7 @@ export default function WeeklyReportCard({ report }) {
   if (!report) return null;
 
   const {
-    weekNumber = 33,
+    weekNumber = 1,
     studentName = 'Học sinh',
     completionRate = '0/15',
     timeSpent = '0m',

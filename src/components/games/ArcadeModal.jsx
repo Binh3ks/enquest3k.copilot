@@ -12,7 +12,7 @@ import PhonicsBubbleGame from './PhonicsBubbleGame';
 import SentenceChooChooGame from './SentenceChooChooGame';
 import OddOneOutGame from './OddOneOutGame';
 
-export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, ownerBypass = false }) {
+export default function ArcadeModal({ weekNumber = 1, isOpen = false, onClose, ownerBypass = false }) {
   const {
     studySeconds,
     playEnergySeconds,

@@ -20,7 +20,7 @@ import { Globe } from 'lucide-react';
 
 import VoiceService from '../../services/voiceService';
 
-export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
+export default function WorldDiscoveryHub({ data, weekNumber }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
   const userXP = useUserStore((state) => state.userXP || 0);

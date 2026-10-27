@@ -70,7 +70,7 @@ const calculateSpeechAccuracy = (spokenText, targetText, keyChunks = []) => {
 import FindDifferencesInteractive from '../../components/cambridge/FindDifferencesInteractive';
 import ExamIntroAudioButton from '../../components/common/ExamIntroAudioButton';
 
-export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
+export default function NovaTalkShowHub({ data, weekNumber }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
   const addXP = useUserStore((state) => state.addXP);
@@ -644,7 +644,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
               <Radio size={14} className="text-purple-600" /> Turn {currentTurnIdx + 1} / {talkshowTurns.length}
             </span>
             <ExamIntroAudioButton
-              weekNumber={weekNumber || 33}
+              weekNumber={weekNumber}
               introId="exam_intro_S4"
               introText="Now let's talk about you and your daily life. Answer the questions."
             />
@@ -734,7 +734,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         </div>
       ) : subMode === 'cue_card' ? (
         /* MODE 3: CAMBRIDGE SPEAKING PART 2 (INFORMATION EXCHANGE SIDE-BY-SIDE TABLES) */
-        <InformationExchangeP2 customData={data?.cue_card_info_exchange} isStealthMode={activeMode === 'check'} />
+        <InformationExchangeP2 customData={data?.cue_card_info_exchange} weekNumber={weekNumber} isStealthMode={activeMode === 'check'} />
       ) : (
         /* MODE 4: 4-PICTURE STORY CONTINUATION (SPEAKING PART 3) */
         <div className="space-y-6">

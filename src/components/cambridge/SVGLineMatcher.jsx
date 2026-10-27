@@ -18,7 +18,7 @@ function screenToSVG(svgEl, clientX, clientY) {
 /** Convert data percentage (0-100) → SVG viewBox pixel coordinate */
 const pctToVB = (pct, dim) => (pct / 100) * dim;
 
-export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
+export function SVGLineMatcher({ customData, onComplete, weekNumber }) {
   /* ── Core game state ── */
   const [selectedName, setSelectedName] = useState(null);
   const [drawnLines, setDrawnLines] = useState([]);  // [{ nameId, nameText, targetId }]
@@ -188,9 +188,9 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
       <div className="flex items-center justify-between gap-3 p-2 bg-slate-100 rounded-xl border border-slate-200">
         <FlyersListeningPlayButton
           partNumber={1}
-          audioUrl={sceneData?.audio_url || `/audio/week${weekNumber || 33}/listening_p1_full.mp3`}
+          audioUrl={sceneData?.audio_url || (weekNumber ? `/audio/week${weekNumber}/listening_p1_full.mp3` : null)}
           script={sceneData?.passage_audio_script || fullListeningScript}
-          weekNumber={weekNumber || 33}
+          weekNumber={weekNumber}
         />
 
         <p className="text-xs sm:text-sm md:text-base font-black text-indigo-950 text-center tracking-tight flex-1">

@@ -12,7 +12,7 @@ import ArcadeFoxHelper from './ArcadeFoxHelper';
  * MeteorSmasherGame V3 — Plasma Cannon Turret with Reflex Speed Metric & Speedrun Victory
  */
 
-export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit, isStandalone = false }) {
+export default function MeteorSmasherGame({ weekNumber = 1, words = [], onExit, isStandalone = false }) {
   const weekData = getWeekArcadeData(weekNumber);
   const wordBank = useMemo(() => {
     const raw = (words && words.length >= 4) ? words : weekData.words;

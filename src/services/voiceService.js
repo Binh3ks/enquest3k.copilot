@@ -402,7 +402,7 @@ export const VoiceService = {
       if (rawAudioUrl.startsWith('http')) {
         candidates.push(rawAudioUrl);
       } else {
-        const cleanRelPath = rawAudioUrl.startsWith('/') ? rawAudioUrl : `/audio/week${weekNumber || 33}/${rawAudioUrl}`;
+        const cleanRelPath = rawAudioUrl.startsWith('/') ? rawAudioUrl : (weekNumber ? `/audio/week${weekNumber}/${rawAudioUrl}` : rawAudioUrl);
         // 1. Same-origin local static audio asset (fastest, guaranteed CORS on Cloudflare Pages)
         candidates.push(cleanRelPath);
         // 2. Cloudflare R2 CDN URL
@@ -625,7 +625,7 @@ export const VoiceService = {
       rawAudioPath = audioPath.audioUrl || audioPath.url || null;
     }
     if (rawAudioPath && typeof rawAudioPath === 'string') {
-      const cleanRelPath = rawAudioPath.startsWith('/') ? rawAudioPath : `/audio/week${weekNumber || 33}/${rawAudioPath}`;
+      const cleanRelPath = rawAudioPath.startsWith('/') ? rawAudioPath : (weekNumber ? `/audio/week${weekNumber}/${rawAudioPath}` : rawAudioPath);
       const candidates = [cleanRelPath, `${CDN_URL}${cleanRelPath}`];
       for (const cand of candidates) {
         try {

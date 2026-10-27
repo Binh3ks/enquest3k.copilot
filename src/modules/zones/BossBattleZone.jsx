@@ -309,7 +309,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
     if (typeof onBackToMap === 'function') {
       onBackToMap();
     } else {
-      navigate(`/week/${activeWeek || 33}/hub/1`);
+      navigate(`/week/${activeWeek}/hub/1`);
     }
   }, [onBackToMap, navigate, activeWeek]);
 

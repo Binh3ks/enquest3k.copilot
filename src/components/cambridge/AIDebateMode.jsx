@@ -5,7 +5,7 @@ import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
 import CompletionModal from '../common/CompletionModal';
 
-export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOverride = null }) {
+export default function AIDebateMode({ debateTopics, weekNumber, ageModeOverride = null }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const userAge = currentUser?.age || currentUser?.childAge || 7;
   const isModeA = ageModeOverride ? ageModeOverride === 'modeA' : userAge <= 8; // Mode A: 6-8yo, Mode B: 9-10yo

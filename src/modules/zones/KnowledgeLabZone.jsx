@@ -30,8 +30,7 @@ export default function KnowledgeLabZone({
     || (routeParams?.weekId ? parseInt(routeParams.weekId) : null)
     || data?.weekNumber
     || data?.week
-    || data?.rawWeekData?.weekNumber
-    || 33;
+    || data?.rawWeekData?.weekNumber;
 
   const STATION_MAP = {
     gear4_clil: 'clil',
