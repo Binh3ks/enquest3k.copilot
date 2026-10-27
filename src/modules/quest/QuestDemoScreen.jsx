@@ -303,7 +303,12 @@ export default function QuestDemoScreen() {
             grammarSentences={DEMO_SENTENCES}
             duration={120}
             weekNumber={33}
-            onComplete={(stars, score) => setCompleteResult({ stars, score })}
+            onComplete={(stars, score) => {
+              if (import.meta.env.DEV) {
+                console.log('[QUEST_DEMO_ON_COMPLETE]', JSON.stringify({ stars, score }));
+              }
+              setCompleteResult({ stars, score });
+            }}
           />
         )}
 
