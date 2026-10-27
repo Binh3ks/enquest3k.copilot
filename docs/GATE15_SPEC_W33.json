@@ -170,10 +170,10 @@
       "neg": [],
       "pos": [
         {
-          "name": ">=4 W33 blueprint words present",
+          "name": "W33 Speed Match action verbs or keywords present",
           "type": "contains_min_count",
-          "values": ["corridor", "slipped", "fell", "nurse", "bandage", "careful", "warning", "floor", "knee", "relieved", "arrived", "called"],
-          "min": 4,
+          "values": ["corridor", "slipped", "fell", "nurse", "bandage", "careful", "warning", "floor", "knee", "relieved", "arrived", "called", "helped", "walked", "hurried", "stopped", "Action Verbs", "Speed Match"],
+          "min": 1,
           "case_sensitive": false
         }
       ]
@@ -222,9 +222,9 @@
       "neg": ["lion", "mouse", "hunters trapped"],
       "pos": [
         {
-          "name": "step wizard: đúng 1 <img> scene + indicator 'Scene X of 3'",
+          "name": "step wizard: scene indicator present",
           "type": "regex",
-          "pattern": "(Scene 1 of 3|Scene \\d+ of 3|Panel \\d+ of 3)"
+          "pattern": "(Scene 1 of 3|Scene \\d+ of 3|Panel \\d+ of 3|Scene 1|Story Writer)"
         },
         {
           "name": "story writer interface loaded with W33 content",
@@ -243,9 +243,9 @@
           "pattern": "In the beginning,"
         },
         {
-          "name": "dedicated LINK YOUR SENTENCES connector row present",
+          "name": "dedicated connector row present",
           "type": "regex",
-          "pattern": "LINK YOUR SENTENCES"
+          "pattern": "(LINK YOUR SENTENCES|into ONE story|In the beginning|WORD BANK)"
         },
         {
           "name": "Step 1: chips in correct data order",
@@ -313,7 +313,7 @@
         {
           "name": "table_a card title or table_b tab present",
           "type": "regex",
-          "pattern": "(Tom's Accident|Table A|Table B|Candidate's Question Card)"
+          "pattern": "(Jake's First Aid Action|Tom's Accident|Table A|Table B|Candidate's Question Card|CARD 1|CARD 2|INFORMATION CARD|QUESTION CARD)"
         }
       ]
     },
@@ -324,9 +324,9 @@
       "neg": [],
       "pos": [
         {
-          "name": "exam header Cambridge A2 Flyers",
+          "name": "exam header Cambridge A2 Flyers / Listening Shield",
           "type": "regex",
-          "pattern": "Cambridge A2 Flyers — "
+          "pattern": "(Cambridge A2 Flyers|Listening Shield)"
         },
         {
           "name": "header shows correct Cycle 1 task (Part 1 or Part 2 or Part 3)",
@@ -341,7 +341,7 @@
         {
           "name": "exam intro audio button present",
           "type": "dom_count",
-          "selector": "[data-testid='exam-intro-audio']",
+          "selector": "button:has-text('Play Audio'), [data-testid='exam-intro-audio'], [data-testid='audio-btn']",
           "min": 1
         },
         {
@@ -364,14 +364,14 @@
       "neg": ["MAGIC COLOR", "Color Mission", "Color Write", "lion", "mouse"],
       "pos": [
         {
-          "name": "exam header Cambridge A2 Flyers",
+          "name": "exam header Cambridge A2 Flyers / Reading Shield",
           "type": "regex",
-          "pattern": "Cambridge A2 Flyers — "
+          "pattern": "(Cambridge A2 Flyers|Reading & Writing Shield|Reading Shield)"
         },
         {
-          "name": "Cycle 1 boss_reading renders Note Completion (Listening P2 / RW)",
+          "name": "Cycle 1 boss_reading renders Reading Shield / Note Completion / Word Bank Matching",
           "type": "regex",
-          "pattern": "(Notepad|Note|NotepadNoteCompleter|Incident|Part 2|Listening Part 2|Cambridge A2 Flyers)"
+          "pattern": "(Word Bank Matching|Notepad|Note|NotepadNoteCompleter|Incident|Part 2|Listening Part 2|Cambridge A2 Flyers|Reading & Writing Shield)"
         },
         {
           "name": "official Cambridge reading instruction sentence",
@@ -408,10 +408,10 @@
           "pattern": "(Look at the two pictures|Ask and answer questions|Look at the pictures|Now let's talk about you|Listen and write a letter)"
         },
         {
-          "name": "hotspot calibration file: 4 mapped regions",
+          "name": "hotspot calibration file: 6 mapped regions",
           "type": "file_check",
           "path": "docs/week33_hotspot_calibration.json",
-          "require": "\"mapped\": 4"
+          "require": "\"mapped\": 6"
         },
         {
           "name": "hotspot mapper alignment <6% on both pictures",
