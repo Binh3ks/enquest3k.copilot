@@ -251,14 +251,18 @@ async function main() {
   console.log(`   ✅ 100% of ${referencedAssetUrls.length} referenced assets verified!\n`);
 
   // STEP 2: Launch browser and run all assertions
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({
+    headless: true,
+    args: ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream', '--no-sandbox']
+  });
   const context = await browser.newContext({
     viewport: { width: 1280, height: 900 },
-    userAgent: 'Mozilla/5.0 (compatible; Gate15/2.0; EngQuest QA Bot)'
+    userAgent: 'Mozilla/5.0 (compatible; Gate15/2.0; EngQuest QA Bot)',
+    permissions: ['microphone', 'camera']
   });
   const page = await context.newPage();
 
-  // Auth bypass — inject Zustand persist key + flags
+  // Auth bypass & SRS bypass — inject Zustand persist key + flags
   await page.addInitScript(() => {
     localStorage.setItem('engquest-user-storage', JSON.stringify({
       state: {
@@ -271,7 +275,28 @@ async function main() {
     localStorage.setItem('engquest_onboarded', 'true');
     localStorage.setItem('arcade_owner_bypass', 'true');
     localStorage.setItem('engquest_onboarding_completed', 'true');
+    localStorage.setItem('engquest_overlay_dismissed', 'true');
     localStorage.setItem('engquest_user', JSON.stringify({ name: 'Gate15 QA', avatar: 'lion', role: 'owner' }));
+    // Critical: bypass SRS daily warm-up modal
+    localStorage.setItem('engquest3k_srs_daily_reviewed', new Date().toISOString().slice(0, 10));
+  });
+
+  const ssDir = path.resolve(rootDir, `docs/agent_artifacts/screenshots/w${WEEK}`);
+  if (!fs.existsSync(ssDir)) fs.mkdirSync(ssDir, { recursive: true });
+  const artifactSsDir = '/Users/binhnguyen/.gemini/antigravity-ide/brain/b12565b0-9d8d-4d21-8063-54a8e2575b53/screenshots_w34';
+  if (!fs.existsSync(artifactSsDir)) fs.mkdirSync(artifactSsDir, { recursive: true });
+
+  let currentQuestErrors = [];
+  page.on('console', msg => {
+    if (msg.type() === 'error') {
+      const text = msg.text();
+      if (!text.includes('favicon.ico') && !text.includes('chrome-extension')) {
+        currentQuestErrors.push(`[console.error] ${text}`);
+      }
+    }
+  });
+  page.on('pageerror', err => {
+    currentQuestErrors.push(`[pageerror] ${err.message}`);
   });
 
   const questIds = Object.keys(QUESTS_SPEC);
@@ -287,6 +312,7 @@ async function main() {
 
     let dom = '';
     const baseWait = qspec.waitMs || 1500;
+    currentQuestErrors = [];
 
     try {
       let navOk = false;
@@ -313,6 +339,11 @@ async function main() {
 
       dom = await page.evaluate(() => (document.body?.innerText || '').trim());
       questDoms[qid] = dom;
+
+      // Capture initial screenshot
+      const ssPath = path.join(ssDir, `${qid}.png`);
+      await page.screenshot({ path: ssPath });
+      try { fs.copyFileSync(ssPath, path.join(artifactSsDir, `${qid}.png`)); } catch (_) {}
     } catch (e) {
       dom = '';
       questDoms[qid] = '';
@@ -441,6 +472,8 @@ async function main() {
               const calib = JSON.parse(fs.readFileSync(calibPath, 'utf8'));
               const speakingModule = await import(`file://${speakingPath}?t=${Date.now()}`);
               const spkHub = speakingModule.speakingHub || speakingModule.speakingHubData || speakingModule.default || {};
+              const dataDiffs = spkHub.find_differences?.differences || [];
+              const centroids = calib.centroids || calib.differences || [];
               const expectedCount = calib.regions || calib.mapped || dataDiffs.length;
 
               if (dataDiffs.length !== expectedCount || centroids.length !== expectedCount) {
@@ -610,10 +643,47 @@ async function main() {
       }
     }
 
-    results.push({ id: qid, negPass: !negFail, allPosPass, negFail, posResults });
+    // Capture interacted screenshot
+    try {
+      const ssInteracted = path.join(ssDir, `${qid}_interacted.png`);
+      await page.screenshot({ path: ssInteracted });
+      fs.copyFileSync(ssInteracted, path.join(artifactSsDir, `${qid}_interacted.png`));
+    } catch (_) {}
+
+    if (currentQuestErrors.length > 0) {
+      console.log(`     ⚠️  CONSOLE/PAGE ERRORS (${currentQuestErrors.length}):`);
+      currentQuestErrors.forEach(err => console.log(`        ${err}`));
+    }
+
+    results.push({ id: qid, negPass: !negFail, allPosPass, negFail, posResults, errors: [...currentQuestErrors] });
   }
 
   await browser.close();
+
+  // STEP: Screenshot Deduplication & Integrity Gate
+  console.log(`\n========================================================================`);
+  console.log(`📸 SCREENSHOT DEDUPLICATION & INTEGRITY CHECK`);
+  console.log(`========================================================================`);
+  const crypto = await import('crypto');
+  const capturedFiles = fs.readdirSync(ssDir).filter(f => f.endsWith('.png'));
+  const screenshotHashes = new Map();
+  for (const f of capturedFiles) {
+    const buf = fs.readFileSync(path.join(ssDir, f));
+    const h = crypto.createHash('sha256').update(buf).digest('hex');
+    screenshotHashes.set(f, h);
+  }
+  const uniqueHashes = new Set(screenshotHashes.values());
+  console.log(`   Captured ${capturedFiles.length} screenshots in ${ssDir}`);
+  console.log(`   Unique SHA256 hashes: ${uniqueHashes.size} / ${capturedFiles.length}`);
+  const minRequiredUnique = Math.min(15, questIds.length);
+  if (uniqueHashes.size < minRequiredUnique) {
+    console.error(`🚨 FATAL: Screenshot deduplication check FAILED!`);
+    console.error(`   Found only ${uniqueHashes.size} unique hashes across ${capturedFiles.length} screenshots (minimum required: ${minRequiredUnique}).`);
+    console.error(`   This indicates a repeated error screen or crash overlay was captured across multiple quests.`);
+    globalPass = false;
+  } else {
+    console.log(`   ✅ Deduplication check PASSED: ${uniqueHashes.size} distinct screenshot views verified.`);
+  }
 
   // STEP: Check data_consistency
   let consistencyPass = true;

@@ -6,7 +6,7 @@ import './QuestEntryOverlay.css';
 // Lore hooks per quest — anchored to QUEST_SCHEDULE task IDs
 const QUEST_LORE = {
   gear1_webtoon:    { hook: "The Story World awakens! Read the scenes to collect the first Storm Words.", icon: "📚", color: "#3b82f6" },
-  gear2_karaoke:    { hook: "Echo the voices! Shadow Jake's words — each perfect echo charges a Thunder Rune.", icon: "🎧", color: "#8b5cf6" },
+  gear2_karaoke:    { hook: "Echo the voices! Shadow the story's words — each perfect echo charges a Thunder Rune.", icon: "🎧", color: "#8b5cf6" },
   gear3_retell:     { hook: "The story is yours now. Retell it — unlock the Voice Fragment for the Chronicles!", icon: "🎙️", color: "#10b981" },
   gear4_clil:       { hook: "New knowledge incoming! The Alchemy Lab door opens only to true Fact Finders.", icon: "🌐", color: "#06b6d4" },
   science_lab:      { hook: "Action Lab is waiting! Solve the 3 mysteries to forge a Crystal Shard.", icon: "🧪", color: "#10b981" },

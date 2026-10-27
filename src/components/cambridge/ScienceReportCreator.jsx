@@ -56,59 +56,123 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
     }
   };
 
+  const isW34 = Number(weekNumber) === 34;
+
+  const displayTitle = customConfig?.notebookTitle
+    || customConfig?.topic
+    || reportTopic
+    || (isW34 ? "Animal Cooperation in Nature" : "Corridor Friction & Safety Discovery Report");
+
   // ── Step 1: Hotspot Data ──────────────────────────────────────────────────
-  const hotspots = useMemo(() => [
-    {
-      id: 'wet_floor',
-      icon: '💧',
-      name: 'Wet Corridor Floor',
-      x: '50%',
-      y: '78%',
-      fact: 'Observation: Water on smooth corridor tiles forms a thin slippery layer that greatly reduces friction.',
-      audio_url: '/audio/week33/discovery_hotspot_1.mp3'
-    },
-    {
-      id: 'rubber_shoes',
-      icon: '👟',
-      name: 'Rubber Shoe Soles',
-      x: '28%',
-      y: '65%',
-      fact: 'Observation: Jake wore rubber soles with strong grip and high friction, helping him walk safely.',
-      audio_url: '/audio/week33/discovery_hotspot_2.mp3'
-    },
-    {
-      id: 'warning_sign',
-      icon: '⚠️',
-      name: 'Yellow Caution Sign',
-      x: '75%',
-      y: '50%',
-      fact: 'Observation: Cleaners mopped the slippery tiles and placed a yellow warning sign to alert everyone.',
-      audio_url: '/audio/week33/discovery_hotspot_3.mp3'
+  const hotspots = useMemo(() => {
+    if (customConfig?.hotspots && Array.isArray(customConfig.hotspots)) {
+      return customConfig.hotspots;
     }
-  ], []);
+    if (isW34) {
+      return [
+        {
+          id: 'lion_protection',
+          icon: '🦁',
+          name: 'Mighty Lion Territory',
+          x: '30%',
+          y: '65%',
+          fact: 'Observation: Large animals protect the forest territory and keep other creatures safe from danger.',
+          audio_url: '/audio/week34/discovery_hotspot_1.mp3'
+        },
+        {
+          id: 'mouse_seeds',
+          icon: '🐭',
+          name: 'Mouse Seed Storage',
+          x: '75%',
+          y: '70%',
+          fact: 'Observation: Tiny mice clean the forest floor and bury seeds that grow into tall green trees.',
+          audio_url: '/audio/week34/discovery_hotspot_2.mp3'
+        },
+        {
+          id: 'forest_canopy',
+          icon: '🌳',
+          name: 'Forest Canopy',
+          x: '50%',
+          y: '35%',
+          fact: 'Observation: Tall trees give shelter and food, allowing big and small animals to cooperate harmoniously.',
+          audio_url: '/audio/week34/discovery_hotspot_3.mp3'
+        }
+      ];
+    }
+    return [
+      {
+        id: 'wet_floor',
+        icon: '💧',
+        name: 'Wet Corridor Floor',
+        x: '50%',
+        y: '78%',
+        fact: 'Observation: Water on smooth corridor tiles forms a thin slippery layer that greatly reduces friction.',
+        audio_url: '/audio/week33/discovery_hotspot_1.mp3'
+      },
+      {
+        id: 'rubber_shoes',
+        icon: '👟',
+        name: 'Rubber Shoe Soles',
+        x: '28%',
+        y: '65%',
+        fact: 'Observation: Jake wore rubber soles with strong grip and high friction, helping him walk safely.',
+        audio_url: '/audio/week33/discovery_hotspot_2.mp3'
+      },
+      {
+        id: 'warning_sign',
+        icon: '⚠️',
+        name: 'Yellow Caution Sign',
+        x: '75%',
+        y: '50%',
+        fact: 'Observation: Cleaners mopped the slippery tiles and placed a yellow warning sign to alert everyone.',
+        audio_url: '/audio/week33/discovery_hotspot_3.mp3'
+      }
+    ];
+  }, [customConfig, isW34]);
 
   // ── Step 2: Clue Cards Data ───────────────────────────────────────────────
-  const clueCards = useMemo(() => [
-    {
-      id: 'low_friction',
-      title: '🔬 Low Surface Friction',
-      isCorrect: true,
-      description: 'Water formed a thin slippery layer between Tom\'s smooth shoe soles and the floor tiles, drastically reducing the friction needed to walk safely.'
-    },
-    {
-      id: 'smooth_dry_floor',
-      title: '🧱 Rough Carpet Flooring',
-      isCorrect: false,
-      description: 'The corridor has thick rough carpet that provides maximum grip and prevents anyone from slipping.'
+  const clueCards = useMemo(() => {
+    if (customConfig?.clueCards && Array.isArray(customConfig.clueCards)) {
+      return customConfig.clueCards;
     }
-  ], []);
+    if (isW34) {
+      return [
+        {
+          id: 'mutual_cooperation',
+          title: '🔬 Mutual Cooperation & Teamwork',
+          isCorrect: true,
+          description: 'Different animals have unique skills that help everyone survive, keeping the forest ecosystem balanced and safe.'
+        },
+        {
+          id: 'solo_living',
+          title: '🧱 Solo Competition Without Helping',
+          isCorrect: false,
+          description: 'Creatures live alone without cooperating, making it much harder to find food and survive danger.'
+        }
+      ];
+    }
+    return [
+      {
+        id: 'low_friction',
+        title: '🔬 Low Surface Friction',
+        isCorrect: true,
+        description: 'Water formed a thin slippery layer between Tom\'s smooth shoe soles and the floor tiles, drastically reducing the friction needed to walk safely.'
+      },
+      {
+        id: 'smooth_dry_floor',
+        title: '🧱 Rough Carpet Flooring',
+        isCorrect: false,
+        description: 'The corridor has thick rough carpet that provides maximum grip and prevents anyone from slipping.'
+      }
+    ];
+  }, [customConfig, isW34]);
 
   // ── Handlers ──────────────────────────────────────────────────────────────
   const handleHotspotClick = (hs) => {
     playButtonClick();
     setObservedHotspot(hs);
     if (hs?.fact) {
-      speakText(hs.fact, hs.audio_url || `/audio/week33/${hs.id}.mp3`, 1.0, null, 'read');
+      speakText(hs.fact, hs.audio_url || `/audio/week${weekNumber}/${hs.id}.mp3`, 1.0, null, 'read');
     }
   };
 
@@ -119,34 +183,65 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       setClueError(null);
     } else {
       playButtonClick();
-      setClueError('🔬 Science Alert: That did not cause the slip! Try examining the friction between shoes and tiles.');
+      setClueError(isW34
+        ? '🔬 Science Alert: That did not explain teamwork! Examine how mutual cooperation helps both animals.'
+        : '🔬 Science Alert: That did not cause the slip! Try examining the friction between shoes and tiles.');
     }
   };
 
-  const scaffoldData = useMemo(() => ({
-    starters: [
-      "When water spills on corridor tiles,",
-      "Jake walked safely across the corridor because",
-      "Tom slipped and hurt his knee because",
-      "Friction is essential in school corridors because"
-    ],
-    chunks: [
-      "smooth floor tiles lose surface friction",
-      "textured rubber soles provide strong grip",
-      "wet surfaces make walking dangerous"
-    ],
-    connectors: [
-      ", so",
-      ", but",
-      ". Therefore,",
-      "and"
-    ],
-    actions: [
-      "everyone must always walk carefully.",
-      "cleaners put up a yellow caution sign.",
-      "wearing proper shoes prevents slipping."
-    ]
-  }), []);
+  const scaffoldData = useMemo(() => {
+    if (customConfig?.scaffoldData) return customConfig.scaffoldData;
+    if (isW34) {
+      return {
+        starters: [
+          "In the forest ecosystem,",
+          "The mighty lion protected the territory because",
+          "The tiny mouse planted seeds in the ground so",
+          "Cooperation keeps nature strong and green because"
+        ],
+        chunks: [
+          "animals work together in harmony",
+          "different skills help everyone survive",
+          "teamwork keeps the forest healthy"
+        ],
+        connectors: [
+          ", so",
+          ", but",
+          ". Therefore,",
+          "and"
+        ],
+        actions: [
+          "all animals stay safe from danger.",
+          "new plants and trees grow well.",
+          "everyone has an important role in nature."
+        ]
+      };
+    }
+    return {
+      starters: [
+        "When water spills on corridor tiles,",
+        "Jake walked safely across the corridor because",
+        "Tom slipped and hurt his knee because",
+        "Friction is essential in school corridors because"
+      ],
+      chunks: [
+        "smooth floor tiles lose surface friction",
+        "textured rubber soles provide strong grip",
+        "wet surfaces make walking dangerous"
+      ],
+      connectors: [
+        ", so",
+        ", but",
+        ". Therefore,",
+        "and"
+      ],
+      actions: [
+        "everyone must always walk carefully.",
+        "cleaners put up a yellow caution sign.",
+        "wearing proper shoes prevents slipping."
+      ]
+    };
+  }, [customConfig, isW34]);
 
   const handleFinalSubmit = () => {
     setIsCompleted(true);
@@ -161,7 +256,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pb-2.5 border-b border-purple-100">
         <div>
           <h2 className="text-sm sm:text-base font-black text-slate-900">
-            Corridor Friction & Safety Discovery Report
+            {displayTitle}
           </h2>
         </div>
 
@@ -195,12 +290,39 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         </div>
       </div>
 
+      {/* Teacher & Parent Note Banner */}
+      {customConfig?.teacher_parent_note && (
+        <div className="p-2.5 sm:p-3 bg-blue-50/90 border border-blue-200 rounded-xl text-xs text-blue-900 font-medium">
+          <span className="font-black uppercase tracking-wider text-blue-950">Teacher & Parent Note:</span> {customConfig.teacher_parent_note}
+        </div>
+      )}
+
+      {/* CLIL Data Card (3 Key Facts) */}
+      {Array.isArray(customConfig?.data_card) && customConfig.data_card.length > 0 && (
+        <div className="p-3 bg-purple-50/70 border border-purple-200 rounded-2xl space-y-2">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-black uppercase text-purple-950 tracking-wider flex items-center gap-1">
+              <Sparkles size={14} className="text-purple-600" /> CLIL Data Card (3 Key Facts)
+            </span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            {customConfig.data_card.map((row, idx) => (
+              <div key={idx} className="p-2.5 bg-white border border-purple-100 rounded-xl shadow-2xs space-y-1">
+                <div className="text-xs font-black text-purple-900">{row.subject}</div>
+                <div className="text-[11px] text-slate-700 leading-tight"><strong>Action:</strong> {row.action}</div>
+                <div className="text-[11px] text-emerald-800 leading-tight font-bold"><strong>Result:</strong> {row.result}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* ── STEP 1: OBSERVE ──────────────────────────────────────────────── */}
       {currentStep === 1 && (
         <div className="space-y-4 animate-in fade-in duration-200">
           <div className="p-3 bg-purple-50 rounded-2xl border border-purple-200 flex items-center justify-between">
             <p className="text-xs sm:text-sm font-bold text-purple-900">
-              🔍 <strong>Step 1:</strong> Tap an evidence spot on the corridor diagram to observe what happened!
+              🔍 <strong>Step 1:</strong> Tap an evidence spot on the {isW34 ? 'ecosystem' : 'corridor'} diagram to observe what happened!
             </p>
           </div>
 
@@ -209,10 +331,10 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
             style={{ maxHeight: '56vh' }}
           >
             <img
-              src="/images/week33/read_cover_w33.jpg"
-              alt="Corridor Observation Scene"
+              src={isW34 ? "/images/week34/explore_cover_w34.jpg" : "/images/week33/read_cover_w33.jpg"}
+              alt={isW34 ? "Animal Cooperation Observation Scene" : "Corridor Observation Scene"}
               className="w-full h-full object-cover"
-              onError={(e) => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
+              onError={(e) => { e.target.onerror = null; e.target.src = isW34 ? '/images/week34/webtoon_scene_1.png' : '/images/week33/read_stem.jpg'; }}
             />
 
             {/* Hotspots */}
@@ -273,7 +395,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
         <div className="space-y-4 animate-in fade-in duration-200">
           <div className="p-3 bg-purple-50 rounded-2xl border border-purple-200">
             <p className="text-xs sm:text-sm font-bold text-purple-900">
-              💡 <strong>Step 2:</strong> What discovery clue explains why the boy slipped on the wet corridor floor?
+              💡 <strong>Step 2:</strong> {isW34 ? "What discovery clue explains how cooperation helps the forest ecosystem?" : "What discovery clue explains why the boy slipped on the wet corridor floor?"}
             </p>
           </div>
 
@@ -343,9 +465,9 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
           </div>
 
           <QuickWritePanel
-            prompt="Write a 15–25 word scientific discovery report explaining why friction keeps corridor floors safe."
+            prompt={isW34 ? "Write a 15–25 word scientific discovery report explaining how animal cooperation helps nature survive." : "Write a 15–25 word scientific discovery report explaining why friction keeps corridor floors safe."}
             scaffoldGroups={scaffoldData}
-            modelSentence="When water spills on corridor tiles, smooth floor tiles lose surface friction, so everyone must always walk carefully."
+            modelSentence={isW34 ? "In the forest ecosystem, animals work together in harmony, so everyone has an important role in nature." : "When water spills on corridor tiles, smooth floor tiles lose surface friction, so everyone must always walk carefully."}
             minWords={15}
             maxWords={25}
             initialValue={studentReportText}
@@ -397,13 +519,13 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-amber-200 pb-2.5">
               <div>
                 <h3 className="text-base sm:text-xl font-black text-slate-900">
-                  Corridor Friction & Safety Field Report
+                  {isW34 ? "Animal Cooperation & Ecosystem Field Report" : "Corridor Friction & Safety Field Report"}
                 </h3>
                 <p className="text-xs text-amber-800 font-bold">Investigator: Junior Discovery Detective</p>
               </div>
               <button
                 type="button"
-                onClick={() => speakText(`Discovery Report: ${studentReportText}`, '/audio/week33/discovery_report_final.mp3', 1.0, null, 'read')}
+                onClick={() => speakText(`Discovery Report: ${studentReportText}`, isW34 ? '/audio/week34/explore.mp3' : '/audio/week33/discovery_report_final.mp3', 1.0, null, 'read')}
                 className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs shadow transition flex items-center gap-1.5"
               >
                 <Volume2 size={13} /> Listen Report
@@ -426,16 +548,16 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
                   </button>
                 </div>
                 <p className="text-xs sm:text-sm font-bold text-slate-900 bg-amber-50/70 p-3 rounded-xl border border-amber-100 italic leading-relaxed">
-                  "{studentReportText || "When water spills on corridor tiles, smooth floor tiles lose surface friction, so everyone must always walk carefully."}"
+                  "{studentReportText || (isW34 ? "In the forest ecosystem, animals work together in harmony, so everyone has an important role in nature." : "When water spills on corridor tiles, smooth floor tiles lose surface friction, so everyone must always walk carefully.")}"
                 </p>
               </div>
 
               <div className="pt-2 border-t border-amber-100 text-xs sm:text-sm text-slate-700 leading-relaxed font-medium space-y-1">
                 <p>
-                  <strong>Observation:</strong> While investigating the corridor, we discovered that <em>water on the smooth tiles greatly reduced surface friction</em>, so Tom slipped while running in a hurry.
+                  <strong>Observation:</strong> {isW34 ? "While investigating the forest ecosystem, we discovered that animals of all sizes cooperate and help each other survive." : "While investigating the corridor, we discovered that water on the smooth tiles greatly reduced surface friction, so Tom slipped while running in a hurry."}
                 </p>
                 <p>
-                  <strong>Scientific Conclusion:</strong> Jake walked carefully with rubber shoe soles that provided strong grip. The cleaners mopped the floor dry and put up a yellow warning sign to protect all students!
+                  <strong>Scientific Conclusion:</strong> {isW34 ? "The mighty lion protects the territory, tiny mice plant new tree seeds, and oxpeckers clean big animals. Mutual teamwork keeps nature healthy and strong!" : "Jake walked carefully with rubber shoe soles that provided strong grip. The cleaners mopped the floor dry and put up a yellow warning sign to protect all students!"}
                 </p>
               </div>
             </div>
@@ -513,7 +635,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               </div>
               <div>
                 <h4 className="font-black text-sm uppercase tracking-wide">Certified Discovery Detective</h4>
-                <p className="text-xs text-slate-800 font-bold">Corridor Physics & Safety Mastery Badge Earned</p>
+                <p className="text-xs text-slate-800 font-bold">{isW34 ? "Animal Cooperation & Ecosystem Mastery Badge Earned" : "Corridor Physics & Safety Mastery Badge Earned"}</p>
               </div>
             </div>
           </div>

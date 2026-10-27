@@ -24,7 +24,7 @@
     "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md"
   ],
   "protectedFileHashes": {
-    "src/data/weeks/week_34/reading_hub.js": "cc2de187d7b2dc5ff2ad1bb0548c408740953ea218c0cf09588ecc73572a7781",
+    "src/data/weeks/week_34/reading_hub.js": "44300d245c4c46ab2ee2980b7429c271b79dca15892df2c96932104a1f5dfd6f",
     "src/data/weeks/week_34/listening_hub.js": "8ee174e2fb59d8069607e326d1c3463c20c1eddbc242c5f1f8e6cc26a098d2f8",
     "src/data/weeks/week_34/writing_hub.js": "4a87e546ef1c7162e805645c2f90efa474c9f8b327ea406bad43117581aa9713",
     "src/data/weeks/week_34/speaking_hub.js": "ffc9d2a483f73ed4f6a5a46b97f6538b4ea473be5bb8713d39c511276abda774",
@@ -32,7 +32,7 @@
     "src/data/weeks/week_34/vocab.js": "34315f91b873b8e401072869b2c70e3a8df329a40f3629316f66210d782063ef",
     "src/data/weeks/week_34/read.js": "7eeeedc475ba7c742265081c14f7a12bf8db81ca131e0d6c8f806e73a513fcd2",
     "src/data/weeks/week_34/dictation.js": "38290d49a3f2b462c9d3d2596466de6c46d64770fa7a83795df8b70e3a8d23f8",
-    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md": "e86e98d4cc70bc6414597f126c0ec5ac5c37114ec4df48ae448dc3dc13b73007"
+    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md": "05b440d415ce1771fc53767d1405ec33f484cc8bef6159f46a9d589ae1bc41de"
   },
   "governanceDocumentation": [
     "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md"

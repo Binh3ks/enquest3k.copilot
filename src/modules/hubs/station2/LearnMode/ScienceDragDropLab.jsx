@@ -110,6 +110,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
       diagramImage: scienceData?.background_image || scienceData?.diagramImage || "",
       explanation: scienceData?.description_en || scienceData?.explanation || "Interactive action exploration.",
       zones: scienceData?.zones || [],
+      targets: scienceData?.targets || [],
       labels: scienceData?.labels || []
     }];
   }, [scienceData]);
@@ -123,7 +124,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
     let targets = [];
     let labels = [];
 
-    if (stage.zones && Array.isArray(stage.zones)) {
+    if (stage.zones && Array.isArray(stage.zones) && stage.zones.length > 0) {
       targets = stage.zones.map((z, idx) => ({
         id: z.id || `target_${idx + 1}`,
         name: z.label || `Zone ${idx + 1}`,
@@ -137,7 +138,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
         text: z.correct_label || z.label || `Label ${idx + 1}`,
         targetId: z.id || `target_${idx + 1}`
       }));
-    } else if (stage.targets && Array.isArray(stage.targets)) {
+    } else if (stage.targets && Array.isArray(stage.targets) && stage.targets.length > 0) {
       targets = stage.targets;
       labels = stage.labels || [];
     } else {

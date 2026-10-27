@@ -39,7 +39,7 @@ const GAUNTLET_PLATFORMS = [
   { x: 720, y: 160,     width: 140,        height: 16 },  // Celestial Perch Right
 ];
 
-const DEFAULT_GAUNTLET_PASSAGE = {
+export const DEFAULT_GAUNTLET_PASSAGE = {
   title: 'The Master Investigation of Corridors & Friction',
   fullText: 'During the science investigation, Jake noticed that wet tiles cause dangerous accidents because friction decreases rapidly. By wearing special rubber shoes, students gain strong grip and maintain perfect safety.',
   blanks: [
@@ -52,13 +52,32 @@ const DEFAULT_GAUNTLET_PASSAGE = {
   distractors: ['eating', 'pleasant', 'sugar', 'paper', 'danger'],
 };
 
+export const WEEK_34_GAUNTLET_PASSAGE = {
+  title: 'The Forest Fable of Cooperation & Friendship',
+  fullText: 'In the green forest ecosystem, the mighty lion was caught in a strong hunter net. The brave mouse kept his promise and quickly began to chew through the ropes. Their wonderful friendship proved that small creatures can cooperate to save large friends.',
+  blanks: [
+    { id: 'g0', word: 'ecosystem',  slot: 0 },
+    { id: 'g1', word: 'hunter',     slot: 1 },
+    { id: 'g2', word: 'brave',      slot: 2 },
+    { id: 'g3', word: 'chew',       slot: 3 },
+    { id: 'g4', word: 'friendship', slot: 4 },
+  ],
+  distractors: ['plastic', 'slippery', 'shadow', 'flying', 'accident'],
+};
+
+export const WEEKLY_GAUNTLET_PASSAGES = {
+  33: DEFAULT_GAUNTLET_PASSAGE,
+  34: WEEK_34_GAUNTLET_PASSAGE,
+};
+
 export default function CambridgeClozeGauntlet({
-  clozeData = DEFAULT_GAUNTLET_PASSAGE,
+  clozeData,
   duration = 120,
   weekNumber = 33,
   onComplete,
   onExit,
 }) {
+  const activeClozeData = clozeData || WEEKLY_GAUNTLET_PASSAGES[weekNumber] || DEFAULT_GAUNTLET_PASSAGE;
   const { recordPersonalBest, getPersonalBest } = useChroniclesStore();
   const personalBest = getPersonalBest('cambridge_cloze_gauntlet') || 0;
 
@@ -77,8 +96,8 @@ export default function CambridgeClozeGauntlet({
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
-  const blanks = clozeData.blanks || DEFAULT_GAUNTLET_PASSAGE.blanks;
-  const distractors = clozeData.distractors || DEFAULT_GAUNTLET_PASSAGE.distractors;
+  const blanks = activeClozeData.blanks || DEFAULT_GAUNTLET_PASSAGE.blanks;
+  const distractors = activeClozeData.distractors || DEFAULT_GAUNTLET_PASSAGE.distractors;
 
   // 10 Crystals scattered
   const initialCrystals = useMemo(() => {
@@ -452,7 +471,7 @@ export default function CambridgeClozeGauntlet({
       <div className="gauntlet-objective-banner">
         <Crown size={22} className="gauntlet-banner-icon" />
         <div className="gauntlet-banner-info">
-          <span className="gauntlet-title">{clozeData.title}</span>
+          <span className="gauntlet-title">{activeClozeData.title}</span>
           <span className="gauntlet-counter">
             Zenith Seals Restored: {Object.keys(placedBlanks).length} / {blanks.length}
           </span>

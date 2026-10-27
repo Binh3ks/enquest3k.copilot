@@ -163,71 +163,184 @@ Whenever dictation exercises occur (Cambridge Listening Part 2 notepad note-taki
 
 ---
 
-## 7. The 7-Step Production Workflow for New Weeks
+## 7. Quy Trình Sản Xuất Tuần Chuẩn Hóa 5 Giai Đoạn (Mass Production Pipeline W01–W156)
+
+Quy trình sản xuất công nghiệp chuẩn hóa để nhân bản tuần học (chuẩn bị mass production cho ~136 tuần W01–W32 và W35–W156) mà không cần suy luận thủ công lại từ đầu:
 
 ```mermaid
 graph TD
-    Step1[1. Extract Syllabus Row & Week Type from Digital Map] --> Step2[2. Create Week Directory & 4 Central Hubs]
-    Step2 --> Step3[3. Generate Authentic Media Assets & Calibrate Coordinates]
-    Step3 --> Step4[4. Execute Tier 1: CEFR Curriculum Guard]
-    Step4 --> Step5[5. Execute Tier 2: 15-Task Purity & Completeness Audit]
-    Step5 --> Step6[6. Execute Tier 3: Cambridge Mechanic Fidelity Doctrine]
-    Step6 --> Step7[7. Multi-Agent Review, Verification & Git Commit]
+    Stage1[Giai đoạn 1: Trích xuất Syllabus từ Khung CT Gốc] --> Stage2[Giai đoạn 2: Sinh Nội dung 7 Hạng mục Sư phạm]
+    Stage2 --> Stage3[Giai đoạn 3: Tích hợp & Đồng bộ 4 Central Data Hubs]
+    Stage3 --> Stage4[Giai đoạn 4: Thẩm định 11 Automated Quality Gates]
+    Stage4 --> Stage5[Giai đoạn 5: Đóng băng & Kiểm soát Toàn vẹn Manifest]
 ```
-
-### Step 1: Extract Parameters from Digital Syllabus Map
-- Read `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md` for Week $N$.
-- Check whether Week $N$ is a **Rotary Practice Week** or a **Full Mock Test Week**.
-- Extract: `theme`, `cefr_stage`, `exam_milestone`, `clil_stem_module`, `scaffolding_tier`, `target_vocab`, `grammar_focus`.
-
-### Step 2: Author the 4 Central Hubs
-Create directory `src/data/weeks/week_{N}/` containing:
-- `index.js`: Week metadata, title, CEFR level, `isFullMock`, export bundling.
-- `reading_hub.js`: Webtoon panels, retell collocations, CLIL article, and reading assessment parts.
-- `listening_hub.js`: Action Lab experiment, Singapore Math problems & SVGs, Speed Match, Grammar Duel, and listening assessment parts.
-- `writing_hub.js`: Creative story writing with 3-level scaffolding and writing assessment parts.
-- `speaking_hub.js`: Video Challenge teleprompter, Info Exchange cue cards, Spot-Differences with calibrated coordinates, and speaking assessment parts.
-
-### Step 3: Produce Authentic Media Assets & Calibrate Coordinates
-- **Webtoon Images**: Save 5 story panels in `public/images/week{N}/`.
-- **Singapore Math**: Generate 5 clean Bar Model SVGs in `public/images/week{N}/bar_models/`.
-- **Audio Assets**: Pre-generate examiner questions and dialogue MP3s in `public/audio/week{N}/`.
-- **Hotspot Calibration**: Run visual calibrator tool (`npm run calibrate:diff {N}`) to record hotspot centroids into `docs/week{N}_hotspot_calibration.json`.
 
 ---
 
-## 8. The 3-Tier Quality Gates Pipeline
+### Giai đoạn 1: Trích xuất Thông số từ Khung CT Gốc 156 Tuần (Authoritative Syllabus Ingestion)
 
-Every week MUST pass all 3 automated gates before being merged:
+- **Mục tiêu**: Lấy đúng chủ đề, thể loại bài đọc, kỹ năng và ngữ pháp mục tiêu từ nguồn dữ liệu gốc duy nhất được đóng băng.
+- **Tài liệu nguồn (Inputs)**:
+  1. `docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` (Khung CT gốc 156 tuần chính thức).
+  2. `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md` (Bản đồ số hóa chi tiết 156 tuần).
+- **Các thông số bắt buộc trích xuất**:
+  - `weekNumber`: Số thứ tự tuần ($1 \dots 156$).
+  - `theme`: Chủ đề tuần học (e.g. W34: *"The Lion and the Mouse & Forest Ecosystem"*).
+  - `cefr_stage`: Giai đoạn CEFR (Stage 1: Pre-A1 $\rightarrow$ A2 Flyers; Stage 2: A2+ $\rightarrow$ B1 PET; Stage 3: B1+ Academic).
+  - `week_type`: Type A (Rotary Practice Week) hoặc Type B (Full Mock Test Week với `isFullMock: true`).
+  - `grammar_focus`: Trọng tâm ngữ pháp (e.g. Past Continuous with *While/When*).
+  - `clil_topic`: Chủ đề khoa học/xã hội liên môn tích hợp.
+  - `phonics_focus` / `vocab_domain`: Miền từ vựng và ngữ âm.
+- **Đầu ra (Output)**:
+  - File thông số tuần `src/data/weeks/week_{N}/blueprint.json` chứa toàn bộ metadata sư phạm.
 
-### Tier 1: CEFR Curriculum Guard
+---
+
+### Giai đoạn 2: Sinh Nội Dung 7 Hạng Mục Sư Phạm Bắt Buộc (7 Core Pedagogical Deliverables)
+
+### Giai đoạn 2: Sinh Nội Dung 7 Hạng Mục Sư Phạm Bắt Buộc (7 Core Pedagogical Deliverables — W34 Gold Standard Checklist)
+
+Lấy Tuần 34 làm khuôn mẫu chuẩn mực (Gold Standard Template), tác giả và agent bắt buộc phải rà soát qua bảng **Checklist Sư phạm 7 Hạng mục** trước khi ráp vào hệ thống:
+
+#### 📋 Checklist Chi tiết 7 Hạng mục Sư phạm:
+
+- [ ] **1. Hạng mục 1: Dictation 8 câu đàm thoại đời thường (Everyday Cambridge Dictation)**:
+  - Đúng 8 câu thoại ngắn liên hoàn giữa 2 nhân vật (giáo viên - học sinh hoặc 2 người bạn).
+  - CẤM chép câu văn của bài đọc Webtoon hay CLIL (Invariant 10).
+  - Tích hợp tối thiểu 6/6 thực thể khảo thí:
+    - [x] Giờ giấc cụ thể (e.g. `09:15 AM`, `half past two`).
+    - [x] Số phòng học / địa chỉ (e.g. `Room 3A`, `Room 4B`).
+    - [x] Số điện thoại liên lạc (e.g. `0912 345 678`).
+    - [x] Khoảng thời gian đo lường (e.g. `20 minutes`, `2 days`).
+    - [x] Thứ trong tuần và buổi (e.g. `Thursday morning`, `this Friday`).
+    - [x] Tên riêng và địa điểm đời thường (e.g. `Miss Green`, `Sam`, `the hall`, `art room`).
+  - **Kiểm tra tính nhất quán dòng thời gian (Chronological Coherence)**: Đảm bảo các mốc thời gian trong đoạn thoại logic với nhau (ví dụ: ngày diễn kịch ở câu 2 phải khớp với ngày hẹn gặp lại ở câu 8, tránh lệch thứ).
+
+- [ ] **2. Hạng mục 2: Bài đọc Khoa học Liên môn CLIL (Interdisciplinary CLIL Article)**:
+  - Dung lượng: 90 – 200 từ (chuẩn A2 Flyers: ~120 – 150 từ).
+  - Độ dài câu: $\le 28$ từ/câu; chứa tối thiểu 3 fact units hoàn chỉnh (Subject + Action + Outcome).
+  - **Nguyên tắc Toàn vẹn Thuật ngữ (100% Glossary In-Text Presence)**: 100% các thuật ngữ trong `glossary` ($\ge 7$ từ) BẮT BUỘC phải xuất hiện thực tế trong văn bản `content_en`, CẤM định nghĩa từ mà bài đọc không dùng.
+  - Đi kèm: 5 câu hỏi đọc hiểu `check_questions` và 1 câu hỏi tư duy phản biện `critical_thinking`.
+
+- [ ] **3. Hạng mục 3: Danh mục Từ vựng Mục tiêu Cốt lõi & Ôn tập (Vocab & Foundation Review)**:
+  - Đúng 20 từ vựng cốt lõi mới (`week{N}Vocab`) theo chuẩn CEFR của tuần.
+  - Mỗi từ có đầy đủ: `word`, `definition_en`, `definition_vi`, `example_en`, `example_vi`, `audio_word`.
+  - **Mở rộng Ôn tập Ngắt quãng (SRS Foundation Review)**: Bổ sung các từ mục tiêu nền tảng xuất hiện trong tuần (e.g. `tiny`, `huge`, `help`) có gắn cờ `tier: "foundation_review"` để hệ thống SRS nạp vào lịch ôn tập ngắt quãng.
+  - **Ghi chú Từ vựng CLIL Mở rộng**: Ghi rõ `category: "CLIL_EXTENSION"` cho các thuật ngữ khoa học vượt chuẩn Flyers một bậc (e.g. `ecosystem`) để hệ thống kiểm tra tự động (`gate12`) không cảnh báo lỗi vượt cấp độ.
+
+- [ ] **4. Hạng mục 4: Voice Shadowing & Trọng tâm Ngữ âm (Pronunciation & Phonology Triad)**:
+  - Gồm 8 câu luyện phát âm bám sát cốt truyện.
+  - Đầy đủ phiên âm IPA cho từng từ (`ipa: [...]`).
+  - **Bộ Ba Âm Đuôi Quá Khứ (Past Tense -ed Ending Triad)**: Nếu tuần có trọng tâm phát âm quá khứ đơn, 8 câu Shadowing BẮT BUỘC phải bao quát đầy đủ cả 3 nhóm âm đuôi:
+    - Nhóm **/t/** (sau âm vô thanh /p, k, f, s, ʃ, tʃ/: `trapped`, `promised`, `escaped`, `thanked`).
+    - Nhóm **/d/** (sau âm hữu thanh và nguyên âm: `chewed`, `roared`, `freed`, `stayed`).
+    - Nhóm **/ɪd/** (sau âm /t/ và /d/: `rested`, `trusted`, `waited`, `started`).
+
+- [ ] **5. Hạng mục 5: Các đoạn văn khảo thí F5D3 Reading & Writing Passages**:
+  - `rw_part1`: 15 từ vựng Word Bank + 10 định nghĩa + 1 ví dụ mẫu.
+  - `rw_part2`: Cuộc trò chuyện Dialogue A-H gồm 5 lượt thoại (`turns`) + 8 phương án (`answer_options`) + 1 ví dụ mẫu (`example`).
+  - `reading_part3_story`: Bài đọc điền từ 5 chỗ trống + 10 từ Word Bank + 3 phương án chọn tiêu đề (`title_options`).
+  - `rw_part4`: Bài đọc ngữ pháp Cloze 10 chỗ trống trắc nghiệm 3 lựa chọn (`blanks`) + 1 ví dụ mẫu blank 0.
+  - `rw_part5`: Đoạn văn trích xuất thông tin 7 câu điền từ tự do (`questions`, không có phương án trắc nghiệm) + 1 ví dụ mẫu.
+  - `rw_part_6`: Bài viết nhật ký Open Cloze 5 chỗ trống điền 1 từ duy nhất + 1 ví dụ mẫu.
+
+- [ ] **6. Hạng mục 6: Dữ liệu Tương tác Mini-games F7D1 & Action Lab**:
+  - `science_lab` (Action Lab): Cung cấp tối thiểu 3 kịch bản / diagram tương tác (`stages: [Stage 1, Stage 2, Stage 3]`) về nguyên nhân vật lý, vật liệu đối ứng và quy trình xử lý thực tế theo Invariant 7.
+  - `singapore_math`: Đúng 5 bài toán tư duy Bar Model theo chuẩn C.U.B.E.S. kèm dữ liệu `modelData` (part-whole / comparison) khớp 100% kết quả tính toán.
+  - `grammar_drills`: 5 câu Grammar Duel sắp xếp trật tự từ có từ gây nhiễu (`distractor_blocks`).
+  - `story_writer`: Khung 3 bức tranh với 3 nấc thang MODEL $\rightarrow$ BUILD $\rightarrow$ WRITE và từ nối thời gian (`connectors`).
+
+- [ ] **7. Hạng mục 7: Kịch bản Âm thanh & Asset Âm thanh Pre-generated**:
+  - Khai báo đầy đủ và tạo sẵn file MP3 vật lý trong `public/audio/week{N}/`:
+    - 8 câu Dictation (sử dụng 2 giọng đọc phân biệt cho giáo viên và học sinh).
+    - 8 câu Voice Shadowing.
+    - Bài đọc CLIL Explore.
+    - 20+ file âm thanh từ vựng (`vocab_{word}.mp3`).
+    - Listening Parts 1–5 và Speaking Part 2/4.
+  - Đảm bảo 100% file tồn tại và dung lượng $> 0\text{ bytes}$ để vượt qua Gate 3.
+
+- **Đầu ra (Output)**: Bộ bản thảo nội dung sẵn sàng ráp vào các Hub.
+
+---
+
+### Giai đoạn 3: Tích Hợp & Đồng Bộ 4 Central Data Hubs (Hub Integration & Purity)
+
+- **Mục tiêu**: Tạo lập cấu trúc thư mục `src/data/weeks/week_{N}/` và xuất khẩu đúng chuẩn các biến dữ liệu:
+  - `index.js`: Khai báo metadata tuần (`weekNumber`, `theme`, `cefr_level`, `isFullMock`, các hub con).
+  - `reading_hub.js`: Webtoon story scenes (5 cảnh có hotspots), Voice Shadowing (8 câu có IPA), CLIL article & glossary, Cambridge Reading Parts 1–6.
+  - `listening_hub.js`: Listening Parts 1–5 chuẩn Cambridge Movers/Flyers, Action Lab, Singapore Math, Grammar Duel.
+  - `writing_hub.js`: Creative Story Writer (3 panels có 3 nấc thang), Discovery Report config (Data Card + 1-Tap Pills), Writing Chunks (4 nhóm ngữ đoạn).
+  - `speaking_hub.js`: Video Challenge teleprompter, Info Exchange cue cards, Spot-Differences (4 cặp điểm khác biệt có tọa độ hotspot), Personal Questions.
+  - `skill_practice_hub.js`: Tập trung Dictation 8 câu, Grammar Drills, Singapore Math 5 bài toán và Action Lab.
+
+---
+
+### Giai đoạn 4: Thẩm Định Độc Lập Qua 11 Automated Quality Gates (Automated Gate Sweep)
+
+Tuần học BẮT BUỘC phải chạy tuần tự và đạt 100% PASS trên tất cả **11 Quality Gates**:
+
 ```bash
-npm run audit:cefr {N}
-```
-- **Pass Criteria**:
-  - 0 B2/C1 vocabulary violations for Stage 1 (W01–W72).
-  - Sentence length $\le 24$ words for narrative, $\le 28$ words for CLIL scientific texts.
+# 1. Gate 3: Kiểm tra toàn vẹn tài nguyên media vật lý (ảnh, audio)
+node scripts/gate3_media_integrity.mjs {N}
 
-### Tier 2: 15-Task Purity & Completeness Audit
-```bash
-node scripts/audit_all_w33_tasks.mjs
-```
-- **Pass Criteria**:
-  - 100% PASS across all 15 tasks (0 issues).
-  - Zero hardcoded fallback strings in components.
-  - All 5 Zones mount cleanly with authentic data.
+# 2. Gate 4: Kiểm tra in đậm ngữ đoạn và cấu trúc cụm từ retell/shadowing
+node scripts/gate4_chunk_bolding.mjs {N}
 
-### Tier 3: Cambridge Mechanic Fidelity Doctrine & Content Quality
-```bash
-node scripts/gate17_fidelity_doctrine.mjs {N}
+# 3. Gate 8: Quét sạch mã dự phòng và dummy string (No-fallback sweep)
+node scripts/gate8_no_fallback_sweep.mjs {N}
+
+# 4. Gate 10: Kiểm tra tính chuẩn xác ngữ pháp các câu ví dụ Cambridge
+node scripts/gate10_example_grammaticality.mjs {N}
+
+# 5. Gate 11: Kiểm tra độ phong phú nội dung & chuẩn mực 8 câu dictation
+node scripts/gate11_content_richness.mjs {N}
+
+# 6. Gate 12: Thẩm định cấp độ CEFR và độ dài câu từ vựng
+node scripts/gate12_comprehensive_cefr.mjs {N}
+
+# 7. Gate 13: Xác thực cấu trúc 5 Zones / 15 Quests và nhịp xoay vòng rotary
+node scripts/gate13_rotary_schedule.mjs {N}
+
+# 8. Gate 15: Kiểm thử DOM thực tế trên Headless Chrome & WebKit
+node scripts/gate15_production_dom_assertions.mjs {N}
+
+# 9. Gate 16: Thẩm định chất lượng CLIL fact units, banned strings & writing chunks
 node scripts/gate16_content_quality.mjs {N}
+
+# 10. Gate 17: Thẩm định Cambridge Mechanic Fidelity Doctrine (14 Invariants)
+node scripts/gate17_fidelity_doctrine.mjs {N}
+
+# 11. Freeze Guard: Kiểm tra khóa toàn vẹn file và chống drift
+node scripts/guard_golden_w{N}_freeze.mjs
 ```
-- **Pass Criteria**:
-  - `schemaValid: true`, 0 schema errors against schema definition.
-  - All 14 Invariants PASS.
-  - 100% Component existence verified.
-  - Single-source Singapore Math equality 5/5 matched.
-  - S3 Speaking Part 3 accepts 4 or 5 images.
+
+**Bảng Tiêu chí Chấp thuận (Pass Criteria Matrix)**:
+
+| Cổng (Gate) | Tên Gate Script | Tiêu chuẩn Đạt (Acceptance Criteria) |
+|:---|:---|:---|
+| **Gate 3** | `gate3_media_integrity.mjs` | 100% file ảnh và audio được khai báo tồn tại thực tế trên đĩa, không 404. |
+| **Gate 4** | `gate4_chunk_bolding.mjs` | 100% câu narration có in đậm cụm từ Collocations hợp lệ. |
+| **Gate 8** | `gate8_no_fallback_sweep.mjs` | 0 dummy strings (không chứa `"Related to "`, `"Lorem"`, `"placeholder"`). |
+| **Gate 10** | `gate10_example_grammaticality.mjs` | 0 lỗi ngữ pháp trong các câu mẫu Cambridge Part 1–6. |
+| **Gate 11** | `gate11_content_richness.mjs` | Đúng 8 câu Dictation thoại đời thường; đủ 20 từ vựng và các nhóm bài tập. |
+| **Gate 12** | `gate12_comprehensive_cefr.mjs` | 0 vi phạm từ vựng ngoài CEFR A2 Flyers (cho Stage 1); độ dài câu đạt chuẩn. |
+| **Gate 13** | `gate13_rotary_schedule.mjs` | Đúng 5 Zones / 15 Quests; phân bổ 3 Quests/ngày khớp 100% Ma trận. |
+| **Gate 15** | `gate15_production_dom_assertions.mjs` | 15/15 Quests render thành công trên DOM production, 0 console error. |
+| **Gate 16** | `gate16_content_quality.mjs` | $\ge 3$ fact units CLIL; 0 banned strings; 4 nhóm writing chunks hoàn chỉnh. |
+| **Gate 17** | `gate17_fidelity_doctrine.mjs` | `schemaValid: true`; 14/14 Invariants PASS; 16/16 component Cambridge tồn tại. |
+| **Gate Guard** | `guard_golden_w{N}_freeze.mjs` | 100% file cốt lõi khớp mã băm SHA-256 đã đóng băng trong Manifest. |
+
+---
+
+### Giai đoạn 5: Đóng Băng Chất Lượng & Tạo Manifest Hash (Freeze & Verification)
+
+- **Mục tiêu**: Khóa chặt nội dung tuần học sau khi vượt qua toàn bộ 11 Gates, đảm bảo không bị drift hoặc vô tình sửa đổi trong các đợt refactor hệ thống sau này.
+- **Các bước thực hiện**:
+  1. Tính mã băm SHA-256 cho các file dữ liệu cốt lõi (`reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `speaking_hub.js`, `skill_practice_hub.js`, `vocab.js`, `GATE15_SPEC_W{N}.json`).
+  2. Ghi nhận vào file manifest đóng băng: `docs/W{N}_GOLDEN_FREEZE_MANIFEST.json`.
+  3. Thiết lập script bảo vệ `scripts/guard_golden_w{N}_freeze.mjs` và thêm vào suite CI/CD.
+  4. Thực hiện Git commit với thông điệp chuẩn hóa:  
+     `feat(week-{N}): freeze golden standard curriculum core [11-gates-passed]`
 
 ---
 

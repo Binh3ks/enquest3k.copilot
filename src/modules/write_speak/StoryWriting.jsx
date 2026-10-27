@@ -186,17 +186,11 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
     const incomingPanelCount = incomingPanels.filter(t => t && t.trim().length > 0).length;
     const currentPanelCount = panelTexts.filter(t => t && t.trim().length > 0).length;
 
-    // Hydrate if:
-    // 1. Not hydrated yet, OR
-    // 2. Incoming data has strictly more panels (e.g. 5 vs 2), OR
-    // 3. Incoming timestamp is newer than our last saved timestamp
-    const shouldHydrate = !hydratedRef.current || 
-      (incomingPanelCount > currentPanelCount) || 
-      (incomingTime > lastSavedAtRef.current && incomingPanelCount >= currentPanelCount);
+    // Hydrate once on mount or when not yet hydrated to prevent infinite re-render loops
+    if (hydratedRef.current) return;
 
-    if (shouldHydrate) {
-      hydratedRef.current = true;
-      lastSavedAtRef.current = incomingTime || Date.now();
+    hydratedRef.current = true;
+    lastSavedAtRef.current = incomingTime || Date.now();
 
       if (incomingPanels.length > 0) {
         const padded = [...incomingPanels];
@@ -217,7 +211,6 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
       if (typeof savedData.currentStepIdx === 'number' && savedData.currentStepIdx < steps.length) {
         setCurrentStepIdx(savedData.currentStepIdx);
       }
-    }
   }, [savedData, steps.length]);
 
   // Mark hydration true on user typing
@@ -706,7 +699,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
             >
               <div className="flex items-center justify-between">
                 <span className="text-[10px] sm:text-xs font-black uppercase text-purple-900 tracking-wider flex items-center gap-1">
-                  <Link2 size={13} className="text-purple-700" /> 🔗 Connectors:
+                  <Link2 size={13} className="text-purple-700" /> 🔗 LINK YOUR SENTENCES (Connectors):
                 </span>
                 <span className="text-[10px] sm:text-xs font-medium text-purple-700 italic hidden sm:inline">
                   Join pictures into ONE story
@@ -835,7 +828,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
             {currentStepIdx < steps.length - 1 ? (
               <>Next Scene <ArrowRight size={16} /></>
             ) : (
-              <>Review Story <Sparkles size={16} /></>
+              <>Review Complete Story <Sparkles size={16} /></>
             )}
           </button>
         </div>

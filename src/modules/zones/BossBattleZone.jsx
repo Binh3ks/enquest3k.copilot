@@ -57,12 +57,12 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         p5: data?.listening_hub?.listening_p5 || data?.listeningHubData?.listening_p5 || data?.bossBattle?.listening?.p5
       },
       readingWriting: {
-        p1: data?.reading_hub?.rw_part_1 || data?.writing_hub?.rw_part_1 || data?.readingHubData?.rw_part_1 || data?.writingHubData?.rw_part_1 || data?.bossBattle?.readingWriting?.p1,
-        p2: data?.reading_hub?.rw_part_2 || data?.writing_hub?.rw_part_2 || data?.readingHubData?.rw_part_2 || data?.writingHubData?.rw_part_2 || data?.bossBattle?.readingWriting?.p2,
-        p3: data?.reading_hub?.rw_part_3 || data?.writing_hub?.rw_part_3 || data?.readingHubData?.rw_part_3 || data?.writingHubData?.rw_part_3 || data?.bossBattle?.readingWriting?.p3,
-        p4: data?.reading_hub?.rw_part_4 || data?.writing_hub?.rw_part_4 || data?.reading_hub?.rw_part4 || data?.writing_hub?.rw_part4 || data?.readingHubData?.rw_part_4 || data?.writingHubData?.rw_part_4 || data?.bossBattle?.readingWriting?.p4,
-        p5: data?.reading_hub?.rw_part_5 || data?.writing_hub?.rw_part_5 || data?.reading_hub?.rw_part5 || data?.writing_hub?.rw_part5 || data?.readingHubData?.rw_part_5 || data?.writingHubData?.rw_part_5 || data?.bossBattle?.readingWriting?.p5,
-        p6: data?.reading_hub?.rw_part_6 || data?.writing_hub?.rw_part_6 || data?.reading_hub?.rw_part6 || data?.writing_hub?.rw_part6 || data?.readingHubData?.rw_part_6 || data?.writingHubData?.rw_part_6 || data?.bossBattle?.readingWriting?.p6,
+        p1: data?.reading_hub?.rw_part_1 || data?.reading_hub?.rw_part1 || data?.writing_hub?.rw_part_1 || data?.writing_hub?.rw_part1 || data?.readingHubData?.rw_part_1 || data?.readingHubData?.rw_part1 || data?.writingHubData?.rw_part_1 || data?.bossBattle?.readingWriting?.p1,
+        p2: data?.reading_hub?.rw_part_2 || data?.reading_hub?.rw_part2 || data?.writing_hub?.rw_part_2 || data?.writing_hub?.rw_part2 || data?.readingHubData?.rw_part_2 || data?.readingHubData?.rw_part2 || data?.writingHubData?.rw_part_2 || data?.bossBattle?.readingWriting?.p2,
+        p3: data?.reading_hub?.rw_part_3 || data?.reading_hub?.rw_part3 || data?.writing_hub?.rw_part_3 || data?.writing_hub?.rw_part3 || data?.readingHubData?.rw_part_3 || data?.readingHubData?.rw_part3 || data?.writingHubData?.rw_part_3 || data?.bossBattle?.readingWriting?.p3,
+        p4: data?.reading_hub?.rw_part_4 || data?.reading_hub?.rw_part4 || data?.writing_hub?.rw_part_4 || data?.writing_hub?.rw_part4 || data?.readingHubData?.rw_part_4 || data?.writingHubData?.rw_part_4 || data?.bossBattle?.readingWriting?.p4,
+        p5: data?.reading_hub?.rw_part_5 || data?.reading_hub?.rw_part5 || data?.writing_hub?.rw_part_5 || data?.writing_hub?.rw_part5 || data?.readingHubData?.rw_part_5 || data?.writingHubData?.rw_part_5 || data?.bossBattle?.readingWriting?.p5,
+        p6: data?.reading_hub?.rw_part_6 || data?.reading_hub?.rw_part6 || data?.writing_hub?.rw_part_6 || data?.writing_hub?.rw_part6 || data?.readingHubData?.rw_part_6 || data?.writingHubData?.rw_part_6 || data?.bossBattle?.readingWriting?.p6,
         p7: data?.writing_hub?.picture_story || data?.writingHubData?.picture_story || data?.bossBattle?.readingWriting?.p7
       },
       speaking: {
@@ -314,17 +314,16 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
   }, [onBackToMap, navigate, activeWeek]);
 
   const getUnifiedTitle = React.useCallback(() => {
-    if (forcedStation === 'listening_boss' || currentTask?.paper === PAPER.LISTENING) {
-      return stationTasks.length > 1 ? 'Listening Part 1 & 2' : 'Listening Part 1';
+    const rawTitle = currentTask?.displayName || currentTask?.shortLabel || (
+      currentTask?.paper === PAPER.LISTENING ? 'Listening' :
+      currentTask?.paper === PAPER.READING_WRITING ? 'Reading & Writing' :
+      currentTask?.paper === PAPER.SPEAKING ? 'Speaking' : 'Boss Castle'
+    );
+    if (rawTitle.startsWith('Cambridge A2 Flyers')) {
+      return rawTitle;
     }
-    if (forcedStation === 'rw_boss' || currentTask?.paper === PAPER.READING_WRITING) {
-      return 'Reading & Writing Part 1';
-    }
-    if (forcedStation === 'review' || currentTask?.paper === PAPER.SPEAKING) {
-      return 'Speaking Part 1';
-    }
-    return currentTask?.displayName || 'Boss Castle';
-  }, [forcedStation, currentTask?.paper, currentTask?.displayName, stationTasks.length]);
+    return `Cambridge A2 Flyers — ${rawTitle}`;
+  }, [currentTask?.displayName, currentTask?.shortLabel, currentTask?.paper]);
 
   const getHeaderTheme = React.useCallback(() => {
     if (currentTask?.paper === PAPER.LISTENING) {

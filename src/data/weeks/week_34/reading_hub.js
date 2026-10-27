@@ -91,6 +91,13 @@ export const readingHub = {
     part_2_title: "Teamwork Keeps Nature Green",
     content_en: "In nature, animals show wonderful cooperation when they help each other find food every day. In Africa, an oxpecker bird eats tiny bugs to help the zebra and find tasty food in its wild habitat. In the ocean, tiny cleaner fish swim safely inside the mouth of a shark to clean its sharp teeth. The giant predator never hurts these small animal helpers that cooperate so everyone can survive. Just like the lion and the mouse, big and small creatures work together. Together, big and small animals help protect the forest trees and keep the whole ecosystem strong and green.",
     content_vi: "Trong tự nhiên, các loài động vật thể hiện sự hợp tác tuyệt vời khi giúp đỡ lẫn nhau tìm kiếm thức ăn mỗi ngày. Tại châu Phi, chú chim bắt ve ăn những con bọ nhỏ để giúp ngựa vằn và tìm kiếm thức ăn ngon trong môi trường sống tự nhiên. Dưới đại dương, những chú cá dọn vệ sinh nhỏ bơi an toàn vào trong miệng cá mập để làm sạch răng sắc nhọn. Kẻ săn mồi khổng lồ không bao giờ làm hại những người bạn nhỏ hợp tác cùng nhau để tất cả cùng sinh tồn. Giống như sư tử và chuột nhỏ, các sinh vật lớn và nhỏ cùng phối hợp. Cùng nhau, động vật lớn và nhỏ giúp bảo vệ cây rừng và giữ cho toàn bộ hệ sinh thái luôn vững mạnh và xanh tươi.",
+    grammar_patterns: [
+      {
+        pattern: '\\b(show wonderful cooperation|help each other|eats tiny bugs|swim safely inside|clean its sharp teeth|never hurts|work together|protect the forest trees)\\b',
+        label: 'Present Simple: Mutual Cooperation & Natural Actions',
+        paragraph_scope: 0
+      }
+    ],
     cover_image: "/images/week34/explore_cover_w34.jpg",
     audio_url: "/audio/week34/explore.mp3",
     vocab_focus: [
@@ -359,6 +366,7 @@ readingHub.story_scenes = readingHub.read_explore.story_scenes;
 readingHub.interactive_story = readingHub.read_explore.story_scenes;
 readingHub.rw_part_1 = readingHub.rw_part1;
 readingHub.rw_part_2 = readingHub.rw_part2;
+readingHub.rw_part_3 = readingHub.rw_part3;
 readingHub.rw_part_4 = readingHub.rw_part4;
 readingHub.rw_part_5 = readingHub.rw_part5;
 

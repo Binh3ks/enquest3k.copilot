@@ -183,6 +183,7 @@ export default function KnowledgeLabZone({
         {activeTab === 'discovery_report' && (
           <ScienceReportCreator
             reportTopic={reportTopic}
+            customConfig={data?.writing_hub?.science_report_config || data?.listening_hub?.science_report_config || data?.knowledgeLab?.discoveryReport}
             weekNumber={activeWeek}
             onComplete={(pts) => {
               handleQuestComplete('science_report', pts > 0 ? 50 : 0);

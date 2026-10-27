@@ -9,22 +9,20 @@
 ---
 
 ## MỤC LỤC
-1. [23 Từ vựng Mục tiêu & Ôn tập Nền tảng (Target & Foundation Vocabulary)](#1-23-từ-vựng-mục-tiêu--ôn-tập-nền-tảng)
+1. [20 Từ vựng Mục tiêu Cốt lõi (Target Vocabulary)](#1-20-từ-vựng-mục-tiêu-cốt-lõi)
 2. [Hội thoại Giao tiếp Đời thường & Luyện Chép Chính tả (Everyday Cambridge Dictation)](#2-hội-thoại-giao-tiếp-đời-thường--luyện-chép-chính-tả)
 3. [Bài đọc Khoa học Liên môn CLIL (Animal Helpers in Nature)](#3-bài-đọc-khoa-học-liên-môn-clil)
 4. [Truyện Tranh Webtoon & Voice Shadowing (The Lion and the Mouse)](#4-truyện-tranh-webtoon--voice-shadowing)
 5. [Đấu trường Ngôn ngữ & Toán Tư duy (Knowledge & Battle Arena)](#5-đấu-trường-ngôn-ngữ--toán-tư-duy)
 6. [Xưởng Sáng tạo & Giao tiếp (Creator Studio)](#6-xưởng-sáng-tạo--giao-tiếp)
 7. [Hệ thống Bài tập & Khảo thí Cambridge Chuẩn hóa (Boss Castle Assessment)](#7-hệ-thống-bài-tập--khảo-thí-cambridge-chuẩn-hóa)
-8. [Kết luận & Đề nghị Phê duyệt từ Chuyên gia Sư phạm](#8-kết-luận--đề-nghị-phê-duyệt-từ-chuyên-gia-sư-phạm)
 
 ---
 
-## 1. 23 Từ vựng Mục tiêu & Ôn tập Nền tảng
+## 1. 20 Từ vựng Mục tiêu Cốt lõi (Target Vocabulary)
 
 Mỗi từ vựng được học sinh tiếp cận qua định nghĩa Anh - Việt, phát âm chuẩn bản ngữ và câu văn ngữ cảnh hoàn chỉnh:
 
-### 1.1 20 Từ vựng Mục tiêu Cốt lõi (Core Target Vocabulary)
 | STT | Từ vựng | Từ loại | Định nghĩa Tiếng Anh (English Definition) | Giải nghĩa Tiếng Việt | Câu ví dụ Tiếng Anh | Dịch nghĩa câu ví dụ |
 |:---:|:---|:---:|:---|:---|:---|:---|
 | 1 | **lion** | *n.* | A large wild cat known as the king of the jungle. | Sư tử, chúa tể rừng xanh. | The mighty lion was sleeping under a shady tree. | Chú sư tử dũng mãnh đang ngủ dưới bóng cây râm mát. |
@@ -47,14 +45,6 @@ Mỗi từ vựng được học sinh tiếp cận qua định nghĩa Anh - Vi�
 | 18 | **grateful** | *adj.* | Feeling thankful for someone's kindness. | Biết ơn, cảm kích. | The lion felt deeply grateful to his little helper. | Sư tử cảm thấy vô cùng biết ơn người bạn nhỏ. |
 | 19 | **ecosystem** | *n.* | A community of living organisms interacting together. | Hệ sinh thái tự nhiên. | All creatures play an important role in the forest ecosystem. | Mọi loài sinh vật đều đóng vai trò quan trọng trong hệ sinh thái. |
 | 20 | **friendship** | *n.* | The state of being mutual, caring friends. | Tình bạn thân thiết. | True friendship makes everyone stronger and happier. | Tình bạn chân thành giúp mọi người mạnh mẽ và hạnh phúc hơn. |
-
-### 1.2 3 Từ vựng Ôn tập Nền tảng (Foundation Review Vocabulary)
-*(Bổ sung theo yêu cầu sư phạm để đảm bảo hệ thống lặp lại ngắt quãng SRS đưa vào lịch ôn tập)*:
-| STT | Từ vựng | Từ loại | Định nghĩa Tiếng Anh (English Definition) | Giải nghĩa Tiếng Việt | Câu ví dụ Tiếng Anh | Dịch nghĩa câu ví dụ |
-|:---:|:---|:---:|:---|:---|:---|:---|
-| 21 | **tiny** | *adj.* | Extremely small in size or amount. | Tí hon, rất nhỏ bé. | A tiny mouse ran across the forest path. | Một chú chuột tí hon chạy ngang qua lối đi trong rừng. |
-| 22 | **huge** | *adj.* | Extremely large in size or amount. | To lớn khổng lồ, đồ sộ. | A huge lion was resting under the tree. | Một chú sư tử to lớn đang nghỉ ngơi dưới gốc cây. |
-| 23 | **help** | *v.* | To assist someone or make something easier. | Giúp đỡ, trợ giúp ai đó. | Even small friends can help big friends. | Ngay cả những người bạn nhỏ cũng có thể giúp đỡ bạn lớn. |
 
 ---
 
@@ -92,9 +82,9 @@ Mỗi từ vựng được học sinh tiếp cận qua định nghĩa Anh - Vi�
   *(Thật tuyệt vời, em nhớ hỗ trợ bạn diễn vai chú chuột nhỏ trên sân khấu nhé.)*  
   👉 *Thực thể khảo thí*: Cụm giao tiếp thường ngày (`That is wonderful`, `remember to help`, `on stage`).
 
-- **Câu 8 (Sam)**: `"Thank you Miss Green, see you this Thursday morning!"`  
-  *(Em cảm ơn cô Green, hẹn gặp cô vào sáng thứ Năm tuần này ạ!)*  
-  👉 *Thực thể khảo thí*: Lời cảm ơn và chào hẹn gặp lại (`Thank you`, `see you this Thursday morning`).
+- **Câu 8 (Sam)**: `"Thank you Miss Green, see you this Friday morning!"`  
+  *(Em cảm ơn cô Green, hẹn gặp cô vào sáng thứ Sáu tuần này ạ!)*  
+  👉 *Thực thể khảo thí*: Lời cảm ơn và chào hẹn gặp lại (`Thank you`, `see you this Friday morning`).
 
 ---
 
@@ -173,36 +163,21 @@ Mỗi từ vựng được học sinh tiếp cận qua định nghĩa Anh - Vi�
 
 ### 4.2 Luyện Âm & Ngữ Điệu Voice Shadowing (8 Câu có Phiên âm IPA)
 1. `"The mighty lion was sleeping under a big tree."`  
-   `/ðə ˈmaɪ.ti ˈlaɪ.ən wɒz ˈsliː.pɪŋ ˈʌn.dər ə bɪɡ triː/`  
-   *(Thì quá khứ tiếp diễn thiết lập bối cảnh câu chuyện: `was sleeping`)*
+   `/ðə ˈmaɪ.ti ˈlaɪ.ən wɒz ˈsliː.pɪŋ ˈʌn.dər ə bɪɡ triː/`
 2. `"A tiny mouse ran across his nose."`  
-   `/ə ˈtaɪ.ni maʊs ræn əˈkrɒs hɪz nəʊz/`  
-   *(Động từ bất quy tắc quá khứ: `ran`)*
+   `/ə ˈtaɪ.ni maʊs ræn əˈkrɒs hɪz nəʊz/`
 3. `"The lion woke up and caught the little mouse."`  
-   `/ðə ˈlaɪ.ən wəʊk ʌp ænd kɔːt ðə ˈlɪt.əl maʊs/`  
-   *(Động từ bất quy tắc kép: `woke up`, `caught`)*
+   `/ðə ˈlaɪ.ən wəʊk ʌp ænd kɔːt ðə ˈlɪt.əl maʊs/`
 4. `"The mouse promised to help the lion one day."`  
-   `/ðə maʊs ˈprɒm.ɪst tuː help ðə ˈlaɪ.ən wʌn deɪ/`  
-   *(Trọng tâm âm đuôi **/t/**: `promised` /ˈprɒm.ɪst/)*
-5. `"The trapped lion roared and waited for help."`  
-   `/ðə træpt ˈlaɪ.ən rɔːd ænd ˈweɪ.tɪd fɔːr help/`  
-   *(Bộ ba âm đuôi quá khứ: **/t/** trong `trapped` /træpt/, **/d/** trong `roared` /rɔːd/, **/ɪd/** trong `waited` /ˈweɪ.tɪd/)*
+   `/ðə maʊs ˈprɒm.ɪst tuː help ðə ˈlaɪ.ən wʌn deɪ/`
+5. `"Hunters trapped the strong lion in a heavy net."`  
+   `/ˈhʌn.tərz træpt ðə strɒŋ ˈlaɪ.ən ɪn ə ˈhev.i net/`
 6. `"The brave mouse chewed through the thick ropes."`  
-   `/ðə breɪv maʊs tʃuːd θruː ðə θɪk rəʊps/`  
-   *(Trọng tâm âm đuôi **/d/**: `chewed` /tʃuːd/)*
-7. `"The mouse freed the lion, and the lion thanked him."`  
-   `/ðə maʊs friːd ðə ˈlaɪ.ən ænd ðə ˈlaɪ.ən θæŋkt hɪm/`  
-   *(100% Thể chủ động: âm **/d/** trong `freed` /friːd/, âm **/t/** trong `thanked` /θæŋkt/)*
-8. `"They trusted each other and stayed friends forever."`  
-   `/ðeɪ ˈtrʌs.tɪd iːtʃ ˈʌð.ər ænd steɪd frendz fəˈrev.ər/`  
-   *(Trọng tâm âm đuôi: **/ɪd/** trong `trusted` /ˈtrʌs.tɪd/, **/d/** trong `stayed` /steɪd/)*
-
-#### Bảng Tổng hợp Phân bổ Bộ ba Âm đuôi Quá khứ (-ed Triad Focus)
-| Nhóm âm đuôi | Động từ đại diện trong 8 câu | Phiên âm IPA | Câu xuất hiện | Tần suất xuất hiện |
-| :---: | :---: | :---: | :---: | :---: |
-| **/t/** | `promised`, `trapped`, `thanked` | /ˈprɒm.ɪst/, /træpt/, /θæŋkt/ | C4, C5, C7 | **3 động từ** |
-| **/d/** | `roared`, `chewed`, `freed`, `stayed` | /rɔːd/, /tʃuːd/, /friːd/, /steɪd/ | C5, C6, C7, C8 | **4 động từ** |
-| **/ɪd/** | `waited`, `trusted` | /ˈweɪ.tɪd/, /ˈtrʌs.tɪd/ | C5, C8 | **2 động từ** |
+   `/ðə breɪv maʊs tʃuːd θruː ðə θɪk rəʊps/`
+7. `"The lion escaped and was completely free."`  
+   `/ðə ˈlaɪ.ən ɪˈskeɪpt ænd wɒz kəmˈpliːt.li friː/`
+8. `"They became the best of friends forever."`  
+   `/ðeɪ bɪˈkeɪm ðə best ɒv frendz fəˈrev.ər/`
 
 ---
 
@@ -389,7 +364,304 @@ Học sinh và Giám khảo đóng vai 2 người bạn nắm giữ thông tin v
 
 Toàn bộ nội dung Tuần 34 nêu trên:
 1. **Khớp 100% Khung CT gốc 156 tuần**: Chủ đề *"The Lion and the Mouse"*, kỹ năng đọc hiểu kết hợp khoa học thường thức về sự hợp tác trong hệ sinh thái tự nhiên.
-2. **Đáp ứng hoàn toàn Invariant 10 về Dictation**: 8 câu đàm thoại đời thường phong phú thực thể đo lường, không lặp lại câu văn bài đọc, khớp hoàn hảo giữa mã nguồn và file audio sống.
-3. **Phù hợp năng lực học sinh 8-10 tuổi (Cambridge A2 Flyers)**: Ngữ điệu sinh động, vốn từ vựng được tái xuất hiện đa kênh (nghe, nói, đọc, viết, toán, khoa học), áp dụng Format Scaffolding an toàn không gây quá tải nhận thức.
+2. **Đáp ứng hoàn toàn Invariant 10 về Dictation**: 8 câu đàm thoại đời thường phong phú thực thể đo lường, không lặp lại câu văn bài đọc.
+3. **Phù hợp năng lực học sinh 8-10 tuổi (Cambridge A2 Flyers)**: Ngữ điệu sinh động, vốn từ vựng được tái xuất hiện đa kênh (nghe, nói, đọc, viết, toán, khoa học), không gây quá tải nhận thức.
 
-Kính trình Chủ nhiệm chương trình thẩm duyệt và phê duyệt đóng băng chính thức.
+Kính trình Chủ nhiệm chương trình thẩm duyệt và cho ý kiến chỉ đạo.
+Owner (vai trò ESL expert) đã review nội dung sư phạm W34
+(W34_PEDAGOGICAL_CONTENT_REVIEW.md) — PHÊ DUYỆT CÓ ĐIỀU KIỆN.
+
+Điểm mạnh: mạch chủ đề liên môn rất chặt (fable → CLIL cộng sinh →
+ecosystem roles → math theo chủ đề), ngữ pháp quá khứ hỗn hợp thể hiện
+tự nhiên, dictation đúng chuẩn Cambridge mà không trùng bài đọc, writing
+có giàn giáo 3 bước phù hợp lứa tuổi.
+
+2 việc ưu tiên cần sửa trước khi dùng W34 làm khuôn mẫu cho mass
+production:
+1. 3/7 từ mục tiêu chính thức (tiny, huge, help) không có thẻ vocab
+   riêng → sẽ KHÔNG được hệ thống SRS đưa vào lịch ôn tập dù là từ bắt
+   buộc của tuần. Cần bổ sung thành vocab items riêng.
+2. Chưa xác nhận 8 câu Shadowing có phủ đủ 3 nhóm âm đuôi quá khứ
+   (/t/, /d/, /ɪd/) theo đúng "Skill Focus" Khung CT đã ghi — cần dán
+   và phân loại rõ.
+
+4 ghi chú nhỏ (không chặn, sửa nếu thuận tiện): xác nhận glossary CLIL
+có đủ trong văn bản gốc; rà trình tự thời gian Thursday/Friday trong
+dictation; xác nhận nhân vật phụ Owl/Bird/Squirrel trong Listening có
+cơ sở hay chỉ trang trí; ghi chú "ecosystem" là từ CLIL mở rộng để
+tránh bị gate tự động báo lỗi vượt cấp độ sau này.
+
+Đã yêu cầu Antigravity sửa 2 việc ưu tiên, sau đó dùng W34 làm khuôn
+mẫu chính thức viết checklist chi tiết cho Giai đoạn 2 (sinh 7 hạng
+mục) của SOP sản xuất tuần — chuẩn bị cho mass production 136 tuần
+còn lại (W01-32 vá ngược + W35-72 làm mới).
+
+Các việc kỹ thuật còn treo từ vòng trước (chưa đổi): AMENDMENT-002 cần
+commit chính thức + văn bản ghi hồ sơ; Gate 15 cần giải thích phạm vi
+sửa + chạy lại verify; 4 script còn hardcode tuần cần làm rõ có tái sử
+dụng không; câu hỏi cốt lõi Giai đoạn 1-2 SOP đã có tool tự động hay
+vẫn thủ công — vẫn chờ Antigravity trả lời.
+
+Game track + mục 6 (legacy hotspot) + mục 7 (F7D3): vẫn gác, không đổi.
+RULE C17 — MỞ RỘNG VAI TRÒ PHẢN BIỆN: ESL EXPERT + APP-BUILDING EXPERT
+
+Từ nay, mọi vòng phản biện nội dung curriculum và quyết định xây dựng app
+Lexio/EngQuest phải đi qua ĐỦ 3 LỚP đánh giá, không chỉ lớp kỹ thuật/bằng
+chứng như trước:
+
+1. LỚP KỸ THUẬT (như cũ): audit bằng chứng thô, cross-check code/data,
+   theo chuẩn C1-C16 / RULE 1-11 đã thiết lập.
+
+2. LỚP CHUYÊN GIA ESL / GIÁO VIÊN (mới): đánh giá nội dung theo đúng
+   chuẩn sư phạm — độ khó từ vựng/ngữ pháp có đúng cấp độ CEFR/Cambridge
+   YLE không, trọng tâm kỹ năng (phát âm, ngữ pháp) có thực sự được dạy
+   trong nội dung không, từ vựng mục tiêu có được đưa vào hệ thống ôn tập
+   (SRS) đầy đủ không, mạch chủ đề có nhất quán xuyên suốt các hub không.
+
+3. LỚP CHUYÊN GIA XÂY DỰNG APP ESL/EDUCATION (mới): phản biện các quyết
+   định sản phẩm/kỹ thuật có thực sự phục vụ mục tiêu sư phạm không, quy
+   trình sản xuất có khả năng mở rộng (scale) thật cho mass production
+   không, kiến trúc hệ thống (gates, pipeline, data hubs) có đủ tổng quát
+   để chạy đúng cho toàn bộ 156 tuần không.
+
+ĐIỀU KIỆN BẮT BUỘC trước khi thực hiện Lớp 2 và Lớp 3: phải xác nhận có
+ĐỦ VÀ MỚI NHẤT 3 tài liệu sau — nếu thiếu hoặc nghi ngờ đã lỗi thời, PHẢI
+yêu cầu Antigravity cung cấp/cập nhật trước khi phản biện, không được
+phản biện với thông tin thiếu:
+  a) Toàn văn file syllabus gốc 156 tuần (Khung CT_SYLLABUS_3yrs).
+  b) Tài liệu kiến trúc khung nội dung tổng thể của app (ánh xạ 4 Hub +
+     15 Quests + các giai đoạn CEFR qua toàn bộ 156 tuần, quy tắc rotary
+     cycle, ngưỡng chuyển cấp).
+  c) Kế hoạch triển khai sản xuất nội dung cho toàn bộ 156 tuần (thứ tự,
+     mốc thời gian, trạng thái từng tuần: đã làm/đang làm/chưa làm).
+
+Mọi báo cáo phản biện kể từ nay vẫn giữ nguyên format 3 phần đã chuẩn hóa
+(phân tích ngắn / prompt cho Antigravity / tóm tắt dán handoff), nhưng
+phần phân tích phải thể hiện rõ cả 3 lớp đánh giá trên khi nội dung liên
+quan đến curriculum hoặc quyết định xây dựng app.
+Đã ban hành RULE C17 (dán ở trên) — mở rộng vai trò phản biện từ nay
+thành 3 lớp: kỹ thuật/bằng chứng (như cũ) + chuyên gia ESL/giáo viên +
+chuyên gia xây dựng app ESL/education.
+
+Tự kiểm tra: hiện ĐÃ CÓ syllabus gốc 156 tuần (xác định file, đã đọc chi
+tiết W33/W34) nhưng CHƯA CÓ: (1) toàn văn 154 tuần còn lại, (2) tài liệu
+kiến trúc khung nội dung tổng thể toàn app (ánh xạ Hub/Quest/CEFR/Rotary
+qua 156 tuần), (3) kế hoạch triển khai sản xuất thực tế cho 156 tuần.
+
+Đã yêu cầu Antigravity cung cấp đủ 3 mục trên trước khi tiếp tục bất kỳ
+việc curriculum nào — nếu tài liệu nào chưa tồn tại, phải xác nhận rõ
+"chưa có", không được suy luận chắp vá.
+
+Việc đang treo từ vòng trước (chưa đổi): 2 điểm ưu tiên sửa nội dung W34
+(bổ sung 3 từ vựng tiny/huge/help vào SRS, xác nhận phủ đủ 3 nhóm âm đuôi
+quá khứ); AMENDMENT-002 cần commit chính thức; Gate 15 cần verify lại
+sau sửa; 4 script còn hardcode tuần cần làm rõ.
+
+Game track + mục 6 (legacy hotspot) + mục 7 (F7D3): vẫn gác.
+Đã nhận đủ 3 tài liệu nền tảng theo RULE C17 (toàn văn Khung CT gốc 156
+tuần, kiến trúc tổng thể app, kế hoạch triển khai 4 Làn sóng) — xác nhận
+đủ thông tin để tiếp tục phản biện tầm toàn app.
+
+🔴 PHÁT HIỆN NGHIÊM TRỌNG: 2 tài liệu tự mâu thuẫn về cấp độ CEFR của
+chính W33-36 — tóm tắt cấu trúc Khung CT gốc xếp W33 vào "Block B: A1
+Movers (Unit 5, W29-36)", nhưng bảng ngưỡng CEFR (từ Digital Syllabus
+Map) lại ghi "W33-72 = A2 Flyers". Entry Tuần 33 trong Khung CT gốc
+CHƯA TỪNG được trích dẫn trực tiếp trong suốt quá trình audit/đóng băng
+W33 trước đây — toàn bộ nhãn "A2 Flyers" chỉ đến từ tự khai của file
+manifest, chưa đối chiếu nguồn gốc. Nếu sai lệch thật, ảnh hưởng tới cả
+W33 đã đóng băng, W34 vừa hoàn thiện, và điểm xuất phát Làn sóng 1 (W35)
+trong kế hoạch triển khai.
+
+🔴 Gate 16 (content quality) có dấu hiệu lặp lại đúng lỗi hardcode-theo-
+tuần đã sửa ở Gate 17 — regex kiểm tra "fact units" chứa tên con vật
+hardcode (squirrel, jay, bee) không liên quan W34, chỉ PASS nhờ từ bắt
+tất "animal/animals". Cần tổng quát hóa trước khi dùng cho tuần khác.
+
+🟡 Việc ưu tiên #2 từ vòng trước (bộ ba âm đuôi quá khứ) mới là ĐỀ XUẤT,
+CHƯA ráp vào code. Owner (vai trò ESL expert) phản biện 2 điểm trong đề
+xuất: (1) không nên đổi câu 1 "was sleeping" vì phá vỡ nhất quán với
+Reading Hub + Grammar Duel; (2) câu 7 đề xuất dùng thể bị động "was
+freed" ngoài phạm vi ngữ pháp tuần, cần đổi lại chủ động.
+
+✅ Việc ưu tiên #1 (23 từ vựng SRS) đã code thật, verify đầy đủ qua
+Gate 3/11/12. CLIL 7/7 glossary xác nhận 100% trong văn bản. Dictation
+đã sửa nhất quán Thursday/Thursday. Kế hoạch triển khai 4 Làn sóng trung
+thực về hiện trạng thật (không chế biến số liệu).
+
+Đã yêu cầu Antigravity: (1) trích dẫn trực tiếp entry Tuần 33 trong
+Khung CT gốc để giải quyết dứt điểm mâu thuẫn CEFR, (2) tổng quát hóa
+Gate 16 như đã làm Gate 17, (3) đề xuất lại phương án âm đuôi quá khứ
+theo 2 ràng buộc sư phạm trên.
+
+CHƯA đóng băng chính thức W34, CHƯA bắt đầu bất kỳ tuần nào khác (kể cả
+W35-37 bản thảo thô) cho tới khi giải quyết xong 2 việc chặn trên.
+Antigravity đã xử lý đủ 3 việc yêu cầu (xác minh CEFR W33, tổng quát
+Gate 16, đề xuất lại âm đuôi quá khứ) — có bằng chứng thô thật, không
+chắp vá.
+
+🔴 PHÁT HIỆN QUAN TRỌNG HƠN CÂU HỎI GỐC: Khung CT gốc ghi Tuần 33 là
+"The Mistake (Irregular Verbs 5: Accidents)", từ vựng chỉ định
+"mistake, accident, fix, sorry, careful, clumsy" — khác hẳn bộ từ
+"water, floor, tile, rubber, friction" đã xây dựng thực tế ("Corridor
+Safety"). Giải thích: có 1 "Quyết định Kiến trúc Cầu nối Khảo thí"
+(2026-09-05, chưa từng công khai trước đây) chỉ nâng ĐỊNH DẠNG bài kiểm
+tra Zone 5 (Ngày 5) của W33-36 lên chuẩn A2 Flyers để luyện trước Full
+Mock W37, còn Ngày 1-4 vẫn giữ cấp A1 gốc. Chấp nhận về mặt kiến trúc,
+nhưng CHƯA xác minh: (a) Ngày 1-4 có thực dùng đúng 6 từ vựng chỉ định
+hay không — đã yêu cầu đối chiếu trực tiếp; (b) độ khó ngôn ngữ của bài
+Zone 5 A2 Flyers có phù hợp học sinh mới học A1 không — đã đặt câu hỏi
+sư phạm, chưa chặn kỹ thuật.
+
+✅ Gate 16 tổng quát hóa đạt — 0 regression W33/W34, diff thật xác nhận.
+
+✅ Phương án ngữ âm mới (Câu 1 giữ nguyên, Câu 7 chủ động) đáp ứng đủ 2
+ràng buộc, phân loại IPA chính xác — ĐÃ DUYỆT, cho phép ráp vào code.
+
+🔴 PHÁT HIỆN TÁI DIỄN (đúng lớp lỗi đã bắt trước đây): tài liệu
+W34_PEDAGOGICAL_CONTENT_REVIEW.md bản MỚI NHẤT vẫn ghi dictation câu 8
+là "Friday" dù code đã xác nhận sửa thành "Thursday" ở vòng trước — có
+thể chỉ là doc chưa cập nhật, nhưng cũng có thể audio file câu 8 chưa
+được re-generate khớp text mới (gate media hiện không kiểm tra nội dung
+audio). Đã yêu cầu re-verify trực tiếp cả text và audio, không dùng lại
+tài liệu cũ.
+
+Đã yêu cầu Antigravity: (1) đối chiếu trực tiếp vocab W33 thật với 6 từ
+chỉ định trong Khung CT gốc, (2) re-verify dictation câu 8 cả text lẫn
+audio, (3) ráp phương án ngữ âm đã duyệt vào code + chạy lại gate.
+
+CHƯA đóng băng chính thức W34 cho tới khi 3 việc trên hoàn tất với bằng
+chứng thô.
+Owner xác nhận định hướng chiến lược: mục tiêu ~W70 học sinh đạt 15/15
+khiên Flyers, nên W33 trở đi là lộ trình tăng dần, không dồn toàn bộ A2
+ngay sau W33. Khớp với giải trình "Format Scaffolding" của Antigravity
+(Zone 5 chỉ nâng định dạng câu hỏi, giữ nguyên độ khó ngôn ngữ theo đúng
+trình đang học) — đóng câu hỏi sư phạm Mục 4, dùng làm căn cứ khi duyệt
+Kế hoạch Triển khai 4 Làn sóng (TÀI LIỆU 3) ở vòng sau.
+
+✅ Mục 1 (Vocab fidelity W33): 6/6 từ chỉ định Khung CT gốc đều có mặt
+đầy đủ trong vocab.js thật — đã đối chiếu trực tiếp, không sai lệch.
+
+✅ Mục 3 (Ráp ngữ âm vào code): Đã sửa reading_hub.js, verify bằng
+Whisper ASR độc lập nghe lại audio vật lý khớp 100% văn bản — cách làm
+bằng chứng tốt hơn các vòng trước, ghi nhận và khuyến khích duy trì.
+Toàn bộ gate (3/11/12/16/17/W33 Guard) PASS, build OK.
+
+🔴 Mục 2 (Dictation Thursday/Friday): audio + code đã xác nhận đúng
+"Thursday" qua ASR độc lập — phần này đáng tin. NHƯNG báo cáo tuyên bố
+sai: khẳng định tài liệu W34_PEDAGOGICAL_CONTENT_REVIEW.md đã khớp
+"Thursday", trong khi bản đính kèm thực tế (dòng 85) vẫn ghi "Friday".
+Đây là tuyên bố cụ thể, kiểm chứng được, và sai — không phải thiếu bằng
+chứng mà do không tự mở file kiểm tra lại trước khi nộp. Nguyên nhân:
+sửa cục bộ (patch) từng đoạn thay vì kiểm tra toàn văn.
+
+Đã yêu cầu Antigravity: sửa đúng câu 8, đồng thời chạy grep toàn văn cả
+tài liệu để đảm bảo không còn mảnh nội dung cũ nào sót lại ở chỗ khác,
+dán bằng chứng grep, rồi mới được đóng băng chính thức W34 — không cần
+thêm vòng xác nhận nếu bước này đạt sạch.
+W34: nội dung sư phạm đã xác nhận sạch 100% qua tự kiểm chứng trực tiếp
+(Câu 8 Dictation = Thursday, 8 câu Shadowing khớp bản đã duyệt, 23 từ
+vựng đầy đủ, không còn cặn hội thoại trong tài liệu). Gate 3/11/12/16/17
++ W33/W34 Freeze Guard + npm build đều PASS với bằng chứng thô thật.
+
+Chưa chấp nhận trạng thái "ĐÃ CHÍNH THỨC ĐÓNG BĂNG" vì 2 lý do quy trình
+(không phải nội dung):
+
+🔴 Không có bằng chứng git commit — GIT_HEAD không đổi xuyên suốt toàn bộ
+phiên sửa chữa (m28→m40), nghĩa là mọi việc (vocab, dictation, ngữ âm,
+Gate 16, manifest W34) đang nằm ở trạng thái uncommitted. SOP Giai đoạn 5
+tự định nghĩa đóng băng = manifest + git commit — thiếu bước này, freeze
+chưa có điểm mốc lịch sử thật trong git.
+
+🟡 4 việc tồn đọng từ nhiều vòng trước (AMENDMENT-002 commit, Gate 15
+verify, phân loại 4 script hardcode, câu hỏi Giai đoạn 1-2 SOP tự động
+hay thủ công) chưa từng được đóng — có nguy cơ bị quên khi tài liệu sư
+phạm được dọn sạch cặn hội thoại.
+
+Ghi nhận không chặn: đề xuất bổ sung trường ghi chú trong Golden Freeze
+Manifest trỏ về Quyết định Kiến trúc Cầu nối Khảo thí (2026-09-05), áp
+dụng từ các tuần Rotary Cycle sau, tránh phải điều tra lại CEFR mỗi lần.
+
+Đã yêu cầu Antigravity: (1) commit chính thức + dán git log/status sạch,
+(2) báo cáo trạng thái rõ ràng 4 việc tồn đọng (không suy luận). Sau khi
+đạt cả 2, W34 chính thức đóng băng và dùng làm khuôn mẫu Giai đoạn 2 cho
+mass production 136 tuần còn lại.
+Owner phản biện đúng và quan trọng: không thể coi W34 "đã đóng băng" khi
+nội dung/media chưa được xác nhận chạy đúng trên sản phẩm sống. Phát
+hiện: Antigravity tự thừa nhận (Mục 2.b báo cáo trước) Gate 15 — gate
+DUY NHẤT kiểm tra render DOM thật qua Playwright trên server sống — CHƯA
+TỪNG được chạy cho W34; mọi gate đã PASS (3/11/12/16/17) chỉ là kiểm tra
+dữ liệu tĩnh (file tồn tại, text đúng mẫu, schema đúng cấu trúc), không
+xác nhận app thực sự hiển thị/hoạt động đúng.
+
+Việc đóng băng "GOLDEN_FROZEN" vừa commit đã vi phạm trực tiếp thứ tự
+quy trình SOP của chính dự án (Giai đoạn 4 — đủ gate bao gồm Gate 15 —
+phải xong trước Giai đoạn 5 — đóng băng).
+
+Xác nhận: git commit W34 đã thực sự xảy ra (e4cd1c99, working tree sạch
+cho phạm vi W34) — phần này đạt. Nhưng CHƯA push lên remote.
+
+Đã yêu cầu Antigravity: (1) chạy Gate 15 thật trên server sống (Playwright
++ screenshot bằng chứng cho đủ 15 Quest), (2) tạm hạ lifecycleState từ
+GOLDEN_FROZEN xuống CONTENT_COMPLETE_PENDING_RUNTIME_VERIFICATION cho tới
+khi có bằng chứng đó, (3) chỉ push lên remote cho Owner test sau khi Gate
+15 thật sự PASS — và áp dụng quy tắc này bắt buộc cho toàn bộ 136 tuần
+còn lại để tránh lặp lại lỗi "pass gate tĩnh = nhầm là hoàn thiện".
+
+4 việc tồn đọng khác (AMENDMENT-002, 4 script hardcode, Giai đoạn 1-2 SOP
+thủ công) — đã nhận báo cáo trung thực, đặc biệt lưu ý: Giai đoạn 1-2 xác
+nhận HOÀN TOÀN THỦ CÔNG, được chính Antigravity đánh giá là "nút thắt cổ
+chai lớn nhất" cho mass production 136 tuần — sẽ cần bàn kỹ ở vòng kế
+tiếp về có nên đầu tư xây tool tự động hóa trước khi chạy đại trà hay
+không.
+Xác nhận: phiên Antigravity mới tiếp nối đúng phiên cũ (git log/status
+khớp 100%), không tự ý commit, đã giải trình đủ 13 component dùng chung
+theo yêu cầu.
+
+🔴 PHÁT HIỆN QUAN TRỌNG: phiên trước bị crash vì chính nó làm sập server
+— sửa StoryWriting.jsx bỏ sót 1 dấu "}", gây lỗi biên dịch Vite toàn bộ
+site. "Bằng chứng Gate 15" (32 ảnh) của phiên trước thực chất là CÙNG 1
+ẢNH lặp lại (cùng SHA-256) — màn hình đỏ báo lỗi, không phải 16 Quest
+thật. Phát hiện này do chính phiên mới tự điều tra (so sánh hash ảnh),
+xác nhận kỹ lưỡng.
+
+✅ 11/13 component: giải trình hợp lý, rủi ro thấp, có fallback/scoping
+theo tuần rõ ràng.
+
+🟡 BossBattleZone.jsx: phát hiện W34 đặt tên biến rw_part1 (không gạch
+dưới) khác quy ước cũ rw_part_1 — nghĩa là nếu không bắt kịp, màn Boss
+Battle W34 đã hiển thị sai dữ liệu ngay trong bản "GOLDEN_FROZEN" trước
+đó. Củng cố thêm: pass gate tĩnh ≠ app chạy đúng.
+
+🟡 ConnectorRelayCanvas.jsx + QuestDemoScreen.jsx: tự khai không liên
+quan W34 (thuộc dự án F6D2 trước đó) — đề nghị tách commit riêng cho rõ
+lịch sử.
+
+Đã yêu cầu Antigravity: (1) dán diff + build log thật cho StoryWriting.jsx
+(file rủi ro cao nhất), (2) tách commit F6D2 ra khỏi W34, (3) chạy lại
+Gate 15 THẬT và bắt buộc xác nhận ≥15 mã hash ảnh khác nhau (không trùng
+lặp như lần trước) kèm mô tả nội dung từng ảnh. Chỉ sau khi đạt cả 3 mới
+được commit + chạy lại toàn bộ gate suite + push.
+
+Đề xuất cải tiến lâu dài cho Gate 15: tự động kiểm tra N ảnh có N hash
+khác nhau ngay trong script, để lỗi kiểu "chụp lặp lại 1 trang lỗi" tự
+động bị chặn thay vì phải phát hiện thủ công như lần này.
+Lần đầu tiên tự kiểm chứng độc lập hoàn toàn: tự giải nén w34.zip, tự
+chạy shasum, tự xem 4/15 ảnh Gate 15 (gear1_webtoon, boss_listening,
+story_writer, science_lab) — khớp 100% với báo cáo cả về hash lẫn nội
+dung hiển thị, đúng với nội dung sư phạm đã duyệt trước đó. StoryWriting.
+jsx diff rõ ràng, gọn, build log sạch. Gate 15 giờ có thêm bước tự kiểm
+tra trùng lặp hash (dedup check) — cải tiến tốt, nên áp dụng chuẩn cho
+156 tuần.
+
+Duyệt phương án tách commit (F6D2 riêng / W34 riêng), bổ sung thêm commit
+thứ 3 cho AMENDMENT-002 W33 (tồn đọng nhiều vòng, nhân dịp này đóng dứt
+điểm — cần chạy lại W33 Freeze Guard trước khi commit).
+
+Còn 1 việc nhỏ: docs/GATE15_SPEC.json bị sửa nhưng chưa giải trình, cần
+dán diff trước khi gộp vào commit W34.
+
+Đã yêu cầu Antigravity: (1) giải trình GATE15_SPEC.json, (2) thực hiện
+3 commit riêng biệt (F6D2 / W34 / AMENDMENT-002 W33), (3) chạy lại toàn
+bộ gate suite 1 lần cuối trên trạng thái đã commit sạch, (4) chỉ push
+sau khi tất cả pass, báo cáo nhánh/đường dẫn test cho Owner.
+

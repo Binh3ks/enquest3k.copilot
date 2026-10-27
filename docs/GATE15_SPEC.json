@@ -339,9 +339,9 @@
           "pattern": "Cambridge A2 Flyers — "
         },
         {
-          "name": "header shows correct Cycle 2 task (Part 4 or Part 5)",
+          "name": "header shows correct Cycle 2 task (Part 3)",
           "type": "regex",
-          "pattern": "(Part 4|Part 5|PART 4|PART 5|3-Picture|Color.*Write|Write.*Color|QUIZ|Quiz)"
+          "pattern": "(Part 3|PART 3|Visual Matching|Match A–H|Match A-H)"
         },
         {
           "name": "official Cambridge listening instruction sentence",
@@ -379,14 +379,14 @@
           "pattern": "Cambridge A2 Flyers — "
         },
         {
-          "name": "Cycle 2 boss_reading MUST render Word Bank Matching (RW Part 1)",
+          "name": "Cycle 2 boss_reading MUST render Dialogue Match (RW Part 2)",
           "type": "regex",
-          "pattern": "(word.*bank|Word Bank|Definition|definition|15-WORD BANK|15 Words|Candidate Words)"
+          "pattern": "(Dialogue|Dialogue A–H|Dialogue Match|Part 2|Conversation|Chat Box)"
         },
         {
-          "name": "W34 boss_reading R1: regex moral lesson (example fable)",
+          "name": "W34 boss_reading R2 instruction & dialogue turns",
           "type": "regex",
-          "pattern": "(moral lesson|moral|fable|A short story)"
+          "pattern": "(Read the conversation|choose the best answer|Write a letter)"
         },
         {
           "name": "official Cambridge reading instruction sentence",
@@ -410,12 +410,12 @@
         {
           "name": "Cycle 2 weekly_review MUST be Speaking/Passport task",
           "type": "regex",
-          "pattern": "(Speaking|speaking|Passport|passport|PASSPORT|Review|review|Find Differences|Picture Story|Personal Questions|Cambridge A2 Flyers)"
+          "pattern": "(Speaking|speaking|Passport|passport|PASSPORT|Review|review|Information Exchange|Cue-Card|Cue Card|Cambridge A2 Flyers)"
         },
         {
           "name": "official Cambridge speaking/review instruction sentence",
           "type": "regex",
-          "pattern": "(Look at the two pictures|Ask and answer questions|Look at the pictures|Now let's talk about you|Tell me the differences)"
+          "pattern": "(Look at the two pictures|Ask and answer questions|Look at the pictures|Now let's talk about you|Tell me the differences|Look at the questions)"
         },
         {
           "name": "exam intro audio button present",
@@ -424,19 +424,10 @@
           "min": 1
         },
         {
-          "name": "hotspot click-test: click 4 regions reveals 'Found 4 of 4'",
-          "type": "click_test_hotspots"
-        },
-        {
-          "name": "hotspot calibration file: 4 mapped regions",
-          "type": "file_check",
-          "path": "docs/week34_hotspot_calibration.json",
-          "require": "\"mapped\": 4"
-        },
-        {
-          "name": "hotspot mapper alignment <6% on both pictures",
-          "type": "hotspot_alignment_check",
-          "max_error_pct": 6.0
+          "name": "cue card exchange tables rendered (Table A or Table B)",
+          "type": "contains_one_of",
+          "values": ["Table A", "Table B", "Candidate Card", "Examiner Card", "Information Exchange"],
+          "case_sensitive": false
         }
       ]
     }

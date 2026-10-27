@@ -286,8 +286,12 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
   };
 
   // Gamification Layer states (Part 9)
-  const [showEntryOverlay, setShowEntryOverlay] = useState(true);
-  const [overlayDismissed, setOverlayDismissed] = useState(false);
+  const shouldSkipOverlay = typeof window !== 'undefined' && (
+    localStorage.getItem('engquest_overlay_dismissed') === 'true' ||
+    localStorage.getItem('arcade_owner_bypass') === 'true'
+  );
+  const [showEntryOverlay, setShowEntryOverlay] = useState(!shouldSkipOverlay);
+  const [overlayDismissed, setOverlayDismissed] = useState(Boolean(shouldSkipOverlay));
   const [showFanfare, setShowFanfare] = useState(false);
   const [fanfareScore, setFanfareScore] = useState(100);
 

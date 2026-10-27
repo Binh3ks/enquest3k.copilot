@@ -475,6 +475,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                       </span>
                       <button
                         type="button"
+                        data-testid="ie-audio-btn"
                         onClick={(e) => {
                           e.stopPropagation();
                           speakText(f.nova_question || f.label, f.audio_url);
