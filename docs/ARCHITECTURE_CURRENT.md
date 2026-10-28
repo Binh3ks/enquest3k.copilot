@@ -24,7 +24,7 @@ Hệ thống EngQuest3K từ Tuần 33 trở đi hoạt động trên quy chuẩ
 | **9** | **Day 3: Battle Arena** | `math_quest` | **Math Quest** | `BattleArenaZone.jsx` $\rightarrow$ `BarModelQuest.jsx` | `skill_practice_hub.js` (`singapore_math`) | Singapore Math, Visual Logic | Practice | 40 XP | +40 XP | 6 phút |
 | **10** | **Day 4: Creator Studio** | `story_writer` | **Story Writer** | `CreatorStudioZone.jsx` $\rightarrow$ `StoryWriting.jsx` | `writing_hub.js` (`picture_story`, `word_bank_pills`) | Creative Writing (P7) | Practice | 50 XP | +50 XP | 10 phút |
 | **11** | **Day 4: Creator Studio** | `broadcast_studio` | **Video Challenge** | `CreatorStudioZone.jsx` $\rightarrow$ `BroadcastStudio.jsx` | `speaking_hub.js` (`talkshow_video`, `dialogue_lines`) | Presentation, Speaking | Practice | 50 XP | +50 XP | 7 phút |
-| **12** | **Day 4: Creator Studio** | `info_exchange` | **Info Exchange** | `InfoExchangeZone.jsx` $\rightarrow$ `InformationExchangeP2.jsx` | `speaking_hub.js` (`info_exchange_cards`) | Interactive Speaking (S2) | Practice | 20 XP | +20 XP | 7 phút |
+| **12** | **Day 4: Creator Studio** | `info_exchange` | **Info Exchange** | `InfoExchangeZone.jsx` $\rightarrow$ `InformationExchangeP2.jsx` | `speaking_hub.js` (`info_exchange_cards`) | Interactive Speaking (S2) | Practice | 50 XP | +50 XP | 7 phút |
 | **13** | **Day 5: Boss Castle** | `boss_listening` | **Listening Shield** | `BossBattleZone.jsx` (`listening_boss` P1–P5) | `listening_hub.js` (`listening_p1..p5`) | Cambridge Listening (5 Shields) | Assessment | 0 XP (Milestone) | 5 Shields | 10 phút |
 | **14** | **Day 5: Boss Castle** | `boss_reading` | **Reading & Writing Shield** | `BossBattleZone.jsx` (`rw_boss` P1–P6) | `reading_hub.js` / `writing_hub.js` (`rw_part_1..6`) | Cambridge R&W (5 Shields) | Assessment | 0 XP (Milestone) | 5 Shields | 10 phút |
 | **15** | **Day 5: Boss Castle** | `weekly_review` | **Speaking & Passport** | `BossBattleZone.jsx` (`review` S1–S4 + Passport) | `speaking_hub.js` (`find_differences`, `info_exchange`, `picture_story`, `personal_qs`) | Cambridge Speaking + Certification | Assessment | 0 XP (Milestone) | 5 Shields + Cert | 15 phút |
@@ -190,24 +190,24 @@ Hệ thống EngQuest3K từ Tuần 33 trở đi hoạt động trên quy chuẩ
    - Nghiêm cấm tuyệt đối mọi hình thức fallback tĩnh dạng `weekNumber || 33` hoặc `activeWeek || 33`.
    - Mọi component dùng chung (`InformationExchangeP2`, `InfoExchangeZone`, `CLILExplorer`, `ScienceReportCreator`, `ExamIntroAudioButton`, `VisualMatchingAH`, `MultipleChoice3Pic`, `StoryWorldZone`) BẮT BUỘC phải nhận prop `weekNumber` rõ ràng. Nếu thiếu `weekNumber`, component PHẢI throw error hoặc ghi log cảnh báo thay vì âm thầm phát âm thanh của Tuần 33.
 
-### 4.2. Kiểm Kê Danh Mục Audio Chi Tiết Theo Từng Quest (W34 Standard)
-*Reconcile: 73 file vật lý = 43 Đang dùng & khớp + 8 Đang dùng nhưng kịch bản lệch + 4 Bỏ rơi do data trỏ sai + 5 Exam intro chưa map + 13 Legacy cần dọn dẹp.*
-*(Giải trình số liệu: Bản thảo trước ghi nhầm "51" do gộp $43 + 8 = 51$ tổng số file active trong 15 quests vào vị trí của nhóm 1. Con số chính xác của nhóm 1 là **43**).*
+### 4.2. Kiểm Kê Danh Mục Audio Chi Tiết Theo Từng Quest (W34 Standard — Cập Nhật Sau Gói 003B)
+*Reconcile: 84 file vật lý = 55 Đang dùng & khớp + 8 Đang dùng nhưng kịch bản lệch + 5 Exam intro chưa map + 16 Legacy cần dọn dẹp ở Gói 003C.*
+*(Xác nhận thực tế: Thư mục `public/audio/week34/` hiện có đúng 84 file MP3 vật lý sau khi sinh đủ `scene_1..scene_5.mp3`, `info_exchange_intro_p1/p2.mp3`, và `info_exchange_q1..q4.mp3`).*
 
 #### A. Danh Mục File Theo 15 Quests (Cần Có Cho Học Tập)
 1. **Quest 1: Scene Explorer (`gear1_webtoon`)**:
-   - `scene_1.mp3` $\dots$ `scene_5.mp3` (5 files — *hiện đang thiếu, cần sinh*).
+   - `scene_1.mp3` $\dots$ `scene_5.mp3` (5 files — *đã sinh đủ 5/5 tương ứng 5 cảnh trong `reading_hub.js` và `read.js`*).
 2. **Quest 2: Voice Shadow (`gear2_karaoke`)**:
    - `shadowing_1.mp3` $\dots$ `shadowing_8.mp3` (8 files — *đã có*).
    - `read_stem.mp3` (1 file — *phục vụ nút "Full Audio", đã có*).
 3. **Quest 3: Story Retell (`gear3_retell`)**:
-   - Sử dụng STT microphone của học sinh và model giọng Nova.
+   - Sử dụng STT microphone của học sinh và model giọng Nova (kèm audio tĩnh mẫu từng câu `shadowing_1..5.mp3`).
 4. **Quest 4: Fact Finder (`gear4_clil`)**:
    - `explore.mp3` (1 file — *đã có*).
 5. **Quest 5: Action Lab (`science_lab`)**:
-   - Tương tác kéo thả thí nghiệm khoa học, sound effects FX.
+   - Tương tác kéo thả 3 kịch bản liên môn sinh thái, sound effects FX.
 6. **Quest 6: Discovery Report (`science_report`)**:
-   - `discovery_hotspot_1.mp3` $\dots$ `discovery_hotspot_3.mp3` (3 files — *hiện đang thiếu, cần sinh*).
+   - Báo cáo điều tra sinh thái Discovery Detective, sound effects FX.
 7. **Quest 7: Speed Match (`word_blitz`)**:
    - `vocab_*.mp3` (23 files mục tiêu tuần — *đã có*).
 8. **Quest 8: Grammar Duel (`sentence_smash`)**:
@@ -215,43 +215,46 @@ Hệ thống EngQuest3K từ Tuần 33 trở đi hoạt động trên quy chuẩ
 9. **Quest 9: Math Quest (`math_quest`)**:
    - Toán tư duy thanh Bar Model, sound effects FX.
 10. **Quest 10: Story Writer (`story_writer`)**:
-    - Sáng tác viết truyện 3 cảnh, TTS hỗ trợ đọc chữ học sinh gõ.
+    - Sáng tác viết truyện tranh, liên kết nghe audio các cảnh `scene_1.mp3`..`scene_5.mp3`.
 11. **Quest 11: Video Challenge (`broadcast_studio`)**:
     - Video thử thách thuyết trình đa phương tiện.
-12. **Quest 12: Info Exchange (`info_exchange`)**:
-    - `ie_examiner_q1.mp3` $\dots$ `ie_examiner_q3.mp3` (3 files giám khảo hỏi — *cần sửa data trỏ đúng*).
-    - `info_exchange_a1_model.mp3` $\dots$ `info_exchange_a4_model.mp3` (4 files câu hỏi mẫu — *cần sinh*).
+12. **Quest 12: Info Exchange (`info_exchange`) & Quest 15 Speaking Part 2**:
+    - `info_exchange_intro_p1.mp3`, `info_exchange_intro_p2.mp3` (2 files lời dẫn giám khảo Nova cho Pha 1 & Pha 2 — *đã có*).
+    - `info_exchange_q1.mp3` $\dots$ `info_exchange_q4.mp3` (4 files câu hỏi giám khảo Nova — *đã có*).
 13. **Quest 13: Listening Shield (`boss_listening`)**:
-    - Part 1: `listening_p1_full.mp3` (1 file — *sửa audio có Sammy*).
-    - Part 2: `listening_p2_full.mp3` (1 file — *sửa bỏ nhãn Student*).
-    - Part 3: `listening_p3_full.mp3` + `listening_p3_item1.mp3` $\dots$ `listening_p3_item5.mp3` (6 files — *sửa audio theo đồ vật*).
-    - Part 4: `listening_p4_example.mp3` + `listening_p4_q1.mp3` $\dots$ `listening_p4_q5.mp3` (6 files — *cắt ví dụ q1, sửa q4/q5*).
-    - Part 5: `listening_p5_full.mp3` (1 file — *thu lại theo kịch bản chuẩn NET/brown/FOREST/dark green*).
+    - Part 1: `listening_p1_full.mp3` (1 file — *đã có*).
+    - Part 2: `listening_p2_full.mp3` (1 file — *đã có*).
+    - Part 3: `listening_p3_full.mp3` + `listening_p3_item1.mp3` $\dots$ `listening_p3_item5.mp3` (6 files — *kịch bản đồ vật vs động vật*).
+    - Part 4: `listening_p4_example.mp3` + `listening_p4_q1.mp3` $\dots$ `listening_p4_q5.mp3` (6 files — *đã có*).
+    - Part 5: `listening_p5_full.mp3` (1 file — *đã có*).
 14. **Quest 14: Reading & Writing Shield (`boss_reading`)**:
     - Bài thi Đọc - Viết 6 Parts, không yêu cầu audio bài nghe.
 15. **Quest 15: Speaking & Passport (`weekly_review`)**:
-    - `exam_intro_S1.mp3` $\dots$ `exam_intro_S4.mp3` (4 files lời dẫn giám khảo cho 4 phần thi Speaking).
+    - `exam_intro_S1.mp3` $\dots$ `exam_intro_S4.mp3` (4 files lời dẫn giám khảo cho 4 phần thi Speaking — *đã có*).
+    - Dùng chung bộ `info_exchange_intro_p1/p2.mp3` và `info_exchange_q1..q4.mp3` cho Part 2 (Information Exchange).
 
-#### B. Phân Loại Toàn Bộ 73 File Vật Lý Hiện Có Trong `public/audio/week34/`
-1. **Đang Dùng & Khớp (43 files)**:
+#### B. Phân Loại Toàn Bộ 84 File Vật Lý Hiện Có Trong `public/audio/week34/`
+1. **Đang Dùng & Khớp (55 files)**:
    - `shadowing_1..8.mp3` (8 files)
    - `explore.mp3` (1 file)
    - `read_stem.mp3` (1 file)
    - `vocab_*.mp3` (23 files)
-   - `listening_p1_full.mp3`, `listening_p2_full.mp3`, `listening_p3_full.mp3`, `listening_p4_example.mp3`, `listening_p4_q2.mp3`, `listening_p4_q3.mp3`, `listening_p5_full.mp3` (7 files)
-   - `exam_intro_S2.mp3` $\dots$ `exam_intro_S4.mp3` (3 files)
-2. **Đang Dùng Nhưng Kịch Bản Lệch (8 files — cần thu lại)**:
+   - `scene_1.mp3` $\dots$ `scene_5.mp3` (5 files — Scene Explorer)
+   - `info_exchange_intro_p1.mp3`, `info_exchange_intro_p2.mp3` (2 files — Lời dẫn Pha 1 & Pha 2 Info Exchange)
+   - `info_exchange_q1.mp3` $\dots$ `info_exchange_q4.mp3` (4 files — 4 câu hỏi giám khảo Nova)
+   - `listening_p1_full.mp3`, `listening_p2_full.mp3`, `listening_p3_full.mp3`, `listening_p5_full.mp3` (4 files)
+   - `listening_p4_example.mp3`, `listening_p4_q2.mp3`, `listening_p4_q3.mp3` (3 files)
+   - `exam_intro_S1.mp3` $\dots$ `exam_intro_S4.mp3` (4 files)
+2. **Đang Dùng Nhưng Kịch Bản Lệch (8 files — cần thu lại ở Gói 003D)**:
    - `listening_p3_item1.mp3` $\dots$ `listening_p3_item5.mp3` (5 files — lệch đồ vật vs động vật)
    - `listening_p4_q1.mp3` (dính ví dụ), `listening_p4_q4.mp3`, `listening_p4_q5.mp3` (3 files — lệch sang CLIL)
-3. **Bị Bỏ Rơi Do Data Trỏ Sai (4 files — cần sửa data trỏ lại)**:
-   - `ie_examiner_q1.mp3` $\dots$ `ie_examiner_q3.mp3` (3 files — data trỏ nhầm sang `exam_intro_S2..S4`)
-   - `exam_intro_S1.mp3` (1 file — data speaking_hub thiếu trường examiner_intro)
-4. **Lời Dẫn Khảo Thí Chưa Được Ánh Xạ (5 files)**:
+3. **Lời Dẫn Khảo Thí Chưa Được Ánh Xạ (5 files)**:
    - `exam_intro_L1.mp3` $\dots$ `exam_intro_L5.mp3` (5 files — lời dẫn Cambridge Listening P1-P5)
-5. **Legacy Thật Cần Dọn Dẹp (13 files)**:
+4. **Legacy Thật Cần Dọn Dẹp ở Gói 003C (16 files)**:
    - `dictation_1.mp3` $\dots$ `dictation_8.mp3` (8 files — tàn dư kiến trúc Dictation đã xóa)
    - `listening_p5_inst1.mp3` $\dots$ `listening_p5_inst5.mp3` (5 files — tàn dư instruction rời cũ)
-*Phương trình cân bằng*: $43 + 8 + 4 + 5 + 13 = 73$ physical files.
+   - `ie_examiner_q1.mp3` $\dots$ `ie_examiner_q3.mp3` (3 files — tàn dư mồ côi từng trỏ sai, đã thay thế hoàn toàn bởi `info_exchange_q1..q4.mp3`, không còn component nào tham chiếu)
+*Phương trình cân bằng*: $55 + 8 + 5 + 16 = 84$ physical files.
 
 ---
 
