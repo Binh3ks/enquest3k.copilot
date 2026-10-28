@@ -20,7 +20,6 @@
     "src/data/weeks/week_34/skill_practice_hub.js",
     "src/data/weeks/week_34/vocab.js",
     "src/data/weeks/week_34/read.js",
-    "src/data/weeks/week_34/dictation.js",
     "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md"
   ],
   "protectedFileHashes": {
@@ -31,8 +30,7 @@
     "src/data/weeks/week_34/skill_practice_hub.js": "ce95578990e48a8a50c4e078900718cea56285e81cdc7662a1bf1e4b0201ba7e",
     "src/data/weeks/week_34/vocab.js": "34315f91b873b8e401072869b2c70e3a8df329a40f3629316f66210d782063ef",
     "src/data/weeks/week_34/read.js": "7eeeedc475ba7c742265081c14f7a12bf8db81ca131e0d6c8f806e73a513fcd2",
-    "src/data/weeks/week_34/dictation.js": "38290d49a3f2b462c9d3d2596466de6c46d64770fa7a83795df8b70e3a8d23f8",
-    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md": "1dc0605a7148bb890ec436d7564a53007837f85bcd2413949da73f09c7f58091"
+    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md": "814ef60a348ce66b64731775276b1d277899c880f6e659ab2b7690449cfe96c9"
   },
   "governanceDocumentation": [
     "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md"
@@ -55,11 +53,15 @@
     "src/components/cambridge/PictureStoryContinuation.jsx",
     "src/components/cambridge/PersonalQuestionsCompleter.jsx"
   ],
+  "gate15RelationshipNote": "Hệ thống duy trì song song cả hai gate: Gate 15 (v1) kiểm tra DOM assertions tĩnh và screenshot deduplication (>= 15 unique hashes), trong khi Gate 15 v2 kiểm tra tương tác chức năng động trên live production, phát âm thanh thật, bắt chặn runtime TTS và kiểm soát chuyển trạng thái không treo.",
   "validationSuite": [
-    { "gate": "Gate 3", "script": "scripts/gate3_media_integrity.mjs 34", "target": "73/73 MP3s verified" },
+    { "gate": "Gate 3", "script": "scripts/gate3_media_integrity.mjs 34", "target": "84/84 MP3s verified" },
     { "gate": "Gate 11", "script": "scripts/gate11_content_richness.mjs 34", "target": "Word counts and variety standard" },
     { "gate": "Gate 12", "script": "scripts/gate12_comprehensive_cefr.mjs 34", "target": "0 B1/B2 violations" },
     { "gate": "Gate 15", "script": "scripts/gate15_production_dom_assertions.mjs 34 --local", "target": "15/15 Quests live DOM PASS + screenshot dedup >= 15 unique hashes" },
+    { "gate": "Gate 15 v2", "script": "scripts/gate15_v2_functional_audio_playtest.mjs 34", "target": "15/15 quest functional PASS: 0 runtime TTS, 0 missing audio, 0 frozen phases, 0 dictation tabs" },
+    { "gate": "Schema Uniformity Gate", "script": "scripts/gate_schema_uniformity.mjs 34", "target": "0 dual-fallback patterns, 0 schema key drift" },
+    { "gate": "Whitelist Entity Gate", "script": "scripts/gate_whitelist_entities.mjs 34", "target": "0 rogue entity violations" },
     { "gate": "Gate 16", "script": "scripts/gate16_content_quality.mjs 34", "target": "100% single-source content purity" },
     { "gate": "Gate 17", "script": "scripts/gate17_fidelity_doctrine.mjs 34", "target": "16-part Cambridge schema & invariants PASS" },
     { "gate": "W34 Freeze Guard", "script": "scripts/guard_golden_w34_freeze.mjs", "target": "SHA-256 integrity verification" }
@@ -82,7 +84,8 @@
     { "id": "weekly_review", "day": 5, "zone": 4, "name": "Boss Review (Shield 3)", "type": "assessment" }
   ],
   "criticalMediaSummary": {
-    "totalStaticMP3s": 73,
+    "totalStaticMP3s": 84,
+    "activeMatchingMP3s": 55,
     "barModelSVGs": 5,
     "webtoonScenes": 5,
     "covers": 2
