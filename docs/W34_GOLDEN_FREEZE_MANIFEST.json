@@ -1,12 +1,11 @@
 {
   "manifestVersion": "1.0.0",
-  "goldenStandardVersion": "1.0.0",
+  "goldenStandardVersion": "1.1.0",
   "weekNumber": 34,
   "theme": "The Lion and the Mouse & Forest Ecosystem",
   "cefrLevel": "A2 Flyers / Stage 1 Young Learners (Ages 7–10)",
-  "freezeDate": "2026-10-26T15:37:00Z",
-  "lifecycleState": "CONTENT_COMPLETE_PENDING_RUNTIME_VERIFICATION",
-  "downgradeReason": "Pending resolution of W34 audio mismatches (ASR token discrepancies, missing assets, and shared component W33 fallbacks)",
+  "freezeDate": "2026-10-28T12:00:00Z",
+  "lifecycleState": "GOLDEN_FROZEN",
   "rotaryCycle": {
     "cycleNumber": 1,
     "testedSkills": ["listening_p1", "listening_p2", "listening_p3", "listening_p4", "listening_p5"],
@@ -28,12 +27,12 @@
     "src/data/weeks/week_34/reading_hub.js": "44300d245c4c46ab2ee2980b7429c271b79dca15892df2c96932104a1f5dfd6f",
     "src/data/weeks/week_34/listening_hub.js": "8ee174e2fb59d8069607e326d1c3463c20c1eddbc242c5f1f8e6cc26a098d2f8",
     "src/data/weeks/week_34/writing_hub.js": "4a87e546ef1c7162e805645c2f90efa474c9f8b327ea406bad43117581aa9713",
-    "src/data/weeks/week_34/speaking_hub.js": "ffc9d2a483f73ed4f6a5a46b97f6538b4ea473be5bb8713d39c511276abda774",
-    "src/data/weeks/week_34/skill_practice_hub.js": "fd15cf8a52ac34f17c8908d1e8186c8f9d1d14e3b614649f38b8ff273aaceca5",
+    "src/data/weeks/week_34/speaking_hub.js": "cdea2dd8a7010bfcf698642863da41b771893d3c1b7243dd0eba536b58b243fe",
+    "src/data/weeks/week_34/skill_practice_hub.js": "ce95578990e48a8a50c4e078900718cea56285e81cdc7662a1bf1e4b0201ba7e",
     "src/data/weeks/week_34/vocab.js": "34315f91b873b8e401072869b2c70e3a8df329a40f3629316f66210d782063ef",
     "src/data/weeks/week_34/read.js": "7eeeedc475ba7c742265081c14f7a12bf8db81ca131e0d6c8f806e73a513fcd2",
     "src/data/weeks/week_34/dictation.js": "38290d49a3f2b462c9d3d2596466de6c46d64770fa7a83795df8b70e3a8d23f8",
-    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md": "814ef60a348ce66b64731775276b1d277899c880f6e659ab2b7690449cfe96c9"
+    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md": "1dc0605a7148bb890ec436d7564a53007837f85bcd2413949da73f09c7f58091"
   },
   "governanceDocumentation": [
     "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md"
