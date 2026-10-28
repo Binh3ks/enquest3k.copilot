@@ -14,7 +14,7 @@ Every week created for EngQuest3K (from Week 01 to Week 156) must adhere strictl
 
 1. **Master 15-Quest / 5-Zone Invariant (W17–W156)**:
    - Every week from W17 onward operates on **exactly 5 Days = 5 Zones = 15 Quests** (3 Quests per day).
-   - Fragmented legacy "stations" (`explore.js`, `dictation.js`, `daily_watch.js`, `logic_lab.js`) are **strictly prohibited** as standalone data files.
+   - Fragmented legacy "stations" (`explore.js`, `daily_watch.js`, `logic_lab.js`) are **strictly prohibited** as standalone data files.
    - **⚠️ LITE MODE (W01–W16)**: Pre-A1 Starters weeks operate on **10 Quests / 5 Zones (2 Quests/Day)** due to cognitive load constraints for 6–7 year olds. See MASTER_ARCHITECTURE §9 for details.
 2. **Four Central Data Hubs Invariant**:
    - All week content lives exclusively in **4 Data Hubs**: `reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `speaking_hub.js`.
@@ -45,9 +45,9 @@ Every week created for EngQuest3K (from Week 01 to Week 156) must adhere strictl
     - All 15 Quests must save completion to both `useDailyQuestStore` (`completedQuests['w' + weekId][questId]`) and `useUserStore` (`progressCache[weekId][stationId]` + Supabase cloud backup).
     - `useDailyQuestStore.completeQuest` is the single canonical entry point with automatic alias mapping (`science_lab` $\leftrightarrow$ `action_lab`, `story_writer` $\leftrightarrow$ `story_writing`, `broadcast_studio` $\leftrightarrow$ `video_challenge`, `gear4_clil` $\leftrightarrow$ `clil`).
     - Every Quest component must accept `onBackToMap` / `onComplete` and provide a clean, celebratory return path to the Quest Map (`/week/{weekId}/hub/1`) without getting trapped.
-12. **Everyday Conversation & Cambridge Exam Dictation Invariant (2026-09-05)**:
-    - Dictation must NEVER copy or duplicate Shadowing sentences or CLIL scientific texts.
-    - Dictation consists of 8 short turns forming an authentic everyday conversation dialogue between characters/friends related to the week's theme.
+12. **Everyday Conversation & Cambridge Exam Dictation Invariant (2026-09-05)** [DEPRECATED / ABOLISHED — Khai tử theo Quyết định Kiến trúc 15 Quests Gói 003B, commit c30ab03e + efe32bb3]:
+    - This dialogue must NEVER copy or duplicate Shadowing sentences or CLIL scientific texts.
+    - Consisted of 8 short turns forming an authentic everyday conversation dialogue between characters/friends related to the week's theme.
     - Mandatory inclusion of Cambridge Movers/Flyers tested entities: numbers (times, rooms, phone digits, durations), days of the week, dates, names, places, and everyday conversational collocations/chunks.
 
 
@@ -151,7 +151,7 @@ All creative and productive tasks must provide a **3-Level Scaffolding Engine** 
 
 ## 6. The Dictation 3-Step Engine [DEPRECATED / ABOLISHED — Khai tử theo Quyết định Kiến trúc 15 Quests Gói 003B, commit c30ab03e + efe32bb3]
 
-Whenever dictation exercises occur (Cambridge Listening Part 2 notepad note-taking, spelling, and everyday dialogue):
+Whenever such note-taking exercises occur (Cambridge Listening Part 2 notepad note-taking, spelling, and everyday dialogue):
 1. **Step 1: Authentic Two-Play Listening**:
    - Audio plays twice with a 3-second thinking pause.
    - Student types notes into digital notepad without visual prompts.
@@ -169,7 +169,7 @@ Quy trình sản xuất công nghiệp chuẩn hóa để nhân bản tuần h�
 
 ```mermaid
 graph TD
-    Stage1[Giai đoạn 1: Trích xuất Syllabus từ Khung CT Gốc] --> Stage2[Giai đoạn 2: Sinh Nội dung 7 Hạng mục Sư phạm]
+    Stage1[Giai đoạn 1: Trích xuất Syllabus từ Khung CT Gốc] --> Stage2[Giai đoạn 2: Sinh Nội dung 6 Hạng mục Sư phạm]
     Stage2 --> Stage3[Giai đoạn 3: Tích hợp & Đồng bộ 4 Central Data Hubs]
     Stage3 --> Stage4[Giai đoạn 4: Thẩm định 11 Automated Quality Gates]
     Stage4 --> Stage5[Giai đoạn 5: Đóng băng & Kiểm soát Toàn vẹn Manifest]
@@ -196,39 +196,27 @@ graph TD
 
 ---
 
-### Giai đoạn 2: Sinh Nội Dung 7 Hạng Mục Sư Phạm Bắt Buộc (7 Core Pedagogical Deliverables)
+### Giai đoạn 2: Sinh Nội Dung 6 Hạng Mục Sư Phạm Bắt Buộc (6 Core Pedagogical Deliverables)
 
-### Giai đoạn 2: Sinh Nội Dung 7 Hạng Mục Sư Phạm Bắt Buộc (7 Core Pedagogical Deliverables — W34 Gold Standard Checklist)
+### Giai đoạn 2: Sinh Nội Dung 6 Hạng Mục Sư Phạm Bắt Buộc (6 Core Pedagogical Deliverables — W34 Gold Standard Checklist)
 
-Lấy Tuần 34 làm khuôn mẫu chuẩn mực (Gold Standard Template), tác giả và agent bắt buộc phải rà soát qua bảng **Checklist Sư phạm 7 Hạng mục** trước khi ráp vào hệ thống:
+Lấy Tuần 34 làm khuôn mẫu chuẩn mực (Gold Standard Template), tác giả và agent bắt buộc phải rà soát qua bảng **Checklist Sư phạm 6 Hạng mục** trước khi ráp vào hệ thống:
 
-#### 📋 Checklist Chi tiết 7 Hạng mục Sư phạm:
+#### 📋 Checklist Chi tiết 6 Hạng mục Sư phạm:
 
-- [ ] **1. Hạng mục 1: Dictation 8 câu đàm thoại đời thường (Everyday Cambridge Dictation)**:
-  - Đúng 8 câu thoại ngắn liên hoàn giữa 2 nhân vật (giáo viên - học sinh hoặc 2 người bạn).
-  - CẤM chép câu văn của bài đọc Webtoon hay CLIL (Invariant 10).
-  - Tích hợp tối thiểu 6/6 thực thể khảo thí:
-    - [x] Giờ giấc cụ thể (e.g. `09:15 AM`, `half past two`).
-    - [x] Số phòng học / địa chỉ (e.g. `Room 3A`, `Room 4B`).
-    - [x] Số điện thoại liên lạc (e.g. `0912 345 678`).
-    - [x] Khoảng thời gian đo lường (e.g. `20 minutes`, `2 days`).
-    - [x] Thứ trong tuần và buổi (e.g. `Thursday morning`, `this Friday`).
-    - [x] Tên riêng và địa điểm đời thường (e.g. `Miss Green`, `Sam`, `the hall`, `art room`).
-  - **Kiểm tra tính nhất quán dòng thời gian (Chronological Coherence)**: Đảm bảo các mốc thời gian trong đoạn thoại logic với nhau (ví dụ: ngày diễn kịch ở câu 2 phải khớp với ngày hẹn gặp lại ở câu 8, tránh lệch thứ).
-
-- [ ] **2. Hạng mục 2: Bài đọc Khoa học Liên môn CLIL (Interdisciplinary CLIL Article)**:
+- [ ] **1. Hạng mục 1: Bài đọc Khoa học Liên môn CLIL (Interdisciplinary CLIL Article)**:
   - Dung lượng: 90 – 200 từ (chuẩn A2 Flyers: ~120 – 150 từ).
   - Độ dài câu: $\le 28$ từ/câu; chứa tối thiểu 3 fact units hoàn chỉnh (Subject + Action + Outcome).
   - **Nguyên tắc Toàn vẹn Thuật ngữ (100% Glossary In-Text Presence)**: 100% các thuật ngữ trong `glossary` ($\ge 7$ từ) BẮT BUỘC phải xuất hiện thực tế trong văn bản `content_en`, CẤM định nghĩa từ mà bài đọc không dùng.
   - Đi kèm: 5 câu hỏi đọc hiểu `check_questions` và 1 câu hỏi tư duy phản biện `critical_thinking`.
 
-- [ ] **3. Hạng mục 3: Danh mục Từ vựng Mục tiêu Cốt lõi & Ôn tập (Vocab & Foundation Review)**:
+- [ ] **2. Hạng mục 2: Danh mục Từ vựng Mục tiêu Cốt lõi & Ôn tập (Vocab & Foundation Review)**:
   - Đúng 20 từ vựng cốt lõi mới (`week{N}Vocab`) theo chuẩn CEFR của tuần.
   - Mỗi từ có đầy đủ: `word`, `definition_en`, `definition_vi`, `example_en`, `example_vi`, `audio_word`.
   - **Mở rộng Ôn tập Ngắt quãng (SRS Foundation Review)**: Bổ sung các từ mục tiêu nền tảng xuất hiện trong tuần (e.g. `tiny`, `huge`, `help`) có gắn cờ `tier: "foundation_review"` để hệ thống SRS nạp vào lịch ôn tập ngắt quãng.
   - **Ghi chú Từ vựng CLIL Mở rộng**: Ghi rõ `category: "CLIL_EXTENSION"` cho các thuật ngữ khoa học vượt chuẩn Flyers một bậc (e.g. `ecosystem`) để hệ thống kiểm tra tự động (`gate12`) không cảnh báo lỗi vượt cấp độ.
 
-- [ ] **4. Hạng mục 4: Voice Shadowing & Trọng tâm Ngữ âm (Pronunciation & Phonology Triad)**:
+- [ ] **3. Hạng mục 3: Voice Shadowing & Trọng tâm Ngữ âm (Pronunciation & Phonology Triad)**:
   - Gồm 8 câu luyện phát âm bám sát cốt truyện.
   - Đầy đủ phiên âm IPA cho từng từ (`ipa: [...]`).
   - **Bộ Ba Âm Đuôi Quá Khứ (Past Tense -ed Ending Triad)**: Nếu tuần có trọng tâm phát âm quá khứ đơn, 8 câu Shadowing BẮT BUỘC phải bao quát đầy đủ cả 3 nhóm âm đuôi:
@@ -236,7 +224,7 @@ Lấy Tuần 34 làm khuôn mẫu chuẩn mực (Gold Standard Template), tác g
     - Nhóm **/d/** (sau âm hữu thanh và nguyên âm: `chewed`, `roared`, `freed`, `stayed`).
     - Nhóm **/ɪd/** (sau âm /t/ và /d/: `rested`, `trusted`, `waited`, `started`).
 
-- [ ] **5. Hạng mục 5: Các đoạn văn khảo thí F5D3 Reading & Writing Passages**:
+- [ ] **4. Hạng mục 4: Các đoạn văn khảo thí F5D3 Reading & Writing Passages**:
   - `rw_part1`: 15 từ vựng Word Bank + 10 định nghĩa + 1 ví dụ mẫu.
   - `rw_part2`: Cuộc trò chuyện Dialogue A-H gồm 5 lượt thoại (`turns`) + 8 phương án (`answer_options`) + 1 ví dụ mẫu (`example`).
   - `reading_part3_story`: Bài đọc điền từ 5 chỗ trống + 10 từ Word Bank + 3 phương án chọn tiêu đề (`title_options`).
@@ -244,15 +232,14 @@ Lấy Tuần 34 làm khuôn mẫu chuẩn mực (Gold Standard Template), tác g
   - `rw_part5`: Đoạn văn trích xuất thông tin 7 câu điền từ tự do (`questions`, không có phương án trắc nghiệm) + 1 ví dụ mẫu.
   - `rw_part_6`: Bài viết nhật ký Open Cloze 5 chỗ trống điền 1 từ duy nhất + 1 ví dụ mẫu.
 
-- [ ] **6. Hạng mục 6: Dữ liệu Tương tác Mini-games F7D1 & Action Lab**:
+- [ ] **5. Hạng mục 5: Dữ liệu Tương tác Mini-games F7D1 & Action Lab**:
   - `science_lab` (Action Lab): Cung cấp tối thiểu 3 kịch bản / diagram tương tác (`stages: [Stage 1, Stage 2, Stage 3]`) về nguyên nhân vật lý, vật liệu đối ứng và quy trình xử lý thực tế theo Invariant 7.
   - `singapore_math`: Đúng 5 bài toán tư duy Bar Model theo chuẩn C.U.B.E.S. kèm dữ liệu `modelData` (part-whole / comparison) khớp 100% kết quả tính toán.
   - `grammar_drills`: 5 câu Grammar Duel sắp xếp trật tự từ có từ gây nhiễu (`distractor_blocks`).
   - `story_writer`: Khung 3 bức tranh với 3 nấc thang MODEL $\rightarrow$ BUILD $\rightarrow$ WRITE và từ nối thời gian (`connectors`).
 
-- [ ] **7. Hạng mục 7: Kịch bản Âm thanh & Asset Âm thanh Pre-generated**:
+- [ ] **6. Hạng mục 6: Kịch bản Âm thanh & Asset Âm thanh Pre-generated**:
   - Khai báo đầy đủ và tạo sẵn file MP3 vật lý trong `public/audio/week{N}/`:
-    - 8 câu Dictation (sử dụng 2 giọng đọc phân biệt cho giáo viên và học sinh).
     - 8 câu Voice Shadowing.
     - Bài đọc CLIL Explore.
     - 20+ file âm thanh từ vựng (`vocab_{word}.mp3`).
@@ -271,7 +258,7 @@ Lấy Tuần 34 làm khuôn mẫu chuẩn mực (Gold Standard Template), tác g
   - `listening_hub.js`: Listening Parts 1–5 chuẩn Cambridge Movers/Flyers, Action Lab, Singapore Math, Grammar Duel.
   - `writing_hub.js`: Creative Story Writer (3 panels có 3 nấc thang), Discovery Report config (Data Card + 1-Tap Pills), Writing Chunks (4 nhóm ngữ đoạn).
   - `speaking_hub.js`: Video Challenge teleprompter, Info Exchange cue cards, Spot-Differences (4 cặp điểm khác biệt có tọa độ hotspot), Personal Questions.
-  - `skill_practice_hub.js`: Tập trung Dictation 8 câu, Grammar Drills, Singapore Math 5 bài toán và Action Lab.
+  - `skill_practice_hub.js`: Tập trung Grammar Drills, Singapore Math 5 bài toán và Action Lab.
 
 ---
 
@@ -292,7 +279,7 @@ node scripts/gate8_no_fallback_sweep.mjs {N}
 # 4. Gate 10: Kiểm tra tính chuẩn xác ngữ pháp các câu ví dụ Cambridge
 node scripts/gate10_example_grammaticality.mjs {N}
 
-# 5. Gate 11: Kiểm tra độ phong phú nội dung & chuẩn mực 8 câu dictation
+# 5. Gate 11: Kiểm tra độ phong phú nội dung (vocab, math, grammar drills, science_lab stages)
 node scripts/gate11_content_richness.mjs {N}
 
 # 6. Gate 12: Thẩm định cấp độ CEFR và độ dài câu từ vựng
@@ -322,7 +309,7 @@ node scripts/guard_golden_w{N}_freeze.mjs
 | **Gate 4** | `gate4_chunk_bolding.mjs` | 100% câu narration có in đậm cụm từ Collocations hợp lệ. |
 | **Gate 8** | `gate8_no_fallback_sweep.mjs` | 0 dummy strings (không chứa `"Related to "`, `"Lorem"`, `"placeholder"`). |
 | **Gate 10** | `gate10_example_grammaticality.mjs` | 0 lỗi ngữ pháp trong các câu mẫu Cambridge Part 1–6. |
-| **Gate 11** | `gate11_content_richness.mjs` | Đúng 8 câu Dictation thoại đời thường; đủ 20 từ vựng và các nhóm bài tập. |
+| **Gate 11** | `gate11_content_richness.mjs` | Đủ 20 từ vựng cốt lõi; 5 bài toán Singapore Math, 5 câu Grammar Drills và Action Lab 3 stages. |
 | **Gate 12** | `gate12_comprehensive_cefr.mjs` | 0 vi phạm từ vựng ngoài CEFR A2 Flyers (cho Stage 1); độ dài câu đạt chuẩn. |
 | **Gate 13** | `gate13_rotary_schedule.mjs` | Đúng 5 Zones / 15 Quests; phân bổ 3 Quests/ngày khớp 100% Ma trận. |
 | **Gate 15** | `gate15_production_dom_assertions.mjs` | 15/15 Quests render thành công trên DOM production, 0 console error. |
