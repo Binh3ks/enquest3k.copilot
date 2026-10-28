@@ -35,7 +35,13 @@ AUDIOS = [
     },
     {
         "file": "scene_4.mp3",
-        "text": "Later, hunters trapped the lion in a heavy net, and the brave mouse chewed the ropes to free him.",
+        "text": "A few days later, hunters trapped the lion in a strong net made of thick ropes.",
+        "voice": "en-US-GuyNeural",
+        "rate": "-4%"
+    },
+    {
+        "file": "scene_5.mp3",
+        "text": "The little mouse quickly chewed through the ropes and set the lion completely free.",
         "voice": "en-US-GuyNeural",
         "rate": "-4%"
     },
