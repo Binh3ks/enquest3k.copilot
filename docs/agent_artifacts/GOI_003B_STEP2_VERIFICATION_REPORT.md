@@ -161,3 +161,51 @@ Total Rogue Entity Violations: 0
 
 ### 4.4. Voice Shadow W34 (Không Còn Nút "Dictation Notepad")
 ![Voice Shadow Live](file:///Users/binhnguyen/.gemini/antigravity-ide/brain/5b824817-1f20-4f7f-be0d-9ebbb2361075/04_voice_shadow_no_dictation_live.png)
+
+---
+
+## 5. NGHIỆM THU GÓI 003B FOLLOW-UP (HOÀN TẤT TRƯỚC KHI ĐÓNG GÓI)
+
+- **Production Commit**: `4ae37ec2e377b93a3f8e66f58e49348f79036a4f` (short: `4ae37ec2`)
+- **Trạng thái**: ✅ **HOÀN THÀNH TOÀN BỘ 3 MỤC FOLLOW-UP (PASS 100%)**
+- **Thời gian**: 2026-10-28T03:50:00Z
+
+### 5.1. Mục 1: Listening Part 3 (8 Thẻ A-H Thuần Cảnh Quan, 0 Vật Thể Lộ Sẵn)
+- Đã sinh lại toàn bộ 8 thẻ ảnh phong cảnh thuần túy trong `public/images/week34/card_*.jpg` & `.png`:
+  - Card A: `Forest Clearing` (trảng rừng ngập nắng, thảm cỏ hoa dại)
+  - Card B: `Hunter Camp` (khu rừng rậm xanh, lối mòn tự nhiên, 0 dụng cụ)
+  - Card C: `Tree Hollow` (gốc cây cổ thụ rêu phong, 0 bẫy/dây)
+  - Card D: `Riverbank` (bờ sông hiền hòa, rặng liễu rủ bóng, 0 chai nước)
+  - Card E: `Lookout Rock` (mỏm đá cao nhìn xuống thung lũng, 0 la bàn)
+  - Card F: `Dark Cave` (cửa hang đá phủ rêu xanh và dương xỉ, 0 ba lô/đèn pin)
+  - Card G: `Base Tent` (căn lều vải thô mộc giữa rừng thông, 0 vật phẩm)
+  - Card H: `Wooden Tower` (tháp canh gỗ mộc nhìn ra biển thông, 0 ống nhòm/người)
+- Đã tách vĩnh viễn prompt mục tiêu khỏi địa điểm trong `scripts/generate_w34_together_images.py`.
+- **Bằng chứng UI Production Thật**: 8 thẻ A-H hiển thị rõ ràng, không có bất kỳ vật thể đáp án nào bị lộ trước:
+![Listening Part 3 Pure Landscape Cards](file:///Users/binhnguyen/.gemini/antigravity-ide/brain/5b824817-1f20-4f7f-be0d-9ebbb2361075/03_listening_part3_cards.png)
+
+### 5.2. Mục 2: Bổ Sung Screenshot Mắt Thường (Action Lab Stage 2/3 & Speaking Part 2 Pha 2)
+1. **Action Lab — Stage 2 (Trapped Lion & Teamwork Rescue)**:
+   - Các nhãn kéo thả: `Brave Mouse`, `Trapped Lion`, `Hunters' Net`, `Anchor Tree`.
+   - Vị trí thả: Canopy (`Anchor Tree`), Understory (`Hunters' Net`, `Trapped Lion`), Forest Floor (`Brave Mouse`).
+![Action Lab Stage 2 Live](file:///Users/binhnguyen/.gemini/antigravity-ide/brain/5b824817-1f20-4f7f-be0d-9ebbb2361075/01_action_lab_stage2.png)
+
+2. **Action Lab — Stage 3 (Balanced Forest Ecosystem & Friendship)**:
+   - Các nhãn kéo thả: `Forest Trees`, `Little Mouse`, `Mighty Lion`, `Warning Birds`.
+   - Vị trí thả: Canopy (`Warning Birds`, `Forest Trees`), Understory (`Mighty Lion`), Forest Floor (`Little Mouse`).
+![Action Lab Stage 3 Live](file:///Users/binhnguyen/.gemini/antigravity-ide/brain/5b824817-1f20-4f7f-be0d-9ebbb2361075/02_action_lab_stage3.png)
+
+3. **Speaking Part 2 — Pha 2 ĐÃ Kích Hoạt (`weekly_review`, `InformationExchangeP2.jsx`)**:
+   - Xác nhận: Table A trở thành active card, Table B thu nhỏ / làm mờ bên phải.
+   - **Xóa bỏ hoàn toàn anti-pattern dấu `?` trống**: Hiển thị chính xác **CUE WORDS** theo chuẩn khảo thí Cambridge A2 Flyers:
+     - Hàng 1 (đã hỏi): `Location` -> `Green Valley Forest` (kết quả hiển thị xanh lá).
+     - Hàng 2 (đang hỏi, viền vàng nổi bật): `Favorite Food` -> `What / favorite food?` (amber pill).
+     - Hàng 3 (chờ hỏi): `Resting Time` -> `When / resting time?`.
+     - Hàng 4 (chờ hỏi): `Best Friend` -> `Who / best friend?`.
+   - Khung Mascot Examiner Nova hiển thị prompt rõ ràng: `Prompt: What / favorite food?` kèm ô nhập/nói.
+![Speaking Part 2 Phase 2 Active Live](file:///Users/binhnguyen/.gemini/antigravity-ide/brain/5b824817-1f20-4f7f-be0d-9ebbb2361075/04_speaking_p2_phase2_active.png)
+
+### 5.3. Mục 3: Cập Nhật Kiến Trúc 156 Tuần (`docs/ARCHITECTURE_CURRENT.md`)
+- Đã bổ sung **Mục 8.1: Dual-Quest Consumer Invariant cho `speaking_hub.js`**: Dữ liệu `info_exchange_cards` phục vụ đồng thời Quest 12 (D4, `InfoExchangeZone.jsx`, thực hành) và Quest 15 (D5, `InformationExchangeP2.jsx` trong `BossBattleZone.jsx`, khảo thí).
+- Đã bổ sung **Mục 8.2: Đóng vĩnh viễn nghi vấn âm thanh R2**: Xác nhận Gate 15 v2 live đạt 0 missing audio, toàn bộ MP3 tĩnh được đóng gói và deploy tự động qua Vite build (`dist/audio/`) và Git + Cloudflare Pages mà không cần bước R2 riêng biệt.
+
