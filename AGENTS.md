@@ -194,7 +194,7 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
      - 100% các màn hình Quest / Station (đặc biệt là Action Lab, Info Exchange, Discovery Report, Speed Match...) BẮT BUỘC nhận prop `onBackToMap` và `onComplete` từ `TaskScreen.jsx` và Zone container.
      - Khi học sinh hoàn thành màn hình hoặc bấm nút chiến thắng (e.g. `✓ Return to Map (+50 XP)` / `✓ Finish Quest & Return to Map (+50 XP)`), component PHẢI lưu trạng thái vào Dual-Store TRƯỚC, sau đó kích hoạt callback `onBackToMap()` / `onComplete()` để điều hướng mượt mà về `/week/${weekId}/hub/1` mà không bị gián đoạn hay kẹt màn hình.
      - Khi vào lại một quest đã hoàn thành trước đó, màn hình BẮT BUỘC hiển thị huy hiệu `✓ Đã Hoàn Thành` (`CompletedBadge` / `DoneBadge`) và cho phép học sinh chơi lại (Replay) nếu muốn mà không mất tiến độ đã lưu.
-10. **Everyday Conversation & Cambridge Exam Dictation Invariant (W01–W156) — 2026-09-05**:
+10. **Everyday Conversation & Cambridge Exam Dictation Invariant (W01–W156) — 2026-09-05** [DEPRECATED / ABOLISHED — Khai tử theo Quyết định Kiến trúc 15 Quests Gói 003B, commit c30ab03e + efe32bb3]:
    - **Mục đích Sư phạm Bắt buộc**: Dictation KHÔNG PHẢI là chép lại 8 câu bài đọc Shadowing hay văn bản khoa học CLIL!
    - **Chuẩn Mực Khảo Thí Cambridge Movers / Flyers (Listening Part 2 & Writing)**:
      - Dictation gồm đúng 8 câu ngắn liên hoàn tạo thành 1 cuộc hội thoại giao tiếp đời thường hoàn chỉnh (Everyday English Conversation Dialogue) xoay quanh chủ đề của tuần.

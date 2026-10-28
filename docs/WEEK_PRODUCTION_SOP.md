@@ -149,7 +149,7 @@ All creative and productive tasks must provide a **3-Level Scaffolding Engine** 
 
 ---
 
-## 6. The Dictation 3-Step Engine
+## 6. The Dictation 3-Step Engine [DEPRECATED / ABOLISHED — Khai tử theo Quyết định Kiến trúc 15 Quests Gói 003B, commit c30ab03e + efe32bb3]
 
 Whenever dictation exercises occur (Cambridge Listening Part 2 notepad note-taking, spelling, and everyday dialogue):
 1. **Step 1: Authentic Two-Play Listening**:
