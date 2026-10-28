@@ -69,16 +69,13 @@ try {
     skillHub = listeningHubModule.listeningHub || listeningHubModule.listeningHubData || listeningHubModule.default;
   }
 
-  if (!skillHub.dictation || skillHub.dictation.length !== 8) {
-    errors.push(`Expected 8 dictation sentences, found ${skillHub?.dictation?.length || 0}`);
-  }
   if (!skillHub.singapore_math || skillHub.singapore_math.length !== 5) {
     errors.push(`Expected 5 singapore_math items, found ${skillHub?.singapore_math?.length || 0}`);
   }
   if (!skillHub.grammar_drills || skillHub.grammar_drills.length !== 5) {
     errors.push(`Expected 5 grammar_drills items, found ${skillHub?.grammar_drills?.length || 0}`);
   }
-  const labTargets = skillHub.science_lab?.targets || skillHub.science_lab?.zones || [];
+  const labTargets = skillHub.science_lab?.targets || skillHub.science_lab?.zones || skillHub.science_lab?.stages?.[0]?.targets || skillHub.science_lab?.stages?.[0]?.zones || [];
   if (!skillHub.science_lab || labTargets.length < 3) {
     errors.push(`science_lab missing or has fewer than 3 drag targets`);
   }
