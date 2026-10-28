@@ -71,21 +71,49 @@ def main():
     out_dir = Path("public/images/week34")
     out_dir.mkdir(parents=True, exist_ok=True)
     
+    # CAMBRIDGE FLYERS LISTENING PART 3 ARCHITECTURAL INVARIANT:
+    # Landscape cards A-H MUST NEVER contain target answer objects (e.g. traps, ropes, maps, bottles, compasses, flashlights, backpacks, binoculars).
+    # Prompts below are 100% pure scenery/locations.
     images_to_generate = [
         (
-            out_dir / "mossy_rocks.jpg",
-            out_dir / "mossy_rocks.png",
-            "Cute 3D illustration of a peaceful forest stream with large green mossy rocks, sparkling crystal clear water, sunlight filtering through tall green trees in a magical sunlit woodland. Pixar animation style, vibrant rich colors, soft studio lighting, clean composition, no text."
+            out_dir / "card_a.jpg",
+            out_dir / "card_a.png",
+            "A beautiful peaceful forest clearing surrounded by tall lush green trees, sunlight beaming down onto a carpet of soft grass and wild flowers, tranquil woodland landscape. Vibrant colors, clean educational illustration style, no people, no animals, no manmade objects, no text, no traps."
         ),
         (
             out_dir / "card_b.jpg",
             out_dir / "card_b.png",
-            "Cute 3D illustration of a hunter camp in a green forest with thick rope net traps and wooden poles, tents and campfire in the background. Pixar animation style, vibrant colors, clean lighting, no text."
+            "A small rustic campsite clearing in a dense green forest, empty camping grounds with a simple stone fire ring with extinguished gray ashes, wooden log bench under leafy trees. Peaceful morning woodland scene, no people, no animals, no ropes, no nets, no modern gear, no text."
+        ),
+        (
+            out_dir / "card_c.jpg",
+            out_dir / "card_c.png",
+            "A massive ancient oak tree trunk in a sun-dappled forest, with a natural wide hollow opening in the weathered bark at ground level, surrounded by wild mushrooms and green moss. Natural forest landscape, no animals, no people, no maps, no scrolls, no text."
         ),
         (
             out_dir / "card_d.jpg",
             out_dir / "card_d.png",
-            "Cute 3D illustration of a blue reusable water bottle resting on a mossy rock by a flowing riverbank in a sunlit forest. Pixar animation style, vibrant colors, clean lighting, no text."
+            "A gentle crystal-clear river flowing through a lush green forest, smooth pebble riverbank with rounded stones, gentle ripples in the sparkling water, willow trees hanging over the water. Serene nature scene, no people, no animals, no bottles, no plastic, no text."
+        ),
+        (
+            out_dir / "card_e.jpg",
+            out_dir / "card_e.png",
+            "A scenic high rocky promontory cliff overlooking a vast green forest valley, large flat limestone lookout rock with distant mountain hills under a bright blue sky. Panoramic woodland view, no people, no animals, no compass, no instruments, no text."
+        ),
+        (
+            out_dir / "card_f.jpg",
+            out_dir / "card_f.png",
+            "A mysterious natural rock cave entrance nestled in a mossy hillside forest, dark shadowed cave opening framed by wild vines and fern plants, soft morning light hitting the entrance stones. Atmospheric nature landscape, no people, no animals, no flashlights, no torches, no text."
+        ),
+        (
+            out_dir / "card_g.jpg",
+            out_dir / "card_g.png",
+            "A simple plain canvas tent pitched under shady forest trees on a grassy woodland meadow, peaceful outdoor shelter setting. Clean cozy camping environment, no people, no animals, no backpacks, no bags, no gear outside, no text."
+        ),
+        (
+            out_dir / "card_h.jpg",
+            out_dir / "card_h.png",
+            "A rustic wooden lookout tower standing among forest trees, tall wooden observation platform made of timber logs with a ladder leading up, overlooking green tree canopies. Forest fire watchtower landscape, no people, no animals, no binoculars, no telescope, no text."
         )
     ]
     
@@ -96,7 +124,7 @@ def main():
             sys.exit(1)
         time.sleep(1)
         
-    print("\n🎉 All 3 L4 images generated successfully via Together AI FLUX.1-schnell!")
+    print("\n🎉 All 8 Listening Part 3 pure landscape images generated successfully via Together AI FLUX.1-schnell!")
 
 if __name__ == "__main__":
     main()

@@ -24,19 +24,31 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
         table_a: {
           title: `Table A: ${raw.candidate_card?.title || 'Candidate Card'} (Candidate Asks Questions)`,
           person: candPerson,
-          fields: candItems.slice(0, 4).map((item, i) => ({
-            id: `field_a${i + 1}`,
-            label: item.label,
-            value: item.value,
-            is_missing: i > 0,
-            cue_prompt: `${item.label.replace('?','').trim()} / ${candPerson} / ${item.value ? item.value.split(' ')[0] : 'item'}?`,
-            acceptable_questions: [
-              `What is the ${item.label.toLowerCase().replace('?','')}?`,
-              `Where does ${candPerson} ${item.label.toLowerCase().includes('live') ? 'live' : 'have'}?`,
-              `Can you tell me the ${item.label.toLowerCase().replace('?','')}?`
-            ],
-            nova_reply: `The ${item.label.toLowerCase().replace('?','')} is ${item.value}.`
-          }))
+          fields: candItems.slice(0, 4).map((item, i) => {
+            const cueWord = item.label.toLowerCase().includes('location') || item.label.toLowerCase().includes('where')
+              ? 'Where'
+              : item.label.toLowerCase().includes('time') || item.label.toLowerCase().includes('when')
+              ? 'When'
+              : item.label.toLowerCase().includes('friend') || item.label.toLowerCase().includes('who')
+              ? 'Who'
+              : 'What';
+            return {
+              id: `field_a${i + 1}`,
+              label: item.label,
+              value: item.value,
+              is_missing: i > 0,
+              cue_word: cueWord,
+              cue_prompt: `${cueWord} / ${item.label.toLowerCase().replace('?','')}?`,
+              acceptable_questions: [
+                `What is the ${item.label.toLowerCase().replace('?','')}?`,
+                `Where does ${candPerson} ${item.label.toLowerCase().includes('live') ? 'live' : 'have'}?`,
+                `When is the ${item.label.toLowerCase().replace('?','')}?`,
+                `Who is the ${item.label.toLowerCase().replace('?','')}?`,
+                `Can you tell me the ${item.label.toLowerCase().replace('?','')}?`
+              ],
+              nova_reply: `The ${item.label.toLowerCase().replace('?','')} is ${item.value}.`
+            };
+          })
         },
         table_b: {
           title: `Table B: ${raw.examiner_card?.title || 'Examiner Card'} (Examiner Asks Questions)`,
@@ -517,10 +529,12 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
                       <CheckCircle2 size={13} className="text-emerald-700" /> {isRevealed}
                     </span>
                   ) : (
-                    <span className={`text-xs font-black px-3 py-1 rounded-lg ${
-                      isHighlighted ? 'bg-amber-400 text-amber-950 animate-bounce' : 'bg-slate-200 text-slate-600'
+                    <span className={`text-xs font-bold px-2.5 py-1 rounded-lg border transition-all ${
+                      isHighlighted
+                        ? 'bg-amber-400 text-amber-950 border-amber-500 ring-2 ring-amber-300 font-black shadow-xs'
+                        : 'bg-amber-50 text-amber-900 border-amber-200'
                     }`}>
-                      ?
+                      {field.cue_prompt || `${field.cue_word || 'What'} / ${field.label.toLowerCase()}?`}
                     </span>
                   )}
                 </div>

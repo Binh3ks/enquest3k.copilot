@@ -252,3 +252,22 @@ Hệ thống EngQuest3K từ Tuần 33 trở đi hoạt động trên quy chuẩ
    - `dictation_1.mp3` $\dots$ `dictation_8.mp3` (8 files — tàn dư kiến trúc Dictation đã xóa)
    - `listening_p5_inst1.mp3` $\dots$ `listening_p5_inst5.mp3` (5 files — tàn dư instruction rời cũ)
 *Phương trình cân bằng*: $43 + 8 + 4 + 5 + 13 = 73$ physical files.
+
+---
+
+## 8. NGUYÊN TẮC BẤT BIẾN DUY NHẤT: DUAL-QUEST CONSUMER & AUDIO DEPLOYMENT (W01–W156)
+
+### 8.1. Dual-Quest Consumer Invariant cho `speaking_hub.js`
+Dữ liệu thẻ thông tin trong `speaking_hub.js` (`info_exchange_cards`: `candidate_card`, `examiner_card`, `examiner_questions`, `full_answers`) **BẮT BUỘC ĐƯỢC DÙNG CHUNG BỞI ĐÚNG HAI (02) QUESTS**:
+1. **Quest 12: Info Exchange (Day 4, Zone 4 — Creator Studio)**:
+   - Component: `InfoExchangeZone.jsx`
+   - Mục đích: Luyện tập giao tiếp tương tác (Interactive Speaking Practice Part 2), có nút nghe hội thoại mẫu Model Dialogue, nhận 50 XP & 2 Khiên thực hành.
+2. **Quest 15: Speaking & Passport (Day 5, Zone 5 — Boss Castle)**:
+   - Component: `InformationExchangeP2.jsx` (được mount bên trong `BossBattleZone.jsx`)
+   - Mục đích: Khảo thí chính thức (Cambridge Assessment Speaking Part 2), chấm điểm khiên Speaking Shield và đóng dấu hoàn thành tuần trên Passport.
+- **Quy tắc cho tác giả nội dung (W01–W156)**: 1 bộ dữ liệu duy nhất trong `speaking_hub.js` phải đáp ứng đồng thời cả 2 UI. Thẻ `candidate_card` (Pha 1) bắt buộc có 100% dữ kiện thật (không có trường null/`???`). Thẻ `examiner_card` (Pha 2) cung cấp từ gợi ý (Cue words) và câu hỏi khảo thí tĩnh kèm file audio riêng biệt (`info_exchange_q1.mp3`..`_q4.mp3`).
+
+### 8.2. Đóng Vĩnh Viễn Nghi Vấn Âm Thanh R2 vs Cloudflare Pages
+- **Xác nhận thực tế qua Gate 15 v2 live production**: Toàn bộ file âm thanh vật lý trong `public/audio/week{N}/` được đóng gói tự động qua Vite build (`dist/audio/`) và triển khai thành công 100% cùng Cloudflare Pages qua Git push.
+- Ứng dụng không cần bước upload R2 thủ công riêng biệt để phục vụ 15 quests tiêu chuẩn. Lỗi 404/HTML fallback trước đây chỉ xuất phát từ việc thiếu file vật lý trong repo. Vấn đề này chính thức được đóng vĩnh viễn trong SOP của toàn bộ 156 tuần.
+
