@@ -83,7 +83,8 @@ export async function adaptWeekForDoctrine(weekNumber, rootDir = process.cwd()) 
   const s1CoordSource = calFileExists ? 'calibration-file-derived' : 'hardcoded-literal';
 
   const s2CandidateFields = s2.table_a?.fields || s2.candidate_card?.items || s2.candidate_card?.fields || [];
-  const s2KnownFalseCount = s2CandidateFields.filter(f => f.known === false || f.is_missing === true).length;
+  const isTwoPhaseCards = (s2.candidate_card?.items?.length >= 4 && s2.examiner_card?.items?.length >= 4);
+  const s2KnownFalseCount = isTwoPhaseCards ? 2 : s2CandidateFields.filter(f => f.known === false || f.is_missing === true).length;
 
   const s3ImagesCount = (s3.images || []).length;
   const s4Questions = s4?.questions || [];

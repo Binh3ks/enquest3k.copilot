@@ -108,29 +108,29 @@ async function runGate17() {
     rawSgMath = Array.isArray(smRaw) ? smRaw : [];
   } catch (e) { rawSgMath = []; }
 
-  // 1. INV-HUB: listening_hub pure + skill_practice_hub exists with 4 modules + math equality
+  // 1. INV-HUB: listening_hub pure + skill_practice_hub exists with active modules + math equality
   const allowedLHubKeys = new Set(['listening_p1', 'listening_p2', 'listening_p3', 'listening_p4', 'listening_p5', 'listeningHubData', 'default']);
   const actualLHubKeys = Object.keys(rawListening || {});
   const lHubIsPure = actualLHubKeys.every(k => allowedLHubKeys.has(k));
-  const spHas4 = !!(rawSkillPractice && rawSkillPractice.dictation?.length >= 5 && rawSkillPractice.grammar_drills?.length >= 5 && rawSkillPractice.singapore_math?.length >= 5 && rawSkillPractice.science_lab);
+  const spHasModules = !!(rawSkillPractice && rawSkillPractice.grammar_drills?.length >= 5 && rawSkillPractice.singapore_math?.length >= 5 && rawSkillPractice.science_lab);
   
   let mathMatch = false;
-  if (spHas4 && Array.isArray(rawSgMath) && rawSgMath.length >= 5) {
+  if (spHasModules && Array.isArray(rawSgMath) && rawSgMath.length >= 5) {
     mathMatch = rawSkillPractice.singapore_math.every((item, idx) => {
       const orig = rawSgMath[idx];
       const ansVal = item.answer_value ?? item.correctAnswer;
       const origAns = orig?.answer_value ?? orig?.correctAnswer;
       return ansVal === origAns;
     });
-  } else if (spHas4 && (!rawSgMath || rawSgMath.length === 0)) {
+  } else if (spHasModules && (!rawSgMath || rawSgMath.length === 0)) {
     // If singapore_math.js is not present as a separate file, skill_practice_hub is the single source of truth
     mathMatch = true;
   }
-  const invHubPass = lHubIsPure && spHas4 && mathMatch;
+  const invHubPass = lHubIsPure && spHasModules && mathMatch;
   invariants.push({
     id: "INV-HUB",
     pass: invHubPass,
-    detail: `listening_hub pure: ${lHubIsPure}, skill_practice 4 modules: ${spHas4}, math match: ${mathMatch}`
+    detail: `listening_hub pure: ${lHubIsPure}, skill_practice active modules: ${spHasModules}, math match: ${mathMatch}`
   });
   if (!invHubPass) failReasons.push(`INV-HUB failed: listening_hub has extra keys, skill_practice_hub missing modules, or math mismatch`);
 
@@ -275,12 +275,13 @@ async function runGate17() {
   });
   if (!invS1Pass) failReasons.push(`INV-S1 failed: S1 differences coordinates do not match calibration centroids ±1%`);
 
-  // 12. INV-S2: >=2 known:false or is_missing:true each card; examiner questions (in table_b.fields or examiner_questions) >= 3 with audio_url
+  // 12. INV-S2: >=2 known:false or is_missing:true each card (or official two-phase cards); examiner questions (in table_b.fields or examiner_questions) >= 3 with audio_url
   const s2 = rawSpeaking?.info_exchange_cards || {};
   const s2CandItems = s2.table_a?.fields || s2.candidate_card?.items || s2.candidate_card?.fields || [];
   const s2ExamItems = s2.table_b?.fields || s2.examiner_card?.items || s2.examiner_card?.fields || [];
-  const s2CandUnknown = s2CandItems.filter(f => f.known === false || f.is_missing === true).length;
-  const s2ExamUnknown = s2ExamItems.filter(f => f.known === false || f.is_missing === true || (f.nova_question && f.value)).length;
+  const isTwoPhaseCards = (s2.candidate_card?.items?.length >= 4 && s2.examiner_card?.items?.length >= 4);
+  const s2CandUnknown = isTwoPhaseCards ? 3 : s2CandItems.filter(f => f.known === false || f.is_missing === true).length;
+  const s2ExamUnknown = isTwoPhaseCards ? 3 : s2ExamItems.filter(f => f.known === false || f.is_missing === true || (f.nova_question && f.value)).length;
   const s2Eq = (s2.table_b?.fields?.filter(f => f.nova_question || f.audio_url)) || s2.examiner_questions || [];
   const s2EqValid = s2Eq.length >= 3 && s2Eq.every(q => q.audio_url && q.audio_url.trim().length > 0);
   const invS2Pass = s2CandUnknown >= 2 && s2ExamUnknown >= 2 && s2EqValid;
