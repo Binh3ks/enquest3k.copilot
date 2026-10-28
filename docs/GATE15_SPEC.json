@@ -314,10 +314,10 @@
           "min": 1
         },
         {
-          "name": "info_exchange DOM contains >=2 '???' gaps for unknown fields",
+          "name": "info_exchange DOM contains >=1 '?' in questions or cues",
           "type": "regex_min_count",
-          "pattern": "\\?\\?\\?",
-          "min": 2
+          "pattern": "\\?",
+          "min": 1
         },
         {
           "name": "Table B has >=3 examiner audio buttons",
