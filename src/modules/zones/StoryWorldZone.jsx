@@ -17,7 +17,6 @@ import PronunciationCoachCard, { getWordIpaList } from '../../components/common/
 import { loadIpaData } from '../shadowing/ipaUtils';
 import { useUserStore } from '../../stores/useUserStore';
 import { emitLearningEvent, GAMIFICATION_EVENTS } from '../../services/gamificationEventBus';
-import VoiceShadowDictation from '../../components/common/VoiceShadowDictation';
 
 export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hideGearTabs = false, onBackToMap, onComplete }) {
   const navigate = useNavigate();
@@ -29,7 +28,6 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
   const [currentGear, setCurrentGear] = useState(forcedGear || 1);
   const [completedGears, setCompletedGears] = useState([1]);
   const [stepperIdx, setStepperIdx] = useState(0);
-  const [voiceShadowMode, setVoiceShadowMode] = useState('shadow'); // 'shadow' | 'dictation'
 
   // If forcedGear changes, update
   useEffect(() => {
@@ -1066,30 +1064,10 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
           <div className="bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 border border-slate-200 shadow-md space-y-3 font-sans">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2.5 flex-wrap gap-2">
               <div className="flex items-center gap-2">
-                {/* Segmented Mode Selector: Voice Shadow vs Dictation Notepad */}
-                <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
-                  <button
-                    type="button"
-                    onClick={() => setVoiceShadowMode('shadow')}
-                    className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
-                      voiceShadowMode === 'shadow'
-                        ? 'bg-white shadow text-purple-700'
-                        : 'text-slate-600 hover:text-slate-900'
-                    }`}
-                  >
+                <div className="flex items-center gap-1">
+                  <span className="px-3 py-1 rounded-lg text-xs font-black bg-purple-50 text-purple-700 border border-purple-200 flex items-center gap-1.5 shadow-xs">
                     <Mic size={13} /> Voice Shadow
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setVoiceShadowMode('dictation')}
-                    className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
-                      voiceShadowMode === 'dictation'
-                        ? 'bg-white shadow text-amber-700'
-                        : 'text-slate-600 hover:text-slate-900'
-                    }`}
-                  >
-                    <span>✍️</span> Dictation Notepad
-                  </button>
+                  </span>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -1112,48 +1090,8 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
               </div>
             </div>
 
-            {/* ── Mode Switch: Dictation Notepad vs Voice Shadow (Stepper/List) ── */}
-            {voiceShadowMode === 'dictation' ? (() => {
-              const currentDictation = dictationList[stepperIdx] || null;
-              const dictSentence = currentDictation?.sentence || currentDictation?.text || storySentences[stepperIdx] || '';
-              const dictAudioUrl = currentDictation?.audio_url || (activeWeek ? `/audio/week${activeWeek}/dictation_${stepperIdx + 1}.mp3` : null);
-              const dictSpeaker = currentDictation?.speaker || null;
-              const totalDictCount = dictationList.length > 0 ? dictationList.length : storySentences.length;
-
-              return (
-                <VoiceShadowDictation
-                  sentence={dictSentence}
-                  audioUrl={dictAudioUrl}
-                  speaker={dictSpeaker}
-                  sentenceIdx={stepperIdx}
-                  totalSentences={totalDictCount}
-                  activeWeek={activeWeek}
-                  onCompleteSentence={({ sentenceIdx: sIdx, score }) => {
-                    setCompletedKaraokeSentences(prev => {
-                      const updated = { ...prev, [sIdx]: true };
-                      const completedCount = Object.keys(updated).length;
-                      if (completedCount === totalDictCount) {
-                        fireCelebrationConfetti?.('Gear2_Dictation_Master');
-                      }
-                      return updated;
-                    });
-                    setKaraokeStreak(prev => prev + 1);
-                  }}
-                  onNext={() => {
-                    if (stepperIdx < totalDictCount - 1) {
-                      setStepperIdx(prev => prev + 1);
-                    } else {
-                      handleNextGear(3);
-                    }
-                  }}
-                  onPrev={() => {
-                    if (stepperIdx > 0) {
-                      setStepperIdx(prev => prev - 1);
-                    }
-                  }}
-                />
-              );
-            })() : hideGearTabs ? (
+            {/* ── Voice Shadow View (Stepper / List) ── */}
+            {hideGearTabs ? (
               <div className="space-y-3">
                 {/* Stepper Header */}
                 <div className="flex items-center justify-between px-1">
@@ -1498,9 +1436,12 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                           </div>
                           <button
                             type="button"
-                            onClick={() => speakText(currentQ.question_en)}
+                            onClick={() => {
+                              const audioUrl = currentQ.audio_url || (activeWeek ? `/audio/week${activeWeek}/shadowing_${retellStepIdx + 1}.mp3` : null);
+                              speakText(currentQ.sentence, audioUrl);
+                            }}
                             className="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-950/85 hover:bg-slate-950 text-white rounded-lg text-xs font-bold shadow backdrop-blur-md flex items-center gap-1.5 transition active:scale-95 border border-white/20 cursor-pointer"
-                            title="Listen to question"
+                            title="Listen to scene sentence"
                           >
                             <Volume2 size={13} className="text-amber-400" /> <span>Listen</span>
                           </button>
@@ -1551,7 +1492,10 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                                 <div className="flex items-center gap-1.5">
                                   <button
                                     type="button"
-                                    onClick={() => speakText(currentQ.sentence)}
+                                    onClick={() => {
+                                      const audioUrl = currentQ.audio_url || (activeWeek ? `/audio/week${activeWeek}/shadowing_${retellStepIdx + 1}.mp3` : null);
+                                      speakText(currentQ.sentence, audioUrl);
+                                    }}
                                     className="px-2.5 py-0.5 bg-amber-600 hover:bg-amber-500 text-white rounded-md text-[11px] font-black flex items-center gap-1 shadow-xs transition active:scale-95"
                                   >
                                     <Volume2 size={12} /> Model
