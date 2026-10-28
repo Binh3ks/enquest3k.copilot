@@ -5,22 +5,27 @@ export const speakingHub = {
     title: "Animal Friendship & Teamwork in Nature"
   },
   info_exchange_cards: {
+    audio_url: "/audio/week34/exam_intro_S2.mp3",
+    intro_p1_audio_url: "/audio/week34/info_exchange_intro_p1.mp3",
+    intro_p2_audio_url: "/audio/week34/info_exchange_intro_p2.mp3",
     candidate_card: {
       title: "The Lion's Home (Leo)",
-      fields: [
+      subtitle: "Your Information Card — Answer Examiner Nova",
+      items: [
         { label: "Location", value: "Green Valley Forest", known: true },
-        { label: "Favorite Food", value: null, known: false },
+        { label: "Favorite Food", value: "Fresh Wild Berries & Meat", known: true },
         { label: "Resting Time", value: "Sunny Afternoons", known: true },
-        { label: "Best Friend", value: null, known: false }
+        { label: "Best Friend", value: "Gentle Forest Animals", known: true }
       ]
     },
     examiner_card: {
       title: "The Mouse's Home (Milo)",
-      fields: [
+      subtitle: "Your Question Card — Ask Examiner Nova",
+      items: [
         { label: "Location", value: "Under the Tall Oak Tree", known: true },
-        { label: "Favorite Food", value: null, known: false },
+        { label: "Favorite Food", value: "Small Grass Seeds", known: true },
         { label: "Special Skill", value: "Chewing Strong Ropes", known: true },
-        { label: "Best Friend", value: null, known: false }
+        { label: "Best Friend", value: "Mighty Forest Lion", known: true }
       ]
     },
     full_answers: {
@@ -36,9 +41,10 @@ export const speakingHub = {
       "When is the resting time?"
     ],
     examiner_questions: [
-      { id: "eq1", text: "Where does the mouse live?", audio_url: "/audio/week34/exam_intro_S2.mp3" },
-      { id: "eq2", text: "What is the mouse's special skill?", audio_url: "/audio/week34/exam_intro_S3.mp3" },
-      { id: "eq3", text: "What did the mouse use to rescue the lion?", audio_url: "/audio/week34/exam_intro_S4.mp3" }
+      { id: "eq1", text: "Where does the mouse live?", audio_url: "/audio/week34/info_exchange_q1.mp3" },
+      { id: "eq2", text: "What is the mouse's special skill?", audio_url: "/audio/week34/info_exchange_q2.mp3" },
+      { id: "eq3", text: "Who is the mouse's best friend?", audio_url: "/audio/week34/info_exchange_q3.mp3" },
+      { id: "eq4", text: "How did the mouse help the lion?", audio_url: "/audio/week34/info_exchange_q4.mp3" }
     ]
   },
   picture_story: {

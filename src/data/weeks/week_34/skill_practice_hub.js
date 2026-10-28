@@ -1,16 +1,6 @@
-// Skill Practice Hub for Week 34 (Extracted from Legacy Hub 2)
-// Contains Day 2 Action Lab, Day 3 Grammar Duel & Singapore Math, and Dictation
+// Skill Practice Hub for Week 34
+// Contains Day 2 Action Lab, Day 3 Grammar Duel & Singapore Math (Dictation abolished per Round 5)
 export const skillPracticeHub = {
-  dictation: [
-    { id: 1, text: "Hello Sam, please come into Room 3A.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_1.mp3" },
-    { id: 2, text: "Good morning Miss Green, our fable play begins at 09:15 AM on Thursday.", speaker: "Sam", audio_url: "/audio/week34/dictation_2.mp3" },
-    { id: 3, text: "Can you practice your lion roar for 20 minutes in the hall?", speaker: "Miss Green", audio_url: "/audio/week34/dictation_3.mp3" },
-    { id: 4, text: "Yes, and I made 4 animal masks in the art room yesterday.", speaker: "Sam", audio_url: "/audio/week34/dictation_4.mp3" },
-    { id: 5, text: "Please call your father on 0912 345 678 to bring the rope net.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_5.mp3" },
-    { id: 6, text: "He will bring the net to school for 2 days.", speaker: "Sam", audio_url: "/audio/week34/dictation_6.mp3" },
-    { id: 7, text: "That is wonderful, remember to help your little mouse friend on stage.", speaker: "Miss Green", audio_url: "/audio/week34/dictation_7.mp3" },
-    { id: 8, text: "Thank you Miss Green, see you this Thursday morning!", speaker: "Sam", audio_url: "/audio/week34/dictation_8.mp3" }
-  ],
   grammar_drills: [
     {
       id: "st2_w34_g01",
@@ -56,20 +46,93 @@ export const skillPracticeHub = {
     { id: 5, problem_en: "There were 50 animals in the forest clearing. 32 were birds and the rest were small mammals. How many small mammals were there?", bar_model_svg: "/images/week34/barmodel_w34_adv_p5.svg", answer_value: 18 }
   ],
   science_lab: {
+    id: "sci_w34_lab1",
     experimentTitle: "Animal Cooperation & Ecosystem Lab",
-    diagramImage: "/images/week34/explore_cover_w34.jpg",
-    explanation: "Match each forest job to the animal that does it. These are real jobs animals do to help the forest!",
-    targets: [
-      { id: "t1", name: "Lion", x: 25, y: 60 },
-      { id: "t2", name: "Mouse", x: 75, y: 65 },
-      { id: "t3", name: "Forest Trees", x: 50, y: 30 },
-      { id: "t4", name: "Warning Birds", x: 62, y: 22 }
-    ],
-    labels: [
-      { id: "lbl_1", text: "guards the forest from danger", targetId: "t1" },
-      { id: "lbl_2", text: "cleans the floor and plants new seeds", targetId: "t2" },
-      { id: "lbl_3", text: "gives food, shade and warm homes", targetId: "t3" },
-      { id: "lbl_4", text: "chirps loud warnings when predators come", targetId: "t4" }
+    title_en: "Animal Cooperation & Ecosystem Lab",
+    title_vi: "Phòng Thí Nghiệm Hợp Tác Động Vật & Hệ Sinh Thái Rừng",
+    diagramImage: "/images/week34/action_lab_diagram.png",
+    background_image: "/images/week34/action_lab_diagram.png",
+    explanation: "Explore how different animals cooperate to maintain safety, food, and survival across 3 interactive scenarios!",
+    description_en: "Explore how different animals cooperate to maintain safety, food, and survival across 3 interactive scenarios!",
+    stages: [
+      {
+        id: "stage_1_lookout",
+        stageNumber: 1,
+        title: "Stage 1: Forest Lookout & Early Warning",
+        diagramImage: "/images/week34/action_lab_diagram.png",
+        background_image: "/images/week34/action_lab_diagram.png",
+        explanation: "Discover how high lookouts and loud birds alert sleeping predators to danger in the forest!",
+        zones: [
+          { id: "z1_1", label: "Warning Birds", correct_label: "Warning Birds", x: 62, y: 22, micro_explanation: "🐦 Warning birds chirp loudly from treetops to alert other animals." },
+          { id: "z1_2", label: "Mighty Lion", correct_label: "Mighty Lion", x: 25, y: 60, micro_explanation: "🦁 The lion guards the territory and rests peacefully in safety." },
+          { id: "z1_3", label: "Forest Trees", correct_label: "Forest Trees", x: 50, y: 30, micro_explanation: "🌳 Tall trees offer secure perches and deep protective shade." },
+          { id: "z1_4", label: "Forest Floor", correct_label: "Forest Floor", x: 75, y: 75, micro_explanation: "🌿 Ground path where tiny creatures forage and navigate." }
+        ],
+        targets: [
+          { id: "t1_1", name: "Warning Birds", x: 62, y: 22 },
+          { id: "t1_2", name: "Mighty Lion", x: 25, y: 60 },
+          { id: "t1_3", name: "Forest Trees", x: 50, y: 30 },
+          { id: "t1_4", name: "Forest Floor", x: 75, y: 75 }
+        ],
+        labels: [
+          { id: "lbl_1_1", text: "chirps loud warnings when danger comes", targetId: "t1_1" },
+          { id: "lbl_1_2", text: "guards the forest and maintains territory", targetId: "t1_2" },
+          { id: "lbl_1_3", text: "provides high lookouts and cool shade", targetId: "t1_3" },
+          { id: "lbl_1_4", text: "provides ground path for foraging", targetId: "t1_4" }
+        ]
+      },
+      {
+        id: "stage_2_rescue",
+        stageNumber: 2,
+        title: "Stage 2: Trapped Lion & Teamwork Rescue",
+        diagramImage: "/images/week34/action_lab_diagram.png",
+        background_image: "/images/week34/action_lab_diagram.png",
+        explanation: "Investigate how a tiny mouse uses sharp teeth to chew through heavy rope nets to free the lion!",
+        zones: [
+          { id: "z2_1", label: "Brave Mouse", correct_label: "Brave Mouse", x: 72, y: 65, micro_explanation: "🐭 The mouse uses sharp teeth to gnaw through tough rope fibers." },
+          { id: "z2_2", label: "Trapped Lion", correct_label: "Trapped Lion", x: 28, y: 58, micro_explanation: "🦁 Even the strongest predator needs loyal friends when trapped." },
+          { id: "z2_3", label: "Hunters' Net", correct_label: "Hunters' Net", x: 45, y: 48, micro_explanation: "🕸️ Heavy rope net binds large muscles but cannot stop small chewers." },
+          { id: "z2_4", label: "Anchor Tree", correct_label: "Anchor Tree", x: 20, y: 25, micro_explanation: "🌲 Strong oak trunk where the trap ropes were secured." }
+        ],
+        targets: [
+          { id: "t2_1", name: "Brave Mouse", x: 72, y: 65 },
+          { id: "t2_2", name: "Trapped Lion", x: 28, y: 58 },
+          { id: "t2_3", name: "Hunters' Net", x: 45, y: 48 },
+          { id: "t2_4", name: "Anchor Tree", x: 20, y: 25 }
+        ],
+        labels: [
+          { id: "lbl_2_1", text: "chews tough ropes with sharp teeth", targetId: "t2_1" },
+          { id: "lbl_2_2", text: "waits patiently for friend's rescue", targetId: "t2_2" },
+          { id: "lbl_2_3", text: "traps large animals with heavy ropes", targetId: "t2_3" },
+          { id: "lbl_2_4", text: "anchors trap ropes firmly to ground", targetId: "t2_4" }
+        ]
+      },
+      {
+        id: "stage_3_ecosystem",
+        stageNumber: 3,
+        title: "Stage 3: Balanced Forest Ecosystem & Friendship",
+        diagramImage: "/images/week34/action_lab_diagram.png",
+        background_image: "/images/week34/action_lab_diagram.png",
+        explanation: "Examine how cooperation between species creates a healthy, flourishing forest ecosystem!",
+        zones: [
+          { id: "z3_1", label: "Forest Trees", correct_label: "Forest Trees", x: 50, y: 28, micro_explanation: "🌳 Trees generate oxygen, fruit, and stable microclimates." },
+          { id: "z3_2", label: "Little Mouse", correct_label: "Little Mouse", x: 75, y: 68, micro_explanation: "🌱 Mice aerate soil and disperse tree seeds as they forage." },
+          { id: "z3_3", label: "Mighty Lion", correct_label: "Mighty Lion", x: 25, y: 58, micro_explanation: "👑 Apex predator keeps herd populations healthy and balanced." },
+          { id: "z3_4", label: "Warning Birds", correct_label: "Warning Birds", x: 60, y: 20, micro_explanation: "🦅 Songbirds eat harmful insects and protect tree foliage." }
+        ],
+        targets: [
+          { id: "t3_1", name: "Forest Trees", x: 50, y: 28 },
+          { id: "t3_2", name: "Little Mouse", x: 75, y: 68 },
+          { id: "t3_3", name: "Mighty Lion", x: 25, y: 58 },
+          { id: "t3_4", name: "Warning Birds", x: 60, y: 20 }
+        ],
+        labels: [
+          { id: "lbl_3_1", text: "generates oxygen and shelter for all", targetId: "t3_1" },
+          { id: "lbl_3_2", text: "aerates forest soil and plants seeds", targetId: "t3_2" },
+          { id: "lbl_3_3", text: "protects forest and maintains balance", targetId: "t3_3" },
+          { id: "lbl_3_4", text: "controls insects and protects foliage", targetId: "t3_4" }
+        ]
+      }
     ]
   }
 };
