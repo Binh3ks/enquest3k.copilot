@@ -112,14 +112,13 @@ function adaptInfoExchangeCards(infoCards) {
   const cardBTitle = examinerCard.title || "Examiner Card";
 
   const toFieldsA = (card) => {
-    const items = card.items || card.fields || [];
+    const items = card.items || [];
     return items.map((item, i) => {
       const label = item.label || item.field_label || `Feature ${i + 1}`;
-      const isUnknown = item.known === false;
       const fullAnswerVal = (infoCards.full_answers && infoCards.full_answers[label])
         ? (Array.isArray(infoCards.full_answers[label]) ? infoCards.full_answers[label][0] : infoCards.full_answers[label])
         : null;
-      const val = isUnknown ? null : (item.value || fullAnswerVal || null);
+      const val = item.value || fullAnswerVal || '';
       const cueWord = label.toLowerCase().includes('location') || label.toLowerCase().includes('where')
         ? 'where'
         : label.toLowerCase().includes('time') || label.toLowerCase().includes('when')
@@ -128,11 +127,11 @@ function adaptInfoExchangeCards(infoCards) {
 
       return {
         id: `field_a${i + 1}`,
-        label: `${label}: ${isUnknown ? '???' : (val || '')}`,
+        label: label,
         field_label: label,
         value: val,
-        known: !isUnknown,
-        is_missing: isUnknown,
+        known: true,
+        is_missing: true,
         cue_word: cueWord,
         cue_prompt: `${cueWord.toUpperCase()} — ${label.toLowerCase()}`,
         nova_reply: `The ${label.toLowerCase()} is ${fullAnswerVal || val || ''}.`,
@@ -148,28 +147,29 @@ function adaptInfoExchangeCards(infoCards) {
   };
 
   const toFieldsB = (card) => {
-    const items = card.items || card.fields || [];
+    const items = card.items || [];
     return items.map((item, i) => {
       const label = item.label || item.field_label || `Detail ${i + 1}`;
-      const isUnknown = item.known === false;
       const fullAnswerVal = (infoCards.full_answers && infoCards.full_answers[label])
         ? (Array.isArray(infoCards.full_answers[label]) ? (infoCards.full_answers[label][1] || infoCards.full_answers[label][0]) : infoCards.full_answers[label])
         : null;
-      const val = isUnknown ? null : (item.value || fullAnswerVal || null);
+      const val = item.value || fullAnswerVal || '';
       const examinerQ = (infoCards.examiner_questions && infoCards.examiner_questions[i]) ? infoCards.examiner_questions[i].text : `What is the ${label.toLowerCase()} of ${cardBTitle}?`;
+      const qAudioUrl = (infoCards.examiner_questions && infoCards.examiner_questions[i] && infoCards.examiner_questions[i].audio_url) || null;
       return {
         id: `field_b${i + 1}`,
-        label: `${label}: ${isUnknown ? '???' : (val || '')}`,
+        label: label,
         field_label: label,
         value: val,
-        known: !isUnknown,
-        is_missing: isUnknown,
-        audio_url: (infoCards.examiner_questions && infoCards.examiner_questions[i] && infoCards.examiner_questions[i].audio_url) || null,
+        known: true,
+        is_missing: false,
+        audio_url: qAudioUrl,
         nova_question: examinerQ,
         answer: val || fullAnswerVal,
         acceptable_answers: [
           val || fullAnswerVal || '',
-          `The ${label.toLowerCase()} is ${val || fullAnswerVal || ''}.`
+          `The ${label.toLowerCase()} is ${val || fullAnswerVal || ''}.`,
+          val.split(' ')[0]
         ]
       };
     });
@@ -185,11 +185,13 @@ function adaptInfoExchangeCards(infoCards) {
       `When is the resting time?`
     ],
     table_a: {
-      title: `${cardATitle} (Candidate Question Card)`,
+      title: `${cardATitle} (Your Question Card)`,
+      subtitle: "Your Question Card — Ask Examiner Nova",
       fields: toFieldsA(candidateCard)
     },
     table_b: {
-      title: `${cardBTitle} (Examiner Answer Card)`,
+      title: `${cardBTitle} (Your Information Card)`,
+      subtitle: "Your Information Card — Answer Examiner Nova",
       fields: toFieldsB(examinerCard)
     }
   };

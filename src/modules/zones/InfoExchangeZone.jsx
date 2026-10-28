@@ -319,7 +319,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
             <span className="text-3xl">🛡️</span>
             <div className="text-left">
               <p className="text-xs font-black uppercase text-emerald-700">Practice Shields Earned</p>
-              <p className="text-xl font-black text-emerald-900">+2 Speaking Shields</p>
+              <p className="text-xl font-black text-emerald-900">+50 XP & +2 Speaking Shields</p>
             </div>
           </div>
         </div>
@@ -407,8 +407,9 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
           data-testid="ie-model-dialogue-btn"
           onClick={() => {
             const url = infoExData?.audio_url || (activeWeek ? `/audio/week${activeWeek}/exam_intro_S2.mp3` : null);
-            VoiceService.speak("Where did the accident happen? It happened in the school corridor.", 'story', url).catch(() => {
-              speakText("Where did the accident happen? It happened in the school corridor.", url);
+            const modelText = infoExData?.model_dialogue_text || "Look at the questions. Ask and answer questions using the information cards.";
+            VoiceService.speak(modelText, 'story', url).catch(() => {
+              speakText(modelText, url);
             });
           }}
           className="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-xl text-xs font-black transition flex items-center gap-2 shadow-sm active:scale-95 cursor-pointer"
@@ -688,7 +689,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                             setRetryCountA(prev => prev + 1);
                           }
                         }}
-                        placeholder="e.g. Where did Tom get injured?"
+                        placeholder="e.g. Where does the character live?"
                       />
                     </>
                   ) : null}

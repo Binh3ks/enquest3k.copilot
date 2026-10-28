@@ -33,7 +33,7 @@ export const TASK_BASE_XP_MAP = {
   math_quest: 40,        // Practice (Day 3 Singapore Bar Model)
   story_writer: 50,      // Practice (Day 4 Story Writer P7)
   broadcast_studio: 0,   // Milestone (Day 4 Video Challenge)
-  info_exchange: 20,     // Practice (Day 4 Speaking Info Exchange)
+  info_exchange: 50,     // Practice (Day 4 Speaking Info Exchange)
   boss_listening: 0,     // Assessment Shield Quest (Day 5 L1/L4)
   boss_reading: 0,       // Assessment Shield Quest (Day 5 L2/L5/R1)
   weekly_review: 0,      // Assessment Shield Quest (Day 5 L3/S1/Review)

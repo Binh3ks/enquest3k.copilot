@@ -418,8 +418,7 @@ export const VoiceService = {
         } catch (staticErr) {
           console.warn(`[TTS] Static MP3 candidate unavailable (${candidatePath}): ${staticErr.message}`);
           if (staticErr.name === 'NotAllowedError') {
-            console.warn('[TTS] Autoplay blocked by browser policy, falling back to browser speech');
-            this.webFallback(cleanedText);
+            console.warn('[TTS] Autoplay blocked by browser policy; awaiting user interaction.');
             return;
           }
         }

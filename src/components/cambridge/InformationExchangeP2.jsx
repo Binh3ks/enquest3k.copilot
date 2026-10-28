@@ -17,21 +17,22 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
     if (raw.candidate_card || raw.examiner_card) {
       const candItems = (raw.candidate_card?.items || []);
       const examItems = (raw.examiner_card?.items || []);
-      const missingCandIds = ['field_a2', 'field_a3', 'field_a4'];
+      const candPerson = raw.candidate_card?.title?.match(/\(([^)]+)\)/)?.[1] || raw.candidate_card?.title?.split("'")[0] || "Character A";
+      const examPerson = raw.examiner_card?.title?.match(/\(([^)]+)\)/)?.[1] || raw.examiner_card?.title?.split("'")[0] || "Character B";
       return {
         title: raw.candidate_card?.title || "Cue-Card Exchange",
         table_a: {
           title: `Table A: ${raw.candidate_card?.title || 'Candidate Card'} (Candidate Asks Questions)`,
-          person: raw.candidate_card?.title?.split("'")[0] || "Character A",
+          person: candPerson,
           fields: candItems.slice(0, 4).map((item, i) => ({
             id: `field_a${i + 1}`,
             label: item.label,
             value: item.value,
             is_missing: i > 0,
-            cue_prompt: `${item.label.replace('?','').trim()} / ${raw.candidate_card?.title?.split("'")[0] || 'character'} / ${item.value.split(' ')[0]}?`,
+            cue_prompt: `${item.label.replace('?','').trim()} / ${candPerson} / ${item.value ? item.value.split(' ')[0] : 'item'}?`,
             acceptable_questions: [
               `What is the ${item.label.toLowerCase().replace('?','')}?`,
-              `Where does ${raw.candidate_card?.title?.split("'")[0] || 'the character'} ${item.label.toLowerCase().includes('live') ? 'live' : 'have'}?`,
+              `Where does ${candPerson} ${item.label.toLowerCase().includes('live') ? 'live' : 'have'}?`,
               `Can you tell me the ${item.label.toLowerCase().replace('?','')}?`
             ],
             nova_reply: `The ${item.label.toLowerCase().replace('?','')} is ${item.value}.`
@@ -39,18 +40,22 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
         },
         table_b: {
           title: `Table B: ${raw.examiner_card?.title || 'Examiner Card'} (Examiner Asks Questions)`,
-          person: raw.examiner_card?.title?.split("'")[0] || "Character B",
-          fields: examItems.slice(0, 4).map((item, i) => ({
-            id: `field_b${i + 1}`,
-            label: item.label,
-            value: item.value,
-            nova_question: `What is the ${item.label.toLowerCase().replace('?','')} of ${raw.examiner_card?.title?.split("'")[0] || 'the character'}?`,
-            acceptable_answers: [
-              item.value,
-              `The ${item.label.toLowerCase().replace('?','')} is ${item.value}.`,
-              item.value.split(' ')[0]
-            ]
-          }))
+          person: examPerson,
+          fields: examItems.slice(0, 4).map((item, i) => {
+            const qAudio = item.audio_url || (raw.examiner_questions && raw.examiner_questions[i]?.audio_url) || (resolvedWeek ? `/audio/week${resolvedWeek}/info_exchange_q${i + 1}.mp3` : null);
+            return {
+              id: `field_b${i + 1}`,
+              label: item.label,
+              value: item.value,
+              audio_url: qAudio,
+              nova_question: (raw.examiner_questions && raw.examiner_questions[i]?.text) || `What is the ${item.label.toLowerCase().replace('?','')} of ${examPerson}?`,
+              acceptable_answers: [
+                item.value,
+                `The ${item.label.toLowerCase().replace('?','')} is ${item.value}.`,
+                item.value ? item.value.split(' ')[0] : ''
+              ]
+            };
+          })
         },
         prompt_questions: raw.prompt_questions || []
       };
@@ -156,9 +161,9 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
   const currentActiveFieldA = missingFieldsA[phase2Index] || null;
 
   // Helper function for Nova audio playback with debug logging
-  const speakNovaWithDebug = (text) => {
-    console.log(`[SPEAKING_P2_DEBUG] Nova Speaking: "${text}"`);
-    VoiceService.speak(text, 'questions');
+  const speakNovaWithDebug = (text, audioUrl = null) => {
+    console.log(`[SPEAKING_P2_DEBUG] Nova Speaking: "${text}" | audioUrl: ${audioUrl}`);
+    VoiceService.speak(text, 'questions', audioUrl);
   };
 
   // Clear silence and speech timers
@@ -200,10 +205,12 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
     setShowLifebuoyHint(false);
 
     // Play Phase 1 Intro Audio
-    const introText = "I don't know anything about Jake, but you do. I'm going to ask you some questions.";
-    speakNovaWithDebug(introText);
+    const candPerson = data.table_b?.person || 'the character';
+    const introText = `I don't know anything about ${candPerson}, but you do. I'm going to ask you some questions.`;
+    const introAudioUrl = resolvedWeek ? `/audio/week${resolvedWeek}/info_exchange_intro_p1.mp3` : null;
+    speakNovaWithDebug(introText, introAudioUrl);
     
-    // Auto-advance to Phase 1 Question 1 after 3.5 seconds
+    // Auto-advance to Phase 1 Question 1 after 3.8 seconds
     setTimeout(() => {
       playPhase1Question(0);
     }, 3800);
@@ -219,7 +226,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
     setUserInputText('');
     setFeedbackMessage(null);
     setShowLifebuoyHint(false);
-    speakNovaWithDebug(field.nova_question);
+    speakNovaWithDebug(field.nova_question, field.audio_url);
     resetSilenceTimer();
   };
 
@@ -233,8 +240,10 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
     setFeedbackMessage(null);
     setShowLifebuoyHint(false);
 
-    const transitionText = "Now, you don't know anything about Tom, so you ask me some questions.";
-    speakNovaWithDebug(transitionText);
+    const examPerson = data.table_a?.person || 'the character';
+    const transitionText = `Now, you don't know anything about ${examPerson}, so you ask me some questions.`;
+    const transitionAudioUrl = resolvedWeek ? `/audio/week${resolvedWeek}/info_exchange_intro_p2.mp3` : null;
+    speakNovaWithDebug(transitionText, transitionAudioUrl);
 
     setTimeout(() => {
       setFlowState('phase2_q');
@@ -454,7 +463,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
       {/* Side-by-Side Information Tables with Visual Isolation & Phase Dimming */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4">
         
-        {/* TABLE A: TOM'S ACCIDENT (MISSING INFO TO ASK) */}
+        {/* TABLE A: CANDIDATE ASKS (MISSING INFO TO ASK) */}
         <div className={`rounded-xl sm:rounded-2xl border-2 p-2.5 sm:p-4 shadow-sm transition-all duration-500 ${
           isPhase2Active
             ? 'bg-amber-50 border-amber-500 ring-4 ring-amber-200 shadow-xl opacity-100 scale-101'
@@ -520,7 +529,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
           </div>
         </div>
 
-        {/* TABLE B: JAKE'S ACTION (COMPLETE INFO TO ANSWER) */}
+        {/* TABLE B: CANDIDATE ANSWERS (COMPLETE INFO TO ANSWER) */}
         <div className={`rounded-xl sm:rounded-2xl border-2 p-2.5 sm:p-4 shadow-sm transition-all duration-500 ${
           isPhase1Active
             ? 'bg-indigo-50 border-indigo-500 ring-4 ring-indigo-200 shadow-xl opacity-100 scale-101'
@@ -590,9 +599,9 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
               </div>
               <p className="text-xs font-bold text-slate-300">
                 {flowState === 'idle' && 'Click "Start Examiner Nova Flow" to begin the Speaking Exam.'}
-                {flowState === 'phase1_intro' && 'Nova: "I don\'t know anything about Jake, but you do..."'}
+                {flowState === 'phase1_intro' && `Nova: "I don't know anything about ${data.table_b?.person || 'the character'}, but you do..."`}
                 {flowState === 'phase1_q' && `Listen to Nova's Question #${phase1Index + 1} and speak your answer from Table B!`}
-                {flowState === 'phase2_intro' && 'Nova: "Now, you don\'t know anything about Tom, so ask me..."'}
+                {flowState === 'phase2_intro' && `Nova: "Now, you don't know anything about ${data.table_a?.person || 'the character'}, so ask me..."`}
                 {flowState === 'phase2_q' && `Look at highlighted row (${currentActiveFieldA?.label || ''}) in Table A and ask Nova!`}
                 {flowState === 'completed' && '🎉 Exam Completed! Excellent Speaking Information Exchange.'}
               </p>

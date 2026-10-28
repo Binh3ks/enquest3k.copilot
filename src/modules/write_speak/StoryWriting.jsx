@@ -348,7 +348,8 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
 
   const handleListenScene = () => {
     const speechText = currentStep.audio || currentStep.caption || `Scene ${currentStepIdx + 1}`;
-    speakText(speechText);
+    const audioUrl = currentStep.audio_url || (currentWeek ? `/audio/week${currentWeek}/scene_${currentStepIdx + 1}.mp3` : null);
+    speakText(speechText, audioUrl);
   };
 
   const handleSubmitStory = () => {
