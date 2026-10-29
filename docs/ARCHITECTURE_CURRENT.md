@@ -1,6 +1,6 @@
 # KIẾN TRÚC HIỆN TẠI HỆ THỐNG ENGQUEST3K (W33+ GOLDEN STANDARD)
 > **Tài liệu tham chiếu chuẩn xác minh từ mã nguồn thực tế (Code Truth)**  
-> **Trạng thái**: Bản thảo kiến trúc chuẩn hóa — Cập nhật ngày 27/10/2026 (Đã qua Audit 3 Lớp C17). KHÔNG COMMIT cho tới khi Owner duyệt.
+> **Trạng thái**: Bản thảo kiến trúc chuẩn hóa — Cập nhật ngày 29/10/2026 (Đã qua Audit 3 Lớp C17, Đồng bộ Golden Freeze Manifest v1.1.0). ĐÃ DUYỆT CHÍNH THỨC — 29/10/2026.
 
 ---
 
@@ -46,6 +46,20 @@ Hệ thống EngQuest3K từ Tuần 33 trở đi hoạt động trên quy chuẩ
      - [src/components/cambridge/ScienceReportCreator.jsx:280](file:///Users/binhnguyen/projects/Engquest3k/src/components/cambridge/ScienceReportCreator.jsx#L280): Nút bấm hiển thị tĩnh `✓ Hoàn Thành (+50 XP)`.
 3. **Chuẩn Hóa Đề Xuất**:
    - Cần thống nhất trường `xp` trong `questSchedule.js`: Nếu UI trao 50 XP thì gán `xp: 50` trực tiếp trong data model để loại bỏ biểu thức fallback `quest.xp || 50`. Với Day 5 Boss Castle, hiển thị rõ "5 Khiên" thay vì điểm XP.
+
+### 1.3. Khai Tử Chính Thức "Dictation" Khỏi Toàn Bộ Kiến Trúc Hệ Thống (Abolished Architecture Confirmation)
+- **Quyết định kiến trúc dứt điểm**: Phân hệ bài tập "Everyday Cambridge Dictation" đã chính thức bị **KHAI TỬ HOÀN TOÀN** khỏi kiến trúc runtime và quy trình sản xuất của hệ thống EngQuest3K (Quyết định Kiến trúc Gói 003B, commit `c30ab03e` + `efe32bb3`).
+- **Phạm vi dọn dẹp sạch 100% (Đã xác nhận ngày 28/10/2026)**:
+  1. `AGENTS.md`: Invariant 10 đã gắn tag `[DEPRECATED / ABOLISHED — Khai tử theo Quyết định Kiến trúc 15 Quests Gói 003B, commit c30ab03e + efe32bb3]`.
+  2. `docs/WEEK_PRODUCTION_SOP.md`: Đã dọn sạch 6 vị trí còn sót (tag Invariant 12 và Mục 6 là `[DEPRECATED / ABOLISHED]`; xóa bỏ hoàn toàn Hạng mục 1 Dictation khỏi Giai đoạn 2 và chuyển từ "7 Hạng mục" sang "6 Hạng mục"; xóa bullet audio; gỡ bỏ mô tả `skill_practice_hub.js`; cập nhật comment Gate 11 và dòng Gate 11 trong bảng Pass Criteria Matrix). Grep đối soát toàn văn file chỉ còn đúng 2 dòng tag DEPRECATED.
+  3. `docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md`: Đã xóa toàn bộ Mục 2 Dictation (câu chuyện cô giáo Miss Green và bạn Sam tại phòng Room 3A), tái cấu trúc thành 7 mục sư phạm chuẩn; grep xác nhận 0 dấu vết; đã tính lại và cập nhật mã băm SHA-256 mới vào Golden Freeze Manifest.
+  4. `scripts/gate11_content_richness.mjs`: Đã gỡ bỏ assertion kiểm tra `dictation.length === 8`.
+  5. `scripts/gate17_fidelity_doctrine.mjs`: Đã gỡ bỏ kiểm tra `dictation` khỏi `INV-HUB`.
+- **Thực tế Runtime UI & 3 Hạng Mục Rác Legacy Cần Dọn ở Gói 003C**:
+  0% thành phần giao diện hay bài tập nào render nội dung Dictation (xác nhận qua kiểm thử DOM tĩnh Gate 15 và tương tác động Gate 15 v2 trên production). Toàn bộ tàn dư legacy được lập danh mục quy hoạch dọn dẹp triệt để tại Gói 003C gồm 3 hạng mục:
+  a. **16 file MP3 vật lý trong `public/audio/week34/`**: Gồm `dictation_1..8.mp3` (8 files tàn dư Dictation), `listening_p5_inst1..5.mp3` (5 files tàn dư instruction rời cũ), và `ie_examiner_q1..3.mp3` (3 files mồ côi từng trỏ sai, đã thay thế hoàn toàn bởi `info_exchange_q1..q4.mp3`, không còn component nào tham chiếu) — *chi tiết phân loại và phương trình cân bằng 55 + 8 + 5 + 16 = 84 đã dẫn chiếu chéo tại Mục 4.2*.
+  b. **File nguồn dữ liệu `src/data/weeks/week_34/dictation.js`**: File nguồn dữ liệu 8 câu Dictation gốc, đã gỡ khỏi `protectedSourceFiles` của Golden Freeze Manifest, hiện chỉ còn tồn tại vật lý trên đĩa và không còn nơi nào import phục vụ runtime học sinh.
+  c. **Bộ đôi component mồ côi `src/components/common/VoiceShadowDictation.jsx` và `.css`**: Component mồ côi 100%, xác nhận lại bằng lệnh `git grep -rn "VoiceShadowDictation" src/` cho ra 0 kết quả import từ bất kỳ component hay màn hình nào trong toàn bộ mã nguồn.
 
 ---
 
@@ -258,9 +272,49 @@ Hệ thống EngQuest3K từ Tuần 33 trở đi hoạt động trên quy chuẩ
 
 ---
 
-## 8. NGUYÊN TẮC BẤT BIẾN DUY NHẤT: DUAL-QUEST CONSUMER & AUDIO DEPLOYMENT (W01–W156)
+## 5. HỆ THỐNG THẨM ĐỊNH TỰ ĐỘNG (AUTOMATED QUALITY GATES & VALIDATION SUITE)
 
-### 8.1. Dual-Quest Consumer Invariant cho `speaking_hub.js`
+Hệ thống bảo chứng chất lượng nội dung và mã nguồn của EngQuest3K được kiểm soát bởi bộ cổng chặn tự động (Automated Quality Gates) tích hợp trực tiếp vào quy trình đóng băng tuần học (`W34_GOLDEN_FREEZE_MANIFEST.json`).
+
+### 5.1. Bổ Sung 3 Cổng Chặn Mới Chính Thức Đưa Vào `validationSuite` (Gói 003B)
+Xuyên suốt quá trình chuẩn hóa Gói 003B, 3 cổng chặn chất lượng mới đã được kiến trúc và tích hợp chính thức vào bộ thẩm định chuẩn:
+
+1. **Gate 15 v2 — Functional Audio Playtest**:
+   - **Script**: `scripts/gate15_v2_functional_audio_playtest.mjs 34`
+   - **Target**: `15/15 quest functional PASS: 0 runtime TTS, 0 missing audio, 0 frozen phases, 0 dictation tabs`
+   - **Cơ chế thực thi**: Tự động hóa trình duyệt Puppeteer duyệt qua toàn bộ 15 quests trên live production. Tương tác trực tiếp với các nút bấm giao diện (Start, Listen, Continue, Next Phase, Submit, Finish Quest), phát âm thanh thật, bắt chặn mọi HTTP request tới Google Cloud TTS API (`texttospeech.googleapis.com`), kiểm tra không thiếu file âm thanh nào (0 missing audio), xác nhận các pha chuyển đổi không bị đóng băng/treo trạng thái (0 frozen phases), và bảo đảm 0% tab/giao diện liên quan đến bài tập Dictation cũ.
+
+2. **Schema Uniformity Gate**:
+   - **Script**: `scripts/gate_schema_uniformity.mjs 34`
+   - **Target**: `0 dual-fallback patterns, 0 schema key drift`
+   - **Cơ chế thực thi**: Quét phân tích AST và regex toàn bộ các file dữ liệu bài học (`reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `speaking_hub.js`, `skill_practice_hub.js`) cùng các component tiêu chuẩn. Chặn đứng hoàn toàn các biểu thức fallback kép nguy hiểm dạng `weekNumber || 33` hoặc `activeWeek || 33` (nguyên nhân gây ô nhiễm âm thanh tuần cũ sang tuần mới), đồng thời kiểm tra tính đồng nhất của cấu trúc khóa dữ liệu giữa các tuần, đảm bảo không có sự trôi dạt schema (0 schema key drift).
+
+3. **Whitelist Entity Gate**:
+   - **Script**: `scripts/gate_whitelist_entities.mjs 34`
+   - **Target**: `0 rogue entity violations`
+   - **Cơ chế thực thi**: Quét toàn bộ nội dung văn bản và hội thoại trong các Data Hubs, đối soát với danh sách thực thể hợp lệ (Whitelist of characters, locations, pedagogical vocabulary) đã được phê duyệt trong syllabus của tuần. Ngăn chặn tuyệt đối sự xuất hiện của các thực thể ngoại lai (rogue entities) hoặc tàn dư nội dung từ các tuần khác (như sự cố rò rỉ nhân vật Miss Green hay phòng Room 3A của Dictation).
+
+### 5.2. Quan Hệ Kỹ Thuật Giữa Gate 15 (v1) và Gate 15 v2
+Hệ thống duy trì song song cả hai cổng chặn Gate 15 với vai trò bổ trợ chặt chẽ cho nhau, không triệt tiêu lẫn nhau:
+- **Gate 15 (v1) — Production DOM & Screenshot Deduplication Assertions** (`scripts/gate15_production_dom_assertions.mjs`):
+  - Tập trung thẩm định trạng thái DOM tĩnh và hiển thị thị giác ban đầu của 15 quests.
+  - Chụp ảnh màn hình toàn bộ các quest và áp dụng thuật toán tính mã băm SHA-256 trên từng ảnh để phát hiện trùng lặp (Deduplication Gate), đảm bảo học sinh không phải đối mặt với các màn hình trống, màn hình lỗi render hoặc trùng lặp nội dung.
+- **Gate 15 v2 — Functional Audio Playtest** (`scripts/gate15_v2_functional_audio_playtest.mjs`):
+  - Tập trung thẩm định chu trình tương tác động theo thời gian thực (End-to-End dynamic interaction).
+  - Đảm bảo các luồng học tập (phase transitions, audio playback, button handlers) vận hành trơn tru đến bước hoàn thành (+50 XP) trên production thực tế.
+
+### 5.3. Bằng Chứng Thực Tế Gate 15 v1 Deduplication (Log Ngày 28/10/2026)
+- **Tập bằng chứng hình ảnh**: 30 ảnh chụp màn hình được sinh ra trong thư mục `docs/agent_artifacts/screenshots/w34/` ứng với 15 quests trên môi trường kiểm thử.
+- **Kết quả đo lường mã băm SHA-256**:
+  - Ghi nhận **23/30 mã băm ảnh duy nhất (Unique Image Hashes)**.
+  - Vượt xa ngưỡng tiêu chuẩn tối thiểu quy định trong Golden Freeze Manifest ($\ge 15$ unique hashes).
+  - 15/15 Quests đạt trạng thái **PASS** tuyệt đối, chứng minh giao diện 15 quests hiển thị hình ảnh đa dạng, độc lập theo từng trạm học, loại trừ hoàn toàn rủi ro sai sót thị giác hoặc các màn hình trùng lặp giả mạo.
+
+---
+
+## 6. NGUYÊN TẮC BẤT BIẾN DUY NHẤT: DUAL-QUEST CONSUMER & AUDIO DEPLOYMENT (W01–W156)
+
+### 6.1. Dual-Quest Consumer Invariant cho `speaking_hub.js`
 Dữ liệu thẻ thông tin trong `speaking_hub.js` (`info_exchange_cards`: `candidate_card`, `examiner_card`, `examiner_questions`, `full_answers`) **BẮT BUỘC ĐƯỢC DÙNG CHUNG BỞI ĐÚNG HAI (02) QUESTS**:
 1. **Quest 12: Info Exchange (Day 4, Zone 4 — Creator Studio)**:
    - Component: `InfoExchangeZone.jsx`
@@ -270,7 +324,7 @@ Dữ liệu thẻ thông tin trong `speaking_hub.js` (`info_exchange_cards`: `ca
    - Mục đích: Khảo thí chính thức (Cambridge Assessment Speaking Part 2), chấm điểm khiên Speaking Shield và đóng dấu hoàn thành tuần trên Passport.
 - **Quy tắc cho tác giả nội dung (W01–W156)**: 1 bộ dữ liệu duy nhất trong `speaking_hub.js` phải đáp ứng đồng thời cả 2 UI. Thẻ `candidate_card` (Pha 1) bắt buộc có 100% dữ kiện thật (không có trường null/`???`). Thẻ `examiner_card` (Pha 2) cung cấp từ gợi ý (Cue words) và câu hỏi khảo thí tĩnh kèm file audio riêng biệt (`info_exchange_q1.mp3`..`_q4.mp3`).
 
-### 8.2. Đóng Vĩnh Viễn Nghi Vấn Âm Thanh R2 vs Cloudflare Pages
+### 6.2. Đóng Vĩnh Viễn Nghi Vấn Âm Thanh R2 vs Cloudflare Pages
 - **Xác nhận thực tế qua Gate 15 v2 live production**: Toàn bộ file âm thanh vật lý trong `public/audio/week{N}/` được đóng gói tự động qua Vite build (`dist/audio/`) và triển khai thành công 100% cùng Cloudflare Pages qua Git push.
 - Ứng dụng không cần bước upload R2 thủ công riêng biệt để phục vụ 15 quests tiêu chuẩn. Lỗi 404/HTML fallback trước đây chỉ xuất phát từ việc thiếu file vật lý trong repo. Vấn đề này chính thức được đóng vĩnh viễn trong SOP của toàn bộ 156 tuần.
 

@@ -171,7 +171,7 @@ Quy trình sản xuất công nghiệp chuẩn hóa để nhân bản tuần h�
 graph TD
     Stage1[Giai đoạn 1: Trích xuất Syllabus từ Khung CT Gốc] --> Stage2[Giai đoạn 2: Sinh Nội dung 6 Hạng mục Sư phạm]
     Stage2 --> Stage3[Giai đoạn 3: Tích hợp & Đồng bộ 4 Central Data Hubs]
-    Stage3 --> Stage4[Giai đoạn 4: Thẩm định 11 Automated Quality Gates]
+    Stage3 --> Stage4[Giai đoạn 4: Thẩm định 14 Automated Quality Gates]
     Stage4 --> Stage5[Giai đoạn 5: Đóng băng & Kiểm soát Toàn vẹn Manifest]
 ```
 
@@ -262,9 +262,9 @@ Lấy Tuần 34 làm khuôn mẫu chuẩn mực (Gold Standard Template), tác g
 
 ---
 
-### Giai đoạn 4: Thẩm Định Độc Lập Qua 11 Automated Quality Gates (Automated Gate Sweep)
+### Giai đoạn 4: Thẩm Định Độc Lập Qua 14 Automated Quality Gates (Automated Gate Sweep)
 
-Tuần học BẮT BUỘC phải chạy tuần tự và đạt 100% PASS trên tất cả **11 Quality Gates**:
+Tuần học BẮT BUỘC phải chạy tuần tự và đạt 100% PASS trên tất cả **14 Quality Gates**:
 
 ```bash
 # 1. Gate 3: Kiểm tra toàn vẹn tài nguyên media vật lý (ảnh, audio)
@@ -297,7 +297,16 @@ node scripts/gate16_content_quality.mjs {N}
 # 10. Gate 17: Thẩm định Cambridge Mechanic Fidelity Doctrine (14 Invariants)
 node scripts/gate17_fidelity_doctrine.mjs {N}
 
-# 11. Freeze Guard: Kiểm tra khóa toàn vẹn file và chống drift
+# 11. Gate 15 v2: Thẩm định tương tác chức năng động & phát âm thanh trên production
+node scripts/gate15_v2_functional_audio_playtest.mjs {N}
+
+# 12. Schema Uniformity Gate: Quét sạch fallback kép (.items || .fields) và lệch khóa
+node scripts/gate_schema_uniformity.mjs {N}
+
+# 13. Whitelist Entity Gate: Chặn đứng thực thể ngoại lai và rò rỉ nhân vật lạc đề
+node scripts/gate_whitelist_entities.mjs {N}
+
+# 14. Freeze Guard: Kiểm tra khóa toàn vẹn file và chống drift
 node scripts/guard_golden_w{N}_freeze.mjs
 ```
 
@@ -315,19 +324,22 @@ node scripts/guard_golden_w{N}_freeze.mjs
 | **Gate 15** | `gate15_production_dom_assertions.mjs` | 15/15 Quests render thành công trên DOM production, 0 console error. |
 | **Gate 16** | `gate16_content_quality.mjs` | $\ge 3$ fact units CLIL; 0 banned strings; 4 nhóm writing chunks hoàn chỉnh. |
 | **Gate 17** | `gate17_fidelity_doctrine.mjs` | `schemaValid: true`; 14/14 Invariants PASS; 16/16 component Cambridge tồn tại. |
+| **Gate 15 v2** | `gate15_v2_functional_audio_playtest.mjs` | 15/15 quest functional PASS: 0 runtime TTS, 0 missing audio, 0 frozen phases, 0 dictation tabs |
+| **Schema Uniformity** | `gate_schema_uniformity.mjs` | 0 dual-fallback patterns, 0 schema key drift |
+| **Whitelist Entity** | `gate_whitelist_entities.mjs` | 0 rogue entity violations |
 | **Gate Guard** | `guard_golden_w{N}_freeze.mjs` | 100% file cốt lõi khớp mã băm SHA-256 đã đóng băng trong Manifest. |
 
 ---
 
 ### Giai đoạn 5: Đóng Băng Chất Lượng & Tạo Manifest Hash (Freeze & Verification)
 
-- **Mục tiêu**: Khóa chặt nội dung tuần học sau khi vượt qua toàn bộ 11 Gates, đảm bảo không bị drift hoặc vô tình sửa đổi trong các đợt refactor hệ thống sau này.
+- **Mục tiêu**: Khóa chặt nội dung tuần học sau khi vượt qua toàn bộ 14 Gates, đảm bảo không bị drift hoặc vô tình sửa đổi trong các đợt refactor hệ thống sau này.
 - **Các bước thực hiện**:
   1. Tính mã băm SHA-256 cho các file dữ liệu cốt lõi (`reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `speaking_hub.js`, `skill_practice_hub.js`, `vocab.js`, `GATE15_SPEC_W{N}.json`).
   2. Ghi nhận vào file manifest đóng băng: `docs/W{N}_GOLDEN_FREEZE_MANIFEST.json`.
   3. Thiết lập script bảo vệ `scripts/guard_golden_w{N}_freeze.mjs` và thêm vào suite CI/CD.
   4. Thực hiện Git commit với thông điệp chuẩn hóa:  
-     `feat(week-{N}): freeze golden standard curriculum core [11-gates-passed]`
+     `feat(week-{N}): freeze golden standard curriculum core [14-gates-passed]`
 
 ---
 
