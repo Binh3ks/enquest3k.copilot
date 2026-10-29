@@ -120,8 +120,10 @@ for (const filePath of candidateFiles) {
       const wordMatches = content.match(/\{\s*"id":[\s\S]*?\}/g) || content.match(/\{\s*id:[\s\S]*?\}/g) || [];
       for (const raw of wordMatches) {
         try {
-          const word = (raw.match(/["']?word["']?\s*:\s*["']([^"']+)["']/) || [])[1];
-          const example_en = (raw.match(/["']?example_en["']?\s*:\s*["']([^"']+)["']/) || [])[1];
+          const wordMatch = raw.match(/["']?word["']?\s*:\s*(?:"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)')/);
+          const word = wordMatch ? (wordMatch[1] || wordMatch[2]) : null;
+          const exMatch = raw.match(/["']?example_en["']?\s*:\s*(?:"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)')/);
+          const example_en = exMatch ? (exMatch[1] || exMatch[2]) : null;
           if (word && example_en) {
             totalChecked++;
             const item = { word, example_en };
