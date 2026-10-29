@@ -10,7 +10,6 @@ import logic_lab from './logic_lab.js';
 import mindmap_speaking from './mindmap.js';
 import ask_ai, { INFORMATION_EXCHANGE_P2, CUE_CARD_PROMPTS } from './ask_ai.js';
 import writing from './writing.js';
-import dictation from './dictation.js';
 import shadowing from './shadowing.js';
 
 import { readingHubData as readingHub } from './reading_hub.js';
@@ -51,7 +50,6 @@ export const weekData = {
     mindmap_speaking,
     ask_ai,
     writing,
-    dictation,
     shadowing,
     reading_hub: readingHub,
     listening_hub: listeningHub,
