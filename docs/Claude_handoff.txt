@@ -228,3 +228,21 @@ CẬP NHẬT 29/10/2026 (sau vòng vá 2 lỗ hổng):
   yêu cầu dán bổ sung, không chặn commit 2 file chính.
 - ĐANG CHỜ: Antigravity commit + push ARCHITECTURE_CURRENT.md + WEEK_PRODUCTION_SOP.md, triển khai
   Global Governance Manifest, và dán 2 đoạn output thô còn thiếu (CEFR + Gate 16).
+CẬP NHẬT 29/10/2026 — GÓI 003B CHÍNH THỨC ĐÓNG (có bằng chứng push GitHub thật):
+- Commit da9d22b0 (ARCHITECTURE_CURRENT.md + WEEK_PRODUCTION_SOP.md, 14-gate sync + dictation
+  cleanup) và 82ae35c0 (Global Governance Manifest + guard_governance_docs.mjs + package.json +
+  docs/Claude_handoff.txt) đã PUSH THẬT lên origin/main — xác nhận bằng output git push, không chỉ
+  commit local.
+- Global Governance Manifest (docs/GLOBAL_GOVERNANCE_MANIFEST.json) vận hành: khóa hash SHA-256 của
+  3 tài liệu Code Truth (ARCHITECTURE_CURRENT.md, AGENTS.md, WEEK_PRODUCTION_SOP.md), chạy qua
+  `npm run guard:governance`, PASS 100% — cơ chế chống tài liệu quản trị lệch pha âm thầm (nguyên
+  nhân gây ra toàn bộ đợt audit Dictation vừa qua) nay đã có hàng rào kỹ thuật thật, không chỉ dựa
+  vào con người nhớ kiểm tra.
+- 2 câu hỏi hồ sơ CEFR/Gate16: Gate 16 đã đóng dứt điểm (code thật dán nguyên văn). CEFR còn 1 điểm
+  nhỏ chưa trích nguyên văn nhãn "A1 Movers" gốc — không chặn, đã yêu cầu dán bổ sung.
+- ĐANG CHỜ Antigravity: dán nguồn CEFR còn thiếu, dán riêng output Freeze Guard W33/W34 tại commit
+  mới nhất, xác nhận nội dung docs/Claude_handoff.txt, và xác nhận lại (không sửa) danh mục rác
+  Gói 003C bằng grep/ls thật.
+- SẴN SÀNG mở Gói 003C (dọn 16 MP3 + dictation.js + VoiceShadowDictation.jsx/.css, song song cleanup
+  W33) ngay sau khi nhận xác nhận bước (4) ở trên — chờ Owner bật đèn xanh chính thức trước khi
+  Antigravity bắt đầu xóa file thật.
