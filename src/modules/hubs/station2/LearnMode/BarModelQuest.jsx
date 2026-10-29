@@ -7,97 +7,7 @@ import { renderParsedText } from '../../../../components/common/HoverWord';
 import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, Trophy, Timer, Flame, Play, Pause, RotateCcw } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 
-const WEEK33_BAR_QUESTIONS = [
-  {
-    id: 1,
-    title: 'Problem 1: Corridor Distance (Part-Whole)',
-    text: 'Jake walked 40 meters. The corridor is 100 meters long. How many meters are left?',
-    svg_url: '/images/week33/barmodel_w33_adv_p1.svg',
-    correctAnswer: 60,
-    answer: '60 meters',
-    hintText: 'Total distance (100m) - Walked distance (40m) = 60 meters remaining.',
-    modelData: {
-      type: 'part_whole',
-      bars: [
-        { value: 40, label: '40m walked', color: '#4f46e5' },
-        { value: 60, label: '60m left', color: '#06b6d4' },
-      ],
-      totalLabel: '100m corridor'
-    }
-  },
-  {
-    id: 2,
-    title: 'Problem 2: Bandage Stock (Part-Whole)',
-    text: 'The nurse had 25 bandages. She used 8 bandages. How many bandages remain?',
-    svg_url: '/images/week33/barmodel_w33_adv_p2.svg',
-    correctAnswer: 17,
-    answer: '17 bandages',
-    hintText: 'Total bandages (25) - Used bandages (8) = 17 bandages remaining.',
-    modelData: {
-      type: 'part_whole',
-      bars: [
-        { value: 8, label: '8 used', color: '#ef4444' },
-        { value: 17, label: '17 left', color: '#22c55e' },
-      ],
-      totalLabel: '25 bandages'
-    }
-  },
-  {
-    id: 3,
-    title: 'Problem 3: Treatment Time (Part-Whole)',
-    text: 'Tom rested for 15 minutes and applied ice for 10 minutes. What is the total treatment time?',
-    svg_url: '/images/week33/barmodel_w33_adv_p3.svg',
-    correctAnswer: 25,
-    answer: '25 minutes',
-    hintText: 'Resting time (15m) + Ice treatment time (10m) = 25 total minutes.',
-    modelData: {
-      type: 'part_whole',
-      bars: [
-        { value: 15, label: '15m rest', color: '#8b5cf6' },
-        { value: 10, label: '10m ice', color: '#0ea5e9' },
-      ],
-      totalLabel: '25 min total'
-    }
-  },
-  {
-    id: 4,
-    title: 'Problem 4: Safety Rule Compliance (Part-Whole)',
-    text: 'Class 4A has 30 students. 24 students followed safety rules. How many ran?',
-    svg_url: '/images/week33/barmodel_w33_adv_p4.svg',
-    correctAnswer: 6,
-    answer: '6 students',
-    hintText: 'Total students (30) - Safe students (24) = 6 students running.',
-    modelData: {
-      type: 'part_whole',
-      bars: [
-        { value: 24, label: '24 safe', color: '#22c55e' },
-        { value: 6, label: '6 ran', color: '#f97316' },
-      ],
-      totalLabel: '30 students'
-    }
-  },
-  {
-    id: 5,
-    title: 'Problem 5: Safety Helper Stars (Multiplication)',
-    text: 'The headmaster gave 5 safety stars to each of 4 helpers. How many stars in total?',
-    svg_url: '/images/week33/barmodel_w33_adv_p5.svg',
-    correctAnswer: 20,
-    answer: '20 stars',
-    hintText: 'Multiply 5 stars × 4 helpers = 20 total stars.',
-    modelData: {
-      type: 'part_whole',
-      bars: [
-        { value: 5, label: 'Helper 1', color: '#f59e0b' },
-        { value: 5, label: 'Helper 2', color: '#f59e0b' },
-        { value: 5, label: 'Helper 3', color: '#f59e0b' },
-        { value: 5, label: 'Helper 4', color: '#f59e0b' },
-      ],
-      totalLabel: '20 stars'
-    }
-  }
-];
-
-export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
+export function BarModelQuest({ barModelData, customQuestions, weekNumber, onComplete }) {
   const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'paused' | 'gameover'
   const [currentIndex, setCurrentIndex] = useState(0);
   const [userInput, setUserInput] = useState('');
@@ -112,9 +22,11 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
     ? barModelData
     : (Array.isArray(barModelData?.problems) && barModelData.problems.length > 0)
       ? barModelData.problems
-      : WEEK33_BAR_QUESTIONS;
+      : (Array.isArray(customQuestions) && customQuestions.length > 0)
+        ? customQuestions
+        : null;
 
-  const questions = rawQuestions.map((q, idx) => ({
+  const questions = (rawQuestions && rawQuestions.length > 0) ? rawQuestions.map((q, idx) => ({
     id: q.id || idx + 1,
     title: q.title || `Problem ${idx + 1}: Singapore Bar Model`,
     problemText: q.problemText || q.problem_en || q.text || 'Solve the Bar Model problem below:',
@@ -122,9 +34,9 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
     svg_url: q.svg_url || q.bar_model_svg || `/images/week${weekNumber}/barmodel_w${weekNumber}_adv_p${idx + 1}.svg`,
     modelData: q.modelData || null,
     hintText: q.hintText || `Check the bar model diagram to calculate the target answer!`
-  }));
+  })) : [];
 
-  const currentQ = questions[currentIndex] || questions[0];
+  const currentQ = questions.length > 0 ? (questions[currentIndex] || questions[0]) : null;
 
   // Timer Engine (Linear 1s countdown, independent of score changes)
   useEffect(() => {
@@ -210,6 +122,18 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
   };
 
   const xpEarned = score > 0 ? 40 : 0;
+
+  if (!rawQuestions || rawQuestions.length === 0) {
+    return (
+      <div className="w-full max-w-7xl mx-auto p-8 bg-rose-50 border-2 border-rose-300 rounded-3xl text-center space-y-3 shadow-inner font-sans">
+        <AlertCircle size={48} className="mx-auto text-rose-500 animate-pulse" />
+        <h3 className="text-xl font-black text-rose-900">⚠️ Math Quest Bar Model Data Missing</h3>
+        <p className="text-sm font-semibold text-rose-700">
+          No Singapore Math Bar Model problems found for Week {weekNumber || 'N/A'}. Expected data in skill_practice_hub.singapore_math.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full max-w-7xl mx-auto p-4 sm:p-6 lg:p-7 bg-white rounded-2xl sm:rounded-3xl border-2 border-amber-300 shadow-xl space-y-4 text-slate-900 font-sans">

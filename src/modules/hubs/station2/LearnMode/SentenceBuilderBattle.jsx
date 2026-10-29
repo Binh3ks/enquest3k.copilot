@@ -18,108 +18,7 @@ import LearnGrammarModal from '../../../../components/cambridge/LearnGrammarModa
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 import { playButtonClick, playCorrectSound, playWrongSound, playVictoryFanfare } from '../../../../utils/soundEffects';
 
-const WEEK33_GRAMMAR_DRILLS = [
-  {
-    id: "st2_w33_g01",
-    grammar_tag: "past_continuous_while",
-    text_en: "While Jake was walking down the corridor, Tom slipped on the wet floor.",
-    prompt_en: "While Jake was walking down the corridor, Tom slipped on the wet floor.",
-    word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "Tom", "slipped", "on", "the", "wet", "floor", "."],
-    valid_structures: [
-      ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "Tom", "slipped", "on", "the", "wet", "floor", "."],
-      ["Tom", "slipped", "on", "the", "wet", "floor", "while", "Jake", "was", "walking", "down", "the", "corridor", "."]
-    ],
-    distractor_blocks: ["is", "slips", "walks"]
-  },
-  {
-    id: "st2_w33_g02",
-    grammar_tag: "past_continuous_while",
-    text_en: "While Tom was running in a hurry, he slipped and hurt his knee.",
-    prompt_en: "While Tom was running in a hurry, he slipped and hurt his knee.",
-    word_blocks: ["While", "Tom", "was", "running", "in", "a", "hurry", ",", "he", "slipped", "and", "hurt", "his", "knee", "."],
-    valid_structures: [
-      ["While", "Tom", "was", "running", "in", "a", "hurry", ",", "he", "slipped", "and", "hurt", "his", "knee", "."],
-      ["Tom", "slipped", "and", "hurt", "his", "knee", "while", "he", "was", "running", "in", "a", "hurry", "."]
-    ],
-    distractor_blocks: ["is", "runs", "hurts"]
-  },
-  {
-    id: "st2_w33_g03",
-    grammar_tag: "past_continuous_while",
-    text_en: "While Jake was helping Tom, Nurse Sarah arrived quickly.",
-    prompt_en: "While Jake was helping Tom, Nurse Sarah arrived quickly.",
-    word_blocks: ["While", "Jake", "was", "helping", "Tom", ",", "Nurse", "Sarah", "arrived", "quickly", "."],
-    valid_structures: [
-      ["While", "Jake", "was", "helping", "Tom", ",", "Nurse", "Sarah", "arrived", "quickly", "."],
-      ["Nurse", "Sarah", "arrived", "quickly", "while", "Jake", "was", "helping", "Tom", "."]
-    ],
-    distractor_blocks: ["is", "helps", "arrives"]
-  },
-  {
-    id: "st2_w33_g04",
-    grammar_tag: "past_continuous_while",
-    text_en: "While Nurse Sarah was treating his ankle, Tom felt very relieved.",
-    prompt_en: "While Nurse Sarah was treating his ankle, Tom felt very relieved.",
-    word_blocks: ["While", "Nurse", "Sarah", "was", "treating", "his", "ankle", ",", "Tom", "felt", "very", "relieved", "."],
-    valid_structures: [
-      ["While", "Nurse", "Sarah", "was", "treating", "his", "ankle", ",", "Tom", "felt", "very", "relieved", "."],
-      ["Tom", "felt", "very", "relieved", "while", "Nurse", "Sarah", "was", "treating", "his", "ankle", "."]
-    ],
-    distractor_blocks: ["treats", "feels", "is"]
-  },
-  {
-    id: "st2_w33_g05",
-    grammar_tag: "past_continuous_while",
-    text_en: "While the cleaners were drying the floor, the headmaster praised Jake.",
-    prompt_en: "While the cleaners were drying the floor, the headmaster praised Jake.",
-    word_blocks: ["While", "the", "cleaners", "were", "drying", "the", "floor", ",", "the", "headmaster", "praised", "Jake", "."],
-    valid_structures: [
-      ["While", "the", "cleaners", "were", "drying", "the", "floor", ",", "the", "headmaster", "praised", "Jake", "."],
-      ["The", "headmaster", "praised", "Jake", "while", "the", "cleaners", "were", "drying", "the", "floor", "."]
-    ],
-    distractor_blocks: ["dries", "praises", "was"]
-  }
-];
-
-const WEEK34_GRAMMAR_DRILLS = [
-  {
-    id: "st2_w34_g01",
-    grammar_tag: "past_continuous_when_while",
-    text_en: "Build a past continuous sentence with 'While'.",
-    word_blocks: ["While", "the", "mighty", "lion", "was", "sleeping", ",", "a", "tiny", "mouse", "ran", "past", "."],
-    distractor_blocks: ["is", "runs", "sleeps"]
-  },
-  {
-    id: "st2_w34_g02",
-    grammar_tag: "past_simple_promise",
-    text_en: "Build a sentence about the mouse promising help.",
-    word_blocks: ["The", "little", "mouse", "promised", "to", "help", "the", "lion", "one", "day", "."],
-    distractor_blocks: ["promises", "helping", "big"]
-  },
-  {
-    id: "st2_w34_g03",
-    grammar_tag: "past_simple_passive_or_action",
-    text_en: "Build a sentence about hunters capturing the lion.",
-    word_blocks: ["Hunters", "trapped", "the", "strong", "lion", "in", "a", "heavy", "rope", "net", "."],
-    distractor_blocks: ["traps", "is", "tiny"]
-  },
-  {
-    id: "st2_w34_g04",
-    grammar_tag: "past_simple_rescue",
-    text_en: "Build a rescue sentence with the brave mouse.",
-    word_blocks: ["The", "brave", "mouse", "chewed", "through", "the", "ropes", "and", "freed", "him", "."],
-    distractor_blocks: ["chews", "frees", "running"]
-  },
-  {
-    id: "st2_w34_g05",
-    grammar_tag: "moral_friendship",
-    text_en: "Build a moral friendship sentence.",
-    word_blocks: ["They", "became", "loyal", "friends", "and", "lived", "peacefully", "in", "the", "forest", "."],
-    distractor_blocks: ["becomes", "lives", "never"]
-  }
-];
-
-export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, weekNumber = 33, grammarLesson, onAttemptResult, onComplete }) {
+export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, weekNumber, grammarLesson, onAttemptResult, onComplete }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
   const [showGrammarModal, setShowGrammarModal] = useState(false);
@@ -138,10 +37,10 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
   const inputDrills = customDrills || grammarDrills || drills;
   const drillsList = (inputDrills && Array.isArray(inputDrills) && inputDrills.length > 0)
     ? inputDrills
-    : (weekNumber === 34 ? WEEK34_GRAMMAR_DRILLS : WEEK33_GRAMMAR_DRILLS);
+    : null;
 
-  const currentDrill = drillsList[currentDrillIndex] || drillsList[0];
-  const totalDrillsCount = drillsList.length;
+  const currentDrill = drillsList ? (drillsList[currentDrillIndex] || drillsList[0]) : null;
+  const totalDrillsCount = drillsList ? drillsList.length : 0;
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -150,6 +49,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
 
   // Load drill word blocks
   const loadDrill = (idx) => {
+    if (!drillsList || drillsList.length === 0) return;
     const drill = drillsList[idx] || drillsList[0];
     if (!drill) return;
 
@@ -286,6 +186,18 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
 
   // Instruction in pure English — zero Vietnamese sentence prompt!
   const drillInstruction = 'Arrange the word blocks to build the correct sentence:';
+
+  if (!drillsList || drillsList.length === 0) {
+    return (
+      <div className="w-full max-w-7xl mx-auto p-8 bg-rose-50 border-2 border-rose-300 rounded-3xl text-center space-y-3 shadow-inner font-sans">
+        <AlertCircle size={48} className="mx-auto text-rose-500 animate-pulse" />
+        <h3 className="text-xl font-black text-rose-900">⚠️ Grammar Duel Data Missing</h3>
+        <p className="text-sm font-semibold text-rose-700">
+          No grammar drills found for Week {weekNumber || 'N/A'}. Expected data in skill_practice_hub.grammar_drills.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full max-w-7xl mx-auto p-4 sm:p-6 lg:p-7 bg-white rounded-2xl sm:rounded-3xl border-2 border-indigo-200 shadow-xl space-y-4 text-slate-900 font-sans">

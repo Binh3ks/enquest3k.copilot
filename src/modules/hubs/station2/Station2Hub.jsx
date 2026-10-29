@@ -188,6 +188,7 @@ export default function Station2Hub() {
               {activeTab === 'sentence_builder' && (
                 <SentenceBuilderBattle
                   currentItem={currentItem}
+                  weekNumber={33}
                   onNext={handleNextItem}
                   onTriggerAdaptiveHint={(tag) => setAdaptiveGrammarTag(tag)}
                 />
@@ -195,6 +196,7 @@ export default function Station2Hub() {
 
               {activeTab === 'bar_model' && (
                 <BarModelQuest
+                  weekNumber={33}
                   onAttemptResult={(isCorrect, tag) => {
                     handleAttemptEvaluation(
                       { isCorrect, isMinorError: false, score: isCorrect ? 100 : 0 },

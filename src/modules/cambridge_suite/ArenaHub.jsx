@@ -200,12 +200,15 @@ export default function ArenaHub({ data, weekNumber }) {
               <SentenceBuilderBattle
                 customDrills={data?.grammar_drills}
                 grammarLesson={data?.grammar_lesson}
+                weekNumber={weekNumber}
                 onAttemptResult={handleAttemptEvaluation}
               />
             )}
             {activeTab === 'bar_model' && (
               <BarModelQuest
+                barModelData={data?.singapore_math}
                 customQuestions={data?.singapore_math}
+                weekNumber={weekNumber}
                 onAttemptResult={handleAttemptEvaluation}
               />
             )}
