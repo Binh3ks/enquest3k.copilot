@@ -163,7 +163,7 @@ export const CAMBRIDGE_EXAM_STANDARDS = Object.freeze({
       },
       part4: {
         name: 'Personal Questions (S4)',
-        questionsCount: 4 // Cambridge Handbook for Teachers, Speaking Part 4 (p. 30: personal questions about candidate, typically 4–5 questions)
+        questionsCountRange: [4, 5] // Cambridge Handbook for Teachers, Speaking Part 4 (p. 30: "The examiner asks the candidate some personal questions on topics such as school, hobbies, etc." — exactly 4–5 thematic questions)
       }
     }
   }

@@ -206,8 +206,6 @@ graph TD
 
 ---
 
-### Giai đoạn 2: Sinh Nội Dung 6 Hạng Mục Sư Phạm Bắt Buộc (6 Core Pedagogical Deliverables)
-
 ### Giai đoạn 2: Sinh Nội Dung 6 Hạng Mục Sư Phạm Bắt Buộc (6 Core Pedagogical Deliverables — W34 Gold Standard Checklist)
 
 Lấy Tuần 34 làm khuôn mẫu chuẩn mực (Gold Standard Template), tác giả và agent bắt buộc phải rà soát qua bảng **Checklist Sư phạm 6 Hạng mục** trước khi ráp vào hệ thống:
