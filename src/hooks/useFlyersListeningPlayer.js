@@ -34,11 +34,15 @@ export function useFlyersListeningPlayer({
   partNumber = 1,
   audioUrl,
   script,
-  weekNumber = 33,
+  weekNumber,
   station = 'questions',
   pauseMs = 3000,
   onComplete
 }) {
+  if (!weekNumber) {
+    throw new Error(`[useFlyersListeningPlayer] 'weekNumber' is required. Received: ${weekNumber}`);
+  }
+
   // Normalize part number to integer 1-5
   const cleanPartNum = typeof partNumber === 'string'
     ? parseInt(partNumber.replace(/\D/g, '') || '1', 10)

@@ -8,8 +8,13 @@
  * - Zone 5: Boss Castle (Cambridge A2 Flyers 15-Shield Rotary Exam Simulation)
  */
 
-export function mapDataToZones(weekData, weekNumber = 33) {
+export function mapDataToZones(weekData, weekNumber) {
   if (!weekData) return null;
+
+  const resolvedWeek = weekNumber || weekData.weekId || weekData.week;
+  if (!resolvedWeek) {
+    throw new Error(`[zoneDataMapper] 'weekNumber' is required and could not be resolved from weekData. Received: ${weekNumber}`);
+  }
 
   const readingHub = weekData.readingHub || weekData.reading_hub || weekData.stations?.reading_hub || {};
   const listeningHub = weekData.listeningHub || weekData.listening_hub || weekData.stations?.listening_hub || {};
@@ -18,7 +23,7 @@ export function mapDataToZones(weekData, weekNumber = 33) {
   const skillPracticeHub = weekData.skillPracticeHub || weekData.skill_practice_hub || weekData.stations?.skill_practice_hub || {};
 
   return {
-    weekNumber: weekData.weekId || weekData.week || weekNumber,
+    weekNumber: resolvedWeek,
     theme: weekData.theme || weekData.title || weekData.weekTitle_en || "Weekly Theme",
     title_vi: weekData.title_vi || "",
     rawWeekData: weekData,

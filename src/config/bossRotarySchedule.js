@@ -119,8 +119,11 @@ export const BOSS_ROTARY_CYCLES = {
  * @param {number} weekNumber
  * @returns {{ weekNumber, cycleNumber, cycleName, activeParts, partCount, ... }}
  */
-export function getBossRotaryConfig(weekNumber = 33) {
-  const w = parseInt(weekNumber) || 33;
+export function getBossRotaryConfig(weekNumber) {
+  const w = parseInt(weekNumber, 10);
+  if (isNaN(w) || w <= 0) {
+    throw new Error(`[bossRotarySchedule] 'weekNumber' is required and must be a valid positive integer. Received: ${weekNumber}`);
+  }
   const offset = ((w - 33) % 5 + 5) % 5;
   const cycleKey = offset + 1;
   const cycle = BOSS_ROTARY_CYCLES[cycleKey] || BOSS_ROTARY_CYCLES[1];
@@ -136,7 +139,10 @@ export function getBossRotaryConfig(weekNumber = 33) {
 /**
  * Returns dynamic task label for Day-5 boss stations based on active cycle.
  */
-export function getRotaryTaskLabel(taskId, weekNumber = 33) {
+export function getRotaryTaskLabel(taskId, weekNumber) {
+  if (!weekNumber) {
+    throw new Error(`[bossRotarySchedule] 'weekNumber' is required for getRotaryTaskLabel('${taskId}'). Received: ${weekNumber}`);
+  }
   const config = getBossRotaryConfig(weekNumber);
   const cycle = config.cycleNumber;
 
