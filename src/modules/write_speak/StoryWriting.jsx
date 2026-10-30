@@ -44,6 +44,9 @@ const KNOWN_CONNECTORS = [
   'but'
 ];
 
+const NEUTRAL_IMAGE_PLACEHOLDER =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f1f5f9' stroke='%23cbd5e1' stroke-width='2'/%3E%3Ctext x='50%25' y='46%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='32'%3E🖼️%3C/text%3E%3Ctext x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='14' font-weight='600' fill='%2364748b'%3EImage Not Available%3C/text%3E%3C/svg%3E";
+
 export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isVi = false, onReportProgress, onGoToSpeak, onComplete, weekNumber }) {
   const { weekId } = useParams();
   const currentWeek = parseInt(weekId) || weekNumber || 33;
@@ -453,7 +456,11 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
                   src={step.image_url}
                   alt={`Scene ${idx + 1}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
+                  onError={(e) => {
+                    console.error(`[StoryWriting] Failed to load scene image: ${step.image_url}`);
+                    e.target.onerror = null;
+                    e.target.src = NEUTRAL_IMAGE_PLACEHOLDER;
+                  }}
                 />
                 <span className="absolute top-1.5 left-1.5 px-2 py-0.5 bg-amber-400 text-slate-950 font-black text-[10px] rounded-md shadow">
                   Scene {idx + 1}
@@ -666,7 +673,11 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
                 src={currentStep.image_url}
                 alt={`Scene ${currentStepIdx + 1}`}
                 className="w-full h-full object-cover"
-                onError={(e) => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
+                onError={(e) => {
+                  console.error(`[StoryWriting] Failed to load current step image: ${currentStep.image_url}`);
+                  e.target.onerror = null;
+                  e.target.src = NEUTRAL_IMAGE_PLACEHOLDER;
+                }}
               />
               <div className="absolute top-2 left-2 sm:top-2.5 sm:left-2.5 px-2 py-0.5 sm:px-2.5 sm:py-1 bg-amber-400/95 text-slate-950 rounded-lg text-xs font-black uppercase tracking-wider shadow border border-amber-300 backdrop-blur-xs">
                 Scene {currentStepIdx + 1}/{steps.length} • {stage}

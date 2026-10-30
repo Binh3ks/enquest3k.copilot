@@ -5,6 +5,9 @@ import { playButtonClick, playCorrectSound, playVictoryFanfare } from '../../uti
 import { speakText } from '../../utils/AudioHelper';
 import QuickWritePanel from '../common/QuickWritePanel';
 
+const NEUTRAL_IMAGE_PLACEHOLDER =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f1f5f9' stroke='%23cbd5e1' stroke-width='2'/%3E%3Ctext x='50%25' y='46%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='32'%3E🖼️%3C/text%3E%3Ctext x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='14' font-weight='600' fill='%2364748b'%3EImage Not Available%3C/text%3E%3C/svg%3E";
+
 export default function ScienceReportCreator({ reportTopic, customConfig, weekNumber, onComplete }) {
   const [currentStep, setCurrentStep] = useState(1); // 1: OBSERVE, 2: PICK CLUE, 3: QUICK WRITE, 4: SEE REPORT
   const [observedHotspot, setObservedHotspot] = useState(null);
@@ -317,7 +320,11 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               src={isW34 ? "/images/week34/explore_cover_w34.jpg" : "/images/week33/read_cover_w33.jpg"}
               alt={isW34 ? "Animal Cooperation Observation Scene" : "Corridor Observation Scene"}
               className="w-full h-full object-cover"
-              onError={(e) => { e.target.onerror = null; e.target.src = isW34 ? '/images/week34/webtoon_scene_1.png' : '/images/week33/read_stem.jpg'; }}
+              onError={(e) => {
+                console.error(`[ScienceReportCreator] Failed to load observation scene image: ${e.target.src}`);
+                e.target.onerror = null;
+                e.target.src = NEUTRAL_IMAGE_PLACEHOLDER;
+              }}
             />
 
             {/* Hotspots */}
