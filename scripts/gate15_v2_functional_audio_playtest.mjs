@@ -15,16 +15,32 @@ import { chromium } from 'playwright';
 import path from 'path';
 import fs from 'fs';
 
+import crypto from 'crypto';
+
 const WEEK = parseInt(process.argv[2] || '34', 10);
-const isLocal = process.argv.includes('--local') || process.env.LOCAL === '1';
-const BASE_URL = process.env.BASE_URL || (isLocal ? (process.env.PORT ? `http://localhost:${process.env.PORT}` : 'http://localhost:4173') : 'https://app.bkbacademy.vn');
+const hasProdFlag = process.argv.includes('--production');
+const hasLocalFlag = process.argv.includes('--local') || process.env.LOCAL === '1';
+const isLocal = hasLocalFlag && !hasProdFlag;
+const BASE_URL = process.env.BASE_URL || (isLocal ? (process.env.PORT ? `http://localhost:${process.env.PORT}` : 'http://localhost:5173') : 'https://app.bkbacademy.vn');
+const envName = isLocal ? 'LOCAL DEV' : 'LIVE PRODUCTION';
 
 console.log('========================================================================');
 console.log(`🛡️ GATE 15 v2: FUNCTIONAL PLAYTEST & TTS RUNTIME GUARD (W${WEEK})`);
-console.log(`Target: ${BASE_URL}`);
+console.log(`🌍 Target Environment: [${envName}] ${BASE_URL}`);
 console.log('========================================================================\n');
 
 async function run() {
+  // Check version.json first
+  try {
+    const verRes = await fetch(`${BASE_URL}/version.json`);
+    if (verRes.ok) {
+      const ver = await verRes.json();
+      console.log(`📌 Production Commit: ${ver.shortCommit || ver.commit} (${ver.builtAt || ver.build_timestamp})\n`);
+    }
+  } catch (e) {
+    console.warn(`⚠️ Could not fetch version.json from ${BASE_URL}: ${e.message}`);
+  }
+
   const browser = await chromium.launch({
     headless: true,
     args: ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream', '--no-sandbox']
@@ -58,9 +74,16 @@ async function run() {
     if (url.includes('/audio/') || url.endsWith('.mp3')) {
       const status = res.status();
       const contentType = res.headers()['content-type'] || '';
-      audioRequests.push({ url, status, contentType });
+      let bytes = 0;
+      let sha256 = '';
+      try {
+        const buf = await res.body();
+        bytes = buf ? buf.length : 0;
+        sha256 = buf ? crypto.createHash('sha256').update(buf).digest('hex') : '';
+      } catch (e) {}
+      audioRequests.push({ url, status, contentType, bytes, sha256 });
       if (contentType.includes('text/html')) {
-        spaFallbacks.push({ url, status });
+        spaFallbacks.push({ url, status, bytes });
         console.error(`🚨 [FAIL GATE 15 v2] Audio file missing (SPA HTML fallback 200): ${url}`);
       }
     }
@@ -243,6 +266,20 @@ async function run() {
     });
   }
 
+  // Save raw telemetry to artifact
+  const logArtifactPath = path.resolve(process.cwd(), `docs/agent_artifacts/gate15_v2_audio_log_w${WEEK}.json`);
+  fs.writeFileSync(logArtifactPath, JSON.stringify({
+    week: WEEK,
+    target: BASE_URL,
+    timestamp: new Date().toISOString(),
+    totalAudioRequests: audioRequests.length,
+    audioRequests,
+    runtimeTTSCalls,
+    spaFallbacks,
+    failures
+  }, null, 2));
+  console.log(`📁 Raw audio telemetry logged to: ${logArtifactPath}`);
+
   console.log('\n========================================================================');
   console.log('📊 GATE 15 v2 AUDIT RESULTS');
   console.log('========================================================================');
@@ -257,7 +294,11 @@ async function run() {
     process.exit(1);
   }
 
-  console.log('\n✅ GATE 15 v2 PASSED: 0 runtime TTS, 0 missing audios, 0 frozen phases, 0 dictation tabs.\n');
+  if (isLocal) {
+    console.log(`\n✅ GATE 15 v2 PASSED (LOCAL DEV): 0 runtime TTS, 0 missing audios, 0 frozen phases, 0 dictation tabs on ${BASE_URL}.\n`);
+  } else {
+    console.log(`\n✅ GATE 15 v2 PRODUCTION CERTIFIED: 0 runtime TTS, 0 missing audios, 0 frozen phases, 0 dictation tabs on ${BASE_URL}.\n`);
+  }
   process.exit(0);
 }
 

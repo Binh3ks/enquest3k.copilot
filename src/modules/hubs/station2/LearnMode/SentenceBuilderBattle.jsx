@@ -189,7 +189,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
 
   if (!drillsList || drillsList.length === 0) {
     return (
-      <div className="w-full max-w-7xl mx-auto p-8 bg-rose-50 border-2 border-rose-300 rounded-3xl text-center space-y-3 shadow-inner font-sans">
+      <div data-testid="grammar-duel-data-missing" className="w-full max-w-7xl mx-auto p-8 bg-rose-50 border-2 border-rose-300 rounded-3xl text-center space-y-3 shadow-inner font-sans">
         <AlertCircle size={48} className="mx-auto text-rose-500 animate-pulse" />
         <h3 className="text-xl font-black text-rose-900">⚠️ Grammar Duel Data Missing</h3>
         <p className="text-sm font-semibold text-rose-700">

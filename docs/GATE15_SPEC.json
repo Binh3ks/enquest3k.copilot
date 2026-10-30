@@ -320,10 +320,10 @@
           "min": 1
         },
         {
-          "name": "Table B has >=3 examiner audio buttons",
+          "name": "Table B has >=5 examiner audio buttons",
           "type": "dom_count",
           "selector": "[data-testid='ie-audio-btn']",
-          "min": 3
+          "min": 5
         }
       ]
     },
@@ -440,10 +440,22 @@
       "b": "singapore_math.js problems[i].problemText"
     },
     {
-      "name": "speaking_hub.js info_exchange_cards.examiner_questions audio_url exists",
+      "name": "speaking_hub.js info_exchange_cards.examiner_questions audio_url exists (5 questions)",
       "type": "field_exists",
       "file": "speaking_hub.js",
-      "path": "info_exchange_cards.examiner_questions[0..2].audio_url"
+      "path": "info_exchange_cards.examiner_questions[0..4].audio_url"
+    },
+    {
+      "name": "speaking_hub.js find_differences has 6 differences",
+      "type": "field_exists",
+      "file": "speaking_hub.js",
+      "path": "find_differences.differences[5].id"
+    },
+    {
+      "name": "speaking_hub.js picture_story has 5 images",
+      "type": "field_exists",
+      "file": "speaking_hub.js",
+      "path": "picture_story.images[4].image_url"
     },
     {
       "name": "writing_hub.js writing_chunks exists",

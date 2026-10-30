@@ -15,6 +15,7 @@ export const speakingHub = {
         { label: "Location", value: "Green Valley Forest", known: true },
         { label: "Favorite Food", value: "Fresh Wild Berries & Meat", known: true },
         { label: "Resting Time", value: "Sunny Afternoons", known: true },
+        { label: "Special Skill", value: "Protecting Forest Friends", known: true },
         { label: "Best Friend", value: "Gentle Forest Animals", known: true }
       ]
     },
@@ -24,6 +25,7 @@ export const speakingHub = {
       items: [
         { label: "Location", value: "Under the Tall Oak Tree", known: true },
         { label: "Favorite Food", value: "Small Grass Seeds", known: true },
+        { label: "Resting Time", value: "Cool Evenings", known: true },
         { label: "Special Skill", value: "Chewing Strong Ropes", known: true },
         { label: "Best Friend", value: "Mighty Forest Lion", known: true }
       ]
@@ -32,29 +34,33 @@ export const speakingHub = {
       "Location": ["Green Valley Forest", "Under the Tall Oak Tree"],
       "Favorite Food": ["Fresh Wild Berries & Meat", "Small Grass Seeds"],
       "Resting Time": ["Sunny Afternoons", "Cool Evenings"],
-      "Special Skill": ["Chewing Strong Ropes", "Running Fast on Grass"],
+      "Special Skill": ["Protecting Forest Friends", "Chewing Strong Ropes"],
       "Best Friend": ["Mighty Forest Lion", "Gentle Forest Animals"]
     },
     prompt_questions: [
       "Where does the character live?",
+      "What is the favorite food?",
+      "When is the resting time?",
       "What is the special skill?",
-      "When is the resting time?"
+      "Who is the best friend?"
     ],
     examiner_questions: [
       { id: "eq1", text: "Where does the mouse live?", audio_url: "/audio/week34/info_exchange_q1.mp3" },
       { id: "eq2", text: "What is the mouse's special skill?", audio_url: "/audio/week34/info_exchange_q2.mp3" },
       { id: "eq3", text: "Who is the mouse's best friend?", audio_url: "/audio/week34/info_exchange_q3.mp3" },
-      { id: "eq4", text: "How did the mouse help the lion?", audio_url: "/audio/week34/info_exchange_q4.mp3" }
+      { id: "eq4", text: "How did the mouse help the lion?", audio_url: "/audio/week34/info_exchange_q4.mp3" },
+      { id: "eq5", text: "When does the mouse rest?", audio_url: "/audio/week34/info_exchange_q5.mp3" }
     ]
   },
   picture_story: {
     title: "The Lion and the Little Mouse",
-    examiner_intro: "Look at these four pictures. They tell a story about a lion and a little mouse. First, I'll tell you about picture one. Then you tell me about pictures two, three, and four.",
+    examiner_intro: "Look at these five pictures. They tell a story about a lion and a little mouse. First, I'll tell you about picture one. Then you tell me what happens in pictures two, three, four, and five.",
     images: [
       { id: 1, image_url: "/images/week34/webtoon_scene_1.png", narrator_prompt: "The lion was sleeping peacefully under a big tree in the forest." },
       { id: 2, image_url: "/images/week34/webtoon_scene_2.png", narrator_prompt: "A tiny mouse ran across his paw and woke him up." },
       { id: 3, image_url: "/images/week34/webtoon_scene_3.png", narrator_prompt: "The lion caught him, but let him go after the mouse promised to help." },
-      { id: 4, image_url: "/images/week34/webtoon_scene_4.png", narrator_prompt: "Later, hunters trapped the lion, and the brave mouse chewed the ropes to free him." }
+      { id: 4, image_url: "/images/week34/webtoon_scene_4.png", narrator_prompt: "Later, hunters trapped the lion in a heavy rope net." },
+      { id: 5, image_url: "/images/week34/webtoon_scene_5.png", narrator_prompt: "The brave little mouse chewed through the ropes, and the two became true friends forever." }
     ]
   },
   personal_questions: {
@@ -79,7 +85,9 @@ export const speakingHub = {
       { id: "d1", name: "Sun and Cloud", prompt_en: "In Picture A, the sun is shining, but in Picture B, there is a cloud over the sun.", x: 31, y: 20 },
       { id: "d2", name: "Flower Color", prompt_en: "In Picture A, the flower is pink, but in Picture B, the flower is yellow.", x: 73, y: 44 },
       { id: "d3", name: "Butterfly on Rock", prompt_en: "In Picture A, there is a blue butterfly on the rock, but in Picture B, there is no butterfly.", x: 27, y: 54 },
-      { id: "d4", name: "Mouse Color", prompt_en: "In Picture A, the mouse is grey, but in Picture B, the mouse is brown.", x: 29, y: 52 }
+      { id: "d4", name: "Mouse Color", prompt_en: "In Picture A, the mouse is grey, but in Picture B, the mouse is brown.", x: 29, y: 52 },
+      { id: "d5", name: "Hunter's Hat Color", prompt_en: "In Picture A, the hunter's hat on the branch is green, but in Picture B, the hat is red.", x: 52, y: 26 },
+      { id: "d6", name: "Jumping Fish in Stream", prompt_en: "In Picture A, there is a jumping fish in the stream, but in Picture B, there is no fish.", x: 82, y: 90 }
     ]
   }
 };

@@ -14,9 +14,14 @@ import fs from 'fs';
 import path from 'path';
 
 const WEEK = parseInt(process.argv[2] || '34', 10);
-const isLocal = process.argv.includes('--local') || process.env.LOCAL === '1';
-const PROD_BASE = isLocal ? 'http://localhost:5173' : 'https://app.bkbacademy.vn';
+const hasProdFlag = process.argv.includes('--production');
+const hasLocalFlag = process.argv.includes('--local') || process.env.LOCAL === '1';
+const isLocal = hasLocalFlag && !hasProdFlag;
+const PROD_BASE = isLocal ? (process.env.LOCAL_URL || 'http://localhost:5173') : 'https://app.bkbacademy.vn';
+const envName = isLocal ? 'LOCAL DEV' : 'LIVE PRODUCTION';
 const rootDir = process.cwd();
+
+console.log(`🌍 Target Environment: [${envName}] ${PROD_BASE}`);
 
 let defaultSpec = `docs/GATE15_SPEC.json`;
 if (WEEK === 33 && fs.existsSync(path.resolve(rootDir, 'docs/GATE15_SPEC_W33.json'))) {
@@ -812,7 +817,11 @@ async function main() {
   console.log(`🔒 SPEC SHA256: ${specSha}`);
   if (globalPass && consistencyPass && passCount === questIds.length) {
     console.log(`🎉 GATE 15 PASSED: ${passCount}/${questIds.length} Quests — 100% Clean DOM Assertions`);
-    console.log(`✅ PRODUCTION CERTIFIED — Week ${WEEK} ready for release`);
+    if (isLocal) {
+      console.log(`✅ LOCAL VERIFIED — Week ${WEEK} passed on ${PROD_BASE} (NOT live production)`);
+    } else {
+      console.log(`✅ PRODUCTION CERTIFIED — Week ${WEEK} verified on ${PROD_BASE}`);
+    }
     process.exit(0);
   } else {
     console.error(`🚨 GATE 15 FAILED: ${passCount}/${questIds.length} passed`);

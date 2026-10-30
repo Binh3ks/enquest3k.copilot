@@ -125,7 +125,7 @@ export function BarModelQuest({ barModelData, customQuestions, weekNumber, onCom
 
   if (!rawQuestions || rawQuestions.length === 0) {
     return (
-      <div className="w-full max-w-7xl mx-auto p-8 bg-rose-50 border-2 border-rose-300 rounded-3xl text-center space-y-3 shadow-inner font-sans">
+      <div data-testid="barmodel-data-missing" className="w-full max-w-7xl mx-auto p-8 bg-rose-50 border-2 border-rose-300 rounded-3xl text-center space-y-3 shadow-inner font-sans">
         <AlertCircle size={48} className="mx-auto text-rose-500 animate-pulse" />
         <h3 className="text-xl font-black text-rose-900">⚠️ Math Quest Bar Model Data Missing</h3>
         <p className="text-sm font-semibold text-rose-700">

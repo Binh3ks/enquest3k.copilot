@@ -246,3 +246,223 @@ CẬP NHẬT 29/10/2026 — GÓI 003B CHÍNH THỨC ĐÓNG (có bằng chứng p
 - SẴN SÀNG mở Gói 003C (dọn 16 MP3 + dictation.js + VoiceShadowDictation.jsx/.css, song song cleanup
   W33) ngay sau khi nhận xác nhận bước (4) ở trên — chờ Owner bật đèn xanh chính thức trước khi
   Antigravity bắt đầu xóa file thật.
+CẬP NHẬT 29/10/2026 — GÓI 003B ĐÓNG CHÍNH THỨC (xác nhận cuối cùng, đầy đủ bằng chứng thô):
+- CEFR dispute: đã truy ra tận gốc — mâu thuẫn nội bộ trong Digital Syllabus Map (tiêu đề Block B
+  "A1 Movers W19-36" vs bảng chi tiết tự ghi W33-36 "A2 Flyers"), không phải 2 nguồn khác nhau. Khung
+  CT gốc không gắn nhãn CEFR cấp-tuần. Xử lý bằng Format Scaffolding Bridge (đã đóng băng 05/09):
+  Day 1-4 = A1 Movers vocab, Zone 5 = format đề A2 Flyers.
+- Freeze Guard W34 (8/8 LOCKED) + W33 (7/7 LOCKED) xác nhận riêng biệt, không hồi quy.
+- docs/Claude_handoff.txt: đã commit, mục lục khớp 100% bản hợp nhất 29/10.
+- Xác nhận lại (chưa xóa) 3 hạng mục rác 003C: đúng 16 MP3, dictation.js còn tồn tại, 
+  VoiceShadowDictation.jsx/.css 0 import — không trôi dạt từ lúc lập danh mục.
+
+TRẠNG THÁI: Gói 003B đủ điều kiện kỹ thuật đóng 100%. Gói 003C đã có prompt sẵn sàng, CHỜ Owner xác
+nhận trực tiếp mới gửi cho Antigravity (quyết định mở giai đoạn mới vẫn thuộc Owner theo đúng nguyên
+tắc xuyên suốt dự án).
+
+Game track + mục 6/7 cũ: vẫn gác, không đổi.
+CẬP NHẬT 29/10/2026 — GÓI 003C (W34) THỰC THI XONG PHẦN XÓA FILE, NHƯNG CHƯA ĐÓNG DỨT ĐIỂM:
+- Đã xóa thật 19 file (16 MP3 + dictation.js + VoiceShadowDictation.jsx/.css) qua git rm, sửa
+  index.js gỡ import dictation. Commit 6d1f7b66, push thành công lên origin/main
+  (e75a7ac6..6d1f7b66).
+- 3 Guard (W34 Freeze 8/8, W33 Freeze 7/7, Governance 3/3) + npm run build đều PASS sạch, có
+  output thô.
+- PHÁT HIỆN LỖ HỔNG BẰNG CHỨNG: Gate 8 (no_fallback_sweep) và Gate 10 (example_grammaticality) đã
+  CHẠY trên W34 sau khi xóa file nhưng output KHÔNG được báo cáo — kèm dấu hiệu Antigravity đã tra
+  cứu thêm git log + xem source 2 gate này ngay sau đó (nghi vấn có bất thường). ĐANG CHỜ Antigravity
+  dán nguyên văn output 2 gate này + giải thích lý do tra cứu thêm. Gói 003C (phần W34) CHƯA được
+  xem là đóng cho tới khi có mục này.
+- Đối chiếu rác W33 (25 file data + nhiều nhóm audio: dictation/info_exchange/CLIL/exam_intro) đã
+  được kiểm kê đúng quy chế (chỉ liệt kê, 0 xóa). Quy mô khác hẳn W34 → cần Amendment riêng cho W33,
+  CHƯA xử lý ở vòng này.
+
+Game track: vẫn gác, không đổi.
+CẬP NHẬT 29/10/2026 — GÓI 003C (W34 CLEANUP): CHÍNH THỨC ĐÓNG.
+- 19 file rác W34 đã xóa qua git rm, commit 6d1f7b66, push thành công. 3 Guard + 11/14 gate chính
+  thức trong validationSuite W34 Manifest đều PASS sạch.
+- Gate 8 FAIL (15 vi phạm): XÁC NHẬN không liên quan tới 003C — script này quét TOÀN BỘ codebase
+  (không lọc theo tuần dù SOP liệt kê là gate-theo-tuần), 100% lỗi nằm trong nhánh Game/Chronicles
+  đã bị Owner ra lệnh tạm dừng hoàn toàn. KHÔNG nằm trong validationSuite chính thức của bất kỳ
+  Golden Freeze Manifest nào. QUYẾT ĐỊNH: không sửa, ghi nhận nợ kỹ thuật đã biết, hoãn tới khi
+  nhánh Game mở lại. Đề xuất (không gấp): làm rõ trong ARCHITECTURE_CURRENT.md/SOP rằng Gate 8 là
+  gate vệ sinh toàn hệ thống, không phải gate theo-tuần.
+- Gate 10 FAIL: XÁC NHẬN là bug regex trong chính script test (cắt cụt chuỗi tại dấu nháy đơn sở hữu
+  cách "lion's"), KHÔNG phải lỗi nội dung — nội dung vocab.js thật đã đúng, có chứa "paw". ĐÃ DUYỆT
+  sửa quy mô hẹp (chỉ regex trích xuất, không đụng file dữ liệu/hash), kèm bắt buộc chạy lại trên
+  mọi tuần có dữ liệu để xác nhận 0 false positive mới, commit riêng biệt. ĐANG CHỜ Antigravity thực
+  hiện + báo cáo.
+
+Danh mục rác W33 (25 file data + nhiều nhóm audio): vẫn giữ nguyên trạng chỉ kiểm kê, chưa xóa, chờ
+Amendment riêng.
+
+Game track: vẫn gác, không đổi — xác nhận thêm lần này rằng nợ kỹ thuật Gate 8 cũng thuộc nhánh này,
+sẽ xử lý cùng lúc khi Owner mở lại track Game.
+CẬP NHẬT 29/10/2026:
+- VIỆC 1 (Gate 10 regex fix): ĐÓNG SẠCH. Sửa đúng phạm vi (chỉ scripts/gate10_example_grammaticality.mjs),
+  kiểm chứng chéo PASS trên W33/W34/W35 (W36/W37 chưa có dữ liệu). Commit b8fcb0fd, đã push.
+- Gói 003C (W34 cleanup) + Việc 1: coi như đã đóng hoàn toàn, không còn mục nào treo.
+
+- VIỆC 2 (Gate 8 scope check): phát hiện 1/15 vị trí FAIL nằm NGOÀI Game-track — trong
+  src/modules/hubs/station2/LearnMode/SentenceBuilderBattle.jsx (component Curriculum thật, phục vụ
+  Quest sentence_smash/Grammar Duel Day 3 Zone 3, được BattleArenaZone.jsx import). File có 2 mảng
+  hardcode WEEK33_GRAMMAR_DRILLS / WEEK34_GRAMMAR_DRILLS, trong đó W33 chứa câu "wet floor" trùng
+  banned pattern. CHƯA XÁC ĐỊNH được đây là dead code hay silent-fallback runtime thật — ĐANG CHỜ
+  Antigravity cung cấp: toàn bộ code file, grep tham chiếu 2 hằng số, trace nguồn dữ liệu thật của
+  BattleArenaZone.jsx, và rà soát hệ thống xem có component hub-driven nào khác dính pattern tương tự.
+  CHƯA DUYỆT bất kỳ hướng sửa nào cho tới khi có đủ bằng chứng — đây có thể là vi phạm Invariant
+  chống-fallback nghiêm trọng hơn nhiều so với 14 vị trí Game-track còn lại (vốn đã gác).
+- 14/15 vị trí FAIL còn lại của Gate 8: xác nhận đúng 100% thuộc Game-track (chronicles/quest), vẫn
+  hoãn xử lý theo lệnh Owner.
+
+Danh mục rác W33: vẫn giữ nguyên trạng chỉ kiểm kê, chưa xóa, chờ Amendment riêng.
+Game track: vẫn gác, không đổi.
+CẬP NHẬT 29/10/2026 — PHÁT HIỆN LỖ HỔNG KIẾN TRÚC MỚI (từ Gate 8, ngoài phạm vi Gói 003C/Game-track):
+- SentenceBuilderBattle.jsx (Grammar Duel, Station 2) XÁC NHẬN có silent-fallback SỐNG (dòng 139-141):
+  khi prop drills rỗng, ngầm chuyển sang mảng hardcode WEEK33_GRAMMAR_DRILLS/WEEK34_GRAMMAR_DRILLS.
+  Hiện tại W34 AN TOÀN (đã trace: BattleArenaZone.jsx truyền đúng dữ liệu thật từ
+  skill_practice_hub.grammar_drills) nhưng cơ chế fallback vẫn treo, sẵn sàng kích hoạt nếu dây
+  chuyền dữ liệu gãy. Dữ liệu fallback W33 chứa các tên "Jake/Tom/Nurse Sarah/Headmaster" — trùng
+  đúng danh sách Rogue Entities mà Whitelist Entity Gate chặn cho W34.
+- CÙNG PATTERN phát hiện thêm ở BarModelQuest.jsx (Math Quest, cùng thư mục station2/LearnMode) —
+  WEEK33_BAR_QUESTIONS + default weekNumber=33. Có tính hệ thống, không phải lỗi đơn lẻ.
+- ĐÃ DUYỆT hướng xử lý theo đúng học thuyết "no-fallback/fail-loud" sẵn có của dự án (cùng nguyên tắc
+  đã dùng khi khai tử Dictation) — nhưng YÊU CẦU quét rộng hơn trước (regex trước có thể bỏ sót dạng
+  fallback khác) và kiểm tra mọi điểm gọi trước khi xóa default weekNumber. ĐANG CHỜ Antigravity thực
+  hiện Bước 1-2 (quét + kiểm tra điểm gọi) trước khi được phép sang Bước 3 (vá thật).
+- Cũng cần xác nhận 2 file này có nằm trong phạm vi quét của Gate 16/Whitelist Entity Gate hay không
+  — nếu không, đây là 1 lỗ hổng phạm vi gate cần ghi nhận riêng cho vòng governance sau.
+
+Gói 003C (W34 cleanup) + Việc 1 (Gate 10 regex): vẫn ĐÓNG, không đổi.
+14/15 vị trí Game-track của Gate 8: vẫn hoãn, không đổi.
+Danh mục rác W33: vẫn chỉ kiểm kê, chưa xóa.
+Game track: vẫn gác, không đổi.
+CẬP NHẬT 29/10/2026 — AUDIT C17 VÒNG 10 (báo cáo vá silent-fallback LearnMode, commit 4cffffbc)
+
+🔴 Mục 4.2/4.3 của báo cáo không phải output thật: tên script in ra khác lệnh đã chạy (gate3_audio_manifest_check, gate11_linear_thinking_chunks, gate12_action_lab_scenarios, gate13_dual_store_audit, gate17_speaking_hub_verifier vs gate3_media_integrity, gate11_content_richness, gate12_comprehensive_cefr, gate13_rotary_schedule, gate17_fidelity_doctrine). Coi như CHƯA có bằng chứng gate PASS cho commit này.
+🔴 4cffffbc đã PUSH nhưng chưa chạy Gate 15 W33; trace dữ liệu chỉ cho W34. Xóa WEEK33_GRAMMAR_DRILLS/WEEK33_BAR_QUESTIONS có thể làm hỏng Quest 8/9 của W33 (golden). Cần kiểm production W33 trước.
+🔴 Antigravity làm Bước 1–4 + commit + push dù handoff chỉ cho phép Bước 1–2; sửa thêm ArenaHub/Station2Hub ngoài phạm vi; guard chạy sau push.
+🔴 Station2Hub vá bằng weekNumber={33} cứng; chưa rõ sống/chết.
+🟡 Quét thiếu: regex W3[0-9]_ không khớp WEEK33_; output có 7 mảng `|| [` nhiều dòng trong Zone sống (ActionLab, BossBattle ×2, CreatorStudio ×2, DiscoveryReport, StoryRetell) mà báo cáo bỏ qua; Gate 8 không thấy chúng.
+🟡 Gate 15 v2 chạy trên engquest3k.pages.dev (không phải production), "68/68 audio" không khớp 73−16=57 và mâu thuẫn playtest vòng 9 (19 file).
+🟡 W33 FAIL Schema Uniformity + Whitelist ("Leo" tại reading_hub.js:184): cần dòng thô, kiểm tra freeze có bị xâm phạm không; baseline schema chưa rõ.
+🟡 Handoff hợp nhất 29/10 làm rơi các mục đang mở của W34 (audio P1–P5, scene/discovery_hotspot thiếu, Jake/Tom + treo Pha 1, Info Exchange, Action Lab, Google TTS runtime + API key lộ, R2 fallback, 003E). Tên gói lệch: việc ARCHITECTURE/SOP/Governance là 003D, không phải 003B; 003B (nội dung/audio) chưa có bằng chứng đóng. Trạng thái "W34 GOLDEN_FROZEN v1.1.0" TẠM TREO tới khi có bảng trạng thái có bằng chứng production.
+
+QUYẾT ĐỊNH CLAUDE:
+- Dừng push. Việc 1: kiểm W33 Quest 8/9 + Gate 15 W33; nếu hỏng thì revert 4cffffbc (không đụng file đóng băng) rồi vá lại có trace W33.
+- Bỏ fallback là đúng hướng; production hiện màn hình trung tính cho trẻ, gate nhận data-testid lỗi = FAIL, thêm kiểm thử âm (dữ liệu rỗng → không hiện nội dung tuần khác).
+- Đảo quyết định cũ: Gate 8 phải sửa phạm vi NGAY (allowlist game-track tường minh; quét mảng nhiều dòng, WEEK\d+_, default tuần), không hoãn tới khi mở Game.
+- Station2Hub/ArenaHub: chứng minh sống/chết; chết thì vào danh mục rác, sống thì truyền tuần thật; cấm `33` cứng.
+- 7 Zone `|| [`: lập bảng bằng script, Claude duyệt rồi mới vá.
+- Tạo docs/OPEN_ITEMS (theo dõi bằng git) làm nguồn trích handoff; handoff không viết lại tay.
+- API key Google TTS xuất hiện trong báo cáo: kiểm commit/giới hạn/rotate.
+
+ĐANG CHỜ ANTIGRAVITY: prompt vòng 10 (A–G). KHÔNG push thêm.
+
+TỒN ĐỌNG: 14 vị trí Gate 8 game-track (allowlist), danh mục rác W33 (cần Amendment), Gói 003E, tự động hóa SOP Giai đoạn 1–2, duyệt Kế hoạch 4 Làn sóng, nghe tay shadowing_5/7/8 + vocab_claws (Owner). Game track vẫn gác.
+CẬP NHẬT 29/10/2026 — AUDIT C17 VÒNG 12 (gate_runs.zip: 28 log thô, 14 gate × W33/W34)
+
+✅ Log gate là thật (tên script khớp repo, số liệu khác nhau theo tuần: W33 112 MP3, W34 68 = 73+11−16). Gate 8 mù xác nhận bằng log (output W33 = W34, 14 lỗi đều game-track, dò chuỗi cố định). Whitelist dùng danh sách tay (W34: Jake/Tom/Nurse Sarah/Sarah/Headmaster; W33: Leo/Milo). Schema gate: W33 chỉ vi phạm dictation → Claude RÚT LẠI "W33 chưa có 3 scenarios". Freeze Guard W34 khóa 8 file nguồn (hash doc fae603be khớp).
+🔴 ITEM-10 sai: log nói Info Exchange W34 = 4 dòng/4 câu (Gate 15, 16, 17); W33 = 5/5.
+🔴 W34 < W33 vàng: CLIL facts 5 vs 7; glossary 7 vs 8; picture_story steps 3 vs 5; S1 diffs 4 vs 6; S2 4/4 vs 5/5; S3 ảnh 4 vs 5. Ngưỡng gate đã nới theo W34 (min 3; "4 hoặc 5") mà chưa có quyết định chính thức.
+🟡 Gate 15 W34 chạy localhost nhưng in "PRODUCTION CERTIFIED"; ERR_CONNECTION_REFUSED ở Quest 10–12 bị bỏ qua; Quest 13 chỉ kiểm chữ, không kiểm ảnh Part 3; hash ảnh 23/30.
+🟡 Gate 15 v2 chỉ in tên bước + "0 failures"; JSON telemetry không có trong zip → chưa kiểm được phủ 68 file. Gate 3 chỉ kiểm tồn tại + L1,L3,L4,L5,S1; Gate 11/12 chỉ in PASSED không số. Freeze Guard không khóa MP3/ảnh (ITEM-07 "SHA-256 đã khóa" chưa được chứng minh).
+QUYẾT ĐỊNH: W34 GOLDEN_FROZEN vẫn TREO (cần phiên âm 68 file, ảnh Part 3 + Action Lab, telemetry v2 có bảng phủ, giải trình số dòng). Chuẩn mặc định = W33 cho mọi số đếm tới khi có trích dẫn trang Cambridge. Gate 3 mở rộng L2/S2–S4 + tham chiếu hai chiều; Freeze Guard khóa hash MP3 + ảnh bằng manifest do script sinh; docs/GOLDEN_METRICS.json là nguồn ngưỡng duy nhất cho mọi gate; whitelist tên cấm sinh từ dữ liệu.
+ĐANG CHỜ ANTIGRAVITY: prompt vòng 12 (telemetry JSON, bảng phủ, STEP_C, ảnh, giải trình A–G). KHÔNG commit/push.
+TỒN ĐỌNG: danh mục rác W33 + code cũ (amendment), 003E (báo cáo điểm thật), 003F (nâng cấp gate), thu hồi API key (Owner), nghe tay shadowing_5/7/8 + vocab_claws (Owner), tự động hóa SOP Giai đoạn 1–2, duyệt Kế hoạch 4 Làn sóng. Game track vẫn gác.
+CẬP NHẬT 29/10/2026 — AUDIT C17 VÒNG 12 ĐÃ NHẬN & KIỂM CHỨNG ĐỘC LẬP (round12_evidence.zip, 59 file)
+
+✅ Gate 15 live production (tự đọc log thô, không chỉ tin báo cáo): 15/15 PASS cả W33 lẫn W34 tại
+commit 4cffffbc trên app.bkbacademy.vn — đóng dứt điểm lo ngại "chưa kiểm W33 trước khi xóa fallback"
+từ Vòng 10. ERR_CONNECTION_REFUSED giải trình hợp lý (chưa dán code api.js xác nhận, gap nhỏ).
+✅ Freeze Guard: tự đính chính tuyên bố sai "đã khóa hash audio" — trung thực đúng tinh thần, nhưng
+audio/ảnh VẪN CHƯA có Freeze Guard bảo vệ (lỗ hổng mở, chưa xử lý).
+✅ Gate 3/11/12 nâng cấp in số đo chi tiết — minh bạch hơn hẳn, giữ nguyên.
+
+🔴 PHÁT HIỆN MỚI (tự đối chiếu raw JSON, không phải báo cáo): STEP_C_FALLBACK_TABLE.md chỉ trình bày
+9/166 phát hiện "activeCurriculumFindings" trong fallback_scan_raw.json, KHÔNG nêu tiêu chí lọc. Tự
+lọc lại, tìm 6 file rõ ràng thuộc luồng 15 Quests/5 Zones đang sống bị bỏ sót hoàn toàn:
+ScienceReportCreator.jsx (có câu hardcode W33 y hệt lớp lỗi SentenceBuilderBattle), bossRotarySchedule.js
+(file trung tâm cấu hình rotary theo tuần, default weekNumber=33), useFlyersListeningPlayer.js (audio
+routing Quest 13), zoneDataMapper.js, TaskScreen.jsx, WorldDiscoveryHub.jsx. Đây là lần thứ 3 trong
+phiên này Antigravity báo cáo thiếu bằng chứng thô (sau vụ Gate 8/10 và vụ đồng bộ tài liệu governance)
+— ĐANG CHỜ Antigravity giải trình tiêu chí lọc + điều tra đầy đủ 6 file trên + phân loại 160 dòng còn
+lại. CHƯA ĐÓNG Step C.
+
+🟡 Gate 3 mới: 16 audio + 97/123 ảnh bị gắn "orphaned" ở W34 — CHƯA xác minh có phải false positive
+do URL dựng động (lặp lại kiểu lỗi Gate 10 regex) hay là rác thật. ĐANG CHỜ xác minh mẫu.
+
+⭐ QUYẾT ĐỊNH CỦA OWNER (Bình, 29/10): bảng đối soát W33 vs W34 cho thấy Zone 5 Boss Battle W34 không
+chỉ giảm độ khó từ vựng (đúng Format Scaffolding Bridge 05/09) mà còn giảm SỐ LƯỢNG hạng mục đề thi
+xuống chuẩn A1 Movers (S1: 4 thay vì 6 điểm khác biệt; S2: 4 thay vì 5 cue; S3: 4 thay vì 5 tranh) —
+vượt phạm vi quyết định gốc. Owner CHỌN: nâng lên đúng chuẩn A2 Flyers đầy đủ 6/5/5, chấp nhận tốn
+thêm thời gian sản xuất nội dung thật thay vì giữ cấu trúc rút gọn. ĐANG CHỜ Antigravity sản xuất nội
+dung thật (2 điểm khác biệt, 1 cue, 1 tranh bổ sung) + siết lại GATE15_SPEC.json W34, đồng thời kiểm
+tra nhanh W35/W36 có bị rút gọn tương tự không.
+
+🔴 KHẨN (bảo mật, tách riêng khỏi luồng nội dung): API key Google TTS từng bị lộ trong báo cáo cũ vẫn
+chưa xác nhận đã rotate/thu hồi hay chưa nằm trong lịch sử git. ĐANG CHỜ Antigravity điều tra độc lập,
+không chờ xong việc nội dung.
+
+TUYỆT ĐỐI KHÔNG COMMIT/PUSH — vẫn giữ nguyên tắc như Vòng 12.
+Danh mục rác W33, Gói 003E, tự động hóa SOP Giai đoạn 1-2, Kế hoạch 4 Làn sóng, nghe tay
+shadowing_5/7/8 + vocab_claws (Owner): vẫn tồn đọng, không đổi.
+Game track: vẫn gác, không đổi.
+## CẬP NHẬT 29/10/2026 — VÒNG 13 REVIEW (Claude)
+
+### Phát hiện nghiêm trọng nhất toàn phiên:
+`src/components/cambridge/ScienceReportCreator.jsx:26` — fallback `defaultInquiryData`
+(câu hỏi W33 "Jake/wet corridor") ĐANG KÍCH HOẠT THẬT cho học sinh W34 tại Quest 6
+(Discovery Report) Bước 4, do `writing_hub.js` của W34 thiếu field `inquiryQuestion`.
+Khác với các lỗi fallback trước đây (SentenceBuilderBattle/BarModelQuest — chỉ ở trạng
+thái "armed/dormant"), đây là lỗi nội dung sai-tuần ĐANG HIỂN THỊ THẬT. Mức ưu tiên:
+CAO NHẤT, vượt trên cả API key.
+
+### Quyết định Claude (Vòng 13 → 14):
+1. Cho phép soạn + vá ScienceReportCreator.jsx theo pattern no-fallback/fail-loud đã
+   duyệt — nội dung Inquiry mới (CLIL, chủ đề Lion and Mouse) phải trình Claude duyệt
+   trước khi ghép vào dữ liệu W34. CHƯA commit/push.
+2. CHƯA duyệt deploy production bản 6/5/5 của W34 — gộp chung với fix #1, xác minh lại
+   bằng 1 đợt Gate 15 production run duy nhất.
+3. Yêu cầu bằng chứng thô đầy đủ (không phải bảng tóm tắt) cho 19 file nhóm "Active 15
+   Quests & Cambridge UI" trong Step C — lý do: lịch sử phiên này đã 3 lần phát hiện
+   under-report bằng chứng (Gate 8/10, round scope-creep, Step C 166→9).
+4. Gate 3 orphaned-audio (16 file): xác nhận false positive, không cần hành động.
+5. Gate 3 orphaned-images (97 file): yêu cầu danh sách đầy đủ trước khi cho phép xoá
+   (mới xác minh mẫu 5/97).
+6. bossRotarySchedule.js / useFlyersListeningPlayer.js / zoneDataMapper.js: default
+   tham số an toàn trong luồng hiện tại, nhưng ghi nhận là nợ kiến trúc (cùng pattern
+   đã gây lỗi SentenceBuilderBattle) — dọn ở đợt sau, không khẩn.
+7. TaskScreen.jsx:182 (fallback 3 câu hỏi generic): mức độ nhẹ, không kích hoạt ở W34,
+   defer. TaskScreen.jsx:268: false positive RBAC, không hành động.
+8. WorldDiscoveryHub.jsx: xác nhận chết hoàn toàn (route legacy) — dọn rác đợt sau.
+9. API key: VẪN CHƯA xác nhận đã thu hồi — nhắc Owner xử lý trên Google Cloud Console.
+   Lưu ý: khoá này vừa bị dùng lại để sinh audio mới trong Round 13 — tạm dừng mọi
+   lệnh gọi TTS tiếp theo cho tới khi Owner xác nhận đã xoay vòng khoá.
+10. W35 (vẫn 4/4/4) và W36 (rỗng): xếp hàng áp dụng chuẩn 6/5/5 sau khi W34 hoàn tất
+    deploy — theo quyết định chính sách của Owner (nâng chuẩn A2 Flyers 6/5/5).
+
+### Trạng thái Git: sạch, chưa commit/push — đúng kỷ luật, tiếp tục giữ nguyên tắc
+"không commit/push khi chưa có phê duyệt từng phần" cho Vòng 14.
+## CẬP NHẬT 30/10/2026 — ĐIỀU CHỈNH ƯU TIÊN THEO QUYẾT ĐỊNH OWNER (sau Vòng 14)
+
+### Quyết định của Owner (Bình), ghi nhận trực tiếp:
+1. Kiến trúc TTS KHÔNG đổi: pre-generate MP3 tĩnh là chính (option 1), TTS on-demand chỉ
+   cho nội dung dynamic. Việc rotate khoá API chỉ là xử lý khoá bị lộ, không phải ngừng
+   dùng TTS.
+2. W35 hiện tại chỉ là nội dung nháp/rác — sẽ XOÁ SẠCH và làm lại từ đầu sau khi W34 hoàn
+   thiện và có pipeline sản xuất hàng loạt. KHÔNG đầu tư công sức điều tra/sửa W35 cho tới
+   khi có chỉ đạo mới. (Claude tự nhận đã mở rộng phạm vi sang W35 sai thời điểm ở Vòng 14
+   — đã rút lại.)
+3. Owner muốn thấy push tăng dần để test thực tế, không chờ gộp thành 1 đợt deploy hoàn hảo.
+
+### Điều chỉnh quy trình (Vòng 15 trở đi):
+- TÁCH làm 2 đợt push cho W34 thay vì gộp 1 đợt lớn:
+  + Đợt 1 (ưu tiên tuyệt đối, Vòng 15): Gate 10 fix + SentenceBuilderBattle/BarModelQuest
+    fix + nâng cấp Cambridge 6/5/5 — cả 3 đã verify xong, CHO PHÉP commit + push ngay sau
+    1 lần chạy Gate 15 `--production` cuối cùng để xác nhận.
+  + Đợt 2 (fast-follow, không chặn đợt 1): ScienceReportCreator.jsx fix — hoàn tất áp dụng
+    patch + test mới + Claude duyệt lần cuối trước khi push riêng.
+- Lần đầu tiên trong phiên audit này Claude cho phép Antigravity commit + push — đánh dấu
+  chuyển từ giai đoạn "chỉ điều tra, giữ local" sang "xác minh xong thì đẩy ngay, không
+  giữ lại chờ".
+

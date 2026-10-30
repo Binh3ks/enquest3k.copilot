@@ -223,6 +223,16 @@
   <path d="M710 556 Q720 550 730 556" stroke="#0288D1" stroke-width="2" fill="none"/>
   <path d="M770 548 Q780 543 790 548" stroke="#0288D1" stroke-width="2" fill="none"/>
 
+  <!-- ══ JUMPING FISH (Scene A ONLY — difference d6, centroid x:82, y:90) ══ -->
+  <g transform="translate(740,540)">
+    <ellipse cx="0" cy="8" rx="14" ry="4" fill="#B3E5FC" opacity="0.8"/>
+    <ellipse cx="0" cy="0" rx="14" ry="7" fill="#42A5F5" transform="rotate(-25)"/>
+    <polygon points="-12,0 -20,-7 -17,0 -20,7" fill="#1E88E5" transform="rotate(-25)"/>
+    <polygon points="0,-7 5,-12 3,-7" fill="#1E88E5"/>
+    <circle cx="8" cy="-2" r="2" fill="white"/>
+    <circle cx="9" cy="-2" r="1" fill="#212121"/>
+  </g>
+
   <!-- ══ ROPE NET near bushes ══ -->
   <g transform="translate(630,272)" opacity="0.85">
     <!-- Bushes -->
