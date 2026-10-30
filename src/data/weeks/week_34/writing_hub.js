@@ -80,6 +80,26 @@ export const writingHub = {
     notebookTitle: "Animal Cooperation Lab Notebook",
     purpose: "🌱 Today we write like little scientists: we say what we SAW, use past tense, and join ideas with because / so!",
     teacher_parent_note: "Learn the language of science reports (observed / because / past tense), not science content.",
+    inquiryQuestion: {
+      question: "Why was the tiny mouse able to free the trapped lion when the mighty lion could not break the net alone?",
+      options: [
+        {
+          text: "The mouse used its sharp gnawing teeth to chew through individual rope fibers, which the lion's large muscles could not break.",
+          isCorrect: true,
+          explanation: "💡 Correct! Small rodents have sharp incisor teeth adapted for gnawing through tough rope fibers, proving that specialized adaptations help animals cooperate and survive."
+        },
+        {
+          text: "The lion pulled the heavy net much harder with his paws until all the knots broke apart.",
+          isCorrect: false,
+          explanation: "⚠️ Science Tip: Pulling with brute force tightened the knots even more; large muscles alone could not loosen the woven net."
+        },
+        {
+          text: "The rain washed the net away into the river, so the lion walked away freely without help.",
+          isCorrect: false,
+          explanation: "⚠️ Science Tip: Heavy fiber nets are secured to trees and do not wash away in light rain; cooperation was necessary to cut the ropes."
+        }
+      ]
+    },
     data_card: [
       { subject: "🦁 Mighty Lion", action: "protected the forest territory", result: "kept other animals safe" },
       { subject: "🐭 Tiny Mouse", action: "planted new seeds in the ground", result: "helped new trees grow" },

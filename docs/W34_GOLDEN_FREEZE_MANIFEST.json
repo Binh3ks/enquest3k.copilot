@@ -4,7 +4,7 @@
   "weekNumber": 34,
   "theme": "The Lion and the Mouse & Forest Ecosystem",
   "cefrLevel": "A2 Flyers / Stage 1 Young Learners (Ages 7–10)",
-  "freezeDate": "2026-10-28T12:00:00Z",
+  "freezeDate": "2026-10-30T09:00:00Z",
   "lifecycleState": "GOLDEN_FROZEN",
   "rotaryCycle": {
     "cycleNumber": 1,
@@ -25,7 +25,7 @@
   "protectedFileHashes": {
     "src/data/weeks/week_34/reading_hub.js": "44300d245c4c46ab2ee2980b7429c271b79dca15892df2c96932104a1f5dfd6f",
     "src/data/weeks/week_34/listening_hub.js": "8ee174e2fb59d8069607e326d1c3463c20c1eddbc242c5f1f8e6cc26a098d2f8",
-    "src/data/weeks/week_34/writing_hub.js": "4a87e546ef1c7162e805645c2f90efa474c9f8b327ea406bad43117581aa9713",
+    "src/data/weeks/week_34/writing_hub.js": "ba1eeb925c01b9162d1c6f41959c1c0922953f15607a93886f5f899cc5abf7a4",
     "src/data/weeks/week_34/speaking_hub.js": "7f2fc8de9aec0fb93521fe3cddc16e5089a5f6fe5d3cd30ee27d24904d5174fe",
     "src/data/weeks/week_34/skill_practice_hub.js": "ce95578990e48a8a50c4e078900718cea56285e81cdc7662a1bf1e4b0201ba7e",
     "src/data/weeks/week_34/vocab.js": "34315f91b873b8e401072869b2c70e3a8df329a40f3629316f66210d782063ef",
@@ -55,7 +55,7 @@
   ],
   "gate15RelationshipNote": "Hệ thống duy trì song song cả hai gate: Gate 15 (v1) kiểm tra DOM assertions tĩnh và screenshot deduplication (>= 15 unique hashes), trong khi Gate 15 v2 kiểm tra tương tác chức năng động trên live production, phát âm thanh thật, bắt chặn runtime TTS và kiểm soát chuyển trạng thái không treo.",
   "validationSuite": [
-    { "gate": "Gate 3", "script": "scripts/gate3_media_integrity.mjs 34", "target": "84/84 MP3s verified" },
+    { "gate": "Gate 3", "script": "scripts/gate3_media_integrity.mjs 34", "target": "69/69 MP3s verified" },
     { "gate": "Gate 11", "script": "scripts/gate11_content_richness.mjs 34", "target": "Word counts and variety standard" },
     { "gate": "Gate 12", "script": "scripts/gate12_comprehensive_cefr.mjs 34", "target": "0 B1/B2 violations" },
     { "gate": "Gate 15", "script": "scripts/gate15_production_dom_assertions.mjs 34 --local", "target": "15/15 Quests live DOM PASS + screenshot dedup >= 15 unique hashes" },
@@ -84,7 +84,7 @@
     { "id": "weekly_review", "day": 5, "zone": 4, "name": "Boss Review (Shield 3)", "type": "assessment" }
   ],
   "criticalMediaSummary": {
-    "totalStaticMP3s": 84,
+    "totalStaticMP3s": 69,
     "activeMatchingMP3s": 55,
     "barModelSVGs": 5,
     "webtoonScenes": 5,

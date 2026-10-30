@@ -220,7 +220,27 @@ export const writingHubData = {
     pills_L1: ["had very low friction", "when water covered the floor", "causing students to slip"],
     pills_L2: ["they created high grip", "so children walked steadily", "without falling down"],
     pills_L3: ["by wearing rubber shoes", "because surface friction", "prevents dangerous accidents"],
-    min_words: 20
+    min_words: 20,
+    inquiryQuestion: {
+      question: "Why was Jake able to walk safely down the wet corridor while Tom slipped and fell?",
+      options: [
+        {
+          text: "Jake's textured rubber shoe soles provided strong friction and grip against the wet tiles.",
+          isCorrect: true,
+          explanation: "💡 Correct! Textured rubber material creates high surface friction with floor tiles, preventing sliding even when wet."
+        },
+        {
+          text: "Jake was running much faster than Tom, so the water did not have time to make him slip.",
+          isCorrect: false,
+          explanation: "⚠️ Science Tip: Running fast makes it harder to stop and makes slipping much more dangerous!"
+        },
+        {
+          text: "The floor tiles absorbed all the water where Jake walked, making the surface completely dry.",
+          isCorrect: false,
+          explanation: "⚠️ Science Tip: Smooth ceramic tiles do not absorb water; water stays on the surface forming a slippery film."
+        }
+      ]
+    }
   }
 };
 
