@@ -1,9 +1,9 @@
 # 🏭 ENGQUEST3K — WEEK PRODUCTION SOP (STANDARD OPERATING PROCEDURE)
 
 **Document Reference**: `docs/WEEK_PRODUCTION_SOP.md`  
-**Version**: 2.2.0 (Unified 15 Quests / 5 Zones + Lite Mode W01–W16, Multi-Level Assessment & 28-Mock Test Cadence)  
+**Version**: 2.3.0 (Cambridge Exam Structural Fidelity Invariant, Strict No-Default Parameters, Chronicles Suspension)  
 **Governing Standard**: Cambridge CEFR (Pre-A1 to B1+) & W33 Golden Standard Architecture  
-**Effective Date**: 2026-09-05  
+**Effective Date**: 2026-10-30  
 **Status**: 🟢 **CANONICAL PRODUCTION SOP**
 
 ---
@@ -30,13 +30,23 @@ Every week created for EngQuest3K (from Week 01 to Week 156) must adhere strictl
    - **`sentence_smash` MUST be displayed as `Grammar Duel`**.
    - **`math_quest` MUST be displayed as `Math Quest`**.
    - **`broadcast_studio` MUST be displayed as `Video Challenge`**.
-6. **No-Fallback & Fail-Loud Invariant**:
-   - Interactive components must never use silent dummy text fallbacks. If required data is missing from the hub, render an explicit warning banner and fail loudly during audit.
+6. **No-Fallback & Fail-Loud Invariant (Updated 2026-10-30)**:
+   - Interactive components, hooks, utility functions, and loaders must NEVER use silent dummy fallbacks (e.g. hardcoded text, fallback question objects, or mock answers).
+   - Functions and hooks that take a `weekNumber` or `weekId` MUST NOT define a default parameter (e.g. `weekNumber = 33` or `weekNumber = 1`). All week context must be passed explicitly from caller/route. If an argument is missing or invalid, throw an error or fail loud immediately.
+   - If required data is missing from the hub or caller, render an explicit warning banner and fail loudly during audit.
 7. **Authentic Cambridge 2-Play Loop Invariant**:
    - Listening Part 1–5 audios must follow the authentic Cambridge cycle:
      $$\text{Play 1} \longrightarrow \text{"Now listen to Part X again."} \longrightarrow \text{3-second pause} \longrightarrow \text{Play 2} \longrightarrow \text{"That is the end of Part X."}$$
-8. **Speaking Part 3 (Picture Story) Standard**:
-   - Supports 4 or 5 images. Examiner introduces Picture 1; student narrates subsequent pictures (Pictures 2–4 or Pictures 2–5).
+8. **Cambridge Exam Structural Item-Count & Fidelity Invariant (2026-10-30)**:
+   - The structural number of items/questions for every Cambridge assessment part is strictly fixed by the official Cambridge Young Learners English (YLE) Handbook for Teachers (Starters / Movers / Flyers) and MUST NOT be reduced or altered, regardless of pedagogical scaffolding or learner proficiency level.
+   - Scaffolding MUST only occur in hints, prompts, audio rate, vocabulary tier, or response guidance (e.g., word banks, sentence frames), NEVER by reducing the number of exam tasks.
+   - **Canonical Flyers Item Counts**:
+     - **Speaking Part 1 (Find Differences)**: Exactly 6 differences (Handshake/intro + 6 differences).
+     - **Speaking Part 2 (Information Exchange)**: Exactly 5 cues / 5 questions (both Ask and Answer cards).
+     - **Speaking Part 3 (Picture Story)**: Exactly 5 pictures (Examiner introduces Picture 1; student continues with Pictures 2–5).
+     - **Speaking Part 4 (Personal Questions)**: Exactly 4–5 thematic questions.
+     - **Listening Parts 1–5**: Part 1 (5 items + 1 example, 7 names), Part 2 (5 items + 1 example), Part 3 (5 items + 1 example), Part 4 (5 items + 1 example), Part 5 (5 items + 1 example).
+     - **Reading & Writing Parts 1–7**: Exact item counts matching Cambridge Flyers handbook (Part 1: 10 items, 15 words; Part 2: 5 items; Part 3: 5 items; Part 4: 10 items; Part 5: 7 items; Part 6: 5 items; Part 7: 1 picture story / 3 pictures).
 9. **Action Lab 3-Scenario Depth Standard**:
    - The Action Lab must feature 3 distinct interactive scenarios/diagrams (`stages: [Stage 1, Stage 2, Stage 3]`) covering physical causes, materials comparison, and safety/first aid procedures. Never ship a single-image trivial lab.
 10. **Canonical Audio Fallback Hierarchy Invariant**:
@@ -469,7 +479,12 @@ Every component representing one of the 15 Quests MUST implement the following U
 
 ---
 
-## 12. Chronicles 21 Mini-Game Mode Architecture & Release Gating Standards
+## 12. Chronicles 21 Mini-Game Mode Architecture & Release Gating Standards [TẠM DỪNG — Chờ chỉ đạo Owner (2026-10-30)]
+
+> [!WARNING]
+> **TRẠNG THÁI PHÁT TRIỂN / SẢN XUẤT: TẠM DỪNG (SUSPENDED)**  
+> Kể từ ngày 2026-10-30, toàn bộ tiến trình sản xuất nội dung (`wh_questions.js`, `word_class_duel.js`) và tích hợp 21 Mini-Games của Super Leo Chronicles tạm thời dừng lại theo chỉ đạo của Project Owner để tập trung nguồn lực hoàn thiện 100% Core 15 Quests / 5 Zones và Pipeline sản xuất hàng loạt.  
+> Các quy chuẩn dưới đây được lưu giữ lại làm tài liệu tham chiếu kỹ thuật và sẽ chỉ được kích hoạt lại khi có thông báo chính thức từ Owner.
 
 ### 12.1 The Master 21 Mini-Game Roster (7 Floors × 3 Doors)
 Super Leo Chronicles organizes gamified dungeon crawling across 7 Floors (Days 1–7), with each floor presenting exactly 3 doors:
