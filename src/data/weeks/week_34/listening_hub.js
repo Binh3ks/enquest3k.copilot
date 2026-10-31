@@ -50,7 +50,8 @@ Man: That is Rob the rabbit. He is hopping gently.`,
   },
 
   listening_p3: {
-    example: { name: "Binoculars", target_letter: "H" },
+    audio_url: "/audio/week34/listening_p3_full.mp3",
+    example: { name: "Binoculars", target_letter: "H", audio_url: "/audio/week34/listening_p3_example.mp3" },
     items: [
       { id: 1, name: "Wooden Trap", target_letter: "A", audio_url: "/audio/week34/listening_p3_item1.mp3" },
       { id: 2, name: "Thick Rope", target_letter: "B", audio_url: "/audio/week34/listening_p3_item2.mp3" },
@@ -59,14 +60,14 @@ Man: That is Rob the rabbit. He is hopping gently.`,
       { id: 5, name: "Compass", target_letter: "E", audio_url: "/audio/week34/listening_p3_item5.mp3" }
     ],
     cards: [
-      { letter: "A", name: "Wooden Trap", location_name: "Forest Clearing", image_url: "/images/week34/card_a.jpg" },
-      { letter: "B", name: "Thick Rope", location_name: "Hunter Camp", image_url: "/images/week34/card_b.jpg" },
-      { letter: "C", name: "Forest Map", location_name: "Tree Hollow", image_url: "/images/week34/card_c.jpg" },
-      { letter: "D", name: "Water Bottle", location_name: "Riverbank", image_url: "/images/week34/card_d.jpg" },
-      { letter: "E", name: "Compass", location_name: "Lookout Rock", image_url: "/images/week34/card_e.jpg" },
-      { letter: "F", name: "Flashlight", location_name: "Dark Cave", image_url: "/images/week34/card_f.jpg" },
-      { letter: "G", name: "Backpack", location_name: "Base Tent", image_url: "/images/week34/card_g.jpg" },
-      { letter: "H", name: "Binoculars", location_name: "Wooden Tower", image_url: "/images/week34/card_h.jpg" }
+      { letter: "A", name: "Forest Clearing", location_name: "Forest Clearing", image_url: "/images/week34/card_a.jpg" },
+      { letter: "B", name: "Hunter Camp", location_name: "Hunter Camp", image_url: "/images/week34/card_b.jpg" },
+      { letter: "C", name: "Tree Hollow", location_name: "Tree Hollow", image_url: "/images/week34/card_c.jpg" },
+      { letter: "D", name: "Riverbank", location_name: "Riverbank", image_url: "/images/week34/card_d.jpg" },
+      { letter: "E", name: "Lookout Rock", location_name: "Lookout Rock", image_url: "/images/week34/card_e.jpg" },
+      { letter: "F", name: "Dark Cave", location_name: "Dark Cave", image_url: "/images/week34/card_f.jpg" },
+      { letter: "G", name: "Base Tent", location_name: "Base Tent", image_url: "/images/week34/card_g.jpg" },
+      { letter: "H", name: "Wooden Tower", location_name: "Wooden Tower", image_url: "/images/week34/card_h.jpg" }
     ]
   },
 
