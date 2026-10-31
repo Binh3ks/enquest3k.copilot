@@ -17,6 +17,7 @@ export const readingHub = {
         narration_en: "On a warm afternoon, the mighty **lion was sleeping** peacefully under the trees.",
         narration_vi: "Vào một buổi chiều ấm áp, chú sư tử dũng mãnh đang ngủ yên bình dưới tán cây.",
         image_url: "/images/week34/webtoon_scene_1.png",
+        audio_url: "/audio/week34/scene_1.mp3",
         hotspots: [
           { id: "h1_1", label_en: "Sleeping Lion", label_vi: "Sư tử đang ngủ", x: 45, y: 55 },
           { id: "h1_2", label_en: "Shady Trees", label_vi: "Hàng cây râm mát", x: 20, y: 30 },
@@ -31,6 +32,7 @@ export const readingHub = {
         narration_en: "While the lion was resting, a **tiny mouse ran** across the lion's big front paw.",
         narration_vi: "Trong khi sư tử đang nghỉ ngơi, một chú chuột nhỏ chạy ngang qua bàn chân trước to lớn.",
         image_url: "/images/week34/webtoon_scene_2.png",
+        audio_url: "/audio/week34/scene_2.mp3",
         hotspots: [
           { id: "h2_1", label_en: "Tiny Mouse", label_vi: "Chuột nhỏ", x: 50, y: 50 },
           { id: "h2_2", label_en: "Surprised Lion", label_vi: "Sư tử ngạc nhiên", x: 35, y: 40 },
@@ -45,6 +47,7 @@ export const readingHub = {
         narration_en: "The mouse begged for mercy and promised to **help the lion** one day if he let him go.",
         narration_vi: "Chú chuột cầu xin tha mạng và hứa sẽ giúp sư tử một ngày nào đó nếu được tha.",
         image_url: "/images/week34/webtoon_scene_3.png",
+        audio_url: "/audio/week34/scene_3.mp3",
         hotspots: [
           { id: "h3_1", label_en: "Begging Mouse", label_vi: "Chuột cầu xin", x: 55, y: 65 },
           { id: "h3_2", label_en: "Gentle Lion", label_vi: "Sư tử nhân từ", x: 40, y: 45 },
@@ -59,6 +62,7 @@ export const readingHub = {
         narration_en: "A few days later, hunters trapped the lion in a **strong net** made of thick ropes.",
         narration_vi: "Vài ngày sau, những người thợ săn bẫy sư tử trong tấm lưới chắc chắn làm từ dây thừng dày.",
         image_url: "/images/week34/webtoon_scene_4.png",
+        audio_url: "/audio/week34/scene_4.mp3",
         hotspots: [
           { id: "h4_1", label_en: "Hunter's Net", label_vi: "Lưới thợ săn", x: 50, y: 50 },
           { id: "h4_2", label_en: "Trapped Lion", label_vi: "Sư tử mắc bẫy", x: 45, y: 60 },
@@ -73,6 +77,7 @@ export const readingHub = {
         narration_en: "The little mouse quickly **chewed through the ropes** and set the lion completely free.",
         narration_vi: "Chú chuột nhỏ nhanh chóng gặm đứt dây thừng và trả tự do hoàn toàn cho sư tử.",
         image_url: "/images/week34/webtoon_scene_5.png",
+        audio_url: "/audio/week34/scene_5.mp3",
         hotspots: [
           { id: "h5_1", label_en: "Chewed Ropes", label_vi: "Dây thừng bị gặm", x: 50, y: 60 },
           { id: "h5_2", label_en: "Free Lion", label_vi: "Sư tử tự do", x: 35, y: 45 },
