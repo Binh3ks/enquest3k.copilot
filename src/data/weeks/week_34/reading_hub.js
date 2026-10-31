@@ -263,23 +263,54 @@ export const readingHub = {
 
   rw_part2: {
     title: "Leo & Milo's Fable Conversation",
-    example: { speaker_a: "Leo", text_a: "Why did you wake me up?", speaker_b: "Milo", answer_letter: "D", answer_text: "I am sorry! I was running in a hurry." },
+    example: {
+      speaker_a: "Leo",
+      text_a: "Why did you run across my paw while I was sleeping?",
+      speaker_b: "Milo",
+      answer_letter: "D",
+      answer_text: "I am really sorry! I was running in a hurry."
+    },
     turns: [
-      { id: "q1", speaker_a: "Leo", text_a: "What can a tiny creature do for me?", correct_letter: "G" },
-      { id: "q2", speaker_a: "Milo", text_a: "One day, I might be able to help you!", correct_letter: "B" },
-      { id: "q3", speaker_a: "Leo", text_a: "Haha! That is very funny.", correct_letter: "A" },
-      { id: "q4", speaker_a: "Leo", text_a: "Help! I am trapped in this net!", correct_letter: "F" },
-      { id: "q5", speaker_a: "Milo", text_a: "Don't worry! I will chew through these ropes.", correct_letter: "E" }
+      {
+        id: "q1",
+        speaker_a: "Leo",
+        text_a: "What could a tiny creature like you ever do for a mighty lion?",
+        correct_letter: "G"
+      },
+      {
+        id: "q2",
+        speaker_a: "Leo",
+        text_a: "Haha! How could you ever help me when you are so small?",
+        correct_letter: "B"
+      },
+      {
+        id: "q3",
+        speaker_a: "Leo",
+        text_a: "All right, run along now! I will let you go free today.",
+        correct_letter: "A"
+      },
+      {
+        id: "q4",
+        speaker_a: "Leo",
+        text_a: "Oh no! A few days later, hunters caught me in this heavy net!",
+        correct_letter: "E"
+      },
+      {
+        id: "q5",
+        speaker_a: "Leo",
+        text_a: "Can your tiny teeth really cut through these thick ropes?",
+        correct_letter: "C"
+      }
     ],
     answer_options: [
       { letter: "A", text: "Thank you, kind lion! I will never forget your mercy." },
-      { letter: "B", text: "Even small friends can be a great help." },
-      { letter: "C", text: "I'm sorry for disturbing your rest." },
-      { letter: "D", text: "I am sorry! I was running in a hurry." },
-      { letter: "E", text: "I remember my promise! Let me free you now." },
-      { letter: "F", text: "Please help me, little mouse!" },
-      { letter: "G", text: "Nothing much. Small creatures are too weak." },
-      { letter: "H", text: "I will call the other animals to help." }
+      { letter: "B", text: "Even small friends can be a great help when you have trouble." },
+      { letter: "C", text: "Yes, they are very sharp! I will chew through them in a minute." },
+      { letter: "D", text: "I am really sorry! I was running in a hurry." },
+      { letter: "E", text: "Don't worry, Leo! I remember my promise and came to rescue you." },
+      { letter: "F", text: "I saw some juicy wild berries near the riverbank." },
+      { letter: "G", text: "Please spare me, and one day I might be able to help you!" },
+      { letter: "H", text: "The forest path is very dark and wet tonight." }
     ]
   },
 
