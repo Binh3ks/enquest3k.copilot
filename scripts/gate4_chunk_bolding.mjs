@@ -9,7 +9,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -72,6 +72,25 @@ if (fs.existsSync(readingHubPath)) {
     if (/[.,!?:;]$/.test(chunkText.trim())) {
       errors.push(`[PUNCTUATION INSIDE BOLD] "${match[0]}" in reading_hub.js has punctuation inside bold tag!`);
     }
+  }
+
+  // Scan clil_article.vocab_focus: All items MUST be ESL collocations/chunks (>= 2 words)
+  try {
+    const hubModule = await import(pathToFileURL(readingHubPath).href);
+    const rh = hubModule.readingHub || hubModule.default;
+    const vocabFocus = rh?.clil_article?.vocab_focus;
+    if (Array.isArray(vocabFocus)) {
+      console.log(`🔬 Scanned clil_article.vocab_focus: Found ${vocabFocus.length} target collocations.`);
+      vocabFocus.forEach(item => {
+        totalChunksChecked++;
+        const words = item.trim().split(/\s+/);
+        if (words.length < 2) {
+          errors.push(`[CLIL VOCAB_FOCUS SINGLE WORD] "${item}" in clil_article.vocab_focus has only ${words.length} word(s). Every vocab_focus target MUST be an ESL collocation/chunk (>= 2 words)!`);
+        }
+      });
+    }
+  } catch (err) {
+    console.warn(`[WARN] Could not dynamically import reading_hub.js for vocab_focus audit: ${err.message}`);
   }
 }
 
