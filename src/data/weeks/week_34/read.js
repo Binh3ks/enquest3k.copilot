@@ -92,36 +92,41 @@ export const readData = {
       step: 1,
       question_vi: "Chuyện xảy ra ở đâu và sư tử đang làm gì?",
       question_en: "Where did the story happen and what was the lion doing?",
-      chips: ["warm afternoon", "huge lion", "sleeping under a shady tree"],
-      sentence: "One warm afternoon, a huge lion was sleeping under a shady tree."
+      chips: ["warm afternoon", "mighty lion", "sleeping peacefully"],
+      sentence: "On a warm afternoon, the mighty lion was sleeping peacefully under the trees.",
+      audio_url: "/audio/week34/scene_1.mp3"
     },
     {
       step: 2,
       question_vi: "Điều gì bất ngờ xảy ra khi sư tử đang ngủ?",
       question_en: "What happened while the lion was sleeping?",
       chips: ["tiny mouse", "ran across", "big front paw"],
-      sentence: "While he was sleeping, a tiny mouse accidentally ran across his front paw."
+      sentence: "While the lion was resting, a tiny mouse ran across the lion's big front paw.",
+      audio_url: "/audio/week34/scene_2.mp3"
     },
     {
       step: 3,
       question_vi: "Sư tử đã làm gì và chú chuột đã hứa điều gì?",
       question_en: "What did the lion do and what did the mouse promise?",
-      chips: ["caught the mouse", "made a promise", "help you one day"],
-      sentence: "The lion caught the mouse angrily, but the mouse promised to help him one day."
+      chips: ["begged for mercy", "promised to help", "let him go"],
+      sentence: "The mouse begged for mercy and promised to help the lion one day if he let him go.",
+      audio_url: "/audio/week34/scene_3.mp3"
     },
     {
       step: 4,
       question_vi: "Rắc rối gì xảy ra với sư tử vài ngày sau đó?",
       question_en: "What trouble happened to the lion a few days later?",
-      chips: ["two hunters", "trapped in a net", "roared loudly"],
-      sentence: "Hunters trapped the lion in a heavy rope net, and the lion roared loudly for help."
+      chips: ["a few days later", "trapped the lion", "thick ropes"],
+      sentence: "A few days later, hunters trapped the lion in a strong net made of thick ropes.",
+      audio_url: "/audio/week34/scene_4.mp3"
     },
     {
       step: 5,
       question_vi: "Chú chuột đã giải cứu sư tử như thế nào?",
       question_en: "How did the tiny mouse rescue the mighty lion?",
-      chips: ["chewed through ropes", "freed safely", "became best friends"],
-      sentence: "The mouse chewed through the thick ropes with sharp teeth, and they became best friends."
+      chips: ["quickly chewed through", "set the lion", "completely free"],
+      sentence: "The little mouse quickly chewed through the ropes and set the lion completely free.",
+      audio_url: "/audio/week34/scene_5.mp3"
     }
   ],
 

@@ -79,6 +79,48 @@ export const readingHub = {
           { id: "h5_3", label_en: "Happy Mouse", label_vi: "Chuột vui vẻ", x: 70, y: 65 }
         ]
       }
+    ],
+    retell_questions: [
+      {
+        step: 1,
+        question_vi: "Chuyện xảy ra ở đâu và sư tử đang làm gì?",
+        question_en: "Where did the story happen and what was the lion doing?",
+        chips: ["warm afternoon", "mighty lion", "sleeping peacefully"],
+        sentence: "On a warm afternoon, the mighty lion was sleeping peacefully under the trees.",
+        audio_url: "/audio/week34/scene_1.mp3"
+      },
+      {
+        step: 2,
+        question_vi: "Điều gì bất ngờ xảy ra khi sư tử đang ngủ?",
+        question_en: "What happened while the lion was sleeping?",
+        chips: ["tiny mouse", "ran across", "big front paw"],
+        sentence: "While the lion was resting, a tiny mouse ran across the lion's big front paw.",
+        audio_url: "/audio/week34/scene_2.mp3"
+      },
+      {
+        step: 3,
+        question_vi: "Sư tử đã làm gì và chú chuột đã hứa điều gì?",
+        question_en: "What did the lion do and what did the mouse promise?",
+        chips: ["begged for mercy", "promised to help", "let him go"],
+        sentence: "The mouse begged for mercy and promised to help the lion one day if he let him go.",
+        audio_url: "/audio/week34/scene_3.mp3"
+      },
+      {
+        step: 4,
+        question_vi: "Rắc rối gì xảy ra với sư tử vài ngày sau đó?",
+        question_en: "What trouble happened to the lion a few days later?",
+        chips: ["a few days later", "trapped the lion", "thick ropes"],
+        sentence: "A few days later, hunters trapped the lion in a strong net made of thick ropes.",
+        audio_url: "/audio/week34/scene_4.mp3"
+      },
+      {
+        step: 5,
+        question_vi: "Chú chuột đã giải cứu sư tử như thế nào?",
+        question_en: "How did the tiny mouse rescue the mighty lion?",
+        chips: ["quickly chewed through", "set the lion", "completely free"],
+        sentence: "The little mouse quickly chewed through the ropes and set the lion completely free.",
+        audio_url: "/audio/week34/scene_5.mp3"
+      }
     ]
   },
 

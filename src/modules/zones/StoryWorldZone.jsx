@@ -1437,7 +1437,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                           <button
                             type="button"
                             onClick={() => {
-                              const audioUrl = currentQ.audio_url || (activeWeek ? `/audio/week${activeWeek}/shadowing_${retellStepIdx + 1}.mp3` : null);
+                              const audioUrl = currentQ.audio_url || (activeWeek ? `/audio/week${activeWeek}/scene_${retellStepIdx + 1}.mp3` : null);
                               speakText(currentQ.sentence, audioUrl);
                             }}
                             className="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-950/85 hover:bg-slate-950 text-white rounded-lg text-xs font-bold shadow backdrop-blur-md flex items-center gap-1.5 transition active:scale-95 border border-white/20 cursor-pointer"
@@ -1493,7 +1493,7 @@ export default function StoryWorldZone({ data, weekNumber, forcedGear = null, hi
                                   <button
                                     type="button"
                                     onClick={() => {
-                                      const audioUrl = currentQ.audio_url || (activeWeek ? `/audio/week${activeWeek}/shadowing_${retellStepIdx + 1}.mp3` : null);
+                                      const audioUrl = currentQ.audio_url || (activeWeek ? `/audio/week${activeWeek}/scene_${retellStepIdx + 1}.mp3` : null);
                                       speakText(currentQ.sentence, audioUrl);
                                     }}
                                     className="px-2.5 py-0.5 bg-amber-600 hover:bg-amber-500 text-white rounded-md text-[11px] font-black flex items-center gap-1 shadow-xs transition active:scale-95"
