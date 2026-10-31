@@ -317,7 +317,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
             style={{ maxHeight: '56vh' }}
           >
             <img
-              src={isW34 ? "/images/week34/explore_cover_w34.jpg" : "/images/week33/read_cover_w33.jpg"}
+              src={isW34 ? "/images/week34/science_report_scene_w34.jpg" : "/images/week33/read_cover_w33.jpg"}
               alt={isW34 ? "Animal Cooperation Observation Scene" : "Corridor Observation Scene"}
               className="w-full h-full object-cover"
               onError={(e) => {
