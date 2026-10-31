@@ -239,7 +239,7 @@ export const readingHub = {
       { id: 4, text: "The mouse promised to help the lion one day.", words: ["The", "mouse", "promised", "to", "help", "the", "lion", "one", "day."], ipa: ["ðə", "maʊs", "ˈprɒm.ɪst", "tuː", "help", "ðə", "ˈlaɪ.ən", "wʌn", "deɪ"], audio_url: "/audio/week34/shadowing_4.mp3" },
       { id: 5, text: "The trapped lion roared and waited for help.", words: ["The", "trapped", "lion", "roared", "and", "waited", "for", "help."], ipa: ["ðə", "træpt", "ˈlaɪ.ən", "rɔːd", "ænd", "ˈweɪ.tɪd", "fɔːr", "help"], audio_url: "/audio/week34/shadowing_5.mp3" },
       { id: 6, text: "The brave mouse chewed through the thick ropes.", words: ["The", "brave", "mouse", "chewed", "through", "the", "thick", "ropes."], ipa: ["ðə", "breɪv", "maʊs", "tʃuːd", "θruː", "ðə", "θɪk", "rəʊps"], audio_url: "/audio/week34/shadowing_6.mp3" },
-      { id: 7, text: "The mouse freed the lion, and the lion thanked him.", words: ["The", "mouse", "freed", "the", "lion,", "and", "the", "lion", "thanked", "him."], ipa: ["ðə", "maʊs", "friːd", "ðə", "ˈlaɪ.ən", "ænd", "ðə", "ˈlaɪ.ən", "θæŋkt", "hɪm"], audio_url: "/audio/week34/shadowing_7.mp3" },
+      { id: 7, text: "The mouse freed the lion, and the lion thanked him.", words: ["The", "mouse", "freed", "the", "lion", "and", "the", "lion", "thanked", "him."], ipa: ["ðə", "maʊs", "friːd", "ðə", "ˈlaɪ.ən", "ænd", "ðə", "ˈlaɪ.ən", "θæŋkt", "hɪm"], audio_url: "/audio/week34/shadowing_7.mp3" },
       { id: 8, text: "They trusted each other and stayed friends forever.", words: ["They", "trusted", "each", "other", "and", "stayed", "friends", "forever."], ipa: ["ðeɪ", "ˈtrʌs.tɪd", "iːtʃ", "ˈʌð.ər", "ænd", "steɪd", "frendz", "fəˈrev.ər"], audio_url: "/audio/week34/shadowing_8.mp3" }
     ]
   },
