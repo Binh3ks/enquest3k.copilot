@@ -89,8 +89,8 @@ export const readingHub = {
     title_vi: "Những Người Bạn Giúp Đỡ Lẫn Nhau Trong Tự Nhiên",
     part_1_title: "How Animals Help the Forest",
     part_2_title: "Teamwork Keeps Nature Green",
-    content_en: "In nature, animals show wonderful cooperation when they help each other find food every day. In Africa, an oxpecker bird eats tiny bugs to help the zebra and find tasty food in its wild habitat. In the ocean, tiny cleaner fish swim safely inside the mouth of a shark to clean its sharp teeth. The giant predator never hurts these small animal helpers that cooperate so everyone can survive. Just like the lion and the mouse, big and small creatures work together. Together, big and small animals help protect the forest trees and keep the whole ecosystem strong and green.",
-    content_vi: "Trong tự nhiên, các loài động vật thể hiện sự hợp tác tuyệt vời khi giúp đỡ lẫn nhau tìm kiếm thức ăn mỗi ngày. Tại châu Phi, chú chim bắt ve ăn những con bọ nhỏ để giúp ngựa vằn và tìm kiếm thức ăn ngon trong môi trường sống tự nhiên. Dưới đại dương, những chú cá dọn vệ sinh nhỏ bơi an toàn vào trong miệng cá mập để làm sạch răng sắc nhọn. Kẻ săn mồi khổng lồ không bao giờ làm hại những người bạn nhỏ hợp tác cùng nhau để tất cả cùng sinh tồn. Giống như sư tử và chuột nhỏ, các sinh vật lớn và nhỏ cùng phối hợp. Cùng nhau, động vật lớn và nhỏ giúp bảo vệ cây rừng và giữ cho toàn bộ hệ sinh thái luôn vững mạnh và xanh tươi.",
+    content_en: "In nature, animals show wonderful cooperation when they help each other find food every day. In Africa, an oxpecker bird eats tiny bugs to help the zebra and find tasty food in its natural habitat. In the ocean, tiny cleaner fish swim safely inside the mouth of a shark to clean its sharp teeth. The giant predator never hurts these small animal helpers that cooperate with each other so everyone can survive in the wild. Just like the lion and the mouse, big and small creatures work together. Together, big and small animals help protect the forest trees and keep the whole forest ecosystem strong and green.",
+    content_vi: "Trong tự nhiên, các loài động vật thể hiện sự hợp tác tuyệt vời khi giúp đỡ lẫn nhau tìm kiếm thức ăn mỗi ngày. Tại châu Phi, chú chim bắt ve ăn những con bọ nhỏ để giúp ngựa vằn và tìm kiếm thức ăn ngon trong môi trường sống tự nhiên. Dưới đại dương, những chú cá dọn vệ sinh nhỏ bơi an toàn vào trong miệng cá mập để làm sạch răng sắc nhọn. Kẻ săn mồi khổng lồ không bao giờ làm hại những người bạn nhỏ hợp tác cùng nhau để tất cả cùng sinh tồn trong tự nhiên hoang dã. Giống như sư tử và chuột nhỏ, các sinh vật lớn và nhỏ cùng phối hợp. Cùng nhau, động vật lớn và nhỏ giúp bảo vệ cây rừng và giữ cho toàn bộ hệ sinh thái rừng luôn vững mạnh và xanh tươi.",
     grammar_patterns: [
       {
         pattern: '\\b(show wonderful cooperation|help each other|eats tiny bugs|swim safely inside|clean its sharp teeth|never hurts|work together|protect the forest trees)\\b',
@@ -101,16 +101,16 @@ export const readingHub = {
     cover_image: "/images/week34/explore_cover_w34.jpg",
     audio_url: "/audio/week34/explore.mp3",
     vocab_focus: [
-      "cooperate",
-      "survive",
-      "predator",
+      "cooperate with each other",
+      "survive in the wild",
+      "giant predator",
       "oxpecker bird",
       "cleaner fish",
-      "ecosystem",
-      "habitat",
+      "forest ecosystem",
+      "natural habitat",
       "sharp teeth",
       "tiny bugs",
-      "natural world"
+      "animal helpers"
     ],
     glossary: [
       { term: "Cooperation", meaning: "Working together harmoniously toward a shared and helpful outcome." },
