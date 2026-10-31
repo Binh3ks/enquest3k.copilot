@@ -8,8 +8,8 @@ import ExamIntroAudioButton from '../common/ExamIntroAudioButton';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 
 
-export function InformationExchangeP2({ customData, isStealthMode = false, weekNumber, onComplete }) {
-  const resolvedWeek = weekNumber || customData?.weekNumber || customData?.week;
+export function InformationExchangeP2({ customData, data: propData, isStealthMode = false, weekNumber, onComplete }) {
+  const resolvedWeek = weekNumber || customData?.weekNumber || customData?.week || propData?.weekNumber || propData?.week;
   // Adapter: speaking_hub format (candidate_card / examiner_card) → table_a / table_b format
   function adaptSpeakingHubData(raw) {
     if (!raw) return null;
@@ -24,7 +24,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
         table_a: {
           title: `Table A: ${raw.candidate_card?.title || 'Candidate Card'} (Candidate Asks Questions)`,
           person: candPerson,
-          fields: candItems.slice(0, 4).map((item, i) => {
+          fields: candItems.map((item, i) => {
             const cueWord = item.label.toLowerCase().includes('location') || item.label.toLowerCase().includes('where')
               ? 'Where'
               : item.label.toLowerCase().includes('time') || item.label.toLowerCase().includes('when')
@@ -36,7 +36,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
               id: `field_a${i + 1}`,
               label: item.label,
               value: item.value,
-              is_missing: i > 0,
+              is_missing: item.is_missing !== undefined ? item.is_missing : true,
               cue_word: cueWord,
               cue_prompt: `${cueWord} / ${item.label.toLowerCase().replace('?','')}?`,
               acceptable_questions: [
@@ -53,7 +53,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
         table_b: {
           title: `Table B: ${raw.examiner_card?.title || 'Examiner Card'} (Examiner Asks Questions)`,
           person: examPerson,
-          fields: examItems.slice(0, 4).map((item, i) => {
+          fields: examItems.map((item, i) => {
             const qAudio = item.audio_url || (raw.examiner_questions && raw.examiner_questions[i]?.audio_url) || (resolvedWeek ? `/audio/week${resolvedWeek}/info_exchange_q${i + 1}.mp3` : null);
             return {
               id: `field_b${i + 1}`,
@@ -75,79 +75,8 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
     return null;
   }
 
-  const adaptedData = adaptSpeakingHubData(customData);
-
-  const data = adaptedData || {
-    title: "Nova's Animal Shelter Cue-Card Exchange",
-    table_a: {
-      title: "Table A: The Lion's Home (Candidate Asks Questions)",
-      person: "The Lion",
-      fields: [
-        { id: "field_a1", label: "Who?", value: "The Lion", is_missing: false },
-        {
-          id: "field_a2",
-          label: "Where does he live?",
-          value: "Green Valley Forest",
-          is_missing: true,
-          cue_prompt: "Where / lion / live?",
-          acceptable_questions: ["Where does the lion live?", "Where does he live?", "Where is the lion's home?"],
-          nova_reply: "The lion lives in the Green Valley Forest."
-        },
-        {
-          id: "field_a3",
-          label: "Favourite food?",
-          value: "Fresh Fish & Fruit",
-          is_missing: true,
-          cue_prompt: "What / lion / eat?",
-          acceptable_questions: ["What does the lion eat?", "What is his favourite food?", "What food does he like?"],
-          nova_reply: "The lion's favourite food is fresh fish and fruit."
-        },
-        {
-          id: "field_a4",
-          label: "When does he rest?",
-          value: "Sunny Afternoons",
-          is_missing: true,
-          cue_prompt: "When / lion / rest?",
-          acceptable_questions: ["When does the lion rest?", "When does he like to rest?", "What time does he rest?"],
-          nova_reply: "The lion likes to rest on sunny afternoons."
-        }
-      ]
-    },
-    table_b: {
-      title: "Table B: The Mouse's Home (Examiner Asks Questions)",
-      person: "The Mouse",
-      fields: [
-        {
-          id: "field_b1",
-          label: "Where?",
-          value: "Under the Tall Oak Tree",
-          nova_question: "Where does the mouse live?",
-          acceptable_answers: ["Under the tall oak tree.", "He lives under the tall oak tree.", "The tall oak tree."]
-        },
-        {
-          id: "field_b2",
-          label: "Special skill?",
-          value: "Chewing Strong Ropes",
-          nova_question: "What is the mouse's special skill?",
-          acceptable_answers: ["He can chew strong ropes.", "Chewing strong ropes.", "The mouse chews ropes."]
-        },
-        {
-          id: "field_b3",
-          label: "Best friend?",
-          value: "The Mighty Lion",
-          nova_question: "Who is the mouse's best friend?",
-          acceptable_answers: ["The mighty lion.", "The lion is his best friend.", "The lion."]
-        },
-        {
-          id: "field_b4",
-          label: "How did he help?",
-          value: "He chewed through the thick ropes",
-          nova_question: "How did the mouse help the lion?",
-          acceptable_answers: ["He chewed through the thick ropes.", "The mouse chewed the ropes.", "He freed the lion."]
-        }
-      ]
-    }
-  };
+  const rawInput = customData || propData;
+  const data = adaptSpeakingHubData(rawInput);
 
   // State Machine for Conversational Flow
   // 'idle' | 'phase1_intro' | 'phase1_q' | 'phase2_intro' | 'phase2_q' | 'completed'
@@ -430,6 +359,28 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
   const isPhase1Active = flowState === 'phase1_intro' || flowState === 'phase1_q';
   const isPhase2Active = flowState === 'phase2_intro' || flowState === 'phase2_q';
 
+  const isDataValid = Boolean(
+    data &&
+    data.table_a &&
+    data.table_b &&
+    Array.isArray(data.table_a.fields) &&
+    Array.isArray(data.table_b.fields) &&
+    data.table_a.fields.length > 0 &&
+    data.table_b.fields.length > 0
+  );
+
+  if (!isDataValid) {
+    return (
+      <div data-testid="info-exchange-data-missing" className="w-full max-w-4xl mx-auto my-6 p-6 bg-rose-50 border-2 border-rose-300 rounded-3xl text-center space-y-3 font-sans">
+        <div className="text-3xl">⚠️</div>
+        <h3 className="text-lg font-black text-rose-900">Speaking Part 2 Data Missing (Fail-Loud)</h3>
+        <p className="text-sm font-semibold text-rose-700">
+          Speaking Hub data is missing or incomplete for week {resolvedWeek || 'N/A'}. Expected cue card data in speaking_hub.info_exchange_cards.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full max-w-7xl mx-auto my-4 p-4 sm:p-8 bg-slate-900 text-white rounded-3xl border border-purple-500/30 shadow-2xl font-sans space-y-6 relative overflow-hidden">
       <CompletionModal
@@ -466,7 +417,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false, weekN
               onClick={handleStartExam}
               className="px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-black rounded-xl text-xs shadow-md transition flex items-center gap-1.5 animate-bounce shrink-0"
             >
-              🚀 START EXAM (4 CUES)
+              🚀 START EXAM ({tableBFields.length} CUES)
             </button>
           )}
         </div>
