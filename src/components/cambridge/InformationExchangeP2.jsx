@@ -36,7 +36,7 @@ export function InformationExchangeP2({ customData, data: propData, isStealthMod
               id: `field_a${i + 1}`,
               label: item.label,
               value: item.value,
-              is_missing: item.is_missing !== undefined ? item.is_missing : true,
+              is_missing: item.is_missing !== undefined ? item.is_missing : (item.known !== undefined ? !item.known : true),
               cue_word: cueWord,
               cue_prompt: `${cueWord} / ${item.label.toLowerCase().replace('?','')}?`,
               acceptable_questions: [
