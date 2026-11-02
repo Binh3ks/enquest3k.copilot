@@ -69,11 +69,11 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
     const canonicalSteps = writingData?.picture_story?.steps || [];
     const speakingImages = speakingData?.picture_story?.images || [];
     const defaultScenes = [
-      { id: 1, func: 'setting',  title: 'Scene 1: Setting 🔵', defaultText: canonicalSteps[0]?.frame_L1 || canonicalSteps[0]?.caption || speakingImages[0]?.narrator_prompt || "" },
-      { id: 2, func: 'action',   title: 'Scene 2: Action 🟢',  defaultText: canonicalSteps[1]?.frame_L1 || canonicalSteps[1]?.caption || speakingImages[1]?.narrator_prompt || "" },
-      { id: 3, func: 'problem',  title: 'Scene 3: Problem 🟠', defaultText: canonicalSteps[2]?.frame_L1 || canonicalSteps[2]?.caption || speakingImages[2]?.narrator_prompt || "" },
-      { id: 4, func: 'climax',   title: 'Scene 4: Response 🟣', defaultText: canonicalSteps[3]?.frame_L1 || canonicalSteps[3]?.caption || speakingImages[3]?.narrator_prompt || "" },
-      { id: 5, func: 'solution', title: 'Scene 5: Ending ⭐',  defaultText: canonicalSteps[4]?.frame_L1 || canonicalSteps[4]?.caption || speakingImages[4]?.narrator_prompt || "" }
+      { id: 1, func: 'setting',  title: 'Scene 1: Setting 🔵', defaultText: speakingImages[0]?.narrator_prompt || canonicalSteps[0]?.frame_L1 || canonicalSteps[0]?.caption || "" },
+      { id: 2, func: 'action',   title: 'Scene 2: Action 🟢',  defaultText: speakingImages[1]?.narrator_prompt || canonicalSteps[1]?.frame_L1 || canonicalSteps[1]?.caption || "" },
+      { id: 3, func: 'problem',  title: 'Scene 3: Problem 🟠', defaultText: speakingImages[2]?.narrator_prompt || canonicalSteps[2]?.frame_L1 || canonicalSteps[2]?.caption || "" },
+      { id: 4, func: 'climax',   title: 'Scene 4: Response 🟣', defaultText: speakingImages[3]?.narrator_prompt || canonicalSteps[3]?.frame_L1 || canonicalSteps[3]?.caption || "" },
+      { id: 5, func: 'solution', title: 'Scene 5: Ending ⭐',  defaultText: speakingImages[4]?.narrator_prompt || canonicalSteps[4]?.frame_L1 || canonicalSteps[4]?.caption || "" }
     ];
 
     const panelTexts = (storySavedData?.panelTexts && Array.isArray(storySavedData.panelTexts)) ? storySavedData.panelTexts : [];
