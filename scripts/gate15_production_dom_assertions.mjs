@@ -320,7 +320,9 @@ async function main() {
     currentQuestErrors.push(`[pageerror] ${err.message}`);
   });
 
-  const questIds = Object.keys(QUESTS_SPEC);
+  const targetQuestArg = process.argv.find(a => a.startsWith('--quest='));
+  const targetQuest = targetQuestArg ? targetQuestArg.split('=')[1] : null;
+  const questIds = targetQuest ? [targetQuest] : Object.keys(QUESTS_SPEC);
   const questDoms = {};
   const results = [];
   let globalPass = true;
@@ -638,7 +640,18 @@ async function main() {
             result = { pass: false, snippet: '', reason: `story_writer_ladder_test error: ${e.message}` };
           }
         } else if (chk.type === 'keyword_overlap') {
-          const sourceDom = questDoms[chk.source_quest] || '';
+          let sourceDom = questDoms[chk.source_quest] || '';
+          if (!sourceDom && chk.source_quest) {
+            const srcPage = await context.newPage();
+            try {
+              await srcPage.goto(`${PROD_BASE}/week/${WEEK}/task/${chk.source_quest}`, { waitUntil: 'domcontentloaded', timeout: 20000 });
+              await srcPage.waitForTimeout(1500);
+              sourceDom = await srcPage.evaluate(() => (document.body?.innerText || '').trim());
+              questDoms[chk.source_quest] = sourceDom;
+            } catch (_) {} finally {
+              await srcPage.close();
+            }
+          }
           const sourceWords = (sourceDom.toLowerCase().match(/\b[a-z]{4,}\b/g) || []);
           const currentWords = (dom.toLowerCase().match(/\b[a-z]{4,}\b/g) || []);
           const overlap = [...new Set(currentWords.filter(w => sourceWords.includes(w) && !['this', 'that', 'with', 'from', 'have', 'were', 'will', 'your', 'about', 'step', 'note', 'book', 'notebook', 'animal', 'forest'].includes(w)))];
