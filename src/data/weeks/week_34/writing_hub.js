@@ -23,7 +23,8 @@ export const writingHub = {
         locked_connector: "In the beginning,",
         ordered_chips: ["the mighty lion", "was sleeping peacefully", "under a shady green tree"],
         pills: ["the mighty lion", "was sleeping peacefully", "under a shady green tree"],
-        audio: "On a sunny afternoon, the mighty lion was resting under a shady green tree."
+        audio: "In the beginning, the mighty lion was sleeping peacefully under a shady green tree.",
+        audio_url: "/audio/week34/writing_scene_1.mp3"
       },
       {
         scene: 2,
@@ -37,7 +38,8 @@ export const writingHub = {
         display_chips: ["in a heavy net", "two hunters", "trapped the lion"],
         pills: ["in a heavy net", "two hunters", "trapped the lion"],
         correct_order: ["two hunters", "trapped the lion", "in a heavy net"],
-        audio: "Suddenly, two hunters trapped the lion in a heavy net."
+        audio: "Suddenly, two hunters trapped the lion in a heavy net.",
+        audio_url: "/audio/week34/writing_scene_2.mp3"
       },
       {
         scene: 3,
@@ -50,7 +52,8 @@ export const writingHub = {
         connectors: ["Finally", "In the end", "At last"],
         keywords: ["the brave mouse", "chew", "the thick ropes", "free"],
         pills: ["the brave mouse", "chew", "the thick ropes", "free"],
-        audio: "Finally, the brave mouse chewed the ropes and freed the lion."
+        audio: "Finally, the brave mouse chewed the thick ropes and freed the lion.",
+        audio_url: "/audio/week34/writing_scene_3.mp3"
       }
     ],
     connectors: ["In the beginning,", "Suddenly,", "Finally,"],

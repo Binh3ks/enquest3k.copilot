@@ -20,6 +20,7 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
   const studioData = useMemo(() => data?.creatorStudio || {}, [data?.creatorStudio]);
   // Fallback: pull writing data from writing_hub (canonical W33+) or stations.writing
   const writingData = useMemo(() => data?.writing_hub || data?.stations?.writing || null, [data?.writing_hub, data?.stations?.writing]);
+  const speakingData = useMemo(() => data?.speaking_hub || data?.speakingHub || data?.stations?.speaking_hub || null, [data?.speaking_hub, data?.speakingHub, data?.stations?.speaking_hub]);
   const storyPrompts = useMemo(() => studioData.storyPrompts || {
     // W33+: writing_hub.picture_story maps to picture_mode
     picture_mode: writingData?.picture_story || writingData?.picture_mode,
@@ -66,12 +67,13 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
   useEffect(() => {
     // 5 canonical scene frames from writingData so prompter ALWAYS uses authentic weekly content
     const canonicalSteps = writingData?.picture_story?.steps || [];
+    const speakingImages = speakingData?.picture_story?.images || [];
     const defaultScenes = [
-      { id: 1, func: 'setting',  title: 'Scene 1: Setting 🔵', defaultText: canonicalSteps[0]?.frame_L1 || canonicalSteps[0]?.caption || "" },
-      { id: 2, func: 'action',   title: 'Scene 2: Action 🟢',  defaultText: canonicalSteps[1]?.frame_L1 || canonicalSteps[1]?.caption || "" },
-      { id: 3, func: 'problem',  title: 'Scene 3: Problem 🟠', defaultText: canonicalSteps[2]?.frame_L1 || canonicalSteps[2]?.caption || "" },
-      { id: 4, func: 'climax',   title: 'Scene 4: Response 🟣', defaultText: canonicalSteps[3]?.frame_L1 || canonicalSteps[3]?.caption || "" },
-      { id: 5, func: 'solution', title: 'Scene 5: Ending ⭐',  defaultText: canonicalSteps[4]?.frame_L1 || canonicalSteps[4]?.caption || "" }
+      { id: 1, func: 'setting',  title: 'Scene 1: Setting 🔵', defaultText: canonicalSteps[0]?.frame_L1 || canonicalSteps[0]?.caption || speakingImages[0]?.narrator_prompt || "" },
+      { id: 2, func: 'action',   title: 'Scene 2: Action 🟢',  defaultText: canonicalSteps[1]?.frame_L1 || canonicalSteps[1]?.caption || speakingImages[1]?.narrator_prompt || "" },
+      { id: 3, func: 'problem',  title: 'Scene 3: Problem 🟠', defaultText: canonicalSteps[2]?.frame_L1 || canonicalSteps[2]?.caption || speakingImages[2]?.narrator_prompt || "" },
+      { id: 4, func: 'climax',   title: 'Scene 4: Response 🟣', defaultText: canonicalSteps[3]?.frame_L1 || canonicalSteps[3]?.caption || speakingImages[3]?.narrator_prompt || "" },
+      { id: 5, func: 'solution', title: 'Scene 5: Ending ⭐',  defaultText: canonicalSteps[4]?.frame_L1 || canonicalSteps[4]?.caption || speakingImages[4]?.narrator_prompt || "" }
     ];
 
     const panelTexts = (storySavedData?.panelTexts && Array.isArray(storySavedData.panelTexts)) ? storySavedData.panelTexts : [];
@@ -105,7 +107,7 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
         podcastScenes
       };
     });
-  }, [storySavedData, writingData]);
+  }, [storySavedData, writingData, speakingData]);
 
   const handleStoryComplete = useCallback((xpEarned = 50, finalText = '', extraData = null) => {
     if (xpEarned > 0) setStudioXP(prev => prev + xpEarned);
