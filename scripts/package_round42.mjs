@@ -187,6 +187,7 @@ async function main() {
       'public/audio/week33/read_stem.mp3',
       'public/audio/week33/shadowing_2.mp3',
       'public/version.json',
+      'scripts/package_round42.mjs',
       'docs/Claude_handoff.txt'
     ];
 
