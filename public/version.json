@@ -1,9 +1,9 @@
 {
-  "commit": "243a33f859ba3090c2506b0d9f1f1cb50ccf548a",
-  "git_commit": "243a33f859ba3090c2506b0d9f1f1cb50ccf548a",
-  "shortCommit": "243a33f8",
-  "message": "chore: update version.json and package_round42 self-reference",
-  "builtAt": "2026-11-03T08:14:17.893Z",
-  "build_timestamp": "2026-11-03T08:14:17.893Z",
+  "commit": "ebc109d111b35884c5041ff252e2ded95f7fae9c",
+  "git_commit": "ebc109d111b35884c5041ff252e2ded95f7fae9c",
+  "shortCommit": "ebc109d1",
+  "message": "feat(w33): batch 2 upgrades (testids for science_report, sentence_smash, math_quest, character sync Tom, Gate 4 clean)",
+  "builtAt": "2026-11-03T08:22:36.674Z",
+  "build_timestamp": "2026-11-03T08:22:36.674Z",
   "env": "production"
 }

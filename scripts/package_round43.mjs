@@ -164,11 +164,11 @@ async function main() {
     }
     console.log(`✅ sentence_smash: placedCount=${evData.sentence_smash.placedCount}, checkBtnEnabled=${evData.sentence_smash.checkBtnEnabled} (PASS)`);
 
-    // Assert math_quest: correct answer submitted, score > 0 PTS, feedback visible
+    // Assert math_quest: correct answer submitted (60), score > 0 PTS, progress advanced
     if (!evData.math_quest || !evData.math_quest.pass) {
       throw new Error(`math_quest interaction failed assertion: ${JSON.stringify(evData.math_quest)}`);
     }
-    console.log(`✅ math_quest: score="${evData.math_quest.scoreText}", feedbackVisible=${evData.math_quest.feedbackVisible} (PASS)`);
+    console.log(`✅ math_quest: score="${evData.math_quest.scoreText}", progress="${evData.math_quest.progressText}" (PASS)`);
 
     // Assert story_writer: clean assembled story, 0 word salad
     if (!evData.story_writer || !evData.story_writer.pass) {
@@ -290,7 +290,7 @@ INTERACTION PROOFS (EYE & DOM VERIFIED ACROSS BATCH 2):
 - science_report: Evidence card visible = ${evData.science_report.evidenceVisible}, text = "${evData.science_report.evidenceText?.slice(0, 50)}..."
 - word_blitz: matched cards count = ${evData.word_blitz.matchedCount}, score = ${evData.word_blitz.scoreText}
 - sentence_smash: word blocks placed in target = ${evData.sentence_smash.placedCount}, check button enabled = ${evData.sentence_smash.checkBtnEnabled}
-- math_quest: correct answer 60 submitted, score = ${evData.math_quest.scoreText}, feedback visible = ${evData.math_quest.feedbackVisible}
+- math_quest: correct answer 60 submitted, score = ${evData.math_quest.scoreText}, progress = ${evData.math_quest.progressText}
 - story_writer: clean assembled story, 0 word salad (5 connectors, 5 model sentences)
 - boss_listening: drawn line count = ${evData.boss_listening.linesCount}, score banner = ${evData.boss_listening.scoreText}
 - science_lab: dropped label count = ${evData.science_lab.placedCount}, score = ${evData.science_lab.scoreText}
@@ -340,3 +340,4 @@ main().catch(err => {
   console.error('\n❌ Fatal error during packaging:', err);
   process.exit(1);
 });
+

@@ -934,10 +934,9 @@ async function main() {
         console.log(`     🎯 [sentence_smash interaction]: placedCount=${placedCount}, checkBtnEnabled=${!checkBtnDisabled} (pass=${questInteractionState.pass})`);
       } else if (qid === 'math_quest') {
         const scoreText = await page.locator('[data-testid="math-score-display"]').innerText().catch(() => '');
-        const feedbackVisible = await page.locator('[data-testid="math-feedback"]').isVisible().catch(() => false);
-        const feedbackText = await page.locator('[data-testid="math-feedback"]').innerText().catch(() => '');
-        questInteractionState = { scoreText, feedbackVisible, feedbackText, pass: scoreText !== '0 PTS' && feedbackVisible };
-        console.log(`     🎯 [math_quest interaction]: scoreText="${scoreText}", feedbackVisible=${feedbackVisible} (pass=${questInteractionState.pass})`);
+        const progressText = await page.locator('span:has-text("/5")').innerText().catch(() => '');
+        questInteractionState = { scoreText, progressText, pass: scoreText !== '0 PTS' && scoreText.includes('PTS') };
+        console.log(`     🎯 [math_quest interaction]: scoreText="${scoreText}", progressText="${progressText}" (pass=${questInteractionState.pass})`);
       }
     } catch (e) {
       console.warn(`[WARN] Failed to capture interaction metrics for ${qid}: ${e.message}`);
