@@ -300,3 +300,4 @@ main().catch(err => {
   console.error('\n❌ Fatal error during packaging:', err);
   process.exit(1);
 });
+

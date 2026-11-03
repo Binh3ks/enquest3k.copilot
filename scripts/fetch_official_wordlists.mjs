@@ -25,6 +25,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -52,12 +53,26 @@ export function strip_pos(word) {
 }
 
 function buildOfficialWordlists() {
-  if (!fs.existsSync(PARSED_DATA_PATH)) {
-    console.error(`❌ Error: Parsed source data not found at ${PARSED_DATA_PATH}`);
+  let rawJson = null;
+  if (fs.existsSync(PARSED_DATA_PATH)) {
+    rawJson = fs.readFileSync(PARSED_DATA_PATH, 'utf-8');
+  } else {
+    const zipPath = path.join(ROOT_DIR, 'docs/agent_artifacts/wordlist_source.zip');
+    if (fs.existsSync(zipPath)) {
+      try {
+        rawJson = execSync(`unzip -p "${zipPath}" "docs/agent_artifacts/wordlist_source/cambridge_parsed_data.json"`, { maxBuffer: 10 * 1024 * 1024 }).toString('utf-8');
+      } catch (e) {
+        // ignore
+      }
+    }
+  }
+
+  if (!rawJson) {
+    console.error(`❌ Error: Parsed source data not found at ${PARSED_DATA_PATH} or ${zipPath}`);
     process.exit(1);
   }
 
-  const rawData = JSON.parse(fs.readFileSync(PARSED_DATA_PATH, 'utf-8'));
+  const rawData = JSON.parse(rawJson);
   const { metadata } = rawData;
 
   const levels = [
