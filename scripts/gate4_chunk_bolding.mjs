@@ -46,9 +46,11 @@ if (fs.existsSync(readPath)) {
       errors.push(`[PUNCTUATION INSIDE BOLD] "${match[0]}" in read.js has punctuation inside bold tag!`);
     }
     
-    // Check word count (1 to 5 words)
-    const words = chunkText.trim().split(/\s+/);
-    if (words.length > 5) {
+    // Check word count (2 to 5 words: Linear Thinking ESL Chunk Standard)
+    const words = chunkText.trim().split(/\s+/).filter(Boolean);
+    if (words.length < 2) {
+      errors.push(`[BOLD CHUNK SINGLE WORD] "${chunkText}" in read.js has only ${words.length} word. Every bold chunk MUST be an ESL collocation/chunk (>= 2 words)!`);
+    } else if (words.length > 5) {
       errors.push(`[CHUNK TOO LONG] "${chunkText}" has ${words.length} words (Max recommended: 4 words)`);
     }
   }
@@ -56,6 +58,31 @@ if (fs.existsSync(readPath)) {
   console.log(`📖 Scanned read.js: Found ${sceneChunks} valid ESL bold chunks.`);
   if (sceneChunks < 5) {
     errors.push(`read.js has only ${sceneChunks} bold chunks (Minimum required: 5)`);
+  }
+
+  // Scan lexical_chunks in read.js (hotspot glowing pins mini-game)
+  try {
+    const readModule = await import(pathToFileURL(readPath).href);
+    const rd = readModule.readData || readModule.default;
+    if (Array.isArray(rd?.story_scenes)) {
+      let lexicalChunkCount = 0;
+      rd.story_scenes.forEach(scene => {
+        if (Array.isArray(scene.lexical_chunks)) {
+          scene.lexical_chunks.forEach(item => {
+            totalChunksChecked++;
+            lexicalChunkCount++;
+            const chunk = (item.chunk || '').trim();
+            const words = chunk.split(/\s+/).filter(Boolean);
+            if (words.length < 2) {
+              errors.push(`[LEXICAL CHUNK SINGLE WORD] "${chunk}" in ${scene.scene_id} lexical_chunks has only ${words.length} word(s). Every glowing pin chunk MUST be an ESL collocation/chunk (>= 2 words)!`);
+            }
+          });
+        }
+      });
+      console.log(`🎯 Scanned read.js lexical_chunks: Found ${lexicalChunkCount} glowing pin chunks.`);
+    }
+  } catch (err) {
+    console.warn(`[WARN] Could not dynamically import read.js for lexical_chunks audit: ${err.message}`);
   }
 }
 
@@ -71,6 +98,12 @@ if (fs.existsSync(readingHubPath)) {
     const chunkText = match[1];
     if (/[.,!?:;]$/.test(chunkText.trim())) {
       errors.push(`[PUNCTUATION INSIDE BOLD] "${match[0]}" in reading_hub.js has punctuation inside bold tag!`);
+    }
+    const words = chunkText.trim().split(/\s+/).filter(Boolean);
+    if (words.length < 2) {
+      errors.push(`[BOLD CHUNK SINGLE WORD] "${chunkText}" in reading_hub.js has only ${words.length} word. Every bold chunk MUST be an ESL collocation/chunk (>= 2 words)!`);
+    } else if (words.length > 5) {
+      errors.push(`[CHUNK TOO LONG] "${chunkText}" in reading_hub.js has ${words.length} words (Max recommended: 4 words)`);
     }
   }
 

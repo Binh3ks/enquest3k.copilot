@@ -12,9 +12,9 @@ export const shadowingData = {
     },
     {
       id: 2,
-      text: "A boy was running very fast past the science room.",
-      words: ["A", "boy", "was", "running", "very", "fast", "past", "the", "science", "room."],
-      ipa: ["/ə/", "/bɔɪ/", "/wəz/", "/ˈrʌnɪŋ/", "/ˈveri/", "/fɑːst/", "/pɑːst/", "/ðə/", "/ˈsaɪəns/", "/ruːm/"],
+      text: "His friend Tom was running very fast past the science room.",
+      words: ["His", "friend", "Tom", "was", "running", "very", "fast", "past", "the", "science", "room."],
+      ipa: ["/hɪz/", "/frend/", "/tɒm/", "/wəz/", "/ˈrʌnɪŋ/", "/ˈveri/", "/fɑːst/", "/pɑːst/", "/ðə/", "/ˈsaɪəns/", "/ruːm/"],
       audio_url: "/audio/week33/shadowing_2.mp3"
     },
     {

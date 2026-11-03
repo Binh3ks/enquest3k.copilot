@@ -499,7 +499,7 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
               <p className="text-base text-slate-800 leading-relaxed font-serif">
                 {panelTexts.map((text, i) => (
                   <span key={i} className="inline mr-1.5">
-                    {text.trim()}
+                    {text.trim()}{' '}
                   </span>
                 ))}
               </p>

@@ -136,7 +136,6 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber }) {
     const finalScore = Math.round((correct / testNames.length) * 100);
     setScore(finalScore);
     setIsSubmitted(true);
-    if (onComplete) onComplete(finalScore);
   };
 
   const handleReset = () => {
@@ -163,7 +162,8 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber }) {
         ref={el => (nameButtonRefs.current[name.id] = el)}
         disabled={isSubmitted || name.isExample}
         onClick={() => handleSelectName(name)}
-        data-testid={name.isExample ? 'example-row' : undefined}
+        data-testid={name.isExample ? 'example-row' : 'line-matcher-name-btn'}
+        data-name-id={name.id}
         className={`px-3 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-between gap-1.5 border shadow-2xs w-full cursor-pointer ${
           name.isExample
             ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-1 ring-amber-300'
@@ -305,6 +305,9 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber }) {
                 e.stopPropagation();
                 if (!isSubmitted) handleTargetClick(target);
               }}
+              data-testid="line-matcher-target"
+              data-target-id={target.id}
+              data-example={isExamplePin ? "true" : undefined}
               style={{ cursor: isSubmitted ? 'default' : 'pointer' }}
             >
               {/* Outer glow ring */}
@@ -355,17 +358,30 @@ export function SVGLineMatcher({ customData, onComplete, weekNumber }) {
       <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
         {!isSubmitted ? (
           <button onClick={handleCheck} disabled={drawnLines.length === 0}
+            data-testid="line-matcher-check-btn"
             className="w-full sm:w-auto px-6 sm:px-7 py-2 sm:py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs sm:text-sm rounded-xl shadow-md transition active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 cursor-pointer"
           ><Sparkles size={16} /> Check Line Matches</button>
         ) : (
           <div className="w-full flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-200">
             <div className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-indigo-600 animate-bounce" />
-              <span className="text-sm font-black text-slate-900">Score: {score}%</span>
+              <span data-testid="line-matcher-score" className="text-sm font-black text-slate-900">Score: {score}%</span>
             </div>
-            <button onClick={handleReset}
-              className="px-4 py-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-950 font-bold text-xs rounded-lg transition flex items-center gap-1"
-            ><RefreshCw size={12} /> Try Again</button>
+            <div className="flex items-center gap-2">
+              <button onClick={handleReset}
+                className="px-4 py-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-950 font-bold text-xs rounded-lg transition flex items-center gap-1 cursor-pointer"
+              ><RefreshCw size={12} /> Try Again</button>
+              {onComplete && (
+                <button
+                  type="button"
+                  data-testid="line-matcher-next-btn"
+                  onClick={() => onComplete(score)}
+                  className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs rounded-lg shadow transition flex items-center gap-1 cursor-pointer"
+                >
+                  Next Part ▶
+                </button>
+              )}
+            </div>
           </div>
         )}
       </div>

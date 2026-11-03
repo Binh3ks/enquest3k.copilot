@@ -6,10 +6,10 @@ export default {
   title_vi: "An Toàn Hành Lang & Chăm Sóc Trường Học",
   cover_image: "/images/week33/read_cover_w33.jpg",
   audio_url: "/audio/week33/read_stem.mp3",
-  content_en: "Jake was walking carefully down the school corridor after science class. A boy was running very fast past the science room. Suddenly, he lost his balance on the wet floor and slipped. He fell down heavily and hurt his knee. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. Everyone felt relieved, and the headmaster reminded all students never to run in corridors.",
-  text_en: "Jake was walking carefully down the school corridor after science class. A boy was running very fast past the science room. Suddenly, he lost his balance on the wet floor and slipped. He fell down heavily and hurt his knee. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. Everyone felt relieved, and the headmaster reminded all students never to run in corridors.",
-  content_vi: "Jake đang đi bộ cẩn thận xuống hành lang trường học sau giờ học khoa học. Một cậu bé đang chạy rất nhanh ngang qua phòng khoa học. Đột nhiên, cậu ấy bị mất thăng bằng trên sàn ướt và trượt chân. Cậu ấy ngã mạnh xuống sàn và bị đau đầu gối. Jake dừng lại ngay lập tức để giúp bạn mình giữ bình tĩnh. Cậu ấy gọi y tá trường ngay lập tức. Cô y tá đến nhanh chóng với một chiếc băng sạch và túi chườm lạnh để điều trị vết cắt. Mọi người đều cảm thấy nhẹ nhõm, và thầy hiệu trưởng nhắc nhở tất cả học sinh không bao giờ được chạy trong hành lang.",
-  text_vi: "Jake đang đi bộ cẩn thận xuống hành lang trường học sau giờ học khoa học. Một cậu bé đang chạy rất nhanh ngang qua phòng khoa học. Đột nhiên, cậu ấy bị mất thăng bằng trên sàn ướt và trượt chân. Cậu ấy ngã mạnh xuống sàn và bị đau đầu gối. Jake dừng lại ngay lập tức để giúp bạn mình giữ bình tĩnh. Cậu ấy gọi y tá trường ngay lập tức. Cô y tá đến nhanh chóng với một chiếc băng sạch và túi chườm lạnh để điều trị vết cắt. Mọi người đều cảm thấy nhẹ nhõm, và thầy hiệu trưởng nhắc nhở tất cả học sinh không bao giờ được chạy trong hành lang.",
+  content_en: "Jake was walking carefully down the school corridor after science class. His friend Tom was running very fast past the science room. Suddenly, he lost his balance on the wet floor and slipped. He fell down heavily and hurt his knee. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. Everyone felt relieved, and the headmaster reminded all students never to run in corridors.",
+  text_en: "Jake was walking carefully down the school corridor after science class. His friend Tom was running very fast past the science room. Suddenly, he lost his balance on the wet floor and slipped. He fell down heavily and hurt his knee. Jake stopped immediately to help his friend stay calm. He called the school nurse right away. The nurse arrived quickly with a clean bandage and a cold pack to treat the cut. Everyone felt relieved, and the headmaster reminded all students never to run in corridors.",
+  content_vi: "Jake đang đi bộ cẩn thận xuống hành lang trường học sau giờ học khoa học. Bạn của cậu ấy là Tom đang chạy rất nhanh ngang qua phòng khoa học. Đột nhiên, cậu ấy bị mất thăng bằng trên sàn ướt và trượt chân. Cậu ấy ngã mạnh xuống sàn và bị đau đầu gối. Jake dừng lại ngay lập tức để giúp bạn mình giữ bình tĩnh. Cậu ấy gọi y tá trường ngay lập tức. Cô y tá đến nhanh chóng với một chiếc băng sạch và túi chườm lạnh để điều trị vết cắt. Mọi người đều cảm thấy nhẹ nhõm, và thầy hiệu trưởng nhắc nhở tất cả học sinh không bao giờ được chạy trong hành lang.",
+  text_vi: "Jake đang đi bộ cẩn thận xuống hành lang trường học sau giờ học khoa học. Bạn của cậu ấy là Tom đang chạy rất nhanh ngang qua phòng khoa học. Đột nhiên, cậu ấy bị mất thăng bằng trên sàn ướt và trượt chân. Cậu ấy ngã mạnh xuống sàn và bị đau đầu gối. Jake dừng lại ngay lập tức để giúp bạn mình giữ bình tĩnh. Cậu ấy gọi y tá trường ngay lập tức. Cô y tá đến nhanh chóng với một chiếc băng sạch và túi chườm lạnh để điều trị vết cắt. Mọi người đều cảm thấy nhẹ nhõm, và thầy hiệu trưởng nhắc nhở tất cả học sinh không bao giờ được chạy trong hành lang.",
 
   story_scenes: [
     {
@@ -30,14 +30,14 @@ export default {
       scene_id: "scene_2",
       scene_number: 2,
       title_en: "Scene 2: Slipping on Wet Floor",
-      description_en: "Suddenly, he **lost his balance** on the **wet floor** and **slipped**.",
-      description: "Suddenly, he **lost his balance** on the **wet floor** and **slipped**.",
+      description_en: "Suddenly, he **lost his balance** on the **wet floor** and slipped.",
+      description: "Suddenly, he **lost his balance** on the **wet floor** and slipped.",
       image_url: "/images/week33/webtoon_scene_2.png",
       audio_url: "/audio/week33/scene_2.mp3",
       lexical_chunks: [
         { word: "balance", chunk: "lost his balance", vi: "mất thăng bằng", x: 62, y: 45 },
         { word: "floor", chunk: "wet floor", vi: "sàn ướt", x: 74, y: 68 },
-        { word: "slipped", chunk: "slipped", vi: "trượt chân", x: 58, y: 82 }
+        { word: "slipped", chunk: "and slipped", vi: "và trượt chân", x: 58, y: 82 }
       ]
     },
     {
@@ -77,7 +77,7 @@ export default {
       image_url: "/images/week33/webtoon_scene_5.png",
       audio_url: "/audio/week33/scene_5.mp3",
       lexical_chunks: [
-        { word: "headmaster", chunk: "headmaster", vi: "thầy hiệu trưởng", x: 58, y: 32 },
+        { word: "headmaster", chunk: "the headmaster", vi: "thầy hiệu trưởng", x: 58, y: 32 },
         { word: "relieved", chunk: "felt relieved", vi: "cảm thấy nhẹ nhõm", x: 78, y: 50 },
         { word: "reminded", chunk: "reminded all students", vi: "nhắc nhở tất cả học sinh", x: 44, y: 52 }
       ]
@@ -90,35 +90,35 @@ export default {
       question_vi: 'Chuyện đó bắt đầu ở đâu và như thế nào?',
       question_en: 'Where and how did the story begin?',
       chips: ['after science class', 'walking carefully', 'school corridor'],
-      sentence: 'Jake was walking carefully down the school corridor after science class.'
+      sentence: 'Right after science class, Jake walked carefully down the quiet school corridor.'
     },
     {
       step: 2,
       question_vi: 'Điều gì đã xảy ra đột ngột trên sàn ướt?',
       question_en: 'What happened suddenly on the wet floor?',
       chips: ['lost his balance', 'wet floor', 'slipped'],
-      sentence: 'Suddenly, he lost his balance on the wet floor and slipped.'
+      sentence: 'While running past the science room, Tom lost his balance on the wet floor and slipped.'
     },
     {
       step: 3,
       question_vi: 'Jake đã làm gì ngay lập tức để giúp bạn mình?',
       question_en: 'What did Jake do immediately to help his friend?',
       chips: ['stopped immediately', 'help his friend', 'called the school nurse'],
-      sentence: 'Jake stopped immediately to help his friend and called the school nurse.'
+      sentence: 'To help his friend stay calm, Jake stopped immediately and called the school nurse right away.'
     },
     {
       step: 4,
       question_vi: 'Cô y tá đã làm gì để điều trị vết thương?',
       question_en: 'What did the nurse do when she arrived?',
       chips: ['arrived quickly', 'clean bandage', 'treat the cut'],
-      sentence: 'The nurse arrived quickly with a clean bandage and a cold pack to treat the cut.'
+      sentence: 'To treat the cut, the nurse arrived quickly with a clean bandage and a cold ice pack.'
     },
     {
       step: 5,
       question_vi: 'Mọi người cảm thấy thế nào và thầy hiệu trưởng nhắc nhở điều gì?',
       question_en: 'How did everyone feel, and what did the headmaster remind students?',
-      chips: ['felt relieved', 'headmaster', 'reminded all students'],
-      sentence: 'Everyone felt relieved, and the headmaster reminded all students never to run in corridors.'
+      chips: ['felt relieved', 'the headmaster', 'reminded all students'],
+      sentence: 'After everyone felt relieved, the headmaster reminded all students never to run in corridors.'
     }
   ],
 
@@ -126,7 +126,7 @@ export default {
     question_en: "Now choose the best title for the story:",
     question_vi: "Bây giờ hãy chọn tiêu đề hay nhất cho câu chuyện:",
     options: [
-      { id: "opt_a", text: "Tom's Clumsy Morning", is_correct: false, explanation: "Incorrect: This story is about Jake in the school corridor, not Tom at home." },
+      { id: "opt_a", text: "Tom's Clumsy Morning", is_correct: false, explanation: "Incorrect: The accident happened in the school corridor after science class, and the main theme is school safety and quick first aid." },
       { id: "opt_b", text: "Corridor Safety & Quick Action", is_correct: true, explanation: "Correct! The story describes corridor safety, Jake's quick action, and first aid treatment." },
       { id: "opt_c", text: "Playing Soccer in Science Class", is_correct: false, explanation: "Incorrect: Soccer is not played in the science class." }
     ]

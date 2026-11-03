@@ -465,4 +465,503 @@ CAO NHẤT, vượt trên cả API key.
 - Lần đầu tiên trong phiên audit này Claude cho phép Antigravity commit + push — đánh dấu
   chuyển từ giai đoạn "chỉ điều tra, giữ local" sang "xác minh xong thì đẩy ngay, không
   giữ lại chờ".
+## CẬP NHẬT 30/10/2026 — QUYẾT ĐỊNH ƯU TIÊN SAU KHI W33/W34 VERIFIED PRODUCTION
+
+Owner quyết định: trước khi mở W35, ưu tiên (1) tự động hoá SOP Giai đoạn 1-2 và (3) dọn nợ
+kỹ thuật còn tồn đọng — đảm bảo có quy trình sản xuất chuẩn trước khi nhân rộng.
+
+Vòng 17 chia 2 phần:
+- PHẦN A: Antigravity khảo sát & báo cáo SOP thật (chưa tự động hoá gì — Claude/Owner cần
+  thấy dữ liệu cụ thể trước khi quyết định mức độ tự động hoá).
+- PHẦN B: dọn nợ kỹ thuật đã có đủ bằng chứng — xác nhận lại khoá API, khảo sát rác W33
+  (tương tự đợt dọn 97 file W34), cứng hoá 3 file default-fallback
+  (bossRotarySchedule.js/useFlyersListeningPlayer.js/zoneDataMapper.js) theo doctrine
+  no-fallback/fail-loud.
+
+W35 CHÍNH THỨC HOÃN cho tới khi SOP + nợ kỹ thuật hoàn tất, theo quyết định của Owner.
+# 📘 SOP THAM CHIẾU CỐ ĐỊNH — LUÔN ĐỌC TRƯỚC KHI DUYỆT NỘI DUNG TUẦN MỚI
+> Nguồn gốc: docs/WEEK_PRODUCTION_SOP.md (v2.2.0, hiệu lực 2026-09-05). Cập nhật lần cuối
+> vào handoff: 30/10/2026. Nếu version SOP gốc thay đổi, cập nhật lại mục này.
+
+## Quy trình 5 Giai đoạn (Mass Production Pipeline W01–W156)
+1. **Giai đoạn 1 — Syllabus Ingestion**: trích metadata (theme, grammar_focus, clil_topic,
+   cefr_stage, week_type) từ 2 file syllabus gốc → xuất `blueprint.json`.
+2. **Giai đoạn 2 — 6 Hạng mục Sư phạm bắt buộc** (W34 = Gold Standard mẫu):
+   1) CLIL Reading Article + Glossary (90–200 từ, 100% glossary in-text, 5 check Qs + 1
+      critical thinking)
+   2) 20 từ vựng cốt lõi + SRS Foundation Review + CLIL Extension tagging
+   3) Voice Shadowing 8 câu + IPA + đủ 3 nhóm âm đuôi quá khứ /t/ /d/ /ɪd/
+   4) Cambridge Reading & Writing Parts 1–6 (Word Bank, Dialogue A-H, Cloze Story, Cloze
+      10-blank, Open Text Extract, Open Cloze Diary)
+   5) Mini-games & Action Lab (Action Lab 3 scenarios, Singapore Math 5 bài C.U.B.E.S.,
+      Grammar Drills 5 câu, Story Writer 3-panel)
+   6) Audio + hình ảnh pre-generated (~69–84 MP3, webtoon scenes, SVGs)
+3. **Giai đoạn 3 — Tích hợp 4 Central Data Hubs**: `reading_hub.js`, `listening_hub.js`,
+   `writing_hub.js`, `speaking_hub.js` (+ `skill_practice_hub.js`, `vocab.js`, `index.js`)
+4. **Giai đoạn 4 — 14 Automated Quality Gates** phải PASS 100%: Gate 3 (media integrity),
+   Gate 4 (chunk bolding), Gate 8 (no-fallback sweep), Gate 10 (grammaticality), Gate 11
+   (content richness), Gate 12 (CEFR), Gate 13 (rotary schedule), Gate 15 (DOM assertions),
+   Gate 15 v2 (functional audio), Gate 16 (content quality), Gate 17 (fidelity doctrine),
+   Gate 18 (5-feature compliance), Schema Uniformity Gate, Whitelist Entity Gate.
+5. **Giai đoạn 5 — Đóng băng**: SHA-256 hash các file hub cốt lõi → ghi vào
+   `W{N}_GOLDEN_FREEZE_MANIFEST.json` → tạo `guard_golden_w{N}_freeze.mjs`.
+
+## Thời gian sản xuất hiện tại: ~4.5–6.5 giờ/tuần (gần như thủ công toàn bộ ở Giai đoạn 1-2)
+Nặng nhất: viết bài CLIL (45-60p), soạn đề thi Cambridge Reading Parts 1-6 (60-90p).
+
+## Backlog tự động hoá (đã đề xuất, CHƯA code — chờ Owner/Claude duyệt từng mục):
+- Nhóm 1 (dễ, ưu tiên): blueprint ingestion script, IPA/past-tense auto-tagger, batch audio
+  generator, auto-freeze/manifest generator.
+- Nhóm 2 (khó, rủi ro sư phạm): Singapore Math bar-model generator, Cambridge Reading
+  LLM draft generator (cần human-in-loop), Action Lab scenario generator.
+
+## Danh sách file cần đòi Antigravity cung cấp khi cần nắm rõ quy trình này:
+**SOP gốc:** `docs/WEEK_PRODUCTION_SOP.md` (canonical) · `production_kit/workflow/week_pipeline_sop.md` (bản sơ khai cũ, chỉ tham khảo)
+**Nguồn syllabus:** `docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` · `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`
+**Template chuẩn theo giai đoạn tuần:** `production_kit/templates/template_flyers_rotary.js` (W33–72) · `template_flyers_mock.js` · `template_pet_transition.js` (W73–112) · `template_b1plus_transition.js` (W113–156)
+**Per-tuần (thay {N} bằng số tuần):** `src/data/weeks/week_{N}/blueprint.json`, `index.js`, `reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `speaking_hub.js`, `skill_practice_hub.js`, `vocab.js` · `docs/W{N}_GOLDEN_FREEZE_MANIFEST.json` · `docs/GATE15_SPEC_W{N}.json` · `docs/W{N}_PEDAGOGICAL_CONTENT_REVIEW.md` · `scripts/guard_golden_w{N}_freeze.mjs`
+**14+ Gate scripts:** `scripts/gate{3,4,8,10,11,12,13,15,16,17,18}_*.mjs`, `scripts/gate15_v2_functional_audio_playtest.mjs`, `scripts/gate_schema_uniformity.mjs`, `scripts/gate_whitelist_entities.mjs`
+**Hạ tầng dùng chung:** `src/config/bossRotarySchedule.js` (rotary cycle auto-config) · `oxford_a2_verified_36.json` và `dictionary.json` (đường dẫn đầy đủ chưa xác nhận — hỏi Antigravity khi cần)
+**Chronicles (Game-track, đang tạm dừng):** `src/data/weeks/week_{N}/wh_questions.js`, `word_class_duel.js`
+## CẬP NHẬT 30/10/2026 — VÒNG 19: SOP v2.3.0 CHÍNH THỨC + cambridgeExamStandards.js
+
+- SOP nâng lên v2.3.0: thêm Invariant 8 mới (cấm giảm số lượng item Cambridge bất kể
+  scaffolding), mở rộng Invariant 6 (cấm default tham số weekNumber trong code), đánh dấu
+  Mục 12 Chronicles [TẠM DỪNG]. Commit 8a165c30, governance hash đã đồng bộ, guard PASS.
+- Tạo src/config/cambridgeExamStandards.js — khối FLYERS có trích dẫn Cambridge Handbook
+  từng trang, là nguồn sự thật chính thức cho W33+. Khối STARTERS/MOVERS gắn cờ CHƯA KIỂM
+  CHỨNG, cấm dùng làm governance truth. Commit de48169a. Chưa wire vào Gate nào.
+- Phát hiện 2 lỗi nhỏ cần vá ở Vòng 20: heading "Giai đoạn 2" bị lặp đôi ngoài ý muốn; mâu
+  thuẫn Speaking Part 4 (SOP ghi "4-5", code hardcode "4").
+- TỒN ĐỌNG: 97 file ảnh rác W34 (duyệt Vòng 16) và 3 file hardening bossRotarySchedule.js
+  nhóm (duyệt Vòng 17) vẫn CHƯA COMMIT — sẽ dọn dứt điểm ở Vòng 20.
+- Rác W33: đã khảo sát sơ bộ theo nhóm (Vòng 17), CHƯA đạt mức rà soát từng file như W34 nên
+  CHƯA duyệt xoá — sẽ làm lại đúng chuẩn ở Vòng 20.
+- API key Google TTS: vẫn chưa xác nhận đã xoay vòng, tiếp tục nhắc Owner.
+## CẬP NHẬT 30/10/2026 — VÒNG 20: DỌN NỢ TỒN ĐỌNG + PHÁT HIỆN NGHI VẤN FALLBACK ẢNH TOÀN CỤC
+
+- Đã vá 2 lỗi nhỏ SOP v2.3.0 (heading lặp, Speaking P4 range 4-5). Commit 3336eb82.
+- Đã commit dứt điểm 2 việc tồn đọng nhiều vòng: xoá 97 ảnh rác W34 (commit 06695054),
+  hardening no-default 3 file config (commit 8e724477). Gate 15 PASS 15/15 cả W33+W34.
+- Rà soát rác W33 chi tiết: phát hiện nhóm "Table A audio" (10 file) và "Discovery Report
+  audio" (4 file) tưởng là rác nhưng ĐANG CHẠY SỐNG — giữ nguyên, không xoá.
+- ⚠️ PHÁT HIỆN CẦN ƯU TIÊN ĐIỀU TRA (Vòng 21): nhóm 4 ảnh "bối cảnh cũ" (cafeteria,
+  bedroom_table, lab_desk, nurse_cabinet) được báo có "tham chiếu dự phòng" trong
+  src/utils/imageUrl.js — nghi vấn đây là fallback dùng chung nhiều tuần, CÙNG LỚP LỖI với
+  ScienceReportCreator.jsx (vụ rò rỉ Jake/Tom). Đang điều tra khẩn, CHƯA xác nhận.
+- Sai số nhỏ: bảng tổng hợp ảnh W33 báo "76/78 an toàn xoá" nhưng cộng tay ra 74/78 — đang
+  yêu cầu Antigravity dán raw console output để chốt số đúng.
+- VẪN CHƯA XOÁ bất kỳ file rác W33 nào (29 audio + 78 ảnh) — chờ Vòng 21.
+- API key Google TTS: Antigravity nhắc lại câu hỏi xác nhận tới Owner — Bình cần xác nhận
+  trực tiếp đã xoay vòng khoá hay chưa, không phải việc Antigravity tự xử lý được.
+## CẬP NHẬT 30/10/2026 — VÒNG 21: XÁC MINH FALLBACK ẢNH + CHỐT SỐ LIỆU RÁC W33
+
+- Điều tra imageUrl.js: KHÔNG có fallback dữ liệu nguy hiểm — chỉ là URL resolver sạch.
+  Nghi vấn Vòng 20 chỉ là false positive do script so tên file trần, trùng tên với W30/31.
+- NHƯNG phát hiện lỗ hổng thật: read_stem.jpg (week33) đang được dùng làm onError fallback
+  cứng trong StoryWriting.jsx (2 vị trí) và ScienceReportCreator.jsx (1 vị trí) — 2 component
+  dùng chung cho MỌI tuần. Chưa kích hoạt (ảnh gốc mọi tuần hiện còn đủ) nhưng cùng lớp lỗi
+  với vụ Jake/Tom — sẽ vá ở Vòng 22 (thay bằng placeholder trung lập + fail-loud log).
+- Đã chốt đúng số liệu rác ảnh W33: 76/78 an toàn xoá (Vòng 20 từng báo sai 76 nhưng cộng
+  tay ra 74 do 2 lỗi gõ bảng — nay đã verify lại bằng console output thô, khớp JSON).
+- Giữ nguyên 2 ảnh (explore.jpg, read_stem.jpg) + 22 audio "đang chạy sống" (Table A,
+  Discovery Report, Exam Rubric) — không xoá.
+- Đã DUYỆT xoá 76 ảnh + 7 audio rác W33 đã xác nhận an toàn 100% — thực thi ở Vòng 22,
+  sau khi vá xong lỗ hổng fallback read_stem.jpg.
+- API key Google TTS: vẫn đang chờ Bình xác nhận đã xoay vòng khoá cũ hay chưa.
+## CẬP NHẬT 30/10/2026 — VÒNG 23: XÁC NHẬN FREEZE SẠCH + REVIEW SPEC AUTO-FREEZE GENERATOR
+
+- Xác nhận: ScienceReportCreator.jsx và StoryWriting.jsx (sửa ở Vòng 22) KHÔNG nằm trong
+  Golden Freeze Manifest của W33/W34 — guard script PASS 100%, không có gì bị hỏng, không
+  phát sinh commit mới. Đóng việc này.
+- Antigravity đã đưa bản thiết kế/spec cho script "Auto-Freeze & Manifest Generator" (script
+  đầu tiên của Nhóm 1 tự động hoá) — giải pháp Active Reference Extraction cho audio (giải
+  quyết đúng gốc lỗi 84 vs 69) được đánh giá tốt.
+- 3 điểm cần sửa trước khi duyệt build thật (Vòng 24): (1) đổi auto-scan file sang whitelist
+  tường minh — tránh tự động khoá nhầm file rác/nháp; (2) sửa xử lý orphaned media thành
+  fail-loud thật (exit 1) thay vì chỉ warn — hiện pseudocode mâu thuẫn với lời văn cam kết;
+  (3) mở rộng cơ chế đối chiếu audio sang cả ẢNH — hiện thiết kế mới chỉ áp dụng cho MP3.
+- Vẫn CHƯA cho phép build code thật — đang ở giai đoạn duyệt spec.
+- API key Google TTS: vẫn chưa có xác nhận đã xoay vòng.
+## CẬP NHẬT 31/10/2026 — VÒNG 24: HIỆU CHỈNH SPEC AUTO-FREEZE (LẦN 2)
+
+- Đã áp dụng đúng cả 3 điểm sửa yêu cầu ở Vòng 23: whitelist tường minh thay auto-scan,
+  fail-loud thật (process.exit(1)) khi phát hiện rác thay vì chỉ warn, mở rộng Active
+  Reference Extraction sang 6 nhóm ảnh (không chỉ MP3). Kiến trúc tổng thể đã chấp nhận được.
+- Phát hiện 1 vấn đề cần xác minh trước khi duyệt build thật: nhóm "Preserved Stock"
+  (explore.jpg, read_stem.jpg) trong spec giả định phải giữ vĩnh viễn vì từng là fallback
+  target — nhưng Vòng 22 đã xoá tham chiếu read_stem.jpg thật ra khỏi code (đổi sang SVG
+  placeholder nội tuyến), nên giả định này có thể đã lỗi thời. Đang yêu cầu re-verify bằng
+  grep mới thay vì dùng kết luận cũ.
+- Ví dụ minh hoạ trong spec có 2-3 chỗ cộng số không khớp (67 vs 50 ảnh, 105 vs 44 audio) —
+  không ảnh hưởng logic thật (dùng Set.size) nhưng cần sửa lại cho chuẩn trước khi duyệt.
+- Vẫn CHƯA cho build code thật — đang ở vòng cuối review spec.
+## CẬP NHẬT 31/10/2026 — VÒNG 25: XÁC NHẬN RÁC THẬT + PHÁT HIỆN LỖ HỔNG EXTRACTION LOGIC
+
+- Xác nhận bằng git grep + Gate 3 độc lập: explore.jpg và read_stem.jpg (week33) hiện KHÔNG
+  còn tham chiếu nào trong code (read_stem.jpg mất tham chiếu do chính fix Vòng 22). Đã bỏ
+  "Preserved Stock" khỏi spec — 2 file này giờ xử lý như rác bình thường, sẽ bị FAIL-LOUD
+  chặn đóng băng cho tới khi dọn (chưa xoá, chỉ sửa spec).
+- Số học trong spec đã khớp: 6 nhóm ảnh = 48 file active, 44 audio active.
+- ⚠️ PHÁT HIỆN QUAN TRỌNG (Vòng 26): Gate 3 thực tế báo 65/67 ảnh đang "referenced", nhưng
+  spec Auto-Freeze mới chỉ tính ra 48 — lệch 17 file. Nếu build script đúng như spec hiện
+  tại, lần chạy đầu trên W33 sẽ báo nhầm 17 ảnh đang dùng là rác (false-positive FAIL-LOUD
+  BLOCK). Cần Antigravity đối chiếu và bổ sung nhóm extraction còn thiếu trước khi duyệt build.
+- Vẫn CHƯA cho build code thật.
+## CẬP NHẬT 31/10/2026 — VÒNG 26 + PHÁT HIỆN MỚI CỦA OWNER: TẠM DỪNG AUTO-FREEZE, ƯU TIÊN LỖI NỘI DUNG SỐNG W34
+
+- Vòng 26: đối soát xong 65 (Gate 3) vs 48 (spec) ảnh W33 — tìm đúng 3 lỗi trong logic Gate 3
+  cũ (thư mục rỗng, substring false-positive, regex "cover" lỏng) + bổ sung nhóm ps_1..5.png
+  (Speaking Part 3) bị spec cũ bỏ sót. Tổng chuẩn: 51 ảnh active.
+- ⚠️ CHƯA XÁC NHẬN: để ra con số 51, báo cáo hạ kỳ vọng vocab từ 20 (chuẩn SOP) xuống 18,
+  nói "thiếu 2 file vocab_safe.jpg, vocab_get_better.jpg" nhưng KHÔNG dán bằng chứng liệu đây
+  là ảnh vỡ thật trong production hay chỉ là sai số đếm. Đã đòi lại raw evidence ở Vòng 27.
+- Owner tự test production W34 và phát hiện loạt lỗi nội dung nghiêm trọng hơn nhiều:
+  1. Bolding/chunk sai quy định SOP — đang bold từ đơn lẻ (predator, cooperate, survive,
+     ecosystem) thay vì chunk/collocation có nghĩa + ví dụ từ điển.
+  2. Ảnh Discovery Report (ScienceReportCreator) sai hoàn toàn chủ đề — nhãn "Lion Territory"/
+     "Mouse Seed Storage" nhưng hình thật là ngựa vằn và cá mập, không phải sư tử/chuột.
+  3. Nghi ngờ Listening Part 3 ảnh không khớp audio — cần đối chiếu script gốc.
+  4. Nghi ngờ Dialogue A-H (R&W Part 2) sai format Cambridge chuẩn (2 nhân vật đều bị để
+     trống xen kẽ thay vì chỉ 1 nhân vật cố định).
+  5. Nghi ngờ Speaking "Ask & Answer" bị gắn nhầm số Part (có thể là Part 3 Information
+     Exchange thật, không phải Part 2), và lệch số cue giữa weekly_review (4) vs info_exchange (5).
+- ĐÃ TẠM DỪNG hoàn toàn việc Auto-Freeze script — ưu tiên tuyệt đối điều tra 5 lỗi trên trước.
+- Đây có khả năng là lỗi HỆ THỐNG (ảnh hưởng nhiều tuần, không chỉ W34) — cần xác minh phạm vi
+  ở Vòng 27.
+## CẬP NHẬT 31/10/2026 — XÁC NHẬN 6 LỖI NỘI DUNG SỐNG TRÊN W33/W34 (OWNER TỰ TEST PHÁT HIỆN)
+
+Mức độ nghiêm trọng (đã xác minh 100% bằng raw evidence, không suy đoán):
+1. 🔴 Listening Part 3 W34: audio và UI hoàn toàn không liên quan — bài nghe-hiểu bị vô hiệu
+   hoá thành trò ghép chữ A=A, học sinh không cần nghe vẫn trả lời đúng. NGHIÊM TRỌNG NHẤT.
+2. 🔴 R&W Part 2 Dialogue W34 (Leo/Milo): lượt lời bị đảo lộn sai chuẩn Cambridge + đáp án vô
+   lý logic (2 câu liên tiếp cùng giọng tự thoại).
+3. 🟠 Discovery Report W34: dùng nhầm ảnh nền (ngựa vằn/cá mập) cho hotspot "Lion/Mouse".
+4. 🟠 vocab.js W33: 2 ảnh 404 thật đang chạy (vocab_safe.jpg mất, vocab_get_better.jpg lệch
+   tên so với file vật lý vocab_recover.jpg).
+5. 🟡 Speaking Part 2 W34: code .slice(0,4) cắt mất cue thứ 5 dù chuẩn Cambridge đúng là 5 —
+   kèm phát hiện thêm 1 fallback hardcode cùng lớp lỗi với ScienceReportCreator.jsx cũ.
+6. 🟡 CLIL Bolding W34: xác nhận KHÔNG phải lỗi hệ thống (W33 làm đúng 100%), chỉ là nội dung
+   W34 soạn sai (5/10 mục vocab_focus là từ đơn thay vì collocation) + Gate 4 có lỗ hổng
+   không kiểm tra điều này.
+- Đã giao Antigravity: sửa+push ngay lỗi #5 (an toàn, rủi ro thấp); soạn ĐỀ XUẤT (chưa sửa
+  file) cho 4 lỗi còn lại để Claude duyệt nội dung trước khi thực thi.
+- CẦN BÌNH QUYẾT ĐỊNH: có nên tạm ẩn Listening Part 3 và R&W Part 2 Dialogue của W34 khỏi học
+  sinh trong lúc chờ soạn lại nội dung hay không — đây là 2 lỗi đang ảnh hưởng trực tiếp học
+  sinh thật ngay lúc này.
+- Tạm dừng hoàn toàn việc Auto-Freeze script cho tới khi xử lý xong 6 lỗi này.
+## CẬP NHẬT 31/10/2026 — VÒNG 28: SHIP VIỆC 1, DUYỆT NỘI DUNG VIỆC 3-4-5-6
+
+- VIỆC 1 (Speaking Part 2 slice bug): đã sửa, Gate 15 PASS, commit 7b50d0cc đã push. CẦN XÁC
+  NHẬN THÊM ở Vòng 29: nghi vấn is_missing không map đúng với field "known" trong dữ liệu thật,
+  có thể khiến mọi field hiện sai trạng thái "cần hỏi" kể cả field đã biết sẵn.
+- VIỆC 2 (vocab W33): vocab_recover.jpg xác nhận khớp 100% nội dung "get better" — chỉ cần đổi
+  tên file, không cần sinh mới. vocab_safe.jpg cần sinh mới — đã có đề xuất prompt, cần đối
+  chiếu definition_en trước khi duyệt sinh ảnh thật.
+- VIỆC 3 (Discovery Report ảnh sai): ĐÃ DUYỆT hướng sinh ảnh mới riêng (giữ nguyên toàn bộ nội
+  dung sư phạm hiện có, chỉ đổi 1 ảnh nền) thay vì viết lại toàn bộ writing_hub.js.
+- VIỆC 4 (Listening Part 3): ĐÃ DUYỆT 5 audio script mới — dùng đúng kỹ thuật "distractor trước,
+  đáp án đúng sau" của đề Cambridge thật, không trùng tên item=card nữa.
+- VIỆC 5 (R&W Part 2 Dialogue): ĐÃ DUYỆT — Leo cố định làm người hỏi, Milo bị để trống toàn bộ
+  5 lượt, logic mạch lạc. Lưu ý: bản mới chỉ tập trung cảnh "bắt-thả" đầu truyện, không còn
+  cảnh "mắc lưới-giải cứu" như bản lỗi cũ — đây là thu hẹp phạm vi hợp lý, không phải thiếu sót.
+- VIỆC 6 (CLIL vocab_focus): ĐÃ DUYỆT 5 cụm collocation thay thế + bổ sung Gate 4 kiểm tra
+  word-count ≥2 để chặn tái diễn lỗi này ở các tuần sau.
+- Đã giao Antigravity Vòng 29: xác nhận lại VIỆC 1, bổ sung info còn thiếu cho VIỆC 2b, và
+  thực thi sinh asset thật cho VIỆC 2a + 3-4-5-6 (mỗi việc commit riêng).
+## CẬP NHẬT 31/10/2026 — VÒNG 29 HOÀN TẤT 6 FIX W33/W34 + KHỞI ĐỘNG RÀ SOÁT TOÀN DIỆN W34
+
+- Vòng 29: đã ship đầy đủ cả 6 fix đã duyệt (is_missing map đúng known, vocab_get_better.jpg,
+  ảnh Discovery Report mới, audio Listening P3 mới, dialogue R&W Part 2 viết lại — phiên bản
+  thực thi phủ trọn cả 2 nửa truyện ngụ ngôn, tốt hơn bản duyệt ban đầu, vocab_focus CLIL +
+  Gate 4 enhancement). 7 commit riêng biệt, toàn bộ Gate 3/4/15 PASS, đã push.
+- Còn 2 việc nhỏ chưa đóng: sinh ảnh vocab_safe.jpg (đã duyệt, chưa sinh), và xác nhận lý do
+  đổi "natural world"->"animal helpers" ngoài phạm vi đã duyệt.
+- Owner yêu cầu MỞ RỘNG phạm vi: rà soát TOÀN BỘ 15 quest của W34 (không chỉ các quest đã tự
+  test), đối chiếu Cambridge word list + format Starters/Movers/Flyers + SOP, với bằng chứng
+  thực tế (code, audio transcript, ảnh chụp màn hình production) để Claude duyệt trước khi
+  trình Owner quyết định.
+- Áp dụng lại chuẩn cũ: tối đa 5 quest/đợt rà soát. Đã giao Đợt 1/3 (gear1_webtoon,
+  gear2_karaoke, gear3_retell, gear4_clil, science_lab) ở Vòng 30 — đây là 5 quest CHƯA từng
+  được audit sâu trong phiên này.
+- Phát hiện lỗ hổng hạ tầng cần xác nhận: hiện không rõ repo có sẵn file Cambridge Word List
+  chính thức hay không — nếu không có, cần Owner cung cấp trước khi đối chiếu từ vựng tự động
+  được đáng tin cậy.
+- App hiện KHÔNG live / không có người dùng thật — giảm áp lực thời gian nhưng không giảm yêu
+  cầu chất lượng trước khi mở lại.
+## CẬP NHẬT 31/10/2026 — VÒNG 30 HOÀN TẤT: ĐỢT 1/3 RÀ SOÁT W34 + PHÁT HIỆN LỖI NGHIÊM TRỌNG MỚI
+
+- Đóng Vòng 29: vocab_safe.jpg đã sinh (nhưng prompt thực tế bị rút gọn so với bản duyệt — cần
+  Antigravity xác nhận có chủ đích hay không). Xác nhận hợp lý việc đổi "natural world"->
+  "animal helpers" trong vocab_focus W34 (có bằng chứng content_en: "natural world" không xuất
+  hiện nguyên văn, "animal helpers" có xuất hiện).
+- PHÁT HIỆN LỖ HỔNG HẠ TẦNG: repo KHÔNG có file Cambridge Word List chính thức đầy đủ (chỉ có
+  660 từ tự gõ tay, thiếu xa so với ~1300+ từ chính thức Starters+Movers+Flyers) -> CHƯA THỂ đối
+  chiếu từ vựng tự động đáng tin cậy. **CẦN QUYẾT ĐỊNH CỦA OWNER**: cung cấp file chính thức, hoặc
+  cho phép Claude tìm nguồn công khai từ Cambridge Assessment English.
+- Đợt 1/3 rà soát toàn diện (5 quest: gear1_webtoon, gear2_karaoke, gear3_retell, gear4_clil,
+  science_lab) hoàn tất điều tra, phát hiện:
+  - LỖI NGHIÊM TRỌNG NHẤT: gear3_retell — audio nút Listen sai nội dung ở TẤT CẢ 5 bước (không
+    chỉ bước 4&5 như báo cáo ban đầu) do lệch cấu trúc ánh xạ 5-bước-retell vs 8-câu-shadowing.
+    Hướng sửa: chuyển sang dùng scene_X.mp3 (đã xác nhận khớp 100% ở gear1_webtoon). Đồng thời
+    retell_questions đang nằm sai vị trí ở file legacy read.js thay vì reading_hub.js.
+  - 4 lỗi nhỏ khác: thiếu audio_url tường minh ở gear1_webtoon, dấu phẩy dính từ ở gear2_karaoke
+    câu 7 (rủi ro chấm điểm phát âm sai), nghi ngờ phát âm -ed bị nuốt ở audio câu 8, audio
+    explore.mp3 (gear4_clil) lệch nhẹ 3 cụm từ so với text sau khi upgrade collocation.
+  - science_lab: không có lỗi, chỉ có đề xuất nâng cấp (ảnh riêng cho từng stage) — để Owner
+    quyết định, không bắt buộc.
+- Đã giao Vòng 31: sửa dứt điểm 4 lỗi trên trước khi sang Đợt 2/3, đúng nguyên tắc "xong đợt mới
+  sang đợt sau". CHƯA giao Đợt 2/3 (word_blitz, sentence_smash, math_quest, story_writer,
+  broadcast_studio).
+- App vẫn KHÔNG live / không có người dùng thật.
+## CẬP NHẬT 02/11/2026 — VÒNG 31: 4/5 FIX ĐỢT 1 OK, FIX 1 (gear3_retell) PHÁT HIỆN VẤN ĐỀ MỚI
+
+- FIX 2,3,4,5 (Vòng 31) đều đạt, có Whisper ASR verify verbatim đầy đủ: audio_url tường minh ở
+  gear1_webtoon, dấu phẩy sửa + xác nhận phát âm "trusted" đúng ở gear2_karaoke, explore.mp3 tái
+  tạo khớp collocation mới ở gear4_clil, science_lab giữ nguyên theo quyết định sản phẩm.
+- VIỆC A1 (vocab_safe.jpg prompt rút gọn) đã giải trình: lỗi trích dẫn báo cáo, ảnh thực tế sinh
+  từ đúng prompt đầy đủ đã duyệt.
+- FIX 1 (gear3_retell — audio sai nội dung) sửa đúng phần audio (scene_X.mp3), NHƯNG phát sinh
+  2 vấn đề mới ngoài phạm vi đã duyệt:
+  1. Trường `sentence` (câu mẫu Retell) bị ghi đè thành TRÙNG VERBATIM với narration Webtoon,
+     thay vì giữ câu diễn đạt lại độc lập dùng chips — đánh giá sư phạm: đây là bước lùi thiết kế
+     (biến bài tập Retell thành ghi nhớ máy móc thay vì luyện paraphrase, sai mục tiêu kỹ năng
+     Cambridge Speaking Part 3). Đã yêu cầu Antigravity đề xuất lại bản diễn đạt độc lập, chờ
+     duyệt trước khi ship.
+  2. retell_questions giờ tồn tại song song ở CẢ reading_hub.js và read.js (vi phạm nguyên tắc
+     1-nguồn-dữ-liệu-duy-nhất) — yêu cầu xác minh và dọn dẹp.
+  3. Whisper transcript explore.mp3 xuất hiện từ "But" không có trong content_en gốc — cần xác
+     nhận là nhiễu ASR hay TTS tự chèn thêm nội dung (rủi ro hệ thống nếu là vế sau).
+- Đã giao Vòng 32: làm rõ + sửa 4 yêu cầu trên để đóng dứt điểm Đợt 1/3. VẪN CHƯA cho phép sang
+  Đợt 2/3 (word_blitz, sentence_smash, math_quest, story_writer, broadcast_studio).
+- Gate 3/4/15 W34 toàn bộ PASS ở Vòng 31 (15/15 quest), không có regression ở các quest khác.
+- App vẫn KHÔNG live / không có người dùng thật.
+## CẬP NHẬT 02/11/2026 — ĐÓNG ĐỢT 1/3 RÀ SOÁT W34, MỞ ĐỢT 2/3
+
+- Fix 1 (gear3_retell) hoàn tất: audio chuyển đúng sang scene_X.mp3, retell_questions gộp về
+  1 nguồn duy nhất reading_hub.js (đã xóa bản sao dư thừa ở read.js, xác nhận không còn code nào
+  phụ thuộc file cũ). Phát hiện và sửa vấn đề pedagogy: 5 câu sentence ban đầu bị ghi đè trùng
+  100% verbatim với narration Webtoon (sai mục tiêu kỹ năng Retell — biến thành học vẹt thay vì
+  diễn đạt lại). Đã duyệt bản viết lại độc lập cho cả 5 bước, chỉnh thêm 2 điểm từ vựng (giữ nhất
+  quán "lion"/"mouse" thay vì đồng nghĩa văn chương "beast"/"small friend" — quan trọng với học
+  sinh A2 6-12 tuổi).
+- Câu hỏi "But" xuất hiện trong audio explore.mp3: đã điều tra kỹ bằng 3 lớp bằng chứng độc lập
+  (code TTS, Whisper word-timestamp, cắt lát FFmpeg cô lập) — xác nhận là ảo giác nhận diện của
+  Whisper, KHÔNG phải lỗi nội dung audio thực tế. Không cần sửa.
+- Đã giao Vòng 33: apply 5 câu sentence đã duyệt, re-verify gates, chính thức đóng Đợt 1/3, mở
+  Đợt 2/3 (word_blitz, sentence_smash, math_quest, story_writer, broadcast_studio) theo đúng
+  format rà soát đã dùng ở Đợt 1 (data nguyên văn + screenshot thực tế + transcript audio +
+  đối chiếu Cambridge + tự đánh giá nghi vấn).
+- Còn chờ: xác nhận hạ tầng Cambridge Word List (hiện chỉ có 660/~1300+ từ chính thức) — cần anh
+  cung cấp file nguồn hoặc cho phép tôi tìm nguồn công khai từ Cambridge Assessment English.
+- App vẫn KHÔNG live / không có người dùng thật.
+## CẬP NHẬT 02/11/2026 — ĐÓNG ĐỢT 1/3, ĐỢT 2/3 PHÁT HIỆN LỖI TIỀM ẨN Ở BROADCAST_STUDIO
+
+- Đợt 1/3 (gear1_webtoon, gear2_karaoke, gear3_retell, gear4_clil, science_lab, science_report)
+  CHÍNH THỨC ĐÓNG — 5 câu Retell mới đã apply, không trùng verbatim narration, Gate 3/4/15 toàn
+  bộ PASS (15/15 quest).
+- Đợt 2/3 (word_blitz, sentence_smash, math_quest, story_writer, broadcast_studio) điều tra xong,
+  phát hiện:
+  1. **NGHI VẤN LỖI QUAN TRỌNG (chưa xác nhận runtime)**: broadcast_studio Teleprompter thiết kế
+     5 scene (Setting/Action/Problem/Response/Ending) nhưng nguồn dữ liệu writing_hub.picture_story
+     chỉ có 3 bước — Scene 4 & 5 nhiều khả năng hiển thị RỖNG mặc định cho học sinh. Đề xuất fix:
+     dùng speaking_hub.picture_story (có sẵn đúng 5 narrator_prompt) làm fallback cho Scene 4 & 5.
+     Cần Antigravity xác minh bằng DOM/screenshot thực tế trước khi kết luận.
+  2. **Pattern hệ thống lặp lại 3 lần**: file dữ liệu song song không còn dùng (read.js đã dọn ở
+     Đợt 1, giờ thêm word_match.js và grammar.js ở Đợt 2) — đã giao quét toàn diện thư mục
+     week_34 một lần để tìm hết, thay vì xử lý lẻ tẻ.
+  3. Gate 3 báo science_report_scene_w34.jpg (ảnh Discovery Report fix ở Vòng 29) là orphaned —
+     nhiều khả năng false positive do Gate 3 không quét được reference trong file .jsx component,
+     cần xác minh nhanh bằng grep.
+  4. math_quest: đã tự tính lại cả 5 bài toán, 100% chính xác, không lỗi.
+  5. story_writer: 2 chỗ audio lệch nhẹ với text sau khi sửa (Scene 1 "resting" vs "sleeping
+     peacefully", Scene 3 thiếu từ "thick") — fix thấp rủi ro, đã giao sửa cùng đợt.
+- Đã giao Vòng 34: xác minh + sửa 4 việc trên. VẪN CHƯA mở Đợt 3/3 (science_report, info_exchange,
+  boss_listening, boss_reading, weekly_review — xác nhận lại các quest đã fix từ trước).
+- Còn chờ quyết định của anh về nguồn Cambridge Word List chính thức (hạ tầng để đối chiếu từ
+  vựng tự động, hiện chưa đủ dữ liệu).
+- App vẫn KHÔNG live / không có người dùng thật.
+## CẬP NHẬT 02/11/2026 — ĐỢT 2/3: BROADCAST_STUDIO HẾT RỖNG NHƯNG LẠI TRÙNG LẶP, ĐANG SỬA TIẾP
+
+- VIỆC 1 Vòng 34 (broadcast_studio Scene 4&5 rỗng): xác nhận bằng Playwright DOM thực tế là có
+  thật, đã sửa bằng cách fallback sang speaking_hub.picture_story cho Scene 4-5. NHƯNG phát hiện
+  lỗi mới: Scene 2≈Scene 4 và Scene 3≈Scene 5 kể lại CÙNG một sự kiện (do writing_hub nén 5 cảnh
+  thành 3 beat, trộn với speaking_hub 5-cảnh-đầy-đủ gây trùng lặp, đồng thời làm mất hẳn 2 cảnh
+  quan trọng: chuột chạy qua chân + lời hứa giúp).
+- Đã quyết định Hướng A: đổi toàn bộ 5 scene Teleprompter về nhất quán nguồn speaking_hub.
+  picture_story.images (có sẵn đúng 5 cảnh liền mạch, không trùng lặp), đánh đổi mất liên kết
+  "đọc lại bài đã viết ở Quest 9" cho 3/5 scene — ưu tiên đúng mạch truyện & chuẩn Cambridge
+  Speaking Part 3 (5 tranh) hơn.
+- VIỆC 2 (xác nhận science_report_scene_w34.jpg không orphaned — chỉ do Gate 3 không quét được
+  .jsx component) và VIỆC 4 (đồng bộ audio writing_hub Scene 1&3) đã hoàn tất, verify bằng Whisper
+  WER 0%.
+- VIỆC 3 (quét 26 file dữ liệu W34): phân loại đầy đủ — 4 file rác thô xác nhận 0 tham chiếu
+  (shadowing.js.bak, vocab_dictionary_master.js, shadowing_ipa.js, logic_science.js) đã duyệt
+  xóa; 8 file "song song nhưng vẫn re-export qua index.js" giữ lại chờ refactor index.js sau.
+- Đã giao Vòng 35: sửa trùng lặp Scene 2≈4/3≈5, xóa 4 file rác, rồi mới đóng chính thức Đợt 2/3
+  và mở Đợt 3/3 (xác nhận lại — không phải điều tra mới — 5 quest: science_report, info_exchange,
+  boss_listening, boss_reading, weekly_review).
+- Còn chờ quyết định của anh về nguồn Cambridge Word List chính thức.
+- App vẫn KHÔNG live / không có người dùng thật.
+## CẬP NHẬT 02/11/2026 — MỞ RỘNG QUY TRÌNH RÀ SOÁT TOÀN DIỆN 3-ĐỢT SANG TUẦN 33
+
+- W34 đã đóng hoàn tất (15/15 quest, 3/3 đợt, xác nhận bằng ảnh thật qua zip).
+- Owner xác nhận Cambridge Word List thực ra đã có sẵn trong code — yêu cầu Antigravity dán
+  nguyên văn (không tự kết luận) để Claude tự đánh giá độc lập xem có đủ dùng cho đối chiếu từ
+  vựng tự động hay không, thay vì tin theo verdict "chưa đủ" mà Antigravity tự đưa ra ở Vòng 30.
+- Owner quyết định: áp dụng NGUYÊN quy trình rà soát toàn diện 3-đợt (5 quest/đợt) vừa hoàn thành
+  cho W34, nay sang W33 — đảm bảo "golden standard" thật chuẩn trước khi chọn W33 hoặc W34 làm
+  tuần mẫu chuẩn cuối cùng để xây script Auto-Freeze Generator (hiện đang tạm dừng, spec đã sẵn
+  sàng từ Vòng 26).
+- Đã giao Vòng 38: (A) cung cấp raw Word List để review, (B) xác nhận chủ đề + 15 quest ID của
+  W33, (C) mở Đợt 1/3 của W33 (gear1_webtoon, gear2_karaoke, gear3_retell, gear4_clil,
+  science_lab) đúng format đã dùng ở W34, (D) bắt buộc đóng gói zip bằng chứng NGAY TỪ ĐẦU (khác
+  với W34 — lúc đó mãi giữa chừng mới thêm yêu cầu này).
+- Việc fix vocab W33 trước đó (vocab_safe.jpg, vocab_get_better.jpg) và Golden Freeze Manifest đã
+  xong, không cần lặp lại ở đợt rà soát mới này.
+- App vẫn KHÔNG live / không có người dùng thật.
+[ROUND 39 — Cambridge Word List Authenticity Fix + W33 Batch 1 Fixes Queued]
+
+FINDING (Claude, independent verification, not from Antigravity):
+- Confirmed via code read: scripts/fetch_official_wordlists.mjs sources
+  from 2 unrelated GitHub CEFR-J repos (Tokiwa University academic
+  framework, NOT Cambridge) + hand-typed CURATED_CEFR_DATA with no
+  citation. src/data/official_wordlists/*.json are NOT genuine Cambridge
+  data — root cause is sourcing, not just word-count shortfall.
+- Claude located and verified via WebFetch 3 genuine official Cambridge
+  Assessment PDFs (cambridgeenglish.org domain, confirmed copyright +
+  doc-code metadata):
+  1. PRIMARY: 351850-a1-movers-word-list-2018.pdf — actually a COMBINED
+     Pre A1 Starters + A1 Movers + A2 Flyers wordlist, doc code
+     CER/6137/V3/JUN25/SMF-Wordlists, © 2025 Cambridge University Press
+     & Assessment. ~44 pages, per-level A-Z lists + combined/grammatical/
+     thematic lists.
+  2. 351849-pre-a1-starters-word-list-2018.pdf (Starters picture book,
+     supplementary)
+  3. 245852-yle-flyers-word-list-picture-book.pdf (Flyers picture book,
+     supplementary)
+- Sanity check: current starters_pre_a1.json has 92 words vs. official
+  Starters list ≈500 entries — confirms severity.
+
+ACTION: Round 39 prompt instructs Antigravity to download PDF #1 directly,
+self-verify authenticity (copyright/doc-code match), parse via proper
+PDF-to-text tooling (not AI summarization, not manual retyping), rebuild
+fetch_official_wordlists.mjs and the 3 JSON files from real data, and
+include raw extracted text in the zip for Claude's independent
+cross-check.
+
+ALSO QUEUED (W33 Batch 1 findings, to be fixed same round):
+- 2 single-word bold-chunk violations in week_33/read.js (Scene 2
+  "slipped", Scene 5 "headmaster" in lexical_chunks)
+- Gate 4 coverage gap: word-count assertion doesn't scan read.js markdown
+  bold chunks or lexical_chunks[] hotspot arrays, only vocab_focus —
+  needs structural fix + re-run on both W33 and W34
+- W33 gear3_retell sentence-duplication bug (mirrors W34's fixed bug) —
+  Antigravity to PROPOSE 5 paraphrases, not auto-apply
+- "Tom" naming evidence-gathering across early W33 quests, for Bình's
+  decision (not an auto-fix)
+
+STATUS: W33 audit paused on Batch 1 pending this round's fixes. Batch 2/3
+and Batch 3/3 of W33 not yet started. Golden-standard decision (W33 vs
+W34) and Auto-Freeze Generator build remain blocked on W33's full audit
+completing.
+[BÌNH'S DECISION — Tom naming]
+Bình decided: name "Tom" explicitly starting Day 1 (not keep generic "a boy"/"his
+friend"), for full-week consistency. Round 40 prompt scopes this as a minimal single-
+sentence edit ("A boy was running very fast past the science room." → "His friend Tom was
+running very fast past the science room."), re-audio for that one scene only, and a
+required fix to the quiz distractor explanation for option "Tom's Clumsy Morning" (its
+current "not Tom" reasoning becomes false once Tom is named in the story).
+[ROUND 39 TOM-NAMING FOLLOW-UP — VERIFIED GOOD, BUT ROUND 40 MAIN SCOPE STILL PENDING]
+
+Independently verified via zip (round39_20261102.zip, updated): Tom Day 1 naming task
+executed correctly and minimally — read.js (content_en/text_en/content_vi/text_vi) and
+shadowing.js (sentence 2) updated with "His friend Tom was running very fast past the
+science room."; Scene 1/2 in story_scenes correctly left untouched (sentence doesn't
+actually live there); shadowing_2.mp3 (14,112 bytes) and read_stem.mp3 (117,024 bytes)
+re-recorded. Build/Gate3/Gate15/CEFR guard all pass.
+
+Two new proposals reviewed and approved:
+- retell_questions Step 2 sentence updated to include Tom's name — APPROVED.
+- Quiz opt_a explanation (read.js:129) — APPROVED Option B (simpler, CEFR-A2-appropriate
+  wording over the more complex Option A).
+
+CONFIRMED STILL PENDING (independently re-verified, not yet touched by this zip):
+- starters_pre_a1.json "poss"-suffix parsing bug (7 entries) — unchanged.
+- 8/15 "_interacted.png" screenshots still byte-identical to "before" — unchanged.
+- Story Writer garbled/triplicated assembled-story bug — not investigated.
+- retell_questions Steps 1/3/4/5 and lexical_chunks (Scene 2/5) — not yet applied to code.
+
+STATUS: Round 40 prompt re-sent, consolidating the 2 new approvals plus the 5 remaining
+items (A-E) from the original Round 40 scope into a single follow-up package. W33 Batch 1
+still not closed pending this.
+[ROUND 39 SELF-AUDIT CONFIRMED — PROCEEDING TO ROUND 40]
+
+Antigravity ran a cold self-audit after IDE reinstall (v2.6.0) + session loss, re-deriving
+Round 39 state from git/file ground truth rather than prior chat memory. Cross-checked
+against Claude's own independent zip inspection earlier this session: all 5 pending items
+match exactly (Gate 4 W33 2 failures, 7 "poss"-suffix wordlist entries, retell/quiz
+approvals not yet in code, 8 byte-identical interacted screenshots, Story Writer bug
+unresolved). No discrepancies found — self-audit is trustworthy.
+
+One gap noted: Gate 15 "PASS" claim in this round's report appears to cite cached output
+from round39_pkg rather than a fresh run this session — Round 40 prompt requires all gates
+re-run fresh before packaging.
+
+STATUS: Round 39 confirmed NOT closed. Round 40 prompt dispatched covering all 5 pending
+items (poss-bug fix, retell/quiz apply, lexical chunks apply, 8 screenshot re-capture +
+SHA256 self-check, Story Writer investigation). W33 Batch 2/3 blocked until Round 40 closes.
+[ROUND 40 VERIFIED — 3/5 ITEMS GENUINELY CLOSED, 2/5 ONLY PARTIALLY FIXED]
+
+Independently verified via zip (round40_20261103.zip):
+✅ GENUINELY FIXED: wordlist "poss"-suffix bug (0 violations across all 3 files, re-verified
+   via regex), retell_questions 5 steps + lexical chunks Scene 2/5 + quiz opt_a explanation
+   (all applied to code, diff matches exactly), Gate 4 W33/W34 PASS.
+
+⚠️ PARTIALLY FIXED, reopened for Round 41:
+1. Screenshot evidence integrity: SHA256-distinctness self-check works mechanically but is
+   insufficient — visually inspected several "interacted" screenshots and found at least
+   3/8 (boss_listening, science_lab, word_blitz) show NO real interaction despite differing
+   hashes (difference is just a countdown timer tick or random word-order reshuffle, not an
+   actual click/drag action). Report's per-quest interaction narrative (e.g. "clicked radio
+   button" for boss_listening) doesn't match the actual UI (which has no radio buttons —
+   it's a line-drawing task). boss_reading_interacted.png DOES show genuine interaction
+   (word "nurse" selected), so not a universal failure, but the fix is incomplete.
+2. Story Writer garbled-text bug: the triplicated-final-sentence bug is genuinely fixed, but
+   Scene 1 and Scene 2 in the assembled story paragraph are STILL word-salad/ungrammatical,
+   identical to the Round 39 bug — contradicts the report's claim that all 5 scenes were
+   given clean sample sentences in the ladder test.
+
+ACTION: Round 41 prompt dispatched requiring per-UI-type interaction logic (not one-size-
+"click START"), a secondary DOM-state assertion beyond SHA256 for the screenshot self-check,
+and investigation into why only Scenes 3-5 (not 1-2) got the Story Writer fix.
+
+NEW STANDING RULE (user-mandated): all round evidence zips go to the same location —
+docs/review_packages/roundXX_YYYYMMDD.zip — going forward. Round 40 incorrectly used
+docs/agent_artifacts/ instead; corrected starting Round 41.
+
+STATUS: W33 Batch 1 still not closed. Blocked on Round 41.
+[ROUND 41 VERIFIED — BOTH ROUND 40 GAPS GENUINELY CLOSED]
+
+Independently verified via zip (round41_20261103.zip), visually inspected each key
+screenshot (not just trusting interaction_evidence.json):
+✅ boss_listening_interacted.png: real drawn line to "Tom", "Score: 33%" banner — confirmed.
+✅ science_lab_interacted.png: "30 PTS", label genuinely dropped into zone — confirmed.
+✅ word_blitz_interacted.png: "25 PTS", matched pair state shown — confirmed.
+✅ story_writer_interacted.png: assembled story now 100% grammatical across all 5 scenes,
+   no word-salad — confirmed, matches report's claimed text exactly.
+Root cause (StoryWriting.jsx's anti-cheat "Mandatory Cognitive Shuffle" feature interacting
+badly with the old click-chip-in-DOM-order test method) was correctly diagnosed and fixed
+at the test-script level, not patched around.
+
+GAP FOUND: Gate 15 in this round ran against localhost, not production — contradicts the
+original audit mandate (production evidence required). Round 42 prompt requires production
+deployment + a fresh production-verified Gate 15 run before Batch 1 is declared closed.
+
+USER INSTRUCTION (new standing rule): Antigravity must produce exactly ONE zip per round as
+the deliverable — no parallel loose staging folders left in docs/agent_artifacts/. Clean up
+existing stray folders from rounds 39-41 too.
+
+STATUS: W33 Batch 1 content/code fixes are verified correct, but not yet formally closed —
+pending Round 42's production confirmation. Batch 2 (Quests 6-10) starts after that.
 

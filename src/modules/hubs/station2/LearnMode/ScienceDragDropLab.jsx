@@ -37,6 +37,8 @@ function DraggableLabel({ id, text, isPlaced, disabled, isSelected, onClick }) {
       {...listeners}
       {...attributes}
       onClick={onClick}
+      data-testid="lab-label-btn"
+      data-id={id}
       className={`px-3.5 py-2 sm:px-4 sm:py-2.5 bg-gradient-to-r ${
         isSelected
           ? 'from-amber-500 to-amber-600 ring-4 ring-amber-300 scale-105 border-amber-300'
@@ -57,6 +59,8 @@ function DropZone({ id, label, currentPlaced, isCorrect, targetInfo, isTargeted,
     <div
       ref={setNodeRef}
       onClick={onClick}
+      data-testid="lab-drop-zone"
+      data-id={id}
       style={{ left: `${targetInfo.x}%`, top: `${targetInfo.y}%` }}
       className={`absolute transform -translate-x-1/2 -translate-y-1/2 px-1.5 sm:px-2 py-0.5 sm:py-1 min-w-[70px] sm:min-w-[95px] max-w-[110px] sm:max-w-[155px] rounded-lg sm:rounded-xl border-2 transition-all flex flex-col items-center justify-center text-center shadow-md backdrop-blur-md cursor-pointer z-10 select-none ${
         currentPlaced
@@ -337,7 +341,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             </span>
           </div>
 
-          <div className="px-2.5 py-1 bg-teal-100 text-teal-900 rounded-lg border border-teal-300 font-black text-xs font-mono">
+          <div data-testid="lab-score-display" className="px-2.5 py-1 bg-teal-100 text-teal-900 rounded-lg border border-teal-300 font-black text-xs font-mono">
             {score} PTS
           </div>
         </div>

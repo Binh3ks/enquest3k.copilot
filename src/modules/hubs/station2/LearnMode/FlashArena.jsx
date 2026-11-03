@@ -217,7 +217,7 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
             </span>
           </div>
 
-          <div className="px-3 py-1.5 bg-amber-500/20 text-amber-300 rounded-xl border border-amber-400/40 font-black text-xs sm:text-sm font-mono">
+          <div data-testid="flash-score-display" className="px-3 py-1.5 bg-amber-500/20 text-amber-300 rounded-xl border border-amber-400/40 font-black text-xs sm:text-sm font-mono">
             {score} PTS
           </div>
         </div>
@@ -347,6 +347,8 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
                 <button
                   key={item.id}
                   type="button"
+                  data-testid="flash-en-btn"
+                  data-id={item.id}
                   onClick={() => setSelectedEn(item)}
                   className={`w-full p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl font-black text-xs sm:text-base lg:text-lg transition-all border text-left flex items-center justify-between shadow-xs active:scale-95 cursor-pointer ${
                     isSelected
@@ -385,6 +387,8 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
                 <button
                   key={item.id}
                   type="button"
+                  data-testid="flash-vi-btn"
+                  data-id={item.id}
                   onClick={() => setSelectedVi(item)}
                   className={`w-full p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl font-black text-xs sm:text-base lg:text-lg transition-all border text-left flex items-center justify-between shadow-xs active:scale-95 cursor-pointer ${
                     isSelected

@@ -1,9 +1,9 @@
 {
-  "commit": "c3bfeda136f95bacf580043166e159271f4829a1",
-  "git_commit": "c3bfeda136f95bacf580043166e159271f4829a1",
-  "shortCommit": "c3bfeda1",
-  "message": "chore(w34): downgrade lifecycleState to CONTENT_COMPLETE_PENDING_RUNTIME_VERIFICATION",
-  "builtAt": "2026-10-27T09:12:18.587Z",
-  "build_timestamp": "2026-10-27T09:12:18.588Z",
+  "commit": "8ed9cdd1fc760292a07019ed96d15a88b5895011",
+  "git_commit": "8ed9cdd1fc760292a07019ed96d15a88b5895011",
+  "shortCommit": "8ed9cdd1",
+  "message": "fix(w34): replace squirrel with authentic mouse in science_report_scene_w34",
+  "builtAt": "2026-11-03T07:41:52.352Z",
+  "build_timestamp": "2026-11-03T07:41:52.352Z",
   "env": "production"
 }
