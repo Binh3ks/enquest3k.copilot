@@ -27,7 +27,7 @@
     "rule": "was/were + V-ing for background action, Past Simple for interrupting action",
     "regex": "(was|were)\\s+\\w+ing",
     "examples": [
-      "Jake **was walking** carefully when Tom **slipped** on the wet floor.",
+      "Jake **was walking** carefully when Tom **slipped on the wet floor**.",
       "The cleaner **was drying** the tiles while the students **were waiting** outside.",
       "Tom **was running** fast, so he did not see the yellow warning sign."
     ]

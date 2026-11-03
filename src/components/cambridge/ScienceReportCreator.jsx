@@ -332,6 +332,8 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
               <button
                 key={hs.id}
                 type="button"
+                data-testid="discovery-hotspot-btn"
+                data-id={hs.id}
                 onClick={() => handleHotspotClick(hs)}
                 style={{ top: hs.y, left: hs.x }}
                 className={`absolute -translate-x-1/2 -translate-y-1/2 p-2 sm:p-2.5 rounded-2xl font-black text-xs shadow-xl transition-all flex items-center gap-1.5 ${
@@ -348,7 +350,7 @@ export default function ScienceReportCreator({ reportTopic, customConfig, weekNu
 
           {/* Observation Callout Card */}
           {observedHotspot && (
-            <div className="p-4 bg-amber-50 border-2 border-amber-300 rounded-2xl space-y-2 animate-in slide-in-from-bottom-2">
+            <div data-testid="discovery-evidence-card" className="p-4 bg-amber-50 border-2 border-amber-300 rounded-2xl space-y-2 animate-in slide-in-from-bottom-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-black uppercase text-amber-900 flex items-center gap-1.5">
                   <Lightbulb size={16} className="text-amber-600" /> Evidence Found: {observedHotspot.name}

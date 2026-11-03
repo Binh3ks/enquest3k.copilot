@@ -1,9 +1,9 @@
 {
-  "commit": "7daf8c0be5f8c423fa1ffeffbeeb9e23fc2b7be1",
-  "git_commit": "7daf8c0be5f8c423fa1ffeffbeeb9e23fc2b7be1",
-  "shortCommit": "7daf8c0b",
-  "message": "chore(scripts): allow fetch_official_wordlists to read from wordlist_source.zip",
-  "builtAt": "2026-11-03T07:53:31.287Z",
-  "build_timestamp": "2026-11-03T07:53:31.287Z",
+  "commit": "243a33f859ba3090c2506b0d9f1f1cb50ccf548a",
+  "git_commit": "243a33f859ba3090c2506b0d9f1f1cb50ccf548a",
+  "shortCommit": "243a33f8",
+  "message": "chore: update version.json and package_round42 self-reference",
+  "builtAt": "2026-11-03T08:14:17.893Z",
+  "build_timestamp": "2026-11-03T08:14:17.893Z",
   "env": "production"
 }

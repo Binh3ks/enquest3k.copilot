@@ -177,7 +177,7 @@ export function BarModelQuest({ barModelData, customQuestions, weekNumber, onCom
             </span>
           </div>
 
-          <div className="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-lg border border-amber-300 font-black text-xs font-mono">
+          <div data-testid="math-score-display" className="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-lg border border-amber-300 font-black text-xs font-mono">
             {score} PTS
           </div>
 
@@ -278,6 +278,7 @@ export function BarModelQuest({ barModelData, customQuestions, weekNumber, onCom
             <div className="flex-1 relative flex items-center">
               <input
                 type="number"
+                data-testid="math-answer-input"
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder="Enter numerical answer..."
@@ -294,6 +295,7 @@ export function BarModelQuest({ barModelData, customQuestions, weekNumber, onCom
             </div>
             <button
               type="submit"
+              data-testid="math-submit-btn"
               className="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-slate-950 font-black text-sm sm:text-base rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2 shrink-0 cursor-pointer"
             >
               <span>Submit Answer ▶</span>
@@ -310,7 +312,7 @@ export function BarModelQuest({ barModelData, customQuestions, weekNumber, onCom
 
           {/* Feedback */}
           {feedback && (
-            <div className={`p-4 rounded-2xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
+            <div data-testid="math-feedback" className={`p-4 rounded-2xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
               feedback.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
             }`}>
               {feedback.isCorrect ? <CheckCircle2 size={18} /> : <AlertCircle size={18} />}

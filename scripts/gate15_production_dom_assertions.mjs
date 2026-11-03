@@ -210,10 +210,10 @@ async function performMeaningfulInteraction(page, qid) {
         break;
       }
       case 'science_report': {
-        const nextOrHotspot = page.locator('button.rounded-full.absolute, button:has-text("Next")').first();
-        if (await nextOrHotspot.isVisible().catch(() => false)) {
-          await nextOrHotspot.click().catch(() => {});
-          await page.waitForTimeout(500);
+        const hotspot = page.locator('[data-testid="discovery-hotspot-btn"]').first();
+        if (await hotspot.isVisible().catch(() => false)) {
+          await hotspot.click().catch(() => {});
+          await page.waitForTimeout(600);
         }
         break;
       }
@@ -243,6 +243,13 @@ async function performMeaningfulInteraction(page, qid) {
           await startBtn.click().catch(() => {});
           await page.waitForTimeout(500);
         }
+        // Place first 4 word blocks into sentence builder target zone
+        const blocks = page.locator('[data-testid="word-block-btn"]');
+        const blockCount = await blocks.count().catch(() => 0);
+        for (let i = 0; i < Math.min(blockCount, 4); i++) {
+          await blocks.nth(i).click().catch(() => {});
+          await page.waitForTimeout(200);
+        }
         break;
       }
       case 'math_quest': {
@@ -250,6 +257,17 @@ async function performMeaningfulInteraction(page, qid) {
         if (await startBtn.isVisible().catch(() => false)) {
           await startBtn.click().catch(() => {});
           await page.waitForTimeout(600);
+        }
+        // Problem 1: 100m corridor - 40m walked = 60m
+        const input = page.locator('[data-testid="math-answer-input"]').first();
+        if (await input.isVisible().catch(() => false)) {
+          await input.fill('60');
+          await page.waitForTimeout(200);
+          const submitBtn = page.locator('[data-testid="math-submit-btn"]').first();
+          if (await submitBtn.isVisible().catch(() => false)) {
+            await submitBtn.click().catch(() => {});
+            await page.waitForTimeout(500);
+          }
         }
         break;
       }
@@ -904,6 +922,22 @@ async function main() {
         const hasModelSentence = assembled.includes('Jake walked carefully') || assembled.includes('Jake was walking carefully');
         questInteractionState = { assembled, pass: !hasWordSalad && hasModelSentence };
         console.log(`     🎯 [story_writer interaction]: pass=${questInteractionState.pass}, wordSalad=${hasWordSalad}`);
+      } else if (qid === 'science_report') {
+        const evidenceVisible = await page.locator('[data-testid="discovery-evidence-card"]').isVisible().catch(() => false);
+        const evidenceText = await page.locator('[data-testid="discovery-evidence-card"] p').innerText().catch(() => '');
+        questInteractionState = { evidenceVisible, evidenceText, pass: evidenceVisible && evidenceText.length > 10 };
+        console.log(`     🎯 [science_report interaction]: evidenceVisible=${evidenceVisible}, text="${evidenceText.slice(0, 45)}..." (pass=${questInteractionState.pass})`);
+      } else if (qid === 'sentence_smash') {
+        const placedCount = await page.locator('.border-dashed [data-testid="word-block-btn"]').count().catch(() => 0);
+        const checkBtnDisabled = await page.locator('[data-testid="grammar-check-btn"]').isDisabled().catch(() => true);
+        questInteractionState = { placedCount, checkBtnEnabled: !checkBtnDisabled, pass: placedCount > 0 };
+        console.log(`     🎯 [sentence_smash interaction]: placedCount=${placedCount}, checkBtnEnabled=${!checkBtnDisabled} (pass=${questInteractionState.pass})`);
+      } else if (qid === 'math_quest') {
+        const scoreText = await page.locator('[data-testid="math-score-display"]').innerText().catch(() => '');
+        const feedbackVisible = await page.locator('[data-testid="math-feedback"]').isVisible().catch(() => false);
+        const feedbackText = await page.locator('[data-testid="math-feedback"]').innerText().catch(() => '');
+        questInteractionState = { scoreText, feedbackVisible, feedbackText, pass: scoreText !== '0 PTS' && feedbackVisible };
+        console.log(`     🎯 [math_quest interaction]: scoreText="${scoreText}", feedbackVisible=${feedbackVisible} (pass=${questInteractionState.pass})`);
       }
     } catch (e) {
       console.warn(`[WARN] Failed to capture interaction metrics for ${qid}: ${e.message}`);

@@ -253,7 +253,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
             <span className={timeLeft <= 8 ? 'text-rose-600' : 'text-slate-900'}>{timeLeft}s</span>
           </div>
 
-          <div className="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-lg border border-amber-300 font-mono text-[11px] font-black">
+          <div data-testid="grammar-score-display" className="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-lg border border-amber-300 font-mono text-[11px] font-black">
             {score} PTS
           </div>
 
@@ -350,6 +350,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
             <div className="flex items-center justify-between flex-wrap gap-3 pt-2">
               <button
                 type="button"
+                data-testid="grammar-check-btn"
                 onClick={handleCheckAnswer}
                 disabled={targetBlocks.length === 0}
                 className="px-7 py-3 sm:py-3.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white font-black rounded-xl text-sm sm:text-base shadow-md flex items-center gap-2 transition active:scale-95 cursor-pointer"
@@ -358,7 +359,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
               </button>
 
               {feedback && (
-                <div className={`p-3 sm:p-3.5 rounded-xl border text-xs sm:text-sm font-black flex items-center gap-2 animate-in fade-in ${
+                <div data-testid="grammar-feedback" className={`p-3 sm:p-3.5 rounded-xl border text-xs sm:text-sm font-black flex items-center gap-2 animate-in fade-in ${
                   feedback.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
                 }`}>
                   {feedback.isCorrect ? <CheckCircle2 size={18} /> : <AlertCircle size={18} />}

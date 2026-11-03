@@ -965,3 +965,22 @@ existing stray folders from rounds 39-41 too.
 STATUS: W33 Batch 1 content/code fixes are verified correct, but not yet formally closed —
 pending Round 42's production confirmation. Batch 2 (Quests 6-10) starts after that.
 
+[ROUND 42 VERIFIED — W33 BATCH 1 OFFICIALLY CLOSED ON PRODUCTION]
+
+Independently verified via zip (round42_20261103.zip):
+✅ Gate 15 confirmed run against live production (app.bkbacademy.vn), version.json match
+   to commit 7daf8c0b, 15/15 quests PASS, 26/26 production assets verified.
+✅ boss_listening_interacted.png re-checked from production — identical correct state to
+   Round 41's local verification (line drawn to Tom, "Score: 33%").
+✅ Wordlist counts stable (504/412/519) after wordlist_source.zip fallback fix — no
+   regression. Gate 4, CEFR Guard, Build all PASS.
+✅ Packaging cleanup confirmed: single zip at docs/review_packages/round42_20261103.zip,
+   all loose staging folders (round39-41_pkg, wordlist_source, gate_runs, stray screenshot
+   dirs) explicitly deleted per user's standing instruction.
+
+STATUS: W33 Batch 1 (gear1_webtoon, gear2_karaoke, gear3_retell, gear4_clil, science_lab)
+is OFFICIALLY CLOSED — content/pedagogy verified, production-confirmed, packaging
+standardized. Round 43 dispatched to begin W33 Batch 2 (science_report, word_blitz,
+sentence_smash, math_quest, story_writer) using the same full-audit process, single-zip
+packaging, and production-sourced screenshots with semantic DOM interaction evidence.
+

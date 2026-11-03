@@ -24,6 +24,8 @@ export function WordBlock({ id, word, isPlaced, onClick, disabled }) {
       style={style}
       {...attributes}
       {...listeners}
+      data-testid="word-block-btn"
+      data-word={word}
       onClick={(e) => {
         // Tap-to-place fallback support
         if (onClick) onClick(id, word);

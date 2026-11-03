@@ -31,17 +31,17 @@ export const writingHubData = {
         badge_label: "BUILD",
         title: "Scene 2: Slipping on Wet Floor",
         image_url: "/images/week33/writing_panel_2.png",
-        caption: "Suddenly, he lost his balance on the wet floor and slipped.",
-        frame_L1: "Suddenly, a boy was running very fast past the science room. He lost his balance on the wet floor and slipped.",
-        sentence_hint: "Write 2 sentences: (1) Who was running very fast, and (2) how he lost his balance and slipped on the wet floor.",
+        caption: "Suddenly, Tom lost his balance on the wet floor and slipped.",
+        frame_L1: "Suddenly, Tom was running very fast past the science room. He lost his balance on the wet floor and slipped.",
+        sentence_hint: "Write 2 sentences: (1) Tom was running very fast past the science room, and (2) how he lost his balance and slipped on the wet floor.",
         connectors: ["Suddenly,", "At that moment,", "Then,", "and", "because"],
         display_chips: [
-          "a boy was running very fast", "past the science room", "lost his balance", "on the wet floor", "slipped heavily"
+          "Tom was running very fast", "past the science room", "lost his balance", "on the wet floor", "slipped heavily"
         ],
-        pills: ["a boy was running very fast", "past the science room", "lost his balance", "on the wet floor", "slipped heavily", "fell down", "dropped his books"],
-        correct_order: ["a boy was running very fast", "past the science room", "he", "lost his balance", "on the wet floor", "and", "slipped heavily"],
-        sentence_frame: "Suddenly, [a boy was running very fast] [past the science room]. He [lost his balance] [on the wet floor] and [slipped heavily].",
-        audio: "Suddenly, a boy was running very fast past the science room. He lost his balance on the wet floor and slipped."
+        pills: ["Tom was running very fast", "a boy was running very fast", "past the science room", "lost his balance", "on the wet floor", "slipped heavily", "fell down", "dropped his books"],
+        correct_order: ["Tom was running very fast", "past the science room", "he", "lost his balance", "on the wet floor", "and", "slipped heavily"],
+        sentence_frame: "Suddenly, [Tom was running very fast] [past the science room]. He [lost his balance] [on the wet floor] and [slipped heavily].",
+        audio: "Suddenly, Tom was running very fast past the science room. He lost his balance on the wet floor and slipped."
       },
       {
         scene: 3,
@@ -91,7 +91,7 @@ export const writingHubData = {
     ],
     panels: [
       { image_url: "/images/week33/writing_panel_1.png", caption: "Jake was walking carefully down the school corridor after science class.", pills: ["was walking carefully", "down the school corridor", "after science class", "noticed the wet floor tiles"] },
-      { image_url: "/images/week33/writing_panel_2.png", caption: "Suddenly, he lost his balance on the wet floor and slipped.", pills: ["a boy was running very fast", "lost his balance", "on the wet floor", "slipped heavily"] },
+      { image_url: "/images/week33/writing_panel_2.png", caption: "Suddenly, Tom lost his balance on the wet floor and slipped.", pills: ["Tom was running very fast", "lost his balance", "on the wet floor", "slipped heavily"] },
       { image_url: "/images/week33/writing_panel_3.png", caption: "Jake stopped immediately to help his friend and called the school nurse.", pills: ["stopped immediately", "help his friend", "stay calm", "called the school nurse"] },
       { image_url: "/images/week33/writing_panel_4.png", caption: "The nurse arrived quickly with a clean bandage and a cold pack to treat the cut.", pills: ["the school nurse arrived quickly", "with a clean bandage", "placed a cold pack", "to treat the cut"] },
       { image_url: "/images/week33/writing_panel_5.png", caption: "Everyone felt relieved, and the headmaster reminded all students never to run in corridors.", pills: ["everyone felt relieved", "the headmaster reminded all students", "never to run in corridors", "that Tom was safe"] }

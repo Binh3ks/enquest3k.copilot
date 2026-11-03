@@ -70,8 +70,8 @@ export default {
         image_url: "/images/week33/writing_panel_2.png",
         caption: "Panel 2: Running fast and slipping on wet floor",
         action_tags: ["running", "slipping", "wet floor", "balance"],
-        pills: ["a boy was running very fast,", "lost his balance,", "on the wet floor,", "slipped heavily,"],
-        sentence_frame: "Suddenly, a boy was running very fast, lost his balance, and slipped.",
+        pills: ["Tom was running very fast,", "a boy was running very fast,", "lost his balance,", "on the wet floor,", "slipped heavily,"],
+        sentence_frame: "Suddenly, Tom was running very fast, lost his balance, and slipped.",
         pill_color: "amber",
       },
       {
