@@ -317,7 +317,7 @@ export const speakingHub = {
       {
         id: 2,
         image_url: "/images/week33/ps_2.png",
-        narrator_prompt: "Suddenly, he lost his balance on the wet floor and slipped."
+        narrator_prompt: "Suddenly, Tom lost his balance on the wet floor and slipped."
       },
       {
         id: 3,

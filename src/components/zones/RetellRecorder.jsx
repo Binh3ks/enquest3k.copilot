@@ -640,7 +640,7 @@ export default function RetellRecorder({ scenes = [], weekNumber, onComplete }) 
               <span className="text-amber-400 text-[10px] sm:text-xs font-black tracking-wider flex items-center gap-1 shrink-0">
                 📜 PROMPTER
               </span>
-              <span className="text-[9px] sm:text-[10.5px] text-purple-200 font-bold bg-purple-900/70 px-1.5 py-0.5 rounded-md border border-purple-600/40 truncate">
+              <span data-testid="prompter-scene-badge" className="text-[9px] sm:text-[10.5px] text-purple-200 font-bold bg-purple-900/70 px-1.5 py-0.5 rounded-md border border-purple-600/40 truncate">
                 Scene {activeTeleprompterIdx + 1} of {activeScenes.length}
               </span>
             </div>
@@ -648,6 +648,7 @@ export default function RetellRecorder({ scenes = [], weekNumber, onComplete }) 
             {/* Hide / Show Toggle Button (Compact, never wraps) */}
             <button
               type="button"
+              data-testid="prompter-toggle-btn"
               onClick={() => setShowTeleprompter(prev => !prev)}
               className="px-2 sm:px-2.5 py-0.5 bg-purple-900/90 hover:bg-purple-800 active:scale-95 border border-purple-500/50 rounded-lg text-[10px] sm:text-xs font-bold transition flex items-center gap-1 text-amber-300 shadow-xs shrink-0"
               title={showTeleprompter ? "Hide Teleprompter" : "Show Teleprompter"}
@@ -662,7 +663,7 @@ export default function RetellRecorder({ scenes = [], weekNumber, onComplete }) 
             <div className="space-y-1.5 animate-in fade-in duration-150">
               {/* Current Sentence (Enlarged font size for easy reading from eye distance) */}
               <div className="p-2.5 sm:p-3.5 bg-black/60 rounded-xl border border-purple-500/40 shadow-inner text-center sm:text-left">
-                <p className="text-sm sm:text-base md:text-lg font-bold text-amber-100 leading-snug tracking-wide">
+                <p data-testid="prompter-text" className="text-sm sm:text-base md:text-lg font-bold text-amber-100 leading-snug tracking-wide">
                   {activeScenes[activeTeleprompterIdx]?.en || activeScenes[activeTeleprompterIdx]?.text || "Read your story sentence by sentence..."}
                 </p>
               </div>
@@ -671,6 +672,7 @@ export default function RetellRecorder({ scenes = [], weekNumber, onComplete }) 
               <div className="grid grid-cols-2 gap-1.5">
                 <button
                   type="button"
+                  data-testid="prompter-prev-btn"
                   onClick={() => setActiveTeleprompterIdx(prev => Math.max(0, prev - 1))}
                   disabled={activeTeleprompterIdx === 0}
                   className="py-1 px-2.5 bg-purple-800/90 hover:bg-purple-700 active:scale-98 disabled:opacity-30 disabled:pointer-events-none rounded-lg text-[11px] sm:text-xs font-black transition flex items-center justify-center gap-1 border border-purple-600/50 text-white shadow-xs"
@@ -682,6 +684,7 @@ export default function RetellRecorder({ scenes = [], weekNumber, onComplete }) 
 
                 <button
                   type="button"
+                  data-testid="prompter-next-btn"
                   onClick={() => setActiveTeleprompterIdx(prev => Math.min(activeScenes.length - 1, prev + 1))}
                   disabled={activeTeleprompterIdx >= activeScenes.length - 1}
                   className="py-1 px-2.5 bg-indigo-600 hover:bg-indigo-500 active:scale-98 disabled:opacity-30 disabled:pointer-events-none rounded-lg text-[11px] sm:text-xs font-black transition flex items-center justify-center gap-1 border border-indigo-400/50 text-white shadow-xs"
@@ -840,7 +843,7 @@ export default function RetellRecorder({ scenes = [], weekNumber, onComplete }) 
                   <Volume2 size={13} className={isSpeakingFeedback ? "text-purple-700 animate-bounce" : "text-purple-600"} />
                   <span>{isSpeakingFeedback ? 'Speaking...' : 'Hear Feedback'}</span>
                 </button>
-                <span className="px-2.5 py-1 bg-white rounded-lg border text-xs font-black shadow-2xs">
+                <span data-testid="broadcast-eval-score" className="px-2.5 py-1 bg-white rounded-lg border text-xs font-black shadow-2xs">
                   Score: {evalResult.score}%
                 </span>
               </div>

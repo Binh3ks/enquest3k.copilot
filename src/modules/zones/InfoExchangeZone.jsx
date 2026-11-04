@@ -363,7 +363,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                 {phase === 'table_b' ? `Question ${fieldIdxB + 1} / ${fieldsB.length}` : `Cue ${cueIdxA + 1} / ${cuesA.length}`}
               </span>
             </div>
-            <h1 className="text-base sm:text-lg font-black text-slate-900 mt-0.5">
+            <h1 data-testid="ie-phase-title" className="text-base sm:text-lg font-black text-slate-900 mt-0.5">
               {phase === 'table_b' ? "Phase 1: Answer Examiner's Questions" : "Phase 2: Ask Questions from Cues"}
             </h1>
           </div>
@@ -373,6 +373,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
         <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
           <button
             type="button"
+            data-testid="ie-card1-tab-btn"
             onClick={() => setPhase('table_b')}
             className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 cursor-pointer ${
               phase === 'table_b' ? 'bg-purple-600 text-white shadow-sm ring-2 ring-purple-300' : 'bg-purple-100 text-purple-800 hover:bg-purple-200'
@@ -384,6 +385,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
           <ArrowRight size={14} className="text-slate-300" />
           <button
             type="button"
+            data-testid="ie-card2-tab-btn"
             onClick={() => setPhase('table_a')}
             className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 cursor-pointer ${
               phase === 'table_a' ? 'bg-indigo-600 text-white shadow-sm ring-2 ring-indigo-300' : 'bg-slate-100 text-slate-400 hover:bg-slate-200'
@@ -810,7 +812,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                 {/* Question Text (Hidden by default, revealable on toggle) */}
                 <div className="pt-1.5 border-t border-purple-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                   {showQuestionTextB ? (
-                    <p className="text-xs sm:text-sm font-black text-purple-950 animate-in fade-in leading-snug">
+                    <p data-testid="ie-question-text" className="text-xs sm:text-sm font-black text-purple-950 animate-in fade-in leading-snug">
                       "{currentFieldB?.nova_question}"
                     </p>
                   ) : (
@@ -825,6 +827,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                   )}
                   <button
                     type="button"
+                    data-testid="ie-peek-question-btn"
                     onClick={() => setShowQuestionTextB(p => !p)}
                     className="text-[11px] font-bold text-purple-700 hover:text-purple-900 flex items-center gap-1 underline self-end sm:self-auto cursor-pointer shrink-0"
                   >
@@ -839,7 +842,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete, onBackT
                     <span className="text-[11px] font-bold text-purple-800">
                       📋 Fact on your card:
                     </span>
-                    <span className="px-2.5 py-0.5 bg-purple-200/90 text-purple-950 font-black text-xs sm:text-sm rounded-lg border border-purple-300">
+                    <span data-testid="ie-fact-badge" className="px-2.5 py-0.5 bg-purple-200/90 text-purple-950 font-black text-xs sm:text-sm rounded-lg border border-purple-300">
                       {currentFieldB.value}
                     </span>
                   </div>

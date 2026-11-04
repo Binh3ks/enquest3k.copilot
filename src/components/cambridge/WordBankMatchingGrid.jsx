@@ -151,6 +151,8 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
             return (
               <button
                 key={word}
+                data-testid="word-bank-pill"
+                data-word={word}
                 disabled={isSubmitted || isUsed}
                 onClick={() => handleSelectWord(word)}
                 className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-between border shadow-2xs ${
@@ -201,6 +203,8 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
           return (
             <div
               key={def.id}
+              data-testid="word-def-row"
+              data-def-id={def.id}
               onClick={() => handleAssignWordToDef(def.id)}
               className={`p-1.5 sm:p-2 rounded-xl border transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-1.5 cursor-pointer ${
                 isSubmitted
@@ -225,6 +229,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
 
               <div className="flex items-center gap-1.5 self-end sm:self-auto shrink-0">
                 <div
+                  data-testid="word-def-slot"
                   className={`min-w-[120px] sm:min-w-[140px] px-3 py-1.5 rounded-xl border-2 text-xs sm:text-sm font-black text-center flex items-center justify-between gap-1.5 shadow-inner transition-all ${
                     assignedWord
                       ? 'bg-white border-indigo-400 text-indigo-950'
@@ -262,6 +267,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
       <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
         {!isSubmitted ? (
           <button
+            data-testid="word-bank-check-btn"
             onClick={handleCheck}
             className="w-full sm:w-auto px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs sm:text-sm rounded-xl shadow-md transition active:scale-95 flex items-center justify-center gap-1.5"
           >
@@ -271,7 +277,7 @@ export function WordBankMatchingGrid({ customData, data: propData, onComplete })
           <div className="w-full flex items-center justify-between bg-slate-50 p-2.5 sm:p-3 rounded-xl border border-slate-200">
             <div className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-amber-500 animate-bounce" />
-              <span className="text-sm sm:text-base font-black text-slate-900">
+              <span data-testid="word-bank-score" className="text-sm sm:text-base font-black text-slate-900">
                 Matching Score: {score}%
               </span>
             </div>

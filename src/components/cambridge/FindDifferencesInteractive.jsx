@@ -198,7 +198,7 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
             introText="Look at the two pictures. They are the same, but there are some differences. Tell me the differences."
             isStealth={isStealthMode}
           />
-          <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
+          <span data-testid="diff-counter" className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
             {foundHotspots.length}/{differencesData.hotspots.length} differences
           </span>
         </div>
@@ -235,6 +235,8 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
           {differencesData.hotspots.map((hs) => (
             <button
               key={hs.id}
+              data-testid="diff-hotspot-btn"
+              data-id={hs.id}
               onClick={() => handleHotspotClick(hs)}
               style={{ left: `${hs.x}%`, top: `${hs.y}%` }}
               className="absolute transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer hover:bg-amber-400/30 transition z-20"
@@ -271,6 +273,8 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
           {differencesData.hotspots.map((hs) => (
             <button
               key={hs.id}
+              data-testid="diff-hotspot-btn"
+              data-id={hs.id}
               onClick={() => handleHotspotClick(hs)}
               style={{ left: `${hs.x}%`, top: `${hs.y}%` }}
               className="absolute transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer hover:bg-rose-400/30 transition z-20"
@@ -281,14 +285,14 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
 
       {/* Examiner Prompt & Microphone Recording Card */}
       {activeHotspot && (
-        <div className="p-5 bg-rose-50/80 rounded-2xl border-2 border-rose-200 space-y-4 animate-in fade-in">
+        <div data-testid="diff-active-card" className="p-5 bg-rose-50/80 rounded-2xl border-2 border-rose-200 space-y-4 animate-in fade-in">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="w-8 h-8 rounded-xl bg-rose-600 text-white font-black text-xs flex items-center justify-center shadow">
                 🎙️
               </span>
               <div>
-                <span className="text-xs font-black text-rose-950 uppercase tracking-wider block">
+                <span data-testid="diff-name" className="text-xs font-black text-rose-950 uppercase tracking-wider block">
                   {isStealthMode ? `Difference #${foundHotspots.indexOf(activeHotspot.id) + 1} Found` : `Difference Found: ${activeHotspot.name}`}
                 </span>
                 <span className="text-xs font-bold text-rose-700">
@@ -299,6 +303,7 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
 
             {!isStealthMode && (
               <button
+                data-testid="diff-hint-btn"
                 onClick={() => setShowHint(!showHint)}
                 className="px-3 py-1.5 bg-amber-100 hover:bg-amber-200 text-amber-950 font-black text-xs rounded-xl border border-amber-300 transition flex items-center gap-1 shadow-sm"
               >
@@ -321,7 +326,7 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
                   <Volume2 size={12} /> Listen Sample
                 </button>
               </div>
-              <p className="text-xs sm:text-sm font-bold text-slate-800 italic">
+              <p data-testid="diff-sample-answer" className="text-xs sm:text-sm font-bold text-slate-800 italic">
                 {isStealthMode ? '"[Audio Sample Only — Speak your explanation into the mic]"' : `"${activeHotspot.prompt_en}"`}
               </p>
             </div>

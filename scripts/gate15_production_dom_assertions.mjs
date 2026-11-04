@@ -276,7 +276,7 @@ async function performMeaningfulInteraction(page, qid) {
         break;
       }
       case 'broadcast_studio': {
-        const nextBtn = page.locator('button:has-text("Next ▶"), button:has-text("Scene 2")').first();
+        const nextBtn = page.locator('[data-testid="prompter-next-btn"], button:has-text("Next ▶")').first();
         if (await nextBtn.isVisible().catch(() => false)) {
           await nextBtn.click().catch(() => {});
           await page.waitForTimeout(500);
@@ -284,9 +284,16 @@ async function performMeaningfulInteraction(page, qid) {
         break;
       }
       case 'info_exchange': {
-        const tabBtn = page.locator('button:has-text("Table B"), button:has-text("Ask")').first();
-        if (await tabBtn.isVisible().catch(() => false)) {
-          await tabBtn.click().catch(() => {});
+        // Reveal question text on Card 1
+        const peekBtn = page.locator('[data-testid="ie-peek-question-btn"]').first();
+        if (await peekBtn.isVisible().catch(() => false)) {
+          await peekBtn.click().catch(() => {});
+          await page.waitForTimeout(300);
+        }
+        // Switch to Card 2 (You Ask)
+        const card2Btn = page.locator('[data-testid="ie-card2-tab-btn"]').first();
+        if (await card2Btn.isVisible().catch(() => false)) {
+          await card2Btn.click().catch(() => {});
           await page.waitForTimeout(500);
         }
         break;
@@ -311,18 +318,35 @@ async function performMeaningfulInteraction(page, qid) {
         break;
       }
       case 'boss_reading': {
-        const optBtn = page.locator('button:has-text("nurse"), [data-testid^="boss-part-tab-"]').first();
-        if (await optBtn.isVisible().catch(() => false)) {
-          await optBtn.click().catch(() => {});
-          await page.waitForTimeout(500);
+        // WordBankMatchingGrid: select first word pill, assign to first def slot, and check
+        const pill = page.locator('[data-testid="word-bank-pill"]').first();
+        if (await pill.isVisible().catch(() => false)) {
+          await pill.click().catch(() => {});
+          await page.waitForTimeout(250);
+          const defSlot = page.locator('[data-testid="word-def-slot"]').first();
+          if (await defSlot.isVisible().catch(() => false)) {
+            await defSlot.click().catch(() => {});
+            await page.waitForTimeout(250);
+          }
+          const checkBtn = page.locator('[data-testid="word-bank-check-btn"]').first();
+          if (await checkBtn.isVisible().catch(() => false)) {
+            await checkBtn.click().catch(() => {});
+            await page.waitForTimeout(500);
+          }
         }
         break;
       }
       case 'weekly_review': {
-        const hotspot = page.locator('button.absolute').first();
+        // FindDifferencesInteractive: click first hotspot on Picture A or B
+        const hotspot = page.locator('[data-testid="diff-hotspot-btn"]').first();
         if (await hotspot.isVisible().catch(() => false)) {
           await hotspot.click({ force: true }).catch(() => {});
-          await page.waitForTimeout(500);
+          await page.waitForTimeout(400);
+          const hintBtn = page.locator('[data-testid="diff-hint-btn"]').first();
+          if (await hintBtn.isVisible().catch(() => false)) {
+            await hintBtn.click().catch(() => {});
+            await page.waitForTimeout(300);
+          }
         }
         break;
       }
@@ -937,6 +961,27 @@ async function main() {
         const progressText = await page.locator('span:has-text("/5")').innerText().catch(() => '');
         questInteractionState = { scoreText, progressText, pass: scoreText !== '0 PTS' && scoreText.includes('PTS') };
         console.log(`     🎯 [math_quest interaction]: scoreText="${scoreText}", progressText="${progressText}" (pass=${questInteractionState.pass})`);
+      } else if (qid === 'broadcast_studio') {
+        const sceneBadge = await page.locator('[data-testid="prompter-scene-badge"]').innerText().catch(() => '');
+        const prompterText = await page.locator('[data-testid="prompter-text"]').innerText().catch(() => '');
+        questInteractionState = { sceneBadge, prompterText: prompterText.slice(0, 80), pass: sceneBadge.includes('Scene 2') };
+        console.log(`     🎯 [broadcast_studio interaction]: badge="${sceneBadge}", text="${prompterText.slice(0, 45)}..." (pass=${questInteractionState.pass})`);
+      } else if (qid === 'info_exchange') {
+        const phaseTitle = await page.locator('[data-testid="ie-phase-title"]').innerText().catch(() => '');
+        const isCard2Active = await page.locator('[data-testid="ie-card2-tab-btn"].bg-indigo-600').isVisible().catch(() => false);
+        questInteractionState = { phaseTitle, isCard2Active, pass: isCard2Active || phaseTitle.includes('Phase 2') };
+        console.log(`     🎯 [info_exchange interaction]: phaseTitle="${phaseTitle}", isCard2Active=${isCard2Active} (pass=${questInteractionState.pass})`);
+      } else if (qid === 'boss_reading') {
+        const scoreText = await page.locator('[data-testid="word-bank-score"]').innerText().catch(() => '');
+        const assignedText = await page.locator('[data-testid="word-def-slot"]').first().innerText().catch(() => '');
+        questInteractionState = { scoreText, assignedWord: assignedText, pass: scoreText.includes('Matching Score') || assignedText.length > 0 };
+        console.log(`     🎯 [boss_reading interaction]: scoreText="${scoreText}", assignedWord="${assignedText}" (pass=${questInteractionState.pass})`);
+      } else if (qid === 'weekly_review') {
+        const counterText = await page.locator('[data-testid="diff-counter"]').innerText().catch(() => '');
+        const diffName = await page.locator('[data-testid="diff-name"]').innerText().catch(() => '');
+        const sampleAnswer = await page.locator('[data-testid="diff-sample-answer"]').innerText().catch(() => '');
+        questInteractionState = { counterText, diffName, sampleAnswer: sampleAnswer.slice(0, 60), pass: counterText.includes('1/') || diffName.length > 0 };
+        console.log(`     🎯 [weekly_review interaction]: counter="${counterText}", diffName="${diffName}" (pass=${questInteractionState.pass})`);
       }
     } catch (e) {
       console.warn(`[WARN] Failed to capture interaction metrics for ${qid}: ${e.message}`);

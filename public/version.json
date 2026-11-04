@@ -1,9 +1,9 @@
 {
-  "commit": "ebc109d111b35884c5041ff252e2ded95f7fae9c",
-  "git_commit": "ebc109d111b35884c5041ff252e2ded95f7fae9c",
-  "shortCommit": "ebc109d1",
-  "message": "feat(w33): batch 2 upgrades (testids for science_report, sentence_smash, math_quest, character sync Tom, Gate 4 clean)",
-  "builtAt": "2026-11-03T08:22:36.674Z",
-  "build_timestamp": "2026-11-03T08:22:36.674Z",
+  "commit": "8f09739b11d424bbf9584302d7c988c199052a9a",
+  "git_commit": "8f09739b11d424bbf9584302d7c988c199052a9a",
+  "shortCommit": "8f09739b",
+  "message": "chore(qa): finalize round 43 packaging and live production verification [multi-agent-review]",
+  "builtAt": "2026-11-04T02:43:32.908Z",
+  "build_timestamp": "2026-11-04T02:43:32.908Z",
   "env": "production"
 }
