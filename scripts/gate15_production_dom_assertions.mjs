@@ -155,6 +155,36 @@ async function runInteractionCheck(page, check) {
   }
 }
 
+/**
+ * Wait for all <img> elements on the page to fully load and decode before screenshot capture.
+ * Prevents race conditions where large assets (e.g. 1.4MB Scene 4 thumbnail) are captured white/unrendered.
+ */
+async function waitForAllImagesLoaded(page, timeoutMs = 10000) {
+  try {
+    await page.evaluate(async (timeout) => {
+      const start = Date.now();
+      while (Date.now() - start < timeout) {
+        const imgs = Array.from(document.querySelectorAll('img')).filter(img => {
+          return img.src && !img.src.startsWith('data:image/svg+xml');
+        });
+        if (imgs.length === 0) return true;
+
+        const pending = imgs.filter(img => !img.complete);
+        if (pending.length === 0) {
+          const validImgs = imgs.filter(img => img.naturalWidth > 0);
+          try {
+            await Promise.all(validImgs.map(i => i.decode ? i.decode().catch(() => {}) : Promise.resolve()));
+          } catch (_) {}
+          await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+          await new Promise(r => setTimeout(r, 200));
+          return true;
+        }
+        await new Promise(r => setTimeout(r, 100));
+      }
+    }, timeoutMs);
+  } catch (_) {}
+}
+
 async function performMeaningfulInteraction(page, qid) {
   try {
     switch (qid) {
@@ -563,6 +593,7 @@ async function main() {
       questDoms[qid] = dom;
 
       // Capture initial screenshot
+      await waitForAllImagesLoaded(page);
       const ssPath = path.join(ssDir, `${qid}.png`);
       await page.screenshot({ path: ssPath });
       if (artifactSsDir) {
@@ -824,6 +855,9 @@ async function main() {
                         await page.waitForTimeout(600);
                       }
 
+                      // REVIEW SCREEN: Wait for all thumbnail images to fully load and decode
+                      await waitForAllImagesLoaded(page, 10000);
+
                       // REVIEW SCREEN: Check total words counter + connector counter
                       const totalWordsEl = page.locator('[data-testid="total-words-counter"]').first();
                       const connCounterEl = page.locator('[data-testid="connector-counter"]').first();
@@ -985,6 +1019,7 @@ async function main() {
 
     // Capture interacted screenshot
     try {
+      await waitForAllImagesLoaded(page);
       const ssInteracted = path.join(ssDir, `${qid}_interacted.png`);
       await page.screenshot({ path: ssInteracted });
       if (artifactSsDir) {
