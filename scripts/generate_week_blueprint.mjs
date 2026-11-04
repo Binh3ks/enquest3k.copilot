@@ -336,7 +336,15 @@ function generateBlueprint(weekNum, mapData, txtData) {
       map_cefr_type: mapData.rawCefrType,
       alignment_status: alignmentStatus,
       alignment_note: alignmentNote
-    } : null,
+    } : {
+      map_week: Number(weekNum),
+      map_theme: null,
+      map_clil_module: null,
+      map_grammar_hub: null,
+      map_cefr_type: null,
+      alignment_status: 'MISSING_IN_SOURCE_A_SOURCE_B_ONLY',
+      alignment_note: 'Week missing from Digital Syllabus Map (docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md). Constructed exclusively from Master Syllabus Foundation (Source B).'
+    },
     metadata_provenance: {
       generated_at: new Date().toISOString(),
       generator_script: 'scripts/generate_week_blueprint.mjs',

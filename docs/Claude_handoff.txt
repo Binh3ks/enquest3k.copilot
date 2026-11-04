@@ -1127,29 +1127,64 @@ PART A ACCEPTED: W34 independently verified — guard PASS 106/106 (7 hubs, 1 go
 replaced with the new generic Auto-Freeze Generator. W33 re-confirmed unaffected (147/147
 PASS). W34 is now properly golden-frozen alongside W33.
 
-PART B FORENSIC INVESTIGATION & PRECEDENCE ARCHITECTURE RESOLUTION:
-1. Verbatim Raw Text Citations:
-   - Extracted verbatim lines for W38 from both sources (documented in docs/w38_source_texts_raw.txt):
-     * Source A: | **W38** | Energy All Around | A2 Flyers · Rotary 1 | Vật lý: Năng lượng mặt trời, gió | Tier 2 (Chunks) | Mối quan hệ nguyên nhân - kết quả với *because*; `action_lab` góc pin mặt trời |
-     * Source B: • Week 38: Animal Abilities (Modals) (Tuần 38: Khả năng Động vật)
-       Topic: Comparing animal abilities. | Outcome: Describe what animals can and cannot do. | Grammar: Can / Cannot (Can't). | Vocab: jump, fly, swim, hunt, climb, run, heavy, fast.
-2. Root Cause Analysis:
-   - NOT an off-by-one index parsing error (both documents literally label their blocks W38/Week 38).
-   - NOT syllabus intent to combine Energy with animal Can/Can't (Source B contains zero mention of energy/solar/wind in W38).
-   - ARCHITECTURAL INGESTION PRECEDENCE BUG:
-     * Source B (1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt) is the authoritative, immutable PEDAGOGICAL GROUND TRUTH of the curriculum. The entire existing codebase (W33, W34, W35, W36, W37, metadata.js, audit_syllabus_drift.mjs) was built 100% faithfully to Source B.
-     * Source A (docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md) was created on Sep 4 as an architectural map to schedule 28 Mock tests and rotary cycles, but its markdown table drafted alternative/speculative STEM titles.
-     * The generator script gave unconditional precedence to Source A's theme over Source B's lesson, superimposing "Energy All Around" on top of animal abilities.
-3. Generator Architecture Fix:
-   - Enforced Source B as single immutable authority for Theme, Story, CLIL, Grammar, and Vocabulary.
-   - Preserved Source A for Exam & Rotary Architecture (CEFR Stage, Full Mock flag, Rotary Cycles, Scaffolding Tier).
-   - Added Theme Divergence Tracking: logs explicit console warnings and records digital_map_reference in blueprint.json for full traceability.
-4. Comprehensive Verification:
-   - Re-validated across 4 sample weeks (W38, W39, W45, W50), all confirming 100% pedagogical harmony.
-   - scripts/test_blueprint_ingestion.mjs expanded to 13/13 automated tests (100% PASS).
-   - Regenerated canonical src/data/weeks/week_38/blueprint.json.
-   - Repackaged cleanly into docs/review_packages/round48_20261104.zip.
+PART B BLOCKED: Independently inspected the generated src/data/weeks/week_38/blueprint.json
+sample output and found a serious theme/content mismatch — theme and clil_topic.title say
+"Energy All Around" (solar/wind physics) while clil_topic.focus, story_title,
+grammar_focus, and all 8 extracted vocabulary words are entirely about "comparing animal
+abilities" (Can/Can't grammar) with zero connection to energy. This strongly suggests a
+week-number cross-referencing bug between the two source documents (Digital Map vs text
+syllabus) during ingestion — a systemic risk since this tool is meant to seed blueprints
+for all 118 remaining weeks.
 
-STATUS: W33 & W34 cryptographically locked. Blueprint Ingestion Generator fully fixed, verified across multiple weeks, and ready for review.
+STATUS: scripts/generate_week_blueprint.mjs is NOT yet approved for use beyond this one
+test case. Round 49 dispatched requiring Antigravity to show raw source text for W38 from
+both documents, diagnose the mismatch, fix the parser, and re-validate against 3 additional
+sample weeks before this tool can be trusted for production use.
+[ROUND 48 PART B VERIFIED & APPROVED — SOURCE PRECEDENCE BUG FIXED]
 
+Independently verified round48_20261104.zip (SHA256 b3a46788..., 40,033 bytes — exact
+match). Confirmed raw source text quotes for W38/W39/W45/W50 are genuine (byte-match to
+report). Confirmed regenerated week_38/blueprint.json is now internally consistent (theme/
+story/grammar/vocab all cohere around "Animal Abilities (Modals)"), with transparent
+divergence tracking (digital_map_reference.alignment_status field preserving the discarded
+Source A metadata for audit). Confirmed the code fix genuinely reprioritizes Source B
+(authoritative frozen syllabus) over Source A (architectural bridge doc with placeholder
+STEM themes) in generate_week_blueprint.mjs. Confirmed W39/W45/W50 sample logs now pull
+correct Source B themes, no cross-contamination. 13/13 test suite genuinely passes (3 new
+cross-reference tests added). W33 (147/147) and W34 (106/106) golden freezes unaffected.
+
+STATUS: Blueprint Ingestion Generator (scripts/generate_week_blueprint.mjs) is APPROVED for
+production use across W35-W156 (excluding frozen W33/W34). This closes the 2nd Nhóm 1
+automation backlog item.
+
+[ROUND 49 COMPLETE — 156-WEEK DIVERGENCE AUDIT & DRY-RUN SCALE ASSESSMENT — 2026-11-04]
+
+1. Scope & Execution:
+   - Automated dry-run scan across all 156 weeks via `scripts/scan_156_weeks_divergence.mjs`.
+   - Verified zero disk mutation safety invariant: exactly 3 blueprints exist on disk (W33, W34, W38);
+     153 ungenerated weeks validated solely via dry-run simulation without touching the disk.
+   - Preserved cryptographic freeze integrity: W33 (147/147) and W34 (106/106) 100% LOCKED.
+   - Blueprint test suite passes 13/13 automated tests.
+
+2. Global Divergence Scale Findings:
+   - Total Weeks Scanned: 156 (100.0%)
+   - ALIGNED (Matching Themes): 10 weeks (6.4%)
+     * W01, W03, W79, W80, W95, W96, W129, W130, W131, W132
+   - DIVERGENT (Fallback to Source B): 138 weeks (88.5%)
+     * Phase 1 Starters (W01–W16): 14 divergent / 16 total
+     * Phase 1 Movers (W17–W32): 16 divergent / 16 total
+     * Phase 1 Flyers (W33–W72): 40 divergent / 40 total
+     * Phase 2 B1 PET (W73–W120): 36 divergent / 48 total (8 missing in Source A)
+     * Phase 3 Academic (W121–W156): 32 divergent / 36 total
+   - MISSING IN SOURCE A (Source B only): 8 weeks (5.1%)
+     * W113–W120 omitted from Digital Map table (Phase 2 Capstone/Graduation); recovered from Source B.
+   - Execution Errors / Crashes: 0 (0.0%).
+
+3. Deliverables:
+   - Machine-readable dataset: docs/FULL_156_WEEKS_DIVERGENCE_DATA.json
+   - Comprehensive audit report: docs/FULL_156_WEEKS_DIVERGENCE_REPORT.md
+   - Single standardized zip: docs/review_packages/round49_20261104.zip
+   - Post-commit Git HEAD recorded in manifest.txt and manifest.json.
+
+STATUS: 156-week divergence scale fully audited and transparently documented. Awaiting Owner confirmation before batch-generating real blueprint.json files for ungenerated weeks.
 
