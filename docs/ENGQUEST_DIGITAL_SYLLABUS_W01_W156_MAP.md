@@ -7,7 +7,6 @@
 **Mock Test Cadence**: 28 Full Mock Test Weeks on a strict pedagogical cycle  
 **Effective Date**: 2026-09-05  
 **Provenance / Changelog (Round 51 — 2026-11-04)**: Đồng bộ hóa toàn diện nội dung sư phạm (Theme, CLIL Module) và bổ sung 8 tuần W113–W120 khớp chuẩn Master Syllabus Foundation (Nguồn B) sau kiểm toán Round 49 (tham chiếu: `docs/FULL_156_WEEKS_DIVERGENCE_DATA.json`), bảo toàn 100% các cột kiến trúc khảo thí và nhịp 28 Mock Tests.
-**Provenance / Changelog (Round 51 — 2026-11-04)**: Đồng bộ hóa toàn diện nội dung sư phạm (Theme, CLIL Module) và bổ sung 8 tuần W113–W120 khớp chuẩn Master Syllabus Foundation (Nguồn B) sau kiểm toán Round 49 (tham chiếu: `docs/FULL_156_WEEKS_DIVERGENCE_DATA.json`), bảo toàn 100% các cột kiến trúc khảo thí và nhịp 28 Mock Tests.
 **Version**: 2.2.0
 
 ---
@@ -210,14 +209,6 @@ Tài liệu này đóng vai trò là cây cầu nối số (Digital Bridge) chuy
 | **W110**| Drafting Body Paragraph 2 | B1+ PET · Rotary 3 | Viết nháp Thân bài 2: Write a second paragraph focusing on a different aspect (e.g., Habitat vs. Diet) | Tier 3 (Autonomous)| Soạn thảo đề xuất chính sách; `writing_hub` hiệp ước không gian LHQ |
 | **W111**| Intro & Conclusion (The Frame) | B1+ PET · Rotary 4 | Mở & Kết - Khung sườn: Write an Introduction (Hook + Thesis) and Conclusion (Summary) | Tier 3 (Exam Prep)| Luyện đề tốc độ cao, bẫy trắc nghiệm từ đồng nghĩa |
 | **W112**| **The Editor's Eye (Review)** | **★ FULL MOCK 19 (OFFICIAL)**| Con mắt Biên tập viên - Chỉnh sửa: Self-correct spelling and basic grammar errors | **Tier 3 (Official)**| **KỲ THI CHÍNH THỨC B1 PET — MỤC TIÊU: PASS WITH MERIT / DISTINCTION!** |
-| **W113**| Visual Aids (Images & Captions) | B1+ PET · Rotary 1 | Hỗ trợ Hình ảnh: Thêm thông tin hình ảnh; Multimodal writing | Tier 3 (Autonomous)| Cụm giới từ ("In this picture...", "Next to..."); `writing_hub` |
-| **W114**| Project Assembly (Making the Poster)| B1+ PET · Rotary 2 | Lắp ráp Dự án: Bố cục & thiết kế poster; Đo lường không gian | Tier 3 (Autonomous)| Bố cục (layout, center, organize); `action_lab` thiết kế poster |
-| **W115**| Speaking Notes (Cue Cards) | B1+ PET · Rotary 3 | Ghi chú Nói: Tạo thẻ gợi ý từ khóa (cue cards) cho bài nói | Tier 3 (Autonomous)| Từ khóa gợi ý, câu mệnh lệnh; `speaking_hub` luyện nói |
-| **W116**| Rehearsal (Voice & Body) | B1+ PET · Rotary 4 | Tập dượt: Kỹ năng thuyết trình phi ngôn ngữ (âm lượng, mắt nhìn) | Tier 3 (Autonomous)| Kỹ năng phi ngôn ngữ (eye contact, loud, clear); `broadcast_studio` |
-| **W117**| **The Knowledge Fair (Group A)** | **★ FULL MOCK (Presentation A)**| **Hội chợ Tri thức Nhóm A: Báo cáo dự án Passion Project** | **Tier 3 (Exam)** | **Thuyết trình 3 phút + Q&A; Đánh giá năng lực thuyết trình B1 Part A** |
-| **W118**| The Knowledge Fair (Group B) | B1+ PET · Rotary 1 | Hội chợ Tri thức Nhóm B: Báo cáo dự án Passion Project | Tier 3 (Autonomous)| Thuyết trình 3 phút + Q&A; `info_exchange` phản hồi đồng cấp Part B |
-| **W119**| Reflection & Portfolio | B1+ PET · Rotary 2 | Phản ánh & Hồ sơ: Viết bài nhìn lại tiến trình học tập | Tier 3 (Autonomous)| Thì quá khứ phản ánh; `writing_hub` hoàn thiện hồ sơ Portfolio |
-| **W120**| **PHASE 2 GRADUATION** | **★ GRADUATION (Phase 2)** | **TỐT NGHIỆP GIAI ĐOẠN 2: Lễ trao chứng chỉ & Chuyển giao B1+** | **Tier 3 (Official)**| **LỄ TỐT NGHIỆP PHASE 2 — ĐẠT CHUẨN NĂNG LỰC B1 PRELIMINARY (PET)!** |
 | **W113**| Visual Aids (Images & Captions) | B1+ PET · Rotary 1 | Hỗ trợ Hình ảnh: Thêm thông tin hình ảnh; Multimodal writing | Tier 3 (Autonomous)| Cụm giới từ ("In this picture...", "Next to..."); `writing_hub` |
 | **W114**| Project Assembly (Making the Poster)| B1+ PET · Rotary 2 | Lắp ráp Dự án: Bố cục & thiết kế poster; Đo lường không gian | Tier 3 (Autonomous)| Bố cục (layout, center, organize); `action_lab` thiết kế poster |
 | **W115**| Speaking Notes (Cue Cards) | B1+ PET · Rotary 3 | Ghi chú Nói: Tạo thẻ gợi ý từ khóa (cue cards) cho bài nói | Tier 3 (Autonomous)| Từ khóa gợi ý, câu mệnh lệnh; `speaking_hub` luyện nói |

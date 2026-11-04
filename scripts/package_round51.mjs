@@ -75,8 +75,8 @@ async function main() {
 
     // ── 4. EXTRACT SOURCE A GIT DIFF PATCH ───────────────────────────────────
     console.log('\n--- 4. Generating Full Git Diff Patch for Source A ---');
-    // Diff against commit prior to Round 51 (HEAD~1)
-    const diffPatch = execSync('git diff HEAD~1 docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md', { cwd: ROOT_DIR }).toString();
+    // Diff against baseline commit prior to Round 51 (879804e9)
+    const diffPatch = execSync('git diff 879804e9 docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md', { cwd: ROOT_DIR }).toString();
     fs.writeFileSync(path.join(tmpDir, 'diff_source_a_digital_map.patch'), diffPatch, 'utf8');
     console.log(`✅ Generated diff patch (${diffPatch.length} characters)`);
 
@@ -231,3 +231,4 @@ main().catch(err => {
   console.error('\n❌ Fatal error during packaging:', err);
   process.exit(1);
 });
+

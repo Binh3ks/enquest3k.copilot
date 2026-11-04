@@ -47,18 +47,35 @@ export function updateDigitalSyllabusMap() {
       .map(w => w.week)
   );
 
+  const alreadyHasChangelog = mapContent.includes('**Provenance / Changelog (Round 51 — 2026-11-04)**');
+  const alreadyHasW113 = /\|\s*\*\*W113\*\*\s*\|/i.test(mapContent);
+
   const lines = mapContent.split('\n');
   const updatedLines = [];
   let changelogInserted = false;
+  const seenWeeks = new Set();
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
 
-    // 1. Insert provenance note in header
-    if (line.startsWith('**Effective Date**:') && !changelogInserted) {
-      updatedLines.push(line);
-      updatedLines.push('**Provenance / Changelog (Round 51 — 2026-11-04)**: Đồng bộ hóa toàn diện nội dung sư phạm (Theme, CLIL Module) và bổ sung 8 tuần W113–W120 khớp chuẩn Master Syllabus Foundation (Nguồn B) sau kiểm toán Round 49 (tham chiếu: `docs/FULL_156_WEEKS_DIVERGENCE_DATA.json`), bảo toàn 100% các cột kiến trúc khảo thí và nhịp 28 Mock Tests.');
+    // Deduplicate Provenance / Changelog line
+    if (line.startsWith('**Provenance / Changelog')) {
+      if (changelogInserted) {
+        console.warn('⚠️ Deduplication: Dropping duplicate Provenance / Changelog header line');
+        continue;
+      }
       changelogInserted = true;
+      updatedLines.push(line);
+      continue;
+    }
+
+    // 1. Insert provenance note in header (idempotent)
+    if (line.startsWith('**Effective Date**:')) {
+      updatedLines.push(line);
+      if (!changelogInserted && !mapContent.includes('**Provenance / Changelog')) {
+        updatedLines.push('**Provenance / Changelog (Round 51 — 2026-11-04)**: Đồng bộ hóa toàn diện nội dung sư phạm (Theme, CLIL Module) và bổ sung 8 tuần W113–W120 khớp chuẩn Master Syllabus Foundation (Nguồn B) sau kiểm toán Round 49 (tham chiếu: `docs/FULL_156_WEEKS_DIVERGENCE_DATA.json`), bảo toàn 100% các cột kiến trúc khảo thí và nhịp 28 Mock Tests.');
+        changelogInserted = true;
+      }
       continue;
     }
 
@@ -77,6 +94,14 @@ export function updateDigitalSyllabusMap() {
 
     if (match) {
       const weekNum = parseInt(match[2], 10);
+      
+      // Strict Idempotency / Deduplication Guard:
+      if (seenWeeks.has(weekNum)) {
+        console.warn(`⚠️ Deduplication: Dropping duplicate row for Week ${weekNum}`);
+        continue;
+      }
+      seenWeeks.add(weekNum);
+
       const colPrefix = match[1]; // e.g. "| **W02** |"
       const colTheme = match[3];  // Theme
       const colCefr = match[4];   // CEFR & Week Type (PRESERVED)
@@ -126,8 +151,8 @@ export function updateDigitalSyllabusMap() {
         updatedLines.push(line);
       }
 
-      // 4. Insert W113–W120 right after W112
-      if (weekNum === 112) {
+      // 4. Insert W113–W120 right after W112 ONLY if not already present in the map
+      if (weekNum === 112 && !alreadyHasW113) {
         const w113_w120_rows = [
           '| **W113**| Visual Aids (Images & Captions) | B1+ PET · Rotary 1 | Hỗ trợ Hình ảnh: Thêm thông tin hình ảnh; Multimodal writing | Tier 3 (Autonomous)| Cụm giới từ ("In this picture...", "Next to..."); `writing_hub` |',
           '| **W114**| Project Assembly (Making the Poster)| B1+ PET · Rotary 2 | Lắp ráp Dự án: Bố cục & thiết kế poster; Đo lường không gian | Tier 3 (Autonomous)| Bố cục (layout, center, organize); `action_lab` thiết kế poster |',
@@ -138,7 +163,11 @@ export function updateDigitalSyllabusMap() {
           '| **W119**| Reflection & Portfolio | B1+ PET · Rotary 2 | Phản ánh & Hồ sơ: Viết bài nhìn lại tiến trình học tập | Tier 3 (Autonomous)| Thì quá khứ phản ánh; `writing_hub` hoàn thiện hồ sơ Portfolio |',
           '| **W120**| **PHASE 2 GRADUATION** | **★ GRADUATION (Phase 2)** | **TỐT NGHIỆP GIAI ĐOẠN 2: Lễ trao chứng chỉ & Chuyển giao B1+** | **Tier 3 (Official)**| **LỄ TỐT NGHIỆP PHASE 2 — ĐẠT CHUẨN NĂNG LỰC B1 PRELIMINARY (PET)!** |'
         ];
-        w113_w120_rows.forEach(r => updatedLines.push(r));
+        for (const r of w113_w120_rows) {
+          const rMatch = r.match(/^\|\s*\*\*W0?(\d+)\*\*\s*\|/i);
+          if (rMatch) seenWeeks.add(parseInt(rMatch[1], 10));
+          updatedLines.push(r);
+        }
       }
 
       continue;
@@ -147,9 +176,14 @@ export function updateDigitalSyllabusMap() {
     updatedLines.push(line);
   }
 
+  // 5. Post-condition Invariant: Must have processed exactly 156 unique weeks
+  if (seenWeeks.size !== 156) {
+    throw new Error(`Integrity Violation: Expected exactly 156 unique weeks, but processed ${seenWeeks.size}`);
+  }
+
   const newContent = updatedLines.join('\n');
   fs.writeFileSync(MAP_PATH, newContent, 'utf8');
-  console.log(`✅ Successfully updated ${path.relative(ROOT_DIR, MAP_PATH)}`);
+  console.log(`✅ Successfully updated ${path.relative(ROOT_DIR, MAP_PATH)} (Unique weeks: ${seenWeeks.size})`);
 }
 
 if (process.argv[1] && (process.argv[1].endsWith('update_digital_syllabus_map.mjs') || fileURLToPath(import.meta.url) === process.argv[1])) {

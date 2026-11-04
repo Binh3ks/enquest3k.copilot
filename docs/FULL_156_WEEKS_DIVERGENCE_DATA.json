@@ -1,5 +1,5 @@
 {
-  "audit_date": "2026-11-04T09:03:12.169Z",
+  "audit_date": "2026-11-04T12:40:07.825Z",
   "audit_scope": "156-Week Master Curriculum Alignment (Source A vs Source B)",
   "generator_script": "scripts/generate_week_blueprint.mjs",
   "scanner_script": "scripts/scan_156_weeks_divergence.mjs",
