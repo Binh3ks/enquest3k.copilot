@@ -402,3 +402,4 @@ console.log(`1. Manifest: ${path.relative(rootDir, manifestPath)} (${totalProtec
 console.log(`2. Guard:    ${path.relative(rootDir, guardScriptPath)}`);
 console.log(`Test run:   node scripts/guard_golden_w${weekNum}_freeze.mjs`);
 console.log('========================================================================\n');
+

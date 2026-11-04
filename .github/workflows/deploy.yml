@@ -28,6 +28,9 @@ jobs:
       - name: Split monolithic transcripts into per-video files
         run: python3 tools/split_transcripts.py
 
+      - name: Verify Golden Standard Integrity (W33 Freeze Guard)
+        run: node scripts/guard_golden_w33_freeze.mjs
+
       - name: Build
         run: npm run build
         env:
