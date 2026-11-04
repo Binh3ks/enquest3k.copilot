@@ -1030,33 +1030,54 @@ character consistency (Tom/Jake/Nurse Sarah/Headmaster Brown) verified end-to-en
 NEXT DECISION NEEDED FROM OWNER: once W33 is fully closed, choose W33 or W34 as the
 "golden standard" reference week (per earlier standing goal) before resuming the paused
 Auto-Freeze Generator script work.
+[W33 OFFICIALLY SELECTED AS GOLDEN STANDARD — 2026-11-04]
 
-[WEEK 33 OFFICIAL GOLDEN FREEZE COMPLETE — 2026-11-04]
+Owner decision: W33 (frozen 15/15 quests, 3 batches, independently verified across Rounds
+39-44 with production DOM evidence, genuine Cambridge Official Word List integration, and
+end-to-end character consistency) is the project's official "golden standard" reference
+week going forward.
 
-1. Image Race Condition Resolved:
-   - Added robust helper `waitForAllImagesLoaded(page, timeoutMs = 10000)` into
-     `scripts/gate15_production_dom_assertions.mjs` (checking `img.complete`, `img.naturalWidth > 0`,
-     and calling `img.decode()` before screenshot).
-   - Re-executed Gate 15 live against production (https://app.bkbacademy.vn) for `story_writer`.
-   - Verified `story_writer_interacted.png` (SHA256: c4a194e0ff9b72cc197bc6d7344eda5ce2925e636650adda56dd196390381122):
-     Scene 4 (`writing_panel_4.png` — Nurse Sarah bandaging Tom's knee with Jake beside them)
-     is 100% rendered and visually verified, matching Round 43. Word counter: 70 words, 5 connectors.
+NEXT PHASE: Resuming the Auto-Freeze Generator build (SOP Giai đoạn 5 automation, spec
+finalized Round 26, paused pending this decision). Round 46 dispatched to Antigravity:
+- Build a generic, reusable `W{N}_GOLDEN_FREEZE_MANIFEST.json` + `guard_golden_w{N}_freeze.mjs`
+  generator per docs/WEEK_PRODUCTION_SOP.md.
+- First real test case: generate and freeze W33's own manifest/guard from its current
+  verified state (commit 842e7eef).
+- Mandatory negative-test requirement: guard script must be proven to actually detect
+  injected drift (fail on a deliberately altered copy), not just rubber-stamp PASS —
+  consistent with this session's "trust but verify" evidence discipline.
+- Evidence to be submitted as a single zip at docs/review_packages/round46_YYYYMMDD.zip.
 
-2. Official Freeze Declaration — Week 33 (15/15 Quests, Batches 1–3):
-   - Freeze Date: 2026-11-04
-   - Final Commits: `cf001820` (HEAD) / `e910d33a` (Production functional code)
-   - Scope: All 15 Quests across 5 Zones fully ratified:
-     * Zone 1 (Story World): gear1_webtoon, gear2_karaoke, gear3_retell
-     * Zone 2 (Knowledge Lab): gear4_clil, science_lab (Action Lab), science_report (Discovery Report)
-     * Zone 3 (Battle Arena): word_blitz (Speed Match), sentence_smash (Grammar Duel), math_quest (Math Quest)
-     * Zone 4 (Creator Studio): story_writer (Story Writer), broadcast_studio (Video Challenge), info_exchange (Info Exchange)
-     * Zone 5 (Boss Castle): boss_listening (Listening Shield), boss_reading (Reading & Writing Shield), weekly_review (Speaking & Passport)
-   - Pedagogical & Content Integrity:
-     * Cambridge Official Word List (1,435 headwords) integrated.
-     * End-to-end character synchronization verified: Tom (victim who slipped), Jake (companion who helped),
-       Nurse Sarah (first aid), Headmaster Brown (corridor safety reminder).
-     * Whisper ASR WER = 0% across all audios.
-     * Zero single-word bold chunks in learning content.
-     * Gate 15 verified on LIVE PRODUCTION with 100% distinct before/after screenshot pairs and authentic DOM interactions.
+STATUS: W33 content audit is fully closed. Project moves from per-week QA audit mode into
+tooling/automation mode (Nhóm 1 backlog item: auto-freeze/manifest generator) using W33 as
+the reference implementation and test fixture.
+
+[ROUND 46 COMPLETE — AUTO-FREEZE GENERATOR RATIFIED & W33 LOCKED — 2026-11-04]
+
+1. Architecture & Spec Alignment (Round 26 Ratified):
+   - Built generic, reusable `scripts/generate_golden_freeze.mjs` (W01–W156) implementing SOP Giai đoạn 5.
+   - Explicit whitelist scanning: Core Data Hubs (`reading_hub.js`, `listening_hub.js`, `writing_hub.js`,
+     `speaking_hub.js`, `skill_practice_hub.js`, `vocab.js`, `read.js`), Specs (`GATE15_SPEC_W{N}.json`),
+     and Official Cambridge Wordlists (`starters_pre_a1.json`, `movers_a1.json`, `flyers_a2.json`).
+   - Active Reference Media Extraction: Bidirectional extraction for all referenced audio MP3s and image/SVG
+     assets with fail-loud pre-check for missing/zero-byte files.
+   - Generated `docs/W33_GOLDEN_FREEZE_MANIFEST.json` locking 147 assets (7 data hubs, 3 wordlists,
+     1 spec, 83 audio MP3s, 53 image & SVG files).
+   - Generated `scripts/guard_golden_w33_freeze.mjs` with dual verification:
+     (1) Hub Structural Contract Check (non-empty core exports)
+     (2) Cryptographic SHA-256 Hash Verification across all 147 protected assets.
+
+2. Proof of Drift Detection (Tri-Phase Test Suite):
+   - Run 1 (Original Repo): PASS (147/147 files locked, exit code 0).
+   - Run 2 (Mutated read.js): FAIL-LOUD (Deliberately altered "walking carefully" -> "walking carelessly"
+     in `src/data/weeks/week_33/read.js`; guard immediately exited code 1 with explicit discrepancy:
+     `❌ [DATA HUB] [CORRUPTED / MODIFIED] src/data/weeks/week_33/read.js`).
+   - Run 3 (Restored Repo): PASS (Restored to git HEAD; guard passed 147/147 locked, exit code 0).
+
+3. Review Package Deliverable:
+   - Single archive: `docs/review_packages/round46_20261104.zip`
+   - Archive size: 43,311 bytes
+   - SHA256: `7c7cca75917f91d01486fa30900b0d06bae89a4174322d8226618f677421bc6e`
+   - Temporary staging folder deleted immediately in `finally` (0 loose folders retained).
 
 

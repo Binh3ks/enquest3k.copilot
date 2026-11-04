@@ -1,9 +1,9 @@
 {
-  "commit": "e910d33a3417c6d2cccd9da83cae86b3a8927367",
-  "git_commit": "e910d33a3417c6d2cccd9da83cae86b3a8927367",
-  "shortCommit": "e910d33a",
-  "message": "feat(w33): batch 3 testids, Tom character sync, and round 44 packaging [multi-agent-review]",
-  "builtAt": "2026-11-04T02:56:06.942Z",
-  "build_timestamp": "2026-11-04T02:56:06.942Z",
+  "commit": "842e7eef7b6915afdd378f0409ddee80a1cccbca",
+  "git_commit": "842e7eef7b6915afdd378f0409ddee80a1cccbca",
+  "shortCommit": "842e7eef",
+  "message": "fix(gate15): wait for all images loaded before screenshot capture & declare W33 golden freeze",
+  "builtAt": "2026-11-04T04:37:16.095Z",
+  "build_timestamp": "2026-11-04T04:37:16.095Z",
   "env": "production"
 }
