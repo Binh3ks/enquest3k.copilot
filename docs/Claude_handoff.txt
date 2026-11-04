@@ -1120,42 +1120,36 @@ parallel (Round 48), rather than leaving W34 open-ended:
 STATUS: W33 remains the sole golden standard. Auto-Freeze Generator + CI guard fully live
 and verified. Round 48 dispatched to close W34's asset gap and start the next
 automation-backlog tool.
+[ROUND 48 PARTIAL ACCEPTANCE — W34 FROZEN; BLUEPRINT GENERATOR BLOCKED PENDING FIX]
 
-[ROUND 48 COMPLETE — W34 GOLDEN FROZEN & BLUEPRINT INGESTION RATIFIED — 2026-11-04]
+PART A ACCEPTED: W34 independently verified — guard PASS 106/106 (7 hubs, 1 governance doc,
+3 wordlists, 66 audio, 29 images), legacy stale manifest (Oct 26, media-blind) fully
+replaced with the new generic Auto-Freeze Generator. W33 re-confirmed unaffected (147/147
+PASS). W34 is now properly golden-frozen alongside W33.
 
-1. Part A — W34 Asset Gap Closed & Cryptographic Golden Freeze Ratified:
-   - Supplied 6 missing media assets:
-     * public/audio/week34/listening_p4_full.mp3 (ffmpeg concat of example + q1-q5)
-     * public/audio/week34/shadowing_9.mp3 (Google Cloud TTS, en-US-Journey-F)
-     * public/audio/week34/shadowing_10.mp3 (Google Cloud TTS, en-US-Journey-F)
-     * public/images/week34/writing_panel_1.png (webtoon_scene_1.png)
-     * public/images/week34/writing_panel_2.png (webtoon_scene_4.png)
-     * public/images/week34/writing_panel_3.png (webtoon_scene_5.png)
-   - Regenerated `docs/W34_GOLDEN_FREEZE_MANIFEST.json` and `scripts/guard_golden_w34_freeze.mjs`
-     via new Auto-Freeze Generator (`generate_golden_freeze.mjs 34`).
-   - Replaced legacy 8-file media-blind manifest (from Oct 26) with full 106-asset protection:
-     7 data hubs, 3 Cambridge wordlists, 1 governance review doc, 66 audio MP3s, 29 images/SVGs.
-   - Verified: `node scripts/guard_golden_w34_freeze.mjs` PASSES 100% (106/106 files locked, exit 0).
-   - Preserved: `node scripts/guard_golden_w33_freeze.mjs` PASSES 100% (147/147 files locked, exit 0).
+PART B FORENSIC INVESTIGATION & PRECEDENCE ARCHITECTURE RESOLUTION:
+1. Verbatim Raw Text Citations:
+   - Extracted verbatim lines for W38 from both sources (documented in docs/w38_source_texts_raw.txt):
+     * Source A: | **W38** | Energy All Around | A2 Flyers · Rotary 1 | Vật lý: Năng lượng mặt trời, gió | Tier 2 (Chunks) | Mối quan hệ nguyên nhân - kết quả với *because*; `action_lab` góc pin mặt trời |
+     * Source B: • Week 38: Animal Abilities (Modals) (Tuần 38: Khả năng Động vật)
+       Topic: Comparing animal abilities. | Outcome: Describe what animals can and cannot do. | Grammar: Can / Cannot (Can't). | Vocab: jump, fly, swim, hunt, climb, run, heavy, fast.
+2. Root Cause Analysis:
+   - NOT an off-by-one index parsing error (both documents literally label their blocks W38/Week 38).
+   - NOT syllabus intent to combine Energy with animal Can/Can't (Source B contains zero mention of energy/solar/wind in W38).
+   - ARCHITECTURAL INGESTION PRECEDENCE BUG:
+     * Source B (1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt) is the authoritative, immutable PEDAGOGICAL GROUND TRUTH of the curriculum. The entire existing codebase (W33, W34, W35, W36, W37, metadata.js, audit_syllabus_drift.mjs) was built 100% faithfully to Source B.
+     * Source A (docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md) was created on Sep 4 as an architectural map to schedule 28 Mock tests and rotary cycles, but its markdown table drafted alternative/speculative STEM titles.
+     * The generator script gave unconditional precedence to Source A's theme over Source B's lesson, superimposing "Energy All Around" on top of animal abilities.
+3. Generator Architecture Fix:
+   - Enforced Source B as single immutable authority for Theme, Story, CLIL, Grammar, and Vocabulary.
+   - Preserved Source A for Exam & Rotary Architecture (CEFR Stage, Full Mock flag, Rotary Cycles, Scaffolding Tier).
+   - Added Theme Divergence Tracking: logs explicit console warnings and records digital_map_reference in blueprint.json for full traceability.
+4. Comprehensive Verification:
+   - Re-validated across 4 sample weeks (W38, W39, W45, W50), all confirming 100% pedagogical harmony.
+   - scripts/test_blueprint_ingestion.mjs expanded to 13/13 automated tests (100% PASS).
+   - Regenerated canonical src/data/weeks/week_38/blueprint.json.
+   - Repackaged cleanly into docs/review_packages/round48_20261104.zip.
 
-2. Part B — Blueprint Ingestion Generator (Nhóm 1 Automation #1):
-   - Implemented `scripts/generate_week_blueprint.mjs` per SOP Giai đoạn 1 spec.
-   - Dual-Source Ingestion:
-     * Source A: `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md` (Theme, CEFR stage, Rotary cycle, CLIL module)
-     * Source B: `docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` (Topic, outcome, grammar, vocab words)
-     * Source C: `production_kit/templates/` (Golden architecture template selection)
-   - Safety Invariants:
-     * Frozen Integrity Guard: Automatically blocks regeneration of W33/W34 blueprints without explicit `--force`.
-     * Fail-Loud: Halts with exit 1 if week is missing from syllabus.
-     * Zero Hallucination: Missing fields are never guessed; marked explicitly as `requires_human_input`.
-   - Comprehensive Test Suite (`scripts/test_blueprint_ingestion.mjs`):
-     * 10/10 automated tests PASS (frozen guard, out-of-bounds, Starters/Movers/Flyers templates, end-to-end W38).
-   - Sample Generation:
-     * Successfully generated `src/data/weeks/week_38/blueprint.json` without modifying any frozen content.
-
-3. Standardized Post-Commit Packaging:
-   - Packaging script `scripts/package_round48.mjs` executed post-commit + post-push.
-   - Captures exact Git HEAD into `manifest.txt` and `manifest.json`.
-   - Output: `docs/review_packages/round48_20261104.zip` (zero loose staging folders).
+STATUS: W33 & W34 cryptographically locked. Blueprint Ingestion Generator fully fixed, verified across multiple weeks, and ready for review.
 
 

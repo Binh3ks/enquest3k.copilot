@@ -1,0 +1,60 @@
+========================================================================
+ENGQUEST3K — RAW SOURCE TEXT FORENSIC COMPARISON (ROUND 48 PART B)
+========================================================================
+
+########################################################################
+WEEK 38 RAW SOURCE TEXT
+########################################################################
+--- 1. SOURCE A: docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md ---
+| **W38** | Energy All Around | A2 Flyers · Rotary 1 | Vật lý: Năng lượng mặt trời, gió | Tier 2 (Chunks) | Mối quan hệ nguyên nhân - kết quả với *because*; `action_lab` góc pin mặt trời |
+
+--- 2. SOURCE B: docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt ---
+• Week 38: Animal Abilities (Modals) (Tuần 38: Khả năng Động vật)
+•	Topic: Comparing animal abilities. (Chủ đề: So sánh khả năng động vật.)
+	•	Key Learning Outcome: Describe what animals can and cannot do. (Kết quả: Miêu tả điều động vật làm được/không làm được.)
+	•	Skill Focus: Classification. (Kỹ năng: Phân loại.)
+	•	Grammar Focus: Can / Cannot (Can't). (Ngữ pháp: Can/Can't.)
+	•	Vocabulary Focus: jump, fly, swim, hunt, climb, run, heavy, fast.
+
+
+########################################################################
+WEEK 39 RAW SOURCE TEXT
+########################################################################
+--- 1. SOURCE A: docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md ---
+| **W39** | Ocean Depths & Coral Reefs | A2 Flyers · Rotary 2 | Sinh học biển: Rạn san hô & Áp suất | Tier 2 (Chunks) | Tính từ tuyệt đối (*deepest, most dangerous*); `story_writer` lặn tàu ngầm |
+
+--- 2. SOURCE B: docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt ---
+• Week 39: Habitats (Persuasion Intro) (Tuần 39: Môi trường sống)
+•	Topic: Matching animals to habitats. (Chủ đề: Ghép động vật vào môi trường sống.)
+	•	Key Learning Outcome: Give an opinion on where an animal belongs. (Kết quả: Đưa ý kiến về nơi ở của động vật.)
+	•	Skill Focus: Persuasion (Simple). (Kỹ năng: Thuyết phục đơn giản.)
+	•	Grammar Focus: "I think the [animal] lives in the [place]." (Ngữ pháp: Mẫu câu Tôi nghĩ...)
+	•	Vocabulary Focus: habitat, desert, rainforest, ocean, polar region, safe, dangerous.
+
+
+########################################################################
+WEEK 45 RAW SOURCE TEXT
+########################################################################
+--- 1. SOURCE A: docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md ---
+| **W45** | The Sound Studio (Acoustics)| A2 Flyers · Rotary 3 | Vật lý: Sóng âm thanh và cao độ | Tier 2 (Chunks) | Trạng từ chỉ cách thức (*loudly, softly, clearly*); `action_lab` tần số âm |
+
+--- 2. SOURCE B: docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt ---
+• Week 45: Shape Detectives (Geometry) (Tuần 45: Thám tử Hình khối - Hình học)
+•	Topic: Finding shapes in the classroom. (Chủ đề: Tìm hình khối trong lớp.)
+	•	Key Learning Outcome: Describe objects using shape words. (Kết quả: Miêu tả vật dùng từ hình học.)
+	•	Skill Focus: Geometric Description. (Kỹ năng: Miêu tả hình học.)
+	•	Grammar Focus: "It has [number] sides", "It is round". (Ngữ pháp: Nó có...)
+	•	Vocabulary Focus: square, circle, triangle, rectangle, side, corner, round, straight.
+
+
+########################################################################
+WEEK 50 RAW SOURCE TEXT
+########################################################################
+--- 1. SOURCE A: docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md ---
+| **W50** | Transportation of Tomorrow | A2 Flyers · Rotary 3 | Công nghệ: Xe điện & Tàu đệm từ | Tier 2 (Chunks) | Câu điều kiện loại 1 (*If we use clean energy...*); `broadcast_studio` xe điện |
+
+--- 2. SOURCE B: docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt ---
+• Week 50: Review Station 1 (Grammar Mix) (Tuần 50: Trạm Ôn tập 1 - Ngữ pháp Tổng hợp)
+•	Topic: Past, Present, Future Mix. (Chủ đề: Trộn lẫn Quá khứ, Hiện tại, Tương lai.)
+	•	Activity: Board game where students must choose the right tense to answer.
+

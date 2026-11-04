@@ -133,6 +133,16 @@ function parseDigitalMap(weekNum, mapContent) {
   };
 }
 
+// Helper: Extract English and Vietnamese from bilingual syllabus fields
+function extractBilingualField(text) {
+  if (!text) return { en: null, vi: null, raw: null };
+  const raw = text.trim();
+  const viMatch = raw.match(/\((?:Chủ đề|Kết quả|Kỹ năng|Ngữ pháp|Toán|Lịch sử|Khoa học|ELA|Tuần \d+)[^:]*:\s*([^)]+)\)/i);
+  const vi = viMatch ? viMatch[1].trim() : null;
+  const en = raw.replace(/\((?:Chủ đề|Kết quả|Kỹ năng|Ngữ pháp|Toán|Lịch sử|Khoa học|ELA|Tuần \d+)[^)]*\)/gi, '').trim().replace(/^[.\s"']+|[.\s"']+$/g, '');
+  return { en, vi, raw };
+}
+
 // ── 3. PARSE SOURCE B: MASTER 3-YEAR SYLLABUS ───────────────────────────────
 function parseKhungCT(weekNum, txtContent) {
   // Regex to match block for week N
@@ -146,11 +156,21 @@ function parseKhungCT(weekNum, txtContent) {
   const rawTitle = match[1].trim();
   const body = match[2];
 
-  const topicMatch = body.match(/Topic:\s*([^\n]+)/i);
-  const outcomeMatch = body.match(/Key Learning Outcome:\s*([^\n]+)/i);
-  const skillMatch = body.match(/Skill Focus:\s*([^\n]+)/i);
+  // Extract English and Vietnamese Title
+  const viMatch = rawTitle.match(/\(Tuần\s*\d+\s*:\s*([^)]+)\)/i);
+  const titleVi = viMatch ? viMatch[1].trim() : null;
+  const titleEn = rawTitle.replace(/\(Tuần\s*\d+\s*:[^)]+\)/gi, '').trim().replace(/^[.\s"']+|[.\s"']+$/g, '');
+
+  const topicMatch = body.match(/Topic(?:\s*\([^)]*\))?:\s*([^\n]+)/i);
+  const outcomeMatch = body.match(/Key Learning Outcome(?:\s*\([^)]*\))?:\s*([^\n]+)/i);
+  const skillMatch = body.match(/(?:Skill Focus|Writing Skill Focus):\s*([^\n]+)/i);
   const grammarMatch = body.match(/Grammar [^:]*:\s*([^\n]+)/i);
   const vocabMatch = body.match(/Vocabulary [^:]*:\s*([^\n]+)/i);
+
+  const topic = extractBilingualField(topicMatch ? topicMatch[1] : null);
+  const outcome = extractBilingualField(outcomeMatch ? outcomeMatch[1] : null);
+  const skillFocus = extractBilingualField(skillMatch ? skillMatch[1] : null);
+  const grammarFocus = extractBilingualField(grammarMatch ? grammarMatch[1] : null);
 
   let vocabWords = [];
   if (vocabMatch) {
@@ -162,10 +182,12 @@ function parseKhungCT(weekNum, txtContent) {
 
   return {
     rawTitle,
-    topic: topicMatch ? topicMatch[1].trim() : null,
-    outcome: outcomeMatch ? outcomeMatch[1].trim() : null,
-    skillFocus: skillMatch ? skillMatch[1].trim() : null,
-    grammarFocus: grammarMatch ? grammarMatch[1].trim() : null,
+    titleEn,
+    titleVi,
+    topic,
+    outcome,
+    skillFocus,
+    grammarFocus,
     vocabWords
   };
 }
@@ -199,17 +221,48 @@ function generateBlueprint(weekNum, mapData, txtData) {
     rotaryCycle = ((weekNum - 33) % 4) + 1;
   }
 
-  // Theme resolution
-  const theme = (mapData && mapData.theme) || (txtData && txtData.topic) || `Week ${weekNum} Curriculum`;
+  // 1. Theme resolution: Master Syllabus (Source B) is authoritative ground truth for pedagogy
+  const theme = (txtData && txtData.titleEn) || (mapData && mapData.theme) || `Week ${weekNum} Curriculum`;
 
-  // CLIL Module / Topic
-  const clilTitle = (mapData && mapData.clilModule) || (txtData && txtData.topic) || 'CLIL Exploration';
-  const clilFocus = (txtData && txtData.topic) || (mapData && mapData.clilModule) || 'Interdisciplinary STEM Inquiry';
+  // 2. Story Title
+  const storyTitle = (txtData && txtData.topic && txtData.topic.en) || (txtData && txtData.titleEn) || 'Weekly Adventure Story';
 
-  // Grammar Focus
-  const grammarStructure = (txtData && txtData.grammarFocus) || (mapData && mapData.grammarHub) || 'Grammar Drill & Sentence Construction';
-  
-  // Vocabulary
+  // 3. CLIL Module / Topic
+  let clilTitle = 'CLIL Exploration';
+  let clilFocus = 'Interdisciplinary STEM Inquiry';
+  if (txtData && txtData.titleEn) {
+    const baseTitle = txtData.titleEn.split('(')[0].trim().replace(/^Review & Project \d+:\s*/i, '').replace(/["']/g, '');
+    if (txtData.skillFocus && txtData.skillFocus.en) {
+      clilTitle = `${baseTitle} & ${txtData.skillFocus.en}`;
+    } else {
+      clilTitle = baseTitle;
+    }
+    clilFocus = (txtData.outcome && txtData.outcome.en) || (txtData.topic && txtData.topic.en) || baseTitle;
+  } else if (mapData && mapData.clilModule) {
+    clilTitle = mapData.clilModule;
+    clilFocus = mapData.clilModule;
+  }
+
+  // 4. Grammar Focus
+  const grammarStructure = (txtData && txtData.grammarFocus && txtData.grammarFocus.en) 
+    || (mapData && mapData.grammarHub) 
+    || 'Grammar Drill & Sentence Construction';
+  const grammarOutcome = (txtData && txtData.outcome && txtData.outcome.en) || null;
+
+  // 5. Alignment Status Detection
+  let alignmentStatus = 'ALIGNED';
+  let alignmentNote = 'Syllabus sources fully aligned.';
+  if (mapData && txtData) {
+    const cleanMapTheme = mapData.theme.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const cleanTxtTitle = (txtData.titleEn || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const hasOverlap = cleanMapTheme.includes(cleanTxtTitle) || cleanTxtTitle.includes(cleanMapTheme);
+    if (!hasOverlap) {
+      alignmentStatus = 'DIVERGENT_THEME_FALLBACK_TO_SOURCE_B';
+      alignmentNote = `Theme divergence detected. Master Pedagogical Syllabus (Source B: "${txtData.titleEn}") enforced over Digital Map (Source A: "${mapData.theme}"). Source A metadata preserved in digital_map_reference.`;
+    }
+  }
+
+  // 6. Vocabulary
   const syllabusWords = (txtData && txtData.vocabWords) || [];
   const targetCount = 20;
   const missingCount = Math.max(0, targetCount - syllabusWords.length);
@@ -230,20 +283,22 @@ function generateBlueprint(weekNum, mapData, txtData) {
   const blueprint = {
     week: Number(weekNum),
     theme: theme,
+    title_en: txtData ? txtData.titleEn : (mapData ? mapData.theme : null),
+    title_vi: txtData ? txtData.titleVi : null,
     cefr_level: mapData ? mapData.cefrLevel : 'A2 Flyers',
     cefr_stage: mapData ? mapData.cefrStage : 1,
     week_type: mapData ? mapData.weekType : (isFullMock ? 'full_mock' : 'rotary_practice'),
     isFullMock: isFullMock,
     rotary_cycle: rotaryCycle,
     template_used: templatePath,
-    story_title: txtData && txtData.topic ? txtData.topic.replace(/["']/g, '') : null,
+    story_title: storyTitle,
     clil_topic: {
       title: clilTitle,
       focus: clilFocus
     },
     grammar_focus: {
       structure: grammarStructure,
-      outcome: txtData ? txtData.outcome : null,
+      outcome: grammarOutcome,
       pattern_regex: null, // To be defined by author based on exact target sentences
       requires_authoring_examples: true
     },
@@ -273,11 +328,21 @@ function generateBlueprint(weekNum, mapData, txtData) {
     ],
     target_shields: 3,
     pending_human_authoring: pendingAuthoring,
+    digital_map_reference: mapData ? {
+      map_week: Number(weekNum),
+      map_theme: mapData.theme,
+      map_clil_module: mapData.clilModule,
+      map_grammar_hub: mapData.grammarHub,
+      map_cefr_type: mapData.rawCefrType,
+      alignment_status: alignmentStatus,
+      alignment_note: alignmentNote
+    } : null,
     metadata_provenance: {
       generated_at: new Date().toISOString(),
       generator_script: 'scripts/generate_week_blueprint.mjs',
       source_digital_map: mapData !== null,
-      source_master_syllabus: txtData !== null
+      source_master_syllabus: txtData !== null,
+      primary_pedagogical_authority: 'Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)'
     }
   };
 
@@ -329,6 +394,13 @@ async function main() {
   console.log('\n📐 [2/3] Generating Canonical Blueprint JSON Structure...');
   const blueprint = generateBlueprint(weekNum, mapData, txtData);
 
+  if (blueprint.digital_map_reference && blueprint.digital_map_reference.alignment_status === 'DIVERGENT_THEME_FALLBACK_TO_SOURCE_B') {
+    console.warn(`\n⚠️  THEME DIVERGENCE DETECTED for Week ${weekNum}:`);
+    console.warn(`    Source A (Digital Map):     "${blueprint.digital_map_reference.map_theme}"`);
+    console.warn(`    Source B (Master Syllabus): "${blueprint.theme}"`);
+    console.warn('    -> Enforcing Source B as authoritative pedagogical foundation for Theme, Story, CLIL, and Vocab.');
+  }
+
   // 5. Output
   const destPath = outputPath || path.join(ROOT_DIR, `src/data/weeks/week_${weekNum}/blueprint.json`);
   const jsonContent = JSON.stringify(blueprint, null, 2);
@@ -362,3 +434,4 @@ main().catch(err => {
   console.error('\n❌ Fatal error in blueprint ingestion:', err);
   process.exit(1);
 });
+

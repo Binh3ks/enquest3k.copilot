@@ -1,20 +1,22 @@
 {
   "week": 38,
-  "theme": "Energy All Around",
+  "theme": "Animal Abilities (Modals)",
+  "title_en": "Animal Abilities (Modals)",
+  "title_vi": "Khả năng Động vật",
   "cefr_level": "A2 Flyers",
   "cefr_stage": 1,
   "week_type": "rotary_practice",
   "isFullMock": false,
   "rotary_cycle": 2,
   "template_used": "production_kit/templates/template_flyers_rotary.js",
-  "story_title": "Comparing animal abilities. (Chủ đề: So sánh khả năng động vật.)",
+  "story_title": "Comparing animal abilities",
   "clil_topic": {
-    "title": "Vật lý: Năng lượng mặt trời, gió",
-    "focus": "Comparing animal abilities. (Chủ đề: So sánh khả năng động vật.)"
+    "title": "Animal Abilities & Classification",
+    "focus": "Describe what animals can and cannot do"
   },
   "grammar_focus": {
-    "structure": "Can / Cannot (Can't). (Ngữ pháp: Can/Can't.)",
-    "outcome": "Describe what animals can and cannot do. (Kết quả: Miêu tả điều động vật làm được/không làm được.)",
+    "structure": "Can / Cannot (Can't)",
+    "outcome": "Describe what animals can and cannot do",
     "pattern_regex": null,
     "requires_authoring_examples": true
   },
@@ -138,10 +140,20 @@
     "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
     "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
   ],
+  "digital_map_reference": {
+    "map_week": 38,
+    "map_theme": "Energy All Around",
+    "map_clil_module": "Vật lý: Năng lượng mặt trời, gió",
+    "map_grammar_hub": "Mối quan hệ nguyên nhân - kết quả với *because*; `action_lab` góc pin mặt trời",
+    "map_cefr_type": "A2 Flyers · Rotary 1",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Animal Abilities (Modals)\") enforced over Digital Map (Source A: \"Energy All Around\"). Source A metadata preserved in digital_map_reference."
+  },
   "metadata_provenance": {
-    "generated_at": "2026-11-04T07:16:33.114Z",
+    "generated_at": "2026-11-04T07:59:43.297Z",
     "generator_script": "scripts/generate_week_blueprint.mjs",
     "source_digital_map": true,
-    "source_master_syllabus": true
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
   }
 }
