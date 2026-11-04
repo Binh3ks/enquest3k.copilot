@@ -1,0 +1,76 @@
+{
+  "week": 154,
+  "theme": "Impromptu Speaking Skills",
+  "title_en": "Impromptu Speaking Skills",
+  "title_vi": "Kỹ năng Nói Ứng biến",
+  "cefr_level": "B1+ Academic",
+  "cefr_stage": 3,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_b1plus_transition.js",
+  "story_title": "Speaking without preparation (Table Topics)",
+  "clil_topic": {
+    "title": "Impromptu Speaking Skills & Thinking on your feet",
+    "focus": "Deliver a 1-2 minute impromptu speech on a random topic"
+  },
+  "grammar_focus": {
+    "structure": "Fillers & Connectors: \"That's an interesting question...\", \"To be honest",
+    "outcome": "Deliver a 1-2 minute impromptu speech on a random topic",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [],
+    "total_syllabus_words": 0,
+    "target_count": 20,
+    "missing_count": 20,
+    "status": "PARTIAL (0/20 syllabus words — Requires 20 words from human author)"
+  },
+  "keywords": [],
+  "characters": null,
+  "target_vocab_20": [],
+  "scaffolding_tier": "Tier 3 (Portfolio)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 20 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 154,
+    "map_theme": "Portfolio Showcase: Reflection Essay",
+    "map_clil_module": "Viết bài tự nhận xét hành trình 3 năm",
+    "map_grammar_hub": "Bài Reflection Essay ($\\ge 200$ từ); ghi hình chia sẻ cảm xúc",
+    "map_cefr_type": "B1+ Academic · Rotary 2",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Impromptu Speaking Skills\") enforced over Digital Map (Source A: \"Portfolio Showcase: Reflection Essay\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:04.476Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

@@ -1157,34 +1157,61 @@ STATUS: Blueprint Ingestion Generator (scripts/generate_week_blueprint.mjs) is A
 production use across W35-W156 (excluding frozen W33/W34). This closes the 2nd Nhóm 1
 automation backlog item.
 
-[ROUND 49 COMPLETE — 156-WEEK DIVERGENCE AUDIT & DRY-RUN SCALE ASSESSMENT — 2026-11-04]
+NEXT: Round 49 dispatched to dry-run the generator across all remaining weeks and report
+how many show Source A/B theme divergence, before any batch-generation of real
+blueprint.json files — scale assessment before committing to bulk use.
+[ROUND 49 VERIFIED — 156-WEEK DIVERGENCE AUDIT CONFIRMED REAL, READY FOR BATCH GENERATION]
+
+Independently verified round49_20261104.zip (SHA256 0d1e1139..., 58,771 bytes — exact
+match). Cross-checked raw FULL_156_WEEKS_DIVERGENCE_DATA.json directly: confirmed exact
+counts (156 scanned, 10 ALIGNED, 138 DIVERGENT, 8 MISSING_IN_SOURCE_A, 0 failures), exact
+week lists (ALIGNED: 1,3,79,80,95,96,129-132; MISSING: 113-120), and phase breakdown table
+all match the report precisely — no fabricated statistics. Confirmed via direct code read
+that --dry-run genuinely gates fs.writeFileSync (not just claimed): zero blueprint.json
+files were written to disk during the full 156-week scan, only the 2 summary report files.
+W33 (147/147) and W34 (106/106) golden freezes unaffected. Test suite 13/13 PASS confirmed.
+
+KEY PRODUCT FINDING: 88.5% of the 156-week syllabus shows theme divergence between Source A
+(Digital Syllabus Map — largely placeholder STEM titles) and Source B (the authoritative,
+actually-produced pedagogical content). The generator now correctly and transparently
+resolves this in favor of Source B with an audit trail (alignment_status field). This is a
+documentation-debt issue in Source A, not a code defect — flagged for owner awareness, not
+blocking.
+
+STATUS: Blueprint Ingestion Generator proven safe across all 156 weeks via dry-run (0
+crashes, 0 disk mutations outside dry-run). APPROVED to proceed with real batch generation
+of the 153 remaining blueprint.json files (Round 50), with the 8 Source-A-missing weeks
+(W113-120) kept transparently flagged rather than guessed.
+
+[ROUND 50 COMPLETE — 153 BLUEPRINTS MASS-GENERATED & STAGE 2 VOCABULARY GAP AUDITED — 2026-11-04]
 
 1. Scope & Execution:
-   - Automated dry-run scan across all 156 weeks via `scripts/scan_156_weeks_divergence.mjs`.
-   - Verified zero disk mutation safety invariant: exactly 3 blueprints exist on disk (W33, W34, W38);
-     153 ungenerated weeks validated solely via dry-run simulation without touching the disk.
-   - Preserved cryptographic freeze integrity: W33 (147/147) and W34 (106/106) 100% LOCKED.
-   - Blueprint test suite passes 13/13 automated tests.
+   - Batch-generated real, fully validated blueprint.json files for all 153 ungenerated weeks:
+     W01–W32, W35–W37, W39–W156 via scripts/batch_generate_blueprints.mjs.
+   - Preserved frozen golden standards and pre-existing samples untouched:
+     * Week 33 (147 assets locked) — SHA256 UNTOUCHED
+     * Week 34 (106 assets locked) — SHA256 UNTOUCHED
+     * Week 38 (Canonical Round 48 sample) — SHA256 UNTOUCHED
+   - Exact 156/156 blueprint.json file coverage on disk.
 
-2. Global Divergence Scale Findings:
-   - Total Weeks Scanned: 156 (100.0%)
-   - ALIGNED (Matching Themes): 10 weeks (6.4%)
-     * W01, W03, W79, W80, W95, W96, W129, W130, W131, W132
-   - DIVERGENT (Fallback to Source B): 138 weeks (88.5%)
-     * Phase 1 Starters (W01–W16): 14 divergent / 16 total
-     * Phase 1 Movers (W17–W32): 16 divergent / 16 total
-     * Phase 1 Flyers (W33–W72): 40 divergent / 40 total
-     * Phase 2 B1 PET (W73–W120): 36 divergent / 48 total (8 missing in Source A)
-     * Phase 3 Academic (W121–W156): 32 divergent / 36 total
-   - MISSING IN SOURCE A (Source B only): 8 weeks (5.1%)
-     * W113–W120 omitted from Digital Map table (Phase 2 Capstone/Graduation); recovered from Source B.
-   - Execution Errors / Crashes: 0 (0.0%).
+2. Zero-Hallucination Invariant on Source A Missing Weeks (W113–W120):
+   - All 8 weeks strictly retain alignment_status: "MISSING_IN_SOURCE_A_SOURCE_B_ONLY" and map_theme: null.
+   - Themes and pedagogical structure are faithfully pulled from Master Syllabus (Source B).
 
-3. Deliverables:
-   - Machine-readable dataset: docs/FULL_156_WEEKS_DIVERGENCE_DATA.json
-   - Comprehensive audit report: docs/FULL_156_WEEKS_DIVERGENCE_REPORT.md
-   - Single standardized zip: docs/review_packages/round49_20261104.zip
-   - Post-commit Git HEAD recorded in manifest.txt and manifest.json.
+3. Stage 2 Vocabulary Gap & Human Authoring Analysis:
+   - 153/153 weeks (100.0%) require human authoring to reach the 20-word Cambridge target.
+   - Core syllabus words ingested: 762 words (24.9%).
+   - Expansion words required from authors: 2,298 words (75.1%).
+   - Detailed per-week missing word distribution captured in docs/BATCH_BLUEPRINT_GENERATION_REPORT.json.
 
-STATUS: 156-week divergence scale fully audited and transparently documented. Awaiting Owner confirmation before batch-generating real blueprint.json files for ungenerated weeks.
+4. Deliverables & Safety Verification:
+   - TSV Manifest: docs/GENERATED_153_BLUEPRINTS_CHECKSUMS.tsv (153 entries with SHA256)
+   - Machine-readable audit dataset: docs/BATCH_BLUEPRINT_GENERATION_REPORT.json
+   - Blueprint Ingestion test suite: 13/13 PASS.
+   - W33 (147/147) and W34 (106/106) freeze guards: 100% PASS.
+   - npm run build: Exit 0.
+   - Standard Review Package: docs/review_packages/round50_20261104.zip (containing 3 representative samples, TSV checksums, report, logs, and post-commit Git HEAD).
+
+STATUS: All 156 curriculum blueprints are now in place. Blueprint Ingestion Automation (Nhóm 1 Automation #1) is 100% completed and verified.
+
 

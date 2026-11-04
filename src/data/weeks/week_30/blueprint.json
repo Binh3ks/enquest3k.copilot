@@ -1,0 +1,139 @@
+{
+  "week": 30,
+  "theme": "The Picnic (Irregular Verbs 2: Consumption)",
+  "title_en": "The Picnic (Irregular Verbs 2: Consumption)",
+  "title_vi": "Chuyến Dã ngoại - Động từ Bất quy tắc nhóm 2",
+  "cefr_level": "A1 Movers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_w17_movers_full.js",
+  "story_title": "Eating and drinking at a picnic",
+  "clil_topic": {
+    "title": "The Picnic",
+    "focus": "Describe what was eaten/drunk"
+  },
+  "grammar_focus": {
+    "structure": "Eat -> Ate, Drink -> Drank, Buy -> Bought, Give -> Gave",
+    "outcome": "Describe what was eaten/drunk",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "picnic",
+      "basket",
+      "apple",
+      "juice",
+      "sandwich",
+      "share"
+    ],
+    "total_syllabus_words": 6,
+    "target_count": 20,
+    "missing_count": 14,
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)"
+  },
+  "keywords": [
+    "picnic",
+    "basket",
+    "apple",
+    "juice",
+    "sandwich",
+    "share"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "picnic",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "basket",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "apple",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "juice",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "sandwich",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "share",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 14 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 30,
+    "map_theme": "The Clean-Up Hero",
+    "map_clil_module": "Sinh thái học: Phân loại rác nhựa",
+    "map_grammar_hub": "Quá khứ đơn hành động (\"We collected, We sorted\"); `science_lab` nhặt rác",
+    "map_cefr_type": "A1 Movers · Rotary Practice",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"The Picnic (Irregular Verbs 2: Consumption)\") enforced over Digital Map (Source A: \"The Clean-Up Hero\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:58.313Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

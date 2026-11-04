@@ -1,0 +1,149 @@
+{
+  "week": 7,
+  "theme": "Inside My Backpack (Singular)",
+  "title_en": "Inside My Backpack (Singular)",
+  "title_vi": "Trong Balo của tôi",
+  "cefr_level": "Pre-A1 Starters",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_w01_starters_lite.js",
+  "story_title": "School supplies (One item)",
+  "clil_topic": {
+    "title": "Inside My Backpack",
+    "focus": "State what exists (Singular)"
+  },
+  "grammar_focus": {
+    "structure": "There is a",
+    "outcome": "State what exists (Singular)",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "whiteboard",
+      "teacher",
+      "computer",
+      "pen",
+      "ruler",
+      "eraser",
+      "book"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+  },
+  "keywords": [
+    "whiteboard",
+    "teacher",
+    "computer",
+    "pen",
+    "ruler",
+    "eraser",
+    "book"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "whiteboard",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "teacher",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "computer",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "pen",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "ruler",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "eraser",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "book",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 1 (Full)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 7,
+    "map_theme": "My Neighborhood Map",
+    "map_clil_module": "Địa lý: Địa điểm công cộng",
+    "map_grammar_hub": "Từ chỉ phương hướng (next to, between); `reading_hub` biểu tượng bản đồ",
+    "map_cefr_type": "Pre-A1 · Rotary Practice",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Inside My Backpack (Singular)\") enforced over Digital Map (Source A: \"My Neighborhood Map\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:57.141Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

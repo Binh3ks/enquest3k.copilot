@@ -1,0 +1,139 @@
+{
+  "week": 114,
+  "theme": "Project Assembly (Making the Poster)",
+  "title_en": "Project Assembly (Making the Poster)",
+  "title_vi": "Lắp ráp Dự án",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Layout and Design",
+  "clil_topic": {
+    "title": "Project Assembly & Presentation design",
+    "focus": "Glue text and images onto a poster board logically"
+  },
+  "grammar_focus": {
+    "structure": "Grammar Drill & Sentence Construction",
+    "outcome": "Glue text and images onto a poster board logically",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "layout",
+      "center",
+      "top",
+      "bottom",
+      "arrange",
+      "organize"
+    ],
+    "total_syllabus_words": 6,
+    "target_count": 20,
+    "missing_count": 14,
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)"
+  },
+  "keywords": [
+    "layout",
+    "center",
+    "top",
+    "bottom",
+    "arrange",
+    "organize"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "layout",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "center",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "top",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "bottom",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "arrange",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "organize",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 14 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 114,
+    "map_theme": null,
+    "map_clil_module": null,
+    "map_grammar_hub": null,
+    "map_cefr_type": null,
+    "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+    "alignment_note": "Week missing from Digital Syllabus Map (docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md). Constructed exclusively from Master Syllabus Foundation (Source B)."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:02.434Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": false,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

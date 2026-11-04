@@ -1,0 +1,1557 @@
+{
+  "generated_at": "2026-11-04T08:30:04.593Z",
+  "total_generated": 153,
+  "total_skipped": 3,
+  "total_on_disk": 156,
+  "vocabulary_statistics": {
+    "weeks_complete_20": 0,
+    "weeks_partial_requiring_human_input": 153,
+    "total_syllabus_words_ingested": 762,
+    "total_words_needed_human_author": 2298,
+    "total_target_words": 3060,
+    "missing_words_distribution": {
+      "10": 1,
+      "11": 4,
+      "12": 28,
+      "13": 36,
+      "14": 25,
+      "15": 16,
+      "16": 1,
+      "17": 1,
+      "19": 3,
+      "20": 38
+    }
+  },
+  "generated_weeks_manifest": [
+    {
+      "week": 1,
+      "theme": "Hello, World! (Identity)",
+      "alignment_status": "ALIGNED",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_1/blueprint.json",
+      "sha256": "5868afe160d78fa9d11ffb90208a26fc56049c2876c78b6fba7bef5eb1b3af38"
+    },
+    {
+      "week": 2,
+      "theme": "My Family Squad (Relationships)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_2/blueprint.json",
+      "sha256": "f9d785d5f618db7c32e464f659a0e5ab8058e38fd2873ed827e5a821c56a26b5"
+    },
+    {
+      "week": 3,
+      "theme": "The Mirror Game (Appearance)",
+      "alignment_status": "ALIGNED",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_3/blueprint.json",
+      "sha256": "2a5644d3b71bb5d7530cb14205c6820603b56c0e63bbf37d17d6ebc3d3658589"
+    },
+    {
+      "week": 4,
+      "theme": "My Happy Jar (Personality)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_4/blueprint.json",
+      "sha256": "6c464ec5d3e2596cb973795283f334427e0df150f9718907aa7f6914f3e91154"
+    },
+    {
+      "week": 5,
+      "theme": "The Mystery House (Nouns)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_5/blueprint.json",
+      "sha256": "adb33f5477ce68a6e829c4db832e39f76199684956306b930202a164e777d448"
+    },
+    {
+      "week": 6,
+      "theme": "Treasure Hunt at Home (Location)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_6/blueprint.json",
+      "sha256": "f895de9f885b74b6e8a6a7bbb02c22b437a44419de278819e4ce30ab4717bdb1"
+    },
+    {
+      "week": 7,
+      "theme": "Inside My Backpack (Singular)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_7/blueprint.json",
+      "sha256": "ee60230b5873b47871e10c439a31f392d3beaeab668efb24d61bf2b2e148a927"
+    },
+    {
+      "week": 8,
+      "theme": "The Busy Classroom (Plural)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_8/blueprint.json",
+      "sha256": "7f4e3f97c963b4c490ba7805c9bfc17ad1e84b9f2cc80eaa544e0e5503ac5457"
+    },
+    {
+      "week": 9,
+      "theme": "City Sounds & Sights (Adjectives)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_9/blueprint.json",
+      "sha256": "4346f9d1dacf2296e54ba16b3f5bfd753895d03d196f80dd11ceb773f87e914d"
+    },
+    {
+      "week": 10,
+      "theme": "The Farm Adventure (Contrast)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_10/blueprint.json",
+      "sha256": "3e7553e643805800a7d307a37f17ea5d078f35cc1b8b2ec7ed26bd93f388fa81"
+    },
+    {
+      "week": 11,
+      "theme": "Weekend Fun Spots (Places)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_11/blueprint.json",
+      "sha256": "455a24e7c6b6f1ed6dfc4daaa71665fa5feb1e9baf9552d5616632a5741c488d"
+    },
+    {
+      "week": 12,
+      "theme": "The Talent Show (Abilities)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_12/blueprint.json",
+      "sha256": "ac4e3e4c925d6bdbf4812469b45a4d8527e317f1fde262d41e726ac9e8430edb"
+    },
+    {
+      "week": 13,
+      "theme": "Daily Routines (Simple Present)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_13/blueprint.json",
+      "sha256": "4dae798942728168c9cad76e49ab8462ce109e82c0ef9f88d104aeb2142ff744"
+    },
+    {
+      "week": 14,
+      "theme": "Project 1 Showcase: \"Welcome to My World",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_14/blueprint.json",
+      "sha256": "4cc8ad8bdc5dece8b31850c27fdcaee31ccff85ff0374caa9d94b576e6a60522"
+    },
+    {
+      "week": 15,
+      "theme": "The Busy Park (Actions Now)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_15/blueprint.json",
+      "sha256": "ed126700c0e0e61d756d1eaeeb7776ae22e1ee6cae231c72342ba4dc57be75f1"
+    },
+    {
+      "week": 16,
+      "theme": "Sports Commentary (Dynamic Verbs)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_16/blueprint.json",
+      "sha256": "2595efd3d78ac99f2d9407b7dd333a8da8c697abb9fc15a358f8a2bc165e6a69"
+    },
+    {
+      "week": 17,
+      "theme": "Weather & Clothes (Cause/Effect)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_17/blueprint.json",
+      "sha256": "38402665f2523c7eeb414e4efe6214161da354f35adecbc841588cb3a0b0fc6e"
+    },
+    {
+      "week": 18,
+      "theme": "Review & Checkpoint 1",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_18/blueprint.json",
+      "sha256": "5f8dc419576d50a97b075cf4fbdcf29c14da7cfdcf23e7497639b8c8e701d99a"
+    },
+    {
+      "week": 19,
+      "theme": "When I Was Small (Past State)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_19/blueprint.json",
+      "sha256": "f616242e6502cd3f462c179ac30b6f0092fb25a5908832ad985aa0588a1cc2fc"
+    },
+    {
+      "week": 20,
+      "theme": "The Old Town (Existence)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_20/blueprint.json",
+      "sha256": "1d683ae7ca711c9f2052fbb9e0f13de974a528e5a0b52ceb765affc2fb3d9bfa"
+    },
+    {
+      "week": 21,
+      "theme": "Yesterday's Diary (Regular Verbs -ed)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_21/blueprint.json",
+      "sha256": "429976ec65e19fbc26db69d010d6983361bf737d283278434ab878d6fd3016b6"
+    },
+    {
+      "week": 22,
+      "theme": "The Time Detective (Questions)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 3,
+      "missing_vocab_count": 17,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_22/blueprint.json",
+      "sha256": "238c2a1c8b9b65c09452d1faa4c892f286b251e815388ef121325b3ce0621006"
+    },
+    {
+      "week": 23,
+      "theme": "The Art Class (Creative Regular Verbs)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_23/blueprint.json",
+      "sha256": "55a0cc63b34de84a218b49e0e3430951db50f06625bc3b7864b59d3286415729"
+    },
+    {
+      "week": 24,
+      "theme": "Feelings in the Past (Was/Were + Adjectives)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_24/blueprint.json",
+      "sha256": "ce6d650f462237f33fc7e279dd2ed07ca85b6f21166eb766aa6c836b49c00252"
+    },
+    {
+      "week": 25,
+      "theme": "Sequencing Actions (First, Then)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_25/blueprint.json",
+      "sha256": "217805427bcfa9f91f4ed884213115789f96634d1e1e3b3d5c0ff426fd98e879"
+    },
+    {
+      "week": 26,
+      "theme": "Review & Project 2: \"My Weekend Comic",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_26/blueprint.json",
+      "sha256": "ecdb14bbc812a688a02ff81750bd3eed269ac90e8b1daf1e57e9b0e98afdc80f"
+    },
+    {
+      "week": 27,
+      "theme": "Nature Sequencing (Plant Growth)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_27/blueprint.json",
+      "sha256": "9e8a75156d5a85c3674211926504a193d4ef7e38d15e59c5a256c55248a0fe8e"
+    },
+    {
+      "week": 28,
+      "theme": "Story Retell (The Tortoise and the Hare)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_28/blueprint.json",
+      "sha256": "fb3cd994f67034be54c55396908ff31bdc4bf2f8f309b5e8d8d8352b442702a5"
+    },
+    {
+      "week": 29,
+      "theme": "The Magic Trip (Irregular Verbs 1: Movement)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_29/blueprint.json",
+      "sha256": "193c37068864666591dd8251da37d190eec576bab4c4cb834ad91fe57b47a3ff"
+    },
+    {
+      "week": 30,
+      "theme": "The Picnic (Irregular Verbs 2: Consumption)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_30/blueprint.json",
+      "sha256": "c5d11fa4184e8f20a339b44b28f4dac676b125abe4caef348952758b0a881a9d"
+    },
+    {
+      "week": 31,
+      "theme": "The Senses (Irregular Verbs 3: Perception)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_31/blueprint.json",
+      "sha256": "3b034aff99390e3e6d10fbc38079ce132ed4a997c94281bc9080fb3f7cfe8c21"
+    },
+    {
+      "week": 32,
+      "theme": "The Busy Day (Irregular Verbs 4: Tasks)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_32/blueprint.json",
+      "sha256": "982c26e192eaf98d670cf4d91f384cd30335cdeded10d4cfa481ca8fa371b6eb"
+    },
+    {
+      "week": 35,
+      "theme": "Storytelling Practice 2 (Personal Recount)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_35/blueprint.json",
+      "sha256": "64aa62a3f43d930c203a55b02a4a8e9532b0cad731e2b55e4250d2842e515da1"
+    },
+    {
+      "week": 36,
+      "theme": "Review & Project 3: \"My Adventure Book",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_36/blueprint.json",
+      "sha256": "e5638b06a74e192d57c79162bc3a46f7348652cb4264bf746a24d9d723c3c40f"
+    },
+    {
+      "week": 37,
+      "theme": "Living vs. Non-Living (Reasoning)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 9,
+      "missing_vocab_count": 11,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_37/blueprint.json",
+      "sha256": "e39a87d50f20f663fc9f56a766609f9f2c2feba631c25bb3b16c5740143fe221"
+    },
+    {
+      "week": 39,
+      "theme": "Habitats (Persuasion Intro)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_39/blueprint.json",
+      "sha256": "b38a55a3dd56cef295f7f1b2fee681d17f7c24ddf28b52850e3f9560a7a0d829"
+    },
+    {
+      "week": 40,
+      "theme": "Beast Battle (Comparisons)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_40/blueprint.json",
+      "sha256": "94e86864bedf82602315600a138967c18cbb0f5354b9879e016597109870dbe6"
+    },
+    {
+      "week": 41,
+      "theme": "Life Cycles (Process)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_41/blueprint.json",
+      "sha256": "c4483d698265fe5820e5514c5946831af56b14a7e369443a307948ae7f80ba97"
+    },
+    {
+      "week": 42,
+      "theme": "The Water Journey (Cycle)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_42/blueprint.json",
+      "sha256": "74f0d574077d90d02683f25e2a24fc9c1f81ee35f1a040022a26657fd604fca4"
+    },
+    {
+      "week": 43,
+      "theme": "The \"Plus\" Machine (Addition Language)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_43/blueprint.json",
+      "sha256": "ae69c7a260fcb19fa65cf3f58eb85da77eff2087ab30a0a4d832373ce0a19572"
+    },
+    {
+      "week": 44,
+      "theme": "The Cookie Monster (Subtraction Language)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_44/blueprint.json",
+      "sha256": "ce998590248ebe9c656f2135d9db18a46b2828ab9bc03d922f87e8ae565214a5"
+    },
+    {
+      "week": 45,
+      "theme": "Shape Detectives (Geometry)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_45/blueprint.json",
+      "sha256": "5ca95197416d81eed8e9fde208cfa49011583f8d61bc84f3573afc933b0a15b6"
+    },
+    {
+      "week": 46,
+      "theme": "The Pattern Code (Logic)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_46/blueprint.json",
+      "sha256": "84bc969a68a28a0742caf5c3d18b334f5aaeb94a62d72376e2e84b2e19cd8cb8"
+    },
+    {
+      "week": 47,
+      "theme": "Big Numbers (Place Value)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_47/blueprint.json",
+      "sha256": "d16b27c436f9d10e399b4d1ec3b83a3cd61380b02346d38ce8725ee80b71d4b3"
+    },
+    {
+      "week": 48,
+      "theme": "Measuring Up (Length)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_48/blueprint.json",
+      "sha256": "b523d8b25881a13edd7fdd43157960ecbb77a59c869529bf7806a5eb53b6e7b9"
+    },
+    {
+      "week": 49,
+      "theme": "Future Dreams (Future Tense)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_49/blueprint.json",
+      "sha256": "cf3abf703468d234f887a6568bfb64a0d31841d17a304e181e42dc795c0ca3da"
+    },
+    {
+      "week": 50,
+      "theme": "Review Station 1 (Grammar Mix)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_50/blueprint.json",
+      "sha256": "3fa52fe91c3c30fae71ef6442bd42986df9b9cce93ed708dd6bf9eef5d3f13d6"
+    },
+    {
+      "week": 51,
+      "theme": "Review Station 2 (Vocab & CLIL)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_51/blueprint.json",
+      "sha256": "f448e054ff267567cbaf71d1a4d0e4e1cba5c95fe1f070d6dc1148b43ec29238"
+    },
+    {
+      "week": 52,
+      "theme": "Have You Ever\" Bingo (Seeding)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_52/blueprint.json",
+      "sha256": "1cd856e7a695b75f5d11227c3c14eee73d3c446d3c5023fabe457aa6514440a9"
+    },
+    {
+      "week": 53,
+      "theme": "Project 4 Prep - \"My Year in Review",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_53/blueprint.json",
+      "sha256": "9af10e4a51441b8d183a7469c31c4b69a53aa63d875b767b5f1464b57fb5a2b3"
+    },
+    {
+      "week": 54,
+      "theme": "PHASE 1 GRADUATION SHOWCASE",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_54/blueprint.json",
+      "sha256": "d550e9338f43f5ddb429033012c0e60af14ea0fb0df94924dafe8d19928c33f8"
+    },
+    {
+      "week": 55,
+      "theme": "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping  / Toán: Phép cộng có nhớ)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_55/blueprint.json",
+      "sha256": "077d78e614266563fc5b00d5993da56dcba22b52a4b5efa1798bdcf531d8bcfe"
+    },
+    {
+      "week": 56,
+      "theme": "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping  / Toán: Phép trừ có nhớ)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_56/blueprint.json",
+      "sha256": "17f8b41d2e37961e2d1a569a4bed627822044acead1a160a54193a6ad1a32607"
+    },
+    {
+      "week": 57,
+      "theme": "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts  / Toán: Khái niệm Phép nhân)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_57/blueprint.json",
+      "sha256": "94faa6c63557c7aedc8893d550bd166986c8b51cf78c29c97ebc3c85f8e91eda"
+    },
+    {
+      "week": 58,
+      "theme": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts  / Toán: Khái niệm Phép chia)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_58/blueprint.json",
+      "sha256": "0e7f7edbffb80b8e0dd21cfba545de159b5fcd182bb6255e9e11b34f15b0ccd3"
+    },
+    {
+      "week": 59,
+      "theme": "ELA: Message in a Bottle (Informal Writing) / Math: Remainders",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_59/blueprint.json",
+      "sha256": "bb2825f5b232c12b24293a0337fcb1f559c03611c2bc71b9624efbea27ef22c2"
+    },
+    {
+      "week": 60,
+      "theme": "ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_60/blueprint.json",
+      "sha256": "b0220ce7a7232ffac3c27e7112fde0b4aa4e33498afced5128980213b177833c"
+    },
+    {
+      "week": 61,
+      "theme": "ELA: Main Idea Hunter / Math: Word Problems",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_61/blueprint.json",
+      "sha256": "2e2490859c22c435331671652191ea04c43b7efe8ed15d96d8331018d6647a69"
+    },
+    {
+      "week": 62,
+      "theme": "ELA: The Movie Trailer (Summarizing) / Math: Rounding",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_62/blueprint.json",
+      "sha256": "7f92a684c32a8fe5a94b20afa04d929483c0fd0365475a1946d90a7f24376610"
+    },
+    {
+      "week": 63,
+      "theme": "ELA: Reading Maps / Math: Coordinates",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 10,
+      "missing_vocab_count": 10,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_63/blueprint.json",
+      "sha256": "73fb856774ba7b242dd6d904b3d5920d6a21a2c6108fa399e7a07122ec71e107"
+    },
+    {
+      "week": 64,
+      "theme": "ELA: Data Stories / Math: Pictographs",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_64/blueprint.json",
+      "sha256": "71fd9a65c3b331fb8e4410e0d3a297d4f7044dfedec13e62af4a208b5edf1e26"
+    },
+    {
+      "week": 65,
+      "theme": "Review & Consolidation (Cycle 2.1)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 1,
+      "missing_vocab_count": 19,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_65/blueprint.json",
+      "sha256": "a164bd329c0676522ca181bdee5a59501ae0331b47ed021e0b21c06f08884edb"
+    },
+    {
+      "week": 66,
+      "theme": "Micro-Debate 1: \"Email vs Handwritten Letters",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_66/blueprint.json",
+      "sha256": "42a51caabaf8f4176de9c2f4d96348063801ac1ff434a1eee8fbf56604c3d848"
+    },
+    {
+      "week": 67,
+      "theme": "ELA: The OREO Structure / Math: Measuring Mass",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_67/blueprint.json",
+      "sha256": "a968aac331ab27eb4bfe719a73ba83c392630908d3016d6c09d644aae11eb490"
+    },
+    {
+      "week": 68,
+      "theme": "ELA: Strong Reasons / Math: Bar Graphs",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_68/blueprint.json",
+      "sha256": "357ccc40f0727c80924456294f227de1b47e669a89bb0155aadd60dbc6bcbbf7"
+    },
+    {
+      "week": 69,
+      "theme": "Science/ELA: Environmental Protection / Math: Line Plots",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_69/blueprint.json",
+      "sha256": "54a54ada533585d65f501a56c42988b7acb435b4c606ea5de08a63d0c703f785"
+    },
+    {
+      "week": 70,
+      "theme": "ELA: Presentation \"My Green Idea\" / Math: Graph Review",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_70/blueprint.json",
+      "sha256": "745e01e28b663f1e02bac272e8b4ab3bd2c38dcb0a5c2b1c821c0bb8b2771467"
+    },
+    {
+      "week": 71,
+      "theme": "Science/ELA: The Solar System / Math: Large Numbers",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_71/blueprint.json",
+      "sha256": "c76d4c890472c0d7bf97b0caad1a133d5512baf53763f1c69d0d8e012489bb8c"
+    },
+    {
+      "week": 72,
+      "theme": "Science/ELA: Photosynthesis / Math: Area & Perimeter",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_72/blueprint.json",
+      "sha256": "ebb1cedd2796f10615c8daf326b0e579d8144d9574fbe47b5c3161684bf49efa"
+    },
+    {
+      "week": 73,
+      "theme": "Science/ELA: The Water Cycle (Advanced) / Math: Volume",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_73/blueprint.json",
+      "sha256": "2e6f44d9ce3f15ea9b1b6cbde27b401bd1493afe3f9bad2d20593afb3a0c0450"
+    },
+    {
+      "week": 74,
+      "theme": "Science/ELA: Food Chains / Math: Complex Charts",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_74/blueprint.json",
+      "sha256": "e165326ce96d4cb271eea37fecfc6aac17c0d51a2c365dc6266c08fbc602ed66"
+    },
+    {
+      "week": 75,
+      "theme": "History/ELA: Ancient Egypt / Math: Timelines",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_75/blueprint.json",
+      "sha256": "6a29b42faac1eafbbb634d6b95284e49a191c895ba9d47f1dd384535138c1c62"
+    },
+    {
+      "week": 76,
+      "theme": "History/ELA: Explorers / Math: Map Scales",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_76/blueprint.json",
+      "sha256": "bb7b7eb2c722f394c84a97efbf13a8304c34f756d1b6631bf3b25e5159630b3c"
+    },
+    {
+      "week": 77,
+      "theme": "Social Studies/ELA: World Landmarks / Math: 3D Geometry",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 9,
+      "missing_vocab_count": 11,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_77/blueprint.json",
+      "sha256": "f5e0c1dd4323c2af09036bb4831948c0635dd54760e8837cd0a6e451c6422466"
+    },
+    {
+      "week": 78,
+      "theme": "Social Studies/ELA: Cultures / Math: Surveys",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 9,
+      "missing_vocab_count": 11,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_78/blueprint.json",
+      "sha256": "a1a2b3785ecb5952c26b3b855bfc38ef09617e56b65843e14c4d69857bdc84cb"
+    },
+    {
+      "week": 79,
+      "theme": "The Industrial Revolution",
+      "alignment_status": "ALIGNED",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_79/blueprint.json",
+      "sha256": "5ddb0b5cc5b2b1c38aecf6cd0e0310828153880471d6293e3b4e347357146784"
+    },
+    {
+      "week": 80,
+      "theme": "Supply, Demand & Market Prices",
+      "alignment_status": "ALIGNED",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_80/blueprint.json",
+      "sha256": "67ba12ffbe0a33b56ccf3a4755cb978797e1f8ec946412095ecb11ff2092ccf2"
+    },
+    {
+      "week": 81,
+      "theme": "ELA: The Master Architect (Structure) / Math: Graphing Data",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_81/blueprint.json",
+      "sha256": "bc0ea044d080ff011491fa17cfde84706c8494bc021dbcc5fa9947041db69aa1"
+    },
+    {
+      "week": 82,
+      "theme": "ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 9,
+      "missing_vocab_count": 11,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_82/blueprint.json",
+      "sha256": "65a1306f1d87eb38cfdfa6867ecd920cd351a023a98d25a9a17ccd8b17c3edaf"
+    },
+    {
+      "week": 83,
+      "theme": "Geography/ELA: Landforms / Math: Decimals Intro",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_83/blueprint.json",
+      "sha256": "b766f0f83ac4791c667b51d76c50afe5ffad1751e8edf0bcd98102478a41d8ad"
+    },
+    {
+      "week": 84,
+      "theme": "Science/ELA: Volcanoes / Math: Adding Decimals",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_84/blueprint.json",
+      "sha256": "307675e5b0fc5c06aedef9f00e98c599e378a421411855be4cf7af533687bf11"
+    },
+    {
+      "week": 85,
+      "theme": "Maps (Advanced) / Math: Map Scales",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_85/blueprint.json",
+      "sha256": "90180f4d2428134c6803ccfbbfa3d0efb76b7aaf5bf03854a6fe9da594c74f2a"
+    },
+    {
+      "week": 86,
+      "theme": "Weather vs. Climate / Math: Graphs Trends",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_86/blueprint.json",
+      "sha256": "35649d82cc991e6f3cd201502490f981f3cfc497b6ca6cc5ef491acf27f6269a"
+    },
+    {
+      "week": 87,
+      "theme": "Human Body / Math: Elapsed Time",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_87/blueprint.json",
+      "sha256": "4db966c39d5ce3919173d8fc41e459f9baa8103b9548b99a8dc652c0863fbee2"
+    },
+    {
+      "week": 88,
+      "theme": "Ancient Rome / Math: Metric Conversions",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_88/blueprint.json",
+      "sha256": "6bd8bbc64c5209f119f764b3c71e94e5b05d389f169d66f1e75ffcaedb69be22"
+    },
+    {
+      "week": 89,
+      "theme": "Inventions / Math: Comparing Data Sets",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_89/blueprint.json",
+      "sha256": "2f4b1b98abe35b16d789408cb5cd9dc01496abadc7e8aa77cce9837eb6d5af2f"
+    },
+    {
+      "week": 90,
+      "theme": "Physics (Forces) / Math: Averages (Mean)  / Toán: Trung bình cộng)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_90/blueprint.json",
+      "sha256": "726e272116b5f0ca1f77ff768aaef25eaf4932bb8451819ace2d563ee3d8552d"
+    },
+    {
+      "week": 91,
+      "theme": "Scientific Method / Math: Experiment Design",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_91/blueprint.json",
+      "sha256": "3b8177dc809cf864e16d37991300e036abe92e5d1434ed1d409ea863b1d6bc06"
+    },
+    {
+      "week": 92,
+      "theme": "Community Helpers / Math: Surveys",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_92/blueprint.json",
+      "sha256": "79a5767a635aaa3d1e721f52c072c8ec36749162a0e7c5681ad5694363f5a461"
+    },
+    {
+      "week": 93,
+      "theme": "Topic Selection & Outline. (Chọn chủ đề & Dàn ý)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_93/blueprint.json",
+      "sha256": "8c4e07e685ba08545cc56ce9d1ca6cfa525bed0c2630306cfd1bb5c37e04161d"
+    },
+    {
+      "week": 94,
+      "theme": "Drafting & Editing. (Viết nháp & Chỉnh sửa)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_94/blueprint.json",
+      "sha256": "ef5302a9fba841ae8f7eed4e8539ea71bce9aafb831940bd00f0d205dd4a9e08"
+    },
+    {
+      "week": 95,
+      "theme": "Ocean Acidification & Carbon",
+      "alignment_status": "ALIGNED",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_95/blueprint.json",
+      "sha256": "4d6cac68eb2a4e6277618ba847f55ebbc33e75ed55f5b3d265d46e4136495c44"
+    },
+    {
+      "week": 96,
+      "theme": "Preparation for Mid-Phase Gate",
+      "alignment_status": "ALIGNED",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_96/blueprint.json",
+      "sha256": "1a3388296e9e14d6b04d9ad769224cac73c338faf1e67d68ca4ec4af5e72cbe3"
+    },
+    {
+      "week": 97,
+      "theme": "Government / Math: Percentages Intro",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_97/blueprint.json",
+      "sha256": "be40b1ffe536140a5f8594793d952d8ea1a8efe38509b06d1a257b1968f08f16"
+    },
+    {
+      "week": 98,
+      "theme": "Democracy / Math: Calculating Percentages",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_98/blueprint.json",
+      "sha256": "363f90a5ba59f84d78c832c22afb2c65cff7d3dd783e404aa5bba83a099f87e9"
+    },
+    {
+      "week": 99,
+      "theme": "Good Citizen / Math: Pie Charts",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_99/blueprint.json",
+      "sha256": "f7faa50a5334b9bff92b0d000ca767bd5f5e5bc0ca0eeb501966106ecb9f83c2"
+    },
+    {
+      "week": 100,
+      "theme": "Rights / Math: Percent Word Problems",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_100/blueprint.json",
+      "sha256": "72fdecfb914f7a2122b16d9f07bef0b2276cd1a32c67b627c0d1421996e70898"
+    },
+    {
+      "week": 101,
+      "theme": "Needs vs. Wants / Math: Budgeting",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_101/blueprint.json",
+      "sha256": "2e806d77ae3b4c9073f648b2927969c68d9707b2099697173bcaad725abc6d57"
+    },
+    {
+      "week": 102,
+      "theme": "Goods & Services / Math: Total Costs",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_102/blueprint.json",
+      "sha256": "588ea014365f0f18da21409887fcc57309ea36a330019aad419fb9c1cd1a4865"
+    },
+    {
+      "week": 103,
+      "theme": "Producers & Consumers / Math: Profit & Loss",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_103/blueprint.json",
+      "sha256": "e56a6998fbe5705dca4104d627d893d868128363c57755771dc5cda3d67145aa"
+    },
+    {
+      "week": 104,
+      "theme": "Supply & Demand / Math: Sales Trends",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_104/blueprint.json",
+      "sha256": "d77937bd8f3924c7ba5dbd46e246b8b561c8e160db75de60681aff0e0241f9e7"
+    },
+    {
+      "week": 105,
+      "theme": "Topic Selection & The \"Big Questions",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_105/blueprint.json",
+      "sha256": "fbd9e8b25ab5c18fa8be1376062ffc96e811c26c1327225827f72acadaca900f"
+    },
+    {
+      "week": 106,
+      "theme": "Information Hunting (Sources)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_106/blueprint.json",
+      "sha256": "80edfa282425ae125b8e00663ee4910b4cec4ab6a442c0fff6cc0fca30ea454d"
+    },
+    {
+      "week": 107,
+      "theme": "The Note-Taker (Summary)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_107/blueprint.json",
+      "sha256": "c0fad69af65d0b8be4772f59fef039ecf6c958fe43d68ab82d0b55f26c8c489f"
+    },
+    {
+      "week": 108,
+      "theme": "The Architect (Outlining)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_108/blueprint.json",
+      "sha256": "9a273ac94e614b7c237f73f44c3a1f4a3252096c9f5c44ff1579ef977906a8a2"
+    },
+    {
+      "week": 109,
+      "theme": "Drafting Body Paragraph 1",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_109/blueprint.json",
+      "sha256": "4c8466f435a2ab2c26e389ff26083897b7fc81e8f3dc2c19898dd1ea8b085d1e"
+    },
+    {
+      "week": 110,
+      "theme": "Drafting Body Paragraph 2",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_110/blueprint.json",
+      "sha256": "13761b6d658a258d5cbc1ab7477adf9af09858c03cdf2f0ee26f5684776d7b2b"
+    },
+    {
+      "week": 111,
+      "theme": "Intro & Conclusion (The Frame)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_111/blueprint.json",
+      "sha256": "2476d0fc9724997f73831979b9579d1155b59cade442071dab16ce7371dcadb7"
+    },
+    {
+      "week": 112,
+      "theme": "The Editor's Eye (Review)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_112/blueprint.json",
+      "sha256": "3e0736ffffcc73fdc8f27b40c897c0ab0f9a0dba7ab3205cae9df7ef6221c9ee"
+    },
+    {
+      "week": 113,
+      "theme": "Visual Aids (Images & Captions)",
+      "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_113/blueprint.json",
+      "sha256": "933b6077c64a9e941e012c2d24e40631e46789ed7c058c7a3836334fa3408815"
+    },
+    {
+      "week": 114,
+      "theme": "Project Assembly (Making the Poster)",
+      "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_114/blueprint.json",
+      "sha256": "2a2af0931bd63e6483f5d9ade5b52486028cff58915413b7e58a01cbc36f8bba"
+    },
+    {
+      "week": 115,
+      "theme": "Speaking Notes (Cue Cards)",
+      "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_115/blueprint.json",
+      "sha256": "c4ca30883b2e20ea551cad307dce2027a7edc023bb1deef1f135a8bfdae740ee"
+    },
+    {
+      "week": 116,
+      "theme": "Rehearsal (Voice & Body)",
+      "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_116/blueprint.json",
+      "sha256": "bd2d310ba40e233706fb09f7fa9acc18151065d863f824871e22e05a6acde9f2"
+    },
+    {
+      "week": 117,
+      "theme": "The Knowledge Fair (Group A)",
+      "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_117/blueprint.json",
+      "sha256": "133bc010b6f70bfc3a867eafbe7583d92e6c8a9416a9b68bdc027894381a8d83"
+    },
+    {
+      "week": 118,
+      "theme": "The Knowledge Fair (Group B)",
+      "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_118/blueprint.json",
+      "sha256": "13cae55512554e6822a353105ee0557bf8fb01c2e6f843f53032801b787a38c9"
+    },
+    {
+      "week": 119,
+      "theme": "Reflection & Portfolio",
+      "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_119/blueprint.json",
+      "sha256": "b10e5c185df07cd9ebc654edffcd744239bfd0f394fe1373f263f71d81ec70bf"
+    },
+    {
+      "week": 120,
+      "theme": "PHASE 2 GRADUATION",
+      "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_120/blueprint.json",
+      "sha256": "2a3d7227123dd6df70e775becb11581fbb4a467776eab64912e3a627b813a6d8"
+    },
+    {
+      "week": 121,
+      "theme": "Intro to Argumentative Research",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_121/blueprint.json",
+      "sha256": "e300a8a6ff562a6fbe0c48b3a45b1070753809dc40f7a487def78627bb703705"
+    },
+    {
+      "week": 122,
+      "theme": "Critical Listening",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_122/blueprint.json",
+      "sha256": "c1eaf1a8c46bfbedfe706b5a038875968fc3106912f2eb6d1316d2e4ac4e22ac"
+    },
+    {
+      "week": 123,
+      "theme": "The Thesis Statement",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_123/blueprint.json",
+      "sha256": "2e08b928c15f297c225505b5119d6cd4f5da95c0828f92b7cfb62a6895d32edc"
+    },
+    {
+      "week": 124,
+      "theme": "Drafting Arguments (Body)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_124/blueprint.json",
+      "sha256": "73809feff7f476a6e45197bd2de26a0c74d578361b6a6c282a323c8fcd468323"
+    },
+    {
+      "week": 125,
+      "theme": "Intro & Conclusion",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 4,
+      "missing_vocab_count": 16,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_125/blueprint.json",
+      "sha256": "dc2f19522775adf34346616887b1272114a3fd33fe7755109fda8dda64435943"
+    },
+    {
+      "week": 126,
+      "theme": "From Essay to Speech",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_126/blueprint.json",
+      "sha256": "cb014e3b0b69c31fba4af9d528e3f1b8ace7e618cc7aae587cba8f09cdd3f2c4"
+    },
+    {
+      "week": 127,
+      "theme": "Rebuttal Practice",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_127/blueprint.json",
+      "sha256": "0d7b576f9546f7a73d12b672a65229d76e311dfe16cf98138a0047681ed86889"
+    },
+    {
+      "week": 128,
+      "theme": "The Live Debate 1",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_128/blueprint.json",
+      "sha256": "e957ccde415e6fa3f3e2018f117a41a01b9967da0e3ced3938ecacf43830d371"
+    },
+    {
+      "week": 129,
+      "theme": "Opinion Project 3: Smartphones Under 12?",
+      "alignment_status": "ALIGNED",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_129/blueprint.json",
+      "sha256": "14021c1ddb2959fafa39b754d17629dbe4552bf70009eea378d71af455510b6c"
+    },
+    {
+      "week": 130,
+      "theme": "Opinion Project 3: Comparing Global Approaches",
+      "alignment_status": "ALIGNED",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_130/blueprint.json",
+      "sha256": "58d34e84ca3a366db84642605ffc56422f42fec35cefeae468394a7dada10006"
+    },
+    {
+      "week": 131,
+      "theme": "Opinion Project 3: Persuasive Techniques",
+      "alignment_status": "ALIGNED",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_131/blueprint.json",
+      "sha256": "61e831536a22902d4fc9c56aa590f8c89c5e190a530b958f17b39a1522775467"
+    },
+    {
+      "week": 132,
+      "theme": "B1+ Academic Assessment Mock 2",
+      "alignment_status": "ALIGNED",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_132/blueprint.json",
+      "sha256": "59406a3286a55448e49e9ae55de52e9843a902cb5b20499864e4ab8f4c92a6e1"
+    },
+    {
+      "week": 133,
+      "theme": "Deep Research & Data",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_133/blueprint.json",
+      "sha256": "8dce7a76b32b7129e9ff8be0d1098e33ac154d0110c44e9886301816742a1155"
+    },
+    {
+      "week": 134,
+      "theme": "Identifying Fallacies",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 8,
+      "missing_vocab_count": 12,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_134/blueprint.json",
+      "sha256": "b44df63aa8d34cf9817bfc53700a2a81a93785a05a668331f43c666b2a730371"
+    },
+    {
+      "week": 135,
+      "theme": "The Counter-Argument Paragraph",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_135/blueprint.json",
+      "sha256": "aa6f33a3ee7c37dc0a32c2607d780a32cd90a6fe1592c6867ced1e36b7266ee5"
+    },
+    {
+      "week": 136,
+      "theme": "Drafting the Full Essay",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_136/blueprint.json",
+      "sha256": "1784a31b6ef7dfd0c6787d8083355cbf266c9bb87225f2bec2633b7ddc16426c"
+    },
+    {
+      "week": 137,
+      "theme": "Editing & Polishing (Word Choice)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 1,
+      "missing_vocab_count": 19,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_137/blueprint.json",
+      "sha256": "c97069cf9fc4680326cea581804285624f25bbea3fa29d26123902c05056a58c"
+    },
+    {
+      "week": 138,
+      "theme": "Advanced Rebuttal (Attacking Evidence)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_138/blueprint.json",
+      "sha256": "3d2e1c2161357b1ca87d17e409e2e9a600d68610c42d5c80714b931088923b5d"
+    },
+    {
+      "week": 139,
+      "theme": "Team Strategy",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 7,
+      "missing_vocab_count": 13,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_139/blueprint.json",
+      "sha256": "dc2337cffecf1222bf30f40624d9239361a510dbf753fd08eac5e4b12f3f8377"
+    },
+    {
+      "week": 140,
+      "theme": "The Live Debate 2 (Video Games)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_140/blueprint.json",
+      "sha256": "aaee8a0a0df0d48bd60d75d0371525b1ff525273d9cc115354c545b68cf28731"
+    },
+    {
+      "week": 141,
+      "theme": "Geometry Review - Angles & Lines",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_141/blueprint.json",
+      "sha256": "ce0f42b19d4a9966c7e538852276c2f725efa99794853067eed4d53d39c5d887"
+    },
+    {
+      "week": 142,
+      "theme": "Geometry Review - Area & Volume",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 1,
+      "missing_vocab_count": 19,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_142/blueprint.json",
+      "sha256": "49f60b8c99274b96a293805a454fb212d22c71a0cfc296e41c274a3cc91a54dd"
+    },
+    {
+      "week": 143,
+      "theme": "Critical Thinking - Analyzing Ads",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_143/blueprint.json",
+      "sha256": "c4d1be4c00f522cd5b8dc423b3180664fc25bec31e08e5f595f483dfbabb122f"
+    },
+    {
+      "week": 144,
+      "theme": "Preparation for Capstone",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_144/blueprint.json",
+      "sha256": "8119f3d5cf0e71956940bfa81910ed589afb9d3712502b7cd628b611e340291d"
+    },
+    {
+      "week": 145,
+      "theme": "Independent Research",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_145/blueprint.json",
+      "sha256": "e512d732ece8ea3802ba5f421f79b9fa09f2ab72b8ba83f81b1fee6e854eff57"
+    },
+    {
+      "week": 146,
+      "theme": "Synthesizing Information",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 6,
+      "missing_vocab_count": 14,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_146/blueprint.json",
+      "sha256": "529b732e954a0b2dfcbf66429c4e729b3f4c026beedfe6851b7258a827089799"
+    },
+    {
+      "week": 147,
+      "theme": "Advanced Thesis Writing",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_147/blueprint.json",
+      "sha256": "c0fb4782f998c402adf63a62b7f61120405959cad51f49c021050395bd59ad01"
+    },
+    {
+      "week": 148,
+      "theme": "Drafting Final Essay (Independent)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_148/blueprint.json",
+      "sha256": "53c6ed8bad39df41694f9a204c3f58f0f6829bdd74766ce633a0900fe0723d66"
+    },
+    {
+      "week": 149,
+      "theme": "Final Polish & Peer Review",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_149/blueprint.json",
+      "sha256": "17ce15f2f4052dcaa7854b1fc3ebd8527b082f9d4ecc2bb5f0bdbbba46892301"
+    },
+    {
+      "week": 150,
+      "theme": "Mock Debate & Strategy",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 5,
+      "missing_vocab_count": 15,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_150/blueprint.json",
+      "sha256": "3a63fa5857b7d11614e3c79c2eaa50fdff74057c78aa5c1596ab6b3a51df7e09"
+    },
+    {
+      "week": 151,
+      "theme": "The Capstone Debate",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_151/blueprint.json",
+      "sha256": "66ec70a6877acdb3826b57009ef4be815bd5e6979330785db45243994bdb7b5b"
+    },
+    {
+      "week": 152,
+      "theme": "Genre Review: Narrative",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_152/blueprint.json",
+      "sha256": "27f0f951b3dd990b7d099c916d10fd35cf13d10e0753d5cec6e12bb750f9572e"
+    },
+    {
+      "week": 153,
+      "theme": "Genre Review: Expository",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_153/blueprint.json",
+      "sha256": "9991d356ede5eba5049c6ce4fa6b4e42d7dd5243120c623977b35dca0a9a86de"
+    },
+    {
+      "week": 154,
+      "theme": "Impromptu Speaking Skills",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_154/blueprint.json",
+      "sha256": "989e4c820233c6f1cc4463d5b9fb9a08799adb9901a466f2027138601c8909c1"
+    },
+    {
+      "week": 155,
+      "theme": "Portfolio Prep",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_155/blueprint.json",
+      "sha256": "66ded5e8698b864ca6769600a4840f1fd968fdfa7a724f12d3772fc45cd192c5"
+    },
+    {
+      "week": 156,
+      "theme": "GRADUATION CEREMONY & FINAL SHOWCASE",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "syllabus_words_count": 0,
+      "missing_vocab_count": 20,
+      "requires_human_vocab": true,
+      "filePath": "src/data/weeks/week_156/blueprint.json",
+      "sha256": "f841461dc4ad60565a6e1b5c0fa2c720252049f97c59e2d4fe9471ec43b5c157"
+    }
+  ]
+}

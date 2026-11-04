@@ -1,0 +1,149 @@
+{
+  "week": 5,
+  "theme": "The Mystery House (Nouns)",
+  "title_en": "The Mystery House (Nouns)",
+  "title_vi": "Ngôi nhà Bí ẩn",
+  "cefr_level": "Pre-A1 Starters",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_w01_starters_lite.js",
+  "story_title": "Exploring rooms and furniture",
+  "clil_topic": {
+    "title": "The Mystery House",
+    "focus": "Label parts of a house correctly"
+  },
+  "grammar_focus": {
+    "structure": "Articles \"A/An",
+    "outcome": "Label parts of a house correctly",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "bedroom",
+      "kitchen",
+      "bathroom",
+      "living room",
+      "bed",
+      "chair",
+      "table"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+  },
+  "keywords": [
+    "bedroom",
+    "kitchen",
+    "bathroom",
+    "living room",
+    "bed",
+    "chair",
+    "table"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "bedroom",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "kitchen",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "bathroom",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "living room",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "bed",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "chair",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "table",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 1 (Full)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 5,
+    "map_theme": "The Mystery House (Rooms)",
+    "map_clil_module": "Kiến trúc: Không gian phòng ở",
+    "map_grammar_hub": "Giới từ vị trí (in, on, under); `listening_hub` kéo thả đồ đạc",
+    "map_cefr_type": "Pre-A1 · Rotary Practice",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"The Mystery House (Nouns)\") enforced over Digital Map (Source A: \"The Mystery House (Rooms)\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:57.040Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

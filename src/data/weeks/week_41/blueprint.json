@@ -1,0 +1,129 @@
+{
+  "week": 41,
+  "theme": "Life Cycles (Process)",
+  "title_en": "Life Cycles (Process)",
+  "title_vi": "Vòng đời",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": 1,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "Butterfly or Frog Life Cycle",
+  "clil_topic": {
+    "title": "Life Cycles & Scientific Description",
+    "focus": "Explain a natural cycle using sequence words"
+  },
+  "grammar_focus": {
+    "structure": "Present Simple 3rd Person (It changes, It grows, It becomes)",
+    "outcome": "Explain a natural cycle using sequence words",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "egg",
+      "hatch",
+      "caterpillar/tadpole",
+      "chrysalis",
+      "butterfly/frog"
+    ],
+    "total_syllabus_words": 5,
+    "target_count": 20,
+    "missing_count": 15,
+    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)"
+  },
+  "keywords": [
+    "egg",
+    "hatch",
+    "caterpillar/tadpole",
+    "chrysalis",
+    "butterfly/frog"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "egg",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "hatch",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "caterpillar/tadpole",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "chrysalis",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "butterfly/frog",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 15 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 41,
+    "map_theme": "Weather Disasters & Safety",
+    "map_clil_module": "Địa chất: Bão nhiệt đới và lũ lụt",
+    "map_grammar_hub": "Câu mệnh lệnh an toàn; `broadcast_studio` bản tin thời tiết khẩn cấp",
+    "map_cefr_type": "A2 Flyers · Rotary 4",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Life Cycles (Process)\") enforced over Digital Map (Source A: \"Weather Disasters & Safety\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:58.723Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "week": 24,
+  "theme": "Feelings in the Past (Was/Were + Adjectives)",
+  "title_en": "Feelings in the Past (Was/Were + Adjectives)",
+  "title_vi": "Cảm xúc trong Quá khứ",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "full_mock",
+  "isFullMock": true,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_w24_movers_mid_mock.js",
+  "story_title": "Why were you sad/happy yesterday?",
+  "clil_topic": {
+    "title": "Feelings in the Past & Expressing Empathy",
+    "focus": "Express past emotions and reasons"
+  },
+  "grammar_focus": {
+    "structure": "I was [feeling] because...\" / \"They were",
+    "outcome": "Express past emotions and reasons",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "scared",
+      "tired",
+      "hungry",
+      "thirsty",
+      "excited",
+      "bored",
+      "surprised"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+  },
+  "keywords": [
+    "scared",
+    "tired",
+    "hungry",
+    "thirsty",
+    "excited",
+    "bored",
+    "surprised"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "scared",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "tired",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "hungry",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "thirsty",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "excited",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "bored",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "surprised",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Exam)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 24,
+    "map_theme": "Movers Mid-Way Assessment",
+    "map_clil_module": "Survival Science: Campfire Log",
+    "map_grammar_hub": "Full Mock Movers 1: Đánh giá giữa kỳ L1–L5, R1–R6, S1–S4; Kiểm tra Notepad",
+    "map_cefr_type": "★ FULL MOCK 02 (Movers)",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Feelings in the Past (Was/Were + Adjectives)\") enforced over Digital Map (Source A: \"Movers Mid-Way Assessment\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:58.005Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

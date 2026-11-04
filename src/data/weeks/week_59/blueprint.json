@@ -1,0 +1,159 @@
+{
+  "week": 59,
+  "theme": "ELA: Message in a Bottle (Informal Writing) / Math: Remainders",
+  "title_en": "ELA: Message in a Bottle (Informal Writing) / Math: Remainders",
+  "title_vi": "ELA: Thông điệp trong Chai - Viết Thân mật / Toán: Số dư",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": 3,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "Writing a letter to a mysterious friend",
+  "clil_topic": {
+    "title": "ELA: Message in a Bottle",
+    "focus": "Write an informal letter with correct format"
+  },
+  "grammar_focus": {
+    "structure": "Informal Tone (Contractions: I'm, It's; Greetings: Hi, Hey)",
+    "outcome": "Write an informal letter with correct format",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "dear",
+      "best",
+      "friend",
+      "write",
+      "news",
+      "fun",
+      "reply",
+      "miss you"
+    ],
+    "total_syllabus_words": 8,
+    "target_count": 20,
+    "missing_count": 12,
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)"
+  },
+  "keywords": [
+    "dear",
+    "best",
+    "friend",
+    "write",
+    "news",
+    "fun",
+    "reply",
+    "miss you"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "dear",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "best",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "friend",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "write",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "news",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "fun",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "reply",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "miss you",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 59,
+    "map_theme": "Water Cycle & Purification",
+    "map_clil_module": "Hóa học: Lọc cát than hoạt tính",
+    "map_grammar_hub": "Thể bị động trong quy trình kỹ thuật; `action_lab` hệ thống lọc nước bẩn",
+    "map_cefr_type": "A2 Flyers · Rotary 2",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"ELA: Message in a Bottle (Informal Writing) / Math: Remainders\") enforced over Digital Map (Source A: \"Water Cycle & Purification\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:59.642Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}
