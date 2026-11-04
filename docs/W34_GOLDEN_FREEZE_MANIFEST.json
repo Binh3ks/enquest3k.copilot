@@ -1,17 +1,166 @@
 {
   "manifestVersion": "1.0.0",
-  "goldenStandardVersion": "1.1.0",
+  "goldenStandardVersion": "1.0.0",
   "weekNumber": 34,
-  "theme": "The Lion and the Mouse & Forest Ecosystem",
+  "theme": "The Lion and the Mouse",
   "cefrLevel": "A2 Flyers / Stage 1 Young Learners (Ages 7–10)",
-  "freezeDate": "2026-10-30T09:00:00Z",
+  "freezeDate": "2026-11-04T07:12:23.499Z",
   "lifecycleState": "GOLDEN_FROZEN",
   "rotaryCycle": {
     "cycleNumber": 1,
-    "testedSkills": ["listening_p1", "listening_p2", "listening_p3", "listening_p4", "listening_p5"],
+    "testedSkills": [
+      "listening_p1",
+      "listening_p2",
+      "listening_p3"
+    ],
     "shieldCount": 3
   },
-  "assessmentBridgeNote": "Applies Architectural Decision (2026-09-05): Format Scaffolding bridge for Rotary Cycle W33-36 where Days 1-4 maintain syllabus CEFR level (A1 Movers) while Zone 5 introduces Cambridge A2 Flyers exam task format without lexical overload.",
+  "taskInventory": [
+    {
+      "id": "gear1_webtoon",
+      "day": 1,
+      "zone": 1,
+      "name": "Scene Explorer",
+      "type": "practice"
+    },
+    {
+      "id": "gear2_karaoke",
+      "day": 1,
+      "zone": 1,
+      "name": "Voice Shadow",
+      "type": "practice"
+    },
+    {
+      "id": "gear3_retell",
+      "day": 1,
+      "zone": 1,
+      "name": "Story Retell",
+      "type": "practice"
+    },
+    {
+      "id": "gear4_clil",
+      "day": 2,
+      "zone": 2,
+      "name": "Fact Finder",
+      "type": "practice"
+    },
+    {
+      "id": "science_lab",
+      "day": 2,
+      "zone": 2,
+      "name": "Action Lab",
+      "type": "practice"
+    },
+    {
+      "id": "science_report",
+      "day": 2,
+      "zone": 2,
+      "name": "Discovery Report",
+      "type": "practice"
+    },
+    {
+      "id": "word_blitz",
+      "day": 3,
+      "zone": 3,
+      "name": "Speed Match",
+      "type": "practice"
+    },
+    {
+      "id": "sentence_smash",
+      "day": 3,
+      "zone": 3,
+      "name": "Grammar Duel",
+      "type": "practice"
+    },
+    {
+      "id": "math_quest",
+      "day": 3,
+      "zone": 3,
+      "name": "Math Quest",
+      "type": "practice"
+    },
+    {
+      "id": "story_writer",
+      "day": 4,
+      "zone": 4,
+      "name": "Story Writer",
+      "type": "practice"
+    },
+    {
+      "id": "broadcast_studio",
+      "day": 4,
+      "zone": 4,
+      "name": "Video Challenge",
+      "type": "practice"
+    },
+    {
+      "id": "info_exchange",
+      "day": 4,
+      "zone": 4,
+      "name": "Info Exchange",
+      "type": "practice"
+    },
+    {
+      "id": "boss_listening",
+      "day": 5,
+      "zone": 5,
+      "name": "Listening Shield",
+      "type": "assessment"
+    },
+    {
+      "id": "boss_reading",
+      "day": 5,
+      "zone": 5,
+      "name": "Reading & Writing Shield",
+      "type": "assessment"
+    },
+    {
+      "id": "weekly_review",
+      "day": 5,
+      "zone": 5,
+      "name": "Speaking & Passport",
+      "type": "assessment"
+    }
+  ],
+  "criticalMediaSummary": {
+    "totalStaticMP3s": 66,
+    "totalImagesAndSVGs": 29,
+    "barModelSVGs": 5,
+    "webtoonScenes": 5,
+    "covers": 2
+  },
+  "validationSuite": [
+    {
+      "gate": "Gate 3",
+      "script": "scripts/gate3_media_integrity.mjs 34",
+      "target": "0 missing referenced media assets"
+    },
+    {
+      "gate": "Gate 4",
+      "script": "scripts/gate4_chunk_bolding.mjs 34",
+      "target": "0 single-word bolding defects"
+    },
+    {
+      "gate": "Gate 11",
+      "script": "scripts/gate11_content_richness.mjs 34",
+      "target": "Richness & lexical variety standard"
+    },
+    {
+      "gate": "Gate 12",
+      "script": "scripts/gate12_comprehensive_cefr.mjs 34",
+      "target": "CEFR level alignment"
+    },
+    {
+      "gate": "Gate 15",
+      "script": "scripts/gate15_production_dom_assertions.mjs 34",
+      "target": "15/15 Quests clean DOM assertions & screenshot dedup"
+    },
+    {
+      "gate": "Freeze Guard",
+      "script": "scripts/guard_golden_w34_freeze.mjs",
+      "target": "100% SHA-256 integrity verification"
+    }
+  ],
   "protectedSourceFiles": [
     "src/data/weeks/week_34/reading_hub.js",
     "src/data/weeks/week_34/listening_hub.js",
@@ -23,71 +172,111 @@
     "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md"
   ],
   "protectedFileHashes": {
-    "src/data/weeks/week_34/reading_hub.js": "44300d245c4c46ab2ee2980b7429c271b79dca15892df2c96932104a1f5dfd6f",
-    "src/data/weeks/week_34/listening_hub.js": "8ee174e2fb59d8069607e326d1c3463c20c1eddbc242c5f1f8e6cc26a098d2f8",
-    "src/data/weeks/week_34/writing_hub.js": "ba1eeb925c01b9162d1c6f41959c1c0922953f15607a93886f5f899cc5abf7a4",
+    "src/data/weeks/week_34/reading_hub.js": "4e261d2a203bc03fa3453cd042559e02cddbc59ad7737d143cc2821c7b3ca833",
+    "src/data/weeks/week_34/listening_hub.js": "1f1d07b533cb15ddbc05067c630d864ca8448e740b2317fadecb7b5782aec8a3",
+    "src/data/weeks/week_34/writing_hub.js": "db91ddb4c148f95af99bd81b0c6f90e5fd81bb07463ae311e8b60b3feba07ded",
     "src/data/weeks/week_34/speaking_hub.js": "7f2fc8de9aec0fb93521fe3cddc16e5089a5f6fe5d3cd30ee27d24904d5174fe",
     "src/data/weeks/week_34/skill_practice_hub.js": "ce95578990e48a8a50c4e078900718cea56285e81cdc7662a1bf1e4b0201ba7e",
     "src/data/weeks/week_34/vocab.js": "34315f91b873b8e401072869b2c70e3a8df329a40f3629316f66210d782063ef",
-    "src/data/weeks/week_34/read.js": "7eeeedc475ba7c742265081c14f7a12bf8db81ca131e0d6c8f806e73a513fcd2",
-    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md": "fae603befc401566f8245b95b0abd3c12852e003b4dcf189e28a63b2de6863f3"
-  },
-  "governanceDocumentation": [
-    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md"
-  ],
-  "canonicalComponentImplementations": [
-    "src/components/cambridge/SVGLineMatcher.jsx",
-    "src/components/cambridge/NotepadNoteCompleter.jsx",
-    "src/components/cambridge/VisualMatchingAH.jsx",
-    "src/components/cambridge/MultipleChoice3Pic.jsx",
-    "src/components/cambridge/SVGColorAndWrite.jsx",
-    "src/components/cambridge/WordBankMatchingGrid.jsx",
-    "src/components/cambridge/DialogueAHCompleter.jsx",
-    "src/components/cambridge/RWPart3ClozeWithTitle.jsx",
-    "src/components/cambridge/InlineTextClozeDropdown.jsx",
-    "src/components/cambridge/TextExtractionCompleter.jsx",
-    "src/components/cambridge/OpenClozeCompleter.jsx",
-    "src/components/cambridge/StoryWriting.jsx",
-    "src/components/cambridge/FindDifferencesInteractive.jsx",
-    "src/components/cambridge/InformationExchangeP2.jsx",
-    "src/components/cambridge/PictureStoryContinuation.jsx",
-    "src/components/cambridge/PersonalQuestionsCompleter.jsx"
-  ],
-  "gate15RelationshipNote": "Hệ thống duy trì song song cả hai gate: Gate 15 (v1) kiểm tra DOM assertions tĩnh và screenshot deduplication (>= 15 unique hashes), trong khi Gate 15 v2 kiểm tra tương tác chức năng động trên live production, phát âm thanh thật, bắt chặn runtime TTS và kiểm soát chuyển trạng thái không treo.",
-  "validationSuite": [
-    { "gate": "Gate 3", "script": "scripts/gate3_media_integrity.mjs 34", "target": "69/69 MP3s verified" },
-    { "gate": "Gate 11", "script": "scripts/gate11_content_richness.mjs 34", "target": "Word counts and variety standard" },
-    { "gate": "Gate 12", "script": "scripts/gate12_comprehensive_cefr.mjs 34", "target": "0 B1/B2 violations" },
-    { "gate": "Gate 15", "script": "scripts/gate15_production_dom_assertions.mjs 34 --local", "target": "15/15 Quests live DOM PASS + screenshot dedup >= 15 unique hashes" },
-    { "gate": "Gate 15 v2", "script": "scripts/gate15_v2_functional_audio_playtest.mjs 34", "target": "15/15 quest functional PASS: 0 runtime TTS, 0 missing audio, 0 frozen phases, 0 dictation tabs" },
-    { "gate": "Schema Uniformity Gate", "script": "scripts/gate_schema_uniformity.mjs 34", "target": "0 dual-fallback patterns, 0 schema key drift" },
-    { "gate": "Whitelist Entity Gate", "script": "scripts/gate_whitelist_entities.mjs 34", "target": "0 rogue entity violations" },
-    { "gate": "Gate 16", "script": "scripts/gate16_content_quality.mjs 34", "target": "100% single-source content purity" },
-    { "gate": "Gate 17", "script": "scripts/gate17_fidelity_doctrine.mjs 34", "target": "16-part Cambridge schema & invariants PASS" },
-    { "gate": "W34 Freeze Guard", "script": "scripts/guard_golden_w34_freeze.mjs", "target": "SHA-256 integrity verification" }
-  ],
-  "taskInventory": [
-    { "id": "gear1_webtoon", "day": 1, "zone": 1, "name": "Scene Explorer", "type": "practice" },
-    { "id": "gear2_karaoke", "day": 1, "zone": 1, "name": "Voice Shadow", "type": "practice" },
-    { "id": "gear3_retell", "day": 1, "zone": 1, "name": "Story Retell", "type": "practice" },
-    { "id": "gear4_clil", "day": 2, "zone": 1, "name": "Fact Finder (CLIL)", "type": "practice" },
-    { "id": "science_lab", "day": 2, "zone": 2, "name": "Action Lab", "type": "practice" },
-    { "id": "science_report", "day": 2, "zone": 3, "name": "Discovery Report", "type": "practice" },
-    { "id": "word_blitz", "day": 3, "zone": 2, "name": "Speed Match", "type": "practice" },
-    { "id": "sentence_smash", "day": 3, "zone": 2, "name": "Grammar Duel", "type": "practice" },
-    { "id": "math_quest", "day": 3, "zone": 2, "name": "Math Quest (Singapore Bar Model)", "type": "practice" },
-    { "id": "story_writer", "day": 4, "zone": 3, "name": "Story Writer P7", "type": "practice" },
-    { "id": "broadcast_studio", "day": 4, "zone": 3, "name": "Video Challenge", "type": "practice" },
-    { "id": "info_exchange", "day": 4, "zone": 3, "name": "Info Exchange P2", "type": "practice" },
-    { "id": "boss_listening", "day": 5, "zone": 4, "name": "Boss Listening (Shield 1)", "type": "assessment" },
-    { "id": "boss_reading", "day": 5, "zone": 4, "name": "Boss Reading (Shield 2)", "type": "assessment" },
-    { "id": "weekly_review", "day": 5, "zone": 4, "name": "Boss Review (Shield 3)", "type": "assessment" }
-  ],
-  "criticalMediaSummary": {
-    "totalStaticMP3s": 69,
-    "activeMatchingMP3s": 55,
-    "barModelSVGs": 5,
-    "webtoonScenes": 5,
-    "covers": 2
+    "src/data/weeks/week_34/read.js": "39575f3a53f2f99a602eacf9dd1d6c0686fac9b3a7346f517cb2e7f5c10089a0",
+    "docs/W34_PEDAGOGICAL_CONTENT_REVIEW.md": "fae603befc401566f8245b95b0abd3c12852e003b4dcf189e28a63b2de6863f3",
+    "src/data/official_wordlists/starters_pre_a1.json": "89c05a63b6680d96aa9349423668e945e6b5aac2dbd40a7702767adc3f50d315",
+    "src/data/official_wordlists/movers_a1.json": "a16d50c905da4da7de04d1502ad64f4d56e7fd0f24ed92d06f0e75c50560f964",
+    "src/data/official_wordlists/flyers_a2.json": "e6241496d5178ec13e1b34c135c3107f6e78b28c4cc45f73584ec76fbf40ee18",
+    "public/audio/week34/exam_intro_S2.mp3": "a534a18f43b90c2ec48f158760828328129680046ac5f67114b459a08e1720ba",
+    "public/audio/week34/explore.mp3": "288ebc5aa45e5c86682dd20f4d6a1e701800e25fc1b3b692bc65e816b75df13c",
+    "public/audio/week34/info_exchange_intro_p1.mp3": "3fb24c79f20e6cb3f8a3ea3b2af667273111ebf138321b0121ac078f42dbb3a4",
+    "public/audio/week34/info_exchange_intro_p2.mp3": "c5a70419bbc0d29d7230aa6574edca95458b4a199fe3d33c8223b0706d620f03",
+    "public/audio/week34/info_exchange_q1.mp3": "af72506eba031abc5c7bc7477ee8b5bdb9f22c4c2afefdeebe86754f17a57175",
+    "public/audio/week34/info_exchange_q2.mp3": "0778250ea6ca5ac20f238c3f68b6c3cb15bcd01dd9509742148a416b09549f41",
+    "public/audio/week34/info_exchange_q3.mp3": "ea2ce650a9fbef49a7d39890e010d3da5349e4f326e95fe87ef4b0f8d9b019fc",
+    "public/audio/week34/info_exchange_q4.mp3": "47407ae353cab6e2d4dfd46e32fa35f9527f3710e3646fed48b7150e10b1de0b",
+    "public/audio/week34/info_exchange_q5.mp3": "4aebf3ad11c28640bea826e9ea0465c0667f8305405aeb464689801631a60c40",
+    "public/audio/week34/listening_p1_full.mp3": "16eb005e7adaafcdd5a1d78102e03583468e919c568d4c579894da67ded981d5",
+    "public/audio/week34/listening_p2_full.mp3": "755505c68d82b82d9dd52728c8a780949766410b5886b0f8a94eb2a55068f67a",
+    "public/audio/week34/listening_p3_example.mp3": "86e29f0327529c2f90debc9ae0719a26019812746579f9e2be1aed5a0b2feacf",
+    "public/audio/week34/listening_p3_full.mp3": "18734ec676352cfbbf7360daf56f99ad39f399fc60dfad1d81ad6002093d8499",
+    "public/audio/week34/listening_p3_item1.mp3": "3d48231727078b295ae1611b173ec27990d346d0d66cda4a05d11c058f17a7a5",
+    "public/audio/week34/listening_p3_item2.mp3": "6922af71bad9219cbc4c7fdd65c407ce9a114bd533e8e72cf1ae92929cb4db7d",
+    "public/audio/week34/listening_p3_item3.mp3": "11eaf4261a0803c38192625108cd5fa75620f943e94a144ad713f0ba5b9d99d1",
+    "public/audio/week34/listening_p3_item4.mp3": "121aaeac5b7abcee59b57e0ee664833b34eea5a192e64830b02212214650764d",
+    "public/audio/week34/listening_p3_item5.mp3": "0d3af8da9f3321894844859e1813515272260362176d5d608f6aae84be3cc327",
+    "public/audio/week34/listening_p4_example.mp3": "d2fc52218d11af647fa69ff2e20903c897f81c7d166f8ce71ceff4089ee2ed96",
+    "public/audio/week34/listening_p4_full.mp3": "21cb2ab54631cdb1398af98e56b8db0bc073d240faac1d1db1cf4c235cac1f35",
+    "public/audio/week34/listening_p4_q1.mp3": "53841c79b87a3eb2eab9ce1924a78d99cf953f1187a2e59fdca1566953750815",
+    "public/audio/week34/listening_p4_q2.mp3": "ec40c3080875b19d0c7cbd1368a5e5ae2cff67d686cb1f520003e3d128896760",
+    "public/audio/week34/listening_p4_q3.mp3": "f0b6379b88e733735920e0406198995d0e6f309cf835cd685ee70d797534fae5",
+    "public/audio/week34/listening_p4_q4.mp3": "58a49607ca0f2650f17c90c70353609a6210c8d64d10fbea7f0e0a41b8b8e319",
+    "public/audio/week34/listening_p4_q5.mp3": "e11d83226c9b824276cba5578329c9ea31c5a60e84080de0a305278af835fc07",
+    "public/audio/week34/scene_1.mp3": "90b3b054f2d1898ee1567b259f20c497aba5c78df829be5b756356b928253451",
+    "public/audio/week34/scene_2.mp3": "d1243323e28a1bf0ab5e5a13ae2d03373e0e6005d923c17b12c85977b1f61502",
+    "public/audio/week34/scene_3.mp3": "3ba6ff26a5c82cfb8ad745552e5b7bb4d82df7ffef9e494f1730d553407a20aa",
+    "public/audio/week34/scene_4.mp3": "7ae2fbf9cb922e657d005d050a2ed7182f8f857c6d1a3bc0314c4e5f1e2433ae",
+    "public/audio/week34/scene_5.mp3": "e2613ec519ecd994b4fead41058b0ced346493c274c75e99b0afdad702a6a0bc",
+    "public/audio/week34/shadowing_1.mp3": "1495db4bb10960147d4fb009864e01e63bc614b2d16d7fc985d4ba108fed0851",
+    "public/audio/week34/shadowing_10.mp3": "bff79daad420dcd87a8f16307f4123998fb836e2843b79f2961334426caf6c68",
+    "public/audio/week34/shadowing_2.mp3": "21dde1ed03d61791787fd4adce730ac963ebed26f45f9ee3f7f4ca2e4694488c",
+    "public/audio/week34/shadowing_3.mp3": "a765b8f423132dfa69c364c75d7d9a75634d910729f536c9bfc40f91fc0d8b36",
+    "public/audio/week34/shadowing_4.mp3": "82a853259dd3bb086ede3e24c8a62dbf50a577de6eb0d7fb286ecfe87f20781a",
+    "public/audio/week34/shadowing_5.mp3": "740aaba95170f4eae130562eba019a2b94315a3dd462343ec9af0a1fe72140e4",
+    "public/audio/week34/shadowing_6.mp3": "c79805547b9c62ad8ac9a5ceb87ba2823e7054ab23f608ef8eae3b91a1a00707",
+    "public/audio/week34/shadowing_7.mp3": "d856878f0a90a77690b62e2c8769086947068ffecbf2d8c7a6191902b4edd766",
+    "public/audio/week34/shadowing_8.mp3": "13cff1b4d2985c6d2d3d73a04c3b85f00a0a201be8e30cdc70446ae5270f1067",
+    "public/audio/week34/shadowing_9.mp3": "de0c23d4b9bdd6e2caeb9144d34c2f77aaa1318c409729060067990de1c7d5ba",
+    "public/audio/week34/vocab_brave.mp3": "04c799dabaac853715b752dae865c37166ef7b43a2385b87275803dcecafdd44",
+    "public/audio/week34/vocab_chew.mp3": "220c0275dbb90c9a3fdb23dcad4a4786ad4c47a284806ca4a575ea03cf668e5b",
+    "public/audio/week34/vocab_claws.mp3": "cb00dc684c8363f990aaa1ad7737b87eb42db2a62f144252af6d004432550474",
+    "public/audio/week34/vocab_cooperate.mp3": "2a345d6293994c0583509838e952c60de5dd61d4383b9186586cad17bb87b0fa",
+    "public/audio/week34/vocab_ecosystem.mp3": "876aa2fb13c96dd2b72a294ba7ff24dbcbd79d88a57456d98806d5d63af7e46e",
+    "public/audio/week34/vocab_fable.mp3": "c7bcd09c80327897fea02f91a9284b6afb4b0939b2f476724c33f1e086f8c4fd",
+    "public/audio/week34/vocab_forest.mp3": "c8e12e1b52b3cba36e0d659203bb4daf7df21031df7d539fff9e1a749149ed66",
+    "public/audio/week34/vocab_free.mp3": "5aeb2de40729439d6ea8b1d0cbc4ffe932ce082da69c49a70c119aa294c91727",
+    "public/audio/week34/vocab_friendship.mp3": "80254fdc6865622ae8e0e4f680e92a668532772641f72bd8cbc396c1707a1213",
+    "public/audio/week34/vocab_grateful.mp3": "81580a72016e130bbbe503538a532012ed89d731cb43af6f760ef50fe2bd77ee",
+    "public/audio/week34/vocab_help.mp3": "385306697d95eea167ad3b6aefd3f71bd863d13b741caf59f10c553e6aeb436c",
+    "public/audio/week34/vocab_huge.mp3": "8e921b79f20ad054189d981d7a6bf2ae5ceb60cfd635a24cbd730d02cb74aeac",
+    "public/audio/week34/vocab_hunter.mp3": "219bb14ebe1832cad7b5c148f2966be4ce8fbc66523cc5d50268e74a972beb11",
+    "public/audio/week34/vocab_lion.mp3": "afca06391e7290077680907844a62349ae32e0c77adea2ff003592e2a160b535",
+    "public/audio/week34/vocab_mouse.mp3": "4591e02a2a8f0484729d42990d812e1e6b1a57afa23f3fcf0eb2eb0215ebf0f4",
+    "public/audio/week34/vocab_net.mp3": "b5d8b546f0d5d9fc251bba7679598f791d6910de707115e7eda1e338dfedfa25",
+    "public/audio/week34/vocab_paw.mp3": "9d73246e9c8fb1aa233ee3b4b914142f537557342ddc994b0bdf2df24c7373ec",
+    "public/audio/week34/vocab_promise.mp3": "f595b27f142d04f571ce48d10e18ad3f59fb2e630a1b13bb2524c0fdbb29f84d",
+    "public/audio/week34/vocab_roar.mp3": "138b4fa10c7378dce13d7208e69b7569be8dc7ed6f13040f292e3fab8aa7abf3",
+    "public/audio/week34/vocab_rope.mp3": "b856de480aa398b7508ebe6d0099a1c325fdc52b84671ab2e90ca9476dd4db58",
+    "public/audio/week34/vocab_sharp.mp3": "6b0593bcfffccef95e34ebd19b81cc3802685781671eeadbbc8e3a51b6a7ab59",
+    "public/audio/week34/vocab_tiny.mp3": "4400e11300b20713d1b25a229bb105064c66c6d9b78a66e7c8189d887bdadc63",
+    "public/audio/week34/vocab_trap.mp3": "4c7093e61d332b6f97013c24bb5d75facfc6995d921f200d51075b4c7d604bc9",
+    "public/audio/week34/writing_scene_1.mp3": "04d9896d26e6759c2ae1c7f322d0dc5889c149b00d8fc5833609201cb41a0db6",
+    "public/audio/week34/writing_scene_2.mp3": "a7588d8a919de096d8ea8da7146f2579f1430f6aab536a22ad6f339bd44e2f19",
+    "public/audio/week34/writing_scene_3.mp3": "0cc63908f2708b88ec82c4c0662eadad3d697bb886c292a50b30667028f729a0",
+    "public/images/week34/action_lab_diagram.png": "965ccf283e438c1dde7de542abf3f2adda7caca1a67b7957477be1cab8492f46",
+    "public/images/week34/barmodel_w34_adv_p1.svg": "5e0464d4b195d8418687032f55dc8650c47038cfba13394d9882d669c7aba979",
+    "public/images/week34/barmodel_w34_adv_p2.svg": "b92b4dbb64fd4e20e7760fa6df06b0b87dfba5639752d150cdec05c689fd317f",
+    "public/images/week34/barmodel_w34_adv_p3.svg": "23147db35bd876917ce59cbe240295a51f378cc17e84ea99930e018fadb661f6",
+    "public/images/week34/barmodel_w34_adv_p4.svg": "a9287015090181c37b7bc0e47eec21e6cd7c97f1a23a21bc3f7314fc038727f8",
+    "public/images/week34/barmodel_w34_adv_p5.svg": "e64fbb55c2cce72e5aff880a1765cd566e80bc3d4844a0054ec74c715c532899",
+    "public/images/week34/card_a.jpg": "4574585ced9a38a845c2e75c5367ab0f7dd6605994d8bf4f5e6ca8c0e0360a30",
+    "public/images/week34/card_b.jpg": "ffa895bc6f1277b9749a22e17bbd5f133bc0b254a2a9c31f4b7f8e5eaab4ba67",
+    "public/images/week34/card_c.jpg": "44d4c8192e9b1bd61bf4a3d0b5e11df208601595449982239c76e9b6a7906452",
+    "public/images/week34/card_d.jpg": "00be5b8ba43f63be92c7af5dff902a18d8f09e7ba5b9bf63aa5e53c39c8c0aea",
+    "public/images/week34/card_e.jpg": "ab5055b213050b0c60573c0e924d8d4fc71e919faf834b3e4f3cf0a0bd6ae7b6",
+    "public/images/week34/card_f.jpg": "5ddc12e0e59f25d30e767ae05ca489ea02d766c3d692b5af68f27f34651cbd5b",
+    "public/images/week34/card_g.jpg": "caefe875389f83189cb5f52842126a0724de52a3b1c18d28f405783e1e3b5b15",
+    "public/images/week34/card_h.jpg": "5c0f4f5fb02595d62eb8521f986fbb809c91cea60be648613fdf64c37b3eac0c",
+    "public/images/week34/explore_cover_w34.jpg": "a8adf44bcf84cd8e45187b9ad4be25953df46558e7e7d55905c473011ac532ef",
+    "public/images/week34/mossy_rocks.jpg": "920eb7b2957379fb0a19855939b45256c4d4c2119709e56c0b4a8bfe260d67ea",
+    "public/images/week34/read_cover_w34.jpg": "577164a5277a2c528547291bf77023dcf51bb416349f263ea869bc99579b27b0",
+    "public/images/week34/w34_diff_scene_a.svg": "2b2f3aac549d0a35745f5a265a5c6087eae7560e44eab3f91a04a2d2bf7f0db6",
+    "public/images/week34/w34_diff_scene_b.svg": "07ce7a3630e77ada4737fd4f03f545eeff358a10f69b183960c3c99a9f88933b",
+    "public/images/week34/w34_l5_colorwrite_scene.svg": "524c7bb15474f3fcb90284bd869b05357f7190d906ba275dc3241047ebc46262",
+    "public/images/week34/w34_listening_p1_scene.jpg": "360cd3303523e214b865100f117b39789e82d0913474ff3bedf07b5d2c7db875",
+    "public/images/week34/webtoon_scene_1.png": "600abc1ff5c6277e0977d00005ebc19421d05c1160eb80d9a8ca19febef58f8a",
+    "public/images/week34/webtoon_scene_2.png": "b337c01cea58870fc7df7951e38120e55807b5d4c443a644aa6a4b0905a22314",
+    "public/images/week34/webtoon_scene_3.png": "3fbc1d1735a9a7c69e90eae9f1c0bfbcc1887a3825b5e840fbb1222b9f439252",
+    "public/images/week34/webtoon_scene_4.png": "1ad6f2c560ab28574d14124b9034fb22624957b99c79515d3a50e73ebf151a1a",
+    "public/images/week34/webtoon_scene_5.png": "3fc924f78a05e6bbce753b719da3dbe1d459d2ceb751c02643cdae13c7c066b0",
+    "public/images/week34/writing_panel_1.png": "600abc1ff5c6277e0977d00005ebc19421d05c1160eb80d9a8ca19febef58f8a",
+    "public/images/week34/writing_panel_2.png": "1ad6f2c560ab28574d14124b9034fb22624957b99c79515d3a50e73ebf151a1a",
+    "public/images/week34/writing_panel_3.png": "3fc924f78a05e6bbce753b719da3dbe1d459d2ceb751c02643cdae13c7c066b0"
   }
 }

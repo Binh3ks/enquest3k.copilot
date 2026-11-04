@@ -7,6 +7,11 @@
  * 2. Forensic Audit of W34 Freeze Artifacts: Date, commit origin, and diff vs new generator.
  * 3. Multi-Week Generic Validation: W34 fail-loud proof + W150 generic end-to-end verification.
  * 4. Single review package zip: docs/review_packages/round47_YYYYMMDD.zip.
+ *
+ * STANDARDIZED PACKAGING ORDER (Round 47+):
+ * 1. Code changes and verification completed.
+ * 2. Git commit + git push executed.
+ * 3. Run packaging script -> captures exact post-commit Git HEAD into manifest.txt.
  */
 
 import fs from 'fs';
@@ -71,7 +76,15 @@ async function main() {
 
     // ── 4. EXTRACT CI PIPELINE DIFF ──────────────────────────────────────────
     console.log('\n--- 4. Extracting CI Pipeline Integration Diff ---');
-    const ciDiff = execSync('git diff .github/workflows/deploy.yml', { cwd: ROOT_DIR }).toString();
+    let ciDiff = '';
+    try {
+      ciDiff = execSync('git diff HEAD~1 .github/workflows/deploy.yml', { cwd: ROOT_DIR }).toString();
+    } catch (e) {
+      ciDiff = '';
+    }
+    if (!ciDiff.trim()) {
+      ciDiff = execSync('git diff .github/workflows/deploy.yml', { cwd: ROOT_DIR }).toString();
+    }
     fs.writeFileSync(path.join(logsDir, 'ci_deploy_diff.txt'), ciDiff, 'utf8');
 
     // ── 5. COLLECT ARTIFACTS ─────────────────────────────────────────────────
@@ -104,6 +117,7 @@ async function main() {
     // ── 6. GENERATE PACKAGE MANIFESTS ────────────────────────────────────────
     console.log('\n--- 6. Generating Review Manifests ---');
     const gitHead = execSync('git rev-parse HEAD', { cwd: ROOT_DIR }).toString().trim();
+    console.log(`📌 Post-commit Git HEAD: ${gitHead}`);
     const manifestJson = {
       round: 47,
       timestamp: new Date().toISOString(),
@@ -197,3 +211,4 @@ main().catch(err => {
   console.error('\n❌ Fatal error during packaging:', err);
   process.exit(1);
 });
+

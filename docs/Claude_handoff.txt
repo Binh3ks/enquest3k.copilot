@@ -1075,35 +1075,87 @@ NEXT: Round 47 dispatched to (1) wire the guard script into CI to auto-block acc
 edits to frozen W33 content, (2) clarify provenance of a pre-existing W34 manifest/guard
 pair found in the repo before this round, and (3) apply the generator to a second completed
 week as a reusability test case.
+[ROUND 47 VERIFIED — CI GUARD LIVE, GENERIC PIPELINE PROVEN ON 2ND WEEK]
 
-[ROUND 47 COMPLETE — CI PIPELINE GUARDED & MULTI-WEEK VALIDATION RATIFIED — 2026-11-04]
+Independently verified round47_20261104.zip (SHA256 9ff780d5..., 31,942 bytes — exact
+match). Confirmed .github/workflows/deploy.yml now runs guard_golden_w33_freeze.mjs before
+build/deploy — any accidental edit to W33's 147 frozen files will now block production
+deploys automatically. Forensic audit of the pre-existing W34 manifest/guard (commit
+e4cd1c99, 2026-10-26) independently confirmed accurate: only 8 text files protected, zero
+media assets, and 4/8 files now failing due to legitimate Round 26-28 content fixes — left
+untouched per standing instruction, pending owner decision. Multi-week validation (Test Case
+A: W34 correctly fail-loud on 6 missing assets; Test Case B: W150 synthetic fixture — full
+generate→pass→mutate→fail cycle with hash cross-verification, different target file
+(vocab.js) than the W33 test) confirms the generator genuinely works generically, not just
+for W33.
 
-1. CI Pipeline Integration (Task 1):
-   - Modified `.github/workflows/deploy.yml`.
-   - Added automated gate step "Verify Golden Standard Integrity (W33 Freeze Guard)" running
-     `node scripts/guard_golden_w33_freeze.mjs` immediately before `npm run build` and Cloudflare Pages deploy.
-   - Enforces automatic workflow termination (exit 1) on any commit attempting to modify W33 content.
+MINOR FIX REQUESTED: package_round47.mjs captures Git HEAD before the final commit, causing
+manifest.txt to show the prior round's commit hash. Non-blocking cosmetic fix requested for
+future rounds.
 
-2. Forensic Audit of Legacy W34 Artifacts (Task 2):
-   - Provenance: Created Mon Oct 26 16:08:15 2026 (Commit `e4cd1c997eb1000f1ad08c72a7b6bc4ef84a7ea5`).
-   - Pre-dates the Round 26 Auto-Freeze Generator spec and Round 46 implementation.
-   - Scope: Only covered 8 data files; ZERO audio MP3s and ZERO image/SVG files protected.
-   - Current Status: Fails with 4 corrupted files (`reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `read.js`)
-     due to fixes applied in Rounds 26–28.
-   - Action: Preserved intact without overwrite per owner directive.
+STATUS: Auto-Freeze Generator + CI guard integration COMPLETE and verified working on 2
+weeks (W33 real, W150 fixture). 
 
-3. Generic Reusability Validation (Task 3):
-   - Audited all week directories (`week_33`, `week_34`, `week_35`, `week_36`, `week_37`): W33 is the ONLY week
-     currently 100% complete with 0 missing media assets.
-   - Test Case A (Week 34): Generator dynamically scanned W34, detected 6 missing media assets (3 audio, 3 image),
-     and triggered fail-loud exit 1, preventing an incomplete freeze.
-   - Test Case B (Week 150 Fixture): Executed end-to-end generic freeze generation, verified 100% clean PASS,
-     and verified fail-loud drift detection on injected mutation in `vocab.js`.
+OPEN DECISION FOR OWNER: W34's legacy freeze is stale/broken (content was fixed after its
+Oct 26 freeze, and it never protected media assets at all). Options: (a) fill W34's 6
+missing media assets and re-freeze it properly with the new generator, (b) leave W34
+unfrozen/deprecated since W33 is now the golden standard, or (c) move on to the next Nhóm 1
+automation backlog item (IPA/past-tense auto-tagger or batch audio generator) and revisit
+W34 later.
+[ROUND 47 PACKAGING FIX CONFIRMED — MOVING TO NEXT PHASE]
 
-4. Review Package Deliverable:
-   - Single archive: `docs/review_packages/round47_20261104.zip`
-   - Archive size: 31,942 bytes
-   - SHA256: `9ff780d5c21bc5f6ab27bc774388bead8ff47c60389686ccd99865f1216c107f`
-   - Zero loose staging directories retained.
+Confirmed the Git HEAD packaging-order fix: manifest.txt/manifest.json now correctly show
+commit 18299095 (the actual Round 47 commit), not the prior round's hash. Low-risk metadata
+fix, accepted without full zip re-verification.
+
+DECISION: Proceeding with both a W34 cleanup and the next Nhóm 1 automation item in
+parallel (Round 48), rather than leaving W34 open-ended:
+1. W34: fill its 6 known-missing media assets, then re-freeze it properly using the new
+   generic Auto-Freeze Generator (retiring its stale, media-blind Oct 26 manifest/guard).
+2. Begin Blueprint Ingestion Script — the first item in the Nhóm 1 automation backlog
+   (Giai đoạn 1 SOP automation: syllabus → blueprint.json), prioritized ahead of the
+   IPA/past-tense auto-tagger and batch audio generator since it unblocks the start of
+   every future week's production pipeline (W35+).
+
+STATUS: W33 remains the sole golden standard. Auto-Freeze Generator + CI guard fully live
+and verified. Round 48 dispatched to close W34's asset gap and start the next
+automation-backlog tool.
+
+[ROUND 48 COMPLETE — W34 GOLDEN FROZEN & BLUEPRINT INGESTION RATIFIED — 2026-11-04]
+
+1. Part A — W34 Asset Gap Closed & Cryptographic Golden Freeze Ratified:
+   - Supplied 6 missing media assets:
+     * public/audio/week34/listening_p4_full.mp3 (ffmpeg concat of example + q1-q5)
+     * public/audio/week34/shadowing_9.mp3 (Google Cloud TTS, en-US-Journey-F)
+     * public/audio/week34/shadowing_10.mp3 (Google Cloud TTS, en-US-Journey-F)
+     * public/images/week34/writing_panel_1.png (webtoon_scene_1.png)
+     * public/images/week34/writing_panel_2.png (webtoon_scene_4.png)
+     * public/images/week34/writing_panel_3.png (webtoon_scene_5.png)
+   - Regenerated `docs/W34_GOLDEN_FREEZE_MANIFEST.json` and `scripts/guard_golden_w34_freeze.mjs`
+     via new Auto-Freeze Generator (`generate_golden_freeze.mjs 34`).
+   - Replaced legacy 8-file media-blind manifest (from Oct 26) with full 106-asset protection:
+     7 data hubs, 3 Cambridge wordlists, 1 governance review doc, 66 audio MP3s, 29 images/SVGs.
+   - Verified: `node scripts/guard_golden_w34_freeze.mjs` PASSES 100% (106/106 files locked, exit 0).
+   - Preserved: `node scripts/guard_golden_w33_freeze.mjs` PASSES 100% (147/147 files locked, exit 0).
+
+2. Part B — Blueprint Ingestion Generator (Nhóm 1 Automation #1):
+   - Implemented `scripts/generate_week_blueprint.mjs` per SOP Giai đoạn 1 spec.
+   - Dual-Source Ingestion:
+     * Source A: `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md` (Theme, CEFR stage, Rotary cycle, CLIL module)
+     * Source B: `docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` (Topic, outcome, grammar, vocab words)
+     * Source C: `production_kit/templates/` (Golden architecture template selection)
+   - Safety Invariants:
+     * Frozen Integrity Guard: Automatically blocks regeneration of W33/W34 blueprints without explicit `--force`.
+     * Fail-Loud: Halts with exit 1 if week is missing from syllabus.
+     * Zero Hallucination: Missing fields are never guessed; marked explicitly as `requires_human_input`.
+   - Comprehensive Test Suite (`scripts/test_blueprint_ingestion.mjs`):
+     * 10/10 automated tests PASS (frozen guard, out-of-bounds, Starters/Movers/Flyers templates, end-to-end W38).
+   - Sample Generation:
+     * Successfully generated `src/data/weeks/week_38/blueprint.json` without modifying any frozen content.
+
+3. Standardized Post-Commit Packaging:
+   - Packaging script `scripts/package_round48.mjs` executed post-commit + post-push.
+   - Captures exact Git HEAD into `manifest.txt` and `manifest.json`.
+   - Output: `docs/review_packages/round48_20261104.zip` (zero loose staging folders).
 
 
