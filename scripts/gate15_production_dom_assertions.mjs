@@ -318,20 +318,15 @@ async function performMeaningfulInteraction(page, qid) {
         break;
       }
       case 'boss_reading': {
-        // WordBankMatchingGrid: select first word pill, assign to first def slot, and check
+        // WordBankMatchingGrid: select first word pill, assign to first def row
         const pill = page.locator('[data-testid="word-bank-pill"]').first();
         if (await pill.isVisible().catch(() => false)) {
           await pill.click().catch(() => {});
-          await page.waitForTimeout(250);
-          const defSlot = page.locator('[data-testid="word-def-slot"]').first();
-          if (await defSlot.isVisible().catch(() => false)) {
-            await defSlot.click().catch(() => {});
-            await page.waitForTimeout(250);
-          }
-          const checkBtn = page.locator('[data-testid="word-bank-check-btn"]').first();
-          if (await checkBtn.isVisible().catch(() => false)) {
-            await checkBtn.click().catch(() => {});
-            await page.waitForTimeout(500);
+          await page.waitForTimeout(300);
+          const defRow = page.locator('[data-testid="word-def-row"]').first();
+          if (await defRow.isVisible().catch(() => false)) {
+            await defRow.click().catch(() => {});
+            await page.waitForTimeout(400);
           }
         }
         break;
@@ -972,10 +967,11 @@ async function main() {
         questInteractionState = { phaseTitle, isCard2Active, pass: isCard2Active || phaseTitle.includes('Phase 2') };
         console.log(`     🎯 [info_exchange interaction]: phaseTitle="${phaseTitle}", isCard2Active=${isCard2Active} (pass=${questInteractionState.pass})`);
       } else if (qid === 'boss_reading') {
-        const scoreText = await page.locator('[data-testid="word-bank-score"]').innerText().catch(() => '');
-        const assignedText = await page.locator('[data-testid="word-def-slot"]').first().innerText().catch(() => '');
-        questInteractionState = { scoreText, assignedWord: assignedText, pass: scoreText.includes('Matching Score') || assignedText.length > 0 };
-        console.log(`     🎯 [boss_reading interaction]: scoreText="${scoreText}", assignedWord="${assignedText}" (pass=${questInteractionState.pass})`);
+        const rawAssigned = await page.locator('[data-testid="word-def-slot"]').first().innerText().catch(() => '');
+        const assignedWord = rawAssigned.replace(/[✕\n\r]/g, '').trim();
+        const isAssigned = assignedWord.length > 2 && !assignedWord.includes('Tap to slot');
+        questInteractionState = { assignedWord, isAssigned, pass: isAssigned };
+        console.log(`     🎯 [boss_reading interaction]: assignedWord="${assignedWord}" (pass=${questInteractionState.pass})`);
       } else if (qid === 'weekly_review') {
         const counterText = await page.locator('[data-testid="diff-counter"]').innerText().catch(() => '');
         const diffName = await page.locator('[data-testid="diff-name"]').innerText().catch(() => '');

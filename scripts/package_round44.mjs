@@ -172,7 +172,7 @@ async function main() {
     if (!evData.boss_reading || !evData.boss_reading.pass) {
       throw new Error(`boss_reading interaction failed assertion: ${JSON.stringify(evData.boss_reading)}`);
     }
-    console.log(`✅ boss_reading: score="${evData.boss_reading.scoreText}", assignedWord="${evData.boss_reading.assignedWord}" (PASS)`);
+    console.log(`✅ boss_reading: assignedWord="${evData.boss_reading.assignedWord}" (PASS)`);
 
     // 3.5 weekly_review: hotspot selected, counter advanced, difference card open
     if (!evData.weekly_review || !evData.weekly_review.pass) {
@@ -307,7 +307,7 @@ INTERACTION PROOFS (BATCH 3 SEMANTIC EVIDENCE - DOM VERIFIED):
 - broadcast_studio: prompter scene = ${evData.broadcast_studio.sceneBadge}, sentence = "${evData.broadcast_studio.prompterText?.slice(0, 60)}..."
 - info_exchange: phase = "${evData.info_exchange.phaseTitle}", card 2 active = ${evData.info_exchange.isCard2Active}
 - boss_listening: drawn lines = ${evData.boss_listening.linesCount}, score banner = ${evData.boss_listening.scoreText}
-- boss_reading: word assigned = "${evData.boss_reading.assignedWord}", score = ${evData.boss_reading.scoreText}
+- boss_reading: word assigned = "${evData.boss_reading.assignedWord}"
 - weekly_review: counter = ${evData.weekly_review.counterText}, difference found = "${evData.weekly_review.diffName}"
 
 RETAINED BATCH 1 & 2 INTERACTION PROOFS:
@@ -363,3 +363,4 @@ main().catch(err => {
   console.error('\n❌ Fatal error during packaging:', err);
   process.exit(1);
 });
+

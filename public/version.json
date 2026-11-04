@@ -1,9 +1,9 @@
 {
-  "commit": "8f09739b11d424bbf9584302d7c988c199052a9a",
-  "git_commit": "8f09739b11d424bbf9584302d7c988c199052a9a",
-  "shortCommit": "8f09739b",
-  "message": "chore(qa): finalize round 43 packaging and live production verification [multi-agent-review]",
-  "builtAt": "2026-11-04T02:43:32.908Z",
-  "build_timestamp": "2026-11-04T02:43:32.908Z",
+  "commit": "e910d33a3417c6d2cccd9da83cae86b3a8927367",
+  "git_commit": "e910d33a3417c6d2cccd9da83cae86b3a8927367",
+  "shortCommit": "e910d33a",
+  "message": "feat(w33): batch 3 testids, Tom character sync, and round 44 packaging [multi-agent-review]",
+  "builtAt": "2026-11-04T02:56:06.942Z",
+  "build_timestamp": "2026-11-04T02:56:06.942Z",
   "env": "production"
 }
