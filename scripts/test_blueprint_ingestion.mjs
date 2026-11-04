@@ -133,10 +133,10 @@ runTest('End-to-end blueprint creation and schema validation for W38 (Animal Abi
     if (!content.grammar_focus || !content.grammar_focus.structure.includes('Can / Cannot')) {
       throw new Error(`Grammar focus incorrect: ${content.grammar_focus?.structure}`);
     }
-    if (!content.digital_map_reference || content.digital_map_reference.map_theme !== 'Energy All Around') {
+    if (!content.digital_map_reference || content.digital_map_reference.map_theme !== 'Animal Abilities (Modals)') {
       throw new Error(`Map theme reference missing or wrong: ${content.digital_map_reference?.map_theme}`);
     }
-    if (content.digital_map_reference.alignment_status !== 'DIVERGENT_THEME_FALLBACK_TO_SOURCE_B') {
+    if (content.digital_map_reference.alignment_status !== 'ALIGNED') {
       throw new Error(`Alignment status wrong: ${content.digital_map_reference?.alignment_status}`);
     }
     if (!Array.isArray(content.pending_human_authoring) || content.pending_human_authoring.length === 0) {
@@ -148,8 +148,8 @@ runTest('End-to-end blueprint creation and schema validation for W38 (Animal Abi
   }
 });
 
-// ── Test 6: Cross-Reference Validation for W39 (Habitats) ──
-runTest('Cross-reference validation for W39 (Habitats vs Ocean Depths)', () => {
+// ── Test 6: Cross-Reference Validation for W39 (Habitats — Synchronized Map) ──
+runTest('Cross-reference validation for W39 (Habitats — Synchronized Map)', () => {
   const rawOut = execSync('node scripts/generate_week_blueprint.mjs 39 --dry-run', { cwd: ROOT_DIR }).toString();
   const jsonStr = rawOut.substring(rawOut.indexOf('{'), rawOut.lastIndexOf('}') + 1);
   const parsed = JSON.parse(jsonStr);
@@ -163,16 +163,16 @@ runTest('Cross-reference validation for W39 (Habitats vs Ocean Depths)', () => {
   if (!parsed.keywords.includes('desert') || !parsed.keywords.includes('rainforest')) {
     throw new Error(`Keywords missing expected habitat words: ${parsed.keywords}`);
   }
-  if (parsed.digital_map_reference.map_theme !== 'Ocean Depths & Coral Reefs') {
+  if (parsed.digital_map_reference.map_theme !== 'Habitats (Persuasion Intro)') {
     throw new Error(`Wrong map theme: ${parsed.digital_map_reference.map_theme}`);
   }
-  if (parsed.digital_map_reference.alignment_status !== 'DIVERGENT_THEME_FALLBACK_TO_SOURCE_B') {
+  if (parsed.digital_map_reference.alignment_status !== 'ALIGNED') {
     throw new Error(`Wrong alignment status: ${parsed.digital_map_reference.alignment_status}`);
   }
 });
 
-// ── Test 7: Cross-Reference Validation for W45 (Shape Detectives) ──
-runTest('Cross-reference validation for W45 (Shape Detectives vs Sound Studio)', () => {
+// ── Test 7: Cross-Reference Validation for W45 (Shape Detectives — Synchronized Map) ──
+runTest('Cross-reference validation for W45 (Shape Detectives — Synchronized Map)', () => {
   const rawOut = execSync('node scripts/generate_week_blueprint.mjs 45 --dry-run', { cwd: ROOT_DIR }).toString();
   const jsonStr = rawOut.substring(rawOut.indexOf('{'), rawOut.lastIndexOf('}') + 1);
   const parsed = JSON.parse(jsonStr);
@@ -186,16 +186,16 @@ runTest('Cross-reference validation for W45 (Shape Detectives vs Sound Studio)',
   if (!parsed.keywords.includes('triangle') || !parsed.keywords.includes('rectangle')) {
     throw new Error(`Keywords missing expected geometry words: ${parsed.keywords}`);
   }
-  if (parsed.digital_map_reference.map_theme !== 'The Sound Studio (Acoustics)') {
+  if (parsed.digital_map_reference.map_theme !== 'Shape Detectives (Geometry)') {
     throw new Error(`Wrong map theme: ${parsed.digital_map_reference.map_theme}`);
   }
-  if (parsed.digital_map_reference.alignment_status !== 'DIVERGENT_THEME_FALLBACK_TO_SOURCE_B') {
+  if (parsed.digital_map_reference.alignment_status !== 'ALIGNED') {
     throw new Error(`Wrong alignment status: ${parsed.digital_map_reference.alignment_status}`);
   }
 });
 
-// ── Test 8: Cross-Reference Validation for W50 (Review Station 1) ──
-runTest('Cross-reference validation for W50 (Review Station 1 vs Transportation)', () => {
+// ── Test 8: Cross-Reference Validation for W50 (Review Station 1 — Synchronized Map) ──
+runTest('Cross-reference validation for W50 (Review Station 1 — Synchronized Map)', () => {
   const rawOut = execSync('node scripts/generate_week_blueprint.mjs 50 --dry-run', { cwd: ROOT_DIR }).toString();
   const jsonStr = rawOut.substring(rawOut.indexOf('{'), rawOut.lastIndexOf('}') + 1);
   const parsed = JSON.parse(jsonStr);
@@ -203,11 +203,32 @@ runTest('Cross-reference validation for W50 (Review Station 1 vs Transportation)
   if (parsed.week !== 50) throw new Error(`Wrong week: ${parsed.week}`);
   if (parsed.theme !== 'Review Station 1 (Grammar Mix)') throw new Error(`Wrong theme: ${parsed.theme}`);
   if (parsed.story_title !== 'Past, Present, Future Mix') throw new Error(`Wrong story_title: ${parsed.story_title}`);
-  if (parsed.digital_map_reference.map_theme !== 'Transportation of Tomorrow') {
+  if (parsed.digital_map_reference.map_theme !== 'Review Station 1 (Grammar Mix)') {
     throw new Error(`Wrong map theme: ${parsed.digital_map_reference.map_theme}`);
   }
-  if (parsed.digital_map_reference.alignment_status !== 'DIVERGENT_THEME_FALLBACK_TO_SOURCE_B') {
+  if (parsed.digital_map_reference.alignment_status !== 'ALIGNED') {
     throw new Error(`Wrong alignment status: ${parsed.digital_map_reference.alignment_status}`);
+  }
+});
+
+// ── Test 9: Active Divergence Detection & Fallback Defense Verification (W33 Golden Standard) ──
+runTest('Active divergence detection & fallback defense verification on W33', () => {
+  const rawOut = execSync('node scripts/generate_week_blueprint.mjs 33 --dry-run --force', { cwd: ROOT_DIR }).toString();
+  const jsonStr = rawOut.substring(rawOut.indexOf('{'), rawOut.lastIndexOf('}') + 1);
+  const parsed = JSON.parse(jsonStr);
+
+  if (parsed.week !== 33) throw new Error(`Wrong week: ${parsed.week}`);
+  // Map preserves historical Golden Master theme
+  if (parsed.digital_map_reference.map_theme !== 'Corridor Safety & Friction') {
+    throw new Error(`Wrong map theme: ${parsed.digital_map_reference.map_theme}`);
+  }
+  // Divergence detected between Corridor Safety & The Mistake
+  if (parsed.digital_map_reference.alignment_status !== 'DIVERGENT_THEME_FALLBACK_TO_SOURCE_B') {
+    throw new Error(`Alignment status should be DIVERGENT, got: ${parsed.digital_map_reference.alignment_status}`);
+  }
+  // Fallback to Source B theme
+  if (parsed.theme !== 'The Mistake (Irregular Verbs 5: Accidents)') {
+    throw new Error(`Fallback theme incorrect: ${parsed.theme}`);
   }
 });
 

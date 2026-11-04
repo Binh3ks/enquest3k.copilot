@@ -1182,36 +1182,71 @@ STATUS: Blueprint Ingestion Generator proven safe across all 156 weeks via dry-r
 crashes, 0 disk mutations outside dry-run). APPROVED to proceed with real batch generation
 of the 153 remaining blueprint.json files (Round 50), with the 8 Source-A-missing weeks
 (W113-120) kept transparently flagged rather than guessed.
+[ROUND 50 VERIFIED — 153 BLUEPRINTS GENERATED SAFELY, ALL 156 WEEKS NOW HAVE BLUEPRINT.JSON]
 
-[ROUND 50 COMPLETE — 153 BLUEPRINTS MASS-GENERATED & STAGE 2 VOCABULARY GAP AUDITED — 2026-11-04]
+Independently verified round50_20261104.zip (SHA256 df2125b3..., 51,577 bytes — exact
+match). Confirmed checksums TSV has exactly 153 data rows, zero contamination of W33/W34.
+Confirmed W113 sample (MISSING_IN_SOURCE_A case) has genuinely null map_theme — no
+hallucinated Source A data. Vocabulary gap statistics arithmetic verified correct (153 weeks
+summed, 762+2,298=3,060=153×20). W33 (147/147) and W34 (106/106) freezes unaffected, test
+suite 13/13 PASS, build clean.
+
+STATUS: Blueprint Ingestion Automation (Nhóm 1 #1) is fully complete — all 156 weeks now
+have a blueprint.json (3 pre-existing/frozen + 153 newly generated), 100% faithful to
+Source B with zero hallucination for the 8 Source-A-missing weeks. Major Giai đoạn 2 gap
+surfaced: only 762/3,060 target vocabulary words (24.9%) are pre-filled from the syllabus;
+2,298 words need human/CEFR-aligned authoring.
+
+OWNER REQUEST: Round 51 dispatched to clean up docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md
+— correcting its theme/CLIL columns to match Source B (using the now-verified 153
+blueprints as ground truth) and filling in the 8 missing W113-120 rows, while preserving
+Source A's own architectural columns (Rotary Cycle, Mock Test cadence, CEFR stage) and
+keeping the Source-B-priority fallback logic in the generator as a permanent safety net.
+
+[ROUND 51 COMPLETE — SOURCE A DIGITAL MAP SYNCHRONIZED TO 98.7% ALIGNMENT — 2026-11-04]
 
 1. Scope & Execution:
-   - Batch-generated real, fully validated blueprint.json files for all 153 ungenerated weeks:
-     W01–W32, W35–W37, W39–W156 via scripts/batch_generate_blueprints.mjs.
-   - Preserved frozen golden standards and pre-existing samples untouched:
-     * Week 33 (147 assets locked) — SHA256 UNTOUCHED
-     * Week 34 (106 assets locked) — SHA256 UNTOUCHED
-     * Week 38 (Canonical Round 48 sample) — SHA256 UNTOUCHED
-   - Exact 156/156 blueprint.json file coverage on disk.
+   - Synchronized `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md` (Source A) with Source B
+     (Master Syllabus Foundation) based on Round 49 audit data and Round 50 blueprints.
+   - Strictly updated ONLY pedagogical content (Theme, CLIL Module) of divergent weeks.
+   - Preserved 100% of testing architecture columns: CEFR Stage/Type, Rotary Cycle (1-4),
+     28-week Mock Test cadence, Scaffolding Tier, and original Grammar Hub / Action Lab notes.
+   - Healed Phase 2 Block F by inserting 8 missing rows for W113–W120 matching Source B.
+   - Added provenance / changelog header note documenting the Round 51 synchronization.
+   - Table now contains exactly 156 unique week rows (W01–W156) with zero duplicates.
 
-2. Zero-Hallucination Invariant on Source A Missing Weeks (W113–W120):
-   - All 8 weeks strictly retain alignment_status: "MISSING_IN_SOURCE_A_SOURCE_B_ONLY" and map_theme: null.
-   - Themes and pedagogical structure are faithfully pulled from Master Syllabus (Source B).
+2. Divergence Re-Scan Metrics (`scripts/scan_156_weeks_divergence.mjs --dry-run`):
+   - Total Weeks Scanned: 156
+   - ALIGNED: 154 / 156 (98.7%) — increased from 10 / 156 (6.4%).
+   - DIVERGENT: 2 / 156 (1.3%) — exclusively frozen Golden Standards (W33 & W34).
+   - MISSING IN SOURCE A: 0 / 156 (0.0%) — healed from 8 weeks.
+   - Phase breakdown:
+     * Phase 1 Starters (W01–W16): 16/16 (100% ALIGNED)
+     * Phase 1 Movers (W17–W32): 16/16 (100% ALIGNED)
+     * Phase 1 Flyers (W33–W72): 38/40 (95.0% ALIGNED, 2 frozen standards divergent)
+     * Phase 2 PET & CLIL STEM (W73–W120): 48/48 (100% ALIGNED)
+     * Phase 3 Academic Opinion (W121–W156): 36/36 (100% ALIGNED)
 
-3. Stage 2 Vocabulary Gap & Human Authoring Analysis:
-   - 153/153 weeks (100.0%) require human authoring to reach the 20-word Cambridge target.
-   - Core syllabus words ingested: 762 words (24.9%).
-   - Expansion words required from authors: 2,298 words (75.1%).
-   - Detailed per-week missing word distribution captured in docs/BATCH_BLUEPRINT_GENERATION_REPORT.json.
+3. Justification for the 2 Divergent Weeks (W33 & W34):
+   - W33 ("Corridor Safety & Friction"): Cryptographically locked Golden Standard (147 assets).
+     Production code/content centers on Jake's hallway slip accident and nurse care. Retaining
+     this theme in Source A accurately preserves production reality over Source B's initial
+     draft title ("The Mistake (Irregular Verbs 5: Accidents)").
+   - W34 ("The Lion and the Mouse: True Friendship"): Cryptographically locked Golden Standard
+     (106 assets). Production content centers on Aesop's fable. Retaining this theme in Source A
+     accurately preserves production reality over Source B's draft title ("Storytelling Practice 1 (Fable)").
 
-4. Deliverables & Safety Verification:
-   - TSV Manifest: docs/GENERATED_153_BLUEPRINTS_CHECKSUMS.tsv (153 entries with SHA256)
-   - Machine-readable audit dataset: docs/BATCH_BLUEPRINT_GENERATION_REPORT.json
-   - Blueprint Ingestion test suite: 13/13 PASS.
-   - W33 (147/147) and W34 (106/106) freeze guards: 100% PASS.
-   - npm run build: Exit 0.
-   - Standard Review Package: docs/review_packages/round50_20261104.zip (containing 3 representative samples, TSV checksums, report, logs, and post-commit Git HEAD).
+4. Active Defense & Invariant Protection:
+   - Generator's divergence-tracking & fallback logic remains fully active and tested
+     (Test 9 in `scripts/test_blueprint_ingestion.mjs`).
+   - W33 Golden Freeze: 147/147 locked (100% PASS).
+   - W34 Golden Freeze: 106/106 locked (100% PASS).
+   - Ingestion Test Suite: 14/14 PASS (100%).
+   - `npm run build`: Exit 0 (clean production build).
+   - Zero mutation on disk for any `blueprint.json` files.
+   - Review package: `docs/review_packages/round51_20261104.zip`.
 
-STATUS: All 156 curriculum blueprints are now in place. Blueprint Ingestion Automation (Nhóm 1 Automation #1) is 100% completed and verified.
+STATUS: Source A Digital Syllabus Map is fully harmonized with Master Syllabus Foundation (98.7%
+alignment). High-level curriculum documentation debt is permanently resolved.
 
 
