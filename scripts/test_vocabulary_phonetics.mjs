@@ -266,6 +266,30 @@ runTest('Zero disk mutation invariant in default dry-run mode', () => {
   }
 });
 
+// ── Test 11: Custom Phonetic Overrides (e.g. whiteboard) ────────────────────
+runTest('Custom phonetic override for solid compound words (whiteboard)', () => {
+  const res = classifyPhonology('whiteboard', cmuDict);
+  if (!res) throw new Error('Expected "whiteboard" to be classified via custom override');
+  if (res.is_verb !== false) throw new Error('Expected "whiteboard" to be non-verb');
+  if (!res.ipa.includes('wˈaɪtb')) throw new Error(`Unexpected IPA for whiteboard: ${res.ipa}`);
+});
+
+// ── Test 12: Slashed Alternative Variants (e.g. caterpillar/tadpole) ─────────
+runTest('Slashed alternative variants produce discrete variant array and combined IPA', () => {
+  const res = classifyPhonology('caterpillar/tadpole', cmuDict);
+  if (!res) throw new Error('Expected "caterpillar/tadpole" to be classified');
+  if (!res.variants || res.variants.length !== 2) {
+    throw new Error(`Expected 2 discrete variants, got ${res.variants ? res.variants.length : 'none'}`);
+  }
+  if (res.variants[0].word !== 'caterpillar' || res.variants[1].word !== 'tadpole') {
+    throw new Error('Variants words mismatch');
+  }
+  if (!res.ipa.includes('/') || !res.ipa.includes('kˈætəpˌɪlɚ') || !res.ipa.includes('tˈædpˌoʊl')) {
+    throw new Error(`Unexpected compound IPA: ${res.ipa}`);
+  }
+});
+
 console.log('\n========================================================================');
 console.log(`🎉 ALL TESTS PASSED: ${passedTests}/${totalTests} (100% SUCCESS)`);
 console.log('========================================================================\n');
+

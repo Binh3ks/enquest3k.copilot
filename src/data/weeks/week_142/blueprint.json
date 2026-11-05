@@ -22,20 +22,50 @@
   },
   "vocabulary_focus": {
     "syllabus_words": [
-      "Từ vựng Lập luận)"
+      "assert",
+      "propose",
+      "suggest",
+      "imply"
     ],
-    "total_syllabus_words": 1,
+    "total_syllabus_words": 4,
     "target_count": 20,
-    "missing_count": 19,
-    "status": "PARTIAL (1/20 syllabus words — Requires 19 words from human author)"
+    "missing_count": 16,
+    "status": "PARTIAL (4/20 syllabus words — Requires 16 words from human author)"
   },
   "keywords": [
-    "Từ vựng Lập luận)"
+    "assert",
+    "propose",
+    "suggest",
+    "imply"
   ],
   "characters": null,
   "target_vocab_20": [
     {
-      "word": "Từ vựng Lập luận)",
+      "word": "assert",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "propose",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "suggest",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "imply",
       "definition_en": null,
       "definition_vi": null,
       "example_en": null,
@@ -64,7 +94,7 @@
   ],
   "target_shields": 3,
   "pending_human_authoring": [
-    "Target Vocabulary: Needs 19 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Target Vocabulary: Needs 16 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
     "Story World: 5 story scenes with narration script + character names",
     "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
     "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
@@ -72,15 +102,15 @@
   ],
   "digital_map_reference": {
     "map_week": 142,
-    "map_theme": "B1+ Academic Assessment Mock 4",
-    "map_clil_module": "Khảo sát Năng lực Chuẩn hóa B1+ 4",
+    "map_theme": "Geometry Review - Area & Volume",
+    "map_clil_module": "Ôn tập Hình học - Diện tích & Thể tích: Calculate volume of cubes and cuboids",
     "map_grammar_hub": "Full Mock B1+ Academic 4: Đọc liên môn + Toán lời văn + Opinion Essay",
     "map_cefr_type": "★ FULL MOCK 23 (B1+)",
-    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
-    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Geometry Review - Area & Volume\") enforced over Digital Map (Source A: \"B1+ Academic Assessment Mock 4\"). Source A metadata preserved in digital_map_reference."
+    "alignment_status": "ALIGNED",
+    "alignment_note": "Syllabus sources fully aligned."
   },
   "metadata_provenance": {
-    "generated_at": "2026-11-04T08:30:03.860Z",
+    "generated_at": "2026-11-05T08:15:55.030Z",
     "generator_script": "scripts/generate_week_blueprint.mjs",
     "source_digital_map": true,
     "source_master_syllabus": true,

@@ -151,22 +151,22 @@ export const IRREGULAR_VERBS = {
 // ── 3. COMPREHENSIVE REGULAR VERBS LEXICON ──────────────────────────────────
 // Verified regular verbs commonly occurring in Cambridge YLE / Primary curricula
 export const KNOWN_REGULAR_VERBS = new Set([
-  'act', 'add', 'agree', 'answer', 'appear', 'arrive', 'ask', 'attack',
+  'act', 'add', 'agree', 'answer', 'appear', 'arrive', 'ask', 'assert', 'attack',
   'bake', 'bark', 'beg', 'believe', 'belong', 'boil', 'borrow', 'bounce', 'brush', 'bump',
   'call', 'calm', 'camp', 'care', 'carry', 'cause', 'change', 'check', 'cheer', 'chew', 'clap', 'clean', 'climb', 'close', 'collect', 'comb', 'compare', 'complete', 'connect', 'cook', 'copy', 'count', 'cover', 'crash', 'crawl', 'cross', 'cry',
   'dance', 'decide', 'describe', 'design', 'destroy', 'die', 'disappear', 'discover', 'divide', 'drop', 'dry', 'dust',
   'earn', 'end', 'enjoy', 'enter', 'escape', 'explain', 'explore',
   'fail', 'fill', 'finish', 'fit', 'fix', 'flash', 'float', 'flood', 'flow', 'fold', 'follow', 'frighten',
   'gather', 'glance', 'glow', 'grab', 'greet', 'grin', 'guess', 'guide',
-  'handle', 'happen', 'harm', 'hate', 'heat', 'help', 'hook', 'hop', 'hug', 'hunt', 'hurry',
-  'imagine', 'imitate', 'improve', 'include', 'increase', 'inform', 'inhabit', 'injure', 'inspect', 'invent', 'invite',
+  'handle', 'happen', 'harm', 'hate', 'hatch', 'heat', 'help', 'hook', 'hop', 'hug', 'hunt', 'hurry',
+  'imagine', 'imitate', 'imply', 'improve', 'include', 'increase', 'inform', 'inhabit', 'injure', 'inspect', 'invent', 'invite',
   'join', 'joke', 'jump',
   'kick', 'kiss', 'knock',
   'label', 'land', 'last', 'laugh', 'learn', 'lick', 'lift', 'like', 'listen', 'live', 'load', 'lock', 'look', 'love',
   'manage', 'march', 'mark', 'marry', 'match', 'melt', 'mend', 'mess', 'miss', 'mix', 'move',
   'name', 'need', 'nod', 'notice', 'number',
   'obey', 'observe', 'open', 'order', 'organize',
-  'pack', 'paint', 'pass', 'paste', 'pause', 'peel', 'perform', 'phone', 'pick', 'place', 'plan', 'plant', 'play', 'point', 'pour', 'practice', 'practise', 'praise', 'pray', 'prefer', 'prepare', 'press', 'pretend', 'prevent', 'print', 'produce', 'promise', 'protect', 'provide', 'pull', 'pump', 'punch', 'punish', 'push',
+  'pack', 'paint', 'pass', 'paste', 'pause', 'peel', 'perform', 'phone', 'pick', 'place', 'plan', 'plant', 'play', 'point', 'pour', 'practice', 'practise', 'praise', 'pray', 'prefer', 'prepare', 'press', 'pretend', 'prevent', 'print', 'produce', 'promise', 'propose', 'protect', 'provide', 'pull', 'pump', 'punch', 'punish', 'push',
   'question',
   'rain', 'reach', 'record', 'refuse', 'relax', 'remain', 'remember', 'remind', 'repair', 'repeat', 'reply', 'report', 'rescue', 'rest', 'return', 'rinse', 'risk', 'roar', 'roll', 'rub', 'rule',
   'sail', 'save', 'scare', 'scold', 'scream', 'search', 'seat', 'serve', 'share', 'shiver', 'shock', 'shout', 'sign', 'signal', 'sip', 'skate', 'skip', 'slide', 'slip', 'slow', 'smell', 'smile', 'smoke', 'sneeze', 'sniff', 'snow', 'solve', 'soothe', 'sound', 'sparkle', 'spill', 'spot', 'spray', 'stare', 'start', 'stay', 'step', 'stop', 'store', 'stretch', 'study', 'suggest', 'suit', 'supply', 'support', 'suppose', 'surprise', 'survive', 'swallow',
@@ -176,6 +176,12 @@ export const KNOWN_REGULAR_VERBS = new Set([
   'wait', 'walk', 'wander', 'want', 'warm', 'warn', 'wash', 'waste', 'watch', 'wave', 'weigh', 'whisper', 'whistle', 'wipe', 'wish', 'wonder', 'work', 'worry', 'wrap',
   'yawn', 'yell', 'zip'
 ]);
+
+// ── 3B. CUSTOM ARPABET OVERRIDES ────────────────────────────────────────────
+// Words missing in standard CMUDict (e.g. solid compound words like 'whiteboard')
+export const CUSTOM_PHONETIC_OVERRIDES = {
+  'whiteboard': 'W AY1 T B AO1 R D'
+};
 
 // ── 4. CONVERT ARPABET STRING TO GENERAL AMERICAN IPA ───────────────────────
 export function cmuToIpa(cmuString) {
@@ -248,6 +254,37 @@ export function lookupWordPhonetics(word, cmuDict) {
   let cleaned = word.replace(/[()[\]{}.,;:"']/g, '').trim().toLowerCase();
   if (!cleaned) return null;
 
+  // Check 1: Custom phonetic overrides (e.g. compound words like 'whiteboard')
+  if (CUSTOM_PHONETIC_OVERRIDES[cleaned]) {
+    const tokensRaw = CUSTOM_PHONETIC_OVERRIDES[cleaned];
+    return {
+      word: cleaned,
+      headWord: cleaned,
+      tokensRaw,
+      ipa: cmuToIpa(tokensRaw).ipa,
+      isCompound: false
+    };
+  }
+
+  // Check 2: Alternative variants separated by slash (e.g. "caterpillar/tadpole", "butterfly/frog")
+  if (cleaned.includes('/')) {
+    const parts = cleaned.split('/').map(p => p.trim()).filter(Boolean);
+    const variantLookups = [];
+    for (const part of parts) {
+      const partLookup = lookupWordPhonetics(part, cmuDict);
+      if (!partLookup) return null;
+      variantLookups.push(partLookup);
+    }
+    return {
+      word: cleaned,
+      headWord: variantLookups[0].headWord,
+      tokensRaw: variantLookups.map(v => v.tokensRaw).join(' / '),
+      ipa: variantLookups.map(v => v.ipa).join(' / '),
+      isSlashVariant: true,
+      variants: variantLookups
+    };
+  }
+
   // Single word lookup
   if (!cleaned.includes(' ') && !cleaned.includes('-')) {
     const tokensRaw = cmuDict.get(cleaned.toUpperCase());
@@ -291,6 +328,27 @@ export function lookupWordPhonetics(word, cmuDict) {
 export function classifyPhonology(word, cmuDict) {
   const lookup = lookupWordPhonetics(word, cmuDict);
   if (!lookup) return null;
+
+  // Handle slashed alternative variants (e.g. caterpillar/tadpole, butterfly/frog)
+  if (lookup.isSlashVariant) {
+    const classifiedVariants = lookup.variants.map(v => classifyPhonology(v.word, cmuDict));
+    if (classifiedVariants.some(v => !v)) return null;
+
+    const anyVerb = classifiedVariants.find(v => v.is_verb);
+    return {
+      word: lookup.word,
+      ipa: classifiedVariants.map(v => v.ipa).join(' / '),
+      arpabet: classifiedVariants.map(v => v.arpabet).join(' / '),
+      final_phone: classifiedVariants[0].final_phone,
+      is_verb: Boolean(anyVerb),
+      verb_classification: anyVerb ? anyVerb.verb_classification : 'non_verb',
+      past_simple: classifiedVariants.map(v => v.past_simple).filter(Boolean).join(' / ') || null,
+      past_participle: classifiedVariants.map(v => v.past_participle).filter(Boolean).join(' / ') || null,
+      past_ending_group: anyVerb ? anyVerb.past_ending_group : null,
+      past_ending_rule: anyVerb ? anyVerb.past_ending_rule : null,
+      variants: classifiedVariants
+    };
+  }
 
   const { word: cleanWord, headWord, tokensRaw, ipa, isCompound, subWords } = lookup;
   const arpabetTokens = tokensRaw.trim().split(/\s+/);
@@ -496,7 +554,8 @@ export function processWeekBlueprint(weekNum, cmuDict, options = {}) {
             past_simple: match.past_simple,
             past_participle: match.past_participle,
             past_ending_group: match.past_ending_group,
-            past_ending_rule: match.past_ending_rule
+            past_ending_rule: match.past_ending_rule,
+            variants: match.variants || null
           }
         };
       }

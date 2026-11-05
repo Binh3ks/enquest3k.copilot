@@ -165,7 +165,17 @@ function parseKhungCT(weekNum, txtContent) {
   const outcomeMatch = body.match(/Key Learning Outcome(?:\s*\([^)]*\))?:\s*([^\n]+)/i);
   const skillMatch = body.match(/(?:Skill Focus|Writing Skill Focus):\s*([^\n]+)/i);
   const grammarMatch = body.match(/Grammar [^:]*:\s*([^\n]+)/i);
-  const vocabMatch = body.match(/Vocabulary [^:]*:\s*([^\n]+)/i);
+
+  // Robust Vocabulary Matching:
+  // Must be anchored to line/bullet start to avoid catching mid-line occurrences like "Style and Vocabulary enhancement. (Kỹ năng Viết: ...)"
+  let vocabMatch = body.match(/(?:^|\n)[ \t]*[•\-\*]?[ \t]*Vocabulary\s+Focus:\s*([^\n]+)/i);
+  if (!vocabMatch) {
+    vocabMatch = body.match(/(?:^|\n)[ \t]*[•\-\*]?[ \t]*Vocabulary\s+[^:\n]*:\s*([^\n]+)/i);
+  }
+  if (!vocabMatch) {
+    // Check for ELA outcome academic verbs (e.g. Week 142)
+    vocabMatch = body.match(/academic verbs:\s*([^\n.(]+)/i);
+  }
 
   const topic = extractBilingualField(topicMatch ? topicMatch[1] : null);
   const outcome = extractBilingualField(outcomeMatch ? outcomeMatch[1] : null);

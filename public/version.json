@@ -1,9 +1,9 @@
 {
-  "commit": "4857c3ea0c5d7cfefc409ad8b0dda8e25f2536bd",
-  "git_commit": "4857c3ea0c5d7cfefc409ad8b0dda8e25f2536bd",
-  "shortCommit": "4857c3ea",
-  "message": "chore: update divergence audit timestamp [multi-agent-review]",
-  "builtAt": "2026-11-05T02:02:28.909Z",
-  "build_timestamp": "2026-11-05T02:02:28.909Z",
+  "commit": "fca0e78243e33e442eaf3a4cbe19fd7565dcc3ac",
+  "git_commit": "fca0e78243e33e442eaf3a4cbe19fd7565dcc3ac",
+  "shortCommit": "fca0e782",
+  "message": "feat(phonetics): implement vocabulary IPA & past-tense triad auto-tagger [multi-agent-review]",
+  "builtAt": "2026-11-05T08:19:42.366Z",
+  "build_timestamp": "2026-11-05T08:19:42.366Z",
   "env": "production"
 }

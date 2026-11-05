@@ -1271,45 +1271,104 @@ source or an explicit owner decision is required before proceeding.
 
 STATUS: Round 52 direction approved (Option A), build gated on accent-verification
 evidence. Awaiting Antigravity's confirmation before full implementation begins.
+[ROUND 52 — APPROVED: IPA / PAST-TENSE TRIAD AUTO-TAGGER BUILT & VERIFIED]
 
-[ROUND 52 SUBMISSION — TTS ACCENT FORENSIC AUDIT & IPA / PAST-TENSE TRIAD AUTO-TAGGER IMPLEMENTED & VERIFIED]
+Independently verified round52_20261105.zip (SHA256 ad0e7d68...dbe25e0, 25,268 bytes —
+exact match). Accent-compatibility prerequisite (raised in Round 51→52 handoff) confirmed
+resolved with genuine evidence: all production TTS voices (generate_week_audio_universal.mjs,
+generate_w33_audio_canonical.mjs, voiceService.js) use en-US General American voices —
+cmudict is the correct phonetic source, no mismatch risk.
 
-1. Prerequisite Accent Verification (100% General American / en-US Proven):
-   - Forensic analysis of all TTS production synthesis scripts across the codebase:
-     * `scripts/generate_week_audio_universal.mjs` (Line 68): voice: { languageCode: 'en-US', name: voice }. Lines 36-54: boy -> 'en-US-Journey-D', man -> 'en-US-Neural2-D', woman -> 'en-US-Neural2-F', girl/narrator -> 'en-US-Journey-F'. Lines 158, 178, 185: Shadowing -> 'en-US-Journey-F', Dictation -> 'en-US-Neural2-F', Explore/CLIL -> 'en-US-Journey-F'.
-     * `scripts/generate_w33_audio_canonical.mjs` (Golden Standard): Lines 55-64 & Line 81: voice: { languageCode: 'en-US', name: profile.voice } with en-US-Journey-F, en-US-Neural2-F, en-US-Neural2-C, en-US-Neural2-D.
-     * `src/services/voiceService.js`: Line 184 (GOOGLE_TTS_VOICE = 'en-US-Journey-F'), Line 1183 (languageCode: 'en-US'), Line 1190 (useGoogleTTSDirect default 'en-US-Journey-F').
-   - Conclusion: 100% of production TTS audio is General American (en-US). cmudict (General American ARPAbet -> IPA) is the exact 1-to-1 matching phonetic standard.
+Code-level verification of scripts/tag_vocabulary_phonetics.mjs (640 lines): writeFileSync
+genuinely gated behind --write flag (default dry-run), frozen-week guard checks
+W{N}_GOLDEN_FREEZE_MANIFEST.json and requires --force to override, past-tense triad
+classification logic (/ɪd/ after T/D, /t/ after voiceless consonants, /d/ elsewhere) is
+phonologically correct, irregular verb dictionary contains 78 entries (matches "70+"
+claim), spelling-doubling rule correctly scoped to monosyllabic CVC verbs. Test suite
+confirmed to spawn real child processes (execSync), not fake assertions — 10/10 PASS.
+W33 (147/147) / W34 (106/106) freeze guards and blueprint ingestion suite (14/14)
+unaffected. Git HEAD fca0e78243e33e442eaf3a4cbe19fd7565dcc3ac.
 
-2. Production Tooling Implemented:
-   - `scripts/tag_vocabulary_phonetics.mjs`:
-     * Generates GA IPA phonetic transcriptions (/.../) for target vocabulary in blueprint.json.
-     * Accurately tokenizes and transcribes single words, compound words, and phrasal verbs (e.g. "living room", "wake up").
-     * Classifies verbs into Regular vs Irregular (70+ common Cambridge verbs mapped with past simple & participle).
-     * Partitions regular verbs into the phonetic triad: /ɪd/ (after /t, d/), /t/ (after voiceless consonants), /d/ (after voiced consonants/vowels).
-     * Handles non-verb vocabulary (is_verb: false, full IPA).
-     * Invariants enforced: Default mode is --dry-run (zero disk mutations). Requires --write to persist. Cryptographic freeze guard protects W33 & W34 (requires --force to override, exits code 1). Throws on unknown phonetic words.
+Scope this round: tool build + testing only (dry-run sample on W38), no mass --write yet
+performed on the 154 un-frozen weeks — correctly deferred pending explicit approval.
 
-3. Independent Verification & Test Suite:
-   - `scripts/test_vocabulary_phonetics.mjs`: 10/10 PASS (100% success rate).
-     * Test 1: Frozen guard blocks W33 overwrite without --force -> PASS
-     * Test 2: Frozen guard blocks W34 overwrite without --force -> PASS
-     * Test 3: Out-of-bounds week exits with error -> PASS
-     * Test 4: Phonological triad classification (/t/, /d/, /ɪd/) on Cambridge regular verbs -> PASS
-     * Test 5: Irregular verb detection and inflected form generation -> PASS
-     * Test 6: Multi-word phrase and phrasal verb phonetics and classification -> PASS
-     * Test 7: Non-verb words correctly tagged with IPA and is_verb: false -> PASS
-     * Test 8: End-to-end dry-run validation on Week 38 blueprint -> PASS (8 words tagged, Triad Complete: YES)
-     * Test 9: Regular past tense spelling doubling and suffix rules -> PASS
-     * Test 10: Zero disk mutation invariant in default dry-run mode -> PASS
-   - W33 Golden Freeze: 147/147 locked files verified (100% PASS).
-   - W34 Golden Freeze: 106/106 locked files verified (100% PASS).
-   - Blueprint Ingestion Suite: 14/14 tests PASS (100% PASS).
+STATUS: Round 52 CLOSED — APPROVED. Next: Round 53 dispatched to run full dry-run coverage
+scan across 154 weeks, report any cmudict-coverage gaps, then execute --write batch with
+before/after checksums for independent re-verification.
+[ROUND 53 — DRY-RUN COVERAGE REVIEWED: 2 DEFECT CLASSES SEPARATED, BATCH WRITE BLOCKED
+PENDING ROOT-CAUSE FIX]
 
-4. Review Package:
-   - Generated at `docs/review_packages/round52_20261105.zip`.
-   - Embeds post-commit Git HEAD and all forensic logs.
+Reviewed Round 53 Step 1-2 dry-run coverage report (154 un-frozen weeks, 770 words scanned,
+765/770 = 99.35% CMUDict coverage, 5 fail-loud words across 4 weeks). No zip submitted this
+round (report-only, zero disk mutation as required).
 
-STATUS: Round 52 complete and ready for independent verification.
+Rejected the proposed "Option A" as given: it conflated two different defect classes.
+- W7 ("whiteboard") and W41 ("caterpillar/tadpole", "butterfly/frog") are legitimate
+  phonetics-tool scope issues (compound word not in CMUDict as one token; "/" alternation
+  notation) — approved for override-map handling in tag_vocabulary_phonetics.mjs.
+- W137 and W142 fail-loud words ("Nâng cao văn phong)", "Từ vựng Lập luận)") are NOT
+  phonetics issues — they are evidence that blueprint.json for these 2 weeks contains
+  CORRUPTED vocabulary_focus data (a parser bug in generate_week_blueprint.mjs captured
+  Vietnamese annotation text instead of the real English vocabulary from Source B).
+  Patching this via a tagger override map would mask the underlying data corruption, which
+  would continue propagating to any other tool reading vocabulary_focus from these weeks.
+
+Dispatched correction requiring: (1) root-cause fix in generate_week_blueprint.mjs's
+Source B vocabulary-extraction logic, with verbatim Source B quotes as evidence (consistent
+with the Round 48 W38-chimera investigation precedent), (2) proper blueprint.json
+regeneration for W137/W142 via the script (not manual JSON edits), (3) a standalone
+Vietnamese-character leak scan across all 156 blueprint.json vocabulary fields, since
+fail-loud only catches non-English tokens that CMUDict can't resolve — a similar parser bug
+elsewhere could have silently extracted a valid-but-wrong English word undetected.
+
+STATUS: Round 53 batch --write BLOCKED pending this root-cause fix and leak-scan evidence.
+Group-1 (W7/W41) override fixes approved to proceed in parallel.
+[ROUND 53 — ROOT-CAUSE FIX REVIEWED (TEXT-ONLY), PENDING ZIP VERIFICATION BEFORE APPROVAL]
+
+Reviewed Round 53's root-cause investigation and fix for the W137/W142 blueprint
+corruption (Vietnamese annotation text leaking into vocabulary_focus via an unanchored
+regex in generate_week_blueprint.mjs). Independently re-derived the regex failure mode
+(the old pattern `/Vocabulary [^:]*:\s*([^\n]+)/i` is unanchored and `[^:]*` crosses
+newlines, so it matched "Vocabulary" appearing mid-sentence in unrelated lines before
+reaching the real "Vocabulary Focus:" line) and confirmed it's technically consistent
+with the quoted Source B text (lines 1049-1057 for W137, 1091-1095 for W142). The new
+line-anchored regex fix is sound. Noted one minor maintainability concern (the W142
+"academic verbs:" fallback is a narrow, non-generalized pattern) — not blocking, flagged
+for future monitoring only.
+
+No zip was submitted with this report — per the session's standing trust-but-verify
+discipline, narrative/text claims (root-cause fix applied, 0/156 weeks with leaked
+Vietnamese characters, 12/12 and 14/14 test passes, build success) cannot be confirmed as
+APPROVED without independent zip-based verification (diff, regenerated blueprint.json
+files, full script source, full logs, git HEAD).
+
+STATUS: Round 53 fix logic conditionally accepted pending zip evidence. Batch --write on
+154 weeks remains BLOCKED until independent verification of this round completes.
+
+[ROUND 53 SUBMISSION — EVIDENCE PACKAGE ASSEMBLED (ROUND53_20261105.ZIP) WITH FULL VERBATIM LOGS & REGENERATED BLUEPRINTS]
+
+1. Nhóm 2 (Root-Cause Parser Fix in generate_week_blueprint.mjs):
+   - Unanchored regex `/Vocabulary [^:]*:\s*([^\n]+)/i` fixed with line/bullet-anchored pattern `/(?:^|\n)[ \t]*[•\-\*]?[ \t]*Vocabulary\s+Focus:\s*([^\n]+)/i` plus academic verbs fallback for W142.
+   - W137 regenerated: `beneficial`, `harmful`, `essential`, `detrimental`, `vital`, `significant` (6 words).
+   - W142 regenerated: `assert`, `propose`, `suggest`, `imply` (4 words).
+   - Zero manual JSON edits; regenerated cleanly via `node scripts/generate_week_blueprint.mjs <week> --force`.
+   - Full diff patch included: `diff_generate_week_blueprint.patch`.
+
+2. Nhóm 1 (Phonetics Tooling Scope in tag_vocabulary_phonetics.mjs):
+   - Added `CUSTOM_PHONETIC_OVERRIDES` for `whiteboard` -> `W AY1 T B AO1 R D` (`/wˈaɪtbɔːɹd/`).
+   - Implemented `/` variant handling: creates discrete variant objects in `phonetics.variants` and combined slash IPA.
+   - W41 preserved with exact 5 Source B words: `egg`, `hatch`, `caterpillar/tadpole`, `chrysalis`, `butterfly/frog`.
+
+3. Independent Verification & Zero-Leak Proof:
+   - Authored standalone scanner: `scripts/scan_vietnamese_vocab_leak.mjs`.
+   - Scanned all 156 blueprints across `vocabulary_focus`, `target_vocab_20`, and `keywords` for `[\u00C0-\u024F\u1EA0-\u1EF9]`: EXACTLY 0 leaked weeks (100% clean).
+   - 154-Week dry-run coverage: 778 / 778 words classified (100.00% Coverage, 0 Fail-Loud).
+   - Test suites: `test_vocabulary_phonetics.mjs` (12/12 PASS), `test_blueprint_ingestion.mjs` (14/14 PASS).
+   - Freeze guards: W33 (147/147) and W34 (106/106) verified 100% LOCKED.
+   - Production build: `npm run build` exits 0.
+
+4. Review Package Deliverables:
+   - Package: `docs/review_packages/round53_20261105.zip`.
+   - Batch `--write` strictly HELD as directed, pending owner sign-off.
 
 
