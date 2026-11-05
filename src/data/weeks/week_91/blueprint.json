@@ -33,7 +33,24 @@
     "total_syllabus_words": 7,
     "target_count": 20,
     "missing_count": 13,
-    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 2,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "observe"
+        ],
+        "/ɪd/": [
+          "test"
+        ]
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "hypothesis",
@@ -52,7 +69,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/haɪpˈɑːθəsəs/",
+      "phonetics": {
+        "arpabet": "HH AY0 P AA1 TH AH0 S AH0 S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "experiment",
@@ -60,7 +89,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪkspˈɛɹəmənt/",
+      "phonetics": {
+        "arpabet": "IH0 K S P EH1 R AH0 M AH0 N T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "observe",
@@ -68,7 +109,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/əbzˈɝːv/",
+      "phonetics": {
+        "arpabet": "AH0 B Z ER1 V",
+        "final_phone": "V",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "observed",
+        "past_participle": "observed",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /v/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "result",
@@ -76,7 +129,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹɪzˈʌlt/",
+      "phonetics": {
+        "arpabet": "R IH0 Z AH1 L T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "conclusion",
@@ -84,7 +149,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kənklˈuːʒən/",
+      "phonetics": {
+        "arpabet": "K AH0 N K L UW1 ZH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "method",
@@ -92,7 +169,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/mˈɛθəd/",
+      "phonetics": {
+        "arpabet": "M EH1 TH AH0 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "test",
@@ -100,7 +189,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/tˈɛst/",
+      "phonetics": {
+        "arpabet": "T EH1 S T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "tested",
+        "past_participle": "tested",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Guided CER)",

@@ -32,7 +32,20 @@
     "total_syllabus_words": 6,
     "target_count": 20,
     "missing_count": 14,
-    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)"
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 6,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 6,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "beneficial",
@@ -50,7 +63,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/bˌɛnəfˈɪʃəl/",
+      "phonetics": {
+        "arpabet": "B EH2 N AH0 F IH1 SH AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "harmful",
@@ -58,7 +83,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/hˈɑːɹmfəl/",
+      "phonetics": {
+        "arpabet": "HH AA1 R M F AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "essential",
@@ -66,7 +103,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪsˈɛnʃəl/",
+      "phonetics": {
+        "arpabet": "IH0 S EH1 N SH AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "detrimental",
@@ -74,7 +123,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dˌɛtɹəmˈɛntəl/",
+      "phonetics": {
+        "arpabet": "D EH2 T R AH0 M EH1 N T AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "vital",
@@ -82,7 +143,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/vˈaɪtəl/",
+      "phonetics": {
+        "arpabet": "V AY1 T AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "significant",
@@ -90,7 +163,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/səɡnˈɪfɪkənt/",
+      "phonetics": {
+        "arpabet": "S AH0 G N IH1 F IH0 K AH0 N T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Exam)",

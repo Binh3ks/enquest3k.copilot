@@ -35,7 +35,24 @@
     "total_syllabus_words": 9,
     "target_count": 20,
     "missing_count": 11,
-    "status": "PARTIAL (9/20 syllabus words — Requires 11 words from human author)"
+    "status": "PARTIAL (9/20 syllabus words — Requires 11 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 9,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 2,
+      "irregular_verbs_count": 2,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "smell"
+        ],
+        "/ɪd/": [
+          "taste"
+        ]
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "beautiful",
@@ -56,7 +73,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/bjˈuːtəfəl/",
+      "phonetics": {
+        "arpabet": "B Y UW1 T AH0 F AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "amazing",
@@ -64,7 +93,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/əmˈeɪzɪŋ/",
+      "phonetics": {
+        "arpabet": "AH0 M EY1 Z IH0 NG",
+        "final_phone": "NG",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "see",
@@ -72,7 +113,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/sˈiː/",
+      "phonetics": {
+        "arpabet": "S IY1",
+        "final_phone": "IY",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "saw",
+        "past_participle": "seen",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation ee -> aw",
+        "variants": null
+      }
     },
     {
       "word": "hear",
@@ -80,7 +133,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/hˈiːɹ/",
+      "phonetics": {
+        "arpabet": "HH IY1 R",
+        "final_phone": "R",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "heard",
+        "past_participle": "heard",
+        "past_ending_group": null,
+        "past_ending_rule": "Suffix d with vowel change ear -> ear /ɝː/",
+        "variants": null
+      }
     },
     {
       "word": "smell",
@@ -88,7 +153,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/smˈɛl/",
+      "phonetics": {
+        "arpabet": "S M EH1 L",
+        "final_phone": "L",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "smelled",
+        "past_participle": "smelled",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /l/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "taste",
@@ -96,7 +173,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/tˈeɪst/",
+      "phonetics": {
+        "arpabet": "T EY1 S T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "tasted",
+        "past_participle": "tasted",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "landscape",
@@ -104,7 +193,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/lˈændskˌeɪp/",
+      "phonetics": {
+        "arpabet": "L AE1 N D S K EY2 P",
+        "final_phone": "P",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "view",
@@ -112,7 +213,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/vjˈuː/",
+      "phonetics": {
+        "arpabet": "V Y UW1",
+        "final_phone": "UW",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "delicious",
@@ -120,7 +233,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dɪlˈɪʃəs/",
+      "phonetics": {
+        "arpabet": "D IH0 L IH1 SH AH0 S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Exam)",

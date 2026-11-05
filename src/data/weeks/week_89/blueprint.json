@@ -33,7 +33,24 @@
     "total_syllabus_words": 7,
     "target_count": 20,
     "missing_count": 13,
-    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 2,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "discover"
+        ],
+        "/ɪd/": [
+          "invent"
+        ]
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "invent",
@@ -52,7 +69,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪnvˈɛnt/",
+      "phonetics": {
+        "arpabet": "IH0 N V EH1 N T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "invented",
+        "past_participle": "invented",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "discover",
@@ -60,7 +89,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dɪskˈʌvɚ/",
+      "phonetics": {
+        "arpabet": "D IH0 S K AH1 V ER0",
+        "final_phone": "ER",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "discovered",
+        "past_participle": "discovered",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /er/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "machine",
@@ -68,7 +109,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/məʃˈiːn/",
+      "phonetics": {
+        "arpabet": "M AH0 SH IY1 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "technology",
@@ -76,7 +129,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/tɛknˈɑːlədʒi/",
+      "phonetics": {
+        "arpabet": "T EH0 K N AA1 L AH0 JH IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "communication",
@@ -84,7 +149,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kəmjˌuːnəkˈeɪʃən/",
+      "phonetics": {
+        "arpabet": "K AH0 M Y UW2 N AH0 K EY1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "electricity",
@@ -92,7 +169,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪlˌɛktɹˈɪsəti/",
+      "phonetics": {
+        "arpabet": "IH0 L EH2 K T R IH1 S AH0 T IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "bulb",
@@ -100,7 +189,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/bˈʌlb/",
+      "phonetics": {
+        "arpabet": "B AH1 L B",
+        "final_phone": "B",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Guided CER)",

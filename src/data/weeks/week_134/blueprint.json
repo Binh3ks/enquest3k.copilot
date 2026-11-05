@@ -34,7 +34,20 @@
     "total_syllabus_words": 8,
     "target_count": 20,
     "missing_count": 12,
-    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)"
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 8,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "fallacy",
@@ -54,7 +67,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈæləsi/",
+      "phonetics": {
+        "arpabet": "F AE1 L AH0 S IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "generalization",
@@ -62,7 +87,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dʒˌɛnɚəlɪzˈeɪʃən/",
+      "phonetics": {
+        "arpabet": "JH EH2 N ER0 AH0 L IH0 Z EY1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "assumption",
@@ -70,7 +107,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/əsˈʌmpʃən/",
+      "phonetics": {
+        "arpabet": "AH0 S AH1 M P SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "true",
@@ -78,7 +127,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/tɹˈuː/",
+      "phonetics": {
+        "arpabet": "T R UW1",
+        "final_phone": "UW",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "false",
@@ -86,7 +147,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈɔːls/",
+      "phonetics": {
+        "arpabet": "F AO1 L S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "valid",
@@ -94,7 +167,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/vˈæləd/",
+      "phonetics": {
+        "arpabet": "V AE1 L AH0 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "invalid",
@@ -102,7 +187,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˈɪnvələd/",
+      "phonetics": {
+        "arpabet": "IH1 N V AH0 L AH0 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "logic",
@@ -110,7 +207,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/lˈɑːdʒɪk/",
+      "phonetics": {
+        "arpabet": "L AA1 JH IH0 K",
+        "final_phone": "K",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Research)",

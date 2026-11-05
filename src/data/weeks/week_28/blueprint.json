@@ -32,7 +32,22 @@
     "total_syllabus_words": 6,
     "target_count": 20,
     "missing_count": 14,
-    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)"
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 6,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 3,
+      "non_verbs_count": 2,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "slow"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "fast",
@@ -50,7 +65,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈæst/",
+      "phonetics": {
+        "arpabet": "F AE1 S T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "slow",
@@ -58,7 +85,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/slˈoʊ/",
+      "phonetics": {
+        "arpabet": "S L OW1",
+        "final_phone": "OW",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "slowed",
+        "past_participle": "slowed",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /ow/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "race",
@@ -66,7 +105,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹˈeɪs/",
+      "phonetics": {
+        "arpabet": "R EY1 S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "sleep",
@@ -74,7 +125,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/slˈiːp/",
+      "phonetics": {
+        "arpabet": "S L IY1 P",
+        "final_phone": "P",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "slept",
+        "past_participle": "slept",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel shortening ee -> e + t",
+        "variants": null
+      }
     },
     {
       "word": "win",
@@ -82,7 +145,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/wˈɪn/",
+      "phonetics": {
+        "arpabet": "W IH1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "won",
+        "past_participle": "won",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation i -> o",
+        "variants": null
+      }
     },
     {
       "word": "lose",
@@ -90,7 +165,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/lˈuːz/",
+      "phonetics": {
+        "arpabet": "L UW1 Z",
+        "final_phone": "Z",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "lost",
+        "past_participle": "lost",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel change o -> o + t",
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Chunks)",

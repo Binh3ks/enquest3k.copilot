@@ -35,7 +35,22 @@
     "total_syllabus_words": 9,
     "target_count": 20,
     "missing_count": 11,
-    "status": "PARTIAL (9/20 syllabus words — Requires 11 words from human author)"
+    "status": "PARTIAL (9/20 syllabus words — Requires 11 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 9,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 1,
+      "non_verbs_count": 7,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": [
+          "need"
+        ]
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "living",
@@ -56,7 +71,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/lˈɪvɪŋ/",
+      "phonetics": {
+        "arpabet": "L IH1 V IH0 NG",
+        "final_phone": "NG",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "non-living",
@@ -64,7 +91,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/nˈɑːn lˈɪvɪŋ/",
+      "phonetics": {
+        "arpabet": "N AA1 N L IH1 V IH0 NG",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "breathe",
@@ -72,7 +111,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/bɹˈiːð/",
+      "phonetics": {
+        "arpabet": "B R IY1 DH",
+        "final_phone": "DH",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "grow",
@@ -80,7 +131,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɡɹˈoʊ/",
+      "phonetics": {
+        "arpabet": "G R OW1",
+        "final_phone": "OW",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "grew",
+        "past_participle": "grown",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation ow -> ew",
+        "variants": null
+      }
     },
     {
       "word": "need",
@@ -88,7 +151,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/nˈiːd/",
+      "phonetics": {
+        "arpabet": "N IY1 D",
+        "final_phone": "D",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "needed",
+        "past_participle": "needed",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /d/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "food",
@@ -96,7 +171,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈuːd/",
+      "phonetics": {
+        "arpabet": "F UW1 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "water",
@@ -104,7 +191,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/wˈɔːtɚ/",
+      "phonetics": {
+        "arpabet": "W AO1 T ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "rock",
@@ -112,7 +211,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹˈɑːk/",
+      "phonetics": {
+        "arpabet": "R AA1 K",
+        "final_phone": "K",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "plastic",
@@ -120,7 +231,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/plˈæstɪk/",
+      "phonetics": {
+        "arpabet": "P L AE1 S T IH0 K",
+        "final_phone": "K",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Exam)",

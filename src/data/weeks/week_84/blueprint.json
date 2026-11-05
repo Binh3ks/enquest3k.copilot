@@ -34,7 +34,22 @@
     "total_syllabus_words": 8,
     "target_count": 20,
     "missing_count": 12,
-    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)"
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 7,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": [
+          "heat"
+        ]
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "volcano",
@@ -54,7 +69,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/vɑlkˈeɪnoʊ/",
+      "phonetics": {
+        "arpabet": "V AA0 L K EY1 N OW0",
+        "final_phone": "OW",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "eruption",
@@ -62,7 +89,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˌiːɹˈʌpʃən/",
+      "phonetics": {
+        "arpabet": "IY2 R AH1 P SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "magma",
@@ -70,7 +109,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/mˈæɡmə/",
+      "phonetics": {
+        "arpabet": "M AE1 G M AH0",
+        "final_phone": "AH",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "lava",
@@ -78,7 +129,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/lˈɑːvə/",
+      "phonetics": {
+        "arpabet": "L AA1 V AH0",
+        "final_phone": "AH",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "ash",
@@ -86,7 +149,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˈæʃ/",
+      "phonetics": {
+        "arpabet": "AE1 SH",
+        "final_phone": "SH",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "explode",
@@ -94,7 +169,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪksplˈoʊd/",
+      "phonetics": {
+        "arpabet": "IH0 K S P L OW1 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "heat",
@@ -102,7 +189,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/hˈiːt/",
+      "phonetics": {
+        "arpabet": "HH IY1 T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "heated",
+        "past_participle": "heated",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "pressure",
@@ -110,7 +209,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/pɹˈɛʃɚ/",
+      "phonetics": {
+        "arpabet": "P R EH1 SH ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Guided CER)",

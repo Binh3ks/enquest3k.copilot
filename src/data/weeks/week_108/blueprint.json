@@ -34,7 +34,23 @@
     "total_syllabus_words": 8,
     "target_count": 20,
     "missing_count": 12,
-    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)"
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 2,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 6,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "order",
+          "plan"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "outline",
@@ -54,7 +70,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˈaʊtlˌaɪn/",
+      "phonetics": {
+        "arpabet": "AW1 T L AY2 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "structure",
@@ -62,7 +90,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/stɹˈʌktʃɚ/",
+      "phonetics": {
+        "arpabet": "S T R AH1 K CH ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "order",
@@ -70,7 +110,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˈɔːɹdɚ/",
+      "phonetics": {
+        "arpabet": "AO1 R D ER0",
+        "final_phone": "ER",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "ordered",
+        "past_participle": "ordered",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /er/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "first",
@@ -78,7 +130,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈɝːst/",
+      "phonetics": {
+        "arpabet": "F ER1 S T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "next",
@@ -86,7 +150,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/nˈɛkst/",
+      "phonetics": {
+        "arpabet": "N EH1 K S T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "then",
@@ -94,7 +170,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ðˈɛn/",
+      "phonetics": {
+        "arpabet": "DH EH1 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "finally",
@@ -102,7 +190,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈaɪnəli/",
+      "phonetics": {
+        "arpabet": "F AY1 N AH0 L IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "plan",
@@ -110,7 +210,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/plˈæn/",
+      "phonetics": {
+        "arpabet": "P L AE1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "planned",
+        "past_participle": "planned",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Autonomous)",

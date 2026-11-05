@@ -34,7 +34,26 @@
     "total_syllabus_words": 8,
     "target_count": 20,
     "missing_count": 12,
-    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)"
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 3,
+      "irregular_verbs_count": 3,
+      "non_verbs_count": 2,
+      "past_tense_triad": {
+        "/t/": [
+          "jump"
+        ],
+        "/d/": [
+          "climb"
+        ],
+        "/ɪd/": [
+          "hunt"
+        ]
+      },
+      "triad_complete": true
+    }
   },
   "keywords": [
     "jump",
@@ -54,7 +73,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dʒˈʌmp/",
+      "phonetics": {
+        "arpabet": "JH AH1 M P",
+        "final_phone": "P",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "jumped",
+        "past_participle": "jumped",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /p/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
     },
     {
       "word": "fly",
@@ -62,7 +93,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/flˈaɪ/",
+      "phonetics": {
+        "arpabet": "F L AY1",
+        "final_phone": "AY",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "flew",
+        "past_participle": "flown",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation y -> ew",
+        "variants": null
+      }
     },
     {
       "word": "swim",
@@ -70,7 +113,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/swˈɪm/",
+      "phonetics": {
+        "arpabet": "S W IH1 M",
+        "final_phone": "M",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "swam",
+        "past_participle": "swum",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation i -> a",
+        "variants": null
+      }
     },
     {
       "word": "hunt",
@@ -78,7 +133,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/hˈʌnt/",
+      "phonetics": {
+        "arpabet": "HH AH1 N T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "hunted",
+        "past_participle": "hunted",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "climb",
@@ -86,7 +153,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/klˈaɪm/",
+      "phonetics": {
+        "arpabet": "K L AY1 M",
+        "final_phone": "M",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "climbed",
+        "past_participle": "climbed",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /m/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "run",
@@ -94,7 +173,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹˈʌn/",
+      "phonetics": {
+        "arpabet": "R AH1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "ran",
+        "past_participle": "run",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation u -> a",
+        "variants": null
+      }
     },
     {
       "word": "heavy",
@@ -102,7 +193,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/hˈɛvi/",
+      "phonetics": {
+        "arpabet": "HH EH1 V IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "fast",
@@ -110,7 +213,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈæst/",
+      "phonetics": {
+        "arpabet": "F AE1 S T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Chunks)",

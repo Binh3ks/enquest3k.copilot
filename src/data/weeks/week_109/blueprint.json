@@ -31,7 +31,25 @@
     "total_syllabus_words": 5,
     "target_count": 20,
     "missing_count": 15,
-    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)"
+    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 5,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 3,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 2,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "explain",
+          "describe"
+        ],
+        "/ɪd/": [
+          "support"
+        ]
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "detail",
@@ -48,7 +66,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dɪtˈeɪl/",
+      "phonetics": {
+        "arpabet": "D IH0 T EY1 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "support",
@@ -56,7 +86,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/səpˈɔːɹt/",
+      "phonetics": {
+        "arpabet": "S AH0 P AO1 R T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "supported",
+        "past_participle": "supported",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "explain",
@@ -64,7 +106,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪksplˈeɪn/",
+      "phonetics": {
+        "arpabet": "IH0 K S P L EY1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "explained",
+        "past_participle": "explained",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "describe",
@@ -72,7 +126,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dɪskɹˈaɪb/",
+      "phonetics": {
+        "arpabet": "D IH0 S K R AY1 B",
+        "final_phone": "B",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "described",
+        "past_participle": "described",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /b/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "specific",
@@ -80,7 +146,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/spəsˈɪfɪk/",
+      "phonetics": {
+        "arpabet": "S P AH0 S IH1 F IH0 K",
+        "final_phone": "K",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Autonomous)",

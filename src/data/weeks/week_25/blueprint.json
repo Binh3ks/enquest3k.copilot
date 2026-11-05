@@ -33,7 +33,23 @@
     "total_syllabus_words": 7,
     "target_count": 20,
     "missing_count": 13,
-    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 2,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [
+          "brush",
+          "rinse"
+        ],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "bread",
@@ -52,7 +68,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/bɹˈɛd/",
+      "phonetics": {
+        "arpabet": "B R EH1 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "jam",
@@ -60,7 +88,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dʒˈæm/",
+      "phonetics": {
+        "arpabet": "JH AE1 M",
+        "final_phone": "M",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "spread",
@@ -68,7 +108,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/spɹˈɛd/",
+      "phonetics": {
+        "arpabet": "S P R EH1 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "knife",
@@ -76,7 +128,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/nˈaɪf/",
+      "phonetics": {
+        "arpabet": "N AY1 F",
+        "final_phone": "F",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "toothpaste",
@@ -84,7 +148,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/tˈuːθpˌeɪst/",
+      "phonetics": {
+        "arpabet": "T UW1 TH P EY2 S T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "brush",
@@ -92,7 +168,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/bɹˈʌʃ/",
+      "phonetics": {
+        "arpabet": "B R AH1 SH",
+        "final_phone": "SH",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "brushed",
+        "past_participle": "brushed",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /sh/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
     },
     {
       "word": "rinse",
@@ -100,7 +188,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹˈɪns/",
+      "phonetics": {
+        "arpabet": "R IH1 N S",
+        "final_phone": "S",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "rinsed",
+        "past_participle": "rinsed",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /s/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Chunks)",

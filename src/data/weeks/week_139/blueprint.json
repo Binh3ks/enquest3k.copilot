@@ -33,7 +33,20 @@
     "total_syllabus_words": 7,
     "target_count": 20,
     "missing_count": 13,
-    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 7,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "partner",
@@ -52,7 +65,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/pˈɑːɹtnɚ/",
+      "phonetics": {
+        "arpabet": "P AA1 R T N ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "team",
@@ -60,7 +85,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/tˈiːm/",
+      "phonetics": {
+        "arpabet": "T IY1 M",
+        "final_phone": "M",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "role",
@@ -68,7 +105,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹˈoʊl/",
+      "phonetics": {
+        "arpabet": "R OW1 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "opener",
@@ -76,7 +125,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˈoʊpənɚ/",
+      "phonetics": {
+        "arpabet": "OW1 P AH0 N ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "closer",
@@ -84,7 +145,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/klˈoʊsɚ/",
+      "phonetics": {
+        "arpabet": "K L OW1 S ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "rebuttal",
@@ -92,7 +165,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹɪbˈʌtəl/",
+      "phonetics": {
+        "arpabet": "R IH0 B AH1 T AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "strategy",
@@ -100,7 +185,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/stɹˈætədʒi/",
+      "phonetics": {
+        "arpabet": "S T R AE1 T AH0 JH IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Academic)",

@@ -1,9 +1,9 @@
 {
-  "commit": "fca0e78243e33e442eaf3a4cbe19fd7565dcc3ac",
-  "git_commit": "fca0e78243e33e442eaf3a4cbe19fd7565dcc3ac",
-  "shortCommit": "fca0e782",
-  "message": "feat(phonetics): implement vocabulary IPA & past-tense triad auto-tagger [multi-agent-review]",
-  "builtAt": "2026-11-05T08:19:42.366Z",
-  "build_timestamp": "2026-11-05T08:19:42.366Z",
+  "commit": "5e881e3785a3e4f5580cd1093f0f701103fec679",
+  "git_commit": "5e881e3785a3e4f5580cd1093f0f701103fec679",
+  "shortCommit": "5e881e37",
+  "message": "fix(curriculum): remediate blueprint parser leak, add phonetics overrides & verify 100% dry-run coverage [multi-agent-review]",
+  "builtAt": "2026-11-05T10:13:46.603Z",
+  "build_timestamp": "2026-11-05T10:13:46.604Z",
   "env": "production"
 }

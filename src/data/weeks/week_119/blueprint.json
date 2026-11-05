@@ -25,7 +25,20 @@
     "total_syllabus_words": 0,
     "target_count": 20,
     "missing_count": 20,
-    "status": "PARTIAL (0/20 syllabus words — Requires 20 words from human author)"
+    "status": "PARTIAL (0/20 syllabus words — Requires 20 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 0,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 0,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [],
   "characters": null,

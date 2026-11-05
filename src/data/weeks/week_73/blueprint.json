@@ -33,7 +33,22 @@
     "total_syllabus_words": 7,
     "target_count": 20,
     "missing_count": 13,
-    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 6,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "turn into"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "evaporation",
@@ -52,7 +67,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪvˌæpɚˈeɪʃən/",
+      "phonetics": {
+        "arpabet": "IH0 V AE2 P ER0 EY1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "condensation",
@@ -60,7 +87,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kˌɑːndənsˈeɪʃən/",
+      "phonetics": {
+        "arpabet": "K AA2 N D AH0 N S EY1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "precipitation",
@@ -68,7 +107,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/pɹɪsˌɪpɪtˈeɪʃən/",
+      "phonetics": {
+        "arpabet": "P R IH0 S IH2 P IH0 T EY1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "collection",
@@ -76,7 +127,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kəlˈɛkʃən/",
+      "phonetics": {
+        "arpabet": "K AH0 L EH1 K SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "vapor",
@@ -84,7 +147,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/vˈeɪpɚ/",
+      "phonetics": {
+        "arpabet": "V EY1 P ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "turn into",
@@ -92,7 +167,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/tˈɝːn ɪntˈuː/",
+      "phonetics": {
+        "arpabet": "T ER1 N IH0 N T UW1",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "turned into",
+        "past_participle": "turned into",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "cycle",
@@ -100,7 +187,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/sˈaɪkəl/",
+      "phonetics": {
+        "arpabet": "S AY1 K AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Guided CER)",

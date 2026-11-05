@@ -32,7 +32,22 @@
     "total_syllabus_words": 6,
     "target_count": 20,
     "missing_count": 14,
-    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)"
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 6,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": [
+          "support"
+        ]
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "support",
@@ -50,7 +65,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/səpˈɔːɹt/",
+      "phonetics": {
+        "arpabet": "S AH0 P AO1 R T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "supported",
+        "past_participle": "supported",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "detail",
@@ -58,7 +85,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dɪtˈeɪl/",
+      "phonetics": {
+        "arpabet": "D IH0 T EY1 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "fact",
@@ -66,7 +105,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈækt/",
+      "phonetics": {
+        "arpabet": "F AE1 K T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "true",
@@ -74,7 +125,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/tɹˈuː/",
+      "phonetics": {
+        "arpabet": "T R UW1",
+        "final_phone": "UW",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "prove",
@@ -82,7 +145,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/pɹˈuːv/",
+      "phonetics": {
+        "arpabet": "P R UW1 V",
+        "final_phone": "V",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "clear",
@@ -90,7 +165,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/klˈɪɹ/",
+      "phonetics": {
+        "arpabet": "K L IH1 R",
+        "final_phone": "R",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Chunks)",

@@ -31,7 +31,23 @@
     "total_syllabus_words": 5,
     "target_count": 20,
     "missing_count": 15,
-    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)"
+    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 5,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 2,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 3,
+      "past_tense_triad": {
+        "/t/": [
+          "hook",
+          "finish"
+        ],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "hook",
@@ -48,7 +64,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/hˈʊk/",
+      "phonetics": {
+        "arpabet": "HH UH1 K",
+        "final_phone": "K",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "hooked",
+        "past_participle": "hooked",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /k/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
     },
     {
       "word": "attention",
@@ -56,7 +84,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ətˈɛnʃən/",
+      "phonetics": {
+        "arpabet": "AH0 T EH1 N SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "interesting",
@@ -64,7 +104,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˈɪntɹəstɪŋ/",
+      "phonetics": {
+        "arpabet": "IH1 N T R AH0 S T IH0 NG",
+        "final_phone": "NG",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "summary",
@@ -72,7 +124,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/sˈʌmɚi/",
+      "phonetics": {
+        "arpabet": "S AH1 M ER0 IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "finish",
@@ -80,7 +144,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈɪnɪʃ/",
+      "phonetics": {
+        "arpabet": "F IH1 N IH0 SH",
+        "final_phone": "SH",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "finished",
+        "past_participle": "finished",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /sh/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Exam Prep)",

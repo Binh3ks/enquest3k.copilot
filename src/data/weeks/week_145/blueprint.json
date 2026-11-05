@@ -32,7 +32,22 @@
     "total_syllabus_words": 6,
     "target_count": 20,
     "missing_count": 14,
-    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)"
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 6,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [
+          "check"
+        ],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "article",
@@ -50,7 +65,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˈɑːɹtəkəl/",
+      "phonetics": {
+        "arpabet": "AA1 R T AH0 K AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "journal",
@@ -58,7 +85,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dʒˈɝːnəl/",
+      "phonetics": {
+        "arpabet": "JH ER1 N AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "website",
@@ -66,7 +105,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/wˈɛbsˌaɪt/",
+      "phonetics": {
+        "arpabet": "W EH1 B S AY2 T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "trustworthy",
@@ -74,7 +125,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/tɹˈʌstwˌɝːði/",
+      "phonetics": {
+        "arpabet": "T R AH1 S T W ER2 DH IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "fake news",
@@ -82,7 +145,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈeɪk nˈuːz/",
+      "phonetics": {
+        "arpabet": "F EY1 K N UW1 Z",
+        "final_phone": "K",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "check",
@@ -90,7 +165,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/tʃˈɛk/",
+      "phonetics": {
+        "arpabet": "CH EH1 K",
+        "final_phone": "K",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "checked",
+        "past_participle": "checked",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /k/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Project)",

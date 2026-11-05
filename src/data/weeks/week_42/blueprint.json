@@ -34,7 +34,22 @@
     "total_syllabus_words": 8,
     "target_count": 20,
     "missing_count": 12,
-    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)"
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 2,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "rain"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "sun",
@@ -54,7 +69,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/sˈʌn/",
+      "phonetics": {
+        "arpabet": "S AH1 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "cloud",
@@ -62,7 +89,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/klˈaʊd/",
+      "phonetics": {
+        "arpabet": "K L AW1 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "rain",
@@ -70,7 +109,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹˈeɪn/",
+      "phonetics": {
+        "arpabet": "R EY1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "rained",
+        "past_participle": "rained",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "river",
@@ -78,7 +129,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹˈɪvɚ/",
+      "phonetics": {
+        "arpabet": "R IH1 V ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "ocean",
@@ -86,7 +149,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˈoʊʃən/",
+      "phonetics": {
+        "arpabet": "OW1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "evaporation",
@@ -94,7 +169,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪvˌæpɚˈeɪʃən/",
+      "phonetics": {
+        "arpabet": "IH0 V AE2 P ER0 EY1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "go up",
@@ -102,7 +189,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɡˈoʊ ˈʌp/",
+      "phonetics": {
+        "arpabet": "G OW1 AH1 P",
+        "final_phone": "OW",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "went up",
+        "past_participle": "gone up",
+        "past_ending_group": null,
+        "past_ending_rule": "Suppletive go -> went",
+        "variants": null
+      }
     },
     {
       "word": "come down",
@@ -110,7 +209,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kˈʌm dˈaʊn/",
+      "phonetics": {
+        "arpabet": "K AH1 M D AW1 N",
+        "final_phone": "M",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "came down",
+        "past_participle": "come down",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation o -> a",
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Exam)",

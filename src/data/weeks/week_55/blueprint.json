@@ -33,7 +33,25 @@
     "total_syllabus_words": 7,
     "target_count": 20,
     "missing_count": 13,
-    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 3,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 4,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "cause",
+          "happen"
+        ],
+        "/ɪd/": [
+          "connect"
+        ]
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "cause",
@@ -52,7 +70,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kˈɑːz/",
+      "phonetics": {
+        "arpabet": "K AA1 Z",
+        "final_phone": "Z",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "caused",
+        "past_participle": "caused",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /z/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "effect",
@@ -60,7 +90,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪfˈɛkt/",
+      "phonetics": {
+        "arpabet": "IH0 F EH1 K T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "reason",
@@ -68,7 +110,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹˈiːzən/",
+      "phonetics": {
+        "arpabet": "R IY1 Z AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "result",
@@ -76,7 +130,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹɪzˈʌlt/",
+      "phonetics": {
+        "arpabet": "R IH0 Z AH1 L T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "happen",
@@ -84,7 +150,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/hˈæpən/",
+      "phonetics": {
+        "arpabet": "HH AE1 P AH0 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "happened",
+        "past_participle": "happened",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "connect",
@@ -92,7 +170,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kənˈɛkt/",
+      "phonetics": {
+        "arpabet": "K AH0 N EH1 K T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "connected",
+        "past_participle": "connected",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "therefore",
@@ -100,7 +190,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ðˈɛɹfˌɔːɹ/",
+      "phonetics": {
+        "arpabet": "DH EH1 R F AO2 R",
+        "final_phone": "R",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Chunks)",

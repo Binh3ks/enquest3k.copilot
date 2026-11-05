@@ -33,7 +33,25 @@
     "total_syllabus_words": 7,
     "target_count": 20,
     "missing_count": 13,
-    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 3,
+      "irregular_verbs_count": 4,
+      "non_verbs_count": 0,
+      "past_tense_triad": {
+        "/t/": [
+          "dance",
+          "jump"
+        ],
+        "/d/": [
+          "climb"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "sing",
@@ -52,7 +70,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/sˈɪŋ/",
+      "phonetics": {
+        "arpabet": "S IH1 NG",
+        "final_phone": "NG",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "sang",
+        "past_participle": "sung",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation i -> a",
+        "variants": null
+      }
     },
     {
       "word": "dance",
@@ -60,7 +90,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dˈæns/",
+      "phonetics": {
+        "arpabet": "D AE1 N S",
+        "final_phone": "S",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "danced",
+        "past_participle": "danced",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /s/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
     },
     {
       "word": "run",
@@ -68,7 +110,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹˈʌn/",
+      "phonetics": {
+        "arpabet": "R AH1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "ran",
+        "past_participle": "run",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation u -> a",
+        "variants": null
+      }
     },
     {
       "word": "jump",
@@ -76,7 +130,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dʒˈʌmp/",
+      "phonetics": {
+        "arpabet": "JH AH1 M P",
+        "final_phone": "P",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "jumped",
+        "past_participle": "jumped",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /p/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
     },
     {
       "word": "climb",
@@ -84,7 +150,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/klˈaɪm/",
+      "phonetics": {
+        "arpabet": "K L AY1 M",
+        "final_phone": "M",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "climbed",
+        "past_participle": "climbed",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /m/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "ride a bike",
@@ -92,7 +170,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹˈaɪd ˈeɪ bˈaɪk/",
+      "phonetics": {
+        "arpabet": "R AY1 D EY1 B AY1 K",
+        "final_phone": "D",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "rode a bike",
+        "past_participle": "ridden a bike",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation i -> o",
+        "variants": null
+      }
     },
     {
       "word": "draw",
@@ -100,7 +190,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dɹˈɔː/",
+      "phonetics": {
+        "arpabet": "D R AO1",
+        "final_phone": "AO",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "drew",
+        "past_participle": "drawn",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation aw -> ew",
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 1 (Full)",

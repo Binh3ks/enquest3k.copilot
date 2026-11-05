@@ -31,7 +31,22 @@
     "total_syllabus_words": 5,
     "target_count": 20,
     "missing_count": 15,
-    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)"
+    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 5,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 4,
+      "past_tense_triad": {
+        "/t/": [
+          "hatch"
+        ],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "egg",
@@ -48,7 +63,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˈɛɡ/",
+      "phonetics": {
+        "arpabet": "EH1 G",
+        "final_phone": "G",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "hatch",
@@ -56,7 +83,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/hˈætʃ/",
+      "phonetics": {
+        "arpabet": "HH AE1 CH",
+        "final_phone": "CH",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "hatched",
+        "past_participle": "hatched",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /ch/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
     },
     {
       "word": "caterpillar/tadpole",
@@ -64,7 +103,44 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kˈætəpˌɪlɚ/ / /tˈædpˌoʊl/",
+      "phonetics": {
+        "arpabet": "K AE1 T AH0 P IH2 L ER0 / T AE1 D P OW2 L",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": "non_verb",
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": [
+          {
+            "word": "caterpillar",
+            "ipa": "/kˈætəpˌɪlɚ/",
+            "arpabet": "K AE1 T AH0 P IH2 L ER0",
+            "final_phone": "ER",
+            "is_verb": false,
+            "verb_classification": null,
+            "past_simple": null,
+            "past_participle": null,
+            "past_ending_group": null,
+            "past_ending_rule": null
+          },
+          {
+            "word": "tadpole",
+            "ipa": "/tˈædpˌoʊl/",
+            "arpabet": "T AE1 D P OW2 L",
+            "final_phone": "L",
+            "is_verb": false,
+            "verb_classification": null,
+            "past_simple": null,
+            "past_participle": null,
+            "past_ending_group": null,
+            "past_ending_rule": null
+          }
+        ]
+      }
     },
     {
       "word": "chrysalis",
@@ -72,7 +148,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kɹˈɪsəlɪs/",
+      "phonetics": {
+        "arpabet": "K R IH1 S AH0 L IH0 S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "butterfly/frog",
@@ -80,7 +168,44 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/bˈʌtɚflˌaɪ/ / /fɹˈɑːɡ/",
+      "phonetics": {
+        "arpabet": "B AH1 T ER0 F L AY2 / F R AA1 G",
+        "final_phone": "AY",
+        "is_verb": false,
+        "verb_classification": "non_verb",
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": [
+          {
+            "word": "butterfly",
+            "ipa": "/bˈʌtɚflˌaɪ/",
+            "arpabet": "B AH1 T ER0 F L AY2",
+            "final_phone": "AY",
+            "is_verb": false,
+            "verb_classification": null,
+            "past_simple": null,
+            "past_participle": null,
+            "past_ending_group": null,
+            "past_ending_rule": null
+          },
+          {
+            "word": "frog",
+            "ipa": "/fɹˈɑːɡ/",
+            "arpabet": "F R AA1 G",
+            "final_phone": "G",
+            "is_verb": false,
+            "verb_classification": null,
+            "past_simple": null,
+            "past_participle": null,
+            "past_ending_group": null,
+            "past_ending_rule": null
+          }
+        ]
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Chunks)",

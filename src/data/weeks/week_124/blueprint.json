@@ -31,7 +31,20 @@
     "total_syllabus_words": 5,
     "target_count": 20,
     "missing_count": 15,
-    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)"
+    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 5,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "evidence",
@@ -48,7 +61,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˈɛvədəns/",
+      "phonetics": {
+        "arpabet": "EH1 V AH0 D AH0 N S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "prove",
@@ -56,7 +81,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/pɹˈuːv/",
+      "phonetics": {
+        "arpabet": "P R UW1 V",
+        "final_phone": "V",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "show",
@@ -64,7 +101,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ʃˈoʊ/",
+      "phonetics": {
+        "arpabet": "SH OW1",
+        "final_phone": "OW",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "example",
@@ -72,7 +121,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪɡzˈæmpəl/",
+      "phonetics": {
+        "arpabet": "IH0 G Z AE1 M P AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "instance",
@@ -80,7 +141,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ˈɪnstəns/",
+      "phonetics": {
+        "arpabet": "IH1 N S T AH0 N S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Opinion)",

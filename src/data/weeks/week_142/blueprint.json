@@ -30,7 +30,26 @@
     "total_syllabus_words": 4,
     "target_count": 20,
     "missing_count": 16,
-    "status": "PARTIAL (4/20 syllabus words — Requires 16 words from human author)"
+    "status": "PARTIAL (4/20 syllabus words — Requires 16 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 4,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 4,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 0,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "propose",
+          "imply"
+        ],
+        "/ɪd/": [
+          "assert",
+          "suggest"
+        ]
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "assert",
@@ -46,7 +65,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/əsˈɝːt/",
+      "phonetics": {
+        "arpabet": "AH0 S ER1 T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "asserted",
+        "past_participle": "asserted",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "propose",
@@ -54,7 +85,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/pɹəpˈoʊz/",
+      "phonetics": {
+        "arpabet": "P R AH0 P OW1 Z",
+        "final_phone": "Z",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "proposed",
+        "past_participle": "proposed",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /z/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "suggest",
@@ -62,7 +105,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/səɡdʒˈɛst/",
+      "phonetics": {
+        "arpabet": "S AH0 G JH EH1 S T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "suggested",
+        "past_participle": "suggested",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "imply",
@@ -70,7 +125,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪmplˈaɪ/",
+      "phonetics": {
+        "arpabet": "IH0 M P L AY1",
+        "final_phone": "AY",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "implied",
+        "past_participle": "implied",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /ay/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Exam)",

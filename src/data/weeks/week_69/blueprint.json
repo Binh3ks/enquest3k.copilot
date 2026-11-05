@@ -34,7 +34,26 @@
     "total_syllabus_words": 8,
     "target_count": 20,
     "missing_count": 12,
-    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)"
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 4,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 4,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "save",
+          "clean"
+        ],
+        "/ɪd/": [
+          "protect",
+          "waste"
+        ]
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "protect",
@@ -54,7 +73,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/pɹətˈɛkt/",
+      "phonetics": {
+        "arpabet": "P R AH0 T EH1 K T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "protected",
+        "past_participle": "protected",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "save",
@@ -62,7 +93,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/sˈeɪv/",
+      "phonetics": {
+        "arpabet": "S EY1 V",
+        "final_phone": "V",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "saved",
+        "past_participle": "saved",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /v/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "environment",
@@ -70,7 +113,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪnvˈaɪɹənmənt/",
+      "phonetics": {
+        "arpabet": "IH0 N V AY1 R AH0 N M AH0 N T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "pollution",
@@ -78,7 +133,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/pəlˈuːʃən/",
+      "phonetics": {
+        "arpabet": "P AH0 L UW1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "waste",
@@ -86,7 +153,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/wˈeɪst/",
+      "phonetics": {
+        "arpabet": "W EY1 S T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "wasted",
+        "past_participle": "wasted",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "recycle",
@@ -94,7 +173,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɹisˈaɪkəl/",
+      "phonetics": {
+        "arpabet": "R IY0 S AY1 K AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "clean",
@@ -102,7 +193,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/klˈiːn/",
+      "phonetics": {
+        "arpabet": "K L IY1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "cleaned",
+        "past_participle": "cleaned",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "dirty",
@@ -110,7 +213,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/dˈɝːti/",
+      "phonetics": {
+        "arpabet": "D ER1 T IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Chunks)",

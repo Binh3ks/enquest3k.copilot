@@ -33,7 +33,23 @@
     "total_syllabus_words": 7,
     "target_count": 20,
     "missing_count": 13,
-    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 2,
+      "irregular_verbs_count": 1,
+      "non_verbs_count": 4,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": [
+          "paint",
+          "fold"
+        ]
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "paint",
@@ -52,7 +68,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/pˈeɪnt/",
+      "phonetics": {
+        "arpabet": "P EY1 N T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "painted",
+        "past_participle": "painted",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "color",
@@ -60,7 +88,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kˈʌlɚ/",
+      "phonetics": {
+        "arpabet": "K AH1 L ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "glue",
@@ -68,7 +108,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɡlˈuː/",
+      "phonetics": {
+        "arpabet": "G L UW1",
+        "final_phone": "UW",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "fold",
@@ -76,7 +128,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈoʊld/",
+      "phonetics": {
+        "arpabet": "F OW1 L D",
+        "final_phone": "D",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "folded",
+        "past_participle": "folded",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /d/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
     },
     {
       "word": "cut",
@@ -84,7 +148,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kˈʌt/",
+      "phonetics": {
+        "arpabet": "K AH1 T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "cut",
+        "past_participle": "cut",
+        "past_ending_group": null,
+        "past_ending_rule": "Zero-change verb",
+        "variants": null
+      }
     },
     {
       "word": "picture",
@@ -92,7 +168,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/pˈɪktʃɚ/",
+      "phonetics": {
+        "arpabet": "P IH1 K CH ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "scissors",
@@ -100,7 +188,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/sˈɪzɚz/",
+      "phonetics": {
+        "arpabet": "S IH1 Z ER0 Z",
+        "final_phone": "Z",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Chunks)",

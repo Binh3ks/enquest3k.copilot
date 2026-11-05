@@ -31,7 +31,20 @@
     "total_syllabus_words": 5,
     "target_count": 20,
     "missing_count": 15,
-    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)"
+    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 5,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 2,
+      "non_verbs_count": 3,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "minus",
@@ -48,7 +61,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/mˈaɪnəs/",
+      "phonetics": {
+        "arpabet": "M AY1 N AH0 S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "subtract",
@@ -56,7 +81,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/səbtɹˈækt/",
+      "phonetics": {
+        "arpabet": "S AH0 B T R AE1 K T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "take away",
@@ -64,7 +101,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/tˈeɪk əwˈeɪ/",
+      "phonetics": {
+        "arpabet": "T EY1 K AH0 W EY1",
+        "final_phone": "K",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "took away",
+        "past_participle": "taken away",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation a -> oo",
+        "variants": null
+      }
     },
     {
       "word": "how many left",
@@ -72,7 +121,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/hˈaʊ mˈɛni lˈɛft/",
+      "phonetics": {
+        "arpabet": "HH AW1 M EH1 N IY0 L EH1 F T",
+        "final_phone": "AW",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "lose",
@@ -80,7 +141,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/lˈuːz/",
+      "phonetics": {
+        "arpabet": "L UW1 Z",
+        "final_phone": "Z",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "lost",
+        "past_participle": "lost",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel change o -> o + t",
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Chunks)",

@@ -34,7 +34,22 @@
     "total_syllabus_words": 8,
     "target_count": 20,
     "missing_count": 12,
-    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)"
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 3,
+      "non_verbs_count": 4,
+      "past_tense_triad": {
+        "/t/": [
+          "produce"
+        ],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "produce",
@@ -54,7 +69,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/pɹədˈuːs/",
+      "phonetics": {
+        "arpabet": "P R AH0 D UW1 S",
+        "final_phone": "S",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "produced",
+        "past_participle": "produced",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /s/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
     },
     {
       "word": "consume",
@@ -62,7 +89,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kənsˈuːm/",
+      "phonetics": {
+        "arpabet": "K AH0 N S UW1 M",
+        "final_phone": "M",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "make",
@@ -70,7 +109,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/mˈeɪk/",
+      "phonetics": {
+        "arpabet": "M EY1 K",
+        "final_phone": "K",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "made",
+        "past_participle": "made",
+        "past_ending_group": null,
+        "past_ending_rule": "Dental suffix k -> d",
+        "variants": null
+      }
     },
     {
       "word": "buy",
@@ -78,7 +129,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/bˈaɪ/",
+      "phonetics": {
+        "arpabet": "B AY1",
+        "final_phone": "AY",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "bought",
+        "past_participle": "bought",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation uy -> ought",
+        "variants": null
+      }
     },
     {
       "word": "sell",
@@ -86,7 +149,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/sˈɛl/",
+      "phonetics": {
+        "arpabet": "S EH1 L",
+        "final_phone": "L",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "sold",
+        "past_participle": "sold",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation ell -> old",
+        "variants": null
+      }
     },
     {
       "word": "market",
@@ -94,7 +169,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/mˈɑːɹkət/",
+      "phonetics": {
+        "arpabet": "M AA1 R K AH0 T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "factory",
@@ -102,7 +189,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈæktɚi/",
+      "phonetics": {
+        "arpabet": "F AE1 K T ER0 IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "customer",
@@ -110,7 +209,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/kˈʌstəmɚ/",
+      "phonetics": {
+        "arpabet": "K AH1 S T AH0 M ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 3 (Autonomous)",

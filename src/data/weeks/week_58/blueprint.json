@@ -33,7 +33,26 @@
     "total_syllabus_words": 7,
     "target_count": 20,
     "missing_count": 13,
-    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 4,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 3,
+      "past_tense_triad": {
+        "/t/": [
+          "step"
+        ],
+        "/d/": [
+          "plan",
+          "improve",
+          "fail"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
   },
   "keywords": [
     "plan",
@@ -52,7 +71,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/plˈæn/",
+      "phonetics": {
+        "arpabet": "P L AE1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "planned",
+        "past_participle": "planned",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "step",
@@ -60,7 +91,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/stˈɛp/",
+      "phonetics": {
+        "arpabet": "S T EH1 P",
+        "final_phone": "P",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "stepped",
+        "past_participle": "stepped",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /p/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
     },
     {
       "word": "improve",
@@ -68,7 +111,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/ɪmpɹˈuːv/",
+      "phonetics": {
+        "arpabet": "IH0 M P R UW1 V",
+        "final_phone": "V",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "improved",
+        "past_participle": "improved",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /v/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "better",
@@ -76,7 +131,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/bˈɛtɚ/",
+      "phonetics": {
+        "arpabet": "B EH1 T ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "success",
@@ -84,7 +151,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/səksˈɛs/",
+      "phonetics": {
+        "arpabet": "S AH0 K S EH1 S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     },
     {
       "word": "fail",
@@ -92,7 +171,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/fˈeɪl/",
+      "phonetics": {
+        "arpabet": "F EY1 L",
+        "final_phone": "L",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "failed",
+        "past_participle": "failed",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /l/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
     },
     {
       "word": "strategy",
@@ -100,7 +191,19 @@
       "definition_vi": null,
       "example_en": null,
       "example_vi": null,
-      "requires_human_input": true
+      "requires_human_input": true,
+      "ipa": "/stɹˈætədʒi/",
+      "phonetics": {
+        "arpabet": "S T R AE1 T AH0 JH IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
     }
   ],
   "scaffolding_tier": "Tier 2 (Chunks)",
