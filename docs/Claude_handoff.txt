@@ -1222,30 +1222,94 @@ STATUS: Round 52 dispatched requiring a fix to update_digital_syllabus_map.mjs's
 idempotency, removal of the duplicate W113-W120 block, and resubmission with verbatim
 row-count/uniqueness command output as proof (not just a restated claim) before this
 documentation sync can be considered closed.
+[ROUND 51 — RESOLVED & APPROVED: SOURCE A DUPLICATE ROW FIX VERIFIED GENUINE]
 
-[ROUND 51 FIX COMPLETE — SOURCE A DUPLICATE BLOCK REMOVED & IDEMPOTENCY ENFORCED — 2026-11-04]
+Independently re-verified the Round 51 resubmission (SHA256 3eee692a...ff1cab4, 95,718
+bytes — exact match). Re-ran the exact row-count and uniqueness checks myself rather than
+trusting the report's pasted output:
+- grep -c '| **W[0-9]' → 156 (confirmed, was 164 before fix)
+- grep -oE '**W[0-9]+**' | sort | uniq -c | awk '$1!=1' → empty (0 duplicates)
+- Manual line-range inspection (lines 211-230) confirms clean W112→W113...W120→W121
+  sequence, no repeated block
 
-1. Root Cause Analysis:
-   - `scripts/update_digital_syllabus_map.mjs` lacked an idempotency guard when inserting W113–W120
-     after W112. Running the script on a document where W113–W120 was already present caused
-     the 8 rows to be inserted after W112 while also copying the existing 8 rows, resulting in 164 total rows.
-   - Similarly, the changelog header line was duplicated when the script ran multiple times.
+Root cause (loop re-processing source rows after an unconditional insert at W112, with no
+"already present" check) matches the observed symptom. Code-level fix verified genuine in
+scripts/update_digital_syllabus_map.mjs: alreadyHasW113 pre-insert guard, seenWeeks Set
+tracking duplicates during traversal, and a hard assertion
+(`if (seenWeeks.size !== 156) throw new Error(...)`) that will crash the script rather than
+silently emit a corrupted file if this class of bug recurs.
 
-2. Code Fix & Hard Guard:
-   - Added `const seenWeeks = new Set();` to track processed week numbers and drop duplicates automatically.
-   - Guarded W113–W120 insertion with `!alreadyHasW113`.
-   - Added header deduplication for `**Provenance / Changelog**`.
-   - Enforced hard assertion: throws an Integrity Violation error if total unique weeks is not exactly 156.
-   - The script is now 100% idempotent: subsequent runs produce 0 duplicates and exit cleanly.
+Cross-checked unchanged: FULL_156_WEEKS_DIVERGENCE_DATA.json (154 ALIGNED / 2 DIVERGENT
+[W33,W34] / 0 MISSING), W33 freeze guard (147/147 PASS), W34 freeze guard (106/106 PASS),
+test suite (14/14 PASS). Git HEAD 4857c3ea0c5d7cfefc409ad8b0dda8e25f2536bd.
 
-3. Verbatim Row Counting & Uniqueness Proofs:
-   - `grep -c '| \*\*W[0-9]' docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md` -> EXACTLY 156.
-   - `grep -oE '\*\*W[0-9]+\*\*' docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md | sort | uniq -c` -> All 156 weeks count = 1.
-   - `grep -oE '\*\*W[0-9]+\*\*' docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md | sort | uniq -c | grep -v ' 1 '` -> 0 non-1 counts (empty).
+STATUS: Round 51 CLOSED — APPROVED. Source A document (ENGQUEST_DIGITAL_SYLLABUS_
+W01_W156_MAP.md) now genuinely synchronized with Source B across all 156 weeks, W33/W34
+production titles correctly preserved, no duplicate rows. Next: awaiting owner decision
+between IPA/past-tense auto-tagger vs. batch audio generator for the next Nhóm 1
+automation build.
+[ROUND 52 KICKOFF — DIRECTION APPROVED: IPA / PAST-TENSE AUTO-TAGGER, PENDING ACCENT
+VERIFICATION]
 
-4. Re-Scan Alignment Stability:
-   - `scan_156_weeks_divergence.mjs --dry-run`: 154 ALIGNED (98.7%), 2 DIVERGENT (1.3% — W33/W34 frozen standards), 0 MISSING.
-   - Test suite: 14/14 PASS.
-   - Review package regenerated: `docs/review_packages/round51_20261104.zip`.
+Reviewed Antigravity's comparative analysis (Option A: IPA/past-tense auto-tagger vs.
+Option B: batch audio generator) for the next Nhóm 1 automation build. Option A confirmed
+correct: Option B is currently blocked since 80% of the text inputs needed for audio
+generation (Shadowing sentences, CLIL articles, Cambridge exam passages) don't yet exist
+for W38-156. Option A's phonology spec (3-way -ed ending classification: /ɪd/, /t/, /d/,
+plus irregular-verb lookup) verified pedagogically accurate against Cambridge YLE
+standards.
+
+BLOCKING CONCERN RAISED (within Claude's delegated ESL/Cambridge-correctness authority):
+the proposed IPA source, cmudict, is an American-English (General American, rhotic)
+pronunciation dictionary. If EngQuest's production TTS audio voice is British/RP (common
+for Cambridge YLE-oriented content), the auto-generated IPA would systematically mismatch
+the actual audio students hear during Voice Shadowing — undermining the feature's purpose.
+Dispatched a requirement for Antigravity to verify the actual TTS voice/locale config in
+generate_week_audio_universal.mjs and report back with evidence before building
+tag_vocabulary_phonetics.mjs; if the voice is non-American, an accent-appropriate IPA
+source or an explicit owner decision is required before proceeding.
+
+STATUS: Round 52 direction approved (Option A), build gated on accent-verification
+evidence. Awaiting Antigravity's confirmation before full implementation begins.
+
+[ROUND 52 SUBMISSION — TTS ACCENT FORENSIC AUDIT & IPA / PAST-TENSE TRIAD AUTO-TAGGER IMPLEMENTED & VERIFIED]
+
+1. Prerequisite Accent Verification (100% General American / en-US Proven):
+   - Forensic analysis of all TTS production synthesis scripts across the codebase:
+     * `scripts/generate_week_audio_universal.mjs` (Line 68): voice: { languageCode: 'en-US', name: voice }. Lines 36-54: boy -> 'en-US-Journey-D', man -> 'en-US-Neural2-D', woman -> 'en-US-Neural2-F', girl/narrator -> 'en-US-Journey-F'. Lines 158, 178, 185: Shadowing -> 'en-US-Journey-F', Dictation -> 'en-US-Neural2-F', Explore/CLIL -> 'en-US-Journey-F'.
+     * `scripts/generate_w33_audio_canonical.mjs` (Golden Standard): Lines 55-64 & Line 81: voice: { languageCode: 'en-US', name: profile.voice } with en-US-Journey-F, en-US-Neural2-F, en-US-Neural2-C, en-US-Neural2-D.
+     * `src/services/voiceService.js`: Line 184 (GOOGLE_TTS_VOICE = 'en-US-Journey-F'), Line 1183 (languageCode: 'en-US'), Line 1190 (useGoogleTTSDirect default 'en-US-Journey-F').
+   - Conclusion: 100% of production TTS audio is General American (en-US). cmudict (General American ARPAbet -> IPA) is the exact 1-to-1 matching phonetic standard.
+
+2. Production Tooling Implemented:
+   - `scripts/tag_vocabulary_phonetics.mjs`:
+     * Generates GA IPA phonetic transcriptions (/.../) for target vocabulary in blueprint.json.
+     * Accurately tokenizes and transcribes single words, compound words, and phrasal verbs (e.g. "living room", "wake up").
+     * Classifies verbs into Regular vs Irregular (70+ common Cambridge verbs mapped with past simple & participle).
+     * Partitions regular verbs into the phonetic triad: /ɪd/ (after /t, d/), /t/ (after voiceless consonants), /d/ (after voiced consonants/vowels).
+     * Handles non-verb vocabulary (is_verb: false, full IPA).
+     * Invariants enforced: Default mode is --dry-run (zero disk mutations). Requires --write to persist. Cryptographic freeze guard protects W33 & W34 (requires --force to override, exits code 1). Throws on unknown phonetic words.
+
+3. Independent Verification & Test Suite:
+   - `scripts/test_vocabulary_phonetics.mjs`: 10/10 PASS (100% success rate).
+     * Test 1: Frozen guard blocks W33 overwrite without --force -> PASS
+     * Test 2: Frozen guard blocks W34 overwrite without --force -> PASS
+     * Test 3: Out-of-bounds week exits with error -> PASS
+     * Test 4: Phonological triad classification (/t/, /d/, /ɪd/) on Cambridge regular verbs -> PASS
+     * Test 5: Irregular verb detection and inflected form generation -> PASS
+     * Test 6: Multi-word phrase and phrasal verb phonetics and classification -> PASS
+     * Test 7: Non-verb words correctly tagged with IPA and is_verb: false -> PASS
+     * Test 8: End-to-end dry-run validation on Week 38 blueprint -> PASS (8 words tagged, Triad Complete: YES)
+     * Test 9: Regular past tense spelling doubling and suffix rules -> PASS
+     * Test 10: Zero disk mutation invariant in default dry-run mode -> PASS
+   - W33 Golden Freeze: 147/147 locked files verified (100% PASS).
+   - W34 Golden Freeze: 106/106 locked files verified (100% PASS).
+   - Blueprint Ingestion Suite: 14/14 tests PASS (100% PASS).
+
+4. Review Package:
+   - Generated at `docs/review_packages/round52_20261105.zip`.
+   - Embeds post-commit Git HEAD and all forensic logs.
+
+STATUS: Round 52 complete and ready for independent verification.
 
 
