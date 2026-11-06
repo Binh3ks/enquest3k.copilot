@@ -1,9 +1,9 @@
 {
-  "commit": "241622335a9093a69c55c3794c077bea17d6bc17",
-  "git_commit": "241622335a9093a69c55c3794c077bea17d6bc17",
-  "shortCommit": "24162233",
-  "message": "feat(curriculum): mass batch tag vocabulary IPA & past-tense triad across 154 unfrozen weeks [multi-agent-review]",
-  "builtAt": "2026-11-06T02:57:21.477Z",
-  "build_timestamp": "2026-11-06T02:57:21.478Z",
+  "commit": "caf2ac6c9a4ed640f5343ba5ff2c7f5658239f7a",
+  "git_commit": "caf2ac6c9a4ed640f5343ba5ff2c7f5658239f7a",
+  "shortCommit": "caf2ac6c",
+  "message": "fix(safety): hotfix limit live syllabus trips to 34 to isolate W35 data pollution [multi-agent-review]",
+  "builtAt": "2026-11-06T04:58:45.856Z",
+  "build_timestamp": "2026-11-06T04:58:45.856Z",
   "env": "production"
 }

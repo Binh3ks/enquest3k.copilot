@@ -1,83 +1,16 @@
-// Pure Generated Speaking Hub for Week 35
-export const speakingHub = {
-  talkshow_video: {
-    video_id: "forest_cooperation_w35",
-    title: "Animal Friendship & Teamwork in Nature"
-  },
-  info_exchange_cards: {
-    candidate_card: {
-      title: "The Lion's Home (Leo)",
-      fields: [
-        { label: "Location", value: "Green Valley Forest", known: true },
-        { label: "Favorite Food", value: null, known: false },
-        { label: "Resting Time", value: "Sunny Afternoons", known: true },
-        { label: "Best Friend", value: null, known: false }
-      ]
-    },
-    examiner_card: {
-      title: "The Mouse's Home (Milo)",
-      fields: [
-        { label: "Location", value: "Under the Tall Oak Tree", known: true },
-        { label: "Favorite Food", value: null, known: false },
-        { label: "Special Skill", value: "Chewing Strong Ropes", known: true },
-        { label: "Best Friend", value: null, known: false }
-      ]
-    },
-    full_answers: {
-      "Location": ["Green Valley Forest", "Under the Tall Oak Tree"],
-      "Favorite Food": ["Fresh Wild Berries & Meat", "Small Grass Seeds"],
-      "Resting Time": ["Sunny Afternoons", "Cool Evenings"],
-      "Special Skill": ["Chewing Strong Ropes", "Running Fast on Grass"],
-      "Best Friend": ["Mighty Forest Lion", "Gentle Forest Animals"]
-    },
-    prompt_questions: [
-      "Where does the character live?",
-      "What is the special skill?",
-      "When is the resting time?"
-    ],
-    examiner_questions: [
-      { id: "eq1", text: "Where does the mouse live?", audio_url: "/audio/week35/exam_intro_S2.mp3" },
-      { id: "eq2", text: "What is the mouse's special skill?", audio_url: "/audio/week35/exam_intro_S3.mp3" },
-      { id: "eq3", text: "What did the mouse use to rescue the lion?", audio_url: "/audio/week35/exam_intro_S4.mp3" }
-    ]
-  },
-  picture_story: {
-    title: "The Lion and the Little Mouse",
-    examiner_intro: "Look at these four pictures. They tell a story about a lion and a little mouse. First, I'll tell you about picture one. Then you tell me about pictures two, three, and four.",
-    images: [
-      { id: 1, image_url: "/images/week35/webtoon_scene_1.png", narrator_prompt: "The lion was sleeping peacefully under a big tree in the forest." },
-      { id: 2, image_url: "/images/week35/webtoon_scene_2.png", narrator_prompt: "A tiny mouse ran across his paw and woke him up." },
-      { id: 3, image_url: "/images/week35/webtoon_scene_3.png", narrator_prompt: "The lion caught him, but let him go after the mouse promised to help." },
-      { id: 4, image_url: "/images/week35/webtoon_scene_4.png", narrator_prompt: "Later, hunters trapped the lion, and the brave mouse chewed the ropes to free him." }
-    ]
-  },
-  personal_questions: {
-    examiner_intro: "Now let's talk about you. Please listen to each question and answer clearly.",
-    questions: [
-      { id: "q1", question: "What's your favorite animal?", topic: "animals", sample_answer_hint: "My favorite animal is the lion because it is brave and strong." },
-      { id: "q2", question: "What do you usually do on weekends?", topic: "hobbies", sample_answer_hint: "I usually read storybooks and play soccer in the park." },
-      { id: "q3", question: "Tell me about your best friend.", topic: "friends", sample_answer_hint: "My best friend is kind and helps me with my homework." },
-      { id: "q4", question: "Where do you like going on holidays?", topic: "holidays", sample_answer_hint: "I like going to the countryside to see nature." }
-    ]
-  },
-  find_differences: {
-    hotspotCoordinateSource: "calibration-file-derived",
-    picA: {
-      title: "Picture A (Forest Afternoon)",
-      image_url: "/images/week35/w35_diff_scene_a.jpg"
-    },
-    picB: {
-      title: "Picture B (Forest Afternoon Difference)",
-      image_url: "/images/week35/w35_diff_scene_b.jpg"
-    },
-    differences: [
-      { id: "d1", name: "Mouse Tail Direction", prompt_en: "In Picture A, the mouse tail points up, but in Picture B, it points down.", x: 28, y: 18 },
-      { id: "d2", name: "Tree Flower Color", prompt_en: "In Picture A, the flower is pink, but in Picture B, it is yellow.", x: 70, y: 38 },
-      { id: "d3", name: "Butterfly on Rock", prompt_en: "In Picture A, there is a blue butterfly, but in Picture B, there is no butterfly.", x: 22, y: 58 },
-      { id: "d4", name: "Sun Position", prompt_en: "In Picture A, the sun is high, but in Picture B, it is behind a cloud.", x: 45, y: 22 }
-    ]
-  }
+/**
+ * Week 35 Gold Standard Data — Speaking Hub (Clean Un-authored Baseline)
+ * Theme: "Storytelling Practice 2 (Personal Recount)"
+ */
+
+import mindmap from './mindmap.js';
+import ask_ai from './ask_ai.js';
+
+export const speakingHubData = {
+  week: 35,
+  theme: "Storytelling Practice 2 (Personal Recount)",
+  mindmap,
+  ask_ai
 };
 
-export const speakingHubData = speakingHub;
-export default speakingHub;
+export default speakingHubData;

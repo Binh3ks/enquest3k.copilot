@@ -1368,36 +1368,204 @@ tag_vocabulary_phonetics.mjs --all --write across the 154 un-frozen weeks, with
 before/after checksum TSV, post-write re-verification (leak scan, freeze guards, test
 suite, build), and before/after full content of 3 sample blueprint.json files included
 as evidence for independent re-verification.
+[ROUND 55 — AUDIO-READINESS AUDIT REVIEWED: ARCHITECTURE APPROVED, W35 DATA POLLUTION
+ESCALATED AS P0]
 
-[ROUND 54 SUBMISSION — BATCH WRITE ON 154 WEEKS COMPLETE, TSV CHECKSUMS & EVIDENCE ARCHIVED]
+Reviewed read-only 156-week audio-readiness audit. Census confirmed: 0 weeks currently
+AUDIO_READY-and-unfrozen (W33/W34 both complete and frozen already); 3 weeks PARTIAL
+(W35, W36, W37); 151 weeks BLOCKED pending Giai đoạn 2 authoring (consistent with Round 52
+projection).
 
-1. Batch Write Execution:
-   - Executed: `node scripts/tag_vocabulary_phonetics.mjs --all --write`.
-   - All 154 un-frozen weeks mutated with General American IPA and phonology_summary.
-   - W33 and W34 automatically skipped per freeze manifests (zero overrides, zero --force).
-   - Total words tagged: 778 / 778 (100.00% IPA coverage).
-   - Total Fail-Loud words: 0.
+Approved the proposed Batch Audio Generator architecture (freeze-check skip, pre-flight
+Fail-Loud text-completeness gate, vocab MP3 module, standardized en-US voice persona
+mapping, post-generation integrity gate) — correctly scoped to Nhóm 1 (orchestration of
+existing validated text only, no new content generation).
 
-2. Checksum TSV Table:
-   - Generated at `docs/TAGGED_154_BLUEPRINTS_CHECKSUMS.tsv` with exactly 154 rows.
-   - Records before-and-after SHA-256 hashes for all 154 modified blueprint.json files.
+ESCALATED SEPARATELY AS HIGHER PRIORITY: Week 35's vocab.js and reading_hub.js shadowing
+data are not merely incomplete — they contain WRONG content, verbatim copy-pasted from
+W34 (Lion and the Mouse vocabulary/story) instead of W35's actual camping theme. Unlike
+W36/W37 (genuinely empty stubs), this is live-looking production content (full file
+directory structure, not blueprint-only) silently showing incorrect pedagogical material.
+Dispatched urgent requirement to confirm whether W35 is currently deployed/accessible to
+real students, trace the git history root cause, and report findings before any further
+automation work proceeds — explicitly NOT authorizing Antigravity to author replacement
+content itself (that remains Nhóm 2, paused per owner decision).
 
-3. Before/After Sample Blueprints:
-   - W1 (Hello, World!): noun/verb tagging, `name` -> `/nˈeɪm/` (/d/ group).
-   - W38 (Animal Abilities): complete triad verified (`jump` -> /t/, `climb` -> /d/, `hunt` -> /ɪd/).
-   - W142 (Geometry Review): academic verbs tagged (`assert` -> /ɪd/, `propose` -> /d/, `suggest` -> /ɪd/, `imply` -> /d/).
-   - Archived in `docs/agent_artifacts/samples_before/` and `docs/agent_artifacts/samples_after/`.
+STATUS: Round 56 dispatched with two tracks — (A) urgent W35 data-pollution investigation
+and live-status confirmation [P0], (B) parallel build of batch_generate_week_audio.mjs per
+approved architecture, with an added DATA_POLLUTION detection category in the pre-flight
+gate to catch similar cross-week contamination automatically in the future.
+[ROUND 56 — P1 LIVE CONTENT INCIDENT: W35 DATA POLLUTION CONFIRMED EXPOSED TO REAL
+STUDENTS. EMERGENCY HOTFIX AUTHORIZED.]
 
-4. Post-Write System Integrity Re-Verification:
-   - `node scripts/scan_vietnamese_vocab_leak.mjs`: 0/156 leaked weeks (100% clean).
-   - `node scripts/guard_golden_w33_freeze.mjs`: 147/147 locked files verified (100% PASS).
-   - `node scripts/guard_golden_w34_freeze.mjs`: 106/106 locked files verified (100% PASS).
-   - `node scripts/test_blueprint_ingestion.mjs`: 14/14 PASS.
-   - `node scripts/test_vocabulary_phonetics.mjs`: 12/12 PASS.
-   - `npm run build`: Exit code 0 (`built in 14.15s`).
+Confirmed via git forensic evidence: commit 9a67e462c85ba34870fc9d8eee18bc9d408f0139
+(Aug 26, 2026) ran a data-generation script with a hardcoded W34 vocabulary array that
+overwrote Week 35's vocab.js, reading_hub.js, listening_hub.js, speaking_hub.js, and
+writing_hub.js with W34's "Lion and the Mouse" content. Confirmed via git show on the
+prior commit (351e5d24815, Aug 24, 2026) that W35 previously had its own correct 20-word
+camping vocabulary. Confirmed via QuestSidebar.jsx/PassportTracker.jsx (TOTAL_TRIPS=36)
+that real students can currently navigate to and are exposed to this corrupted Week 35
+content with broken audio (0 MP3 files). Scoped the contamination (grep for
+"vocab_lion.mp3") to W34/W35 only — W36/W37 confirmed to have their own legitimate (if
+incomplete) content, not cross-contaminated.
 
-5. Review Package:
-   - Package: `docs/review_packages/round54_20261105.zip`.
-   - Embeds post-commit Git HEAD and all forensic artifacts.
+AUTHORIZED IMMEDIATELY (within delegated content-safety authority, given active student
+exposure): emergency hotfix changing TOTAL_TRIPS from 36 to 34 in both files to hide
+Trip 35-37 from student navigation until content is properly restored/authored — minimal
+risk, fully reversible, dispatched for same-day deployment.
 
+NOT YET AUTHORIZED: full content restoration via git checkout of the pre-pollution
+commit — requires first confirming no other legitimate commits touched week_35/ in the
+interim (to avoid losing other fixes), and a full fresh 6-criteria Giai đoạn 2 audit on
+the restored (2.5-month-old, unverified) content before treating it as production-ready.
+
+Batch Audio Generator (Part B of this round's work) — architecture description accepted
+as sound (freeze guard, pre-flight fail-loud gate, data-pollution signature detector that
+correctly caught W35, stub detector that correctly caught W36/W37), but NOT YET APPROVED
+pending zip evidence (no package submitted this round). Also requested generalizing the
+pollution detector beyond the current hardcoded W34-signature list into a pairwise
+cross-week content comparison, since the current detector would only catch this one known
+incident, not an undiscovered one.
+
+STATUS: Round 56 dispatched — Priority 1 (TOTAL_TRIPS hotfix) to ship same-day with its
+own evidence zip; Priority 2 (W35 content restoration) gated on git-history safety check;
+Priority 3 (Batch Audio Generator) held pending zip verification.
+[ROUND 56 — HOTFIX DEPLOYED & VERIFIED (minor manifest bug flagged); BATCH AUDIO GENERATOR
+APPROVED & CLOSES NHÓM 1 BACKLOG; W35 RESTORATION SCOPE INCOMPLETE, STILL BLOCKED]
+
+Part 1 (Emergency hotfix): Independently verified round56_hotfix_w35_safety.zip (SHA256
+eaa2a40e...b4b2a6269, exact match). TOTAL_TRIPS 36→34 diff confirmed correct in both
+QuestSidebar.jsx and PassportTracker.jsx. Screenshots confirmed genuine PNG captures (not
+fabricated) showing the live Trip Selector modal; DOM evidence JSON confirms Trip 35/36/37
+absent, exactly 34 cards rendered. Hotfix deployed to production (commit
+caf2ac6c9a4ed640f5343ba5ff2c7f5658239f7a, confirmed via git show header in the diff patch
+and cross-referenced against the separate batch-audio-generator package's manifest).
+FLAGGED: the hotfix zip's manifest.txt contains a second, inconsistent "Commit:" field
+(caf2ac6cb013143c7b6ae205ba72b64d1ea0aa06) that doesn't match any other evidence — likely a
+packaging-script bug, does not affect the correctness of the deployed hotfix itself, but
+needs fixing for manifest reliability going forward.
+
+Part 2 (W35 restoration risk analysis): Correctly identified via git log that a blanket
+checkout of week_35/ to the pre-pollution commit would destroy legitimate later work
+(blueprint.json, skill_practice_hub.js, Gate17 fixes from commit 0612d1ab530). However, the
+proposed selective fix (checkout vocab.js only) is INCOMPLETE — it does not address the
+confirmed pollution in reading_hub.js's shadowingData.sentences. Requested scope expansion:
+determine whether commit 0612d1ab530 touched reading_hub.js before deciding whether a
+selective file checkout or a manual field-level fix is needed. Restoration remains BLOCKED
+pending this fuller scoping.
+
+Part 3 (Batch Audio Generator): Independently verified round56_batch_audio_generator.zip
+(SHA256 d3683d96...1b80c116813, exact match). Confirmed via direct code read that the
+cross-week pollution detector is genuinely generalized (DYNAMIC_CORPUS built from all
+authored weeks, pairwise comparison with configurable thresholds — no hardcoded "lion"/
+"mouse" signatures remain). Dry-run log, 6/6 test suite, and W33/W34 freeze guards all
+confirmed via direct log inspection, matching the report. APPROVED — closes out the Nhóm 1
+automation backlog (Blueprint Ingestion, Auto-Freeze Generator, IPA/Past-Tense Tagger,
+Batch Audio Generator all now built and verified).
+
+STATUS: Round 56 Parts 1 & 3 closed/approved. Part 2 (W35 content restoration) still
+blocked pending fuller scope analysis of reading_hub.js contamination.
+[ROUND 57 — W35 FORENSIC SCOPE EXPANDED: CONTAMINATION FAR WORSE THAN INITIALLY ASSESSED,
+RESTORATION STILL BLOCKED PENDING FIELD-LEVEL SOURCE MAPPING]
+
+Reviewed expanded forensic investigation (text report, no zip — explicitly confirmed no
+checkout/write executed this round). Root cause of the manifest hash discrepancy flagged in
+Round 56 confirmed resolved with supporting evidence (`git cat-file -t` confirms the garbage
+hash doesn't exist in repo; fix removes the duplicate hardcoded field) — re-packaged zip
+(SHA256 5438506efb6651613a89632b2adb8a14abf15c451f079d12b100fdc5244d79df) noted but not yet
+independently verified (no zip attached this round).
+
+MAJOR SCOPE EXPANSION: contamination from the Aug 26, 2026 commit (9a67e462c8) is far more
+extensive than Round 55/56 initially assessed — not just vocab.js and one shadowing
+sentence, but 80-100% of reading_hub.js, listening_hub.js, speaking_hub.js, writing_hub.js,
+and skill_practice_hub.js all contain Week 34 (Lion and Mouse) content instead of Week 35's
+camping theme. Confirmed technically why a raw git checkout is unsafe: the pre-pollution
+commit (351e5d24815, Aug 24) used an incompatible old schema (missing required named
+exports) that would crash the app on import if checked out directly.
+
+BLOCKING CONCERN RAISED: the proposed restoration plan's source-mapping table is incomplete
+— no verified camping-theme source was identified for "Grammar drills" in
+skill_practice_hub.js, and skill_practice_hub.js itself is a file that never existed before
+the pollution-era commit (created fresh in 0612d1ab530), so parts of it have no "clean
+version" to restore from. Dispatched a requirement for a complete field-by-field source
+mapping (verified-source vs. no-source) before any write operation, explicitly prohibiting
+Antigravity from authoring new content to fill gaps — any field without a verified historical
+camping-content source must be flagged separately for Nhóm 2 (human-supervised authoring),
+consistent with the owner's standing decision to pause Nhóm 2 work.
+
+STATUS: Round 57 dispatched — field-level source-mapping report required before any W35
+restoration write operation is authorized. Batch Audio Generator (Round 56 Part 3) remains
+closed/approved; Nhóm 1 automation backlog complete.
+[ROUND 58 — W35 DATA MIGRATION (NHÓM A) APPROVED; SUMMARY ARITHMETIC ERROR FLAGGED;
+RECLASSIFIED 1 FIELD]
+
+Reviewed the field-level source-mapping audit (21 fields claimed, no code written yet).
+Independently recounted all 6 detail tables and found the "Tổng kết nhanh" headline summary
+contains a counting error: actual total is 30 fields (20 with verified Git-history sources,
+10 without), not the claimed 21/14/7. The detailed per-file breakdown and the itemized
+Nhóm A/B lists in Section III were cross-checked and found internally consistent with the
+30-field table — only the top-line summary numbers were wrong. Flagged for correction with
+an automated count check going forward.
+
+Reclassified one field: shadowingData.sentences[].words/[].ipa (item 2.4) moved from
+"needs human authoring" to "part of the Nhóm 1 migration" — once the source sentence text
+is migrated, per-word IPA tagging is a mechanical application of the existing cmudict-based
+tagger tool (Round 52/54), not new content creation.
+
+APPROVED: proceed with migrating the 20 verified-source fields (+ field 2.4 via existing
+tooling) from the pre-pollution commit (351e5d24815) and satellite files (explore.js,
+shadowing.js, dictation.js, singapore_math.js, ask_ai.js, writing.js, daily_watch.js) into
+the current Master 15-Quest schema structure across all 6 affected files.
+
+NOT APPROVED / held for Nhóm 2 (paused per owner decision): 9 fields with no verified
+historical source — notably 4 of 6 Cambridge Flyers Reading & Writing parts (rw_part2,
+reading_part3_story, rw_part4, rw_part5), meaning W35's exam content remains materially
+incomplete even after this migration. Explicitly flagged: TOTAL_TRIPS hotfix (34) must stay
+in place after migration completes — W35 is not ready to reopen to students until Nhóm 2
+authoring fills the remaining 9-field gap.
+
+STATUS: Round 58 dispatched for Nhóm A data migration execution with before/after diff
+evidence required for independent re-verification.
+## Round 59 — Strategic Pivot: Nhóm 2 Reactivated, Claude as ESL QA Gate
+
+**Decision context:** Owner reviewed the Round 58 W35 migration report and raised
+a process concern (W35 investigation/fixes proceeded across Rounds 55-58 without
+granular owner check-ins). This led to a broader strategic re-evaluation, not just
+a process fix.
+
+**Owner's new mandate (verbatim intent):**
+- Any week with legacy/corrupted data (W35 included) should be wiped clean and
+  rebuilt from scratch via the standardized SOP pipeline — no ad hoc historical
+  data restoration/migration going forward.
+- "Nhóm 2" (AI-generated Giai đoạn 2 pedagogical content — CLIL articles, Cambridge
+  R&W Parts 1-6, Listening/Speaking scripts, etc.), previously paused pending human
+  supervision, is now reactivated as a fully automated pipeline: AI generates content,
+  packages it as a reviewable zip, and **Claude** (not the owner) reviews it as the
+  ESL-expert quality gate. Owner engages only when the pipeline is genuinely stuck
+  or for major ("chủ trương lớn") strategic decisions.
+
+**Two clarifying decisions confirmed via AskUserQuestion:**
+1. W35 treatment: **Discard the Round 58 Group A migration entirely** (even though
+   independently verified 100% git-history-sourced, zero AI fabrication) — rebuild
+   W35 100% fresh through the new standardized pipeline, same as every other
+   un-authored week. No special-casing by week.
+2. Rollout scale: **Pilot a small batch of weeks first** (pipeline built, run on a
+   handful of weeks, Claude reviews each thoroughly, pipeline refined) before
+   scaling to the ~150 remaining weeks — not a full-scale deployment immediately.
+
+**Dispatched to Antigravity (Round 59, Phase 0 only):**
+- Full 156-week Giai đoạn 2 completion inventory (factual basis for pilot selection)
+- Revert of W35's Round 58 Group A migration commit(s), reset to clean
+  blueprint-only baseline (zero pollution, zero migrated content)
+- Proposal of 4 pilot weeks (W35 mandatory + 3 spanning Year 1/2/3 difficulty)
+- Explicit stop-gate: no content generation, no pipeline build, no TOTAL_TRIPS
+  change until this Phase 0 zip is reviewed and approved
+
+**Safety disciplines carried forward into the new scope:** zip-based independent
+verification, Fail-Loud design, W33/W34 freeze guards untouched, no silent
+fabrication, staged review (AI-generated content zipped for review, never
+auto-merged to production), TOTAL_TRIPS=34 hotfix remains until each pilot week
+passes Giai đoạn 4 Quality Gates + Claude's ESL-expert review.
+
+**Status:** Awaiting Round 59 Phase 0 zip from Antigravity.
 
