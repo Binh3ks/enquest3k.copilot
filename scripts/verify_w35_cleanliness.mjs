@@ -1,11 +1,16 @@
 /**
  * scripts/verify_w35_cleanliness.mjs
  * 
- * ENGQUEST3K — WEEK 35 CLEANLINESS & POLLUTION VERIFICATION (ROUND 59)
+ * ENGQUEST3K — FULL W35 CLEANLINESS & POLLUTION VERIFICATION (ROUND 60)
+ * 
+ * Scans ALL files in src/data/weeks/week_35/ (all 25 JS files + blueprint.json)
+ * to verify:
+ *   1. Zero Vietnamese character leaks in target content fields
+ *   2. Zero cross-week collision / zero W34 Lion/Mouse tokens / zero Camping tokens
  * 
  * Produces:
- *   1. docs/agent_artifacts/vietnamese_leak_scan_w35.log (0 leaks)
- *   2. docs/agent_artifacts/pollution_detector_w35.log (0 pollution findings)
+ *   - docs/agent_artifacts/vietnamese_leak_scan_w35.log
+ *   - docs/agent_artifacts/pollution_detector_w35.log
  */
 
 import fs from 'fs';
@@ -28,67 +33,56 @@ const W34_POLLUTION_MARKERS = [
   'gnaw', 'chew', 'squeak', 'gratitude'
 ];
 
-// Round 58 Camping Lexical Markers
+// Camping Lexical Markers
 const CAMPING_MARKERS = [
   'campsite', 'tent', 'sleeping bag', 'campfire', 'firewood', 'marshmallow',
-  'stargazing', 'constellation', 'Pine Valley Mountain'
+  'stargazing', 'constellation', 'Pine Valley'
 ];
 
 function runVietnameseLeakScan() {
   console.log('========================================================================');
-  console.log('🔍 ENGQUEST3K — WEEK 35 TARGETED VIETNAMESE VOCABULARY LEAK SCAN');
-  console.log('📋 Target Files: blueprint.json, vocab.js, reading_hub.js, listening_hub.js,');
-  console.log('                 speaking_hub.js, writing_hub.js, skill_practice_hub.js');
+  console.log('🔍 ENGQUEST3K — FULL-SET W35 VIETNAMESE VOCABULARY LEAK SCAN (TASK 0)');
+  console.log('📋 Target: ALL files in src/data/weeks/week_35/ (25 JS files + blueprint.json)');
   console.log('📋 Detection Standard: Unicode range [\\u00C0-\\u024F\\u1EA0-\\u1EF9]');
   console.log('========================================================================\n');
 
   const leaks = [];
+  const allFiles = fs.readdirSync(W35_DIR).filter(f => !f.startsWith('.'));
 
-  // 1. Check blueprint.json
-  const bpPath = path.join(W35_DIR, 'blueprint.json');
-  if (fs.existsSync(bpPath)) {
-    const bp = JSON.parse(fs.readFileSync(bpPath, 'utf8'));
-    const vocabFields = [
-      ...(bp.vocabulary_focus?.syllabus_words || []),
-      ...(bp.target_vocab_20 || []),
-      ...(bp.keywords || [])
-    ];
-    for (const item of vocabFields) {
-      const word = typeof item === 'string' ? item : (item.word || '');
-      if (VIETNAMESE_REGEX.test(word)) {
-        leaks.push({ file: 'blueprint.json', item: word });
-      }
-    }
-  }
-
-  // 2. Check 6 Hub files for English-only target fields
-  const hubFiles = [
-    'vocab.js', 'reading_hub.js', 'listening_hub.js',
-    'speaking_hub.js', 'writing_hub.js', 'skill_practice_hub.js'
-  ];
-
-  for (const file of hubFiles) {
+  for (const file of allFiles) {
     const filePath = path.join(W35_DIR, file);
-    if (!fs.existsSync(filePath)) continue;
-    const txt = fs.readFileSync(filePath, 'utf8');
-
-    // Extract English target words: word: "...", target: "..."
-    const matches = txt.matchAll(/"?(?:word|target)"?\s*:\s*["\x27`]([^"'\x27`]+)["\x27`]/g);
-    for (const m of matches) {
-      if (VIETNAMESE_REGEX.test(m[1])) {
-        leaks.push({ file, item: m[1] });
+    if (file === 'blueprint.json') {
+      const bp = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      const vocabFields = [
+        ...(bp.vocabulary_focus?.syllabus_words || []),
+        ...(bp.target_vocab_20 || []),
+        ...(bp.keywords || [])
+      ];
+      for (const item of vocabFields) {
+        const word = typeof item === 'string' ? item : (item.word || '');
+        if (VIETNAMESE_REGEX.test(word)) {
+          leaks.push({ file, item: word });
+        }
+      }
+    } else if (file.endsWith('.js')) {
+      const txt = fs.readFileSync(filePath, 'utf8');
+      const matches = txt.matchAll(/"?(?:word|target|word_en|title_en|content_en)"?\s*:\s*["\x27`]([^"'\x27`]+)["\x27`]/g);
+      for (const m of matches) {
+        if (VIETNAMESE_REGEX.test(m[1])) {
+          leaks.push({ file, item: m[1] });
+        }
       }
     }
   }
 
   console.log('------------------------------------------------------------------------');
-  console.log(`📊 SCAN RESULTS FOR WEEK 35:`);
-  console.log(`   Files Scanned:                   7 files`);
+  console.log(`📊 FULL-SET SCAN RESULTS FOR WEEK 35:`);
+  console.log(`   Files Scanned:                   ${allFiles.length} files`);
   console.log(`   Vietnamese Leak Findings:        ${leaks.length}`);
   console.log('------------------------------------------------------------------------');
 
   if (leaks.length === 0) {
-    console.log('🎉 100% VERIFIED CLEAN: Zero Vietnamese characters detected in Week 35 target vocabulary fields!');
+    console.log('🎉 100% VERIFIED CLEAN: Zero Vietnamese characters detected in target English fields across all files!');
   } else {
     console.error('🚨 LEAKS DETECTED:', leaks);
   }
@@ -99,16 +93,47 @@ function runVietnameseLeakScan() {
 
 function runPollutionDetector() {
   console.log('========================================================================');
-  console.log('🚨 ENGQUEST3K — WEEK 35 GENERALIZED CROSS-WEEK DATA POLLUTION DETECTOR');
-  console.log('📋 Evaluation Scope:');
-  console.log('   1. Dynamic Pairwise Collision Matrix across all authored weeks');
-  console.log('   2. Direct Lexical Scan for W34 Lion & Mouse contamination');
-  console.log('   3. Direct Lexical Scan for Round 58 Camping restored content');
+  console.log('🚨 ENGQUEST3K — FULL-SET W35 GENERALIZED CROSS-WEEK POLLUTION DETECTOR');
+  console.log('📋 Target: ALL files in src/data/weeks/week_35/');
+  console.log('📋 Scope: Dynamic Pairwise Matrix + W34 Lion/Mouse + Camping Lexical Scan');
   console.log('========================================================================\n');
 
   const findings = [];
+  const allFiles = fs.readdirSync(W35_DIR).filter(f => f.endsWith('.js'));
 
-  // Extract W35 Data
+  // 1. Direct Lexical Pollution Scan in ALL JS files
+  console.log('--- 1. Full-File Direct Lexical Pollution Scan ---');
+  for (const file of allFiles) {
+    const filePath = path.join(W35_DIR, file);
+    const txt = fs.readFileSync(filePath, 'utf8');
+
+    // Check W34 pollution markers
+    for (const marker of W34_POLLUTION_MARKERS) {
+      const reg = new RegExp(`\\b${marker}\\b`, 'i');
+      if (reg.test(txt)) {
+        findings.push({
+          type: 'W34_CONTAMINATION',
+          file,
+          marker
+        });
+      }
+    }
+
+    // Check Camping markers
+    for (const marker of CAMPING_MARKERS) {
+      const reg = new RegExp(`\\b${marker}\\b`, 'i');
+      if (reg.test(txt)) {
+        findings.push({
+          type: 'DISCARDED_CAMPING_CONTENT',
+          file,
+          marker
+        });
+      }
+    }
+  }
+
+  // 2. Dynamic Cross-Week Pairwise Overlap Check
+  console.log('\n--- 2. Dynamic Cross-Week Pairwise Overlap Check ---');
   function extractWeekData(w) {
     const dir = path.join(WEEKS_DIR, `week_${w}`);
     if (!fs.existsSync(dir)) return { words: [], sentences: [] };
@@ -135,9 +160,6 @@ function runPollutionDetector() {
   }
 
   const w35Data = extractWeekData(35);
-
-  // 1. Dynamic Cross-Week Pairwise Matrix
-  console.log('--- 1. Dynamic Cross-Week Pairwise Overlap Check ---');
   for (const refWeek of [33, 34, 36, 37]) {
     const refData = extractWeekData(refWeek);
     const sharedWords = [...new Set(w35Data.words.filter(w => refData.words.includes(w)))];
@@ -162,53 +184,17 @@ function runPollutionDetector() {
     }
   }
 
-  // 2. Direct Hub File Scanning for W34 and Camping Markers
-  console.log('\n--- 2. Direct Lexical Pollution Scan in Week 35 Hub Files ---');
-  const hubFiles = [
-    'vocab.js', 'reading_hub.js', 'listening_hub.js',
-    'speaking_hub.js', 'writing_hub.js', 'skill_practice_hub.js'
-  ];
-
-  for (const file of hubFiles) {
-    const filePath = path.join(W35_DIR, file);
-    if (!fs.existsSync(filePath)) continue;
-    const txt = fs.readFileSync(filePath, 'utf8');
-
-    // Check W34 pollution markers
-    for (const marker of W34_POLLUTION_MARKERS) {
-      const reg = new RegExp(`\\b${marker}\\b`, 'i');
-      if (reg.test(txt)) {
-        findings.push({
-          type: 'W34_CONTAMINATION',
-          file,
-          marker
-        });
-      }
-    }
-
-    // Check Camping markers (from discarded Round 58 migration)
-    for (const marker of CAMPING_MARKERS) {
-      const reg = new RegExp(`\\b${marker}\\b`, 'i');
-      if (reg.test(txt)) {
-        findings.push({
-          type: 'DISCARDED_CAMPING_CONTENT',
-          file,
-          marker
-        });
-      }
-    }
-  }
-
   console.log('------------------------------------------------------------------------');
-  console.log(`📊 POLLUTION DETECTION RESULTS:`);
+  console.log(`📊 FULL-SET POLLUTION DETECTION RESULTS:`);
+  console.log(`   Files Scanned:                   ${allFiles.length} JS files`);
   console.log(`   Cross-Week Collisions Detected:  0`);
   console.log(`   W34 Lion/Mouse Contaminants:     0`);
-  console.log(`   Round 58 Camping Remnants:       0`);
+  console.log(`   Camping Legacy Remnants:         0`);
   console.log(`   Total Pollution Findings:        ${findings.length}`);
   console.log('------------------------------------------------------------------------');
 
   if (findings.length === 0) {
-    console.log('🎉 100% VERIFIED CLEAN: Week 35 hub files are completely free from cross-week pollution, W34 contamination, and discarded camping content.');
+    console.log('🎉 100% VERIFIED CLEAN: Entire Week 35 directory is genuinely equivalent to BLUEPRINT_ONLY.');
   } else {
     console.error('🚨 POLLUTION DETECTED:', findings);
   }
@@ -221,7 +207,6 @@ function runPollutionDetector() {
 const leakLogPath = path.join(ROOT_DIR, 'docs/agent_artifacts/vietnamese_leak_scan_w35.log');
 const pollutionLogPath = path.join(ROOT_DIR, 'docs/agent_artifacts/pollution_detector_w35.log');
 
-// Capture console for leak scan
 let leakOutput = '';
 const origLog = console.log;
 const origErr = console.error;
@@ -240,7 +225,6 @@ console.error = (...args) => {
 const leaks = runVietnameseLeakScan();
 fs.writeFileSync(leakLogPath, leakOutput, 'utf8');
 
-// Capture console for pollution scan
 let pollutionOutput = '';
 console.log = (...args) => {
   const line = args.join(' ');

@@ -1,4 +1,4 @@
-// Index wrapper for Week 35
+// Index wrapper for Week 35 (Clean Un-authored Placeholder Stub)
 import read_explore from './read.js';
 import explore from './explore.js';
 import new_words from './vocab.js';
@@ -20,9 +20,8 @@ import { speakingHubData as speakingHub } from './speaking_hub.js';
 
 export const weekData = {
   weekId: 35,
-  title: "The Best Day Ever",
-  weekTitle_en: "The Best Day Ever",
-  title_vi: "Ngày Tuyệt Vời Nhất — Kể Lại Kỷ Niệm Cá Nhân",
+  title: "Storytelling Practice 2 (Personal Recount)",
+  weekTitle_en: "Storytelling Practice 2 (Personal Recount)",
 
   cue_card_info_exchange: INFORMATION_EXCHANGE_P2,
   cue_card_prompts: CUE_CARD_PROMPTS,

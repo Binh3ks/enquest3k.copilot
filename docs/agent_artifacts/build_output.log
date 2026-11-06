@@ -2,7 +2,7 @@
 > engquest3k@0.0.0 build
 > node scripts/generate_version.mjs && node scripts/verify_wordwagon_content_length.mjs && node scripts/verify_batch1_runner_content.mjs && vite build
 
-✅ Version stamp generated: caf2ac6c (2026-11-06T04:58:45.856Z)
+✅ Version stamp generated: 23c900ec (2026-11-06T07:47:26.845Z)
 🚂 [WordWagon Content Validator] Checking Length-Balanced Invariant (N <= 14)...
   ✓ Round 1: Banner=6w, Options=[1, 1, 1]w, Total N=9w <= 14 (Safety Margin: +7.15s)
   ✓ Round 2: Banner=6w, Options=[1, 1, 1]w, Total N=9w <= 14 (Safety Margin: +7.15s)
@@ -153,46 +153,47 @@ dist/assets/ChroniclesWorldMap-rcpa_LVE.css      24.38 kB │ gzip:   5.36 kB
 dist/assets/DailyRoomScreen-ZARm9eVy.css         53.03 kB │ gzip:  11.02 kB
 dist/assets/ChunkCatapultCanvas-CX_jnbFW.css    119.61 kB │ gzip:  20.59 kB
 dist/assets/index-cW9A0UP5.css                5,461.09 kB │ gzip: 416.63 kB
+dist/assets/shadowing_ipa-B_c-KnzB.js             0.08 kB │ gzip:   0.10 kB │ map:      0.27 kB
 dist/assets/shadowing_ipa-l-F_ukYR.js             0.12 kB │ gzip:   0.13 kB │ map:      0.32 kB
 dist/assets/shadowing_ipa-j6S8OMaP.js             0.12 kB │ gzip:   0.13 kB │ map:      0.32 kB
+dist/assets/grammar-CBeWgPWq.js                   0.13 kB │ gzip:   0.14 kB │ map:      0.36 kB
+dist/assets/read-DOp8jRFj.js                      0.19 kB │ gzip:   0.18 kB │ map:      0.47 kB
 dist/assets/index-Dxszx95V.js                     0.19 kB │ gzip:   0.18 kB │ map:      0.63 kB
+dist/assets/writing_hub-DzHS97Ey.js               0.33 kB │ gzip:   0.27 kB │ map:      0.82 kB
 dist/assets/grammar-B7gR7sVh.js                   0.34 kB │ gzip:   0.25 kB │ map:      0.64 kB
+dist/assets/listening_hub-DryjjyRW.js             0.34 kB │ gzip:   0.28 kB │ map:      1.09 kB
 dist/assets/grammar-CbL9GK31.js                   0.34 kB │ gzip:   0.24 kB │ map:      0.65 kB
-dist/assets/reading_hub-BnZnkSHJ.js               0.36 kB │ gzip:   0.29 kB │ map:      0.77 kB
-dist/assets/shadowing_ipa-BRtOV6r5.js             0.39 kB │ gzip:   0.28 kB │ map:      0.36 kB
+dist/assets/speaking_hub-Cw0RgjkG.js              0.37 kB │ gzip:   0.30 kB │ map:      1.21 kB
+dist/assets/shadowing_ipa-CKXDftH-.js             0.39 kB │ gzip:   0.28 kB │ map:      0.36 kB
 dist/assets/speaking_hub-COSyge1p.js              0.43 kB │ gzip:   0.31 kB │ map:      1.07 kB
 dist/assets/speaking_hub-pPhlm8pS.js              0.44 kB │ gzip:   0.31 kB │ map:      1.09 kB
+dist/assets/reading_hub-D9MX-5g1.js               0.59 kB │ gzip:   0.40 kB │ map:      0.77 kB
 dist/assets/writing_hub-L0zTJdI8.js               0.78 kB │ gzip:   0.53 kB │ map:      1.42 kB
 dist/assets/writing_hub-DagVOkQS.js               0.79 kB │ gzip:   0.51 kB │ map:      1.44 kB
-dist/assets/shadowing_ipa-SjqCXrri.js             0.93 kB │ gzip:   0.60 kB │ map:      1.39 kB
-dist/assets/reading_hub-BTz76XX1.js               1.11 kB │ gzip:   0.62 kB │ map:      1.94 kB
-dist/assets/reading_hub-Dg25uF3s.js               1.13 kB │ gzip:   0.62 kB │ map:      1.97 kB
+dist/assets/reading_hub-BGaSdwJp.js               1.11 kB │ gzip:   0.62 kB │ map:      1.94 kB
+dist/assets/reading_hub-QJq-rAjD.js               1.13 kB │ gzip:   0.62 kB │ map:      1.97 kB
 dist/assets/listening_hub-Bim7_iQg.js             1.18 kB │ gzip:   0.65 kB │ map:      2.42 kB
 dist/assets/listening_hub-6A9K3WLV.js             1.24 kB │ gzip:   0.66 kB │ map:      2.48 kB
-dist/assets/listening_hub-rUN1cMD0.js             1.47 kB │ gzip:   0.77 kB │ map:      2.60 kB
-dist/assets/srsGenerator-DH-0eEb-.js              1.62 kB │ gzip:   0.84 kB │ map:      7.09 kB
-dist/assets/grammar-BFqrmcGE.js                   2.01 kB │ gzip:   0.93 kB │ map:      3.49 kB
-dist/assets/week_36_index-DIel8cmW.js             2.02 kB │ gzip:   1.00 kB │ map:      4.04 kB
+dist/assets/week_35_index-CW2eblJ1.js             1.34 kB │ gzip:   0.69 kB │ map:      3.33 kB
+dist/assets/srsGenerator-CojYRmKZ.js              1.62 kB │ gzip:   0.84 kB │ map:      7.09 kB
+dist/assets/week_36_index-D04Anqep.js             2.02 kB │ gzip:   1.00 kB │ map:      4.04 kB
 dist/assets/week_33_real-C1kE5sPR.js              2.09 kB │ gzip:   1.13 kB │ map:      3.28 kB
-dist/assets/week_37_index-TPH1keeR.js             2.09 kB │ gzip:   1.00 kB │ map:      4.11 kB
+dist/assets/week_37_index-Dep85Gcp.js             2.09 kB │ gzip:   1.00 kB │ map:      4.11 kB
 dist/assets/grammar-DvdlVO9s.js                   2.11 kB │ gzip:   0.96 kB │ map:      3.61 kB
 dist/assets/read-Dp1L2wfU.js                      2.15 kB │ gzip:   1.09 kB │ map:      2.81 kB
 dist/assets/read-CVZKuyr9.js                      2.38 kB │ gzip:   1.26 kB │ map:      3.03 kB
 dist/assets/WorksheetGenerator-CAXUaVM4.js        3.87 kB │ gzip:   1.35 kB │ map:      7.67 kB
-dist/assets/writing_hub-C9OmWTJT.js               4.17 kB │ gzip:   1.74 kB │ map:      6.66 kB
 dist/assets/week_34_real-BjCIHHjU.js              4.20 kB │ gzip:   1.74 kB │ map:      8.29 kB
-dist/assets/AdminDashboard-EV-uQdwE.js            4.26 kB │ gzip:   1.37 kB │ map:      8.99 kB
+dist/assets/AdminDashboard-2NpCo8kb.js            4.26 kB │ gzip:   1.37 kB │ map:      8.99 kB
 dist/assets/week_35_real-B006fm42.js              4.40 kB │ gzip:   1.89 kB │ map:      8.49 kB
 dist/assets/week_36_real-BsO9nNXG.js              4.59 kB │ gzip:   1.99 kB │ map:      8.68 kB
 dist/assets/week_37_real-DCnOexo3.js              4.65 kB │ gzip:   1.87 kB │ map:      8.74 kB
-dist/assets/PassportTracker-CF3OJMqy.js           4.75 kB │ gzip:   1.82 kB │ map:     11.11 kB
+dist/assets/PassportTracker-CoB_g2sw.js           4.75 kB │ gzip:   1.82 kB │ map:     11.11 kB
 dist/assets/speaking_hub-DPXwsUVE.js              4.95 kB │ gzip:   1.79 kB │ map:      8.54 kB
 dist/assets/shadowing_ipa-DugC_9cl.js             5.00 kB │ gzip:   1.24 kB │ map:     12.42 kB
-dist/assets/read-CtdE8J-h.js                      5.02 kB │ gzip:   1.94 kB │ map:      7.82 kB
-dist/assets/WordTreasury-D8tNJ275.js              5.54 kB │ gzip:   2.07 kB │ map:     13.12 kB
-dist/assets/writing_hub-bAfg9mm7.js               5.84 kB │ gzip:   2.32 kB │ map:      9.45 kB
-dist/assets/HallOfFameModal-DcbSmFKL.js           6.27 kB │ gzip:   2.27 kB │ map:     12.61 kB
-dist/assets/speaking_hub-BYw-MW4r.js              6.56 kB │ gzip:   2.50 kB │ map:     11.14 kB
+dist/assets/WordTreasury-DNjlUUtn.js              5.54 kB │ gzip:   2.07 kB │ map:     13.12 kB
+dist/assets/writing_hub-BX3evUs8.js               5.84 kB │ gzip:   2.31 kB │ map:      9.45 kB
+dist/assets/HallOfFameModal-CCziPKT8.js           6.27 kB │ gzip:   2.27 kB │ map:     12.61 kB
 dist/assets/shadowing_ipa-GALa4QdA.js             6.63 kB │ gzip:   1.38 kB │ map:     16.72 kB
 dist/assets/MCQBlitzPopup-BMNBZnoQ.js             6.93 kB │ gzip:   3.03 kB │ map:     20.77 kB
 dist/assets/grammar-ROO6a154.js                   7.03 kB │ gzip:   2.18 kB │ map:     13.05 kB
@@ -201,45 +202,44 @@ dist/assets/grammar-D9rGs5h_.js                   7.15 kB │ gzip:   2.11 kB �
 dist/assets/grammar-DGxyJb-X.js                   7.27 kB │ gzip:   2.20 kB │ map:     13.30 kB
 dist/assets/grammar-D1mlcf8z.js                   7.33 kB │ gzip:   2.17 kB │ map:     13.37 kB
 dist/assets/shadowing_ipa-D-DJe1L-.js             7.54 kB │ gzip:   1.47 kB │ map:     18.70 kB
-dist/assets/SecretChamberScreen-CtSFycg8.js       7.64 kB │ gzip:   2.94 kB │ map:     18.87 kB
-dist/assets/week_35_index-Do5LaJXF.js             7.97 kB │ gzip:   3.58 kB │ map:     14.11 kB
+dist/assets/SecretChamberScreen-xSdRrGpZ.js       7.64 kB │ gzip:   2.95 kB │ map:     18.87 kB
 dist/assets/read-c5RN7lWE.js                      8.32 kB │ gzip:   2.44 kB │ map:     11.62 kB
 dist/assets/listening_hub-RGtFOx2Q.js             8.78 kB │ gzip:   2.56 kB │ map:     15.23 kB
-dist/assets/BossCombatScene-CK_mP4iU.js          10.24 kB │ gzip:   4.01 kB │ map:     28.20 kB
-dist/assets/ReviewDashboard-DxxYYE90.js          12.53 kB │ gzip:   4.41 kB │ map:     31.84 kB
+dist/assets/BossCombatScene-CY_EbzUc.js          10.24 kB │ gzip:   4.01 kB │ map:     28.20 kB
+dist/assets/ReviewDashboard-BGfufPwA.js          12.53 kB │ gzip:   4.41 kB │ map:     31.84 kB
 dist/assets/read-BIPNMSmW.js                     13.33 kB │ gzip:   2.57 kB │ map:     20.34 kB
 dist/assets/read-CR9ThhGS.js                     13.56 kB │ gzip:   2.65 kB │ map:     20.55 kB
 dist/assets/read-BkgNaC4X.js                     14.31 kB │ gzip:   2.87 kB │ map:     21.89 kB
 dist/assets/read-CF5mhF9y.js                     14.68 kB │ gzip:   2.78 kB │ map:     22.51 kB
 dist/assets/read-DLmyIYNt.js                     15.19 kB │ gzip:   2.83 kB │ map:     23.09 kB
-dist/assets/BossBattleScreen-BzTAYnSr.js         16.81 kB │ gzip:   6.18 kB │ map:     53.39 kB
-dist/assets/ChroniclesScreen-BXUkTJu7.js         19.02 kB │ gzip:   6.32 kB │ map:     35.83 kB
-dist/assets/extractQuestVocab-CJCfRfPu.js        19.88 kB │ gzip:   6.58 kB │ map:     61.08 kB
-dist/assets/reading_hub-3Kv6Ofd0.js              21.99 kB │ gzip:   7.75 kB │ map:     37.49 kB
-dist/assets/week_35_easy_index-CEQ45Owf.js       24.20 kB │ gzip:   6.22 kB │ map:     49.11 kB
-dist/assets/week_34_easy_index-W8vVe83t.js       24.30 kB │ gzip:   6.04 kB │ map:     49.21 kB
-dist/assets/week_33_easy_index-B1IrKzfq.js       24.81 kB │ gzip:   6.31 kB │ map:     50.40 kB
-dist/assets/week_37_easy_index-BQUAmx9C.js       27.18 kB │ gzip:   6.81 kB │ map:     53.08 kB
-dist/assets/week_34_index-BcPyBK8n.js            27.50 kB │ gzip:   8.95 kB │ map:     50.48 kB
-dist/assets/week_36_easy_index-D7FSPQvI.js       27.52 kB │ gzip:   6.77 kB │ map:     53.43 kB
+dist/assets/BossBattleScreen-C8BhOSy_.js         16.81 kB │ gzip:   6.17 kB │ map:     53.39 kB
+dist/assets/ChroniclesScreen-DyaBPjhf.js         19.04 kB │ gzip:   6.32 kB │ map:     35.83 kB
+dist/assets/extractQuestVocab-DwheH1KI.js        19.88 kB │ gzip:   6.59 kB │ map:     61.08 kB
+dist/assets/reading_hub-6YjnO7Au.js              21.99 kB │ gzip:   7.75 kB │ map:     37.49 kB
+dist/assets/week_35_easy_index-sXjOJvR5.js       24.20 kB │ gzip:   6.23 kB │ map:     49.11 kB
+dist/assets/week_34_easy_index-CTaBNyVT.js       24.30 kB │ gzip:   6.04 kB │ map:     49.21 kB
+dist/assets/week_33_easy_index-CsyrhAK6.js       24.81 kB │ gzip:   6.31 kB │ map:     50.40 kB
+dist/assets/week_37_easy_index-DNIBLvI3.js       27.18 kB │ gzip:   6.81 kB │ map:     53.08 kB
+dist/assets/week_34_index-BaJeL9XH.js            27.50 kB │ gzip:   8.95 kB │ map:     50.48 kB
+dist/assets/week_36_easy_index-BucgZOQv.js       27.52 kB │ gzip:   6.77 kB │ map:     53.43 kB
 dist/assets/vendor-lucide-ifcZIeOc.js            32.84 kB │ gzip:  11.26 kB │ map:    134.63 kB
-dist/assets/ChroniclesWorldMap-CCol8gUF.js       37.46 kB │ gzip:  10.79 kB │ map:    112.96 kB
-dist/assets/ParentDashboard-k8gpQjEV.js          44.68 kB │ gzip:  12.75 kB │ map:     99.76 kB
-dist/assets/QuestDemoScreen-B0lE9PsG.js          54.33 kB │ gzip:  16.76 kB │ map:    181.40 kB
-dist/assets/game-hub-chunk-B-yoJ8mf.js           67.86 kB │ gzip:  19.22 kB │ map:    180.85 kB
-dist/assets/mascot-shop-chunk-C0P4qDPK.js        75.67 kB │ gzip:  20.43 kB │ map:    193.21 kB
-dist/assets/DailyRoomScreen-e-iThht8.js         100.65 kB │ gzip:  30.83 kB │ map:    335.17 kB
-dist/assets/teacher-parent-tools-BXDnn6IC.js    207.34 kB │ gzip:  54.62 kB │ map:    488.52 kB
-dist/assets/ChunkCatapultCanvas-BinLJuqR.js     265.67 kB │ gzip:  72.64 kB │ map:    884.97 kB
-dist/assets/ai-tutor-chunk-CIBN88KJ.js          302.81 kB │ gzip: 131.18 kB │ map:    518.00 kB
-dist/assets/cambridge-hubs-5KdjxpSf.js          369.88 kB │ gzip:  95.73 kB │ map:    955.62 kB
+dist/assets/ChroniclesWorldMap-Djy5evo4.js       37.46 kB │ gzip:  10.79 kB │ map:    112.96 kB
+dist/assets/ParentDashboard-nZ4HY22P.js          44.68 kB │ gzip:  12.75 kB │ map:     99.76 kB
+dist/assets/QuestDemoScreen-BItpgNzz.js          54.33 kB │ gzip:  16.76 kB │ map:    181.40 kB
+dist/assets/game-hub-chunk-CXXZynKa.js           67.87 kB │ gzip:  19.21 kB │ map:    180.85 kB
+dist/assets/mascot-shop-chunk-BB7JJYR-.js        75.67 kB │ gzip:  20.43 kB │ map:    193.21 kB
+dist/assets/DailyRoomScreen-ySt4BAdN.js         100.65 kB │ gzip:  30.83 kB │ map:    335.17 kB
+dist/assets/teacher-parent-tools-CUMgfWFk.js    207.34 kB │ gzip:  54.61 kB │ map:    488.52 kB
+dist/assets/ChunkCatapultCanvas-BlQXEUsk.js     265.67 kB │ gzip:  72.64 kB │ map:    884.97 kB
+dist/assets/ai-tutor-chunk-SB_wbidA.js          302.09 kB │ gzip: 130.98 kB │ map:    516.69 kB
+dist/assets/cambridge-hubs-eGQvU_2A.js          369.88 kB │ gzip:  95.73 kB │ map:    955.62 kB
 dist/assets/dictionary-data-B6BtgR6X.js         870.67 kB │ gzip: 167.15 kB │ map:      0.11 kB
 dist/assets/vendor-phaser-lfjrd5S3.js         1,388.23 kB │ gzip: 370.14 kB │ map: 11,280.73 kB
 dist/assets/vendor-C2W9spwk.js                1,443.29 kB │ gzip: 404.65 kB │ map:  7,059.98 kB
-dist/assets/index-BnTw1M14.js                 2,573.66 kB │ gzip: 641.85 kB │ map:  2,314.63 kB
+dist/assets/index-C09LaQ3y.js                 2,573.83 kB │ gzip: 641.89 kB │ map:  2,315.03 kB
 
 (!) Some chunks are larger than 500 kB after minification. Consider:
 - Using dynamic import() to code-split the application
 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
-✓ built in 12.83s
+✓ built in 13.81s

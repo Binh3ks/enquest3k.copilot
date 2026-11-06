@@ -76,3 +76,4 @@ Based on the 156-week Giai đoạn 2 Completion Inventory (`giaidoan2_inventory.
 2. **Hotfix Retention:** `TOTAL_TRIPS = 34` in `QuestSidebar.jsx` and `PassportTracker.jsx` remains strictly active during pilot authoring. It will only be updated after W35 passes all Giai đoạn 4 Quality Gates and receives sign-off from Claude.
 3. **No Direct Production Commits:** All generated content for the 4 pilot weeks will be packaged into isolated review packages (`.zip`) with complete TSV checklists, diffs, and test logs for Claude's review prior to merging.
 4. **Stop Gate:** No pipeline construction or content generation scripts will execute until this proposal is formally confirmed.
+

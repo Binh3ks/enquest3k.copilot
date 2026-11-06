@@ -139,7 +139,8 @@ function auditWeek(w) {
   }
   if (shadowingStatus === 'MISSING' && fs.existsSync(shadowingPath)) {
     const txt = fs.readFileSync(shadowingPath, 'utf8');
-    if (txt.includes('sentences:')) {
+    const sentenceMatches = txt.match(/["\x27`][^"'\x27`\n]{15,}["\x27`]/g) || [];
+    if (sentenceMatches.length >= 4) {
       shadowingStatus = 'PLACEHOLDER'; // In legacy file without integrated reading_hub schema
     }
   }
@@ -166,16 +167,19 @@ function auditWeek(w) {
   let minigamesStatus = 'MISSING';
   if (fs.existsSync(skillPracticeHubPath)) {
     const txt = fs.readFileSync(skillPracticeHubPath, 'utf8');
-    const hasMath = txt.includes('singapore_math') && (txt.includes('modelData') || txt.includes('problems'));
+    const hasMath = txt.includes('singapore_math') && (txt.includes('modelData') || (txt.includes('problems') && txt.match(/problemText|correctAnswer/)));
     const hasLab = txt.includes('science_lab') && txt.includes('scenarios');
-    const hasGrammar = txt.includes('grammar_drills') && txt.includes('drills');
+    const hasGrammar = txt.includes('grammar_drills') && txt.includes('drills') && (txt.match(/prompt|question/));
     if (hasMath && hasLab && hasGrammar) {
       minigamesStatus = 'PRESENT';
     } else if (hasMath || hasLab || hasGrammar) {
       minigamesStatus = 'PLACEHOLDER';
     }
   } else if (fs.existsSync(mathPath)) {
-    minigamesStatus = 'PLACEHOLDER';
+    const txt = fs.readFileSync(mathPath, 'utf8');
+    if (txt.match(/problemText|correctAnswer/)) {
+      minigamesStatus = 'PLACEHOLDER';
+    }
   }
 
   // 6. Pre-generated MP3 Set (69-84 files)
@@ -193,11 +197,11 @@ function auditWeek(w) {
 
   // Overall Status Classification
   let overallStatus = 'BLUEPRINT_ONLY';
-  if (isBlueprintOnly) {
+  const allDeliverablesMissing = [clilStatus, vocabStatus, shadowingStatus, rwStatus, minigamesStatus, audioStatus]
+    .every(s => s === 'MISSING');
+
+  if (isBlueprintOnly || allDeliverablesMissing) {
     overallStatus = 'BLUEPRINT_ONLY';
-  } else if (w === 35) {
-    // Week 35 is known polluted week, now in unauthored reset state
-    overallStatus = 'POLLUTED';
   } else {
     const isAllPresent = [clilStatus, vocabStatus, shadowingStatus, rwStatus, minigamesStatus, audioStatus]
       .every(s => s === 'PRESENT');
@@ -282,3 +286,4 @@ main().catch(err => {
   console.error('Audit failed:', err);
   process.exit(1);
 });
+

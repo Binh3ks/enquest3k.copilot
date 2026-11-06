@@ -1,15 +1,14 @@
 ========================================================================
-🔍 ENGQUEST3K — WEEK 35 TARGETED VIETNAMESE VOCABULARY LEAK SCAN
-📋 Target Files: blueprint.json, vocab.js, reading_hub.js, listening_hub.js,
-                 speaking_hub.js, writing_hub.js, skill_practice_hub.js
+🔍 ENGQUEST3K — FULL-SET W35 VIETNAMESE VOCABULARY LEAK SCAN (TASK 0)
+📋 Target: ALL files in src/data/weeks/week_35/ (25 JS files + blueprint.json)
 📋 Detection Standard: Unicode range [\u00C0-\u024F\u1EA0-\u1EF9]
 ========================================================================
 
 ------------------------------------------------------------------------
-📊 SCAN RESULTS FOR WEEK 35:
-   Files Scanned:                   7 files
+📊 FULL-SET SCAN RESULTS FOR WEEK 35:
+   Files Scanned:                   26 files
    Vietnamese Leak Findings:        0
 ------------------------------------------------------------------------
-🎉 100% VERIFIED CLEAN: Zero Vietnamese characters detected in Week 35 target vocabulary fields!
+🎉 100% VERIFIED CLEAN: Zero Vietnamese characters detected in target English fields across all files!
 ========================================================================
 

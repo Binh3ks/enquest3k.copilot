@@ -1568,4 +1568,26 @@ auto-merged to production), TOTAL_TRIPS=34 hotfix remains until each pilot week
 passes Giai đoạn 4 Quality Gates + Claude's ESL-expert review.
 
 **Status:** Awaiting Round 59 Phase 0 zip from Antigravity.
+## Round 59/60 — Correction: No legacy content reuse for W35
+
+Claude's Round 59 review proposed reusing W35's uncorrupted pre-existing content files
+(grammar.js, mindmap.js, vocab_dictionary_master.js, etc.) as pipeline input, reasoning
+they were never part of the W34 pollution. Owner explicitly overrode this (chủ trương
+lớn-level call): no reuse of ANY pre-existing W35 content, regardless of whether it's
+corrupted or clean — it predates the standardized SOP pipeline and must not be carried
+forward. Full wipe, full regeneration, no exceptions.
+
+**Reconciled with codebase reality:** independently confirmed via grep that these files
+are load-bearing (gameAdaptation.js statically imports games.js per week;
+gameDataHelper.js globs word_power.js across all weeks; vocab_dictionary_master.js is
+imported directly) — so file names/exports must remain, but all content inside is wiped
+to placeholder stubs, same technique already proven on the 6 hub files in Round 59.
+
+**Dispatched:** Round 60 (Revised) — Task 0 expands the W35 wipe to the full content
+file set (not just the 6 hubs), verified to reduce W35 to true BLUEPRINT_ONLY status;
+Task 1 then runs the new Giai đoạn 2 pipeline identically across all 4 pilot weeks
+(W35, W38, W78, W125) with zero special-casing. Output staged, not merged; TOTAL_TRIPS
+remains 34 until Claude's content review + explicit go-ahead per week.
+
+**Status:** Awaiting Round 60 (Revised) pilot-content zip.
 

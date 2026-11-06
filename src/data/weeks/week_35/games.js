@@ -1,6 +1,3 @@
-// Week 35 games.js
-export const week35GamesAdvanced = {
-  title: "The Best Day Ever Games",
-  wordList: ["wonderful", "exciting"]
-};
+// Week 35 Games (Clean Un-authored Placeholder Stub)
+export const week35GamesAdvanced = {};
 export default week35GamesAdvanced;
