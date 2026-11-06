@@ -9,7 +9,7 @@ const SHIELD_PARTS = [
   { key: 'S1', label: 'Speaking & Passport', icon: '🏆', color: 'bg-amber-100 text-amber-700 border-amber-200' },
 ];
 
-const TOTAL_TRIPS = 36;
+const TOTAL_TRIPS = 34; // Hotfix: Limit live trips to validated & frozen Golden Standards (W33 & W34)
 
 function ShieldPips({ count, max = 5 }) {
   return (

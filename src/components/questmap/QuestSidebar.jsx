@@ -9,7 +9,7 @@ import ArcadeModal from '../games/ArcadeModal';
 import ClassLeaderboardModal from '../common/ClassLeaderboardModal';
 import './QuestSidebar.css';
 
-const TOTAL_TRIPS = 36; // Current syllabus length
+const TOTAL_TRIPS = 34; // Hotfix: Limit live trips to validated & frozen Golden Standards (W33 & W34)
 
 export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, learningMode = 'easy', onToggleMode }) {
   const navigate = useNavigate();

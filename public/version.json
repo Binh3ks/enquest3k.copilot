@@ -1,9 +1,9 @@
 {
-  "commit": "5e881e3785a3e4f5580cd1093f0f701103fec679",
-  "git_commit": "5e881e3785a3e4f5580cd1093f0f701103fec679",
-  "shortCommit": "5e881e37",
-  "message": "fix(curriculum): remediate blueprint parser leak, add phonetics overrides & verify 100% dry-run coverage [multi-agent-review]",
-  "builtAt": "2026-11-05T10:13:46.603Z",
-  "build_timestamp": "2026-11-05T10:13:46.604Z",
+  "commit": "241622335a9093a69c55c3794c077bea17d6bc17",
+  "git_commit": "241622335a9093a69c55c3794c077bea17d6bc17",
+  "shortCommit": "24162233",
+  "message": "feat(curriculum): mass batch tag vocabulary IPA & past-tense triad across 154 unfrozen weeks [multi-agent-review]",
+  "builtAt": "2026-11-06T02:57:21.477Z",
+  "build_timestamp": "2026-11-06T02:57:21.478Z",
   "env": "production"
 }
