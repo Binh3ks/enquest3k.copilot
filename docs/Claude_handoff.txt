@@ -1591,3 +1591,30 @@ remains 34 until Claude's content review + explicit go-ahead per week.
 
 **Status:** Awaiting Round 60 (Revised) pilot-content zip.
 
+## Round 60 — Pilot Content REJECTED (ESL-expert content review, not just technical audit)
+
+Technical verification passed in full (zip/git hashes genuine, W35 fully wiped to
+BLUEPRINT_ONLY as directed, nothing merged into production, TOTAL_TRIPS=34, W33 freeze
+intact). This is the first round where Claude reviewed actual AI-generated pedagogical
+content as ESL expert (per standing instruction), not just technical artifacts — and it
+caught real content-quality defects that 100%-passing mechanical gates missed entirely.
+
+**Findings:** 4 of 8 staged deliverables per week are genuinely high quality and
+CEFR-differentiated (vocab.js, CLIL article/glossary/check_questions, shadowingData,
+rw_part1, rw_part6, skill_practice_hub) — approved, no rework needed. 3 generator
+functions are producing identical, non-differentiated placeholder boilerplate across
+every week regardless of theme/CEFR (writing_hub's picture_story, story_scenes inside
+reading_hub, speaking_hub's talkshow_prompt) — confirmed by diffing output across W35/
+W38/W125, text is byte-identical except for the theme name. rw_part2 also doesn't match
+real Cambridge exam format (flat dialogue transcript, no gradable options/answers).
+Root cause: Giai đoạn 4's Gate 6 never inspected these three fields' actual content,
+only Singapore Math/Action Lab/Grammar Duel — a real coverage gap in the mechanical
+gate suite, now flagged for a fix.
+
+**Decision:** None of the 4 pilot weeks approved for merge. Dispatched Round 61 —
+targeted fix to the 3 defective generator functions + rw_part2 restructure + new
+content-quality gates (template-string detection, cross-week identity hashing) so this
+class of defect can't pass gates silently again. Approved fields are NOT to be
+regenerated — only the 4 identified gaps.
+
+**Status:** Awaiting Round 61 fixed pilot-content zip for re-review.

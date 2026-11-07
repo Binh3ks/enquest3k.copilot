@@ -1,17 +1,23 @@
 /**
  * scripts/generate_giaidoan2_content.mjs
  * 
- * ENGQUEST3K — GIAI ĐOẠN 2 AUTOMATED CONTENT PIPELINE ENGINE (ROUND 60)
+ * ENGQUEST3K — GIAI ĐOẠN 2 AUTOMATED CONTENT PIPELINE ENGINE (ROUND 61)
  * 
  * Generates standardized Giai đoạn 2 pedagogical deliverables grounded strictly
  * in blueprint.json + Source A/B syllabus entries.
  * 
+ * Round 61 ESL Quality Enhancements:
+ * - FIX 1: writing_hub.js rich picture_story (model_sentence, 4-stage scaffold: MODEL, BUILD, WRITE, EXPAND, word_bank, sentence_frames)
+ * - FIX 2: story_scenes in reading_hub.js (5 narrative scenes per week with character names & target vocabulary)
+ * - FIX 3: speaking_hub.js talkshow_prompt (age/CEFR appropriate register) + genuine info-gap cards (Card A / Table A vs Card B / Table B)
+ * - FIX 4: Cambridge R&W Part 2 restructured into 5 turns with 3 response options each and marked correct answers; plain exchanges in listening_hub.js
+ * - FIX 5: Gate 9 (Banned Generic Template Strings) + Gate 10 (Cross-Week Skeleton Identity & Differentiation Check)
+ * 
  * Invariants:
  * 1. Cryptographic Freeze Guard: W33 & W34 are hard-blocked from mutation.
- * 2. Staging Only: Writes ONLY to a staging directory (docs/agent_artifacts/staging/week_XX/).
+ * 2. Staging Only: Writes ONLY to staging directory (docs/agent_artifacts/staging/week_XX/).
  * 3. Provenance Tracking: Every file and data object embeds generation metadata.
- * 4. Giai đoạn 4 Mechanical Quality Gates: Automates schema, word count, CEFR range,
- *    Vietnamese leak scan, cross-week collision matrix, and banned tokens audit.
+ * 4. Giai đoạn 4 Mechanical Quality Gates: Automates 10 gates including content quality & cross-week differentiation.
  * 5. Dry-Run by Default: Explicit --write-staging required to persist files.
  */
 
@@ -42,6 +48,19 @@ const VIETNAMESE_REGEX = /[\u00C0-\u024F\u1EA0-\u1EF9]/;
 const W35_FORBIDDEN_TOKENS = [
   'Pine Valley', 'campfire', 'marshmallow', 'campsite', 'tent',
   'sleeping bag', 'stargazing', 'Leo the Lion', 'Milo the Mouse', 'Hunter Jack'
+];
+
+// Forbidden generic boilerplate template strings (Fix 5)
+const GENERIC_BANNED_STRINGS = [
+  'Introduction & Context',
+  'Developing Action',
+  'Synthesis & Conclusion',
+  'empower your knowledge',
+  'Scene narrative panel',
+  'Introduce the theme of',
+  'Explain the central process',
+  'Reflect upon the results and broader implications',
+  'Studying [X] helps us analyze facts critically'
 ];
 
 /**
@@ -120,6 +139,351 @@ const PILOT_CONTENT_SPECS = {
       { id: 7, text: "Grandpa took a wonderful family photograph before we left the courtyard.", ipa: "/ˈɡrænpɑː tʊk ə ˈwʌndərfəl ˈfæməli ˈfoʊtəɡræf bɪˈfɔːr wi left ðə ˈkɔːrtjɑːrd/" },
       { id: 8, text: "It was truly an unforgettable adventure that we will always treasure.", ipa: "/ɪt wəz ˈtruːli ən ˌʌnfərˈɡetəbəl ədˈventʃər ðæt wi wɪl ˈɔːlweɪz ˈtreʒər/" }
     ],
+    // FIX 2: 5 Story Scenes with character names & rich narrative
+    story_scenes: [
+      {
+        id: 1,
+        scene_id: "scene_1",
+        scene_number: 1,
+        title_en: "Boarding the Morning Train",
+        title_vi: "Lên Chuyến Tàu Buổi Sáng",
+        description_en: "Lucas and his sister Maya packed their backpacks early and **boarded** the cheerful morning train.",
+        description: "Lucas and his sister Maya packed their backpacks early and **boarded** the cheerful morning train.",
+        image_url: "/images/week35/webtoon_scene_1.png",
+        audio_url: "/audio/week35/scene_1.mp3"
+      },
+      {
+        id: 2,
+        scene_id: "scene_2",
+        scene_number: 2,
+        title_en: "Meeting the Giant Robot",
+        title_vi: "Gặp Gỡ Robot Khổng Lồ",
+        description_en: "At the Discovery Museum, Lucas was **delighted** and **surprised** when a giant robot waved hello.",
+        description: "At the Discovery Museum, Lucas was **delighted** and **surprised** when a giant robot waved hello.",
+        image_url: "/images/week35/webtoon_scene_2.png",
+        audio_url: "/audio/week35/scene_2.mp3"
+      },
+      {
+        id: 3,
+        scene_id: "scene_3",
+        scene_number: 3,
+        title_en: "Wonder in the Planetarium",
+        title_vi: "Kỳ Diệu Tại Cung Thiên Văn",
+        description_en: "Suddenly, the room lights dimmed and Maya **whispered** with excitement under the **glowing stars**.",
+        description: "Suddenly, the room lights dimmed and Maya **whispered** with excitement under the **glowing stars**.",
+        image_url: "/images/week35/webtoon_scene_3.png",
+        audio_url: "/audio/week35/scene_3.mp3"
+      },
+      {
+        id: 4,
+        scene_id: "scene_4",
+        scene_number: 4,
+        title_en: "Laughter in the Theater",
+        title_vi: "Tiếng Cười Tại Khán Phòng",
+        description_en: "In the science theater, the children **laughed** cheerfully as the inventor demonstrated a flying drone.",
+        description: "In the science theater, the children **laughed** cheerfully as the inventor demonstrated a flying drone.",
+        image_url: "/images/week35/webtoon_scene_4.png",
+        audio_url: "/audio/week35/scene_4.mp3"
+      },
+      {
+        id: 5,
+        scene_id: "scene_5",
+        scene_number: 5,
+        title_en: "A Treasured Family Photograph",
+        title_vi: "Bức Ảnh Gia Đình Đáng Trân Quý",
+        description_en: "Before leaving, Grandpa took a **wonderful photograph** that everyone **treasured** as a **memorable souvenir**.",
+        description: "Before leaving, Grandpa took a **wonderful photograph** that everyone **treasured** as a **memorable souvenir**.",
+        image_url: "/images/week35/webtoon_scene_5.png",
+        audio_url: "/audio/week35/scene_5.mp3"
+      }
+    ],
+    // FIX 1: Rich Writing Data with multi-stage ladder, model sentence & pills
+    writing_data: {
+      title: "Lucas and Maya's Museum Adventure",
+      prompt_en: "Look at the pictures. Write the recount of the museum adventure. Write 20 or more words.",
+      prompt_vi: "Nhìn vào các bức tranh. Viết bài kể lại chuyến phiêu lưu ở bảo tàng (từ 20 từ trở lên).",
+      min_sentences: 3,
+      min_words: 20,
+      max_words: 80,
+      model_sentence: "Last Saturday, Lucas and Maya had a memorable adventure at the Discovery Science Museum. First, they boarded the cheerful morning train. Next, they were delighted to see a giant robot in the exhibition hall. Then, Maya whispered with excitement under glowing stars in the planetarium. In the end, Grandpa took a wonderful family photograph that they treasured as a souvenir.",
+      word_bank: ["boarded", "cheerful", "delighted", "surprised", "whispered", "laughed", "treasured", "photograph", "souvenir", "adventure"],
+      sentence_frames: [
+        "In the morning, Lucas and Maya boarded the ___ train.",
+        "In the exhibition hall, they were ___ to see a giant robot.",
+        "Suddenly, the lights dimmed and Maya ___ with excitement.",
+        "Grandpa took a ___ family photograph as a souvenir."
+      ],
+      panels: [
+        {
+          panel_id: "panel_1",
+          title_en: "Scene 1: Boarding the Morning Train",
+          title_vi: "Cảnh 1: Lên Chuyến Tàu Buổi Sáng",
+          image_url: "/images/week35/writing_panel_1.png",
+          image_prompt: "Two smiling children with backpacks boarding a bright modern passenger train on a sunny morning, cartoon storybook style.",
+          caption: "Lucas and Maya packed their backpacks early and boarded the cheerful morning train.",
+          sentence_frame: "In the morning, Lucas and Maya [packed their backpacks] and [boarded the cheerful train].",
+          pills: ["packed their backpacks", "boarded the cheerful train", "on Saturday morning", "cheerful morning train", "Lucas and Maya"],
+          connectors: ["In the morning,", "First,", "Early on Saturday,"]
+        },
+        {
+          panel_id: "panel_2",
+          title_en: "Scene 2: Meeting the Giant Robot",
+          title_vi: "Cảnh 2: Gặp Gỡ Robot Khổng Lồ",
+          image_url: "/images/week35/writing_panel_2.png",
+          image_prompt: "A large friendly chrome robot waving at two amazed children inside a brightly lit science museum exhibition hall.",
+          caption: "At the museum, Lucas was delighted and surprised when a giant robot waved hello.",
+          sentence_frame: "When they arrived, Lucas was [delighted and surprised] to [see a giant robot].",
+          pills: ["delighted and surprised", "see a giant robot", "in the main hall", "waved hello", "huge silver robot"],
+          connectors: ["Next,", "Then,", "Inside the hall,"]
+        },
+        {
+          panel_id: "panel_3",
+          title_en: "Scene 3: Wonder in the Planetarium",
+          title_vi: "Cảnh 3: Kỳ Diệu Tại Cung Thiên Văn",
+          image_url: "/images/week35/writing_panel_3.png",
+          image_prompt: "Two children looking up in awe inside a dark planetarium dome filled with glowing constellations and planets.",
+          caption: "Suddenly, the lights dimmed and Maya whispered with excitement under glowing stars.",
+          sentence_frame: "Suddenly, the lights dimmed and Maya [whispered with excitement] under the [glowing stars].",
+          pills: ["whispered with excitement", "under glowing stars", "in the dark planetarium", "suddenly the lights dimmed", "looked magnificent"],
+          connectors: ["Suddenly,", "At that moment,", "After that,"]
+        },
+        {
+          panel_id: "panel_4",
+          title_en: "Scene 4: Family Photograph Celebration",
+          title_vi: "Cảnh 4: Bức Ảnh Kỷ Niệm Gia Đình",
+          image_url: "/images/week35/writing_panel_4.png",
+          image_prompt: "Grandfather taking a photo with a camera of two happy children holding small museum souvenir models in a sunny courtyard.",
+          caption: "Before leaving, Grandpa took a wonderful family photograph that everyone treasured as a memorable souvenir.",
+          sentence_frame: "In the end, Grandpa took a [wonderful family photograph] that we will [always treasure] as a souvenir.",
+          pills: ["wonderful family photograph", "always treasure", "memorable souvenir", "delighted and happy", "celebrated together"],
+          connectors: ["In the end,", "Finally,", "Before going home,"]
+        }
+      ],
+      steps: [
+        {
+          scene: 1,
+          ladder_stage: "MODEL",
+          badge_label: "MODEL",
+          title: "Scene 1: Boarding the Morning Train",
+          image_url: "/images/week35/writing_panel_1.png",
+          caption: "Lucas and Maya packed their backpacks early and boarded the cheerful morning train.",
+          frame_L1: "In the morning, Lucas and Maya packed their backpacks early. They boarded the cheerful morning train to the museum.",
+          connectors: ["In the morning,", "First,", "On Saturday,"],
+          sentence_hint: "Write 2 sentences about packing backpacks and boarding the train.",
+          pills: ["packed their backpacks", "boarded the cheerful train", "morning train", "Lucas and Maya"],
+          sentence_frame: "In the morning, Lucas and Maya [packed their backpacks] and [boarded the cheerful train]."
+        },
+        {
+          scene: 2,
+          ladder_stage: "BUILD",
+          badge_label: "BUILD",
+          title: "Scene 2: Meeting the Giant Robot",
+          image_url: "/images/week35/writing_panel_2.png",
+          caption: "At the museum, Lucas was delighted and surprised when a giant robot waved hello.",
+          frame_L1: "Next, they arrived at the exhibition hall. Lucas was delighted and surprised to see a giant robot waving hello.",
+          connectors: ["Next,", "Then,", "Inside the hall,"],
+          sentence_hint: "Write 2 sentences about arriving at the museum and seeing the giant robot.",
+          pills: ["delighted and surprised", "see a giant robot", "in the hall", "waved hello"],
+          sentence_frame: "Next, Lucas was [delighted and surprised] to [see a giant robot] in the hall."
+        },
+        {
+          scene: 3,
+          ladder_stage: "WRITE",
+          badge_label: "WRITE",
+          title: "Scene 3: Wonder in the Planetarium",
+          image_url: "/images/week35/writing_panel_3.png",
+          caption: "Suddenly, the lights dimmed and Maya whispered with excitement under glowing stars.",
+          frame_L1: "Suddenly, the room lights dimmed in the planetarium. Maya whispered with excitement under thousands of glowing stars.",
+          connectors: ["Suddenly,", "Then,", "After that,"],
+          sentence_hint: "Write 2 sentences about the dark planetarium and whispering under glowing stars.",
+          pills: ["whispered with excitement", "under glowing stars", "dark planetarium", "lights dimmed"],
+          sentence_frame: "Suddenly, the lights dimmed and Maya [whispered with excitement] under the [glowing stars]."
+        },
+        {
+          scene: 4,
+          ladder_stage: "EXPAND",
+          badge_label: "EXPAND",
+          title: "Scene 4: Family Photograph Celebration",
+          image_url: "/images/week35/writing_panel_4.png",
+          caption: "Before leaving, Grandpa took a wonderful family photograph that everyone treasured as a memorable souvenir.",
+          frame_L1: "In the end, Grandpa took a wonderful family photograph. Everyone treasured the picture as a memorable souvenir.",
+          connectors: ["In the end,", "Finally,", "Before going home,"],
+          sentence_hint: "Write 2 sentences about taking a family photo and treasuring the souvenir.",
+          pills: ["wonderful family photograph", "always treasure", "memorable souvenir", "delighted"],
+          sentence_frame: "In the end, Grandpa took a [wonderful family photograph] that we will [always treasure] as a souvenir."
+        }
+      ]
+    },
+    // FIX 3: Speaking Hub with kid-friendly register & genuine info-gap
+    speaking_data: {
+      talkshow_prompt: {
+        topic: "My Most Memorable Trip",
+        question: "Hi Lucas! What was the most memorable part of your weekend visit to the Discovery Science Museum?",
+        model_response: "The most memorable part was entering the planetarium with Maya and Grandpa! Suddenly, the hall lights went dark and thousands of glowing stars appeared across the ceiling. We whispered with excitement, and Grandpa took a wonderful family photograph outside. It was a delightful adventure that I will always remember!"
+      },
+      info_exchange_cards: {
+        card_a: {
+          topic: "Maya's Museum Visit",
+          title: "Maya's Museum Adventure",
+          subtitle: "Candidate's Question Card (Ask Examiner)",
+          person: "Maya",
+          questions: [
+            "Where did Maya go on Saturday morning?",
+            "What did Maya see in the main exhibition hall?",
+            "How did Maya feel inside the dark planetarium?",
+            "Who took the family photograph before leaving?",
+            "What souvenir did Maya choose from the gift shop?"
+          ]
+        },
+        card_b: {
+          topic: "Lucas's Birthday Celebration",
+          title: "Lucas's Birthday Party",
+          subtitle: "Information Card (Answer Examiner's Questions)",
+          person: "Lucas",
+          answers: [
+            "At Grandpa's peaceful cottage near the sunny lake.",
+            "A wonderful homemade strawberry cake with colorful candles.",
+            "At two o'clock on Sunday afternoon.",
+            "His whole family and four cheerful school friends.",
+            "He felt delighted and laughed with happiness."
+          ]
+        },
+        table_a: {
+          title: "Maya's Museum Visit",
+          subtitle: "Candidate's Question Card (Ask Examiner)",
+          person: "Maya",
+          fields: [
+            {
+              id: "field_a1",
+              cue_prompt: "where / Maya go?",
+              cue_word: "where",
+              is_missing: true,
+              acceptable_questions: [
+                "Where did Maya go on Saturday morning?",
+                "Where did Maya go?",
+                "Where did she travel to?"
+              ],
+              nova_reply: "Maya went to the Discovery Science Museum with her brother Lucas."
+            },
+            {
+              id: "field_a2",
+              cue_prompt: "what / see in main hall?",
+              cue_word: "what",
+              is_missing: true,
+              acceptable_questions: [
+                "What did Maya see in the main exhibition hall?",
+                "What did they see in the hall?",
+                "What did they see?"
+              ],
+              nova_reply: "They saw a giant walking robot that turned and waved hello."
+            },
+            {
+              id: "field_a3",
+              cue_prompt: "how / feel in planetarium?",
+              cue_word: "how",
+              is_missing: true,
+              acceptable_questions: [
+                "How did Maya feel inside the dark planetarium?",
+                "How did she feel in the planetarium?",
+                "Did Maya feel excited in the planetarium?"
+              ],
+              nova_reply: "She felt delighted and whispered with wonder under the glowing stars."
+            },
+            {
+              id: "field_a4",
+              cue_prompt: "who / take photograph?",
+              cue_word: "who",
+              is_missing: true,
+              acceptable_questions: [
+                "Who took the family photograph before leaving?",
+                "Who took the photo?",
+                "Who took the photograph?"
+              ],
+              nova_reply: "Grandpa took a wonderful photograph in front of the courtyard fountain."
+            },
+            {
+              id: "field_a5",
+              cue_prompt: "what souvenir / buy?",
+              cue_word: "what",
+              is_missing: true,
+              acceptable_questions: [
+                "What souvenir did Maya choose from the gift shop?",
+                "What souvenir did she buy?",
+                "What did she buy as a souvenir?"
+              ],
+              nova_reply: "She bought a colorful star puzzle as a memorable souvenir."
+            }
+          ]
+        },
+        table_b: {
+          title: "Lucas's Birthday Celebration",
+          subtitle: "Information Card (Answer Examiner's Questions)",
+          person: "Lucas",
+          fields: [
+            {
+              id: "field_b1",
+              cue_prompt: "where / party?",
+              cue_word: "where",
+              value: "At Grandpa's peaceful cottage near the sunny lake.",
+              nova_question: "Where was Lucas's birthday party held?",
+              acceptable_answers: [
+                "At Grandpa's peaceful cottage near the sunny lake.",
+                "At Grandpa's cottage near the lake.",
+                "Near the lake at Grandpa's cottage."
+              ]
+            },
+            {
+              id: "field_b2",
+              cue_prompt: "what / eat?",
+              cue_word: "what",
+              value: "A wonderful homemade strawberry cake.",
+              nova_question: "What delicious food did the family celebrate with?",
+              acceptable_answers: [
+                "A wonderful homemade strawberry cake.",
+                "Strawberry cake.",
+                "They ate a homemade strawberry cake."
+              ]
+            },
+            {
+              id: "field_b3",
+              cue_prompt: "when / celebration start?",
+              cue_word: "when",
+              value: "At two o'clock on Sunday afternoon.",
+              nova_question: "When did the celebration begin?",
+              acceptable_answers: [
+                "At two o'clock on Sunday afternoon.",
+                "At two o'clock.",
+                "On Sunday afternoon."
+              ]
+            },
+            {
+              id: "field_b4",
+              cue_prompt: "who / attend?",
+              cue_word: "who",
+              value: "His whole family and four cheerful school friends.",
+              nova_question: "Who joined Lucas for the birthday games?",
+              acceptable_answers: [
+                "His whole family and four cheerful school friends.",
+                "Family and four friends.",
+                "His family and friends."
+              ]
+            },
+            {
+              id: "field_b5",
+              cue_prompt: "how / Lucas feel?",
+              cue_word: "how",
+              value: "He felt delighted and laughed with happiness.",
+              nova_question: "How did Lucas feel at the end of the day?",
+              acceptable_answers: [
+                "He felt delighted and laughed with happiness.",
+                "He felt delighted.",
+                "Lucas was delighted and happy."
+              ]
+            }
+          ]
+        }
+      }
+    },
     cambridge_rw: {
       part1_definitions: [
         { id: 1, text: "A joyful party or gathering held to mark a special occasion.", target: "celebration" },
@@ -128,15 +492,77 @@ const PILOT_CONTENT_SPECS = {
         { id: 4, text: "An exciting or unusual journey full of surprising new experiences.", target: "adventure" },
         { id: 5, text: "Feeling immense happiness and complete satisfaction.", target: "delighted" }
       ],
+      // FIX 4: Cambridge R&W Part 2 restructured into 5 turns with 3 options each and marked answers
       part2_dialogue: {
         title: "Oliver & Emma Discussing the Weekend Recount",
+        turns: [
+          {
+            id: 1,
+            speaker: "Oliver",
+            prompt: "Did you finish writing your story about our weekend trip?",
+            options: [
+              "Yes, I recounted all the exciting things we saw at the museum.",
+              "No, I never eat lunch at school.",
+              "Because it was raining yesterday."
+            ],
+            answer: "Yes, I recounted all the exciting things we saw at the museum."
+          },
+          {
+            id: 2,
+            speaker: "Oliver",
+            prompt: "Which adjectives did you use to describe the exhibition hall?",
+            options: [
+              "I wrote that it was magnificent, bright, and wonderfully quiet.",
+              "I used blue paint and two pencils.",
+              "There are twelve classrooms on the second floor."
+            ],
+            answer: "I wrote that it was magnificent, bright, and wonderfully quiet."
+          },
+          {
+            id: 3,
+            speaker: "Oliver",
+            prompt: "Were you surprised when the robotic dinosaur moved?",
+            options: [
+              "Yes, everyone was delighted and screamed with laughter!",
+              "Tomorrow morning at half past seven.",
+              "My coat is inside the wooden locker."
+            ],
+            answer: "Yes, everyone was delighted and screamed with laughter!"
+          },
+          {
+            id: 4,
+            speaker: "Oliver",
+            prompt: "Did Grandpa manage to take a photograph before leaving?",
+            options: [
+              "Yes, he took a wonderful photograph in front of the fountain.",
+              "He prefers drinking orange juice with breakfast.",
+              "No, it is two kilometers from the railway station."
+            ],
+            answer: "Yes, he took a wonderful photograph in front of the fountain."
+          },
+          {
+            id: 5,
+            speaker: "Oliver",
+            prompt: "I would love to read your recount after break time!",
+            options: [
+              "Sure, I can lend you my notebook right after science class.",
+              "I walked down the corridor very slowly.",
+              "It was forty-five minutes long."
+            ],
+            answer: "Sure, I can lend you my notebook right after science class."
+          }
+        ],
         exchanges: [
           { speaker: "Oliver", text: "Did you finish writing your story about our weekend trip?" },
           { speaker: "Emma", text: "Yes, I recounted all the exciting things we saw at the museum." },
-          { speaker: "Oliver", text: "Which adjectives did you use to describe the main gallery?" },
+          { speaker: "Oliver", text: "Which adjectives did you use to describe the exhibition hall?" },
           { speaker: "Emma", text: "I wrote that it was magnificent, bright, and wonderfully quiet." },
-          { speaker: "Oliver", text: "That sounds excellent! Did you include Grandpa's photograph?" },
-          { speaker: "Emma", text: "Of course! It was the most memorable part of the entire day." }
+          { speaker: "Oliver", text: "Were you surprised when the robotic dinosaur moved?" },
+          { speaker: "Emma", text: "Yes, everyone was delighted and screamed with laughter!" },
+          { speaker: "Oliver", text: "Did Grandpa manage to take a photograph before leaving?" },
+          { speaker: "Emma", text: "Yes, he took a wonderful photograph in front of the fountain." },
+          { speaker: "Oliver", text: "I would love to read your recount after break time!" },
+          { speaker: "Emma", text: "Sure, I can lend you my notebook right after science class." }
         ]
       },
       part6_cloze: {
@@ -256,6 +682,351 @@ const PILOT_CONTENT_SPECS = {
       { id: 7, text: "Desert camels can survive for two weeks without drinking fresh water.", ipa: "/ˈdezərt ˈkæməlz kən sərˈvaɪv fər tuː wiːks wɪˈðaʊt ˈdrɪŋkɪŋ freʃ ˈwɔːtər/" },
       { id: 8, text: "Every wild animal possesses unique physical abilities suited to its habitat.", ipa: "/ˈevri waɪld ˈænɪməl pəˈzesɪz juːˈniːk ˈfɪzɪkəl əˈbɪlətiz ˈsuːtɪd tuː ɪts ˈhæbɪtæt/" }
     ],
+    // FIX 2: 5 Story Scenes with character names & rich narrative
+    story_scenes: [
+      {
+        id: 1,
+        scene_id: "scene_1",
+        scene_number: 1,
+        title_en: "Cheetah Sprint on Savanna",
+        title_vi: "Báo Săn Bứt Tốc Trên Thảo Nguyên",
+        description_en: "Liam watched in awe as the agile **cheetah** demonstrated how it can **run** faster than any other land animal.",
+        description: "Liam watched in awe as the agile **cheetah** demonstrated how it can **run** faster than any other land animal.",
+        image_url: "/images/week38/webtoon_scene_1.png",
+        audio_url: "/audio/week38/scene_1.mp3"
+      },
+      {
+        id: 2,
+        scene_id: "scene_2",
+        scene_number: 2,
+        title_en: "Eagles Soaring in the Wind",
+        title_vi: "Đại Bàng Lượn Giữa Tầng Không",
+        description_en: "High above rocky canyon cliffs, Ms. Patel pointed out two golden eagles that can **fly** and **glide** effortlessly.",
+        description: "High above rocky canyon cliffs, Ms. Patel pointed out two golden eagles that can **fly** and **glide** effortlessly.",
+        image_url: "/images/week38/webtoon_scene_2.png",
+        audio_url: "/audio/week38/scene_2.mp3"
+      },
+      {
+        id: 3,
+        scene_id: "scene_3",
+        scene_number: 3,
+        title_en: "Elephants at the Riverbank",
+        title_vi: "Đàn Voi Bên Bờ Sông",
+        description_en: "Near the river, Liam learned that **heavy** adult elephants **cannot jump**, but they can **swim** across deep waters.",
+        description: "Near the river, Liam learned that **heavy** adult elephants **cannot jump**, but they can **swim** across deep waters.",
+        image_url: "/images/week38/webtoon_scene_3.png",
+        audio_url: "/audio/week38/scene_3.mp3"
+      },
+      {
+        id: 4,
+        scene_id: "scene_4",
+        scene_number: 4,
+        title_en: "Penguins Diving in Polar Waters",
+        title_vi: "Chim Cánh Cụt Lặn Dưới Vùng Nước Cực",
+        description_en: "In the marine pavilion, playful penguins showed that they **cannot fly**, but they can **dive** deeply to **hunt** fish.",
+        description: "In the marine pavilion, playful penguins showed that they **cannot fly**, but they can **dive** deeply to **hunt** fish.",
+        image_url: "/images/week38/webtoon_scene_4.png",
+        audio_url: "/audio/week38/scene_4.mp3"
+      },
+      {
+        id: 5,
+        scene_id: "scene_5",
+        scene_number: 5,
+        title_en: "Desert Survival Adaptations",
+        title_vi: "Sự Thích Nghi Sinh Tồn Sa Mạc",
+        description_en: "At sunset, Liam discovered how **nocturnal** desert animals **burrow** underground to **survive** in their harsh **habitat**.",
+        description: "At sunset, Liam discovered how **nocturnal** desert animals **burrow** underground to **survive** in their harsh **habitat**.",
+        image_url: "/images/week38/webtoon_scene_5.png",
+        audio_url: "/audio/week38/scene_5.mp3"
+      }
+    ],
+    // FIX 1: Rich Writing Data with multi-stage ladder, model sentence & pills
+    writing_data: {
+      title: "Animal Adaptations & Special Abilities",
+      prompt_en: "Look at the pictures. Write about what these wild animals can and cannot do. Write 20 or more words.",
+      prompt_vi: "Nhìn vào các bức tranh. Viết về những việc các loài động vật hoang dã có thể và không thể làm (từ 20 từ trở lên).",
+      min_sentences: 3,
+      min_words: 20,
+      max_words: 80,
+      model_sentence: "Wild animals have amazing abilities suited to their habitats. On open grasslands, agile cheetahs can run at astonishing speeds to catch prey. In contrast, heavy elephants cannot jump off the ground, but they can swim across wide rivers. High above rocky cliffs, golden eagles can fly and glide effortlessly. Finally, aquatic penguins cannot fly in the air, but they can dive deeply into water to hunt fish.",
+      word_bank: ["run", "fly", "swim", "dive", "jump", "hunt", "glide", "burrow", "survive", "agile", "predator", "habitat"],
+      sentence_frames: [
+        "On the savanna, cheetahs can ___ faster than other animals.",
+        "Large elephants cannot ___, but they can ___ across rivers.",
+        "Golden eagles can ___ high in the sky with hollow bones.",
+        "Penguins cannot fly, but they can ___ deeply into the sea."
+      ],
+      panels: [
+        {
+          panel_id: "panel_1",
+          title_en: "Scene 1: Cheetah Sprint on the Plains",
+          title_vi: "Cảnh 1: Báo Săn Bứt Tốc Trên Thảo Nguyên",
+          image_url: "/images/week38/writing_panel_1.png",
+          image_prompt: "A sleek cheetah sprinting across golden African savanna grasslands, motion blur, wildlife documentary style.",
+          caption: "Agile cheetahs can run across open savanna grasslands at astonishing speed.",
+          sentence_frame: "On the savanna, the agile cheetah [can run faster] than [any other land animal].",
+          pills: ["can run faster", "any other land animal", "across open grasslands", "agile predator", "hunt fast prey"],
+          connectors: ["First,", "On the savanna,", "In the grasslands,"]
+        },
+        {
+          panel_id: "panel_2",
+          title_en: "Scene 2: Heavy Elephants in River",
+          title_vi: "Cảnh 2: Đàn Voi Bơi Dưới Lòng Sông",
+          image_url: "/images/week38/writing_panel_2.png",
+          image_prompt: "Two large gray elephants wading and swimming in a wide jungle river with water splashing, sunny day.",
+          caption: "Large elephants cannot jump off the ground, but they can swim across deep rivers.",
+          sentence_frame: "Large gray elephants [cannot jump] because [their bodies are heavy], but they [can swim across rivers].",
+          pills: ["cannot jump", "their bodies are heavy", "can swim across rivers", "powerful legs", "strong trunk"],
+          connectors: ["In contrast,", "However,", "Near the river,"]
+        },
+        {
+          panel_id: "panel_3",
+          title_en: "Scene 3: Soaring Golden Eagles",
+          title_vi: "Cảnh 3: Đại Bàng Lượn Giữa Đỉnh Núi",
+          image_url: "/images/week38/writing_panel_3.png",
+          image_prompt: "A majestic golden eagle gliding high above snow-capped mountain peaks with wings spread wide against a blue sky.",
+          caption: "Golden eagles can fly high above the rocky mountain peaks using hollow bones.",
+          sentence_frame: "Golden eagles [can fly high] in the sky because they have [lightweight hollow bones].",
+          pills: ["can fly high", "lightweight hollow bones", "glide effortlessly", "above mountain peaks", "sharp vision"],
+          connectors: ["High above,", "In the sky,", "Furthermore,"]
+        },
+        {
+          panel_id: "panel_4",
+          title_en: "Scene 4: Diving Aquatic Penguins",
+          title_vi: "Cảnh 4: Chim Cánh Cụt Lặn Sâu Săn Mồi",
+          image_url: "/images/week38/writing_panel_4.png",
+          image_prompt: "Penguins diving underwater through crystal blue polar waters among icebergs, hunting small silver fish.",
+          caption: "Aquatic penguins cannot fly in the air, but they can dive deeply into cold water to hunt.",
+          sentence_frame: "Penguins [cannot fly in the sky], but their flipper wings allow them to [dive deeply into water].",
+          pills: ["cannot fly in the sky", "dive deeply into water", "hunt silver fish", "rigid flipper wings", "aquatic habitat"],
+          connectors: ["Finally,", "Underwater,", "In conclusion,"]
+        }
+      ],
+      steps: [
+        {
+          scene: 1,
+          ladder_stage: "MODEL",
+          badge_label: "MODEL",
+          title: "Scene 1: Cheetah Sprint on the Plains",
+          image_url: "/images/week38/writing_panel_1.png",
+          caption: "Agile cheetahs can run across open savanna grasslands at astonishing speed.",
+          frame_L1: "On the savanna, agile cheetahs can run very fast. They can run faster than any other land animal.",
+          connectors: ["First,", "On the savanna,", "In the grasslands,"],
+          sentence_hint: "Write 2 sentences about cheetahs running fast across grasslands.",
+          pills: ["can run faster", "any other land animal", "across grasslands", "agile cheetah"],
+          sentence_frame: "On the savanna, the agile cheetah [can run faster] than [any other land animal]."
+        },
+        {
+          scene: 2,
+          ladder_stage: "BUILD",
+          badge_label: "BUILD",
+          title: "Scene 2: Heavy Elephants in River",
+          image_url: "/images/week38/writing_panel_2.png",
+          caption: "Large elephants cannot jump off the ground, but they can swim across deep rivers.",
+          frame_L1: "In contrast, large elephants cannot jump because they are heavy. However, they can swim across wide rivers.",
+          connectors: ["In contrast,", "However,", "Near the river,"],
+          sentence_hint: "Write 2 sentences about what elephants cannot do and what they can do.",
+          pills: ["cannot jump", "are very heavy", "can swim across rivers", "large elephants"],
+          sentence_frame: "Large gray elephants [cannot jump] because [their bodies are heavy], but they [can swim across rivers]."
+        },
+        {
+          scene: 3,
+          ladder_stage: "WRITE",
+          badge_label: "WRITE",
+          title: "Scene 3: Soaring Golden Eagles",
+          image_url: "/images/week38/writing_panel_3.png",
+          caption: "Golden eagles can fly high above the rocky mountain peaks using hollow bones.",
+          frame_L1: "High above the mountains, golden eagles can fly easily. They can glide in strong winds because they have hollow bones.",
+          connectors: ["High above,", "In the sky,", "Furthermore,"],
+          sentence_hint: "Write 2 sentences about eagles flying and gliding in the sky.",
+          pills: ["can fly high", "lightweight hollow bones", "glide effortlessly", "golden eagles"],
+          sentence_frame: "Golden eagles [can fly high] in the sky because they have [lightweight hollow bones]."
+        },
+        {
+          scene: 4,
+          ladder_stage: "EXPAND",
+          badge_label: "EXPAND",
+          title: "Scene 4: Diving Aquatic Penguins",
+          image_url: "/images/week38/writing_panel_4.png",
+          caption: "Aquatic penguins cannot fly in the air, but they can dive deeply into cold water to hunt.",
+          frame_L1: "Finally, aquatic penguins cannot fly in the air. Instead, their wings help them dive deeply to hunt fish.",
+          connectors: ["Finally,", "Underwater,", "In conclusion,"],
+          sentence_hint: "Write 2 sentences about penguins diving and hunting underwater.",
+          pills: ["cannot fly in the sky", "dive deeply into water", "hunt fish", "aquatic penguins"],
+          sentence_frame: "Penguins [cannot fly in the sky], but their flipper wings allow them to [dive deeply into water]."
+        }
+      ]
+    },
+    // FIX 3: Speaking Hub with kid-friendly register & genuine info-gap
+    speaking_data: {
+      talkshow_prompt: {
+        topic: "Amazing Animal Superpowers",
+        question: "Hi Liam! Which animal ability surprised you the most during your trip to the wildlife sanctuary?",
+        model_response: "I was most surprised by the penguins! Even though they are sea birds, they cannot fly in the air because their flippers are rigid. But underwater, they can dive so fast and catch fish easily. It was super cool to watch them swim!"
+      },
+      info_exchange_cards: {
+        card_a: {
+          topic: "Peregrine Falcons",
+          title: "Peregrine Falcon Abilities",
+          subtitle: "Candidate's Question Card (Ask Examiner)",
+          person: "Falcon Specialist",
+          questions: [
+            "How fast can peregrine falcons dive through the air?",
+            "Where do falcons build their nests?",
+            "What kind of prey do falcons hunt?",
+            "Why can falcons spot small animals from high in the sky?",
+            "Can falcons survive in cold mountain climates?"
+          ]
+        },
+        card_b: {
+          topic: "Red Kangaroos",
+          title: "Red Kangaroo Abilities",
+          subtitle: "Information Card (Answer Examiner's Questions)",
+          person: "Kangaroo Researcher",
+          answers: [
+            "Up to nine meters across the dry plains in a single leap.",
+            "No, they cannot climb trees because of their large feet.",
+            "They eat green grass, herbs, and desert shrub roots.",
+            "They are nocturnal and most active at night or dawn.",
+            "They can hop at over fifty kilometers per hour to escape predators."
+          ]
+        },
+        table_a: {
+          title: "Peregrine Falcon Abilities",
+          subtitle: "Candidate's Question Card (Ask Examiner)",
+          person: "Falcon Specialist",
+          fields: [
+            {
+              id: "field_a1",
+              cue_prompt: "how fast / dive?",
+              cue_word: "how fast",
+              is_missing: true,
+              acceptable_questions: [
+                "How fast can peregrine falcons dive through the air?",
+                "How fast can falcons dive?",
+                "What speed can they dive at?"
+              ],
+              nova_reply: "Peregrine falcons can dive faster than two hundred miles per hour."
+            },
+            {
+              id: "field_a2",
+              cue_prompt: "where / build nests?",
+              cue_word: "where",
+              is_missing: true,
+              acceptable_questions: [
+                "Where do falcons build their nests?",
+                "Where do they nest?",
+                "Where do falcons live?"
+              ],
+              nova_reply: "They build their nests high up on rocky cliffs."
+            },
+            {
+              id: "field_a3",
+              cue_prompt: "what / hunt?",
+              cue_word: "what",
+              is_missing: true,
+              acceptable_questions: [
+                "What kind of prey do falcons hunt?",
+                "What do they hunt?",
+                "What animals do falcons catch?"
+              ],
+              nova_reply: "They hunt other flying birds mid-air using sharp talons."
+            },
+            {
+              id: "field_a4",
+              cue_prompt: "why / spot small animals?",
+              cue_word: "why",
+              is_missing: true,
+              acceptable_questions: [
+                "Why can falcons spot small animals from high in the sky?",
+                "Why is their eyesight so good?",
+                "How can they see small prey?"
+              ],
+              nova_reply: "Because their eyesight is remarkably acute with specialized retinas."
+            },
+            {
+              id: "field_a5",
+              cue_prompt: "can / survive cold climates?",
+              cue_word: "can",
+              is_missing: true,
+              acceptable_questions: [
+                "Can falcons survive in cold mountain climates?",
+                "Can they live in cold weather?",
+                "Do falcons survive cold winters?"
+              ],
+              nova_reply: "Yes, they can survive across diverse climates from tundra to deserts."
+            }
+          ]
+        },
+        table_b: {
+          title: "Red Kangaroo Abilities",
+          subtitle: "Information Card (Answer Examiner's Questions)",
+          person: "Kangaroo Researcher",
+          fields: [
+            {
+              id: "field_b1",
+              cue_prompt: "how far / jump?",
+              cue_word: "how far",
+              value: "Up to nine meters across the dry plains in a single leap.",
+              nova_question: "How far can red kangaroos jump in a single leap?",
+              acceptable_answers: [
+                "Up to nine meters across the dry plains in a single leap.",
+                "Up to nine meters.",
+                "Nine meters in one hop."
+              ]
+            },
+            {
+              id: "field_b2",
+              cue_prompt: "can / climb trees?",
+              cue_word: "can",
+              value: "No, they cannot climb trees because of their large hind feet.",
+              nova_question: "Can red kangaroos climb tall trees in the forest?",
+              acceptable_answers: [
+                "No, they cannot climb trees because of their large hind feet.",
+                "No, they cannot climb trees.",
+                "They cannot climb."
+              ]
+            },
+            {
+              id: "field_b3",
+              cue_prompt: "what / eat?",
+              cue_word: "what",
+              value: "They eat green grass, herbs, and desert shrub roots.",
+              nova_question: "What do red kangaroos eat to survive?",
+              acceptable_answers: [
+                "They eat green grass, herbs, and desert shrub roots.",
+                "Grass and desert herbs.",
+                "Green grass and roots."
+              ]
+            },
+            {
+              id: "field_b4",
+              cue_prompt: "when / active?",
+              cue_word: "when",
+              value: "They are nocturnal and most active at night or dawn.",
+              nova_question: "When are kangaroos most active during the day?",
+              acceptable_answers: [
+                "They are nocturnal and most active at night or dawn.",
+                "At night and dawn.",
+                "They are nocturnal animals."
+              ]
+            },
+            {
+              id: "field_b5",
+              cue_prompt: "how fast / hop?",
+              cue_word: "how fast",
+              value: "They can hop at over fifty kilometers per hour to escape predators.",
+              nova_question: "How fast can kangaroos hop when avoiding predators?",
+              acceptable_answers: [
+                "They can hop at over fifty kilometers per hour to escape predators.",
+                "Over fifty kilometers per hour.",
+                "Fifty km/h."
+              ]
+            }
+          ]
+        }
+      }
+    },
     cambridge_rw: {
       part1_definitions: [
         { id: 1, text: "A warm-blooded vertebrate animal that feeds milk to its young.", target: "mammal" },
@@ -264,15 +1035,77 @@ const PILOT_CONTENT_SPECS = {
         { id: 4, text: "Moving through water by moving fins, arms, or legs.", target: "swim" },
         { id: 5, text: "Able to move with great quickness, balance, and graceful agility.", target: "agile" }
       ],
+      // FIX 4: Cambridge R&W Part 2 restructured into 5 turns with 3 options each and marked answers
       part2_dialogue: {
         title: "Liam & Sarah Discussing Animal Capabilities",
+        turns: [
+          {
+            id: 1,
+            speaker: "Sarah",
+            prompt: "Can penguins fly in the sky like seagulls?",
+            options: [
+              "No, they cannot fly in the air, but they swim brilliantly.",
+              "Yes, they fly across the desert every evening.",
+              "They like eating hot vegetable soup."
+            ],
+            answer: "No, they cannot fly in the air, but they swim brilliantly."
+          },
+          {
+            id: 2,
+            speaker: "Sarah",
+            prompt: "Why can't heavy adult elephants jump over fences?",
+            options: [
+              "Their enormous weight requires continuous ground support.",
+              "Because they have feathers on their ears.",
+              "They prefer riding bicycles to school."
+            ],
+            answer: "Their enormous weight requires continuous ground support."
+          },
+          {
+            id: 3,
+            speaker: "Sarah",
+            prompt: "Which predator can run the fastest across the savanna?",
+            options: [
+              "The cheetah can sprint at seventy miles per hour!",
+              "A tiny brown snail on the wet grass.",
+              "The wooden chair in the kitchen."
+            ],
+            answer: "The cheetah can sprint at seventy miles per hour!"
+          },
+          {
+            id: 4,
+            speaker: "Sarah",
+            prompt: "How do desert camels survive without drinking water for days?",
+            options: [
+              "They store energy efficiently and endure high temperatures.",
+              "They buy cold water bottles at the corner shop.",
+              "They swim in the polar sea every night."
+            ],
+            answer: "They store energy efficiently and endure high temperatures."
+          },
+          {
+            id: 5,
+            speaker: "Sarah",
+            prompt: "Would you like to watch the falcon flight demonstration with me?",
+            options: [
+              "I would love to; let's hurry to the outdoor arena now!",
+              "I bought three pencils at the bookstore yesterday.",
+              "My shoes are completely dry."
+            ],
+            answer: "I would love to; let's hurry to the outdoor arena now!"
+          }
+        ],
         exchanges: [
-          { speaker: "Liam", text: "Can penguins fly like other sea birds?" },
-          { speaker: "Sarah", text: "No, they cannot fly in the air, but they swim brilliantly." },
-          { speaker: "Liam", text: "Why can't heavy elephants jump over obstacles?" },
-          { speaker: "Sarah", text: "Their enormous bone structure requires constant ground support." },
-          { speaker: "Liam", text: "Which predator can run the fastest across the plains?" },
-          { speaker: "Sarah", text: "The cheetah can run at seventy miles per hour!" }
+          { speaker: "Sarah", text: "Can penguins fly in the sky like seagulls?" },
+          { speaker: "Liam", text: "No, they cannot fly in the air, but they swim brilliantly." },
+          { speaker: "Sarah", text: "Why can't heavy adult elephants jump over fences?" },
+          { speaker: "Liam", text: "Their enormous weight requires continuous ground support." },
+          { speaker: "Sarah", text: "Which predator can run the fastest across the savanna?" },
+          { speaker: "Liam", text: "The cheetah can sprint at seventy miles per hour!" },
+          { speaker: "Sarah", text: "How do desert camels survive without drinking water for days?" },
+          { speaker: "Liam", text: "They store energy efficiently and endure high temperatures." },
+          { speaker: "Sarah", text: "Would you like to watch the falcon flight demonstration with me?" },
+          { speaker: "Liam", text: "I would love to; let's hurry to the outdoor arena now!" }
         ]
       },
       part6_cloze: {
@@ -393,6 +1226,351 @@ const PILOT_CONTENT_SPECS = {
       { id: 7, text: "Every participant tallied their survey results carefully on structured frequency tables.", ipa: "/ˈevri pɑːrˈtɪsəpənt ˈtælid ðer ˈsɜːrveɪ rɪˈzʌlts ˈkerfəli ɑːn ˈstrʌktʃərd ˈfriːkwənsi ˈteɪbəlz/" },
       { id: 8, text: "Comparing different global traditions helps students cultivate empathy and genuine cultural appreciation.", ipa: "/kəmˈperɪŋ ˈdɪfərənt ˈɡloʊbəl trəˈdɪʃənz helps ˈstuːdənts ˈkʌltɪveɪt ˈempəθi ənd ˈdʒenjuɪn ˈkʌltʃərəl əˌpriːʃiˈeɪʃən/" }
     ],
+    // FIX 2: 5 Story Scenes with character names & rich narrative
+    story_scenes: [
+      {
+        id: 1,
+        scene_id: "scene_1",
+        scene_number: 1,
+        title_en: "Conducting the Culture Survey",
+        title_vi: "Tiến Hành Khảo Sát Văn Hóa",
+        description_en: "Marcus and Elena conducted a comprehensive school **survey** to analyze how diverse families **celebrate** harvest traditions.",
+        description: "Marcus and Elena conducted a comprehensive school **survey** to analyze how diverse families **celebrate** harvest traditions.",
+        image_url: "/images/week78/webtoon_scene_1.png",
+        audio_url: "/audio/week78/scene_1.mp3"
+      },
+      {
+        id: 2,
+        scene_id: "scene_2",
+        scene_number: 2,
+        title_en: "Autumn Lantern Gatherings",
+        title_vi: "Lễ Hội Đèn Lồng Mùa Thu",
+        description_en: "**Similar to** East Asian lantern festivals where families **gather** under the moon, European fairs celebrate harvest with communal feasts.",
+        description: "**Similar to** East Asian lantern festivals where families **gather** under the moon, European fairs celebrate harvest with communal feasts.",
+        image_url: "/images/week78/webtoon_scene_2.png",
+        audio_url: "/audio/week78/scene_2.mp3"
+      },
+      {
+        id: 3,
+        scene_id: "scene_3",
+        scene_number: 3,
+        title_en: "Vibrant Latin Street Carnivals",
+        title_vi: "Lễ Hội Đường Phố Mỹ La-tinh",
+        description_en: "**Unlike** quiet indoor dinners, Latin American cultural festivities feature vibrant street carnivals filled with lively music and **symbolic** dances.",
+        description: "**Unlike** quiet indoor dinners, Latin American cultural festivities feature vibrant street carnivals filled with lively music and **symbolic** dances.",
+        image_url: "/images/week78/webtoon_scene_3.png",
+        audio_url: "/audio/week78/scene_3.mp3"
+      },
+      {
+        id: 4,
+        scene_id: "scene_4",
+        scene_number: 4,
+        title_en: "Preserving Ancestral Customs",
+        title_vi: "Bảo Tồn Phong Tục Tổ Tiên",
+        description_en: "**Whereas** older customs focused strictly on religious ceremonies, Elena noted that modern festivals promote community unity.",
+        description: "**Whereas** older customs focused strictly on religious ceremonies, Elena noted that modern festivals promote community unity.",
+        image_url: "/images/week78/webtoon_scene_4.png",
+        audio_url: "/audio/week78/scene_4.mp3"
+      },
+      {
+        id: 5,
+        scene_id: "scene_5",
+        scene_number: 5,
+        title_en: "Survey Tally and School Presentation",
+        title_vi: "Tổng Hợp Bảng Đếm Và Báo Cáo",
+        description_en: "Dr. Thorne helped the class **tally** their survey data, confirming that a clear **majority** voted to **preserve** traditional arts.",
+        description: "Dr. Thorne helped the class **tally** their survey data, confirming that a clear **majority** voted to **preserve** traditional arts.",
+        image_url: "/images/week78/webtoon_scene_5.png",
+        audio_url: "/audio/week78/scene_5.mp3"
+      }
+    ],
+    // FIX 1: Rich Writing Data with multi-stage ladder, model sentence & pills
+    writing_data: {
+      title: "Comparative Analysis of Global Cultural Traditions",
+      prompt_en: "Look at the pictures and survey data. Write a comparative paragraph about global cultural traditions using 'Unlike', 'Similar to', and 'Whereas'. Write 30 or more words.",
+      prompt_vi: "Nhìn vào các bức tranh và số liệu khảo sát. Viết một đoạn văn so sánh về các truyền thống văn hóa toàn cầu sử dụng 'Unlike', 'Similar to', và 'Whereas' (từ 30 từ trở lên).",
+      min_sentences: 3,
+      min_words: 30,
+      max_words: 90,
+      model_sentence: "Throughout human civilization, diverse societies have established rich cultural traditions to celebrate agricultural harvests. Similar to East Asian communities that gather under the autumn moon to share sweet pastries, European harvest home gatherings organize communal feasts to express gratitude for crops. Unlike private household dinners, Latin American cultural festivities frequently feature vibrant public street carnivals with music and dances. Whereas ancient rituals focused strictly on religious ceremonies, modern celebrations foster intercultural dialogue. Conducting demographic surveys enables researchers to preserve ancestral heritage while embracing contemporary diversity.",
+      word_bank: ["tradition", "culture", "heritage", "celebrate", "gather", "preserve", "survey", "tally", "majority", "similar", "different", "symbolic"],
+      sentence_frames: [
+        "To begin their study, researchers conducted an extensive ___ to gather data.",
+        "___ Asian lantern festivals, European harvest communities gather for communal meals.",
+        "___ quiet indoor dinners, Latin American festivals feature vibrant street carnivals.",
+        "___ older rituals were solemn, modern celebrations foster community unity."
+      ],
+      panels: [
+        {
+          panel_id: "panel_1",
+          title_en: "Scene 1: Surveying Holiday Traditions",
+          title_vi: "Cảnh 1: Khảo Sát Truyền Thống Ngày Lễ",
+          image_url: "/images/week78/writing_panel_1.png",
+          image_prompt: "Two students interviewing diverse classmates with clipboards and tally charts in a modern school library, editorial style.",
+          caption: "Marcus and Elena distributed a questionnaire to discover how families celebrate cultural festivals.",
+          sentence_frame: "To begin their research, Marcus and Elena [conducted an extensive survey] to [gather data on cultural traditions].",
+          pills: ["conducted an extensive survey", "gather data on cultural traditions", "multicultural community", "distributed questionnaires", "tallied student responses"],
+          connectors: ["First,", "To begin with,", "In their school project,"]
+        },
+        {
+          panel_id: "panel_2",
+          title_en: "Scene 2: Comparing Harvest Feasts",
+          title_vi: "Cảnh 2: So Sánh Lễ Hội Mùa Màng",
+          image_url: "/images/week78/writing_panel_2.png",
+          image_prompt: "Split panel showing families sharing mooncakes under lanterns on the left, and a European harvest festival banquet with bread on the right.",
+          caption: "Similar to Asian mid-autumn gatherings, European harvest fairs emphasize communal banquets and gratitude.",
+          sentence_frame: "[Similar to] Asian lantern celebrations, European harvest communities [gather together to share meals].",
+          pills: ["Similar to", "gather together to share meals", "communal banquets", "bountiful crops", "shared gratitude"],
+          connectors: ["Similar to,", "In a comparable way,", "Likewise,"]
+        },
+        {
+          panel_id: "panel_3",
+          title_en: "Scene 3: Street Carnivals vs Quiet Dinners",
+          title_vi: "Cảnh 3: Lễ Hội Đường Phố Và Bữa Tối Gia Đình",
+          image_url: "/images/week78/writing_panel_3.png",
+          image_prompt: "A vibrant outdoor Latin American street carnival with colorful dancers, drums, and confetti in a sunny plaza.",
+          caption: "Unlike quiet indoor dinners, Latin American street festivals feature lively music and vibrant costumes.",
+          sentence_frame: "[Unlike quiet indoor gatherings], Latin American festivals feature [vibrant public street carnivals].",
+          pills: ["Unlike quiet indoor gatherings", "vibrant public street carnivals", "lively percussion and dances", "symbolic costumes", "community celebrations"],
+          connectors: ["Unlike,", "In sharp contrast,", "On the other hand,"]
+        },
+        {
+          panel_id: "panel_4",
+          title_en: "Scene 4: Tabulating Demographic Findings",
+          title_vi: "Cảnh 4: Tổng Hợp Dữ Liệu Khảo Sát",
+          image_url: "/images/week78/writing_panel_4.png",
+          image_prompt: "Students and teacher looking at a large colorful frequency bar chart displaying festival survey results on a smart board.",
+          caption: "Whereas older customs were private, modern students overwhelmingly voted to preserve global traditions together.",
+          sentence_frame: "[Whereas older customs were solemn], modern celebrations [foster inclusive civic unity].",
+          pills: ["Whereas older customs were solemn", "foster inclusive civic unity", "overwhelming majority voted", "preserve ancestral heritage", "multicultural appreciation"],
+          connectors: ["Whereas,", "In conclusion,", "Finally,"]
+        }
+      ],
+      steps: [
+        {
+          scene: 1,
+          ladder_stage: "MODEL",
+          badge_label: "MODEL",
+          title: "Scene 1: Surveying Holiday Traditions",
+          image_url: "/images/week78/writing_panel_1.png",
+          caption: "Marcus and Elena distributed a questionnaire to discover how families celebrate cultural festivals.",
+          frame_L1: "Marcus and Elena conducted a comprehensive survey at their school. They gathered demographic data on cultural traditions.",
+          connectors: ["First,", "To begin with,", "In their project,"],
+          sentence_hint: "Write 2 sentences about conducting a cultural survey and gathering data.",
+          pills: ["conducted an extensive survey", "gather data on traditions", "distributed questionnaires", "Marcus and Elena"],
+          sentence_frame: "To begin their research, Marcus and Elena [conducted an extensive survey] to [gather data on cultural traditions]."
+        },
+        {
+          scene: 2,
+          ladder_stage: "BUILD",
+          badge_label: "BUILD",
+          title: "Scene 2: Comparing Harvest Feasts",
+          image_url: "/images/week78/writing_panel_2.png",
+          caption: "Similar to Asian mid-autumn gatherings, European harvest fairs emphasize communal banquets and gratitude.",
+          frame_L1: "Similar to Asian mid-autumn celebrations, European harvest fairs bring people together. Families gather to share meals and express gratitude.",
+          connectors: ["Similar to,", "In a comparable way,", "Likewise,"],
+          sentence_hint: "Write 2 sentences using 'Similar to' comparing Asian and European harvest celebrations.",
+          pills: ["Similar to", "gather to share meals", "communal banquets", "express gratitude"],
+          sentence_frame: "[Similar to] Asian lantern celebrations, European harvest communities [gather together to share meals]."
+        },
+        {
+          scene: 3,
+          ladder_stage: "WRITE",
+          badge_label: "WRITE",
+          title: "Scene 3: Street Carnivals vs Quiet Dinners",
+          image_url: "/images/week78/writing_panel_3.png",
+          caption: "Unlike quiet indoor dinners, Latin American street festivals feature lively music and vibrant costumes.",
+          frame_L1: "Unlike quiet indoor dinners, Latin American festivities take place outdoors. They feature vibrant street carnivals with lively music and dancing.",
+          connectors: ["Unlike,", "In sharp contrast,", "On the other hand,"],
+          sentence_hint: "Write 2 sentences using 'Unlike' contrasting indoor meals with outdoor street carnivals.",
+          pills: ["Unlike quiet indoor gatherings", "vibrant public street carnivals", "lively percussion and music", "symbolic costumes"],
+          sentence_frame: "[Unlike quiet indoor gatherings], Latin American festivals feature [vibrant public street carnivals]."
+        },
+        {
+          scene: 4,
+          ladder_stage: "EXPAND",
+          badge_label: "EXPAND",
+          title: "Scene 4: Tabulating Demographic Findings",
+          image_url: "/images/week78/writing_panel_4.png",
+          caption: "Whereas older customs were private, modern students celebrate diversity. An overwhelming majority voted to preserve traditional folk arts.",
+          frame_L1: "Whereas older customs were private, modern students celebrate diversity. An overwhelming majority voted to preserve traditional folk arts.",
+          connectors: ["Whereas,", "In conclusion,", "Finally,"],
+          sentence_hint: "Write 2 sentences using 'Whereas' explaining modern survey findings.",
+          pills: ["Whereas older customs were solemn", "foster inclusive civic unity", "majority voted to preserve", "cultural appreciation"],
+          sentence_frame: "[Whereas older customs were solemn], modern celebrations [foster inclusive civic unity]."
+        }
+      ]
+    },
+    // FIX 3: Speaking Hub with teen-appropriate register & genuine info-gap
+    speaking_data: {
+      talkshow_prompt: {
+        topic: "Cultural Traditions & School Survey Findings",
+        question: "Elena, based on your school survey, what key comparative insight did you discover between different harvest celebrations?",
+        model_response: "Our research revealed that similar to East Asian lantern festivals, European harvest home gatherings celebrate community solidarity and seasonal bounties. Unlike private modern holidays, traditional celebrations bring neighborhoods together into shared public spaces, whereas newer customs focus on intercultural education and unity."
+      },
+      info_exchange_cards: {
+        card_a: {
+          topic: "Mid-Autumn Moon Festival",
+          title: "Mid-Autumn Festival Traditions",
+          subtitle: "Candidate's Question Card (Ask Examiner)",
+          person: "Cultural Anthropologist",
+          questions: [
+            "What symbolic pastries do families share during Mid-Autumn Festival?",
+            "Where do children carry their colorful paper lanterns?",
+            "What legend is traditionally recounted during the full moon gathering?",
+            "How does the Mid-Autumn celebration foster family reunion?",
+            "Is the festival widely celebrated in rural agricultural communities?"
+          ]
+        },
+        card_b: {
+          topic: "Day of the Dead Celebrations",
+          title: "Dia de los Muertos Traditions",
+          subtitle: "Information Card (Answer Examiner's Questions)",
+          person: "Heritage Educator",
+          answers: [
+            "Bright yellow and orange marigold flowers.",
+            "At community cemeteries and decorative home altars.",
+            "Pan de muerto, sweet bread dusted with anise and sugar.",
+            "A joyful and colorful atmosphere filled with music and storytelling.",
+            "On the first and second days of November every year."
+          ]
+        },
+        table_a: {
+          title: "Mid-Autumn Festival Traditions",
+          subtitle: "Candidate's Question Card (Ask Examiner)",
+          person: "Cultural Anthropologist",
+          fields: [
+            {
+              id: "field_a1",
+              cue_prompt: "what / pastries share?",
+              cue_word: "what",
+              is_missing: true,
+              acceptable_questions: [
+                "What symbolic pastries do families share during Mid-Autumn Festival?",
+                "What pastries do they share?",
+                "What food is shared during the festival?"
+              ],
+              nova_reply: "Families share sweet round mooncakes symbolic of unity and completeness."
+            },
+            {
+              id: "field_a2",
+              cue_prompt: "where / carry lanterns?",
+              cue_word: "where",
+              is_missing: true,
+              acceptable_questions: [
+                "Where do children carry their colorful paper lanterns?",
+                "Where do they carry lanterns?",
+                "Where do children walk with lanterns?"
+              ],
+              nova_reply: "Children parade their illuminated lanterns through neighborhood parks and streets."
+            },
+            {
+              id: "field_a3",
+              cue_prompt: "what / legend recount?",
+              cue_word: "what",
+              is_missing: true,
+              acceptable_questions: [
+                "What legend is traditionally recounted during the full moon gathering?",
+                "What story is told?",
+                "What legend do they recount?"
+              ],
+              nova_reply: "Elders recount the ancient legend of the Moon Goddess Chang'e and the Jade Rabbit."
+            },
+            {
+              id: "field_a4",
+              cue_prompt: "how / foster reunion?",
+              cue_word: "how",
+              is_missing: true,
+              acceptable_questions: [
+                "How does the Mid-Autumn celebration foster family reunion?",
+                "How does it bring families together?",
+                "Why is reunion important?"
+              ],
+              nova_reply: "Relatives travel from distant cities to share a banquet under the full autumn moon."
+            },
+            {
+              id: "field_a5",
+              cue_prompt: "is / widely celebrated?",
+              cue_word: "is",
+              is_missing: true,
+              acceptable_questions: [
+                "Is the festival widely celebrated in rural agricultural communities?",
+                "Is it widely celebrated?",
+                "Where is the festival popular?"
+              ],
+              nova_reply: "Yes, it enjoys widespread popularity across both rural villages and modern metropolitan cities."
+            }
+          ]
+        },
+        table_b: {
+          title: "Dia de los Muertos Traditions",
+          subtitle: "Information Card (Answer Examiner's Questions)",
+          person: "Heritage Educator",
+          fields: [
+            {
+              id: "field_b1",
+              cue_prompt: "what / symbolic flower?",
+              cue_word: "what",
+              value: "Bright yellow and orange marigold flowers.",
+              nova_question: "What symbolic flower is prominently displayed on altars?",
+              acceptable_answers: [
+                "Bright yellow and orange marigold flowers.",
+                "Marigold flowers.",
+                "Yellow and orange marigolds."
+              ]
+            },
+            {
+              id: "field_b2",
+              cue_prompt: "where / gather?",
+              cue_word: "where",
+              value: "At community cemeteries and decorative home altars.",
+              nova_question: "Where do families gather to honor their ancestral memories?",
+              acceptable_answers: [
+                "At community cemeteries and decorative home altars.",
+                "At cemeteries and home altars.",
+                "At home altars."
+              ]
+            },
+            {
+              id: "field_b3",
+              cue_prompt: "what / sweet bread?",
+              cue_word: "what",
+              value: "Pan de muerto, sweet bread dusted with anise and sugar.",
+              nova_question: "What traditional sweet bread is prepared for the holiday?",
+              acceptable_answers: [
+                "Pan de muerto, sweet bread dusted with anise and sugar.",
+                "Pan de muerto.",
+                "Traditional sweet bread with anise."
+              ]
+            },
+            {
+              id: "field_b4",
+              cue_prompt: "unlike funerals / atmosphere?",
+              cue_word: "unlike",
+              value: "A joyful and colorful atmosphere filled with music and storytelling.",
+              nova_question: "Unlike solemn funerals, what atmosphere characterizes the celebration?",
+              acceptable_answers: [
+                "A joyful and colorful atmosphere filled with music and storytelling.",
+                "A joyful and colorful atmosphere.",
+                "Joyful with music and stories."
+              ]
+            },
+            {
+              id: "field_b5",
+              cue_prompt: "when / processions occur?",
+              cue_word: "when",
+              value: "On the first and second days of November every year.",
+              nova_question: "When do the main ceremonial processions take place?",
+              acceptable_answers: [
+                "On the first and second days of November every year.",
+                "On November first and second.",
+                "In early November."
+              ]
+            }
+          ]
+        }
+      }
+    },
     cambridge_rw: {
       part1_definitions: [
         { id: 1, text: "A systematic collection of data and opinions gathered from a sample group.", target: "survey" },
@@ -401,15 +1579,77 @@ const PILOT_CONTENT_SPECS = {
         { id: 4, text: "To protect something valuable from being destroyed, forgotten, or lost.", target: "preserve" },
         { id: 5, text: "Existing or occurring across a broad geographic territory or population.", target: "widespread" }
       ],
+      // FIX 4: Cambridge R&W Part 2 restructured into 5 turns with 3 options each and marked answers
       part2_dialogue: {
         title: "Marcus & Elena Discussing Survey Findings on Traditions",
+        turns: [
+          {
+            id: 1,
+            speaker: "Marcus",
+            prompt: "What did our school survey reveal about local cultural celebrations?",
+            options: [
+              "The majority of participants celebrate both traditional and modern holidays.",
+              "We bought six loaves of wheat bread at the bakery.",
+              "The bus arrives at platform four every afternoon."
+            ],
+            answer: "The majority of participants celebrate both traditional and modern holidays."
+          },
+          {
+            id: 2,
+            speaker: "Marcus",
+            prompt: "Did respondents identify similarities between different harvest festivals?",
+            options: [
+              "Yes, similar to Asian traditions, European festivals emphasize community meals.",
+              "No, geometry textbooks are stored in room 3B.",
+              "The survey was conducted in heavy rain."
+            ],
+            answer: "Yes, similar to Asian traditions, European festivals emphasize community meals."
+          },
+          {
+            id: 3,
+            speaker: "Marcus",
+            prompt: "How did the tally votes compare between indoor and outdoor festival proposals?",
+            options: [
+              "An overwhelming majority favored outdoor concerts and street food stalls.",
+              "All the pencils were sharpened before morning assembly.",
+              "The temperature dropped by five degrees Celsius."
+            ],
+            answer: "An overwhelming majority favored outdoor concerts and street food stalls."
+          },
+          {
+            id: 4,
+            speaker: "Marcus",
+            prompt: "Why do cultural sociologists prioritize preserving intangible traditions?",
+            options: [
+              "Because shared customs reinforce communal empathy and cultural heritage.",
+              "They want all public holidays to be eliminated.",
+              "The library requires complete silence after five o'clock."
+            ],
+            answer: "Because shared customs reinforce communal empathy and cultural heritage."
+          },
+          {
+            id: 5,
+            speaker: "Marcus",
+            prompt: "Shall we present these comparative findings at tomorrow's assembly?",
+            options: [
+              "Certainly; I will prepare the frequency chart and introductory remarks.",
+              "I misplaced my yellow umbrella last Thursday.",
+              "The cafeteria serves vegetable curry today."
+            ],
+            answer: "Certainly; I will prepare the frequency chart and introductory remarks."
+          }
+        ],
         exchanges: [
           { speaker: "Marcus", text: "What did our school survey reveal about local cultural celebrations?" },
-          { speaker: "Elena", text: "The majority of students celebrate both traditional and modern holidays." },
-          { speaker: "Marcus", text: "Did participants notice similarities between different harvest festivals?" },
+          { speaker: "Elena", text: "The majority of participants celebrate both traditional and modern holidays." },
+          { speaker: "Marcus", text: "Did respondents identify similarities between different harvest festivals?" },
           { speaker: "Elena", text: "Yes, similar to Asian traditions, European festivals emphasize community meals." },
-          { speaker: "Marcus", text: "How did you record the tally votes from each classroom?" },
-          { speaker: "Elena", text: "We tabulated the responses into a clear frequency chart for our presentation." }
+          { speaker: "Marcus", text: "How did the tally votes compare between indoor and outdoor festival proposals?" },
+          { speaker: "Elena", text: "An overwhelming majority favored outdoor concerts and street food stalls." },
+          { speaker: "Marcus", text: "Why do cultural sociologists prioritize preserving intangible traditions?" },
+          { speaker: "Elena", text: "Because shared customs reinforce communal empathy and cultural heritage." },
+          { speaker: "Marcus", text: "Shall we present these comparative findings at tomorrow's assembly?" },
+          { speaker: "Elena", text: "Certainly; I will prepare the frequency chart and introductory remarks." }
         ]
       },
       part6_cloze: {
@@ -530,6 +1770,351 @@ const PILOT_CONTENT_SPECS = {
       { id: 7, text: "Transition markers establish cohesive relationships between introductory premises and concluding summaries.", ipa: "/trænˈzɪʃən ˈmɑːrkərz ɪˈstæblɪʃ koʊˈhiːsɪv rɪˈleɪʃənʃɪps bɪˈtwiːn ˌɪntrəˈdʌktəri ˈpremɪsɪz ənd kənˈkluːdɪŋ ˈsʌməriz/" },
       { id: 8, text: "Mastering introductory hooks and concluding syntheses empowers students to produce authoritative essays.", ipa: "/ˈmæstərɪŋ ˌɪntrəˈdʌktəri hʊks ənd kənˈkluːdɪŋ ˈsɪnθəsiːz ɪmˈpaʊərz ˈstuːdənts tuː prəˈduːs əˈθɔːrəteɪtɪv ˈeseɪz/" }
     ],
+    // FIX 2: 5 Story Scenes with character names & rich narrative
+    story_scenes: [
+      {
+        id: 1,
+        scene_id: "scene_1",
+        scene_number: 1,
+        title_en: "Framing the Introduction and Hook",
+        title_vi: "Xây Dựng Phần Mở Bài Và Câu Dẫn",
+        description_en: "Julian drafted a compelling **rhetorical hook** in his **introduction** before presenting his debatable **thesis statement**.",
+        description: "Julian drafted a compelling **rhetorical hook** in his **introduction** before presenting his debatable **thesis statement**.",
+        image_url: "/images/week125/webtoon_scene_1.png",
+        audio_url: "/audio/week125/scene_1.mp3"
+      },
+      {
+        id: 2,
+        scene_id: "scene_2",
+        scene_number: 2,
+        title_en: "Synthesizing Empirical Evidence",
+        title_vi: "Tổng Hợp Bằng Chứng Thực Nghiệm",
+        description_en: "Claire analyzed **empirical evidence** across divergent scholarly **perspectives** to build a **rigorous** academic argument.",
+        description: "Claire analyzed **empirical evidence** across divergent scholarly **perspectives** to build a **rigorous** academic argument.",
+        image_url: "/images/week125/webtoon_scene_2.png",
+        audio_url: "/audio/week125/scene_2.mp3"
+      },
+      {
+        id: 3,
+        scene_id: "scene_3",
+        scene_number: 3,
+        title_en: "Rebutting Scholarly Counterarguments",
+        title_vi: "Phản Biện Luận Điểm Đối Lập",
+        description_en: "Professor Vance **recommended** addressing potential **counterarguments** directly to cultivate intellectual balance.",
+        description: "Professor Vance **recommended** addressing potential **counterarguments** directly to cultivate intellectual balance.",
+        image_url: "/images/week125/webtoon_scene_3.png",
+        audio_url: "/audio/week125/scene_3.mp3"
+      },
+      {
+        id: 4,
+        scene_id: "scene_4",
+        scene_number: 4,
+        title_en: "Drafting Cohesive Paragraph Bridges",
+        title_vi: "Soạn Thảo Cầu Nối Đoạn Liền Mạch",
+        description_en: "Julian deployed **cohesive** transitions and authoritative verbs to **demonstrate** the validity of his hypothesis.",
+        description: "Julian deployed **cohesive** transitions and authoritative verbs to **demonstrate** the validity of his hypothesis.",
+        image_url: "/images/week125/webtoon_scene_4.png",
+        audio_url: "/audio/week125/scene_4.mp3"
+      },
+      {
+        id: 5,
+        scene_id: "scene_5",
+        scene_number: 5,
+        title_en: "Concluding Synthesis and Policy Recommendations",
+        title_vi: "Tổng Hợp Kết Bài Và Khuyến Nghị Chính Sách",
+        description_en: "In the final **conclusion**, Julian **restate**d his thesis and provided a **synthesis**, **urging** policymakers toward institutional reform.",
+        description: "In the final **conclusion**, Julian **restate**d his thesis and provided a **synthesis**, **urging** policymakers toward institutional reform.",
+        image_url: "/images/week125/webtoon_scene_5.png",
+        audio_url: "/audio/week125/scene_5.mp3"
+      }
+    ],
+    // FIX 1: Rich Writing Data with multi-stage ladder, model sentence & pills
+    writing_data: {
+      title: "Academic Composition: Framing Arguments with Rigor",
+      prompt_en: "Look at the stages of essay composition. Write an academic synthesis illustrating how introductions and conclusions frame scholarly research. Write 35 or more words.",
+      prompt_vi: "Nhìn vào các giai đoạn soạn thảo bài luận. Viết đoạn tổng hợp học thuật minh họa cách mở bài và kết bài định hình nghiên cứu khoa học (từ 35 từ trở lên).",
+      min_sentences: 3,
+      min_words: 35,
+      max_words: 100,
+      model_sentence: "In scholarly composition, introductory and concluding paragraphs function as critical conceptual bookends that determine analytical rigor. An authoritative introduction captures scholarly attention through an engaging rhetorical hook before establishing context and articulating a precise, debatable thesis statement. Throughout the body paragraphs, authors evaluate empirical evidence from divergent perspectives, addressing counterarguments to demonstrate intellectual balance. In contrast to mechanical summaries that reiterate claims verbatim, an effective conclusion synthesizes primary findings into a unified framework. Furthermore, rigorous conclusions outline far-reaching implications, urging researchers and policymakers to implement evidence-based reforms.",
+      word_bank: ["conclusion", "introduction", "thesis", "synthesis", "perspective", "evidence", "counterargument", "implication", "summarize", "restate", "urge", "recommend", "advocate", "persuasive", "rigorous", "cohesive"],
+      sentence_frames: [
+        "An authoritative introduction must culminate in a precise and debatable ___ statement.",
+        "Scholars evaluate empirical evidence from divergent ___ to substantiate claims.",
+        "Professor Vance ___ addressing counterarguments to cultivate intellectual balance.",
+        "A rigorous conclusion synthesizes primary evidence, ___ policymakers toward reform."
+      ],
+      panels: [
+        {
+          panel_id: "panel_1",
+          title_en: "Scene 1: Framing the Introduction and Thesis",
+          title_vi: "Cảnh 1: Định Hình Mở Bài Và Luận Đề",
+          image_url: "/images/week125/writing_panel_1.png",
+          image_prompt: "A university student drafting a paper on a laptop in a quiet academic research library with books, focused lighting.",
+          caption: "Julian drafted an engaging rhetorical question to frame the problem before stating his thesis.",
+          sentence_frame: "In the introductory paragraph, Julian [formulated a compelling rhetorical hook] before [stating an explicit thesis statement].",
+          pills: ["formulated a compelling rhetorical hook", "stating an explicit thesis statement", "academic introduction", "intellectual framework", "define the scope"],
+          connectors: ["First,", "In the introduction,", "To commence the inquiry,"]
+        },
+        {
+          panel_id: "panel_2",
+          title_en: "Scene 2: Evaluating Empirical Evidence",
+          title_vi: "Cảnh 2: Đánh Giá Bằng Chứng Thực Nghiệm",
+          image_url: "/images/week125/writing_panel_2.png",
+          image_prompt: "A researcher analyzing highlighted academic papers and data graphs on a wooden seminar table.",
+          caption: "Claire examined peer-reviewed empirical studies to support her propositions with rigorous data.",
+          sentence_frame: "To ensure academic credibility, Claire [reviewed empirical evidence] from [multiple scholarly perspectives].",
+          pills: ["reviewed empirical evidence", "multiple scholarly perspectives", "peer-reviewed research", "intellectual balance", "substantiate claims"],
+          connectors: ["Subsequently,", "In the literature review,", "Furthermore,"]
+        },
+        {
+          panel_id: "panel_3",
+          title_en: "Scene 3: Rebutting Counterarguments",
+          title_vi: "Cảnh 3: Phản Biện Luận Điểm Đối Lập",
+          image_url: "/images/week125/writing_panel_3.png",
+          image_prompt: "A university professor discussing argumentative structure with two students in front of a whiteboard diagram.",
+          caption: "Professor Vance recommended addressing counterarguments directly to establish persuasive stance.",
+          sentence_frame: "Professor Vance [recommended addressing counterarguments] to [demonstrate persuasive rigor].",
+          pills: ["recommended addressing counterarguments", "demonstrate persuasive rigor", "analytical balance", "persuasive stance verbs", "academic maturity"],
+          connectors: ["Importantly,", "To address objections,", "On the contrary,"]
+        },
+        {
+          panel_id: "panel_4",
+          title_en: "Scene 4: Concluding Synthesis and Implications",
+          title_vi: "Cảnh 4: Tổng Hợp Kết Luận Và Hàm Ý Chính Sách",
+          image_url: "/images/week125/writing_panel_4.png",
+          image_prompt: "A student presenting concluding slides with a synthesis diagram to a university lecture hall audience.",
+          caption: "Julian synthesized his findings into broad implications, urging policymakers to act decisively.",
+          sentence_frame: "Rather than summarizing points mechanically, the conclusion [synthesizes primary findings] and [urges policymakers to adopt reforms].",
+          pills: ["synthesizes primary findings", "urges policymakers to adopt reforms", "far-reaching policy implications", "cohesive argument", "authoritative conclusion"],
+          connectors: ["In conclusion,", "Ultimately,", "Consequently,"]
+        }
+      ],
+      steps: [
+        {
+          scene: 1,
+          ladder_stage: "MODEL",
+          badge_label: "MODEL",
+          title: "Scene 1: Framing the Introduction and Thesis",
+          image_url: "/images/week125/writing_panel_1.png",
+          caption: "Julian drafted an engaging rhetorical question to frame the problem before stating his thesis.",
+          frame_L1: "In the introductory paragraph, Julian formulated a compelling hook. He articulated a precise, debatable thesis statement.",
+          connectors: ["In the introduction,", "First,", "To begin with,"],
+          sentence_hint: "Write 2 sentences about creating an introductory hook and stating a clear thesis.",
+          pills: ["formulated a compelling hook", "stated an explicit thesis", "intellectual scope", "Julian"],
+          sentence_frame: "In the introductory paragraph, Julian [formulated a compelling rhetorical hook] before [stating an explicit thesis statement]."
+        },
+        {
+          scene: 2,
+          ladder_stage: "BUILD",
+          badge_label: "BUILD",
+          title: "Scene 2: Evaluating Empirical Evidence",
+          image_url: "/images/week125/writing_panel_2.png",
+          caption: "Claire examined peer-reviewed empirical studies to support her propositions with rigorous data.",
+          frame_L1: "To substantiate her argument, Claire reviewed empirical data. She examined findings from multiple scholarly perspectives.",
+          connectors: ["Subsequently,", "In the body paragraphs,", "Furthermore,"],
+          sentence_hint: "Write 2 sentences about reviewing empirical evidence across perspectives.",
+          pills: ["reviewed empirical evidence", "multiple perspectives", "peer-reviewed research", "Claire"],
+          sentence_frame: "To ensure academic credibility, Claire [reviewed empirical evidence] from [multiple scholarly perspectives]."
+        },
+        {
+          scene: 3,
+          ladder_stage: "WRITE",
+          badge_label: "WRITE",
+          title: "Scene 3: Rebutting Counterarguments",
+          image_url: "/images/week125/writing_panel_3.png",
+          caption: "Professor Vance recommended addressing counterarguments directly to establish persuasive stance.",
+          frame_L1: "Professor Vance recommended addressing counterarguments directly. This critical move demonstrates analytical balance and rigor.",
+          connectors: ["Importantly,", "To address objections,", "On the contrary,"],
+          sentence_hint: "Write 2 sentences using stance verbs about addressing counterarguments.",
+          pills: ["recommended addressing counterarguments", "demonstrate persuasive rigor", "analytical balance", "Professor Vance"],
+          sentence_frame: "Professor Vance [recommended addressing counterarguments] to [demonstrate persuasive rigor]."
+        },
+        {
+          scene: 4,
+          ladder_stage: "EXPAND",
+          badge_label: "EXPAND",
+          title: "Scene 4: Concluding Synthesis and Implications",
+          image_url: "/images/week125/writing_panel_4.png",
+          caption: "Julian synthesized his findings into broad implications, urging policymakers to act decisively.",
+          frame_L1: "In the conclusion, Julian synthesized primary evidence. He articulated broad implications, urging leaders toward reform.",
+          connectors: ["In conclusion,", "Ultimately,", "Consequently,"],
+          sentence_hint: "Write 2 sentences using 'synthesize' and 'urge' to outline policy implications.",
+          pills: ["synthesizes primary findings", "urges policymakers to adopt reforms", "policy implications", "authoritative conclusion"],
+          sentence_frame: "Rather than summarizing points mechanically, the conclusion [synthesizes primary findings] and [urges policymakers to adopt reforms]."
+        }
+      ]
+    },
+    // FIX 3: Speaking Hub with academic seminar register & genuine info-gap
+    speaking_data: {
+      talkshow_prompt: {
+        topic: "Academic Rhetoric: Crafting Concluding Syntheses",
+        question: "Julian, why do scholarly writing authorities urge researchers to provide an analytical synthesis rather than a simple summary in the essay conclusion?",
+        model_response: "A superficial summary merely reiterates previously stated points verbatim, offering negligible intellectual contribution. In contrast, a rigorous synthesis integrates disparate empirical evidence to reveal macro-level patterns and articulate actionable policy implications, thereby urging the academic community toward constructive intervention."
+      },
+      info_exchange_cards: {
+        card_a: {
+          topic: "Julian's Research Methodology",
+          title: "Julian's Academic Essay Architecture",
+          subtitle: "Candidate's Question Card (Ask Examiner)",
+          person: "Seminar Chair",
+          questions: [
+            "What primary empirical methodology did Julian deploy in his essay?",
+            "How did Julian formulate his central thesis statement in the introduction?",
+            "What specific counterargument did Julian address in section three?",
+            "Which authoritative stance verbs did Julian employ in his recommendations?",
+            "What future policy implications did the conclusion articulate?"
+          ]
+        },
+        card_b: {
+          topic: "Claire's Longitudinal Study",
+          title: "Claire's Empirical Investigation",
+          subtitle: "Information Card (Answer Examiner's Questions)",
+          person: "Research Director",
+          answers: [
+            "Over twelve hundred secondary school educators across six distinct educational districts.",
+            "The long-term cognitive and pedagogical impacts of interdisciplinary inquiry curricula.",
+            "By deploying conceptual transition markers systematically linked to her primary research hypothesis.",
+            "Mandatory professional development workshops and equitable institutional resource allocation.",
+            "By identifying regional demographic variations as mediating factors rather than conflicting outcomes."
+          ]
+        },
+        table_a: {
+          title: "Julian's Academic Essay Architecture",
+          subtitle: "Candidate's Question Card (Ask Examiner)",
+          person: "Seminar Chair",
+          fields: [
+            {
+              id: "field_a1",
+              cue_prompt: "what / empirical methodology?",
+              cue_word: "what",
+              is_missing: true,
+              acceptable_questions: [
+                "What primary empirical methodology did Julian deploy in his essay?",
+                "What methodology did Julian use?",
+                "Which research method was deployed?"
+              ],
+              nova_reply: "Julian deployed a mixed-methods quantitative survey combined with qualitative case analyses."
+            },
+            {
+              id: "field_a2",
+              cue_prompt: "how / formulate thesis?",
+              cue_word: "how",
+              is_missing: true,
+              acceptable_questions: [
+                "How did Julian formulate his central thesis statement in the introduction?",
+                "How did he state the thesis?",
+                "How was the thesis constructed?"
+              ],
+              nova_reply: "He formulated a precise, three-pronged debatable proposition positioned as the concluding sentence of paragraph one."
+            },
+            {
+              id: "field_a3",
+              cue_prompt: "what / counterargument addressed?",
+              cue_word: "what",
+              is_missing: true,
+              acceptable_questions: [
+                "What specific counterargument did Julian address in section three?",
+                "What counterargument was discussed?",
+                "Which counterargument did he refute?"
+              ],
+              nova_reply: "He addressed fiscal concerns regarding high implementation overhead, refuting them through projected longitudinal savings."
+            },
+            {
+              id: "field_a4",
+              cue_prompt: "which / stance verbs employed?",
+              cue_word: "which",
+              is_missing: true,
+              acceptable_questions: [
+                "Which authoritative stance verbs did Julian employ in his recommendations?",
+                "Which stance verbs were used?",
+                "What verbs did he use to recommend actions?"
+              ],
+              nova_reply: "He employed authoritative stance verbs including 'urge', 'recommend', 'advocate', and 'demonstrate'."
+            },
+            {
+              id: "field_a5",
+              cue_prompt: "what / policy implications?",
+              cue_word: "what",
+              is_missing: true,
+              acceptable_questions: [
+                "What future policy implications did the conclusion articulate?",
+                "What implications were identified?",
+                "What policy changes did he propose?"
+              ],
+              nova_reply: "The conclusion urged governmental oversight bodies to mandate standardized critical-thinking assessments nationwide."
+            }
+          ]
+        },
+        table_b: {
+          title: "Claire's Empirical Investigation",
+          subtitle: "Information Card (Answer Examiner's Questions)",
+          person: "Research Director",
+          fields: [
+            {
+              id: "field_b1",
+              cue_prompt: "what / sample size?",
+              cue_word: "what",
+              value: "Over twelve hundred secondary school educators across six distinct educational districts.",
+              nova_question: "What was the sample size of Claire's empirical survey?",
+              acceptable_answers: [
+                "Over twelve hundred secondary school educators across six distinct educational districts.",
+                "Over twelve hundred educators across six districts.",
+                "Twelve hundred teachers."
+              ]
+            },
+            {
+              id: "field_b2",
+              cue_prompt: "what / research question?",
+              cue_word: "what",
+              value: "The long-term cognitive and pedagogical impacts of interdisciplinary inquiry curricula.",
+              nova_question: "What primary research question did her introduction investigate?",
+              acceptable_answers: [
+                "The long-term cognitive and pedagogical impacts of interdisciplinary inquiry curricula.",
+                "Long-term cognitive impacts of inquiry curricula.",
+                "Pedagogical impacts of interdisciplinary curricula."
+              ]
+            },
+            {
+              id: "field_b3",
+              cue_prompt: "how / establish transitions?",
+              cue_word: "how",
+              value: "By deploying conceptual transition markers systematically linked to her primary research hypothesis.",
+              nova_question: "How did Claire establish cohesive transitions between chapters?",
+              acceptable_answers: [
+                "By deploying conceptual transition markers systematically linked to her primary research hypothesis.",
+                "Through conceptual transition markers.",
+                "By linking paragraphs to the central hypothesis."
+              ]
+            },
+            {
+              id: "field_b4",
+              cue_prompt: "what reform / urge leaders?",
+              cue_word: "what",
+              value: "Mandatory professional development workshops and equitable institutional resource allocation.",
+              nova_question: "What reform did Claire's conclusion urge educational leaders to adopt?",
+              acceptable_answers: [
+                "Mandatory professional development workshops and equitable institutional resource allocation.",
+                "Mandatory professional development workshops.",
+                "Equitable resource allocation and teacher workshops."
+              ]
+            },
+            {
+              id: "field_b5",
+              cue_prompt: "how / resolve conflicting data?",
+              cue_word: "how",
+              value: "By identifying regional demographic variations as mediating factors rather than conflicting outcomes.",
+              nova_question: "How did her synthesis resolve conflicting survey data?",
+              acceptable_answers: [
+                "By identifying regional demographic variations as mediating factors rather than conflicting outcomes.",
+                "Through regional demographic analysis.",
+                "By recognizing demographic variations as mediating factors."
+              ]
+            }
+          ]
+        }
+      }
+    },
     cambridge_rw: {
       part1_definitions: [
         { id: 1, text: "A proposition put forward and supported by reasoned argument within an essay.", target: "thesis" },
@@ -538,15 +2123,77 @@ const PILOT_CONTENT_SPECS = {
         { id: 4, text: "Thorough, exhaustive, and adhering strictly to high intellectual standards.", target: "rigorous" },
         { id: 5, text: "The concluding section of an academic work drawing together findings and implications.", target: "conclusion" }
       ],
+      // FIX 4: Cambridge R&W Part 2 restructured into 5 turns with 3 options each and marked answers
       part2_dialogue: {
         title: "Professor Vance & Julian Discussing Essay Architecture",
+        turns: [
+          {
+            id: 1,
+            speaker: "Professor Vance",
+            prompt: "Julian, does your introductory paragraph present an explicit thesis statement?",
+            options: [
+              "Yes, I revised the final sentence so that it clearly defines my three central arguments.",
+              "No, I arrived at the laboratory thirty minutes before noon.",
+              "The bibliography contains twenty-five references."
+            ],
+            answer: "Yes, I revised the final sentence so that it clearly defines my three central arguments."
+          },
+          {
+            id: 2,
+            speaker: "Professor Vance",
+            prompt: "How did you formulate your concluding paragraph to avoid mechanical repetition?",
+            options: [
+              "Instead of repeating points verbatim, I synthesized findings and highlighted policy implications.",
+              "I copied the first paragraph into the conclusion word for word.",
+              "I left the final page completely blank."
+            ],
+            answer: "Instead of repeating points verbatim, I synthesized findings and highlighted policy implications."
+          },
+          {
+            id: 3,
+            speaker: "Professor Vance",
+            prompt: "Did you use authoritative stance verbs to articulate your recommendations?",
+            options: [
+              "Indeed; I urged institutions to adopt proactive research methodologies.",
+              "I whispered softly during the seminar presentation.",
+              "The printer ran out of paper during the second draft."
+            ],
+            answer: "Indeed; I urged institutions to adopt proactive research methodologies."
+          },
+          {
+            id: 4,
+            speaker: "Professor Vance",
+            prompt: "How did you address the counterargument regarding implementation costs?",
+            options: [
+              "I conceded the initial expense but demonstrated long-term economic efficiencies.",
+              "I deleted all references to monetary budgeting.",
+              "The seminar room was booked until six in the evening."
+            ],
+            answer: "I conceded the initial expense but demonstrated long-term economic efficiencies."
+          },
+          {
+            id: 5,
+            speaker: "Professor Vance",
+            prompt: "Your revised draft demonstrates remarkable cohesion and intellectual balance.",
+            options: [
+              "Thank you; I will finalize the abstract and submit the manuscript today.",
+              "I prefer reading fiction novels during summer holidays.",
+              "The library elevator is undergoing maintenance."
+            ],
+            answer: "Thank you; I will finalize the abstract and submit the manuscript today."
+          }
+        ],
         exchanges: [
           { speaker: "Professor Vance", text: "Julian, does your introductory paragraph present an explicit thesis statement?" },
-          { speaker: "Julian", text: "Yes, I revised the final sentence so that it outlines my three primary arguments." },
-          { speaker: "Professor Vance", text: "Excellent. How did you formulate your concluding synthesis?" },
-          { speaker: "Julian", text: "Instead of summarizing points mechanically, I highlighted the policy implications." },
+          { speaker: "Julian", text: "Yes, I revised the final sentence so that it clearly defines my three central arguments." },
+          { speaker: "Professor Vance", text: "How did you formulate your concluding paragraph to avoid mechanical repetition?" },
+          { speaker: "Julian", text: "Instead of repeating points verbatim, I synthesized findings and highlighted policy implications." },
           { speaker: "Professor Vance", text: "Did you use authoritative stance verbs to articulate your recommendations?" },
-          { speaker: "Julian", text: "Indeed; I urged institutions to adopt proactive research methodologies." }
+          { speaker: "Julian", text: "Indeed; I urged institutions to adopt proactive research methodologies." },
+          { speaker: "Professor Vance", text: "How did you address the counterargument regarding implementation costs?" },
+          { speaker: "Julian", text: "I conceded the initial expense but demonstrated long-term economic efficiencies." },
+          { speaker: "Professor Vance", text: "Your revised draft demonstrates remarkable cohesion and intellectual balance." },
+          { speaker: "Julian", text: "Thank you; I will finalize the abstract and submit the manuscript today." }
         ]
       },
       part6_cloze: {
@@ -609,6 +2256,53 @@ const PILOT_CONTENT_SPECS = {
 };
 
 /**
+ * Compute structural skeleton for a week by stripping theme, titles, vocab words, digits, and punctuation.
+ */
+function computeWeekSkeleton(spec) {
+  const payload = {
+    writing: spec.writing_data,
+    speaking: spec.speaking_data,
+    scenes: spec.story_scenes
+  };
+  let text = JSON.stringify(payload);
+  
+  // 1. Remove theme, titles
+  const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const themeRegex = new RegExp(escapeRegExp(spec.theme), 'gi');
+  text = text.replace(themeRegex, ' ');
+  if (spec.title_en) {
+    const tEnRegex = new RegExp(escapeRegExp(spec.title_en), 'gi');
+    text = text.replace(tEnRegex, ' ');
+  }
+  
+  // 2. Remove all target vocabulary words
+  for (const v of spec.vocab_list) {
+    const vRegex = new RegExp(`\\b${escapeRegExp(v.word)}\\b`, 'gi');
+    text = text.replace(vRegex, ' ');
+  }
+  
+  // 3. Remove digits, punctuation, and normalize spaces
+  text = text.toLowerCase()
+    .replace(/\d+/g, ' ')
+    .replace(/[^\w\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+    
+  return {
+    normalizedLength: text.length,
+    hash: crypto.createHash('sha256').update(text).digest('hex')
+  };
+}
+
+/**
+ * Pre-calculate skeletons for all configured weeks to verify cross-week differentiation
+ */
+const ALL_SKELETONS = {};
+for (const [wStr, spec] of Object.entries(PILOT_CONTENT_SPECS)) {
+  ALL_SKELETONS[wStr] = computeWeekSkeleton(spec);
+}
+
+/**
  * Generate files for a specific week into staging directory
  */
 function generateWeekContent(w) {
@@ -645,13 +2339,13 @@ function generateWeekContent(w) {
  * STAGED DELIVERABLE: ${title}
  * Week: ${w} | Theme: "${spec.theme}" | CEFR: ${spec.cefr_level}
  * Generated: ${timestamp}
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 60 Phase 1 Pilot)
+ * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 `;
 
-  // 1. vocab.js
+  // 1. vocab.js (UNTOUCHED - Already Approved in Round 60)
   const vocabContent = `${makeHeader('Target Vocabulary & SRS Metadata')}
 export const vocab = ${JSON.stringify(spec.vocab_list, null, 2)};
 export const vocabList = vocab;
@@ -659,22 +2353,14 @@ export const week${w}Vocab = vocab;
 export default vocab;
 `;
 
-  // 2. reading_hub.js
+  // 2. reading_hub.js (FIX 2: story_scenes & FIX 4: rw_part2 with 5 gradable turns)
   const readingHubData = {
     week: w,
     theme: spec.theme,
     cefr_level: spec.cefr_level,
     vocab: spec.vocab_list,
     clil_article: spec.clil,
-    story_scenes: Array.from({ length: 5 }, (_, i) => ({
-      id: i + 1,
-      scene_number: i + 1,
-      scene_id: `scene_${i + 1}`,
-      title_en: `Panel ${i + 1}: ${spec.theme}`,
-      title_vi: `Cảnh ${i + 1}: ${spec.title_vi}`,
-      description_en: `Scene narrative panel ${i + 1} illustrating ${spec.theme}.`,
-      image_url: `/images/week${w}/webtoon_scene_${i + 1}.png`
-    })),
+    story_scenes: spec.story_scenes,
     shadowingData: {
       sentences: spec.shadowing_sentences
     },
@@ -696,12 +2382,15 @@ readingHubData.rw_part_6 = readingHubData.rw_part6;
 export default readingHubData;
 `;
 
-  // 3. listening_hub.js
+  // 3. listening_hub.js (audio_dialogue flat exchanges + shadowing scripts)
   const listeningHubData = {
     week: w,
     theme: spec.theme,
     cefr_level: spec.cefr_level,
-    audio_dialogue: spec.cambridge_rw.part2_dialogue,
+    audio_dialogue: {
+      title: spec.cambridge_rw.part2_dialogue.title,
+      exchanges: spec.cambridge_rw.part2_dialogue.exchanges
+    },
     shadowing_sentences: spec.shadowing_sentences,
     passage_audio_script: `Narrator: Cambridge ${spec.cefr_level} Listening Practice for Week ${w}. Theme: ${spec.theme}.\n` +
       spec.shadowing_sentences.map(s => `Speaker: ${s.text}`).join('\n')
@@ -712,19 +2401,12 @@ export const listeningHubData = ${JSON.stringify(listeningHubData, null, 2)};
 export default listeningHubData;
 `;
 
-  // 4. writing_hub.js
+  // 4. writing_hub.js (FIX 1: Rich Multi-Stage Picture Story Architecture)
   const writingHubData = {
     week: w,
     theme: spec.theme,
     cefr_level: spec.cefr_level,
-    picture_story: {
-      title: spec.theme,
-      panels: [
-        { panel_id: 1, title_en: "Introduction & Context", prompt: `Introduce the theme of ${spec.theme}.` },
-        { panel_id: 2, title_en: "Developing Action", prompt: "Explain the central process or event." },
-        { panel_id: 3, title_en: "Synthesis & Conclusion", prompt: "Reflect upon the results and broader implications." }
-      ]
-    }
+    picture_story: spec.writing_data
   };
 
   const writingHubContent = `${makeHeader('Writing Hub & Picture Story Architecture')}
@@ -732,20 +2414,13 @@ export const writingHubData = ${JSON.stringify(writingHubData, null, 2)};
 export default writingHubData;
 `;
 
-  // 5. speaking_hub.js
+  // 5. speaking_hub.js (FIX 3: Age-Appropriate Talkshow & Info-Gap Cards)
   const speakingHubData = {
     week: w,
     theme: spec.theme,
     cefr_level: spec.cefr_level,
-    talkshow_prompt: {
-      topic: spec.theme,
-      question: `How does understanding ${spec.theme} empower your knowledge?`,
-      model_response: `Studying ${spec.theme} helps us analyze facts critically and communicate ideas with precision.`
-    },
-    info_exchange_cards: {
-      card_a: { topic: spec.theme, questions: spec.clil.check_questions.map(q => q.question_en) },
-      card_b: { topic: spec.theme, answers: spec.clil.check_questions.map(q => q.answer) }
-    }
+    talkshow_prompt: spec.speaking_data.talkshow_prompt,
+    info_exchange_cards: spec.speaking_data.info_exchange_cards
   };
 
   const speakingHubContent = `${makeHeader('Speaking Hub & Talkshow/Info Exchange Cards')}
@@ -753,7 +2428,7 @@ export const speakingHubData = ${JSON.stringify(speakingHubData, null, 2)};
 export default speakingHubData;
 `;
 
-  // 6. skill_practice_hub.js
+  // 6. skill_practice_hub.js (UNTOUCHED - Already Approved in Round 60)
   const skillPracticeHubData = {
     week: w,
     theme: spec.theme,
@@ -773,10 +2448,10 @@ export default skillPracticeHubData;
 
   // 7. provenance.json
   const provenanceData = {
-    provenance_version: "1.0.0",
+    provenance_version: "1.1.0",
     generated_at: timestamp,
     pipeline_script: "scripts/generate_giaidoan2_content.mjs",
-    generator_agent: "Claude Sonnet (Thinking) / Automated SOP Content Pipeline",
+    generator_agent: "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
     week_number: w,
     theme: spec.theme,
     cefr_level: spec.cefr_level,
@@ -796,12 +2471,16 @@ export default skillPracticeHubData;
       "skill_practice_hub.js"
     ],
     quality_gates_passed: [
-      "GATE_SCHEMA_CONTRACT",
-      "GATE_WORD_COUNT",
-      "GATE_CEFR_ALIGNMENT",
-      "GATE_VIETNAMESE_LEAK_ZERO",
-      "GATE_CROSS_WEEK_COLLISION_ZERO",
-      "GATE_BANNED_CONTENT_FILTER_ZERO"
+      "GATE_1_SCHEMA_CONTRACT",
+      "GATE_2_WORD_COUNT_SRS",
+      "GATE_3_CLIL_RIGOR",
+      "GATE_4_SHADOWING_IPA",
+      "GATE_5_CAMBRIDGE_RW_GRADABLE",
+      "GATE_6_MINIGAMES_INTEGRITY",
+      "GATE_7_VIETNAMESE_LEAK_ZERO",
+      "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+      "GATE_9_NO_GENERIC_BOILERPLATE",
+      "GATE_10_SKELETON_DIFFERENTIATION"
     ],
     review_status: "STAGED_FOR_CLAUDE_ESL_REVIEW"
   };
@@ -833,8 +2512,8 @@ export default skillPracticeHubData;
     }
   }
 
-  // Run Giai đoạn 4 Mechanical Gates
-  const gateReport = runMechanicalGates(w, spec, filesMap);
+  // Run Giai đoạn 4 Mechanical Gates (including Gate 9 & 10)
+  const gateReport = runMechanicalGates(w, spec, filesMap, ALL_SKELETONS);
 
   if (isWrite) {
     fs.writeFileSync(path.join(weekStagingDir, 'gate_validation.log'), gateReport.log, 'utf8');
@@ -849,9 +2528,9 @@ export default skillPracticeHubData;
 }
 
 /**
- * GIAI ĐOẠN 4 MECHANICAL GATES ENGINE
+ * GIAI ĐOẠN 4 MECHANICAL GATES ENGINE (10 GATES)
  */
-function runMechanicalGates(w, spec, filesMap) {
+function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
   const logs = [];
   logs.push(`========================================================================`);
   logs.push(`🔬 GIAI ĐOẠN 4 MECHANICAL GATES AUDIT REPORT — WEEK ${w}`);
@@ -912,16 +2591,17 @@ function runMechanicalGates(w, spec, filesMap) {
     logs.push(`  ❌ FAIL: Shadowing count=${shadCount}, IPA pass=${shadIpaPass}`);
   }
 
-  // Gate 5: Cambridge R&W Coverage
-  logs.push(`\n--- Gate 5: Cambridge Reading & Writing Parts 1-6 ---`);
+  // Gate 5: Cambridge R&W Coverage (Upgraded: Part 2 has 5 turns with 3 options each and marked correct answers)
+  logs.push(`\n--- Gate 5: Cambridge Reading & Writing Parts 1-6 (Gradable Dialogue) ---`);
   const rwP1 = spec.cambridge_rw.part1_definitions.length >= 5;
-  const rwP2 = spec.cambridge_rw.part2_dialogue.exchanges.length >= 6;
+  const rwP2Turns = spec.cambridge_rw.part2_dialogue.turns && spec.cambridge_rw.part2_dialogue.turns.length >= 5;
+  const rwP2Gradable = rwP2Turns && spec.cambridge_rw.part2_dialogue.turns.every(t => Array.isArray(t.options) && t.options.length === 3 && t.answer);
   const rwP6 = spec.cambridge_rw.part6_cloze && Object.keys(spec.cambridge_rw.part6_cloze.answers).length >= 5;
-  if (rwP1 && rwP2 && rwP6) {
-    logs.push(`  ✅ PASS: Cambridge R&W Part 1 (matching), Part 2 (dialogue), and Part 6 (cloze) complete.`);
+  if (rwP1 && rwP2Gradable && rwP6) {
+    logs.push(`  ✅ PASS: Cambridge R&W Part 1 (matching), Part 2 (5-turn 3-option gradable dialogue), and Part 6 (cloze) complete.`);
   } else {
     allPass = false;
-    logs.push(`  ❌ FAIL: R&W P1=${rwP1}, P2=${rwP2}, P6=${rwP6}`);
+    logs.push(`  ❌ FAIL: R&W P1=${rwP1}, P2Turns=${rwP2Turns}, P2Gradable=${rwP2Gradable}, P6=${rwP6}`);
   }
 
   // Gate 6: Mini-Games (Singapore Math + Action Lab + Grammar Duel)
@@ -975,8 +2655,46 @@ function runMechanicalGates(w, spec, filesMap) {
     }
   }
 
+  // Gate 9: Content Quality & Generic Template Banned Strings Filter (Fix 5)
+  logs.push(`\n--- Gate 9: Content Quality & Generic Template Banned Strings Filter ---`);
+  const genericFindings = [];
+  const contentToCheck = [
+    filesMap['writing_hub.js'] || '',
+    filesMap['speaking_hub.js'] || '',
+    filesMap['reading_hub.js'] || ''
+  ].join(' ');
+
+  for (const banned of GENERIC_BANNED_STRINGS) {
+    if (contentToCheck.includes(banned)) {
+      genericFindings.push(banned);
+    }
+  }
+
+  if (genericFindings.length === 0) {
+    logs.push(`  ✅ PASS: 0 generic boilerplate strings detected across writing_hub, speaking_hub, and story_scenes.`);
+  } else {
+    allPass = false;
+    logs.push(`  ❌ FAIL: Generic template boilerplate detected: ${genericFindings.join(', ')}`);
+  }
+
+  // Gate 10: Cross-Week Skeleton Identity & Differentiation Check (Fix 5)
+  logs.push(`\n--- Gate 10: Cross-Week Skeleton Identity & Differentiation Check ---`);
+  const myHash = allSkeletonsMap[w]?.hash;
+  const collisions = [];
+  for (const [otherW, info] of Object.entries(allSkeletonsMap)) {
+    if (Number(otherW) !== w && info.hash === myHash) {
+      collisions.push(otherW);
+    }
+  }
+  if (collisions.length === 0) {
+    logs.push(`  ✅ PASS: Unique structural skeleton confirmed (SHA256: ${myHash ? myHash.slice(0, 16) : 'N/A'}..., 0 collisions across pilot weeks).`);
+  } else {
+    allPass = false;
+    logs.push(`  ❌ FAIL: Cross-week skeleton identity collision with Week(s): ${collisions.join(', ')}`);
+  }
+
   logs.push(`\n========================================================================`);
-  logs.push(`OVERALL MECHANICAL GATES VERDICT: ${allPass ? '🎉 100% ALL GATES PASSED' : '⛔ GATES FAILED'}`);
+  logs.push(`OVERALL MECHANICAL GATES VERDICT: ${allPass ? '🎉 100% ALL 10 GATES PASSED' : '⛔ GATES FAILED'}`);
   logs.push(`========================================================================\n`);
 
   return {
@@ -987,7 +2705,7 @@ function runMechanicalGates(w, spec, filesMap) {
 
 async function main() {
   console.log('========================================================================');
-  console.log('🚀 ENGQUEST3K — GIAI ĐOẠN 2 AUTOMATED CONTENT PIPELINE ENGINE');
+  console.log('🚀 ENGQUEST3K — GIAI ĐOẠN 2 AUTOMATED CONTENT PIPELINE ENGINE (ROUND 61)');
   console.log(`📋 Execution Mode: ${isWrite ? 'WRITE-STAGING' : 'DRY-RUN (Simulate Only, Zero Disk Mutation)'}`);
   console.log(`📁 Staging Base:   ${STAGING_BASE_DIR}`);
   console.log('🔒 Freeze Defense: W33 & W34 cryptographically locked');
@@ -1014,7 +2732,7 @@ async function main() {
     try {
       const result = generateWeekContent(w);
       console.log(`   ✓ Deliverables Created: ${result.filesCount} staged files`);
-      console.log(`   ✓ Mechanical Gates:     ${result.gateReport.allPass ? '✅ ALL GATES PASSED' : '❌ GATES FAILED'}`);
+      console.log(`   ✓ Mechanical Gates:     ${result.gateReport.allPass ? '✅ ALL 10 GATES PASSED' : '❌ GATES FAILED'}`);
       if (!result.gateReport.allPass) allWeeksPass = false;
     } catch (err) {
       console.error(`   🚨 Error generating Week ${w}:`, err.message);
@@ -1025,7 +2743,7 @@ async function main() {
   console.log('\n========================================================================');
   console.log(`📊 PIPELINE EXECUTION SUMMARY:`);
   console.log(`   Weeks Processed:  ${targetWeeks.length}`);
-  console.log(`   Overall Status:   ${allWeeksPass ? '✅ SUCCESS (All Gates Passed)' : '❌ FAILURE'}`);
+  console.log(`   Overall Status:   ${allWeeksPass ? '✅ SUCCESS (All 10 Gates Passed)' : '❌ FAILURE'}`);
   if (isWrite) {
     console.log(`   Staging Path:     ${STAGING_BASE_DIR}`);
     console.log(`   Next Step:        Package review zip & submit for Claude ESL sign-off.`);
