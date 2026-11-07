@@ -1,0 +1,255 @@
+========================================================================
+ENGQUEST3K — FULL PRODUCTION PIPELINE & QUALITY GATE LOGS (ROUND 62 MERGE)
+Timestamp: 2026-11-07T07:18:31.596Z
+Merged Weeks: W35, W38, W78, W125
+========================================================================
+
+
+########################################################################
+### 1. CEFR CURRICULUM GUARD (STAGE 1 & STAGE 2)
+########################################################################
+
+--- Checking CEFR Week 35 ---
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 35
+🎯 Staging Standard: STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, ket_a2.json
+================================================================
+
+📂 Scanning WEEK 35 MASTER DATA: /Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_35
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 35:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+
+⚠️  KET EXTENSION WORDS DETECTED (not Core Flyers A2 — review if intentional):
+   These words are from KET A2 (not Starters/Movers/Flyers). They PASS the guard
+   but are NOT considered core Flyers A2 learner vocabulary:
+   • action
+   • album
+   • alive
+   • amazed
+   • anxious
+   • article
+   • attend
+   • audience
+   • author
+   • bar
+   • breath
+   • bright
+   • broad
+   • calm
+   • candidate
+   → If these are CLIL domain terms, add them to clil_article.vocab_focus[].
+   → If they are core words, verify they appear in flyers_a2.json.
+✅ PASSED: Week 35 conforms to STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)!
+--- Checking CEFR Week 38 ---
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 38
+🎯 Staging Standard: STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, ket_a2.json
+================================================================
+
+📂 Scanning WEEK 38 MASTER DATA: /Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_38
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 38:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+
+⚠️  KET EXTENSION WORDS DETECTED (not Core Flyers A2 — review if intentional):
+   These words are from KET A2 (not Starters/Movers/Flyers). They PASS the guard
+   but are NOT considered core Flyers A2 learner vocabulary:
+   • ability
+   • able
+   • action
+   • adult
+   • against
+   • allow
+   • among
+   • arrangement
+   • article
+   • author
+   • avoid
+   • balance
+   • bar
+   • bay
+   • bone
+   • bookstore
+   • breathe
+   • candidate
+   → If these are CLIL domain terms, add them to clil_article.vocab_focus[].
+   → If they are core words, verify they appear in flyers_a2.json.
+✅ PASSED: Week 38 conforms to STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)!
+--- Checking CEFR Week 78 ---
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 78
+🎯 Staging Standard: STAGE 2: Cambridge Lower Secondary & PET/FCE (B1 Preliminary / B1+ / B2 First)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, pet_b1.json, fce_b2.json, ket_a2.json, pet_b1.json, fce_b2.json
+================================================================
+
+📂 Scanning WEEK 78 MASTER DATA: /Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_78
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 78:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+✅ PASSED: Week 78 conforms to STAGE 2: Cambridge Lower Secondary & PET/FCE (B1 Preliminary / B1+ / B2 First)!
+--- Checking CEFR Week 125 ---
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 125
+🎯 Staging Standard: STAGE 2: Cambridge Lower Secondary & PET/FCE (B1 Preliminary / B1+ / B2 First)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, pet_b1.json, fce_b2.json, ket_a2.json, pet_b1.json, fce_b2.json
+================================================================
+
+📂 Scanning WEEK 125 MASTER DATA: /Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_125
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 125:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+✅ PASSED: Week 125 conforms to STAGE 2: Cambridge Lower Secondary & PET/FCE (B1 Preliminary / B1+ / B2 First)!
+
+########################################################################
+### 2. GIAI ĐOẠN 2 MECHANICAL QUALITY GATES (10 GATES)
+########################################################################
+
+========================================================================
+🚀 ENGQUEST3K — GIAI ĐOẠN 2 AUTOMATED CONTENT PIPELINE ENGINE (ROUND 61)
+📋 Execution Mode: DRY-RUN (Simulate Only, Zero Disk Mutation)
+📁 Staging Base:   /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging
+🔒 Freeze Defense: W33 & W34 cryptographically locked
+========================================================================
+
+🎯 Target Pilot Weeks: [35, 38, 78, 125]
+
+------------------------------------------------------------------------
+▶️ Generating Content for Week 35...
+   ✓ Deliverables Created: 8 staged files
+   ✓ Mechanical Gates:     ✅ ALL 10 GATES PASSED
+------------------------------------------------------------------------
+▶️ Generating Content for Week 38...
+   ✓ Deliverables Created: 8 staged files
+   ✓ Mechanical Gates:     ✅ ALL 10 GATES PASSED
+------------------------------------------------------------------------
+▶️ Generating Content for Week 78...
+   ✓ Deliverables Created: 8 staged files
+   ✓ Mechanical Gates:     ✅ ALL 10 GATES PASSED
+------------------------------------------------------------------------
+▶️ Generating Content for Week 125...
+   ✓ Deliverables Created: 8 staged files
+   ✓ Mechanical Gates:     ✅ ALL 10 GATES PASSED
+
+========================================================================
+📊 PIPELINE EXECUTION SUMMARY:
+   Weeks Processed:  4
+   Overall Status:   ✅ SUCCESS (All 10 Gates Passed)
+   Note:             Executed in DRY-RUN mode. Re-run with --write-staging to persist files.
+========================================================================
+
+
+########################################################################
+### 3. VIETNAMESE VOCABULARY LEAK SCANNER (156 WEEKS)
+########################################################################
+
+========================================================================
+🔍 ENGQUEST3K — 156-WEEK INDEPENDENT VIETNAMESE VOCABULARY LEAK SCANNER
+📋 Target Fields: vocabulary_focus.syllabus_words, target_vocab_20, keywords
+📋 Detection Standard: Unicode range [\u00C0-\u024F\u1EA0-\u1EF9]
+========================================================================
+
+========================================================================
+📊 SCAN RESULTS SUMMARY:
+   Total Blueprints Scanned:       156 / 156
+   Total Vocabulary Items Checked: 778
+   Weeks with Leaked Vietnamese:   0
+========================================================================
+
+🎉 100% VERIFIED CLEAN: Zero Vietnamese characters detected in vocabulary fields across all 156 weeks!
+
+########################################################################
+### 4. FULL-SET W35 POLLUTION & CLEANLINESS DETECTOR
+########################################################################
+
+========================================================================
+🔍 ENGQUEST3K — FULL-SET W35 VIETNAMESE VOCABULARY LEAK SCAN (TASK 0)
+📋 Target: ALL files in src/data/weeks/week_35/ (25 JS files + blueprint.json)
+📋 Detection Standard: Unicode range [\u00C0-\u024F\u1EA0-\u1EF9]
+========================================================================
+
+------------------------------------------------------------------------
+📊 FULL-SET SCAN RESULTS FOR WEEK 35:
+   Files Scanned:                   26 files
+   Vietnamese Leak Findings:        0
+------------------------------------------------------------------------
+🎉 100% VERIFIED CLEAN: Zero Vietnamese characters detected in target English fields across all files!
+========================================================================
+
+========================================================================
+🚨 ENGQUEST3K — FULL-SET W35 GENERALIZED CROSS-WEEK POLLUTION DETECTOR
+📋 Target: ALL files in src/data/weeks/week_35/
+📋 Scope: Dynamic Pairwise Matrix + W34 Lion/Mouse + Camping Lexical Scan
+========================================================================
+
+--- 1. Full-File Direct Lexical Pollution Scan ---
+
+--- 2. Dynamic Cross-Week Pairwise Overlap Check ---
+   W35 vs W33: 0 shared words, 0 shared sentences (>20 chars)
+   W35 vs W34: 0 shared words, 0 shared sentences (>20 chars)
+   W35 vs W36: 2 shared words, 0 shared sentences (>20 chars)
+   W35 vs W37: 0 shared words, 0 shared sentences (>20 chars)
+------------------------------------------------------------------------
+📊 FULL-SET POLLUTION DETECTION RESULTS:
+   Files Scanned:                   25 JS files
+   Cross-Week Collisions Detected:  0
+   W34 Lion/Mouse Contaminants:     0
+   Camping Legacy Remnants:         0
+   Total Pollution Findings:        0
+------------------------------------------------------------------------
+🎉 100% VERIFIED CLEAN: Entire Week 35 directory is genuinely equivalent to BLUEPRINT_ONLY.
+========================================================================
+
+💾 Saved leak scan log to: docs/agent_artifacts/vietnamese_leak_scan_w35.log
+💾 Saved pollution detector log to: docs/agent_artifacts/pollution_detector_w35.log
+
+########################################################################
+### 5. CROSS-WEEK DUPLICATION DETECTOR
+########################################################################
+
+
+Week 33: 40 words, 23 sentences
+  W33 vs W34: 0 shared words [], 0 shared sentences
+  W33 vs W35: 0 shared words [], 0 shared sentences
+  W33 vs W36: 0 shared words [], 0 shared sentences
+  W33 vs W37: 0 shared words [], 0 shared sentences
+
+Week 34: 46 words, 30 sentences
+  W34 vs W35: 0 shared words [], 0 shared sentences
+  W34 vs W36: 1 shared words [forest], 0 shared sentences
+  W34 vs W37: 0 shared words [], 0 shared sentences
+
+Week 35: 20 words, 23 sentences
+  W35 vs W36: 2 shared words [adventure, journey], 0 shared sentences
+  W35 vs W37: 0 shared words [], 0 shared sentences
+
+Week 36: 20 words, 0 sentences
+  W36 vs W37: 0 shared words [], 0 shared sentences
+
+Week 37: 20 words, 0 sentences

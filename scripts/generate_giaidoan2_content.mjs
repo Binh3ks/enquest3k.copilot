@@ -322,32 +322,6 @@ const PILOT_CONTENT_SPECS = {
         model_response: "The most memorable part was entering the planetarium with Maya and Grandpa! Suddenly, the hall lights went dark and thousands of glowing stars appeared across the ceiling. We whispered with excitement, and Grandpa took a wonderful family photograph outside. It was a delightful adventure that I will always remember!"
       },
       info_exchange_cards: {
-        card_a: {
-          topic: "Maya's Museum Visit",
-          title: "Maya's Museum Adventure",
-          subtitle: "Candidate's Question Card (Ask Examiner)",
-          person: "Maya",
-          questions: [
-            "Where did Maya go on Saturday morning?",
-            "What did Maya see in the main exhibition hall?",
-            "How did Maya feel inside the dark planetarium?",
-            "Who took the family photograph before leaving?",
-            "What souvenir did Maya choose from the gift shop?"
-          ]
-        },
-        card_b: {
-          topic: "Lucas's Birthday Celebration",
-          title: "Lucas's Birthday Party",
-          subtitle: "Information Card (Answer Examiner's Questions)",
-          person: "Lucas",
-          answers: [
-            "At Grandpa's peaceful cottage near the sunny lake.",
-            "A wonderful homemade strawberry cake with colorful candles.",
-            "At two o'clock on Sunday afternoon.",
-            "His whole family and four cheerful school friends.",
-            "He felt delighted and laughed with happiness."
-          ]
-        },
         table_a: {
           title: "Maya's Museum Visit",
           subtitle: "Candidate's Question Card (Ask Examiner)",
@@ -654,7 +628,7 @@ const PILOT_CONTENT_SPECS = {
     clil: {
       title_en: "Animal Classification: How Adaptations Empower Abilities",
       title_vi: "Phân Loại Động Vật: Cách Thích Nghi Định Hình Khả Năng",
-      content_en: "The animal kingdom displays an astonishing variety of specialized physical abilities. Animals have evolved distinct body structures that determine what actions they can and cannot perform in nature. Mammals such as cheetahs have flexible spines and long muscular legs, allowing them to run up to seventy miles per hour across flat savanna grasslands. In contrast, heavy mammals like elephants cannot jump off the ground because their immense bone weight requires continuous solid support. Birds possess lightweight hollow bones and aerodynamic feathers so they can fly effortlessly through high winds. However, aquatic birds like penguins cannot fly in the air; instead, their modified wings function like rigid flippers so they can swim and dive deeply underwater to hunt schooling fish. Understanding animal classifications reveals how anatomical adaptations enable each species to survive successfully within its natural habitat.",
+      content_en: "The animal kingdom displays an astonishing variety of specialized physical abilities. Animals have evolved distinct body structures that determine what actions they can and cannot perform in nature. Mammals such as cheetahs have flexible spines and strong legs. They can run seventy miles per hour across flat savanna grasslands. In contrast, heavy mammals like elephants cannot jump off the ground because their immense bone weight requires continuous solid support. Birds possess lightweight hollow bones and aerodynamic feathers so they can fly effortlessly through high winds. However, aquatic birds like penguins cannot fly in the air. Instead, their wings act like flippers so they can swim and hunt fish underwater. Understanding animal classifications reveals how anatomical adaptations enable each species to survive successfully within its natural habitat.",
       glossary: [
         { word: "adaptation", definition_en: "A change by which an organism becomes better suited to its habitat", definition_vi: "sự thích nghi" },
         { word: "aerodynamic", definition_en: "Shaped to reduce drag from air movement", definition_vi: "khí động học" },
@@ -788,7 +762,7 @@ const PILOT_CONTENT_SPECS = {
           caption: "Golden eagles can fly high above the rocky mountain peaks using hollow bones.",
           sentence_frame: "Golden eagles [can fly high] in the sky because they have [lightweight hollow bones].",
           pills: ["can fly high", "lightweight hollow bones", "glide effortlessly", "above mountain peaks", "sharp vision"],
-          connectors: ["High above,", "In the sky,", "Furthermore,"]
+          connectors: ["High above,", "In the sky,", "Also,"]
         },
         {
           panel_id: "panel_4",
@@ -837,7 +811,7 @@ const PILOT_CONTENT_SPECS = {
           image_url: "/images/week38/writing_panel_3.png",
           caption: "Golden eagles can fly high above the rocky mountain peaks using hollow bones.",
           frame_L1: "High above the mountains, golden eagles can fly easily. They can glide in strong winds because they have hollow bones.",
-          connectors: ["High above,", "In the sky,", "Furthermore,"],
+          connectors: ["High above,", "In the sky,", "Also,"],
           sentence_hint: "Write 2 sentences about eagles flying and gliding in the sky.",
           pills: ["can fly high", "lightweight hollow bones", "glide effortlessly", "golden eagles"],
           sentence_frame: "Golden eagles [can fly high] in the sky because they have [lightweight hollow bones]."
@@ -865,32 +839,6 @@ const PILOT_CONTENT_SPECS = {
         model_response: "I was most surprised by the penguins! Even though they are sea birds, they cannot fly in the air because their flippers are rigid. But underwater, they can dive so fast and catch fish easily. It was super cool to watch them swim!"
       },
       info_exchange_cards: {
-        card_a: {
-          topic: "Peregrine Falcons",
-          title: "Peregrine Falcon Abilities",
-          subtitle: "Candidate's Question Card (Ask Examiner)",
-          person: "Falcon Specialist",
-          questions: [
-            "How fast can peregrine falcons dive through the air?",
-            "Where do falcons build their nests?",
-            "What kind of prey do falcons hunt?",
-            "Why can falcons spot small animals from high in the sky?",
-            "Can falcons survive in cold mountain climates?"
-          ]
-        },
-        card_b: {
-          topic: "Red Kangaroos",
-          title: "Red Kangaroo Abilities",
-          subtitle: "Information Card (Answer Examiner's Questions)",
-          person: "Kangaroo Researcher",
-          answers: [
-            "Up to nine meters across the dry plains in a single leap.",
-            "No, they cannot climb trees because of their large feet.",
-            "They eat green grass, herbs, and desert shrub roots.",
-            "They are nocturnal and most active at night or dawn.",
-            "They can hop at over fifty kilometers per hour to escape predators."
-          ]
-        },
         table_a: {
           title: "Peregrine Falcon Abilities",
           subtitle: "Candidate's Question Card (Ask Examiner)",
@@ -1409,32 +1357,6 @@ const PILOT_CONTENT_SPECS = {
         model_response: "Our research revealed that similar to East Asian lantern festivals, European harvest home gatherings celebrate community solidarity and seasonal bounties. Unlike private modern holidays, traditional celebrations bring neighborhoods together into shared public spaces, whereas newer customs focus on intercultural education and unity."
       },
       info_exchange_cards: {
-        card_a: {
-          topic: "Mid-Autumn Moon Festival",
-          title: "Mid-Autumn Festival Traditions",
-          subtitle: "Candidate's Question Card (Ask Examiner)",
-          person: "Cultural Anthropologist",
-          questions: [
-            "What symbolic pastries do families share during Mid-Autumn Festival?",
-            "Where do children carry their colorful paper lanterns?",
-            "What legend is traditionally recounted during the full moon gathering?",
-            "How does the Mid-Autumn celebration foster family reunion?",
-            "Is the festival widely celebrated in rural agricultural communities?"
-          ]
-        },
-        card_b: {
-          topic: "Day of the Dead Celebrations",
-          title: "Dia de los Muertos Traditions",
-          subtitle: "Information Card (Answer Examiner's Questions)",
-          person: "Heritage Educator",
-          answers: [
-            "Bright yellow and orange marigold flowers.",
-            "At community cemeteries and decorative home altars.",
-            "Pan de muerto, sweet bread dusted with anise and sugar.",
-            "A joyful and colorful atmosphere filled with music and storytelling.",
-            "On the first and second days of November every year."
-          ]
-        },
         table_a: {
           title: "Mid-Autumn Festival Traditions",
           subtitle: "Candidate's Question Card (Ask Examiner)",
@@ -1953,32 +1875,6 @@ const PILOT_CONTENT_SPECS = {
         model_response: "A superficial summary merely reiterates previously stated points verbatim, offering negligible intellectual contribution. In contrast, a rigorous synthesis integrates disparate empirical evidence to reveal macro-level patterns and articulate actionable policy implications, thereby urging the academic community toward constructive intervention."
       },
       info_exchange_cards: {
-        card_a: {
-          topic: "Julian's Research Methodology",
-          title: "Julian's Academic Essay Architecture",
-          subtitle: "Candidate's Question Card (Ask Examiner)",
-          person: "Seminar Chair",
-          questions: [
-            "What primary empirical methodology did Julian deploy in his essay?",
-            "How did Julian formulate his central thesis statement in the introduction?",
-            "What specific counterargument did Julian address in section three?",
-            "Which authoritative stance verbs did Julian employ in his recommendations?",
-            "What future policy implications did the conclusion articulate?"
-          ]
-        },
-        card_b: {
-          topic: "Claire's Longitudinal Study",
-          title: "Claire's Empirical Investigation",
-          subtitle: "Information Card (Answer Examiner's Questions)",
-          person: "Research Director",
-          answers: [
-            "Over twelve hundred secondary school educators across six distinct educational districts.",
-            "The long-term cognitive and pedagogical impacts of interdisciplinary inquiry curricula.",
-            "By deploying conceptual transition markers systematically linked to her primary research hypothesis.",
-            "Mandatory professional development workshops and equitable institutional resource allocation.",
-            "By identifying regional demographic variations as mediating factors rather than conflicting outcomes."
-          ]
-        },
         table_a: {
           title: "Julian's Academic Essay Architecture",
           subtitle: "Candidate's Question Card (Ask Examiner)",

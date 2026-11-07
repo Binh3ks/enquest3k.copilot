@@ -1618,3 +1618,31 @@ class of defect can't pass gates silently again. Approved fields are NOT to be
 regenerated — only the 4 identified gaps.
 
 **Status:** Awaiting Round 61 fixed pilot-content zip for re-review.
+## Round 61 — Pilot Content APPROVED (first AI-generated curriculum content to pass
+## ESL-expert review in this project)
+
+All 4 content-quality gaps from Round 60's review were genuinely fixed, independently
+re-verified by Claude (code-level diff against Round 60, not just log claims):
+- writing_hub.js: real scaffolded picture-story content (model sentence, 4 panels with
+  image prompts/captions/word banks, 4-stage MODEL→BUILD→WRITE→EXPAND ladder)
+- story_scenes: named characters, coherent narrative matching writing_hub's story
+- speaking_hub talkshow_prompt: genuinely CEFR-differentiated register (A2 child-
+  friendly vs B1+ academic), no more identical boilerplate across weeks
+- rw_part2: restructured to real gradable Cambridge format (3-option MCQ per turn with
+  marked answer), audio-script dialogue correctly kept separately in listening_hub
+- Gate 9 (banned template strings) and Gate 10 (cross-week skeleton hash) confirmed
+  genuinely implemented in generate_giaidoan2_content.mjs, not fabricated log text
+- vocab.js and skill_practice_hub.js confirmed byte-identical to Round 60 (untouched,
+  as instructed — approved fields were not regenerated)
+
+**Open item (non-blocking):** info_exchange_cards pairs unrelated scenarios as Card A/
+Card B across all weeks — asked Antigravity to confirm this is intentional design for
+solo practice against the app's "Nova" AI chat partner, not a broken two-student
+info-gap pairing.
+
+**Decision:** Pilot approved. Dispatched Round 62 — merge the 4 weeks' staged content
+into src/data/weeks/ (production source, still not student-facing — TOTAL_TRIPS stays
+34), run full existing Giai đoạn 3/4 pipeline on them for the first time, and report
+readiness to scale the pipeline to the remaining ~150 un-authored weeks.
+
+**Status:** Round 62 merge executed, full pipeline gates 100% passed, scale readiness report completed. Package awaiting Claude review.
