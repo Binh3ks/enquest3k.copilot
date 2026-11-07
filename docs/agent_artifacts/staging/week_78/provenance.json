@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-07T07:16:42.030Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 78,
+  "theme": "Social Studies/ELA: Cultures / Math: Surveys",
+  "cefr_level": "B1 PET",
+  "grammar_focus": "Comparative Structures: \"Unlike...\", \"Similar to...\", \"Whereas...\"",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_78/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 78: Social Studies/ELA: Cultures / Math: Surveys (Tuần 78: Xã hội/ELA: Văn hóa / Toán: Khảo sát)\n\t•\tTopic (Social): Traditions Around the World. (Chủ đề: Truyền thống thế giới.)\n\t•\tKey Learning Outcome (ELA): Write a paragraph comparing two traditions. (Kết quả: Viết đoạn văn so sánh 2 truyền thống.)\n\t•\tWriting Skill Focus: Cultural comparison. (Kỹ năng Viết: So sánh văn hóa.)\n\t•\tGrammar Focus: Comparative Structures: \"Unlike...\", \"Similar to...\", \"Whereas...\". (Ngữ pháp: Cấu trúc so sánh nâng cao.)\n\t•\tVocabulary Focus: tradition, culture, holiday, celebrate, food, clothes, festival, same, different.\n\t•\tTopic (Math): Collecting Data. (Toán: Thu thập dữ liệu.)\n\t•\tKey Learning Outcome (Math): Design a survey and collect answers. (Kết quả: Thiết kế khảo sát và thu thập câu trả lời.)\n\t•\tMath Vocabulary: survey, question, tally, vote, result, ask.\n\t•\tWeeks 79-80: Review & Micro-Debate 2 (",
+    "digital_map_reference": {
+      "map_week": 78,
+      "map_theme": "Global Climates & Biomes",
+      "map_clil_module": "Địa lý: Rừng nhiệt đới vs Lãnh nguyên",
+      "map_grammar_hub": "Bài luận tương phản (*In contrast to tropical biomes...*); `writing_hub`",
+      "map_cefr_type": "B1 PET · Rotary 1",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Social Studies/ELA: Cultures / Math: Surveys\") enforced over Digital Map (Source A: \"Global Climates & Biomes\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

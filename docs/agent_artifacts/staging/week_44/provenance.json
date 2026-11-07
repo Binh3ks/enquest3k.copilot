@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-07T10:57:56.167Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 44,
+  "theme": "The Cookie Monster (Subtraction Language)",
+  "cefr_level": "A2 Flyers",
+  "grammar_focus": "Subtraction Language: \"Take away\", \"Left\", \"Minus\"",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_44/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 44: The Cookie Monster (Subtraction Language) (Tuần 44: Quái vật Bánh quy - Ngôn ngữ Phép trừ)\n\t•\tTopic: Taking things away. (Chủ đề: Lấy bớt đi.)\n\t•\tKey Learning Outcome: Explain subtraction concepts in English. (Kết quả: Giải thích khái niệm trừ bằng tiếng Anh.)\n\t•\tSkill Focus: Inverse Logic. (Kỹ năng: Logic ngược.)\n\t•\tGrammar Focus: \"Take away\", \"Left\", \"Minus\". (Ngữ pháp: Cấu trúc câu trừ.)\n\t•\tVocabulary Focus: minus, subtract, take away, how many left, lose.\n\t•",
+    "digital_map_reference": {
+      "map_week": 44,
+      "map_theme": "Maps & Navigation",
+      "map_clil_module": "Bản đồ học: Tỷ lệ xích và ký hiệu",
+      "map_grammar_hub": "Giới từ chuyển động (*through, across, along*); `math_quest` tính khoảng cách",
+      "map_cefr_type": "A2 Flyers · Rotary 2",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"The Cookie Monster (Subtraction Language)\") enforced over Digital Map (Source A: \"Maps & Navigation\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

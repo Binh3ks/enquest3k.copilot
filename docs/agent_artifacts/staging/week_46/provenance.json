@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-07T10:57:56.169Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 46,
+  "theme": "The Pattern Code (Logic)",
+  "cefr_level": "A2 Flyers",
+  "grammar_focus": "Conditional & Sequence Logic: \"If [square], then [red]\", \"What comes next?\"",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_46/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 46: The Pattern Code (Logic) (Tuần 46: Mật mã Quy luật - Logic)\n\t•\tTopic: Cracking visual codes (Red-Blue-Red-?). (Chủ đề: Giải mã quy luật hình ảnh.)\n\t•\tKey Learning Outcome: Predict the next item in a sequence. (Kết quả: Dự đoán vật tiếp theo.)\n\t•\tSkill Focus: Logical Thinking. (Kỹ năng: Tư duy logic.)\n\t•\tGrammar Focus: \"If [square], then [red]\". (Ngữ pháp: Nếu... thì...)\n\t•\tVocabulary Focus: pattern, next, repeat, sequence, before, after.\n\t•",
+    "digital_map_reference": {
+      "map_week": 46,
+      "map_theme": "Light & Shadows",
+      "map_clil_module": "Quang học: Vật liệu trong suốt/mờ",
+      "map_grammar_hub": "Đại từ quan hệ (*which, that, who*); `discovery_report` chiều dài bóng râm",
+      "map_cefr_type": "A2 Flyers · Rotary 4",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"The Pattern Code (Logic)\") enforced over Digital Map (Source A: \"Light & Shadows\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

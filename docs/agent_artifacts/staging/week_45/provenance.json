@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-07T10:57:56.168Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 45,
+  "theme": "Shape Detectives (Geometry)",
+  "cefr_level": "A2 Flyers",
+  "grammar_focus": "Geometric Description: \"It has [number] sides\", \"It is round / flat\"",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_45/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 45: Shape Detectives (Geometry) (Tuần 45: Thám tử Hình khối - Hình học)\n\t•\tTopic: Finding shapes in the classroom. (Chủ đề: Tìm hình khối trong lớp.)\n\t•\tKey Learning Outcome: Describe objects using shape words. (Kết quả: Miêu tả vật dùng từ hình học.)\n\t•\tSkill Focus: Geometric Description. (Kỹ năng: Miêu tả hình học.)\n\t•\tGrammar Focus: \"It has [number] sides\", \"It is round\". (Ngữ pháp: Nó có...)\n\t•\tVocabulary Focus: square, circle, triangle, rectangle, side, corner, round, straight.\n\t•",
+    "digital_map_reference": {
+      "map_week": 45,
+      "map_theme": "The Sound Studio (Acoustics)",
+      "map_clil_module": "Vật lý: Sóng âm thanh và cao độ",
+      "map_grammar_hub": "Trạng từ chỉ cách thức (*loudly, softly, clearly*); `action_lab` tần số âm",
+      "map_cefr_type": "A2 Flyers · Rotary 3",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Shape Detectives (Geometry)\") enforced over Digital Map (Source A: \"The Sound Studio (Acoustics)\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

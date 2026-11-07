@@ -1,0 +1,36 @@
+========================================================================
+🔬 ENGQUEST3K — CROSS-WEEK DIFFERENTIATION & DEDUP VERIFICATION
+📋 Total Cohort: 11 Weeks (4 Merged Pilots + 7 Scaling Wave 1 Weeks)
+========================================================================
+
+--- PART 1: Structural Skeleton Uniqueness (Gate 10) ---
+  Week  35: SHA-256 = 7c951cfd2445319b... (Length: 9798)
+  Week  38: SHA-256 = a1d670009d42cf7c... (Length: 10501)
+  Week  39: SHA-256 = 7828fe26df4922df... (Length: 9325)
+  Week  40: SHA-256 = ab0514716b297093... (Length: 9927)
+  Week  41: SHA-256 = a2c1181c2c2b70aa... (Length: 9462)
+  Week  43: SHA-256 = 2e14343a636a68c9... (Length: 9817)
+  Week  44: SHA-256 = 3485ae873248dc7e... (Length: 9684)
+  Week  45: SHA-256 = 4840af941e9b7fd2... (Length: 9303)
+  Week  46: SHA-256 = 09718fbdb82a0339... (Length: 9796)
+  Week  78: SHA-256 = d442610f982bd816... (Length: 12567)
+  Week 125: SHA-256 = a36b82f8e781d062... (Length: 13005)
+  ✅ PASS: 11/11 unique structural skeletons. 0 collisions across all 11 weeks!
+
+--- PART 2: Story & Dialogue Sentence Overlap Detector ---
+  Week  35 (Merged Prod): Extracted 28 narrative sentences
+  Week  38 (Merged Prod): Extracted 28 narrative sentences
+  Week  39 (Staged Wave1): Extracted 28 narrative sentences
+  Week  40 (Staged Wave1): Extracted 28 narrative sentences
+  Week  41 (Staged Wave1): Extracted 28 narrative sentences
+  Week  43 (Staged Wave1): Extracted 28 narrative sentences
+  Week  44 (Staged Wave1): Extracted 28 narrative sentences
+  Week  45 (Staged Wave1): Extracted 28 narrative sentences
+  Week  46 (Staged Wave1): Extracted 28 narrative sentences
+  Week  78 (Merged Prod): Extracted 28 narrative sentences
+  Week 125 (Merged Prod): Extracted 28 narrative sentences
+  ✅ PASS: 0 shared narrative sentences across all 55 pairwise week comparisons!
+
+========================================================================
+🎉 ALL 11 WEEKS FULLY DIFFERENTIATED AND DEDUP-VERIFIED CLEAN!
+========================================================================

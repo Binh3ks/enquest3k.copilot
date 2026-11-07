@@ -25,6 +25,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { WAVE1_SPECS } from './wave1_specs.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -38,6 +39,7 @@ const args = process.argv.slice(2);
 const isWrite = args.includes('--write-staging') || args.includes('--write');
 const isDryRun = !isWrite;
 const isPilot = args.includes('--pilot');
+const isWave1 = args.includes('--wave1');
 const weekArgIdx = args.findIndex(a => a === '--week' || a === '-w');
 const targetWeek = weekArgIdx !== -1 && args[weekArgIdx + 1] ? parseInt(args[weekArgIdx + 1], 10) : null;
 
@@ -2190,11 +2192,16 @@ function computeWeekSkeleton(spec) {
   };
 }
 
+export const ALL_CONTENT_SPECS = {
+  ...PILOT_CONTENT_SPECS,
+  ...WAVE1_SPECS
+};
+
 /**
- * Pre-calculate skeletons for all configured weeks to verify cross-week differentiation
+ * Pre-calculate skeletons for all configured weeks (all 11 weeks) to verify cross-week differentiation
  */
-const ALL_SKELETONS = {};
-for (const [wStr, spec] of Object.entries(PILOT_CONTENT_SPECS)) {
+export const ALL_SKELETONS = {};
+for (const [wStr, spec] of Object.entries(ALL_CONTENT_SPECS)) {
   ALL_SKELETONS[wStr] = computeWeekSkeleton(spec);
 }
 
@@ -2202,9 +2209,9 @@ for (const [wStr, spec] of Object.entries(PILOT_CONTENT_SPECS)) {
  * Generate files for a specific week into staging directory
  */
 function generateWeekContent(w) {
-  const spec = PILOT_CONTENT_SPECS[w];
+  const spec = ALL_CONTENT_SPECS[w];
   if (!spec) {
-    throw new Error(`Week ${w} is not a configured pilot week. Configured weeks: ${Object.keys(PILOT_CONTENT_SPECS).join(', ')}`);
+    throw new Error(`Week ${w} is not a configured week. Configured weeks: ${Object.keys(ALL_CONTENT_SPECS).join(', ')}`);
   }
 
   // Freeze guard verification
@@ -2405,6 +2412,10 @@ export default skillPracticeHubData;
     for (const [fname, content] of Object.entries(filesMap)) {
       const targetPath = path.join(weekStagingDir, fname);
       fs.writeFileSync(targetPath, content, 'utf8');
+    }
+    // Copy canonical blueprint.json to staging folder if available
+    if (fs.existsSync(bpPath)) {
+      fs.copyFileSync(bpPath, path.join(weekStagingDir, 'blueprint.json'));
     }
   }
 
@@ -2610,16 +2621,19 @@ async function main() {
   let targetWeeks = [];
   if (isPilot) {
     targetWeeks = [35, 38, 78, 125];
+  } else if (isWave1) {
+    targetWeeks = [39, 40, 41, 43, 44, 45, 46];
   } else if (targetWeek) {
     targetWeeks = [targetWeek];
   } else {
     console.log('Usage:');
     console.log('  node scripts/generate_giaidoan2_content.mjs --pilot [--write-staging]');
+    console.log('  node scripts/generate_giaidoan2_content.mjs --wave1 [--write-staging]');
     console.log('  node scripts/generate_giaidoan2_content.mjs --week <N> [--write-staging]');
     process.exit(1);
   }
 
-  console.log(`🎯 Target Pilot Weeks: [${targetWeeks.join(', ')}]\n`);
+  console.log(`🎯 Target Weeks: [${targetWeeks.join(', ')}]\n`);
 
   let allWeeksPass = true;
   for (const w of targetWeeks) {
@@ -2653,7 +2667,9 @@ async function main() {
   }
 }
 
-main().catch(err => {
-  console.error('Fatal pipeline error:', err);
-  process.exit(1);
-});
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  main().catch(err => {
+    console.error('Fatal pipeline error:', err);
+    process.exit(1);
+  });
+}

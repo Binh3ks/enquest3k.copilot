@@ -1,0 +1,22 @@
+✅ Version stamp generated: 5f27e1e6 (2026-11-07T10:58:18.572Z)
+🚂 [WordWagon Content Validator] Checking Length-Balanced Invariant (N <= 14)...
+  ✓ Round 1: Banner=6w, Options=[1, 1, 1]w, Total N=9w <= 14 (Safety Margin: +7.15s)
+  ✓ Round 2: Banner=6w, Options=[1, 1, 1]w, Total N=9w <= 14 (Safety Margin: +7.15s)
+  ✓ Round 3: Banner=7w, Options=[1, 1, 1]w, Total N=10w <= 14 (Safety Margin: +6.48s)
+  ✓ Round 4: Banner=6w, Options=[2, 2, 2]w, Total N=12w <= 14 (Safety Margin: +5.14s)
+  ✓ Round 5: Banner=5w, Options=[1, 1, 1]w, Total N=8w <= 14 (Safety Margin: +7.82s)
+  ✓ Round 6: Banner=5w, Options=[1, 1, 1]w, Total N=8w <= 14 (Safety Margin: +7.82s)
+  ⚠️ Warning: week_36/grammar.js exercise 1 has 13 words. Ensure WordWagonJump slices properly.
+----------------------------------------------------
+✅ [WordWagon Content Validator] PASSED (6 rounds verified).
+   All rounds strictly comply with: Banner <= 8, Wagon <= 2, Total N <= 14.
+🏃 [Batch 1 Runner Validator] Checking N_max & Length-Balanced Invariants...
+  ✓ QuestionQuestRunner: 6 rounds verified (N <= 17, Delta = 0)
+  ✓ SyntaxExpressRail: 6 rounds verified (N <= 17, Delta = 0)
+
+✅ [Batch 1 Runner Validator] Passed! Total items verified: 12
+
+✓ Built successfully. dist directory verified:
+-rw-r--r--@ 1 binhnguyen  staff   2.5M Nov  7 17:56 dist/assets/index-ByvMntvt.js
+-rw-r--r--@ 1 binhnguyen  staff   189B Nov  7 17:56 dist/assets/index-Dxszx95V.js
+-rw-r--r--@ 1 binhnguyen  staff   5.3K Nov  7 17:56 dist/index.html

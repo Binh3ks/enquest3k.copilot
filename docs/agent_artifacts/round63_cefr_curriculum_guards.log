@@ -1,0 +1,206 @@
+========================================================================
+🛡️ CEFR CURRICULUM GUARD AUDIT FOR WEEK 39
+========================================================================
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 39
+🎯 Staging Standard: STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, ket_a2.json
+================================================================
+
+📂 Scanning WEEK 39 STAGED DATA: /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_39
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 39:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+
+⚠️  KET EXTENSION WORDS DETECTED (not Core Flyers A2 — review if intentional):
+   These words are from KET A2 (not Starters/Movers/Flyers). They PASS the guard
+   but are NOT considered core Flyers A2 learner vocabulary:
+   • article
+   • author
+   → If these are CLIL domain terms, add them to clil_article.vocab_focus[].
+   → If they are core words, verify they appear in flyers_a2.json.
+✅ PASSED: Week 39 conforms to STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)!
+
+========================================================================
+🛡️ CEFR CURRICULUM GUARD AUDIT FOR WEEK 40
+========================================================================
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 40
+🎯 Staging Standard: STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, ket_a2.json
+================================================================
+
+📂 Scanning WEEK 40 STAGED DATA: /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_40
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 40:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+
+⚠️  KET EXTENSION WORDS DETECTED (not Core Flyers A2 — review if intentional):
+   These words are from KET A2 (not Starters/Movers/Flyers). They PASS the guard
+   but are NOT considered core Flyers A2 learner vocabulary:
+   • article
+   • author
+   • battle
+   → If these are CLIL domain terms, add them to clil_article.vocab_focus[].
+   → If they are core words, verify they appear in flyers_a2.json.
+✅ PASSED: Week 40 conforms to STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)!
+
+========================================================================
+🛡️ CEFR CURRICULUM GUARD AUDIT FOR WEEK 41
+========================================================================
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 41
+🎯 Staging Standard: STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, ket_a2.json
+================================================================
+
+📂 Scanning WEEK 41 STAGED DATA: /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_41
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 41:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+
+⚠️  KET EXTENSION WORDS DETECTED (not Core Flyers A2 — review if intentional):
+   These words are from KET A2 (not Starters/Movers/Flyers). They PASS the guard
+   but are NOT considered core Flyers A2 learner vocabulary:
+   • article
+   • author
+   → If these are CLIL domain terms, add them to clil_article.vocab_focus[].
+   → If they are core words, verify they appear in flyers_a2.json.
+✅ PASSED: Week 41 conforms to STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)!
+
+========================================================================
+🛡️ CEFR CURRICULUM GUARD AUDIT FOR WEEK 43
+========================================================================
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 43
+🎯 Staging Standard: STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, ket_a2.json
+================================================================
+
+📂 Scanning WEEK 43 STAGED DATA: /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_43
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 43:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+
+⚠️  KET EXTENSION WORDS DETECTED (not Core Flyers A2 — review if intentional):
+   These words are from KET A2 (not Starters/Movers/Flyers). They PASS the guard
+   but are NOT considered core Flyers A2 learner vocabulary:
+   • ancient
+   • article
+   • author
+   → If these are CLIL domain terms, add them to clil_article.vocab_focus[].
+   → If they are core words, verify they appear in flyers_a2.json.
+✅ PASSED: Week 43 conforms to STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)!
+
+========================================================================
+🛡️ CEFR CURRICULUM GUARD AUDIT FOR WEEK 44
+========================================================================
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 44
+🎯 Staging Standard: STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, ket_a2.json
+================================================================
+
+📂 Scanning WEEK 44 STAGED DATA: /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_44
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 44:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+
+⚠️  KET EXTENSION WORDS DETECTED (not Core Flyers A2 — review if intentional):
+   These words are from KET A2 (not Starters/Movers/Flyers). They PASS the guard
+   but are NOT considered core Flyers A2 learner vocabulary:
+   • article
+   • author
+   → If these are CLIL domain terms, add them to clil_article.vocab_focus[].
+   → If they are core words, verify they appear in flyers_a2.json.
+✅ PASSED: Week 44 conforms to STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)!
+
+========================================================================
+🛡️ CEFR CURRICULUM GUARD AUDIT FOR WEEK 45
+========================================================================
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 45
+🎯 Staging Standard: STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, ket_a2.json
+================================================================
+
+📂 Scanning WEEK 45 STAGED DATA: /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_45
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 45:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+
+⚠️  KET EXTENSION WORDS DETECTED (not Core Flyers A2 — review if intentional):
+   These words are from KET A2 (not Starters/Movers/Flyers). They PASS the guard
+   but are NOT considered core Flyers A2 learner vocabulary:
+   • action
+   • article
+   • author
+   → If these are CLIL domain terms, add them to clil_article.vocab_focus[].
+   → If they are core words, verify they appear in flyers_a2.json.
+✅ PASSED: Week 45 conforms to STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)!
+
+========================================================================
+🛡️ CEFR CURRICULUM GUARD AUDIT FOR WEEK 46
+========================================================================
+================================================================
+🛡️ CAMBRIDGE CEFR CURRICULUM GUARD — WEEK 46
+🎯 Staging Standard: STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)
+📚 Wordlists Loaded: starters_pre_a1.json, movers_a1.json, flyers_a2.json, ket_a2.json
+================================================================
+
+📂 Scanning WEEK 46 STAGED DATA: /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_46
+
+📂 Scanning ALL COMPONENT & ZONE CONTENT (.jsx/.js hardcoded strings):
+  ✅ No banned jargon found across all component and zone files.
+
+================================================================
+📊 AUDIT SUMMARY FOR WEEK 46:
+   ❌ Critical B1/B2 Violations: 0
+   ⚠️ Sentence Length Warnings:   0
+================================================================
+
+⚠️  KET EXTENSION WORDS DETECTED (not Core Flyers A2 — review if intentional):
+   These words are from KET A2 (not Starters/Movers/Flyers). They PASS the guard
+   but are NOT considered core Flyers A2 learner vocabulary:
+   • article
+   • author
+   → If these are CLIL domain terms, add them to clil_article.vocab_focus[].
+   → If they are core words, verify they appear in flyers_a2.json.
+✅ PASSED: Week 46 conforms to STAGE 1: Cambridge Young Learners (Pre-A1 Starters / A1 Movers / A2 Flyers)!
+

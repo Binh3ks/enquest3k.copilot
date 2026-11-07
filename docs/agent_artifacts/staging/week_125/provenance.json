@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-07T07:16:42.031Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 125,
+  "theme": "Intro & Conclusion (Academic Essay Structure)",
+  "cefr_level": "B1+ Academic",
+  "grammar_focus": "Persuasive Verbs: \"Urge\", \"Recommend\", \"Should\", Modal Stance Verbs",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_125/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 125: Intro & Conclusion (Tuần 125: Mở bài & Kết bài)\n\t•\tTopic (ELA): Hook and Summary. (Chủ đề: Câu dẫn và Tóm tắt.)\n\t•\tKey Learning Outcome (ELA): Write an intro with a rhetorical question. (Kết quả: Viết mở bài với câu hỏi tu từ.)\n\t•\tGrammar Focus: Persuasive Verbs: \"Urge\", \"Recommend\", \"Should\". (Ngữ pháp: Động từ thuyết phục.)\n\t•\tVocabulary Focus: conclusion, summarize, restate, final thought.\n\t•\tTopic (Math): Fraction Word Problems. (Toán: Toán đố Phân số.)\n\t•\tMath Vocabulary: share, split, part of, total.\n\t•",
+    "digital_map_reference": {
+      "map_week": 125,
+      "map_theme": "Opinion Project 2: Video Games & Cognition",
+      "map_clil_module": "Sinh học thần kinh: Phản xạ so với nghiện",
+      "map_grammar_hub": "Tổng hợp 2 bài báo khoa học mâu thuẫn nhau; `reading_hub`",
+      "map_cefr_type": "B1+ Academic · Rotary 1",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Intro & Conclusion\") enforced over Digital Map (Source A: \"Opinion Project 2: Video Games & Cognition\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-07T07:16:42.028Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 38,
+  "theme": "Animal Abilities (Modals)",
+  "cefr_level": "A2 Flyers",
+  "grammar_focus": "Can / Cannot (Can't)",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_38/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 38: Animal Abilities (Modals) (Tuần 38: Khả năng Động vật)\n\t•\tTopic: Comparing animal abilities. (Chủ đề: So sánh khả năng động vật.)\n\t•\tKey Learning Outcome: Describe what animals can and cannot do. (Kết quả: Miêu tả điều động vật làm được/không làm được.)\n\t•\tSkill Focus: Classification. (Kỹ năng: Phân loại.)\n\t•\tGrammar Focus: Can / Cannot (Can't). (Ngữ pháp: Can/Can't.)\n\t•\tVocabulary Focus: jump, fly, swim, hunt, climb, run, heavy, fast.\n\t•",
+    "digital_map_reference": {
+      "map_week": 38,
+      "map_theme": "Energy All Around",
+      "map_clil_module": "Vật lý: Năng lượng mặt trời, gió",
+      "map_grammar_hub": "Mối quan hệ nguyên nhân - kết quả với *because*; `action_lab` góc pin mặt trời",
+      "map_cefr_type": "A2 Flyers · Rotary 1",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Animal Abilities (Modals)\") enforced over Digital Map (Source A: \"Energy All Around\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

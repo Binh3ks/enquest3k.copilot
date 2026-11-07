@@ -228,10 +228,15 @@ async function main() {
   console.log(`📚 Wordlists Loaded: ${ALLOWED_WORDLIST_FILES.join(', ')}`);
   console.log(`================================================================`);
 
+  const isStaging = process.argv.includes('--staging');
   const wStr = String(targetWeek).padStart(2, '0');
-  const wDirAdv = path.join(WEEKS_DIR, `week_${wStr}`);
+  const defaultDir = path.join(WEEKS_DIR, `week_${wStr}`);
+  const stagingDir = path.join(__dirname, `../docs/agent_artifacts/staging/week_${targetWeek}`);
+  const hasStagingJs = fs.existsSync(stagingDir) && fs.readdirSync(stagingDir).some(f => f.endsWith('.js'));
+  const hasProdJs = fs.existsSync(defaultDir) && fs.readdirSync(defaultDir).some(f => f.endsWith('.js'));
+  const wDirAdv = (isStaging || (!hasProdJs && hasStagingJs)) ? stagingDir : defaultDir;
 
-  const advRes = await auditWeekFiles(wDirAdv, `WEEK ${targetWeek} MASTER DATA`);
+  const advRes = await auditWeekFiles(wDirAdv, `WEEK ${targetWeek} ${wDirAdv === stagingDir ? 'STAGED' : 'MASTER'} DATA`);
   // For W33+, there is only ONE unified 15-task / 4-hub dataset (Master Architecture Invariant)
   let easyErrors = 0;
   let easyWarnings = 0;

@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-07T07:16:42.026Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 35,
+  "theme": "Storytelling Practice 2 (Personal Recount)",
+  "cefr_level": "A2 Flyers",
+  "grammar_focus": "Past Simple + Adjectives",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_35/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 35: Storytelling Practice 2 (Personal Recount) (Tuần 35: Luyện Kể chuyện 2 - Kể lại trải nghiệm cá nhân)\n\t•\tTopic: \"The Best Day Ever\". (Chủ đề: Ngày tuyệt vời nhất.)\n\t•\tKey Learning Outcome: Write a short paragraph (5-6 sentences) about a personal memory. (Kết quả: Viết đoạn văn ngắn 5-6 câu về kỷ niệm cá nhân.)\n\t•\tSkill Focus: Using adjectives to make the story interesting. (Kỹ năng: Dùng tính từ để câu chuyện thú vị hơn.)\n\t•\tGrammar Focus: Past Simple + Adjectives.\n\t•",
+    "digital_map_reference": {
+      "map_week": 35,
+      "map_theme": "Wild Forest Rangers",
+      "map_clil_module": "Sinh thái học: Chuỗi thức ăn",
+      "map_grammar_hub": "Quá khứ tiếp diễn + Quá khứ đơn (\"While Jake was...\"); Cycle 3",
+      "map_cefr_type": "A2 Flyers · Rotary 3",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Storytelling Practice 2 (Personal Recount)\") enforced over Digital Map (Source A: \"Wild Forest Rangers\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

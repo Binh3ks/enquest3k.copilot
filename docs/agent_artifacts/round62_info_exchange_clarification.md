@@ -73,3 +73,4 @@ A comprehensive scan of `src/` confirmed:
 - Removed all `card_a` and `card_b` blocks from `scripts/generate_giaidoan2_content.mjs`.
 - Regenerated all staged and merged files for W35, W38, W78, W125.
 - `info_exchange_cards` now cleanly contains only `table_a` and `table_b` across all authored weeks, matching W33 schema byte-for-byte.
+

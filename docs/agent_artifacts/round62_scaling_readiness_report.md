@@ -93,3 +93,4 @@ To maintain the highest ESL pedagogical rigor while safely accelerating producti
 ## IV. CONCLUSION
 
 `generate_giaidoan2_content.mjs` is **production-ready for Wave 1 (A2 Flyers Rotary Practice: W39–W46)** under controlled batch execution. Unattended generation across all 148 weeks should not be attempted until Wave 4 (Lite Mode) and Wave 5 (Mock Exams) receive dedicated generator engines.
+

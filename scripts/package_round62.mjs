@@ -186,3 +186,4 @@ ${fileChecksums.map(f => `  ${f.sha256}  ${f.file.padEnd(52)} (${f.bytes} bytes)
 } finally {
   fs.rmSync(tmpDir, { recursive: true, force: true });
 }
+
