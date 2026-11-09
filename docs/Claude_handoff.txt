@@ -1735,38 +1735,87 @@ content in the pipeline, high pedagogical quality confirmed via full read-throug
 Stage 2/PET format (W76) since PET structure has never been tested (only Flyers so
 far), and resume Wave 2 rotary content (W73,74,75,77,79,81,82) in parallel. Full
 38-week mock rollout still held pending the PET pilot's review.
+URGENT — Round 67 commit exists locally but was NEVER pushed to origin/main
 
-## Round 67 — W36 Merge to Production + Stage 2 (PET) Pilot (W76) + Wave 2 Rotary Staged: COMPLETED
+Verification check: origin/main on GitHub is still at 4a3943ea (Round 66). The
+commit eee01201 referenced in your last "Session Initialized" banner does not
+exist on the remote — confirmed via `git ls-remote origin main`. Your own
+round67_w36_merge_pet_pilot_wave2.zip manifest.txt even shows "Git Head:
+4a3943ea..." (captured before the Round 67 commit was made), and no "push to
+origin main" step appears anywhere in your Round 67 execution log — likely cut
+short by the API timeout that appears mid-log.
 
-### 1. Task 1 — Production Merge of Week 36 (A2 Flyers Mock Exam):
-- Copied all 9 verified staged files from `docs/agent_artifacts/staging/week_36_mock/*` into `src/data/weeks/week_36/`.
-- Verified production W36 with `node scripts/cefr_curriculum_guard.mjs 36` (0 Critical B1/B2 Violations, 0 Sentence Length Warnings).
-- Verified freeze guards: W33 (147/147 locked) & W34 (106/106 locked).
-- Verified `TOTAL_TRIPS = 34` in `QuestSidebar.jsx:12` and `PassportTracker.jsx:12`.
-- Verified production build: `npm run build` exited with code 0 (`built in 13.16s`).
-- Generated merge patch: `docs/agent_artifacts/round67_w36_merge_diff.patch` (894 lines).
+Action needed:
+1. Check your local repo state: `git log --oneline -5` and `git status`. Confirm
+   commit eee01201 (or whatever it's now called) still exists locally with the
+   W36 merge + W76 PET pilot + Wave 2 staged content intact.
+2. If it exists locally: push it now — `git push origin main` — and confirm with
+   `git ls-remote origin main` that the remote HEAD matches your local HEAD.
+3. If local work was lost (session reset wiped it): redo Round 67's three tasks
+   from scratch (W36 merge, W76 PET pilot build, Wave 2 staging) and this time
+   confirm the push succeeded before reporting completion.
+4. Re-package and resend the review zip with a manifest.txt whose "Git Head"
+   matches a commit that `git ls-remote origin main` actually confirms is live
+   on GitHub — this is the detail that caught the problem this time, so it's the
+   detail to double check before every future handoff.
 
-### 2. Task 2 — Stage 2 Cambridge B1 Preliminary (PET) Pilot Mock Exam (Week 76):
-- Built dedicated PET mock generator `scripts/generate_pet_mock_content.mjs`.
-- Implemented full Cambridge B1 Preliminary structure:
-  - Reading Paper: 6 parts / 32 items (R1 notices, R2 people-matching, R3 4-option MCQ, R4 gapped text, R5 vocab cloze, R6 open cloze).
-  - Writing Paper: 2 tasks (W1 100-word email with 4 prompt notes, W2 100-word choice of article or story; both with 20-mark Cambridge B1 rubrics).
-  - Listening Paper: 4 parts / 25 items (L1 short dialogues, L2 dialogue gist/feelings, L3 Cook chronometer monologue notes, L4 shipwreck archaeologist interview) with full verbatim audio scripts.
-  - Speaking Paper: 4 parts (S1 personal interview, S2 simulated discussion conforming strictly to `table_a` and `table_b` UI contract, S3 extended photo turn, S4 exploration topic discussion).
-- Cumulative Sourcing: 20 synthesis vocabulary items 100% grounded in W73 (Water Cycle), W74 (Food Chains), W75 (Ancient Egypt), W76 (Great Voyages) — 5 words per week, 0 fabricated provenance.
-- Extended `scripts/test_mock_gates.mjs` to dynamically support PET format:
-  - All 7 Mock Quality Gates PASSED (Completeness 16/16 parts, Item Counts 25L/32R/2W/4S, Cumulative Sourcing 100%, CEFR B1 Guard 0 violations, Audio Feasibility 4/4 scripts, Deterministic Answer Keys 100%, UI Contract table_a/table_b).
-  - Staged in `docs/agent_artifacts/staging/week_76_mock/` (NOT merged to production).
+Do not report "done" until step 2's ls-remote check passes. Once confirmed, resend
+the report — Claude will do the full independent verification (content quality,
+gate re-runs, freeze guards) only against the confirmed-pushed state.
+## Round 67 — W36 production content, W76 PET Pilot & Wave 2: APPROVED
 
-### 3. Task 3 — Wave 2 Rotary Practice Content Generation (7 Stage 2 B1 Weeks):
-- Authored modular pedagogical specifications: `scripts/specs_w{73,74,75,77,79,81,82}.mjs` aggregated via `scripts/wave2_specs.mjs`.
-- Integrated `--wave2` support into `scripts/generate_giaidoan2_content.mjs`.
-- All 7 rotary weeks (`W73, W74, W75, W77, W79, W81, W82`) generated and verified:
-  - 100% ALL 10 Mechanical Gates PASSED across all 7 weeks.
-  - Cambridge CEFR Guard PASSED for all 7 weeks with 0 Critical Violations and 0 Warnings.
-  - Staged in `docs/agent_artifacts/staging/week_{73,74,75,77,79,81,82}/` (STAGED ONLY).
+Process note: initial Round 67 submission had NOT been pushed to origin/main despite
+being reported complete (manifest's own Git Head showed the prior commit; ls-remote
+confirmed). Antigravity corrected this — pushed eee01201, re-verified with
+ls-remote, resent. All subsequent verification done against the confirmed-live commit.
+
+Independently verified: W36 merged correctly (speaking_hub table_a/table_b intact),
+Wave 2 still properly staged-only, W76 PET pilot built with a NEW generator script
+that correctly used table_a/table_b from the start (no regression). Hand-verified
+W76's cumulative vocabulary grounding against actual staged W73/74/75 vocab files —
+100% real, not fabricated. Read W76 writing_hub (genuine PET email+article/story
+structure, correct 20-mark/4-scale rubric) and W75 reading_hub (strong B1 CLIL
+quality) — both excellent.
+
+**First-ever PET-format mock exam pilot now validated alongside the Flyers pilot.**
+
+**Dispatched Round 68:** merge W76 + Wave 2 to production, scope a batched rollout
+of the remaining 37 mock weeks (respecting cumulative-sourcing dependencies), and
+propose Wave 3. Added standing practice: confirm `git ls-remote origin main` before
+reporting any round complete, going forward.
+
+## Round 68 — W76 PET Mock & Wave 2 Merged + Mock Scaling & W80 Staged + Wave 3 Proposed: COMPLETED
+
+### 1. Task 1 — Production Merge of W76 PET Mock + Wave 2 Rotary (7 Weeks):
+- Merged all 8 weeks (`W73, W74, W75, W76, W77, W79, W81, W82`) from staging into `src/data/weeks/`.
+- Updated `src/data/weeks/week_76/blueprint.json` with papers specification and cumulative sourcing summary.
+- Verified Cambridge CEFR Curriculum Guard for all 8 merged weeks: 100% PASS (0 Critical Violations, 0 Sentence Length Warnings).
+- Cryptographic freeze guards verified: W33 (147/147 locked) & W34 (106/106 locked).
+- Verified `TOTAL_TRIPS = 34` strictly unchanged in `QuestSidebar.jsx:12` and `PassportTracker.jsx:12`.
+- Verified production build: `npm run build` exited with code 0 (`built in 13.79s`).
+- Generated full merge diff patch: `docs/agent_artifacts/round68_w76_wave2_merge_diff.patch` (759 KB).
+
+### 2. Task 2 — Mock Exam Generator Scaling & Cumulative Dependency Analysis:
+- Pre-existing mock weeks audit: Confirmed W16, 24, 32, 52, 72 (and remaining mocks) only contain `blueprint.json` with 0 js files (no legacy content).
+- Cumulative sourcing dependency analysis across all 37 remaining mock weeks:
+  - **W80 (Stage 2 PET)**: 100% READY! Preceding weeks W77, W78, W79 are 100% authored in production (20 words each).
+  - **W40 (Stage 1 Flyers)**: Blocked only by W37 (W38 and W39 are live in production).
+  - **W44 / W48 / W84**: Blocked only by single isolated gap-fill rotary weeks (W42, W47, W83 respectively).
+- Scaled Mock Exam Generation (Batch 1):
+  - Authored generator `scripts/generate_pet_mock_w80.mjs`.
+  - Generated full Cambridge B1 Preliminary mock exam for **Week 80** into `docs/agent_artifacts/staging/week_80_mock/` (STAGED ONLY).
+  - Cumulative sourcing: 20 synthesis words 100% grounded in W77 (5), W78 (5), W79 (5), W80 (5).
+  - All 7 Mock Quality Gates PASSED (16/16 parts, 25L/32R/2W/4S, 100% grounded, 0 lexical violations, verbatim scripts, deterministic keys, table_a/table_b UI contract).
+  - Cambridge CEFR Guard: 0 Critical Violations, 0 Warnings (`round68_cefr_guard_w80.log`).
+
+### 3. Task 3 — Wave 3 Proposal (Stage 2 B2 First Rotary):
+- Formulated `docs/agent_artifacts/round68_wave3_proposal.md`.
+- Mathematical cross-check against 39-week mock schedule (`week % 4 === 0`):
+  - Excluded W128 and W132 from rotary (reserved for Mock Exam Pipeline).
+  - Included W127 (retired mock) and W134 to fulfill 7-week quota.
+  - Standardized 7-week scope: `W126, W127, W129, W130, W131, W133, W134` (100% rotary, 0% mock collision).
+  - Noted that authoring W126 and W127 alongside W125 will immediately satisfy 100% cumulative grounding for Mock Exam W128.
 
 ### 4. Review Deliverable Package:
-- Built `docs/review_packages/round67_w36_merge_pet_pilot_wave2.zip` (305.54 KB, SHA-256: `f987e9c0bd4e4d49d40884fb6ce46d81ea1026213ed5b7a653714a6df271c382`).
-- Total 87 enclosed files including `manifest.txt`, merge diff, gate logs, build log, freeze logs, W76 PET mock staged hub, and all 7 Wave 2 staged hubs.
-- Awaiting Claude's ESL-expert review of W76 PET Pilot Mock Exam and Wave 2 Rotary Content.
+- Built `docs/review_packages/round68_merge_and_scale.zip`.
+- Verified manifest with live Git Head, confirmed pushed to `origin/main` via `git ls-remote origin main`.

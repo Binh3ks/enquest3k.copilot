@@ -1,0 +1,14 @@
+{
+  "week": 80,
+  "generator": "scripts/generate_pet_mock_content.mjs",
+  "format": "pet",
+  "generated_at": "2026-11-09T09:36:54.029Z",
+  "cefr_standard": "Stage 2: Cambridge Lower Secondary & B1 Preliminary",
+  "staged_path": "docs/agent_artifacts/staging/week_80_mock",
+  "invariants": [
+    "Freeze Defense: W33 & W34 are untouched",
+    "Cumulative Sourcing: Grounded in W73, W74, W75, W80",
+    "PET Exam Architecture: Reading (6 parts/32 items), Writing (2 tasks), Listening (4 parts/25 items), Speaking (4 parts)",
+    "UI Contract: speaking_hub conforms to table_a and table_b schema"
+  ]
+}

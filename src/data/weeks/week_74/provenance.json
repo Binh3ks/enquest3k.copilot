@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-09T08:30:07.697Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 74,
+  "theme": "Science/ELA: Food Chains / Math: Complex Charts",
+  "cefr_level": "B1 Preliminary",
+  "grammar_focus": "Zero Conditional (Scientific Facts): 'If plants die, animals have no food'",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_74/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 74: Science/ELA: Food Chains / Math: Complex Charts (Tuần 74: Khoa học/ELA: Chuỗi thức ăn / Toán: Biểu đồ phức tạp)\n\t•\tTopic (Science): Who Eats Who? (Energy flow). (Chủ đề: Ai ăn ai? - Dòng năng lượng.)\n\t•\tKey Learning Outcome (ELA): Write a paragraph explaining dependency in nature. (Kết quả: Viết đoạn văn giải thích sự phụ thuộc trong tự nhiên.)\n\t•\tWriting Skill Focus: Cause-Effect in systems. (Kỹ năng Viết: Nguyên nhân-Kết quả trong hệ thống.)\n\t•\tGrammar Focus: Zero Conditional (Scientific Facts): \"If plants die, animals have no food.\" (Ngữ pháp: Câu điều kiện loại 0.)\n\t•\tVocabulary Focus: producer, consumer, predator, prey, energy, flow, eat, eaten by.\n\t•\tTopic (Math): Multi-Set Data. (Toán: Dữ liệu đa bộ.)\n\t•\tKey Learning Outcome (Math): Read charts comparing two groups (e.g., Lions vs. Zebras). (Kết quả: Đọc biểu đồ so sánh 2 nhóm.)\n\t•\tMath Vocabulary: compare, both, set, legend, double bar graph.\n\t•",
+    "digital_map_reference": {
+      "map_week": 74,
+      "map_theme": "Plate Tectonics & Earthquakes",
+      "map_clil_module": "Địa chất học: Đứt gãy mảng & Thang Richter",
+      "map_grammar_hub": "Thể bị động nâng cao (*plates are forced together*); `action_lab` địa chấn kế",
+      "map_cefr_type": "B1 PET · Rotary 2",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Science/ELA: Food Chains / Math: Complex Charts\") enforced over Digital Map (Source A: \"Plate Tectonics & Earthquakes\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-09T08:30:07.701Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 77,
+  "theme": "Social Studies/ELA: World Landmarks / Math: 3D Geometry",
+  "cefr_level": "B1 Preliminary",
+  "grammar_focus": "Adjectives of Material & Shape: 'It is made of...', 'It is shaped like...'",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_77/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 77: Social Studies/ELA: World Landmarks / Math: 3D Geometry (Tuần 77: Xã hội/ELA: Kỳ quan Thế giới / Toán: Hình học 3D)\n\t•\tTopic (Social): Famous Buildings. (Chủ đề: Các công trình nổi tiếng.)\n\t•\tKey Learning Outcome (ELA): Write a technical description of a landmark. (Kết quả: Viết miêu tả kỹ thuật về danh thắng.)\n\t•\tWriting Skill Focus: Descriptive precision. (Kỹ năng Viết: Sự chính xác trong miêu tả.)\n\t•\tGrammar Focus: Adjectives of Material/Shape: \"It is made of...\", \"It is shaped like...\". (Ngữ pháp: Tính từ chất liệu/hình dáng.)\n\t•\tVocabulary Focus: tower, bridge, wall, stone, steel, ancient, modern, famous, statue.\n\t•\tTopic (Math): Building Blocks. (Toán: Khối xây dựng.)\n\t•\tKey Learning Outcome (Math): Identify faces, edges, vertices of 3D shapes. (Kết quả: Xác định mặt, cạnh, đỉnh.)\n\t•\tMath Vocabulary: cube, sphere, pyramid, cylinder, face, edge, vertex, solid.\n\t•",
+    "digital_map_reference": {
+      "map_week": 77,
+      "map_theme": "B1 PET & CLIL Mock 1",
+      "map_clil_module": "Đánh giá Thực nghiệm Khoa học 1",
+      "map_grammar_hub": "Full Mock B1 PET 1 (4 Parts Listening, 6 Parts Reading, 2 Parts Writing, Speaking)",
+      "map_cefr_type": "★ FULL MOCK 12 (PET)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Social Studies/ELA: World Landmarks / Math: 3D Geometry\") enforced over Digital Map (Source A: \"B1 PET & CLIL Mock 1\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

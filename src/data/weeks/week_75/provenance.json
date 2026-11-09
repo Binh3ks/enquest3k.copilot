@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-09T08:30:07.699Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 75,
+  "theme": "History/ELA: Ancient Egypt / Math: Timelines",
+  "cefr_level": "B1 Preliminary",
+  "grammar_focus": "'Used to' / 'Would' (Past Habits): 'Egyptians used to build...'",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_75/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 75: History/ELA: Ancient Egypt / Math: Timelines (Tuần 75: Lịch sử/ELA: Ai Cập Cổ đại / Toán: Dòng thời gian)\n\t•\tTopic (History): Pyramids and Pharaohs. (Chủ đề: Kim tự tháp và Pharaoh.)\n\t•\tKey Learning Outcome (ELA): Write a descriptive paragraph about Ancient Egypt. (Kết quả: Viết đoạn văn miêu tả Ai Cập.)\n\t•\tWriting Skill Focus: Historical description. (Kỹ năng Viết: Miêu tả lịch sử.)\n\t•\tGrammar Focus: \"Used to\" / \"Would\" (Past habits): \"Egyptians used to build...\". (Ngữ pháp: Thói quen quá khứ.)\n\t•\tVocabulary Focus: pyramid, mummy, tomb, desert, ancient, civilization, king, build.\n\t•\tTopic (Math): History Math. (Toán: Toán Lịch sử.)\n\t•\tKey Learning Outcome (Math): Calculate duration between dates (BC/AD). (Kết quả: Tính khoảng thời gian.)\n\t•\tMath Vocabulary: timeline, duration, century, year, past, ago, BC, AD.\n\t•",
+    "digital_map_reference": {
+      "map_week": 75,
+      "map_theme": "Photosynthesis & Cellular Energy",
+      "map_clil_module": "Hóa sinh: Năng lượng mặt trời thành glucose",
+      "map_grammar_hub": "Giải thích phương trình hóa học; `reading_hub` quang phổ diệp lục",
+      "map_cefr_type": "B1 PET · Rotary 3",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"History/ELA: Ancient Egypt / Math: Timelines\") enforced over Digital Map (Source A: \"Photosynthesis & Cellular Energy\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

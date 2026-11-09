@@ -1,0 +1,252 @@
+{
+  "week": 81,
+  "theme": "ELA: The Master Architect (Structure) / Math: Graphing Data",
+  "cefr_level": "B1 Preliminary",
+  "blueprint_snapshot": {
+    "week": 81,
+    "theme": "ELA: The Master Architect (Structure) / Math: Graphing Data",
+    "title_en": "ELA: The Master Architect (Structure) / Math: Graphing Data",
+    "title_vi": "ELA: Kiến Trúc Sư Tài Ba - Cấu trúc / Toán: Biểu diễn Dữ liệu",
+    "cefr_level": "B1 PET",
+    "cefr_stage": 2,
+    "week_type": "rotary_practice",
+    "isFullMock": false,
+    "rotary_cycle": null,
+    "template_used": "production_kit/templates/template_pet_transition.js",
+    "story_title": "Planning an essay like building a house",
+    "clil_topic": {
+      "title": "ELA: The Master Architect & Outlining",
+      "focus": "Create a 5-paragraph outline"
+    },
+    "grammar_focus": {
+      "structure": "Transition Signals (Firstly, Secondly, In conclusion)",
+      "outcome": "Create a 5-paragraph outline",
+      "pattern_regex": null,
+      "requires_authoring_examples": true
+    },
+    "vocabulary_focus": {
+      "syllabus_words": [
+        "introduction",
+        "body",
+        "conclusion",
+        "outline",
+        "structure",
+        "paragraph",
+        "main point"
+      ],
+      "total_syllabus_words": 7,
+      "target_count": 20,
+      "missing_count": 13,
+      "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)",
+      "phonology_summary": {
+        "total_words_tagged": 7,
+        "ipa_coverage_pct": 100,
+        "regular_verbs_count": 0,
+        "irregular_verbs_count": 0,
+        "non_verbs_count": 7,
+        "past_tense_triad": {
+          "/t/": [],
+          "/d/": [],
+          "/ɪd/": []
+        },
+        "triad_complete": false
+      }
+    },
+    "keywords": [
+      "introduction",
+      "body",
+      "conclusion",
+      "outline",
+      "structure",
+      "paragraph",
+      "main point"
+    ],
+    "characters": null,
+    "target_vocab_20": [
+      {
+        "word": "introduction",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/ˌɪntɹədˈʌkʃən/",
+        "phonetics": {
+          "arpabet": "IH2 N T R AH0 D AH1 K SH AH0 N",
+          "final_phone": "N",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "body",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/bˈɑːdi/",
+        "phonetics": {
+          "arpabet": "B AA1 D IY0",
+          "final_phone": "IY",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "conclusion",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/kənklˈuːʒən/",
+        "phonetics": {
+          "arpabet": "K AH0 N K L UW1 ZH AH0 N",
+          "final_phone": "N",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "outline",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/ˈaʊtlˌaɪn/",
+        "phonetics": {
+          "arpabet": "AW1 T L AY2 N",
+          "final_phone": "N",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "structure",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/stɹˈʌktʃɚ/",
+        "phonetics": {
+          "arpabet": "S T R AH1 K CH ER0",
+          "final_phone": "ER",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "paragraph",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/pˈæɹəɡɹˌæf/",
+        "phonetics": {
+          "arpabet": "P AE1 R AH0 G R AE2 F",
+          "final_phone": "F",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "main point",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/mˈeɪn pˈɔɪnt/",
+        "phonetics": {
+          "arpabet": "M EY1 N P OY1 N T",
+          "final_phone": "N",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      }
+    ],
+    "scaffolding_tier": "Tier 3 (Guided CER)",
+    "tested_skills": [
+      "listening_p1",
+      "listening_p2",
+      "listening_p3",
+      "listening_p4",
+      "listening_p5",
+      "reading_p1",
+      "reading_p2",
+      "reading_p3",
+      "reading_p4",
+      "reading_p5",
+      "reading_p6",
+      "writing_p7",
+      "speaking_p1",
+      "speaking_p2",
+      "speaking_p3",
+      "speaking_p4"
+    ],
+    "target_shields": 3,
+    "pending_human_authoring": [
+      "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+      "Story World: 5 story scenes with narration script + character names",
+      "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+      "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+      "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+    ],
+    "digital_map_reference": {
+      "map_week": 81,
+      "map_theme": "Cellular Biology (Plant vs Animal)",
+      "map_clil_module": "Sinh học tế bào: Nhân, ti thể, màng",
+      "map_grammar_hub": "Bảng phân tích so sánh; `science_lab` dán nhãn bào quan tế bào",
+      "map_cefr_type": "B1 PET · Rotary 4",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"ELA: The Master Architect (Structure) / Math: Graphing Data\") enforced over Digital Map (Source A: \"Cellular Biology (Plant vs Animal)\"). Source A metadata preserved in digital_map_reference."
+    },
+    "metadata_provenance": {
+      "generated_at": "2026-11-04T08:30:00.760Z",
+      "generator_script": "scripts/generate_week_blueprint.mjs",
+      "source_digital_map": true,
+      "source_master_syllabus": true,
+      "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+    }
+  },
+  "source_b_excerpt": "Week 81: ELA: The Master Architect (Structure) / Math: Graphing Data (Tuần 81: ELA: Kiến Trúc Sư Tài Ba - Cấu trúc / Toán: Biểu diễn Dữ liệu)\n\t•\tTopic (ELA): Planning an essay like building a house. (Chủ đề: Lập kế hoạch bài luận như xây nhà.)\n\t•\tKey Learning Outcome (ELA): Create a 5-paragraph outline. (Kết quả: Tạo dàn ý 5 đoạn.)\n\t•\tWriting Skill Focus: Outlining. (Kỹ năng: Lập dàn ý.)\n\t•\tGrammar Focus: Transition Signals (Firstly, Secondly, In conclusion). (Ngữ pháp: Tín hiệu chuyển đoạn.)\n\t•\tVocabulary Focus: introduction, body, conclusion, outline, structure, paragraph, main point.\n\t•\tTopic (Math): Representing Data. (Toán: Biểu diễn Dữ liệu.)\n\t•\tKey Learning Outcome (Math): Create a bar graph from a data set. (Kết quả: Tạo biểu đồ cột từ bộ dữ liệu.)\n\t•\tMath Vocabulary: axis, label, title, scale, bar, plot.\n\t•"
+}

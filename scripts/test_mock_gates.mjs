@@ -417,7 +417,7 @@ logContent += `  • Cumulative Vocab Pool:    ${totalSourced} items grounded in
 logContent += `  • Speaking Part 2 Format:   table_a / table_b (UI Contract Gate 7 PASSED)\n`;
 logContent += '========================================================================\n';
 
-let logFileName = isPET ? 'round67_pet_mock_gates.log' : 'round66_mock_gates.log';
+let logFileName = `round68_mock_gates_w${targetWeek}.log`;
 const logPath = path.join(ROOT_DIR, 'docs/agent_artifacts', logFileName);
 fs.writeFileSync(logPath, logContent, 'utf8');
 
