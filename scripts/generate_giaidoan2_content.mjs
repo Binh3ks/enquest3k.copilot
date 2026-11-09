@@ -27,6 +27,8 @@ import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { WAVE1_SPECS } from './wave1_specs.mjs';
 import { WAVE2_SPECS } from './wave2_specs.mjs';
+import { GAPFILL_SPECS } from './gapfill_specs.mjs';
+import { WAVE3_SPECS } from './wave3_specs.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -42,6 +44,8 @@ const isDryRun = !isWrite;
 const isPilot = args.includes('--pilot');
 const isWave1 = args.includes('--wave1');
 const isWave2 = args.includes('--wave2');
+const isGapfill = args.includes('--gapfill') || args.includes('--gap-fill');
+const isWave3 = args.includes('--wave3');
 const weekArgIdx = args.findIndex(a => a === '--week' || a === '-w');
 const targetWeek = weekArgIdx !== -1 && args[weekArgIdx + 1] ? parseInt(args[weekArgIdx + 1], 10) : null;
 
@@ -2197,7 +2201,9 @@ function computeWeekSkeleton(spec) {
 export const ALL_CONTENT_SPECS = {
   ...PILOT_CONTENT_SPECS,
   ...WAVE1_SPECS,
-  ...WAVE2_SPECS
+  ...WAVE2_SPECS,
+  ...GAPFILL_SPECS,
+  ...WAVE3_SPECS
 };
 
 /**
@@ -2628,6 +2634,10 @@ async function main() {
     targetWeeks = [39, 40, 41, 43, 44, 45, 46];
   } else if (isWave2) {
     targetWeeks = [73, 74, 75, 77, 79, 81, 82];
+  } else if (isGapfill) {
+    targetWeeks = [37, 42, 47];
+  } else if (isWave3) {
+    targetWeeks = [126, 127, 129, 130, 131, 133, 134];
   } else if (targetWeek) {
     targetWeeks = [targetWeek];
   } else {
@@ -2635,6 +2645,8 @@ async function main() {
     console.log('  node scripts/generate_giaidoan2_content.mjs --pilot [--write-staging]');
     console.log('  node scripts/generate_giaidoan2_content.mjs --wave1 [--write-staging]');
     console.log('  node scripts/generate_giaidoan2_content.mjs --wave2 [--write-staging]');
+    console.log('  node scripts/generate_giaidoan2_content.mjs --gapfill [--write-staging]');
+    console.log('  node scripts/generate_giaidoan2_content.mjs --wave3 [--write-staging]');
     console.log('  node scripts/generate_giaidoan2_content.mjs --week <N> [--write-staging]');
     process.exit(1);
   }

@@ -1,0 +1,28 @@
+{
+  "week": 48,
+  "exam_title": "Cambridge A2 Flyers Full Mock 4 (Weeks 45-48 Synthesis)",
+  "generatedAt": "2026-11-09T13:22:34.679Z",
+  "generator": "scripts/generate_flyers_mock_batch.mjs",
+  "architecture": "Full 16-Part Cambridge YLE Flyers Paper (5L + 7RW + 4S)",
+  "cumulativeSources": {
+    "w45": {
+      "status": "Grounded / Staged"
+    },
+    "w46": {
+      "status": "Grounded / Merged"
+    },
+    "w47": {
+      "status": "Grounded / Staged"
+    },
+    "w48": {
+      "status": "Mock Target Week"
+    }
+  },
+  "pedagogicalValidation": {
+    "totalListeningItems": 25,
+    "totalReadingWritingItems": 44,
+    "totalSpeakingParts": 4,
+    "cefrConformance": "A2 Flyers Strict (0 B1/B2 violations)",
+    "soloAIPartner": "Nova AI Interlocutor (Speaking P1-P4)"
+  }
+}

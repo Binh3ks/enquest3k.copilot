@@ -1,9 +1,9 @@
 {
-  "commit": "928d5fa299ea63d5add72e3928c7892d37d04d52",
-  "git_commit": "928d5fa299ea63d5add72e3928c7892d37d04d52",
-  "shortCommit": "928d5fa2",
-  "message": "feat(curriculum): apply 39-week mock flags, wipe W36/W37 stubs, build W36 pilot mock [multi-agent-review]",
-  "builtAt": "2026-11-09T07:53:40.426Z",
-  "build_timestamp": "2026-11-09T07:53:40.426Z",
+  "commit": "278bfb9f42e57a096760155cc4b82767791657d9",
+  "git_commit": "278bfb9f42e57a096760155cc4b82767791657d9",
+  "shortCommit": "278bfb9f",
+  "message": "feat(curriculum): merge W76 PET mock & Wave 2, stage W80 PET mock, propose Wave 3 [multi-agent-review]",
+  "builtAt": "2026-11-09T13:23:33.835Z",
+  "build_timestamp": "2026-11-09T13:23:33.835Z",
   "env": "production"
 }

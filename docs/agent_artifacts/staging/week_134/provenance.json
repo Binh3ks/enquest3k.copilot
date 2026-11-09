@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-09T13:11:11.320Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 134,
+  "theme": "Economics & International Trade: Globalization",
+  "cefr_level": "B2 First",
+  "grammar_focus": "Discourse Markers of Concession & Contrast: 'Whereas tariff reductions stimulate export volume, emerging industries nevertheless require transitional safeguards; Despite currency fluctuations, bilateral trade expanded steadily.'",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_134/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 134: Identifying Fallacies (Tuần 134: Nhận diện Lỗi Ngụy biện) \n\t•\tTopic (Debate): Spotting bad arguments. (Chủ đề: Phát hiện lập luận tồi.)\n\t•\tKey Learning Outcome (ELA): Identify a \"Generalization\" fallacy (e.g., \"All gamers are lazy\"). (Kết quả: Nhận diện lỗi \"Khái quát hóa vội vã\".)\n\t•\tSkill Focus: Critical Thinking/Logic. (Kỹ năng: Tư duy Phản biện/Logic.)\n\t•\tGrammar Focus: Qualifiers: \"Some\", \"Many\", \"Often\", \"Tend to\" (to avoid generalizing). (Ngữ pháp: Từ hạn định để tránh vơ đũa cả nắm.)\n\t•\tVocabulary Focus: fallacy, generalization, assumption, true, false, valid, invalid, logic.\n\t•\tTopic (Math): Geometry: Triangles. (Toán: Hình học - Tam giác.)\n\t•\tKey Learning Outcome (Math): Classify triangles by sides (equilateral, isosceles, scalene). (Kết quả: Phân loại tam giác theo cạnh.)\n\t•\tMath Vocabulary: triangle, side, equal, length, equilateral, isosceles, scalene.\nPhase B: Essay Writing (Viết Bài luận)\n\t•",
+    "digital_map_reference": {
+      "map_week": 134,
+      "map_theme": "Research Project 4: Survey Design",
+      "map_clil_module": "Khảo sát xã hội học: Phỏng vấn bạn học",
+      "map_grammar_hub": "Xây dựng bảng hỏi; `info_exchange` phỏng vấn khảo sát dữ liệu",
+      "map_cefr_type": "B1+ Academic · Rotary 2",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Identifying Fallacies\") enforced over Digital Map (Source A: \"Research Project 4: Survey Design\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

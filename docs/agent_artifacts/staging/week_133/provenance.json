@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-09T13:11:11.318Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 133,
+  "theme": "Astrophysics: Black Holes, Galaxies & Gravity",
+  "cefr_level": "B2 First",
+  "grammar_focus": "Modals of Deduction (Past & Present): 'The observed gravitational wave must have originated from colliding black holes; The distant galaxy cannot be younger than ten billion years.'",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_133/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 133: Deep Research & Data (Tuần 133: Nghiên cứu Sâu & Dữ liệu) \n\t•\tTopic (ELA): Finding statistics to support arguments. (Chủ đề: Tìm số liệu thống kê để hỗ trợ lập luận.)\n\t•\tKey Learning Outcome (ELA): Find and cite one statistic about video games (e.g., \"70% of kids play...\"). (Kết quả: Tìm và trích dẫn 1 số liệu về video game.)\n\t•\tSkill Focus: Using data as evidence. (Kỹ năng: Dùng dữ liệu làm bằng chứng.)\n\t•\tGrammar Focus: Citation Phrases: \"According to a study by...\", \"Statistics show that...\". (Ngữ pháp: Cụm từ trích dẫn.)\n\t•\tVocabulary Focus: statistic, percent, study, data, majority, minority, survey, population.\n\t•\tTopic (Math): Geometry: Angles. (Toán: Hình học - Góc.)\n\t•\tKey Learning Outcome (Math): Identify right, acute, and obtuse angles in shapes. (Kết quả: Nhận biết góc vuông, nhọn, tù.)\n\t•\tMath Vocabulary: angle, degree, right angle, acute, obtuse, protractor, measure.\n\t•",
+    "digital_map_reference": {
+      "map_week": 133,
+      "map_theme": "Research Project 4: AI in Education",
+      "map_clil_module": "Trí tuệ nhân tạo và liêm chính học thuật",
+      "map_grammar_hub": "Soạn thảo tổng quan tài liệu; `discovery_report` độ lệch AI detector",
+      "map_cefr_type": "B1+ Academic · Rotary 1",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Deep Research & Data\") enforced over Digital Map (Source A: \"Research Project 4: AI in Education\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

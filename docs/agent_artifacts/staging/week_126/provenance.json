@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-09T13:11:11.309Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 126,
+  "theme": "Advanced Robotics & Artificial Intelligence Ethics",
+  "cefr_level": "B2 First",
+  "grammar_focus": "Complex Passive Voice & Impersonal Structures: 'It is argued that autonomous systems must be strictly audited before deployment.'",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_126/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 126: From Essay to Speech (Tuần 126: Chuyển từ Bài viết sang Bài nói)\n\t•\tTopic (Debate): Making it spoken. (Chủ đề: Văn nói.)\n\t•\tKey Learning Outcome (ELA): Create cue cards and practice signposting. (Kết quả: Làm thẻ ghi chú và luyện từ dẫn đường.)\n\t•\tGrammar Focus: Signposting: \"Moving on to...\", \"Let's look at...\". (Ngữ pháp: Từ dẫn hướng.)\n\t•\tTopic (Math): Logic Puzzles. (Toán: Câu đố Logic.)\n\t•",
+    "digital_map_reference": {
+      "map_week": 126,
+      "map_theme": "Opinion Project 2: Data & Statistical Claims",
+      "map_clil_module": "Dữ liệu thời gian màn hình & Sức khỏe",
+      "map_grammar_hub": "`math_quest` phân biệt tương quan vs quan hệ nhân quả",
+      "map_cefr_type": "B1+ Academic · Rotary 2",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"From Essay to Speech\") enforced over Digital Map (Source A: \"Opinion Project 2: Data & Statistical Claims\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

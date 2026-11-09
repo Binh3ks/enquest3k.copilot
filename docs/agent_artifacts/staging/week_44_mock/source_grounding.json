@@ -1,0 +1,65 @@
+{
+  "week": 44,
+  "exam_title": "Cambridge A2 Flyers Full Mock 3 (Weeks 41-44 Synthesis)",
+  "cumulative_block": [
+    41,
+    42,
+    43,
+    44
+  ],
+  "vocabulary_grounding_summary": {
+    "total_synthesis_words": 20,
+    "w41_source_words": [
+      "egg",
+      "hatch",
+      "caterpillar",
+      "chrysalis",
+      "butterfly"
+    ],
+    "w42_source_words": [
+      "cloud",
+      "rain",
+      "river",
+      "ocean",
+      "stream"
+    ],
+    "w43_source_words": [
+      "add",
+      "plus",
+      "combine",
+      "total",
+      "together"
+    ],
+    "w44_source_words": [
+      "minus",
+      "subtract",
+      "cookie",
+      "share",
+      "remain"
+    ]
+  },
+  "grammar_grounding_summary": {
+    "w41_grammar": "Process sequencing clauses (first, next, then, finally)",
+    "w42_grammar": "Present Simple natural cycle descriptions & transitions",
+    "w43_grammar": "Addition mathematical expressions (plus, combine, total, together)",
+    "w44_grammar": "Subtraction mathematical operations (minus, subtract, take away, remain)"
+  },
+  "parts_grounding": {
+    "listening_p1": "Discovery Science Fair with Lucas, Grace, Toby, Clara, Mark",
+    "listening_p2": "Toby Evans registering for the Young Science & Math Workshop",
+    "listening_p3": "Matching student science models to their experiment topics (A-H)",
+    "listening_p4": "3-picture MCQs about the school botanical garden field trip",
+    "listening_p5": "Science lab diagram colouring models and writing CYCLE",
+    "reading_p1": "10 definitions matching nature cycle and arithmetic vocabulary",
+    "reading_p2": "Toby discussing math bake sale calculations with Teacher Sarah",
+    "reading_p3": "Story cloze on an apple orchard caterpillar transforming into a butterfly",
+    "reading_p4": "Factual article explaining how water travels from oceans to clouds and rain",
+    "reading_p5": "Extended story about solving cookie division puzzles at the school festival",
+    "reading_p6": "Email open cloze written by young botanist Sophie",
+    "reading_p7": "3-panel picture story writing: The School Butterfly Garden",
+    "speaking_p1": "Spot 5 differences between Picture A and B in science laboratory",
+    "speaking_p2": "Solo-AI cue cards: Table A Leo's Butterfly Garden / Table B Anna's Water Cycle Project",
+    "speaking_p3": "5-frame picture story: The Cookie Monster Baker and the Missing Biscuits",
+    "speaking_p4": "4 personal interview questions on favourite subjects, insects, and baking"
+  }
+}

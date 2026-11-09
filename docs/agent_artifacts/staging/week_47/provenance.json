@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-09T13:11:30.707Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 47,
+  "theme": "Big Numbers (Place Value)",
+  "cefr_level": "A2 Flyers",
+  "grammar_focus": "Hyphenated numbers & quantity expressions: 'There are twenty-five saplings. How many stars did you count in the sky?'",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_47/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 47: Big Numbers (Place Value) (Tuần 47: Số lớn - Giá trị hàng)\n\t•\tTopic: Counting stars / Population of a village. (Chủ đề: Đếm sao / Dân số làng.)\n\t•\tKey Learning Outcome: Read and write numbers up to 100 correctly in English. (Kết quả: Đọc và viết số đến 100 đúng tiếng Anh.)\n\t•\tSkill Focus: Number Literacy. (Kỹ năng: Đọc hiểu số.)\n\t•\tGrammar Focus: hyphenated numbers (twenty-one). (Ngữ pháp: Số có gạch nối.)\n\t•\tVocabulary Focus: ten, twenty, thirty... hundred, count, how many.\n\t•",
+    "digital_map_reference": {
+      "map_week": 47,
+      "map_theme": "Full Cambridge Mock 3",
+      "map_clil_module": "Khoa học Liên môn Mock 3",
+      "map_grammar_hub": "Full Mock Flyers 3: Rà soát lỗi đọc Part 5 (1-4 từ) và viết Part 7",
+      "map_cefr_type": "★ FULL MOCK 06 (Flyers)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Big Numbers (Place Value)\") enforced over Digital Map (Source A: \"Full Cambridge Mock 3\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

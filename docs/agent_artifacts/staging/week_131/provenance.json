@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-09T13:11:11.316Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 131,
+  "theme": "Genetics & Biotechnology: Modern Agriculture",
+  "cefr_level": "B2 First",
+  "grammar_focus": "Relative Clauses (Defining & Non-defining): 'Drought-resistant crops, which researchers developed using precision gene editing, yield significantly more grain; Farmers whose lands suffer from soil salinity now cultivate tolerant strains.'",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_131/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 131 syllabus entry",
+    "digital_map_reference": {
+      "map_week": 131,
+      "map_theme": "Opinion Project 3: Persuasive Techniques",
+      "map_clil_module": "Ethos, Pathos, Logos trong thuyết phục",
+      "map_grammar_hub": "Ngữ điệu và trọng âm nhấn mạnh; `gear2_karaoke` bài diễn văn lịch sử",
+      "map_cefr_type": "B1+ Academic · Rotary 4",
+      "alignment_status": "ALIGNED",
+      "alignment_note": "Syllabus sources fully aligned."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

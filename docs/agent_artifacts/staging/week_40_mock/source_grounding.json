@@ -1,0 +1,65 @@
+{
+  "week": 40,
+  "exam_title": "Cambridge A2 Flyers Full Mock 2 (Weeks 37-40 Synthesis)",
+  "cumulative_block": [
+    37,
+    38,
+    39,
+    40
+  ],
+  "vocabulary_grounding_summary": {
+    "total_synthesis_words": 20,
+    "w37_source_words": [
+      "living",
+      "breathe",
+      "grow",
+      "food",
+      "water"
+    ],
+    "w38_source_words": [
+      "jump",
+      "fly",
+      "swim",
+      "hunt",
+      "climb"
+    ],
+    "w39_source_words": [
+      "habitat",
+      "desert",
+      "rainforest",
+      "ocean",
+      "burrow"
+    ],
+    "w40_source_words": [
+      "teeth",
+      "claws",
+      "fur",
+      "heavy",
+      "sharp"
+    ]
+  },
+  "grammar_grounding_summary": {
+    "w37_grammar": "Simple Present factual statements for living necessities",
+    "w38_grammar": "Modals of ability (can / cannot jump, fly, swim, hunt)",
+    "w39_grammar": "Prepositions of location and environmental habitat clauses",
+    "w40_grammar": "Comparative and superlative adjectives (faster, sharper, heavier)"
+  },
+  "parts_grounding": {
+    "listening_p1": "Riverbend Wildlife Reserve trail with Harry, Emma, Oliver, Helen, Richard",
+    "listening_p2": "Ben Clark joining the Junior Wildlife Explorers Club",
+    "listening_p3": "Matching animals to their natural habitats and shelters (A-H)",
+    "listening_p4": "3-picture MCQs about Sam and Mia's wildlife safari adventure",
+    "listening_p5": "Research station exhibit colouring animals and writing WILD",
+    "reading_p1": "10 definitions matching animal adaptations and habitat vocabulary",
+    "reading_p2": "Emma interviewing Ranger David about animal defenses and claws",
+    "reading_p3": "Story cloze on a clever fox finding food and a safe burrow",
+    "reading_p4": "Factual article on how creatures adapt to harsh desert and rainforest climates",
+    "reading_p5": "Extended narrative on a safari expedition at Riverbend Wildlife Reserve",
+    "reading_p6": "Diary open cloze by young wildlife explorer Sam",
+    "reading_p7": "3-panel picture story writing: Finding the Lost Bear Cub",
+    "speaking_p1": "Spot 5 differences between Picture A and B at wildlife observation post",
+    "speaking_p2": "Solo-AI cue cards: Table A Liam's Desert Safari / Table B Chloe's Rainforest Tour",
+    "speaking_p3": "5-frame picture story: The Hungry Leopard and the Clever Monkey",
+    "speaking_p4": "4 personal interview questions on favourite animals and nature trips"
+  }
+}

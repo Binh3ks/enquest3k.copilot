@@ -1,0 +1,65 @@
+{
+  "week": 48,
+  "exam_title": "Cambridge A2 Flyers Full Mock 4 (Weeks 45-48 Synthesis)",
+  "cumulative_block": [
+    45,
+    46,
+    47,
+    48
+  ],
+  "vocabulary_grounding_summary": {
+    "total_synthesis_words": 20,
+    "w45_source_words": [
+      "square",
+      "circle",
+      "triangle",
+      "rectangle",
+      "side"
+    ],
+    "w46_source_words": [
+      "pattern",
+      "next",
+      "repeat",
+      "sequence",
+      "puzzle"
+    ],
+    "w47_source_words": [
+      "twenty",
+      "thirty",
+      "hundred",
+      "count",
+      "number"
+    ],
+    "w48_source_words": [
+      "long",
+      "short",
+      "tall",
+      "measure",
+      "ruler"
+    ]
+  },
+  "grammar_grounding_summary": {
+    "w45_grammar": "Geometric properties and descriptive clauses (has four sides, is round)",
+    "w46_grammar": "Pattern sequences and logical prediction (the next one will be...)",
+    "w47_grammar": "Large cardinal numbers, counting, and place value structures",
+    "w48_grammar": "Measurement expressions of dimension (is [number] centimeters long/tall)"
+  },
+  "parts_grounding": {
+    "listening_p1": "Junior Architecture & Design Studio with George, Holly, William, Penny, Oscar",
+    "listening_p2": "Penny Davis registering for the Young Builders & Geometry Club",
+    "listening_p3": "Matching student geometric models to their architectural designs (A-H)",
+    "listening_p4": "3-picture MCQs about the school tower building competition",
+    "listening_p5": "Design studio diagram colouring shapes and writing DESIGN",
+    "reading_p1": "10 definitions matching geometry, logic pattern, and measurement vocabulary",
+    "reading_p2": "George discussing playground wooden structures with Architect Helen",
+    "reading_p3": "Story cloze on building a geometric treehouse with secret patterns",
+    "reading_p4": "Factual article explaining how ancient builders used rulers and triangles",
+    "reading_p5": "Extended story about measuring tree heights in the school arboretum project",
+    "reading_p6": "Diary open cloze written by young builder William",
+    "reading_p7": "3-panel picture story writing: Building the Tallest Wooden Tower",
+    "speaking_p1": "Spot 5 differences between Picture A and B in geometry craft studio",
+    "speaking_p2": "Solo-AI cue cards: Table A Marcus's Tower Model / Table B Lily's Geometric Kite",
+    "speaking_p3": "5-frame picture story: The Lost Blue Ruler and the Craft Challenge",
+    "speaking_p4": "4 personal interview questions on favourite shapes, measuring, and building"
+  }
+}

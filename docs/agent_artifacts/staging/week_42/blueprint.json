@@ -1,0 +1,270 @@
+{
+  "week": 42,
+  "theme": "The Water Journey (Cycle)",
+  "title_en": "The Water Journey (Cycle)",
+  "title_vi": "Hành trình của Nước",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_flyers_mock.js",
+  "story_title": "The Water Cycle Story",
+  "clil_topic": {
+    "title": "The Water Journey & Understanding Cycles",
+    "focus": "Sequence nature's events"
+  },
+  "grammar_focus": {
+    "structure": "Review Sequencing + Present Tense",
+    "outcome": "Sequence nature's events",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "sun",
+      "cloud",
+      "rain",
+      "river",
+      "ocean",
+      "evaporation",
+      "go up",
+      "come down"
+    ],
+    "total_syllabus_words": 8,
+    "target_count": 20,
+    "missing_count": 12,
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 2,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "rain"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "sun",
+    "cloud",
+    "rain",
+    "river",
+    "ocean",
+    "evaporation",
+    "go up",
+    "come down"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "sun",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/sˈʌn/",
+      "phonetics": {
+        "arpabet": "S AH1 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "cloud",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/klˈaʊd/",
+      "phonetics": {
+        "arpabet": "K L AW1 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "rain",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɹˈeɪn/",
+      "phonetics": {
+        "arpabet": "R EY1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "rained",
+        "past_participle": "rained",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "river",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɹˈɪvɚ/",
+      "phonetics": {
+        "arpabet": "R IH1 V ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "ocean",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˈoʊʃən/",
+      "phonetics": {
+        "arpabet": "OW1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "evaporation",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪvˌæpɚˈeɪʃən/",
+      "phonetics": {
+        "arpabet": "IH0 V AE2 P ER0 EY1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "go up",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɡˈoʊ ˈʌp/",
+      "phonetics": {
+        "arpabet": "G OW1 AH1 P",
+        "final_phone": "OW",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "went up",
+        "past_participle": "gone up",
+        "past_ending_group": null,
+        "past_ending_rule": "Suppletive go -> went",
+        "variants": null
+      }
+    },
+    {
+      "word": "come down",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kˈʌm dˈaʊn/",
+      "phonetics": {
+        "arpabet": "K AH1 M D AW1 N",
+        "final_phone": "M",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "came down",
+        "past_participle": "come down",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation o -> a",
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Exam)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 42,
+    "map_theme": "Full Cambridge Mock 2",
+    "map_clil_module": "Khoa học Liên môn Mock 2",
+    "map_grammar_hub": "Full Mock Flyers 2: Bấm giờ 3 bài thi chính thức; Cập nhật Hộ chiếu Khiên",
+    "map_cefr_type": "★ FULL MOCK 05 (Flyers)",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"The Water Journey (Cycle)\") enforced over Digital Map (Source A: \"Full Cambridge Mock 2\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:58.775Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}
