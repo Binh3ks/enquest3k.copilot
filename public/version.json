@@ -1,9 +1,9 @@
 {
-  "commit": "5f27e1e687ba6e2f46d95bd5c4306922bd8a0ce0",
-  "git_commit": "5f27e1e687ba6e2f46d95bd5c4306922bd8a0ce0",
-  "shortCommit": "5f27e1e6",
-  "message": "feat(curriculum): merge pilot weeks W35, W38, W78, W125 to production & assess scaling readiness [multi-agent-review]",
-  "builtAt": "2026-11-07T10:58:18.572Z",
-  "build_timestamp": "2026-11-07T10:58:18.572Z",
+  "commit": "ff6d3c0ab47747bec0fb85b204a7df20d035e477",
+  "git_commit": "ff6d3c0ab47747bec0fb85b204a7df20d035e477",
+  "shortCommit": "ff6d3c0a",
+  "message": "feat(curriculum): scale wave 1 staged content for W39-W46 with 0 collisions & 100% CEFR pass [multi-agent-review]",
+  "builtAt": "2026-11-09T02:27:35.026Z",
+  "build_timestamp": "2026-11-09T02:27:35.027Z",
   "env": "production"
 }

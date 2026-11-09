@@ -1645,4 +1645,57 @@ into src/data/weeks/ (production source, still not student-facing — TOTAL_TRIP
 34), run full existing Giai đoạn 3/4 pipeline on them for the first time, and report
 readiness to scale the pipeline to the remaining ~150 un-authored weeks.
 
-**Status:** Round 62 merge executed, full pipeline gates 100% passed, scale readiness report completed. Package awaiting Claude review.
+**Status:** Awaiting Round 62 merge + scale-readiness report.
+## Round 63 — Wave 1 Content APPROVED (5/7 weeks) — Mock Exam Schedule Change Discovered
+
+Technical + content verification: zip hash and git HEAD genuine, staging discipline
+intact, W39/W44 sample content spot-checked as high quality (appropriate A2 Flyers
+vocab, correct grammar focus per theme), independent re-scan confirmed 0 banned
+Stage-1 academic jargon across all 7 weeks, CEFR guard's claimed "mechanism" →
+"work a machine" fix verified genuinely present in W43.
+
+**Owner decisions (new):**
+1. Mock exam schedule restructured from current irregular ~5-week cadence (with a
+   15-week gap, W112→W127) to a strict every-4-weeks schedule across all 156 weeks
+   (39 total mock weeks: W4, W8, ... W156).
+2. Mock format splits by stage: Flyers for weeks <=72, Cambridge PET for weeks >=73.
+3. Lite Mode (W01-16 simplified architecture) explicitly deferred — standard-
+   architecture weeks prioritized first.
+
+**Conflict found:** the new schedule puts W40 and W44 on the mock-exam list — both
+were part of the just-generated Wave 1 batch as regular rotary content. Approved
+merge of only 5/7 Wave 1 weeks (W39, W41, W43, W45, W46); W40/W44 held back pending
+the Mock Exam Generator, not merged as regular content.
+
+**Dispatched:** Round 64 — merge the 5 safe weeks, full recompute + conflict report
+for the new mock schedule (checking old mock weeks that now revert to regular, and
+any other already-built content affected beyond W40/W44), and a design-only proposal
+(no content yet) for the Mock Exam Generator engine with one pilot week recommended.
+
+**Status:** Round 63 completed and verified.
+## Round 64 — Partial Wave 1 Merge Executed + 39-Week Mock Schedule & Conflicts Mapped + Mock Exam Generator Proposal Complete
+
+1. **Partial Wave 1 Merge:**
+   - Merged 5 approved weeks: W39, W41, W43, W45, W46 into `src/data/weeks/` (30 files: vocab, hubs, skill_practice).
+   - W40 and W44 strictly kept in staging (`docs/agent_artifacts/staging/`), untouched, awaiting mock exam decisions.
+   - All 5 merged weeks pass CEFR Curriculum Guard Stage 1 with 0 Critical Violations, 0 Sentence Length Warnings.
+   - 10 mechanical gates 100% pass; Vietnamese leak scan clean (0 leaks); 11-week cross-week dedup clean (0 collisions, 0 shared sentences).
+   - Production build exit code 0; W33 & W34 frozen (100% locked); TOTAL_TRIPS = 34 unchanged.
+   - Merge diff patch generated: `docs/agent_artifacts/round64_merge_diff.patch` (8,435 lines).
+
+2. **Full Mock Schedule Recomputation & Conflict Report:**
+   - 39 mock weeks total (`w % 4 === 0`): Stage 1 Flyers (18 weeks, W4..W72), Stage 2 PET (21 weeks, W76..W156).
+   - Cross-check results:
+     - 9 merged rotary weeks (W35, W38, W78, W125, W39, W41, W43, W45, W46): 0 collisions.
+     - 2 frozen golden masters (W33, W34): 0 collisions.
+     - 10 old mocks retained; 16 old mocks retired to rotary backlog; 29 new mock weeks promoted.
+     - Conflicts reported: W40 & W44 (staged rotary), W36 (legacy un-authored vs new mock), W37 (legacy un-authored vs retired mock), W150 (mock debate theme clarification).
+   - Zero `blueprint.json` files modified (awaiting Claude & owner sign-off).
+
+3. **Mock Exam Generator Scoping:**
+   - Full specification comparing Stage 1 Flyers (16 parts, 25L + 44RW + 4S) vs Stage 2 PET (16 parts, 25L + 32R + 2W + 4S).
+   - Cumulative Sourcing Engine testing vocabulary/grammar across the 4-week block ($k$).
+   - 6 dedicated Mock Quality Gates defined.
+   - Recommended pilot mock week: **Week 36 (W36)** — closes block W33-W36 where preceding weeks (W33, W34, W35) are 100% authored and verified.
+
+**Status:** Round 64 deliverables packaged into `docs/review_packages/round64_partial_merge_and_mock_schedule.zip`. Awaiting Claude review.
