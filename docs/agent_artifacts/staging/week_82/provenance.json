@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-09T08:30:07.706Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 82,
+  "theme": "ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data",
+  "cefr_level": "B1 Preliminary",
+  "grammar_focus": "Descriptive Sensory Adjectives (Sight, Sound, Smell, Touch)",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_82/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 82: ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data (Tuần 82: ELA: Vlogger Du Lịch - Viết nháp / Toán: Phân tích Dữ liệu)\n\t•\tTopic (ELA): Describing a favorite place. (Chủ đề: Miêu tả nơi yêu thích.)\n\t•\tKey Learning Outcome (ELA): Write a descriptive essay draft. (Kết quả: Viết nháp bài văn miêu tả.)\n\t•\tWriting Skill Focus: Drafting. (Kỹ năng: Viết nháp.)\n\t•\tGrammar Focus: Adjectives & Sensory Words (Sight, Sound, Smell). (Ngữ pháp: Tính từ & Từ chỉ giác quan.)\n\t•\tVocabulary Focus: beautiful, amazing, see, hear, smell, taste, landscape, view, delicious.\n\t•\tTopic (Math): Data Analysis (Most/Least). (Toán: Phân tích dữ liệu.)\n\t•\tKey Learning Outcome (Math): Interpret data to answer questions. (Kết quả: Diễn giải dữ liệu để trả lời câu hỏi.)\n\t•\tMath Vocabulary: most, least, difference, total, combine.\n\t•",
+    "digital_map_reference": {
+      "map_week": 82,
+      "map_theme": "B1 PET & CLIL Mock 2",
+      "map_clil_module": "Đánh giá Thực nghiệm Khoa học 2",
+      "map_grammar_hub": "Full Mock B1 PET 2: Chấm bài viết email 100 từ và bài đọc dài Part 3",
+      "map_cefr_type": "★ FULL MOCK 13 (PET)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data\") enforced over Digital Map (Source A: \"B1 PET & CLIL Mock 2\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

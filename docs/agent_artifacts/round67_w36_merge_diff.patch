@@ -1,0 +1,894 @@
+diff --git a/src/data/weeks/week_36/listening_hub.js b/src/data/weeks/week_36/listening_hub.js
+index fdc0ed97..2cbdddf6 100644
+--- a/src/data/weeks/week_36/listening_hub.js
++++ b/src/data/weeks/week_36/listening_hub.js
+@@ -1,3 +1,108 @@
+-// Week 36 Listening Hub (Clean Stub)
+-export const listeningHubData = {};
++/**
++ * STAGED MOCK EXAM DELIVERABLE: Listening Paper (All 5 Parts / 25 Items)
++ * Week: 36 | Level: Cambridge A2 Flyers | Mode: FULL_MOCK
++ * Pipeline: scripts/generate_mock_exam_content.mjs (Round 65 Pilot Mock)
++ * Cumulative Sourcing: Weeks 33, 34, 35, 36
++ */
++
++export const listeningHubData = {
++  week: 36,
++  theme: "Review & Project 3: \"My Adventure Book\"",
++  cefr_level: "A2 Flyers",
++  paper: "Listening",
++  total_parts: 5,
++  total_items: 25,
++  time_allowed_minutes: 25,
++
++  // ── Part 1: Draw Lines (5 items) ──────────────────────────────────────────
++  // Scene: Adventure Camp activity ground near the forest lake
++  listening_p1: {
++    part: 1,
++    instructions: "Listen and look. There is one example. Draw lines to match names to the correct people in the picture.",
++    audio_script: "Narrator: Part 1. Listen and look. There is one example.\nMan: Look at this lovely photograph of our weekend adventure camp!\nWoman: Oh yes! Who is that boy holding the big compass?\nMan: That is Harry. He was showing the other scouts how to find north.\nNarrator: Can you see the line? This is an example. Now you listen and draw lines.\n\n[1]\nWoman: Who is the girl sitting near the yellow tent reading an adventure book?\nMan: The girl with glasses? That is Emma. She loves writing stories in her diary.\n\n[2]\nWoman: Look at that boy climbing carefully over the wooden bridge.\nMan: Ah, that is Oliver. He has a heavy blue backpack and a walking stick.\n\n[3]\nWoman: Is that Helen standing by the campfire with the first-aid box?\nMan: Yes! She helped Nurse Sarah bandage Jake's scraped knee earlier.\n\n[4]\nWoman: Who is the girl taking a photograph of the forest birds?\nMan: That is Sophia. She took lots of wonderful photos for our project.\n\n[5]\nWoman: And what about the boy packing a flashlight into his rucksack?\nMan: That is Richard. He always makes sure our team is ready before nightfall.",
++    items: [
++      { id: 1, name: "Emma", location: "sitting near the yellow tent reading a diary", x: 210, y: 340, target: "girl with glasses reading near tent" },
++      { id: 2, name: "Oliver", location: "crossing the wooden bridge with a blue backpack", x: 520, y: 220, target: "boy walking on bridge with backpack" },
++      { id: 3, name: "Helen", location: "standing by the campfire holding the first-aid box", x: 740, y: 380, target: "girl holding medical bandage box" },
++      { id: 4, name: "Sophia", location: "taking a photograph of forest birds under a tall tree", x: 380, y: 160, target: "girl pointing camera upwards" },
++      { id: 5, name: "Richard", location: "packing a flashlight into his bag beside the picnic table", x: 860, y: 410, target: "boy packing electric torch into bag" }
++    ],
++    example: { name: "Harry", location: "boy holding a big compass showing directions", x: 120, y: 290 }
++  },
++
++  // ── Part 2: Note Completion (5 items) ─────────────────────────────────────
++  // Theme: Joining the Junior Adventure Book Club
++  listening_p2: {
++    part: 2,
++    instructions: "Listen and look. There is one example. Read the notes and fill in the missing information.",
++    audio_script: "Narrator: Part 2. Listen and look. There is one example.\nBoy: Hello, Miss Parker. May I join the Junior Adventure Book Club?\nWoman: Of course, Alex! Let me write down your details. Your first name is Alex, right?\nBoy: Yes, that is right.\nNarrator: Can you see the answer? Now you listen and write.\n\n[1]\nWoman: What is your surname, Alex?\nBoy: It is Miller. That is M-I-L-L-E-R.\nWoman: Thank you, Alex Miller.\n\n[2]\nWoman: How old are you now?\nBoy: I was ten last month, so I am ten years old.\n\n[3]\nWoman: Which day would you like to attend the storybook workshop?\nBoy: I have swimming on Tuesdays, so Friday afternoon is best for me.\nWoman: Great. The Friday club meets at four o'clock.\n\n[4]\nWoman: Which room in the school library does the club use?\nBoy: Is it in Room 4B?\nWoman: Yes, Room 4B, next to the science corridor.\n\n[5]\nWoman: What must you bring to your first adventure project class?\nBoy: Should I bring my camping tent?\nWoman: No, you must bring a sketchbook and two sharp pencils.\nBoy: Wonderful, I will bring my new sketchbook!",
++    example: { field: "First name", value: "Alex" },
++    items: [
++      { id: 1, label: "Surname", prompt: "Alex's family name", answer: "Miller", alt_answers: ["miller"] },
++      { id: 2, label: "Age", prompt: "Age of member", answer: "10", alt_answers: ["ten", "10 years old"] },
++      { id: 3, label: "Club meeting day", prompt: "Day of the week", answer: "Friday", alt_answers: ["friday", "Friday afternoon"] },
++      { id: 4, label: "Room number", prompt: "Library room", answer: "4B", alt_answers: ["Room 4B", "4b"] },
++      { id: 5, label: "Must bring", prompt: "Required item to bring", answer: "sketchbook", alt_answers: ["a sketchbook", "sketch book"] }
++    ]
++  },
++
++  // ── Part 3: Match A–H (5 items) ───────────────────────────────────────────
++  // Theme: What did each person pack for the mountain exploration trip?
++  listening_p3: {
++    part: 3,
++    instructions: "Listen and look. What did each explorer pack in their backpack? Write a letter (A–H) next to each person.",
++    audio_script: "Narrator: Part 3. What did each scout pack for the mountain expedition?\nUncle David: Hello Lily! Did everyone pack their gear for the mountain hike?\nLily: Yes Uncle David! My brother Lucas packed a bright red flashlight so we can see in the caves.\n\nNarrator: Can you see the letter C for Lucas? Now you listen and write a letter in each box.\n\n[1]\nUncle David: What did your cousin Maya pack in her bag?\nLily: Maya was very sensible. She packed a small first-aid kit with clean bandages and plasters in case someone slips on the wet rocks.\n\n[2]\nUncle David: That is very wise. And what about your friend Ben?\nLily: Ben loves finding directions. He packed a brass compass and a trail map of the mountain paths.\n\n[3]\nUncle David: Did little Zoe pack anything useful?\nLily: Yes, Zoe packed a warm woollen blanket because the mountain tent gets very cold at night!\n\n[4]\nUncle David: What about Grandpa?\nLily: Grandpa packed a lovely black camera to take photographs of wild forest deer.\n\n[5]\nUncle David: And what did your teacher Mr. Davis pack?\nLily: Mr. Davis packed a sturdy water bottle and healthy dried fruit snacks for our journey.",
++    items: [
++      { id: 1, person: "Maya", packs: "first-aid kit with bandages", letter: "F", description: "First-aid medical box with bandages (Letter F)" },
++      { id: 2, person: "Ben", packs: "brass compass and trail map", letter: "A", description: "Brass navigational compass (Letter A)" },
++      { id: 3, person: "Zoe", packs: "warm woollen blanket", letter: "D", description: "Warm camping blanket (Letter D)" },
++      { id: 4, person: "Grandpa", packs: "photograph camera", letter: "B", description: "Black camera for photographs (Letter B)" },
++      { id: 5, person: "Mr. Davis", packs: "sturdy water bottle", letter: "G", description: "Blue stainless steel water bottle (Letter G)" }
++    ],
++    example: { person: "Lucas", packs: "bright red flashlight", letter: "C" },
++    cards: [
++      { letter: "A", name: "Brass compass" },
++      { letter: "B", name: "Camera" },
++      { letter: "C", name: "Flashlight" },
++      { letter: "D", name: "Woollen blanket" },
++      { letter: "E", name: "Binoculars" },
++      { letter: "F", name: "First-aid bandage box" },
++      { letter: "G", name: "Water bottle" },
++      { letter: "H", name: "Pocket knife" }
++    ]
++  },
++
++  // ── Part 4: 3-Picture Multiple Choice (5 items) ───────────────────────────
++  // Questions 1 to 5 with 3 options (A, B, C)
++  listening_p4: {
++    part: 4,
++    instructions: "Listen and look. There is one example. Choose the correct answer (A, B, or C).",
++    audio_script: "Narrator: Part 4. Listen and look. There is one example.\nWoman: Where did the children go on their school excursion?\nBoy: Did you visit the city museum, Liam?\nLiam: No, our class went hiking across the green forest reserve!\nNarrator: Can you see the tick? Now you listen and tick the box.\n\n[1] Question 1: What did Liam lose during the hike?\nWoman: Liam, did you lose your woollen cap in the forest?\nLiam: No, my cap was in my bag. But my small metal compass slipped out of my pocket while I was crossing the creek!\n\n[2] Question 2: Which wild animal did the students spot near the rocks?\nWoman: Did you see any dangerous animals like a bear?\nLiam: No bears! But we saw a quick brown fox running into the bushes near the big rocks.\n\n[3] Question 3: What time did the scouts finish setting up their camp?\nWoman: Did it take a long time to build your tents?\nLiam: We started at three o'clock, and by quarter past four, all three tents were completely ready!\n\n[4] Question 4: What must the children eat for dinner at camp?\nWoman: Did you cook soup on the campfire?\nLiam: No, the ranger told us we must cook delicious baked potatoes with melted cheese over the hot coals.\n\n[5] Question 5: What is Liam writing about in his adventure book?\nWoman: Are you recounting a story about the mountain caves?\nLiam: No, I am writing about our brave rescue of a little bird caught in a garden net!",
++    example: { question: "Where did the children go on their school excursion?", answer: "A", options: ["A: Forest nature reserve", "B: City art museum", "C: Sunny beach"] },
++    items: [
++      { id: 1, question: "What did Liam lose during the hike?", options: ["A: His woollen cap", "B: His metal compass", "C: His water bottle"], answer: "B", correct_index: 1 },
++      { id: 2, question: "Which wild animal did the students spot near the rocks?", options: ["A: A quick brown fox", "B: A sleeping bear", "C: A giant eagle"], answer: "A", correct_index: 0 },
++      { id: 3, question: "What time did the scouts finish setting up their camp?", options: ["A: 3:00 PM", "B: 4:15 PM", "C: 5:30 PM"], answer: "B", correct_index: 1 },
++      { id: 4, question: "What must the children eat for dinner at camp?", options: ["A: Vegetable soup", "B: Cold sandwiches", "C: Baked potatoes with cheese"], answer: "C", correct_index: 2 },
++      { id: 5, question: "What is Liam writing about in his adventure book?", options: ["A: A rescue of a bird from a net", "B: Exploring a dark mountain cave", "C: Sailing a wooden boat on a lake"], answer: "A", correct_index: 0 }
++    ]
++  },
++
++  // ── Part 5: Colour and Write (5 items) ────────────────────────────────────
++  // Scene: Campfire site in front of wooden log cabin
++  listening_p5: {
++    part: 5,
++    instructions: "Listen and look. There is one example. Colour and write.",
++    audio_script: "Narrator: Part 5. Listen and look. There is one example.\nMan: Would you like to colour this campsite picture?\nGirl: Yes please! Can I colour the big backpack lying on the grass?\nMan: Good idea. Colour the backpack green.\nNarrator: Can you see the green backpack? This is an example. Now you listen and colour and write.\n\n[1]\nMan: Now look at the two tents. Can you see the tent on the left?\nGirl: Yes, the smaller tent?\nMan: That's right. Please colour the smaller tent bright blue.\n\n[2]\nMan: Can you see the round flashlight on the wooden table?\nGirl: Yes! Beside the map?\nMan: Exactly. Colour that flashlight yellow.\n\n[3]\nMan: Now I would like you to write something.\nGirl: What should I write?\nMan: Look at the signpost on the tree. Above the arrow, please write the word 'CAMP'.\nGirl: C-A-M-P? Okay, I am writing 'CAMP' on the wooden signpost now.\n\n[4]\nMan: Can you see the heavy rope lying near the logs?\nGirl: Yes, it is coiled next to the campfire.\nMan: Excellent. Colour that rope brown.\n\n[5]\nMan: One more thing to colour. Look at the flag at the top of the cabin.\nGirl: Shall I colour it purple?\nMan: Yes, colour the flag purple. That completes our adventure scene!",
++    example: { instruction: "Colour the backpack on the grass green", target: "backpack on grass", colour: "green" },
++    items: [
++      { id: 1, type: "colour", target: "smaller tent on the left", colour: "blue", action: "Colour the smaller tent on the left bright blue" },
++      { id: 2, type: "colour", target: "round flashlight on wooden table", colour: "yellow", action: "Colour the flashlight on the table yellow" },
++      { id: 3, type: "write", target: "wooden signpost on tree", text: "CAMP", action: "Write the word 'CAMP' on the wooden signpost" },
++      { id: 4, type: "colour", target: "coiled rope near campfire logs", colour: "brown", action: "Colour the coiled rope near the logs brown" },
++      { id: 5, type: "colour", target: "flag on top of cabin roof", colour: "purple", action: "Colour the flag on top of the cabin roof purple" }
++    ]
++  }
++};
++
+ export default listeningHubData;
+diff --git a/src/data/weeks/week_36/reading_hub.js b/src/data/weeks/week_36/reading_hub.js
+index 6e1948da..b98c8cbf 100644
+--- a/src/data/weeks/week_36/reading_hub.js
++++ b/src/data/weeks/week_36/reading_hub.js
+@@ -1,3 +1,185 @@
+-// Week 36 Reading Hub (Clean Stub)
+-export const readingHubData = {};
++/**
++ * STAGED MOCK EXAM DELIVERABLE: Reading & Writing Paper (All 7 Parts / 44 Items)
++ * Week: 36 | Level: Cambridge A2 Flyers | Mode: FULL_MOCK
++ * Pipeline: scripts/generate_mock_exam_content.mjs (Round 65 Pilot Mock)
++ * Cumulative Sourcing: Weeks 33, 34, 35, 36
++ */
++
++export const readingHubData = {
++  week: 36,
++  theme: "Review & Project 3: \"My Adventure Book\"",
++  cefr_level: "A2 Flyers",
++  paper: "Reading & Writing",
++  total_parts: 7,
++  total_items: 44,
++  time_allowed_minutes: 40,
++
++  // ── Part 1: Definitions to Word Bank (10 items / 15 candidates) ───────────
++  rw_part1: {
++    part: 1,
++    instructions: "Look and read. Choose the correct words and write them on the lines. There is one example.",
++    words_bank: [
++      "a compass", "a bandage", "a backpack", "a forest", "a flashlight",
++      "a corridor", "a tent", "a campfire", "a hunter", "a photograph",
++      "an adventure", "a journey", "a net", "medicine", "a diary"
++    ],
++    example: { definition: "An instrument with a magnetic needle that points to the north.", word: "a compass" },
++    items: [
++      { id: 1, definition: "A long hallway in a school or hospital connecting classrooms and rooms.", answer: "a corridor" },
++      { id: 2, definition: "A piece of soft white cloth used to wrap around a cut or a sprained wrist.", answer: "a bandage" },
++      { id: 3, definition: "A portable cloth shelter that you sleep inside while camping outdoors.", answer: "a tent" },
++      { id: 4, definition: "A strong bag with shoulder straps used for carrying books and hiking equipment.", answer: "a backpack" },
++      { id: 5, definition: "A picture produced by taking a camera shot of family, nature, or places.", answer: "a photograph" },
++      { id: 6, definition: "A person who tracks and catches wild animals in the woodland.", answer: "a hunter" },
++      { id: 7, definition: "A small battery-operated lamp that gives light when you walk in the dark.", answer: "a flashlight" },
++      { id: 8, definition: "A large natural area where thousands of tall trees and plants grow together.", answer: "a forest" },
++      { id: 9, definition: "An outdoor fire built safely at a campsite for warmth, cooking, and singing.", answer: "a campfire" },
++      { id: 10, definition: "An exciting or unusual journey that tests courage and teaches new lessons.", answer: "an adventure" }
++    ]
++  },
++
++  // ── Part 2: Dialogue Turn Completion A–H (5 items) ────────────────────────
++  // Dialogue between Alex and Ranger David preparing the Adventure Guidebook
++  rw_part2: {
++    part: 2,
++    instructions: "Alex is talking to Ranger David about making their class adventure book. Read the conversation and choose the best answer (A–H). Write a letter (A–H) for each answer. You do not need to use all the letters. There is one example.",
++    context: "Alex and Ranger David at the Ranger Station",
++    example: { speaker_prompt: "Ranger David: Hello Alex! How is your class adventure book going?", response: "Alex: C (It is going very well, thank you!)" },
++    options: [
++      { letter: "A", text: "Because we must wear our boots and stay on the marked path." },
++      { letter: "B", text: "I took twenty wonderful photographs of mountain flowers." },
++      { letter: "C", text: "It is going very well, thank you!" },
++      { letter: "D", text: "Yes, our teacher said we should include safety rules from Week 33." },
++      { letter: "E", text: "We decided to write five chapters about our outdoor expeditions." },
++      { letter: "F", text: "No, I forgot to bring my woollen socks yesterday." },
++      { letter: "G", text: "Tomorrow morning after breakfast, before our final trek." },
++      { letter: "H", text: "You must always carry a compass so you never get lost." }
++    ],
++    items: [
++      { id: 1, speaker_prompt: "Ranger David: What exciting stories did you decide to write about?", answer: "E", explanation: "Answers what stories they chose: five chapters about outdoor expeditions." },
++      { id: 2, speaker_prompt: "Ranger David: Did you also remember to include first aid and health tips?", answer: "D", explanation: "Confirms inclusion of safety rules learned from Week 33." },
++      { id: 3, speaker_prompt: "Ranger David: Why is it important to teach young hikers about forest safety?", answer: "A", explanation: "Gives reason using 'Because': wearing boots and staying on paths." },
++      { id: 4, speaker_prompt: "Ranger David: What pictures will you put on the front cover?", answer: "B", explanation: "Describes photographs taken of mountain flowers." },
++      { id: 5, speaker_prompt: "Ranger David: When will the school showcase the finished books?", answer: "G", explanation: "Gives timing: tomorrow morning after breakfast." }
++    ]
++  },
++
++  // ── Part 3: Story Cloze with Word Bank + Best Title (6 items) ─────────────
++  rw_part3: {
++    part: 3,
++    instructions: "Read the story. Choose a word from the box. Write the correct word next to numbers 1–5. There is one example. Then choose the best title.",
++    word_bank: ["tent", "compass", "frightened", "delighted", "bandage", "carefully", "explored", "shouted", "rope"],
++    story_text: "Last Saturday, Leo and his sister Mia went camping in the valley with their uncle. Before setting off, Uncle David checked their gear. They packed a blue [tent] to sleep in and a sturdy brass [1] so they would not lose their way.\n\nIn the afternoon, the children walked along the forest path. Suddenly, they heard a rustling noise behind a fallen log. At first, Mia felt a little [2], thinking it was a fierce badger! But Leo looked [3] between the bushes and saw a tiny squirrel whose tail was tangled in a piece of garden string.\n\n\"Don't worry,\" whispered Leo. Gently, he freed the tiny animal. The squirrel scampered up an oak tree, and the children felt [4] that they had done a kind deed.\n\nThat evening, Uncle David lit a warm campfire. Together, they wrote about the squirrel rescue in their adventure diary. \"A true explorer must always be brave and kind,\" smiled Uncle David. Leo glued a nice [5] of the squirrel into his book before falling asleep under the stars.",
++    example: { position: "example", word: "tent" },
++    items: [
++      { id: 1, gap: 1, answer: "compass", pos: "noun" },
++      { id: 2, gap: 2, answer: "frightened", pos: "adj" },
++      { id: 3, gap: 3, answer: "carefully", pos: "adv" },
++      { id: 4, gap: 4, answer: "delighted", pos: "adj" },
++      { id: 5, gap: 5, answer: "photograph", pos: "noun" }
++    ],
++    title_question: {
++      id: 6,
++      prompt: "Now choose the best name for this story.",
++      options: [
++        "A scary night in the hospital",
++        "A kind rescue on the trail",
++        "How Uncle David lost his backpack"
++      ],
++      correct_index: 1,
++      answer: "A kind rescue on the trail"
++    }
++  },
++
++  // ── Part 4: Factual Grammar Cloze (10 items) ──────────────────────────────
++  // CLIL Article: How Scouts Use Compasses and Maps Safely
++  rw_part4: {
++    part: 4,
++    instructions: "Read the text. Choose the right words and write them on the lines.",
++    text_template: "Every year, thousands of boys and girls join outdoor clubs to learn about nature. When you travel through [1] large forest, you must always be prepared. Good scouts know that they [2] never walk alone into the mountains. Before leaving camp, you [3] tell an adult leader where your group is going.\n\nNavigating with a compass is an important skill. The magnetic needle always [4] towards the north. While hikers [5] walking along unfamiliar paths, they should check their map frequently. If a trail becomes slippery or rocky, you [6] to walk slowly and watch every step.\n\nWhat should you do if an accident happens? First, stay calm and do [7] panic. If someone scrapes their knee, clean the wound with pure water [8] put on a clean bandage. Carrying a flashlight is also essential [9] darkness falls quickly under dense trees. Finally, remember that true adventurers always [10] the forest clean by taking all rubbish home.",
++    items: [
++      { id: 1, options: ["a", "an", "the"], answer: "a", grammar_focus: "Indefinite article before consonant" },
++      { id: 2, options: ["should", "must", "can"], answer: "should", grammar_focus: "Modal verb of advice: should never" },
++      { id: 3, options: ["has", "must", "having"], answer: "must", grammar_focus: "Modal of obligation: must + bare infinitive" },
++      { id: 4, options: ["point", "points", "pointing"], answer: "points", grammar_focus: "Present simple 3rd person singular" },
++      { id: 5, options: ["was", "were", "are"], answer: "are", grammar_focus: "Present continuous plural auxiliary: while hikers are walking" },
++      { id: 6, options: ["have", "has", "must"], answer: "have", grammar_focus: "Semi-modal phrase: have to walk" },
++      { id: 7, options: ["not", "no", "never"], answer: "not", grammar_focus: "Negative imperative: do not panic" },
++      { id: 8, options: ["and", "but", "so"], answer: "and", grammar_focus: "Coordinating conjunction of addition" },
++      { id: 9, options: ["because", "although", "unless"], answer: "because", grammar_focus: "Subordinating causal connector" },
++      { id: 10, options: ["keep", "keeps", "keeping"], answer: "keep", grammar_focus: "Present simple plural agreement: adventurers keep" }
++    ]
++  },
++
++  // ── Part 5: Story Comprehension (7 items — 1 to 4 words) ──────────────────
++  // Story: The Mystery of the Eagle Peak Map
++  rw_part5: {
++    part: 5,
++    instructions: "Read the story and answer the questions. Write 1, 2, 3, or 4 words.",
++    title: "The Mystery of the Eagle Peak Map",
++    story_text: "Last summer holiday, Oliver and his best friend Chloe went to stay at their grandparents' countryside cottage near Eagle Peak. On their second morning, it was raining heavily, so the children went up to the attic to find an old board game. While searching inside an old wooden chest, Chloe discovered a rolled paper tied with green ribbon.\n\n\"Look, Oliver!\" cried Chloe. It was a hand-drawn map of the pine forest, dated thirty years ago! Across the top, their grandfather had written: 'Secret Treehouse Trail'. Below the drawing, three clues were written in neat blue ink. The first clue said: 'Walk forty paces past the old stone fountain.'\n\nWhen the sun came out after lunch, the excited children put on their sturdy hiking boots and took their compass. They found the stone fountain easily. Following the second clue, they walked carefully between two giant cedar trees until they reached a wooden ladder leaning against a massive oak. High in the leafy branches stood a wonderful wooden treehouse! Inside, they found a metal tin containing Grandpa's childhood nature diary and five shiny quartz stones. Grandpa was delighted when the children showed him the discovery. He helped them write a brand new page for their holiday adventure book.",
++    example: { prompt: "Where did Oliver and Chloe stay during their summer holiday?", answer: "at their grandparents' cottage" },
++    items: [
++      { id: 1, prompt: "The children went up to the attic to look for", answer: "an old board game", alt_answers: ["a board game", "board game"] },
++      { id: 2, prompt: "Chloe found the rolled paper inside", answer: "an old wooden chest", alt_answers: ["a wooden chest", "the wooden chest"] },
++      { id: 3, prompt: "The trail map had been drawn thirty", answer: "years ago", alt_answers: ["years"] },
++      { id: 4, prompt: "The first clue directed the children to walk past the", answer: "old stone fountain", alt_answers: ["stone fountain"] },
++      { id: 5, prompt: "The wooden ladder was leaning against a", answer: "massive oak", alt_answers: ["massive oak tree", "tall oak tree"] },
++      { id: 6, prompt: "Inside the treehouse, the children found a nature diary and", answer: "five shiny quartz stones", alt_answers: ["five quartz stones", "shiny quartz stones"] },
++      { id: 7, prompt: "Grandpa was delighted and helped the children write a new page for their", answer: "holiday adventure book", alt_answers: ["adventure book", "book"] }
++    ]
++  },
++
++  // ── Part 6: Open Cloze (5 items) ──────────────────────────────────────────
++  // Diary entry: Writing about the camping project
++  rw_part6: {
++    part: 6,
++    instructions: "Read the diary and write the missing words. Write one word on each line.",
++    diary_text: "Dear Diary,\nToday was the most memorable day of our outdoor project! We woke up early [1] the birds were singing in the tall pine trees. After breakfast, Mr. Davis showed us how [2] use a compass to navigate across the rocky ridge.\n\nWhile we [3] walking along the river bank, we saw two otters swimming gracefully. We had to be very quiet [4] we did not want to frighten them. Tonight, we are sitting around the campfire. We [5] sleep in our warm sleeping bags under the stars soon. Goodnight!\n- Alex",
++    items: [
++      { id: 1, prompt: "early ___ the birds were singing", answer: "when", alt_answers: ["as", "while"], explanation: "Temporal conjunction linking waking up and bird singing" },
++      { id: 2, prompt: "how ___ use a compass", answer: "to", alt_answers: [], explanation: "Infinitive marker: how to use" },
++      { id: 3, prompt: "While we ___ walking along the river", answer: "were", alt_answers: [], explanation: "Past continuous auxiliary for plural subject 'we'" },
++      { id: 4, prompt: "quiet ___ we did not want", answer: "because", alt_answers: ["as", "since"], explanation: "Causal conjunction explaining why they stayed quiet" },
++      { id: 5, prompt: "We ___ sleep in our warm sleeping bags soon", answer: "will", alt_answers: ["must", "shall"], explanation: "Future auxiliary or modal expressing immediate plan" }
++    ]
++  },
++
++  // ── Part 7: Picture Story Writing (1 task / 3 pictures) ───────────────────
++  rw_part7: {
++    part: 7,
++    instructions: "Look at the three pictures. Write about this story. Write 20 or more words.",
++    scenes: [
++      {
++        panel: 1,
++        image_url: "/images/week36/writing_panel_1.png",
++        caption: "Alex and Mia pack their backpacks with maps, flashlights, and a first-aid kit.",
++        prompt_hint: "What are the scouts packing before their trip?"
++      },
++      {
++        panel: 2,
++        image_url: "/images/week36/writing_panel_2.png",
++        caption: "The children carefully cross a suspension bridge over a mountain stream.",
++        prompt_hint: "Where are they walking and how are they moving?"
++      },
++      {
++        panel: 3,
++        image_url: "/images/week36/writing_panel_3.png",
++        caption: "They reach the hilltop campsite, pitch their tent, and look at the sunset.",
++        prompt_hint: "What do they do when they reach the campsite?"
++      }
++    ],
++    model_story: "One sunny morning, Alex and Mia packed their backpacks with a compass, food, and a warm blanket. They walked carefully across a wooden bridge over the river. Finally, they reached the hilltop, pitched their blue tent, and happily watched the sunset together.",
++    rubric: {
++      max_score: 5,
++      breakdown: {
++        content: "2 marks: All three pictures described with logical storyline",
++        grammar_flow: "2 marks: Good past tense verbs and sentence connectors",
++        vocabulary_spelling: "1 mark: Accurate A2 vocabulary and spelling"
++      },
++      min_words: 20
++    }
++  }
++};
++
+ export default readingHubData;
+diff --git a/src/data/weeks/week_36/skill_practice_hub.js b/src/data/weeks/week_36/skill_practice_hub.js
+index ac06a269..dc186c1b 100644
+--- a/src/data/weeks/week_36/skill_practice_hub.js
++++ b/src/data/weeks/week_36/skill_practice_hub.js
+@@ -1,3 +1,22 @@
+-// Week 36 Skill Practice Hub (Clean Stub)
+-export const skillPracticeHubData = {};
++/**
++ * STAGED MOCK EXAM DELIVERABLE: Skill Practice & Exam Hub
++ * Week: 36 | Level: Cambridge A2 Flyers | Mode: FULL_MOCK
++ * Pipeline: scripts/generate_mock_exam_content.mjs (Round 65 Pilot Mock)
++ */
++
++export const skillPracticeHubData = {
++  week: 36,
++  theme: "Review & Project 3: \"My Adventure Book\"",
++  cefr_level: "A2 Flyers",
++  mode: "FULL_MOCK_ASSESSMENT",
++  assessment_summary: {
++    listening_parts: 5,
++    listening_items: 25,
++    reading_writing_parts: 7,
++    reading_writing_items: 44,
++    speaking_parts: 4,
++    total_shields_possible: 15
++  }
++};
++
+ export default skillPracticeHubData;
+diff --git a/src/data/weeks/week_36/speaking_hub.js b/src/data/weeks/week_36/speaking_hub.js
+index 7958be98..2d247b67 100644
+--- a/src/data/weeks/week_36/speaking_hub.js
++++ b/src/data/weeks/week_36/speaking_hub.js
+@@ -1,3 +1,270 @@
+-// Week 36 Speaking Hub (Clean Stub)
+-export const speakingHubData = {};
++/**
++ * STAGED MOCK EXAM DELIVERABLE: Speaking Paper (All 4 Parts Solo-AI Partner "Nova")
++ * Week: 36 | Level: Cambridge A2 Flyers | Mode: FULL_MOCK
++ * Pipeline: scripts/generate_mock_exam_content.mjs (Round 65 Pilot Mock)
++ * Cumulative Sourcing: Weeks 33, 34, 35, 36
++ */
++
++export const speakingHubData = {
++  week: 36,
++  theme: "Review & Project 3: \"My Adventure Book\"",
++  cefr_level: "A2 Flyers",
++  paper: "Speaking",
++  total_parts: 4,
++  approx_minutes: 8,
++  ai_partner: "Nova (Examiner & Conversation Partner)",
++
++  // ── Part 1: Spot the Differences (5 differences) ──────────────────────────
++  find_differences: {
++    part: 1,
++    instructions: "Examiner Nova points out one difference. The student finds and describes the other four to five differences between Picture A and Picture B.",
++    scene_description: "Two contrasting outdoor campsite scenes near the forest edge.",
++    image_a: "/images/week36/speaking_p1_scene_a.png",
++    image_b: "/images/week36/speaking_p1_scene_b.png",
++    example_difference: "In my picture (A), the scout's tent is blue, but in your picture (B), the tent is yellow.",
++    differences: [
++      {
++        id: 1,
++        feature: "Weather / Sky",
++        picture_a: "In Picture A, there are two fluffy clouds in the sky.",
++        picture_b: "In Picture B, there is a bright yellow sun with no clouds.",
++        cue_phrase: "clouds vs sun"
++      },
++      {
++        id: 2,
++        feature: "Flashlight on Table",
++        picture_a: "In Picture A, the flashlight on the picnic table is red.",
++        picture_b: "In Picture B, the flashlight on the table is green.",
++        cue_phrase: "red flashlight vs green flashlight"
++      },
++      {
++        id: 3,
++        feature: "Boy's Activity",
++        picture_a: "In Picture A, the boy is reading an adventure book.",
++        picture_b: "In Picture B, the boy is looking through a brass compass.",
++        cue_phrase: "reading book vs using compass"
++      },
++      {
++        id: 4,
++        feature: "Wild Animal near Trees",
++        picture_a: "In Picture A, there is a brown fox sitting near the pine tree.",
++        picture_b: "In Picture B, there is a grey squirrel climbing the pine tree.",
++        cue_phrase: "fox vs squirrel"
++      },
++      {
++        id: 5,
++        feature: "Girl's Backpack",
++        picture_a: "In Picture A, the girl is wearing a large blue backpack.",
++        picture_b: "In Picture B, the girl is holding a small camera in her hand.",
++        cue_phrase: "wearing backpack vs holding camera"
++      }
++    ]
++  },
++
++  // ── Part 2: Information Exchange (Solo-AI Cue Cards — table_a / table_b) ──
++  info_exchange_cards: {
++    table_a: {
++      title: "David's Mountain Camp",
++      subtitle: "Candidate's Question Card (Ask Examiner)",
++      person: "David",
++      fields: [
++        {
++          id: "field_a1",
++          cue_prompt: "where / mountain camp?",
++          cue_word: "where",
++          is_missing: true,
++          acceptable_questions: [
++            "Where is David's mountain camp?",
++            "Where is the mountain camp?",
++            "Where is the camp located?"
++          ],
++          nova_reply: "It is in Pine Valley near Eagle Peak."
++        },
++        {
++          id: "field_a2",
++          cue_prompt: "what / pack in backpack?",
++          cue_word: "what",
++          is_missing: true,
++          acceptable_questions: [
++            "What must campers pack in their backpacks?",
++            "What do campers pack in their backpacks?",
++            "What do they need to pack?"
++          ],
++          nova_reply: "They must pack a warm jacket and a flashlight."
++        },
++        {
++          id: "field_a3",
++          cue_prompt: "how many / tents at camp?",
++          cue_word: "how many",
++          is_missing: true,
++          acceptable_questions: [
++            "How many tents are there at the camp?",
++            "How many tents are there?",
++            "How many green tents are at the camp?"
++          ],
++          nova_reply: "There are six green tents."
++        },
++        {
++          id: "field_a4",
++          cue_prompt: "what time / breakfast served?",
++          cue_word: "what time",
++          is_missing: true,
++          acceptable_questions: [
++            "What time is breakfast served?",
++            "What time do they have breakfast?",
++            "When is breakfast served?"
++          ],
++          nova_reply: "Breakfast is served at half past seven in the morning."
++        },
++        {
++          id: "field_a5",
++          cue_prompt: "what / favorite activity?",
++          cue_word: "what",
++          is_missing: true,
++          acceptable_questions: [
++            "What is the campers' favorite activity?",
++            "What is their favorite activity?",
++            "What activity do campers like best?"
++          ],
++          nova_reply: "Their favorite activity is singing around the warm campfire."
++        }
++      ]
++    },
++    table_b: {
++      title: "Sarah's Forest Cabin",
++      subtitle: "Information Card (Answer Examiner's Questions)",
++      person: "Sarah",
++      fields: [
++        {
++          id: "field_b1",
++          cue_prompt: "where / Sarah's cabin?",
++          cue_word: "where",
++          value: "Silver River Forest, behind the old mill.",
++          nova_question: "Where is Sarah's forest cabin?",
++          acceptable_answers: [
++            "It is located in Silver River Forest, behind the old mill.",
++            "Silver River Forest, behind the old mill.",
++            "In Silver River Forest behind the old mill."
++          ]
++        },
++        {
++          id: "field_b2",
++          cue_prompt: "what equipment / provided?",
++          cue_word: "what",
++          value: "Sleeping bags, trail maps, and first-aid kits.",
++          nova_question: "What equipment is provided for the scouts?",
++          acceptable_answers: [
++            "They provide sleeping bags, trail maps, and first-aid kits.",
++            "Sleeping bags, trail maps, and first-aid kits.",
++            "Sleeping bags and first-aid kits."
++          ]
++        },
++        {
++          id: "field_b3",
++          cue_prompt: "how many / bedrooms inside cabin?",
++          cue_word: "how many",
++          value: "Four cosy wooden bedrooms.",
++          nova_question: "How many bedrooms are there inside the cabin?",
++          acceptable_answers: [
++            "There are four cosy wooden bedrooms.",
++            "Four cosy wooden bedrooms.",
++            "Four bedrooms."
++          ]
++        },
++        {
++          id: "field_b4",
++          cue_prompt: "what time / dinner served?",
++          cue_word: "what time",
++          value: "Quarter to six in the evening.",
++          nova_question: "What time do they have dinner?",
++          acceptable_answers: [
++            "Dinner is served at quarter to six in the evening.",
++            "Quarter to six in the evening.",
++            "At quarter to six."
++          ]
++        },
++        {
++          id: "field_b5",
++          cue_prompt: "what / popular hobby?",
++          cue_word: "what",
++          value: "Taking photographs of wild woodland birds.",
++          nova_question: "What is the most popular hobby at the cabin?",
++          acceptable_answers: [
++            "The most popular hobby is taking photographs of wild birds.",
++            "Taking photographs of wild woodland birds.",
++            "Taking photographs of wild birds."
++          ]
++        }
++      ]
++    }
++  },
++
++  // ── Part 3: Picture Story Continuation (5 pictures) ───────────────────────
++  picture_story: {
++    part: 3,
++    title: "The Lost Compass",
++    instructions: "Look at the five pictures. They tell a story called 'The Lost Compass'. Nova will introduce Picture 1. You continue telling the story for Pictures 2 to 5.",
++    examiner_intro: "Look at Picture 1. Liam and his friend Emma are starting their hike in the hills. Liam is checking their trail map, but he cannot find his metal compass.",
++    frames: [
++      {
++        frame: 1,
++        title: "The Missing Compass",
++        narration_prompt: "Liam looks inside his backpack, but his compass is missing. He feels worried because the forest trails are unfamiliar."
++      },
++      {
++        frame: 2,
++        title: "Retracing Their Steps",
++        narration_prompt: "Emma suggests walking back to the wooden bridge where they sat to drink water. They look carefully along the rocky path."
++      },
++      {
++        frame: 3,
++        title: "A Helpful Friend",
++        narration_prompt: "Near the river bank, they see Ranger David. He is holding a shiny brass object that he found on a mossy boulder."
++      },
++      {
++        frame: 4,
++        title: "The Compass Returned",
++        narration_prompt: "Ranger David smiles and hands the compass back to Liam. Liam is delighted and thanks the kind ranger."
++      },
++      {
++        frame: 5,
++        title: "Reaching the Sunset Camp",
++        narration_prompt: "Using their compass, the children hike safely to the hilltop campsite before dark. They pitch their tent happily."
++      }
++    ]
++  },
++
++  // ── Part 4: Personal Interview Questions (4 items) ────────────────────────
++  personal_questions: {
++    part: 4,
++    instructions: "Examiner Nova asks the student four personal questions about outdoor activities, books, and school projects.",
++    questions: [
++      {
++        id: 1,
++        topic: "Outdoor Activities",
++        question: "Do you like going on trips or walking in the countryside? Why?",
++        sample_answer: "Yes, I love walking in the countryside because I can breathe fresh air and see colourful trees."
++      },
++      {
++        id: 2,
++        topic: "Packing for Trips",
++        question: "What items must you always pack when you go on a school picnic?",
++        sample_answer: "I must always pack a water bottle, some healthy snacks, and a clean bandage or tissue."
++      },
++      {
++        id: 3,
++        topic: "Reading & Stories",
++        question: "What kind of stories do you enjoy reading in your free time?",
++        sample_answer: "I enjoy reading exciting adventure stories about brave explorers and animal rescues."
++      },
++      {
++        id: 4,
++        topic: "Creative Projects",
++        question: "Tell me about a memorable project you made at school with your friends.",
++        sample_answer: "Last month, my classmates and I drew a big map of an imaginary island and wrote a storybook together."
++      }
++    ]
++  }
++};
++
+ export default speakingHubData;
+diff --git a/src/data/weeks/week_36/vocab.js b/src/data/weeks/week_36/vocab.js
+index 895a0e51..3ee09282 100644
+--- a/src/data/weeks/week_36/vocab.js
++++ b/src/data/weeks/week_36/vocab.js
+@@ -1,3 +1,210 @@
+-// Week 36 Vocab (Clean Stub)
+-export const vocab = [];
++/**
++ * STAGED MOCK EXAM DELIVERABLE: Target Cumulative Vocabulary (20 Items)
++ * Week: 36 | Level: Cambridge A2 Flyers | Mode: FULL_MOCK
++ * Pipeline: scripts/generate_mock_exam_content.mjs (Round 65 Pilot Mock)
++ * Cumulative Sourcing: Weeks 33, 34, 35, 36
++ */
++
++export const vocab = [
++  {
++    "id": 1,
++    "word": "adventure",
++    "pos": "noun",
++    "ipa": "/ədˈventʃər/",
++    "definition_en": "An unusual, exciting, and sometimes dangerous experience.",
++    "definition_vi": "chuyến phiêu lưu",
++    "example_en": "Writing our own adventure book was a thrilling project.",
++    "sourceWeek": 36
++  },
++  {
++    "id": 2,
++    "word": "journey",
++    "pos": "noun",
++    "ipa": "/ˈdʒɜːrni/",
++    "definition_en": "An act of traveling from one place to another.",
++    "definition_vi": "hành trình, chuyến đi",
++    "example_en": "The explorers began a long journey through the green valley.",
++    "sourceWeek": 36
++  },
++  {
++    "id": 3,
++    "word": "explore",
++    "pos": "verb",
++    "ipa": "/ɪkˈsplɔːr/",
++    "definition_en": "To travel through an unfamiliar area to learn about it.",
++    "definition_vi": "khám phá, thám hiểm",
++    "example_en": "Children love to explore secret forest paths.",
++    "sourceWeek": 36
++  },
++  {
++    "id": 4,
++    "word": "compass",
++    "pos": "noun",
++    "ipa": "/ˈkʌmpəs/",
++    "definition_en": "An instrument containing a magnetized pointer showing north.",
++    "definition_vi": "la bàn",
++    "example_en": "Always check your compass before hiking into the hills.",
++    "sourceWeek": 36
++  },
++  {
++    "id": 5,
++    "word": "backpack",
++    "pos": "noun",
++    "ipa": "/ˈbækpæk/",
++    "definition_en": "A bag carried on the back by walkers or school pupils.",
++    "definition_vi": "ba lô",
++    "example_en": "Put your water bottle and warm jacket into your backpack.",
++    "sourceWeek": 36
++  },
++  {
++    "id": 6,
++    "word": "bandage",
++    "pos": "noun",
++    "ipa": "/ˈbændɪdʒ/",
++    "definition_en": "A strip of material used to bind up an injury.",
++    "definition_vi": "băng cứu thương",
++    "example_en": "The school nurse put a clean bandage on the scraped knee.",
++    "sourceWeek": 33
++  },
++  {
++    "id": 7,
++    "word": "corridor",
++    "pos": "noun",
++    "ipa": "/ˈkɔːrɪdɔːr/",
++    "definition_en": "A long passage in a building from which doors lead into rooms.",
++    "definition_vi": "hành lang",
++    "example_en": "You must never run fast down the school corridor.",
++    "sourceWeek": 33
++  },
++  {
++    "id": 8,
++    "word": "careful",
++    "pos": "adj",
++    "ipa": "/ˈkeərfəl/",
++    "definition_en": "Making sure of avoiding potential danger, mishap, or harm.",
++    "definition_vi": "cẩn thận",
++    "example_en": "Hikers should be careful when crossing wet wooden bridges.",
++    "sourceWeek": 33
++  },
++  {
++    "id": 9,
++    "word": "hunter",
++    "pos": "noun",
++    "ipa": "/ˈhʌntər/",
++    "definition_en": "A person or animal that chases wild animals for food or sport.",
++    "definition_vi": "thợ săn",
++    "example_en": "The crafty hunter laid a heavy rope trap in the jungle.",
++    "sourceWeek": 34
++  },
++  {
++    "id": 10,
++    "word": "forest",
++    "pos": "noun",
++    "ipa": "/ˈfɔːrɪst/",
++    "definition_en": "A large area covered chiefly with trees and undergrowth.",
++    "definition_vi": "khu rừng",
++    "example_en": "Many colourful birds and shy mice live in the deep forest.",
++    "sourceWeek": 34
++  },
++  {
++    "id": 11,
++    "word": "rescue",
++    "pos": "verb",
++    "ipa": "/ˈreskjuː/",
++    "definition_en": "To save someone from a dangerous or difficult situation.",
++    "definition_vi": "giải cứu",
++    "example_en": "The brave mouse helped rescue the lion from the tangled net.",
++    "sourceWeek": 34
++  },
++  {
++    "id": 12,
++    "word": "grateful",
++    "pos": "adj",
++    "ipa": "/ˈɡreɪtfəl/",
++    "definition_en": "Feeling or showing an appreciation for kindness shown.",
++    "definition_vi": "biết ơn",
++    "example_en": "The lion was very grateful to his tiny new friend.",
++    "sourceWeek": 34
++  },
++  {
++    "id": 13,
++    "word": "memorable",
++    "pos": "adj",
++    "ipa": "/ˈmemərəbəl/",
++    "definition_en": "Worth remembering or easily remembered, especially because special.",
++    "definition_vi": "đáng nhớ",
++    "example_en": "Our camping weekend under the bright stars was truly memorable.",
++    "sourceWeek": 35
++  },
++  {
++    "id": 14,
++    "word": "frightened",
++    "pos": "adj",
++    "ipa": "/ˈfraɪtənd/",
++    "definition_en": "Afraid or anxious about something bad happening.",
++    "definition_vi": "hoảng sợ, sợ hãi",
++    "example_en": "The lost puppy looked frightened until the children found it.",
++    "sourceWeek": 35
++  },
++  {
++    "id": 15,
++    "word": "delighted",
++    "pos": "adj",
++    "ipa": "/dɪˈlaɪtɪd/",
++    "definition_en": "Feeling or showing great pleasure and happiness.",
++    "definition_vi": "vui mừng, hoan hỉ",
++    "example_en": "Grandma was delighted when the family presented their storybook.",
++    "sourceWeek": 35
++  },
++  {
++    "id": 16,
++    "word": "photograph",
++    "pos": "noun",
++    "ipa": "/ˈfoʊtəɡræf/",
++    "definition_en": "A picture made using a camera.",
++    "definition_vi": "bức ảnh",
++    "example_en": "Leo took a lovely photograph of the mountain peak.",
++    "sourceWeek": 35
++  },
++  {
++    "id": 17,
++    "word": "tent",
++    "pos": "noun",
++    "ipa": "/tent/",
++    "definition_en": "A portable shelter made of cloth supported by poles.",
++    "definition_vi": "lều cắm trại",
++    "example_en": "We pitched our blue tent next to the calm forest lake.",
++    "sourceWeek": 36
++  },
++  {
++    "id": 18,
++    "word": "flashlight",
++    "pos": "noun",
++    "ipa": "/ˈflæʃlaɪt/",
++    "definition_en": "A small portable electric lamp powered by batteries.",
++    "definition_vi": "đèn pin",
++    "example_en": "Turn on your flashlight so we can read the trail signs at night.",
++    "sourceWeek": 36
++  },
++  {
++    "id": 19,
++    "word": "campfire",
++    "pos": "noun",
++    "ipa": "/ˈkæmpfaɪər/",
++    "definition_en": "An open-air fire in a camp used for cooking as well as warmth.",
++    "definition_vi": "lửa trại",
++    "example_en": "Singing songs around the warm campfire made everyone smile.",
++    "sourceWeek": 36
++  },
++  {
++    "id": 20,
++    "word": "brave",
++    "pos": "adj",
++    "ipa": "/breɪv/",
++    "definition_en": "Ready to face and endure danger or pain without showing fear.",
++    "definition_vi": "dũng cảm",
++    "example_en": "The brave little scout led the team safely across the stream.",
++    "sourceWeek": 34
++  }
++];
+ export default vocab;
+diff --git a/src/data/weeks/week_36/writing_hub.js b/src/data/weeks/week_36/writing_hub.js
+index 8971e671..5437e7a9 100644
+--- a/src/data/weeks/week_36/writing_hub.js
++++ b/src/data/weeks/week_36/writing_hub.js
+@@ -1,3 +1,57 @@
+-// Week 36 Writing Hub (Clean Stub)
+-export const writingHubData = {};
++/**
++ * STAGED MOCK EXAM DELIVERABLE: Writing Hub (Picture Story & Writing Ladder)
++ * Week: 36 | Level: Cambridge A2 Flyers | Mode: FULL_MOCK
++ * Pipeline: scripts/generate_mock_exam_content.mjs (Round 65 Pilot Mock)
++ * Cumulative Sourcing: Weeks 33, 34, 35, 36
++ */
++
++export const writingHubData = {
++  week: 36,
++  theme: "Review & Project 3: \"My Adventure Book\"",
++  cefr_level: "A2 Flyers",
++
++  // ── Cambridge Reading & Writing Part 7 Component Contract ─────────────────
++  picture_story: {
++    title: "The Mountain Adventure Expedition",
++    instructions: "Look at the three pictures. Write the story. Write 20 or more words.",
++    min_words: 20,
++    model_sentence: "One sunny morning, Alex and Mia packed their backpacks with a compass, food, and a warm blanket. They walked carefully across a wooden bridge over the river. Finally, they reached the hilltop, pitched their blue tent, and happily watched the sunset together.",
++    rubric: {
++      content: 2,
++      grammar_flow: 2,
++      vocab_spelling: 1,
++      total: 5
++    },
++    panels: [
++      {
++        panel_id: 1,
++        title: "Preparing the Expedition",
++        image_url: "/images/week36/writing_panel_1.png",
++        caption: "Alex and Mia pack their backpacks with maps, flashlights, and a first-aid kit.",
++        word_bank: ["pack", "backpack", "compass", "map", "careful"]
++      },
++      {
++        panel_id: 2,
++        title: "Crossing the River Bridge",
++        image_url: "/images/week36/writing_panel_2.png",
++        caption: "The children carefully cross a suspension bridge over a rushing stream.",
++        word_bank: ["walked", "carefully", "bridge", "river", "journey"]
++      },
++      {
++        panel_id: 3,
++        title: "Camping on the Summit",
++        image_url: "/images/week36/writing_panel_3.png",
++        caption: "They reach the hilltop campsite, pitch their tent, and celebrate their journey.",
++        word_bank: ["pitched", "tent", "campfire", "delighted", "sunset"]
++      }
++    ],
++    ladder_steps: [
++      { stage: "MODEL", focus: "Analyze the 3-panel sequential storyline and transition words" },
++      { stage: "BUILD", focus: "Draft 1-2 sentences per panel using Past Simple and connector words" },
++      { stage: "WRITE", focus: "Compose complete paragraph narrative ensuring >= 20 words" },
++      { stage: "EXPAND", focus: "Add descriptive emotion adjectives (delighted, brave, memorable)" }
++    ]
++  }
++};
++
+ export default writingHubData;

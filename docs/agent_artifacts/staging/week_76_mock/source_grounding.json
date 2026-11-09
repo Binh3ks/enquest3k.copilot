@@ -1,0 +1,59 @@
+{
+  "week": 76,
+  "cumulative_block": [
+    73,
+    74,
+    75,
+    76
+  ],
+  "vocabulary_grounding_summary": {
+    "w73_source_words": [
+      "evaporation",
+      "precipitation",
+      "reservoir",
+      "moisture",
+      "atmosphere"
+    ],
+    "w74_source_words": [
+      "predator",
+      "ecosystem",
+      "organism",
+      "survive",
+      "energy"
+    ],
+    "w75_source_words": [
+      "ancient",
+      "civilization",
+      "monument",
+      "excavation",
+      "dynasty"
+    ],
+    "w76_source_words": [
+      "voyage",
+      "discover",
+      "navigate",
+      "compass",
+      "expedition"
+    ]
+  },
+  "total_synthesis_words": 20,
+  "cumulative_grounding_pct": 100,
+  "exam_paper_grounding": {
+    "reading_p1": "Real-world notices linking navigation gear, museum archives, and map scale hiking",
+    "reading_p2": "Matching student profiles to courses in polar ice (W73), rainforest ecology (W74), Egyptian archaeology (W75), and ocean navigation (W76)",
+    "reading_p3": "Ferdinand Magellan's 1519 voyage synthesizing weather patterns, survival nutrition, and global ecosystem connectivity",
+    "reading_p4": "Historic navigation from constellations to magnetic compasses and marine chronometers",
+    "reading_p5": "The age of maritime discovery linking trade routes, map scales, and global ecosystems",
+    "reading_p6": "Diary of a young sailor using prepositions of movement and navigation compasses",
+    "writing_p1": "Email planning a museum visit to explore Magellan's caravel and test map scale navigation",
+    "writing_p2": "Extended article or story on historical exploration voyages and overcoming oceanic hardships",
+    "listening_p1": "7 short scenarios featuring navigation tools, weather departures, and wetland predators",
+    "listening_p2": "6 dialogues discussing Pacific crossings, volcanic groundwater survival, and trade papyrus",
+    "listening_p3": "Museum talk on Captain Cook's 1772 voyage, marine chronometers, and scurvy prevention",
+    "listening_p4": "Interview with marine archaeologist Dr. Sarah Lin excavating a 1542 spice trade caravel",
+    "speaking_p1": "Personal interview on geography, natural landscapes, and scientific exploration",
+    "speaking_p2": "Simulated discussion using table_a (Mountain River Expedition) and table_b (Coastal Marine Survey)",
+    "speaking_p3": "Extended photo turn describing young researchers with maps, compasses, and tablets on coastal cliffs",
+    "speaking_p4": "Discussion comparing ancient vs modern exploration, map reading skills, and ocean depths"
+  }
+}

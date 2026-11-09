@@ -1,0 +1,268 @@
+{
+  "week": 75,
+  "theme": "History/ELA: Ancient Egypt / Math: Timelines",
+  "title_en": "History/ELA: Ancient Egypt / Math: Timelines",
+  "title_vi": "Lịch sử/ELA: Ai Cập Cổ đại / Toán: Dòng thời gian",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Pyramids and Pharaohs",
+  "clil_topic": {
+    "title": "History/ELA: Ancient Egypt / Math: Timelines & Historical description",
+    "focus": "Write a descriptive paragraph about Ancient Egypt"
+  },
+  "grammar_focus": {
+    "structure": "Used to\" / \"Would\" (Past habits): \"Egyptians used to build",
+    "outcome": "Write a descriptive paragraph about Ancient Egypt",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "pyramid",
+      "mummy",
+      "tomb",
+      "desert",
+      "ancient",
+      "civilization",
+      "king",
+      "build"
+    ],
+    "total_syllabus_words": 8,
+    "target_count": 20,
+    "missing_count": 12,
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 1,
+      "non_verbs_count": 7,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "pyramid",
+    "mummy",
+    "tomb",
+    "desert",
+    "ancient",
+    "civilization",
+    "king",
+    "build"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "pyramid",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pˈɪɹəmɪd/",
+      "phonetics": {
+        "arpabet": "P IH1 R AH0 M IH0 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "mummy",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/mˈʌmi/",
+      "phonetics": {
+        "arpabet": "M AH1 M IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "tomb",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/tˈuːm/",
+      "phonetics": {
+        "arpabet": "T UW1 M",
+        "final_phone": "M",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "desert",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dˈɛzɚt/",
+      "phonetics": {
+        "arpabet": "D EH1 Z ER0 T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "ancient",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˈeɪntʃənt/",
+      "phonetics": {
+        "arpabet": "EY1 N CH AH0 N T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "civilization",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/sˌɪvəlɪzˈeɪʃən/",
+      "phonetics": {
+        "arpabet": "S IH2 V AH0 L IH0 Z EY1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "king",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kˈɪŋ/",
+      "phonetics": {
+        "arpabet": "K IH1 NG",
+        "final_phone": "NG",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "build",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/bˈɪld/",
+      "phonetics": {
+        "arpabet": "B IH1 L D",
+        "final_phone": "D",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "built",
+        "past_participle": "built",
+        "past_ending_group": null,
+        "past_ending_rule": "Dental suffix change d -> t",
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Guided CER)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 75,
+    "map_theme": "Photosynthesis & Cellular Energy",
+    "map_clil_module": "Hóa sinh: Năng lượng mặt trời thành glucose",
+    "map_grammar_hub": "Giải thích phương trình hóa học; `reading_hub` quang phổ diệp lục",
+    "map_cefr_type": "B1 PET · Rotary 3",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"History/ELA: Ancient Egypt / Math: Timelines\") enforced over Digital Map (Source A: \"Photosynthesis & Cellular Energy\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:00.458Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

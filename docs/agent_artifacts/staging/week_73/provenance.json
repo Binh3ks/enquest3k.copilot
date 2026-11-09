@@ -1,0 +1,45 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-09T08:30:07.694Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "week_number": 73,
+  "theme": "Science/ELA: The Water Cycle (Advanced) / Math: Volume",
+  "cefr_level": "B1 Preliminary",
+  "grammar_focus": "Sequence Connectors (Advanced): 'Subsequently', 'Following this', 'Eventually'",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_73/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "Week 73: Science/ELA: The Water Cycle (Advanced) / Math: Volume (Tuần 73: Khoa học/ELA: Vòng tuần hoàn Nước Nâng cao / Toán: Thể tích)\n\t•\tTopic (Science): The Never-Ending Journey. (Chủ đề: Hành trình bất tận.)\n\t•\tKey Learning Outcome (ELA): Write an expository paragraph with advanced sequencing. (Kết quả: Viết đoạn văn giải thích với trình tự nâng cao.)\n\t•\tWriting Skill Focus: Scientific explanation. (Kỹ năng Viết: Giải thích khoa học.)\n\t•\tGrammar Focus: Sequence Connectors (Advanced): \"Subsequently\", \"Following this\", \"Eventually\". (Ngữ pháp: Từ nối trình tự nâng cao.)\n\t•\tVocabulary Focus: evaporation, condensation, precipitation, collection, vapor, turn into, cycle.\n\t•\tTopic (Math): 3D Space. (Toán: Không gian 3D.)\n\t•\tKey Learning Outcome (Math): Calculate volume by counting cubes. (Kết quả: Tính thể tích bằng đếm khối.)\n\t•\tMath Vocabulary: volume, cubic unit, fill, space, 3D, cube, block.\n\t•",
+    "digital_map_reference": {
+      "map_week": 73,
+      "map_theme": "Transition to Academic English",
+      "map_clil_module": "Phương pháp khoa học & Nghiên cứu học thuật",
+      "map_grammar_hub": "Từ vựng AWL (*hypothesis, variable, analyze*); `discovery_report` CER",
+      "map_cefr_type": "B1 Entry · Rotary 1",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Science/ELA: The Water Cycle (Advanced) / Math: Volume\") enforced over Digital Map (Source A: \"Transition to Academic English\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION"
+  ],
+  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+}

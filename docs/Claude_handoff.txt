@@ -1718,3 +1718,55 @@ not fixed at the generator level now.
 (UI schema contract check) to prevent recurrence, re-verify, re-package. W36 mock
 exam NOT yet approved for merge — pending this fix. Blueprint flag changes and
 W36/W37 wipe ARE approved and already live (verified safe, no rollback needed).
+## Round 66 — Mock Schema Fix: APPROVED, Round 65 bug confirmed fixed
+
+Independently verified: commit 4a3943ea, zip hashes, read the real speaking_hub.js
+directly (not the report) — table_a/table_b schema now matches exactly what
+InformationExchangeP2.jsx/InfoExchangeZone.jsx require, content preserved
+identically. Mock Gate 7 confirmed genuinely implemented (checks for card_a/card_b
+regression). Independently re-ran all 7 gates, freeze guards, and build — all pass.
+W36 confirmed still staged only (25 stub files in production, untouched).
+
+**W36 Pilot Mock Exam APPROVED for merge** — first-ever Cambridge-format mock exam
+content in the pipeline, high pedagogical quality confirmed via full read-through
+(Round 65) plus this schema fix.
+
+**Dispatched Round 67:** merge W36 to production, build a SECOND pilot — this time
+Stage 2/PET format (W76) since PET structure has never been tested (only Flyers so
+far), and resume Wave 2 rotary content (W73,74,75,77,79,81,82) in parallel. Full
+38-week mock rollout still held pending the PET pilot's review.
+
+## Round 67 — W36 Merge to Production + Stage 2 (PET) Pilot (W76) + Wave 2 Rotary Staged: COMPLETED
+
+### 1. Task 1 — Production Merge of Week 36 (A2 Flyers Mock Exam):
+- Copied all 9 verified staged files from `docs/agent_artifacts/staging/week_36_mock/*` into `src/data/weeks/week_36/`.
+- Verified production W36 with `node scripts/cefr_curriculum_guard.mjs 36` (0 Critical B1/B2 Violations, 0 Sentence Length Warnings).
+- Verified freeze guards: W33 (147/147 locked) & W34 (106/106 locked).
+- Verified `TOTAL_TRIPS = 34` in `QuestSidebar.jsx:12` and `PassportTracker.jsx:12`.
+- Verified production build: `npm run build` exited with code 0 (`built in 13.16s`).
+- Generated merge patch: `docs/agent_artifacts/round67_w36_merge_diff.patch` (894 lines).
+
+### 2. Task 2 — Stage 2 Cambridge B1 Preliminary (PET) Pilot Mock Exam (Week 76):
+- Built dedicated PET mock generator `scripts/generate_pet_mock_content.mjs`.
+- Implemented full Cambridge B1 Preliminary structure:
+  - Reading Paper: 6 parts / 32 items (R1 notices, R2 people-matching, R3 4-option MCQ, R4 gapped text, R5 vocab cloze, R6 open cloze).
+  - Writing Paper: 2 tasks (W1 100-word email with 4 prompt notes, W2 100-word choice of article or story; both with 20-mark Cambridge B1 rubrics).
+  - Listening Paper: 4 parts / 25 items (L1 short dialogues, L2 dialogue gist/feelings, L3 Cook chronometer monologue notes, L4 shipwreck archaeologist interview) with full verbatim audio scripts.
+  - Speaking Paper: 4 parts (S1 personal interview, S2 simulated discussion conforming strictly to `table_a` and `table_b` UI contract, S3 extended photo turn, S4 exploration topic discussion).
+- Cumulative Sourcing: 20 synthesis vocabulary items 100% grounded in W73 (Water Cycle), W74 (Food Chains), W75 (Ancient Egypt), W76 (Great Voyages) — 5 words per week, 0 fabricated provenance.
+- Extended `scripts/test_mock_gates.mjs` to dynamically support PET format:
+  - All 7 Mock Quality Gates PASSED (Completeness 16/16 parts, Item Counts 25L/32R/2W/4S, Cumulative Sourcing 100%, CEFR B1 Guard 0 violations, Audio Feasibility 4/4 scripts, Deterministic Answer Keys 100%, UI Contract table_a/table_b).
+  - Staged in `docs/agent_artifacts/staging/week_76_mock/` (NOT merged to production).
+
+### 3. Task 3 — Wave 2 Rotary Practice Content Generation (7 Stage 2 B1 Weeks):
+- Authored modular pedagogical specifications: `scripts/specs_w{73,74,75,77,79,81,82}.mjs` aggregated via `scripts/wave2_specs.mjs`.
+- Integrated `--wave2` support into `scripts/generate_giaidoan2_content.mjs`.
+- All 7 rotary weeks (`W73, W74, W75, W77, W79, W81, W82`) generated and verified:
+  - 100% ALL 10 Mechanical Gates PASSED across all 7 weeks.
+  - Cambridge CEFR Guard PASSED for all 7 weeks with 0 Critical Violations and 0 Warnings.
+  - Staged in `docs/agent_artifacts/staging/week_{73,74,75,77,79,81,82}/` (STAGED ONLY).
+
+### 4. Review Deliverable Package:
+- Built `docs/review_packages/round67_w36_merge_pet_pilot_wave2.zip` (305.54 KB, SHA-256: `f987e9c0bd4e4d49d40884fb6ce46d81ea1026213ed5b7a653714a6df271c382`).
+- Total 87 enclosed files including `manifest.txt`, merge diff, gate logs, build log, freeze logs, W76 PET mock staged hub, and all 7 Wave 2 staged hubs.
+- Awaiting Claude's ESL-expert review of W76 PET Pilot Mock Exam and Wave 2 Rotary Content.

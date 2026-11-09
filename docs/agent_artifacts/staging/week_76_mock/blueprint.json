@@ -1,0 +1,47 @@
+{
+  "week": 76,
+  "theme": "History/ELA: Explorers / Math: Map Scales",
+  "title_en": "Great Voyages: The Age of Global Exploration",
+  "title_vi": "Những Chuyến Hải Trình Lớn: Kỷ Nguyên Thám Hiểm Toàn Cầu",
+  "cefr_level": "B1 Preliminary",
+  "cefr_stage": 2,
+  "week_type": "full_mock",
+  "isFullMock": true,
+  "mockFormat": "pet",
+  "cumulativeBlock": [
+    73,
+    74,
+    75,
+    76
+  ],
+  "synthesis_summary": {
+    "w73_theme": "The Water Cycle (Advanced) / Volume",
+    "w74_theme": "Food Chains / Complex Charts",
+    "w75_theme": "Ancient Egypt / Timelines",
+    "w76_theme": "Explorers / Map Scales",
+    "grounded_vocabulary_count": 20,
+    "grounded_pct": 100
+  },
+  "papers": {
+    "reading": {
+      "parts": 6,
+      "total_items": 32,
+      "time_minutes": 45
+    },
+    "writing": {
+      "parts": 2,
+      "total_tasks": 2,
+      "time_minutes": 45
+    },
+    "listening": {
+      "parts": 4,
+      "total_items": 25,
+      "time_minutes": 35
+    },
+    "speaking": {
+      "parts": 4,
+      "total_tasks": 4,
+      "time_minutes": 12
+    }
+  }
+}

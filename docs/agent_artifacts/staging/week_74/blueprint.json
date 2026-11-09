@@ -1,0 +1,270 @@
+{
+  "week": 74,
+  "theme": "Science/ELA: Food Chains / Math: Complex Charts",
+  "title_en": "Science/ELA: Food Chains / Math: Complex Charts",
+  "title_vi": "Khoa học/ELA: Chuỗi thức ăn / Toán: Biểu đồ phức tạp",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Who Eats Who? (Energy flow)",
+  "clil_topic": {
+    "title": "Science/ELA: Food Chains / Math: Complex Charts & Cause-Effect in systems",
+    "focus": "Write a paragraph explaining dependency in nature"
+  },
+  "grammar_focus": {
+    "structure": "Zero Conditional (Scientific Facts): \"If plants die, animals have no food",
+    "outcome": "Write a paragraph explaining dependency in nature",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "producer",
+      "consumer",
+      "predator",
+      "prey",
+      "energy",
+      "flow",
+      "eat",
+      "eaten by"
+    ],
+    "total_syllabus_words": 8,
+    "target_count": 20,
+    "missing_count": 12,
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 1,
+      "non_verbs_count": 6,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "flow"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "producer",
+    "consumer",
+    "predator",
+    "prey",
+    "energy",
+    "flow",
+    "eat",
+    "eaten by"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "producer",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pɹədˈuːsɚ/",
+      "phonetics": {
+        "arpabet": "P R AH0 D UW1 S ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "consumer",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kənsˈuːmɚ/",
+      "phonetics": {
+        "arpabet": "K AH0 N S UW1 M ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "predator",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pɹˈɛdətɚ/",
+      "phonetics": {
+        "arpabet": "P R EH1 D AH0 T ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "prey",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pɹˈeɪ/",
+      "phonetics": {
+        "arpabet": "P R EY1",
+        "final_phone": "EY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "energy",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˈɛnɚdʒi/",
+      "phonetics": {
+        "arpabet": "EH1 N ER0 JH IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "flow",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/flˈoʊ/",
+      "phonetics": {
+        "arpabet": "F L OW1",
+        "final_phone": "OW",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "flowed",
+        "past_participle": "flowed",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /ow/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "eat",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˈiːt/",
+      "phonetics": {
+        "arpabet": "IY1 T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "ate",
+        "past_participle": "eaten",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation ea -> a",
+        "variants": null
+      }
+    },
+    {
+      "word": "eaten by",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˈiːtən bˈaɪ/",
+      "phonetics": {
+        "arpabet": "IY1 T AH0 N B AY1",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Guided CER)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 74,
+    "map_theme": "Plate Tectonics & Earthquakes",
+    "map_clil_module": "Địa chất học: Đứt gãy mảng & Thang Richter",
+    "map_grammar_hub": "Thể bị động nâng cao (*plates are forced together*); `action_lab` địa chấn kế",
+    "map_cefr_type": "B1 PET · Rotary 2",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Science/ELA: Food Chains / Math: Complex Charts\") enforced over Digital Map (Source A: \"Plate Tectonics & Earthquakes\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:00.406Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "week": 82,
+  "theme": "ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data",
+  "cefr_level": "B1 Preliminary",
+  "blueprint_snapshot": {
+    "week": 82,
+    "theme": "ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data",
+    "title_en": "ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data",
+    "title_vi": "ELA: Vlogger Du Lịch - Viết nháp / Toán: Phân tích Dữ liệu",
+    "cefr_level": "A2 Flyers",
+    "cefr_stage": 1,
+    "week_type": "rotary_practice",
+    "isFullMock": false,
+    "rotary_cycle": null,
+    "template_used": "production_kit/templates/template_pet_transition.js",
+    "story_title": "Describing a favorite place",
+    "clil_topic": {
+      "title": "ELA: The Travel Vlogger & Drafting",
+      "focus": "Write a descriptive essay draft"
+    },
+    "grammar_focus": {
+      "structure": "Adjectives & Sensory Words (Sight, Sound, Smell)",
+      "outcome": "Write a descriptive essay draft",
+      "pattern_regex": null,
+      "requires_authoring_examples": true
+    },
+    "vocabulary_focus": {
+      "syllabus_words": [
+        "beautiful",
+        "amazing",
+        "see",
+        "hear",
+        "smell",
+        "taste",
+        "landscape",
+        "view",
+        "delicious"
+      ],
+      "total_syllabus_words": 9,
+      "target_count": 20,
+      "missing_count": 11,
+      "status": "PARTIAL (9/20 syllabus words — Requires 11 words from human author)",
+      "phonology_summary": {
+        "total_words_tagged": 9,
+        "ipa_coverage_pct": 100,
+        "regular_verbs_count": 2,
+        "irregular_verbs_count": 2,
+        "non_verbs_count": 5,
+        "past_tense_triad": {
+          "/t/": [],
+          "/d/": [
+            "smell"
+          ],
+          "/ɪd/": [
+            "taste"
+          ]
+        },
+        "triad_complete": false
+      }
+    },
+    "keywords": [
+      "beautiful",
+      "amazing",
+      "see",
+      "hear",
+      "smell",
+      "taste",
+      "landscape",
+      "view",
+      "delicious"
+    ],
+    "characters": null,
+    "target_vocab_20": [
+      {
+        "word": "beautiful",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/bjˈuːtəfəl/",
+        "phonetics": {
+          "arpabet": "B Y UW1 T AH0 F AH0 L",
+          "final_phone": "L",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "amazing",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/əmˈeɪzɪŋ/",
+        "phonetics": {
+          "arpabet": "AH0 M EY1 Z IH0 NG",
+          "final_phone": "NG",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "see",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/sˈiː/",
+        "phonetics": {
+          "arpabet": "S IY1",
+          "final_phone": "IY",
+          "is_verb": true,
+          "verb_classification": "irregular",
+          "past_simple": "saw",
+          "past_participle": "seen",
+          "past_ending_group": null,
+          "past_ending_rule": "Vowel mutation ee -> aw",
+          "variants": null
+        }
+      },
+      {
+        "word": "hear",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/hˈiːɹ/",
+        "phonetics": {
+          "arpabet": "HH IY1 R",
+          "final_phone": "R",
+          "is_verb": true,
+          "verb_classification": "irregular",
+          "past_simple": "heard",
+          "past_participle": "heard",
+          "past_ending_group": null,
+          "past_ending_rule": "Suffix d with vowel change ear -> ear /ɝː/",
+          "variants": null
+        }
+      },
+      {
+        "word": "smell",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/smˈɛl/",
+        "phonetics": {
+          "arpabet": "S M EH1 L",
+          "final_phone": "L",
+          "is_verb": true,
+          "verb_classification": "regular",
+          "past_simple": "smelled",
+          "past_participle": "smelled",
+          "past_ending_group": "/d/",
+          "past_ending_rule": "Base verb ends in voiced consonant/vowel /l/ -> suffix pronounced as voiced /d/",
+          "variants": null
+        }
+      },
+      {
+        "word": "taste",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/tˈeɪst/",
+        "phonetics": {
+          "arpabet": "T EY1 S T",
+          "final_phone": "T",
+          "is_verb": true,
+          "verb_classification": "regular",
+          "past_simple": "tasted",
+          "past_participle": "tasted",
+          "past_ending_group": "/ɪd/",
+          "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+          "variants": null
+        }
+      },
+      {
+        "word": "landscape",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/lˈændskˌeɪp/",
+        "phonetics": {
+          "arpabet": "L AE1 N D S K EY2 P",
+          "final_phone": "P",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "view",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/vjˈuː/",
+        "phonetics": {
+          "arpabet": "V Y UW1",
+          "final_phone": "UW",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "delicious",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/dɪlˈɪʃəs/",
+        "phonetics": {
+          "arpabet": "D IH0 L IH1 SH AH0 S",
+          "final_phone": "S",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      }
+    ],
+    "scaffolding_tier": "Tier 3 (Exam)",
+    "tested_skills": [
+      "listening_p1",
+      "listening_p2",
+      "listening_p3",
+      "listening_p4",
+      "listening_p5",
+      "reading_p1",
+      "reading_p2",
+      "reading_p3",
+      "reading_p4",
+      "reading_p5",
+      "reading_p6",
+      "writing_p7",
+      "speaking_p1",
+      "speaking_p2",
+      "speaking_p3",
+      "speaking_p4"
+    ],
+    "target_shields": 3,
+    "pending_human_authoring": [
+      "Target Vocabulary: Needs 11 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+      "Story World: 5 story scenes with narration script + character names",
+      "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+      "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+      "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+    ],
+    "digital_map_reference": {
+      "map_week": 82,
+      "map_theme": "B1 PET & CLIL Mock 2",
+      "map_clil_module": "Đánh giá Thực nghiệm Khoa học 2",
+      "map_grammar_hub": "Full Mock B1 PET 2: Chấm bài viết email 100 từ và bài đọc dài Part 3",
+      "map_cefr_type": "★ FULL MOCK 13 (PET)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data\") enforced over Digital Map (Source A: \"B1 PET & CLIL Mock 2\"). Source A metadata preserved in digital_map_reference."
+    },
+    "metadata_provenance": {
+      "generated_at": "2026-11-04T08:30:00.810Z",
+      "generator_script": "scripts/generate_week_blueprint.mjs",
+      "source_digital_map": true,
+      "source_master_syllabus": true,
+      "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+    }
+  },
+  "source_b_excerpt": "Week 82: ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data (Tuần 82: ELA: Vlogger Du Lịch - Viết nháp / Toán: Phân tích Dữ liệu)\n\t•\tTopic (ELA): Describing a favorite place. (Chủ đề: Miêu tả nơi yêu thích.)\n\t•\tKey Learning Outcome (ELA): Write a descriptive essay draft. (Kết quả: Viết nháp bài văn miêu tả.)\n\t•\tWriting Skill Focus: Drafting. (Kỹ năng: Viết nháp.)\n\t•\tGrammar Focus: Adjectives & Sensory Words (Sight, Sound, Smell). (Ngữ pháp: Tính từ & Từ chỉ giác quan.)\n\t•\tVocabulary Focus: beautiful, amazing, see, hear, smell, taste, landscape, view, delicious.\n\t•\tTopic (Math): Data Analysis (Most/Least). (Toán: Phân tích dữ liệu.)\n\t•\tKey Learning Outcome (Math): Interpret data to answer questions. (Kết quả: Diễn giải dữ liệu để trả lời câu hỏi.)\n\t•\tMath Vocabulary: most, least, difference, total, combine.\n\t•"
+}
