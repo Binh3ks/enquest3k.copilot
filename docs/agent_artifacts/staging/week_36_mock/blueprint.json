@@ -1,0 +1,90 @@
+{
+  "week": 36,
+  "theme": "Review & Project 3: \"My Adventure Book",
+  "title_en": "Review & Project 3: \"My Adventure Book",
+  "title_vi": "Ôn tập & Dự án 3: \"Sách Phiêu lưu của em\"",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "full_mock",
+  "isFullMock": true,
+  "rotary_cycle": 4,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "Creating a mini-book",
+  "clil_topic": {
+    "title": "My Adventure Book",
+    "focus": "Produce a completed story with illustrations and text"
+  },
+  "grammar_focus": {
+    "structure": "Động từ khuyết thiếu (should, must, have to); Cambridge Rotary Cycle 4",
+    "outcome": "Produce a completed story with illustrations and text",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [],
+    "total_syllabus_words": 0,
+    "target_count": 20,
+    "missing_count": 20,
+    "status": "PARTIAL (0/20 syllabus words — Requires 20 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 0,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 0,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [],
+  "characters": null,
+  "target_vocab_20": [],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 20 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 36,
+    "map_theme": "The Hospital Visit",
+    "map_clil_module": "Y học: Sơ cứu và hồi phục chấn thương",
+    "map_grammar_hub": "Động từ khuyết thiếu (should, must, have to); Cambridge Rotary Cycle 4",
+    "map_cefr_type": "A2 Flyers · Rotary 4",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Review & Project 3: \"My Adventure Book\") enforced over Digital Map (Source A: \"The Hospital Visit\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:58.517Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "mockFormat": "flyers"
+}

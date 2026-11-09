@@ -1,8 +1,6 @@
-// Week 37 grammar.js
+// Week 37 Grammar Drills (Clean Stub)
 export default {
-  title: "Living vs. Non-Living — Grammar Focus",
-  focus: "A puppy is living because it breathes fresh air and grows.",
-  exercises: [
-    { id: 1, prompt: "A puppy is living because it breathes fresh air and grows.", options: ["Correct", "Incorrect"], answer: "Correct", type: "mc" }
-  ]
+  title: "Grammar Practice",
+  drills: [],
+  exercises: []
 };

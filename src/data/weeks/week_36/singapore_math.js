@@ -1,7 +1,5 @@
-// Week 36 singapore_math.js
+// Week 36 Singapore Math (Clean Stub)
 export default {
-  title: "My Adventure Book Math",
-  problems: [
-    { id: 1, text: "Count the items in My Adventure Book" }
-  ]
+  title: "Singapore Math",
+  problems: []
 };

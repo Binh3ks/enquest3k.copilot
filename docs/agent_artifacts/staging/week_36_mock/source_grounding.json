@@ -1,0 +1,72 @@
+{
+  "week": 36,
+  "exam_title": "Cambridge A2 Flyers Full Mock 1 (Weeks 33-36 Synthesis)",
+  "vocabulary_grounding_summary": {
+    "total_synthesis_words": 20,
+    "w33_source_words": [
+      "corridor",
+      "nurse",
+      "bandage",
+      "slipped",
+      "safe",
+      "careful"
+    ],
+    "w34_source_words": [
+      "lion",
+      "mouse",
+      "paw",
+      "hunter",
+      "net",
+      "rope",
+      "trap",
+      "chew",
+      "free",
+      "brave",
+      "grateful",
+      "forest",
+      "rescue"
+    ],
+    "w35_source_words": [
+      "memorable",
+      "wonderful",
+      "delighted",
+      "frightened",
+      "photograph",
+      "celebrated"
+    ],
+    "w36_source_words": [
+      "adventure",
+      "journey",
+      "explore",
+      "compass",
+      "backpack",
+      "tent",
+      "flashlight",
+      "campfire"
+    ]
+  },
+  "grammar_grounding_summary": {
+    "w33_grammar": "Imperatives & Giving advice for school/outdoor safety",
+    "w34_grammar": "Past Continuous & Past Simple narrative clauses",
+    "w35_grammar": "Past Simple with descriptive emotion adjectives",
+    "w36_grammar": "Modal verbs of obligation & necessity (must, should, have to)"
+  },
+  "parts_grounding": {
+    "listening_p1": "Adventure camp ground with characters Oliver, Emma, Helen, Sophia, Richard",
+    "listening_p2": "Alex Miller joining Junior Adventure Book Club (names, numbers, spelling)",
+    "listening_p3": "Equipment packed by scouts (compass, first-aid bandage, camera, blanket, water bottle)",
+    "listening_p4": "3-picture MCQs testing hike events, animal sightings, camp schedule, dinner cooking",
+    "listening_p5": "Campfire and cabin scene with colouring items and writing 'CAMP'",
+    "reading_p1": "10 definitions matching 15 vocabulary candidates from W33-W36 pool",
+    "reading_p2": "Dialogue turns between Alex and Ranger David planning guidebook",
+    "reading_p3": "Story cloze on kind animal rescue (Leo & Mia rescuing tangled squirrel)",
+    "reading_p4": "CLIL science text on scouts using compasses, maps, and safety rules",
+    "reading_p5": "Extended story on finding Grandpa's 30-year-old pine forest trail map",
+    "reading_p6": "Diary open cloze testing grammatical connectors (when, to, were, because, will)",
+    "reading_p7": "3-panel picture story writing: packing gear, crossing bridge, summit sunset",
+    "speaking_p1": "5 differences between Picture A and Picture B campsite",
+    "speaking_p2": "Solo-AI cue cards: Card A David's Mountain Camp / Card B Sarah's Forest Cabin",
+    "speaking_p3": "5-frame picture story 'The Lost Compass' narrated by student with Nova",
+    "speaking_p4": "4 personal interview questions on outdoor trips, packing gear, and school projects"
+  }
+}

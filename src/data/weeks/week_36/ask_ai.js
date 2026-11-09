@@ -1,4 +1,4 @@
-// Week 36 ask_ai.js
-export default [
-  { id: 1, title_en: "My Adventure Book Question", sample_question_en: "Tell me about My Adventure Book." }
-];
+// Week 36 Ask AI (Clean Stub)
+export const CUE_CARD_PROMPTS = [];
+export const INFORMATION_EXCHANGE_P2 = {};
+export default [];

@@ -1,4 +1,2 @@
-// Week 37 shadowing_ipa.js
-export default [
-  { id: 1, text: "Living vs. Non-Living" }
-];
+// Week 37 Shadowing IPA (Clean Stub)
+export default [];

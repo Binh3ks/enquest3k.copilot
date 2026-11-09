@@ -1,0 +1,34 @@
+{
+  "week": 36,
+  "examType": "Cambridge Young Learners A2 Flyers Mock 1",
+  "stage": 1,
+  "mode": "full_mock",
+  "generatedAt": "2026-11-09T02:48:24.454Z",
+  "generator": "scripts/generate_mock_exam_content.mjs",
+  "architecture": "Full 16-Part Cambridge YLE Flyers Paper (5L + 7RW + 4S)",
+  "cumulativeSources": {
+    "w33": {
+      "theme": "Safety First at School & Friction",
+      "status": "Golden Master Frozen"
+    },
+    "w34": {
+      "theme": "The Lion and the Mouse: True Friendship",
+      "status": "Golden Master Frozen"
+    },
+    "w35": {
+      "theme": "Storytelling Practice 2 (Personal Recount)",
+      "status": "Merged Clean Production"
+    },
+    "w36": {
+      "theme": "Review & Project 3: 'My Adventure Book'",
+      "status": "Staged Pilot Mock"
+    }
+  },
+  "pedagogicalValidation": {
+    "totalListeningItems": 25,
+    "totalReadingWritingItems": 44,
+    "totalSpeakingParts": 4,
+    "cefrConformance": "A2 Flyers Strict (0 B1/B2 violations)",
+    "soloAIPartner": "Nova AI Interlocutor (Speaking P1-P4)"
+  }
+}

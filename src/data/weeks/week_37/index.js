@@ -1,4 +1,4 @@
-// Index wrapper for Week 37
+// Index wrapper for Week 37 (Clean Stub)
 import read_explore from './read.js';
 import explore from './explore.js';
 import new_words from './vocab.js';
@@ -8,7 +8,7 @@ import grammar from './grammar.js';
 import daily_watch from './daily_watch.js';
 import logic_lab from './logic_lab.js';
 import mindmap_speaking from './mindmap.js';
-import ask_ai from './ask_ai.js';
+import ask_ai, { INFORMATION_EXCHANGE_P2, CUE_CARD_PROMPTS } from './ask_ai.js';
 import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
@@ -20,8 +20,10 @@ import { speakingHubData as speakingHub } from './speaking_hub.js';
 
 export const weekData = {
   weekId: 37,
-  title: "Living vs. Non-Living",
-  title_vi: "Vật Sống & Không Sống — Quy Luật Tự Nhiên CLIL Unit 6",
+  title: "Living vs. Non-Living (Reasoning)",
+  weekTitle_en: "Living vs. Non-Living (Reasoning)",
+  cue_card_info_exchange: INFORMATION_EXCHANGE_P2,
+  cue_card_prompts: CUE_CARD_PROMPTS,
   readingHub,
   listeningHub,
   writingHub,
@@ -42,5 +44,4 @@ export const weekData = {
     shadowing
   }
 };
-
 export default weekData;

@@ -1,8 +1,6 @@
-// Week 36 grammar.js
+// Week 36 Grammar Drills (Clean Stub)
 export default {
-  title: "My Adventure Book — Grammar Focus",
-  focus: "Leo went to a bay, saw a parrot, and wrote My Adventure Book.",
-  exercises: [
-    { id: 1, prompt: "Leo went to a bay, saw a parrot, and wrote My Adventure Book.", options: ["Correct", "Incorrect"], answer: "Correct", type: "mc" }
-  ]
+  title: "Grammar Practice",
+  drills: [],
+  exercises: []
 };

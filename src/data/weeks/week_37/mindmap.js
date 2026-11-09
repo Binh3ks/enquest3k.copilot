@@ -1,6 +1,6 @@
-// Week 37 mindmap.js
+// Week 37 Mindmap (Clean Stub)
 export default {
-  centerStems: [
-    { id: 1, label: "Living vs. Non-Living" }
-  ]
+  central_idea: "",
+  stems: [],
+  branches: []
 };

@@ -1,9 +1,9 @@
 {
-  "commit": "ff6d3c0ab47747bec0fb85b204a7df20d035e477",
-  "git_commit": "ff6d3c0ab47747bec0fb85b204a7df20d035e477",
-  "shortCommit": "ff6d3c0a",
-  "message": "feat(curriculum): scale wave 1 staged content for W39-W46 with 0 collisions & 100% CEFR pass [multi-agent-review]",
-  "builtAt": "2026-11-09T02:27:35.026Z",
-  "build_timestamp": "2026-11-09T02:27:35.027Z",
+  "commit": "000f2dc07ab3bb272ae9dba10d522b7b98dde3d5",
+  "git_commit": "000f2dc07ab3bb272ae9dba10d522b7b98dde3d5",
+  "shortCommit": "000f2dc0",
+  "message": "feat(curriculum): merge approved wave 1 weeks W39, W41, W43, W45, W46 & map 39-week mock schedule [multi-agent-review]",
+  "builtAt": "2026-11-09T02:55:09.903Z",
+  "build_timestamp": "2026-11-09T02:55:09.903Z",
   "env": "production"
 }

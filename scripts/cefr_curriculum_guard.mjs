@@ -231,7 +231,11 @@ async function main() {
   const isStaging = process.argv.includes('--staging');
   const wStr = String(targetWeek).padStart(2, '0');
   const defaultDir = path.join(WEEKS_DIR, `week_${wStr}`);
-  const stagingDir = path.join(__dirname, `../docs/agent_artifacts/staging/week_${targetWeek}`);
+  let stagingDir = path.join(__dirname, `../docs/agent_artifacts/staging/week_${targetWeek}`);
+  if (!fs.existsSync(stagingDir)) {
+    const mockDir = path.join(__dirname, `../docs/agent_artifacts/staging/week_${targetWeek}_mock`);
+    if (fs.existsSync(mockDir)) stagingDir = mockDir;
+  }
   const hasStagingJs = fs.existsSync(stagingDir) && fs.readdirSync(stagingDir).some(f => f.endsWith('.js'));
   const hasProdJs = fs.existsSync(defaultDir) && fs.readdirSync(defaultDir).some(f => f.endsWith('.js'));
   const wDirAdv = (isStaging || (!hasProdJs && hasStagingJs)) ? stagingDir : defaultDir;

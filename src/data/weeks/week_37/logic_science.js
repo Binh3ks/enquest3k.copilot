@@ -1,7 +1,6 @@
-// Week 37 logic_science.js
+// Week 37 Logic Science (Clean Stub)
 export default {
-  title: "Living vs. Non-Living — Logic Science",
-  questions: [
-    { id: 1, question_en: "What is the key focus of Living vs. Non-Living?", options: ["living", "non-living"], answer: "living" }
-  ]
+  title: "Science Lab",
+  experiments: [],
+  scenarios: []
 };

@@ -1,6 +1,6 @@
-// Week 36 mindmap.js
+// Week 36 Mindmap (Clean Stub)
 export default {
-  centerStems: [
-    { id: 1, label: "My Adventure Book" }
-  ]
+  central_idea: "",
+  stems: [],
+  branches: []
 };

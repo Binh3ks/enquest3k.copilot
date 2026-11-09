@@ -1,6 +1,3 @@
-// Week 36 games.js
-export const week36GamesAdvanced = {
-  title: "My Adventure Book Games",
-  wordList: ["adventure", "journey"]
-};
+// Week 36 Games (Clean Stub)
+export const week36GamesAdvanced = {};
 export default week36GamesAdvanced;

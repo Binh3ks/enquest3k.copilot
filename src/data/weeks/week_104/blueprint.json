@@ -5,8 +5,8 @@
   "title_vi": "Cung & Cầu / Toán: Xu hướng Bán hàng",
   "cefr_level": "B1 PET",
   "cefr_stage": 2,
-  "week_type": "rotary_practice",
-  "isFullMock": false,
+  "week_type": "full_mock",
+  "isFullMock": true,
   "rotary_cycle": null,
   "template_used": "production_kit/templates/template_pet_transition.js",
   "story_title": "Why Prices Change",
@@ -268,5 +268,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "mockFormat": "pet"
 }

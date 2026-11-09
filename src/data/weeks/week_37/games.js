@@ -1,6 +1,3 @@
-// Week 37 games.js
-export const week37GamesAdvanced = {
-  title: "Living vs. Non-Living Games",
-  wordList: ["living", "non-living"]
-};
+// Week 37 Games (Clean Stub)
+export const week37GamesAdvanced = {};
 export default week37GamesAdvanced;

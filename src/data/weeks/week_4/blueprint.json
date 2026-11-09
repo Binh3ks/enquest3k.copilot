@@ -5,8 +5,8 @@
   "title_vi": "Chiếc hũ Hạnh phúc",
   "cefr_level": "Pre-A1 Starters",
   "cefr_stage": 1,
-  "week_type": "rotary_practice",
-  "isFullMock": false,
+  "week_type": "full_mock",
+  "isFullMock": true,
   "rotary_cycle": null,
   "template_used": "production_kit/templates/template_w01_starters_lite.js",
   "story_title": "Emotions and Likes",
@@ -220,5 +220,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "mockFormat": "flyers"
 }
