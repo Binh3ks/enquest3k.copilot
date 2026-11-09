@@ -1672,30 +1672,49 @@ for the new mock schedule (checking old mock weeks that now revert to regular, a
 any other already-built content affected beyond W40/W44), and a design-only proposal
 (no content yet) for the Mock Exam Generator engine with one pilot week recommended.
 
-**Status:** Round 63 completed and verified.
-## Round 64 — Partial Wave 1 Merge Executed + 39-Week Mock Schedule & Conflicts Mapped + Mock Exam Generator Proposal Complete
+**Status:** Awaiting Round 64 package.
+## Round 64 — Wave 1 Partial Merge (5/7) + Mock Schedule Mapping APPROVED
 
-1. **Partial Wave 1 Merge:**
-   - Merged 5 approved weeks: W39, W41, W43, W45, W46 into `src/data/weeks/` (30 files: vocab, hubs, skill_practice).
-   - W40 and W44 strictly kept in staging (`docs/agent_artifacts/staging/`), untouched, awaiting mock exam decisions.
-   - All 5 merged weeks pass CEFR Curriculum Guard Stage 1 with 0 Critical Violations, 0 Sentence Length Warnings.
-   - 10 mechanical gates 100% pass; Vietnamese leak scan clean (0 leaks); 11-week cross-week dedup clean (0 collisions, 0 shared sentences).
-   - Production build exit code 0; W33 & W34 frozen (100% locked); TOTAL_TRIPS = 34 unchanged.
-   - Merge diff patch generated: `docs/agent_artifacts/round64_merge_diff.patch` (8,435 lines).
+Independently verified (zip hash, git HEAD, 0 blueprint.json diff, W40/W44 confirmed
+untouched, W39 confirmed merged, re-scanned 0 banned jargon / 0 VI leaks on all 5
+merged weeks, build exit 0, TOTAL_TRIPS=34, freeze guards clean, manifest SHA-256s
+match extracted files). Independently hand-recomputed the full 39-week mock schedule
+math (10 kept / 16 retired / 29 new = matches report exactly). Read full content of
+W46 writing_hub and W41 speaking_hub (previously unread) — genuinely differentiated,
+A2-appropriate, consistent with established quality bar.
 
-2. **Full Mock Schedule Recomputation & Conflict Report:**
-   - 39 mock weeks total (`w % 4 === 0`): Stage 1 Flyers (18 weeks, W4..W72), Stage 2 PET (21 weeks, W76..W156).
-   - Cross-check results:
-     - 9 merged rotary weeks (W35, W38, W78, W125, W39, W41, W43, W45, W46): 0 collisions.
-     - 2 frozen golden masters (W33, W34): 0 collisions.
-     - 10 old mocks retained; 16 old mocks retired to rotary backlog; 29 new mock weeks promoted.
-     - Conflicts reported: W40 & W44 (staged rotary), W36 (legacy un-authored vs new mock), W37 (legacy un-authored vs retired mock), W150 (mock debate theme clarification).
-   - Zero `blueprint.json` files modified (awaiting Claude & owner sign-off).
+**Approved:**
+- Merge of W39, W41, W43, W45, W46 into production (confirmed real)
+- New 39-week mock schedule (every 4th week), Stage 1 Flyers / Stage 2 PET split
+- Mock Exam Generator design proposal + W36 as pilot week
 
-3. **Mock Exam Generator Scoping:**
-   - Full specification comparing Stage 1 Flyers (16 parts, 25L + 44RW + 4S) vs Stage 2 PET (16 parts, 25L + 32R + 2W + 4S).
-   - Cumulative Sourcing Engine testing vocabulary/grammar across the 4-week block ($k$).
-   - 6 dedicated Mock Quality Gates defined.
-   - Recommended pilot mock week: **Week 36 (W36)** — closes block W33-W36 where preceding weeks (W33, W34, W35) are 100% authored and verified.
+**Dispatched Round 65:** apply the blueprint.json flag flips (16 retired to rotary,
+29 new to full_mock, legacy wipe of W36/W37), build ONE pilot mock exam (W36, full
+Cambridge Flyers structure, 4-week cumulative sourcing, 6 new mock gates), and
+resume Wave 2/3 standard content with schedule-conflict pre-checks.
 
-**Status:** Round 64 deliverables packaged into `docs/review_packages/round64_partial_merge_and_mock_schedule.zip`. Awaiting Claude review.
+**Status:** Awaiting Round 65 package. Mock Exam content type is new — expect deeper
+review before any rollout beyond the single W36 pilot.
+## Round 65 — Mock Schedule Flags & W36 Pilot: APPROVED with 1 fix required
+
+Independently verified: commit 928d5fa2, zip hash, all 55 blueprint.json flag changes
+spot-checked at diff level (W37/W40/W76/W16 exact flag transitions confirmed, W150
+confirmed untouched), W36/W37 legacy wipe confirmed (named exports preserved, build
+clean), freeze guards clean, Wave 2/3 schedule crosscheck math independently
+re-verified correct.
+
+Read full W36 pilot mock exam content (listening/reading&writing/writing/speaking) —
+genuinely strong Cambridge Flyers-accurate pedagogical quality, good cumulative
+cross-week referencing (W33 safety rules cited in rw_part2).
+
+**Bug found:** speaking_hub.js Part 2 (info_exchange_cards) regressed to the dead
+card_a/card_b schema removed in Round 62 — the real UI components only read
+table_a/table_b. Would render as a broken/missing-data screen if merged as-is. Root
+cause is in the new generate_mock_exam_content.mjs generator (didn't inherit the
+Round 62 schema fix), so this would repeat across all 38 remaining mock weeks if
+not fixed at the generator level now.
+
+**Dispatched Round 66:** fix the generator + this file's schema, add Mock Gate 7
+(UI schema contract check) to prevent recurrence, re-verify, re-package. W36 mock
+exam NOT yet approved for merge — pending this fix. Blueprint flag changes and
+W36/W37 wipe ARE approved and already live (verified safe, no rollback needed).

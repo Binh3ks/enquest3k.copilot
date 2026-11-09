@@ -1,9 +1,9 @@
 {
-  "commit": "000f2dc07ab3bb272ae9dba10d522b7b98dde3d5",
-  "git_commit": "000f2dc07ab3bb272ae9dba10d522b7b98dde3d5",
-  "shortCommit": "000f2dc0",
-  "message": "feat(curriculum): merge approved wave 1 weeks W39, W41, W43, W45, W46 & map 39-week mock schedule [multi-agent-review]",
-  "builtAt": "2026-11-09T02:55:09.903Z",
-  "build_timestamp": "2026-11-09T02:55:09.903Z",
+  "commit": "928d5fa299ea63d5add72e3928c7892d37d04d52",
+  "git_commit": "928d5fa299ea63d5add72e3928c7892d37d04d52",
+  "shortCommit": "928d5fa2",
+  "message": "feat(curriculum): apply 39-week mock flags, wipe W36/W37 stubs, build W36 pilot mock [multi-agent-review]",
+  "builtAt": "2026-11-09T07:53:40.426Z",
+  "build_timestamp": "2026-11-09T07:53:40.426Z",
   "env": "production"
 }

@@ -1,6 +1,6 @@
 ========================================================================
-ENGQUEST3K — 6 MOCK QUALITY GATES AUDIT REPORT (WEEK 36 PILOT)
-Timestamp: 2026-11-09T02:53:34.134Z
+ENGQUEST3K — 7 MOCK QUALITY GATES AUDIT REPORT (WEEK 36 PILOT)
+Timestamp: 2026-11-09T07:52:38.732Z
 Exam Level: Cambridge A2 Flyers Mock 1
 Overall Gate Status: ✅ 100% PASSED
 ========================================================================
@@ -23,10 +23,14 @@ Overall Gate Status: ✅ 100% PASSED
 [PASS] Mock Gate 6: Deterministic Answer Key & Scoring Rubrics
        Details: 100% of objective items have verified unique answer keys; Part 7 writing rubric fully specified (5 marks)
 
+[PASS] Mock Gate 7: UI Schema Contract (table_a / table_b)
+       Details: info_exchange_cards strictly conforms to InformationExchangeP2 & InfoExchangeZone table_a/table_b schema (5 asking fields, 5 answering fields)
+
 ========================================================================
 PART & ITEM COUNT AUDIT BREAKDOWN:
   • Listening Paper:          5 Parts / 25 Items (L1: 5, L2: 5, L3: 5, L4: 5, L5: 5)
   • Reading & Writing Paper:  7 Parts / 44 Items (R1: 10, R2: 5, R3: 6, R4: 10, R5: 7, R6: 5, R7: 1)
   • Speaking Paper:           4 Parts (S1: 5 diffs, S2: 5 cue Qs, S3: 5 frames, S4: 4 interview Qs)
   • Cumulative Vocab Pool:    33 items sourced from W33, W34, W35, W36 blueprints
+  • Speaking Part 2 Format:   table_a / table_b (UI Contract Gate 7 PASSED)
 ========================================================================

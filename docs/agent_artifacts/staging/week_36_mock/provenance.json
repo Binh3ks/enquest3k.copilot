@@ -3,7 +3,7 @@
   "examType": "Cambridge Young Learners A2 Flyers Mock 1",
   "stage": 1,
   "mode": "full_mock",
-  "generatedAt": "2026-11-09T02:48:24.454Z",
+  "generatedAt": "2026-11-09T07:50:14.661Z",
   "generator": "scripts/generate_mock_exam_content.mjs",
   "architecture": "Full 16-Part Cambridge YLE Flyers Paper (5L + 7RW + 4S)",
   "cumulativeSources": {

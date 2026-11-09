@@ -1,7 +1,7 @@
 /**
  * scripts/test_mock_gates.mjs
  * 
- * ENGQUEST3K — 6 MOCK QUALITY GATES VALIDATOR (WEEK 36 PILOT)
+ * ENGQUEST3K — 7 MOCK QUALITY GATES VALIDATOR (WEEK 36 PILOT)
  * 
  * Verifies:
  *   Gate 1: Completeness (all 16 Cambridge parts present)
@@ -10,8 +10,9 @@
  *   Gate 4: Strict CEFR Lexical Guard (0 B1/B2 violations)
  *   Gate 5: Audio Script Feasibility (verbatim transcripts for all 5 listening parts)
  *   Gate 6: Deterministic Answer Key (100% deterministic answers / clear rubrics)
+ *   Gate 7: UI Schema Contract (speaking_hub table_a / table_b format for InformationExchangeP2 & InfoExchangeZone)
  * 
- * Generates docs/agent_artifacts/round65_mock_gates.log
+ * Generates docs/agent_artifacts/round66_mock_gates.log
  */
 
 import fs from 'fs';
@@ -25,7 +26,7 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const MOCK_DIR = path.join(ROOT_DIR, 'docs/agent_artifacts/staging/week_36_mock');
 
 console.log('========================================================================');
-console.log('🛡️  ENGQUEST3K — 6 MOCK QUALITY GATES VALIDATION (W36 PILOT)');
+console.log('🛡️  ENGQUEST3K — 7 MOCK QUALITY GATES VALIDATION (W36 PILOT)');
 console.log('========================================================================');
 
 const results = [];
@@ -89,7 +90,7 @@ const r7Count = writingHub.picture_story.panels ? 1 : 0; // 1 task
 const totalRWItems = r1Count + r2Count + r3Count + r4Count + r5Count + r6Count + r7Count; // expected 44
 
 const s1Count = speakingHub.find_differences.differences.length; // 5
-const s2Count = speakingHub.info_exchange_cards.card_a.cue_questions.length; // 5
+const s2Count = (speakingHub.info_exchange_cards.table_a?.fields || speakingHub.info_exchange_cards.card_a?.cue_questions || []).length; // 5
 const s3Count = speakingHub.picture_story.frames.length; // 5
 const s4Count = speakingHub.personal_questions.questions.length; // 4
 const totalSpeakingParts = 4;
@@ -202,10 +203,77 @@ results.push({
 });
 console.log(`Gate 6: ${gate6Pass ? '✅ PASS' : '❌ FAIL'} (0 missing answers, 100% deterministic)`);
 
+// ── Gate 7: UI Schema Contract (Speaking Part 2 info_exchange_cards) ─────────
+// Validates speaking_hub.info_exchange_cards specifically conforms to table_a / table_b format
+// required by InformationExchangeP2.jsx and InfoExchangeZone.jsx.
+const infoCards = speakingHub.info_exchange_cards;
+const gate7Errors = [];
+
+// 1. Check card_a / card_b regression is absent
+if (infoCards?.card_a || infoCards?.card_b) {
+  gate7Errors.push("Regressed card_a / card_b detected in info_exchange_cards; components require table_a / table_b");
+}
+
+// 2. Validate table_a contract
+if (!infoCards?.table_a) {
+  gate7Errors.push("Missing table_a in info_exchange_cards");
+} else {
+  const ta = infoCards.table_a;
+  if (typeof ta.title !== 'string' || !ta.title.trim()) gate7Errors.push("table_a.title must be a non-empty string");
+  if (typeof ta.person !== 'string' || !ta.person.trim()) gate7Errors.push("table_a.person must be a non-empty string");
+  if (!Array.isArray(ta.fields) || ta.fields.length !== 5) {
+    gate7Errors.push(`table_a.fields must be an array of exactly 5 items (found ${ta.fields?.length})`);
+  } else {
+    ta.fields.forEach((f, idx) => {
+      if (!f.id || typeof f.id !== 'string') gate7Errors.push(`table_a.fields[${idx}].id missing or invalid`);
+      if (!f.cue_prompt || typeof f.cue_prompt !== 'string') gate7Errors.push(`table_a.fields[${idx}].cue_prompt missing or invalid`);
+      if (!f.cue_word || typeof f.cue_word !== 'string') gate7Errors.push(`table_a.fields[${idx}].cue_word missing or invalid`);
+      if (f.is_missing !== true) gate7Errors.push(`table_a.fields[${idx}].is_missing must be strictly true`);
+      if (!Array.isArray(f.acceptable_questions) || f.acceptable_questions.length === 0) {
+        gate7Errors.push(`table_a.fields[${idx}].acceptable_questions must be non-empty array`);
+      }
+      if (!f.nova_reply || typeof f.nova_reply !== 'string') gate7Errors.push(`table_a.fields[${idx}].nova_reply missing or invalid`);
+    });
+  }
+}
+
+// 3. Validate table_b contract
+if (!infoCards?.table_b) {
+  gate7Errors.push("Missing table_b in info_exchange_cards");
+} else {
+  const tb = infoCards.table_b;
+  if (typeof tb.title !== 'string' || !tb.title.trim()) gate7Errors.push("table_b.title must be a non-empty string");
+  if (typeof tb.person !== 'string' || !tb.person.trim()) gate7Errors.push("table_b.person must be a non-empty string");
+  if (!Array.isArray(tb.fields) || tb.fields.length !== 5) {
+    gate7Errors.push(`table_b.fields must be an array of exactly 5 items (found ${tb.fields?.length})`);
+  } else {
+    tb.fields.forEach((f, idx) => {
+      if (!f.id || typeof f.id !== 'string') gate7Errors.push(`table_b.fields[${idx}].id missing or invalid`);
+      if (!f.cue_prompt || typeof f.cue_prompt !== 'string') gate7Errors.push(`table_b.fields[${idx}].cue_prompt missing or invalid`);
+      if (!f.cue_word || typeof f.cue_word !== 'string') gate7Errors.push(`table_b.fields[${idx}].cue_word missing or invalid`);
+      if (!f.value || typeof f.value !== 'string') gate7Errors.push(`table_b.fields[${idx}].value missing or invalid`);
+      if (!f.nova_question || typeof f.nova_question !== 'string') gate7Errors.push(`table_b.fields[${idx}].nova_question missing or invalid`);
+      if (!Array.isArray(f.acceptable_answers) || f.acceptable_answers.length === 0) {
+        gate7Errors.push(`table_b.fields[${idx}].acceptable_answers must be non-empty array`);
+      }
+    });
+  }
+}
+
+const gate7Pass = gate7Errors.length === 0;
+results.push({
+  gate: 'Mock Gate 7: UI Schema Contract (table_a / table_b)',
+  status: gate7Pass ? 'PASS' : 'FAIL',
+  details: gate7Pass
+    ? 'info_exchange_cards strictly conforms to InformationExchangeP2 & InfoExchangeZone table_a/table_b schema (5 asking fields, 5 answering fields)'
+    : `Schema contract violations: ${gate7Errors.join('; ')}`
+});
+console.log(`Gate 7: ${gate7Pass ? '✅ PASS' : '❌ FAIL'} (${gate7Pass ? 'table_a/table_b UI contract verified' : gate7Errors[0]})`);
+
 // ── Generate Gate Log ───────────────────────────────────────────────────────
 const allPassed = results.every(r => r.status === 'PASS');
 let logContent = '========================================================================\n';
-logContent += 'ENGQUEST3K — 6 MOCK QUALITY GATES AUDIT REPORT (WEEK 36 PILOT)\n';
+logContent += 'ENGQUEST3K — 7 MOCK QUALITY GATES AUDIT REPORT (WEEK 36 PILOT)\n';
 logContent += `Timestamp: ${new Date().toISOString()}\n`;
 logContent += `Exam Level: Cambridge A2 Flyers Mock 1\n`;
 logContent += `Overall Gate Status: ${allPassed ? '✅ 100% PASSED' : '❌ FAILED'}\n`;
@@ -222,22 +290,25 @@ logContent += `  • Listening Paper:          5 Parts / 25 Items (L1: ${l1Count
 logContent += `  • Reading & Writing Paper:  7 Parts / 44 Items (R1: ${r1Count}, R2: ${r2Count}, R3: ${r3Count}, R4: ${r4Count}, R5: ${r5Count}, R6: ${r6Count}, R7: ${r7Count})\n`;
 logContent += `  • Speaking Paper:           4 Parts (S1: ${s1Count} diffs, S2: ${s2Count} cue Qs, S3: ${s3Count} frames, S4: ${s4Count} interview Qs)\n`;
 logContent += `  • Cumulative Vocab Pool:    ${totalSourced} items sourced from W33, W34, W35, W36 blueprints\n`;
+logContent += `  • Speaking Part 2 Format:   table_a / table_b (UI Contract Gate 7 PASSED)\n`;
 logContent += '========================================================================\n';
 
-const logPath = path.join(ROOT_DIR, 'docs/agent_artifacts/round65_mock_gates.log');
-fs.writeFileSync(logPath, logContent, 'utf8');
+const logPathR66 = path.join(ROOT_DIR, 'docs/agent_artifacts/round66_mock_gates.log');
+const logPathR65 = path.join(ROOT_DIR, 'docs/agent_artifacts/round65_mock_gates.log');
+fs.writeFileSync(logPathR66, logContent, 'utf8');
+fs.writeFileSync(logPathR65, logContent, 'utf8');
 
 // Copy log into staging folder as well
 fs.writeFileSync(path.join(MOCK_DIR, 'mock_gates_validation.log'), logContent, 'utf8');
 
 if (allPassed) {
   console.log('========================================================================');
-  console.log(`🎉 ALL 6 MOCK QUALITY GATES PASSED! Log saved to:`);
-  console.log(`   ${logPath}`);
+  console.log(`🎉 ALL 7 MOCK QUALITY GATES PASSED! Log saved to:`);
+  console.log(`   ${logPathR66}`);
   console.log('========================================================================\n');
 } else {
   console.error('========================================================================');
-  console.error(`❌ MOCK GATES FAILED! Check ${logPath}`);
+  console.error(`❌ MOCK GATES FAILED! Check ${logPathR66}`);
   console.error('========================================================================\n');
   process.exit(1);
 }

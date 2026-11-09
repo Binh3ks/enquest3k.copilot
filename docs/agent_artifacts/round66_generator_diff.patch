@@ -1,0 +1,173 @@
+diff --git a/scripts/generate_mock_exam_content.mjs b/scripts/generate_mock_exam_content.mjs
+index 694bdcd0..8182bf45 100644
+--- a/scripts/generate_mock_exam_content.mjs
++++ b/scripts/generate_mock_exam_content.mjs
+@@ -490,37 +490,140 @@ export const speakingHubData = {
+     ]
+   },
+ 
+-  // ── Part 2: Information Exchange (Solo-AI Cue Cards) ──────────────────────
++  // ── Part 2: Information Exchange (Solo-AI Cue Cards — table_a / table_b) ──
+   info_exchange_cards: {
+-    part: 2,
+-    instructions: "Cambridge Speaking Part 2 Solo-AI Format. Card A: Student asks Nova questions using cue words. Card B: Student answers Nova's questions using card data.",
+-    card_a: {
+-      role: "Student asks questions / Nova answers",
+-      topic: "David's Mountain Camp",
+-      cue_questions: [
+-        { id: 1, cue: "Where / camp?", question: "Where is David's mountain camp?", expected_answer: "It is in Pine Valley near Eagle Peak." },
+-        { id: 2, cue: "What / pack?", question: "What must campers pack in their backpacks?", expected_answer: "They must pack a warm jacket and a flashlight." },
+-        { id: 3, cue: "How many / tents?", question: "How many tents are there at the camp?", expected_answer: "There are six green tents." },
+-        { id: 4, cue: "What time / breakfast?", question: "What time is breakfast served?", expected_answer: "Breakfast is served at half past seven in the morning." },
+-        { id: 5, cue: "Favorite activity?", question: "What is the campers' favorite activity?", expected_answer: "Their favorite activity is singing around the warm campfire." }
++    table_a: {
++      title: "David's Mountain Camp",
++      subtitle: "Candidate's Question Card (Ask Examiner)",
++      person: "David",
++      fields: [
++        {
++          id: "field_a1",
++          cue_prompt: "where / mountain camp?",
++          cue_word: "where",
++          is_missing: true,
++          acceptable_questions: [
++            "Where is David's mountain camp?",
++            "Where is the mountain camp?",
++            "Where is the camp located?"
++          ],
++          nova_reply: "It is in Pine Valley near Eagle Peak."
++        },
++        {
++          id: "field_a2",
++          cue_prompt: "what / pack in backpack?",
++          cue_word: "what",
++          is_missing: true,
++          acceptable_questions: [
++            "What must campers pack in their backpacks?",
++            "What do campers pack in their backpacks?",
++            "What do they need to pack?"
++          ],
++          nova_reply: "They must pack a warm jacket and a flashlight."
++        },
++        {
++          id: "field_a3",
++          cue_prompt: "how many / tents at camp?",
++          cue_word: "how many",
++          is_missing: true,
++          acceptable_questions: [
++            "How many tents are there at the camp?",
++            "How many tents are there?",
++            "How many green tents are at the camp?"
++          ],
++          nova_reply: "There are six green tents."
++        },
++        {
++          id: "field_a4",
++          cue_prompt: "what time / breakfast served?",
++          cue_word: "what time",
++          is_missing: true,
++          acceptable_questions: [
++            "What time is breakfast served?",
++            "What time do they have breakfast?",
++            "When is breakfast served?"
++          ],
++          nova_reply: "Breakfast is served at half past seven in the morning."
++        },
++        {
++          id: "field_a5",
++          cue_prompt: "what / favorite activity?",
++          cue_word: "what",
++          is_missing: true,
++          acceptable_questions: [
++            "What is the campers' favorite activity?",
++            "What is their favorite activity?",
++            "What activity do campers like best?"
++          ],
++          nova_reply: "Their favorite activity is singing around the warm campfire."
++        }
+       ]
+     },
+-    card_b: {
+-      role: "Nova asks questions / Student answers",
+-      topic: "Sarah's Forest Cabin",
+-      data: {
+-        location: "Silver River Forest, behind the old mill",
+-        equipment_provided: "Sleeping bags, trail maps, and first-aid kits",
+-        number_of_rooms: "Four cosy wooden bedrooms",
+-        dinner_time: "Quarter to six in the evening",
+-        popular_hobby: "Taking photographs of wild woodland birds"
+-      },
+-      questions_from_nova: [
+-        { id: 1, question: "Where is Sarah's forest cabin?", answer_cue: "It is located in Silver River Forest, behind the old mill." },
+-        { id: 2, question: "What equipment is provided for the scouts?", answer_cue: "They provide sleeping bags, trail maps, and first-aid kits." },
+-        { id: 3, question: "How many bedrooms are there inside the cabin?", answer_cue: "There are four cosy wooden bedrooms." },
+-        { id: 4, question: "What time do they have dinner?", answer_cue: "Dinner is served at quarter to six in the evening." },
+-        { id: 5, question: "What is the most popular hobby at the cabin?", answer_cue: "The most popular hobby is taking photographs of wild birds." }
++    table_b: {
++      title: "Sarah's Forest Cabin",
++      subtitle: "Information Card (Answer Examiner's Questions)",
++      person: "Sarah",
++      fields: [
++        {
++          id: "field_b1",
++          cue_prompt: "where / Sarah's cabin?",
++          cue_word: "where",
++          value: "Silver River Forest, behind the old mill.",
++          nova_question: "Where is Sarah's forest cabin?",
++          acceptable_answers: [
++            "It is located in Silver River Forest, behind the old mill.",
++            "Silver River Forest, behind the old mill.",
++            "In Silver River Forest behind the old mill."
++          ]
++        },
++        {
++          id: "field_b2",
++          cue_prompt: "what equipment / provided?",
++          cue_word: "what",
++          value: "Sleeping bags, trail maps, and first-aid kits.",
++          nova_question: "What equipment is provided for the scouts?",
++          acceptable_answers: [
++            "They provide sleeping bags, trail maps, and first-aid kits.",
++            "Sleeping bags, trail maps, and first-aid kits.",
++            "Sleeping bags and first-aid kits."
++          ]
++        },
++        {
++          id: "field_b3",
++          cue_prompt: "how many / bedrooms inside cabin?",
++          cue_word: "how many",
++          value: "Four cosy wooden bedrooms.",
++          nova_question: "How many bedrooms are there inside the cabin?",
++          acceptable_answers: [
++            "There are four cosy wooden bedrooms.",
++            "Four cosy wooden bedrooms.",
++            "Four bedrooms."
++          ]
++        },
++        {
++          id: "field_b4",
++          cue_prompt: "what time / dinner served?",
++          cue_word: "what time",
++          value: "Quarter to six in the evening.",
++          nova_question: "What time do they have dinner?",
++          acceptable_answers: [
++            "Dinner is served at quarter to six in the evening.",
++            "Quarter to six in the evening.",
++            "At quarter to six."
++          ]
++        },
++        {
++          id: "field_b5",
++          cue_prompt: "what / popular hobby?",
++          cue_word: "what",
++          value: "Taking photographs of wild woodland birds.",
++          nova_question: "What is the most popular hobby at the cabin?",
++          acceptable_answers: [
++            "The most popular hobby is taking photographs of wild birds.",
++            "Taking photographs of wild woodland birds.",
++            "Taking photographs of wild birds."
++          ]
++        }
+       ]
+     }
+   },
