@@ -1,0 +1,103 @@
+====================================================================================================
+🗓️ BẢNG PHÂN BỔ 31 TUẦN MOCK SAU W36 & PHÂN TÍCH TÁC ĐỘNG HỆ THỐNG (ROUND 75)
+====================================================================================================
+
+### 1. BẢNG TOÀN DIỆN 31 BÀI MOCK TỪ SAU W36 ĐẾN W156 (TASK 10)
+
+| n | Sau Tuần Nội Dung | Định Dạng | Hiện Trạng Trong Repo | Tên Cũ Trong Repo | Đề Xuất Mã Định Danh Mới |
+| :---: | :---: | :---: | :--- | :--- | :--- |
+| **1** | Sau W36 | Flyers (A2) | Đã merge vào week_36 prod | Pilot Flyers Mock 1 / FULL MOCK 04 | `mock_flyers_01 (sau W36)` |
+| **2** | Sau W40 | Flyers (A2) | Staged tại staging/week_40_mock | Flyers Mock Batch 2 (W40) | `mock_flyers_02 (sau W40)` |
+| **3** | Sau W44 | Flyers (A2) | Staged tại staging/week_44_mock | Flyers Mock Batch 2 (W44) | `mock_flyers_03 (sau W44)` |
+| **4** | Sau W48 | Flyers (A2) | Staged tại staging/week_48_mock | Flyers Mock Batch 2 (W48) | `mock_flyers_04 (sau W48)` |
+| **5** | Sau W52 | Flyers (A2) | Chưa biên soạn | FULL MOCK 07 (W52) | `mock_flyers_05 (sau W52)` |
+| **6** | Sau W56 | Flyers (A2) | Chưa biên soạn | W56 mock | `mock_flyers_06 (sau W56)` |
+| **7** | Sau W60 | Flyers (A2) | Chưa biên soạn | W60 mock | `mock_flyers_07 (sau W60)` |
+| **8** | Sau W64 | Flyers (A2) | Chưa biên soạn | W64 mock | `mock_flyers_08 (sau W64)` |
+| **9** | Sau W68 | Flyers (A2) | Chưa biên soạn | W68 mock | `mock_flyers_09 (sau W68)` |
+| **10** | Sau W72 | Flyers (A2) | Chưa biên soạn | FULL MOCK 11 (OFFICIAL FLYERS) | `mock_flyers_10 (Official Flyers Gate)` |
+| **11** | Sau W76 | PET (B1) | Đã merge vào week_76 prod | Pilot PET Mock 1 (W76) | `mock_pet_01 (sau W76)` |
+| **12** | Sau W80 | PET (B1) | Đã merge vào week_80 prod | PET Mock 2 (W80) | `mock_pet_02 (sau W80)` |
+| **13** | Sau W84 | PET (B1) | Chưa biên soạn | W84 mock | `mock_pet_03 (sau W84)` |
+| **14** | Sau W88 | PET (B1) | Chưa biên soạn | W88 mock | `mock_pet_04 (sau W88)` |
+| **15** | Sau W92 | PET (B1) | Chưa biên soạn | FULL MOCK 15 (W92) | `mock_pet_05 (sau W92)` |
+| **16** | Sau W96 | PET (B1) | Chưa biên soạn | W96 mock | `mock_pet_06 (sau W96)` |
+| **17** | Sau W100 | PET (B1) | Chưa biên soạn | W100 mock | `mock_pet_07 (sau W100)` |
+| **18** | Sau W104 | PET (B1) | Chưa biên soạn | W104 mock | `mock_pet_08 (sau W104)` |
+| **19** | Sau W108 | PET (B1) | Chưa biên soạn | W108 mock | `mock_pet_09 (sau W108)` |
+| **20** | Sau W112 | PET (B1) | Chưa biên soạn | FULL MOCK 19 (OFFICIAL PET) | `mock_pet_10 (Official PET Gate)` |
+| **21** | Sau W116 | PET / B1+ Academic | Chưa biên soạn | W116 mock | `mock_pet_11 (sau W116)` |
+| **22** | Sau W120 | PET / B1+ Academic | Chưa biên soạn | Phase 2 Graduation (W120) | `mock_pet_12 (sau W120)` |
+| **23** | Sau W124 | PET / B1+ Academic | Chưa biên soạn | W124 mock | `mock_pet_13 (sau W124)` |
+| **24** | Sau W128 | PET / B1+ Academic | Chưa biên soạn | W128 mock | `mock_pet_14 (sau W128)` |
+| **25** | Sau W132 | PET / B1+ Academic | Chưa biên soạn | FULL MOCK 21 (B1+ Mock 2) | `mock_pet_15 (sau W132)` |
+| **26** | Sau W136 | PET / B1+ Academic | Chưa biên soạn | W136 mock | `mock_pet_16 (sau W136)` |
+| **27** | Sau W140 | PET / B1+ Academic | Chưa biên soạn | W140 mock | `mock_pet_17 (sau W140)` |
+| **28** | Sau W144 | PET / B1+ Academic | Chưa biên soạn | W144 mock | `mock_pet_18 (sau W144)` |
+| **29** | Sau W148 | PET / B1+ Academic | Chưa biên soạn | W148 mock | `mock_pet_19 (sau W148)` |
+| **30** | Sau W152 | PET / B1+ Academic | Chưa biên soạn | FULL MOCK 25 (W152) | `mock_pet_20 (sau W152)` |
+| **31** | Sau W156 | PET / B1+ Academic | Chưa biên soạn | FULL MOCK 26 / GRADUATION | `mock_pet_21 (Final Capstone Mock)` |
+
+### 2. CÁC TUẦN NỘI DUNG ĐANG BỊ CHIẾM BỞI MOCK & ĐIỀU CHUYỂN (TASK 11)
+
+| Tuần Nội Dung | Vị Trí Hiện Tại | Mock Đang Chiếm | Mock Chuyển Đi Đâu | Nguyên Văn Source B Cần Viết Lại Tuần Nội Dung |
+| :---: | :--- | :--- | :--- | :--- |
+| **W36** | Merged trong `src/data/weeks/week_36` | Pilot Flyers Mock 1 | Sang ô độc lập `mock_flyers_01` (sau W36) | L315-321: `Review & Project 3: "My Adventure Book"` • Topic: Creating a mini-book • Project: Write and illustrate 4-page adventure • Grammar: Review all irregular past verbs • Math: Story problems |
+| **W40** | Staged trong `staging/week_40_mock` | Flyers Mock Batch 2 | Sang ô độc lập `mock_flyers_02` (sau W40) | L341-345: `Review & Mini-Debate 1 (Animals)` • Topic: Which animal is the ultimate survivor? • Debate focus: Stating opinions and simple reasons • Grammar: Comparatives, Superlatives • Math: Logic grid puzzle |
+| **W44** | Staged trong `staging/week_44_mock` | Flyers Mock Batch 2 | Sang ô độc lập `mock_flyers_03` (sau W44) | L367-371: `The "Minus" Machine (Subtraction Language)` • Topic: Reading math stories (e.g., "5 birds, 2 fly away") • Focus: Subtraction vocabulary (left, remaining, take away) • Math: Subtraction Bar Models |
+| **W48** | Staged trong `staging/week_48_mock` | Flyers Mock Batch 2 | Sang ô độc lập `mock_flyers_04` (sau W48) | L391-396: `Time Travelers (Time & Clocks)` • Topic: Telling time and daily schedules • Focus: Telling time (half past, quarter to) • Grammar: Time prepositions (at, in, on) • Math: Elapsed time word problems |
+| **W76** | Merged trong `src/data/weeks/week_76` | Pilot PET Mock 1 | Sang ô độc lập `mock_pet_01` (sau W76) | L605-612: `History/ELA: Explorers / Math: Map Scales` • Topic: Great Voyages • Focus: Navigation tools, reading routes • Grammar: Past Continuous vs. Past Simple • Vocab: navigate, voyage, compass, route, discovery, journal, expedition, sail |
+| **W80** | Merged trong `src/data/weeks/week_80` | PET Mock 2 | Sang ô độc lập `mock_pet_02` (sau W80) | L632-636: `Review & Micro-Debate 2 (Space vs. Earth)` • Topic: Space Exploration vs. Earth Fix • Skill: Rebuttal Intro ("Yes, but...") • Grammar: Review Passive Voice, Conditionals, Comparatives • Vocab: space, earth, money, spend, fix, problem, important |
+
+### 3. VAI TRÒ CỦA GAP-FILL W37, W42, W47 (ROUND 69) THEO QUY TẮC MỚI (TASK 12)
+
+- **Bối cảnh Round 69:** W37, W42, W47 được gọi là "gap-fill" vì trong lịch mock cũ (SOP §4), chúng từng là các tuần mock ("FULL MOCK 04, 05, 06"). Khi Round 64 đổi mock sang chu kỳ chia hết cho 4 (W40, W44, W48), các tuần này bị để trống.
+- **Theo quy tắc mới của Owner:** Source B là nguồn sự thật tối thượng. W37 (`Living vs. Non-Living`), W42 (`The Water Journey`), W47 (`Inventions & Simple Machines / Place Value`) là **CÁC TUẦN NỘI DUNG CHÍNH QUY 100% CỦA KHUNG CT**, hoàn toàn KHÔNG PHẢI là "gap-fill" tạm bợ!
+- **Kết luận:** Nội dung của W37, W42, W47 được bảo tồn vĩnh viễn là tuần nội dung rotary chuẩn.
+
+### 4. DANH MỤC 28 HÀNG "★ FULL MOCK" TRONG DIGITAL MAP CẦN GỠ BỎ (TASK 13)
+
+28 hàng trong `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md` cần gỡ bỏ nhãn FULL MOCK khỏi cột tuần nội dung:
+1. `W16` (L73: ★ FULL MOCK 01 Starters) -> Trả về Rotary Week "Sports Commentary"
+2. `W24` (L89: ★ FULL MOCK 02 Movers) -> Trả về Rotary Week "Feelings in the Past"
+3. `W32` (L97: ★ FULL MOCK 03 Movers) -> Trả về Rotary Week "The Busy Day"
+4. `W37` (L110: ★ FULL MOCK 04 Flyers) -> Trả về Rotary Week "Living vs. Non-Living"
+5. `W42` (L115: ★ FULL MOCK 05 Flyers) -> Trả về Rotary Week "The Water Journey"
+6. `W47` (L120: ★ FULL MOCK 06 Flyers) -> Trả về Rotary Week "Big Numbers / Inventions"
+7. `W52` (L125: ★ FULL MOCK 07 Flyers) -> Trả về Rotary Week "Have You Ever Bingo"
+8. `W57` (L138: ★ FULL MOCK 08 Flyers) -> Trả về Rotary Week "ELA: Problem & Solution"
+9. `W62` (L143: ★ FULL MOCK 09 Flyers) -> Trả về Rotary Week "ELA: The Movie Trailer"
+10. `W67` (L148: ★ FULL MOCK 10 Flyers) -> Trả về Rotary Week "ELA: The OREO Structure"
+11. `W72` (L153: ★ FULL MOCK 11 Flyers) -> Trả về Rotary Week "Science/ELA: Photosynthesis"
+12. `W77` (L168: ★ FULL MOCK 12 PET) -> Trả về Rotary Week "World Landmarks"
+13. `W82` (L173: ★ FULL MOCK 13 PET) -> Trả về Rotary Week "The Travel Vlogger"
+14. `W87` (L178: ★ FULL MOCK 14 PET) -> Trả về Rotary Week "Human Body"
+15. `W92` (L183: ★ FULL MOCK 15 PET) -> Trả về Rotary Week "Community Helpers"
+16. `W97` (L196: ★ FULL MOCK 16 PET) -> Trả về Rotary Week "Government"
+17. `W102` (L201: ★ FULL MOCK 17 PET) -> Trả về Rotary Week "Goods & Services"
+18. `W107` (L206: ★ FULL MOCK 18 PET) -> Trả về Rotary Week "The Note-Taker"
+19. `W112` (L211: ★ FULL MOCK 19 PET) -> Trả về Rotary Week "The Editor's Eye"
+20. `W117` (L216: ★ FULL MOCK Presentation A) -> Trả về Rotary Week "The Knowledge Fair"
+21. `W127` (L236: ★ FULL MOCK 20 B1+) -> Trả về Rotary Week "Rebuttal Practice"
+22. `W132` (L241: ★ FULL MOCK 21 B1+) -> Trả về Rotary Week "Review & Math Logic 4"
+23. `W137` (L246: ★ FULL MOCK 22 B1+) -> Trả về Rotary Week "Editing & Polishing"
+24. `W142` (L251: ★ FULL MOCK 23 B1+) -> Trả về Rotary Week "Geometry Review"
+25. `W147` (L264: ★ FULL MOCK 24 B1+) -> Trả về Rotary Week "Advanced Thesis Writing"
+26. `W152` (L269: ★ FULL MOCK 25 B1+) -> Trả về Rotary Week "Genre Review: Narrative"
+27. `W156` (L273: ★ FULL MOCK 26 Graduation) -> Trả về Rotary Week "Graduation Ceremony"
+28. `W122` (SOP §4) -> Trả về Rotary Week "Drafting Counterarguments"
+
+### 5. PHÂN TÍCH TÁC ĐỘNG HỆ THỐNG TOÀN DIỆN (TASK 14)
+
+1. **Định danh dữ liệu (Data Naming & Folder Structure):**
+   - Tách bạch cấu trúc lưu trữ: Tuần nội dung lưu tại `src/data/weeks/week_XX/` (156 folders).
+   - Bài thi Mock lưu tại không gian riêng: `src/data/mocks/mock_flyers_XX/`, `mock_pet_XX/` hoặc `week_XX_mock/`.
+2. **Bản đồ Hành trình & Chỉ số TOTAL_TRIPS:**
+   - Chỉ số `TOTAL_TRIPS` trong router và gamification engine sẽ nâng từ 156 lên 190 Trips (156 content + 31 mock Flyers/PET + 3 mock Starters/Movers).
+   - Quest Map và Passport sẽ render các node Mock dưới dạng "Trạm Khảo Thí Đặc Biệt" (Checkpoint / Milestone) chèn giữa các chặng hành trình.
+3. **Cửa sổ Nguồn Từ Vựng Tích Lũy (Cumulative Vocab Window):**
+   - Không còn hiện tượng mock "ăn thịt" từ vựng của chính nó. Mỗi bài mock tổng hợp từ vựng của đúng 4 tuần nội dung đứng trước nó (ví dụ: `mock_flyers_01` tổng hợp W33-W36; `mock_flyers_02` tổng hợp W37-W40).
+4. **Quy tắc phân định định dạng (≤72 Flyers, ≥76 PET):**
+   - Đến hết tuần nội dung W72: Gồm đúng 10 bài Flyers Mock ($n = 1 \dots 10$). Bài thi sau W72 đóng vai trò "Official Flyers Gate".
+   - Từ sau tuần nội dung W76 trở đi: Gồm đúng 21 bài PET Mock ($n = 11 \dots 31$).
+5. **Tổng tuần lịch toàn khóa:** Đúng 190 tuần lịch.

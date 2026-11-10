@@ -1,0 +1,29 @@
+====================================================================================================
+📝 ĐỀ XUẤT SOURCE A PATCH V2 & CẤU TRÚC NHÃN BLUEPRINT (ROUND 75 - CHỈ ĐỀ XUẤT) [TASKS 17, 18]
+### 1. NGUYÊN TẮC CỐT LÕI CỦA SOURCE A PATCH V2 (TASK 17)
+
+1. **100% Nguyên văn Source B Part II:** Mọi trường `theme`, `topicEn`, `clilTopic`, `grammarFocus`, `mathStrand`, `syllabusWords` lấy nguyên văn từ `NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` (Part II, L123–1205).
+2. **Gỡ bỏ hoàn toàn cờ FULL MOCK khỏi tuần nội dung:** 156 tuần trong Digital Map là 156 tuần nội dung độc lập. Các bài mock được chuyển thành các mốc khảo thí độc lập (Milestone Checkpoints).
+3. **Tuần 129–132 chuẩn hóa thành "Review & Math Logic Cycle":** Theo đúng Source B dòng 1007–1008 (`Focus: Consolidate writing skills + Math Fractions/Decimals review`).
+4. **Đánh dấu rõ ràng các điểm im lặng bằng nhãn SUPPLEMENT:** Ở các tuần mà Source B chỉ ghi tên chu kỳ (như W130, W131, W132) hoặc im lặng về toán/vocab, nội dung bổ sung bắt buộc phải được đánh dấu nhãn `SUPPLEMENT_OWNER_APPROVED`, nêu rõ cơ sở sư phạm và người phê duyệt, tuyệt đối không được tự ý sáng tác trái với định hướng của Source B.
+
+### 2. ĐỀ XUẤT CẤU TRÚC NHÃN BLUEPRINT CHUẨN (TASK 18)
+
+Trong mỗi file `blueprint.json`, bổ sung metadata phân định nguồn gốc rõ ràng:
+
+```json
+{
+  "week_number": 129,
+  "source_b_status": "EXPLICIT", // hoặc "SUPPLEMENT_OWNER_APPROVED"
+  "source_b_provenance": {
+    "part": "PART_II",
+    "lines": "L1007-1008",
+    "raw_text": "• Weeks 129-132: Review & Math Logic Cycle\n  • Focus: Consolidate writing skills + Math Fractions/Decimals review."
+  },
+  "supplement_details": null // Hoặc nếu là SUPPLEMENT: {
+  //   "rationale": "Source B im lặng về tiêu đề con; bổ sung logic phân rã theo phê duyệt của Owner",
+  //   "approved_by": "Owner",
+  //   "approved_at": "2026-11-10"
+  // }
+}
+```

@@ -1,0 +1,75 @@
+=============================================================================================================================
+🔍 AUDIT DỮ LIỆU THẬT ROUND 75: SOURCE B (TIÊU ĐỀ & TOPIC) vs PRODUCTION & STAGED CONTENT
+Căn cứ: 100% AST/DOM parsing; Cột Toán đếm mảng AST; Theme so khớp 2 CỘT ĐỘC LẬP (So Tiêu đề & So Topic)
+=============================================================================================================================
+
+| Vị trí | Tuần | Source B Dòng | Source B Tiêu Đề (Title) | Source B Chủ Đề (Topic) | Theme File Thật (reading_hub) | So Với Tiêu Đề | So Với Topic | Vocab Khớp | Math Items | Phân Loại Tổng Hợp |
+| :---: | :---: | :---: | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+
+--- 1. CÁC TUẦN PRODUCTION TRONG SRC/DATA/WEEKS (22 TUẦN) ---
+| **PROD** | **W33** | L299 | The Mistake (Irregular Verbs 5: Accidents) | Accidents happen! | Corridor Safety & School Care | ❌ LỆCH | ❌ LỆCH | 6/6 (100%) | 5/5 | NGOẠI LỆ CHỦ Ý (W33 Frozen, Vocab 6/6, chỉ khác tiêu đề) |
+| **PROD** | **W34** | L304 | Storytelling Practice 1 (Fable) | The Lion and the Mouse | The Lion and the Mouse | ❌ LỆCH | ✅ EXACT | 7/7 (100%) | 5/5 | TOÀN VẸN (Pass) |
+| **PROD** | **W35** | L310 | Storytelling Practice 2 (Personal Recount) | The Best Day Ever | Storytelling Practice 2 (Personal Recount) | ✅ EXACT | ❌ LỆCH | 0 Source B words defined | 0/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (0/5 toán) |
+| **PROD** | **W36** | L315 | Review & Project 3: "My Adventure Book | Creating a mini-book | Review & Project 3: "My Adventure Book" | ✅ NORMALIZED | ⚠️ CẦN REVIEW | 0 Source B words defined | 0/5 | CẦN REVIEW (0/5 toán) |
+| **PROD** | **W37** | L323 | Living vs. Non-Living (Reasoning) | Investigating clues in nature | MISSING_IN_FILE | ❌ LỆCH | ❌ LỆCH | 0/9 (0%) | 0/5 | THIẾU FILE (Chưa có nội dung) |
+| **PROD** | **W38** | L329 | Animal Abilities (Modals) | Comparing animal abilities | Animal Abilities (Modals) | ✅ EXACT | ⚠️ CẦN REVIEW | 8/8 (100%) | 2/5 | CẦN REVIEW (2/5 toán) |
+| **PROD** | **W39** | L335 | Habitats (Persuasion Intro) | Matching animals to habitats | Habitats (Persuasion Intro) | ✅ EXACT | ⚠️ CẦN REVIEW | 7/7 (100%) | 2/5 | CẦN REVIEW (2/5 toán) |
+| **PROD** | **W41** | L347 | Life Cycles (Process) | Butterfly or Frog Life Cycle | Life Cycles (Process) | ✅ EXACT | ⚠️ CẦN REVIEW | 7/7 (100%) | 2/5 | CẦN REVIEW (2/5 toán) |
+| **PROD** | **W43** | L361 | The "Plus" Machine (Addition Language) | Reading math stories | The "Plus" Machine (Addition Language) | ✅ EXACT | ❌ LỆCH | 6/6 (100%) | 2/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (2/5 toán) |
+| **PROD** | **W45** | L373 | Shape Detectives (Geometry) | Finding shapes in the classroom | Shape Detectives (Geometry) | ✅ EXACT | ❌ LỆCH | 8/8 (100%) | 2/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (2/5 toán) |
+| **PROD** | **W46** | L379 | The Pattern Code (Logic) | Cracking visual codes (Red-Blue-Red-?) | The Pattern Code (Logic) | ✅ EXACT | ❌ LỆCH | 6/6 (100%) | 2/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (2/5 toán) |
+| **PROD** | **W73** | L578 | Science/ELA: The Water Cycle (Advanced) / Math: Volume | The Never-Ending Journey | Science/ELA: The Water Cycle (Advanced) / Math: Volume | ✅ EXACT | ❌ LỆCH | 6/7 (86%) | 2/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (2/5 toán) |
+| **PROD** | **W74** | L587 | Science/ELA: Food Chains / Math: Complex Charts | Who Eats Who? (Energy flow) | Science/ELA: Food Chains / Math: Complex Charts | ✅ EXACT | ❌ LỆCH | 6/8 (75%) | 2/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (2/5 toán) |
+| **PROD** | **W75** | L596 | History/ELA: Ancient Egypt / Math: Timelines | Pyramids and Pharaohs | History/ELA: Ancient Egypt / Math: Timelines | ✅ EXACT | ❌ LỆCH | 6/8 (75%) | 2/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (2/5 toán) |
+| **PROD** | **W76** | L605 | History/ELA: Explorers / Math: Map Scales | Great Voyages | History/ELA: Explorers / Math: Map Scales | ✅ EXACT | ❌ LỆCH | 2/8 (25%) | 2/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (2/5 toán) |
+| **PROD** | **W77** | L614 | Social Studies/ELA: World Landmarks / Math: 3D Geometry | Famous Buildings | Social Studies/ELA: World Landmarks / Math: 3D Geometry | ✅ EXACT | ❌ LỆCH | 1/9 (11%) | 2/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (2/5 toán) |
+| **PROD** | **W78** | L623 | Social Studies/ELA: Cultures / Math: Surveys | Traditions Around the World | Social Studies/ELA: Cultures / Math: Surveys | ✅ EXACT | ❌ LỆCH | 6/9 (67%) | 2/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (2/5 toán) |
+| **PROD** | **W79** | L632 | Review & Micro-Debate 2 | Space Exploration vs. Earth Fix | Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate | ⚠️ CẦN REVIEW | ⚠️ CẦN REVIEW | 0/7 (0%) | 2/5 | CẦN REVIEW (2/5 toán) |
+| **PROD** | **W80** | L632 | Review & Micro-Debate 2 | Space Exploration vs. Earth Fix | Supply, Demand & Market Prices / Math: Market Equilibrium Graphs | ❌ LỆCH | ❌ LỆCH | 0/7 (0%) | 2/5 | LỆCH HOÀN TOÀN CẢ HAI (2/5 toán) |
+| **PROD** | **W81** | L638 | ELA: The Master Architect (Structure) / Math: Graphing Data | Planning an essay like building a house | ELA: The Master Architect (Structure) / Math: Graphing Data | ✅ EXACT | ❌ LỆCH | 5/7 (71%) | 2/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (2/5 toán) |
+| **PROD** | **W82** | L647 | ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data | Describing a favorite place | ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data | ✅ EXACT | ❌ LỆCH | 1/9 (11%) | 2/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (2/5 toán) |
+| **PROD** | **W125** | L986 | Intro & Conclusion | Hook and Summary | Intro & Conclusion (Academic Essay Structure) | ⚠️ CẦN REVIEW | ❌ LỆCH | 3/4 (75%) | 2/5 | CẦN REVIEW (2/5 toán) |
+
+--- 2. CÁC TUẦN STAGED TRONG DOCS/AGENT_ARTIFACTS/STAGING (8 TUẦN) ---
+| **STAGED** | **W79** | L632 | Review & Micro-Debate 2 | Space Exploration vs. Earth Fix | The Industrial Revolution | ❌ LỆCH | ❌ LỆCH | 0/7 (0%) | 5/5 | LỆCH HOÀN TOÀN CẢ HAI (5/5 toán) |
+| **STAGED** | **W126** | L993 | From Essay to Speech | Making it spoken | From Essay to Speech | ✅ EXACT | ❌ LỆCH | 0 Source B words defined | 5/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (5/5 toán) |
+| **STAGED** | **W127** | L998 | Rebuttal Practice | Disagreeing politely | Rebuttal Practice | ✅ EXACT | ❌ LỆCH | 5/5 (100%) | 5/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (5/5 toán) |
+| **STAGED** | **W129** | L1007 | Review & Math Logic Cycle | N/A | Opinion Project 3: Smartphones Under 12? | ❌ LỆCH | — KHÔNG CÓ | 0 Source B words defined | 5/5 | LỆCH HOÀN TOÀN CẢ HAI (5/5 toán) |
+| **STAGED** | **W130** | L1007 | Review & Math Logic Cycle | N/A | Opinion Project 3: Comparing Global Approaches | ❌ LỆCH | — KHÔNG CÓ | 0 Source B words defined | 5/5 | LỆCH HOÀN TOÀN CẢ HAI (5/5 toán) |
+| **STAGED** | **W131** | L1007 | Review & Math Logic Cycle | N/A | Opinion Project 3: Persuasive Techniques | ❌ LỆCH | — KHÔNG CÓ | 0 Source B words defined | 5/5 | LỆCH HOÀN TOÀN CẢ HAI (5/5 toán) |
+| **STAGED** | **W133** | L1012 | Deep Research & Data | Finding statistics to support arguments | Deep Research & Data | ✅ EXACT | ❌ LỆCH | 8/8 (100%) | 5/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (5/5 toán) |
+| **STAGED** | **W134** | L1021 | Identifying Fallacies | Spotting bad arguments | Identifying Fallacies | ✅ EXACT | ❌ LỆCH | 8/8 (100%) | 5/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (5/5 toán) |
+
+=============================================================================================================================
+📊 BÁO CÁO TỔNG HỢP FORENSIC 2 TRỤC THEME (100% COMPUTED BY SCRIPT)
+=============================================================================================================================
+1. THỐNG KÊ SO VỚI TIÊU ĐỀ SOURCE B (TITLE EN):
+   [PRODUCTION - 22 tuần]:
+     - EXACT: 15 tuần (W35, W38, W39, W41, W43, W45, W46, W73, W74, W75, W76, W77, W78, W81, W82)
+     - NORMALIZED: 1 tuần (W36)
+     - CẦN REVIEW: 2 tuần (W79, W125)
+     - LỆCH: 4 tuần (W33, W34, W37, W80)
+   [STAGED - 8 tuần]:
+     - EXACT: 4 tuần (W126, W127, W133, W134)
+     - NORMALIZED: 0 tuần (None)
+     - CẦN REVIEW: 0 tuần (None)
+     - LỆCH: 4 tuần (W79, W129, W130, W131)
+
+2. THỐNG KÊ SO VỚI CHỦ ĐỀ SOURCE B (TOPIC EN):
+   [PRODUCTION - 22 tuần]:
+     - EXACT: 1 tuần (W34)
+     - NORMALIZED: 0 tuần (None)
+     - CẦN REVIEW: 5 tuần (W36, W38, W39, W41, W79)
+     - LỆCH: 16 tuần (W33, W35, W37, W43, W45, W46, W73, W74, W75, W76, W77, W78, W80, W81, W82, W125)
+   [STAGED - 8 tuần]:
+     - EXACT: 0 tuần (None)
+     - NORMALIZED: 0 tuần (None)
+     - CẦN REVIEW: 0 tuần (None)
+     - LỆCH: 5 tuần (W79, W126, W127, W133, W134)
+
+3. THỐNG KÊ TOÁN THEO AST (singapore_math.length):
+   - Production đạt 5/5: W33 (5/5), W34 (5/5)
+   - Production thiếu toán (< 5): W35 (0/5), W36 (0/5), W37 (0/5), W38 (2/5), W39 (2/5), W41 (2/5), W43 (2/5), W45 (2/5), W46 (2/5), W73 (2/5), W74 (2/5), W75 (2/5), W76 (2/5), W77 (2/5), W78 (2/5), W79 (2/5), W80 (2/5), W81 (2/5), W82 (2/5), W125 (2/5)
+   - Staged có 5 bài toán: W79 (5/5), W126 (5/5), W127 (5/5), W129 (5/5), W130 (5/5), W131 (5/5), W133 (5/5), W134 (5/5)
+=============================================================================================================================
+

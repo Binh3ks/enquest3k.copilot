@@ -1,0 +1,15 @@
+====================================================================================================
+⚖️ ĐỀ XUẤT BẢNG TÁCH BIỆT NGUYÊN VĂN SOURCE B vs SUPPLEMENT CHO W79 & W80 (TASK 19)
+Source B (dòng 632-636): Weeks 79-80 Review & Micro-Debate 2
+====================================================================================================
+
+| Hạng Mục | Nguyên Văn Source B (Dòng 632–636) | Phân Bổ Cho Tuần 79 (W79) | Phân Bổ Cho Tuần 80 (W80) | Nhãn Phân Loại |
+| :--- | :--- | :--- | :--- | :--- |
+| **Khối / Chu kỳ** | `Review & Micro-Debate 2` | `Review & Micro-Debate 2 (Part A)` | `Review & Micro-Debate 2 (Part B)` | ✅ SOURCE B EXPLICIT |
+| **Chủ đề Lớn (Topic)** | `Space Exploration vs. Earth Fix` | `Space Exploration: The Case for Cosmic Discovery` | `Earth Restoration: The Priority of Home Solutions` | ✅ SOURCE B EXPLICIT (Góc nhìn bổ trợ) |
+| **Kỹ năng Tranh biện** | `Rebuttal Intro ("Yes, but...")` | `Rebuttal Intro: Concession & Pivot ("I agree that... but we must also explore...")` | `Rebuttal Counter: Urgency & Resource Allocation ("Yes, but our planet needs urgent funds...")` | ✅ SOURCE B EXPLICIT |
+| **Ngữ pháp Trọng tâm** | `Review Passive Voice, Conditionals, Comparatives` | `First & Second Conditionals ("If we invest in space, we will...") + Comparatives` | `Passive Voice ("Billions are spent while forests are destroyed...") + Contrastive Modals` | ✅ SOURCE B EXPLICIT |
+| **Từ vựng Source B (7 từ)** | `space, earth, money, spend, fix, problem, important` | **4 từ:** `space`, `earth`, `money`, `spend` | **3 từ:** `fix`, `problem`, `important` | ✅ SOURCE B EXPLICIT |
+| **Từ vựng Bổ trợ (SUPPLEMENT)** | *Source B im lặng về 13 từ còn lại trong bộ 20 từ* | 16 từ học thuật về thám hiểm vũ trụ & công nghệ (satellite, orbit, telescope...) | 17 từ học thuật về môi trường & bảo tồn trái đất (conserve, pollution, urgent...) | ⚠️ SUPPLEMENT_OWNER_APPROVED |
+| **Toán học (Math Quest)** | `Micro-Debate / Logic & Reasoning` | Budget allocation logic: Space agency funding bar models | Resource prioritization logic: Environmental cleanup cost comparison bar models | ✅ SOURCE B EXPLICIT + Sư phạm |
+| **Đầu ra Quest 15 (Speaking)** | Tranh luận hai chiều | Thuyết trình ủng hộ đầu tư công nghệ vũ trụ | Thuyết trình phản biện ủng hộ cứu trợ trái đất trước | ✅ Phối hợp hai góc nhìn hoàn chỉnh |

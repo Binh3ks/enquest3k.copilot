@@ -1,0 +1,11 @@
+====================================================================================================
+📖 BẢNG ĐỐI CHIẾU NỘI DUNG REPO DỰA TRÊN PART I (144 TUẦN) vs PART II (156 TUẦN) [TASK 15]
+====================================================================================================
+
+| Tuần Học | Đang Theo Part I (Cũ) | Nội Dung Part I (Dòng) | Nội Dung Thật Part II Chuẩn (Dòng) | Hành Động Cần Sửa |
+| :---: | :--- | :--- | :--- | :--- |
+| **W113–W120** | Blueprint & Digital Map ghi "Homework Debate" | L97-98: `Cycle 1 (Weeks 113-120): Homework Debate` | L886: `Cycle 1 (Weeks 113-120): The Formal Speech & Debate Arena` (W120 Phase 2 Graduation) | Sửa blueprint & Digital Map theo Part II (bỏ chủ đề Homework khỏi W113-120) |
+| **W121–W128** | Blueprint & Digital Map ghi "Video Games Debate" | L101-102: `Cycle 2 (Weeks 121-128): Video Games Debate` | L950: `Cycle 2 (Weeks 121-132): The Opinion Essay Mastery` (Chủ đề Homework thật sự nằm ở đây: W121-128) | Sửa blueprint & Digital Map chuyển chủ đề Homework vào W121-128 |
+| **W129–W132** | Staged W129-131 tạo theme "Smartphones Under 12?" | L105-106: `Cycle 3 (Weeks 129-136): Smartphones for Under 12s` | L1007-1008: `Weeks 129-132: Review & Math Logic Cycle (Tuần 129-132: Ôn tập & Toán Logic)` | RETIRED staged W129-131; Đặt theme chuẩn là Review & Math Logic Cycle |
+| **W133–W144** | Blueprint ghi lẻ tẻ, không có cấu trúc | Part I dừng tổng quan ở W136 (144 tuần tổng thể) | L1011: `Cycle 3 (Weeks 133-144): The Persuasive Article & Modern Media (Video Games Topic)` | Tái cấu trúc chu kỳ 3 theo Part II (chủ đề Video Games nằm ở đây) |
+| **W145–W156** | Blueprint ghi Capstone không rõ chủ đề | Part I hoàn toàn không có tuần 145-156 | L1103: `Cycle 4 (Weeks 145-156): Capstone Research Project & Graduation Showcase (Smartphones Topic)` | Tái cấu trúc chu kỳ 4: Chủ đề Smartphones chính thức thuộc về Capstone cuối khóa! |

@@ -1,7 +1,7 @@
 ========================================================================================================
-🔬 AUDIT G-GEN-11 ĐẾN G-GEN-16 CHO CÁC TUẦN WAVE 3 (ROUND 74)
+🔬 AUDIT G-GEN-11 ĐẾN G-GEN-16 CHO CÁC TUẦN WAVE 3 (ROUND 75)
 Áp dụng trên: W126, W127, W133, W134 trong docs/agent_artifacts/staging/
-Thu hồi kết luận "Giữ nguyên/Ready" — Phát hiện lỗi từ vựng, ngữ pháp ESL và cấu trúc Toán
+100% computed: Số dòng tính trực tiếp từ file thật; Trục Toán ánh xạ trường "question"
 ========================================================================================================
 
 --------------------------------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ Thu hồi kết luận "Giữ nguyên/Ready" — Phát hiện lỗi từ vựng,
 --- G-GEN-11: Multi-Axis Pedagogical Fidelity Check ---
   ✅ Axis (i) PASS: Theme match: "From Essay to Speech" === "From Essay to Speech".
   ℹ️ Axis (ii): CLIL Title: "From Essay to Speech: Delivering Spoken Ideas" (Blueprint: "From Essay to Speech").
-  ✅ Axis (iii) PASS: Singapore Math items: 5/5.
+  ℹ️ Axis (iii) Singapore Math: Đã tìm thấy 5/5 bài toán.
   ⚠️ Axis (iv) WARN: 0 syllabus words defined in blueprint.
 
 --- G-GEN-12: CEFR Consistency Check ---
@@ -31,8 +31,50 @@ Thu hồi kết luận "Giữ nguyên/Ready" — Phát hiện lỗi từ vựng,
 --- G-GEN-16: Lexical Repetition & Coarse ESL Anomaly Detection ---
   ✅ PASS: 0 coarse ESL anomalies detected.
 
+--- TRỤC (iii) TOÁN CHI TIẾT (IN NGUYÊN VĂN 5 BÀI & KIỂM TRA CẤU TRÚC) ---
+  Bài 1 (w126_p1):
+    • Tiêu đề: "Problem 1: Logic Puzzle of Speaker Time Slots"
+    • Đề bài (question): "In a speech logic puzzle, Speaker A speaks for 45 seconds and Speaker B speaks for 35 seconds to introduce the topic. What is their combined speaking time?"
+    • Đáp án (target_answer): 80 seconds
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Speaker A time: 45 seconds. -> Speaker B time: 35 seconds. -> 45 + 35 = 80 seconds.]
+  Bài 2 (w126_p2):
+    • Tiêu đề: "Problem 2: Logic Constraint on Cue Cards"
+    • Đề bài (question): "A logic puzzle states: Maya prepared 14 cue cards for her presentation. Liam prepared 8 fewer cue cards than Maya under the tournament rules. How many cue cards did Liam prepare?"
+    • Đáp án (target_answer): 6 cue cards
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Single-step
+    • Các bước giải: [Maya has 14 cards. -> Liam has 8 fewer cards. -> 14 - 8 = 6 cards for Liam.]
+  Bài 3 (w126_p3):
+    • Tiêu đề: "Problem 3: Speech Structure Logic Puzzle"
+    • Đề bài (question): "Under the debate timing rules, the introduction takes 30 seconds and the main arguments take 60 seconds. What is the total allotted time for this speech section?"
+    • Đáp án (target_answer): 90 seconds
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Intro duration: 30 seconds. -> Body duration: 60 seconds. -> 30 + 60 = 90 seconds total.]
+  Bài 4 (w126_p4):
+    • Tiêu đề: "Problem 4: Logic Deduction of Signpost Markers"
+    • Đề bài (question): "In a speech analysis puzzle, Team 1 used 15 signpost phrases while Team 2 used 9 signpost phrases. How many more signpost markers did Team 1 use?"
+    • Đáp án (target_answer): 6 signpost markers
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Single-step
+    • Các bước giải: [Team 1 count: 15 markers. -> Team 2 count: 9 markers. -> 15 - 9 = 6 more markers.]
+  Bài 5 (w126_p5):
+    • Tiêu đề: "Problem 5: Audience Feedback Logic Venn"
+    • Đề bài (question): "A presentation logic puzzle tracks 40 feedback slips. 25 listeners commended the speaker's vocal volume and 15 commended the signpost clarity. How many total positive notes were counted?"
+    • Đáp án (target_answer): 40 feedback slips
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Volume feedback: 25 slips. -> Signpost feedback: 15 slips. -> 25 + 15 = 40 slips total.]
+
 📋 KẾT LUẬN TUẦN 126:
-  ⛔ THU HỒI "Giữ nguyên/Ready" -> KHÔNG MERGE. Lý do: G-GEN-15 FAIL (Vocab coverage chỉ đạt 3/20 = 15% < 60%).
+  ⛔ BLOCKED -> KHÔNG MERGE. G-GEN-15 FAIL (Vocab coverage chỉ đạt 3/20 = 15% < 60%).
 
 --------------------------------------------------------------------------------------------------------
 📌 TUẦN 127 (docs/agent_artifacts/staging/week_127)
@@ -41,7 +83,7 @@ Thu hồi kết luận "Giữ nguyên/Ready" — Phát hiện lỗi từ vựng,
 --- G-GEN-11: Multi-Axis Pedagogical Fidelity Check ---
   ✅ Axis (i) PASS: Theme match: "Rebuttal Practice" === "Rebuttal Practice".
   ℹ️ Axis (ii): CLIL Title: "Rebuttal Practice: Disagreeing with Facts and Politeness" (Blueprint: "Rebuttal Practice").
-  ✅ Axis (iii) PASS: Singapore Math items: 5/5.
+  ℹ️ Axis (iii) Singapore Math: Đã tìm thấy 5/5 bài toán.
   ✅ Axis (iv) PASS: All 5 blueprint syllabus words covered.
 
 --- G-GEN-12: CEFR Consistency Check ---
@@ -61,8 +103,50 @@ Thu hồi kết luận "Giữ nguyên/Ready" — Phát hiện lỗi từ vựng,
 --- G-GEN-16: Lexical Repetition & Coarse ESL Anomaly Detection ---
   ✅ PASS: 0 coarse ESL anomalies detected.
 
+--- TRỤC (iii) TOÁN CHI TIẾT (IN NGUYÊN VĂN 5 BÀI & KIỂM TRA CẤU TRÚC) ---
+  Bài 1 (w127_p1):
+    • Tiêu đề: "Problem 1: Critical Thinking on Debater Points"
+    • Đề bài (question): "A debater made a false calculation claim. In critical thinking analysis, Team A scored 40 valid points on speech 1 and 30 valid points on speech 2. What is their true combined score?"
+    • Đáp án (target_answer): 70 points
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Speech 1 points: 40. -> Speech 2 points: 30. -> 40 + 30 = 70 points in truth.]
+  Bài 2 (w127_p2):
+    • Tiêu đề: "Problem 2: Critical Thinking Math on Survey Size"
+    • Đề bài (question): "A critical thinking analysis exposes a misleading claim. School A surveyed 150 students while School B surveyed only 90 students. How many more students participated in School A's true sample?"
+    • Đáp án (target_answer): 60 students
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Single-step
+    • Các bước giải: [School A sample: 150 students. -> School B sample: 90 students. -> 150 - 90 = 60 students.]
+  Bài 3 (w127_p3):
+    • Tiêu đề: "Problem 3: Rebutting Exaggerated Survey Claims"
+    • Đề bài (question): "An opponent claimed 100 people supported a plan. The rebuttal team verified 55 true votes and 25 false entries on the roster. How many total entries were submitted for inspection?"
+    • Đáp án (target_answer): 80 entries
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Valid entries: 55. -> Invalid entries: 25. -> 55 + 25 = 80 total entries.]
+  Bài 4 (w127_p4):
+    • Tiêu đề: "Problem 4: Critical Thinking on Discrepancy"
+    • Đề bài (question): "Critical thinking math reveals that a speaker claimed 120 affirmative votes, but the official tally showed only 85 votes. What was the false exaggeration discrepancy?"
+    • Đáp án (target_answer): 35 votes
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Single-step
+    • Các bước giải: [Claimed votes: 120. -> Actual votes: 85. -> 120 - 85 = 35 votes.]
+  Bài 5 (w127_p5):
+    • Tiêu đề: "Problem 5: Balanced Arguments in Critical Thinking"
+    • Đề bài (question): "A critical thinking dossier compiles 35 supporting evidence cards and 25 counter arguments. How many total argument cards are compiled in the debate folder?"
+    • Đáp án (target_answer): 60 argument cards
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Supporting cards: 35. -> Counter cards: 25. -> 35 + 25 = 60 cards.]
+
 📋 KẾT LUẬN TUẦN 127:
-  ⛔ THU HỒI "Giữ nguyên/Ready" -> KHÔNG MERGE. Lý do: G-GEN-15 FAIL (Vocab coverage chỉ đạt 8/20 = 40% < 60%).
+  ⛔ BLOCKED -> KHÔNG MERGE. G-GEN-15 FAIL (Vocab coverage chỉ đạt 8/20 = 40% < 60%).
 
 --------------------------------------------------------------------------------------------------------
 📌 TUẦN 133 (docs/agent_artifacts/staging/week_133)
@@ -71,7 +155,7 @@ Thu hồi kết luận "Giữ nguyên/Ready" — Phát hiện lỗi từ vựng,
 --- G-GEN-11: Multi-Axis Pedagogical Fidelity Check ---
   ✅ Axis (i) PASS: Theme match: "Deep Research & Data" === "Deep Research & Data".
   ℹ️ Axis (ii): CLIL Title: "Deep Research and Data: Citing Facts with Care" (Blueprint: "Deep Research & Data & Using data as evidence").
-  ✅ Axis (iii) PASS: Singapore Math items: 5/5.
+  ℹ️ Axis (iii) Singapore Math: Đã tìm thấy 5/5 bài toán.
   ✅ Axis (iv) PASS: All 8 blueprint syllabus words covered.
 
 --- G-GEN-12: CEFR Consistency Check ---
@@ -89,12 +173,54 @@ Thu hồi kết luận "Giữ nguyên/Ready" — Phát hiện lỗi từ vựng,
      - Missing (11): [sample, quantitative, methodology, correlation, variable, analyze, respondent, metric, empirical, hypothesis, frequency]
 
 --- G-GEN-16: Lexical Repetition & Coarse ESL Anomaly Detection ---
-  ❌ FAIL: Coarse ESL grammatical anomaly detected!
-     - Phát hiện cụm từ phi chuẩn: "majority of seventy percent" (Ví dụ trong reading_hub.js dòng 35: "a majority of seventy percent" — lỗi sai diễn đạt ESL nghiêm trọng).
-     - Phát hiện cụm từ phi chuẩn: "minority of fifteen percent" (Ví dụ trong reading_hub.js dòng 35: "a majority of seventy percent" — lỗi sai diễn đạt ESL nghiêm trọng).
+  ❌ FAIL: Phát hiện 2 lỗi diễn đạt phi chuẩn ESL (Line tính trực tiếp từ file thật):
+     - [reading_hub.js:L219] Phát hiện cụm từ phi chuẩn: "majority of seventy percent" | Ngữ cảnh: ""content_en": "In academic projects, strong arguments rely on clear evidence rather than guesses. Us"
+     - [reading_hub.js:L219] Phát hiện cụm từ phi chuẩn: "minority of fifteen percent" | Ngữ cảnh: ""content_en": "In academic projects, strong arguments rely on clear evidence rather than guesses. Us"
+
+--- TRỤC (iii) TOÁN CHI TIẾT (IN NGUYÊN VĂN 5 BÀI & KIỂM TRA CẤU TRÚC) ---
+  Bài 1 (w133_p1):
+    • Tiêu đề: "Problem 1: Supplementary Angles on a Straight Line"
+    • Đề bài (question): "On a geometry diagram, an angle measuring 90 degrees and an adjacent angle measuring 45 degrees meet on a baseline. What is their combined angle measure in degrees?"
+    • Đáp án (target_answer): 135 degrees
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Right angle: 90 degrees. -> Acute angle: 45 degrees. -> 90 + 45 = 135 degrees.]
+  Bài 2 (w133_p2):
+    • Tiêu đề: "Problem 2: Comparing Acute and Obtuse Angles"
+    • Đề bài (question): "In a geometry shape investigation, Angle A is an obtuse angle of 120 degrees and Angle B is an acute angle of 50 degrees. How many degrees larger is Angle A than Angle B?"
+    • Đáp án (target_answer): 70 degrees
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Single-step
+    • Các bước giải: [Angle A: 120 degrees. -> Angle B: 50 degrees. -> 120 - 50 = 70 degrees.]
+  Bài 3 (w133_p3):
+    • Tiêu đề: "Problem 3: Right Angle Subdivisions"
+    • Đề bài (question): "A right angle of 90 degrees is divided into two acute angles. If the first angle is 35 degrees, what is the measure of the complementary angle that adds to 90 degrees?"
+    • Đáp án (target_answer): 55 degrees
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Single-step
+    • Các bước giải: [Total right angle: 90 degrees. -> First part: 35 degrees. -> 90 - 35 = 55 degrees.]
+  Bài 4 (w133_p4):
+    • Tiêu đề: "Problem 4: Angle Difference in Design Graphics"
+    • Đề bài (question): "A poster graphic features an angle of 110 degrees and a sharp angle of 40 degrees. What is the difference between these two measured angles?"
+    • Đáp án (target_answer): 70 degrees
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Wide angle: 110 degrees. -> Sharp angle: 40 degrees. -> 110 - 40 = 70 degrees.]
+  Bài 5 (w133_p5):
+    • Tiêu đề: "Problem 5: Total Degrees in Corner Angles"
+    • Đề bài (question): "Two adjacent corner angles in a wooden frame each measure exactly 90 degrees. What is the sum of these two right angles in degrees?"
+    • Đáp án (target_answer): 180 degrees
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Single-step
+    • Các bước giải: [Corner 1: 90 degrees. -> Corner 2: 90 degrees. -> 90 + 90 = 180 degrees.]
 
 📋 KẾT LUẬN TUẦN 133:
-  ⛔ THU HỒI "Giữ nguyên/Ready" -> KHÔNG MERGE. Lý do: G-GEN-15 FAIL (Vocab coverage 9/20 = 45% < 60%) và G-GEN-16 FAIL ("a majority of seventy percent" ở reading_hub.js:35).
+  ⛔ BLOCKED -> KHÔNG MERGE. G-GEN-15 FAIL (Vocab coverage 9/20 = 45% < 60%) và G-GEN-16 FAIL (Lỗi ESL tính từ file thật).
 
 --------------------------------------------------------------------------------------------------------
 📌 TUẦN 134 (docs/agent_artifacts/staging/week_134)
@@ -103,7 +229,7 @@ Thu hồi kết luận "Giữ nguyên/Ready" — Phát hiện lỗi từ vựng,
 --- G-GEN-11: Multi-Axis Pedagogical Fidelity Check ---
   ✅ Axis (i) PASS: Theme match: "Identifying Fallacies" === "Identifying Fallacies".
   ℹ️ Axis (ii): CLIL Title: "Identifying Fallacies: Spotting Faulty Reasoning" (Blueprint: "Identifying Fallacies & Critical Thinking/Logic").
-  ❌ Axis (iii) FAIL: W134 Geometry: Triangles structural failure! Valid multi-step triangle problems: 0/5 (Field 'problemText' is undefined in all 5 items; used 'question' instead, lacking multi-step chain).
+  ℹ️ Axis (iii) Singapore Math: Đã tìm thấy 5/5 bài toán.
   ✅ Axis (iv) PASS: All 8 blueprint syllabus words covered.
 
 --- G-GEN-12: CEFR Consistency Check ---
@@ -121,9 +247,51 @@ Thu hồi kết luận "Giữ nguyên/Ready" — Phát hiện lỗi từ vựng,
 --- G-GEN-16: Lexical Repetition & Coarse ESL Anomaly Detection ---
   ✅ PASS: 0 coarse ESL anomalies detected.
 
+--- TRỤC (iii) TOÁN CHI TIẾT (IN NGUYÊN VĂN 5 BÀI & KIỂM TRA CẤU TRÚC) ---
+  Bài 1 (w134_p1):
+    • Tiêu đề: "Problem 1: Perimeter of an Equilateral Triangle"
+    • Đề bài (question): "A geometric model of an equilateral triangle has 3 equal sides measuring 15 cm each. What is the total perimeter of the triangle in centimeters?"
+    • Đáp án (target_answer): 45 cm
+    • Số thanh Bar Model: 3 bars (Đạt)
+    • Số bước giải (steps): 4 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Side 1: 15 cm. -> Side 2: 15 cm. -> Side 3: 15 cm. -> 15 + 15 + 15 = 45 cm.]
+  Bài 2 (w134_p2):
+    • Tiêu đề: "Problem 2: Comparing Sides in an Isosceles Triangle"
+    • Đề bài (question): "An isosceles triangle has a base of 20 cm and two equal sides of 14 cm each. How many centimeters longer is the base than one of the equal sides?"
+    • Đáp án (target_answer): 6 cm
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Single-step
+    • Các bước giải: [Base: 20 cm. -> Equal side: 14 cm. -> 20 - 14 = 6 cm.]
+  Bài 3 (w134_p3):
+    • Tiêu đề: "Problem 3: Perimeter of a Scalene Triangle"
+    • Đề bài (question): "A scalene triangle has 3 sides of different lengths: 10 cm, 12 cm, and 18 cm. What is the perimeter of this scalene triangle in centimeters?"
+    • Đáp án (target_answer): 40 cm
+    • Số thanh Bar Model: 3 bars (Đạt)
+    • Số bước giải (steps): 4 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Side A: 10 cm. -> Side B: 12 cm. -> Side C: 18 cm. -> 10 + 12 + 18 = 40 cm.]
+  Bài 4 (w134_p4):
+    • Tiêu đề: "Problem 4: Side Difference in Triangular Banner"
+    • Đề bài (question): "A debate tournament banner is cut in a triangle shape. The longest side measures 25 cm and the shortest side measures 15 cm. What is the difference between these two sides?"
+    • Đáp án (target_answer): 10 cm
+    • Số thanh Bar Model: 2 bars (Đạt)
+    • Số bước giải (steps): 3 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Longest side: 25 cm. -> Shortest side: 15 cm. -> 25 - 15 = 10 cm.]
+  Bài 5 (w134_p5):
+    • Tiêu đề: "Problem 5: Total Perimeter of Triangular Garden Plot"
+    • Đề bài (question): "A triangular school garden plot has sides measuring 30 meters, 40 meters, and 50 meters. What is the total length of fencing needed to enclose the triangle?"
+    • Đáp án (target_answer): 120 meters
+    • Số thanh Bar Model: 3 bars (Đạt)
+    • Số bước giải (steps): 4 bước
+    • Đánh giá cấu trúc: Multi-step / Compound
+    • Các bước giải: [Side 1: 30 m. -> Side 2: 40 m. -> Side 3: 50 m. -> 30 + 40 + 50 = 120 meters.]
+
 📋 KẾT LUẬN TUẦN 134:
-  ⛔ KHÔNG MERGE. Lý do: Axis (iii) FAIL (Toán Geometry: Triangles lỗi 0/5 bài đạt chuẩn cấu trúc AST 'problemText').
+  ⛔ BLOCKED -> KHÔNG MERGE. Cần Claude xem xét cấu trúc toán (5/5 bài tam giác đã map vào 'question').
 
 ========================================================================================================
-📊 BÁO CÁO TỔNG HỢP WAVE 3: 100% CẢ 4 TUẦN (W126, W127, W133, W134) ĐỀU FAIL GATES VÀ BỊ CHẶN MERGE
+📊 BÁO CÁO TỔNG HỢP: 100% CẢ 4 TUẦN (W126, W127, W133, W134) TIẾP TỤC GIỮ TRẠNG THÁI BLOCKED
 ========================================================================================================
