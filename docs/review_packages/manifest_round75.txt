@@ -1,0 +1,42 @@
+ROUND 75 PACKAGE & COMMIT MANIFEST
+========================================================================
+Timestamp:           2026-11-10T09:24:44.751Z
+Deliverables Commit: e5df1cd84dc3c84ca66150bbff009b37f5371e4f
+
+ZIP PACKAGE:
+  Path:    docs/review_packages/round75_20261110.zip
+  Size:    599651 bytes
+  SHA-256: bdcf39a7eeb650cd75ad40aed1fcaded8918e8ffca77f9dc6ed6fbc166733aef
+
+RAW FORENSIC ARTIFACTS INCLUDED:
+  docs/agent_artifacts/round75_production_audit_raw.txt
+  docs/agent_artifacts/wave3_g_gen_audit_raw.txt
+  docs/agent_artifacts/mock_regulations_audit_raw.txt
+  docs/agent_artifacts/mock_schedule_analysis_raw.txt
+  docs/agent_artifacts/part_i_vs_part_ii_raw.txt
+  docs/agent_artifacts/source_a_patch_v2_proposal_raw.txt
+  docs/agent_artifacts/w79_w80_split_proposal_raw.txt
+  docs/agent_artifacts/round74_production_audit_raw.txt
+  docs/agent_artifacts/round73_production_audit_raw.txt
+  docs/agent_artifacts/cambridge_handbook_speaking_part2_citation.md
+  docs/agent_artifacts/calibrated_cambridge_readability_audit.md
+  docs/agent_artifacts/audit_39_mock_weeks_classification.md
+  docs/agent_artifacts/source_a_vs_source_b_156_weeks.md
+  docs/agent_artifacts/differentiation_options_w79_80_w129_132.md
+  docs/agent_artifacts/source_b_internal_contradictions.md
+  docs/agent_artifacts/w33_forensics_source_b_comparison.md
+
+STAGED WEEKS (AUDITED & BLOCKED/RETIRED PER OWNER DECISION):
+  week_79:  RETIRED (Source A theme 'Industrial Revolution' replaced by Source B 'Space Exploration vs Earth Fix')
+  week_126: BLOCKED (G-GEN-15 coverage 3/20 = 15% < 60%)
+  week_127: BLOCKED (G-GEN-15 coverage 5/20 = 25% < 60%)
+  week_129: RETIRED (Smartphones moved to Capstone W145-156 per Source B Part II; W129-132 is Review & Math Logic)
+  week_130: RETIRED (Smartphones moved to Capstone W145-156 per Source B Part II)
+  week_131: RETIRED (Smartphones moved to Capstone W145-156 per Source B Part II)
+  week_133: BLOCKED (G-GEN-15 coverage 9/20 = 45% < 60% & G-GEN-16 ESL anomalies)
+  week_134: BLOCKED (Singapore Math triangle geometry needs Claude review)
+
+BASELINE REPOSITORY INTEGRITY:
+  src/data/weeks/: 100% UNTOUCHED (0 production modifications)
+  Production Head: Zero merge into production.
+========================================================================
