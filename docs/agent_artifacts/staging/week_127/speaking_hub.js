@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Speaking Hub & Talkshow/Info Exchange Cards
- * Week: 127 | Theme: "Global Climate Systems & Renewable Energy" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.311Z
+ * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.447Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,144 +9,144 @@
 
 export const speakingHubData = {
   "week": 127,
-  "theme": "Global Climate Systems & Renewable Energy",
+  "theme": "Rebuttal Practice",
   "cefr_level": "B2 First",
   "talkshow_prompt": {
-    "topic": "Overcoming Skepticism in the Renewable Energy Transition",
-    "question": "Clara, how do you counter critics who argue that renewable energy cannot support heavy industrial grids?",
-    "model_response": "I disagree with that assertion because real-world empirical data proves it completely false! Modern smart grids integrate diverse energy sources, combining offshore wind, solar photovoltaic, and battery storage systems. When one source fluctuates, storage and interconnected regional lines maintain flawless grid equilibrium. Transitioning to sustainable energy not only reduces greenhouse gas emissions, but also shields economies from volatile fossil fuel price shocks."
+    "topic": "The Mechanics of Strategic Debate Rebuttals",
+    "question": "Nora, why should debaters avoid simply repeating their original speech during a rebuttal round?",
+    "model_response": "Simply repeating your original points signals to the judges that you did not listen to the debate! A true rebuttal must grapple directly with what your opponent just said. By using the 'They say... but I say...' formula, you prove you heard their point, identify their logical flaw, and deploy fresh evidence to dismantle their premise. That is what wins competitive debate rounds!"
   },
   "info_exchange_cards": {
     "table_a": {
-      "title": "Clara's Offshore Wind Array",
+      "title": "Nora's Tournament Debate Round",
       "subtitle": "Candidate's Question Card (Ask Examiner)",
-      "person": "Clara",
+      "person": "Nora",
       "fields": [
         {
           "id": "field_a1",
-          "cue_prompt": "where / wind array located?",
+          "cue_prompt": "where / tournament championship round held?",
           "cue_word": "where",
           "is_missing": true,
           "acceptable_questions": [
-            "Where is the offshore wind array located?",
-            "Where is the wind farm?",
-            "Where are the turbines built?"
+            "Where was the tournament championship round held?",
+            "Where was the debate round held?",
+            "Where did the tournament take place?"
           ],
-          "nova_reply": "The offshore wind array is located twenty kilometers off the North Sea coastline."
+          "nova_reply": "The championship round took place in the grand hall of the city council."
         },
         {
           "id": "field_a2",
-          "cue_prompt": "how many / turbines operational?",
-          "cue_word": "how many",
+          "cue_prompt": "what / resolution debated by teams?",
+          "cue_word": "what",
           "is_missing": true,
           "acceptable_questions": [
-            "How many wind turbines are operational?",
-            "How many turbines are there?",
-            "How many are generating power?"
+            "What was the resolution debated by teams?",
+            "What was the debate topic?",
+            "What resolution did they debate?"
           ],
-          "nova_reply": "There are currently seventy-two giant wind turbines operating in the array."
+          "nova_reply": "Whether governments should mandate 100 percent renewable energy by 2035."
         },
         {
           "id": "field_a3",
-          "cue_prompt": "what capacity / electricity generated?",
-          "cue_word": "what capacity",
+          "cue_prompt": "how long / rebuttal speeches last?",
+          "cue_word": "how long",
           "is_missing": true,
           "acceptable_questions": [
-            "What capacity of electricity is generated?",
-            "How much electricity does it generate?",
-            "What is the total capacity?"
+            "How long did rebuttal speeches last?",
+            "What was the rebuttal time limit?",
+            "How much time for rebuttals?"
           ],
-          "nova_reply": "The entire offshore array generates eight hundred megawatts of clean electricity at peak wind."
+          "nova_reply": "Each speaker had exactly four minutes to deliver their rebuttal."
         },
         {
           "id": "field_a4",
-          "cue_prompt": "why / undersea cables used?",
-          "cue_word": "why",
-          "is_missing": true,
-          "acceptable_questions": [
-            "Why are undersea high-voltage cables used?",
-            "Why are undersea cables needed?",
-            "Why are cables on the sea floor?"
-          ],
-          "nova_reply": "They transmit high-voltage power safely to the mainland grid with minimal electrical loss."
-        },
-        {
-          "id": "field_a5",
-          "cue_prompt": "who / manages daily maintenance?",
+          "cue_prompt": "who / was Nora's debate partner?",
           "cue_word": "who",
           "is_missing": true,
           "acceptable_questions": [
-            "Who manages daily maintenance of the turbines?",
-            "Who maintains the wind farm?",
-            "Who inspects the turbines?"
+            "Who was Nora's debate partner?",
+            "Who did Nora debate with?",
+            "Who was her teammate?"
           ],
-          "nova_reply": "Certified marine technicians and automated drone inspection teams handle daily maintenance."
+          "nova_reply": "Lucas, who specialized in economic and statistical arguments."
+        },
+        {
+          "id": "field_a5",
+          "cue_prompt": "why / judges praise Nora's rebuttal?",
+          "cue_word": "why",
+          "is_missing": true,
+          "acceptable_questions": [
+            "Why did the judges praise Nora's rebuttal?",
+            "Why did Nora receive high marks?",
+            "Why was her rebuttal effective?"
+          ],
+          "nova_reply": "Because she directly dismantled the opposition's data without personal insults."
         }
       ]
     },
     "table_b": {
-      "title": "Dr. Marcus Thorne's Solar Farm",
+      "title": "Judge Miller's Adjudication Sheet",
       "subtitle": "Information Card (Answer Examiner's Questions)",
-      "person": "Marcus",
+      "person": "Judge Miller",
       "fields": [
         {
           "id": "field_b1",
-          "cue_prompt": "where / solar facility situated?",
+          "cue_prompt": "where / adjudication scores submitted?",
           "cue_word": "where",
-          "value": "Across three hundred hectares in the sunny Mojave desert plateau.",
-          "nova_question": "Where is Dr. Thorne's utility solar facility situated?",
+          "value": "Through the tournament's official digital scoring portal.",
+          "nova_question": "Where were the adjudication scores submitted?",
           "acceptable_answers": [
-            "Across three hundred hectares in the sunny Mojave desert plateau.",
-            "In the Mojave desert plateau.",
-            "In the sunny Mojave desert."
+            "Through the tournament's official digital scoring portal.",
+            "Through the digital scoring portal.",
+            "Online scoring portal."
           ]
         },
         {
           "id": "field_b2",
-          "cue_prompt": "what technology / panels utilize?",
-          "cue_word": "what technology",
-          "value": "Bifacial monocrystalline photovoltaic panels mounted on dual-axis trackers.",
-          "nova_question": "What specific technology do the solar panels utilize?",
+          "cue_prompt": "what / main scoring criterion for rebuttals?",
+          "cue_word": "what",
+          "value": "Direct responsiveness to opponents' arguments and logical soundness.",
+          "nova_question": "What was the main scoring criterion for rebuttals?",
           "acceptable_answers": [
-            "Bifacial monocrystalline photovoltaic panels mounted on dual-axis trackers.",
-            "Bifacial monocrystalline photovoltaic panels.",
-            "Dual-axis solar trackers."
+            "Direct responsiveness to opponents' arguments and logical soundness.",
+            "Direct responsiveness and logical soundness.",
+            "Responsiveness and logic."
           ]
         },
         {
           "id": "field_b3",
-          "cue_prompt": "how much / carbon emissions prevented?",
-          "cue_word": "how much",
-          "value": "It prevents approximately four hundred thousand metric tons of carbon annually.",
-          "nova_question": "How much carbon emissions does the solar farm prevent annually?",
+          "cue_prompt": "how many / points awarded for rebuttal clarity?",
+          "cue_word": "how many",
+          "value": "Twenty-five out of thirty possible points for argumentation.",
+          "nova_question": "How many points were awarded for rebuttal clarity?",
           "acceptable_answers": [
-            "It prevents approximately four hundred thousand metric tons of carbon annually.",
-            "Four hundred thousand metric tons.",
-            "400,000 metric tons annually."
+            "Twenty-five out of thirty possible points for argumentation.",
+            "Twenty-five points.",
+            "25 out of 30."
           ]
         },
         {
           "id": "field_b4",
-          "cue_prompt": "why / battery storage installed?",
-          "cue_word": "why",
-          "value": "To supply continuous electricity to cities for five hours after sunset.",
-          "nova_question": "Why was large-scale battery storage installed at the site?",
+          "cue_prompt": "who / won the best speaker award?",
+          "cue_word": "who",
+          "value": "Nora received the award for her articulate cross-examination.",
+          "nova_question": "Who won the best speaker award?",
           "acceptable_answers": [
-            "To supply continuous electricity to cities for five hours after sunset.",
-            "To supply electricity after sunset.",
-            "For power after sunset."
+            "Nora received the award for her articulate cross-examination.",
+            "Nora.",
+            "Nora won best speaker."
           ]
         },
         {
           "id": "field_b5",
-          "cue_prompt": "what year / facility commissioned?",
-          "cue_word": "what year",
-          "value": "The entire commercial facility was commissioned and connected in 2024.",
-          "nova_question": "What year was the solar farm officially commissioned for the grid?",
+          "cue_prompt": "why / debaters avoid personal attacks?",
+          "cue_word": "why",
+          "value": "Because personal attacks commit an ad hominem fallacy and lose points.",
+          "nova_question": "Why must debaters avoid personal attacks?",
           "acceptable_answers": [
-            "The entire commercial facility was commissioned and connected in 2024.",
-            "In 2024.",
-            "Officially commissioned in 2024."
+            "Because personal attacks commit an ad hominem fallacy and lose points.",
+            "They commit a fallacy and lose points.",
+            "Personal attacks are fallacious."
           ]
         }
       ]

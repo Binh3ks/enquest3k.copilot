@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Target Vocabulary & SRS Metadata
- * Week: 127 | Theme: "Global Climate Systems & Renewable Energy" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.311Z
+ * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.447Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,203 +10,203 @@
 export const vocab = [
   {
     "id": 1,
-    "word": "renewable",
-    "pos": "adj",
-    "ipa": "/rɪˈnuːəbəl/",
-    "definition_en": "Capable of being replenished naturally within a human lifetime",
-    "definition_vi": "tái tạo được",
-    "example_en": "Renewable energy installations generated over forty percent of regional power.",
-    "example_vi": "Các trạm năng lượng tái tạo đã tạo ra hơn bốn mươi phần trăm lượng điện khu vực."
-  },
-  {
-    "id": 2,
-    "word": "climate",
-    "pos": "n",
-    "ipa": "/ˈklaɪmət/",
-    "definition_en": "The weather conditions prevailing in an area over a long period",
-    "definition_vi": "khí hậu",
-    "example_en": "Shifts in the global climate alter rainfall patterns across agricultural plains.",
-    "example_vi": "Những biến đổi trong khí hậu toàn cầu làm thay đổi các hình thái lượng mưa khắp các đồng bằng nông nghiệp."
-  },
-  {
-    "id": 3,
-    "word": "emissions",
-    "pos": "n",
-    "ipa": "/ɪˈmɪʃənz/",
-    "definition_en": "The production and discharge of gases into the atmosphere",
-    "definition_vi": "khí thải",
-    "example_en": "Stricter industrial standards reduced sulfur dioxide emissions significantly.",
-    "example_vi": "Các tiêu chuẩn công nghiệp nghiêm ngặt hơn đã làm giảm đáng kể lượng khí thải lưu huỳnh đi-ô-xít."
-  },
-  {
-    "id": 4,
-    "word": "greenhouse",
-    "pos": "n",
-    "ipa": "/ˈɡriːnhaʊs/",
-    "definition_en": "Relating to atmospheric gases that trap heat radiating from Earth",
-    "definition_vi": "nhà kính (hiệu ứng)",
-    "example_en": "Excess greenhouse gas accumulation traps thermal energy near the ground.",
-    "example_vi": "Sự tích tụ quá mức khí nhà kính giữ lại nhiệt lượng gần mặt đất."
-  },
-  {
-    "id": 5,
-    "word": "solar",
-    "pos": "adj",
-    "ipa": "/ˈsoʊlər/",
-    "definition_en": "Relating to or determined by the energy of the sun",
-    "definition_vi": "thuộc mặt trời, năng lượng mặt trời",
-    "example_en": "Rooftop solar arrays convert sunlight into clean electrical current.",
-    "example_vi": "Hệ thống pin mặt trời trên mái nhà chuyển hóa ánh sáng mặt trời thành dòng điện sạch."
-  },
-  {
-    "id": 6,
-    "word": "turbine",
-    "pos": "n",
-    "ipa": "/ˈtɜːrbaɪn/",
-    "definition_en": "A rotary mechanical device that extracts energy from moving fluid or wind",
-    "definition_vi": "tua-bin",
-    "example_en": "The giant offshore wind turbine generates electricity in coastal winds.",
-    "example_vi": "Tua-bin gió ngoài khơi khổng lồ tạo ra điện trong những ngọn gió ven biển."
-  },
-  {
-    "id": 7,
-    "word": "counter",
-    "pos": "v",
-    "ipa": "/ˈkaʊntər/",
-    "definition_en": "Speak or act in opposition to something",
-    "definition_vi": "phản bác, đối phó",
-    "example_en": "Scientists present empirical data to counter climate change skepticism.",
-    "example_vi": "Các nhà khoa học đưa ra dữ liệu thực nghiệm để phản bác lại sự hoài nghi về biến đổi khí hậu."
-  },
-  {
-    "id": 8,
     "word": "disagree",
     "pos": "v",
     "ipa": "/ˌdɪsəˈɡriː/",
-    "definition_en": "Hold a different opinion from another party",
-    "definition_vi": "không đồng ý, bất đồng",
-    "example_en": "Economists may disagree on the ideal tax rate for fossil fuel imports.",
-    "example_vi": "Các nhà kinh tế có thể không đồng ý về mức thuế lý tưởng đối với việc nhập khẩu nhiên liệu hóa thạch."
+    "definition_en": "To have or express a different opinion from someone else",
+    "definition_vi": "không đồng ý / bất đồng ý kiến",
+    "example_en": "Debaters often disagree on policy priorities while maintaining mutual professional respect.",
+    "example_vi": "Các tranh biện viên thường bất đồng về các ưu tiên chính sách trong khi vẫn duy trì sự tôn trọng lẫn nhau."
   },
   {
-    "id": 9,
+    "id": 2,
+    "word": "counter",
+    "pos": "v",
+    "ipa": "/ˈkaʊntər/",
+    "definition_en": "To respond in opposition to an argument or claim with evidence",
+    "definition_vi": "phản bác lại / đáp lại",
+    "example_en": "She presented three recent peer-reviewed studies to counter her opponent's assertion.",
+    "example_vi": "Cô ấy đã đưa ra ba nghiên cứu được bình duyệt gần đây để phản bác lại khẳng định của đối thủ."
+  },
+  {
+    "id": 3,
     "word": "point",
     "pos": "n",
     "ipa": "/pɔɪnt/",
-    "definition_en": "An argument or idea raised in a debate",
-    "definition_vi": "luận điểm, ý kiến",
-    "example_en": "Clara made a compelling point regarding the efficiency of battery storage.",
-    "example_vi": "Clara đã nêu ra một luận điểm thuyết phục liên quan đến hiệu suất của việc lưu trữ pin."
+    "definition_en": "A single argument, idea, or fact raised in a structured discussion",
+    "definition_vi": "luận điểm / ý kiến",
+    "example_en": "The speaker raised an insightful point concerning the environmental cost of manufacturing.",
+    "example_vi": "Diễn giả đã nêu ra một luận điểm sâu sắc liên quan đến chi phí môi trường của sản xuất."
   },
   {
-    "id": 10,
-    "word": "true",
-    "pos": "adj",
-    "ipa": "/truː/",
-    "definition_en": "In accordance with fact or reality",
-    "definition_vi": "đúng, xác thực",
-    "example_en": "It is true that renewable installation costs have plummeted over ten years.",
-    "example_vi": "Đúng là chi phí lắp đặt năng lượng tái tạo đã giảm mạnh trong suốt mười năm qua."
-  },
-  {
-    "id": 11,
+    "id": 4,
     "word": "false",
     "pos": "adj",
     "ipa": "/fɔːls/",
-    "definition_en": "Not in accordance with truth or empirical fact",
-    "definition_vi": "sai, không chính xác",
-    "example_en": "The claim that wind energy is inherently unreliable proved completely false.",
-    "example_vi": "Tuyên bố rằng năng lượng gió vốn dĩ không đáng tin cậy đã chứng minh là hoàn toàn sai."
+    "definition_en": "Not in accordance with truth or reality; incorrect or misleading",
+    "definition_vi": "sai lầm / không đúng sự thật",
+    "example_en": "His rebuttal exposed the false assumption that all economic growth harms nature.",
+    "example_vi": "Bài phản biện của anh ấy đã vạch trần giả định sai lầm rằng mọi sự tăng trưởng kinh tế đều làm hại thiên nhiên."
+  },
+  {
+    "id": 5,
+    "word": "true",
+    "pos": "adj",
+    "ipa": "/truː/",
+    "definition_en": "In accordance with verifiable fact or reality; accurate and reliable",
+    "definition_vi": "đúng đắn / có thực / xác thực",
+    "example_en": "While the claim sounded persuasive, it was not true when tested against recent data.",
+    "example_vi": "Mặc dù khẳng định nghe có vẻ thuyết phục, nhưng nó không đúng khi được kiểm chứng với dữ liệu gần đây."
+  },
+  {
+    "id": 6,
+    "word": "rebuttal",
+    "pos": "n",
+    "ipa": "/rɪˈbʌtəl/",
+    "definition_en": "A structured refutation or counter-argument against an opposing claim",
+    "definition_vi": "bài phản biện / lời phản bác",
+    "example_en": "In the rebuttal round, speakers must address opposing points directly.",
+    "example_vi": "Trong vòng phản biện, các diễn giả phải trực tiếp giải quyết các luận điểm đối lập."
+  },
+  {
+    "id": 7,
+    "word": "refute",
+    "pos": "v",
+    "ipa": "/rɪˈfjuːt/",
+    "definition_en": "To prove a statement, theory, or claim to be wrong or invalid",
+    "definition_vi": "bác bỏ / chứng minh là sai",
+    "example_en": "Empirical survey data refuted the claim that youth are disinterested in civic affairs.",
+    "example_vi": "Dữ liệu khảo sát thực nghiệm đã bác bỏ khẳng định rằng giới trẻ không quan tâm đến các vấn đề công dân."
+  },
+  {
+    "id": 8,
+    "word": "concede",
+    "pos": "v",
+    "ipa": "/kənˈsiːd/",
+    "definition_en": "To acknowledge or admit that an opponent's point is true or valid",
+    "definition_vi": "thừa nhận / nhượng bộ một điểm đúng",
+    "example_en": "A strategic debater may concede a minor point to focus energy on the core dispute.",
+    "example_vi": "Một tranh biện viên chiến lược có thể thừa nhận một điểm phụ để tập trung năng lượng vào cuộc tranh chấp cốt lõi."
+  },
+  {
+    "id": 9,
+    "word": "oppose",
+    "pos": "v",
+    "ipa": "/əˈpoʊz/",
+    "definition_en": "To argue strongly against a proposed policy, resolution, or claim",
+    "definition_vi": "phản đối / chống lại",
+    "example_en": "Many economists oppose tariffs because they raise prices for working families.",
+    "example_vi": "Nhiều nhà kinh tế phản đối thuế quan vì chúng làm tăng giá cả đối với các gia đình lao động."
+  },
+  {
+    "id": 10,
+    "word": "objection",
+    "pos": "n",
+    "ipa": "/əbˈdʒekʃən/",
+    "definition_en": "A reason or argument given in opposition to a proposal",
+    "definition_vi": "sự phản đối / lý do phản đối",
+    "example_en": "Her primary objection was that the research methodology lacked a control group.",
+    "example_vi": "Sự phản đối chính của cô ấy là phương pháp nghiên cứu thiếu một nhóm đối chứng."
+  },
+  {
+    "id": 11,
+    "word": "contradict",
+    "pos": "v",
+    "ipa": "/ˌkɑːntrəˈdɪkt/",
+    "definition_en": "To assert the opposite of a statement or claim made by another",
+    "definition_vi": "mâu thuẫn với / cãi lại",
+    "example_en": "Official government trade statistics contradicted the politician's campaign speech.",
+    "example_vi": "Số liệu thống kê thương mại chính thức của chính phủ đã mâu thuẫn với bài phát biểu vận động tranh cử."
   },
   {
     "id": 12,
-    "word": "sustainable",
+    "word": "fallacious",
     "pos": "adj",
-    "ipa": "/səˈsteɪnəbəl/",
-    "definition_en": "Able to be maintained at a certain rate without depleting resources",
-    "definition_vi": "bền vững",
-    "example_en": "Sustainable forestry practices ensure timber harvesting does not destroy habitats.",
-    "example_vi": "Các hoạt động lâm nghiệp bền vững đảm bảo việc khai thác gỗ không phá hủy môi trường sống."
+    "ipa": "/fəˈleɪʃəs/",
+    "definition_en": "Based on a mistaken belief or unsound, deceptive reasoning",
+    "definition_vi": "ngụy biện / sai lầm về mặt logic",
+    "example_en": "Attacking a speaker's character rather than their evidence is a fallacious tactic.",
+    "example_vi": "Tấn công tính cách của diễn giả thay vì bằng chứng của họ là một chiến thuật ngụy biện."
   },
   {
     "id": 13,
-    "word": "efficiency",
+    "word": "premise",
     "pos": "n",
-    "ipa": "/ɪˈfɪʃənsi/",
-    "definition_en": "The state of achieving maximum productivity with minimum wasted effort",
-    "definition_vi": "hiệu suất, tính hiệu quả",
-    "example_en": "New photovoltaic panels achieve an energy conversion efficiency of 24 percent.",
-    "example_vi": "Các tấm pin quang điện mới đạt hiệu suất chuyển đổi năng lượng lên tới 24 phần trăm."
+    "ipa": "/ˈpremɪs/",
+    "definition_en": "A foundational statement or assumption from which a conclusion is drawn",
+    "definition_vi": "tiền đề",
+    "example_en": "If the underlying premise is flawed, the entire argument collapses.",
+    "example_vi": "Nếu tiền đề cơ bản bị sai sót, toàn bộ lập luận sẽ sụp đổ."
   },
   {
     "id": 14,
-    "word": "grid",
+    "word": "evidence",
     "pos": "n",
-    "ipa": "/ɡrɪd/",
-    "definition_en": "An interconnected network for distributing electricity over a region",
-    "definition_vi": "lưới điện",
-    "example_en": "A smart electric grid balances power demand across fluctuating wind conditions.",
-    "example_vi": "Lưới điện thông minh cân bằng nhu cầu điện năng giữa các điều kiện gió biến động."
+    "ipa": "/ˈevɪdəns/",
+    "definition_en": "The available body of factual proof indicating whether a proposition is valid",
+    "definition_vi": "bằng chứng / chứng cứ",
+    "example_en": "Scientific evidence must be verifiable, reproducible, and cited accurately.",
+    "example_vi": "Bằng chứng khoa học phải có thể kiểm chứng, tái lập được và được trích dẫn chính xác."
   },
   {
     "id": 15,
-    "word": "carbon",
+    "word": "flaw",
     "pos": "n",
-    "ipa": "/ˈkɑːrbən/",
-    "definition_en": "A chemical element forming organic compounds and greenhouse gases",
-    "definition_vi": "các-bon",
-    "example_en": "Reforestation projects absorb excess carbon dioxide directly from the air.",
-    "example_vi": "Các dự án tái trồng rừng hấp thụ lượng khí các-bon đi-ô-xít dư thừa trực tiếp từ không khí."
+    "ipa": "/flɔː/",
+    "definition_en": "A defect, weakness, or logical error in an argument or theory",
+    "definition_vi": "lỗ hổng / khuyết điểm",
+    "example_en": "The audience identified a major logical flaw in the speaker's deductive reasoning.",
+    "example_vi": "Khán giả đã xác định được một lỗ hổng logic lớn trong lập luận suy diễn của người nói."
   },
   {
     "id": 16,
-    "word": "transition",
+    "word": "standpoint",
     "pos": "n",
-    "ipa": "/trænˈzɪʃən/",
-    "definition_en": "The process or a period of changing from one state to another",
-    "definition_vi": "sự chuyển đổi, bước chuyển tiếp",
-    "example_en": "The global energy transition requires rapid infrastructure investment.",
-    "example_vi": "Cuộc chuyển đổi năng lượng toàn cầu đòi hỏi sự đầu tư cơ sở hạ tầng nhanh chóng."
+    "ipa": "/ˈstændpɔɪnt/",
+    "definition_en": "A particular attitude toward or perspective on an issue",
+    "definition_vi": "quan điểm / lập trường",
+    "example_en": "From an environmental standpoint, protecting coastal wetlands is an urgent necessity.",
+    "example_vi": "Từ lập trường môi trường, việc bảo vệ các vùng đất ngập nước ven biển là một nhu cầu cấp bách."
   },
   {
     "id": 17,
-    "word": "fossil fuel",
-    "pos": "n",
-    "ipa": "/ˈfɑːsəl fjuːəl/",
-    "definition_en": "A natural fuel such as coal or gas formed in the geological past",
-    "definition_vi": "nhiên liệu hóa thạch",
-    "example_en": "Phasing out coal reduces reliance on polluting fossil fuel resources.",
-    "example_vi": "Việc loại bỏ dần than đá làm giảm sự phụ thuộc vào các nguồn nhiên liệu hóa thạch gây ô nhiễm."
+    "word": "contend",
+    "pos": "v",
+    "ipa": "/kənˈtend/",
+    "definition_en": "To assert or maintain earnestly in an argumentative discussion",
+    "definition_vi": "dám chắc / quả quyết rằng",
+    "example_en": "The affirmative team contended that mandatory uniforms reduce social inequality.",
+    "example_vi": "Đội khẳng định quả quyết rằng đồng phục bắt buộc giúp giảm bất bình đẳng xã hội."
   },
   {
     "id": 18,
-    "word": "conservation",
-    "pos": "n",
-    "ipa": "/ˌkɑːnsərˈveɪʃən/",
-    "definition_en": "Prevention of wasteful use of a resource",
-    "definition_vi": "sự bảo tồn, sử dụng tiết kiệm",
-    "example_en": "Energy conservation campaigns encourage factories to upgrade outdated machinery.",
-    "example_vi": "Các chiến dịch tiết kiệm năng lượng khuyến khích các nhà máy nâng cấp máy móc lạc hậu."
+    "word": "disprove",
+    "pos": "v",
+    "ipa": "/dɪsˈpruːv/",
+    "definition_en": "To prove that a statement, hypothesis, or claim is wrong",
+    "definition_vi": "bác bỏ / chứng minh là không đúng",
+    "example_en": "Researchers conducted clinical trials to disprove the alleged health risks.",
+    "example_vi": "Các nhà nghiên cứu đã tiến hành các thử nghiệm lâm sàng để bác bỏ các rủi ro sức khỏe bị cáo buộc."
   },
   {
     "id": 19,
-    "word": "geothermal",
-    "pos": "adj",
-    "ipa": "/ˌdʒiːoʊˈθɜːrməl/",
-    "definition_en": "Relating to or produced by the internal heat of the earth",
-    "definition_vi": "địa nhiệt",
-    "example_en": "Iceland heats over eighty percent of its buildings using clean geothermal water.",
-    "example_vi": "Băng Đảo sưởi ấm hơn tám mươi phần trăm các tòa nhà bằng nước địa nhiệt sạch."
+    "word": "rebut",
+    "pos": "v",
+    "ipa": "/rɪˈbʌt/",
+    "definition_en": "To offer counter-evidence and logical reasoning to defeat an argument",
+    "definition_vi": "phản biện / bẻ gãy luận điểm",
+    "example_en": "She stepped to the microphone prepared to rebut every assertion made by the opposition.",
+    "example_vi": "Cô ấy bước đến bên micro sẵn sàng phản biện mọi khẳng định mà phe đối lập đưa ra."
   },
   {
     "id": 20,
-    "word": "photovoltaic",
-    "pos": "adj",
-    "ipa": "/ˌfoʊtoʊvɑːlˈteɪɪk/",
-    "definition_en": "Relating to the production of electric current at the junction of two substances exposed to light",
-    "definition_vi": "quang điện",
-    "example_en": "Large photovoltaic arrays span desert valleys to feed municipal power lines.",
-    "example_vi": "Các mảng quang điện lớn trải dài qua các thung lũng sa mạc để cung cấp điện cho các đường dây thành phố."
+    "word": "validity",
+    "pos": "n",
+    "ipa": "/vəˈlɪdəti/",
+    "definition_en": "The state or quality of being logically sound or factually sound",
+    "definition_vi": "tính hợp lệ / giá trị pháp lý và logic",
+    "example_en": "Rigorous cross-examination tests the validity of expert witness testimonies.",
+    "example_vi": "Thẩm vấn chéo nghiêm ngặt kiểm tra tính hợp lệ của lời khai nhân chứng chuyên gia."
   }
 ];
 export const vocabList = vocab;

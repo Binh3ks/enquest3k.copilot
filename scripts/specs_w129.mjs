@@ -1,394 +1,1112 @@
 /**
- * scripts/specs_w129.mjs
- * Week 129: Architecture of the Future: Megacities & Sustainability
- * Stage 2: Cambridge Lower Secondary & B2 First / FCE Rotary
+ * Auto-generated Spec for Week 129: Opinion Project 3: Smartphones Under 12?
+ * Strict Blueprint Fidelity
  */
 
 export const w129 = {
-  week: 129,
-  theme: "Architecture of the Future: Megacities & Sustainability",
-  title_en: "Architecture of the Future: Megacities and Sustainability",
-  title_vi: "Kiến Trúc Tương Lai: Đại Đô Thị và Tính Bền Vững",
-  cefr_level: "B2 First",
-  grammar_focus: "Future Perfect & Future Continuous: 'By 2050, municipal planners will have constructed self-cooling skyscrapers; Millions will be living in sustainable eco-districts.'",
-  vocab_list: [
-    { id: 1, word: "megacity", pos: "n", ipa: "/ˈmeɡəsɪti/", definition_en: "A very large city, typically one with a population over ten million people", definition_vi: "đại đô thị", example_en: "Tokyo is a bustling megacity that integrates advanced high-speed transit.", example_vi: "Tokyo là một đại đô thị nhộn nhịp tích hợp phương tiện giao thông tốc độ cao tiên tiến." },
-    { id: 2, word: "architecture", pos: "n", ipa: "/ˈɑːrkɪtektʃər/", definition_en: "The art or practice of designing and constructing buildings", definition_vi: "kiến trúc", example_en: "Sustainable architecture incorporates natural sunlight and living vertical gardens.", example_vi: "Kiến trúc bền vững kết hợp ánh sáng mặt trời tự nhiên và các khu vườn thẳng đứng." },
-    { id: 3, word: "skyscraper", pos: "n", ipa: "/ˈskaɪskreɪpər/", definition_en: "A very tall building of many stories", definition_vi: "tòa nhà chọc trời", example_en: "The eco-friendly skyscraper uses aerodynamic curves to reduce wind resistance.", example_vi: "Tòa nhà chọc trời thân thiện với môi trường sử dụng các đường cong khí động học để giảm sức cản của gió." },
-    { id: 4, word: "sustainability", pos: "n", ipa: "/səˌsteɪnəˈbɪləti/", definition_en: "The quality of not being harmful to the environment or depleting natural resources", definition_vi: "tính bền vững", example_en: "Urban sustainability requires recycling wastewater and generating clean solar power.", example_vi: "Tính bền vững của đô thị đòi hỏi phải tái chế nước thải và sản xuất năng lượng mặt trời sạch." },
-    { id: 5, word: "urbanization", pos: "n", ipa: "/ˌɜːrbənəˈzeɪʃən/", definition_en: "The process of making an area more urban through population growth", definition_vi: "sự đô thị hóa", example_en: "Rapid urbanization puts tremendous pressure on public transport networks.", example_vi: "Đô thị hóa nhanh chóng gây áp lực to lớn lên các mạng lưới giao thông công cộng." },
-    { id: 6, word: "infrastructure", pos: "n", ipa: "/ˈɪnfrəstrʌktʃər/", definition_en: "The basic physical structures needed for the operation of a society", definition_vi: "cơ sở hạ tầng", example_en: "Upgraded transit infrastructure allows commuters to travel without private cars.", example_vi: "Cơ sở hạ tầng giao thông được nâng cấp cho phép người đi làm di chuyển mà không cần xe hơi cá nhân." },
-    { id: 7, word: "pedestrian", pos: "adj", ipa: "/pəˈdestriən/", definition_en: "Designed for or relating to people walking rather than driving", definition_vi: "dành cho người đi bộ", example_en: "The mayor converted the central avenue into a green pedestrian promenade.", example_vi: "Thị trưởng đã chuyển đại lộ trung tâm thành một con đường dạo bộ xanh dành cho người đi bộ." },
-    { id: 8, word: "geothermal", pos: "adj", ipa: "/ˌdʒiːoʊˈθɜːrməl/", definition_en: "Relating to heat derived from the interior of the earth", definition_vi: "địa nhiệt", example_en: "Deep geothermal heat pumps regulate temperature across the commercial district.", example_vi: "Máy bơm nhiệt địa nhiệt sâu điều hòa nhiệt độ khắp khu thương mại." },
-    { id: 9, word: "density", pos: "n", ipa: "/ˈdensəti/", definition_en: "The degree of compactness of a population or substance", definition_vi: "mật độ", example_en: "High population density makes mass transit systems economically viable.", example_vi: "Mật độ dân số cao làm cho các hệ thống giao thông công cộng trở nên khả thi về mặt kinh tế." },
-    { id: 10, word: "composite", pos: "adj", ipa: "/kəmˈpɑːzət/", definition_en: "Made up of various distinct materials combined for enhanced strength", definition_vi: "vật liệu composite, hỗn hợp", example_en: "Lightweight composite timber beams replace heavy steel in modern framing.", example_vi: "Các thanh dầm gỗ composite nhẹ thay thế thép nặng trong khung sườn hiện đại." },
-    { id: 11, word: "aeration", pos: "n", ipa: "/eˈreɪʃən/", definition_en: "The introduction of air into a material or architectural space", definition_vi: "sự thông khí, sục khí", example_en: "Natural building aeration reduces reliance on mechanical air conditioning.", example_vi: "Sự thông khí tự nhiên của tòa nhà làm giảm sự phụ thuộc vào máy điều hòa cơ học." },
-    { id: 12, word: "commute", pos: "v", ipa: "/kəˈmjuːt/", definition_en: "Travel some distance between home and work on a regular basis", definition_vi: "đi lại làm việc, đi làm", example_en: "Thousands of residents commute via electric magnetic levitation trains.", example_vi: "Hàng ngàn cư dân đi làm thông qua các đoàn tàu đệm từ điện." },
-    { id: 13, word: "biodiversity", pos: "n", ipa: "/ˌbaɪoʊdaɪˈvɜːrsəti/", definition_en: "The variety of plant and animal life in a particular habitat", definition_vi: "đa dạng sinh học", example_en: "Rooftop botanical gardens enhance urban biodiversity in concrete districts.", example_vi: "Vườn bách thảo trên sân thượng tăng cường đa dạng sinh học đô thị trong các khu vực bê tông." },
-    { id: 14, word: "residential", pos: "adj", ipa: "/ˌrezɪˈdenʃəl/", definition_en: "Designed for or occupied by people living there rather than commerce", definition_vi: "thuộc khu dân cư", example_en: "Quiet residential neighborhoods feature tree-lined sidewalks and bicycle lanes.", example_vi: "Những khu dân cư yên tĩnh có các vỉa hè rợp bóng cây và làn đường dành cho xe đạp." },
-    { id: 15, word: "modular", pos: "adj", ipa: "/ˈmɑːdʒələr/", definition_en: "Employing or involving a module or modules as the basis of design", definition_vi: "theo mô-đun, lắp ghép", example_en: "Modular construction allows apartment units to be assembled offsite quickly.", example_vi: "Xây dựng mô-đun cho phép các căn hộ được lắp ráp ngoài công trường một cách nhanh chóng." },
-    { id: 16, word: "efficiency", pos: "n", ipa: "/ɪˈfɪʃənsi/", definition_en: "Maximum productivity achieved with minimal expense or wasted effort", definition_vi: "hiệu suất", example_en: "Thermal insulation maximizes the energetic efficiency of residential towers.", example_vi: "Cách nhiệt tối đa hóa hiệu suất năng lượng của các tòa tháp dân cư." },
-    { id: 17, word: "district", pos: "n", ipa: "/ˈdɪstrɪkt/", definition_en: "An area of a country or city, especially one regarded as a distinct unit", definition_vi: "khu vực, quận", example_en: "The innovation district hosts technology incubators and green startups.", example_vi: "Khu vực đổi mới sáng tạo tổ chức các vườn ươm công nghệ và các công ty khởi nghiệp xanh." },
-    { id: 18, word: "ventilation", pos: "n", ipa: "/ˌventəlˈeɪʃən/", definition_en: "The provision of fresh air to a room, building, or space", definition_vi: "sự thông gió", example_en: "Passive ventilation towers draw cool ground breezes through the atrium.", example_vi: "Các tháp thông gió thụ động hút những làn gió mát từ mặt đất qua giếng trời." },
-    { id: 19, word: "resilient", pos: "adj", ipa: "/rɪˈzɪliənt/", definition_en: "Able to withstand or recover quickly from difficult conditions", definition_vi: "kiên cường, có khả năng phục hồi", example_en: "Coastal cities build resilient storm barriers to protect vulnerable shorelines.", example_vi: "Các thành phố ven biển xây dựng các đê chắn bão kiên cường để bảo vệ bờ biển dễ bị tổn thương." },
-    { id: 20, word: "innovation", pos: "n", ipa: "/ˌɪnəˈveɪʃən/", definition_en: "The action or process of innovating new methods or technologies", definition_vi: "sự đổi mới, sáng kiến", example_en: "Architectural innovation transforms abandoned warehouses into vertical farm hubs.", example_vi: "Đổi mới kiến trúc biến các nhà kho bỏ hoang thành các trung tâm nông nghiệp thẳng đứng." }
-  ],
-  clil: {
-    title_en: "Vertical Megacities: Designing Sustainable Urban Habitats",
-    title_vi: "Đại Đô Thị Thẳng Đứng: Thiết Kế Môi Trường Đô Thị Bền Vững",
-    content_en: "By the middle of the twenty-first century, demographers estimate that over sixty-eight percent of the world population will be living in metropolitan centers. To accommodate this unprecedented density without consuming precious natural countryside, architects are redesigning skyscrapers into self-contained vertical communities. By 2050, urban planners will have constructed timber-composite towers featuring integrated hydroponic farms, passive ventilation channels, and geothermal climate control. Interconnected skybridges and pedestrian zones will have eliminated the necessity of private fossil-fuel automobiles. In these resilient urban districts, sustainable architecture balances high population density with abundant botanical biodiversity, ensuring that future megacities remain healthy and livable.",
-    glossary: [
-      { word: "megacity", definition_en: "Urban metropolis possessing more than ten million residents", definition_vi: "đô thị trung tâm có trên mười triệu dân" },
-      { word: "sustainability", definition_en: "Meeting present urban needs without compromising future resources", definition_vi: "đáp ứng nhu cầu đô thị mà không làm suy kiệt tài nguyên tương lai" },
-      { word: "ventilation", definition_en: "Circulation of fresh air through architectural structures", definition_vi: "sự lưu thông không khí trong công trình" },
-      { word: "modular", definition_en: "Pre-fabricated standardized components designed for rapid assembly", definition_vi: "các bộ phận tiêu chuẩn chế tạo sẵn để lắp ráp nhanh" },
-      { word: "resilient", definition_en: "Engineered to absorb environmental shocks and natural disruptions", definition_vi: "được thiết kế để chống chịu các cú sốc môi trường" }
-    ],
-    check_questions: [
-      { id: 1, question_en: "What major demographic milestone will have occurred by mid-century according to urban researchers?", options: ["Over sixty-eight percent of the human population will be living in urban centers", "Everyone will have moved to remote arctic villages", "Cities will have been completely dismantled"], answer: "Over sixty-eight percent of the human population will be living in urban centers" },
-      { id: 2, question_en: "Which grammatical tense describes urban living conditions in progress during 2050?", options: ["Future Continuous ('will be living in metropolitan centers')", "Past Perfect Simple", "Present Continuous only"], answer: "Future Continuous ('will be living in metropolitan centers')" },
-      { id: 3, question_en: "How do passive ventilation channels improve energy efficiency in modern skyscrapers?", options: ["They draw cool air through the building naturally without requiring electric chillers", "They pump smoke into office hallways", "They replace all glass windows with solid concrete"], answer: "They draw cool air through the building naturally without requiring electric chillers" }
-    ],
-    critical_thinking: {
-      question_en: "How can future megacities maintain equitable public green spaces as commercial real estate prices rise?",
-      hint_en: "Consider municipal zoning mandates for mandatory vertical gardens, public skybridge parks, and rooftop community allotments."
+  "week": 129,
+  "theme": "Opinion Project 3: Smartphones Under 12?",
+  "title_en": "Opinion Project 3: Smartphones Under 12?",
+  "title_vi": "Dự án Quan điểm 3: Điện thoại thông minh cho trẻ dưới 12 tuổi?",
+  "cefr_level": "B2 First",
+  "grammar_focus": "Evaluative essay structures, modal verbs of certainty and caution ('may disrupt', 'is imperative that', 'evidence suggests that').",
+  "vocab_list": [
+    {
+      "id": 1,
+      "word": "adolescent",
+      "pos": "n",
+      "ipa": "/ˌædəˈlesənt/",
+      "definition_en": "A young person in the transitional stage between childhood and adulthood",
+      "definition_vi": "thanh thiếu niên / người ở tuổi dậy thì",
+      "example_en": "Adolescent brains undergo major neurological reorganization during middle school years.",
+      "example_vi": "Bộ não thanh thiếu niên trải qua quá trình tái tổ chức thần kinh lớn trong những năm trung học cơ sở."
+    },
+    {
+      "id": 2,
+      "word": "smartphone",
+      "pos": "n",
+      "ipa": "/ˈsmɑːrtfoʊn/",
+      "definition_en": "A mobile device that combines cellular telephone capabilities with advanced computing",
+      "definition_vi": "điện thoại thông minh",
+      "example_en": "Providing an unrestricted smartphone to an eight-year-old raises serious parental concerns.",
+      "example_vi": "Cung cấp một chiếc điện thoại thông minh không giới hạn cho một đứa trẻ tám tuổi gây ra những lo ngại nghiêm trọng cho phụ huynh."
+    },
+    {
+      "id": 3,
+      "word": "development",
+      "pos": "n",
+      "ipa": "/dɪˈveləpmənt/",
+      "definition_en": "The biological, cognitive, and emotional growth of an individual over time",
+      "definition_vi": "sự phát triển",
+      "example_en": "Healthy emotional development depends heavily on face-to-face peer relationships.",
+      "example_vi": "Sự phát triển cảm xúc lành mạnh phụ thuộc rất lớn vào các mối quan hệ bạn bè trực tiếp."
+    },
+    {
+      "id": 4,
+      "word": "screen",
+      "pos": "n",
+      "ipa": "/skriːn/",
+      "definition_en": "The flat display surface on an electronic device where visual content appears",
+      "definition_vi": "màn hình điện tử",
+      "example_en": "Staring at a bright electronic screen late at night interferes with melatonin production.",
+      "example_vi": "Nhìn vào màn hình điện tử sáng muộn vào ban đêm gây trở ngại cho việc sản xuất melatonin."
+    },
+    {
+      "id": 5,
+      "word": "addiction",
+      "pos": "n",
+      "ipa": "/əˈdɪkʃən/",
+      "definition_en": "The condition of being compulsively dependent on an activity or device",
+      "definition_vi": "sự nghiện ngập / phụ thuộc cưỡng chế",
+      "example_en": "Compulsive video scrolling resembles behavioral addiction in clinical psychology.",
+      "example_vi": "Việc lướt video cưỡng chế tương tự như chứng nghiện hành vi trong tâm lý học lâm sàng."
+    },
+    {
+      "id": 6,
+      "word": "attention",
+      "pos": "n",
+      "ipa": "/əˈtenʃən/",
+      "definition_en": "Notice taken of someone or something; mental focus directed to a task",
+      "definition_vi": "sự chú ý / khả năng tập trung",
+      "example_en": "Continuous phone notifications fragment student attention during study hours.",
+      "example_vi": "Các thông báo điện thoại liên tục làm phân tán sự chú ý của học sinh trong giờ học."
+    },
+    {
+      "id": 7,
+      "word": "pediatric",
+      "pos": "adj",
+      "ipa": "/ˌpiːdiˈætrɪk/",
+      "definition_en": "Relating to the medical care, growth, and health of infants and children",
+      "definition_vi": "thuộc nhi khoa",
+      "example_en": "The national pediatric academy published strict screen time guidelines for young youths.",
+      "example_vi": "Học viện nhi khoa quốc gia đã công bố các hướng dẫn nghiêm ngặt về thời gian sử dụng màn hình cho trẻ nhỏ."
+    },
+    {
+      "id": 8,
+      "word": "cognitive",
+      "pos": "adj",
+      "ipa": "/ˈkɑːɡnətɪv/",
+      "definition_en": "Relating to conscious mental processes including memory, judgment, and reasoning",
+      "definition_vi": "thuộc nhận thức / tư duy",
+      "example_en": "Excessive multitasking on digital apps impairs deep cognitive processing in learners.",
+      "example_vi": "Làm nhiều việc cùng lúc quá mức trên các ứng dụng kỹ thuật số làm suy giảm quá trình nhận thức sâu ở người học."
+    },
+    {
+      "id": 9,
+      "word": "distraction",
+      "pos": "n",
+      "ipa": "/dɪˈstrækʃən/",
+      "definition_en": "Something that draws attention away from an intended goal or activity",
+      "definition_vi": "sự xao nhãng / điều gây mất tập trung",
+      "example_en": "Vibrating alerts serve as a persistent distraction during morning mathematics classes.",
+      "example_vi": "Các cảnh báo rung đóng vai trò như một sự xao nhãng liên tục trong các lớp toán buổi sáng."
+    },
+    {
+      "id": 10,
+      "word": "sleep",
+      "pos": "n",
+      "ipa": "/sliːp/",
+      "definition_en": "A natural periodic state of rest essential for brain and body recovery",
+      "definition_vi": "giấc ngủ",
+      "example_en": "Adequate nocturnal sleep is essential for memory consolidation and emotional balance.",
+      "example_vi": "Giấc ngủ ban đêm đầy đủ là điều cần thiết để củng cố trí nhớ và cân bằng cảm xúc."
+    },
+    {
+      "id": 11,
+      "word": "anxiety",
+      "pos": "n",
+      "ipa": "/æŋˈzaɪəti/",
+      "definition_en": "A feeling of worry, nervousness, or unease about an impending situation",
+      "definition_vi": "sự lo âu / cảm giác bất an",
+      "example_en": "Comparing oneself to curated social media profiles often provokes acute social anxiety.",
+      "example_vi": "Tự so sánh bản thân với các trang cá nhân được chọn lọc kỹ trên mạng xã hội thường gây ra sự lo âu xã hội gay gắt."
+    },
+    {
+      "id": 12,
+      "word": "wellbeing",
+      "pos": "n",
+      "ipa": "/ˈwelbiːɪŋ/",
+      "definition_en": "The state of being comfortable, healthy, mentally fulfilled, and happy",
+      "definition_vi": "sức khỏe toàn diện / phúc lợi tinh thần",
+      "example_en": "Physical outdoor recreation strongly supports child psychological wellbeing.",
+      "example_vi": "Các hoạt động giải trí thể chất ngoài trời hỗ trợ mạnh mẽ cho sức khỏe tâm lý của trẻ em."
+    },
+    {
+      "id": 13,
+      "word": "habit",
+      "pos": "n",
+      "ipa": "/ˈhæbɪt/",
+      "definition_en": "A settled or regular practice or tendency that is difficult to relinquish",
+      "definition_vi": "thói quen",
+      "example_en": "Checking notifications first thing in the morning quickly becomes an unconscious habit.",
+      "example_vi": "Kiểm tra thông báo điều đầu tiên vào buổi sáng nhanh chóng trở thành một thói quen vô thức."
+    },
+    {
+      "id": 14,
+      "word": "supervision",
+      "pos": "n",
+      "ipa": "/ˌsuːpərˈvɪʒən/",
+      "definition_en": "Management, oversight, or guidance by an adult or responsible authority",
+      "definition_vi": "sự giám sát / sự quản lý",
+      "example_en": "Parental supervision helps young adolescents navigate online spaces safely.",
+      "example_vi": "Sự giám sát của cha mẹ giúp thanh thiếu niên định hướng các không gian trực tuyến một cách an toàn."
+    },
+    {
+      "id": 15,
+      "word": "boundary",
+      "pos": "n",
+      "ipa": "/ˈbaʊndəri/",
+      "definition_en": "A recognized line or limit that indicates acceptable conduct or usage",
+      "definition_vi": "ranh giới / giới hạn",
+      "example_en": "Families establish a firm boundary by keeping all digital devices outside bedrooms.",
+      "example_vi": "Các gia đình thiết lập một ranh giới vững chắc bằng cách để tất cả các thiết bị kỹ thuật số bên ngoài phòng ngủ."
+    },
+    {
+      "id": 16,
+      "word": "guideline",
+      "pos": "n",
+      "ipa": "/ˈɡaɪdlaɪn/",
+      "definition_en": "A general rule, principle, or piece of advisory recommendation",
+      "definition_vi": "hướng dẫn / quy tắc chỉ đạo",
+      "example_en": "The school board drafted an updated guideline regarding electronic device usage.",
+      "example_vi": "Hội đồng nhà trường đã soạn thảo một hướng dẫn cập nhật liên quan đến việc sử dụng thiết bị điện tử."
+    },
+    {
+      "id": 17,
+      "word": "mental",
+      "pos": "adj",
+      "ipa": "/ˈmentəl/",
+      "definition_en": "Relating to the human mind, emotions, and intellectual processes",
+      "definition_vi": "thuộc về tinh thần / tâm trí",
+      "example_en": "Chronic digital overload can deplete adolescent mental stamina during exam week.",
+      "example_vi": "Tình trạng quá tải kỹ thuật số kéo dài có thể làm cạn kiệt sức bền tinh thần của thanh thiếu niên trong tuần thi."
+    },
+    {
+      "id": 18,
+      "word": "stimulate",
+      "pos": "v",
+      "ipa": "/ˈstɪmjəleɪt/",
+      "definition_en": "To encourage or trigger activity, curiosity, or physiological excitement",
+      "definition_vi": "kích thích / thúc đẩy",
+      "example_en": "Interactive digital games stimulate the brain's dopamine reward circuitry.",
+      "example_vi": "Các trò chơi kỹ thuật số tương tác kích thích mạch phần thưởng dopamine của não bộ."
+    },
+    {
+      "id": 19,
+      "word": "moderation",
+      "pos": "n",
+      "ipa": "/ˌmɑːdəˈreɪʃən/",
+      "definition_en": "The avoidance of excess or extremes; practicing balanced self-restraint",
+      "definition_vi": "sự chừng mực / điều độ",
+      "example_en": "Practicing screen time moderation allows children to enjoy technology without harm.",
+      "example_vi": "Thực hành sử dụng màn hình có chừng mực cho phép trẻ em tận hưởng công nghệ mà không bị tổn hại."
+    },
+    {
+      "id": 20,
+      "word": "restriction",
+      "pos": "n",
+      "ipa": "/rɪˈstrɪkʃən/",
+      "definition_en": "A limiting condition or statutory rule imposed on activities or access",
+      "definition_vi": "sự hạn chế / lệnh giới hạn",
+      "example_en": "Some countries are enacting an age restriction on social media account creation.",
+      "example_vi": "Một số quốc gia đang ban hành lệnh giới hạn độ tuổi đối với việc tạo tài khoản mạng xã hội."
     }
-  },
-  shadowing_sentences: [
-    { id: 1, text: "By 2050, urban planners will have constructed self-cooling skyscrapers in every major megacity.", en: "By 2050, urban planners will have constructed self-cooling skyscrapers in every major megacity.", vi: "Đến năm 2050, các nhà quy hoạch đô thị sẽ xây dựng xong những tòa nhà chọc trời tự làm mát ở mọi đại đô thị lớn.", ipa: "/baɪ ˈtwenti ˈfɪfti ˈɜːrbən ˈplænərz wɪl hæv kənˈstrʌktɪd self ˈkuːlɪŋ ˈskaɪskreɪpərz ɪn ˈevri ˈmeɪdʒər ˈmeɡəsɪti/", words: ["By", "2050,", "urban", "planners", "will", "have", "constructed", "self-cooling", "skyscrapers", "in", "every", "major", "megacity"] },
-    { id: 2, text: "Millions of citizens will be living in sustainable eco-districts powered entirely by renewables.", en: "Millions of citizens will be living in sustainable eco-districts powered entirely by renewables.", vi: "Hàng triệu người dân sẽ đang sống trong những khu đô thị sinh thái bền vững chạy hoàn toàn bằng năng lượng tái tạo.", ipa: "/ˈmɪljənz əv ˈsɪtɪzənz wɪl biː ˈlɪvɪŋ ɪn səˈsteɪnəbəl ˈiːkoʊ ˈdɪstrɪkts ˈpaʊərd ɪnˈtaɪərli baɪ rɪˈnuːəbəlz/", words: ["Millions", "of", "citizens", "will", "be", "living", "in", "sustainable", "eco-districts", "powered", "entirely", "by", "renewables"] },
-    { id: 3, text: "Modular construction techniques allow high-density apartment blocks to be assembled within weeks.", en: "Modular construction techniques allow high-density apartment blocks to be assembled within weeks.", vi: "Các kỹ thuật xây dựng mô-đun cho phép các khối chung cư mật độ cao được lắp ráp trong vòng vài tuần.", ipa: "/ˈmɑːdʒələr kənˈstrʌkʃən tekˈniːks əˈlaʊ haɪ ˈdensəti əˈpɑːrtmənt blɑːks tuː biː əˈsembəld wɪˈðɪn wiːks/", words: ["Modular", "construction", "techniques", "allow", "high-density", "apartment", "blocks", "to", "be", "assembled", "within", "weeks"] },
-    { id: 4, text: "Passive ventilation atriums circulate cool breezes without expending fossil fuel electricity.", en: "Passive ventilation atriums circulate cool breezes without expending fossil fuel electricity.", vi: "Các giếng trời thông gió thụ động lưu thông những làn gió mát mà không tiêu tốn điện năng từ nhiên liệu hóa thạch.", ipa: "/ˈpæsɪv ˌventəlˈeɪʃən ˈeɪtriəmz ˈsɜːrkjəleɪt kuːl ˈbriːzɪz wɪˈðaʊt ɪkˈspendɪŋ ˈfɑːsəl fjuːəl ɪˌlekˈtrɪsəti/", words: ["Passive", "ventilation", "atriums", "circulate", "cool", "breezes", "without", "expending", "fossil", "fuel", "electricity"] },
-    { id: 5, text: "Green pedestrian promenades replace congested vehicular roadways throughout the central business district.", en: "Green pedestrian promenades replace congested vehicular roadways throughout the central business district.", vi: "Các đường dạo bộ xanh cho người đi bộ thay thế các tuyến đường xe cộ tắc nghẽn khắp khu thương mại trung tâm.", ipa: "/ɡriːn pəˈdestriən ˌprɑːməˈnɑːdz rɪˈpleɪs kənˈdʒestɪd viːˈhɪkjələr ˈroʊdweɪz θruːˈaʊt ðə ˈsentrəl ˈbɪznəs ˈdɪstrɪkt/", words: ["Green", "pedestrian", "promenades", "replace", "congested", "vehicular", "roadways", "throughout", "the", "central", "business", "district"] },
-    { id: 6, text: "Architects will have integrated vertical farms to provide fresh produce for local neighborhoods.", en: "Architects will have integrated vertical farms to provide fresh produce for local neighborhoods.", vi: "Các kiến trúc sư sẽ tích hợp xong các trang trại thẳng đứng để cung cấp nông sản tươi sạch cho các khu dân cư địa phương.", ipa: "/ˈɑːrkɪtekts wɪl hæv ˈɪntɪɡreɪtɪd ˈvɜːrtɪkəl fɑːrmz tuː prəˈvaɪd freʃ ˈprɑːduːs fɔːr ˈloʊkəl ˈneɪbərhʊdz/", words: ["Architects", "will", "have", "integrated", "vertical", "farms", "to", "provide", "fresh", "produce", "for", "local", "neighborhoods"] },
-    { id: 7, text: "High-speed magnetic transit lines reduce average commute duration by more than fifty percent.", en: "High-speed magnetic transit lines reduce average commute duration by more than fifty percent.", vi: "Các tuyến giao thông đệm từ tốc độ cao giảm hơn năm mươi phần trăm thời gian đi lại trung bình.", ipa: "/haɪ spiːd mæɡˈnetɪk ˈtrænsɪt laɪnz rɪˈduːs ˈævərɪdʒ kəˈmjuːt dʊˈreɪʃən baɪ mɔːr ðæn ˈfɪfti pərˈsent/", words: ["High-speed", "magnetic", "transit", "lines", "reduce", "average", "commute", "duration", "by", "more", "than", "fifty", "percent"] },
-    { id: 8, text: "Resilient infrastructure shields future coastal cities against severe meteorological anomalies.", en: "Resilient infrastructure shields future coastal cities against severe meteorological anomalies.", vi: "Cơ sở hạ tầng kiên cường che chắn các thành phố ven biển tương lai trước những bất thường khí tượng nghiêm trọng.", ipa: "/rɪˈzɪliənt ˈɪnfrəstrʌktʃər ʃiːldz ˈfjuːtʃər ˈkoʊstl ˈsɪtiz əˈɡenst sɪˈvɪr ˌmiːtiərəˈlɑːdʒɪkəl əˈnɑːməliz/", words: ["Resilient", "infrastructure", "shields", "future", "coastal", "cities", "against", "severe", "meteorological", "anomalies"] }
   ],
-  story_scenes: [
-    { id: 1, scene_id: "scene_1", scene_number: 1, title_en: "Unveiling the Eco-Tower Blueprint", title_vi: "Công Bố Bản Vẽ Tháp Sinh Thái", description_en: "Architect Julian Reyes and Maya Chen examine 3D holographic models of a vertical forest skyscraper.", description: "Architect Julian Reyes and Maya Chen examine 3D holographic models of a vertical forest skyscraper.", image_url: "/images/week129/webtoon_scene_1.png", audio_url: "/audio/week129/scene_1.mp3" },
-    { id: 2, scene_id: "scene_2", scene_number: 2, title_en: "Simulating Aerodynamic Wind Channels", title_vi: "Mô Phỏng Các Luồng Gió Khí Động Học", description_en: "Maya runs computational fluid simulations showing natural breezes cooling internal atriums.", description: "Maya runs computational fluid simulations showing natural breezes cooling internal atriums.", image_url: "/images/week129/webtoon_scene_2.png", audio_url: "/audio/week129/scene_2.mp3" },
-    { id: 3, scene_id: "scene_3", scene_number: 3, title_en: "Testing Timber Composite Beams", title_vi: "Thử Nghiệm Dầm Gỗ Composite", description_en: "Julian tests pressure tolerances on sustainable cross-laminated timber beams in the materials lab.", description: "Julian tests pressure tolerances on sustainable cross-laminated timber beams in the materials lab.", image_url: "/images/week129/webtoon_scene_3.png", audio_url: "/audio/week129/scene_3.mp3" },
-    { id: 4, scene_id: "scene_4", scene_number: 4, title_en: "Designing Skybridge Pedestrian Paths", title_vi: "Thiết Kế Cầu Đi Bộ Trên Không", description_en: "They design interconnected pedestrian skybridges linking three towers without ground vehicle crossings.", description: "They design interconnected pedestrian skybridges linking three towers without ground vehicle crossings.", image_url: "/images/week129/webtoon_scene_4.png", audio_url: "/audio/week129/scene_4.mp3" },
-    { id: 5, scene_id: "scene_5", scene_number: 5, title_en: "Municipal Urban Planning Ratification", title_vi: "Quy Hoạch Đô Thị Được Thành Phố Thông Qua", description_en: "The city council unanimously approves the eco-district zoning plan after reviewing sustainability metrics.", description: "The city council unanimously approves the eco-district zoning plan after reviewing sustainability metrics.", image_url: "/images/week129/webtoon_scene_5.png", audio_url: "/audio/week129/scene_5.mp3" }
-  ],
-  writing_data: {
-    title: "Designing Sustainable Vertical Megacities",
-    prompt_en: "Look at the four pictures. Write a formal investigative report about Julian Reyes and Maya Chen designing self-cooling vertical architecture for future megacities. Write 20 or more words.",
-    prompt_vi: "Nhìn vào 4 bức tranh. Viết bản báo cáo điều tra về Julian Reyes và Maya Chen thiết kế kiến trúc thẳng đứng tự làm mát cho đại đô thị tương lai (từ 20 từ trở lên).",
-    min_sentences: 3,
-    min_words: 20,
-    max_words: 90,
-    model_sentence: "Julian Reyes and Maya Chen presented architectural plans for an eco-friendly vertical skyscraper. First, 3D holographic models demonstrated natural ventilation channels. Next, stress tests confirmed that lightweight composite timber beams supported heavy vertical gardens. After pedestrian skybridges eliminated car dependency, the city council ratified the sustainable district development plan.",
-    word_bank: ["megacity", "architecture", "skyscraper", "sustainability", "infrastructure", "pedestrian", "ventilation", "modular", "efficiency", "resilient"],
-    sentence_frames: [
-      "Initially, architects evaluated holographic models of an eco-friendly ___ tower.",
-      "Engineers verified that passive ___ channels drew cool ground air into the central atrium.",
-      "Interconnected skybridges established a continuous network for ___ commuters.",
-      "Ultimately, city authorities approved the resilient ___ plan."
-    ],
-    panels: [
+  "clil": {
+    "title_en": "Developmental Psychology: Social Media and Adolescent Cognition",
+    "title_vi": "Tâm Lý Học Phát Triển: Mạng Xã Hội và Nhận Thức Thanh Thiếu Niên",
+    "content_en": "Developmental psychologists and pediatric researchers are investigating whether children under age twelve should own personal smartphones. Neurological studies suggest that young adolescent brains are particularly vulnerable to digital stimulation. Excessive screen usage can disrupt essential sleep cycles, reduce attention spans in classrooms, and trigger social anxiety. Conversely, proponents argue that mobile devices allow parents to maintain direct contact and help children access educational applications. In an academic opinion essay, writers must systematically evaluate both positions with scientific evidence. Pediatric associations recommend establishing clear boundaries, such as screen-free bedrooms and parental supervision of online accounts. Analyzing psychological data enables students to craft reasoned arguments on whether statutory restrictions or parental moderation offer the healthiest path for young minds.",
+    "glossary": [
       {
-        panel_id: "panel_1",
-        title_en: "Holographic Blueprint Examination",
-        title_vi: "Kiểm Tra Bản Vẽ Ba Chiều",
-        image_url: "/images/week129/writing_panel_1.png",
-        image_prompt: "Two architects standing over a glowing blue holographic projection of a curved vertical forest tower.",
-        caption: "Architects examined holographic models of a self-cooling skyscraper.",
-        sentence_frame: "First, the architects [examined holographic models] of an [innovative self-cooling skyscraper].",
-        pills: ["examined holographic models", "innovative self-cooling skyscraper", "Julian and Maya", "3D architectural blueprint"],
-        connectors: ["First,", "Initially,", "On Monday morning,"]
+        "word": "adolescent",
+        "definition_en": "An individual navigating the physical, cognitive, and emotional transition between childhood and maturity",
+        "definition_vi": "cá nhân đang trải qua bước chuyển đổi thể chất, nhận thức và cảm xúc giữa tuổi thơ và sự trưởng thành"
       },
       {
-        panel_id: "panel_2",
-        title_en: "Aerodynamic Ventilation Testing",
-        title_vi: "Thử Nghiệm Thông Gió Khí Động Học",
-        image_url: "/images/week129/writing_panel_2.png",
-        image_prompt: "A digital wind tunnel monitor displaying blue and green airflow vectors flowing through an open building atrium.",
-        caption: "Simulations proved passive ventilation cooled office floors naturally.",
-        sentence_frame: "Next, airflow simulations confirmed that [passive ventilation channels] cooled [internal office atriums naturally].",
-        pills: ["passive ventilation channels", "internal office atriums naturally", "airflow vectors", "energy efficiency"],
-        connectors: ["Next,", "Subsequently,", "Following fluid simulations,"]
+        "word": "pediatric",
+        "definition_en": "Specialized branch of medical science devoted to child healthcare, growth, and development",
+        "definition_vi": "ngành khoa học y khoa chuyên biệt dành cho việc chăm sóc sức khỏe, sự phát triển của trẻ em"
       },
       {
-        panel_id: "panel_3",
-        title_en: "Pedestrian Skybridge Connection",
-        title_vi: "Kết Nối Cầu Đi Bộ Trên Không",
-        image_url: "/images/week129/writing_panel_3.png",
-        image_prompt: "Glass and timber skybridges connecting three leafy skyscrapers high above street level with pedestrians walking.",
-        caption: "Elevated pedestrian skybridges linked towers without road traffic.",
-        sentence_frame: "After that, elevated skybridges [connected multiple residential towers] for [pedestrian transit].",
-        pills: ["connected multiple residential towers", "pedestrian transit", "glass walkways", "eliminated road crossings"],
-        connectors: ["After that,", "Furthermore,", "In the next design phase,"]
+        "word": "cognitive",
+        "definition_en": "Relating to intellectual capabilities including memory, linguistic comprehension, and reasoning",
+        "definition_vi": "liên quan đến các năng lực trí tuệ bao gồm trí nhớ, hiểu ngôn ngữ và suy luận"
       },
       {
-        panel_id: "panel_4",
-        title_en: "City Council Zoning Approval",
-        title_vi: "Phê Chuẩn Quy Hoạch Của Hội Đồng Thành Phố",
-        image_url: "/images/week129/writing_panel_4.png",
-        image_prompt: "Smiling municipal planning officials shaking hands with the architects in front of an architectural scale model.",
-        caption: "The city council unanimously ratified the sustainable eco-district plan.",
-        sentence_frame: "In the end, the municipal planning council [ratified the eco-district plan] to ensure [long-term urban sustainability].",
-        pills: ["ratified the eco-district plan", "long-term urban sustainability", "unanimous vote", "resilient megacity"],
-        connectors: ["In the end,", "Finally,", "Consequently,"]
+        "word": "supervision",
+        "definition_en": "Active parental oversight and guidance over a minor's digital behaviors and media diet",
+        "definition_vi": "sự giám sát tích cực và định hướng của cha mẹ đối với hành vi kỹ thuật số của trẻ vị thành niên"
+      },
+      {
+        "word": "moderation",
+        "definition_en": "The deliberate practice of balanced consumption avoiding damaging behavioral extremes",
+        "definition_vi": "thực hành có chủ đích việc tiêu dùng cân bằng, tránh các thái cực hành vi gây hại"
       }
     ],
-    ladder_stages: [
+    "check_questions": [
       {
-        badge_label: "MODEL",
-        title: "Blueprint Examination",
-        image_url: "/images/week129/writing_panel_1.png",
-        caption: "Architects examined holographic models of a self-cooling skyscraper.",
-        frame_L1: "First, the architects analyzed holographic blueprints. They confirmed that the tower incorporated green vertical gardens.",
-        connectors: ["First,", "Initially,", "To begin,"],
-        sentence_hint: "Write 2 sentences describing holographic model examination.",
-        ordered_chips: ["Architects analyzed", "holographic blueprints", "to incorporate", "green vertical gardens"],
-        pills: ["holographic blueprints", "green vertical gardens", "Julian and Maya", "tower design"],
-        sentence_frame: "First, architects analyzed [holographic blueprints] to design [green vertical gardens]."
+        "id": 1,
+        "question_en": "Why are adolescent brains particularly sensitive to excessive smartphone stimulation?",
+        "options": [
+          "Because their neural networks are undergoing major restructuring and are vulnerable to dopamine reward loops",
+          "Because young brains cannot process colors on digital screens",
+          "Because children sleep eighteen hours a day automatically"
+        ],
+        "answer": "Because their neural networks are undergoing major restructuring and are vulnerable to dopamine reward loops"
       },
       {
-        badge_label: "BUILD",
-        title: "Ventilation Testing",
-        image_url: "/images/week129/writing_panel_2.png",
-        caption: "Simulations proved passive ventilation cooled office floors naturally.",
-        frame_L1: "Next, Maya simulated wind vectors in the atrium. Natural airflow cooled all floors without mechanical air conditioning.",
-        connectors: ["Next,", "Subsequently,", "In addition,"],
-        sentence_hint: "Write 2 sentences about simulated passive airflow.",
-        pills: ["simulated wind vectors", "natural airflow", "cooled floors", "Maya tested"],
-        sentence_frame: "Next, Maya simulated [wind vectors] that provided [natural airflow cooling]."
+        "id": 2,
+        "question_en": "What primary argument do proponents of smartphones for young children offer?",
+        "options": [
+          "They enable emergency parental communication and access to educational learning tools",
+          "They replace the necessity of school attendance",
+          "They make children immune to social anxiety"
+        ],
+        "answer": "They enable emergency parental communication and access to educational learning tools"
       },
       {
-        badge_label: "WRITE",
-        title: "Skybridge Networks",
-        image_url: "/images/week129/writing_panel_3.png",
-        caption: "Elevated pedestrian skybridges linked towers without road traffic.",
-        frame_L1: "After that, engineers designed glass skybridges between towers. Residents could walk to work without crossing busy streets.",
-        connectors: ["After that,", "Later,", "Meanwhile,"],
-        sentence_hint: "Write 2 sentences describing pedestrian skybridge connections.",
-        pills: ["glass skybridges", "walk to work", "pedestrians", "avoided traffic"],
-        sentence_frame: "After that, engineers designed [glass skybridges] so residents could [walk to work safely]."
+        "id": 3,
+        "question_en": "What boundary is strongly recommended by pediatric health associations?",
+        "options": [
+          "Keeping bedrooms completely free of screens during sleep hours",
+          "Allowing unlimited phone access throughout the night",
+          "Banning all books in favor of social media"
+        ],
+        "answer": "Keeping bedrooms completely free of screens during sleep hours"
+      }
+    ],
+    "critical_thinking": {
+      "question_en": "How can families balance the practical safety benefits of mobile phones with the psychological need to limit addictive social media apps?",
+      "hint_en": "Parents can provide simple calling and messaging devices without internet browsing or social media applications, establishing clear usage hours."
+    }
+  },
+  "shadowing_sentences": [
+    {
+      "id": 1,
+      "text": "Excessive screen usage before bedtime disrupts essential adolescent sleep cycles.",
+      "en": "Excessive screen usage before bedtime disrupts essential adolescent sleep cycles.",
+      "vi": "Thời gian sử dụng màn hình quá mức trước giờ đi ngủ làm gián đoạn các chu kỳ giấc ngủ thiết yếu của thanh thiếu niên.",
+      "ipa": "/ɪkˈsesɪv skriːn ˈjuːsɪdʒ bɪˈfɔːr ˈbedtaɪm dɪsˈrʌpts ɪˈsenʃəl ˌædəˈlesənt sliːp ˈsaɪkəlz/",
+      "words": [
+        "Excessive",
+        "screen",
+        "usage",
+        "before",
+        "bedtime",
+        "disrupts",
+        "essential",
+        "adolescent",
+        "sleep",
+        "cycles"
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Developmental psychologists warn that constant notifications fragment student attention.",
+      "en": "Developmental psychologists warn that constant notifications fragment student attention.",
+      "vi": "Các nhà tâm lý học phát triển cảnh báo rằng thông báo liên tục làm phân tán sự chú ý của học sinh.",
+      "ipa": "/dɪˌveləpˈmentəl saɪˈkɑːlədʒɪsts wɔːrn ðæt ˈkɑːnstənt ˌnoʊtɪfɪˈkeɪʃənz ˈfræɡmənt ˈstuːdənt əˈtenʃən/",
+      "words": [
+        "Developmental",
+        "psychologists",
+        "warn",
+        "that",
+        "constant",
+        "notifications",
+        "fragment",
+        "student",
+        "attention"
+      ]
+    },
+    {
+      "id": 3,
+      "text": "It is imperative that families establish healthy boundaries regarding digital devices.",
+      "en": "It is imperative that families establish healthy boundaries regarding digital devices.",
+      "vi": "Điều cấp thiết là các gia đình phải thiết lập các ranh giới lành mạnh liên quan đến các thiết bị kỹ thuật số.",
+      "ipa": "/ɪt ɪz ɪmˈperətɪv ðæt ˈfæməliz ɪˈstæblɪʃ ˈhelθi ˈbaʊndəriz rɪˈɡɑːrdɪŋ ˈdɪdʒɪtəl dɪˈvaɪsɪz/",
+      "words": [
+        "It",
+        "is",
+        "imperative",
+        "that",
+        "families",
+        "establish",
+        "healthy",
+        "boundaries",
+        "regarding",
+        "digital",
+        "devices"
+      ]
+    },
+    {
+      "id": 4,
+      "text": "While smartphones enable parental contact, they may also increase social anxiety.",
+      "en": "While smartphones enable parental contact, they may also increase social anxiety.",
+      "vi": "Mặc dù điện thoại thông minh cho phép liên lạc với cha mẹ, chúng cũng có thể làm gia tăng lo âu xã hội.",
+      "ipa": "/waɪl ˈsmɑːrtfoʊnz ɪˈneɪbəl pəˈrentəl ˈkɑːntækt ðeɪ meɪ ˈɔːlsoʊ ɪnˈkriːs ˈsoʊʃəl æŋˈzaɪəti/",
+      "words": [
+        "While",
+        "smartphones",
+        "enable",
+        "parental",
+        "contact",
+        "they",
+        "may",
+        "also",
+        "increase",
+        "social",
+        "anxiety"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Pediatric research indicates that excessive social media impairs cognitive focus.",
+      "en": "Pediatric research indicates that excessive social media impairs cognitive focus.",
+      "vi": "Nghiên cứu nhi khoa chỉ ra rằng mạng xã hội quá mức làm suy giảm khả năng tập trung nhận thức.",
+      "ipa": "/ˌpiːdiˈætrɪk rɪˈsɜːrtʃ ˈɪndɪkeɪts ðæt ɪkˈsesɪv ˈsoʊʃəl ˈmiːdiə ɪmˈperz ˈkɑːɡnətɪv ˈfoʊkəs/",
+      "words": [
+        "Pediatric",
+        "research",
+        "indicates",
+        "that",
+        "excessive",
+        "social",
+        "media",
+        "impairs",
+        "cognitive",
+        "focus"
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Practicing digital moderation protects young children from behavioral addiction.",
+      "en": "Practicing digital moderation protects young children from behavioral addiction.",
+      "vi": "Thực hành điều độ kỹ thuật số bảo vệ trẻ nhỏ khỏi chứng nghiện hành vi.",
+      "ipa": "/ˈpræktɪsɪŋ ˈdɪdʒɪtəl ˌmɑːdəˈreɪʃən prəˈtekts jʌŋ ˈtʃɪldrən frəm bɪˈheɪvjərəl əˈdɪkʃən/",
+      "words": [
+        "Practicing",
+        "digital",
+        "moderation",
+        "protects",
+        "young",
+        "children",
+        "from",
+        "behavioral",
+        "addiction"
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Parental supervision ensures that adolescents navigate online communities safely.",
+      "en": "Parental supervision ensures that adolescents navigate online communities safely.",
+      "vi": "Sự giám sát của cha mẹ đảm bảo rằng thanh thiếu niên định hướng các cộng đồng trực tuyến một cách an toàn.",
+      "ipa": "/pəˈrentəl ˌsuːpərˈvɪʒən ɪnˈʃʊrz ðæt ˌædəˈlesənts ˈnævɪɡeɪt ˈɔːnlaɪn kəˈmjuːnətiz ˈseɪfli/",
+      "words": [
+        "Parental",
+        "supervision",
+        "ensures",
+        "that",
+        "adolescents",
+        "navigate",
+        "online",
+        "communities",
+        "safely"
+      ]
+    },
+    {
+      "id": 8,
+      "text": "A balanced lifestyle combines outdoor physical activity with mindful technology use.",
+      "en": "A balanced lifestyle combines outdoor physical activity with mindful technology use.",
+      "vi": "Một lối sống cân bằng kết hợp hoạt động thể chất ngoài trời với việc sử dụng công nghệ một cách chánh niệm.",
+      "ipa": "/ə ˈbælənst ˈlaɪfstaɪl kəmˈbaɪnz ˈaʊtdɔːr ˈfɪzɪkəl ækˈtɪvəti wɪð ˈmaɪndfəl tekˈnɑːlədʒi juːs/",
+      "words": [
+        "A",
+        "balanced",
+        "lifestyle",
+        "combines",
+        "outdoor",
+        "physical",
+        "activity",
+        "with",
+        "mindful",
+        "technology",
+        "use"
+      ]
+    }
+  ],
+  "story_scenes": [
+    {
+      "id": 1,
+      "scene_id": "scene_1",
+      "scene_number": 1,
+      "title_en": "The Debate Topic Announced",
+      "title_vi": "Chủ Đề Tranh Luận Được Công Bố",
+      "description_en": "Maya and Leo study the essay prompt: 'Should personal smartphones be restricted for children under age twelve?'",
+      "description": "Maya and Leo study the essay prompt: 'Should personal smartphones be restricted for children under age twelve?'",
+      "image_url": "/images/week129/webtoon_scene_1.png",
+      "audio_url": "/audio/week129/scene_1.mp3"
+    },
+    {
+      "id": 2,
+      "scene_id": "scene_2",
+      "scene_number": 2,
+      "title_en": "Examining Pediatric Sleep Deficits",
+      "title_vi": "Xem Xét Thiếu Hụt Giấc Ngủ Nhi Khoa",
+      "description_en": "Maya examines medical bar charts showing how blue screen radiation delays melatonin release in children.",
+      "description": "Maya examines medical bar charts showing how blue screen radiation delays melatonin release in children.",
+      "image_url": "/images/week129/webtoon_scene_2.png",
+      "audio_url": "/audio/week129/scene_2.mp3"
+    },
+    {
+      "id": 3,
+      "scene_id": "scene_3",
+      "scene_number": 3,
+      "title_en": "Considering Safety and Parental Contact",
+      "title_vi": "Cân Nhắc An Toàn và Liên Lạc Cha Mẹ",
+      "description_en": "Leo argues that mobile phones allow kids walking home from sports practice to message parents in emergencies.",
+      "description": "Leo argues that mobile phones allow kids walking home from sports practice to message parents in emergencies.",
+      "image_url": "/images/week129/webtoon_scene_3.png",
+      "audio_url": "/audio/week129/scene_3.mp3"
+    },
+    {
+      "id": 4,
+      "scene_id": "scene_4",
+      "scene_number": 4,
+      "title_en": "Drafting the Balanced Opinion Essay",
+      "title_vi": "Soạn Thảo Bài Luận Quan Điểm Cân Bằng",
+      "description_en": "Maya synthesizes both perspectives, proposing simple feature phones for safety and strict boundaries on social apps.",
+      "description": "Maya synthesizes both perspectives, proposing simple feature phones for safety and strict boundaries on social apps.",
+      "image_url": "/images/week129/webtoon_scene_4.png",
+      "audio_url": "/audio/week129/scene_4.mp3"
+    },
+    {
+      "id": 5,
+      "scene_id": "scene_5",
+      "scene_number": 5,
+      "title_en": "Submitting the Research Project",
+      "title_vi": "Nộp Dự Án Nghiên Cứu",
+      "description_en": "The teacher commends Maya and Leo for supporting their recommendations with developmental psychology evidence.",
+      "description": "The teacher commends Maya and Leo for supporting their recommendations with developmental psychology evidence.",
+      "image_url": "/images/week129/webtoon_scene_5.png",
+      "audio_url": "/audio/week129/scene_5.mp3"
+    }
+  ],
+  "writing_data": {
+    "title": "Structuring an Academic Opinion Essay on Youth Smartphones",
+    "prompt_en": "Look at the four panels. Write an opinion essay paragraph evaluating whether personal smartphones should be restricted for children under age twelve. Use evaluative modal expressions ('evidence suggests that', 'it is imperative that') and balanced reasoning. Write 20 or more words.",
+    "prompt_vi": "Nhìn vào 4 khung tranh. Viết một đoạn văn bài luận quan điểm đánh giá xem điện thoại thông minh cá nhân có nên bị giới hạn đối với trẻ dưới mười hai tuổi hay không. Sử dụng các cấu trúc đánh giá ('evidence suggests that', 'it is imperative that') và lập luận cân bằng. Viết từ 20 từ trở lên.",
+    "min_sentences": 3,
+    "min_words": 20,
+    "max_words": 90,
+    "model_sentence": "While smartphones enable parents to maintain contact with children during commutes, evidence suggests that unrestricted access compromises adolescent wellbeing. Pediatric studies demonstrate that late-night screen exposure disrupts essential sleep cycles and increases social anxiety. Therefore, it is imperative that schools and families establish firm boundaries, such as screen-free study hours and age restrictions on social media apps.",
+    "word_bank": [
+      "adolescent",
+      "smartphone",
+      "development",
+      "screen",
+      "attention",
+      "pediatric",
+      "anxiety",
+      "wellbeing",
+      "supervision",
+      "restriction"
+    ],
+    "sentence_frames": [
+      "While smartphones offer emergency communication, they can disrupt adolescent ___.",
+      "Pediatric research indicates that late-night screen use impairs healthy ___.",
+      "It is imperative that parents maintain consistent digital ___ at home.",
+      "Ultimately, establishing clear ___ protects psychological wellbeing."
+    ],
+    "panels": [
+      {
+        "panel_id": "panel_1",
+        "title_en": "Panel 1: The Safety and Connectivity Claim",
+        "title_vi": "Khung 1: Khẳng Định Về An Toàn và Kết Nối",
+        "image_url": "/images/week129/writing_panel_1.png",
+        "image_prompt": "A young student using a mobile phone to text their mother while standing at a school bus stop in late afternoon.",
+        "caption": "Phones allow parents to track transit and coordinate after-school pickups.",
+        "sentence_frame": "Smartphones [allow families to maintain direct communication] during [daily school transit].",
+        "pills": [
+          "allow families to maintain direct communication",
+          "daily school transit",
+          "emergency parental contact",
+          "practical connectivity"
+        ],
+        "connectors": [
+          "On one hand,",
+          "Proponents argue that,",
+          "First,"
+        ]
       },
       {
-        badge_label: "EXPAND",
-        title: "Municipal Approval",
-        image_url: "/images/week129/writing_panel_4.png",
-        caption: "The city council unanimously ratified the sustainable eco-district plan.",
-        frame_L1: "In the end, municipal leaders approved the zoning permit. The project set a sustainable benchmark for future megacities.",
-        connectors: ["In the end,", "Finally,", "As a result,"],
-        sentence_hint: "Write 2 sentences about receiving final municipal council approval.",
-        pills: ["municipal leaders", "zoning permit", "sustainable benchmark", "future megacities"],
-        sentence_frame: "In the end, municipal leaders approved [the zoning permit] to establish [a sustainable urban benchmark]."
+        "panel_id": "panel_2",
+        "title_en": "Panel 2: Documenting Sleep and Focus Impairment",
+        "title_vi": "Khung 2: Ghi Nhận Sự Suy Giảm Giấc Ngủ và Tập Trung",
+        "image_url": "/images/week129/writing_panel_2.png",
+        "image_prompt": "A child lying awake in a dark bedroom illuminated by the blue glow of a smartphone screen.",
+        "caption": "Late-night screen use disrupts melatonin production and vital sleep.",
+        "sentence_frame": "Excessive screen usage [disrupts nocturnal sleep cycles] and [impairs classroom cognitive focus].",
+        "pills": [
+          "disrupts nocturnal sleep cycles",
+          "impairs classroom cognitive focus",
+          "blue light exposure",
+          "triggers social anxiety"
+        ],
+        "connectors": [
+          "However,",
+          "In contrast,",
+          "On the other hand,"
+        ]
+      },
+      {
+        "panel_id": "panel_3",
+        "title_en": "Panel 3: Establishing Healthy Home Boundaries",
+        "title_vi": "Khung 3: Thiết Lập Ranh Giới Lành Mạnh Tại Nhà",
+        "image_url": "/images/week129/writing_panel_3.png",
+        "image_prompt": "A family charging basket in the hallway where parents and children deposit phones before bedtime.",
+        "caption": "Establishing screen-free bedrooms protects youth mental wellbeing.",
+        "sentence_frame": "Parents [establish screen-free charging zones] to [ensure restorative sleep for children].",
+        "pills": [
+          "establish screen-free charging zones",
+          "ensure restorative sleep for children",
+          "parental supervision guidelines",
+          "enforce healthy boundaries"
+        ],
+        "connectors": [
+          "Therefore,",
+          "To mitigate these harms,",
+          "It is imperative that"
+        ]
+      },
+      {
+        "panel_id": "panel_4",
+        "title_en": "Panel 4: Synthesizing a Balanced Recommendation",
+        "title_vi": "Khung 4: Tổng Hợp Khuyến Nghị Cân Bằng",
+        "image_url": "/images/week129/writing_panel_4.png",
+        "image_prompt": "Happy middle school students playing soccer outdoors in a green park while backpacks rest on a bench.",
+        "caption": "Balancing technology with outdoor activities fosters healthy development.",
+        "sentence_frame": "A balanced lifestyle [combines essential digital moderation] with [active outdoor physical play].",
+        "pills": [
+          "combines essential digital moderation",
+          "active outdoor physical play",
+          "protects adolescent wellbeing",
+          "fosters healthy development"
+        ],
+        "connectors": [
+          "In conclusion,",
+          "Ultimately,",
+          "Consequently,"
+        ]
+      }
+    ],
+    "ladder_stages": [
+      {
+        "badge_label": "MODEL",
+        "title": "Stage 1: Acknowledging Connectivity",
+        "image_url": "/images/week129/writing_panel_1.png",
+        "caption": "Phones allow parents to track transit and coordinate after-school pickups.",
+        "frame_L1": "Smartphones help children contact parents in emergencies. They make walking home safer.",
+        "connectors": [
+          "On one hand,",
+          "First,",
+          "Initially,"
+        ],
+        "sentence_hint": "Write 2 sentences describing the safety benefits of mobile phones.",
+        "ordered_chips": [
+          "Smartphones enable children",
+          "to contact parents in emergencies",
+          "while traveling home",
+          "from afternoon school activities."
+        ],
+        "pills": [
+          "contact parents in emergencies",
+          "traveling home safely",
+          "smartphones enable communication",
+          "practical benefit"
+        ],
+        "sentence_frame": "Smartphones [allow families to maintain direct communication] during [daily school transit]."
+      },
+      {
+        "badge_label": "BUILD",
+        "title": "Stage 2: Highlighting Psychological Risks",
+        "image_url": "/images/week129/writing_panel_2.png",
+        "caption": "Late-night screen use disrupts melatonin production and vital sleep.",
+        "frame_L1": "However, excessive screen time harms sleep. Children stay awake late browsing social media apps.",
+        "connectors": [
+          "However,",
+          "In contrast,",
+          "Evidence shows that,"
+        ],
+        "sentence_hint": "Write 2 sentences explaining how screens impair sleep and attention.",
+        "pills": [
+          "excessive screen time",
+          "harms natural sleep",
+          "browsing late at night",
+          "impairs classroom focus"
+        ],
+        "sentence_frame": "Excessive screen usage [disrupts nocturnal sleep cycles] and [impairs classroom cognitive focus]."
+      },
+      {
+        "badge_label": "WRITE",
+        "title": "Stage 3: Proposing Balanced Solutions",
+        "image_url": "/images/week129/writing_panel_3.png",
+        "caption": "Establishing screen-free bedrooms protects youth mental wellbeing.",
+        "frame_L1": "Families should create screen-free bedrooms. Parents must supervise app downloads carefully.",
+        "connectors": [
+          "Therefore,",
+          "It is essential that,",
+          "For this reason,"
+        ],
+        "sentence_hint": "Write 2 sentences suggesting guidelines for healthy phone boundaries.",
+        "pills": [
+          "screen-free bedrooms",
+          "supervise app downloads",
+          "create healthy boundaries",
+          "protect mental health"
+        ],
+        "sentence_frame": "Parents [establish screen-free charging zones] to [ensure restorative sleep for children]."
+      },
+      {
+        "badge_label": "EXPAND",
+        "title": "Stage 4: Synthesizing the Opinion Conclusion",
+        "image_url": "/images/week129/writing_panel_4.png",
+        "caption": "Balancing technology with outdoor activities fosters healthy development.",
+        "frame_L1": "In conclusion, moderation is the best policy. Children need both technology skills and outdoor active play.",
+        "connectors": [
+          "In conclusion,",
+          "Ultimately,",
+          "Consequently,"
+        ],
+        "sentence_hint": "Write 2 sentences concluding whether smartphones should be restricted or moderated.",
+        "pills": [
+          "moderation is key",
+          "technology skills and play",
+          "protect adolescent wellbeing",
+          "foster healthy development"
+        ],
+        "sentence_frame": "A balanced lifestyle [combines essential digital moderation] with [active outdoor physical play]."
       }
     ]
   },
-  speaking_data: {
-    talkshow_prompt: {
-      topic: "The Future of Megacities and Vertical Urbanism",
-      question: "Julian, will vertical skyscraper communities truly replace suburban sprawl by the year 2050?",
-      model_response: "By 2050, municipal planners will have constructed dozens of self-sustaining vertical communities, and millions of urban citizens will be living in integrated eco-towers! Suburban sprawl consumes valuable agricultural wilderness and generates extreme commute traffic. By integrating modular residential units, vertical hydroponic farms, and passive ventilation into single high-density structures, future megacities will achieve extraordinary ecological sustainability without sacrificing quality of life."
+  "speaking_data": {
+    "talkshow_prompt": {
+      "topic": "Evaluating Smartphone Policies for Middle School Students",
+      "question": "Maya, how can families balance emergency safety with the psychological risks of smartphone overuse?",
+      "model_response": "The solution lies in separating communication from social media entertainment! A child walking home from football practice needs a reliable way to call parents, but they do not need an unrestricted internet portal in their pocket twenty-four hours a day. Families can provide basic feature phones for emergency calling while keeping internet-connected tablets in shared family rooms. This ensures safety without sacrificing sleep or mental wellbeing!"
     },
-    info_exchange_cards: {
-      table_a: {
-        title: "Julian's Vertical Forest Tower",
-        subtitle: "Candidate's Question Card (Ask Examiner)",
-        person: "Julian",
-        fields: [
-          { id: "field_a1", cue_prompt: "where / tower constructed?", cue_word: "where", is_missing: true, acceptable_questions: ["Where was the vertical tower constructed?", "Where is the tower located?", "Where was it built?"], nova_reply: "The vertical forest tower is constructed in the central bay district of Singapore." },
-          { id: "field_a2", cue_prompt: "how tall / structure reach?", cue_word: "how tall", is_missing: true, acceptable_questions: ["How tall does the structure reach?", "What is the height of the tower?", "How tall is the building?"], nova_reply: "The timber-composite structure reaches a height of three hundred and twenty meters." },
-          { id: "field_a3", cue_prompt: "how many / trees on balconies?", cue_word: "how many", is_missing: true, acceptable_questions: ["How many trees are planted on balconies?", "How many trees does it have?", "How many balcony trees are there?"], nova_reply: "Over two thousand native trees and shrubs are integrated into balcony planter boxes." },
-          { id: "field_a4", cue_prompt: "why / passive ventilation used?", cue_word: "why", is_missing: true, acceptable_questions: ["Why is passive ventilation used in the atrium?", "Why is passive ventilation needed?", "Why did architects use passive airflow?"], nova_reply: "It reduces mechanical air conditioning power consumption by forty-five percent." },
-          { id: "field_a5", cue_prompt: "what energy / powers building?", cue_word: "what energy", is_missing: true, acceptable_questions: ["What energy powers the building?", "What power source does it use?", "What energy runs the building?"], nova_reply: "Rooftop photovoltaic solar shingles and geothermal basement heat pumps supply one hundred percent of its power." }
+    "info_exchange_cards": {
+      "table_a": {
+        "title": "Maya's Pediatric Screen Study",
+        "subtitle": "Candidate's Question Card (Ask Examiner)",
+        "person": "Maya",
+        "fields": [
+          {
+            "id": "field_a1",
+            "cue_prompt": "where / pediatric sleep study conducted?",
+            "cue_word": "where",
+            "is_missing": true,
+            "acceptable_questions": [
+              "Where was the pediatric sleep study conducted?",
+              "Where was the study held?",
+              "Where did researchers conduct the sleep study?"
+            ],
+            "nova_reply": "The study was conducted at the Children's Memorial Sleep Laboratory in Chicago."
+          },
+          {
+            "id": "field_a2",
+            "cue_prompt": "what / age group surveyed in research?",
+            "cue_word": "what",
+            "is_missing": true,
+            "acceptable_questions": [
+              "What age group was surveyed in the research?",
+              "What ages were studied?",
+              "Who participated in the survey?"
+            ],
+            "nova_reply": "Researchers tracked eight hundred students between ages nine and twelve."
+          },
+          {
+            "id": "field_a3",
+            "cue_prompt": "how many / hours of screen time recorded daily?",
+            "cue_word": "how many",
+            "is_missing": true,
+            "acceptable_questions": [
+              "How many hours of screen time were recorded daily?",
+              "How much screen time was tracked?",
+              "What was the daily screen time average?"
+            ],
+            "nova_reply": "Participants logged an average of four and a half hours on personal screens daily."
+          },
+          {
+            "id": "field_a4",
+            "cue_prompt": "who / directed the developmental psychology team?",
+            "cue_word": "who",
+            "is_missing": true,
+            "acceptable_questions": [
+              "Who directed the developmental psychology team?",
+              "Who was the lead researcher?",
+              "Who managed the study?"
+            ],
+            "nova_reply": "Dr. Sarah Lin, chief of developmental neurology at the institute."
+          },
+          {
+            "id": "field_a5",
+            "cue_prompt": "why / remove smartphones from bedrooms at night?",
+            "cue_word": "why",
+            "is_missing": true,
+            "acceptable_questions": [
+              "Why remove smartphones from bedrooms at night?",
+              "Why ban phones from bedrooms?",
+              "Why is keeping phones outside bedrooms recommended?"
+            ],
+            "nova_reply": "Because blue light suppression delays melatonin production by nearly ninety minutes."
+          }
         ]
       },
-      table_b: {
-        title: "Maya Chen's Eco-District Transit Hub",
-        subtitle: "Information Card (Answer Examiner's Questions)",
-        person: "Maya",
-        fields: [
-          { id: "field_b1", cue_prompt: "where / transit hub situated?", cue_word: "where", value: "At the intersection of three major pedestrian promenades in downtown Seoul.", nova_question: "Where is Maya's eco-district transit hub situated?", acceptable_answers: ["At the intersection of three major pedestrian promenades in downtown Seoul.", "In downtown Seoul.", "At three pedestrian promenades in Seoul."] },
-          { id: "field_b2", cue_prompt: "what transit / operates from hub?", cue_word: "what transit", value: "Autonomous electric shuttles and underground magnetic levitation trains.", nova_question: "What public transit modalities operate from the central terminal?", acceptable_answers: ["Autonomous electric shuttles and underground magnetic levitation trains.", "Electric shuttles and magnetic levitation trains.", "Autonomous shuttles and maglev trains."] },
-          { id: "field_b3", cue_prompt: "how many / passengers commute daily?", cue_word: "how many", value: "Over one hundred and fifty thousand commuters pass through the hub daily.", nova_question: "How many passengers commute through the terminal on an average weekday?", acceptable_answers: ["Over one hundred and fifty thousand commuters pass through the hub daily.", "Over 150,000 commuters daily.", "One hundred and fifty thousand passengers."] },
-          { id: "field_b4", cue_prompt: "why / cars prohibited in district?", cue_word: "why", value: "To eliminate toxic tailpipe smog and guarantee complete pedestrian safety.", nova_question: "Why are private fossil-fuel automobiles strictly prohibited in the zone?", acceptable_answers: ["To eliminate toxic tailpipe smog and guarantee complete pedestrian safety.", "To eliminate smog and ensure pedestrian safety.", "For pedestrian safety and zero smog."] },
-          { id: "field_b5", cue_prompt: "what material / canopy made of?", cue_word: "what material", value: "A translucent recycled polymer composite that filters natural sunlight.", nova_question: "What sustainable material was used to build the sweeping roof canopy?", acceptable_answers: ["A translucent recycled polymer composite that filters natural sunlight.", "Translucent recycled polymer composite.", "Recycled polymer composite."] }
+      "table_b": {
+        "title": "Dr. Lin's Adolescent Wellness Guidelines",
+        "subtitle": "Information Card (Answer Examiner's Questions)",
+        "person": "Dr. Lin",
+        "fields": [
+          {
+            "id": "field_b1",
+            "cue_prompt": "where / publish the recommended guidelines?",
+            "cue_word": "where",
+            "value": "In the Journal of Adolescent Pediatric Medicine.",
+            "nova_question": "Where were the recommended guidelines published?",
+            "acceptable_answers": [
+              "In the Journal of Adolescent Pediatric Medicine.",
+              "In the Journal of Adolescent Medicine.",
+              "Journal of Adolescent Pediatric Medicine."
+            ]
+          },
+          {
+            "id": "field_b2",
+            "cue_prompt": "what / maximum recreational screen time recommended?",
+            "cue_word": "what",
+            "value": "Sixty to ninety minutes per day outside school work.",
+            "nova_question": "What is the maximum recreational screen time recommended?",
+            "acceptable_answers": [
+              "Sixty to ninety minutes per day outside school work.",
+              "Sixty to ninety minutes daily.",
+              "60 to 90 minutes."
+            ]
+          },
+          {
+            "id": "field_b3",
+            "cue_prompt": "how / parents verify app safety settings?",
+            "cue_word": "how",
+            "value": "Through built-in parental dashboard controls and shared passwords.",
+            "nova_question": "How can parents verify app safety settings?",
+            "acceptable_answers": [
+              "Through built-in parental dashboard controls and shared passwords.",
+              "With parental dashboard controls.",
+              "Through shared passwords and parental controls."
+            ]
+          },
+          {
+            "id": "field_b4",
+            "cue_prompt": "who / should be involved in setting family rules?",
+            "cue_word": "who",
+            "value": "Both parents and children should draft family tech agreements together.",
+            "nova_question": "Who should be involved in setting family rules?",
+            "acceptable_answers": [
+              "Both parents and children should draft family tech agreements together.",
+              "Both parents and children.",
+              "Parents and kids together."
+            ]
+          },
+          {
+            "id": "field_b5",
+            "cue_prompt": "why / prioritize outdoor physical exercise?",
+            "cue_word": "why",
+            "value": "Because natural sunlight and aerobic play regulate adolescent circadian rhythms.",
+            "nova_question": "Why should families prioritize outdoor physical exercise?",
+            "acceptable_answers": [
+              "Because natural sunlight and aerobic play regulate adolescent circadian rhythms.",
+              "It regulates circadian rhythms.",
+              "Sunlight and aerobic play regulate circadian rhythms."
+            ]
+          }
         ]
       }
     }
   },
-  cambridge_rw: {
-    part1_definitions: [
-      { id: 1, definition_en: "An enormous urban metropolis containing over ten million human inhabitants.", options: ["megacity", "district", "skyscraper"], answer: "megacity" },
-      { id: 2, definition_en: "The practice and discipline of designing habitable structures and public spaces.", options: ["architecture", "infrastructure", "density"], answer: "architecture" },
-      { id: 3, definition_en: "A multi-story commercial or residential tower rising high above the city.", options: ["skyscraper", "megacity", "pedestrian"], answer: "skyscraper" },
-      { id: 4, definition_en: "The ability to sustain urban life without exhausting ecological resources.", options: ["sustainability", "urbanization", "commute"], answer: "sustainability" },
-      { id: 5, definition_en: "Fundamental systems including roads, power lines, and mass transit.", options: ["infrastructure", "composite", "aeration"], answer: "infrastructure" },
-      { id: 6, definition_en: "Designed exclusively for people walking on foot rather than driving vehicles.", options: ["pedestrian", "residential", "modular"], answer: "pedestrian" },
-      { id: 7, definition_en: "The circulation and supply of clean air throughout architectural chambers.", options: ["ventilation", "aeration", "density"], answer: "ventilation" },
-      { id: 8, definition_en: "Standardized structural components built offsite for rapid assembly.", options: ["modular", "resilient", "composite"], answer: "modular" },
-      { id: 9, definition_en: "Able to withstand severe climate disturbances and recover functionality rapidly.", options: ["resilient", "pedestrian", "modular"], answer: "resilient" },
-      { id: 10, definition_en: "A distinct geographic sector within an urban municipality with specific zoning.", options: ["district", "megacity", "skyscraper"], answer: "district" }
+  "cambridge_rw": {
+    "part1_definitions": [
+      {
+        "id": 1,
+        "text": "A young individual transitioning between childhood and full biological maturity.",
+        "target": "adolescent"
+      },
+      {
+        "id": 2,
+        "text": "A flat electronic display surface on a mobile phone or computing tablet.",
+        "target": "screen"
+      },
+      {
+        "id": 3,
+        "text": "Relating to the specialized branch of medical science treating children.",
+        "target": "pediatric"
+      },
+      {
+        "id": 4,
+        "text": "A persistent feeling of worry, unease, or nervousness regarding social situations.",
+        "target": "anxiety"
+      },
+      {
+        "id": 5,
+        "text": "Active adult oversight, guidance, and monitoring of minors' online behavior.",
+        "target": "supervision"
+      }
     ],
-    part2_dialogue: {
-      topic: "Designing Eco-Friendly Vertical Megacities",
-      turns: [
+    "part2_dialogue": {
+      "title": "Discussing Youth Smartphone Policies in an Opinion Project",
+      "turns": [
         {
-          speaker: "Julian",
-          text: "Maya, how will municipal planners have solved extreme density issues by 2050?",
-          options: [
-            "They will have constructed self-contained vertical towers with integrated services.",
-            "I usually take the passenger ferry across the harbor at nine.",
-            "The art gallery features contemporary oil paintings and ceramics."
+          "id": 1,
+          "speaker": "Leo",
+          "prompt": "Maya, what is the strongest argument in favor of giving children mobile phones?",
+          "options": [
+            "They allow parents and children to maintain emergency contact during daily transit.",
+            "They eliminate the need to do school homework.",
+            "They guarantee that children will never feel bored."
           ],
-          answer: "They will have constructed self-contained vertical towers with integrated services."
+          "answer": "They allow parents and children to maintain emergency contact during daily transit."
         },
         {
-          speaker: "Maya",
-          text: "Will millions of residents really be living in timber-composite skyscrapers?",
-          options: [
-            "Yes, millions will be living in timber towers because engineered wood is fire-resistant.",
-            "My brother purchased an electric guitar at the music shop.",
-            "No, the university library closes early on Sunday evenings."
+          "id": 2,
+          "speaker": "Leo",
+          "prompt": "Why do pediatricians express concern about unrestricted smartphone usage?",
+          "options": [
+            "Excessive screen time disrupts sleep cycles and can increase social anxiety.",
+            "Phones weigh too much for young children to hold.",
+            "Batteries only operate during stormy weather."
           ],
-          answer: "Yes, millions will be living in timber towers because engineered wood is fire-resistant."
+          "answer": "Excessive screen time disrupts sleep cycles and can increase social anxiety."
         },
         {
-          speaker: "Julian",
-          text: "How does passive ventilation eliminate the need for mechanical air conditioning?",
-          options: [
-            "Aerodynamic atriums pull cool ground air upward through thermal convection.",
-            "We played table tennis in the community center after dinner.",
-            "The express bus stops right outside the central railway station."
+          "id": 3,
+          "speaker": "Leo",
+          "prompt": "How does blue screen light affect the brain before bedtime?",
+          "options": [
+            "It suppresses melatonin production and delays natural sleep onset.",
+            "It turns dreams into black and white cartoons.",
+            "It cleans ears while people are resting."
           ],
-          answer: "Aerodynamic atriums pull cool ground air upward through thermal convection."
+          "answer": "It suppresses melatonin production and delays natural sleep onset."
         },
         {
-          speaker: "Maya",
-          text: "Why are pedestrian skybridges superior to traditional street-level pedestrian crossings?",
-          options: [
-            "They separate walking commuters completely from heavy vehicular delivery lanes.",
-            "I enjoy baking sourdough bread in our kitchen on Saturday mornings.",
-            "There are thirty computer terminals in the downstairs study hall."
+          "id": 4,
+          "speaker": "Leo",
+          "prompt": "What practical compromise can families adopt regarding mobile devices?",
+          "options": [
+            "Provide basic calling devices for safety while establishing screen-free bedrooms.",
+            "Ban all forms of electricity throughout the entire neighborhood.",
+            "Give every five-year-old three smartphones."
           ],
-          answer: "They separate walking commuters completely from heavy vehicular delivery lanes."
+          "answer": "Provide basic calling devices for safety while establishing screen-free bedrooms."
         },
         {
-          speaker: "Julian",
-          text: "Shall we submit our sustainable zoning proposal to the municipal council now?",
-          options: [
-            "Yes, let's submit our proposal so they can authorize the pilot district.",
-            "I forgot to bring my leather notebook to the design studio.",
-            "The morning temperature was relatively cool near the waterfront."
+          "id": 5,
+          "speaker": "Leo",
+          "prompt": "How should we conclude our opinion essay on this issue?",
+          "options": [
+            "Argue that thoughtful parental supervision and balanced moderation protect adolescent wellbeing.",
+            "Declare that technology will completely disappear in three years.",
+            "Leave the conclusion blank so readers can guess."
           ],
-          answer: "Yes, let's submit our proposal so they can authorize the pilot district."
+          "answer": "Argue that thoughtful parental supervision and balanced moderation protect adolescent wellbeing."
         }
-      ],
-      exchanges: [
-        { speaker: "Julian", text: "Maya, how will municipal planners have solved extreme density issues by 2050?" },
-        { speaker: "Maya", text: "They will have constructed self-contained vertical towers with integrated services." },
-        { speaker: "Julian", text: "Will millions of residents really be living in timber-composite skyscrapers?" },
-        { speaker: "Maya", text: "Yes, millions will be living in timber towers because engineered wood is fire-resistant." },
-        { speaker: "Julian", text: "How does passive ventilation eliminate the need for mechanical air conditioning?" },
-        { speaker: "Maya", text: "Aerodynamic atriums pull cool ground air upward through thermal convection." },
-        { speaker: "Julian", text: "Why are pedestrian skybridges superior to traditional street-level pedestrian crossings?" },
-        { speaker: "Maya", text: "They separate walking commuters completely from heavy vehicular delivery lanes." },
-        { speaker: "Julian", text: "Shall we submit our sustainable zoning proposal to the municipal council now?" },
-        { speaker: "Maya", text: "Yes, let's submit our proposal so they can authorize the pilot district." }
       ]
     },
-    part6_cloze: {
-      title: "Maya Chen's Architectural Journal: Future Cities",
-      instructions: "Read the diary and write the missing words. Write one word on each line.",
-      text_template: "Dear Journal, today Julian and I completed the blueprint [1]_____ our vertical forest tower. By 2050, urban planners will [2]_____ constructed modular timber skyscrapers across major megacities. Millions of commuters will [3]_____ traveling via elevated pedestrian skybridges. Passive ventilation channels draw cool breezes naturally, reducing energetic [4]_____ consumption. Tomorrow, we will present our resilient master plan [5]_____ the city council.",
-      answers: { "1": "for", "2": "have", "3": "be", "4": "power", "5": "to" }
+    "part6_cloze": {
+      "instructions": "Read the text about youth smartphone guidelines and choose the correct function word for each blank space.",
+      "text_template": "In recent years, pediatric researchers have examined the impact of smartphones on young children. While mobile phones allow parents [1] contact their children easily, unrestricted access may harm mental health. Evidence suggests [2] excessive screen time reduces attention spans in school. Therefore, it is important [3] establish healthy boundaries at home. By practicing moderation, families can enjoy technology [4] compromising the wellbeing [5] young adolescents.",
+      "answers": {
+        "1": "to",
+        "2": "that",
+        "3": "to",
+        "4": "without",
+        "5": "of"
+      }
     }
   },
-  minigames: {
-    math_problems: [
+  "minigames": {
+    "math_problems": [
       {
-        id: "w129_p1",
-        type: "part_whole",
-        title: "Vertical Forest Tower Floor Allocation",
-        question: "A sustainable skyscraper has 42 floors dedicated to residential modular apartments and 18 floors reserved for vertical hydroponic farms. How many total operational floors does the tower possess?",
-        storyContext: "Julian tallies structural zoning floor areas on the architectural blueprint.",
-        modelData: {
-          bars: [
-            { label: "Residential Floors", value: 42, color: "#3b82f6" },
-            { label: "Vertical Farms", value: 18, color: "#10b981" }
+        "id": "w129_p1",
+        "type": "part_whole",
+        "title": "Calculating Daily Screen Time Allocation",
+        "question": "A middle school student spends 45 minutes on educational research apps and 65 minutes on video streaming apps each day. What is their total recreational and study screen time in minutes?",
+        "storyContext": "Maya tallies daily device usage logs for her developmental psychology project.",
+        "modelData": {
+          "bars": [
+            {
+              "label": "Educational Apps",
+              "value": 45,
+              "color": "#10b981"
+            },
+            {
+              "label": "Video Streaming",
+              "value": 65,
+              "color": "#f59e0b"
+            }
           ],
-          total: 60,
-          unit: "floors"
+          "total": 110,
+          "unit": "minutes"
         },
-        target_answer: 60,
-        unit: "floors",
-        steps: [
-          "Take 42 residential modular floors.",
-          "Add 18 vertical hydroponic farm floors.",
-          "42 + 18 = 60 floors in total."
+        "target_answer": 110,
+        "unit": "minutes",
+        "steps": [
+          "Take educational screen time: 45 minutes.",
+          "Add streaming video time: 65 minutes.",
+          "45 + 65 = 110 minutes total screen time per day."
         ]
       },
       {
-        id: "w129_p2",
-        type: "comparison",
-        title: "Commuter Travel Time Optimization",
-        question: "Traditional street-level bus commutes through city traffic averaged 65 minutes, whereas the direct elevated skybridge walk requires only 20 minutes. By how many minutes was average commute duration reduced?",
-        storyContext: "Maya analyzes pedestrian mobility data across the newly interconnected district.",
-        modelData: {
-          bars: [
-            { label: "Bus Commute", value: 65, color: "#ef4444" },
-            { label: "Skybridge Walk", value: 20, color: "#06b6d4" }
+        "id": "w129_p2",
+        "type": "comparison",
+        "title": "Comparing Sleep Duration: Screen-Free vs Screen-Active Bedrooms",
+        "question": "Students with screen-free bedrooms sleep an average of 540 minutes per night, while students with active screens in their rooms sleep only 435 minutes. How many more minutes of restorative sleep do screen-free students achieve?",
+        "storyContext": "Leo analyzes pediatric sleep comparison statistics.",
+        "modelData": {
+          "bars": [
+            {
+              "label": "Screen-Free Bedroom",
+              "value": 540,
+              "color": "#3b82f6"
+            },
+            {
+              "label": "Active Screen Bedroom",
+              "value": 435,
+              "color": "#ef4444"
+            }
           ],
-          difference: 45,
-          unit: "minutes"
+          "difference": 105,
+          "unit": "minutes"
         },
-        target_answer: 45,
-        unit: "minutes",
-        steps: [
-          "Start with 65 minutes of traditional bus transit.",
-          "Subtract 20 minutes for the elevated skybridge walk.",
-          "65 - 20 = 45 minutes saved per commute."
+        "target_answer": 105,
+        "unit": "minutes",
+        "steps": [
+          "Start with screen-free sleep: 540 minutes (9 hours).",
+          "Subtract screen-active sleep: 435 minutes (7.25 hours).",
+          "540 - 435 = 105 more minutes of restorative sleep."
         ]
       }
     ],
-    action_lab_scenarios: [
+    "action_lab_scenarios": [
       {
-        stage: 1,
-        title: "Sustainable Architecture Elements",
-        diagram_type: "tower_systems_schematic",
-        instruction: "Match each innovative building feature to its ecological function.",
-        items: [
-          { label: "Balcony Hydroponics -> Local Food Production", target: "food" },
-          { label: "Central Aeration Atrium -> Passive Cooling", target: "cooling" },
-          { label: "Photovoltaic Glazing -> Clean Electricity", target: "energy" },
-          { label: "Basement Geothermal Loop -> Thermal Regulation", target: "heating" }
+        "stage": 1,
+        "title": "Mapping Neurological Screen Stimulation Pathways",
+        "diagram_type": "adolescent_brain_dopamine_loop",
+        "instruction": "Trace how interactive notifications trigger dopamine reward cycles in the developing brain.",
+        "items": [
+          {
+            "label": "Push Notification Alert",
+            "target": "sensory_stimulus"
+          },
+          {
+            "label": "Dopamine Receptor Activation",
+            "target": "neural_reward"
+          },
+          {
+            "label": "Compulsive Check Habit Loop",
+            "target": "behavioral_pattern"
+          }
         ]
       },
       {
-        stage: 2,
-        title: "Pedestrian Transit Zoning",
-        diagram_type: "mobility_network",
-        instruction: "Trace the commuter path from modular apartment to transit station.",
-        items: [
-          { label: "Exit Modular Apartment", target: "step_1" },
-          { label: "Walk Across Elevated Skybridge", target: "step_2" },
-          { label: "Board Magnetic Levitation Train", target: "step_3" }
+        "stage": 2,
+        "title": "Circadian Rhythm Blue-Light Disruption",
+        "diagram_type": "pineal_gland_melatonin_suppression",
+        "instruction": "Identify how late-night screen frequencies delay hormonal sleep triggers.",
+        "items": [
+          {
+            "label": "High-Frequency Blue Light Wave",
+            "target": "photoreceptor_input"
+          },
+          {
+            "label": "Pineal Gland Melatonin Delay",
+            "target": "hormone_inhibition"
+          },
+          {
+            "label": "Delayed Sleep Cycle Onset",
+            "target": "sleep_deficit"
+          }
         ]
       },
       {
-        stage: 3,
-        title: "Megacity Master Planning Milestones",
-        diagram_type: "zoning_approval_ladder",
-        instruction: "Order the statutory stages required for municipal eco-district ratification.",
-        items: [
-          { label: "Wind & Solar Environmental Audit", target: "phase_1" },
-          { label: "Structural Composite Stress Testing", target: "phase_2" },
-          { label: "City Council Zoning Ratification", target: "phase_3" }
+        "stage": 3,
+        "title": "Designing a Family Digital Wellbeing Agreement",
+        "diagram_type": "family_media_ecosystem_balance",
+        "instruction": "Balance emergency connectivity with screen-free boundaries and physical recreation.",
+        "items": [
+          {
+            "label": "Basic Emergency Calling Channel",
+            "target": "safety_feature"
+          },
+          {
+            "label": "Hallway Device Charging Hub",
+            "target": "boundary_zone"
+          },
+          {
+            "label": "Outdoor Physical Recreation Goal",
+            "target": "wellness_activity"
+          }
         ]
       }
     ],
-    grammar_drills: [
-      { sentence: "By 2050, planners will have constructed self-cooling skyscrapers.", options: ["will have constructed", "will construct", "are constructing"], answer: "will have constructed", explanation: "Future Perfect ('will have + past participle') indicates an action completed before a specified future time point ('By 2050')." },
-      { sentence: "Millions of citizens will be living in eco-districts by mid-century.", options: ["will be living", "will have lived", "lived"], answer: "will be living", explanation: "Future Continuous ('will be + verb-ing') describes an ongoing activity taking place at a specific future period." },
-      { sentence: "Modular construction techniques allow apartments to be built quickly.", options: ["allow", "allows", "allowing"], answer: "allow", explanation: "Plural subject 'techniques' takes plural base verb 'allow'." },
-      { sentence: "Passive ventilation draws cool breezes into the central atrium naturally.", options: ["draws", "draw", "drawing"], answer: "draws", explanation: "Singular non-count subject 'Passive ventilation' requires 3rd person singular verb 'draws'." },
-      { sentence: "Pedestrian skybridges eliminate the necessity for street crossings.", options: ["eliminate", "eliminates", "eliminated"], answer: "eliminate", explanation: "Plural subject 'skybridges' takes base plural verb 'eliminate'." }
+    "grammar_drills": [
+      {
+        "sentence": "Excessive screen usage may disrupt natural adolescent sleep cycles.",
+        "options": [
+          "may disrupt",
+          "must to disrupt",
+          "can disrupting"
+        ],
+        "answer": "may disrupt",
+        "explanation": "Use modal 'may' followed by the base verb 'disrupt' to express a well-founded possibility."
+      },
+      {
+        "sentence": "It is imperative that parents establish clear screen-time guidelines.",
+        "options": [
+          "establish",
+          "establishes",
+          "established"
+        ],
+        "answer": "establish",
+        "explanation": "After the subjunctive trigger 'It is imperative that...', use the base verb form 'establish'."
+      },
+      {
+        "sentence": "Pediatric evidence suggests that unrestricted social media impairs focus.",
+        "options": [
+          "suggests that",
+          "suggests for",
+          "suggest that"
+        ],
+        "answer": "suggests that",
+        "explanation": "The singular noun 'evidence' takes singular verb 'suggests' followed by 'that'."
+      },
+      {
+        "sentence": "Families should practice digital moderation rather than imposing total bans.",
+        "options": [
+          "rather than",
+          "instead",
+          "whereas"
+        ],
+        "answer": "rather than",
+        "explanation": "Use 'rather than' followed by a gerund or parallel structure to express a preferred alternative."
+      },
+      {
+        "sentence": "Adolescent brains are particularly vulnerable to digital stimulation.",
+        "options": [
+          "vulnerable to",
+          "vulnerable with",
+          "vulnerable on"
+        ],
+        "answer": "vulnerable to",
+        "explanation": "Use the preposition 'to' after the adjective 'vulnerable'."
+      }
     ]
   }
 };

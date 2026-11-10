@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 134 | Theme: "Economics & International Trade: Globalization" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.320Z
+ * Week: 134 | Theme: "Identifying Fallacies" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.456Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,276 +9,276 @@
 
 export const readingHubData = {
   "week": 134,
-  "theme": "Economics & International Trade: Globalization",
+  "theme": "Identifying Fallacies",
   "cefr_level": "B2 First",
   "vocab": [
     {
       "id": 1,
-      "word": "economics",
-      "pos": "n",
-      "ipa": "/ˌekəˈnɑːmɪks/",
-      "definition_en": "The branch of knowledge concerned with the production, consumption, and transfer of wealth",
-      "definition_vi": "kinh tế học",
-      "example_en": "International economics investigates how trade barriers impact domestic employment.",
-      "example_vi": "Kinh tế học quốc tế nghiên cứu tác động của các rào cản thương mại đến việc làm trong nước."
-    },
-    {
-      "id": 2,
-      "word": "globalization",
-      "pos": "n",
-      "ipa": "/ˌɡloʊbələˈzeɪʃən/",
-      "definition_en": "The process by which businesses or other organizations develop international influence",
-      "definition_vi": "toàn cầu hóa",
-      "example_en": "Economic globalization connects supply chains across dozens of sovereign nations.",
-      "example_vi": "Toàn cầu hóa kinh tế kết nối các chuỗi cung ứng khắp hàng chục quốc gia có chủ quyền."
-    },
-    {
-      "id": 3,
-      "word": "trade",
-      "pos": "n",
-      "ipa": "/treɪd/",
-      "definition_en": "The action of buying and selling goods and services",
-      "definition_vi": "thương mại, buôn bán",
-      "example_en": "Bilateral trade agreements lower duties on manufactured electronics.",
-      "example_vi": "Các hiệp định thương mại song phương giảm thuế đối với hàng điện tử sản xuất."
-    },
-    {
-      "id": 4,
-      "word": "tariff",
-      "pos": "n",
-      "ipa": "/ˈtærɪf/",
-      "definition_en": "A tax or duty to be paid on a particular class of imports or exports",
-      "definition_vi": "thuế quan, thuế nhập khẩu",
-      "example_en": "The government imposed a five percent protective tariff on imported raw steel.",
-      "example_vi": "Chính phủ đã áp mức thuế quan bảo hộ năm phần trăm đối với thép thô nhập khẩu."
-    },
-    {
-      "id": 5,
-      "word": "export",
-      "pos": "v",
-      "ipa": "/ɪkˈspɔːrt/",
-      "definition_en": "Send goods or services to another country for sale",
-      "definition_vi": "xuất khẩu",
-      "example_en": "Agricultural cooperatives export organic arabica coffee to European roasting firms.",
-      "example_vi": "Các hợp tác xã nông nghiệp xuất khẩu cà phê arabica hữu cơ sang các công ty rang xay châu Âu."
-    },
-    {
-      "id": 6,
-      "word": "import",
-      "pos": "v",
-      "ipa": "/ˈɪmpɔːrt/",
-      "definition_en": "Bring goods or services into a country from abroad for sale",
-      "definition_vi": "nhập khẩu",
-      "example_en": "Island nations import essential petroleum products to power electric utilities.",
-      "example_vi": "Các quốc gia đảo nhập khẩu các sản phẩm dầu mỏ thiết yếu để vận hành các nhà máy điện."
-    },
-    {
-      "id": 7,
-      "word": "currency",
-      "pos": "n",
-      "ipa": "/ˈkɜːrənsi/",
-      "definition_en": "A system of money in general use in a particular country",
-      "definition_vi": "tiền tệ",
-      "example_en": "Central banks intervene in foreign exchange markets to stabilize national currency.",
-      "example_vi": "Các ngân hàng trung ương can thiệp vào thị trường ngoại hối để ổn định đồng tiền quốc gia."
-    },
-    {
-      "id": 8,
       "word": "fallacy",
       "pos": "n",
       "ipa": "/ˈfæləsi/",
-      "definition_en": "A mistaken belief, especially one based on unsound argument",
-      "definition_vi": "ngụy biện, sai lầm logic",
-      "example_en": "The claim that all trade deficits cause national poverty is an economic fallacy.",
-      "example_vi": "Tuyên bố rằng mọi thâm hụt thương mại đều gây ra nghèo đói quốc gia là một ngụy biện kinh tế."
+      "definition_en": "A mistaken belief or a flaw in reasoning that invalidates an argument",
+      "definition_vi": "lỗi ngụy biện / sự ngụy biện",
+      "example_en": "Claiming that all computer gamers are lazy is a classic hasty generalization fallacy.",
+      "example_vi": "Khẳng định rằng tất cả người chơi máy tính đều lười biếng là một lỗi ngụy biện khái quát hóa vội vã kinh điển."
     },
     {
-      "id": 9,
+      "id": 2,
       "word": "generalization",
       "pos": "n",
-      "ipa": "/ˌdʒenərəlaɪˈzeɪʃən/",
-      "definition_en": "A general statement or concept obtained by inference from specific cases",
-      "definition_vi": "sự khái quát hóa",
-      "example_en": "Sweeping generalizations ignore nuanced regional differences in manufacturing costs.",
-      "example_vi": "Những sự khái quát hóa vội vã bỏ qua những khác biệt sắc thái theo vùng về chi phí sản xuất."
+      "ipa": "/ˌdʒenərələˈzeɪʃən/",
+      "definition_en": "A broad statement obtained by inferring from only a small number of specific cases",
+      "definition_vi": "sự khái quát hóa / sự vơ đũa cả nắm",
+      "example_en": "Avoid making a sweeping generalization without examining comprehensive statistical data.",
+      "example_vi": "Hãy tránh đưa ra một sự khái quát hóa vơ đũa cả nắm mà không kiểm tra dữ liệu thống kê toàn diện."
     },
     {
-      "id": 10,
+      "id": 3,
       "word": "assumption",
       "pos": "n",
       "ipa": "/əˈsʌmpʃən/",
-      "definition_en": "A thing that is accepted as true or as certain to happen, without proof",
-      "definition_vi": "giả định",
-      "example_en": "Economists tested the assumption that consumers always behave with perfect rationality.",
-      "example_vi": "Các nhà kinh tế đã kiểm tra giả định rằng người tiêu dùng luôn hành xử với sự duy lý hoàn hảo."
+      "definition_en": "A thing that is accepted as true without proof or critical verification",
+      "definition_vi": "giả định / điều mặc nhiên thừa nhận",
+      "example_en": "Her entire objection rested on the false assumption that mobile technology has no educational value.",
+      "example_vi": "Toàn bộ sự phản đối của cô ấy dựa trên giả định sai lầm rằng công nghệ di động không có giá trị giáo dục."
     },
     {
-      "id": 11,
-      "word": "logic",
-      "pos": "n",
-      "ipa": "/ˈlɑːdʒɪk/",
-      "definition_en": "Reasoning conducted or assessed according to strict principles of validity",
-      "definition_vi": "logic, tính hợp lý",
-      "example_en": "Sound economic logic demonstrates that comparative advantage benefits both trading partners.",
-      "example_vi": "Logic kinh tế đúng đắn chứng minh rằng lợi thế so sánh mang lại lợi ích cho cả hai đối tác thương mại."
-    },
-    {
-      "id": 12,
-      "word": "valid",
-      "pos": "adj",
-      "ipa": "/ˈvælɪd/",
-      "definition_en": "Having a sound basis in logic or fact; reasonable or cogent",
-      "definition_vi": "hợp lệ, có căn cứ vững chắc",
-      "example_en": "Her deductive argument concerning supply elasticity is mathematically valid.",
-      "example_vi": "Lập luận suy diễn của cô về độ co giãn của cung là hoàn toàn hợp lệ về mặt toán học."
-    },
-    {
-      "id": 13,
-      "word": "invalid",
-      "pos": "adj",
-      "ipa": "/ɪnˈvælɪd/",
-      "definition_en": "Not logically or factually valid",
-      "definition_vi": "không hợp lệ, vô căn cứ",
-      "example_en": "The economic forecast was deemed invalid because baseline population data was outdated.",
-      "example_vi": "Dự báo kinh tế bị coi là không hợp lệ vì dữ liệu dân số cơ sở đã lỗi thời."
-    },
-    {
-      "id": 14,
+      "id": 4,
       "word": "true",
       "pos": "adj",
       "ipa": "/truː/",
-      "definition_en": "Accurate or in conformity with historical fact or reality",
-      "definition_vi": "đúng, xác thực",
-      "example_en": "It is true that container shipping reduced oceanic freight expenses by ninety percent.",
-      "example_vi": "Đúng là việc vận chuyển bằng công-ten-nơ đã làm giảm chín mươi phần trăm chi phí cước vận chuyển đường biển."
+      "definition_en": "In accordance with verifiable fact, accurate reality, and sound logic",
+      "definition_vi": "đúng đắn / chân thực / xác thực",
+      "example_en": "An argument can only be valid if its foundational premises are factually true.",
+      "example_vi": "Một lập luận chỉ có thể hợp lệ nếu các tiền đề nền tảng của nó đúng về mặt thực tế."
     },
     {
-      "id": 15,
+      "id": 5,
       "word": "false",
       "pos": "adj",
       "ipa": "/fɔːls/",
-      "definition_en": "Incorrect or untrue",
-      "definition_vi": "sai, không chính xác",
-      "example_en": "The premise that trade protectionism automatically restores lost factory jobs is false.",
-      "example_vi": "Tiền đề cho rằng chủ nghĩa bảo hộ thương mại sẽ tự động khôi phục các việc làm nhà máy đã mất là sai."
+      "definition_en": "Not in accordance with truth or reality; incorrect, mistaken, or misleading",
+      "definition_vi": "sai lầm / giả tạo / không đúng",
+      "example_en": "Presenting false statistics in an academic debate immediately disqualifies a debater.",
+      "example_vi": "Đưa ra các số liệu thống kê sai lệch trong một cuộc tranh biện học thuật sẽ khiến tranh biện viên bị loại ngay lập tức."
+    },
+    {
+      "id": 6,
+      "word": "valid",
+      "pos": "adj",
+      "ipa": "/ˈvælɪd/",
+      "definition_en": "Having a sound basis in logic or fact; reasonable, cogent, and legally binding",
+      "definition_vi": "hợp lệ / có căn cứ vững chắc",
+      "example_en": "Her deduction was logically valid because the conclusion followed necessarily from true premises.",
+      "example_vi": "Suy luận của cô ấy hợp lệ về mặt logic vì kết luận bắt nguồn một cách tất yếu từ các tiền đề đúng."
+    },
+    {
+      "id": 7,
+      "word": "invalid",
+      "pos": "adj",
+      "ipa": "/ɪnˈvælɪd/",
+      "definition_en": "Not logically or factually sound; containing reasoning errors or false premises",
+      "definition_vi": "không hợp lệ / vô căn cứ về mặt logic",
+      "example_en": "An invalid argument fails to prove its point because its logical structure is broken.",
+      "example_vi": "Một lập luận không hợp lệ không thể chứng minh được luận điểm của nó vì cấu trúc logic của nó bị phá vỡ."
+    },
+    {
+      "id": 8,
+      "word": "logic",
+      "pos": "n",
+      "ipa": "/ˈlɑːdʒɪk/",
+      "definition_en": "Reasoning conducted according to strict principles of validity and sound inference",
+      "definition_vi": "tính logic / lý luận chặt chẽ",
+      "example_en": "Studying formal logic teaches students to separate compelling proof from deceptive rhetoric.",
+      "example_vi": "Học logic hình thức dạy học sinh cách phân biệt bằng chứng thuyết phục với những lời tu từ lừa dối."
+    },
+    {
+      "id": 9,
+      "word": "premise",
+      "pos": "n",
+      "ipa": "/ˈpremɪs/",
+      "definition_en": "A previous proposition from which another inference is drawn as a conclusion",
+      "definition_vi": "tiền đề",
+      "example_en": "If a speaker begins with a flawed premise, their final conclusion will inevitably be defective.",
+      "example_vi": "Nếu một diễn giả bắt đầu bằng một tiền đề sai sót, kết luận cuối cùng của họ chắc chắn sẽ bị khiếm khuyết."
+    },
+    {
+      "id": 10,
+      "word": "conclusion",
+      "pos": "n",
+      "ipa": "/kənˈkluːʒən/",
+      "definition_en": "A judgment or formal decision reached by reasoning from supporting premises",
+      "definition_vi": "kết luận",
+      "example_en": "The final conclusion was substantiated by three independent empirical studies.",
+      "example_vi": "Kết luận cuối cùng đã được chứng minh bởi ba nghiên cứu thực nghiệm độc lập."
+    },
+    {
+      "id": 11,
+      "word": "flaw",
+      "pos": "n",
+      "ipa": "/flɔː/",
+      "definition_en": "A defect, mistake, or vulnerability that impairs the soundness of an argument",
+      "definition_vi": "lỗ hổng / khuyết điểm logic",
+      "example_en": "The adjudicator pointed out a critical reasoning flaw in the affirmative team's case.",
+      "example_vi": "Trọng tài đã chỉ ra một lỗ hổng lập luận nghiêm trọng trong vụ kiện của đội khẳng định."
+    },
+    {
+      "id": 12,
+      "word": "stereotype",
+      "pos": "n",
+      "ipa": "/ˈsteriətaɪp/",
+      "definition_en": "A widely held but oversimplified, unfair image or belief about a group",
+      "definition_vi": "khuôn mẫu định kiến / định kiến hẹp hòi",
+      "example_en": "Relying on a cultural stereotype blinds researchers to individual diversity and variation.",
+      "example_vi": "Dựa vào một định kiến văn hóa khiến các nhà nghiên cứu mù quáng trước sự đa dạng và khác biệt của cá nhân."
+    },
+    {
+      "id": 13,
+      "word": "deduction",
+      "pos": "n",
+      "ipa": "/dɪˈdʌkʃən/",
+      "definition_en": "The process of reaching a conclusion by applying general principles to specific cases",
+      "definition_vi": "sự suy diễn logic",
+      "example_en": "Through careful deduction, the detective eliminated three impossible scenarios.",
+      "example_vi": "Thông qua sự suy diễn cẩn thận, thám tử đã loại trừ ba kịch bản bất khả thi."
+    },
+    {
+      "id": 14,
+      "word": "reasoning",
+      "pos": "n",
+      "ipa": "/ˈriːzənɪŋ/",
+      "definition_en": "The intellectual action of thinking about things in a logical and sensible manner",
+      "definition_vi": "quá trình lập luận / suy luận",
+      "example_en": "Sound moral reasoning requires considering the consequences of policies on vulnerable people.",
+      "example_vi": "Lập luận đạo đức đúng đắn đòi hỏi phải xem xét hậu quả của các chính sách đối với những người dễ bị tổn thương."
+    },
+    {
+      "id": 15,
+      "word": "claim",
+      "pos": "n",
+      "ipa": "/kleɪm/",
+      "definition_en": "An assertion that something is true, typically one requiring substantiating evidence",
+      "definition_vi": "tuyên bố / khẳng định",
+      "example_en": "Before accepting an extraordinary scientific claim, demand extraordinary empirical proof.",
+      "example_vi": "Trước khi chấp nhận một khẳng định khoa học phi thường, hãy yêu cầu bằng chứng thực nghiệm phi thường."
     },
     {
       "id": 16,
-      "word": "equilibrium",
+      "word": "bias",
       "pos": "n",
-      "ipa": "/ˌiːkwɪˈlɪbriəm/",
-      "definition_en": "A state in which market supply and demand balance each other",
-      "definition_vi": "trạng thái cân bằng (thị trường)",
-      "example_en": "Market equilibrium is achieved when the quantity demanded equals the quantity supplied.",
-      "example_vi": "Cân bằng thị trường đạt được khi lượng cầu bằng với lượng cung."
+      "ipa": "/ˈbaɪəs/",
+      "definition_en": "Prejudice in favor of or against one thing or group compared with another",
+      "definition_vi": "sự thiên vị / định kiến",
+      "example_en": "Researchers must guard against confirmation bias when evaluating experimental results.",
+      "example_vi": "Các nhà nghiên cứu phải đề phòng sự thiên vị xác nhận khi đánh giá các kết quả thực nghiệm."
     },
     {
       "id": 17,
-      "word": "deficit",
-      "pos": "n",
-      "ipa": "/ˈdefəsɪt/",
-      "definition_en": "The amount by which something, especially a sum of money, is too small",
-      "definition_vi": "sự thâm hụt (thương mại/ngân sách)",
-      "example_en": "The nation recorded a trade deficit because raw material imports exceeded total exports.",
-      "example_vi": "Quốc gia này đã ghi nhận thâm hụt thương mại do nhập khẩu nguyên liệu thô vượt quá tổng xuất khẩu."
+      "word": "hasty",
+      "pos": "adj",
+      "ipa": "/ˈheɪsti/",
+      "definition_en": "Done with excessive speed or urgency; hurried without adequate deliberation",
+      "definition_vi": "vội vã / thiếu cân nhắc",
+      "example_en": "Drawing a hasty conclusion from a single interview is a dangerous investigative error.",
+      "example_vi": "Rút ra một kết luận vội vã từ một cuộc phỏng vấn duy nhất là một sai lầm điều tra nguy hiểm."
     },
     {
       "id": 18,
-      "word": "surplus",
-      "pos": "n",
-      "ipa": "/ˈsɜːrplʌs/",
-      "definition_en": "An amount of something left over when requirements have been met",
-      "definition_vi": "sự thặng dư",
-      "example_en": "A commercial surplus allows the central treasury to accumulate foreign currency reserves.",
-      "example_vi": "Thặng dư thương mại cho phép kho bạc trung ương tích lũy dự trữ ngoại hối."
+      "word": "misleading",
+      "pos": "adj",
+      "ipa": "/ˌmɪsˈliːdɪŋ/",
+      "definition_en": "Giving the wrong impression or leading an audience toward a false belief",
+      "definition_vi": "gây hiểu lầm / sai lệch",
+      "example_en": "The advertisement used misleading percentages to exaggerate product effectiveness.",
+      "example_vi": "Quảng cáo đã sử dụng tỷ lệ phần trăm gây hiểu lầm để phóng đại hiệu quả của sản phẩm."
     },
     {
       "id": 19,
-      "word": "market",
+      "word": "soundness",
       "pos": "n",
-      "ipa": "/ˈmɑːrkɪt/",
-      "definition_en": "An area or arena in which commercial dealings are conducted",
-      "definition_vi": "thị trường",
-      "example_en": "Emerging markets offer rapid consumer growth for renewable energy technologies.",
-      "example_vi": "Các thị trường mới nổi mang lại sự tăng trưởng tiêu dùng nhanh chóng cho các công nghệ năng lượng tái tạo."
+      "ipa": "/ˈsaʊndnəs/",
+      "definition_en": "The state of an argument having both valid logical structure and true premises",
+      "definition_vi": "tính xác đáng / sự đúng đắn toàn diện về logic và thực tế",
+      "example_en": "Scholars admire the intellectual soundness of her philosophical treatise.",
+      "example_vi": "Các học giả ngưỡng mộ tính xác đáng về mặt trí tuệ trong luận văn triết học của cô ấy."
     },
     {
       "id": 20,
-      "word": "subsidy",
+      "word": "argumentation",
       "pos": "n",
-      "ipa": "/ˈsʌbsədi/",
-      "definition_en": "A sum of money granted by the government to assist an industry",
-      "definition_vi": "tiền trợ cấp, bao cấp",
-      "example_en": "Government subsidies accelerated the domestic production of electric transit buses.",
-      "example_vi": "Các khoản trợ cấp của chính phủ đã đẩy nhanh việc sản xuất xe buýt điện trong nước."
+      "ipa": "/ˌɑːrɡjəmenˈteɪʃən/",
+      "definition_en": "The methodical process of establishing reasons and conclusions to persuade others",
+      "definition_vi": "nghệ thuật lập luận / quá trình tranh luận",
+      "example_en": "Rigorous argumentation relies on precise qualifiers rather than absolute universal assertions.",
+      "example_vi": "Lập luận nghiêm ngặt dựa trên các từ ngữ định lượng chính xác thay vì các khẳng định tuyệt đối phổ quát."
     }
   ],
   "clil_article": {
-    "title_en": "Comparative Advantage: Global Trade Dynamics and Economic Logic",
-    "title_vi": "Lợi Thế So Sánh: Động Lực Thương Mại Toàn Cầu và Logic Kinh Tế",
-    "content_en": "International trade rests on the foundational logic of comparative advantage, first formulated by classical economists. When nations specialize in producing commodities where they enjoy lower opportunity costs, total global output expands substantially. Whereas protectionist tariffs may temporarily shield uncompetitive domestic firms, they nevertheless raise consumer prices across retail markets. Critics often commit the economic fallacy of assuming that running a trade deficit proves economic weakness. In reality, trade deficits frequently reflect high domestic consumer confidence and strong foreign capital investment. By testing assumptions with rigorous empirical statistics, economists distinguish sound market logic from invalid generalizations, promoting sustainable globalization that benefits trading partners mutually.",
+    "title_en": "Critical Thinking and Logic: Identifying Generalization Fallacies",
+    "title_vi": "Tư Duy Phản Biện và Logic: Nhận Diện Các Lỗi Ngụy Biện Khái Quát Hóa",
+    "content_en": "Critical thinking requires learners to scrutinize arguments for underlying logical errors known as fallacies. A common reasoning flaw is the hasty generalization, which occurs when a speaker draws a sweeping conclusion from insufficient evidence. For example, claiming that 'all video gamers are lazy and unmotivated' is an invalid assumption contradicted by empirical studies. To construct sound arguments, thinkers employ careful qualifiers such as 'some', 'many', 'often', and 'tend to' rather than absolute universal terms like 'all' or 'never'. Evaluating an argument entails checking whether its premises are true and whether the deduction logically holds. Distinguishing valid reasoning from deceptive fallacies protects students from misleading advertisements, unfounded propaganda, and polarized rhetoric. Developing a sharp eye for flawed logic fosters intellectually honest discourse in academic discussions.",
     "glossary": [
       {
-        "word": "economics",
-        "definition_en": "Social science analyzing resource production and trade exchange",
-        "definition_vi": "khoa học xã hội phân tích sản xuất và trao đổi tài nguyên"
-      },
-      {
-        "word": "tariff",
-        "definition_en": "Statutory tax levied on goods crossing national customs borders",
-        "definition_vi": "thuế luật định đánh vào hàng hóa qua biên giới hải quan"
-      },
-      {
         "word": "fallacy",
-        "definition_en": "Flawed logical inference leading to mistaken economic conclusions",
-        "definition_vi": "suy luận logic thiếu sót dẫn đến kết luận kinh tế sai lầm"
+        "definition_en": "A deceptive or structurally defective form of reasoning that invalidates an inference",
+        "definition_vi": "hình thức lập luận sai lệch hoặc khiếm khuyết về cấu trúc làm mất hiệu lực của một suy luận"
       },
       {
-        "word": "equilibrium",
-        "definition_en": "Market state where pricing balances consumer demand with producer supply",
-        "definition_vi": "trạng thái thị trường nơi giá cả cân bằng cung và cầu"
+        "word": "generalization",
+        "definition_en": "Inferring universal laws or attributes to an entire group from limited particular observations",
+        "definition_vi": "suy luận các quy luật hoặc thuộc tính phổ quát cho toàn bộ một nhóm từ các quan sát cụ thể có hạn"
       },
       {
-        "word": "subsidy",
-        "definition_en": "State financial contribution assisting specific industrial producers",
-        "definition_vi": "khoản hỗ trợ tài chính của nhà nước cho các nhà sản xuất"
+        "word": "assumption",
+        "definition_en": "An implicit proposition taken for granted as true without verifying empirical substantiation",
+        "definition_vi": "mệnh đề ngầm được coi là đúng mà không cần xác minh bằng chứng thực nghiệm"
+      },
+      {
+        "word": "soundness",
+        "definition_en": "The gold standard of deductive logic where every premise is factually true and the structure is valid",
+        "definition_vi": "tiêu chuẩn vàng của logic suy diễn trong đó mọi tiền đề đều đúng thực tế và cấu trúc hợp lệ"
+      },
+      {
+        "word": "bias",
+        "definition_en": "Systematic cognitive skewing or prejudice that distorts fair factual evaluation",
+        "definition_vi": "sự sai lệch nhận thức có hệ thống hoặc định kiến làm sai lệch đánh giá khách quan về thực tế"
       }
     ],
     "check_questions": [
       {
         "id": 1,
-        "question_en": "Why do nations specialize according to the economic logic of comparative advantage?",
+        "question_en": "What is a 'hasty generalization' fallacy?",
         "options": [
-          "To produce goods where they hold lower opportunity costs, maximizing global efficiency",
-          "To ban all foreign goods completely",
-          "To eliminate all money and currencies"
+          "Drawing a sweeping universal conclusion from inadequate or limited examples",
+          "Speaking too fast during an oral speech rehearsal",
+          "Using too many verified statistical studies"
         ],
-        "answer": "To produce goods where they hold lower opportunity costs, maximizing global efficiency"
+        "answer": "Drawing a sweeping universal conclusion from inadequate or limited examples"
       },
       {
         "id": 2,
-        "question_en": "Which discourse marker introduces a contrasting reality after acknowledging a protective measure?",
+        "question_en": "Which qualifying words help speakers avoid making fallacious generalizations?",
         "options": [
-          "nevertheless ('tariffs protect firms, they nevertheless raise prices')",
-          "yesterday afternoon",
-          "running quickly"
+          "'Some', 'many', 'often', and 'tend to'",
+          "'All', 'every', 'always', and 'never'",
+          "'Nobody', 'nowhere', and 'impossible'"
         ],
-        "answer": "nevertheless ('tariffs protect firms, they nevertheless raise prices')"
+        "answer": "'Some', 'many', 'often', and 'tend to'"
       },
       {
         "id": 3,
-        "question_en": "Why is the assumption that a trade deficit always indicates economic decline considered a fallacy?",
+        "question_en": "Why is the statement 'All video gamers are lazy and unmotivated' invalid?",
         "options": [
-          "Because deficits often reflect robust domestic consumption and high foreign capital investment",
-          "Because numbers do not matter in trade",
-          "Because trade deficits are always created by robots"
+          "It is a sweeping generalization contradicted by empirical research and diverse real-world players",
+          "Because video games were only invented last week",
+          "Because lazy people are not allowed to play games"
         ],
-        "answer": "Because deficits often reflect robust domestic consumption and high foreign capital investment"
+        "answer": "It is a sweeping generalization contradicted by empirical research and diverse real-world players"
       }
     ],
     "critical_thinking": {
-      "question_en": "How can multilateral trade organizations assist developing nations in protecting emerging domestic green industries without violating international anti-subsidy rules?",
-      "hint_en": "Consider special and differential treatment clauses, transitional green technology subsidies, and capacity-building technical partnerships."
+      "question_en": "How does using qualifiers like 'tend to' or 'in many cases' protect a speaker's academic credibility during debate cross-examination?",
+      "hint_en": "Absolute statements ('all', 'never') can be disproven by a single counterexample, whereas careful qualifiers acknowledge nuances and withstand factual challenges."
     }
   },
   "story_scenes": [
@@ -286,10 +286,10 @@ export const readingHubData = {
       "id": 1,
       "scene_id": "scene_1",
       "scene_number": 1,
-      "title_en": "Analyzing Container Freight Telemetry",
-      "title_vi": "Phân Tích Dữ Liệu Vận Tải Công-ten-nơ",
-      "description_en": "Dr. Hannah Vance and Oliver Sterling inspect live shipping terminal logistics data on port monitors.",
-      "description": "Dr. Hannah Vance and Oliver Sterling inspect live shipping terminal logistics data on port monitors.",
+      "title_en": "Analyzing the Sweeping Headline",
+      "title_vi": "Phân Tích Dòng Tít Vơ Đũa Cả Nắm",
+      "description_en": "Zoe and Liam read a newspaper editorial claiming: 'All video games destroy attention spans and motivation.'",
+      "description": "Zoe and Liam read a newspaper editorial claiming: 'All video games destroy attention spans and motivation.'",
       "image_url": "/images/week134/webtoon_scene_1.png",
       "audio_url": "/audio/week134/scene_1.mp3"
     },
@@ -297,10 +297,10 @@ export const readingHubData = {
       "id": 2,
       "scene_id": "scene_2",
       "scene_number": 2,
-      "title_en": "Evaluating Bilateral Tariff Agreements",
-      "title_vi": "Đánh Giá Hiệp Định Thuế Quan Song Phương",
-      "description_en": "Oliver cross-references tariff schedules to determine which consumer sectors gain from duty reductions.",
-      "description": "Oliver cross-references tariff schedules to determine which consumer sectors gain from duty reductions.",
+      "title_en": "Detecting the Generalization Fallacy",
+      "title_vi": "Phát Hiện Lỗi Ngụy Biện Khái Quát Hóa",
+      "description_en": "Zoe points out the absolute universal word 'all', explaining that drawing broad conclusions from extreme cases is fallacious.",
+      "description": "Zoe points out the absolute universal word 'all', explaining that drawing broad conclusions from extreme cases is fallacious.",
       "image_url": "/images/week134/webtoon_scene_2.png",
       "audio_url": "/audio/week134/scene_2.mp3"
     },
@@ -308,10 +308,10 @@ export const readingHubData = {
       "id": 3,
       "scene_id": "scene_3",
       "scene_number": 3,
-      "title_en": "Debating Trade Fallacies in Committee",
-      "title_vi": "Tranh Luận Ngụy Biện Thương Mại Tại Ủy Ban",
-      "description_en": "Hannah uses comparative advantage graphs to debunk the fallacy that trade deficits indicate economic failure.",
-      "description": "Hannah uses comparative advantage graphs to debunk the fallacy that trade deficits indicate economic failure.",
+      "title_en": "Applying Epistemic Qualifiers",
+      "title_vi": "Áp Dụng Các Từ Ngữ Định Lượng Nhận Thức",
+      "description_en": "Liam rewrites the editorial sentence using careful qualifiers: 'Some excessive gaming may disrupt focus, but many games build skills.'",
+      "description": "Liam rewrites the editorial sentence using careful qualifiers: 'Some excessive gaming may disrupt focus, but many games build skills.'",
       "image_url": "/images/week134/webtoon_scene_3.png",
       "audio_url": "/audio/week134/scene_3.mp3"
     },
@@ -319,10 +319,10 @@ export const readingHubData = {
       "id": 4,
       "scene_id": "scene_4",
       "scene_number": 4,
-      "title_en": "Currency Equilibrium Modeling",
-      "title_vi": "Mô Hình Hóa Cân Bằng Tiền Tệ",
-      "description_en": "The economists run multi-variable currency simulations to model export competitiveness under inflation shifts.",
-      "description": "The economists run multi-variable currency simulations to model export competitiveness under inflation shifts.",
+      "title_en": "Testing Logical Validity on the Whiteboard",
+      "title_vi": "Kiểm Tra Tính Hợp Lệ Logic Trên Bảng Trắng",
+      "description_en": "The study group maps premises and conclusions, identifying where false assumptions corrupt the deductive reasoning.",
+      "description": "The study group maps premises and conclusions, identifying where false assumptions corrupt the deductive reasoning.",
       "image_url": "/images/week134/webtoon_scene_4.png",
       "audio_url": "/audio/week134/scene_4.mp3"
     },
@@ -330,10 +330,10 @@ export const readingHubData = {
       "id": 5,
       "scene_id": "scene_5",
       "scene_number": 5,
-      "title_en": "Delivering Global Policy Recommendations",
-      "title_vi": "Đưa Ra Các Khuyến Nghị Chính Sách Toàn Cầu",
-      "description_en": "Trade delegates sign the multilateral accord after reviewing the team's valid economic impact analysis.",
-      "description": "Trade delegates sign the multilateral accord after reviewing the team's valid economic impact analysis.",
+      "title_en": "Presenting the Fallacy Audit",
+      "title_vi": "Trình Bày Kiểm Toán Lỗi Ngụy Biện",
+      "description_en": "Zoe and Liam present their critical logic audit to the philosophy club, receiving applause for their rigorous analysis.",
+      "description": "Zoe and Liam present their critical logic audit to the philosophy club, receiving applause for their rigorous analysis.",
       "image_url": "/images/week134/webtoon_scene_5.png",
       "audio_url": "/audio/week134/scene_5.mp3"
     }
@@ -342,411 +342,289 @@ export const readingHubData = {
     "sentences": [
       {
         "id": 1,
-        "text": "Whereas tariff reductions stimulate export volume, developing industries nevertheless require transitional safeguards.",
-        "en": "Whereas tariff reductions stimulate export volume, developing industries nevertheless require transitional safeguards.",
-        "vi": "Trong khi việc giảm thuế quan kích thích khối lượng xuất khẩu, các ngành công nghiệp đang phát triển dẫu vậy vẫn đòi hỏi các biện pháp bảo hộ chuyển tiếp.",
-        "ipa": "/werˈæz ˈtærɪf rɪˈdʌkʃənz ˈstɪmjuleɪt ˈekspɔːrt ˈvɑːljuːm dɪˈveləpɪŋ ˈɪndəstriz ˌnevərðəˈles rɪˈkwaɪər trænˈzɪʃənl ˈseɪfɡɑːrdz/",
+        "text": "Claiming that all computer gamers are unmotivated is an invalid generalization fallacy.",
+        "en": "Claiming that all computer gamers are unmotivated is an invalid generalization fallacy.",
+        "vi": "Khẳng định rằng tất cả game thủ máy tính đều thiếu động lực là một lỗi ngụy biện khái quát hóa không hợp lệ.",
+        "ipa": "/ˈkleɪmɪŋ ðæt ɔːl kəmˈpjuːtər ˈɡeɪmərz ɑːr ˌʌnˈmoʊtəveɪtɪd ɪz ən ɪnˈvælɪd ˌdʒenərələˈzeɪʃən ˈfæləsi/",
         "words": [
-          "Whereas",
-          "tariff",
-          "reductions",
-          "stimulate",
-          "export",
-          "volume,",
-          "developing",
-          "industries",
-          "nevertheless",
-          "require",
-          "transitional",
-          "safeguards"
-        ]
-      },
-      {
-        "id": 2,
-        "text": "Despite severe exchange rate fluctuations, bilateral trade between the two partner nations expanded steadily.",
-        "en": "Despite severe exchange rate fluctuations, bilateral trade between the two partner nations expanded steadily.",
-        "vi": "Bất chấp những biến động tỷ giá hối đoái nghiêm trọng, thương mại song phương giữa hai quốc gia đối tác vẫn mở rộng đều đặn.",
-        "ipa": "/dɪˈspaɪt sɪˈvɪr ɪksˈtʃeɪndʒ reɪt ˌflʌktʃuˈeɪʃənz baɪˈlætərəl treɪd bɪˈtwiːn ðə tuː ˈpɑːrtnər ˈneɪʃənz ɪkˈspændɪd ˈstedɪli/",
-        "words": [
-          "Despite",
-          "severe",
-          "exchange",
-          "rate",
-          "fluctuations,",
-          "bilateral",
-          "trade",
-          "between",
-          "the",
-          "two",
-          "partner",
-          "nations",
-          "expanded",
-          "steadily"
-        ]
-      },
-      {
-        "id": 3,
-        "text": "The claim that trade deficits inevitably cause domestic unemployment is an economic fallacy.",
-        "en": "The claim that trade deficits inevitably cause domestic unemployment is an economic fallacy.",
-        "vi": "Tuyên bố rằng thâm hụt thương mại chắc chắn gây ra thất nghiệp trong nước là một ngụy biện kinh tế.",
-        "ipa": "/ðə kleɪm ðæt treɪd ˈdefəsɪts ɪnˈevɪtəbli kɔːz dəˈmestɪk ˌʌnɪmˈplɔɪmənt ɪz ən ˌekəˈnɑːmɪk ˈfæləsi/",
-        "words": [
-          "The",
-          "claim",
+          "Claiming",
           "that",
-          "trade",
-          "deficits",
-          "inevitably",
-          "cause",
-          "domestic",
-          "unemployment",
+          "all",
+          "computer",
+          "gamers",
+          "are",
+          "unmotivated",
           "is",
           "an",
-          "economic",
+          "invalid",
+          "generalization",
           "fallacy"
         ]
       },
       {
-        "id": 4,
-        "text": "Economists tested the assumption that market participants always operate with perfect rational logic.",
-        "en": "Economists tested the assumption that market participants always operate with perfect rational logic.",
-        "vi": "Các nhà kinh tế đã kiểm tra giả định rằng những người tham gia thị trường luôn hoạt động với logic duy lý hoàn hảo.",
-        "ipa": "/ɪˈkɑːnəmɪsts ˈtestɪd ði əˈsʌmpʃən ðæt ˈmɑːrkɪt pɑːrˈtɪsəpənts ˈɔːlweɪz ˈɑːpəreɪt wɪð ˈpɜːrfɪkt ˈræʃənl ˈlɑːdʒɪk/",
+        "id": 2,
+        "text": "Critical thinkers use qualifiers like some, many, and often to prevent sweeping statements.",
+        "en": "Critical thinkers use qualifiers like some, many, and often to prevent sweeping statements.",
+        "vi": "Những người tư duy phản biện sử dụng các từ chỉ mức độ như some, many và often để ngăn chặn các khẳng định vơ đũa cả nắm.",
+        "ipa": "/ˈkrɪtɪkəl ˈθɪŋkərz juːz ˈkwɑːləˌfaɪərz laɪk sʌm ˈmeni ænd ˈɔːfən tuː prɪˈvent ˈswiːpɪŋ ˈsteɪtmənts/",
         "words": [
-          "Economists",
-          "tested",
-          "the",
-          "assumption",
-          "that",
-          "market",
-          "participants",
-          "always",
-          "operate",
-          "with",
-          "perfect",
-          "rational",
-          "logic"
+          "Critical",
+          "thinkers",
+          "use",
+          "qualifiers",
+          "like",
+          "some",
+          "many",
+          "and",
+          "often",
+          "to",
+          "prevent",
+          "sweeping",
+          "statements"
+        ]
+      },
+      {
+        "id": 3,
+        "text": "An argument is valid only when its underlying premises are factually true.",
+        "en": "An argument is valid only when its underlying premises are factually true.",
+        "vi": "Một lập luận chỉ hợp lệ khi các tiền đề cơ bản của nó đúng về mặt thực tế.",
+        "ipa": "/ən ˈɑːrɡjəmənt ɪz ˈvælɪd ˈoʊnli wen ɪts ˌʌndərˈlaɪɪŋ ˈpremɪsɪz ɑːr ˈfæktʃuəli truː/",
+        "words": [
+          "An",
+          "argument",
+          "is",
+          "valid",
+          "only",
+          "when",
+          "its",
+          "underlying",
+          "premises",
+          "are",
+          "factually",
+          "true"
+        ]
+      },
+      {
+        "id": 4,
+        "text": "Drawing a hasty conclusion from a single example creates misleading stereotypes.",
+        "en": "Drawing a hasty conclusion from a single example creates misleading stereotypes.",
+        "vi": "Rút ra một kết luận vội vã từ một ví dụ duy nhất tạo ra những định kiến gây hiểu lầm.",
+        "ipa": "/ˈdrɔːɪŋ ə ˈheɪsti kənˈkluːʒən frəm ə ˈsɪŋɡəl ɪɡˈzæmpəl kriˈeɪts ˌmɪsˈliːdɪŋ ˈsteriətaɪps/",
+        "words": [
+          "Drawing",
+          "a",
+          "hasty",
+          "conclusion",
+          "from",
+          "a",
+          "single",
+          "example",
+          "creates",
+          "misleading",
+          "stereotypes"
         ]
       },
       {
         "id": 5,
-        "text": "It is true that containerized maritime freight transformed international manufacturing supply chains.",
-        "en": "It is true that containerized maritime freight transformed international manufacturing supply chains.",
-        "vi": "Đúng là việc vận chuyển hàng hải bằng công-ten-nơ đã biến đổi các chuỗi cung ứng sản xuất quốc tế.",
-        "ipa": "/ɪt ɪz truː ðæt kənˈteɪnəraɪzd ˈmærɪtaɪm freɪt trænsˈfɔːrmd ˌɪntərˈnæʃnəl ˌmænjuˈfæktʃərɪŋ səˈplaɪ tʃeɪnz/",
+        "text": "Many adolescent players tend to develop strong cooperative problem solving skills.",
+        "en": "Many adolescent players tend to develop strong cooperative problem solving skills.",
+        "vi": "Nhiều người chơi thanh thiếu niên có xu hướng phát triển kỹ năng giải quyết vấn đề hợp tác mạnh mẽ.",
+        "ipa": "/ˈmeni ˌædəˈlesənt ˈpleɪərz tend tuː dɪˈveləp strɔːŋ koʊˈɑːpərətɪv ˈprɑːbləm ˈsɑːlvɪŋ skɪlz/",
         "words": [
-          "It",
-          "is",
-          "true",
-          "that",
-          "containerized",
-          "maritime",
-          "freight",
-          "transformed",
-          "international",
-          "manufacturing",
-          "supply",
-          "chains"
+          "Many",
+          "adolescent",
+          "players",
+          "tend",
+          "to",
+          "develop",
+          "strong",
+          "cooperative",
+          "problem",
+          "solving",
+          "skills"
         ]
       },
       {
         "id": 6,
-        "text": "The premise that trade protectionism automatically guarantees industrial competitiveness is completely false.",
-        "en": "The premise that trade protectionism automatically guarantees industrial competitiveness is completely false.",
-        "vi": "Tiền đề cho rằng chủ nghĩa bảo hộ thương mại sẽ tự động đảm bảo khả năng cạnh tranh công nghiệp là hoàn toàn sai.",
-        "ipa": "/ðə ˈpremɪs ðæt treɪd prəˈtekʃənɪzəm ˌɔːtəˈmætɪkli ˌɡærənˈtiːz ɪnˈdʌstriəl kəmˈpetətɪvnəs ɪz kəmˈpliːtli fɔːls/",
+        "text": "We must scrutinize whether evidence is reliable before accepting controversial assertions.",
+        "en": "We must scrutinize whether evidence is reliable before accepting controversial assertions.",
+        "vi": "Chúng ta phải xem xét kỹ lưỡng liệu bằng chứng có đáng tin cậy hay không trước khi chấp nhận các khẳng định gây tranh cãi.",
+        "ipa": "/wiː mʌst ˈskruːtənaɪz ˈweðər ˈevɪdəns ɪz rɪˈlaɪəbəl bɪˈfɔːr əkˈseptɪŋ ˌkɑːntrəˈvɜːrʃəl əˈsɜːrʃənz/",
         "words": [
-          "The",
-          "premise",
-          "that",
-          "trade",
-          "protectionism",
-          "automatically",
-          "guarantees",
-          "industrial",
-          "competitiveness",
+          "We",
+          "must",
+          "scrutinize",
+          "whether",
+          "evidence",
           "is",
-          "completely",
-          "false"
+          "reliable",
+          "before",
+          "accepting",
+          "controversial",
+          "assertions"
         ]
       },
       {
         "id": 7,
-        "text": "A valid economic deductive model must incorporate real empirical import and export data.",
-        "en": "A valid economic deductive model must incorporate real empirical import and export data.",
-        "vi": "Một mô hình suy diễn kinh tế hợp lệ phải kết hợp dữ liệu xuất nhập khẩu thực nghiệm thực tế.",
-        "ipa": "/ə ˈvælɪd ˌekəˈnɑːmɪk dɪˈdʌktɪv ˈmɑːdl mʌst ɪnˈkɔːrpəreɪt rɪəl ɪmˈpɪrɪkəl ˈɪmpɔːrt ænd ˈekspɔːrt ˈdeɪtə/",
+        "text": "Recognizing logical flaws protects learners from manipulative advertising and false propaganda.",
+        "en": "Recognizing logical flaws protects learners from manipulative advertising and false propaganda.",
+        "vi": "Nhận biết các lỗ hổng logic bảo vệ người học khỏi quảng cáo thao túng và tuyên truyền sai lệch.",
+        "ipa": "/ˈrekəɡnaɪzɪŋ ˈlɑːdʒɪkəl flɔːz prəˈtekts ˈlɜːrnərz frəm məˈnɪpjəleɪtɪv ˈædvərtaɪzɪŋ ænd fɔːls ˌprɑːpəˈɡændə/",
         "words": [
-          "A",
-          "valid",
-          "economic",
-          "deductive",
-          "model",
-          "must",
-          "incorporate",
-          "real",
-          "empirical",
-          "import",
+          "Recognizing",
+          "logical",
+          "flaws",
+          "protects",
+          "learners",
+          "from",
+          "manipulative",
+          "advertising",
           "and",
-          "export",
-          "data"
+          "false",
+          "propaganda"
         ]
       },
       {
         "id": 8,
-        "text": "Strategic government subsidies accelerated the domestic transition toward renewable export technologies.",
-        "en": "Strategic government subsidies accelerated the domestic transition toward renewable export technologies.",
-        "vi": "Các khoản trợ cấp chiến lược của chính phủ đã đẩy nhanh cuộc chuyển đổi trong nước hướng tới các công nghệ xuất khẩu tái tạo.",
-        "ipa": "/strəˈtiːdʒɪk ˈɡʌvərnmənt ˈsʌbsədiz əkˈseləreɪtɪd ðə dəˈmestɪk trænˈzɪʃən təˈwɔːrd rɪˈnuːəbəl ˈekspɔːrt tekˈnɑːlədʒiz/",
+        "text": "Mastering critical logic cultivates intellectually honest and respectful civic discussions.",
+        "en": "Mastering critical logic cultivates intellectually honest and respectful civic discussions.",
+        "vi": "Làm chủ logic phản biện nuôi dưỡng các cuộc thảo luận công dân trung thực và tôn trọng về mặt trí tuệ.",
+        "ipa": "/ˈmæstərɪŋ ˈkrɪtɪkəl ˈlɑːdʒɪk ˈkʌltɪveɪts ˌɪntəˈlektʃuəli ˈɑːnɪst ænd rɪˈspektfəl ˈsɪvɪk dɪˈskʌʃənz/",
         "words": [
-          "Strategic",
-          "government",
-          "subsidies",
-          "accelerated",
-          "the",
-          "domestic",
-          "transition",
-          "toward",
-          "renewable",
-          "export",
-          "technologies"
+          "Mastering",
+          "critical",
+          "logic",
+          "cultivates",
+          "intellectually",
+          "honest",
+          "and",
+          "respectful",
+          "civic",
+          "discussions"
         ]
       }
     ]
   },
   "rw_part1": {
     "word_bank": [
-      "economics",
-      "globalization",
-      "trade",
-      "tariff",
-      "export",
-      "import",
-      "currency",
       "fallacy",
       "generalization",
       "assumption",
-      "logic",
-      "valid",
-      "invalid",
       "true",
       "false",
-      "equilibrium",
-      "deficit",
-      "surplus",
-      "market",
-      "subsidy"
+      "valid",
+      "invalid",
+      "logic",
+      "premise",
+      "conclusion",
+      "flaw",
+      "stereotype",
+      "deduction",
+      "reasoning",
+      "claim",
+      "bias",
+      "hasty",
+      "misleading",
+      "soundness",
+      "argumentation"
     ],
     "definitions": [
       {
         "id": 1,
-        "definition_en": "The academic social science analyzing wealth creation, trade, and finance.",
-        "options": [
-          "economics",
-          "globalization",
-          "currency"
-        ],
-        "answer": "economics"
+        "text": "A mistaken belief or defective reasoning pattern that invalidates an argument.",
+        "target": "fallacy"
       },
       {
         "id": 2,
-        "definition_en": "The integration of national markets and industries across global networks.",
-        "options": [
-          "globalization",
-          "trade",
-          "tariff"
-        ],
-        "answer": "globalization"
+        "text": "A broad claim inferred from only a small number of specific observations.",
+        "target": "generalization"
       },
       {
         "id": 3,
-        "definition_en": "A government tax imposed on foreign goods crossing customs borders.",
-        "options": [
-          "tariff",
-          "subsidy",
-          "deficit"
-        ],
-        "answer": "tariff"
+        "text": "A proposition accepted as true without critical proof or verification.",
+        "target": "assumption"
       },
       {
         "id": 4,
-        "definition_en": "Goods or industrial services sold and shipped to purchasers abroad.",
-        "options": [
-          "export",
-          "import",
-          "currency"
-        ],
-        "answer": "export"
+        "text": "Having a sound logical structure and factual grounding in reality.",
+        "target": "valid"
       },
       {
         "id": 5,
-        "definition_en": "A mistaken belief or logical error in argument that leads to false conclusions.",
-        "options": [
-          "fallacy",
-          "logic",
-          "assumption"
-        ],
-        "answer": "fallacy"
-      },
-      {
-        "id": 6,
-        "definition_en": "A broad statement derived from limited observations without verifying nuances.",
-        "options": [
-          "generalization",
-          "fallacy",
-          "valid"
-        ],
-        "answer": "generalization"
-      },
-      {
-        "id": 7,
-        "definition_en": "Reasoning conducted according to strict, verifiable principles of validity.",
-        "options": [
-          "logic",
-          "economics",
-          "surplus"
-        ],
-        "answer": "logic"
-      },
-      {
-        "id": 8,
-        "definition_en": "Logically sound, well-grounded in empirical fact, and cogent.",
-        "options": [
-          "valid",
-          "invalid",
-          "false"
-        ],
-        "answer": "valid"
-      },
-      {
-        "id": 9,
-        "definition_en": "The market balance where customer demand matches producer supply.",
-        "options": [
-          "equilibrium",
-          "deficit",
-          "surplus"
-        ],
-        "answer": "equilibrium"
-      },
-      {
-        "id": 10,
-        "definition_en": "Direct financial support granted by governments to assist strategic firms.",
-        "options": [
-          "subsidy",
-          "tariff",
-          "currency"
-        ],
-        "answer": "subsidy"
+        "text": "The strict principles and rules governing correct deductive reasoning.",
+        "target": "logic"
       }
     ]
   },
   "rw_part2": {
-    "topic": "Comparative Advantage and International Trade Fallacies",
+    "title": "Identifying Logical Fallacies in Media Arguments",
     "turns": [
       {
-        "speaker": "Dr. Vance",
-        "text": "Oliver, why do some politicians still commit the fallacy of viewing trade as a zero-sum game?",
+        "id": 1,
+        "speaker": "Liam",
+        "prompt": "Zoe, what makes the statement 'All gamers are lazy' a logical fallacy?",
         "options": [
-          "They make the false assumption that one trading partner's gain must equal another's loss.",
-          "I usually take the passenger ferry across the harbor at eight o'clock.",
-          "The historical library has five reading rooms on the second floor."
+          "It is a hasty generalization that unfairly applies an extreme stereotype to an entire population.",
+          "It is spelled with five letters instead of six.",
+          "It was written on a Sunday afternoon."
         ],
-        "answer": "They make the false assumption that one trading partner's gain must equal another's loss."
+        "answer": "It is a hasty generalization that unfairly applies an extreme stereotype to an entire population."
       },
       {
-        "speaker": "Oliver",
-        "text": "Whereas protective tariffs may benefit local factory owners, who pays the ultimate economic cost?",
+        "id": 2,
+        "speaker": "Liam",
+        "prompt": "How can an opponent dismantle an absolute claim containing the word 'never'?",
         "options": [
-          "Domestic consumers nevertheless pay higher prices for imported retail goods and materials.",
-          "My sister bought a blue acoustic guitar at the musical instrument store.",
-          "No, the university coffee shop was closed during the weekend holiday."
+          "By presenting a single verifiable counterexample that disproves the universal statement.",
+          "By shouting louder than the speaker.",
+          "By agreeing that 'never' means 'always'."
         ],
-        "answer": "Domestic consumers nevertheless pay higher prices for imported retail goods and materials."
+        "answer": "By presenting a single verifiable counterexample that disproves the universal statement."
       },
       {
-        "speaker": "Dr. Vance",
-        "text": "What does our empirical logic show regarding the true cause of current trade deficits?",
+        "id": 3,
+        "speaker": "Liam",
+        "prompt": "Which qualifying words help us formulate academically sound arguments?",
         "options": [
-          "Valid data proves our trade deficit reflects strong consumer purchasing power and capital inflows.",
-          "We played an entertaining game of volleyball in the community gym.",
-          "The passenger aircraft departed from the north runway on schedule."
+          "Careful qualifiers such as 'some', 'many', 'often', and 'tend to'.",
+          "Universal extremes like 'always', 'all', and 'everybody'.",
+          "Made-up slang words with no dictionary definitions."
         ],
-        "answer": "Valid data proves our trade deficit reflects strong consumer purchasing power and capital inflows."
+        "answer": "Careful qualifiers such as 'some', 'many', 'often', and 'tend to'."
       },
       {
-        "speaker": "Oliver",
-        "text": "Is the generalization that all foreign subsidies violate international fair trade principles valid or invalid?",
+        "id": 4,
+        "speaker": "Liam",
+        "prompt": "What is the difference between a valid argument and a sound argument?",
         "options": [
-          "That generalization is invalid because temporary green technology subsidies are legally protected.",
-          "I forgot to lock my bicycle outside the university department building.",
-          "There are thirty-two paintings displayed in the municipal art exhibition."
+          "A valid argument has correct logical structure, while a sound argument also has factually true premises.",
+          "A sound argument is played through high-volume audio speakers.",
+          "There is no difference; both words mean the same thing."
         ],
-        "answer": "That generalization is invalid because temporary green technology subsidies are legally protected."
+        "answer": "A valid argument has correct logical structure, while a sound argument also has factually true premises."
       },
       {
-        "speaker": "Dr. Vance",
-        "text": "Shall we present our trade impact assessment to the international economic council now?",
+        "id": 5,
+        "speaker": "Liam",
+        "prompt": "Why is recognizing fallacies an empowering skill in everyday life?",
         "options": [
-          "Yes, let's present our report so delegates can sign the multilateral trade treaty.",
-          "I would prefer drinking herbal tea rather than hot chocolate after lunch.",
-          "The regional train was delayed by fifteen minutes due to rain."
+          "It protects us from misleading advertisements, unfounded political claims, and biased thinking.",
+          "It allows us to avoid doing our homework.",
+          "It makes computers run twice as fast."
         ],
-        "answer": "Yes, let's present our report so delegates can sign the multilateral trade treaty."
-      }
-    ],
-    "exchanges": [
-      {
-        "speaker": "Dr. Vance",
-        "text": "Oliver, why do some politicians still commit the fallacy of viewing trade as a zero-sum game?"
-      },
-      {
-        "speaker": "Oliver",
-        "text": "They make the false assumption that one trading partner's gain must equal another's loss."
-      },
-      {
-        "speaker": "Dr. Vance",
-        "text": "Whereas protective tariffs may benefit local factory owners, who pays the ultimate economic cost?"
-      },
-      {
-        "speaker": "Oliver",
-        "text": "Domestic consumers nevertheless pay higher prices for imported retail goods and materials."
-      },
-      {
-        "speaker": "Dr. Vance",
-        "text": "What does our empirical logic show regarding the true cause of current trade deficits?"
-      },
-      {
-        "speaker": "Oliver",
-        "text": "Valid data proves our trade deficit reflects strong consumer purchasing power and capital inflows."
-      },
-      {
-        "speaker": "Dr. Vance",
-        "text": "Is the generalization that all foreign subsidies violate international fair trade principles valid or invalid?"
-      },
-      {
-        "speaker": "Oliver",
-        "text": "That generalization is invalid because temporary green technology subsidies are legally protected."
-      },
-      {
-        "speaker": "Dr. Vance",
-        "text": "Shall we present our trade impact assessment to the international economic council now?"
-      },
-      {
-        "speaker": "Oliver",
-        "text": "Yes, let's present our report so delegates can sign the multilateral trade treaty."
+        "answer": "It protects us from misleading advertisements, unfounded political claims, and biased thinking."
       }
     ]
   },
   "rw_part6": {
-    "title": "Oliver Sterling's Economic Journal: Global Trade",
-    "instructions": "Read the diary and write the missing words. Write one word on each line.",
-    "text_template": "Dear Journal, today Dr. Vance and I delivered our economic report [1]_____ the trade ministry. Whereas tariffs may protect local firms, they nevertheless [2]_____ consumer prices across markets. We proved that viewing trade deficits as failure is an economic [3]_____. Comparative advantage demonstrates that trade based on sound [4]_____ benefits both trading partners. Tomorrow, trade ministers will sign the multilateral accord [5]_____ promote sustainable globalization.",
+    "instructions": "Read the text about critical thinking and choose the correct function word for each blank space.",
+    "text_template": "Critical thinking helps students identify flaws in argumentation. When someone claims that all gamers are unmotivated, they commit [1] hasty generalization fallacy. This invalid statement rests on [2] false assumption. Rather than using absolute words like 'always', careful thinkers use qualifiers such [3] 'some' and 'often'. An argument is sound only when its premises are true and its logic holds. Developing these skills protects citizens [4] misleading claims and fosters respectful debate [5] modern society.",
     "answers": {
-      "1": "to",
-      "2": "raise",
-      "3": "fallacy",
-      "4": "logic",
-      "5": "to"
+      "1": "a",
+      "2": "a",
+      "3": "as",
+      "4": "from",
+      "5": "in"
     }
   }
 };

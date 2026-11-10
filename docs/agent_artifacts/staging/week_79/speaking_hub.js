@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Speaking Hub & Talkshow/Info Exchange Cards
- * Week: 79 | Theme: "Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate" | CEFR: B1 Preliminary
- * Generated: 2026-11-09T08:30:07.703Z
+ * Week: 79 | Theme: "The Industrial Revolution" | CEFR: B1 Preliminary
+ * Generated: 2026-11-10T03:12:16.360Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,144 +9,144 @@
 
 export const speakingHubData = {
   "week": 79,
-  "theme": "Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate",
+  "theme": "The Industrial Revolution",
   "cefr_level": "B1 Preliminary",
   "talkshow_prompt": {
-    "topic": "Defending Environmental Priorities in Micro-Debates",
-    "question": "Nora, why is the 'Yes, but...' rebuttal structure so effective in competitive science debates?",
-    "model_response": "The 'Yes, but...' structure is effective because it demonstrates that you listened to your opponent's perspective before presenting a stronger counter-argument! You show intellectual respect by conceding: 'Yes, satellite sensors developed for space provide vital climate data.' Then you deliver the compelling rebuttal: 'But investing billions in planting trees and expanding renewable energy is far more urgent for saving Earth right now!'"
+    "topic": "Presenting a Historical Documentary on the Steam Revolution",
+    "question": "William, how did the combination of coal, iron, and steam power launch modern industry?",
+    "model_response": "The combination of coal, iron, and steam created a powerful chain reaction! Abundant coal was burned to heat water inside iron boilers, producing high-pressure steam that drove factory machinery. In turn, these steam engines powered iron foundries and locomotives that transported more coal across steel railways. This remarkable cycle mechanized manufacturing and launched the modern industrial world!"
   },
   "info_exchange_cards": {
     "table_a": {
-      "title": "Kevin's Space Research Mission",
+      "title": "James Watt's Steam Engine Workshop",
       "subtitle": "Candidate's Question Card (Ask Examiner)",
-      "person": "Kevin",
+      "person": "James Watt",
       "fields": [
         {
           "id": "field_a1",
-          "cue_prompt": "where / satellite control station located?",
+          "cue_prompt": "where / steam engine workshop located?",
           "cue_word": "where",
           "is_missing": true,
           "acceptable_questions": [
-            "Where is the satellite control station located?",
-            "Where is the control station?",
-            "Where does Kevin monitor satellites?"
+            "Where was the steam engine workshop located?",
+            "Where was the workshop located?",
+            "Where did James Watt build steam engines?"
           ],
-          "nova_reply": "The orbital telemetry center is located in Houston, Texas."
+          "nova_reply": "The Soho Manufactory workshop was located in Birmingham, England."
         },
         {
           "id": "field_a2",
-          "cue_prompt": "what / primary satellite mission?",
+          "cue_prompt": "what / primary invention developed?",
           "cue_word": "what",
           "is_missing": true,
           "acceptable_questions": [
-            "What is the primary satellite mission?",
-            "What do the satellites do?",
-            "What is their main purpose?"
+            "What primary invention was developed?",
+            "What was the invention?",
+            "What did James Watt invent?"
           ],
-          "nova_reply": "The satellites monitor global greenhouse emissions and ocean heat levels."
+          "nova_reply": "He perfected the separate condenser steam engine that reduced coal fuel waste."
         },
         {
           "id": "field_a3",
-          "cue_prompt": "how much / annual space program budget?",
+          "cue_prompt": "how much / fuel efficiency improved?",
           "cue_word": "how much",
           "is_missing": true,
           "acceptable_questions": [
-            "How much is the annual space program budget?",
-            "What is the budget?",
-            "How much money is allocated?"
+            "How much was fuel efficiency improved?",
+            "How much fuel did it save?",
+            "What was the efficiency increase?"
           ],
-          "nova_reply": "Congress allocated twenty-four billion dollars to the federal space program."
+          "nova_reply": "The improved design saved up to seventy-five percent of coal fuel consumption."
         },
         {
           "id": "field_a4",
-          "cue_prompt": "who / leads the climate satellite division?",
+          "cue_prompt": "who / partnered with James Watt?",
           "cue_word": "who",
           "is_missing": true,
           "acceptable_questions": [
-            "Who leads the climate satellite division?",
-            "Who is the division director?",
-            "Who supervises the project?"
+            "Who partnered with James Watt?",
+            "Who was his business partner?",
+            "Who funded the steam engine factory?"
           ],
-          "nova_reply": "Dr. Evelyn Vance leads the Earth observation satellite team."
+          "nova_reply": "Industrialist Matthew Boulton provided capital and commercial factory space."
         },
         {
           "id": "field_a5",
-          "cue_prompt": "why / orbital telescopes valuable?",
+          "cue_prompt": "why / factories adopt steam power?",
           "cue_word": "why",
           "is_missing": true,
           "acceptable_questions": [
-            "Why are orbital telescopes valuable?",
-            "Why do we need space telescopes?",
-            "Why fund orbital telescopes?"
+            "Why did factories adopt steam power?",
+            "Why was steam better than watermills?",
+            "Why use steam engines?"
           ],
-          "nova_reply": "Because they capture infrared radiation without atmospheric distortion."
+          "nova_reply": "Because steam engines operated year-round without depending on river water currents."
         }
       ]
     },
     "table_b": {
-      "title": "Nora's Rainforest Reforestation Campaign",
+      "title": "George Stephenson's Railway Network",
       "subtitle": "Information Card (Answer Examiner's Questions)",
-      "person": "Nora",
+      "person": "George Stephenson",
       "fields": [
         {
           "id": "field_b1",
-          "cue_prompt": "where / ecological restoration reserve?",
+          "cue_prompt": "where / first public railway line opened?",
           "cue_word": "where",
-          "value": "Across the Atlantic Forest coastal belt in Brazil.",
-          "nova_question": "Where is Nora's reforestation reserve located?",
+          "value": "Between Stockton and Darlington in northern England.",
+          "nova_question": "Where was the first public railway line opened?",
           "acceptable_answers": [
-            "Across the Atlantic Forest coastal belt in Brazil.",
-            "In Brazil.",
-            "The Atlantic Forest in Brazil."
+            "Between Stockton and Darlington in northern England.",
+            "Between Stockton and Darlington.",
+            "In northern England."
           ]
         },
         {
           "id": "field_b2",
-          "cue_prompt": "what / species of trees planted?",
+          "cue_prompt": "what / name of famous locomotive?",
           "cue_word": "what",
-          "value": "Thirty native broadleaf species to maximize biodiversity.",
-          "nova_question": "What species of trees are planted in the nursery?",
+          "value": "The Rocket, an advanced steam locomotive built in 1829.",
+          "nova_question": "What was the name of the famous locomotive?",
           "acceptable_answers": [
-            "Thirty native broadleaf species to maximize biodiversity.",
-            "Thirty native broadleaf species.",
-            "Native broadleaf species."
+            "The Rocket, an advanced steam locomotive built in 1829.",
+            "The Rocket.",
+            "Stephensons Rocket."
           ]
         },
         {
           "id": "field_b3",
-          "cue_prompt": "how / measure annual carbon capture?",
-          "cue_word": "how",
-          "value": "By analyzing soil core samples and trunk growth diameters.",
-          "nova_question": "How does the research team measure annual carbon capture?",
+          "cue_prompt": "how fast / locomotive travel?",
+          "cue_word": "how fast",
+          "value": "It achieved an unprecedented speed of twenty-nine miles per hour.",
+          "nova_question": "How fast could the Rocket locomotive travel?",
           "acceptable_answers": [
-            "By analyzing soil core samples and trunk growth diameters.",
-            "Through soil cores and tree trunk measurements.",
-            "Using soil samples and trunk diameters."
+            "It achieved an unprecedented speed of twenty-nine miles per hour.",
+            "Twenty-nine miles per hour.",
+            "29 mph."
           ]
         },
         {
           "id": "field_b4",
-          "cue_prompt": "who / funds the forest restoration project?",
+          "cue_prompt": "who / financed the railway construction?",
           "cue_word": "who",
-          "value": "An international coalition of green climate foundations.",
-          "nova_question": "Who funds the coastal reforestation campaign?",
+          "value": "Local merchants seeking cheap transportation for bulk coal.",
+          "nova_question": "Who financed the railway construction?",
           "acceptable_answers": [
-            "An international coalition of green climate foundations.",
-            "Green climate foundations.",
-            "International climate foundations."
+            "Local merchants seeking cheap transportation for bulk coal.",
+            "Local coal merchants.",
+            "Business merchants."
           ]
         },
         {
           "id": "field_b5",
-          "cue_prompt": "why / restore mangrove wetlands first?",
+          "cue_prompt": "why / railways replace horse wagons?",
           "cue_word": "why",
-          "value": "To shield coastal communities from severe storm surges.",
-          "nova_question": "Why does the campaign prioritize restoring mangrove wetlands?",
+          "value": "Because steam trains carried ten times more freight at lower cost.",
+          "nova_question": "Why did railways replace horse wagons?",
           "acceptable_answers": [
-            "To shield coastal communities from severe storm surges.",
-            "To protect coastal communities from storms.",
-            "To shield against storm surges."
+            "Because steam trains carried ten times more freight at lower cost.",
+            "They carried ten times more freight.",
+            "To move heavy freight cheaper and faster."
           ]
         }
       ]

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 127 | Theme: "Global Climate Systems & Renewable Energy" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.311Z
+ * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.447Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,186 +9,182 @@
 
 export const skillPracticeHubData = {
   "week": 127,
-  "theme": "Global Climate Systems & Renewable Energy",
+  "theme": "Rebuttal Practice",
   "cefr_level": "B2 First",
   "grammar_drills": [
     {
-      "sentence": "If nations had invested earlier, emissions would be lower today.",
+      "sentence": "On the contrary, recent scientific evidence proves that the premise was false.",
       "options": [
-        "would be",
-        "will be",
-        "had been"
+        "On the contrary,",
+        "In addition to,",
+        "Consequently,"
       ],
-      "answer": "would be",
-      "explanation": "Mixed conditional (past action, present result) uses 'had + past participle' in if-clause and 'would + base verb' in main clause."
+      "answer": "On the contrary,",
+      "explanation": "Use 'On the contrary,' to signal that a preceding assertion was incorrect and the opposite is true."
     },
     {
-      "sentence": "Clara presented strong evidence to counter the opponent's argument.",
+      "sentence": "While proponents claim that costs are high, long-term savings outweigh initial expenses.",
       "options": [
-        "to counter",
-        "countering",
-        "countered"
+        "While",
+        "During",
+        "Because of"
       ],
-      "answer": "to counter",
-      "explanation": "Use the infinitive of purpose 'to counter' to explain the reason for presenting evidence."
+      "answer": "While",
+      "explanation": "Use 'While' to introduce a concession clause that contrasts with the main clause."
     },
     {
-      "sentence": "Scientists disagree on the optimal timeline for grid modernization.",
+      "sentence": "They claim that space travel is wasteful, but evidence shows it pioneers vital medical technologies.",
       "options": [
-        "disagree",
-        "disagrees",
-        "disagreeing"
+        "shows",
+        "show",
+        "showing"
       ],
-      "answer": "disagree",
-      "explanation": "Plural subject 'Scientists' takes plural base verb 'disagree'."
+      "answer": "shows",
+      "explanation": "The uncountable singular noun 'evidence' takes the singular verb 'shows'."
     },
     {
-      "sentence": "It is true that solar module manufacturing costs have fallen.",
+      "sentence": "Debaters must disagree with arguments without attacking an opponent's character.",
       "options": [
-        "is true",
-        "are true",
-        "being true"
+        "disagree with",
+        "disagree to",
+        "disagree for"
       ],
-      "answer": "is true",
-      "explanation": "Impersonal structure 'It is true that' requires singular auxiliary 'is'."
+      "answer": "disagree with",
+      "explanation": "Use the preposition 'with' after the verb 'disagree' when referring to arguments or people."
     },
     {
-      "sentence": "The claim that renewable power causes instability is completely false.",
+      "sentence": "If the foundational premise is invalid, the entire conclusion collapses.",
       "options": [
-        "is",
-        "are",
-        "were"
+        "invalid",
+        "invalided",
+        "invalidity"
       ],
-      "answer": "is",
-      "explanation": "Singular subject 'The claim' takes singular verb 'is'."
+      "answer": "invalid",
+      "explanation": "Use the adjective 'invalid' after the linking verb 'is'."
     }
   ],
   "singapore_math": [
     {
       "id": "w127_p1",
       "type": "part_whole",
-      "title": "Regional Renewable Power Generation",
-      "question": "A coastal regional grid receives 480 megawatts from offshore wind turbines and 320 megawatts from solar photovoltaic farms. What is the total renewable power generated in megawatts?",
-      "storyContext": "Clara tallies live grid telemetry on the central control room monitors.",
+      "title": "Tallying Debate Tournament Score Elements",
+      "question": "In a debate adjudication, the affirmative team scored 42 points for constructive argument delivery and 48 points for rebuttal responsiveness. What was their total score?",
+      "storyContext": "Lucas tallies score cards after the tournament round.",
       "modelData": {
         "bars": [
           {
-            "label": "Wind Turbines",
-            "value": 480,
-            "color": "#0ea5e9"
+            "label": "Constructive Arguments",
+            "value": 42,
+            "color": "#3b82f6"
           },
           {
-            "label": "Solar Farms",
-            "value": 320,
-            "color": "#f59e0b"
+            "label": "Rebuttal Responsiveness",
+            "value": 48,
+            "color": "#10b981"
           }
         ],
-        "total": 800,
-        "unit": "megawatts"
+        "total": 90,
+        "unit": "points"
       },
-      "target_answer": 800,
-      "unit": "megawatts",
+      "target_answer": 90,
+      "unit": "points",
       "steps": [
-        "Take 480 megawatts from offshore wind.",
-        "Add 320 megawatts from solar farms.",
-        "480 + 320 = 800 megawatts in total."
+        "Take constructive points: 42.",
+        "Add rebuttal points: 48.",
+        "42 + 48 = 90 points in total."
       ]
     },
     {
       "id": "w127_p2",
       "type": "comparison",
-      "title": "Carbon Emissions Reduction Comparison",
-      "question": "A coal plant produced 750 metric tons of carbon emissions daily, whereas an upgraded geothermal plant produces only 50 metric tons. By how many metric tons were daily carbon emissions reduced?",
-      "storyContext": "Dr. Thorne evaluates emission logs after replacing a decommissioned boiler.",
+      "title": "Comparing Rebuttal Speaking Times",
+      "question": "The affirmative speaker spent 180 seconds refuting statistical claims, whereas the negative speaker spent only 105 seconds. How many more seconds did the affirmative speaker devote to evidence rebuttal?",
+      "storyContext": "Nora reviews audio recording timestamps to assess speaking time allocation.",
       "modelData": {
         "bars": [
           {
-            "label": "Coal Boiler",
-            "value": 750,
-            "color": "#ef4444"
+            "label": "Affirmative Rebuttal",
+            "value": 180,
+            "color": "#6366f1"
           },
           {
-            "label": "Geothermal Plant",
-            "value": 50,
-            "color": "#10b981"
+            "label": "Negative Rebuttal",
+            "value": 105,
+            "color": "#f59e0b"
           }
         ],
-        "difference": 700,
-        "unit": "metric tons"
+        "difference": 75,
+        "unit": "seconds"
       },
-      "target_answer": 700,
-      "unit": "metric tons",
+      "target_answer": 75,
+      "unit": "seconds",
       "steps": [
-        "Start with 750 metric tons from the coal boiler.",
-        "Subtract 50 metric tons from the geothermal plant.",
-        "750 - 50 = 700 metric tons reduction."
+        "Start with affirmative time: 180 seconds.",
+        "Subtract negative time: 105 seconds.",
+        "180 - 105 = 75 seconds more devoted to rebuttal."
       ]
     }
   ],
   "science_lab": {
-    "title_en": "Global Climate Systems & Renewable Energy Lab Workshop",
+    "title_en": "Rebuttal Practice Lab Workshop",
     "scenarios": [
       {
         "stage": 1,
-        "title": "Renewable vs Fossil Energy Systems",
-        "diagram_type": "energy_classification",
-        "instruction": "Sort each generation technology into Renewable or Fossil Fuel categories.",
+        "title": "Dissecting Opposing Arguments & Identifying Flaws",
+        "diagram_type": "argument_claim_premise_breakdown",
+        "instruction": "Deconstruct an opposing claim into underlying premises, evidence, and logical flaws.",
         "items": [
           {
-            "label": "Offshore Wind Turbine",
-            "target": "renewable"
+            "label": "Opponent Core Claim",
+            "target": "thesis_target"
           },
           {
-            "label": "Photovoltaic Solar Farm",
-            "target": "renewable"
+            "label": "Unproven Premise Assumption",
+            "target": "logical_flaw"
           },
           {
-            "label": "Coal-Fired Boiler",
-            "target": "fossil_fuel"
-          },
-          {
-            "label": "Natural Gas Peaker",
-            "target": "fossil_fuel"
+            "label": "Counter-Evidence Repository",
+            "target": "rebuttal_proof"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Smart Grid Power Balancing",
-        "diagram_type": "grid_balance_loop",
-        "instruction": "Trace the flow of electricity during midday peak generation hours.",
+        "title": "Mapping the 'They Say... But I Say...' Structure",
+        "diagram_type": "rebuttal_contrast_scaffolding",
+        "instruction": "Assemble contrasting rhetorical units using rebuttal transition signals.",
         "items": [
           {
-            "label": "Solar Farms Generate Excess Midday Power",
-            "target": "step_1"
+            "label": "Opposing View: 'They argue that...'",
+            "target": "concession_node"
           },
           {
-            "label": "Battery Storage Stores Surplus Energy",
-            "target": "step_2"
+            "label": "Contrast Connector: 'On the contrary...'",
+            "target": "pivot_marker"
           },
           {
-            "label": "Discharge to Cities During Evening Peak",
-            "target": "step_3"
+            "label": "Affirmative Claim: 'Evidence demonstrates...'",
+            "target": "counter_thesis"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Climate Policy Implementation",
-        "diagram_type": "policy_milestones",
-        "instruction": "Order the stages required to enact a national renewable energy transition.",
+        "title": "Adjudicating Rebuttal Persuasiveness",
+        "diagram_type": "debate_scoring_rubric_matrix",
+        "instruction": "Evaluate responsiveness, empirical citations, and ethical cross-examination.",
         "items": [
           {
-            "label": "Empirical Emissions Audit",
-            "target": "stage_1"
+            "label": "Direct Argument Engagement",
+            "target": "responsiveness_metric"
           },
           {
-            "label": "Smart Grid Infrastructure Upgrade",
-            "target": "stage_2"
+            "label": "Verifiable Empirical Citation",
+            "target": "evidence_metric"
           },
           {
-            "label": "Phase Out Obsolete Coal Subsidies",
-            "target": "stage_3"
+            "label": "Absence of Fallacious Attacks",
+            "target": "ethics_metric"
           }
         ]
       }

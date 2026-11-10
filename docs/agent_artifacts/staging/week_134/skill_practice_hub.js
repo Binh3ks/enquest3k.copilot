@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 134 | Theme: "Economics & International Trade: Globalization" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.320Z
+ * Week: 134 | Theme: "Identifying Fallacies" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.456Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,186 +9,182 @@
 
 export const skillPracticeHubData = {
   "week": 134,
-  "theme": "Economics & International Trade: Globalization",
+  "theme": "Identifying Fallacies",
   "cefr_level": "B2 First",
   "grammar_drills": [
     {
-      "sentence": "Whereas tariffs protect domestic firms, they nevertheless raise consumer prices.",
+      "sentence": "Many adolescent players tend to develop strong teamwork skills.",
       "options": [
-        "nevertheless",
-        "furthermore",
-        "because"
+        "tend to",
+        "tend on",
+        "tending to"
       ],
-      "answer": "nevertheless",
-      "explanation": "Concessive discourse marker 'nevertheless' introduces a contrasting consequence after a concessive 'Whereas' clause."
+      "answer": "tend to",
+      "explanation": "Use 'tend to' followed by a base verb to express a habitual likelihood or disposition."
     },
     {
-      "sentence": "Despite exchange rate fluctuations, bilateral trade continued to expand.",
+      "sentence": "Claiming that all gamers are unmotivated is an invalid generalization.",
       "options": [
-        "Despite",
-        "Although",
-        "Whereas"
+        "an invalid",
+        "a invalid",
+        "invalid an"
       ],
-      "answer": "Despite",
-      "explanation": "Preposition 'Despite' takes a noun phrase ('exchange rate fluctuations') to show concession."
+      "answer": "an invalid",
+      "explanation": "Use the indefinite article 'an' before the vowel sound in 'invalid'."
     },
     {
-      "sentence": "The assumption that deficits cause poverty is an economic fallacy.",
+      "sentence": "Critical thinkers use qualifiers such as some, many, and often.",
       "options": [
-        "is",
-        "are",
-        "were"
+        "such as",
+        "as such",
+        "such like"
       ],
-      "answer": "is",
-      "explanation": "Singular subject 'The assumption' takes singular verb 'is'."
+      "answer": "such as",
+      "explanation": "Use 'such as' to introduce specific illustrative examples."
     },
     {
-      "sentence": "Valid economic models incorporate empirical import and export data.",
+      "sentence": "An argument is sound only when its foundational premises are true.",
       "options": [
-        "incorporate",
-        "incorporates",
-        "incorporating"
+        "premises are true",
+        "premises is true",
+        "premise are true"
       ],
-      "answer": "incorporate",
-      "explanation": "Plural subject 'Valid economic models' takes base plural verb 'incorporate'."
+      "answer": "premises are true",
+      "explanation": "The plural subject 'premises' requires the plural verb 'are'."
     },
     {
-      "sentence": "Comparative advantage demonstrates that mutual trade benefits both nations.",
+      "sentence": "Drawing a hasty conclusion from a single example creates misleading stereotypes.",
       "options": [
-        "demonstrates",
-        "demonstrate",
-        "demonstrating"
+        "creates",
+        "create",
+        "creating"
       ],
-      "answer": "demonstrates",
-      "explanation": "Singular non-count subject 'Comparative advantage' takes 3rd person singular verb 'demonstrates'."
+      "answer": "creates",
+      "explanation": "The singular gerund phrase 'Drawing a hasty conclusion...' takes the singular verb 'creates'."
     }
   ],
   "singapore_math": [
     {
       "id": "w134_p1",
       "type": "part_whole",
-      "title": "Bilateral Trade Value Calculation",
-      "question": "A nation exported 620 million dollars of manufactured electronics and 380 million dollars of agricultural goods. What was the total value of its exports in millions of dollars?",
-      "storyContext": "Oliver aggregates international customs shipment invoices on the central ledger.",
+      "title": "Tallying Logical Fallacies in a Media Sample",
+      "question": "In an audit of 50 opinion articles, Zoe identified 18 hasty generalizations and 12 false cause fallacies. How many total fallacies did she detect across these two categories?",
+      "storyContext": "Zoe categorizes reasoning errors on a media audit ledger.",
       "modelData": {
         "bars": [
           {
-            "label": "Manufactured Electronics",
-            "value": 620,
-            "color": "#3b82f6"
+            "label": "Hasty Generalizations",
+            "value": 18,
+            "color": "#ef4444"
           },
           {
-            "label": "Agricultural Produce",
-            "value": 380,
-            "color": "#10b981"
+            "label": "False Cause Fallacies",
+            "value": 12,
+            "color": "#f59e0b"
           }
         ],
-        "total": 1000,
-        "unit": "million dollars"
+        "total": 30,
+        "unit": "fallacies"
       },
-      "target_answer": 1000,
-      "unit": "million dollars",
+      "target_answer": 30,
+      "unit": "fallacies",
       "steps": [
-        "Take 620 million dollars from electronics exports.",
-        "Add 380 million dollars from agricultural exports.",
-        "620 + 380 = 1000 million dollars in total exports."
+        "Take hasty generalizations: 18.",
+        "Add false cause fallacies: 12.",
+        "18 + 12 = 30 total fallacies detected."
       ]
     },
     {
       "id": "w134_p2",
       "type": "comparison",
-      "title": "Trade Balance Surplus vs Deficit",
-      "question": "A country recorded 850 million dollars in total exports and 600 million dollars in total imports during the fourth quarter. How large was its commercial trade surplus in millions of dollars?",
-      "storyContext": "Dr. Vance computes the national trade balance sheet at the ministry.",
+      "title": "Comparing Qualified Statements vs Universal Generalizations",
+      "question": "In a debate transcript, team A used 35 qualified statements (using 'some' or 'often'), while team B used only 14 qualified statements, relying mostly on sweeping extremes. How many more qualified statements did team A use?",
+      "storyContext": "Liam compares rhetorical qualifiers on a debate balance graph.",
       "modelData": {
         "bars": [
           {
-            "label": "Total Exports",
-            "value": 850,
+            "label": "Team A (Careful Qualifiers)",
+            "value": 35,
             "color": "#10b981"
           },
           {
-            "label": "Total Imports",
-            "value": 600,
-            "color": "#f59e0b"
+            "label": "Team B (Sweeping Extremes)",
+            "value": 14,
+            "color": "#64748b"
           }
         ],
-        "difference": 250,
-        "unit": "million dollars"
+        "difference": 21,
+        "unit": "statements"
       },
-      "target_answer": 250,
-      "unit": "million dollars",
+      "target_answer": 21,
+      "unit": "statements",
       "steps": [
-        "Start with 850 million dollars in exports.",
-        "Subtract 600 million dollars in imports.",
-        "850 - 600 = 250 million dollars trade surplus."
+        "Start with Team A: 35 statements.",
+        "Subtract Team B: 14 statements.",
+        "35 - 14 = 21 more qualified statements."
       ]
     }
   ],
   "science_lab": {
-    "title_en": "Economics & International Trade: Globalization Lab Workshop",
+    "title_en": "Identifying Fallacies Lab Workshop",
     "scenarios": [
       {
         "stage": 1,
-        "title": "Economic Concepts Classification",
-        "diagram_type": "economic_matrix",
-        "instruction": "Match each economic term to its correct definition.",
+        "title": "Dismantling Hasty Generalization Syllogisms",
+        "diagram_type": "syllogistic_fallacy_breakdown_flow",
+        "instruction": "Identify the flawed inductive leap from an isolated anecdote to a universal premise.",
         "items": [
           {
-            "label": "Tariff -> Import Tax on Crossing Customs",
-            "target": "tariff"
+            "label": "Isolated Particular Case",
+            "target": "narrow_observation"
           },
           {
-            "label": "Subsidy -> State Financial Grant to Industry",
-            "target": "subsidy"
+            "label": "Unwarranted Inductive Leap",
+            "target": "fallacious_step"
           },
           {
-            "label": "Surplus -> Exports Exceed Total Imports",
-            "target": "surplus"
-          },
-          {
-            "label": "Deficit -> Imports Exceed Total Exports",
-            "target": "deficit"
+            "label": "Flawed Universal Stereotype",
+            "target": "invalid_conclusion"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Comparative Advantage Flow",
-        "diagram_type": "trade_specialization",
-        "instruction": "Trace the sequence of specialization from opportunity cost to mutual gain.",
+        "title": "Inserting Epistemic Modal Qualifiers",
+        "diagram_type": "epistemic_qualifier_tuning_matrix",
+        "instruction": "Calibrate universal assertions with probability qualifiers ('often', 'tend to', 'some').",
         "items": [
           {
-            "label": "Identify Lower Opportunity Cost Production",
-            "target": "step_1"
+            "label": "Universal Extreme ('All / Never')",
+            "target": "vulnerable_extreme"
           },
           {
-            "label": "Specialize in Exporting Efficient Commodities",
-            "target": "step_2"
+            "label": "Nuanced Qualifier Filter",
+            "target": "epistemic_moderator"
           },
           {
-            "label": "Mutual Gains Expand Total Consumption",
-            "target": "step_3"
+            "label": "Defensible Empirical Claim",
+            "target": "sound_assertion"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Trade Accord Enactment",
-        "diagram_type": "treaty_milestones",
-        "instruction": "Order the mandatory stages before multilateral treaty enforcement.",
+        "title": "Validating Deductive Soundness Matrix",
+        "diagram_type": "deductive_truth_soundness_tree",
+        "instruction": "Test both structural logical validity and empirical factual truth of premises.",
         "items": [
           {
-            "label": "Bilateral Tariff Schedule Negotiations",
-            "target": "phase_1"
+            "label": "Factually True Premise A",
+            "target": "empirical_basis"
           },
           {
-            "label": "Empirical Economic Impact Modeling",
-            "target": "phase_2"
+            "label": "Valid Deductive Inference Step",
+            "target": "structural_rule"
           },
           {
-            "label": "Multilateral Legislative Ratification",
-            "target": "phase_3"
+            "label": "Sound and Incontestable Conclusion",
+            "target": "verified_soundness"
           }
         ]
       }

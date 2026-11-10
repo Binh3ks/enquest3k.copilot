@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Speaking Hub & Talkshow/Info Exchange Cards
- * Week: 133 | Theme: "Astrophysics: Black Holes, Galaxies & Gravity" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.318Z
+ * Week: 133 | Theme: "Deep Research & Data" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.455Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,144 +9,145 @@
 
 export const speakingHubData = {
   "week": 133,
-  "theme": "Astrophysics: Black Holes, Galaxies & Gravity",
+  "theme": "Deep Research & Data",
   "cefr_level": "B2 First",
   "talkshow_prompt": {
-    "topic": "Black Holes and the Validation of General Relativity",
-    "question": "Dr. Sagan-Smith, how do gravitational wave detections confirm Einstein's century-old predictions regarding black holes?",
-    "model_response": "The observed gravitational wave frequency spikes could not have been produced by ordinary matter; they must have originated from the violent orbital decay and merger of two supermassive black holes! For decades, black holes existed primarily as mathematical singularities in Einstein's equations. Detecting gravitational ripples that traveled across billions of light-years provides irrefutable empirical proof that massive objects warp spacetime geometry exactly as general relativity predicts."
+    "topic": "Using Deep Research and Quantitative Data in Public Debate",
+    "question": "Hannah, why does citing precise statistics carry far more weight than sharing personal anecdotes?",
+    "model_response": "Personal stories are emotionally moving, but they represent the experience of only one individual! In contrast, when you say: 'According to a survey of two thousand students, seventy percent play cooperatively and only twelve percent experience sleep deficits,' you are describing the broader population! Precise quantitative statistics provide verifiable proof that stops opponents from dismissing your argument as mere personal bias!"
   },
   "info_exchange_cards": {
     "table_a": {
-      "title": "Dr. Carl Sagan-Smith's Gravitational Observatory",
+      "title": "Hannah's Adolescent Gaming Survey",
       "subtitle": "Candidate's Question Card (Ask Examiner)",
-      "person": "Carl",
+      "person": "Hannah",
       "fields": [
         {
           "id": "field_a1",
-          "cue_prompt": "where / observatory situated?",
+          "cue_prompt": "where / adolescent gaming survey conducted?",
           "cue_word": "where",
           "is_missing": true,
           "acceptable_questions": [
-            "Where is the observatory situated?",
-            "Where is the gravitational observatory located?",
-            "Where was it built?"
+            "Where was the adolescent gaming survey conducted?",
+            "Where was the survey held?",
+            "Where did Hannah conduct the gaming survey?"
           ],
-          "nova_reply": "The laser interferometer observatory is situated in the high desert of Eastern Washington state."
+          "nova_reply": "Across fifteen public middle schools in the Greater Boston metropolitan district."
         },
         {
           "id": "field_a2",
-          "cue_prompt": "how far / colliding black holes?",
-          "cue_word": "how far",
+          "cue_prompt": "what / exact percentage of weekly gamers recorded?",
+          "cue_word": "what",
           "is_missing": true,
           "acceptable_questions": [
-            "How far away were the colliding black holes?",
-            "How distant was the merger?",
-            "What was the distance to the black holes?"
+            "What is the exact percentage of weekly gamers recorded?",
+            "What percent play weekly?",
+            "What percentage was found?"
           ],
-          "nova_reply": "The black hole merger occurred approximately one point three billion light-years from Earth."
+          "nova_reply": "Exactly seventy-one point four percent of respondents played weekly."
         },
         {
           "id": "field_a3",
-          "cue_prompt": "what mass / black holes possessed?",
-          "cue_word": "what mass",
+          "cue_prompt": "how many / total respondents completed questionnaires?",
+          "cue_word": "how many",
           "is_missing": true,
           "acceptable_questions": [
-            "What mass did the black holes possess?",
-            "How heavy were the black holes?",
-            "What was their solar mass?"
+            "How many total respondents completed questionnaires?",
+            "How many students participated?",
+            "What was the total sample size?"
           ],
-          "nova_reply": "The two merging black holes possessed twenty-nine and thirty-six solar masses respectively."
+          "nova_reply": "Two thousand four hundred and fifty verified student respondents."
         },
         {
           "id": "field_a4",
-          "cue_prompt": "why / lasers used in detector?",
-          "cue_word": "why",
+          "cue_prompt": "who / supervised statistical data analysis?",
+          "cue_word": "who",
           "is_missing": true,
           "acceptable_questions": [
-            "Why are laser beams used in the detector?",
-            "Why do they use lasers?",
-            "Why are lasers needed in the interferometer?"
+            "Who supervised the statistical data analysis?",
+            "Who was the data analyst?",
+            "Who managed the statistics?"
           ],
-          "nova_reply": "Lasers measure infinitesimal spacetime length distortions smaller than one ten-thousandth the width of a proton."
+          "nova_reply": "Dr. Marcus Thorne, chair of quantitative educational statistics."
         },
         {
           "id": "field_a5",
-          "cue_prompt": "what award / researchers received?",
-          "cue_word": "what award",
+          "cue_prompt": "why / cite empirical data in debate speeches?",
+          "cue_word": "why",
           "is_missing": true,
           "acceptable_questions": [
-            "What award did the research team receive?",
-            "Which award was granted?",
-            "What prize was received?"
+            "Why cite empirical data in debate speeches?",
+            "Why is data important in debates?",
+            "Why use statistics in speaking?"
           ],
-          "nova_reply": "The founding astrophysics research team received the Nobel Prize in Physics for the discovery."
+          "nova_reply": "Because verified metrics substantiate claims and withstand critical cross-examination."
         }
       ]
     },
     "table_b": {
-      "title": "Zoe Vance's Radio Telescope Array",
+      "title": "Dr. Thorne's Statistical Fact Sheet",
       "subtitle": "Information Card (Answer Examiner's Questions)",
-      "person": "Zoe",
+      "person": "Dr. Thorne",
       "fields": [
         {
           "id": "field_b1",
-          "cue_prompt": "where / radio array located?",
+          "cue_prompt": "where / research dataset archived?",
           "cue_word": "where",
-          "value": "At an elevation of five thousand meters on the Chajnantor Plateau in Chile.",
-          "nova_question": "Where is Zoe's submillimeter radio telescope array located?",
+          "value": "On the university's open-access empirical research repository.",
+          "nova_question": "Where is the research dataset archived?",
           "acceptable_answers": [
-            "At an elevation of five thousand meters on the Chajnantor Plateau in Chile.",
-            "On the Chajnantor Plateau in Chile.",
-            "In Chile at five thousand meters elevation."
+            "On the university's open-access empirical research repository.",
+            "In the open-access repository.",
+            "University empirical repository."
           ]
         },
         {
           "id": "field_b2",
-          "cue_prompt": "how many / radio antennas operating?",
-          "cue_word": "how many",
-          "value": "Sixty-six high-precision parabolic antennas operate together as an interferometer.",
-          "nova_question": "How many radio antennas operate simultaneously in the network?",
+          "cue_prompt": "what / percentage of gamers play cooperative titles?",
+          "cue_word": "what",
+          "value": "Sixty-eight percent report playing team-based cooperative games.",
+          "nova_question": "What percentage of gamers play cooperative titles?",
           "acceptable_answers": [
-            "Sixty-six high-precision parabolic antennas operate together as an interferometer.",
-            "Sixty-six parabolic antennas.",
-            "66 antennas."
+            "Sixty-eight percent report playing team-based cooperative games.",
+            "Sixty-eight percent.",
+            "68 percent."
           ]
         },
         {
           "id": "field_b3",
-          "cue_prompt": "why / desert plateau chosen?",
-          "cue_word": "why",
-          "value": "Because extreme atmospheric aridity minimizes water vapor interference with cosmic signals.",
-          "nova_question": "Why was this high desert plateau chosen for the observatory?",
+          "cue_prompt": "how / researchers ensure demographic sample validity?",
+          "cue_word": "how",
+          "value": "By applying stratified random sampling across diverse income brackets.",
+          "nova_question": "How did researchers ensure demographic sample validity?",
           "acceptable_answers": [
-            "Because extreme atmospheric aridity minimizes water vapor interference with cosmic signals.",
-            "Extreme aridity minimizes water vapor interference.",
-            "To avoid water vapor interference."
+            "By applying stratified random sampling across diverse income brackets.",
+            "Through stratified random sampling.",
+            "Stratified random sampling across income brackets."
           ]
         },
         {
           "id": "field_b4",
-          "cue_prompt": "what resolution / images achieved?",
-          "cue_word": "what resolution",
-          "value": "An angular resolution sufficient to read a newspaper in Paris from New York City.",
-          "nova_question": "What extraordinary angular resolution can the combined array achieve?",
+          "cue_prompt": "who / funded the longitudinal study?",
+          "cue_word": "who",
+          "value": "The National Science Foundation and the Children's Health Foundation.",
+          "nova_question": "Who funded the longitudinal study?",
           "acceptable_answers": [
-            "An angular resolution sufficient to read a newspaper in Paris from New York City.",
-            "Sufficient to read a newspaper across the Atlantic.",
-            "Extreme micro-arcsecond angular resolution."
+            "The National Science Foundation and the Children's Health Foundation.",
+            "National Science Foundation.",
+            "NSF and Children's Health Foundation."
           ]
         },
         {
           "id": "field_b5",
-          "cue_prompt": "what target / currently observed?",
-          "cue_word": "what target",
-          "value": "The supermassive black hole Sagittarius A* at the center of the Milky Way.",
-          "nova_question": "What celestial object is Zoe currently observing with the array?",
+          "why": "why",
+          "cue_prompt": "why / distinguish between correlation and causation?",
+          "cue_word": "why",
+          "value": "To prevent faulty assumptions about what directly creates sleep deficits.",
+          "nova_question": "Why must researchers distinguish between correlation and causation?",
           "acceptable_answers": [
-            "The supermassive black hole Sagittarius A* at the center of the Milky Way.",
-            "Sagittarius A* at the center of the Milky Way.",
-            "Sagittarius A*."
+            "To prevent faulty assumptions about what directly creates sleep deficits.",
+            "To avoid faulty causal assumptions.",
+            "To prevent assuming gaming causes all sleep deficits."
           ]
         }
       ]

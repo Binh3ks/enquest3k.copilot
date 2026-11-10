@@ -27,3 +27,4 @@ export const WAVE3_SPECS = {
 };
 
 export default WAVE3_SPECS;
+

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
- * Week: 133 | Theme: "Astrophysics: Black Holes, Galaxies & Gravity" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.318Z
+ * Week: 133 | Theme: "Deep Research & Data" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.455Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,228 +9,183 @@
 
 export const listeningHubData = {
   "week": 133,
-  "theme": "Astrophysics: Black Holes, Galaxies & Gravity",
+  "theme": "Deep Research & Data",
   "cefr_level": "B2 First",
   "audio_dialogue": {
-    "exchanges": [
-      {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "Zoe, look at this interferometer waveform! Could it have come from an ordinary neutron star?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "No, the wave amplitude is so immense that it must have originated from colliding black holes."
-      },
-      {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "Can the central singularity of a black hole ever be observed with an optical telescope?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "It cannot be seen directly because gravity prevents all light from escaping past the event horizon."
-      },
-      {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "What did our sky survey statistics show about the population of supermassive black holes?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "The survey proved that the vast majority of large galaxies harbor central supermassive black holes."
-      },
-      {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "How far away was the galaxy where this cosmic merger took place?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "Spectroscopic redshift data indicates it must have occurred over one billion light-years away."
-      },
-      {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "Shall we finalize our observational study and submit it to the astrophysics journal today?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "Yes, let's submit our paper so astronomers worldwide can verify the gravitational discovery."
-      }
-    ]
+    "title": "Evaluating Quantitative Evidence in a Research Project"
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "text": "The detected gravitational wave signal must have originated from two colliding black holes.",
-      "en": "The detected gravitational wave signal must have originated from two colliding black holes.",
-      "vi": "Tín hiệu sóng hấp dẫn được phát hiện chắc chắn phải bắt nguồn từ hai lỗ đen va chạm vào nhau.",
-      "ipa": "/ðə dɪˈtektɪd ˌɡrævɪˈteɪʃənl weɪv ˈsɪɡnəl mʌst hæv əˈrɪdʒɪneɪtɪd frəm tuː kəˈlaɪdɪŋ blæk hoʊlz/",
+      "text": "According to a landmark study by university psychologists, seventy percent of adolescents play video games.",
+      "en": "According to a landmark study by university psychologists, seventy percent of adolescents play video games.",
+      "vi": "Theo một nghiên cứu mang tính bước ngoặt của các nhà tâm lý học đại học, bảy mươi phần trăm thanh thiếu niên chơi game.",
+      "ipa": "/əˈkɔːrdɪŋ tuː ə ˈlændmɑːrk ˈstʌdi baɪ ˌjuːnəˈvɜːrsəti saɪˈkɑːlədʒɪsts ˈsevənti pərˈsent əv ˌædəˈlesənts pleɪ ˈvɪdioʊ ɡeɪmz/",
       "words": [
-        "The",
-        "detected",
-        "gravitational",
-        "wave",
-        "signal",
-        "must",
-        "have",
-        "originated",
-        "from",
-        "two",
-        "colliding",
-        "black",
-        "holes"
+        "According",
+        "to",
+        "a",
+        "landmark",
+        "study",
+        "by",
+        "university",
+        "psychologists",
+        "seventy",
+        "percent",
+        "of",
+        "adolescents",
+        "play",
+        "video",
+        "games"
       ]
     },
     {
       "id": 2,
-      "text": "The ancient stellar cluster cannot be younger than twelve billion years old.",
-      "en": "The ancient stellar cluster cannot be younger than twelve billion years old.",
-      "vi": "Cụm sao cổ đại này không thể nào trẻ hơn mười hai tỷ năm tuổi.",
-      "ipa": "/ði ˈeɪnʃənt ˈstelər ˈklʌstər ˈkænɑːt biː ˈjʌŋɡər ðæn twelv ˈbɪljən jɪrz oʊld/",
+      "text": "The collected survey data revealed that a substantial majority play cooperative multiplayer games.",
+      "en": "The collected survey data revealed that a substantial majority play cooperative multiplayer games.",
+      "vi": "Dữ liệu khảo sát thu thập được tiết lộ rằng phần lớn chơi các trò chơi hợp tác nhiều người chơi.",
+      "ipa": "/ðə kəˈlektɪd ˈsɜːrveɪ ˈdeɪtə rɪˈviːld ðæt ə səbˈstænʃəl məˈdʒɔːrəti pleɪ koʊˈɑːpərətɪv ˌmʌltiˈpleɪər ɡeɪmz/",
       "words": [
         "The",
-        "ancient",
-        "stellar",
-        "cluster",
-        "cannot",
-        "be",
-        "younger",
-        "than",
-        "twelve",
-        "billion",
-        "years",
-        "old"
+        "collected",
+        "survey",
+        "data",
+        "revealed",
+        "that",
+        "a",
+        "substantial",
+        "majority",
+        "play",
+        "cooperative",
+        "multiplayer",
+        "games"
       ]
     },
     {
       "id": 3,
-      "text": "Einstein's general relativity explains gravity as the geometric curvature of four-dimensional spacetime.",
-      "en": "Einstein's general relativity explains gravity as the geometric curvature of four-dimensional spacetime.",
-      "vi": "Thuyết tương đối rộng của Einstein giải thích trọng lực như độ cong hình học của không-thời gian bốn chiều.",
-      "ipa": "/ˈaɪnstaɪnz ˈdʒenərəl ˌreləˈtɪvəti ɪkˈspleɪnz ˈɡrævəti æz ðə ˌdʒiːəˈmetrɪk ˈkɜːrvətʃər əv fɔːr dɪˈmenʃənl ˈspeɪstaɪm/",
+      "text": "Statistics demonstrate that a small minority exhibit signs of problematic screen usage.",
+      "en": "Statistics demonstrate that a small minority exhibit signs of problematic screen usage.",
+      "vi": "Số liệu thống kê chứng minh rằng một thiểu số nhỏ có dấu hiệu sử dụng màn hình có vấn đề.",
+      "ipa": "/stəˈtɪstɪks ˈdemənstreɪt ðæt ə smɔːl maɪˈnɔːrəti ɪɡˈzɪbɪt saɪnz əv ˌprɑːbləˈmætɪk skriːn ˈjuːsɪdʒ/",
       "words": [
-        "Einstein's",
-        "general",
-        "relativity",
-        "explains",
-        "gravity",
-        "as",
-        "the",
-        "geometric",
-        "curvature",
+        "Statistics",
+        "demonstrate",
+        "that",
+        "a",
+        "small",
+        "minority",
+        "exhibit",
+        "signs",
         "of",
-        "four-dimensional",
-        "spacetime"
+        "problematic",
+        "screen",
+        "usage"
       ]
     },
     {
       "id": 4,
-      "text": "A comprehensive observational survey demonstrated that the majority of galaxies possess supermassive black holes.",
-      "en": "A comprehensive observational survey demonstrated that the majority of galaxies possess supermassive black holes.",
-      "vi": "Một cuộc khảo sát quan sát toàn diện đã chứng minh rằng phần lớn các thiên hà đều sở hữu các lỗ đen siêu khối lượng.",
-      "ipa": "/ə ˌkɑːmprɪˈhensɪv ˌɑːbzərˈveɪʃənl ˈsɜːrveɪ ˈdemənstreɪtɪd ðæt ðə məˈdʒɔːrəti əv ˈɡæləksiz pəˈzes ˌsuːpərmæsɪv blæk hoʊlz/",
+      "text": "Researchers analyzed a randomized demographic sample of two thousand high school respondents.",
+      "en": "Researchers analyzed a randomized demographic sample of two thousand high school respondents.",
+      "vi": "Các nhà nghiên cứu đã phân tích một mẫu nhân khẩu học ngẫu nhiên gồm hai nghìn người trả lời ở trường trung học phổ thông.",
+      "ipa": "/ˈriːsɜːrtʃərz ˈænəlaɪzd ə ˈrændəmaɪzd ˌdeməˈɡræfɪk ˈsæmpəl əv tuː ˈθaʊzənd haɪ skuːl rɪˈspɑːndənts/",
       "words": [
-        "A",
-        "comprehensive",
-        "observational",
-        "survey",
-        "demonstrated",
-        "that",
-        "the",
-        "majority",
+        "Researchers",
+        "analyzed",
+        "a",
+        "randomized",
+        "demographic",
+        "sample",
         "of",
-        "galaxies",
-        "possess",
-        "supermassive",
-        "black",
-        "holes"
+        "two",
+        "thousand",
+        "high",
+        "school",
+        "respondents"
       ]
     },
     {
       "id": 5,
-      "text": "Astronomers analyze statistical data to determine the elemental population distribution across galaxies.",
-      "en": "Astronomers analyze statistical data to determine the elemental population distribution across galaxies.",
-      "vi": "Các nhà thiên văn học phân tích dữ liệu thống kê để xác định sự phân bố quần thể nguyên tố trên khắp các thiên hà.",
-      "ipa": "/əˈstrɑːnəmərz ˈænəlaɪz stəˈtɪstɪkəl ˈdeɪtə tuː dɪˈtɜːrmɪn ði ˌelɪˈmentl ˌpɑːpjuˈleɪʃən ˌdɪstrɪˈbjuːʃən əˈkrɔːs ˈɡæləksiz/",
+      "text": "Empirical evidence transforms subjective personal assertions into credible scholarly arguments.",
+      "en": "Empirical evidence transforms subjective personal assertions into credible scholarly arguments.",
+      "vi": "Bằng chứng thực nghiệm biến các khẳng định cá nhân chủ quan thành các lập luận học thuật đáng tin cậy.",
+      "ipa": "/ɪmˈpɪrɪkəl ˈevɪdəns trænsˈfɔːrmz səbˈdʒektɪv ˈpɜːrsənəl əˈsɜːrʃənz ˈɪntuː ˈkredəbəl ˈskɑːlərli ˈɑːrɡjəmənts/",
       "words": [
-        "Astronomers",
-        "analyze",
-        "statistical",
-        "data",
-        "to",
-        "determine",
-        "the",
-        "elemental",
-        "population",
-        "distribution",
-        "across",
-        "galaxies"
+        "Empirical",
+        "evidence",
+        "transforms",
+        "subjective",
+        "personal",
+        "assertions",
+        "into",
+        "credible",
+        "scholarly",
+        "arguments"
       ]
     },
     {
       "id": 6,
-      "text": "Intense X-ray radiation escapes from the swirling accretion disk surrounding the singularity.",
-      "en": "Intense X-ray radiation escapes from the swirling accretion disk surrounding the singularity.",
-      "vi": "Bức xạ tia X cường độ cao thoát ra từ đĩa bồi tụ xoáy xung quanh điểm kỳ dị.",
-      "ipa": "/ɪnˈtens ˈeks reɪ ˌreɪdiˈeɪʃən ɪˈskeɪps frəm ðə ˈswɜːrlɪŋ əˈkriːʃən dɪsk səˈraʊndɪŋ ðə ˌsɪŋɡjəˈlærəti/",
+      "text": "Data reveals a moderate correlation between excessive midnight gaming and morning fatigue.",
+      "en": "Data reveals a moderate correlation between excessive midnight gaming and morning fatigue.",
+      "vi": "Dữ liệu tiết lộ mối tương quan vừa phải giữa việc chơi game khuya quá mức và sự mệt mỏi vào buổi sáng.",
+      "ipa": "/ˈdeɪtə rɪˈviːlz ə ˈmɑːdərət ˌkɔːrəˈleɪʃən bɪˈtwiːn ɪkˈsesɪv ˈmɪdnaɪt ˈɡeɪmɪŋ ænd ˈmɔːrnɪŋ fəˈtiːɡ/",
       "words": [
-        "Intense",
-        "X-ray",
-        "radiation",
-        "escapes",
-        "from",
-        "the",
-        "swirling",
-        "accretion",
-        "disk",
-        "surrounding",
-        "the",
-        "singularity"
+        "Data",
+        "reveals",
+        "a",
+        "moderate",
+        "correlation",
+        "between",
+        "excessive",
+        "midnight",
+        "gaming",
+        "and",
+        "morning",
+        "fatigue"
       ]
     },
     {
       "id": 7,
-      "text": "Light from the distant supernova traveled across seven billion light-years to reach our telescopes.",
-      "en": "Light from the distant supernova traveled across seven billion light-years to reach our telescopes.",
-      "vi": "Ánh sáng từ siêu tân tinh xa xôi đã di chuyển qua bảy tỷ năm ánh sáng để tới được kính thiên văn của chúng ta.",
-      "ipa": "/laɪt frəm ðə ˈdɪstənt ˌsuːpərˈnoʊvə ˈtrævəld əˈkrɔːs ˈsevən ˈbɪljən ˈlaɪt jɪrz tuː riːtʃ ˈaʊər ˈtelɪskoʊps/",
+      "text": "Publishing the exact methodology ensures that scientific findings can be independently replicated.",
+      "en": "Publishing the exact methodology ensures that scientific findings can be independently replicated.",
+      "vi": "Công bố phương pháp luận chính xác đảm bảo rằng các phát hiện khoa học có thể được lặp lại một cách độc lập.",
+      "ipa": "/ˈpʌblɪʃɪŋ ði ɪɡˈzækt ˌmeθəˈdɑːlədʒi ɪnˈʃʊrz ðæt ˌsaɪənˈtɪfɪk ˈfaɪndɪŋz kæn bi ˌɪndɪˈpendəntli ˈreplɪkeɪtɪd/",
       "words": [
-        "Light",
-        "from",
+        "Publishing",
         "the",
-        "distant",
-        "supernova",
-        "traveled",
-        "across",
-        "seven",
-        "billion",
-        "light-years",
-        "to",
-        "reach",
-        "our",
-        "telescopes"
+        "exact",
+        "methodology",
+        "ensures",
+        "that",
+        "scientific",
+        "findings",
+        "can",
+        "be",
+        "independently",
+        "replicated"
       ]
     },
     {
       "id": 8,
-      "text": "Gravitational lensing observations provide compelling proof that invisible dark matter dominates the cosmos.",
-      "en": "Gravitational lensing observations provide compelling proof that invisible dark matter dominates the cosmos.",
-      "vi": "Những quan sát thấu kính hấp dẫn cung cấp bằng chứng thuyết phục rằng vật chất tối vô hình chiếm ưu thế trong vũ trụ.",
-      "ipa": "/ˌɡrævɪˈteɪʃənl ˈlenzɪŋ ˌɑːbzərˈveɪʃənz prəˈvaɪd kəmˈpelɪŋ pruːf ðæt ɪnˈvɪzəbəl dɑːrk ˈmætər ˈdɑːmɪneɪts ðə ˈkɑːzmoʊs/",
+      "text": "Rigorous data analysis equips students to evaluate public health claims with precision.",
+      "en": "Rigorous data analysis equips students to evaluate public health claims with precision.",
+      "vi": "Phân tích dữ liệu nghiêm ngặt trang bị cho học sinh khả năng đánh giá các khẳng định sức khỏe cộng đồng một cách chính xác.",
+      "ipa": "/ˈrɪɡərəs ˈdeɪtə əˈnæləsɪs ɪˈkwɪps ˈstuːdənts tuː ɪˈvæljueɪt ˈpʌblɪk helθ kleɪmz wɪð prɪˈsɪʒən/",
       "words": [
-        "Gravitational",
-        "lensing",
-        "observations",
-        "provide",
-        "compelling",
-        "proof",
-        "that",
-        "invisible",
-        "dark",
-        "matter",
-        "dominates",
-        "the",
-        "cosmos"
+        "Rigorous",
+        "data",
+        "analysis",
+        "equips",
+        "students",
+        "to",
+        "evaluate",
+        "public",
+        "health",
+        "claims",
+        "with",
+        "precision"
       ]
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 133. Theme: Astrophysics: Black Holes, Galaxies & Gravity.\nSpeaker: The detected gravitational wave signal must have originated from two colliding black holes.\nSpeaker: The ancient stellar cluster cannot be younger than twelve billion years old.\nSpeaker: Einstein's general relativity explains gravity as the geometric curvature of four-dimensional spacetime.\nSpeaker: A comprehensive observational survey demonstrated that the majority of galaxies possess supermassive black holes.\nSpeaker: Astronomers analyze statistical data to determine the elemental population distribution across galaxies.\nSpeaker: Intense X-ray radiation escapes from the swirling accretion disk surrounding the singularity.\nSpeaker: Light from the distant supernova traveled across seven billion light-years to reach our telescopes.\nSpeaker: Gravitational lensing observations provide compelling proof that invisible dark matter dominates the cosmos."
+  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 133. Theme: Deep Research & Data.\nSpeaker: According to a landmark study by university psychologists, seventy percent of adolescents play video games.\nSpeaker: The collected survey data revealed that a substantial majority play cooperative multiplayer games.\nSpeaker: Statistics demonstrate that a small minority exhibit signs of problematic screen usage.\nSpeaker: Researchers analyzed a randomized demographic sample of two thousand high school respondents.\nSpeaker: Empirical evidence transforms subjective personal assertions into credible scholarly arguments.\nSpeaker: Data reveals a moderate correlation between excessive midnight gaming and morning fatigue.\nSpeaker: Publishing the exact methodology ensures that scientific findings can be independently replicated.\nSpeaker: Rigorous data analysis equips students to evaluate public health claims with precision."
 };
 export default listeningHubData;

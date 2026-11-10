@@ -1,393 +1,1123 @@
 /**
- * scripts/specs_w79.mjs
- * Week 79: Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate
- * Stage 2: Cambridge Lower Secondary & B1 Preliminary
+ * Auto-generated Spec for Week 79: The Industrial Revolution
+ * Strict Blueprint Fidelity
  */
 
 export const w79 = {
-  week: 79,
-  theme: "Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate",
-  title_en: "Space Exploration vs. Earth Restoration: The Great Debate",
-  title_vi: "Khám Phá Vũ Trụ Hay Khôi Phục Trái Đất: Cuộc Tranh Luận Lớn",
-  cefr_level: "B1 Preliminary",
-  grammar_focus: "Rebuttal Connectors ('Yes, but...'), Passive Voice & Comparative Structures",
-  vocab_list: [
-    { id: 1, word: "exploration", pos: "n", ipa: "/ˌekspləˈreɪʃən/", definition_en: "The action of traveling in or through an unfamiliar area in order to learn about it", definition_vi: "sự thám hiểm / khám phá", example_en: "Deep space exploration inspires scientific breakthroughs in communications and materials.", example_vi: "Sự thám hiểm không gian sâu truyền cảm hứng cho những đột phá khoa học về truyền thông và vật liệu." },
-    { id: 2, word: "restoration", pos: "n", ipa: "/ˌrestəˈreɪʃən/", definition_en: "The action of returning something to a former condition, health, or normal state", definition_vi: "sự phục hồi / khôi phục", example_en: "Ecological restoration of damaged coral reefs protects coastal marine biodiversity.", example_vi: "Sự phục hồi sinh thái các rạn san hô bị tổn hại bảo vệ đa dạng sinh học biển ven bờ." },
-    { id: 3, word: "planet", pos: "n", ipa: "/ˈplænɪt/", definition_en: "A celestial body moving in an elliptical orbit around a star, such as Earth", definition_vi: "hành tinh", example_en: "Earth is the only habitable planet known to harbor complex biological life.", example_vi: "Trái Đất là hành tinh có thể sinh sống duy nhất được biết đến là nơi trú ngụ của sự sống sinh học phức tạp." },
-    { id: 4, word: "investment", pos: "n", ipa: "/ɪnˈvestmənt/", definition_en: "The action or process of investing money, resources, or effort for future return", definition_vi: "sự đầu tư", example_en: "Heavy public investment in clean solar energy will reduce harmful atmospheric carbon.", example_vi: "Sự đầu tư công mạnh mẽ vào năng lượng mặt trời sạch sẽ làm giảm lượng carbon khí quyển có hại." },
-    { id: 5, word: "atmosphere", pos: "n", ipa: "/ˈætməsfɪər/", definition_en: "The envelope of gases surrounding Earth or another celestial body", definition_vi: "bầu khí quyển", example_en: "Orbital satellites measure rising greenhouse gas levels within our planet's atmosphere.", example_vi: "Các vệ tinh trên quỹ đạo đo lường mức độ khí nhà kính đang gia tăng bên trong bầu khí quyển hành tinh chúng ta." },
-    { id: 6, word: "satellite", pos: "n", ipa: "/ˈsætəlaɪt/", definition_en: "An artificial body placed in orbit around the earth or another planet to collect data", definition_vi: "vệ tinh nhân tạo", example_en: "Weather satellites track tropical hurricanes and monitor deforestation in real time.", example_vi: "Các vệ tinh thời tiết theo dõi các cơn bão nhiệt đới và giám sát nạn phá rừng theo thời gian thực." },
-    { id: 7, word: "priority", pos: "n", ipa: "/praɪˈɔːrəti/", definition_en: "The fact or condition of being regarded or treated as more important than others", definition_vi: "sự ưu tiên / việc ưu tiên", example_en: "Many scientists argue that repairing climate damage should be our highest priority.", example_vi: "Nhiều nhà khoa học lập luận rằng việc khắc phục thiệt hại khí hậu nên là ưu tiên hàng đầu của chúng ta." },
-    { id: 8, word: "renewable", pos: "adj", ipa: "/rɪˈnuːəbəl/", definition_en: "Capable of being replenished naturally within a human timescale, such as wind or solar power", definition_vi: "tái tạo được", example_en: "Transitioning to renewable energy sources is vital to counteract global warming.", example_vi: "Chuyển đổi sang các nguồn năng lượng tái tạo là điều sống còn để đối phó với hiện tượng ấm lên toàn cầu." },
-    { id: 9, word: "biodiversity", pos: "n", ipa: "/ˌbaɪoʊdaɪˈvɜːrsəti/", definition_en: "The variety of plant and animal life in the world or in a particular habitat", definition_vi: "đa dạng sinh học", example_en: "Reforestation projects restore rich biodiversity across vulnerable tropical valleys.", example_vi: "Các dự án trồng rừng khôi phục sự đa dạng sinh học phong phú trên khắp các thung lũng nhiệt đới dễ bị tổn thương." },
-    { id: 10, word: "debate", pos: "n", ipa: "/dɪˈbeɪt/", definition_en: "A formal discussion on a particular topic in a public meeting or legislative assembly", definition_vi: "cuộc tranh luận", example_en: "The student debate team presented well-researched arguments about budget priorities.", example_vi: "Đội tranh luận học sinh đã trình bày các luận điểm được nghiên cứu kỹ lưỡng về các ưu tiên ngân sách." },
-    { id: 11, word: "argument", pos: "n", ipa: "/ˈɑːrɡjəmənt/", definition_en: "A reason or set of reasons given with the aim of persuading others that an action is right", definition_vi: "luận điểm / lý lẽ", example_en: "Her central argument was supported by statistical evidence from international climate reports.", example_vi: "Luận điểm trọng tâm của cô ấy được củng cố bằng bằng chứng thống kê từ các báo cáo khí hậu quốc tế." },
-    { id: 12, word: "evidence", pos: "n", ipa: "/ˈevɪdəns/", definition_en: "The available body of facts or information indicating whether a belief or proposition is true", definition_vi: "bằng chứng / chứng cứ", example_en: "Satellite photography provides undeniable evidence of shrinking polar ice caps.", example_vi: "Ảnh chụp vệ tinh cung cấp bằng chứng không thể phủ nhận về sự tan chảy các chỏm băng vùng cực." },
-    { id: 13, word: "fund", pos: "v", ipa: "/fʌnd/", definition_en: "To provide financial resources or money for a specific purpose or venture", definition_vi: "tài trợ / cấp vốn", example_en: "Governments must decide whether to fund lunar bases or ocean conservation initiatives.", example_vi: "Các chính phủ phải quyết định nên cấp vốn cho các căn cứ trên mặt trăng hay các sáng kiến bảo tồn đại dương." },
-    { id: 14, word: "perspective", pos: "n", ipa: "/pərˈspektɪv/", definition_en: "A particular attitude toward or way of regarding something; point of view", definition_vi: "góc nhìn / quan điểm", example_en: "Looking down at Earth from orbit gives astronauts a profound ecological perspective.", example_vi: "Nhìn xuống Trái Đất từ quỹ đạo mang lại cho các phi hành gia một góc nhìn sinh thái sâu sắc." },
-    { id: 15, word: "ecosystem", pos: "n", ipa: "/ˈiːkoʊsɪstəm/", definition_en: "A biological system composed of living organisms interacting with their physical surroundings", definition_vi: "hệ sinh thái", example_en: "Human industrial emissions threaten fragile freshwater and marine ecosystems.", example_vi: "Khí thải công nghiệp của con người đe dọa các hệ sinh thái nước ngọt và biển mỏng manh." },
-    { id: 16, word: "telescope", pos: "n", ipa: "/ˈtelɪskoʊp/", definition_en: "An optical instrument designed to make distant objects in space appear nearer and clearer", definition_vi: "kính thiên văn", example_en: "The James Webb Space Telescope captures brilliant infrared images of distant nebulae.", example_vi: "Kính thiên văn không gian James Webb chụp được những bức ảnh hồng ngoại rực rỡ của các tinh vân xa xôi." },
-    { id: 17, word: "cosmic", pos: "adj", ipa: "/ˈkɑːzmɪk/", definition_en: "Relating to the universe, space, or celestial cosmos as distinct from Earth", definition_vi: "thuộc vũ trụ / bao la", example_en: "Robotic space probes travel across cosmic distances to analyze Martian rock soil.", example_vi: "Các tàu thăm dò không gian robot di chuyển qua những khoảng cách vũ trụ để phân tích đất đá sao Hỏa." },
-    { id: 18, word: "allocate", pos: "v", ipa: "/ˈæləkeɪt/", definition_en: "To distribute resources or duties for a particular purpose according to a plan", definition_vi: "phân bổ / chia định mức", example_en: "Budget directors allocate fifty million dollars toward community reforestation programs.", example_vi: "Các giám đốc ngân sách phân bổ năm mươi triệu đô la cho các chương trình trồng lại rừng cộng đồng." },
-    { id: 19, word: "counteract", pos: "v", ipa: "/ˌkaʊntərˈækt/", definition_en: "To act against something in order to reduce its force or neutralize it", definition_vi: "ngăn chặn / đối phó / trung hòa", example_en: "Planting urban trees helps counteract the harmful effects of air pollution.", example_vi: "Trồng cây xanh đô thị giúp đối phó với những tác hại của ô nhiễm không khí." },
-    { id: 20, word: "urgent", pos: "adj", ipa: "/ˈɜːrdʒənt/", definition_en: "Requiring immediate action, decision, or attention; critically pressing", definition_vi: "cấp bách / khẩn cấp", example_en: "Saving endangered wetlands is an urgent environmental responsibility.", example_vi: "Cứu vãn các vùng đất ngập nước có nguy cơ tuyệt chủng là một trách nhiệm môi trường cấp bách." }
-  ],
-  clil: {
-    title_en: "Space Exploration vs. Earth Restoration: The Resource Debate",
-    title_vi: "Khám Phá Vũ Trụ Hay Khôi Phục Trái Đất: Cuộc Tranh Luận Về Nguồn Lực",
-    content_en: "In modern science policy, a passionate debate centers on whether humanity should allocate major financial resources toward exploring deep space or restoring Earth's wounded ecosystems. Proponents of space research argue that cosmic exploration pioneers transformative technologies. Sophisticated satellites orbiting high above our atmosphere track forest fires, calculate sea level rises, and locate fresh groundwater reserves. Conversely, environmental advocates assert that ecological restoration must remain our primary urgent priority. They argue that billions of dollars should be allocated to expand renewable solar grids, replant deforested tropical rainforests, and protect fragile ocean biodiversity. In debate rebuttals, speakers frequently use phrases like 'Yes, but...' to acknowledge valid technological benefits while vigorously defending the irreplaceable value of our home planet.",
-    glossary: [
-      { word: "exploration", definition_en: "Systematic investigation of unfamiliar geographic or cosmic areas", definition_vi: "sự điều tra có hệ thống các vùng địa lý hoặc vũ trụ" },
-      { word: "restoration", definition_en: "Active rehabilitation of damaged ecological habitats", definition_vi: "hoạt động phục hồi môi trường sống bị tổn hại" },
-      { word: "priority", definition_en: "A primary objective that takes precedence over other concerns", definition_vi: "mục tiêu hàng đầu được ưu tiên trước" },
-      { word: "satellite", definition_en: "An orbital observational platform collecting planetary telemetry", definition_vi: "nền tảng quan sát trên quỹ đạo thu thập dữ liệu hành tinh" },
-      { word: "counteract", definition_en: "To neutralize or reduce the damaging impact of an adverse force", definition_vi: "làm giảm bớt hoặc trung hòa tác động bất lợi" }
-    ],
-    check_questions: [
-      { id: 1, question_en: "How do orbiting satellites assist in protecting Earth's environment?", options: ["They track forest fires, monitor rising sea levels, and detect greenhouse gases", "They harvest gold from distant asteroids", "They prevent clouds from forming rain"], answer: "They track forest fires, monitor rising sea levels, and detect greenhouse gases" },
-      { id: 2, question_en: "What central argument do environmental restoration advocates present?", options: ["Funds should be allocated to renewable energy and reforestation to save our home planet", "All money should be spent on rocket fuel only", "Humans should immediately abandon Earth and live on Mars"], answer: "Funds should be allocated to renewable energy and reforestation to save our home planet" },
-      { id: 3, question_en: "Which rebuttal connector acknowledges an opponent's point before providing counter-evidence?", options: ["Yes, but...", "Never, because...", "Obviously, so..."], answer: "Yes, but..." }
-    ],
-    critical_thinking: {
-      question_en: "Using the rebuttal structure 'Yes, but...', formulate a counter-argument to the statement: 'Space exploration is a waste of money.'",
-      hint_en: "Yes, deep space missions are expensive, but satellite technology developed for space is essential to track climate change on Earth."
+  "week": 79,
+  "theme": "The Industrial Revolution",
+  "title_en": "The Industrial Revolution",
+  "title_vi": "Cách Mạng Công Nghiệp",
+  "cefr_level": "B1 Preliminary",
+  "grammar_focus": "Historical cause and effect connectors ('as a result of', 'due to', 'consequently') and past passive voice ('steam engines were manufactured in factories').",
+  "vocab_list": [
+    {
+      "id": 1,
+      "word": "steam",
+      "pos": "n",
+      "ipa": "/stiːm/",
+      "definition_en": "The hot gas produced when water boils",
+      "definition_vi": "hơi nước",
+      "example_en": "High-pressure steam powered the iron pistons of the early locomotive.",
+      "example_vi": "Hơi nước áp suất cao đã vận hành các pít-tông sắt của đầu máy xe lửa thời kỳ đầu."
+    },
+    {
+      "id": 2,
+      "word": "engine",
+      "pos": "n",
+      "ipa": "/ˈendʒɪn/",
+      "definition_en": "A machine with moving parts that converts power into motion",
+      "definition_vi": "động cơ",
+      "example_en": "James Watt improved the efficiency of the steam engine dramatically.",
+      "example_vi": "James Watt đã cải thiện đáng kể hiệu suất của động cơ hơi nước."
+    },
+    {
+      "id": 3,
+      "word": "factory",
+      "pos": "n",
+      "ipa": "/ˈfæktəri/",
+      "definition_en": "A building where goods are manufactured by machines",
+      "definition_vi": "nhà máy",
+      "example_en": "Textile factories operated dozens of automated mechanical looms simultaneously.",
+      "example_vi": "Các nhà máy dệt đã vận hành đồng thời hàng chục khung dệt cơ khí tự động."
+    },
+    {
+      "id": 4,
+      "word": "coal",
+      "pos": "n",
+      "ipa": "/koʊl/",
+      "definition_en": "A hard black mineral burned as fuel to produce heat",
+      "definition_vi": "than đá",
+      "example_en": "Deep underground mines supplied coal to heat factory furnaces.",
+      "example_vi": "Các mỏ sâu dưới lòng đất cung cấp than đá để đốt các lò nung nhà máy."
+    },
+    {
+      "id": 5,
+      "word": "industry",
+      "pos": "n",
+      "ipa": "/ˈɪndəstri/",
+      "definition_en": "Economic activity concerned with the processing of raw materials",
+      "definition_vi": "ngành công nghiệp",
+      "example_en": "The iron industry expanded rapidly across central England during the revolution.",
+      "example_vi": "Ngành công nghiệp sắt đã mở rộng nhanh chóng khắp miền trung nước Anh trong cuộc cách mạng."
+    },
+    {
+      "id": 6,
+      "word": "manufacture",
+      "pos": "v",
+      "ipa": "/ˌmænjəˈfæktʃər/",
+      "definition_en": "To produce goods in large quantities using machinery",
+      "definition_vi": "sản xuất / chế tạo",
+      "example_en": "New mills were able to manufacture cotton cloth much faster than home weavers.",
+      "example_vi": "Các xưởng mới có thể sản xuất vải cotton nhanh hơn nhiều so với thợ dệt tại gia."
+    },
+    {
+      "id": 7,
+      "word": "locomotive",
+      "pos": "n",
+      "ipa": "/ˌloʊkəˈmoʊtɪv/",
+      "definition_en": "A powered rail vehicle used for pulling trains",
+      "definition_vi": "đầu máy xe lửa",
+      "example_en": "The steam locomotive pulled freight wagons along newly laid steel tracks.",
+      "example_vi": "Đầu máy xe lửa hơi nước đã kéo các toa chở hàng dọc theo đường ray thép mới lắp đặt."
+    },
+    {
+      "id": 8,
+      "word": "iron",
+      "pos": "n",
+      "ipa": "/ˈaɪərn/",
+      "definition_en": "A strong magnetic silvery-gray metal used in construction",
+      "definition_vi": "sắt / gang",
+      "example_en": "Engineers forged tough iron beams to build bridges and structural frames.",
+      "example_vi": "Các kỹ sư đã rèn các dầm sắt chắc chắn để xây cầu và khung kết cấu."
+    },
+    {
+      "id": 9,
+      "word": "production",
+      "pos": "n",
+      "ipa": "/prəˈdʌkʃən/",
+      "definition_en": "The process of making goods from raw materials",
+      "definition_vi": "sự sản xuất",
+      "example_en": "Mass production lowered the consumer price of everyday household tools.",
+      "example_vi": "Sản xuất hàng loạt đã hạ giá tiêu dùng của các dụng cụ gia đình hàng ngày."
+    },
+    {
+      "id": 10,
+      "word": "textile",
+      "pos": "n",
+      "ipa": "/ˈtekstaɪl/",
+      "definition_en": "A type of woven cloth or fabric",
+      "definition_vi": "hàng dệt / vải vóc",
+      "example_en": "The cotton textile trade became Britain's most valuable export commodity.",
+      "example_vi": "Thương mại dệt may cotton đã trở thành mặt hàng xuất khẩu có giá trị nhất của Anh."
+    },
+    {
+      "id": 11,
+      "word": "invention",
+      "pos": "n",
+      "ipa": "/ɪnˈvenʃən/",
+      "definition_en": "A novel device, method, or process created by an innovator",
+      "definition_vi": "phát minh",
+      "example_en": "The spinning jenny was an ingenious invention that transformed yarn spinning.",
+      "example_vi": "Máy kéo sợi jenny là một phát minh tài tình đã biến đổi ngành kéo sợi."
+    },
+    {
+      "id": 12,
+      "word": "revolution",
+      "pos": "n",
+      "ipa": "/ˌrevəˈluːʃən/",
+      "definition_en": "A dramatic and wide-reaching change in conditions or operations",
+      "definition_vi": "cuộc cách mạng",
+      "example_en": "The technological revolution transformed agrarian villages into bustling cities.",
+      "example_vi": "Cuộc cách mạng công nghệ đã biến các ngôi làng nông nghiệp thành những thành phố nhộn nhịp."
+    },
+    {
+      "id": 13,
+      "word": "worker",
+      "pos": "n",
+      "ipa": "/ˈwɜːrkər/",
+      "definition_en": "A person who performs labor for wages in an industry",
+      "definition_vi": "công nhân / người lao động",
+      "example_en": "Each factory worker operated mechanical spindles during long shift hours.",
+      "example_vi": "Mỗi công nhân nhà máy vận hành các cọc sợi cơ khí trong suốt ca làm việc dài."
+    },
+    {
+      "id": 14,
+      "word": "railway",
+      "pos": "n",
+      "ipa": "/ˈreɪlweɪ/",
+      "definition_en": "A track with steel rails along which trains carry freight and passengers",
+      "definition_vi": "đường sắt",
+      "example_en": "The Liverpool and Manchester railway connected industrial mills directly to docks.",
+      "example_vi": "Đường sắt Liverpool và Manchester kết nối các nhà máy công nghiệp trực tiếp với bến cảng."
+    },
+    {
+      "id": 15,
+      "word": "smog",
+      "pos": "n",
+      "ipa": "/smɑːɡ/",
+      "definition_en": "Dense atmospheric haze caused by smoke and industrial emissions",
+      "definition_vi": "khói bụi ô nhiễm / khói sương",
+      "example_en": "Heavy coal smog darkened the sky above nineteenth-century manufacturing towns.",
+      "example_vi": "Khói bụi than đá dày đặc đã làm tối bầu trời phía trên các thị trấn sản xuất thế kỷ XIX."
+    },
+    {
+      "id": 16,
+      "word": "mechanize",
+      "pos": "v",
+      "ipa": "/ˈmekənaɪz/",
+      "definition_en": "To introduce machines into an industrial or production process",
+      "definition_vi": "cơ giới hóa",
+      "example_en": "Mill owners sought to mechanize weaving to increase commercial output.",
+      "example_vi": "Các chủ xưởng tìm cách cơ giới hóa việc dệt vải để tăng sản lượng thương mại."
+    },
+    {
+      "id": 17,
+      "word": "fuel",
+      "pos": "n",
+      "ipa": "/ˈfjuːəl/",
+      "definition_en": "Material burned to generate heat, electricity, or mechanical power",
+      "definition_vi": "nhiên liệu",
+      "example_en": "Abundant coal reserves provided cheap fuel for steam boilers.",
+      "example_vi": "Trữ lượng than đá dồi dào cung cấp nhiên liệu giá rẻ cho các nồi hơi nước."
+    },
+    {
+      "id": 18,
+      "word": "labor",
+      "pos": "n",
+      "ipa": "/ˈleɪbər/",
+      "definition_en": "Hard physical or mental work performed in production",
+      "definition_vi": "lao động",
+      "example_en": "Industrial production required disciplined human labor to keep machinery running.",
+      "example_vi": "Sản xuất công nghiệp đòi hỏi sức lao động có kỷ luật của con người để máy móc hoạt động liên tục."
+    },
+    {
+      "id": 19,
+      "word": "urban",
+      "pos": "adj",
+      "ipa": "/ˈɜːrbən/",
+      "definition_en": "Relating to or characteristic of a town or city",
+      "definition_vi": "thuộc đô thị / thành thị",
+      "example_en": "Massive migration from countryside farms fueled rapid urban growth.",
+      "example_vi": "Sự di cư ồ ạt từ các trang trại nông thôn đã thúc đẩy sự phát triển đô thị nhanh chóng."
+    },
+    {
+      "id": 20,
+      "word": "transform",
+      "pos": "v",
+      "ipa": "/trænsˈfɔːrm/",
+      "definition_en": "To make a thorough or dramatic change in the form or nature of",
+      "definition_vi": "biến đổi hoàn toàn",
+      "example_en": "Steam technology helped transform regional economies into an integrated national market.",
+      "example_vi": "Công nghệ hơi nước đã giúp biến đổi các nền kinh tế khu vực thành một thị trường quốc gia thống nhất."
     }
-  },
-  shadowing_sentences: [
-    { id: 1, text: "Some scientists argue that space exploration pioneers vital technologies for all humanity.", en: "Some scientists argue that space exploration pioneers vital technologies for all humanity.", vi: "Một số nhà khoa học lập luận rằng thám hiểm vũ trụ tiên phong cho các công nghệ sống còn của nhân loại.", ipa: "/sʌm ˈsaɪəntɪsts ˈɑːrɡjuː ðæt speɪs ˌekspləˈreɪʃən ˌpaɪəˈnɪərz ˈvaɪtl tekˈnɑːlədʒiz fɔːr ɔːl hjuːˈmænəti/", words: ["Some", "scientists", "argue", "that", "space", "exploration", "pioneers", "vital", "technologies", "for", "all", "humanity"] },
-    { id: 2, text: "Yes, cosmic research is inspiring, but restoring Earth's environment is more urgent.", en: "Yes, cosmic research is inspiring, but restoring Earth's environment is more urgent.", vi: "Đúng vậy, nghiên cứu vũ trụ rất truyền cảm hứng, nhưng khôi phục môi trường Trái Đất cấp bách hơn.", ipa: "/jes ˈkɑːzmɪk rɪˈsɜːrtʃ ɪz ɪnˈspaɪərɪŋ bʌt rɪˈstɔːrɪŋ ɜːrθs ɪnˈvaɪrənmənt ɪz mɔːr ˈɜːrdʒənt/", words: ["Yes", "cosmic", "research", "is", "inspiring", "but", "restoring", "Earth's", "environment", "is", "more", "urgent"] },
-    { id: 3, text: "Weather satellites orbiting in the upper atmosphere track dangerous forest fires.", en: "Weather satellites orbiting in the upper atmosphere track dangerous forest fires.", vi: "Các vệ tinh thời tiết quay quanh tầng khí quyển bên trên theo dõi các vụ cháy rừng nguy hiểm.", ipa: "/ˈweðər ˈsætəlaɪts ˈɔːrbɪtɪŋ ɪn ði ˈʌpər ˈætməsfɪər træk ˈdeɪndʒərəs ˈfɔːrɪst ˈfaɪərz/", words: ["Weather", "satellites", "orbiting", "in", "the", "upper", "atmosphere", "track", "dangerous", "forest", "fires"] },
-    { id: 4, text: "Clean renewable energy must be prioritized to counteract severe climate change.", en: "Clean renewable energy must be prioritized to counteract severe climate change.", vi: "Năng lượng tái tạo sạch phải được ưu tiên để đối phó với biến đổi khí hậu khắc nghiệt.", ipa: "/kliːn rɪˈnuːəbəl ˈenərdʒi mʌst bi praɪˈɔːrətaɪzd tuː ˌkaʊntərˈækt sɪˈvɪər ˈklaɪmət tʃeɪndʒ/", words: ["Clean", "renewable", "energy", "must", "be", "prioritized", "to", "counteract", "severe", "climate", "change"] },
-    { id: 5, text: "Millions of trees are being planted to rebuild lost tropical biodiversity.", en: "Millions of trees are being planted to rebuild lost tropical biodiversity.", vi: "Hàng triệu cây xanh đang được trồng để tái tạo lại sự đa dạng sinh học nhiệt đới đã mất.", ipa: "/ˈmɪljənz əv triːz ɑːr ˈbiːɪŋ ˈplæntɪd tuː ˌriːˈbɪld lɔːst ˈtrɑːpɪkəl ˌbaɪoʊdaɪˈvɜːrsəti/", words: ["Millions", "of", "trees", "are", "being", "planted", "to", "rebuild", "lost", "tropical", "biodiversity"] },
-    { id: 6, text: "Public funds should be allocated toward preserving our only living planet.", en: "Public funds should be allocated toward preserving our only living planet.", vi: "Ngân sách công nên được phân bổ cho việc bảo tồn hành tinh có sự sống duy nhất của chúng ta.", ipa: "/ˈpʌblɪk fʌndz ʃʊd bi ˈæləkeɪtɪd təˈwɔːrd prɪˈzɜːrvɪŋ ˈaʊər ˈoʊnli ˈlɪvɪŋ ˈplænɪt/", words: ["Public", "funds", "should", "be", "allocated", "toward", "preserving", "our", "only", "living", "planet"] },
-    { id: 7, text: "Both perspectives offer valuable evidence during our competitive science debate.", en: "Both perspectives offer valuable evidence during our competitive science debate.", vi: "Cả hai góc nhìn đều đưa ra bằng chứng có giá trị trong cuộc tranh luận khoa học cạnh tranh của chúng ta.", ipa: "/boʊθ pərˈspektɪvz ˈɔːfər ˈvæljuəbəl ˈevɪdəns ˈdʊrɪŋ ˈaʊər kəmˈpetətɪv ˈsaɪəns dɪˈbeɪt/", words: ["Both", "perspectives", "offer", "valuable", "evidence", "during", "our", "competitive", "science", "debate"] },
-    { id: 8, text: "Protecting our shared planetary home remains our ultimate moral responsibility.", en: "Protecting our shared planetary home remains our ultimate moral responsibility.", vi: "Bảo vệ ngôi nhà hành tinh chung của chúng ta vẫn là trách nhiệm đạo đức tối thượng.", ipa: "/prəˈtektɪŋ ˈaʊər ʃerd ˈplænəteri hoʊm rɪˈmeɪnz ˈaʊər ˈʌltəmət ˈmɔːrəl rɪˌspɑːnsəˈbɪləti/", words: ["Protecting", "our", "shared", "planetary", "home", "remains", "our", "ultimate", "moral", "responsibility"] }
   ],
-  story_scenes: [
-    { id: 1, scene_id: "scene_1", scene_number: 1, title_en: "Science Forum Auditorium", title_vi: "Hội Trường Diễn Đàn Khoa Học", description_en: "Kevin and Nora stand at modern debate podiums beneath banners displaying Earth and orbital space stations.", description: "Kevin and Nora stand at modern debate podiums beneath banners displaying Earth and orbital space stations.", image_url: "/images/week79/webtoon_scene_1.png", audio_url: "/audio/week79/scene_1.mp3" },
-    { id: 2, scene_id: "scene_2", scene_number: 2, title_en: "Kevin Presents Satellite Data", title_vi: "Kevin Trình Bày Dữ Liệu Vệ Tinh", description_en: "Kevin points to digital Earth telemetry screens showing how orbital satellites detect deforestation in the Amazon.", description: "Kevin points to digital Earth telemetry screens showing how orbital satellites detect deforestation in the Amazon.", image_url: "/images/week79/webtoon_scene_2.png", audio_url: "/audio/week79/scene_2.mp3" },
-    { id: 3, scene_id: "scene_3", scene_number: 3, title_en: "Nora's Reforestation Argument", title_vi: "Luận Điểm Trồng Rừng Của Nora", description_en: "Nora displays photos of newly planted mangrove forests and solar panels generating clean energy.", description: "Nora displays photos of newly planted mangrove forests and solar panels generating clean energy.", image_url: "/images/week79/webtoon_scene_3.png", audio_url: "/audio/week79/scene_3.mp3" },
-    { id: 4, scene_id: "scene_4", scene_number: 4, title_en: "The Dynamic Rebuttal Round", title_vi: "Vòng Phản Biện Sôi Nổi", description_en: "Nora acknowledges satellite value with 'Yes, but...', emphasizing that climate action cannot wait decades.", description: "Nora acknowledges satellite value with 'Yes, but...', emphasizing that climate action cannot wait decades.", image_url: "/images/week79/webtoon_scene_4.png", audio_url: "/audio/week79/scene_4.mp3" },
-    { id: 5, scene_id: "scene_5", scene_number: 5, title_en: "Synthesizing Solutions Together", title_vi: "Cùng Tổng Hợp Giải Pháp", description_en: "Judges applaud as Kevin and Nora agree that space technologies must directly serve Earth's restoration.", description: "Judges applaud as Kevin and Nora agree that space technologies must directly serve Earth's restoration.", image_url: "/images/week79/webtoon_scene_5.png", audio_url: "/audio/week79/scene_5.mp3" }
-  ],
-  writing_data: {
-    title: "Structuring a Rebuttal in an Environmental Debate",
-    prompt_en: "Look at the four panels. Write a debate rebuttal paragraph comparing space exploration with Earth restoration. Use rebuttal transition signals (such as 'Yes, but...'), passive voice ('funds are allocated'), and comparatives ('more urgent than...'). Write 20 or more words.",
-    prompt_vi: "Nhìn vào 4 khung tranh. Viết một đoạn văn phản biện so sánh thám hiểm không gian với khôi phục Trái Đất. Sử dụng từ nối phản biện ('Yes, but...'), câu bị động ('funds are allocated'), và so sánh hơn ('more urgent than...'). Viết từ 20 từ trở lên.",
-    min_sentences: 3,
-    min_words: 20,
-    max_words: 90,
-    model_sentence: "Yes, space exploration develops advanced satellite technologies that monitor climate change, but restoring Earth's environment is far more urgent. Public funds should be allocated toward planting forests and building renewable solar farms. Protecting our only habitable planet is more critical than funding distant cosmic voyages.",
-    word_bank: ["exploration", "restoration", "planet", "investment", "priority", "renewable", "biodiversity", "debate", "evidence", "urgent"],
-    sentence_frames: [
-      "Yes, space exploration is valuable, but ecological ___ is more urgent.",
-      "Weather satellites are placed in the ___ to monitor climate patterns.",
-      "Public investment should be allocated toward clean ___ energy.",
-      "Protecting Earth's ___ is our primary moral responsibility."
-    ],
-    panels: [
+  "clil": {
+    "title_en": "Steam Engines and Factories: The Industrial Transformation",
+    "title_vi": "Động Cơ Hơi Nước và Nhà Máy: Sự Chuyển Mình Công Nghiệp",
+    "content_en": "During the eighteenth and nineteenth centuries, the Industrial Revolution fundamentally transformed human society. Before this transformative era, most everyday goods were manufactured by hand in small rural workshops. The development of the commercial steam engine by James Watt revolutionized manufacturing and transport. Steam boilers burned abundant coal to heat water, generating high-pressure steam that drove heavy pistons in textile mills. Consequently, iron and coal production expanded dramatically across Britain and Europe. Locomotives and steamships quickly transported raw materials and manufactured merchandise across vast distances. However, rapid industrialization also created severe social challenges, including urban smog and grueling labor conditions. Modern historians study how steam mechanics laid the groundwork for today's technological world.",
+    "glossary": [
       {
-        panel_id: "panel_1",
-        title_en: "Panel 1: The Space Exploration Argument",
-        title_vi: "Khung 1: Luận Điểm Thám Hiểm Không Gian",
-        image_url: "/images/week79/writing_panel_1.png",
-        image_prompt: "A modern spacecraft launching into starry space while orbital satellites beam scientific data back to Earth.",
-        caption: "Space research develops satellites that monitor atmospheric changes.",
-        sentence_frame: "Space exploration [develops advanced orbital satellites] that [monitor planetary climate change].",
-        pills: ["develops advanced orbital satellites", "monitor planetary climate change", "cosmic research", "technological breakthroughs"],
-        connectors: ["First,", "On one hand,", "Proponents argue that"]
+        "word": "locomotive",
+        "definition_en": "A powered railway vehicle designed to pull trains carrying passengers or freight",
+        "definition_vi": "đầu máy xe lửa chạy bằng động cơ"
       },
       {
-        panel_id: "panel_2",
-        title_en: "Panel 2: Earth's Urgent Ecological Need",
-        title_vi: "Khung 2: Nhu Cầu Sinh Thái Cấp Bách Của Trái Đất",
-        image_url: "/images/week79/writing_panel_2.png",
-        image_prompt: "A dry cracked riverbed contrasting with green workers planting fresh tree seedlings.",
-        caption: "Ecological restoration is needed to rebuild degraded forests and oceans.",
-        sentence_frame: "Ecological restoration [is urgently required] to [rebuild vulnerable natural ecosystems].",
-        pills: ["is urgently required", "rebuild vulnerable natural ecosystems", "degraded habitats", "biodiversity protection"],
-        connectors: ["However,", "In contrast,", "On the other hand,"]
+        "word": "manufacture",
+        "definition_en": "The production of merchandise on a large commercial scale using machines",
+        "definition_vi": "sản xuất hàng hóa quy mô lớn bằng máy móc"
       },
       {
-        panel_id: "panel_3",
-        title_en: "Panel 3: Formulating the Rebuttal",
-        title_vi: "Khung 3: Thiết Lập Lời Phản Biện",
-        image_url: "/images/week79/writing_panel_3.png",
-        image_prompt: "A student speaker raising a hand at a debate podium delivering a confident rebuttal with data slides.",
-        caption: "Speakers acknowledge satellite value with 'Yes, but...' to introduce rebuttals.",
-        sentence_frame: "Yes, satellite technology is helpful, [but protecting Earth's climate] is [far more pressing].",
-        pills: ["but protecting Earth's climate", "far more pressing", "acknowledged the argument", "delivered a strong rebuttal"],
-        connectors: ["Yes, but...", "Nevertheless,", "While this is true,"]
+        "word": "mechanize",
+        "definition_en": "To equip an industry or craft with modern mechanical apparatus",
+        "definition_vi": "trang bị máy móc cơ khí cho một ngành nghề"
       },
       {
-        panel_id: "panel_4",
-        title_en: "Panel 4: Balanced Planetary Action",
-        title_vi: "Khung 4: Hành Động Hành Tinh Cân Bằng",
-        image_url: "/images/week79/writing_panel_4.png",
-        image_prompt: "Solar panels and wind turbines shining on a green hillside with an Earth observation satellite overhead.",
-        caption: "Funds should be allocated to preserve our only living planet.",
-        sentence_frame: "Public resources [should be allocated] toward [protecting our only living planet].",
-        pills: ["should be allocated", "protecting our only living planet", "renewable energy investments", "sustainable future"],
-        connectors: ["In conclusion,", "Ultimately,", "Therefore,"]
+        "word": "revolution",
+        "definition_en": "A fundamental and far-reaching change in societal structures or methods",
+        "definition_vi": "sự thay đổi căn bản và sâu rộng trong cấu trúc xã hội"
+      },
+      {
+        "word": "urban",
+        "definition_en": "Located in or characteristic of densely populated cities",
+        "definition_vi": "nằm ở hoặc mang đặc trưng của các thành phố đông dân"
       }
     ],
-    ladder_stages: [
+    "check_questions": [
       {
-        badge_label: "MODEL",
-        title: "Stage 1: Acknowledging Technology",
-        image_url: "/images/week79/writing_panel_1.png",
-        caption: "Space research develops satellites that monitor atmospheric changes.",
-        frame_L1: "Space exploration produces helpful technologies. Satellites monitor atmospheric temperatures and ocean levels.",
-        connectors: ["First,", "On one hand,", "Initially,"],
-        sentence_hint: "Write 2 sentences about how satellites assist science.",
-        ordered_chips: ["Space exploration develops", "valuable orbital satellites", "to monitor temperatures", "across Earth's atmosphere."],
-        pills: ["develops orbital satellites", "monitor temperatures", "space exploration", "Earth's atmosphere"],
-        sentence_frame: "Space exploration [develops advanced orbital satellites] that [monitor planetary climate change]."
+        "id": 1,
+        "question_en": "What primary fuel source was burned to operate early steam engine boilers?",
+        "options": [
+          "Abundant coal",
+          "Solar panels",
+          "Refined petroleum"
+        ],
+        "answer": "Abundant coal"
       },
       {
-        badge_label: "BUILD",
-        title: "Stage 2: Highlighting Climate Urgency",
-        image_url: "/images/week79/writing_panel_2.png",
-        caption: "Ecological restoration is needed to rebuild degraded forests and oceans.",
-        frame_L1: "Restoring Earth's environment is more urgent than Mars missions. Forests and oceans need protection.",
-        connectors: ["However,", "In contrast,", "On the other hand,"],
-        sentence_hint: "Write 2 sentences comparing ecological urgency with space travel.",
-        pills: ["more urgent than Mars", "forests and oceans", "need protection", "ecological restoration"],
-        sentence_frame: "Restoring Earth's ecosystems [is far more urgent] than [funding distant space voyages]."
+        "id": 2,
+        "question_en": "How did the invention of steam locomotives transform transportation?",
+        "options": [
+          "They carried heavy freight and raw materials rapidly along steel tracks",
+          "They floated silently across canal waterways",
+          "They transported travelers on horse-drawn carriages"
+        ],
+        "answer": "They carried heavy freight and raw materials rapidly along steel tracks"
       },
       {
-        badge_label: "WRITE",
-        title: "Stage 3: Delivering the Rebuttal",
-        image_url: "/images/week79/writing_panel_3.png",
-        caption: "Speakers acknowledge satellite value with 'Yes, but...' to introduce rebuttals.",
-        frame_L1: "Yes, space science is inspiring, but Earth is our only home. Funds must be allocated to clean energy.",
-        connectors: ["Yes, but...", "Nevertheless,", "Even so,"],
-        sentence_hint: "Write 2 sentences using 'Yes, but...' to introduce your counter-claim.",
-        pills: ["Yes, but...", "our only home", "funds must be allocated", "clean energy"],
-        sentence_frame: "Yes, space research is helpful, [but protecting our home planet] is [our primary duty]."
+        "id": 3,
+        "question_en": "Which connector expresses a historical result in the text?",
+        "options": [
+          "Consequently,",
+          "Whenever,",
+          "Although,"
+        ],
+        "answer": "Consequently,"
+      }
+    ],
+    "critical_thinking": {
+      "question_en": "Explain how the steam engine connected coal mining, iron manufacturing, and rail transport into a single industrial system.",
+      "hint_en": "Coal fueled steam engines that melted iron ore, while iron was used to build engines, rails, and locomotives that hauled more coal."
+    }
+  },
+  "shadowing_sentences": [
+    {
+      "id": 1,
+      "text": "James Watt developed an efficient steam engine that transformed global manufacturing.",
+      "en": "James Watt developed an efficient steam engine that transformed global manufacturing.",
+      "vi": "James Watt đã phát triển một động cơ hơi nước hiệu quả làm biến đổi ngành sản xuất toàn cầu.",
+      "ipa": "/dʒeɪmz wɑːt dɪˈveləpt ən ɪˈfɪʃənt stiːm ˈendʒɪn ðæt trænsˈfɔːrmd ˈɡloʊbəl ˌmænjəˈfæktʃərɪŋ/",
+      "words": [
+        "James",
+        "Watt",
+        "developed",
+        "an",
+        "efficient",
+        "steam",
+        "engine",
+        "that",
+        "transformed",
+        "global",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Textile factories used automated mechanical looms to weave high quality cotton fabric.",
+      "en": "Textile factories used automated mechanical looms to weave high quality cotton fabric.",
+      "vi": "Các nhà máy dệt sử dụng khung dệt cơ khí tự động để dệt vải cotton chất lượng cao.",
+      "ipa": "/ˈtekstaɪl ˈfæktəriz juːzd ˈɔːtəmeɪtɪd məˈkænɪkəl luːmz tuː wiːv haɪ ˈkwɑːləti ˈkɑːtn ˈfæbrɪk/",
+      "words": [
+        "Textile",
+        "factories",
+        "used",
+        "automated",
+        "mechanical",
+        "looms",
+        "to",
+        "weave",
+        "high",
+        "quality",
+        "cotton",
+        "fabric"
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Abundant coal mines provided essential fuel to heat factory steam boilers.",
+      "en": "Abundant coal mines provided essential fuel to heat factory steam boilers.",
+      "vi": "Các mỏ than dồi dào cung cấp nhiên liệu thiết yếu để đốt nóng các nồi hơi nhà máy.",
+      "ipa": "/əˈbʌndənt koʊl maɪnz prəˈvaɪdɪd ɪˈsenʃəl ˈfjuːəl tuː hiːt ˈfæktəri stiːm ˈbɔɪlərz/",
+      "words": [
+        "Abundant",
+        "coal",
+        "mines",
+        "provided",
+        "essential",
+        "fuel",
+        "to",
+        "heat",
+        "factory",
+        "steam",
+        "boilers"
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Steam locomotives carried raw materials quickly along newly constructed railways.",
+      "en": "Steam locomotives carried raw materials quickly along newly constructed railways.",
+      "vi": "Đầu máy hơi nước vận chuyển nguyên liệu thô nhanh chóng dọc theo các tuyến đường sắt mới xây.",
+      "ipa": "/stiːm ˌloʊkəˈmoʊtɪvz ˈkærid rɔː məˈtɪriəlz ˈkwɪkli əˈlɔːŋ ˈnuːli kənˈstrʌktɪd ˈreɪlweɪz/",
+      "words": [
+        "Steam",
+        "locomotives",
+        "carried",
+        "raw",
+        "materials",
+        "quickly",
+        "along",
+        "newly",
+        "constructed",
+        "railways"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "As a result of mechanization, urban production increased tenfold across Europe.",
+      "en": "As a result of mechanization, urban production increased tenfold across Europe.",
+      "vi": "Kết quả của việc cơ giới hóa, sản lượng đô thị đã tăng gấp mười lần khắp châu Âu.",
+      "ipa": "/æz ə rɪˈzʌlt əv ˌmekənəˈzeɪʃən ˈɜːrbən prəˈdʌkʃən ɪnˈkriːst ˈtenfoʊld əˈkrɔːs ˈjʊrəp/",
+      "words": [
+        "As",
+        "a",
+        "result",
+        "of",
+        "mechanization",
+        "urban",
+        "production",
+        "increased",
+        "tenfold",
+        "across",
+        "Europe"
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Tough iron beams were forged to build resilient railway bridges and locomotives.",
+      "en": "Tough iron beams were forged to build resilient railway bridges and locomotives.",
+      "vi": "Những dầm sắt bền chắc đã được rèn để xây dựng các cây cầu đường sắt và đầu máy xe lửa kiên cố.",
+      "ipa": "/tʌf ˈaɪərn biːmz wɜːr fɔːrdʒd tuː bɪld rɪˈzɪliənt ˈreɪlweɪ ˈbrɪdʒɪz ænd ˌloʊkəˈmoʊtɪvz/",
+      "words": [
+        "Tough",
+        "iron",
+        "beams",
+        "were",
+        "forged",
+        "to",
+        "build",
+        "resilient",
+        "railway",
+        "bridges",
+        "and",
+        "locomotives"
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Thousands of agricultural workers moved to expanding industrial cities for employment.",
+      "en": "Thousands of agricultural workers moved to expanding industrial cities for employment.",
+      "vi": "Hàng ngàn lao động nông nghiệp đã chuyển đến các thành phố công nghiệp đang mở rộng để tìm việc làm.",
+      "ipa": "/ˈθaʊzəndz əv ˌæɡrɪˈkʌltʃərəl ˈwɜːrkərz muːvd tuː ɪkˈspændɪŋ ɪnˈdʌstriəl ˈsɪtiz fɔːr ɪmˈplɔɪmənt/",
+      "words": [
+        "Thousands",
+        "of",
+        "agricultural",
+        "workers",
+        "moved",
+        "to",
+        "expanding",
+        "industrial",
+        "cities",
+        "for",
+        "employment"
+      ]
+    },
+    {
+      "id": 8,
+      "text": "The Industrial Revolution laid the technological foundation for our modern society.",
+      "en": "The Industrial Revolution laid the technological foundation for our modern society.",
+      "vi": "Cuộc Cách mạng Công nghiệp đã đặt nền móng công nghệ cho xã hội hiện đại của chúng ta.",
+      "ipa": "/ði ɪnˈdʌstriəl ˌrevəˈluːʃən leɪd ðə ˌteknəˈlɑːdʒɪkəl faʊnˈdeɪʃən fɔːr ˈaʊər ˈmɑːdərn səˈsaɪəti/",
+      "words": [
+        "The",
+        "Industrial",
+        "Revolution",
+        "laid",
+        "the",
+        "technological",
+        "foundation",
+        "for",
+        "our",
+        "modern",
+        "society"
+      ]
+    }
+  ],
+  "story_scenes": [
+    {
+      "id": 1,
+      "scene_id": "scene_1",
+      "scene_number": 1,
+      "title_en": "Inside the Birmingham Iron Foundry",
+      "title_vi": "Bên Trong Xưởng Đúc Sắt Birmingham",
+      "description_en": "Young apprentice William watches glowing molten iron pour into heavy molds beside a humming steam engine.",
+      "description": "Young apprentice William watches glowing molten iron pour into heavy molds beside a humming steam engine.",
+      "image_url": "/images/week79/webtoon_scene_1.png",
+      "audio_url": "/audio/week79/scene_1.mp3"
+    },
+    {
+      "id": 2,
+      "scene_id": "scene_2",
+      "scene_number": 2,
+      "title_en": "Examining Watt's Steam Condenser",
+      "title_vi": "Kiểm Tra Bình Ngưng Hơi Nước Của Watt",
+      "description_en": "Master engineer Thomas demonstrates how the separate condenser saves coal fuel and powers factory pulleys.",
+      "description": "Master engineer Thomas demonstrates how the separate condenser saves coal fuel and powers factory pulleys.",
+      "image_url": "/images/week79/webtoon_scene_2.png",
+      "audio_url": "/audio/week79/scene_2.mp3"
+    },
+    {
+      "id": 3,
+      "scene_id": "scene_3",
+      "scene_number": 3,
+      "title_en": "The Lancashire Weaving Mill",
+      "title_vi": "Xưởng Dệt Lancashire",
+      "description_en": "Rows of mechanical textile looms spin white cotton thread at astonishing speeds under gaslight.",
+      "description": "Rows of mechanical textile looms spin white cotton thread at astonishing speeds under gaslight.",
+      "image_url": "/images/week79/webtoon_scene_3.png",
+      "audio_url": "/audio/week79/scene_3.mp3"
+    },
+    {
+      "id": 4,
+      "scene_id": "scene_4",
+      "scene_number": 4,
+      "title_en": "Arrival of the Iron Locomotive",
+      "title_vi": "Đầu Máy Sắt Tiến Vào Ga",
+      "description_en": "A steam locomotive pulls heavy wagons of coal directly from the pithead to the city harbor.",
+      "description": "A steam locomotive pulls heavy wagons of coal directly from the pithead to the city harbor.",
+      "image_url": "/images/week79/webtoon_scene_4.png",
+      "audio_url": "/audio/week79/scene_4.mp3"
+    },
+    {
+      "id": 5,
+      "scene_id": "scene_5",
+      "scene_number": 5,
+      "title_en": "Documenting Historical Progress",
+      "title_vi": "Ghi Lại Tiến Bộ Lịch Sử",
+      "description_en": "William sketches the steam locomotive in his journal, recording how mechanization transformed transport.",
+      "description": "William sketches the steam locomotive in his journal, recording how mechanization transformed transport.",
+      "image_url": "/images/week79/webtoon_scene_5.png",
+      "audio_url": "/audio/week79/scene_5.mp3"
+    }
+  ],
+  "writing_data": {
+    "title": "Documentary Report on the Rise of Steam Power",
+    "prompt_en": "Look at the four panels. Write a historical documentary paragraph describing how steam engines and factories transformed manufacturing and transportation. Use cause-and-effect connectors ('as a result of', 'due to', 'consequently') and past passive voice ('goods were manufactured'). Write 20 or more words.",
+    "prompt_vi": "Nhìn vào 4 khung tranh. Viết một đoạn văn tài liệu lịch sử mô tả động cơ hơi nước và nhà máy đã thay đổi sản xuất và giao thông như thế nào. Sử dụng các từ nối nguyên nhân - kết quả ('as a result of', 'due to', 'consequently') và câu bị động quá khứ ('goods were manufactured'). Viết từ 20 từ trở lên.",
+    "min_sentences": 3,
+    "min_words": 20,
+    "max_words": 90,
+    "model_sentence": "During the Industrial Revolution, everyday goods were manufactured by steam-powered machines rather than by hand. Due to James Watt's innovative steam engine, coal was burned to power massive textile looms and iron foundries. As a result of this mechanization, locomotives hauled freight across nationwide railways, transforming agrarian towns into thriving industrial centers.",
+    "word_bank": [
+      "steam",
+      "engine",
+      "factory",
+      "coal",
+      "manufacture",
+      "locomotive",
+      "railway",
+      "production",
+      "textile",
+      "transform"
+    ],
+    "sentence_frames": [
+      "In the eighteenth century, goods were manufactured in large ___.",
+      "Due to Watt's steam ___, coal was burned to power factory machinery.",
+      "As a result of mechanization, cotton ___ production increased rapidly.",
+      "Consequently, steam ___ hauled heavy freight along national railways."
+    ],
+    "panels": [
+      {
+        "panel_id": "panel_1",
+        "title_en": "Panel 1: The Steam Engine Breakthrough",
+        "title_vi": "Khung 1: Đột Phá Động Cơ Hơi Nước",
+        "image_url": "/images/week79/writing_panel_1.png",
+        "image_prompt": "A nineteenth-century British foundry with engineers assembling a massive cast-iron steam engine with copper pipes and boiler.",
+        "caption": "James Watt perfected the commercial steam engine using coal fuel.",
+        "sentence_frame": "The steam engine [was perfected by James Watt] to [generate reliable mechanical power].",
+        "pills": [
+          "was perfected by James Watt",
+          "generate reliable mechanical power",
+          "coal-fired boiler",
+          "industrial machinery"
+        ],
+        "connectors": [
+          "First,",
+          "In the beginning,",
+          "During this period,"
+        ]
       },
       {
-        badge_label: "EXPAND",
-        title: "Stage 4: Concluding the Argument",
-        image_url: "/images/week79/writing_panel_4.png",
-        caption: "Funds should be allocated to preserve our only living planet.",
-        frame_L1: "Ultimately, space technology must serve Earth restoration. We must preserve our living planet for future generations.",
-        connectors: ["Ultimately,", "In conclusion,", "Therefore,"],
-        sentence_hint: "Write 2 sentences synthesizing space technology and planetary care.",
-        pills: ["serve Earth restoration", "preserve our living planet", "future generations", "balanced investment"],
-        sentence_frame: "Public resources [should be allocated] to [ensure a sustainable living planet]."
+        "panel_id": "panel_2",
+        "title_en": "Panel 2: Mechanized Textile Mills",
+        "title_vi": "Khung 2: Các Xưởng Dệt Cơ Giới Hóa",
+        "image_url": "/images/week79/writing_panel_2.png",
+        "image_prompt": "A sprawling brick textile mill interior with rows of mechanical looms powered by overhead spinning driveshafts.",
+        "caption": "Textile factories produced woven cloth at unprecedented speed.",
+        "sentence_frame": "Cotton textiles [were manufactured by automated looms] in [sprawling urban factories].",
+        "pills": [
+          "were manufactured by automated looms",
+          "sprawling urban factories",
+          "unprecedented commercial output",
+          "disciplined workforce"
+        ],
+        "connectors": [
+          "Due to this invention,",
+          "Furthermore,",
+          "In textile mills,"
+        ]
+      },
+      {
+        "panel_id": "panel_3",
+        "title_en": "Panel 3: Iron Railways and Locomotives",
+        "title_vi": "Khung 3: Đường Sắt và Đầu Máy Bằng Sắt",
+        "image_url": "/images/week79/writing_panel_3.png",
+        "image_prompt": "An early steam locomotive puffing white smoke as it pulls black coal wagons across an arched iron railway bridge.",
+        "caption": "Locomotives carried coal and merchandise across steel railways.",
+        "sentence_frame": "Steam locomotives [were engineered to transport heavy freight] along [rapidly expanding railways].",
+        "pills": [
+          "were engineered to transport heavy freight",
+          "rapidly expanding railways",
+          "connected distant cities",
+          "carried raw materials"
+        ],
+        "connectors": [
+          "As a result of rail transit,",
+          "Consequently,",
+          "Across the nation,"
+        ]
+      },
+      {
+        "panel_id": "panel_4",
+        "title_en": "Panel 4: The Urban Industrial Society",
+        "title_vi": "Khung 4: Xã Hội Đô Thị Công Nghiệp",
+        "image_url": "/images/week79/writing_panel_4.png",
+        "image_prompt": "A bustling Victorian industrial city with brick chimneys, bustling docks, merchant warehouses, and railway viaducts.",
+        "caption": "Industrialization transformed rural landscapes into modern cities.",
+        "sentence_frame": "Agrarian economies [were completely transformed into] an [interconnected industrial society].",
+        "pills": [
+          "were completely transformed into",
+          "interconnected industrial society",
+          "modern economic foundation",
+          "urban manufacturing centers"
+        ],
+        "connectors": [
+          "Ultimately,",
+          "In conclusion,",
+          "Consequently,"
+        ]
+      }
+    ],
+    "ladder_stages": [
+      {
+        "badge_label": "MODEL",
+        "title": "Stage 1: Describing the Steam Engine",
+        "image_url": "/images/week79/writing_panel_1.png",
+        "caption": "James Watt perfected the commercial steam engine using coal fuel.",
+        "frame_L1": "James Watt improved the steam engine. The machine burned coal to generate power.",
+        "connectors": [
+          "First,",
+          "In the eighteenth century,",
+          "Initially,"
+        ],
+        "sentence_hint": "Write 2 sentences describing how steam engines generated industrial power.",
+        "ordered_chips": [
+          "James Watt improved",
+          "the commercial steam engine",
+          "using coal fuel",
+          "to drive factory machinery."
+        ],
+        "pills": [
+          "improved the steam engine",
+          "coal fuel",
+          "factory machinery",
+          "commercial power"
+        ],
+        "sentence_frame": "The steam engine [was perfected by James Watt] to [generate reliable mechanical power]."
+      },
+      {
+        "badge_label": "BUILD",
+        "title": "Stage 2: Explaining Factory Production",
+        "image_url": "/images/week79/writing_panel_2.png",
+        "caption": "Textile factories produced woven cloth at unprecedented speed.",
+        "frame_L1": "Textile factories used steam power. Many workers operated mechanical looms every day.",
+        "connectors": [
+          "Due to this engine,",
+          "In factories,",
+          "Furthermore,"
+        ],
+        "sentence_hint": "Write 2 sentences explaining how factories increased textile production.",
+        "pills": [
+          "used steam power",
+          "mechanical looms",
+          "increased textile output",
+          "urban factories"
+        ],
+        "sentence_frame": "Textile goods [were produced much faster] due to [automated mechanical equipment]."
+      },
+      {
+        "badge_label": "WRITE",
+        "title": "Stage 3: Highlighting Railway Transportation",
+        "image_url": "/images/week79/writing_panel_3.png",
+        "caption": "Locomotives carried coal and merchandise across steel railways.",
+        "frame_L1": "Locomotives hauled coal across long distances. As a result, trade grew quickly.",
+        "connectors": [
+          "As a result,",
+          "Consequently,",
+          "Along railway tracks,"
+        ],
+        "sentence_hint": "Write 2 sentences describing how railways connected mines, factories, and ports.",
+        "pills": [
+          "hauled coal across railways",
+          "trade expanded rapidly",
+          "steam locomotives",
+          "connected industrial ports"
+        ],
+        "sentence_frame": "Steam locomotives [were built from tough iron] to [haul freight along steel rails]."
+      },
+      {
+        "badge_label": "EXPAND",
+        "title": "Stage 4: Summarizing the Historical Impact",
+        "image_url": "/images/week79/writing_panel_4.png",
+        "caption": "Industrialization transformed rural landscapes into modern cities.",
+        "frame_L1": "The Industrial Revolution transformed society. It created our modern cities and technologies.",
+        "connectors": [
+          "Ultimately,",
+          "In conclusion,",
+          "Consequently,"
+        ],
+        "sentence_hint": "Write 2 sentences summarizing the permanent legacy of industrial mechanization.",
+        "pills": [
+          "transformed human society",
+          "modern cities and technologies",
+          "permanent industrial legacy",
+          "economic progress"
+        ],
+        "sentence_frame": "Industrial mechanization [transformed rural economies into] an [interconnected modern society]."
       }
     ]
   },
-  speaking_data: {
-    talkshow_prompt: {
-      topic: "Defending Environmental Priorities in Micro-Debates",
-      question: "Nora, why is the 'Yes, but...' rebuttal structure so effective in competitive science debates?",
-      model_response: "The 'Yes, but...' structure is effective because it demonstrates that you listened to your opponent's perspective before presenting a stronger counter-argument! You show intellectual respect by conceding: 'Yes, satellite sensors developed for space provide vital climate data.' Then you deliver the compelling rebuttal: 'But investing billions in planting trees and expanding renewable energy is far more urgent for saving Earth right now!'"
+  "speaking_data": {
+    "talkshow_prompt": {
+      "topic": "Presenting a Historical Documentary on the Steam Revolution",
+      "question": "William, how did the combination of coal, iron, and steam power launch modern industry?",
+      "model_response": "The combination of coal, iron, and steam created a powerful chain reaction! Abundant coal was burned to heat water inside iron boilers, producing high-pressure steam that drove factory machinery. In turn, these steam engines powered iron foundries and locomotives that transported more coal across steel railways. This remarkable cycle mechanized manufacturing and launched the modern industrial world!"
     },
-    info_exchange_cards: {
-      table_a: {
-        title: "Kevin's Space Research Mission",
-        subtitle: "Candidate's Question Card (Ask Examiner)",
-        person: "Kevin",
-        fields: [
-          { id: "field_a1", cue_prompt: "where / satellite control station located?", cue_word: "where", is_missing: true, acceptable_questions: ["Where is the satellite control station located?", "Where is the control station?", "Where does Kevin monitor satellites?"], nova_reply: "The orbital telemetry center is located in Houston, Texas." },
-          { id: "field_a2", cue_prompt: "what / primary satellite mission?", cue_word: "what", is_missing: true, acceptable_questions: ["What is the primary satellite mission?", "What do the satellites do?", "What is their main purpose?"], nova_reply: "The satellites monitor global greenhouse emissions and ocean heat levels." },
-          { id: "field_a3", cue_prompt: "how much / annual space program budget?", cue_word: "how much", is_missing: true, acceptable_questions: ["How much is the annual space program budget?", "What is the budget?", "How much money is allocated?"], nova_reply: "Congress allocated twenty-four billion dollars to the federal space program." },
-          { id: "field_a4", cue_prompt: "who / leads the climate satellite division?", cue_word: "who", is_missing: true, acceptable_questions: ["Who leads the climate satellite division?", "Who is the division director?", "Who supervises the project?"], nova_reply: "Dr. Evelyn Vance leads the Earth observation satellite team." },
-          { id: "field_a5", cue_prompt: "why / orbital telescopes valuable?", cue_word: "why", is_missing: true, acceptable_questions: ["Why are orbital telescopes valuable?", "Why do we need space telescopes?", "Why fund orbital telescopes?"], nova_reply: "Because they capture infrared radiation without atmospheric distortion." }
+    "info_exchange_cards": {
+      "table_a": {
+        "title": "James Watt's Steam Engine Workshop",
+        "subtitle": "Candidate's Question Card (Ask Examiner)",
+        "person": "James Watt",
+        "fields": [
+          {
+            "id": "field_a1",
+            "cue_prompt": "where / steam engine workshop located?",
+            "cue_word": "where",
+            "is_missing": true,
+            "acceptable_questions": [
+              "Where was the steam engine workshop located?",
+              "Where was the workshop located?",
+              "Where did James Watt build steam engines?"
+            ],
+            "nova_reply": "The Soho Manufactory workshop was located in Birmingham, England."
+          },
+          {
+            "id": "field_a2",
+            "cue_prompt": "what / primary invention developed?",
+            "cue_word": "what",
+            "is_missing": true,
+            "acceptable_questions": [
+              "What primary invention was developed?",
+              "What was the invention?",
+              "What did James Watt invent?"
+            ],
+            "nova_reply": "He perfected the separate condenser steam engine that reduced coal fuel waste."
+          },
+          {
+            "id": "field_a3",
+            "cue_prompt": "how much / fuel efficiency improved?",
+            "cue_word": "how much",
+            "is_missing": true,
+            "acceptable_questions": [
+              "How much was fuel efficiency improved?",
+              "How much fuel did it save?",
+              "What was the efficiency increase?"
+            ],
+            "nova_reply": "The improved design saved up to seventy-five percent of coal fuel consumption."
+          },
+          {
+            "id": "field_a4",
+            "cue_prompt": "who / partnered with James Watt?",
+            "cue_word": "who",
+            "is_missing": true,
+            "acceptable_questions": [
+              "Who partnered with James Watt?",
+              "Who was his business partner?",
+              "Who funded the steam engine factory?"
+            ],
+            "nova_reply": "Industrialist Matthew Boulton provided capital and commercial factory space."
+          },
+          {
+            "id": "field_a5",
+            "cue_prompt": "why / factories adopt steam power?",
+            "cue_word": "why",
+            "is_missing": true,
+            "acceptable_questions": [
+              "Why did factories adopt steam power?",
+              "Why was steam better than watermills?",
+              "Why use steam engines?"
+            ],
+            "nova_reply": "Because steam engines operated year-round without depending on river water currents."
+          }
         ]
       },
-      table_b: {
-        title: "Nora's Rainforest Reforestation Campaign",
-        subtitle: "Information Card (Answer Examiner's Questions)",
-        person: "Nora",
-        fields: [
-          { id: "field_b1", cue_prompt: "where / ecological restoration reserve?", cue_word: "where", value: "Across the Atlantic Forest coastal belt in Brazil.", nova_question: "Where is Nora's reforestation reserve located?", acceptable_answers: ["Across the Atlantic Forest coastal belt in Brazil.", "In Brazil.", "The Atlantic Forest in Brazil."] },
-          { id: "field_b2", cue_prompt: "what / species of trees planted?", cue_word: "what", value: "Thirty native broadleaf species to maximize biodiversity.", nova_question: "What species of trees are planted in the nursery?", acceptable_answers: ["Thirty native broadleaf species to maximize biodiversity.", "Thirty native broadleaf species.", "Native broadleaf species."] },
-          { id: "field_b3", cue_prompt: "how / measure annual carbon capture?", cue_word: "how", value: "By analyzing soil core samples and trunk growth diameters.", nova_question: "How does the research team measure annual carbon capture?", acceptable_answers: ["By analyzing soil core samples and trunk growth diameters.", "Through soil cores and tree trunk measurements.", "Using soil samples and trunk diameters."] },
-          { id: "field_b4", cue_prompt: "who / funds the forest restoration project?", cue_word: "who", value: "An international coalition of green climate foundations.", nova_question: "Who funds the coastal reforestation campaign?", acceptable_answers: ["An international coalition of green climate foundations.", "Green climate foundations.", "International climate foundations."] },
-          { id: "field_b5", cue_prompt: "why / restore mangrove wetlands first?", cue_word: "why", value: "To shield coastal communities from severe storm surges.", nova_question: "Why does the campaign prioritize restoring mangrove wetlands?", acceptable_answers: ["To shield coastal communities from severe storm surges.", "To protect coastal communities from storms.", "To shield against storm surges."] }
+      "table_b": {
+        "title": "George Stephenson's Railway Network",
+        "subtitle": "Information Card (Answer Examiner's Questions)",
+        "person": "George Stephenson",
+        "fields": [
+          {
+            "id": "field_b1",
+            "cue_prompt": "where / first public railway line opened?",
+            "cue_word": "where",
+            "value": "Between Stockton and Darlington in northern England.",
+            "nova_question": "Where was the first public railway line opened?",
+            "acceptable_answers": [
+              "Between Stockton and Darlington in northern England.",
+              "Between Stockton and Darlington.",
+              "In northern England."
+            ]
+          },
+          {
+            "id": "field_b2",
+            "cue_prompt": "what / name of famous locomotive?",
+            "cue_word": "what",
+            "value": "The Rocket, an advanced steam locomotive built in 1829.",
+            "nova_question": "What was the name of the famous locomotive?",
+            "acceptable_answers": [
+              "The Rocket, an advanced steam locomotive built in 1829.",
+              "The Rocket.",
+              "Stephensons Rocket."
+            ]
+          },
+          {
+            "id": "field_b3",
+            "cue_prompt": "how fast / locomotive travel?",
+            "cue_word": "how fast",
+            "value": "It achieved an unprecedented speed of twenty-nine miles per hour.",
+            "nova_question": "How fast could the Rocket locomotive travel?",
+            "acceptable_answers": [
+              "It achieved an unprecedented speed of twenty-nine miles per hour.",
+              "Twenty-nine miles per hour.",
+              "29 mph."
+            ]
+          },
+          {
+            "id": "field_b4",
+            "cue_prompt": "who / financed the railway construction?",
+            "cue_word": "who",
+            "value": "Local merchants seeking cheap transportation for bulk coal.",
+            "nova_question": "Who financed the railway construction?",
+            "acceptable_answers": [
+              "Local merchants seeking cheap transportation for bulk coal.",
+              "Local coal merchants.",
+              "Business merchants."
+            ]
+          },
+          {
+            "id": "field_b5",
+            "cue_prompt": "why / railways replace horse wagons?",
+            "cue_word": "why",
+            "value": "Because steam trains carried ten times more freight at lower cost.",
+            "nova_question": "Why did railways replace horse wagons?",
+            "acceptable_answers": [
+              "Because steam trains carried ten times more freight at lower cost.",
+              "They carried ten times more freight.",
+              "To move heavy freight cheaper and faster."
+            ]
+          }
         ]
       }
     }
   },
-  cambridge_rw: {
-    part1_definitions: [
-      { id: 1, text: "The scientific traveling into distant space or uncharted territories to gather knowledge.", target: "exploration" },
-      { id: 2, text: "The dedicated ecological process of repairing damaged forests, rivers, or coral reefs.", target: "restoration" },
-      { id: 3, text: "An artificial electronic machine placed in orbit around Earth to transmit radio signals and weather photos.", target: "satellite" },
-      { id: 4, text: "An urgent matter or task that must be attended to before any other consideration.", target: "priority" },
-      { id: 5, text: "The wide variety of plant, insect, and animal species living within a balanced habitat.", target: "biodiversity" }
+  "cambridge_rw": {
+    "part1_definitions": [
+      {
+        "id": 1,
+        "text": "A vehicle powered by a steam engine designed to pull wagons along a railway track.",
+        "target": "locomotive"
+      },
+      {
+        "id": 2,
+        "text": "A large commercial building where machines produce manufactured merchandise.",
+        "target": "factory"
+      },
+      {
+        "id": 3,
+        "text": "A black fossil fuel mined from the earth and burned to heat steam boilers.",
+        "target": "coal"
+      },
+      {
+        "id": 4,
+        "text": "Woven cloth or fabric produced in spinning and weaving mills.",
+        "target": "textile"
+      },
+      {
+        "id": 5,
+        "text": "A dramatic and comprehensive transformation in technology or society.",
+        "target": "revolution"
+      }
     ],
-    part2_dialogue: {
-      title: "Kevin & Nora Debating Science Funding Priorities",
-      turns: [
+    "part2_dialogue": {
+      "title": "Discussing the Historical Impact of Steam Mechanics",
+      "turns": [
         {
-          id: 1,
-          speaker: "Kevin",
-          prompt: "Nora, isn't space exploration essential for developing modern digital technologies?",
-          options: [
-            "Yes, but restoring our damaged climate is far more urgent for human survival.",
-            "No, computers were invented by stone age hunters.",
-            "Space exploration only builds plastic toys."
+          "id": 1,
+          "speaker": "Thomas",
+          "prompt": "William, why was James Watt's steam condenser such an important invention?",
+          "options": [
+            "Because it allowed engines to run continuously while consuming far less coal fuel.",
+            "Because it was made entirely out of wooden sticks.",
+            "Because it stopped water from boiling inside the pipes."
           ],
-          answer: "Yes, but restoring our damaged climate is far more urgent for human survival."
+          "answer": "Because it allowed engines to run continuously while consuming far less coal fuel."
         },
         {
-          id: 2,
-          speaker: "Kevin",
-          prompt: "Don't orbital satellites help us monitor deforestation and ocean temperatures?",
-          options: [
-            "Yes, they do, which proves space tools must directly assist Earth conservation.",
-            "Satellites only play loud dance music in the clouds.",
-            "No, satellites cannot see through the air."
+          "id": 2,
+          "speaker": "Thomas",
+          "prompt": "How did textile factories benefit from mechanization during this period?",
+          "options": [
+            "Automated looms produced far more cotton cloth at significantly lower cost.",
+            "Weavers stopped making clothes and began farming potatoes.",
+            "Textile factories relied only on candle light."
           ],
-          answer: "Yes, they do, which proves space tools must directly assist Earth conservation."
+          "answer": "Automated looms produced far more cotton cloth at significantly lower cost."
         },
         {
-          id: 3,
-          speaker: "Kevin",
-          prompt: "How should governments allocate their limited annual science budgets?",
-          options: [
-            "Funds should be prioritized for renewable energy, reforestation, and clean water.",
-            "Governments should hide all their money in wooden chests.",
-            "They should spend everything on buying chocolate candy."
+          "id": 3,
+          "speaker": "Thomas",
+          "prompt": "What role did iron railways play in expanding national industries?",
+          "options": [
+            "Steam trains moved coal, iron, and finished goods quickly between cities and docks.",
+            "Railways were only used for holiday parade wagons.",
+            "Trains were slower than pack horses on muddy roads."
           ],
-          answer: "Funds should be prioritized for renewable energy, reforestation, and clean water."
+          "answer": "Steam trains moved coal, iron, and finished goods quickly between cities and docks."
         },
         {
-          id: 4,
-          speaker: "Kevin",
-          prompt: "Can human beings relocate to Mars if Earth becomes uninhabitable?",
-          options: [
-            "No, Mars is a barren desert without a breathable atmosphere; Earth is our only home.",
-            "Yes, we can all walk to Mars tomorrow morning.",
-            "Mars has swimming pools on every corner."
+          "id": 4,
+          "speaker": "Thomas",
+          "prompt": "What major social change occurred as people left rural villages for factory work?",
+          "options": [
+            "Industrial cities expanded rapidly, creating large urban worker communities.",
+            "All manufacturing towns became empty forests.",
+            "Workers refused to use mechanical clocks."
           ],
-          answer: "No, Mars is a barren desert without a breathable atmosphere; Earth is our only home."
+          "answer": "Industrial cities expanded rapidly, creating large urban worker communities."
         },
         {
-          id: 5,
-          speaker: "Kevin",
-          prompt: "Shall we summarize our debate points into a joint recommendations proposal?",
-          options: [
-            "Excellent proposal! Let's combine satellite tracking with active reforestation.",
-            "I prefer to play video games until midnight.",
-            "The train leaves the station at five."
+          "id": 5,
+          "speaker": "Thomas",
+          "prompt": "How do modern historians summarize the overall legacy of the Industrial Revolution?",
+          "options": [
+            "It laid the technological and economic foundation of our modern urban world.",
+            "It had no lasting effect on modern transportation.",
+            "It proved that hand tools were faster than steam engines."
           ],
-          answer: "Excellent proposal! Let's combine satellite tracking with active reforestation."
+          "answer": "It laid the technological and economic foundation of our modern urban world."
         }
-      ],
-      exchanges: [
-        { speaker: "Kevin", text: "Nora, isn't space exploration essential for developing modern digital technologies?" },
-        { speaker: "Nora", text: "Yes, but restoring our damaged climate is far more urgent for human survival." },
-        { speaker: "Kevin", text: "Don't orbital satellites help us monitor deforestation and ocean temperatures?" },
-        { speaker: "Nora", text: "Yes, they do, which proves space tools must directly assist Earth conservation." },
-        { speaker: "Kevin", text: "How should governments allocate their limited annual science budgets?" },
-        { speaker: "Nora", text: "Funds should be prioritized for renewable energy, reforestation, and clean water." },
-        { speaker: "Kevin", text: "Can human beings relocate to Mars if Earth becomes uninhabitable?" },
-        { speaker: "Nora", text: "No, Mars is a barren desert without a breathable atmosphere; Earth is our only home." },
-        { speaker: "Kevin", text: "Shall we summarize our debate points into a joint recommendations proposal?" },
-        { speaker: "Nora", text: "Excellent proposal! Let's combine satellite tracking with active reforestation." }
       ]
     },
-    part6_cloze: {
-      title: "Kevin & Nora's Joint Debate Summary: Planetary Priorities",
-      instructions: "Read the debate summary and write the missing words. Write one word on each line.",
-      text_template: "Scientists debate whether space exploration or Earth restoration [1]_____ be our top priority. Weather satellites orbit high [2]_____ our atmosphere to track climate change. Yes, space research is exciting, [3]_____ protecting our home planet is far more urgent. Public funds must [4]_____ allocated to renewable energy and reforestation. Earth is the only planet [5]_____ can support human life.",
-      answers: { "1": "should", "2": "in", "3": "but", "4": "be", "5": "that" }
+    "part6_cloze": {
+      "instructions": "Read the historical text and choose the correct function word for each blank space.",
+      "text_template": "During the Industrial Revolution, manufacturing was transformed by steam power. Factories [1] built near coal mines so that boilers could be supplied easily. As a result [2] this mechanization, goods were produced [3] much higher speeds than ever before. Steam locomotives were engineered [4] carry heavy freight along railway tracks. Consequently, modern urban society developed rapidly because [5] these technological breakthroughs.",
+      "answers": {
+        "1": "were",
+        "2": "of",
+        "3": "at",
+        "4": "to",
+        "5": "of"
+      }
     }
   },
-  minigames: {
-    math_problems: [
+  "minigames": {
+    "math_problems": [
       {
-        id: "w79_p1",
-        type: "part_whole",
-        title: "Comparing Budget Allocations between Space Research and Clean Energy",
-        question: "A national science council allocates 65 million dollars to satellite climate monitoring and 85 million dollars to community reforestation. What is the total environmental budget in millions of dollars?",
-        storyContext: "Kevin analyzes public budget graphs for his debate rebuttal on environmental priorities.",
-        modelData: {
-          bars: [
-            { label: "Satellite Observation", value: 65, color: "#3b82f6" },
-            { label: "Reforestation Grants", value: 85, color: "#10b981" }
+        "id": "w79_p1",
+        "type": "part_whole",
+        "title": "Calculating Daily Coal Consumption for Foundry Boilers",
+        "question": "A Birmingham iron foundry burns 45 tons of coal for smelting furnaces and 35 tons of coal for steam engine boilers each day. What is the total coal consumed daily in tons?",
+        "storyContext": "William calculates the foundry fuel logs to ensure steady deliveries of coal.",
+        "modelData": {
+          "bars": [
+            {
+              "label": "Smelting Furnaces",
+              "value": 45,
+              "color": "#475569"
+            },
+            {
+              "label": "Engine Boilers",
+              "value": 35,
+              "color": "#0ea5e9"
+            }
           ],
-          total: 150,
-          unit: "million dollars"
+          "total": 80,
+          "unit": "tons of coal"
         },
-        target_answer: 150,
-        unit: "million dollars",
-        steps: [
-          "Take the satellite monitoring allocation: 65 million dollars.",
-          "Add the reforestation allocation: 85 million dollars.",
-          "65 + 85 = 150 million dollars in total."
+        "target_answer": 80,
+        "unit": "tons of coal",
+        "steps": [
+          "Record the furnace fuel: 45 tons of coal.",
+          "Add the boiler fuel: 35 tons of coal.",
+          "45 + 35 = 80 tons of coal consumed in total."
         ]
       },
       {
-        id: "w79_p2",
-        type: "comparison",
-        title: "Comparing Tree Planting Target vs Actual Progress",
-        question: "Nora's reforestation team set a target to plant 190 thousand trees this season. By October, they had planted 125 thousand trees. How many more trees must be planted to meet the target?",
-        storyContext: "Nora tallies coastal mangrove saplings on a progress comparison chart.",
-        modelData: {
-          bars: [
-            { label: "Seasonal Target", value: 190, color: "#047857" },
-            { label: "Planted to Date", value: 125, color: "#10b981" }
+        "id": "w79_p2",
+        "type": "comparison",
+        "title": "Comparing Cloth Output: Hand Loom vs Mechanical Loom",
+        "question": "An automated mechanical loom produces 140 yards of cotton textile per day, whereas a traditional hand loom produces only 25 yards. How many more yards does the mechanical loom produce daily?",
+        "storyContext": "A mill manager compares weaving yields on an industrial output chart.",
+        "modelData": {
+          "bars": [
+            {
+              "label": "Mechanical Loom",
+              "value": 140,
+              "color": "#10b981"
+            },
+            {
+              "label": "Traditional Hand Loom",
+              "value": 25,
+              "color": "#f59e0b"
+            }
           ],
-          difference: 65,
-          unit: "thousand trees"
+          "difference": 115,
+          "unit": "yards of cloth"
         },
-        target_answer: 65,
-        unit: "thousand trees",
-        steps: [
-          "Start with the seasonal target: 190 thousand trees.",
-          "Subtract the trees planted to date: 125 thousand trees.",
-          "190 - 125 = 65 thousand trees remaining."
+        "target_answer": 115,
+        "unit": "yards of cloth",
+        "steps": [
+          "Start with the mechanical loom output: 140 yards.",
+          "Subtract the hand loom output: 25 yards.",
+          "140 - 25 = 115 yards more produced by the mechanical loom."
         ]
       }
     ],
-    action_lab_scenarios: [
+    "action_lab_scenarios": [
       {
-        stage: 1,
-        title: "Satellite Telemetry & Earth Monitoring",
-        diagram_type: "orbital_satellite_telemetry",
-        instruction: "Select orbital data layers that assist climate scientists on Earth.",
-        items: [
-          { label: "Atmospheric CO2 Sensors", target: "telemetry" },
-          { label: "Thermal Forest Fire Scanners", target: "infrared" },
-          { label: "Radar Sea Level Altimeters", target: "oceanography" }
+        "stage": 1,
+        "title": "Steam Engine Mechanics & Condenser Cycle",
+        "diagram_type": "steam_boiler_piston_cycle",
+        "instruction": "Identify the core mechanical components that convert boiling steam into engine motion.",
+        "items": [
+          {
+            "label": "Coal Furnace Boiler",
+            "target": "heat_source"
+          },
+          {
+            "label": "High-Pressure Piston Cylinder",
+            "target": "motion_drive"
+          },
+          {
+            "label": "Separate Cooling Condenser",
+            "target": "efficiency_cycle"
+          }
         ]
       },
       {
-        stage: 2,
-        title: "Biodiversity & Reforestation Carbon Sinks",
-        diagram_type: "reforestation_carbon_plot",
-        instruction: "Route agricultural land into multi-tiered native rainforest restoration.",
-        items: [
-          { label: "Pioneer Broadleaf Seedlings", target: "canopy_layer" },
-          { label: "Wetland Mangrove Buffer", target: "coastal_protection" },
-          { label: "Soil Humus Carbon Storage", target: "carbon_sink" }
+        "stage": 2,
+        "title": "Textile Mill Automated Power Drive",
+        "diagram_type": "factory_pulley_distribution",
+        "instruction": "Route rotational steam power through driveshafts and leather belts to automated looms.",
+        "items": [
+          {
+            "label": "Central Steam Driveshaft",
+            "target": "main_power"
+          },
+          {
+            "label": "Tensioned Leather Belt",
+            "target": "power_transfer"
+          },
+          {
+            "label": "Automated Weaving Shuttle",
+            "target": "textile_loom"
+          }
         ]
       },
       {
-        stage: 3,
-        title: "Synthesizing Space and Earth Funding",
-        diagram_type: "integrated_budget_flow",
-        instruction: "Balance public funds between space-based observation and terrestrial conservation.",
-        items: [
-          { label: "Orbital Climate Monitoring", target: "space_tech" },
-          { label: "Renewable Energy Grid Transition", target: "earth_action" },
-          { label: "Sustainable Planetary Harmony", target: "equilibrium" }
+        "stage": 3,
+        "title": "Industrial Railway Transport Network",
+        "diagram_type": "freight_logistics_rail_link",
+        "instruction": "Connect coal mines, iron foundries, and coastal shipping docks using freight trains.",
+        "items": [
+          {
+            "label": "Coal Colliery Loading Depot",
+            "target": "raw_materials"
+          },
+          {
+            "label": "Steam Freight Locomotive",
+            "target": "rail_transport"
+          },
+          {
+            "label": "Coastal Export Maritime Dock",
+            "target": "global_shipping"
+          }
         ]
       }
     ],
-    grammar_drills: [
-      { sentence: "Yes, space research is inspiring, but Earth restoration is more urgent.", options: ["Yes, but", "Because so", "Although if"], answer: "Yes, but", explanation: "Use 'Yes, but...' as a conversational rebuttal structure to acknowledge a point before disagreeing." },
-      { sentence: "Public funds should be allocated toward preserving our only planet.", options: ["allocated", "allocate", "allocating"], answer: "allocated", explanation: "After 'should be' in passive voice, use the past participle 'allocated'." },
-      { sentence: "Weather satellites are designed to monitor atmospheric changes.", options: ["are designed", "designed", "designing"], answer: "are designed", explanation: "Use present passive 'are designed' when the subject receives the action." },
-      { sentence: "Restoring biodiversity is far more critical than building lunar colonies.", options: ["more critical", "most critical", "critical"], answer: "more critical", explanation: "Use the comparative 'more critical' followed by 'than' to compare two priorities." },
-      { sentence: "Saving endangered wetlands is an urgent environmental responsibility.", options: ["urgent", "urgently", "urgency"], answer: "urgent", explanation: "Use the adjective 'urgent' before the noun phrase 'environmental responsibility'." }
+    "grammar_drills": [
+      {
+        "sentence": "Everyday tools were manufactured by machines in urban factories.",
+        "options": [
+          "were manufactured",
+          "was manufactured",
+          "are manufacturing"
+        ],
+        "answer": "were manufactured",
+        "explanation": "Use plural past passive 'were manufactured' with the plural subject 'tools'."
+      },
+      {
+        "sentence": "As a result of steam power, railway transit expanded rapidly.",
+        "options": [
+          "As a result of",
+          "Because that",
+          "Although for"
+        ],
+        "answer": "As a result of",
+        "explanation": "Use 'As a result of' followed by a noun phrase to introduce a causal factor."
+      },
+      {
+        "sentence": "Textile production increased due to automated mechanical equipment.",
+        "options": [
+          "due to",
+          "because",
+          "so that"
+        ],
+        "answer": "due to",
+        "explanation": "Use 'due to' before a noun phrase to state the cause of an outcome."
+      },
+      {
+        "sentence": "Tough iron beams were forged to construct strong railway bridges.",
+        "options": [
+          "were forged",
+          "forged",
+          "forging"
+        ],
+        "answer": "were forged",
+        "explanation": "Use past passive 'were forged' when the iron beams receive the action."
+      },
+      {
+        "sentence": "Consequently, industrial cities grew much faster than farming villages.",
+        "options": [
+          "Consequently,",
+          "However,",
+          "Although,"
+        ],
+        "answer": "Consequently,",
+        "explanation": "Use 'Consequently,' as a transitional adverb to signal a logical historical result."
+      }
     ]
   }
 };
+
+export default w79;

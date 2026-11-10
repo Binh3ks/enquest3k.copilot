@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Target Vocabulary & SRS Metadata
- * Week: 131 | Theme: "Genetics & Biotechnology: Modern Agriculture" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.316Z
+ * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.453Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,203 +10,203 @@
 export const vocab = [
   {
     "id": 1,
-    "word": "genetics",
+    "word": "persuasion",
     "pos": "n",
-    "ipa": "/dʒəˈnetɪks/",
-    "definition_en": "The study of heredity and the variation of inherited characteristics",
-    "definition_vi": "di truyền học",
-    "example_en": "Modern crop genetics helps scientists identify climate-resilient plant traits.",
-    "example_vi": "Di truyền học cây trồng hiện đại giúp các nhà khoa học xác định các đặc tính thực vật chống chịu khí hậu."
+    "ipa": "/pərˈsweɪʒən/",
+    "definition_en": "The action or fact of convincing someone to believe or do something",
+    "definition_vi": "sự thuyết phục",
+    "example_en": "Mastering the art of persuasion empowers leaders to inspire meaningful civic action.",
+    "example_vi": "Làm chủ nghệ thuật thuyết phục giúp các nhà lãnh đạo truyền cảm hứng cho những hành động công dân ý nghĩa."
   },
   {
     "id": 2,
-    "word": "biotechnology",
+    "word": "ethos",
     "pos": "n",
-    "ipa": "/ˌbaɪoʊtekˈnɑːlədʒi/",
-    "definition_en": "The exploitation of biological processes for industrial and other purposes",
-    "definition_vi": "công nghệ sinh học",
-    "example_en": "Agricultural biotechnology develops pest-resistant maize without chemical sprays.",
-    "example_vi": "Công nghệ sinh học nông nghiệp phát triển giống ngô kháng sâu bệnh mà không cần phun hóa chất."
+    "ipa": "/ˈiːθɑːs/",
+    "definition_en": "A rhetorical appeal based on the speaker's moral character, credibility, and authority",
+    "definition_vi": "sức thuyết phục từ uy tín / tư cách đạo đức",
+    "example_en": "By citing twenty years of pediatric research, Dr. Lin established strong personal ethos.",
+    "example_vi": "Bằng cách trích dẫn hai mươi năm nghiên cứu nhi khoa, Tiến sĩ Lin đã thiết lập được uy tín cá nhân mạnh mẽ."
   },
   {
     "id": 3,
-    "word": "chromosome",
+    "word": "pathos",
     "pos": "n",
-    "ipa": "/ˈkroʊməsˌoʊm/",
-    "definition_en": "A threadlike structure of nucleic acids carrying genetic information",
-    "definition_vi": "nhiễm sắc thể",
-    "example_en": "Wheat possesses a complex hexaploid chromosome structure that agronomists study.",
-    "example_vi": "Lúa mì sở hữu cấu trúc nhiễm sắc thể lục bội phức tạp mà các nhà nông học nghiên cứu."
+    "ipa": "/ˈpeɪθɑːs/",
+    "definition_en": "A rhetorical appeal that evokes empathy, emotion, and heartfelt feeling in an audience",
+    "definition_vi": "sức thuyết phục từ cảm xúc / sự đồng cảm",
+    "example_en": "The speaker used pathos by sharing a poignant story about an anxious child finding peace.",
+    "example_vi": "Diễn giả đã sử dụng cảm xúc bằng cách chia sẻ một câu chuyện xúc động về một đứa trẻ lo âu tìm lại sự bình yên."
   },
   {
     "id": 4,
-    "word": "genome",
+    "word": "logos",
     "pos": "n",
-    "ipa": "/ˈdʒiːnoʊm/",
-    "definition_en": "The complete set of genes or genetic material present in an organism",
-    "definition_vi": "hệ gen, bộ gen",
-    "example_en": "Sequencing the rice genome revealed natural defenses against fungal blight.",
-    "example_vi": "Việc giải trình tự bộ gen lúa đã hé lộ những cơ chế tự vệ tự nhiên chống lại bệnh đạo ôn."
+    "ipa": "/ˈloʊɡɑːs/",
+    "definition_en": "A rhetorical appeal based on logic, factual evidence, and structured reasoning",
+    "definition_vi": "sức thuyết phục từ tính logic / lập luận chặt chẽ",
+    "example_en": "Rigorous statistical charts provided the logos necessary to convince the school board.",
+    "example_vi": "Các biểu đồ thống kê nghiêm ngặt đã cung cấp tính logic cần thiết để thuyết phục hội đồng nhà trường."
   },
   {
     "id": 5,
-    "word": "agriculture",
+    "word": "appeal",
     "pos": "n",
-    "ipa": "/ˈæɡrɪkʌltʃər/",
-    "definition_en": "The science or practice of farming, including cultivation of the soil",
-    "definition_vi": "nông nghiệp",
-    "example_en": "Sustainable agriculture balances high crop yields with soil fertility preservation.",
-    "example_vi": "Nông nghiệp bền vững cân bằng năng suất cây trồng cao với việc bảo tồn độ phì nhiêu của đất."
+    "ipa": "/əˈpiːl/",
+    "definition_en": "A serious, urgent, or structured rhetorical request used to influence an audience",
+    "definition_vi": "sự lôi cuốn / lời kêu gọi / phương thức thuyết phục",
+    "example_en": "Effective orators combine emotional appeal with verifiable empirical facts.",
+    "example_vi": "Những nhà diễn thuyết hiệu quả kết hợp sức hút cảm xúc với các sự thật thực nghiệm có thể kiểm chứng."
   },
   {
     "id": 6,
-    "word": "cultivate",
-    "pos": "v",
-    "ipa": "/ˈkʌltɪveɪt/",
-    "definition_en": "Prepare and use land for crops or gardening",
-    "definition_vi": "canh tác, gieo trồng",
-    "example_en": "Farmers cultivate drought-tolerant sorghum in arid river valleys.",
-    "example_vi": "Nông dân canh tác lúa miến chịu hạn tại các thung lũng sông khô cằn."
+    "word": "credibility",
+    "pos": "n",
+    "ipa": "/ˌkredəˈbɪləti/",
+    "definition_en": "The quality of being trusted, believable, and academically respected",
+    "definition_vi": "sự đáng tin cậy / uy tín",
+    "example_en": "Fabricating quotes severely undermines a debater's professional credibility.",
+    "example_vi": "Bịa đặt trích dẫn làm suy yếu nghiêm trọng uy tín nghề nghiệp của một tranh biện viên."
   },
   {
     "id": 7,
-    "word": "yield",
-    "pos": "n",
-    "ipa": "/jiːld/",
-    "definition_en": "The full amount of an agricultural or industrial product produced",
-    "definition_vi": "năng suất, sản lượng",
-    "example_en": "Precision irrigation increased the seasonal grain yield by thirty-five percent.",
-    "example_vi": "Tưới tiêu chính xác đã làm tăng sản lượng ngũ cốc theo mùa thêm ba mươi lăm phần trăm."
+    "word": "rhetorical",
+    "pos": "adj",
+    "ipa": "/rɪˈtɔːrɪkəl/",
+    "definition_en": "Relating to the strategic and artistic use of spoken or written discourse",
+    "definition_vi": "thuộc về thuật tu từ / mang tính hùng biện",
+    "example_en": "The speech utilized rhetorical questions to prompt deep audience reflection.",
+    "example_vi": "Bài phát biểu đã sử dụng các câu hỏi tu từ để thúc đẩy khán giả suy ngẫm sâu sắc."
   },
   {
     "id": 8,
-    "word": "mutation",
+    "word": "emotion",
     "pos": "n",
-    "ipa": "/mjuːˈteɪʃən/",
-    "definition_en": "The changing of the structure of a gene resulting in a variant form",
-    "definition_vi": "đột biến (gen)",
-    "example_en": "A natural genetic mutation allowed ancient wild wheat seeds to remain on the stalk.",
-    "example_vi": "Một đột biến gen tự nhiên đã cho phép hạt lúa mì hoang dã cổ đại giữ nguyên trên thân cây."
+    "ipa": "/ɪˈmoʊʃən/",
+    "definition_en": "A natural instinctive state of mind deriving from personal circumstances",
+    "definition_vi": "cảm xúc",
+    "example_en": "Tapping into genuine audience emotion creates an enduring human connection.",
+    "example_vi": "Chạm vào cảm xúc chân thật của khán giả tạo ra một sự kết nối con người lâu dài."
   },
   {
     "id": 9,
-    "word": "hybrid",
-    "pos": "adj",
-    "ipa": "/ˈhaɪbrɪd/",
-    "definition_en": "The offspring of two plants or animals of different species or varieties",
-    "definition_vi": "lai, giống lai",
-    "example_en": "Hybrid corn varieties combine high disease resistance with rapid maturation.",
-    "example_vi": "Các giống ngô lai kết hợp khả năng kháng bệnh cao với thời gian chín nhanh."
+    "word": "logic",
+    "pos": "n",
+    "ipa": "/ˈlɑːdʒɪk/",
+    "definition_en": "Reasoning conducted according to strict principles of validity and truth",
+    "definition_vi": "tính logic / lý lẽ hợp lý",
+    "example_en": "Clear deductive logic ensures that conclusions follow naturally from premises.",
+    "example_vi": "Tính logic suy diễn rõ ràng đảm bảo rằng các kết luận bắt nguồn một cách tự nhiên từ các tiền đề."
   },
   {
     "id": 10,
-    "word": "drought",
-    "pos": "n",
-    "ipa": "/draʊt/",
-    "definition_en": "A prolonged period of abnormally low rainfall leading to water shortage",
-    "definition_vi": "hạn hán",
-    "example_en": "Prolonged summer drought threatened grain production across southern plains.",
-    "example_vi": "Hạn hán mùa hè kéo dài đe dọa sản xuất ngũ cốc trên khắp các vùng đồng bằng phía nam."
+    "word": "convince",
+    "pos": "v",
+    "ipa": "/kənˈvɪns/",
+    "definition_en": "To cause someone to believe firmly in the truth of an assertion",
+    "definition_vi": "thuyết phục ai tin điều gì",
+    "example_en": "Sound arguments supported by peer-reviewed evidence convince skeptical listeners.",
+    "example_vi": "Những lập luận vững chắc được củng cố bằng bằng chứng bình duyệt sẽ thuyết phục những người nghe hoài nghi."
   },
   {
     "id": 11,
-    "word": "pest",
+    "word": "metaphor",
     "pos": "n",
-    "ipa": "/pest/",
-    "definition_en": "A destructive insect or other animal that attacks crops or livestock",
-    "definition_vi": "sâu bệnh, loài gây hại",
-    "example_en": "Integrated biological pest management protects tomato vines without pesticides.",
-    "example_vi": "Quản lý sâu bệnh sinh học tổng hợp bảo vệ các giàn cà chua mà không cần thuốc trừ sâu."
+    "ipa": "/ˈmetəfɔːr/",
+    "definition_en": "A figure of speech in which a word or phrase is applied to an object not literally applicable",
+    "definition_vi": "phép ẩn dụ",
+    "example_en": "Calling a smartphone 'a glowing slot machine in your pocket' is a vivid metaphor.",
+    "example_vi": "Gọi điện thoại thông minh là 'một chiếc máy đánh bạc phát sáng trong túi bạn' là một phép ẩn dụ sinh động."
   },
   {
     "id": 12,
-    "word": "salinity",
+    "word": "orator",
     "pos": "n",
-    "ipa": "/səˈlɪnəti/",
-    "definition_en": "The amount of dissolved salt present in soil or irrigation water",
-    "definition_vi": "độ mặn (của đất/nước)",
-    "example_en": "Rising soil salinity limits where conventional rice cultivars can germinate.",
-    "example_vi": "Độ mặn của đất tăng cao làm hạn chế những nơi mà các giống lúa truyền thống có thể nảy mầm."
+    "ipa": "/ˈɔːrətər/",
+    "definition_en": "A skilled and eloquent public speaker trained in rhetoric",
+    "definition_vi": "nhà diễn thuyết / nhà hùng biện",
+    "example_en": "The young orator modulated his vocal pitch to highlight key moral questions.",
+    "example_vi": "Nhà diễn thuyết trẻ tuổi đã điều biến cao độ giọng nói để làm nổi bật các câu hỏi đạo đức then chốt."
   },
   {
     "id": 13,
-    "word": "trait",
+    "word": "analogy",
     "pos": "n",
-    "ipa": "/treɪt/",
-    "definition_en": "A distinguishing quality or characteristic belonging to a person or plant",
-    "definition_vi": "đặc tính, tính trạng",
-    "example_en": "Deep root architecture is a crucial genetic trait for surviving dry periods.",
-    "example_vi": "Cấu trúc rễ sâu là một tính trạng di truyền quan trọng để sinh tồn qua các giai đoạn khô hạn."
+    "ipa": "/əˈnælədʒi/",
+    "definition_en": "A comparison between two distinct things to clarify or explain an idea",
+    "definition_vi": "sự suy diễn tương tự / phép loại suy",
+    "example_en": "He drew an analogy between digital distraction and junk food consumption.",
+    "example_vi": "Anh ấy đã đưa ra một phép so sánh tương tự giữa sự xao nhãng kỹ thuật số và việc tiêu thụ thức ăn rác."
   },
   {
     "id": 14,
-    "word": "modification",
+    "word": "cadence",
     "pos": "n",
-    "ipa": "/ˌmɑːdɪfɪˈkeɪʃən/",
-    "definition_en": "The action of modifying something, especially the genetic structure",
-    "definition_vi": "sự biến đổi, sửa đổi",
-    "example_en": "Targeted genetic modification enhances provitamin concentrations in cassava roots.",
-    "example_vi": "Sự biến đổi gen có mục tiêu tăng cường nồng độ tiền vitamin trong củ sắn."
+    "ipa": "/ˈkeɪdəns/",
+    "definition_en": "A rhythmic sequence, flow, or modulation of sounds in spoken delivery",
+    "definition_vi": "nhịp điệu câu nói / âm điệu",
+    "example_en": "The rhythmic cadence of the address echoed the cadence of famous historical speeches.",
+    "example_vi": "Âm điệu nhịp nhàng của bài phát biểu lặp lại nhịp điệu của các bài diễn văn lịch sử nổi tiếng."
   },
   {
     "id": 15,
-    "word": "resistant",
-    "pos": "adj",
-    "ipa": "/rɪˈzɪstənt/",
-    "definition_en": "Able to withstand the action or effect of something damaging",
-    "definition_vi": "có khả năng kháng, chống chịu",
-    "example_en": "Agronomists bred a wheat variety highly resistant to stem rust fungus.",
-    "example_vi": "Các nhà nông học đã nhân giống một loại lúa mì có khả năng kháng cao đối với nấm gỉ sắt thân."
+    "word": "eloquence",
+    "pos": "n",
+    "ipa": "/ˈeləkwəns/",
+    "definition_en": "Fluent, graceful, and persuasive speaking or writing",
+    "definition_vi": "sự hùng biện / tài ăn nói lưu loát",
+    "example_en": "Her natural eloquence moved the entire assembly to stand and applaud.",
+    "example_vi": "Tài hùng biện tự nhiên của cô ấy đã khiến toàn thể hội trường đứng dậy vỗ tay."
   },
   {
     "id": 16,
-    "word": "harvest",
+    "word": "passion",
     "pos": "n",
-    "ipa": "/ˈhɑːrvɪst/",
-    "definition_en": "The process or period of gathering in crops",
-    "definition_vi": "vụ thu hoạch, mùa gặt",
-    "example_en": "Farmers celebrated an abundant autumn harvest despite early summer frosts.",
-    "example_vi": "Nông dân đã ăn mừng một vụ thu hoạch mùa thu bội thu bất chấp những đợt sương giá đầu hè."
+    "ipa": "/ˈpæʃən/",
+    "definition_en": "Strong, barely controllable emotion or intense personal conviction",
+    "definition_vi": "niềm đam mê / sự nhiệt huyết",
+    "example_en": "Speaking with authentic passion transforms dry research into an urgent moral call.",
+    "example_vi": "Nói chuyện với niềm đam mê đích thực biến nghiên cứu khô khan thành một lời kêu gọi đạo đức khẩn thiết."
   },
   {
     "id": 17,
-    "word": "fertilizer",
+    "word": "rationale",
     "pos": "n",
-    "ipa": "/ˈfɜːrtəlaɪzər/",
-    "definition_en": "A chemical or natural substance added to soil to increase its fertility",
-    "definition_vi": "phân bón",
-    "example_en": "Organic compost fertilizer enriches soil microbial life without chemical runoff.",
-    "example_vi": "Phân bón hữu cơ làm giàu hệ vi sinh vật trong đất mà không gây rửa trôi hóa chất."
+    "ipa": "/ˌræʃəˈnæl/",
+    "definition_en": "A set of reasons or a logical basis for a course of action or belief",
+    "definition_vi": "lý do căn bản / cơ sở hợp lý",
+    "example_en": "The policy document outlines the scientific rationale behind screen restrictions.",
+    "example_vi": "Tài liệu chính sách phác thảo cơ sở khoa học đằng sau các giới hạn màn hình."
   },
   {
     "id": 18,
-    "word": "biodiversity",
+    "word": "motive",
     "pos": "n",
-    "ipa": "/ˌbaɪoʊdaɪˈvɜːrsəti/",
-    "definition_en": "The variety of plant and animal life in a particular habitat",
-    "definition_vi": "đa dạng sinh học",
-    "example_en": "Maintaining wild seed banks preserves genetic biodiversity for future breeding.",
-    "example_vi": "Duy trì các ngân hàng hạt giống hoang dã bảo tồn đa dạng sinh học di truyền cho việc lai tạo tương lai."
+    "ipa": "/ˈmoʊtɪv/",
+    "definition_en": "A reason for doing something, especially one that is hidden or underlying",
+    "definition_vi": "động cơ / mục đích",
+    "example_en": "Commercial app developers have a financial motive to maximize youth screen time.",
+    "example_vi": "Các nhà phát triển ứng dụng thương mại có động cơ tài chính để tối đa hóa thời gian sử dụng màn hình của giới trẻ."
   },
   {
     "id": 19,
-    "word": "food security",
+    "word": "repetition",
     "pos": "n",
-    "ipa": "/fuːd sɪˈkjʊrəti/",
-    "definition_en": "The state of having reliable access to a sufficient quantity of affordable food",
-    "definition_vi": "an ninh lương thực",
-    "example_en": "Climate-adapted crops are indispensable for sustaining global food security.",
-    "example_vi": "Các loại cây trồng thích ứng với khí hậu là không thể thiếu để duy trì an ninh lương thực toàn cầu."
+    "ipa": "/ˌrepəˈtɪʃən/",
+    "definition_en": "The deliberate repeating of key words or phrases for rhetorical emphasis",
+    "definition_vi": "sự lặp từ / điệp từ điệp ngữ",
+    "example_en": "Deliberate repetition of 'We can choose balance' anchored the keynote theme.",
+    "example_vi": "Việc lặp lại có chủ đích cụm từ 'Chúng ta có thể chọn sự cân bằng' đã khắc sâu chủ đề của bài diễn văn."
   },
   {
     "id": 20,
-    "word": "ethics",
-    "pos": "n",
-    "ipa": "/ˈeθɪks/",
-    "definition_en": "Moral principles governing genetic manipulation and commercial seed patents",
-    "definition_vi": "đạo đức học",
-    "example_en": "Bioethics committees review intellectual property patents on engineered food crops.",
-    "example_vi": "Các ủy ban đạo đức sinh học xem xét các bằng sáng chế sở hữu trí tuệ về cây trồng thực phẩm biến đổi gen."
+    "word": "charismatic",
+    "pos": "adj",
+    "ipa": "/ˌkerɪzˈmætɪk/",
+    "definition_en": "Exercising a compelling personal charm and leadership that inspires others",
+    "definition_vi": "có sức hút lôi cuốn / có uy tín lãnh đạo",
+    "example_en": "The charismatic team captain motivated everyone to practice their speeches daily.",
+    "example_vi": "Đội trưởng lôi cuốn đã thúc đẩy mọi người luyện tập bài phát biểu của mình hàng ngày."
   }
 ];
 export const vocabList = vocab;

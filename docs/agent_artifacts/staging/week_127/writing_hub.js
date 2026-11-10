@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Writing Hub & Picture Story Architecture
- * Week: 127 | Theme: "Global Climate Systems & Renewable Energy" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.311Z
+ * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.447Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,202 +9,202 @@
 
 export const writingHubData = {
   "week": 127,
-  "theme": "Global Climate Systems & Renewable Energy",
+  "theme": "Rebuttal Practice",
   "cefr_level": "B2 First",
   "picture_story": {
-    "title": "Evaluating Global Renewable Energy Systems",
-    "prompt_en": "Look at the four pictures. Write a formal investigative report about Dr. Thorne and Clara Lin assessing renewable grid integration and countering climate skepticism. Write 20 or more words.",
-    "prompt_vi": "Nhìn vào 4 bức tranh. Viết bản báo cáo điều tra về Tiến sĩ Thorne và Clara Lin đánh giá tích hợp lưới điện tái tạo và phản bác hoài nghi khí hậu (từ 20 từ trở lên).",
+    "title": "Constructing an Argumentative Rebuttal Paragraph",
+    "prompt_en": "Look at the four panels. Write a debate rebuttal paragraph dismantling an opposing argument. Use the 'They claim that... but I say...' framework, contrast connectors ('on the contrary', 'however'), and evidence-based reasoning. Write 20 or more words.",
+    "prompt_vi": "Nhìn vào 4 khung tranh. Viết một đoạn văn phản biện tranh biện bác bỏ một luận điểm đối lập. Sử dụng khung 'They claim that... but I say...', từ nối tương phản ('on the contrary', 'however'), và lập luận dựa trên bằng chứng. Viết từ 20 từ trở lên.",
     "min_sentences": 3,
     "min_words": 20,
     "max_words": 90,
-    "model_sentence": "Dr. Marcus Thorne and Clara Lin conducted an audit of the regional renewable electrical grid. First, offshore wind turbine outputs were recorded under varying storm conditions. Next, Clara calculated photovoltaic panel efficiency and verified record output. After counteracting false claims with empirical data, energy ministers formally ratified the national transition accord.",
+    "model_sentence": "They claim that renewable energy is too unreliable to power modern cities, but recent engineering data proves the contrary. While opponents argue that solar output drops at night, advanced battery storage facilities store excess power during peak hours. On the contrary, empirical studies demonstrate that modern renewable grids maintain steady electrical currents, exposing the opposition's premise as false.",
     "word_bank": [
-      "renewable",
-      "climate",
-      "emissions",
-      "turbine",
-      "solar",
-      "grid",
-      "efficiency",
-      "transition",
-      "sustainable",
-      "counter"
+      "disagree",
+      "counter",
+      "point",
+      "false",
+      "true",
+      "rebuttal",
+      "refute",
+      "evidence",
+      "oppose",
+      "validity"
     ],
     "sentence_frames": [
-      "Initially, engineers analyzed power output from offshore wind ___ installations.",
-      "Testing confirmed that modern photovoltaic arrays achieved higher conversion ___ than expected.",
-      "The team presented empirical research to ___ misleading claims about grid instability.",
-      "Ultimately, regional authorities approved the clean energy ___ blueprint."
+      "They say that renewable grids are unstable, but recent ___ proves otherwise.",
+      "While opponents argue that solar power fluctuates, storage ___ solves the issue.",
+      "On the contrary, empirical data exposes their premise as completely ___.",
+      "In the end, our direct rebuttal confirms the ___ of clean energy policies."
     ],
     "panels": [
       {
         "panel_id": "panel_1",
-        "title_en": "Offshore Turbine Inspection",
-        "title_vi": "Kiểm Tra Tua-bin Ngoài Khơi",
+        "title_en": "Panel 1: Acknowledging the Opponent's Claim",
+        "title_vi": "Khung 1: Ghi Nhận Khẳng Định Của Đối Thủ",
         "image_url": "/images/week127/writing_panel_1.png",
-        "image_prompt": "Two marine energy researchers on a boat inspecting massive white offshore wind turbines spinning over blue ocean waves.",
-        "caption": "Engineers measured electrical output from towering offshore wind turbines.",
-        "sentence_frame": "First, the researchers [inspected offshore wind turbines] to measure [ocean power output].",
+        "image_prompt": "A debater taking concise notes while an opposing speaker presents at a tournament podium.",
+        "caption": "Debaters identify the exact claim made by the opposing speaker.",
+        "sentence_frame": "Speakers [carefully note opposing arguments] to [understand the underlying premise].",
         "pills": [
-          "inspected offshore wind turbines",
-          "ocean power output",
-          "Marcus and Clara",
-          "gusty coastal winds"
+          "carefully note opposing arguments",
+          "understand the underlying premise",
+          "identify logical assumptions",
+          "listen actively"
         ],
         "connectors": [
           "First,",
-          "Initially,",
-          "On Monday morning,"
+          "In the opening exchange,",
+          "To begin,"
         ]
       },
       {
         "panel_id": "panel_2",
-        "title_en": "Solar Photovoltaic Testing",
-        "title_vi": "Thử Nghiệm Quang Điện Mặt Trời",
+        "title_en": "Panel 2: Exposing the Flawed Assumption",
+        "title_vi": "Khung 2: Vạch Trần Giả Định Sai Lầm",
         "image_url": "/images/week127/writing_panel_2.png",
-        "image_prompt": "A female scientist adjusting a digital light sensor above rows of dark blue solar panels in a sunny valley.",
-        "caption": "Clara verified that solar arrays achieved a record twenty-four percent efficiency.",
-        "sentence_frame": "Next, Clara verified that [photovoltaic solar arrays] achieved [record conversion efficiency].",
+        "image_prompt": "A magnifying glass examining an outdated statistical chart with red exclamation marks over errors.",
+        "caption": "Rebuttal analysis highlights factual errors and outdated evidence.",
+        "sentence_frame": "The rebuttal [exposes factual errors] in the [opponent's outdated statistical data].",
         "pills": [
-          "photovoltaic solar arrays",
-          "record conversion efficiency",
-          "Clara tested",
-          "peak daylight hours"
+          "exposes factual errors",
+          "opponent's outdated statistical data",
+          "highlights flawed reasoning",
+          "weak foundation"
         ],
         "connectors": [
-          "Next,",
-          "Subsequently,",
-          "Shortly afterwards,"
+          "However,",
+          "Upon closer examination,",
+          "In reality,"
         ]
       },
       {
         "panel_id": "panel_3",
-        "title_en": "Scientific Policy Debate",
-        "title_vi": "Tranh Luận Chính Sách Khoa Học",
+        "title_en": "Panel 3: Delivering Counter-Evidence",
+        "title_vi": "Khung 3: Đưa Ra Bằng Chứng Phản Bác",
         "image_url": "/images/week127/writing_panel_3.png",
-        "image_prompt": "A scientist standing in front of a conference room pointing at emission reduction charts while opposing delegates listen.",
-        "caption": "Clara used empirical data to counter false claims about renewable reliability.",
-        "sentence_frame": "After that, Clara presented [empirical emissions data] to counter [misleading fossil fuel claims].",
+        "image_prompt": "A confident student presenting modern scientific research charts to debate judges.",
+        "caption": "Speakers counter with verifiable empirical research.",
+        "sentence_frame": "Debaters [present recent empirical studies] to [counter the false assertion].",
         "pills": [
-          "empirical emissions data",
-          "misleading fossil fuel claims",
-          "compelling point",
-          "scientific consensus"
+          "present recent empirical studies",
+          "counter the false assertion",
+          "verifiable research data",
+          "peer-reviewed findings"
         ],
         "connectors": [
-          "After that,",
-          "Later,",
-          "During the hearing,"
+          "On the contrary,",
+          "While proponents claim this,",
+          "Evidence reveals that"
         ]
       },
       {
         "panel_id": "panel_4",
-        "title_en": "National Accord Ratification",
-        "title_vi": "Phê Chuẩn Hiệp Định Quốc Gia",
+        "title_en": "Panel 4: Affirming the Stronger Position",
+        "title_vi": "Khung 4: Khẳng Định Lập Trường Vững Chắc Hơn",
         "image_url": "/images/week127/writing_panel_4.png",
-        "image_prompt": "Government officials and scientists signing a green energy transition pact in front of a national seal.",
-        "caption": "Ministers signed the national energy transition pact based on sustainable models.",
-        "sentence_frame": "In the end, government ministers [ratified the national energy accord] to accelerate [the clean energy transition].",
+        "image_prompt": "Debate judges awarding high scores on a scoring tablet following a structured rebuttal.",
+        "caption": "A structured rebuttal confirms the validity of the speaker's case.",
+        "sentence_frame": "A structured rebuttal [dismantles the opposing case] and [reaffirms the validity of our position].",
         "pills": [
-          "ratified the national energy accord",
-          "the clean energy transition",
-          "sustainable future",
-          "smiling delegates"
+          "dismantles the opposing case",
+          "reaffirms the validity of our position",
+          "persuades the adjudicators",
+          "sound conclusion"
         ],
         "connectors": [
-          "In the end,",
-          "Finally,",
-          "Consequently,"
+          "Ultimately,",
+          "Therefore,",
+          "In conclusion,"
         ]
       }
     ],
     "ladder_stages": [
       {
         "badge_label": "MODEL",
-        "title": "Turbine Output Verification",
+        "title": "Stage 1: Stating the Opposing Point",
         "image_url": "/images/week127/writing_panel_1.png",
-        "caption": "Engineers measured electrical output from towering offshore wind turbines.",
-        "frame_L1": "First, the researchers monitored offshore wind turbines. They proved that ocean gales produced steady clean electricity.",
+        "caption": "Debaters identify the exact claim made by the opposing speaker.",
+        "frame_L1": "Opponents claim that clean energy is unreliable. They argue solar power drops on cloudy days.",
         "connectors": [
-          "First,",
-          "Initially,",
-          "To begin,"
+          "They claim that",
+          "Opponents argue that",
+          "First,"
         ],
-        "sentence_hint": "Write 2 sentences describing offshore turbine monitoring.",
+        "sentence_hint": "Write 2 sentences stating the opponent's argument fairly.",
         "ordered_chips": [
-          "Researchers monitored",
-          "offshore wind turbines",
-          "to verify",
-          "steady electrical generation"
+          "They claim that",
+          "renewable energy is unreliable",
+          "because solar output drops",
+          "during cloudy winter weather."
         ],
         "pills": [
-          "offshore turbines",
-          "clean electricity",
-          "Marcus and Clara",
-          "ocean gales"
+          "opponents claim",
+          "renewable energy is unreliable",
+          "solar output drops",
+          "stated fairly"
         ],
-        "sentence_frame": "First, researchers monitored [offshore wind turbines] to confirm [steady electrical generation]."
+        "sentence_frame": "Opponents [claim that clean energy is unreliable] because [weather conditions fluctuate]."
       },
       {
         "badge_label": "BUILD",
-        "title": "Photovoltaic Efficiency",
+        "title": "Stage 2: Introducing the Contrast Marker",
         "image_url": "/images/week127/writing_panel_2.png",
-        "caption": "Clara verified that solar arrays achieved a record twenty-four percent efficiency.",
-        "frame_L1": "Next, Clara tested photovoltaic solar arrays. The panels achieved a remarkable conversion efficiency rate.",
+        "caption": "Rebuttal analysis highlights factual errors and outdated evidence.",
+        "frame_L1": "However, that assumption is false. Modern batteries store excess electrical energy.",
         "connectors": [
-          "Next,",
-          "Subsequently,",
-          "In addition,"
+          "However,",
+          "On the contrary,",
+          "In contrast,"
         ],
-        "sentence_hint": "Write 2 sentences about solar panel efficiency testing.",
+        "sentence_hint": "Write 2 sentences using 'However' or 'On the contrary' to introduce your counter-claim.",
         "pills": [
-          "solar arrays",
-          "conversion efficiency",
-          "Clara tested",
-          "remarkable rate"
+          "assumption is false",
+          "modern batteries store power",
+          "on the contrary",
+          "flawed premise"
         ],
-        "sentence_frame": "Next, Clara tested [photovoltaic solar arrays] that achieved [unprecedented conversion efficiency]."
+        "sentence_frame": "However, that assumption [is proven to be false] by [recent technological breakthroughs]."
       },
       {
         "badge_label": "WRITE",
-        "title": "Debating Skeptics",
+        "title": "Stage 3: Presenting Verified Evidence",
         "image_url": "/images/week127/writing_panel_3.png",
-        "caption": "Clara used empirical data to counter false claims about renewable reliability.",
-        "frame_L1": "After that, Clara addressed the energy conference. She countered false claims with real battery performance charts.",
+        "caption": "Speakers counter with verifiable empirical research.",
+        "frame_L1": "Recent engineering data shows constant power delivery. Modern battery storage prevents grid failures.",
         "connectors": [
-          "After that,",
-          "Later,",
-          "During the session,"
+          "Furthermore,",
+          "Empirical data shows,",
+          "In fact,"
         ],
-        "sentence_hint": "Write 2 sentences describing how data countered misleading claims.",
+        "sentence_hint": "Write 2 sentences citing facts that refute the opponent's claim.",
         "pills": [
-          "energy conference",
-          "countered false claims",
-          "performance charts",
-          "compelling point"
+          "engineering data shows",
+          "constant power delivery",
+          "prevents grid failures",
+          "refutes the claim"
         ],
-        "sentence_frame": "After that, Clara [countered false claims] using [real battery performance data]."
+        "sentence_frame": "Empirical studies [demonstrate that battery storage] ensures [continuous electrical supply]."
       },
       {
         "badge_label": "EXPAND",
-        "title": "National Transition Ratification",
+        "title": "Stage 4: Synthesizing the Rebuttal Outcome",
         "image_url": "/images/week127/writing_panel_4.png",
-        "caption": "Ministers signed the national energy transition pact based on sustainable models.",
-        "frame_L1": "In the end, policymakers signed the clean energy treaty. They committed to expanding the smart grid nationwide.",
+        "caption": "A structured rebuttal confirms the validity of the speaker's case.",
+        "frame_L1": "Therefore, our position is factually true. Direct rebuttals win debates by exposing weak evidence.",
         "connectors": [
-          "In the end,",
-          "Finally,",
-          "As a result,"
+          "Ultimately,",
+          "Therefore,",
+          "In conclusion,"
         ],
-        "sentence_hint": "Write 2 sentences about signing the national transition treaty.",
+        "sentence_hint": "Write 2 sentences concluding why your side has the stronger argument.",
         "pills": [
-          "signed clean energy treaty",
-          "policymakers",
-          "smart grid expansion",
-          "sustainable future"
+          "factually true position",
+          "direct rebuttal wins",
+          "exposes weak evidence",
+          "stronger argument"
         ],
-        "sentence_frame": "In the end, policymakers signed [the clean energy treaty] to expand [the national smart grid]."
+        "sentence_frame": "Therefore, our evidence [confirms that clean energy is dependable] and [disproves the opposing claim]."
       }
     ]
   }

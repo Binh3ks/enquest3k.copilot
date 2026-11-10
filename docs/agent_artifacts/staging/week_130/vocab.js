@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Target Vocabulary & SRS Metadata
- * Week: 130 | Theme: "Deep Ocean Exploration & Abyssal Organisms" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.315Z
+ * Week: 130 | Theme: "Opinion Project 3: Comparing Global Approaches" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.452Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,203 +10,204 @@
 export const vocab = [
   {
     "id": 1,
-    "word": "abyssal",
+    "word": "comparative",
     "pos": "adj",
-    "ipa": "/əˈbɪsəl/",
-    "definition_en": "Relating to the depths of the ocean, especially between 3,000 and 6,000 meters down",
-    "definition_vi": "thuộc vùng biển thẳm, vực thẳm đại dương",
-    "example_en": "Abyssal plains remain in perpetual freezing darkness under immense water pressure.",
-    "example_vi": "Các đồng bằng đáy biển thẳm chìm trong bóng tối lạnh giá vĩnh cửu dưới áp lực nước khổng lồ."
+    "ipa": "/kəmˈpærətɪv/",
+    "definition_en": "Involving the systematic examination of two or more items or legal systems",
+    "definition_vi": "so sánh / đối chiếu",
+    "example_en": "A comparative analysis reveals profound differences between European and American statutes.",
+    "example_vi": "Một phân tích so sánh chỉ ra những khác biệt sâu sắc giữa các đạo luật của Châu Âu và Hoa Kỳ."
   },
   {
     "id": 2,
-    "word": "trench",
+    "word": "legislation",
     "pos": "n",
-    "ipa": "/trentʃ/",
-    "definition_en": "A long, narrow, deep depression in an ocean bed",
-    "definition_vi": "rãnh đại dương",
-    "example_en": "The Mariana Trench plunges nearly eleven kilometers below the sea surface.",
-    "example_vi": "Rãnh Mariana đâm sâu gần mười một ki-lô-mét bên dưới mặt biển."
+    "ipa": "/ˌledʒɪsˈleɪʃən/",
+    "definition_en": "Laws or statutes enacted by a parliament or legislative body",
+    "definition_vi": "luật pháp / các đạo luật ban hành",
+    "example_en": "The parliament passed comprehensive legislation to regulate digital device usage in schools.",
+    "example_vi": "Quốc hội đã thông qua một đạo luật toàn diện nhằm quy định việc sử dụng thiết bị kỹ thuật số trong trường học."
   },
   {
     "id": 3,
-    "word": "submersible",
+    "word": "ban",
+    "n": "n",
     "pos": "n",
-    "ipa": "/səbˈmɜːrsəbəl/",
-    "definition_en": "A small watercraft designed to operate underwater, especially at great depth",
-    "definition_vi": "tàu lặn, tàu ngầm thám hiểm",
-    "example_en": "The titanium research submersible descended smoothly into the midnight zone.",
-    "example_vi": "Tàu lặn thám hiểm bằng ti-tan lặn êm ái xuống vùng biển nửa đêm tối đen."
+    "ipa": "/bæn/",
+    "definition_en": "An official or legal prohibition against a particular activity or device",
+    "definition_vi": "lệnh cấm chính thức",
+    "example_en": "The national ban applies to all public elementary and middle school campuses.",
+    "example_vi": "Lệnh cấm toàn quốc áp dụng cho tất cả các khuôn viên trường tiểu học và trung học cơ sở công lập."
   },
   {
     "id": 4,
-    "word": "bioluminescence",
+    "word": "jurisdiction",
     "pos": "n",
-    "ipa": "/ˌbaɪoʊˌluːmɪˈnesəns/",
-    "definition_en": "The biochemical emission of light by living organisms",
-    "definition_vi": "sự phát quang sinh học",
-    "example_en": "Deep-sea anglerfish use blue bioluminescence to lure prey in the dark.",
-    "example_vi": "Cá vây chân biển sâu sử dụng sự phát quang sinh học màu xanh lam để nhử con mồi trong bóng tối."
+    "ipa": "/ˌdʒʊrɪsˈdɪkʃən/",
+    "definition_en": "The official authority to make legal decisions, enforce statutes, or govern",
+    "definition_vi": "quyền hạn tài phán / thẩm quyền pháp lý",
+    "example_en": "State legislators have jurisdiction over public school curriculum and disciplinary policies.",
+    "example_vi": "Các nhà lập pháp tiểu bang có thẩm quyền pháp lý đối với chương trình giảng dạy và chính sách kỷ luật của trường công."
   },
   {
     "id": 5,
-    "word": "hydrothermal",
-    "pos": "adj",
-    "ipa": "/ˌhaɪdroʊˈθɜːrməl/",
-    "definition_en": "Relating to the action of heated water within the earth's crust",
-    "definition_vi": "nhiệt dịch, thủy nhiệt",
-    "example_en": "Hydrothermal vents spew mineral-rich boiling black fluid into freezing water.",
-    "example_vi": "Các miệng phun nhiệt dịch phun chất lỏng đen sôi giàu khoáng chất vào làn nước lạnh giá."
+    "word": "enforcement",
+    "pos": "n",
+    "ipa": "/ɪnˈfɔːrsmənt/",
+    "definition_en": "The act of compelling observance of or compliance with a law or rule",
+    "definition_vi": "sự thực thi pháp luật / sự bắt buộc tuân thủ",
+    "example_en": "Consistent enforcement ensures that students power off their devices before entering class.",
+    "example_vi": "Sự thực thi nhất quán đảm bảo rằng học sinh tắt nguồn thiết bị trước khi vào lớp học."
   },
   {
     "id": 6,
-    "word": "pressure",
+    "word": "policy",
     "pos": "n",
-    "ipa": "/ˈpreʃər/",
-    "definition_en": "Continuous physical force exerted on an object by something in contact with it",
-    "definition_vi": "áp suất, áp lực",
-    "example_en": "Atmospheric pressure increases by one atmosphere every ten meters of depth.",
-    "example_vi": "Áp suất khí quyển tăng thêm một atmosphere sau mỗi mười mét độ sâu."
+    "ipa": "/ˈpɑːləsi/",
+    "definition_en": "A course or principle of action adopted by a government or educational board",
+    "definition_vi": "chính sách / chủ trương",
+    "example_en": "The district policy balances technological literacy with classroom academic focus.",
+    "example_vi": "Chính sách của học khu cân bằng giữa việc hiểu biết công nghệ với sự tập trung học tập trong lớp."
   },
   {
     "id": 7,
-    "word": "benthic",
-    "pos": "adj",
-    "ipa": "/ˈbenθɪk/",
-    "definition_en": "Relating to or occurring at the bottom of a body of water",
-    "definition_vi": "thuộc tầng đáy, sinh vật đáy",
-    "example_en": "Benthic sea cucumbers sift through organic sediment on the ocean floor.",
-    "example_vi": "Hải sâm tầng đáy sàng lọc cặn hữu cơ trên đáy đại dương."
+    "word": "compliance",
+    "pos": "n",
+    "ipa": "/kəmˈplaɪəns/",
+    "definition_en": "The state or act of conforming to rules, laws, or institutional standards",
+    "definition_vi": "sự tuân thủ",
+    "example_en": "High student compliance was achieved after administrators clearly explained the rationale.",
+    "example_vi": "Tỷ lệ tuân thủ cao của học sinh đã đạt được sau khi ban giám hiệu giải thích rõ ràng lý do."
   },
   {
     "id": 8,
-    "word": "ecosystem",
-    "pos": "n",
-    "ipa": "/ˈiːkoʊsɪstəm/",
-    "definition_en": "A biological community of interacting organisms and their physical environment",
-    "definition_vi": "hệ sinh thái",
-    "example_en": "Hydrothermal ecosystems thrive without needing any direct solar energy.",
-    "example_vi": "Hệ sinh thái nhiệt dịch phát triển mạnh mẽ mà không cần bất kỳ năng lượng mặt trời trực tiếp nào."
+    "word": "regulate",
+    "pos": "v",
+    "ipa": "/ˈreɡjəleɪt/",
+    "definition_en": "To control or maintain the operation of a process by authoritative rules",
+    "definition_vi": "điều chỉnh / quy định",
+    "example_en": "Statutes regulate how social media corporations handle minor personal data.",
+    "example_vi": "Các đạo luật quy định cách thức các tập đoàn mạng xã hội xử lý dữ liệu cá nhân của trẻ vị thành niên."
   },
   {
     "id": 9,
-    "word": "crustacean",
+    "word": "statute",
     "pos": "n",
-    "ipa": "/krʌˈsteɪʃən/",
-    "definition_en": "An arthropod of the large group including crabs, lobsters, and shrimp",
-    "definition_vi": "loài giáp xác",
-    "example_en": "Ghostly white crustaceans crawl over sulfur deposits near deep volcanic vents.",
-    "example_vi": "Những loài giáp xác trắng bệch bò qua các lớp trầm tích lưu huỳnh gần các miệng phun núi lửa sâu."
+    "ipa": "/ˈstætʃuːt/",
+    "definition_en": "A formal written enactment passed by a legislative authority",
+    "definition_vi": "đạo luật / quy chế",
+    "example_en": "The state statute requires schools to restrict mobile access during instructional hours.",
+    "example_vi": "Đạo luật tiểu bang yêu cầu các trường học hạn chế truy cập di động trong giờ giảng dạy."
   },
   {
     "id": 10,
-    "word": "adaptation",
+    "word": "framework",
     "pos": "n",
-    "ipa": "/ˌædæpˈteɪʃən/",
-    "definition_en": "A change by which an organism becomes better suited to its environment",
-    "definition_vi": "sự thích nghi",
-    "example_en": "Extreme pressure adaptation allows trench fish to survive without crush damage.",
-    "example_vi": "Sự thích nghi với áp lực cực hạn cho phép cá dưới rãnh biển sống sót mà không bị tổn hại do đè bẹp."
+    "ipa": "/ˈfreɪmwɜːrk/",
+    "definition_en": "An essential supporting structure or established system of rules",
+    "definition_vi": "khuôn khổ pháp lý / cơ cấu",
+    "example_en": "A legal framework provides clear boundaries for both teachers and parents.",
+    "example_vi": "Một khuôn khổ pháp lý cung cấp các ranh giới rõ ràng cho cả giáo viên và phụ huynh."
   },
   {
     "id": 11,
-    "word": "specimen",
+    "word": "approach",
     "pos": "n",
-    "ipa": "/ˈspesəmən/",
-    "definition_en": "An individual animal or plant used as an example of its species for scientific study",
-    "definition_vi": "mẫu vật",
-    "example_en": "The marine biologist preserved a delicate abyssal jellyfish specimen in formalin.",
-    "example_vi": "Nhà sinh vật biển đã bảo quản một mẫu vật sứa biển thẳm mỏng manh trong foóc-môn."
+    "ipa": "/əˈproʊtʃ/",
+    "definition_en": "A distinctive way of addressing or dealing with a societal challenge",
+    "definition_vi": "cách tiếp cận / phương pháp giải quyết",
+    "example_en": "Florida adopted a targeted statutory approach focusing on social media algorithms.",
+    "example_vi": "Florida đã áp dụng một cách tiếp cận luật pháp có mục tiêu tập trung vào các thuật toán mạng xã hội."
   },
   {
     "id": 12,
-    "word": "probe",
+    "word": "restriction",
     "pos": "n",
-    "ipa": "/proʊb/",
-    "definition_en": "An unmanned exploratory spacecraft or robotic underwater device",
-    "definition_vi": "đầu dò, thiết bị thăm dò",
-    "example_en": "The autonomous ocean probe measured salinity and temperature at ten thousand meters.",
-    "example_vi": "Đầu dò đại dương tự hành đã đo độ mặn và nhiệt độ ở độ sâu mười ngàn mét."
+    "ipa": "/rɪˈstrɪkʃən/",
+    "definition_en": "A limiting condition or statutory rule placed upon access or behavior",
+    "definition_vi": "sự hạn chế / giới hạn",
+    "example_en": "The device restriction applies to hallways, dining halls, and sports fields during the school day.",
+    "example_vi": "Sự hạn chế thiết bị áp dụng cho hành lang, phòng ăn và sân thể thao trong suốt ngày học."
   },
   {
     "id": 13,
-    "word": "oceanography",
+    "word": "exemption",
     "pos": "n",
-    "ipa": "/ˌoʊʃəˈnɑːɡrəfi/",
-    "definition_en": "The branch of science that deals with the physical and biological properties of the sea",
-    "definition_vi": "hải dương học",
-    "example_en": "Modern oceanography uses satellite telemetry and autonomous robotic gliders.",
-    "example_vi": "Hải dương học hiện đại sử dụng phép đo từ xa bằng vệ tinh và tàu lượn robot tự hành."
+    "ipa": "/ɪɡˈzempʃən/",
+    "definition_en": "Freedom from an obligation or restriction imposed on other persons",
+    "definition_vi": "sự miễn trừ",
+    "example_en": "Medical monitoring devices and disability accommodations receive an official exemption.",
+    "example_vi": "Các thiết bị theo dõi y tế và hỗ trợ khuyết tật nhận được sự miễn trừ chính thức."
   },
   {
     "id": 14,
-    "word": "marine",
-    "pos": "adj",
-    "ipa": "/məˈriːn/",
-    "definition_en": "Of, found in, or produced by the sea",
-    "definition_vi": "thuộc biển, hàng hải",
-    "example_en": "Marine reserves safeguard vulnerable coral and sponge colonies from trawling.",
-    "example_vi": "Các khu bảo tồn biển bảo vệ các rạn san hô và bọt biển dễ bị tổn thương khỏi việc đánh bắt bằng lưới kéo."
+    "word": "directive",
+    "pos": "n",
+    "ipa": "/dəˈrektɪv/",
+    "definition_en": "An official or authoritative instruction guiding institutional compliance",
+    "definition_vi": "chỉ thị / chỉ dẫn chính thức",
+    "example_en": "The ministry of education issued an administrative directive regarding phone storage lockers.",
+    "example_vi": "Bộ giáo dục đã ban hành một chỉ thị hành chính liên quan đến các tủ khóa lưu trữ điện thoại."
   },
   {
     "id": 15,
-    "word": "depth",
+    "word": "penalty",
     "pos": "n",
-    "ipa": "/depθ/",
-    "definition_en": "The distance from the top or surface to the bottom of something",
-    "definition_vi": "độ sâu",
-    "example_en": "At a depth of eight thousand meters, water temperature hovers near freezing.",
-    "example_vi": "Ở độ sâu tám ngàn mét, nhiệt độ nước dao động gần mức đóng băng."
+    "ipa": "/ˈpenəlti/",
+    "definition_en": "A punishment or consequence imposed for breaking a law, rule, or contract",
+    "definition_vi": "hình phạt / chế tài",
+    "example_en": "Repeated violations result in an escalating administrative penalty including phone confiscation.",
+    "example_vi": "Các vi phạm lặp lại dẫn đến một chế tài hành chính tăng dần bao gồm việc tạm giữ điện thoại."
   },
   {
     "id": 16,
-    "word": "salinity",
-    "pos": "n",
-    "ipa": "/səˈlɪnəti/",
-    "definition_en": "The concentration of dissolved salts in water",
-    "definition_vi": "độ mặn",
-    "example_en": "Changes in abyssal water salinity drive global thermohaline ocean conveyor currents.",
-    "example_vi": "Những thay đổi về độ mặn của nước biển thẳm thúc đẩy các dòng hải lưu nhiệt muối toàn cầu."
+    "word": "adopt",
+    "pos": "v",
+    "ipa": "/əˈdɑːpt/",
+    "definition_en": "To formally choose, approve, or put into effect a policy or statute",
+    "definition_vi": "thông qua / áp dụng",
+    "example_en": "Several European countries decided to adopt the French model of classroom device prohibition.",
+    "example_vi": "Một số quốc gia Châu Âu đã quyết định thông qua mô hình cấm thiết bị trong lớp học của Pháp."
   },
   {
     "id": 17,
-    "word": "vent",
-    "pos": "n",
-    "ipa": "/vent/",
-    "definition_en": "An opening that allows air, gas, or liquid to pass out or into a confined space",
-    "definition_vi": "miệng phun, lỗ thông",
-    "example_en": "Mineral plumes rising from the seafloor vent nourish chemosynthetic bacteria.",
-    "example_vi": "Các cột khói khoáng bốc lên từ miệng phun đáy biển nuôi dưỡng vi khuẩn hóa tổng hợp."
+    "word": "implement",
+    "pos": "v",
+    "ipa": "/ˈɪmpləment/",
+    "definition_en": "To put a decision, plan, or statutory requirement into practical effect",
+    "definition_vi": "triển khai / thực hiện",
+    "example_en": "School principals must implement secure storage solutions before the academic term begins.",
+    "example_vi": "Các hiệu trưởng nhà trường phải triển khai các giải pháp lưu trữ an toàn trước khi học kỳ bắt đầu."
   },
   {
     "id": 18,
-    "word": "organism",
+    "word": "measure",
     "pos": "n",
-    "ipa": "/ˈɔːrɡənɪzəm/",
-    "definition_en": "An individual animal, plant, or single-celled life form",
-    "definition_vi": "sinh vật",
-    "example_en": "Every abyssal organism has evolved specialized enzymes to withstand high pressure.",
-    "example_vi": "Mỗi sinh vật vùng biển thẳm đều tiến hóa các enzym chuyên biệt để chống chọi với áp lực cao."
+    "ipa": "/ˈmeʒər/",
+    "definition_en": "A legislative enactment, statutory provision, or official course of action",
+    "definition_vi": "biện pháp pháp lý / giải pháp",
+    "example_en": "Lawmakers enacted this regulatory measure to protect youth from online exploitation.",
+    "example_vi": "Các nhà lập pháp đã ban hành biện pháp điều chỉnh này nhằm bảo vệ thanh thiếu niên khỏi sự bóc lột trực tuyến."
   },
   {
     "id": 19,
-    "word": "expedition",
+    "word": "precedent",
     "pos": "n",
-    "ipa": "/ˌekspəˈdɪʃən/",
-    "definition_en": "A journey undertaken by a group of people with a particular scientific purpose",
-    "definition_vi": "chuyến thám hiểm",
-    "example_en": "The deep-sea scientific expedition spent six weeks surveying the Kermadec Trench.",
-    "example_vi": "Chuyến thám hiểm khoa học biển sâu đã dành sáu tuần khảo sát rãnh Kermadec."
+    "ipa": "/ˈpresɪdənt/",
+    "definition_en": "An earlier event, decision, or court ruling regarded as an exemplar guide",
+    "definition_vi": "tiền lệ pháp lý",
+    "example_en": "The landmark Supreme Court ruling established an enduring precedent for student privacy rights.",
+    "example_vi": "Phán quyết mang tính bước ngoặt của Tòa án Tối cao đã thiết lập một tiền lệ lâu dài cho quyền riêng tư của học sinh."
   },
   {
     "id": 20,
-    "word": "discovery",
+    "word": "governance",
     "pos": "n",
-    "ipa": "/dɪˈskʌvəri/",
-    "definition_en": "The act or process of finding something for the first time",
-    "definition_vi": "sự khám phá, phát hiện",
-    "example_en": "The discovery of giant hydrothermal tubeworms revolutionized evolutionary biology.",
-    "example_vi": "Phát hiện về loài sâu ống nhiệt dịch khổng lồ đã cách mạng hóa sinh học tiến hóa."
+    "ipa": "/ˈɡʌvərnəns/",
+    "definition_en": "The action, manner, or system of governing an institution or society",
+    "definition_vi": "sự quản trị / sự điều hành",
+    "example_en": "Effective digital governance balances individual technological freedom with collective public welfare.",
+    "example_vi": "Quản trị kỹ thuật số hiệu quả cân bằng giữa tự do công nghệ cá nhân với phúc lợi công cộng tập thể."
   }
 ];
 export const vocabList = vocab;

@@ -1,12 +1,12 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-09T08:30:07.703Z",
+  "generated_at": "2026-11-10T03:12:16.360Z",
   "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
   "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
   "week_number": 79,
-  "theme": "Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate",
+  "theme": "The Industrial Revolution",
   "cefr_level": "B1 Preliminary",
-  "grammar_focus": "Rebuttal Connectors ('Yes, but...'), Passive Voice & Comparative Structures",
+  "grammar_focus": "Historical cause and effect connectors ('as a result of', 'due to', 'consequently') and past passive voice ('steam engines were manufactured in factories').",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_79/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
@@ -39,7 +39,8 @@
     "GATE_7_VIETNAMESE_LEAK_ZERO",
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
-    "GATE_10_SKELETON_DIFFERENTIATION"
+    "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY"
   ],
   "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
 }

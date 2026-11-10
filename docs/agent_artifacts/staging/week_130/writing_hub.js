@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Writing Hub & Picture Story Architecture
- * Week: 130 | Theme: "Deep Ocean Exploration & Abyssal Organisms" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.315Z
+ * Week: 130 | Theme: "Opinion Project 3: Comparing Global Approaches" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.452Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,112 +9,112 @@
 
 export const writingHubData = {
   "week": 130,
-  "theme": "Deep Ocean Exploration & Abyssal Organisms",
+  "theme": "Opinion Project 3: Comparing Global Approaches",
   "cefr_level": "B2 First",
   "picture_story": {
-    "title": "Exploring the Hadal Ocean Abyss",
-    "prompt_en": "Look at the four pictures. Write a formal investigative report about Dr. Sylvia Brooks and Liam Ross exploring hadal trenches in a titanium submersible. Write 20 or more words.",
-    "prompt_vi": "Nhìn vào 4 bức tranh. Viết bản báo cáo điều tra về Tiến sĩ Sylvia Brooks và Liam Ross thám hiểm các rãnh biển sâu trong tàu lặn ti-tan (từ 20 từ trở lên).",
+    "title": "Comparative Analysis of International Device Legislation",
+    "prompt_en": "Look at the four panels. Write a comparative essay paragraph synthesizing French and American statutory approaches to student mobile devices. Use comparative connectors ('in contrast to', 'whereas', 'on the other hand') and legal terminology. Write 20 or more words.",
+    "prompt_vi": "Nhìn vào 4 khung tranh. Viết một đoạn văn bài luận so sánh tổng hợp các cách tiếp cận luật pháp của Pháp và Hoa Kỳ đối với thiết bị di động của học sinh. Sử dụng từ nối so sánh ('in contrast to', 'whereas', 'on the other hand') và thuật ngữ pháp lý. Viết từ 20 từ trở lên.",
     "min_sentences": 3,
     "min_words": 20,
     "max_words": 90,
-    "model_sentence": "Dr. Sylvia Brooks and Liam Ross conducted a deep scientific dive into the hadal ocean trench. First, the titanium submersible descended into freezing darkness past eight thousand meters. Next, external floodlights illuminated hydrothermal chimneys covered with chemosynthetic tubeworms. After robotic claws safely collected delicate benthic specimens, the team published twelve new marine species discoveries.",
+    "model_sentence": "In contrast to France's centralized legislation, which completely bans personal smartphones on school campuses, Florida adopted a targeted statutory framework. French policymakers enacted an absolute prohibition to eliminate cyberbullying and restore academic concentration. Whereas Florida's legislation specifically restricts access to algorithmic social media networks during instructional hours, both jurisdictions provide clear medical exemptions to safeguard student health.",
     "word_bank": [
-      "abyssal",
-      "trench",
-      "submersible",
-      "bioluminescence",
-      "hydrothermal",
-      "pressure",
-      "benthic",
-      "specimen",
-      "organism",
-      "expedition"
+      "comparative",
+      "legislation",
+      "ban",
+      "jurisdiction",
+      "enforcement",
+      "policy",
+      "compliance",
+      "statute",
+      "restriction",
+      "exemption"
     ],
     "sentence_frames": [
-      "Initially, the specialized titanium ___ was deployed from the oceanographic vessel.",
-      "Pressure monitors indicated that external hydrostatic ___ exceeded one thousand atmospheres.",
-      "Robotic claws carefully gathered delicate ___ living near the hydrothermal vent.",
-      "Ultimately, the research expedition announced the groundbreaking ___ of new marine life."
+      "In contrast to France's nationwide ban, Florida adopted a targeted ___ framework.",
+      "French policymakers enacted strict ___ to eliminate classroom distractions.",
+      "Whereas France prohibits all devices, Florida restricts access to social ___ apps.",
+      "Ultimately, both legal models grant statutory ___ for verified medical needs."
     ],
     "panels": [
       {
         "panel_id": "panel_1",
-        "title_en": "Submersible Deployment",
-        "title_vi": "Triển Khai Tàu Lặn",
+        "title_en": "Panel 1: The French Centralized Prohibition",
+        "title_vi": "Khung 1: Lệnh Cấm Tập Trung Của Pháp",
         "image_url": "/images/week130/writing_panel_1.png",
-        "image_prompt": "A heavy marine research crane lowering a spherical yellow titanium submersible into dark ocean water.",
-        "caption": "A research crane deployed the titanium submersible into the ocean.",
-        "sentence_frame": "First, the research crane [deployed the yellow titanium submersible] into the [choppy ocean waters].",
+        "image_prompt": "French middle school students placing their mobile phones into numbered secure wooden lockers in the school foyer.",
+        "caption": "France enacted a nationwide statute prohibiting devices across all school grounds.",
+        "sentence_frame": "French legislation [imposes an absolute nationwide ban] on [personal mobile devices in schools].",
         "pills": [
-          "deployed the yellow titanium submersible",
-          "choppy ocean waters",
-          "Dr. Brooks and Liam",
-          "hadal expedition began"
+          "imposes an absolute nationwide ban",
+          "personal mobile devices in schools",
+          "centralized statutory code",
+          "prohibits playground usage"
         ],
         "connectors": [
           "First,",
-          "Initially,",
-          "At the start of the dive,"
+          "Under French law,",
+          "In the French model,"
         ]
       },
       {
         "panel_id": "panel_2",
-        "title_en": "Midnight Zone Descent",
-        "title_vi": "Hành Trình Lặn Vùng Biển Nửa Đêm",
+        "title_en": "Panel 2: Florida's Social Media Statute",
+        "title_vi": "Khung 2: Đạo Luật Mạng Xã Hội Của Florida",
         "image_url": "/images/week130/writing_panel_2.png",
-        "image_prompt": "Scientists looking through thick quartz viewports inside the submersible as glowing blue bioluminescent jellyfish pass.",
-        "caption": "Bioluminescent jellyfish drifted past the submersible viewport.",
-        "sentence_frame": "Next, glowing [bioluminescent marine organisms] drifted past [the thick quartz viewports].",
+        "image_prompt": "A state legislative chamber with voting boards displaying bill titles on youth digital platform access.",
+        "caption": "Florida's statute specifically restricts minor social media platform accounts.",
+        "sentence_frame": "Florida lawmakers [passed targeted legislation] that [restricts minor social media access].",
         "pills": [
-          "bioluminescent marine organisms",
-          "the thick quartz viewports",
-          "midnight zone",
-          "freezing darkness"
+          "passed targeted legislation",
+          "restricts minor social media access",
+          "algorithmic platform safeguards",
+          "district-level enforcement"
         ],
         "connectors": [
-          "Next,",
-          "Subsequently,",
-          "As depth increased,"
+          "In contrast,",
+          "Whereas Florida,",
+          "On the other hand,"
         ]
       },
       {
         "panel_id": "panel_3",
-        "title_en": "Hydrothermal Vent Discovery",
-        "title_vi": "Phát Hiện Miệng Phun Thủy Nhiệt",
+        "title_en": "Panel 3: Statutory Exemptions for Medical Needs",
+        "title_vi": "Khung 3: Các Miễn Trừ Pháp Lý Cho Nhu Cầu Y Tế",
         "image_url": "/images/week130/writing_panel_3.png",
-        "image_prompt": "Bright submersible spotlights illuminating towering black mineral hydrothermal vents surrounded by white tubeworms.",
-        "caption": "Powerful spotlights revealed towering black hydrothermal chimneys.",
-        "sentence_frame": "After that, powerful floodlights [illuminated towering hydrothermal vents] surrounded by [dense tubeworm colonies].",
+        "image_prompt": "A school nurse reviewing a student's continuous glucose monitoring smartphone app with medical permission forms.",
+        "caption": "Statutes provide legal exemptions for students requiring continuous medical monitoring.",
+        "sentence_frame": "Both jurisdictions [grant official statutory exemptions] for [students with documented medical needs].",
         "pills": [
-          "illuminated towering hydrothermal vents",
-          "dense tubeworm colonies",
-          "superheated mineral fluid",
-          "chemosynthetic ecosystem"
+          "grant official statutory exemptions",
+          "students with documented medical needs",
+          "glucose monitoring devices",
+          "essential health protections"
         ],
         "connectors": [
-          "After that,",
-          "Later,",
-          "Upon reaching the trench floor,"
+          "Importantly,",
+          "In both jurisdictions,",
+          "Furthermore,"
         ]
       },
       {
         "panel_id": "panel_4",
-        "title_en": "Specimen Sampling and Return",
-        "title_vi": "Lấy Mẫu Sinh Học và Trở Về",
+        "title_en": "Panel 4: Comparative Governance Insights",
+        "title_vi": "Khung 4: Những Góc Nhìn Quản Trị So Sánh",
         "image_url": "/images/week130/writing_panel_4.png",
-        "image_prompt": "A robotic hydraulic arm gently placing a white crustacean into an insulated specimen bio-box on the seabed.",
-        "caption": "The robotic arm collected benthic specimens for laboratory analysis.",
-        "sentence_frame": "In the end, robotic arms [collected rare benthic specimens] for [international scientific publication].",
+        "image_prompt": "A global comparative law seminar with international flags and presentation screens showing youth policy metrics.",
+        "caption": "Comparing legal cultures illuminates diverse paths to digital governance.",
+        "sentence_frame": "Comparative legal analysis [reveals how diverse cultures] address [shared modern technological challenges].",
         "pills": [
-          "collected rare benthic specimens",
-          "international scientific publication",
-          "specimen bio-box",
-          "groundbreaking discoveries"
+          "reveals how diverse cultures",
+          "shared modern technological challenges",
+          "balances freedom and safety",
+          "effective public governance"
         ],
         "connectors": [
-          "In the end,",
-          "Finally,",
+          "In conclusion,",
+          "Ultimately,",
           "Consequently,"
         ]
       }
@@ -122,89 +122,89 @@ export const writingHubData = {
     "ladder_stages": [
       {
         "badge_label": "MODEL",
-        "title": "Submersible Deployment",
+        "title": "Stage 1: Describing the French Model",
         "image_url": "/images/week130/writing_panel_1.png",
-        "caption": "A research crane deployed the titanium submersible into the ocean.",
-        "frame_L1": "First, the support ship launched the titanium submersible. The crew checked air pressure before descending.",
+        "caption": "France enacted a nationwide statute prohibiting devices across all school grounds.",
+        "frame_L1": "France has a nationwide law. It bans all mobile phones in elementary and middle schools.",
         "connectors": [
           "First,",
-          "Initially,",
-          "To begin,"
+          "Under French law,",
+          "In France,"
         ],
-        "sentence_hint": "Write 2 sentences describing the submersible deployment into the sea.",
+        "sentence_hint": "Write 2 sentences describing France's absolute device ban.",
         "ordered_chips": [
-          "The research ship launched",
-          "the titanium submersible",
-          "into the deep ocean",
-          "for scientific exploration"
+          "French national legislation",
+          "completely bans mobile phones",
+          "across all school grounds",
+          "during instructional hours."
         ],
         "pills": [
-          "titanium submersible",
-          "support ship",
-          "checked pressure",
-          "deep descent"
+          "French national legislation",
+          "completely bans mobile phones",
+          "across school grounds",
+          "instructional hours"
         ],
-        "sentence_frame": "First, the research ship [launched the titanium submersible] into the [deep hadal trench]."
+        "sentence_frame": "French legislation [imposes an absolute nationwide ban] on [personal mobile devices in schools]."
       },
       {
         "badge_label": "BUILD",
-        "title": "Bioluminescent Encounters",
+        "title": "Stage 2: Introducing the Florida Approach",
         "image_url": "/images/week130/writing_panel_2.png",
-        "caption": "Bioluminescent jellyfish drifted past the submersible viewport.",
-        "frame_L1": "Next, the vessel passed through the midnight zone. Bioluminescent creatures flashed blue light in the pitch-black water.",
+        "caption": "Florida's statute specifically restricts minor social media platform accounts.",
+        "frame_L1": "In contrast, Florida passed a different law. It restricts youth access to social media apps during class.",
         "connectors": [
-          "Next,",
-          "Subsequently,",
-          "In addition,"
+          "In contrast,",
+          "Whereas Florida,",
+          "On the other hand,"
         ],
-        "sentence_hint": "Write 2 sentences describing bioluminescence in the deep zone.",
+        "sentence_hint": "Write 2 sentences contrasting Florida's targeted policy with France's ban.",
         "pills": [
-          "midnight zone",
-          "bioluminescent creatures",
-          "blue light",
-          "pitch-black water"
+          "in contrast",
+          "Florida passed a law",
+          "restricts social media",
+          "during class hours"
         ],
-        "sentence_frame": "Next, the submersible entered [the midnight zone] where [bioluminescent creatures flashed light]."
+        "sentence_frame": "Florida lawmakers [passed targeted legislation] that [restricts minor social media access]."
       },
       {
         "badge_label": "WRITE",
-        "title": "Hydrothermal Vent Exploration",
+        "title": "Stage 3: Identifying Shared Safeguards",
         "image_url": "/images/week130/writing_panel_3.png",
-        "caption": "Powerful spotlights revealed towering black hydrothermal chimneys.",
-        "frame_L1": "After that, the pilots spotted volcanic hydrothermal vents. Giant tubeworms thrived around the mineral-rich black smoke.",
+        "caption": "Statutes provide legal exemptions for students requiring continuous medical monitoring.",
+        "frame_L1": "Both laws provide medical exemptions. Students with health monitoring devices can use phones safely.",
         "connectors": [
-          "After that,",
-          "Later,",
-          "Meanwhile,"
+          "Importantly,",
+          "Furthermore,",
+          "In both jurisdictions,"
         ],
-        "sentence_hint": "Write 2 sentences describing hydrothermal vents and tubeworms.",
+        "sentence_hint": "Write 2 sentences describing how medical exemptions protect students.",
         "pills": [
-          "hydrothermal vents",
-          "mineral-rich smoke",
-          "giant tubeworms",
-          "trench floor"
+          "both laws provide exemptions",
+          "health monitoring devices",
+          "use phones safely",
+          "essential protection"
         ],
-        "sentence_frame": "After that, the pilots located [hydrothermal vents] surrounded by [giant tubeworms]."
+        "sentence_frame": "Both jurisdictions [grant official statutory exemptions] for [students with documented medical needs]."
       },
       {
         "badge_label": "EXPAND",
-        "title": "Specimen Collection",
+        "title": "Stage 4: Synthesizing Comparative Governance",
         "image_url": "/images/week130/writing_panel_4.png",
-        "caption": "The robotic arm collected benthic specimens for laboratory analysis.",
-        "frame_L1": "In the end, robotic mechanical claws gathered biological specimens. The expedition confirmed twelve previously undiscovered species.",
+        "caption": "Comparing legal cultures illuminates diverse paths to digital governance.",
+        "frame_L1": "Comparative law shows different solutions. Governments can balance technological access with student focus.",
         "connectors": [
-          "In the end,",
-          "Finally,",
-          "As a result,"
+          "In conclusion,",
+          "Ultimately,",
+          "Consequently,"
         ],
-        "sentence_hint": "Write 2 sentences about collecting deep-sea specimens.",
+        "sentence_hint": "Write 2 sentences summarizing the broader lessons of comparative policy analysis.",
         "pills": [
-          "robotic claws",
-          "biological specimens",
-          "undiscovered species",
-          "docked safely"
+          "comparative law insights",
+          "different regulatory paths",
+          "balance access and focus",
+          "modern public governance"
         ],
-        "sentence_frame": "In the end, robotic claws [gathered biological specimens] and confirmed [twelve new marine species]."
+        "sentence_frame": "Comparative legal analysis [reveals how diverse cultures] address [shared modern technological challenges]."
       }
     ]
   }

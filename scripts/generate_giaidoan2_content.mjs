@@ -2217,7 +2217,7 @@ for (const [wStr, spec] of Object.entries(ALL_CONTENT_SPECS)) {
 /**
  * Generate files for a specific week into staging directory
  */
-function generateWeekContent(w) {
+export function generateWeekContent(w) {
   const spec = ALL_CONTENT_SPECS[w];
   if (!spec) {
     throw new Error(`Week ${w} is not a configured week. Configured weeks: ${Object.keys(ALL_CONTENT_SPECS).join(', ')}`);
@@ -2392,7 +2392,8 @@ export default skillPracticeHubData;
       "GATE_7_VIETNAMESE_LEAK_ZERO",
       "GATE_8_BANNED_CONTENT_FILTER_ZERO",
       "GATE_9_NO_GENERIC_BOILERPLATE",
-      "GATE_10_SKELETON_DIFFERENTIATION"
+      "GATE_10_SKELETON_DIFFERENTIATION",
+      "GATE_11_BLUEPRINT_THEME_FIDELITY"
     ],
     review_status: "STAGED_FOR_CLAUDE_ESL_REVIEW"
   };
@@ -2609,8 +2610,35 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     logs.push(`  ❌ FAIL: Cross-week skeleton identity collision with Week(s): ${collisions.join(', ')}`);
   }
 
+  // Gate 11: Blueprint Theme Fidelity Check (Zero Thematic Drift)
+  logs.push(`\n--- Gate 11: Blueprint Theme Fidelity Check (Zero Thematic Drift) ---`);
+  const bpPath = path.join(WEEKS_DIR, `week_${w}/blueprint.json`);
+  if (!fs.existsSync(bpPath)) {
+    allPass = false;
+    logs.push(`  ❌ FAIL: Canonical blueprint not found at ${bpPath}`);
+  } else {
+    try {
+      const bp = JSON.parse(fs.readFileSync(bpPath, 'utf8'));
+      const bpTheme = (bp.theme || '').trim();
+      const specTheme = (spec.theme || '').trim();
+
+      const normBp = bpTheme.toLowerCase().replace(/["']/g, '').replace(/\s+/g, ' ').trim();
+      const normSpec = specTheme.toLowerCase().replace(/["']/g, '').replace(/\s+/g, ' ').trim();
+
+      if (normBp === normSpec && normBp.length > 0) {
+        logs.push(`  ✅ PASS: 100% Theme fidelity confirmed. Spec theme ("${specTheme}") exactly matches blueprint.json ("${bpTheme}").`);
+      } else {
+        allPass = false;
+        logs.push(`  ❌ FAIL: Thematic drift detected! Spec theme "${specTheme}" does NOT match blueprint.json theme "${bpTheme}".`);
+      }
+    } catch (e) {
+      allPass = false;
+      logs.push(`  ❌ FAIL: Error parsing blueprint.json: ${e.message}`);
+    }
+  }
+
   logs.push(`\n========================================================================`);
-  logs.push(`OVERALL MECHANICAL GATES VERDICT: ${allPass ? '🎉 100% ALL 10 GATES PASSED' : '⛔ GATES FAILED'}`);
+  logs.push(`OVERALL MECHANICAL GATES VERDICT: ${allPass ? '🎉 100% ALL 11 GATES PASSED' : '⛔ GATES FAILED'}`);
   logs.push(`========================================================================\n`);
 
   return {
@@ -2660,7 +2688,7 @@ async function main() {
     try {
       const result = generateWeekContent(w);
       console.log(`   ✓ Deliverables Created: ${result.filesCount} staged files`);
-      console.log(`   ✓ Mechanical Gates:     ${result.gateReport.allPass ? '✅ ALL 10 GATES PASSED' : '❌ GATES FAILED'}`);
+      console.log(`   ✓ Mechanical Gates:     ${result.gateReport.allPass ? '✅ ALL 11 GATES PASSED' : '❌ GATES FAILED'}`);
       if (!result.gateReport.allPass) allWeeksPass = false;
     } catch (err) {
       console.error(`   🚨 Error generating Week ${w}:`, err.message);
@@ -2671,7 +2699,7 @@ async function main() {
   console.log('\n========================================================================');
   console.log(`📊 PIPELINE EXECUTION SUMMARY:`);
   console.log(`   Weeks Processed:  ${targetWeeks.length}`);
-  console.log(`   Overall Status:   ${allWeeksPass ? '✅ SUCCESS (All 10 Gates Passed)' : '❌ FAILURE'}`);
+  console.log(`   Overall Status:   ${allWeeksPass ? '✅ SUCCESS (All 11 Gates Passed)' : '❌ FAILURE'}`);
   if (isWrite) {
     console.log(`   Staging Path:     ${STAGING_BASE_DIR}`);
     console.log(`   Next Step:        Package review zip & submit for Claude ESL sign-off.`);

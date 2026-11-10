@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
- * Week: 129 | Theme: "Architecture of the Future: Megacities & Sustainability" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.313Z
+ * Week: 129 | Theme: "Opinion Project 3: Smartphones Under 12?" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.449Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,223 +9,165 @@
 
 export const listeningHubData = {
   "week": 129,
-  "theme": "Architecture of the Future: Megacities & Sustainability",
+  "theme": "Opinion Project 3: Smartphones Under 12?",
   "cefr_level": "B2 First",
   "audio_dialogue": {
-    "exchanges": [
-      {
-        "speaker": "Julian",
-        "text": "Maya, how will municipal planners have solved extreme density issues by 2050?"
-      },
-      {
-        "speaker": "Maya",
-        "text": "They will have constructed self-contained vertical towers with integrated services."
-      },
-      {
-        "speaker": "Julian",
-        "text": "Will millions of residents really be living in timber-composite skyscrapers?"
-      },
-      {
-        "speaker": "Maya",
-        "text": "Yes, millions will be living in timber towers because engineered wood is fire-resistant."
-      },
-      {
-        "speaker": "Julian",
-        "text": "How does passive ventilation eliminate the need for mechanical air conditioning?"
-      },
-      {
-        "speaker": "Maya",
-        "text": "Aerodynamic atriums pull cool ground air upward through thermal convection."
-      },
-      {
-        "speaker": "Julian",
-        "text": "Why are pedestrian skybridges superior to traditional street-level pedestrian crossings?"
-      },
-      {
-        "speaker": "Maya",
-        "text": "They separate walking commuters completely from heavy vehicular delivery lanes."
-      },
-      {
-        "speaker": "Julian",
-        "text": "Shall we submit our sustainable zoning proposal to the municipal council now?"
-      },
-      {
-        "speaker": "Maya",
-        "text": "Yes, let's submit our proposal so they can authorize the pilot district."
-      }
-    ]
+    "title": "Discussing Youth Smartphone Policies in an Opinion Project"
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "text": "By 2050, urban planners will have constructed self-cooling skyscrapers in every major megacity.",
-      "en": "By 2050, urban planners will have constructed self-cooling skyscrapers in every major megacity.",
-      "vi": "Đến năm 2050, các nhà quy hoạch đô thị sẽ xây dựng xong những tòa nhà chọc trời tự làm mát ở mọi đại đô thị lớn.",
-      "ipa": "/baɪ ˈtwenti ˈfɪfti ˈɜːrbən ˈplænərz wɪl hæv kənˈstrʌktɪd self ˈkuːlɪŋ ˈskaɪskreɪpərz ɪn ˈevri ˈmeɪdʒər ˈmeɡəsɪti/",
+      "text": "Excessive screen usage before bedtime disrupts essential adolescent sleep cycles.",
+      "en": "Excessive screen usage before bedtime disrupts essential adolescent sleep cycles.",
+      "vi": "Thời gian sử dụng màn hình quá mức trước giờ đi ngủ làm gián đoạn các chu kỳ giấc ngủ thiết yếu của thanh thiếu niên.",
+      "ipa": "/ɪkˈsesɪv skriːn ˈjuːsɪdʒ bɪˈfɔːr ˈbedtaɪm dɪsˈrʌpts ɪˈsenʃəl ˌædəˈlesənt sliːp ˈsaɪkəlz/",
       "words": [
-        "By",
-        "2050,",
-        "urban",
-        "planners",
-        "will",
-        "have",
-        "constructed",
-        "self-cooling",
-        "skyscrapers",
-        "in",
-        "every",
-        "major",
-        "megacity"
+        "Excessive",
+        "screen",
+        "usage",
+        "before",
+        "bedtime",
+        "disrupts",
+        "essential",
+        "adolescent",
+        "sleep",
+        "cycles"
       ]
     },
     {
       "id": 2,
-      "text": "Millions of citizens will be living in sustainable eco-districts powered entirely by renewables.",
-      "en": "Millions of citizens will be living in sustainable eco-districts powered entirely by renewables.",
-      "vi": "Hàng triệu người dân sẽ đang sống trong những khu đô thị sinh thái bền vững chạy hoàn toàn bằng năng lượng tái tạo.",
-      "ipa": "/ˈmɪljənz əv ˈsɪtɪzənz wɪl biː ˈlɪvɪŋ ɪn səˈsteɪnəbəl ˈiːkoʊ ˈdɪstrɪkts ˈpaʊərd ɪnˈtaɪərli baɪ rɪˈnuːəbəlz/",
+      "text": "Developmental psychologists warn that constant notifications fragment student attention.",
+      "en": "Developmental psychologists warn that constant notifications fragment student attention.",
+      "vi": "Các nhà tâm lý học phát triển cảnh báo rằng thông báo liên tục làm phân tán sự chú ý của học sinh.",
+      "ipa": "/dɪˌveləpˈmentəl saɪˈkɑːlədʒɪsts wɔːrn ðæt ˈkɑːnstənt ˌnoʊtɪfɪˈkeɪʃənz ˈfræɡmənt ˈstuːdənt əˈtenʃən/",
       "words": [
-        "Millions",
-        "of",
-        "citizens",
-        "will",
-        "be",
-        "living",
-        "in",
-        "sustainable",
-        "eco-districts",
-        "powered",
-        "entirely",
-        "by",
-        "renewables"
+        "Developmental",
+        "psychologists",
+        "warn",
+        "that",
+        "constant",
+        "notifications",
+        "fragment",
+        "student",
+        "attention"
       ]
     },
     {
       "id": 3,
-      "text": "Modular construction techniques allow high-density apartment blocks to be assembled within weeks.",
-      "en": "Modular construction techniques allow high-density apartment blocks to be assembled within weeks.",
-      "vi": "Các kỹ thuật xây dựng mô-đun cho phép các khối chung cư mật độ cao được lắp ráp trong vòng vài tuần.",
-      "ipa": "/ˈmɑːdʒələr kənˈstrʌkʃən tekˈniːks əˈlaʊ haɪ ˈdensəti əˈpɑːrtmənt blɑːks tuː biː əˈsembəld wɪˈðɪn wiːks/",
+      "text": "It is imperative that families establish healthy boundaries regarding digital devices.",
+      "en": "It is imperative that families establish healthy boundaries regarding digital devices.",
+      "vi": "Điều cấp thiết là các gia đình phải thiết lập các ranh giới lành mạnh liên quan đến các thiết bị kỹ thuật số.",
+      "ipa": "/ɪt ɪz ɪmˈperətɪv ðæt ˈfæməliz ɪˈstæblɪʃ ˈhelθi ˈbaʊndəriz rɪˈɡɑːrdɪŋ ˈdɪdʒɪtəl dɪˈvaɪsɪz/",
       "words": [
-        "Modular",
-        "construction",
-        "techniques",
-        "allow",
-        "high-density",
-        "apartment",
-        "blocks",
-        "to",
-        "be",
-        "assembled",
-        "within",
-        "weeks"
+        "It",
+        "is",
+        "imperative",
+        "that",
+        "families",
+        "establish",
+        "healthy",
+        "boundaries",
+        "regarding",
+        "digital",
+        "devices"
       ]
     },
     {
       "id": 4,
-      "text": "Passive ventilation atriums circulate cool breezes without expending fossil fuel electricity.",
-      "en": "Passive ventilation atriums circulate cool breezes without expending fossil fuel electricity.",
-      "vi": "Các giếng trời thông gió thụ động lưu thông những làn gió mát mà không tiêu tốn điện năng từ nhiên liệu hóa thạch.",
-      "ipa": "/ˈpæsɪv ˌventəlˈeɪʃən ˈeɪtriəmz ˈsɜːrkjəleɪt kuːl ˈbriːzɪz wɪˈðaʊt ɪkˈspendɪŋ ˈfɑːsəl fjuːəl ɪˌlekˈtrɪsəti/",
+      "text": "While smartphones enable parental contact, they may also increase social anxiety.",
+      "en": "While smartphones enable parental contact, they may also increase social anxiety.",
+      "vi": "Mặc dù điện thoại thông minh cho phép liên lạc với cha mẹ, chúng cũng có thể làm gia tăng lo âu xã hội.",
+      "ipa": "/waɪl ˈsmɑːrtfoʊnz ɪˈneɪbəl pəˈrentəl ˈkɑːntækt ðeɪ meɪ ˈɔːlsoʊ ɪnˈkriːs ˈsoʊʃəl æŋˈzaɪəti/",
       "words": [
-        "Passive",
-        "ventilation",
-        "atriums",
-        "circulate",
-        "cool",
-        "breezes",
-        "without",
-        "expending",
-        "fossil",
-        "fuel",
-        "electricity"
+        "While",
+        "smartphones",
+        "enable",
+        "parental",
+        "contact",
+        "they",
+        "may",
+        "also",
+        "increase",
+        "social",
+        "anxiety"
       ]
     },
     {
       "id": 5,
-      "text": "Green pedestrian promenades replace congested vehicular roadways throughout the central business district.",
-      "en": "Green pedestrian promenades replace congested vehicular roadways throughout the central business district.",
-      "vi": "Các đường dạo bộ xanh cho người đi bộ thay thế các tuyến đường xe cộ tắc nghẽn khắp khu thương mại trung tâm.",
-      "ipa": "/ɡriːn pəˈdestriən ˌprɑːməˈnɑːdz rɪˈpleɪs kənˈdʒestɪd viːˈhɪkjələr ˈroʊdweɪz θruːˈaʊt ðə ˈsentrəl ˈbɪznəs ˈdɪstrɪkt/",
+      "text": "Pediatric research indicates that excessive social media impairs cognitive focus.",
+      "en": "Pediatric research indicates that excessive social media impairs cognitive focus.",
+      "vi": "Nghiên cứu nhi khoa chỉ ra rằng mạng xã hội quá mức làm suy giảm khả năng tập trung nhận thức.",
+      "ipa": "/ˌpiːdiˈætrɪk rɪˈsɜːrtʃ ˈɪndɪkeɪts ðæt ɪkˈsesɪv ˈsoʊʃəl ˈmiːdiə ɪmˈperz ˈkɑːɡnətɪv ˈfoʊkəs/",
       "words": [
-        "Green",
-        "pedestrian",
-        "promenades",
-        "replace",
-        "congested",
-        "vehicular",
-        "roadways",
-        "throughout",
-        "the",
-        "central",
-        "business",
-        "district"
+        "Pediatric",
+        "research",
+        "indicates",
+        "that",
+        "excessive",
+        "social",
+        "media",
+        "impairs",
+        "cognitive",
+        "focus"
       ]
     },
     {
       "id": 6,
-      "text": "Architects will have integrated vertical farms to provide fresh produce for local neighborhoods.",
-      "en": "Architects will have integrated vertical farms to provide fresh produce for local neighborhoods.",
-      "vi": "Các kiến trúc sư sẽ tích hợp xong các trang trại thẳng đứng để cung cấp nông sản tươi sạch cho các khu dân cư địa phương.",
-      "ipa": "/ˈɑːrkɪtekts wɪl hæv ˈɪntɪɡreɪtɪd ˈvɜːrtɪkəl fɑːrmz tuː prəˈvaɪd freʃ ˈprɑːduːs fɔːr ˈloʊkəl ˈneɪbərhʊdz/",
+      "text": "Practicing digital moderation protects young children from behavioral addiction.",
+      "en": "Practicing digital moderation protects young children from behavioral addiction.",
+      "vi": "Thực hành điều độ kỹ thuật số bảo vệ trẻ nhỏ khỏi chứng nghiện hành vi.",
+      "ipa": "/ˈpræktɪsɪŋ ˈdɪdʒɪtəl ˌmɑːdəˈreɪʃən prəˈtekts jʌŋ ˈtʃɪldrən frəm bɪˈheɪvjərəl əˈdɪkʃən/",
       "words": [
-        "Architects",
-        "will",
-        "have",
-        "integrated",
-        "vertical",
-        "farms",
-        "to",
-        "provide",
-        "fresh",
-        "produce",
-        "for",
-        "local",
-        "neighborhoods"
+        "Practicing",
+        "digital",
+        "moderation",
+        "protects",
+        "young",
+        "children",
+        "from",
+        "behavioral",
+        "addiction"
       ]
     },
     {
       "id": 7,
-      "text": "High-speed magnetic transit lines reduce average commute duration by more than fifty percent.",
-      "en": "High-speed magnetic transit lines reduce average commute duration by more than fifty percent.",
-      "vi": "Các tuyến giao thông đệm từ tốc độ cao giảm hơn năm mươi phần trăm thời gian đi lại trung bình.",
-      "ipa": "/haɪ spiːd mæɡˈnetɪk ˈtrænsɪt laɪnz rɪˈduːs ˈævərɪdʒ kəˈmjuːt dʊˈreɪʃən baɪ mɔːr ðæn ˈfɪfti pərˈsent/",
+      "text": "Parental supervision ensures that adolescents navigate online communities safely.",
+      "en": "Parental supervision ensures that adolescents navigate online communities safely.",
+      "vi": "Sự giám sát của cha mẹ đảm bảo rằng thanh thiếu niên định hướng các cộng đồng trực tuyến một cách an toàn.",
+      "ipa": "/pəˈrentəl ˌsuːpərˈvɪʒən ɪnˈʃʊrz ðæt ˌædəˈlesənts ˈnævɪɡeɪt ˈɔːnlaɪn kəˈmjuːnətiz ˈseɪfli/",
       "words": [
-        "High-speed",
-        "magnetic",
-        "transit",
-        "lines",
-        "reduce",
-        "average",
-        "commute",
-        "duration",
-        "by",
-        "more",
-        "than",
-        "fifty",
-        "percent"
+        "Parental",
+        "supervision",
+        "ensures",
+        "that",
+        "adolescents",
+        "navigate",
+        "online",
+        "communities",
+        "safely"
       ]
     },
     {
       "id": 8,
-      "text": "Resilient infrastructure shields future coastal cities against severe meteorological anomalies.",
-      "en": "Resilient infrastructure shields future coastal cities against severe meteorological anomalies.",
-      "vi": "Cơ sở hạ tầng kiên cường che chắn các thành phố ven biển tương lai trước những bất thường khí tượng nghiêm trọng.",
-      "ipa": "/rɪˈzɪliənt ˈɪnfrəstrʌktʃər ʃiːldz ˈfjuːtʃər ˈkoʊstl ˈsɪtiz əˈɡenst sɪˈvɪr ˌmiːtiərəˈlɑːdʒɪkəl əˈnɑːməliz/",
+      "text": "A balanced lifestyle combines outdoor physical activity with mindful technology use.",
+      "en": "A balanced lifestyle combines outdoor physical activity with mindful technology use.",
+      "vi": "Một lối sống cân bằng kết hợp hoạt động thể chất ngoài trời với việc sử dụng công nghệ một cách chánh niệm.",
+      "ipa": "/ə ˈbælənst ˈlaɪfstaɪl kəmˈbaɪnz ˈaʊtdɔːr ˈfɪzɪkəl ækˈtɪvəti wɪð ˈmaɪndfəl tekˈnɑːlədʒi juːs/",
       "words": [
-        "Resilient",
-        "infrastructure",
-        "shields",
-        "future",
-        "coastal",
-        "cities",
-        "against",
-        "severe",
-        "meteorological",
-        "anomalies"
+        "A",
+        "balanced",
+        "lifestyle",
+        "combines",
+        "outdoor",
+        "physical",
+        "activity",
+        "with",
+        "mindful",
+        "technology",
+        "use"
       ]
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 129. Theme: Architecture of the Future: Megacities & Sustainability.\nSpeaker: By 2050, urban planners will have constructed self-cooling skyscrapers in every major megacity.\nSpeaker: Millions of citizens will be living in sustainable eco-districts powered entirely by renewables.\nSpeaker: Modular construction techniques allow high-density apartment blocks to be assembled within weeks.\nSpeaker: Passive ventilation atriums circulate cool breezes without expending fossil fuel electricity.\nSpeaker: Green pedestrian promenades replace congested vehicular roadways throughout the central business district.\nSpeaker: Architects will have integrated vertical farms to provide fresh produce for local neighborhoods.\nSpeaker: High-speed magnetic transit lines reduce average commute duration by more than fifty percent.\nSpeaker: Resilient infrastructure shields future coastal cities against severe meteorological anomalies."
+  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 129. Theme: Opinion Project 3: Smartphones Under 12?.\nSpeaker: Excessive screen usage before bedtime disrupts essential adolescent sleep cycles.\nSpeaker: Developmental psychologists warn that constant notifications fragment student attention.\nSpeaker: It is imperative that families establish healthy boundaries regarding digital devices.\nSpeaker: While smartphones enable parental contact, they may also increase social anxiety.\nSpeaker: Pediatric research indicates that excessive social media impairs cognitive focus.\nSpeaker: Practicing digital moderation protects young children from behavioral addiction.\nSpeaker: Parental supervision ensures that adolescents navigate online communities safely.\nSpeaker: A balanced lifestyle combines outdoor physical activity with mindful technology use."
 };
 export default listeningHubData;

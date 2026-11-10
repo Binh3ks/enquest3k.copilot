@@ -231,3 +231,4 @@ export default skillPracticeHubData;
 console.log(`========================================================================`);
 console.log(`🎉 ALL 3 MOCK WEEKS GENERATED SUCCESSFULLY!`);
 console.log(`========================================================================\n`);
+

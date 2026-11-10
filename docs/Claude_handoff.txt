@@ -1,4 +1,4 @@
-# HANDOFF RÚT GỌN — ENGQUEST3K / LEXIO (cập nhật tới Round 69, 09/11/2026)
+# HANDOFF RÚT GỌN — ENGQUEST3K / LEXIO (cập nhật tới Round 67→68, 09/11/2026)
 > Thay thế bản handoff dài. Giữ nguyên mọi RULE bắt buộc. PHẦN 6 (Kiến trúc chuẩn) KHÔNG BAO GIỜ được xóa/tóm tắt thêm.
 
 ## 1. VAI TRÒ & QUY TRÌNH MỖI LƯỢT
@@ -61,36 +61,73 @@ Chuẩn tham chiếu: SOP `docs/WEEK_PRODUCTION_SOP.md`; syllabus gốc `docs/1.
 - **14 lớp thẩm định** = 11 gate gốc (3, 4, 8, 10, 11, 12, 13, 15 v1, 16, 17 + Freeze Guard) + 3 gate mới (Gate 15 v2 Functional Audio Playtest, Schema Uniformity, Whitelist Entity). Con số 14 phải thống nhất trong MỌI tài liệu.
 - Cambridge Shields: 3 Papers (Listening/R&W/Speaking), `Shields = min(5, max(1, round(ScorePct/100×5)))`, tối đa 15 Khiên.
 - `docs/ARCHITECTURE_CURRENT.md` = tài liệu "Code Truth" gốc; phải cập nhật đồng thời mỗi khi đổi kiến trúc lớn, không để bản thảo treo quá 1 vòng audit; được bảo vệ bởi Global Governance Manifest cùng AGENTS.md + WEEK_PRODUCTION_SOP.md.
+## Round 69 — PARTIAL APPROVAL: W80 merge + gap-fill OK, Wave 3 REJECTED, W79 regression found
 
-## 7. TIẾN ĐỘ ROUND 69 (09/11/2026) — MERGE W80 PET MOCK, GAP-FILL ROTARY WEEKS, MOCK BATCH 2 (W40/44/48), WAVE 3 (7 WEEKS B2 FIRST)
-1. **Task 1 — Merge W80 PET Mock vào Production**:
-   - Merge `docs/agent_artifacts/staging/week_80_mock/*` vào `src/data/weeks/week_80/`.
-   - `blueprint.json` bổ sung `isFullMock: true`, `mockFormat: "pet"`, `cumulativeBlock: [77, 78, 79, 80]`.
-   - Tạo merge diff patch: `docs/agent_artifacts/round69_w80_merge_diff.patch` (68 KB).
-   - Invariants: `TOTAL_TRIPS = 34` bảo toàn tuyệt đối (`QuestSidebar.jsx:12`, `PassportTracker.jsx:12`).
-   - Freeze guards: W33 (147/147 locked), W34 (106/106 locked).
-   - CEFR Guard: `node scripts/cefr_curriculum_guard.mjs 80` -> 0 errors.
-   - Build: `npm run build` exit code 0 (13.16s).
+Independently verified: commit cfe67e4e (confirmed live via ls-remote). W80 PET
+merge correct. Gap-fill weeks W37/W42/W47 correct — content themes verified to
+match blueprint.json exactly. Mock Batch 2 (W40/W44/W48): schema correct
+(table_a/table_b), gates re-run pass, cumulative grounding word-by-word verified
+genuine against real W37/38/39/41/42/43/45/46/47 vocab. Note: Antigravity's own
+Claude_handoff.txt condensation (1821→96 lines) looks reasonable, mandatory
+architecture section preserved; the packaging script's manifest.txt still shows a
+stale pre-commit git HEAD (cosmetic only — actual push independently confirmed
+correct via ls-remote both times now).
 
-2. **Task 2 — Gap-fill 3 Rotary Weeks + Mock Batch 2 (Stage 1 A2 Flyers)**:
-   - **3 Gap-fill Rotary Weeks (Staged Only)**:
-     - W37: "Living vs. Non-Living (Reasoning)" -> 10/10 mechanical gates PASS, CEFR Guard PASS.
-     - W42: "The Water Journey (Cycle)" -> 10/10 mechanical gates PASS, CEFR Guard PASS.
-     - W47: "Big Numbers (Place Value)" -> 10/10 mechanical gates PASS, CEFR Guard PASS.
-   - **Mock Batch 2 (Stage 1 Flyers, Staged Only)**:
-     - Sinh bằng cumulative grounding thật từ 4-week blocks:
-       - W40 Mock: Block [37, 38, 39, 40] (Wildlife Explorers & Beast Adaptations) -> 7/7 Mock Quality Gates PASS (25L, 44RW, 4S).
-       - W44 Mock: Block [41, 42, 43, 44] (Nature Cycles & Young Mathematicians) -> 7/7 Mock Quality Gates PASS (25L, 44RW, 4S).
-       - W48 Mock: Block [45, 46, 47, 48] (Shapes, Logic & Measurement Explorers) -> 7/7 Mock Quality Gates PASS (25L, 44RW, 4S).
-     - Gate logs: `docs/agent_artifacts/round69_mock_gates_w{40,44,48}.log` (100% pass).
+**CRITICAL FINDING:** cross-checked blueprint.json `theme` field against generated
+content `theme` field for the first time across all weeks — found ALL 7 Wave 3
+weeks (W126,127,129,130,131,133,134) were generated with fabricated themes
+unrelated to the real Source-B-mandated academic-argumentation curriculum for that
+block. Also found Week 79 (already MERGED to production in Round 68) has the same
+bug — official theme "The Industrial Revolution", actual content "Space
+Exploration debate". Not currently reachable by real students (TOTAL_TRIPS=34 <
+79) but wrong data is live in source. 15 other previously-merged weeks checked
+clean (Wave 1, W35/38, most of Wave 2, gap-fill weeks).
 
-3. **Task 3 — Wave 3 Rotary Weeks (7 B2 First Weeks, Staged Only)**:
-   - Soạn thảo & staged 7 tuần: W126, W127, W129, W130, W131, W133, W134 vào `docs/agent_artifacts/staging/week_{N}/`.
-   - Verified 10/10 mechanical gates PASS trên toàn bộ 7 tuần.
-   - Verified CEFR Curriculum Guard PASS trên toàn bộ 7 tuần.
-   - Unlocked Mock Note: Mock W128 đã được mở khóa bởi W126+W127, nhưng tạm hoãn sang Round 70 theo chỉ đạo.
+**Rejected:** all 7 Wave 3 staged weeks — discard and regenerate from real
+blueprint data.
 
-4. **Review Package**:
-   - `docs/review_packages/round69_gapfill_mocks_wave3.zip` (452.3 KB).
-   - Bao gồm: 3 gap-fill weeks staged (W37, 42, 47), 3 mock weeks staged (W40, 44, 48) + logs, 7 Wave 3 weeks staged (W126, 127, 129, 130, 131, 133, 134), merge diff patch `round69_w80_merge_diff.patch`, và `manifest.txt`.
+**Dispatched urgent fix round:** regenerate Wave 3 + W79 correctly, full audit of
+all merged weeks for the same bug, add a permanent automated theme-fidelity gate
+to prevent recurrence.
 
+## Round 70 — Theme-Fidelity Regression Remediated (W79 & Wave 3, Gate 11 Enforced)
+
+### 1. ACTION 1: DISCARD & REGENERATE WAVE 3 ROTARY WEEKS (100% BLUEPRINT FIDELITY)
+All 7 Wave 3 weeks (W126, W127, W129, W130, W131, W133, W134) regenerated strictly against canonical blueprint.json authority:
+- W126: "From Essay to Speech" (Oral Rhetoric, Cue Cards & Signposting: "Moving on to...", "Let's look at...")
+- W127: "Rebuttal Practice" (Debate Counter-arguments, "They say... but I say...", contrast connectors; all 5 syllabus words included: disagree, counter, point, false, true)
+- W129: "Opinion Project 3: Smartphones Under 12?" (Developmental Psychology: Screen time & adolescent cognition, parental supervision, sleep cycles)
+- W130: "Opinion Project 3: Comparing Global Approaches" (Comparative Law: France nationwide ban vs. Florida social media statute)
+- W131: "Opinion Project 3: Persuasive Techniques" (Rhetorical Appeals: Ethos, Pathos, Logos in historic speeches, inverted stress cadence)
+- W133: "Deep Research & Data" (Quantitative Evidence in Video Game Studies: citing statistics, 70% participation, all 8 syllabus words included: statistic, percent, study, data, majority, minority, survey, population)
+- W134: "Identifying Fallacies" (Critical Thinking & Logic: identifying generalization fallacies, qualifiers 'some', 'many', 'often', 'tend to', all 8 syllabus words included: fallacy, generalization, assumption, true, false, valid, invalid, logic)
+- Staged at: `docs/agent_artifacts/staging/week_{126,127,129,130,131,133,134}/`
+- Validation: 11/11 Mechanical Gates PASS (all 7 weeks), CEFR Stage 2 Guard PASS (0 errors, 0 warnings across all 7 weeks).
+
+### 2. ACTION 2: REMEDIATED WEEK 79 (STAGED ONLY — ZERO MERGE)
+- Regenerated correctly with canonical blueprint theme "The Industrial Revolution" (World History: Steam Engines & Factories).
+- Vocabulary (20 words): steam, engine, factory, coal, industry, manufacture, locomotive, iron, production, textile, invention, revolution, worker, railway, smog, mechanize, fuel, labor, urban, transform.
+- Staged strictly at: `docs/agent_artifacts/staging/week_79/`
+- Production code `src/data/weeks/week_79/` UNTOUCHED pending Claude's review.
+- Validation: 11/11 Mechanical Gates PASS, CEFR Stage 2 Guard PASS (0 errors, 0 warnings).
+
+### 3. ACTION 3: COMPREHENSIVE MERGED WEEKS THEME FIDELITY AUDIT
+- Created and executed `scripts/audit_merged_weeks_theme_fidelity.mjs`.
+- Generated detailed report: `docs/agent_artifacts/audit_merged_weeks_theme_fidelity.md`.
+- Scanned all 161 directories in `src/data/weeks/`:
+  - 22 weeks have live data files.
+  - 19 weeks exact/subtitle match blueprint.
+  - 2 weeks frozen Golden Masters (W33, W34).
+  - 1 week legacy clean stub (W37).
+  - Confirmed: W79 was the SOLE thematic drift present in `src/data/weeks/`. All other merged weeks (W35, W38, W39, W41, W43, W45, W46, W73, W74, W75, W76, W77, W80, W81, W82, W125) are 100% theme-faithful.
+
+### 4. ACTION 4: PERMANENT GATE 11 AUTOMATION (GATE_11_BLUEPRINT_THEME_FIDELITY)
+- Enforced directly in `scripts/generate_giaidoan2_content.mjs`.
+- Reads canonical `blueprint.json` at generation time and fails loud with an actionable report if `spec.theme` drifts from `blueprint.theme`.
+- Tested and verified: catches drift immediately on mismatched specs.
+
+### 5. SYSTEM INVARIANTS & INTEGRITY
+- `npm run build`: Exit code 0 (16.60s).
+- Cryptographic Golden Freeze: W33 (147/147 locked), W34 (106/106 locked) 100% verified.
+- Total Trips invariant: `TOTAL_TRIPS = 34` strictly preserved in `QuestSidebar.jsx:12` and `PassportTracker.jsx:12`.
+- Review Deliverables: `docs/review_packages/round69_gapfill_mocks_wave3.zip` (513.5 KB) repackaged with all remediated weeks, manifests, and audit report.

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Speaking Hub & Talkshow/Info Exchange Cards
- * Week: 129 | Theme: "Architecture of the Future: Megacities & Sustainability" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.313Z
+ * Week: 129 | Theme: "Opinion Project 3: Smartphones Under 12?" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.449Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,144 +9,144 @@
 
 export const speakingHubData = {
   "week": 129,
-  "theme": "Architecture of the Future: Megacities & Sustainability",
+  "theme": "Opinion Project 3: Smartphones Under 12?",
   "cefr_level": "B2 First",
   "talkshow_prompt": {
-    "topic": "The Future of Megacities and Vertical Urbanism",
-    "question": "Julian, will vertical skyscraper communities truly replace suburban sprawl by the year 2050?",
-    "model_response": "By 2050, municipal planners will have constructed dozens of self-sustaining vertical communities, and millions of urban citizens will be living in integrated eco-towers! Suburban sprawl consumes valuable agricultural wilderness and generates extreme commute traffic. By integrating modular residential units, vertical hydroponic farms, and passive ventilation into single high-density structures, future megacities will achieve extraordinary ecological sustainability without sacrificing quality of life."
+    "topic": "Evaluating Smartphone Policies for Middle School Students",
+    "question": "Maya, how can families balance emergency safety with the psychological risks of smartphone overuse?",
+    "model_response": "The solution lies in separating communication from social media entertainment! A child walking home from football practice needs a reliable way to call parents, but they do not need an unrestricted internet portal in their pocket twenty-four hours a day. Families can provide basic feature phones for emergency calling while keeping internet-connected tablets in shared family rooms. This ensures safety without sacrificing sleep or mental wellbeing!"
   },
   "info_exchange_cards": {
     "table_a": {
-      "title": "Julian's Vertical Forest Tower",
+      "title": "Maya's Pediatric Screen Study",
       "subtitle": "Candidate's Question Card (Ask Examiner)",
-      "person": "Julian",
+      "person": "Maya",
       "fields": [
         {
           "id": "field_a1",
-          "cue_prompt": "where / tower constructed?",
+          "cue_prompt": "where / pediatric sleep study conducted?",
           "cue_word": "where",
           "is_missing": true,
           "acceptable_questions": [
-            "Where was the vertical tower constructed?",
-            "Where is the tower located?",
-            "Where was it built?"
+            "Where was the pediatric sleep study conducted?",
+            "Where was the study held?",
+            "Where did researchers conduct the sleep study?"
           ],
-          "nova_reply": "The vertical forest tower is constructed in the central bay district of Singapore."
+          "nova_reply": "The study was conducted at the Children's Memorial Sleep Laboratory in Chicago."
         },
         {
           "id": "field_a2",
-          "cue_prompt": "how tall / structure reach?",
-          "cue_word": "how tall",
+          "cue_prompt": "what / age group surveyed in research?",
+          "cue_word": "what",
           "is_missing": true,
           "acceptable_questions": [
-            "How tall does the structure reach?",
-            "What is the height of the tower?",
-            "How tall is the building?"
+            "What age group was surveyed in the research?",
+            "What ages were studied?",
+            "Who participated in the survey?"
           ],
-          "nova_reply": "The timber-composite structure reaches a height of three hundred and twenty meters."
+          "nova_reply": "Researchers tracked eight hundred students between ages nine and twelve."
         },
         {
           "id": "field_a3",
-          "cue_prompt": "how many / trees on balconies?",
+          "cue_prompt": "how many / hours of screen time recorded daily?",
           "cue_word": "how many",
           "is_missing": true,
           "acceptable_questions": [
-            "How many trees are planted on balconies?",
-            "How many trees does it have?",
-            "How many balcony trees are there?"
+            "How many hours of screen time were recorded daily?",
+            "How much screen time was tracked?",
+            "What was the daily screen time average?"
           ],
-          "nova_reply": "Over two thousand native trees and shrubs are integrated into balcony planter boxes."
+          "nova_reply": "Participants logged an average of four and a half hours on personal screens daily."
         },
         {
           "id": "field_a4",
-          "cue_prompt": "why / passive ventilation used?",
-          "cue_word": "why",
+          "cue_prompt": "who / directed the developmental psychology team?",
+          "cue_word": "who",
           "is_missing": true,
           "acceptable_questions": [
-            "Why is passive ventilation used in the atrium?",
-            "Why is passive ventilation needed?",
-            "Why did architects use passive airflow?"
+            "Who directed the developmental psychology team?",
+            "Who was the lead researcher?",
+            "Who managed the study?"
           ],
-          "nova_reply": "It reduces mechanical air conditioning power consumption by forty-five percent."
+          "nova_reply": "Dr. Sarah Lin, chief of developmental neurology at the institute."
         },
         {
           "id": "field_a5",
-          "cue_prompt": "what energy / powers building?",
-          "cue_word": "what energy",
+          "cue_prompt": "why / remove smartphones from bedrooms at night?",
+          "cue_word": "why",
           "is_missing": true,
           "acceptable_questions": [
-            "What energy powers the building?",
-            "What power source does it use?",
-            "What energy runs the building?"
+            "Why remove smartphones from bedrooms at night?",
+            "Why ban phones from bedrooms?",
+            "Why is keeping phones outside bedrooms recommended?"
           ],
-          "nova_reply": "Rooftop photovoltaic solar shingles and geothermal basement heat pumps supply one hundred percent of its power."
+          "nova_reply": "Because blue light suppression delays melatonin production by nearly ninety minutes."
         }
       ]
     },
     "table_b": {
-      "title": "Maya Chen's Eco-District Transit Hub",
+      "title": "Dr. Lin's Adolescent Wellness Guidelines",
       "subtitle": "Information Card (Answer Examiner's Questions)",
-      "person": "Maya",
+      "person": "Dr. Lin",
       "fields": [
         {
           "id": "field_b1",
-          "cue_prompt": "where / transit hub situated?",
+          "cue_prompt": "where / publish the recommended guidelines?",
           "cue_word": "where",
-          "value": "At the intersection of three major pedestrian promenades in downtown Seoul.",
-          "nova_question": "Where is Maya's eco-district transit hub situated?",
+          "value": "In the Journal of Adolescent Pediatric Medicine.",
+          "nova_question": "Where were the recommended guidelines published?",
           "acceptable_answers": [
-            "At the intersection of three major pedestrian promenades in downtown Seoul.",
-            "In downtown Seoul.",
-            "At three pedestrian promenades in Seoul."
+            "In the Journal of Adolescent Pediatric Medicine.",
+            "In the Journal of Adolescent Medicine.",
+            "Journal of Adolescent Pediatric Medicine."
           ]
         },
         {
           "id": "field_b2",
-          "cue_prompt": "what transit / operates from hub?",
-          "cue_word": "what transit",
-          "value": "Autonomous electric shuttles and underground magnetic levitation trains.",
-          "nova_question": "What public transit modalities operate from the central terminal?",
+          "cue_prompt": "what / maximum recreational screen time recommended?",
+          "cue_word": "what",
+          "value": "Sixty to ninety minutes per day outside school work.",
+          "nova_question": "What is the maximum recreational screen time recommended?",
           "acceptable_answers": [
-            "Autonomous electric shuttles and underground magnetic levitation trains.",
-            "Electric shuttles and magnetic levitation trains.",
-            "Autonomous shuttles and maglev trains."
+            "Sixty to ninety minutes per day outside school work.",
+            "Sixty to ninety minutes daily.",
+            "60 to 90 minutes."
           ]
         },
         {
           "id": "field_b3",
-          "cue_prompt": "how many / passengers commute daily?",
-          "cue_word": "how many",
-          "value": "Over one hundred and fifty thousand commuters pass through the hub daily.",
-          "nova_question": "How many passengers commute through the terminal on an average weekday?",
+          "cue_prompt": "how / parents verify app safety settings?",
+          "cue_word": "how",
+          "value": "Through built-in parental dashboard controls and shared passwords.",
+          "nova_question": "How can parents verify app safety settings?",
           "acceptable_answers": [
-            "Over one hundred and fifty thousand commuters pass through the hub daily.",
-            "Over 150,000 commuters daily.",
-            "One hundred and fifty thousand passengers."
+            "Through built-in parental dashboard controls and shared passwords.",
+            "With parental dashboard controls.",
+            "Through shared passwords and parental controls."
           ]
         },
         {
           "id": "field_b4",
-          "cue_prompt": "why / cars prohibited in district?",
-          "cue_word": "why",
-          "value": "To eliminate toxic tailpipe smog and guarantee complete pedestrian safety.",
-          "nova_question": "Why are private fossil-fuel automobiles strictly prohibited in the zone?",
+          "cue_prompt": "who / should be involved in setting family rules?",
+          "cue_word": "who",
+          "value": "Both parents and children should draft family tech agreements together.",
+          "nova_question": "Who should be involved in setting family rules?",
           "acceptable_answers": [
-            "To eliminate toxic tailpipe smog and guarantee complete pedestrian safety.",
-            "To eliminate smog and ensure pedestrian safety.",
-            "For pedestrian safety and zero smog."
+            "Both parents and children should draft family tech agreements together.",
+            "Both parents and children.",
+            "Parents and kids together."
           ]
         },
         {
           "id": "field_b5",
-          "cue_prompt": "what material / canopy made of?",
-          "cue_word": "what material",
-          "value": "A translucent recycled polymer composite that filters natural sunlight.",
-          "nova_question": "What sustainable material was used to build the sweeping roof canopy?",
+          "cue_prompt": "why / prioritize outdoor physical exercise?",
+          "cue_word": "why",
+          "value": "Because natural sunlight and aerobic play regulate adolescent circadian rhythms.",
+          "nova_question": "Why should families prioritize outdoor physical exercise?",
           "acceptable_answers": [
-            "A translucent recycled polymer composite that filters natural sunlight.",
-            "Translucent recycled polymer composite.",
-            "Recycled polymer composite."
+            "Because natural sunlight and aerobic play regulate adolescent circadian rhythms.",
+            "It regulates circadian rhythms.",
+            "Sunlight and aerobic play regulate circadian rhythms."
           ]
         }
       ]

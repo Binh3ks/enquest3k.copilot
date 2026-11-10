@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 126 | Theme: "Advanced Robotics & Artificial Intelligence Ethics" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.309Z
+ * Week: 126 | Theme: "From Essay to Speech" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.442Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,186 +9,182 @@
 
 export const skillPracticeHubData = {
   "week": 126,
-  "theme": "Advanced Robotics & Artificial Intelligence Ethics",
+  "theme": "From Essay to Speech",
   "cefr_level": "B2 First",
   "grammar_drills": [
     {
-      "sentence": "It is widely believed that autonomous systems require strict oversight.",
+      "sentence": "Moving on to our second main finding, let us examine the survey data.",
       "options": [
-        "believed",
-        "believing",
-        "believe"
+        "Moving on to",
+        "Move on at",
+        "Moved on for"
       ],
-      "answer": "believed",
-      "explanation": "Use past participle 'believed' in the impersonal passive structure 'It is widely believed that'."
+      "answer": "Moving on to",
+      "explanation": "Use 'Moving on to...' as an oral signpost to transition smoothly to a new topic."
     },
     {
-      "sentence": "Training datasets must be audited to prevent discriminatory bias.",
+      "sentence": "Having examined the historical background, we can now address current policies.",
       "options": [
-        "audited",
-        "auditing",
-        "audit"
+        "Having examined",
+        "Have examined",
+        "Examine"
       ],
-      "answer": "audited",
-      "explanation": "Passive modal construction requires 'must be' followed by past participle 'audited'."
+      "answer": "Having examined",
+      "explanation": "Use the perfect participle clause 'Having examined...' to summarize prior context before introducing a new focus."
     },
     {
-      "sentence": "Emergency safeguards were established by the international committee.",
+      "sentence": "Turning our attention to the global market, export numbers grew significantly.",
       "options": [
-        "were established",
-        "was established",
-        "establishing"
+        "Turning our attention to",
+        "Turn our attention on",
+        "Turned attention with"
       ],
-      "answer": "were established",
-      "explanation": "Plural subject 'safeguards' requires plural passive auxiliary 'were established'."
+      "answer": "Turning our attention to",
+      "explanation": "Use 'Turning our attention to...' to direct listeners' focus toward a specific aspect."
     },
     {
-      "sentence": "Full transparency allows regulators to inspect complex algorithms.",
+      "sentence": "Speakers should pause deliberately so that listeners can absorb difficult points.",
       "options": [
-        "allows",
-        "allowing",
-        "allow"
+        "so that",
+        "because of",
+        "in order"
       ],
-      "answer": "allows",
-      "explanation": "Singular non-count noun 'transparency' requires singular 3rd person verb 'allows'."
+      "answer": "so that",
+      "explanation": "Use 'so that' followed by a clause to express the intended purpose of an action."
     },
     {
-      "sentence": "Accountability is considered essential whenever machines make decisions.",
+      "sentence": "Varying vocal intonation keeps the audience engaged throughout the address.",
       "options": [
-        "is considered",
-        "are considered",
-        "considering"
+        "keeps",
+        "keep",
+        "keeping"
       ],
-      "answer": "is considered",
-      "explanation": "Singular noun 'accountability' takes singular passive verb 'is considered'."
+      "answer": "keeps",
+      "explanation": "The singular gerund subject 'Varying vocal intonation' takes the singular verb 'keeps'."
     }
   ],
   "singapore_math": [
     {
       "id": "w126_p1",
       "type": "part_whole",
-      "title": "Algorithmic Dataset Demographic Distribution",
-      "question": "An AI training dataset contains 650 audited clinical images and 350 simulated synthetic images. What is the total volume of training images in the balanced dataset?",
-      "storyContext": "Ethan tallies image files across diagnostic categories to ensure balance.",
+      "title": "Allocating Time Across Speech Sections",
+      "question": "A student allocates 120 seconds for the introduction and conclusions combined, and 240 seconds for the main body arguments. What is the total duration of the presentation in seconds?",
+      "storyContext": "Lucas calculates speaking time limits using a rehearsal timeline chart.",
       "modelData": {
         "bars": [
           {
-            "label": "Clinical Scans",
-            "value": 650,
-            "color": "#3b82f6"
+            "label": "Intro & Conclusion",
+            "value": 120,
+            "color": "#6366f1"
           },
           {
-            "label": "Synthetic Models",
-            "value": 350,
+            "label": "Body Arguments",
+            "value": 240,
             "color": "#10b981"
           }
         ],
-        "total": 1000,
-        "unit": "images"
+        "total": 360,
+        "unit": "seconds"
       },
-      "target_answer": 1000,
-      "unit": "images",
+      "target_answer": 360,
+      "unit": "seconds",
       "steps": [
-        "Identify 650 audited clinical images.",
-        "Add 350 synthetic simulation images.",
-        "650 + 350 = 1000 images in total."
+        "Take the introduction and conclusion time: 120 seconds.",
+        "Add the body arguments duration: 240 seconds.",
+        "120 + 240 = 360 seconds in total (exactly 6 minutes)."
       ]
     },
     {
       "id": "w126_p2",
       "type": "comparison",
-      "title": "Sensor Response Latency Optimization",
-      "question": "The legacy rover proximity sensor responded in 85 milliseconds, whereas the upgraded optical sensor triggers in 35 milliseconds. By how many milliseconds was sensor latency reduced?",
-      "storyContext": "Dr. Vance benchmarks hardware stop speeds across repeated obstacle trials.",
+      "title": "Comparing Word Counts: Full Essay vs Cue Card Notes",
+      "question": "A complete written research essay contains 1,250 words, while its condensed cue card presentation notes contain only 280 words. How many fewer words are on the cue card notes?",
+      "storyContext": "Elena reviews word reduction metrics on an editorial comparison graph.",
       "modelData": {
         "bars": [
           {
-            "label": "Legacy Sensor",
-            "value": 85,
-            "color": "#ef4444"
+            "label": "Full Essay Text",
+            "value": 1250,
+            "color": "#f43f5e"
           },
           {
-            "label": "Upgraded Sensor",
-            "value": 35,
-            "color": "#06b6d4"
+            "label": "Cue Card Notes",
+            "value": 280,
+            "color": "#3b82f6"
           }
         ],
-        "difference": 50,
-        "unit": "milliseconds"
+        "difference": 970,
+        "unit": "words"
       },
-      "target_answer": 50,
-      "unit": "milliseconds",
+      "target_answer": 970,
+      "unit": "words",
       "steps": [
-        "Start with legacy latency of 85 ms.",
-        "Subtract upgraded latency of 35 ms.",
-        "85 - 35 = 50 ms reduction in latency."
+        "Start with the total essay words: 1,250 words.",
+        "Subtract the cue card words: 280 words.",
+        "1,250 - 280 = 970 fewer words on the cue card outline."
       ]
     }
   ],
   "science_lab": {
-    "title_en": "Advanced Robotics & Artificial Intelligence Ethics Lab Workshop",
+    "title_en": "From Essay to Speech Lab Workshop",
     "scenarios": [
       {
         "stage": 1,
-        "title": "Classifying Ethical Governance Principles",
-        "diagram_type": "governance_matrix",
-        "instruction": "Assign each technological practice to its corresponding ethical principle.",
+        "title": "Deconstructing Written Essay into Core Themes",
+        "diagram_type": "essay_text_condensation_funnel",
+        "instruction": "Filter dense essay paragraphs down to core thesis statements and keyword prompts.",
         "items": [
           {
-            "label": "Publishing Training Code -> Transparency",
-            "target": "transparency"
+            "label": "Full Paragraph Text Analysis",
+            "target": "source_input"
           },
           {
-            "label": "Designating Legal Liability -> Accountability",
-            "target": "accountability"
+            "label": "Keyword Extraction Filter",
+            "target": "condensation_stage"
           },
           {
-            "label": "Balancing Demographic Ratios -> Fairness",
-            "target": "fairness"
-          },
-          {
-            "label": "Manual Emergency Killswitch -> Safeguard",
-            "target": "safeguard"
+            "label": "Pocket Cue Card Prompts",
+            "target": "speaker_notes"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Sensor Pipeline Data Flow",
-        "diagram_type": "sensor_pipeline",
-        "instruction": "Trace the sequence of information from physical obstacle to robotic braking.",
+        "title": "Mapping Signpost Transitions in Presentation Flow",
+        "diagram_type": "speech_signposting_roadmap",
+        "instruction": "Insert transition connectors between introduction, evidence points, and summary.",
         "items": [
           {
-            "label": "Optical Sensor Detection",
-            "target": "step_1"
+            "label": "Opening Signpost: 'Let us begin with...'",
+            "target": "introduction_gate"
           },
           {
-            "label": "Neural Network Analysis",
-            "target": "step_2"
+            "label": "Progressive Signpost: 'Moving on to...'",
+            "target": "transition_node"
           },
           {
-            "label": "Mechanical Brake Activation",
-            "target": "step_3"
+            "label": "Closing Signpost: 'In conclusion...'",
+            "target": "synthesis_exit"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Institutional Audit Protocol",
-        "diagram_type": "audit_verification",
-        "instruction": "Order the mandatory stages before clinical deployment authorization.",
+        "title": "Optimizing Vocal Modulation & Pacing",
+        "diagram_type": "vocal_cadence_frequency_wave",
+        "instruction": "Synchronize pitch intonation, volume projection, and intentional silence pauses.",
         "items": [
           {
-            "label": "Virtual Stress Simulation",
-            "target": "stage_1"
+            "label": "Auditorium Vocal Projection",
+            "target": "volume_level"
           },
           {
-            "label": "Third-Party Bias Assessment",
-            "target": "stage_2"
+            "label": "Pitch Variation for Emphasis",
+            "target": "intonation_curve"
           },
           {
-            "label": "Ethics Council Certification",
-            "target": "stage_3"
+            "label": "Strategic Three-Second Silence",
+            "target": "cognitive_pause"
           }
         ]
       }

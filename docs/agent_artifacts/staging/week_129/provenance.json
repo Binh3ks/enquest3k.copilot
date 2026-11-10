@@ -1,12 +1,12 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-09T13:11:11.313Z",
+  "generated_at": "2026-11-10T03:12:16.449Z",
   "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
   "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
   "week_number": 129,
-  "theme": "Architecture of the Future: Megacities & Sustainability",
+  "theme": "Opinion Project 3: Smartphones Under 12?",
   "cefr_level": "B2 First",
-  "grammar_focus": "Future Perfect & Future Continuous: 'By 2050, municipal planners will have constructed self-cooling skyscrapers; Millions will be living in sustainable eco-districts.'",
+  "grammar_focus": "Evaluative essay structures, modal verbs of certainty and caution ('may disrupt', 'is imperative that', 'evidence suggests that').",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_129/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
@@ -39,7 +39,8 @@
     "GATE_7_VIETNAMESE_LEAK_ZERO",
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
-    "GATE_10_SKELETON_DIFFERENTIATION"
+    "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY"
   ],
   "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
 }

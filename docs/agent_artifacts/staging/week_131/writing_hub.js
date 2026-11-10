@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Writing Hub & Picture Story Architecture
- * Week: 131 | Theme: "Genetics & Biotechnology: Modern Agriculture" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.316Z
+ * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.453Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,202 +9,202 @@
 
 export const writingHubData = {
   "week": 131,
-  "theme": "Genetics & Biotechnology: Modern Agriculture",
+  "theme": "Opinion Project 3: Persuasive Techniques",
   "cefr_level": "B2 First",
   "picture_story": {
-    "title": "Developing Climate-Resilient Agricultural Strains",
-    "prompt_en": "Look at the four pictures. Write a formal investigative report about Dr. Aris Thorne and Naomi Ward developing drought-resistant crops through biotechnology. Write 20 or more words.",
-    "prompt_vi": "Nhìn vào 4 bức tranh. Viết bản báo cáo điều tra về Tiến sĩ Aris Thorne và Naomi Ward phát triển giống cây trồng chịu hạn qua công nghệ sinh học (từ 20 từ trở lên).",
+    "title": "Applying Rhetorical Appeals in a Persuasive Public Address",
+    "prompt_en": "Look at the four panels. Write a persuasive speech paragraph advocating for digital wellness boundaries. Combine ethical credibility (ethos), emotional resonance (pathos), and logical data (logos). Use rhetorical triads or inverted emphasis ('not only does it...'). Write 20 or more words.",
+    "prompt_vi": "Nhìn vào 4 khung tranh. Viết một đoạn văn bài phát biểu thuyết phục vận động cho các ranh giới sống khỏe kỹ thuật số. Kết hợp uy tín đạo đức (ethos), cảm xúc cộng hưởng (pathos) và dữ liệu logic (logos). Sử dụng bộ ba tu từ hoặc nhấn mạnh đảo ngữ ('not only does it...'). Viết từ 20 từ trở lên.",
     "min_sentences": 3,
     "min_words": 20,
     "max_words": 90,
-    "model_sentence": "Dr. Aris Thorne and Naomi Ward developed climate-resilient rice crops to protect regional food security. First, genetic sequencing identified drought-tolerant traits in wild grasses. Next, greenhouse trials proved that edited seedlings developed deep root architecture in saline soil. After field tests demonstrated thirty percent higher grain yields, open-source seeds were distributed to cooperative farmers.",
+    "model_sentence": "To persuade an audience effectively, an orator must balance ethos, pathos, and logos. Drawing on verified pediatric studies establishes scientific ethos, while personal stories of student isolation evoke profound pathos. Not only does digital moderation protect nocturnal sleep cycles, but it also revitalizes deep classroom focus. By uniting empirical logic with heartfelt emotion, speakers inspire authentic commitment to community wellbeing.",
     "word_bank": [
-      "genetics",
-      "biotechnology",
-      "agriculture",
-      "cultivate",
-      "yield",
-      "drought",
-      "salinity",
-      "trait",
-      "resistant",
-      "harvest"
+      "persuasion",
+      "ethos",
+      "pathos",
+      "logos",
+      "credibility",
+      "rhetorical",
+      "emotion",
+      "logic",
+      "convince",
+      "cadence"
     ],
     "sentence_frames": [
-      "Initially, researchers sequenced wild grass genomes to isolate beneficial climate ___.",
-      "Greenhouse trials confirmed that the edited cultivars tolerated elevated soil ___ levels.",
-      "Field harvests, which spanned three dry seasons, produced significantly higher grain ___.",
-      "Ultimately, open-source seed varieties were shared to bolster regional ___."
+      "An effective speech combines personal ethos with logical ___.",
+      "Vivid stories evoke emotional ___ and touch the listeners' hearts.",
+      "Not only does balanced screen time protect sleep, but it also improves ___ focus.",
+      "Ultimately, uniting emotion and evidence creates irresistible ___ power."
     ],
     "panels": [
       {
         "panel_id": "panel_1",
-        "title_en": "Gene Marker Sequencing",
-        "title_vi": "Giải Trình Tự Dấu Chuẩn Gen",
+        "title_en": "Panel 1: Establishing Speaker Credibility (Ethos)",
+        "title_vi": "Khung 1: Thiết Lập Uy Tín Diễn Giả (Ethos)",
         "image_url": "/images/week131/writing_panel_1.png",
-        "image_prompt": "Two scientists analyzing colorful fluorescent DNA gel electrophoresis bands on a high-tech laboratory screen.",
-        "caption": "Geneticists analyzed DNA markers to identify drought-tolerant plant traits.",
-        "sentence_frame": "First, geneticists [analyzed DNA sequencing markers] to identify [drought-tolerant plant traits].",
+        "image_prompt": "A student speaker standing before an academic seal presenting peer-reviewed medical credentials.",
+        "caption": "Ethos establishes trust through research integrity and ethical leadership.",
+        "sentence_frame": "The speaker [establishes moral and scholarly credibility] by [citing verified scientific research].",
         "pills": [
-          "analyzed DNA sequencing markers",
-          "drought-tolerant plant traits",
-          "Aris and Naomi",
-          "laboratory genomics"
+          "establishes moral and scholarly credibility",
+          "citing verified scientific research",
+          "demonstrates personal integrity",
+          "builds audience trust"
         ],
         "connectors": [
           "First,",
-          "Initially,",
-          "On Monday morning,"
+          "To begin with,",
+          "By establishing ethos,"
         ]
       },
       {
         "panel_id": "panel_2",
-        "title_en": "Saline Greenhouse Trials",
-        "title_vi": "Thử Nghiệm Đất Mặn Trong Nhà Kính",
+        "title_en": "Panel 2: Evoking Emotional Empathy (Pathos)",
+        "title_vi": "Khung 2: Khơi Gợi Sự Đồng Cảm Cảm Xúc (Pathos)",
         "image_url": "/images/week131/writing_panel_2.png",
-        "image_prompt": "A researcher in a glass greenhouse examining green rice seedlings thriving in transparent hydroponic nutrient tubs.",
-        "caption": "Greenhouse trials confirmed deep root development in saline water.",
-        "sentence_frame": "Next, greenhouse trials confirmed that [edited rice seedlings developed deep roots] despite [saline water conditions].",
+        "image_prompt": "An audience listening with touched, thoughtful expressions as a story of child wellness is told.",
+        "caption": "Pathos touches human emotion through compelling personal stories.",
+        "sentence_frame": "Vivid storytelling [evokes genuine emotional empathy] across [the assembled listeners].",
         "pills": [
-          "edited rice seedlings developed deep roots",
-          "saline water conditions",
-          "Naomi measured",
-          "hydroponic growth"
+          "evokes genuine emotional empathy",
+          "the assembled listeners",
+          "touches human hearts",
+          "awakens moral concern"
         ],
         "connectors": [
+          "Furthermore,",
           "Next,",
-          "Subsequently,",
-          "Shortly afterwards,"
+          "Through heartfelt pathos,"
         ]
       },
       {
         "panel_id": "panel_3",
-        "title_en": "Field Trial Golden Harvest",
-        "title_vi": "Mùa Vàng Thu Hoạch Thử Nghiệm",
+        "title_en": "Panel 3: Anchoring Logic and Data (Logos)",
+        "title_vi": "Khung 3: Cố Định Logic và Dữ Liệu (Logos)",
         "image_url": "/images/week131/writing_panel_3.png",
-        "image_prompt": "Farmers and researchers smiling in a golden sunlit grain field holding heavy sheaves of ripe rice.",
-        "caption": "The drought-resistant crop yielded thirty percent more grain than controls.",
-        "sentence_frame": "After that, the coastal field harvest [yielded thirty percent more grain] than [conventional control crops].",
+        "image_prompt": "A digital screen displaying clear bar charts correlating sleep hours with academic performance.",
+        "caption": "Logos satisfies rational scrutiny with verifiable statistical proof.",
+        "sentence_frame": "Empirical data [provides undeniable logical proof] to [substantiate the central thesis].",
         "pills": [
-          "yielded thirty percent more grain",
-          "conventional control crops",
-          "golden rice sheaves",
-          "abundant harvest"
+          "provides undeniable logical proof",
+          "substantiate the central thesis",
+          "statistical bar charts",
+          "rigorous reasoning"
         ],
         "connectors": [
-          "After that,",
-          "Later,",
-          "At the end of the season,"
+          "In addition,",
+          "Providing logos,",
+          "Empirical data reveals that"
         ]
       },
       {
         "panel_id": "panel_4",
-        "title_en": "Open-Source Seed Distribution",
-        "title_vi": "Phân Phối Hạt Giống Nguồn Mở",
+        "title_en": "Panel 4: Inspiring Collective Action",
+        "title_vi": "Khung 4: Truyền Cảm Hứng Cho Hành Động Tập Thể",
         "image_url": "/images/week131/writing_panel_4.png",
-        "image_prompt": "A scientist handing cloth bags of certified seeds to smiling local farmers at an agricultural community hall.",
-        "caption": "Scientists distributed open-source seeds to cooperative farming leaders.",
-        "sentence_frame": "In the end, researchers distributed [certified open-source seeds] to [local farming cooperatives].",
+        "image_prompt": "An auditorium of diverse citizens raising hands in unanimous support of a community wellness agreement.",
+        "caption": "Uniting rhetoric appeals moves communities to enact positive changes.",
+        "sentence_frame": "Harmonizing these appeals [inspires the community to embrace] a [healthier digital future].",
         "pills": [
-          "certified open-source seeds",
-          "local farming cooperatives",
-          "food security assured",
-          "proud scientists"
+          "inspires the community to embrace",
+          "healthier digital future",
+          "unanimous civic commitment",
+          "authentic persuasion"
         ],
         "connectors": [
-          "In the end,",
-          "Finally,",
-          "Consequently,"
+          "Ultimately,",
+          "In conclusion,",
+          "Therefore,"
         ]
       }
     ],
     "ladder_stages": [
       {
         "badge_label": "MODEL",
-        "title": "Genomic Trait Identification",
+        "title": "Stage 1: Building Speaker Credibility",
         "image_url": "/images/week131/writing_panel_1.png",
-        "caption": "Geneticists analyzed DNA markers to identify drought-tolerant plant traits.",
-        "frame_L1": "First, the researchers sequenced wild grass DNA. They found genes that helped roots absorb water in dry soil.",
+        "caption": "Ethos establishes trust through research integrity and ethical leadership.",
+        "frame_L1": "Speakers establish credibility by citing medical facts. Trust helps the audience listen carefully.",
         "connectors": [
           "First,",
-          "Initially,",
-          "To begin,"
+          "To establish ethos,",
+          "Initially,"
         ],
-        "sentence_hint": "Write 2 sentences describing DNA sequencing of wild plants.",
+        "sentence_hint": "Write 2 sentences explaining how ethos creates trust.",
         "ordered_chips": [
-          "Researchers sequenced",
-          "wild grass DNA",
-          "to identify",
-          "drought-tolerant traits"
+          "Speakers build credibility",
+          "by citing verified research",
+          "to establish trust",
+          "with their audience."
         ],
         "pills": [
-          "sequenced DNA",
-          "drought traits",
-          "Aris and Naomi",
-          "wild grass"
+          "build credibility",
+          "verified research",
+          "establish trust",
+          "thoughtful listeners"
         ],
-        "sentence_frame": "First, researchers sequenced [wild grass DNA] to discover [drought-tolerant traits]."
+        "sentence_frame": "The speaker [establishes moral and scholarly credibility] by [citing verified scientific research]."
       },
       {
         "badge_label": "BUILD",
-        "title": "Saline Stress Testing",
+        "title": "Stage 2: Engaging Audience Empathy",
         "image_url": "/images/week131/writing_panel_2.png",
-        "caption": "Greenhouse trials confirmed deep root development in saline water.",
-        "frame_L1": "Next, Naomi tested edited seedlings in saline tanks. The plants grew long roots and survived high salt levels.",
+        "caption": "Pathos touches human emotion through compelling personal stories.",
+        "frame_L1": "Personal stories touch listeners' hearts. Pathos makes dry data feel urgent and meaningful.",
         "connectors": [
-          "Next,",
-          "Subsequently,",
+          "Furthermore,",
+          "Through pathos,",
           "In addition,"
         ],
-        "sentence_hint": "Write 2 sentences about testing seedlings in saline conditions.",
+        "sentence_hint": "Write 2 sentences describing how emotional storytelling inspires listeners.",
         "pills": [
-          "saline tanks",
-          "long roots",
-          "Naomi tested",
-          "survived salt"
+          "personal stories",
+          "touch listeners hearts",
+          "pathos makes data urgent",
+          "meaningful message"
         ],
-        "sentence_frame": "Next, Naomi tested [edited seedlings] in tanks that [contained high salinity]."
+        "sentence_frame": "Vivid storytelling [evokes genuine emotional empathy] across [the assembled listeners]."
       },
       {
         "badge_label": "WRITE",
-        "title": "Bountiful Field Harvest",
+        "title": "Stage 3: Providing Verifiable Logic",
         "image_url": "/images/week131/writing_panel_3.png",
-        "caption": "The drought-resistant crop yielded thirty percent more grain than controls.",
-        "frame_L1": "After that, coastal farmers harvested the trial field. The new strain yielded thirty percent more grain during drought.",
+        "caption": "Logos satisfies rational scrutiny with verifiable statistical proof.",
+        "frame_L1": "Statistical charts prove the point logically. Logos ensures that listeners cannot dismiss the argument.",
         "connectors": [
-          "After that,",
-          "Later,",
-          "Meanwhile,"
+          "Providing logos,",
+          "In addition,",
+          "Logically,"
         ],
-        "sentence_hint": "Write 2 sentences describing the abundant grain harvest.",
+        "sentence_hint": "Write 2 sentences explaining why data and reasoning complete the appeal.",
         "pills": [
-          "trial field",
-          "thirty percent more",
-          "new strain",
-          "golden grain"
+          "statistical charts",
+          "proves the point logically",
+          "satisfies rational inquiry",
+          "solid evidence"
         ],
-        "sentence_frame": "After that, coastal farmers harvested [the trial field] which produced [thirty percent more grain]."
+        "sentence_frame": "Empirical data [provides undeniable logical proof] to [substantiate the central thesis]."
       },
       {
         "badge_label": "EXPAND",
-        "title": "Community Seed Handover",
+        "title": "Stage 4: Inspiring Action with Cadence",
         "image_url": "/images/week131/writing_panel_4.png",
-        "caption": "Scientists distributed open-source seeds to cooperative farming leaders.",
-        "frame_L1": "In the end, Dr. Thorne gave bags of seeds to farmer groups. This partnership protected food security across the valley.",
+        "caption": "Uniting rhetoric appeals moves communities to enact positive changes.",
+        "frame_L1": "Not only does rhetoric inform the mind, but it also inspires action. Together, these appeals persuade everyone.",
         "connectors": [
-          "In the end,",
-          "Finally,",
-          "As a result,"
+          "Ultimately,",
+          "In conclusion,",
+          "Consequently,"
         ],
-        "sentence_hint": "Write 2 sentences about sharing open-source seeds with farmers.",
+        "sentence_hint": "Write 2 sentences using 'Not only does it...' to summarize the full impact.",
         "pills": [
-          "gave seeds",
-          "farmer groups",
-          "food security",
-          "across the valley"
+          "inform the mind",
+          "inspire positive action",
+          "persuasive rhetoric",
+          "community change"
         ],
-        "sentence_frame": "In the end, Dr. Thorne shared [bags of seeds] with farmers to [protect regional food security]."
+        "sentence_frame": "Harmonizing these appeals [inspires the community to embrace] a [healthier digital future]."
       }
     ]
   }

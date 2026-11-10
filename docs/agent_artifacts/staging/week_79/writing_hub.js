@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Writing Hub & Picture Story Architecture
- * Week: 79 | Theme: "Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate" | CEFR: B1 Preliminary
- * Generated: 2026-11-09T08:30:07.703Z
+ * Week: 79 | Theme: "The Industrial Revolution" | CEFR: B1 Preliminary
+ * Generated: 2026-11-10T03:12:16.360Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,202 +9,202 @@
 
 export const writingHubData = {
   "week": 79,
-  "theme": "Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate",
+  "theme": "The Industrial Revolution",
   "cefr_level": "B1 Preliminary",
   "picture_story": {
-    "title": "Structuring a Rebuttal in an Environmental Debate",
-    "prompt_en": "Look at the four panels. Write a debate rebuttal paragraph comparing space exploration with Earth restoration. Use rebuttal transition signals (such as 'Yes, but...'), passive voice ('funds are allocated'), and comparatives ('more urgent than...'). Write 20 or more words.",
-    "prompt_vi": "Nhìn vào 4 khung tranh. Viết một đoạn văn phản biện so sánh thám hiểm không gian với khôi phục Trái Đất. Sử dụng từ nối phản biện ('Yes, but...'), câu bị động ('funds are allocated'), và so sánh hơn ('more urgent than...'). Viết từ 20 từ trở lên.",
+    "title": "Documentary Report on the Rise of Steam Power",
+    "prompt_en": "Look at the four panels. Write a historical documentary paragraph describing how steam engines and factories transformed manufacturing and transportation. Use cause-and-effect connectors ('as a result of', 'due to', 'consequently') and past passive voice ('goods were manufactured'). Write 20 or more words.",
+    "prompt_vi": "Nhìn vào 4 khung tranh. Viết một đoạn văn tài liệu lịch sử mô tả động cơ hơi nước và nhà máy đã thay đổi sản xuất và giao thông như thế nào. Sử dụng các từ nối nguyên nhân - kết quả ('as a result of', 'due to', 'consequently') và câu bị động quá khứ ('goods were manufactured'). Viết từ 20 từ trở lên.",
     "min_sentences": 3,
     "min_words": 20,
     "max_words": 90,
-    "model_sentence": "Yes, space exploration develops advanced satellite technologies that monitor climate change, but restoring Earth's environment is far more urgent. Public funds should be allocated toward planting forests and building renewable solar farms. Protecting our only habitable planet is more critical than funding distant cosmic voyages.",
+    "model_sentence": "During the Industrial Revolution, everyday goods were manufactured by steam-powered machines rather than by hand. Due to James Watt's innovative steam engine, coal was burned to power massive textile looms and iron foundries. As a result of this mechanization, locomotives hauled freight across nationwide railways, transforming agrarian towns into thriving industrial centers.",
     "word_bank": [
-      "exploration",
-      "restoration",
-      "planet",
-      "investment",
-      "priority",
-      "renewable",
-      "biodiversity",
-      "debate",
-      "evidence",
-      "urgent"
+      "steam",
+      "engine",
+      "factory",
+      "coal",
+      "manufacture",
+      "locomotive",
+      "railway",
+      "production",
+      "textile",
+      "transform"
     ],
     "sentence_frames": [
-      "Yes, space exploration is valuable, but ecological ___ is more urgent.",
-      "Weather satellites are placed in the ___ to monitor climate patterns.",
-      "Public investment should be allocated toward clean ___ energy.",
-      "Protecting Earth's ___ is our primary moral responsibility."
+      "In the eighteenth century, goods were manufactured in large ___.",
+      "Due to Watt's steam ___, coal was burned to power factory machinery.",
+      "As a result of mechanization, cotton ___ production increased rapidly.",
+      "Consequently, steam ___ hauled heavy freight along national railways."
     ],
     "panels": [
       {
         "panel_id": "panel_1",
-        "title_en": "Panel 1: The Space Exploration Argument",
-        "title_vi": "Khung 1: Luận Điểm Thám Hiểm Không Gian",
+        "title_en": "Panel 1: The Steam Engine Breakthrough",
+        "title_vi": "Khung 1: Đột Phá Động Cơ Hơi Nước",
         "image_url": "/images/week79/writing_panel_1.png",
-        "image_prompt": "A modern spacecraft launching into starry space while orbital satellites beam scientific data back to Earth.",
-        "caption": "Space research develops satellites that monitor atmospheric changes.",
-        "sentence_frame": "Space exploration [develops advanced orbital satellites] that [monitor planetary climate change].",
+        "image_prompt": "A nineteenth-century British foundry with engineers assembling a massive cast-iron steam engine with copper pipes and boiler.",
+        "caption": "James Watt perfected the commercial steam engine using coal fuel.",
+        "sentence_frame": "The steam engine [was perfected by James Watt] to [generate reliable mechanical power].",
         "pills": [
-          "develops advanced orbital satellites",
-          "monitor planetary climate change",
-          "cosmic research",
-          "technological breakthroughs"
+          "was perfected by James Watt",
+          "generate reliable mechanical power",
+          "coal-fired boiler",
+          "industrial machinery"
         ],
         "connectors": [
           "First,",
-          "On one hand,",
-          "Proponents argue that"
+          "In the beginning,",
+          "During this period,"
         ]
       },
       {
         "panel_id": "panel_2",
-        "title_en": "Panel 2: Earth's Urgent Ecological Need",
-        "title_vi": "Khung 2: Nhu Cầu Sinh Thái Cấp Bách Của Trái Đất",
+        "title_en": "Panel 2: Mechanized Textile Mills",
+        "title_vi": "Khung 2: Các Xưởng Dệt Cơ Giới Hóa",
         "image_url": "/images/week79/writing_panel_2.png",
-        "image_prompt": "A dry cracked riverbed contrasting with green workers planting fresh tree seedlings.",
-        "caption": "Ecological restoration is needed to rebuild degraded forests and oceans.",
-        "sentence_frame": "Ecological restoration [is urgently required] to [rebuild vulnerable natural ecosystems].",
+        "image_prompt": "A sprawling brick textile mill interior with rows of mechanical looms powered by overhead spinning driveshafts.",
+        "caption": "Textile factories produced woven cloth at unprecedented speed.",
+        "sentence_frame": "Cotton textiles [were manufactured by automated looms] in [sprawling urban factories].",
         "pills": [
-          "is urgently required",
-          "rebuild vulnerable natural ecosystems",
-          "degraded habitats",
-          "biodiversity protection"
+          "were manufactured by automated looms",
+          "sprawling urban factories",
+          "unprecedented commercial output",
+          "disciplined workforce"
         ],
         "connectors": [
-          "However,",
-          "In contrast,",
-          "On the other hand,"
+          "Due to this invention,",
+          "Furthermore,",
+          "In textile mills,"
         ]
       },
       {
         "panel_id": "panel_3",
-        "title_en": "Panel 3: Formulating the Rebuttal",
-        "title_vi": "Khung 3: Thiết Lập Lời Phản Biện",
+        "title_en": "Panel 3: Iron Railways and Locomotives",
+        "title_vi": "Khung 3: Đường Sắt và Đầu Máy Bằng Sắt",
         "image_url": "/images/week79/writing_panel_3.png",
-        "image_prompt": "A student speaker raising a hand at a debate podium delivering a confident rebuttal with data slides.",
-        "caption": "Speakers acknowledge satellite value with 'Yes, but...' to introduce rebuttals.",
-        "sentence_frame": "Yes, satellite technology is helpful, [but protecting Earth's climate] is [far more pressing].",
+        "image_prompt": "An early steam locomotive puffing white smoke as it pulls black coal wagons across an arched iron railway bridge.",
+        "caption": "Locomotives carried coal and merchandise across steel railways.",
+        "sentence_frame": "Steam locomotives [were engineered to transport heavy freight] along [rapidly expanding railways].",
         "pills": [
-          "but protecting Earth's climate",
-          "far more pressing",
-          "acknowledged the argument",
-          "delivered a strong rebuttal"
+          "were engineered to transport heavy freight",
+          "rapidly expanding railways",
+          "connected distant cities",
+          "carried raw materials"
         ],
         "connectors": [
-          "Yes, but...",
-          "Nevertheless,",
-          "While this is true,"
+          "As a result of rail transit,",
+          "Consequently,",
+          "Across the nation,"
         ]
       },
       {
         "panel_id": "panel_4",
-        "title_en": "Panel 4: Balanced Planetary Action",
-        "title_vi": "Khung 4: Hành Động Hành Tinh Cân Bằng",
+        "title_en": "Panel 4: The Urban Industrial Society",
+        "title_vi": "Khung 4: Xã Hội Đô Thị Công Nghiệp",
         "image_url": "/images/week79/writing_panel_4.png",
-        "image_prompt": "Solar panels and wind turbines shining on a green hillside with an Earth observation satellite overhead.",
-        "caption": "Funds should be allocated to preserve our only living planet.",
-        "sentence_frame": "Public resources [should be allocated] toward [protecting our only living planet].",
+        "image_prompt": "A bustling Victorian industrial city with brick chimneys, bustling docks, merchant warehouses, and railway viaducts.",
+        "caption": "Industrialization transformed rural landscapes into modern cities.",
+        "sentence_frame": "Agrarian economies [were completely transformed into] an [interconnected industrial society].",
         "pills": [
-          "should be allocated",
-          "protecting our only living planet",
-          "renewable energy investments",
-          "sustainable future"
+          "were completely transformed into",
+          "interconnected industrial society",
+          "modern economic foundation",
+          "urban manufacturing centers"
         ],
         "connectors": [
-          "In conclusion,",
           "Ultimately,",
-          "Therefore,"
+          "In conclusion,",
+          "Consequently,"
         ]
       }
     ],
     "ladder_stages": [
       {
         "badge_label": "MODEL",
-        "title": "Stage 1: Acknowledging Technology",
+        "title": "Stage 1: Describing the Steam Engine",
         "image_url": "/images/week79/writing_panel_1.png",
-        "caption": "Space research develops satellites that monitor atmospheric changes.",
-        "frame_L1": "Space exploration produces helpful technologies. Satellites monitor atmospheric temperatures and ocean levels.",
+        "caption": "James Watt perfected the commercial steam engine using coal fuel.",
+        "frame_L1": "James Watt improved the steam engine. The machine burned coal to generate power.",
         "connectors": [
           "First,",
-          "On one hand,",
+          "In the eighteenth century,",
           "Initially,"
         ],
-        "sentence_hint": "Write 2 sentences about how satellites assist science.",
+        "sentence_hint": "Write 2 sentences describing how steam engines generated industrial power.",
         "ordered_chips": [
-          "Space exploration develops",
-          "valuable orbital satellites",
-          "to monitor temperatures",
-          "across Earth's atmosphere."
+          "James Watt improved",
+          "the commercial steam engine",
+          "using coal fuel",
+          "to drive factory machinery."
         ],
         "pills": [
-          "develops orbital satellites",
-          "monitor temperatures",
-          "space exploration",
-          "Earth's atmosphere"
+          "improved the steam engine",
+          "coal fuel",
+          "factory machinery",
+          "commercial power"
         ],
-        "sentence_frame": "Space exploration [develops advanced orbital satellites] that [monitor planetary climate change]."
+        "sentence_frame": "The steam engine [was perfected by James Watt] to [generate reliable mechanical power]."
       },
       {
         "badge_label": "BUILD",
-        "title": "Stage 2: Highlighting Climate Urgency",
+        "title": "Stage 2: Explaining Factory Production",
         "image_url": "/images/week79/writing_panel_2.png",
-        "caption": "Ecological restoration is needed to rebuild degraded forests and oceans.",
-        "frame_L1": "Restoring Earth's environment is more urgent than Mars missions. Forests and oceans need protection.",
+        "caption": "Textile factories produced woven cloth at unprecedented speed.",
+        "frame_L1": "Textile factories used steam power. Many workers operated mechanical looms every day.",
         "connectors": [
-          "However,",
-          "In contrast,",
-          "On the other hand,"
+          "Due to this engine,",
+          "In factories,",
+          "Furthermore,"
         ],
-        "sentence_hint": "Write 2 sentences comparing ecological urgency with space travel.",
+        "sentence_hint": "Write 2 sentences explaining how factories increased textile production.",
         "pills": [
-          "more urgent than Mars",
-          "forests and oceans",
-          "need protection",
-          "ecological restoration"
+          "used steam power",
+          "mechanical looms",
+          "increased textile output",
+          "urban factories"
         ],
-        "sentence_frame": "Restoring Earth's ecosystems [is far more urgent] than [funding distant space voyages]."
+        "sentence_frame": "Textile goods [were produced much faster] due to [automated mechanical equipment]."
       },
       {
         "badge_label": "WRITE",
-        "title": "Stage 3: Delivering the Rebuttal",
+        "title": "Stage 3: Highlighting Railway Transportation",
         "image_url": "/images/week79/writing_panel_3.png",
-        "caption": "Speakers acknowledge satellite value with 'Yes, but...' to introduce rebuttals.",
-        "frame_L1": "Yes, space science is inspiring, but Earth is our only home. Funds must be allocated to clean energy.",
+        "caption": "Locomotives carried coal and merchandise across steel railways.",
+        "frame_L1": "Locomotives hauled coal across long distances. As a result, trade grew quickly.",
         "connectors": [
-          "Yes, but...",
-          "Nevertheless,",
-          "Even so,"
+          "As a result,",
+          "Consequently,",
+          "Along railway tracks,"
         ],
-        "sentence_hint": "Write 2 sentences using 'Yes, but...' to introduce your counter-claim.",
+        "sentence_hint": "Write 2 sentences describing how railways connected mines, factories, and ports.",
         "pills": [
-          "Yes, but...",
-          "our only home",
-          "funds must be allocated",
-          "clean energy"
+          "hauled coal across railways",
+          "trade expanded rapidly",
+          "steam locomotives",
+          "connected industrial ports"
         ],
-        "sentence_frame": "Yes, space research is helpful, [but protecting our home planet] is [our primary duty]."
+        "sentence_frame": "Steam locomotives [were built from tough iron] to [haul freight along steel rails]."
       },
       {
         "badge_label": "EXPAND",
-        "title": "Stage 4: Concluding the Argument",
+        "title": "Stage 4: Summarizing the Historical Impact",
         "image_url": "/images/week79/writing_panel_4.png",
-        "caption": "Funds should be allocated to preserve our only living planet.",
-        "frame_L1": "Ultimately, space technology must serve Earth restoration. We must preserve our living planet for future generations.",
+        "caption": "Industrialization transformed rural landscapes into modern cities.",
+        "frame_L1": "The Industrial Revolution transformed society. It created our modern cities and technologies.",
         "connectors": [
           "Ultimately,",
           "In conclusion,",
-          "Therefore,"
+          "Consequently,"
         ],
-        "sentence_hint": "Write 2 sentences synthesizing space technology and planetary care.",
+        "sentence_hint": "Write 2 sentences summarizing the permanent legacy of industrial mechanization.",
         "pills": [
-          "serve Earth restoration",
-          "preserve our living planet",
-          "future generations",
-          "balanced investment"
+          "transformed human society",
+          "modern cities and technologies",
+          "permanent industrial legacy",
+          "economic progress"
         ],
-        "sentence_frame": "Public resources [should be allocated] to [ensure a sustainable living planet]."
+        "sentence_frame": "Industrial mechanization [transformed rural economies into] an [interconnected modern society]."
       }
     ]
   }

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 129 | Theme: "Architecture of the Future: Megacities & Sustainability" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.313Z
+ * Week: 129 | Theme: "Opinion Project 3: Smartphones Under 12?" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.449Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,186 +9,182 @@
 
 export const skillPracticeHubData = {
   "week": 129,
-  "theme": "Architecture of the Future: Megacities & Sustainability",
+  "theme": "Opinion Project 3: Smartphones Under 12?",
   "cefr_level": "B2 First",
   "grammar_drills": [
     {
-      "sentence": "By 2050, planners will have constructed self-cooling skyscrapers.",
+      "sentence": "Excessive screen usage may disrupt natural adolescent sleep cycles.",
       "options": [
-        "will have constructed",
-        "will construct",
-        "are constructing"
+        "may disrupt",
+        "must to disrupt",
+        "can disrupting"
       ],
-      "answer": "will have constructed",
-      "explanation": "Future Perfect ('will have + past participle') indicates an action completed before a specified future time point ('By 2050')."
+      "answer": "may disrupt",
+      "explanation": "Use modal 'may' followed by the base verb 'disrupt' to express a well-founded possibility."
     },
     {
-      "sentence": "Millions of citizens will be living in eco-districts by mid-century.",
+      "sentence": "It is imperative that parents establish clear screen-time guidelines.",
       "options": [
-        "will be living",
-        "will have lived",
-        "lived"
+        "establish",
+        "establishes",
+        "established"
       ],
-      "answer": "will be living",
-      "explanation": "Future Continuous ('will be + verb-ing') describes an ongoing activity taking place at a specific future period."
+      "answer": "establish",
+      "explanation": "After the subjunctive trigger 'It is imperative that...', use the base verb form 'establish'."
     },
     {
-      "sentence": "Modular construction techniques allow apartments to be built quickly.",
+      "sentence": "Pediatric evidence suggests that unrestricted social media impairs focus.",
       "options": [
-        "allow",
-        "allows",
-        "allowing"
+        "suggests that",
+        "suggests for",
+        "suggest that"
       ],
-      "answer": "allow",
-      "explanation": "Plural subject 'techniques' takes plural base verb 'allow'."
+      "answer": "suggests that",
+      "explanation": "The singular noun 'evidence' takes singular verb 'suggests' followed by 'that'."
     },
     {
-      "sentence": "Passive ventilation draws cool breezes into the central atrium naturally.",
+      "sentence": "Families should practice digital moderation rather than imposing total bans.",
       "options": [
-        "draws",
-        "draw",
-        "drawing"
+        "rather than",
+        "instead",
+        "whereas"
       ],
-      "answer": "draws",
-      "explanation": "Singular non-count subject 'Passive ventilation' requires 3rd person singular verb 'draws'."
+      "answer": "rather than",
+      "explanation": "Use 'rather than' followed by a gerund or parallel structure to express a preferred alternative."
     },
     {
-      "sentence": "Pedestrian skybridges eliminate the necessity for street crossings.",
+      "sentence": "Adolescent brains are particularly vulnerable to digital stimulation.",
       "options": [
-        "eliminate",
-        "eliminates",
-        "eliminated"
+        "vulnerable to",
+        "vulnerable with",
+        "vulnerable on"
       ],
-      "answer": "eliminate",
-      "explanation": "Plural subject 'skybridges' takes base plural verb 'eliminate'."
+      "answer": "vulnerable to",
+      "explanation": "Use the preposition 'to' after the adjective 'vulnerable'."
     }
   ],
   "singapore_math": [
     {
       "id": "w129_p1",
       "type": "part_whole",
-      "title": "Vertical Forest Tower Floor Allocation",
-      "question": "A sustainable skyscraper has 42 floors dedicated to residential modular apartments and 18 floors reserved for vertical hydroponic farms. How many total operational floors does the tower possess?",
-      "storyContext": "Julian tallies structural zoning floor areas on the architectural blueprint.",
+      "title": "Calculating Daily Screen Time Allocation",
+      "question": "A middle school student spends 45 minutes on educational research apps and 65 minutes on video streaming apps each day. What is their total recreational and study screen time in minutes?",
+      "storyContext": "Maya tallies daily device usage logs for her developmental psychology project.",
       "modelData": {
         "bars": [
           {
-            "label": "Residential Floors",
-            "value": 42,
-            "color": "#3b82f6"
+            "label": "Educational Apps",
+            "value": 45,
+            "color": "#10b981"
           },
           {
-            "label": "Vertical Farms",
-            "value": 18,
-            "color": "#10b981"
+            "label": "Video Streaming",
+            "value": 65,
+            "color": "#f59e0b"
           }
         ],
-        "total": 60,
-        "unit": "floors"
+        "total": 110,
+        "unit": "minutes"
       },
-      "target_answer": 60,
-      "unit": "floors",
+      "target_answer": 110,
+      "unit": "minutes",
       "steps": [
-        "Take 42 residential modular floors.",
-        "Add 18 vertical hydroponic farm floors.",
-        "42 + 18 = 60 floors in total."
+        "Take educational screen time: 45 minutes.",
+        "Add streaming video time: 65 minutes.",
+        "45 + 65 = 110 minutes total screen time per day."
       ]
     },
     {
       "id": "w129_p2",
       "type": "comparison",
-      "title": "Commuter Travel Time Optimization",
-      "question": "Traditional street-level bus commutes through city traffic averaged 65 minutes, whereas the direct elevated skybridge walk requires only 20 minutes. By how many minutes was average commute duration reduced?",
-      "storyContext": "Maya analyzes pedestrian mobility data across the newly interconnected district.",
+      "title": "Comparing Sleep Duration: Screen-Free vs Screen-Active Bedrooms",
+      "question": "Students with screen-free bedrooms sleep an average of 540 minutes per night, while students with active screens in their rooms sleep only 435 minutes. How many more minutes of restorative sleep do screen-free students achieve?",
+      "storyContext": "Leo analyzes pediatric sleep comparison statistics.",
       "modelData": {
         "bars": [
           {
-            "label": "Bus Commute",
-            "value": 65,
-            "color": "#ef4444"
+            "label": "Screen-Free Bedroom",
+            "value": 540,
+            "color": "#3b82f6"
           },
           {
-            "label": "Skybridge Walk",
-            "value": 20,
-            "color": "#06b6d4"
+            "label": "Active Screen Bedroom",
+            "value": 435,
+            "color": "#ef4444"
           }
         ],
-        "difference": 45,
+        "difference": 105,
         "unit": "minutes"
       },
-      "target_answer": 45,
+      "target_answer": 105,
       "unit": "minutes",
       "steps": [
-        "Start with 65 minutes of traditional bus transit.",
-        "Subtract 20 minutes for the elevated skybridge walk.",
-        "65 - 20 = 45 minutes saved per commute."
+        "Start with screen-free sleep: 540 minutes (9 hours).",
+        "Subtract screen-active sleep: 435 minutes (7.25 hours).",
+        "540 - 435 = 105 more minutes of restorative sleep."
       ]
     }
   ],
   "science_lab": {
-    "title_en": "Architecture of the Future: Megacities & Sustainability Lab Workshop",
+    "title_en": "Opinion Project 3: Smartphones Under 12? Lab Workshop",
     "scenarios": [
       {
         "stage": 1,
-        "title": "Sustainable Architecture Elements",
-        "diagram_type": "tower_systems_schematic",
-        "instruction": "Match each innovative building feature to its ecological function.",
+        "title": "Mapping Neurological Screen Stimulation Pathways",
+        "diagram_type": "adolescent_brain_dopamine_loop",
+        "instruction": "Trace how interactive notifications trigger dopamine reward cycles in the developing brain.",
         "items": [
           {
-            "label": "Balcony Hydroponics -> Local Food Production",
-            "target": "food"
+            "label": "Push Notification Alert",
+            "target": "sensory_stimulus"
           },
           {
-            "label": "Central Aeration Atrium -> Passive Cooling",
-            "target": "cooling"
+            "label": "Dopamine Receptor Activation",
+            "target": "neural_reward"
           },
           {
-            "label": "Photovoltaic Glazing -> Clean Electricity",
-            "target": "energy"
-          },
-          {
-            "label": "Basement Geothermal Loop -> Thermal Regulation",
-            "target": "heating"
+            "label": "Compulsive Check Habit Loop",
+            "target": "behavioral_pattern"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Pedestrian Transit Zoning",
-        "diagram_type": "mobility_network",
-        "instruction": "Trace the commuter path from modular apartment to transit station.",
+        "title": "Circadian Rhythm Blue-Light Disruption",
+        "diagram_type": "pineal_gland_melatonin_suppression",
+        "instruction": "Identify how late-night screen frequencies delay hormonal sleep triggers.",
         "items": [
           {
-            "label": "Exit Modular Apartment",
-            "target": "step_1"
+            "label": "High-Frequency Blue Light Wave",
+            "target": "photoreceptor_input"
           },
           {
-            "label": "Walk Across Elevated Skybridge",
-            "target": "step_2"
+            "label": "Pineal Gland Melatonin Delay",
+            "target": "hormone_inhibition"
           },
           {
-            "label": "Board Magnetic Levitation Train",
-            "target": "step_3"
+            "label": "Delayed Sleep Cycle Onset",
+            "target": "sleep_deficit"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Megacity Master Planning Milestones",
-        "diagram_type": "zoning_approval_ladder",
-        "instruction": "Order the statutory stages required for municipal eco-district ratification.",
+        "title": "Designing a Family Digital Wellbeing Agreement",
+        "diagram_type": "family_media_ecosystem_balance",
+        "instruction": "Balance emergency connectivity with screen-free boundaries and physical recreation.",
         "items": [
           {
-            "label": "Wind & Solar Environmental Audit",
-            "target": "phase_1"
+            "label": "Basic Emergency Calling Channel",
+            "target": "safety_feature"
           },
           {
-            "label": "Structural Composite Stress Testing",
-            "target": "phase_2"
+            "label": "Hallway Device Charging Hub",
+            "target": "boundary_zone"
           },
           {
-            "label": "City Council Zoning Ratification",
-            "target": "phase_3"
+            "label": "Outdoor Physical Recreation Goal",
+            "target": "wellness_activity"
           }
         ]
       }

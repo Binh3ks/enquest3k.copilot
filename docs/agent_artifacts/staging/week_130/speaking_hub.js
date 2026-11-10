@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Speaking Hub & Talkshow/Info Exchange Cards
- * Week: 130 | Theme: "Deep Ocean Exploration & Abyssal Organisms" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.315Z
+ * Week: 130 | Theme: "Opinion Project 3: Comparing Global Approaches" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.452Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,144 +9,144 @@
 
 export const speakingHubData = {
   "week": 130,
-  "theme": "Deep Ocean Exploration & Abyssal Organisms",
+  "theme": "Opinion Project 3: Comparing Global Approaches",
   "cefr_level": "B2 First",
   "talkshow_prompt": {
-    "topic": "Deep Sea Oceanography and Benthic Conservation",
-    "question": "Dr. Brooks, why should the international community enact strict moratoriums against deep-sea seabed mining?",
-    "model_response": "Under no circumstances should industrial mining be permitted in vulnerable benthic ecosystems! Never before have scientists encountered organisms with such delicate cellular adaptations to extreme hydrostatic pressure. Abyssal trenches develop at geologic time scales; organisms take centuries to reach maturity. If commercial robotic dredgers crush these hydrothermal vent communities, entire evolutionary branches will be extinguished before oceanographers have even cataloged their biochemistry."
+    "topic": "Synthesizing Comparative Legal Frameworks on Student Mobile Devices",
+    "question": "Chloe, how does examining international laws help educators design better technology policies?",
+    "model_response": "Examining international models allows us to see theoretical ideas tested in real classrooms! France tested an absolute centralized prohibition, demonstrating that removing phones dramatically reduces hallway drama and cyberbullying. Meanwhile, Florida tested a targeted statute focusing specifically on addictive social media algorithms while preserving educational technology. Comparing these frameworks gives school districts proven data to build balanced, enforceable policies!"
   },
   "info_exchange_cards": {
     "table_a": {
-      "title": "Dr. Sylvia Brooks's Submersible Dive",
+      "title": "Chloe's Comparative Policy Matrix",
       "subtitle": "Candidate's Question Card (Ask Examiner)",
-      "person": "Sylvia",
+      "person": "Chloe",
       "fields": [
         {
           "id": "field_a1",
-          "cue_prompt": "where / dive conducted?",
+          "cue_prompt": "where / French national legislation debated?",
           "cue_word": "where",
           "is_missing": true,
           "acceptable_questions": [
-            "Where was the deep dive conducted?",
-            "Where did the submersible dive?",
-            "Where was the expedition?"
+            "Where was the French national legislation debated?",
+            "Where was the legislation debated?",
+            "Where did French lawmakers debate the law?"
           ],
-          "nova_reply": "The dive was conducted inside the Horizon Deep sector of the Tonga Trench in the South Pacific."
+          "nova_reply": "The legislation was debated in the National Assembly in Paris."
         },
         {
           "id": "field_a2",
-          "cue_prompt": "what depth / submersible reached?",
-          "cue_word": "what depth",
+          "cue_prompt": "what / penalty for unauthorized phone use in France?",
+          "cue_word": "what",
           "is_missing": true,
           "acceptable_questions": [
-            "What depth did the submersible reach?",
-            "How deep did it go?",
-            "What was the maximum depth reached?"
+            "What is the penalty for unauthorized phone use in France?",
+            "What happens if a student uses a phone?",
+            "What is the penalty?"
           ],
-          "nova_reply": "The submersible reached a verified depth of ten thousand eight hundred and twenty meters."
+          "nova_reply": "Confiscation of the device until the end of the school day."
         },
         {
           "id": "field_a3",
-          "cue_prompt": "how many / new species discovered?",
+          "cue_prompt": "how many / students affected by Florida statute?",
           "cue_word": "how many",
           "is_missing": true,
           "acceptable_questions": [
-            "How many new species were discovered?",
-            "How many species did they find?",
-            "How many new organisms were cataloged?"
+            "How many students are affected by the Florida statute?",
+            "How many students does the law cover?",
+            "What is the student population affected?"
           ],
-          "nova_reply": "The team cataloged fourteen previously unknown benthic marine species during the expedition."
+          "nova_reply": "Approximately two point eight million public school students across the state."
         },
         {
           "id": "field_a4",
-          "cue_prompt": "why / hull made of titanium?",
-          "cue_word": "why",
+          "cue_prompt": "who / sponsors legal compliance audits in schools?",
+          "cue_word": "who",
           "is_missing": true,
           "acceptable_questions": [
-            "Why is the hull made of titanium?",
-            "Why was titanium chosen?",
-            "Why is titanium needed for the hull?"
+            "Who sponsors legal compliance audits in schools?",
+            "Who checks for compliance?",
+            "Who conducts the audits?"
           ],
-          "nova_reply": "Titanium possesses the high compressive strength required to withstand crushing hydrostatic pressure."
+          "nova_reply": "State Department of Education compliance inspectors and local district officers."
         },
         {
           "id": "field_a5",
-          "cue_prompt": "how long / dive lasted?",
-          "cue_word": "how long",
+          "cue_prompt": "why / statutes include medical exemptions?",
+          "cue_word": "why",
           "is_missing": true,
           "acceptable_questions": [
-            "How long did the dive last?",
-            "What was the duration of the dive?",
-            "How many hours did it take?"
+            "Why do statutes include medical exemptions?",
+            "Why are medical exemptions necessary?",
+            "Why exempt health devices?"
           ],
-          "nova_reply": "The complete round-trip descent, bottom exploration, and ascent lasted twelve continuous hours."
+          "nova_reply": "To protect students with diabetes who require continuous smartphone glucose monitoring."
         }
       ]
     },
     "table_b": {
-      "title": "Liam Ross's Hydrothermal Vent Survey",
+      "title": "Inspector Laurent's Enforcement Protocol",
       "subtitle": "Information Card (Answer Examiner's Questions)",
-      "person": "Liam",
+      "person": "Inspector Laurent",
       "fields": [
         {
           "id": "field_b1",
-          "cue_prompt": "where / vents situated?",
+          "cue_prompt": "where / store confiscated mobile devices?",
           "cue_word": "where",
-          "value": "Along a volcanic spreading ridge on the East Pacific Rise.",
-          "nova_question": "Where are Liam's studied hydrothermal vents situated?",
+          "value": "Inside secure fireproof administration lockboxes.",
+          "nova_question": "Where are confiscated mobile devices stored?",
           "acceptable_answers": [
-            "Along a volcanic spreading ridge on the East Pacific Rise.",
-            "On the East Pacific Rise.",
-            "Along a volcanic spreading ridge."
+            "Inside secure fireproof administration lockboxes.",
+            "In administrative lockboxes.",
+            "In fireproof lockboxes."
           ]
         },
         {
           "id": "field_b2",
-          "cue_prompt": "what temperature / fluid spews?",
-          "cue_word": "what temperature",
-          "value": "Superheated mineral fluid erupts at three hundred and sixty degrees Celsius.",
-          "nova_question": "What temperature is the hydrothermal fluid spewing from the chimneys?",
+          "cue_prompt": "what / percentage of student compliance reported?",
+          "cue_word": "what",
+          "value": "Over ninety-two percent compliance within three months.",
+          "nova_question": "What percentage of student compliance was reported?",
           "acceptable_answers": [
-            "Superheated mineral fluid erupts at three hundred and sixty degrees Celsius.",
-            "Three hundred and sixty degrees Celsius.",
-            "360 degrees Celsius."
+            "Over ninety-two percent compliance within three months.",
+            "Over 92 percent.",
+            "Ninety-two percent."
           ]
         },
         {
           "id": "field_b3",
-          "cue_prompt": "why / organisms not boil?",
-          "cue_word": "why",
-          "value": "They colonize the boundary where superheated vent fluid mixes with cold seawater.",
-          "nova_question": "Why do tubeworms and crustaceans not boil near the vent chimneys?",
+          "cue_prompt": "how / teachers verify medical exemptions?",
+          "cue_word": "how",
+          "value": "Through registered digital health passes issued by school doctors.",
+          "nova_question": "How do teachers verify medical exemptions?",
           "acceptable_answers": [
-            "They colonize the boundary where superheated vent fluid mixes with cold seawater.",
-            "Because fluid mixes with cold seawater.",
-            "They live where water mixes with cold seawater."
+            "Through registered digital health passes issued by school doctors.",
+            "With registered digital health passes.",
+            "Through doctor health passes."
           ]
         },
         {
           "id": "field_b4",
-          "cue_prompt": "what gas / bacteria consume?",
-          "cue_word": "what gas",
-          "value": "Chemosynthetic bacteria metabolize dissolved hydrogen sulfide gas.",
-          "nova_question": "What toxic gas do the chemosynthetic bacteria consume for energy?",
+          "cue_prompt": "who / drafted the model enforcement protocol?",
+          "cue_word": "who",
+          "value": "A joint commission of child psychologists, teachers, and legal scholars.",
+          "nova_question": "Who drafted the model enforcement protocol?",
           "acceptable_answers": [
-            "Chemosynthetic bacteria metabolize dissolved hydrogen sulfide gas.",
-            "Dissolved hydrogen sulfide gas.",
-            "Hydrogen sulfide gas."
+            "A joint commission of child psychologists, teachers, and legal scholars.",
+            "A joint commission of experts.",
+            "Psychologists, teachers, and scholars."
           ]
         },
         {
           "id": "field_b5",
-          "cue_prompt": "how many / cameras mounted on probe?",
-          "cue_word": "how many",
-          "value": "Six ultra-high-definition low-light cameras recorded video continuously.",
-          "nova_question": "How many specialized video cameras were mounted on the seafloor probe?",
+          "cue_prompt": "why / centralized legislation easier to enforce?",
+          "cue_word": "why",
+          "value": "Because clear uniform rules eliminate subjective arguments at school gates.",
+          "nova_question": "Why is centralized legislation easier to enforce?",
           "acceptable_answers": [
-            "Six ultra-high-definition low-light cameras recorded video continuously.",
-            "Six ultra-high-definition cameras.",
-            "Six cameras."
+            "Because clear uniform rules eliminate subjective arguments at school gates.",
+            "Uniform rules eliminate arguments.",
+            "It creates clear uniform standards."
           ]
         }
       ]

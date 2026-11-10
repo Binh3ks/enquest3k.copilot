@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 131 | Theme: "Genetics & Biotechnology: Modern Agriculture" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.316Z
+ * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.453Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,276 +9,276 @@
 
 export const readingHubData = {
   "week": 131,
-  "theme": "Genetics & Biotechnology: Modern Agriculture",
+  "theme": "Opinion Project 3: Persuasive Techniques",
   "cefr_level": "B2 First",
   "vocab": [
     {
       "id": 1,
-      "word": "genetics",
+      "word": "persuasion",
       "pos": "n",
-      "ipa": "/dʒəˈnetɪks/",
-      "definition_en": "The study of heredity and the variation of inherited characteristics",
-      "definition_vi": "di truyền học",
-      "example_en": "Modern crop genetics helps scientists identify climate-resilient plant traits.",
-      "example_vi": "Di truyền học cây trồng hiện đại giúp các nhà khoa học xác định các đặc tính thực vật chống chịu khí hậu."
+      "ipa": "/pərˈsweɪʒən/",
+      "definition_en": "The action or fact of convincing someone to believe or do something",
+      "definition_vi": "sự thuyết phục",
+      "example_en": "Mastering the art of persuasion empowers leaders to inspire meaningful civic action.",
+      "example_vi": "Làm chủ nghệ thuật thuyết phục giúp các nhà lãnh đạo truyền cảm hứng cho những hành động công dân ý nghĩa."
     },
     {
       "id": 2,
-      "word": "biotechnology",
+      "word": "ethos",
       "pos": "n",
-      "ipa": "/ˌbaɪoʊtekˈnɑːlədʒi/",
-      "definition_en": "The exploitation of biological processes for industrial and other purposes",
-      "definition_vi": "công nghệ sinh học",
-      "example_en": "Agricultural biotechnology develops pest-resistant maize without chemical sprays.",
-      "example_vi": "Công nghệ sinh học nông nghiệp phát triển giống ngô kháng sâu bệnh mà không cần phun hóa chất."
+      "ipa": "/ˈiːθɑːs/",
+      "definition_en": "A rhetorical appeal based on the speaker's moral character, credibility, and authority",
+      "definition_vi": "sức thuyết phục từ uy tín / tư cách đạo đức",
+      "example_en": "By citing twenty years of pediatric research, Dr. Lin established strong personal ethos.",
+      "example_vi": "Bằng cách trích dẫn hai mươi năm nghiên cứu nhi khoa, Tiến sĩ Lin đã thiết lập được uy tín cá nhân mạnh mẽ."
     },
     {
       "id": 3,
-      "word": "chromosome",
+      "word": "pathos",
       "pos": "n",
-      "ipa": "/ˈkroʊməsˌoʊm/",
-      "definition_en": "A threadlike structure of nucleic acids carrying genetic information",
-      "definition_vi": "nhiễm sắc thể",
-      "example_en": "Wheat possesses a complex hexaploid chromosome structure that agronomists study.",
-      "example_vi": "Lúa mì sở hữu cấu trúc nhiễm sắc thể lục bội phức tạp mà các nhà nông học nghiên cứu."
+      "ipa": "/ˈpeɪθɑːs/",
+      "definition_en": "A rhetorical appeal that evokes empathy, emotion, and heartfelt feeling in an audience",
+      "definition_vi": "sức thuyết phục từ cảm xúc / sự đồng cảm",
+      "example_en": "The speaker used pathos by sharing a poignant story about an anxious child finding peace.",
+      "example_vi": "Diễn giả đã sử dụng cảm xúc bằng cách chia sẻ một câu chuyện xúc động về một đứa trẻ lo âu tìm lại sự bình yên."
     },
     {
       "id": 4,
-      "word": "genome",
+      "word": "logos",
       "pos": "n",
-      "ipa": "/ˈdʒiːnoʊm/",
-      "definition_en": "The complete set of genes or genetic material present in an organism",
-      "definition_vi": "hệ gen, bộ gen",
-      "example_en": "Sequencing the rice genome revealed natural defenses against fungal blight.",
-      "example_vi": "Việc giải trình tự bộ gen lúa đã hé lộ những cơ chế tự vệ tự nhiên chống lại bệnh đạo ôn."
+      "ipa": "/ˈloʊɡɑːs/",
+      "definition_en": "A rhetorical appeal based on logic, factual evidence, and structured reasoning",
+      "definition_vi": "sức thuyết phục từ tính logic / lập luận chặt chẽ",
+      "example_en": "Rigorous statistical charts provided the logos necessary to convince the school board.",
+      "example_vi": "Các biểu đồ thống kê nghiêm ngặt đã cung cấp tính logic cần thiết để thuyết phục hội đồng nhà trường."
     },
     {
       "id": 5,
-      "word": "agriculture",
+      "word": "appeal",
       "pos": "n",
-      "ipa": "/ˈæɡrɪkʌltʃər/",
-      "definition_en": "The science or practice of farming, including cultivation of the soil",
-      "definition_vi": "nông nghiệp",
-      "example_en": "Sustainable agriculture balances high crop yields with soil fertility preservation.",
-      "example_vi": "Nông nghiệp bền vững cân bằng năng suất cây trồng cao với việc bảo tồn độ phì nhiêu của đất."
+      "ipa": "/əˈpiːl/",
+      "definition_en": "A serious, urgent, or structured rhetorical request used to influence an audience",
+      "definition_vi": "sự lôi cuốn / lời kêu gọi / phương thức thuyết phục",
+      "example_en": "Effective orators combine emotional appeal with verifiable empirical facts.",
+      "example_vi": "Những nhà diễn thuyết hiệu quả kết hợp sức hút cảm xúc với các sự thật thực nghiệm có thể kiểm chứng."
     },
     {
       "id": 6,
-      "word": "cultivate",
-      "pos": "v",
-      "ipa": "/ˈkʌltɪveɪt/",
-      "definition_en": "Prepare and use land for crops or gardening",
-      "definition_vi": "canh tác, gieo trồng",
-      "example_en": "Farmers cultivate drought-tolerant sorghum in arid river valleys.",
-      "example_vi": "Nông dân canh tác lúa miến chịu hạn tại các thung lũng sông khô cằn."
+      "word": "credibility",
+      "pos": "n",
+      "ipa": "/ˌkredəˈbɪləti/",
+      "definition_en": "The quality of being trusted, believable, and academically respected",
+      "definition_vi": "sự đáng tin cậy / uy tín",
+      "example_en": "Fabricating quotes severely undermines a debater's professional credibility.",
+      "example_vi": "Bịa đặt trích dẫn làm suy yếu nghiêm trọng uy tín nghề nghiệp của một tranh biện viên."
     },
     {
       "id": 7,
-      "word": "yield",
-      "pos": "n",
-      "ipa": "/jiːld/",
-      "definition_en": "The full amount of an agricultural or industrial product produced",
-      "definition_vi": "năng suất, sản lượng",
-      "example_en": "Precision irrigation increased the seasonal grain yield by thirty-five percent.",
-      "example_vi": "Tưới tiêu chính xác đã làm tăng sản lượng ngũ cốc theo mùa thêm ba mươi lăm phần trăm."
+      "word": "rhetorical",
+      "pos": "adj",
+      "ipa": "/rɪˈtɔːrɪkəl/",
+      "definition_en": "Relating to the strategic and artistic use of spoken or written discourse",
+      "definition_vi": "thuộc về thuật tu từ / mang tính hùng biện",
+      "example_en": "The speech utilized rhetorical questions to prompt deep audience reflection.",
+      "example_vi": "Bài phát biểu đã sử dụng các câu hỏi tu từ để thúc đẩy khán giả suy ngẫm sâu sắc."
     },
     {
       "id": 8,
-      "word": "mutation",
+      "word": "emotion",
       "pos": "n",
-      "ipa": "/mjuːˈteɪʃən/",
-      "definition_en": "The changing of the structure of a gene resulting in a variant form",
-      "definition_vi": "đột biến (gen)",
-      "example_en": "A natural genetic mutation allowed ancient wild wheat seeds to remain on the stalk.",
-      "example_vi": "Một đột biến gen tự nhiên đã cho phép hạt lúa mì hoang dã cổ đại giữ nguyên trên thân cây."
+      "ipa": "/ɪˈmoʊʃən/",
+      "definition_en": "A natural instinctive state of mind deriving from personal circumstances",
+      "definition_vi": "cảm xúc",
+      "example_en": "Tapping into genuine audience emotion creates an enduring human connection.",
+      "example_vi": "Chạm vào cảm xúc chân thật của khán giả tạo ra một sự kết nối con người lâu dài."
     },
     {
       "id": 9,
-      "word": "hybrid",
-      "pos": "adj",
-      "ipa": "/ˈhaɪbrɪd/",
-      "definition_en": "The offspring of two plants or animals of different species or varieties",
-      "definition_vi": "lai, giống lai",
-      "example_en": "Hybrid corn varieties combine high disease resistance with rapid maturation.",
-      "example_vi": "Các giống ngô lai kết hợp khả năng kháng bệnh cao với thời gian chín nhanh."
+      "word": "logic",
+      "pos": "n",
+      "ipa": "/ˈlɑːdʒɪk/",
+      "definition_en": "Reasoning conducted according to strict principles of validity and truth",
+      "definition_vi": "tính logic / lý lẽ hợp lý",
+      "example_en": "Clear deductive logic ensures that conclusions follow naturally from premises.",
+      "example_vi": "Tính logic suy diễn rõ ràng đảm bảo rằng các kết luận bắt nguồn một cách tự nhiên từ các tiền đề."
     },
     {
       "id": 10,
-      "word": "drought",
-      "pos": "n",
-      "ipa": "/draʊt/",
-      "definition_en": "A prolonged period of abnormally low rainfall leading to water shortage",
-      "definition_vi": "hạn hán",
-      "example_en": "Prolonged summer drought threatened grain production across southern plains.",
-      "example_vi": "Hạn hán mùa hè kéo dài đe dọa sản xuất ngũ cốc trên khắp các vùng đồng bằng phía nam."
+      "word": "convince",
+      "pos": "v",
+      "ipa": "/kənˈvɪns/",
+      "definition_en": "To cause someone to believe firmly in the truth of an assertion",
+      "definition_vi": "thuyết phục ai tin điều gì",
+      "example_en": "Sound arguments supported by peer-reviewed evidence convince skeptical listeners.",
+      "example_vi": "Những lập luận vững chắc được củng cố bằng bằng chứng bình duyệt sẽ thuyết phục những người nghe hoài nghi."
     },
     {
       "id": 11,
-      "word": "pest",
+      "word": "metaphor",
       "pos": "n",
-      "ipa": "/pest/",
-      "definition_en": "A destructive insect or other animal that attacks crops or livestock",
-      "definition_vi": "sâu bệnh, loài gây hại",
-      "example_en": "Integrated biological pest management protects tomato vines without pesticides.",
-      "example_vi": "Quản lý sâu bệnh sinh học tổng hợp bảo vệ các giàn cà chua mà không cần thuốc trừ sâu."
+      "ipa": "/ˈmetəfɔːr/",
+      "definition_en": "A figure of speech in which a word or phrase is applied to an object not literally applicable",
+      "definition_vi": "phép ẩn dụ",
+      "example_en": "Calling a smartphone 'a glowing slot machine in your pocket' is a vivid metaphor.",
+      "example_vi": "Gọi điện thoại thông minh là 'một chiếc máy đánh bạc phát sáng trong túi bạn' là một phép ẩn dụ sinh động."
     },
     {
       "id": 12,
-      "word": "salinity",
+      "word": "orator",
       "pos": "n",
-      "ipa": "/səˈlɪnəti/",
-      "definition_en": "The amount of dissolved salt present in soil or irrigation water",
-      "definition_vi": "độ mặn (của đất/nước)",
-      "example_en": "Rising soil salinity limits where conventional rice cultivars can germinate.",
-      "example_vi": "Độ mặn của đất tăng cao làm hạn chế những nơi mà các giống lúa truyền thống có thể nảy mầm."
+      "ipa": "/ˈɔːrətər/",
+      "definition_en": "A skilled and eloquent public speaker trained in rhetoric",
+      "definition_vi": "nhà diễn thuyết / nhà hùng biện",
+      "example_en": "The young orator modulated his vocal pitch to highlight key moral questions.",
+      "example_vi": "Nhà diễn thuyết trẻ tuổi đã điều biến cao độ giọng nói để làm nổi bật các câu hỏi đạo đức then chốt."
     },
     {
       "id": 13,
-      "word": "trait",
+      "word": "analogy",
       "pos": "n",
-      "ipa": "/treɪt/",
-      "definition_en": "A distinguishing quality or characteristic belonging to a person or plant",
-      "definition_vi": "đặc tính, tính trạng",
-      "example_en": "Deep root architecture is a crucial genetic trait for surviving dry periods.",
-      "example_vi": "Cấu trúc rễ sâu là một tính trạng di truyền quan trọng để sinh tồn qua các giai đoạn khô hạn."
+      "ipa": "/əˈnælədʒi/",
+      "definition_en": "A comparison between two distinct things to clarify or explain an idea",
+      "definition_vi": "sự suy diễn tương tự / phép loại suy",
+      "example_en": "He drew an analogy between digital distraction and junk food consumption.",
+      "example_vi": "Anh ấy đã đưa ra một phép so sánh tương tự giữa sự xao nhãng kỹ thuật số và việc tiêu thụ thức ăn rác."
     },
     {
       "id": 14,
-      "word": "modification",
+      "word": "cadence",
       "pos": "n",
-      "ipa": "/ˌmɑːdɪfɪˈkeɪʃən/",
-      "definition_en": "The action of modifying something, especially the genetic structure",
-      "definition_vi": "sự biến đổi, sửa đổi",
-      "example_en": "Targeted genetic modification enhances provitamin concentrations in cassava roots.",
-      "example_vi": "Sự biến đổi gen có mục tiêu tăng cường nồng độ tiền vitamin trong củ sắn."
+      "ipa": "/ˈkeɪdəns/",
+      "definition_en": "A rhythmic sequence, flow, or modulation of sounds in spoken delivery",
+      "definition_vi": "nhịp điệu câu nói / âm điệu",
+      "example_en": "The rhythmic cadence of the address echoed the cadence of famous historical speeches.",
+      "example_vi": "Âm điệu nhịp nhàng của bài phát biểu lặp lại nhịp điệu của các bài diễn văn lịch sử nổi tiếng."
     },
     {
       "id": 15,
-      "word": "resistant",
-      "pos": "adj",
-      "ipa": "/rɪˈzɪstənt/",
-      "definition_en": "Able to withstand the action or effect of something damaging",
-      "definition_vi": "có khả năng kháng, chống chịu",
-      "example_en": "Agronomists bred a wheat variety highly resistant to stem rust fungus.",
-      "example_vi": "Các nhà nông học đã nhân giống một loại lúa mì có khả năng kháng cao đối với nấm gỉ sắt thân."
+      "word": "eloquence",
+      "pos": "n",
+      "ipa": "/ˈeləkwəns/",
+      "definition_en": "Fluent, graceful, and persuasive speaking or writing",
+      "definition_vi": "sự hùng biện / tài ăn nói lưu loát",
+      "example_en": "Her natural eloquence moved the entire assembly to stand and applaud.",
+      "example_vi": "Tài hùng biện tự nhiên của cô ấy đã khiến toàn thể hội trường đứng dậy vỗ tay."
     },
     {
       "id": 16,
-      "word": "harvest",
+      "word": "passion",
       "pos": "n",
-      "ipa": "/ˈhɑːrvɪst/",
-      "definition_en": "The process or period of gathering in crops",
-      "definition_vi": "vụ thu hoạch, mùa gặt",
-      "example_en": "Farmers celebrated an abundant autumn harvest despite early summer frosts.",
-      "example_vi": "Nông dân đã ăn mừng một vụ thu hoạch mùa thu bội thu bất chấp những đợt sương giá đầu hè."
+      "ipa": "/ˈpæʃən/",
+      "definition_en": "Strong, barely controllable emotion or intense personal conviction",
+      "definition_vi": "niềm đam mê / sự nhiệt huyết",
+      "example_en": "Speaking with authentic passion transforms dry research into an urgent moral call.",
+      "example_vi": "Nói chuyện với niềm đam mê đích thực biến nghiên cứu khô khan thành một lời kêu gọi đạo đức khẩn thiết."
     },
     {
       "id": 17,
-      "word": "fertilizer",
+      "word": "rationale",
       "pos": "n",
-      "ipa": "/ˈfɜːrtəlaɪzər/",
-      "definition_en": "A chemical or natural substance added to soil to increase its fertility",
-      "definition_vi": "phân bón",
-      "example_en": "Organic compost fertilizer enriches soil microbial life without chemical runoff.",
-      "example_vi": "Phân bón hữu cơ làm giàu hệ vi sinh vật trong đất mà không gây rửa trôi hóa chất."
+      "ipa": "/ˌræʃəˈnæl/",
+      "definition_en": "A set of reasons or a logical basis for a course of action or belief",
+      "definition_vi": "lý do căn bản / cơ sở hợp lý",
+      "example_en": "The policy document outlines the scientific rationale behind screen restrictions.",
+      "example_vi": "Tài liệu chính sách phác thảo cơ sở khoa học đằng sau các giới hạn màn hình."
     },
     {
       "id": 18,
-      "word": "biodiversity",
+      "word": "motive",
       "pos": "n",
-      "ipa": "/ˌbaɪoʊdaɪˈvɜːrsəti/",
-      "definition_en": "The variety of plant and animal life in a particular habitat",
-      "definition_vi": "đa dạng sinh học",
-      "example_en": "Maintaining wild seed banks preserves genetic biodiversity for future breeding.",
-      "example_vi": "Duy trì các ngân hàng hạt giống hoang dã bảo tồn đa dạng sinh học di truyền cho việc lai tạo tương lai."
+      "ipa": "/ˈmoʊtɪv/",
+      "definition_en": "A reason for doing something, especially one that is hidden or underlying",
+      "definition_vi": "động cơ / mục đích",
+      "example_en": "Commercial app developers have a financial motive to maximize youth screen time.",
+      "example_vi": "Các nhà phát triển ứng dụng thương mại có động cơ tài chính để tối đa hóa thời gian sử dụng màn hình của giới trẻ."
     },
     {
       "id": 19,
-      "word": "food security",
+      "word": "repetition",
       "pos": "n",
-      "ipa": "/fuːd sɪˈkjʊrəti/",
-      "definition_en": "The state of having reliable access to a sufficient quantity of affordable food",
-      "definition_vi": "an ninh lương thực",
-      "example_en": "Climate-adapted crops are indispensable for sustaining global food security.",
-      "example_vi": "Các loại cây trồng thích ứng với khí hậu là không thể thiếu để duy trì an ninh lương thực toàn cầu."
+      "ipa": "/ˌrepəˈtɪʃən/",
+      "definition_en": "The deliberate repeating of key words or phrases for rhetorical emphasis",
+      "definition_vi": "sự lặp từ / điệp từ điệp ngữ",
+      "example_en": "Deliberate repetition of 'We can choose balance' anchored the keynote theme.",
+      "example_vi": "Việc lặp lại có chủ đích cụm từ 'Chúng ta có thể chọn sự cân bằng' đã khắc sâu chủ đề của bài diễn văn."
     },
     {
       "id": 20,
-      "word": "ethics",
-      "pos": "n",
-      "ipa": "/ˈeθɪks/",
-      "definition_en": "Moral principles governing genetic manipulation and commercial seed patents",
-      "definition_vi": "đạo đức học",
-      "example_en": "Bioethics committees review intellectual property patents on engineered food crops.",
-      "example_vi": "Các ủy ban đạo đức sinh học xem xét các bằng sáng chế sở hữu trí tuệ về cây trồng thực phẩm biến đổi gen."
+      "word": "charismatic",
+      "pos": "adj",
+      "ipa": "/ˌkerɪzˈmætɪk/",
+      "definition_en": "Exercising a compelling personal charm and leadership that inspires others",
+      "definition_vi": "có sức hút lôi cuốn / có uy tín lãnh đạo",
+      "example_en": "The charismatic team captain motivated everyone to practice their speeches daily.",
+      "example_vi": "Đội trưởng lôi cuốn đã thúc đẩy mọi người luyện tập bài phát biểu của mình hàng ngày."
     }
   ],
   "clil_article": {
-    "title_en": "Engineering Abundance: Biotechnology and Climate-Resilient Agriculture",
-    "title_vi": "Kiến Tạo Sự Bội Thu: Công Nghệ Sinh Học và Nông Nghiệp Thích Ứng Khí Hậu",
-    "content_en": "As changing global weather patterns threaten agricultural stability, biotechnology provides vital solutions for human food security. Conventional plant breeding, which takes decades of trial and error, cannot match the rapid onset of environmental shifts. Today, agricultural geneticists use targeted gene editing to identify beneficial wild traits that have been lost during centuries of domestication. Drought-resistant rice varieties, which researchers developed by studying desert grasses, produce reliable harvests with forty percent less water. Similarly, agronomists assist coastal farmers whose fields suffer from saltwater intrusion by introducing salinity-tolerant wheat strains. By balancing genetic innovation with ecological biosafety, modern agriculture builds a resilient and sustainable global food supply.",
+    "title_en": "Rhetorical Appeals: Ethos, Pathos, and Logos in Historic Speeches",
+    "title_vi": "Các Phương Thức Thuyết Phục: Ethos, Pathos và Logos Trong Các Bài Diễn Văn Lịch Sử",
+    "content_en": "Classical rhetoric identifies three fundamental appeals that empower persuasive communication: ethos, pathos, and logos. Aristotle established that an effective argument must integrate all three dimensions to persuade an audience completely. Ethos establishes the speaker's personal credibility, scholarly integrity, and ethical authority. Pathos engages the audience's emotions, values, and empathy through vivid storytelling and sensory descriptions. Logos provides the logical foundation, employing rigorous evidence, deductive reasoning, and factual statistics. When historical orators deliver addresses, they weave these appeals together using rhythmic repetition and dynamic cadence. For instance, pairing a compelling moral narrative with verifiable data creates an irresistible persuasive impact. Understanding rhetorical mechanisms equips students to deliver speeches that inspire conviction while critically evaluating political and commercial persuasion in modern society.",
     "glossary": [
       {
-        "word": "genetics",
-        "definition_en": "Scientific discipline studying inherited DNA variations",
-        "definition_vi": "ngành khoa học nghiên cứu các biến dị ADN di truyền"
+        "word": "ethos",
+        "definition_en": "The character, moral authority, and established credibility of a speaker",
+        "definition_vi": "tư cách, uy tín đạo đức và độ tin cậy đã được xác lập của một diễn giả"
       },
       {
-        "word": "biotechnology",
-        "definition_en": "Application of molecular biological tools to agricultural systems",
-        "definition_vi": "ứng dụng các công cụ sinh học phân tử vào nông nghiệp"
+        "word": "pathos",
+        "definition_en": "Rhetorical engagement with audience emotional sympathies and values",
+        "definition_vi": "sự kết nối tu từ với tình cảm, sự đồng cảm và giá trị của khán giả"
       },
       {
-        "word": "yield",
-        "definition_en": "Total volume of harvested agricultural grain or produce",
-        "definition_vi": "tổng sản lượng nông sản hoặc ngũ cốc thu hoạch"
+        "word": "logos",
+        "definition_en": "Logical argumentation grounded in empirical data, deductive reasoning, and factual evidence",
+        "definition_vi": "lập luận logic dựa trên dữ liệu thực nghiệm, suy diễn và bằng chứng thực tế"
       },
       {
-        "word": "salinity",
-        "definition_en": "Accumulation of mineral salts in soil that inhibits plant germination",
-        "definition_vi": "sự tích tụ muối khoáng trong đất làm ức chế nảy mầm"
+        "word": "cadence",
+        "definition_en": "The rhythmic vocal modulation and inflection of spoken delivery",
+        "definition_vi": "sự điều biến giọng nói và ngữ điệu nhịp nhàng trong diễn thuyết"
       },
       {
-        "word": "food security",
-        "definition_en": "Equitable, reliable access to nutritious food across populations",
-        "definition_vi": "tiếp cận bình đẳng, đáng tin cậy nguồn thực phẩm dinh dưỡng"
+        "word": "repetition",
+        "definition_en": "The strategic reiteration of key phrases to anchor memorability and emotional weight",
+        "definition_vi": "sự lặp lại chiến lược các cụm từ chính để tạo sự ghi nhớ và sức nặng cảm xúc"
       }
     ],
     "check_questions": [
       {
         "id": 1,
-        "question_en": "Why is modern targeted gene editing faster than conventional crop breeding?",
+        "question_en": "Which rhetorical appeal relies on verifiable empirical data and logical deduction?",
         "options": [
-          "It edits specific beneficial traits directly without requiring decades of backcrossing",
-          "It uses magic water to grow trees in one hour",
-          "It requires zero laboratory equipment or scientific knowledge"
+          "Logos",
+          "Pathos",
+          "Ethos"
         ],
-        "answer": "It edits specific beneficial traits directly without requiring decades of backcrossing"
+        "answer": "Logos"
       },
       {
         "id": 2,
-        "question_en": "Which relative clause from the text provides essential defining information about farmers?",
+        "question_en": "How does an orator establish personal ethos before an audience?",
         "options": [
-          "whose fields suffer from saltwater intrusion",
-          "which takes decades of trial and error",
-          "who love eating sweet apples everyday"
+          "By demonstrating integrity, deep expertise, and respect for listeners",
+          "By speaking as loudly as possible through a megaphone",
+          "By telling completely invented stories without sources"
         ],
-        "answer": "whose fields suffer from saltwater intrusion"
+        "answer": "By demonstrating integrity, deep expertise, and respect for listeners"
       },
       {
         "id": 3,
-        "question_en": "How do salinity-tolerant wheat cultivars benefit coastal farming communities?",
+        "question_en": "Why do great speeches combine both emotional pathos and factual logos?",
         "options": [
-          "They germinate and yield healthy grain despite high soil salt concentrations",
-          "They turn salty seawater into sweet milk",
-          "They stop all rainstorms permanently"
+          "Because emotion inspires motivation while logical facts satisfy intellectual scrutiny",
+          "Because speakers must fill at least two hours of time",
+          "Because rules forbid using only one appeal"
         ],
-        "answer": "They germinate and yield healthy grain despite high soil salt concentrations"
+        "answer": "Because emotion inspires motivation while logical facts satisfy intellectual scrutiny"
       }
     ],
     "critical_thinking": {
-      "question_en": "How can agricultural scientists ensure that smallholder family farmers in developing nations have affordable access to patented bioengineered seeds?",
-      "hint_en": "Consider open-source humanitarian licensing, university-public seed consortia, and international agricultural research partnerships."
+      "question_en": "Why can an argument that relies exclusively on pathos become emotionally manipulative or deceptive?",
+      "hint_en": "Without the objective grounding of logos and the honest credibility of ethos, raw emotional appeals can mislead listeners into accepting unsound conclusions."
     }
   },
   "story_scenes": [
@@ -286,10 +286,10 @@ export const readingHubData = {
       "id": 1,
       "scene_id": "scene_1",
       "scene_number": 1,
-      "title_en": "Identifying Wild Resilience Genes",
-      "title_vi": "Xác Định Gen Chống Chịu Hoang Dã",
-      "description_en": "Dr. Aris Thorne and Naomi Ward examine genetic sequencing markers from wild drought-tolerant grasses.",
-      "description": "Dr. Aris Thorne and Naomi Ward examine genetic sequencing markers from wild drought-tolerant grasses.",
+      "title_en": "Analyzing Aristotle's Triad",
+      "title_vi": "Phân Tích Bộ Ba Của Aristotle",
+      "description_en": "Marcus and Olivia examine classical Greek rhetoric manuscripts illustrating the balance of ethos, pathos, and logos.",
+      "description": "Marcus and Olivia examine classical Greek rhetoric manuscripts illustrating the balance of ethos, pathos, and logos.",
       "image_url": "/images/week131/webtoon_scene_1.png",
       "audio_url": "/audio/week131/scene_1.mp3"
     },
@@ -297,10 +297,10 @@ export const readingHubData = {
       "id": 2,
       "scene_id": "scene_2",
       "scene_number": 2,
-      "title_en": "Greenhouse Hydroponic Trials",
-      "title_vi": "Thử Nghiệm Thủy Canh Nhà Kính",
-      "description_en": "Naomi measures root depth in experimental rice seedlings grown under simulated saline water conditions.",
-      "description": "Naomi measures root depth in experimental rice seedlings grown under simulated saline water conditions.",
+      "title_en": "Crafting the Emotional Hook",
+      "title_vi": "Tạo Điểm Móc Cảm Xúc",
+      "description_en": "Olivia writes a touching narrative about a young student feeling isolated without real-world friendships.",
+      "description": "Olivia writes a touching narrative about a young student feeling isolated without real-world friendships.",
       "image_url": "/images/week131/webtoon_scene_2.png",
       "audio_url": "/audio/week131/scene_2.mp3"
     },
@@ -308,10 +308,10 @@ export const readingHubData = {
       "id": 3,
       "scene_id": "scene_3",
       "scene_number": 3,
-      "title_en": "Simulated Arid Stress Testing",
-      "title_vi": "Thử Nghiệm Căng Thẳng Khô Hạn Mô Phỏng",
-      "description_en": "The edited crop strains continue green photosynthesis while unedited control plants wither under heat.",
-      "description": "The edited crop strains continue green photosynthesis while unedited control plants wither under heat.",
+      "title_en": "Bolstering Arguments with Solid Data",
+      "title_vi": "Củng Cố Lập Luận Bằng Dữ Liệu Chắc Chắn",
+      "description_en": "Marcus integrates pediatric research statistics into the speech, ensuring the emotional appeal has logical proof.",
+      "description": "Marcus integrates pediatric research statistics into the speech, ensuring the emotional appeal has logical proof.",
       "image_url": "/images/week131/webtoon_scene_3.png",
       "audio_url": "/audio/week131/scene_3.mp3"
     },
@@ -319,10 +319,10 @@ export const readingHubData = {
       "id": 4,
       "scene_id": "scene_4",
       "scene_number": 4,
-      "title_en": "Field Trial Harvesting",
-      "title_vi": "Thu Hoạch Thử Nghiệm Trên Đồng Ruộng",
-      "description_en": "Farmers and scientists weigh bountiful golden grain bundles harvested from coastal test plots.",
-      "description": "Farmers and scientists weigh bountiful golden grain bundles harvested from coastal test plots.",
+      "title_en": "Practicing Dynamic Vocal Cadence",
+      "title_vi": "Luyện Tập Âm Điệu Giọng Nói Sinh Động",
+      "description_en": "They practice the inverted structure 'Not only does it protect health, but it also inspires learning' before the team.",
+      "description": "They practice the inverted structure 'Not only does it protect health, but it also inspires learning' before the team.",
       "image_url": "/images/week131/webtoon_scene_4.png",
       "audio_url": "/audio/week131/scene_4.mp3"
     },
@@ -330,10 +330,10 @@ export const readingHubData = {
       "id": 5,
       "scene_id": "scene_5",
       "scene_number": 5,
-      "title_en": "Open-Source Seed Distribution",
-      "title_vi": "Phân Phối Hạt Giống Nguồn Mở",
-      "description_en": "Dr. Thorne hands verified resilient seeds to regional farming cooperative representatives.",
-      "description": "Dr. Thorne hands verified resilient seeds to regional farming cooperative representatives.",
+      "title_en": "The Standing Ovation",
+      "title_vi": "Tràng Pháo Tay Đứng Dậy",
+      "description_en": "The civic assembly rises in applause as Marcus and Olivia conclude their persuasive address with moral conviction.",
+      "description": "The civic assembly rises in applause as Marcus and Olivia conclude their persuasive address with moral conviction.",
       "image_url": "/images/week131/webtoon_scene_5.png",
       "audio_url": "/audio/week131/scene_5.mp3"
     }
@@ -342,413 +342,290 @@ export const readingHubData = {
     "sentences": [
       {
         "id": 1,
-        "text": "Drought-resistant rice crops, which scientists developed through gene editing, conserve scarce groundwater.",
-        "en": "Drought-resistant rice crops, which scientists developed through gene editing, conserve scarce groundwater.",
-        "vi": "Các giống lúa chịu hạn, vốn được các nhà khoa học phát triển qua chỉnh sửa gen, tiết kiệm nguồn nước ngầm khan hiếm.",
-        "ipa": "/draʊt rɪˈzɪstənt raɪs krɑːps wɪtʃ ˈsaɪəntɪsts dɪˈveləpt θruː dʒiːn ˈedɪtɪŋ kənˈsɜːrv skers ˈɡraʊndwɔːtər/",
+        "text": "Classical rhetoric integrates ethos, pathos, and logos into an effective persuasive speech.",
+        "en": "Classical rhetoric integrates ethos, pathos, and logos into an effective persuasive speech.",
+        "vi": "Thuật tu từ cổ điển tích hợp ethos, pathos và logos thành một bài phát biểu thuyết phục hiệu quả.",
+        "ipa": "/ˈklæsɪkəl ˈretərɪk ˈɪntɪɡreɪts ˈiːθɑːs ˈpeɪθɑːs ænd ˈloʊɡɑːs ˈɪntuː ən ɪˈfektɪv pərˈsweɪsɪv spiːtʃ/",
         "words": [
-          "Drought-resistant",
-          "rice",
-          "crops,",
-          "which",
-          "scientists",
-          "developed",
-          "through",
-          "gene",
-          "editing,",
-          "conserve",
-          "scarce",
-          "groundwater"
+          "Classical",
+          "rhetoric",
+          "integrates",
+          "ethos",
+          "pathos",
+          "and",
+          "logos",
+          "into",
+          "an",
+          "effective",
+          "persuasive",
+          "speech"
         ]
       },
       {
         "id": 2,
-        "text": "Farmers whose fields suffer from coastal salinity now cultivate tolerant hybrid wheat varieties.",
-        "en": "Farmers whose fields suffer from coastal salinity now cultivate tolerant hybrid wheat varieties.",
-        "vi": "Những người nông dân có ruộng đồng bị nhiễm mặn ven biển nay gieo trồng các giống lúa mì lai chịu mặn.",
-        "ipa": "/ˈfɑːrmərz huːz fiːldz ˈsʌfər frəm ˈkoʊstl səˈlɪnəti naʊ ˈkʌltɪveɪt ˈtɑːlərənt ˈhaɪbrɪd wiːt vəˈraɪətiz/",
+        "text": "Ethos establishes personal credibility through academic integrity and ethical leadership.",
+        "en": "Ethos establishes personal credibility through academic integrity and ethical leadership.",
+        "vi": "Ethos thiết lập uy tín cá nhân thông qua sự liêm chính học thuật và năng lực lãnh đạo đạo đức.",
+        "ipa": "/ˈiːθɑːs ɪˈstæblɪʃɪz ˈpɜːrsənəl ˌkredəˈbɪləti θruː ˌækəˈdemɪk ɪnˈteɡrəti ænd ˈeθɪkəl ˈliːdərʃɪp/",
         "words": [
-          "Farmers",
-          "whose",
-          "fields",
-          "suffer",
-          "from",
-          "coastal",
-          "salinity",
-          "now",
-          "cultivate",
-          "tolerant",
-          "hybrid",
-          "wheat",
-          "varieties"
+          "Ethos",
+          "establishes",
+          "personal",
+          "credibility",
+          "through",
+          "academic",
+          "integrity",
+          "and",
+          "ethical",
+          "leadership"
         ]
       },
       {
         "id": 3,
-        "text": "Sequencing the complex wheat genome revealed ancient biological defenses against fungal leaf rust.",
-        "en": "Sequencing the complex wheat genome revealed ancient biological defenses against fungal leaf rust.",
-        "vi": "Việc giải trình tự bộ gen lúa mì phức tạp đã hé lộ những cơ chế tự vệ sinh học cổ xưa chống lại bệnh gỉ sắt lá.",
-        "ipa": "/ˈsiːkwənsɪŋ ðə ˈkɑːmpleks wiːt ˈdʒiːnoʊm rɪˈviːld ˈeɪnʃənt ˌbaɪəˈlɑːdʒɪkəl dɪˈfensɪz əˈɡenst ˈfʌŋɡəl liːf rʌst/",
+        "text": "Pathos touches human emotion through vivid personal stories that evoke genuine empathy.",
+        "en": "Pathos touches human emotion through vivid personal stories that evoke genuine empathy.",
+        "vi": "Pathos chạm vào cảm xúc con người thông qua những câu chuyện cá nhân sinh động gợi lên sự đồng cảm chân thành.",
+        "ipa": "/ˈpeɪθɑːs ˈtʌtʃɪz ˈhjuːmən ɪˈmoʊʃən θruː ˈvɪvɪd ˈpɜːrsənəl ˈstɔːriz ðæt ɪˈvoʊk ˈdʒenjuɪn ˈempəθi/",
         "words": [
-          "Sequencing",
-          "the",
-          "complex",
-          "wheat",
-          "genome",
-          "revealed",
-          "ancient",
-          "biological",
-          "defenses",
-          "against",
-          "fungal",
-          "leaf",
-          "rust"
+          "Pathos",
+          "touches",
+          "human",
+          "emotion",
+          "through",
+          "vivid",
+          "personal",
+          "stories",
+          "that",
+          "evoke",
+          "genuine",
+          "empathy"
         ]
       },
       {
         "id": 4,
-        "text": "Agricultural biotechnology plays an indispensable role in safeguarding long-term global food security.",
-        "en": "Agricultural biotechnology plays an indispensable role in safeguarding long-term global food security.",
-        "vi": "Công nghệ sinh học nông nghiệp đóng vai trò không thể thiếu trong việc bảo vệ an ninh lương thực toàn cầu lâu dài.",
-        "ipa": "/ˌæɡrɪˈkʌltʃərəl ˌbaɪoʊtekˈnɑːlədʒi pleɪz ən ˌɪndɪˈspensəbəl roʊl ɪn ˈseɪfɡɑːrdɪŋ lɔːŋ tɜːrm ˈɡloʊbəl fuːd sɪˈkjʊrəti/",
+        "text": "Logos provides the solid logical foundation using verifiable statistical evidence.",
+        "en": "Logos provides the solid logical foundation using verifiable statistical evidence.",
+        "vi": "Logos cung cấp nền tảng logic vững chắc bằng cách sử dụng bằng chứng thống kê có thể kiểm chứng.",
+        "ipa": "/ˈloʊɡɑːs prəˈvaɪdz ðə ˈsɑːlɪd ˈlɑːdʒɪkəl faʊnˈdeɪʃən ˈjuːzɪŋ ˈverɪfaɪəbəl stəˈtɪstɪkəl ˈevɪdəns/",
         "words": [
-          "Agricultural",
-          "biotechnology",
-          "plays",
-          "an",
-          "indispensable",
-          "role",
-          "in",
-          "safeguarding",
-          "long-term",
-          "global",
-          "food",
-          "security"
+          "Logos",
+          "provides",
+          "the",
+          "solid",
+          "logical",
+          "foundation",
+          "using",
+          "verifiable",
+          "statistical",
+          "evidence"
         ]
       },
       {
         "id": 5,
-        "text": "The field trial, which spanned three dry growing seasons, demonstrated thirty percent higher yields.",
-        "en": "The field trial, which spanned three dry growing seasons, demonstrated thirty percent higher yields.",
-        "vi": "Thử nghiệm trên đồng ruộng, vốn kéo dài qua ba mùa gieo trồng khô hạn, đã chứng minh năng suất cao hơn ba mươi phần trăm.",
-        "ipa": "/ðə fiːld ˈtraɪəl wɪtʃ spænd θriː draɪ ˈɡroʊɪŋ ˈsiːzənz ˈdemənstreɪtɪd ˈθɜːrti pərˈsent ˈhaɪər jiːldz/",
+        "text": "Not only does it inform the mind, but it also inspires the heart.",
+        "en": "Not only does it inform the mind, but it also inspires the heart.",
+        "vi": "Nó không chỉ cung cấp thông tin cho tâm trí, mà còn truyền cảm hứng cho trái tim.",
+        "ipa": "/nɑːt ˈoʊnli dʌz ɪt ɪnˈfɔːrm ðə maɪnd bʌt ɪt ˈɔːlsoʊ ɪnˈspaɪərz ðə hɑːrt/",
         "words": [
-          "The",
-          "field",
-          "trial,",
-          "which",
-          "spanned",
-          "three",
-          "dry",
-          "growing",
-          "seasons,",
-          "demonstrated",
-          "thirty",
-          "percent",
-          "higher",
-          "yields"
+          "Not",
+          "only",
+          "does",
+          "it",
+          "inform",
+          "the",
+          "mind",
+          "but",
+          "it",
+          "also",
+          "inspires",
+          "the",
+          "heart"
         ]
       },
       {
         "id": 6,
-        "text": "Agronomists whose primary research targets crop resilience shared open-source seeds with farming cooperatives.",
-        "en": "Agronomists whose primary research targets crop resilience shared open-source seeds with farming cooperatives.",
-        "vi": "Các nhà nông học có nghiên cứu chính nhắm vào tính chống chịu của cây trồng đã chia sẻ hạt giống nguồn mở với các hợp tác xã nông nghiệp.",
-        "ipa": "/əˈɡrɑːnəmɪsts huːz ˈpraɪmeri rɪˈsɜːrtʃ ˈtɑːrɡɪts krɑːp rɪˈzɪljəns ʃerd ˈoʊpən sɔːrs siːdz wɪð ˈfɑːrmɪŋ koʊˈɑːpərətɪvz/",
+        "text": "Varying your vocal cadence and rhythm commands the attention of every listener.",
+        "en": "Varying your vocal cadence and rhythm commands the attention of every listener.",
+        "vi": "Thay đổi âm điệu và nhịp điệu giọng nói sẽ thu hút sự chú ý của mọi người nghe.",
+        "ipa": "/ˈveriɪŋ jʊər ˈvoʊkəl ˈkeɪdəns ænd ˈrɪðəm kəˈmændz ði əˈtenʃən əv ˈevri ˈlɪsənər/",
         "words": [
-          "Agronomists",
-          "whose",
-          "primary",
-          "research",
-          "targets",
-          "crop",
-          "resilience",
-          "shared",
-          "open-source",
-          "seeds",
-          "with",
-          "farming",
-          "cooperatives"
+          "Varying",
+          "your",
+          "vocal",
+          "cadence",
+          "and",
+          "rhythm",
+          "commands",
+          "the",
+          "attention",
+          "of",
+          "every",
+          "listener"
         ]
       },
       {
         "id": 7,
-        "text": "Natural genetic biodiversity preserved in global seed vaults provides essential raw traits for breeders.",
-        "en": "Natural genetic biodiversity preserved in global seed vaults provides essential raw traits for breeders.",
-        "vi": "Đa dạng sinh học di truyền tự nhiên được lưu giữ trong các hầm hạt giống toàn cầu cung cấp các đặc tính thô thiết yếu cho các nhà lai tạo.",
-        "ipa": "/ˈnætʃərəl dʒəˈnetɪk ˌbaɪoʊdaɪˈvɜːrsəti prɪˈzɜːrvd ɪn ˈɡloʊbəl siːd vɔːlts prəˈvaɪdz ɪˈsenʃəl rɔː treɪts fɔːr ˈbriːdərz/",
+        "text": "Deliberate repetition of key phrases reinforces the core message of the address.",
+        "en": "Deliberate repetition of key phrases reinforces the core message of the address.",
+        "vi": "Việc lặp lại có chủ đích các cụm từ then chốt củng cố thông điệp cốt lõi của bài phát biểu.",
+        "ipa": "/dɪˈlɪbərət ˌrepəˈtɪʃən əv kiː ˈfreɪzɪz ˌriːɪnˈfɔːrsɪz ðə kɔːr ˈmesɪdʒ əv ði əˈdres/",
         "words": [
-          "Natural",
-          "genetic",
-          "biodiversity",
-          "preserved",
-          "in",
-          "global",
-          "seed",
-          "vaults",
-          "provides",
-          "essential",
-          "raw",
-          "traits",
-          "for",
-          "breeders"
+          "Deliberate",
+          "repetition",
+          "of",
+          "key",
+          "phrases",
+          "reinforces",
+          "the",
+          "core",
+          "message",
+          "of",
+          "the",
+          "address"
         ]
       },
       {
         "id": 8,
-        "text": "Bioethics committees review intellectual property agreements to ensure fair smallholder seed access.",
-        "en": "Bioethics committees review intellectual property agreements to ensure fair smallholder seed access.",
-        "vi": "Các ủy ban đạo đức sinh học xem xét các thỏa thuận sở hữu trí tuệ để đảm bảo nông hộ nhỏ tiếp cận hạt giống công bằng.",
-        "ipa": "/ˌbaɪoʊˈeθɪks kəˈmɪtiz rɪˈvjuː ˌɪntəlˈektʃuəl ˈprɑːpərti əˈɡriːmənts tuː ɪnˈʃʊr fer ˈsmɔːlhoʊldər siːd ˈækses/",
+        "text": "Mastering persuasive techniques enables young citizens to advocate for positive community change.",
+        "en": "Mastering persuasive techniques enables young citizens to advocate for positive community change.",
+        "vi": "Làm chủ các kỹ thuật thuyết phục cho phép các công dân trẻ vận động cho sự thay đổi tích cực của cộng đồng.",
+        "ipa": "/ˈmæstərɪŋ pərˈsweɪsɪv tekˈniːks ɪˈneɪbəlz jʌŋ ˈsɪtɪzənz tuː ˈædvəkeɪt fɔːr ˈpɑːzətɪv kəˈmjuːnəti tʃeɪndʒ/",
         "words": [
-          "Bioethics",
-          "committees",
-          "review",
-          "intellectual",
-          "property",
-          "agreements",
+          "Mastering",
+          "persuasive",
+          "techniques",
+          "enables",
+          "young",
+          "citizens",
           "to",
-          "ensure",
-          "fair",
-          "smallholder",
-          "seed",
-          "access"
+          "advocate",
+          "for",
+          "positive",
+          "community",
+          "change"
         ]
       }
     ]
   },
   "rw_part1": {
     "word_bank": [
-      "genetics",
-      "biotechnology",
-      "chromosome",
-      "genome",
-      "agriculture",
-      "cultivate",
-      "yield",
-      "mutation",
-      "hybrid",
-      "drought",
-      "pest",
-      "salinity",
-      "trait",
-      "modification",
-      "resistant",
-      "harvest",
-      "fertilizer",
-      "biodiversity",
-      "food security",
-      "ethics"
+      "persuasion",
+      "ethos",
+      "pathos",
+      "logos",
+      "appeal",
+      "credibility",
+      "rhetorical",
+      "emotion",
+      "logic",
+      "convince",
+      "metaphor",
+      "orator",
+      "analogy",
+      "cadence",
+      "eloquence",
+      "passion",
+      "rationale",
+      "motive",
+      "repetition",
+      "charismatic"
     ],
     "definitions": [
       {
         "id": 1,
-        "definition_en": "The branch of biology studying genes, heredity, and variation in organisms.",
-        "options": [
-          "genetics",
-          "biotechnology",
-          "chromosome"
-        ],
-        "answer": "genetics"
+        "text": "The rhetorical appeal based on logical proof, factual deduction, and evidence.",
+        "target": "logos"
       },
       {
         "id": 2,
-        "definition_en": "The technical application of living organisms to agricultural improvement.",
-        "options": [
-          "biotechnology",
-          "fertilizer",
-          "mutation"
-        ],
-        "answer": "biotechnology"
+        "text": "The rhetorical appeal based on a speaker's moral authority and credibility.",
+        "target": "ethos"
       },
       {
         "id": 3,
-        "definition_en": "A microscopic structure of coiled DNA located inside cell nuclei.",
-        "options": [
-          "chromosome",
-          "genome",
-          "trait"
-        ],
-        "answer": "chromosome"
+        "text": "The rhetorical appeal that engages human emotion, empathy, and sympathy.",
+        "target": "pathos"
       },
       {
         "id": 4,
-        "definition_en": "The complete genetic instructional code present inside an organism's cells.",
-        "options": [
-          "genome",
-          "hybrid",
-          "pest"
-        ],
-        "answer": "genome"
+        "text": "The rhythmic sequence and modulation of voice in public speaking.",
+        "target": "cadence"
       },
       {
         "id": 5,
-        "definition_en": "Prepare soil, sow seeds, and raise agricultural crops for harvest.",
-        "options": [
-          "cultivate",
-          "yield",
-          "harvest"
-        ],
-        "answer": "cultivate"
-      },
-      {
-        "id": 6,
-        "definition_en": "The total agricultural harvest volume produced per hectare of farmland.",
-        "options": [
-          "yield",
-          "mutation",
-          "fertilizer"
-        ],
-        "answer": "yield"
-      },
-      {
-        "id": 7,
-        "definition_en": "A plant developed by cross-breeding two distinct genetic varieties.",
-        "options": [
-          "hybrid",
-          "trait",
-          "pest"
-        ],
-        "answer": "hybrid"
-      },
-      {
-        "id": 8,
-        "definition_en": "A prolonged absence of rainfall that causes severe agricultural water deficits.",
-        "options": [
-          "drought",
-          "salinity",
-          "harvest"
-        ],
-        "answer": "drought"
-      },
-      {
-        "id": 9,
-        "definition_en": "A specific genetically inherited feature or physical characteristic.",
-        "options": [
-          "trait",
-          "mutation",
-          "genome"
-        ],
-        "answer": "trait"
-      },
-      {
-        "id": 10,
-        "definition_en": "Equitable, uninterrupted access to adequate nutritious food for a population.",
-        "options": [
-          "food security",
-          "agriculture",
-          "ethics"
-        ],
-        "answer": "food security"
+        "text": "A figure of speech comparing two distinct items to explain an idea creatively.",
+        "target": "metaphor"
       }
     ]
   },
   "rw_part2": {
-    "topic": "Advancements in Climate-Resilient Agricultural Biotechnology",
+    "title": "Mastering Rhetorical Appeals for Public Addresses",
     "turns": [
       {
-        "speaker": "Dr. Thorne",
-        "text": "Naomi, which genetic traits did your team identify in the wild African grass species?",
+        "id": 1,
+        "speaker": "Marcus",
+        "prompt": "Olivia, how does an orator establish ethos when speaking to an unfamiliar audience?",
         "options": [
-          "We isolated root elongation traits, which allow crops to reach deep groundwater reserves.",
-          "I enjoy taking peaceful morning walks through the municipal botanical park.",
-          "The railway timetable changes on the first Monday of November."
+          "By demonstrating sound expertise, ethical character, and genuine respect for the listeners.",
+          "By wearing a gold crown and shouting demands.",
+          "By refusing to answer questions from the floor."
         ],
-        "answer": "We isolated root elongation traits, which allow crops to reach deep groundwater reserves."
+        "answer": "By demonstrating sound expertise, ethical character, and genuine respect for the listeners."
       },
       {
-        "speaker": "Naomi",
-        "text": "Will smallholder farmers whose soil has been ruined by salt floods be able to afford these seeds?",
+        "id": 2,
+        "speaker": "Marcus",
+        "prompt": "Why can an argument that relies exclusively on pathos become problematic?",
         "options": [
-          "Yes, because our research institute released the seeds under a royalty-free humanitarian license.",
-          "My uncle purchased a vintage leather armchair at the antique market.",
-          "No, the university bookstore does not sell foreign postage stamps."
+          "Without objective data and logical proof, raw emotional appeals can become manipulative.",
+          "Because human beings have no emotions whatsoever.",
+          "Because emotions make speeches too quiet to hear."
         ],
-        "answer": "Yes, because our research institute released the seeds under a royalty-free humanitarian license."
+        "answer": "Without objective data and logical proof, raw emotional appeals can become manipulative."
       },
       {
-        "speaker": "Dr. Thorne",
-        "text": "How much did grain yield increase in the coastal trial fields during the summer drought?",
+        "id": 3,
+        "speaker": "Marcus",
+        "prompt": "How does logos satisfy the analytical minds in the auditorium?",
         "options": [
-          "The edited crops produced thirty percent more grain than conventional control varieties.",
-          "We attended an informative lecture on 18th-century European poetry.",
-          "The cafeteria serves fresh fruit smoothies between two and four in the afternoon."
+          "It provides verifiable statistics and sound deduction that withstand critical scrutiny.",
+          "It plays soft guitar music in the background.",
+          "It shortens every word to two letters."
         ],
-        "answer": "The edited crops produced thirty percent more grain than conventional control varieties."
+        "answer": "It provides verifiable statistics and sound deduction that withstand critical scrutiny."
       },
       {
-        "speaker": "Naomi",
-        "text": "Why is preserving genetic biodiversity in global seed vaults so critical for future breeders?",
+        "id": 4,
+        "speaker": "Marcus",
+        "prompt": "What effect does the inverted sentence 'Not only does it..., but it also...' create on stage?",
         "options": [
-          "Seed vaults store wild genetic diversity, which contains natural defenses against future pests.",
-          "I forgot to return my library chemistry books before the weekend deadline.",
-          "There are sixteen oak trees growing in the university central quadrangle."
+          "It establishes a memorable rhetorical cadence and places powerful vocal emphasis on key ideas.",
+          "It causes the speaker to forget the next paragraph.",
+          "It turns off the stage lighting automatically."
         ],
-        "answer": "Seed vaults store wild genetic diversity, which contains natural defenses against future pests."
+        "answer": "It establishes a memorable rhetorical cadence and places powerful vocal emphasis on key ideas."
       },
       {
-        "speaker": "Dr. Thorne",
-        "text": "Shall we present our agricultural harvest data to the international food security summit?",
+        "id": 5,
+        "speaker": "Marcus",
+        "prompt": "How do historic orators conclude their most persuasive speeches?",
         "options": [
-          "Yes, let's share our findings so global farming cooperatives can access the seed stock.",
-          "I prefer taking the underground train instead of the city bus during rush hour.",
-          "The design studio received four crates of white poster paper this morning."
+          "They synthesize ethos, pathos, and logos into a compelling moral call to action.",
+          "They run out of the auditorium without saying goodbye.",
+          "They apologize for wasting the audience's time."
         ],
-        "answer": "Yes, let's share our findings so global farming cooperatives can access the seed stock."
-      }
-    ],
-    "exchanges": [
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Naomi, which genetic traits did your team identify in the wild African grass species?"
-      },
-      {
-        "speaker": "Naomi",
-        "text": "We isolated root elongation traits, which allow crops to reach deep groundwater reserves."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Will smallholder farmers whose soil has been ruined by salt floods be able to afford these seeds?"
-      },
-      {
-        "speaker": "Naomi",
-        "text": "Yes, because our research institute released the seeds under a royalty-free humanitarian license."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "How much did grain yield increase in the coastal trial fields during the summer drought?"
-      },
-      {
-        "speaker": "Naomi",
-        "text": "The edited crops produced thirty percent more grain than conventional control varieties."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Why is preserving genetic biodiversity in global seed vaults so critical for future breeders?"
-      },
-      {
-        "speaker": "Naomi",
-        "text": "Seed vaults store wild genetic diversity, which contains natural defenses against future pests."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Shall we present our agricultural harvest data to the international food security summit?"
-      },
-      {
-        "speaker": "Naomi",
-        "text": "Yes, let's share our findings so global farming cooperatives can access the seed stock."
+        "answer": "They synthesize ethos, pathos, and logos into a compelling moral call to action."
       }
     ]
   },
   "rw_part6": {
-    "title": "Naomi Ward's Field Notebook: Saline Wheat Trials",
-    "instructions": "Read the diary and write the missing words. Write one word on each line.",
-    "text_template": "Dear Notebook, today Dr. Thorne and I measured [1]_____ harvest results from our coastal trial. Drought-resistant rice, which we developed using precision gene editing, produced thirty percent [2]_____ grain than unedited controls. Farmers whose fields suffered from soil salinity [3]_____ thrilled with the healthy crop. By preserving biodiversity, agricultural biotechnology strengthens global food [4]_____. Tomorrow, we will distribute open-source seed packages [5]_____ farming cooperatives.",
+    "instructions": "Read the text about rhetorical appeals and choose the correct function word for each blank space.",
+    "text_template": "Classical rhetoric teaches speakers how to persuade diverse audiences. To be truly effective, an orator must balance ethos, pathos, [1] logos. Establishing personal credibility convinces listeners [2] the speaker is trustworthy. In addition, sharing vivid stories engages emotion [3] a human level. Not only does structured logic provide proof, [4] it also satisfies intellectual scrutiny. By uniting these appeals, speakers inspire lasting commitment [5] positive community change.",
     "answers": {
-      "1": "the",
-      "2": "more",
-      "3": "were",
-      "4": "security",
+      "1": "and",
+      "2": "that",
+      "3": "on",
+      "4": "but",
       "5": "to"
     }
   }

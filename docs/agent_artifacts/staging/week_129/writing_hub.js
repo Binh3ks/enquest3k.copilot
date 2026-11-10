@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Writing Hub & Picture Story Architecture
- * Week: 129 | Theme: "Architecture of the Future: Megacities & Sustainability" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.313Z
+ * Week: 129 | Theme: "Opinion Project 3: Smartphones Under 12?" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.449Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,112 +9,112 @@
 
 export const writingHubData = {
   "week": 129,
-  "theme": "Architecture of the Future: Megacities & Sustainability",
+  "theme": "Opinion Project 3: Smartphones Under 12?",
   "cefr_level": "B2 First",
   "picture_story": {
-    "title": "Designing Sustainable Vertical Megacities",
-    "prompt_en": "Look at the four pictures. Write a formal investigative report about Julian Reyes and Maya Chen designing self-cooling vertical architecture for future megacities. Write 20 or more words.",
-    "prompt_vi": "Nhìn vào 4 bức tranh. Viết bản báo cáo điều tra về Julian Reyes và Maya Chen thiết kế kiến trúc thẳng đứng tự làm mát cho đại đô thị tương lai (từ 20 từ trở lên).",
+    "title": "Structuring an Academic Opinion Essay on Youth Smartphones",
+    "prompt_en": "Look at the four panels. Write an opinion essay paragraph evaluating whether personal smartphones should be restricted for children under age twelve. Use evaluative modal expressions ('evidence suggests that', 'it is imperative that') and balanced reasoning. Write 20 or more words.",
+    "prompt_vi": "Nhìn vào 4 khung tranh. Viết một đoạn văn bài luận quan điểm đánh giá xem điện thoại thông minh cá nhân có nên bị giới hạn đối với trẻ dưới mười hai tuổi hay không. Sử dụng các cấu trúc đánh giá ('evidence suggests that', 'it is imperative that') và lập luận cân bằng. Viết từ 20 từ trở lên.",
     "min_sentences": 3,
     "min_words": 20,
     "max_words": 90,
-    "model_sentence": "Julian Reyes and Maya Chen presented architectural plans for an eco-friendly vertical skyscraper. First, 3D holographic models demonstrated natural ventilation channels. Next, stress tests confirmed that lightweight composite timber beams supported heavy vertical gardens. After pedestrian skybridges eliminated car dependency, the city council ratified the sustainable district development plan.",
+    "model_sentence": "While smartphones enable parents to maintain contact with children during commutes, evidence suggests that unrestricted access compromises adolescent wellbeing. Pediatric studies demonstrate that late-night screen exposure disrupts essential sleep cycles and increases social anxiety. Therefore, it is imperative that schools and families establish firm boundaries, such as screen-free study hours and age restrictions on social media apps.",
     "word_bank": [
-      "megacity",
-      "architecture",
-      "skyscraper",
-      "sustainability",
-      "infrastructure",
-      "pedestrian",
-      "ventilation",
-      "modular",
-      "efficiency",
-      "resilient"
+      "adolescent",
+      "smartphone",
+      "development",
+      "screen",
+      "attention",
+      "pediatric",
+      "anxiety",
+      "wellbeing",
+      "supervision",
+      "restriction"
     ],
     "sentence_frames": [
-      "Initially, architects evaluated holographic models of an eco-friendly ___ tower.",
-      "Engineers verified that passive ___ channels drew cool ground air into the central atrium.",
-      "Interconnected skybridges established a continuous network for ___ commuters.",
-      "Ultimately, city authorities approved the resilient ___ plan."
+      "While smartphones offer emergency communication, they can disrupt adolescent ___.",
+      "Pediatric research indicates that late-night screen use impairs healthy ___.",
+      "It is imperative that parents maintain consistent digital ___ at home.",
+      "Ultimately, establishing clear ___ protects psychological wellbeing."
     ],
     "panels": [
       {
         "panel_id": "panel_1",
-        "title_en": "Holographic Blueprint Examination",
-        "title_vi": "Kiểm Tra Bản Vẽ Ba Chiều",
+        "title_en": "Panel 1: The Safety and Connectivity Claim",
+        "title_vi": "Khung 1: Khẳng Định Về An Toàn và Kết Nối",
         "image_url": "/images/week129/writing_panel_1.png",
-        "image_prompt": "Two architects standing over a glowing blue holographic projection of a curved vertical forest tower.",
-        "caption": "Architects examined holographic models of a self-cooling skyscraper.",
-        "sentence_frame": "First, the architects [examined holographic models] of an [innovative self-cooling skyscraper].",
+        "image_prompt": "A young student using a mobile phone to text their mother while standing at a school bus stop in late afternoon.",
+        "caption": "Phones allow parents to track transit and coordinate after-school pickups.",
+        "sentence_frame": "Smartphones [allow families to maintain direct communication] during [daily school transit].",
         "pills": [
-          "examined holographic models",
-          "innovative self-cooling skyscraper",
-          "Julian and Maya",
-          "3D architectural blueprint"
+          "allow families to maintain direct communication",
+          "daily school transit",
+          "emergency parental contact",
+          "practical connectivity"
         ],
         "connectors": [
-          "First,",
-          "Initially,",
-          "On Monday morning,"
+          "On one hand,",
+          "Proponents argue that,",
+          "First,"
         ]
       },
       {
         "panel_id": "panel_2",
-        "title_en": "Aerodynamic Ventilation Testing",
-        "title_vi": "Thử Nghiệm Thông Gió Khí Động Học",
+        "title_en": "Panel 2: Documenting Sleep and Focus Impairment",
+        "title_vi": "Khung 2: Ghi Nhận Sự Suy Giảm Giấc Ngủ và Tập Trung",
         "image_url": "/images/week129/writing_panel_2.png",
-        "image_prompt": "A digital wind tunnel monitor displaying blue and green airflow vectors flowing through an open building atrium.",
-        "caption": "Simulations proved passive ventilation cooled office floors naturally.",
-        "sentence_frame": "Next, airflow simulations confirmed that [passive ventilation channels] cooled [internal office atriums naturally].",
+        "image_prompt": "A child lying awake in a dark bedroom illuminated by the blue glow of a smartphone screen.",
+        "caption": "Late-night screen use disrupts melatonin production and vital sleep.",
+        "sentence_frame": "Excessive screen usage [disrupts nocturnal sleep cycles] and [impairs classroom cognitive focus].",
         "pills": [
-          "passive ventilation channels",
-          "internal office atriums naturally",
-          "airflow vectors",
-          "energy efficiency"
+          "disrupts nocturnal sleep cycles",
+          "impairs classroom cognitive focus",
+          "blue light exposure",
+          "triggers social anxiety"
         ],
         "connectors": [
-          "Next,",
-          "Subsequently,",
-          "Following fluid simulations,"
+          "However,",
+          "In contrast,",
+          "On the other hand,"
         ]
       },
       {
         "panel_id": "panel_3",
-        "title_en": "Pedestrian Skybridge Connection",
-        "title_vi": "Kết Nối Cầu Đi Bộ Trên Không",
+        "title_en": "Panel 3: Establishing Healthy Home Boundaries",
+        "title_vi": "Khung 3: Thiết Lập Ranh Giới Lành Mạnh Tại Nhà",
         "image_url": "/images/week129/writing_panel_3.png",
-        "image_prompt": "Glass and timber skybridges connecting three leafy skyscrapers high above street level with pedestrians walking.",
-        "caption": "Elevated pedestrian skybridges linked towers without road traffic.",
-        "sentence_frame": "After that, elevated skybridges [connected multiple residential towers] for [pedestrian transit].",
+        "image_prompt": "A family charging basket in the hallway where parents and children deposit phones before bedtime.",
+        "caption": "Establishing screen-free bedrooms protects youth mental wellbeing.",
+        "sentence_frame": "Parents [establish screen-free charging zones] to [ensure restorative sleep for children].",
         "pills": [
-          "connected multiple residential towers",
-          "pedestrian transit",
-          "glass walkways",
-          "eliminated road crossings"
+          "establish screen-free charging zones",
+          "ensure restorative sleep for children",
+          "parental supervision guidelines",
+          "enforce healthy boundaries"
         ],
         "connectors": [
-          "After that,",
-          "Furthermore,",
-          "In the next design phase,"
+          "Therefore,",
+          "To mitigate these harms,",
+          "It is imperative that"
         ]
       },
       {
         "panel_id": "panel_4",
-        "title_en": "City Council Zoning Approval",
-        "title_vi": "Phê Chuẩn Quy Hoạch Của Hội Đồng Thành Phố",
+        "title_en": "Panel 4: Synthesizing a Balanced Recommendation",
+        "title_vi": "Khung 4: Tổng Hợp Khuyến Nghị Cân Bằng",
         "image_url": "/images/week129/writing_panel_4.png",
-        "image_prompt": "Smiling municipal planning officials shaking hands with the architects in front of an architectural scale model.",
-        "caption": "The city council unanimously ratified the sustainable eco-district plan.",
-        "sentence_frame": "In the end, the municipal planning council [ratified the eco-district plan] to ensure [long-term urban sustainability].",
+        "image_prompt": "Happy middle school students playing soccer outdoors in a green park while backpacks rest on a bench.",
+        "caption": "Balancing technology with outdoor activities fosters healthy development.",
+        "sentence_frame": "A balanced lifestyle [combines essential digital moderation] with [active outdoor physical play].",
         "pills": [
-          "ratified the eco-district plan",
-          "long-term urban sustainability",
-          "unanimous vote",
-          "resilient megacity"
+          "combines essential digital moderation",
+          "active outdoor physical play",
+          "protects adolescent wellbeing",
+          "fosters healthy development"
         ],
         "connectors": [
-          "In the end,",
-          "Finally,",
+          "In conclusion,",
+          "Ultimately,",
           "Consequently,"
         ]
       }
@@ -122,89 +122,89 @@ export const writingHubData = {
     "ladder_stages": [
       {
         "badge_label": "MODEL",
-        "title": "Blueprint Examination",
+        "title": "Stage 1: Acknowledging Connectivity",
         "image_url": "/images/week129/writing_panel_1.png",
-        "caption": "Architects examined holographic models of a self-cooling skyscraper.",
-        "frame_L1": "First, the architects analyzed holographic blueprints. They confirmed that the tower incorporated green vertical gardens.",
+        "caption": "Phones allow parents to track transit and coordinate after-school pickups.",
+        "frame_L1": "Smartphones help children contact parents in emergencies. They make walking home safer.",
         "connectors": [
+          "On one hand,",
           "First,",
-          "Initially,",
-          "To begin,"
+          "Initially,"
         ],
-        "sentence_hint": "Write 2 sentences describing holographic model examination.",
+        "sentence_hint": "Write 2 sentences describing the safety benefits of mobile phones.",
         "ordered_chips": [
-          "Architects analyzed",
-          "holographic blueprints",
-          "to incorporate",
-          "green vertical gardens"
+          "Smartphones enable children",
+          "to contact parents in emergencies",
+          "while traveling home",
+          "from afternoon school activities."
         ],
         "pills": [
-          "holographic blueprints",
-          "green vertical gardens",
-          "Julian and Maya",
-          "tower design"
+          "contact parents in emergencies",
+          "traveling home safely",
+          "smartphones enable communication",
+          "practical benefit"
         ],
-        "sentence_frame": "First, architects analyzed [holographic blueprints] to design [green vertical gardens]."
+        "sentence_frame": "Smartphones [allow families to maintain direct communication] during [daily school transit]."
       },
       {
         "badge_label": "BUILD",
-        "title": "Ventilation Testing",
+        "title": "Stage 2: Highlighting Psychological Risks",
         "image_url": "/images/week129/writing_panel_2.png",
-        "caption": "Simulations proved passive ventilation cooled office floors naturally.",
-        "frame_L1": "Next, Maya simulated wind vectors in the atrium. Natural airflow cooled all floors without mechanical air conditioning.",
+        "caption": "Late-night screen use disrupts melatonin production and vital sleep.",
+        "frame_L1": "However, excessive screen time harms sleep. Children stay awake late browsing social media apps.",
         "connectors": [
-          "Next,",
-          "Subsequently,",
-          "In addition,"
+          "However,",
+          "In contrast,",
+          "Evidence shows that,"
         ],
-        "sentence_hint": "Write 2 sentences about simulated passive airflow.",
+        "sentence_hint": "Write 2 sentences explaining how screens impair sleep and attention.",
         "pills": [
-          "simulated wind vectors",
-          "natural airflow",
-          "cooled floors",
-          "Maya tested"
+          "excessive screen time",
+          "harms natural sleep",
+          "browsing late at night",
+          "impairs classroom focus"
         ],
-        "sentence_frame": "Next, Maya simulated [wind vectors] that provided [natural airflow cooling]."
+        "sentence_frame": "Excessive screen usage [disrupts nocturnal sleep cycles] and [impairs classroom cognitive focus]."
       },
       {
         "badge_label": "WRITE",
-        "title": "Skybridge Networks",
+        "title": "Stage 3: Proposing Balanced Solutions",
         "image_url": "/images/week129/writing_panel_3.png",
-        "caption": "Elevated pedestrian skybridges linked towers without road traffic.",
-        "frame_L1": "After that, engineers designed glass skybridges between towers. Residents could walk to work without crossing busy streets.",
+        "caption": "Establishing screen-free bedrooms protects youth mental wellbeing.",
+        "frame_L1": "Families should create screen-free bedrooms. Parents must supervise app downloads carefully.",
         "connectors": [
-          "After that,",
-          "Later,",
-          "Meanwhile,"
+          "Therefore,",
+          "It is essential that,",
+          "For this reason,"
         ],
-        "sentence_hint": "Write 2 sentences describing pedestrian skybridge connections.",
+        "sentence_hint": "Write 2 sentences suggesting guidelines for healthy phone boundaries.",
         "pills": [
-          "glass skybridges",
-          "walk to work",
-          "pedestrians",
-          "avoided traffic"
+          "screen-free bedrooms",
+          "supervise app downloads",
+          "create healthy boundaries",
+          "protect mental health"
         ],
-        "sentence_frame": "After that, engineers designed [glass skybridges] so residents could [walk to work safely]."
+        "sentence_frame": "Parents [establish screen-free charging zones] to [ensure restorative sleep for children]."
       },
       {
         "badge_label": "EXPAND",
-        "title": "Municipal Approval",
+        "title": "Stage 4: Synthesizing the Opinion Conclusion",
         "image_url": "/images/week129/writing_panel_4.png",
-        "caption": "The city council unanimously ratified the sustainable eco-district plan.",
-        "frame_L1": "In the end, municipal leaders approved the zoning permit. The project set a sustainable benchmark for future megacities.",
+        "caption": "Balancing technology with outdoor activities fosters healthy development.",
+        "frame_L1": "In conclusion, moderation is the best policy. Children need both technology skills and outdoor active play.",
         "connectors": [
-          "In the end,",
-          "Finally,",
-          "As a result,"
+          "In conclusion,",
+          "Ultimately,",
+          "Consequently,"
         ],
-        "sentence_hint": "Write 2 sentences about receiving final municipal council approval.",
+        "sentence_hint": "Write 2 sentences concluding whether smartphones should be restricted or moderated.",
         "pills": [
-          "municipal leaders",
-          "zoning permit",
-          "sustainable benchmark",
-          "future megacities"
+          "moderation is key",
+          "technology skills and play",
+          "protect adolescent wellbeing",
+          "foster healthy development"
         ],
-        "sentence_frame": "In the end, municipal leaders approved [the zoning permit] to establish [a sustainable urban benchmark]."
+        "sentence_frame": "A balanced lifestyle [combines essential digital moderation] with [active outdoor physical play]."
       }
     ]
   }

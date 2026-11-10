@@ -1,12 +1,12 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-09T13:11:11.311Z",
+  "generated_at": "2026-11-10T03:12:16.447Z",
   "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
   "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
   "week_number": 127,
-  "theme": "Global Climate Systems & Renewable Energy",
+  "theme": "Rebuttal Practice",
   "cefr_level": "B2 First",
-  "grammar_focus": "Mixed Conditionals & Cause-Effect Sequences: 'If industrial nations had invested earlier in solar grids, atmospheric carbon levels would be substantially lower today.'",
+  "grammar_focus": "Contrast Connectors & Rebuttal Frameworks ('On the contrary', 'However', 'While proponents claim that..., evidence reveals...')",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_127/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
@@ -39,7 +39,8 @@
     "GATE_7_VIETNAMESE_LEAK_ZERO",
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
-    "GATE_10_SKELETON_DIFFERENTIATION"
+    "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY"
   ],
   "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
 }

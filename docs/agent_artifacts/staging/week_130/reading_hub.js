@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 130 | Theme: "Deep Ocean Exploration & Abyssal Organisms" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.315Z
+ * Week: 130 | Theme: "Opinion Project 3: Comparing Global Approaches" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.452Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,276 +9,277 @@
 
 export const readingHubData = {
   "week": 130,
-  "theme": "Deep Ocean Exploration & Abyssal Organisms",
+  "theme": "Opinion Project 3: Comparing Global Approaches",
   "cefr_level": "B2 First",
   "vocab": [
     {
       "id": 1,
-      "word": "abyssal",
+      "word": "comparative",
       "pos": "adj",
-      "ipa": "/əˈbɪsəl/",
-      "definition_en": "Relating to the depths of the ocean, especially between 3,000 and 6,000 meters down",
-      "definition_vi": "thuộc vùng biển thẳm, vực thẳm đại dương",
-      "example_en": "Abyssal plains remain in perpetual freezing darkness under immense water pressure.",
-      "example_vi": "Các đồng bằng đáy biển thẳm chìm trong bóng tối lạnh giá vĩnh cửu dưới áp lực nước khổng lồ."
+      "ipa": "/kəmˈpærətɪv/",
+      "definition_en": "Involving the systematic examination of two or more items or legal systems",
+      "definition_vi": "so sánh / đối chiếu",
+      "example_en": "A comparative analysis reveals profound differences between European and American statutes.",
+      "example_vi": "Một phân tích so sánh chỉ ra những khác biệt sâu sắc giữa các đạo luật của Châu Âu và Hoa Kỳ."
     },
     {
       "id": 2,
-      "word": "trench",
+      "word": "legislation",
       "pos": "n",
-      "ipa": "/trentʃ/",
-      "definition_en": "A long, narrow, deep depression in an ocean bed",
-      "definition_vi": "rãnh đại dương",
-      "example_en": "The Mariana Trench plunges nearly eleven kilometers below the sea surface.",
-      "example_vi": "Rãnh Mariana đâm sâu gần mười một ki-lô-mét bên dưới mặt biển."
+      "ipa": "/ˌledʒɪsˈleɪʃən/",
+      "definition_en": "Laws or statutes enacted by a parliament or legislative body",
+      "definition_vi": "luật pháp / các đạo luật ban hành",
+      "example_en": "The parliament passed comprehensive legislation to regulate digital device usage in schools.",
+      "example_vi": "Quốc hội đã thông qua một đạo luật toàn diện nhằm quy định việc sử dụng thiết bị kỹ thuật số trong trường học."
     },
     {
       "id": 3,
-      "word": "submersible",
+      "word": "ban",
+      "n": "n",
       "pos": "n",
-      "ipa": "/səbˈmɜːrsəbəl/",
-      "definition_en": "A small watercraft designed to operate underwater, especially at great depth",
-      "definition_vi": "tàu lặn, tàu ngầm thám hiểm",
-      "example_en": "The titanium research submersible descended smoothly into the midnight zone.",
-      "example_vi": "Tàu lặn thám hiểm bằng ti-tan lặn êm ái xuống vùng biển nửa đêm tối đen."
+      "ipa": "/bæn/",
+      "definition_en": "An official or legal prohibition against a particular activity or device",
+      "definition_vi": "lệnh cấm chính thức",
+      "example_en": "The national ban applies to all public elementary and middle school campuses.",
+      "example_vi": "Lệnh cấm toàn quốc áp dụng cho tất cả các khuôn viên trường tiểu học và trung học cơ sở công lập."
     },
     {
       "id": 4,
-      "word": "bioluminescence",
+      "word": "jurisdiction",
       "pos": "n",
-      "ipa": "/ˌbaɪoʊˌluːmɪˈnesəns/",
-      "definition_en": "The biochemical emission of light by living organisms",
-      "definition_vi": "sự phát quang sinh học",
-      "example_en": "Deep-sea anglerfish use blue bioluminescence to lure prey in the dark.",
-      "example_vi": "Cá vây chân biển sâu sử dụng sự phát quang sinh học màu xanh lam để nhử con mồi trong bóng tối."
+      "ipa": "/ˌdʒʊrɪsˈdɪkʃən/",
+      "definition_en": "The official authority to make legal decisions, enforce statutes, or govern",
+      "definition_vi": "quyền hạn tài phán / thẩm quyền pháp lý",
+      "example_en": "State legislators have jurisdiction over public school curriculum and disciplinary policies.",
+      "example_vi": "Các nhà lập pháp tiểu bang có thẩm quyền pháp lý đối với chương trình giảng dạy và chính sách kỷ luật của trường công."
     },
     {
       "id": 5,
-      "word": "hydrothermal",
-      "pos": "adj",
-      "ipa": "/ˌhaɪdroʊˈθɜːrməl/",
-      "definition_en": "Relating to the action of heated water within the earth's crust",
-      "definition_vi": "nhiệt dịch, thủy nhiệt",
-      "example_en": "Hydrothermal vents spew mineral-rich boiling black fluid into freezing water.",
-      "example_vi": "Các miệng phun nhiệt dịch phun chất lỏng đen sôi giàu khoáng chất vào làn nước lạnh giá."
+      "word": "enforcement",
+      "pos": "n",
+      "ipa": "/ɪnˈfɔːrsmənt/",
+      "definition_en": "The act of compelling observance of or compliance with a law or rule",
+      "definition_vi": "sự thực thi pháp luật / sự bắt buộc tuân thủ",
+      "example_en": "Consistent enforcement ensures that students power off their devices before entering class.",
+      "example_vi": "Sự thực thi nhất quán đảm bảo rằng học sinh tắt nguồn thiết bị trước khi vào lớp học."
     },
     {
       "id": 6,
-      "word": "pressure",
+      "word": "policy",
       "pos": "n",
-      "ipa": "/ˈpreʃər/",
-      "definition_en": "Continuous physical force exerted on an object by something in contact with it",
-      "definition_vi": "áp suất, áp lực",
-      "example_en": "Atmospheric pressure increases by one atmosphere every ten meters of depth.",
-      "example_vi": "Áp suất khí quyển tăng thêm một atmosphere sau mỗi mười mét độ sâu."
+      "ipa": "/ˈpɑːləsi/",
+      "definition_en": "A course or principle of action adopted by a government or educational board",
+      "definition_vi": "chính sách / chủ trương",
+      "example_en": "The district policy balances technological literacy with classroom academic focus.",
+      "example_vi": "Chính sách của học khu cân bằng giữa việc hiểu biết công nghệ với sự tập trung học tập trong lớp."
     },
     {
       "id": 7,
-      "word": "benthic",
-      "pos": "adj",
-      "ipa": "/ˈbenθɪk/",
-      "definition_en": "Relating to or occurring at the bottom of a body of water",
-      "definition_vi": "thuộc tầng đáy, sinh vật đáy",
-      "example_en": "Benthic sea cucumbers sift through organic sediment on the ocean floor.",
-      "example_vi": "Hải sâm tầng đáy sàng lọc cặn hữu cơ trên đáy đại dương."
+      "word": "compliance",
+      "pos": "n",
+      "ipa": "/kəmˈplaɪəns/",
+      "definition_en": "The state or act of conforming to rules, laws, or institutional standards",
+      "definition_vi": "sự tuân thủ",
+      "example_en": "High student compliance was achieved after administrators clearly explained the rationale.",
+      "example_vi": "Tỷ lệ tuân thủ cao của học sinh đã đạt được sau khi ban giám hiệu giải thích rõ ràng lý do."
     },
     {
       "id": 8,
-      "word": "ecosystem",
-      "pos": "n",
-      "ipa": "/ˈiːkoʊsɪstəm/",
-      "definition_en": "A biological community of interacting organisms and their physical environment",
-      "definition_vi": "hệ sinh thái",
-      "example_en": "Hydrothermal ecosystems thrive without needing any direct solar energy.",
-      "example_vi": "Hệ sinh thái nhiệt dịch phát triển mạnh mẽ mà không cần bất kỳ năng lượng mặt trời trực tiếp nào."
+      "word": "regulate",
+      "pos": "v",
+      "ipa": "/ˈreɡjəleɪt/",
+      "definition_en": "To control or maintain the operation of a process by authoritative rules",
+      "definition_vi": "điều chỉnh / quy định",
+      "example_en": "Statutes regulate how social media corporations handle minor personal data.",
+      "example_vi": "Các đạo luật quy định cách thức các tập đoàn mạng xã hội xử lý dữ liệu cá nhân của trẻ vị thành niên."
     },
     {
       "id": 9,
-      "word": "crustacean",
+      "word": "statute",
       "pos": "n",
-      "ipa": "/krʌˈsteɪʃən/",
-      "definition_en": "An arthropod of the large group including crabs, lobsters, and shrimp",
-      "definition_vi": "loài giáp xác",
-      "example_en": "Ghostly white crustaceans crawl over sulfur deposits near deep volcanic vents.",
-      "example_vi": "Những loài giáp xác trắng bệch bò qua các lớp trầm tích lưu huỳnh gần các miệng phun núi lửa sâu."
+      "ipa": "/ˈstætʃuːt/",
+      "definition_en": "A formal written enactment passed by a legislative authority",
+      "definition_vi": "đạo luật / quy chế",
+      "example_en": "The state statute requires schools to restrict mobile access during instructional hours.",
+      "example_vi": "Đạo luật tiểu bang yêu cầu các trường học hạn chế truy cập di động trong giờ giảng dạy."
     },
     {
       "id": 10,
-      "word": "adaptation",
+      "word": "framework",
       "pos": "n",
-      "ipa": "/ˌædæpˈteɪʃən/",
-      "definition_en": "A change by which an organism becomes better suited to its environment",
-      "definition_vi": "sự thích nghi",
-      "example_en": "Extreme pressure adaptation allows trench fish to survive without crush damage.",
-      "example_vi": "Sự thích nghi với áp lực cực hạn cho phép cá dưới rãnh biển sống sót mà không bị tổn hại do đè bẹp."
+      "ipa": "/ˈfreɪmwɜːrk/",
+      "definition_en": "An essential supporting structure or established system of rules",
+      "definition_vi": "khuôn khổ pháp lý / cơ cấu",
+      "example_en": "A legal framework provides clear boundaries for both teachers and parents.",
+      "example_vi": "Một khuôn khổ pháp lý cung cấp các ranh giới rõ ràng cho cả giáo viên và phụ huynh."
     },
     {
       "id": 11,
-      "word": "specimen",
+      "word": "approach",
       "pos": "n",
-      "ipa": "/ˈspesəmən/",
-      "definition_en": "An individual animal or plant used as an example of its species for scientific study",
-      "definition_vi": "mẫu vật",
-      "example_en": "The marine biologist preserved a delicate abyssal jellyfish specimen in formalin.",
-      "example_vi": "Nhà sinh vật biển đã bảo quản một mẫu vật sứa biển thẳm mỏng manh trong foóc-môn."
+      "ipa": "/əˈproʊtʃ/",
+      "definition_en": "A distinctive way of addressing or dealing with a societal challenge",
+      "definition_vi": "cách tiếp cận / phương pháp giải quyết",
+      "example_en": "Florida adopted a targeted statutory approach focusing on social media algorithms.",
+      "example_vi": "Florida đã áp dụng một cách tiếp cận luật pháp có mục tiêu tập trung vào các thuật toán mạng xã hội."
     },
     {
       "id": 12,
-      "word": "probe",
+      "word": "restriction",
       "pos": "n",
-      "ipa": "/proʊb/",
-      "definition_en": "An unmanned exploratory spacecraft or robotic underwater device",
-      "definition_vi": "đầu dò, thiết bị thăm dò",
-      "example_en": "The autonomous ocean probe measured salinity and temperature at ten thousand meters.",
-      "example_vi": "Đầu dò đại dương tự hành đã đo độ mặn và nhiệt độ ở độ sâu mười ngàn mét."
+      "ipa": "/rɪˈstrɪkʃən/",
+      "definition_en": "A limiting condition or statutory rule placed upon access or behavior",
+      "definition_vi": "sự hạn chế / giới hạn",
+      "example_en": "The device restriction applies to hallways, dining halls, and sports fields during the school day.",
+      "example_vi": "Sự hạn chế thiết bị áp dụng cho hành lang, phòng ăn và sân thể thao trong suốt ngày học."
     },
     {
       "id": 13,
-      "word": "oceanography",
+      "word": "exemption",
       "pos": "n",
-      "ipa": "/ˌoʊʃəˈnɑːɡrəfi/",
-      "definition_en": "The branch of science that deals with the physical and biological properties of the sea",
-      "definition_vi": "hải dương học",
-      "example_en": "Modern oceanography uses satellite telemetry and autonomous robotic gliders.",
-      "example_vi": "Hải dương học hiện đại sử dụng phép đo từ xa bằng vệ tinh và tàu lượn robot tự hành."
+      "ipa": "/ɪɡˈzempʃən/",
+      "definition_en": "Freedom from an obligation or restriction imposed on other persons",
+      "definition_vi": "sự miễn trừ",
+      "example_en": "Medical monitoring devices and disability accommodations receive an official exemption.",
+      "example_vi": "Các thiết bị theo dõi y tế và hỗ trợ khuyết tật nhận được sự miễn trừ chính thức."
     },
     {
       "id": 14,
-      "word": "marine",
-      "pos": "adj",
-      "ipa": "/məˈriːn/",
-      "definition_en": "Of, found in, or produced by the sea",
-      "definition_vi": "thuộc biển, hàng hải",
-      "example_en": "Marine reserves safeguard vulnerable coral and sponge colonies from trawling.",
-      "example_vi": "Các khu bảo tồn biển bảo vệ các rạn san hô và bọt biển dễ bị tổn thương khỏi việc đánh bắt bằng lưới kéo."
+      "word": "directive",
+      "pos": "n",
+      "ipa": "/dəˈrektɪv/",
+      "definition_en": "An official or authoritative instruction guiding institutional compliance",
+      "definition_vi": "chỉ thị / chỉ dẫn chính thức",
+      "example_en": "The ministry of education issued an administrative directive regarding phone storage lockers.",
+      "example_vi": "Bộ giáo dục đã ban hành một chỉ thị hành chính liên quan đến các tủ khóa lưu trữ điện thoại."
     },
     {
       "id": 15,
-      "word": "depth",
+      "word": "penalty",
       "pos": "n",
-      "ipa": "/depθ/",
-      "definition_en": "The distance from the top or surface to the bottom of something",
-      "definition_vi": "độ sâu",
-      "example_en": "At a depth of eight thousand meters, water temperature hovers near freezing.",
-      "example_vi": "Ở độ sâu tám ngàn mét, nhiệt độ nước dao động gần mức đóng băng."
+      "ipa": "/ˈpenəlti/",
+      "definition_en": "A punishment or consequence imposed for breaking a law, rule, or contract",
+      "definition_vi": "hình phạt / chế tài",
+      "example_en": "Repeated violations result in an escalating administrative penalty including phone confiscation.",
+      "example_vi": "Các vi phạm lặp lại dẫn đến một chế tài hành chính tăng dần bao gồm việc tạm giữ điện thoại."
     },
     {
       "id": 16,
-      "word": "salinity",
-      "pos": "n",
-      "ipa": "/səˈlɪnəti/",
-      "definition_en": "The concentration of dissolved salts in water",
-      "definition_vi": "độ mặn",
-      "example_en": "Changes in abyssal water salinity drive global thermohaline ocean conveyor currents.",
-      "example_vi": "Những thay đổi về độ mặn của nước biển thẳm thúc đẩy các dòng hải lưu nhiệt muối toàn cầu."
+      "word": "adopt",
+      "pos": "v",
+      "ipa": "/əˈdɑːpt/",
+      "definition_en": "To formally choose, approve, or put into effect a policy or statute",
+      "definition_vi": "thông qua / áp dụng",
+      "example_en": "Several European countries decided to adopt the French model of classroom device prohibition.",
+      "example_vi": "Một số quốc gia Châu Âu đã quyết định thông qua mô hình cấm thiết bị trong lớp học của Pháp."
     },
     {
       "id": 17,
-      "word": "vent",
-      "pos": "n",
-      "ipa": "/vent/",
-      "definition_en": "An opening that allows air, gas, or liquid to pass out or into a confined space",
-      "definition_vi": "miệng phun, lỗ thông",
-      "example_en": "Mineral plumes rising from the seafloor vent nourish chemosynthetic bacteria.",
-      "example_vi": "Các cột khói khoáng bốc lên từ miệng phun đáy biển nuôi dưỡng vi khuẩn hóa tổng hợp."
+      "word": "implement",
+      "pos": "v",
+      "ipa": "/ˈɪmpləment/",
+      "definition_en": "To put a decision, plan, or statutory requirement into practical effect",
+      "definition_vi": "triển khai / thực hiện",
+      "example_en": "School principals must implement secure storage solutions before the academic term begins.",
+      "example_vi": "Các hiệu trưởng nhà trường phải triển khai các giải pháp lưu trữ an toàn trước khi học kỳ bắt đầu."
     },
     {
       "id": 18,
-      "word": "organism",
+      "word": "measure",
       "pos": "n",
-      "ipa": "/ˈɔːrɡənɪzəm/",
-      "definition_en": "An individual animal, plant, or single-celled life form",
-      "definition_vi": "sinh vật",
-      "example_en": "Every abyssal organism has evolved specialized enzymes to withstand high pressure.",
-      "example_vi": "Mỗi sinh vật vùng biển thẳm đều tiến hóa các enzym chuyên biệt để chống chọi với áp lực cao."
+      "ipa": "/ˈmeʒər/",
+      "definition_en": "A legislative enactment, statutory provision, or official course of action",
+      "definition_vi": "biện pháp pháp lý / giải pháp",
+      "example_en": "Lawmakers enacted this regulatory measure to protect youth from online exploitation.",
+      "example_vi": "Các nhà lập pháp đã ban hành biện pháp điều chỉnh này nhằm bảo vệ thanh thiếu niên khỏi sự bóc lột trực tuyến."
     },
     {
       "id": 19,
-      "word": "expedition",
+      "word": "precedent",
       "pos": "n",
-      "ipa": "/ˌekspəˈdɪʃən/",
-      "definition_en": "A journey undertaken by a group of people with a particular scientific purpose",
-      "definition_vi": "chuyến thám hiểm",
-      "example_en": "The deep-sea scientific expedition spent six weeks surveying the Kermadec Trench.",
-      "example_vi": "Chuyến thám hiểm khoa học biển sâu đã dành sáu tuần khảo sát rãnh Kermadec."
+      "ipa": "/ˈpresɪdənt/",
+      "definition_en": "An earlier event, decision, or court ruling regarded as an exemplar guide",
+      "definition_vi": "tiền lệ pháp lý",
+      "example_en": "The landmark Supreme Court ruling established an enduring precedent for student privacy rights.",
+      "example_vi": "Phán quyết mang tính bước ngoặt của Tòa án Tối cao đã thiết lập một tiền lệ lâu dài cho quyền riêng tư của học sinh."
     },
     {
       "id": 20,
-      "word": "discovery",
+      "word": "governance",
       "pos": "n",
-      "ipa": "/dɪˈskʌvəri/",
-      "definition_en": "The act or process of finding something for the first time",
-      "definition_vi": "sự khám phá, phát hiện",
-      "example_en": "The discovery of giant hydrothermal tubeworms revolutionized evolutionary biology.",
-      "example_vi": "Phát hiện về loài sâu ống nhiệt dịch khổng lồ đã cách mạng hóa sinh học tiến hóa."
+      "ipa": "/ˈɡʌvərnəns/",
+      "definition_en": "The action, manner, or system of governing an institution or society",
+      "definition_vi": "sự quản trị / sự điều hành",
+      "example_en": "Effective digital governance balances individual technological freedom with collective public welfare.",
+      "example_vi": "Quản trị kỹ thuật số hiệu quả cân bằng giữa tự do công nghệ cá nhân với phúc lợi công cộng tập thể."
     }
   ],
   "clil_article": {
-    "title_en": "The Hadal Abyss: Chemosynthesis and Extreme Oceanic Adaptations",
-    "title_vi": "Vực Thẳm Hadal: Hóa Tổng Hợp và Sự Thích Nghi Đại Dương Cực Hạn",
-    "content_en": "Beneath six thousand meters of crushing saltwater lies the hadal zone, Earth's least-explored oceanic biome. In these abyssal ocean trenches, ambient water pressure exceeds one thousand atmospheres, yet complex marine life flourishes. Never before had oceanographers documented such extreme cellular adaptations until high-titanium submersibles descended into the deepest chasms. Instead of relying on photosynthetic solar energy, food webs around hydrothermal vents are powered entirely by chemosynthetic bacteria. These microscopic organisms convert toxic hydrogen sulfide gas into metabolic nutrients. Benthic crustaceans, translucent snailfish, and giant tubeworms thrive under intense hydrostatic pressure, proving that life possesses incredible biological resilience in total darkness.",
+    "title_en": "Comparative Law: Device Restrictions in France and Florida",
+    "title_vi": "Luật So Sánh: Các Quy Định Hạn Chế Thiết Bị Tại Pháp và Florida",
+    "content_en": "Governments around the world have adopted contrasting legal frameworks to regulate mobile devices among youth. In comparative law, researchers analyze how distinct jurisdictions address shared social dilemmas. In France, national legislation completely banned personal smartphones in all primary and middle school grounds during instructional hours. French policymakers concluded that an absolute prohibition restores classroom concentration and prevents playground cyberbullying. In contrast, lawmakers in Florida instituted a statute mandating that public schools restrict student access to social media platforms during school hours, while granting schools local flexibility. When writing an analytical comparative essay, students synthesize primary legal texts, evaluate policy compliance rates, and assess public reception. Comparing French and American statutory models illustrates how legal cultures formulate different regulatory solutions to modern technological challenges.",
     "glossary": [
       {
-        "word": "abyssal",
-        "definition_en": "Relating to the deep ocean basin beneath 3,000 meters",
-        "definition_vi": "thuộc về bồn đại dương sâu dưới 3.000 mét"
+        "word": "comparative",
+        "definition_en": "The analytical methodology of contrasting legal systems and cultural policies across nations",
+        "definition_vi": "phương pháp luận phân tích đối chiếu các hệ thống pháp luật và chính sách văn hóa giữa các quốc gia"
       },
       {
-        "word": "trench",
-        "definition_en": "Steep geological chasm formed by tectonic subduction",
-        "definition_vi": "khe nứt địa chất dốc hình thành do sự hút chìm mảng kiến tạo"
+        "word": "legislation",
+        "definition_en": "Enacted statutory provisions and parliamentary codes governing institutional behavior",
+        "definition_vi": "các điều khoản quy định đã ban hành và bộ luật điều chỉnh hành vi của tổ chức"
       },
       {
-        "word": "bioluminescence",
-        "definition_en": "Light produced through luciferase enzymatic reactions in organisms",
-        "definition_vi": "ánh sáng sinh ra qua các phản ứng enzym luciferase ở sinh vật"
+        "word": "jurisdiction",
+        "definition_en": "Territory or statutory sphere within which a governing authority exercises legal power",
+        "definition_vi": "lãnh thổ hoặc phạm vi mà cơ quan có thẩm quyền thực thi quyền lực pháp lý"
       },
       {
-        "word": "hydrothermal",
-        "definition_en": "Volcanic seafloor springs venting superheated mineral fluid",
-        "definition_vi": "suối núi lửa đáy biển phun chất lỏng khoáng siêu nóng"
+        "word": "statute",
+        "definition_en": "A formal written law passed by a legislative assembly governing public conduct",
+        "definition_vi": "luật thành văn chính thức được thông qua bởi cơ quan lập pháp điều chỉnh hành vi công chúng"
       },
       {
-        "word": "benthic",
-        "definition_en": "Pertaining to organisms inhabiting the ocean floor surface",
-        "definition_vi": "liên quan đến các sinh vật cư trú trên bề mặt đáy đại dương"
+        "word": "compliance",
+        "definition_en": "Adherence to legislative commands, institutional directives, and administrative regulations",
+        "definition_vi": "sự tuân thủ các mệnh lệnh lập pháp, chỉ thị của tổ chức và quy định hành chính"
       }
     ],
     "check_questions": [
       {
         "id": 1,
-        "question_en": "What biological energy process replaces photosynthesis in hadal hydrothermal communities?",
+        "question_en": "How does France's national smartphone policy differ from Florida's state approach?",
         "options": [
-          "Chemosynthesis conducted by bacteria utilizing hydrogen sulfide",
-          "Nuclear fusion inside ocean rocks",
-          "Direct sunlight penetrating through ten kilometers of water"
+          "France enacted an absolute nationwide ban across all school grounds, while Florida focused on restricting social media access",
+          "France requires every student to carry three smartphones",
+          "Florida banned all computers and books completely"
         ],
-        "answer": "Chemosynthesis conducted by bacteria utilizing hydrogen sulfide"
+        "answer": "France enacted an absolute nationwide ban across all school grounds, while Florida focused on restricting social media access"
       },
       {
         "id": 2,
-        "question_en": "Which inverted sentence structure expresses scientific surprise in the text?",
+        "question_en": "What primary justification did French lawmakers provide for their school device ban?",
         "options": [
-          "Never before had oceanographers documented such extreme adaptations",
-          "Scientists like swimming in warm oceans",
-          "Fish swim quickly across the surface"
+          "Restoring classroom academic concentration and reducing playground cyberbullying",
+          "Saving electrical power in school hallways",
+          "Encouraging students to sell mobile phones"
         ],
-        "answer": "Never before had oceanographers documented such extreme adaptations"
+        "answer": "Restoring classroom academic concentration and reducing playground cyberbullying"
       },
       {
         "id": 3,
-        "question_en": "How high is the hydrostatic pressure inside the Mariana Trench compared to sea level?",
+        "question_en": "Which students receive an exemption from school device restrictions?",
         "options": [
-          "Over one thousand times standard atmospheric pressure",
-          "The same pressure as standing in a living room",
-          "Ten times less pressure than on mountain peaks"
+          "Students with verified medical needs or disability accommodations",
+          "Only students on the varsity football team",
+          "No exemptions are permitted under any circumstances"
         ],
-        "answer": "Over one thousand times standard atmospheric pressure"
+        "answer": "Students with verified medical needs or disability accommodations"
       }
     ],
     "critical_thinking": {
-      "question_en": "Why could prospective commercial deep-sea mining permanently extinguish benthic species that science has yet to discover?",
-      "hint_en": "Consider the extremely slow metabolic and reproductive rates of trench organisms and the irreversible destruction of polymetallic nodule ecosystems."
+      "question_en": "Why does a nationwide centralized ban (like France's) create different enforcement challenges compared to a decentralized statute (like Florida's)?",
+      "hint_en": "Centralized bans require uniform nationwide administrative resources, while decentralized statutes allow local districts to tailor enforcement to community needs."
     }
   },
   "story_scenes": [
@@ -286,10 +287,10 @@ export const readingHubData = {
       "id": 1,
       "scene_id": "scene_1",
       "scene_number": 1,
-      "title_en": "Lowering the Titanium Submersible",
-      "title_vi": "Hạ Tàu Lặn Ti-tan",
-      "description_en": "Dr. Sylvia Brooks and Liam Ross secure pressure seals as the heavy crane lowers the submersible into the sea.",
-      "description": "Dr. Sylvia Brooks and Liam Ross secure pressure seals as the heavy crane lowers the submersible into the sea.",
+      "title_en": "Examining the French National Code",
+      "title_vi": "Xem Xét Bộ Luật Quốc Gia Pháp",
+      "description_en": "Chloe reads the French Education Code article mandating that all primary school students store phones in lockers.",
+      "description": "Chloe reads the French Education Code article mandating that all primary school students store phones in lockers.",
       "image_url": "/images/week130/webtoon_scene_1.png",
       "audio_url": "/audio/week130/scene_1.mp3"
     },
@@ -297,10 +298,10 @@ export const readingHubData = {
       "id": 2,
       "scene_id": "scene_2",
       "scene_number": 2,
-      "title_en": "Descending Past the Midnight Zone",
-      "title_vi": "Lặn Qua Vùng Biển Nửa Đêm",
-      "description_en": "Liam monitors external hydrostatic gauges showing eight hundred atmospheres as external lights illuminate jellyfish.",
-      "description": "Liam monitors external hydrostatic gauges showing eight hundred atmospheres as external lights illuminate jellyfish.",
+      "title_en": "Investigating Florida's Social Media Statute",
+      "title_vi": "Điều Tra Đạo Luật Mạng Xã Hội Của Florida",
+      "description_en": "Chloe and David analyze Florida legislation that restricts minor access to algorithmic social platforms.",
+      "description": "Chloe and David analyze Florida legislation that restricts minor access to algorithmic social platforms.",
       "image_url": "/images/week130/webtoon_scene_2.png",
       "audio_url": "/audio/week130/scene_2.mp3"
     },
@@ -308,10 +309,10 @@ export const readingHubData = {
       "id": 3,
       "scene_id": "scene_3",
       "scene_number": 3,
-      "title_en": "Approaching Hydrothermal Chimneys",
-      "title_vi": "Tiến Gần Các Ống Khói Thủy Nhiệt",
-      "description_en": "The submersible headlights illuminate giant hydrothermal chimneys venting superheated black mineral fluid.",
-      "description": "The submersible headlights illuminate giant hydrothermal chimneys venting superheated black mineral fluid.",
+      "title_en": "Comparing Policy Enforcement Models",
+      "title_vi": "So Sánh Các Mô Hình Thực Thi Chính Sách",
+      "description_en": "David sketches a comparative matrix contrasting France's centralized ban with Florida's local district discretion.",
+      "description": "David sketches a comparative matrix contrasting France's centralized ban with Florida's local district discretion.",
       "image_url": "/images/week130/webtoon_scene_3.png",
       "audio_url": "/audio/week130/scene_3.mp3"
     },
@@ -319,10 +320,10 @@ export const readingHubData = {
       "id": 4,
       "scene_id": "scene_4",
       "scene_number": 4,
-      "title_en": "Collecting Benthic Biological Specimens",
-      "title_vi": "Thu Thập Mẫu Vật Sinh Học Tầng Đáy",
-      "description_en": "Sylvia operates the hydraulic robotic claw to collect delicate white tubeworm specimens into insulated chambers.",
-      "description": "Sylvia operates the hydraulic robotic claw to collect delicate white tubeworm specimens into insulated chambers.",
+      "title_en": "Debating Student Civil Liberties",
+      "title_vi": "Tranh Biện Về Quyền Tự Do Dân Sự Của Học Sinh",
+      "description_en": "The study group discusses legal precedents concerning student privacy, emergency contact, and medical exemptions.",
+      "description": "The study group discusses legal precedents concerning student privacy, emergency contact, and medical exemptions.",
       "image_url": "/images/week130/webtoon_scene_4.png",
       "audio_url": "/audio/week130/scene_4.mp3"
     },
@@ -330,10 +331,10 @@ export const readingHubData = {
       "id": 5,
       "scene_id": "scene_5",
       "scene_number": 5,
-      "title_en": "Publishing Hadal Biodiversity Discoveries",
-      "title_vi": "Công Bố Các Khám Phá Đa Dạng Sinh Học Hadal",
-      "description_en": "The marine research vessel docks as the team announces twelve new deep-sea species to international journals.",
-      "description": "The marine research vessel docks as the team announces twelve new deep-sea species to international journals.",
+      "title_en": "Presenting the Comparative Synthesis",
+      "title_vi": "Trình Bày Tổng Hợp So Sánh",
+      "description_en": "Chloe and David deliver their presentation to the civics class, earning praise for their balanced legal synthesis.",
+      "description": "Chloe and David deliver their presentation to the civics class, earning praise for their balanced legal synthesis.",
       "image_url": "/images/week130/webtoon_scene_5.png",
       "audio_url": "/audio/week130/scene_5.mp3"
     }
@@ -342,403 +343,277 @@ export const readingHubData = {
     "sentences": [
       {
         "id": 1,
-        "text": "Never before had marine biologists witnessed such extraordinary bioluminescent adaptations.",
-        "en": "Never before had marine biologists witnessed such extraordinary bioluminescent adaptations.",
-        "vi": "Chưa bao giờ các nhà sinh vật biển được chứng kiến những sự thích nghi phát quang sinh học phi thường như vậy.",
-        "ipa": "/ˈnevər bɪˈfɔːr hæd məˈriːn baɪˈɑːlədʒɪsts ˈwɪtnəst sʌtʃ ɪkˈstrɔːrdəneri ˌbaɪoʊˌluːmɪˈnesənt ˌædæpˈteɪʃənz/",
+        "text": "In France, national legislation completely bans smartphones on school grounds.",
+        "en": "In France, national legislation completely bans smartphones on school grounds.",
+        "vi": "Tại Pháp, luật pháp quốc gia cấm hoàn toàn điện thoại thông minh trong khuôn viên trường học.",
+        "ipa": "/ɪn fræns ˈnæʃənəl ˌledʒɪsˈleɪʃən kəmˈpliːtli bænz ˈsmɑːrtfoʊnz ɑːn skuːl ɡraʊndz/",
         "words": [
-          "Never",
-          "before",
-          "had",
-          "marine",
-          "biologists",
-          "witnessed",
-          "such",
-          "extraordinary",
-          "bioluminescent",
-          "adaptations"
+          "In",
+          "France",
+          "national",
+          "legislation",
+          "completely",
+          "bans",
+          "smartphones",
+          "on",
+          "school",
+          "grounds"
         ]
       },
       {
         "id": 2,
-        "text": "Under no circumstances should deep-sea mining disrupt vulnerable benthic trench habitats.",
-        "en": "Under no circumstances should deep-sea mining disrupt vulnerable benthic trench habitats.",
-        "vi": "Trong bất kỳ hoàn cảnh nào, việc khai thác mỏ biển sâu cũng không được phép phá vỡ môi trường sống dễ bị tổn thương tại rãnh đáy biển.",
-        "ipa": "/ˈʌndər noʊ ˈsɜːrkəmstænsɪz ʃʊd diːp siː ˈmaɪnɪŋ dɪsˈrʌpt ˈvʌlnərəbəl ˈbenθɪk trentʃ ˈhæbɪtæts/",
+        "text": "In contrast to France, Florida instituted a statute targeting social media access.",
+        "en": "In contrast to France, Florida instituted a statute targeting social media access.",
+        "vi": "Trái ngược với Pháp, Florida đã ban hành một đạo luật nhắm vào việc truy cập mạng xã hội.",
+        "ipa": "/ɪn ˈkɑːntræst tuː fræns ˈflɔːrɪdə ˈɪnstɪtuːtɪd ə ˈstætʃuːt ˈtɑːrɡɪtɪŋ ˈsoʊʃəl ˈmiːdiə ˈækses/",
         "words": [
-          "Under",
-          "no",
-          "circumstances",
-          "should",
-          "deep-sea",
-          "mining",
-          "disrupt",
-          "vulnerable",
-          "benthic",
-          "trench",
-          "habitats"
+          "In",
+          "contrast",
+          "to",
+          "France",
+          "Florida",
+          "instituted",
+          "a",
+          "statute",
+          "targeting",
+          "social",
+          "media",
+          "access"
         ]
       },
       {
         "id": 3,
-        "text": "Rarely do human divers encounter the immense pressure found at ten thousand meters depth.",
-        "en": "Rarely do human divers encounter the immense pressure found at ten thousand meters depth.",
-        "vi": "Hiếm khi nào thợ lặn con người chạm tới áp suất khổng lồ ở độ sâu mười ngàn mét.",
-        "ipa": "/ˈrerli duː ˈhjuːmən ˈdaɪvərz ɪnˈkaʊntər ði ɪˈmens ˈpreʃər faʊnd æt ten ˈθaʊzənd ˈmiːtərz depθ/",
+        "text": "Comparative law examines how distinct jurisdictions resolve shared educational challenges.",
+        "en": "Comparative law examines how distinct jurisdictions resolve shared educational challenges.",
+        "vi": "Luật so sánh xem xét cách các khu vực pháp lý khác nhau giải quyết những thách thức giáo dục chung.",
+        "ipa": "/kəmˈpærətɪv lɔː ɪɡˈzæmɪnz haʊ dɪˈstɪŋkt ˌdʒʊrɪsˈdɪkʃənz rɪˈzɑːlv ʃerd ˌedʒuˈkeɪʃənəl ˈtʃælɪndʒɪz/",
         "words": [
-          "Rarely",
-          "do",
-          "human",
-          "divers",
-          "encounter",
-          "the",
-          "immense",
-          "pressure",
-          "found",
-          "at",
-          "ten",
-          "thousand",
-          "meters",
-          "depth"
+          "Comparative",
+          "law",
+          "examines",
+          "how",
+          "distinct",
+          "jurisdictions",
+          "resolve",
+          "shared",
+          "educational",
+          "challenges"
         ]
       },
       {
         "id": 4,
-        "text": "Titanium submersibles descended through the midnight zone into freezing hadal trenches.",
-        "en": "Titanium submersibles descended through the midnight zone into freezing hadal trenches.",
-        "vi": "Các tàu lặn bằng ti-tan đã lặn xuống qua vùng biển nửa đêm vào những rãnh vực thẳm lạnh giá.",
-        "ipa": "/taɪˈteɪniəm səbˈmɜːrsəbəlz dɪˈsendɪd θruː ðə ˈmɪdnaɪt zoʊn ˈɪntuː ˈfriːzɪŋ ˈheɪdəl ˈtrentʃɪz/",
+        "text": "Students with verified medical conditions receive an official statutory exemption.",
+        "en": "Students with verified medical conditions receive an official statutory exemption.",
+        "vi": "Học sinh có tình trạng y tế đã được xác nhận sẽ nhận được sự miễn trừ theo luật chính thức.",
+        "ipa": "/ˈstuːdənts wɪð ˈverɪfaɪd ˈmedɪkəl kənˈdɪʃənz rɪˈsiːv ən əˈfɪʃəl ˈstætʃətɔːri ɪɡˈzempʃən/",
         "words": [
-          "Titanium",
-          "submersibles",
-          "descended",
-          "through",
-          "the",
-          "midnight",
-          "zone",
-          "into",
-          "freezing",
-          "hadal",
-          "trenches"
+          "Students",
+          "with",
+          "verified",
+          "medical",
+          "conditions",
+          "receive",
+          "an",
+          "official",
+          "statutory",
+          "exemption"
         ]
       },
       {
         "id": 5,
-        "text": "Hydrothermal vents release mineral-rich plumes that nourish entire chemosynthetic food webs.",
-        "en": "Hydrothermal vents release mineral-rich plumes that nourish entire chemosynthetic food webs.",
-        "vi": "Các miệng phun nhiệt dịch giải phóng những cột khói giàu khoáng chất nuôi sống toàn bộ mạng lưới thức ăn hóa tổng hợp.",
-        "ipa": "/ˌhaɪdroʊˈθɜːrməl vents rɪˈliːs ˈmɪnərəl rɪtʃ pluːmz ðæt ˈnɜːrɪʃ ɪnˈtaɪər ˌkiːmoʊsɪnˈθetɪk fuːd webz/",
+        "text": "Consistent enforcement ensures high compliance across public school classrooms.",
+        "en": "Consistent enforcement ensures high compliance across public school classrooms.",
+        "vi": "Sự thực thi nhất quán đảm bảo tỷ lệ tuân thủ cao trong các lớp học của trường công lập.",
+        "ipa": "/kənˈsɪstənt ɪnˈfɔːrsmənt ɪnˈʃʊrz haɪ kəmˈplaɪəns əˈkrɔːs ˈpʌblɪk skuːl ˈklæsruːmz/",
         "words": [
-          "Hydrothermal",
-          "vents",
-          "release",
-          "mineral-rich",
-          "plumes",
-          "that",
-          "nourish",
-          "entire",
-          "chemosynthetic",
-          "food",
-          "webs"
+          "Consistent",
+          "enforcement",
+          "ensures",
+          "high",
+          "compliance",
+          "across",
+          "public",
+          "school",
+          "classrooms"
         ]
       },
       {
         "id": 6,
-        "text": "Barely had the research probe touched the seabed when translucent crustaceans appeared.",
-        "en": "Barely had the research probe touched the seabed when translucent crustaceans appeared.",
-        "vi": "Ngay khi đầu dò nghiên cứu vừa chạm vào đáy biển thì những loài giáp xác trong mờ đã xuất hiện.",
-        "ipa": "/ˈberli hæd ðə rɪˈsɜːrtʃ proʊb tʌtʃt ðə ˈsiːbed wen trænzˈluːsnt krʌˈsteɪʃənz əˈpɪrd/",
+        "text": "French policymakers concluded that device bans significantly reduce cyberbullying.",
+        "en": "French policymakers concluded that device bans significantly reduce cyberbullying.",
+        "vi": "Các nhà hoạch định chính sách Pháp kết luận rằng lệnh cấm thiết bị làm giảm đáng kể bắt nạt trên mạng.",
+        "ipa": "/frentʃ ˈpɑːləsiˌmeɪkərz kənˈkluːdɪd ðæt dɪˈvaɪs bænz sɪɡˈnɪfɪkəntli rɪˈduːs ˈsaɪbərbʊliɪŋ/",
         "words": [
-          "Barely",
-          "had",
-          "the",
-          "research",
-          "probe",
-          "touched",
-          "the",
-          "seabed",
-          "when",
-          "translucent",
-          "crustaceans",
-          "appeared"
+          "French",
+          "policymakers",
+          "concluded",
+          "that",
+          "device",
+          "bans",
+          "significantly",
+          "reduce",
+          "cyberbullying"
         ]
       },
       {
         "id": 7,
-        "text": "Specialized cellular enzymes prevent trench organisms from experiencing fatal pressure crushing.",
-        "en": "Specialized cellular enzymes prevent trench organisms from experiencing fatal pressure crushing.",
-        "vi": "Các enzym tế bào chuyên biệt ngăn các sinh vật dưới rãnh biển khỏi bị đè bẹp chết người do áp suất.",
-        "ipa": "/ˈspeʃəlaɪzd ˈseljələr ˈenzaɪmz prɪˈvent trentʃ ˈɔːrɡənɪzəmz frəm ɪkˈspɪriənsɪŋ ˈfeɪtl ˈpreʃər ˈkrʌʃɪŋ/",
+        "text": "Lawmakers designed regulatory measures to protect students from algorithmic distraction.",
+        "en": "Lawmakers designed regulatory measures to protect students from algorithmic distraction.",
+        "vi": "Các nhà lập pháp đã thiết kế các biện pháp quản lý nhằm bảo vệ học sinh khỏi sự xao nhãng của thuật toán.",
+        "ipa": "/ˈlɔːˌmeɪkərz dɪˈzaɪnd ˈreɡjələtɔːri ˈmeʒərz tuː prəˈtekt ˈstuːdənts frəm ˌælɡəˈrɪðmɪk dɪˈstrækʃən/",
         "words": [
-          "Specialized",
-          "cellular",
-          "enzymes",
-          "prevent",
-          "trench",
-          "organisms",
+          "Lawmakers",
+          "designed",
+          "regulatory",
+          "measures",
+          "to",
+          "protect",
+          "students",
           "from",
-          "experiencing",
-          "fatal",
-          "pressure",
-          "crushing"
+          "algorithmic",
+          "distraction"
         ]
       },
       {
         "id": 8,
-        "text": "The oceanographic expedition cataloged dozens of species previously completely unknown to science.",
-        "en": "The oceanographic expedition cataloged dozens of species previously completely unknown to science.",
-        "vi": "Chuyến thám hiểm hải dương học đã lập danh mục cho hàng chục loài trước đây hoàn toàn chưa từng được khoa học biết đến.",
-        "ipa": "/ði ˌoʊʃənəˈɡræfɪk ˌekspəˈdɪʃən ˈkætəlɔːɡd ˈdʌzənz əv ˈspiːʃiːz ˈpriːviəsli kəmˈpliːtli ˌʌnˈnoʊn tuː ˈsaɪəns/",
+        "text": "Analyzing international policies broadens our understanding of public governance.",
+        "en": "Analyzing international policies broadens our understanding of public governance.",
+        "vi": "Phân tích các chính sách quốc tế mở rộng sự hiểu biết của chúng ta về quản trị công.",
+        "ipa": "/ˈænəlaɪzɪŋ ˌɪntərˈnæʃənəl ˈpɑːləsiz ˈbrɔːdənz ˈaʊər ˌʌndərˈstændɪŋ əv ˈpʌblɪk ˈɡʌvərnəns/",
         "words": [
-          "The",
-          "oceanographic",
-          "expedition",
-          "cataloged",
-          "dozens",
+          "Analyzing",
+          "international",
+          "policies",
+          "broadens",
+          "our",
+          "understanding",
           "of",
-          "species",
-          "previously",
-          "completely",
-          "unknown",
-          "to",
-          "science"
+          "public",
+          "governance"
         ]
       }
     ]
   },
   "rw_part1": {
     "word_bank": [
-      "abyssal",
-      "trench",
-      "submersible",
-      "bioluminescence",
-      "hydrothermal",
-      "pressure",
-      "benthic",
-      "ecosystem",
-      "crustacean",
-      "adaptation",
-      "specimen",
-      "probe",
-      "oceanography",
-      "marine",
-      "depth",
-      "salinity",
-      "vent",
-      "organism",
-      "expedition",
-      "discovery"
+      "comparative",
+      "legislation",
+      "ban",
+      "jurisdiction",
+      "enforcement",
+      "policy",
+      "compliance",
+      "regulate",
+      "statute",
+      "framework",
+      "approach",
+      "restriction",
+      "exemption",
+      "directive",
+      "penalty",
+      "adopt",
+      "implement",
+      "measure",
+      "precedent",
+      "governance"
     ],
     "definitions": [
       {
         "id": 1,
-        "definition_en": "Relating to the profound depths of the ocean below 3,000 meters.",
-        "options": [
-          "abyssal",
-          "benthic",
-          "marine"
-        ],
-        "answer": "abyssal"
+        "text": "A formal written enactment or code passed by a legislative assembly.",
+        "target": "statute"
       },
       {
         "id": 2,
-        "definition_en": "A long, deep, and narrow chasm in the seafloor formed by tectonic plates.",
-        "options": [
-          "trench",
-          "vent",
-          "depth"
-        ],
-        "answer": "trench"
+        "text": "The systematic examination and comparison of two or more legal systems.",
+        "target": "comparative"
       },
       {
         "id": 3,
-        "definition_en": "A pressure-resistant watercraft built for deep scientific exploration.",
-        "options": [
-          "submersible",
-          "probe",
-          "ecosystem"
-        ],
-        "answer": "submersible"
+        "text": "An official exemption granted to relieve an individual from a statutory rule.",
+        "target": "exemption"
       },
       {
         "id": 4,
-        "definition_en": "The biochemical production of light by marine fish and jellyfish.",
-        "options": [
-          "bioluminescence",
-          "oceanography",
-          "salinity"
-        ],
-        "answer": "bioluminescence"
+        "text": "The active process of compelling obedience and adherence to legal rules.",
+        "target": "enforcement"
       },
       {
         "id": 5,
-        "definition_en": "Mineral-rich seafloor springs spewing superheated water from volcanic rock.",
-        "options": [
-          "hydrothermal",
-          "abyssal",
-          "benthic"
-        ],
-        "answer": "hydrothermal"
-      },
-      {
-        "id": 6,
-        "definition_en": "Continuous compressive force exerted by the weight of water above.",
-        "options": [
-          "pressure",
-          "salinity",
-          "depth"
-        ],
-        "answer": "pressure"
-      },
-      {
-        "id": 7,
-        "definition_en": "Living on, in, or near the bottom sediments of a marine body.",
-        "options": [
-          "benthic",
-          "abyssal",
-          "marine"
-        ],
-        "answer": "benthic"
-      },
-      {
-        "id": 8,
-        "definition_en": "An individual animal or plant preserved for scientific reference.",
-        "options": [
-          "specimen",
-          "organism",
-          "crustacean"
-        ],
-        "answer": "specimen"
-      },
-      {
-        "id": 9,
-        "definition_en": "An unmanned exploratory instrument deployed to collect deep-sea telemetry.",
-        "options": [
-          "probe",
-          "submersible",
-          "trench"
-        ],
-        "answer": "probe"
-      },
-      {
-        "id": 10,
-        "definition_en": "The total concentration of dissolved mineral salts present in seawater.",
-        "options": [
-          "salinity",
-          "pressure",
-          "depth"
-        ],
-        "answer": "salinity"
+        "text": "A punishment or consequence imposed on an individual for violating rules.",
+        "target": "penalty"
       }
     ]
   },
   "rw_part2": {
-    "topic": "Deep Ocean Hadal Exploration and Vent Conservation",
+    "title": "Analyzing International Legal Approaches to Classroom Devices",
     "turns": [
       {
-        "speaker": "Dr. Brooks",
-        "text": "Liam, never before have I seen such bright bioluminescence at ten thousand meters depth!",
+        "id": 1,
+        "speaker": "David",
+        "prompt": "Chloe, what is the central legal difference between the French and Florida approaches?",
         "options": [
-          "It is astonishing how deep organisms produce biochemical light in total darkness.",
-          "I usually prepare scrambled eggs with toasted bread for breakfast.",
-          "The regional commuter bus was delayed by morning traffic."
+          "France imposed a complete nationwide ban on school grounds, whereas Florida targeted social media platforms.",
+          "France banned textbooks while Florida banned teachers.",
+          "There is no difference; both countries closed all schools."
         ],
-        "answer": "It is astonishing how deep organisms produce biochemical light in total darkness."
+        "answer": "France imposed a complete nationwide ban on school grounds, whereas Florida targeted social media platforms."
       },
       {
-        "speaker": "Liam",
-        "text": "Under what conditions should commercial companies be allowed to dredge deep ocean trenches?",
+        "id": 2,
+        "speaker": "David",
+        "prompt": "Why did French lawmakers decide against giving individual schools local discretion?",
         "options": [
-          "Under no circumstances should industrial mining destroy these unique benthic ecosystems.",
-          "My sister plays violin in the metropolitan youth symphony orchestra.",
-          "No, the convenience store ran out of bottled mineral water."
+          "A uniform nationwide statute establishes clear expectations and eliminates boundary disputes.",
+          "They wanted teachers to spend all day searching backpacks.",
+          "Local principals were forbidden from reading email."
         ],
-        "answer": "Under no circumstances should industrial mining destroy these unique benthic ecosystems."
+        "answer": "A uniform nationwide statute establishes clear expectations and eliminates boundary disputes."
       },
       {
-        "speaker": "Dr. Brooks",
-        "text": "How do chemosynthetic bacteria survive without any incoming solar radiation?",
+        "id": 3,
+        "speaker": "David",
+        "prompt": "How does Florida's statute address potential legal challenges regarding student safety?",
         "options": [
-          "They oxidize toxic hydrogen sulfide spewing from hydrothermal vents to produce energy.",
-          "We watched an exciting documentary about polar bear cubs yesterday.",
-          "The weather in the southern valley was unusually mild last week."
+          "It explicitly permits devices for medical needs and emergency communications outside instructional periods.",
+          "It requires every student to carry a satellite radio.",
+          "It ignores student health completely."
         ],
-        "answer": "They oxidize toxic hydrogen sulfide spewing from hydrothermal vents to produce energy."
+        "answer": "It explicitly permits devices for medical needs and emergency communications outside instructional periods."
       },
       {
-        "speaker": "Liam",
-        "text": "Barely had we deployed the robotic arm when a translucent snailfish swam into view!",
+        "id": 4,
+        "speaker": "David",
+        "prompt": "What did comparative compliance data reveal after these policies were implemented?",
         "options": [
-          "That snailfish is specially adapted to withstand extreme hydrostatic pressure without injury.",
-          "I forgot to lock my bicycle outside the university sports arena.",
-          "There are twenty-two chapters in this textbook on microeconomics."
+          "Classroom concentration improved significantly and reported incidents of cyberbullying declined.",
+          "Student test scores dropped to zero across both nations.",
+          "All students stopped coming to school."
         ],
-        "answer": "That snailfish is specially adapted to withstand extreme hydrostatic pressure without injury."
+        "answer": "Classroom concentration improved significantly and reported incidents of cyberbullying declined."
       },
       {
-        "speaker": "Dr. Brooks",
-        "text": "Shall we transfer our preserved abyssal specimens to the shipboard laboratory for DNA sequencing?",
+        "id": 5,
+        "speaker": "David",
+        "prompt": "How does comparative law contribute to sound policymaking?",
         "options": [
-          "Yes, let's analyze their genetic adaptations before we dock at the harbor.",
-          "I would rather read a mystery novel in my cabin this evening.",
-          "The marine fuel tanks were refilled at the port three days ago."
+          "It enables lawmakers to evaluate the real-world outcomes of policies adopted by other jurisdictions.",
+          "It forces all countries to speak the exact same language.",
+          "It proves that laws can never change."
         ],
-        "answer": "Yes, let's analyze their genetic adaptations before we dock at the harbor."
-      }
-    ],
-    "exchanges": [
-      {
-        "speaker": "Dr. Brooks",
-        "text": "Liam, never before have I seen such bright bioluminescence at ten thousand meters depth!"
-      },
-      {
-        "speaker": "Liam",
-        "text": "It is astonishing how deep organisms produce biochemical light in total darkness."
-      },
-      {
-        "speaker": "Dr. Brooks",
-        "text": "Under what conditions should commercial companies be allowed to dredge deep ocean trenches?"
-      },
-      {
-        "speaker": "Liam",
-        "text": "Under no circumstances should industrial mining destroy these unique benthic ecosystems."
-      },
-      {
-        "speaker": "Dr. Brooks",
-        "text": "How do chemosynthetic bacteria survive without any incoming solar radiation?"
-      },
-      {
-        "speaker": "Liam",
-        "text": "They oxidize toxic hydrogen sulfide spewing from hydrothermal vents to produce energy."
-      },
-      {
-        "speaker": "Dr. Brooks",
-        "text": "Barely had we deployed the robotic arm when a translucent snailfish swam into view!"
-      },
-      {
-        "speaker": "Liam",
-        "text": "That snailfish is specially adapted to withstand extreme hydrostatic pressure without injury."
-      },
-      {
-        "speaker": "Dr. Brooks",
-        "text": "Shall we transfer our preserved abyssal specimens to the shipboard laboratory for DNA sequencing?"
-      },
-      {
-        "speaker": "Liam",
-        "text": "Yes, let's analyze their genetic adaptations before we dock at the harbor."
+        "answer": "It enables lawmakers to evaluate the real-world outcomes of policies adopted by other jurisdictions."
       }
     ]
   },
   "rw_part6": {
-    "title": "Liam Ross's Deep Dive Logbook: Tonga Trench",
-    "instructions": "Read the diary and write the missing words. Write one word on each line.",
-    "text_template": "Dear Logbook, today Dr. Brooks and I completed our descent [1]_____ the deepest hadal trench. Never before had I experienced such crushing water pressure [2]_____ ten thousand meters. Specialized titanium submersibles made this historic expedition [3]_____. Around the hydrothermal vents, giant tubeworms thrive without [4]_____ direct sunlight. Tomorrow, we will present our biological discoveries [5]_____ the international oceanographic council.",
+    "instructions": "Read the comparative legal text and choose the correct function word for each blank space.",
+    "text_template": "Comparative legal studies highlight contrasting approaches to school technology. In France, national legislation completely bans smartphones [1] all elementary campuses. In contrast [2] this absolute prohibition, Florida opted [3] a statute that restricts algorithmic social media networks. Both frameworks provide exceptions [4] students with documented medical conditions. Ultimately, analyzing international policies helps governments design rules [5] protect adolescent mental health.",
     "answers": {
-      "1": "into",
-      "2": "at",
-      "3": "possible",
-      "4": "any",
-      "5": "to"
+      "1": "on",
+      "2": "to",
+      "3": "for",
+      "4": "for",
+      "5": "that"
     }
   }
 };

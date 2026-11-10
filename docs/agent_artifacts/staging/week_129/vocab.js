@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Target Vocabulary & SRS Metadata
- * Week: 129 | Theme: "Architecture of the Future: Megacities & Sustainability" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.313Z
+ * Week: 129 | Theme: "Opinion Project 3: Smartphones Under 12?" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.449Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,203 +10,203 @@
 export const vocab = [
   {
     "id": 1,
-    "word": "megacity",
+    "word": "adolescent",
     "pos": "n",
-    "ipa": "/ˈmeɡəsɪti/",
-    "definition_en": "A very large city, typically one with a population over ten million people",
-    "definition_vi": "đại đô thị",
-    "example_en": "Tokyo is a bustling megacity that integrates advanced high-speed transit.",
-    "example_vi": "Tokyo là một đại đô thị nhộn nhịp tích hợp phương tiện giao thông tốc độ cao tiên tiến."
+    "ipa": "/ˌædəˈlesənt/",
+    "definition_en": "A young person in the transitional stage between childhood and adulthood",
+    "definition_vi": "thanh thiếu niên / người ở tuổi dậy thì",
+    "example_en": "Adolescent brains undergo major neurological reorganization during middle school years.",
+    "example_vi": "Bộ não thanh thiếu niên trải qua quá trình tái tổ chức thần kinh lớn trong những năm trung học cơ sở."
   },
   {
     "id": 2,
-    "word": "architecture",
+    "word": "smartphone",
     "pos": "n",
-    "ipa": "/ˈɑːrkɪtektʃər/",
-    "definition_en": "The art or practice of designing and constructing buildings",
-    "definition_vi": "kiến trúc",
-    "example_en": "Sustainable architecture incorporates natural sunlight and living vertical gardens.",
-    "example_vi": "Kiến trúc bền vững kết hợp ánh sáng mặt trời tự nhiên và các khu vườn thẳng đứng."
+    "ipa": "/ˈsmɑːrtfoʊn/",
+    "definition_en": "A mobile device that combines cellular telephone capabilities with advanced computing",
+    "definition_vi": "điện thoại thông minh",
+    "example_en": "Providing an unrestricted smartphone to an eight-year-old raises serious parental concerns.",
+    "example_vi": "Cung cấp một chiếc điện thoại thông minh không giới hạn cho một đứa trẻ tám tuổi gây ra những lo ngại nghiêm trọng cho phụ huynh."
   },
   {
     "id": 3,
-    "word": "skyscraper",
+    "word": "development",
     "pos": "n",
-    "ipa": "/ˈskaɪskreɪpər/",
-    "definition_en": "A very tall building of many stories",
-    "definition_vi": "tòa nhà chọc trời",
-    "example_en": "The eco-friendly skyscraper uses aerodynamic curves to reduce wind resistance.",
-    "example_vi": "Tòa nhà chọc trời thân thiện với môi trường sử dụng các đường cong khí động học để giảm sức cản của gió."
+    "ipa": "/dɪˈveləpmənt/",
+    "definition_en": "The biological, cognitive, and emotional growth of an individual over time",
+    "definition_vi": "sự phát triển",
+    "example_en": "Healthy emotional development depends heavily on face-to-face peer relationships.",
+    "example_vi": "Sự phát triển cảm xúc lành mạnh phụ thuộc rất lớn vào các mối quan hệ bạn bè trực tiếp."
   },
   {
     "id": 4,
-    "word": "sustainability",
+    "word": "screen",
     "pos": "n",
-    "ipa": "/səˌsteɪnəˈbɪləti/",
-    "definition_en": "The quality of not being harmful to the environment or depleting natural resources",
-    "definition_vi": "tính bền vững",
-    "example_en": "Urban sustainability requires recycling wastewater and generating clean solar power.",
-    "example_vi": "Tính bền vững của đô thị đòi hỏi phải tái chế nước thải và sản xuất năng lượng mặt trời sạch."
+    "ipa": "/skriːn/",
+    "definition_en": "The flat display surface on an electronic device where visual content appears",
+    "definition_vi": "màn hình điện tử",
+    "example_en": "Staring at a bright electronic screen late at night interferes with melatonin production.",
+    "example_vi": "Nhìn vào màn hình điện tử sáng muộn vào ban đêm gây trở ngại cho việc sản xuất melatonin."
   },
   {
     "id": 5,
-    "word": "urbanization",
+    "word": "addiction",
     "pos": "n",
-    "ipa": "/ˌɜːrbənəˈzeɪʃən/",
-    "definition_en": "The process of making an area more urban through population growth",
-    "definition_vi": "sự đô thị hóa",
-    "example_en": "Rapid urbanization puts tremendous pressure on public transport networks.",
-    "example_vi": "Đô thị hóa nhanh chóng gây áp lực to lớn lên các mạng lưới giao thông công cộng."
+    "ipa": "/əˈdɪkʃən/",
+    "definition_en": "The condition of being compulsively dependent on an activity or device",
+    "definition_vi": "sự nghiện ngập / phụ thuộc cưỡng chế",
+    "example_en": "Compulsive video scrolling resembles behavioral addiction in clinical psychology.",
+    "example_vi": "Việc lướt video cưỡng chế tương tự như chứng nghiện hành vi trong tâm lý học lâm sàng."
   },
   {
     "id": 6,
-    "word": "infrastructure",
+    "word": "attention",
     "pos": "n",
-    "ipa": "/ˈɪnfrəstrʌktʃər/",
-    "definition_en": "The basic physical structures needed for the operation of a society",
-    "definition_vi": "cơ sở hạ tầng",
-    "example_en": "Upgraded transit infrastructure allows commuters to travel without private cars.",
-    "example_vi": "Cơ sở hạ tầng giao thông được nâng cấp cho phép người đi làm di chuyển mà không cần xe hơi cá nhân."
+    "ipa": "/əˈtenʃən/",
+    "definition_en": "Notice taken of someone or something; mental focus directed to a task",
+    "definition_vi": "sự chú ý / khả năng tập trung",
+    "example_en": "Continuous phone notifications fragment student attention during study hours.",
+    "example_vi": "Các thông báo điện thoại liên tục làm phân tán sự chú ý của học sinh trong giờ học."
   },
   {
     "id": 7,
-    "word": "pedestrian",
+    "word": "pediatric",
     "pos": "adj",
-    "ipa": "/pəˈdestriən/",
-    "definition_en": "Designed for or relating to people walking rather than driving",
-    "definition_vi": "dành cho người đi bộ",
-    "example_en": "The mayor converted the central avenue into a green pedestrian promenade.",
-    "example_vi": "Thị trưởng đã chuyển đại lộ trung tâm thành một con đường dạo bộ xanh dành cho người đi bộ."
+    "ipa": "/ˌpiːdiˈætrɪk/",
+    "definition_en": "Relating to the medical care, growth, and health of infants and children",
+    "definition_vi": "thuộc nhi khoa",
+    "example_en": "The national pediatric academy published strict screen time guidelines for young youths.",
+    "example_vi": "Học viện nhi khoa quốc gia đã công bố các hướng dẫn nghiêm ngặt về thời gian sử dụng màn hình cho trẻ nhỏ."
   },
   {
     "id": 8,
-    "word": "geothermal",
+    "word": "cognitive",
     "pos": "adj",
-    "ipa": "/ˌdʒiːoʊˈθɜːrməl/",
-    "definition_en": "Relating to heat derived from the interior of the earth",
-    "definition_vi": "địa nhiệt",
-    "example_en": "Deep geothermal heat pumps regulate temperature across the commercial district.",
-    "example_vi": "Máy bơm nhiệt địa nhiệt sâu điều hòa nhiệt độ khắp khu thương mại."
+    "ipa": "/ˈkɑːɡnətɪv/",
+    "definition_en": "Relating to conscious mental processes including memory, judgment, and reasoning",
+    "definition_vi": "thuộc nhận thức / tư duy",
+    "example_en": "Excessive multitasking on digital apps impairs deep cognitive processing in learners.",
+    "example_vi": "Làm nhiều việc cùng lúc quá mức trên các ứng dụng kỹ thuật số làm suy giảm quá trình nhận thức sâu ở người học."
   },
   {
     "id": 9,
-    "word": "density",
+    "word": "distraction",
     "pos": "n",
-    "ipa": "/ˈdensəti/",
-    "definition_en": "The degree of compactness of a population or substance",
-    "definition_vi": "mật độ",
-    "example_en": "High population density makes mass transit systems economically viable.",
-    "example_vi": "Mật độ dân số cao làm cho các hệ thống giao thông công cộng trở nên khả thi về mặt kinh tế."
+    "ipa": "/dɪˈstrækʃən/",
+    "definition_en": "Something that draws attention away from an intended goal or activity",
+    "definition_vi": "sự xao nhãng / điều gây mất tập trung",
+    "example_en": "Vibrating alerts serve as a persistent distraction during morning mathematics classes.",
+    "example_vi": "Các cảnh báo rung đóng vai trò như một sự xao nhãng liên tục trong các lớp toán buổi sáng."
   },
   {
     "id": 10,
-    "word": "composite",
-    "pos": "adj",
-    "ipa": "/kəmˈpɑːzət/",
-    "definition_en": "Made up of various distinct materials combined for enhanced strength",
-    "definition_vi": "vật liệu composite, hỗn hợp",
-    "example_en": "Lightweight composite timber beams replace heavy steel in modern framing.",
-    "example_vi": "Các thanh dầm gỗ composite nhẹ thay thế thép nặng trong khung sườn hiện đại."
+    "word": "sleep",
+    "pos": "n",
+    "ipa": "/sliːp/",
+    "definition_en": "A natural periodic state of rest essential for brain and body recovery",
+    "definition_vi": "giấc ngủ",
+    "example_en": "Adequate nocturnal sleep is essential for memory consolidation and emotional balance.",
+    "example_vi": "Giấc ngủ ban đêm đầy đủ là điều cần thiết để củng cố trí nhớ và cân bằng cảm xúc."
   },
   {
     "id": 11,
-    "word": "aeration",
+    "word": "anxiety",
     "pos": "n",
-    "ipa": "/eˈreɪʃən/",
-    "definition_en": "The introduction of air into a material or architectural space",
-    "definition_vi": "sự thông khí, sục khí",
-    "example_en": "Natural building aeration reduces reliance on mechanical air conditioning.",
-    "example_vi": "Sự thông khí tự nhiên của tòa nhà làm giảm sự phụ thuộc vào máy điều hòa cơ học."
+    "ipa": "/æŋˈzaɪəti/",
+    "definition_en": "A feeling of worry, nervousness, or unease about an impending situation",
+    "definition_vi": "sự lo âu / cảm giác bất an",
+    "example_en": "Comparing oneself to curated social media profiles often provokes acute social anxiety.",
+    "example_vi": "Tự so sánh bản thân với các trang cá nhân được chọn lọc kỹ trên mạng xã hội thường gây ra sự lo âu xã hội gay gắt."
   },
   {
     "id": 12,
-    "word": "commute",
-    "pos": "v",
-    "ipa": "/kəˈmjuːt/",
-    "definition_en": "Travel some distance between home and work on a regular basis",
-    "definition_vi": "đi lại làm việc, đi làm",
-    "example_en": "Thousands of residents commute via electric magnetic levitation trains.",
-    "example_vi": "Hàng ngàn cư dân đi làm thông qua các đoàn tàu đệm từ điện."
+    "word": "wellbeing",
+    "pos": "n",
+    "ipa": "/ˈwelbiːɪŋ/",
+    "definition_en": "The state of being comfortable, healthy, mentally fulfilled, and happy",
+    "definition_vi": "sức khỏe toàn diện / phúc lợi tinh thần",
+    "example_en": "Physical outdoor recreation strongly supports child psychological wellbeing.",
+    "example_vi": "Các hoạt động giải trí thể chất ngoài trời hỗ trợ mạnh mẽ cho sức khỏe tâm lý của trẻ em."
   },
   {
     "id": 13,
-    "word": "biodiversity",
+    "word": "habit",
     "pos": "n",
-    "ipa": "/ˌbaɪoʊdaɪˈvɜːrsəti/",
-    "definition_en": "The variety of plant and animal life in a particular habitat",
-    "definition_vi": "đa dạng sinh học",
-    "example_en": "Rooftop botanical gardens enhance urban biodiversity in concrete districts.",
-    "example_vi": "Vườn bách thảo trên sân thượng tăng cường đa dạng sinh học đô thị trong các khu vực bê tông."
+    "ipa": "/ˈhæbɪt/",
+    "definition_en": "A settled or regular practice or tendency that is difficult to relinquish",
+    "definition_vi": "thói quen",
+    "example_en": "Checking notifications first thing in the morning quickly becomes an unconscious habit.",
+    "example_vi": "Kiểm tra thông báo điều đầu tiên vào buổi sáng nhanh chóng trở thành một thói quen vô thức."
   },
   {
     "id": 14,
-    "word": "residential",
-    "pos": "adj",
-    "ipa": "/ˌrezɪˈdenʃəl/",
-    "definition_en": "Designed for or occupied by people living there rather than commerce",
-    "definition_vi": "thuộc khu dân cư",
-    "example_en": "Quiet residential neighborhoods feature tree-lined sidewalks and bicycle lanes.",
-    "example_vi": "Những khu dân cư yên tĩnh có các vỉa hè rợp bóng cây và làn đường dành cho xe đạp."
+    "word": "supervision",
+    "pos": "n",
+    "ipa": "/ˌsuːpərˈvɪʒən/",
+    "definition_en": "Management, oversight, or guidance by an adult or responsible authority",
+    "definition_vi": "sự giám sát / sự quản lý",
+    "example_en": "Parental supervision helps young adolescents navigate online spaces safely.",
+    "example_vi": "Sự giám sát của cha mẹ giúp thanh thiếu niên định hướng các không gian trực tuyến một cách an toàn."
   },
   {
     "id": 15,
-    "word": "modular",
-    "pos": "adj",
-    "ipa": "/ˈmɑːdʒələr/",
-    "definition_en": "Employing or involving a module or modules as the basis of design",
-    "definition_vi": "theo mô-đun, lắp ghép",
-    "example_en": "Modular construction allows apartment units to be assembled offsite quickly.",
-    "example_vi": "Xây dựng mô-đun cho phép các căn hộ được lắp ráp ngoài công trường một cách nhanh chóng."
+    "word": "boundary",
+    "pos": "n",
+    "ipa": "/ˈbaʊndəri/",
+    "definition_en": "A recognized line or limit that indicates acceptable conduct or usage",
+    "definition_vi": "ranh giới / giới hạn",
+    "example_en": "Families establish a firm boundary by keeping all digital devices outside bedrooms.",
+    "example_vi": "Các gia đình thiết lập một ranh giới vững chắc bằng cách để tất cả các thiết bị kỹ thuật số bên ngoài phòng ngủ."
   },
   {
     "id": 16,
-    "word": "efficiency",
+    "word": "guideline",
     "pos": "n",
-    "ipa": "/ɪˈfɪʃənsi/",
-    "definition_en": "Maximum productivity achieved with minimal expense or wasted effort",
-    "definition_vi": "hiệu suất",
-    "example_en": "Thermal insulation maximizes the energetic efficiency of residential towers.",
-    "example_vi": "Cách nhiệt tối đa hóa hiệu suất năng lượng của các tòa tháp dân cư."
+    "ipa": "/ˈɡaɪdlaɪn/",
+    "definition_en": "A general rule, principle, or piece of advisory recommendation",
+    "definition_vi": "hướng dẫn / quy tắc chỉ đạo",
+    "example_en": "The school board drafted an updated guideline regarding electronic device usage.",
+    "example_vi": "Hội đồng nhà trường đã soạn thảo một hướng dẫn cập nhật liên quan đến việc sử dụng thiết bị điện tử."
   },
   {
     "id": 17,
-    "word": "district",
-    "pos": "n",
-    "ipa": "/ˈdɪstrɪkt/",
-    "definition_en": "An area of a country or city, especially one regarded as a distinct unit",
-    "definition_vi": "khu vực, quận",
-    "example_en": "The innovation district hosts technology incubators and green startups.",
-    "example_vi": "Khu vực đổi mới sáng tạo tổ chức các vườn ươm công nghệ và các công ty khởi nghiệp xanh."
+    "word": "mental",
+    "pos": "adj",
+    "ipa": "/ˈmentəl/",
+    "definition_en": "Relating to the human mind, emotions, and intellectual processes",
+    "definition_vi": "thuộc về tinh thần / tâm trí",
+    "example_en": "Chronic digital overload can deplete adolescent mental stamina during exam week.",
+    "example_vi": "Tình trạng quá tải kỹ thuật số kéo dài có thể làm cạn kiệt sức bền tinh thần của thanh thiếu niên trong tuần thi."
   },
   {
     "id": 18,
-    "word": "ventilation",
-    "pos": "n",
-    "ipa": "/ˌventəlˈeɪʃən/",
-    "definition_en": "The provision of fresh air to a room, building, or space",
-    "definition_vi": "sự thông gió",
-    "example_en": "Passive ventilation towers draw cool ground breezes through the atrium.",
-    "example_vi": "Các tháp thông gió thụ động hút những làn gió mát từ mặt đất qua giếng trời."
+    "word": "stimulate",
+    "pos": "v",
+    "ipa": "/ˈstɪmjəleɪt/",
+    "definition_en": "To encourage or trigger activity, curiosity, or physiological excitement",
+    "definition_vi": "kích thích / thúc đẩy",
+    "example_en": "Interactive digital games stimulate the brain's dopamine reward circuitry.",
+    "example_vi": "Các trò chơi kỹ thuật số tương tác kích thích mạch phần thưởng dopamine của não bộ."
   },
   {
     "id": 19,
-    "word": "resilient",
-    "pos": "adj",
-    "ipa": "/rɪˈzɪliənt/",
-    "definition_en": "Able to withstand or recover quickly from difficult conditions",
-    "definition_vi": "kiên cường, có khả năng phục hồi",
-    "example_en": "Coastal cities build resilient storm barriers to protect vulnerable shorelines.",
-    "example_vi": "Các thành phố ven biển xây dựng các đê chắn bão kiên cường để bảo vệ bờ biển dễ bị tổn thương."
+    "word": "moderation",
+    "pos": "n",
+    "ipa": "/ˌmɑːdəˈreɪʃən/",
+    "definition_en": "The avoidance of excess or extremes; practicing balanced self-restraint",
+    "definition_vi": "sự chừng mực / điều độ",
+    "example_en": "Practicing screen time moderation allows children to enjoy technology without harm.",
+    "example_vi": "Thực hành sử dụng màn hình có chừng mực cho phép trẻ em tận hưởng công nghệ mà không bị tổn hại."
   },
   {
     "id": 20,
-    "word": "innovation",
+    "word": "restriction",
     "pos": "n",
-    "ipa": "/ˌɪnəˈveɪʃən/",
-    "definition_en": "The action or process of innovating new methods or technologies",
-    "definition_vi": "sự đổi mới, sáng kiến",
-    "example_en": "Architectural innovation transforms abandoned warehouses into vertical farm hubs.",
-    "example_vi": "Đổi mới kiến trúc biến các nhà kho bỏ hoang thành các trung tâm nông nghiệp thẳng đứng."
+    "ipa": "/rɪˈstrɪkʃən/",
+    "definition_en": "A limiting condition or statutory rule imposed on activities or access",
+    "definition_vi": "sự hạn chế / lệnh giới hạn",
+    "example_en": "Some countries are enacting an age restriction on social media account creation.",
+    "example_vi": "Một số quốc gia đang ban hành lệnh giới hạn độ tuổi đối với việc tạo tài khoản mạng xã hội."
   }
 ];
 export const vocabList = vocab;

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Speaking Hub & Talkshow/Info Exchange Cards
- * Week: 126 | Theme: "Advanced Robotics & Artificial Intelligence Ethics" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.309Z
+ * Week: 126 | Theme: "From Essay to Speech" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.442Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,144 +9,144 @@
 
 export const speakingHubData = {
   "week": 126,
-  "theme": "Advanced Robotics & Artificial Intelligence Ethics",
+  "theme": "From Essay to Speech",
   "cefr_level": "B2 First",
   "talkshow_prompt": {
-    "topic": "Ethical Governance in Autonomous Healthcare Robotics",
-    "question": "Dr. Vance, should autonomous robotic systems ever be granted full decision-making authority over critical patient triage?",
-    "model_response": "It is widely agreed among bioethicists that automated systems must never operate without meaningful human supervision in critical triage. While machine learning algorithms can analyze vital signs with unmatched speed, moral accountability cannot be transferred to software. Human physicians must retain the final prerogative to override algorithmic recommendations, ensuring that empathy, contextual judgment, and institutional accountability are preserved."
+    "topic": "Mastering the Art of Converting Essays into Speeches",
+    "question": "Lucas, why is oral signposting more essential in spoken presentations than in written essays?",
+    "model_response": "In a written essay, readers can glance at subheadings, check footnotes, or re-read confusing paragraphs at their own pace. But in an oral presentation, the audience hears your words only once in real time! Signposting markers like 'Moving on to our next question' or 'Turning our attention to the data' act as mental road signs. They prepare listeners for what comes next, keeping everyone united and engaged throughout the entire speech!"
   },
   "info_exchange_cards": {
     "table_a": {
-      "title": "Dr. Vance's Autonomous Hospital Rover",
+      "title": "Lucas's Public Speaking Workshop",
       "subtitle": "Candidate's Question Card (Ask Examiner)",
-      "person": "Dr. Vance",
+      "person": "Lucas",
       "fields": [
         {
           "id": "field_a1",
-          "cue_prompt": "where / rover tested?",
+          "cue_prompt": "where / public speaking workshop held?",
           "cue_word": "where",
           "is_missing": true,
           "acceptable_questions": [
-            "Where was the autonomous rover tested?",
-            "Where did the testing take place?",
-            "Where was the rover evaluated?"
+            "Where is the public speaking workshop held?",
+            "Where is the workshop?",
+            "Where does Lucas attend the workshop?"
           ],
-          "nova_reply": "The rover was tested in the simulated corridors of St. Jude University Research Hospital."
+          "nova_reply": "The workshop is held in the university debate lecture auditorium."
         },
         {
           "id": "field_a2",
-          "cue_prompt": "what sensors / detect obstacles?",
-          "cue_word": "what sensors",
+          "cue_prompt": "what / core skill taught this session?",
+          "cue_word": "what",
           "is_missing": true,
           "acceptable_questions": [
-            "What sensors detect obstacles in corridors?",
-            "What kind of sensors are used?",
-            "Which sensors detect obstacles?"
+            "What is the core skill taught this session?",
+            "What core skill do they learn?",
+            "What is taught in the session?"
           ],
-          "nova_reply": "It relies on solid-state lidar and panoramic ultrasonic proximity sensors."
+          "nova_reply": "Techniques for condensing essay paragraphs into keyword cue cards."
         },
         {
           "id": "field_a3",
-          "cue_prompt": "how / prevent algorithmic bias?",
-          "cue_word": "how",
+          "cue_prompt": "how long / each practice speech last?",
+          "cue_word": "how long",
           "is_missing": true,
           "acceptable_questions": [
-            "How do engineers prevent algorithmic bias?",
-            "How is bias prevented in training?",
-            "How do they eliminate bias?"
+            "How long does each practice speech last?",
+            "How long is each speech?",
+            "What is the duration of the speech?"
           ],
-          "nova_reply": "Data scientists balance demographic datasets and run independent fairness audits monthly."
+          "nova_reply": "Each student delivers a timed five-minute presentation."
         },
         {
           "id": "field_a4",
-          "cue_prompt": "who / holds legal accountability?",
+          "cue_prompt": "who / coaches the students?",
           "cue_word": "who",
           "is_missing": true,
           "acceptable_questions": [
-            "Who holds legal accountability for errors?",
-            "Who is responsible if an error occurs?",
-            "Who holds accountability?"
+            "Who coaches the students?",
+            "Who is the speech coach?",
+            "Who leads the training session?"
           ],
-          "nova_reply": "The hospital governing board and the robotics manufacturing firm share legal liability."
+          "nova_reply": "Professor Elena Vance, a national collegiate debate champion."
         },
         {
           "id": "field_a5",
-          "cue_prompt": "when / clinical deployment begin?",
-          "cue_word": "when",
+          "cue_prompt": "why / signpost markers essential?",
+          "cue_word": "why",
           "is_missing": true,
           "acceptable_questions": [
-            "When will clinical deployment begin?",
-            "When does hospital deployment start?",
-            "When will trials start?"
+            "Why are signpost markers essential?",
+            "Why do speakers use signposting?",
+            "Why is signposting important?"
           ],
-          "nova_reply": "Clinical deployment is scheduled to begin in the cardiology wing next September."
+          "nova_reply": "Because listeners cannot re-read spoken sentences and need verbal road signs."
         }
       ]
     },
     "table_b": {
-      "title": "Ethan Cole's Carebot Prototype",
+      "title": "Elena's Oratory Masterclass",
       "subtitle": "Information Card (Answer Examiner's Questions)",
-      "person": "Ethan",
+      "person": "Elena",
       "fields": [
         {
           "id": "field_b1",
-          "cue_prompt": "where / carebot deployed?",
+          "cue_prompt": "where / speech rehearsal studio located?",
           "cue_word": "where",
-          "value": "At the Oakwood Senior Living rehabilitation center in Manchester.",
-          "nova_question": "Where is Ethan's carebot prototype currently deployed?",
+          "value": "On the third floor of the civic arts center.",
+          "nova_question": "Where is the speech rehearsal studio located?",
           "acceptable_answers": [
-            "At the Oakwood Senior Living rehabilitation center in Manchester.",
-            "At Oakwood Senior Living.",
-            "In Manchester."
+            "On the third floor of the civic arts center.",
+            "At the civic arts center.",
+            "Third floor of the civic arts center."
           ]
         },
         {
           "id": "field_b2",
-          "cue_prompt": "what tasks / robot perform?",
-          "cue_word": "what tasks",
-          "value": "It delivers prescribed medications and monitors patient heart telemetry.",
-          "nova_question": "What primary tasks does the carebot perform for residents?",
+          "cue_prompt": "what / maximum number of words per cue card?",
+          "cue_word": "what",
+          "value": "Six bullet point keywords to prevent verbatim reading.",
+          "nova_question": "What is the maximum number of words per cue card?",
           "acceptable_answers": [
-            "It delivers prescribed medications and monitors patient heart telemetry.",
-            "Delivers medication and monitors heart telemetry.",
-            "Delivering medication and monitoring vitals."
+            "Six bullet point keywords to prevent verbatim reading.",
+            "Six bullet point keywords.",
+            "Six words per card."
           ]
         },
         {
           "id": "field_b3",
-          "cue_prompt": "why / manual override required?",
-          "cue_word": "why",
-          "value": "To guarantee human nurses can disengage automated navigation instantly.",
-          "nova_question": "Why is a manual physical override switch required on the unit?",
+          "cue_prompt": "how / measure student speaking speed?",
+          "cue_word": "how",
+          "value": "Using a digital pacing monitor that tracks words per minute.",
+          "nova_question": "How do coaches measure student speaking speed?",
           "acceptable_answers": [
-            "To guarantee human nurses can disengage automated navigation instantly.",
-            "So nurses can stop automated navigation instantly.",
-            "To allow instant human disengagement."
+            "Using a digital pacing monitor that tracks words per minute.",
+            "With a digital pacing monitor.",
+            "By tracking words per minute."
           ]
         },
         {
           "id": "field_b4",
-          "cue_prompt": "how long / battery operate?",
-          "cue_word": "how long",
-          "value": "The dual lithium-polymer pack powers continuous operation for fourteen hours.",
-          "nova_question": "How long can the prototype operate between charging cycles?",
+          "cue_prompt": "who / evaluates the final presentations?",
+          "cue_word": "who",
+          "value": "A panel of three professional communications instructors.",
+          "nova_question": "Who evaluates the final student presentations?",
           "acceptable_answers": [
-            "The dual lithium-polymer pack powers continuous operation for fourteen hours.",
-            "Fourteen hours continuously.",
-            "For fourteen hours."
+            "A panel of three professional communications instructors.",
+            "Three communications instructors.",
+            "Professional instructors."
           ]
         },
         {
           "id": "field_b5",
-          "cue_prompt": "what regulation / standard certified?",
-          "cue_word": "what regulation",
-          "value": "It earned ISO-13482 international safety certification for personal care robots.",
-          "nova_question": "What regulatory safety certification has the prototype received?",
+          "cue_prompt": "why / include deliberate pauses in speeches?",
+          "cue_word": "why",
+          "value": "To let listeners process key ideas and to build dramatic focus.",
+          "nova_question": "Why should speakers include deliberate pauses in speeches?",
           "acceptable_answers": [
-            "It earned ISO-13482 international safety certification for personal care robots.",
-            "ISO-13482 international safety certification.",
-            "ISO-13482 certification."
+            "To let listeners process key ideas and to build dramatic focus.",
+            "To let listeners process ideas.",
+            "To build dramatic focus and give listeners time."
           ]
         }
       ]

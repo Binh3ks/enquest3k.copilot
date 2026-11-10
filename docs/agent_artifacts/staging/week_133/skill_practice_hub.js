@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 133 | Theme: "Astrophysics: Black Holes, Galaxies & Gravity" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.318Z
+ * Week: 133 | Theme: "Deep Research & Data" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.455Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,186 +9,182 @@
 
 export const skillPracticeHubData = {
   "week": 133,
-  "theme": "Astrophysics: Black Holes, Galaxies & Gravity",
+  "theme": "Deep Research & Data",
   "cefr_level": "B2 First",
   "grammar_drills": [
     {
-      "sentence": "The detected gravitational signal must have originated from colliding black holes.",
+      "sentence": "According to a study by university psychologists, seventy percent play video games.",
       "options": [
-        "must have originated",
-        "can originate",
-        "should originate"
+        "According to",
+        "According with",
+        "According from"
       ],
-      "answer": "must have originated",
-      "explanation": "Modal of deduction for logical certainty about a past event uses 'must have + past participle'."
+      "answer": "According to",
+      "explanation": "Use 'According to' followed by a source or authority to introduce cited evidence."
     },
     {
-      "sentence": "The distant galaxy cannot be younger than ten billion years.",
+      "sentence": "Statistics demonstrate that a small minority exhibits signs of fatigue.",
       "options": [
-        "cannot be",
-        "must not have been",
-        "might to be"
+        "demonstrate",
+        "demonstrates",
+        "demonstrating"
       ],
-      "answer": "cannot be",
-      "explanation": "Modal of deduction for present impossibility uses 'cannot + base verb'."
+      "answer": "demonstrate",
+      "explanation": "The plural noun 'Statistics' takes the plural verb 'demonstrate'."
     },
     {
-      "sentence": "The majority of large galaxies harbor supermassive black holes.",
+      "sentence": "Data reveals that cooperative games build strong teamwork skills.",
       "options": [
-        "harbor",
-        "harbors",
-        "harboring"
+        "reveals that",
+        "reveals for",
+        "revealing that"
       ],
-      "answer": "harbor",
-      "explanation": "Subject 'The majority of large galaxies' takes plural verb form 'harbor'."
+      "answer": "reveals that",
+      "explanation": "Use 'reveals that' followed by a declarative clause to present research findings."
     },
     {
-      "sentence": "Statistical data confirms that cosmic expansion is accelerating.",
+      "sentence": "Researchers analyzed a randomized demographic sample of two thousand students.",
       "options": [
-        "confirms",
-        "confirm",
-        "confirming"
+        "analyzed",
+        "analyze",
+        "analyzing"
       ],
-      "answer": "confirms",
-      "explanation": "Non-count collective noun 'Statistical data' treated as singular subject takes 'confirms'."
+      "answer": "analyzed",
+      "explanation": "Use past simple 'analyzed' to describe completed research actions."
     },
     {
-      "sentence": "Light from the supernova could have taken billions of years to reach Earth.",
+      "sentence": "A substantial majority of respondents reported positive social connections.",
       "options": [
-        "could have taken",
-        "must take",
-        "can have taken"
+        "majority of",
+        "majority to",
+        "majority from"
       ],
-      "answer": "could have taken",
-      "explanation": "Modal of past possibility uses 'could have + past participle'."
+      "answer": "majority of",
+      "explanation": "Use the preposition 'of' after 'majority' to specify the population subgroup."
     }
   ],
   "singapore_math": [
     {
       "id": "w133_p1",
       "type": "part_whole",
-      "title": "Galactic Black Hole Survey Population",
-      "question": "An astronomical survey analyzed 720 spiral galaxies and 280 elliptical galaxies for central supermassive black holes. What was the total population of galaxies surveyed?",
-      "storyContext": "Zoe verifies galaxy classification tallies in the deep-space survey catalog.",
+      "title": "Calculating Survey Cohort Participation Numbers",
+      "question": "In a survey of 1,000 students, 700 students (70 percent) reported playing video games weekly, while 300 students reported zero gaming activity. What is the total survey sample size?",
+      "storyContext": "Hannah tallies demographic participation numbers in a research ledger.",
       "modelData": {
         "bars": [
           {
-            "label": "Spiral Galaxies",
-            "value": 720,
-            "color": "#3b82f6"
+            "label": "Weekly Gamers (70%)",
+            "value": 700,
+            "color": "#10b981"
           },
           {
-            "label": "Elliptical Galaxies",
-            "value": 280,
-            "color": "#10b981"
+            "label": "Non-Gamers (30%)",
+            "value": 300,
+            "color": "#64748b"
           }
         ],
         "total": 1000,
-        "unit": "galaxies"
+        "unit": "students"
       },
       "target_answer": 1000,
-      "unit": "galaxies",
+      "unit": "students",
       "steps": [
-        "Take 720 spiral galaxies surveyed.",
-        "Add 280 elliptical galaxies surveyed.",
-        "720 + 280 = 1000 galaxies in total."
+        "Take weekly gamers: 700 students.",
+        "Add non-gamers: 300 students.",
+        "700 + 300 = 1,000 total students in the sample."
       ]
     },
     {
       "id": "w133_p2",
       "type": "comparison",
-      "title": "Merging Black Hole Solar Mass Comparison",
-      "question": "In a binary black hole merger, the primary black hole possessed 36 solar masses, while the secondary black hole possessed 29 solar masses. By how many solar masses was the primary black hole larger?",
-      "storyContext": "Dr. Sagan-Smith computes gravitational wave mass parameters from laser telemetry.",
+      "title": "Comparing Majority Cooperative Gamers vs Minority Solitary Gamers",
+      "question": "Out of 700 adolescent gamers, 490 students play cooperative multiplayer titles, while 210 students play solitary single-player games. How many more students play cooperative games than solitary games?",
+      "storyContext": "Ethan graphs gaming modality distributions on a comparative chart.",
       "modelData": {
         "bars": [
           {
-            "label": "Primary Black Hole",
-            "value": 36,
-            "color": "#8b5cf6"
+            "label": "Cooperative Multiplayer",
+            "value": 490,
+            "color": "#3b82f6"
           },
           {
-            "label": "Secondary Black Hole",
-            "value": 29,
-            "color": "#06b6d4"
+            "label": "Solitary Single-Player",
+            "value": 210,
+            "color": "#f59e0b"
           }
         ],
-        "difference": 7,
-        "unit": "solar masses"
+        "difference": 280,
+        "unit": "students"
       },
-      "target_answer": 7,
-      "unit": "solar masses",
+      "target_answer": 280,
+      "unit": "students",
       "steps": [
-        "Start with 36 solar masses of the primary black hole.",
-        "Subtract 29 solar masses of the secondary black hole.",
-        "36 - 29 = 7 solar masses difference."
+        "Start with cooperative players: 490 students.",
+        "Subtract solitary players: 210 students.",
+        "490 - 210 = 280 more students playing cooperative titles."
       ]
     }
   ],
   "science_lab": {
-    "title_en": "Astrophysics: Black Holes, Galaxies & Gravity Lab Workshop",
+    "title_en": "Deep Research & Data Lab Workshop",
     "scenarios": [
       {
         "stage": 1,
-        "title": "Astrophysical Classification",
-        "diagram_type": "celestial_scale_matrix",
-        "instruction": "Match each cosmic structure to its corresponding physical scale.",
+        "title": "Sampling Representative Demographic Populations",
+        "diagram_type": "stratified_population_sample_matrix",
+        "instruction": "Calibrate demographic sampling proportions across age, school district, and gender.",
         "items": [
           {
-            "label": "Singularity -> Infinite Density Point",
-            "target": "singularity"
+            "label": "Target Adolescent Population",
+            "target": "universe_scope"
           },
           {
-            "label": "Event Horizon -> Boundary of No Escape",
-            "target": "event_horizon"
+            "label": "Stratified Demographic Quota",
+            "target": "sampling_filter"
           },
           {
-            "label": "Spiral Galaxy -> Billions of Stars in Orbit",
-            "target": "galaxy"
-          },
-          {
-            "label": "Gravitational Wave -> Spacetime Ripple",
-            "target": "wave"
+            "label": "Randomized Participant Cohort",
+            "target": "empirical_sample"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Gravitational Wave Detection Pipeline",
-        "diagram_type": "detection_pipeline",
-        "instruction": "Trace the sequence of detection from cosmic collision to scientific proof.",
+        "title": "Mapping Quantitative Survey Correlation Curves",
+        "diagram_type": "scatter_plot_correlation_regression",
+        "instruction": "Analyze statistical regression lines connecting gaming hours with academic grades.",
         "items": [
           {
-            "label": "Black Holes Merge in Distant Galaxy",
-            "target": "step_1"
+            "label": "Weekly Active Gaming Hours (X-Axis)",
+            "target": "independent_var"
           },
           {
-            "label": "Spacetime Ripples Travel Across Light-Years",
-            "target": "step_2"
+            "label": "Academic Grade Point Average (Y-Axis)",
+            "target": "dependent_var"
           },
           {
-            "label": "Laser Interferometer Records Waveform",
-            "target": "step_3"
+            "label": "Non-Linear Regression Threshold Curve",
+            "target": "correlation_line"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Scientific Survey Verification",
-        "diagram_type": "astrophysics_milestones",
-        "instruction": "Order the mandatory stages for validating a new cosmic phenomenon.",
+        "title": "Publishing Verifiable Open-Access Datasets",
+        "diagram_type": "academic_data_repository_pipeline",
+        "instruction": "Package raw survey responses, statistical scripts, and methodology documentation.",
         "items": [
           {
-            "label": "Multi-Telescope Array Calibration",
-            "target": "stage_1"
+            "label": "Anonymized Survey Microdata",
+            "target": "raw_dataset"
           },
           {
-            "label": "Statistical Data and Redshift Analysis",
-            "target": "stage_2"
+            "label": "Reproducible Analysis Script",
+            "target": "code_repository"
           },
           {
-            "label": "Peer-Reviewed Observational Publication",
-            "target": "stage_3"
+            "label": "Peer-Reviewed Open Access Report",
+            "target": "published_study"
           }
         ]
       }

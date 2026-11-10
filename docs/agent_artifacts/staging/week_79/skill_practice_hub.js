@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 79 | Theme: "Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate" | CEFR: B1 Preliminary
- * Generated: 2026-11-09T08:30:07.703Z
+ * Week: 79 | Theme: "The Industrial Revolution" | CEFR: B1 Preliminary
+ * Generated: 2026-11-10T03:12:16.360Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,182 +9,182 @@
 
 export const skillPracticeHubData = {
   "week": 79,
-  "theme": "Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate",
+  "theme": "The Industrial Revolution",
   "cefr_level": "B1 Preliminary",
   "grammar_drills": [
     {
-      "sentence": "Yes, space research is inspiring, but Earth restoration is more urgent.",
+      "sentence": "Everyday tools were manufactured by machines in urban factories.",
       "options": [
-        "Yes, but",
-        "Because so",
-        "Although if"
+        "were manufactured",
+        "was manufactured",
+        "are manufacturing"
       ],
-      "answer": "Yes, but",
-      "explanation": "Use 'Yes, but...' as a conversational rebuttal structure to acknowledge a point before disagreeing."
+      "answer": "were manufactured",
+      "explanation": "Use plural past passive 'were manufactured' with the plural subject 'tools'."
     },
     {
-      "sentence": "Public funds should be allocated toward preserving our only planet.",
+      "sentence": "As a result of steam power, railway transit expanded rapidly.",
       "options": [
-        "allocated",
-        "allocate",
-        "allocating"
+        "As a result of",
+        "Because that",
+        "Although for"
       ],
-      "answer": "allocated",
-      "explanation": "After 'should be' in passive voice, use the past participle 'allocated'."
+      "answer": "As a result of",
+      "explanation": "Use 'As a result of' followed by a noun phrase to introduce a causal factor."
     },
     {
-      "sentence": "Weather satellites are designed to monitor atmospheric changes.",
+      "sentence": "Textile production increased due to automated mechanical equipment.",
       "options": [
-        "are designed",
-        "designed",
-        "designing"
+        "due to",
+        "because",
+        "so that"
       ],
-      "answer": "are designed",
-      "explanation": "Use present passive 'are designed' when the subject receives the action."
+      "answer": "due to",
+      "explanation": "Use 'due to' before a noun phrase to state the cause of an outcome."
     },
     {
-      "sentence": "Restoring biodiversity is far more critical than building lunar colonies.",
+      "sentence": "Tough iron beams were forged to construct strong railway bridges.",
       "options": [
-        "more critical",
-        "most critical",
-        "critical"
+        "were forged",
+        "forged",
+        "forging"
       ],
-      "answer": "more critical",
-      "explanation": "Use the comparative 'more critical' followed by 'than' to compare two priorities."
+      "answer": "were forged",
+      "explanation": "Use past passive 'were forged' when the iron beams receive the action."
     },
     {
-      "sentence": "Saving endangered wetlands is an urgent environmental responsibility.",
+      "sentence": "Consequently, industrial cities grew much faster than farming villages.",
       "options": [
-        "urgent",
-        "urgently",
-        "urgency"
+        "Consequently,",
+        "However,",
+        "Although,"
       ],
-      "answer": "urgent",
-      "explanation": "Use the adjective 'urgent' before the noun phrase 'environmental responsibility'."
+      "answer": "Consequently,",
+      "explanation": "Use 'Consequently,' as a transitional adverb to signal a logical historical result."
     }
   ],
   "singapore_math": [
     {
       "id": "w79_p1",
       "type": "part_whole",
-      "title": "Comparing Budget Allocations between Space Research and Clean Energy",
-      "question": "A national science council allocates 65 million dollars to satellite climate monitoring and 85 million dollars to community reforestation. What is the total environmental budget in millions of dollars?",
-      "storyContext": "Kevin analyzes public budget graphs for his debate rebuttal on environmental priorities.",
+      "title": "Calculating Daily Coal Consumption for Foundry Boilers",
+      "question": "A Birmingham iron foundry burns 45 tons of coal for smelting furnaces and 35 tons of coal for steam engine boilers each day. What is the total coal consumed daily in tons?",
+      "storyContext": "William calculates the foundry fuel logs to ensure steady deliveries of coal.",
       "modelData": {
         "bars": [
           {
-            "label": "Satellite Observation",
-            "value": 65,
-            "color": "#3b82f6"
+            "label": "Smelting Furnaces",
+            "value": 45,
+            "color": "#475569"
           },
           {
-            "label": "Reforestation Grants",
-            "value": 85,
-            "color": "#10b981"
+            "label": "Engine Boilers",
+            "value": 35,
+            "color": "#0ea5e9"
           }
         ],
-        "total": 150,
-        "unit": "million dollars"
+        "total": 80,
+        "unit": "tons of coal"
       },
-      "target_answer": 150,
-      "unit": "million dollars",
+      "target_answer": 80,
+      "unit": "tons of coal",
       "steps": [
-        "Take the satellite monitoring allocation: 65 million dollars.",
-        "Add the reforestation allocation: 85 million dollars.",
-        "65 + 85 = 150 million dollars in total."
+        "Record the furnace fuel: 45 tons of coal.",
+        "Add the boiler fuel: 35 tons of coal.",
+        "45 + 35 = 80 tons of coal consumed in total."
       ]
     },
     {
       "id": "w79_p2",
       "type": "comparison",
-      "title": "Comparing Tree Planting Target vs Actual Progress",
-      "question": "Nora's reforestation team set a target to plant 190 thousand trees this season. By October, they had planted 125 thousand trees. How many more trees must be planted to meet the target?",
-      "storyContext": "Nora tallies coastal mangrove saplings on a progress comparison chart.",
+      "title": "Comparing Cloth Output: Hand Loom vs Mechanical Loom",
+      "question": "An automated mechanical loom produces 140 yards of cotton textile per day, whereas a traditional hand loom produces only 25 yards. How many more yards does the mechanical loom produce daily?",
+      "storyContext": "A mill manager compares weaving yields on an industrial output chart.",
       "modelData": {
         "bars": [
           {
-            "label": "Seasonal Target",
-            "value": 190,
-            "color": "#047857"
+            "label": "Mechanical Loom",
+            "value": 140,
+            "color": "#10b981"
           },
           {
-            "label": "Planted to Date",
-            "value": 125,
-            "color": "#10b981"
+            "label": "Traditional Hand Loom",
+            "value": 25,
+            "color": "#f59e0b"
           }
         ],
-        "difference": 65,
-        "unit": "thousand trees"
+        "difference": 115,
+        "unit": "yards of cloth"
       },
-      "target_answer": 65,
-      "unit": "thousand trees",
+      "target_answer": 115,
+      "unit": "yards of cloth",
       "steps": [
-        "Start with the seasonal target: 190 thousand trees.",
-        "Subtract the trees planted to date: 125 thousand trees.",
-        "190 - 125 = 65 thousand trees remaining."
+        "Start with the mechanical loom output: 140 yards.",
+        "Subtract the hand loom output: 25 yards.",
+        "140 - 25 = 115 yards more produced by the mechanical loom."
       ]
     }
   ],
   "science_lab": {
-    "title_en": "Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate Lab Workshop",
+    "title_en": "The Industrial Revolution Lab Workshop",
     "scenarios": [
       {
         "stage": 1,
-        "title": "Satellite Telemetry & Earth Monitoring",
-        "diagram_type": "orbital_satellite_telemetry",
-        "instruction": "Select orbital data layers that assist climate scientists on Earth.",
+        "title": "Steam Engine Mechanics & Condenser Cycle",
+        "diagram_type": "steam_boiler_piston_cycle",
+        "instruction": "Identify the core mechanical components that convert boiling steam into engine motion.",
         "items": [
           {
-            "label": "Atmospheric CO2 Sensors",
-            "target": "telemetry"
+            "label": "Coal Furnace Boiler",
+            "target": "heat_source"
           },
           {
-            "label": "Thermal Forest Fire Scanners",
-            "target": "infrared"
+            "label": "High-Pressure Piston Cylinder",
+            "target": "motion_drive"
           },
           {
-            "label": "Radar Sea Level Altimeters",
-            "target": "oceanography"
+            "label": "Separate Cooling Condenser",
+            "target": "efficiency_cycle"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Biodiversity & Reforestation Carbon Sinks",
-        "diagram_type": "reforestation_carbon_plot",
-        "instruction": "Route agricultural land into multi-tiered native rainforest restoration.",
+        "title": "Textile Mill Automated Power Drive",
+        "diagram_type": "factory_pulley_distribution",
+        "instruction": "Route rotational steam power through driveshafts and leather belts to automated looms.",
         "items": [
           {
-            "label": "Pioneer Broadleaf Seedlings",
-            "target": "canopy_layer"
+            "label": "Central Steam Driveshaft",
+            "target": "main_power"
           },
           {
-            "label": "Wetland Mangrove Buffer",
-            "target": "coastal_protection"
+            "label": "Tensioned Leather Belt",
+            "target": "power_transfer"
           },
           {
-            "label": "Soil Humus Carbon Storage",
-            "target": "carbon_sink"
+            "label": "Automated Weaving Shuttle",
+            "target": "textile_loom"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Synthesizing Space and Earth Funding",
-        "diagram_type": "integrated_budget_flow",
-        "instruction": "Balance public funds between space-based observation and terrestrial conservation.",
+        "title": "Industrial Railway Transport Network",
+        "diagram_type": "freight_logistics_rail_link",
+        "instruction": "Connect coal mines, iron foundries, and coastal shipping docks using freight trains.",
         "items": [
           {
-            "label": "Orbital Climate Monitoring",
-            "target": "space_tech"
+            "label": "Coal Colliery Loading Depot",
+            "target": "raw_materials"
           },
           {
-            "label": "Renewable Energy Grid Transition",
-            "target": "earth_action"
+            "label": "Steam Freight Locomotive",
+            "target": "rail_transport"
           },
           {
-            "label": "Sustainable Planetary Harmony",
-            "target": "equilibrium"
+            "label": "Coastal Export Maritime Dock",
+            "target": "global_shipping"
           }
         ]
       }

@@ -1,12 +1,12 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-09T13:11:11.320Z",
+  "generated_at": "2026-11-10T03:12:16.456Z",
   "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
   "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
   "week_number": 134,
-  "theme": "Economics & International Trade: Globalization",
+  "theme": "Identifying Fallacies",
   "cefr_level": "B2 First",
-  "grammar_focus": "Discourse Markers of Concession & Contrast: 'Whereas tariff reductions stimulate export volume, emerging industries nevertheless require transitional safeguards; Despite currency fluctuations, bilateral trade expanded steadily.'",
+  "grammar_focus": "Qualifiers of frequency and extent ('some', 'many', 'often', 'tend to') to prevent sweeping over-generalizations.",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_134/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
@@ -39,7 +39,8 @@
     "GATE_7_VIETNAMESE_LEAK_ZERO",
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
-    "GATE_10_SKELETON_DIFFERENTIATION"
+    "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY"
   ],
   "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
 }

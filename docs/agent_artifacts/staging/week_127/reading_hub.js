@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 127 | Theme: "Global Climate Systems & Renewable Energy" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.311Z
+ * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.447Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,276 +9,276 @@
 
 export const readingHubData = {
   "week": 127,
-  "theme": "Global Climate Systems & Renewable Energy",
+  "theme": "Rebuttal Practice",
   "cefr_level": "B2 First",
   "vocab": [
     {
       "id": 1,
-      "word": "renewable",
-      "pos": "adj",
-      "ipa": "/rɪˈnuːəbəl/",
-      "definition_en": "Capable of being replenished naturally within a human lifetime",
-      "definition_vi": "tái tạo được",
-      "example_en": "Renewable energy installations generated over forty percent of regional power.",
-      "example_vi": "Các trạm năng lượng tái tạo đã tạo ra hơn bốn mươi phần trăm lượng điện khu vực."
-    },
-    {
-      "id": 2,
-      "word": "climate",
-      "pos": "n",
-      "ipa": "/ˈklaɪmət/",
-      "definition_en": "The weather conditions prevailing in an area over a long period",
-      "definition_vi": "khí hậu",
-      "example_en": "Shifts in the global climate alter rainfall patterns across agricultural plains.",
-      "example_vi": "Những biến đổi trong khí hậu toàn cầu làm thay đổi các hình thái lượng mưa khắp các đồng bằng nông nghiệp."
-    },
-    {
-      "id": 3,
-      "word": "emissions",
-      "pos": "n",
-      "ipa": "/ɪˈmɪʃənz/",
-      "definition_en": "The production and discharge of gases into the atmosphere",
-      "definition_vi": "khí thải",
-      "example_en": "Stricter industrial standards reduced sulfur dioxide emissions significantly.",
-      "example_vi": "Các tiêu chuẩn công nghiệp nghiêm ngặt hơn đã làm giảm đáng kể lượng khí thải lưu huỳnh đi-ô-xít."
-    },
-    {
-      "id": 4,
-      "word": "greenhouse",
-      "pos": "n",
-      "ipa": "/ˈɡriːnhaʊs/",
-      "definition_en": "Relating to atmospheric gases that trap heat radiating from Earth",
-      "definition_vi": "nhà kính (hiệu ứng)",
-      "example_en": "Excess greenhouse gas accumulation traps thermal energy near the ground.",
-      "example_vi": "Sự tích tụ quá mức khí nhà kính giữ lại nhiệt lượng gần mặt đất."
-    },
-    {
-      "id": 5,
-      "word": "solar",
-      "pos": "adj",
-      "ipa": "/ˈsoʊlər/",
-      "definition_en": "Relating to or determined by the energy of the sun",
-      "definition_vi": "thuộc mặt trời, năng lượng mặt trời",
-      "example_en": "Rooftop solar arrays convert sunlight into clean electrical current.",
-      "example_vi": "Hệ thống pin mặt trời trên mái nhà chuyển hóa ánh sáng mặt trời thành dòng điện sạch."
-    },
-    {
-      "id": 6,
-      "word": "turbine",
-      "pos": "n",
-      "ipa": "/ˈtɜːrbaɪn/",
-      "definition_en": "A rotary mechanical device that extracts energy from moving fluid or wind",
-      "definition_vi": "tua-bin",
-      "example_en": "The giant offshore wind turbine generates electricity in coastal winds.",
-      "example_vi": "Tua-bin gió ngoài khơi khổng lồ tạo ra điện trong những ngọn gió ven biển."
-    },
-    {
-      "id": 7,
-      "word": "counter",
-      "pos": "v",
-      "ipa": "/ˈkaʊntər/",
-      "definition_en": "Speak or act in opposition to something",
-      "definition_vi": "phản bác, đối phó",
-      "example_en": "Scientists present empirical data to counter climate change skepticism.",
-      "example_vi": "Các nhà khoa học đưa ra dữ liệu thực nghiệm để phản bác lại sự hoài nghi về biến đổi khí hậu."
-    },
-    {
-      "id": 8,
       "word": "disagree",
       "pos": "v",
       "ipa": "/ˌdɪsəˈɡriː/",
-      "definition_en": "Hold a different opinion from another party",
-      "definition_vi": "không đồng ý, bất đồng",
-      "example_en": "Economists may disagree on the ideal tax rate for fossil fuel imports.",
-      "example_vi": "Các nhà kinh tế có thể không đồng ý về mức thuế lý tưởng đối với việc nhập khẩu nhiên liệu hóa thạch."
+      "definition_en": "To have or express a different opinion from someone else",
+      "definition_vi": "không đồng ý / bất đồng ý kiến",
+      "example_en": "Debaters often disagree on policy priorities while maintaining mutual professional respect.",
+      "example_vi": "Các tranh biện viên thường bất đồng về các ưu tiên chính sách trong khi vẫn duy trì sự tôn trọng lẫn nhau."
     },
     {
-      "id": 9,
+      "id": 2,
+      "word": "counter",
+      "pos": "v",
+      "ipa": "/ˈkaʊntər/",
+      "definition_en": "To respond in opposition to an argument or claim with evidence",
+      "definition_vi": "phản bác lại / đáp lại",
+      "example_en": "She presented three recent peer-reviewed studies to counter her opponent's assertion.",
+      "example_vi": "Cô ấy đã đưa ra ba nghiên cứu được bình duyệt gần đây để phản bác lại khẳng định của đối thủ."
+    },
+    {
+      "id": 3,
       "word": "point",
       "pos": "n",
       "ipa": "/pɔɪnt/",
-      "definition_en": "An argument or idea raised in a debate",
-      "definition_vi": "luận điểm, ý kiến",
-      "example_en": "Clara made a compelling point regarding the efficiency of battery storage.",
-      "example_vi": "Clara đã nêu ra một luận điểm thuyết phục liên quan đến hiệu suất của việc lưu trữ pin."
+      "definition_en": "A single argument, idea, or fact raised in a structured discussion",
+      "definition_vi": "luận điểm / ý kiến",
+      "example_en": "The speaker raised an insightful point concerning the environmental cost of manufacturing.",
+      "example_vi": "Diễn giả đã nêu ra một luận điểm sâu sắc liên quan đến chi phí môi trường của sản xuất."
     },
     {
-      "id": 10,
-      "word": "true",
-      "pos": "adj",
-      "ipa": "/truː/",
-      "definition_en": "In accordance with fact or reality",
-      "definition_vi": "đúng, xác thực",
-      "example_en": "It is true that renewable installation costs have plummeted over ten years.",
-      "example_vi": "Đúng là chi phí lắp đặt năng lượng tái tạo đã giảm mạnh trong suốt mười năm qua."
-    },
-    {
-      "id": 11,
+      "id": 4,
       "word": "false",
       "pos": "adj",
       "ipa": "/fɔːls/",
-      "definition_en": "Not in accordance with truth or empirical fact",
-      "definition_vi": "sai, không chính xác",
-      "example_en": "The claim that wind energy is inherently unreliable proved completely false.",
-      "example_vi": "Tuyên bố rằng năng lượng gió vốn dĩ không đáng tin cậy đã chứng minh là hoàn toàn sai."
+      "definition_en": "Not in accordance with truth or reality; incorrect or misleading",
+      "definition_vi": "sai lầm / không đúng sự thật",
+      "example_en": "His rebuttal exposed the false assumption that all economic growth harms nature.",
+      "example_vi": "Bài phản biện của anh ấy đã vạch trần giả định sai lầm rằng mọi sự tăng trưởng kinh tế đều làm hại thiên nhiên."
+    },
+    {
+      "id": 5,
+      "word": "true",
+      "pos": "adj",
+      "ipa": "/truː/",
+      "definition_en": "In accordance with verifiable fact or reality; accurate and reliable",
+      "definition_vi": "đúng đắn / có thực / xác thực",
+      "example_en": "While the claim sounded persuasive, it was not true when tested against recent data.",
+      "example_vi": "Mặc dù khẳng định nghe có vẻ thuyết phục, nhưng nó không đúng khi được kiểm chứng với dữ liệu gần đây."
+    },
+    {
+      "id": 6,
+      "word": "rebuttal",
+      "pos": "n",
+      "ipa": "/rɪˈbʌtəl/",
+      "definition_en": "A structured refutation or counter-argument against an opposing claim",
+      "definition_vi": "bài phản biện / lời phản bác",
+      "example_en": "In the rebuttal round, speakers must address opposing points directly.",
+      "example_vi": "Trong vòng phản biện, các diễn giả phải trực tiếp giải quyết các luận điểm đối lập."
+    },
+    {
+      "id": 7,
+      "word": "refute",
+      "pos": "v",
+      "ipa": "/rɪˈfjuːt/",
+      "definition_en": "To prove a statement, theory, or claim to be wrong or invalid",
+      "definition_vi": "bác bỏ / chứng minh là sai",
+      "example_en": "Empirical survey data refuted the claim that youth are disinterested in civic affairs.",
+      "example_vi": "Dữ liệu khảo sát thực nghiệm đã bác bỏ khẳng định rằng giới trẻ không quan tâm đến các vấn đề công dân."
+    },
+    {
+      "id": 8,
+      "word": "concede",
+      "pos": "v",
+      "ipa": "/kənˈsiːd/",
+      "definition_en": "To acknowledge or admit that an opponent's point is true or valid",
+      "definition_vi": "thừa nhận / nhượng bộ một điểm đúng",
+      "example_en": "A strategic debater may concede a minor point to focus energy on the core dispute.",
+      "example_vi": "Một tranh biện viên chiến lược có thể thừa nhận một điểm phụ để tập trung năng lượng vào cuộc tranh chấp cốt lõi."
+    },
+    {
+      "id": 9,
+      "word": "oppose",
+      "pos": "v",
+      "ipa": "/əˈpoʊz/",
+      "definition_en": "To argue strongly against a proposed policy, resolution, or claim",
+      "definition_vi": "phản đối / chống lại",
+      "example_en": "Many economists oppose tariffs because they raise prices for working families.",
+      "example_vi": "Nhiều nhà kinh tế phản đối thuế quan vì chúng làm tăng giá cả đối với các gia đình lao động."
+    },
+    {
+      "id": 10,
+      "word": "objection",
+      "pos": "n",
+      "ipa": "/əbˈdʒekʃən/",
+      "definition_en": "A reason or argument given in opposition to a proposal",
+      "definition_vi": "sự phản đối / lý do phản đối",
+      "example_en": "Her primary objection was that the research methodology lacked a control group.",
+      "example_vi": "Sự phản đối chính của cô ấy là phương pháp nghiên cứu thiếu một nhóm đối chứng."
+    },
+    {
+      "id": 11,
+      "word": "contradict",
+      "pos": "v",
+      "ipa": "/ˌkɑːntrəˈdɪkt/",
+      "definition_en": "To assert the opposite of a statement or claim made by another",
+      "definition_vi": "mâu thuẫn với / cãi lại",
+      "example_en": "Official government trade statistics contradicted the politician's campaign speech.",
+      "example_vi": "Số liệu thống kê thương mại chính thức của chính phủ đã mâu thuẫn với bài phát biểu vận động tranh cử."
     },
     {
       "id": 12,
-      "word": "sustainable",
+      "word": "fallacious",
       "pos": "adj",
-      "ipa": "/səˈsteɪnəbəl/",
-      "definition_en": "Able to be maintained at a certain rate without depleting resources",
-      "definition_vi": "bền vững",
-      "example_en": "Sustainable forestry practices ensure timber harvesting does not destroy habitats.",
-      "example_vi": "Các hoạt động lâm nghiệp bền vững đảm bảo việc khai thác gỗ không phá hủy môi trường sống."
+      "ipa": "/fəˈleɪʃəs/",
+      "definition_en": "Based on a mistaken belief or unsound, deceptive reasoning",
+      "definition_vi": "ngụy biện / sai lầm về mặt logic",
+      "example_en": "Attacking a speaker's character rather than their evidence is a fallacious tactic.",
+      "example_vi": "Tấn công tính cách của diễn giả thay vì bằng chứng của họ là một chiến thuật ngụy biện."
     },
     {
       "id": 13,
-      "word": "efficiency",
+      "word": "premise",
       "pos": "n",
-      "ipa": "/ɪˈfɪʃənsi/",
-      "definition_en": "The state of achieving maximum productivity with minimum wasted effort",
-      "definition_vi": "hiệu suất, tính hiệu quả",
-      "example_en": "New photovoltaic panels achieve an energy conversion efficiency of 24 percent.",
-      "example_vi": "Các tấm pin quang điện mới đạt hiệu suất chuyển đổi năng lượng lên tới 24 phần trăm."
+      "ipa": "/ˈpremɪs/",
+      "definition_en": "A foundational statement or assumption from which a conclusion is drawn",
+      "definition_vi": "tiền đề",
+      "example_en": "If the underlying premise is flawed, the entire argument collapses.",
+      "example_vi": "Nếu tiền đề cơ bản bị sai sót, toàn bộ lập luận sẽ sụp đổ."
     },
     {
       "id": 14,
-      "word": "grid",
+      "word": "evidence",
       "pos": "n",
-      "ipa": "/ɡrɪd/",
-      "definition_en": "An interconnected network for distributing electricity over a region",
-      "definition_vi": "lưới điện",
-      "example_en": "A smart electric grid balances power demand across fluctuating wind conditions.",
-      "example_vi": "Lưới điện thông minh cân bằng nhu cầu điện năng giữa các điều kiện gió biến động."
+      "ipa": "/ˈevɪdəns/",
+      "definition_en": "The available body of factual proof indicating whether a proposition is valid",
+      "definition_vi": "bằng chứng / chứng cứ",
+      "example_en": "Scientific evidence must be verifiable, reproducible, and cited accurately.",
+      "example_vi": "Bằng chứng khoa học phải có thể kiểm chứng, tái lập được và được trích dẫn chính xác."
     },
     {
       "id": 15,
-      "word": "carbon",
+      "word": "flaw",
       "pos": "n",
-      "ipa": "/ˈkɑːrbən/",
-      "definition_en": "A chemical element forming organic compounds and greenhouse gases",
-      "definition_vi": "các-bon",
-      "example_en": "Reforestation projects absorb excess carbon dioxide directly from the air.",
-      "example_vi": "Các dự án tái trồng rừng hấp thụ lượng khí các-bon đi-ô-xít dư thừa trực tiếp từ không khí."
+      "ipa": "/flɔː/",
+      "definition_en": "A defect, weakness, or logical error in an argument or theory",
+      "definition_vi": "lỗ hổng / khuyết điểm",
+      "example_en": "The audience identified a major logical flaw in the speaker's deductive reasoning.",
+      "example_vi": "Khán giả đã xác định được một lỗ hổng logic lớn trong lập luận suy diễn của người nói."
     },
     {
       "id": 16,
-      "word": "transition",
+      "word": "standpoint",
       "pos": "n",
-      "ipa": "/trænˈzɪʃən/",
-      "definition_en": "The process or a period of changing from one state to another",
-      "definition_vi": "sự chuyển đổi, bước chuyển tiếp",
-      "example_en": "The global energy transition requires rapid infrastructure investment.",
-      "example_vi": "Cuộc chuyển đổi năng lượng toàn cầu đòi hỏi sự đầu tư cơ sở hạ tầng nhanh chóng."
+      "ipa": "/ˈstændpɔɪnt/",
+      "definition_en": "A particular attitude toward or perspective on an issue",
+      "definition_vi": "quan điểm / lập trường",
+      "example_en": "From an environmental standpoint, protecting coastal wetlands is an urgent necessity.",
+      "example_vi": "Từ lập trường môi trường, việc bảo vệ các vùng đất ngập nước ven biển là một nhu cầu cấp bách."
     },
     {
       "id": 17,
-      "word": "fossil fuel",
-      "pos": "n",
-      "ipa": "/ˈfɑːsəl fjuːəl/",
-      "definition_en": "A natural fuel such as coal or gas formed in the geological past",
-      "definition_vi": "nhiên liệu hóa thạch",
-      "example_en": "Phasing out coal reduces reliance on polluting fossil fuel resources.",
-      "example_vi": "Việc loại bỏ dần than đá làm giảm sự phụ thuộc vào các nguồn nhiên liệu hóa thạch gây ô nhiễm."
+      "word": "contend",
+      "pos": "v",
+      "ipa": "/kənˈtend/",
+      "definition_en": "To assert or maintain earnestly in an argumentative discussion",
+      "definition_vi": "dám chắc / quả quyết rằng",
+      "example_en": "The affirmative team contended that mandatory uniforms reduce social inequality.",
+      "example_vi": "Đội khẳng định quả quyết rằng đồng phục bắt buộc giúp giảm bất bình đẳng xã hội."
     },
     {
       "id": 18,
-      "word": "conservation",
-      "pos": "n",
-      "ipa": "/ˌkɑːnsərˈveɪʃən/",
-      "definition_en": "Prevention of wasteful use of a resource",
-      "definition_vi": "sự bảo tồn, sử dụng tiết kiệm",
-      "example_en": "Energy conservation campaigns encourage factories to upgrade outdated machinery.",
-      "example_vi": "Các chiến dịch tiết kiệm năng lượng khuyến khích các nhà máy nâng cấp máy móc lạc hậu."
+      "word": "disprove",
+      "pos": "v",
+      "ipa": "/dɪsˈpruːv/",
+      "definition_en": "To prove that a statement, hypothesis, or claim is wrong",
+      "definition_vi": "bác bỏ / chứng minh là không đúng",
+      "example_en": "Researchers conducted clinical trials to disprove the alleged health risks.",
+      "example_vi": "Các nhà nghiên cứu đã tiến hành các thử nghiệm lâm sàng để bác bỏ các rủi ro sức khỏe bị cáo buộc."
     },
     {
       "id": 19,
-      "word": "geothermal",
-      "pos": "adj",
-      "ipa": "/ˌdʒiːoʊˈθɜːrməl/",
-      "definition_en": "Relating to or produced by the internal heat of the earth",
-      "definition_vi": "địa nhiệt",
-      "example_en": "Iceland heats over eighty percent of its buildings using clean geothermal water.",
-      "example_vi": "Băng Đảo sưởi ấm hơn tám mươi phần trăm các tòa nhà bằng nước địa nhiệt sạch."
+      "word": "rebut",
+      "pos": "v",
+      "ipa": "/rɪˈbʌt/",
+      "definition_en": "To offer counter-evidence and logical reasoning to defeat an argument",
+      "definition_vi": "phản biện / bẻ gãy luận điểm",
+      "example_en": "She stepped to the microphone prepared to rebut every assertion made by the opposition.",
+      "example_vi": "Cô ấy bước đến bên micro sẵn sàng phản biện mọi khẳng định mà phe đối lập đưa ra."
     },
     {
       "id": 20,
-      "word": "photovoltaic",
-      "pos": "adj",
-      "ipa": "/ˌfoʊtoʊvɑːlˈteɪɪk/",
-      "definition_en": "Relating to the production of electric current at the junction of two substances exposed to light",
-      "definition_vi": "quang điện",
-      "example_en": "Large photovoltaic arrays span desert valleys to feed municipal power lines.",
-      "example_vi": "Các mảng quang điện lớn trải dài qua các thung lũng sa mạc để cung cấp điện cho các đường dây thành phố."
+      "word": "validity",
+      "pos": "n",
+      "ipa": "/vəˈlɪdəti/",
+      "definition_en": "The state or quality of being logically sound or factually sound",
+      "definition_vi": "tính hợp lệ / giá trị pháp lý và logic",
+      "example_en": "Rigorous cross-examination tests the validity of expert witness testimonies.",
+      "example_vi": "Thẩm vấn chéo nghiêm ngặt kiểm tra tính hợp lệ của lời khai nhân chứng chuyên gia."
     }
   ],
   "clil_article": {
-    "title_en": "Global Climate Equilibrium: The Physics of Renewable Energy",
-    "title_vi": "Cân Bằng Khí Hậu Toàn Cầu: Vật Lý Năng Lượng Tái Tạo",
-    "content_en": "Earth's atmospheric equilibrium relies on a delicate balance between incoming solar radiation and outgoing thermal emissions. For two centuries, industrial combustion of fossil fuel resources has increased atmospheric greenhouse gas concentrations. If nations had modernized regional electrical grids decades ago, atmospheric carbon levels would be substantially lower today. Fortunately, the cost of photovoltaic solar modules and offshore wind turbine infrastructure has fallen steeply. Clean power installations now compete directly with coal plants in cost efficiency. In debates concerning transition speed, economists point out that building flexible smart grids creates sustainable employment while preventing catastrophic ecosystem degradation.",
+    "title_en": "Debate Theory: The Classical 'They Say... But I Say...' Rebuttal",
+    "title_vi": "Lý Thuyết Tranh Biện: Cấu Trúc Phản Biện Cổ Điển 'Họ Nói... Nhưng Tôi Cho Rằng...'",
+    "content_en": "In structured academic debate, mastering effective rebuttal practice separates persuasive speakers from passive debaters. An argumentative rebuttal directly addresses an opponent's point rather than merely restating one's original claims. Debaters utilize the classic rhetorical template: 'They say... but I say...' to acknowledge opposing positions before dismantling their underlying assumptions. When an opponent presents a false premise or weak evidence, a skilled speaker counters with verifiable facts and logical analysis. Rather than expressing mere personal disagreement, debaters demonstrate why an opponent's conclusion is fundamentally invalid. Connectors such as 'on the contrary' and 'however' highlight sharp contrasts between conflicting viewpoints. Rigorous rebuttal training cultivates critical reasoning and intellectual agility in competitive academic forums.",
     "glossary": [
       {
-        "word": "renewable",
-        "definition_en": "Energy sources derived from natural, self-replenishing processes",
-        "definition_vi": "nguồn năng lượng tự nhiên tự tái tạo"
+        "word": "rebuttal",
+        "definition_en": "A structured refutation delivered in response to an opponent's argument in formal debate",
+        "definition_vi": "bài phản biện có cấu trúc đáp lại lập luận của đối thủ trong tranh biện chính thức"
       },
       {
-        "word": "emissions",
-        "definition_en": "Gaseous substances discharged into the surrounding atmosphere",
-        "definition_vi": "các chất khí thải vào khí quyển"
+        "word": "concede",
+        "definition_en": "To formally acknowledge the truth of an opponent's point before making a stronger counter-claim",
+        "definition_vi": "thừa nhận tính xác thực của một điểm của đối thủ trước khi đưa ra phản biện mạnh hơn"
       },
       {
-        "word": "greenhouse",
-        "definition_en": "Atmospheric warming effect caused by trapped infrared heat",
-        "definition_vi": "hiệu ứng làm ấm khí quyển do nhiệt bị giữ lại"
+        "word": "refute",
+        "definition_en": "To conclusively establish that a claim or premise is factually or logically false",
+        "definition_vi": "chứng minh dứt khoát rằng một khẳng định hoặc tiền đề là sai về mặt thực tế hoặc logic"
       },
       {
-        "word": "efficiency",
-        "definition_en": "Ratio of useful energy output compared to total resource input",
-        "definition_vi": "tỷ lệ năng lượng hữu ích so với tài nguyên đầu vào"
+        "word": "premise",
+        "definition_en": "A fundamental proposition on which an argument or conclusion is based",
+        "definition_vi": "mệnh đề cơ bản làm nền tảng cho một lập luận hoặc kết luận"
       },
       {
-        "word": "transition",
-        "definition_en": "Systemic structural movement toward sustainable energy networks",
-        "definition_vi": "sự chuyển dịch cấu trúc sang mạng lưới năng lượng bền vững"
+        "word": "validity",
+        "definition_en": "The logical correctness or soundness of an inference or argument",
+        "definition_vi": "tính đúng đắn hoặc độ chuẩn xác về mặt logic của một lập luận"
       }
     ],
     "check_questions": [
       {
         "id": 1,
-        "question_en": "Why would atmospheric carbon levels be substantially lower today under mixed conditional reasoning?",
+        "question_en": "What is the primary purpose of the 'They say... but I say...' template?",
         "options": [
-          "If industrial nations had invested earlier in renewable infrastructure",
-          "If humans had stopped building houses completely",
-          "If all solar panels had been painted black"
+          "To acknowledge an opponent's claim before presenting a stronger counter-argument",
+          "To repeat an opponent's entire speech without changes",
+          "To concede the entire debate immediately"
         ],
-        "answer": "If industrial nations had invested earlier in renewable infrastructure"
+        "answer": "To acknowledge an opponent's claim before presenting a stronger counter-argument"
       },
       {
         "id": 2,
-        "question_en": "What economic trend has accelerated the global renewable energy transition?",
+        "question_en": "Why should debaters avoid simply restating their own original claims during a rebuttal?",
         "options": [
-          "A steep decline in the manufacturing and installation costs of wind and solar technology",
-          "An increase in coal mining taxes worldwide",
-          "The total abandonment of electrical appliances"
+          "Because a rebuttal must directly engage and dismantle the opponent's specific points",
+          "Because original claims are deleted by the judges",
+          "Because repeating words makes speeches too loud"
         ],
-        "answer": "A steep decline in the manufacturing and installation costs of wind and solar technology"
+        "answer": "Because a rebuttal must directly engage and dismantle the opponent's specific points"
       },
       {
         "id": 3,
-        "question_en": "How do flexible smart grids solve the issue of fluctuating weather conditions?",
+        "question_en": "Which connector signals a direct logical opposition between two statements?",
         "options": [
-          "By balancing power distribution across diverse regions and battery storage systems",
-          "By storing power exclusively in wooden barrels",
-          "By turning off electricity every sunny afternoon"
+          "On the contrary,",
+          "Similarly,",
+          "Consequently,"
         ],
-        "answer": "By balancing power distribution across diverse regions and battery storage systems"
+        "answer": "On the contrary,"
       }
     ],
     "critical_thinking": {
-      "question_en": "How can developing countries finance the transition from cheap fossil fuels to modern renewable grids without slowing economic development?",
-      "hint_en": "Consider green international climate bonds, technology transfer partnerships, and distributed microgrid solutions."
+      "question_en": "Why is conceding a minor, undeniable fact a sign of strategic strength rather than weakness in debate?",
+      "hint_en": "Conceding an undeniable point shows fair-mindedness and honesty, building credibility while refocusing the debate on more decisive arguments."
     }
   },
   "story_scenes": [
@@ -286,10 +286,10 @@ export const readingHubData = {
       "id": 1,
       "scene_id": "scene_1",
       "scene_number": 1,
-      "title_en": "Inspecting the Coastal Wind Farm",
-      "title_vi": "Kiểm Tra Trang Trại Gió Ven Biển",
-      "description_en": "Dr. Marcus Thorne and Clara Lin review turbine telemetry as massive blades turn in the ocean wind.",
-      "description": "Dr. Marcus Thorne and Clara Lin review turbine telemetry as massive blades turn in the ocean wind.",
+      "title_en": "Listening to the Opposition Claim",
+      "title_vi": "Lắng Nghe Khẳng Định Của Phe Đối Lập",
+      "description_en": "Nora listens carefully as the opposing speaker claims that renewable energy is too unreliable for modern cities.",
+      "description": "Nora listens carefully as the opposing speaker claims that renewable energy is too unreliable for modern cities.",
       "image_url": "/images/week127/webtoon_scene_1.png",
       "audio_url": "/audio/week127/scene_1.mp3"
     },
@@ -297,10 +297,10 @@ export const readingHubData = {
       "id": 2,
       "scene_id": "scene_2",
       "scene_number": 2,
-      "title_en": "Photovoltaic Efficiency Analysis",
-      "title_vi": "Phân Tích Hiệu Suất Quang Điện",
-      "description_en": "Clara measures solar panel conversion rates and records a record twenty-four percent efficiency.",
-      "description": "Clara measures solar panel conversion rates and records a record twenty-four percent efficiency.",
+      "title_en": "Identifying the Logical Flaw",
+      "title_vi": "Xác Định Lỗ Hổng Logic",
+      "description_en": "Nora highlights a statistical error in her notes, realizing the opposition used outdated ten-year-old grid data.",
+      "description": "Nora highlights a statistical error in her notes, realizing the opposition used outdated ten-year-old grid data.",
       "image_url": "/images/week127/webtoon_scene_2.png",
       "audio_url": "/audio/week127/scene_2.mp3"
     },
@@ -308,10 +308,10 @@ export const readingHubData = {
       "id": 3,
       "scene_id": "scene_3",
       "scene_number": 3,
-      "title_en": "Debating Grid Storage Policies",
-      "title_vi": "Tranh Luận Chính Sách Lưu Trữ Lưới Điện",
-      "description_en": "Marcus and Clara debate how best to integrate battery reserves into the regional power network.",
-      "description": "Marcus and Clara debate how best to integrate battery reserves into the regional power network.",
+      "title_en": "Applying the Rebuttal Template",
+      "title_vi": "Áp Dụng Khung Phản Biện",
+      "description_en": "Nora steps forward, stating: 'They say solar power is unreliable, but recent battery storage data reveals the contrary.'",
+      "description": "Nora steps forward, stating: 'They say solar power is unreliable, but recent battery storage data reveals the contrary.'",
       "image_url": "/images/week127/webtoon_scene_3.png",
       "audio_url": "/audio/week127/scene_3.mp3"
     },
@@ -319,10 +319,10 @@ export const readingHubData = {
       "id": 4,
       "scene_id": "scene_4",
       "scene_number": 4,
-      "title_en": "Countering Fossil Fuel Lobbyists",
-      "title_vi": "Phản Bác Giới Vận Động Nhiên Liệu Hóa Thạch",
-      "description_en": "Clara presents verifiable emission data to counter false claims regarding renewable unreliability.",
-      "description": "Clara presents verifiable emission data to counter false claims regarding renewable unreliability.",
+      "title_en": "Presenting Verifiable Evidence",
+      "title_vi": "Đưa Ra Bằng Chứng Xác Thực",
+      "description_en": "She displays an official energy report demonstrating how modern battery banks maintain constant electrical output.",
+      "description": "She displays an official energy report demonstrating how modern battery banks maintain constant electrical output.",
       "image_url": "/images/week127/webtoon_scene_4.png",
       "audio_url": "/audio/week127/scene_4.mp3"
     },
@@ -330,10 +330,10 @@ export const readingHubData = {
       "id": 5,
       "scene_id": "scene_5",
       "scene_number": 5,
-      "title_en": "Presenting the National Energy Accord",
-      "title_vi": "Trình Bày Hiệp Định Năng Lượng Quốc Gia",
-      "description_en": "Energy ministers endorse the transition roadmap after examining the team's sustainable models.",
-      "description": "Energy ministers endorse the transition roadmap after examining the team's sustainable models.",
+      "title_en": "Winning the Rebuttal Round",
+      "title_vi": "Chiến Thắng Vòng Phản Biện",
+      "description_en": "The adjudicators nod in agreement and award high marks for Nora's direct engagement with the opposing argument.",
+      "description": "The adjudicators nod in agreement and award high marks for Nora's direct engagement with the opposing argument.",
       "image_url": "/images/week127/webtoon_scene_5.png",
       "audio_url": "/audio/week127/scene_5.mp3"
     }
@@ -342,413 +342,294 @@ export const readingHubData = {
     "sentences": [
       {
         "id": 1,
-        "text": "If industrial nations had acted earlier, global carbon emissions would be far lower today.",
-        "en": "If industrial nations had acted earlier, global carbon emissions would be far lower today.",
-        "vi": "Nếu các quốc gia công nghiệp hành động sớm hơn, lượng khí thải các-bon toàn cầu ngày nay đã thấp hơn nhiều.",
-        "ipa": "/ɪf ɪnˈdʌstriəl ˈneɪʃənz hæd ˈæktɪd ˈɜːrliər ˈɡloʊbəl ˈkɑːrbən ɪˈmɪʃənz wʊd biː fɑːr ˈloʊər təˈdeɪ/",
+        "text": "They claim that space travel wastes money, but I say it pioneers vital technologies.",
+        "en": "They claim that space travel wastes money, but I say it pioneers vital technologies.",
+        "vi": "Họ cho rằng du hành vũ trụ lãng phí tiền, nhưng tôi nói rằng nó tiên phong các công nghệ quan trọng.",
+        "ipa": "/ðeɪ kleɪm ðæt speɪs ˈtrævəl weɪsts ˈmʌni bʌt aɪ seɪ ɪt ˌpaɪəˈnɪərz ˈvaɪtl tekˈnɑːlədʒiz/",
         "words": [
-          "If",
-          "industrial",
-          "nations",
-          "had",
-          "acted",
-          "earlier",
-          "global",
-          "carbon",
-          "emissions",
-          "would",
-          "be",
-          "far",
-          "lower",
-          "today"
+          "They",
+          "claim",
+          "that",
+          "space",
+          "travel",
+          "wastes",
+          "money",
+          "but",
+          "I",
+          "say",
+          "it",
+          "pioneers",
+          "vital",
+          "technologies"
         ]
       },
       {
         "id": 2,
-        "text": "Offshore wind turbines generate enormous amounts of clean electrical power in coastal gales.",
-        "en": "Offshore wind turbines generate enormous amounts of clean electrical power in coastal gales.",
-        "vi": "Những tua-bin gió ngoài khơi tạo ra lượng điện sạch khổng lồ trong các đợt gió mạnh ven biển.",
-        "ipa": "/ˈɔːfʃɔːr wɪnd ˈtɜːrbaɪnz ˈdʒenəreɪt ɪˈnɔːrməs əˈmaʊnts əv kliːn ɪˈlektrɪkəl ˈpaʊər ɪn ˈkoʊstl ɡeɪlz/",
+        "text": "A skilled speaker directly addresses opposing points rather than ignoring them.",
+        "en": "A skilled speaker directly addresses opposing points rather than ignoring them.",
+        "vi": "Một diễn giả lành nghề trực tiếp giải quyết các luận điểm đối lập thay vì phớt lờ chúng.",
+        "ipa": "/ə skɪld ˈspiːkər dəˈrektli əˈdresɪz əˈpoʊzɪŋ pɔɪnts ˈræðər ðæn ɪɡˈnɔːrɪŋ ðem/",
         "words": [
-          "Offshore",
-          "wind",
-          "turbines",
-          "generate",
-          "enormous",
-          "amounts",
-          "of",
-          "clean",
-          "electrical",
-          "power",
-          "in",
-          "coastal",
-          "gales"
+          "A",
+          "skilled",
+          "speaker",
+          "directly",
+          "addresses",
+          "opposing",
+          "points",
+          "rather",
+          "than",
+          "ignoring",
+          "them"
         ]
       },
       {
         "id": 3,
-        "text": "Photovoltaic solar panels convert intense midday sunlight directly into usable household current.",
-        "en": "Photovoltaic solar panels convert intense midday sunlight directly into usable household current.",
-        "vi": "Các tấm pin quang điện mặt trời chuyển hóa ánh nắng giữa trưa gay gắt trực tiếp thành dòng điện gia dụng hữu ích.",
-        "ipa": "/ˌfoʊtoʊvɑːlˈteɪɪk ˈsoʊlər ˈpænlz kənˈvɜːrt ɪnˈtens ˈmɪddeɪ ˈsʌnlaɪt dəˈrektli ˈɪntuː ˈjuːzəbəl ˈhaʊshoʊld ˈkɜːrənt/",
+        "text": "On the contrary, recent scientific evidence proves that the initial premise was false.",
+        "en": "On the contrary, recent scientific evidence proves that the initial premise was false.",
+        "vi": "Trái lại, bằng chứng khoa học gần đây chứng minh rằng tiền đề ban đầu là sai lầm.",
+        "ipa": "/ɑːn ðə ˈkɑːntreri ˈriːsənt ˌsaɪənˈtɪfɪk ˈevɪdəns pruːvz ðæt ði ɪˈnɪʃəl ˈpremɪs wʌz fɔːls/",
         "words": [
-          "Photovoltaic",
-          "solar",
-          "panels",
-          "convert",
-          "intense",
-          "midday",
-          "sunlight",
-          "directly",
-          "into",
-          "usable",
-          "household",
-          "current"
-        ]
-      },
-      {
-        "id": 4,
-        "text": "Scientists disagree on the optimal balance between nuclear fission and geothermal generation.",
-        "en": "Scientists disagree on the optimal balance between nuclear fission and geothermal generation.",
-        "vi": "Các nhà khoa học không đồng thuận về sự cân bằng tối ưu giữa phân hạch hạt nhân và sản xuất địa nhiệt.",
-        "ipa": "/ˈsaɪəntɪsts ˌdɪsəˈɡriː ɑːn ði ˈɑːptɪməl ˈbæləns bɪˈtwiːn ˈnuːkliər ˈfɪʃən ænd ˌdʒiːoʊˈθɜːrməl ˌdʒenəˈreɪʃən/",
-        "words": [
-          "Scientists",
-          "disagree",
-          "on",
+          "On",
           "the",
-          "optimal",
-          "balance",
-          "between",
-          "nuclear",
-          "fission",
-          "and",
-          "geothermal",
-          "generation"
-        ]
-      },
-      {
-        "id": 5,
-        "text": "Clara presented empirical data to counter the claim that renewable energy destabilizes grids.",
-        "en": "Clara presented empirical data to counter the claim that renewable energy destabilizes grids.",
-        "vi": "Clara đã đưa ra dữ liệu thực nghiệm để phản bác tuyên bố rằng năng lượng tái tạo gây mất ổn định lưới điện.",
-        "ipa": "/ˈklærə prɪˈzentɪd ɪmˈpɪrɪkəl ˈdeɪtə tuː ˈkaʊntər ðə kleɪm ðæt rɪˈnuːəbəl ˈenərdʒi diːˈsteɪbəlaɪzɪz ɡrɪdz/",
-        "words": [
-          "Clara",
-          "presented",
-          "empirical",
-          "data",
-          "to",
-          "counter",
+          "contrary",
+          "recent",
+          "scientific",
+          "evidence",
+          "proves",
+          "that",
           "the",
-          "claim",
-          "that",
-          "renewable",
-          "energy",
-          "destabilizes",
-          "grids"
-        ]
-      },
-      {
-        "id": 6,
-        "text": "It is true that battery storage efficiency has doubled over the past five years.",
-        "en": "It is true that battery storage efficiency has doubled over the past five years.",
-        "vi": "Đúng là hiệu suất lưu trữ của pin đã tăng gấp đôi trong vòng năm năm qua.",
-        "ipa": "/ɪt ɪz truː ðæt ˈbætəri ˈstɔːrɪdʒ ɪˈfɪʃənsi hæz ˈdʌbəld ˈoʊvər ðə pæst faɪv jɪrz/",
-        "words": [
-          "It",
-          "is",
-          "true",
-          "that",
-          "battery",
-          "storage",
-          "efficiency",
-          "has",
-          "doubled",
-          "over",
-          "the",
-          "past",
-          "five",
-          "years"
-        ]
-      },
-      {
-        "id": 7,
-        "text": "The assertion that solar power cannot function in northern latitudes is completely false.",
-        "en": "The assertion that solar power cannot function in northern latitudes is completely false.",
-        "vi": "Khẳng định rằng năng lượng mặt trời không thể hoạt động ở các vĩ độ phía bắc là hoàn toàn sai.",
-        "ipa": "/ði əˈsɜːrʃən ðæt ˈsoʊlər ˈpaʊər ˈkænɑːt ˈfʌŋkʃən ɪn ˈnɔːrðərn ˈlætɪtuːdz ɪz kəmˈpliːtli fɔːls/",
-        "words": [
-          "The",
-          "assertion",
-          "that",
-          "solar",
-          "power",
-          "cannot",
-          "function",
-          "in",
-          "northern",
-          "latitudes",
-          "is",
-          "completely",
+          "initial",
+          "premise",
+          "was",
           "false"
         ]
       },
       {
-        "id": 8,
-        "text": "A comprehensive energy transition guarantees long-term economic stability and ecological preservation.",
-        "en": "A comprehensive energy transition guarantees long-term economic stability and ecological preservation.",
-        "vi": "Một cuộc chuyển đổi năng lượng toàn diện đảm bảo sự ổn định kinh tế lâu dài và bảo tồn sinh thái.",
-        "ipa": "/ə ˌkɑːmprɪˈhensɪv ˈenərdʒi trænˈzɪʃən ˌɡærənˈtiːz lɔːŋ tɜːrm ˌekəˈnɑːmɪk stəˈbɪləti ænd ˌekəˈlɑːdʒɪkəl ˌprezərˈveɪʃən/",
+        "id": 4,
+        "text": "While opponents argue for strict prohibitions, data shows that education is more effective.",
+        "en": "While opponents argue for strict prohibitions, data shows that education is more effective.",
+        "vi": "Trong khi phe đối lập ủng hộ các lệnh cấm nghiêm ngặt, dữ liệu cho thấy giáo dục hiệu quả hơn.",
+        "ipa": "/waɪl əˈpoʊnənts ˈɑːrɡjuː fɔːr strɪkt ˌproʊhəˈbɪʃənz ˈdeɪtə ʃoʊz ðæt ˌedʒuˈkeɪʃən ɪz mɔːr ɪˈfektɪv/",
         "words": [
-          "A",
-          "comprehensive",
-          "energy",
-          "transition",
-          "guarantees",
-          "long-term",
-          "economic",
-          "stability",
+          "While",
+          "opponents",
+          "argue",
+          "for",
+          "strict",
+          "prohibitions",
+          "data",
+          "shows",
+          "that",
+          "education",
+          "is",
+          "more",
+          "effective"
+        ]
+      },
+      {
+        "id": 5,
+        "text": "Strategic debaters concede minor points to focus attention on their strongest arguments.",
+        "en": "Strategic debaters concede minor points to focus attention on their strongest arguments.",
+        "vi": "Các tranh biện viên chiến lược thừa nhận các điểm phụ để tập trung sự chú ý vào lập luận mạnh nhất.",
+        "ipa": "/strəˈtiːdʒɪk dɪˈbeɪtərz kənˈsiːd ˈmaɪnər pɔɪnts tuː ˈfoʊkəs əˈtenʃən ɑːn ðer ˈstrɔːŋɡɪst ˈɑːrɡjəmənts/",
+        "words": [
+          "Strategic",
+          "debaters",
+          "concede",
+          "minor",
+          "points",
+          "to",
+          "focus",
+          "attention",
+          "on",
+          "their",
+          "strongest",
+          "arguments"
+        ]
+      },
+      {
+        "id": 6,
+        "text": "Exposing a logical flaw in an opponent's argument quickly undermines their credibility.",
+        "en": "Exposing a logical flaw in an opponent's argument quickly undermines their credibility.",
+        "vi": "Vạch trần một lỗ hổng logic trong lập luận của đối thủ sẽ nhanh chóng làm suy yếu uy tín của họ.",
+        "ipa": "/ɪkˈspoʊzɪŋ ə ˈlɑːdʒɪkəl flɔː ɪn ən əˈpoʊnənts ˈɑːrɡjəmənt ˈkwɪkli ˌʌndərˈmaɪnz ðer ˌkredəˈbɪləti/",
+        "words": [
+          "Exposing",
+          "a",
+          "logical",
+          "flaw",
+          "in",
+          "an",
+          "opponent's",
+          "argument",
+          "quickly",
+          "undermines",
+          "their",
+          "credibility"
+        ]
+      },
+      {
+        "id": 7,
+        "text": "We must evaluate whether claims are factually true before accepting their conclusions.",
+        "en": "We must evaluate whether claims are factually true before accepting their conclusions.",
+        "vi": "Chúng ta phải đánh giá xem các khẳng định có đúng thực tế hay không trước khi chấp nhận kết luận.",
+        "ipa": "/wiː mʌst ɪˈvæljueɪt ˈweðər kleɪmz ɑːr ˈfæktʃuəli truː bɪˈfɔːr əkˈseptɪŋ ðer kənˈkluːʒənz/",
+        "words": [
+          "We",
+          "must",
+          "evaluate",
+          "whether",
+          "claims",
+          "are",
+          "factually",
+          "true",
+          "before",
+          "accepting",
+          "their",
+          "conclusions"
+        ]
+      },
+      {
+        "id": 8,
+        "text": "Rigorous rebuttal training strengthens critical thinking and persuasive communication.",
+        "en": "Rigorous rebuttal training strengthens critical thinking and persuasive communication.",
+        "vi": "Luyện tập phản biện nghiêm ngặt củng cố tư duy phản biện và khả năng giao tiếp thuyết phục.",
+        "ipa": "/ˈrɪɡərəs rɪˈbʌtəl ˈtreɪnɪŋ ˈstreŋθənz ˈkrɪtɪkəl ˈθɪŋkɪŋ ænd pərˈsweɪsɪv kəˌmjuːnəˈkeɪʃən/",
+        "words": [
+          "Rigorous",
+          "rebuttal",
+          "training",
+          "strengthens",
+          "critical",
+          "thinking",
           "and",
-          "ecological",
-          "preservation"
+          "persuasive",
+          "communication"
         ]
       }
     ]
   },
   "rw_part1": {
     "word_bank": [
-      "renewable",
-      "climate",
-      "emissions",
-      "greenhouse",
-      "solar",
-      "turbine",
-      "counter",
       "disagree",
+      "counter",
       "point",
-      "true",
       "false",
-      "sustainable",
-      "efficiency",
-      "grid",
-      "carbon",
-      "transition",
-      "fossil fuel",
-      "conservation",
-      "geothermal",
-      "photovoltaic"
+      "true",
+      "rebuttal",
+      "refute",
+      "concede",
+      "oppose",
+      "objection",
+      "contradict",
+      "fallacious",
+      "premise",
+      "evidence",
+      "flaw",
+      "standpoint",
+      "contend",
+      "disprove",
+      "rebut",
+      "validity"
     ],
     "definitions": [
       {
         "id": 1,
-        "definition_en": "Energy from natural sources that replenish naturally and never run out.",
-        "options": [
-          "renewable",
-          "fossil fuel",
-          "emissions"
-        ],
-        "answer": "renewable"
+        "text": "A structured speech that counters and refutes an opponent's argument.",
+        "target": "rebuttal"
       },
       {
         "id": 2,
-        "definition_en": "The prevailing weather patterns and temperatures across Earth over decades.",
-        "options": [
-          "climate",
-          "grid",
-          "efficiency"
-        ],
-        "answer": "climate"
+        "text": "To express an opposing or different opinion during a discussion.",
+        "target": "disagree"
       },
       {
         "id": 3,
-        "definition_en": "Gases discharged into the air through industrial combustion and burning.",
-        "options": [
-          "emissions",
-          "conservation",
-          "turbine"
-        ],
-        "answer": "emissions"
+        "text": "An argument, fact, or idea introduced in a structured debate.",
+        "target": "point"
       },
       {
         "id": 4,
-        "definition_en": "A rotary machine that produces kinetic and electrical power from moving air.",
-        "options": [
-          "turbine",
-          "solar",
-          "carbon"
-        ],
-        "answer": "turbine"
+        "text": "In accordance with verifiable facts, truth, and accurate reality.",
+        "target": "true"
       },
       {
         "id": 5,
-        "definition_en": "Present facts and logical arguments against an opposing viewpoint.",
-        "options": [
-          "counter",
-          "disagree",
-          "point"
-        ],
-        "answer": "counter"
-      },
-      {
-        "id": 6,
-        "definition_en": "Achieving high output without wasting electrical energy or materials.",
-        "options": [
-          "efficiency",
-          "transition",
-          "greenhouse"
-        ],
-        "answer": "efficiency"
-      },
-      {
-        "id": 7,
-        "definition_en": "The complex transmission network delivering electricity across a nation.",
-        "options": [
-          "grid",
-          "climate",
-          "fossil fuel"
-        ],
-        "answer": "grid"
-      },
-      {
-        "id": 8,
-        "definition_en": "A major systemic shift from one energy model to another.",
-        "options": [
-          "transition",
-          "conservation",
-          "emissions"
-        ],
-        "answer": "transition"
-      },
-      {
-        "id": 9,
-        "definition_en": "Energy produced directly from the heat stored inside the Earth's crust.",
-        "options": [
-          "geothermal",
-          "solar",
-          "photovoltaic"
-        ],
-        "answer": "geothermal"
-      },
-      {
-        "id": 10,
-        "definition_en": "Devices that convert radiant light energy directly into electric voltage.",
-        "options": [
-          "photovoltaic",
-          "turbine",
-          "renewable"
-        ],
-        "answer": "photovoltaic"
+        "text": "Incorrect, misleading, or not in accordance with verifiable reality.",
+        "target": "false"
       }
     ]
   },
   "rw_part2": {
-    "topic": "Evaluating National Renewable Grid Feasibility",
+    "title": "Debating Rebuttal Strategies Before the Finals",
     "turns": [
       {
-        "speaker": "Dr. Thorne",
-        "text": "Clara, how can we counter arguments that solar panels are ineffective in cloudy regions?",
+        "id": 1,
+        "speaker": "Lucas",
+        "prompt": "Nora, what is the biggest mistake speakers make during the rebuttal round?",
         "options": [
-          "We have empirical data proving that modern panels absorb diffuse ambient radiation.",
-          "I usually catch the metro train at twenty minutes past eight.",
-          "The library book on 19th-century history was very interesting."
+          "Simply re-reading their opening speech instead of addressing the opponent's points.",
+          "Bringing a printed stopwatch to the podium.",
+          "Speaking in complete English sentences."
         ],
-        "answer": "We have empirical data proving that modern panels absorb diffuse ambient radiation."
+        "answer": "Simply re-reading their opening speech instead of addressing the opponent's points."
       },
       {
-        "speaker": "Clara",
-        "text": "Do you disagree with economists who say the grid transition is too expensive to complete?",
+        "id": 2,
+        "speaker": "Lucas",
+        "prompt": "How does the 'They say... but I say...' formula improve our responses?",
         "options": [
-          "Yes, I disagree because renewable energy is already far cheaper than building coal plants.",
-          "My sister purchased a new camera for her vacation in Greece.",
-          "No, the cafeteria serves vegetarian pizza on Wednesday afternoons."
+          "It proves we listened to the opponent before dismantling their underlying premise.",
+          "It automatically makes every statement true without evidence.",
+          "It forces the judges to stop the debate early."
         ],
-        "answer": "Yes, I disagree because renewable energy is already far cheaper than building coal plants."
+        "answer": "It proves we listened to the opponent before dismantling their underlying premise."
       },
       {
-        "speaker": "Dr. Thorne",
-        "text": "What is your main point regarding the role of utility battery storage?",
+        "id": 3,
+        "speaker": "Lucas",
+        "prompt": "What should we do when an opponent presents an outdated statistical claim?",
         "options": [
-          "My point is that batteries guarantee constant grid frequency when wind speeds fluctuate.",
-          "We played an intense game of chess during the lunch break.",
-          "The weather forecast predicts light rain throughout the coming weekend."
+          "Provide recent peer-reviewed data that directly contradicts their assumption.",
+          "Agree that old data is always better than new data.",
+          "Stop speaking and sit down immediately."
         ],
-        "answer": "My point is that batteries guarantee constant grid frequency when wind speeds fluctuate."
+        "answer": "Provide recent peer-reviewed data that directly contradicts their assumption."
       },
       {
-        "speaker": "Clara",
-        "text": "Is it true or false that offshore turbines cause significant harm to marine biodiversity?",
+        "id": 4,
+        "speaker": "Lucas",
+        "prompt": "Is it ever wise to concede a minor point during a debate?",
         "options": [
-          "That claim is false because turbine foundations actually create protected artificial reefs.",
-          "I forgot to bring my blue umbrella to the office this morning.",
-          "The train arrives at platform four in approximately ten minutes."
+          "Yes, conceding an undeniable minor point demonstrates intellectual honesty and saves time.",
+          "No, debaters must insist that every single opponent statement is false.",
+          "Conceding a point disqualifies the team instantly."
         ],
-        "answer": "That claim is false because turbine foundations actually create protected artificial reefs."
+        "answer": "Yes, conceding an undeniable minor point demonstrates intellectual honesty and saves time."
       },
       {
-        "speaker": "Dr. Thorne",
-        "text": "Shall we present our sustainable transition roadmap to the energy ministry today?",
+        "id": 5,
+        "speaker": "Lucas",
+        "prompt": "How do contrast connectors like 'on the contrary' help the judges follow our logic?",
         "options": [
-          "Yes, let's present our roadmap so policymakers can authorize grid expansion.",
-          "I enjoy listening to classical symphony recordings in the evening.",
-          "There are twenty-five laptops inside the primary science laboratory."
+          "They signal a sharp, direct opposition between the flawed claim and our verified evidence.",
+          "They tell the judges that our microphone is turned off.",
+          "They indicate that the debate has turned into a musical concert."
         ],
-        "answer": "Yes, let's present our roadmap so policymakers can authorize grid expansion."
-      }
-    ],
-    "exchanges": [
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Clara, how can we counter arguments that solar panels are ineffective in cloudy regions?"
-      },
-      {
-        "speaker": "Clara",
-        "text": "We have empirical data proving that modern panels absorb diffuse ambient radiation."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Do you disagree with economists who say the grid transition is too expensive to complete?"
-      },
-      {
-        "speaker": "Clara",
-        "text": "Yes, I disagree because renewable energy is already far cheaper than building coal plants."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "What is your main point regarding the role of utility battery storage?"
-      },
-      {
-        "speaker": "Clara",
-        "text": "My point is that batteries guarantee constant grid frequency when wind speeds fluctuate."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Is it true or false that offshore turbines cause significant harm to marine biodiversity?"
-      },
-      {
-        "speaker": "Clara",
-        "text": "That claim is false because turbine foundations actually create protected artificial reefs."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Shall we present our sustainable transition roadmap to the energy ministry today?"
-      },
-      {
-        "speaker": "Clara",
-        "text": "Yes, let's present our roadmap so policymakers can authorize grid expansion."
+        "answer": "They signal a sharp, direct opposition between the flawed claim and our verified evidence."
       }
     ]
   },
   "rw_part6": {
-    "title": "Clara Lin's Research Diary: Grid Modernization",
-    "instructions": "Read the diary and write the missing words. Write one word on each line.",
-    "text_template": "Dear Diary, today Dr. Thorne and I finalized our report [1]_____ renewable power systems. If industrial nations had invested earlier, emissions [2]_____ be far lower today. Our empirical data counters claims that wind turbines [3]_____ unreliable. Modern smart grids balance power across regions with high [4]_____. Tomorrow, we will present our sustainable energy blueprint [5]_____ the national council.",
+    "instructions": "Read the text about rebuttal techniques and choose the correct function word for each blank space.",
+    "text_template": "In competitive debate, an effective rebuttal requires active listening. When an opponent presents a claim, debaters must evaluate whether it [1] factually true or false. Strategic speakers do not merely disagree; on the contrary, they counter [2] verifiable evidence. While opponents may argue passionately, data [3] often expose logical flaws in their reasoning. By engaging directly [4] opposing points, speakers confirm the validity [5] their own arguments.",
     "answers": {
-      "1": "on",
-      "2": "would",
-      "3": "are",
-      "4": "efficiency",
-      "5": "to"
+      "1": "is",
+      "2": "with",
+      "3": "will",
+      "4": "with",
+      "5": "of"
     }
   }
 };

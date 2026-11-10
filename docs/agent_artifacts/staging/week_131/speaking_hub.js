@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Speaking Hub & Talkshow/Info Exchange Cards
- * Week: 131 | Theme: "Genetics & Biotechnology: Modern Agriculture" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.316Z
+ * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.453Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,144 +9,144 @@
 
 export const speakingHubData = {
   "week": 131,
-  "theme": "Genetics & Biotechnology: Modern Agriculture",
+  "theme": "Opinion Project 3: Persuasive Techniques",
   "cefr_level": "B2 First",
   "talkshow_prompt": {
-    "topic": "Biotechnology and Global Food Security",
-    "question": "Dr. Thorne, how can precision genetic modification safeguard agriculture against catastrophic climate shifts?",
-    "model_response": "Precision biotechnology allows agronomists to introduce proven environmental resilience traits into staple crops in a fraction of the time required by classical breeding. Crops, which we engineer with enhanced root depth and cuticle wax, maintain steady grain yields during severe droughts. By providing smallholder farmers with open-source, non-patented resilient seeds, we strengthen regional food security and prevent climate-induced crop failures."
+    "topic": "The Power of Classical Rhetoric in Contemporary Speeches",
+    "question": "Marcus, how does balancing ethos, pathos, and logos prevent a speech from being either dry or manipulative?",
+    "model_response": "A speech with only logos is an emotionless textbook that puts people to sleep, while a speech with only pathos can turn into manipulative propaganda! But when an orator roots their character in honest ethos, supports their claims with undeniable logos, and brings those facts alive with human pathos, true persuasion occurs! The audience feels the emotional urgency while their rational minds confirm every fact!"
   },
   "info_exchange_cards": {
     "table_a": {
-      "title": "Dr. Aris Thorne's Drought Rice Project",
+      "title": "Marcus's Rhetorical Analysis Workshop",
       "subtitle": "Candidate's Question Card (Ask Examiner)",
-      "person": "Aris",
+      "person": "Marcus",
       "fields": [
         {
           "id": "field_a1",
-          "cue_prompt": "where / rice trial conducted?",
+          "cue_prompt": "where / classical rhetoric seminar held?",
           "cue_word": "where",
           "is_missing": true,
           "acceptable_questions": [
-            "Where was the rice trial conducted?",
-            "Where did the field trial take place?",
-            "Where was the trial grown?"
+            "Where was the classical rhetoric seminar held?",
+            "Where was the seminar held?",
+            "Where did Marcus study rhetoric?"
           ],
-          "nova_reply": "The rice field trial was conducted in the irrigated delta experimental station in Vietnam."
+          "nova_reply": "The seminar was held in the university humanities symposium room."
         },
         {
           "id": "field_a2",
-          "cue_prompt": "how much / water saved?",
-          "cue_word": "how much",
+          "cue_prompt": "what / three classical appeals studied?",
+          "cue_word": "what",
           "is_missing": true,
           "acceptable_questions": [
-            "How much water was saved during the trial?",
-            "How much water did it conserve?",
-            "How much water was reduced?"
+            "What are the three classical appeals studied?",
+            "What appeals did they study?",
+            "What is the rhetorical triad?"
           ],
-          "nova_reply": "The drought-adapted rice variety required thirty-eight percent less irrigation water than standard crops."
+          "nova_reply": "Ethos, pathos, and logos as formulated by Aristotle."
         },
         {
           "id": "field_a3",
-          "cue_prompt": "what gene / source used?",
-          "cue_word": "what gene",
+          "cue_prompt": "how many / historic speeches analyzed by students?",
+          "cue_word": "how many",
           "is_missing": true,
           "acceptable_questions": [
-            "What gene source was used?",
-            "Which wild plant provided the gene?",
-            "What was the genetic source?"
+            "How many historic speeches were analyzed by students?",
+            "How many speeches did they analyze?",
+            "What was the number of speeches studied?"
           ],
-          "nova_reply": "The drought-tolerance trait was identified in a wild perennial African grass species."
+          "nova_reply": "Students transcribed and annotated twelve landmark historic addresses."
         },
         {
           "id": "field_a4",
-          "cue_prompt": "who / tested grain quality?",
+          "cue_prompt": "who / delivered the guest lecture on vocal cadence?",
           "cue_word": "who",
           "is_missing": true,
           "acceptable_questions": [
-            "Who tested the harvested grain quality?",
-            "Who analyzed the grain?",
-            "Who checked the grain quality?"
+            "Who delivered the guest lecture on vocal cadence?",
+            "Who was the guest speaker?",
+            "Who gave the cadence lecture?"
           ],
-          "nova_reply": "An independent university nutrition laboratory verified that protein and carbohydrate levels matched premium grain."
+          "nova_reply": "Professor Julian Vance, director of the national oratory institute."
         },
         {
           "id": "field_a5",
-          "cue_prompt": "when / commercial distribution begin?",
-          "cue_word": "when",
+          "cue_prompt": "why / inverted sentence structures effective?",
+          "cue_word": "why",
           "is_missing": true,
           "acceptable_questions": [
-            "When will commercial distribution begin?",
-            "When can farmers buy the seeds?",
-            "When does distribution start?"
+            "Why are inverted sentence structures effective?",
+            "Why use structures like 'not only does it'?",
+            "Why use inversion in speeches?"
           ],
-          "nova_reply": "Certified open-source seed packages will be released to farming cooperatives next spring."
+          "nova_reply": "Because they create dramatic cadence and emphasize the secondary benefit."
         }
       ]
     },
     "table_b": {
-      "title": "Naomi Ward's Saline Wheat Strain",
+      "title": "Olivia's Speech Rehearsal Notes",
       "subtitle": "Information Card (Answer Examiner's Questions)",
-      "person": "Naomi",
+      "person": "Olivia",
       "fields": [
         {
           "id": "field_b1",
-          "cue_prompt": "where / wheat cultivated?",
+          "cue_prompt": "where / practice her keynote speech?",
           "cue_word": "where",
-          "value": "Across salt-affected coastal river flats in the Indus Valley.",
-          "nova_question": "Where is Naomi's salinity-tolerant wheat currently cultivated?",
+          "value": "In the acoustic rehearsal theater of the community center.",
+          "nova_question": "Where does Olivia practice her keynote speech?",
           "acceptable_answers": [
-            "Across salt-affected coastal river flats in the Indus Valley.",
-            "In the Indus Valley.",
-            "Across coastal river flats in the Indus Valley."
+            "In the acoustic rehearsal theater of the community center.",
+            "At the community center theater.",
+            "In the acoustic rehearsal theater."
           ]
         },
         {
           "id": "field_b2",
-          "cue_prompt": "what salinity / crop withstands?",
-          "cue_word": "what salinity",
-          "value": "It germinates in soil salinity levels up to twelve deciSiemens per meter.",
-          "nova_question": "What level of soil salinity can the wheat variety withstand?",
+          "cue_prompt": "what / core metaphor used in the introduction?",
+          "cue_word": "what",
+          "value": "Comparing unmoderated notifications to continuous mental turbulence.",
+          "nova_question": "What is the core metaphor used in the introduction?",
           "acceptable_answers": [
-            "It germinates in soil salinity levels up to twelve deciSiemens per meter.",
-            "Up to twelve deciSiemens per meter.",
-            "12 deciSiemens per meter."
+            "Comparing unmoderated notifications to continuous mental turbulence.",
+            "Continuous mental turbulence.",
+            "Mental turbulence metaphor."
           ]
         },
         {
           "id": "field_b3",
-          "cue_prompt": "why / farmers adopt strain?",
-          "cue_word": "why",
-          "value": "Because sea level rise and tidal floods have salinized traditional freshwater paddies.",
-          "nova_question": "Why are local farmers eager to adopt this particular wheat strain?",
+          "cue_prompt": "how / vocal pitch modulated during key phrases?",
+          "cue_word": "how",
+          "value": "By lowering pitch at line ends and pausing three full seconds.",
+          "nova_question": "How does she modulate her vocal pitch during key phrases?",
           "acceptable_answers": [
-            "Because sea level rise and tidal floods have salinized traditional freshwater paddies.",
-            "Sea level rise has salinized paddies.",
-            "Because tides salinized traditional freshwater paddies."
+            "By lowering pitch at line ends and pausing three full seconds.",
+            "Lowering pitch and pausing.",
+            "Pausing three seconds with lower pitch."
           ]
         },
         {
           "id": "field_b4",
-          "cue_prompt": "how much / grain yield increased?",
-          "cue_word": "how much",
-          "value": "Grain yield increased by forty-two percent compared to unedited local seeds.",
-          "nova_question": "By how much did harvest yield increase in saline trial plots?",
+          "cue_prompt": "who / provided feedback on speech delivery?",
+          "cue_word": "who",
+          "value": "The school debate coach and senior civic communications officers.",
+          "nova_question": "Who provided feedback on speech delivery?",
           "acceptable_answers": [
-            "Grain yield increased by forty-two percent compared to unedited local seeds.",
-            "By forty-two percent.",
-            "42 percent increase."
+            "The school debate coach and senior civic communications officers.",
+            "The debate coach and civic officers.",
+            "Debate coach and communications officers."
           ]
         },
         {
           "id": "field_b5",
-          "cue_prompt": "what price / seeds sold for?",
-          "cue_word": "what price",
-          "value": "Distributed free of royalty charges through an open-source humanitarian treaty.",
-          "nova_question": "What price are cooperative farmers charged for the patented seed technology?",
+          "cue_prompt": "why / balance pathos with statistical data?",
+          "cue_word": "why",
+          "value": "To ensure emotional stories are grounded in objective reality.",
+          "nova_question": "Why must speakers balance pathos with statistical data?",
           "acceptable_answers": [
-            "Distributed free of royalty charges through an open-source humanitarian treaty.",
-            "Free of royalty charges.",
-            "Free through a humanitarian treaty."
+            "To ensure emotional stories are grounded in objective reality.",
+            "To ground emotional stories in reality.",
+            "To prevent emotional manipulation."
           ]
         }
       ]

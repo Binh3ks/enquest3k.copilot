@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 133 | Theme: "Astrophysics: Black Holes, Galaxies & Gravity" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.318Z
+ * Week: 133 | Theme: "Deep Research & Data" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.455Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,276 +9,276 @@
 
 export const readingHubData = {
   "week": 133,
-  "theme": "Astrophysics: Black Holes, Galaxies & Gravity",
+  "theme": "Deep Research & Data",
   "cefr_level": "B2 First",
   "vocab": [
     {
       "id": 1,
-      "word": "astrophysics",
-      "pos": "n",
-      "ipa": "/ˌæstroʊˈfɪzɪks/",
-      "definition_en": "The branch of astronomy concerned with the physical nature of celestial bodies",
-      "definition_vi": "vật lý thiên văn",
-      "example_en": "Theoretical astrophysics explains the extreme gravitational behavior of dying stars.",
-      "example_vi": "Vật lý thiên văn lý thuyết giải thích hành vi hấp dẫn cực hạn của các ngôi sao đang tàn."
-    },
-    {
-      "id": 2,
-      "word": "galaxy",
-      "pos": "n",
-      "ipa": "/ˈɡæləksi/",
-      "definition_en": "A system of millions or billions of stars, together with gas and dust, held together by gravitational attraction",
-      "definition_vi": "thiên hà",
-      "example_en": "The Andromeda galaxy contains over one trillion individual stars.",
-      "example_vi": "Thiên hà Tiên Nữ chứa hơn một nghìn tỷ ngôi sao riêng lẻ."
-    },
-    {
-      "id": 3,
-      "word": "gravity",
-      "pos": "n",
-      "ipa": "/ˈɡrævəti/",
-      "definition_en": "The force that attracts a body toward the center of the earth or toward any other physical body having mass",
-      "definition_vi": "trọng lực, lực hấp dẫn",
-      "example_en": "The immense gravity of a black hole prevents even light from escaping.",
-      "example_vi": "Lực hấp dẫn khổng lồ của một lỗ đen ngăn cản ngay cả ánh sáng thoát ra ngoài."
-    },
-    {
-      "id": 4,
-      "word": "singularity",
-      "pos": "n",
-      "ipa": "/ˌsɪŋɡjəˈlærəti/",
-      "definition_en": "A point in spacetime at which gravitational forces cause matter to have an infinite density",
-      "definition_vi": "điểm kỳ dị",
-      "example_en": "General relativity predicts an infinitely dense gravitational singularity at the center of a black hole.",
-      "example_vi": "Thuyết tương đối rộng dự đoán một điểm kỳ dị hấp dẫn có mật độ vô hạn ở trung tâm của một lỗ đen."
-    },
-    {
-      "id": 5,
-      "word": "orbit",
-      "pos": "n",
-      "ipa": "/ˈɔːrbɪt/",
-      "definition_en": "The curved path of a celestial object or spacecraft around a star, planet, or moon",
-      "definition_vi": "quỹ đạo",
-      "example_en": "Dozens of exoplanets follow stable elliptical orbits around the distant red dwarf.",
-      "example_vi": "Hàng chục ngoại hành tinh di chuyển theo các quỹ đạo hình elip ổn định quanh ngôi sao lùn đỏ xa xôi."
-    },
-    {
-      "id": 6,
-      "word": "telescope",
-      "pos": "n",
-      "ipa": "/ˈtelɪskoʊp/",
-      "definition_en": "An optical instrument designed to make distant objects appear nearer",
-      "definition_vi": "kính thiên văn",
-      "example_en": "The orbital space telescope captured ultraviolet emissions from the nursery nebula.",
-      "example_vi": "Kính thiên văn không gian trên quỹ đạo đã chụp lại các bức xạ cực tím từ tinh vân vườn ươm sao."
-    },
-    {
-      "id": 7,
-      "word": "data",
-      "pos": "n",
-      "ipa": "/ˈdeɪtə/",
-      "definition_en": "Facts and statistics collected together for reference or analysis",
-      "definition_vi": "dữ liệu",
-      "example_en": "Spectroscopic data revealed high concentrations of iron in the supernova remnant.",
-      "example_vi": "Dữ liệu quang phổ đã hé lộ nồng độ sắt cao trong tàn tích siêu tân tinh."
-    },
-    {
-      "id": 8,
       "word": "statistic",
       "pos": "n",
       "ipa": "/stəˈtɪstɪk/",
-      "definition_en": "A fact or piece of data from a study of a large quantity of numerical data",
+      "definition_en": "A numerical fact or piece of data derived from a large quantity of numerical data",
       "definition_vi": "số liệu thống kê",
-      "example_en": "Astronomers calculated a statistical correlation between galactic mass and central velocity.",
-      "example_vi": "Các nhà thiên văn học đã tính toán một mối tương quan thống kê giữa khối lượng thiên hà và vận tốc trung tâm."
+      "example_en": "The landmark statistic indicated that seventy percent of middle school students play video games.",
+      "example_vi": "Số liệu thống kê mang tính bước ngoặt chỉ ra rằng bảy mươi phần trăm học sinh trung học cơ sở chơi trò chơi điện tử."
     },
     {
-      "id": 9,
+      "id": 2,
       "word": "percent",
       "pos": "n",
       "ipa": "/pərˈsent/",
-      "definition_en": "One part in every hundred",
+      "definition_en": "One part in every hundred; represented by the percent symbol",
       "definition_vi": "phần trăm",
-      "example_en": "Hydrogen accounts for approximately seventy-four percent of all baryonic mass in the universe.",
-      "example_vi": "Hi-đrô chiếm khoảng bảy mươi tư phần trăm toàn bộ khối lượng baryon trong vũ trụ."
+      "example_en": "Only twelve percent of surveyed players reported persistent feelings of digital fatigue.",
+      "example_vi": "Chỉ mười hai phần trăm người chơi được khảo sát báo cáo cảm giác mệt mỏi kỹ thuật số kéo dài."
     },
     {
-      "id": 10,
+      "id": 3,
       "word": "study",
       "pos": "n",
       "ipa": "/ˈstʌdi/",
-      "definition_en": "A detailed investigation and analysis of a subject or situation",
+      "definition_en": "A detailed investigation and analytical examination of a subject or situation",
       "definition_vi": "công trình nghiên cứu",
-      "example_en": "The published observational study provided direct evidence of gravitational lensing.",
-      "example_vi": "Công trình nghiên cứu quan sát được công bố đã cung cấp bằng chứng trực tiếp về thấu kính hấp dẫn."
+      "example_en": "A four-year longitudinal study tracked adolescent gaming habits across twenty school districts.",
+      "example_vi": "Một nghiên cứu theo chiều dọc kéo dài bốn năm đã theo dõi thói quen chơi game của thanh thiếu niên trên hai mươi học khu."
     },
     {
-      "id": 11,
+      "id": 4,
+      "word": "data",
+      "pos": "n",
+      "ipa": "/ˈdeɪtə/",
+      "definition_en": "Facts and statistics collected together for reference, calculation, or analysis",
+      "definition_vi": "dữ liệu / số liệu thu thập",
+      "example_en": "Empirical survey data provides verifiable foundation for evidence-based policymaking.",
+      "example_vi": "Dữ liệu khảo sát thực nghiệm cung cấp nền tảng có thể kiểm chứng cho việc hoạch định chính sách dựa trên bằng chứng."
+    },
+    {
+      "id": 5,
       "word": "majority",
       "pos": "n",
       "ipa": "/məˈdʒɔːrəti/",
-      "definition_en": "The greater number or part; more than half",
-      "definition_vi": "phần lớn, đa số",
-      "example_en": "The vast majority of mass in spiral galaxies consists of invisible dark matter.",
-      "example_vi": "Đại đa số khối lượng trong các thiên hà xoắn ốc bao gồm vật chất tối vô hình."
+      "definition_en": "The greater number or part of something; representing more than fifty percent",
+      "definition_vi": "đa số / phần lớn",
+      "example_en": "The vast majority of respondents reported that cooperative gaming improved their teamwork skills.",
+      "example_vi": "Đại đa số người được hỏi cho biết việc chơi game hợp tác đã cải thiện kỹ năng làm việc nhóm của họ."
     },
     {
-      "id": 12,
+      "id": 6,
       "word": "minority",
       "pos": "n",
       "ipa": "/maɪˈnɔːrəti/",
-      "definition_en": "The smaller number or part, especially a number that is less than half the whole",
-      "definition_vi": "thiểu số, phần nhỏ",
-      "example_en": "Only a small minority of stars collapse into neutron stars or stellar black holes.",
-      "example_vi": "Chỉ một thiểu số nhỏ các ngôi sao sụp đổ thành sao neutron hoặc lỗ đen sao."
+      "definition_en": "The smaller number or part of a group; representing less than fifty percent",
+      "definition_vi": "thiểu số / phần nhỏ",
+      "example_en": "A small minority of participants exhibited signs of compulsive overnight screen usage.",
+      "example_vi": "Một bộ phận nhỏ người tham gia có dấu hiệu sử dụng màn hình cưỡng chế qua đêm."
     },
     {
-      "id": 13,
+      "id": 7,
       "word": "survey",
       "pos": "n",
       "ipa": "/ˈsɜːrveɪ/",
-      "definition_en": "A comprehensive investigation or mapping of a region or celestial field",
-      "definition_vi": "cuộc khảo sát (bầu trời)",
-      "example_en": "The sky survey cataloged two million distant quasars across the southern hemisphere.",
-      "example_vi": "Cuộc khảo sát bầu trời đã lập danh mục hai triệu chuẩn tinh xa xôi khắp bán cầu nam."
+      "definition_en": "A research investigation of opinions or behaviors of a representative sample group",
+      "definition_vi": "cuộc khảo sát / điều tra",
+      "example_en": "The university conducted an anonymous online survey involving four thousand young players.",
+      "example_vi": "Trường đại học đã tiến hành một cuộc khảo sát trực tuyến ẩn danh với sự tham gia của bốn nghìn người chơi trẻ tuổi."
+    },
+    {
+      "id": 8,
+      "word": "population",
+      "pos": "n",
+      "ipa": "/ˌpɑːpjəˈleɪʃən/",
+      "definition_en": "The entire group of individuals from which a statistical sample is drawn",
+      "definition_vi": "quần thể nghiên cứu / tổng dân số đối tượng",
+      "example_en": "The sample was carefully calibrated to mirror the broader national adolescent population.",
+      "example_vi": "Mẫu khảo sát đã được hiệu chuẩn cẩn thận để phản ánh đúng quần thể thanh thiếu niên quốc gia rộng lớn hơn."
+    },
+    {
+      "id": 9,
+      "word": "sample",
+      "pos": "n",
+      "ipa": "/ˈsæmpəl/",
+      "definition_en": "A representative subset of individuals selected from a larger population",
+      "definition_vi": "mẫu nghiên cứu",
+      "example_en": "Researchers selected a randomized sample of one thousand students from diverse backgrounds.",
+      "example_vi": "Các nhà nghiên cứu đã chọn một mẫu ngẫu nhiên gồm một nghìn học sinh từ các hoàn cảnh khác nhau."
+    },
+    {
+      "id": 10,
+      "word": "quantitative",
+      "pos": "adj",
+      "ipa": "/ˈkwɑːntəteɪtɪv/",
+      "definition_en": "Relating to, measuring, or measured by the numerical quantity of something",
+      "definition_vi": "định lượng",
+      "example_en": "Quantitative research relies on measurable data and mathematical statistical models.",
+      "example_vi": "Nghiên cứu định lượng dựa trên dữ liệu có thể đo lường và các mô hình thống kê toán học."
+    },
+    {
+      "id": 11,
+      "word": "methodology",
+      "pos": "n",
+      "ipa": "/ˌmeθəˈdɑːlədʒi/",
+      "definition_en": "A systematic system of methods applied within a particular research field",
+      "definition_vi": "phương pháp luận nghiên cứu",
+      "example_en": "The research team published their full methodology to ensure scientific transparency.",
+      "example_vi": "Nhóm nghiên cứu đã công bố toàn bộ phương pháp luận của họ để đảm bảo tính minh bạch khoa học."
+    },
+    {
+      "id": 12,
+      "word": "findings",
+      "pos": "n",
+      "ipa": "/ˈfaɪndɪŋz/",
+      "definition_en": "Information or conclusions discovered as the result of a scientific inquiry",
+      "definition_vi": "kết quả nghiên cứu / các phát hiện",
+      "example_en": "The initial findings challenged common stereotypes regarding youth computer usage.",
+      "example_vi": "Các phát hiện ban đầu đã thách thức những định kiến phổ biến liên quan đến việc sử dụng máy tính của giới trẻ."
+    },
+    {
+      "id": 13,
+      "word": "correlation",
+      "pos": "n",
+      "ipa": "/ˌkɔːrəˈleɪʃən/",
+      "definition_en": "A mutual statistical relationship or connection between two or more variables",
+      "definition_vi": "sự tương quan",
+      "example_en": "Scientists discovered a moderate correlation between late-night gaming and morning tardiness.",
+      "example_vi": "Các nhà khoa học đã phát hiện ra mối tương quan vừa phải giữa việc chơi game khuya và việc đi học muộn vào buổi sáng."
     },
     {
       "id": 14,
-      "word": "population",
+      "word": "variable",
       "pos": "n",
-      "ipa": "/ˌpɑːpjuˈleɪʃən/",
-      "definition_en": "A particular section, group, or type of celestial objects inhabiting an area",
-      "definition_vi": "quần thể (sao)",
-      "example_en": "Older Population II stars inhabit the globular clusters surrounding the galactic core.",
-      "example_vi": "Quần thể sao nhóm II già hơn cư trú trong các cụm sao hình cầu bao quanh lõi thiên hà."
+      "ipa": "/ˈveriəbəl/",
+      "definition_en": "An element, feature, or numerical factor that is liable to change in an experiment",
+      "definition_vi": "biến số nghiên cứu",
+      "example_en": "Sleep duration was treated as the primary dependent variable in the regression analysis.",
+      "example_vi": "Thời lượng giấc ngủ được coi là biến phụ thuộc chính trong phân tích hồi quy."
     },
     {
       "id": 15,
-      "word": "cosmic",
-      "pos": "adj",
-      "ipa": "/ˈkɑːzmɪk/",
-      "definition_en": "Relating to the universe or cosmos, especially as distinct from the earth",
-      "definition_vi": "thuộc vũ trụ",
-      "example_en": "Cosmic microwave background radiation fills all space as an echo of the Big Bang.",
-      "example_vi": "Bức xạ phông vi sóng vũ trụ lấp đầy mọi không gian như một tiếng vang của vụ nổ Big Bang."
+      "word": "analyze",
+      "pos": "v",
+      "ipa": "/ˈænəlaɪz/",
+      "definition_en": "To examine methodically and in detail the constitution or structure of data",
+      "definition_vi": "phân tích",
+      "example_en": "Data analysts use advanced statistical software to analyze thousands of survey responses.",
+      "example_vi": "Các nhà phân tích dữ liệu sử dụng phần mềm thống kê tiên tiến để phân tích hàng nghìn phản hồi khảo sát."
     },
     {
       "id": 16,
-      "word": "light-year",
+      "word": "respondent",
       "pos": "n",
-      "ipa": "/ˈlaɪt jɪr/",
-      "definition_en": "A unit of astronomical distance equivalent to the distance that light travels in one year (nearly 6 trillion miles)",
-      "definition_vi": "năm ánh sáng",
-      "example_en": "Proxima Centauri lies slightly more than four light-years away from our solar system.",
-      "example_vi": "Cận Tinh nằm cách hệ mặt trời của chúng ta hơn bốn năm ánh sáng một chút."
+      "ipa": "/rɪˈspɑːndənt/",
+      "definition_en": "A person who replies to an inquiry, questionnaire, or research survey",
+      "definition_vi": "người trả lời khảo sát",
+      "example_en": "Each respondent completed a thirty-question survey evaluating daily digital habits.",
+      "example_vi": "Mỗi người trả lời đã hoàn thành một bảng khảo sát gồm ba mươi câu hỏi đánh giá thói quen kỹ thuật số hàng ngày."
     },
     {
       "id": 17,
-      "word": "spectrum",
+      "word": "metric",
       "pos": "n",
-      "ipa": "/ˈspektrəm/",
-      "definition_en": "A band of colors or electromagnetic radiation produced by separation of the components according to wavelength",
-      "definition_vi": "quang phổ",
-      "example_en": "Analyzing the absorption spectrum reveals chemical elements present in stellar atmospheres.",
-      "example_vi": "Phân tích quang phổ hấp thụ hé lộ các nguyên tố hóa học hiện diện trong khí quyển của các ngôi sao."
+      "ipa": "/ˈmetrɪk/",
+      "definition_en": "A standard of quantitative measurement used for assessment or tracking",
+      "definition_vi": "chỉ số đo lường",
+      "example_en": "Weekly active playing hours served as the primary behavioral metric in the investigation.",
+      "example_vi": "Số giờ chơi tích cực hàng tuần đóng vai trò là chỉ số đo lường hành vi chính trong cuộc điều tra."
     },
     {
       "id": 18,
-      "word": "radiation",
-      "pos": "n",
-      "ipa": "/ˌreɪdiˈeɪʃən/",
-      "definition_en": "The emission of energy as electromagnetic waves or moving subatomic particles",
-      "definition_vi": "bức xạ",
-      "example_en": "Supermassive black holes emit powerful X-ray radiation from their glowing accretion disks.",
-      "example_vi": "Các lỗ đen siêu khối lượng phát ra bức xạ tia X mạnh mẽ từ các đĩa bồi tụ phát sáng của chúng."
+      "word": "empirical",
+      "pos": "adj",
+      "ipa": "/ɪmˈpɪrɪkəl/",
+      "definition_en": "Based on, concerned with, or verifiable by systematic observation or experience",
+      "definition_vi": "mang tính thực nghiệm",
+      "example_en": "Empirical evidence carries far more scholarly weight than unsubstantiated personal anecdotes.",
+      "example_vi": "Bằng chứng thực nghiệm mang nhiều trọng lượng học thuật hơn là những giai thoại cá nhân vô căn cứ."
     },
     {
       "id": 19,
-      "word": "relativity",
+      "word": "hypothesis",
       "pos": "n",
-      "ipa": "/ˌreləˈtɪvəti/",
-      "definition_en": "Einstein's theory describing gravity as the curvature of spacetime caused by mass",
-      "definition_vi": "thuyết tương đối",
-      "example_en": "Einstein's general relativity accurately predicts time dilation near massive gravitational fields.",
-      "example_vi": "Thuyết tương đối rộng của Einstein dự đoán chính xác sự giãn nở thời gian gần các trường hấp dẫn khổng lồ."
+      "ipa": "/haɪˈpɑːθəsɪs/",
+      "definition_en": "A proposed formal explanation made on the basis of limited evidence as a starting point",
+      "definition_vi": "giả thuyết nghiên cứu",
+      "example_en": "The research team formulated a hypothesis that moderate puzzle gaming enhances spatial reasoning.",
+      "example_vi": "Nhóm nghiên cứu đã xây dựng giả thuyết rằng chơi game giải đố có chừng mực sẽ nâng cao khả năng suy luận không gian."
     },
     {
       "id": 20,
-      "word": "phenomenon",
+      "word": "frequency",
       "pos": "n",
-      "ipa": "/fəˈnɑːmɪnɑːn/",
-      "definition_en": "A remarkable fact or event that is observed to exist or happen",
-      "definition_vi": "hiện tượng",
-      "example_en": "A gravitational wave ripple is an extraordinary spacetime phenomenon produced by cosmic collisions.",
-      "example_vi": "Sóng hấp dẫn gợn sóng là một hiện tượng không-thời gian phi thường được tạo ra bởi các vụ va chạm vũ trụ."
+      "ipa": "/ˈfriːkwənsi/",
+      "definition_en": "The rate at which something occurs or is repeated over a specified time period",
+      "definition_vi": "tần suất xuất hiện",
+      "example_en": "The survey recorded the frequency of multiplayer collaborative sessions per week.",
+      "example_vi": "Cuộc khảo sát đã ghi lại tần suất của các buổi chơi hợp tác nhiều người chơi mỗi tuần."
     }
   ],
   "clil_article": {
-    "title_en": "The Architecture of the Cosmos: Black Holes, Gravity, and Spacetime Curvature",
-    "title_vi": "Cấu Trúc Của Vũ Trụ: Lỗ Đen, Trọng Lực và Độ Cong Không-Thời Gian",
-    "content_en": "Astrophysics explores the most extreme environments in the universe, where gravity warps the fabric of space and time. According to Einstein's general relativity, massive objects curve spacetime, forcing orbiting planets and passing light rays into curved trajectories. When a massive star exhausts its nuclear fuel, its core collapses under immense gravity into a black hole. At the center lies a gravitational singularity, where density reaches infinity. An observational survey of nearby galaxies revealed that the vast majority of large galaxies harbor supermassive black holes at their cores. Statistical studies confirm that the mass of a central black hole correlates directly with the stellar population of its host galaxy. Detecting gravitational wave radiation from these cosmic phenomena provides profound proof of general relativity across billions of light-years.",
+    "title_en": "Quantitative Evidence: Deep Research and Data in Video Game Studies",
+    "title_vi": "Bằng Chứng Định Lượng: Nghiên Cứu Sâu và Dữ Liệu Trong Các Nghiên Cứu Về Trò Chơi Điện Tử",
+    "content_en": "In rigorous academic inquiry, scholars rely on deep research and quantitative data to substantiate empirical arguments. Rather than relying on anecdotal claims about youth gaming habits, researchers conduct structured surveys across representative demographic samples. According to a landmark study by university psychologists, seventy percent of adolescent students play video games weekly. The collected data revealed that a substantial majority of players utilize cooperative multiplayer games to build social connections. However, a small minority exhibited signs of problematic usage that correlated with sleep deficits. When citing empirical evidence in research papers, students employ precise attribution phrases such as 'According to data published by the survey...' and 'Statistics demonstrate that...'. Incorporating verifiable numerical metrics transforms subjective assertions into credible, evidence-based academic scholarship.",
     "glossary": [
       {
-        "word": "astrophysics",
-        "definition_en": "Science applying physical laws to stellar and galactic phenomena",
-        "definition_vi": "khoa học áp dụng các định luật vật lý cho các hiện tượng sao và thiên hà"
-      },
-      {
-        "word": "gravity",
-        "definition_en": "Curvature of spacetime produced by mass and energy",
-        "definition_vi": "độ cong của không-thời gian sinh ra bởi khối lượng và năng lượng"
-      },
-      {
-        "word": "singularity",
-        "definition_en": "Theoretical infinite-density point at the center of a black hole",
-        "definition_vi": "điểm mật độ vô hạn lý thuyết ở trung tâm lỗ đen"
-      },
-      {
         "word": "statistic",
-        "definition_en": "Numerical metric derived from systematic observational analysis",
-        "definition_vi": "chỉ số số học rút ra từ phân tích quan sát có hệ thống"
+        "definition_en": "A numerical datum or quantitative indicator computed from a representative sample",
+        "definition_vi": "số liệu định lượng hoặc chỉ số đo lường tính toán từ một mẫu đại diện"
       },
       {
-        "word": "relativity",
-        "definition_en": "Theory describing gravity as geometric curvature of spacetime",
-        "definition_vi": "thuyết mô tả trọng lực như độ cong hình học của không-thời gian"
+        "word": "percent",
+        "definition_en": "A ratio expressed as a fraction of one hundred used in demographic proportions",
+        "definition_vi": "tỷ lệ được biểu thị dưới dạng một phần một trăm dùng trong cơ cấu tỷ lệ dân số"
+      },
+      {
+        "word": "quantitative",
+        "definition_en": "Relating to measurements involving precise numerical values and statistical models",
+        "definition_vi": "liên quan đến các phép đo liên quan đến các giá trị số chính xác và mô hình thống kê"
+      },
+      {
+        "word": "correlation",
+        "definition_en": "A mutual statistical association between two measurable observational variables",
+        "definition_vi": "mối liên hệ thống kê tương hỗ giữa hai biến số quan sát có thể đo lường"
+      },
+      {
+        "word": "empirical",
+        "definition_en": "Originating in or verified by systematic sensory observation or experimental data",
+        "definition_vi": "bắt nguồn từ hoặc được kiểm chứng bằng quan sát có hệ thống hoặc dữ liệu thực nghiệm"
       }
     ],
     "check_questions": [
       {
         "id": 1,
-        "question_en": "What physical mechanism causes planets and light rays to follow curved trajectories around massive stars?",
+        "question_en": "What percentage of adolescent students play video games weekly according to the university study?",
         "options": [
-          "The geometric warping and curvature of spacetime caused by stellar mass",
-          "Strong magnetic winds blowing through empty space",
-          "Solid glass lenses floating between galaxies"
+          "Seventy percent",
+          "Ten percent",
+          "Ninety-nine percent"
         ],
-        "answer": "The geometric warping and curvature of spacetime caused by stellar mass"
+        "answer": "Seventy percent"
       },
       {
         "id": 2,
-        "question_en": "Which modal of deduction expresses strong certainty about past cosmic events in observational astronomy?",
+        "question_en": "What did the research data reveal about the majority of adolescent players?",
         "options": [
-          "The gravitational signal must have originated from colliding black holes",
-          "Stars might enjoy shining at night",
-          "Galaxies will play games together"
+          "A substantial majority utilize cooperative games to build positive social connections",
+          "The majority never speak to their friends or family",
+          "The majority only play games on old radio sets"
         ],
-        "answer": "The gravitational signal must have originated from colliding black holes"
+        "answer": "A substantial majority utilize cooperative games to build positive social connections"
       },
       {
         "id": 3,
-        "question_en": "What do modern sky surveys reveal about the cores of large spiral and elliptical galaxies?",
+        "question_en": "Which phrase is an accurate academic citation formula for introducing data?",
         "options": [
-          "The vast majority of large galaxies harbor supermassive black holes at their cores",
-          "Most galaxies are hollow spheres made of ice",
-          "Galaxies have no gravitational centers"
+          "'According to a study by...'",
+          "'I personally dreamed that...'",
+          "'Everybody always knows that...'"
         ],
-        "answer": "The vast majority of large galaxies harbor supermassive black holes at their cores"
+        "answer": "'According to a study by...'"
       }
     ],
     "critical_thinking": {
-      "question_en": "How does observing gravitational waves enable astrophysicists to explore cosmic collisions that emit zero visible electromagnetic light?",
-      "hint_en": "Consider how ripples in spacetime travel unimpeded through dense interstellar dust and gas clouds that block optical telescopes."
+      "question_en": "Why does correlation between late-night gaming and sleep deficits not automatically prove that gaming is the sole cause of insomnia?",
+      "hint_en": "Other hidden variables, such as school stress, caffeine consumption, or academic homework loads, could independently cause both delayed sleep and late gaming."
     }
   },
   "story_scenes": [
@@ -286,10 +286,10 @@ export const readingHubData = {
       "id": 1,
       "scene_id": "scene_1",
       "scene_number": 1,
-      "title_en": "Calibrating the Submillimeter Array",
-      "title_vi": "Hiệu Chuẩn Dàn Kính Dưới Milimét",
-      "description_en": "Dr. Carl Sagan-Smith and Zoe Vance align radio dishes high on the Atacama mountain plateau.",
-      "description": "Dr. Carl Sagan-Smith and Zoe Vance align radio dishes high on the Atacama mountain plateau.",
+      "title_en": "Formulating the Research Hypothesis",
+      "title_vi": "Xây Dựng Giả Thuyết Nghiên Cứu",
+      "description_en": "Ethan and Hannah discuss whether computer gaming automatically reduces academic grades among their peers.",
+      "description": "Ethan and Hannah discuss whether computer gaming automatically reduces academic grades among their peers.",
       "image_url": "/images/week133/webtoon_scene_1.png",
       "audio_url": "/audio/week133/scene_1.mp3"
     },
@@ -297,10 +297,10 @@ export const readingHubData = {
       "id": 2,
       "scene_id": "scene_2",
       "scene_number": 2,
-      "title_en": "Detecting Gravitational Wave Ripples",
-      "title_vi": "Phát Hiện Gợn Sóng Hấp Dẫn",
-      "description_en": "Laser interferometry screens spike dramatically as spacetime ripples from colliding black holes pass Earth.",
-      "description": "Laser interferometry screens spike dramatically as spacetime ripples from colliding black holes pass Earth.",
+      "title_en": "Surveying a Randomized Student Sample",
+      "title_vi": "Khảo Sát Mẫu Học Sinh Ngẫu Nhiên",
+      "description_en": "They distribute an anonymous quantitative survey to five hundred students across five local middle schools.",
+      "description": "They distribute an anonymous quantitative survey to five hundred students across five local middle schools.",
       "image_url": "/images/week133/webtoon_scene_2.png",
       "audio_url": "/audio/week133/scene_2.mp3"
     },
@@ -308,10 +308,10 @@ export const readingHubData = {
       "id": 3,
       "scene_id": "scene_3",
       "scene_number": 3,
-      "title_en": "Spectroscopic Redshift Analysis",
-      "title_vi": "Phân Tích Độ Lệch Đỏ Quang Phổ",
-      "description_en": "Zoe analyzes spectral absorption lines showing a distant galaxy receding at twenty percent the speed of light.",
-      "description": "Zoe analyzes spectral absorption lines showing a distant galaxy receding at twenty percent the speed of light.",
+      "title_en": "Analyzing Statistical Metrics",
+      "title_vi": "Phân Tích Các Chỉ Số Thống Kê",
+      "description_en": "Hannah plots response variables in a spreadsheet, calculating that seventy percent of gamers maintain high honor roll marks.",
+      "description": "Hannah plots response variables in a spreadsheet, calculating that seventy percent of gamers maintain high honor roll marks.",
       "image_url": "/images/week133/webtoon_scene_3.png",
       "audio_url": "/audio/week133/scene_3.mp3"
     },
@@ -319,10 +319,10 @@ export const readingHubData = {
       "id": 4,
       "scene_id": "scene_4",
       "scene_number": 4,
-      "title_en": "Reconstructing the Event Horizon",
-      "title_vi": "Tái Tạo Chân Trời Sự Kiện",
-      "description_en": "Supercomputer algorithms synthesize data across global telescopes to render the glowing accretion ring.",
-      "description": "Supercomputer algorithms synthesize data across global telescopes to render the glowing accretion ring.",
+      "title_en": "Citing Verified Academic Authorities",
+      "title_vi": "Trích Dẫn Các Cơ Quan Học Thuật Đã Kiểm Chứng",
+      "description_en": "Ethan integrates citation phrases like 'According to a study by...' to ground their local survey in national data.",
+      "description": "Ethan integrates citation phrases like 'According to a study by...' to ground their local survey in national data.",
       "image_url": "/images/week133/webtoon_scene_4.png",
       "audio_url": "/audio/week133/scene_4.mp3"
     },
@@ -330,10 +330,10 @@ export const readingHubData = {
       "id": 5,
       "scene_id": "scene_5",
       "scene_number": 5,
-      "title_en": "Publishing the Astrophysical Breakthrough",
-      "title_vi": "Công Bố Đột Phá Vật Lý Thiên Văn",
-      "description_en": "The observatory team announces empirical confirmation of general relativity to international astronomers.",
-      "description": "The observatory team announces empirical confirmation of general relativity to international astronomers.",
+      "title_en": "Publishing the Empirical Report",
+      "title_vi": "Công Bố Báo Cáo Thực Nghiệm",
+      "description_en": "The faculty review board approves their empirical research paper for presentation at the regional science fair.",
+      "description": "The faculty review board approves their empirical research paper for presentation at the regional science fair.",
       "image_url": "/images/week133/webtoon_scene_5.png",
       "audio_url": "/audio/week133/scene_5.mp3"
     }
@@ -342,413 +342,296 @@ export const readingHubData = {
     "sentences": [
       {
         "id": 1,
-        "text": "The detected gravitational wave signal must have originated from two colliding black holes.",
-        "en": "The detected gravitational wave signal must have originated from two colliding black holes.",
-        "vi": "Tín hiệu sóng hấp dẫn được phát hiện chắc chắn phải bắt nguồn từ hai lỗ đen va chạm vào nhau.",
-        "ipa": "/ðə dɪˈtektɪd ˌɡrævɪˈteɪʃənl weɪv ˈsɪɡnəl mʌst hæv əˈrɪdʒɪneɪtɪd frəm tuː kəˈlaɪdɪŋ blæk hoʊlz/",
+        "text": "According to a landmark study by university psychologists, seventy percent of adolescents play video games.",
+        "en": "According to a landmark study by university psychologists, seventy percent of adolescents play video games.",
+        "vi": "Theo một nghiên cứu mang tính bước ngoặt của các nhà tâm lý học đại học, bảy mươi phần trăm thanh thiếu niên chơi game.",
+        "ipa": "/əˈkɔːrdɪŋ tuː ə ˈlændmɑːrk ˈstʌdi baɪ ˌjuːnəˈvɜːrsəti saɪˈkɑːlədʒɪsts ˈsevənti pərˈsent əv ˌædəˈlesənts pleɪ ˈvɪdioʊ ɡeɪmz/",
         "words": [
-          "The",
-          "detected",
-          "gravitational",
-          "wave",
-          "signal",
-          "must",
-          "have",
-          "originated",
-          "from",
-          "two",
-          "colliding",
-          "black",
-          "holes"
+          "According",
+          "to",
+          "a",
+          "landmark",
+          "study",
+          "by",
+          "university",
+          "psychologists",
+          "seventy",
+          "percent",
+          "of",
+          "adolescents",
+          "play",
+          "video",
+          "games"
         ]
       },
       {
         "id": 2,
-        "text": "The ancient stellar cluster cannot be younger than twelve billion years old.",
-        "en": "The ancient stellar cluster cannot be younger than twelve billion years old.",
-        "vi": "Cụm sao cổ đại này không thể nào trẻ hơn mười hai tỷ năm tuổi.",
-        "ipa": "/ði ˈeɪnʃənt ˈstelər ˈklʌstər ˈkænɑːt biː ˈjʌŋɡər ðæn twelv ˈbɪljən jɪrz oʊld/",
+        "text": "The collected survey data revealed that a substantial majority play cooperative multiplayer games.",
+        "en": "The collected survey data revealed that a substantial majority play cooperative multiplayer games.",
+        "vi": "Dữ liệu khảo sát thu thập được tiết lộ rằng phần lớn chơi các trò chơi hợp tác nhiều người chơi.",
+        "ipa": "/ðə kəˈlektɪd ˈsɜːrveɪ ˈdeɪtə rɪˈviːld ðæt ə səbˈstænʃəl məˈdʒɔːrəti pleɪ koʊˈɑːpərətɪv ˌmʌltiˈpleɪər ɡeɪmz/",
         "words": [
           "The",
-          "ancient",
-          "stellar",
-          "cluster",
-          "cannot",
-          "be",
-          "younger",
-          "than",
-          "twelve",
-          "billion",
-          "years",
-          "old"
+          "collected",
+          "survey",
+          "data",
+          "revealed",
+          "that",
+          "a",
+          "substantial",
+          "majority",
+          "play",
+          "cooperative",
+          "multiplayer",
+          "games"
         ]
       },
       {
         "id": 3,
-        "text": "Einstein's general relativity explains gravity as the geometric curvature of four-dimensional spacetime.",
-        "en": "Einstein's general relativity explains gravity as the geometric curvature of four-dimensional spacetime.",
-        "vi": "Thuyết tương đối rộng của Einstein giải thích trọng lực như độ cong hình học của không-thời gian bốn chiều.",
-        "ipa": "/ˈaɪnstaɪnz ˈdʒenərəl ˌreləˈtɪvəti ɪkˈspleɪnz ˈɡrævəti æz ðə ˌdʒiːəˈmetrɪk ˈkɜːrvətʃər əv fɔːr dɪˈmenʃənl ˈspeɪstaɪm/",
+        "text": "Statistics demonstrate that a small minority exhibit signs of problematic screen usage.",
+        "en": "Statistics demonstrate that a small minority exhibit signs of problematic screen usage.",
+        "vi": "Số liệu thống kê chứng minh rằng một thiểu số nhỏ có dấu hiệu sử dụng màn hình có vấn đề.",
+        "ipa": "/stəˈtɪstɪks ˈdemənstreɪt ðæt ə smɔːl maɪˈnɔːrəti ɪɡˈzɪbɪt saɪnz əv ˌprɑːbləˈmætɪk skriːn ˈjuːsɪdʒ/",
         "words": [
-          "Einstein's",
-          "general",
-          "relativity",
-          "explains",
-          "gravity",
-          "as",
-          "the",
-          "geometric",
-          "curvature",
+          "Statistics",
+          "demonstrate",
+          "that",
+          "a",
+          "small",
+          "minority",
+          "exhibit",
+          "signs",
           "of",
-          "four-dimensional",
-          "spacetime"
+          "problematic",
+          "screen",
+          "usage"
         ]
       },
       {
         "id": 4,
-        "text": "A comprehensive observational survey demonstrated that the majority of galaxies possess supermassive black holes.",
-        "en": "A comprehensive observational survey demonstrated that the majority of galaxies possess supermassive black holes.",
-        "vi": "Một cuộc khảo sát quan sát toàn diện đã chứng minh rằng phần lớn các thiên hà đều sở hữu các lỗ đen siêu khối lượng.",
-        "ipa": "/ə ˌkɑːmprɪˈhensɪv ˌɑːbzərˈveɪʃənl ˈsɜːrveɪ ˈdemənstreɪtɪd ðæt ðə məˈdʒɔːrəti əv ˈɡæləksiz pəˈzes ˌsuːpərmæsɪv blæk hoʊlz/",
+        "text": "Researchers analyzed a randomized demographic sample of two thousand high school respondents.",
+        "en": "Researchers analyzed a randomized demographic sample of two thousand high school respondents.",
+        "vi": "Các nhà nghiên cứu đã phân tích một mẫu nhân khẩu học ngẫu nhiên gồm hai nghìn người trả lời ở trường trung học phổ thông.",
+        "ipa": "/ˈriːsɜːrtʃərz ˈænəlaɪzd ə ˈrændəmaɪzd ˌdeməˈɡræfɪk ˈsæmpəl əv tuː ˈθaʊzənd haɪ skuːl rɪˈspɑːndənts/",
         "words": [
-          "A",
-          "comprehensive",
-          "observational",
-          "survey",
-          "demonstrated",
-          "that",
-          "the",
-          "majority",
+          "Researchers",
+          "analyzed",
+          "a",
+          "randomized",
+          "demographic",
+          "sample",
           "of",
-          "galaxies",
-          "possess",
-          "supermassive",
-          "black",
-          "holes"
+          "two",
+          "thousand",
+          "high",
+          "school",
+          "respondents"
         ]
       },
       {
         "id": 5,
-        "text": "Astronomers analyze statistical data to determine the elemental population distribution across galaxies.",
-        "en": "Astronomers analyze statistical data to determine the elemental population distribution across galaxies.",
-        "vi": "Các nhà thiên văn học phân tích dữ liệu thống kê để xác định sự phân bố quần thể nguyên tố trên khắp các thiên hà.",
-        "ipa": "/əˈstrɑːnəmərz ˈænəlaɪz stəˈtɪstɪkəl ˈdeɪtə tuː dɪˈtɜːrmɪn ði ˌelɪˈmentl ˌpɑːpjuˈleɪʃən ˌdɪstrɪˈbjuːʃən əˈkrɔːs ˈɡæləksiz/",
+        "text": "Empirical evidence transforms subjective personal assertions into credible scholarly arguments.",
+        "en": "Empirical evidence transforms subjective personal assertions into credible scholarly arguments.",
+        "vi": "Bằng chứng thực nghiệm biến các khẳng định cá nhân chủ quan thành các lập luận học thuật đáng tin cậy.",
+        "ipa": "/ɪmˈpɪrɪkəl ˈevɪdəns trænsˈfɔːrmz səbˈdʒektɪv ˈpɜːrsənəl əˈsɜːrʃənz ˈɪntuː ˈkredəbəl ˈskɑːlərli ˈɑːrɡjəmənts/",
         "words": [
-          "Astronomers",
-          "analyze",
-          "statistical",
-          "data",
-          "to",
-          "determine",
-          "the",
-          "elemental",
-          "population",
-          "distribution",
-          "across",
-          "galaxies"
+          "Empirical",
+          "evidence",
+          "transforms",
+          "subjective",
+          "personal",
+          "assertions",
+          "into",
+          "credible",
+          "scholarly",
+          "arguments"
         ]
       },
       {
         "id": 6,
-        "text": "Intense X-ray radiation escapes from the swirling accretion disk surrounding the singularity.",
-        "en": "Intense X-ray radiation escapes from the swirling accretion disk surrounding the singularity.",
-        "vi": "Bức xạ tia X cường độ cao thoát ra từ đĩa bồi tụ xoáy xung quanh điểm kỳ dị.",
-        "ipa": "/ɪnˈtens ˈeks reɪ ˌreɪdiˈeɪʃən ɪˈskeɪps frəm ðə ˈswɜːrlɪŋ əˈkriːʃən dɪsk səˈraʊndɪŋ ðə ˌsɪŋɡjəˈlærəti/",
+        "text": "Data reveals a moderate correlation between excessive midnight gaming and morning fatigue.",
+        "en": "Data reveals a moderate correlation between excessive midnight gaming and morning fatigue.",
+        "vi": "Dữ liệu tiết lộ mối tương quan vừa phải giữa việc chơi game khuya quá mức và sự mệt mỏi vào buổi sáng.",
+        "ipa": "/ˈdeɪtə rɪˈviːlz ə ˈmɑːdərət ˌkɔːrəˈleɪʃən bɪˈtwiːn ɪkˈsesɪv ˈmɪdnaɪt ˈɡeɪmɪŋ ænd ˈmɔːrnɪŋ fəˈtiːɡ/",
         "words": [
-          "Intense",
-          "X-ray",
-          "radiation",
-          "escapes",
-          "from",
-          "the",
-          "swirling",
-          "accretion",
-          "disk",
-          "surrounding",
-          "the",
-          "singularity"
+          "Data",
+          "reveals",
+          "a",
+          "moderate",
+          "correlation",
+          "between",
+          "excessive",
+          "midnight",
+          "gaming",
+          "and",
+          "morning",
+          "fatigue"
         ]
       },
       {
         "id": 7,
-        "text": "Light from the distant supernova traveled across seven billion light-years to reach our telescopes.",
-        "en": "Light from the distant supernova traveled across seven billion light-years to reach our telescopes.",
-        "vi": "Ánh sáng từ siêu tân tinh xa xôi đã di chuyển qua bảy tỷ năm ánh sáng để tới được kính thiên văn của chúng ta.",
-        "ipa": "/laɪt frəm ðə ˈdɪstənt ˌsuːpərˈnoʊvə ˈtrævəld əˈkrɔːs ˈsevən ˈbɪljən ˈlaɪt jɪrz tuː riːtʃ ˈaʊər ˈtelɪskoʊps/",
+        "text": "Publishing the exact methodology ensures that scientific findings can be independently replicated.",
+        "en": "Publishing the exact methodology ensures that scientific findings can be independently replicated.",
+        "vi": "Công bố phương pháp luận chính xác đảm bảo rằng các phát hiện khoa học có thể được lặp lại một cách độc lập.",
+        "ipa": "/ˈpʌblɪʃɪŋ ði ɪɡˈzækt ˌmeθəˈdɑːlədʒi ɪnˈʃʊrz ðæt ˌsaɪənˈtɪfɪk ˈfaɪndɪŋz kæn bi ˌɪndɪˈpendəntli ˈreplɪkeɪtɪd/",
         "words": [
-          "Light",
-          "from",
+          "Publishing",
           "the",
-          "distant",
-          "supernova",
-          "traveled",
-          "across",
-          "seven",
-          "billion",
-          "light-years",
-          "to",
-          "reach",
-          "our",
-          "telescopes"
+          "exact",
+          "methodology",
+          "ensures",
+          "that",
+          "scientific",
+          "findings",
+          "can",
+          "be",
+          "independently",
+          "replicated"
         ]
       },
       {
         "id": 8,
-        "text": "Gravitational lensing observations provide compelling proof that invisible dark matter dominates the cosmos.",
-        "en": "Gravitational lensing observations provide compelling proof that invisible dark matter dominates the cosmos.",
-        "vi": "Những quan sát thấu kính hấp dẫn cung cấp bằng chứng thuyết phục rằng vật chất tối vô hình chiếm ưu thế trong vũ trụ.",
-        "ipa": "/ˌɡrævɪˈteɪʃənl ˈlenzɪŋ ˌɑːbzərˈveɪʃənz prəˈvaɪd kəmˈpelɪŋ pruːf ðæt ɪnˈvɪzəbəl dɑːrk ˈmætər ˈdɑːmɪneɪts ðə ˈkɑːzmoʊs/",
+        "text": "Rigorous data analysis equips students to evaluate public health claims with precision.",
+        "en": "Rigorous data analysis equips students to evaluate public health claims with precision.",
+        "vi": "Phân tích dữ liệu nghiêm ngặt trang bị cho học sinh khả năng đánh giá các khẳng định sức khỏe cộng đồng một cách chính xác.",
+        "ipa": "/ˈrɪɡərəs ˈdeɪtə əˈnæləsɪs ɪˈkwɪps ˈstuːdənts tuː ɪˈvæljueɪt ˈpʌblɪk helθ kleɪmz wɪð prɪˈsɪʒən/",
         "words": [
-          "Gravitational",
-          "lensing",
-          "observations",
-          "provide",
-          "compelling",
-          "proof",
-          "that",
-          "invisible",
-          "dark",
-          "matter",
-          "dominates",
-          "the",
-          "cosmos"
+          "Rigorous",
+          "data",
+          "analysis",
+          "equips",
+          "students",
+          "to",
+          "evaluate",
+          "public",
+          "health",
+          "claims",
+          "with",
+          "precision"
         ]
       }
     ]
   },
   "rw_part1": {
     "word_bank": [
-      "astrophysics",
-      "galaxy",
-      "gravity",
-      "singularity",
-      "orbit",
-      "telescope",
-      "data",
       "statistic",
       "percent",
       "study",
+      "data",
       "majority",
       "minority",
       "survey",
       "population",
-      "cosmic",
-      "light-year",
-      "spectrum",
-      "radiation",
-      "relativity",
-      "phenomenon"
+      "sample",
+      "quantitative",
+      "methodology",
+      "findings",
+      "correlation",
+      "variable",
+      "analyze",
+      "respondent",
+      "metric",
+      "empirical",
+      "hypothesis",
+      "frequency"
     ],
     "definitions": [
       {
         "id": 1,
-        "definition_en": "The branch of physics that investigates the physical properties of stars and space.",
-        "options": [
-          "astrophysics",
-          "gravity",
-          "relativity"
-        ],
-        "answer": "astrophysics"
+        "text": "A numerical fact or datum computed from a structured sample study.",
+        "target": "statistic"
       },
       {
         "id": 2,
-        "definition_en": "A massive gravitational cosmic system comprising billions of stars, dust, and gas.",
-        "options": [
-          "galaxy",
-          "orbit",
-          "telescope"
-        ],
-        "answer": "galaxy"
+        "text": "A formal research investigation of opinions from a representative sample.",
+        "target": "survey"
       },
       {
         "id": 3,
-        "definition_en": "The fundamental force causing matter to attract other matter through spacetime curvature.",
-        "options": [
-          "gravity",
-          "radiation",
-          "salinity"
-        ],
-        "answer": "gravity"
+        "text": "The greater number or proportion; representing more than half of a total.",
+        "target": "majority"
       },
       {
         "id": 4,
-        "definition_en": "A theoretical infinite-density point in spacetime at the center of a black hole.",
-        "options": [
-          "singularity",
-          "spectrum",
-          "light-year"
-        ],
-        "answer": "singularity"
+        "text": "The smaller number or proportion; representing less than half of a group.",
+        "target": "minority"
       },
       {
         "id": 5,
-        "definition_en": "The elliptical gravitational trajectory of a satellite or planet around a star.",
-        "options": [
-          "orbit",
-          "phenomenon",
-          "survey"
-        ],
-        "answer": "orbit"
-      },
-      {
-        "id": 6,
-        "definition_en": "An astronomical unit representing the distance traversed by light in one year.",
-        "options": [
-          "light-year",
-          "percent",
-          "statistic"
-        ],
-        "answer": "light-year"
-      },
-      {
-        "id": 7,
-        "definition_en": "A systematic investigation mapping celestial bodies across a large sector of sky.",
-        "options": [
-          "survey",
-          "study",
-          "population"
-        ],
-        "answer": "survey"
-      },
-      {
-        "id": 8,
-        "definition_en": "A specific group or generation of stars sharing age and chemical composition.",
-        "options": [
-          "population",
-          "majority",
-          "minority"
-        ],
-        "answer": "population"
-      },
-      {
-        "id": 9,
-        "definition_en": "Einstein's theory explaining gravity as geometric spacetime curvature.",
-        "options": [
-          "relativity",
-          "astrophysics",
-          "gravity"
-        ],
-        "answer": "relativity"
-      },
-      {
-        "id": 10,
-        "definition_en": "An extraordinary observable event in the physical universe.",
-        "options": [
-          "phenomenon",
-          "singularity",
-          "galaxy"
-        ],
-        "answer": "phenomenon"
+        "text": "A ratio or proportion expressed as a fraction of one hundred.",
+        "target": "percent"
       }
     ]
   },
   "rw_part2": {
-    "topic": "Gravitational Waves and Black Hole Physics",
+    "title": "Evaluating Quantitative Evidence in a Research Project",
     "turns": [
       {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "Zoe, look at this interferometer waveform! Could it have come from an ordinary neutron star?",
+        "id": 1,
+        "speaker": "Ethan",
+        "prompt": "Hannah, why is citing 'According to a study by...' better than saying 'Everyone knows that'?",
         "options": [
-          "No, the wave amplitude is so immense that it must have originated from colliding black holes.",
-          "I usually catch the underground metro train at quarter to eight.",
-          "The museum shop sells vintage postcards and ceramic souvenirs."
+          "It attributes data to a credible scientific source that listeners can independently verify.",
+          "It makes sentences exactly twelve words longer.",
+          "It guarantees that judges will not listen to your speech."
         ],
-        "answer": "No, the wave amplitude is so immense that it must have originated from colliding black holes."
+        "answer": "It attributes data to a credible scientific source that listeners can independently verify."
       },
       {
-        "speaker": "Zoe",
-        "text": "Can the central singularity of a black hole ever be observed with an optical telescope?",
+        "id": 2,
+        "speaker": "Ethan",
+        "prompt": "What did the research data show regarding the seventy-percent gaming statistic?",
         "options": [
-          "It cannot be seen directly because gravity prevents all light from escaping past the event horizon.",
-          "My sister enjoys hiking through coastal pine forests on weekends.",
-          "No, the restaurant ran out of fresh vegetable pasta soup today."
+          "Seventy percent of middle school students play games weekly, predominantly cooperative titles.",
+          "Seventy percent of computers break down every morning.",
+          "Only teachers are allowed to play video games."
         ],
-        "answer": "It cannot be seen directly because gravity prevents all light from escaping past the event horizon."
+        "answer": "Seventy percent of middle school students play games weekly, predominantly cooperative titles."
       },
       {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "What did our sky survey statistics show about the population of supermassive black holes?",
+        "id": 3,
+        "speaker": "Ethan",
+        "prompt": "Why is the distinction between a majority and a minority important in reporting?",
         "options": [
-          "The survey proved that the vast majority of large galaxies harbor central supermassive black holes.",
-          "We played an enjoyable match of tennis in the city park.",
-          "The morning train was ten minutes late due to track maintenance."
+          "It prevents generalizations by showing that problematic habits affect only a small minority.",
+          "It allows researchers to ignore numbers completely.",
+          "It proves that all students have identical daily schedules."
         ],
-        "answer": "The survey proved that the vast majority of large galaxies harbor central supermassive black holes."
+        "answer": "It prevents generalizations by showing that problematic habits affect only a small minority."
       },
       {
-        "speaker": "Zoe",
-        "text": "How far away was the galaxy where this cosmic merger took place?",
+        "id": 4,
+        "speaker": "Ethan",
+        "prompt": "What does a statistical correlation between two variables actually tell us?",
         "options": [
-          "Spectroscopic redshift data indicates it must have occurred over one billion light-years away.",
-          "I forgot to return my mathematics workbook to the library locker.",
-          "There are twenty-eight windows facing the street in this apartment."
+          "It reveals a mutual connection between variables, though one does not necessarily cause the other.",
+          "It proves that the second variable was invented by magicians.",
+          "It means both variables are completely false."
         ],
-        "answer": "Spectroscopic redshift data indicates it must have occurred over one billion light-years away."
+        "answer": "It reveals a mutual connection between variables, though one does not necessarily cause the other."
       },
       {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "Shall we finalize our observational study and submit it to the astrophysics journal today?",
+        "id": 5,
+        "speaker": "Ethan",
+        "prompt": "How does deep research transform student writing into credible scholarship?",
         "options": [
-          "Yes, let's submit our paper so astronomers worldwide can verify the gravitational discovery.",
-          "I prefer having green tea with lemon rather than iced mineral water.",
-          "The design conference was held on the top floor of the convention center."
+          "It replaces unsubstantiated personal claims with verifiable empirical facts and rigorous metrics.",
+          "It eliminates the need for grammar and punctuation.",
+          "It turns research papers into fictional fairy tales."
         ],
-        "answer": "Yes, let's submit our paper so astronomers worldwide can verify the gravitational discovery."
-      }
-    ],
-    "exchanges": [
-      {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "Zoe, look at this interferometer waveform! Could it have come from an ordinary neutron star?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "No, the wave amplitude is so immense that it must have originated from colliding black holes."
-      },
-      {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "Can the central singularity of a black hole ever be observed with an optical telescope?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "It cannot be seen directly because gravity prevents all light from escaping past the event horizon."
-      },
-      {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "What did our sky survey statistics show about the population of supermassive black holes?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "The survey proved that the vast majority of large galaxies harbor central supermassive black holes."
-      },
-      {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "How far away was the galaxy where this cosmic merger took place?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "Spectroscopic redshift data indicates it must have occurred over one billion light-years away."
-      },
-      {
-        "speaker": "Dr. Sagan-Smith",
-        "text": "Shall we finalize our observational study and submit it to the astrophysics journal today?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "Yes, let's submit our paper so astronomers worldwide can verify the gravitational discovery."
+        "answer": "It replaces unsubstantiated personal claims with verifiable empirical facts and rigorous metrics."
       }
     ]
   },
   "rw_part6": {
-    "title": "Zoe Vance's Observatory Log: Black Hole Collision",
-    "instructions": "Read the diary and write the missing words. Write one word on each line.",
-    "text_template": "Dear Log, today Dr. Sagan-Smith and I analyzed [1]_____ gravitational wave detection. The signal must [2]_____ originated from two merging black holes. Einstein's general relativity explains gravity [3]_____ the curvature of spacetime. Our statistical survey confirmed that the majority [4]_____ galaxies possess central singularities. Tomorrow, we will present our findings [5]_____ the international astronomical union.",
+    "instructions": "Read the text about quantitative research and choose the correct function word for each blank space.",
+    "text_template": "In academic research, scholars rely [1] quantitative data to support empirical claims. According [2] a landmark study of adolescent habits, seventy percent of students play video games weekly. Survey data shows that a substantial majority [3] players enjoy cooperative games. Furthermore, statistics reveal that only a small minority [4] students experience sleep disruption. By citing verified metrics, researchers provide credible proof [5] their audience.",
     "answers": {
-      "1": "the",
-      "2": "have",
-      "3": "as",
+      "1": "on",
+      "2": "to",
+      "3": "of",
       "4": "of",
-      "5": "to"
+      "5": "for"
     }
   }
 };

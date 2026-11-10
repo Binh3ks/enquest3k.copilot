@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Target Vocabulary & SRS Metadata
- * Week: 126 | Theme: "Advanced Robotics & Artificial Intelligence Ethics" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.309Z
+ * Week: 126 | Theme: "From Essay to Speech" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.442Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,203 +10,203 @@
 export const vocab = [
   {
     "id": 1,
-    "word": "robotics",
-    "pos": "n",
-    "ipa": "/roʊˈbɑːtɪks/",
-    "definition_en": "The branch of technology dealing with design, construction, and operation of robots",
-    "definition_vi": "ngành người máy, kỹ thuật robot",
-    "example_en": "Advanced robotics has transformed precision surgery in modern hospitals.",
-    "example_vi": "Kỹ thuật robot tiên tiến đã biến đổi phẫu thuật chính xác tại các bệnh viện hiện đại."
+    "word": "signpost",
+    "pos": "v",
+    "ipa": "/ˈsaɪnpoʊst/",
+    "definition_en": "To provide clear verbal indicators that guide an audience through a presentation",
+    "definition_vi": "dùng lời chỉ dẫn hướng / định hướng người nghe",
+    "example_en": "Skilled speakers signpost their major points so listeners follow the presentation structure.",
+    "example_vi": "Các diễn giả lành nghề định hướng các luận điểm chính để người nghe theo kịp cấu trúc bài thuyết trình."
   },
   {
     "id": 2,
-    "word": "algorithm",
+    "word": "cue",
     "pos": "n",
-    "ipa": "/ˈælɡərɪðəm/",
-    "definition_en": "A process or set of mathematical rules to be followed in calculations or problem-solving",
-    "definition_vi": "thuật toán",
-    "example_en": "The navigation algorithm calculates the fastest autonomous delivery route.",
-    "example_vi": "Thuật toán định vị tính toán tuyến đường giao hàng tự hành nhanh nhất."
+    "ipa": "/kjuː/",
+    "definition_en": "A brief prompt or reminder note used to guide a speaker on stage",
+    "definition_vi": "thẻ gợi ý / lời gợi ý",
+    "example_en": "She wrote bullet points on pocket-sized cue cards to remember key transition phrases.",
+    "example_vi": "Cô ấy viết các gạch đầu dòng lên thẻ gợi ý bỏ túi để ghi nhớ các cụm từ chuyển ý quan trọng."
   },
   {
     "id": 3,
-    "word": "ethics",
+    "word": "transition",
     "pos": "n",
-    "ipa": "/ˈeθɪks/",
-    "definition_en": "Moral principles that govern a person's or organization's behavior",
-    "definition_vi": "đạo đức học, chuẩn mực đạo đức",
-    "example_en": "Engineers must consider professional ethics when designing autonomous systems.",
-    "example_vi": "Các kỹ sư phải cân nhắc đạo đức nghề nghiệp khi thiết kế các hệ thống tự hành."
+    "ipa": "/trænˈzɪʃən/",
+    "definition_en": "The process or a period of changing smoothly from one topic to another",
+    "definition_vi": "sự chuyển tiếp / bước chuyển",
+    "example_en": "The transition between the historical context and the current data was remarkably smooth.",
+    "example_vi": "Bước chuyển giữa bối cảnh lịch sử và dữ liệu hiện tại diễn ra rất mượt mà."
   },
   {
     "id": 4,
-    "word": "autonomous",
-    "pos": "adj",
-    "ipa": "/ɔːˈtɑːnəməs/",
-    "definition_en": "Operating independently without human intervention",
-    "definition_vi": "tự hành, tự chủ",
-    "example_en": "Autonomous rovers navigate rough terrain across desert landscapes.",
-    "example_vi": "Xe tự hành di chuyển qua địa hình gồ ghề khắp các vùng cảnh quan sa mạc."
+    "word": "rhetoric",
+    "pos": "n",
+    "ipa": "/ˈretərɪk/",
+    "definition_en": "The art of effective or persuasive speaking or writing",
+    "definition_vi": "nghệ thuật tu từ / tài hùng biện",
+    "example_en": "Classical rhetoric teaches speakers how to balance logical evidence with vocal emotion.",
+    "example_vi": "Thuật tu từ cổ điển dạy người nói cách cân bằng bằng chứng logic với cảm xúc giọng nói."
   },
   {
     "id": 5,
-    "word": "automation",
+    "word": "delivery",
     "pos": "n",
-    "ipa": "/ˌɔːtəˈmeɪʃən/",
-    "definition_en": "The use of largely automatic equipment in a facility or process",
-    "definition_vi": "sự tự động hóa",
-    "example_en": "Factory automation increases productivity while reducing human physical strain.",
-    "example_vi": "Tự động hóa nhà máy tăng năng suất đồng thời giảm bớt căng thẳng thể chất cho con người."
+    "ipa": "/dɪˈlɪvəri/",
+    "definition_en": "The manner or vocal style in which a speech or presentation is spoken",
+    "definition_vi": "phong cách diễn thuyết / cách trình bày",
+    "example_en": "His energetic delivery kept the auditorium audience engaged throughout the lecture.",
+    "example_vi": "Phong cách diễn thuyết tràn đầy năng lượng của anh ấy giữ cho khán giả hội trường chăm chú suốt bài giảng."
   },
   {
     "id": 6,
-    "word": "bias",
-    "pos": "n",
-    "ipa": "/ˈbaɪəs/",
-    "definition_en": "Prejudice in favor of or against one thing or group compared with another",
-    "definition_vi": "sự thiên vị, định kiến",
-    "example_en": "Data scientists audit training sets to prevent algorithmic bias.",
-    "example_vi": "Các nhà khoa học dữ liệu kiểm toán các tập dữ liệu huấn luyện để ngăn ngừa định kiến thuật toán."
+    "word": "articulate",
+    "pos": "v",
+    "ipa": "/ɑːrˈtɪkjəleɪt/",
+    "definition_en": "To express an idea or feeling fluently and coherently aloud",
+    "definition_vi": "diễn đạt rõ ràng / phát âm rành mạch",
+    "example_en": "Debaters must articulate complex ethical principles clearly under strict time limits.",
+    "example_vi": "Các tranh biện viên phải diễn đạt rõ ràng các nguyên tắc đạo đức phức tạp trong giới hạn thời gian nghiêm ngặt."
   },
   {
     "id": 7,
-    "word": "transparency",
+    "word": "outline",
     "pos": "n",
-    "ipa": "/trænsˈpærənsi/",
-    "definition_en": "The condition of being open, clear, and easily examined",
-    "definition_vi": "tính minh bạch",
-    "example_en": "System transparency allows regulators to review machine decision processes.",
-    "example_vi": "Tính minh bạch của hệ thống cho phép các cơ quan quản lý xem xét quy trình ra quyết định của máy móc."
+    "ipa": "/ˈaʊtlaɪn/",
+    "definition_en": "A general sketch or framework giving the essential features of a speech",
+    "definition_vi": "dàn ý / đề cương",
+    "example_en": "Prepare an outline before transferring full essay paragraphs onto speaker cards.",
+    "example_vi": "Hãy chuẩn bị một dàn ý trước khi chuyển toàn bộ các đoạn văn thành thẻ ghi chú."
   },
   {
     "id": 8,
-    "word": "accountability",
+    "word": "audience",
     "pos": "n",
-    "ipa": "/əˌkaʊntəˈbɪləti/",
-    "definition_en": "The fact or condition of being accountable; responsibility",
-    "definition_vi": "trách nhiệm giải trình",
-    "example_en": "Legal accountability remains essential when autonomous software makes critical errors.",
-    "example_vi": "Trách nhiệm giải trình pháp lý vẫn là điều thiết yếu khi phần mềm tự hành gây ra lỗi nghiêm trọng."
+    "ipa": "/ˈɔːdiəns/",
+    "definition_en": "The assembled spectators or listeners at a public performance or lecture",
+    "definition_vi": "khán giả / thính giả",
+    "example_en": "Maintain consistent eye contact with your audience across all sections of the hall.",
+    "example_vi": "Hãy duy trì giao tiếp bằng mắt nhất quán với khán giả của bạn trên khắp các khu vực của khán phòng."
   },
   {
     "id": 9,
-    "word": "sensor",
+    "word": "gesture",
     "pos": "n",
-    "ipa": "/ˈsensər/",
-    "definition_en": "A device that detects or measures a physical property and records it",
-    "definition_vi": "cảm biến",
-    "example_en": "Infrared sensors detect approaching obstacles in complete darkness.",
-    "example_vi": "Cảm biến hồng ngoại phát hiện các chướng ngại vật đang tới gần trong bóng tối hoàn toàn."
+    "ipa": "/ˈdʒestʃər/",
+    "definition_en": "A movement of hands or body to emphasize an idea or feeling",
+    "definition_vi": "cử chỉ / điệu bộ",
+    "example_en": "Natural hand gestures reinforce verbal emphasis during oral presentations.",
+    "example_vi": "Cử chỉ tay tự nhiên củng cố sự nhấn mạnh bằng lời nói trong các bài thuyết trình."
   },
   {
     "id": 10,
-    "word": "humanoid",
-    "pos": "adj",
-    "ipa": "/ˈhjuːmənɔɪd/",
-    "definition_en": "Having an appearance or character resembling that of a human",
-    "definition_vi": "dạng người, hình người",
-    "example_en": "The humanoid assistant greeted visitors at the university research lab.",
-    "example_vi": "Người máy trợ lý dạng người đã chào đón khách tham quan tại phòng thí nghiệm nghiên cứu của trường đại học."
+    "word": "pacing",
+    "pos": "n",
+    "ipa": "/ˈpeɪsɪŋ/",
+    "definition_en": "The speed and tempo at which an oral speech or presentation progresses",
+    "definition_vi": "nhịp độ nói / tốc độ nói",
+    "example_en": "Deliberate pacing allows listeners sufficient time to absorb difficult technical ideas.",
+    "example_vi": "Nhịp độ nói thận trọng cho phép người nghe có đủ thời gian để tiếp thu các ý tưởng kỹ thuật khó."
   },
   {
     "id": 11,
-    "word": "neural network",
+    "word": "emphasis",
     "pos": "n",
-    "ipa": "/ˈnʊrəl ˈnetwɜːrk/",
-    "definition_en": "A computer system modeled on the human brain and nervous system",
-    "definition_vi": "mạng nơ-ron",
-    "example_en": "A deep neural network analyzes thousands of medical scans in seconds.",
-    "example_vi": "Mạng nơ-ron sâu phân tích hàng ngàn hình ảnh chụp y tế chỉ trong vài giây."
+    "ipa": "/ˈemfəsɪs/",
+    "definition_en": "Special importance, value, or vocal stress given to something",
+    "definition_vi": "sự nhấn mạnh / trọng âm ngữ điệu",
+    "example_en": "Place vocal emphasis on the contrastive connectors to highlight opposing viewpoints.",
+    "example_vi": "Hãy đặt trọng âm ngữ điệu vào các từ nối tương phản để làm nổi bật các quan điểm đối lập."
   },
   {
     "id": 12,
-    "word": "regulation",
-    "pos": "n",
-    "ipa": "/ˌreɡjuˈleɪʃən/",
-    "definition_en": "A rule or directive made and maintained by an authority",
-    "definition_vi": "quy định, quy chế",
-    "example_en": "International regulations establish clear safety thresholds for commercial robotics.",
-    "example_vi": "Các quy định quốc tế thiết lập các ngưỡng an toàn rõ ràng cho robot thương mại."
+    "word": "rehearse",
+    "pos": "v",
+    "ipa": "/rɪˈhɜːrs/",
+    "definition_en": "To practice a speech or performance before presenting it publicly",
+    "definition_vi": "luyện tập / diễn tập",
+    "example_en": "Students rehearse their five-minute speeches with a timer to refine pacing.",
+    "example_vi": "Học sinh luyện tập các bài nói năm phút của mình với đồng hồ bấm giờ để tinh chỉnh nhịp độ."
   },
   {
     "id": 13,
-    "word": "framework",
+    "word": "intonation",
     "pos": "n",
-    "ipa": "/ˈfreɪmwɜːrk/",
-    "definition_en": "A basic structure underlying a system, concept, or text",
-    "definition_vi": "khung cơ chế, khuôn khổ",
-    "example_en": "The committee published a comprehensive ethical framework for technology firms.",
-    "example_vi": "Ủy ban đã công bố một khuôn khổ đạo đức toàn diện cho các công ty công nghệ."
+    "ipa": "/ˌɪntəˈneɪʃən/",
+    "definition_en": "The rise and fall of voice pitch when speaking",
+    "definition_vi": "ngữ điệu giọng nói",
+    "example_en": "Varying your intonation prevents speeches from sounding monotonous and flat.",
+    "example_vi": "Thay đổi ngữ điệu của bạn giúp bài phát biểu không bị đơn điệu và bằng phẳng."
   },
   {
     "id": 14,
-    "word": "dilemma",
-    "pos": "n",
-    "ipa": "/dɪˈlemə/",
-    "definition_en": "A situation in which a difficult choice has to be made between two alternatives",
-    "definition_vi": "tình thế tiến thoái lưỡng nan",
-    "example_en": "Self-driving cars face moral dilemmas during unavoidable traffic collisions.",
-    "example_vi": "Ô tô tự lái đối mặt với những tình thế lưỡng nan về đạo đức trong những vụ va chạm giao thông không thể tránh khỏi."
+    "word": "verbal",
+    "pos": "adj",
+    "ipa": "/ˈvɜːrbəl/",
+    "definition_en": "Relating to or in the form of words spoken aloud",
+    "definition_vi": "bằng lời nói / thuộc về ngôn từ",
+    "example_en": "Verbal cues such as 'furthermore' signal that an additional argument is coming.",
+    "example_vi": "Các dấu hiệu bằng lời nói như 'hơn nữa' báo hiệu rằng một lập luận bổ sung sắp được đưa ra."
   },
   {
     "id": 15,
-    "word": "safeguard",
+    "word": "projection",
     "pos": "n",
-    "ipa": "/ˈseɪfɡɑːrd/",
-    "definition_en": "A measure taken to protect someone or something or to prevent failure",
-    "definition_vi": "biện pháp bảo vệ, cơ chế phòng ngừa",
-    "example_en": "Strict digital safeguards prevent unauthorized override of robotic controls.",
-    "example_vi": "Các biện pháp bảo vệ kỹ thuật số nghiêm ngặt ngăn chặn việc can thiệp trái phép vào điều khiển robot."
+    "ipa": "/prəˈdʒekʃən/",
+    "definition_en": "The strength and volume of speaking to be heard clearly at a distance",
+    "definition_vi": "độ vang giọng / phóng âm",
+    "example_en": "Good vocal projection ensures that listeners in the back row hear every syllable.",
+    "example_vi": "Khả năng phóng âm tốt đảm bảo rằng người nghe ở hàng ghế sau cùng nghe rõ từng âm tiết."
   },
   {
     "id": 16,
-    "word": "innovation",
+    "word": "elocution",
     "pos": "n",
-    "ipa": "/ˌɪnəˈveɪʃən/",
-    "definition_en": "A new method, idea, or product",
-    "definition_vi": "sự đổi mới, sáng kiến",
-    "example_en": "Robotic innovation enhances emergency rescue operations in disaster zones.",
-    "example_vi": "Đổi mới robot tăng cường các hoạt động cứu hộ khẩn cấp tại các khu vực thảm họa."
+    "ipa": "/ˌeləˈkjuːʃən/",
+    "definition_en": "The skill of clear and expressive speech, especially of pronunciation",
+    "definition_vi": "nghệ thuật phát âm / thuật đọc diễn cảm",
+    "example_en": "Elocution training develops crisp consonant pronunciation and breath support.",
+    "example_vi": "Huấn luyện phát âm phát triển cách phát âm phụ âm rõ nét và khả năng làm chủ hơi thở."
   },
   {
     "id": 17,
-    "word": "surveillance",
+    "word": "summary",
     "pos": "n",
-    "ipa": "/sərˈveɪləns/",
-    "definition_en": "Close observation, especially of a suspected person or area",
-    "definition_vi": "sự giám sát",
-    "example_en": "Public debate centers on facial recognition surveillance in city centers.",
-    "example_vi": "Cuộc tranh luận của công chúng tập trung vào việc giám sát bằng nhận diện khuôn mặt tại các trung tâm thành phố."
+    "ipa": "/ˈsʌməri/",
+    "definition_en": "A brief statement reviewing the main points or findings of a speech",
+    "definition_vi": "phần tóm tắt / tổng kết",
+    "example_en": "Conclude your speech with a succinct summary of your three primary recommendations.",
+    "example_vi": "Hãy kết thúc bài phát biểu của bạn bằng một bản tóm tắt ngắn gọn về ba khuyến nghị chính."
   },
   {
     "id": 18,
-    "word": "simulation",
+    "word": "structure",
     "pos": "n",
-    "ipa": "/ˌsɪmjuˈleɪʃən/",
-    "definition_en": "The production of a computer model of something, especially for study",
-    "definition_vi": "mô phỏng",
-    "example_en": "Engineers run virtual simulations before testing the mechanical prototype.",
-    "example_vi": "Các kỹ sư chạy các mô phỏng ảo trước khi thử nghiệm nguyên mẫu cơ khí."
+    "ipa": "/ˈstrʌktʃər/",
+    "definition_en": "The organization or arrangement of components within a presentation",
+    "definition_vi": "cấu trúc bài diễn thuyết",
+    "example_en": "A three-part structure comprising introduction, body arguments, and conclusion clarifies intent.",
+    "example_vi": "Cấu trúc ba phần gồm mở đầu, thân bài và kết luận làm sáng tỏ mục đích của bài thuyết trình."
   },
   {
     "id": 19,
-    "word": "dataset",
+    "word": "keynote",
     "pos": "n",
-    "ipa": "/ˈdeɪtəset/",
-    "definition_en": "A collection of related sets of information composed of separate elements",
-    "definition_vi": "tập dữ liệu",
-    "example_en": "A balanced dataset ensures that image classifiers identify faces accurately.",
-    "example_vi": "Một tập dữ liệu cân bằng đảm bảo rằng các bộ phân loại hình ảnh nhận dạng khuôn mặt một cách chính xác."
+    "ipa": "/ˈkiːnoʊt/",
+    "definition_en": "The central theme or opening address that sets the tone for an event",
+    "definition_vi": "bài diễn văn chủ đề / ý tưởng cốt lõi",
+    "example_en": "Her keynote speech emphasized the ethical responsibilities of scientific researchers.",
+    "example_vi": "Bài diễn văn chủ đề của cô ấy nhấn mạnh trách nhiệm đạo đức của các nhà nghiên cứu khoa học."
   },
   {
     "id": 20,
-    "word": "precedent",
+    "word": "oratory",
     "pos": "n",
-    "ipa": "/ˈpresɪdənt/",
-    "definition_en": "An earlier event or action regarded as an example or guide",
-    "definition_vi": "tiền lệ",
-    "example_en": "The court verdict set a historic precedent for algorithmic accountability.",
-    "example_vi": "Phán quyết của tòa án đã thiết lập một tiền lệ lịch sử cho trách nhiệm giải trình của thuật toán."
+    "ipa": "/ˈɔːrətɔːri/",
+    "definition_en": "The formal practice or study of eloquent public address",
+    "definition_vi": "tài hùng biện / khoa diễn thuyết",
+    "example_en": "The school debate tournament celebrates outstanding student oratory and civic dialogue.",
+    "example_vi": "Giải đấu tranh biện của trường tôn vinh tài hùng biện xuất sắc của học sinh và sự đối thoại công dân."
   }
 ];
 export const vocabList = vocab;

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Speaking Hub & Talkshow/Info Exchange Cards
- * Week: 134 | Theme: "Economics & International Trade: Globalization" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.320Z
+ * Week: 134 | Theme: "Identifying Fallacies" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.456Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,144 +9,144 @@
 
 export const speakingHubData = {
   "week": 134,
-  "theme": "Economics & International Trade: Globalization",
+  "theme": "Identifying Fallacies",
   "cefr_level": "B2 First",
   "talkshow_prompt": {
-    "topic": "Debunking Protectionist Fallacies in Global Economics",
-    "question": "Dr. Vance, why is the popular assumption that trade deficits destroy national wealth considered an economic fallacy?",
-    "model_response": "The assumption that a trade deficit signifies economic failure is a widespread fallacy because it confuses accounting balances with economic health! A nation frequently imports more consumer and capital goods precisely because its domestic economy is booming and investment capital is pouring in from abroad. Whereas protectionist tariffs may offer fleeting benefits to select domestic lobbyists, they nevertheless penalize consumers and provoke retaliatory duties. Valid economic logic demonstrates that comparative advantage expands real living standards across trading partners."
+    "topic": "Detecting and Correcting Logical Fallacies in Public Debate",
+    "question": "Zoe, why is the hasty generalization fallacy so common, and how can debaters avoid committing it?",
+    "model_response": "The hasty generalization fallacy is tempting because human brains love shortcuts! When someone sees one or two lazy gamers, they jump to the lazy conclusion that 'all gamers are unmotivated.' But in formal academic debate, a single counterexample shatters an absolute 'all' or 'never' claim! Skilled debaters protect their credibility by using qualifiers like 'many', 'some', or 'tend to.' Qualifiers reflect real-world complexity and ensure arguments remain logically sound!"
   },
   "info_exchange_cards": {
     "table_a": {
-      "title": "Dr. Hannah Vance's Trade Logistics Analysis",
+      "title": "Zoe's Logic and Fallacy Workshop",
       "subtitle": "Candidate's Question Card (Ask Examiner)",
-      "person": "Hannah",
+      "person": "Zoe",
       "fields": [
         {
           "id": "field_a1",
-          "cue_prompt": "where / seaport hub located?",
+          "cue_prompt": "where / critical logic workshop held?",
           "cue_word": "where",
           "is_missing": true,
           "acceptable_questions": [
-            "Where is the seaport logistics hub located?",
-            "Where is the container terminal?",
-            "Where was the study conducted?"
+            "Where was the critical logic workshop held?",
+            "Where was the workshop held?",
+            "Where did Zoe attend the logic seminar?"
           ],
-          "nova_reply": "The deepwater container terminal is located at the Port of Rotterdam in the Netherlands."
+          "nova_reply": "In the philosophy seminar room at the central public library."
         },
         {
           "id": "field_a2",
-          "cue_prompt": "how many / containers processed annually?",
-          "cue_word": "how many",
+          "cue_prompt": "what / core fallacy analyzed this week?",
+          "cue_word": "what",
           "is_missing": true,
           "acceptable_questions": [
-            "How many containers are processed annually?",
-            "How many containers pass through?",
-            "What is the annual container volume?"
+            "What core fallacy was analyzed this week?",
+            "What was the fallacy analyzed?",
+            "What fallacy did they study?"
           ],
-          "nova_reply": "The terminal processes fourteen million twenty-foot equivalent container units each year."
+          "nova_reply": "The hasty generalization fallacy and false universal claims."
         },
         {
           "id": "field_a3",
-          "cue_prompt": "what tariff / reduction agreed?",
-          "cue_word": "what tariff",
+          "cue_prompt": "how many / media advertisements analyzed for bias?",
+          "cue_word": "how many",
           "is_missing": true,
           "acceptable_questions": [
-            "What tariff reduction was agreed in the accord?",
-            "What was the tariff reduction?",
-            "How much were tariffs reduced?"
+            "How many media advertisements were analyzed for bias?",
+            "How many ads were checked?",
+            "What was the number of ads analyzed?"
           ],
-          "nova_reply": "Member nations agreed to reduce industrial component tariffs by four point five percent."
+          "nova_reply": "Twenty-four print and television commercial advertisements."
         },
         {
           "id": "field_a4",
-          "cue_prompt": "why / trade deficit fears unfounded?",
-          "cue_word": "why",
+          "cue_prompt": "who / instructed the critical reasoning class?",
+          "cue_word": "who",
           "is_missing": true,
           "acceptable_questions": [
-            "Why are trade deficit fears unfounded?",
-            "Why is the deficit fear a fallacy?",
-            "Why are deficit fears invalid?"
+            "Who instructed the critical reasoning class?",
+            "Who was the logic professor?",
+            "Who taught the course?"
           ],
-          "nova_reply": "Because inward foreign capital investment completely balanced the current account deficit."
+          "nova_reply": "Professor Arthur Pendelton, senior fellow in formal epistemology."
         },
         {
           "id": "field_a5",
-          "cue_prompt": "when / treaty take effect?",
-          "cue_word": "when",
+          "cue_prompt": "why / universal absolute claims dangerous in debate?",
+          "cue_word": "why",
           "is_missing": true,
           "acceptable_questions": [
-            "When will the multilateral treaty take effect?",
-            "When does the accord begin?",
-            "When will the treaty start?"
+            "Why are universal absolute claims dangerous in debate?",
+            "Why avoid words like 'all' and 'never'?",
+            "Why are absolute claims risky?"
           ],
-          "nova_reply": "The multilateral free trade accord takes full statutory effect on January first of next year."
+          "nova_reply": "Because an opponent needs only one single counterexample to disprove the entire claim."
         }
       ]
     },
     "table_b": {
-      "title": "Oliver Sterling's Green Export Initiative",
+      "title": "Professor Pendelton's Logic Guide",
       "subtitle": "Information Card (Answer Examiner's Questions)",
-      "person": "Oliver",
+      "person": "Professor Pendelton",
       "fields": [
         {
           "id": "field_b1",
-          "cue_prompt": "where / export delegation based?",
+          "cue_prompt": "where / download the fallacy classification chart?",
           "cue_word": "where",
-          "value": "At the World Trade Center headquarters in Geneva, Switzerland.",
-          "nova_question": "Where is Oliver's green export initiative delegation based?",
+          "value": "From the collegiate logic consortium educational portal.",
+          "nova_question": "Where can students download the fallacy classification chart?",
           "acceptable_answers": [
-            "At the World Trade Center headquarters in Geneva, Switzerland.",
-            "In Geneva, Switzerland.",
-            "At the World Trade Center in Geneva."
+            "From the collegiate logic consortium educational portal.",
+            "From the logic consortium portal.",
+            "Collegiate logic consortium portal."
           ]
         },
         {
           "id": "field_b2",
-          "cue_prompt": "what technology / exported globally?",
-          "cue_word": "what technology",
-          "value": "Next-generation solid-state batteries and wind turbine composite blades.",
-          "nova_question": "What specific green technology does the initiative export globally?",
+          "cue_prompt": "what / three essential qualifiers recommended?",
+          "cue_word": "what",
+          "value": "'Some', 'frequently', and 'tend to' for empirical statements.",
+          "nova_question": "What three essential qualifiers are recommended?",
           "acceptable_answers": [
-            "Next-generation solid-state batteries and wind turbine composite blades.",
-            "Solid-state batteries and turbine blades.",
-            "Battery and wind turbine technology."
+            "'Some', 'frequently', and 'tend to' for empirical statements.",
+            "'Some', 'frequently', and 'tend to'.",
+            "Some, frequently, tend to."
           ]
         },
         {
           "id": "field_b3",
-          "cue_prompt": "how much / export volume grew?",
-          "cue_word": "how much",
-          "value": "Green technology export volume grew by twenty-eight percent over two fiscal quarters.",
-          "nova_question": "By how much did export volume increase during the initiative?",
+          "cue_prompt": "how / test whether an argument is logically sound?",
+          "cue_word": "how",
+          "value": "Verify that all premises are true and the deductive inference is valid.",
+          "nova_question": "How do philosophers test whether an argument is logically sound?",
           "acceptable_answers": [
-            "Green technology export volume grew by twenty-eight percent over two fiscal quarters.",
-            "By twenty-eight percent.",
-            "28 percent growth."
+            "Verify that all premises are true and the deductive inference is valid.",
+            "Verify true premises and valid inference.",
+            "Check premises and deductive validity."
           ]
         },
         {
           "id": "field_b4",
-          "cue_prompt": "why / transitional subsidies permitted?",
-          "cue_word": "why",
-          "value": "To allow nascent domestic clean industries to achieve economies of scale.",
-          "nova_question": "Why are temporary transitional subsidies permitted under the agreement?",
+          "cue_prompt": "who / formulated the classic rules of deductive syllogisms?",
+          "cue_word": "who",
+          "value": "Aristotle laid the foundational principles of deductive logic.",
+          "nova_question": "Who formulated the classic rules of deductive syllogisms?",
           "acceptable_answers": [
-            "To allow nascent domestic clean industries to achieve economies of scale.",
-            "To achieve economies of scale.",
-            "For clean industries to achieve economies of scale."
+            "Aristotle laid the foundational principles of deductive logic.",
+            "Aristotle.",
+            "Ancient philosopher Aristotle."
           ]
         },
         {
           "id": "field_b5",
-          "cue_prompt": "how many / nations signed accord?",
-          "cue_word": "how many",
-          "value": "Thirty-four sovereign trading nations signed the environmental goods agreement.",
-          "nova_question": "How many sovereign nations signed the final environmental goods agreement?",
+          "cue_prompt": "why / critical thinking essential for democratic citizens?",
+          "cue_word": "why",
+          "value": "To evaluate political arguments objectively and resist deceptive rhetoric.",
+          "nova_question": "Why is critical thinking essential for democratic citizens?",
           "acceptable_answers": [
-            "Thirty-four sovereign trading nations signed the environmental goods agreement.",
-            "Thirty-four nations.",
-            "34 sovereign trading nations."
+            "To evaluate political arguments objectively and resist deceptive rhetoric.",
+            "To evaluate arguments objectively and resist deception.",
+            "To resist deceptive rhetoric."
           ]
         }
       ]

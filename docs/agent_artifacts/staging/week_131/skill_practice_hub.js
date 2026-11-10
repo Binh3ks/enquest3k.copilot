@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 131 | Theme: "Genetics & Biotechnology: Modern Agriculture" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.316Z
+ * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.453Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,182 +9,182 @@
 
 export const skillPracticeHubData = {
   "week": 131,
-  "theme": "Genetics & Biotechnology: Modern Agriculture",
+  "theme": "Opinion Project 3: Persuasive Techniques",
   "cefr_level": "B2 First",
   "grammar_drills": [
     {
-      "sentence": "Drought-resistant crops, which researchers developed, yield more grain.",
+      "sentence": "Not only does digital moderation protect sleep, but it also improves attention.",
       "options": [
-        "which",
-        "who",
-        "where"
+        "does digital moderation protect",
+        "digital moderation protects",
+        "did digital moderation protected"
       ],
-      "answer": "which",
-      "explanation": "Non-defining relative clause modifying a thing ('Drought-resistant crops') requires relative pronoun 'which'."
+      "answer": "does digital moderation protect",
+      "explanation": "After the negative or limiting expression 'Not only...', invert the auxiliary verb and subject: 'does digital moderation protect'."
     },
     {
-      "sentence": "Farmers whose fields suffer from salinity welcomed the new seeds.",
+      "sentence": "By uniting emotion and logic, the speaker convinced skeptical listeners.",
       "options": [
-        "whose",
-        "whom",
-        "which"
+        "convinced",
+        "convince",
+        "convincing"
       ],
-      "answer": "whose",
-      "explanation": "Relative possessive pronoun 'whose' indicates ownership ('whose fields')."
+      "answer": "convinced",
+      "explanation": "Use past simple 'convinced' to describe completed persuasive action."
     },
     {
-      "sentence": "The laboratory where the genome was sequenced is world-renowned.",
+      "sentence": "The speech was both articulate and deeply moving to the audience.",
       "options": [
-        "where",
-        "which",
-        "when"
+        "both",
+        "either",
+        "neither"
       ],
-      "answer": "where",
-      "explanation": "Relative adverb 'where' introduces a relative clause describing a physical place ('The laboratory')."
+      "answer": "both",
+      "explanation": "Use 'both... and...' to join two parallel positive adjectives."
     },
     {
-      "sentence": "Wild grass varieties provide traits that breeders need for resistance.",
+      "sentence": "Varying vocal cadence reinforces the emotional weight of key phrases.",
       "options": [
-        "that",
-        "who",
-        "whom"
+        "reinforces",
+        "reinforce",
+        "reinforcing"
       ],
-      "answer": "that",
-      "explanation": "Defining relative pronoun 'that' refers to things ('traits')."
+      "answer": "reinforces",
+      "explanation": "The singular gerund subject 'Varying vocal cadence' takes the singular verb 'reinforces'."
     },
     {
-      "sentence": "Agronomists who study plant genetics develop sustainable crop solutions.",
+      "sentence": "Ethos establishes personal credibility through consistent moral integrity.",
       "options": [
-        "who",
-        "which",
-        "whose"
+        "through",
+        "with of",
+        "across to"
       ],
-      "answer": "who",
-      "explanation": "Defining relative pronoun 'who' refers to people ('Agronomists')."
+      "answer": "through",
+      "explanation": "Use 'through' to denote the means or agency by which credibility is established."
     }
   ],
   "singapore_math": [
     {
       "id": "w131_p1",
       "type": "part_whole",
-      "title": "Seed Bank Trait Preservation Registry",
-      "question": "A conservation seed bank preserves 520 wild drought-resistant cereal varieties and 280 pest-resistant legume varieties. What is the total number of resilient seed varieties cataloged?",
-      "storyContext": "Naomi tallies barcoded seed cryo-tubes in the national germplasm vault.",
+      "title": "Measuring Time Devoted to Rhetorical Appeals",
+      "question": "In a 300-second keynote address, Olivia spends 90 seconds establishing research credentials and ethos, and 210 seconds presenting logos and pathos. What is the total speech duration in seconds?",
+      "storyContext": "Olivia reviews audio rehearsal logs to balance rhetorical components.",
       "modelData": {
         "bars": [
           {
-            "label": "Drought Cereals",
-            "value": 520,
-            "color": "#f59e0b"
+            "label": "Ethos Introduction",
+            "value": 90,
+            "color": "#6366f1"
           },
           {
-            "label": "Resistant Legumes",
-            "value": 280,
+            "label": "Logos & Pathos Body",
+            "value": 210,
             "color": "#10b981"
           }
         ],
-        "total": 800,
-        "unit": "varieties"
+        "total": 300,
+        "unit": "seconds"
       },
-      "target_answer": 800,
-      "unit": "varieties",
+      "target_answer": 300,
+      "unit": "seconds",
       "steps": [
-        "Take 520 wild drought-resistant cereal varieties.",
-        "Add 280 pest-resistant legume varieties.",
-        "520 + 280 = 800 varieties preserved."
+        "Take ethos duration: 90 seconds.",
+        "Add logos and pathos duration: 210 seconds.",
+        "90 + 210 = 300 seconds in total (5 full minutes)."
       ]
     },
     {
       "id": "w131_p2",
       "type": "comparison",
-      "title": "Experimental Crop Yield Comparison",
-      "question": "A test field planted with bioengineered wheat produced 65 bushels per hectare, whereas the unedited traditional crop yielded only 40 bushels per hectare under drought. How many more bushels per hectare did the bioengineered wheat yield?",
-      "storyContext": "Dr. Thorne weighs grain combines following seasonal harvest trials.",
+      "title": "Comparing Audience Engagement Rates",
+      "question": "Before rhetoric coaching, 45 percent of audience members signed the digital wellness petition; after coaching in ethos, pathos, and logos, 82 percent signed. What was the percentage increase in sign-ups?",
+      "storyContext": "Marcus analyzes petition conversion statistics on a comparative chart.",
       "modelData": {
         "bars": [
           {
-            "label": "Bioengineered Wheat",
-            "value": 65,
-            "color": "#10b981"
+            "label": "Post-Coaching Sign-ups",
+            "value": 82,
+            "color": "#0ea5e9"
           },
           {
-            "label": "Unedited Traditional",
-            "value": 40,
-            "color": "#ef4444"
+            "label": "Pre-Coaching Baseline",
+            "value": 45,
+            "color": "#f59e0b"
           }
         ],
-        "difference": 25,
-        "unit": "bushels"
+        "difference": 37,
+        "unit": "percentage points"
       },
-      "target_answer": 25,
-      "unit": "bushels",
+      "target_answer": 37,
+      "unit": "percentage points",
       "steps": [
-        "Start with 65 bushels per hectare from bioengineered wheat.",
-        "Subtract 40 bushels per hectare from unedited crop.",
-        "65 - 40 = 25 more bushels per hectare."
+        "Start with post-coaching rate: 82%.",
+        "Subtract pre-coaching rate: 45%.",
+        "82 - 45 = 37 percentage point increase."
       ]
     }
   ],
   "science_lab": {
-    "title_en": "Genetics & Biotechnology: Modern Agriculture Lab Workshop",
+    "title_en": "Opinion Project 3: Persuasive Techniques Lab Workshop",
     "scenarios": [
       {
         "stage": 1,
-        "title": "Genetic Trait Selection",
-        "diagram_type": "trait_selection_grid",
-        "instruction": "Match each agricultural challenge to its corresponding genetic defense trait.",
+        "title": "Balancing Aristotle's Rhetorical Triangle",
+        "diagram_type": "rhetorical_triangle_equilibrium",
+        "instruction": "Equilibrate ethos, pathos, and logos vectors to prevent speech bias or manipulation.",
         "items": [
           {
-            "label": "Arid Soil -> Deep Root Architecture",
-            "target": "drought"
+            "label": "Ethos Credibility Anchor",
+            "target": "ethical_vertex"
           },
           {
-            "label": "Coastal Salt Inundation -> Ion Exclusion Pump",
-            "target": "salinity"
+            "label": "Pathos Emotional Empathy Vector",
+            "target": "affective_vertex"
           },
           {
-            "label": "Fungal Spore Infection -> Chitinase Enzyme Defense",
-            "target": "pest"
+            "label": "Logos Empirical Evidence Base",
+            "target": "rational_vertex"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Crop Breeding Pipeline",
-        "diagram_type": "breeding_pipeline",
-        "instruction": "Trace the developmental sequence from wild gene discovery to harvest.",
+        "title": "Modulating Vocal Cadence & Pitch Contours",
+        "diagram_type": "acoustic_speech_cadence_envelope",
+        "instruction": "Structure pitch shifts, rhetorical emphasis, and three-second pauses across key sentences.",
         "items": [
           {
-            "label": "Identify Beneficial Trait in Wild Relative",
-            "target": "step_1"
+            "label": "Inverted Sentence Stress Peak",
+            "target": "pitch_inflection"
           },
           {
-            "label": "Greenhouse Hydroponic Stress Screening",
-            "target": "step_2"
+            "label": "Deliberate Three-Second Silence",
+            "target": "rhetorical_pause"
           },
           {
-            "label": "Multi-Season Coastal Field Trials",
-            "target": "step_3"
+            "label": "Resonant Downward Cadence",
+            "target": "resolution_cadence"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Global Food Security Governance",
-        "diagram_type": "governance_pyramid",
-        "instruction": "Order the institutional milestones for ethical seed deployment.",
+        "title": "Synthesizing Persuasive Call to Action",
+        "diagram_type": "civic_advocacy_conversion_funnel",
+        "instruction": "Channel intellectual conviction into concrete community resolutions and petitions.",
         "items": [
           {
-            "label": "Environmental Biosafety Assessment",
-            "target": "phase_1"
+            "label": "Empirical Problem Formulation",
+            "target": "cognitive_conviction"
           },
           {
-            "label": "Open-Source Humanitarian Licensing",
-            "target": "phase_2"
+            "label": "Heartfelt Empathy Awakening",
+            "target": "moral_motivation"
           },
           {
-            "label": "Farmer Cooperative Seed Handover",
-            "target": "phase_3"
+            "label": "Unanimous Civic Commitment",
+            "target": "action_commitment"
           }
         ]
       }

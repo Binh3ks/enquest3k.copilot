@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 130 | Theme: "Deep Ocean Exploration & Abyssal Organisms" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.315Z
+ * Week: 130 | Theme: "Opinion Project 3: Comparing Global Approaches" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.452Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,182 +9,182 @@
 
 export const skillPracticeHubData = {
   "week": 130,
-  "theme": "Deep Ocean Exploration & Abyssal Organisms",
+  "theme": "Opinion Project 3: Comparing Global Approaches",
   "cefr_level": "B2 First",
   "grammar_drills": [
     {
-      "sentence": "Never before had marine biologists seen such bioluminescent fish.",
+      "sentence": "In contrast to France's nationwide ban, Florida opted for a decentralized approach.",
       "options": [
-        "had marine biologists seen",
-        "marine biologists had seen",
-        "did marine biologists saw"
+        "In contrast to",
+        "In addition to",
+        "As a result of"
       ],
-      "answer": "had marine biologists seen",
-      "explanation": "Negative inversion after 'Never before' requires auxiliary verb 'had' before the subject 'marine biologists'."
+      "answer": "In contrast to",
+      "explanation": "Use 'In contrast to' to highlight a prominent difference between two subjects."
     },
     {
-      "sentence": "Under no circumstances should commercial mining disrupt benthic habitats.",
+      "sentence": "Whereas France bans all devices, Florida restricts access to specific platforms.",
       "options": [
-        "should commercial mining disrupt",
-        "commercial mining should disrupt",
-        "commercial mining disrupts"
+        "Whereas",
+        "Because",
+        "Despite"
       ],
-      "answer": "should commercial mining disrupt",
-      "explanation": "Negative prepositional phrase 'Under no circumstances' triggers subject-auxiliary inversion ('should commercial mining')."
+      "answer": "Whereas",
+      "explanation": "Use 'Whereas' to contrast two facts or situations in adjoining clauses."
     },
     {
-      "sentence": "Rarely do human divers reach hadal trench depths without submersibles.",
+      "sentence": "Students with documented health conditions receive an official exemption.",
       "options": [
-        "do human divers reach",
-        "human divers reach",
-        "human divers do reach"
+        "exemption",
+        "exempted",
+        "exempting"
       ],
-      "answer": "do human divers reach",
-      "explanation": "Limiting adverb 'Rarely' triggers present tense inversion with auxiliary 'do' ('do human divers reach')."
+      "answer": "exemption",
+      "explanation": "Use the noun 'exemption' following the adjective 'official'."
     },
     {
-      "sentence": "Barely had the probe touched the seabed when crustaceans appeared.",
+      "sentence": "Consistent enforcement ensures that all students comply with school policies.",
       "options": [
-        "had the probe touched",
-        "the probe had touched",
-        "did the probe touch"
+        "comply with",
+        "comply to",
+        "comply for"
       ],
-      "answer": "had the probe touched",
-      "explanation": "Time adverbial 'Barely' triggers past perfect inversion ('had the probe touched')."
+      "answer": "comply with",
+      "explanation": "Use the preposition 'with' following the verb 'comply'."
     },
     {
-      "sentence": "Specialized enzymes protect trench organisms from extreme pressure.",
+      "sentence": "Lawmakers enacted statutory measures to protect student wellbeing.",
       "options": [
-        "protect",
-        "protects",
-        "protecting"
+        "enacted",
+        "enact",
+        "enacting"
       ],
-      "answer": "protect",
-      "explanation": "Plural subject 'Specialized enzymes' requires plural base verb 'protect'."
+      "answer": "enacted",
+      "explanation": "Use the past simple 'enacted' to describe completed legislative actions."
     }
   ],
   "singapore_math": [
     {
       "id": "w130_p1",
       "type": "part_whole",
-      "title": "Trench Survey Biological Specimen Catalog",
-      "question": "During a hadal dive, oceanographers collected 28 benthic crustacean specimens and 32 hadal tubeworm specimens. What is the total volume of specimens cataloged in the dive?",
-      "storyContext": "Liam logs biological samples into the refrigerated specimen freezer.",
+      "title": "Tallying Comparative School Device Survey Sample",
+      "question": "A comparative legal study surveys 180 French school administrators and 220 American district superintendents regarding policy enforcement. What is the total survey sample size?",
+      "storyContext": "Chloe compiles survey response totals for her comparative law portfolio.",
       "modelData": {
         "bars": [
           {
-            "label": "Benthic Crustaceans",
-            "value": 28,
-            "color": "#06b6d4"
+            "label": "French Administrators",
+            "value": 180,
+            "color": "#3b82f6"
           },
           {
-            "label": "Hadal Tubeworms",
-            "value": 32,
-            "color": "#10b981"
+            "label": "American Superintendents",
+            "value": 220,
+            "color": "#ef4444"
           }
         ],
-        "total": 60,
-        "unit": "specimens"
+        "total": 400,
+        "unit": "administrators"
       },
-      "target_answer": 60,
-      "unit": "specimens",
+      "target_answer": 400,
+      "unit": "administrators",
       "steps": [
-        "Take 28 benthic crustacean specimens.",
-        "Add 32 hadal tubeworm specimens.",
-        "28 + 32 = 60 specimens in total."
+        "Take French respondents: 180.",
+        "Add American respondents: 220.",
+        "180 + 220 = 400 total administrators surveyed."
       ]
     },
     {
       "id": "w130_p2",
       "type": "comparison",
-      "title": "Hydrostatic Pressure Comparison",
-      "question": "Atmospheric pressure at sea level is 1 atmosphere, whereas hydrostatic pressure at the hadal trench bottom reaches 1,050 atmospheres. How many more atmospheres of pressure are exerted at the trench floor?",
-      "storyContext": "Dr. Brooks calibrates titanium hull strain gauges before deep descent.",
+      "title": "Comparing Policy Compliance Rates Over Time",
+      "question": "In a pilot school, student compliance with device rules was 65 percent in September and rose to 92 percent by December following clear communication. What was the percentage increase in compliance?",
+      "storyContext": "David graphs compliance improvements across the academic term.",
       "modelData": {
         "bars": [
           {
-            "label": "Trench Floor Pressure",
-            "value": 1050,
-            "color": "#ef4444"
+            "label": "December Compliance",
+            "value": 92,
+            "color": "#10b981"
           },
           {
-            "label": "Sea Level Pressure",
-            "value": 1,
-            "color": "#3b82f6"
+            "label": "September Baseline",
+            "value": 65,
+            "color": "#f59e0b"
           }
         ],
-        "difference": 1049,
-        "unit": "atmospheres"
+        "difference": 27,
+        "unit": "percentage points"
       },
-      "target_answer": 1049,
-      "unit": "atmospheres",
+      "target_answer": 27,
+      "unit": "percentage points",
       "steps": [
-        "Start with 1050 atmospheres at trench depth.",
-        "Subtract 1 atmosphere at sea level.",
-        "1050 - 1 = 1049 atmospheres greater."
+        "Start with December compliance: 92%.",
+        "Subtract September compliance: 65%.",
+        "92 - 65 = 27 percentage point improvement."
       ]
     }
   ],
   "science_lab": {
-    "title_en": "Deep Ocean Exploration & Abyssal Organisms Lab Workshop",
+    "title_en": "Opinion Project 3: Comparing Global Approaches Lab Workshop",
     "scenarios": [
       {
         "stage": 1,
-        "title": "Ocean Depth Zones and Organisms",
-        "diagram_type": "ocean_depth_zones",
-        "instruction": "Match each marine creature to its natural oceanic depth zone.",
+        "title": "Centralized vs Decentralized Statutory Architecture",
+        "diagram_type": "comparative_governance_flowchart",
+        "instruction": "Map legislative command structures from national parliaments to local classroom doors.",
         "items": [
           {
-            "label": "Sunlit Dolphin -> Epipelagic Zone (0-200m)",
-            "target": "epipelagic"
+            "label": "National Statutory Mandate",
+            "target": "centralized_model"
           },
           {
-            "label": "Anglerfish -> Midnight Zone (1000-4000m)",
-            "target": "bathypelagic"
+            "label": "Decentralized District Policy",
+            "target": "local_discretion"
           },
           {
-            "label": "Giant Tubeworm -> Hadal Trench (>6000m)",
-            "target": "hadal"
+            "label": "Administrative Enforcement Gateway",
+            "target": "compliance_point"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Chemosynthetic Energy Cycle",
-        "diagram_type": "chemosynthesis_pathway",
-        "instruction": "Trace the flow of chemical energy from volcanic magma to trench predator.",
+        "title": "Filtering Algorithmic Social Media Access",
+        "diagram_type": "school_firewall_protocol_filter",
+        "instruction": "Configure school network protocols to block social algorithms while allowing educational research.",
         "items": [
           {
-            "label": "Hydrothermal Vent Emits Hydrogen Sulfide",
-            "target": "step_1"
+            "label": "Social Platform Packet Filter",
+            "target": "statutory_block"
           },
           {
-            "label": "Bacteria Metabolize Minerals via Chemosynthesis",
-            "target": "step_2"
+            "label": "Educational Database Whitelist",
+            "target": "open_access"
           },
           {
-            "label": "Crustaceans and Snailfish Graze on Bacteria",
-            "target": "step_3"
+            "label": "Encrypted School Network Router",
+            "target": "secure_gateway"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Benthic Sanctuary Protection",
-        "diagram_type": "conservation_priority",
-        "instruction": "Select the three crucial international protocols that safeguard abyssal trenches.",
+        "title": "Evaluating Medical & Accommodation Exemptions",
+        "diagram_type": "statutory_exemption_verification_flow",
+        "instruction": "Process verified medical certificates to grant authorized device exemptions.",
         "items": [
           {
-            "label": "Establish Marine Protected Area Boundaries",
-            "target": "safeguard_1"
+            "label": "Physician Medical Certificate",
+            "target": "verification_input"
           },
           {
-            "label": "Prohibit Commercial Seabed Dredging",
-            "target": "safeguard_2"
+            "label": "Digital Health Permit",
+            "target": "authorization_badge"
           },
           {
-            "label": "Mandate Open-Access Scientific Telemetry",
-            "target": "safeguard_3"
+            "label": "Secure Classroom Monitoring",
+            "target": "protected_usage"
           }
         ]
       }

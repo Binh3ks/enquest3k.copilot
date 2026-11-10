@@ -1,12 +1,12 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-09T13:11:11.316Z",
+  "generated_at": "2026-11-10T03:12:16.453Z",
   "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
   "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
   "week_number": 131,
-  "theme": "Genetics & Biotechnology: Modern Agriculture",
+  "theme": "Opinion Project 3: Persuasive Techniques",
   "cefr_level": "B2 First",
-  "grammar_focus": "Relative Clauses (Defining & Non-defining): 'Drought-resistant crops, which researchers developed using precision gene editing, yield significantly more grain; Farmers whose lands suffer from soil salinity now cultivate tolerant strains.'",
+  "grammar_focus": "Rhetorical Triads, Stress & Persuasive Cadence ('Not only does it..., but it also...', parallel structures, and vocal pitch modulation).",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_131/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
@@ -39,7 +39,8 @@
     "GATE_7_VIETNAMESE_LEAK_ZERO",
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
-    "GATE_10_SKELETON_DIFFERENTIATION"
+    "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY"
   ],
   "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
 }

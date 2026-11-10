@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Writing Hub & Picture Story Architecture
- * Week: 133 | Theme: "Astrophysics: Black Holes, Galaxies & Gravity" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.318Z
+ * Week: 133 | Theme: "Deep Research & Data" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.455Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,112 +9,112 @@
 
 export const writingHubData = {
   "week": 133,
-  "theme": "Astrophysics: Black Holes, Galaxies & Gravity",
+  "theme": "Deep Research & Data",
   "cefr_level": "B2 First",
   "picture_story": {
-    "title": "Investigating Black Holes and Gravitational Waves",
-    "prompt_en": "Look at the four pictures. Write a formal investigative report about Dr. Carl Sagan-Smith and Zoe Vance detecting gravitational waves from colliding black holes. Write 20 or more words.",
-    "prompt_vi": "Nhìn vào 4 bức tranh. Viết bản báo cáo điều tra về Tiến sĩ Carl Sagan-Smith và Zoe Vance phát hiện sóng hấp dẫn từ các lỗ đen va chạm (từ 20 từ trở lên).",
+    "title": "Citing Quantitative Evidence and Statistical Findings in Research",
+    "prompt_en": "Look at the four panels. Write a research findings paragraph reporting quantitative data on youth gaming habits. Use formal attribution citation formulas ('According to a study by...', 'Statistics demonstrate that...', 'Data reveals that...') and precise numerical metrics. Write 20 or more words.",
+    "prompt_vi": "Nhìn vào 4 khung tranh. Viết một đoạn văn kết quả nghiên cứu báo cáo dữ liệu định lượng về thói quen chơi game của giới trẻ. Sử dụng các cấu trúc trích dẫn chính thức ('According to a study by...', 'Statistics demonstrate that...', 'Data reveals that...') và các chỉ số số liệu chính xác. Viết từ 20 từ trở lên.",
     "min_sentences": 3,
     "min_words": 20,
     "max_words": 90,
-    "model_sentence": "Dr. Carl Sagan-Smith and Zoe Vance detected gravitational wave signals at the mountain observatory. First, the submillimeter radio telescope array was calibrated under clear desert skies. Next, laser interferometers recorded spacetime ripples originating from two colliding black holes. After supercomputers reconstructed the glowing event horizon accretion disk, the team published their breakthrough astrophysical study.",
+    "model_sentence": "According to a landmark empirical study conducted by university psychologists, seventy percent of adolescent students play video games on a weekly basis. Survey data demonstrates that a substantial majority of players utilize cooperative multiplayer modes to build social friendships. Furthermore, statistics reveal that only a small twelve-percent minority exhibit problematic sleep disruption, disproving the stereotype that all gaming harms academic wellbeing.",
     "word_bank": [
-      "astrophysics",
-      "galaxy",
-      "gravity",
-      "singularity",
-      "orbit",
-      "telescope",
-      "data",
       "statistic",
       "percent",
-      "study"
+      "study",
+      "data",
+      "majority",
+      "minority",
+      "survey",
+      "population",
+      "sample",
+      "empirical"
     ],
     "sentence_frames": [
-      "Initially, astronomers aligned radio ___ dishes to survey deep cosmic fields.",
-      "Interferometer telemetry proved that the gravitational wave must have ___ from a black hole merger.",
-      "Statistical ___ confirmed that the majority of massive galaxies harbor central singularities.",
-      "Ultimately, the research team published their landmark observational ___."
+      "According to a landmark ___, seventy percent of youth play digital games weekly.",
+      "The collected survey ___ reveals that a substantial majority play cooperatively.",
+      "Furthermore, statistics demonstrate that only a small ___ experiences sleep issues.",
+      "Ultimately, citing verified ___ transforms personal claims into credible scholarship."
     ],
     "panels": [
       {
         "panel_id": "panel_1",
-        "title_en": "Telescope Array Alignment",
-        "title_vi": "Căn Chỉnh Dàn Kính Thiên Văn",
+        "title_en": "Panel 1: Formulating the Survey Hypothesis",
+        "title_vi": "Khung 1: Xây Dựng Giả Thuyết Khảo Sát",
         "image_url": "/images/week133/writing_panel_1.png",
-        "image_prompt": "Two astronomers in warm jackets calibrating large white satellite dish telescopes on a dark mountain under a starry night sky.",
-        "caption": "Astronomers calibrated radio telescope dishes on the high plateau.",
-        "sentence_frame": "First, the astronomers [calibrated radio telescope dishes] beneath [the starry night sky].",
+        "image_prompt": "Two researchers designing a questionnaire on laptop screens with statistical flowcharts on the whiteboard.",
+        "caption": "Researchers draft a structured survey to test hypotheses against demographic data.",
+        "sentence_frame": "Researchers [formulate an empirical hypothesis] to [evaluate youth gaming habits scientifically].",
         "pills": [
-          "calibrated radio telescope dishes",
-          "the starry night sky",
-          "Carl and Zoe",
-          "high mountain observatory"
+          "formulate an empirical hypothesis",
+          "evaluate youth gaming habits scientifically",
+          "structured survey questionnaire",
+          "demographic research sample"
         ],
         "connectors": [
           "First,",
-          "Initially,",
-          "On Monday evening,"
+          "In the planning phase,",
+          "To begin the study,"
         ]
       },
       {
         "panel_id": "panel_2",
-        "title_en": "Gravitational Wave Detection",
-        "title_vi": "Phát Hiện Sóng Hấp Dẫn",
+        "title_en": "Panel 2: Sampling the Student Population",
+        "title_vi": "Khung 2: Lấy Mẫu Quần Thể Học Sinh",
         "image_url": "/images/week133/writing_panel_2.png",
-        "image_prompt": "A computer monitor displaying glowing green wave interference spikes labeled Gravitational Wave Event.",
-        "caption": "Laser interferometers detected spacetime ripples from colliding black holes.",
-        "sentence_frame": "Next, sensitive laser interferometers [detected spacetime ripples] produced by [two colliding black holes].",
+        "image_prompt": "Students in a school computer lab quietly answering an online research survey with privacy dividers.",
+        "caption": "A randomized sample of respondents completes the quantitative questionnaire.",
+        "sentence_frame": "A representative sample [completes the anonymous survey] to [provide verifiable numerical data].",
         "pills": [
-          "detected spacetime ripples",
-          "two colliding black holes",
-          "laser interferometry",
-          "gravitational signal"
+          "completes the anonymous survey",
+          "provide verifiable numerical data",
+          "randomized participant sample",
+          "diverse student population"
         ],
         "connectors": [
           "Next,",
-          "Subsequently,",
-          "Shortly afterwards,"
+          "During data collection,",
+          "Across the survey,"
         ]
       },
       {
         "panel_id": "panel_3",
-        "title_en": "Accretion Disk Reconstruction",
-        "title_vi": "Tái Tạo Đĩa Bồi Tụ",
+        "title_en": "Panel 3: Analyzing Numerical Metrics",
+        "title_vi": "Khung 3: Phân Tích Các Chỉ Số Số Liệu",
         "image_url": "/images/week133/writing_panel_3.png",
-        "image_prompt": "A glowing orange and yellow ring of gas surrounding a black circular shadow on a high-resolution simulation monitor.",
-        "caption": "Supercomputers reconstructed the glowing ring around the black hole singularity.",
-        "sentence_frame": "After that, supercomputers reconstructed [the glowing accretion ring] surrounding [the black hole singularity].",
+        "image_prompt": "A researcher pointing to colorful pie charts and bar graphs showing seventy percent participation and high grades.",
+        "caption": "Statistical analysis reveals that seventy percent of gamers maintain strong grades.",
+        "sentence_frame": "Data analysis [reveals that a substantial majority] of [gamers maintain high academic standing].",
         "pills": [
-          "the glowing accretion ring",
-          "the black hole singularity",
-          "event horizon",
-          "spectroscopic data"
+          "reveals that a substantial majority",
+          "gamers maintain high academic standing",
+          "statistical pie charts",
+          "seventy percent metric"
         ],
         "connectors": [
-          "After that,",
-          "Later,",
-          "Following data synthesis,"
+          "According to the data,",
+          "Statistics reveal that,",
+          "Furthermore,"
         ]
       },
       {
         "panel_id": "panel_4",
-        "title_en": "International Scientific Publication",
-        "title_vi": "Công Bố Khoa Học Quốc Tế",
+        "title_en": "Panel 4: Citing Formal Scholarly Findings",
+        "title_vi": "Khung 4: Trích Dẫn Các Phát Hiện Học Thuật Chính Thức",
         "image_url": "/images/week133/writing_panel_4.png",
-        "image_prompt": "Scientists holding a published astrophysics journal with the black hole image on the cover smiling at a press podium.",
-        "caption": "The observatory announced empirical confirmation of general relativity.",
-        "sentence_frame": "In the end, the research team [published their breakthrough study] to [international scientific acclaim].",
+        "image_prompt": "A student presenting a research poster titled Deep Research & Data at a science symposium with faculty listening.",
+        "caption": "Scholarly citation phrases ground arguments in verifiable scientific data.",
+        "sentence_frame": "Scholarly citation formulas [transform subjective opinions into] an [evidence-based research publication].",
         "pills": [
-          "published their breakthrough study",
-          "international scientific acclaim",
-          "empirical confirmation",
-          "Einstein's relativity verified"
+          "transform subjective opinions into",
+          "evidence-based research publication",
+          "scholarly citation formulas",
+          "verifiable academic proof"
         ],
         "connectors": [
-          "In the end,",
-          "Finally,",
+          "In conclusion,",
+          "Ultimately,",
           "Consequently,"
         ]
       }
@@ -122,89 +122,89 @@ export const writingHubData = {
     "ladder_stages": [
       {
         "badge_label": "MODEL",
-        "title": "Observatory Calibration",
+        "title": "Stage 1: Introducing the Survey Source",
         "image_url": "/images/week133/writing_panel_1.png",
-        "caption": "Astronomers calibrated radio telescope dishes on the high plateau.",
-        "frame_L1": "First, the astronomers aligned the dish antennas. They checked receiver sensitivity under the desert night sky.",
+        "caption": "Researchers draft a structured survey to test hypotheses against demographic data.",
+        "frame_L1": "Scientists conducted a study on video games. They surveyed many students to collect facts.",
         "connectors": [
           "First,",
-          "Initially,",
+          "According to researchers,",
           "To begin,"
         ],
-        "sentence_hint": "Write 2 sentences describing radio telescope calibration.",
+        "sentence_hint": "Write 2 sentences introducing who conducted the study and what was investigated.",
         "ordered_chips": [
-          "Astronomers aligned",
-          "radio telescope antennas",
-          "to observe",
-          "deep cosmic signals"
+          "According to a study",
+          "by university researchers,",
+          "seventy percent of students",
+          "play video games weekly."
         ],
         "pills": [
-          "aligned antennas",
-          "cosmic signals",
-          "Carl and Zoe",
-          "desert observatory"
+          "according to a study",
+          "university researchers",
+          "seventy percent of students",
+          "play video games weekly"
         ],
-        "sentence_frame": "First, astronomers aligned [radio telescope antennas] to survey [distant cosmic galaxies]."
+        "sentence_frame": "Researchers [formulate an empirical hypothesis] to [evaluate youth gaming habits scientifically]."
       },
       {
         "badge_label": "BUILD",
-        "title": "Wave Ripple Detection",
+        "title": "Stage 2: Reporting the Majority Metric",
         "image_url": "/images/week133/writing_panel_2.png",
-        "caption": "Laser interferometers detected spacetime ripples from colliding black holes.",
-        "frame_L1": "Next, the laser sensors recorded a gravitational ripple. The signal must have originated from colliding black holes.",
+        "caption": "A randomized sample of respondents completes the quantitative questionnaire.",
+        "frame_L1": "The survey data shows interesting facts. A large majority of players enjoy cooperative team games.",
         "connectors": [
-          "Next,",
-          "Subsequently,",
+          "Survey data shows,",
+          "Furthermore,",
           "In addition,"
         ],
-        "sentence_hint": "Write 2 sentences about detecting gravitational waves.",
+        "sentence_hint": "Write 2 sentences reporting the findings about the majority of players.",
         "pills": [
-          "laser sensors",
-          "gravitational ripple",
-          "must have originated",
-          "black holes"
+          "survey data shows",
+          "large majority of players",
+          "cooperative team games",
+          "build friendships"
         ],
-        "sentence_frame": "Next, laser sensors detected [a gravitational ripple] that [originated from colliding black holes]."
+        "sentence_frame": "The collected survey data [reveals that a substantial majority] of [participants play cooperative games]."
       },
       {
         "badge_label": "WRITE",
-        "title": "Event Horizon Imaging",
+        "title": "Stage 3: Quantifying the Minority Finding",
         "image_url": "/images/week133/writing_panel_3.png",
-        "caption": "Supercomputers reconstructed the glowing ring around the black hole singularity.",
-        "frame_L1": "After that, supercomputers processed telescope data. They generated a clear image of the glowing event horizon.",
+        "caption": "Statistical analysis reveals that seventy percent of gamers maintain strong grades.",
+        "frame_L1": "Only a small minority has sleep problems. Statistics prove that most gamers keep good school marks.",
         "connectors": [
-          "After that,",
-          "Later,",
-          "Meanwhile,"
+          "In contrast,",
+          "Statistics demonstrate that,",
+          "On the other hand,"
         ],
-        "sentence_hint": "Write 2 sentences describing imaging the black hole.",
+        "sentence_hint": "Write 2 sentences contrasting the small minority with the broader population.",
         "pills": [
-          "supercomputers processed",
-          "telescope data",
-          "glowing image",
-          "event horizon"
+          "small minority has issues",
+          "statistics demonstrate that",
+          "keep good school marks",
+          "twelve percent metric"
         ],
-        "sentence_frame": "After that, supercomputers processed [telescope data] to image [the glowing event horizon]."
+        "sentence_frame": "Statistics demonstrate that [only a twelve-percent minority] experiences [problematic sleep disruption]."
       },
       {
         "badge_label": "EXPAND",
-        "title": "Astrophysical Confirmation",
+        "title": "Stage 4: Synthesizing Evidence-Based Claims",
         "image_url": "/images/week133/writing_panel_4.png",
-        "caption": "The observatory announced empirical confirmation of general relativity.",
-        "frame_L1": "In the end, the scientists published their findings. The observational study confirmed Einstein's theory of general relativity.",
+        "caption": "Scholarly citation phrases ground arguments in verifiable scientific data.",
+        "frame_L1": "Using real statistics makes our writing credible. Empirical evidence proves that stereotypes about gaming are false.",
         "connectors": [
-          "In the end,",
-          "Finally,",
-          "As a result,"
+          "In conclusion,",
+          "Ultimately,",
+          "Consequently,"
         ],
-        "sentence_hint": "Write 2 sentences about publishing confirmation of general relativity.",
+        "sentence_hint": "Write 2 sentences concluding why quantitative data makes claims believable.",
         "pills": [
-          "published findings",
-          "observational study",
-          "general relativity",
-          "scientific breakthrough"
+          "real statistics create credibility",
+          "empirical evidence proves",
+          "stereotypes are false",
+          "evidence-based scholarship"
         ],
-        "sentence_frame": "In the end, the scientists published [their observational study] confirming [Einstein's general relativity]."
+        "sentence_frame": "Scholarly citation formulas [transform subjective opinions into] an [evidence-based research publication]."
       }
     ]
   }

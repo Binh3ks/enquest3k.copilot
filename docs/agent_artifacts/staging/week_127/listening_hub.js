@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
- * Week: 127 | Theme: "Global Climate Systems & Renewable Energy" | CEFR: B2 First
- * Generated: 2026-11-09T13:11:11.311Z
+ * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B2 First
+ * Generated: 2026-11-10T03:12:16.447Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -9,228 +9,181 @@
 
 export const listeningHubData = {
   "week": 127,
-  "theme": "Global Climate Systems & Renewable Energy",
+  "theme": "Rebuttal Practice",
   "cefr_level": "B2 First",
   "audio_dialogue": {
-    "exchanges": [
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Clara, how can we counter arguments that solar panels are ineffective in cloudy regions?"
-      },
-      {
-        "speaker": "Clara",
-        "text": "We have empirical data proving that modern panels absorb diffuse ambient radiation."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Do you disagree with economists who say the grid transition is too expensive to complete?"
-      },
-      {
-        "speaker": "Clara",
-        "text": "Yes, I disagree because renewable energy is already far cheaper than building coal plants."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "What is your main point regarding the role of utility battery storage?"
-      },
-      {
-        "speaker": "Clara",
-        "text": "My point is that batteries guarantee constant grid frequency when wind speeds fluctuate."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Is it true or false that offshore turbines cause significant harm to marine biodiversity?"
-      },
-      {
-        "speaker": "Clara",
-        "text": "That claim is false because turbine foundations actually create protected artificial reefs."
-      },
-      {
-        "speaker": "Dr. Thorne",
-        "text": "Shall we present our sustainable transition roadmap to the energy ministry today?"
-      },
-      {
-        "speaker": "Clara",
-        "text": "Yes, let's present our roadmap so policymakers can authorize grid expansion."
-      }
-    ]
+    "title": "Debating Rebuttal Strategies Before the Finals"
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "text": "If industrial nations had acted earlier, global carbon emissions would be far lower today.",
-      "en": "If industrial nations had acted earlier, global carbon emissions would be far lower today.",
-      "vi": "Nếu các quốc gia công nghiệp hành động sớm hơn, lượng khí thải các-bon toàn cầu ngày nay đã thấp hơn nhiều.",
-      "ipa": "/ɪf ɪnˈdʌstriəl ˈneɪʃənz hæd ˈæktɪd ˈɜːrliər ˈɡloʊbəl ˈkɑːrbən ɪˈmɪʃənz wʊd biː fɑːr ˈloʊər təˈdeɪ/",
+      "text": "They claim that space travel wastes money, but I say it pioneers vital technologies.",
+      "en": "They claim that space travel wastes money, but I say it pioneers vital technologies.",
+      "vi": "Họ cho rằng du hành vũ trụ lãng phí tiền, nhưng tôi nói rằng nó tiên phong các công nghệ quan trọng.",
+      "ipa": "/ðeɪ kleɪm ðæt speɪs ˈtrævəl weɪsts ˈmʌni bʌt aɪ seɪ ɪt ˌpaɪəˈnɪərz ˈvaɪtl tekˈnɑːlədʒiz/",
       "words": [
-        "If",
-        "industrial",
-        "nations",
-        "had",
-        "acted",
-        "earlier",
-        "global",
-        "carbon",
-        "emissions",
-        "would",
-        "be",
-        "far",
-        "lower",
-        "today"
+        "They",
+        "claim",
+        "that",
+        "space",
+        "travel",
+        "wastes",
+        "money",
+        "but",
+        "I",
+        "say",
+        "it",
+        "pioneers",
+        "vital",
+        "technologies"
       ]
     },
     {
       "id": 2,
-      "text": "Offshore wind turbines generate enormous amounts of clean electrical power in coastal gales.",
-      "en": "Offshore wind turbines generate enormous amounts of clean electrical power in coastal gales.",
-      "vi": "Những tua-bin gió ngoài khơi tạo ra lượng điện sạch khổng lồ trong các đợt gió mạnh ven biển.",
-      "ipa": "/ˈɔːfʃɔːr wɪnd ˈtɜːrbaɪnz ˈdʒenəreɪt ɪˈnɔːrməs əˈmaʊnts əv kliːn ɪˈlektrɪkəl ˈpaʊər ɪn ˈkoʊstl ɡeɪlz/",
+      "text": "A skilled speaker directly addresses opposing points rather than ignoring them.",
+      "en": "A skilled speaker directly addresses opposing points rather than ignoring them.",
+      "vi": "Một diễn giả lành nghề trực tiếp giải quyết các luận điểm đối lập thay vì phớt lờ chúng.",
+      "ipa": "/ə skɪld ˈspiːkər dəˈrektli əˈdresɪz əˈpoʊzɪŋ pɔɪnts ˈræðər ðæn ɪɡˈnɔːrɪŋ ðem/",
       "words": [
-        "Offshore",
-        "wind",
-        "turbines",
-        "generate",
-        "enormous",
-        "amounts",
-        "of",
-        "clean",
-        "electrical",
-        "power",
-        "in",
-        "coastal",
-        "gales"
+        "A",
+        "skilled",
+        "speaker",
+        "directly",
+        "addresses",
+        "opposing",
+        "points",
+        "rather",
+        "than",
+        "ignoring",
+        "them"
       ]
     },
     {
       "id": 3,
-      "text": "Photovoltaic solar panels convert intense midday sunlight directly into usable household current.",
-      "en": "Photovoltaic solar panels convert intense midday sunlight directly into usable household current.",
-      "vi": "Các tấm pin quang điện mặt trời chuyển hóa ánh nắng giữa trưa gay gắt trực tiếp thành dòng điện gia dụng hữu ích.",
-      "ipa": "/ˌfoʊtoʊvɑːlˈteɪɪk ˈsoʊlər ˈpænlz kənˈvɜːrt ɪnˈtens ˈmɪddeɪ ˈsʌnlaɪt dəˈrektli ˈɪntuː ˈjuːzəbəl ˈhaʊshoʊld ˈkɜːrənt/",
+      "text": "On the contrary, recent scientific evidence proves that the initial premise was false.",
+      "en": "On the contrary, recent scientific evidence proves that the initial premise was false.",
+      "vi": "Trái lại, bằng chứng khoa học gần đây chứng minh rằng tiền đề ban đầu là sai lầm.",
+      "ipa": "/ɑːn ðə ˈkɑːntreri ˈriːsənt ˌsaɪənˈtɪfɪk ˈevɪdəns pruːvz ðæt ði ɪˈnɪʃəl ˈpremɪs wʌz fɔːls/",
       "words": [
-        "Photovoltaic",
-        "solar",
-        "panels",
-        "convert",
-        "intense",
-        "midday",
-        "sunlight",
-        "directly",
-        "into",
-        "usable",
-        "household",
-        "current"
-      ]
-    },
-    {
-      "id": 4,
-      "text": "Scientists disagree on the optimal balance between nuclear fission and geothermal generation.",
-      "en": "Scientists disagree on the optimal balance between nuclear fission and geothermal generation.",
-      "vi": "Các nhà khoa học không đồng thuận về sự cân bằng tối ưu giữa phân hạch hạt nhân và sản xuất địa nhiệt.",
-      "ipa": "/ˈsaɪəntɪsts ˌdɪsəˈɡriː ɑːn ði ˈɑːptɪməl ˈbæləns bɪˈtwiːn ˈnuːkliər ˈfɪʃən ænd ˌdʒiːoʊˈθɜːrməl ˌdʒenəˈreɪʃən/",
-      "words": [
-        "Scientists",
-        "disagree",
-        "on",
+        "On",
         "the",
-        "optimal",
-        "balance",
-        "between",
-        "nuclear",
-        "fission",
-        "and",
-        "geothermal",
-        "generation"
-      ]
-    },
-    {
-      "id": 5,
-      "text": "Clara presented empirical data to counter the claim that renewable energy destabilizes grids.",
-      "en": "Clara presented empirical data to counter the claim that renewable energy destabilizes grids.",
-      "vi": "Clara đã đưa ra dữ liệu thực nghiệm để phản bác tuyên bố rằng năng lượng tái tạo gây mất ổn định lưới điện.",
-      "ipa": "/ˈklærə prɪˈzentɪd ɪmˈpɪrɪkəl ˈdeɪtə tuː ˈkaʊntər ðə kleɪm ðæt rɪˈnuːəbəl ˈenərdʒi diːˈsteɪbəlaɪzɪz ɡrɪdz/",
-      "words": [
-        "Clara",
-        "presented",
-        "empirical",
-        "data",
-        "to",
-        "counter",
+        "contrary",
+        "recent",
+        "scientific",
+        "evidence",
+        "proves",
+        "that",
         "the",
-        "claim",
-        "that",
-        "renewable",
-        "energy",
-        "destabilizes",
-        "grids"
-      ]
-    },
-    {
-      "id": 6,
-      "text": "It is true that battery storage efficiency has doubled over the past five years.",
-      "en": "It is true that battery storage efficiency has doubled over the past five years.",
-      "vi": "Đúng là hiệu suất lưu trữ của pin đã tăng gấp đôi trong vòng năm năm qua.",
-      "ipa": "/ɪt ɪz truː ðæt ˈbætəri ˈstɔːrɪdʒ ɪˈfɪʃənsi hæz ˈdʌbəld ˈoʊvər ðə pæst faɪv jɪrz/",
-      "words": [
-        "It",
-        "is",
-        "true",
-        "that",
-        "battery",
-        "storage",
-        "efficiency",
-        "has",
-        "doubled",
-        "over",
-        "the",
-        "past",
-        "five",
-        "years"
-      ]
-    },
-    {
-      "id": 7,
-      "text": "The assertion that solar power cannot function in northern latitudes is completely false.",
-      "en": "The assertion that solar power cannot function in northern latitudes is completely false.",
-      "vi": "Khẳng định rằng năng lượng mặt trời không thể hoạt động ở các vĩ độ phía bắc là hoàn toàn sai.",
-      "ipa": "/ði əˈsɜːrʃən ðæt ˈsoʊlər ˈpaʊər ˈkænɑːt ˈfʌŋkʃən ɪn ˈnɔːrðərn ˈlætɪtuːdz ɪz kəmˈpliːtli fɔːls/",
-      "words": [
-        "The",
-        "assertion",
-        "that",
-        "solar",
-        "power",
-        "cannot",
-        "function",
-        "in",
-        "northern",
-        "latitudes",
-        "is",
-        "completely",
+        "initial",
+        "premise",
+        "was",
         "false"
       ]
     },
     {
-      "id": 8,
-      "text": "A comprehensive energy transition guarantees long-term economic stability and ecological preservation.",
-      "en": "A comprehensive energy transition guarantees long-term economic stability and ecological preservation.",
-      "vi": "Một cuộc chuyển đổi năng lượng toàn diện đảm bảo sự ổn định kinh tế lâu dài và bảo tồn sinh thái.",
-      "ipa": "/ə ˌkɑːmprɪˈhensɪv ˈenərdʒi trænˈzɪʃən ˌɡærənˈtiːz lɔːŋ tɜːrm ˌekəˈnɑːmɪk stəˈbɪləti ænd ˌekəˈlɑːdʒɪkəl ˌprezərˈveɪʃən/",
+      "id": 4,
+      "text": "While opponents argue for strict prohibitions, data shows that education is more effective.",
+      "en": "While opponents argue for strict prohibitions, data shows that education is more effective.",
+      "vi": "Trong khi phe đối lập ủng hộ các lệnh cấm nghiêm ngặt, dữ liệu cho thấy giáo dục hiệu quả hơn.",
+      "ipa": "/waɪl əˈpoʊnənts ˈɑːrɡjuː fɔːr strɪkt ˌproʊhəˈbɪʃənz ˈdeɪtə ʃoʊz ðæt ˌedʒuˈkeɪʃən ɪz mɔːr ɪˈfektɪv/",
       "words": [
-        "A",
-        "comprehensive",
-        "energy",
-        "transition",
-        "guarantees",
-        "long-term",
-        "economic",
-        "stability",
+        "While",
+        "opponents",
+        "argue",
+        "for",
+        "strict",
+        "prohibitions",
+        "data",
+        "shows",
+        "that",
+        "education",
+        "is",
+        "more",
+        "effective"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Strategic debaters concede minor points to focus attention on their strongest arguments.",
+      "en": "Strategic debaters concede minor points to focus attention on their strongest arguments.",
+      "vi": "Các tranh biện viên chiến lược thừa nhận các điểm phụ để tập trung sự chú ý vào lập luận mạnh nhất.",
+      "ipa": "/strəˈtiːdʒɪk dɪˈbeɪtərz kənˈsiːd ˈmaɪnər pɔɪnts tuː ˈfoʊkəs əˈtenʃən ɑːn ðer ˈstrɔːŋɡɪst ˈɑːrɡjəmənts/",
+      "words": [
+        "Strategic",
+        "debaters",
+        "concede",
+        "minor",
+        "points",
+        "to",
+        "focus",
+        "attention",
+        "on",
+        "their",
+        "strongest",
+        "arguments"
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Exposing a logical flaw in an opponent's argument quickly undermines their credibility.",
+      "en": "Exposing a logical flaw in an opponent's argument quickly undermines their credibility.",
+      "vi": "Vạch trần một lỗ hổng logic trong lập luận của đối thủ sẽ nhanh chóng làm suy yếu uy tín của họ.",
+      "ipa": "/ɪkˈspoʊzɪŋ ə ˈlɑːdʒɪkəl flɔː ɪn ən əˈpoʊnənts ˈɑːrɡjəmənt ˈkwɪkli ˌʌndərˈmaɪnz ðer ˌkredəˈbɪləti/",
+      "words": [
+        "Exposing",
+        "a",
+        "logical",
+        "flaw",
+        "in",
+        "an",
+        "opponent's",
+        "argument",
+        "quickly",
+        "undermines",
+        "their",
+        "credibility"
+      ]
+    },
+    {
+      "id": 7,
+      "text": "We must evaluate whether claims are factually true before accepting their conclusions.",
+      "en": "We must evaluate whether claims are factually true before accepting their conclusions.",
+      "vi": "Chúng ta phải đánh giá xem các khẳng định có đúng thực tế hay không trước khi chấp nhận kết luận.",
+      "ipa": "/wiː mʌst ɪˈvæljueɪt ˈweðər kleɪmz ɑːr ˈfæktʃuəli truː bɪˈfɔːr əkˈseptɪŋ ðer kənˈkluːʒənz/",
+      "words": [
+        "We",
+        "must",
+        "evaluate",
+        "whether",
+        "claims",
+        "are",
+        "factually",
+        "true",
+        "before",
+        "accepting",
+        "their",
+        "conclusions"
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Rigorous rebuttal training strengthens critical thinking and persuasive communication.",
+      "en": "Rigorous rebuttal training strengthens critical thinking and persuasive communication.",
+      "vi": "Luyện tập phản biện nghiêm ngặt củng cố tư duy phản biện và khả năng giao tiếp thuyết phục.",
+      "ipa": "/ˈrɪɡərəs rɪˈbʌtəl ˈtreɪnɪŋ ˈstreŋθənz ˈkrɪtɪkəl ˈθɪŋkɪŋ ænd pərˈsweɪsɪv kəˌmjuːnəˈkeɪʃən/",
+      "words": [
+        "Rigorous",
+        "rebuttal",
+        "training",
+        "strengthens",
+        "critical",
+        "thinking",
         "and",
-        "ecological",
-        "preservation"
+        "persuasive",
+        "communication"
       ]
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 127. Theme: Global Climate Systems & Renewable Energy.\nSpeaker: If industrial nations had acted earlier, global carbon emissions would be far lower today.\nSpeaker: Offshore wind turbines generate enormous amounts of clean electrical power in coastal gales.\nSpeaker: Photovoltaic solar panels convert intense midday sunlight directly into usable household current.\nSpeaker: Scientists disagree on the optimal balance between nuclear fission and geothermal generation.\nSpeaker: Clara presented empirical data to counter the claim that renewable energy destabilizes grids.\nSpeaker: It is true that battery storage efficiency has doubled over the past five years.\nSpeaker: The assertion that solar power cannot function in northern latitudes is completely false.\nSpeaker: A comprehensive energy transition guarantees long-term economic stability and ecological preservation."
+  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 127. Theme: Rebuttal Practice.\nSpeaker: They claim that space travel wastes money, but I say it pioneers vital technologies.\nSpeaker: A skilled speaker directly addresses opposing points rather than ignoring them.\nSpeaker: On the contrary, recent scientific evidence proves that the initial premise was false.\nSpeaker: While opponents argue for strict prohibitions, data shows that education is more effective.\nSpeaker: Strategic debaters concede minor points to focus attention on their strongest arguments.\nSpeaker: Exposing a logical flaw in an opponent's argument quickly undermines their credibility.\nSpeaker: We must evaluate whether claims are factually true before accepting their conclusions.\nSpeaker: Rigorous rebuttal training strengthens critical thinking and persuasive communication."
 };
 export default listeningHubData;
