@@ -45,6 +45,6 @@
     "GATE_13_READABILITY_CEILING",
     "GATE_14_PROVENANCE_INTEGRITY"
   ],
-  "review_status": "HOLD_PENDING_OWNER_DECISION",
-  "hold_reason": "Divergence between Source A ('The Industrial Revolution') and Source B ('Space Exploration vs. Earth Fix'). Staged files retained on disk; zero production merge pending Owner strategic directive."
+  "review_status": "RETIRED per Owner decision R72",
+  "retired_reason": "Owner decided Source B is the single source of truth. The staged Industrial Revolution content is permanently retired. The 7 Source B words (space, earth, money, spend, fix, problem, important) are mandatory anchors for future W79 generation."
 }

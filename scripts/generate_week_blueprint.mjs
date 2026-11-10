@@ -107,7 +107,7 @@ function parseDigitalMap(weekNum, mapContent) {
   if (weekNum <= 16) {
     cefrLevel = 'Pre-A1 Starters';
     cefrStage = 1;
-  } else if (weekNum <= 36) {
+  } else if (weekNum <= 32) {
     cefrLevel = 'A1 Movers';
     cefrStage = 1;
   } else if (weekNum <= 72) {
@@ -166,11 +166,12 @@ function extractBilingualField(text) {
 function parseKhungCT(weekNum, txtContent) {
   // Regex to match block for week N
   const weekBlockRegex = new RegExp(`•\\s*Week\\s*${weekNum}\\s*:\\s*([^\\n]+)([\\s\\S]*?)(?=•\\s*Weeks?\\s*\\d+|🟢|🔵|🟣|Phase|Block|$)`, 'i');
+  let isMultiWeekRange = false;
   let match = txtContent.match(weekBlockRegex);
 
   // Multi-week range fallback (e.g. "• Weeks 79-80: Review & Micro-Debate 2", "• Weeks 129-132:")
   if (!match) {
-    const rangeRegex = /•\s*Weeks?\s*(\d+)\s*-\s*(\d+)\s*:\s*([^\n]+)([\s\S]*?)(?=•\s*Weeks?\s*\d+|🟢|🔵|🟣|Phase|Block|$)/gi;
+    const rangeRegex = /(?:•\s*)?Weeks?\s*(\d+)\s*[-–—]\s*(\d+)\s*:\s*([^\n]+)([\s\S]*?)(?=(?:•\s*)?Weeks?\s*\d+|🟢|🔵|🟣|Phase|Block|$)/gi;
     let rm;
     let candidates = [];
     while ((rm = rangeRegex.exec(txtContent)) !== null) {
@@ -195,6 +196,7 @@ function parseKhungCT(weekNum, txtContent) {
         return a.span - b.span;
       });
       match = candidates[0].match;
+      isMultiWeekRange = true;
     }
   }
 
@@ -234,7 +236,7 @@ function parseKhungCT(weekNum, txtContent) {
   let vocabWords = [];
   if (vocabMatch) {
     vocabWords = vocabMatch[1]
-      .split(/[,;]/)
+      .split(/[,;\/]/)
       .map(w => w.replace(/\([^)]*\)/g, '').replace(/\./g, '').trim())
       .filter(w => w.length > 0 && !w.includes('->'));
   }
@@ -247,7 +249,8 @@ function parseKhungCT(weekNum, txtContent) {
     outcome,
     skillFocus,
     grammarFocus,
-    vocabWords
+    vocabWords,
+    isMultiWeekRange
   };
 }
 
@@ -281,7 +284,16 @@ function generateBlueprint(weekNum, mapData, txtData) {
   }
 
   // 1. Theme resolution: Master Syllabus (Source B) is authoritative ground truth for pedagogy
-  const theme = (txtData && txtData.titleEn) || (mapData && mapData.theme) || `Week ${weekNum} Curriculum`;
+  // When Source B is a multi-week range, prioritize specific Topic (e.g. W79 = "Space Exploration vs. Earth Fix", W95 = "The Young Professor") over generic cycle name.
+  let resolvedTheme = null;
+  if (txtData) {
+    if (txtData.isMultiWeekRange && txtData.topic && txtData.topic.en) {
+      resolvedTheme = txtData.topic.en;
+    } else if (txtData.titleEn) {
+      resolvedTheme = txtData.titleEn;
+    }
+  }
+  const theme = resolvedTheme || (mapData && mapData.theme) || `Week ${weekNum} Curriculum`;
 
   // 2. Story Title
   const storyTitle = (txtData && txtData.topic && txtData.topic.en) || (txtData && txtData.titleEn) || 'Weekly Adventure Story';
@@ -289,8 +301,11 @@ function generateBlueprint(weekNum, mapData, txtData) {
   // 3. CLIL Module / Topic
   let clilTitle = 'CLIL Exploration';
   let clilFocus = 'Interdisciplinary STEM Inquiry';
-  if (txtData && txtData.titleEn) {
-    const baseTitle = txtData.titleEn.split('(')[0].trim().replace(/^Review & Project \d+:\s*/i, '').replace(/["']/g, '');
+  if (txtData) {
+    let baseTitle = txtData.titleEn ? txtData.titleEn.split('(')[0].trim().replace(/^Review & Project \d+:\s*/i, '').replace(/["']/g, '') : 'Exploration';
+    if (txtData.isMultiWeekRange && txtData.topic && txtData.topic.en) {
+      baseTitle = txtData.topic.en;
+    }
     if (txtData.skillFocus && txtData.skillFocus.en) {
       clilTitle = `${baseTitle} & ${txtData.skillFocus.en}`;
     } else {
@@ -313,11 +328,11 @@ function generateBlueprint(weekNum, mapData, txtData) {
   let alignmentNote = 'Syllabus sources fully aligned.';
   if (mapData && txtData) {
     const cleanMapTheme = mapData.theme.toLowerCase().replace(/[^a-z0-9]/g, '');
-    const cleanTxtTitle = (txtData.titleEn || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    const hasOverlap = cleanMapTheme.includes(cleanTxtTitle) || cleanTxtTitle.includes(cleanMapTheme);
+    const cleanResolvedTheme = theme.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const hasOverlap = cleanMapTheme.includes(cleanResolvedTheme) || cleanResolvedTheme.includes(cleanMapTheme);
     if (!hasOverlap) {
       alignmentStatus = 'DIVERGENT_THEME_FALLBACK_TO_SOURCE_B';
-      alignmentNote = `Theme divergence detected. Master Pedagogical Syllabus (Source B: "${txtData.titleEn}") enforced over Digital Map (Source A: "${mapData.theme}"). Source A metadata preserved in digital_map_reference.`;
+      alignmentNote = `Theme divergence detected. Master Pedagogical Syllabus (Source B: "${theme}") enforced over Digital Map (Source A: "${mapData.theme}"). Source A metadata preserved in digital_map_reference.`;
     }
   }
 
@@ -497,8 +512,12 @@ async function main() {
   console.log('========================================================================\n');
 }
 
-main().catch(err => {
-  console.error('\n❌ Fatal error in blueprint ingestion:', err);
-  process.exit(1);
-});
+export { parseDigitalMap, parseKhungCT, generateBlueprint, resolveTemplate };
+
+if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
+  main().catch(err => {
+    console.error('\n❌ Fatal error in blueprint ingestion:', err);
+    process.exit(1);
+  });
+}
 

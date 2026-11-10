@@ -1,18 +1,18 @@
 {
   "week": 131,
-  "theme": "Opinion Project 3: Persuasive Techniques",
-  "title_en": "Opinion Project 3: Persuasive Techniques",
-  "title_vi": null,
+  "theme": "Review & Math Logic Cycle",
+  "title_en": "Review & Math Logic Cycle",
+  "title_vi": "Ôn tập & Toán Logic",
   "cefr_level": "B1+ Academic",
   "cefr_stage": 3,
   "week_type": "rotary_practice",
   "isFullMock": false,
   "rotary_cycle": null,
   "template_used": "production_kit/templates/template_b1plus_transition.js",
-  "story_title": "Weekly Adventure Story",
+  "story_title": "Review & Math Logic Cycle",
   "clil_topic": {
-    "title": "Ethos, Pathos, Logos trong thuyết phục",
-    "focus": "Ethos, Pathos, Logos trong thuyết phục"
+    "title": "Review & Math Logic Cycle",
+    "focus": "Review & Math Logic Cycle"
   },
   "grammar_focus": {
     "structure": "Ngữ điệu và trọng âm nhấn mạnh; `gear2_karaoke` bài diễn văn lịch sử",
@@ -25,20 +25,7 @@
     "total_syllabus_words": 0,
     "target_count": 20,
     "missing_count": 20,
-    "status": "PARTIAL (0/20 syllabus words — Requires 20 words from human author)",
-    "phonology_summary": {
-      "total_words_tagged": 0,
-      "ipa_coverage_pct": 100,
-      "regular_verbs_count": 0,
-      "irregular_verbs_count": 0,
-      "non_verbs_count": 0,
-      "past_tense_triad": {
-        "/t/": [],
-        "/d/": [],
-        "/ɪd/": []
-      },
-      "triad_complete": false
-    }
+    "status": "PARTIAL (0/20 syllabus words — Requires 20 words from human author)"
   },
   "keywords": [],
   "characters": null,
@@ -76,14 +63,14 @@
     "map_clil_module": "Ethos, Pathos, Logos trong thuyết phục",
     "map_grammar_hub": "Ngữ điệu và trọng âm nhấn mạnh; `gear2_karaoke` bài diễn văn lịch sử",
     "map_cefr_type": "B1+ Academic · Rotary 4",
-    "alignment_status": "ALIGNED",
-    "alignment_note": "Syllabus sources fully aligned."
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Review & Math Logic Cycle\") enforced over Digital Map (Source A: \"Opinion Project 3: Persuasive Techniques\"). Source A metadata preserved in digital_map_reference."
   },
   "metadata_provenance": {
-    "generated_at": "2026-11-04T08:30:03.295Z",
+    "generated_at": "2026-11-10T05:25:47.833Z",
     "generator_script": "scripts/generate_week_blueprint.mjs",
     "source_digital_map": true,
-    "source_master_syllabus": false,
+    "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
   }
 }

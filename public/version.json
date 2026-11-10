@@ -1,9 +1,9 @@
 {
-  "commit": "f0add43221758591b46cf5bf1ba9080e2baa1e51",
-  "git_commit": "f0add43221758591b46cf5bf1ba9080e2baa1e51",
-  "shortCommit": "f0add432",
-  "message": "fix(pipeline): enforce Gate 11 v2, remediate W79 & Wave 3 specs in staging [multi-agent-review]",
-  "builtAt": "2026-11-10T04:36:50.992Z",
-  "build_timestamp": "2026-11-10T04:36:50.992Z",
+  "commit": "9448d7e9cc0010194ab2f2b70e1361356ae56e5b",
+  "git_commit": "9448d7e9cc0010194ab2f2b70e1361356ae56e5b",
+  "shortCommit": "9448d7e9",
+  "message": "fix(pipeline): upgrade G-GEN gates, fix Source B range parser & CEFR stage resolution [multi-agent-review]",
+  "builtAt": "2026-11-10T05:29:29.020Z",
+  "build_timestamp": "2026-11-10T05:29:29.020Z",
   "env": "production"
 }

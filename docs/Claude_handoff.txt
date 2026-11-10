@@ -121,25 +121,21 @@ Phát hiện nghiêm trọng:
 Chưa kiểm được: code Gate 11v2/12/13/14, audit script, build, freeze guard (zip chỉ có staged + manifest).
 Đã dispatch: A) điều tra nguồn Source B + quét 156 tuần; B) nâng gate (sàn/trần, coverage, toán cấu trúc, lặp từ); C) phân loại FAIL production; D) sửa blueprint CEFR; E) trả lời D.1 lại. Tái sinh chỉ sau duyệt.
 Cần Owner: (a) W79 giữ production cũ (Source B) hay Industrial Revolution (Source A)? Nhắc lại Source B > Source A. (b) W33 frozen vs blueprint — change control. (c) xác nhận rotate API key Google TTS.
-
-### Round 71 Execution & Forensic Deliverables Completed (2026-11-10)
-- **A. Nguồn sự thật (Source B Forensics):**
-  - Trích dẫn nguyên văn Source B W79-80 (Topic "Space Exploration vs. Earth Fix", lines 632-637) vs Digital Map W79 (line 170).
-  - Xác định nguyên nhân gốc parser Source B: `parseKhungCT` chỉ bắt `• Week N:`, bỏ sót hoàn toàn 8 tuần dạng khoảng (`Weeks 79-80`, `Weeks 95-96`, `Weeks 129-132`). Khi `txtData = null`, hệ thống âm thầm fallback sang Source A và gán cờ `ALIGNED`.
-  - Quét toàn bộ 156 tuần: phát hiện đúng 8 tuần dạng khoảng nói trên.
-  - Phân tích production W79 tại `cfe67e4e`: Theme lấy từ Source B ("Space Exploration vs Earth Restoration"), Grammar Review đúng Source B (Passive Voice, Comparatives, Rebuttal Intro), nhưng Vocab là 20 từ học thuật cao cấp (không chứa 7 từ cơ bản của Source B).
-  - Đặt `docs/agent_artifacts/staging/week_79/provenance.json` sang trạng thái `HOLD_PENDING_OWNER_DECISION`.
-- **B. Nâng cấp Hệ thống Gates (Đổi tên thành `G-GEN-01` .. `G-GEN-16`):**
-  - `G-GEN-11 (Axis iii)`: Kiểm tra cấu trúc Math Strand (bài toán phải đúng strand hình học/phân số/logic nhiều bước, không chỉ gán nhãn câu dẫn).
-  - `G-GEN-13`: Bổ sung SÀN độ khó (FK Floor >= 5.5, Academic words >= 3.0% cho Stage 3) và mở rộng trần/sàn sang `vocab.js` (definitions/examples), `writing_hub.js`, `speaking_hub.js`.
-  - `G-GEN-15`: Gate mới kiểm tra độ phủ Vocab trong CLIL (yêu cầu >= 60% từ mục tiêu xuất hiện trong bài đọc).
-  - `G-GEN-16`: Gate mới phát hiện lặp từ liền kề (`\bword word\b`) và cụm sai ngữ pháp thô (`majority of seventy percent`).
-- **C. Audit Production & Nợ Kỹ thuật:**
-  - Giải thích nguyên nhân FAIL Gate 11 v2 trên các tuần production: W43-48 là Unit Toán chuyên đề (tiêu đề là strand, không có bullet phụ nên parser cũ bỏ sót); W73-82 thiếu độ phủ từ vựng và chỉ có 2 bài Singapore Math (nợ kỹ thuật từ generator cũ trước SOP v2.3.0).
-- **D. Blueprint CEFR:**
-  - 29 tuần mâu thuẫn CEFR: nguyên nhân gốc W113-120 bị khuyết trong bảng Digital Map tại commit `879804e9` khiến parser fallback về A2 Flyers; các tuần còn lại là di chứng lịch mock 5 tuần cũ. Đã sửa logic `parseKhungCT` và `parseDigitalMap` trong `scripts/generate_week_blueprint.mjs`.
-- **E. Câu hỏi D.1 (Info Exchange Solo với Nova):**
-  - Trích dẫn trực tiếp file:dòng dữ liệu thật W36 (`speaking_hub.js:65-135`) và code component `InformationExchangeP2.jsx:559-573` chứng minh luồng thi 2 chiều độc lập với AI Nova.
-- **F. Đóng gói Review Package:**
-  - Đóng gói `docs/review_packages/round71_20261110.zip` và `docs/review_packages/manifest_round71.txt`.
-
+## Round 72 — Claude QA verdict (phản biện Round 71) + quyết định Owner
+QUYẾT ĐỊNH OWNER (10/11/2026): Source B (Khung CT) là nguồn sự thật duy nhất; Source A (Digital Map) phải theo Source B.
+Hệ quả: theme W79 "Industrial Revolution" sai; staged W79 → RETIRED (giữ file). Production W79 cũ: theme + grammar khớp Source B nhưng thiếu 7 vocab Source B (space, earth, money, spend, fix, problem, important). Nhận lại: R69 dùng blueprint làm nguồn duy nhất, chưa truy gốc Source B.
+Verdict R71: W79 + Wave 3 vẫn không merge; tạm dừng tái sinh đúng.
+Đã xác nhận: gốc lỗi parser (Weeks 79-80 → null → fallback Source A, alignment mặc định ALIGNED); gate đổi tiền tố G-GEN; nợ Singapore Math W73–82; production không đổi; push 9448d7e9 khớp ls-remote.
+Lỗi:
+1) Staging blueprint W79/129/130/131 SHA y hệt R70 → sửa parser chưa áp dụng; không có dry-run output.
+2) Parser mới chỉ bắt "-" , chọn khoảng hẹp nhất, theme = tên chu kỳ (W79=W80; W129–132 cùng theme); cần hierarchy khối/chu kỳ/tuần.
+3) "Chỉ 8 tuần bị bỏ sót" chưa có output quét.
+4) Ngưỡng G-GEN-13 mâu thuẫn dữ liệu: Stage 2 trần 8.5 vs production 11.9–15.1; Stage 3 sàn 5.5 = FK W126; Stage 3 trần < Stage 2. Nên dùng lexical profile theo Cambridge word list; FK phụ.
+5) Code G-GEN-13 không kiểm example_en của vocab; longWordsFloor không dùng.
+6) Bảng C.9 thiếu bằng chứng gốc, baseline là blueprint (nhiễm Source A); nhãn false-positive W41/W76/W80/W36 chưa chứng minh.
+7) Xung đột lịch mock (W80) vs Source B (W79–80 Review & Micro-Debate 2) → cần Owner.
+8) W129–132: Source B chỉ có tên khối/chu kỳ; W130/W131 chỉ có ở Source A → cần Owner quyết nguyên tắc (Source A chỉ bổ sung chi tiết khi Source B im lặng, hay bỏ).
+9) Info Exchange: luồng solo với Nova đã chứng minh bằng code; tuyên bố "đúng chuẩn Cambridge" chưa có trích dẫn handbook.
+Chưa kiểm được: output audit, build, freeze guard.
+Đã dispatch R72: áp dụng parser + quét Source B độc lập + tái sinh 156 blueprint ra thư mục tạm + diff; patch Source A theo Source B (chưa áp dụng); gate lexical profile + example_en; audit lại production theo Source B; chưa tái sinh nội dung.
+Cần Owner: (a) W129–132 + W130/W131 khi Source B im lặng; (b) mock W80 và các tuần mock khác vs Source B; (c) mục tiêu trình độ Stage 2/3 (B1 vs B1+); (d) xác nhận rotate API key Google TTS.

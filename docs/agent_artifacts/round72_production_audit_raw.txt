@@ -1,0 +1,34 @@
+========================================================================
+🔍 AUDIT TOÀN BỘ PRODUCTION DỰA TRÊN BASELINE SOURCE B (ROUND 72)
+========================================================================
+
+| Tuần | Loại hình | Baseline Theme (Source B) | Trạng thái Production | Phân loại | Căn cứ & Trích dẫn Source B (file:dòng) |
+| :---: | :--- | :--- | :---: | :---: | :--- |
+| **W33** | Rotary 1 (A2) | The Mistake (Accidents) | Safety First & Friction | **FALSE POSITIVE** (Frozen) | Source B dòng 500 (`• Week 33: The Mistake`). Production là Golden Master (Khóa tại commit 44c1cf13 theo docs/W33_GOLDEN_FREEZE_MANIFEST.json). |
+| **W34** | Rotary 2 (A2) | Storytelling Practice 1 (Fable) | The Lion & The Mouse | **FALSE POSITIVE** (Aligned Fable) | Source B dòng 508 (`• Week 34: Storytelling Practice 1 (Fable)`). Production là truyện ngụ ngôn Sư tử & Chuột, hoàn toàn khớp thể loại Fable. |
+| **W35** | Rotary 3 (A2) | Storytelling Practice 2 (Personal Recount) | Personal Recount | **PASS** | Source B dòng 513 (`• Week 35: Storytelling Practice 2`). Khớp 100% chủ đề và cấu trúc bài đọc. |
+| **W36** | Mock 04 (A2) | Review & Project 3: "My Adventure Book" | Full Mock Exam Flyers 04 | **FALSE POSITIVE** (Mock Schedule) | Source B dòng 519 (`• Week 36: Review & Project 3`). Lịch Mock Round 64 quyết định W36 là Full Mock Flyers (hội tụ 16 Parts Cambridge, không dùng cấu trúc rotary 5 bài math). |
+| **W41** | Rotary 4 (A2) | Life Cycles (Process) | Life Cycles (Process) | **PASS** (Slash Fixed) | Source B dòng 352 (`Vocabulary Focus: egg, hatch, caterpillar/tadpole, chrysalis, butterfly/frog.`). Parser đã tách dấu `/`, production chứa đầy đủ các thực thể. |
+| **W73** | Rotary (B1) | Science/ELA: The Water Cycle (Advanced) / Math: Volume | Science/ELA: The Water Cycle (Advanced) / Math: Volume | **FAIL THẬT** (Nợ Kỹ Thuật Math) | Source B dòng 580-650. Theme và CLIL khớp Source B, nhưng Singapore Math chỉ có 2 bài (sinh từ generator cũ trước SOP v2.3.0 yêu cầu 5 bài). Cần giữ nguyên production, không sửa nóng. |
+| **W74** | Rotary (B1) | Science/ELA: Food Chains / Math: Complex Charts | Science/ELA: Food Chains / Math: Complex Charts | **FAIL THẬT** (Nợ Kỹ Thuật Math) | Source B dòng 580-650. Theme và CLIL khớp Source B, nhưng Singapore Math chỉ có 2 bài (sinh từ generator cũ trước SOP v2.3.0 yêu cầu 5 bài). Cần giữ nguyên production, không sửa nóng. |
+| **W75** | Rotary (B1) | History/ELA: Ancient Egypt / Math: Timelines | History/ELA: Ancient Egypt / Math: Timelines | **FAIL THẬT** (Nợ Kỹ Thuật Math) | Source B dòng 580-650. Theme và CLIL khớp Source B, nhưng Singapore Math chỉ có 2 bài (sinh từ generator cũ trước SOP v2.3.0 yêu cầu 5 bài). Cần giữ nguyên production, không sửa nóng. |
+| **W76** | Mock 01 (B1) | History/ELA: Explorers / Math: Map Scales | Full Mock Exam PET 01 | **FALSE POSITIVE** (Mock Schedule) | Source B dòng 607 (`• Week 76: History/ELA: Explorers`). Lịch Mock Round 67/68 chọn W76 làm PET Pilot Mock đầu tiên theo chu kỳ 4 tuần, cấu trúc đề thi PET chuẩn (Reading 6 parts, Listening 4 parts). |
+| **W77** | Rotary (B1) | Social Studies/ELA: World Landmarks / Math: 3D Geometry | Social Studies/ELA: World Landmarks / Math: 3D Geometry | **FAIL THẬT** (Nợ Kỹ Thuật Math) | Source B dòng 580-650. Theme và CLIL khớp Source B, nhưng Singapore Math chỉ có 2 bài (sinh từ generator cũ trước SOP v2.3.0 yêu cầu 5 bài). Cần giữ nguyên production, không sửa nóng. |
+| **W79** | Rotary 2 (B1) | Space Exploration vs. Earth Fix | Space vs Earth (Prod) / Industrial Rev (Staged) | **FAIL THẬT** (Staged) / **PASS THEME** (Prod) | Source B dòng 632-637 (`Weeks 79-80: Review & Micro-Debate 2, Topic: "Space Exploration vs. Earth Fix"`). Bản staged mang theme Industrial Revolution -> RETIRED. Bản prod cũ khớp theme & grammar nhưng thiếu 7 vocab Source B. |
+| **W80** | Mock 02 (B1) | Review & Micro-Debate 2 | Full Mock Exam PET 02 | **FALSE POSITIVE** (Mock Schedule) | Source B dòng 632-637 (`Weeks 79-80: Review & Micro-Debate 2`). Lịch Mock Round 69 quyết định W80 là bài Mock Exam Stage 2 số 2. Xung đột giữa lịch thi và Source B đang chờ Owner phê duyệt tại Phần D. |
+| **W81** | Rotary (B1) | ELA: The Master Architect (Structure) / Math: Graphing Data | ELA: The Master Architect (Structure) / Math: Graphing Data | **FAIL THẬT** (Nợ Kỹ Thuật Math) | Source B dòng 580-650. Theme và CLIL khớp Source B, nhưng Singapore Math chỉ có 2 bài (sinh từ generator cũ trước SOP v2.3.0 yêu cầu 5 bài). Cần giữ nguyên production, không sửa nóng. |
+| **W82** | Rotary (B1) | ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data | ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data | **FAIL THẬT** (Nợ Kỹ Thuật Math) | Source B dòng 580-650. Theme và CLIL khớp Source B, nhưng Singapore Math chỉ có 2 bài (sinh từ generator cũ trước SOP v2.3.0 yêu cầu 5 bài). Cần giữ nguyên production, không sửa nóng. |
+| **W125** | Rotary (B1+) | Intro & Conclusion | Intro & Conclusion | **PASS** | Source B dòng 986 (`• Week 125: Intro & Conclusion (Tuần 125: Mở bài & Kết bài)`). Khớp 100% chủ đề luận điểm P.E.E. và bài đọc B1+. |
+
+========================================================================
+📊 BẢNG TỔNG HỢP PHÂN LOẠI KẾT QUẢ AUDIT PRODUCTION
+========================================================================
+1. PASS HOÀN TOÀN (0 lỗi): W35, W41 (đã sửa parser slash), W125.
+2. FALSE POSITIVE HỢP LỆ (Quy chuẩn kiến trúc & Freeze Locks):
+   - W33, W34: Khóa bất biến Golden Master theo docs/W33_GOLDEN_FREEZE_MANIFEST.json.
+   - W36, W76, W80: Các tuần Mock Exam chuẩn Cambridge theo Lịch Mock 4 tuần (Round 64-69), cấu trúc đề thi chuẩn không áp dụng 5 bài Singapore Math của tuần rotary.
+3. FAIL THẬT SỰ (Cần Change Control / Technical Debt):
+   - W73, W74, W75, W77, W81, W82: Nợ kỹ thuật Singapore Math (2 bài thay vì 5 bài SOP v2.3.0).
+   - W79: Bản staged Industrial Revolution đã RETIRED. Bản production cũ thiếu 7 từ vựng Source B.
+========================================================================
+

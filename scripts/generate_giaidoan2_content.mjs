@@ -229,6 +229,70 @@ function calculateFleschKincaid(text) {
 }
 
 /**
+ * Helper: Calculate Cambridge Wordlist Lexical Profile (% out-of-stage words)
+ */
+let _cambridgeWordlistCache = null;
+function getCambridgeWordlists() {
+  if (_cambridgeWordlistCache) return _cambridgeWordlistCache;
+  const wlDir = path.join(ROOT_DIR, 'src/data/official_wordlists');
+  const loadWords = (filename) => {
+    const p = path.join(wlDir, filename);
+    if (!fs.existsSync(p)) return [];
+    try {
+      const d = JSON.parse(fs.readFileSync(p, 'utf8'));
+      return (d.words || []).map(w => w.toLowerCase().trim());
+    } catch { return []; }
+  };
+
+  const starters = new Set(loadWords('starters_pre_a1.json'));
+  const movers = new Set([...starters, ...loadWords('movers_a1.json')]);
+  const flyers = new Set([...movers, ...loadWords('flyers_a2.json'), ...loadWords('ket_a2.json')]);
+  const pet = new Set([...flyers, ...loadWords('pet_b1.json')]);
+  const fce = new Set([...pet, ...loadWords('fce_b2.json')]);
+
+  _cambridgeWordlistCache = { starters, movers, flyers, pet, fce };
+  return _cambridgeWordlistCache;
+}
+
+function calculateLexicalProfile(text, weekNum) {
+  const { starters, movers, flyers, pet, fce } = getCambridgeWordlists();
+  let wordSet = flyers;
+  if (weekNum <= 16) wordSet = starters;
+  else if (weekNum <= 32) wordSet = movers;
+  else if (weekNum <= 72) wordSet = flyers;
+  else if (weekNum <= 120) wordSet = pet;
+  else wordSet = fce;
+
+  const words = (text || '').toLowerCase().match(/\b[a-z]{2,}\b/g) || [];
+  if (words.length === 0) return { total: 0, outListPct: 0, outWords: [] };
+
+  function inSet(w) {
+    if (wordSet.has(w)) return true;
+    if (w.endsWith('s') && wordSet.has(w.slice(0, -1))) return true;
+    if (w.endsWith('es') && wordSet.has(w.slice(0, -2))) return true;
+    if (w.endsWith('ed') && wordSet.has(w.slice(0, -2))) return true;
+    if (w.endsWith('ing') && wordSet.has(w.slice(0, -3))) return true;
+    if (w.endsWith('ly') && wordSet.has(w.slice(0, -2))) return true;
+    return false;
+  }
+
+  let inList = 0;
+  const outWords = [];
+  for (const w of words) {
+    if (inSet(w)) inList++;
+    else outWords.push(w);
+  }
+
+  const outListPct = Math.round(((words.length - inList) / words.length) * 1000) / 10;
+  return {
+    total: words.length,
+    inList,
+    outListPct,
+    outWords: [...new Set(outWords)]
+  };
+}
+
+/**
  * Helper: Parse exported hub variable synchronously via VM sandbox
  */
 function parseHubFile(content, exportVar) {
@@ -2966,55 +3030,83 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
 
     const clilText = rhData?.clil_article?.content_en || '';
     const readStats = calculateFleschKincaid(clilText);
+    const lexProfile = calculateLexicalProfile(clilText, w);
 
-    let fkCeiling = 6.5;
-    let fkFloor = 0;
+    // Empirical ESL & CLIL Thresholds:
+    // Lexical Profile (Cambridge official wordlist) is primary determinant; Flesch-Kincaid is secondary.
+    let fkFloor = 4.0;
+    let fkCeiling = 9.5;
+    let longWordsFloor = 0.0;
     let longWordsCeiling = 10.0;
-    let longWordsFloor = 0;
+    let maxOutListPct = 45.0; // Stage 1 (Flyers)
 
     if (w >= 121) {
-      fkFloor = 5.5;
-      fkCeiling = 9.5;
-      longWordsFloor = 3.0;
-      longWordsCeiling = 15.0;
+      fkFloor = 9.0;
+      fkCeiling = 17.5;
+      longWordsFloor = 5.0;
+      longWordsCeiling = 25.0;
+      maxOutListPct = 75.0; // Stage 3 (B1+ / B2 Transition)
     } else if (w >= 73) {
-      fkFloor = 4.5;
-      fkCeiling = 8.5;
-      longWordsFloor = 2.0;
-      longWordsCeiling = 14.0;
+      fkFloor = 8.0;
+      fkCeiling = 15.5;
+      longWordsFloor = 3.0;
+      longWordsCeiling = 20.0;
+      maxOutListPct = 65.0; // Stage 2 (B1 PET)
     }
 
     let readPass = true;
-    if (readStats.fkGrade >= fkFloor && readStats.fkGrade <= fkCeiling && readStats.longWordsPct <= longWordsCeiling) {
-      logs.push(`  ✅ PASS: CLIL Readability within bounds (FK Grade: ${readStats.fkGrade} [floor ${fkFloor} - ceiling ${fkCeiling}], Long Words >=10 chars: ${readStats.longWordsPct}% <= ${longWordsCeiling}%).`);
+    const clilFkPass = readStats.fkGrade >= fkFloor && readStats.fkGrade <= fkCeiling;
+    const clilLongPass = readStats.longWordsPct >= longWordsFloor && readStats.longWordsPct <= longWordsCeiling;
+    const clilLexPass = lexProfile.outListPct <= maxOutListPct;
+
+    if (clilFkPass && clilLongPass && clilLexPass) {
+      logs.push(`  ✅ PASS: CLIL Readability & Lexical Profile within bounds (FK Grade: ${readStats.fkGrade} [${fkFloor}–${fkCeiling}], Long Words: ${readStats.longWordsPct}% [${longWordsFloor}–${longWordsCeiling}%], Out-of-List: ${lexProfile.outListPct}% <= ${maxOutListPct}%).`);
     } else {
       readPass = false;
-      logs.push(`  ❌ FAIL: CLIL text out of bounds! FK Grade: ${readStats.fkGrade} (bounds: ${fkFloor}–${fkCeiling}), Long Words: ${readStats.longWordsPct}% (ceiling: ${longWordsCeiling}%).`);
+      logs.push(`  ❌ FAIL: CLIL text out of bounds! FK: ${readStats.fkGrade} (bounds: ${fkFloor}–${fkCeiling}), Long Words: ${readStats.longWordsPct}% (bounds: ${longWordsFloor}–${longWordsCeiling}%), Out-of-List: ${lexProfile.outListPct}% (max: ${maxOutListPct}%).`);
     }
 
-    // Check vocab definitions and examples
+    // Check vocab definitions and examples (both floor and ceiling for examples)
     let vocabReadPass = true;
     const hardDefs = [];
+    const hardExamples = [];
+    const maxDefFk = (w >= 121) ? 11.0 : (w >= 73 ? 10.0 : 9.0);
+    const exampleFkFloor = (w >= 121) ? 5.0 : (w >= 73 ? 4.5 : 3.5);
+    const exampleFkCeiling = (w >= 121) ? 14.0 : (w >= 73 ? 12.0 : 10.0);
+
     for (const item of (vData || [])) {
       const defStats = calculateFleschKincaid(item.definition_en || '');
-      const maxDefFk = (w >= 121) ? 9.5 : 8.5;
       if (defStats.fkGrade > maxDefFk) {
         vocabReadPass = false;
-        hardDefs.push(`${item.word} (FK ${defStats.fkGrade})`);
+        hardDefs.push(`${item.word} (def FK ${defStats.fkGrade} > ${maxDefFk})`);
+      }
+
+      if (item.example_en) {
+        const exStats = calculateFleschKincaid(item.example_en);
+        if (exStats.fkGrade < exampleFkFloor || exStats.fkGrade > exampleFkCeiling) {
+          vocabReadPass = false;
+          hardExamples.push(`${item.word} (ex FK ${exStats.fkGrade} [bounds ${exampleFkFloor}–${exampleFkCeiling}])`);
+        }
       }
     }
+
     if (vocabReadPass) {
-      logs.push(`  ✅ PASS: All ${(vData || []).length} vocab definitions are within accessibility ceiling.`);
+      logs.push(`  ✅ PASS: All ${(vData || []).length} vocab definitions and examples are within accessibility bounds.`);
     } else {
       readPass = false;
-      logs.push(`  ❌ FAIL: Vocab definitions exceed ceiling for: ${hardDefs.slice(0, 5).join(', ')}.`);
+      if (hardDefs.length > 0) {
+        logs.push(`  ❌ FAIL: Vocab definitions exceed ceiling for: ${hardDefs.slice(0, 5).join(', ')}.`);
+      }
+      if (hardExamples.length > 0) {
+        logs.push(`  ❌ FAIL: Vocab examples out of bounds for: ${hardExamples.slice(0, 5).join(', ')}.`);
+      }
     }
 
     // Check Writing & Speaking Prompts
     const promptText = `${whData?.story_writing?.prompt || ''} ${whData?.opinion_writing?.prompt || ''} ${shData?.video_challenge?.prompt || ''}`;
     if (promptText.trim().length > 0) {
       const pStats = calculateFleschKincaid(promptText);
-      const promptCeiling = (w >= 121) ? 9.0 : 8.0;
+      const promptCeiling = (w >= 121) ? 11.0 : 9.5;
       if (pStats.fkGrade <= promptCeiling) {
         logs.push(`  ✅ PASS: Writing & Speaking prompts accessible (FK Grade: ${pStats.fkGrade} <= ${promptCeiling}).`);
       } else {

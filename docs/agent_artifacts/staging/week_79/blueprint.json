@@ -1,48 +1,108 @@
 {
   "week": 79,
-  "theme": "The Industrial Revolution",
-  "title_en": "The Industrial Revolution",
-  "title_vi": null,
+  "theme": "Space Exploration vs. Earth Fix",
+  "title_en": "Review & Micro-Debate 2",
+  "title_vi": "Ôn tập & Tranh luận nhỏ 2",
   "cefr_level": "B1 PET",
   "cefr_stage": 2,
   "week_type": "rotary_practice",
   "isFullMock": false,
   "rotary_cycle": null,
   "template_used": "production_kit/templates/template_pet_transition.js",
-  "story_title": "Weekly Adventure Story",
+  "story_title": "Space Exploration vs. Earth Fix",
   "clil_topic": {
-    "title": "Lịch sử thế giới: Động cơ hơi nước & Nhà máy",
-    "focus": "Lịch sử thế giới: Động cơ hơi nước & Nhà máy"
+    "title": "Space Exploration vs. Earth Fix & Rebuttal Intro (\"Yes, but...\")",
+    "focus": "Space Exploration vs. Earth Fix"
   },
   "grammar_focus": {
-    "structure": "Nguyên nhân & tác động lịch sử; `broadcast_studio` phim tài liệu lịch sử",
+    "structure": "Passive Voice, Conditionals, Comparatives",
     "outcome": null,
     "pattern_regex": null,
     "requires_authoring_examples": true
   },
   "vocabulary_focus": {
-    "syllabus_words": [],
-    "total_syllabus_words": 0,
+    "syllabus_words": [
+      "space",
+      "earth",
+      "money",
+      "spend",
+      "fix",
+      "problem",
+      "important"
+    ],
+    "total_syllabus_words": 7,
     "target_count": 20,
-    "missing_count": 20,
-    "status": "PARTIAL (0/20 syllabus words — Requires 20 words from human author)",
-    "phonology_summary": {
-      "total_words_tagged": 0,
-      "ipa_coverage_pct": 100,
-      "regular_verbs_count": 0,
-      "irregular_verbs_count": 0,
-      "non_verbs_count": 0,
-      "past_tense_triad": {
-        "/t/": [],
-        "/d/": [],
-        "/ɪd/": []
-      },
-      "triad_complete": false
-    }
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
   },
-  "keywords": [],
+  "keywords": [
+    "space",
+    "earth",
+    "money",
+    "spend",
+    "fix",
+    "problem",
+    "important"
+  ],
   "characters": null,
-  "target_vocab_20": [],
+  "target_vocab_20": [
+    {
+      "word": "space",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "earth",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "money",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "spend",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "fix",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "problem",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "important",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
   "scaffolding_tier": "Tier 3 (Guided CER)",
   "tested_skills": [
     "listening_p1",
@@ -64,7 +124,7 @@
   ],
   "target_shields": 3,
   "pending_human_authoring": [
-    "Target Vocabulary: Needs 20 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
     "Story World: 5 story scenes with narration script + character names",
     "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
     "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
@@ -76,14 +136,14 @@
     "map_clil_module": "Lịch sử thế giới: Động cơ hơi nước & Nhà máy",
     "map_grammar_hub": "Nguyên nhân & tác động lịch sử; `broadcast_studio` phim tài liệu lịch sử",
     "map_cefr_type": "B1 PET · Rotary 2",
-    "alignment_status": "ALIGNED",
-    "alignment_note": "Syllabus sources fully aligned."
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Space Exploration vs. Earth Fix\") enforced over Digital Map (Source A: \"The Industrial Revolution\"). Source A metadata preserved in digital_map_reference."
   },
   "metadata_provenance": {
-    "generated_at": "2026-11-04T08:30:00.660Z",
+    "generated_at": "2026-11-10T05:25:47.815Z",
     "generator_script": "scripts/generate_week_blueprint.mjs",
     "source_digital_map": true,
-    "source_master_syllabus": false,
+    "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
   }
 }
