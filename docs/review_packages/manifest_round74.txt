@@ -1,12 +1,12 @@
 ROUND 74 PACKAGE & COMMIT MANIFEST
 ========================================================================
-Timestamp: 2026-11-10T06:28:21.955Z
-Git Head:  6bacb86a8d130676739cd91e8a5df963b9dc614a
+Timestamp: 2026-11-10T06:28:50.874Z
+Git Head:  8677d72dfc2b615c1707af0205f8df1b185ff98a
 
 ZIP PACKAGE:
   Path:    docs/review_packages/round74_20261110.zip
   Size:    573748 bytes
-  SHA-256: 1b014ca1bfdf2442227f498fa3e443296e954c6e173733a851f4ce12aa3bec05
+  SHA-256: f72a5b6d31dac38605b982452f2d2a29d1aa88b7f9ae1937d93be4d203565489
 
 RAW ARTIFACTS INCLUDED:
   docs/agent_artifacts/round74_production_audit_raw.txt
