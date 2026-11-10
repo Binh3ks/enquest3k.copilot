@@ -1,0 +1,79 @@
+====================================================================================================
+🔍 TOÀN BỘ DÒNG SOURCE B PART II KHỚP /CYCLE|PHASE|Cycle|WEEKS? \d+-\d+/ (TASK A.3)
+Nguồn: docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt (Đọc thật từ dòng 123 - Bắt đầu Part II)
+====================================================================================================
+
+L123: PART II. DETAILED SYLLABUS: PHASE 1 (WEEKS 1-54)
+L126: 🟢 BLOCK A: THE "HERE & NOW" (HIỆN TẠI & TÔI) - WEEKS 1-18
+L127: Unit 1: Identity & Environment (Weeks 1-8)
+L169: Unit 2: Community & Routines (Weeks 9-14)
+L200: Unit 3: Action! (Present Continuous) (Weeks 15-18) - NEW UNIT
+L220: 🟠 BLOCK B: THE "FIRST STEPS BACK" (BƯỚC VỀ QUÁ KHỨ) - WEEKS 19-36
+L222: Unit 4: Memories (Past State & Regular Verbs) (Weeks 19-28)
+L320: 🟢 BLOCK C: CLIL FOUNDATIONS (KHOA HỌC, TOÁN & LOGIC) - WEEKS 37-54
+L321: (Mục tiêu: Xây dựng vốn từ vựng học thuật cơ bản để chuẩn bị cho Phase 2)
+L322: Unit 6: Nature's Rules (Science CLIL) (Weeks 37-42)
+L347: •	Week 41: Life Cycles (Process) (Tuần 41: Vòng đời)
+L348: •	Topic: Butterfly or Frog Life Cycle. (Chủ đề: Vòng đời Bướm hoặc Ếch.)
+L349: •	Key Learning Outcome: Explain a natural cycle using sequence words. (Kết quả: Giải thích chu trình tự nhiên dùng từ nối.)
+L353: •	Week 42: The Water Journey (Cycle) (Tuần 42: Hành trình của Nước)
+L354: •	Topic: The Water Cycle Story. (Chủ đề: Câu chuyện Vòng tuần hoàn nước.)
+L356: •	Skill Focus: Understanding Cycles. (Kỹ năng: Hiểu về chu trình.)
+L359: Unit 7: The Math Bridge (Math CLIL) (Weeks 43-48)
+L397: Unit 8: Graduation Prep (Weeks 49-54)
+L411: •	Key Learning Outcome: Use specific chunks to ask about experiences (Preparation for Phase 2). (Kết quả: Dùng cụm từ để hỏi trải nghiệm.)
+L417: •	Week 54: PHASE 1 GRADUATION SHOWCASE (Tuần 54: BUỔI TRÌNH DIỄN TỐT NGHIỆP GIAI ĐOẠN 1)
+L419: 🧠 PHASE 2: ACADEMIC APPLICATION (WEEKS 55-120)
+L421: 🟤 UNIT 9: LOGICAL THINKING & EXPLANATION (TƯ DUY LOGIC & GIẢI THÍCH) - WEEKS 55-66
+L422: (Tương ứng nội dung gốc Cycle 2.1)
+L511: •	Week 65: Review & Consolidation (Cycle 2.1) (Tuần 65: Ôn tập & Củng cố Chu trình 2.1)
+L514: •	Vocabulary Focus: Review all keywords from Weeks 55-64.
+L522: 🟣 UNIT 10: PERSUASION & SYSTEMS (THUYẾT PHỤC & CÁC HỆ THỐNG) - WEEKS 67-84
+L523: (Tương ứng nội dung gốc Cycle 2.1 phần sau và Cycle 2.2 phần đầu)
+L547: •	Vocabulary Focus: protect, save, environment, pollution, waste, recycle, clean, dirty.
+L578: •	Week 73: Science/ELA: The Water Cycle (Advanced) / Math: Volume (Tuần 73: Khoa học/ELA: Vòng tuần hoàn Nước Nâng cao / Toán: Thể tích)
+L583: •	Vocabulary Focus: evaporation, condensation, precipitation, collection, vapor, turn into, cycle.
+L632: •	Weeks 79-80: Review & Micro-Debate 2 (Tuần 79-80: Ôn tập & Tranh luận nhỏ 2)
+L674: 🟤 UNIT 10: ADVANCED SYSTEMS & HISTORY (HỆ THỐNG NÂNG CAO & LỊCH SỬ) - WEEKS 85-96
+L748: •	Weeks 93-94: Mini-Research Project
+L752: •	Topic: Choose a topic from Weeks 85-92 (e.g., "Volcanoes" or "Ancient Rome").
+L754: •	Weeks 95-96: Review & Application (Tuần 95-96: Ôn tập & Ứng dụng)
+L757: 🔴 UNIT 11: CITIZENSHIP & ECONOMICS (CÔNG DÂN & KINH TẾ) - WEEKS 97-104
+L815: •	Key Learning Outcome (ELA): Explain the cycle between producers and consumers. (Kết quả: Giải thích chu trình giữa người SX và tiêu dùng.)
+L831: 🟣 UNIT 12: "MY PASSION PROJECT" (DỰ ÁN ĐAM MÊ) - WEEKS 105-120
+L832: (Tương ứng nội dung gốc Cycle 2.3 - Hoàn thành Phase 2) Mục tiêu: Tổng hợp toàn bộ kỹ năng Phase 2 (Nghiên cứu, Viết đoạn văn, Thuyết trình) vào một sản phẩm lớn. Học sinh tự chọn một chủ đề khoa học/lịch sử để nghiên cứu.
+L833: Weeks 105-108: Research & Planning (Nghiên cứu & Lập kế hoạch)
+L870: Weeks 109-112: Drafting the Report (Viết nháp Báo cáo)
+L907: Weeks 113-120: Visuals, Presentation & Graduation (Trình bày & Tốt nghiệp Phase 2)
+L948: •	Topic (Math): Phase 2 Math Assessment. (Toán: Bài đánh giá Toán Phase 2.)
+L949: •	Week 120: PHASE 2 GRADUATION (Tuần 120: TỐT NGHIỆP GIAI ĐOẠN 2)
+L953: 🎓 PHASE 3: ADVANCED SYNTHESIS & DEBATE (WEEKS 121-156)
+L955: 🔵 PROJECT CYCLE 1: THE HOMEWORK DEBATE (WEEKS 121-132)
+L1007: •	Weeks 129-132: Review & Math Logic Cycle (Tuần 129-132: Ôn tập & Toán Logic)
+L1009: 🔵 PROJECT CYCLE 2: VIDEO GAMES DEBATE (WEEKS 133-144)
+L1011: Phase A: Research & Inquiry (Nghiên cứu & Tìm hiểu)
+L1030: Phase B: Essay Writing (Viết Bài luận)
+L1058: Phase C: Debate Execution (Thực hiện Tranh luận)
+L1084: Weeks 141-144: Review & Math Focus (Geometry Cycle)
+L1106: 🔵 PROJECT CYCLE 3: CAPSTONE & GRADUATION (WEEKS 145-156)
+L1108: Phase A: Research & Synthesis (Nghiên cứu & Tổng hợp)
+L1127: Phase B: Advanced Writing (Viết Nâng cao)
+L1153: Phase C: Debate & Graduation (Tranh luận & Tốt nghiệp)
+L1165: •	Topic (Math): Math Cycle 3 Review. (Toán: Ôn tập Toán Chu trình 3.)
+
+====================================================================================================
+📊 BẢNG ĐỐI CHIẾU DÒNG GIỮA R73, R75 (GÕ TAY) VÀ THỰC TẾ FILE SOURCE B (TASK A.3)
+====================================================================================================
+
+| Hạng Mục Cấu Trúc Phase 3 | Dòng Nêu Trong R73 | Dòng Gõ Tay Trong R75 | Dòng Thực Tế Trong Source B (Đọc File) | Dòng Nào Đúng? |
+| :--- | :---: | :---: | :---: | :--- |
+| **Khởi đầu Phase 3 (Weeks 121-156)** | L953 | L886 | L953: "🎓 PHASE 3: ADVANCED SYNTHESIS & DEBATE (WEEKS 121-156)" | ✅ R73 ĐÚNG 100% (R75 sai do gõ tay) |
+| **Project Cycle 1: Homework (Weeks 121-132)** | L955 | L950 | L955: "🔵 PROJECT CYCLE 1: THE HOMEWORK DEBATE (WEEKS 121-132)" | ✅ R73 ĐÚNG 100% (R75 sai do gõ tay) |
+| **Sub-cycle: Review & Math Logic (Weeks 129-132)** | L1007 | L1007 | L1007: "•	Weeks 129-132: Review & Math Logic Cycle (Tuần 129-132: Ôn tập & Toán Logic)" | ✅ R73 ĐÚNG 100% (R75 sai do gõ tay) |
+| **Project Cycle 2: Video Games (Weeks 133-144)** | L1009 | L1011 | L1009: "🔵 PROJECT CYCLE 2: VIDEO GAMES DEBATE (WEEKS 133-144)" | ✅ R73 ĐÚNG 100% (R75 sai do gõ tay) |
+| **Sub-phase: Research & Inquiry** | N/A | L1011 (Nhầm Phase A thành Cycle 2) | L1011: "Phase A: Research & Inquiry (Nghiên cứu & Tìm hiểu)" | ✅ Thực tế file Source B xác nhận |
+| **Project Cycle 3: Capstone & Graduation (Weeks 145-156)** | L1106 | L1103 ("Cycle 4" - BỊA) | L1106: "🔵 PROJECT CYCLE 3: CAPSTONE & GRADUATION (WEEKS 145-156)" | ✅ R73 ĐÚNG 100% (R75 sai do gõ tay) |
+
+👉 KẾT LUẬN TASK A.3:
+- Các số dòng trong R73 (L953, L955, L1009, L1106) là CHÍNH XÁC 100% khi đọc từ file Source B.
+- Báo cáo R75 đã gõ tay sai lệch thành L886, L950, L1011, L1103 và tự bịa ra nhãn "Cycle 4" (trong khi Phase 3 chỉ có đúng 3 Project Cycles: Cycle 1 Homework, Cycle 2 Video Games, Cycle 3 Capstone & Graduation).

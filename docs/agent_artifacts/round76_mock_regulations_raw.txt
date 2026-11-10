@@ -1,0 +1,152 @@
+====================================================================================================
+🏛️ XÁC NHẬN QUY ĐỊNH MOCK TỪ FILE THẬT (ROUND 76 - TASKS B.5, B.6, B.7)
+====================================================================================================
+
+### 1. DÁN NGUYÊN VĂN CÁC TRÍCH ĐOẠN THEO YÊU CẦU (TASK B.5)
+
+1.1. `sed -n 126,133p docs/WEEK_PRODUCTION_SOP.md`:
+```markdown
+### Danh mục 28 Tuần Mock Test:
+- **Starters (1 Mock)**: W16
+- **Movers (2 Mocks)**: W24, W32
+- **Flyers (8 Mocks - Nhịp 4+1)**: W37, W42, W47, W52, W57, W62, W67, W72 (Official Flyers Gate)
+- **B1 PET & CLIL (8 Mocks - Nhịp 4+1)**: W77, W82, W87, W92, W97, W102, W107, W112 (Official PET Gate)
+- **B2 FCE & Acellus (9 Mocks - Nhịp 4+1)**: W117, W122, W127, W132, W137, W142, W147, W152, W156 (Final Capstone & Graduation)
+
+> **Note**: Giai đoạn W113–W156 mục tiêu điều chỉnh thành **B1+ Academic Reading & Structured Opinion** (thay vì B2 FCE/Acellus). Mock Test labels trên UI hiển thị là `★ B1+ Academic Assessment Mock`.
+```
+
+1.2. `sed -n 176,189p docs/MASTER_ARCHITECTURE_W01_W156.md`:
+```markdown
+│ Giai đoạn     │ Trình độ     │ Số lượng Mock Test     │ Vị trí Tuần Thi Thử (Full Mock)     │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W01 – W16     │ Pre-A1       │ 1 Mock Test Duy nhất   │ W16 (Starters Graduation Shield)    │
+│               │ (LITE MODE)  │                        │                                     │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W17 – W32     │ A1 Movers    │ 2 Mock Tests           │ W24 (Mid-Movers), W32 (Final Movers)│
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W33 – W72     │ A2 Flyers    │ 8 Mock Tests (Nhịp 4+1)│ W37, W42, W47, W52, W57, W62, W67,  │
+│               │              │                        │ W72 (Official Flyers Gate)          │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W73 – W112    │ B1 PET       │ 8 Mock Tests (Nhịp 4+1)│ W77, W82, W87, W92, W97, W102, W107,│
+│               │ & CLIL Lab   │                        │ W112 (B1 PET Official Gate)         │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W113 – W156   │ B1+ Academic │ 9 Mock Tests (Nhịp 4+1)│ W117, W122, W127, W132, W137, W142, │
+```
+
+1.3. `grep -n "FULL MOCK" docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`:
+```markdown
+28:│                            BẢNG PHÂN BỔ 28 TUẦN FULL MOCK TEST TOÀN DIỆN                    │
+73:| **W16** | **Sports Commentary (Dynamic Verbs)** | **★ FULL MOCK 01 (Starters)** | Bình luận Thể thao: Use action verbs with energy | **Tier 1 (Festival)**| **Bài thi thử Starters trọn vẹn: L1–L4, R1–R5, S1–S3; Lễ trao Khiên Starters** |
+89:| **W24** | **Feelings in the Past (Was/Were + Adjectives)** | **★ FULL MOCK 02 (Movers)** | Cảm xúc trong Quá khứ: Express past emotions and reasons | **Tier 2 (Exam)** | **Full Mock Movers 1: Đánh giá giữa kỳ L1–L5, R1–R6, S1–S4; Kiểm tra Notepad** |
+97:| **W32** | **The Busy Day (Irregular Verbs 4: Tasks)** | **★ FULL MOCK 03 (Movers)** | Ngày Bận rộn - Động từ Bất quy tắc nhóm 4: Describe completed tasks | **Tier 2 (Official)**| **Full Mock Movers 2: Cấp Chứng chỉ Hoàn thành Movers; Lễ phong Khiên A1** |
+110:| **W37** | **Living vs. Non-Living (Reasoning)** | **★ FULL MOCK 04 (Flyers)** | Vật sống & Không sống: Explain why something is living or non-living using "Because" | **Tier 2 (Exam)** | **Full Mock Flyers 1: Trọn vẹn 16 Parts Cambridge (L1–L5, R1–R7, S1–S4)** |
+115:| **W42** | **The Water Journey (Cycle)** | **★ FULL MOCK 05 (Flyers)** | Hành trình của Nước: Sequence nature's events | **Tier 2 (Exam)** | **Full Mock Flyers 2: Bấm giờ 3 bài thi chính thức; Cập nhật Hộ chiếu Khiên** |
+120:| **W47** | **Big Numbers (Place Value)** | **★ FULL MOCK 06 (Flyers)** | Số lớn - Giá trị hàng: Read and write numbers up to 100 correctly in English | **Tier 2 (Exam)** | **Full Mock Flyers 3: Rà soát lỗi đọc Part 5 (1-4 từ) và viết Part 7** |
+125:| **W52** | **Have You Ever" Bingo (Seeding)** | **★ FULL MOCK 07 (Flyers)** | Bingo "Bạn đã bao giờ...?" - Gieo hạt: Use specific chunks to ask about experiences (Preparation for | **Tier 2 (Exam)** | **Full Mock Flyers 4: Đo lường tốc độ làm bài và độ chính xác Speaking** |
+138:| **W57** | **ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts  / Toán: Khái niệm Phép nhân)** | **★ FULL MOCK 08 (Flyers)** | ELA: Vấn đề & Giải pháp (Câu: Write sentences proposing a solution using modals | **Tier 2 (Exam)** | **Full Mock Flyers 5: Bắt đầu áp dụng chuẩn chấm gắt gao của giám khảo Cambridge** |
+143:| **W62** | **ELA: The Movie Trailer (Summarizing) / Math: Rounding** | **★ FULL MOCK 09 (Flyers)** | ELA: Trailer Phim - Tóm tắt / Toán: Làm tròn: Paraphrase a text in 3 sentences | **Tier 2 (Exam)** | **Full Mock Flyers 6: Đánh giá độ ổn định 15 Khiên trên cả 3 bài thi** |
+148:| **W67** | **ELA: The OREO Structure / Math: Measuring Mass** | **★ FULL MOCK 10 (Flyers)** | ELA: Cấu trúc OREO / Toán: Đo khối lượng: Identify and label parts: Opinion, Reason, Example, Opinion Restated | **Tier 2 (Exam)** | **Full Mock Flyers 7: Tiền tổng duyệt trước kỳ thi chính thức** |
+153:| **W72** | **Science/ELA: Photosynthesis / Math: Area & Perimeter** | **★ FULL MOCK 11 (OFFICIAL)**| Khoa học/ELA: Quang hợp / Toán: Diện tích & Chu vi: Explain the process of photosynthesis | **Tier 2 (Official)**| **KỲ THI CHÍNH THỨC CAMBRIDGE FLYERS — MỤC TIÊU TUYỆT ĐỐI 15/15 KHIÊN!** |
+168:| **W77** | **Social Studies/ELA: World Landmarks / Math: 3D Geometry** | **★ FULL MOCK 12 (PET)** | Xã hội/ELA: Kỳ quan Thế giới / Toán: Hình học 3D: Write a technical description of a landmark | **Tier 3 (Exam)** | **Full Mock B1 PET 1 (4 Parts Listening, 6 Parts Reading, 2 Parts Writing, Speaking)** |
+173:| **W82** | **ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data** | **★ FULL MOCK 13 (PET)** | ELA: Vlogger Du Lịch - Viết nháp / Toán: Phân tích Dữ liệu: Write a descriptive essay draft | **Tier 3 (Exam)** | **Full Mock B1 PET 2: Chấm bài viết email 100 từ và bài đọc dài Part 3** |
+178:| **W87** | **Human Body / Math: Elapsed Time** | **★ FULL MOCK 14 (PET)** | Cơ thể Người / Toán: Thời gian trôi qua: Explain a body system's function (e.g., Circulatory) | **Tier 3 (Exam)** | **Full Mock B1 PET 3: Đánh giá khả năng thảo luận hai chiều Speaking Part 3** |
+183:| **W92** | **Community Helpers / Math: Surveys** | **★ FULL MOCK 15 (PET)** | Người giúp đỡ Cộng đồng / Toán: Khảo sát: Write an interview report about a job | **Tier 3 (Exam)** | **Full Mock B1 PET 4: Nâng cao độ khó bài đọc Gapped Text (Part 4)** |
+196:| **W97** | **Government / Math: Percentages Intro** | **★ FULL MOCK 16 (PET)** | Chính phủ / Toán: Giới thiệu Phần trăm: Define Government and its role | **Tier 3 (Exam)** | **Full Mock B1 PET 5: Đánh giá độc lập trên thang điểm Cambridge English Scale** |
+201:| **W102**| **Goods & Services / Math: Total Costs** | **★ FULL MOCK 17 (PET)** | Hàng hóa & Dịch vụ / Toán: Tổng chi phí: Classify goods and services | **Tier 3 (Exam)** | **Full Mock B1 PET 6: Chấm bài viết bài báo 100 từ Part 2** |
+206:| **W107**| **The Note-Taker (Summary)** | **★ FULL MOCK 18 (PET)** | Người Ghi chép - Tóm tắt: Convert a paragraph into bullet points (keywords only) | **Tier 3 (Exam)** | **Full Mock B1 PET 7: Tổng duyệt kỹ năng làm bài trước kỳ thi chính thức** |
+211:| **W112**| **The Editor's Eye (Review)** | **★ FULL MOCK 19 (OFFICIAL)**| Con mắt Biên tập viên - Chỉnh sửa: Self-correct spelling and basic grammar errors | **Tier 3 (Official)**| **KỲ THI CHÍNH THỨC B1 PET — MỤC TIÊU: PASS WITH MERIT / DISTINCTION!** |
+216:| **W117**| **The Knowledge Fair (Group A)** | **★ FULL MOCK (Presentation A)**| **Hội chợ Tri thức Nhóm A: Báo cáo dự án Passion Project** | **Tier 3 (Exam)** | **Thuyết trình 3 phút + Q&A; Đánh giá năng lực thuyết trình B1 Part A** |
+236:| **W127**| **Rebuttal Practice** | **★ FULL MOCK 20 (B1+)**| Luyện Phản biện: Use "They say... but I say..." structure | **Tier 3 (Exam)** | **Full Mock B1+ Academic 1: Reading 500–800w passages + Opinion Essay 140–190w** |
+241:| **W132**| **B1+ Academic Assessment Mock 2** | **★ FULL MOCK 21 (B1+)**| **Khảo sát Năng lực Chuẩn hóa B1+ 2** | **Tier 3 (Exam)** | **Full Mock B1+ Academic 2: Chấm bài luận Opinion Essay theo Rubric** |
+246:| **W137**| **Editing & Polishing (Word Choice)** | **★ FULL MOCK 22 (B1+)**| Chỉnh sửa & Trau chuốt - Dùng từ: Replace weak verbs/adjectives with stronger ones (e.g., "bad" -> "harmful", "good" -> "beneficial") | **Tier 3 (Exam)** | **Full Mock B1+ Academic 3: Đọc bài khoa học 600w + Nghe bài giảng + Opinion Essay** |
+251:| **W142**| **Geometry Review - Area & Volume** | **★ FULL MOCK 23 (B1+)**| Ôn tập Hình học - Diện tích & Thể tích: Calculate volume of cubes and cuboids | **Tier 3 (Exam)** | **Full Mock B1+ Academic 4: Đọc liên môn + Toán lời văn + Opinion Essay** |
+264:| **W147**| **Advanced Thesis Writing** | **★ FULL MOCK 24 (B1+)**| Viết Luận đề Nâng cao: Write a thesis that acknowledges complexity ("While X is true, Y is better because...") | **Tier 3 (Exam)** | **Full Mock B1+: 4 Kỹ năng Nghe, Nói, Đọc, Viết theo chuẩn B1+ học thuật** |
+269:| **W152**| **Genre Review: Narrative** | **★ FULL MOCK 25 (B1+)**| Ôn tập Thể loại: Tường thuật: Write a complete story in 45 minutes | **Tier 3 (Exam)** | **Full Mock B1+ Academic Tổng hợp: Đọc 800w + Opinion Essay + Nghe bài giảng + Thuyết trình** |
+273:| **W156**| **GRADUATION CEREMONY & FINAL SHOWCASE** | **★ FULL MOCK 26 / GRADUATION**| LỄ TỐT NGHIỆP & TRÌNH DIỄN CUỐI CÙNG: The Graduation Ceremony | **★ GRADUATION** | **LỄ TỐT NGHIỆP — TRÌNH BÀY EXTENDED PROJECT & NHẬN BẰNG B1+ ACADEMIC PROFICIENCY!** |
+280:2. **Khai Báo Cột Milestone**: Các tuần có gắn mác `★ FULL MOCK` bắt buộc phải cấu hình cờ `isFullMock: true` trong file metadata `index.js` của tuần đó, kích hoạt chế độ tính giờ làm bài và bộ đề thi trọn gói tại Zone 5.
+```
+
+1.4. `sed -n 3,8p docs/agent_artifacts/round64_mock_schedule_and_conflicts.md`:
+```markdown
+> **Phiên bản:** Round 64 — Quyết định Kiến trúc Sư phạm
+> **Quy tắc mới:** Chu kỳ cố định **đúng 4 tuần / 1 bài Mock Exam** xuyên suốt toàn bộ 156 tuần (W4, W8, W12, ... W156 = 39 tuần mock).
+> **Phân định Stage:**
+> - **Stage 1 (Tuần 1 – 72):** Định dạng **Cambridge YLE Flyers (A2)** (18 tuần mock).
+> - **Stage 2 (Tuần 73 – 156):** Định dạng **Cambridge B1 Preliminary / PET** (21 tuần mock).
+> - **Trạng thái Lite Mode (W01–W16):** Tạm hoãn (Deferred) — W4, W8, W12, W16 thuộc dải Lite Mode, không build engine lúc này.
+```
+
+### 2. XÁC NHẬN SỐ MOCK ĐẦU KHÓA & QUY ƯỚC "NHỊP 4+1" (TASK B.5)
+
+- **Starters (W01–W16):** Đúng 1 mock tại W16 (`Starters Graduation Shield`, `docs/MASTER_ARCHITECTURE_W01_W156.md:178`).
+- **Movers (W17–W32):** Đúng 2 mocks tại W24 (`Mid-Movers`) và W32 (`Final Movers`, `docs/MASTER_ARCHITECTURE_W01_W156.md:181`).
+- **Tổng số mock đầu khóa (W01–W35):** Chính xác **3 bài mock** (1 Starters + 2 Movers). Ký ức của Owner về "2 mock trong W1-W35" chính là 2 bài mock của trình độ A1 Movers (W24, W32).
+- **Quy ước "Nhịp 4+1":** Master Architecture ghi rõ `8 Mock Tests (Nhịp 4+1): W37, W42, W47, W52, W57, W62, W67, W72`. Cứ 4 tuần học xoay vòng (rotary) thì có 1 tuần mock test tổng hợp.
+
+### 3. ĐỐI CHIẾU MÂU THUẪN ĐỊNH DẠNG MOCK TỪ W113 (TASK B.6)
+
+- **Nguồn 1: Quyết định Owner Decision 6 (Round 64, Round 75):**
+  > "Stage 2 (Tuần 73 – 156): Định dạng Cambridge B1 Preliminary / PET (21 tuần mock)."
+  > "Mock sau W≤72 = Flyers (10 mock), sau W≥76 = PET (21 mock)."
+- **Nguồn 2: Master Architecture & Digital Map & SOP:**
+  > `docs/WEEK_PRODUCTION_SOP.md:131,133`: "B2 FCE & Acellus (9 Mocks - Nhịp 4+1): W117, W122, W127, W132, W137, W142, W147, W152, W156... Giai đoạn W113–W156 mục tiêu điều chỉnh thành B1+ Academic Reading & Structured Opinion (thay vì B2 FCE/Acellus). Mock Test labels trên UI hiển thị là ★ B1+ Academic Assessment Mock."
+  > `docs/MASTER_ARCHITECTURE_W01_W156.md:189`: "W113 – W156 | B1+ Academic | 9 Mock Tests (Nhịp 4+1)"
+  > `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md:236,241`: "Full Mock B1+ Academic 1: Reading 500–800w passages + Opinion Essay 140–190w", "Full Mock B1+ Academic 2: Chấm bài luận Opinion Essay theo Rubric".
+- **XÁC ĐỊNH MÂU THUẪN (KHÔNG TỰ Ý CHỌN):**
+  - Nếu theo Owner Decision 6: Toàn bộ 21 mock từ W76 đến W156 đều dùng đề thi Cambridge B1 PET.
+  - Nếu theo Architecture SOP/Digital Map: Giai đoạn W76–W112 dùng B1 PET (8-10 mock), còn từ W113–W156 chuyển sang chuẩn B1+ Academic (bài đọc 500-800 từ, viết bài luận Opinion Essay 140-190 từ, thuyết trình tranh biện).
+  -> **Trạng thái:** Đánh dấu `[CHƯA XÁC ĐỊNH — CHỜ OWNER QUYẾT ĐỊNH]` cho các mock sau W116 đến W156.
+
+### 4. BẢNG MOCK CẬP NHẬT TOÀN DIỆN (ĐẦU KHÓA + 31 MOCK SAU W36) [TASK B.7]
+
+| STT Mock | Vị Trí Tuần Chèn | Trình Độ | Định Dạng Khảo Thí | Trạng Thái Hiện Tại | Tên Cũ Trong Repo |
+| :---: | :--- | :--- | :--- | :--- | :--- |
+| **M01** | Chèn sau W16 | Pre-A1 | Starters (10 Quests Lite Mode) | Chưa có engine riêng | FULL MOCK 01 (Starters) |
+| **M02** | Chèn sau W24 | A1 Movers | Movers Mid-Mock | Chưa biên soạn | FULL MOCK 02 (Movers 1) |
+| **M03** | Chèn sau W32 | A1 Movers | Movers Final Graduation Mock | Chưa biên soạn | FULL MOCK 03 (Movers 2) |
+| **M04** | Chèn sau W36 | A2 Flyers | Flyers (A2) | Đã merge trong week_36 prod | Pilot Flyers Mock 1 |
+| **M05** | Chèn sau W40 | A2 Flyers | Flyers (A2) | Staged tại staging/week_40_mock | Flyers Mock Batch 2 (W40) |
+| **M06** | Chèn sau W44 | A2 Flyers | Flyers (A2) | Staged tại staging/week_44_mock | Flyers Mock Batch 2 (W44) |
+| **M07** | Chèn sau W48 | A2 Flyers | Flyers (A2) | Staged tại staging/week_48_mock | Flyers Mock Batch 2 (W48) |
+| **M08** | Chèn sau W52 | A2 Flyers | Flyers (A2) | Chưa biên soạn | FULL MOCK 07 (W52) |
+| **M09** | Chèn sau W56 | A2 Flyers | Flyers (A2) | Chưa biên soạn | W56 mock |
+| **M10** | Chèn sau W60 | A2 Flyers | Flyers (A2) | Chưa biên soạn | W60 mock |
+| **M11** | Chèn sau W64 | A2 Flyers | Flyers (A2) | Chưa biên soạn | W64 mock |
+| **M12** | Chèn sau W68 | A2 Flyers | Flyers (A2) | Chưa biên soạn | W68 mock |
+| **M13** | Chèn sau W72 | A2 Flyers | Flyers (A2 Official Gate) | Chưa biên soạn | FULL MOCK 11 (OFFICIAL) |
+| **M14** | Chèn sau W76 | B1 PET | PET (B1) | Đã merge trong week_76 prod | Pilot PET Mock 1 (W76) |
+| **M15** | Chèn sau W80 | B1 PET | PET (B1) | Đã merge trong week_80 prod | PET Mock 2 (W80) |
+| **M16** | Chèn sau W84 | B1 PET | PET (B1) | Chưa biên soạn | W84 mock |
+| **M17** | Chèn sau W88 | B1 PET | PET (B1) | Chưa biên soạn | W88 mock |
+| **M18** | Chèn sau W92 | B1 PET | PET (B1) | Chưa biên soạn | FULL MOCK 15 (W92) |
+| **M19** | Chèn sau W96 | B1 PET | PET (B1) | Chưa biên soạn | W96 mock |
+| **M20** | Chèn sau W100 | B1 PET | PET (B1) | Chưa biên soạn | W100 mock |
+| **M21** | Chèn sau W104 | B1 PET | PET (B1) | Chưa biên soạn | W104 mock |
+| **M22** | Chèn sau W108 | B1 PET | PET (B1) | Chưa biên soạn | W108 mock |
+| **M23** | Chèn sau W112 | B1 PET | PET (B1 Official Gate) | Chưa biên soạn | FULL MOCK 19 (OFFICIAL) |
+| **M24** | Chèn sau W116 | Stage 3 | [CHƯA XÁC ĐỊNH: PET vs B1+ Academic] | Chưa biên soạn | W116 mock |
+| **M25** | Chèn sau W120 | Stage 3 | [CHƯA XÁC ĐỊNH: PET vs B1+ Academic] | Chưa biên soạn | Phase 2 Graduation |
+| **M26** | Chèn sau W124 | Stage 3 | [CHƯA XÁC ĐỊNH: PET vs B1+ Academic] | Chưa biên soạn | W124 mock |
+| **M27** | Chèn sau W128 | Stage 3 | [CHƯA XÁC ĐỊNH: PET vs B1+ Academic] | Chưa biên soạn | W128 mock |
+| **M28** | Chèn sau W132 | Stage 3 | [CHƯA XÁC ĐỊNH: PET vs B1+ Academic] | Chưa biên soạn | FULL MOCK 21 (B1+ 2) |
+| **M29** | Chèn sau W136 | Stage 3 | [CHƯA XÁC ĐỊNH: PET vs B1+ Academic] | Chưa biên soạn | W136 mock |
+| **M30** | Chèn sau W140 | Stage 3 | [CHƯA XÁC ĐỊNH: PET vs B1+ Academic] | Chưa biên soạn | W140 mock |
+| **M31** | Chèn sau W144 | Stage 3 | [CHƯA XÁC ĐỊNH: PET vs B1+ Academic] | Chưa biên soạn | W144 mock |
+| **M32** | Chèn sau W148 | Stage 3 | [CHƯA XÁC ĐỊNH: PET vs B1+ Academic] | Chưa biên soạn | W148 mock |
+| **M33** | Chèn sau W152 | Stage 3 | [CHƯA XÁC ĐỊNH: PET vs B1+ Academic] | Chưa biên soạn | FULL MOCK 25 (B1+ 3) |
+| **M34** | Chèn sau W156 | Stage 3 | [CHƯA XÁC ĐỊNH: PET vs Final Graduation] | Chưa biên soạn | FULL MOCK 26 / GRAD |
+
+### 5. TỔNG HỢP SỐ LIỆU & QUY TRÌNH GOVERNANCE (TASK B.7)
+
+- **Tổng số bài mock toàn khóa:** 3 (đầu khóa) + 31 (sau W36) = **34 bài mock**.
+- **Tổng số tuần lịch toàn khóa:** 156 (nội dung chính quy Source B) + 34 (bài mock xen kẽ) = **190 tuần lịch**.
+- **So sánh với SOP cũ (28 mock):**
+  - SOP cũ có 28 bài mock chiếm trực tiếp vào mã tuần nội dung (W16, W24, W32, W37, W42, W47...).
+  - Chuẩn mới có 34 bài mock chèn xen kẽ, trả lại 100% 156 tuần cho nội dung bài học chính quy của Source B.
+- **Các file cần cập nhật và quy trình Governance:**
+  - Các file cần sửa: `docs/WEEK_PRODUCTION_SOP.md`, `docs/MASTER_ARCHITECTURE_W01_W156.md`, `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`, và 156 `blueprint.json`.
+  - **Rào cản Governance:** `WEEK_PRODUCTION_SOP.md` và `MASTER_ARCHITECTURE_W01_W156.md` là các tài liệu hiến pháp bị khóa mã băm mật mã trong `docs/GATE15_SPEC_W33.json` và guard test `guard_governance_docs.mjs`.
+  - **Quy trình đề xuất (Không tự ý sửa):**
+    1. Trình Owner phê duyệt bảng phân bổ 34 mock và chốt định dạng cho W113–W156.
+    2. Sau khi Owner ký duyệt (Sign-Off), tạo một commit riêng cập nhật đồng thời văn bản và mã băm SHA-256 trong manifest bảo vệ.
