@@ -105,3 +105,4 @@ log('========================================================================\n'
 
 fs.writeFileSync(OUT_FILE, output, 'utf8');
 console.log(`✓ Audit output successfully saved to: ${path.relative(ROOT_DIR, OUT_FILE)}`);
+

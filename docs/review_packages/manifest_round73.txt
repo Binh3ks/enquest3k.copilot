@@ -1,0 +1,290 @@
+========================================================================
+ENGQUEST3K — ROUND 73 REVIEW PACKAGE MANIFEST
+Timestamp: 2026-11-10T06:01:04.634Z
+Git Head (Local): e2f2a49a870c85a6119ec22c9af1bf490153991a
+Git Remote (origin/main): 75c39e8b4f164b96e6154e562811043640339dd4	refs/heads/main
+Zip Package: docs/review_packages/round73_20261110.zip
+Total Packaged Files: 257
+========================================================================
+
+1. SCOPE & GOVERNANCE COMPLIANCE:
+  - ZERO MUTATIONS TO PRODUCTION: src/data/weeks/ is 100% untouched.
+  - ZERO CONTENT REGENERATION: Staged weeks kept as-is, no unauthorized text synthesis.
+  - SOURCE A PATCH NOT APPLIED: Retained only as proposed patch file in docs/agent_artifacts/.
+  - ALL TABLES CALCULATED FROM REAL ON-DISK DATA: 0 hardcoded strings or hand-typed values in audit scripts.
+  - W79 + WAVE 3 (W126, 127, 129, 130, 131, 133, 134) REMAIN UNMERGED.
+
+2. FORENSIC FINDINGS & TASK DELIVERABLES:
+  - Task A.1-2 (Audit Thật): scripts/audit_round73_source_b_baseline.mjs executed against all 22 production weeks and 8 staged weeks via vm.runInContext. Raw calculated results saved to artifacts/round73_production_audit_raw.txt.
+  - Task B.3 (Git Commit Forensics W126/127/133/134): Commit 18c78f87 (2026-11-04) by binh4k synchronized Digital Map with Source B.
+  - Task B.4 (Deep Blueprint Diff): 156 blueprints compared across all fields; 11 theme diffs and 59 week-type diffs isolated with calculated reasons in artifacts/round73_blueprint_substantive_diffs.md.
+  - Task B.5 (156-Week Source A vs B Table): Calculated in artifacts/source_a_vs_source_b_156_weeks.md (146 matches, 6 divergences, 4 silent).
+  - Task B.6 (Source A Verbatim Patch): Generated strictly using Source B lines in artifacts/source_a_realignment.patch.
+  - Task C.7 (Source B Internal Contradictions): Side-by-side analysis of Part I (lines 95-108) vs Part II (lines 907-1156) in artifacts/source_b_internal_contradictions.md.
+  - Task C.8 (W33 Forensics): Full git history from commit 1de08bfe to f90edbd6 and itemized comparison against Source B line 299 in artifacts/w33_forensics_source_b_comparison.md.
+  - Task D.9 (Staged Gate 11 Audit): Gate 11 v2 executed on staged W79 and Wave 3; raw stdout saved to artifacts/round73_staged_gate11_raw.txt. W79, W129, W130, W131, W134 flagged for DROP/RETIRE.
+  - Task D.10 (Differentiation Options): Verbatim Source B vs design proposals for W79-80 and W129-132 in artifacts/differentiation_options_w79_80_w129_132.md.
+  - Task E.11 (39 Mock Weeks Re-count): Programmatic classification in artifacts/audit_39_mock_weeks_classification.md (27 new rotary, 7 review, 5 projects, 0 authentic exam in Source B).
+  - Task F.12-15 (Readability Calibration & Wordlist Provenance): Authentic Cambridge samples measured; pet_b1.json (481 words, A-C) and fce_b2.json (249 words, A only) provenance audited and halted; production and staged weeks re-measured with glossary exclusion and lemmatization in artifacts/calibrated_cambridge_readability_audit.md.
+  - Task G.16 (Cambridge Handbook Speaking Part 2): Cited Cambridge YLE Handbook pp. 29-30 (5 cues, reverse roles); card topic curriculum constraint marked 'CHƯA XÁC MINH' in artifacts/cambridge_handbook_speaking_part2_citation.md.
+
+========================================================================
+PACKAGED FILES WITH SHA-256 CHECKSUMS:
+  - artifacts/audit_39_mock_weeks_classification.md (11510 bytes) | SHA256: e74cf9bfccbc92fa4d3926dd09814d17240e00ce3a83498bd4dca285c76e0362
+  - artifacts/calibrated_cambridge_readability_audit.md (3735 bytes) | SHA256: 9957925006ec5e53db2406abad5fc05594b1300b83d399fa401a7de5c12080f5
+  - artifacts/cambridge_handbook_speaking_part2_citation.md (2353 bytes) | SHA256: ce19a63771f0f3167d8747b7db0e5cf64fc7b60fef4d1b28cd868957d504fffe
+  - artifacts/differentiation_options_w79_80_w129_132.md (4352 bytes) | SHA256: 5a460fb7c7b39bbd7110a885802ebcd8a12512ad3c1cc4a65248ab0b8eb1c2a6
+  - artifacts/round73_blueprint_substantive_diffs.md (20568 bytes) | SHA256: f319fa046abca2860d72f1c32f9ac4f17e6a84b6a85580b5c58f3d14bd7546c9
+  - artifacts/round73_production_audit_raw.txt (8192 bytes) | SHA256: 31f8ab60b650556f9175b5246f628d9cf390df53ad44a8bef845e1844e406590
+  - artifacts/round73_staged_gate11_raw.txt (1884 bytes) | SHA256: a63981adcad107f1a581a7f932083544233e3ae1453faa39fd9926bd5df0e7f0
+  - artifacts/source_a_realignment.patch (4120 bytes) | SHA256: b3a9d842e7786d0a7af1315ecc1c4dba0fa673da2b28193f96a74fb9e0ca6c74
+  - artifacts/source_a_vs_source_b_156_weeks.md (26559 bytes) | SHA256: 04ac3742b60786e942228fd8eb4991a097970158f2a1ff424954374356cab51a
+  - artifacts/source_b_internal_contradictions.md (8378 bytes) | SHA256: 7b2e2576f0a99f9ed7f4ceed3ae963ce719712bc936163fb2145624e9b228170
+  - artifacts/w33_forensics_source_b_comparison.md (3704 bytes) | SHA256: c38b35b6d58ea1bb619556d1c5d744842c146cc3178f5499cd12e16abf4c04af
+  - scripts/analyze_source_b_internal_conflicts.mjs (5413 bytes) | SHA256: cf948ed488e9db30abd4458a3cdce30e400e4a6249a207cde6429dc2bc9937f6
+  - scripts/audit_39_mock_weeks.mjs (5726 bytes) | SHA256: 6e92c45cf9cc5c0005ce73fd69ad84099383076a3e4d589810cb4c93e7d90f87
+  - scripts/audit_round73_source_b_baseline.mjs (14367 bytes) | SHA256: e9b97876763a73946825e36e4b1672ab484754205e5031aed9111b244b2dec31
+  - scripts/audit_staged_gate11.mjs (6950 bytes) | SHA256: 8eb0a622d543905c649acf4a3f593274484c2caaf56be9645bd2b24e5275da5f
+  - scripts/build_source_a_vs_source_b_table.mjs (6987 bytes) | SHA256: f6bc0003173cadca0ed7f87572534c050636ca22ef1eab4a16529b2999ba262f
+  - scripts/calibrate_cambridge_readability.mjs (13545 bytes) | SHA256: 2186bfe8faf6c9f934627ec970147bd9cf96f7199f79ef1b23d6603de3b95198
+  - scripts/diff_156_blueprints_detailed.mjs (6139 bytes) | SHA256: 948d0ee486bd518b49f2329607d1ffb8e9cf7af877dca07825d2ce8a9c1c6c11
+  - scripts/generate_source_a_patch.mjs (5311 bytes) | SHA256: 0ac355f39c536baafa553620160e6b4089b6ef2189d830c715d2ac1d8c10ea8a
+  - scripts/generate_w33_forensics.mjs (4023 bytes) | SHA256: e9df8b3197fc4a0a8aa26b70913a90d6e8a6964b118e9ad5288ca7871e127251
+  - scripts/regenerate_temp_blueprints.mjs (7729 bytes) | SHA256: 9bf1394040c0d269f869ebb1c51b5c8adc5d2f4bd0d452c5d40970fdd2e7f497
+  - staging/week_126/blueprint.json (3188 bytes) | SHA256: 739ded25ac2ac8cb23dfeab9a638592ea5258d792f9446ab8c587e86640d47d3
+  - staging/week_126/gate_validation.log (3161 bytes) | SHA256: 9b48c67a98958a4bffb576c249abfb8613352bdd6955d194ead3e051e8480aa0
+  - staging/week_126/listening_hub.js (7374 bytes) | SHA256: 6aa7910662b83bfdaf8d6a77461e19eb1bd79e80c3873bfed87e4946075f5643
+  - staging/week_126/provenance.json (2546 bytes) | SHA256: 4dbcd958ce1a10c08973a26a3789e5872940d5684fa99792715f079d888e18ae
+  - staging/week_126/reading_hub.js (28143 bytes) | SHA256: 31895dd195baab549bfd05740c28331d328d32bb924237ddfcd44df1662d591a
+  - staging/week_126/skill_practice_hub.js (8956 bytes) | SHA256: b779ae3c2155b52c59d548db71fca2ca94f6770d46230048310c6b2f4a3a074d
+  - staging/week_126/source_grounding.json (3985 bytes) | SHA256: 5253f5b9832153675566c06a1ede6d1db3574306c53e1479f5b1a82d0219c2fb
+  - staging/week_126/speaking_hub.js (6491 bytes) | SHA256: 57fe28fbd24405eefe51430c7e4b9b3c987e25d2b708f6708b6d7d6d2faee3f3
+  - staging/week_126/vocab.js (10415 bytes) | SHA256: 300e8a16bc834ee3c5865d9cafd22cacbac38500b3751495bb329f0506485afb
+  - staging/week_126/writing_hub.js (9678 bytes) | SHA256: c077f7435ae6dd70cd024dda92d6a82a7d057bd8f74a162507cea079523a969a
+  - staging/week_127/blueprint.json (6036 bytes) | SHA256: e5746dd393f3387ff2f64617ecce0bd40493bb8c36541d176c434b9f9c41371b
+  - staging/week_127/gate_validation.log (3152 bytes) | SHA256: 9c27a5e788203bb7e95002f8278371db502d88056b8b8a9207e8357751317ce1
+  - staging/week_127/listening_hub.js (7642 bytes) | SHA256: 990e7b1f0dd6c30254f9468c47ede0361d5c92dd4b8c5149ee992f3162fecd95
+  - staging/week_127/provenance.json (2613 bytes) | SHA256: 94138ff845f46d3259b2d184e5a6700b5de3a7555b2519d18af0722c3625133e
+  - staging/week_127/reading_hub.js (28277 bytes) | SHA256: bc7e143e8cbd5678f85a8760cc1edef91dcc0507778ea9a18b18563395871e31
+  - staging/week_127/skill_practice_hub.js (8877 bytes) | SHA256: fa468077ff30d7dbd2d0f39b4c6f58d90ececf3db13e87a7bf0850114204a2de
+  - staging/week_127/source_grounding.json (7145 bytes) | SHA256: 8f3fe2d28ab81761357ca860db81655c538ca662396e6491ff4dd7cf799020c5
+  - staging/week_127/speaking_hub.js (6477 bytes) | SHA256: ca98d9cd80bb82c47481c058087439765f89b9f9f0a868201ee1fe3cafbb7ff4
+  - staging/week_127/vocab.js (10255 bytes) | SHA256: 896a455ad5ea5317886988808f9f14a0653048ecc86e8b7de5309d15480a9d6f
+  - staging/week_127/writing_hub.js (9526 bytes) | SHA256: 4b9282a7d28362849b8dfb0e2d4bc4780fa402e134e47e9fdfc460ee46f95e28
+  - staging/week_129/blueprint.json (2848 bytes) | SHA256: 06e84b76cbd986916e328cb5c81dc39e368ed15dd310da560807a3078665cf57
+  - staging/week_129/gate_validation.log (3266 bytes) | SHA256: 4790c2cadf4b9908c4acc3cd371c3fbca5d178b2976192c426c68eb7b9bc6251
+  - staging/week_129/listening_hub.js (7529 bytes) | SHA256: de8e8165fe06c2f4a306bf5c9c2be83d7aaff21aa840ba9c11dace73b4b72733
+  - staging/week_129/provenance.json (2027 bytes) | SHA256: 62613b3c8b99f2392d3946d63be50be192b15d2f35b46981b65df6650802a996
+  - staging/week_129/reading_hub.js (28817 bytes) | SHA256: 8a3003c5b101544d2e109949ac9d82d0f2d04713cbe22c3d37d480bab7669225
+  - staging/week_129/skill_practice_hub.js (8766 bytes) | SHA256: 232b431a594450ef580e034266ad2a9cad5dd151ebc0cb70df75d7e966b7f50f
+  - staging/week_129/source_grounding.json (3489 bytes) | SHA256: 780974adc274213dab8ac3d88e1d725fdcc006504a6428c093fd499770658685
+  - staging/week_129/speaking_hub.js (6900 bytes) | SHA256: e650d27392bddd929db1131bed3208a601f11e27d641b4b3d17e1abde953fc39
+  - staging/week_129/vocab.js (10607 bytes) | SHA256: 1fbd7ef190c9531cf8f3ca476ddb8e242f8a7271d6f907356c8e049038777052
+  - staging/week_129/writing_hub.js (10043 bytes) | SHA256: 87c15e22b963885127a68774fe7b4455d94138d8bda0b009eeed5172be0994f8
+  - staging/week_130/blueprint.json (2862 bytes) | SHA256: 366ab05bb774e6f4aaf3dcb080332b426d5a76cfc8938aad61d2a7ec01f9f72f
+  - staging/week_130/gate_validation.log (3302 bytes) | SHA256: 0930af8e80296fd9ebe82031d9ef03bea69a78723f9b7a652f939d0a90233bfe
+  - staging/week_130/listening_hub.js (7454 bytes) | SHA256: e7b700c350e38d63c0c34f4c0e054e36b793ba58c9e8f41451c43aeea5b9ff8e
+  - staging/week_130/provenance.json (2066 bytes) | SHA256: 823da7db9536dd33c0522c2fea0eca82e8b9f23241f96c2b6f3ea4d72370e631
+  - staging/week_130/reading_hub.js (29170 bytes) | SHA256: 5eb161ca9eb7e720b7eeb908bc8b45cf8119fcd9c7276b5c96e1916cef5ffa39
+  - staging/week_130/skill_practice_hub.js (9131 bytes) | SHA256: 4b7e1ca153516a02ea4fafc461d8d2e5312d7d7fe201d21a5ed8b381a199bba5
+  - staging/week_130/source_grounding.json (3515 bytes) | SHA256: b76b1a5ad747dbffc54faa351ef316c14d29abb0bf982c132c5571315bf75e76
+  - staging/week_130/speaking_hub.js (6898 bytes) | SHA256: f6780d9306c8551b734ca3ea4b5f1b51630ee0c6ba84b72a2234686089c71cd6
+  - staging/week_130/vocab.js (10696 bytes) | SHA256: 84e5559df166a9e37bfc2c3ca44572abb3d7bf444e5a3c741b4fecf37e04bce5
+  - staging/week_130/writing_hub.js (10218 bytes) | SHA256: 5d66d4213d9aa42e1e7c032580af19879624d910791b1b31ef4c5f423e1e7daa
+  - staging/week_131/blueprint.json (2881 bytes) | SHA256: e25d57c78ca69401d62383ab923bce84ca2d0dee64f823048b6ef77531d63613
+  - staging/week_131/gate_validation.log (3391 bytes) | SHA256: 066154ee6866bd6ac27e2a280c4ebf38d4951efb66358807d7fdc27e6398fc87
+  - staging/week_131/listening_hub.js (7628 bytes) | SHA256: ee4a14f16079982398ad38602122001fe5f563c5e70686405c16d6dd770736c0
+  - staging/week_131/provenance.json (2044 bytes) | SHA256: 4a9eac8393be357b26ebb30fff1ce934ea6ee27f6601e5c3f3141b5e3bf4ebca
+  - staging/week_131/reading_hub.js (28805 bytes) | SHA256: 17642aecbae08dc187b5d874dd8ecf09312dbfc78c269baffd01865917def1d9
+  - staging/week_131/skill_practice_hub.js (8957 bytes) | SHA256: c3e46f39db4849981c3df0f58517ad103ef0fe2b1efe4268081883de4143a738
+  - staging/week_131/source_grounding.json (3500 bytes) | SHA256: 79154ba08538492ec2e7b4c0189a4b5a19e3af2f6a0d80a9b4c3f18ad135af2b
+  - staging/week_131/speaking_hub.js (6793 bytes) | SHA256: 23e71a4bdae618032534b4092557fb5408bf7400b606a4e31513e0c50dd4383e
+  - staging/week_131/vocab.js (10733 bytes) | SHA256: cdb5f1e1ccc812477c97552f18f1da4ad00e3e1501d804e24614b184d1a91e61
+  - staging/week_131/writing_hub.js (9845 bytes) | SHA256: 11c9019304d2fcf4684cd485635c34772bb62e28d23dd6e74cdf84282be588c8
+  - staging/week_133/blueprint.json (7992 bytes) | SHA256: 1e27093ca862df38d7877832355f37de9065f05d629b82f5a274bee9712a834d
+  - staging/week_133/gate_validation.log (3196 bytes) | SHA256: deba4948fb2214d79064521d70a03cf2d17190d1410a48caf43cd48ff7db3bad
+  - staging/week_133/listening_hub.js (8273 bytes) | SHA256: d6a4b81bd5e957c8642fbf023c9e2856145bfe2206cd82f24bcb0c59b72119dd
+  - staging/week_133/provenance.json (3118 bytes) | SHA256: 70c957d7bf9d8601d3735a585b24bcb951f613507d69e7c75ba93dec0fb433c9
+  - staging/week_133/reading_hub.js (29444 bytes) | SHA256: 19b1e9ab467e8e99bddcefa2bb835dadda14714371baaf369cf6fad2f9854e98
+  - staging/week_133/skill_practice_hub.js (8708 bytes) | SHA256: cb1697d496c2435edc94c0e36e4a9c853488bb276c2eb19798816d769ade7267
+  - staging/week_133/source_grounding.json (9710 bytes) | SHA256: 8413038861580704bb100c23e364d14d1c4c9220e6433d386312ba953edd5a2c
+  - staging/week_133/speaking_hub.js (6872 bytes) | SHA256: 6da63043a704c6a541b3ace02ce910a61b3950944feaa517562d61996b2b8b71
+  - staging/week_133/vocab.js (10835 bytes) | SHA256: 7502f54a9eb3aef64bb6ecfeb95d66629a36b2261f300a8f88387a516632c8dd
+  - staging/week_133/writing_hub.js (10278 bytes) | SHA256: 0dd6d80a52bf46673e2c0e3c249aa775f918cc433d6e86335f1d69f047d460e4
+  - staging/week_134/blueprint.json (7826 bytes) | SHA256: 1714b6ca8f1bd8284063c0575a97a42284595c1d74fbb0e553fb136a8a2775e4
+  - staging/week_134/gate_validation.log (3190 bytes) | SHA256: 12e0648b587ce97f8bd224ddbb82851582833f5db0ceb2c9d29b30f715776507
+  - staging/week_134/listening_hub.js (7771 bytes) | SHA256: 9947dea36f57d580bdb82594b2ad8dc0c674976837e0c689c0a6a8f8560c6d4a
+  - staging/week_134/provenance.json (3087 bytes) | SHA256: f4356a0c7a29a3059bfa5e2c69dd70f3d35188b9c6e858c49cd071fc95de80c9
+  - staging/week_134/reading_hub.js (29285 bytes) | SHA256: ad34ca03eff5980207e141ea39fb30721be0c1586085fda416c4408b80e27a07
+  - staging/week_134/skill_practice_hub.js (8846 bytes) | SHA256: 4665bdc7d8fd37f458dfe3d7e7585975d7d17326d1e22b80c6309d806c28526b
+  - staging/week_134/source_grounding.json (9529 bytes) | SHA256: e44764fa2bf0ed0bb02d20b0cc58f6f6387bf608777cfaa91e444da90612b1ea
+  - staging/week_134/speaking_hub.js (6903 bytes) | SHA256: 3aa891b29413ab9729ec9a98f8645bbef04b57cc38e4160ef672bd54e842845d
+  - staging/week_134/vocab.js (10932 bytes) | SHA256: 945231453592110e97919ebb124bd65a46488eb0d82257f699864dfaa9e761ff
+  - staging/week_134/writing_hub.js (9876 bytes) | SHA256: 03c7e02d050c2b32434056687b701656bcb6fde0c0a48ae5a449628f1f1e916f
+  - staging/week_79/blueprint.json (4364 bytes) | SHA256: e70339603b0fd02a63582a9c5906031689dae7d2d1652f24eff53c22925d8d8d
+  - staging/week_79/gate_validation.log (3166 bytes) | SHA256: 461c141d34eeb67b8946d1876d7470daf5714d3cbe3dc9a4bcd375a204e6c16c
+  - staging/week_79/listening_hub.js (7397 bytes) | SHA256: 481b03529f4e91ed362d92321b755061537474ecec3ec2d57f6f87c00ac66c42
+  - staging/week_79/provenance.json (2668 bytes) | SHA256: 7489225644e33c2a791a7897b184dc1b813b99e216629a08cab98e8e72334dd2
+  - staging/week_79/reading_hub.js (26672 bytes) | SHA256: 161ef649d6b22b21624cb2eafef2c4a7b52e2fa3f54a6046f7a4780b6325f7a2
+  - staging/week_79/skill_practice_hub.js (8870 bytes) | SHA256: a8877e9e19b8a0b22cab63be354b9b7f092e50f62b995c58f06a1c018cb08174
+  - staging/week_79/source_grounding.json (3840 bytes) | SHA256: 21599c1bdf0d18d9cfd23f18224704fa7288bf39999a97cbf564049921c78bc7
+  - staging/week_79/speaking_hub.js (6461 bytes) | SHA256: 4063e2415363d421a78cd97f0a69c29b50e1fe75b74dd2e34283156d0ab72394
+  - staging/week_79/vocab.js (9302 bytes) | SHA256: 6329d547263cd0cf43e2edbca08cd2204c3e2106e0036414c9a244cc5d626aa0
+  - staging/week_79/writing_hub.js (9726 bytes) | SHA256: a0c4a4e7b949e347f1c7b6d1fdfaa87ead110a675be1ea9898bc90a37ddef56e
+  - temp_blueprints/week_100_blueprint.json (4179 bytes) | SHA256: 1e489235dbaafdc044bbf8af3502675e43d8c992e6fd3472bb865b5893c0dc4f
+  - temp_blueprints/week_101_blueprint.json (4187 bytes) | SHA256: e6db21056713dd1368464231edd56e1463bb83c05802df8b1551475e971cc7ed
+  - temp_blueprints/week_102_blueprint.json (4181 bytes) | SHA256: d9de1faae9780aad3c6c032a24df542500dbdc30041591784b4f14b3d88cbb2c
+  - temp_blueprints/week_103_blueprint.json (4577 bytes) | SHA256: 5da66fc35197d883861b677ffba64f4121d08c41180197067c2db1335cfd2745
+  - temp_blueprints/week_104_blueprint.json (4527 bytes) | SHA256: 9c962805f4e6d28eebc5576a0cdfe6963533710ea138e4998aba71230efdabfb
+  - temp_blueprints/week_105_blueprint.json (4478 bytes) | SHA256: fc90cce0f015dbb40934d69d600aa5c4b0deb2a67a11fedc0338b15cd7caf645
+  - temp_blueprints/week_106_blueprint.json (4470 bytes) | SHA256: d7ff1ff826d00ab008d0cca688005e0aea66fac2c99dac160f65ea1c7bcd3312
+  - temp_blueprints/week_107_blueprint.json (4034 bytes) | SHA256: afa3a2024e20e2b72f9929b8f9752230508d4f7149222b08f40cd316909508f4
+  - temp_blueprints/week_108_blueprint.json (4522 bytes) | SHA256: d36957f7c897338e4f580ecdbe9da1fcdd95ec761c9cd073842a8b636fedfa6b
+  - temp_blueprints/week_109_blueprint.json (3895 bytes) | SHA256: 8fefa0b7b80278217d25b8e6e2a32ad5ad46689c041a28e849d362403c2c9189
+  - temp_blueprints/week_10_blueprint.json (3956 bytes) | SHA256: 7fec83178ee02f5b97d5c9b5c15310d2da1f02cd6c1beff9f313ac487a3c35a5
+  - temp_blueprints/week_110_blueprint.json (3906 bytes) | SHA256: 63d3fdfd60bd8f1c572327db60f6fadfa799f856645c7a355d41d3fda6d01531
+  - temp_blueprints/week_111_blueprint.json (3866 bytes) | SHA256: df0391766eed0272dadde2a96977e959e60fbbd34467eea1bfa055c7e6b9c961
+  - temp_blueprints/week_112_blueprint.json (3991 bytes) | SHA256: c7058d75b0604401ec62e2fd82afa42443ff259c07afb78e2b4758f9e0d06a31
+  - temp_blueprints/week_113_blueprint.json (3822 bytes) | SHA256: af5668d5c1b7cefa95d09f502757c01fa4661b71e898605abfdda8056b1e02cf
+  - temp_blueprints/week_114_blueprint.json (4011 bytes) | SHA256: f30eaecb235e2a96a5644671d6e3407fdd2ae34f7dfcf9134e5a3294cee361e0
+  - temp_blueprints/week_115_blueprint.json (3747 bytes) | SHA256: 03e93357fcc88f9ba7fbeff4c0a9dd579354dc87dfe0de3829a8c38a09a41991
+  - temp_blueprints/week_116_blueprint.json (3808 bytes) | SHA256: a08ea4d9f1f609eaa34abb89762564e75bab5e00c67837a5a78a41837a80bc98
+  - temp_blueprints/week_117_blueprint.json (2622 bytes) | SHA256: b2f126940ccd77da8b3924e19427b894002d4003cc63afb7bc8d760eba1bd44a
+  - temp_blueprints/week_118_blueprint.json (2624 bytes) | SHA256: 26531b98c0d980109b521a59d6e87390c6d49be5b4afa94618ac553781d69015
+  - temp_blueprints/week_119_blueprint.json (2629 bytes) | SHA256: f2c58dcd5e716a6136c8e658c8600f90925729bee5ae909dbd80d680070742fc
+  - temp_blueprints/week_11_blueprint.json (4100 bytes) | SHA256: 0ab11659ad109c4f9659f94a06b3f42dcb39f454eae08cda223e9f688537b7e6
+  - temp_blueprints/week_120_blueprint.json (2604 bytes) | SHA256: e0a8cc443f936ac7464bb1dda7142cfada8202b69e30b12ea218d8a146585503
+  - temp_blueprints/week_121_blueprint.json (4435 bytes) | SHA256: 1471ec16e8b31c248c211f5fecb4f3ed068b0d4107f5d01322ad5af9cc9bf2b7
+  - temp_blueprints/week_122_blueprint.json (3685 bytes) | SHA256: d05c483b5e2bee5baf6a744702ec05837a7d103e5d4206caa26d108b03fdc801
+  - temp_blueprints/week_123_blueprint.json (3696 bytes) | SHA256: abccf4170db0c8f4b24c1432c90fb3c534224af62464826df82360c08cc5a5e6
+  - temp_blueprints/week_124_blueprint.json (3790 bytes) | SHA256: 30225f7f7f14fa8346f8f04a4282d5a10fa5ee66ec063c27d13d45dd0e053710
+  - temp_blueprints/week_125_blueprint.json (3516 bytes) | SHA256: 09e44a95f7ca3701a31e2c75c3e192b5af58a0b8627800c7897b1d48dc0806f3
+  - temp_blueprints/week_126_blueprint.json (2652 bytes) | SHA256: c887ecccb0237e897d54bb5ad36e728907501f85366565d9a387d4406f64e81d
+  - temp_blueprints/week_127_blueprint.json (3681 bytes) | SHA256: 2d1ec12b5287c076ff60d438356327ae94f47f0a43df12b0e28864be8a62fb68
+  - temp_blueprints/week_128_blueprint.json (2569 bytes) | SHA256: 9523afe53b7c979e556e805a5745e4b80d74549aeedd387840875dd5ccfedf37
+  - temp_blueprints/week_129_blueprint.json (2848 bytes) | SHA256: 06e84b76cbd986916e328cb5c81dc39e368ed15dd310da560807a3078665cf57
+  - temp_blueprints/week_12_blueprint.json (4041 bytes) | SHA256: 205b17bc1d93b446e53ec5a896c5c941de030260fabf0eb0a9d2b5a89424d58c
+  - temp_blueprints/week_130_blueprint.json (2862 bytes) | SHA256: 366ab05bb774e6f4aaf3dcb080332b426d5a76cfc8938aad61d2a7ec01f9f72f
+  - temp_blueprints/week_131_blueprint.json (2881 bytes) | SHA256: e25d57c78ca69401d62383ab923bce84ca2d0dee64f823048b6ef77531d63613
+  - temp_blueprints/week_132_blueprint.json (2811 bytes) | SHA256: 3e5a7c92bffe834dfa7e39479010746a14910c4d65d8ae5f6d99d22b8c504579
+  - temp_blueprints/week_133_blueprint.json (4566 bytes) | SHA256: 0ed58030979c66d8ec9a31e6c0f8a3de7dffa01d59226eb70ccf1da379a1d8d4
+  - temp_blueprints/week_134_blueprint.json (4535 bytes) | SHA256: ed27782461de213f7bdce91720444d5e740d50688675e4ff2527a2ae905ce6dc
+  - temp_blueprints/week_135_blueprint.json (4355 bytes) | SHA256: db59bf5e55196e890ba50f41b7687459617afbe1c7babcba34395a431539f4c7
+  - temp_blueprints/week_136_blueprint.json (4096 bytes) | SHA256: ebeba74ea3a8b4100cbd8c7e4e38282c3a5369c9c4f2b4229839c275a924b099
+  - temp_blueprints/week_137_blueprint.json (4250 bytes) | SHA256: b900d601e04f229ca4b02efb45cebe30343fa6e1340bc75cdf18c3ab4a3ad858
+  - temp_blueprints/week_138_blueprint.json (4447 bytes) | SHA256: 7ef05081b5e982a4f22000b3ca6418ae8c0e4a7de2614d91aa4421bd1de51637
+  - temp_blueprints/week_139_blueprint.json (4267 bytes) | SHA256: 5bfe630d6bedf28c541d013f742ad506c5cc3523548259229bdabc5f48d70dfe
+  - temp_blueprints/week_13_blueprint.json (3761 bytes) | SHA256: 514ac87e2be2a63ce9f0f1c684218dad8de84a7fb005af011069b017f097fc0b
+  - temp_blueprints/week_140_blueprint.json (2832 bytes) | SHA256: 76e4f29e3b03d042bd72097f6a72a0fccfcffab5a355b8757fcea5998634ae4d
+  - temp_blueprints/week_141_blueprint.json (2655 bytes) | SHA256: d1e6e435f41e87d1c6f9448781368979a840cc9c8f28d9ffc490b9816a1b759e
+  - temp_blueprints/week_142_blueprint.json (3588 bytes) | SHA256: 3b3b494326a7063b16a7bc57ee73885d37e47e118e977e11b36f43c2144d9d63
+  - temp_blueprints/week_143_blueprint.json (2835 bytes) | SHA256: 1fefc1f8f839890aaa4b17cd7b496fd638af48a7c08a73442783b7fd0cf60fe3
+  - temp_blueprints/week_144_blueprint.json (2669 bytes) | SHA256: 5cae1c2449926c704c907d9a43aced7f7e179af0e4c46296735b2df3064d9f4f
+  - temp_blueprints/week_145_blueprint.json (4038 bytes) | SHA256: fff829392f502d91eb1aa6b0f9e00e9498ebd2d83019efd845d4c2e1b3ec8d71
+  - temp_blueprints/week_146_blueprint.json (3999 bytes) | SHA256: 791d73bdd1a318f49784cf31f68dd424fa8c4fd0e3bd6fc0766e7eb22a52ec7e
+  - temp_blueprints/week_147_blueprint.json (3909 bytes) | SHA256: 42f86ec6fccce366e17d963f1d7267fd61090fbe2019de1511e00b0f52727206
+  - temp_blueprints/week_148_blueprint.json (2858 bytes) | SHA256: b369bab67a25f4749e40e64f55d47bde64fcacad4a37f9b9cd806311939dc08e
+  - temp_blueprints/week_149_blueprint.json (2697 bytes) | SHA256: ffa8db7eb08c78a63d6865938480322d4a63a818f9761bc7bd5652c50dbe077f
+  - temp_blueprints/week_14_blueprint.json (2683 bytes) | SHA256: fb2b1b58fa9430d8ddf71cd80fe034b30e298be91c075cf80c6ee5e227a95bbd
+  - temp_blueprints/week_150_blueprint.json (3760 bytes) | SHA256: b9cea18e2df30483023b701da5614de1a09a818a99a8e37e7b1c6fdffe0bb5e0
+  - temp_blueprints/week_151_blueprint.json (2724 bytes) | SHA256: a0f9f8d9e6bc455106d2d65a0864c055e3fad09b3033b797221a7bf4090d5d0e
+  - temp_blueprints/week_152_blueprint.json (2718 bytes) | SHA256: d4253c02da23c70b0fbb2feed1c39061f5c1bcf9b1c3e7ccf69b03755496b993
+  - temp_blueprints/week_153_blueprint.json (2802 bytes) | SHA256: ca042d98d36cae1db7e6bb5a4b7b67704618a33f470592d6550630d5f28018e6
+  - temp_blueprints/week_154_blueprint.json (2777 bytes) | SHA256: dbf55d5216a15c4e582fcbc4699d498811ef5c991f22ee9ddf5dcfca88d3ca01
+  - temp_blueprints/week_155_blueprint.json (2796 bytes) | SHA256: cbacae65e5263904a84f22d711a832760e82aaf330e13f8151600b8f003fe46c
+  - temp_blueprints/week_156_blueprint.json (2736 bytes) | SHA256: ecac861b6e8da66febe4582231cc0010e43f96f7ceea5bdc1f231264f7fa3ecd
+  - temp_blueprints/week_15_blueprint.json (3986 bytes) | SHA256: 34d5699f81798e33d530c39dcef75b727ab2de22fbdc15dbbbde4498c314d437
+  - temp_blueprints/week_16_blueprint.json (3890 bytes) | SHA256: eb2723817d0d74a1c2f8caba9352554d978d76e6dbf2f914ddbc2cf114de6cfd
+  - temp_blueprints/week_17_blueprint.json (4154 bytes) | SHA256: 56a131194c00121bec60acefb5a3a2525e1d851ff846b7f1106b563a9dff197e
+  - temp_blueprints/week_18_blueprint.json (2614 bytes) | SHA256: 91c735cebef12b3b700a5c232d1e88a50855058413caa01189a84c9a4b999880
+  - temp_blueprints/week_19_blueprint.json (3921 bytes) | SHA256: 99fc93332da4394662213ec3efbbee9e93bf344e5649551830a5a64b8266fd5b
+  - temp_blueprints/week_1_blueprint.json (4345 bytes) | SHA256: 58401c976205c1384e5ad82ed9d99de4559ccb7da0ba39fb797c9cb11f152cb7
+  - temp_blueprints/week_20_blueprint.json (3828 bytes) | SHA256: db279ffc1253b17036ab8dba2ddc73a5f61587f8cc97392f19cdaa2212cf9bd7
+  - temp_blueprints/week_21_blueprint.json (3966 bytes) | SHA256: 72fafbab33ef13ccdb8d0cffdfeafd36171b184ab431d69748e14c955419ec0d
+  - temp_blueprints/week_22_blueprint.json (3355 bytes) | SHA256: e7f807ce296bba57765c175d05e3b16335c99049735213edb5b9411af91bd875
+  - temp_blueprints/week_23_blueprint.json (4365 bytes) | SHA256: e94ad7de25e7b75ad8a45570e62f5c306dbff959de9dfa6a0869fd761d33a934
+  - temp_blueprints/week_24_blueprint.json (4220 bytes) | SHA256: 8a55c9ae16885e084807eb786a3bdb67215484684f0dabe21912e9479d49b55d
+  - temp_blueprints/week_25_blueprint.json (4265 bytes) | SHA256: 60abf2b40be92beafb302c0f796aa7be74f13d1f61508ecd3a7e31d8541a9839
+  - temp_blueprints/week_26_blueprint.json (2828 bytes) | SHA256: dbb94da8a60ec74d7f95e74425d4226d243aecf268d6261a9b11edbab5547507
+  - temp_blueprints/week_27_blueprint.json (4432 bytes) | SHA256: 2d5faf218e5aa2fe5fae4e11797562d3380db68cb14ab0097b216f1b1cbbf63c
+  - temp_blueprints/week_28_blueprint.json (4054 bytes) | SHA256: 6ed28150736c8a924db0a695cddc267549caf5b4b477eb5de63740c1d9c49e65
+  - temp_blueprints/week_29_blueprint.json (4079 bytes) | SHA256: 660124dfae651ffd745e0e84c57accb71e520075799ed2543371fda1f4d8224f
+  - temp_blueprints/week_2_blueprint.json (4149 bytes) | SHA256: b3524917983f022b914099e5a3c92ae3390c6ea502d6dd41a981c559b22e0cea
+  - temp_blueprints/week_30_blueprint.json (4031 bytes) | SHA256: bd4cb1594703ba2b2c548632ba993428b81ec12f51119baac0fd6dfb7e7ecaf7
+  - temp_blueprints/week_31_blueprint.json (4035 bytes) | SHA256: c207a5af8a6ac1e0f53d957c01a9dbc5f55f0b08453aed901e8ef45286414159
+  - temp_blueprints/week_32_blueprint.json (3978 bytes) | SHA256: 9515d472cfc31ffe20b3999e62578b02bf738fb6454ae5941adff60eb12e5b2e
+  - temp_blueprints/week_33_blueprint.json (4159 bytes) | SHA256: a9d9226e50f864272e04454d92043753d2213c1703f0e897066af376b5dcb465
+  - temp_blueprints/week_34_blueprint.json (4381 bytes) | SHA256: a13af7d07f615b619960be18aabd0e45e0bb74bddd7c2f8835afd2b61313c208
+  - temp_blueprints/week_35_blueprint.json (2853 bytes) | SHA256: 42567aab0e282514452891f6b322fb91c208a5f70124427f3bb1a4f713edd20f
+  - temp_blueprints/week_36_blueprint.json (2804 bytes) | SHA256: 0565e07674a41eeb4c488077f110992183a37c04e82c9d8befa47f86ebf8bab1
+  - temp_blueprints/week_37_blueprint.json (4655 bytes) | SHA256: e51917f70e0dc3af0ed54b77dfc99576bb7d8669bfc8682c00071639e8d671d2
+  - temp_blueprints/week_38_blueprint.json (4297 bytes) | SHA256: 3464e6e2014536a491aa133651928d2d9000e1b916b18df0f4f8c733c78cfdf3
+  - temp_blueprints/week_39_blueprint.json (4185 bytes) | SHA256: 43d44a6053b72c5d48c4ed7eab2211c4fa01271c27bdbab4e136b353711ed0d5
+  - temp_blueprints/week_3_blueprint.json (4309 bytes) | SHA256: f0ebbbd0ea4e3596ece688b609d00068af374565ab138f3b6a63f5b2b11cc6ca
+  - temp_blueprints/week_40_blueprint.json (3927 bytes) | SHA256: 0822eae10de082a8ec255a04ffb5e0125047970ce7f232456fc3df4cd6c77ff1
+  - temp_blueprints/week_41_blueprint.json (4162 bytes) | SHA256: 053d888f7db08e3de2d6efc77169f6802235e242d634a0e18b7f6bee08b6050f
+  - temp_blueprints/week_42_blueprint.json (4305 bytes) | SHA256: 6ac40d5637aae9b14a1f70919f5c1c69a94166e6963ecd8113b58470dbe1501a
+  - temp_blueprints/week_43_blueprint.json (3972 bytes) | SHA256: 0eb1b0aa38af3264e4e7e6a51801ca192fff86b869e3798a4e8e0fb9229464d8
+  - temp_blueprints/week_44_blueprint.json (3826 bytes) | SHA256: 2c195e7f6bd6b1f8d0e93f51077e7970428704885257f5639efcccd09443eb54
+  - temp_blueprints/week_45_blueprint.json (4395 bytes) | SHA256: e89205ef596eeb2354dbe98eba40f68ffd2b63f068238a7b1a62d87fe7bfb00b
+  - temp_blueprints/week_46_blueprint.json (3920 bytes) | SHA256: cc94edbeedf6d50766c2707350fd65c13e2e6c7cc374fa2d6b1f4e09d9453fde
+  - temp_blueprints/week_47_blueprint.json (3777 bytes) | SHA256: 15eace2af551a9dcb168aa2686eee4497cc526d4b4dee322570c1f784c90cca3
+  - temp_blueprints/week_48_blueprint.json (4133 bytes) | SHA256: 056fa50a72d7e4a39c266488f9d22038bf0ce56eee1de5d5516f5c7c7956df7b
+  - temp_blueprints/week_49_blueprint.json (3925 bytes) | SHA256: 944103a41654b0efaa14399be828dd60c48994d78c0345d48c614efe2874f8e8
+  - temp_blueprints/week_4_blueprint.json (3877 bytes) | SHA256: e7cd59ee856f99bd0476319ef18e99d842d96ce68db5b7bacf2f1daa8574dac6
+  - temp_blueprints/week_50_blueprint.json (2676 bytes) | SHA256: 5f005f7fac2b42a834120beb4770b637a9046ce12c890ed8397ebae9fae12a62
+  - temp_blueprints/week_51_blueprint.json (2662 bytes) | SHA256: d5c4b8fcc571697138783fedb5b93f9a7f297794a12feb7869d8996ad7c09350
+  - temp_blueprints/week_52_blueprint.json (2791 bytes) | SHA256: 1d170a415e9ff8620ffef03e2569230e634f0dba0ba22ad8ccb307095b639b99
+  - temp_blueprints/week_53_blueprint.json (2786 bytes) | SHA256: d5bc51d6931b8fe99e36949c33f853e2f1164857b9083c0c2755dd6c760de778
+  - temp_blueprints/week_54_blueprint.json (2688 bytes) | SHA256: 502257e4bd89ec2a19dcf06506d52015333228d668045c7ffa4f1a6041516020
+  - temp_blueprints/week_55_blueprint.json (4523 bytes) | SHA256: 68897334dc5e275d830d40d230b125b908dd3a257fc82e9b8831834ba0373fe1
+  - temp_blueprints/week_56_blueprint.json (4542 bytes) | SHA256: a794fb061f894620628ce45126077d72008fe3a225dbb4ee57c5b7d0bd715b40
+  - temp_blueprints/week_57_blueprint.json (4720 bytes) | SHA256: 8f2e395ca8f0faf1bb0756d3edabfda7f138ed0eacf273b6b9215051d74b97bf
+  - temp_blueprints/week_58_blueprint.json (4510 bytes) | SHA256: 1f5ed8c6f0f0b393b2b4111a6acda1ae9ab1633f4f5560f04c247393244df391
+  - temp_blueprints/week_59_blueprint.json (4575 bytes) | SHA256: 461fb0809291dc7d4e9ac4f3a547c5d059cd28fa991888fb427d4cc5bd55e76c
+  - temp_blueprints/week_5_blueprint.json (4090 bytes) | SHA256: f46281cc3aa530450ac2dd5db850542cfc15ecc06c4f24d98a1304fd0475211e
+  - temp_blueprints/week_60_blueprint.json (4597 bytes) | SHA256: 53b87fb5e9c9e1ea326dec7a72dd208947755967ac93fb237f1fdc086be8b8a6
+  - temp_blueprints/week_61_blueprint.json (4282 bytes) | SHA256: 599158aafd224d58bcf14683b9fa6dfdda4328a8e6f46f88f98ef24e15b03fab
+  - temp_blueprints/week_62_blueprint.json (4248 bytes) | SHA256: 18c9d694b19fb214c52bc8720380545535eb9c2312bb6a33a6b66de5252ee851
+  - temp_blueprints/week_63_blueprint.json (4873 bytes) | SHA256: ef2d992b4961f39d76ecd7d743045a578323b31fd69bb73fd388213ecf48e582
+  - temp_blueprints/week_64_blueprint.json (4557 bytes) | SHA256: ce0b49fa31e657192a88c0fdeb26db4cfb2671564cd9c49d8be289edb039e48c
+  - temp_blueprints/week_65_blueprint.json (2954 bytes) | SHA256: 5355a54a6436dd3f3cb01e9c520d2290632aafc4ea3b16ccdf823beae51914b5
+  - temp_blueprints/week_66_blueprint.json (4142 bytes) | SHA256: f7bf38a9a07ecf8e152cfdaeb53b4e0ee1b9982deb6f347090b4d422e9ff75e9
+  - temp_blueprints/week_67_blueprint.json (4404 bytes) | SHA256: de18f144a5ac08ae68c1aa31af65c2c4d5e16ccab133bc93b37b6a4f1d229f27
+  - temp_blueprints/week_68_blueprint.json (4136 bytes) | SHA256: 0959121fabee19760d9177c4c73fbc6907b7ca31a6226713322f84e99611af32
+  - temp_blueprints/week_69_blueprint.json (4688 bytes) | SHA256: bb27ef40c61b4d9889fe1e4f0a61ab8d57b54af57a4fd3bb2faaf6abf5b6c49a
+  - temp_blueprints/week_6_blueprint.json (4303 bytes) | SHA256: 74ed5a6aff2608dc27ef599a1263b9d39631900a727cd0b9d1b6ce06517a9b41
+  - temp_blueprints/week_70_blueprint.json (4384 bytes) | SHA256: 2ae29dbc479e85080fff537254cbd5899884bbb75ff836d24334ef504bf58e90
+  - temp_blueprints/week_71_blueprint.json (4570 bytes) | SHA256: 0b483a75ded77915a24019dbf53de837d9fd31cd62386fdc97bb544296ecdb01
+  - temp_blueprints/week_72_blueprint.json (4608 bytes) | SHA256: 1810040755ddc6cb72ed0117087bda9f4e7e321d9d875b1a092730ea329677bc
+  - temp_blueprints/week_73_blueprint.json (4492 bytes) | SHA256: 76c97ac9570fabf16f2c8e9dcd7a5ece1d2bc77690b7dabd308050a6773548fd
+  - temp_blueprints/week_74_blueprint.json (4626 bytes) | SHA256: bb2e2b346a7c2d7d8532156e53645afb6606d5aba2417f20270a7010637be07d
+  - temp_blueprints/week_75_blueprint.json (4576 bytes) | SHA256: 007033ae0e7f998fe0d2cf29ec92f7cc7722a157729a243d6dd097c80f31b5a1
+  - temp_blueprints/week_76_blueprint.json (4501 bytes) | SHA256: fc12463d147e22533ba4e520198e84cd4e667c54f3025522db8382868914fa6c
+  - temp_blueprints/week_77_blueprint.json (4786 bytes) | SHA256: ba2a101edcc18f204ec42984716d366026dc8b2e6cb4f3b4a2acb51fe79a4619
+  - temp_blueprints/week_78_blueprint.json (4760 bytes) | SHA256: cb23ce446146c4f8997bd4b1aa15b7a02a42afb618bdd7e18e31765fd19356a1
+  - temp_blueprints/week_79_blueprint.json (4364 bytes) | SHA256: e70339603b0fd02a63582a9c5906031689dae7d2d1652f24eff53c22925d8d8d
+  - temp_blueprints/week_7_blueprint.json (4090 bytes) | SHA256: c6e36b95c2a197456f5318289f39697ef7e7b3d2e57f77a7c4a068579d8d3fe9
+  - temp_blueprints/week_80_blueprint.json (4352 bytes) | SHA256: 9c95f0ad6a18c37336fb04a6ea7a6c224ef262d5497196006c2922d469edf1af
+  - temp_blueprints/week_81_blueprint.json (4395 bytes) | SHA256: cbb6bf2fce0be9776ba499d19f35d55c0d8e8c068e621057a75f3d8a8f7300ae
+  - temp_blueprints/week_82_blueprint.json (4731 bytes) | SHA256: 358a52425018a55f68359f1ce758a3190f3599716283d0c3b77a06591766d6e7
+  - temp_blueprints/week_83_blueprint.json (4537 bytes) | SHA256: 42729f5c2209840189a4a00bea7c4f497db21d58b0cf6ee25f7459c5be67e6cc
+  - temp_blueprints/week_84_blueprint.json (4483 bytes) | SHA256: 589395cc9f315dca597203925e50c6d02a59347f7aa1320c04c934d3a33ab526
+  - temp_blueprints/week_85_blueprint.json (4374 bytes) | SHA256: 9db2c35944b4817d715c43763758324616e062aebbaf4a7078822a4f31a4d703
+  - temp_blueprints/week_86_blueprint.json (4359 bytes) | SHA256: 01007ef1a15cf7c6c194772544108bf8055e78fdd699266e5b3732b8bcf6d4da
+  - temp_blueprints/week_87_blueprint.json (4460 bytes) | SHA256: 03c281f5ad31ad313fc9f5047b7e5b6883798fc22f5a9884a068d1c9ed73ab0a
+  - temp_blueprints/week_88_blueprint.json (4294 bytes) | SHA256: 33d2455bfbf5bfada93e850a49fc72d2d574dc7280dab91dc3b1fe7760940577
+  - temp_blueprints/week_89_blueprint.json (4389 bytes) | SHA256: 8fd0b38317a807a81fe57c9601ab46dbc679fee37769bdfc01f8cac5e206ecd8
+  - temp_blueprints/week_8_blueprint.json (3883 bytes) | SHA256: bc409abb5743857857847c8dc1c49f3941aca85a8b9dfb9a4bcfb676a7ec0ff3
+  - temp_blueprints/week_90_blueprint.json (4487 bytes) | SHA256: b63a278b46a064c9fe27c6fa0fd684466429f7d6884f6eb7c0943a39ed8780fb
+  - temp_blueprints/week_91_blueprint.json (4384 bytes) | SHA256: b0d1b5cbfb55ceb9a778aef129836d3df04689f6e5c2e90cab2ae8ebc79896f6
+  - temp_blueprints/week_92_blueprint.json (4231 bytes) | SHA256: edc41417e13474bcc545a94fc582314a94a7c3f5295644a30d57ec826bbd454f
+  - temp_blueprints/week_93_blueprint.json (2702 bytes) | SHA256: 916b5864eadf57ebb426fe4f393ad454a2111fab4e1afd1a17a59d854efa0fad
+  - temp_blueprints/week_94_blueprint.json (2821 bytes) | SHA256: b8feeb2778dece2951e97fd7354e013f82105ebbaf623d613384e77f79670ac9
+  - temp_blueprints/week_95_blueprint.json (2799 bytes) | SHA256: 3da2281ee44784fa1f7135bf4379add8e15a4dd73e2da717fc8cbca7fc4e41f1
+  - temp_blueprints/week_96_blueprint.json (2767 bytes) | SHA256: fd68a87acb3bbf8ec6f386b4b7c4db9ee9b36e360cb9486b11aa4f53186f2477
+  - temp_blueprints/week_97_blueprint.json (4225 bytes) | SHA256: 9f8b9b526b2e3f82fa8479bebfc7611c2db20aa742cf46eda9f7c92d8c77a553
+  - temp_blueprints/week_98_blueprint.json (4261 bytes) | SHA256: 6abf8c61b1d7ab5b668df060b0d9b43717ea94b0fa9d435bbc1837b14e272913
+  - temp_blueprints/week_99_blueprint.json (4047 bytes) | SHA256: 215dd219a4dcccdc0497eff349c11955ba849f7b60aae8f4ac1d6caddda12b50
+  - temp_blueprints/week_9_blueprint.json (4329 bytes) | SHA256: eb36cc929dacc0b8af48972d1d0c2d1b8cc0f37463763b51f512d83c3f18c258
+========================================================================

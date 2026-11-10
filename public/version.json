@@ -1,9 +1,9 @@
 {
-  "commit": "9448d7e9cc0010194ab2f2b70e1361356ae56e5b",
-  "git_commit": "9448d7e9cc0010194ab2f2b70e1361356ae56e5b",
-  "shortCommit": "9448d7e9",
-  "message": "fix(pipeline): upgrade G-GEN gates, fix Source B range parser & CEFR stage resolution [multi-agent-review]",
-  "builtAt": "2026-11-10T05:29:29.020Z",
-  "build_timestamp": "2026-11-10T05:29:29.020Z",
+  "commit": "75c39e8b4f164b96e6154e562811043640339dd4",
+  "git_commit": "75c39e8b4f164b96e6154e562811043640339dd4",
+  "shortCommit": "75c39e8b",
+  "message": "fix(curriculum): align blueprints to Source B single truth, fix G-GEN-13 checks, audit production [multi-agent-review]",
+  "builtAt": "2026-11-10T05:58:58.053Z",
+  "build_timestamp": "2026-11-10T05:58:58.053Z",
   "env": "production"
 }

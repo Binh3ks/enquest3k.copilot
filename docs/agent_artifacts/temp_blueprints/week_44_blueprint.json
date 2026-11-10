@@ -1,0 +1,129 @@
+{
+  "week": 44,
+  "theme": "The Cookie Monster (Subtraction Language)",
+  "title_en": "The Cookie Monster (Subtraction Language)",
+  "title_vi": "Quái vật Bánh quy - Ngôn ngữ Phép trừ",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": 4,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "Taking things away",
+  "clil_topic": {
+    "title": "The Cookie Monster & Inverse Logic",
+    "focus": "Explain subtraction concepts in English"
+  },
+  "grammar_focus": {
+    "structure": "Take away\", \"Left\", \"Minus",
+    "outcome": "Explain subtraction concepts in English",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "minus",
+      "subtract",
+      "take away",
+      "how many left",
+      "lose"
+    ],
+    "total_syllabus_words": 5,
+    "target_count": 20,
+    "missing_count": 15,
+    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from human author)"
+  },
+  "keywords": [
+    "minus",
+    "subtract",
+    "take away",
+    "how many left",
+    "lose"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "minus",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "subtract",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "take away",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "how many left",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "lose",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 15 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 44,
+    "map_theme": "The Cookie Monster (Subtraction Language)",
+    "map_clil_module": "Quái vật Bánh quy - Ngôn ngữ Phép trừ: Explain subtraction concepts in English",
+    "map_grammar_hub": "Giới từ chuyển động (*through, across, along*); `math_quest` tính khoảng cách",
+    "map_cefr_type": "A2 Flyers · Rotary 2",
+    "alignment_status": "ALIGNED",
+    "alignment_note": "Syllabus sources fully aligned."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-10T05:25:47.804Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "week": 82,
+  "theme": "ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data",
+  "title_en": "ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data",
+  "title_vi": "ELA: Vlogger Du Lịch - Viết nháp / Toán: Phân tích Dữ liệu",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "full_mock",
+  "isFullMock": true,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Describing a favorite place",
+  "clil_topic": {
+    "title": "ELA: The Travel Vlogger & Drafting",
+    "focus": "Write a descriptive essay draft"
+  },
+  "grammar_focus": {
+    "structure": "Adjectives & Sensory Words (Sight, Sound, Smell)",
+    "outcome": "Write a descriptive essay draft",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "beautiful",
+      "amazing",
+      "see",
+      "hear",
+      "smell",
+      "taste",
+      "landscape",
+      "view",
+      "delicious"
+    ],
+    "total_syllabus_words": 9,
+    "target_count": 20,
+    "missing_count": 11,
+    "status": "PARTIAL (9/20 syllabus words — Requires 11 words from human author)"
+  },
+  "keywords": [
+    "beautiful",
+    "amazing",
+    "see",
+    "hear",
+    "smell",
+    "taste",
+    "landscape",
+    "view",
+    "delicious"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "beautiful",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "amazing",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "see",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "hear",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "smell",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "taste",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "landscape",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "view",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "delicious",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Exam)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 11 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 82,
+    "map_theme": "ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data",
+    "map_clil_module": "ELA: Vlogger Du Lịch - Viết nháp / Toán: Phân tích Dữ liệu: Write a descriptive essay draft",
+    "map_grammar_hub": "Full Mock B1 PET 2: Chấm bài viết email 100 từ và bài đọc dài Part 3",
+    "map_cefr_type": "★ FULL MOCK 13 (PET)",
+    "alignment_status": "ALIGNED",
+    "alignment_note": "Syllabus sources fully aligned."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-10T05:25:47.816Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

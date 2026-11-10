@@ -121,3 +121,4 @@ md += `\n---
 fs.writeFileSync(OUT_PATH, md, 'utf8');
 console.log(`✓ Independent scan complete: ${items.length} ranges found.`);
 console.log(`✓ Output saved to: ${path.relative(ROOT_DIR, OUT_PATH)}`);
+

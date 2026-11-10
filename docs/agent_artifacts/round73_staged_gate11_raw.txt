@@ -1,0 +1,11 @@
+=== AUDIT AGAINST SOURCE B REVISED BASELINE (temp_blueprints) ===
+| Week | Axis (i) Theme Strict | Axis (ii) CLIL Grounding | Axis (iii) Math Strand | Axis (iv) Syllabus Vocab | Overall Gate 11 v2 | Recommendation |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| W79 | FAIL (BP: "Space Exploration vs. Earth Fix" vs RH: "The Industrial Revolution") | FAIL | PASS (3/5 matched ("Representing Data")) | FAIL (Missing: [space, earth, money, spend, fix, problem, important]) | **FAIL** | DROP / RETIRE (Must Regenerate) |
+| W126 | PASS (BP: "From Essay to Speech" vs RH: "From Essay to Speech") | PASS | PASS (5/5 matched ("Logic Puzzles.")) | PASS ([NO_ANCHOR] 0/20 words) | **PASS** | Keep / Ready |
+| W127 | PASS (BP: "Rebuttal Practice" vs RH: "Rebuttal Practice") | PASS | PASS (4/5 matched ("Critical Thinking Math.")) | PASS (5/5 OK) | **PASS** | Keep / Ready |
+| W129 | FAIL (BP: "Review & Math Logic Cycle" vs RH: "Opinion Project 3: Smartphones Under 12?") | FAIL | PASS (N/A (No Math Strand)) | PASS ([NO_ANCHOR] 0/20 words) | **FAIL** | DROP / RETIRE (Must Regenerate) |
+| W130 | FAIL (BP: "Review & Math Logic Cycle" vs RH: "Opinion Project 3: Comparing Global Approaches") | FAIL | PASS (N/A (No Math Strand)) | PASS ([NO_ANCHOR] 0/20 words) | **FAIL** | DROP / RETIRE (Must Regenerate) |
+| W131 | FAIL (BP: "Review & Math Logic Cycle" vs RH: "Opinion Project 3: Persuasive Techniques") | PASS | PASS (N/A (No Math Strand)) | PASS ([NO_ANCHOR] 0/20 words) | **FAIL** | DROP / RETIRE (Must Regenerate) |
+| W133 | PASS (BP: "Deep Research & Data" vs RH: "Deep Research & Data") | PASS | PASS (3/5 matched ("Geometry: Angles.")) | PASS (8/8 OK) | **PASS** | Keep / Ready |
+| W134 | PASS (BP: "Identifying Fallacies" vs RH: "Identifying Fallacies") | PASS | FAIL (0/5 matched ("Geometry: Triangles.")) | PASS (8/8 OK) | **FAIL** | DROP / RETIRE (Must Regenerate) |

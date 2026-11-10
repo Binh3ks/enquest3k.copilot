@@ -197,3 +197,4 @@ md += `\n---
 fs.writeFileSync(REPORT_PATH, md, 'utf8');
 console.log(`✓ Diff report written to: ${path.relative(ROOT_DIR, REPORT_PATH)}`);
 console.log('========================================================================\n');
+

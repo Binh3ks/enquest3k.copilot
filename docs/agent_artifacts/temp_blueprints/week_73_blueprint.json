@@ -1,0 +1,149 @@
+{
+  "week": 73,
+  "theme": "Science/ELA: The Water Cycle (Advanced) / Math: Volume",
+  "title_en": "Science/ELA: The Water Cycle (Advanced) / Math: Volume",
+  "title_vi": "Khoa học/ELA: Vòng tuần hoàn Nước Nâng cao / Toán: Thể tích",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "The Never-Ending Journey",
+  "clil_topic": {
+    "title": "Science/ELA: The Water Cycle & Scientific explanation",
+    "focus": "Write an expository paragraph with advanced sequencing"
+  },
+  "grammar_focus": {
+    "structure": "Sequence Connectors (Advanced): \"Subsequently\", \"Following this\", \"Eventually",
+    "outcome": "Write an expository paragraph with advanced sequencing",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "evaporation",
+      "condensation",
+      "precipitation",
+      "collection",
+      "vapor",
+      "turn into",
+      "cycle"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)"
+  },
+  "keywords": [
+    "evaporation",
+    "condensation",
+    "precipitation",
+    "collection",
+    "vapor",
+    "turn into",
+    "cycle"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "evaporation",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "condensation",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "precipitation",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "collection",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "vapor",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "turn into",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "cycle",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Guided CER)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 73,
+    "map_theme": "Science/ELA: The Water Cycle (Advanced) / Math: Volume",
+    "map_clil_module": "Khoa học/ELA: Vòng tuần hoàn Nước Nâng cao / Toán: Thể tích: Write an expository paragraph with advanced sequencing",
+    "map_grammar_hub": "Từ vựng AWL (*hypothesis, variable, analyze*); `discovery_report` CER",
+    "map_cefr_type": "B1 Entry · Rotary 1",
+    "alignment_status": "ALIGNED",
+    "alignment_note": "Syllabus sources fully aligned."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-10T05:25:47.813Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

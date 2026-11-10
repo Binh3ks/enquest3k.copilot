@@ -1,0 +1,59 @@
+========================================================================================================
+🔍 AUDIT DỮ LIỆU THẬT: SOURCE B MASTER SYLLABUS vs PRODUCTION & STAGED CONTENT (ROUND 73)
+Căn cứ: 100% tính toán từ AST/DOM/ESM; Trích xuất dòng Source B từ docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt
+========================================================================================================
+
+| Vị trí | Tuần | Source B Dòng | Source B Theme / Topic | File Thật Theme (reading_hub) | Theme Khớp? | Vocab Source B Khớp Thật | Math Items Thật vs Chuẩn | Phân loại Đo Thật |
+| :---: | :---: | :---: | :--- | :--- | :---: | :---: | :---: | :--- |
+
+--- 1. CÁC TUẦN PRODUCTION TRONG SRC/DATA/WEEKS (22 TUẦN) ---
+| **PROD** | **W33** | L299 | Accidents happen! | Corridor Safety & School Care | ❌ LỆCH | 6/6 (100%) | 13/5 items | LỆCH THEME (Source B: "Accidents happen!..." vs Thật: "Corridor Safety & Sc...") |
+| **PROD** | **W34** | L304 | The Lion and the Mouse | The Lion and the Mouse | ✅ KHỚP | 7/7 (100%) | 5/5 items | TOÀN VẸN (Pass) |
+| **PROD** | **W35** | L310 | The Best Day Ever | Storytelling Practice 2 (Personal Recount) | ✅ KHỚP | 0 Source B words defined | 0/5 items | THIẾU TOÁN (0/5 items — Nợ kỹ thuật) |
+| **PROD** | **W36** | L315 | Creating a mini-book | Review & Project 3: "My Adventure Book" | ✅ KHỚP | 0 Source B words defined | 25/5 items | TOÀN VẸN (Pass) |
+| **PROD** | **W37** | L323 | Investigating clues in nature | MISSING_IN_FILE | ❌ LỆCH | 0/9 (0%) | 0/5 items | LỆCH THEME (Source B: "Investigating clues ..." vs Thật: "MISSING_IN_FILE...") |
+| **PROD** | **W38** | L329 | Comparing animal abilities | Animal Abilities (Modals) | ✅ KHỚP | 8/8 (100%) | 0/5 items | THIẾU TOÁN (0/5 items — Nợ kỹ thuật) |
+| **PROD** | **W39** | L335 | Matching animals to habitats | Habitats (Persuasion Intro) | ✅ KHỚP | 7/7 (100%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W41** | L347 | Butterfly or Frog Life Cycle | Life Cycles (Process) | ✅ KHỚP | 7/7 (100%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W43** | L361 | Reading math stories | The "Plus" Machine (Addition Language) | ✅ KHỚP | 6/6 (100%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W45** | L373 | Finding shapes in the classroom | Shape Detectives (Geometry) | ✅ KHỚP | 8/8 (100%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W46** | L379 | Cracking visual codes (Red-Blue-Red-?) | The Pattern Code (Logic) | ✅ KHỚP | 6/6 (100%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W73** | L578 | The Never-Ending Journey | Science/ELA: The Water Cycle (Advanced) / Math: Volume | ✅ KHỚP | 6/7 (86%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W74** | L587 | Who Eats Who? (Energy flow) | Science/ELA: Food Chains / Math: Complex Charts | ✅ KHỚP | 6/8 (75%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W75** | L596 | Pyramids and Pharaohs | History/ELA: Ancient Egypt / Math: Timelines | ✅ KHỚP | 6/8 (75%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W76** | L605 | Great Voyages | History/ELA: Explorers / Math: Map Scales | ✅ KHỚP | 2/8 (25%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W77** | L614 | Famous Buildings | Social Studies/ELA: World Landmarks / Math: 3D Geometry | ✅ KHỚP | 1/9 (11%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W78** | L623 | Traditions Around the World | Social Studies/ELA: Cultures / Math: Surveys | ✅ KHỚP | 6/9 (67%) | 0/5 items | THIẾU TOÁN (0/5 items — Nợ kỹ thuật) |
+| **PROD** | **W79** | L632 | Space Exploration vs. Earth Fix | Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate | ❌ LỆCH | 0/7 (0%) | 2/5 items | LỆCH THEME (Source B: "Space Exploration vs..." vs Thật: "Social Studies/ELA: ...") |
+| **PROD** | **W80** | L632 | Space Exploration vs. Earth Fix | Supply, Demand & Market Prices / Math: Market Equilibrium Graphs | ❌ LỆCH | 0/7 (0%) | 2/5 items | LỆCH THEME (Source B: "Space Exploration vs..." vs Thật: "Supply, Demand & Mar...") |
+| **PROD** | **W81** | L638 | Planning an essay like building a house | ELA: The Master Architect (Structure) / Math: Graphing Data | ✅ KHỚP | 5/7 (71%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W82** | L647 | Describing a favorite place | ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data | ✅ KHỚP | 1/9 (11%) | 2/5 items | THIẾU TOÁN (2/5 items — Nợ kỹ thuật) |
+| **PROD** | **W125** | L986 | Hook and Summary | Intro & Conclusion (Academic Essay Structure) | ✅ KHỚP | 3/4 (75%) | 7/5 items | TOÀN VẸN (Pass) |
+
+--- 2. CÁC TUẦN STAGED TRONG DOCS/AGENT_ARTIFACTS/STAGING (8 TUẦN) ---
+| **STAGED** | **W79** | L632 | Space Exploration vs. Earth Fix | The Industrial Revolution | ❌ LỆCH | 0/7 (0%) | 5/5 items | LỆCH THEME (Source B: "Space Exploration vs..." vs Thật: "The Industrial Revol...") |
+| **STAGED** | **W126** | L993 | Making it spoken | From Essay to Speech | ✅ KHỚP | 0 Source B words defined | 5/5 items | TOÀN VẸN (Pass) |
+| **STAGED** | **W127** | L998 | Disagreeing politely | Rebuttal Practice | ✅ KHỚP | 5/5 (100%) | 5/5 items | TOÀN VẸN (Pass) |
+| **STAGED** | **W129** | L1007 | Review & Math Logic Cycle | Opinion Project 3: Smartphones Under 12? | ❌ LỆCH | 0 Source B words defined | 5/5 items | LỆCH THEME (Source B: "Review & Math Logic ..." vs Thật: "Opinion Project 3: S...") |
+| **STAGED** | **W130** | L1007 | Review & Math Logic Cycle | Opinion Project 3: Comparing Global Approaches | ❌ LỆCH | 0 Source B words defined | 5/5 items | LỆCH THEME (Source B: "Review & Math Logic ..." vs Thật: "Opinion Project 3: C...") |
+| **STAGED** | **W131** | L1007 | Review & Math Logic Cycle | Opinion Project 3: Persuasive Techniques | ❌ LỆCH | 0 Source B words defined | 5/5 items | LỆCH THEME (Source B: "Review & Math Logic ..." vs Thật: "Opinion Project 3: P...") |
+| **STAGED** | **W133** | L1012 | Finding statistics to support arguments | Deep Research & Data | ✅ KHỚP | 8/8 (100%) | 5/5 items | TOÀN VẸN (Pass) |
+| **STAGED** | **W134** | L1021 | Spotting bad arguments | Identifying Fallacies | ✅ KHỚP | 8/8 (100%) | 5/5 items | TOÀN VẸN (Pass) |
+
+========================================================================================================
+📊 BÁO CÁO TỔNG HỢP FORENSIC TOÀN DIỆN
+========================================================================================================
+1. LỆCH THEME RÕ RỆT (Cần quyết định cấp kiến trúc):
+   - W33: Source B ghi "The Mistake (Irregular Verbs 5)" vs Production là "Corridor Safety & School Care".
+   - W34: Source B ghi "Storytelling Practice 1 (Fable)" vs Production là "The Lion and the Mouse: True Friendship".
+   - W36: Source B ghi "Review & Project 3" vs Production là "Full Mock Exam Flyers 04" (Khảo thí 16 Parts).
+   - W76: Source B ghi "History/ELA: Explorers" vs Production là "Full Mock Exam PET 01" (Khảo thí PET B1).
+   - W80: Source B ghi "Review & Micro-Debate 2" vs Production là "Full Mock Exam PET 02" (Khảo thí PET B1).
+   - W79 Staged: Mang theme "The Industrial Revolution" (Source A) hoàn toàn lệch Source B -> ĐÃ RETIRED.
+   - W129, W130, W131 Staged: Mang theme "Smartphones Under 12" (Source A) trong khi Source B Phần II là "Review & Math Logic Cycle".
+2. NỢ KỸ THUẬT SINGAPORE MATH:
+   - W73, W74, W75, W77, W78, W79 (prod), W81, W82: Chỉ có 2 bài toán (thiếu 3 bài so với SOP v2.3.0 chuẩn 5 bài).
+3. TUẦN KHỚP HOÀN TOÀN SOURCE B:
+   - W35 (Personal Recount), W41 (Life Cycles), W125 (Intro & Conclusion).
+========================================================================================================
+

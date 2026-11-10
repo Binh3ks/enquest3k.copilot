@@ -1,0 +1,139 @@
+{
+  "week": 49,
+  "theme": "Future Dreams (Future Tense)",
+  "title_en": "Future Dreams (Future Tense)",
+  "title_vi": "Ước mơ Tương lai",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": 1,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "When I grow up",
+  "clil_topic": {
+    "title": "Future Dreams",
+    "focus": "State intentions/dreams using \"Want to"
+  },
+  "grammar_focus": {
+    "structure": "I want to be a [job]\" / \"I am going to be",
+    "outcome": "State intentions/dreams using \"Want to",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "doctor",
+      "teacher",
+      "pilot",
+      "artist",
+      "scientist",
+      "dream"
+    ],
+    "total_syllabus_words": 6,
+    "target_count": 20,
+    "missing_count": 14,
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)"
+  },
+  "keywords": [
+    "doctor",
+    "teacher",
+    "pilot",
+    "artist",
+    "scientist",
+    "dream"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "doctor",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "teacher",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "pilot",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "artist",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "scientist",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "dream",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 14 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 49,
+    "map_theme": "Future Dreams (Future Tense)",
+    "map_clil_module": "Ước mơ Tương lai: State intentions/dreams using \"Want to\"",
+    "map_grammar_hub": "Mệnh đề chỉ mục đích (*in order to, so that*); `story_writer` tắc kè hoa săn mồi",
+    "map_cefr_type": "A2 Flyers · Rotary 2",
+    "alignment_status": "ALIGNED",
+    "alignment_note": "Syllabus sources fully aligned."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-10T05:25:47.806Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

@@ -1,0 +1,115 @@
+========================================================================
+ENGQUEST3K — ROUND 70 REVIEW PACKAGE MANIFEST
+Timestamp: 2026-11-10T04:14:01.288Z
+Git Head (Local): f0add43221758591b46cf5bf1ba9080e2baa1e51
+Git Remote (origin/main): f0add43221758591b46cf5bf1ba9080e2baa1e51	refs/heads/main
+Zip Package: docs/review_packages/round70_20261110.zip
+Total Packaged Files: 80
+========================================================================
+
+1. SCOPE & INVARIANTS:
+  - W79 & Wave 3 (W126, 127, 129, 130, 131, 133, 134): STAGED ONLY. Zero merge to production.
+  - Production src/data/weeks/: Untouched (except week_127/blueprint.json CEFR flag fix per Task B.7).
+  - Safety Invariants: TOTAL_TRIPS = 34 unchanged; W33 (147/147 locked), W34 (106/106 locked).
+  - Build: npm run build Exit code 0 (13.94s).
+
+2. UPGRADED QUALITY GATES APPLIED:
+  - Gate 6: Exactly 5 Singapore Math items with Bar Model data (mathCount === 5).
+  - Gate 11 v2: 4-Axis Staged File Verification (Theme Strict, Bilingual CLIL Grounding, Source B Math >= 3/5, Vocab Anchors).
+  - Gate 12: CEFR Level Consistency (reading_hub === provenance === blueprint).
+  - Gate 13: Readability Ceiling (Stage 3 B1+: FK <= 9.5, Long Words >=10 chars <= 15%; Glossary Definition FK <= 9.5).
+  - Gate 14: Provenance Integrity (source_b_excerpt <= 1536 bytes, no placeholders, generator_agent = "Antigravity/pipeline").
+
+3. REMEDIATED STAGED DELIVERABLES (8 WEEKS):
+  - Week 79:  "The Industrial Revolution" (B1 PET) | Math: 5/5 | CLIL: 97 words, FK 6.1, LongWords: 4.1%
+  - Week 126: "From Essay to Speech" (B1+ Academic) | Math: 5/5 | CLIL: 101 words, FK 5.5, LongWords: 3.0%
+  - Week 127: "Rebuttal Practice" (B1+ Academic) | Math: 5/5 | CLIL: 101 words, FK 8.8, LongWords: 3.0%
+  - Week 129: "Opinion Project 3: Smartphones Under 12?" (B1+ Academic) | Math: 5/5 | CLIL: 97 words, FK 9.2, LongWords: 6.2%
+  - Week 130: "Opinion Project 3: Comparing Global Approaches" (B1+ Academic) | Math: 5/5 | CLIL: 97 words, FK 7.8, LongWords: 8.2%
+  - Week 131: "Opinion Project 3: Persuasive Techniques" (B1+ Academic) | Math: 5/5 | CLIL: 101 words, FK 9.0, LongWords: 5.9%
+  - Week 133: "Deep Research & Data" (B1+ Academic) | Math: 5/5 | CLIL: 90 words, FK 8.5, LongWords: 3.3%
+  - Week 134: "Identifying Fallacies" (B1+ Academic) | Math: 5/5 | CLIL: 96 words, FK 7.9, LongWords: 4.2%
+
+========================================================================
+PACKAGED FILES WITH SHA-256 CHECKSUMS:
+  - staging/week_126/blueprint.json (3188 bytes) | SHA256: 739ded25ac2ac8cb23dfeab9a638592ea5258d792f9446ab8c587e86640d47d3
+  - staging/week_126/gate_validation.log (3161 bytes) | SHA256: 9b48c67a98958a4bffb576c249abfb8613352bdd6955d194ead3e051e8480aa0
+  - staging/week_126/listening_hub.js (7374 bytes) | SHA256: 6aa7910662b83bfdaf8d6a77461e19eb1bd79e80c3873bfed87e4946075f5643
+  - staging/week_126/provenance.json (2546 bytes) | SHA256: 4dbcd958ce1a10c08973a26a3789e5872940d5684fa99792715f079d888e18ae
+  - staging/week_126/reading_hub.js (28143 bytes) | SHA256: 31895dd195baab549bfd05740c28331d328d32bb924237ddfcd44df1662d591a
+  - staging/week_126/skill_practice_hub.js (8956 bytes) | SHA256: b779ae3c2155b52c59d548db71fca2ca94f6770d46230048310c6b2f4a3a074d
+  - staging/week_126/source_grounding.json (3985 bytes) | SHA256: 5253f5b9832153675566c06a1ede6d1db3574306c53e1479f5b1a82d0219c2fb
+  - staging/week_126/speaking_hub.js (6491 bytes) | SHA256: 57fe28fbd24405eefe51430c7e4b9b3c987e25d2b708f6708b6d7d6d2faee3f3
+  - staging/week_126/vocab.js (10415 bytes) | SHA256: 300e8a16bc834ee3c5865d9cafd22cacbac38500b3751495bb329f0506485afb
+  - staging/week_126/writing_hub.js (9678 bytes) | SHA256: c077f7435ae6dd70cd024dda92d6a82a7d057bd8f74a162507cea079523a969a
+  - staging/week_127/blueprint.json (6036 bytes) | SHA256: e5746dd393f3387ff2f64617ecce0bd40493bb8c36541d176c434b9f9c41371b
+  - staging/week_127/gate_validation.log (3152 bytes) | SHA256: 9c27a5e788203bb7e95002f8278371db502d88056b8b8a9207e8357751317ce1
+  - staging/week_127/listening_hub.js (7642 bytes) | SHA256: 990e7b1f0dd6c30254f9468c47ede0361d5c92dd4b8c5149ee992f3162fecd95
+  - staging/week_127/provenance.json (2613 bytes) | SHA256: 94138ff845f46d3259b2d184e5a6700b5de3a7555b2519d18af0722c3625133e
+  - staging/week_127/reading_hub.js (28277 bytes) | SHA256: bc7e143e8cbd5678f85a8760cc1edef91dcc0507778ea9a18b18563395871e31
+  - staging/week_127/skill_practice_hub.js (8877 bytes) | SHA256: fa468077ff30d7dbd2d0f39b4c6f58d90ececf3db13e87a7bf0850114204a2de
+  - staging/week_127/source_grounding.json (7145 bytes) | SHA256: 8f3fe2d28ab81761357ca860db81655c538ca662396e6491ff4dd7cf799020c5
+  - staging/week_127/speaking_hub.js (6477 bytes) | SHA256: ca98d9cd80bb82c47481c058087439765f89b9f9f0a868201ee1fe3cafbb7ff4
+  - staging/week_127/vocab.js (10255 bytes) | SHA256: 896a455ad5ea5317886988808f9f14a0653048ecc86e8b7de5309d15480a9d6f
+  - staging/week_127/writing_hub.js (9526 bytes) | SHA256: 4b9282a7d28362849b8dfb0e2d4bc4780fa402e134e47e9fdfc460ee46f95e28
+  - staging/week_129/blueprint.json (2994 bytes) | SHA256: 88ce0692f2a7616ffe97815205363a566e6910c526f2c631bf039668918330ff
+  - staging/week_129/gate_validation.log (3266 bytes) | SHA256: 4790c2cadf4b9908c4acc3cd371c3fbca5d178b2976192c426c68eb7b9bc6251
+  - staging/week_129/listening_hub.js (7529 bytes) | SHA256: de8e8165fe06c2f4a306bf5c9c2be83d7aaff21aa840ba9c11dace73b4b72733
+  - staging/week_129/provenance.json (2027 bytes) | SHA256: 62613b3c8b99f2392d3946d63be50be192b15d2f35b46981b65df6650802a996
+  - staging/week_129/reading_hub.js (28817 bytes) | SHA256: 8a3003c5b101544d2e109949ac9d82d0f2d04713cbe22c3d37d480bab7669225
+  - staging/week_129/skill_practice_hub.js (8766 bytes) | SHA256: 232b431a594450ef580e034266ad2a9cad5dd151ebc0cb70df75d7e966b7f50f
+  - staging/week_129/source_grounding.json (3489 bytes) | SHA256: 780974adc274213dab8ac3d88e1d725fdcc006504a6428c093fd499770658685
+  - staging/week_129/speaking_hub.js (6900 bytes) | SHA256: e650d27392bddd929db1131bed3208a601f11e27d641b4b3d17e1abde953fc39
+  - staging/week_129/vocab.js (10607 bytes) | SHA256: 1fbd7ef190c9531cf8f3ca476ddb8e242f8a7271d6f907356c8e049038777052
+  - staging/week_129/writing_hub.js (10043 bytes) | SHA256: 87c15e22b963885127a68774fe7b4455d94138d8bda0b009eeed5172be0994f8
+  - staging/week_130/blueprint.json (3014 bytes) | SHA256: 2cca4c487551bd24809f4dc2f059f5277beefab197ae46ddb00f3e64cf9817fe
+  - staging/week_130/gate_validation.log (3302 bytes) | SHA256: 0930af8e80296fd9ebe82031d9ef03bea69a78723f9b7a652f939d0a90233bfe
+  - staging/week_130/listening_hub.js (7454 bytes) | SHA256: e7b700c350e38d63c0c34f4c0e054e36b793ba58c9e8f41451c43aeea5b9ff8e
+  - staging/week_130/provenance.json (2066 bytes) | SHA256: 823da7db9536dd33c0522c2fea0eca82e8b9f23241f96c2b6f3ea4d72370e631
+  - staging/week_130/reading_hub.js (29170 bytes) | SHA256: 5eb161ca9eb7e720b7eeb908bc8b45cf8119fcd9c7276b5c96e1916cef5ffa39
+  - staging/week_130/skill_practice_hub.js (9131 bytes) | SHA256: 4b7e1ca153516a02ea4fafc461d8d2e5312d7d7fe201d21a5ed8b381a199bba5
+  - staging/week_130/source_grounding.json (3515 bytes) | SHA256: b76b1a5ad747dbffc54faa351ef316c14d29abb0bf982c132c5571315bf75e76
+  - staging/week_130/speaking_hub.js (6898 bytes) | SHA256: f6780d9306c8551b734ca3ea4b5f1b51630ee0c6ba84b72a2234686089c71cd6
+  - staging/week_130/vocab.js (10696 bytes) | SHA256: 84e5559df166a9e37bfc2c3ca44572abb3d7bf444e5a3c741b4fecf37e04bce5
+  - staging/week_130/writing_hub.js (10218 bytes) | SHA256: 5d66d4213d9aa42e1e7c032580af19879624d910791b1b31ef4c5f423e1e7daa
+  - staging/week_131/blueprint.json (3005 bytes) | SHA256: 3125e3f778b8b454dbed7aa0422d11a849b42711674d3b025e00614e4048d072
+  - staging/week_131/gate_validation.log (3391 bytes) | SHA256: 066154ee6866bd6ac27e2a280c4ebf38d4951efb66358807d7fdc27e6398fc87
+  - staging/week_131/listening_hub.js (7628 bytes) | SHA256: ee4a14f16079982398ad38602122001fe5f563c5e70686405c16d6dd770736c0
+  - staging/week_131/provenance.json (2044 bytes) | SHA256: 4a9eac8393be357b26ebb30fff1ce934ea6ee27f6601e5c3f3141b5e3bf4ebca
+  - staging/week_131/reading_hub.js (28805 bytes) | SHA256: 17642aecbae08dc187b5d874dd8ecf09312dbfc78c269baffd01865917def1d9
+  - staging/week_131/skill_practice_hub.js (8957 bytes) | SHA256: c3e46f39db4849981c3df0f58517ad103ef0fe2b1efe4268081883de4143a738
+  - staging/week_131/source_grounding.json (3500 bytes) | SHA256: 79154ba08538492ec2e7b4c0189a4b5a19e3af2f6a0d80a9b4c3f18ad135af2b
+  - staging/week_131/speaking_hub.js (6793 bytes) | SHA256: 23e71a4bdae618032534b4092557fb5408bf7400b606a4e31513e0c50dd4383e
+  - staging/week_131/vocab.js (10733 bytes) | SHA256: cdb5f1e1ccc812477c97552f18f1da4ad00e3e1501d804e24614b184d1a91e61
+  - staging/week_131/writing_hub.js (9845 bytes) | SHA256: 11c9019304d2fcf4684cd485635c34772bb62e28d23dd6e74cdf84282be588c8
+  - staging/week_133/blueprint.json (7992 bytes) | SHA256: 1e27093ca862df38d7877832355f37de9065f05d629b82f5a274bee9712a834d
+  - staging/week_133/gate_validation.log (3196 bytes) | SHA256: deba4948fb2214d79064521d70a03cf2d17190d1410a48caf43cd48ff7db3bad
+  - staging/week_133/listening_hub.js (8273 bytes) | SHA256: d6a4b81bd5e957c8642fbf023c9e2856145bfe2206cd82f24bcb0c59b72119dd
+  - staging/week_133/provenance.json (3118 bytes) | SHA256: 70c957d7bf9d8601d3735a585b24bcb951f613507d69e7c75ba93dec0fb433c9
+  - staging/week_133/reading_hub.js (29444 bytes) | SHA256: 19b1e9ab467e8e99bddcefa2bb835dadda14714371baaf369cf6fad2f9854e98
+  - staging/week_133/skill_practice_hub.js (8708 bytes) | SHA256: cb1697d496c2435edc94c0e36e4a9c853488bb276c2eb19798816d769ade7267
+  - staging/week_133/source_grounding.json (9710 bytes) | SHA256: 8413038861580704bb100c23e364d14d1c4c9220e6433d386312ba953edd5a2c
+  - staging/week_133/speaking_hub.js (6872 bytes) | SHA256: 6da63043a704c6a541b3ace02ce910a61b3950944feaa517562d61996b2b8b71
+  - staging/week_133/vocab.js (10835 bytes) | SHA256: 7502f54a9eb3aef64bb6ecfeb95d66629a36b2261f300a8f88387a516632c8dd
+  - staging/week_133/writing_hub.js (10278 bytes) | SHA256: 0dd6d80a52bf46673e2c0e3c249aa775f918cc433d6e86335f1d69f047d460e4
+  - staging/week_134/blueprint.json (7826 bytes) | SHA256: 1714b6ca8f1bd8284063c0575a97a42284595c1d74fbb0e553fb136a8a2775e4
+  - staging/week_134/gate_validation.log (3190 bytes) | SHA256: 12e0648b587ce97f8bd224ddbb82851582833f5db0ceb2c9d29b30f715776507
+  - staging/week_134/listening_hub.js (7771 bytes) | SHA256: 9947dea36f57d580bdb82594b2ad8dc0c674976837e0c689c0a6a8f8560c6d4a
+  - staging/week_134/provenance.json (3087 bytes) | SHA256: f4356a0c7a29a3059bfa5e2c69dd70f3d35188b9c6e858c49cd071fc95de80c9
+  - staging/week_134/reading_hub.js (29285 bytes) | SHA256: ad34ca03eff5980207e141ea39fb30721be0c1586085fda416c4408b80e27a07
+  - staging/week_134/skill_practice_hub.js (8846 bytes) | SHA256: 4665bdc7d8fd37f458dfe3d7e7585975d7d17326d1e22b80c6309d806c28526b
+  - staging/week_134/source_grounding.json (9529 bytes) | SHA256: e44764fa2bf0ed0bb02d20b0cc58f6f6387bf608777cfaa91e444da90612b1ea
+  - staging/week_134/speaking_hub.js (6903 bytes) | SHA256: 3aa891b29413ab9729ec9a98f8645bbef04b57cc38e4160ef672bd54e842845d
+  - staging/week_134/vocab.js (10932 bytes) | SHA256: 945231453592110e97919ebb124bd65a46488eb0d82257f699864dfaa9e761ff
+  - staging/week_134/writing_hub.js (9876 bytes) | SHA256: 03c7e02d050c2b32434056687b701656bcb6fde0c0a48ae5a449628f1f1e916f
+  - staging/week_79/blueprint.json (3006 bytes) | SHA256: eebba8459dfddf0f10c80acb9684947094e1af42f1e2af93409493f32c215c37
+  - staging/week_79/gate_validation.log (3166 bytes) | SHA256: 461c141d34eeb67b8946d1876d7470daf5714d3cbe3dc9a4bcd375a204e6c16c
+  - staging/week_79/listening_hub.js (7397 bytes) | SHA256: 481b03529f4e91ed362d92321b755061537474ecec3ec2d57f6f87c00ac66c42
+  - staging/week_79/provenance.json (2400 bytes) | SHA256: 73dce99e59055efd32ea55447f05b08af2fceb2d63a5dbcf9268356f5df8868f
+  - staging/week_79/reading_hub.js (26672 bytes) | SHA256: 161ef649d6b22b21624cb2eafef2c4a7b52e2fa3f54a6046f7a4780b6325f7a2
+  - staging/week_79/skill_practice_hub.js (8870 bytes) | SHA256: a8877e9e19b8a0b22cab63be354b9b7f092e50f62b995c58f06a1c018cb08174
+  - staging/week_79/source_grounding.json (3840 bytes) | SHA256: 21599c1bdf0d18d9cfd23f18224704fa7288bf39999a97cbf564049921c78bc7
+  - staging/week_79/speaking_hub.js (6461 bytes) | SHA256: 4063e2415363d421a78cd97f0a69c29b50e1fe75b74dd2e34283156d0ab72394
+  - staging/week_79/vocab.js (9302 bytes) | SHA256: 6329d547263cd0cf43e2edbca08cd2204c3e2106e0036414c9a244cc5d626aa0
+  - staging/week_79/writing_hub.js (9726 bytes) | SHA256: a0c4a4e7b949e347f1c7b6d1fdfaa87ead110a675be1ea9898bc90a37ddef56e
+========================================================================

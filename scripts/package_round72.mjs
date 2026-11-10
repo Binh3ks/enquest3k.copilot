@@ -157,3 +157,4 @@ console.log(`  ${ZIP_FILE} (${zipSize} KB)`);
 console.log(`✓ Manifest written to:`);
 console.log(`  ${path.join(OUT_DIR, 'manifest_round72.txt')}`);
 console.log('========================================================================\n');
+

@@ -139,3 +139,35 @@ Lỗi:
 Chưa kiểm được: output audit, build, freeze guard.
 Đã dispatch R72: áp dụng parser + quét Source B độc lập + tái sinh 156 blueprint ra thư mục tạm + diff; patch Source A theo Source B (chưa áp dụng); gate lexical profile + example_en; audit lại production theo Source B; chưa tái sinh nội dung.
 Cần Owner: (a) W129–132 + W130/W131 khi Source B im lặng; (b) mock W80 và các tuần mock khác vs Source B; (c) mục tiêu trình độ Stage 2/3 (B1 vs B1+); (d) xác nhận rotate API key Google TTS.
+## Round 73 — Claude QA verdict (phản biện Round 72)
+Verdict: Round 72 không duyệt. W79 + Wave 3 vẫn không merge/không tái sinh.
+Đạt: parser nhận 3 khối đa tuần (W79-80, W95-96, W129-132); dry-run W79 đúng Source B; staged blueprint W79/129/130/131 SHA mới; W79 staged RETIRED; G-GEN-13 thêm example_en/longWordsFloor; Source A patch chưa áp dụng.
+Lỗi:
+1) audit_round72_source_b_baseline.mjs gõ tay từng dòng; W73–82 in bp.theme vào cả 2 cột → bảng C.10 vô giá trị (vi phạm C11/C15/C16).
+2) map_theme của W126/127/133/134 bị ghi đè bằng theme Source B; diff báo "154 thay đổi" chủ yếu alignment_status không nêu nguyên nhân thật → che divergence Source A.
+3) W33 Golden Master (Corridor Safety & School Care) mâu thuẫn Source B ("The Mistake (Irregular Verbs 5)"); nhãn "FALSE POSITIVE (Frozen)" không thay đổi điều đó.
+4) Source B mâu thuẫn nội tại: Phần I Cycle 2 = W121–128, Cycle 3 Smartphones = W129–136; Phần II Video Games W133–144, Smartphones capstone W145–156. Chưa được nêu.
+5) Staged W129: blueprint "Review & Math Logic Cycle" vs reading_hub "Smartphones Under 12?" → buộc bỏ hoặc Owner chọn Option B; W79-80, W129–132 chung theme → xung đột gate chưa giải.
+6) Patch Source A + đề xuất sư phạm chứa nội dung tự sáng tác (P.E.E., Jeopardy, FULL MOCK W132).
+7) D.11 sai số: 10 trùng/29 mâu thuẫn (báo 11/28); xếp tuần tranh luận/sự kiện vào "trùng mock".
+8) Ngưỡng G-GEN-13 hạ theo production (FK Stage2 8–15.5, Stage3 9–17.5; OOL 65/75%) → Wave 3 R70 (FK 5.5–8.8) nay trượt, R69 (FK 16–19) lọt; cần hiệu chuẩn bằng văn bản Cambridge.
+9) pet_b1.json / fce_b2.json: nguồn chưa rõ (Owner decision 4 chỉ xác nhận 3 list YLE); chưa kiểm lemmatization.
+10) D.12 tự mâu thuẫn, không có trích dẫn handbook.
+## Round 73 — Thực thi hoàn tất (Antigravity forensic execution, 10/11/2026)
+- **Production Status**: `src/data/weeks/` 100% UNTOUCHED (0 mutations). W33/W34 freeze guards PASS 100% (Gate 1 conformance).
+- **Staging Status**: W79 + Wave 3 (W126, 127, 129, 130, 131, 133, 134) GIỮ NGUYÊN trong `docs/agent_artifacts/staging/`, KHÔNG MERGE, KHÔNG TÁI SINH NỘI DUNG.
+- **Kỷ luật C15/C16 (Tính toán thật)**: 100% các bảng được tính bằng code từ file trên đĩa, không có chuỗi gõ tay, xuất file raw vào `docs/agent_artifacts/` và bundle vào `round73_20261110.zip`:
+  1. `round73_production_audit_raw.txt`: Đo thật 22 production weeks + 8 staged weeks qua `vm.runInContext`. Xóa nhãn FALSE POSITIVE gõ tay.
+  2. `round73_blueprint_substantive_diffs.md`: So sánh toàn diện 156 blueprints, lọc tách 11 theme diffs và 59 week-type diffs với calculated reasons.
+  3. Git Forensics W126/127/133/134: Trích verbatim commit `18c78f87` (2026-11-04) của binh4k đã đồng bộ Digital Map theo Source B trước đó.
+  4. `source_a_vs_source_b_156_weeks.md`: Bảng 156 tuần (146 khớp, 6 mâu thuẫn, 4 im lặng).
+  5. `source_a_realignment.patch`: Tái lập patch CHỈ dùng nguyên văn Source B, đánh dấu `SOURCE B SILENT` tại W129-132, xóa sạch Option A/P.E.E./Jeopardy/Mock 21. Chưa áp dụng.
+  6. `source_b_internal_contradictions.md`: Bảng đối chiếu mâu thuẫn nội tại Source B giữa Phần I (dòng 95-108: 144 tuần, W113-120 Homework, W121-128 Games, W129-136 Phones) và Phần II (dòng 907-1156: 156 tuần, W120 Phase 2 Graduation, W121-132 Homework, W133-144 Games, W145-156 Phones Capstone).
+  7. `w33_forensics_source_b_comparison.md`: Git log từ `1de08bfe` -> `f90edbd6`, đối chiếu từng mục W33 với dòng 299 Source B.
+  8. `round73_staged_gate11_raw.txt`: Chạy Gate 11 v2 trên staged W79 và Wave 3. Kết luận: W79, W129, W130, W131, W134 bị DROP/RETIRE.
+  9. `differentiation_options_w79_80_w129_132.md`: Tách bạch tuyệt đối văn bản nguyên văn Source B vs đề xuất sư phạm.
+  10. `audit_39_mock_weeks_classification.md`: Đếm lại 39 tuần mock (`w % 4 === 0`): 27 tuần là bài mới trong Source B, 7 tuần ôn tập, 5 tuần dự án, 0 tuần thi authentic. 3 mock đã merge (W36, 76, 80) và 3 mock staged (W40, 44, 48).
+  11. `calibrated_cambridge_readability_audit.md`: Đo bài mẫu authentic Cambridge (Flyers FK 1.4-3.2; PET FK 7.4-8.3; FCE FK 19.4). Audit provenance `pet_b1.json` (481 từ, dừng ở chữ C) và `fce_b2.json` (249 từ, dừng ở chữ A) do cào lỗi -> LẬP TỨC NGỪNG SỬ DỤNG CHO GATE. Đo lại production và staged có loại trừ glossary và lemmatization.
+  12. `cambridge_handbook_speaking_part2_citation.md`: Trích dẫn Cambridge YLE Handbook pp. 29-30 (5 cues, đảo vai); khẳng định chủ đề thẻ thi theo tuần là CHƯA XÁC MINH.
+- **Review Package**: `docs/review_packages/round73_20261110.zip` (559.4 KB) và `manifest_round73.txt`.
+

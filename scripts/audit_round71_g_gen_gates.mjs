@@ -147,3 +147,4 @@ for (const w of targetWeeks) {
 
   console.log(`| W${w} | ${mathCount} items | ${mathTopicName} | ${mathPass} | ${repDetail} | ${mathCount === 5 ? 'SOP 5 Passed' : 'Tech Debt (2 items)'} |`);
 }
+

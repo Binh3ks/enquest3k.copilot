@@ -1,0 +1,139 @@
+{
+  "week": 16,
+  "theme": "Sports Commentary (Dynamic Verbs)",
+  "title_en": "Sports Commentary (Dynamic Verbs)",
+  "title_vi": "Bình luận Thể thao",
+  "cefr_level": "Pre-A1 Starters",
+  "cefr_stage": 1,
+  "week_type": "full_mock",
+  "isFullMock": true,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_w16_starters_mock.js",
+  "story_title": "Describing a sports game",
+  "clil_topic": {
+    "title": "Sports Commentary",
+    "focus": "Use action verbs with energy"
+  },
+  "grammar_focus": {
+    "structure": "He is kicking the ball\", \"They are running",
+    "outcome": "Use action verbs with energy",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "kick",
+      "throw",
+      "catch",
+      "hit",
+      "score",
+      "win"
+    ],
+    "total_syllabus_words": 6,
+    "target_count": 20,
+    "missing_count": 14,
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)"
+  },
+  "keywords": [
+    "kick",
+    "throw",
+    "catch",
+    "hit",
+    "score",
+    "win"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "kick",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "throw",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "catch",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "hit",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "score",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    },
+    {
+      "word": "win",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true
+    }
+  ],
+  "scaffolding_tier": "Tier 1 (Festival)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 14 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 16,
+    "map_theme": "Sports Commentary (Dynamic Verbs)",
+    "map_clil_module": "Bình luận Thể thao: Use action verbs with energy",
+    "map_grammar_hub": "Bài thi thử Starters trọn vẹn: L1–L4, R1–R5, S1–S3; Lễ trao Khiên Starters",
+    "map_cefr_type": "★ FULL MOCK 01 (Starters)",
+    "alignment_status": "ALIGNED",
+    "alignment_note": "Syllabus sources fully aligned."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-10T05:25:47.795Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}
