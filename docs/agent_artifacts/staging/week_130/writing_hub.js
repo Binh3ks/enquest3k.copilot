@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Writing Hub & Picture Story Architecture
- * Week: 130 | Theme: "Opinion Project 3: Comparing Global Approaches" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.452Z
+ * Week: 130 | Theme: "Opinion Project 3: Comparing Global Approaches" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.865Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const writingHubData = {
   "week": 130,
   "theme": "Opinion Project 3: Comparing Global Approaches",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "picture_story": {
     "title": "Comparative Analysis of International Device Legislation",
     "prompt_en": "Look at the four panels. Write a comparative essay paragraph synthesizing French and American statutory approaches to student mobile devices. Use comparative connectors ('in contrast to', 'whereas', 'on the other hand') and legal terminology. Write 20 or more words.",

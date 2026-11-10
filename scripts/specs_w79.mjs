@@ -8,7 +8,7 @@ export const w79 = {
   "theme": "The Industrial Revolution",
   "title_en": "The Industrial Revolution",
   "title_vi": "Cách Mạng Công Nghiệp",
-  "cefr_level": "B1 Preliminary",
+  "cefr_level": "B1 PET",
   "grammar_focus": "Historical cause and effect connectors ('as a result of', 'due to', 'consequently') and past passive voice ('steam engines were manufactured in factories').",
   "vocab_list": [
     {
@@ -215,34 +215,34 @@ export const w79 = {
   "clil": {
     "title_en": "Steam Engines and Factories: The Industrial Transformation",
     "title_vi": "Động Cơ Hơi Nước và Nhà Máy: Sự Chuyển Mình Công Nghiệp",
-    "content_en": "During the eighteenth and nineteenth centuries, the Industrial Revolution fundamentally transformed human society. Before this transformative era, most everyday goods were manufactured by hand in small rural workshops. The development of the commercial steam engine by James Watt revolutionized manufacturing and transport. Steam boilers burned abundant coal to heat water, generating high-pressure steam that drove heavy pistons in textile mills. Consequently, iron and coal production expanded dramatically across Britain and Europe. Locomotives and steamships quickly transported raw materials and manufactured merchandise across vast distances. However, rapid industrialization also created severe social challenges, including urban smog and grueling labor conditions. Modern historians study how steam mechanics laid the groundwork for today's technological world.",
+    "content_en": "Long ago, people made cloth and tools by hand in small village homes. In the eighteenth century, the Industrial Revolution changed how people worked and lived. Inventors like James Watt built powerful steam engines. These engines burned coal to boil water into strong steam. In new factories, steam powered large machines that made clothes much faster than human hands. Soon, trains called locomotives carried goods and workers across long iron tracks. Cities grew quickly around these busy factories. Life became busier, and products cost less money. Today, we remember this period as the start of modern industry.",
     "glossary": [
       {
-        "word": "locomotive",
-        "definition_en": "A powered railway vehicle designed to pull trains carrying passengers or freight",
-        "definition_vi": "đầu máy xe lửa chạy bằng động cơ"
+            "word": "locomotive",
+            "definition_en": "A railway vehicle with an engine that pulls a train",
+            "definition_vi": "đầu máy xe lửa kéo đoàn tàu"
       },
       {
-        "word": "manufacture",
-        "definition_en": "The production of merchandise on a large commercial scale using machines",
-        "definition_vi": "sản xuất hàng hóa quy mô lớn bằng máy móc"
+            "word": "factory",
+            "definition_en": "A large building where machines make goods quickly",
+            "definition_vi": "nhà máy nơi máy móc sản xuất hàng hóa"
       },
       {
-        "word": "mechanize",
-        "definition_en": "To equip an industry or craft with modern mechanical apparatus",
-        "definition_vi": "trang bị máy móc cơ khí cho một ngành nghề"
+            "word": "steam",
+            "definition_en": "The hot gas that water turns into when boiled",
+            "definition_vi": "hơi nước nóng sinh ra khi nước sôi"
       },
       {
-        "word": "revolution",
-        "definition_en": "A fundamental and far-reaching change in societal structures or methods",
-        "definition_vi": "sự thay đổi căn bản và sâu rộng trong cấu trúc xã hội"
+            "word": "revolution",
+            "definition_en": "A major change in how people live and work",
+            "definition_vi": "cuộc cách mạng thay đổi cách sống và làm việc"
       },
       {
-        "word": "urban",
-        "definition_en": "Located in or characteristic of densely populated cities",
-        "definition_vi": "nằm ở hoặc mang đặc trưng của các thành phố đông dân"
+            "word": "engine",
+            "definition_en": "A machine that uses fuel or heat to create power",
+            "definition_vi": "động cơ dùng nhiên liệu để tạo ra lực"
       }
-    ],
+],
     "check_questions": [
       {
         "id": 1,
@@ -943,128 +943,218 @@ export const w79 = {
   "minigames": {
     "math_problems": [
       {
-        "id": "w79_p1",
-        "type": "part_whole",
-        "title": "Calculating Daily Coal Consumption for Foundry Boilers",
-        "question": "A Birmingham iron foundry burns 45 tons of coal for smelting furnaces and 35 tons of coal for steam engine boilers each day. What is the total coal consumed daily in tons?",
-        "storyContext": "William calculates the foundry fuel logs to ensure steady deliveries of coal.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Smelting Furnaces",
-              "value": 45,
-              "color": "#475569"
+            "id": "w79_p1",
+            "type": "part_whole",
+            "title": "Problem 1: Bar Graph of Daily Coal Deliveries",
+            "question": "A bar graph shows coal deliveries to a factory. The smelting furnace received 45 tons and the steam engine received 35 tons. What was the total coal delivered on the chart?",
+            "storyContext": "William records daily coal deliveries on a bar graph chart.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Smelting Furnace",
+                              "value": 45,
+                              "color": "#475569"
+                        },
+                        {
+                              "label": "Steam Engine",
+                              "value": 35,
+                              "color": "#0ea5e9"
+                        }
+                  ],
+                  "total": 80,
+                  "unit": "tons of coal"
             },
-            {
-              "label": "Engine Boilers",
-              "value": 35,
-              "color": "#0ea5e9"
-            }
-          ],
-          "total": 80,
-          "unit": "tons of coal"
-        },
-        "target_answer": 80,
-        "unit": "tons of coal",
-        "steps": [
-          "Record the furnace fuel: 45 tons of coal.",
-          "Add the boiler fuel: 35 tons of coal.",
-          "45 + 35 = 80 tons of coal consumed in total."
-        ]
+            "target_answer": 80,
+            "unit": "tons of coal",
+            "steps": [
+                  "Read the bar graph value for furnace: 45 tons.",
+                  "Read the engine bar: 35 tons.",
+                  "Calculate total: 45 + 35 = 80 tons."
+            ]
       },
       {
-        "id": "w79_p2",
-        "type": "comparison",
-        "title": "Comparing Cloth Output: Hand Loom vs Mechanical Loom",
-        "question": "An automated mechanical loom produces 140 yards of cotton textile per day, whereas a traditional hand loom produces only 25 yards. How many more yards does the mechanical loom produce daily?",
-        "storyContext": "A mill manager compares weaving yields on an industrial output chart.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Mechanical Loom",
-              "value": 140,
-              "color": "#10b981"
+            "id": "w79_p2",
+            "type": "comparison",
+            "title": "Problem 2: Representing Cloth Output on a Chart",
+            "question": "A factory chart compares weaving output. A mechanical loom produced 140 yards of cloth while a hand loom produced 25 yards. How many more yards did the mechanical loom produce?",
+            "storyContext": "A mill manager compares machine output on a data chart.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Mechanical Loom",
+                              "value": 140,
+                              "color": "#10b981"
+                        },
+                        {
+                              "label": "Hand Loom",
+                              "value": 25,
+                              "color": "#f59e0b"
+                        }
+                  ],
+                  "difference": 115,
+                  "unit": "yards of cloth"
             },
-            {
-              "label": "Traditional Hand Loom",
-              "value": 25,
-              "color": "#f59e0b"
-            }
-          ],
-          "difference": 115,
-          "unit": "yards of cloth"
-        },
-        "target_answer": 115,
-        "unit": "yards of cloth",
-        "steps": [
-          "Start with the mechanical loom output: 140 yards.",
-          "Subtract the hand loom output: 25 yards.",
-          "140 - 25 = 115 yards more produced by the mechanical loom."
-        ]
+            "target_answer": 115,
+            "unit": "yards of cloth",
+            "steps": [
+                  "Mechanical loom bar: 140 yards.",
+                  "Hand loom bar: 25 yards.",
+                  "140 - 25 = 115 yards difference."
+            ]
+      },
+      {
+            "id": "w79_p3",
+            "type": "part_whole",
+            "title": "Problem 3: Representing Shift Attendance on a Frequency Table",
+            "question": "A frequency table represents factory workers on duty. Shift A has 120 workers and Shift B has 80 workers. How many workers are represented altogether on the table?",
+            "storyContext": "The supervisor plots worker attendance data.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Shift A",
+                              "value": 120,
+                              "color": "#6366f1"
+                        },
+                        {
+                              "label": "Shift B",
+                              "value": 80,
+                              "color": "#a855f7"
+                        }
+                  ],
+                  "total": 200,
+                  "unit": "workers"
+            },
+            "target_answer": 200,
+            "unit": "workers",
+            "steps": [
+                  "Shift A count: 120 workers.",
+                  "Shift B count: 80 workers.",
+                  "120 + 80 = 200 workers in total."
+            ]
+      },
+      {
+            "id": "w79_p4",
+            "type": "comparison",
+            "title": "Problem 4: Bar Graph Comparison of Iron Production",
+            "question": "A bar chart represents iron ingots produced by two foundries. Foundry 1 cast 95 ingots and Foundry 2 cast 60 ingots. What is the difference shown on the vertical axis?",
+            "storyContext": "Foundry logs track monthly ingot production.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Foundry 1",
+                              "value": 95,
+                              "color": "#0284c7"
+                        },
+                        {
+                              "label": "Foundry 2",
+                              "value": 60,
+                              "color": "#ea580c"
+                        }
+                  ],
+                  "difference": 35,
+                  "unit": "iron ingots"
+            },
+            "target_answer": 35,
+            "unit": "iron ingots",
+            "steps": [
+                  "Foundry 1 bar height: 95 ingots.",
+                  "Foundry 2 bar height: 60 ingots.",
+                  "95 - 60 = 35 ingots difference."
+            ]
+      },
+      {
+            "id": "w79_p5",
+            "type": "part_whole",
+            "title": "Problem 5: Data Summary of Locomotive Trips",
+            "question": "A railway data summary shows locomotive trips. In the first half of the month, the train made 40 trips. In the second half, it made 50 trips. How many trips are represented on the monthly summary?",
+            "storyContext": "The stationmaster charts freight train journeys.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "First Half",
+                              "value": 40,
+                              "color": "#14b8a6"
+                        },
+                        {
+                              "label": "Second Half",
+                              "value": 50,
+                              "color": "#f43f5e"
+                        }
+                  ],
+                  "total": 90,
+                  "unit": "trips"
+            },
+            "target_answer": 90,
+            "unit": "trips",
+            "steps": [
+                  "First half trips: 40.",
+                  "Second half trips: 50.",
+                  "40 + 50 = 90 total trips."
+            ]
       }
-    ],
+],
     "action_lab_scenarios": [
       {
-        "stage": 1,
-        "title": "Steam Engine Mechanics & Condenser Cycle",
-        "diagram_type": "steam_boiler_piston_cycle",
-        "instruction": "Identify the core mechanical components that convert boiling steam into engine motion.",
-        "items": [
-          {
-            "label": "Coal Furnace Boiler",
-            "target": "heat_source"
-          },
-          {
-            "label": "High-Pressure Piston Cylinder",
-            "target": "motion_drive"
-          },
-          {
-            "label": "Separate Cooling Condenser",
-            "target": "efficiency_cycle"
-          }
-        ]
+            "stage": 1,
+            "title": "Steam Boiler Pressure Mechanics",
+            "diagram_type": "steam_boiler_pressure",
+            "instruction": "Assemble the high-pressure steam boiler components to drive the piston.",
+            "items": [
+                  {
+                        "label": "Coal Firebox",
+                        "target": "heat_source"
+                  },
+                  {
+                        "label": "Pressurized Water Chamber",
+                        "target": "boiler_core"
+                  },
+                  {
+                        "label": "Safety Relief Valve",
+                        "target": "exhaust_port"
+                  }
+            ]
       },
       {
-        "stage": 2,
-        "title": "Textile Mill Automated Power Drive",
-        "diagram_type": "factory_pulley_distribution",
-        "instruction": "Route rotational steam power through driveshafts and leather belts to automated looms.",
-        "items": [
-          {
-            "label": "Central Steam Driveshaft",
-            "target": "main_power"
-          },
-          {
-            "label": "Tensioned Leather Belt",
-            "target": "power_transfer"
-          },
-          {
-            "label": "Automated Weaving Shuttle",
-            "target": "textile_loom"
-          }
-        ]
+            "stage": 2,
+            "title": "Mechanical Loom Shuttle Assembly",
+            "diagram_type": "mechanical_loom_shuttle",
+            "instruction": "Arrange the automated loom parts to weave cotton cloth continuously.",
+            "items": [
+                  {
+                        "label": "Yarn Spindle Beam",
+                        "target": "warp_feed"
+                  },
+                  {
+                        "label": "Flying Shuttle Mechanism",
+                        "target": "weft_slider"
+                  },
+                  {
+                        "label": "Beater Comb",
+                        "target": "fabric_roller"
+                  }
+            ]
       },
       {
-        "stage": 3,
-        "title": "Industrial Railway Transport Network",
-        "diagram_type": "freight_logistics_rail_link",
-        "instruction": "Connect coal mines, iron foundries, and coastal shipping docks using freight trains.",
-        "items": [
-          {
-            "label": "Coal Colliery Loading Depot",
-            "target": "raw_materials"
-          },
-          {
-            "label": "Steam Freight Locomotive",
-            "target": "rail_transport"
-          },
-          {
-            "label": "Coastal Export Maritime Dock",
-            "target": "global_shipping"
-          }
-        ]
+            "stage": 3,
+            "title": "Locomotive Traction on Iron Rails",
+            "diagram_type": "locomotive_wheel_traction",
+            "instruction": "Fit the flanged wheel and drive crank onto the iron track for smooth hauling.",
+            "items": [
+                  {
+                        "label": "Smooth Iron Rail",
+                        "target": "track_base"
+                  },
+                  {
+                        "label": "Flanged Guide Wheel",
+                        "target": "wheel_rim"
+                  },
+                  {
+                        "label": "Piston Connecting Rod",
+                        "target": "crank_axis"
+                  }
+            ]
       }
-    ],
+],
     "grammar_drills": [
       {
         "sentence": "Everyday tools were manufactured by machines in urban factories.",

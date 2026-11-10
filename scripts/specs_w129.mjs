@@ -8,7 +8,7 @@ export const w129 = {
   "theme": "Opinion Project 3: Smartphones Under 12?",
   "title_en": "Opinion Project 3: Smartphones Under 12?",
   "title_vi": "Dự án Quan điểm 3: Điện thoại thông minh cho trẻ dưới 12 tuổi?",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_focus": "Evaluative essay structures, modal verbs of certainty and caution ('may disrupt', 'is imperative that', 'evidence suggests that').",
   "vocab_list": [
     {
@@ -213,36 +213,36 @@ export const w129 = {
     }
   ],
   "clil": {
-    "title_en": "Developmental Psychology: Social Media and Adolescent Cognition",
-    "title_vi": "Tâm Lý Học Phát Triển: Mạng Xã Hội và Nhận Thức Thanh Thiếu Niên",
-    "content_en": "Developmental psychologists and pediatric researchers are investigating whether children under age twelve should own personal smartphones. Neurological studies suggest that young adolescent brains are particularly vulnerable to digital stimulation. Excessive screen usage can disrupt essential sleep cycles, reduce attention spans in classrooms, and trigger social anxiety. Conversely, proponents argue that mobile devices allow parents to maintain direct contact and help children access educational applications. In an academic opinion essay, writers must systematically evaluate both positions with scientific evidence. Pediatric associations recommend establishing clear boundaries, such as screen-free bedrooms and parental supervision of online accounts. Analyzing psychological data enables students to craft reasoned arguments on whether statutory restrictions or parental moderation offer the healthiest path for young minds.",
+    "title_en": "Children and Smartphones: Examining the Balance",
+    "title_vi": "Trẻ Em Và Điện Thoại Thông Minh: Xem Xét Sự Cân Bằng",
+    "content_en": "Many families discuss whether children under twelve should have smartphones. Supporters believe that phones keep kids safe because parents can call them after school hours. Handheld phones also let students use helpful learning apps and dictionaries quickly. However, teachers and doctors point out serious concerns. Staring at bright screens late at night harms natural sleep. Furthermore, social media notifications distract students during study time. Some reports suggest that young children who spend many hours online feel more anxious. When writing an opinion essay, students must examine both safety benefits and health risks before reaching a balanced conclusion.",
     "glossary": [
       {
-        "word": "adolescent",
-        "definition_en": "An individual navigating the physical, cognitive, and emotional transition between childhood and maturity",
-        "definition_vi": "cá nhân đang trải qua bước chuyển đổi thể chất, nhận thức và cảm xúc giữa tuổi thơ và sự trưởng thành"
+            "word": "smartphone",
+            "definition_en": "A mobile mobile phone with internet access and touch screen apps",
+            "definition_vi": "điện thoại thông minh có kết nối mạng"
       },
       {
-        "word": "pediatric",
-        "definition_en": "Specialized branch of medical science devoted to child healthcare, growth, and development",
-        "definition_vi": "ngành khoa học y khoa chuyên biệt dành cho việc chăm sóc sức khỏe, sự phát triển của trẻ em"
+            "word": "notification",
+            "definition_en": "A message or alert shown on a screen to gain attention",
+            "definition_vi": "thông báo trên màn hình thiết bị"
       },
       {
-        "word": "cognitive",
-        "definition_en": "Relating to intellectual capabilities including memory, linguistic comprehension, and reasoning",
-        "definition_vi": "liên quan đến các năng lực trí tuệ bao gồm trí nhớ, hiểu ngôn ngữ và suy luận"
+            "word": "distract",
+            "definition_en": "To take attention away from study or another task",
+            "definition_vi": "làm xao lãng sự chú ý"
       },
       {
-        "word": "supervision",
-        "definition_en": "Active parental oversight and guidance over a minor's digital behaviors and media diet",
-        "definition_vi": "sự giám sát tích cực và định hướng của cha mẹ đối với hành vi kỹ thuật số của trẻ vị thành niên"
+            "word": "psychologist",
+            "definition_en": "An expert who studies how people think and behave",
+            "definition_vi": "chuyên gia tâm lý học"
       },
       {
-        "word": "moderation",
-        "definition_en": "The deliberate practice of balanced consumption avoiding damaging behavioral extremes",
-        "definition_vi": "thực hành có chủ đích việc tiêu dùng cân bằng, tránh các thái cực hành vi gây hại"
+            "word": "balance",
+            "definition_en": "A state where different things exist in equal measure",
+            "definition_vi": "sự cân bằng hợp lý"
       }
-    ],
+],
     "check_questions": [
       {
         "id": 1,
@@ -934,128 +934,218 @@ export const w129 = {
   "minigames": {
     "math_problems": [
       {
-        "id": "w129_p1",
-        "type": "part_whole",
-        "title": "Calculating Daily Screen Time Allocation",
-        "question": "A middle school student spends 45 minutes on educational research apps and 65 minutes on video streaming apps each day. What is their total recreational and study screen time in minutes?",
-        "storyContext": "Maya tallies daily device usage logs for her developmental psychology project.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Educational Apps",
-              "value": 45,
-              "color": "#10b981"
+            "id": "w129_p1",
+            "type": "part_whole",
+            "title": "Problem 1: Fractions in a Student Phone Survey",
+            "question": "In a survey of 80 sixth graders, 1/4 of the students own a smartphone and 3/4 do not. How many students in the survey sample own a smartphone?",
+            "storyContext": "Class researchers calculate fractional parts of survey samples.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Phone Owners (1/4)",
+                              "value": 20,
+                              "color": "#0ea5e9"
+                        },
+                        {
+                              "label": "Non-Owners (3/4)",
+                              "value": 60,
+                              "color": "#94a3b8"
+                        }
+                  ],
+                  "total": 80,
+                  "unit": "students"
             },
-            {
-              "label": "Video Streaming",
-              "value": 65,
-              "color": "#f59e0b"
-            }
-          ],
-          "total": 110,
-          "unit": "minutes"
-        },
-        "target_answer": 110,
-        "unit": "minutes",
-        "steps": [
-          "Take educational screen time: 45 minutes.",
-          "Add streaming video time: 65 minutes.",
-          "45 + 65 = 110 minutes total screen time per day."
-        ]
+            "target_answer": 20,
+            "unit": "students",
+            "steps": [
+                  "Total sample: 80 students.",
+                  "Fraction who own phones: 1/4.",
+                  "80 / 4 = 20 students."
+            ]
       },
       {
-        "id": "w129_p2",
-        "type": "comparison",
-        "title": "Comparing Sleep Duration: Screen-Free vs Screen-Active Bedrooms",
-        "question": "Students with screen-free bedrooms sleep an average of 540 minutes per night, while students with active screens in their rooms sleep only 435 minutes. How many more minutes of restorative sleep do screen-free students achieve?",
-        "storyContext": "Leo analyzes pediatric sleep comparison statistics.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Screen-Free Bedroom",
-              "value": 540,
-              "color": "#3b82f6"
+            "id": "w129_p2",
+            "type": "comparison",
+            "title": "Problem 2: Comparing Fractions of Screen Time",
+            "question": "In a math logic review, Group A had 30 students with phone limits and Group B had 20 students with phone limits out of 50 total. How many more students in Group A had limits?",
+            "storyContext": "Students compare screen time fractions between two classes.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Group A",
+                              "value": 30,
+                              "color": "#10b981"
+                        },
+                        {
+                              "label": "Group B",
+                              "value": 20,
+                              "color": "#f59e0b"
+                        }
+                  ],
+                  "difference": 10,
+                  "unit": "students"
             },
-            {
-              "label": "Active Screen Bedroom",
-              "value": 435,
-              "color": "#ef4444"
-            }
-          ],
-          "difference": 105,
-          "unit": "minutes"
-        },
-        "target_answer": 105,
-        "unit": "minutes",
-        "steps": [
-          "Start with screen-free sleep: 540 minutes (9 hours).",
-          "Subtract screen-active sleep: 435 minutes (7.25 hours).",
-          "540 - 435 = 105 more minutes of restorative sleep."
-        ]
+            "target_answer": 10,
+            "unit": "students",
+            "steps": [
+                  "Group A: 30 students.",
+                  "Group B: 20 students.",
+                  "30 - 20 = 10 students."
+            ]
+      },
+      {
+            "id": "w129_p3",
+            "type": "part_whole",
+            "title": "Problem 3: Fractions of Homework Study Time",
+            "question": "A student spent 20 minutes doing online research and 40 minutes reading paper books during a 60-minute study period. How many total minutes were studied?",
+            "storyContext": "A student tracks fractions of digital study time.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Online Research",
+                              "value": 20,
+                              "color": "#6366f1"
+                        },
+                        {
+                              "label": "Book Reading",
+                              "value": 40,
+                              "color": "#ec4899"
+                        }
+                  ],
+                  "total": 60,
+                  "unit": "minutes"
+            },
+            "target_answer": 60,
+            "unit": "minutes",
+            "steps": [
+                  "Online time: 20 minutes.",
+                  "Book time: 40 minutes.",
+                  "20 + 40 = 60 minutes."
+            ]
+      },
+      {
+            "id": "w129_p4",
+            "type": "comparison",
+            "title": "Problem 4: Comparing Survey Fractions",
+            "question": "A school poll showed that 45 students supported a no-phone rule at lunch while 25 students opposed it. What is the difference between these survey groups?",
+            "storyContext": "Researchers compare opinion factions in the lunch poll.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Support Rule",
+                              "value": 45,
+                              "color": "#0d9488"
+                        },
+                        {
+                              "label": "Oppose Rule",
+                              "value": 25,
+                              "color": "#f43f5e"
+                        }
+                  ],
+                  "difference": 20,
+                  "unit": "students"
+            },
+            "target_answer": 20,
+            "unit": "students",
+            "steps": [
+                  "Supporters: 45.",
+                  "Opponents: 25.",
+                  "45 - 25 = 20 students."
+            ]
+      },
+      {
+            "id": "w129_p5",
+            "type": "part_whole",
+            "title": "Problem 5: Total Sample Size from Fraction Groups",
+            "question": "In a grade-level study on smartphone habits, 35 boys and 35 girls completed the full research questionnaire. How many total learners participated?",
+            "storyContext": "Researchers compute the full sample size.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Boys Sample",
+                              "value": 35,
+                              "color": "#3b82f6"
+                        },
+                        {
+                              "label": "Girls Sample",
+                              "value": 35,
+                              "color": "#a855f7"
+                        }
+                  ],
+                  "total": 70,
+                  "unit": "learners"
+            },
+            "target_answer": 70,
+            "unit": "learners",
+            "steps": [
+                  "Boys: 35.",
+                  "Girls: 35.",
+                  "35 + 35 = 70 learners."
+            ]
       }
-    ],
+],
     "action_lab_scenarios": [
       {
-        "stage": 1,
-        "title": "Mapping Neurological Screen Stimulation Pathways",
-        "diagram_type": "adolescent_brain_dopamine_loop",
-        "instruction": "Trace how interactive notifications trigger dopamine reward cycles in the developing brain.",
-        "items": [
-          {
-            "label": "Push Notification Alert",
-            "target": "sensory_stimulus"
-          },
-          {
-            "label": "Dopamine Receptor Activation",
-            "target": "neural_reward"
-          },
-          {
-            "label": "Compulsive Check Habit Loop",
-            "target": "behavioral_pattern"
-          }
-        ]
+            "stage": 1,
+            "title": "Screen Time Sleep Barrier",
+            "diagram_type": "screen_time_sleep",
+            "instruction": "Demonstrate how late-night device light delays sleep cycles.",
+            "items": [
+                  {
+                        "label": "Blue Screen Emission",
+                        "target": "light_source"
+                  },
+                  {
+                        "label": "Delayed Hormone Release",
+                        "target": "brain_clock"
+                  },
+                  {
+                        "label": "Restful Sleep Period",
+                        "target": "night_cycle"
+                  }
+            ]
       },
       {
-        "stage": 2,
-        "title": "Circadian Rhythm Blue-Light Disruption",
-        "diagram_type": "pineal_gland_melatonin_suppression",
-        "instruction": "Identify how late-night screen frequencies delay hormonal sleep triggers.",
-        "items": [
-          {
-            "label": "High-Frequency Blue Light Wave",
-            "target": "photoreceptor_input"
-          },
-          {
-            "label": "Pineal Gland Melatonin Delay",
-            "target": "hormone_inhibition"
-          },
-          {
-            "label": "Delayed Sleep Cycle Onset",
-            "target": "sleep_deficit"
-          }
-        ]
+            "stage": 2,
+            "title": "Notification Filter Filter",
+            "diagram_type": "notification_filter",
+            "instruction": "Configure phone alert levels during scheduled study hours.",
+            "items": [
+                  {
+                        "label": "Family Emergency Contact",
+                        "target": "allowed_channel"
+                  },
+                  {
+                        "label": "Study Do-Not-Disturb Mode",
+                        "target": "active_filter"
+                  },
+                  {
+                        "label": "Gaming Alert Lockout",
+                        "target": "blocked_channel"
+                  }
+            ]
       },
       {
-        "stage": 3,
-        "title": "Designing a Family Digital Wellbeing Agreement",
-        "diagram_type": "family_media_ecosystem_balance",
-        "instruction": "Balance emergency connectivity with screen-free boundaries and physical recreation.",
-        "items": [
-          {
-            "label": "Basic Emergency Calling Channel",
-            "target": "safety_feature"
-          },
-          {
-            "label": "Hallway Device Charging Hub",
-            "target": "boundary_zone"
-          },
-          {
-            "label": "Outdoor Physical Recreation Goal",
-            "target": "wellness_activity"
-          }
-        ]
+            "stage": 3,
+            "title": "Balanced Daily Student Schedule",
+            "diagram_type": "balanced_student_day",
+            "instruction": "Build a healthy 24-hour balance of school, outdoor play, and device time.",
+            "items": [
+                  {
+                        "label": "Outdoor Physical Play (1 hr)",
+                        "target": "play_block"
+                  },
+                  {
+                        "label": "Homework & Family Dinner (3 hrs)",
+                        "target": "family_block"
+                  },
+                  {
+                        "label": "Educational Screen Window (45 mins)",
+                        "target": "tech_block"
+                  }
+            ]
       }
-    ],
+],
     "grammar_drills": [
       {
         "sentence": "Excessive screen usage may disrupt natural adolescent sleep cycles.",

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 126 | Theme: "From Essay to Speech" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.442Z
+ * Week: 126 | Theme: "From Essay to Speech" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.826Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const readingHubData = {
   "week": 126,
   "theme": "From Essay to Speech",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "vocab": [
     {
       "id": 1,
@@ -214,34 +214,34 @@ export const readingHubData = {
     }
   ],
   "clil_article": {
-    "title_en": "Oral Rhetoric: Transforming Essays into Compelling Speeches",
-    "title_vi": "Thuật Hùng Biện: Chuyển Đổi Bài Luận Thành Bài Phát Biểu Lôi Cuốn",
-    "content_en": "Transforming an academic essay into an engaging oral speech requires specific rhetorical techniques. Written essays rely on dense sentences, footnotes, and paragraph indentations that a listening audience cannot see. When delivering a presentation, speakers prepare concise cue cards containing keywords rather than reading full paragraphs verbatim. Effective public speakers use clear oral signposting markers, such as 'Moving on to our second finding' or 'Turning our attention to the global context.' These signposts guide listeners smoothly through complex arguments. In addition, speakers practice vocal pacing, deliberate pauses, and expressive intonation to emphasize crucial points. Mastering the transition from written text to spoken delivery ensures that research findings persuade and captivate diverse audiences.",
+    "title_en": "From Essay to Speech: Delivering Spoken Ideas",
+    "title_vi": "Từ Bài Viết Đến Bài Nói: Truyền Đạt Ý Tưởng Bằng Lời",
+    "content_en": "Turning an essay into a speech is an exciting skill. When you write an essay, your reader can read each paragraph slowly. However, when you give a talk, listeners must understand your main points right away. Good speakers use index cue cards instead of reading full sheets of paper. They write short bullet points to guide their ideas. In addition, they use clear signpost words. For example, phrases like moving on to or turning our attention to tell the audience what comes next. Pausing between sentences gives everyone time to think. Practicing with cue cards helps you speak with calm confidence.",
     "glossary": [
       {
         "word": "signpost",
-        "definition_en": "To use explicit verbal phrases that indicate transitions between sections of a talk",
-        "definition_vi": "dùng các cụm từ chỉ hướng rõ ràng để báo hiệu chuyển đoạn trong bài nói"
+        "definition_en": "A word or phrase that shows what topic comes next in a speech",
+        "definition_vi": "từ chỉ dẫn chuyển ý trong bài nói"
       },
       {
-        "word": "cue",
-        "definition_en": "A brief prompt or index card keyword that reminds a speaker of their next point",
-        "definition_vi": "thẻ gợi ý chứa từ khóa nhắc nhở người nói về luận điểm tiếp theo"
+        "word": "cue card",
+        "definition_en": "A small card with brief notes to guide a speaker",
+        "definition_vi": "thẻ ghi chú từ khóa cho người nói"
       },
       {
-        "word": "rhetoric",
-        "definition_en": "The formal art of discourse and persuasive public communication",
-        "definition_vi": "nghệ thuật diễn thuyết và truyền thông thuyết phục công chúng"
+        "word": "audience",
+        "definition_en": "The group of people who listen to a talk or presentation",
+        "definition_vi": "thính giả lắng nghe bài thuyết trình"
       },
       {
-        "word": "pacing",
-        "definition_en": "The deliberate modulation of speaking rate to enhance audience comprehension",
-        "definition_vi": "sự điều chỉnh nhịp điệu nói có chủ đích để người nghe dễ hiểu"
+        "word": "pause",
+        "definition_en": "A short stop in speech to give listeners time to think",
+        "definition_vi": "khoảng dừng ngắn khi nói"
       },
       {
-        "word": "intonation",
-        "definition_en": "Pitch variation across spoken sentences used to convey emphasis and attitude",
-        "definition_vi": "sự biến thiên cao độ giọng nói dùng để biểu đạt sự nhấn mạnh và thái độ"
+        "word": "confidence",
+        "definition_en": "A calm feeling of trust in your speaking skills",
+        "definition_vi": "sự tự tin khi trình bày"
       }
     ],
     "check_questions": [

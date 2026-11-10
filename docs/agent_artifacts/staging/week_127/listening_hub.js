@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
- * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.447Z
+ * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.855Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const listeningHubData = {
   "week": 127,
   "theme": "Rebuttal Practice",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "audio_dialogue": {
     "title": "Debating Rebuttal Strategies Before the Finals"
   },
@@ -184,6 +184,6 @@ export const listeningHubData = {
       ]
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 127. Theme: Rebuttal Practice.\nSpeaker: They claim that space travel wastes money, but I say it pioneers vital technologies.\nSpeaker: A skilled speaker directly addresses opposing points rather than ignoring them.\nSpeaker: On the contrary, recent scientific evidence proves that the initial premise was false.\nSpeaker: While opponents argue for strict prohibitions, data shows that education is more effective.\nSpeaker: Strategic debaters concede minor points to focus attention on their strongest arguments.\nSpeaker: Exposing a logical flaw in an opponent's argument quickly undermines their credibility.\nSpeaker: We must evaluate whether claims are factually true before accepting their conclusions.\nSpeaker: Rigorous rebuttal training strengthens critical thinking and persuasive communication."
+  "passage_audio_script": "Narrator: Cambridge B1+ Academic Listening Practice for Week 127. Theme: Rebuttal Practice.\nSpeaker: They claim that space travel wastes money, but I say it pioneers vital technologies.\nSpeaker: A skilled speaker directly addresses opposing points rather than ignoring them.\nSpeaker: On the contrary, recent scientific evidence proves that the initial premise was false.\nSpeaker: While opponents argue for strict prohibitions, data shows that education is more effective.\nSpeaker: Strategic debaters concede minor points to focus attention on their strongest arguments.\nSpeaker: Exposing a logical flaw in an opponent's argument quickly undermines their credibility.\nSpeaker: We must evaluate whether claims are factually true before accepting their conclusions.\nSpeaker: Rigorous rebuttal training strengthens critical thinking and persuasive communication."
 };
 export default listeningHubData;

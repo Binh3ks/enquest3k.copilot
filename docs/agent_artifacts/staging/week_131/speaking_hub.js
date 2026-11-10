@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Speaking Hub & Talkshow/Info Exchange Cards
- * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.453Z
+ * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.868Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const speakingHubData = {
   "week": 131,
   "theme": "Opinion Project 3: Persuasive Techniques",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "talkshow_prompt": {
     "topic": "The Power of Classical Rhetoric in Contemporary Speeches",
     "question": "Marcus, how does balancing ethos, pathos, and logos prevent a speech from being either dry or manipulative?",

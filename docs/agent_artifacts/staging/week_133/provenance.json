@@ -1,16 +1,16 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-10T03:12:16.455Z",
+  "generated_at": "2026-11-10T04:07:29.872Z",
   "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
-  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
   "week_number": 133,
   "theme": "Deep Research & Data",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_focus": "Citation phrases & empirical reporting ('According to a study by...', 'Statistics demonstrate that...', 'Data reveals that...').",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_133/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
-    "source_b_excerpt": "Week 133: Deep Research & Data (Tuần 133: Nghiên cứu Sâu & Dữ liệu) \n\t•\tTopic (ELA): Finding statistics to support arguments. (Chủ đề: Tìm số liệu thống kê để hỗ trợ lập luận.)\n\t•\tKey Learning Outcome (ELA): Find and cite one statistic about video games (e.g., \"70% of kids play...\"). (Kết quả: Tìm và trích dẫn 1 số liệu về video game.)\n\t•\tSkill Focus: Using data as evidence. (Kỹ năng: Dùng dữ liệu làm bằng chứng.)\n\t•\tGrammar Focus: Citation Phrases: \"According to a study by...\", \"Statistics show that...\". (Ngữ pháp: Cụm từ trích dẫn.)\n\t•\tVocabulary Focus: statistic, percent, study, data, majority, minority, survey, population.\n\t•\tTopic (Math): Geometry: Angles. (Toán: Hình học - Góc.)\n\t•\tKey Learning Outcome (Math): Identify right, acute, and obtuse angles in shapes. (Kết quả: Nhận biết góc vuông, nhọn, tù.)\n\t•\tMath Vocabulary: angle, degree, right angle, acute, obtuse, protractor, measure.\n\t•",
+    "source_b_excerpt": "•\tWeek 133: Deep Research & Data (Tuần 133: Nghiên cứu Sâu & Dữ liệu) \n\t•\tTopic (ELA): Finding statistics to support arguments. (Chủ đề: Tìm số liệu thống kê để hỗ trợ lập luận.)\n\t•\tKey Learning Outcome (ELA): Find and cite one statistic about video games (e.g., \"70% of kids play...\"). (Kết quả: Tìm và trích dẫn 1 số liệu về video game.)\n\t•\tSkill Focus: Using data as evidence. (Kỹ năng: Dùng dữ liệu làm bằng chứng.)\n\t•\tGrammar Focus: Citation Phrases: \"According to a study by...\", \"Statistics show that...\". (Ngữ pháp: Cụm từ trích dẫn.)\n\t•\tVocabulary Focus: statistic, percent, study, data, majority, minority, survey, population.\n\t•\tTopic (Math): Geometry: Angles. (Toán: Hình học - Góc.)\n\t•\tKey Learning Outcome (Math): Identify right, acute, and obtuse angles in shapes. (Kết quả: Nhận biết góc vuông, nhọn, tù.)\n\t•\tMath Vocabulary: angle, degree, right angle, acute, obtuse, protractor, measure.",
     "digital_map_reference": {
       "map_week": 133,
       "map_theme": "Research Project 4: AI in Education",
@@ -40,7 +40,10 @@
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
     "GATE_10_SKELETON_DIFFERENTIATION",
-    "GATE_11_BLUEPRINT_THEME_FIDELITY"
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+    "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
+    "GATE_14_PROVENANCE_INTEGRITY"
   ],
   "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
 }

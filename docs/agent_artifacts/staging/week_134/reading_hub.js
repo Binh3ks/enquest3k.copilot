@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 134 | Theme: "Identifying Fallacies" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.456Z
+ * Week: 134 | Theme: "Identifying Fallacies" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.875Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const readingHubData = {
   "week": 134,
   "theme": "Identifying Fallacies",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "vocab": [
     {
       "id": 1,
@@ -214,34 +214,34 @@ export const readingHubData = {
     }
   ],
   "clil_article": {
-    "title_en": "Critical Thinking and Logic: Identifying Generalization Fallacies",
-    "title_vi": "Tư Duy Phản Biện và Logic: Nhận Diện Các Lỗi Ngụy Biện Khái Quát Hóa",
-    "content_en": "Critical thinking requires learners to scrutinize arguments for underlying logical errors known as fallacies. A common reasoning flaw is the hasty generalization, which occurs when a speaker draws a sweeping conclusion from insufficient evidence. For example, claiming that 'all video gamers are lazy and unmotivated' is an invalid assumption contradicted by empirical studies. To construct sound arguments, thinkers employ careful qualifiers such as 'some', 'many', 'often', and 'tend to' rather than absolute universal terms like 'all' or 'never'. Evaluating an argument entails checking whether its premises are true and whether the deduction logically holds. Distinguishing valid reasoning from deceptive fallacies protects students from misleading advertisements, unfounded propaganda, and polarized rhetoric. Developing a sharp eye for flawed logic fosters intellectually honest discourse in academic discussions.",
+    "title_en": "Identifying Fallacies: Spotting Faulty Reasoning",
+    "title_vi": "Nhận Diện Lỗi Ngụy Biện: Phát Hiện Lập Luận Khiếm Khuyết",
+    "content_en": "In formal debates, smart thinkers look for logical mistakes called fallacies. A common error is a hasty generalization. This happens when someone assumes that an entire group acts the same way without proof. For example, claiming that all gamers avoid reading books is an unproven assumption that is clearly false. Sound logic requires claims to be supported by true facts. When an argument uses solid evidence, we call it a valid point. If a premise is flawed, the conclusion becomes invalid. Careful debaters use qualifiers like often or tend to, keeping their reasoning fair and balanced.",
     "glossary": [
       {
         "word": "fallacy",
-        "definition_en": "A deceptive or structurally defective form of reasoning that invalidates an inference",
-        "definition_vi": "hình thức lập luận sai lệch hoặc khiếm khuyết về cấu trúc làm mất hiệu lực của một suy luận"
+        "definition_en": "A common mistake in logical thinking",
+        "definition_vi": "lỗi ngụy biện trong lập luận"
       },
       {
         "word": "generalization",
-        "definition_en": "Inferring universal laws or attributes to an entire group from limited particular observations",
-        "definition_vi": "suy luận các quy luật hoặc thuộc tính phổ quát cho toàn bộ một nhóm từ các quan sát cụ thể có hạn"
+        "definition_en": "A broad statement based on only a few examples",
+        "definition_vi": "sự khái quát hóa vội vã"
       },
       {
         "word": "assumption",
-        "definition_en": "An implicit proposition taken for granted as true without verifying empirical substantiation",
-        "definition_vi": "mệnh đề ngầm được coi là đúng mà không cần xác minh bằng chứng thực nghiệm"
+        "definition_en": "A thing accepted as true without proof",
+        "definition_vi": "giả định thiếu căn cứ"
       },
       {
-        "word": "soundness",
-        "definition_en": "The gold standard of deductive logic where every premise is factually true and the structure is valid",
-        "definition_vi": "tiêu chuẩn vàng của logic suy diễn trong đó mọi tiền đề đều đúng thực tế và cấu trúc hợp lệ"
+        "word": "valid",
+        "definition_en": "Having a sound basis in logic or fact",
+        "definition_vi": "hợp lý và có cơ sở"
       },
       {
-        "word": "bias",
-        "definition_en": "Systematic cognitive skewing or prejudice that distorts fair factual evaluation",
-        "definition_vi": "sự sai lệch nhận thức có hệ thống hoặc định kiến làm sai lệch đánh giá khách quan về thực tế"
+        "word": "invalid",
+        "definition_en": "Not logically correct or sound",
+        "definition_vi": "không có giá trị logic"
       }
     ],
     "check_questions": [

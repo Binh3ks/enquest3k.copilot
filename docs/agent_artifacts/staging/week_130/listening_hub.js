@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
- * Week: 130 | Theme: "Opinion Project 3: Comparing Global Approaches" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.452Z
+ * Week: 130 | Theme: "Opinion Project 3: Comparing Global Approaches" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.865Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const listeningHubData = {
   "week": 130,
   "theme": "Opinion Project 3: Comparing Global Approaches",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "audio_dialogue": {
     "title": "Analyzing International Legal Approaches to Classroom Devices"
   },
@@ -167,6 +167,6 @@ export const listeningHubData = {
       ]
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 130. Theme: Opinion Project 3: Comparing Global Approaches.\nSpeaker: In France, national legislation completely bans smartphones on school grounds.\nSpeaker: In contrast to France, Florida instituted a statute targeting social media access.\nSpeaker: Comparative law examines how distinct jurisdictions resolve shared educational challenges.\nSpeaker: Students with verified medical conditions receive an official statutory exemption.\nSpeaker: Consistent enforcement ensures high compliance across public school classrooms.\nSpeaker: French policymakers concluded that device bans significantly reduce cyberbullying.\nSpeaker: Lawmakers designed regulatory measures to protect students from algorithmic distraction.\nSpeaker: Analyzing international policies broadens our understanding of public governance."
+  "passage_audio_script": "Narrator: Cambridge B1+ Academic Listening Practice for Week 130. Theme: Opinion Project 3: Comparing Global Approaches.\nSpeaker: In France, national legislation completely bans smartphones on school grounds.\nSpeaker: In contrast to France, Florida instituted a statute targeting social media access.\nSpeaker: Comparative law examines how distinct jurisdictions resolve shared educational challenges.\nSpeaker: Students with verified medical conditions receive an official statutory exemption.\nSpeaker: Consistent enforcement ensures high compliance across public school classrooms.\nSpeaker: French policymakers concluded that device bans significantly reduce cyberbullying.\nSpeaker: Lawmakers designed regulatory measures to protect students from algorithmic distraction.\nSpeaker: Analyzing international policies broadens our understanding of public governance."
 };
 export default listeningHubData;

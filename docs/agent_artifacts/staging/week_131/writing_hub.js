@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Writing Hub & Picture Story Architecture
- * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.453Z
+ * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.868Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const writingHubData = {
   "week": 131,
   "theme": "Opinion Project 3: Persuasive Techniques",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "picture_story": {
     "title": "Applying Rhetorical Appeals in a Persuasive Public Address",
     "prompt_en": "Look at the four panels. Write a persuasive speech paragraph advocating for digital wellness boundaries. Combine ethical credibility (ethos), emotional resonance (pathos), and logical data (logos). Use rhetorical triads or inverted emphasis ('not only does it...'). Write 20 or more words.",

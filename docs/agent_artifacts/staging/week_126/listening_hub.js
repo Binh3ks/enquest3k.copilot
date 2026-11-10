@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
- * Week: 126 | Theme: "From Essay to Speech" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.442Z
+ * Week: 126 | Theme: "From Essay to Speech" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.826Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const listeningHubData = {
   "week": 126,
   "theme": "From Essay to Speech",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "audio_dialogue": {
     "title": "Preparing for a Public Research Presentation"
   },
@@ -183,6 +183,6 @@ export const listeningHubData = {
       ]
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 126. Theme: From Essay to Speech.\nSpeaker: Transforming a written essay into an oral speech requires strategic signposting phrases.\nSpeaker: Speakers write bullet point keywords on portable cue cards instead of full paragraphs.\nSpeaker: Moving on to our second finding, let us examine the statistical survey results.\nSpeaker: Deliberate pacing and pauses give the audience time to absorb complex arguments.\nSpeaker: Varying your vocal intonation keeps listeners engaged throughout the presentation.\nSpeaker: Natural hand gestures and steady eye contact strengthen speaker credibility on stage.\nSpeaker: Rehearsing aloud with a timer ensures that each transition fits the schedule.\nSpeaker: An effective summary reviews key insights without repeating the full text."
+  "passage_audio_script": "Narrator: Cambridge B1+ Academic Listening Practice for Week 126. Theme: From Essay to Speech.\nSpeaker: Transforming a written essay into an oral speech requires strategic signposting phrases.\nSpeaker: Speakers write bullet point keywords on portable cue cards instead of full paragraphs.\nSpeaker: Moving on to our second finding, let us examine the statistical survey results.\nSpeaker: Deliberate pacing and pauses give the audience time to absorb complex arguments.\nSpeaker: Varying your vocal intonation keeps listeners engaged throughout the presentation.\nSpeaker: Natural hand gestures and steady eye contact strengthen speaker credibility on stage.\nSpeaker: Rehearsing aloud with a timer ensures that each transition fits the schedule.\nSpeaker: An effective summary reviews key insights without repeating the full text."
 };
 export default listeningHubData;

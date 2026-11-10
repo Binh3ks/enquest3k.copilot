@@ -1,16 +1,16 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-10T03:12:16.442Z",
+  "generated_at": "2026-11-10T04:07:29.826Z",
   "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
-  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
   "week_number": 126,
   "theme": "From Essay to Speech",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_focus": "Oral signposting markers ('Moving on to...', 'Turning our attention to...', 'Having examined...') and rhetorical pauses.",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_126/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
-    "source_b_excerpt": "Week 126: From Essay to Speech (Tuần 126: Chuyển từ Bài viết sang Bài nói)\n\t•\tTopic (Debate): Making it spoken. (Chủ đề: Văn nói.)\n\t•\tKey Learning Outcome (ELA): Create cue cards and practice signposting. (Kết quả: Làm thẻ ghi chú và luyện từ dẫn đường.)\n\t•\tGrammar Focus: Signposting: \"Moving on to...\", \"Let's look at...\". (Ngữ pháp: Từ dẫn hướng.)\n\t•\tTopic (Math): Logic Puzzles. (Toán: Câu đố Logic.)\n\t•",
+    "source_b_excerpt": "•\tWeek 126: From Essay to Speech (Tuần 126: Chuyển từ Bài viết sang Bài nói)\n\t•\tTopic (Debate): Making it spoken. (Chủ đề: Văn nói.)\n\t•\tKey Learning Outcome (ELA): Create cue cards and practice signposting. (Kết quả: Làm thẻ ghi chú và luyện từ dẫn đường.)\n\t•\tGrammar Focus: Signposting: \"Moving on to...\", \"Let's look at...\". (Ngữ pháp: Từ dẫn hướng.)\n\t•\tTopic (Math): Logic Puzzles. (Toán: Câu đố Logic.)",
     "digital_map_reference": {
       "map_week": 126,
       "map_theme": "Opinion Project 2: Data & Statistical Claims",
@@ -40,7 +40,10 @@
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
     "GATE_10_SKELETON_DIFFERENTIATION",
-    "GATE_11_BLUEPRINT_THEME_FIDELITY"
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+    "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
+    "GATE_14_PROVENANCE_INTEGRITY"
   ],
   "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
 }

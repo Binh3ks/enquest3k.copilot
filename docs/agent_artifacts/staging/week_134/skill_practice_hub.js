@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 134 | Theme: "Identifying Fallacies" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.456Z
+ * Week: 134 | Theme: "Identifying Fallacies" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.875Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const skillPracticeHubData = {
   "week": 134,
   "theme": "Identifying Fallacies",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_drills": [
     {
       "sentence": "Many adolescent players tend to develop strong teamwork skills.",
@@ -67,61 +67,169 @@ export const skillPracticeHubData = {
     {
       "id": "w134_p1",
       "type": "part_whole",
-      "title": "Tallying Logical Fallacies in a Media Sample",
-      "question": "In an audit of 50 opinion articles, Zoe identified 18 hasty generalizations and 12 false cause fallacies. How many total fallacies did she detect across these two categories?",
-      "storyContext": "Zoe categorizes reasoning errors on a media audit ledger.",
+      "title": "Problem 1: Perimeter of an Equilateral Triangle",
+      "question": "A geometric model of an equilateral triangle has 3 equal sides measuring 15 cm each. What is the total perimeter of the triangle in centimeters?",
+      "storyContext": "Students construct triangle models in the math lab.",
       "modelData": {
         "bars": [
           {
-            "label": "Hasty Generalizations",
-            "value": 18,
-            "color": "#ef4444"
+            "label": "Side 1",
+            "value": 15,
+            "color": "#0ea5e9"
           },
           {
-            "label": "False Cause Fallacies",
-            "value": 12,
-            "color": "#f59e0b"
+            "label": "Side 2",
+            "value": 15,
+            "color": "#10b981"
+          },
+          {
+            "label": "Side 3",
+            "value": 15,
+            "color": "#8b5cf6"
           }
         ],
-        "total": 30,
-        "unit": "fallacies"
+        "total": 45,
+        "unit": "cm"
       },
-      "target_answer": 30,
-      "unit": "fallacies",
+      "target_answer": 45,
+      "unit": "cm",
       "steps": [
-        "Take hasty generalizations: 18.",
-        "Add false cause fallacies: 12.",
-        "18 + 12 = 30 total fallacies detected."
+        "Side 1: 15 cm.",
+        "Side 2: 15 cm.",
+        "Side 3: 15 cm.",
+        "15 + 15 + 15 = 45 cm."
       ]
     },
     {
       "id": "w134_p2",
       "type": "comparison",
-      "title": "Comparing Qualified Statements vs Universal Generalizations",
-      "question": "In a debate transcript, team A used 35 qualified statements (using 'some' or 'often'), while team B used only 14 qualified statements, relying mostly on sweeping extremes. How many more qualified statements did team A use?",
-      "storyContext": "Liam compares rhetorical qualifiers on a debate balance graph.",
+      "title": "Problem 2: Comparing Sides in an Isosceles Triangle",
+      "question": "An isosceles triangle has a base of 20 cm and two equal sides of 14 cm each. How many centimeters longer is the base than one of the equal sides?",
+      "storyContext": "Learners classify triangles by side length differences.",
       "modelData": {
         "bars": [
           {
-            "label": "Team A (Careful Qualifiers)",
-            "value": 35,
-            "color": "#10b981"
+            "label": "Base",
+            "value": 20,
+            "color": "#f59e0b"
           },
           {
-            "label": "Team B (Sweeping Extremes)",
+            "label": "Equal Side",
             "value": 14,
-            "color": "#64748b"
+            "color": "#6366f1"
           }
         ],
-        "difference": 21,
-        "unit": "statements"
+        "difference": 6,
+        "unit": "cm"
       },
-      "target_answer": 21,
-      "unit": "statements",
+      "target_answer": 6,
+      "unit": "cm",
       "steps": [
-        "Start with Team A: 35 statements.",
-        "Subtract Team B: 14 statements.",
-        "35 - 14 = 21 more qualified statements."
+        "Base: 20 cm.",
+        "Equal side: 14 cm.",
+        "20 - 14 = 6 cm."
+      ]
+    },
+    {
+      "id": "w134_p3",
+      "type": "part_whole",
+      "title": "Problem 3: Perimeter of a Scalene Triangle",
+      "question": "A scalene triangle has 3 sides of different lengths: 10 cm, 12 cm, and 18 cm. What is the perimeter of this scalene triangle in centimeters?",
+      "storyContext": "Math students measure scalene geometric perimeter.",
+      "modelData": {
+        "bars": [
+          {
+            "label": "Side A",
+            "value": 10,
+            "color": "#14b8a6"
+          },
+          {
+            "label": "Side B",
+            "value": 12,
+            "color": "#ec4899"
+          },
+          {
+            "label": "Side C",
+            "value": 18,
+            "color": "#0284c7"
+          }
+        ],
+        "total": 40,
+        "unit": "cm"
+      },
+      "target_answer": 40,
+      "unit": "cm",
+      "steps": [
+        "Side A: 10 cm.",
+        "Side B: 12 cm.",
+        "Side C: 18 cm.",
+        "10 + 12 + 18 = 40 cm."
+      ]
+    },
+    {
+      "id": "w134_p4",
+      "type": "comparison",
+      "title": "Problem 4: Side Difference in Triangular Banner",
+      "question": "A debate tournament banner is cut in a triangle shape. The longest side measures 25 cm and the shortest side measures 15 cm. What is the difference between these two sides?",
+      "storyContext": "Students measure decorative debate banners.",
+      "modelData": {
+        "bars": [
+          {
+            "label": "Longest Side",
+            "value": 25,
+            "color": "#f43f5e"
+          },
+          {
+            "label": "Shortest Side",
+            "value": 15,
+            "color": "#94a3b8"
+          }
+        ],
+        "difference": 10,
+        "unit": "cm"
+      },
+      "target_answer": 10,
+      "unit": "cm",
+      "steps": [
+        "Longest side: 25 cm.",
+        "Shortest side: 15 cm.",
+        "25 - 15 = 10 cm."
+      ]
+    },
+    {
+      "id": "w134_p5",
+      "type": "part_whole",
+      "title": "Problem 5: Total Perimeter of Triangular Garden Plot",
+      "question": "A triangular school garden plot has sides measuring 30 meters, 40 meters, and 50 meters. What is the total length of fencing needed to enclose the triangle?",
+      "storyContext": "Geometry applied to real-world boundary perimeters.",
+      "modelData": {
+        "bars": [
+          {
+            "label": "Side 1",
+            "value": 30,
+            "color": "#22c55e"
+          },
+          {
+            "label": "Side 2",
+            "value": 40,
+            "color": "#3b82f6"
+          },
+          {
+            "label": "Side 3",
+            "value": 50,
+            "color": "#a855f7"
+          }
+        ],
+        "total": 120,
+        "unit": "meters"
+      },
+      "target_answer": 120,
+      "unit": "meters",
+      "steps": [
+        "Side 1: 30 m.",
+        "Side 2: 40 m.",
+        "Side 3: 50 m.",
+        "30 + 40 + 50 = 120 meters."
       ]
     }
   ],
@@ -130,61 +238,61 @@ export const skillPracticeHubData = {
     "scenarios": [
       {
         "stage": 1,
-        "title": "Dismantling Hasty Generalization Syllogisms",
-        "diagram_type": "syllogistic_fallacy_breakdown_flow",
-        "instruction": "Identify the flawed inductive leap from an isolated anecdote to a universal premise.",
+        "title": "Hasty Generalization Filter",
+        "diagram_type": "generalization_filter",
+        "instruction": "Catch an unproven universal claim and add a fair qualifier.",
         "items": [
           {
-            "label": "Isolated Particular Case",
-            "target": "narrow_observation"
+            "label": "Absolute Word ('Always/All')",
+            "target": "error_tag"
           },
           {
-            "label": "Unwarranted Inductive Leap",
-            "target": "fallacious_step"
+            "label": "Qualifier Filter ('Often/Many')",
+            "target": "corrective_lens"
           },
           {
-            "label": "Flawed Universal Stereotype",
-            "target": "invalid_conclusion"
+            "label": "Fair Balanced Statement",
+            "target": "sound_claim"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Inserting Epistemic Modal Qualifiers",
-        "diagram_type": "epistemic_qualifier_tuning_matrix",
-        "instruction": "Calibrate universal assertions with probability qualifiers ('often', 'tend to', 'some').",
+        "title": "Ad Hominem Discard Bin",
+        "diagram_type": "ad_hominem_filter",
+        "instruction": "Filter out personal attacks and retain only policy arguments.",
         "items": [
           {
-            "label": "Universal Extreme ('All / Never')",
-            "target": "vulnerable_extreme"
+            "label": "Personal Comment Card",
+            "target": "discard_bin"
           },
           {
-            "label": "Nuanced Qualifier Filter",
-            "target": "epistemic_moderator"
+            "label": "Policy Evidence Card",
+            "target": "analysis_table"
           },
           {
-            "label": "Defensible Empirical Claim",
-            "target": "sound_assertion"
+            "label": "Objective Summary Statement",
+            "target": "debate_ledger"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Validating Deductive Soundness Matrix",
-        "diagram_type": "deductive_truth_soundness_tree",
-        "instruction": "Test both structural logical validity and empirical factual truth of premises.",
+        "title": "False Dilemma Spectrum",
+        "diagram_type": "false_dilemma_spectrum",
+        "instruction": "Reject extreme black-and-white choices by finding balanced middle ground.",
         "items": [
           {
-            "label": "Factually True Premise A",
-            "target": "empirical_basis"
+            "label": "Extreme Option A",
+            "target": "left_pole"
           },
           {
-            "label": "Valid Deductive Inference Step",
-            "target": "structural_rule"
+            "label": "Extreme Option B",
+            "target": "right_pole"
           },
           {
-            "label": "Sound and Incontestable Conclusion",
-            "target": "verified_soundness"
+            "label": "Balanced Realistic Solution C",
+            "target": "center_fulcrum"
           }
         ]
       }

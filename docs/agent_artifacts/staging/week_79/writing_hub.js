@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Writing Hub & Picture Story Architecture
- * Week: 79 | Theme: "The Industrial Revolution" | CEFR: B1 Preliminary
- * Generated: 2026-11-10T03:12:16.360Z
+ * Week: 79 | Theme: "The Industrial Revolution" | CEFR: B1 PET
+ * Generated: 2026-11-10T04:07:36.004Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const writingHubData = {
   "week": 79,
   "theme": "The Industrial Revolution",
-  "cefr_level": "B1 Preliminary",
+  "cefr_level": "B1 PET",
   "picture_story": {
     "title": "Documentary Report on the Rise of Steam Power",
     "prompt_en": "Look at the four panels. Write a historical documentary paragraph describing how steam engines and factories transformed manufacturing and transportation. Use cause-and-effect connectors ('as a result of', 'due to', 'consequently') and past passive voice ('goods were manufactured'). Write 20 or more words.",

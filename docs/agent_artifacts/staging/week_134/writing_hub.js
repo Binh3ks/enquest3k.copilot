@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Writing Hub & Picture Story Architecture
- * Week: 134 | Theme: "Identifying Fallacies" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.456Z
+ * Week: 134 | Theme: "Identifying Fallacies" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.875Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const writingHubData = {
   "week": 134,
   "theme": "Identifying Fallacies",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "picture_story": {
     "title": "Identifying and Correcting Generalization Fallacies in Arguments",
     "prompt_en": "Look at the four panels. Write a critical analysis paragraph identifying a hasty generalization fallacy in a media statement and correcting it using careful qualifiers ('some', 'many', 'often', 'tend to'). Write 20 or more words.",

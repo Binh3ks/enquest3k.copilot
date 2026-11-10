@@ -8,7 +8,7 @@ export const w130 = {
   "theme": "Opinion Project 3: Comparing Global Approaches",
   "title_en": "Opinion Project 3: Comparing Global Approaches",
   "title_vi": "Dự án Quan điểm 3: So sánh các cách tiếp cận toàn cầu",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_focus": "Comparative legal synthesis, source citation markers ('In contrast to France's statutory ban, Florida opted for...', 'According to legislative records...').",
   "vocab_list": [
     {
@@ -214,36 +214,36 @@ export const w130 = {
     }
   ],
   "clil": {
-    "title_en": "Comparative Law: Device Restrictions in France and Florida",
-    "title_vi": "Luật So Sánh: Các Quy Định Hạn Chế Thiết Bị Tại Pháp và Florida",
-    "content_en": "Governments around the world have adopted contrasting legal frameworks to regulate mobile devices among youth. In comparative law, researchers analyze how distinct jurisdictions address shared social dilemmas. In France, national legislation completely banned personal smartphones in all primary and middle school grounds during instructional hours. French policymakers concluded that an absolute prohibition restores classroom concentration and prevents playground cyberbullying. In contrast, lawmakers in Florida instituted a statute mandating that public schools restrict student access to social media platforms during school hours, while granting schools local flexibility. When writing an analytical comparative essay, students synthesize primary legal texts, evaluate policy compliance rates, and assess public reception. Comparing French and American statutory models illustrates how legal cultures formulate different regulatory solutions to modern technological challenges.",
+    "title_en": "Global Approaches to School Phones: A Comparative Study",
+    "title_vi": "Các Hướng Tiếp Cận Quốc Tế Về Điện Thoại Học Đường",
+    "content_en": "Educational Scenario: This case study looks at school phone rules in different countries. Across the world, schools take different paths. In France, national rules ban mobile phones for young students throughout the school day. Students keep phones inside lockers or bags. Supporters say this rule stops bullying and encourages real conversations at break time. In contrast, many school districts in other places let individual schools set their own policies. Some schools use locking pouches, while others let students use phones for class research. Comparing these global policies shows that protecting student focus is an important goal everywhere.",
     "glossary": [
       {
-        "word": "comparative",
-        "definition_en": "The analytical methodology of contrasting legal systems and cultural policies across nations",
-        "definition_vi": "phương pháp luận phân tích đối chiếu các hệ thống pháp luật và chính sách văn hóa giữa các quốc gia"
+            "word": "approach",
+            "definition_en": "A particular way of dealing with a situation or problem",
+            "definition_vi": "cách tiếp cận giải quyết vấn đề"
       },
       {
-        "word": "legislation",
-        "definition_en": "Enacted statutory provisions and parliamentary codes governing institutional behavior",
-        "definition_vi": "các điều khoản quy định đã ban hành và bộ luật điều chỉnh hành vi của tổ chức"
+            "word": "policy",
+            "definition_en": "A set of official rules followed by a school or organization",
+            "definition_vi": "chính sách hoặc quy định chính thức"
       },
       {
-        "word": "jurisdiction",
-        "definition_en": "Territory or statutory sphere within which a governing authority exercises legal power",
-        "definition_vi": "lãnh thổ hoặc phạm vi mà cơ quan có thẩm quyền thực thi quyền lực pháp lý"
+            "word": "compare",
+            "definition_en": "To examine two or more things to find differences",
+            "definition_vi": "so sánh tìm điểm khác biệt"
       },
       {
-        "word": "statute",
-        "definition_en": "A formal written law passed by a legislative assembly governing public conduct",
-        "definition_vi": "luật thành văn chính thức được thông qua bởi cơ quan lập pháp điều chỉnh hành vi công chúng"
+            "word": "regulation",
+            "definition_en": "An official rule made and maintained by authority",
+            "definition_vi": "quy định pháp lý hoặc nội quy"
       },
       {
-        "word": "compliance",
-        "definition_en": "Adherence to legislative commands, institutional directives, and administrative regulations",
-        "definition_vi": "sự tuân thủ các mệnh lệnh lập pháp, chỉ thị của tổ chức và quy định hành chính"
+            "word": "pouch",
+            "definition_en": "A small secure bag used to store items like phones",
+            "definition_vi": "túi khóa bảo vệ đồ dùng"
       }
-    ],
+],
     "check_questions": [
       {
         "id": 1,
@@ -934,128 +934,218 @@ export const w130 = {
   "minigames": {
     "math_problems": [
       {
-        "id": "w130_p1",
-        "type": "part_whole",
-        "title": "Tallying Comparative School Device Survey Sample",
-        "question": "A comparative legal study surveys 180 French school administrators and 220 American district superintendents regarding policy enforcement. What is the total survey sample size?",
-        "storyContext": "Chloe compiles survey response totals for her comparative law portfolio.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "French Administrators",
-              "value": 180,
-              "color": "#3b82f6"
+            "id": "w130_p1",
+            "type": "comparison",
+            "title": "Problem 1: Decimal Comparison of Daily Screen Hours",
+            "question": "A comparative study shows that students under a strict policy average 2.5 hours of daily phone use, while students without limits average 4.5 hours. What is the decimal difference in hours?",
+            "storyContext": "Researchers compare daily usage averages between two regions.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Without Limits",
+                              "value": 45,
+                              "color": "#ef4444"
+                        },
+                        {
+                              "label": "With Strict Policy",
+                              "value": 25,
+                              "color": "#10b981"
+                        }
+                  ],
+                  "difference": 20,
+                  "unit": "tenths of an hour (2.0 hours)"
             },
-            {
-              "label": "American Superintendents",
-              "value": 220,
-              "color": "#ef4444"
-            }
-          ],
-          "total": 400,
-          "unit": "administrators"
-        },
-        "target_answer": 400,
-        "unit": "administrators",
-        "steps": [
-          "Take French respondents: 180.",
-          "Add American respondents: 220.",
-          "180 + 220 = 400 total administrators surveyed."
-        ]
+            "target_answer": 20,
+            "unit": "tenths of an hour",
+            "steps": [
+                  "Average without limits: 4.5 hours (45 tenths).",
+                  "Average with policy: 2.5 hours (25 tenths).",
+                  "45 - 25 = 20 tenths (2.0 hours)."
+            ]
       },
       {
-        "id": "w130_p2",
-        "type": "comparison",
-        "title": "Comparing Policy Compliance Rates Over Time",
-        "question": "In a pilot school, student compliance with device rules was 65 percent in September and rose to 92 percent by December following clear communication. What was the percentage increase in compliance?",
-        "storyContext": "David graphs compliance improvements across the academic term.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "December Compliance",
-              "value": 92,
-              "color": "#10b981"
+            "id": "w130_p2",
+            "type": "part_whole",
+            "title": "Problem 2: Decimal Addition of Study App Time",
+            "question": "In a French pilot school, a student used a vocabulary app for 1.5 hours in the morning and a math app for 1.2 hours in the afternoon. What was the total app study time in tenths of an hour?",
+            "storyContext": "Students log educational device usage during class workshops.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Morning App",
+                              "value": 15,
+                              "color": "#0ea5e9"
+                        },
+                        {
+                              "label": "Afternoon App",
+                              "value": 12,
+                              "color": "#8b5cf6"
+                        }
+                  ],
+                  "total": 27,
+                  "unit": "tenths of an hour (2.7 hours)"
             },
-            {
-              "label": "September Baseline",
-              "value": 65,
-              "color": "#f59e0b"
-            }
-          ],
-          "difference": 27,
-          "unit": "percentage points"
-        },
-        "target_answer": 27,
-        "unit": "percentage points",
-        "steps": [
-          "Start with December compliance: 92%.",
-          "Subtract September compliance: 65%.",
-          "92 - 65 = 27 percentage point improvement."
-        ]
+            "target_answer": 27,
+            "unit": "tenths of an hour",
+            "steps": [
+                  "Morning time: 1.5 hours (15 tenths).",
+                  "Afternoon time: 1.2 hours (12 tenths).",
+                  "15 + 12 = 27 tenths (2.7 hours)."
+            ]
+      },
+      {
+            "id": "w130_p3",
+            "type": "comparison",
+            "title": "Problem 3: Comparing School District Compliance Decimals",
+            "question": "In a regional review, District A reported 3.8 hours of uninterrupted focus time per student day, compared to 2.3 hours in District B. What is the focus time advantage for District A?",
+            "storyContext": "Superintendents compare student focus metrics across districts.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "District A",
+                              "value": 38,
+                              "color": "#14b8a6"
+                        },
+                        {
+                              "label": "District B",
+                              "value": 23,
+                              "color": "#f59e0b"
+                        }
+                  ],
+                  "difference": 15,
+                  "unit": "tenths of an hour (1.5 hours)"
+            },
+            "target_answer": 15,
+            "unit": "tenths of an hour",
+            "steps": [
+                  "District A: 3.8 hours (38 tenths).",
+                  "District B: 2.3 hours (23 tenths).",
+                  "38 - 23 = 15 tenths (1.5 hours)."
+            ]
+      },
+      {
+            "id": "w130_p4",
+            "type": "part_whole",
+            "title": "Problem 4: Combined School Budget for Lock Pouches",
+            "question": "School 1 invested $400 for classroom phone pouches and School 2 invested $500. What was the total investment combined for the two schools?",
+            "storyContext": "Administrators calculate the cost of pouch hardware.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "School 1",
+                              "value": 400,
+                              "color": "#6366f1"
+                        },
+                        {
+                              "label": "School 2",
+                              "value": 500,
+                              "color": "#06b6d4"
+                        }
+                  ],
+                  "total": 900,
+                  "unit": "dollars"
+            },
+            "target_answer": 900,
+            "unit": "dollars",
+            "steps": [
+                  "School 1 investment: $400.",
+                  "School 2 investment: $500.",
+                  "400 + 500 = $900."
+            ]
+      },
+      {
+            "id": "w130_p5",
+            "type": "comparison",
+            "title": "Problem 5: Comparing Classroom Disruption Decimals",
+            "question": "Before a phone ban, teachers recorded 5.4 disruptions per day. After the ban, disruptions fell to 1.4 per day. What was the decimal reduction in disruptions?",
+            "storyContext": "School evaluators graph disruption decreases after policy changes.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Before Ban",
+                              "value": 54,
+                              "color": "#e11d48"
+                        },
+                        {
+                              "label": "After Ban",
+                              "value": 14,
+                              "color": "#10b981"
+                        }
+                  ],
+                  "difference": 40,
+                  "unit": "tenths (4.0 disruptions)"
+            },
+            "target_answer": 40,
+            "unit": "tenths of disruptions",
+            "steps": [
+                  "Before ban: 5.4 disruptions (54 tenths).",
+                  "After ban: 1.4 disruptions (14 tenths).",
+                  "54 - 14 = 40 tenths (4.0 disruptions)."
+            ]
       }
-    ],
+],
     "action_lab_scenarios": [
       {
-        "stage": 1,
-        "title": "Centralized vs Decentralized Statutory Architecture",
-        "diagram_type": "comparative_governance_flowchart",
-        "instruction": "Map legislative command structures from national parliaments to local classroom doors.",
-        "items": [
-          {
-            "label": "National Statutory Mandate",
-            "target": "centralized_model"
-          },
-          {
-            "label": "Decentralized District Policy",
-            "target": "local_discretion"
-          },
-          {
-            "label": "Administrative Enforcement Gateway",
-            "target": "compliance_point"
-          }
-        ]
+            "stage": 1,
+            "title": "French Classroom Storage Box",
+            "diagram_type": "lockbox_storage",
+            "instruction": "Simulate the morning collection and safe storage of school phones.",
+            "items": [
+                  {
+                        "label": "Morning Check-In Bag",
+                        "target": "entry_bin"
+                  },
+                  {
+                        "label": "Classroom Lockbox",
+                        "target": "secure_chest"
+                  },
+                  {
+                        "label": "Dismissal Return Shelf",
+                        "target": "exit_bin"
+                  }
+            ]
       },
       {
-        "stage": 2,
-        "title": "Filtering Algorithmic Social Media Access",
-        "diagram_type": "school_firewall_protocol_filter",
-        "instruction": "Configure school network protocols to block social algorithms while allowing educational research.",
-        "items": [
-          {
-            "label": "Social Platform Packet Filter",
-            "target": "statutory_block"
-          },
-          {
-            "label": "Educational Database Whitelist",
-            "target": "open_access"
-          },
-          {
-            "label": "Encrypted School Network Router",
-            "target": "secure_gateway"
-          }
-        ]
+            "stage": 2,
+            "title": "Digital Research Access Gate",
+            "diagram_type": "research_access_gate",
+            "instruction": "Route approved educational domains while restricting social apps.",
+            "items": [
+                  {
+                        "label": "School Research Portal",
+                        "target": "permitted_network"
+                  },
+                  {
+                        "label": "Teacher Verification Pin",
+                        "target": "access_key"
+                  },
+                  {
+                        "label": "Social Media Firewall",
+                        "target": "blocked_network"
+                  }
+            ]
       },
       {
-        "stage": 3,
-        "title": "Evaluating Medical & Accommodation Exemptions",
-        "diagram_type": "statutory_exemption_verification_flow",
-        "instruction": "Process verified medical certificates to grant authorized device exemptions.",
-        "items": [
-          {
-            "label": "Physician Medical Certificate",
-            "target": "verification_input"
-          },
-          {
-            "label": "Digital Health Permit",
-            "target": "authorization_badge"
-          },
-          {
-            "label": "Secure Classroom Monitoring",
-            "target": "protected_usage"
-          }
-        ]
+            "stage": 3,
+            "title": "Device-Free Play Yard Circles",
+            "diagram_type": "device_free_yard",
+            "instruction": "Organize recess zones that foster face-to-face peer interaction.",
+            "items": [
+                  {
+                        "label": "Active Basketball Court",
+                        "target": "sports_area"
+                  },
+                  {
+                        "label": "Reading Bench Circle",
+                        "target": "quiet_area"
+                  },
+                  {
+                        "label": "Discussion Group Table",
+                        "target": "social_area"
+                  }
+            ]
       }
-    ],
+],
     "grammar_drills": [
       {
         "sentence": "In contrast to France's nationwide ban, Florida opted for a decentralized approach.",

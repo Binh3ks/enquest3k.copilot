@@ -1,16 +1,16 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-10T03:12:16.456Z",
+  "generated_at": "2026-11-10T04:07:29.875Z",
   "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
-  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
   "week_number": 134,
   "theme": "Identifying Fallacies",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_focus": "Qualifiers of frequency and extent ('some', 'many', 'often', 'tend to') to prevent sweeping over-generalizations.",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_134/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
-    "source_b_excerpt": "Week 134: Identifying Fallacies (Tuần 134: Nhận diện Lỗi Ngụy biện) \n\t•\tTopic (Debate): Spotting bad arguments. (Chủ đề: Phát hiện lập luận tồi.)\n\t•\tKey Learning Outcome (ELA): Identify a \"Generalization\" fallacy (e.g., \"All gamers are lazy\"). (Kết quả: Nhận diện lỗi \"Khái quát hóa vội vã\".)\n\t•\tSkill Focus: Critical Thinking/Logic. (Kỹ năng: Tư duy Phản biện/Logic.)\n\t•\tGrammar Focus: Qualifiers: \"Some\", \"Many\", \"Often\", \"Tend to\" (to avoid generalizing). (Ngữ pháp: Từ hạn định để tránh vơ đũa cả nắm.)\n\t•\tVocabulary Focus: fallacy, generalization, assumption, true, false, valid, invalid, logic.\n\t•\tTopic (Math): Geometry: Triangles. (Toán: Hình học - Tam giác.)\n\t•\tKey Learning Outcome (Math): Classify triangles by sides (equilateral, isosceles, scalene). (Kết quả: Phân loại tam giác theo cạnh.)\n\t•\tMath Vocabulary: triangle, side, equal, length, equilateral, isosceles, scalene.\nPhase B: Essay Writing (Viết Bài luận)\n\t•",
+    "source_b_excerpt": "•\tWeek 134: Identifying Fallacies (Tuần 134: Nhận diện Lỗi Ngụy biện) \n\t•\tTopic (Debate): Spotting bad arguments. (Chủ đề: Phát hiện lập luận tồi.)\n\t•\tKey Learning Outcome (ELA): Identify a \"Generalization\" fallacy (e.g., \"All gamers are lazy\"). (Kết quả: Nhận diện lỗi \"Khái quát hóa vội vã\".)\n\t•\tSkill Focus: Critical Thinking/Logic. (Kỹ năng: Tư duy Phản biện/Logic.)\n\t•\tGrammar Focus: Qualifiers: \"Some\", \"Many\", \"Often\", \"Tend to\" (to avoid generalizing). (Ngữ pháp: Từ hạn định để tránh vơ đũa cả nắm.)\n\t•\tVocabulary Focus: fallacy, generalization, assumption, true, false, valid, invalid, logic.\n\t•\tTopic (Math): Geometry: Triangles. (Toán: Hình học - Tam giác.)\n\t•\tKey Learning Outcome (Math): Classify triangles by sides (equilateral, isosceles, scalene). (Kết quả: Phân loại tam giác theo cạnh.)\n\t•\tMath Vocabulary: triangle, side, equal, length, equilateral, isosceles, scalene.",
     "digital_map_reference": {
       "map_week": 134,
       "map_theme": "Research Project 4: Survey Design",
@@ -40,7 +40,10 @@
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
     "GATE_10_SKELETON_DIFFERENTIATION",
-    "GATE_11_BLUEPRINT_THEME_FIDELITY"
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+    "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
+    "GATE_14_PROVENANCE_INTEGRITY"
   ],
   "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
 }

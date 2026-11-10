@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
- * Week: 133 | Theme: "Deep Research & Data" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.455Z
+ * Week: 133 | Theme: "Deep Research & Data" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.872Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const listeningHubData = {
   "week": 133,
   "theme": "Deep Research & Data",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "audio_dialogue": {
     "title": "Evaluating Quantitative Evidence in a Research Project"
   },
@@ -186,6 +186,6 @@ export const listeningHubData = {
       ]
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 133. Theme: Deep Research & Data.\nSpeaker: According to a landmark study by university psychologists, seventy percent of adolescents play video games.\nSpeaker: The collected survey data revealed that a substantial majority play cooperative multiplayer games.\nSpeaker: Statistics demonstrate that a small minority exhibit signs of problematic screen usage.\nSpeaker: Researchers analyzed a randomized demographic sample of two thousand high school respondents.\nSpeaker: Empirical evidence transforms subjective personal assertions into credible scholarly arguments.\nSpeaker: Data reveals a moderate correlation between excessive midnight gaming and morning fatigue.\nSpeaker: Publishing the exact methodology ensures that scientific findings can be independently replicated.\nSpeaker: Rigorous data analysis equips students to evaluate public health claims with precision."
+  "passage_audio_script": "Narrator: Cambridge B1+ Academic Listening Practice for Week 133. Theme: Deep Research & Data.\nSpeaker: According to a landmark study by university psychologists, seventy percent of adolescents play video games.\nSpeaker: The collected survey data revealed that a substantial majority play cooperative multiplayer games.\nSpeaker: Statistics demonstrate that a small minority exhibit signs of problematic screen usage.\nSpeaker: Researchers analyzed a randomized demographic sample of two thousand high school respondents.\nSpeaker: Empirical evidence transforms subjective personal assertions into credible scholarly arguments.\nSpeaker: Data reveals a moderate correlation between excessive midnight gaming and morning fatigue.\nSpeaker: Publishing the exact methodology ensures that scientific findings can be independently replicated.\nSpeaker: Rigorous data analysis equips students to evaluate public health claims with precision."
 };
 export default listeningHubData;

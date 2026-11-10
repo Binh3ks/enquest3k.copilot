@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 130 | Theme: "Opinion Project 3: Comparing Global Approaches" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.452Z
+ * Week: 130 | Theme: "Opinion Project 3: Comparing Global Approaches" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.865Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const readingHubData = {
   "week": 130,
   "theme": "Opinion Project 3: Comparing Global Approaches",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "vocab": [
     {
       "id": 1,
@@ -215,34 +215,34 @@ export const readingHubData = {
     }
   ],
   "clil_article": {
-    "title_en": "Comparative Law: Device Restrictions in France and Florida",
-    "title_vi": "Luật So Sánh: Các Quy Định Hạn Chế Thiết Bị Tại Pháp và Florida",
-    "content_en": "Governments around the world have adopted contrasting legal frameworks to regulate mobile devices among youth. In comparative law, researchers analyze how distinct jurisdictions address shared social dilemmas. In France, national legislation completely banned personal smartphones in all primary and middle school grounds during instructional hours. French policymakers concluded that an absolute prohibition restores classroom concentration and prevents playground cyberbullying. In contrast, lawmakers in Florida instituted a statute mandating that public schools restrict student access to social media platforms during school hours, while granting schools local flexibility. When writing an analytical comparative essay, students synthesize primary legal texts, evaluate policy compliance rates, and assess public reception. Comparing French and American statutory models illustrates how legal cultures formulate different regulatory solutions to modern technological challenges.",
+    "title_en": "Global Approaches to School Phones: A Comparative Study",
+    "title_vi": "Các Hướng Tiếp Cận Quốc Tế Về Điện Thoại Học Đường",
+    "content_en": "Educational Scenario: This case study looks at school phone rules in different countries. Across the world, schools take different paths. In France, national rules ban mobile phones for young students throughout the school day. Students keep phones inside lockers or bags. Supporters say this rule stops bullying and encourages real conversations at break time. In contrast, many school districts in other places let individual schools set their own policies. Some schools use locking pouches, while others let students use phones for class research. Comparing these global policies shows that protecting student focus is an important goal everywhere.",
     "glossary": [
       {
-        "word": "comparative",
-        "definition_en": "The analytical methodology of contrasting legal systems and cultural policies across nations",
-        "definition_vi": "phương pháp luận phân tích đối chiếu các hệ thống pháp luật và chính sách văn hóa giữa các quốc gia"
+        "word": "approach",
+        "definition_en": "A particular way of dealing with a situation or problem",
+        "definition_vi": "cách tiếp cận giải quyết vấn đề"
       },
       {
-        "word": "legislation",
-        "definition_en": "Enacted statutory provisions and parliamentary codes governing institutional behavior",
-        "definition_vi": "các điều khoản quy định đã ban hành và bộ luật điều chỉnh hành vi của tổ chức"
+        "word": "policy",
+        "definition_en": "A set of official rules followed by a school or organization",
+        "definition_vi": "chính sách hoặc quy định chính thức"
       },
       {
-        "word": "jurisdiction",
-        "definition_en": "Territory or statutory sphere within which a governing authority exercises legal power",
-        "definition_vi": "lãnh thổ hoặc phạm vi mà cơ quan có thẩm quyền thực thi quyền lực pháp lý"
+        "word": "compare",
+        "definition_en": "To examine two or more things to find differences",
+        "definition_vi": "so sánh tìm điểm khác biệt"
       },
       {
-        "word": "statute",
-        "definition_en": "A formal written law passed by a legislative assembly governing public conduct",
-        "definition_vi": "luật thành văn chính thức được thông qua bởi cơ quan lập pháp điều chỉnh hành vi công chúng"
+        "word": "regulation",
+        "definition_en": "An official rule made and maintained by authority",
+        "definition_vi": "quy định pháp lý hoặc nội quy"
       },
       {
-        "word": "compliance",
-        "definition_en": "Adherence to legislative commands, institutional directives, and administrative regulations",
-        "definition_vi": "sự tuân thủ các mệnh lệnh lập pháp, chỉ thị của tổ chức và quy định hành chính"
+        "word": "pouch",
+        "definition_en": "A small secure bag used to store items like phones",
+        "definition_vi": "túi khóa bảo vệ đồ dùng"
       }
     ],
     "check_questions": [

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 129 | Theme: "Opinion Project 3: Smartphones Under 12?" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.449Z
+ * Week: 129 | Theme: "Opinion Project 3: Smartphones Under 12?" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.859Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const readingHubData = {
   "week": 129,
   "theme": "Opinion Project 3: Smartphones Under 12?",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "vocab": [
     {
       "id": 1,
@@ -214,34 +214,34 @@ export const readingHubData = {
     }
   ],
   "clil_article": {
-    "title_en": "Developmental Psychology: Social Media and Adolescent Cognition",
-    "title_vi": "Tâm Lý Học Phát Triển: Mạng Xã Hội và Nhận Thức Thanh Thiếu Niên",
-    "content_en": "Developmental psychologists and pediatric researchers are investigating whether children under age twelve should own personal smartphones. Neurological studies suggest that young adolescent brains are particularly vulnerable to digital stimulation. Excessive screen usage can disrupt essential sleep cycles, reduce attention spans in classrooms, and trigger social anxiety. Conversely, proponents argue that mobile devices allow parents to maintain direct contact and help children access educational applications. In an academic opinion essay, writers must systematically evaluate both positions with scientific evidence. Pediatric associations recommend establishing clear boundaries, such as screen-free bedrooms and parental supervision of online accounts. Analyzing psychological data enables students to craft reasoned arguments on whether statutory restrictions or parental moderation offer the healthiest path for young minds.",
+    "title_en": "Children and Smartphones: Examining the Balance",
+    "title_vi": "Trẻ Em Và Điện Thoại Thông Minh: Xem Xét Sự Cân Bằng",
+    "content_en": "Many families discuss whether children under twelve should have smartphones. Supporters believe that phones keep kids safe because parents can call them after school hours. Handheld phones also let students use helpful learning apps and dictionaries quickly. However, teachers and doctors point out serious concerns. Staring at bright screens late at night harms natural sleep. Furthermore, social media notifications distract students during study time. Some reports suggest that young children who spend many hours online feel more anxious. When writing an opinion essay, students must examine both safety benefits and health risks before reaching a balanced conclusion.",
     "glossary": [
       {
-        "word": "adolescent",
-        "definition_en": "An individual navigating the physical, cognitive, and emotional transition between childhood and maturity",
-        "definition_vi": "cá nhân đang trải qua bước chuyển đổi thể chất, nhận thức và cảm xúc giữa tuổi thơ và sự trưởng thành"
+        "word": "smartphone",
+        "definition_en": "A mobile mobile phone with internet access and touch screen apps",
+        "definition_vi": "điện thoại thông minh có kết nối mạng"
       },
       {
-        "word": "pediatric",
-        "definition_en": "Specialized branch of medical science devoted to child healthcare, growth, and development",
-        "definition_vi": "ngành khoa học y khoa chuyên biệt dành cho việc chăm sóc sức khỏe, sự phát triển của trẻ em"
+        "word": "notification",
+        "definition_en": "A message or alert shown on a screen to gain attention",
+        "definition_vi": "thông báo trên màn hình thiết bị"
       },
       {
-        "word": "cognitive",
-        "definition_en": "Relating to intellectual capabilities including memory, linguistic comprehension, and reasoning",
-        "definition_vi": "liên quan đến các năng lực trí tuệ bao gồm trí nhớ, hiểu ngôn ngữ và suy luận"
+        "word": "distract",
+        "definition_en": "To take attention away from study or another task",
+        "definition_vi": "làm xao lãng sự chú ý"
       },
       {
-        "word": "supervision",
-        "definition_en": "Active parental oversight and guidance over a minor's digital behaviors and media diet",
-        "definition_vi": "sự giám sát tích cực và định hướng của cha mẹ đối với hành vi kỹ thuật số của trẻ vị thành niên"
+        "word": "psychologist",
+        "definition_en": "An expert who studies how people think and behave",
+        "definition_vi": "chuyên gia tâm lý học"
       },
       {
-        "word": "moderation",
-        "definition_en": "The deliberate practice of balanced consumption avoiding damaging behavioral extremes",
-        "definition_vi": "thực hành có chủ đích việc tiêu dùng cân bằng, tránh các thái cực hành vi gây hại"
+        "word": "balance",
+        "definition_en": "A state where different things exist in equal measure",
+        "definition_vi": "sự cân bằng hợp lý"
       }
     ],
     "check_questions": [

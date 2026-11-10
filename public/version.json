@@ -1,9 +1,9 @@
 {
-  "commit": "cfe67e4ef4b60dc6f07a4ba708284ef32b8806e2",
-  "git_commit": "cfe67e4ef4b60dc6f07a4ba708284ef32b8806e2",
-  "shortCommit": "cfe67e4e",
-  "message": "feat(curriculum): merge W80 PET mock, stage gap-fill rotary W37/42/47, stage Mock Batch 2 (W40/44/48), stage Wave 3 (7 weeks) [multi-agent-review]",
-  "builtAt": "2026-11-10T03:12:40.662Z",
-  "build_timestamp": "2026-11-10T03:12:40.663Z",
+  "commit": "78b38d4224b2ee907a8a3e599e653a14d8ace1b2",
+  "git_commit": "78b38d4224b2ee907a8a3e599e653a14d8ace1b2",
+  "shortCommit": "78b38d42",
+  "message": "fix(curriculum): remediate theme-fidelity regression for W79 & Wave 3, enforce Gate 11 [multi-agent-review]",
+  "builtAt": "2026-11-10T04:11:23.957Z",
+  "build_timestamp": "2026-11-10T04:11:23.958Z",
   "env": "production"
 }

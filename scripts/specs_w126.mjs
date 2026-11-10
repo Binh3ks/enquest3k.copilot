@@ -8,7 +8,7 @@ export const w126 = {
   "theme": "From Essay to Speech",
   "title_en": "From Essay to Speech",
   "title_vi": "Chuyển từ Bài viết sang Bài nói",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_focus": "Oral signposting markers ('Moving on to...', 'Turning our attention to...', 'Having examined...') and rhetorical pauses.",
   "vocab_list": [
     {
@@ -213,36 +213,36 @@ export const w126 = {
     }
   ],
   "clil": {
-    "title_en": "Oral Rhetoric: Transforming Essays into Compelling Speeches",
-    "title_vi": "Thuật Hùng Biện: Chuyển Đổi Bài Luận Thành Bài Phát Biểu Lôi Cuốn",
-    "content_en": "Transforming an academic essay into an engaging oral speech requires specific rhetorical techniques. Written essays rely on dense sentences, footnotes, and paragraph indentations that a listening audience cannot see. When delivering a presentation, speakers prepare concise cue cards containing keywords rather than reading full paragraphs verbatim. Effective public speakers use clear oral signposting markers, such as 'Moving on to our second finding' or 'Turning our attention to the global context.' These signposts guide listeners smoothly through complex arguments. In addition, speakers practice vocal pacing, deliberate pauses, and expressive intonation to emphasize crucial points. Mastering the transition from written text to spoken delivery ensures that research findings persuade and captivate diverse audiences.",
+    "title_en": "From Essay to Speech: Delivering Spoken Ideas",
+    "title_vi": "Từ Bài Viết Đến Bài Nói: Truyền Đạt Ý Tưởng Bằng Lời",
+    "content_en": "Turning an essay into a speech is an exciting skill. When you write an essay, your reader can read each paragraph slowly. However, when you give a talk, listeners must understand your main points right away. Good speakers use index cue cards instead of reading full sheets of paper. They write short bullet points to guide their ideas. In addition, they use clear signpost words. For example, phrases like moving on to or turning our attention to tell the audience what comes next. Pausing between sentences gives everyone time to think. Practicing with cue cards helps you speak with calm confidence.",
     "glossary": [
       {
-        "word": "signpost",
-        "definition_en": "To use explicit verbal phrases that indicate transitions between sections of a talk",
-        "definition_vi": "dùng các cụm từ chỉ hướng rõ ràng để báo hiệu chuyển đoạn trong bài nói"
+            "word": "signpost",
+            "definition_en": "A word or phrase that shows what topic comes next in a speech",
+            "definition_vi": "từ chỉ dẫn chuyển ý trong bài nói"
       },
       {
-        "word": "cue",
-        "definition_en": "A brief prompt or index card keyword that reminds a speaker of their next point",
-        "definition_vi": "thẻ gợi ý chứa từ khóa nhắc nhở người nói về luận điểm tiếp theo"
+            "word": "cue card",
+            "definition_en": "A small card with brief notes to guide a speaker",
+            "definition_vi": "thẻ ghi chú từ khóa cho người nói"
       },
       {
-        "word": "rhetoric",
-        "definition_en": "The formal art of discourse and persuasive public communication",
-        "definition_vi": "nghệ thuật diễn thuyết và truyền thông thuyết phục công chúng"
+            "word": "audience",
+            "definition_en": "The group of people who listen to a talk or presentation",
+            "definition_vi": "thính giả lắng nghe bài thuyết trình"
       },
       {
-        "word": "pacing",
-        "definition_en": "The deliberate modulation of speaking rate to enhance audience comprehension",
-        "definition_vi": "sự điều chỉnh nhịp điệu nói có chủ đích để người nghe dễ hiểu"
+            "word": "pause",
+            "definition_en": "A short stop in speech to give listeners time to think",
+            "definition_vi": "khoảng dừng ngắn khi nói"
       },
       {
-        "word": "intonation",
-        "definition_en": "Pitch variation across spoken sentences used to convey emphasis and attitude",
-        "definition_vi": "sự biến thiên cao độ giọng nói dùng để biểu đạt sự nhấn mạnh và thái độ"
+            "word": "confidence",
+            "definition_en": "A calm feeling of trust in your speaking skills",
+            "definition_vi": "sự tự tin khi trình bày"
       }
-    ],
+],
     "check_questions": [
       {
         "id": 1,
@@ -949,128 +949,218 @@ export const w126 = {
   "minigames": {
     "math_problems": [
       {
-        "id": "w126_p1",
-        "type": "part_whole",
-        "title": "Allocating Time Across Speech Sections",
-        "question": "A student allocates 120 seconds for the introduction and conclusions combined, and 240 seconds for the main body arguments. What is the total duration of the presentation in seconds?",
-        "storyContext": "Lucas calculates speaking time limits using a rehearsal timeline chart.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Intro & Conclusion",
-              "value": 120,
-              "color": "#6366f1"
+            "id": "w126_p1",
+            "type": "part_whole",
+            "title": "Problem 1: Logic Puzzle of Speaker Time Slots",
+            "question": "In a speech logic puzzle, Speaker A speaks for 45 seconds and Speaker B speaks for 35 seconds to introduce the topic. What is their combined speaking time?",
+            "storyContext": "Debaters time their speech transitions using a logic stopwatch.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Speaker A",
+                              "value": 45,
+                              "color": "#0ea5e9"
+                        },
+                        {
+                              "label": "Speaker B",
+                              "value": 35,
+                              "color": "#10b981"
+                        }
+                  ],
+                  "total": 80,
+                  "unit": "seconds"
             },
-            {
-              "label": "Body Arguments",
-              "value": 240,
-              "color": "#10b981"
-            }
-          ],
-          "total": 360,
-          "unit": "seconds"
-        },
-        "target_answer": 360,
-        "unit": "seconds",
-        "steps": [
-          "Take the introduction and conclusion time: 120 seconds.",
-          "Add the body arguments duration: 240 seconds.",
-          "120 + 240 = 360 seconds in total (exactly 6 minutes)."
-        ]
+            "target_answer": 80,
+            "unit": "seconds",
+            "steps": [
+                  "Speaker A time: 45 seconds.",
+                  "Speaker B time: 35 seconds.",
+                  "45 + 35 = 80 seconds."
+            ]
       },
       {
-        "id": "w126_p2",
-        "type": "comparison",
-        "title": "Comparing Word Counts: Full Essay vs Cue Card Notes",
-        "question": "A complete written research essay contains 1,250 words, while its condensed cue card presentation notes contain only 280 words. How many fewer words are on the cue card notes?",
-        "storyContext": "Elena reviews word reduction metrics on an editorial comparison graph.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Full Essay Text",
-              "value": 1250,
-              "color": "#f43f5e"
+            "id": "w126_p2",
+            "type": "comparison",
+            "title": "Problem 2: Logic Constraint on Cue Cards",
+            "question": "A logic puzzle states: Maya prepared 14 cue cards for her presentation. Liam prepared 8 fewer cue cards than Maya under the tournament rules. How many cue cards did Liam prepare?",
+            "storyContext": "Students organize their speech cue cards under logic rules.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Maya's Cards",
+                              "value": 14,
+                              "color": "#8b5cf6"
+                        },
+                        {
+                              "label": "Difference",
+                              "value": 8,
+                              "color": "#ef4444"
+                        }
+                  ],
+                  "difference": 6,
+                  "unit": "cue cards"
             },
-            {
-              "label": "Cue Card Notes",
-              "value": 280,
-              "color": "#3b82f6"
-            }
-          ],
-          "difference": 970,
-          "unit": "words"
-        },
-        "target_answer": 970,
-        "unit": "words",
-        "steps": [
-          "Start with the total essay words: 1,250 words.",
-          "Subtract the cue card words: 280 words.",
-          "1,250 - 280 = 970 fewer words on the cue card outline."
-        ]
+            "target_answer": 6,
+            "unit": "cue cards",
+            "steps": [
+                  "Maya has 14 cards.",
+                  "Liam has 8 fewer cards.",
+                  "14 - 8 = 6 cards for Liam."
+            ]
+      },
+      {
+            "id": "w126_p3",
+            "type": "part_whole",
+            "title": "Problem 3: Speech Structure Logic Puzzle",
+            "question": "Under the debate timing rules, the introduction takes 30 seconds and the main arguments take 60 seconds. What is the total allotted time for this speech section?",
+            "storyContext": "Speech coaches solve timing constraints for the debate showcase.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Introduction",
+                              "value": 30,
+                              "color": "#f59e0b"
+                        },
+                        {
+                              "label": "Main Arguments",
+                              "value": 60,
+                              "color": "#3b82f6"
+                        }
+                  ],
+                  "total": 90,
+                  "unit": "seconds"
+            },
+            "target_answer": 90,
+            "unit": "seconds",
+            "steps": [
+                  "Intro duration: 30 seconds.",
+                  "Body duration: 60 seconds.",
+                  "30 + 60 = 90 seconds total."
+            ]
+      },
+      {
+            "id": "w126_p4",
+            "type": "comparison",
+            "title": "Problem 4: Logic Deduction of Signpost Markers",
+            "question": "In a speech analysis puzzle, Team 1 used 15 signpost phrases while Team 2 used 9 signpost phrases. How many more signpost markers did Team 1 use?",
+            "storyContext": "Adjudicators count transition cues in speech transcripts.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Team 1",
+                              "value": 15,
+                              "color": "#ec4899"
+                        },
+                        {
+                              "label": "Team 2",
+                              "value": 9,
+                              "color": "#64748b"
+                        }
+                  ],
+                  "difference": 6,
+                  "unit": "signpost markers"
+            },
+            "target_answer": 6,
+            "unit": "signpost markers",
+            "steps": [
+                  "Team 1 count: 15 markers.",
+                  "Team 2 count: 9 markers.",
+                  "15 - 9 = 6 more markers."
+            ]
+      },
+      {
+            "id": "w126_p5",
+            "type": "part_whole",
+            "title": "Problem 5: Audience Feedback Logic Venn",
+            "question": "A presentation logic puzzle tracks 40 feedback slips. 25 listeners commended the speaker's vocal volume and 15 commended the signpost clarity. How many total positive notes were counted?",
+            "storyContext": "Students tally audience comment cards after the speeches.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Volume Praise",
+                              "value": 25,
+                              "color": "#14b8a6"
+                        },
+                        {
+                              "label": "Signpost Praise",
+                              "value": 15,
+                              "color": "#f97316"
+                        }
+                  ],
+                  "total": 40,
+                  "unit": "feedback slips"
+            },
+            "target_answer": 40,
+            "unit": "feedback slips",
+            "steps": [
+                  "Volume feedback: 25 slips.",
+                  "Signpost feedback: 15 slips.",
+                  "25 + 15 = 40 slips total."
+            ]
       }
-    ],
+],
     "action_lab_scenarios": [
       {
-        "stage": 1,
-        "title": "Deconstructing Written Essay into Core Themes",
-        "diagram_type": "essay_text_condensation_funnel",
-        "instruction": "Filter dense essay paragraphs down to core thesis statements and keyword prompts.",
-        "items": [
-          {
-            "label": "Full Paragraph Text Analysis",
-            "target": "source_input"
-          },
-          {
-            "label": "Keyword Extraction Filter",
-            "target": "condensation_stage"
-          },
-          {
-            "label": "Pocket Cue Card Prompts",
-            "target": "speaker_notes"
-          }
-        ]
+            "stage": 1,
+            "title": "Cue Card Indexing System",
+            "diagram_type": "cue_card_indexing",
+            "instruction": "Organize speaking cues in logical sequence from hook to call to action.",
+            "items": [
+                  {
+                        "label": "Hook & Topic Card",
+                        "target": "opening_card"
+                  },
+                  {
+                        "label": "Two Supporting Reasons Card",
+                        "target": "body_card"
+                  },
+                  {
+                        "label": "Memorable Final Thought Card",
+                        "target": "conclusion_card"
+                  }
+            ]
       },
       {
-        "stage": 2,
-        "title": "Mapping Signpost Transitions in Presentation Flow",
-        "diagram_type": "speech_signposting_roadmap",
-        "instruction": "Insert transition connectors between introduction, evidence points, and summary.",
-        "items": [
-          {
-            "label": "Opening Signpost: 'Let us begin with...'",
-            "target": "introduction_gate"
-          },
-          {
-            "label": "Progressive Signpost: 'Moving on to...'",
-            "target": "transition_node"
-          },
-          {
-            "label": "Closing Signpost: 'In conclusion...'",
-            "target": "synthesis_exit"
-          }
-        ]
+            "stage": 2,
+            "title": "Signpost Roadmapping",
+            "diagram_type": "signpost_roadmapping",
+            "instruction": "Place directional signposts to guide listeners through speech stages.",
+            "items": [
+                  {
+                        "label": "Today I will discuss...",
+                        "target": "intro_signpost"
+                  },
+                  {
+                        "label": "Moving on to my next point...",
+                        "target": "body_signpost"
+                  },
+                  {
+                        "label": "In conclusion, we have seen...",
+                        "target": "final_signpost"
+                  }
+            ]
       },
       {
-        "stage": 3,
-        "title": "Optimizing Vocal Modulation & Pacing",
-        "diagram_type": "vocal_cadence_frequency_wave",
-        "instruction": "Synchronize pitch intonation, volume projection, and intentional silence pauses.",
-        "items": [
-          {
-            "label": "Auditorium Vocal Projection",
-            "target": "volume_level"
-          },
-          {
-            "label": "Pitch Variation for Emphasis",
-            "target": "intonation_curve"
-          },
-          {
-            "label": "Strategic Three-Second Silence",
-            "target": "cognitive_pause"
-          }
-        ]
+            "stage": 3,
+            "title": "Vocal Delivery and Pause Meter",
+            "diagram_type": "vocal_pause_meter",
+            "instruction": "Match speech segments with appropriate vocal volume and deliberate pauses.",
+            "items": [
+                  {
+                        "label": "Clear Conversational Volume",
+                        "target": "normal_phrase"
+                  },
+                  {
+                        "label": "Deliberate 2-Second Silence",
+                        "target": "pause_interval"
+                  },
+                  {
+                        "label": "Emphatic Key Term Stress",
+                        "target": "focus_word"
+                  }
+            ]
       }
-    ],
+],
     "grammar_drills": [
       {
         "sentence": "Moving on to our second main finding, let us examine the survey data.",

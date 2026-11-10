@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Speaking Hub & Talkshow/Info Exchange Cards
- * Week: 133 | Theme: "Deep Research & Data" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.455Z
+ * Week: 133 | Theme: "Deep Research & Data" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.872Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const speakingHubData = {
   "week": 133,
   "theme": "Deep Research & Data",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "talkshow_prompt": {
     "topic": "Using Deep Research and Quantitative Data in Public Debate",
     "question": "Hannah, why does citing precise statistics carry far more weight than sharing personal anecdotes?",

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Writing Hub & Picture Story Architecture
- * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.447Z
+ * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.855Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const writingHubData = {
   "week": 127,
   "theme": "Rebuttal Practice",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "picture_story": {
     "title": "Constructing an Argumentative Rebuttal Paragraph",
     "prompt_en": "Look at the four panels. Write a debate rebuttal paragraph dismantling an opposing argument. Use the 'They claim that... but I say...' framework, contrast connectors ('on the contrary', 'however'), and evidence-based reasoning. Write 20 or more words.",

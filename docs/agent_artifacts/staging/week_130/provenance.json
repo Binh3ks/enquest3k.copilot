@@ -1,16 +1,16 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-10T03:12:16.452Z",
+  "generated_at": "2026-11-10T04:07:29.865Z",
   "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
-  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
   "week_number": 130,
   "theme": "Opinion Project 3: Comparing Global Approaches",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_focus": "Comparative legal synthesis, source citation markers ('In contrast to France's statutory ban, Florida opted for...', 'According to legislative records...').",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_130/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
-    "source_b_excerpt": "Week 130 syllabus entry",
+    "source_b_excerpt": "•\tWeeks 129-132: Review & Math Logic Cycle (Tuần 129-132: Ôn tập & Toán Logic)\n\t•\tFocus: Consolidate writing skills + Math Fractions/Decimals review.",
     "digital_map_reference": {
       "map_week": 130,
       "map_theme": "Opinion Project 3: Comparing Global Approaches",
@@ -40,7 +40,10 @@
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
     "GATE_10_SKELETON_DIFFERENTIATION",
-    "GATE_11_BLUEPRINT_THEME_FIDELITY"
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+    "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
+    "GATE_14_PROVENANCE_INTEGRITY"
   ],
   "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
 }

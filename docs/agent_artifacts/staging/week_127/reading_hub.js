@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.447Z
+ * Week: 127 | Theme: "Rebuttal Practice" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.855Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const readingHubData = {
   "week": 127,
   "theme": "Rebuttal Practice",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "vocab": [
     {
       "id": 1,
@@ -214,34 +214,34 @@ export const readingHubData = {
     }
   ],
   "clil_article": {
-    "title_en": "Debate Theory: The Classical 'They Say... But I Say...' Rebuttal",
-    "title_vi": "Lý Thuyết Tranh Biện: Cấu Trúc Phản Biện Cổ Điển 'Họ Nói... Nhưng Tôi Cho Rằng...'",
-    "content_en": "In structured academic debate, mastering effective rebuttal practice separates persuasive speakers from passive debaters. An argumentative rebuttal directly addresses an opponent's point rather than merely restating one's original claims. Debaters utilize the classic rhetorical template: 'They say... but I say...' to acknowledge opposing positions before dismantling their underlying assumptions. When an opponent presents a false premise or weak evidence, a skilled speaker counters with verifiable facts and logical analysis. Rather than expressing mere personal disagreement, debaters demonstrate why an opponent's conclusion is fundamentally invalid. Connectors such as 'on the contrary' and 'however' highlight sharp contrasts between conflicting viewpoints. Rigorous rebuttal training cultivates critical reasoning and intellectual agility in competitive academic forums.",
+    "title_en": "Rebuttal Practice: Disagreeing with Facts and Politeness",
+    "title_vi": "Luyện Phản Biện: Phản Đối Bằng Dữ Liệu Và Sự Lịch Thiệp",
+    "content_en": "In a debate, knowing how to disagree politely is an essential skill. When another speaker makes a claim, you should listen carefully to their point. Instead of attacking the person, focus on the facts. Strong debaters use a structure called rebuttal to explain why an argument is incomplete or false. A helpful sentence frame is: They say that homework is always useful, but I say that too much work causes stress. Using contrast connectors like however, on the contrary, or nevertheless helps you present a counter view smoothly. When you support your rebuttal with true evidence, your audience respects your ideas.",
     "glossary": [
       {
         "word": "rebuttal",
-        "definition_en": "A structured refutation delivered in response to an opponent's argument in formal debate",
-        "definition_vi": "bài phản biện có cấu trúc đáp lại lập luận của đối thủ trong tranh biện chính thức"
+        "definition_en": "An argument that shows why another claim is false or incomplete",
+        "definition_vi": "lập luận phản bác ý kiến đối phương"
       },
       {
-        "word": "concede",
-        "definition_en": "To formally acknowledge the truth of an opponent's point before making a stronger counter-claim",
-        "definition_vi": "thừa nhận tính xác thực của một điểm của đối thủ trước khi đưa ra phản biện mạnh hơn"
+        "word": "disagree",
+        "definition_en": "To have a different view from someone else",
+        "definition_vi": "không đồng ý với ý kiến khác"
       },
       {
-        "word": "refute",
-        "definition_en": "To conclusively establish that a claim or premise is factually or logically false",
-        "definition_vi": "chứng minh dứt khoát rằng một khẳng định hoặc tiền đề là sai về mặt thực tế hoặc logic"
+        "word": "counter",
+        "definition_en": "To give an opposing reason against a claim",
+        "definition_vi": "đưa ra lý lẽ phản đối"
       },
       {
-        "word": "premise",
-        "definition_en": "A fundamental proposition on which an argument or conclusion is based",
-        "definition_vi": "mệnh đề cơ bản làm nền tảng cho một lập luận hoặc kết luận"
+        "word": "point",
+        "definition_en": "A specific argument or fact raised during a discussion",
+        "definition_vi": "luận điểm hoặc ý kiến cụ thể"
       },
       {
-        "word": "validity",
-        "definition_en": "The logical correctness or soundness of an inference or argument",
-        "definition_vi": "tính đúng đắn hoặc độ chuẩn xác về mặt logic của một lập luận"
+        "word": "evidence",
+        "definition_en": "Facts or proof that support an argument",
+        "definition_vi": "bằng chứng chứng minh luận điểm"
       }
     ],
     "check_questions": [

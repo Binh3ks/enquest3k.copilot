@@ -12,3 +12,4 @@ for fpath in files:
     with open(fpath, "w", encoding="utf-8") as f:
         f.write(content)
     print("Cleaned:", fpath)
+

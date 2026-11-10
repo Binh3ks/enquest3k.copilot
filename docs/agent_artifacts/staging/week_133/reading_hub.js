@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 133 | Theme: "Deep Research & Data" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.455Z
+ * Week: 133 | Theme: "Deep Research & Data" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.872Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const readingHubData = {
   "week": 133,
   "theme": "Deep Research & Data",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "vocab": [
     {
       "id": 1,
@@ -214,34 +214,34 @@ export const readingHubData = {
     }
   ],
   "clil_article": {
-    "title_en": "Quantitative Evidence: Deep Research and Data in Video Game Studies",
-    "title_vi": "Bằng Chứng Định Lượng: Nghiên Cứu Sâu và Dữ Liệu Trong Các Nghiên Cứu Về Trò Chơi Điện Tử",
-    "content_en": "In rigorous academic inquiry, scholars rely on deep research and quantitative data to substantiate empirical arguments. Rather than relying on anecdotal claims about youth gaming habits, researchers conduct structured surveys across representative demographic samples. According to a landmark study by university psychologists, seventy percent of adolescent students play video games weekly. The collected data revealed that a substantial majority of players utilize cooperative multiplayer games to build social connections. However, a small minority exhibited signs of problematic usage that correlated with sleep deficits. When citing empirical evidence in research papers, students employ precise attribution phrases such as 'According to data published by the survey...' and 'Statistics demonstrate that...'. Incorporating verifiable numerical metrics transforms subjective assertions into credible, evidence-based academic scholarship.",
+    "title_en": "Deep Research and Data: Citing Facts with Care",
+    "title_vi": "Nghiên Cứu Sâu Và Dữ Liệu: Trích Dẫn Dữ Liệu Cẩn Thận",
+    "content_en": "In academic projects, strong arguments rely on clear evidence rather than guesses. Using accurate data helps you persuade listeners. For instance, learners conducted a class survey of one hundred middle school students about video game habits. The survey study showed that a majority of seventy percent played for under one hour on weekdays. A small minority of fifteen percent played longer sessions. When presenting findings, speakers cite exact numbers. Phrases like 'According to our class survey' make your claims credible. Sharing statistics from a surveyed population helps prove your thesis.",
     "glossary": [
       {
         "word": "statistic",
-        "definition_en": "A numerical datum or quantitative indicator computed from a representative sample",
-        "definition_vi": "số liệu định lượng hoặc chỉ số đo lường tính toán từ một mẫu đại diện"
+        "definition_en": "A fact or piece of data obtained from a study of numbers",
+        "definition_vi": "số liệu thống kê"
       },
       {
         "word": "percent",
-        "definition_en": "A ratio expressed as a fraction of one hundred used in demographic proportions",
-        "definition_vi": "tỷ lệ được biểu thị dưới dạng một phần một trăm dùng trong cơ cấu tỷ lệ dân số"
+        "definition_en": "One part in every hundred",
+        "definition_vi": "phần trăm"
       },
       {
-        "word": "quantitative",
-        "definition_en": "Relating to measurements involving precise numerical values and statistical models",
-        "definition_vi": "liên quan đến các phép đo liên quan đến các giá trị số chính xác và mô hình thống kê"
+        "word": "survey",
+        "definition_en": "An investigation of the opinions or habits of a group",
+        "definition_vi": "cuộc khảo sát ý kiến"
       },
       {
-        "word": "correlation",
-        "definition_en": "A mutual statistical association between two measurable observational variables",
-        "definition_vi": "mối liên hệ thống kê tương hỗ giữa hai biến số quan sát có thể đo lường"
+        "word": "population",
+        "definition_en": "The total group of individuals studied in a survey",
+        "definition_vi": "tổng thể đối tượng khảo sát"
       },
       {
-        "word": "empirical",
-        "definition_en": "Originating in or verified by systematic sensory observation or experimental data",
-        "definition_vi": "bắt nguồn từ hoặc được kiểm chứng bằng quan sát có hệ thống hoặc dữ liệu thực nghiệm"
+        "word": "majority",
+        "definition_en": "The greater number or part of a group",
+        "definition_vi": "đa số"
       }
     ],
     "check_questions": [

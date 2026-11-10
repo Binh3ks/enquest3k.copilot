@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.453Z
+ * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.868Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const readingHubData = {
   "week": 131,
   "theme": "Opinion Project 3: Persuasive Techniques",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "vocab": [
     {
       "id": 1,
@@ -214,34 +214,34 @@ export const readingHubData = {
     }
   ],
   "clil_article": {
-    "title_en": "Rhetorical Appeals: Ethos, Pathos, and Logos in Historic Speeches",
-    "title_vi": "Các Phương Thức Thuyết Phục: Ethos, Pathos và Logos Trong Các Bài Diễn Văn Lịch Sử",
-    "content_en": "Classical rhetoric identifies three fundamental appeals that empower persuasive communication: ethos, pathos, and logos. Aristotle established that an effective argument must integrate all three dimensions to persuade an audience completely. Ethos establishes the speaker's personal credibility, scholarly integrity, and ethical authority. Pathos engages the audience's emotions, values, and empathy through vivid storytelling and sensory descriptions. Logos provides the logical foundation, employing rigorous evidence, deductive reasoning, and factual statistics. When historical orators deliver addresses, they weave these appeals together using rhythmic repetition and dynamic cadence. For instance, pairing a compelling moral narrative with verifiable data creates an irresistible persuasive impact. Understanding rhetorical mechanisms equips students to deliver speeches that inspire conviction while critically evaluating political and commercial persuasion in modern society.",
+    "title_en": "Persuasive Techniques: Ethos, Pathos, and Logos",
+    "title_vi": "Kỹ Thuật Thuyết Phục: Ethos, Pathos Và Logos",
+    "content_en": "When speakers want to convince an audience, they use three classical persuasive modes: ethos, pathos, and logos. First, ethos builds trust by showing that the speaker is honest and knowledgeable. For example, citing trusted teachers or experienced doctors gives your speech moral credibility. Second, pathos connects with human emotions like empathy, hope, or pride. Telling a short, moving story helps listeners care deeply about your message. Finally, logos appeals to logic and clear reason. Supporting an argument with true facts, balanced reasoning, and accurate data proves that your claim makes sense. Master speakers combine all three modes to deliver unforgettable speeches.",
     "glossary": [
       {
         "word": "ethos",
-        "definition_en": "The character, moral authority, and established credibility of a speaker",
-        "definition_vi": "tư cách, uy tín đạo đức và độ tin cậy đã được xác lập của một diễn giả"
+        "definition_en": "An appeal based on the character or credibility of the speaker",
+        "definition_vi": "sự thuyết phục dựa trên uy tín người nói"
       },
       {
         "word": "pathos",
-        "definition_en": "Rhetorical engagement with audience emotional sympathies and values",
-        "definition_vi": "sự kết nối tu từ với tình cảm, sự đồng cảm và giá trị của khán giả"
+        "definition_en": "An appeal to the emotions and feelings of the audience",
+        "definition_vi": "sự thuyết phục chạm đến cảm xúc"
       },
       {
         "word": "logos",
-        "definition_en": "Logical argumentation grounded in empirical data, deductive reasoning, and factual evidence",
-        "definition_vi": "lập luận logic dựa trên dữ liệu thực nghiệm, suy diễn và bằng chứng thực tế"
+        "definition_en": "An appeal to logic, reason, and factual evidence",
+        "definition_vi": "sự thuyết phục dựa trên lý lẽ và logic"
       },
       {
-        "word": "cadence",
-        "definition_en": "The rhythmic vocal modulation and inflection of spoken delivery",
-        "definition_vi": "sự điều biến giọng nói và ngữ điệu nhịp nhàng trong diễn thuyết"
+        "word": "credibility",
+        "definition_en": "The quality of being trusted and believed in",
+        "definition_vi": "sự đáng tin cậy"
       },
       {
-        "word": "repetition",
-        "definition_en": "The strategic reiteration of key phrases to anchor memorability and emotional weight",
-        "definition_vi": "sự lặp lại chiến lược các cụm từ chính để tạo sự ghi nhớ và sức nặng cảm xúc"
+        "word": "empathy",
+        "definition_en": "The ability to understand and share the feelings of others",
+        "definition_vi": "sự đồng cảm sâu sắc"
       }
     ],
     "check_questions": [

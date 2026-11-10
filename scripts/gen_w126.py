@@ -390,3 +390,4 @@ w126 = {
 with open("scripts/specs_w126.mjs", "w", encoding="utf-8") as f:
     f.write(render_js(w126, "w126"))
 print("✅ Generated scripts/specs_w126.mjs (From Essay to Speech)")
+

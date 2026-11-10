@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
- * Week: 79 | Theme: "The Industrial Revolution" | CEFR: B1 Preliminary
- * Generated: 2026-11-10T03:12:16.360Z
+ * Week: 79 | Theme: "The Industrial Revolution" | CEFR: B1 PET
+ * Generated: 2026-11-10T04:07:36.004Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const readingHubData = {
   "week": 79,
   "theme": "The Industrial Revolution",
-  "cefr_level": "B1 Preliminary",
+  "cefr_level": "B1 PET",
   "vocab": [
     {
       "id": 1,
@@ -216,32 +216,32 @@ export const readingHubData = {
   "clil_article": {
     "title_en": "Steam Engines and Factories: The Industrial Transformation",
     "title_vi": "Động Cơ Hơi Nước và Nhà Máy: Sự Chuyển Mình Công Nghiệp",
-    "content_en": "During the eighteenth and nineteenth centuries, the Industrial Revolution fundamentally transformed human society. Before this transformative era, most everyday goods were manufactured by hand in small rural workshops. The development of the commercial steam engine by James Watt revolutionized manufacturing and transport. Steam boilers burned abundant coal to heat water, generating high-pressure steam that drove heavy pistons in textile mills. Consequently, iron and coal production expanded dramatically across Britain and Europe. Locomotives and steamships quickly transported raw materials and manufactured merchandise across vast distances. However, rapid industrialization also created severe social challenges, including urban smog and grueling labor conditions. Modern historians study how steam mechanics laid the groundwork for today's technological world.",
+    "content_en": "Long ago, people made cloth and tools by hand in small village homes. In the eighteenth century, the Industrial Revolution changed how people worked and lived. Inventors like James Watt built powerful steam engines. These engines burned coal to boil water into strong steam. In new factories, steam powered large machines that made clothes much faster than human hands. Soon, trains called locomotives carried goods and workers across long iron tracks. Cities grew quickly around these busy factories. Life became busier, and products cost less money. Today, we remember this period as the start of modern industry.",
     "glossary": [
       {
         "word": "locomotive",
-        "definition_en": "A powered railway vehicle designed to pull trains carrying passengers or freight",
-        "definition_vi": "đầu máy xe lửa chạy bằng động cơ"
+        "definition_en": "A railway vehicle with an engine that pulls a train",
+        "definition_vi": "đầu máy xe lửa kéo đoàn tàu"
       },
       {
-        "word": "manufacture",
-        "definition_en": "The production of merchandise on a large commercial scale using machines",
-        "definition_vi": "sản xuất hàng hóa quy mô lớn bằng máy móc"
+        "word": "factory",
+        "definition_en": "A large building where machines make goods quickly",
+        "definition_vi": "nhà máy nơi máy móc sản xuất hàng hóa"
       },
       {
-        "word": "mechanize",
-        "definition_en": "To equip an industry or craft with modern mechanical apparatus",
-        "definition_vi": "trang bị máy móc cơ khí cho một ngành nghề"
+        "word": "steam",
+        "definition_en": "The hot gas that water turns into when boiled",
+        "definition_vi": "hơi nước nóng sinh ra khi nước sôi"
       },
       {
         "word": "revolution",
-        "definition_en": "A fundamental and far-reaching change in societal structures or methods",
-        "definition_vi": "sự thay đổi căn bản và sâu rộng trong cấu trúc xã hội"
+        "definition_en": "A major change in how people live and work",
+        "definition_vi": "cuộc cách mạng thay đổi cách sống và làm việc"
       },
       {
-        "word": "urban",
-        "definition_en": "Located in or characteristic of densely populated cities",
-        "definition_vi": "nằm ở hoặc mang đặc trưng của các thành phố đông dân"
+        "word": "engine",
+        "definition_en": "A machine that uses fuel or heat to create power",
+        "definition_vi": "động cơ dùng nhiên liệu để tạo ra lực"
       }
     ],
     "check_questions": [

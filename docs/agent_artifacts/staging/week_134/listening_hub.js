@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
- * Week: 134 | Theme: "Identifying Fallacies" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.456Z
+ * Week: 134 | Theme: "Identifying Fallacies" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.875Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const listeningHubData = {
   "week": 134,
   "theme": "Identifying Fallacies",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "audio_dialogue": {
     "title": "Identifying Logical Fallacies in Media Arguments"
   },
@@ -179,6 +179,6 @@ export const listeningHubData = {
       ]
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 134. Theme: Identifying Fallacies.\nSpeaker: Claiming that all computer gamers are unmotivated is an invalid generalization fallacy.\nSpeaker: Critical thinkers use qualifiers like some, many, and often to prevent sweeping statements.\nSpeaker: An argument is valid only when its underlying premises are factually true.\nSpeaker: Drawing a hasty conclusion from a single example creates misleading stereotypes.\nSpeaker: Many adolescent players tend to develop strong cooperative problem solving skills.\nSpeaker: We must scrutinize whether evidence is reliable before accepting controversial assertions.\nSpeaker: Recognizing logical flaws protects learners from manipulative advertising and false propaganda.\nSpeaker: Mastering critical logic cultivates intellectually honest and respectful civic discussions."
+  "passage_audio_script": "Narrator: Cambridge B1+ Academic Listening Practice for Week 134. Theme: Identifying Fallacies.\nSpeaker: Claiming that all computer gamers are unmotivated is an invalid generalization fallacy.\nSpeaker: Critical thinkers use qualifiers like some, many, and often to prevent sweeping statements.\nSpeaker: An argument is valid only when its underlying premises are factually true.\nSpeaker: Drawing a hasty conclusion from a single example creates misleading stereotypes.\nSpeaker: Many adolescent players tend to develop strong cooperative problem solving skills.\nSpeaker: We must scrutinize whether evidence is reliable before accepting controversial assertions.\nSpeaker: Recognizing logical flaws protects learners from manipulative advertising and false propaganda.\nSpeaker: Mastering critical logic cultivates intellectually honest and respectful civic discussions."
 };
 export default listeningHubData;

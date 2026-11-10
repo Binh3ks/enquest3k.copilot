@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
- * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.453Z
+ * Week: 131 | Theme: "Opinion Project 3: Persuasive Techniques" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.868Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const listeningHubData = {
   "week": 131,
   "theme": "Opinion Project 3: Persuasive Techniques",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "audio_dialogue": {
     "title": "Mastering Rhetorical Appeals for Public Addresses"
   },
@@ -181,6 +181,6 @@ export const listeningHubData = {
       ]
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge B2 First Listening Practice for Week 131. Theme: Opinion Project 3: Persuasive Techniques.\nSpeaker: Classical rhetoric integrates ethos, pathos, and logos into an effective persuasive speech.\nSpeaker: Ethos establishes personal credibility through academic integrity and ethical leadership.\nSpeaker: Pathos touches human emotion through vivid personal stories that evoke genuine empathy.\nSpeaker: Logos provides the solid logical foundation using verifiable statistical evidence.\nSpeaker: Not only does it inform the mind, but it also inspires the heart.\nSpeaker: Varying your vocal cadence and rhythm commands the attention of every listener.\nSpeaker: Deliberate repetition of key phrases reinforces the core message of the address.\nSpeaker: Mastering persuasive techniques enables young citizens to advocate for positive community change."
+  "passage_audio_script": "Narrator: Cambridge B1+ Academic Listening Practice for Week 131. Theme: Opinion Project 3: Persuasive Techniques.\nSpeaker: Classical rhetoric integrates ethos, pathos, and logos into an effective persuasive speech.\nSpeaker: Ethos establishes personal credibility through academic integrity and ethical leadership.\nSpeaker: Pathos touches human emotion through vivid personal stories that evoke genuine empathy.\nSpeaker: Logos provides the solid logical foundation using verifiable statistical evidence.\nSpeaker: Not only does it inform the mind, but it also inspires the heart.\nSpeaker: Varying your vocal cadence and rhythm commands the attention of every listener.\nSpeaker: Deliberate repetition of key phrases reinforces the core message of the address.\nSpeaker: Mastering persuasive techniques enables young citizens to advocate for positive community change."
 };
 export default listeningHubData;

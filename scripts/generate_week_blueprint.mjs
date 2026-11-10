@@ -100,9 +100,28 @@ function parseDigitalMap(weekNum, mapContent) {
   const isFullMock = /MOCK/i.test(rawCefrType) || /MOCK/i.test(cleanTheme);
   const weekType = isFullMock ? 'full_mock' : 'rotary_practice';
 
-  // Extract CEFR Level
+  // Extract CEFR Level with structural week range fallback
   let cefrLevel = 'A2 Flyers';
   let cefrStage = 1;
+
+  if (weekNum <= 16) {
+    cefrLevel = 'Pre-A1 Starters';
+    cefrStage = 1;
+  } else if (weekNum <= 36) {
+    cefrLevel = 'A1 Movers';
+    cefrStage = 1;
+  } else if (weekNum <= 72) {
+    cefrLevel = 'A2 Flyers';
+    cefrStage = 1;
+  } else if (weekNum <= 120) {
+    cefrLevel = 'B1 PET';
+    cefrStage = 2;
+  } else {
+    cefrLevel = 'B1+ Academic';
+    cefrStage = 3;
+  }
+
+  // Refine if explicit rawCefrType string is provided
   if (/Pre-A1/i.test(rawCefrType)) {
     cefrLevel = 'Pre-A1 Starters';
     cefrStage = 1;
@@ -112,10 +131,10 @@ function parseDigitalMap(weekNum, mapContent) {
   } else if (/A2 Flyers/i.test(rawCefrType)) {
     cefrLevel = 'A2 Flyers';
     cefrStage = 1;
-  } else if (/B1\+? PET/i.test(rawCefrType)) {
+  } else if (/(?:B1\+?\s*PET|\(PET\)|B1\s+Entry)/i.test(rawCefrType)) {
     cefrLevel = 'B1 PET';
     cefrStage = 2;
-  } else if (/B1\+ Academic/i.test(rawCefrType)) {
+  } else if (/(?:B1\+\s*Academic|\(B1\+\)|B1\+\b|B2\b)/i.test(rawCefrType)) {
     cefrLevel = 'B1+ Academic';
     cefrStage = 3;
   }

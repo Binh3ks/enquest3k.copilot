@@ -1,16 +1,16 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-10T03:12:16.447Z",
+  "generated_at": "2026-11-10T04:07:29.855Z",
   "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
-  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
   "week_number": 127,
   "theme": "Rebuttal Practice",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_focus": "Contrast Connectors & Rebuttal Frameworks ('On the contrary', 'However', 'While proponents claim that..., evidence reveals...')",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_127/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
-    "source_b_excerpt": "Week 127: Rebuttal Practice (Tuần 127: Luyện Phản biện)\n\t•\tTopic (Debate): Disagreeing politely. (Chủ đề: Phản đối lịch sự.)\n\t•\tKey Learning Outcome (ELA): Use \"They say... but I say...\" structure. (Kết quả: Dùng cấu trúc Họ nói... nhưng tôi nói...)\n\t•\tGrammar Focus: Contrast Connectors: \"On the contrary\", \"However\". (Ngữ pháp: Từ nối tương phản.)\n\t•\tVocabulary Focus: disagree, counter, point, false, true.\n\t•\tTopic (Math): Critical Thinking Math. (Toán: Toán tư duy phản biện.)\n\t•",
+    "source_b_excerpt": "•\tWeek 127: Rebuttal Practice (Tuần 127: Luyện Phản biện)\n\t•\tTopic (Debate): Disagreeing politely. (Chủ đề: Phản đối lịch sự.)\n\t•\tKey Learning Outcome (ELA): Use \"They say... but I say...\" structure. (Kết quả: Dùng cấu trúc Họ nói... nhưng tôi nói...)\n\t•\tGrammar Focus: Contrast Connectors: \"On the contrary\", \"However\". (Ngữ pháp: Từ nối tương phản.)\n\t•\tVocabulary Focus: disagree, counter, point, false, true.\n\t•\tTopic (Math): Critical Thinking Math. (Toán: Toán tư duy phản biện.)",
     "digital_map_reference": {
       "map_week": 127,
       "map_theme": "B1+ Academic Assessment Mock 1",
@@ -40,7 +40,10 @@
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
     "GATE_10_SKELETON_DIFFERENTIATION",
-    "GATE_11_BLUEPRINT_THEME_FIDELITY"
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+    "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
+    "GATE_14_PROVENANCE_INTEGRITY"
   ],
   "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
 }

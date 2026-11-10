@@ -8,7 +8,7 @@ export const w131 = {
   "theme": "Opinion Project 3: Persuasive Techniques",
   "title_en": "Opinion Project 3: Persuasive Techniques",
   "title_vi": "Dự án Quan điểm 3: Kỹ thuật Thuyết phục",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_focus": "Rhetorical Triads, Stress & Persuasive Cadence ('Not only does it..., but it also...', parallel structures, and vocal pitch modulation).",
   "vocab_list": [
     {
@@ -213,36 +213,36 @@ export const w131 = {
     }
   ],
   "clil": {
-    "title_en": "Rhetorical Appeals: Ethos, Pathos, and Logos in Historic Speeches",
-    "title_vi": "Các Phương Thức Thuyết Phục: Ethos, Pathos và Logos Trong Các Bài Diễn Văn Lịch Sử",
-    "content_en": "Classical rhetoric identifies three fundamental appeals that empower persuasive communication: ethos, pathos, and logos. Aristotle established that an effective argument must integrate all three dimensions to persuade an audience completely. Ethos establishes the speaker's personal credibility, scholarly integrity, and ethical authority. Pathos engages the audience's emotions, values, and empathy through vivid storytelling and sensory descriptions. Logos provides the logical foundation, employing rigorous evidence, deductive reasoning, and factual statistics. When historical orators deliver addresses, they weave these appeals together using rhythmic repetition and dynamic cadence. For instance, pairing a compelling moral narrative with verifiable data creates an irresistible persuasive impact. Understanding rhetorical mechanisms equips students to deliver speeches that inspire conviction while critically evaluating political and commercial persuasion in modern society.",
+    "title_en": "Persuasive Techniques: Ethos, Pathos, and Logos",
+    "title_vi": "Kỹ Thuật Thuyết Phục: Ethos, Pathos Và Logos",
+    "content_en": "When speakers want to convince an audience, they use three classical persuasive modes: ethos, pathos, and logos. First, ethos builds trust by showing that the speaker is honest and knowledgeable. For example, citing trusted teachers or experienced doctors gives your speech moral credibility. Second, pathos connects with human emotions like empathy, hope, or pride. Telling a short, moving story helps listeners care deeply about your message. Finally, logos appeals to logic and clear reason. Supporting an argument with true facts, balanced reasoning, and accurate data proves that your claim makes sense. Master speakers combine all three modes to deliver unforgettable speeches.",
     "glossary": [
       {
-        "word": "ethos",
-        "definition_en": "The character, moral authority, and established credibility of a speaker",
-        "definition_vi": "tư cách, uy tín đạo đức và độ tin cậy đã được xác lập của một diễn giả"
+            "word": "ethos",
+            "definition_en": "An appeal based on the character or credibility of the speaker",
+            "definition_vi": "sự thuyết phục dựa trên uy tín người nói"
       },
       {
-        "word": "pathos",
-        "definition_en": "Rhetorical engagement with audience emotional sympathies and values",
-        "definition_vi": "sự kết nối tu từ với tình cảm, sự đồng cảm và giá trị của khán giả"
+            "word": "pathos",
+            "definition_en": "An appeal to the emotions and feelings of the audience",
+            "definition_vi": "sự thuyết phục chạm đến cảm xúc"
       },
       {
-        "word": "logos",
-        "definition_en": "Logical argumentation grounded in empirical data, deductive reasoning, and factual evidence",
-        "definition_vi": "lập luận logic dựa trên dữ liệu thực nghiệm, suy diễn và bằng chứng thực tế"
+            "word": "logos",
+            "definition_en": "An appeal to logic, reason, and factual evidence",
+            "definition_vi": "sự thuyết phục dựa trên lý lẽ và logic"
       },
       {
-        "word": "cadence",
-        "definition_en": "The rhythmic vocal modulation and inflection of spoken delivery",
-        "definition_vi": "sự điều biến giọng nói và ngữ điệu nhịp nhàng trong diễn thuyết"
+            "word": "credibility",
+            "definition_en": "The quality of being trusted and believed in",
+            "definition_vi": "sự đáng tin cậy"
       },
       {
-        "word": "repetition",
-        "definition_en": "The strategic reiteration of key phrases to anchor memorability and emotional weight",
-        "definition_vi": "sự lặp lại chiến lược các cụm từ chính để tạo sự ghi nhớ và sức nặng cảm xúc"
+            "word": "empathy",
+            "definition_en": "The ability to understand and share the feelings of others",
+            "definition_vi": "sự đồng cảm sâu sắc"
       }
-    ],
+],
     "check_questions": [
       {
         "id": 1,
@@ -947,128 +947,218 @@ export const w131 = {
   "minigames": {
     "math_problems": [
       {
-        "id": "w131_p1",
-        "type": "part_whole",
-        "title": "Measuring Time Devoted to Rhetorical Appeals",
-        "question": "In a 300-second keynote address, Olivia spends 90 seconds establishing research credentials and ethos, and 210 seconds presenting logos and pathos. What is the total speech duration in seconds?",
-        "storyContext": "Olivia reviews audio rehearsal logs to balance rhetorical components.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Ethos Introduction",
-              "value": 90,
-              "color": "#6366f1"
+            "id": "w131_p1",
+            "type": "part_whole",
+            "title": "Problem 1: Percentage Mode Audience Survey",
+            "question": "In an audience poll of 100 students, 60 listeners were persuaded by logos and 40 listeners were persuaded by pathos. What is the total audience accounted for on the chart?",
+            "storyContext": "Debate coaches evaluate persuasive mode efficacy from survey results.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Logos Persuaded",
+                              "value": 60,
+                              "color": "#0ea5e9"
+                        },
+                        {
+                              "label": "Pathos Persuaded",
+                              "value": 40,
+                              "color": "#ec4899"
+                        }
+                  ],
+                  "total": 100,
+                  "unit": "listeners"
             },
-            {
-              "label": "Logos & Pathos Body",
-              "value": 210,
-              "color": "#10b981"
-            }
-          ],
-          "total": 300,
-          "unit": "seconds"
-        },
-        "target_answer": 300,
-        "unit": "seconds",
-        "steps": [
-          "Take ethos duration: 90 seconds.",
-          "Add logos and pathos duration: 210 seconds.",
-          "90 + 210 = 300 seconds in total (5 full minutes)."
-        ]
+            "target_answer": 100,
+            "unit": "listeners",
+            "steps": [
+                  "Logos count: 60.",
+                  "Pathos count: 40.",
+                  "60 + 40 = 100 listeners."
+            ]
       },
       {
-        "id": "w131_p2",
-        "type": "comparison",
-        "title": "Comparing Audience Engagement Rates",
-        "question": "Before rhetoric coaching, 45 percent of audience members signed the digital wellness petition; after coaching in ethos, pathos, and logos, 82 percent signed. What was the percentage increase in sign-ups?",
-        "storyContext": "Marcus analyzes petition conversion statistics on a comparative chart.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Post-Coaching Sign-ups",
-              "value": 82,
-              "color": "#0ea5e9"
+            "id": "w131_p2",
+            "type": "comparison",
+            "title": "Problem 2: Comparing Percentage Points in Persuasion",
+            "question": "A speech poll showed that 65% of listeners trusted an argument with ethos, compared to 45% who trusted a speech without citations. What is the percentage point advantage?",
+            "storyContext": "Students calculate percentage point improvements from speaker credibility.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "With Ethos (65%)",
+                              "value": 65,
+                              "color": "#10b981"
+                        },
+                        {
+                              "label": "Without Ethos (45%)",
+                              "value": 45,
+                              "color": "#94a3b8"
+                        }
+                  ],
+                  "difference": 20,
+                  "unit": "percentage points"
             },
-            {
-              "label": "Pre-Coaching Baseline",
-              "value": 45,
-              "color": "#f59e0b"
-            }
-          ],
-          "difference": 37,
-          "unit": "percentage points"
-        },
-        "target_answer": 37,
-        "unit": "percentage points",
-        "steps": [
-          "Start with post-coaching rate: 82%.",
-          "Subtract pre-coaching rate: 45%.",
-          "82 - 45 = 37 percentage point increase."
-        ]
+            "target_answer": 20,
+            "unit": "percentage points",
+            "steps": [
+                  "With ethos: 65%.",
+                  "Without ethos: 45%.",
+                  "65 - 45 = 20 percentage points."
+            ]
+      },
+      {
+            "id": "w131_p3",
+            "type": "part_whole",
+            "title": "Problem 3: Persuasive Vote Tally Logic",
+            "question": "In a classroom mock debate on school uniforms, 45 students voted in favor after hearing a logos speech and 35 voted against. What was the total votes cast?",
+            "storyContext": "The debate secretary tallies audience votes after the rebuttal round.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Affirmative Votes",
+                              "value": 45,
+                              "color": "#6366f1"
+                        },
+                        {
+                              "label": "Negative Votes",
+                              "value": 35,
+                              "color": "#f59e0b"
+                        }
+                  ],
+                  "total": 80,
+                  "unit": "votes"
+            },
+            "target_answer": 80,
+            "unit": "votes",
+            "steps": [
+                  "Affirmative: 45 votes.",
+                  "Negative: 35 votes.",
+                  "45 + 35 = 80 total votes."
+            ]
+      },
+      {
+            "id": "w131_p4",
+            "type": "comparison",
+            "title": "Problem 4: Comparing Emotion vs Logic Impact",
+            "question": "In a persuasive technique poll, 75 listeners rated a personal story as powerful, whereas 50 rated pure statistics as powerful. How many more listeners preferred the story?",
+            "storyContext": "Students compare pathos versus logos preferences in audience logs.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Pathos Story",
+                              "value": 75,
+                              "color": "#f43f5e"
+                        },
+                        {
+                              "label": "Pure Stats",
+                              "value": 50,
+                              "color": "#0284c7"
+                        }
+                  ],
+                  "difference": 25,
+                  "unit": "listeners"
+            },
+            "target_answer": 25,
+            "unit": "listeners",
+            "steps": [
+                  "Pathos rating: 75.",
+                  "Stats rating: 50.",
+                  "75 - 50 = 25 listeners."
+            ]
+      },
+      {
+            "id": "w131_p5",
+            "type": "part_whole",
+            "title": "Problem 5: Audience Feedback Classification",
+            "question": "A speech evaluation sheet recorded 55 positive comments about speaker credibility and 35 positive comments about presentation clarity. How many total positive notes were counted?",
+            "storyContext": "Debaters analyze post-speech evaluation slips.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Credibility Notes",
+                              "value": 55,
+                              "color": "#14b8a6"
+                        },
+                        {
+                              "label": "Clarity Notes",
+                              "value": 35,
+                              "color": "#8b5cf6"
+                        }
+                  ],
+                  "total": 90,
+                  "unit": "comments"
+            },
+            "target_answer": 90,
+            "unit": "comments",
+            "steps": [
+                  "Credibility notes: 55.",
+                  "Clarity notes: 35.",
+                  "55 + 35 = 90 comments."
+            ]
       }
-    ],
+],
     "action_lab_scenarios": [
       {
-        "stage": 1,
-        "title": "Balancing Aristotle's Rhetorical Triangle",
-        "diagram_type": "rhetorical_triangle_equilibrium",
-        "instruction": "Equilibrate ethos, pathos, and logos vectors to prevent speech bias or manipulation.",
-        "items": [
-          {
-            "label": "Ethos Credibility Anchor",
-            "target": "ethical_vertex"
-          },
-          {
-            "label": "Pathos Emotional Empathy Vector",
-            "target": "affective_vertex"
-          },
-          {
-            "label": "Logos Empirical Evidence Base",
-            "target": "rational_vertex"
-          }
-        ]
+            "stage": 1,
+            "title": "Ethos Credibility Foundation",
+            "diagram_type": "ethos_pillar",
+            "instruction": "Anchor a speech argument in personal integrity and trusted authorities.",
+            "items": [
+                  {
+                        "label": "Expert Teacher Citation",
+                        "target": "foundation_base"
+                  },
+                  {
+                        "label": "Speaker Honest Disclosure",
+                        "target": "pillar_core"
+                  },
+                  {
+                        "label": "Respectful Tone Indicator",
+                        "target": "capital_crest"
+                  }
+            ]
       },
       {
-        "stage": 2,
-        "title": "Modulating Vocal Cadence & Pitch Contours",
-        "diagram_type": "acoustic_speech_cadence_envelope",
-        "instruction": "Structure pitch shifts, rhetorical emphasis, and three-second pauses across key sentences.",
-        "items": [
-          {
-            "label": "Inverted Sentence Stress Peak",
-            "target": "pitch_inflection"
-          },
-          {
-            "label": "Deliberate Three-Second Silence",
-            "target": "rhetorical_pause"
-          },
-          {
-            "label": "Resonant Downward Cadence",
-            "target": "resolution_cadence"
-          }
-        ]
+            "stage": 2,
+            "title": "Pathos Emotional Bridge",
+            "diagram_type": "pathos_bridge",
+            "instruction": "Connect shared human values with audience empathy.",
+            "items": [
+                  {
+                        "label": "Relatable Real Student Story",
+                        "target": "bridge_approach"
+                  },
+                  {
+                        "label": "Empathy Connecting Phrase",
+                        "target": "bridge_arch"
+                  },
+                  {
+                        "label": "Inspiring Call to Action",
+                        "target": "bridge_landing"
+                  }
+            ]
       },
       {
-        "stage": 3,
-        "title": "Synthesizing Persuasive Call to Action",
-        "diagram_type": "civic_advocacy_conversion_funnel",
-        "instruction": "Channel intellectual conviction into concrete community resolutions and petitions.",
-        "items": [
-          {
-            "label": "Empirical Problem Formulation",
-            "target": "cognitive_conviction"
-          },
-          {
-            "label": "Heartfelt Empathy Awakening",
-            "target": "moral_motivation"
-          },
-          {
-            "label": "Unanimous Civic Commitment",
-            "target": "action_commitment"
-          }
-        ]
+            "stage": 3,
+            "title": "Logos Analytical Logic Chain",
+            "diagram_type": "logos_chain",
+            "instruction": "Link verified premises to an inescapable logical conclusion.",
+            "items": [
+                  {
+                        "label": "Verified Factual Premise A",
+                        "target": "first_link"
+                  },
+                  {
+                        "label": "Supporting Data Stat B",
+                        "target": "middle_link"
+                  },
+                  {
+                        "label": "Sound Concluding Finding C",
+                        "target": "anchor_link"
+                  }
+            ]
       }
-    ],
+],
     "grammar_drills": [
       {
         "sentence": "Not only does digital moderation protect sleep, but it also improves attention.",

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
- * Week: 79 | Theme: "The Industrial Revolution" | CEFR: B1 Preliminary
- * Generated: 2026-11-10T03:12:16.360Z
+ * Week: 79 | Theme: "The Industrial Revolution" | CEFR: B1 PET
+ * Generated: 2026-11-10T04:07:36.004Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const listeningHubData = {
   "week": 79,
   "theme": "The Industrial Revolution",
-  "cefr_level": "B1 Preliminary",
+  "cefr_level": "B1 PET",
   "audio_dialogue": {
     "title": "Discussing the Historical Impact of Steam Mechanics"
   },
@@ -177,6 +177,6 @@ export const listeningHubData = {
       ]
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge B1 Preliminary Listening Practice for Week 79. Theme: The Industrial Revolution.\nSpeaker: James Watt developed an efficient steam engine that transformed global manufacturing.\nSpeaker: Textile factories used automated mechanical looms to weave high quality cotton fabric.\nSpeaker: Abundant coal mines provided essential fuel to heat factory steam boilers.\nSpeaker: Steam locomotives carried raw materials quickly along newly constructed railways.\nSpeaker: As a result of mechanization, urban production increased tenfold across Europe.\nSpeaker: Tough iron beams were forged to build resilient railway bridges and locomotives.\nSpeaker: Thousands of agricultural workers moved to expanding industrial cities for employment.\nSpeaker: The Industrial Revolution laid the technological foundation for our modern society."
+  "passage_audio_script": "Narrator: Cambridge B1 PET Listening Practice for Week 79. Theme: The Industrial Revolution.\nSpeaker: James Watt developed an efficient steam engine that transformed global manufacturing.\nSpeaker: Textile factories used automated mechanical looms to weave high quality cotton fabric.\nSpeaker: Abundant coal mines provided essential fuel to heat factory steam boilers.\nSpeaker: Steam locomotives carried raw materials quickly along newly constructed railways.\nSpeaker: As a result of mechanization, urban production increased tenfold across Europe.\nSpeaker: Tough iron beams were forged to build resilient railway bridges and locomotives.\nSpeaker: Thousands of agricultural workers moved to expanding industrial cities for employment.\nSpeaker: The Industrial Revolution laid the technological foundation for our modern society."
 };
 export default listeningHubData;

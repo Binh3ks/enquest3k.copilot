@@ -8,7 +8,7 @@ export const w134 = {
   "theme": "Identifying Fallacies",
   "title_en": "Identifying Fallacies",
   "title_vi": "Nhận diện Lỗi Ngụy biện",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_focus": "Qualifiers of frequency and extent ('some', 'many', 'often', 'tend to') to prevent sweeping over-generalizations.",
   "vocab_list": [
     {
@@ -213,36 +213,36 @@ export const w134 = {
     }
   ],
   "clil": {
-    "title_en": "Critical Thinking and Logic: Identifying Generalization Fallacies",
-    "title_vi": "Tư Duy Phản Biện và Logic: Nhận Diện Các Lỗi Ngụy Biện Khái Quát Hóa",
-    "content_en": "Critical thinking requires learners to scrutinize arguments for underlying logical errors known as fallacies. A common reasoning flaw is the hasty generalization, which occurs when a speaker draws a sweeping conclusion from insufficient evidence. For example, claiming that 'all video gamers are lazy and unmotivated' is an invalid assumption contradicted by empirical studies. To construct sound arguments, thinkers employ careful qualifiers such as 'some', 'many', 'often', and 'tend to' rather than absolute universal terms like 'all' or 'never'. Evaluating an argument entails checking whether its premises are true and whether the deduction logically holds. Distinguishing valid reasoning from deceptive fallacies protects students from misleading advertisements, unfounded propaganda, and polarized rhetoric. Developing a sharp eye for flawed logic fosters intellectually honest discourse in academic discussions.",
+    "title_en": "Identifying Fallacies: Spotting Faulty Reasoning",
+    "title_vi": "Nhận Diện Lỗi Ngụy Biện: Phát Hiện Lập Luận Khiếm Khuyết",
+    "content_en": "In formal debates, smart thinkers look for logical mistakes called fallacies. A common error is a hasty generalization. This happens when someone assumes that an entire group acts the same way without proof. For example, claiming that all gamers avoid reading books is an unproven assumption that is clearly false. Sound logic requires claims to be supported by true facts. When an argument uses solid evidence, we call it a valid point. If a premise is flawed, the conclusion becomes invalid. Careful debaters use qualifiers like often or tend to, keeping their reasoning fair and balanced.",
     "glossary": [
       {
-        "word": "fallacy",
-        "definition_en": "A deceptive or structurally defective form of reasoning that invalidates an inference",
-        "definition_vi": "hình thức lập luận sai lệch hoặc khiếm khuyết về cấu trúc làm mất hiệu lực của một suy luận"
+            "word": "fallacy",
+            "definition_en": "A common mistake in logical thinking",
+            "definition_vi": "lỗi ngụy biện trong lập luận"
       },
       {
-        "word": "generalization",
-        "definition_en": "Inferring universal laws or attributes to an entire group from limited particular observations",
-        "definition_vi": "suy luận các quy luật hoặc thuộc tính phổ quát cho toàn bộ một nhóm từ các quan sát cụ thể có hạn"
+            "word": "generalization",
+            "definition_en": "A broad statement based on only a few examples",
+            "definition_vi": "sự khái quát hóa vội vã"
       },
       {
-        "word": "assumption",
-        "definition_en": "An implicit proposition taken for granted as true without verifying empirical substantiation",
-        "definition_vi": "mệnh đề ngầm được coi là đúng mà không cần xác minh bằng chứng thực nghiệm"
+            "word": "assumption",
+            "definition_en": "A thing accepted as true without proof",
+            "definition_vi": "giả định thiếu căn cứ"
       },
       {
-        "word": "soundness",
-        "definition_en": "The gold standard of deductive logic where every premise is factually true and the structure is valid",
-        "definition_vi": "tiêu chuẩn vàng của logic suy diễn trong đó mọi tiền đề đều đúng thực tế và cấu trúc hợp lệ"
+            "word": "valid",
+            "definition_en": "Having a sound basis in logic or fact",
+            "definition_vi": "hợp lý và có cơ sở"
       },
       {
-        "word": "bias",
-        "definition_en": "Systematic cognitive skewing or prejudice that distorts fair factual evaluation",
-        "definition_vi": "sự sai lệch nhận thức có hệ thống hoặc định kiến làm sai lệch đánh giá khách quan về thực tế"
+            "word": "invalid",
+            "definition_en": "Not logically correct or sound",
+            "definition_vi": "không có giá trị logic"
       }
-    ],
+],
     "check_questions": [
       {
         "id": 1,
@@ -945,128 +945,236 @@ export const w134 = {
   "minigames": {
     "math_problems": [
       {
-        "id": "w134_p1",
-        "type": "part_whole",
-        "title": "Tallying Logical Fallacies in a Media Sample",
-        "question": "In an audit of 50 opinion articles, Zoe identified 18 hasty generalizations and 12 false cause fallacies. How many total fallacies did she detect across these two categories?",
-        "storyContext": "Zoe categorizes reasoning errors on a media audit ledger.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Hasty Generalizations",
-              "value": 18,
-              "color": "#ef4444"
+            "id": "w134_p1",
+            "type": "part_whole",
+            "title": "Problem 1: Perimeter of an Equilateral Triangle",
+            "question": "A geometric model of an equilateral triangle has 3 equal sides measuring 15 cm each. What is the total perimeter of the triangle in centimeters?",
+            "storyContext": "Students construct triangle models in the math lab.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Side 1",
+                              "value": 15,
+                              "color": "#0ea5e9"
+                        },
+                        {
+                              "label": "Side 2",
+                              "value": 15,
+                              "color": "#10b981"
+                        },
+                        {
+                              "label": "Side 3",
+                              "value": 15,
+                              "color": "#8b5cf6"
+                        }
+                  ],
+                  "total": 45,
+                  "unit": "cm"
             },
-            {
-              "label": "False Cause Fallacies",
-              "value": 12,
-              "color": "#f59e0b"
-            }
-          ],
-          "total": 30,
-          "unit": "fallacies"
-        },
-        "target_answer": 30,
-        "unit": "fallacies",
-        "steps": [
-          "Take hasty generalizations: 18.",
-          "Add false cause fallacies: 12.",
-          "18 + 12 = 30 total fallacies detected."
-        ]
+            "target_answer": 45,
+            "unit": "cm",
+            "steps": [
+                  "Side 1: 15 cm.",
+                  "Side 2: 15 cm.",
+                  "Side 3: 15 cm.",
+                  "15 + 15 + 15 = 45 cm."
+            ]
       },
       {
-        "id": "w134_p2",
-        "type": "comparison",
-        "title": "Comparing Qualified Statements vs Universal Generalizations",
-        "question": "In a debate transcript, team A used 35 qualified statements (using 'some' or 'often'), while team B used only 14 qualified statements, relying mostly on sweeping extremes. How many more qualified statements did team A use?",
-        "storyContext": "Liam compares rhetorical qualifiers on a debate balance graph.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Team A (Careful Qualifiers)",
-              "value": 35,
-              "color": "#10b981"
+            "id": "w134_p2",
+            "type": "comparison",
+            "title": "Problem 2: Comparing Sides in an Isosceles Triangle",
+            "question": "An isosceles triangle has a base of 20 cm and two equal sides of 14 cm each. How many centimeters longer is the base than one of the equal sides?",
+            "storyContext": "Learners classify triangles by side length differences.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Base",
+                              "value": 20,
+                              "color": "#f59e0b"
+                        },
+                        {
+                              "label": "Equal Side",
+                              "value": 14,
+                              "color": "#6366f1"
+                        }
+                  ],
+                  "difference": 6,
+                  "unit": "cm"
             },
-            {
-              "label": "Team B (Sweeping Extremes)",
-              "value": 14,
-              "color": "#64748b"
-            }
-          ],
-          "difference": 21,
-          "unit": "statements"
-        },
-        "target_answer": 21,
-        "unit": "statements",
-        "steps": [
-          "Start with Team A: 35 statements.",
-          "Subtract Team B: 14 statements.",
-          "35 - 14 = 21 more qualified statements."
-        ]
+            "target_answer": 6,
+            "unit": "cm",
+            "steps": [
+                  "Base: 20 cm.",
+                  "Equal side: 14 cm.",
+                  "20 - 14 = 6 cm."
+            ]
+      },
+      {
+            "id": "w134_p3",
+            "type": "part_whole",
+            "title": "Problem 3: Perimeter of a Scalene Triangle",
+            "question": "A scalene triangle has 3 sides of different lengths: 10 cm, 12 cm, and 18 cm. What is the perimeter of this scalene triangle in centimeters?",
+            "storyContext": "Math students measure scalene geometric perimeter.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Side A",
+                              "value": 10,
+                              "color": "#14b8a6"
+                        },
+                        {
+                              "label": "Side B",
+                              "value": 12,
+                              "color": "#ec4899"
+                        },
+                        {
+                              "label": "Side C",
+                              "value": 18,
+                              "color": "#0284c7"
+                        }
+                  ],
+                  "total": 40,
+                  "unit": "cm"
+            },
+            "target_answer": 40,
+            "unit": "cm",
+            "steps": [
+                  "Side A: 10 cm.",
+                  "Side B: 12 cm.",
+                  "Side C: 18 cm.",
+                  "10 + 12 + 18 = 40 cm."
+            ]
+      },
+      {
+            "id": "w134_p4",
+            "type": "comparison",
+            "title": "Problem 4: Side Difference in Triangular Banner",
+            "question": "A debate tournament banner is cut in a triangle shape. The longest side measures 25 cm and the shortest side measures 15 cm. What is the difference between these two sides?",
+            "storyContext": "Students measure decorative debate banners.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Longest Side",
+                              "value": 25,
+                              "color": "#f43f5e"
+                        },
+                        {
+                              "label": "Shortest Side",
+                              "value": 15,
+                              "color": "#94a3b8"
+                        }
+                  ],
+                  "difference": 10,
+                  "unit": "cm"
+            },
+            "target_answer": 10,
+            "unit": "cm",
+            "steps": [
+                  "Longest side: 25 cm.",
+                  "Shortest side: 15 cm.",
+                  "25 - 15 = 10 cm."
+            ]
+      },
+      {
+            "id": "w134_p5",
+            "type": "part_whole",
+            "title": "Problem 5: Total Perimeter of Triangular Garden Plot",
+            "question": "A triangular school garden plot has sides measuring 30 meters, 40 meters, and 50 meters. What is the total length of fencing needed to enclose the triangle?",
+            "storyContext": "Geometry applied to real-world boundary perimeters.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Side 1",
+                              "value": 30,
+                              "color": "#22c55e"
+                        },
+                        {
+                              "label": "Side 2",
+                              "value": 40,
+                              "color": "#3b82f6"
+                        },
+                        {
+                              "label": "Side 3",
+                              "value": 50,
+                              "color": "#a855f7"
+                        }
+                  ],
+                  "total": 120,
+                  "unit": "meters"
+            },
+            "target_answer": 120,
+            "unit": "meters",
+            "steps": [
+                  "Side 1: 30 m.",
+                  "Side 2: 40 m.",
+                  "Side 3: 50 m.",
+                  "30 + 40 + 50 = 120 meters."
+            ]
       }
-    ],
+],
     "action_lab_scenarios": [
       {
-        "stage": 1,
-        "title": "Dismantling Hasty Generalization Syllogisms",
-        "diagram_type": "syllogistic_fallacy_breakdown_flow",
-        "instruction": "Identify the flawed inductive leap from an isolated anecdote to a universal premise.",
-        "items": [
-          {
-            "label": "Isolated Particular Case",
-            "target": "narrow_observation"
-          },
-          {
-            "label": "Unwarranted Inductive Leap",
-            "target": "fallacious_step"
-          },
-          {
-            "label": "Flawed Universal Stereotype",
-            "target": "invalid_conclusion"
-          }
-        ]
+            "stage": 1,
+            "title": "Hasty Generalization Filter",
+            "diagram_type": "generalization_filter",
+            "instruction": "Catch an unproven universal claim and add a fair qualifier.",
+            "items": [
+                  {
+                        "label": "Absolute Word ('Always/All')",
+                        "target": "error_tag"
+                  },
+                  {
+                        "label": "Qualifier Filter ('Often/Many')",
+                        "target": "corrective_lens"
+                  },
+                  {
+                        "label": "Fair Balanced Statement",
+                        "target": "sound_claim"
+                  }
+            ]
       },
       {
-        "stage": 2,
-        "title": "Inserting Epistemic Modal Qualifiers",
-        "diagram_type": "epistemic_qualifier_tuning_matrix",
-        "instruction": "Calibrate universal assertions with probability qualifiers ('often', 'tend to', 'some').",
-        "items": [
-          {
-            "label": "Universal Extreme ('All / Never')",
-            "target": "vulnerable_extreme"
-          },
-          {
-            "label": "Nuanced Qualifier Filter",
-            "target": "epistemic_moderator"
-          },
-          {
-            "label": "Defensible Empirical Claim",
-            "target": "sound_assertion"
-          }
-        ]
+            "stage": 2,
+            "title": "Ad Hominem Discard Bin",
+            "diagram_type": "ad_hominem_filter",
+            "instruction": "Filter out personal attacks and retain only policy arguments.",
+            "items": [
+                  {
+                        "label": "Personal Comment Card",
+                        "target": "discard_bin"
+                  },
+                  {
+                        "label": "Policy Evidence Card",
+                        "target": "analysis_table"
+                  },
+                  {
+                        "label": "Objective Summary Statement",
+                        "target": "debate_ledger"
+                  }
+            ]
       },
       {
-        "stage": 3,
-        "title": "Validating Deductive Soundness Matrix",
-        "diagram_type": "deductive_truth_soundness_tree",
-        "instruction": "Test both structural logical validity and empirical factual truth of premises.",
-        "items": [
-          {
-            "label": "Factually True Premise A",
-            "target": "empirical_basis"
-          },
-          {
-            "label": "Valid Deductive Inference Step",
-            "target": "structural_rule"
-          },
-          {
-            "label": "Sound and Incontestable Conclusion",
-            "target": "verified_soundness"
-          }
-        ]
+            "stage": 3,
+            "title": "False Dilemma Spectrum",
+            "diagram_type": "false_dilemma_spectrum",
+            "instruction": "Reject extreme black-and-white choices by finding balanced middle ground.",
+            "items": [
+                  {
+                        "label": "Extreme Option A",
+                        "target": "left_pole"
+                  },
+                  {
+                        "label": "Extreme Option B",
+                        "target": "right_pole"
+                  },
+                  {
+                        "label": "Balanced Realistic Solution C",
+                        "target": "center_fulcrum"
+                  }
+            ]
       }
-    ],
+],
     "grammar_drills": [
       {
         "sentence": "Many adolescent players tend to develop strong teamwork skills.",

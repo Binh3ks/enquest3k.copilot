@@ -8,7 +8,7 @@ export const w127 = {
   "theme": "Rebuttal Practice",
   "title_en": "Rebuttal Practice",
   "title_vi": "Luyện Phản biện",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "grammar_focus": "Contrast Connectors & Rebuttal Frameworks ('On the contrary', 'However', 'While proponents claim that..., evidence reveals...')",
   "vocab_list": [
     {
@@ -213,36 +213,36 @@ export const w127 = {
     }
   ],
   "clil": {
-    "title_en": "Debate Theory: The Classical 'They Say... But I Say...' Rebuttal",
-    "title_vi": "Lý Thuyết Tranh Biện: Cấu Trúc Phản Biện Cổ Điển 'Họ Nói... Nhưng Tôi Cho Rằng...'",
-    "content_en": "In structured academic debate, mastering effective rebuttal practice separates persuasive speakers from passive debaters. An argumentative rebuttal directly addresses an opponent's point rather than merely restating one's original claims. Debaters utilize the classic rhetorical template: 'They say... but I say...' to acknowledge opposing positions before dismantling their underlying assumptions. When an opponent presents a false premise or weak evidence, a skilled speaker counters with verifiable facts and logical analysis. Rather than expressing mere personal disagreement, debaters demonstrate why an opponent's conclusion is fundamentally invalid. Connectors such as 'on the contrary' and 'however' highlight sharp contrasts between conflicting viewpoints. Rigorous rebuttal training cultivates critical reasoning and intellectual agility in competitive academic forums.",
+    "title_en": "Rebuttal Practice: Disagreeing with Facts and Politeness",
+    "title_vi": "Luyện Phản Biện: Phản Đối Bằng Dữ Liệu Và Sự Lịch Thiệp",
+    "content_en": "In a debate, knowing how to disagree politely is an essential skill. When another speaker makes a claim, you should listen carefully to their point. Instead of attacking the person, focus on the facts. Strong debaters use a structure called rebuttal to explain why an argument is incomplete or false. A helpful sentence frame is: They say that homework is always useful, but I say that too much work causes stress. Using contrast connectors like however, on the contrary, or nevertheless helps you present a counter view smoothly. When you support your rebuttal with true evidence, your audience respects your ideas.",
     "glossary": [
       {
-        "word": "rebuttal",
-        "definition_en": "A structured refutation delivered in response to an opponent's argument in formal debate",
-        "definition_vi": "bài phản biện có cấu trúc đáp lại lập luận của đối thủ trong tranh biện chính thức"
+            "word": "rebuttal",
+            "definition_en": "An argument that shows why another claim is false or incomplete",
+            "definition_vi": "lập luận phản bác ý kiến đối phương"
       },
       {
-        "word": "concede",
-        "definition_en": "To formally acknowledge the truth of an opponent's point before making a stronger counter-claim",
-        "definition_vi": "thừa nhận tính xác thực của một điểm của đối thủ trước khi đưa ra phản biện mạnh hơn"
+            "word": "disagree",
+            "definition_en": "To have a different view from someone else",
+            "definition_vi": "không đồng ý với ý kiến khác"
       },
       {
-        "word": "refute",
-        "definition_en": "To conclusively establish that a claim or premise is factually or logically false",
-        "definition_vi": "chứng minh dứt khoát rằng một khẳng định hoặc tiền đề là sai về mặt thực tế hoặc logic"
+            "word": "counter",
+            "definition_en": "To give an opposing reason against a claim",
+            "definition_vi": "đưa ra lý lẽ phản đối"
       },
       {
-        "word": "premise",
-        "definition_en": "A fundamental proposition on which an argument or conclusion is based",
-        "definition_vi": "mệnh đề cơ bản làm nền tảng cho một lập luận hoặc kết luận"
+            "word": "point",
+            "definition_en": "A specific argument or fact raised during a discussion",
+            "definition_vi": "luận điểm hoặc ý kiến cụ thể"
       },
       {
-        "word": "validity",
-        "definition_en": "The logical correctness or soundness of an inference or argument",
-        "definition_vi": "tính đúng đắn hoặc độ chuẩn xác về mặt logic của một lập luận"
+            "word": "evidence",
+            "definition_en": "Facts or proof that support an argument",
+            "definition_vi": "bằng chứng chứng minh luận điểm"
       }
-    ],
+],
     "check_questions": [
       {
         "id": 1,
@@ -950,128 +950,218 @@ export const w127 = {
   "minigames": {
     "math_problems": [
       {
-        "id": "w127_p1",
-        "type": "part_whole",
-        "title": "Tallying Debate Tournament Score Elements",
-        "question": "In a debate adjudication, the affirmative team scored 42 points for constructive argument delivery and 48 points for rebuttal responsiveness. What was their total score?",
-        "storyContext": "Lucas tallies score cards after the tournament round.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Constructive Arguments",
-              "value": 42,
-              "color": "#3b82f6"
+            "id": "w127_p1",
+            "type": "part_whole",
+            "title": "Problem 1: Critical Thinking on Debater Points",
+            "question": "A debater made a false calculation claim. In critical thinking analysis, Team A scored 40 valid points on speech 1 and 30 valid points on speech 2. What is their true combined score?",
+            "storyContext": "Debate judges check scoring logs for calculation errors.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Speech 1",
+                              "value": 40,
+                              "color": "#0284c7"
+                        },
+                        {
+                              "label": "Speech 2",
+                              "value": 30,
+                              "color": "#10b981"
+                        }
+                  ],
+                  "total": 70,
+                  "unit": "points"
             },
-            {
-              "label": "Rebuttal Responsiveness",
-              "value": 48,
-              "color": "#10b981"
-            }
-          ],
-          "total": 90,
-          "unit": "points"
-        },
-        "target_answer": 90,
-        "unit": "points",
-        "steps": [
-          "Take constructive points: 42.",
-          "Add rebuttal points: 48.",
-          "42 + 48 = 90 points in total."
-        ]
+            "target_answer": 70,
+            "unit": "points",
+            "steps": [
+                  "Speech 1 points: 40.",
+                  "Speech 2 points: 30.",
+                  "40 + 30 = 70 points in truth."
+            ]
       },
       {
-        "id": "w127_p2",
-        "type": "comparison",
-        "title": "Comparing Rebuttal Speaking Times",
-        "question": "The affirmative speaker spent 180 seconds refuting statistical claims, whereas the negative speaker spent only 105 seconds. How many more seconds did the affirmative speaker devote to evidence rebuttal?",
-        "storyContext": "Nora reviews audio recording timestamps to assess speaking time allocation.",
-        "modelData": {
-          "bars": [
-            {
-              "label": "Affirmative Rebuttal",
-              "value": 180,
-              "color": "#6366f1"
+            "id": "w127_p2",
+            "type": "comparison",
+            "title": "Problem 2: Critical Thinking Math on Survey Size",
+            "question": "A critical thinking analysis exposes a misleading claim. School A surveyed 150 students while School B surveyed only 90 students. How many more students participated in School A's true sample?",
+            "storyContext": "Researchers verify statistical claims before debate rounds.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "School A",
+                              "value": 150,
+                              "color": "#6366f1"
+                        },
+                        {
+                              "label": "School B",
+                              "value": 90,
+                              "color": "#f59e0b"
+                        }
+                  ],
+                  "difference": 60,
+                  "unit": "students"
             },
-            {
-              "label": "Negative Rebuttal",
-              "value": 105,
-              "color": "#f59e0b"
-            }
-          ],
-          "difference": 75,
-          "unit": "seconds"
-        },
-        "target_answer": 75,
-        "unit": "seconds",
-        "steps": [
-          "Start with affirmative time: 180 seconds.",
-          "Subtract negative time: 105 seconds.",
-          "180 - 105 = 75 seconds more devoted to rebuttal."
-        ]
+            "target_answer": 60,
+            "unit": "students",
+            "steps": [
+                  "School A sample: 150 students.",
+                  "School B sample: 90 students.",
+                  "150 - 90 = 60 students."
+            ]
+      },
+      {
+            "id": "w127_p3",
+            "type": "part_whole",
+            "title": "Problem 3: Rebutting Exaggerated Survey Claims",
+            "question": "An opponent claimed 100 people supported a plan. The rebuttal team verified 55 true votes and 25 false entries on the roster. How many total entries were submitted for inspection?",
+            "storyContext": "Auditors review ballot claims for mathematical accuracy.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "True Votes",
+                              "value": 55,
+                              "color": "#14b8a6"
+                        },
+                        {
+                              "label": "Invalid Entries",
+                              "value": 25,
+                              "color": "#ef4444"
+                        }
+                  ],
+                  "total": 80,
+                  "unit": "entries"
+            },
+            "target_answer": 80,
+            "unit": "entries",
+            "steps": [
+                  "Valid entries: 55.",
+                  "Invalid entries: 25.",
+                  "55 + 25 = 80 total entries."
+            ]
+      },
+      {
+            "id": "w127_p4",
+            "type": "comparison",
+            "title": "Problem 4: Critical Thinking on Discrepancy",
+            "question": "Critical thinking math reveals that a speaker claimed 120 affirmative votes, but the official tally showed only 85 votes. What was the false exaggeration discrepancy?",
+            "storyContext": "Fact-checkers calculate discrepancies in debate evidence.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Claimed Votes",
+                              "value": 120,
+                              "color": "#e11d48"
+                        },
+                        {
+                              "label": "Actual Votes",
+                              "value": 85,
+                              "color": "#0d9488"
+                        }
+                  ],
+                  "difference": 35,
+                  "unit": "votes"
+            },
+            "target_answer": 35,
+            "unit": "votes",
+            "steps": [
+                  "Claimed votes: 120.",
+                  "Actual votes: 85.",
+                  "120 - 85 = 35 votes."
+            ]
+      },
+      {
+            "id": "w127_p5",
+            "type": "part_whole",
+            "title": "Problem 5: Balanced Arguments in Critical Thinking",
+            "question": "A critical thinking dossier compiles 35 supporting evidence cards and 25 counter arguments. How many total argument cards are compiled in the debate folder?",
+            "storyContext": "Debaters assemble balanced evidence sets for rebuttal rounds.",
+            "modelData": {
+                  "bars": [
+                        {
+                              "label": "Pro Cards",
+                              "value": 35,
+                              "color": "#3b82f6"
+                        },
+                        {
+                              "label": "Counter Cards",
+                              "value": 25,
+                              "color": "#8b5cf6"
+                        }
+                  ],
+                  "total": 60,
+                  "unit": "argument cards"
+            },
+            "target_answer": 60,
+            "unit": "argument cards",
+            "steps": [
+                  "Supporting cards: 35.",
+                  "Counter cards: 25.",
+                  "35 + 25 = 60 cards."
+            ]
       }
-    ],
+],
     "action_lab_scenarios": [
       {
-        "stage": 1,
-        "title": "Dissecting Opposing Arguments & Identifying Flaws",
-        "diagram_type": "argument_claim_premise_breakdown",
-        "instruction": "Deconstruct an opposing claim into underlying premises, evidence, and logical flaws.",
-        "items": [
-          {
-            "label": "Opponent Core Claim",
-            "target": "thesis_target"
-          },
-          {
-            "label": "Unproven Premise Assumption",
-            "target": "logical_flaw"
-          },
-          {
-            "label": "Counter-Evidence Repository",
-            "target": "rebuttal_proof"
-          }
-        ]
+            "stage": 1,
+            "title": "Identifying Claim vs Counter Evidence",
+            "diagram_type": "claim_vs_evidence",
+            "instruction": "Separate an opponent assertion from verified rebuttal facts.",
+            "items": [
+                  {
+                        "label": "Opponent Generalization",
+                        "target": "claim_slot"
+                  },
+                  {
+                        "label": "Factual Counter Statistic",
+                        "target": "evidence_slot"
+                  },
+                  {
+                        "label": "Polite Rebuttal Phrase",
+                        "target": "bridge_slot"
+                  }
+            ]
       },
       {
-        "stage": 2,
-        "title": "Mapping the 'They Say... But I Say...' Structure",
-        "diagram_type": "rebuttal_contrast_scaffolding",
-        "instruction": "Assemble contrasting rhetorical units using rebuttal transition signals.",
-        "items": [
-          {
-            "label": "Opposing View: 'They argue that...'",
-            "target": "concession_node"
-          },
-          {
-            "label": "Contrast Connector: 'On the contrary...'",
-            "target": "pivot_marker"
-          },
-          {
-            "label": "Affirmative Claim: 'Evidence demonstrates...'",
-            "target": "counter_thesis"
-          }
-        ]
+            "stage": 2,
+            "title": "Four-Step Rebuttal Frame",
+            "diagram_type": "four_step_rebuttal",
+            "instruction": "Assemble the standard four-part rebuttal formula.",
+            "items": [
+                  {
+                        "label": "They claim that...",
+                        "target": "step_1_they_say"
+                  },
+                  {
+                        "label": "However, I argue that...",
+                        "target": "step_2_i_say"
+                  },
+                  {
+                        "label": "Because research indicates that...",
+                        "target": "step_3_because"
+                  }
+            ]
       },
       {
-        "stage": 3,
-        "title": "Adjudicating Rebuttal Persuasiveness",
-        "diagram_type": "debate_scoring_rubric_matrix",
-        "instruction": "Evaluate responsiveness, empirical citations, and ethical cross-examination.",
-        "items": [
-          {
-            "label": "Direct Argument Engagement",
-            "target": "responsiveness_metric"
-          },
-          {
-            "label": "Verifiable Empirical Citation",
-            "target": "evidence_metric"
-          },
-          {
-            "label": "Absence of Fallacious Attacks",
-            "target": "ethics_metric"
-          }
-        ]
+            "stage": 3,
+            "title": "Politeness Register Calibration",
+            "diagram_type": "politeness_register",
+            "instruction": "Select polite connectors that respect the speaker while countering the idea.",
+            "items": [
+                  {
+                        "label": "While I see your point...",
+                        "target": "polite_concession"
+                  },
+                  {
+                        "label": "On the other hand...",
+                        "target": "factual_contrast"
+                  },
+                  {
+                        "label": "Therefore, the balance shifts...",
+                        "target": "logical_conclusion"
+                  }
+            ]
       }
-    ],
+],
     "grammar_drills": [
       {
         "sentence": "On the contrary, recent scientific evidence proves that the premise was false.",

@@ -1,14 +1,14 @@
 {
   "week": 127,
   "theme": "Rebuttal Practice",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "blueprint_snapshot": {
     "week": 127,
     "theme": "Rebuttal Practice",
     "title_en": "Rebuttal Practice",
     "title_vi": "Luyện Phản biện",
-    "cefr_level": "A2 Flyers",
-    "cefr_stage": 1,
+    "cefr_level": "B1+ Academic",
+    "cefr_stage": 3,
     "week_type": "rotary_practice",
     "isFullMock": false,
     "rotary_cycle": null,
@@ -206,5 +206,5 @@
       "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
     }
   },
-  "source_b_excerpt": "Week 127: Rebuttal Practice (Tuần 127: Luyện Phản biện)\n\t•\tTopic (Debate): Disagreeing politely. (Chủ đề: Phản đối lịch sự.)\n\t•\tKey Learning Outcome (ELA): Use \"They say... but I say...\" structure. (Kết quả: Dùng cấu trúc Họ nói... nhưng tôi nói...)\n\t•\tGrammar Focus: Contrast Connectors: \"On the contrary\", \"However\". (Ngữ pháp: Từ nối tương phản.)\n\t•\tVocabulary Focus: disagree, counter, point, false, true.\n\t•\tTopic (Math): Critical Thinking Math. (Toán: Toán tư duy phản biện.)\n\t•"
+  "source_b_excerpt": "•\tWeek 127: Rebuttal Practice (Tuần 127: Luyện Phản biện)\n\t•\tTopic (Debate): Disagreeing politely. (Chủ đề: Phản đối lịch sự.)\n\t•\tKey Learning Outcome (ELA): Use \"They say... but I say...\" structure. (Kết quả: Dùng cấu trúc Họ nói... nhưng tôi nói...)\n\t•\tGrammar Focus: Contrast Connectors: \"On the contrary\", \"However\". (Ngữ pháp: Từ nối tương phản.)\n\t•\tVocabulary Focus: disagree, counter, point, false, true.\n\t•\tTopic (Math): Critical Thinking Math. (Toán: Toán tư duy phản biện.)"
 }

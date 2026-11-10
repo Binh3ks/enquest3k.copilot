@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Speaking Hub & Talkshow/Info Exchange Cards
- * Week: 126 | Theme: "From Essay to Speech" | CEFR: B2 First
- * Generated: 2026-11-10T03:12:16.442Z
+ * Week: 126 | Theme: "From Essay to Speech" | CEFR: B1+ Academic
+ * Generated: 2026-11-10T04:07:29.826Z
  * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
@@ -10,7 +10,7 @@
 export const speakingHubData = {
   "week": 126,
   "theme": "From Essay to Speech",
-  "cefr_level": "B2 First",
+  "cefr_level": "B1+ Academic",
   "talkshow_prompt": {
     "topic": "Mastering the Art of Converting Essays into Speeches",
     "question": "Lucas, why is oral signposting more essential in spoken presentations than in written essays?",
