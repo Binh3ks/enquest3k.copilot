@@ -1,0 +1,63 @@
+========================================================================================================
+🔍 AUDIT DỮ LIỆU THẬT: SOURCE B MASTER SYLLABUS vs PRODUCTION & STAGED CONTENT (ROUND 74)
+Căn cứ: 100% AST/DOM parsing; Cột Toán đếm độ dài mảng AST; So khớp theme 3 cấp (Exact / Normalized / Cần ESL review)
+========================================================================================================
+
+| Vị trí | Tuần | Source B Dòng | Source B Theme / Topic | File Thật Theme (reading_hub) | Theme Match Tier | Vocab Source B Khớp Thật | Math Items (AST) | Phân Loại Đo Thật |
+| :---: | :---: | :---: | :--- | :--- | :---: | :---: | :---: | :--- |
+
+--- 1. CÁC TUẦN PRODUCTION TRONG SRC/DATA/WEEKS (22 TUẦN) ---
+| **PROD** | **W33** | L299 | Accidents happen! | Corridor Safety & School Care | ❌ LỆCH | 6/6 (100%) | 5/5 items | LỆCH THEME (Source B: "Accidents happen!..." vs Thật: "Corridor Safety & ...") |
+| **PROD** | **W34** | L304 | The Lion and the Mouse | The Lion and the Mouse | ✅ EXACT | 7/7 (100%) | 5/5 items | TOÀN VẸN (Pass) |
+| **PROD** | **W35** | L310 | The Best Day Ever | Storytelling Practice 2 (Personal Recount) | ⚠️ CẦN ESL REVIEW | 0 Source B words defined | 0/5 items | CẦN ESL REVIEW (Lệch chi tiết: "The Best Day Ever..." vs "Storytelling Pract...") |
+| **PROD** | **W36** | L315 | Creating a mini-book | Review & Project 3: "My Adventure Book" | ⚠️ CẦN ESL REVIEW | 0 Source B words defined | 0/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Creating a mini-bo..." vs "Review & Project 3...") |
+| **PROD** | **W37** | L323 | Investigating clues in nature | MISSING_IN_FILE | ❌ LỆCH | 0/9 (0%) | 0/5 items | LỆCH THEME (Source B: "Investigating clue..." vs Thật: "MISSING_IN_FILE...") |
+| **PROD** | **W38** | L329 | Comparing animal abilities | Animal Abilities (Modals) | ⚠️ CẦN ESL REVIEW | 8/8 (100%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Comparing animal a..." vs "Animal Abilities (...") |
+| **PROD** | **W39** | L335 | Matching animals to habitats | Habitats (Persuasion Intro) | ⚠️ CẦN ESL REVIEW | 7/7 (100%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Matching animals t..." vs "Habitats (Persuasi...") |
+| **PROD** | **W41** | L347 | Butterfly or Frog Life Cycle | Life Cycles (Process) | ⚠️ CẦN ESL REVIEW | 7/7 (100%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Butterfly or Frog ..." vs "Life Cycles (Proce...") |
+| **PROD** | **W43** | L361 | Reading math stories | The "Plus" Machine (Addition Language) | ⚠️ CẦN ESL REVIEW | 6/6 (100%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Reading math stori..." vs "The "Plus" Machine...") |
+| **PROD** | **W45** | L373 | Finding shapes in the classroom | Shape Detectives (Geometry) | ⚠️ CẦN ESL REVIEW | 8/8 (100%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Finding shapes in ..." vs "Shape Detectives (...") |
+| **PROD** | **W46** | L379 | Cracking visual codes (Red-Blue-Red-?) | The Pattern Code (Logic) | ⚠️ CẦN ESL REVIEW | 6/6 (100%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Cracking visual co..." vs "The Pattern Code (...") |
+| **PROD** | **W73** | L578 | The Never-Ending Journey | Science/ELA: The Water Cycle (Advanced) / Math: Volume | ⚠️ CẦN ESL REVIEW | 6/7 (86%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "The Never-Ending J..." vs "Science/ELA: The W...") |
+| **PROD** | **W74** | L587 | Who Eats Who? (Energy flow) | Science/ELA: Food Chains / Math: Complex Charts | ⚠️ CẦN ESL REVIEW | 6/8 (75%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Who Eats Who? (Ene..." vs "Science/ELA: Food ...") |
+| **PROD** | **W75** | L596 | Pyramids and Pharaohs | History/ELA: Ancient Egypt / Math: Timelines | ⚠️ CẦN ESL REVIEW | 6/8 (75%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Pyramids and Phara..." vs "History/ELA: Ancie...") |
+| **PROD** | **W76** | L605 | Great Voyages | History/ELA: Explorers / Math: Map Scales | ⚠️ CẦN ESL REVIEW | 2/8 (25%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Great Voyages..." vs "History/ELA: Explo...") |
+| **PROD** | **W77** | L614 | Famous Buildings | Social Studies/ELA: World Landmarks / Math: 3D Geometry | ⚠️ CẦN ESL REVIEW | 1/9 (11%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Famous Buildings..." vs "Social Studies/ELA...") |
+| **PROD** | **W78** | L623 | Traditions Around the World | Social Studies/ELA: Cultures / Math: Surveys | ⚠️ CẦN ESL REVIEW | 6/9 (67%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Traditions Around ..." vs "Social Studies/ELA...") |
+| **PROD** | **W79** | L632 | Space Exploration vs. Earth Fix | Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate | ⚠️ CẦN ESL REVIEW | 0/7 (0%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Space Exploration ..." vs "Social Studies/ELA...") |
+| **PROD** | **W80** | L632 | Space Exploration vs. Earth Fix | Supply, Demand & Market Prices / Math: Market Equilibrium Graphs | ❌ LỆCH | 0/7 (0%) | 2/5 items | LỆCH THEME (Source B: "Space Exploration ..." vs Thật: "Supply, Demand & M...") |
+| **PROD** | **W81** | L638 | Planning an essay like building a house | ELA: The Master Architect (Structure) / Math: Graphing Data | ⚠️ CẦN ESL REVIEW | 5/7 (71%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Planning an essay ..." vs "ELA: The Master Ar...") |
+| **PROD** | **W82** | L647 | Describing a favorite place | ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data | ⚠️ CẦN ESL REVIEW | 1/9 (11%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Describing a favor..." vs "ELA: The Travel Vl...") |
+| **PROD** | **W125** | L986 | Hook and Summary | Intro & Conclusion (Academic Essay Structure) | ⚠️ CẦN ESL REVIEW | 3/4 (75%) | 2/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Hook and Summary..." vs "Intro & Conclusion...") |
+
+--- 2. CÁC TUẦN STAGED TRONG DOCS/AGENT_ARTIFACTS/STAGING (8 TUẦN) ---
+| **STAGED** | **W79** | L632 | Space Exploration vs. Earth Fix | The Industrial Revolution | ❌ LỆCH | 0/7 (0%) | 5/5 items | LỆCH THEME (Source B: "Space Exploration ..." vs Thật: "The Industrial Rev...") |
+| **STAGED** | **W126** | L993 | Making it spoken | From Essay to Speech | ⚠️ CẦN ESL REVIEW | 0 Source B words defined | 5/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Making it spoken..." vs "From Essay to Spee...") |
+| **STAGED** | **W127** | L998 | Disagreeing politely | Rebuttal Practice | ⚠️ CẦN ESL REVIEW | 5/5 (100%) | 5/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Disagreeing polite..." vs "Rebuttal Practice...") |
+| **STAGED** | **W129** | L1007 | Review & Math Logic Cycle | Opinion Project 3: Smartphones Under 12? | ❌ LỆCH | 0 Source B words defined | 5/5 items | LỆCH THEME (Source B: "Review & Math Logi..." vs Thật: "Opinion Project 3:...") |
+| **STAGED** | **W130** | L1007 | Review & Math Logic Cycle | Opinion Project 3: Comparing Global Approaches | ❌ LỆCH | 0 Source B words defined | 5/5 items | LỆCH THEME (Source B: "Review & Math Logi..." vs Thật: "Opinion Project 3:...") |
+| **STAGED** | **W131** | L1007 | Review & Math Logic Cycle | Opinion Project 3: Persuasive Techniques | ❌ LỆCH | 0 Source B words defined | 5/5 items | LỆCH THEME (Source B: "Review & Math Logi..." vs Thật: "Opinion Project 3:...") |
+| **STAGED** | **W133** | L1012 | Finding statistics to support arguments | Deep Research & Data | ⚠️ CẦN ESL REVIEW | 8/8 (100%) | 5/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Finding statistics..." vs "Deep Research & Da...") |
+| **STAGED** | **W134** | L1021 | Spotting bad arguments | Identifying Fallacies | ⚠️ CẦN ESL REVIEW | 8/8 (100%) | 5/5 items | CẦN ESL REVIEW (Lệch chi tiết: "Spotting bad argum..." vs "Identifying Fallac...") |
+
+========================================================================================================
+📊 BÁO CÁO TỔNG HỢP FORENSIC TOÀN DIỆN (100% COMPUTED BY SCRIPT)
+========================================================================================================
+1. THỐNG KÊ THEME MATCH PRODUCTION (Tổng: 22 tuần):
+   - EXACT (Khớp 100% từng ký tự): 1 tuần (W34)
+   - NORMALIZED_EQUAL (Khớp sau chuẩn hóa): 0 tuần (None)
+   - CẦN ESL REVIEW (Substring / có token chung): 18 tuần (W35, W36, W38, W39, W41, W43, W45, W46, W73, W74, W75, W76, W77, W78, W79, W81, W82, W125)
+   - MISMATCH (Lệch hoàn toàn): 3 tuần (W33, W37, W80)
+
+2. THỐNG KÊ THEME MATCH STAGED (Tổng: 8 tuần):
+   - EXACT: 0 tuần (None)
+   - NORMALIZED_EQUAL: 0 tuần (None)
+   - CẦN ESL REVIEW: 4 tuần (W126, W127, W133, W134)
+   - MISMATCH: 4 tuần (W79, W129, W130, W131)
+
+3. THỐNG KÊ TOÁN THEO AST (singapore_math array length):
+   - Đạt chuẩn >= 5 bài toán: W33 (5/5), W34 (5/5)
+   - Thiếu toán (< 5 bài): 20 tuần (W35 (0/5), W36 (0/5), W37 (0/5), W38 (2/5), W39 (2/5), W41 (2/5), W43 (2/5), W45 (2/5), W46 (2/5), W73 (2/5), W74 (2/5), W75 (2/5), W76 (2/5), W77 (2/5), W78 (2/5), W79 (2/5), W80 (2/5), W81 (2/5), W82 (2/5), W125 (2/5))
+   - Staged có 5 bài toán: W79, W126, W127, W129, W130, W131, W133, W134
+========================================================================================================
+

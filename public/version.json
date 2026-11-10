@@ -1,9 +1,9 @@
 {
-  "commit": "75c39e8b4f164b96e6154e562811043640339dd4",
-  "git_commit": "75c39e8b4f164b96e6154e562811043640339dd4",
-  "shortCommit": "75c39e8b",
-  "message": "fix(curriculum): align blueprints to Source B single truth, fix G-GEN-13 checks, audit production [multi-agent-review]",
-  "builtAt": "2026-11-10T05:58:58.053Z",
-  "build_timestamp": "2026-11-10T05:58:58.053Z",
+  "commit": "ded525af4b03d87dc727ad140ef1018fd9f4b8b0",
+  "git_commit": "ded525af4b03d87dc727ad140ef1018fd9f4b8b0",
+  "shortCommit": "ded525af",
+  "message": "feat(curriculum): complete round 73 computed forensic audit & Source B realignment [multi-agent-review]",
+  "builtAt": "2026-11-10T06:27:39.239Z",
+  "build_timestamp": "2026-11-10T06:27:39.240Z",
   "env": "production"
 }

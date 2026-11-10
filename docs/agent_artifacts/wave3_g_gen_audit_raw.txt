@@ -1,0 +1,129 @@
+========================================================================================================
+🔬 AUDIT G-GEN-11 ĐẾN G-GEN-16 CHO CÁC TUẦN WAVE 3 (ROUND 74)
+Áp dụng trên: W126, W127, W133, W134 trong docs/agent_artifacts/staging/
+Thu hồi kết luận "Giữ nguyên/Ready" — Phát hiện lỗi từ vựng, ngữ pháp ESL và cấu trúc Toán
+========================================================================================================
+
+--------------------------------------------------------------------------------------------------------
+📌 TUẦN 126 (docs/agent_artifacts/staging/week_126)
+--------------------------------------------------------------------------------------------------------
+
+--- G-GEN-11: Multi-Axis Pedagogical Fidelity Check ---
+  ✅ Axis (i) PASS: Theme match: "From Essay to Speech" === "From Essay to Speech".
+  ℹ️ Axis (ii): CLIL Title: "From Essay to Speech: Delivering Spoken Ideas" (Blueprint: "From Essay to Speech").
+  ✅ Axis (iii) PASS: Singapore Math items: 5/5.
+  ⚠️ Axis (iv) WARN: 0 syllabus words defined in blueprint.
+
+--- G-GEN-12: CEFR Consistency Check ---
+  ✅ PASS: 100% CEFR consistency ("B1+ Academic").
+
+--- G-GEN-13: Readability Floor/Ceiling ---
+  ℹ️ CLIL Flesch-Kincaid: FK Grade 5.5 (ASL: 11.2, ASW: 1.42) [CHƯA CHỐT NGƯỠNG].
+
+--- G-GEN-14: Provenance Integrity ---
+  ℹ️ Source B Excerpt length: 468 bytes.
+
+--- G-GEN-15: CLIL-Vocab Curricular Integration ---
+  ❌ FAIL: CLIL-Vocab coverage below threshold! Found: 3/20 (15% < 60%).
+     - Matched (3): [signpost, cue, audience]
+     - Missing (17): [transition, rhetoric, delivery, articulate, outline, gesture, pacing, emphasis, rehearse, intonation, verbal, projection, elocution, summary, structure, keynote, oratory]
+
+--- G-GEN-16: Lexical Repetition & Coarse ESL Anomaly Detection ---
+  ✅ PASS: 0 coarse ESL anomalies detected.
+
+📋 KẾT LUẬN TUẦN 126:
+  ⛔ THU HỒI "Giữ nguyên/Ready" -> KHÔNG MERGE. Lý do: G-GEN-15 FAIL (Vocab coverage chỉ đạt 3/20 = 15% < 60%).
+
+--------------------------------------------------------------------------------------------------------
+📌 TUẦN 127 (docs/agent_artifacts/staging/week_127)
+--------------------------------------------------------------------------------------------------------
+
+--- G-GEN-11: Multi-Axis Pedagogical Fidelity Check ---
+  ✅ Axis (i) PASS: Theme match: "Rebuttal Practice" === "Rebuttal Practice".
+  ℹ️ Axis (ii): CLIL Title: "Rebuttal Practice: Disagreeing with Facts and Politeness" (Blueprint: "Rebuttal Practice").
+  ✅ Axis (iii) PASS: Singapore Math items: 5/5.
+  ✅ Axis (iv) PASS: All 5 blueprint syllabus words covered.
+
+--- G-GEN-12: CEFR Consistency Check ---
+  ✅ PASS: 100% CEFR consistency ("B1+ Academic").
+
+--- G-GEN-13: Readability Floor/Ceiling ---
+  ℹ️ CLIL Flesch-Kincaid: FK Grade 8.8 (ASL: 14.4, ASW: 1.59) [CHƯA CHỐT NGƯỠNG].
+
+--- G-GEN-14: Provenance Integrity ---
+  ℹ️ Source B Excerpt length: 549 bytes.
+
+--- G-GEN-15: CLIL-Vocab Curricular Integration ---
+  ❌ FAIL: CLIL-Vocab coverage below threshold! Found: 8/20 (40% < 60%).
+     - Matched (8): [disagree, counter, point, false, true, rebuttal, evidence, rebut]
+     - Missing (12): [refute, concede, oppose, objection, contradict, fallacious, premise, flaw, standpoint, contend, disprove, validity]
+
+--- G-GEN-16: Lexical Repetition & Coarse ESL Anomaly Detection ---
+  ✅ PASS: 0 coarse ESL anomalies detected.
+
+📋 KẾT LUẬN TUẦN 127:
+  ⛔ THU HỒI "Giữ nguyên/Ready" -> KHÔNG MERGE. Lý do: G-GEN-15 FAIL (Vocab coverage chỉ đạt 8/20 = 40% < 60%).
+
+--------------------------------------------------------------------------------------------------------
+📌 TUẦN 133 (docs/agent_artifacts/staging/week_133)
+--------------------------------------------------------------------------------------------------------
+
+--- G-GEN-11: Multi-Axis Pedagogical Fidelity Check ---
+  ✅ Axis (i) PASS: Theme match: "Deep Research & Data" === "Deep Research & Data".
+  ℹ️ Axis (ii): CLIL Title: "Deep Research and Data: Citing Facts with Care" (Blueprint: "Deep Research & Data & Using data as evidence").
+  ✅ Axis (iii) PASS: Singapore Math items: 5/5.
+  ✅ Axis (iv) PASS: All 8 blueprint syllabus words covered.
+
+--- G-GEN-12: CEFR Consistency Check ---
+  ✅ PASS: 100% CEFR consistency ("B1+ Academic").
+
+--- G-GEN-13: Readability Floor/Ceiling ---
+  ℹ️ CLIL Flesch-Kincaid: FK Grade 8.5 (ASL: 11.3, ASW: 1.67) [CHƯA CHỐT NGƯỠNG].
+
+--- G-GEN-14: Provenance Integrity ---
+  ℹ️ Source B Excerpt length: 1013 bytes.
+
+--- G-GEN-15: CLIL-Vocab Curricular Integration ---
+  ❌ FAIL: CLIL-Vocab coverage below threshold! Found: 9/20 (45% < 60%).
+     - Matched (9): [statistic, percent, study, data, majority, minority, survey, population, findings]
+     - Missing (11): [sample, quantitative, methodology, correlation, variable, analyze, respondent, metric, empirical, hypothesis, frequency]
+
+--- G-GEN-16: Lexical Repetition & Coarse ESL Anomaly Detection ---
+  ❌ FAIL: Coarse ESL grammatical anomaly detected!
+     - Phát hiện cụm từ phi chuẩn: "majority of seventy percent" (Ví dụ trong reading_hub.js dòng 35: "a majority of seventy percent" — lỗi sai diễn đạt ESL nghiêm trọng).
+     - Phát hiện cụm từ phi chuẩn: "minority of fifteen percent" (Ví dụ trong reading_hub.js dòng 35: "a majority of seventy percent" — lỗi sai diễn đạt ESL nghiêm trọng).
+
+📋 KẾT LUẬN TUẦN 133:
+  ⛔ THU HỒI "Giữ nguyên/Ready" -> KHÔNG MERGE. Lý do: G-GEN-15 FAIL (Vocab coverage 9/20 = 45% < 60%) và G-GEN-16 FAIL ("a majority of seventy percent" ở reading_hub.js:35).
+
+--------------------------------------------------------------------------------------------------------
+📌 TUẦN 134 (docs/agent_artifacts/staging/week_134)
+--------------------------------------------------------------------------------------------------------
+
+--- G-GEN-11: Multi-Axis Pedagogical Fidelity Check ---
+  ✅ Axis (i) PASS: Theme match: "Identifying Fallacies" === "Identifying Fallacies".
+  ℹ️ Axis (ii): CLIL Title: "Identifying Fallacies: Spotting Faulty Reasoning" (Blueprint: "Identifying Fallacies & Critical Thinking/Logic").
+  ❌ Axis (iii) FAIL: W134 Geometry: Triangles structural failure! Valid multi-step triangle problems: 0/5 (Field 'problemText' is undefined in all 5 items; used 'question' instead, lacking multi-step chain).
+  ✅ Axis (iv) PASS: All 8 blueprint syllabus words covered.
+
+--- G-GEN-12: CEFR Consistency Check ---
+  ✅ PASS: 100% CEFR consistency ("B1+ Academic").
+
+--- G-GEN-13: Readability Floor/Ceiling ---
+  ℹ️ CLIL Flesch-Kincaid: FK Grade 7.9 (ASL: 12, ASW: 1.59) [CHƯA CHỐT NGƯỠNG].
+
+--- G-GEN-14: Provenance Integrity ---
+  ℹ️ Source B Excerpt length: 993 bytes.
+
+--- G-GEN-15: CLIL-Vocab Curricular Integration ---
+  ✅ PASS: CLIL-Vocab coverage: 13/20 (65% >= 60%).
+
+--- G-GEN-16: Lexical Repetition & Coarse ESL Anomaly Detection ---
+  ✅ PASS: 0 coarse ESL anomalies detected.
+
+📋 KẾT LUẬN TUẦN 134:
+  ⛔ KHÔNG MERGE. Lý do: Axis (iii) FAIL (Toán Geometry: Triangles lỗi 0/5 bài đạt chuẩn cấu trúc AST 'problemText').
+
+========================================================================================================
+📊 BÁO CÁO TỔNG HỢP WAVE 3: 100% CẢ 4 TUẦN (W126, W127, W133, W134) ĐỀU FAIL GATES VÀ BỊ CHẶN MERGE
+========================================================================================================
