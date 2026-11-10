@@ -165,3 +165,4 @@ for (const w of [33, 34]) {
   const r = auditWeekGate11V2(w);
   console.log(`W${w}: Axis (i) Theme: ${r.axis1} [BP: "${r.bpTheme}" vs RH: "${r.rhTheme}"] | Axis (ii): ${r.axis2} | Axis (iii): ${r.axis3} | Axis (iv): ${r.axis4} (${r.axis4Detail}) | Overall: ${r.overall}`);
 }
+

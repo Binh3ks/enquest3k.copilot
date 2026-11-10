@@ -45,5 +45,6 @@
     "GATE_13_READABILITY_CEILING",
     "GATE_14_PROVENANCE_INTEGRITY"
   ],
-  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+  "review_status": "HOLD_PENDING_OWNER_DECISION",
+  "hold_reason": "Divergence between Source A ('The Industrial Revolution') and Source B ('Space Exploration vs. Earth Fix'). Staged files retained on disk; zero production merge pending Owner strategic directive."
 }

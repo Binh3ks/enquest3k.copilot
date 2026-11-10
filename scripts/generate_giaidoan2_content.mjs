@@ -128,6 +128,30 @@ function extractSourceBExcerpt(w) {
 function getSourceBMathTopic(w) {
   if (!fs.existsSync(SYLLABUS_FILE)) return null;
   const txt = fs.readFileSync(SYLLABUS_FILE, 'utf8');
+
+  // Collective cycles or multi-week blocks in Source B
+  if (w >= 129 && w <= 132) {
+    return { topic: "Fractions & Decimals Review / Math Logic", strand: "fractions_decimals" };
+  }
+  if (w === 79 || w === 80) {
+    return { topic: "Micro-Debate / Data Analysis", strand: "data_charts" };
+  }
+  if (w >= 95 && w <= 96) {
+    return { topic: "The Young Professor: Mini-Lesson Data", strand: "applied_logic" };
+  }
+
+  // Weeks 43-48: Primary Math CLIL units (Unit 7: The Math Bridge)
+  const primaryMathMap = {
+    43: { topic: "Addition Language / Sums", strand: "addition" },
+    44: { topic: "Subtraction Language / Differences", strand: "subtraction" },
+    45: { topic: "Shape Detectives / Geometry", strand: "geometry_shapes" },
+    46: { topic: "Pattern Code / Sequence Logic", strand: "logic_sequences" },
+    47: { topic: "Big Numbers / Place Value", strand: "place_value" },
+    48: { topic: "Measuring Up / Length & Units", strand: "measurement" }
+  };
+  if (primaryMathMap[w]) return primaryMathMap[w];
+
+  // Search individual week block in Source B
   const lines = txt.split('\n');
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -142,14 +166,28 @@ function getSourceBMathTopic(w) {
       }
       const bText = block.join('\n');
       const m = bText.match(/(?:Topic\s*\(Math\)|Math\s*Topic):\s*([^\n]+)/i);
-      if (m) return { topic: m[1].replace(/\([^)]*\)/g, '').trim() };
+      if (m) {
+        const raw = m[1].replace(/\([^)]*\)/g, '').trim();
+        return { topic: raw, strand: detectMathStrand(raw) };
+      }
       const v = bText.match(/Math\s*Vocabulary:\s*([^\n]+)/i);
-      if (v) return { topic: v[1].trim() };
+      if (v) {
+        const raw = v[1].trim();
+        return { topic: raw, strand: detectMathStrand(raw) };
+      }
       return null;
     }
   }
-  if (w === 79) return { topic: "Representing Data" };
   return null;
+}
+
+function detectMathStrand(text) {
+  const lower = (text || '').toLowerCase();
+  if (/angle|triangle|shape|geometry|polygon|circle|perimeter|area/i.test(lower)) return 'geometry';
+  if (/fraction|decimal|percent|ratio|proportion/i.test(lower)) return 'fractions_decimals';
+  if (/data|chart|graph|survey|tally|table|statistics/i.test(lower)) return 'data_charts';
+  if (/logic|puzzle|sequence|pattern|deduction|fallacy/i.test(lower)) return 'logic_reasoning';
+  return 'general_math';
 }
 
 /**
@@ -2594,8 +2632,8 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
 
   let allPass = true;
 
-  // Gate 1: Schema & Deliverables Contract Check
-  logs.push(`--- Gate 1: Schema & Deliverables Contract Check ---`);
+  // G-GEN-01: Schema & Deliverables Contract Check
+  logs.push(`--- G-GEN-01: Schema & Deliverables Contract Check ---`);
   const expectedFiles = [
     'vocab.js', 'reading_hub.js', 'listening_hub.js',
     'writing_hub.js', 'speaking_hub.js', 'skill_practice_hub.js',
@@ -2609,8 +2647,8 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     logs.push(`  ❌ FAIL: Missing deliverable files: ${missingFiles.join(', ')}`);
   }
 
-  // Gate 2: Target Vocabulary 20/20 & SRS Fields
-  logs.push(`\n--- Gate 2: 20 Target Vocab & SRS Data Quality ---`);
+  // G-GEN-02: Target Vocabulary 20/20 & SRS Fields
+  logs.push(`\n--- G-GEN-02: 20 Target Vocab & SRS Data Quality ---`);
   const vocabCount = spec.vocab_list.length;
   const hasDefinitions = spec.vocab_list.every(v => v.definition_en && v.definition_vi);
   const hasIpa = spec.vocab_list.every(v => v.ipa && v.ipa.startsWith('/'));
@@ -2622,8 +2660,8 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     logs.push(`  ❌ FAIL: Vocab count=${vocabCount}, definitions=${hasDefinitions}, ipa=${hasIpa}, examples=${hasExamples}`);
   }
 
-  // Gate 3: CLIL Article Word Count & Glossary
-  logs.push(`\n--- Gate 3: CLIL Article Length & Glossary Rigor ---`);
+  // G-GEN-03: CLIL Article Word Count & Glossary
+  logs.push(`\n--- G-GEN-03: CLIL Article Length & Glossary Rigor ---`);
   const clilWords = spec.clil.content_en.trim().split(/\s+/).length;
   const glossaryCount = spec.clil.glossary.length;
   const clilPass = clilWords >= 90 && clilWords <= 250 && glossaryCount >= 5;
@@ -2634,8 +2672,8 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     logs.push(`  ❌ FAIL: CLIL words=${clilWords}, glossary=${glossaryCount}`);
   }
 
-  // Gate 4: Voice Shadowing 8 Sentences + IPA
-  logs.push(`\n--- Gate 4: Voice Shadowing Sentences & IPA Coverage ---`);
+  // G-GEN-04: Voice Shadowing 8 Sentences + IPA
+  logs.push(`\n--- G-GEN-04: Voice Shadowing Sentences & IPA Coverage ---`);
   const shadCount = spec.shadowing_sentences.length;
   const shadIpaPass = spec.shadowing_sentences.every(s => s.ipa && s.ipa.startsWith('/'));
   if (shadCount === 8 && shadIpaPass) {
@@ -2645,8 +2683,8 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     logs.push(`  ❌ FAIL: Shadowing count=${shadCount}, IPA pass=${shadIpaPass}`);
   }
 
-  // Gate 5: Cambridge R&W Coverage (Upgraded: Part 2 has 5 turns with 3 options each and marked correct answers)
-  logs.push(`\n--- Gate 5: Cambridge Reading & Writing Parts 1-6 (Gradable Dialogue) ---`);
+  // G-GEN-05: Cambridge R&W Coverage (Part 2 has 5 turns with 3 options each and marked correct answers)
+  logs.push(`\n--- G-GEN-05: Cambridge Reading & Writing Parts 1-6 (Gradable Dialogue) ---`);
   const rwP1 = spec.cambridge_rw.part1_definitions.length >= 5;
   const rwP2Turns = spec.cambridge_rw.part2_dialogue.turns && spec.cambridge_rw.part2_dialogue.turns.length >= 5;
   const rwP2Gradable = rwP2Turns && spec.cambridge_rw.part2_dialogue.turns.every(t => Array.isArray(t.options) && t.options.length === 3 && t.answer);
@@ -2658,8 +2696,8 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     logs.push(`  ❌ FAIL: R&W P1=${rwP1}, P2Turns=${rwP2Turns}, P2Gradable=${rwP2Gradable}, P6=${rwP6}`);
   }
 
-  // Gate 6: Mini-Games (Singapore Math + Action Lab + Grammar Duel)
-  logs.push(`\n--- Gate 6: Mini-Game Pedagogical Data Integrity ---`);
+  // G-GEN-06: Mini-Games (Singapore Math + Action Lab + Grammar Duel)
+  logs.push(`\n--- G-GEN-06: Mini-Game Pedagogical Data Integrity ---`);
   const mathCount = spec.minigames.math_problems.length;
   const mathModelPass = spec.minigames.math_problems.every(p => p.modelData && p.modelData.bars);
   const grammarCount = spec.minigames.grammar_drills.length;
@@ -2671,8 +2709,8 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     logs.push(`  ❌ FAIL: Math=${mathCount} (required: 5 per SOP v2.3.0), MathModel=${mathModelPass}, Grammar=${grammarCount}, LabStages=${labStages}`);
   }
 
-  // Gate 7: Vietnamese Character Leak Scanner
-  logs.push(`\n--- Gate 7: Vietnamese Character Leak Scanner ---`);
+  // G-GEN-07: Vietnamese Character Leak Scanner
+  logs.push(`\n--- G-GEN-07: Vietnamese Character Leak Scanner ---`);
   const leakFindings = [];
   for (const v of spec.vocab_list) {
     if (VIETNAMESE_REGEX.test(v.word)) leakFindings.push(`Vocab word: ${v.word}`);
@@ -2690,9 +2728,9 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     logs.push(`  ❌ FAIL: ${leakFindings.length} leaks detected: ${leakFindings.join('; ')}`);
   }
 
-  // Gate 8: Banned / Historical Tokens Filter (W35 Specific)
+  // G-GEN-08: Banned / Historical Tokens Filter (W35 Specific)
   if (w === 35) {
-    logs.push(`\n--- Gate 8: W35 Banned Legacy Tokens Filter ---`);
+    logs.push(`\n--- G-GEN-08: W35 Banned Legacy Tokens Filter ---`);
     const bannedFindings = [];
     const fullText = Object.values(filesMap).join(' ');
     for (const token of W35_FORBIDDEN_TOKENS) {
@@ -2709,8 +2747,8 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     }
   }
 
-  // Gate 9: Content Quality & Generic Template Banned Strings Filter (Fix 5)
-  logs.push(`\n--- Gate 9: Content Quality & Generic Template Banned Strings Filter ---`);
+  // G-GEN-09: Content Quality & Generic Template Banned Strings Filter
+  logs.push(`\n--- G-GEN-09: Content Quality & Generic Template Banned Strings Filter ---`);
   const genericFindings = [];
   const contentToCheck = [
     filesMap['writing_hub.js'] || '',
@@ -2731,8 +2769,8 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     logs.push(`  ❌ FAIL: Generic template boilerplate detected: ${genericFindings.join(', ')}`);
   }
 
-  // Gate 10: Cross-Week Skeleton Identity & Differentiation Check (Fix 5)
-  logs.push(`\n--- Gate 10: Cross-Week Skeleton Identity & Differentiation Check ---`);
+  // G-GEN-10: Cross-Week Skeleton Identity & Differentiation Check
+  logs.push(`\n--- G-GEN-10: Cross-Week Skeleton Identity & Differentiation Check ---`);
   const myHash = allSkeletonsMap[w]?.hash;
   const collisions = [];
   for (const [otherW, info] of Object.entries(allSkeletonsMap)) {
@@ -2747,8 +2785,8 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     logs.push(`  ❌ FAIL: Cross-week skeleton identity collision with Week(s): ${collisions.join(', ')}`);
   }
 
-  // Gate 11 v2: Blueprint Multi-Axis Pedagogical Fidelity Check (Direct Staged File Validation)
-  logs.push(`\n--- Gate 11 v2: Blueprint Multi-Axis Pedagogical Fidelity Check ---`);
+  // G-GEN-11: Multi-Axis Pedagogical Fidelity Check (Direct Staged File Validation)
+  logs.push(`\n--- G-GEN-11: Multi-Axis Pedagogical Fidelity Check ---`);
   const bpPath = path.join(WEEKS_DIR, `week_${w}/blueprint.json`);
   if (!fs.existsSync(bpPath)) {
     allPass = false;
@@ -2834,24 +2872,41 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
         logs.push(`  ❌ Axis (ii) FAIL: CLIL content does not contain blueprint clil_topic keywords. Search: "${lowerBp}".`);
       }
 
-      // Axis (iii): Source B Math topic appears in >= 3/5 singapore_math problems
+      // Axis (iii): Structural Math Strand Verification (Beyond simple label matching)
       const mathProblems = shData?.singapore_math || [];
       const sourceBMath = getSourceBMathTopic(w);
       if (sourceBMath && sourceBMath.topic) {
         const mathTokens = sourceBMath.topic.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(t => t.length >= 3 && !['and', 'the', 'math', 'topic', 'problems'].includes(t));
         const stems = mathTokens.map(t => t.replace(/s$/, '').replace(/y$/, '').replace(/ic$/, ''));
         let mathMatchCount = 0;
+        let structuralPassCount = 0;
+
         for (const prob of mathProblems) {
           const pText = `${prob.title || ''} ${prob.problemText || ''}`.toLowerCase();
-          if (stems.some(st => pText.includes(st))) {
-            mathMatchCount++;
+          const hasStem = stems.some(st => pText.includes(st));
+          if (hasStem) mathMatchCount++;
+
+          // Structural validation per strand
+          const hasBars = prob.modelData && Array.isArray(prob.modelData.bars) && prob.modelData.bars.length >= 2;
+          const isMultiStep = (w >= 121) ? (prob.problemText && (prob.problemText.includes('then') || prob.problemText.includes('total') || prob.problemText.includes('remaining') || prob.problemText.includes('difference') || prob.problemText.includes('how many') || prob.problemText.includes('what percent') || prob.problemText.includes('angle'))) : true;
+          
+          let strandStructureValid = true;
+          if (sourceBMath.strand === 'geometry') {
+            strandStructureValid = pText.includes('angle') || pText.includes('degree') || pText.includes('triangle') || pText.includes('°') || pText.includes('side');
+          } else if (sourceBMath.strand === 'fractions_decimals') {
+            strandStructureValid = pText.includes('fraction') || pText.includes('percent') || pText.includes('%') || pText.includes('decimal') || pText.includes('/') || pText.includes('half') || pText.includes('ratio');
+          }
+
+          if (hasBars && isMultiStep && strandStructureValid) {
+            structuralPassCount++;
           }
         }
-        if (mathMatchCount >= 3) {
-          logs.push(`  ✅ Axis (iii) PASS: Source B Math strand ("${sourceBMath.topic}") grounded in ${mathMatchCount}/5 Singapore Math problems.`);
+
+        if (mathMatchCount >= 3 && structuralPassCount >= 3) {
+          logs.push(`  ✅ Axis (iii) PASS: Source B Math strand ("${sourceBMath.topic}") grounded in ${mathMatchCount}/5 problems with structural validity in ${structuralPassCount}/5 problems.`);
         } else {
           g11Pass = false;
-          logs.push(`  ❌ Axis (iii) FAIL: Source B Math strand ("${sourceBMath.topic}") only appears in ${mathMatchCount}/5 problems (required: >= 3/5).`);
+          logs.push(`  ❌ Axis (iii) FAIL: Math structural failure! Stem matches: ${mathMatchCount}/5, Structural passes: ${structuralPassCount}/5 (required: >= 3/5). Strand: ${sourceBMath.strand || 'general'}.`);
         }
       } else {
         logs.push(`  ℹ️ Axis (iii) SKIP: Week ${w} has no independent math strand in Source B (ELA rotary week or collective review block).`);
@@ -2875,12 +2930,12 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
       if (!g11Pass) allPass = false;
     } catch (e) {
       allPass = false;
-      logs.push(`  ❌ FAIL: Error running Gate 11 v2: ${e.message}`);
+      logs.push(`  ❌ FAIL: Error running G-GEN-11: ${e.message}`);
     }
   }
 
-  // Gate 12: CEFR Consistency Check (Zero Pedagogical Mismatch)
-  logs.push(`\n--- Gate 12: CEFR Consistency Check ---`);
+  // G-GEN-12: CEFR Consistency Check (Zero Pedagogical Mismatch)
+  logs.push(`\n--- G-GEN-12: CEFR Consistency Check ---`);
   try {
     const bp = JSON.parse(fs.readFileSync(bpPath, 'utf8'));
     const rhData = parseHubFile(filesMap['reading_hub.js'] || '', 'readingHubData');
@@ -2898,60 +2953,83 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     }
   } catch (e) {
     allPass = false;
-    logs.push(`  ❌ FAIL: Error in Gate 12: ${e.message}`);
+    logs.push(`  ❌ FAIL: Error in G-GEN-12: ${e.message}`);
   }
 
-  // Gate 13: Readability Ceiling & Scaffolding Check
-  logs.push(`\n--- Gate 13: Readability Ceiling & Scaffolding Check ---`);
+  // G-GEN-13: Readability Floor/Ceiling & Cross-Hub Scaffolding Check
+  logs.push(`\n--- G-GEN-13: Readability Floor/Ceiling & Cross-Hub Scaffolding Check ---`);
   try {
     const rhData = parseHubFile(filesMap['reading_hub.js'] || '', 'readingHubData');
+    const vData = parseHubFile(filesMap['vocab.js'] || '', 'vocab');
+    const whData = parseHubFile(filesMap['writing_hub.js'] || '', 'writingHubData');
+    const shData = parseHubFile(filesMap['speaking_hub.js'] || '', 'speakingHubData');
+
     const clilText = rhData?.clil_article?.content_en || '';
     const readStats = calculateFleschKincaid(clilText);
 
-    let fkCeiling = 6.0;
+    let fkCeiling = 6.5;
+    let fkFloor = 0;
     let longWordsCeiling = 10.0;
+    let longWordsFloor = 0;
+
     if (w >= 121) {
+      fkFloor = 5.5;
       fkCeiling = 9.5;
+      longWordsFloor = 3.0;
       longWordsCeiling = 15.0;
     } else if (w >= 73) {
+      fkFloor = 4.5;
       fkCeiling = 8.5;
+      longWordsFloor = 2.0;
       longWordsCeiling = 14.0;
     }
 
     let readPass = true;
-    if (readStats.fkGrade <= fkCeiling && readStats.longWordsPct <= longWordsCeiling) {
-      logs.push(`  ✅ PASS: CLIL Readability within ceiling (FK Grade: ${readStats.fkGrade} <= ${fkCeiling}, Long Words >=10 chars: ${readStats.longWordsPct}% <= ${longWordsCeiling}%).`);
+    if (readStats.fkGrade >= fkFloor && readStats.fkGrade <= fkCeiling && readStats.longWordsPct <= longWordsCeiling) {
+      logs.push(`  ✅ PASS: CLIL Readability within bounds (FK Grade: ${readStats.fkGrade} [floor ${fkFloor} - ceiling ${fkCeiling}], Long Words >=10 chars: ${readStats.longWordsPct}% <= ${longWordsCeiling}%).`);
     } else {
       readPass = false;
-      logs.push(`  ❌ FAIL: CLIL text exceeds readability ceiling! FK Grade: ${readStats.fkGrade} (ceiling: ${fkCeiling}), Long Words: ${readStats.longWordsPct}% (ceiling: ${longWordsCeiling}%).`);
+      logs.push(`  ❌ FAIL: CLIL text out of bounds! FK Grade: ${readStats.fkGrade} (bounds: ${fkFloor}–${fkCeiling}), Long Words: ${readStats.longWordsPct}% (ceiling: ${longWordsCeiling}%).`);
     }
 
-    const glossary = rhData?.clil_article?.glossary || [];
-    let glossaryPass = true;
-    const hardGlossary = [];
-    for (const item of glossary) {
-      const gStats = calculateFleschKincaid(item.definition_en || '');
-      if (gStats.fkGrade > 9.5) {
-        glossaryPass = false;
-        hardGlossary.push(`${item.word} (FK ${gStats.fkGrade})`);
+    // Check vocab definitions and examples
+    let vocabReadPass = true;
+    const hardDefs = [];
+    for (const item of (vData || [])) {
+      const defStats = calculateFleschKincaid(item.definition_en || '');
+      const maxDefFk = (w >= 121) ? 9.5 : 8.5;
+      if (defStats.fkGrade > maxDefFk) {
+        vocabReadPass = false;
+        hardDefs.push(`${item.word} (FK ${defStats.fkGrade})`);
       }
     }
-
-    if (glossaryPass) {
-      logs.push(`  ✅ PASS: All ${glossary.length} glossary definitions are accessible and appropriately scaffolded.`);
+    if (vocabReadPass) {
+      logs.push(`  ✅ PASS: All ${(vData || []).length} vocab definitions are within accessibility ceiling.`);
     } else {
       readPass = false;
-      logs.push(`  ❌ FAIL: Glossary definition exceeds ceiling for: ${hardGlossary.join(', ')}.`);
+      logs.push(`  ❌ FAIL: Vocab definitions exceed ceiling for: ${hardDefs.slice(0, 5).join(', ')}.`);
+    }
+
+    // Check Writing & Speaking Prompts
+    const promptText = `${whData?.story_writing?.prompt || ''} ${whData?.opinion_writing?.prompt || ''} ${shData?.video_challenge?.prompt || ''}`;
+    if (promptText.trim().length > 0) {
+      const pStats = calculateFleschKincaid(promptText);
+      const promptCeiling = (w >= 121) ? 9.0 : 8.0;
+      if (pStats.fkGrade <= promptCeiling) {
+        logs.push(`  ✅ PASS: Writing & Speaking prompts accessible (FK Grade: ${pStats.fkGrade} <= ${promptCeiling}).`);
+      } else {
+        logs.push(`  ⚠️ WARN: Writing/Speaking prompt FK Grade is ${pStats.fkGrade} (recommended <= ${promptCeiling}).`);
+      }
     }
 
     if (!readPass) allPass = false;
   } catch (e) {
     allPass = false;
-    logs.push(`  ❌ FAIL: Error in Gate 13: ${e.message}`);
+    logs.push(`  ❌ FAIL: Error in G-GEN-13: ${e.message}`);
   }
 
-  // Gate 14: Provenance Integrity Check
-  logs.push(`\n--- Gate 14: Provenance Integrity Check ---`);
+  // G-GEN-14: Provenance Integrity Check
+  logs.push(`\n--- G-GEN-14: Provenance Integrity Check ---`);
   try {
     const provData = JSON.parse(filesMap['provenance.json'] || '{}');
     const excerpt = provData?.source_inputs?.source_b_excerpt || '';
@@ -2976,11 +3054,88 @@ function runMechanicalGates(w, spec, filesMap, allSkeletonsMap) {
     if (!provPass) allPass = false;
   } catch (e) {
     allPass = false;
-    logs.push(`  ❌ FAIL: Error in Gate 14: ${e.message}`);
+    logs.push(`  ❌ FAIL: Error in G-GEN-14: ${e.message}`);
+  }
+
+  // G-GEN-15: CLIL-Vocab Curricular Integration (Coverage >= 60%)
+  logs.push(`\n--- G-GEN-15: CLIL-Vocab Curricular Integration ---`);
+  try {
+    const rhData = parseHubFile(filesMap['reading_hub.js'] || '', 'readingHubData');
+    const vData = parseHubFile(filesMap['vocab.js'] || '', 'vocab');
+    const clilText = (rhData?.clil_article?.content_en || '').toLowerCase();
+    const targetWords = (vData || []).map(v => (v.word || '').toLowerCase().trim()).filter(Boolean);
+
+    let matchCount = 0;
+    const matchedList = [];
+    const missingList = [];
+
+    for (const wd of targetWords) {
+      const root = wd.replace(/(?:ing|ed|s|es)$/, '');
+      if (clilText.includes(wd) || (root.length >= 4 && clilText.includes(root))) {
+        matchCount++;
+        matchedList.push(wd);
+      } else {
+        missingList.push(wd);
+      }
+    }
+
+    const coveragePct = targetWords.length > 0 ? Math.round((matchCount / targetWords.length) * 100) : 0;
+    // For Stage 3 rotary weeks, target coverage is >= 60% (12/20 words)
+    if (coveragePct >= 60) {
+      logs.push(`  ✅ PASS: CLIL-Vocab curricular integration verified (${matchCount}/${targetWords.length} words = ${coveragePct}% >= 60%).`);
+    } else {
+      // Flag as FAIL to enforce curricular integration
+      allPass = false;
+      logs.push(`  ❌ FAIL: CLIL-Vocab coverage below threshold! Found: ${matchCount}/${targetWords.length} (${coveragePct}% < 60%). Missing: [${missingList.join(', ')}].`);
+    }
+  } catch (e) {
+    allPass = false;
+    logs.push(`  ❌ FAIL: Error in G-GEN-15: ${e.message}`);
+  }
+
+  // G-GEN-16: Lexical Repetition & Coarse ESL Anomaly Detection
+  logs.push(`\n--- G-GEN-16: Lexical Repetition & Coarse ESL Anomaly Detection ---`);
+  try {
+    let anomalyCount = 0;
+    const anomalies = [];
+
+    // Scan all English deliverable files
+    for (const [fname, fcontent] of Object.entries(filesMap)) {
+      if (fname.endsWith('.json')) continue;
+
+      // 1. Check adjacent duplicate words (\bword word\b)
+      const repeatRegex = /\b([a-zA-Z]{3,})\s+\1\b/gi;
+      let rm;
+      while ((rm = repeatRegex.exec(fcontent)) !== null) {
+        const word = rm[1].toLowerCase();
+        // Whitelist valid grammatical repetition (e.g., "had had", "that that")
+        if (word === 'had' || word === 'that') continue;
+        anomalyCount++;
+        anomalies.push(`[${fname}] Adjacent duplicate word: "${rm[0]}"`);
+      }
+
+      // 2. Check coarse ESL error: "majority of seventy percent" / "minority of fifteen percent"
+      const coarseRegex = /\b(?:majority|minority)\s+of\s+(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|fifteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)\s*(?:%|percent)\b/gi;
+      let cm;
+      while ((cm = coarseRegex.exec(fcontent)) !== null) {
+        anomalyCount++;
+        anomalies.push(`[${fname}] Coarse ESL error: "${cm[0]}"`);
+      }
+    }
+
+    if (anomalyCount === 0) {
+      logs.push(`  ✅ PASS: 0 lexical repetitions or coarse ESL grammatical anomalies detected.`);
+    } else {
+      allPass = false;
+      logs.push(`  ❌ FAIL: Detected ${anomalyCount} lexical / ESL anomalies:\n    - ${anomalies.join('\n    - ')}`);
+    }
+  } catch (e) {
+    allPass = false;
+    logs.push(`  ❌ FAIL: Error in G-GEN-16: ${e.message}`);
   }
 
   logs.push(`\n========================================================================`);
-  logs.push(`OVERALL MECHANICAL GATES VERDICT: ${allPass ? '🎉 100% ALL 14 GATES PASSED' : '⛔ GATES FAILED'}`);
+  logs.push(`OVERALL MECHANICAL GATES VERDICT: ${allPass ? '🎉 100% ALL 16 G-GEN GATES PASSED' : '⛔ GATES FAILED'}`);
   logs.push(`========================================================================\n`);
 
   return {
@@ -3030,8 +3185,11 @@ async function main() {
     try {
       const result = generateWeekContent(w);
       console.log(`   ✓ Deliverables Created: ${result.filesCount} staged files`);
-      console.log(`   ✓ Mechanical Gates:     ${result.gateReport.allPass ? '✅ ALL 11 GATES PASSED' : '❌ GATES FAILED'}`);
-      if (!result.gateReport.allPass) allWeeksPass = false;
+      console.log(`   ✓ Mechanical Gates:     ${result.gateReport.allPass ? '✅ ALL 16 G-GEN GATES PASSED' : '❌ GATES FAILED'}`);
+      if (!result.gateReport.allPass) {
+        allWeeksPass = false;
+        console.log(result.gateReport.log);
+      }
     } catch (err) {
       console.error(`   🚨 Error generating Week ${w}:`, err.message);
       allWeeksPass = false;

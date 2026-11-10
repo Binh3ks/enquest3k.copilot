@@ -165,8 +165,38 @@ function extractBilingualField(text) {
 // ── 3. PARSE SOURCE B: MASTER 3-YEAR SYLLABUS ───────────────────────────────
 function parseKhungCT(weekNum, txtContent) {
   // Regex to match block for week N
-  const weekBlockRegex = new RegExp(`•\\s*Week\\s*${weekNum}\\s*:\\s*([^\\n]+)([\\s\\S]*?)(?=•\\s*Week|🟢|🔵|🟣|Phase|Block|$)`, 'i');
-  const match = txtContent.match(weekBlockRegex);
+  const weekBlockRegex = new RegExp(`•\\s*Week\\s*${weekNum}\\s*:\\s*([^\\n]+)([\\s\\S]*?)(?=•\\s*Weeks?\\s*\\d+|🟢|🔵|🟣|Phase|Block|$)`, 'i');
+  let match = txtContent.match(weekBlockRegex);
+
+  // Multi-week range fallback (e.g. "• Weeks 79-80: Review & Micro-Debate 2", "• Weeks 129-132:")
+  if (!match) {
+    const rangeRegex = /•\s*Weeks?\s*(\d+)\s*-\s*(\d+)\s*:\s*([^\n]+)([\s\S]*?)(?=•\s*Weeks?\s*\d+|🟢|🔵|🟣|Phase|Block|$)/gi;
+    let rm;
+    let candidates = [];
+    while ((rm = rangeRegex.exec(txtContent)) !== null) {
+      const start = parseInt(rm[1], 10);
+      const end = parseInt(rm[2], 10);
+      if (weekNum >= start && weekNum <= end) {
+        const rawTitle = rm[3].trim();
+        const isOverviewHeader = /Content\s*\(Unit/i.test(rawTitle);
+        candidates.push({
+          start,
+          end,
+          span: end - start + 1,
+          isOverviewHeader,
+          match: [rm[0], rawTitle, rm[4]]
+        });
+      }
+    }
+
+    if (candidates.length > 0) {
+      candidates.sort((a, b) => {
+        if (a.isOverviewHeader !== b.isOverviewHeader) return a.isOverviewHeader ? 1 : -1;
+        return a.span - b.span;
+      });
+      match = candidates[0].match;
+    }
+  }
 
   if (!match) {
     return null;
@@ -176,9 +206,9 @@ function parseKhungCT(weekNum, txtContent) {
   const body = match[2];
 
   // Extract English and Vietnamese Title
-  const viMatch = rawTitle.match(/\(Tuần\s*\d+\s*:\s*([^)]+)\)/i);
+  const viMatch = rawTitle.match(/\(Tuần\s*[\d\-]+\s*:\s*([^)]+)\)/i);
   const titleVi = viMatch ? viMatch[1].trim() : null;
-  const titleEn = rawTitle.replace(/\(Tuần\s*\d+\s*:[^)]+\)/gi, '').trim().replace(/^[.\s"']+|[.\s"']+$/g, '');
+  const titleEn = rawTitle.replace(/\(Tuần\s*[\d\-]+:[^)]+\)/gi, '').trim().replace(/^[.\s"'\*`]+|[.\s"'\*`]+$/g, '');
 
   const topicMatch = body.match(/Topic(?:\s*\([^)]*\))?:\s*([^\n]+)/i);
   const outcomeMatch = body.match(/Key Learning Outcome(?:\s*\([^)]*\))?:\s*([^\n]+)/i);

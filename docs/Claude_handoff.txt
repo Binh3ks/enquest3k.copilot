@@ -106,21 +106,40 @@ Chưa verify được: code Gate 11, production build/freeze guard (chỉ có l�
 Đã dispatch: Gate 11 v2 + CEFR/readability/provenance gates → chạy lại audit toàn bộ → mới tái sinh W79 + Wave 3.
 Mở cho Owner: W33 theme hiển thị lệch blueprint (giữ frozen hay không); câu hỏi "Nova" info_exchange_cards (từ R68).
 Nhắc Owner: xác nhận đã rotate API key Google TTS.
+## Round 71 — Claude QA verdict (phản biện Round 70)
+Verdict: W79 + Wave 3 (126,127,129,130,131,133,134) tiếp tục KHÔNG MERGE. W79 đặt HOLD chờ Owner.
+Ghi nhận tốt: provenance sạch (excerpt 149–905B, agent đúng); CEFR Wave 3 đồng nhất B1+ Academic; Toán W126/133/134 đúng strand; W127 blueprint sửa CEFR; push f0add432 khớp ls-remote.
+Phát hiện nghiêm trọng:
+1) Source B (W79-80) ghi "Space Exploration vs. Earth Fix" + vocab space/earth/money/spend/fix/problem/important; blueprint W79 lấy Industrial Revolution từ Source A và ghi ALIGNED (parser có thể bỏ sót mục "Weeks X-Y"). Production W79 cũ có thể đã ĐÚNG; kết luận R69 "bịa theme" cần xem lại (Claude QA nhận phần sai sót). Cần quét 156 tuần cho mục dạng khoảng.
+2) Gate 13 chỉ đo CLIL → bài đọc bị làm quá dễ (FK 5.5–9.2) trong khi vocab/examples/defs vẫn FK 13–18; CLIL chỉ chứa 2–3/20 từ mục tiêu ở W126/129/130. Không có sàn độ khó.
+3) Gate 11 trục (iii) kiểm từ khóa; Toán W126/129/131 là cộng/trừ đơn bước gắn nhãn; W130 log "SKIP math strand" mâu thuẫn báo cáo C.9.
+4) Lỗi nội dung lọt gate: "mobile mobile phone" (W129), "majority of seventy percent" (W133); W130 mất phần Florida chưa ghi nhận.
+5) Gate 11 v2 trên production: 17/19 FAIL (W73–82 chỉ 2 bài Singapore Math; W36/80/125 theme; nhiều tuần thiếu từ syllabus) — chưa phân loại thật/false-positive. Rà soát R69 "các tuần còn lại sạch" cần xem lại.
+6) 29 blueprint mâu thuẫn CEFR chưa sửa (W113–W120 nghi bug parser).
+7) D.1 (Nova/info_exchange_cards) trả lời chưa có file:dòng → chưa chấp nhận.
+8) Đặt tên gate generator trùng "14 lớp thẩm định"/Gate 11 của SOP.
+Chưa kiểm được: code Gate 11v2/12/13/14, audit script, build, freeze guard (zip chỉ có staged + manifest).
+Đã dispatch: A) điều tra nguồn Source B + quét 156 tuần; B) nâng gate (sàn/trần, coverage, toán cấu trúc, lặp từ); C) phân loại FAIL production; D) sửa blueprint CEFR; E) trả lời D.1 lại. Tái sinh chỉ sau duyệt.
+Cần Owner: (a) W79 giữ production cũ (Source B) hay Industrial Revolution (Source A)? Nhắc lại Source B > Source A. (b) W33 frozen vs blueprint — change control. (c) xác nhận rotate API key Google TTS.
 
-### Round 70 Execution & Remediation Completed (2026-11-10)
-- **Gate Upgrades Implemented:**
-  - Gate 6: Enforced exactly 5 Singapore Math items with Bar Model data (`mathCount === 5`).
-  - Gate 11 v2: 4-axis staged file validation (Strict Theme, Bilingual CLIL Grounding, Source B Math stem-match >= 3/5, Vocab anchors / [NO_ANCHOR]).
-  - Gate 12: CEFR Level consistency (`reading_hub === provenance === blueprint`).
-  - Gate 13: Readability ceiling (Stage 3 B1+: FK <= 9.5, Long Words >=10 chars <= 15%; glossary definition FK <= 9.5).
-  - Gate 14: Provenance integrity (`source_b_excerpt` <= 1536 bytes, no placeholder, `generator_agent` = "Antigravity/pipeline").
-- **Blueprint & Provenance Remediation:**
-  - W127 blueprint fixed: `cefr_level: "B1+ Academic"`, `cefr_stage: 3`.
-  - Scanned all 156 blueprints: identified 29 mismatches (old mock 5-week schedule residue & W113-W120).
-- **Remediated Staged Weeks (W79 + 7 Wave 3 Weeks):**
-  - All 8 weeks regenerated strictly with 5 Singapore Math items, 3 Action Lab stages, and B1/B1+ appropriate readability (FK 5.5 - 9.2).
-  - 100% of 14 Quality Gates PASSED across all 8 staged weeks.
-  - Production code `src/data/weeks/` untouched (except W127 blueprint CEFR flag).
-- **Verification Package & Manifest:**
-  - Created `docs/review_packages/round70_20261110.zip` and `docs/review_packages/manifest_round70.txt`.
+### Round 71 Execution & Forensic Deliverables Completed (2026-11-10)
+- **A. Nguồn sự thật (Source B Forensics):**
+  - Trích dẫn nguyên văn Source B W79-80 (Topic "Space Exploration vs. Earth Fix", lines 632-637) vs Digital Map W79 (line 170).
+  - Xác định nguyên nhân gốc parser Source B: `parseKhungCT` chỉ bắt `• Week N:`, bỏ sót hoàn toàn 8 tuần dạng khoảng (`Weeks 79-80`, `Weeks 95-96`, `Weeks 129-132`). Khi `txtData = null`, hệ thống âm thầm fallback sang Source A và gán cờ `ALIGNED`.
+  - Quét toàn bộ 156 tuần: phát hiện đúng 8 tuần dạng khoảng nói trên.
+  - Phân tích production W79 tại `cfe67e4e`: Theme lấy từ Source B ("Space Exploration vs Earth Restoration"), Grammar Review đúng Source B (Passive Voice, Comparatives, Rebuttal Intro), nhưng Vocab là 20 từ học thuật cao cấp (không chứa 7 từ cơ bản của Source B).
+  - Đặt `docs/agent_artifacts/staging/week_79/provenance.json` sang trạng thái `HOLD_PENDING_OWNER_DECISION`.
+- **B. Nâng cấp Hệ thống Gates (Đổi tên thành `G-GEN-01` .. `G-GEN-16`):**
+  - `G-GEN-11 (Axis iii)`: Kiểm tra cấu trúc Math Strand (bài toán phải đúng strand hình học/phân số/logic nhiều bước, không chỉ gán nhãn câu dẫn).
+  - `G-GEN-13`: Bổ sung SÀN độ khó (FK Floor >= 5.5, Academic words >= 3.0% cho Stage 3) và mở rộng trần/sàn sang `vocab.js` (definitions/examples), `writing_hub.js`, `speaking_hub.js`.
+  - `G-GEN-15`: Gate mới kiểm tra độ phủ Vocab trong CLIL (yêu cầu >= 60% từ mục tiêu xuất hiện trong bài đọc).
+  - `G-GEN-16`: Gate mới phát hiện lặp từ liền kề (`\bword word\b`) và cụm sai ngữ pháp thô (`majority of seventy percent`).
+- **C. Audit Production & Nợ Kỹ thuật:**
+  - Giải thích nguyên nhân FAIL Gate 11 v2 trên các tuần production: W43-48 là Unit Toán chuyên đề (tiêu đề là strand, không có bullet phụ nên parser cũ bỏ sót); W73-82 thiếu độ phủ từ vựng và chỉ có 2 bài Singapore Math (nợ kỹ thuật từ generator cũ trước SOP v2.3.0).
+- **D. Blueprint CEFR:**
+  - 29 tuần mâu thuẫn CEFR: nguyên nhân gốc W113-120 bị khuyết trong bảng Digital Map tại commit `879804e9` khiến parser fallback về A2 Flyers; các tuần còn lại là di chứng lịch mock 5 tuần cũ. Đã sửa logic `parseKhungCT` và `parseDigitalMap` trong `scripts/generate_week_blueprint.mjs`.
+- **E. Câu hỏi D.1 (Info Exchange Solo với Nova):**
+  - Trích dẫn trực tiếp file:dòng dữ liệu thật W36 (`speaking_hub.js:65-135`) và code component `InformationExchangeP2.jsx:559-573` chứng minh luồng thi 2 chiều độc lập với AI Nova.
+- **F. Đóng gói Review Package:**
+  - Đóng gói `docs/review_packages/round71_20261110.zip` và `docs/review_packages/manifest_round71.txt`.
 

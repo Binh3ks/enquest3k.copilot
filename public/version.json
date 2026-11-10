@@ -1,9 +1,9 @@
 {
-  "commit": "78b38d4224b2ee907a8a3e599e653a14d8ace1b2",
-  "git_commit": "78b38d4224b2ee907a8a3e599e653a14d8ace1b2",
-  "shortCommit": "78b38d42",
-  "message": "fix(curriculum): remediate theme-fidelity regression for W79 & Wave 3, enforce Gate 11 [multi-agent-review]",
-  "builtAt": "2026-11-10T04:11:23.957Z",
-  "build_timestamp": "2026-11-10T04:11:23.958Z",
+  "commit": "f0add43221758591b46cf5bf1ba9080e2baa1e51",
+  "git_commit": "f0add43221758591b46cf5bf1ba9080e2baa1e51",
+  "shortCommit": "f0add432",
+  "message": "fix(pipeline): enforce Gate 11 v2, remediate W79 & Wave 3 specs in staging [multi-agent-review]",
+  "builtAt": "2026-11-10T04:36:50.992Z",
+  "build_timestamp": "2026-11-10T04:36:50.992Z",
   "env": "production"
 }
