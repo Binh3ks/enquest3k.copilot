@@ -1,0 +1,28 @@
+ROUND 77 PACKAGE & COMMIT MANIFEST
+========================================================================
+Timestamp:           2026-11-11T02:29:07.227Z
+deliverables_commit: 2e1bc67c4bae2f6c849017f502c2f9e1e04f6a7b
+
+ZIP PACKAGE:
+  Path:    docs/review_packages/round77_20261111.zip
+  Size:    353201 bytes
+  SHA-256: 0da5a5dcd4b7db2fbaa70e1649137d61117c5e2d7422f2e2a89239b05557ef72
+
+RAW FORENSIC ARTIFACTS & SHA-256 HASHES:
+  a5f0c6031e27d5253bb2cffa490a5bd5dee075bfa9e26d092efc2967e4dce956  docs/agent_artifacts/round77_production_audit_raw.txt
+  08abc8100d590615577d7505f6dfc6f4b30a01cd54aa0e10299dc82718ce2716  docs/agent_artifacts/round77_mock_regulations_raw.txt
+  7f4c115de7e43d2b07c3ac141516be4283a81b9a3a871f19462e2530a823d218  docs/agent_artifacts/round77_wave3_math_forensic_raw.txt
+  1ceb3654246451f86141dc3aaa5cef05ce14406efaae673d3d4792336fe98062  docs/agent_artifacts/round76_source_b_cycles_raw.txt
+  c65deb1769a2a9f911fa3b312cf3e14d0dcf9c364566562ad7bd930ce6cc4918  docs/agent_artifacts/round76_mock_regulations_raw.txt
+  1bf36dcb048f9af634eab45e2a31dfde0817505a745f783cf8187a57b32f1602  docs/agent_artifacts/round76_production_audit_raw.txt
+  5aa8c99de134ae91d50589805020acaa4bae70d931e9aab685e1126ba30c43da  docs/agent_artifacts/round76_wave3_math_forensic_raw.txt
+  9eb320e5468abab0159a2226247823df3e4005eaccd48bd27e22412a3af87869  docs/agent_artifacts/round75_production_audit_raw.txt
+  5fb727bfa4fe588d5c582096ce774384c13fa7b7176891909822a27a8ca9cda0  docs/agent_artifacts/round64_mock_schedule_and_conflicts.md
+
+SCOPE COMPLIANCE (ROUND 77):
+  - src/data/weeks/: 0 modifications
+  - SOP / MASTER_ARCH / ARCHITECTURE_CURRENT / AGENTS / Digital Map: 0 modifications
+  - Staging weeks: 0 content regeneration / 0 merge
+  - Pending Owner Decision: Mock format after W116 (PET per Decision 6 vs B1+ Academic per SOP/ARCH/MAP)
+  - Deferred (waiting Claude sign-off on Sections A–C): Source A patch v2, Part I/II table, W79/W80 split table
+========================================================================
