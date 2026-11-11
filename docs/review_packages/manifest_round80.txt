@@ -1,0 +1,259 @@
+ROUND 80 PACKAGE & COMMIT MANIFEST
+========================================================================
+Timestamp:                 2026-11-11T08:51:52.932Z
+round79_baseline_commit:   b14ae83bfc81e12222d81e90c5ba603a926112b9
+deliverables_commit:       e157e58755c622551f44149764c61fe52a96b559
+deliverables_clean_check:  PASS (0 uncommitted/untracked changes in packaged paths)
+manifest_commit_contract:  Generated strictly AFTER Commit 1 (deliverables_commit).
+                           Commit 2 ONLY adds docs/review_packages/manifest_round80.txt
+                           (round80_20261111.zip is gitignored via .gitignore; 0 code/artifact delta in Commit 2).
+
+ZIP PACKAGE:
+  Path:    docs/review_packages/round80_20261111.zip
+  Size:    384468 bytes
+  SHA-256: ae130ac90db293e066727e760c5cdea8e1e732b9f012bc69adf7a1a9c995cee5
+
+ROUND 80 ARTIFACTS & SCRIPTS (SHA-256):
+  7b2dbd57fc024747e54c8f5ed6fce15094d6c4b2fa2746560abd418b0e341ff9  docs/agent_artifacts/round80_loader_fix_raw.txt
+  c61c44a8414966e74e4a0db3318a4edf0c94078cb824252b5db279026c14d5ab  docs/agent_artifacts/round80_proposed_digital_map_v2.md
+  fba5dbeef32fe51b23974b95374e5d2baba5c568162fef622797616372dd1f23  docs/agent_artifacts/round80_mock_format_and_rotary_proposal.md
+  b3e1724d8a5d4deafd330b58c016e7fd950ce9f372f45b07d1218771b7113ef4  docs/agent_artifacts/round80_decisions_raw.txt
+  e155797b2f90ea0b597f53d4cdc309cca48329c940fa556c24d6fb07fcebdf17  docs/agent_artifacts/round79_proposed_digital_map_v2.md
+  c452b77bcb71c967410279f4829f51f3f8378c69a8ae26131ff4fb009a6e6f7f  docs/agent_artifacts/round79_wave3_acceptance_spec_v2.md
+  b16ed6c6b2a1f1d746a7f7a92e4650b97f527356c0705d2534148aac12c50847  scripts/verify_round80_loader_fix.mjs
+  c0ab3d5437522ac6975b2272061d7f0e53e7f796581a56989f5b766a1ca52392  scripts/generate_round80_decisions_and_proposals.mjs
+  da10b8ee3271de17f22181337efeebf38805644208068f50c503a5184b301e9c  scripts/package_round80.mjs
+  656654433436c0821fb93bb9e7ee51db16dc0e5ce0f74f14f7208c11cf0a8a5b  scripts/lib/source_b_part2_parser.mjs
+  ca119dc91e7e12a27dcb09709ee1abc6734d9824be6e144f4fcde27989ded119  scripts/guard_governance_docs.mjs
+  28c71269e8a4da0e8abdd007008fd18e36ad7c19cfae5880c090e817d5a49bd1  scripts/guard_golden_w33_freeze.mjs
+
+FIXED WEEK ENTRYPOINTS (17/17 — PRIORITY 1):
+  50416edc42df160863f46fbfe2037eec195213266f3d63bd7b6d495e8ddb015e  src/data/weeks/week_38/index.js
+  ad46d5abe8bc3687de76444b23594256739cc59eaecf2100dd485d295cadd9ff  src/data/weeks/week_39/index.js
+  b68a4ca3506df5bf797c3f0bea9424a4372f867c9411118983e51e5bf8473a51  src/data/weeks/week_41/index.js
+  fcd2a5a7c381772885f20cb615e7bc5108976108bae07130d29e16ce1be14d90  src/data/weeks/week_43/index.js
+  d61466ac6087f61191f3ec55e2f3471c4754a93e1ec666ace442ef6ca04ee364  src/data/weeks/week_45/index.js
+  a187378cf9b0e3a6cc40722334fd0ae5b8a2adacfcd35e4920d97dc74ef86aba  src/data/weeks/week_46/index.js
+  9442b5609000f108da8c8b3e785ab1da814c9f8d34199c06366f8a15a4ccfec4  src/data/weeks/week_73/index.js
+  f11f63aef2e9a229801edb0a2a099b560edceff8a1f9b6f8604929873c21933a  src/data/weeks/week_74/index.js
+  f861893cf5686f1ece8e18815431ca1044ea4193e33180aefbd3529f697c144c  src/data/weeks/week_75/index.js
+  e4a3e6fb40a91bb31212a5b827d6c00db7efc3820c228e4b92d01461fb06b941  src/data/weeks/week_76/index.js
+  2ce4cf3d68926a4feb8c2a41a78758f0d19a6f8dcb408532db7b1ac44606d8c1  src/data/weeks/week_77/index.js
+  41c7e92d6cb2491873e1fc3b43a2d5b60ec75852c2e686d99b9b79794080c2a7  src/data/weeks/week_78/index.js
+  34c1b13b5e6a00285d1f7712050c8f033e5160302957de1400a564b184a82407  src/data/weeks/week_79/index.js
+  374c96aed653bc9fbda35d51572975dc55609839d5a93bd6f8bdc8f651a3ec18  src/data/weeks/week_80/index.js
+  ef6f4b341d505d6328e2a1b5a2b0bc3344bb93cce3a0767ae4a08a58ea8c3472  src/data/weeks/week_81/index.js
+  c03ea1684042a8551d7259829780c2483bc40c4b9da8a31ab1440eda0570a3ac  src/data/weeks/week_82/index.js
+  1da0998f10d72e8c28d32fdc779b17e178d625ac4648bb1d0e26dd9de4400d8a  src/data/weeks/week_125/index.js
+
+LIVE GIT SCOPE DISCLOSURE (R79 BASELINE b14ae83b..e157e587):
+1. src/config/bossRotarySchedule.js delta:
+   (none)
+2. Digital Map & Governance docs delta:
+   Digital Map: (none)
+   Governance:  (none)
+3. src/data/weeks/ delta (expected ONLY 17 new week_{N}/index.js files; 0 edits to W33..37, blueprint.json, or hub content):
+   A	src/data/weeks/week_125/index.js
+   A	src/data/weeks/week_38/index.js
+   A	src/data/weeks/week_39/index.js
+   A	src/data/weeks/week_41/index.js
+   A	src/data/weeks/week_43/index.js
+   A	src/data/weeks/week_45/index.js
+   A	src/data/weeks/week_46/index.js
+   A	src/data/weeks/week_73/index.js
+   A	src/data/weeks/week_74/index.js
+   A	src/data/weeks/week_75/index.js
+   A	src/data/weeks/week_76/index.js
+   A	src/data/weeks/week_77/index.js
+   A	src/data/weeks/week_78/index.js
+   A	src/data/weeks/week_79/index.js
+   A	src/data/weeks/week_80/index.js
+   A	src/data/weeks/week_81/index.js
+   A	src/data/weeks/week_82/index.js
+4. Full deliverables delta (R79..deliverables_commit):
+   A	docs/agent_artifacts/round80_decisions_raw.txt
+   A	docs/agent_artifacts/round80_loader_fix_raw.txt
+   A	docs/agent_artifacts/round80_mock_format_and_rotary_proposal.md
+   A	docs/agent_artifacts/round80_proposed_digital_map_v2.md
+   A	scripts/generate_round80_decisions_and_proposals.mjs
+   A	scripts/package_round80.mjs
+   A	scripts/verify_round80_loader_fix.mjs
+   A	src/data/weeks/week_125/index.js
+   A	src/data/weeks/week_38/index.js
+   A	src/data/weeks/week_39/index.js
+   A	src/data/weeks/week_41/index.js
+   A	src/data/weeks/week_43/index.js
+   A	src/data/weeks/week_45/index.js
+   A	src/data/weeks/week_46/index.js
+   A	src/data/weeks/week_73/index.js
+   A	src/data/weeks/week_74/index.js
+   A	src/data/weeks/week_75/index.js
+   A	src/data/weeks/week_76/index.js
+   A	src/data/weeks/week_77/index.js
+   A	src/data/weeks/week_78/index.js
+   A	src/data/weeks/week_79/index.js
+   A	src/data/weeks/week_80/index.js
+   A	src/data/weeks/week_81/index.js
+   A	src/data/weeks/week_82/index.js
+
+LIVE STAGING DISCLOSURE (docs/agent_artifacts/staging/ — PROGRAMMATICALLY INSPECTED):
+- Working tree status: (clean)
+- Round 80 delta (b14ae83b..e157e587): (none)
+- Current review_status on disk (all 8 staged weeks):
+  week_79: review_status="RETIRED per Owner decision R72", status=null, updated_at="2026-11-10T04:07:36.004Z"
+  week_126: review_status="BLOCKED", status=null, updated_at="2026-11-10T04:07:29.826Z"
+  week_127: review_status="BLOCKED", status=null, updated_at="2026-11-10T04:07:29.855Z"
+  week_129: review_status="RETIRED per Owner decision", status=null, updated_at="2026-11-10T04:07:29.859Z"
+  week_130: review_status="RETIRED per Owner decision", status=null, updated_at="2026-11-10T04:07:29.865Z"
+  week_131: review_status="RETIRED per Owner decision", status=null, updated_at="2026-11-10T04:07:29.868Z"
+  week_133: review_status="BLOCKED", status=null, updated_at="2026-11-10T04:07:29.872Z"
+  week_134: review_status="BLOCKED", status=null, updated_at="2026-11-10T04:07:29.875Z"
+- Recent historical git commits touching docs/agent_artifacts/staging/ (verbatim git log -n 5):
+  e5df1cd8 feat(round75): forensic analysis, gate repair, mock schedule & source b alignment
+  M	docs/agent_artifacts/staging/week_126/provenance.json
+  M	docs/agent_artifacts/staging/week_127/provenance.json
+  M	docs/agent_artifacts/staging/week_129/provenance.json
+  M	docs/agent_artifacts/staging/week_130/provenance.json
+  M	docs/agent_artifacts/staging/week_131/provenance.json
+  M	docs/agent_artifacts/staging/week_133/provenance.json
+  M	docs/agent_artifacts/staging/week_134/provenance.json
+  75c39e8b fix(curriculum): align blueprints to Source B single truth, fix G-GEN-13 checks, audit production [multi-agent-review]
+  M	docs/agent_artifacts/staging/week_129/blueprint.json
+  M	docs/agent_artifacts/staging/week_130/blueprint.json
+  M	docs/agent_artifacts/staging/week_131/blueprint.json
+  M	docs/agent_artifacts/staging/week_79/blueprint.json
+  M	docs/agent_artifacts/staging/week_79/provenance.json
+  9448d7e9 fix(pipeline): upgrade G-GEN gates, fix Source B range parser & CEFR stage resolution [multi-agent-review]
+  M	docs/agent_artifacts/staging/week_79/provenance.json
+  f0add432 fix(pipeline): enforce Gate 11 v2, remediate W79 & Wave 3 specs in staging [multi-agent-review]
+  M	docs/agent_artifacts/staging/week_126/listening_hub.js
+  M	docs/agent_artifacts/staging/week_126/provenance.json
+  M	docs/agent_artifacts/staging/week_126/reading_hub.js
+  M	docs/agent_artifacts/staging/week_126/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_126/source_grounding.json
+  M	docs/agent_artifacts/staging/week_126/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_126/vocab.js
+  M	docs/agent_artifacts/staging/week_126/writing_hub.js
+  M	docs/agent_artifacts/staging/week_127/blueprint.json
+  M	docs/agent_artifacts/staging/week_127/listening_hub.js
+  M	docs/agent_artifacts/staging/week_127/provenance.json
+  M	docs/agent_artifacts/staging/week_127/reading_hub.js
+  M	docs/agent_artifacts/staging/week_127/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_127/source_grounding.json
+  M	docs/agent_artifacts/staging/week_127/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_127/vocab.js
+  M	docs/agent_artifacts/staging/week_127/writing_hub.js
+  M	docs/agent_artifacts/staging/week_129/listening_hub.js
+  M	docs/agent_artifacts/staging/week_129/provenance.json
+  M	docs/agent_artifacts/staging/week_129/reading_hub.js
+  M	docs/agent_artifacts/staging/week_129/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_129/source_grounding.json
+  M	docs/agent_artifacts/staging/week_129/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_129/vocab.js
+  M	docs/agent_artifacts/staging/week_129/writing_hub.js
+  M	docs/agent_artifacts/staging/week_130/listening_hub.js
+  M	docs/agent_artifacts/staging/week_130/provenance.json
+  M	docs/agent_artifacts/staging/week_130/reading_hub.js
+  M	docs/agent_artifacts/staging/week_130/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_130/source_grounding.json
+  M	docs/agent_artifacts/staging/week_130/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_130/vocab.js
+  M	docs/agent_artifacts/staging/week_130/writing_hub.js
+  M	docs/agent_artifacts/staging/week_131/listening_hub.js
+  M	docs/agent_artifacts/staging/week_131/provenance.json
+  M	docs/agent_artifacts/staging/week_131/reading_hub.js
+  M	docs/agent_artifacts/staging/week_131/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_131/source_grounding.json
+  M	docs/agent_artifacts/staging/week_131/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_131/vocab.js
+  M	docs/agent_artifacts/staging/week_131/writing_hub.js
+  M	docs/agent_artifacts/staging/week_133/listening_hub.js
+  M	docs/agent_artifacts/staging/week_133/provenance.json
+  M	docs/agent_artifacts/staging/week_133/reading_hub.js
+  M	docs/agent_artifacts/staging/week_133/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_133/source_grounding.json
+  M	docs/agent_artifacts/staging/week_133/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_133/vocab.js
+  M	docs/agent_artifacts/staging/week_133/writing_hub.js
+  M	docs/agent_artifacts/staging/week_134/listening_hub.js
+  M	docs/agent_artifacts/staging/week_134/provenance.json
+  M	docs/agent_artifacts/staging/week_134/reading_hub.js
+  M	docs/agent_artifacts/staging/week_134/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_134/source_grounding.json
+  M	docs/agent_artifacts/staging/week_134/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_134/vocab.js
+  M	docs/agent_artifacts/staging/week_134/writing_hub.js
+  M	docs/agent_artifacts/staging/week_79/listening_hub.js
+  M	docs/agent_artifacts/staging/week_79/provenance.json
+  M	docs/agent_artifacts/staging/week_79/reading_hub.js
+  M	docs/agent_artifacts/staging/week_79/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_79/source_grounding.json
+  M	docs/agent_artifacts/staging/week_79/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_79/vocab.js
+  M	docs/agent_artifacts/staging/week_79/writing_hub.js
+  78b38d42 fix(curriculum): remediate theme-fidelity regression for W79 & Wave 3, enforce Gate 11 [multi-agent-review]
+  M	docs/agent_artifacts/staging/week_126/listening_hub.js
+  M	docs/agent_artifacts/staging/week_126/provenance.json
+  M	docs/agent_artifacts/staging/week_126/reading_hub.js
+  M	docs/agent_artifacts/staging/week_126/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_126/source_grounding.json
+  M	docs/agent_artifacts/staging/week_126/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_126/vocab.js
+  M	docs/agent_artifacts/staging/week_126/writing_hub.js
+  M	docs/agent_artifacts/staging/week_127/listening_hub.js
+  M	docs/agent_artifacts/staging/week_127/provenance.json
+  M	docs/agent_artifacts/staging/week_127/reading_hub.js
+  M	docs/agent_artifacts/staging/week_127/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_127/source_grounding.json
+  M	docs/agent_artifacts/staging/week_127/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_127/vocab.js
+  M	docs/agent_artifacts/staging/week_127/writing_hub.js
+  M	docs/agent_artifacts/staging/week_129/listening_hub.js
+  M	docs/agent_artifacts/staging/week_129/provenance.json
+  M	docs/agent_artifacts/staging/week_129/reading_hub.js
+  M	docs/agent_artifacts/staging/week_129/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_129/source_grounding.json
+  M	docs/agent_artifacts/staging/week_129/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_129/vocab.js
+  M	docs/agent_artifacts/staging/week_129/writing_hub.js
+  M	docs/agent_artifacts/staging/week_130/listening_hub.js
+  M	docs/agent_artifacts/staging/week_130/provenance.json
+  M	docs/agent_artifacts/staging/week_130/reading_hub.js
+  M	docs/agent_artifacts/staging/week_130/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_130/source_grounding.json
+  M	docs/agent_artifacts/staging/week_130/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_130/vocab.js
+  M	docs/agent_artifacts/staging/week_130/writing_hub.js
+  M	docs/agent_artifacts/staging/week_131/listening_hub.js
+  M	docs/agent_artifacts/staging/week_131/provenance.json
+  M	docs/agent_artifacts/staging/week_131/reading_hub.js
+  M	docs/agent_artifacts/staging/week_131/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_131/source_grounding.json
+  M	docs/agent_artifacts/staging/week_131/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_131/vocab.js
+  M	docs/agent_artifacts/staging/week_131/writing_hub.js
+  M	docs/agent_artifacts/staging/week_133/listening_hub.js
+  M	docs/agent_artifacts/staging/week_133/provenance.json
+  M	docs/agent_artifacts/staging/week_133/reading_hub.js
+  M	docs/agent_artifacts/staging/week_133/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_133/source_grounding.json
+  M	docs/agent_artifacts/staging/week_133/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_133/vocab.js
+  M	docs/agent_artifacts/staging/week_133/writing_hub.js
+  M	docs/agent_artifacts/staging/week_134/listening_hub.js
+  M	docs/agent_artifacts/staging/week_134/provenance.json
+  M	docs/agent_artifacts/staging/week_134/reading_hub.js
+  M	docs/agent_artifacts/staging/week_134/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_134/source_grounding.json
+  M	docs/agent_artifacts/staging/week_134/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_134/vocab.js
+  M	docs/agent_artifacts/staging/week_134/writing_hub.js
+  M	docs/agent_artifacts/staging/week_79/listening_hub.js
+  M	docs/agent_artifacts/staging/week_79/provenance.json
+  M	docs/agent_artifacts/staging/week_79/reading_hub.js
+  M	docs/agent_artifacts/staging/week_79/skill_practice_hub.js
+  M	docs/agent_artifacts/staging/week_79/source_grounding.json
+  M	docs/agent_artifacts/staging/week_79/speaking_hub.js
+  M	docs/agent_artifacts/staging/week_79/vocab.js
+  M	docs/agent_artifacts/staging/week_79/writing_hub.js
+========================================================================
