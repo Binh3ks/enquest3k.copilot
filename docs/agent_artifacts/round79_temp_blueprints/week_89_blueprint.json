@@ -1,0 +1,256 @@
+{
+  "week": 89,
+  "theme": "Inventions / Math: Comparing Data Sets",
+  "title_en": "Inventions / Math: Comparing Data Sets",
+  "title_vi": "Phát minh / Toán: So sánh bộ Dữ liệu",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Changing the World",
+  "clil_topic": {
+    "title": "Changing the World",
+    "focus": "Explain how an invention changed life (Before vs. After)"
+  },
+  "grammar_focus": {
+    "structure": "Past Perfect (Intro): \"Before the phone, people had written letters.\"",
+    "outcome": "Explain how an invention changed life (Before vs. After)",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "invent",
+      "discover",
+      "machine",
+      "technology",
+      "communication",
+      "electricity",
+      "bulb"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 2,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "discover"
+        ],
+        "/ɪd/": [
+          "invent"
+        ]
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "invent",
+    "discover",
+    "machine",
+    "technology",
+    "communication",
+    "electricity",
+    "bulb"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "invent",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪnvˈɛnt/",
+      "phonetics": {
+        "arpabet": "IH0 N V EH1 N T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "invented",
+        "past_participle": "invented",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "discover",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dɪskˈʌvɚ/",
+      "phonetics": {
+        "arpabet": "D IH0 S K AH1 V ER0",
+        "final_phone": "ER",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "discovered",
+        "past_participle": "discovered",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /er/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "machine",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/məʃˈiːn/",
+      "phonetics": {
+        "arpabet": "M AH0 SH IY1 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "technology",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/tɛknˈɑːlədʒi/",
+      "phonetics": {
+        "arpabet": "T EH0 K N AA1 L AH0 JH IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "communication",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kəmjˌuːnəkˈeɪʃən/",
+      "phonetics": {
+        "arpabet": "K AH0 M Y UW2 N AH0 K EY1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "electricity",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪlˌɛktɹˈɪsəti/",
+      "phonetics": {
+        "arpabet": "IH0 L EH2 K T R IH1 S AH0 T IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "bulb",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/bˈʌlb/",
+      "phonetics": {
+        "arpabet": "B AH1 L B",
+        "final_phone": "B",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Guided CER)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 89,
+    "map_theme": "Chemical Reactions & Bonds",
+    "map_clil_module": "Hóa học: Phản ứng tỏa nhiệt & thu nhiệt",
+    "map_grammar_hub": "Miêu tả phản ứng phân tử; `action_lab` đầu dò nhiệt độ phản ứng hóa học",
+    "map_cefr_type": "B1+ PET · Rotary 2",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Inventions / Math: Comparing Data Sets\") enforced over Digital Map (Source A: \"Chemical Reactions & Bonds\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:01.167Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": {
+    "topic": "Comparing Data Sets",
+    "outcome": "Extract data from two graphs to answer a comparison question",
+    "vocab": [],
+    "source_line": 718
+  }
+}

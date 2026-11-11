@@ -1,0 +1,87 @@
+{
+  "week": 33,
+  "theme": "The Mistake (Irregular Verbs 5: Accidents)",
+  "cefr_level": "A2 Flyers",
+  "genre": "School Life Story & Physics Science",
+  "characters": [
+    "Jake",
+    "Tom",
+    "Mia",
+    "School Nurse",
+    "Headmaster"
+  ],
+  "keywords": [
+    "corridor",
+    "walking",
+    "running",
+    "slipped",
+    "wet floor",
+    "tiles",
+    "knee",
+    "bandage",
+    "cold pack",
+    "nurse",
+    "headmaster",
+    "friction",
+    "rubber shoes",
+    "smooth",
+    "safe",
+    "safety rules"
+  ],
+  "grammar_pattern": {
+    "name": "Past Continuous vs Past Simple with While / When",
+    "rule": "was/were + V-ing for background action, Past Simple for interrupting action",
+    "regex": "(was|were)\\s+\\w+ing",
+    "examples": [
+      "Jake **was walking** carefully when Tom **slipped on the wet floor**.",
+      "The cleaner **was drying** the tiles while the students **were waiting** outside.",
+      "Tom **was running** fast, so he did not see the yellow warning sign."
+    ]
+  },
+  "clil_topic": {
+    "title": "Accidents happen!",
+    "focus": "Explain an accidental event"
+  },
+  "math_focus": null,
+  "rotary_cycle": 1,
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "title_en": "The Mistake (Irregular Verbs 5: Accidents)",
+  "grammar_focus": {
+    "structure": "Break -> Broke, Fall -> Fell, Lose -> Lost, Hurt -> Hurt",
+    "outcome": "Explain an accidental event"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "mistake",
+      "accident",
+      "fix",
+      "sorry",
+      "careful",
+      "clumsy"
+    ],
+    "total_syllabus_words": 6,
+    "target_count": 20,
+    "missing_count": 14,
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from SUPPLEMENT/author)"
+  },
+  "week_type": "rotary_practice",
+  "isFullMock": false
+}

@@ -1,0 +1,257 @@
+========================================================================================================
+📋 ROUND 79 — SECTION B (B.4, B.5, B.6): BẢO TOÀN SCHEMA BLUEPRINT + CEFR TABLE + SỬA C.8 (W129–132)
+Thời điểm chạy: 2026-11-11T08:07:12.513Z
+Thư mục blueprint tạm mới: docs/agent_artifacts/round79_temp_blueprints/ (156 files)
+========================================================================================================
+
+### B.4. BẢO TOÀN 100% PRODUCTION BLUEPRINT SCHEMA (CHỈ VÁ 8 TRƯỜNG TỪ SOURCE B)
+
+- Phương pháp: Đọc nguyên văn từng `src/data/weeks/week_{1..156}/blueprint.json`, deep-clone toàn bộ và **CHỈ cập nhật 8 trường suy từ Source B**: `theme`, `title_en`, `clil_topic`, `grammar_focus`, `vocabulary_focus`, `math_focus`, `week_type`, `isFullMock` (gộp bảo toàn các sub-key sẵn có trong `clil_topic`, `grammar_focus`, `vocabulary_focus` như `phonology_summary`, `pattern_regex`, `requires_authoring_examples`).
+- Kết quả kiểm tra rơi khóa (dropped keys check): **0 lỗi** trên 156 tuần (0 khóa production nào bị xóa hoặc ghi đè ngoài 8 trường chỉ định).
+
+#### Bảng tần suất khóa Schema: Production vs Temp Round 78 (cũ) vs Temp Round 79 (mới)
+
+| Tên trường (`blueprint.json`) | Số tuần ở Prod (156) | Có ở R78 Temp (13 keys)? | Số tuần ở R79 Temp (156) | Vai trò trong R79 |
+| :--- | :---: | :---: | :---: | :--- |
+| `week` | 156 | ✅ Có | 156 | BẢO TOÀN TỪ PROD (Preserved) |
+| `theme` | 156 | ✅ Có | 156 | VÁ TỪ SOURCE B (Patched) |
+| `cefr_level` | 156 | ✅ Có | 156 | BẢO TOÀN TỪ PROD (Preserved) |
+| `clil_topic` | 156 | ✅ Có | 156 | VÁ TỪ SOURCE B (Patched) |
+| `keywords` | 156 | ❌ RƠI MẤT | 156 | BẢO TOÀN TỪ PROD (Preserved) |
+| `characters` | 156 | ❌ RƠI MẤT | 156 | BẢO TOÀN TỪ PROD (Preserved) |
+| `rotary_cycle` | 155 | ❌ RƠI MẤT | 155 | BẢO TOÀN TỪ PROD (Preserved) |
+| `story_title` | 155 | ❌ RƠI MẤT | 155 | BẢO TOÀN TỪ PROD (Preserved) |
+| `grammar_focus` | 155 | ✅ Có | 156 | VÁ TỪ SOURCE B (Patched) |
+| `target_vocab_20` | 155 | ❌ RƠI MẤT | 155 | BẢO TOÀN TỪ PROD (Preserved) |
+| `tested_skills` | 155 | ❌ RƠI MẤT | 155 | BẢO TOÀN TỪ PROD (Preserved) |
+| `target_shields` | 155 | ❌ RƠI MẤT | 155 | BẢO TOÀN TỪ PROD (Preserved) |
+| `title_en` | 154 | ✅ Có | 156 | VÁ TỪ SOURCE B (Patched) |
+| `title_vi` | 154 | ❌ RƠI MẤT | 154 | BẢO TOÀN TỪ PROD (Preserved) |
+| `cefr_stage` | 154 | ❌ RƠI MẤT | 154 | BẢO TOÀN TỪ PROD (Preserved) |
+| `week_type` | 154 | ✅ Có | 156 | VÁ TỪ SOURCE B (Patched) |
+| `isFullMock` | 154 | ✅ Có | 156 | VÁ TỪ SOURCE B (Patched) |
+| `template_used` | 154 | ❌ RƠI MẤT | 154 | BẢO TOÀN TỪ PROD (Preserved) |
+| `vocabulary_focus` | 154 | ✅ Có | 156 | VÁ TỪ SOURCE B (Patched) |
+| `scaffolding_tier` | 154 | ❌ RƠI MẤT | 154 | BẢO TOÀN TỪ PROD (Preserved) |
+| `pending_human_authoring` | 154 | ❌ RƠI MẤT | 154 | BẢO TOÀN TỪ PROD (Preserved) |
+| `digital_map_reference` | 154 | ❌ RƠI MẤT | 154 | BẢO TOÀN TỪ PROD (Preserved) |
+| `metadata_provenance` | 154 | ✅ Có | 154 | BẢO TOÀN TỪ PROD (Preserved) |
+| `mockFormat` | 39 | ❌ RƠI MẤT | 39 | BẢO TOÀN TỪ PROD (Preserved) |
+| `math_focus` | 2 | ✅ Có | 156 | VÁ TỪ SOURCE B (Patched) |
+| `cumulativeBlock` | 2 | ❌ RƠI MẤT | 2 | BẢO TOÀN TỪ PROD (Preserved) |
+| `synthesis_summary` | 2 | ❌ RƠI MẤT | 2 | BẢO TOÀN TỪ PROD (Preserved) |
+| `papers` | 2 | ❌ RƠI MẤT | 2 | BẢO TOÀN TỪ PROD (Preserved) |
+| `genre` | 1 | ❌ RƠI MẤT | 1 | BẢO TOÀN TỪ PROD (Preserved) |
+| `grammar_pattern` | 1 | ❌ RƠI MẤT | 1 | BẢO TOÀN TỪ PROD (Preserved) |
+| `stage` | 1 | ❌ RƠI MẤT | 1 | BẢO TOÀN TỪ PROD (Preserved) |
+| `moral` | 1 | ❌ RƠI MẤT | 1 | BẢO TOÀN TỪ PROD (Preserved) |
+
+#### Thống kê Diff theo từng trường (8 trường vá từ Source B vs Production hiện tại):
+
+- `theme`: khác biệt ở **24 / 156 tuần** (W14, W26, W33–W34, W36, W52–W53, W55–W58, W66, W79–W80, W90, W93–W96, W105, W129–W132)
+- `title_en`: khác biệt ở **25 / 156 tuần** (W14, W26, W33–W34, W36, W52–W53, W55–W58, W66, W76, W79–W80, W90, W93–W96, W105, W129–W132)
+- `clil_topic`: khác biệt ở **156 / 156 tuần** (W1–W156)
+- `grammar_focus`: khác biệt ở **110 / 156 tuần** (W2–W5, W7–W9, W14, W16, W18–W20, W22, W24, W33–W34, W36–W37, W43–W45, W49–W54, W56–W58, W64–W75, W77–W80, W83–W90, W92–W99, W101–W106, W108–W114, W116–W133, W135, W138–W147, W150–W151, W153–W156)
+- `vocabulary_focus`: khác biệt ở **156 / 156 tuần** (W1–W156)
+- `math_focus`: khác biệt ở **156 / 156 tuần** (W1–W156)
+- `week_type`: khác biệt ở **41 / 156 tuần** (W4, W8, W12, W16, W20, W24, W28, W32–W34, W36, W40, W44, W48, W52, W56, W60, W64, W68, W72, W76, W80, W84, W88, W92, W96, W100, W104, W108, W112, W116, W120, W124, W128, W132, W136, W140, W144, W148, W152, W156)
+- `isFullMock`: khác biệt ở **41 / 156 tuần** (W4, W8, W12, W16, W20, W24, W28, W32–W34, W36, W40, W44, W48, W52, W56, W60, W64, W68, W72, W76, W80, W84, W88, W92, W96, W100, W104, W108, W112, W116, W120, W124, W128, W132, W136, W140, W144, W148, W152, W156)
+
+#### Diff mẫu đại diện (`W33`, `W35`, `W36`, `W76`, `W79`, `W80`, `W126`, `W127`, `W129–134`):
+
+- **W33** (Source B L299): đổi **8 trường** [theme, title_en, clil_topic, grammar_focus, vocabulary_focus, math_focus, week_type, isFullMock]
+  - `theme`: PROD=`Safety First at School & The Force of Friction`  -->  R79=`The Mistake (Irregular Verbs 5: Accidents)`
+  - `title_en`: PROD=`(missing)`  -->  R79=`The Mistake (Irregular Verbs 5: Accidents)`
+  - `clil_topic`: PROD=`{"title":"The Science of Friction & Floor Safety","focus":"Friction force between shoes and floors, water greatly reducing surface friction"`  -->  R79=`{"title":"Accidents happen!","focus":"Explain an accidental event"}`
+  - `grammar_focus`: PROD=`(missing)`  -->  R79=`{"structure":"Break -> Broke, Fall -> Fell, Lose -> Lost, Hurt -> Hurt","outcome":"Explain an accidental event"}`
+  - `vocabulary_focus`: PROD=`(missing)`  -->  R79=`{"syllabus_words":["mistake","accident","fix","sorry","careful","clumsy"],"total_syllabus_words":6,"target_count":20,"missing_count":14,"sta`
+  - `math_focus`: PROD=`{"topic":"Friction & Velocity Singapore Bar Models","num_models":5}`  -->  R79=`null`
+  - `week_type`: PROD=`(missing)`  -->  R79=`rotary_practice`
+  - `isFullMock`: PROD=`(missing)`  -->  R79=`false`
+- **W35** (Source B L310): đổi **3 trường** [clil_topic, vocabulary_focus, math_focus]
+  - `clil_topic`: PROD=`{"title":"Storytelling Practice 2 & Using adjectives to make the story interesting","focus":"Write a short paragraph (5-6 sentences) about a`  -->  R79=`{"title":"The Best Day Ever","focus":"Write a short paragraph (5-6 sentences) about a personal memory"}`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`  -->  R79=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`null`
+- **W36** (Source B L315): đổi **8 trường** [theme, title_en, clil_topic, grammar_focus, vocabulary_focus, math_focus, week_type, isFullMock]
+  - `theme`: PROD=`Review & Project 3: "My Adventure Book`  -->  R79=`Review & Project 3: "My Adventure Book"`
+  - `title_en`: PROD=`Review & Project 3: "My Adventure Book`  -->  R79=`Review & Project 3: "My Adventure Book"`
+  - `clil_topic`: PROD=`{"title":"My Adventure Book","focus":"Produce a completed story with illustrations and text"}`  -->  R79=`{"title":"Creating a mini-book","focus":"Produce a completed story with illustrations and text"}`
+  - `grammar_focus`: PROD=`{"structure":"Động từ khuyết thiếu (should, must, have to); Cambridge Rotary Cycle 4","outcome":"Produce a completed story with illustration`  -->  R79=`{"structure":"[SUPPLEMENT — Source B L315 không ghi Grammar Focus]","outcome":"Produce a completed story with illustrations and text","patte`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`  -->  R79=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`null`
+  - `week_type`: PROD=`full_mock`  -->  R79=`rotary_practice`
+  - `isFullMock`: PROD=`true`  -->  R79=`false`
+- **W76** (Source B L605): đổi **6 trường** [title_en, clil_topic, vocabulary_focus, math_focus, week_type, isFullMock]
+  - `title_en`: PROD=`Great Voyages: The Age of Global Exploration`  -->  R79=`History/ELA: Explorers / Math: Map Scales`
+  - `clil_topic`: PROD=`{"title":"History/ELA: Explorers / Math: Map Scales & Biographical writing","focus":"Write a short biography of an explorer"}`  -->  R79=`{"title":"Great Voyages","focus":"Write a short biography of an explorer"}`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":["explore","voyage","ship","ocean","discover","map","captain","sail"],"total_syllabus_words":8,"target_count":20,"missing_`  -->  R79=`{"syllabus_words":["explore","voyage","ship","ocean","discover","map","captain","sail"],"total_syllabus_words":8,"target_count":20,"missing_`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`{"topic":"Real Distances","outcome":"Use a map scale to calculate distance","vocab":[],"source_line":611}`
+  - `week_type`: PROD=`full_mock`  -->  R79=`rotary_practice`
+  - `isFullMock`: PROD=`true`  -->  R79=`false`
+- **W79** (Source B L632): đổi **6 trường** [theme, title_en, clil_topic, grammar_focus, vocabulary_focus, math_focus]
+  - `theme`: PROD=`The Industrial Revolution`  -->  R79=`Space Exploration vs. Earth Fix`
+  - `title_en`: PROD=`The Industrial Revolution`  -->  R79=`Review & Micro-Debate 2`
+  - `clil_topic`: PROD=`{"title":"Lịch sử thế giới: Động cơ hơi nước & Nhà máy","focus":"Lịch sử thế giới: Động cơ hơi nước & Nhà máy"}`  -->  R79=`{"title":"Space Exploration vs. Earth Fix","focus":"Micro-Debate"}`
+  - `grammar_focus`: PROD=`{"structure":"Nguyên nhân & tác động lịch sử; `broadcast_studio` phim tài liệu lịch sử","outcome":null,"pattern_regex":null,"requires_author`  -->  R79=`{"structure":"Passive Voice, Conditionals, Comparatives","outcome":"Micro-Debate","pattern_regex":null,"requires_authoring_examples":true}`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`  -->  R79=`{"syllabus_words":["space","earth","money","spend","fix","problem","important"],"total_syllabus_words":7,"target_count":20,"missing_count":1`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`null`
+- **W80** (Source B L632): đổi **8 trường** [theme, title_en, clil_topic, grammar_focus, vocabulary_focus, math_focus, week_type, isFullMock]
+  - `theme`: PROD=`Supply, Demand & Market Prices`  -->  R79=`Space Exploration vs. Earth Fix`
+  - `title_en`: PROD=`Supply, Demand & Market Prices: The Youth Enterprise Market`  -->  R79=`Review & Micro-Debate 2`
+  - `clil_topic`: PROD=`{"title":"Kinh tế học: Giá cân bằng thị trường","focus":"Kinh tế học: Giá cân bằng thị trường"}`  -->  R79=`{"title":"Space Exploration vs. Earth Fix","focus":"Micro-Debate"}`
+  - `grammar_focus`: PROD=`{"structure":"Logic điều kiện kinh tế; `math_quest` biểu đồ đường cung - cầu","outcome":null,"pattern_regex":null,"requires_authoring_exampl`  -->  R79=`{"structure":"Passive Voice, Conditionals, Comparatives","outcome":"Micro-Debate","pattern_regex":null,"requires_authoring_examples":true}`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`  -->  R79=`{"syllabus_words":["space","earth","money","spend","fix","problem","important"],"total_syllabus_words":7,"target_count":20,"missing_count":1`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`null`
+  - `week_type`: PROD=`full_mock`  -->  R79=`rotary_practice`
+  - `isFullMock`: PROD=`true`  -->  R79=`false`
+- **W95** (Source B L754): đổi **6 trường** [theme, title_en, clil_topic, grammar_focus, vocabulary_focus, math_focus]
+  - `theme`: PROD=`Ocean Acidification & Carbon`  -->  R79=`The Young Professor`
+  - `title_en`: PROD=`Ocean Acidification & Carbon`  -->  R79=`Review & Application`
+  - `clil_topic`: PROD=`{"title":"Hóa học biển: Thang đo pH và hấp thụ CO2","focus":"Hóa học biển: Thang đo pH và hấp thụ CO2"}`  -->  R79=`{"title":"The Young Professor","focus":"Students teach a mini-lesson (3 mins) on their research topic"}`
+  - `grammar_focus`: PROD=`{"structure":"Báo cáo CER đầy đủ với bằng chứng thống kê; `discovery_report`","outcome":null,"pattern_regex":null,"requires_authoring_exampl`  -->  R79=`{"structure":"[SUPPLEMENT — Source B L754 không ghi Grammar Focus]","outcome":"Students teach a mini-lesson (3 mins) on their research topic`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`  -->  R79=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`null`
+- **W96** (Source B L754): đổi **8 trường** [theme, title_en, clil_topic, grammar_focus, vocabulary_focus, math_focus, week_type, isFullMock]
+  - `theme`: PROD=`Preparation for Mid-Phase Gate`  -->  R79=`The Young Professor`
+  - `title_en`: PROD=`Preparation for Mid-Phase Gate`  -->  R79=`Review & Application`
+  - `clil_topic`: PROD=`{"title":"Chiến thuật làm bài thi Cambridge B1 PET","focus":"Chiến thuật làm bài thi Cambridge B1 PET"}`  -->  R79=`{"title":"The Young Professor","focus":"Students teach a mini-lesson (3 mins) on their research topic"}`
+  - `grammar_focus`: PROD=`{"structure":"Ôn tập trọng tâm các lỗi ngữ pháp B1 thường gặp","outcome":null,"pattern_regex":null,"requires_authoring_examples":true}`  -->  R79=`{"structure":"[SUPPLEMENT — Source B L754 không ghi Grammar Focus]","outcome":"Students teach a mini-lesson (3 mins) on their research topic`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`  -->  R79=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`null`
+  - `week_type`: PROD=`full_mock`  -->  R79=`rotary_practice`
+  - `isFullMock`: PROD=`true`  -->  R79=`false`
+- **W126** (Source B L993): đổi **4 trường** [clil_topic, grammar_focus, vocabulary_focus, math_focus]
+  - `clil_topic`: PROD=`{"title":"From Essay to Speech","focus":"Create cue cards and practice signposting"}`  -->  R79=`{"title":"Making it spoken","focus":"Create cue cards and practice signposting"}`
+  - `grammar_focus`: PROD=`{"structure":"Signposting: \"Moving on to...\", \"Let's look at","outcome":"Create cue cards and practice signposting","pattern_regex":null,`  -->  R79=`{"structure":"Signposting: \"Moving on to...\", \"Let's look at...\"","outcome":"Create cue cards and practice signposting","pattern_regex":`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`  -->  R79=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`{"topic":"Logic Puzzles","outcome":null,"vocab":[],"source_line":997}`
+- **W127** (Source B L998): đổi **4 trường** [clil_topic, grammar_focus, vocabulary_focus, math_focus]
+  - `clil_topic`: PROD=`{"title":"Rebuttal Practice","focus":"Use \"They say... but I say...\" structure"}`  -->  R79=`{"title":"Disagreeing politely","focus":"Use \"They say... but I say...\" structure"}`
+  - `grammar_focus`: PROD=`{"structure":"Contrast Connectors: \"On the contrary\", \"However","outcome":"Use \"They say... but I say...\" structure","pattern_regex":nu`  -->  R79=`{"structure":"Contrast Connectors: \"On the contrary\", \"However\"","outcome":"Use \"They say... but I say...\" structure","pattern_regex":`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":["disagree","counter","point","false","true"],"total_syllabus_words":5,"target_count":20,"missing_count":15,"status":"PART`  -->  R79=`{"syllabus_words":["disagree","counter","point","false","true"],"total_syllabus_words":5,"target_count":20,"missing_count":15,"status":"PART`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`{"topic":"Critical Thinking Math","outcome":null,"vocab":[],"source_line":1003}`
+- **W129** (Source B L1007): đổi **6 trường** [theme, title_en, clil_topic, grammar_focus, vocabulary_focus, math_focus]
+  - `theme`: PROD=`Opinion Project 3: Smartphones Under 12?`  -->  R79=`Review & Math Logic Cycle`
+  - `title_en`: PROD=`Opinion Project 3: Smartphones Under 12?`  -->  R79=`Review & Math Logic Cycle`
+  - `clil_topic`: PROD=`{"title":"Tâm lý phát triển: Tác động mạng xã hội","focus":"Tâm lý phát triển: Tác động mạng xã hội"}`  -->  R79=`{"title":"Review & Math Logic Cycle","focus":"Consolidate writing skills + Math Fractions/Decimals review"}`
+  - `grammar_focus`: PROD=`{"structure":"Soạn thảo bài luận quan điểm hoàn chỉnh; `writing_hub`","outcome":null,"pattern_regex":null,"requires_authoring_examples":true`  -->  R79=`{"structure":"[SUPPLEMENT — Source B L1007 không ghi Grammar Focus]","outcome":"Consolidate writing skills + Math Fractions/Decimals review"`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`  -->  R79=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`{"topic":"Math Fractions/Decimals review","outcome":null,"vocab":[],"source_line":1008}`
+- **W130** (Source B L1007): đổi **6 trường** [theme, title_en, clil_topic, grammar_focus, vocabulary_focus, math_focus]
+  - `theme`: PROD=`Opinion Project 3: Comparing Global Approaches`  -->  R79=`Review & Math Logic Cycle`
+  - `title_en`: PROD=`Opinion Project 3: Comparing Global Approaches`  -->  R79=`Review & Math Logic Cycle`
+  - `clil_topic`: PROD=`{"title":"Luật so sánh: Lệnh cấm của Pháp và Florida","focus":"Luật so sánh: Lệnh cấm của Pháp và Florida"}`  -->  R79=`{"title":"Review & Math Logic Cycle","focus":"Consolidate writing skills + Math Fractions/Decimals review"}`
+  - `grammar_focus`: PROD=`{"structure":"Trích dẫn nguồn thông tin; `reading_hub` tóm tắt văn bản","outcome":null,"pattern_regex":null,"requires_authoring_examples":tr`  -->  R79=`{"structure":"[SUPPLEMENT — Source B L1007 không ghi Grammar Focus]","outcome":"Consolidate writing skills + Math Fractions/Decimals review"`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`  -->  R79=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`{"topic":"Math Fractions/Decimals review","outcome":null,"vocab":[],"source_line":1008}`
+- **W132** (Source B L1007): đổi **8 trường** [theme, title_en, clil_topic, grammar_focus, vocabulary_focus, math_focus, week_type, isFullMock]
+  - `theme`: PROD=`B1+ Academic Assessment Mock 2`  -->  R79=`Review & Math Logic Cycle`
+  - `title_en`: PROD=`B1+ Academic Assessment Mock 2`  -->  R79=`Review & Math Logic Cycle`
+  - `clil_topic`: PROD=`{"title":"Khảo sát Năng lực Chuẩn hóa B1+ 2","focus":"Khảo sát Năng lực Chuẩn hóa B1+ 2"}`  -->  R79=`{"title":"Review & Math Logic Cycle","focus":"Consolidate writing skills + Math Fractions/Decimals review"}`
+  - `grammar_focus`: PROD=`{"structure":"Full Mock B1+ Academic 2: Chấm bài luận Opinion Essay theo Rubric","outcome":null,"pattern_regex":null,"requires_authoring_exa`  -->  R79=`{"structure":"[SUPPLEMENT — Source B L1007 không ghi Grammar Focus]","outcome":"Consolidate writing skills + Math Fractions/Decimals review"`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`  -->  R79=`{"syllabus_words":[],"total_syllabus_words":0,"target_count":20,"missing_count":20,"status":"PARTIAL (0/20 syllabus words — Requires 20 word`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`{"topic":"Math Fractions/Decimals review","outcome":null,"vocab":[],"source_line":1008}`
+  - `week_type`: PROD=`full_mock`  -->  R79=`rotary_practice`
+  - `isFullMock`: PROD=`true`  -->  R79=`false`
+- **W133** (Source B L1012): đổi **4 trường** [clil_topic, grammar_focus, vocabulary_focus, math_focus]
+  - `clil_topic`: PROD=`{"title":"Deep Research & Data & Using data as evidence","focus":"Find and cite one statistic about video games (e.g., \"70% of kids play...`  -->  R79=`{"title":"Finding statistics to support arguments","focus":"Find and cite one statistic about video games (e.g., \"70% of kids play...\")"}`
+  - `grammar_focus`: PROD=`{"structure":"Citation Phrases: \"According to a study by...\", \"Statistics show that","outcome":"Find and cite one statistic about video g`  -->  R79=`{"structure":"Citation Phrases: \"According to a study by...\", \"Statistics show that...\"","outcome":"Find and cite one statistic about vi`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":["statistic","percent","study","data","majority","minority","survey","population"],"total_syllabus_words":8,"target_count"`  -->  R79=`{"syllabus_words":["statistic","percent","study","data","majority","minority","survey","population"],"total_syllabus_words":8,"target_count"`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`{"topic":"Geometry: Angles","outcome":"Identify right, acute, and obtuse angles in shapes","vocab":[],"source_line":1018}`
+- **W134** (Source B L1021): đổi **3 trường** [clil_topic, vocabulary_focus, math_focus]
+  - `clil_topic`: PROD=`{"title":"Identifying Fallacies & Critical Thinking/Logic","focus":"Identify a \"Generalization\" fallacy (e.g., \"All gamers are lazy\")"}`  -->  R79=`{"title":"Spotting bad arguments","focus":"Identify a \"Generalization\" fallacy (e.g., \"All gamers are lazy\")"}`
+  - `vocabulary_focus`: PROD=`{"syllabus_words":["fallacy","generalization","assumption","true","false","valid","invalid","logic"],"total_syllabus_words":8,"target_count"`  -->  R79=`{"syllabus_words":["fallacy","generalization","assumption","true","false","valid","invalid","logic"],"total_syllabus_words":8,"target_count"`
+  - `math_focus`: PROD=`(missing)`  -->  R79=`{"topic":"Geometry: Triangles","outcome":"Classify triangles by sides (equilateral, isosceles, scalene)","vocab":[],"source_line":1027}`
+
+
+### B.5. BẢNG CEFR HIỆN TẠI TRÊN PRODUCTION + ĐỀ XUẤT CHUẨN HÓA (GIỮ `W113–W120` `[CHỜ OWNER]`)
+
+#### B.5.1. Nhóm TOÀN BỘ nhãn `cefr_level` & `cefr_stage` đang tồn tại trong 156 `blueprint.json` production
+
+| Tuần (Phạm vi thực tế đọc từ Prod BP) | Số tuần | `cefr_level` (Prod) | `cefr_stage` (Prod) | Ghi chú / Bất thường quan sát được |
+| :--- | :---: | :--- | :---: | :--- |
+| W1–W14 | 14 | `Pre-A1 Starters` | `1` | Bình thường |
+| W15, W17–W23, W25–W31 | 15 | `A1 Movers` | `1` | Bình thường |
+| W16, W24, W32, W35–W73, W77, W82, W87, W92, W97, W102, W107, W112–W120, W132, W137, W142, W147, W152, W156 | 64 | `A2 Flyers` | `1` | CHỨA 26 TUẦN LỆCH TẦNG DO FALLBACK `generate_week_blueprint.mjs:L104`: W16, W24, W32, W73, W77, W82, W87, W92, W97, W102, W107, W112–W120, W132, W137, W142, W147, W152, W156 |
+| W33–W34 | 2 | `A2 Flyers` | `null` | THIẾU `cefr_stage` (W33/W34 Golden blueprints) |
+| W74–W76, W78–W81, W83–W86, W88–W91, W93–W96, W98–W101, W103–W106, W108–W111 | 31 | `B1 PET` | `2` | Bình thường |
+| W121–W131, W133–W136, W138–W141, W143–W146, W148–W151, W153–W155 | 30 | `B1+ Academic` | `3` | Bình thường |
+
+#### B.5.2. Các biến thể nhãn xuất hiện trong Digital Map (Cột 3 gốc) & Quy phạm đối chiếu (trích file thật)
+
+- Digital Map Cột 3: `Pre-A1` -> 8 tuần (W1–W8)
+- Digital Map Cột 3: `Pre-A1 $\rightarrow$ A1` -> 6 tuần (W9–W14)
+- Digital Map Cột 3: `A1 Movers Entry` -> 1 tuần (W15)
+- Digital Map Cột 3: `A1 Movers` -> 14 tuần (W17–W23, W25–W31)
+- Digital Map Cột 3: `A2 Flyers` -> 32 tuần (W33–W36, W38–W41, W43–W46, W48–W51, W53–W56, W58–W61, W63–W66, W68–W71)
+- Digital Map Cột 3: `B1 Entry` -> 1 tuần (W73)
+- Digital Map Cột 3: `B1 PET` -> 12 tuần (W74–W76, W78–W81, W83–W86, W88)
+- Digital Map Cột 3: `B1+ PET` -> 25 tuần (W89–W91, W93–W96, W98–W101, W103–W106, W108–W111, W113–W116, W118–W119)
+- Digital Map Cột 3: `B1+ Academic` -> 29 tuần (W121–W126, W128–W131, W133–W136, W138–W141, W143–W146, W148–W151, W153–W155)
+- Source B `L949`: `•	Week 120: PHASE 2 GRADUATION (Tuần 120: TỐT NGHIỆP GIAI ĐOẠN 2)` | `L951`: `•	Milestone: Transition to B1 Level.` | `L953`: `🎓 PHASE 3: ADVANCED SYNTHESIS & DEBATE (WEEKS 121-156)`
+- SOP `L106`: `3. **Thế hệ 3 (Weeks 113–156): B1+ Strong Academic Reading & Structured Opinion**:`
+- SOP `L199`: `- `cefr_stage`: Giai đoạn CEFR (Stage 1: Pre-A1 $\rightarrow$ A2 Flyers; Stage 2: A2+ $\rightarrow$ B1 PET; Stage 3: B1+ Academic).`
+- MASTER_ARCH `L28`: `[ W113 – W156] LEVEL 2 HẬU FLYERS: B1+ Strong Academic Reading & Structured Opinion`
+
+#### B.5.3. Đề xuất MỘT bộ nhãn chuẩn hóa (`cefr_level`, `cefr_stage`, phạm vi tuần) — PROPOSAL ONLY
+
+| Khối tuần | `cefr_level` chuẩn đề xuất | `cefr_stage` chuẩn | Cơ sở & Trạng thái |
+| :--- | :--- | :---: | :--- |
+| **W01–W16** | `Pre-A1 Starters` | `1` | Phase 1 Starters (gộp biến thể `Pre-A1 -> A1`, sửa W16 bị prod fallback `A2 Flyers`). |
+| **W17–W32** | `A1 Movers` | `1` | Phase 1 Movers (sửa W24, W32 bị prod fallback `A2 Flyers`; W15 trong Map ghi `A1 Movers Entry`). |
+| **W33–W72** | `A2 Flyers` | `1` | Phase 1 Flyers (gắn `cefr_stage: 1` bổ sung cho W33/W34 nếu unfreeze; hiện giữ frozen W33). |
+| **W73–W112** | `B1 PET` | `2` | Phase 2 B1 Preliminary (sửa các tuần W73/77/82/87/92/97/102/107/112 bị prod fallback `A2 Flyers` và thống nhất nhãn `B1 Entry` / `B1+ PET` -> `B1 PET`). |
+| **W113–W120** | **`[CHỜ OWNER]`** (`B1 PET` vs `B1+ Academic`) | **`[CHỜ OWNER]`** (`2` vs `3`) | **XUNG ĐỘT TÀI LIỆU GỐC:** Source B `L949–953` đặt W120 là *PHASE 2 GRADUATION (Milestone: Transition to B1 Level)* và bắt đầu Phase 3 từ `W121`; ngược lại `WEEK_PRODUCTION_SOP.md:L106` & `MASTER_ARCHITECTURE:L28,156` mở Gen 3 `B1+ Academic` từ `W113`. Hiện Map gốc ghi `B1+ PET`, prod BP bị lỗi fallback `A2 Flyers`. Không tự quyết — chờ Owner chốt ranh giới `W113–W120`. |
+| **W121–W156** | `B1+ Academic` | `3` | Phase 3 Advanced Synthesis & Debate (sửa các tuần W132/137/142/147/152/156 bị prod fallback `A2 Flyers`). |
+
+
+### B.6. BẢNG W113–W156 SAU KHI SỬA LỖI HIỂN THỊ `C.8` (`W129–132` HIỂN THỊ `"Review & Math Logic Cycle"`)
+
+- **Lỗi ở `scripts/generate_round78_part1_part2_and_blueprints.mjs:L602`**: dùng `sb.blockOrigin === 'multi_week_cycle' ? sb.rangeSpan : sb.titleEn` (mà `rangeSpan` là mảng `[129, 132]` trong `source_b_part2_parser.mjs:L244`), khiến W129–W132 bị ép chuỗi thành `L1007 (129,132 | ...)`. Đã sửa thành `${sb.titleEn} [W${spanStr}]` -> `L1007 (Review & Math Logic Cycle [W129–132] | ...)`.
+
+| Tuần | Repo Hiện Tại (BP Prod + Map + Staging) | Source B Part II (Dòng & Chủ đề) | Cần sửa gì khi duyệt? |
+| :---: | :--- | :--- | :--- |
+| **W113** | Prod BP: Part II (L908) (Part I L101); Map: Part II tiêu đề (L908) | L908 (Visual Aids (Images & Captions) \| Math: Geometry Review (Shapes)) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W114** | Prod BP: Part II (L916) (Part I L101); Map: Part II tiêu đề (L916) | L916 (Project Assembly (Making the Poster) \| Math: Measurement (Length/Area)) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W115** | Prod BP: Part II (L923) (Part I L101); Map: Part II tiêu đề (L923) | L923 (Speaking Notes (Cue Cards) \| Math: Logic Puzzles) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W116** | Prod BP: Part II (L931) (Part I L101) + isFullMock=true; Map: Part II tiêu đề (L931) | L931 (Rehearsal (Voice & Body) \| Math: Math Games) | bỏ isFullMock=true sang mock xen kẽ |
+| **W117** | Prod BP: Part II (L937) (Part I L101); Map: Part II tiêu đề (L937) | L937 (The Knowledge Fair (Group A) \| Math: không có) | sửa Map L216 theo Part II L937 |
+| **W118** | Prod BP: Part II (L941) (Part I L101); Map: Part II tiêu đề (L941) | L941 (The Knowledge Fair (Group B) \| Math: không có) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W119** | Prod BP: Part II (L944) (Part I L101); Map: Part II tiêu đề (L944) | L944 (Reflection & Portfolio \| Math: không có) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W120** | Prod BP: Part II (L949) (Part I L101) + isFullMock=true; Map: Part II tiêu đề (L949) | L949 (PHASE 2 GRADUATION \| Math: không có) | bỏ isFullMock=true sang mock xen kẽ ; sửa Map L219 theo Part II L949 |
+| **W121** | Prod BP: Part II (L957) (Part I L103); Map: Part II tiêu đề (L957) | L957 (Intro to Argumentative Research \| Math: Fractions Review (Equivalent)) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W122** | Prod BP: Part II (L965) (Part I L103); Map: Part II tiêu đề (L965) | L965 (Critical Listening \| Math: Adding/Subtracting Fractions) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W123** | Prod BP: Part II (L972) (Part I L103); Map: Part II tiêu đề (L972) | L972 (The Thesis Statement \| Math: Multiplying Fractions (Concept)) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W124** | Prod BP: Part II (L979) (Part I L103) + isFullMock=true; Map: Part II tiêu đề (L979) | L979 (Drafting Arguments (Body) \| Math: Decimals to Fractions) | bỏ isFullMock=true sang mock xen kẽ |
+| **W125** | Lệch tầng — Prod BP: Part II (L986); Map: Part II tiêu đề (L986); Staged: Part II (L986) ("Intro & Conclusion (Academic Essay Structure)") | L986 (Intro & Conclusion \| Math: Fraction Word Problems) | kiểm tra/tái sinh staging (week_125; staged BP=missing) |
+| **W126** | Lệch tầng — Prod BP: Part II (L993); Map: Part II tiêu đề (L993); Staged: Part II (L993) ("From Essay to Speech") | L993 (From Essay to Speech \| Math: Logic Puzzles) | kiểm tra/tái sinh staging (week_126; staged BP=Part II (L993)) |
+| **W127** | Lệch tầng — Prod BP: Part II (L998); Map: Part II tiêu đề (L998); Staged: Part II (L998) ("Rebuttal Practice") | L998 (Rebuttal Practice \| Math: Critical Thinking Math) | sửa Map L236 theo Part II L998 ; kiểm tra/tái sinh staging (week_127; staged BP=Part II (L998)) |
+| **W128** | Prod BP: Part II (L1004) (Part I L103) + isFullMock=true; Map: Part II tiêu đề (L1004) | L1004 (The Live Debate 1 \| Math: Math Review Game) | bỏ isFullMock=true sang mock xen kẽ |
+| **W129** | Lệch tầng — Prod BP: Part I (L105); Map: Part I (L105: Smartphones); Staged: Part I (L105) ("Opinion Project 3: Smartphones Under 12?") | L1007 (Review & Math Logic Cycle [W129–132] \| Math: Math Fractions/Decimals review) | cập nhật BP theme -> "Review & Math Logic Cycle" ; sửa Map L238 theo Part II L1007 ; kiểm tra/tái sinh staging (week_129; staged BP=Part II (L1007)) |
+| **W130** | Lệch tầng — Prod BP: Khác / cần kiểm tra; Map: Part I (L105: Smartphones); Staged: Khác / cần kiểm tra ("Opinion Project 3: Comparing Global Approaches") | L1007 (Review & Math Logic Cycle [W129–132] \| Math: Math Fractions/Decimals review) | cập nhật BP theme -> "Review & Math Logic Cycle" ; sửa Map L239 theo Part II L1007 ; kiểm tra/tái sinh staging (week_130; staged BP=Part II (L1007)) |
+| **W131** | Lệch tầng — Prod BP: Khác / cần kiểm tra; Map: Part I (L105: Smartphones); Staged: Khác / cần kiểm tra ("Opinion Project 3: Persuasive Techniques") | L1007 (Review & Math Logic Cycle [W129–132] \| Math: Math Fractions/Decimals review) | cập nhật BP theme -> "Review & Math Logic Cycle" ; sửa Map L240 theo Part II L1007 ; kiểm tra/tái sinh staging (week_131; staged BP=Part II (L1007)) |
+| **W132** | Prod BP: Khác / cần kiểm tra (Part I L105) + isFullMock=true; Map: Mock giả chèn khung Part I (B1+ Academic Assessment Mock 2) | L1007 (Review & Math Logic Cycle [W129–132] \| Math: Math Fractions/Decimals review) | bỏ isFullMock=true sang mock xen kẽ ; cập nhật BP theme -> "Review & Math Logic Cycle" ; sửa Map L241 theo Part II L1007 |
+| **W133** | Lệch tầng — Prod BP: Part II (L1012); Map: Part II tiêu đề (L1012); Staged: Part II (L1012) ("Deep Research & Data") | L1012 (Deep Research & Data \| Math: Geometry: Angles) | kiểm tra/tái sinh staging (week_133; staged BP=Part II (L1012)) |
+| **W134** | Lệch tầng — Prod BP: Part II (L1021); Map: Part II tiêu đề (L1021); Staged: Part II (L1021) ("Identifying Fallacies") | L1021 (Identifying Fallacies \| Math: Geometry: Triangles) | kiểm tra/tái sinh staging (week_134; staged BP=Part II (L1021)) |
+| **W135** | Prod BP: Part II (L1031) (Part I L105); Map: Part II tiêu đề (L1031) | L1031 (The Counter-Argument Paragraph \| Math: Perimeter & Area of Complex Shapes) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W136** | Prod BP: Part II (L1040) (Part I L105) + isFullMock=true; Map: Part II tiêu đề (L1040) | L1040 (Drafting the Full Essay \| Math: Symmetry) | bỏ isFullMock=true sang mock xen kẽ |
+| **W137** | Prod BP: Part II (L1049) (Part I L107); Map: Part II tiêu đề (L1049) | L1049 (Editing & Polishing (Word Choice) \| Math: Geometry Word Problems) | sửa Map L246 theo Part II L1049 |
+| **W138** | Prod BP: Part II (L1059) (Part I L107); Map: Part II tiêu đề (L1059) | L1059 (Advanced Rebuttal (Attacking Evidence) \| Math: Logic: Deduction) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W139** | Prod BP: Part II (L1068) (Part I L107); Map: Part II tiêu đề (L1068) | L1068 (Team Strategy \| Math: Transformations (Flip, Slide, Turn)) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W140** | Prod BP: Part II (L1077) (Part I L107) + isFullMock=true; Map: Part II tiêu đề (L1077) | L1077 (The Live Debate 2 (Video Games) \| Math: Math Review Game) | bỏ isFullMock=true sang mock xen kẽ |
+| **W141** | Prod BP: Part II (L1086) (Part I L107); Map: Part II tiêu đề (L1086) | L1086 (Geometry Review - Angles & Lines \| Math: Reviewing Angles) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W142** | Prod BP: Part II (L1091) (Part I L107); Map: Part II tiêu đề (L1091) | L1091 (Geometry Review - Area & Volume \| Math: 3D Shapes) | sửa Map L251 theo Part II L1091 |
+| **W143** | Prod BP: Part II (L1096) (Part I L107); Map: Part II tiêu đề (L1096) | L1096 (Critical Thinking - Analyzing Ads \| Math: Coordinate Geometry) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W144** | Prod BP: Part II (L1101) (Part I L107) + isFullMock=true; Map: Part II tiêu đề (L1101) | L1101 (Preparation for Capstone \| Math: Logic Puzzles Championship) | bỏ isFullMock=true sang mock xen kẽ |
+| **W145** | Prod BP: Part II (L1109) (Part I kết thúc W144); Map: Part II tiêu đề (L1109) | L1109 (Independent Research \| Math: Data Analysis (Mean/Median)) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W146** | Prod BP: Part II (L1118) (Part I kết thúc W144); Map: Part II tiêu đề (L1118) | L1118 (Synthesizing Information \| Math: Data Analysis (Mode/Range)) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W147** | Prod BP: Part II (L1128) (Part I kết thúc W144); Map: Part II tiêu đề (L1128) | L1128 (Advanced Thesis Writing \| Math: Probability (Chance)) | sửa Map L264 theo Part II L1128 |
+| **W148** | Prod BP: Part II (L1137) (Part I kết thúc W144) + isFullMock=true; Map: Part II tiêu đề (L1137) | L1137 (Drafting Final Essay (Independent) \| Math: Interpreting Data) | bỏ isFullMock=true sang mock xen kẽ |
+| **W149** | Prod BP: Part II (L1145) (Part I kết thúc W144); Map: Part II tiêu đề (L1145) | L1145 (Final Polish & Peer Review \| Math: Data Project) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W150** | Prod BP: Part II (L1154) (Part I kết thúc W144); Map: Part II tiêu đề (L1154) | L1154 (Mock Debate & Strategy \| Math: Review Logic Puzzles) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W151** | Prod BP: Part II (L1161) (Part I kết thúc W144); Map: Part II tiêu đề (L1161) | L1161 (The Capstone Debate \| Math: Math Cycle 3 Review) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W152** | Prod BP: Part II (L1166) (Part I kết thúc W144) + isFullMock=true; Map: Part II tiêu đề (L1166) | L1166 (Genre Review: Narrative \| Math: Pre-Algebra (Patterns)) | bỏ isFullMock=true sang mock xen kẽ ; sửa Map L269 theo Part II L1166 |
+| **W153** | Prod BP: Part II (L1174) (Part I kết thúc W144); Map: Part II tiêu đề (L1174) | L1174 (Genre Review: Expository \| Math: Geometry Review (Volume & Surface Area)) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W154** | Prod BP: Part II (L1182) (Part I kết thúc W144); Map: Part II tiêu đề (L1182) | L1182 (Impromptu Speaking Skills \| Math: Final Math Review (Part 2)) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W155** | Prod BP: Part II (L1189) (Part I kết thúc W144); Map: Part II tiêu đề (L1189) | L1189 (Portfolio Prep \| Math: Math Fun Day) | BP khớp tiêu đề chính; đồng bộ Map Col 4/6 & SUPPLEMENT |
+| **W156** | Prod BP: Part II (L1196) (Part I kết thúc W144) + isFullMock=true; Map: Part II tiêu đề (L1196) | L1196 (GRADUATION CEREMONY & FINAL SHOWCASE \| Math: Math Awards) | bỏ isFullMock=true sang mock xen kẽ ; sửa Map L273 theo Part II L1196 |

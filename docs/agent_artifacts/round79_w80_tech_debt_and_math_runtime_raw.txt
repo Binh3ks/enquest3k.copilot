@@ -1,0 +1,127 @@
+========================================================================================================
+🔍 ROUND 79 — SECTIONS E.10 (NỢ KỸ THUẬT W80 & W76 PROD) + F.11 (MATH RUNTIME & QUÉT 22 TUẦN PROD)
+Thời điểm chạy: 2026-11-11T08:07:12.619Z
+Phạm vi: CHỈ ĐỌC / BÁO CÁO — ZERO chỉnh sửa src/data/weeks/
+========================================================================================================
+
+### E.10. KIỂM TOÁN NỢ KỸ THUẬT PRODUCTION `week_80` (VÀ `week_76`) — KHÔNG SỬA FILE
+
+#### E.10.1. Đối chiếu mọi trường mâu thuẫn trong `src/data/weeks/week_80/`
+
+1. **`week_80/blueprint.json` vs `week_80/source_grounding.json` & chuẩn PET / Source B:**
+   - `cumulativeBlock` (`blueprint.json:L90-95`): `[77,78,79,80]` khớp `source_grounding.cumulative_block`: `[77,78,79,80]`, **NHƯNG**:
+   - `synthesis_summary` (`blueprint.json:L96-103`): vẫn ghi `w73_theme..w76_theme` (`"The Water Cycle (Advanced) / Volume"` .. `"Explorers / Map Scales"`) trùng y hệt `week_76/blueprint.json:L279-286`, KHÔNG phải `w77..w80`!
+   - `tested_skills` (`blueprint.json:L47-64`): ghi **16 mã chuẩn A2 Flyers** gồm `"listening_p5"` (L52) và `"writing_p7"` (L59), mâu thuẫn hoàn toàn với `mockFormat: "pet"` (L89) và `papers` (L104-125: Listening **4 parts / 25 items**, Writing **2 parts / 2 tasks**, Reading **6 parts / 32 items**, Speaking **4 parts / 4 tasks**).
+   - `vocabulary_focus` (`blueprint.json:L23-42`) & `target_vocab_20` (L45): đều **0 từ** (`syllabus_words: []`, `total_syllabus_words: 0`, `target_vocab_20: []`), mâu thuẫn với `synthesis_summary.grounded_vocabulary_count: 20` (L101) và Source B `L632–637` (W79–80 có 7 từ).
+   - `theme` (L3), `clil_topic` (L13-16), `grammar_focus` (L17-22): ghi theo Source A cũ (*Supply, Demand & Market Prices*), lệch Source B Part II `L632–637` (*Space Exploration vs. Earth Fix*, `metadata_provenance.source_master_syllabus: false`).
+   - `isFullMock: true` & `week_type: "full_mock"` (L8–9): gắn cờ Mock trực tiếp lên tuần nội dung W80 (mâu thuẫn quy tắc Mock xen kẽ tách M15 ra slot riêng).
+2. **`week_80/source_grounding.json` mâu thuẫn nội tại & clone nguyên văn từ W76:**
+   - `vocabulary_grounding_summary` (L9-38) liệt kê 20 từ cho `W77, W78, W79, W80` (W79 ghi ["exploration","restoration","planet"]; W80 ghi ["consumer","market","produce","profit","resource"]), NHƯNG:
+   - `exam_paper_grounding` (L41-58): **15/16 mục TRÙNG NGUYÊN VĂN 100% với `week_76/source_grounding.json:L41-58`** (nhắc `polar ice (W73)`, `rainforest ecology (W74)`, `Egyptian archaeology (W75)`, `ocean navigation (W76/W80)`, `Magellan`, `Captain Cook`, `Dr. Sarah Lin`).
+3. **`week_80/provenance.json`:**
+   - Dòng `L10`: ghi `"Cumulative Sourcing: Grounded in W73, W74, W75, W80"` (lẫn cả block W73–75 cũ lẫn W80; vừa mâu thuẫn với `cumulative_block: [77,78,79,80]` trong `blueprint.json`/`source_grounding.json`).
+4. **Các file `.js` bên trong `src/data/weeks/week_80/` (copy-paste sót từ W76/W77):**
+   - `vocab.js` (W80): 5 từ đầu là `["landmark","architecture","monument","structure","historic"]` (là bộ từ W77 *landmarks*, KHÔNG khớp 5 từ W80 hay W73); trong khi W76 `vocab.js` là `["evaporation","precipitation","reservoir","moisture","atmosphere"]` (từ của W73!).
+   - `skill_practice_hub.js` (W80): mảng `singapore_math` chứa **2 bài copy từ W76**: `w76_p1: Calculating Real Distance Using Map Scale | w76_p2: Comparing Two Sea Navigation Routes` (y hệt W76: `w76_p1: Calculating Real Distance Using Map Scale | w76_p2: Comparing Two Sea Navigation Routes`).
+   - `reading_hub.js` (W80): `theme = "Supply, Demand & Market Prices / Math: Market Equilibrium Graphs"`, cấu trúc `paper: "Reading"` (`rw_part1..rw_part6`, không có `clil_article`), nhưng bài đọc `rw_part3.title` lại là `"The Audacious Voyage: Ferdinand Magellan and the First Circumnavigation"` (tiếp tục clone chủ đề Ferdinand Magellan của W76!).
+5. **Nợ kỹ thuật liên đới tại `src/data/weeks/week_76/`:**
+   - `week_76/blueprint.json:L230-247` cũng mang `tested_skills` chuẩn Flyers (`listening_p5` L235, `writing_p7` L242) dù `mockFormat: "pet"` (L272) & `papers` PET (L287-308); `target_vocab_20` có 8 từ khác hoàn toàn `week_76/vocab.js` (20 từ bắt đầu bằng ["evaporation","precipitation"]).
+
+### F.11. BẰNG CHỨNG RUNTIME ĐỌC TOÁN (`singapore_math.js` vs `skill_practice_hub.js`) + QUÉT TOÀN BỘ 22 TUẦN PRODUCTION
+
+#### F.11.1. Chuỗi gọi dữ liệu Toán trong mã nguồn runtime (`src/` — trích `file:dòng` thật)
+
+- **`src/App.jsx`**:
+  - `L17`: `import { useFetchWeekData, useStationData } from './utils/dataHooks';`
+  - `L60`: `import { mapDataToZones } from './config/zoneDataMapper';`
+  - `L259`: `const { data: weekData, loading: isWeekDataLoading } = useFetchWeekData(weekId, learningMode);`
+  - `L287`: `const mappedZones = mapDataToZones(weekData, weekId);`
+  - `L292`: `<TaskScreen weekData={mappedZones} weekId={weekId} />`
+- **`src/utils/dataHooks.js`**:
+  - `L2`: `import weekIndex, { loadWeekData } from '../data/weeks/index';`
+  - `L167`: `const rawData = await loadWeekData(weekId, isEasy);`
+- **`src/data/weeks/index.js`**:
+  - `L5`: `const advModules = import.meta.glob('./week_*/index.js');`
+  - `L6`: `const advModulesFlat = import.meta.glob('./week_*.js');`
+  - `L7`: `const easyModules = import.meta.glob('../weeks_easy/week_*.js');`
+  - `L8`: `const easyModulesFolder = import.meta.glob('../weeks_easy/**/index.js');`
+  - `L14`: `export const loadWeekData = async (weekId, isEasy = false) => {`
+  - `L45`: `const advPathFolder = `./week_${pad}/index.js`;`
+  - `L48`: `if (advModules[advPathFolder]) {`
+  - `L49`: `const mod = await advModules[advPathFolder]();`
+  - `L51`: `} else if (advModulesFlat[advPathFlat]) {`
+  - `L52`: `const mod = await advModulesFlat[advPathFlat]();`
+- **`src/config/zoneDataMapper.js`**:
+  - `L23`: `const skillPracticeHub = weekData.skillPracticeHub || weekData.skill_practice_hub || weekData.stations?.skill_practice_hub || {};`
+  - `L49`: `skill_practice_hub: skillPracticeHub,`
+  - `L65`: `actionLab: skillPracticeHub.science_lab || listeningHub.science_lab || null,`
+  - `L74`: `flashArena: skillPracticeHub.flash_arena || listeningHub.flash_arena || readingHub.vocab || weekData.vocab || [],`
+  - `L77`: `grammarDrills: skillPracticeHub.grammar_drills || listeningHub.grammar_drills || [],`
+  - `L78`: `sentenceBuilder: skillPracticeHub.grammar_drills || listeningHub.grammar_drills || [],`
+- **`src/components/questmap/TaskScreen.jsx`**:
+  - `L31`: `import BattleArenaZone from '../../modules/zones/BattleArenaZone';`
+  - `L206`: `battleArena: { vocab: [], grammarDrills: [], flashArena: null, barModel: [], scienceLab: null },`
+  - `L220`: `const skillPracticeHub = weekData.skill_practice_hub || weekData.skillPracticeHub || weekData.stations?.skill_practice_hub || {};`
+  - `L231`: `const dictationData = skillPracticeHub.dictation || weekData.stations?.dictation || weekData.dictation || [];`
+  - `L241`: `grammarDrills: skillPracticeHub.grammar_drills || [],`
+  - `L242`: `flashArena: skillPracticeHub.flash_arena || weekData.stations?.new_words || null,`
+- **`src/modules/zones/BattleArenaZone.jsx`**:
+  - `L57`: `const barModelData = arenaData.barModel || data?.skill_practice_hub?.singapore_math || data?.listening_hub?.singapore_math || data?.stations?.listening_hub?.singapore_math || logicLabData.singapore_math || null;`
+  - `L160`: `<BarModelQuest`
+  - `L161`: `barModelData={barModelData}`
+- **`src/modules/hubs/station2/LearnMode/BarModelQuest.jsx`**:
+  - `L21`: `const rawQuestions = (Array.isArray(barModelData) && barModelData.length > 0)`
+  - `L32`: `problemText: q.problemText || q.problem_en || q.text || 'Solve the Bar Model problem below:',`
+  - `L33`: `correctAnswer: q.correctAnswer || q.answer_value || parseInt(q.answer) || 10,`
+  - `L263`: `<BarModelSVG modelData={currentQ.modelData} />`
+  - `L265`: `<img`
+- **`src/modules/cambridge_suite/ArenaHub.jsx`**:
+  - `L208`: `<BarModelQuest`
+  - `L209`: `barModelData={data?.singapore_math}`
+  - `L210`: `customQuestions={data?.singapore_math}`
+- **`src/contracts/RuntimeDataSourceRegistry.js`**:
+  - `L27`: `{ key: 'singapore_math', desc: 'Singapore bar model math in src/data/weeks/week_XX/singapore_math.js' },`
+  - `L66`: `{ key: 'singapore_math', name: `week_${weekStr}/singapore_math.js`, filePath: path.join(weekDir, 'singapore_math.js') },`
+
+- **Kết luận chính xác về đường nạp Toán ở Runtime:**
+  1. `src/data/weeks/index.js:L5, L45–54` (`loadWeekData(weekId)`) **CHỈ** `import` `./week_${pad}/index.js` (hoặc flat `./week_${pad}.js` — hiện có 0 file flat). Hệ thống **KHÔNG BAO GIỜ** tự động `import` `singapore_math.js` hay `skill_practice_hub.js` nếu `week_{N}/index.js` không trực tiếp `import` nó.
+  2. `src/components/questmap/TaskScreen.jsx:L220,243` & `src/config/zoneDataMapper.js:L23,79` lấy `barModel: skillPracticeHub.singapore_math || listeningHub.singapore_math || []`, rồi `src/modules/zones/BattleArenaZone.jsx:L57,160` truyền `barModelData` vào `<BarModelQuest />`. (`ArenaHub.jsx:L209` là route legacy `/hub/station-2` cố định `week33Data?.listeningHub`).
+  3. **Hệ quả thực tế trên production hiện tại:**
+     - Không một tuần nào trong W33–W156 có `index.js` import `singapore_math.js`!
+     - `W33` & `W34`: `index.js` import `skill_practice_hub.js` (5 bài dùng `problem_en`/`bar_model_svg`) và `logic_lab.js` (5 bài) — **bỏ qua `singapore_math.js`** (nơi chứa `modelData` động).
+     - `W35`: `index.js` **KHÔNG** import `skill_practice_hub.js` (chỉ import `logic_lab.js` rỗng 0 bài), dẫn tới `zoneDataMapper.js:L79` trả về `[]` -> runtime hiện `"Missing"` dù file `skill_practice_hub.js` trên đĩa có 2 bài!
+     - `17 tuần (W38, 39, 41, 43, 45, 46, 73–82, 125)`: có 6 file `.js` trên đĩa (`skill_practice_hub.js` với 2 bài) nhưng **KHÔNG CÓ `index.js`** -> `loadWeekData(w)` trả `null`, runtime chưa nạp được các tuần này.
+
+#### F.11.2. Bảng quét toàn bộ 22 thư mục production có nội dung `.js` (`src/data/weeks/week_*`)
+
+| Tuần | `index.js` | `idx` import `sm` / `sph` / `ll` | `singapore_math.js` | `skill_practice_hub.js` | `listening_hub.js` | `logic_lab.js` | Số bài thấy ở Runtime (`loadWeekData`) | Tình trạng đối chiếu giữa 2 nguồn Toán |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **W33** | ✅ | N/Y/Y | 5 bài | 5 bài | 0 bài | 5 bài | **5** | CÙNG 5 ĐỀ TOÁN nhưng khác schema (sm.js dùng modelData+problemText; sph.js dùng bar_model_svg+problem_en); index.js chỉ import sph.js |
+| **W34** | ✅ | N/Y/Y | 5 bài | 5 bài | 0 bài | 5 bài | **5** | CÙNG 5 ĐỀ TOÁN nhưng khác schema (sm.js dùng modelData+problemText; sph.js dùng bar_model_svg+problem_en); index.js chỉ import sph.js |
+| **W35** | ✅ | N/N/Y | 0 bài | 2 bài | 0 bài | 0 bài | **0** | XUNG ĐỘT STUB vs NỘI DUNG: sm.js rỗng (0), sph.js có 2 bài NHƯNG index.js KHÔNG import sph.js |
+| **W36** | ✅ | N/N/Y | 0 bài | 0 bài | 0 bài | 0 bài | **0** | sm.js stub rỗng (0 bài) & sph.js không có singapore_math (tuần Mock) |
+| **W37** | ✅ | N/N/Y | 0 bài | 0 bài | 0 bài | 0 bài | **0** | sm.js stub rỗng (0 bài) & sph.js không có singapore_math (tuần Mock) |
+| **W38** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(38) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W39** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(39) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W41** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(41) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W43** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(43) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W45** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(45) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W46** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(46) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W73** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(73) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W74** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(74) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W75** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(75) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W76** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(76) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W77** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(77) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W78** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(78) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W79** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(79) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W80** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(80) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W81** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(81) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W82** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(82) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+| **W125** | ❌ | N/N/N | — (0 file) | 2 bài | 0 bài | — | **0** | THIẾU index.js -> loadWeekData(125) trả null; chỉ có sph.js (2 bài, không có sm.js) |
+
+- **Tổng hợp thống kê từ bảng 22 tuần (tính tự động):**
+  - Tổng thư mục production có file `.js`: **22 tuần** (W33, W34, W35, W36, W37, W38, W39, W41, W43, W45, W46, W73, W74, W75, W76, W77, W78, W79, W80, W81, W82, W125)
+  - Số tuần có CẢ `singapore_math.js` VÀ `skill_practice_hub.js`: **5 tuần** (W33, W34, W35, W36, W37)
+    - Trong nhóm này: W33 & W34 trùng 5 đề nhưng khác định dạng schema (`sm.js` có `modelData` JSON còn `sph.js` trỏ `bar_model_svg`); W35 `sm.js` rỗng 0 bài nhưng `sph.js` có 2 bài (và không được `index.js` import); W36 & W37 đều rỗng 0 bài ở cả 2 file (Mock).
+  - Số tuần CHỈ có `skill_practice_hub.js` (không có `singapore_math.js`): **17 tuần** (W38, W39, W41, W43, W45, W46, W73, W74, W75, W76, W77, W78, W79, W80, W81, W82, W125) — toàn bộ đều có 2 bài/tuần trong `sph.js` và đều thiếu `index.js`.
+  - Số tuần thực tế tải được > 0 bài Toán qua `loadWeekData(w)` ở runtime hiện nay: **2 tuần** (W33:5, W34:5)

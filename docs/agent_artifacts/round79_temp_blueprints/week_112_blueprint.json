@@ -1,0 +1,234 @@
+{
+  "week": 112,
+  "theme": "The Editor's Eye (Review)",
+  "title_en": "The Editor's Eye (Review)",
+  "title_vi": "Con mắt Biên tập viên - Chỉnh sửa",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Polishing the draft",
+  "clil_topic": {
+    "title": "Polishing the draft",
+    "focus": "Self-correct spelling and basic grammar errors"
+  },
+  "grammar_focus": {
+    "structure": "Verb Tense Consistency (checking if the whole text is in Past or Present)",
+    "outcome": "Self-correct spelling and basic grammar errors",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "check",
+      "error",
+      "fix",
+      "spelling",
+      "perfect",
+      "final"
+    ],
+    "total_syllabus_words": 6,
+    "target_count": 20,
+    "missing_count": 14,
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 6,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 2,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 4,
+      "past_tense_triad": {
+        "/t/": [
+          "check",
+          "fix"
+        ],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "check",
+    "error",
+    "fix",
+    "spelling",
+    "perfect",
+    "final"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "check",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/tʃˈɛk/",
+      "phonetics": {
+        "arpabet": "CH EH1 K",
+        "final_phone": "K",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "checked",
+        "past_participle": "checked",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /k/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
+    },
+    {
+      "word": "error",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˈɛɹɚ/",
+      "phonetics": {
+        "arpabet": "EH1 R ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "fix",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/fˈɪks/",
+      "phonetics": {
+        "arpabet": "F IH1 K S",
+        "final_phone": "S",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "fixed",
+        "past_participle": "fixed",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /s/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
+    },
+    {
+      "word": "spelling",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/spˈɛlɪŋ/",
+      "phonetics": {
+        "arpabet": "S P EH1 L IH0 NG",
+        "final_phone": "NG",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "perfect",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pɚfˈɛkt/",
+      "phonetics": {
+        "arpabet": "P ER0 F EH1 K T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "final",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/fˈaɪnəl/",
+      "phonetics": {
+        "arpabet": "F AY1 N AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Official)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 14 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 112,
+    "map_theme": "CAMBRIDGE B1 PET OFFICIAL GATE",
+    "map_clil_module": "OFFICIAL CAMBRIDGE B1 PET BENCHMARK",
+    "map_grammar_hub": "KỲ THI CHÍNH THỨC B1 PET — MỤC TIÊU: PASS WITH MERIT / DISTINCTION!",
+    "map_cefr_type": "★ FULL MOCK 19 (OFFICIAL)",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"The Editor's Eye (Review)\") enforced over Digital Map (Source A: \"CAMBRIDGE B1 PET OFFICIAL GATE\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:02.333Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "mockFormat": "pet",
+  "math_focus": {
+    "topic": "Data Analysis (Mean/Mode)",
+    "outcome": "Calculate the mean or find the mode of their project data",
+    "vocab": [],
+    "source_line": 904
+  }
+}

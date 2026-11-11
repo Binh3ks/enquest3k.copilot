@@ -1,0 +1,250 @@
+{
+  "week": 25,
+  "theme": "Sequencing Actions (First, Then)",
+  "title_en": "Sequencing Actions (First, Then)",
+  "title_vi": "Sắp xếp Trình tự Hành động",
+  "cefr_level": "A1 Movers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_w17_movers_full.js",
+  "story_title": "How I made a sandwich / How I brushed my teeth",
+  "clil_topic": {
+    "title": "How I made a sandwich / How I brushed my teeth",
+    "focus": "Retell a simple sequence of events using connectors"
+  },
+  "grammar_focus": {
+    "structure": "Sequence Connectors: First, Next, Then, Finally",
+    "outcome": "Retell a simple sequence of events using connectors",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "bread",
+      "jam",
+      "spread",
+      "knife",
+      "toothpaste",
+      "brush",
+      "rinse"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 2,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [
+          "brush",
+          "rinse"
+        ],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "bread",
+    "jam",
+    "spread",
+    "knife",
+    "toothpaste",
+    "brush",
+    "rinse"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "bread",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/bɹˈɛd/",
+      "phonetics": {
+        "arpabet": "B R EH1 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "jam",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dʒˈæm/",
+      "phonetics": {
+        "arpabet": "JH AE1 M",
+        "final_phone": "M",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "spread",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/spɹˈɛd/",
+      "phonetics": {
+        "arpabet": "S P R EH1 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "knife",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/nˈaɪf/",
+      "phonetics": {
+        "arpabet": "N AY1 F",
+        "final_phone": "F",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "toothpaste",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/tˈuːθpˌeɪst/",
+      "phonetics": {
+        "arpabet": "T UW1 TH P EY2 S T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "brush",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/bɹˈʌʃ/",
+      "phonetics": {
+        "arpabet": "B R AH1 SH",
+        "final_phone": "SH",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "brushed",
+        "past_participle": "brushed",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /sh/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
+    },
+    {
+      "word": "rinse",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɹˈɪns/",
+      "phonetics": {
+        "arpabet": "R IH1 N S",
+        "final_phone": "S",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "rinsed",
+        "past_participle": "rinsed",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /s/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 25,
+    "map_theme": "The Lost Treasure Map",
+    "map_clil_module": "Địa lý: 4 hướng la bàn & tọa độ",
+    "map_grammar_hub": "Chỉ đường trong quá khứ (\"We walked north\"); `science_report` nhật ký kho báu",
+    "map_cefr_type": "A1 Movers · Rotary Practice",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Sequencing Actions (First, Then)\") enforced over Digital Map (Source A: \"The Lost Treasure Map\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:58.056Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": null
+}

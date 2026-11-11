@@ -1,0 +1,230 @@
+{
+  "week": 137,
+  "theme": "Editing & Polishing (Word Choice)",
+  "title_en": "Editing & Polishing (Word Choice)",
+  "title_vi": "Chỉnh sửa & Trau chuốt - Dùng từ",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_b1plus_transition.js",
+  "story_title": "Enhancing Vocabulary",
+  "clil_topic": {
+    "title": "Enhancing Vocabulary",
+    "focus": "Replace weak verbs/adjectives with stronger ones (e.g., \"bad\" -> \"harmful\", \"good\" -> \"beneficial\")"
+  },
+  "grammar_focus": {
+    "structure": "Synonyms & Antonyms usage",
+    "outcome": "Replace weak verbs/adjectives with stronger ones (e.g., \"bad\" -> \"harmful\", \"good\" -> \"beneficial\")",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "beneficial",
+      "harmful",
+      "essential",
+      "detrimental",
+      "vital",
+      "significant"
+    ],
+    "total_syllabus_words": 6,
+    "target_count": 20,
+    "missing_count": 14,
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 6,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 6,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "beneficial",
+    "harmful",
+    "essential",
+    "detrimental",
+    "vital",
+    "significant"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "beneficial",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/bˌɛnəfˈɪʃəl/",
+      "phonetics": {
+        "arpabet": "B EH2 N AH0 F IH1 SH AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "harmful",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/hˈɑːɹmfəl/",
+      "phonetics": {
+        "arpabet": "HH AA1 R M F AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "essential",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪsˈɛnʃəl/",
+      "phonetics": {
+        "arpabet": "IH0 S EH1 N SH AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "detrimental",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dˌɛtɹəmˈɛntəl/",
+      "phonetics": {
+        "arpabet": "D EH2 T R AH0 M EH1 N T AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "vital",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/vˈaɪtəl/",
+      "phonetics": {
+        "arpabet": "V AY1 T AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "significant",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/səɡnˈɪfɪkənt/",
+      "phonetics": {
+        "arpabet": "S AH0 G N IH1 F IH0 K AH0 N T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Exam)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 14 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 137,
+    "map_theme": "Editing & Polishing (Word Choice)",
+    "map_clil_module": "Chỉnh sửa & Trau chuốt - Dùng từ: Replace weak verbs/adjectives with stronger ones (e.g., \"bad\" -> \"harmful\", \"good\" -> \"beneficial\")",
+    "map_grammar_hub": "Full Mock B1+ Academic 3: Đọc bài khoa học 600w + Nghe bài giảng + Opinion Essay",
+    "map_cefr_type": "★ FULL MOCK 22 (B1+)",
+    "alignment_status": "ALIGNED",
+    "alignment_note": "Syllabus sources fully aligned."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-05T08:15:50.064Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": {
+    "topic": "Geometry Word Problems",
+    "outcome": "Solve real-world problems involving area/perimeter (e.g., fencing a garden)",
+    "vocab": [],
+    "source_line": 1055
+  }
+}

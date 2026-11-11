@@ -1,0 +1,472 @@
+========================================================================================================
+📊 ROUND 79 — SECTION A (A.1, A.2, A.3): DIGITAL MAP v2 (GIỮ SOURCE A + TÁCH 3 NHÓM ĐẾM + CONSUMER AUDIT)
+Thời điểm chạy: 2026-11-11T08:07:12.370Z
+File Map v2 đề xuất: docs/agent_artifacts/round79_proposed_digital_map_v2.md (314 dòng)
+========================================================================================================
+
+### A.1. BẢO TOÀN THÔNG TIN KHÔNG XUNG ĐỘT TỪ SOURCE A CỘT 6 (`[SUPPLEMENT — Source A]`)
+
+- Tổng số hàng tuần nội dung có trích xuất & giữ lại ánh xạ hub/mini-game/hoạt động từ Cột 6 Source A dưới nhãn `[SUPPLEMENT — Source A]`: **103 / 156 tuần**.
+- Kiểm chứng các ví dụ điển hình yêu cầu bởi Owner (đọc trực tiếp từ file gốc & Map v2):
+  * **W38** (Map gốc L111): Cột 6 gốc = `Mối quan hệ nguyên nhân - kết quả với *because*; `action_lab` góc pin mặt trời`
+    - Giữ lại `[SUPPLEMENT — Source A]`: ``action_lab` góc pin mặt trời`
+    - Xung đột Cột 6 bị thay: Source A "Mối quan hệ nguyên nhân - kết quả với *because*" khác Source B Grammar "Can / Cannot (Can't)"
+    - Dòng Map v2: | **W38** | Animal Abilities (Modals) | A2 Flyers · Rotary 2 | Topic: Comparing animal abilities (`Source B L329`); [SUPPLEMENT: Toán/Lab mở rộng khi Source B không ghi Math] | Tier 2 (Chunks) | [Source B L333] Can / Cannot (Can't) • Vocab (8): jump, fly, swim, hunt, climb, run, heavy, fast • [SUPPLEMENT — Source A]: `action_lab` góc pin mặt trời |
+  * **W79** (Map gốc L170): Cột 6 gốc = `Nguyên nhân & tác động lịch sử; `broadcast_studio` phim tài liệu lịch sử`
+    - Giữ lại `[SUPPLEMENT — Source A]`: (không có đoạn non-mock tách riêng / chuyển vào hàng MOCK)
+    - Xung đột Cột 6 bị thay: gắn nhầm chủ đề cũ (The Industrial Revolution) thay vì Space Exploration vs Earth Fix
+    - Dòng Map v2: | **W79** | Review & Micro-Debate 2: Space Exploration vs. Earth Fix (Part 1: Claims — tách W79/W80: SUPPLEMENT) | B1 PET · Rotary 3 · Review Cycle | Topic: Space Exploration vs. Earth Fix (`Source B L632`); [SUPPLEMENT: Toán & phân vai từng tuần W79/W80 không có trong Source B L632–637 — Owner chờ duyệt] | Tier 3 (Guided CER) | [Source B L636] Passive Voice, Conditionals, Comparatives • Vocab (7): space, earth, money, spend, fix, problem, important |
+  * **W80** (Map gốc L171): Cột 6 gốc = `Logic điều kiện kinh tế; `math_quest` biểu đồ đường cung - cầu`
+    - Giữ lại `[SUPPLEMENT — Source A]`: (không có đoạn non-mock tách riêng / chuyển vào hàng MOCK)
+    - Xung đột Cột 6 bị thay: gắn nhầm chủ đề cũ (Supply, Demand & Market Prices) thay vì Space Exploration vs Earth Fix
+    - Dòng Map v2: | **W80** | Review & Micro-Debate 2: Space Exploration vs. Earth Fix (Part 2: Rebuttal — tách W79/W80: SUPPLEMENT) | B1 PET · Rotary 4 · Review Cycle | Topic: Space Exploration vs. Earth Fix (`Source B L632`); [SUPPLEMENT: Toán & phân vai từng tuần W79/W80 không có trong Source B L632–637 — Owner chờ duyệt] | Tier 3 (Guided CER) | [Source B L636] Passive Voice, Conditionals, Comparatives • Vocab (7): space, earth, money, spend, fix, problem, important |
+  * **W124** (Map gốc L233): Cột 6 gốc = ``broadcast_studio` Ghi hình thuyết trình quan điểm Ủng hộ vs Phản đối`
+    - Giữ lại `[SUPPLEMENT — Source A]`: ``broadcast_studio` Ghi hình thuyết trình quan điểm Ủng hộ vs Phản đối`
+    - Xung đột Cột 6 bị thay: Không có
+    - Dòng Map v2: | **W124** | Drafting Arguments (Body) | B1+ Academic · Rotary 4 | Topic: Writing the P.E.E paragraph (Point, Evidence, Explanation) (`Source B L979`); Math: Decimals to Fractions (`Source B L984`); ELA: Write 2 body paragraphs supporting the thesis | Tier 3 (Opinion) | [Source B L982] Linking Words (Sequence): "Firstly", "Secondly", "Furthermore" • Vocab (5): evidence, prove, show, example, instance • [SUPPLEMENT — Source A]: `broadcast_studio` Ghi hình thuyết trình quan điểm Ủng hộ vs Phản đối |
+  * **W129** (Map gốc L238): Cột 6 gốc = `Soạn thảo bài luận quan điểm hoàn chỉnh; `writing_hub``
+    - Giữ lại `[SUPPLEMENT — Source A]`: `Soạn thảo bài luận quan điểm hoàn chỉnh`, ``writing_hub``
+    - Xung đột Cột 6 bị thay: Không có
+    - Dòng Map v2: | **W129** | Review & Math Logic Cycle (W129–132) | B1+ Academic · Rotary 1 · Review Cycle | Math: Math Fractions/Decimals review (`Source B L1008`); Focus: Consolidate writing skills + Math Fractions/Decimals review (`Source B L1007–1008`); [SUPPLEMENT: Đề bài viết/nói từng tuần không có trong Source B L1007–1008 — Owner chờ duyệt] | Tier 3 (Opinion) | [SUPPLEMENT: Grammar không ghi trong Source B — Owner chờ duyệt] • Vocab: [SUPPLEMENT — 0 từ trong Source B; Owner chờ duyệt] • [SUPPLEMENT — Source A]: Soạn thảo bài luận quan điểm hoàn chỉnh; `writing_hub` |
+  * **W130** (Map gốc L239): Cột 6 gốc = `Trích dẫn nguồn thông tin; `reading_hub` tóm tắt văn bản`
+    - Giữ lại `[SUPPLEMENT — Source A]`: `Trích dẫn nguồn thông tin`, ``reading_hub` tóm tắt văn bản`
+    - Xung đột Cột 6 bị thay: Không có
+    - Dòng Map v2: | **W130** | Review & Math Logic Cycle (W129–132) | B1+ Academic · Rotary 2 · Review Cycle | Math: Math Fractions/Decimals review (`Source B L1008`); Focus: Consolidate writing skills + Math Fractions/Decimals review (`Source B L1007–1008`); [SUPPLEMENT: Đề bài viết/nói từng tuần không có trong Source B L1007–1008 — Owner chờ duyệt] | Tier 3 (Opinion) | [SUPPLEMENT: Grammar không ghi trong Source B — Owner chờ duyệt] • Vocab: [SUPPLEMENT — 0 từ trong Source B; Owner chờ duyệt] • [SUPPLEMENT — Source A]: Trích dẫn nguồn thông tin; `reading_hub` tóm tắt văn bản |
+  * **W131** (Map gốc L240): Cột 6 gốc = `Ngữ điệu và trọng âm nhấn mạnh; `gear2_karaoke` bài diễn văn lịch sử`
+    - Giữ lại `[SUPPLEMENT — Source A]`: `Ngữ điệu và trọng âm nhấn mạnh`, ``gear2_karaoke` bài diễn văn lịch sử`
+    - Xung đột Cột 6 bị thay: Không có
+    - Dòng Map v2: | **W131** | Review & Math Logic Cycle (W129–132) | B1+ Academic · Rotary 3 · Review Cycle | Math: Math Fractions/Decimals review (`Source B L1008`); Focus: Consolidate writing skills + Math Fractions/Decimals review (`Source B L1007–1008`); [SUPPLEMENT: Đề bài viết/nói từng tuần không có trong Source B L1007–1008 — Owner chờ duyệt] | Tier 3 (Opinion) | [SUPPLEMENT: Grammar không ghi trong Source B — Owner chờ duyệt] • Vocab: [SUPPLEMENT — 0 từ trong Source B; Owner chờ duyệt] • [SUPPLEMENT — Source A]: Ngữ điệu và trọng âm nhấn mạnh; `gear2_karaoke` bài diễn văn lịch sử |
+  * **W132** (Map gốc L241): Cột 6 gốc = `Full Mock B1+ Academic 2: Chấm bài luận Opinion Essay theo Rubric`
+    - Giữ lại `[SUPPLEMENT — Source A]`: (không có đoạn non-mock tách riêng / chuyển vào hàng MOCK)
+    - Xung đột Cột 6 bị thay: Không có
+    - Dòng Map v2: | **W132** | Review & Math Logic Cycle (W129–132) | B1+ Academic · Rotary 4 · Review Cycle | Math: Math Fractions/Decimals review (`Source B L1008`); Focus: Consolidate writing skills + Math Fractions/Decimals review (`Source B L1007–1008`); [SUPPLEMENT: Đề bài viết/nói từng tuần không có trong Source B L1007–1008 — Owner chờ duyệt] | Tier 3 (Opinion) | [SUPPLEMENT: Grammar không ghi trong Source B — Owner chờ duyệt] • Vocab: [SUPPLEMENT — 0 từ trong Source B; Owner chờ duyệt] |
+  * **W133** (Map gốc L242): Cột 6 gốc = `Soạn thảo tổng quan tài liệu; `discovery_report` độ lệch AI detector`
+    - Giữ lại `[SUPPLEMENT — Source A]`: ``discovery_report` độ lệch AI detector`
+    - Xung đột Cột 6 bị thay: Source A "Soạn thảo tổng quan tài liệu" khác Source B Grammar "Citation Phrases: "According to a study by...", "Statistics show that...""
+    - Dòng Map v2: | **W133** | Deep Research & Data | B1+ Academic · Rotary 1 | Topic: Finding statistics to support arguments (`Source B L1012`); Math: Geometry: Angles (`Source B L1018`); ELA: Find and cite one statistic about video games (e.g., "70% of kids play...") | Tier 3 (Research) | [Source B L1016] Citation Phrases: "According to a study by...", "Statistics show that..." • Vocab (8): statistic, percent, study, data, majority, minority, survey, population • Math Outcome: Identify right, acute, and obtuse angles in shapes • [SUPPLEMENT — Source A]: `discovery_report` độ lệch AI detector |
+  * **W134** (Map gốc L243): Cột 6 gốc = `Xây dựng bảng hỏi; `info_exchange` phỏng vấn khảo sát dữ liệu`
+    - Giữ lại `[SUPPLEMENT — Source A]`: ``info_exchange` phỏng vấn khảo sát dữ liệu`
+    - Xung đột Cột 6 bị thay: Source A "Xây dựng bảng hỏi" khác Source B Grammar "Qualifiers: "Some", "Many", "Often", "Tend to" (to avoid generalizing)"
+    - Dòng Map v2: | **W134** | Identifying Fallacies | B1+ Academic · Rotary 2 | Topic: Spotting bad arguments (`Source B L1021`); Math: Geometry: Triangles (`Source B L1027`); ELA: Identify a "Generalization" fallacy (e.g., "All gamers are lazy") | Tier 3 (Research) | [Source B L1025] Qualifiers: "Some", "Many", "Often", "Tend to" (to avoid generalizing) • Vocab (8): fallacy, generalization, assumption, true, false, valid, invalid, logic • Math Outcome: Classify triangles by sides (equilateral, isosceles, scalene) • [SUPPLEMENT — Source A]: `info_exchange` phỏng vấn khảo sát dữ liệu |
+
+### A.2. THAY THẾ MỤC B.6: ĐẾM TÁCH BẠCH 3 NHÓM ĐỘC LẬP (KHÔNG GỘP CHUNG "143/156 XUNG ĐỘT")
+
+- Tổng số hàng tuần nội dung trong Digital Map gốc: **156 hàng** (W01–W156)
+- **(i) Xung đột THẬT với Source B** (`title/topic/clil/grammar/math` thực sự mâu thuẫn với Source B): **109 / 156 tuần**
+  - Lệch/typo tiêu đề: **24 tuần** (W14, W26, W33, W34, W36, W52, W53, W55, W56, W57, W58, W66, W79, W80, W90, W93, W94, W95, W96, W105, W129, W130, W131, W132)
+  - Lệch CLIL/Topic so với Source B: **14 tuần** (W1, W33, W54, W79, W80, W95, W96, W128, W129, W130, W131, W132, W141, W142)
+  - Lệch Grammar/Math trong Cột 6 so với Source B: **90 tuần** (W6, W8, W9, W10, W11, W12, W13, W15, W16, W17, W22, W23, W24, W25, W26, W27, W28, W29, W30, W31, W32, W34, W38, W39, W40, W41, W42, W43, W44, W45, W46, W48, W49, W56, W58, W59, W60, W61, W63, W64, W66, W68, W70, W71, W73, W74, W75, W76, W78, W79, W80, W81, W83, W84, W85, W86, W88, W89, W90, W91, W98, W99, W100, W101, W103, W104, W105, W106, W108, W109, W110, W111, W121, W122, W123, W125, W126, W133, W134, W135, W138, W139, W141, W145, W146, W148, W149, W153, W154, W155)
+- **(ii) Thông tin chỉ có ở Source A được giữ lại dưới nhãn `[SUPPLEMENT]`** (gồm ánh xạ hub/mini-game/hoạt động Cột 6 hoặc chi tiết khi Source B im lặng mà không mâu thuẫn): **104 / 156 tuần**
+  - Trong đó có **103 hàng tuần** giữ ánh xạ hub/hoạt động từ Cột 6 Source A dưới `[SUPPLEMENT — Source A]`, và **1 hạng mục** ở Cột 4 khi Source B im lặng (nằm trên W18 cùng với Col 6 -> tổng **103 hàng** có nội dung cột `(ii)`, **104 hạng mục chi tiết**).
+- **(iii) Cờ `★ FULL MOCK` / `★ GRADUATION` gỡ khỏi hàng tuần nội dung để tách sang 34 mốc xen kẽ (`MOCK M01–M34`)**: **28 / 156 tuần**
+  - Danh sách: W16 (★ FULL MOCK 01 (Starters)), W24 (★ FULL MOCK 02 (Movers)), W32 (★ FULL MOCK 03 (Movers)), W37 (★ FULL MOCK 04 (Flyers)), W42 (★ FULL MOCK 05 (Flyers)), W47 (★ FULL MOCK 06 (Flyers)), W52 (★ FULL MOCK 07 (Flyers)), W57 (★ FULL MOCK 08 (Flyers)), W62 (★ FULL MOCK 09 (Flyers)), W67 (★ FULL MOCK 10 (Flyers)), W72 (★ FULL MOCK 11 (OFFICIAL)), W77 (★ FULL MOCK 12 (PET)), W82 (★ FULL MOCK 13 (PET)), W87 (★ FULL MOCK 14 (PET)), W92 (★ FULL MOCK 15 (PET)), W97 (★ FULL MOCK 16 (PET)), W102 (★ FULL MOCK 17 (PET)), W107 (★ FULL MOCK 18 (PET)), W112 (★ FULL MOCK 19 (OFFICIAL)), W117 (★ FULL MOCK (Presentation A)), W120 (★ GRADUATION (Phase 2)), W127 (★ FULL MOCK 20 (B1+)), W132 (★ FULL MOCK 21 (B1+)), W137 (★ FULL MOCK 22 (B1+)), W142 (★ FULL MOCK 23 (B1+)), W147 (★ FULL MOCK 24 (B1+)), W152 (★ FULL MOCK 25 (B1+)), W156 (★ FULL MOCK 26 / GRADUATION)
+
+| Tuần | Dòng (SB / Map) | (i) Xung đột THẬT Source B | (ii) Thông tin Source A giữ làm [SUPPLEMENT] | (iii) Gỡ cờ Mock/Grad khỏi hàng nội dung |
+| :---: | :---: | :--- | :--- | :--- |
+| **W1** | L129/L58 | CLIL lệch Source B (Introduction & Superheroes (Creating a "Hero Identity")) vs Map (Bản sắc cá nhân & Các bộ phận cơ thể) | Col 6: `reading_hub` 1-word touch-and-say | — |
+| **W2** | L134/L59 | — | Col 6: `speaking_hub` chỉ ảnh nói | — |
+| **W3** | L139/L60 | — | Col 6: `listening_hub` nối màu sắc | — |
+| **W4** | L144/L61 | — | Col 6: `writing_hub` ghép mặt cảm xúc | — |
+| **W5** | L149/L62 | — | Col 6: `listening_hub` kéo thả đồ đạc | — |
+| **W6** | L154/L63 | Source A ""There is / There are...", danh từ số nhiều" khác Source B Grammar "Prepositions (In, On, Under, Next to)" | Col 6: `math_quest` đếm 1–20 | — |
+| **W7** | L159/L64 | — | Col 6: `reading_hub` biểu tượng bản đồ | — |
+| **W8** | L164/L65 | Source A "Củng cố Units 1–7" khác Source B Grammar ""There are..." + Plural Nouns" | Col 6: `weekly_review` Starters Speaking Part 1 | — |
+| **W9** | L171/L66 | Source A "Hiện tại đơn ("I wake up at 7:00")" khác Source B Grammar ""It is a noisy city" (Adj + Noun)" | Col 6: `listening_hub` nghe giờ đồng hồ | — |
+| **W10** | L176/L67 | Source A "Đếm được vs Không đếm được (apples/milk)" khác Source B Grammar "The city is noisy, but the farm is quiet" | Col 6: `science_lab` phân loại thực phẩm | — |
+| **W11** | L181/L68 | Source A ""Can / Cannot", khả năng động vật" khác Source B Grammar "Preposition "At" (I play at the park)" | Col 6: `speaking_hub` nhại tiếng & từ vựng | — |
+| **W12** | L186/L69 | Source A ""It is sunny today", tính từ thời tiết" khác Source B Grammar "I can / I can't" | Col 6: `math_quest` biểu đồ nhiệt độ | — |
+| **W13** | L191/L70 | Source A ""He is wearing...", hiện tại tiếp diễn" khác Source B Grammar "Present Simple (I wake up, I go)" | Col 6: `listening_hub` mặc đồ nhân vật | — |
+| **W14** | L197/L71 | Format typo dấu ngoặc kép: "Project 1 Showcase: "Welcome to My World" | Col 6: Động từ hành động tiếp diễn; `science_lab` thí nghiệm lực đẩy/kéo | — |
+| **W15** | L202/L72 | Source A "Đối thoại thời gian thực" khác Source B Grammar "Present Continuous: S + am/is/are + V-ing" | Col 6: `gear3_retell` cụm từ 2 chữ collocations | — |
+| **W16** | L207/L73 | Source A "Lễ trao Khiên Starters" khác Source B Grammar ""He is kicking the ball", "They are running"" | — | Gỡ "★ FULL MOCK 01 (Starters)" -> MOCK xen kẽ |
+| **W17** | L212/L74 | Source A "Trạng từ tần suất (always, sometimes)" khác Source B Grammar "It is raining, so I am wearing a raincoat" | Col 6: `sentence_smash` sắp xếp câu | — |
+| **W18** | L217/L75 | — | Col 6: Giới từ di chuyển ("by bus, on foot"); `math_quest` biểu đồ tốc độ ; Col 4 CLIL/Math khi Source B im lặng | — |
+| **W19** | L223/L84 | — | Col 6: `reading_hub` truyện thị trấn | — |
+| **W20** | L228/L85 | — | Col 6: `info_exchange` chứng cứ ngoại phạm | — |
+| **W21** | L233/L86 | — | Col 6: `science_lab` chổi quét hóa thạch | — |
+| **W22** | L239/L87 | Source A "Tường thuật quá khứ" khác Source B Grammar ""Did you play...?", "Yes, I did / No, I didn't"" | Col 6: `story_writer` viết truyện thoát khỏi lâu đài | — |
+| **W23** | L244/L88 | Source A "Động từ bất quy tắc (saw, ate, went)" khác Source B Grammar "Regular Verbs ending in -ed (pronounced /t/ or /d/): paint/painted, color/colored" | Col 6: `listening_hub` chép chính tả Notepad | — |
+| **W24** | L250/L89 | Source A "Kiểm tra Notepad" khác Source B Grammar ""I was [feeling] because..." / "They were..."" | — | Gỡ "★ FULL MOCK 02 (Movers)" -> MOCK xen kẽ |
+| **W25** | L256/L90 | Source A "Chỉ đường trong quá khứ ("We walked north")" khác Source B Grammar "Sequence Connectors: First, Next, Then, Finally" | Col 6: `science_report` nhật ký kho báu | — |
+| **W26** | L262/L91 | Format typo dấu ngoặc kép: "Review & Project 2: "My Weekend Comic" ; Source A "Từ nối thời gian (First, Then, After that)" khác Source B Grammar "Regular Verbs (-ed) & Was/Were" | Col 6: `gear3_retell` cụm từ mốc thời gian | — |
+| **W27** | L267/L92 | Source A "Câu hỏi nghi vấn Did ("Did they land?")" khác Source B Grammar "Present Simple for Facts (It grows, It needs)" | Col 6: `broadcast_studio` tin tức vũ trụ | — |
+| **W28** | L273/L93 | Source A "Dạng bị động đơn giản ("was invented by")" khác Source B Grammar "Past Simple (Introduction to Irregular Verbs in context: ran, slept, won)" | Col 6: `math_quest` trục mốc thời gian | — |
+| **W29** | L279/L94 | Source A "Tên các loại bệnh ("had a cold, hurt my leg")" khác Source B Grammar "Go -> Went, Come -> Came, Run -> Ran, Fly -> Flew" | Col 6: `info_exchange` thẻ khám bệnh | — |
+| **W30** | L284/L95 | Source A "Quá khứ đơn hành động ("We collected, We sorted")" khác Source B Grammar "Eat -> Ate, Drink -> Drank, Buy -> Bought, Give -> Gave" | Col 6: `science_lab` nhặt rác | — |
+| **W31** | L289/L96 | Source A "Quá khứ tiếp diễn đơn giản ("It was raining")" khác Source B Grammar "See -> Saw, Hear -> Heard, Feel -> Felt, Smell -> Smelt" | Col 6: `reading_hub` truyện trời mưa | — |
+| **W32** | L294/L97 | Source A "Lễ phong Khiên A1" khác Source B Grammar "Do -> Did, Make -> Made, Have -> Had, Take -> Took" | — | Gỡ "★ FULL MOCK 03 (Movers)" -> MOCK xen kẽ |
+| **W33** | L299/L98 | Title lệch: Map="Corridor Safety & Friction" vs Source B="The Mistake (Irregular Verbs 5: Accidents)" ; CLIL lệch Source B (Accidents happen!) vs Map (Vật lý: Ma sát & Bề mặt sàn trơn) | — | — |
+| **W34** | L304/L99 | Title lệch: Map="The Lion and the Mouse: True Friendship" vs Source B="Storytelling Practice 1 (Fable)" ; Source A "Tính từ so sánh hơn và so sánh nhất" khác Source B Grammar "Mixed Regular and Irregular Verbs" | — | — |
+| **W35** | L310/L100 | — | — | — |
+| **W36** | L315/L101 | Format typo dấu ngoặc kép: "Review & Project 3: "My Adventure Book" | Col 6: Động từ khuyết thiếu (should, must, have to) | — |
+| **W37** | L323/L110 | — | — | Gỡ "★ FULL MOCK 04 (Flyers)" -> MOCK xen kẽ |
+| **W38** | L329/L111 | Source A "Mối quan hệ nguyên nhân - kết quả với *because*" khác Source B Grammar "Can / Cannot (Can't)" | Col 6: `action_lab` góc pin mặt trời | — |
+| **W39** | L335/L112 | Source A "Tính từ tuyệt đối (*deepest, most dangerous*)" khác Source B Grammar "I think the [animal] lives in the [place]" | Col 6: `story_writer` lặn tàu ngầm | — |
+| **W40** | L341/L113 | Source A "Tương lai với *will* và *going to*" khác Source B Grammar "Comparatives (-er than): faster, stronger, bigger" | Col 6: `discovery_report` biểu đồ tăng trưởng | — |
+| **W41** | L347/L114 | Source A "Câu mệnh lệnh an toàn" khác Source B Grammar "Present Simple 3rd Person (It changes, It grows, It becomes)" | Col 6: `broadcast_studio` bản tin thời tiết khẩn cấp | — |
+| **W42** | L353/L115 | Source A "Cập nhật Hộ chiếu Khiên" khác Source B Grammar "Review Sequencing + Present Tense" | — | Gỡ "★ FULL MOCK 05 (Flyers)" -> MOCK xen kẽ |
+| **W43** | L361/L116 | Source A "Bị động quá khứ đơn (*were built*)" khác Source B Grammar ""2 plus 2 equals 4" / "2 and 2 is 4"" | Col 6: `reading_hub` đục lỗ văn bản lăng mộ | — |
+| **W44** | L367/L117 | Source A "Giới từ chuyển động (*through, across, along*)" khác Source B Grammar ""Take away", "Left", "Minus"" | Col 6: `math_quest` tính khoảng cách | — |
+| **W45** | L373/L118 | Source A "Trạng từ chỉ cách thức (*loudly, softly, clearly*)" khác Source B Grammar ""It has [number] sides", "It is round"" | Col 6: `action_lab` tần số âm | — |
+| **W46** | L379/L119 | Source A "Đại từ quan hệ (*which, that, who*)" khác Source B Grammar "If [square], then [red]" | Col 6: `discovery_report` chiều dài bóng râm | — |
+| **W47** | L385/L120 | — | — | Gỡ "★ FULL MOCK 06 (Flyers)" -> MOCK xen kẽ |
+| **W48** | L391/L121 | Source A "Câu điều kiện loại 0 (*If you freeze water...*)" khác Source B Grammar "It is [number] centimeters long/tall" | Col 6: `science_lab` thí nghiệm ướp muối | — |
+| **W49** | L398/L122 | Source A "Mệnh đề chỉ mục đích (*in order to, so that*)" khác Source B Grammar ""I want to be a [job]" / "I am going to be..."" | Col 6: `story_writer` tắc kè hoa săn mồi | — |
+| **W50** | L403/L123 | — | Col 6: Câu điều kiện loại 1 (*If we use clean energy...*); `broadcast_studio` xe điện | — |
+| **W51** | L406/L124 | — | Col 6: Trật tự của tính từ; `reading_hub` trích xuất số liệu các hành tinh | — |
+| **W52** | L409/L125 | Format typo dấu ngoặc kép: "Have You Ever" Bingo (Seeding)" | — | Gỡ "★ FULL MOCK 07 (Flyers)" -> MOCK xen kẽ |
+| **W53** | L414/L126 | Format typo dấu ngoặc kép: "Project 4 Prep - "My Year in Review" | Col 6: Động từ khuyết thiếu suy đoán (*must be, can't be*); `info_exchange` thẻ nghi phạm | — |
+| **W54** | L417/L127 | CLIL lệch Source B (Parents invited. Students present their portfolios and recite a short speech about their favorite memory of the year) vs Map (BUỔI TRÌNH DIỄN TỐT NGHIỆP GIAI ĐOẠN 1: PHASE 1 GRADUATION SHOWCASE) | Col 6: Hiện tại hoàn thành giới thiệu (*Have you ever visited...?*); `speaking_hub` | — |
+| **W55** | L423/L136 | Format typo hậu tố Toán: "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping  / Toán: Phép cộng có nhớ)" | Col 6: `discovery_report` phản ứng dây chuyền | — |
+| **W56** | L432/L137 | Format typo hậu tố Toán: "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping  / Toán: Phép trừ có nhớ)" ; Source A "Đoạn văn vấn đề - giải pháp" khác Source B Grammar "Sentence Connectors: "This leads to...", "As a result..."" | Col 6: `story_writer` đề xuất làn đường xe đạp | — |
+| **W57** | L441/L138 | Format typo hậu tố Toán: "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts  / Toán: Khái niệm Phép nhân)" | — | Gỡ "★ FULL MOCK 08 (Flyers)" -> MOCK xen kẽ |
+| **W58** | L450/L139 | Format typo hậu tố Toán: "ELA: Problem & Solution (Paragraph) / Math: Division Concepts  / Toán: Khái niệm Phép chia)" ; Source A "Cụm từ nêu quan điểm (*In my opinion, I believe*)" khác Source B Grammar "First Conditional (Simple): "If we [fix it], it will be [better]."" | Col 6: `broadcast_studio` tranh luận | — |
+| **W59** | L459/L140 | Source A "Thể bị động trong quy trình kỹ thuật" khác Source B Grammar "Informal Tone (Contractions: I'm, It's; Greetings: Hi, Hey)" | Col 6: `action_lab` hệ thống lọc nước bẩn | — |
+| **W60** | L467/L141 | Source A "Logic điều kiện mạch điện" khác Source B Grammar "Polite Modals (May I, Could you, Would like)" | Col 6: `action_lab` đóng ngắt công tắc bóng đèn | — |
+| **W61** | L475/L142 | Source A "Văn bản giải thích miêu tả" khác Source B Grammar "Subject + Verb Identification (Core sentence)" | Col 6: `discovery_report` buồng magma núi lửa | — |
+| **W62** | L484/L143 | — | — | Gỡ "★ FULL MOCK 09 (Flyers)" -> MOCK xen kẽ |
+| **W63** | L493/L144 | Source A "Giải thích quy trình sinh học" khác Source B Grammar "Prepositions of Location (North of, to the East of)" | Col 6: `dictation` số đo dung tích phổi | — |
+| **W64** | L502/L145 | Source A "Bị động quá khứ (*aqueducts were constructed*)" khác Source B Grammar "Quantifiers: "The majority of...", "Most...", "Few..."" ; math_quest "`math_quest` thể tích nước" khác Source B Math "Interpreting Pictographs" | — | — |
+| **W65** | L511/L146 | — | Col 6: Văn bản thuyết phục; `broadcast_studio` thuyết trình thành phố xanh | — |
+| **W66** | L516/L147 | Format typo dấu ngoặc kép: "Micro-Debate 1: "Email vs Handwritten Letters" ; Source A "Khả năng tương lai (*could support human life*)" khác Source B Grammar "Modals, Comparatives, Because/So" | Col 6: `story_writer` thuộc địa sao Hỏa | — |
+| **W67** | L524/L148 | — | — | Gỡ "★ FULL MOCK 10 (Flyers)" -> MOCK xen kẽ |
+| **W68** | L533/L149 | Source A "So sánh và xác suất" khác Source B Grammar "Connectors of Addition: "Furthermore", "In addition", "For example"" ; math_quest "`math_quest` tỷ lệ bảng di truyền Punnett" khác Source B Math "Scaled Bar Graphs" | — | — |
+| **W69** | L542/L150 | — | Col 6: `discovery_report` đĩa thạch vi khuẩn | — |
+| **W70** | L551/L151 | Source A "Tăng tốc độ bắt từ chìa khóa Part 1-5" khác Source B Grammar "Speaking Transitions: "First of all...", "Finally..."" ; Source A "Đọc hiểu trích xuất Part 5" khác Source B Grammar "Speaking Transitions: "First of all...", "Finally..."" | — | — |
+| **W71** | L560/L152 | Source A "Phỏng vấn mô phỏng với giám khảo bản xứ" khác Source B Grammar "Superlative Adjectives: "The biggest", "The furthest", "The hottest"" ; Source A "Chấm điểm viết Part 7" khác Source B Grammar "Superlative Adjectives: "The biggest", "The furthest", "The hottest"" | — | — |
+| **W72** | L569/L153 | — | — | Gỡ "★ FULL MOCK 11 (OFFICIAL)" -> MOCK xen kẽ |
+| **W73** | L578/L164 | Source A "Từ vựng AWL (*hypothesis, variable, analyze*)" khác Source B Grammar "Sequence Connectors (Advanced): "Subsequently", "Following this", "Eventually"" | Col 6: `discovery_report` CER | — |
+| **W74** | L587/L165 | Source A "Thể bị động nâng cao (*plates are forced together*)" khác Source B Grammar "Zero Conditional (Scientific Facts): "If plants die, animals have no food."" | Col 6: `action_lab` địa chấn kế | — |
+| **W75** | L596/L166 | Source A "Giải thích phương trình hóa học" khác Source B Grammar ""Used to" / "Would" (Past habits): "Egyptians used to build..."" | Col 6: `reading_hub` quang phổ diệp lục | — |
+| **W76** | L605/L167 | Source A "Tích hợp toán - ngôn ngữ" khác Source B Grammar "Prepositions of Movement (Across, Around, Through)" ; math_quest "`math_quest` toán lời văn tính gia tốc" khác Source B Math "Real Distances" | — | — |
+| **W77** | L614/L168 | — | — | Gỡ "★ FULL MOCK 12 (PET)" -> MOCK xen kẽ |
+| **W78** | L623/L169 | Source A "Bài luận tương phản (*In contrast to tropical biomes...*)" khác Source B Grammar "Comparative Structures: "Unlike...", "Similar to...", "Whereas..."" | Col 6: `writing_hub` | — |
+| **W79** | L632/L170 | Title lệch: Map="The Industrial Revolution" vs Source B="Review & Micro-Debate 2" ; CLIL lệch Source B (Space Exploration vs. Earth Fix) vs Map (Lịch sử thế giới: Động cơ hơi nước & Nhà máy) ; gắn nhầm chủ đề cũ (The Industrial Revolution) thay vì Space Exploration vs Earth Fix | — | — |
+| **W80** | L632/L171 | Title lệch: Map="Supply, Demand & Market Prices" vs Source B="Review & Micro-Debate 2" ; CLIL lệch Source B (Space Exploration vs. Earth Fix) vs Map (Kinh tế học: Giá cân bằng thị trường) ; gắn nhầm chủ đề cũ (Supply, Demand & Market Prices) thay vì Space Exploration vs Earth Fix | — | — |
+| **W81** | L638/L172 | Source A "Bảng phân tích so sánh" khác Source B Grammar "Transition Signals (Firstly, Secondly, In conclusion)" | Col 6: `science_lab` dán nhãn bào quan tế bào | — |
+| **W82** | L647/L173 | — | — | Gỡ "★ FULL MOCK 13 (PET)" -> MOCK xen kẽ |
+| **W83** | L656/L174 | Source A "Thuật ngữ chuyên ngành sóng" khác Source B Grammar "Relative Clauses (Defining): "A mountain is a landform that is high."" | Col 6: `listening_hub` phân tích phổ âm thanh | — |
+| **W84** | L665/L175 | Source A "Văn phong học thuật trung lập" khác Source B Grammar "Cause/Effect Verbs: "Heat causes magma to rise."" | Col 6: `reading_hub` đọc hiểu đối chiếu văn hóa | — |
+| **W85** | L676/L176 | Source A "Từ nối chuỗi thời gian (*initially, subsequently, ultimately*)" khác Source B Grammar "Complex Prepositions: "In the middle of", "To the east of", "Opposite to"" | Col 6: `discovery_report` | — |
+| **W86** | L685/L177 | Source A "Ngôn ngữ phỏng đoán (*may indicate the presence of*)" khác Source B Grammar "Generalization words: "Generally", "Typically", "As a rule"" | Col 6: `broadcast_studio` | — |
+| **W87** | L694/L178 | — | — | Gỡ "★ FULL MOCK 14 (PET)" -> MOCK xen kẽ |
+| **W88** | L703/L179 | Source A "Bài luận thuyết phục với đề xuất chính sách" khác Source B Grammar "Past Ability: "Romans could build...", "They were able to..."" | Col 6: `writing_hub` kế hoạch rác thải | — |
+| **W89** | L712/L180 | Source A "Miêu tả phản ứng phân tử" khác Source B Grammar "Past Perfect (Intro): "Before the phone, people had written letters."" | Col 6: `action_lab` đầu dò nhiệt độ phản ứng hóa học | — |
+| **W90** | L721/L181 | Format typo hậu tố Toán: "Physics (Forces) / Math: Averages (Mean)  / Toán: Trung bình cộng)" ; Source A "Tranh luận đạo đức (*Should scientists modify...?*)" khác Source B Grammar "Conditional Type 1 (Cause/Effect): "If you push it, it will move."" | Col 6: `broadcast_studio` | — |
+| **W91** | L730/L182 | Source A "Sự phụ thuộc kinh tế lẫn nhau" khác Source B Grammar "Impersonal Language: "It was observed that..." (Avoiding "I")" ; math_quest "`math_quest` chuỗi cung ứng container" khác Source B Math "Experiment Design" | — | — |
+| **W92** | L739/L183 | — | — | Gỡ "★ FULL MOCK 15 (PET)" -> MOCK xen kẽ |
+| **W93** | L750/L184 | Title lệch: Map="Topic Selection & Outline. (Chọn chủ đề & Dàn ý)" vs Source B="Topic Selection & Outline" | Col 6: Tổng hợp 2 bản tóm tắt y khoa đối lập; `reading_hub` bài báo y khoa | — |
+| **W94** | L751/L185 | Title lệch: Map="Drafting & Editing. (Viết nháp & Chỉnh sửa)" vs Source B="Drafting & Editing" | Col 6: Diễn giải biểu đồ dân số; `math_quest` mật độ dân số trên diện tích | — |
+| **W95** | L754/L186 | Title lệch: Map="Ocean Acidification & Carbon" vs Source B="Review & Application" ; CLIL lệch Source B (The Young Professor) vs Map (Hóa học biển: Thang đo pH và hấp thụ CO2) | Col 6: Báo cáo CER đầy đủ với bằng chứng thống kê; `discovery_report` | — |
+| **W96** | L754/L187 | Title lệch: Map="Preparation for Mid-Phase Gate" vs Source B="Review & Application" ; CLIL lệch Source B (The Young Professor) vs Map (Chiến thuật làm bài thi Cambridge B1 PET) | Col 6: Ôn tập trọng tâm các lỗi ngữ pháp B1 thường gặp | — |
+| **W97** | L759/L196 | — | — | Gỡ "★ FULL MOCK 16 (PET)" -> MOCK xen kẽ |
+| **W98** | L768/L197 | Source A "Diễn giải biểu đồ đa đường" khác Source B Grammar "Preferences: "I would rather...", "I prefer..."" | Col 6: `discovery_report` dị thường nhiệt độ | — |
+| **W99** | L777/L198 | Source A "Ngụy biện logic học" khác Source B Grammar "Gerunds as Subjects: "Helping is important.", "Voting is a duty."" | Col 6: `sentence_smash` cấu trúc tam đoạn luận | — |
+| **W100** | L786/L199 | Source A "Mô hình hóa toán học dịch bệnh" khác Source B Grammar "Abstract Nouns: Freedom, Justice, Equality" ; math_quest "`math_quest` tốc độ lây lan virus" khác Source B Math "Percent Review" | — | — |
+| **W101** | L795/L200 | Source A "Nghiên cứu tính khả thi kỹ thuật" khác Source B Grammar "Second Conditional: "If I had money, I would buy..."" | Col 6: `writing_hub` đề án căn cứ mặt trăng | — |
+| **W102** | L804/L201 | — | — | Gỡ "★ FULL MOCK 17 (PET)" -> MOCK xen kẽ |
+| **W103** | L813/L202 | Source A "Câu điều kiện hỗn hợp và đảo ngữ (*Were user data not encrypted...*)" khác Source B Grammar "Connectors of Contrast: "However", "On the other hand"" | — | — |
+| **W104** | L822/L203 | Source A "Cấu trúc cân bằng lập luận (Ưu vs Nhược)" khác Source B Grammar "Correlative Conjunctions: "The more..., the less...", "The higher..., the lower..."" | Col 6: `broadcast_studio` điện hạt nhân | — |
+| **W105** | L834/L204 | Format typo dấu ngoặc kép: "Topic Selection & The "Big Questions" ; Source A "Báo cáo thí nghiệm chính thức với phương pháp nghiên cứu" khác Source B Grammar "Wh- Questions (Complex): "What causes...?", "How does... affect...?", "Why is... important?"" | Col 6: `discovery_report` | — |
+| **W106** | L843/L205 | Source A "Chỉ số kinh tế" khác Source B Grammar "Reported Speech (Source Citation Intro): "The book says that...", "According to..."" ; math_quest "`math_quest` tính lãi suất kép và tỷ lệ lạm phát" khác Source B Math "Simple Equations (Addition/Subtraction)" | — | — |
+| **W107** | L852/L206 | — | — | Gỡ "★ FULL MOCK 18 (PET)" -> MOCK xen kẽ |
+| **W108** | L861/L207 | Source A "Kỹ năng giải thích bằng phép loại suy" khác Source B Grammar "Future Plans: "In paragraph 1, I will write about...", "Then I will explain..."" | Col 6: `broadcast_studio` TED Talk thiếu nhi | — |
+| **W109** | L871/L208 | Source A "Giải thích lưu đồ quy trình" khác Source B Grammar "Linking Words (Addition): "Also", "In addition", "Furthermore"" | Col 6: `action_lab` mô phỏng áp suất lọc màng | — |
+| **W110** | L880/L209 | Source A "Soạn thảo đề xuất chính sách" khác Source B Grammar "Linking Words (Contrast/Sequence): "However", "On the other hand", "Next"" | Col 6: `writing_hub` hiệp ước không gian LHQ | — |
+| **W111** | L889/L210 | Source A "Luyện đề tốc độ cao, bẫy trắc nghiệm từ đồng nghĩa" khác Source B Grammar "Summary Phrases: "To sum up", "In conclusion", "Overall"" | — | — |
+| **W112** | L898/L211 | — | — | Gỡ "★ FULL MOCK 19 (OFFICIAL)" -> MOCK xen kẽ |
+| **W113** | L908/L212 | — | Col 6: `writing_hub` | — |
+| **W114** | L916/L213 | — | Col 6: Bố cục (layout, center, organize); `action_lab` thiết kế poster | — |
+| **W115** | L923/L214 | — | Col 6: `speaking_hub` luyện nói | — |
+| **W116** | L931/L215 | — | Col 6: Kỹ năng phi ngôn ngữ (eye contact, loud, clear); `broadcast_studio` | — |
+| **W117** | L937/L216 | — | Col 6: Thuyết trình 3 phút + Q&A; Đánh giá năng lực thuyết trình B1 Part A | Gỡ "★ FULL MOCK (Presentation A)" -> MOCK xen kẽ |
+| **W118** | L941/L217 | — | Col 6: Thuyết trình 3 phút + Q&A; `info_exchange` phản hồi đồng cấp Part B | — |
+| **W119** | L944/L218 | — | Col 6: `writing_hub` hoàn thiện hồ sơ Portfolio | — |
+| **W120** | L949/L219 | — | — | Gỡ "★ GRADUATION (Phase 2)" -> MOCK xen kẽ |
+| **W121** | L957/L230 | Source A "Viết Mở bài & Câu luận đề (Thesis Statement)" khác Source B Grammar "Modals of Possibility: "It could cause stress", "It might help"" | Col 6: `writing_hub` | — |
+| **W122** | L965/L231 | Source A "Viết Thân bài 1 & 2 theo mô hình PEEL" khác Source B Grammar "Reporting Verbs: "The speaker claimed that...", "She argued that..."" | Col 6: `discovery_report` | — |
+| **W123** | L972/L232 | Source A "Đặt luận điểm đối lập (*Critics contend that... However...*)" khác Source B Grammar "Concession: "Although homework is useful, it causes stress."" | — | — |
+| **W124** | L979/L233 | — | Col 6: `broadcast_studio` Ghi hình thuyết trình quan điểm Ủng hộ vs Phản đối | — |
+| **W125** | L986/L234 | Source A "Tổng hợp 2 bài báo khoa học mâu thuẫn nhau" khác Source B Grammar "Persuasive Verbs: "Urge", "Recommend", "Should"" | Col 6: `reading_hub` | — |
+| **W126** | L993/L235 | math_quest "`math_quest` phân biệt tương quan vs quan hệ nhân quả" khác Source B Math "Logic Puzzles" | — | — |
+| **W127** | L998/L236 | — | — | Gỡ "★ FULL MOCK 20 (B1+)" -> MOCK xen kẽ |
+| **W128** | L1004/L237 | CLIL lệch Source B (Homework Debate) vs Map (Tranh luận Trực tiếp 1: Math Review Game) | Col 6: `broadcast_studio` thuyết trình quan điểm với biểu đồ minh họa | — |
+| **W129** | L1007/L238 | Title lệch: Map="Opinion Project 3: Smartphones Under 12?" vs Source B="Review & Math Logic Cycle" ; CLIL lệch Source B (Consolidate writing skills + Math Fractions/Decimals review) vs Map (Tâm lý phát triển: Tác động mạng xã hội) | Col 6: Soạn thảo bài luận quan điểm hoàn chỉnh; `writing_hub` | — |
+| **W130** | L1007/L239 | Title lệch: Map="Opinion Project 3: Comparing Global Approaches" vs Source B="Review & Math Logic Cycle" ; CLIL lệch Source B (Consolidate writing skills + Math Fractions/Decimals review) vs Map (Luật so sánh: Lệnh cấm của Pháp và Florida) | Col 6: Trích dẫn nguồn thông tin; `reading_hub` tóm tắt văn bản | — |
+| **W131** | L1007/L240 | Title lệch: Map="Opinion Project 3: Persuasive Techniques" vs Source B="Review & Math Logic Cycle" ; CLIL lệch Source B (Consolidate writing skills + Math Fractions/Decimals review) vs Map (Ethos, Pathos, Logos trong thuyết phục) | Col 6: Ngữ điệu và trọng âm nhấn mạnh; `gear2_karaoke` bài diễn văn lịch sử | — |
+| **W132** | L1007/L241 | Title lệch: Map="B1+ Academic Assessment Mock 2" vs Source B="Review & Math Logic Cycle" ; CLIL lệch Source B (Consolidate writing skills + Math Fractions/Decimals review) vs Map (Khảo sát Năng lực Chuẩn hóa B1+ 2) | — | Gỡ "★ FULL MOCK 21 (B1+)" -> MOCK xen kẽ |
+| **W133** | L1012/L242 | Source A "Soạn thảo tổng quan tài liệu" khác Source B Grammar "Citation Phrases: "According to a study by...", "Statistics show that..."" | Col 6: `discovery_report` độ lệch AI detector | — |
+| **W134** | L1021/L243 | Source A "Xây dựng bảng hỏi" khác Source B Grammar "Qualifiers: "Some", "Many", "Often", "Tend to" (to avoid generalizing)" | Col 6: `info_exchange` phỏng vấn khảo sát dữ liệu | — |
+| **W135** | L1031/L244 | Source A "Nhúng biểu đồ cột và bảng số liệu vào bài viết học thuật" khác Source B Grammar "Contrast Transitions: "However", "Nevertheless", "Yet", "On the other hand"" | — | — |
+| **W136** | L1040/L245 | — | Col 6: `broadcast_studio` thuyết trình kết quả dự án với slide | — |
+| **W137** | L1049/L246 | — | — | Gỡ "★ FULL MOCK 22 (B1+)" -> MOCK xen kẽ |
+| **W138** | L1059/L247 | Source A "Thuật ngữ chuyên sâu khoa học & giải thích sơ đồ phức tạp" khác Source B Grammar "Polite Disagreement: "I see your point, but...", "With all due respect..."" | — | — |
+| **W139** | L1068/L248 | Source A "Phân tích văn bản lịch sử" khác Source B Grammar "Future Continuous: "My partner will be discussing...", "We will be showing..."" | Col 6: `reading_hub` tóm tắt sự kiện | — |
+| **W140** | L1077/L249 | — | Col 6: Kỹ năng trích xuất luận điểm từ nguồn; `writing_hub` | — |
+| **W141** | L1086/L250 | CLIL lệch Source B (Writing Clarity) vs Map (Ôn tập Hình học - Góc & Đường: Measure angles using a protractor) ; math_quest "`math_quest` phương trình và biểu đồ" khác Source B Math "Reviewing Angles" | — | — |
+| **W142** | L1091/L251 | CLIL lệch Source B (Vocabulary Power - Argument Words) vs Map (Ôn tập Hình học - Diện tích & Thể tích: Calculate volume of cubes and cuboids) | — | Gỡ "★ FULL MOCK 23 (B1+)" -> MOCK xen kẽ |
+| **W143** | L1096/L252 | — | Col 6: Viết truyện ngắn văn học ($\ge 200$ từ); `story_writer` | — |
+| **W144** | L1101/L253 | — | Col 6: Bài báo khoa học giải thích có trích dẫn nguồn; `discovery_report` | — |
+| **W145** | L1109/L262 | Source A "Bản đề cương nghiên cứu & Thư mục tài liệu (3 nguồn)" khác Source B Grammar "Source Attribution: "According to [Author] in [Article Name]..."" | — | — |
+| **W146** | L1118/L263 | Source A "Soạn thảo dàn ý" khác Source B Grammar "Connectors of Comparison: "Similarly", "Likewise", "In the same way"" | Col 6: phản biện chéo `info_exchange` | — |
+| **W147** | L1128/L264 | — | — | Gỡ "★ FULL MOCK 24 (B1+)" -> MOCK xen kẽ |
+| **W148** | L1137/L265 | Source A "Ghi nhật ký số liệu" khác Source B Grammar "Variety of Sentence Structures (Simple, Compound, Complex)" ; math_quest "`math_quest` thống kê trung bình, trung vị" khác Source B Math "Interpreting Data" | — | — |
+| **W149** | L1145/L266 | Source A "Nộp toàn văn bản thảo: Mở bài, Thân bài, Kết luận" khác Source B Grammar "Final Punctuation & Capitalization Check" | — | — |
+| **W150** | L1154/L267 | — | Col 6: Biên tập chi tiết từng dòng, kiểm tra trích dẫn | — |
+| **W151** | L1161/L268 | — | Col 6: `broadcast_studio` thuyết trình dự án với slide và biểu đồ | — |
+| **W152** | L1166/L269 | — | — | Gỡ "★ FULL MOCK 25 (B1+)" -> MOCK xen kẽ |
+| **W153** | L1174/L270 | Source A "Bộ Portfolio 3 năm: Bài luận, Báo cáo, Video thuyết trình" khác Source B Grammar "Cause & Effect Connectors (Advanced): "Consequently", "Due to the fact that"" | — | — |
+| **W154** | L1182/L271 | Source A "Bài Reflection Essay ($\ge 200$ từ)" khác Source B Grammar "Fillers & Connectors: "That's an interesting question...", "To be honest..."" ; Source A "ghi hình chia sẻ cảm xúc" khác Source B Grammar "Fillers & Connectors: "That's an interesting question...", "To be honest..."" | — | — |
+| **W155** | L1189/L272 | Source A "Tập hợp thành tích: Starters, Movers, Flyers 15 Khiên, PET, B1+ Academic" khác Source B Grammar "Past vs. Present Perfect: "I used to make mistakes, but now I have learned..."" | — | — |
+| **W156** | L1196/L273 | — | — | Gỡ "★ FULL MOCK 26 / GRADUATION" -> MOCK xen kẽ |
+
+### A.3. KIỂM KÊ TOÀN BỘ CONSUMER ĐỌC ROTARY / HUB / TIER & CHỨNG MINH BẢO TOÀN DỮ LIỆU Ở MAP v2
+
+#### A.3.1. Danh sách Consumer thực tế (quét trực tiếp từ mã nguồn repo)
+
+- **`src/config/bossRotarySchedule.js`**: 8 dòng liên quan
+  - L24: `export const BOSS_ROTARY_CYCLES = {`
+  - L122: `export function getBossRotaryConfig(weekNumber) {`
+  - L128: `const cycleKey = offset + 1;`
+  - L129: `const cycle = BOSS_ROTARY_CYCLES[cycleKey] || BOSS_ROTARY_CYCLES[1];`
+  - L142: `export function getRotaryTaskLabel(taskId, weekNumber) {`
+  - L144: `throw new Error(`[bossRotarySchedule] 'weekNumber' is required for getRotaryTaskLabel('${taskId}'). Received: ${weekNumber}`);`
+- **`src/modules/zones/BossBattleZone.jsx`**: 9 dòng liên quan
+  - L3: `import getBossRotaryConfig from '../../config/bossRotarySchedule';`
+  - L43: `const rotaryConfig = getBossRotaryConfig(activeWeek || 1);`
+  - L106: `const isFullMock = rotaryConfig.cycleNumber === 5 || rotaryConfig.cycleNumber === 0;`
+  - L109: `// Source of truth: rotaryConfig.activeParts (from bossRotarySchedule.js)`
+  - L113: `const scheduledParts = isFullMock ? getAllParts().map(p => ({ partId: p.partId, questId: null })) : (rotaryConfig.activeParts || []);`
+  - L145: `}, [rotaryConfig, isFullMock, requestedTaskId]);`
+- **`src/components/zones/BossIntro.jsx`**: 10 dòng liên quan
+  - L4: `export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0, currentTask }) {`
+  - L5: `const isFullMock = rotaryConfig?.cycleNumber === 5 || rotaryConfig?.cycleNumber === 0;`
+  - L6: `if (!rotaryConfig) return null;`
+  - L14: `{rotaryConfig.bossAvatar || '👑'}`
+  - L19: `Cycle {rotaryConfig.cycleNumber}/5 • Week {rotaryConfig.weekNumber}`
+  - L24: `{isFullMock`
+- **`src/components/questmap/TaskScreen.jsx`**: 3 dòng liên quan
+  - L36: `import { getRotaryTaskLabel } from '../../config/bossRotarySchedule';`
+  - L277: `const dynamicLabel = getRotaryTaskLabel(taskId, weekId) || quest.label;`
+  - L308: `useDailyQuestStore.getState().completeQuest(weekId, taskId, { score });`
+- **`src/modules/chronicles/BossBattleScreen.jsx`**: 3 dòng liên quan
+  - L7: `*   getBossType(weekNumber) = ((weekNumber - 17) % 5) + 1`
+  - L60: `export function getBossType(weekNumber) {`
+  - L336: `const bossType = getBossType(weekNumber);`
+- **`scripts/generate_week_blueprint.mjs`**: 29 dòng liên quan
+  - L84: `function parseDigitalMap(weekNum, mapContent) {`
+  - L97: `const scaffolding = match[4].replace(/\*\*/g, '').trim();`
+  - L98: `const grammarHub = match[5].replace(/\*\*/g, '').trim();`
+  - L100: `const isFullMock = /MOCK/i.test(rawCefrType) || /MOCK/i.test(cleanTheme);`
+  - L104: `let cefrLevel = 'A2 Flyers';`
+  - L108: `cefrLevel = 'Pre-A1 Starters';`
+- **`scripts/regenerate_temp_blueprints.mjs`**: 4 dòng liên quan
+  - L27: `import { parseDigitalMap, parseKhungCT, generateBlueprint } from './generate_week_blueprint.mjs';`
+  - L33: `const DIGITAL_MAP_PATH = path.join(ROOT_DIR, 'docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md');`
+  - L42: `const mapContent = fs.readFileSync(DIGITAL_MAP_PATH, 'utf8');`
+  - L55: `const mapData = parseDigitalMap(w, mapContent);`
+- **`scripts/update_digital_syllabus_map.mjs`**: 6 dòng liên quan
+  - L23: `const MAP_PATH = path.join(ROOT_DIR, 'docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md');`
+  - L42: `const mapContent = fs.readFileSync(MAP_PATH, 'utf8');`
+  - L44: `const divergentWeeks = new Set(`
+  - L112: `if (divergentWeeks.has(weekNum)) {`
+  - L185: `fs.writeFileSync(MAP_PATH, newContent, 'utf8');`
+  - L186: `console.log(`✅ Successfully updated ${path.relative(ROOT_DIR, MAP_PATH)} (Unique weeks: ${seenWeeks.size})`);`
+- **`scripts/lib/source_b_part2_parser.mjs`**: 2 dòng liên quan
+  - L342: `export function parseDigitalMapRows(mapPath) {`
+  - L367: `hasFullMock: /★\s*FULL\s*MOCK/i.test(cefrRaw) || /★\s*FULL\s*MOCK/i.test(grammarRaw),`
+- **`scripts/gate13_rotary_schedule.mjs`**: 5 dòng liên quan
+  - L17: `const schedulePath = path.join(rootDir, 'src', 'config', 'bossRotarySchedule.js');`
+  - L19: `const getRotaryConfig = scheduleModule.default || scheduleModule.getBossRotaryConfig;`
+  - L20: `const config = getRotaryConfig(weekNum);`
+  - L24: `const cycleExpectedSkills = {`
+  - L31: `const expectedSkills = cycleExpectedSkills[config.cycleNumber] || [];`
+- **`scripts/gate1_blueprint_conformance.mjs`**: 17 dòng liên quan
+  - L4: `* Validates Week N data against src/data/weeks/week_N/blueprint.json:`
+  - L26: `const blueprintPath = path.join(rootDir, `src/data/weeks/week_${weekNum}/blueprint.json`);`
+  - L28: `console.error(`❌ [FAIL] Missing blueprint.json at: ${blueprintPath}`);`
+  - L33: `console.log(`📋 Blueprint Loaded: "${blueprint.theme}" (CEFR: ${blueprint.cefr_level})`);`
+  - L57: `const keywords = blueprint.keywords || [];`
+  - L59: `keywords.forEach(kw => {`
+- **`scripts/audit_39_mock_weeks.mjs`**: 1 dòng liên quan
+  - L100: `isProdMock = bp.isFullMock === true;`
+- **`scripts/audit_staged_gate11.mjs`**: 3 dòng liên quan
+  - L66: `? path.join(TEMP_BP_DIR, `week_${w}_blueprint.json`)`
+  - L67: `: path.join(PROD_DIR, `week_${w}`, 'blueprint.json');`
+  - L76: `return { week: w, error: `Missing baseline blueprint.json: ${bpPath}` };`
+- **`src/stores/useDailyQuestStore.js`**: 3 dòng liên quan
+  - L54: `export const QUEST_ALIAS_MAP = {};`
+  - L58: `QUEST_ALIAS_MAP[id] = (id === canonical && group[1]) ? group[1] : canonical;`
+  - L168: `completeQuest: (weekId, questId, options = {}) => {`
+
+- **Kết luận kỹ thuật về Consumer vs Map Cột 3**:
+  1. `src/config/bossRotarySchedule.js:L122–137` KHÔNG đọc markdown Digital Map; hàm `getBossRotaryConfig(weekNumber)` tính toán học `offset = ((w - 33) % 5 + 5) % 5; cycleKey = offset + 1`. Lưu ý kỹ thuật: khi chuyển sang lịch Mock xen kẽ (`32+4n` tuần nội dung, không còn mock chen ở W37/42/47...), `bossRotarySchedule.js` vẫn đang dùng `% 5` nên hiện tại coi W37, W42... là Cycle 5 (`FULL_MOCK`). (Đề xuất giữ nguyên chưa sửa `src/` trong Round 79 vì phạm vi chỉ đề xuất).
+  2. `scripts/generate_week_blueprint.mjs:L84–153` là parser DUY NHẤT đọc trực tiếp các cột của Digital Map:
+     - `L100`: `isFullMock = /MOCK/i.test(rawCefrType) || /MOCK/i.test(cleanTheme)` -> **2 PHÁT HIỆN QUAN TRỌNG Ở R79:** (1) Round 78 viết `"(Non-Mock)"` vào Cột 3 của W54/W120/W156 sẽ kích nhầm `/MOCK/i` -> Round 79 sửa thành `"Graduation Showcase (Content Week)"` nên **Cột 3 kích nhầm = `0/156`**. (2) Tuy nhiên ở **Cột 2**, tuần **W150** có tiêu đề gốc Source B `L1154` là `"Mock Debate & Strategy"` nên vế `|| /MOCK/i.test(cleanTheme)` của `generate_week_blueprint.mjs:L100` vẫn tự kích sai (`themeMockTriggers = 1`: W150: Col 2 title "Mock Debate & Strategy" contains word "Mock" -> current generate_week_blueprint.mjs:L100 (/MOCK/i.test(cleanTheme)) would misclassify W150!). Đề xuất khi áp dụng thật: sửa `L100` chỉ kiểm `rawCefrType` (hoặc `/★\s*FULL\s*MOCK|\bMOCK\s+M\d+/i`) thay vì `/MOCK/i.test(cleanTheme)`.
+     - `L125–140`: phân loại `cefrLevel` & `cefrStage` từ chuỗi `Pre-A1`, `A1 Movers`, `A2 Flyers`, `B1+? PET | B1 Entry`, `B1+ Academic`.
+     - `L282–284`: tự tính `rotary_cycle = ((weekNum - 33) % 4) + 1` (KHÔNG parse chữ `Rotary N` từ Cột 3, còn `rawCefrType` được chép nguyên văn vào `digital_map_reference.map_cefr_type` ở `L410`).
+  3. **Sửa lỗi mất `Rotary 1–4` của Round 78**: Round 79 khôi phục đầy đủ `Rotary 1–4` theo công thức liên hoàn `((w - 33) % 4) + 1` trên TẤT CẢ 124 hàng `W33–W156` (bao gồm cả các tuần Review Cycle như `W79–80`, `W95–96`, `W129–132` lẫn 25 hàng trước đây từng gắn `★ FULL MOCK`), giữ chính xác `A2 Flyers` cho `W33–W72`, thay `\|` nội cell bằng `•`/`—` để cả `generate_week_blueprint.mjs:L87` lẫn `source_b_part2_parser.mjs:L351` cắt đúng **6 cột/hàng (156/156 hàng W)** mà không gãy/dịch cột.
+  4. Kiểm chứng mô phỏng `parseDigitalMap` (`generate_week_blueprint.mjs:L87,L100–140`) + `split('|').slice(1,-1)` (`source_b_part2_parser.mjs:L351`) trên cả 156 hàng Map v2 Round 79: **156/156 hàng** cắt đủ 6 cột (`parserColumnMismatches = 0`), **156/156 hàng** khớp đúng `cefrLevel` & `cefrStage`, Cột 3 đạt **156/156 hàng** `isFullMock=false`; chỉ có 1 trường hợp ở Cột 2 là W150 (*"Mock Debate & Strategy"*) chạm vế `/MOCK/i.test(cleanTheme)` của code parser hiện tại `L100`.
+
+#### A.3.2. Bảng đối chiếu đầy đủ 156 tuần: `tuần | giá trị gốc (Cột 3) | giá trị v2 (Cột 3) | consumer đọc trực tiếp / gián tiếp`
+
+| Tuần | Giá trị gốc (Map v1 Cột 3) | Giá trị v2 (Map v2 Cột 3) | Consumer đọc trường tương ứng |
+| :---: | :--- | :--- | :--- |
+| **W1** | Pre-A1 · Rotary Practice | Pre-A1 · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W2** | Pre-A1 · Rotary Practice | Pre-A1 · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W3** | Pre-A1 · Rotary Practice | Pre-A1 · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W4** | Pre-A1 · Rotary Practice | Pre-A1 · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W5** | Pre-A1 · Rotary Practice | Pre-A1 · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W6** | Pre-A1 · Rotary Practice | Pre-A1 · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W7** | Pre-A1 · Rotary Practice | Pre-A1 · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W8** | Pre-A1 · Rotary Practice | Pre-A1 · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W9** | Pre-A1 $\rightarrow$ A1 · Rotary | Pre-A1 $\rightarrow$ A1 · Rotary | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W10** | Pre-A1 $\rightarrow$ A1 · Rotary | Pre-A1 $\rightarrow$ A1 · Rotary | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W11** | Pre-A1 $\rightarrow$ A1 · Rotary | Pre-A1 $\rightarrow$ A1 · Rotary | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W12** | Pre-A1 $\rightarrow$ A1 · Rotary | Pre-A1 $\rightarrow$ A1 · Rotary | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W13** | Pre-A1 $\rightarrow$ A1 · Rotary | Pre-A1 $\rightarrow$ A1 · Rotary | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W14** | Pre-A1 $\rightarrow$ A1 · Rotary | Pre-A1 $\rightarrow$ A1 · Rotary | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W15** | A1 Movers Entry · Rotary | A1 Movers Entry · Rotary | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W16** | ★ FULL MOCK 01 (Starters) | Pre-A1 · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock` |
+| **W17** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W18** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W19** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W20** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W21** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W22** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W23** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W24** | ★ FULL MOCK 02 (Movers) | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W25** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W26** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W27** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W28** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W29** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W30** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W31** | A1 Movers · Rotary Practice | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W32** | ★ FULL MOCK 03 (Movers) | A1 Movers · Rotary Practice | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `BossBattleScreen.jsx:L60` (tính theo weekId) |
+| **W33** | A2 Flyers · Rotary 1 | A2 Flyers · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W34** | A2 Flyers · Rotary 2 | A2 Flyers · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W35** | A2 Flyers · Rotary 3 | A2 Flyers · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W36** | A2 Flyers · Rotary 4 | A2 Flyers · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W37** | ★ FULL MOCK 04 (Flyers) | A2 Flyers · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W38** | A2 Flyers · Rotary 1 | A2 Flyers · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W39** | A2 Flyers · Rotary 2 | A2 Flyers · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W40** | A2 Flyers · Rotary 3 | A2 Flyers · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W41** | A2 Flyers · Rotary 4 | A2 Flyers · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W42** | ★ FULL MOCK 05 (Flyers) | A2 Flyers · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W43** | A2 Flyers · Rotary 1 | A2 Flyers · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W44** | A2 Flyers · Rotary 2 | A2 Flyers · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W45** | A2 Flyers · Rotary 3 | A2 Flyers · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W46** | A2 Flyers · Rotary 4 | A2 Flyers · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W47** | ★ FULL MOCK 06 (Flyers) | A2 Flyers · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W48** | A2 Flyers · Rotary 1 | A2 Flyers · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W49** | A2 Flyers · Rotary 2 | A2 Flyers · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W50** | A2 Flyers · Rotary 3 | A2 Flyers · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W51** | A2 Flyers · Rotary 4 | A2 Flyers · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W52** | ★ FULL MOCK 07 (Flyers) | A2 Flyers · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W53** | A2 Flyers · Rotary 1 | A2 Flyers · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W54** | A2 Flyers · Rotary 2 | A2 Flyers · Rotary 2 · Graduation Showcase (Content Week) | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W55** | A2 Flyers · Rotary 3 | A2 Flyers · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W56** | A2 Flyers · Rotary 4 | A2 Flyers · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W57** | ★ FULL MOCK 08 (Flyers) | A2 Flyers · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W58** | A2 Flyers · Rotary 1 | A2 Flyers · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W59** | A2 Flyers · Rotary 2 | A2 Flyers · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W60** | A2 Flyers · Rotary 3 | A2 Flyers · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W61** | A2 Flyers · Rotary 4 | A2 Flyers · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W62** | ★ FULL MOCK 09 (Flyers) | A2 Flyers · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W63** | A2 Flyers · Rotary 1 | A2 Flyers · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W64** | A2 Flyers · Rotary 2 | A2 Flyers · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W65** | A2 Flyers · Rotary 3 | A2 Flyers · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W66** | A2 Flyers · Rotary 4 | A2 Flyers · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W67** | ★ FULL MOCK 10 (Flyers) | A2 Flyers · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W68** | A2 Flyers · Rotary 1 | A2 Flyers · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W69** | A2 Flyers · Rotary 2 | A2 Flyers · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W70** | A2 Flyers · Rotary 3 | A2 Flyers · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W71** | A2 Flyers · Rotary 4 | A2 Flyers · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W72** | ★ FULL MOCK 11 (OFFICIAL) | A2 Flyers · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `bossRotarySchedule.js:L122` (tính theo weekId); `gate13_rotary_schedule.mjs` |
+| **W73** | B1 Entry · Rotary 1 | B1 Entry · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W74** | B1 PET · Rotary 2 | B1 PET · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W75** | B1 PET · Rotary 3 | B1 PET · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W76** | B1 PET · Rotary 4 | B1 PET · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W77** | ★ FULL MOCK 12 (PET) | B1 PET · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W78** | B1 PET · Rotary 1 | B1 PET · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W79** | B1 PET · Rotary 2 | B1 PET · Rotary 3 · Review Cycle | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W80** | B1 PET · Rotary 3 | B1 PET · Rotary 4 · Review Cycle | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W81** | B1 PET · Rotary 4 | B1 PET · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W82** | ★ FULL MOCK 13 (PET) | B1 PET · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W83** | B1 PET · Rotary 1 | B1 PET · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W84** | B1 PET · Rotary 2 | B1 PET · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W85** | B1 PET · Rotary 3 | B1 PET · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W86** | B1 PET · Rotary 4 | B1 PET · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W87** | ★ FULL MOCK 14 (PET) | B1 PET · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W88** | B1 PET · Rotary 1 | B1 PET · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W89** | B1+ PET · Rotary 2 | B1+ PET · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W90** | B1+ PET · Rotary 3 | B1+ PET · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W91** | B1+ PET · Rotary 4 | B1+ PET · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W92** | ★ FULL MOCK 15 (PET) | B1+ PET · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W93** | B1+ PET · Rotary 1 | B1+ PET · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W94** | B1+ PET · Rotary 2 | B1+ PET · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W95** | B1+ PET · Rotary 3 | B1+ PET · Rotary 3 · Review Cycle | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W96** | B1+ PET · Rotary 4 | B1+ PET · Rotary 4 · Review Cycle | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W97** | ★ FULL MOCK 16 (PET) | B1+ PET · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W98** | B1+ PET · Rotary 1 | B1+ PET · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W99** | B1+ PET · Rotary 2 | B1+ PET · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W100** | B1+ PET · Rotary 3 | B1+ PET · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W101** | B1+ PET · Rotary 4 | B1+ PET · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W102** | ★ FULL MOCK 17 (PET) | B1+ PET · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W103** | B1+ PET · Rotary 1 | B1+ PET · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W104** | B1+ PET · Rotary 2 | B1+ PET · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W105** | B1+ PET · Rotary 3 | B1+ PET · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W106** | B1+ PET · Rotary 4 | B1+ PET · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W107** | ★ FULL MOCK 18 (PET) | B1+ PET · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W108** | B1+ PET · Rotary 1 | B1+ PET · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W109** | B1+ PET · Rotary 2 | B1+ PET · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W110** | B1+ PET · Rotary 3 | B1+ PET · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W111** | B1+ PET · Rotary 4 | B1+ PET · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W112** | ★ FULL MOCK 19 (OFFICIAL) | B1+ PET · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W113** | B1+ PET · Rotary 1 | B1+ PET · Rotary 1 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W114** | B1+ PET · Rotary 2 | B1+ PET · Rotary 2 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W115** | B1+ PET · Rotary 3 | B1+ PET · Rotary 3 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W116** | B1+ PET · Rotary 4 | B1+ PET · Rotary 4 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W117** | ★ FULL MOCK (Presentation A) | B1+ PET · Rotary 1 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W118** | B1+ PET · Rotary 1 | B1+ PET · Rotary 2 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W119** | B1+ PET · Rotary 2 | B1+ PET · Rotary 3 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W120** | ★ GRADUATION (Phase 2) | B1+ PET · Rotary 4 · Graduation Showcase (Content Week) · [CHỜ OWNER: Phase 2 vs B1+ Academic] | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W121** | B1+ Academic · Rotary 1 | B1+ Academic · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W122** | B1+ Academic · Rotary 2 | B1+ Academic · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W123** | B1+ Academic · Rotary 3 | B1+ Academic · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W124** | B1+ Academic · Rotary 4 | B1+ Academic · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W125** | B1+ Academic · Rotary 1 | B1+ Academic · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W126** | B1+ Academic · Rotary 2 | B1+ Academic · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W127** | ★ FULL MOCK 20 (B1+) | B1+ Academic · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W128** | B1+ Academic · Rotary 1 | B1+ Academic · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W129** | B1+ Academic · Rotary 2 | B1+ Academic · Rotary 1 · Review Cycle | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W130** | B1+ Academic · Rotary 3 | B1+ Academic · Rotary 2 · Review Cycle | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W131** | B1+ Academic · Rotary 4 | B1+ Academic · Rotary 3 · Review Cycle | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W132** | ★ FULL MOCK 21 (B1+) | B1+ Academic · Rotary 4 · Review Cycle | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W133** | B1+ Academic · Rotary 1 | B1+ Academic · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W134** | B1+ Academic · Rotary 2 | B1+ Academic · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W135** | B1+ Academic · Rotary 3 | B1+ Academic · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W136** | B1+ Academic · Rotary 4 | B1+ Academic · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W137** | ★ FULL MOCK 22 (B1+) | B1+ Academic · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W138** | B1+ Academic · Rotary 1 | B1+ Academic · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W139** | B1+ Academic · Rotary 2 | B1+ Academic · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W140** | B1+ Academic · Rotary 3 | B1+ Academic · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W141** | B1+ Academic · Rotary 4 | B1+ Academic · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W142** | ★ FULL MOCK 23 (B1+) | B1+ Academic · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W143** | B1+ Academic · Rotary 1 | B1+ Academic · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W144** | B1+ Academic · Rotary 2 | B1+ Academic · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W145** | B1+ Academic · Rotary 1 | B1+ Academic · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W146** | B1+ Academic · Rotary 2 | B1+ Academic · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W147** | ★ FULL MOCK 24 (B1+) | B1+ Academic · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W148** | B1+ Academic · Rotary 1 | B1+ Academic · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W149** | B1+ Academic · Rotary 2 | B1+ Academic · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W150** | B1+ Academic · Rotary 3 | B1+ Academic · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W151** | B1+ Academic · Rotary 4 | B1+ Academic · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W152** | ★ FULL MOCK 25 (B1+) | B1+ Academic · Rotary 4 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W153** | B1+ Academic · Rotary 1 | B1+ Academic · Rotary 1 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W154** | B1+ Academic · Rotary 2 | B1+ Academic · Rotary 2 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W155** | B1+ Academic · Rotary 3 | B1+ Academic · Rotary 3 | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+| **W156** | ★ FULL MOCK 26 / GRADUATION | B1+ Academic · Rotary 4 · Graduation Showcase (Content Week) | `generate_week_blueprint.mjs:L95,100,125-140,410` -> `map_cefr_type`, `cefr_level`, `isFullMock`; `audit_39_mock_weeks.mjs:L100` (`bp.isFullMock`) |
+
+✓ diff -u stats (Map gốc vs Map v2 R79): 504 dòng diff.

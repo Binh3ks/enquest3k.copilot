@@ -1,0 +1,232 @@
+{
+  "week": 114,
+  "theme": "Project Assembly (Making the Poster)",
+  "title_en": "Project Assembly (Making the Poster)",
+  "title_vi": "Lắp ráp Dự án",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Layout and Design",
+  "clil_topic": {
+    "title": "Layout and Design",
+    "focus": "Glue text and images onto a poster board logically"
+  },
+  "grammar_focus": {
+    "structure": "[SUPPLEMENT — Source B L916 không ghi Grammar Focus]",
+    "outcome": "Glue text and images onto a poster board logically",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "layout",
+      "center",
+      "top",
+      "bottom",
+      "arrange",
+      "organize"
+    ],
+    "total_syllabus_words": 6,
+    "target_count": 20,
+    "missing_count": 14,
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 6,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "organize"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "layout",
+    "center",
+    "top",
+    "bottom",
+    "arrange",
+    "organize"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "layout",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/lˈeɪˌaʊt/",
+      "phonetics": {
+        "arpabet": "L EY1 AW2 T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "center",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/sˈɛntɚ/",
+      "phonetics": {
+        "arpabet": "S EH1 N T ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "top",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/tˈɑːp/",
+      "phonetics": {
+        "arpabet": "T AA1 P",
+        "final_phone": "P",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "bottom",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/bˈɑːtəm/",
+      "phonetics": {
+        "arpabet": "B AA1 T AH0 M",
+        "final_phone": "M",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "arrange",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɚˈeɪndʒ/",
+      "phonetics": {
+        "arpabet": "ER0 EY1 N JH",
+        "final_phone": "JH",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "organize",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˈɔːɹɡənˌaɪz/",
+      "phonetics": {
+        "arpabet": "AO1 R G AH0 N AY2 Z",
+        "final_phone": "Z",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "organized",
+        "past_participle": "organized",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /z/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 14 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 114,
+    "map_theme": null,
+    "map_clil_module": null,
+    "map_grammar_hub": null,
+    "map_cefr_type": null,
+    "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+    "alignment_note": "Week missing from Digital Syllabus Map (docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md). Constructed exclusively from Master Syllabus Foundation (Source B)."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:02.434Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": false,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": {
+    "topic": "Measurement (Length/Area)",
+    "outcome": "Measure spaces on the poster to fit text boxes",
+    "vocab": [],
+    "source_line": 921
+  }
+}
