@@ -1,0 +1,149 @@
+========================================================================
+ROUND 80 PRIORITY 2 — RAW VERIFICATION OUTPUT
+Timestamp: 2026-11-11T08:47:38.227Z
+round80_proposed_digital_map_v2.md sha256: c61c44a8414966e74e4a0db3318a4edf0c94078cb824252b5db279026c14d5ab
+round80_mock_format_and_rotary_proposal.md sha256: fba5dbeef32fe51b23974b95374e5d2baba5c568162fef622797616372dd1f23
+========================================================================
+
+### [1] ITEM 4 — DIFF R79 Map v2 -> R80 Map v2 (PET Applied to M24-M34; W113-W120 Untouched)
+Changed lines count: 21
+Pending [CHỜ OWNER] remaining on MOCK M* lines: 0
+Preserved W113-W120 content rows count: 8/8 (exact byte equality with R79: true)
+
+--- L1
+- # 🗺️ ENGQUEST3K — DIGITAL SYLLABUS & CURRICULUM BRIDGE (W01–W156) [PROPOSED v2 — ROUND 79]
++ # 🗺️ ENGQUEST3K — DIGITAL SYLLABUS & CURRICULUM BRIDGE (W01–W156) [PROPOSED v2 — ROUND 80]
+--- L3
+- > **TRẠNG THÁI ĐỀ XUẤT (ROUND 79 PROPOSAL ONLY — KHÔNG SỬA FILE GỐC):** Đồng bộ 100% theo **Source B Part II** (`156` tuần nội dung), giữ nguyên toàn bộ thông tin hub/mini-game & hoạt động không xung đột từ Source A dưới nhãn **`[SUPPLEMENT — Source A]`**, bảo toàn đầy đủ nhãn **`Rotary 1–4`** ở Cột 3 cho `W33–W156` (đồng bộ chu kỳ `((w - 33) % 4) + 1`), và tách riêng **34 Mock Checkpoint** xen kẽ (`MOCK M01–M34`).
++ > **TRẠNG THÁI ĐỀ XUẤT (ROUND 80 PROPOSAL ONLY — KHÔNG SỬA FILE GỐC):** Kế thừa nguyên vẹn Map v2 Round 79 đồng bộ **Source B Part II** (`156` tuần nội dung, bảo toàn `[SUPPLEMENT — Source A]` và `Rotary 1–4`), và **áp dụng Quyết định Owner 2026-11-11**: định dạng **PET** áp dụng cho toàn bộ **21 Mock sau W72 (`M14–M34`, gồm `M24–M34`, không có ngoại lệ `B1+ Academic`)**. Riêng nhãn CEFR tuần nội dung **`W113–W120` (`B.5`) vẫn giữ nguyên `[CHỜ OWNER]`** theo đúng chỉ đạo.
+--- L9
+- **Mock Test Cadence**: 34 Interleaved Mock Checkpoints (33 ngoài Lite Mode + 1 M01 Deferred Lite Mode; M24–M34 [CHỜ OWNER])  
++ **Mock Test Cadence**: 34 Interleaved Mock Checkpoints (33 ngoài Lite Mode + 1 M01 Deferred Lite Mode; `M14–M34` = B1 PET [Confirmed Decision 6 — Owner 2026-11-11])  
+--- L22
+- 2. **Mốc Thi Thử Xen Kẽ (Interleaved Mock Checkpoints — 34 mốc quy hoạch)**: Chèn xen kẽ giữa các tuần nội dung (`M01` sau W16 [Deferred Lite Mode]; `M02–M03` sau W24/W32; `M04–M34` theo chu kỳ `32+4n` sau W36..W156; riêng `M24–M34` giữ `[CHỜ OWNER]`), không gộp lên tuần nội dung Source B.
++ 2. **Mốc Thi Thử Xen Kẽ (Interleaved Mock Checkpoints — 34 mốc quy hoạch)**: Chèn xen kẽ giữa các tuần nội dung (`M01` sau W16 [Deferred Lite Mode]; `M02–M03` sau W24/W32; `M04–M13` Flyers sau `W36..W72`; `M14–M34` B1 PET sau `W76..W156` theo Decision 6 — Owner Ruling 2026-11-11), không gộp lên tuần nội dung Source B.
+--- L38
+- │ B1 PET (10)          │ M14–M23 (Sau W76, 80, ..., 112) │ Chu kỳ 32+4n (n=11..20); Chưa spec PET │
++ │ B1 PET (10+11 = 21)  │ M14–M23 (Sau W76..W112)         │ PET (32+4n, n=11..20; chờ spec code)  │
+--- L39
+- │ Sau W116–W156 (11)   │ M24–M34 (Sau W116, 120, ...,156)│ [CHỜ OWNER]: PET vs B1+ Academic       │
++ │ B1 PET (Confirmed)   │ M24–M34 (Sau W116, 120, ...,156)│ PET (Decision 6 Confirmed 2026-11-11)  │
+--- L209
+- *Focus: Mock xen kẽ sau mỗi 4 tuần nội dung (M20–M23 PET sau W100/104/108/112; M24–M25 sau W116/120 [CHỜ OWNER]), viết bài báo cáo khoa học độc lập, Capstone Presentation W113–W120.*
++ *Focus: Mock xen kẽ sau mỗi 4 tuần nội dung (M20–M23 PET sau W100/104/108/112; M24–M25 sau W116/120 = B1 PET [Decision 6 Confirmed 2026-11-11]), viết bài báo cáo khoa học độc lập, Capstone Presentation W113–W120.*
+--- L237
+- | **MOCK M24 (Sau W116)** | **Mock Checkpoint 24 (Phạm vi W113–W116 — [CHỜ OWNER])** | **★ FULL MOCK 24 ([CHỜ OWNER]: PET vs B1+ Academic)** | Tổng hợp kiến thức & từ vựng chu kỳ W113–W116 | **Tier Exam** | `isFullMock: true`; [CHỜ OWNER] chốt PET (Decision 6) vs B1+ Academic (SOP/ARCH/MAP) (sau W113–W116) |
++ | **MOCK M24 (Sau W116)** | **Mock Checkpoint 24 (Phạm vi W113–W116)** | **★ FULL MOCK 24 (B1 PET)** | Tổng hợp kiến thức & từ vựng chu kỳ W113–W116 | **Tier Exam** | `isFullMock: true`; Cambridge B1 PET (Confirmed Decision 6 — Owner Ruling 2026-11-11; chờ chuẩn hóa `cambridgeExamStandards.js`) (sau W113–W116) |
+--- L242
+- | **MOCK M25 (Sau W120)** | **Mock Checkpoint 25 (Phạm vi W117–W120 — [CHỜ OWNER])** | **★ FULL MOCK 25 ([CHỜ OWNER]: PET vs B1+ Academic)** | Tổng hợp kiến thức & từ vựng chu kỳ W117–W120 | **Tier Exam** | `isFullMock: true`; [CHỜ OWNER] chốt PET (Decision 6) vs B1+ Academic (SOP/ARCH/MAP) (sau W117–W120) |
++ | **MOCK M25 (Sau W120)** | **Mock Checkpoint 25 (Phạm vi W117–W120)** | **★ FULL MOCK 25 (B1 PET)** | Tổng hợp kiến thức & từ vựng chu kỳ W117–W120 | **Tier Exam** | `isFullMock: true`; Cambridge B1 PET (Confirmed Decision 6 — Owner Ruling 2026-11-11; chờ chuẩn hóa `cambridgeExamStandards.js`) (sau W117–W120) |
+--- L249
+- *Focus (Source B Part II): Project Cycle 1 (`W121–128` Homework Debate + `W129–132` Review & Math Logic Cycle) và Project Cycle 2 (`W133–144` Video Games Debate); Mock chèn xen kẽ M26–M31 (sau W124/128/132/136/140/144) giữ `[CHỜ OWNER]`.*
++ *Focus (Source B Part II): Project Cycle 1 (`W121–128` Homework Debate + `W129–132` Review & Math Logic Cycle) và Project Cycle 2 (`W133–144` Video Games Debate); Mock chèn xen kẽ M26–M31 (sau W124/128/132/136/140/144) dùng **B1 PET** (Decision 6 Confirmed 2026-11-11).*
+--- L257
+- | **MOCK M26 (Sau W124)** | **Mock Checkpoint 26 (Phạm vi W121–W124 — [CHỜ OWNER])** | **★ FULL MOCK 26 ([CHỜ OWNER]: PET vs B1+ Academic)** | Tổng hợp kiến thức & từ vựng chu kỳ W121–W124 | **Tier Exam** | `isFullMock: true`; [CHỜ OWNER] chốt PET (Decision 6) vs B1+ Academic (SOP/ARCH/MAP) (sau W121–W124) |
++ | **MOCK M26 (Sau W124)** | **Mock Checkpoint 26 (Phạm vi W121–W124)** | **★ FULL MOCK 26 (B1 PET)** | Tổng hợp kiến thức & từ vựng chu kỳ W121–W124 | **Tier Exam** | `isFullMock: true`; Cambridge B1 PET (Confirmed Decision 6 — Owner Ruling 2026-11-11; chờ chuẩn hóa `cambridgeExamStandards.js`) (sau W121–W124) |
+--- L262
+- | **MOCK M27 (Sau W128)** | **Mock Checkpoint 27 (Phạm vi W125–W128 — [CHỜ OWNER])** | **★ FULL MOCK 27 ([CHỜ OWNER]: PET vs B1+ Academic)** | Tổng hợp kiến thức & từ vựng chu kỳ W125–W128 | **Tier Exam** | `isFullMock: true`; [CHỜ OWNER] chốt PET (Decision 6) vs B1+ Academic (SOP/ARCH/MAP) (sau W125–W128) |
++ | **MOCK M27 (Sau W128)** | **Mock Checkpoint 27 (Phạm vi W125–W128)** | **★ FULL MOCK 27 (B1 PET)** | Tổng hợp kiến thức & từ vựng chu kỳ W125–W128 | **Tier Exam** | `isFullMock: true`; Cambridge B1 PET (Confirmed Decision 6 — Owner Ruling 2026-11-11; chờ chuẩn hóa `cambridgeExamStandards.js`) (sau W125–W128) |
+--- L267
+- | **MOCK M28 (Sau W132)** | **Mock Checkpoint 28 (Phạm vi W129–W132 — [CHỜ OWNER])** | **★ FULL MOCK 28 ([CHỜ OWNER]: PET vs B1+ Academic)** | Tổng hợp kiến thức & từ vựng chu kỳ W129–W132 | **Tier Exam** | `isFullMock: true`; [CHỜ OWNER] chốt PET (Decision 6) vs B1+ Academic (SOP/ARCH/MAP) (sau W129–W132) |
++ | **MOCK M28 (Sau W132)** | **Mock Checkpoint 28 (Phạm vi W129–W132)** | **★ FULL MOCK 28 (B1 PET)** | Tổng hợp kiến thức & từ vựng chu kỳ W129–W132 | **Tier Exam** | `isFullMock: true`; Cambridge B1 PET (Confirmed Decision 6 — Owner Ruling 2026-11-11; chờ chuẩn hóa `cambridgeExamStandards.js`) (sau W129–W132) |
+--- L272
+- | **MOCK M29 (Sau W136)** | **Mock Checkpoint 29 (Phạm vi W133–W136 — [CHỜ OWNER])** | **★ FULL MOCK 29 ([CHỜ OWNER]: PET vs B1+ Academic)** | Tổng hợp kiến thức & từ vựng chu kỳ W133–W136 | **Tier Exam** | `isFullMock: true`; [CHỜ OWNER] chốt PET (Decision 6) vs B1+ Academic (SOP/ARCH/MAP) (sau W133–W136) |
++ | **MOCK M29 (Sau W136)** | **Mock Checkpoint 29 (Phạm vi W133–W136)** | **★ FULL MOCK 29 (B1 PET)** | Tổng hợp kiến thức & từ vựng chu kỳ W133–W136 | **Tier Exam** | `isFullMock: true`; Cambridge B1 PET (Confirmed Decision 6 — Owner Ruling 2026-11-11; chờ chuẩn hóa `cambridgeExamStandards.js`) (sau W133–W136) |
+--- L277
+- | **MOCK M30 (Sau W140)** | **Mock Checkpoint 30 (Phạm vi W137–W140 — [CHỜ OWNER])** | **★ FULL MOCK 30 ([CHỜ OWNER]: PET vs B1+ Academic)** | Tổng hợp kiến thức & từ vựng chu kỳ W137–W140 | **Tier Exam** | `isFullMock: true`; [CHỜ OWNER] chốt PET (Decision 6) vs B1+ Academic (SOP/ARCH/MAP) (sau W137–W140) |
++ | **MOCK M30 (Sau W140)** | **Mock Checkpoint 30 (Phạm vi W137–W140)** | **★ FULL MOCK 30 (B1 PET)** | Tổng hợp kiến thức & từ vựng chu kỳ W137–W140 | **Tier Exam** | `isFullMock: true`; Cambridge B1 PET (Confirmed Decision 6 — Owner Ruling 2026-11-11; chờ chuẩn hóa `cambridgeExamStandards.js`) (sau W137–W140) |
+--- L282
+- | **MOCK M31 (Sau W144)** | **Mock Checkpoint 31 (Phạm vi W141–W144 — [CHỜ OWNER])** | **★ FULL MOCK 31 ([CHỜ OWNER]: PET vs B1+ Academic)** | Tổng hợp kiến thức & từ vựng chu kỳ W141–W144 | **Tier Exam** | `isFullMock: true`; [CHỜ OWNER] chốt PET (Decision 6) vs B1+ Academic (SOP/ARCH/MAP) (sau W141–W144) |
++ | **MOCK M31 (Sau W144)** | **Mock Checkpoint 31 (Phạm vi W141–W144)** | **★ FULL MOCK 31 (B1 PET)** | Tổng hợp kiến thức & từ vựng chu kỳ W141–W144 | **Tier Exam** | `isFullMock: true`; Cambridge B1 PET (Confirmed Decision 6 — Owner Ruling 2026-11-11; chờ chuẩn hóa `cambridgeExamStandards.js`) (sau W141–W144) |
+--- L287
+- *Focus (Source B Part II): Project Cycle 3 (`W145–156`: Smartphones Debate — báo cáo nghiên cứu & thuyết trình quan điểm); Mock chèn xen kẽ M32 (sau W148), M33 (sau W152) và M34 Final Mock (sau W156) giữ `[CHỜ OWNER]`.*
++ *Focus (Source B Part II): Project Cycle 3 (`W145–156`: Smartphones Debate — báo cáo nghiên cứu & thuyết trình quan điểm); Mock chèn xen kẽ M32 (sau W148), M33 (sau W152) và M34 Final Mock (sau W156) dùng **B1 PET** (Decision 6 Confirmed 2026-11-11).*
+--- L295
+- | **MOCK M32 (Sau W148)** | **Mock Checkpoint 32 (Phạm vi W145–W148 — [CHỜ OWNER])** | **★ FULL MOCK 32 ([CHỜ OWNER]: PET vs B1+ Academic)** | Tổng hợp kiến thức & từ vựng chu kỳ W145–W148 | **Tier Exam** | `isFullMock: true`; [CHỜ OWNER] chốt PET (Decision 6) vs B1+ Academic (SOP/ARCH/MAP) (sau W145–W148) |
++ | **MOCK M32 (Sau W148)** | **Mock Checkpoint 32 (Phạm vi W145–W148)** | **★ FULL MOCK 32 (B1 PET)** | Tổng hợp kiến thức & từ vựng chu kỳ W145–W148 | **Tier Exam** | `isFullMock: true`; Cambridge B1 PET (Confirmed Decision 6 — Owner Ruling 2026-11-11; chờ chuẩn hóa `cambridgeExamStandards.js`) (sau W145–W148) |
+--- L300
+- | **MOCK M33 (Sau W152)** | **Mock Checkpoint 33 (Phạm vi W149–W152 — [CHỜ OWNER])** | **★ FULL MOCK 33 ([CHỜ OWNER]: PET vs B1+ Academic)** | Tổng hợp kiến thức & từ vựng chu kỳ W149–W152 | **Tier Exam** | `isFullMock: true`; [CHỜ OWNER] chốt PET (Decision 6) vs B1+ Academic (SOP/ARCH/MAP) (sau W149–W152) |
++ | **MOCK M33 (Sau W152)** | **Mock Checkpoint 33 (Phạm vi W149–W152)** | **★ FULL MOCK 33 (B1 PET)** | Tổng hợp kiến thức & từ vựng chu kỳ W149–W152 | **Tier Exam** | `isFullMock: true`; Cambridge B1 PET (Confirmed Decision 6 — Owner Ruling 2026-11-11; chờ chuẩn hóa `cambridgeExamStandards.js`) (sau W149–W152) |
+--- L305
+- | **MOCK M34 (Sau W156)** | **Mock Checkpoint 34 (Phạm vi W153–W156 — [CHỜ OWNER])** | **★ FULL MOCK 34 ([CHỜ OWNER]: PET vs B1+ Academic)** | Tổng hợp kiến thức & từ vựng chu kỳ W153–W156 | **Tier Exam** | `isFullMock: true`; [CHỜ OWNER] chốt PET (Decision 6) vs B1+ Academic (SOP/ARCH/MAP) (sau W153–W156) |
++ | **MOCK M34 (Sau W156)** | **Mock Checkpoint 34 (Phạm vi W153–W156)** | **★ FULL MOCK 34 (B1 PET — Final Mock)** | Tổng hợp kiến thức & từ vựng chu kỳ W153–W156 | **Tier Exam** | `isFullMock: true`; Cambridge B1 PET (Confirmed Decision 6 — Owner Ruling 2026-11-11; chờ chuẩn hóa `cambridgeExamStandards.js`) (sau W153–W156) |
+--- L312
+- 2. **Khai Báo Cột Milestone (Proposed v2 — Xen Kẽ)**: Tất cả 156 tuần nội dung (`W01–W156`) BẮT BUỘC gỡ bỏ `★ FULL MOCK` và đặt `isFullMock: false` (tránh chứa chuỗi `"Mock"` trong Cột 2/3 để không kích nhầm regex `/MOCK/i` ở `generate_week_blueprint.mjs:L100`). Chỉ **34 mốc kiểm tra xen kẽ** (`MOCK M01–M34`, chèn sau `W16, W24, W32` và chu kỳ `32+4n` `W36..W156`) đặt `isFullMock: true` trong slot mock tách biệt (`M01` tạm hoãn Lite Mode `round64:L8`; `M24–M34` giữ `[CHỜ OWNER]`).
++ 2. **Khai Báo Cột Milestone (Proposed v2 — Xen Kẽ)**: Tất cả 156 tuần nội dung (`W01–W156`) BẮT BUỘC gỡ bỏ `★ FULL MOCK` và đặt `isFullMock: false` (tránh chứa chuỗi `"Mock"` trong Cột 2/3 để không kích nhầm regex `/MOCK/i` ở `generate_week_blueprint.mjs:L100`). Chỉ **34 mốc kiểm tra xen kẽ** (`MOCK M01–M34`, chèn sau `W16, W24, W32` và chu kỳ `32+4n` `W36..W156`) đặt `isFullMock: true` trong slot mock tách biệt (`M01` tạm hoãn Lite Mode `round64:L8`; `M14–M34`: **B1 PET** [Confirmed Decision 6 — Owner Ruling 2026-11-11]).
+
+### [2] ITEM 4 — R79 TEMP BLUEPRINTS mockFormat CHECK (W76..W156, step 4)
+W76: mockFormat="pet" | cefr_level="B1 PET"
+W80: mockFormat="pet" | cefr_level="B1 PET"
+W84: mockFormat="pet" | cefr_level="B1 PET"
+W88: mockFormat="pet" | cefr_level="B1 PET"
+W92: mockFormat="pet" | cefr_level="A2 Flyers"
+W96: mockFormat="pet" | cefr_level="B1 PET"
+W100: mockFormat="pet" | cefr_level="B1 PET"
+W104: mockFormat="pet" | cefr_level="B1 PET"
+W108: mockFormat="pet" | cefr_level="B1 PET"
+W112: mockFormat="pet" | cefr_level="A2 Flyers"
+W116: mockFormat="pet" | cefr_level="A2 Flyers"
+W120: mockFormat="pet" | cefr_level="A2 Flyers"
+W124: mockFormat="pet" | cefr_level="B1+ Academic"
+W128: mockFormat="pet" | cefr_level="B1+ Academic"
+W132: mockFormat="pet" | cefr_level="A2 Flyers"
+W136: mockFormat="pet" | cefr_level="B1+ Academic"
+W140: mockFormat="pet" | cefr_level="B1+ Academic"
+W144: mockFormat="pet" | cefr_level="B1+ Academic"
+W148: mockFormat="pet" | cefr_level="B1+ Academic"
+W152: mockFormat="pet" | cefr_level="A2 Flyers"
+W156: mockFormat="pet" | cefr_level="A2 Flyers"
+
+### [3] ITEM 4 — VERBATIM PRESERVED W113-W120 CONTENT ROWS IN R80 MAP v2
+| **W113** | Visual Aids (Images & Captions) | B1+ PET · Rotary 1 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | Topic: Adding visual information (`Source B L908`); Math: Geometry Review (Shapes) (`Source B L914`); ELA: Select images and write descriptive captions using prepositions | Tier 3 (Autonomous) | [Source B L912] Prepositional Phrases: "In this picture...", "Next to the volcano..." • Vocab (5): caption, image, picture, show, display • Math Outcome: Review properties of 2D/3D shapes for project models • [SUPPLEMENT — Source A]: `writing_hub` |
+| **W114** | Project Assembly (Making the Poster) | B1+ PET · Rotary 2 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | Topic: Layout and Design (`Source B L916`); Math: Measurement (Length/Area) (`Source B L921`); ELA: Glue text and images onto a poster board logically | Tier 3 (Autonomous) | [SUPPLEMENT: Grammar không ghi trong Source B — Owner chờ duyệt] • Vocab (6): layout, center, top, bottom, arrange, organize • Math Outcome: Measure spaces on the poster to fit text boxes • [SUPPLEMENT — Source A]: Bố cục (layout, center, organize); `action_lab` thiết kế poster |
+| **W115** | Speaking Notes (Cue Cards) | B1+ PET · Rotary 3 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | Topic: From Reading to Speaking (`Source B L923`); Math: Logic Puzzles (`Source B L929`); ELA: Create cue cards with keywords only (no full sentences) | Tier 3 (Autonomous) | [Source B L927] Imperatives/Keywords for self-prompts • Vocab (5): cue card, keyword, remind, remember, point • Math Outcome: Solve grid puzzles to keep logic sharp • [SUPPLEMENT — Source A]: `speaking_hub` luyện nói |
+| **W116** | Rehearsal (Voice & Body) | B1+ PET · Rotary 4 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | Topic: Delivery skills (`Source B L931`); Math: Math Games (`Source B L936`); ELA: Practice presentation with correct volume and eye contact | Tier 3 (Autonomous) | [SUPPLEMENT: Grammar không ghi trong Source B — Owner chờ duyệt] • Vocab (5): loud, clear, eye contact, stand straight, smile • [SUPPLEMENT — Source A]: Kỹ năng phi ngôn ngữ (eye contact, loud, clear); `broadcast_studio` |
+| **W117** | The Knowledge Fair (Group A) | B1+ PET · Rotary 1 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | Topic: Presentation Day 1 (`Source B L937`); [SUPPLEMENT: Toán/Lab mở rộng khi Source B không ghi Math] | Tier 3 (Autonomous) | [SUPPLEMENT: Grammar không ghi trong Source B — Owner chờ duyệt] • Vocab: [SUPPLEMENT — 0 từ trong Source B; Owner chờ duyệt] • [SUPPLEMENT — Source A]: Thuyết trình 3 phút + Q&A; Đánh giá năng lực thuyết trình B1 Part A |
+| **W118** | The Knowledge Fair (Group B) | B1+ PET · Rotary 2 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | Topic: Presentation Day 2 (`Source B L941`); [SUPPLEMENT: Toán/Lab mở rộng khi Source B không ghi Math] | Tier 3 (Autonomous) | [SUPPLEMENT: Grammar không ghi trong Source B — Owner chờ duyệt] • Vocab: [SUPPLEMENT — 0 từ trong Source B; Owner chờ duyệt] • [SUPPLEMENT — Source A]: Thuyết trình 3 phút + Q&A; `info_exchange` phản hồi đồng cấp Part B |
+| **W119** | Reflection & Portfolio | B1+ PET · Rotary 3 · [CHỜ OWNER: Phase 2 vs B1+ Academic] | Topic: Looking back (`Source B L944`); [SUPPLEMENT: Toán/Lab mở rộng khi Source B không ghi Math] | Tier 3 (Autonomous) | [Source B L947] Past Tense (Reflection) • Vocab: [SUPPLEMENT — 0 từ trong Source B; Owner chờ duyệt] • [SUPPLEMENT — Source A]: `writing_hub` hoàn thiện hồ sơ Portfolio |
+| **W120** | PHASE 2 GRADUATION | B1+ PET · Rotary 4 · Graduation Showcase (Content Week) · [CHỜ OWNER: Phase 2 vs B1+ Academic] | Topic: Ceremony & Certificate Distribution (`Source B L949`); [SUPPLEMENT: Toán/Lab mở rộng khi Source B không ghi Math] | Tier 3 (Autonomous) | [SUPPLEMENT: Grammar không ghi trong Source B — Owner chờ duyệt] • Vocab: [SUPPLEMENT — 0 từ trong Source B; Owner chờ duyệt] |
+
+### [4] ITEM 5 — LIVE bossRotarySchedule.js SWEEP (W33-W156)
+Total weeks swept: 124 (W33..W156)
+Weeks falsely triggering cycleNumber=5 under current %5: 24 -> [37, 42, 47, 52, 57, 62, 67, 72, 77, 82, 87, 92, 97, 102, 107, 112, 117, 122, 127, 132, 137, 142, 147, 152]
+W33: current(cycle=1, mode=ROTARY, parts=4, label="Listening Shield (L1 & L2)") -> proposed(cycle=1)
+W34: current(cycle=2, mode=ROTARY, parts=4, label="Listening Shield (L3)") -> proposed(cycle=2)
+W35: current(cycle=3, mode=ROTARY, parts=4, label="Listening Shield (L4)") -> proposed(cycle=3)
+W36: current(cycle=4, mode=ROTARY, parts=4, label="Listening Shield (L5)") -> proposed(cycle=4)
+W37: current(cycle=5, mode=ROTARY, parts=4, label="Full Mock — Listening Paper") -> proposed(cycle=1)
+W38: current(cycle=1, mode=ROTARY, parts=4, label="Listening Shield (L1 & L2)") -> proposed(cycle=2)
+W39: current(cycle=2, mode=ROTARY, parts=4, label="Listening Shield (L3)") -> proposed(cycle=3)
+W40: current(cycle=3, mode=ROTARY, parts=4, label="Listening Shield (L4)") -> proposed(cycle=4)
+W41: current(cycle=4, mode=ROTARY, parts=4, label="Listening Shield (L5)") -> proposed(cycle=1)
+W42: current(cycle=5, mode=ROTARY, parts=4, label="Full Mock — Listening Paper") -> proposed(cycle=2)
+W43: current(cycle=1, mode=ROTARY, parts=4, label="Listening Shield (L1 & L2)") -> proposed(cycle=3)
+W44: current(cycle=2, mode=ROTARY, parts=4, label="Listening Shield (L3)") -> proposed(cycle=4)
+W45: current(cycle=3, mode=ROTARY, parts=4, label="Listening Shield (L4)") -> proposed(cycle=1)
+W46: current(cycle=4, mode=ROTARY, parts=4, label="Listening Shield (L5)") -> proposed(cycle=2)
+W47: current(cycle=5, mode=ROTARY, parts=4, label="Full Mock — Listening Paper") -> proposed(cycle=3)
+W48: current(cycle=1, mode=ROTARY, parts=4, label="Listening Shield (L1 & L2)") -> proposed(cycle=4)
+W49: current(cycle=2, mode=ROTARY, parts=4, label="Listening Shield (L3)") -> proposed(cycle=1)
+W50: current(cycle=3, mode=ROTARY, parts=4, label="Listening Shield (L4)") -> proposed(cycle=2)
+W51: current(cycle=4, mode=ROTARY, parts=4, label="Listening Shield (L5)") -> proposed(cycle=3)
+W52: current(cycle=5, mode=ROTARY, parts=4, label="Full Mock — Listening Paper") -> proposed(cycle=4)
+... (remaining W53..W156 %5 misfire weeks: 57, 62, 67, 72, 77, 82, 87, 92, 97, 102, 107, 112, 117, 122, 127, 132, 137, 142, 147, 152)
+
+### [5] ITEM 6 — C.8 W129-132 RE-VERIFICATION RAW
+{"week":129,"blockOrigin":"multi_week_cycle","titleEn":"Review & Math Logic Cycle","rangeSpan":[129,132],"formattedDisplay":"Review & Math Logic Cycle [W129–132]"}
+{"week":130,"blockOrigin":"multi_week_cycle","titleEn":"Review & Math Logic Cycle","rangeSpan":[129,132],"formattedDisplay":"Review & Math Logic Cycle [W129–132]"}
+{"week":131,"blockOrigin":"multi_week_cycle","titleEn":"Review & Math Logic Cycle","rangeSpan":[129,132],"formattedDisplay":"Review & Math Logic Cycle [W129–132]"}
+{"week":132,"blockOrigin":"multi_week_cycle","titleEn":"Review & Math Logic Cycle","rangeSpan":[129,132],"formattedDisplay":"Review & Math Logic Cycle [W129–132]"}
+SCAN docs/agent_artifacts/round79_proposed_digital_map_v2.md: unexpected_129_132=0, explanatory_notes=0, good_display_hits=6
+SCAN docs/agent_artifacts/round80_proposed_digital_map_v2.md: unexpected_129_132=0, explanatory_notes=0, good_display_hits=6
+SCAN docs/agent_artifacts/round79_wave3_acceptance_spec_v2.md: unexpected_129_132=0, explanatory_notes=0, good_display_hits=6
+SCAN docs/agent_artifacts/round79_blueprints_cefr_and_c8_raw.txt: unexpected_129_132=0, explanatory_notes=1, good_display_hits=16
+SCAN docs/agent_artifacts/round79_digital_map_and_rotary_raw.txt: unexpected_129_132=0, explanatory_notes=0, good_display_hits=9
+SCAN docs/agent_artifacts/round80_loader_fix_raw.txt: unexpected_129_132=0, explanatory_notes=0, good_display_hits=0
+SCAN docs/agent_artifacts/round79_temp_blueprints/week_129_blueprint.json: unexpected_129_132=0, explanatory_notes=0, good_display_hits=3
+SCAN docs/agent_artifacts/round79_temp_blueprints/week_130_blueprint.json: unexpected_129_132=0, explanatory_notes=0, good_display_hits=3
+SCAN docs/agent_artifacts/round79_temp_blueprints/week_131_blueprint.json: unexpected_129_132=0, explanatory_notes=0, good_display_hits=3
+SCAN docs/agent_artifacts/round79_temp_blueprints/week_132_blueprint.json: unexpected_129_132=0, explanatory_notes=0, good_display_hits=3

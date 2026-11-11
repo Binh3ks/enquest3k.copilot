@@ -1,0 +1,66 @@
+========================================================================
+ROUND 80 PRIORITY 1 — REAL VITE SSR loadWeekData(w) + mapDataToZones() PROOF
+Timestamp: 2026-11-11T08:47:37.551Z
+Target 17 weeks: 38, 39, 41, 43, 45, 46, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 125
+Baseline weeks:  33, 34, 35, 36, 37
+========================================================================
+
+### 1. Baseline Production Weeks (W33–W37)
+| Week | index.js | loadWeekData != null | meta.hasAdvanced | weekId | Theme/Title | Hubs (R/L/W/S/SPH) | Vocab | Math (barModel) | Grammar | InfoEx |
+|------|----------|----------------------|------------------|--------|-------------|--------------------|-------|-----------------|---------|--------|
+| W33 | YES | PASS | true | 33 | Corridor Safety & School Care | Y/Y/Y/Y/Y | 20 | 5 | 5 | Y |
+| W34 | YES | PASS | true | 34 | The Lion and the Mouse | Y/Y/Y/Y/Y | 23 | 5 | 5 | Y |
+| W35 | YES | PASS | true | 35 | Storytelling Practice 2 (Personal Recount) | Y/Y/Y/Y/N | 20 | 0 | 0 | Y |
+| W36 | YES | PASS | true | 36 | Review & Project 3: "My Adventure Book" | Y/Y/Y/Y/N | 0 | 0 | 0 | Y |
+| W37 | YES | PASS | true | 37 | Living vs. Non-Living (Reasoning) | Y/Y/Y/Y/N | 0 | 0 | 0 | Y |
+
+### 2. Fixed 17 Content Weeks (W38,39,41,43,45,46,73–82,125)
+| Week | index.js | loadWeekData != null | meta.hasAdvanced | weekId | Theme/Title | Hubs (R/L/W/S/SPH) | Vocab | Math (barModel) | Grammar | InfoEx |
+|------|----------|----------------------|------------------|--------|-------------|--------------------|-------|-----------------|---------|--------|
+| W38 | YES | PASS | true | 38 | Animal Abilities (Modals) | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W39 | YES | PASS | true | 39 | Habitats (Persuasion Intro) | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W41 | YES | PASS | true | 41 | Life Cycles (Process) | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W43 | YES | PASS | true | 43 | The "Plus" Machine (Addition Language) | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W45 | YES | PASS | true | 45 | Shape Detectives (Geometry) | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W46 | YES | PASS | true | 46 | The Pattern Code (Logic) | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W73 | YES | PASS | true | 73 | Science/ELA: The Water Cycle (Advanced) / Math: Volume | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W74 | YES | PASS | true | 74 | Science/ELA: Food Chains / Math: Complex Charts | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W75 | YES | PASS | true | 75 | History/ELA: Ancient Egypt / Math: Timelines | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W76 | YES | PASS | true | 76 | History/ELA: Explorers / Math: Map Scales | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W77 | YES | PASS | true | 77 | Social Studies/ELA: World Landmarks / Math: 3D Geometry | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W78 | YES | PASS | true | 78 | Social Studies/ELA: Cultures / Math: Surveys | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W79 | YES | PASS | true | 79 | Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W80 | YES | PASS | true | 80 | Supply, Demand & Market Prices / Math: Market Equilibrium Graphs | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W81 | YES | PASS | true | 81 | ELA: The Master Architect (Structure) / Math: Graphing Data | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W82 | YES | PASS | true | 82 | ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+| W125 | YES | PASS | true | 125 | Intro & Conclusion (Academic Essay Structure) | Y/Y/Y/Y/Y | 20 | 2 | 5 | Y |
+
+### 3. Blueprint-only Control Sample (no content JS expected null)
+| Week | index.js | loadWeekData != null | meta.hasAdvanced | weekId | Theme/Title | Hubs (R/L/W/S/SPH) | Vocab | Math (barModel) | Grammar | InfoEx |
+|------|----------|----------------------|------------------|--------|-------------|--------------------|-------|-----------------|---------|--------|
+| W40 | NO | NULL | false | — | null | — | 0 | 0 | 0 | N |
+| W42 | NO | NULL | false | — | null | — | 0 | 0 | 0 | N |
+
+### 4. Downstream UI Station Compatibility Audit (Read-Only Diagnostic — NOT Fixed in Round 80)
+| Week | BarModelQuest (`:33`) | SentenceBuilderBattle (`:56`) | ScienceDragDropLab (`:106`) | BossBattle (`zoneDataMapper:113`) | Metadata/Schema Notes |
+|------|------------------------|-------------------------------|-----------------------------|-----------------------------------|-----------------------|
+| W38 | OK(answer) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W39 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W41 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W43 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W45 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W46 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W73 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W74 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W75 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W76 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 4/5 L-parts; RW_P3_DROPPED | pet_speaking_keys |
+| W77 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W78 | OK(answer) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W79 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | empty_title_vi |
+| W80 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 4/5 L-parts; RW_P3_DROPPED | w76_string_leak,pet_speaking_keys |
+| W81 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W82 | MISMATCH(target_answer->fallback10) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+| W125 | OK(answer) | MISMATCH(MCQ_only=5,0_word_blocks) | MISMATCH(scenarios=3,0_stages) | 0/5 L-parts | none |
+
+SUMMARY: fixed_non_null=17/17, loader_mapper_failures=0
+DOWNSTREAM_UI_COMPAT_BLOCKERS (pre-existing hub vs UI schema drift): BarModel_fallback10=14/17, Grammar_no_word_blocks=17/17, ActionLab_no_stages=17/17, Boss_rw_part3_dropped=2 [W76,W80]
