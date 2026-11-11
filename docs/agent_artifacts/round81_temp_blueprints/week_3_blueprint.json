@@ -1,0 +1,269 @@
+{
+  "week": 3,
+  "theme": "The Mirror Game (Appearance)",
+  "title_en": "The Mirror Game (Appearance)",
+  "title_vi": "Trò chơi Soi gương",
+  "cefr_level": "Pre-A1 Starters",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_w01_starters_lite.js",
+  "story_title": "Describing physical traits",
+  "clil_topic": {
+    "title": "Describing physical traits",
+    "focus": "Describe self/others using \"is\" vs \"has\""
+  },
+  "grammar_focus": {
+    "structure": "\"She is tall\" vs \"She has long hair\"",
+    "outcome": "Describe self/others using \"is\" vs \"has\"",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "tall",
+      "short",
+      "hair",
+      "eyes",
+      "long",
+      "curly",
+      "straight",
+      "glasses"
+    ],
+    "total_syllabus_words": 8,
+    "target_count": 20,
+    "missing_count": 12,
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 8,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "tall",
+    "short",
+    "hair",
+    "eyes",
+    "long",
+    "curly",
+    "straight",
+    "glasses"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "tall",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/tˈɔːl/",
+      "phonetics": {
+        "arpabet": "T AO1 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "short",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ʃˈɔːɹt/",
+      "phonetics": {
+        "arpabet": "SH AO1 R T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "hair",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/hˈɛɹ/",
+      "phonetics": {
+        "arpabet": "HH EH1 R",
+        "final_phone": "R",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "eyes",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˈaɪz/",
+      "phonetics": {
+        "arpabet": "AY1 Z",
+        "final_phone": "Z",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "long",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/lˈɔːŋ/",
+      "phonetics": {
+        "arpabet": "L AO1 NG",
+        "final_phone": "NG",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "curly",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kˈɝːli/",
+      "phonetics": {
+        "arpabet": "K ER1 L IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "straight",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/stɹˈeɪt/",
+      "phonetics": {
+        "arpabet": "S T R EY1 T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "glasses",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɡlˈæsəz/",
+      "phonetics": {
+        "arpabet": "G L AE1 S AH0 Z",
+        "final_phone": "Z",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 1 (Full)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 3,
+    "map_theme": "The Mirror Game (Appearance)",
+    "map_clil_module": "Sinh học: Đặc điểm ngoại hình người",
+    "map_grammar_hub": "\"He is tall\" vs \"She has curly hair\"; `listening_hub` nối màu sắc",
+    "map_cefr_type": "Pre-A1 · Rotary Practice",
+    "alignment_status": "ALIGNED",
+    "alignment_note": "Syllabus sources fully aligned."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:56.937Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": null
+}

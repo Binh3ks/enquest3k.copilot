@@ -13,6 +13,7 @@ import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 import { useUserStore } from '../../../../stores/useUserStore';
 import useDailyQuestStore from '../../../../stores/useDailyQuestStore';
 import { playButtonClick, playCorrectSound, playWrongSound, playVictoryFanfare } from '../../../../utils/soundEffects';
+import { normalizeScienceLabStages } from '../../../../utils/station2Adapters';
 
 function DraggableLabel({ id, text, isPlaced, disabled, isSelected, onClick }) {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
@@ -82,6 +83,47 @@ function DropZone({ id, label, currentPlaced, isCorrect, targetInfo, isTargeted,
   );
 }
 
+function DroppableBucket({ id, name, assignedPairs, isHighlighted, onClick }) {
+  const { setNodeRef, isOver } = useDroppable({ id });
+
+  return (
+    <div
+      ref={setNodeRef}
+      onClick={onClick}
+      data-testid="lab-bucket-zone"
+      data-id={id}
+      className={`p-3.5 sm:p-4 rounded-2xl border-2 transition-all cursor-pointer space-y-2 ${
+        isOver || isHighlighted
+          ? 'bg-amber-50 border-amber-500 ring-4 ring-amber-200 scale-[1.01]'
+          : assignedPairs.length > 0
+          ? 'bg-emerald-50/70 border-emerald-300'
+          : 'bg-slate-50 border-dashed border-teal-400 hover:bg-teal-50/50'
+      }`}
+    >
+      <div className="flex items-center justify-between gap-2">
+        <span className="text-xs sm:text-sm font-black uppercase tracking-wide text-teal-950">
+          {name}
+        </span>
+        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white border border-teal-200 text-teal-700">
+          {isHighlighted ? '👉 Tap to assign' : `${assignedPairs.length} matched`}
+        </span>
+      </div>
+      {assignedPairs.length > 0 && (
+        <div className="flex flex-wrap gap-1.5 pt-1">
+          {assignedPairs.map((pair) => (
+            <span
+              key={pair.id}
+              className="px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-1 shadow-xs"
+            >
+              <CheckCircle2 size={12} /> {pair.label}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 const DEFAULT_SCIENCE_DATA = {
   experimentTitle: "Interactive Action Lab",
   diagramImage: "",
@@ -96,34 +138,51 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
   const [currentStageIdx, setCurrentStageIdx] = useState(0);
   const [completedStages, setCompletedStages] = useState({}); // { [stageIdx]: true }
   const [placedItems, setPlacedItems] = useState({});
+  const [pairAssignments, setPairAssignments] = useState({});
+  const [matchFeedback, setMatchFeedback] = useState(null);
   const [selectedLabelId, setSelectedLabelId] = useState(null);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
   const [timeLeft, setTimeLeft] = useState(120); // 120s total for 3 scenarios
   const [stageCleared, setStageCleared] = useState(false);
 
-  const stages = useMemo(() => {
-    if (scienceData?.stages && Array.isArray(scienceData.stages) && scienceData.stages.length > 0) {
-      return scienceData.stages;
-    }
-    // Single stage fallback
-    return [{
-      id: scienceData?.id || 'stage_1',
-      stageNumber: 1,
-      title: scienceData?.title_en || scienceData?.experimentTitle || "Interactive Action Lab",
-      diagramImage: scienceData?.background_image || scienceData?.diagramImage || "",
-      explanation: scienceData?.description_en || scienceData?.explanation || "Interactive action exploration.",
-      zones: scienceData?.zones || [],
-      targets: scienceData?.targets || [],
-      labels: scienceData?.labels || []
-    }];
-  }, [scienceData]);
+  const stages = useMemo(() => normalizeScienceLabStages(scienceData), [scienceData]);
 
   const labData = useMemo(() => {
     const stage = stages[currentStageIdx] || stages[0] || DEFAULT_SCIENCE_DATA;
+    const mode = stage.mode || 'diagram_dnd';
     const experimentTitle = stage.title || stage.title_en || stage.experimentTitle || `Stage ${currentStageIdx + 1}`;
     const diagramImage = stage.diagramImage || stage.background_image || "";
     const explanation = stage.explanation || stage.description_en || "";
+
+    if (mode === 'match_pairs') {
+      return {
+        mode,
+        experimentTitle,
+        diagramImage,
+        explanation,
+        targetBuckets: stage.targetBuckets || [],
+        pairs: stage.pairs || [],
+        targets: [],
+        labels: [],
+        stageNumber: currentStageIdx + 1,
+      };
+    }
+
+    if (mode === 'inquiry_steps') {
+      return {
+        mode,
+        experimentTitle,
+        diagramImage,
+        explanation,
+        instruction: stage.instruction || explanation,
+        targetBuckets: [],
+        pairs: [],
+        targets: [],
+        labels: [],
+        stageNumber: currentStageIdx + 1,
+      };
+    }
 
     let targets = [];
     let labels = [];
@@ -150,7 +209,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
       labels = DEFAULT_SCIENCE_DATA.labels;
     }
 
-    return { experimentTitle, diagramImage, explanation, targets, labels, stageNumber: currentStageIdx + 1 };
+    return { mode: 'diagram_dnd', experimentTitle, diagramImage, explanation, targets, labels, targetBuckets: [], pairs: [], stageNumber: currentStageIdx + 1 };
   }, [stages, currentStageIdx]);
 
   const sensors = useSensors(
@@ -180,6 +239,8 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
     setCurrentStageIdx(0);
     setCompletedStages({});
     setPlacedItems({});
+    setPairAssignments({});
+    setMatchFeedback(null);
     setSelectedLabelId(null);
     setScore(0);
     setStreak(0);
@@ -192,21 +253,22 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
     setGameState(prev => (prev === 'playing' ? 'paused' : 'playing'));
   };
 
-  const finishGame = () => {
+  const finishGame = (finalScoreOverride = null) => {
+    const resolvedScore = finalScoreOverride !== null ? finalScoreOverride : score;
     setGameState('gameover');
     setStageCleared(false);
 
-    if (score > 0) {
+    if (resolvedScore > 0) {
       playVictoryFanfare();
       fireCelebrationConfetti('ScienceLab_Victory');
+
+      useDailyQuestStore.getState().completeQuest(weekNumber, 'science_lab', {
+        score: resolvedScore,
+        data: { finalScore: resolvedScore, completedStages, completedAt: new Date().toISOString() }
+      });
+
+      if (onComplete) onComplete(resolvedScore);
     }
-
-    useDailyQuestStore.getState().completeQuest(weekNumber, 'science_lab', {
-      score: score > 0 ? score : 100,
-      data: { finalScore: score, completedStages, completedAt: new Date().toISOString() }
-    });
-
-    if (onComplete) onComplete(score > 0 ? score : 50);
   };
 
   const handleNextStage = () => {
@@ -214,11 +276,66 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
     if (currentStageIdx < stages.length - 1) {
       setCurrentStageIdx(prev => prev + 1);
       setPlacedItems({});
+      setPairAssignments({});
+      setMatchFeedback(null);
       setSelectedLabelId(null);
       setStageCleared(false);
       setTimeLeft(prev => prev + 30); // bonus 30s
     } else {
       finishGame();
+    }
+  };
+
+  const handleCompleteInquiryStep = () => {
+    if (gameState !== 'playing' || stageCleared) return;
+    playCorrectSound();
+    const nextStreak = streak + 1;
+    setStreak(nextStreak);
+    const nextScore = score + 35;
+    setScore(nextScore);
+    setCompletedStages(prev => ({ ...prev, [currentStageIdx]: true }));
+    setStageCleared(true);
+    if (currentStageIdx === stages.length - 1) {
+      finishGame(nextScore);
+    } else {
+      playVictoryFanfare();
+    }
+  };
+
+  const assignPairToBucket = (pairId, bucketId) => {
+    if (gameState !== 'playing' || stageCleared || pairAssignments[pairId]?.isCorrect) return;
+    const pairItem = labData.pairs.find(p => p.id === pairId);
+    const bucketInfo = labData.targetBuckets.find(b => b.id === bucketId);
+    if (!pairItem || !bucketInfo) return;
+
+    const isCorrect = pairItem.targetId === bucketId;
+    setSelectedLabelId(null);
+
+    if (isCorrect) {
+      playCorrectSound();
+      const nextStreak = streak + 1;
+      setStreak(nextStreak);
+      const bonusScore = 25 + nextStreak * 5;
+      const nextScore = score + bonusScore;
+      setScore(nextScore);
+
+      const nextAssignments = { ...pairAssignments, [pairId]: { bucketId, isCorrect: true } };
+      setPairAssignments(nextAssignments);
+      setMatchFeedback({ isCorrect: true, text: `✅ "${pairItem.label}" belongs in ${bucketInfo.name}! (+${bonusScore} PTS)` });
+
+      const matchedCount = Object.values(nextAssignments).filter(a => a.isCorrect).length;
+      if (matchedCount === labData.pairs.length) {
+        setCompletedStages(prev => ({ ...prev, [currentStageIdx]: true }));
+        setStageCleared(true);
+        playVictoryFanfare();
+        if (currentStageIdx === stages.length - 1) {
+          finishGame(nextScore);
+        }
+      }
+    } else {
+      playWrongSound();
+      setStreak(0);
+      setMatchFeedback({ isCorrect: false, text: `Not "${bucketInfo.name}" — try matching "${pairItem.label}" to another category!` });
     }
   };
 
@@ -230,6 +347,10 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
 
   const handleTargetClick = (target) => {
     if (gameState !== 'playing' || !selectedLabelId || stageCleared) return;
+    if (labData.mode === 'match_pairs') {
+      assignPairToBucket(selectedLabelId, target.id);
+      return;
+    }
 
     const labelItem = labData.labels.find(l => l.id === selectedLabelId);
     if (!labelItem) return;
@@ -244,7 +365,8 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
       const nextStreak = streak + 1;
       setStreak(nextStreak);
       const bonusScore = 25 + nextStreak * 5;
-      setScore(prev => prev + bonusScore);
+      const nextScore = score + bonusScore;
+      setScore(nextScore);
 
       const totalCorrect = Object.values(newPlaced).filter(p => p.isCorrect).length;
       if (totalCorrect === labData.targets.length) {
@@ -252,7 +374,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
         setStageCleared(true);
         playVictoryFanfare();
         if (currentStageIdx === stages.length - 1) {
-          finishGame();
+          finishGame(nextScore);
         }
       }
     } else {
@@ -264,6 +386,11 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
   const handleDragEnd = (event) => {
     const { active, over } = event;
     if (!over || gameState !== 'playing' || stageCleared) return;
+
+    if (labData.mode === 'match_pairs') {
+      assignPairToBucket(active.id, over.id);
+      return;
+    }
 
     const labelItem = labData.labels.find(l => l.id === active.id);
     const targetInfo = labData.targets.find(t => t.id === over.id);
@@ -279,7 +406,8 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
       const nextStreak = streak + 1;
       setStreak(nextStreak);
       const bonusScore = 25 + nextStreak * 5;
-      setScore(prev => prev + bonusScore);
+      const nextScore = score + bonusScore;
+      setScore(nextScore);
 
       const totalCorrect = Object.values(newPlaced).filter(p => p.isCorrect).length;
       if (totalCorrect === labData.targets.length) {
@@ -287,7 +415,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
         setStageCleared(true);
         playVictoryFanfare();
         if (currentStageIdx === stages.length - 1) {
-          finishGame();
+          finishGame(nextScore);
         }
       }
     } else {
@@ -297,6 +425,18 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
   };
 
   const xpEarned = score > 0 ? 50 : 0;
+
+  if (!stages || stages.length === 0) {
+    return (
+      <div data-testid="action-lab-data-missing" className="w-full max-w-7xl mx-auto p-8 bg-rose-50 border-2 border-rose-300 rounded-3xl text-center space-y-3 shadow-inner font-sans">
+        <AlertCircle size={48} className="mx-auto text-rose-500 animate-pulse" />
+        <h3 className="text-xl font-black text-rose-900">⚠️ Action Lab Data Missing</h3>
+        <p className="text-sm font-semibold text-rose-700">
+          No Action Lab stages or scenarios found for Week {weekNumber || 'N/A'}. Expected data in skill_practice_hub.science_lab.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full max-w-7xl mx-auto p-3.5 sm:p-6 lg:p-7 bg-white rounded-2xl sm:rounded-3xl border-2 border-teal-300 shadow-xl space-y-3.5 text-slate-900 font-sans">
@@ -449,8 +589,10 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
                         playButtonClick();
                         setCurrentStageIdx(idx);
                         setPlacedItems({});
+                        setPairAssignments({});
+                        setMatchFeedback(null);
                         setSelectedLabelId(null);
-                        setStageCleared(false);
+                        setStageCleared(Boolean(completedStages[idx]));
                       }}
                       className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
                         isCurrent
@@ -476,9 +618,9 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
                   <div>
                     <h4 className="font-black text-sm sm:text-base">Scenario {currentStageIdx + 1} Cleared!</h4>
                     <p className="text-xs text-emerald-100 font-medium">
-                      {currentStageIdx === 0
-                        ? 'Great! Now compare shoe sole grip and friction in Scenario 2.'
-                        : 'Awesome! Now investigate first aid care in Scenario 3.'}
+                      {stages[currentStageIdx + 1]?.title
+                        ? `Great! Next scenario: ${stages[currentStageIdx + 1].title}.`
+                        : 'Great! Ready for the next lab scenario.'}
                     </p>
                   </div>
                 </div>
@@ -492,6 +634,118 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
               </div>
             )}
 
+            {labData.mode === 'match_pairs' ? (
+              <div data-testid="lab-match-pairs-board" className="space-y-4">
+                <div className="p-3.5 sm:p-4 bg-teal-50/80 border border-teal-200 rounded-2xl space-y-1">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-teal-700">
+                    Scenario {labData.stageNumber} of {stages.length}
+                  </span>
+                  <p className="text-xs sm:text-sm font-bold text-slate-800">{labData.explanation}</p>
+                </div>
+
+                {/* Items to Assign */}
+                <div className="p-3 sm:p-4 bg-slate-100 rounded-2xl border border-slate-200 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-slate-600">
+                      {selectedLabelId ? '👉 TAP A TARGET CATEGORY BELOW:' : 'TAP OR DRAG ITEMS INTO MATCHING TARGET CATEGORIES:'}
+                    </span>
+                    {selectedLabelId && (
+                      <button
+                        type="button"
+                        onClick={() => setSelectedLabelId(null)}
+                        className="text-[10px] font-bold text-rose-600 underline"
+                      >
+                        Deselect
+                      </button>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                    {labData.pairs.map((pair) => {
+                      const isPlaced = Boolean(pairAssignments[pair.id]?.isCorrect);
+                      return (
+                        <DraggableLabel
+                          key={pair.id}
+                          id={pair.id}
+                          text={pair.label}
+                          isPlaced={isPlaced}
+                          disabled={gameState !== 'playing' || stageCleared}
+                          isSelected={selectedLabelId === pair.id}
+                          onClick={() => handleLabelClick(pair.id)}
+                        />
+                      );
+                    })}
+                    {labData.pairs.every(p => pairAssignments[p.id]?.isCorrect) && (
+                      <span className="text-xs font-black text-emerald-700 flex items-center gap-1">
+                        <CheckCircle2 size={15} /> All items matched in this scenario!
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Target Category Buckets (supports 1:1 and N:1 buckets) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {labData.targetBuckets.map((bucket) => {
+                    const assignedPairs = labData.pairs.filter(
+                      p => pairAssignments[p.id]?.isCorrect && pairAssignments[p.id]?.bucketId === bucket.id
+                    );
+                    return (
+                      <DroppableBucket
+                        key={bucket.id}
+                        id={bucket.id}
+                        name={bucket.name}
+                        assignedPairs={assignedPairs}
+                        isHighlighted={Boolean(selectedLabelId) && !stageCleared}
+                        onClick={() => handleTargetClick(bucket)}
+                      />
+                    );
+                  })}
+                </div>
+
+                {matchFeedback && (
+                  <div
+                    data-testid="lab-match-feedback"
+                    className={`p-3 rounded-xl border text-xs sm:text-sm font-black flex items-center gap-2 animate-in fade-in ${
+                      matchFeedback.isCorrect
+                        ? 'bg-emerald-50 border-emerald-300 text-emerald-800'
+                        : 'bg-rose-50 border-rose-300 text-rose-800'
+                    }`}
+                  >
+                    {matchFeedback.isCorrect ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
+                    <span>{matchFeedback.text}</span>
+                  </div>
+                )}
+              </div>
+            ) : labData.mode === 'inquiry_steps' ? (
+              <div data-testid="lab-inquiry-card" className="p-5 sm:p-6 bg-gradient-to-br from-teal-50 to-emerald-50 border-2 border-teal-200 rounded-2xl space-y-4">
+                <div className="space-y-1">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-teal-600 text-white text-[10px] font-black uppercase tracking-wider">
+                    Scenario {labData.stageNumber} of {stages.length} • Action Investigation
+                  </span>
+                  <h4 className="text-base sm:text-lg font-black text-slate-900">{labData.experimentTitle}</h4>
+                  <p className="text-sm sm:text-base font-medium text-slate-800 leading-relaxed pt-1">
+                    {labData.instruction}
+                  </p>
+                </div>
+
+                <div className="pt-2 flex items-center gap-3 flex-wrap">
+                  <button
+                    type="button"
+                    data-testid="lab-confirm-step-btn"
+                    disabled={Boolean(completedStages[currentStageIdx])}
+                    onClick={handleCompleteInquiryStep}
+                    className={`px-5 py-3 rounded-xl font-black text-xs sm:text-sm shadow-md flex items-center gap-2 transition ${
+                      completedStages[currentStageIdx]
+                        ? 'bg-emerald-100 border border-emerald-300 text-emerald-800 cursor-default'
+                        : 'bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 text-white cursor-pointer active:scale-95'
+                    }`}
+                  >
+                    <CheckCircle2 size={17} />
+                    {completedStages[currentStageIdx] ? 'Scenario Step Verified' : 'Complete Scenario Step (+35 PTS)'}
+                  </button>
+                </div>
+              </div>
+            ) : (
+            <>
             {/* Diagram Area with Drop Zones — Preserves natural 1264x848 aspect ratio with zero black side bars */}
             <div className="relative w-full max-w-5xl mx-auto aspect-[1264/848] max-h-[58vh] rounded-2xl overflow-hidden border-2 border-teal-300 shadow-md">
               <img
@@ -549,6 +803,8 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
                 })}
               </div>
             </div>
+            </>
+            )}
           </div>
         </DndContext>
       )}

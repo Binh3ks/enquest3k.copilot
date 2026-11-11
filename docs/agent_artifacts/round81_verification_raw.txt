@@ -1,0 +1,161 @@
+========================================================================================
+🔬 ROUND 81 — COMPREHENSIVE SCHEMA, ROTARY & B.5 PROPOSAL VERIFICATION
+Timestamp: 2026-11-11T09:48:16.317Z | Generated Prod Weeks Found: 22
+Weeks: W33, W34, W35, W36, W37, W38, W39, W41, W43, W45, W46, W73, W74, W75, W76, W77, W78, W79, W80, W81, W82, W125
+========================================================================================
+
+## 1. BarModelQuest Schema & Answer Resolution (22 Generated Prod Weeks)
+
+| Week | Problem ID | Stored Field | Stored Value | Resolved `correctAnswer` | `modelData.type` | `modelData.total/diff` | Hint Present? |
+| :---: | :---: | :--- | :---: | :---: | :---: | :--- | :---: |
+| W33 | 1 | `answer_value` | `60` | **60** | `svg_file` | bar_model_svg | ✅ |
+| W33 | 2 | `answer_value` | `17` | **17** | `svg_file` | bar_model_svg | ✅ |
+| W33 | 3 | `answer_value` | `25` | **25** | `svg_file` | bar_model_svg | ✅ |
+| W33 | 4 | `answer_value` | `6` | **6** | `svg_file` | bar_model_svg | ✅ |
+| W33 | 5 | `answer_value` | `20` | **20** | `svg_file` | bar_model_svg | ✅ |
+| W34 | 1 | `answer_value` | `35` | **35** | `svg_file` | bar_model_svg | ✅ |
+| W34 | 2 | `answer_value` | `18` | **18** | `svg_file` | bar_model_svg | ✅ |
+| W34 | 3 | `answer_value` | `35` | **35** | `svg_file` | bar_model_svg | ✅ |
+| W34 | 4 | `answer_value` | `12` | **12** | `svg_file` | bar_model_svg | ✅ |
+| W34 | 5 | `answer_value` | `18` | **18** | `svg_file` | bar_model_svg | ✅ |
+| W35 | 1 | `correctAnswer` | `80` | **80** | `part_whole` | 80 photographs total | ✅ |
+| W35 | 2 | `correctAnswer` | `36` | **36** | `comparison` | 36 more postcards | ✅ |
+| W36 | — | (empty array) | — | — | — | — | — |
+| W37 | — | (empty array) | — | — | — | — | — |
+| W38 | 1 | `correctAnswer` | `30` | **30** | `comparison` | 30 km/h difference | ✅ |
+| W38 | 2 | `correctAnswer` | `27` | **27** | `part_whole` | 27 meters total | ✅ |
+| W39 | w39_p1 | `target_answer` | `100` | **100** (fixed from old 10!) | `part_whole` | 100 acres | ✅ |
+| W39 | w39_p2 | `target_answer` | `22` | **22** (fixed from old 10!) | `comparison` | 22 animals | ✅ |
+| W41 | w41_p1 | `target_answer` | `42` | **42** (fixed from old 10!) | `part_whole` | 42 leaves | ✅ |
+| W41 | w41_p2 | `target_answer` | `20` | **20** (fixed from old 10!) | `comparison` | 20 amphibians | ✅ |
+| W43 | w43_p1 | `target_answer` | `40` | **40** (fixed from old 10!) | `part_whole` | 40 marbles | ✅ |
+| W43 | w43_p2 | `target_answer` | `60` | **60** (fixed from old 10!) | `part_whole` | 60 blocks | ✅ |
+| W45 | w45_p1 | `target_answer` | `200` | **200** (fixed from old 10!) | `part_whole` | 200 cm | ✅ |
+| W45 | w45_p2 | `target_answer` | `12` | **12** (fixed from old 10!) | `comparison` | 12 shapes | ✅ |
+| W46 | w46_p1 | `target_answer` | `60` | **60** (fixed from old 10!) | `part_whole` | 60 beads | ✅ |
+| W46 | w46_p2 | `target_answer` | `18` | **18** (fixed from old 10!) | `comparison` | 18 tiles | ✅ |
+| W73 | w73_p1 | `target_answer` | `200` | **200** (fixed from old 10!) | `part_whole` | 200 cubic units | ✅ |
+| W73 | w73_p2 | `target_answer` | `60` | **60** (fixed from old 10!) | `comparison` | 60 cubic meters | ✅ |
+| W74 | w74_p1 | `target_answer` | `175` | **175** (fixed from old 10!) | `part_whole` | 175 animals | ✅ |
+| W74 | w74_p2 | `target_answer` | `65` | **65** (fixed from old 10!) | `comparison` | 65 kg | ✅ |
+| W75 | w75_p1 | `target_answer` | `505` | **505** (fixed from old 10!) | `part_whole` | 630 years | ✅ |
+| W75 | w75_p2 | `target_answer` | `135` | **135** (fixed from old 10!) | `comparison` | 135 years | ✅ |
+| W76 | w76_p1 | `target_answer` | `120` | **120** (fixed from old 10!) | `part_whole` | 120 km | ✅ |
+| W76 | w76_p2 | `target_answer` | `75` | **75** (fixed from old 10!) | `comparison` | 75 km | ✅ |
+| W77 | w77_p1 | `target_answer` | `11` | **11** (fixed from old 10!) | `part_whole` | 11 faces | ✅ |
+| W77 | w77_p2 | `target_answer` | `3` | **3** (fixed from old 10!) | `comparison` | 3 edges | ✅ |
+| W78 | 1 | `correctAnswer` | `20` | **20** | `part_whole` | 250 students surveyed | ✅ |
+| W78 | 2 | `correctAnswer` | `12` | **12** | `comparison` | 12 more votes | ✅ |
+| W79 | w79_p1 | `target_answer` | `150` | **150** (fixed from old 10!) | `part_whole` | 150 million dollars | ✅ |
+| W79 | w79_p2 | `target_answer` | `65` | **65** (fixed from old 10!) | `comparison` | 65 thousand trees | ✅ |
+| W80 | w76_p1 | `target_answer` | `120` | **120** (fixed from old 10!) | `part_whole` | 120 km | ✅ |
+| W80 | w76_p2 | `target_answer` | `75` | **75** (fixed from old 10!) | `comparison` | 75 km | ✅ |
+| W81 | w81_p1 | `target_answer` | `400` | **400** (fixed from old 10!) | `part_whole` | 400 words | ✅ |
+| W81 | w81_p2 | `target_answer` | `16` | **16** (fixed from old 10!) | `comparison` | 16 words | ✅ |
+| W82 | w82_p1 | `target_answer` | `500` | **500** (fixed from old 10!) | `part_whole` | 500 likes | ✅ |
+| W82 | w82_p2 | `target_answer` | `170` | **170** (fixed from old 10!) | `comparison` | 170 views | ✅ |
+| W125 | 1 | `correctAnswer` | `600` | **600** | `part_whole` | 2,400 words total | ✅ |
+| W125 | 2 | `correctAnswer` | `16` | **16** | `comparison` | 16 citations difference | ✅ |
+
+Summary Math: 46 items verified across 22 weeks; null/missing answers = 0
+
+## 2. SentenceBuilderBattle (`grammar_drills`) Mode Resolution (22 Weeks)
+
+| Week | Raw Drills | Normalized Drills | Mode | Sample Prompt / Blank Check | Invalid Options/Answer |
+| :---: | :---: | :---: | :---: | :--- | :---: |
+| W33 | 5 | 5 | `word_blocks` | While Jake was walking down the corridor, Tom slipped on the wet floor.... | 0 |
+| W34 | 5 | 5 | `word_blocks` | Build a past continuous sentence with 'While'.... | 0 |
+| W35 | 5 | 5 | `mcq` | While Emma ___ her journal, her brother painted a picture.... | 0 |
+| W36 | 0 | 0 | empty | — | 0 |
+| W37 | 0 | 0 | empty | — | 0 |
+| W38 | 5 | 5 | `mcq` | Fish ___ breathe underwater using their gills.... | 0 |
+| W39 | 5 | 5 | `mcq` | I think the camel ______ in the dry desert.... | 0 |
+| W41 | 5 | 5 | `mcq` | A tiny caterpillar ______ from an egg on the leaf.... | 0 |
+| W43 | 5 | 5 | `mcq` | Four plus five ______ nine on the chalkboard.... | 0 |
+| W45 | 5 | 5 | `mcq` | A square ______ four equal straight sides.... | 0 |
+| W46 | 5 | 5 | `mcq` | A pattern ______ shapes and colors using a clear rule.... | 0 |
+| W73 | 5 | 5 | `mcq` | The sun warms the lake; ______, water vapor ascends into the sky.... | 0 |
+| W74 | 5 | 5 | `mcq` | If plants capture sunlight, they ______ chemical food.... | 0 |
+| W75 | 5 | 5 | `mcq` | Ancient Egyptians ______ build monumental stone pyramids.... | 0 |
+| W76 | 5 | 5 | `mcq` | Magellan sailed ______ the narrow strait into the Pacific Ocean.... | 0 |
+| W77 | 5 | 5 | `mcq` | The Colosseum is ______ durable volcanic concrete.... | 0 |
+| W78 | 5 | 5 | `mcq` | ___ western holidays where meals are private, Latin carnivals take place... | 0 |
+| W79 | 5 | 5 | `mcq` | ___, space research is inspiring, ___ Earth restoration is more urgent.... | 0 |
+| W80 | 5 | 5 | `mcq` | Magellan sailed ______ the narrow strait into the Pacific Ocean.... | 0 |
+| W81 | 5 | 5 | `mcq` | ______, the introduction establishes a clear thesis statement.... | 0 |
+| W82 | 5 | 5 | `mcq` | The observation deck offered a spectacular ______ view.... | 0 |
+| W125 | 5 | 5 | `mcq` | Scholars ___ policymakers to prioritize environmental investments immedi... | 0 |
+
+Summary Grammar: 100 drills verified across 22 weeks; invalid = 0
+
+## 3. ScienceDragDropLab (`science_lab` / Action Lab) Stage Resolution (22 Weeks)
+
+| Week | Has Data? | Stage Count | Resolved Mode | Stage 1 Title | Buckets / Items or Instruction Check |
+| :---: | :---: | :---: | :---: | :--- | :--- |
+| W33 | yes | 3 | `diagram_dnd` | Stage 1: Wet Floor & Low Friction Hazard | 4 zones (diagram intact) |
+| W34 | yes | 3 | `diagram_dnd` | Stage 1: Forest Lookout & Early Warning | 4 zones (diagram intact) |
+| W35 | yes | 3 | `inquiry_steps` | Identifying Emotional Tone | Stage1 instruction: "Match recount excerpts to their emotional mood (Excited..." |
+| W36 | null | 0 | empty_guard | — | No silent DEFAULT_SCIENCE_DATA |
+| W37 | null | 0 | empty_guard | — | No silent DEFAULT_SCIENCE_DATA |
+| W38 | yes | 3 | `inquiry_steps` | Anatomical Adaptation Matching | Stage1 instruction: "Pair body structures (fins, wings, hollow bones) with a..." |
+| W39 | yes | 3 | `match_pairs` | Desert vs Polar Features | Stage1: 4 pairs -> 2 buckets (Polar, Desert) |
+| W41 | yes | 3 | `match_pairs` | Butterfly Stage Sequence | Stage1: 4 pairs -> 4 buckets (Egg Stage, Larva Stage, Pupa Stage, Adult Stage) |
+| W43 | yes | 3 | `match_pairs` | Addition Sentence Builder | Stage1: 4 pairs -> 4 buckets (First Number, Math Operator, Second Number, Sum Result) |
+| W45 | yes | 3 | `match_pairs` | Shape Sorter Machine | Stage1: 4 pairs -> 4 buckets (Circle Basket, Rectangle Basket, Square Basket, Triangle Basket) |
+| W46 | yes | 3 | `match_pairs` | Core Pattern Identifier | Stage1: 3 pairs -> 3 buckets (Full Sequence, Core Block, Next Item) |
+| W73 | yes | 3 | `match_pairs` | Evaporation & Transpiration Energy | Stage1: 3 pairs -> 3 buckets (Heat Source, Transpiration, Gas Phase) |
+| W74 | yes | 3 | `match_pairs` | Photosynthesis & Solar Capture | Stage1: 3 pairs -> 3 buckets (Sunlight, Photosynthesis, Biomass) |
+| W75 | yes | 3 | `match_pairs` | Nile Flooding & Silt Agriculture | Stage1: 3 pairs -> 3 buckets (Inundation, Silt, Crops) |
+| W76 | yes | 3 | `match_pairs` | Magnetic Declination & Compass Alignment | Stage1: 3 pairs -> 3 buckets (Magnetic North, Degrees Ring, Grid North) |
+| W77 | yes | 3 | `match_pairs` | Roman Keystone Arch Mechanics | Stage1: 3 pairs -> 3 buckets (Base, Arch Flank, Keystone) |
+| W78 | yes | 3 | `inquiry_steps` | Survey Questionnaire Design | Stage1 instruction: "Formulate unbiased multiple-choice inquiry prompts rega..." |
+| W79 | yes | 3 | `match_pairs` | Satellite Telemetry & Earth Monitoring | Stage1: 3 pairs -> 3 buckets (Telemetry, Infrared, Oceanography) |
+| W80 | yes | 3 | `match_pairs` | Magnetic Declination & Compass Alignment | Stage1: 3 pairs -> 3 buckets (Magnetic North, Degrees Ring, Grid North) |
+| W81 | yes | 3 | `match_pairs` | Introductory Foundation & Thesis | Stage1: 3 pairs -> 3 buckets (Hook, Context, Thesis) |
+| W82 | yes | 3 | `match_pairs` | Sensory Detail Classification | Stage1: 3 pairs -> 3 buckets (Sight, Touch, Sound) |
+| W125 | yes | 3 | `inquiry_steps` | Rhetorical Hook Formulation Lab | Stage1 instruction: "Transform bland introductory statements into engaging r..." |
+
+## 4. zoneDataMapper `bossBattle.readingWriting.p3` Check
+
+| Week | `loadWeekData` Resolves? | `bossBattle.rw.p3` Present? | Schema Kind | Summary |
+| :---: | :---: | :---: | :---: | :--- |
+| W33 | ✅ | ✅ | `flyers_cloze` | "[object Object]" |
+| W34 | ✅ | ✅ | `flyers_cloze` | "A Busy Day in the City" |
+| W35 | ✅ | — | `none` | Not scheduled/present in hub |
+| W36 | ✅ | ✅ | `flyers_cloze` | "Flyers Cloze" |
+| W37 | ✅ | — | `none` | Not scheduled/present in hub |
+| W38 | ✅ | — | `none` | Not scheduled/present in hub |
+| W39 | ✅ | — | `none` | Not scheduled/present in hub |
+| W41 | ✅ | — | `none` | Not scheduled/present in hub |
+| W43 | ✅ | — | `none` | Not scheduled/present in hub |
+| W45 | ✅ | — | `none` | Not scheduled/present in hub |
+| W46 | ✅ | — | `none` | Not scheduled/present in hub |
+| W73 | ✅ | — | `none` | Not scheduled/present in hub |
+| W74 | ✅ | — | `none` | Not scheduled/present in hub |
+| W75 | ✅ | — | `none` | Not scheduled/present in hub |
+| W76 | ✅ | ✅ | `pet_mcq` | "The Audacious Voyage: Ferdinand Magellan and the First Circumnavigation" (5 MCQs, 1788 chars) |
+| W77 | ✅ | — | `none` | Not scheduled/present in hub |
+| W78 | ✅ | — | `none` | Not scheduled/present in hub |
+| W79 | ✅ | — | `none` | Not scheduled/present in hub |
+| W80 | ✅ | ✅ | `pet_mcq` | "The Audacious Voyage: Ferdinand Magellan and the First Circumnavigation" (5 MCQs, 1788 chars) |
+| W81 | ✅ | — | `none` | Not scheduled/present in hub |
+| W82 | ✅ | — | `none` | Not scheduled/present in hub |
+| W125 | ✅ | — | `none` | Not scheduled/present in hub |
+
+## 5. Boss Rotary Schedule 124-Week Sweep (W33–W156)
+
+- Swept W33–W156 (124 content weeks): **0 FULL_MOCK / Cycle-5 misfires**
+- Cycle distribution across 124 weeks: Cycle 1=31, Cycle 2=31, Cycle 3=31, Cycle 4=31
+- Sample spots: W33=Cycle 1/4, W37=Cycle 1/4, W42=Cycle 2/4, W76=Cycle 4/4 (pet)
+- Opt-in { isMock: true }: W36 -> cycle 0 (flyers), W76 -> cycle 0 (pet)
+
+## 6. Priority 3 (B.5) Proposal-Only Verification & Scope Guard
+
+- `round81_proposed_digital_map_v2.md`: [CHỜ OWNER] remaining = 0; W113–W120 all set to Phase 2 (B1 PET); Phase 3 B1+ Academic confirmed at W121 (Source B L953).
+- `round81_temp_blueprints/`: W113–W120 = "B1 PET" (stage 2); W121–W156 = "B1+ Academic" (stage 3); W33 frozen untouched.
+- C.7 W79/W80 untouched: ✅ VERIFIED
+- Live `src/data/weeks/`, live `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`, `staging/` dirty check: "CLEAN (0 changes)"
+
+========================================================================================
+TOTAL ASSERTIONS PASSED: 531/531
+========================================================================================

@@ -1,0 +1,275 @@
+{
+  "week": 38,
+  "theme": "Animal Abilities (Modals)",
+  "title_en": "Animal Abilities (Modals)",
+  "title_vi": "Khả năng Động vật",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": 2,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "Comparing animal abilities",
+  "clil_topic": {
+    "title": "Comparing animal abilities",
+    "focus": "Describe what animals can and cannot do"
+  },
+  "grammar_focus": {
+    "structure": "Can / Cannot (Can't)",
+    "outcome": "Describe what animals can and cannot do",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "jump",
+      "fly",
+      "swim",
+      "hunt",
+      "climb",
+      "run",
+      "heavy",
+      "fast"
+    ],
+    "total_syllabus_words": 8,
+    "target_count": 20,
+    "missing_count": 12,
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 3,
+      "irregular_verbs_count": 3,
+      "non_verbs_count": 2,
+      "past_tense_triad": {
+        "/t/": [
+          "jump"
+        ],
+        "/d/": [
+          "climb"
+        ],
+        "/ɪd/": [
+          "hunt"
+        ]
+      },
+      "triad_complete": true
+    }
+  },
+  "keywords": [
+    "jump",
+    "fly",
+    "swim",
+    "hunt",
+    "climb",
+    "run",
+    "heavy",
+    "fast"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "jump",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dʒˈʌmp/",
+      "phonetics": {
+        "arpabet": "JH AH1 M P",
+        "final_phone": "P",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "jumped",
+        "past_participle": "jumped",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /p/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
+    },
+    {
+      "word": "fly",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/flˈaɪ/",
+      "phonetics": {
+        "arpabet": "F L AY1",
+        "final_phone": "AY",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "flew",
+        "past_participle": "flown",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation y -> ew",
+        "variants": null
+      }
+    },
+    {
+      "word": "swim",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/swˈɪm/",
+      "phonetics": {
+        "arpabet": "S W IH1 M",
+        "final_phone": "M",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "swam",
+        "past_participle": "swum",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation i -> a",
+        "variants": null
+      }
+    },
+    {
+      "word": "hunt",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/hˈʌnt/",
+      "phonetics": {
+        "arpabet": "HH AH1 N T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "hunted",
+        "past_participle": "hunted",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "climb",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/klˈaɪm/",
+      "phonetics": {
+        "arpabet": "K L AY1 M",
+        "final_phone": "M",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "climbed",
+        "past_participle": "climbed",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /m/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "run",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɹˈʌn/",
+      "phonetics": {
+        "arpabet": "R AH1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "ran",
+        "past_participle": "run",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation u -> a",
+        "variants": null
+      }
+    },
+    {
+      "word": "heavy",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/hˈɛvi/",
+      "phonetics": {
+        "arpabet": "HH EH1 V IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "fast",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/fˈæst/",
+      "phonetics": {
+        "arpabet": "F AE1 S T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 38,
+    "map_theme": "Energy All Around",
+    "map_clil_module": "Vật lý: Năng lượng mặt trời, gió",
+    "map_grammar_hub": "Mối quan hệ nguyên nhân - kết quả với *because*; `action_lab` góc pin mặt trời",
+    "map_cefr_type": "A2 Flyers · Rotary 1",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Animal Abilities (Modals)\") enforced over Digital Map (Source A: \"Energy All Around\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T07:59:43.297Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": null
+}

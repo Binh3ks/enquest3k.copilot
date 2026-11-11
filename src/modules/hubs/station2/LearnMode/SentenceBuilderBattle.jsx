@@ -17,6 +17,7 @@ import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight, Trophy, Boo
 import LearnGrammarModal from '../../../../components/cambridge/LearnGrammarModal';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 import { playButtonClick, playCorrectSound, playWrongSound, playVictoryFanfare } from '../../../../utils/soundEffects';
+import { normalizeGrammarDrill } from '../../../../utils/station2Adapters';
 
 export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, weekNumber, grammarLesson, onAttemptResult, onComplete }) {
   const currentUser = useUserStore((state) => state.currentUser);
@@ -28,6 +29,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
   const [targetBlocks, setTargetBlocks] = useState([]);
   const [bankBlocks, setBankBlocks] = useState([]);
   const [activeId, setActiveId] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
   const [feedback, setFeedback] = useState(null);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
@@ -35,11 +37,14 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
   const [timeLeft, setTimeLeft] = useState(45);
 
   const inputDrills = customDrills || grammarDrills || drills;
-  const drillsList = (inputDrills && Array.isArray(inputDrills) && inputDrills.length > 0)
-    ? inputDrills
-    : null;
+  const normalizedDrills = Array.isArray(inputDrills)
+    ? inputDrills.map((d, idx) => normalizeGrammarDrill(d, idx)).filter(Boolean)
+    : [];
+  const drillsList = normalizedDrills.length > 0 ? normalizedDrills : null;
 
   const currentDrill = drillsList ? (drillsList[currentDrillIndex] || drillsList[0]) : null;
+  const isMcqDrill = currentDrill?.mode === 'mcq';
+  const hasAnyMcq = Boolean(drillsList?.some(d => d.mode === 'mcq'));
   const totalDrillsCount = drillsList ? drillsList.length : 0;
 
   const sensors = useSensors(
@@ -47,11 +52,20 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
     useSensor(TouchSensor, { activationConstraint: { delay: 100, tolerance: 5 } })
   );
 
-  // Load drill word blocks
+  // Load drill state (word_blocks or mcq)
   const loadDrill = (idx) => {
     if (!drillsList || drillsList.length === 0) return;
     const drill = drillsList[idx] || drillsList[0];
     if (!drill) return;
+
+    setSelectedOption(null);
+    setFeedback(null);
+
+    if (drill.mode === 'mcq') {
+      setBankBlocks([]);
+      setTargetBlocks([]);
+      return;
+    }
 
     const correctWords = Array.isArray(drill.word_blocks) ? drill.word_blocks : [];
     const distractors = Array.isArray(drill.distractor_blocks) ? drill.distractor_blocks : [];
@@ -63,7 +77,6 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
 
     setBankBlocks(shuffled);
     setTargetBlocks([]);
-    setFeedback(null);
   };
 
   // Start Game
@@ -72,6 +85,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
     setScore(0);
     setStreak(0);
     setCorrectCount(0);
+    setSelectedOption(null);
     setTimeLeft(45);
     setGameState('playing');
     loadDrill(0);
@@ -81,16 +95,16 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
     setGameState(prev => (prev === 'playing' ? 'paused' : 'playing'));
   };
 
-  const finishGame = () => {
+  const finishGame = (finalScoreOverride = null) => {
+    const finalScore = finalScoreOverride !== null ? finalScoreOverride : score;
     setGameState('gameover');
-    const xpEarned = score > 0 ? 35 : 0; // Anti-cheat: 0 XP if AFK!
 
-    if (score > 0) {
+    if (finalScore > 0) {
       playVictoryFanfare();
       fireCelebrationConfetti('SentenceSmash_Victory');
     }
 
-    if (onComplete) onComplete(score);
+    if (onComplete && finalScore > 0) onComplete(finalScore);
   };
 
   // Timer Engine (Linear 1s countdown, independent of score changes)
@@ -147,17 +161,59 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
 
   const handleCheckAnswer = () => {
     if (gameState !== 'playing') return;
-    const userSentence = targetBlocks.map((b) => b.word).join(' ');
+
+    if (isMcqDrill) {
+      if (!selectedOption || feedback?.isCorrect) return;
+      const isCorrect = selectedOption.trim().toLowerCase() === String(currentDrill.answer || '').trim().toLowerCase();
+      if (isCorrect) {
+        playCorrectSound();
+        const nextStreak = streak + 1;
+        const nextCorrect = correctCount + 1;
+        const bonusScore = 20 + nextStreak * 5;
+        const nextScore = score + bonusScore;
+        setStreak(nextStreak);
+        setCorrectCount(nextCorrect);
+        setScore(nextScore);
+        setTimeLeft(prev => Math.min(45, prev + 3));
+
+        setFeedback({
+          isCorrect: true,
+          text: currentDrill.explanation
+            ? `🎉 Correct! (+${bonusScore} PTS) — ${currentDrill.explanation}`
+            : `🎉 Excellent! Correct grammar choice (+${bonusScore} PTS)`
+        });
+
+        setTimeout(() => {
+          if (currentDrillIndex + 1 < totalDrillsCount) {
+            const nextIdx = currentDrillIndex + 1;
+            setCurrentDrillIndex(nextIdx);
+            loadDrill(nextIdx);
+          } else {
+            finishGame(nextScore);
+          }
+        }, 1000);
+      } else {
+        playWrongSound();
+        setStreak(0);
+        setFeedback({
+          isCorrect: false,
+          text: 'Not quite right. Review the sentence context and try another option!'
+        });
+      }
+      return;
+    }
+
     const evalResult = evaluateSentenceAttempt(targetBlocks.map(b => b.word), currentDrill);
 
     if (evalResult.isCorrect) {
       playCorrectSound();
       const nextStreak = streak + 1;
       const nextCorrect = correctCount + 1;
+      const bonusScore = 20 + nextStreak * 5;
+      const nextScore = score + bonusScore;
       setStreak(nextStreak);
       setCorrectCount(nextCorrect);
-      const bonusScore = 20 + nextStreak * 5;
-      setScore(prev => prev + bonusScore);
+      setScore(nextScore);
       setTimeLeft(prev => Math.min(45, prev + 3));
 
       setFeedback({
@@ -171,7 +227,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
           setCurrentDrillIndex(nextIdx);
           loadDrill(nextIdx);
         } else {
-          finishGame();
+          finishGame(nextScore);
         }
       }, 1000);
     } else {
@@ -184,8 +240,9 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
     }
   };
 
-  // Instruction in pure English — zero Vietnamese sentence prompt!
-  const drillInstruction = 'Arrange the word blocks to build the correct sentence:';
+  const drillInstruction = isMcqDrill
+    ? 'Choose the best option to complete the sentence:'
+    : 'Arrange the word blocks to build the correct sentence:';
 
   if (!drillsList || drillsList.length === 0) {
     return (
@@ -271,7 +328,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
           </div>
           <div className="space-y-1">
             <h3 className="text-base sm:text-lg font-black text-slate-900 leading-tight">
-              READY FOR<br />SENTENCE SMASH?
+              {hasAnyMcq ? <>READY FOR<br />GRAMMAR DUEL?</> : <>READY FOR<br />SENTENCE SMASH?</>}
             </h3>
           </div>
           <button
@@ -288,7 +345,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
       {gameState === 'paused' && (
         <div className="p-3 bg-indigo-50 border border-indigo-300 rounded-2xl flex items-center justify-between animate-in fade-in">
           <span className="text-xs font-black text-indigo-900 flex items-center gap-2">
-            <Pause size={16} className="text-indigo-600 animate-pulse" /> Timer Paused — Re-order word blocks at your own pace!
+            <Pause size={16} className="text-indigo-600 animate-pulse" /> Timer Paused — Work at your own pace!
           </span>
           <button
             type="button"
@@ -305,7 +362,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
         <div className="p-8 bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-300 rounded-3xl text-center space-y-4 shadow-inner animate-in zoom-in-95">
           <Trophy size={56} className="mx-auto text-indigo-600 animate-bounce" />
           <h3 className="text-2xl font-black text-slate-900">
-            {score > 0 ? 'SENTENCE SMASH COMPLETE!' : 'TIME EXPIRED — TRY AGAIN!'}
+            {score > 0 ? (hasAnyMcq ? 'GRAMMAR DUEL COMPLETE!' : 'SENTENCE SMASH COMPLETE!') : 'TIME EXPIRED — TRY AGAIN!'}
           </h3>
           <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-700">
             <div>Score: <span className="text-xl font-black text-indigo-600">{score} PTS</span></div>
@@ -317,13 +374,89 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
             onClick={handleStartGame}
             className="px-6 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 text-white rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
           >
-            <RotateCcw size={18} /> Play Sentence Smash Again
+            <RotateCcw size={18} /> {hasAnyMcq ? 'Play Grammar Duel Again' : 'Play Sentence Smash Again'}
           </button>
         </div>
       )}
 
       {/* Active Game Display */}
       {(gameState === 'playing' || gameState === 'paused') && (
+        isMcqDrill ? (
+          <div data-testid="grammar-mcq-board" className="space-y-4">
+            <div className="p-4 sm:p-5 bg-indigo-50/80 border-2 border-indigo-200 rounded-2xl shadow-inner">
+              <p data-testid="grammar-mcq-prompt" className="text-base sm:text-lg font-bold text-slate-900 leading-relaxed">
+                {String(currentDrill.promptText || '').split(/(_{3,})/).map((part, pIdx) => (
+                  /^_{3,}$/.test(part) ? (
+                    <span
+                      key={pIdx}
+                      className="inline-flex items-center px-3 py-0.5 mx-1 rounded-lg bg-white border-2 border-indigo-400 text-indigo-700 font-black"
+                    >
+                      {selectedOption || '______'}
+                    </span>
+                  ) : (
+                    <React.Fragment key={pIdx}>{part}</React.Fragment>
+                  )
+                ))}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              {(currentDrill.options || []).map((opt, oIdx) => {
+                const isSelected = selectedOption === opt;
+                const letter = String.fromCharCode(65 + oIdx);
+                let optClass = 'bg-slate-50 border-slate-200 text-slate-900 hover:border-indigo-400';
+                if (feedback?.isCorrect && isSelected) {
+                  optClass = 'bg-emerald-50 border-emerald-500 text-emerald-950 ring-2 ring-emerald-200';
+                } else if (feedback && !feedback.isCorrect && isSelected) {
+                  optClass = 'bg-rose-50 border-rose-400 text-rose-950';
+                } else if (isSelected) {
+                  optClass = 'bg-indigo-100 border-indigo-500 text-indigo-950 ring-2 ring-indigo-300';
+                }
+
+                return (
+                  <button
+                    key={oIdx}
+                    type="button"
+                    data-testid="grammar-mcq-option"
+                    disabled={Boolean(feedback?.isCorrect)}
+                    onClick={() => {
+                      playButtonClick();
+                      setSelectedOption(opt);
+                      if (feedback && !feedback.isCorrect) setFeedback(null);
+                    }}
+                    className={`p-3.5 rounded-xl border-2 font-bold text-sm sm:text-base text-left transition flex items-center gap-2.5 cursor-pointer ${optClass}`}
+                  >
+                    <span className="w-6 h-6 rounded-md bg-white border border-slate-300 flex items-center justify-center font-mono text-xs font-black shrink-0">
+                      {letter}
+                    </span>
+                    <span>{opt}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="flex items-center justify-between flex-wrap gap-3 pt-2">
+              <button
+                type="button"
+                data-testid="grammar-check-btn"
+                onClick={handleCheckAnswer}
+                disabled={!selectedOption || Boolean(feedback?.isCorrect)}
+                className="px-7 py-3 sm:py-3.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white font-black rounded-xl text-sm sm:text-base shadow-md flex items-center gap-2 transition active:scale-95 cursor-pointer"
+              >
+                <Sparkles size={18} /> Check Answer
+              </button>
+
+              {feedback && (
+                <div data-testid="grammar-feedback" className={`p-3 sm:p-3.5 rounded-xl border text-xs sm:text-sm font-black flex items-center gap-2 animate-in fade-in ${
+                  feedback.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
+                }`}>
+                  {feedback.isCorrect ? <CheckCircle2 size={18} /> : <AlertCircle size={18} />}
+                  {feedback.text}
+                </div>
+              )}
+            </div>
+          </div>
+        ) : (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
           <div className="space-y-3">
             {/* Target Drop Zone Area */}
@@ -369,6 +502,7 @@ export function SentenceBuilderBattle({ customDrills, grammarDrills, drills, wee
             </div>
           </div>
         </DndContext>
+        )
       )}
 
       {showGrammarModal && grammarLesson && (

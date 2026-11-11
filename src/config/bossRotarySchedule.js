@@ -117,20 +117,31 @@ export const BOSS_ROTARY_CYCLES = {
 /**
  * Returns the rotary config for a given week number.
  * @param {number} weekNumber
- * @returns {{ weekNumber, cycleNumber, cycleName, activeParts, partCount, ... }}
+ * @param {{ isMock?: boolean, examFormat?: string }} [options]
+ * @returns {{ weekNumber, isMock, examFormat, cycleNumber, cycleName, activeParts, partCount, ... }}
  */
-export function getBossRotaryConfig(weekNumber) {
+export function getBossRotaryConfig(weekNumber, options = {}) {
   const w = parseInt(weekNumber, 10);
   if (isNaN(w) || w <= 0) {
     throw new Error(`[bossRotarySchedule] 'weekNumber' is required and must be a valid positive integer. Received: ${weekNumber}`);
   }
-  const offset = ((w - 33) % 5 + 5) % 5;
-  const cycleKey = offset + 1;
+  // Round 75 Decision 2 & Round 80/81 Owner Ruling: Mocks are interleaved between content weeks.
+  // Content weeks W33+ rotate strictly on a 4-week cycle (1..4); Cycle 0 (FULL_MOCK) is opt-in via options.isMock.
+  const isMock = Boolean(options?.isMock);
+  const examFormat = options?.examFormat || (w >= 73 ? 'pet' : 'flyers');
+  const offset = ((w - 33) % 4 + 4) % 4;
+  const cycleKey = isMock ? 0 : (offset + 1);
   const cycle = BOSS_ROTARY_CYCLES[cycleKey] || BOSS_ROTARY_CYCLES[1];
+  const normalizedCycleName = isMock && examFormat === 'pet'
+    ? 'Full Cambridge B1 Preliminary (PET) Mock Exam'
+    : cycle.cycleName;
   return {
     weekNumber: w,
+    isMock,
+    examFormat,
     cycleNumber: cycleKey,
     ...cycle,
+    cycleName: normalizedCycleName,
     shieldCount: cycle.partCount,
     testedSkills: cycle.activeParts.map(ap => ap.partId),
   };
@@ -139,11 +150,11 @@ export function getBossRotaryConfig(weekNumber) {
 /**
  * Returns dynamic task label for Day-5 boss stations based on active cycle.
  */
-export function getRotaryTaskLabel(taskId, weekNumber) {
+export function getRotaryTaskLabel(taskId, weekNumber, options = {}) {
   if (!weekNumber) {
     throw new Error(`[bossRotarySchedule] 'weekNumber' is required for getRotaryTaskLabel('${taskId}'). Received: ${weekNumber}`);
   }
-  const config = getBossRotaryConfig(weekNumber);
+  const config = getBossRotaryConfig(weekNumber, options);
   const cycle = config.cycleNumber;
 
   if (taskId === 'boss_listening') {

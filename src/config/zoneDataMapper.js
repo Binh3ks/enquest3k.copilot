@@ -110,7 +110,7 @@ export function mapDataToZones(weekData, weekNumber) {
       readingWriting: {
         p1: readingHub.rw_part_1 || readingHub.rw_part1 || writingHub.rw_part_1 || writingHub.rw_part1 || null,
         p2: readingHub.rw_part_2 || readingHub.rw_part2 || writingHub.rw_part_2 || writingHub.rw_part2 || null,
-        p3: readingHub.reading_part3_story || writingHub.reading_part3_story || null,
+        p3: readingHub.reading_part3_story || readingHub.rw_part_3 || readingHub.rw_part3 || writingHub.reading_part3_story || writingHub.rw_part_3 || writingHub.rw_part3 || null,
         p4: readingHub.rw_part_4 || readingHub.rw_part4 || writingHub.rw_part_4 || writingHub.rw_part4 || null,
         p5: readingHub.rw_part_5 || readingHub.rw_part5 || writingHub.rw_part_5 || writingHub.rw_part5 || null,
         p6: readingHub.rw_part_6 || readingHub.rw_part_6_check_mode || writingHub.rw_part_6 || null,

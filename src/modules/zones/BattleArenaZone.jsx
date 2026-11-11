@@ -70,7 +70,7 @@ export default function BattleArenaZone({ data, weekNumber, forcedStation = null
       science_lab: 'science_lab',
     };
     const questId = GAME_QUEST_MAP[activeGame];
-    if (questId && activeWeek) {
+    if (questId && activeWeek && earnedXP > 0) {
       useDailyQuestStore.getState().completeQuest(activeWeek, questId);
       emitLearningEvent(GAMIFICATION_EVENTS.LEARNING_TASK_COMPLETED, {
         weekNumber: activeWeek,

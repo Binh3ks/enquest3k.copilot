@@ -1,0 +1,61 @@
+========================================================================================
+🌐 ROUND 81 — REAL-BROWSER PLAYWRIGHT E2E VERIFICATION
+Timestamp: 2026-11-11T09:48:32.108Z | Preview URL: http://127.0.0.1:4179
+Screenshots Dir: /tmp/round81_e2e
+========================================================================================
+
+✅ Vite preview server ready at http://127.0.0.1:4179
+
+## Flow 1: W39 Math Quest (/week/39/task/math_quest)
+  DOM Before START (124 chars): Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/2 📐 READY FOR MATH QUEST? ▶ START 🦊 UPGRADE PLAN
+  [PASS] W39 Math Q1 real problemText rendered — Wildlife Sanctuary Habitat Acres
+  [PASS] W39 Math Q1 not generic default fallback
+  [PASS] W39 Math rejects old fallback value 10 — feedback="❌ Not quite right. Check the Bar Model and try again!", score="0 PTS"
+  [PASS] W39 Math accepts real target_answer=100 — feedback="🎉 Correct! +25 PTS (1x Streak Bonus)", score="25 PTS"
+  [PASS] W39 Math 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 2: W39 Grammar Duel MCQ (/week/39/task/sentence_smash)
+  [PASS] W39 Grammar MCQ prompt renders clean blank — "I think the camel ______ in the dry desert."
+  [PASS] W39 Grammar renders all 3 MCQ options — count=3
+  [PASS] W39 Grammar wrong feedback does not spoil answer — "Not quite right. Review the sentence context and try another option!"
+  [PASS] W39 Grammar accepts "belongs" and adds score — score="25 PTS", fb="🎉 Correct! (+25 PTS) — Use 3rd person singular present tense 'belongs' with 'the camel'."
+  [PASS] W39 Grammar 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 3: W39 Action Lab match_pairs N:1 (/week/39/task/science_lab)
+  [PASS] W39 Action Lab renders 4 pairs & 2 N:1 buckets — labels=4, buckets=2
+  [PASS] W39 Action Lab N:1 Scenario 1 clears after 4 matches
+  [PASS] W39 Action Lab score increases after matches — score="150 PTS"
+  [PASS] W39 Action Lab 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 4: W38 Action Lab inquiry_steps & W35 Empty Guard
+  [PASS] W38 Action Lab renders Stage 1 inquiry card — Anatomical Adaptation Matching
+  [PASS] W38 Action Lab inquiry step awards 35 PTS & unlocks Stage 2 — score="35 PTS"
+  [PASS] W35 un-authored Action Lab renders empty guard (no W33 Wet Floor silent fallback)
+  [PASS] Flow 4 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 5: W76 PET Boss Battle Part 3 (/week/76/task/boss_reading?part=rw_p3)
+  W76 Boss Active DOM (3657 chars): Map Cambridge B1 Preliminary (PET) — Reading & Writing Part 3: Cloze Story & Title R6 · Open Cloze R7 · Story Writing R3 · Cloze Story READING PART 3 • CAMBRIDGE B1 PRELIMINARY (PET) The Audacious Voyage: Ferdinand Magellan and the First Circumnavigation Read 
+  [PASS] W76 Boss header displays Cambridge B1 Preliminary (PET)
+  [PASS] W76 Boss is Cycle 4 practice (NOT FULL MOCK / NOT Cycle 0/5)
+  [PASS] W76 Boss Part 3 renders Magellan PET article (not Flyers Holly fallback)
+  [PASS] W76 PET Part 3 checks all 5 answers -> Score: 5/5
+  [PASS] W76 PET Part 3 Complete button transitions cleanly to Boss Victory / completion
+  [PASS] W76 PET Boss 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 6: W37 Boss Rotary Guard (/week/37/task/boss_listening)
+  W37 Boss DOM (199 chars): Map Cambridge A2 Flyers — Listening Part 1: Draw Lines L1 · Draw Lines L2 · Note Completion Play Audio (2×) 👉 Listen and draw lines. There is one example. Clear Lines Check Line Matches UPGRADE PLAN
+  [PASS] W37 Boss renders Cambridge A2 Flyers badge
+  [PASS] W37 Boss shows Cycle 1 Listening tabs (L1 & L2)
+  [PASS] W37 Boss does NOT misfire FULL MOCK / 16-part schedule
+  [PASS] W37 Boss tab switch L1 -> L2 transitions cleanly
+  [PASS] W37 BossBattle transitions cleanly with 0 runtime errors — pageErrors=0
+
+## Flow 7: W33 Frozen Baseline Station 2 Regression
+  [PASS] W33 Math Q1 answer=60 still works — 🎉 Correct! +25 PTS (1x Streak Bonus)
+  [PASS] W33 Grammar keeps original word_blocks UI (not MCQ)
+  [PASS] W33 Action Lab keeps 4 diagram_dnd drop zones — dropZones=4
+  [PASS] W33 Baseline 0 fatal runtime/page errors — pageErrors=0
+
+========================================================================================
+E2E SUMMARY: 33 PASSED, 0 FAILED (TOTAL=33)
+========================================================================================

@@ -1,0 +1,211 @@
+{
+  "week": 116,
+  "theme": "Rehearsal (Voice & Body)",
+  "title_en": "Rehearsal (Voice & Body)",
+  "title_vi": "Tập dượt",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Delivery skills",
+  "clil_topic": {
+    "title": "Delivery skills",
+    "focus": "Practice presentation with correct volume and eye contact"
+  },
+  "grammar_focus": {
+    "structure": "[SUPPLEMENT — Source B L931 không ghi Grammar Focus]",
+    "outcome": "Practice presentation with correct volume and eye contact",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "loud",
+      "clear",
+      "eye contact",
+      "stand straight",
+      "smile"
+    ],
+    "total_syllabus_words": 5,
+    "target_count": 20,
+    "missing_count": 15,
+    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 5,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 1,
+      "non_verbs_count": 3,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "smile"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "loud",
+    "clear",
+    "eye contact",
+    "stand straight",
+    "smile"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "loud",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/lˈaʊd/",
+      "phonetics": {
+        "arpabet": "L AW1 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "clear",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/klˈɪɹ/",
+      "phonetics": {
+        "arpabet": "K L IH1 R",
+        "final_phone": "R",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "eye contact",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˈaɪ kˈɑːntˌækt/",
+      "phonetics": {
+        "arpabet": "AY1 K AA1 N T AE2 K T",
+        "final_phone": "AY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "stand straight",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/stˈænd stɹˈeɪt/",
+      "phonetics": {
+        "arpabet": "S T AE1 N D S T R EY1 T",
+        "final_phone": "D",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "stood straight",
+        "past_participle": "stood straight",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation and -> ood",
+        "variants": null
+      }
+    },
+    {
+      "word": "smile",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/smˈaɪl/",
+      "phonetics": {
+        "arpabet": "S M AY1 L",
+        "final_phone": "L",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "smiled",
+        "past_participle": "smiled",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /l/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 15 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 116,
+    "map_theme": null,
+    "map_clil_module": null,
+    "map_grammar_hub": null,
+    "map_cefr_type": null,
+    "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+    "alignment_note": "Week missing from Digital Syllabus Map (docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md). Constructed exclusively from Master Syllabus Foundation (Source B)."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:02.535Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": false,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "mockFormat": "pet",
+  "math_focus": {
+    "topic": "Math Games",
+    "outcome": null,
+    "vocab": [],
+    "source_line": 936
+  }
+}

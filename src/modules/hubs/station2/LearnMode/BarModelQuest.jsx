@@ -6,6 +6,7 @@ import { useUserStore } from '../../../../stores/useUserStore';
 import { renderParsedText } from '../../../../components/common/HoverWord';
 import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, Trophy, Timer, Flame, Play, Pause, RotateCcw } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
+import { normalizeBarModelQuestion } from '../../../../utils/station2Adapters';
 
 export function BarModelQuest({ barModelData, customQuestions, weekNumber, onComplete }) {
   const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'paused' | 'gameover'
@@ -26,15 +27,9 @@ export function BarModelQuest({ barModelData, customQuestions, weekNumber, onCom
         ? customQuestions
         : null;
 
-  const questions = (rawQuestions && rawQuestions.length > 0) ? rawQuestions.map((q, idx) => ({
-    id: q.id || idx + 1,
-    title: q.title || `Problem ${idx + 1}: Singapore Bar Model`,
-    problemText: q.problemText || q.problem_en || q.text || 'Solve the Bar Model problem below:',
-    correctAnswer: q.correctAnswer || q.answer_value || parseInt(q.answer) || 10,
-    svg_url: q.svg_url || q.bar_model_svg || `/images/week${weekNumber}/barmodel_w${weekNumber}_adv_p${idx + 1}.svg`,
-    modelData: q.modelData || null,
-    hintText: q.hintText || `Check the bar model diagram to calculate the target answer!`
-  })) : [];
+  const questions = (rawQuestions && rawQuestions.length > 0)
+    ? rawQuestions.map((q, idx) => normalizeBarModelQuestion(q, idx, weekNumber))
+    : [];
 
   const currentQ = questions.length > 0 ? (questions[currentIndex] || questions[0]) : null;
 
@@ -72,20 +67,27 @@ export function BarModelQuest({ barModelData, customQuestions, weekNumber, onCom
     setGameState(prev => (prev === 'playing' ? 'paused' : 'playing'));
   };
 
-  const finishGame = () => {
+  const finishGame = (finalScoreOverride = null) => {
+    const resolvedScore = finalScoreOverride !== null ? finalScoreOverride : score;
     setGameState('gameover');
-    const xpEarned = score > 0 ? 40 : 0; // Anti-cheat: 0 XP if 0 points!
 
-    if (score > 0) {
+    if (resolvedScore > 0) {
       fireCelebrationConfetti('MathQuest_Victory');
     }
 
-    if (onComplete) onComplete(score);
+    if (onComplete && resolvedScore > 0) onComplete(resolvedScore);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!userInput.trim() || gameState !== 'playing') return;
+    if (currentQ.correctAnswer === null || currentQ.correctAnswer === undefined) {
+      setFeedback({
+        isCorrect: false,
+        message: '⚠️ Answer key missing for this problem.'
+      });
+      return;
+    }
 
     const evaluation = evaluateBarModelAnswer(userInput, currentQ.correctAnswer);
     if (evaluation.isCorrect) {
@@ -95,7 +97,8 @@ export function BarModelQuest({ barModelData, customQuestions, weekNumber, onCom
       setCorrectCount(nextCorrect);
 
       const bonusScore = 20 + nextStreak * 5;
-      setScore(prev => prev + bonusScore);
+      const nextScore = score + bonusScore;
+      setScore(nextScore);
 
       setFeedback({
         isCorrect: true,
@@ -109,7 +112,7 @@ export function BarModelQuest({ barModelData, customQuestions, weekNumber, onCom
         if (currentIndex + 1 < questions.length) {
           setCurrentIndex(prev => prev + 1);
         } else {
-          finishGame();
+          finishGame(nextScore);
         }
       }, 1000);
     } else {

@@ -2,7 +2,10 @@ import React from 'react';
 import { Shield, Trophy, PlayCircle } from 'lucide-react';
 
 export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0, currentTask }) {
-  const isFullMock = rotaryConfig?.cycleNumber === 5 || rotaryConfig?.cycleNumber === 0;
+  const isFullMock = Boolean(rotaryConfig?.isMock || rotaryConfig?.mode === 'FULL_MOCK' || rotaryConfig?.cycleNumber === 0);
+  const examFormatLabel = rotaryConfig?.examFormat === 'pet' || (rotaryConfig?.weekNumber >= 73)
+    ? 'B1 PET Practice'
+    : 'Flyers Practice';
   if (!rotaryConfig) return null;
 
   return (
@@ -16,7 +19,10 @@ export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0
           <div>
             <div className="flex items-center gap-1.5">
               <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-purple-500/30 text-purple-200 border border-purple-400/40">
-                Cycle {rotaryConfig.cycleNumber}/5 • Week {rotaryConfig.weekNumber}
+                {isFullMock
+                  ? `FULL MOCK • Week ${rotaryConfig.weekNumber}`
+                  : `Cycle ${rotaryConfig.cycleNumber}/4 • Week ${rotaryConfig.weekNumber}`
+                }
               </span>
               {/* partCount = Cambridge Part tasks in this cycle (not the same as Shield score) */}
               <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-amber-500/30 text-amber-300 border border-amber-400/40 flex items-center gap-1">
@@ -54,7 +60,7 @@ export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0
             <div className="text-xs sm:text-sm font-black text-white">{currentTask.name}</div>
           </div>
           <span className="px-2.5 py-1 bg-purple-600/40 border border-purple-400/40 text-purple-200 rounded-lg text-xs font-bold shrink-0">
-            Flyers Practice
+            {examFormatLabel}
           </span>
         </div>
       )}

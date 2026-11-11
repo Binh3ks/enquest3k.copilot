@@ -1,0 +1,279 @@
+{
+  "week": 104,
+  "theme": "Supply & Demand / Math: Sales Trends",
+  "title_en": "Supply & Demand / Math: Sales Trends",
+  "title_vi": "Cung & Cầu / Toán: Xu hướng Bán hàng",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Why Prices Change",
+  "clil_topic": {
+    "title": "Why Prices Change",
+    "focus": "Explain the relationship between supply and demand"
+  },
+  "grammar_focus": {
+    "structure": "Correlative Conjunctions: \"The more..., the less...\", \"The higher..., the lower...\"",
+    "outcome": "Explain the relationship between supply and demand",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "supply",
+      "demand",
+      "price",
+      "high",
+      "low",
+      "scarce",
+      "popular",
+      "increase"
+    ],
+    "total_syllabus_words": 8,
+    "target_count": 20,
+    "missing_count": 12,
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 2,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 6,
+      "past_tense_triad": {
+        "/t/": [
+          "increase"
+        ],
+        "/d/": [
+          "supply"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "supply",
+    "demand",
+    "price",
+    "high",
+    "low",
+    "scarce",
+    "popular",
+    "increase"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "supply",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/səplˈaɪ/",
+      "phonetics": {
+        "arpabet": "S AH0 P L AY1",
+        "final_phone": "AY",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "supplied",
+        "past_participle": "supplied",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /ay/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "demand",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dɪmˈænd/",
+      "phonetics": {
+        "arpabet": "D IH0 M AE1 N D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "price",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pɹˈaɪs/",
+      "phonetics": {
+        "arpabet": "P R AY1 S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "high",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/hˈaɪ/",
+      "phonetics": {
+        "arpabet": "HH AY1",
+        "final_phone": "AY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "low",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/lˈoʊ/",
+      "phonetics": {
+        "arpabet": "L OW1",
+        "final_phone": "OW",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "scarce",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/skˈɛɹs/",
+      "phonetics": {
+        "arpabet": "S K EH1 R S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "popular",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pˈɑːpjəlɚ/",
+      "phonetics": {
+        "arpabet": "P AA1 P Y AH0 L ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "increase",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪnkɹˈiːs/",
+      "phonetics": {
+        "arpabet": "IH0 N K R IY1 S",
+        "final_phone": "S",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "increased",
+        "past_participle": "increased",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /s/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Autonomous)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 104,
+    "map_theme": "Renewable Energy: Nuclear Power?",
+    "map_clil_module": "Vật lý hạt nhân: Phân hạch vs Nhiệt hạch",
+    "map_grammar_hub": "Cấu trúc cân bằng lập luận (Ưu vs Nhược); `broadcast_studio` điện hạt nhân",
+    "map_cefr_type": "B1+ PET · Rotary 2",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Supply & Demand / Math: Sales Trends\") enforced over Digital Map (Source A: \"Renewable Energy: Nuclear Power?\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:01.926Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "mockFormat": "pet",
+  "math_focus": {
+    "topic": "Sales Trends",
+    "outcome": "Analyze sales graphs to spot demand",
+    "vocab": [],
+    "source_line": 828
+  }
+}

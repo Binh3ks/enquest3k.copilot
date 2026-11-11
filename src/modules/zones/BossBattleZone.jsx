@@ -15,6 +15,7 @@ import TextExtractionCompleter from '../../components/cambridge/TextExtractionCo
 import MultipleChoice3Pic from '../../components/cambridge/MultipleChoice3Pic';
 import OpenClozeCompleter from '../../components/cambridge/OpenClozeCompleter';
 import RWPart3ClozeWithTitle from '../../components/cambridge/RWPart3ClozeWithTitle';
+import RWPart3PetMCQ from '../../components/cambridge/RWPart3PetMCQ';
 import StoryWriting from '../../components/cambridge/StoryWriting';
 import PictureStoryContinuation from '../../components/cambridge/PictureStoryContinuation';
 import FindDifferencesInteractive from '../../components/cambridge/FindDifferencesInteractive';
@@ -40,36 +41,40 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
   const activeWeek = weekNumber || (routeParams?.weekId ? parseInt(routeParams.weekId) : null) || data?.weekNumber || data?.week || data?.rawWeekData?.weekNumber || null;
 
   const userShields = useUserStore((state) => state.userShields || 0);
-  const rotaryConfig = getBossRotaryConfig(activeWeek || 1);
+  const isMockRoute = Boolean(location.pathname.startsWith('/mock') || data?.isMock);
+  const rotaryConfig = getBossRotaryConfig(activeWeek || 1, {
+    isMock: isMockRoute,
+    examFormat: data?.examFormat,
+  });
 
   // ── Boss data wiring (hub data → Cambridge Part data paths) ──────────────
   const bossData = React.useMemo(() => {
-    const hasCustomListening = data?.bossBattle?.listening?.p1 || data?.bossBattle?.listening?.p2;
-    const hasCustomRW = data?.bossBattle?.readingWriting?.p1 || data?.bossBattle?.readingWriting?.p2;
-    if (hasCustomListening || hasCustomRW) return data.bossBattle;
+    const customL = data?.bossBattle?.listening || {};
+    const customRW = data?.bossBattle?.readingWriting || {};
+    const customS = data?.bossBattle?.speaking || {};
 
     return {
       listening: {
-        p1: data?.listening_hub?.listening_p1 || data?.listeningHubData?.listening_p1 || data?.bossBattle?.listening?.p1,
-        p2: data?.listening_hub?.listening_p2 || data?.listening_hub?.listening_p2_notes || data?.listeningHubData?.listening_p2 || data?.bossBattle?.listening?.p2,
-        p3: data?.listening_hub?.listening_p3 || data?.listeningHubData?.listening_p3 || data?.bossBattle?.listening?.p3,
-        p4: data?.listening_hub?.listening_p4 || data?.listeningHubData?.listening_p4 || data?.listening_hub?.listening_p4_questions || data?.bossBattle?.listening?.p4,
-        p5: data?.listening_hub?.listening_p5 || data?.listeningHubData?.listening_p5 || data?.bossBattle?.listening?.p5
+        p1: customL.p1 || data?.listening_hub?.listening_p1 || data?.listeningHubData?.listening_p1,
+        p2: customL.p2 || data?.listening_hub?.listening_p2 || data?.listening_hub?.listening_p2_notes || data?.listeningHubData?.listening_p2,
+        p3: customL.p3 || data?.listening_hub?.listening_p3 || data?.listeningHubData?.listening_p3,
+        p4: customL.p4 || data?.listening_hub?.listening_p4 || data?.listeningHubData?.listening_p4 || data?.listening_hub?.listening_p4_questions,
+        p5: customL.p5 || data?.listening_hub?.listening_p5 || data?.listeningHubData?.listening_p5
       },
       readingWriting: {
-        p1: data?.reading_hub?.rw_part_1 || data?.reading_hub?.rw_part1 || data?.writing_hub?.rw_part_1 || data?.writing_hub?.rw_part1 || data?.readingHubData?.rw_part_1 || data?.readingHubData?.rw_part1 || data?.writingHubData?.rw_part_1 || data?.bossBattle?.readingWriting?.p1,
-        p2: data?.reading_hub?.rw_part_2 || data?.reading_hub?.rw_part2 || data?.writing_hub?.rw_part_2 || data?.writing_hub?.rw_part2 || data?.readingHubData?.rw_part_2 || data?.readingHubData?.rw_part2 || data?.writingHubData?.rw_part_2 || data?.bossBattle?.readingWriting?.p2,
-        p3: data?.reading_hub?.rw_part_3 || data?.reading_hub?.rw_part3 || data?.writing_hub?.rw_part_3 || data?.writing_hub?.rw_part3 || data?.readingHubData?.rw_part_3 || data?.readingHubData?.rw_part3 || data?.writingHubData?.rw_part_3 || data?.bossBattle?.readingWriting?.p3,
-        p4: data?.reading_hub?.rw_part_4 || data?.reading_hub?.rw_part4 || data?.writing_hub?.rw_part_4 || data?.writing_hub?.rw_part4 || data?.readingHubData?.rw_part_4 || data?.writingHubData?.rw_part_4 || data?.bossBattle?.readingWriting?.p4,
-        p5: data?.reading_hub?.rw_part_5 || data?.reading_hub?.rw_part5 || data?.writing_hub?.rw_part_5 || data?.writing_hub?.rw_part5 || data?.readingHubData?.rw_part_5 || data?.writingHubData?.rw_part_5 || data?.bossBattle?.readingWriting?.p5,
-        p6: data?.reading_hub?.rw_part_6 || data?.reading_hub?.rw_part6 || data?.writing_hub?.rw_part_6 || data?.writing_hub?.rw_part6 || data?.readingHubData?.rw_part_6 || data?.writingHubData?.rw_part_6 || data?.bossBattle?.readingWriting?.p6,
-        p7: data?.writing_hub?.picture_story || data?.writingHubData?.picture_story || data?.bossBattle?.readingWriting?.p7
+        p1: customRW.p1 || data?.reading_hub?.rw_part_1 || data?.reading_hub?.rw_part1 || data?.writing_hub?.rw_part_1 || data?.writing_hub?.rw_part1 || data?.readingHubData?.rw_part_1 || data?.readingHubData?.rw_part1 || data?.writingHubData?.rw_part_1,
+        p2: customRW.p2 || data?.reading_hub?.rw_part_2 || data?.reading_hub?.rw_part2 || data?.writing_hub?.rw_part_2 || data?.writing_hub?.rw_part2 || data?.readingHubData?.rw_part_2 || data?.readingHubData?.rw_part2 || data?.writingHubData?.rw_part_2,
+        p3: customRW.p3 || data?.reading_hub?.reading_part3_story || data?.reading_hub?.rw_part_3 || data?.reading_hub?.rw_part3 || data?.writing_hub?.reading_part3_story || data?.writing_hub?.rw_part_3 || data?.writing_hub?.rw_part3 || data?.readingHubData?.rw_part_3 || data?.readingHubData?.rw_part3 || data?.writingHubData?.rw_part_3,
+        p4: customRW.p4 || data?.reading_hub?.rw_part_4 || data?.reading_hub?.rw_part4 || data?.writing_hub?.rw_part_4 || data?.writing_hub?.rw_part4 || data?.readingHubData?.rw_part_4 || data?.writingHubData?.rw_part_4,
+        p5: customRW.p5 || data?.reading_hub?.rw_part_5 || data?.reading_hub?.rw_part5 || data?.writing_hub?.rw_part_5 || data?.writing_hub?.rw_part5 || data?.readingHubData?.rw_part_5 || data?.writingHubData?.rw_part_5,
+        p6: customRW.p6 || data?.reading_hub?.rw_part_6 || data?.reading_hub?.rw_part6 || data?.writing_hub?.rw_part_6 || data?.writing_hub?.rw_part6 || data?.readingHubData?.rw_part_6 || data?.writingHubData?.rw_part_6,
+        p7: customRW.p7 || data?.writing_hub?.picture_story || data?.writingHubData?.picture_story
       },
       speaking: {
-        p1_findDiff:     data?.speaking_hub?.find_differences || data?.speakingHubData?.find_differences || data?.bossBattle?.speaking?.p1_findDiff,
-        p2_cueCard:      data?.speaking_hub?.info_exchange_cards || data?.speakingHubData?.info_exchange_cards || data?.bossBattle?.speaking?.p2_cueCard,
-        p3_pictureStory: data?.speaking_hub?.picture_story || data?.speakingHubData?.picture_story || data?.bossBattle?.speaking?.p3_pictureStory,
-        p4_personalQs:   data?.speaking_hub?.personal_questions || data?.speakingHubData?.personal_questions || data?.bossBattle?.speaking?.p4_personalQs
+        p1_findDiff:     customS.p1_findDiff || data?.speaking_hub?.find_differences || data?.speakingHubData?.find_differences,
+        p2_cueCard:      customS.p2_cueCard || data?.speaking_hub?.info_exchange_cards || data?.speakingHubData?.info_exchange_cards,
+        p3_pictureStory: customS.p3_pictureStory || data?.speaking_hub?.picture_story || data?.speakingHubData?.picture_story,
+        p4_personalQs:   customS.p4_personalQs || data?.speaking_hub?.personal_questions || data?.speakingHubData?.personal_questions
       }
     };
   }, [data]);
@@ -103,7 +108,10 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
   }, [rawPartParam]);
 
   // ── Full Mock detection ──────────────────────────────────────────────────
-  const isFullMock = rotaryConfig.cycleNumber === 5 || rotaryConfig.cycleNumber === 0;
+  const isFullMock = Boolean(rotaryConfig.isMock || rotaryConfig.mode === 'FULL_MOCK' || rotaryConfig.cycleNumber === 0);
+  const examBadgeLabel = rotaryConfig?.examFormat === 'pet' || (activeWeek >= 73)
+    ? 'Cambridge B1 Preliminary (PET)'
+    : 'Cambridge A2 Flyers';
 
   // ── Current task list derived from schedule + registry ──────────────────
   // Source of truth: rotaryConfig.activeParts (from bossRotarySchedule.js)
@@ -319,11 +327,11 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
       currentTask?.paper === PAPER.READING_WRITING ? 'Reading & Writing' :
       currentTask?.paper === PAPER.SPEAKING ? 'Speaking' : 'Boss Castle'
     );
-    if (rawTitle.startsWith('Cambridge A2 Flyers')) {
+    if (rawTitle.startsWith('Cambridge ')) {
       return rawTitle;
     }
-    return `Cambridge A2 Flyers — ${rawTitle}`;
-  }, [currentTask?.displayName, currentTask?.shortLabel, currentTask?.paper]);
+    return `${examBadgeLabel} — ${rawTitle}`;
+  }, [currentTask?.displayName, currentTask?.shortLabel, currentTask?.paper, examBadgeLabel]);
 
   const getHeaderTheme = React.useCallback(() => {
     if (currentTask?.paper === PAPER.LISTENING) {
@@ -356,7 +364,7 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
         <Trophy size={64} className="mx-auto text-amber-400 animate-bounce" />
         <div className="space-y-2">
           <span className="px-3 py-1 bg-amber-500/30 text-amber-300 rounded-full text-xs font-black uppercase tracking-wider">
-            Cambridge A2 Flyers Practice Result
+            {examBadgeLabel} Practice Result
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-rose-300 to-purple-200">
             🏆 BOSS BATTLE VICTORY!
@@ -580,12 +588,21 @@ export default function BossBattleZone({ data, weekNumber, forcedStation = null,
 
         {/* R&W P3 */}
         {activeTaskId === 'rw_p3' && (
-          <RWPart3ClozeWithTitle
-            customData={bossData.readingWriting?.p3}
-            data={bossData.readingWriting?.p3}
-            weekNumber={activeWeek}
-            onComplete={() => handleTaskComplete('rw_p3')}
-          />
+          Array.isArray(bossData.readingWriting?.p3?.items) && bossData.readingWriting?.p3?.text ? (
+            <RWPart3PetMCQ
+              customData={bossData.readingWriting.p3}
+              data={bossData.readingWriting.p3}
+              weekNumber={activeWeek}
+              onComplete={() => handleTaskComplete('rw_p3')}
+            />
+          ) : (
+            <RWPart3ClozeWithTitle
+              customData={bossData.readingWriting?.p3}
+              data={bossData.readingWriting?.p3}
+              weekNumber={activeWeek}
+              onComplete={() => handleTaskComplete('rw_p3')}
+            />
+          )
         )}
 
         {/* R&W P4 */}
