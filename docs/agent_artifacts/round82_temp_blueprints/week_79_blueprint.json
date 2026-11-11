@@ -1,0 +1,328 @@
+{
+  "week": 79,
+  "theme": "Space Exploration vs. Earth Fix",
+  "title_en": "Review & Micro-Debate 2",
+  "title_vi": "Ôn tập & Tranh luận nhỏ 2 (Phần 1: Luận điểm Space vs. Earth)",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Weekly Adventure Story",
+  "clil_topic": {
+    "title": "Space Exploration vs. Earth Fix",
+    "focus": "Micro-Debate"
+  },
+  "grammar_focus": {
+    "structure": "Passive Voice, Conditionals, Comparatives",
+    "outcome": "Micro-Debate",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "space",
+      "earth",
+      "money",
+      "spend",
+      "fix",
+      "problem",
+      "important"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 0,
+    "status": "C7_OPTION_A_PROPOSED_20 (7 Source B + 13 SUPPLEMENT — Staged/Proposal-Only pending regeneration & Claude ESL quality sign-off)",
+    "phonology_summary": {
+      "total_words_tagged": 0,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 0,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    },
+    "supplement_words": [
+      "explore",
+      "planet",
+      "budget",
+      "environment",
+      "pollution",
+      "poverty",
+      "research",
+      "satellite",
+      "invest",
+      "solution",
+      "priority",
+      "debate",
+      "evidence"
+    ],
+    "total_supplement_words": 13,
+    "c7_option": "a"
+  },
+  "keywords": [
+    "space",
+    "earth",
+    "money",
+    "spend",
+    "fix",
+    "problem",
+    "important",
+    "explore",
+    "planet",
+    "budget",
+    "environment",
+    "pollution",
+    "poverty",
+    "research",
+    "satellite",
+    "invest",
+    "solution",
+    "priority",
+    "debate",
+    "evidence"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "space",
+      "source": "SOURCE_B",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "earth",
+      "source": "SOURCE_B",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "money",
+      "source": "SOURCE_B",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "spend",
+      "source": "SOURCE_B",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "fix",
+      "source": "SOURCE_B",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "problem",
+      "source": "SOURCE_B",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "important",
+      "source": "SOURCE_B",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "explore",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "planet",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "budget",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "environment",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "pollution",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "poverty",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "research",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "satellite",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "invest",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "solution",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "priority",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "debate",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    },
+    {
+      "word": "evidence",
+      "source": "SUPPLEMENT_C7_OPTION_A",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_or_esl_review": true
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Guided CER)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "C.7 Option (a) 20-word list selected (7 SB + 13 SUPPLEMENT); still requires bilingual definitions/IPA/examples + Claude ESL quality sign-off",
+    "Story World: 5 story scenes centered on Space Exploration vs. Earth Fix (Part 1 Claims)",
+    "CLIL Article: 90-200 word text containing >= 12/20 target words (>= 5/7 Source B) + 5 check questions",
+    "Singapore Math (SUPPLEMENT — Source B L632-637 omits Math): 5 problems pending ESL/Owner approval",
+    "Cambridge B1 PET Exam Tasks & Action Lab (3 stages) + Grammar Duel (Passive/Conditionals/Comparatives)"
+  ],
+  "digital_map_reference": {
+    "map_week": 79,
+    "map_theme": "The Industrial Revolution",
+    "map_clil_module": "Lịch sử thế giới: Động cơ hơi nước & Nhà máy",
+    "map_grammar_hub": "Nguyên nhân & tác động lịch sử; `broadcast_studio` phim tài liệu lịch sử",
+    "map_cefr_type": "B1 PET · Rotary 2",
+    "alignment_status": "ALIGNED",
+    "alignment_note": "Syllabus sources fully aligned."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:00.660Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": false,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": null,
+  "c7_regeneration_cleanup_required": [
+    "digital_map_reference",
+    "tested_skills",
+    "rotary_cycle"
+  ],
+  "c7_proposal_metadata": {
+    "round": 82,
+    "proposal_only": true,
+    "merge_status": "DO_NOT_MERGE_PENDING_REGENERATION_AND_ESL_REVIEW",
+    "role": "Part 1: Claims & Core Dilemma Framing"
+  }
+}

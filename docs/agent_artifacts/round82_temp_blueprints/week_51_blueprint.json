@@ -1,0 +1,90 @@
+{
+  "week": 51,
+  "theme": "Review Station 2 (Vocab & CLIL)",
+  "title_en": "Review Station 2 (Vocab & CLIL)",
+  "title_vi": "Trạm Ôn tập 2 - Từ vựng & CLIL",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": 3,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "Nature, Home, School, Math",
+  "clil_topic": {
+    "title": "Nature, Home, School, Math",
+    "focus": "Categorization game (Put words into the right box)"
+  },
+  "grammar_focus": {
+    "structure": "[SUPPLEMENT — Source B L406 không ghi Grammar Focus]",
+    "outcome": "Categorization game (Put words into the right box)",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [],
+    "total_syllabus_words": 0,
+    "target_count": 20,
+    "missing_count": 20,
+    "status": "PARTIAL (0/20 syllabus words — Requires 20 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 0,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 0,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 0,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [],
+  "characters": null,
+  "target_vocab_20": [],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 20 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 51,
+    "map_theme": "Our Solar System",
+    "map_clil_module": "Thiên văn học: 8 hành tinh & Quỹ đạo",
+    "map_grammar_hub": "Trật tự của tính từ; `reading_hub` trích xuất số liệu các hành tinh",
+    "map_cefr_type": "A2 Flyers · Rotary 4",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Review Station 2 (Vocab & CLIL)\") enforced over Digital Map (Source A: \"Our Solar System\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:59.236Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": null
+}

@@ -1,0 +1,187 @@
+{
+  "week": 142,
+  "theme": "Geometry Review - Area & Volume",
+  "title_en": "Geometry Review - Area & Volume",
+  "title_vi": "Ôn tập Hình học - Diện tích & Thể tích",
+  "cefr_level": "B1+ Academic",
+  "cefr_stage": 3,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_b1plus_transition.js",
+  "story_title": "3D Shapes",
+  "clil_topic": {
+    "title": "Vocabulary Power - Argument Words",
+    "focus": "Use academic verbs: assert, propose, suggest, imply"
+  },
+  "grammar_focus": {
+    "structure": "[SUPPLEMENT — Source B L1091 không ghi Grammar Focus]",
+    "outcome": "Use academic verbs: assert, propose, suggest, imply",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [],
+    "total_syllabus_words": 0,
+    "target_count": 20,
+    "missing_count": 20,
+    "status": "PARTIAL (0/20 syllabus words — Requires 20 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 4,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 4,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 0,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "propose",
+          "imply"
+        ],
+        "/ɪd/": [
+          "assert",
+          "suggest"
+        ]
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "assert",
+    "propose",
+    "suggest",
+    "imply"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "assert",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/əsˈɝːt/",
+      "phonetics": {
+        "arpabet": "AH0 S ER1 T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "asserted",
+        "past_participle": "asserted",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "propose",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pɹəpˈoʊz/",
+      "phonetics": {
+        "arpabet": "P R AH0 P OW1 Z",
+        "final_phone": "Z",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "proposed",
+        "past_participle": "proposed",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /z/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "suggest",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/səɡdʒˈɛst/",
+      "phonetics": {
+        "arpabet": "S AH0 G JH EH1 S T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "suggested",
+        "past_participle": "suggested",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "imply",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪmplˈaɪ/",
+      "phonetics": {
+        "arpabet": "IH0 M P L AY1",
+        "final_phone": "AY",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "implied",
+        "past_participle": "implied",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /ay/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Exam)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 16 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 142,
+    "map_theme": "Geometry Review - Area & Volume",
+    "map_clil_module": "Ôn tập Hình học - Diện tích & Thể tích: Calculate volume of cubes and cuboids",
+    "map_grammar_hub": "Full Mock B1+ Academic 4: Đọc liên môn + Toán lời văn + Opinion Essay",
+    "map_cefr_type": "★ FULL MOCK 23 (B1+)",
+    "alignment_status": "ALIGNED",
+    "alignment_note": "Syllabus sources fully aligned."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-05T08:15:55.030Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": {
+    "topic": "3D Shapes",
+    "outcome": "Calculate volume of cubes and cuboids",
+    "vocab": [],
+    "source_line": 1092
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "week": 58,
+  "theme": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts",
+  "title_en": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts",
+  "title_vi": "ELA: Vấn đề & Giải pháp (Đoạn văn",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": 2,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "The Master Plan (Writing a detailed solution plan)",
+  "clil_topic": {
+    "title": "The Master Plan (Writing a detailed solution plan)",
+    "focus": "Write a paragraph: Problem -> Solution Steps -> Result"
+  },
+  "grammar_focus": {
+    "structure": "First Conditional (Simple): \"If we [fix it], it will be [better].\"",
+    "outcome": "Write a paragraph: Problem -> Solution Steps -> Result",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "plan",
+      "step",
+      "improve",
+      "better",
+      "success",
+      "fail",
+      "strategy"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 4,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 3,
+      "past_tense_triad": {
+        "/t/": [
+          "step"
+        ],
+        "/d/": [
+          "plan",
+          "improve",
+          "fail"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "plan",
+    "step",
+    "improve",
+    "better",
+    "success",
+    "fail",
+    "strategy"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "plan",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/plˈæn/",
+      "phonetics": {
+        "arpabet": "P L AE1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "planned",
+        "past_participle": "planned",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "step",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/stˈɛp/",
+      "phonetics": {
+        "arpabet": "S T EH1 P",
+        "final_phone": "P",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "stepped",
+        "past_participle": "stepped",
+        "past_ending_group": "/t/",
+        "past_ending_rule": "Base verb ends in voiceless consonant /p/ -> suffix pronounced as voiceless /t/",
+        "variants": null
+      }
+    },
+    {
+      "word": "improve",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪmpɹˈuːv/",
+      "phonetics": {
+        "arpabet": "IH0 M P R UW1 V",
+        "final_phone": "V",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "improved",
+        "past_participle": "improved",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /v/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "better",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/bˈɛtɚ/",
+      "phonetics": {
+        "arpabet": "B EH1 T ER0",
+        "final_phone": "ER",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "success",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/səksˈɛs/",
+      "phonetics": {
+        "arpabet": "S AH0 K S EH1 S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "fail",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/fˈeɪl/",
+      "phonetics": {
+        "arpabet": "F EY1 L",
+        "final_phone": "L",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "failed",
+        "past_participle": "failed",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /l/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "strategy",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/stɹˈætədʒi/",
+      "phonetics": {
+        "arpabet": "S T R AE1 T AH0 JH IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 58,
+    "map_theme": "The Great Debate (Pets)",
+    "map_clil_module": "Đạo đức học: Chó hay mèo là thú cưng",
+    "map_grammar_hub": "Cụm từ nêu quan điểm (*In my opinion, I believe*); `broadcast_studio` tranh luận",
+    "map_cefr_type": "A2 Flyers · Rotary 1",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"ELA: Problem & Solution (Paragraph) / Math: Division Concepts  / Toán: Khái niệm Phép chia)\") enforced over Digital Map (Source A: \"The Great Debate (Pets)\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:59.591Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": {
+    "topic": "The Language of Sharing",
+    "outcome": "Explain division as \"sharing equally\"",
+    "vocab": [],
+    "source_line": 456
+  }
+}

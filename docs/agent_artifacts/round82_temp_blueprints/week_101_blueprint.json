@@ -1,0 +1,257 @@
+{
+  "week": 101,
+  "theme": "Needs vs. Wants / Math: Budgeting",
+  "title_en": "Needs vs. Wants / Math: Budgeting",
+  "title_vi": "Nhu cầu vs Mong muốn / Toán: Ngân sách",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Smart Choices",
+  "clil_topic": {
+    "title": "Smart Choices",
+    "focus": "Compare needs and wants in daily life"
+  },
+  "grammar_focus": {
+    "structure": "Second Conditional: \"If I had money, I would buy...\"",
+    "outcome": "Compare needs and wants in daily life",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "need",
+      "want",
+      "buy",
+      "save",
+      "spend",
+      "money",
+      "afford"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 3,
+      "irregular_verbs_count": 2,
+      "non_verbs_count": 2,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "save"
+        ],
+        "/ɪd/": [
+          "need",
+          "want"
+        ]
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "need",
+    "want",
+    "buy",
+    "save",
+    "spend",
+    "money",
+    "afford"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "need",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/nˈiːd/",
+      "phonetics": {
+        "arpabet": "N IY1 D",
+        "final_phone": "D",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "needed",
+        "past_participle": "needed",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /d/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "want",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/wˈɑːnt/",
+      "phonetics": {
+        "arpabet": "W AA1 N T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "wanted",
+        "past_participle": "wanted",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "buy",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/bˈaɪ/",
+      "phonetics": {
+        "arpabet": "B AY1",
+        "final_phone": "AY",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "bought",
+        "past_participle": "bought",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation uy -> ought",
+        "variants": null
+      }
+    },
+    {
+      "word": "save",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/sˈeɪv/",
+      "phonetics": {
+        "arpabet": "S EY1 V",
+        "final_phone": "V",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "saved",
+        "past_participle": "saved",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /v/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "spend",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/spˈɛnd/",
+      "phonetics": {
+        "arpabet": "S P EH1 N D",
+        "final_phone": "D",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "spent",
+        "past_participle": "spent",
+        "past_ending_group": null,
+        "past_ending_rule": "Dental suffix change d -> t",
+        "variants": null
+      }
+    },
+    {
+      "word": "money",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/mˈʌni/",
+      "phonetics": {
+        "arpabet": "M AH1 N IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "afford",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/əfˈɔːɹd/",
+      "phonetics": {
+        "arpabet": "AH0 F AO1 R D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Autonomous)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 101,
+    "map_theme": "Space Settlement: Moon to Mars",
+    "map_clil_module": "Hàng không vũ trụ: Hệ thống duy trì sự sống",
+    "map_grammar_hub": "Nghiên cứu tính khả thi kỹ thuật; `writing_hub` đề án căn cứ mặt trăng",
+    "map_cefr_type": "B1+ PET · Rotary 4",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Needs vs. Wants / Math: Budgeting\") enforced over Digital Map (Source A: \"Space Settlement: Moon to Mars\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:01.774Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": {
+    "topic": "Budgeting",
+    "outcome": "Create a simple budget with income and expenses",
+    "vocab": [],
+    "source_line": 801
+  }
+}

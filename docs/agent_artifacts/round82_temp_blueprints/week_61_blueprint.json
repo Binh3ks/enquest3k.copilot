@@ -1,0 +1,254 @@
+{
+  "week": 61,
+  "theme": "ELA: Main Idea Hunter / Math: Word Problems",
+  "title_en": "ELA: Main Idea Hunter / Math: Word Problems",
+  "title_vi": "ELA: Thợ săn Ý chính / Toán: Toán đố",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": 1,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "Finding the \"Gem\" (Main Idea) in a text",
+  "clil_topic": {
+    "title": "Finding the \"Gem\" (Main Idea) in a text",
+    "focus": "Distinguish Main Idea vs. Details"
+  },
+  "grammar_focus": {
+    "structure": "Subject + Verb Identification (Core sentence)",
+    "outcome": "Distinguish Main Idea vs. Details",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "main idea",
+      "detail",
+      "support",
+      "topic",
+      "important",
+      "about",
+      "title"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 6,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": [
+          "support"
+        ]
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "main idea",
+    "detail",
+    "support",
+    "topic",
+    "important",
+    "about",
+    "title"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "main idea",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/mˈeɪn aɪdˈiːə/",
+      "phonetics": {
+        "arpabet": "M EY1 N AY0 D IY1 AH0",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "detail",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dɪtˈeɪl/",
+      "phonetics": {
+        "arpabet": "D IH0 T EY1 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "support",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/səpˈɔːɹt/",
+      "phonetics": {
+        "arpabet": "S AH0 P AO1 R T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "supported",
+        "past_participle": "supported",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "topic",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/tˈɑːpɪk/",
+      "phonetics": {
+        "arpabet": "T AA1 P IH0 K",
+        "final_phone": "K",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "important",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪmpˈɔːɹtənt/",
+      "phonetics": {
+        "arpabet": "IH0 M P AO1 R T AH0 N T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "about",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/əbˈaʊt/",
+      "phonetics": {
+        "arpabet": "AH0 B AW1 T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "title",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/tˈaɪtəl/",
+      "phonetics": {
+        "arpabet": "T AY1 T AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 61,
+    "map_theme": "Earth's Layers & Volcanoes",
+    "map_clil_module": "Địa chất học: Vỏ, manti, lõi trái đất",
+    "map_grammar_hub": "Văn bản giải thích miêu tả; `discovery_report` buồng magma núi lửa",
+    "map_cefr_type": "A2 Flyers · Rotary 4",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"ELA: Main Idea Hunter / Math: Word Problems\") enforced over Digital Map (Source A: \"Earth's Layers & Volcanoes\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:59.742Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": {
+    "topic": "Two-Step Word Problems",
+    "outcome": "Identify the hidden question in a problem",
+    "vocab": [],
+    "source_line": 481
+  }
+}

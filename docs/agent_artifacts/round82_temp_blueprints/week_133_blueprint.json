@@ -1,0 +1,276 @@
+{
+  "week": 133,
+  "theme": "Deep Research & Data",
+  "title_en": "Deep Research & Data",
+  "title_vi": "Nghiên cứu Sâu & Dữ liệu",
+  "cefr_level": "B1+ Academic",
+  "cefr_stage": 3,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_b1plus_transition.js",
+  "story_title": "Finding statistics to support arguments",
+  "clil_topic": {
+    "title": "Finding statistics to support arguments",
+    "focus": "Find and cite one statistic about video games (e.g., \"70% of kids play...\")"
+  },
+  "grammar_focus": {
+    "structure": "Citation Phrases: \"According to a study by...\", \"Statistics show that...\"",
+    "outcome": "Find and cite one statistic about video games (e.g., \"70% of kids play...\")",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "statistic",
+      "percent",
+      "study",
+      "data",
+      "majority",
+      "minority",
+      "survey",
+      "population"
+    ],
+    "total_syllabus_words": 8,
+    "target_count": 20,
+    "missing_count": 12,
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 7,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "study"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "statistic",
+    "percent",
+    "study",
+    "data",
+    "majority",
+    "minority",
+    "survey",
+    "population"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "statistic",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/stətˈɪstɪk/",
+      "phonetics": {
+        "arpabet": "S T AH0 T IH1 S T IH0 K",
+        "final_phone": "K",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "percent",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pɚsˈɛnt/",
+      "phonetics": {
+        "arpabet": "P ER0 S EH1 N T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "study",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/stˈʌdi/",
+      "phonetics": {
+        "arpabet": "S T AH1 D IY0",
+        "final_phone": "IY",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "studied",
+        "past_participle": "studied",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /iy/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "data",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dˈeɪtə/",
+      "phonetics": {
+        "arpabet": "D EY1 T AH0",
+        "final_phone": "AH",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "majority",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/mədʒˈɔːɹəti/",
+      "phonetics": {
+        "arpabet": "M AH0 JH AO1 R AH0 T IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "minority",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/maɪnˈɔːɹəti/",
+      "phonetics": {
+        "arpabet": "M AY0 N AO1 R AH0 T IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "survey",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/sɚvˈeɪ/",
+      "phonetics": {
+        "arpabet": "S ER0 V EY1",
+        "final_phone": "EY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "population",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pˌɑːpjəlˈeɪʃən/",
+      "phonetics": {
+        "arpabet": "P AA2 P Y AH0 L EY1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Research)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 133,
+    "map_theme": "Research Project 4: AI in Education",
+    "map_clil_module": "Trí tuệ nhân tạo và liêm chính học thuật",
+    "map_grammar_hub": "Soạn thảo tổng quan tài liệu; `discovery_report` độ lệch AI detector",
+    "map_cefr_type": "B1+ Academic · Rotary 1",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Deep Research & Data\") enforced over Digital Map (Source A: \"Research Project 4: AI in Education\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:03.395Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": {
+    "topic": "Geometry: Angles",
+    "outcome": "Identify right, acute, and obtuse angles in shapes",
+    "vocab": [],
+    "source_line": 1018
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "week": 76,
+  "theme": "History/ELA: Explorers / Math: Map Scales",
+  "title_en": "History/ELA: Explorers / Math: Map Scales",
+  "title_vi": "Những Chuyến Hải Trình Lớn: Kỷ Nguyên Thám Hiểm Toàn Cầu",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Great Voyages",
+  "clil_topic": {
+    "title": "Great Voyages",
+    "focus": "Write a short biography of an explorer"
+  },
+  "grammar_focus": {
+    "structure": "Prepositions of Movement (Across, Around, Through)",
+    "outcome": "Write a short biography of an explorer",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "explore",
+      "voyage",
+      "ship",
+      "ocean",
+      "discover",
+      "map",
+      "captain",
+      "sail"
+    ],
+    "total_syllabus_words": 8,
+    "target_count": 20,
+    "missing_count": 12,
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 3,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "explore",
+          "discover",
+          "sail"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "explore",
+    "voyage",
+    "ship",
+    "ocean",
+    "discover",
+    "map",
+    "captain",
+    "sail"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "explore",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪksplˈɔːɹ/",
+      "phonetics": {
+        "arpabet": "IH0 K S P L AO1 R",
+        "final_phone": "R",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "explored",
+        "past_participle": "explored",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /r/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "voyage",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/vˈɔɪədʒ/",
+      "phonetics": {
+        "arpabet": "V OY1 AH0 JH",
+        "final_phone": "JH",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "ship",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ʃˈɪp/",
+      "phonetics": {
+        "arpabet": "SH IH1 P",
+        "final_phone": "P",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "ocean",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˈoʊʃən/",
+      "phonetics": {
+        "arpabet": "OW1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "discover",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dɪskˈʌvɚ/",
+      "phonetics": {
+        "arpabet": "D IH0 S K AH1 V ER0",
+        "final_phone": "ER",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "discovered",
+        "past_participle": "discovered",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /er/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "map",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/mˈæp/",
+      "phonetics": {
+        "arpabet": "M AE1 P",
+        "final_phone": "P",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "captain",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kˈæptən/",
+      "phonetics": {
+        "arpabet": "K AE1 P T AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "sail",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/sˈeɪl/",
+      "phonetics": {
+        "arpabet": "S EY1 L",
+        "final_phone": "L",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "sailed",
+        "past_participle": "sailed",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /l/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Guided CER)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 76,
+    "map_theme": "Force, Mass & Newton's Laws",
+    "map_clil_module": "Vật lý: Định luật 2 Newton $F=ma$",
+    "map_grammar_hub": "Tích hợp toán - ngôn ngữ; `math_quest` toán lời văn tính gia tốc",
+    "map_cefr_type": "B1 PET · Rotary 4",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"History/ELA: Explorers / Math: Map Scales\") enforced over Digital Map (Source A: \"Force, Mass & Newton's Laws\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:00.507Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "mockFormat": "pet",
+  "cumulativeBlock": [
+    73,
+    74,
+    75,
+    76
+  ],
+  "synthesis_summary": {
+    "w73_theme": "The Water Cycle (Advanced) / Volume",
+    "w74_theme": "Food Chains / Complex Charts",
+    "w75_theme": "Ancient Egypt / Timelines",
+    "w76_theme": "Explorers / Map Scales",
+    "grounded_vocabulary_count": 20,
+    "grounded_pct": 100
+  },
+  "papers": {
+    "reading": {
+      "parts": 6,
+      "total_items": 32,
+      "time_minutes": 45
+    },
+    "writing": {
+      "parts": 2,
+      "total_tasks": 2,
+      "time_minutes": 45
+    },
+    "listening": {
+      "parts": 4,
+      "total_items": 25,
+      "time_minutes": 35
+    },
+    "speaking": {
+      "parts": 4,
+      "total_tasks": 4,
+      "time_minutes": 12
+    }
+  },
+  "math_focus": {
+    "topic": "Real Distances",
+    "outcome": "Use a map scale to calculate distance",
+    "vocab": [],
+    "source_line": 611
+  }
+}

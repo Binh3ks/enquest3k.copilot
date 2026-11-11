@@ -1,0 +1,254 @@
+{
+  "week": 105,
+  "theme": "Topic Selection & The \"Big Questions\"",
+  "title_en": "Topic Selection & The \"Big Questions\"",
+  "title_vi": "Chọn Chủ đề & Câu hỏi Lớn",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "Brainstorming a research topic (e.g., Volcanoes, Ancient Rome, Space)",
+  "clil_topic": {
+    "title": "Brainstorming a research topic (e.g., Volcanoes, Ancient Rome, Space)",
+    "focus": "Write a proposal stating the topic and 3 \"Big Questions\" to research"
+  },
+  "grammar_focus": {
+    "structure": "Wh- Questions (Complex): \"What causes...?\", \"How does... affect...?\", \"Why is... important?\"",
+    "outcome": "Write a proposal stating the topic and 3 \"Big Questions\" to research",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "research",
+      "topic",
+      "inquiry",
+      "question",
+      "curious",
+      "find out",
+      "information"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 1,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "question"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "research",
+    "topic",
+    "inquiry",
+    "question",
+    "curious",
+    "find out",
+    "information"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "research",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɹisˈɝːtʃ/",
+      "phonetics": {
+        "arpabet": "R IY0 S ER1 CH",
+        "final_phone": "CH",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "topic",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/tˈɑːpɪk/",
+      "phonetics": {
+        "arpabet": "T AA1 P IH0 K",
+        "final_phone": "K",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "inquiry",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪnkwˈaɪɹi/",
+      "phonetics": {
+        "arpabet": "IH0 N K W AY1 R IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "question",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kwˈɛstʃən/",
+      "phonetics": {
+        "arpabet": "K W EH1 S CH AH0 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "questioned",
+        "past_participle": "questioned",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "curious",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kjˈʊɹiəs/",
+      "phonetics": {
+        "arpabet": "K Y UH1 R IY0 AH0 S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "find out",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/fˈaɪnd ˈaʊt/",
+      "phonetics": {
+        "arpabet": "F AY1 N D AW1 T",
+        "final_phone": "D",
+        "is_verb": true,
+        "verb_classification": "irregular",
+        "past_simple": "found out",
+        "past_participle": "found out",
+        "past_ending_group": null,
+        "past_ending_rule": "Vowel mutation i -> ou",
+        "variants": null
+      }
+    },
+    {
+      "word": "information",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˌɪnfɚmˈeɪʃən/",
+      "phonetics": {
+        "arpabet": "IH2 N F ER0 M EY1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 3 (Autonomous)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 105,
+    "map_theme": "Microplastics in Marine Chains",
+    "map_clil_module": "Hóa học môi trường: Tích tụ sinh học",
+    "map_grammar_hub": "Báo cáo thí nghiệm chính thức với phương pháp nghiên cứu; `discovery_report`",
+    "map_cefr_type": "B1+ PET · Rotary 3",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Topic Selection & The \"Big Questions\") enforced over Digital Map (Source A: \"Microplastics in Marine Chains\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:01.977Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": {
+    "topic": "Introduction to Variables",
+    "outcome": "Understand that a letter (x, y, n) can represent an unknown number",
+    "vocab": [],
+    "source_line": 840
+  }
+}

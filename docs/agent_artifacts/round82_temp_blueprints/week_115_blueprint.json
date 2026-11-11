@@ -1,0 +1,213 @@
+{
+  "week": 115,
+  "theme": "Speaking Notes (Cue Cards)",
+  "title_en": "Speaking Notes (Cue Cards)",
+  "title_vi": "Ghi chú Nói",
+  "cefr_level": "B1 PET",
+  "cefr_stage": 2,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": null,
+  "template_used": "production_kit/templates/template_pet_transition.js",
+  "story_title": "From Reading to Speaking",
+  "clil_topic": {
+    "title": "From Reading to Speaking",
+    "focus": "Create cue cards with keywords only (no full sentences)"
+  },
+  "grammar_focus": {
+    "structure": "Imperatives/Keywords for self-prompts",
+    "outcome": "Create cue cards with keywords only (no full sentences)",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "cue card",
+      "keyword",
+      "remind",
+      "remember",
+      "point"
+    ],
+    "total_syllabus_words": 5,
+    "target_count": 20,
+    "missing_count": 15,
+    "status": "PARTIAL (5/20 syllabus words — Requires 15 words from SUPPLEMENT/author)",
+    "phonology_summary": {
+      "total_words_tagged": 5,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 3,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 2,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "remember"
+        ],
+        "/ɪd/": [
+          "remind",
+          "point"
+        ]
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "cue card",
+    "keyword",
+    "remind",
+    "remember",
+    "point"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "cue card",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kjˈuː kˈɑːɹd/",
+      "phonetics": {
+        "arpabet": "K Y UW1 K AA1 R D",
+        "final_phone": "UW",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "keyword",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kˈiːwˌɝːd/",
+      "phonetics": {
+        "arpabet": "K IY1 W ER2 D",
+        "final_phone": "D",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "remind",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɹimˈaɪnd/",
+      "phonetics": {
+        "arpabet": "R IY0 M AY1 N D",
+        "final_phone": "D",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "reminded",
+        "past_participle": "reminded",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /d/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "remember",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɹɪmˈɛmbɚ/",
+      "phonetics": {
+        "arpabet": "R IH0 M EH1 M B ER0",
+        "final_phone": "ER",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "remembered",
+        "past_participle": "remembered",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /er/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "point",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pˈɔɪnt/",
+      "phonetics": {
+        "arpabet": "P OY1 N T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "pointed",
+        "past_participle": "pointed",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 15 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 115,
+    "map_theme": null,
+    "map_clil_module": null,
+    "map_grammar_hub": null,
+    "map_cefr_type": null,
+    "alignment_status": "MISSING_IN_SOURCE_A_SOURCE_B_ONLY",
+    "alignment_note": "Week missing from Digital Syllabus Map (docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md). Constructed exclusively from Master Syllabus Foundation (Source B)."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:02.485Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": false,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "math_focus": {
+    "topic": "Logic Puzzles",
+    "outcome": "Solve grid puzzles to keep logic sharp",
+    "vocab": [],
+    "source_line": 929
+  }
+}
