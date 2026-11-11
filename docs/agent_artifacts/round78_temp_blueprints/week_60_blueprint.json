@@ -1,0 +1,57 @@
+{
+  "week": 60,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations",
+  "title_en": "ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations",
+  "cefr_level": "A2 Flyers",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Writing to improve the city",
+    "focus": "Write a polite formal request",
+    "source": "Source B L468"
+  },
+  "math_focus": {
+    "topic": "PEMDAS Intro",
+    "outcome": "Explain which operation comes first",
+    "vocab": [
+      "order",
+      "operation",
+      "first",
+      "bracket",
+      "parenthesis"
+    ],
+    "source": "Source B L472"
+  },
+  "grammar_focus": {
+    "structure": "Polite Modals (May I, Could you, Would like)",
+    "outcome": "Write a polite formal request",
+    "source": "Source B L470"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "sir",
+      "madam",
+      "sincerely",
+      "request",
+      "improve",
+      "community",
+      "library",
+      "park"
+    ],
+    "total_syllabus_words": 8,
+    "supplement_needed": 12,
+    "source": "Source B L471"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 467,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 141
+  }
+}

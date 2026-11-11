@@ -1,0 +1,54 @@
+{
+  "week": 107,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "The Note-Taker (Summary)",
+  "title_en": "The Note-Taker (Summary)",
+  "cefr_level": "B1+ PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Taking notes without copying sentences",
+    "focus": "Convert a paragraph into bullet points (keywords only)",
+    "source": "Source B L853"
+  },
+  "math_focus": {
+    "topic": "Simple Equations (Multiplication/Division)",
+    "outcome": "Solve for x (e.g., 2x = 10)",
+    "vocab": [
+      "multiply",
+      "divide",
+      "times",
+      "split"
+    ],
+    "source": "Source B L858"
+  },
+  "grammar_focus": {
+    "structure": "Fragments (using Noun Phrases for notes)",
+    "outcome": "Convert a paragraph into bullet points (keywords only)",
+    "source": "Source B L856"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "keyword",
+      "bullet point",
+      "summarize",
+      "main idea",
+      "short",
+      "note"
+    ],
+    "total_syllabus_words": 6,
+    "supplement_needed": 14,
+    "source": "Source B L857"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 852,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 206
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "week": 100,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Rights / Math: Percent Word Problems",
+  "title_en": "Rights / Math: Percent Word Problems",
+  "cefr_level": "B1+ PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Freedom",
+    "focus": "Explain a basic human right",
+    "source": "Source B L787"
+  },
+  "math_focus": {
+    "topic": "Percent Review",
+    "outcome": "Solve word problems involving percentages",
+    "vocab": [
+      "discount",
+      "sale",
+      "off",
+      "tax"
+    ],
+    "source": "Source B L792"
+  },
+  "grammar_focus": {
+    "structure": "Abstract Nouns: Freedom, Justice, Equality",
+    "outcome": "Explain a basic human right",
+    "source": "Source B L790"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "right",
+      "freedom",
+      "speech",
+      "fair",
+      "equal",
+      "law",
+      "justice"
+    ],
+    "total_syllabus_words": 7,
+    "supplement_needed": 13,
+    "source": "Source B L791"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 786,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 199
+  }
+}

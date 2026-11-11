@@ -1,0 +1,57 @@
+{
+  "week": 103,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Producers & Consumers / Math: Profit & Loss",
+  "title_en": "Producers & Consumers / Math: Profit & Loss",
+  "cefr_level": "B1+ PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "The Market",
+    "focus": "Explain the cycle between producers and consumers",
+    "source": "Source B L814"
+  },
+  "math_focus": {
+    "topic": "Profit & Loss",
+    "outcome": "Calculate profit (Selling Price - Cost Price)",
+    "vocab": [
+      "profit",
+      "loss",
+      "earn",
+      "spend",
+      "gain"
+    ],
+    "source": "Source B L819"
+  },
+  "grammar_focus": {
+    "structure": "Connectors of Contrast: \"However\", \"On the other hand\"",
+    "outcome": "Explain the cycle between producers and consumers",
+    "source": "Source B L817"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "produce",
+      "consume",
+      "make",
+      "buy",
+      "sell",
+      "market",
+      "factory",
+      "customer"
+    ],
+    "total_syllabus_words": 8,
+    "supplement_needed": 12,
+    "source": "Source B L818"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 813,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 202
+  }
+}

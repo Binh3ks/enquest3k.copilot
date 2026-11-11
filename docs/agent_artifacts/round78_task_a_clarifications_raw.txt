@@ -1,0 +1,488 @@
+====================================================================================================
+📌 ROUND 78 — TASK A: LÀM RÕ NHỎ (A.1 W35 TOÁN | A.2 MOCK M01 LITE MODE | A.3 SPEC PET)
+Thời điểm chạy: 2026-11-11T07:35:03.173Z
+====================================================================================================
+
+### A.1. CẤU TRÚC SINGAPORE_MATH CỦA W35 & NGUYÊN NHÂN LỆCH R74/R75 (0/5) VS R76/R77 (2/5)
+
+1.1. File `src/data/weeks/week_35/singapore_math.js` (6 dòng [5 dòng non-empty + 1 dòng trống cuối] — nguyên văn):
+```js
+1: // Week 35 Singapore Math (Clean Un-authored Placeholder Stub)
+2: export default {
+3:   title: "Singapore Math",
+4:   problems: []
+5: };
+6: 
+```
+- Keys top-level qua VM: `["title","problems"]`
+- Kiểu `problems`: `Array` | `problems.length`: **0**
+
+1.2. File `src/data/weeks/week_35/skill_practice_hub.js` (138 dòng — khóa & mảng `singapore_math` tại L66–L115):
+- Keys top-level của `skillPracticeHubData`: `["week","theme","cefr_level","grammar_drills","singapore_math","science_lab"]`
+- Độ dài mảng `skillPracticeHubData.singapore_math`: **2**
+- Các phần tử trong `singapore_math`: `id=1` ("Problem 1: Photograph Album (Part-Whole)", keys=["id","title","problemText","correctAnswer","answer","hintText","modelData"]) | `id=2` ("Problem 2: Souvenir Postcards (Comparison)", keys=["id","title","problemText","correctAnswer","answer","hintText","modelData"])
+```js
+66:   "singapore_math": [
+67:     {
+68:       "id": 1,
+69:       "title": "Problem 1: Photograph Album (Part-Whole)",
+70:       "problemText": "Emma took 45 photographs on Saturday and 35 photographs on Sunday. How many photographs did she take altogether?",
+71:       "correctAnswer": 80,
+72:       "answer": "80 photographs",
+73:       "hintText": "Saturday photos (45) + Sunday photos (35) = 80 total photographs.",
+74:       "modelData": {
+75:         "type": "part_whole",
+76:         "bars": [
+77:           {
+78:             "value": 45,
+79:             "label": "45 Saturday",
+80:             "color": "#4f46e5"
+81:           },
+82:           {
+83:             "value": 35,
+84:             "label": "35 Sunday",
+85:             "color": "#06b6d4"
+86:           }
+87:         ],
+88:         "totalLabel": "80 photographs total"
+89:       }
+90:     },
+91:     {
+92:       "id": 2,
+93:       "title": "Problem 2: Souvenir Postcards (Comparison)",
+94:       "problemText": "The museum gift shop sold 64 postcards in the morning and 28 postcards in the afternoon. How many more postcards were sold in the morning?",
+95:       "correctAnswer": 36,
+96:       "answer": "36 postcards",
+97:       "hintText": "Morning sales (64) - Afternoon sales (28) = 36 more postcards.",
+98:       "modelData": {
+99:         "type": "comparison",
+100:         "bars": [
+101:           {
+102:             "value": 64,
+103:             "label": "64 Morning",
+104:             "color": "#0ea5e9"
+105:           },
+106:           {
+107:             "value": 28,
+108:             "label": "28 Afternoon",
+109:             "color": "#ef4444"
+110:           }
+111:         ],
+112:         "differenceLabel": "36 more postcards"
+113:       }
+114:     }
+115:   ],
+```
+
+1.3. Bằng chứng từ code & raw logs R74–R77 giải thích vì sao R74/R75 ghi `0/5` còn R76/R77 ghi `2/5`:
+
+- **R74 Script** (`scripts/audit_round74_source_b_baseline.mjs:L185–L220`):
+```js
+185: function countMathProblemsAST(dir) {
+186:   // 1. Check singapore_math.js
+187:   const smPath = path.join(dir, 'singapore_math.js');
+188:   if (fs.existsSync(smPath)) {
+189:     const sm = parseHubFile(smPath, 'singaporeMathData') || parseHubFile(smPath, 'singapore_math');
+190:     if (Array.isArray(sm)) return sm.length;
+191:     if (Array.isArray(sm?.problems)) return sm.problems.length;
+192:     if (Array.isArray(sm?.questions)) return sm.questions.length;
+193:   }
+194: 
+195:   // 2. Check skill_practice_hub.js
+196:   const sphPath = path.join(dir, 'skill_practice_hub.js');
+197:   if (fs.existsSync(sphPath)) {
+198:     const sph = parseHubFile(sphPath, 'skillPracticeHubData');
+199:     if (Array.isArray(sph?.singapore_math)) return sph.singapore_math.length;
+200:     if (Array.isArray(sph?.math_quest?.problems)) return sph.math_quest.problems.length;
+201:   }
+202: 
+203:   // 3. Check listening_hub.js
+204:   const lhPath = path.join(dir, 'listening_hub.js');
+205:   if (fs.existsSync(lhPath)) {
+206:     const lh = parseHubFile(lhPath, 'listeningHubData');
+207:     if (Array.isArray(lh?.math_quest?.problems)) return lh.math_quest.problems.length;
+208:     if (Array.isArray(lh?.singapore_math)) return lh.singapore_math.length;
+209:   }
+210: 
+211:   // 4. Check reading_hub.js
+212:   const rhPath = path.join(dir, 'reading_hub.js');
+213:   if (fs.existsSync(rhPath)) {
+214:     const rh = parseHubFile(rhPath, 'readingHubData');
+215:     if (Array.isArray(rh?.singapore_math)) return rh.singapore_math.length;
+216:     if (Array.isArray(rh?.math_quest?.problems)) return rh.math_quest.problems.length;
+217:   }
+218: 
+219:   return 0;
+220: }
+```
+  - Các dòng W35 trong `docs/agent_artifacts/round74_production_audit_raw.txt`:
+    - `L12`: `| **PROD** | **W35** | L310 | The Best Day Ever | Storytelling Practice 2 (Personal Recount) | ⚠️ CẦN ESL REVIEW | 0 Source B words defined | 0/5 items | CẦN ESL REVIEW (Lệch chi tiết: "The Best Day Ever..." vs "Storytelling Pract...") |`
+    - `L49`: `   - CẦN ESL REVIEW (Substring / có token chung): 18 tuần (W35, W36, W38, W39, W41, W43, W45, W46, W73, W74, W75, W76, W77, W78, W79, W81, W82, W125)`
+    - `L60`: `   - Thiếu toán (< 5 bài): 20 tuần (W35 (0/5), W36 (0/5), W37 (0/5), W38 (2/5), W39 (2/5), W41 (2/5), W43 (2/5), W45 (2/5), W46 (2/5), W73 (2/5), W74 (2/5), W75 (2/5), W76 (2/5), W77 (2/5), W78 (2/5), W79 (2/5), W80 (2/5), W81 (2/5), W82 (2/5), W125 (2/5))`
+
+- **R75 Script** (`scripts/audit_round75_source_b_baseline.mjs:L185–L220`):
+```js
+185: function countMathProblemsAST(dir) {
+186:   // 1. Check singapore_math.js
+187:   const smPath = path.join(dir, 'singapore_math.js');
+188:   if (fs.existsSync(smPath)) {
+189:     const sm = parseHubFile(smPath, 'singaporeMathData') || parseHubFile(smPath, 'singapore_math');
+190:     if (Array.isArray(sm)) return sm.length;
+191:     if (Array.isArray(sm?.problems)) return sm.problems.length;
+192:     if (Array.isArray(sm?.questions)) return sm.questions.length;
+193:   }
+194: 
+195:   // 2. Check skill_practice_hub.js
+196:   const sphPath = path.join(dir, 'skill_practice_hub.js');
+197:   if (fs.existsSync(sphPath)) {
+198:     const sph = parseHubFile(sphPath, 'skillPracticeHubData');
+199:     if (Array.isArray(sph?.singapore_math)) return sph.singapore_math.length;
+200:     if (Array.isArray(sph?.math_quest?.problems)) return sph.math_quest.problems.length;
+201:   }
+202: 
+203:   // 3. Check listening_hub.js
+204:   const lhPath = path.join(dir, 'listening_hub.js');
+205:   if (fs.existsSync(lhPath)) {
+206:     const lh = parseHubFile(lhPath, 'listeningHubData');
+207:     if (Array.isArray(lh?.math_quest?.problems)) return lh.math_quest.problems.length;
+208:     if (Array.isArray(lh?.singapore_math)) return lh.singapore_math.length;
+209:   }
+210: 
+211:   // 4. Check reading_hub.js
+212:   const rhPath = path.join(dir, 'reading_hub.js');
+213:   if (fs.existsSync(rhPath)) {
+214:     const rh = parseHubFile(rhPath, 'readingHubData');
+215:     if (Array.isArray(rh?.singapore_math)) return rh.singapore_math.length;
+216:     if (Array.isArray(rh?.math_quest?.problems)) return rh.math_quest.problems.length;
+217:   }
+218: 
+219:   return 0;
+220: }
+```
+  - Các dòng W35 trong `docs/agent_artifacts/round75_production_audit_raw.txt`:
+    - `L12`: `| **PROD** | **W35** | L310 | Storytelling Practice 2 (Personal Recount) | The Best Day Ever | Storytelling Practice 2 (Personal Recount) | ✅ EXACT | ❌ LỆCH | 0 Source B words defined | 0/5 | KHỚP TIÊU ĐỀ TUẦN, LỆCH TOPIC (0/5 toán) |`
+    - `L48`: `     - EXACT: 15 tuần (W35, W38, W39, W41, W43, W45, W46, W73, W74, W75, W76, W77, W78, W81, W82)`
+    - `L63`: `     - LỆCH: 16 tuần (W33, W35, W37, W43, W45, W46, W73, W74, W75, W76, W77, W78, W80, W81, W82, W125)`
+    - `L72`: `   - Production thiếu toán (< 5): W35 (0/5), W36 (0/5), W37 (0/5), W38 (2/5), W39 (2/5), W41 (2/5), W43 (2/5), W45 (2/5), W46 (2/5), W73 (2/5), W74 (2/5), W75 (2/5), W76 (2/5), W77 (2/5), W78 (2/5), W79 (2/5), W80 (2/5), W81 (2/5), W82 (2/5), W125 (2/5)`
+
+- **R76 Script** (`scripts/audit_round76_source_b_baseline.mjs:L153–L171`):
+```js
+153: function extractMathCount(sphPath) {
+154:   if (!fs.existsSync(sphPath)) return 0;
+155:   const content = fs.readFileSync(sphPath, 'utf8');
+156:   const modified = content
+157:     .replace(/export\s+default\s+[^;]+;?/g, '')
+158:     .replace(/export\s+(?:const|let|var)\s+/g, 'var ')
+159:     .replace(/import\s+[^;]+;?/g, '');
+160:   const sandbox = { ...globalThis, skillPracticeHubData: {}, skillPracticeHub: {} };
+161:   try {
+162:     vm.createContext(sandbox);
+163:     vm.runInContext(modified, sandbox);
+164:     const list = sandbox.skillPracticeHubData?.singapore_math || sandbox.skillPracticeHub?.singapore_math || [];
+165:     return list.length;
+166:   } catch (e) {
+167:     // Regex count fallback
+168:     const matches = content.match(/"id"\s*:\s*"w\d+_p\d+"/g);
+169:     return matches ? matches.length : 0;
+170:   }
+171: }
+```
+  - Các dòng W35 trong `docs/agent_artifacts/round76_production_audit_raw.txt`:
+    - `L13`: `| **PROD** | **W35** | L310 | Storytelling Practice 2 (Personal Recount) | The Best Day Ever | Storytelling Practice 2 (Personal Recount) | ✅ EXACT | ❌ LỆCH | 0 Source B words defined | 2/5 | PASS cấp tiêu đề (2/5 toán) |`
+    - `L55`: `   - Production có 0/5 toán: 3 tuần (W35, W36, W37 rỗng).`
+
+- **R77 Script** (`scripts/audit_round77_source_b_baseline.mjs:L228–L242`):
+```js
+228: function extractMathCount(sphPath) {
+229:   if (!fs.existsSync(sphPath)) return 0;
+230:   const res = evalJsModule(sphPath);
+231:   if (res?.sandbox) {
+232:     const sph =
+233:       (res.sandbox.__default__ && Array.isArray(res.sandbox.__default__.singapore_math) ? res.sandbox.__default__ : null) ||
+234:       (res.sandbox.skillPracticeHubData && Array.isArray(res.sandbox.skillPracticeHubData.singapore_math) ? res.sandbox.skillPracticeHubData : null) ||
+235:       (res.sandbox.skillPracticeHub && Array.isArray(res.sandbox.skillPracticeHub.singapore_math) ? res.sandbox.skillPracticeHub : null) ||
+236:       {};
+237:     if (Array.isArray(sph.singapore_math)) return sph.singapore_math.length;
+238:   }
+239:   const content = res?.content || fs.readFileSync(sphPath, 'utf8');
+240:   const matches = content.match(/"id"\s*:\s*"w\d+_p\d+"/g);
+241:   return matches ? matches.length : 0;
+242: }
+```
+  - Các dòng W35 trong `docs/agent_artifacts/round77_production_audit_raw.txt`:
+    - `L13`: `| **PROD** | **W35** | L310 | Storytelling Practice 2 (Personal Recount) | The Best Day Ever | Storytelling Practice 2 (Personal Recount) | ✅ EXACT | ❌ LỆCH | 0 Source B words defined | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |`
+    - `L49`: `   - EXACT Title: 16 / 22 tuần (W35, W36, W38, W39, W41, W43, W45, W46, W73, W74, W75, W76, W77, W78, W81, W82).`
+    - `L57`: `   - Production có 1–4/5 toán: 18 tuần (W35:2/5, W38:2/5, W39:2/5, W41:2/5, W43:2/5, W45:2/5, W46:2/5, W73:2/5, W74:2/5, W75:2/5, W76:2/5, W77:2/5, W78:2/5, W79:2/5, W80:2/5, W81:2/5, W82:2/5, W125:2/5).`
+
+- **Kết luận nguyên nhân (rút từ code trên):**
+  1. Ở **R74 & R75** (`countMathProblemsAST`): hàm kiểm tra `singapore_math.js` TRƯỚC (`if (fs.existsSync(smPath))`), mà `src/data/weeks/week_35/singapore_math.js` là placeholder stub `export default { title: "Singapore Math", problems: [] };`. Hàm `parseHubFile` (`L156`/`L177`) trả về `sandbox.__default__` (`{ title: "Singapore Math", problems: [] }`), nên nhánh `if (Array.isArray(sm?.problems)) return sm.problems.length;` (`L191`) khớp ngay `problems: []` và trả về **`0`** mà KHÔNG bao giờ fallback sang `skill_practice_hub.js`.
+  2. Ở **R76 & R77** (`extractMathCount`): hàm bỏ qua stub `singapore_math.js` và đọc thẳng `skillPracticeHubData.singapore_math` trong `skill_practice_hub.js` (độ dài `2`), nên bảng chính ở cả R76 (`L13`) và R77 (`L13`) đều ra **`2/5`**. Riêng R76 còn sót lỗi ở dòng tổng kết `L55` (vẫn liệt kê W35 vào nhóm `0/5` rỗng) và đã được sửa ở R77 (`L57`: `W35:2/5`).
+
+### A.2. CẬP NHẬT BẢNG LỊCH MOCK KHI GHI NHẬN M01 TẠM HOÃN TRONG LITE MODE
+
+2.1. Nguyên văn quy định Lite Mode (`docs/agent_artifacts/round64_mock_schedule_and_conflicts.md:L3–L15`) & đầu khóa (`docs/WEEK_PRODUCTION_SOP.md:L126–L133`):
+```markdown
+3: > **Phiên bản:** Round 64 — Quyết định Kiến trúc Sư phạm
+4: > **Quy tắc mới:** Chu kỳ cố định **đúng 4 tuần / 1 bài Mock Exam** xuyên suốt toàn bộ 156 tuần (W4, W8, W12, ... W156 = 39 tuần mock).
+5: > **Phân định Stage:**
+6: > - **Stage 1 (Tuần 1 – 72):** Định dạng **Cambridge YLE Flyers (A2)** (18 tuần mock).
+7: > - **Stage 2 (Tuần 73 – 156):** Định dạng **Cambridge B1 Preliminary / PET** (21 tuần mock).
+8: > - **Trạng thái Lite Mode (W01–W16):** Tạm hoãn (Deferred) — W4, W8, W12, W16 thuộc dải Lite Mode, không build engine lúc này.
+9: 
+10: ## I. BẢNG TỔNG HỢP TOÀN BỘ 39 TUẦN MOCK THEO LỊCH MỚI
+11: 
+12: | STT | Tuần Mock | Khung tuần kiểm tra | Stage & Định dạng | Trạng thái Blueprint hiện tại | Thuộc Mock cũ? | Đánh giá & Xung đột |
+13: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+14: | 1 | **W4** | W1–W4 | Stage 1 (Flyers A2) | `rotary_practice (false)` | ❌ Không (Mới) | Thuộc dải Lite Mode (W01–W16) — Tạm hoãn (Deferred) |
+15: | 2 | **W8** | W5–W8 | Stage 1 (Flyers A2) | `rotary_practice (false)` | ❌ Không (Mới) | Thuộc dải Lite Mode (W01–W16) — Tạm hoãn (Deferred) |
+```
+```markdown
+126: ### Danh mục 28 Tuần Mock Test:
+127: - **Starters (1 Mock)**: W16
+128: - **Movers (2 Mocks)**: W24, W32
+129: - **Flyers (8 Mocks - Nhịp 4+1)**: W37, W42, W47, W52, W57, W62, W67, W72 (Official Flyers Gate)
+130: - **B1 PET & CLIL (8 Mocks - Nhịp 4+1)**: W77, W82, W87, W92, W97, W102, W107, W112 (Official PET Gate)
+131: - **B2 FCE & Acellus (9 Mocks - Nhịp 4+1)**: W117, W122, W127, W132, W137, W142, W147, W152, W156 (Final Capstone & Graduation)
+132: 
+133: > **Note**: Giai đoạn W113–W156 mục tiêu điều chỉnh thành **B1+ Academic Reading & Structured Opinion** (thay vì B2 FCE/Acellus). Mock Test labels trên UI hiển thị là `★ B1+ Academic Assessment Mock`.
+```
+
+| STT | Vị Trí Chèn | Định Dạng / Khảo Thí | Trạng Thái Đọc Từ Đĩa | Trạng Thái Build / Lite Mode | Tham Chiếu Digital Map |
+| :---: | :--- | :--- | :--- | :--- | :--- |
+| **M01** | Chèn sau W16 | Starters (1 Mock) (SOP:L127) | Chưa có thư mục mock | TẠM HOÃN — Deferred (Lite Mode round64:L8) | MAP:L73 (★ FULL MOCK 01 (Starters)) |
+| **M02** | Chèn sau W24 | Movers (2 Mocks) (SOP:L128) | Chưa có thư mục mock | Có thể build (Ngoài Lite Mode) | MAP:L89 (★ FULL MOCK 02 (Movers)) |
+| **M03** | Chèn sau W32 | Movers (2 Mocks) (SOP:L128) | Chưa có thư mục mock | Có thể build (Ngoài Lite Mode) | MAP:L97 (★ FULL MOCK 03 (Movers)) |
+| **M04** | Chèn sau W36 | A2 Flyers | Đã merge tại src/data/weeks/week_36 (cũng có staging/week_36_mock) | Có thể build ngay | MAP:L110 (gần nhất: W37 ★ FULL MOCK 04 (Flyers)) |
+| **M05** | Chèn sau W40 | A2 Flyers | Staged tại docs/agent_artifacts/staging/week_40_mock | Có thể build ngay | MAP:L115 (gần nhất: W42 ★ FULL MOCK 05 (Flyers)) |
+| **M06** | Chèn sau W44 | A2 Flyers | Staged tại docs/agent_artifacts/staging/week_44_mock | Có thể build ngay | MAP:L120 (gần nhất: W47 ★ FULL MOCK 06 (Flyers)) |
+| **M07** | Chèn sau W48 | A2 Flyers | Staged tại docs/agent_artifacts/staging/week_48_mock | Có thể build ngay | MAP:L120 (gần nhất: W47 ★ FULL MOCK 06 (Flyers)) |
+| **M08** | Chèn sau W52 | A2 Flyers | Chưa có thư mục mock | Có thể build ngay | MAP:L125 (★ FULL MOCK 07 (Flyers)) |
+| **M09** | Chèn sau W56 | A2 Flyers | Chưa có thư mục mock | Có thể build ngay | MAP:L138 (gần nhất: W57 ★ FULL MOCK 08 (Flyers)) |
+| **M10** | Chèn sau W60 | A2 Flyers | Chưa có thư mục mock | Có thể build ngay | MAP:L143 (gần nhất: W62 ★ FULL MOCK 09 (Flyers)) |
+| **M11** | Chèn sau W64 | A2 Flyers | Chưa có thư mục mock | Có thể build ngay | MAP:L148 (gần nhất: W67 ★ FULL MOCK 10 (Flyers)) |
+| **M12** | Chèn sau W68 | A2 Flyers | Chưa có thư mục mock | Có thể build ngay | MAP:L148 (gần nhất: W67 ★ FULL MOCK 10 (Flyers)) |
+| **M13** | Chèn sau W72 | A2 Flyers (Official Gate) | Chưa có thư mục mock | Có thể build ngay | MAP:L153 (★ FULL MOCK 11 (OFFICIAL)) |
+| **M14** | Chèn sau W76 | B1 PET | Đã merge tại src/data/weeks/week_76 (cũng có staging/week_76_mock) | Có thể build ngay | MAP:L168 (gần nhất: W77 ★ FULL MOCK 12 (PET)) |
+| **M15** | Chèn sau W80 | B1 PET | Đã merge tại src/data/weeks/week_80 (cũng có staging/week_80_mock) | Có thể build ngay | MAP:L173 (gần nhất: W82 ★ FULL MOCK 13 (PET)) |
+| **M16** | Chèn sau W84 | B1 PET | Chưa có thư mục mock | Có thể build ngay | MAP:L178 (gần nhất: W87 ★ FULL MOCK 14 (PET)) |
+| **M17** | Chèn sau W88 | B1 PET | Chưa có thư mục mock | Có thể build ngay | MAP:L178 (gần nhất: W87 ★ FULL MOCK 14 (PET)) |
+| **M18** | Chèn sau W92 | B1 PET | Chưa có thư mục mock | Có thể build ngay | MAP:L183 (★ FULL MOCK 15 (PET)) |
+| **M19** | Chèn sau W96 | B1 PET | Chưa có thư mục mock | Có thể build ngay | MAP:L196 (gần nhất: W97 ★ FULL MOCK 16 (PET)) |
+| **M20** | Chèn sau W100 | B1 PET | Chưa có thư mục mock | Có thể build ngay | MAP:L201 (gần nhất: W102 ★ FULL MOCK 17 (PET)) |
+| **M21** | Chèn sau W104 | B1 PET | Chưa có thư mục mock | Có thể build ngay | MAP:L206 (gần nhất: W107 ★ FULL MOCK 18 (PET)) |
+| **M22** | Chèn sau W108 | B1 PET | Chưa có thư mục mock | Có thể build ngay | MAP:L206 (gần nhất: W107 ★ FULL MOCK 18 (PET)) |
+| **M23** | Chèn sau W112 | B1 PET (Official Gate) | Chưa có thư mục mock | Có thể build ngay | MAP:L211 (★ FULL MOCK 19 (OFFICIAL)) |
+| **M24** | Chèn sau W116 | [CHỜ OWNER] (PET theo Decision 6 vs B1+ Academic theo SOP/ARCH/MAP) | Chưa có thư mục mock | Ngoài Lite Mode — Chờ Owner chốt format | MAP:L216 (gần nhất: W117 ★ FULL MOCK (Presentation A)) |
+| **M25** | Chèn sau W120 | [CHỜ OWNER] (PET theo Decision 6 vs B1+ Academic theo SOP/ARCH/MAP) | Chưa có thư mục mock | Ngoài Lite Mode — Chờ Owner chốt format | MAP:L219 (PHASE 2 GRADUATION) |
+| **M26** | Chèn sau W124 | [CHỜ OWNER] (PET theo Decision 6 vs B1+ Academic theo SOP/ARCH/MAP) | Chưa có thư mục mock | Ngoài Lite Mode — Chờ Owner chốt format | MAP:L236 (gần nhất: W127 ★ FULL MOCK 20 (B1+)) |
+| **M27** | Chèn sau W128 | [CHỜ OWNER] (PET theo Decision 6 vs B1+ Academic theo SOP/ARCH/MAP) | Chưa có thư mục mock | Ngoài Lite Mode — Chờ Owner chốt format | MAP:L236 (gần nhất: W127 ★ FULL MOCK 20 (B1+)) |
+| **M28** | Chèn sau W132 | [CHỜ OWNER] (PET theo Decision 6 vs B1+ Academic theo SOP/ARCH/MAP) | Chưa có thư mục mock | Ngoài Lite Mode — Chờ Owner chốt format | MAP:L241 (★ FULL MOCK 21 (B1+)) |
+| **M29** | Chèn sau W136 | [CHỜ OWNER] (PET theo Decision 6 vs B1+ Academic theo SOP/ARCH/MAP) | Chưa có thư mục mock | Ngoài Lite Mode — Chờ Owner chốt format | MAP:L246 (gần nhất: W137 ★ FULL MOCK 22 (B1+)) |
+| **M30** | Chèn sau W140 | [CHỜ OWNER] (PET theo Decision 6 vs B1+ Academic theo SOP/ARCH/MAP) | Chưa có thư mục mock | Ngoài Lite Mode — Chờ Owner chốt format | MAP:L251 (gần nhất: W142 ★ FULL MOCK 23 (B1+)) |
+| **M31** | Chèn sau W144 | [CHỜ OWNER] (PET theo Decision 6 vs B1+ Academic theo SOP/ARCH/MAP) | Chưa có thư mục mock | Ngoài Lite Mode — Chờ Owner chốt format | MAP:L264 (gần nhất: W147 ★ FULL MOCK 24 (B1+)) |
+| **M32** | Chèn sau W148 | [CHỜ OWNER] (PET theo Decision 6 vs B1+ Academic theo SOP/ARCH/MAP) | Chưa có thư mục mock | Ngoài Lite Mode — Chờ Owner chốt format | MAP:L264 (gần nhất: W147 ★ FULL MOCK 24 (B1+)) |
+| **M33** | Chèn sau W152 | [CHỜ OWNER] (PET theo Decision 6 vs B1+ Academic theo SOP/ARCH/MAP) | Chưa có thư mục mock | Ngoài Lite Mode — Chờ Owner chốt format | MAP:L269 (★ FULL MOCK 25 (B1+)) |
+| **M34** | Chèn sau W156 | [CHỜ OWNER] (PET theo Decision 6 vs B1+ Academic theo SOP/ARCH/MAP) | Chưa có thư mục mock | Ngoài Lite Mode — Chờ Owner chốt format | MAP:L273 (GRADUATION CEREMONY & FINAL SHOWCASE) |
+
+- **Tổng kết số liệu tính từ danh sách trên:**
+  - Tổng số bài mock theo quy hoạch toàn khóa: **34 bài** (3 đầu khóa + 31 chu kỳ `32 + 4n`).
+  - Số bài mock tạm hoãn trong Lite Mode (`W01–W16`, `round64:L8`): **1 bài** (M01 sau W16).
+  - Số bài mock thuộc phạm vi build ngoài Lite Mode: **33 bài** (22 bài M02–M23 đã chốt định dạng + 11 bài M24–M34 đang giữ nhãn `[CHỜ OWNER]`).
+  - Tổng tuần lịch toàn khóa: `156 + 34 = 190 tuần` (khi M01 hoãn trong Lite Mode hiện tại còn `156 + 33 = 189 tuần` khả build ngay theo lịch).
+
+### A.3. XÁC NHẬN `src/config/cambridgeExamStandards.js` & NGUỒN SPEC THỰC TẾ CỦA W76, W80 ĐÃ MERGE
+
+3.1. Kiểm tra `src/config/cambridgeExamStandards.js` (189 dòng):
+- Các khóa trong `CAMBRIDGE_EXAM_STANDARDS`: **`["STARTERS","MOVERS","FLYERS"]`**
+- Có định nghĩa `PET` hay `Preliminary` trong file không? **KHÔNG — Chính thức: chưa có spec PET**
+- Nguyên văn `getExamStandard(weekNumber)` (`L178–L189`):
+```js
+178: export function getExamStandard(weekNumberOrLevel) {
+179:   if (typeof weekNumberOrLevel === 'string') {
+180:     return CAMBRIDGE_EXAM_STANDARDS[weekNumberOrLevel.toUpperCase()] || null;
+181:   }
+182:   const w = parseInt(weekNumberOrLevel, 10);
+183:   if (isNaN(w) || w <= 0) return null;
+184:   if (w <= 16) return CAMBRIDGE_EXAM_STANDARDS.STARTERS;
+185:   if (w <= 32) return CAMBRIDGE_EXAM_STANDARDS.MOVERS;
+186:   if (w <= 72) return CAMBRIDGE_EXAM_STANDARDS.FLYERS;
+187:   return null;
+188: }
+189: 
+```
+
+3.2. Tài liệu / script thực tế đã dùng để sinh & kiểm duyệt 2 tuần PET đã merge (`week_76`, `week_80`):
+
+- **`src/data/weeks/week_76/blueprint.json`** (309 dòng):
+  - `week`: 76 | `mockFormat`: `pet` (L272) | `cefr_level`: `B1 PET`
+  - `papers` (L287): `{"reading":{"parts":6,"total_items":32,"time_minutes":45},"writing":{"parts":2,"total_tasks":2,"time_minutes":45},"listening":{"parts":4,"total_items":25,"time_minutes":35},"speaking":{"parts":4,"total_tasks":4,"time_minutes":12}}`
+  - `tested_skills` (L230): `["listening_p1","listening_p2","listening_p3","listening_p4","listening_p5","reading_p1","reading_p2","reading_p3","reading_p4","reading_p5","reading_p6","writing_p7","speaking_p1","speaking_p2","speaking_p3","speaking_p4"]` *(lưu ý: vẫn mang khóa Flyers cũ nếu là copy)*
+  - `synthesis_summary` (L279): `{"w73_theme":"The Water Cycle (Advanced) / Volume","w74_theme":"Food Chains / Complex Charts","w75_theme":"Ancient Egypt / Timelines","w76_theme":"Explorers / Map Scales","grounded_vocabulary_count":20,"grounded_pct":100}`
+
+- **`src/data/weeks/week_76/provenance.json`** (14 dòng):
+```json
+1: {
+2:   "week": 76,
+3:   "generator": "scripts/generate_pet_mock_content.mjs",
+4:   "format": "pet",
+5:   "generated_at": "2026-11-09T08:33:31.714Z",
+6:   "cefr_standard": "Stage 2: Cambridge Lower Secondary & B1 Preliminary",
+7:   "staged_path": "docs/agent_artifacts/staging/week_76_mock",
+8:   "invariants": [
+9:     "Freeze Defense: W33 & W34 are untouched",
+10:     "Cumulative Sourcing: Grounded in W73, W74, W75, W76",
+11:     "PET Exam Architecture: Reading (6 parts/32 items), Writing (2 tasks), Listening (4 parts/25 items), Speaking (4 parts)",
+12:     "UI Contract: speaking_hub conforms to table_a and table_b schema"
+13:   ]
+14: }
+```
+
+- **`src/data/weeks/week_76/source_grounding.json`** (59 dòng):
+  - Keys: `["week","cumulative_block","vocabulary_grounding_summary","total_synthesis_words","cumulative_grounding_pct","exam_paper_grounding"]` (trích L1–L15):
+```json
+1: {
+2:   "week": 76,
+3:   "cumulative_block": [
+4:     73,
+5:     74,
+6:     75,
+7:     76
+8:   ],
+9:   "vocabulary_grounding_summary": {
+10:     "w73_source_words": [
+11:       "evaporation",
+12:       "precipitation",
+13:       "reservoir",
+14:       "moisture",
+15:       "atmosphere"
+```
+
+- **`src/data/weeks/week_80/blueprint.json`** (126 dòng):
+  - `week`: 80 | `mockFormat`: `pet` (L89) | `cefr_level`: `B1 PET`
+  - `papers` (L104): `{"reading":{"parts":6,"total_items":32,"time_minutes":45},"writing":{"parts":2,"total_tasks":2,"time_minutes":45},"listening":{"parts":4,"total_items":25,"time_minutes":35},"speaking":{"parts":4,"total_tasks":4,"time_minutes":12}}`
+  - `tested_skills` (L47): `["listening_p1","listening_p2","listening_p3","listening_p4","listening_p5","reading_p1","reading_p2","reading_p3","reading_p4","reading_p5","reading_p6","writing_p7","speaking_p1","speaking_p2","speaking_p3","speaking_p4"]` *(lưu ý: vẫn mang khóa Flyers cũ nếu là copy)*
+  - `synthesis_summary` (L96): `{"w73_theme":"The Water Cycle (Advanced) / Volume","w74_theme":"Food Chains / Complex Charts","w75_theme":"Ancient Egypt / Timelines","w76_theme":"Explorers / Map Scales","grounded_vocabulary_count":20,"grounded_pct":100}`
+
+- **`src/data/weeks/week_80/provenance.json`** (14 dòng):
+```json
+1: {
+2:   "week": 80,
+3:   "generator": "scripts/generate_pet_mock_content.mjs",
+4:   "format": "pet",
+5:   "generated_at": "2026-11-09T09:36:54.029Z",
+6:   "cefr_standard": "Stage 2: Cambridge Lower Secondary & B1 Preliminary",
+7:   "staged_path": "docs/agent_artifacts/staging/week_80_mock",
+8:   "invariants": [
+9:     "Freeze Defense: W33 & W34 are untouched",
+10:     "Cumulative Sourcing: Grounded in W73, W74, W75, W80",
+11:     "PET Exam Architecture: Reading (6 parts/32 items), Writing (2 tasks), Listening (4 parts/25 items), Speaking (4 parts)",
+12:     "UI Contract: speaking_hub conforms to table_a and table_b schema"
+13:   ]
+14: }
+```
+
+- **`src/data/weeks/week_80/source_grounding.json`** (59 dòng):
+  - Keys: `["week","cumulative_block","vocabulary_grounding_summary","total_synthesis_words","cumulative_grounding_pct","exam_paper_grounding"]` (trích L1–L15):
+```json
+1: {
+2:   "week": 80,
+3:   "cumulative_block": [
+4:     77,
+5:     78,
+6:     79,
+7:     80
+8:   ],
+9:   "vocabulary_grounding_summary": {
+10:     "w77_source_words": [
+11:       "landmark",
+12:       "architecture",
+13:       "monument",
+14:       "structure",
+15:       "historic"
+```
+
+- **`scripts/generate_pet_mock_content.mjs`** (914 dòng):
+```text
+4:  * ENGQUEST3K — PILOT MOCK EXAM GENERATOR (WEEK 76 — STAGE 2 B1 PRELIMINARY / PET)
+6:  * Generates full authentic Cambridge B1 Preliminary (PET) Mock Exam:
+13:  * Output: docs/agent_artifacts/staging/week_76_mock/
+25: const OUT_DIR = path.join(ROOT_DIR, 'docs/agent_artifacts/staging/week_76_mock');
+29: console.log('🚀 GENERATING PILOT MOCK EXAM: WEEK 76 (B1 PRELIMINARY / PET FORMAT)');
+71:  * STAGED MOCK EXAM DELIVERABLE: Listening Paper (All 4 Parts / 25 Items)
+157:  * STAGED MOCK EXAM DELIVERABLE: Reading Paper (All 6 Parts / 32 Items)
+396:  * STAGED MOCK EXAM DELIVERABLE: Writing Paper (All 2 Parts / 2 Extended Tasks)
+482:  * STAGED MOCK EXAM DELIVERABLE: Speaking Paper (All 4 Parts)
+693:  * STAGED MOCK EXAM DELIVERABLE: Skill Practice Hub (B1 PET Exam Strategies)
+821:   papers: {
+822:     reading: { parts: 6, total_items: 32, time_minutes: 45 },
+823:     writing: { parts: 2, total_tasks: 2, time_minutes: 45 },
+824:     listening: { parts: 4, total_items: 25, time_minutes: 35 },
+825:     speaking: { parts: 4, total_tasks: 4, time_minutes: 12 }
+835:   staged_path: "docs/agent_artifacts/staging/week_76_mock",
+876:  * STAGED MOCK EXAM DELIVERABLE: Target Vocabulary & SRS Metadata
+```
+
+- **`scripts/generate_pet_mock_w80.mjs`** (914 dòng):
+```text
+12:  * Cumulative Sourcing: Grounded in W73, W74, W75, W80 blueprints & vocabulary pool.
+13:  * Output: docs/agent_artifacts/staging/week_80_mock/
+25: const OUT_DIR = path.join(ROOT_DIR, 'docs/agent_artifacts/staging/week_80_mock');
+33: // 1. VOCABULARY POOL & 4-WEEK SOURCING (W73, W74, W75, W80)
+36: const W80_SYNTHESIS_VOCAB = [
+712:       id: "w76_p1",
+733:       id: "w76_p2",
+814:     w73_theme: "The Water Cycle (Advanced) / Volume",
+815:     w74_theme: "Food Chains / Complex Charts",
+816:     w75_theme: "Ancient Egypt / Timelines",
+817:     w76_theme: "Explorers / Map Scales",
+821:   papers: {
+822:     reading: { parts: 6, total_items: 32, time_minutes: 45 },
+823:     writing: { parts: 2, total_tasks: 2, time_minutes: 45 },
+824:     listening: { parts: 4, total_items: 25, time_minutes: 35 },
+825:     speaking: { parts: 4, total_tasks: 4, time_minutes: 12 }
+835:   staged_path: "docs/agent_artifacts/staging/week_80_mock",
+838:     "Cumulative Sourcing: Grounded in W73, W74, W75, W80",
+848:     w77_source_words: ["landmark", "architecture", "monument", "structure", "historic"],
+849:     w78_source_words: ["tradition", "culture", "holiday", "festival", "celebrate"],
+850:     w79_source_words: ["exploration", "restoration", "planet", "atmosphere", "satellite"],
+851:     w80_source_words: ["consumer", "market", "produce", "profit", "resource"]
+857:     reading_p2: "Matching student profiles to courses in polar ice (W73), rainforest ecology (W74), Egyptian archaeology (W75), and ocean navigation (W80)",
+882: export const vocab = ${JSON.stringify(W80_SYNTHESIS_VOCAB, null, 2)};
+```
+
+- **`docs/agent_artifacts/round64_mock_exam_generator_proposal.md`** (55 dòng):
+```text
+3: > **Mục tiêu:** Thiết lập kiến trúc động cơ sinh đề thi mô phỏng (Mock Exam Generator) chuẩn hóa theo định dạng khảo thí quốc tế Cambridge Assessment English (YLE Flyers cho Stage 1 và B1 Preliminary / PET cho Stage 2), vận hành theo chu kỳ 4 tuần đóng kín.
+6: ## I. SO SÁNH CẤU TRÚC ĐỀ THI: STAGE 1 (FLYERS) VS STAGE 2 (PET)
+8: | Tiêu chí | Stage 1 (Tuần <= 72): Cambridge A2 Flyers | Stage 2 (Tuần >= 73): Cambridge B1 Preliminary (PET) |
+11: | **Cấu trúc Bài thi** | 3 Bài thi (Papers): Listening, Reading & Writing, Speaking | 4 Bài thi (Papers): Reading, Writing, Listening, Speaking |
+12: | **Bài thi Listening** | **5 Parts (25 câu hỏi)**<br>• L1: Vẽ đường nối nhân vật trong tranh lớn (Pin coordinates)<br>• L2: Điền thông tin vào phiếu/ghi chú (Tên, tuổi, số, ngày)<br>• L3: Nối tranh đồ vật/ngày với các ký tự A–H<br>• L4: Trắc nghiệm 3 lựa chọn với 3 hình ảnh minh họa<br>• L5: Nghe, tô màu vào đồ vật và viết 1 từ | **4 Parts (25 câu hỏi)**<br>• L1: 7 đoạn hội thoại ngắn có tranh trắc nghiệm A/B/C<br>• L2: 6 đoạn hội thoại ngắn về cảm xúc/quan điểm A/B/C<br>• L3: Điền 6 thông tin chính xác vào văn bản ghi chú<br>• L4: Phỏng vấn/đối thoại dài với 6 câu hỏi trắc nghiệm |
+13: | **Bài thi Reading & Writing** | **7 Parts (44 câu hỏi)**<br>• R1: Nối 10 định nghĩa với 15 từ vựng ứng viên<br>• R2: Hoàn thành đoạn hội thoại 5 lượt (chọn đáp án A–H)<br>• R3: Điền từ vào câu chuyện (6 chỗ trống) + Đặt tiêu đề<br>• R4: Điền từ ngữ pháp vào văn bản CLIL khoa học (10 câu)<br>• R5: Đọc hiểu truyện và hoàn thành câu (1–4 từ, 7 câu)<br>• R6: Điền từ tự do Open Cloze (5 chỗ trống không gợi ý)<br>• W7: Viết câu chuyện 3 tranh (20–30 từ) | **Reading: 6 Parts (32 câu hỏi)**<br>• R1: 5 biển báo/tin nhắn đời thường trắc nghiệm<br>• R2: Ghép 5 hồ sơ người dùng với 8 đoạn mô tả dịch vụ<br>• R3: Đọc hiểu văn bản dài (5 câu hỏi trắc nghiệm 4 đáp án)<br>• R4: Điền 5 câu văn A–H vào khoảng trống văn bản<br>• R5: Trắc nghiệm từ vựng & Collocation (6 câu A/B/C/D)<br>• R6: Điền từ ngữ pháp Open Cloze (6 chỗ trống)<br><br>**Writing: 2 Parts**<br>• W1: Viết Email phản hồi (~100 từ) theo 4 gợi ý<br>• W2: Viết Bài báo (Article) hoặc Kể chuyện (~100 từ) |
+14: | **Bài thi Speaking** | **4 Parts (Solo-AI Partner "Nova")**<br>• S1: Tìm điểm khác biệt giữa 2 bức tranh (Spot Differences)<br>• S2: Trao đổi thông tin (Info Exchange Card A/Card B)<br>• S3: Kể câu chuyện qua chuỗi 5 tranh liên hoàn<br>• S4: Trả lời 4 câu hỏi phỏng vấn cá nhân | **4 Parts (Solo-AI Partner "Nova")**<br>• S1: Phỏng vấn tương tác cá nhân (2–3 phút)<br>• S2: Thảo luận giải quyết tình huống giả lập có tranh gợi ý<br>• S3: Độc thoại mô tả bức ảnh chụp chi tiết (1 phút)<br>• S4: Thảo luận sâu về chủ đề liên quan đến bức ảnh |
+20: 2. **Ngân hàng Từ vựng Tích lũy (Vocabulary Pool):** Thu thập toàn bộ 80 từ vựng mục tiêu từ 4 blueprints để làm dữ liệu nguồn cho Reading Part 1 (Definition Matching), Listening Part 2 (Spelling & Specific Nouns), và Cloze Passages.
+21: 3. **Ngân hàng Ngữ pháp Tích lũy (Grammar Matrix):** Hệ thống hóa 4 cấu trúc ngữ pháp trọng tâm để thiết kế các câu hỏi trắc nghiệm (Reading Part 4) và mẫu đối thoại Speaking Part 2.
+22: 4. **Đồng bộ Sư phạm CLIL:** Các bài đọc hiểu dài (Reading Part 5 & Part 4) tích hợp lại các hiện tượng khoa học/xã hội đã học trong 4 tuần để tạo bối cảnh đọc thực tế.
+27: - **Mock Gate 1 (Cambridge Completeness):** Đầy đủ 100% các phần thi theo quy chuẩn Cambridge (Flyers: 16 parts; PET: 16 parts). Không chấp nhận thiếu sót bất kỳ part nào.
+28: - **Mock Gate 2 (Exact Item Count Invariant):** Đúng chính xác số lượng câu hỏi quy định (Flyers: 25L, 44RW, 4S; PET: 25L, 32R, 2W, 4S).
+30: - **Mock Gate 4 (Strict CEFR Lexical Guard):** Stage 1 tuyệt đối không chứa từ vượt cấp B1/B2; Stage 2 tuyệt đối không chứa từ vượt cấp B2/C1.
+```
+
+- **`scripts/test_mock_gates.mjs`** (438 dòng):
+```text
+2:  * scripts/test_mock_gates.mjs
+7:  *   - Stage 2: Cambridge B1 Preliminary / PET (Week 76)
+38: const isPET = blueprint.mockFormat === 'pet' || targetWeek > 72;
+39: const examFormatName = isPET ? 'Cambridge B1 Preliminary (PET)' : 'Cambridge A2 Flyers';
+61: if (isPET) {
+129: if (isPET) {
+206: if (isPET) {
+242:   gate: `Mock Gate 4: Strict CEFR Lexical Guard (${isPET ? 'Stage 2 B1 PET' : 'Stage 1 A2 Flyers'})`,
+252: if (isPET) {
+280: if (isPET) {
+323:   details: `100% of objective items have verified unique answer keys; writing rubrics fully specified (${isPET ? '20-mark Cambridge B1 scales' : '5-mark Flyers rubric'})`
+406: if (isPET) {
+420: let logFileName = `round68_mock_gates_w${targetWeek}.log`;
+425: fs.writeFileSync(path.join(MOCK_DIR, 'mock_gates_validation.log'), logContent, 'utf8');
+```
+
+- **Kết luận Task A.3 (tính trực tiếp từ file):** `src/config/cambridgeExamStandards.js` CHỈ có các khóa `["STARTERS","MOVERS","FLYERS"]` (`getExamStandard(w)` trả về `null` cho `w > 72`) → **chưa có spec PET chính thức**. Hai tuần `week_76` và `week_80` đã merge sử dụng spec ad-hoc viết trực tiếp trong `scripts/generate_pet_mock_content.mjs` / `scripts/generate_pet_mock_w80.mjs`, `blueprint.json` cục bộ (`papers` = `{"reading":{"parts":6,"total_items":32,"time_minutes":45},"writing":{"parts":2,"total_tasks":2,"time_minutes":45},"listening":{"parts":4,"total_items":25,"time_minutes":35},"speaking":{"parts":4,"total_tasks":4,"time_minutes":12}}`), `docs/agent_artifacts/round64_mock_exam_generator_proposal.md` và `scripts/test_mock_gates.mjs`. Riêng `week_80` còn có sai lệch nội bộ: `source_grounding.json` ghi `cumulative_block=[77,78,79,80]`, trong khi `week_80/blueprint.json` vẫn giữ `synthesis_summary={"w73_theme":"The Water Cycle (Advanced) / Volume","w74_theme":"Food Chains / Complex Charts","w75_theme":"Ancient Egypt / Timelines","w76_theme":"Explorers / Map Scales","grounded_vocabulary_count":20,"grounded_pct":100}` và `tested_skills` vẫn chứa các khóa Flyers (`listening_p5, writing_p7`).

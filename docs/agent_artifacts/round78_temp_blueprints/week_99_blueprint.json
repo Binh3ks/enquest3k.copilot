@@ -1,0 +1,56 @@
+{
+  "week": 99,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Good Citizen / Math: Pie Charts",
+  "title_en": "Good Citizen / Math: Pie Charts",
+  "cefr_level": "B1+ PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "My Duty",
+    "focus": "Explain responsibilities of a good citizen",
+    "source": "Source B L778"
+  },
+  "math_focus": {
+    "topic": "Pie Charts",
+    "outcome": "Read a pie chart and understand proportions",
+    "vocab": [
+      "circle",
+      "section",
+      "slice",
+      "whole",
+      "half",
+      "represent"
+    ],
+    "source": "Source B L783"
+  },
+  "grammar_focus": {
+    "structure": "Gerunds as Subjects: \"Helping is important.\", \"Voting is a duty.\"",
+    "outcome": "Explain responsibilities of a good citizen",
+    "source": "Source B L781"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "responsibility",
+      "duty",
+      "help",
+      "volunteer",
+      "community",
+      "respect"
+    ],
+    "total_syllabus_words": 6,
+    "supplement_needed": 14,
+    "source": "Source B L782"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 777,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 198
+  }
+}

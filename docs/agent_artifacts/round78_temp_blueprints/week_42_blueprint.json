@@ -1,0 +1,51 @@
+{
+  "week": 42,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "The Water Journey (Cycle)",
+  "title_en": "The Water Journey (Cycle)",
+  "cefr_level": "A2 Flyers",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "The Water Cycle Story",
+    "focus": "Sequence nature's events",
+    "source": "Source B L354"
+  },
+  "math_focus": {
+    "topic": null,
+    "outcome": null,
+    "vocab": [],
+    "source": "SUPPLEMENT (Source B has 0 Math)"
+  },
+  "grammar_focus": {
+    "structure": "Review Sequencing + Present Tense",
+    "outcome": "Sequence nature's events",
+    "source": "Source B L357"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "sun",
+      "cloud",
+      "rain",
+      "river",
+      "ocean",
+      "evaporation",
+      "go up",
+      "come down"
+    ],
+    "total_syllabus_words": 8,
+    "supplement_needed": 12,
+    "source": "Source B L358"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 353,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 115
+  }
+}

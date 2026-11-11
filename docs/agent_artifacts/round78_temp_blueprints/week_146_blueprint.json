@@ -1,0 +1,55 @@
+{
+  "week": 146,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Synthesizing Information",
+  "title_en": "Synthesizing Information",
+  "cefr_level": "B1+ Academic",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Combining sources",
+    "focus": "Write a paragraph combining facts from 2 different articles",
+    "source": "Source B L1119"
+  },
+  "math_focus": {
+    "topic": "Data Analysis (Mode/Range)",
+    "outcome": "Identify the mode and range in a set of numbers",
+    "vocab": [
+      "mode",
+      "range",
+      "most frequent",
+      "difference",
+      "spread"
+    ],
+    "source": "Source B L1124"
+  },
+  "grammar_focus": {
+    "structure": "Connectors of Comparison: \"Similarly\", \"Likewise\", \"In the same way\"",
+    "outcome": "Write a paragraph combining facts from 2 different articles",
+    "source": "Source B L1122"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "combine",
+      "merge",
+      "both",
+      "similar",
+      "agree",
+      "disagree"
+    ],
+    "total_syllabus_words": 6,
+    "supplement_needed": 14,
+    "source": "Source B L1123"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 1118,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 263
+  }
+}

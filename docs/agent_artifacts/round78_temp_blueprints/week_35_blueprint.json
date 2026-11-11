@@ -1,0 +1,42 @@
+{
+  "week": 35,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Storytelling Practice 2 (Personal Recount)",
+  "title_en": "Storytelling Practice 2 (Personal Recount)",
+  "cefr_level": "A2 Flyers",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "The Best Day Ever",
+    "focus": "Write a short paragraph (5-6 sentences) about a personal memory",
+    "source": "Source B L311"
+  },
+  "math_focus": {
+    "topic": null,
+    "outcome": null,
+    "vocab": [],
+    "source": "SUPPLEMENT (Source B has 0 Math)"
+  },
+  "grammar_focus": {
+    "structure": "Past Simple + Adjectives",
+    "outcome": "Write a short paragraph (5-6 sentences) about a personal memory",
+    "source": "Source B L314"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [],
+    "total_syllabus_words": 0,
+    "supplement_needed": 20,
+    "source": "SUPPLEMENT (0 words in Source B)"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 310,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 100
+  }
+}

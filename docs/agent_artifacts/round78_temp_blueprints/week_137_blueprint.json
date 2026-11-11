@@ -1,0 +1,56 @@
+{
+  "week": 137,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Editing & Polishing (Word Choice)",
+  "title_en": "Editing & Polishing (Word Choice)",
+  "cefr_level": "B1+ Academic",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Enhancing Vocabulary",
+    "focus": "Replace weak verbs/adjectives with stronger ones (e.g., \"bad\" -> \"harmful\", \"good\" -> \"beneficial\")",
+    "source": "Source B L1050"
+  },
+  "math_focus": {
+    "topic": "Geometry Word Problems",
+    "outcome": "Solve real-world problems involving area/perimeter (e.g., fencing a garden)",
+    "vocab": [
+      "fence",
+      "carpet",
+      "cover",
+      "around",
+      "border",
+      "square meters"
+    ],
+    "source": "Source B L1055"
+  },
+  "grammar_focus": {
+    "structure": "Synonyms & Antonyms usage",
+    "outcome": "Replace weak verbs/adjectives with stronger ones (e.g., \"bad\" -> \"harmful\", \"good\" -> \"beneficial\")",
+    "source": "Source B L1053"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "beneficial",
+      "harmful",
+      "essential",
+      "detrimental",
+      "vital",
+      "significant"
+    ],
+    "total_syllabus_words": 6,
+    "supplement_needed": 14,
+    "source": "Source B L1054"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 1049,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 246
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "week": 83,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Geography/ELA: Landforms / Math: Decimals Intro",
+  "title_en": "Geography/ELA: Landforms / Math: Decimals Intro",
+  "cefr_level": "B1 PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "The Face of the Earth",
+    "focus": "Write definitions of landforms",
+    "source": "Source B L657"
+  },
+  "math_focus": {
+    "topic": "Parts of a Whole",
+    "outcome": "Understand tenths as decimals (0.1)",
+    "vocab": [
+      "decimal",
+      "point",
+      "tenth",
+      "whole",
+      "part",
+      "fraction"
+    ],
+    "source": "Source B L662"
+  },
+  "grammar_focus": {
+    "structure": "Relative Clauses (Defining): \"A mountain is a landform that is high.\"",
+    "outcome": "Write definitions of landforms",
+    "source": "Source B L660"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "mountain",
+      "valley",
+      "plain",
+      "island",
+      "definition",
+      "feature",
+      "land",
+      "water"
+    ],
+    "total_syllabus_words": 8,
+    "supplement_needed": 12,
+    "source": "Source B L661"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 656,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 174
+  }
+}

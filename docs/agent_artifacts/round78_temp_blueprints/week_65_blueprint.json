@@ -1,0 +1,42 @@
+{
+  "week": 65,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Review & Consolidation (Cycle 2.1)",
+  "title_en": "Review & Consolidation (Cycle 2.1)",
+  "cefr_level": "A2 Flyers",
+  "week_type": "review_consolidation",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Logic & Data Review",
+    "focus": "Creating a class newsletter with Data and Letters",
+    "source": "Source B L512"
+  },
+  "math_focus": {
+    "topic": "Mixed Review (Operations & Graphs)",
+    "outcome": null,
+    "vocab": [],
+    "source": "Source B L515"
+  },
+  "grammar_focus": {
+    "structure": null,
+    "outcome": "Creating a class newsletter with Data and Letters",
+    "source": "SUPPLEMENT (Source B silent)"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [],
+    "total_syllabus_words": 0,
+    "supplement_needed": 20,
+    "source": "SUPPLEMENT (0 words in Source B)"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 511,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 146
+  }
+}

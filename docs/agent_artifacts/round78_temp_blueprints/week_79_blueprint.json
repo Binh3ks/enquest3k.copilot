@@ -1,0 +1,53 @@
+{
+  "week": 79,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Review & Micro-Debate 2: Space Exploration vs. Earth Fix",
+  "title_en": "Review & Micro-Debate 2: Space Exploration vs. Earth Fix",
+  "cefr_level": "B1 PET",
+  "week_type": "review_cycle",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Space Exploration vs. Earth Fix",
+    "focus": "Micro-Debate",
+    "source": "Source B L633"
+  },
+  "math_focus": {
+    "topic": null,
+    "outcome": null,
+    "vocab": [],
+    "source": "SUPPLEMENT (Source B has 0 Math)"
+  },
+  "grammar_focus": {
+    "structure": "Passive Voice, Conditionals, Comparatives",
+    "outcome": "Micro-Debate",
+    "source": "Source B L636"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "space",
+      "earth",
+      "money",
+      "spend",
+      "fix",
+      "problem",
+      "important"
+    ],
+    "total_syllabus_words": 7,
+    "supplement_needed": 13,
+    "source": "Source B L637"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 632,
+    "source_b_block_origin": "multi_week_cycle",
+    "source_b_range_span": [
+      79,
+      80
+    ],
+    "digital_map_line": 170
+  }
+}

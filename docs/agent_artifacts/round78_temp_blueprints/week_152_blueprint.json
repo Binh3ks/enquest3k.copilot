@@ -1,0 +1,48 @@
+{
+  "week": 152,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Genre Review: Narrative",
+  "title_en": "Genre Review: Narrative",
+  "cefr_level": "B1+ Academic",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Writing a story under time constraints",
+    "focus": "Write a complete story in 45 minutes",
+    "source": "Source B L1167"
+  },
+  "math_focus": {
+    "topic": "Pre-Algebra (Patterns)",
+    "outcome": "Find the nth term in a simple sequence (e.g., 2, 4, 6... 2n)",
+    "vocab": [
+      "sequence",
+      "term",
+      "rule",
+      "nth term",
+      "formula"
+    ],
+    "source": "Source B L1171"
+  },
+  "grammar_focus": {
+    "structure": "Narrative Tenses (Past Simple, Continuous, Perfect)",
+    "outcome": "Write a complete story in 45 minutes",
+    "source": "Source B L1170"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [],
+    "total_syllabus_words": 0,
+    "supplement_needed": 20,
+    "source": "SUPPLEMENT (0 words in Source B)"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 1166,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 269
+  }
+}

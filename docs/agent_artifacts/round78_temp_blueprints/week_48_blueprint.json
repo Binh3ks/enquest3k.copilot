@@ -1,0 +1,50 @@
+{
+  "week": 48,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Measuring Up (Length)",
+  "title_en": "Measuring Up (Length)",
+  "cefr_level": "A2 Flyers",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Who is taller?",
+    "focus": "Measure objects using rulers and state length",
+    "source": "Source B L392"
+  },
+  "math_focus": {
+    "topic": null,
+    "outcome": null,
+    "vocab": [],
+    "source": "SUPPLEMENT (Source B has 0 Math)"
+  },
+  "grammar_focus": {
+    "structure": "It is [number] centimeters long/tall",
+    "outcome": "Measure objects using rulers and state length",
+    "source": "Source B L395"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "long",
+      "short",
+      "tall",
+      "measure",
+      "ruler",
+      "centimeter",
+      "meter"
+    ],
+    "total_syllabus_words": 7,
+    "supplement_needed": 13,
+    "source": "Source B L396"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 391,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 121
+  }
+}

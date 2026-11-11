@@ -1,0 +1,57 @@
+{
+  "week": 90,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Physics (Forces) / Math: Averages (Mean)",
+  "title_en": "Physics (Forces) / Math: Averages (Mean)",
+  "cefr_level": "B1+ PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Push & Pull",
+    "focus": "Explain Newton's laws simply using conditionals",
+    "source": "Source B L722"
+  },
+  "math_focus": {
+    "topic": "Mean",
+    "outcome": "Calculate the average of a set of numbers",
+    "vocab": [
+      "average",
+      "mean",
+      "total",
+      "divide",
+      "sum"
+    ],
+    "source": "Source B L727"
+  },
+  "grammar_focus": {
+    "structure": "Conditional Type 1 (Cause/Effect): \"If you push it, it will move.\"",
+    "outcome": "Explain Newton's laws simply using conditionals",
+    "source": "Source B L725"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "force",
+      "gravity",
+      "friction",
+      "move",
+      "stop",
+      "speed",
+      "motion",
+      "pull"
+    ],
+    "total_syllabus_words": 8,
+    "supplement_needed": 12,
+    "source": "Source B L726"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 721,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 181
+  }
+}

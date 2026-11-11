@@ -1,0 +1,56 @@
+{
+  "week": 92,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Community Helpers / Math: Surveys",
+  "title_en": "Community Helpers / Math: Surveys",
+  "cefr_level": "B1+ PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Jobs in Depth",
+    "focus": "Write an interview report about a job",
+    "source": "Source B L740"
+  },
+  "math_focus": {
+    "topic": "Conducting Surveys",
+    "outcome": "Record tally marks and convert to frequency",
+    "vocab": [
+      "tally",
+      "frequency",
+      "count",
+      "interview",
+      "data"
+    ],
+    "source": "Source B L745"
+  },
+  "grammar_focus": {
+    "structure": "Relative Clauses (Who): \"A doctor is someone who cures people.\"",
+    "outcome": "Write an interview report about a job",
+    "source": "Source B L743"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "career",
+      "job",
+      "help",
+      "service",
+      "community",
+      "salary",
+      "skill"
+    ],
+    "total_syllabus_words": 7,
+    "supplement_needed": 13,
+    "source": "Source B L744"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 739,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 183
+  }
+}

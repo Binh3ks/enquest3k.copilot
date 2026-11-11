@@ -1,0 +1,49 @@
+{
+  "week": 30,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "The Picnic (Irregular Verbs 2: Consumption)",
+  "title_en": "The Picnic (Irregular Verbs 2: Consumption)",
+  "cefr_level": "A1 Movers",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Eating and drinking at a picnic",
+    "focus": "Describe what was eaten/drunk",
+    "source": "Source B L285"
+  },
+  "math_focus": {
+    "topic": null,
+    "outcome": null,
+    "vocab": [],
+    "source": "SUPPLEMENT (Source B has 0 Math)"
+  },
+  "grammar_focus": {
+    "structure": "Eat -> Ate, Drink -> Drank, Buy -> Bought, Give -> Gave",
+    "outcome": "Describe what was eaten/drunk",
+    "source": "Source B L287"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "picnic",
+      "basket",
+      "apple",
+      "juice",
+      "sandwich",
+      "share"
+    ],
+    "total_syllabus_words": 6,
+    "supplement_needed": 14,
+    "source": "Source B L288"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 284,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 95
+  }
+}

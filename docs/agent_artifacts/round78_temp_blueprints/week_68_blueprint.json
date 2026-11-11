@@ -1,0 +1,56 @@
+{
+  "week": 68,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "ELA: Strong Reasons / Math: Bar Graphs",
+  "title_en": "ELA: Strong Reasons / Math: Bar Graphs",
+  "cefr_level": "A2 Flyers",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Supporting the Argument",
+    "focus": "Write the \"Reason\" and \"Example\" sentences for an OREO paragraph",
+    "source": "Source B L534"
+  },
+  "math_focus": {
+    "topic": "Scaled Bar Graphs",
+    "outcome": "Read graphs where 1 unit = 2, 5, or 10 items",
+    "vocab": [
+      "scale",
+      "axis",
+      "bar",
+      "height",
+      "value",
+      "skip counting"
+    ],
+    "source": "Source B L539"
+  },
+  "grammar_focus": {
+    "structure": "Connectors of Addition: \"Furthermore\", \"In addition\", \"For example\"",
+    "outcome": "Write the \"Reason\" and \"Example\" sentences for an OREO paragraph",
+    "source": "Source B L537"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "support",
+      "detail",
+      "fact",
+      "true",
+      "prove",
+      "clear"
+    ],
+    "total_syllabus_words": 6,
+    "supplement_needed": 14,
+    "source": "Source B L538"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 533,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 149
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "week": 22,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "The Time Detective (Questions)",
+  "title_en": "The Time Detective (Questions)",
+  "cefr_level": "A1 Movers",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Interrogating a suspect",
+    "focus": "Ask and answer Yes/No questions about the past",
+    "source": "Source B L240"
+  },
+  "math_focus": {
+    "topic": null,
+    "outcome": null,
+    "vocab": [],
+    "source": "SUPPLEMENT (Source B has 0 Math)"
+  },
+  "grammar_focus": {
+    "structure": "\"Did you play...?\", \"Yes, I did / No, I didn't\"",
+    "outcome": "Ask and answer Yes/No questions about the past",
+    "source": "Source B L242"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "yesterday",
+      "last night",
+      "last week"
+    ],
+    "total_syllabus_words": 3,
+    "supplement_needed": 17,
+    "source": "Source B L243"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 239,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 87
+  }
+}

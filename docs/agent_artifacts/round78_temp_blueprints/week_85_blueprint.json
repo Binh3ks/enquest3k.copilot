@@ -1,0 +1,56 @@
+{
+  "week": 85,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Maps (Advanced) / Math: Map Scales",
+  "title_en": "Maps (Advanced) / Math: Map Scales",
+  "cefr_level": "B1 PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Getting Lost & Found",
+    "focus": "Write detailed instructions to find a location using landmarks",
+    "source": "Source B L677"
+  },
+  "math_focus": {
+    "topic": "Scaling Up",
+    "outcome": "Calculate real distance from map distance using a scale (e.g., 1cm = 1km)",
+    "vocab": [
+      "scale",
+      "ratio",
+      "real distance",
+      "map distance",
+      "convert"
+    ],
+    "source": "Source B L682"
+  },
+  "grammar_focus": {
+    "structure": "Complex Prepositions: \"In the middle of\", \"To the east of\", \"Opposite to\"",
+    "outcome": "Write detailed instructions to find a location using landmarks",
+    "source": "Source B L680"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "direction",
+      "route",
+      "path",
+      "locate",
+      "landmark",
+      "north-east",
+      "intersection"
+    ],
+    "total_syllabus_words": 7,
+    "supplement_needed": 13,
+    "source": "Source B L681"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 676,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 176
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "week": 136,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Drafting the Full Essay",
+  "title_en": "Drafting the Full Essay",
+  "cefr_level": "B1+ Academic",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Putting it all together (Thesis + Body + Counter + Conclusion)",
+    "focus": "Complete a 5-paragraph draft including at least one statistic",
+    "source": "Source B L1041"
+  },
+  "math_focus": {
+    "topic": "Symmetry",
+    "outcome": "Identify lines of symmetry in 2D shapes",
+    "vocab": [
+      "symmetry",
+      "line of symmetry",
+      "mirror image",
+      "reflect",
+      "fold",
+      "match"
+    ],
+    "source": "Source B L1046"
+  },
+  "grammar_focus": {
+    "structure": "Cohesion (Reviewing all linking words used)",
+    "outcome": "Complete a 5-paragraph draft including at least one statistic",
+    "source": "Source B L1044"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "structure",
+      "flow",
+      "paragraph",
+      "argument",
+      "conclusion",
+      "evidence"
+    ],
+    "total_syllabus_words": 6,
+    "supplement_needed": 14,
+    "source": "Source B L1045"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 1040,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 245
+  }
+}

@@ -1,0 +1,550 @@
+====================================================================================================
+📊 ROUND 78 — TASK C (C.7 & C.8): SOURCE B PART II BLUEPRINT DRY-RUN DIFF & BẢNG PART I/II W113–W156
+Thời điểm chạy: 2026-11-11T07:35:03.398Z
+Thư mục blueprint tạm (Dry-Run Only): docs/agent_artifacts/round78_temp_blueprints/ (156 files)
+Quy tắc lọc nhiễu định dạng (Noise Suppression):
+  - Bỏ qua khác biệt thuần dấu câu/ngoặc kép bao ngoài, viết hoa, ký tự "->" vs Unicode arrow, "&" vs "and",
+    và hậu tố tiếng Việt lỗi "/ Toán: ..." trên tiêu đề nếu tập từ khóa cốt lõi trùng khớp 100%.
+  - TÁCH RIÊNG hoàn toàn nhóm "isFullMock sẽ bỏ" (kèm week_type=full_mock đi kèm) khỏi diff nội dung/học thuật.
+====================================================================================================
+
+### C.7.1. NGUYÊN NHÂN TỪ CODE GENERATOR HIỆN TẠI (`scripts/generate_week_blueprint.mjs`)
+
+- **Quét xuyên từ đầu file (bao gồm Part I `L1–L122`, không lọc `>= part2Start` `L123`)**: đồng thời loạt `blueprint.json` production sinh ngày 2026-11-04 (trước khi có `rangeRegex`) đã bỏ sót các cụm đa tuần `Weeks 79-80`, `Weeks 95-96`, `Weeks 129-132` (`source_master_syllabus: false`). Ngay ở bản hiện hành, `parseKhungCT` vẫn quét qua Part I trước khi xuống fallback đa tuần:
+```javascript
+// scripts/generate_week_blueprint.mjs:L166–210
+166: function parseKhungCT(weekNum, txtContent) {
+167:   // Regex to match block for week N
+168:   const weekBlockRegex = new RegExp(`•\\s*Week\\s*${weekNum}\\s*:\\s*([^\\n]+)([\\s\\S]*?)(?=•\\s*Weeks?\\s*\\d+|🟢|🔵|🟣|Phase|Block|$)`, 'i');
+169:   let isMultiWeekRange = false;
+170:   let match = txtContent.match(weekBlockRegex);
+171: 
+172:   // Multi-week range fallback (e.g. "• Weeks 79-80: Review & Micro-Debate 2", "• Weeks 129-132:")
+173:   if (!match) {
+174:     const rangeRegex = /(?:•\s*)?Weeks?\s*(\d+)\s*[-–—]\s*(\d+)\s*:\s*([^\n]+)([\s\S]*?)(?=(?:•\s*)?Weeks?\s*\d+|🟢|🔵|🟣|Phase|Block|$)/gi;
+175:     let rm;
+176:     let candidates = [];
+177:     while ((rm = rangeRegex.exec(txtContent)) !== null) {
+178:       const start = parseInt(rm[1], 10);
+179:       const end = parseInt(rm[2], 10);
+180:       if (weekNum >= start && weekNum <= end) {
+181:         const rawTitle = rm[3].trim();
+182:         const isOverviewHeader = /Content\s*\(Unit/i.test(rawTitle);
+183:         candidates.push({
+184:           start,
+185:           end,
+186:           span: end - start + 1,
+187:           isOverviewHeader,
+188:           match: [rm[0], rawTitle, rm[4]]
+189:         });
+190:       }
+191:     }
+192: 
+193:     if (candidates.length > 0) {
+194:       candidates.sort((a, b) => {
+195:         if (a.isOverviewHeader !== b.isOverviewHeader) return a.isOverviewHeader ? 1 : -1;
+196:         return a.span - b.span;
+197:       });
+198:       match = candidates[0].match;
+199:       isMultiWeekRange = true;
+200:     }
+201:   }
+202: 
+203:   if (!match) {
+204:     return null;
+205:   }
+206: 
+207:   const rawTitle = match[1].trim();
+208:   const body = match[2];
+209: 
+210:   // Extract English and Vietnamese Title
+```
+
+- **Cơ chế fallback đa tuần (`rangeRegex`) mới thêm sau**:
+```javascript
+// scripts/generate_week_blueprint.mjs:L174–205
+174:     const rangeRegex = /(?:•\s*)?Weeks?\s*(\d+)\s*[-–—]\s*(\d+)\s*:\s*([^\n]+)([\s\S]*?)(?=(?:•\s*)?Weeks?\s*\d+|🟢|🔵|🟣|Phase|Block|$)/gi;
+175:     let rm;
+176:     let candidates = [];
+177:     while ((rm = rangeRegex.exec(txtContent)) !== null) {
+178:       const start = parseInt(rm[1], 10);
+179:       const end = parseInt(rm[2], 10);
+180:       if (weekNum >= start && weekNum <= end) {
+181:         const rawTitle = rm[3].trim();
+182:         const isOverviewHeader = /Content\s*\(Unit/i.test(rawTitle);
+183:         candidates.push({
+184:           start,
+185:           end,
+186:           span: end - start + 1,
+187:           isOverviewHeader,
+188:           match: [rm[0], rawTitle, rm[4]]
+189:         });
+190:       }
+191:     }
+192: 
+193:     if (candidates.length > 0) {
+194:       candidates.sort((a, b) => {
+195:         if (a.isOverviewHeader !== b.isOverviewHeader) return a.isOverviewHeader ? 1 : -1;
+196:         return a.span - b.span;
+197:       });
+198:       match = candidates[0].match;
+199:       isMultiWeekRange = true;
+200:     }
+201:   }
+202: 
+203:   if (!match) {
+204:     return null;
+205:   }
+```
+
+- **Fallback sang Digital Map (Source A) khi `txtData === null` + bỏ sót `Topic (ELA)`/`Topic (Math)` trong `if (txtData)`**: dựng `clil_topic` từ tiêu đề tuần thay vì trường `Topic (ELA)` và không đọc `Topic (Math)` từ Source B:
+```javascript
+// scripts/generate_week_blueprint.mjs:L289–316
+289:   if (txtData) {
+290:     if (txtData.isMultiWeekRange && txtData.topic && txtData.topic.en) {
+291:       resolvedTheme = txtData.topic.en;
+292:     } else if (txtData.titleEn) {
+293:       resolvedTheme = txtData.titleEn;
+294:     }
+295:   }
+296:   const theme = resolvedTheme || (mapData && mapData.theme) || `Week ${weekNum} Curriculum`;
+297: 
+298:   // 2. Story Title
+299:   const storyTitle = (txtData && txtData.topic && txtData.topic.en) || (txtData && txtData.titleEn) || 'Weekly Adventure Story';
+300: 
+301:   // 3. CLIL Module / Topic
+302:   let clilTitle = 'CLIL Exploration';
+303:   let clilFocus = 'Interdisciplinary STEM Inquiry';
+304:   if (txtData) {
+305:     let baseTitle = txtData.titleEn ? txtData.titleEn.split('(')[0].trim().replace(/^Review & Project \d+:\s*/i, '').replace(/["']/g, '') : 'Exploration';
+306:     if (txtData.isMultiWeekRange && txtData.topic && txtData.topic.en) {
+307:       baseTitle = txtData.topic.en;
+308:     }
+309:     if (txtData.skillFocus && txtData.skillFocus.en) {
+310:       clilTitle = `${baseTitle} & ${txtData.skillFocus.en}`;
+311:     } else {
+312:       clilTitle = baseTitle;
+313:     }
+314:     clilFocus = (txtData.outcome && txtData.outcome.en) || (txtData.topic && txtData.topic.en) || baseTitle;
+315:   } else if (mapData && mapData.clilModule) {
+316:     clilTitle = mapData.clilModule;
+```
+
+- **Gắn cờ `source_master_syllabus: txtData !== null`**:
+```javascript
+// scripts/generate_week_blueprint.mjs:L426–431
+426:       source_master_syllabus: txtData !== null,
+427:       primary_pedagogical_authority: 'Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)'
+428:     }
+429:   };
+430: 
+431:   return blueprint;
+```
+
+- **Gắn `isFullMock: true` trực tiếp lên tuần nội dung**: bộ `blueprint.json` production hiện tại có 39 tuần bội số 4 mang `isFullMock: true` từ quy tắc Round 64 cũ; còn `scripts/generate_week_blueprint.mjs` hiện hành đọc trực tiếp cờ `★ FULL MOCK` từ Digital Map lên tuần nội dung thay vì tách slot xen kẽ:
+```javascript
+// scripts/generate_week_blueprint.mjs:L100–111
+100:   const isFullMock = /MOCK/i.test(rawCefrType) || /MOCK/i.test(cleanTheme);
+101:   const weekType = isFullMock ? 'full_mock' : 'rotary_practice';
+102: 
+103:   // Extract CEFR Level with structural week range fallback
+104:   let cefrLevel = 'A2 Flyers';
+105:   let cefrStage = 1;
+106: 
+107:   if (weekNum <= 16) {
+108:     cefrLevel = 'Pre-A1 Starters';
+109:     cefrStage = 1;
+110:   } else if (weekNum <= 32) {
+111:     cefrLevel = 'A1 Movers';
+```
+
+### C.7.2. NHÓM TÁCH RIÊNG: `isFullMock` SẼ BỎ (DO TÁCH MOCK SANG SLOT XEN KẼ M01–M34)
+
+- Tổng số blueprint production đang mang `isFullMock: true` (cần gỡ bỏ về `false`, chuyển mock ra slot xen kẽ): **39 / 156 tuần**
+- (Lưu ý: các tuần này đồng thời chuyển `week_type` từ `full_mock` về loại tuần nội dung tương ứng: `rotary_practice` / `graduation_showcase` / `review_consolidation`).
+
+| Tuần | Theme Hiện Tại | `isFullMock` (Cũ -> Mới) | `week_type` (Cũ -> Mới) | Nguyên Nhân Tách Riêng |
+| :---: | :--- | :---: | :---: | :--- |
+| **W4** | My Happy Jar (Personality) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W4; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L144) |
+| **W8** | The Busy Classroom (Plural) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W8; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L164) |
+| **W12** | The Talent Show (Abilities) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W12; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L186) |
+| **W16** | Sports Commentary (Dynamic Verbs) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json) + cờ Digital Map ★ FULL MOCK gắn trực tiếp lên tuần nội dung W16; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L207) |
+| **W20** | The Old Town (Existence) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W20; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L228) |
+| **W24** | Feelings in the Past (Was/Were + Adjectives) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json) + cờ Digital Map ★ FULL MOCK gắn trực tiếp lên tuần nội dung W24; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L250) |
+| **W28** | Story Retell (The Tortoise and the Hare) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W28; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L273) |
+| **W32** | The Busy Day (Irregular Verbs 4: Tasks) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json) + cờ Digital Map ★ FULL MOCK gắn trực tiếp lên tuần nội dung W32; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L294) |
+| **W36** | Review & Project 3: "My Adventure Book | `true` -> `false` | `full_mock` -> `review_consolidation` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W36; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L315) |
+| **W40** | Beast Battle (Comparisons) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W40; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L341) |
+| **W44** | The Cookie Monster (Subtraction Language) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W44; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L367) |
+| **W48** | Measuring Up (Length) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W48; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L391) |
+| **W52** | Have You Ever" Bingo (Seeding) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json) + cờ Digital Map ★ FULL MOCK gắn trực tiếp lên tuần nội dung W52; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L409) |
+| **W56** | ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping  / Toán: Phép trừ có nhớ) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W56; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L432) |
+| **W60** | ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W60; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L467) |
+| **W64** | ELA: Data Stories / Math: Pictographs | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W64; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L502) |
+| **W68** | ELA: Strong Reasons / Math: Bar Graphs | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W68; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L533) |
+| **W72** | Science/ELA: Photosynthesis / Math: Area & Perimeter | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json) + cờ Digital Map ★ FULL MOCK gắn trực tiếp lên tuần nội dung W72; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L569) |
+| **W76** | History/ELA: Explorers / Math: Map Scales | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W76; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L605) |
+| **W80** | Supply, Demand & Market Prices | `true` -> `false` | `full_mock` -> `review_cycle` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W80; nay tách mock ra slot xen kẽ M01..M34 (multi_week_cycle, Source B L632) |
+| **W84** | Science/ELA: Volcanoes / Math: Adding Decimals | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W84; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L665) |
+| **W88** | Ancient Rome / Math: Metric Conversions | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W88; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L703) |
+| **W92** | Community Helpers / Math: Surveys | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json) + cờ Digital Map ★ FULL MOCK gắn trực tiếp lên tuần nội dung W92; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L739) |
+| **W96** | Preparation for Mid-Phase Gate | `true` -> `false` | `full_mock` -> `review_cycle` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W96; nay tách mock ra slot xen kẽ M01..M34 (multi_week_cycle, Source B L754) |
+| **W100** | Rights / Math: Percent Word Problems | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W100; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L786) |
+| **W104** | Supply & Demand / Math: Sales Trends | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W104; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L822) |
+| **W108** | The Architect (Outlining) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W108; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L861) |
+| **W112** | The Editor's Eye (Review) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json) + cờ Digital Map ★ FULL MOCK gắn trực tiếp lên tuần nội dung W112; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L898) |
+| **W116** | Rehearsal (Voice & Body) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W116; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L931) |
+| **W120** | PHASE 2 GRADUATION | `true` -> `false` | `full_mock` -> `graduation_showcase` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json) + cờ Digital Map ★ FULL MOCK gắn trực tiếp lên tuần nội dung W120; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L949) |
+| **W124** | Drafting Arguments (Body) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W124; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L979) |
+| **W128** | The Live Debate 1 | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W128; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L1004) |
+| **W132** | B1+ Academic Assessment Mock 2 | `true` -> `false` | `full_mock` -> `review_cycle` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json) + cờ Digital Map ★ FULL MOCK gắn trực tiếp lên tuần nội dung W132; nay tách mock ra slot xen kẽ M01..M34 (multi_week_cycle, Source B L1007) |
+| **W136** | Drafting the Full Essay | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W136; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L1040) |
+| **W140** | The Live Debate 2 (Video Games) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W140; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L1077) |
+| **W144** | Preparation for Capstone | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W144; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L1101) |
+| **W148** | Drafting Final Essay (Independent) | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W148; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L1137) |
+| **W152** | Genre Review: Narrative | `true` -> `false` | `full_mock` -> `rotary_practice` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json) + cờ Digital Map ★ FULL MOCK gắn trực tiếp lên tuần nội dung W152; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L1166) |
+| **W156** | GRADUATION CEREMONY & FINAL SHOWCASE | `true` -> `false` | `full_mock` -> `graduation_showcase` | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json) + cờ Digital Map ★ FULL MOCK gắn trực tiếp lên tuần nội dung W156; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L1196) |
+
+### C.7.3. KHÁC BIỆT THỰC CHẤT SAU LỌC NHIỄU ĐỊNH DẠNG — PRODUCTION BLUEPRINTS (`src/data/weeks/week_1..156`)
+
+- Tổng số tuần có ít nhất 1 khác biệt thực chất (ngoài nhóm `isFullMock` đã tách ở C.7.2): **125 / 156 tuần**
+- Thống kê theo trường:
+  - **theme**: 12 tuần
+  - **title**: 11 tuần
+  - **clil_topic**: 91 tuần
+  - **grammar**: 36 tuần
+  - **vocab**: 8 tuần
+  - **cefr**: 52 tuần
+  - **week_type**: 6 tuần
+
+| Tuần | Trường Lệch | Giá Trị Cũ (`prod blueprint.json`) | Giá Trị Mới (Part II Dry-Run) | Nguyên Nhân Thật |
+| :---: | :--- | :--- | :--- | :--- |
+| **W1** | `clil_topic` | Hello, World! | Introduction & Superheroes (Creating a "Hero Identity") | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L130), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W3** | `clil_topic` | The Mirror Game | Describing physical traits | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L140), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W4** | `clil_topic` | My Happy Jar | Emotions and Likes | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L145), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W5** | `clil_topic` | The Mystery House | Exploring rooms and furniture | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L150), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W6** | `clil_topic` | Treasure Hunt at Home | Hiding and finding objects | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L155), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W7** | `clil_topic` | Inside My Backpack | School supplies (One item) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L160), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W9** | `cefr` | Pre-A1 Starters | Pre-A1 -> A1 | CEFR cũ "Pre-A1 Starters" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W10** | `cefr` | Pre-A1 Starters | Pre-A1 -> A1 | CEFR cũ "Pre-A1 Starters" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W11** | `clil_topic` | Weekend Fun Spots | Places and actions | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L182), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W11** | `cefr` | Pre-A1 Starters | Pre-A1 -> A1 | CEFR cũ "Pre-A1 Starters" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W12** | `clil_topic` | The Talent Show | Showcasing skills | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L187), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W12** | `cefr` | Pre-A1 Starters | Pre-A1 -> A1 | CEFR cũ "Pre-A1 Starters" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W13** | `clil_topic` | Daily Routines | A Day in My Life | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L192), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W13** | `cefr` | Pre-A1 Starters | Pre-A1 -> A1 | CEFR cũ "Pre-A1 Starters" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W14** | `grammar` | Động từ hành động tiếp diễn; `science_lab` thí nghiệm lực đẩy/kéo | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L197), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W14** | `cefr` | Pre-A1 Starters | Pre-A1 -> A1 | CEFR cũ "Pre-A1 Starters" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W15** | `cefr` | A1 Movers | Pre-A1 -> A1 | CEFR cũ "A1 Movers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W16** | `cefr` | A2 Flyers | Pre-A1 -> A1 | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W18** | `grammar` | Giới từ di chuyển ("by bus, on foot"); `math_quest` biểu đồ tốc độ | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L217), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W19** | `clil_topic` | When I Was Small | Looking at baby photos | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L224), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W22** | `clil_topic` | The Time Detective | Interrogating a suspect | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L240), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W24** | `clil_topic` | Feelings in the Past & Expressing Empathy | Why were you sad/happy yesterday? | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L251), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W24** | `cefr` | A2 Flyers | A1 Movers | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W25** | `clil_topic` | Sequencing Actions & Sequencing Logic | How I made a sandwich / How I brushed my teeth | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L257), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W27** | `clil_topic` | Nature Sequencing & Scientific Observation (Introduction) | How a seed becomes a plant | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L268), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W28** | `clil_topic` | Story Retell & Oral Narrative | Retelling a famous fable | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L274), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W31** | `clil_topic` | The Senses | What did you see/hear in the forest? | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L290), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W32** | `cefr` | A2 Flyers | A1 Movers | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W33** | `theme` | Safety First at School & The Force of Friction | The Mistake (Irregular Verbs 5: Accidents) | [W33 FROZEN EXCEPTION per Owner Decision 1] Theme cũ "Safety First at School & The Force of Friction" != Source B Part II "The Mistake (Irregular Verbs 5: Accidents)" (L299) |
+| **W33** | `clil_topic` | The Science of Friction & Floor Safety | Accidents happen! | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L300), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W33** | `grammar` | {"name":"Past Continuous vs Past Simple with While / When","rule":"was/were + V-ing for background action, Past Simple for interrupting action","regex":"(was\|were)\\s+\\w+ing","examples":["Jake **was walking** carefully when Tom **slipped on the wet floor**.","The cleaner **was drying** the tiles while the students **were waiting** outside.","Tom **was running** fast, so he did not see the yellow warning sign."]} | Break -> Broke, Fall -> Fell, Lose -> Lost, Hurt -> Hurt | [W33 FROZEN EXCEPTION per Owner Decision 1] Grammar cũ "{"name":"Past Continuous vs Past Simple with While / When","rule":"was/were + V-ing for background action, Past Simple for interrupting action","regex":"(was\|were)\\s+\\w+ing","examples":["Jake **was walking** carefully when Tom **slipped on the wet floor**.","The cleaner **was drying** the tiles while the students **were waiting** outside.","Tom **was running** fast, so he did not see the yellow warning sign."]}" != Source B L302 "Break -> Broke, Fall -> Fell, Lose -> Lost, Hurt -> Hurt" |
+| **W33** | `vocab` | [0]: | [6]: mistake, accident, fix, sorry, careful, clumsy | [W33 FROZEN EXCEPTION per Owner Decision 1] Vocab Focus sai lệch (thiếu: mistake, accident, fix, sorry, careful, clumsy) |
+| **W34** | `theme` | The Lion and the Mouse: True Friendship | Storytelling Practice 1 (Fable) | Theme cũ "The Lion and the Mouse: True Friendship" != Source B Part II "Storytelling Practice 1 (Fable)" (L304) |
+| **W34** | `clil_topic` | Animal Cooperation & Forest Ecosystems | The Lion and the Mouse | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L305), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W34** | `grammar` | Past Simple & Past Continuous | Mixed Regular and Irregular Verbs | Grammar cũ "Past Simple & Past Continuous" != Source B L308 "Mixed Regular and Irregular Verbs" |
+| **W34** | `vocab` | [0]: | [7]: net, trap, roar, help, friend, tiny, huge | Vocab Focus sai lệch (thiếu: net, trap, roar, help, friend, tiny, huge) |
+| **W35** | `clil_topic` | Storytelling Practice 2 & Using adjectives to make the story interesting | The Best Day Ever | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L311), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W36** | `clil_topic` | My Adventure Book | Creating a mini-book | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L316), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W36** | `grammar` | Động từ khuyết thiếu (should, must, have to); Cambridge Rotary Cycle 4 | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L315), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W37** | `clil_topic` | Living vs. Non-Living & Logical Reasoning | Investigating clues in nature | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L324), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W40** | `clil_topic` | Beast Battle & Making Comparisons | Comparing predators | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L342), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W41** | `vocab` | [5]: egg, hatch, caterpillar/tadpole, chrysalis, butterfly/frog | [7]: egg, hatch, caterpillar, tadpole, chrysalis, butterfly, frog | Digital Map reference lệch với Source B Part II: Vocab Focus sai lệch (thiếu: caterpillar, tadpole, butterfly, frog; chưa tách dấu '/' thành từ riêng: caterpillar/tadpole, butterfly/frog) |
+| **W43** | `clil_topic` | The Plus Machine & Math Literacy | Reading math stories | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L362), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W44** | `clil_topic` | The Cookie Monster & Inverse Logic | Taking things away | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L368), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W45** | `clil_topic` | Shape Detectives & Geometric Description | Finding shapes in the classroom | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L374), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W46** | `clil_topic` | The Pattern Code & Logical Thinking | Cracking visual codes (Red-Blue-Red-?) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L380), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W47** | `clil_topic` | Big Numbers & Number Literacy | Counting stars / Population of a village | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L386), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W47** | `vocab` | [5]: ten, twenty, thirty hundred, count, how many | [6]: ten, twenty, thirty, hundred, count, how many | Digital Map reference lệch với Source B Part II: Vocab Focus sai lệch (thiếu: thirty, hundred; dư/sai nguồn ngoài Vocabulary Focus: thirty hundred) |
+| **W48** | `clil_topic` | Measuring Up & Measurement | Who is taller? | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L392), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W49** | `clil_topic` | Future Dreams | When I grow up | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L399), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W50** | `grammar` | Câu điều kiện loại 1 (*If we use clean energy...*); `broadcast_studio` xe điện | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L403), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W51** | `grammar` | Trật tự của tính từ; `reading_hub` trích xuất số liệu các hành tinh | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L406), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W52** | `grammar` | Full Mock Flyers 4: Đo lường tốc độ làm bài và độ chính xác Speaking | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L409), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W53** | `grammar` | Động từ khuyết thiếu suy đoán (*must be, can't be*); `info_exchange` thẻ nghi phạm | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L414), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W54** | `clil_topic` | PHASE 1 GRADUATION SHOWCASE | Parents invited. Students present their portfolios and recite a short speech about their favorite memory of the year | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L418), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W54** | `grammar` | Hiện tại hoàn thành giới thiệu (*Have you ever visited...?*); `speaking_hub` | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L417), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W54** | `week_type` | rotary_practice | graduation_showcase | Tuần W54 là Graduation Showcase theo Source B (L417), trước đó gán chung 'rotary_practice' |
+| **W55** | `clil_topic` | ELA: Cause & Effect & Sentence combining | The "Why" Game (Connecting ideas logically) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L424), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W56** | `clil_topic` | ELA: Cause & Effect & Logical Sequencing | The Chain Reaction (Explaining a sequence of events) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L433), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W57** | `clil_topic` | ELA: Problem & Solution & Problem identification | The Fix-It Squad (Identifying problems and suggesting fixes) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L442), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W60** | `clil_topic` | ELA: The Mayors Request | Writing to improve the city | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L468), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W62** | `clil_topic` | ELA: The Movie Trailer & Paraphrasing | Retelling a story briefly | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L485), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W64** | `clil_topic` | ELA: Data Stories / Math: Pictographs & Factual reporting | What the Picture Says (Describing a chart) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L503), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W65** | `grammar` | Văn bản thuyết phục; `broadcast_studio` thuyết trình thành phố xanh | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L511), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W65** | `vocab` | [1]: Review all keywords from Weeks 55-64 | [0]: | Digital Map reference lệch với Source B Part II: Vocab Focus sai lệch (dư câu hướng dẫn ôn tập trong Source B L515: review all keywords from weeks 55-64) |
+| **W68** | `clil_topic` | ELA: Strong Reasons / Math: Bar Graphs & Developing ideas | Supporting the Argument | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L534), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W70** | `clil_topic` | ELA: Presentation My Green Idea / Math: Graph Review | Speaking for the Planet | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L552), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W71** | `clil_topic` | Science/ELA: The Solar System / Math: Large Numbers & Using factual adjectives | Space Giants | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L561), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W72** | `clil_topic` | Science/ELA: Photosynthesis / Math: Area & Perimeter & Explaining a process | Plant Power (How plants eat) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L570), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W73** | `clil_topic` | Science/ELA: The Water Cycle & Scientific explanation | The Never-Ending Journey | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L579), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W73** | `cefr` | A2 Flyers | B1 PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W74** | `clil_topic` | Science/ELA: Food Chains / Math: Complex Charts & Cause-Effect in systems | Who Eats Who? (Energy flow) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L588), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W75** | `clil_topic` | History/ELA: Ancient Egypt / Math: Timelines & Historical description | Pyramids and Pharaohs | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L597), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W76** | `title` | Great Voyages: The Age of Global Exploration | History/ELA: Explorers / Math: Map Scales | Digital Map reference lệch với Source B Part II: title_en cũ "Great Voyages: The Age of Global Exploration" != Source B Part II "History/ELA: Explorers / Math: Map Scales" (L605) |
+| **W76** | `clil_topic` | History/ELA: Explorers / Math: Map Scales & Biographical writing | Great Voyages | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L606), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W77** | `clil_topic` | Social Studies/ELA: World Landmarks / Math: 3D Geometry & Descriptive precision | Famous Buildings | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L615), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W77** | `cefr` | A2 Flyers | B1 PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W79** | `theme` | The Industrial Revolution | Review & Micro-Debate 2: Space Exploration vs. Earth Fix | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Theme cũ "The Industrial Revolution" != Source B Part II "Review & Micro-Debate 2: Space Exploration vs. Earth Fix" (L632) |
+| **W79** | `title` | The Industrial Revolution | Review & Micro-Debate 2: Space Exploration vs. Earth Fix | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): title_en cũ "The Industrial Revolution" != Source B Part II "Review & Micro-Debate 2: Space Exploration vs. Earth Fix" (L632) |
+| **W79** | `clil_topic` | Lịch sử thế giới: Động cơ hơi nước & Nhà máy | Space Exploration vs. Earth Fix | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): clil_topic rò rỉ mô tả tiếng Việt từ Digital Map Cột 4 thay vì Source B Part II |
+| **W79** | `grammar` | Nguyên nhân & tác động lịch sử; `broadcast_studio` phim tài liệu lịch sử | Passive Voice, Conditionals, Comparatives | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Grammar cũ "Nguyên nhân & tác động lịch sử; `broadcast_studio` phim tài liệu lịch sử" != Source B L636 "Passive Voice, Conditionals, Comparatives" |
+| **W79** | `vocab` | [0]: | [7]: space, earth, money, spend, fix, problem, important | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Vocab Focus sai lệch (thiếu: space, earth, money, spend, fix, problem, important) |
+| **W79** | `week_type` | rotary_practice | review_cycle | Thuộc multi-week review cycle (79,80) của Source B (L632), trước đó gán 'rotary_practice' |
+| **W80** | `theme` | Supply, Demand & Market Prices | Review & Micro-Debate 2: Space Exploration vs. Earth Fix | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Theme cũ "Supply, Demand & Market Prices" != Source B Part II "Review & Micro-Debate 2: Space Exploration vs. Earth Fix" (L632) |
+| **W80** | `title` | Supply, Demand & Market Prices: The Youth Enterprise Market | Review & Micro-Debate 2: Space Exploration vs. Earth Fix | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): title_en cũ "Supply, Demand & Market Prices: The Youth Enterprise Market" != Source B Part II "Review & Micro-Debate 2: Space Exploration vs. Earth Fix" (L632) |
+| **W80** | `clil_topic` | Kinh tế học: Giá cân bằng thị trường | Space Exploration vs. Earth Fix | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): clil_topic rò rỉ mô tả tiếng Việt từ Digital Map Cột 4 thay vì Source B Part II |
+| **W80** | `grammar` | Logic điều kiện kinh tế; `math_quest` biểu đồ đường cung - cầu | Passive Voice, Conditionals, Comparatives | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Grammar cũ "Logic điều kiện kinh tế; `math_quest` biểu đồ đường cung - cầu" != Source B L636 "Passive Voice, Conditionals, Comparatives" |
+| **W80** | `vocab` | [0]: | [7]: space, earth, money, spend, fix, problem, important | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Vocab Focus sai lệch (thiếu: space, earth, money, spend, fix, problem, important) |
+| **W81** | `clil_topic` | ELA: The Master Architect & Outlining | Planning an essay like building a house | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L639), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W82** | `clil_topic` | ELA: The Travel Vlogger & Drafting | Describing a favorite place | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L648), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W82** | `cefr` | A2 Flyers | B1 PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W83** | `clil_topic` | Geography/ELA: Landforms / Math: Decimals Intro & Definition writing | The Face of the Earth | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L657), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W84** | `clil_topic` | Science/ELA: Volcanoes / Math: Adding Decimals & Explanation | Boom! (Eruptions) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L666), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W85** | `clil_topic` | Maps & Instructional writing (Precision) | Getting Lost & Found | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L677), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W87** | `clil_topic` | Human Body / Math: Elapsed Time & Functional description | The Machine Inside | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L695), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W87** | `cefr` | A2 Flyers | B1 PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W88** | `clil_topic` | Ancient Rome / Math: Metric Conversions & Comparative writing | Roman Engineers | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L704), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W89** | `clil_topic` | Inventions / Math: Comparing Data Sets & Cause-Effect (History) | Changing the World | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L713), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W89** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W90** | `clil_topic` | Physics & Scientific explanation | Push & Pull | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L722), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W90** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W91** | `clil_topic` | Scientific Method / Math: Experiment Design & Report writing | How Scientists Think | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L731), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W91** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W92** | `clil_topic` | Community Helpers / Math: Surveys & Reporting information | Jobs in Depth | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L740), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W92** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W93** | `theme` | Topic Selection & Outline. (Chọn chủ đề & Dàn ý) | Topic Selection & Outline | Digital Map reference lệch với Source B Part II: Theme cũ "Topic Selection & Outline. (Chọn chủ đề & Dàn ý)" != Source B Part II "Topic Selection & Outline" (L750) |
+| **W93** | `title` | Topic Selection & Outline. (Chọn chủ đề & Dàn ý) | Topic Selection & Outline | Digital Map reference lệch với Source B Part II: title_en cũ "Topic Selection & Outline. (Chọn chủ đề & Dàn ý)" != Source B Part II "Topic Selection & Outline" (L750) |
+| **W93** | `clil_topic` | Topic Selection & Outline. | Choose a topic from Weeks 85-92 (e.g., "Volcanoes" or "Ancient Rome") | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L750), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W93** | `grammar` | Tổng hợp 2 bản tóm tắt y khoa đối lập; `reading_hub` bài báo y khoa | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L750), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W93** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W94** | `theme` | Drafting & Editing. (Viết nháp & Chỉnh sửa) | Drafting & Editing | Digital Map reference lệch với Source B Part II: Theme cũ "Drafting & Editing. (Viết nháp & Chỉnh sửa)" != Source B Part II "Drafting & Editing" (L751) |
+| **W94** | `title` | Drafting & Editing. (Viết nháp & Chỉnh sửa) | Drafting & Editing | Digital Map reference lệch với Source B Part II: title_en cũ "Drafting & Editing. (Viết nháp & Chỉnh sửa)" != Source B Part II "Drafting & Editing" (L751) |
+| **W94** | `grammar` | Diễn giải biểu đồ dân số; `math_quest` mật độ dân số trên diện tích | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L751), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W94** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W95** | `theme` | Ocean Acidification & Carbon | Review & Application: The Young Professor | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Theme cũ "Ocean Acidification & Carbon" != Source B Part II "Review & Application: The Young Professor" (L754) |
+| **W95** | `title` | Ocean Acidification & Carbon | Review & Application: The Young Professor | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): title_en cũ "Ocean Acidification & Carbon" != Source B Part II "Review & Application: The Young Professor" (L754) |
+| **W95** | `clil_topic` | Hóa học biển: Thang đo pH và hấp thụ CO2 | The Young Professor | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): clil_topic rò rỉ mô tả tiếng Việt từ Digital Map Cột 4 thay vì Source B Part II |
+| **W95** | `grammar` | Báo cáo CER đầy đủ với bằng chứng thống kê; `discovery_report` | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L754), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W95** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W95** | `week_type` | rotary_practice | review_cycle | Thuộc multi-week review cycle (95,96) của Source B (L754), trước đó gán 'rotary_practice' |
+| **W96** | `theme` | Preparation for Mid-Phase Gate | Review & Application: The Young Professor | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Theme cũ "Preparation for Mid-Phase Gate" != Source B Part II "Review & Application: The Young Professor" (L754) |
+| **W96** | `title` | Preparation for Mid-Phase Gate | Review & Application: The Young Professor | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): title_en cũ "Preparation for Mid-Phase Gate" != Source B Part II "Review & Application: The Young Professor" (L754) |
+| **W96** | `clil_topic` | Chiến thuật làm bài thi Cambridge B1 PET | The Young Professor | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): clil_topic rò rỉ mô tả tiếng Việt từ Digital Map Cột 4 thay vì Source B Part II |
+| **W96** | `grammar` | Ôn tập trọng tâm các lỗi ngữ pháp B1 thường gặp | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L754), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W96** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W97** | `clil_topic` | Government / Math: Percentages Intro & Definition writing | Who makes the rules? | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L760), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W97** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W98** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W99** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W100** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W101** | `clil_topic` | Needs vs. Wants / Math: Budgeting & Comparison | Smart Choices | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L796), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W101** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W102** | `clil_topic` | Goods & Services / Math: Total Costs & Classification | Buying and Selling | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L805), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W102** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W103** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W104** | `clil_topic` | Supply & Demand / Math: Sales Trends & Cause-Effect (Economics) | Why Prices Change | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L823), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W104** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W105** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W106** | `clil_topic` | Information Hunting & Skimming & Scanning keywords | Finding reliable answers | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L844), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W106** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W107** | `clil_topic` | The Note-Taker & Summarizing & Paraphrasing | Taking notes without copying sentences | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L853), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W107** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W108** | `clil_topic` | The Architect & Logical organization | Organizing notes into a structure | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L862), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W108** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W109** | `clil_topic` | Drafting Body Paragraph 1 & Paragraph cohesion | Writing the first main idea | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L872), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W109** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W110** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W111** | `clil_topic` | Intro & Conclusion & Introductions and Conclusions | Hooking the reader and wrapping up | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L890), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W111** | `cefr` | B1 PET | B1+ PET | CEFR cũ "B1 PET" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W112** | `clil_topic` | The Editors Eye & Editing & Proofreading | Polishing the draft | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L899), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W112** | `grammar` | Tự sửa lỗi chính tả và ngữ pháp cơ bản.) | Verb Tense Consistency (checking if the whole text is in Past or Present) | Digital Map reference lệch với Source B Part II: Grammar cũ "Tự sửa lỗi chính tả và ngữ pháp cơ bản.)" != Source B L902 "Verb Tense Consistency (checking if the whole text is in Past or Present)" |
+| **W112** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W113** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W114** | `grammar` | Grammar Drill & Sentence Construction | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L916), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W114** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W115** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W116** | `clil_topic` | Rehearsal & Public Speaking (Non-verbal) | Delivery skills | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L932), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W116** | `grammar` | Grammar Drill & Sentence Construction | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L931), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W116** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W117** | `grammar` | Grammar Drill & Sentence Construction | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L937), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W117** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W118** | `grammar` | Grammar Drill & Sentence Construction | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L941), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W118** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W119** | `clil_topic` | Reflection & Portfolio | Looking back | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L945), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W119** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W120** | `clil_topic` | PHASE 2 GRADUATION | Ceremony & Certificate Distribution | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L950), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W120** | `grammar` | Grammar Drill & Sentence Construction | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L949), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W120** | `cefr` | A2 Flyers | B1+ PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W121** | `clil_topic` | Intro to Argumentative Research | Breaking down the question: "Should homework be banned?" | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L958), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W123** | `clil_topic` | The Thesis Statement | Taking a stance | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L973), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W125** | `clil_topic` | Intro & Conclusion | Hook and Summary | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L987), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W126** | `clil_topic` | From Essay to Speech | Making it spoken | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L994), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W127** | `clil_topic` | Rebuttal Practice | Disagreeing politely | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L999), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W128** | `grammar` | `broadcast_studio` thuyết trình quan điểm với biểu đồ minh họa | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1004), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W129** | `theme` | Opinion Project 3: Smartphones Under 12? | Review & Math Logic Cycle | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Theme cũ "Opinion Project 3: Smartphones Under 12?" != Source B Part II "Review & Math Logic Cycle" (L1007) |
+| **W129** | `title` | Opinion Project 3: Smartphones Under 12? | Review & Math Logic Cycle | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): title_en cũ "Opinion Project 3: Smartphones Under 12?" != Source B Part II "Review & Math Logic Cycle" (L1007) |
+| **W129** | `clil_topic` | Tâm lý phát triển: Tác động mạng xã hội | Consolidate writing skills + Math Fractions/Decimals review | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): clil_topic rò rỉ mô tả tiếng Việt từ Digital Map Cột 4 thay vì Source B Part II |
+| **W129** | `grammar` | Soạn thảo bài luận quan điểm hoàn chỉnh; `writing_hub` | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1007), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W129** | `week_type` | rotary_practice | review_cycle | Thuộc multi-week review cycle (129,132) của Source B (L1007), trước đó gán 'rotary_practice' |
+| **W130** | `theme` | Opinion Project 3: Comparing Global Approaches | Review & Math Logic Cycle | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Theme cũ "Opinion Project 3: Comparing Global Approaches" != Source B Part II "Review & Math Logic Cycle" (L1007) |
+| **W130** | `title` | Opinion Project 3: Comparing Global Approaches | Review & Math Logic Cycle | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): title_en cũ "Opinion Project 3: Comparing Global Approaches" != Source B Part II "Review & Math Logic Cycle" (L1007) |
+| **W130** | `clil_topic` | Luật so sánh: Lệnh cấm của Pháp và Florida | Consolidate writing skills + Math Fractions/Decimals review | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): clil_topic rò rỉ mô tả tiếng Việt từ Digital Map Cột 4 thay vì Source B Part II |
+| **W130** | `grammar` | Trích dẫn nguồn thông tin; `reading_hub` tóm tắt văn bản | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1007), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W130** | `week_type` | rotary_practice | review_cycle | Thuộc multi-week review cycle (129,132) của Source B (L1007), trước đó gán 'rotary_practice' |
+| **W131** | `theme` | Opinion Project 3: Persuasive Techniques | Review & Math Logic Cycle | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Theme cũ "Opinion Project 3: Persuasive Techniques" != Source B Part II "Review & Math Logic Cycle" (L1007) |
+| **W131** | `title` | Opinion Project 3: Persuasive Techniques | Review & Math Logic Cycle | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): title_en cũ "Opinion Project 3: Persuasive Techniques" != Source B Part II "Review & Math Logic Cycle" (L1007) |
+| **W131** | `clil_topic` | Ethos, Pathos, Logos trong thuyết phục | Consolidate writing skills + Math Fractions/Decimals review | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): clil_topic rò rỉ mô tả tiếng Việt từ Digital Map Cột 4 thay vì Source B Part II |
+| **W131** | `grammar` | Ngữ điệu và trọng âm nhấn mạnh; `gear2_karaoke` bài diễn văn lịch sử | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1007), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W131** | `week_type` | rotary_practice | review_cycle | Thuộc multi-week review cycle (129,132) của Source B (L1007), trước đó gán 'rotary_practice' |
+| **W132** | `theme` | B1+ Academic Assessment Mock 2 | Review & Math Logic Cycle | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): Theme cũ "B1+ Academic Assessment Mock 2" != Source B Part II "Review & Math Logic Cycle" (L1007) |
+| **W132** | `title` | B1+ Academic Assessment Mock 2 | Review & Math Logic Cycle | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): title_en cũ "B1+ Academic Assessment Mock 2" != Source B Part II "Review & Math Logic Cycle" (L1007) |
+| **W132** | `clil_topic` | Khảo sát Năng lực Chuẩn hóa B1+ 2 | Consolidate writing skills + Math Fractions/Decimals review | Parser cũ miss Source B -> fallback toàn phần sang Source A (Digital Map): clil_topic rò rỉ mô tả tiếng Việt từ Digital Map Cột 4 thay vì Source B Part II |
+| **W132** | `grammar` | Full Mock B1+ Academic 2: Chấm bài luận Opinion Essay theo Rubric | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1007), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W132** | `cefr` | A2 Flyers | B1+ Academic | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W133** | `clil_topic` | Deep Research & Data & Using data as evidence | Finding statistics to support arguments | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L1013), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W134** | `clil_topic` | Identifying Fallacies & Critical Thinking/Logic | Spotting bad arguments | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L1022), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W135** | `clil_topic` | The Counter-Argument Paragraph & Balanced argumentation | Acknowledging the other side | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L1032), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W136** | `clil_topic` | Drafting the Full Essay & Stamina in writing | Putting it all together (Thesis + Body + Counter + Conclusion) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L1041), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W137** | `cefr` | A2 Flyers | B1+ Academic | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W140** | `grammar` | Kỹ năng trích xuất luận điểm từ nguồn; `writing_hub` | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1077), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W141** | `clil_topic` | Geometry Review - Angles & Lines | Writing Clarity | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L1089), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W141** | `grammar` | `math_quest` phương trình và biểu đồ | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1086), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W142** | `clil_topic` | Geometry Review - Area & Volume | Vocabulary Power - Argument Words | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L1094), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W142** | `grammar` | Full Mock B1+ Academic 4: Đọc liên môn + Toán lời văn + Opinion Essay | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1091), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W142** | `vocab` | [4]: assert, propose, suggest, imply | [0]: | Vocab Focus sai lệch (trích nhầm từ Key Learning Outcome (ELA) khi Vocabulary Focus vắng trong Source B: assert, propose, suggest, imply) |
+| **W142** | `cefr` | A2 Flyers | B1+ Academic | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W143** | `clil_topic` | Critical Thinking - Analyzing Ads | Persuasion in Media | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L1097), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W143** | `grammar` | Viết truyện ngắn văn học ($\ge 200$ từ); `story_writer` | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1096), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W144** | `grammar` | Bài báo khoa học giải thích có trích dẫn nguồn; `discovery_report` | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1101), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W145** | `clil_topic` | Independent Research & Information Literacy | Finding sources without teacher help | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L1110), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| **W147** | `cefr` | A2 Flyers | B1+ Academic | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| **W150** | `grammar` | Biên tập chi tiết từng dòng, kiểm tra trích dẫn | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1154), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W151** | `grammar` | `broadcast_studio` thuyết trình dự án với slide và biểu đồ | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1161), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W152** | `cefr` | A2 Flyers | B1+ Academic | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+| **W156** | `grammar` | LỄ TỐT NGHIỆP — TRÌNH BÀY EXTENDED PROJECT & NHẬN BẰNG B1+ ACADEMIC PROFICIENCY! | (null — SUPPLEMENT) | Source B im lặng Grammar Focus (L1196), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| **W156** | `cefr` | A2 Flyers | B1+ Academic | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: resolveTemplate/cefr override nhầm tầng Mock) |
+
+### C.7.4. DIFF RIÊNG CÁC STAGED BLUEPRINTS HIỆN CÓ (`docs/agent_artifacts/staging/week_*/blueprint.json`)
+
+- Tổng số thư mục staged có `blueprint.json`: **30** (trong đó **6** thư mục `_mock` mang `isFullMock: true` thuộc nhóm tách Mock xen kẽ)
+
+| Staged Dir | Tuần | Trường Lệch (hoặc `isFullMock`) | Staged Hiện Tại | Part II Dry-Run | Nguyên Nhân |
+| :--- | :---: | :--- | :--- | :--- | :--- |
+| `week_36_mock` | W36 | `isFullMock` (nhóm tách riêng) | `true` (`full_mock`) | `false` (`review_consolidation`) | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W36; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L315) |
+| `week_36_mock` | W36 | `clil_topic` | My Adventure Book | Creating a mini-book | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L316), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_36_mock` | W36 | `grammar` | Động từ khuyết thiếu (should, must, have to); Cambridge Rotary Cycle 4 | (null) | Source B im lặng Grammar Focus (L315), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| `week_37` | W37 | `clil_topic` | Living vs. Non-Living & Logical Reasoning | Investigating clues in nature | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L324), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_40` | W40 | `clil_topic` | Beast Battle & Making Comparisons | Comparing predators | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L342), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_40_mock` | W40 | `isFullMock` (nhóm tách riêng) | `true` (`full_mock`) | `false` (`rotary_practice`) | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W40; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L341) |
+| `week_40_mock` | W40 | `clil_topic` | Beast Battle & Making Comparisons | Comparing predators | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L342), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_41` | W41 | `vocab` | [5]: egg, hatch, caterpillar/tadpole, chrysalis, butterfly/frog | [7]: egg, hatch, caterpillar, tadpole, chrysalis, butterfly, frog | Digital Map reference lệch với Source B Part II: Vocab Focus sai lệch (thiếu: caterpillar, tadpole, butterfly, frog; chưa tách dấu '/' thành từ riêng: caterpillar/tadpole, butterfly/frog) |
+| `week_43` | W43 | `clil_topic` | The Plus Machine & Math Literacy | Reading math stories | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L362), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_44` | W44 | `clil_topic` | The Cookie Monster & Inverse Logic | Taking things away | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L368), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_44_mock` | W44 | `isFullMock` (nhóm tách riêng) | `true` (`full_mock`) | `false` (`rotary_practice`) | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W44; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L367) |
+| `week_44_mock` | W44 | `clil_topic` | The Cookie Monster & Inverse Logic | Taking things away | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L368), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_45` | W45 | `clil_topic` | Shape Detectives & Geometric Description | Finding shapes in the classroom | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L374), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_46` | W46 | `clil_topic` | The Pattern Code & Logical Thinking | Cracking visual codes (Red-Blue-Red-?) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L380), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_47` | W47 | `clil_topic` | Big Numbers & Number Literacy | Counting stars / Population of a village | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L386), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_47` | W47 | `vocab` | [5]: ten, twenty, thirty hundred, count, how many | [6]: ten, twenty, thirty, hundred, count, how many | Digital Map reference lệch với Source B Part II: Vocab Focus sai lệch (thiếu: thirty, hundred; dư/sai nguồn ngoài Vocabulary Focus: thirty hundred) |
+| `week_48_mock` | W48 | `isFullMock` (nhóm tách riêng) | `true` (`full_mock`) | `false` (`rotary_practice`) | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W48; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L391) |
+| `week_48_mock` | W48 | `clil_topic` | Measuring Up & Measurement | Who is taller? | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L392), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_73` | W73 | `clil_topic` | Science/ELA: The Water Cycle & Scientific explanation | The Never-Ending Journey | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L579), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_73` | W73 | `cefr` | A2 Flyers | B1 PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| `week_74` | W74 | `clil_topic` | Science/ELA: Food Chains / Math: Complex Charts & Cause-Effect in systems | Who Eats Who? (Energy flow) | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L588), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_75` | W75 | `clil_topic` | History/ELA: Ancient Egypt / Math: Timelines & Historical description | Pyramids and Pharaohs | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L597), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_76_mock` | W76 | `isFullMock` (nhóm tách riêng) | `true` (`full_mock`) | `false` (`rotary_practice`) | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W76; nay tách mock ra slot xen kẽ M01..M34 (single_week, Source B L605) |
+| `week_76_mock` | W76 | `title` | Great Voyages: The Age of Global Exploration | History/ELA: Explorers / Math: Map Scales | title_en cũ "Great Voyages: The Age of Global Exploration" != Source B Part II "History/ELA: Explorers / Math: Map Scales" (L605) |
+| `week_76_mock` | W76 | `clil_topic` |  | Great Voyages | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L606), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_76_mock` | W76 | `grammar` | (missing) | Prepositions of Movement (Across, Around, Through) | Parser cũ bỏ sót Grammar Focus ở Source B L609 |
+| `week_76_mock` | W76 | `vocab` | [0]: | [8]: explore, voyage, ship, ocean, discover, map, captain, sail | Vocab Focus sai lệch (thiếu: explore, voyage, ship, ocean, discover, map, captain, sail) |
+| `week_77` | W77 | `clil_topic` | Social Studies/ELA: World Landmarks / Math: 3D Geometry & Descriptive precision | Famous Buildings | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L615), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_77` | W77 | `cefr` | A2 Flyers | B1 PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| `week_79` | W79 | `theme` | Space Exploration vs. Earth Fix | Review & Micro-Debate 2: Space Exploration vs. Earth Fix | Digital Map reference lệch với Source B Part II: Theme cũ "Space Exploration vs. Earth Fix" != Source B Part II "Review & Micro-Debate 2: Space Exploration vs. Earth Fix" (L632) |
+| `week_79` | W79 | `title` | Review & Micro-Debate 2 | Review & Micro-Debate 2: Space Exploration vs. Earth Fix | Digital Map reference lệch với Source B Part II: title_en cũ "Review & Micro-Debate 2" != Source B Part II "Review & Micro-Debate 2: Space Exploration vs. Earth Fix" (L632) |
+| `week_79` | W79 | `week_type` | rotary_practice | review_cycle | Thuộc multi-week review cycle (79,80) của Source B (L632), trước đó gán 'rotary_practice' |
+| `week_80_mock` | W80 | `isFullMock` (nhóm tách riêng) | `true` (`full_mock`) | `false` (`review_cycle`) | quy tắc Round 64 (39 tuần % 4 === 0 trong prod blueprint.json hiện tại; lưu ý generate_week_blueprint.mjs hiện hành L100 đọc cờ ★ FULL MOCK từ Digital Map) gắn trực tiếp lên tuần nội dung W80; nay tách mock ra slot xen kẽ M01..M34 (multi_week_cycle, Source B L632) |
+| `week_80_mock` | W80 | `theme` | Supply, Demand & Market Prices / Math: Market Equilibrium Graphs | Review & Micro-Debate 2: Space Exploration vs. Earth Fix | Parser cũ không tách block nhiều tuần (79,80) hoặc dính Part I L105: Theme cũ "Supply, Demand & Market Prices / Math: Market Equilibrium Graphs" != Source B Part II "Review & Micro-Debate 2: Space Exploration vs. Earth Fix" (L632) |
+| `week_80_mock` | W80 | `title` | Supply, Demand & Market Prices: The Youth Enterprise Market | Review & Micro-Debate 2: Space Exploration vs. Earth Fix | Parser cũ không tách block nhiều tuần (79,80) hoặc dính Part I L105: title_en cũ "Supply, Demand & Market Prices: The Youth Enterprise Market" != Source B Part II "Review & Micro-Debate 2: Space Exploration vs. Earth Fix" (L632) |
+| `week_80_mock` | W80 | `clil_topic` |  | Space Exploration vs. Earth Fix | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L633), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_80_mock` | W80 | `grammar` | (missing) | Passive Voice, Conditionals, Comparatives | Parser cũ không tách block nhiều tuần (79,80) hoặc dính Part I L105: Parser cũ bỏ sót Grammar Focus ở Source B L636 |
+| `week_80_mock` | W80 | `vocab` | [0]: | [7]: space, earth, money, spend, fix, problem, important | Parser cũ không tách block nhiều tuần (79,80) hoặc dính Part I L105: Vocab Focus sai lệch (thiếu: space, earth, money, spend, fix, problem, important) |
+| `week_81` | W81 | `clil_topic` | ELA: The Master Architect & Outlining | Planning an essay like building a house | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L639), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_82` | W82 | `clil_topic` | ELA: The Travel Vlogger & Drafting | Describing a favorite place | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L648), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_82` | W82 | `cefr` | A2 Flyers | B1 PET | CEFR cũ "A2 Flyers" sai giai đoạn Block/Phase (Lý do: parseDigitalMap gán nhầm nhãn CEFR mặc định) |
+| `week_126` | W126 | `clil_topic` | From Essay to Speech | Making it spoken | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L994), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_127` | W127 | `clil_topic` | Rebuttal Practice | Disagreeing politely | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L999), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_129` | W129 | `clil_topic` | Review & Math Logic Cycle | Consolidate writing skills + Math Fractions/Decimals review | Parser cũ dính Part I L105 Smartphones hoặc lấy tên giả cho khối W129–132 thay vì Part II L1007–1008 |
+| `week_129` | W129 | `grammar` | Soạn thảo bài luận quan điểm hoàn chỉnh; `writing_hub` | (null) | Source B im lặng Grammar Focus (L1007), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| `week_129` | W129 | `week_type` | rotary_practice | review_cycle | Thuộc multi-week review cycle (129,132) của Source B (L1007), trước đó gán 'rotary_practice' |
+| `week_130` | W130 | `clil_topic` | Review & Math Logic Cycle | Consolidate writing skills + Math Fractions/Decimals review | Parser cũ dính Part I L105 Smartphones hoặc lấy tên giả cho khối W129–132 thay vì Part II L1007–1008 |
+| `week_130` | W130 | `grammar` | Trích dẫn nguồn thông tin; `reading_hub` tóm tắt văn bản | (null) | Source B im lặng Grammar Focus (L1007), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| `week_130` | W130 | `week_type` | rotary_practice | review_cycle | Thuộc multi-week review cycle (129,132) của Source B (L1007), trước đó gán 'rotary_practice' |
+| `week_131` | W131 | `clil_topic` | Review & Math Logic Cycle | Consolidate writing skills + Math Fractions/Decimals review | Parser cũ dính Part I L105 Smartphones hoặc lấy tên giả cho khối W129–132 thay vì Part II L1007–1008 |
+| `week_131` | W131 | `grammar` | Ngữ điệu và trọng âm nhấn mạnh; `gear2_karaoke` bài diễn văn lịch sử | (null) | Source B im lặng Grammar Focus (L1007), nhưng blueprint cũ tự lấy từ Digital Map Cột 6 thay vì đánh dấu null/SUPPLEMENT |
+| `week_131` | W131 | `week_type` | rotary_practice | review_cycle | Thuộc multi-week review cycle (129,132) của Source B (L1007), trước đó gán 'rotary_practice' |
+| `week_133` | W133 | `clil_topic` | Deep Research & Data & Using data as evidence | Finding statistics to support arguments | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L1013), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+| `week_134` | W134 | `clil_topic` | Identifying Fallacies & Critical Thinking/Logic | Spotting bad arguments | parseKhungCT/generateBlueprint cũ bỏ qua trường "Topic:" của Source B (L1022), chỉ lấy title_en + đuôi mẫu chung ("& ...") |
+
+### C.8. BẢNG ĐẦY ĐỦ W113–W156 (44 TUẦN): REPO ĐANG THEO PART I HAY PART II & CẦN SỬA GÌ
+
+- Số tuần kiểm tra: **44 tuần** (W113–W156)
+- Dòng Part I tham chiếu trong Source B (`docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt`): L101 (W113–120); L103 (W121–128); L105 (W129–136); L107 (W137–144)
+
+| Tuần | Repo Đang Theo Part I Hay Part II | Dòng Source B Part II | Cần Sửa Gì (Blueprint / Digital Map / Staged / Content) |
+| :---: | :--- | :--- | :--- |
+| **W113** | Theo Part II ở tiêu đề/khung chính (L908; khác Part I L101), nhưng BP còn lệch [cefr] & Map Cột 4/6 chưa khớp Part II | L908 (Visual Aids (Images & Captions) \| Math: Geometry Review (Shapes)) | BP: cập nhật [cefr] từ Part II L908 ; Digital Map (L212): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W114** | Theo Part II ở tiêu đề/khung chính (L916; khác Part I L101), nhưng BP còn lệch [grammar/cefr] & Map Cột 4/6 chưa khớp Part II | L916 (Project Assembly (Making the Poster) \| Math: Measurement (Length/Area)) | BP: cập nhật [grammar/cefr] từ Part II L916 ; Digital Map (L213): gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W115** | Theo Part II ở tiêu đề/khung chính (L923; khác Part I L101), nhưng BP còn lệch [cefr] & Map Cột 4/6 chưa khớp Part II | L923 (Speaking Notes (Cue Cards) \| Math: Logic Puzzles) | BP: cập nhật [cefr] từ Part II L923 ; Digital Map (L214): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W116** | Theo Part II ở tiêu đề/khung chính (L931; khác Part I L101), nhưng BP còn lệch [clil_topic/grammar/cefr] + isFullMock=true & Map Cột 4/6 chưa khớp Part II | L931 (Rehearsal (Voice & Body) \| Math: Math Games) | BP: bỏ isFullMock=true (chuyển sang slot M24..M34 [CHỜ OWNER]), cập nhật [clil_topic/grammar/cefr] từ Part II L931 ; Digital Map (L215): gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W117** | Theo Part II ở tiêu đề/khung chính (L937; khác Part I L101), nhưng BP còn lệch [grammar/cefr] & Map Cột 4/6 chưa khớp Part II | L937 (The Knowledge Fair (Group A) \| Math: không có) | BP: cập nhật [grammar/cefr] từ Part II L937 ; Digital Map (L216): bỏ ★ FULL MOCK/GRADUATION sang tuần xen kẽ, gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W118** | Theo Part II ở tiêu đề/khung chính (L941; khác Part I L101), nhưng BP còn lệch [grammar/cefr] & Map Cột 4/6 chưa khớp Part II | L941 (The Knowledge Fair (Group B) \| Math: không có) | BP: cập nhật [grammar/cefr] từ Part II L941 ; Digital Map (L217): gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W119** | Theo Part II ở tiêu đề/khung chính (L944; khác Part I L101), nhưng BP còn lệch [clil_topic/cefr] & Map Cột 4/6 chưa khớp Part II | L944 (Reflection & Portfolio \| Math: không có) | BP: cập nhật [clil_topic/cefr] từ Part II L944 ; Digital Map (L218): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W120** | Theo Part II ở tiêu đề/khung chính (L949; khác Part I L101), nhưng BP còn lệch [clil_topic/grammar/cefr] + isFullMock=true & Map Cột 4/6 chưa khớp Part II | L949 (PHASE 2 GRADUATION \| Math: không có) | BP: bỏ isFullMock=true (chuyển sang slot M24..M34 [CHỜ OWNER]), cập nhật [clil_topic/grammar/cefr] từ Part II L949 ; Digital Map (L219): bỏ ★ FULL MOCK/GRADUATION sang tuần xen kẽ, gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W121** | Theo Part II ở tiêu đề/khung chính (L957; khác Part I L103), nhưng BP còn lệch [clil_topic] & Map Cột 4/6 chưa khớp Part II | L957 (Intro to Argumentative Research \| Math: Fractions Review (Equivalent)) | BP: cập nhật [clil_topic] từ Part II L957 ; Digital Map (L230): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W122** | Theo Part II ở tiêu đề/khung chính (L965; khác Part I L103); Map Cột 4/6 còn lệch | L965 (Critical Listening \| Math: Adding/Subtracting Fractions) | BP: đạt trường chính (giữ sync) ; Digital Map (L231): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W123** | Theo Part II ở tiêu đề/khung chính (L972; khác Part I L103), nhưng BP còn lệch [clil_topic] & Map Cột 4/6 chưa khớp Part II | L972 (The Thesis Statement \| Math: Multiplying Fractions (Concept)) | BP: cập nhật [clil_topic] từ Part II L972 ; Digital Map (L232): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W124** | Theo Part II ở tiêu đề/khung chính (L979; khác Part I L103) + isFullMock=true; Map Cột 4/6 còn lệch | L979 (Drafting Arguments (Body) \| Math: Decimals to Fractions) | BP: bỏ isFullMock=true (chuyển sang slot M24..M34 [CHỜ OWNER]) ; Digital Map (L233): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W125** | Lệch tầng — Prod BP: Part II (L986); Map: Part II tiêu đề (L986); Staged Content: Part II (L986) (theme="Intro & Conclusion (Academic Essay Structure)") | L986 (Intro & Conclusion \| Math: Fraction Word Problems) | BP: cập nhật [clil_topic] từ Part II L986, đã có .js content prod (theme="Intro & Conclusion (Academic Essay Structure)"), kiểm tra đối chiếu Toán/Vocab Part II ; Digital Map (L234): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II ; Staged (week_125): tái sinh/kiểm tra lại theo acceptance spec (hiện reading_hub.theme="Intro & Conclusion (Academic Essay Structure)" [Part II (L986)]; staged blueprint: thiếu blueprint.json staged) |
+| **W126** | Lệch tầng — Prod BP: Part II (L993); Map: Part II tiêu đề (L993); Staged Content: Part II (L993) (theme="From Essay to Speech") | L993 (From Essay to Speech \| Math: Logic Puzzles) | BP: cập nhật [clil_topic] từ Part II L993 ; Digital Map (L235): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II ; Staged (week_126): tái sinh/kiểm tra lại theo acceptance spec (hiện reading_hub.theme="From Essay to Speech" [Part II (L993)]; staged blueprint: Part II (L993)) |
+| **W127** | Lệch tầng — Prod BP: Part II (L998); Map: Part II tiêu đề (L998); Staged Content: Part II (L998) (theme="Rebuttal Practice") | L998 (Rebuttal Practice \| Math: Critical Thinking Math) | BP: cập nhật [clil_topic] từ Part II L998 ; Digital Map (L236): bỏ ★ FULL MOCK/GRADUATION sang tuần xen kẽ, đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II ; Staged (week_127): tái sinh/kiểm tra lại theo acceptance spec (hiện reading_hub.theme="Rebuttal Practice" [Part II (L998)]; staged blueprint: Part II (L998)) |
+| **W128** | Theo Part II ở tiêu đề/khung chính (L1004; khác Part I L103), nhưng BP còn lệch [grammar] + isFullMock=true & Map Cột 4/6 chưa khớp Part II | L1004 (The Live Debate 1 \| Math: Math Review Game) | BP: bỏ isFullMock=true (chuyển sang slot M24..M34 [CHỜ OWNER]), cập nhật [grammar] từ Part II L1004 ; Digital Map (L237): gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W129** | Lệch tầng — Prod BP: Part I (L105: Smartphones / Opinion Project 3); Map: Part I (L105: Smartphones); Staged Content: Part I (L105: Smartphones / Opinion Project 3) (theme="Opinion Project 3: Smartphones Under 12?") | L1007 (129,132 \| Math: Math Fractions/Decimals review) | BP: cập nhật [theme/title/clil_topic/grammar/week_type] từ Part II L1007 ; Digital Map (L238): sửa Smartphones (Part I L105) -> Review & Math Logic Cycle (Part II L1007–1008), gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II ; Staged (week_129): tái sinh/kiểm tra lại theo acceptance spec (hiện reading_hub.theme="Opinion Project 3: Smartphones Under 12?" [Part I (L105: Smartphones / Opinion Project 3)]; staged blueprint: Part II (L1007–1008: Review & Math Logic Cycle)) |
+| **W130** | Lệch tầng — Prod BP: Part I (L105: Smartphones / Opinion Project 3); Map: Part I (L105: Smartphones); Staged Content: Part I (L105: Smartphones / Opinion Project 3) (theme="Opinion Project 3: Comparing Global Approaches") | L1007 (129,132 \| Math: Math Fractions/Decimals review) | BP: cập nhật [theme/title/clil_topic/grammar/week_type] từ Part II L1007 ; Digital Map (L239): sửa Smartphones (Part I L105) -> Review & Math Logic Cycle (Part II L1007–1008), gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II ; Staged (week_130): tái sinh/kiểm tra lại theo acceptance spec (hiện reading_hub.theme="Opinion Project 3: Comparing Global Approaches" [Part I (L105: Smartphones / Opinion Project 3)]; staged blueprint: Part II (L1007–1008: Review & Math Logic Cycle)) |
+| **W131** | Lệch tầng — Prod BP: Part I (L105: Smartphones / Opinion Project 3); Map: Part I (L105: Smartphones); Staged Content: Part I (L105: Smartphones / Opinion Project 3) (theme="Opinion Project 3: Persuasive Techniques") | L1007 (129,132 \| Math: Math Fractions/Decimals review) | BP: cập nhật [theme/title/clil_topic/grammar/week_type] từ Part II L1007 ; Digital Map (L240): sửa Smartphones (Part I L105) -> Review & Math Logic Cycle (Part II L1007–1008), gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II ; Staged (week_131): tái sinh/kiểm tra lại theo acceptance spec (hiện reading_hub.theme="Opinion Project 3: Persuasive Techniques" [Part I (L105: Smartphones / Opinion Project 3)]; staged blueprint: Part II (L1007–1008: Review & Math Logic Cycle)) |
+| **W132** | Prod BP: Khác (không khớp Part I hay Part II); Map: Mock giả chèn trong khung Part I W129–136 (B1+ Academic Assessment Mock 2) | L1007 (129,132 \| Math: Math Fractions/Decimals review) | BP: bỏ isFullMock=true (chuyển sang slot M24..M34 [CHỜ OWNER]), cập nhật [theme/title/clil_topic/grammar/cefr] từ Part II L1007 ; Digital Map (L241): bỏ ★ FULL MOCK/GRADUATION sang tuần xen kẽ, sửa B1+ Academic Assessment Mock 2 (mock giả chèn khung Part I W129–136) -> Review & Math Logic Cycle (Part II L1007–1008), gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W133** | Lệch tầng — Prod BP: Part II (L1012); Map: Part II tiêu đề (L1012); Staged Content: Part II (L1012) (theme="Deep Research & Data") | L1012 (Deep Research & Data \| Math: Geometry: Angles) | BP: cập nhật [clil_topic] từ Part II L1012 ; Digital Map (L242): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II ; Staged (week_133): tái sinh/kiểm tra lại theo acceptance spec (hiện reading_hub.theme="Deep Research & Data" [Part II (L1012)]; staged blueprint: Part II (L1012)) |
+| **W134** | Lệch tầng — Prod BP: Part II (L1021); Map: Part II tiêu đề (L1021); Staged Content: Part II (L1021) (theme="Identifying Fallacies") | L1021 (Identifying Fallacies \| Math: Geometry: Triangles) | BP: cập nhật [clil_topic] từ Part II L1021 ; Digital Map (L243): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II ; Staged (week_134): tái sinh/kiểm tra lại theo acceptance spec (hiện reading_hub.theme="Identifying Fallacies" [Part II (L1021)]; staged blueprint: Part II (L1021)) |
+| **W135** | Theo Part II ở tiêu đề/khung chính (L1031; khác Part I L105), nhưng BP còn lệch [clil_topic] & Map Cột 4/6 chưa khớp Part II | L1031 (The Counter-Argument Paragraph \| Math: Perimeter & Area of Complex Shapes) | BP: cập nhật [clil_topic] từ Part II L1031 ; Digital Map (L244): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W136** | Theo Part II ở tiêu đề/khung chính (L1040; khác Part I L105), nhưng BP còn lệch [clil_topic] + isFullMock=true & Map Cột 4/6 chưa khớp Part II | L1040 (Drafting the Full Essay \| Math: Symmetry) | BP: bỏ isFullMock=true (chuyển sang slot M24..M34 [CHỜ OWNER]), cập nhật [clil_topic] từ Part II L1040 ; Digital Map (L245): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W137** | Theo Part II ở tiêu đề/khung chính (L1049; khác Part I L107), nhưng BP còn lệch [cefr] & Map Cột 4/6 chưa khớp Part II | L1049 (Editing & Polishing (Word Choice) \| Math: Geometry Word Problems) | BP: cập nhật [cefr] từ Part II L1049 ; Digital Map (L246): bỏ ★ FULL MOCK/GRADUATION sang tuần xen kẽ, đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W138** | Theo Part II ở tiêu đề/khung chính (L1059; khác Part I L107); Map Cột 4/6 còn lệch | L1059 (Advanced Rebuttal (Attacking Evidence) \| Math: Logic: Deduction) | BP: đạt trường chính (giữ sync) ; Digital Map (L247): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W139** | Theo Part II ở tiêu đề/khung chính (L1068; khác Part I L107); Map Cột 4/6 còn lệch | L1068 (Team Strategy \| Math: Transformations (Flip, Slide, Turn)) | BP: đạt trường chính (giữ sync) ; Digital Map (L248): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W140** | Theo Part II ở tiêu đề/khung chính (L1077; khác Part I L107), nhưng BP còn lệch [grammar] + isFullMock=true & Map Cột 4/6 chưa khớp Part II | L1077 (The Live Debate 2 (Video Games) \| Math: Math Review Game) | BP: bỏ isFullMock=true (chuyển sang slot M24..M34 [CHỜ OWNER]), cập nhật [grammar] từ Part II L1077 ; Digital Map (L249): gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W141** | Theo Part II ở tiêu đề/khung chính (L1086; khác Part I L107), nhưng BP còn lệch [clil_topic/grammar] & Map Cột 4/6 chưa khớp Part II | L1086 (Geometry Review - Angles & Lines \| Math: Reviewing Angles) | BP: cập nhật [clil_topic/grammar] từ Part II L1086 ; Digital Map (L250): gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W142** | Theo Part II ở tiêu đề/khung chính (L1091; khác Part I L107), nhưng BP còn lệch [clil_topic/grammar/vocab/cefr] & Map Cột 4/6 chưa khớp Part II | L1091 (Geometry Review - Area & Volume \| Math: 3D Shapes) | BP: cập nhật [clil_topic/grammar/vocab/cefr] từ Part II L1091 ; Digital Map (L251): bỏ ★ FULL MOCK/GRADUATION sang tuần xen kẽ, gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W143** | Theo Part II ở tiêu đề/khung chính (L1096; khác Part I L107), nhưng BP còn lệch [clil_topic/grammar] & Map Cột 4/6 chưa khớp Part II | L1096 (Critical Thinking - Analyzing Ads \| Math: Coordinate Geometry) | BP: cập nhật [clil_topic/grammar] từ Part II L1096 ; Digital Map (L252): gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W144** | Theo Part II ở tiêu đề/khung chính (L1101; khác Part I L107), nhưng BP còn lệch [grammar] + isFullMock=true & Map Cột 4/6 chưa khớp Part II | L1101 (Preparation for Capstone \| Math: Logic Puzzles Championship) | BP: bỏ isFullMock=true (chuyển sang slot M24..M34 [CHỜ OWNER]), cập nhật [grammar] từ Part II L1101 ; Digital Map (L253): gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W145** | Theo Part II ở tiêu đề/khung chính (L1109; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)), nhưng BP còn lệch [clil_topic] & Map Cột 4/6 chưa khớp Part II | L1109 (Independent Research \| Math: Data Analysis (Mean/Median)) | BP: cập nhật [clil_topic] từ Part II L1109 ; Digital Map (L262): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W146** | Theo Part II ở tiêu đề/khung chính (L1118; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)); Map Cột 4/6 còn lệch | L1118 (Synthesizing Information \| Math: Data Analysis (Mode/Range)) | BP: đạt trường chính (giữ sync) ; Digital Map (L263): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W147** | Theo Part II ở tiêu đề/khung chính (L1128; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)), nhưng BP còn lệch [cefr] & Map Cột 4/6 chưa khớp Part II | L1128 (Advanced Thesis Writing \| Math: Probability (Chance)) | BP: cập nhật [cefr] từ Part II L1128 ; Digital Map (L264): bỏ ★ FULL MOCK/GRADUATION sang tuần xen kẽ, đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W148** | Theo Part II ở tiêu đề/khung chính (L1137; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)) + isFullMock=true; Map Cột 4/6 còn lệch | L1137 (Drafting Final Essay (Independent) \| Math: Interpreting Data) | BP: bỏ isFullMock=true (chuyển sang slot M24..M34 [CHỜ OWNER]) ; Digital Map (L265): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W149** | Theo Part II ở tiêu đề/khung chính (L1145; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)); Map Cột 4/6 còn lệch | L1145 (Final Polish & Peer Review \| Math: Data Project) | BP: đạt trường chính (giữ sync) ; Digital Map (L266): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W150** | Theo Part II ở tiêu đề/khung chính (L1154; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)), nhưng BP còn lệch [grammar] & Map Cột 4/6 chưa khớp Part II | L1154 (Mock Debate & Strategy \| Math: Review Logic Puzzles) | BP: cập nhật [grammar] từ Part II L1154 ; Digital Map (L267): gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W151** | Theo Part II ở tiêu đề/khung chính (L1161; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)), nhưng BP còn lệch [grammar] & Map Cột 4/6 chưa khớp Part II | L1161 (The Capstone Debate \| Math: Math Cycle 3 Review) | BP: cập nhật [grammar] từ Part II L1161 ; Digital Map (L268): gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |
+| **W152** | Theo Part II ở tiêu đề/khung chính (L1166; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)), nhưng BP còn lệch [cefr] + isFullMock=true & Map Cột 4/6 chưa khớp Part II | L1166 (Genre Review: Narrative \| Math: Pre-Algebra (Patterns)) | BP: bỏ isFullMock=true (chuyển sang slot M24..M34 [CHỜ OWNER]), cập nhật [cefr] từ Part II L1166 ; Digital Map (L269): bỏ ★ FULL MOCK/GRADUATION sang tuần xen kẽ, đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W153** | Theo Part II ở tiêu đề/khung chính (L1174; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)); Map Cột 4/6 còn lệch | L1174 (Genre Review: Expository \| Math: Geometry Review (Volume & Surface Area)) | BP: đạt trường chính (giữ sync) ; Digital Map (L270): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W154** | Theo Part II ở tiêu đề/khung chính (L1182; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)); Map Cột 4/6 còn lệch | L1182 (Impromptu Speaking Skills \| Math: Final Math Review (Part 2)) | BP: đạt trường chính (giữ sync) ; Digital Map (L271): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W155** | Theo Part II ở tiêu đề/khung chính (L1189; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)); Map Cột 4/6 còn lệch | L1189 (Portfolio Prep \| Math: Math Fun Day) | BP: đạt trường chính (giữ sync) ; Digital Map (L272): đồng bộ Grammar/Vocab Col 6 & CLIL Col 4 theo Part II |
+| **W156** | Theo Part II ở tiêu đề/khung chính (L1196; khác Part I kết thúc tại W144 (W145–156 chỉ có trong Part II)), nhưng BP còn lệch [grammar/cefr] + isFullMock=true & Map Cột 4/6 chưa khớp Part II | L1196 (GRADUATION CEREMONY & FINAL SHOWCASE \| Math: Math Awards) | BP: bỏ isFullMock=true (chuyển sang slot M24..M34 [CHỜ OWNER]), cập nhật [grammar/cefr] từ Part II L1196 ; Digital Map (L273): bỏ ★ FULL MOCK/GRADUATION sang tuần xen kẽ, gắn nhãn SUPPLEMENT cho Grammar/Vocab im lặng + đồng bộ Col 4/6 theo Part II |

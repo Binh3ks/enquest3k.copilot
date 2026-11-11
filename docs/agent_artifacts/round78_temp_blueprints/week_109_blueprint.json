@@ -1,0 +1,54 @@
+{
+  "week": 109,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Drafting Body Paragraph 1",
+  "title_en": "Drafting Body Paragraph 1",
+  "cefr_level": "B1+ PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Writing the first main idea",
+    "focus": "Write a paragraph with a Topic Sentence and 2-3 supporting details from notes",
+    "source": "Source B L872"
+  },
+  "math_focus": {
+    "topic": "Coordinates Intro",
+    "outcome": "Identify X and Y axis",
+    "vocab": [
+      "axis",
+      "x-axis",
+      "y-axis",
+      "grid",
+      "line"
+    ],
+    "source": "Source B L877"
+  },
+  "grammar_focus": {
+    "structure": "Linking Words (Addition): \"Also\", \"In addition\", \"Furthermore\"",
+    "outcome": "Write a paragraph with a Topic Sentence and 2-3 supporting details from notes",
+    "source": "Source B L875"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "detail",
+      "support",
+      "explain",
+      "describe",
+      "specific"
+    ],
+    "total_syllabus_words": 5,
+    "supplement_needed": 15,
+    "source": "Source B L876"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 871,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 208
+  }
+}

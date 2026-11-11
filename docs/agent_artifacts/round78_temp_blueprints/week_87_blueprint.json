@@ -1,0 +1,58 @@
+{
+  "week": 87,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Human Body / Math: Elapsed Time",
+  "title_en": "Human Body / Math: Elapsed Time",
+  "cefr_level": "B1 PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "The Machine Inside",
+    "focus": "Explain a body system's function (e.g., Circulatory)",
+    "source": "Source B L695"
+  },
+  "math_focus": {
+    "topic": "Elapsed Time",
+    "outcome": "Calculate duration across hours (e.g., 1:45 to 3:15)",
+    "vocab": [
+      "start time",
+      "end time",
+      "duration",
+      "hour",
+      "minute",
+      "interval"
+    ],
+    "source": "Source B L700"
+  },
+  "grammar_focus": {
+    "structure": "Passive Voice (Process): \"Oxygen is carried by blood.\"",
+    "outcome": "Explain a body system's function (e.g., Circulatory)",
+    "source": "Source B L698"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "heart",
+      "lungs",
+      "blood",
+      "bone",
+      "muscle",
+      "pump",
+      "digest",
+      "system"
+    ],
+    "total_syllabus_words": 8,
+    "supplement_needed": 12,
+    "source": "Source B L699"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 694,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 178
+  }
+}

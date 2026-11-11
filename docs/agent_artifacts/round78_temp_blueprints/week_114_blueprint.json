@@ -1,0 +1,49 @@
+{
+  "week": 114,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Project Assembly (Making the Poster)",
+  "title_en": "Project Assembly (Making the Poster)",
+  "cefr_level": "B1+ PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Layout and Design",
+    "focus": "Glue text and images onto a poster board logically",
+    "source": "Source B L917"
+  },
+  "math_focus": {
+    "topic": "Measurement (Length/Area)",
+    "outcome": "Measure spaces on the poster to fit text boxes",
+    "vocab": [],
+    "source": "Source B L921"
+  },
+  "grammar_focus": {
+    "structure": null,
+    "outcome": "Glue text and images onto a poster board logically",
+    "source": "SUPPLEMENT (Source B silent)"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "layout",
+      "center",
+      "top",
+      "bottom",
+      "arrange",
+      "organize"
+    ],
+    "total_syllabus_words": 6,
+    "supplement_needed": 14,
+    "source": "Source B L920"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 916,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 213
+  }
+}

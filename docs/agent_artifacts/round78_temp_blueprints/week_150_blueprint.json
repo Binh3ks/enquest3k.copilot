@@ -1,0 +1,48 @@
+{
+  "week": 150,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Mock Debate & Strategy",
+  "title_en": "Mock Debate & Strategy",
+  "cefr_level": "B1+ Academic",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Practice run",
+    "focus": "Complete a full debate round with teacher feedback",
+    "source": "Source B L1155"
+  },
+  "math_focus": {
+    "topic": "Review Logic Puzzles",
+    "outcome": null,
+    "vocab": [],
+    "source": "Source B L1159"
+  },
+  "grammar_focus": {
+    "structure": null,
+    "outcome": "Complete a full debate round with teacher feedback",
+    "source": "SUPPLEMENT (Source B silent)"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "feedback",
+      "improve",
+      "adjust",
+      "tone",
+      "volume"
+    ],
+    "total_syllabus_words": 5,
+    "supplement_needed": 15,
+    "source": "Source B L1158"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 1154,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 267
+  }
+}

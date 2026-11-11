@@ -1,0 +1,57 @@
+{
+  "week": 81,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "ELA: The Master Architect (Structure) / Math: Graphing Data",
+  "title_en": "ELA: The Master Architect (Structure) / Math: Graphing Data",
+  "cefr_level": "B1 PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Planning an essay like building a house",
+    "focus": "Create a 5-paragraph outline",
+    "source": "Source B L639"
+  },
+  "math_focus": {
+    "topic": "Representing Data",
+    "outcome": "Create a bar graph from a data set",
+    "vocab": [
+      "axis",
+      "label",
+      "title",
+      "scale",
+      "bar",
+      "plot"
+    ],
+    "source": "Source B L644"
+  },
+  "grammar_focus": {
+    "structure": "Transition Signals (Firstly, Secondly, In conclusion)",
+    "outcome": "Create a 5-paragraph outline",
+    "source": "Source B L642"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "introduction",
+      "body",
+      "conclusion",
+      "outline",
+      "structure",
+      "paragraph",
+      "main point"
+    ],
+    "total_syllabus_words": 7,
+    "supplement_needed": 13,
+    "source": "Source B L643"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 638,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 172
+  }
+}

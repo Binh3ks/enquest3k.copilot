@@ -1,0 +1,48 @@
+{
+  "week": 113,
+  "schema_version": "round78_part2_dry_run_v1",
+  "theme": "Visual Aids (Images & Captions)",
+  "title_en": "Visual Aids (Images & Captions)",
+  "cefr_level": "B1+ PET",
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "mock_schedule_note": "Content week only (isFullMock: false). Mock checkpoints M01..M34 live in separate interleaved slots.",
+  "clil_topic": {
+    "title": "Adding visual information",
+    "focus": "Select images and write descriptive captions using prepositions",
+    "source": "Source B L909"
+  },
+  "math_focus": {
+    "topic": "Geometry Review (Shapes)",
+    "outcome": "Review properties of 2D/3D shapes for project models",
+    "vocab": [],
+    "source": "Source B L914"
+  },
+  "grammar_focus": {
+    "structure": "Prepositional Phrases: \"In this picture...\", \"Next to the volcano...\"",
+    "outcome": "Select images and write descriptive captions using prepositions",
+    "source": "Source B L912"
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "caption",
+      "image",
+      "picture",
+      "show",
+      "display"
+    ],
+    "total_syllabus_words": 5,
+    "supplement_needed": 15,
+    "source": "Source B L913"
+  },
+  "metadata_provenance": {
+    "generator_script": "scripts/generate_round78_part1_part2_and_blueprints.mjs",
+    "primary_pedagogical_authority": "Source B Part II (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)",
+    "source_master_syllabus": true,
+    "source_b_part": "Part II",
+    "source_b_header_line": 908,
+    "source_b_block_origin": "single_week",
+    "source_b_range_span": null,
+    "digital_map_line": 212
+  }
+}
