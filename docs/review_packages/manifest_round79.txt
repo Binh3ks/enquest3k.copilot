@@ -1,0 +1,45 @@
+ROUND 79 PACKAGE & COMMIT MANIFEST
+========================================================================
+Timestamp:           2026-11-11T08:08:38.410Z
+deliverables_commit: 186527181382b4bc0bc1e401e3fc8aa823231daa
+
+ZIP PACKAGE:
+  Path:    docs/review_packages/round79_20261111.zip
+  Size:    737797 bytes
+  SHA-256: d4e3ea334b2ecfda4eba1f050773c54bb1f0aedb602749cb52c7d57d37e5c748
+
+DRY-RUN TEMP BLUEPRINTS:
+  Directory: docs/agent_artifacts/round79_temp_blueprints/ (156 files)
+
+RAW FORENSIC ARTIFACTS & SHA-256 HASHES:
+  e155797b2f90ea0b597f53d4cdc309cca48329c940fa556c24d6fb07fcebdf17  docs/agent_artifacts/round79_proposed_digital_map_v2.md
+  60595a7ded71a46ba6cc93135960417607ad26a86fedef3f74a74b4afad991f1  docs/agent_artifacts/round79_digital_map_and_rotary_raw.txt
+  14c4f16757d73ec30cda3fef5d047535cb6506ced3d8bc47233332381c351d2e  docs/agent_artifacts/round79_blueprints_cefr_and_c8_raw.txt
+  ea200a85a5883734877d8765e834aa6f02edcbe1f97e3c1cf4f120192d8257f8  docs/agent_artifacts/round79_w79_w80_vocab_options.md
+  c452b77bcb71c967410279f4829f51f3f8378c69a8ae26131ff4fb009a6e6f7f  docs/agent_artifacts/round79_wave3_acceptance_spec_v2.md
+  7b912184589ad4fc9c5ddf389bfcd9f282939dffd22c1158d5c868f04f83918c  docs/agent_artifacts/round79_w80_tech_debt_and_math_runtime_raw.txt
+  a364cc70a7cfdd8414e8b8d03b12f18a8a6ece4ac1fe2b6c0826584606f84419  docs/agent_artifacts/round78_w79_w80_split_proposal.md
+  d24d59131724745e362871b477c7ff1f5eb045914279cf79e206bd8c0dbbff5f  docs/agent_artifacts/round78_wave3_acceptance_spec.md
+  5fb727bfa4fe588d5c582096ce774384c13fa7b7176891909822a27a8ca9cda0  docs/agent_artifacts/round64_mock_schedule_and_conflicts.md
+
+SCOPE COMPLIANCE (ROUND 79 — PROPOSAL ONLY):
+  - src/data/weeks/: 0 modifications
+  - SOP / MASTER_ARCH / ARCHITECTURE_CURRENT / AGENTS / Digital Map: 0 modifications
+  - docs/agent_artifacts/staging/: 0 modifications / 0 regeneration / 0 merge
+  - Proposals included for review:
+      * A.1: Digital Map v2 keeps non-conflicting Source A Col 6 hub/activity mappings under [SUPPLEMENT — Source A]
+      * A.2: B.6 split into 3 separated script-computed counts (genuine SB conflicts / Source A [SUPPLEMENT] / removed Mock flags)
+      * A.3: Consumer audit (bossRotarySchedule.js math vs generate_week_blueprint.mjs Map regex + W150 cleanTheme /MOCK/i discovery), Rotary 1-4 restored on W33-156, 156-row Col 3 diff table
+      * B.4: 156 temp blueprints preserving 100% existing prod keys (0 dropped keys, patching ONLY 8 SB-derived fields) + field-by-field diff
+      * B.5: All existing prod CEFR (cefr_level | cefr_stage) grouped + 1 standardized proposal keeping W113-W120 [CHỜ OWNER]
+      * B.6: C.8 W129-132 display bug fixed -> "Review & Math Logic Cycle [W129–132]"
+      * C.7 & C.8: W79/W80 13 SUPPLEMENT vocab clarified with both Option (a) & Option (b1/b2) neutrally ([CHỜ OWNER])
+      * D.9: Wave 3 Acceptance Spec v2 updated from actual src/ runtime (BarModelQuest.jsx, BarModelSVG.jsx, barModelEvaluator.js) for W133 Geometry: Angles & W134 Geometry: Triangles + staged key warning
+      * E.10: Read-only forensic audit of week_80 (and week_76) prod tech debt (blueprint/source_grounding/provenance/JS clone issues)
+      * F.11: Runtime Math loader proof (index.js -> zoneDataMapper/TaskScreen -> BattleArenaZone -> BarModelQuest) + 22 prod content weeks scan
+  - Pending Owner Decision:
+      * C.7: W79/W80 13 SUPPLEMENT vocab Option (a) 26 new words vs Option (b1) split 7+6 vs Option (b2) repeat 13 shared
+      * B.5: W113-W120 CEFR Phase 2 B1 PET (Source B L949-953) vs B1+ Academic (SOP:L106 / MASTER_ARCH:L28,156)
+      * M24-M34 mock format after W116 (PET vs B1+ Academic)
+      * Approval of SUPPLEMENT items (W79/W80 Math, Digital Map v2 patch, W80/W76 prod repair plan, F.11 runtime math loader normalization)
+========================================================================
