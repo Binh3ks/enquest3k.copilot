@@ -1,0 +1,114 @@
+=============================================================================================================================================
+🔍 AUDIT DỮ LIỆU THẬT ROUND 77: SOURCE B (TIÊU ĐỀ & TOPIC) vs PRODUCTION & STAGED CONTENT
+Căn cứ: 100% VM/AST parsing; Cột Toán đếm mảng AST; Cột Vocab sửa lỗi export default, escape quote & dấu "/" (Tasks B.4, B.5, B.6)
+Quy tắc phân loại: 100% tính từ dữ liệu thật; ngoại lệ W33 ghi ở cột riêng đọc từ W33_GOLDEN_FREEZE_MANIFEST.json
+=============================================================================================================================================
+
+| Vị trí | Tuần | Source B Dòng | Source B Tiêu Đề (Title) | Source B Chủ Đề (Topic) | Theme File Thật (reading_hub) | So Với Tiêu Đề | So Với Topic | Vocab Khớp (Exact) | Math Items | Phân Loại Tổng Hợp | Ghi chú Owner Decision |
+| :---: | :---: | :---: | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :--- | :--- |
+
+--- 1. CÁC TUẦN PRODUCTION TRONG SRC/DATA/WEEKS (22 TUẦN) ---
+| **PROD** | **W33** | L299 | The Mistake (Irregular Verbs 5: Accidents) | Accidents happen! | Corridor Safety & School Care | ❌ LỆCH | ❌ LỆCH | 6/6 (100%) | 5/5 | LỆCH HOÀN TOÀN CẢ HAI (5/5 toán) | Owner decision: frozen |
+| **PROD** | **W34** | L304 | Storytelling Practice 1 (Fable) | The Lion and the Mouse | The Lion and the Mouse | ❌ LỆCH | ✅ EXACT | 6/7 (86%) [gần đúng: friend~>friendship] | 5/5 | TOÀN VẸN (Pass) | — |
+| **PROD** | **W35** | L310 | Storytelling Practice 2 (Personal Recount) | The Best Day Ever | Storytelling Practice 2 (Personal Recount) | ✅ EXACT | ❌ LỆCH | 0 Source B words defined | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W36** | L315 | Review & Project 3: "My Adventure Book" | Creating a mini-book | Review & Project 3: "My Adventure Book" | ✅ EXACT | ❌ LỆCH | 0 Source B words defined | 0/5 | PASS cấp tiêu đề (0/5 toán) | — |
+| **PROD** | **W37** | L323 | Living vs. Non-Living (Reasoning) | Investigating clues in nature | MISSING_IN_FILE | ❌ LỆCH | ❌ LỆCH | 0/9 (0%) | 0/5 | THIẾU FILE (Chưa có nội dung) | — |
+| **PROD** | **W38** | L329 | Animal Abilities (Modals) | Comparing animal abilities | Animal Abilities (Modals) | ✅ EXACT | ⚠️ CẦN REVIEW | 8/8 (100%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W39** | L335 | Habitats (Persuasion Intro) | Matching animals to habitats | Habitats (Persuasion Intro) | ✅ EXACT | ❌ LỆCH | 6/7 (86%) [gần đúng: polar region~>polar] | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W41** | L347 | Life Cycles (Process) | Butterfly or Frog Life Cycle | Life Cycles (Process) | ✅ EXACT | ❌ LỆCH | 7/7 (100%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W43** | L361 | The "Plus" Machine (Addition Language) | Reading math stories | The "Plus" Machine (Addition Language) | ✅ EXACT | ❌ LỆCH | 6/6 (100%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W45** | L373 | Shape Detectives (Geometry) | Finding shapes in the classroom | Shape Detectives (Geometry) | ✅ EXACT | ❌ LỆCH | 8/8 (100%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W46** | L379 | The Pattern Code (Logic) | Cracking visual codes (Red-Blue-Red-?) | The Pattern Code (Logic) | ✅ EXACT | ❌ LỆCH | 6/6 (100%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W73** | L578 | Science/ELA: The Water Cycle (Advanced) / Math: Volume | The Never-Ending Journey | Science/ELA: The Water Cycle (Advanced) / Math: Volume | ✅ EXACT | ❌ LỆCH | 6/7 (86%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W74** | L587 | Science/ELA: Food Chains / Math: Complex Charts | Who Eats Who? (Energy flow) | Science/ELA: Food Chains / Math: Complex Charts | ✅ EXACT | ❌ LỆCH | 6/8 (75%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W75** | L596 | History/ELA: Ancient Egypt / Math: Timelines | Pyramids and Pharaohs | History/ELA: Ancient Egypt / Math: Timelines | ✅ EXACT | ❌ LỆCH | 6/8 (75%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W76** | L605 | History/ELA: Explorers / Math: Map Scales | Great Voyages | History/ELA: Explorers / Math: Map Scales | ✅ EXACT | ❌ LỆCH | 2/8 (25%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W77** | L614 | Social Studies/ELA: World Landmarks / Math: 3D Geometry | Famous Buildings | Social Studies/ELA: World Landmarks / Math: 3D Geometry | ✅ EXACT | ❌ LỆCH | 1/9 (11%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W78** | L623 | Social Studies/ELA: Cultures / Math: Surveys | Traditions Around the World | Social Studies/ELA: Cultures / Math: Surveys | ✅ EXACT | ❌ LỆCH | 6/9 (67%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W79** | L632 | Review & Micro-Debate 2 | Space Exploration vs. Earth Fix | Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate | ⚠️ CẦN REVIEW | ⚠️ CẦN REVIEW | 0/7 (0%) | 2/5 | CẦN REVIEW (2/5 toán) | — |
+| **PROD** | **W80** | L632 | Review & Micro-Debate 2 | Space Exploration vs. Earth Fix | Supply, Demand & Market Prices / Math: Market Equilibrium Graphs | ❌ LỆCH | ❌ LỆCH | 0/7 (0%) | 2/5 | LỆCH HOÀN TOÀN CẢ HAI (2/5 toán) | — |
+| **PROD** | **W81** | L638 | ELA: The Master Architect (Structure) / Math: Graphing Data | Planning an essay like building a house | ELA: The Master Architect (Structure) / Math: Graphing Data | ✅ EXACT | ❌ LỆCH | 5/7 (71%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W82** | L647 | ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data | Describing a favorite place | ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data | ✅ EXACT | ❌ LỆCH | 1/9 (11%) | 2/5 | PASS cấp tiêu đề (2/5 toán) | — |
+| **PROD** | **W125** | L986 | Intro & Conclusion | Hook and Summary | Intro & Conclusion (Academic Essay Structure) | ⚠️ CẦN REVIEW | ❌ LỆCH | 3/4 (75%) | 2/5 | CẦN REVIEW (2/5 toán) | — |
+
+--- 2. CÁC TUẦN STAGED TRONG DOCS/AGENT_ARTIFACTS/STAGING (8 TUẦN) ---
+| **STAGED** | **W79** | L632 | Review & Micro-Debate 2 | Space Exploration vs. Earth Fix | The Industrial Revolution | ❌ LỆCH | ❌ LỆCH | 0/7 (0%) | 5/5 | LỆCH HOÀN TOÀN CẢ HAI (5/5 toán) | — |
+| **STAGED** | **W126** | L993 | From Essay to Speech | Making it spoken | From Essay to Speech | ✅ EXACT | ❌ LỆCH | 0 Source B words defined | 5/5 | PASS cấp tiêu đề (5/5 toán) | — |
+| **STAGED** | **W127** | L998 | Rebuttal Practice | Disagreeing politely | Rebuttal Practice | ✅ EXACT | ❌ LỆCH | 5/5 (100%) | 5/5 | PASS cấp tiêu đề (5/5 toán) | — |
+| **STAGED** | **W129** | L1007 | Review & Math Logic Cycle | N/A | Opinion Project 3: Smartphones Under 12? | ❌ LỆCH | — KHÔNG CÓ | 0 Source B words defined | 5/5 | LỆCH HOÀN TOÀN CẢ HAI (5/5 toán) | — |
+| **STAGED** | **W130** | L1007 | Review & Math Logic Cycle | N/A | Opinion Project 3: Comparing Global Approaches | ❌ LỆCH | — KHÔNG CÓ | 0 Source B words defined | 5/5 | LỆCH HOÀN TOÀN CẢ HAI (5/5 toán) | — |
+| **STAGED** | **W131** | L1007 | Review & Math Logic Cycle | N/A | Opinion Project 3: Persuasive Techniques | ❌ LỆCH | — KHÔNG CÓ | 0 Source B words defined | 5/5 | LỆCH HOÀN TOÀN CẢ HAI (5/5 toán) | — |
+| **STAGED** | **W133** | L1012 | Deep Research & Data | Finding statistics to support arguments | Deep Research & Data | ✅ EXACT | ❌ LỆCH | 8/8 (100%) | 5/5 | PASS cấp tiêu đề (5/5 toán) | — |
+| **STAGED** | **W134** | L1021 | Identifying Fallacies | Spotting bad arguments | Identifying Fallacies | ✅ EXACT | ❌ LỆCH | 8/8 (100%) | 5/5 | PASS cấp tiêu đề (5/5 toán) | — |
+
+=============================================================================================================================================
+📊 BÁO CÁO TỔNG HỢP 100% COMPUTED (ROUND 77)
+=============================================================================================================================================
+1. Trục Tiêu Đề & Topic (Production - 22 tuần):
+   - PASS (Topic EXACT hoặc Title EXACT/Normalized): 17 / 22 tuần.
+   - EXACT Title: 16 / 22 tuần (W35, W36, W38, W39, W41, W43, W45, W46, W73, W74, W75, W76, W77, W78, W81, W82).
+   - NORMALIZED Title: 0 / 22 tuần (None).
+   - EXACT Topic: 1 / 22 tuần (W34).
+   - Tuần có Owner Decision Frozen (đọc từ manifest): W33 (Owner decision: frozen).
+2. Trục Tiêu Đề (Staging - 8 tuần):
+   - PASS cấp tiêu đề: 4 / 8 tuần (W126, W127, W133, W134).
+3. Hiện trạng Singapore Math (AST):
+   - Production có 5/5 toán: 2 tuần (W33, W34).
+   - Production có 1–4/5 toán: 18 tuần (W35:2/5, W38:2/5, W39:2/5, W41:2/5, W43:2/5, W45:2/5, W46:2/5, W73:2/5, W74:2/5, W75:2/5, W76:2/5, W77:2/5, W78:2/5, W79:2/5, W80:2/5, W81:2/5, W82:2/5, W125:2/5).
+   - Production có 0/5 toán: 2 tuần (W36, W37).
+   - Staged có 5/5 toán: 8/8 tuần.
+
+=============================================================================================================================================
+🔬 ĐỐI CHIẾU SONG SONG TỪ VỰNG W33, W34, W39, W41 & NGUYÊN NHÂN LỆCH R75 → R76 (TASK B.4)
+=============================================================================================================================================
+
+--- TUẦN W33 ---
+  • Dòng Source B (L303): •	Vocabulary Focus: mistake, accident, fix, sorry, careful, clumsy.
+  • Danh sách từ Source B (đã parse, 6 mục): ["mistake","accident","fix","sorry","careful","clumsy"]
+  • Nguồn vocab production: src/data/weeks/week_33/vocab.js | Số phần tử: 20 | Kiểu dữ liệu phần tử: ["object"]
+  • Giá trị vocab production (theo kiểu object -> trường .word): ["corridor (object)","slipped (object)","nurse (object)","bandage (object)","safe (object)","mistake (object)","accident (object)","fix (object)","sorry (object)","careful (object)","clumsy (object)","arm (object)","knee (object)","leg (object)","head (object)","cold pack (object)","get better (object)","explain (object)","lesson (object)","terrible (object)"]
+  • Từ khớp chính xác (6/6): ["mistake","accident","fix","sorry","careful","clumsy"]
+  • Từ không khớp chính xác (0/6): []
+
+--- TUẦN W34 ---
+  • Dòng Source B (L309): •	Vocabulary Focus: net, trap, roar, help, friend, tiny, huge.
+  • Danh sách từ Source B (đã parse, 7 mục): ["net","trap","roar","help","friend","tiny","huge"]
+  • Nguồn vocab production: src/data/weeks/week_34/vocab.js | Số phần tử: 23 | Kiểu dữ liệu phần tử: ["object"]
+  • Giá trị vocab production (theo kiểu object -> trường .word): ["lion (object)","mouse (object)","paw (object)","hunter (object)","net (object)","rope (object)","trap (object)","chew (object)","free (object)","promise (object)","roar (object)","forest (object)","claws (object)","sharp (object)","fable (object)","cooperate (object)","brave (object)","grateful (object)","ecosystem (object)","friendship (object)","tiny (object)","huge (object)","help (object)"]
+  • Từ khớp chính xác (6/7): ["net","trap","roar","help","tiny","huge"]
+  • Từ không khớp chính xác (1/7): ["friend"] | Gần đúng/dạng phái sinh trong file: friend ~> ["friendship"]
+
+--- TUẦN W39 ---
+  • Dòng Source B (L340): •	Vocabulary Focus: habitat, desert, rainforest, ocean, polar region, safe, dangerous.
+  • Danh sách từ Source B (đã parse, 7 mục): ["habitat","desert","rainforest","ocean","polar region","safe","dangerous"]
+  • Nguồn vocab production: src/data/weeks/week_39/vocab.js | Số phần tử: 20 | Kiểu dữ liệu phần tử: ["object"]
+  • Giá trị vocab production (theo kiểu object -> trường .word): ["habitat (object)","desert (object)","rainforest (object)","ocean (object)","polar (object)","safe (object)","dangerous (object)","burrow (object)","shelter (object)","survive (object)","camel (object)","creature (object)","protect (object)","wildlife (object)","climate (object)","shallow (object)","belong (object)","opinion (object)","canopy (object)","reserve (object)"]
+  • Từ khớp chính xác (6/7): ["habitat","desert","rainforest","ocean","safe","dangerous"]
+  • Từ không khớp chính xác (1/7): ["polar region"] | Gần đúng/dạng phái sinh trong file: polar region ~> ["polar"]
+
+--- TUẦN W41 ---
+  • Dòng Source B (L352): •	Vocabulary Focus: egg, hatch, caterpillar/tadpole, chrysalis, butterfly/frog.
+  • Danh sách từ Source B (đã parse, 7 mục): ["egg","hatch","caterpillar","tadpole","chrysalis","butterfly","frog"]
+  • Nguồn vocab production: src/data/weeks/week_41/vocab.js | Số phần tử: 20 | Kiểu dữ liệu phần tử: ["object"]
+  • Giá trị vocab production (theo kiểu object -> trường .word): ["egg (object)","hatch (object)","caterpillar (object)","chrysalis (object)","butterfly (object)","tadpole (object)","frog (object)","stage (object)","grow (object)","change (object)","leaf (object)","wing (object)","tail (object)","pond (object)","swim (object)","feed (object)","adult (object)","cycle (object)","develop (object)","cocoon (object)"]
+  • Từ khớp chính xác (7/7): ["egg","hatch","caterpillar","tadpole","chrysalis","butterfly","frog"]
+  • Từ không khớp chính xác (0/7): []
+
+--- NGUYÊN NHÂN KỸ THUẬT GÂY LỆCH TỪ R75 → R76 (TRÍCH TỪ MÃ NGUỒN THẬT) ---
+1. W33 (R75: 6/6 → R76: 0/6):
+   - R75 (scripts/audit_round75_source_b_baseline.mjs:L160,L177): `code = code.replace(/export\s+default\s+/g, 'var __default__ = ');` và trả về `if (varName) return sandbox[varName] || sandbox.__default__;` -> đọc được mảng 20 object trong `export default [...]` của W33.
+   - R76 (scripts/audit_round76_source_b_baseline.mjs:L177,L184): `.replace(/export\s+default\s+[^;]+;?/g, '')` xóa sạch khối `export default [...]` tới dấu `;` đầu tiên (L203), đồng thời L184 `const list = sandbox.vocab?.length ? sandbox.vocab : (sandbox.week34Vocab?.length ? sandbox.week34Vocab : sandbox.vocabList);` không kiểm tra `sandbox.__default__` nên trả về `[]` -> 0/6.
+   - R77 sau khi sửa: dùng `var __default__ = ` và kiểm tra `sandbox.__default__` -> khôi phục đúng 6/6 (100%).
+2. W34 (R75: 7/7 → R76: 6/7) & W39 (R75: 7/7 → R76: 6/7):
+   - R75 (scripts/audit_round75_source_b_baseline.mjs:L315): `if (realWords.some(rw => rw === bw || rw.includes(bw) || bw.includes(rw))) {` — so khớp chuỗi con nên `"friendship".includes("friend")` (W34) và `"polar region".includes("polar")` (W39) đều tính là khớp -> 7/7.
+   - R76 (scripts/audit_round76_source_b_baseline.mjs:L253): `const matched = bVocab.filter(word => stagedVocab.includes(word));` — đổi sang so khớp tuyệt đối `Array.prototype.includes()`, do `vocab.js` W34 chỉ có `"friendship"` (thiếu `"friend"`) và W39 chỉ có `"polar"` (thiếu `"polar region"`) nên tụt xuống 6/7.
+   - R77: đo chính xác 6/7 và chú thích rõ cặp gần đúng (`friend ~> friendship`, `polar region ~> polar`) để không che lệch từ gốc.
+3. W41 (R75: 7/7 → R76: 3/5):
+   - R75 (scripts/audit_round75_source_b_baseline.mjs:L131): `.split(/[,;\/]/)` — tách dấu `/`, chuyển `caterpillar/tadpole` và `butterfly/frog` thành 4 từ riêng -> tổng 7 từ -> 7/7.
+   - R76 (scripts/audit_round76_source_b_baseline.mjs:L115): `.split(/[,;]/)` — bỏ dấu `/`, giữ nguyên chuỗi `"caterpillar/tadpole"` và `"butterfly/frog"` làm 5 mục nên 2 mục có `/` không khớp -> 3/5.
+   - R77 sau khi sửa: tách lại theo `/[,;\/]/` -> khôi phục đúng 7/7 (100%).
+
+--- KIỂM CHỨNG W36 THEME ESCAPED QUOTES (TASK B.6) ---
+   - Dòng thật trong `src/data/weeks/week_36/reading_hub.js:L10`: `theme: "Review & Project 3: \"My Adventure Book\"",`
+   - R76 (scripts/audit_round76_source_b_baseline.mjs:L127) chạy regex `const mTheme = content.match(/theme\s*:\s*["']([^"']+)["']/);` trước VM nên bị dừng ngay tại `\"`, cắt cụt thành `Review & Project 3: \`.
+   - R77 (ưu tiên VM eval + regex hỗ trợ escaped quotes): trích đúng `Review & Project 3: "My Adventure Book"` | So với Tiêu đề Source B (`Review & Project 3: "My Adventure Book"`): ✅ EXACT.

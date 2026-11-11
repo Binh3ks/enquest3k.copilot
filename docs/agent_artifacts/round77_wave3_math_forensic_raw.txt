@@ -1,0 +1,303 @@
+====================================================================================================
+📐 FORENSIC TOÁN WAVE 3 THEO ĐÚNG TIÊU CHÍ SOURCE B (ROUND 77 — TASKS C.7, C.8, C.9)
+Thời điểm chạy: 2026-11-11T02:28:21.144Z
+====================================================================================================
+
+### 1. NGUYÊN VĂN SOURCE B: DÒNG TOÁN CỦA TỪNG TUẦN (ĐỌC TỪ FILE NGUỒN)
+
+--- TUẦN 79-80 (REVIEW & MICRO-DEBATE 2) (L632–L637) ---
+```text
+632: 	•	Weeks 79-80: Review & Micro-Debate 2 (Tuần 79-80: Ôn tập & Tranh luận nhỏ 2)
+633: 	•	Topic: "Space Exploration vs. Earth Fix". (Chủ đề: Khám phá Vũ trụ hay Sửa chữa Trái đất?)
+634: 	•	Activity: Micro-Debate. (Hoạt động: Tranh luận nhỏ.)
+635: 	•	Skill Focus: Rebuttal Intro ("Yes, but..."). (Kỹ năng: Giới thiệu Phản biện.)
+636: 	•	Grammar Review: Passive Voice, Conditionals, Comparatives.
+637: 	•	Vocabulary Focus: space, earth, money, spend, fix, problem, important.
+```
+
+- Kiểm tra trường Toán trong W79-80 (`L632–L637`): `Topic (Math)` = `N/A` | `Key Learning Outcome (Math)` = `N/A` | `Math Vocabulary` = `N/A` → **KHÔNG có mục Toán riêng trong khối Review & Micro-Debate này**.
+
+--- TUẦN 126 (FROM ESSAY TO SPEECH) (L993–L997) ---
+```text
+993: 	•	Week 126: From Essay to Speech (Tuần 126: Chuyển từ Bài viết sang Bài nói)
+994: 	•	Topic (Debate): Making it spoken. (Chủ đề: Văn nói.)
+995: 	•	Key Learning Outcome (ELA): Create cue cards and practice signposting. (Kết quả: Làm thẻ ghi chú và luyện từ dẫn đường.)
+996: 	•	Grammar Focus: Signposting: "Moving on to...", "Let's look at...". (Ngữ pháp: Từ dẫn hướng.)
+997: 	•	Topic (Math): Logic Puzzles. (Toán: Câu đố Logic.)
+```
+
+--- TUẦN 127 (REBUTTAL PRACTICE) (L998–L1003) ---
+```text
+998: 	•	Week 127: Rebuttal Practice (Tuần 127: Luyện Phản biện)
+999: 	•	Topic (Debate): Disagreeing politely. (Chủ đề: Phản đối lịch sự.)
+1000: 	•	Key Learning Outcome (ELA): Use "They say... but I say..." structure. (Kết quả: Dùng cấu trúc Họ nói... nhưng tôi nói...)
+1001: 	•	Grammar Focus: Contrast Connectors: "On the contrary", "However". (Ngữ pháp: Từ nối tương phản.)
+1002: 	•	Vocabulary Focus: disagree, counter, point, false, true.
+1003: 	•	Topic (Math): Critical Thinking Math. (Toán: Toán tư duy phản biện.)
+```
+
+--- TUẦN 133 (DEEP RESEARCH & DATA) (L1012–L1020) ---
+```text
+1012: 	•	Week 133: Deep Research & Data (Tuần 133: Nghiên cứu Sâu & Dữ liệu) 
+1013: 	•	Topic (ELA): Finding statistics to support arguments. (Chủ đề: Tìm số liệu thống kê để hỗ trợ lập luận.)
+1014: 	•	Key Learning Outcome (ELA): Find and cite one statistic about video games (e.g., "70% of kids play..."). (Kết quả: Tìm và trích dẫn 1 số liệu về video game.)
+1015: 	•	Skill Focus: Using data as evidence. (Kỹ năng: Dùng dữ liệu làm bằng chứng.)
+1016: 	•	Grammar Focus: Citation Phrases: "According to a study by...", "Statistics show that...". (Ngữ pháp: Cụm từ trích dẫn.)
+1017: 	•	Vocabulary Focus: statistic, percent, study, data, majority, minority, survey, population.
+1018: 	•	Topic (Math): Geometry: Angles. (Toán: Hình học - Góc.)
+1019: 	•	Key Learning Outcome (Math): Identify right, acute, and obtuse angles in shapes. (Kết quả: Nhận biết góc vuông, nhọn, tù.)
+1020: 	•	Math Vocabulary: angle, degree, right angle, acute, obtuse, protractor, measure.
+```
+
+--- TUẦN 134 (IDENTIFYING FALLACIES) (L1021–L1029) ---
+```text
+1021: 	•	Week 134: Identifying Fallacies (Tuần 134: Nhận diện Lỗi Ngụy biện) 
+1022: 	•	Topic (Debate): Spotting bad arguments. (Chủ đề: Phát hiện lập luận tồi.)
+1023: 	•	Key Learning Outcome (ELA): Identify a "Generalization" fallacy (e.g., "All gamers are lazy"). (Kết quả: Nhận diện lỗi "Khái quát hóa vội vã".)
+1024: 	•	Skill Focus: Critical Thinking/Logic. (Kỹ năng: Tư duy Phản biện/Logic.)
+1025: 	•	Grammar Focus: Qualifiers: "Some", "Many", "Often", "Tend to" (to avoid generalizing). (Ngữ pháp: Từ hạn định để tránh vơ đũa cả nắm.)
+1026: 	•	Vocabulary Focus: fallacy, generalization, assumption, true, false, valid, invalid, logic.
+1027: 	•	Topic (Math): Geometry: Triangles. (Toán: Hình học - Tam giác.)
+1028: 	•	Key Learning Outcome (Math): Classify triangles by sides (equilateral, isosceles, scalene). (Kết quả: Phân loại tam giác theo cạnh.)
+1029: 	•	Math Vocabulary: triangle, side, equal, length, equilateral, isosceles, scalene.
+```
+
+### 2. TIÊU CHÍ SOURCE B ĐÃ TRÍCH XUẤT (KHÔNG TỰ NÂNG TIÊU CHUẨN — TASK C.7)
+
+- **W126:** Topic = `Logic Puzzles. (Toán: Câu đố Logic.)` | Yêu cầu: bài toán có suy luận logic (loại trừ, sắp xếp thứ tự, điều kiện ràng buộc), không phải cộng/trừ số liệu cho sẵn.
+- **W127:** Topic = `Critical Thinking Math. (Toán: Toán tư duy phản biện.)` | Yêu cầu: bài toán tư duy phản biện định lượng (kiểm chứng khẳng định đúng/sai, đối chiếu giả thiết phát hiện mâu thuẫn, không phải cộng/trừ đơn thuần).
+- **W133:** Topic = `Geometry: Angles. (Toán: Hình học - Góc.)` | Outcome = `Identify right, acute, and obtuse angles in shapes. (Kết quả: Nhận biết góc vuông, nhọn, tù.)` | Vocab = `angle, degree, right angle, acute, obtuse, protractor, measure.` | Yêu cầu: nhận diện góc vuông/nhọn/tù trong hình hoặc đo góc.
+- **W134:** Topic = `Geometry: Triangles. (Toán: Hình học - Tam giác.)` | Outcome = `Classify triangles by sides (equilateral, isosceles, scalene). (Kết quả: Phân loại tam giác theo cạnh.)` | Vocab = `triangle, side, equal, length, equilateral, isosceles, scalene.` | Yêu cầu: phân loại tam giác theo độ dài cạnh (đều, cân, lệch).
+- *Lưu ý (gợi ý tùy chọn — KHÔNG dùng làm điều kiện FAIL):* Các nội dung mở rộng như tổng 3 góc tam giác 180°, bất đẳng thức tam giác, diện tích tam giác, hay góc đối đỉnh/hình phức hợp chỉ là **gợi ý tùy chọn** nâng cao nếu sau này muốn làm giàu thêm.
+
+### 3. BẢNG THẨM ĐỊNH TOÀN BỘ 20 BÀI TOÁN WAVE 3 (TASKS C.7, C.8)
+
+| Tuần | ID | Tiêu Đề | Số Phép Tính (Theo Toán Tử Biểu Thức) | Biểu Thức Thực Tế | Đạt Mục Tiêu Source B? (Y/N) | Lý Do Tính Từ Nội Dung |
+| :---: | :--- | :--- | :--- | :--- | :---: | :--- |
+| **W126** | `w126_p1` | Problem 1: Logic Puzzle of Speaker Time Slots | 1 (1 phép cộng (+)) | `45 + 35 = 80` | **N** | Đề cho sẵn các số [Speaker A=45, Speaker B=35] và câu hỏi "What is their combined speaking time?" chỉ yêu cầu phép tính trực tiếp `45 + 35 = 80` (đáp án là số 80 seconds), không có phép loại trừ, sắp xếp thứ tự hay suy luận logic từ điều kiện ràng buộc. |
+| **W126** | `w126_p2` | Problem 2: Logic Constraint on Cue Cards | 1 (1 phép trừ (-)) | `14 - 8 = 6` | **N** | Đề cho sẵn các số [Maya's Cards=14, Difference=8] và câu hỏi "How many cue cards did Liam prepare?" chỉ yêu cầu phép tính trực tiếp `14 - 8 = 6` (đáp án là số 6 cue cards), không có phép loại trừ, sắp xếp thứ tự hay suy luận logic từ điều kiện ràng buộc. |
+| **W126** | `w126_p3` | Problem 3: Speech Structure Logic Puzzle | 1 (1 phép cộng (+)) | `30 + 60 = 90` | **N** | Đề cho sẵn các số [Introduction=30, Main Arguments=60] và câu hỏi "What is the total allotted time for this speech section?" chỉ yêu cầu phép tính trực tiếp `30 + 60 = 90` (đáp án là số 90 seconds), không có phép loại trừ, sắp xếp thứ tự hay suy luận logic từ điều kiện ràng buộc. |
+| **W126** | `w126_p4` | Problem 4: Logic Deduction of Signpost Markers | 1 (1 phép trừ (-)) | `15 - 9 = 6` | **N** | Đề cho sẵn các số [Team 1=15, Team 2=9] và câu hỏi "How many more signpost markers did Team 1 use?" chỉ yêu cầu phép tính trực tiếp `15 - 9 = 6` (đáp án là số 6 signpost markers), không có phép loại trừ, sắp xếp thứ tự hay suy luận logic từ điều kiện ràng buộc. |
+| **W126** | `w126_p5` | Problem 5: Audience Feedback Logic Venn | 1 (1 phép cộng (+)) | `25 + 15 = 40` | **N** | Đề cho sẵn các số [Volume Praise=25, Signpost Praise=15] và câu hỏi "How many total positive notes were counted?" chỉ yêu cầu phép tính trực tiếp `25 + 15 = 40` (đáp án là số 40 feedback slips), không có phép loại trừ, sắp xếp thứ tự hay suy luận logic từ điều kiện ràng buộc. |
+| **W127** | `w127_p1` | Problem 1: Critical Thinking on Debater Points | 1 (1 phép cộng (+)) | `40 + 30 = 70` | **N** | Câu hỏi "What is their true combined score?" chỉ yêu cầu phép tính trực tiếp `40 + 30 = 70` từ dữ liệu cho sẵn [Speech 1=40, Speech 2=30] (đáp án 70 points); chưa đòi hỏi học sinh tự phát hiện mâu thuẫn hay phản biện tính hợp lệ của số liệu. |
+| **W127** | `w127_p2` | Problem 2: Critical Thinking Math on Survey Size | 1 (1 phép trừ (-)) | `150 - 90 = 60` | **N** | Câu hỏi "How many more students participated in School A's true sample?" chỉ yêu cầu phép tính trực tiếp `150 - 90 = 60` từ dữ liệu cho sẵn [School A=150, School B=90] (đáp án 60 students); chưa đòi hỏi học sinh tự phát hiện mâu thuẫn hay phản biện tính hợp lệ của số liệu. |
+| **W127** | `w127_p3` | Problem 3: Rebutting Exaggerated Survey Claims | 1 (1 phép cộng (+)) | `55 + 25 = 80` | **N** | Câu hỏi "How many total entries were submitted for inspection?" chỉ yêu cầu phép tính trực tiếp `55 + 25 = 80` từ dữ liệu cho sẵn [True Votes=55, Invalid Entries=25] (đáp án 80 entries) (số 100 ở câu dẫn thậm chí không dùng trong `55 + 25 = 80`); chưa đòi hỏi học sinh tự phát hiện mâu thuẫn hay phản biện tính hợp lệ của số liệu. |
+| **W127** | `w127_p4` | Problem 4: Critical Thinking on Discrepancy | 1 (1 phép trừ (-)) | `120 - 85 = 35` | **N** | Câu hỏi "What was the false exaggeration discrepancy?" chỉ yêu cầu phép tính trực tiếp `120 - 85 = 35` từ dữ liệu cho sẵn [Claimed Votes=120, Actual Votes=85] (đáp án 35 votes) (tuy ngữ cảnh là đối chiếu số liệu [Claimed Votes=120, Actual Votes=85], thao tác toán học học sinh phải làm vẫn chỉ là 1 phép trừ trực tiếp hai số cho sẵn, chưa có kiểm chứng hay lập luận đa bước); chưa đòi hỏi học sinh tự phát hiện mâu thuẫn hay phản biện tính hợp lệ của số liệu. |
+| **W127** | `w127_p5` | Problem 5: Balanced Arguments in Critical Thinking | 1 (1 phép cộng (+)) | `35 + 25 = 60` | **N** | Câu hỏi "How many total argument cards are compiled in the debate folder?" chỉ yêu cầu phép tính trực tiếp `35 + 25 = 60` từ dữ liệu cho sẵn [Pro Cards=35, Counter Cards=25] (đáp án 60 argument cards); chưa đòi hỏi học sinh tự phát hiện mâu thuẫn hay phản biện tính hợp lệ của số liệu. |
+| **W133** | `w133_p1` | Problem 1: Supplementary Angles on a Straight Line | 1 (1 phép cộng (+)) | `90 + 45 = 135` | **N** | Đáp án là số đo góc (135 degrees) qua phép tính `90 + 45 = 135`; câu hỏi "What is their combined angle measure in degrees?" KHÔNG yêu cầu nhận diện góc vuông/nhọn/tù trong hình hay đo góc bằng thước đo góc. Tên loại góc đã được nêu sẵn trong đề/thanh bar. (lỗi nội dung: tiêu đề ghi "Problem 1: Supplementary Angles on a Straight Line" nhưng dữ liệu [Right Angle=90, Acute Angle=45] qua phép tính `90 + 45 = 135` cho đáp án 135° ≠ 180°) |
+| **W133** | `w133_p2` | Problem 2: Comparing Acute and Obtuse Angles | 1 (1 phép trừ (-)) | `120 - 50 = 70` | **N** | Đáp án là số đo góc (70 degrees) qua phép tính `120 - 50 = 70`; câu hỏi "How many degrees larger is Angle A than Angle B?" KHÔNG yêu cầu nhận diện góc vuông/nhọn/tù trong hình hay đo góc bằng thước đo góc. Tên loại góc đã được nêu sẵn trong đề/thanh bar. |
+| **W133** | `w133_p3` | Problem 3: Right Angle Subdivisions | 1 (1 phép trừ (-)) | `90 - 35 = 55` | **N** | Đáp án là số đo góc (55 degrees) qua phép tính `90 - 35 = 55`; câu hỏi "If the first angle is 35 degrees, what is the measure of the complementary angle that adds to 90 degrees?" KHÔNG yêu cầu nhận diện góc vuông/nhọn/tù trong hình hay đo góc bằng thước đo góc. Tên loại góc đã được nêu sẵn trong đề/thanh bar. |
+| **W133** | `w133_p4` | Problem 4: Angle Difference in Design Graphics | 1 (1 phép trừ (-)) | `110 - 40 = 70` | **N** | Đáp án là số đo góc (70 degrees) qua phép tính `110 - 40 = 70`; câu hỏi "What is the difference between these two measured angles?" KHÔNG yêu cầu nhận diện góc vuông/nhọn/tù trong hình hay đo góc bằng thước đo góc. |
+| **W133** | `w133_p5` | Problem 5: Total Degrees in Corner Angles | 1 (1 phép cộng (+)) | `90 + 90 = 180` | **N** | Đáp án là số đo góc (180 degrees) qua phép tính `90 + 90 = 180`; câu hỏi "What is the sum of these two right angles in degrees?" KHÔNG yêu cầu nhận diện góc vuông/nhọn/tù trong hình hay đo góc bằng thước đo góc. Tên loại góc đã được nêu sẵn trong đề/thanh bar. |
+| **W134** | `w134_p1` | Problem 1: Perimeter of an Equilateral Triangle | 2 (2 phép cộng (+)) | `15 + 15 + 15 = 45` | **N** | Loại tam giác ("equilateral") đã bị tiết lộ sẵn trong đề bài, còn câu hỏi "What is the total perimeter of the triangle in centimeters?" chỉ yêu cầu tính số học `15 + 15 + 15 = 45` (45 cm) — chu vi hoặc hiệu độ dài cạnh. (Phần mở rộng như tổng 3 góc 180°, bất đẳng thức tam giác, diện tích chỉ là gợi ý tùy chọn, KHÔNG dùng làm điều kiện FAIL.) |
+| **W134** | `w134_p2` | Problem 2: Comparing Sides in an Isosceles Triangle | 1 (1 phép trừ (-)) | `20 - 14 = 6` | **N** | Loại tam giác ("isosceles") đã bị tiết lộ sẵn trong đề bài, còn câu hỏi "How many centimeters longer is the base than one of the equal sides?" chỉ yêu cầu tính số học `20 - 14 = 6` (6 cm) — chu vi hoặc hiệu độ dài cạnh. (Phần mở rộng như tổng 3 góc 180°, bất đẳng thức tam giác, diện tích chỉ là gợi ý tùy chọn, KHÔNG dùng làm điều kiện FAIL.) |
+| **W134** | `w134_p3` | Problem 3: Perimeter of a Scalene Triangle | 2 (2 phép cộng (+)) | `10 + 12 + 18 = 40` | **N** | Loại tam giác ("scalene") đã bị tiết lộ sẵn trong đề bài, còn câu hỏi "What is the perimeter of this scalene triangle in centimeters?" chỉ yêu cầu tính số học `10 + 12 + 18 = 40` (40 cm) — chu vi hoặc hiệu độ dài cạnh. (Phần mở rộng như tổng 3 góc 180°, bất đẳng thức tam giác, diện tích chỉ là gợi ý tùy chọn, KHÔNG dùng làm điều kiện FAIL.) |
+| **W134** | `w134_p4` | Problem 4: Side Difference in Triangular Banner | 1 (1 phép trừ (-)) | `25 - 15 = 10` | **N** | Đề chỉ cho 2 cạnh [Longest Side=25, Shortest Side=15] và câu hỏi "What is the difference between these two sides?" chỉ tính hiệu `25 - 15 = 10` (10 cm), không đủ dữ kiện 3 cạnh và không yêu cầu phân loại tam giác. (Phần mở rộng như tổng 3 góc 180°, bất đẳng thức tam giác, diện tích chỉ là gợi ý tùy chọn, KHÔNG dùng làm điều kiện FAIL.) |
+| **W134** | `w134_p5` | Problem 5: Total Perimeter of Triangular Garden Plot | 2 (2 phép cộng (+)) | `30 + 40 + 50 = 120` | **N** | Đề cho đủ 3 cạnh [Side 1=30, Side 2=40, Side 3=50] nhưng câu hỏi "What is the total length of fencing needed to enclose the triangle?" chỉ yêu cầu tính tổng chu vi (`30 + 40 + 50 = 120`, 120 meters), KHÔNG yêu cầu phân loại tam giác theo cạnh. (Phần mở rộng như tổng 3 góc 180°, bất đẳng thức tam giác, diện tích chỉ là gợi ý tùy chọn, KHÔNG dùng làm điều kiện FAIL.) |
+
+### 4. CHI TIẾT TỪNG BÀI TOÁN WAVE 3 (20 BÀI)
+
+----------------------------------------------------------------------------------------------------
+📌 CHI TIẾT TUẦN 126 (Source B: Logic Puzzles. (Toán: Câu đố Logic.))
+----------------------------------------------------------------------------------------------------
+  Bài 1 (w126_p1):
+    • Tiêu đề: "Problem 1: Logic Puzzle of Speaker Time Slots"
+    • Đề bài (question): "In a speech logic puzzle, Speaker A speaks for 45 seconds and Speaker B speaks for 35 seconds to introduce the topic. What is their combined speaking time?"
+    • Model bars: [{"label":"Speaker A","value":45,"color":"#0ea5e9"},{"label":"Speaker B","value":35,"color":"#10b981"}] | Đáp án: 80 seconds
+    • Các bước giải: ["Speaker A time: 45 seconds.","Speaker B time: 35 seconds.","45 + 35 = 80 seconds."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép cộng (+))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đề cho sẵn các số [Speaker A=45, Speaker B=35] và câu hỏi "What is their combined speaking time?" chỉ yêu cầu phép tính trực tiếp `45 + 35 = 80` (đáp án là số 80 seconds), không có phép loại trừ, sắp xếp thứ tự hay suy luận logic từ điều kiện ràng buộc.
+
+  Bài 2 (w126_p2):
+    • Tiêu đề: "Problem 2: Logic Constraint on Cue Cards"
+    • Đề bài (question): "A logic puzzle states: Maya prepared 14 cue cards for her presentation. Liam prepared 8 fewer cue cards than Maya under the tournament rules. How many cue cards did Liam prepare?"
+    • Model bars: [{"label":"Maya's Cards","value":14,"color":"#8b5cf6"},{"label":"Difference","value":8,"color":"#ef4444"}] | Đáp án: 6 cue cards
+    • Các bước giải: ["Maya has 14 cards.","Liam has 8 fewer cards.","14 - 8 = 6 cards for Liam."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép trừ (-))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đề cho sẵn các số [Maya's Cards=14, Difference=8] và câu hỏi "How many cue cards did Liam prepare?" chỉ yêu cầu phép tính trực tiếp `14 - 8 = 6` (đáp án là số 6 cue cards), không có phép loại trừ, sắp xếp thứ tự hay suy luận logic từ điều kiện ràng buộc.
+
+  Bài 3 (w126_p3):
+    • Tiêu đề: "Problem 3: Speech Structure Logic Puzzle"
+    • Đề bài (question): "Under the debate timing rules, the introduction takes 30 seconds and the main arguments take 60 seconds. What is the total allotted time for this speech section?"
+    • Model bars: [{"label":"Introduction","value":30,"color":"#f59e0b"},{"label":"Main Arguments","value":60,"color":"#3b82f6"}] | Đáp án: 90 seconds
+    • Các bước giải: ["Intro duration: 30 seconds.","Body duration: 60 seconds.","30 + 60 = 90 seconds total."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép cộng (+))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đề cho sẵn các số [Introduction=30, Main Arguments=60] và câu hỏi "What is the total allotted time for this speech section?" chỉ yêu cầu phép tính trực tiếp `30 + 60 = 90` (đáp án là số 90 seconds), không có phép loại trừ, sắp xếp thứ tự hay suy luận logic từ điều kiện ràng buộc.
+
+  Bài 4 (w126_p4):
+    • Tiêu đề: "Problem 4: Logic Deduction of Signpost Markers"
+    • Đề bài (question): "In a speech analysis puzzle, Team 1 used 15 signpost phrases while Team 2 used 9 signpost phrases. How many more signpost markers did Team 1 use?"
+    • Model bars: [{"label":"Team 1","value":15,"color":"#ec4899"},{"label":"Team 2","value":9,"color":"#64748b"}] | Đáp án: 6 signpost markers
+    • Các bước giải: ["Team 1 count: 15 markers.","Team 2 count: 9 markers.","15 - 9 = 6 more markers."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép trừ (-))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đề cho sẵn các số [Team 1=15, Team 2=9] và câu hỏi "How many more signpost markers did Team 1 use?" chỉ yêu cầu phép tính trực tiếp `15 - 9 = 6` (đáp án là số 6 signpost markers), không có phép loại trừ, sắp xếp thứ tự hay suy luận logic từ điều kiện ràng buộc.
+
+  Bài 5 (w126_p5):
+    • Tiêu đề: "Problem 5: Audience Feedback Logic Venn"
+    • Đề bài (question): "A presentation logic puzzle tracks 40 feedback slips. 25 listeners commended the speaker's vocal volume and 15 commended the signpost clarity. How many total positive notes were counted?"
+    • Model bars: [{"label":"Volume Praise","value":25,"color":"#14b8a6"},{"label":"Signpost Praise","value":15,"color":"#f97316"}] | Đáp án: 40 feedback slips
+    • Các bước giải: ["Volume feedback: 25 slips.","Signpost feedback: 15 slips.","25 + 15 = 40 slips total."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép cộng (+))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đề cho sẵn các số [Volume Praise=25, Signpost Praise=15] và câu hỏi "How many total positive notes were counted?" chỉ yêu cầu phép tính trực tiếp `25 + 15 = 40` (đáp án là số 40 feedback slips), không có phép loại trừ, sắp xếp thứ tự hay suy luận logic từ điều kiện ràng buộc.
+
+
+----------------------------------------------------------------------------------------------------
+📌 CHI TIẾT TUẦN 127 (Source B: Critical Thinking Math. (Toán: Toán tư duy phản biện.))
+----------------------------------------------------------------------------------------------------
+  Bài 1 (w127_p1):
+    • Tiêu đề: "Problem 1: Critical Thinking on Debater Points"
+    • Đề bài (question): "A debater made a false calculation claim. In critical thinking analysis, Team A scored 40 valid points on speech 1 and 30 valid points on speech 2. What is their true combined score?"
+    • Model bars: [{"label":"Speech 1","value":40,"color":"#0284c7"},{"label":"Speech 2","value":30,"color":"#10b981"}] | Đáp án: 70 points
+    • Các bước giải: ["Speech 1 points: 40.","Speech 2 points: 30.","40 + 30 = 70 points in truth."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép cộng (+))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Câu hỏi "What is their true combined score?" chỉ yêu cầu phép tính trực tiếp `40 + 30 = 70` từ dữ liệu cho sẵn [Speech 1=40, Speech 2=30] (đáp án 70 points); chưa đòi hỏi học sinh tự phát hiện mâu thuẫn hay phản biện tính hợp lệ của số liệu.
+
+  Bài 2 (w127_p2):
+    • Tiêu đề: "Problem 2: Critical Thinking Math on Survey Size"
+    • Đề bài (question): "A critical thinking analysis exposes a misleading claim. School A surveyed 150 students while School B surveyed only 90 students. How many more students participated in School A's true sample?"
+    • Model bars: [{"label":"School A","value":150,"color":"#6366f1"},{"label":"School B","value":90,"color":"#f59e0b"}] | Đáp án: 60 students
+    • Các bước giải: ["School A sample: 150 students.","School B sample: 90 students.","150 - 90 = 60 students."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép trừ (-))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Câu hỏi "How many more students participated in School A's true sample?" chỉ yêu cầu phép tính trực tiếp `150 - 90 = 60` từ dữ liệu cho sẵn [School A=150, School B=90] (đáp án 60 students); chưa đòi hỏi học sinh tự phát hiện mâu thuẫn hay phản biện tính hợp lệ của số liệu.
+
+  Bài 3 (w127_p3):
+    • Tiêu đề: "Problem 3: Rebutting Exaggerated Survey Claims"
+    • Đề bài (question): "An opponent claimed 100 people supported a plan. The rebuttal team verified 55 true votes and 25 false entries on the roster. How many total entries were submitted for inspection?"
+    • Model bars: [{"label":"True Votes","value":55,"color":"#14b8a6"},{"label":"Invalid Entries","value":25,"color":"#ef4444"}] | Đáp án: 80 entries
+    • Các bước giải: ["Valid entries: 55.","Invalid entries: 25.","55 + 25 = 80 total entries."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép cộng (+))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Câu hỏi "How many total entries were submitted for inspection?" chỉ yêu cầu phép tính trực tiếp `55 + 25 = 80` từ dữ liệu cho sẵn [True Votes=55, Invalid Entries=25] (đáp án 80 entries) (số 100 ở câu dẫn thậm chí không dùng trong `55 + 25 = 80`); chưa đòi hỏi học sinh tự phát hiện mâu thuẫn hay phản biện tính hợp lệ của số liệu.
+
+  Bài 4 (w127_p4):
+    • Tiêu đề: "Problem 4: Critical Thinking on Discrepancy"
+    • Đề bài (question): "Critical thinking math reveals that a speaker claimed 120 affirmative votes, but the official tally showed only 85 votes. What was the false exaggeration discrepancy?"
+    • Model bars: [{"label":"Claimed Votes","value":120,"color":"#e11d48"},{"label":"Actual Votes","value":85,"color":"#0d9488"}] | Đáp án: 35 votes
+    • Các bước giải: ["Claimed votes: 120.","Actual votes: 85.","120 - 85 = 35 votes."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép trừ (-))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Câu hỏi "What was the false exaggeration discrepancy?" chỉ yêu cầu phép tính trực tiếp `120 - 85 = 35` từ dữ liệu cho sẵn [Claimed Votes=120, Actual Votes=85] (đáp án 35 votes) (tuy ngữ cảnh là đối chiếu số liệu [Claimed Votes=120, Actual Votes=85], thao tác toán học học sinh phải làm vẫn chỉ là 1 phép trừ trực tiếp hai số cho sẵn, chưa có kiểm chứng hay lập luận đa bước); chưa đòi hỏi học sinh tự phát hiện mâu thuẫn hay phản biện tính hợp lệ của số liệu.
+
+  Bài 5 (w127_p5):
+    • Tiêu đề: "Problem 5: Balanced Arguments in Critical Thinking"
+    • Đề bài (question): "A critical thinking dossier compiles 35 supporting evidence cards and 25 counter arguments. How many total argument cards are compiled in the debate folder?"
+    • Model bars: [{"label":"Pro Cards","value":35,"color":"#3b82f6"},{"label":"Counter Cards","value":25,"color":"#8b5cf6"}] | Đáp án: 60 argument cards
+    • Các bước giải: ["Supporting cards: 35.","Counter cards: 25.","35 + 25 = 60 cards."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép cộng (+))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Câu hỏi "How many total argument cards are compiled in the debate folder?" chỉ yêu cầu phép tính trực tiếp `35 + 25 = 60` từ dữ liệu cho sẵn [Pro Cards=35, Counter Cards=25] (đáp án 60 argument cards); chưa đòi hỏi học sinh tự phát hiện mâu thuẫn hay phản biện tính hợp lệ của số liệu.
+
+
+----------------------------------------------------------------------------------------------------
+📌 CHI TIẾT TUẦN 133 (Source B: Geometry: Angles. (Toán: Hình học - Góc.) — Identify right, acute, and obtuse angles in shapes. (Kết quả: Nhận biết góc vuông, nhọn, tù.))
+----------------------------------------------------------------------------------------------------
+  Bài 1 (w133_p1):
+    • Tiêu đề: "Problem 1: Supplementary Angles on a Straight Line"
+    • Đề bài (question): "On a geometry diagram, an angle measuring 90 degrees and an adjacent angle measuring 45 degrees meet on a baseline. What is their combined angle measure in degrees?"
+    • Model bars: [{"label":"Right Angle","value":90,"color":"#0ea5e9"},{"label":"Acute Angle","value":45,"color":"#10b981"}] | Đáp án: 135 degrees
+    • Các bước giải: ["Right angle: 90 degrees.","Acute angle: 45 degrees.","90 + 45 = 135 degrees."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép cộng (+))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đáp án là số đo góc (135 degrees) qua phép tính `90 + 45 = 135`; câu hỏi "What is their combined angle measure in degrees?" KHÔNG yêu cầu nhận diện góc vuông/nhọn/tù trong hình hay đo góc bằng thước đo góc. Tên loại góc đã được nêu sẵn trong đề/thanh bar. (lỗi nội dung: tiêu đề ghi "Problem 1: Supplementary Angles on a Straight Line" nhưng dữ liệu [Right Angle=90, Acute Angle=45] qua phép tính `90 + 45 = 135` cho đáp án 135° ≠ 180°)
+
+  Bài 2 (w133_p2):
+    • Tiêu đề: "Problem 2: Comparing Acute and Obtuse Angles"
+    • Đề bài (question): "In a geometry shape investigation, Angle A is an obtuse angle of 120 degrees and Angle B is an acute angle of 50 degrees. How many degrees larger is Angle A than Angle B?"
+    • Model bars: [{"label":"Obtuse Angle A","value":120,"color":"#8b5cf6"},{"label":"Acute Angle B","value":50,"color":"#f59e0b"}] | Đáp án: 70 degrees
+    • Các bước giải: ["Angle A: 120 degrees.","Angle B: 50 degrees.","120 - 50 = 70 degrees."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép trừ (-))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đáp án là số đo góc (70 degrees) qua phép tính `120 - 50 = 70`; câu hỏi "How many degrees larger is Angle A than Angle B?" KHÔNG yêu cầu nhận diện góc vuông/nhọn/tù trong hình hay đo góc bằng thước đo góc. Tên loại góc đã được nêu sẵn trong đề/thanh bar.
+
+  Bài 3 (w133_p3):
+    • Tiêu đề: "Problem 3: Right Angle Subdivisions"
+    • Đề bài (question): "A right angle of 90 degrees is divided into two acute angles. If the first angle is 35 degrees, what is the measure of the complementary angle that adds to 90 degrees?"
+    • Model bars: [{"label":"First Angle","value":35,"color":"#ec4899"},{"label":"Complement","value":55,"color":"#06b6d4"}] | Đáp án: 55 degrees
+    • Các bước giải: ["Total right angle: 90 degrees.","First part: 35 degrees.","90 - 35 = 55 degrees."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép trừ (-))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đáp án là số đo góc (55 degrees) qua phép tính `90 - 35 = 55`; câu hỏi "If the first angle is 35 degrees, what is the measure of the complementary angle that adds to 90 degrees?" KHÔNG yêu cầu nhận diện góc vuông/nhọn/tù trong hình hay đo góc bằng thước đo góc. Tên loại góc đã được nêu sẵn trong đề/thanh bar.
+
+  Bài 4 (w133_p4):
+    • Tiêu đề: "Problem 4: Angle Difference in Design Graphics"
+    • Đề bài (question): "A poster graphic features an angle of 110 degrees and a sharp angle of 40 degrees. What is the difference between these two measured angles?"
+    • Model bars: [{"label":"Wide Angle","value":110,"color":"#3b82f6"},{"label":"Sharp Angle","value":40,"color":"#64748b"}] | Đáp án: 70 degrees
+    • Các bước giải: ["Wide angle: 110 degrees.","Sharp angle: 40 degrees.","110 - 40 = 70 degrees."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép trừ (-))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đáp án là số đo góc (70 degrees) qua phép tính `110 - 40 = 70`; câu hỏi "What is the difference between these two measured angles?" KHÔNG yêu cầu nhận diện góc vuông/nhọn/tù trong hình hay đo góc bằng thước đo góc.
+
+  Bài 5 (w133_p5):
+    • Tiêu đề: "Problem 5: Total Degrees in Corner Angles"
+    • Đề bài (question): "Two adjacent corner angles in a wooden frame each measure exactly 90 degrees. What is the sum of these two right angles in degrees?"
+    • Model bars: [{"label":"Corner 1","value":90,"color":"#14b8a6"},{"label":"Corner 2","value":90,"color":"#f97316"}] | Đáp án: 180 degrees
+    • Các bước giải: ["Corner 1: 90 degrees.","Corner 2: 90 degrees.","90 + 90 = 180 degrees."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép cộng (+))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đáp án là số đo góc (180 degrees) qua phép tính `90 + 90 = 180`; câu hỏi "What is the sum of these two right angles in degrees?" KHÔNG yêu cầu nhận diện góc vuông/nhọn/tù trong hình hay đo góc bằng thước đo góc. Tên loại góc đã được nêu sẵn trong đề/thanh bar.
+
+
+----------------------------------------------------------------------------------------------------
+📌 CHI TIẾT TUẦN 134 (Source B: Geometry: Triangles. (Toán: Hình học - Tam giác.) — Classify triangles by sides (equilateral, isosceles, scalene). (Kết quả: Phân loại tam giác theo cạnh.))
+----------------------------------------------------------------------------------------------------
+  Bài 1 (w134_p1):
+    • Tiêu đề: "Problem 1: Perimeter of an Equilateral Triangle"
+    • Đề bài (question): "A geometric model of an equilateral triangle has 3 equal sides measuring 15 cm each. What is the total perimeter of the triangle in centimeters?"
+    • Model bars: [{"label":"Side 1","value":15,"color":"#0ea5e9"},{"label":"Side 2","value":15,"color":"#10b981"},{"label":"Side 3","value":15,"color":"#8b5cf6"}] | Đáp án: 45 cm
+    • Các bước giải: ["Side 1: 15 cm.","Side 2: 15 cm.","Side 3: 15 cm.","15 + 15 + 15 = 45 cm."]
+    • Số phép tính (đếm toán tử trong biểu thức): 2 (2 phép cộng (+))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Loại tam giác ("equilateral") đã bị tiết lộ sẵn trong đề bài, còn câu hỏi "What is the total perimeter of the triangle in centimeters?" chỉ yêu cầu tính số học `15 + 15 + 15 = 45` (45 cm) — chu vi hoặc hiệu độ dài cạnh. (Phần mở rộng như tổng 3 góc 180°, bất đẳng thức tam giác, diện tích chỉ là gợi ý tùy chọn, KHÔNG dùng làm điều kiện FAIL.)
+
+  Bài 2 (w134_p2):
+    • Tiêu đề: "Problem 2: Comparing Sides in an Isosceles Triangle"
+    • Đề bài (question): "An isosceles triangle has a base of 20 cm and two equal sides of 14 cm each. How many centimeters longer is the base than one of the equal sides?"
+    • Model bars: [{"label":"Base","value":20,"color":"#f59e0b"},{"label":"Equal Side","value":14,"color":"#6366f1"}] | Đáp án: 6 cm
+    • Các bước giải: ["Base: 20 cm.","Equal side: 14 cm.","20 - 14 = 6 cm."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép trừ (-))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Loại tam giác ("isosceles") đã bị tiết lộ sẵn trong đề bài, còn câu hỏi "How many centimeters longer is the base than one of the equal sides?" chỉ yêu cầu tính số học `20 - 14 = 6` (6 cm) — chu vi hoặc hiệu độ dài cạnh. (Phần mở rộng như tổng 3 góc 180°, bất đẳng thức tam giác, diện tích chỉ là gợi ý tùy chọn, KHÔNG dùng làm điều kiện FAIL.)
+
+  Bài 3 (w134_p3):
+    • Tiêu đề: "Problem 3: Perimeter of a Scalene Triangle"
+    • Đề bài (question): "A scalene triangle has 3 sides of different lengths: 10 cm, 12 cm, and 18 cm. What is the perimeter of this scalene triangle in centimeters?"
+    • Model bars: [{"label":"Side A","value":10,"color":"#14b8a6"},{"label":"Side B","value":12,"color":"#ec4899"},{"label":"Side C","value":18,"color":"#0284c7"}] | Đáp án: 40 cm
+    • Các bước giải: ["Side A: 10 cm.","Side B: 12 cm.","Side C: 18 cm.","10 + 12 + 18 = 40 cm."]
+    • Số phép tính (đếm toán tử trong biểu thức): 2 (2 phép cộng (+))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Loại tam giác ("scalene") đã bị tiết lộ sẵn trong đề bài, còn câu hỏi "What is the perimeter of this scalene triangle in centimeters?" chỉ yêu cầu tính số học `10 + 12 + 18 = 40` (40 cm) — chu vi hoặc hiệu độ dài cạnh. (Phần mở rộng như tổng 3 góc 180°, bất đẳng thức tam giác, diện tích chỉ là gợi ý tùy chọn, KHÔNG dùng làm điều kiện FAIL.)
+
+  Bài 4 (w134_p4):
+    • Tiêu đề: "Problem 4: Side Difference in Triangular Banner"
+    • Đề bài (question): "A debate tournament banner is cut in a triangle shape. The longest side measures 25 cm and the shortest side measures 15 cm. What is the difference between these two sides?"
+    • Model bars: [{"label":"Longest Side","value":25,"color":"#f43f5e"},{"label":"Shortest Side","value":15,"color":"#94a3b8"}] | Đáp án: 10 cm
+    • Các bước giải: ["Longest side: 25 cm.","Shortest side: 15 cm.","25 - 15 = 10 cm."]
+    • Số phép tính (đếm toán tử trong biểu thức): 1 (1 phép trừ (-))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đề chỉ cho 2 cạnh [Longest Side=25, Shortest Side=15] và câu hỏi "What is the difference between these two sides?" chỉ tính hiệu `25 - 15 = 10` (10 cm), không đủ dữ kiện 3 cạnh và không yêu cầu phân loại tam giác. (Phần mở rộng như tổng 3 góc 180°, bất đẳng thức tam giác, diện tích chỉ là gợi ý tùy chọn, KHÔNG dùng làm điều kiện FAIL.)
+
+  Bài 5 (w134_p5):
+    • Tiêu đề: "Problem 5: Total Perimeter of Triangular Garden Plot"
+    • Đề bài (question): "A triangular school garden plot has sides measuring 30 meters, 40 meters, and 50 meters. What is the total length of fencing needed to enclose the triangle?"
+    • Model bars: [{"label":"Side 1","value":30,"color":"#22c55e"},{"label":"Side 2","value":40,"color":"#3b82f6"},{"label":"Side 3","value":50,"color":"#a855f7"}] | Đáp án: 120 meters
+    • Các bước giải: ["Side 1: 30 m.","Side 2: 40 m.","Side 3: 50 m.","30 + 40 + 50 = 120 meters."]
+    • Số phép tính (đếm toán tử trong biểu thức): 2 (2 phép cộng (+))
+    • Có yêu cầu thực hiện đúng mục tiêu Source B không? N
+    • Lý do từ nội dung: Đề cho đủ 3 cạnh [Side 1=30, Side 2=40, Side 3=50] nhưng câu hỏi "What is the total length of fencing needed to enclose the triangle?" chỉ yêu cầu tính tổng chu vi (`30 + 40 + 50 = 120`, 120 meters), KHÔNG yêu cầu phân loại tam giác theo cạnh. (Phần mở rộng như tổng 3 góc 180°, bất đẳng thức tam giác, diện tích chỉ là gợi ý tùy chọn, KHÔNG dùng làm điều kiện FAIL.)
+
+### 5. TỔNG HỢP KẾT QUẢ & GỢI Ý TÙY CHỌN (100% TÍNH TỪ DỮ LIỆU, KHÔNG SINH LẠI NỘI DUNG — TASK C.9)
+
+- **W126 (Logic Puzzles. (Toán: Câu đố Logic.)):** Đạt mục tiêu Source B: **0/5 bài Y**, **5/5 bài N** | Số phép tính mỗi bài: `[1, 1, 1, 1, 1]`.
+- **W127 (Critical Thinking Math. (Toán: Toán tư duy phản biện.)):** Đạt mục tiêu Source B: **0/5 bài Y**, **5/5 bài N** | Số phép tính mỗi bài: `[1, 1, 1, 1, 1]`.
+- **W133 (Geometry: Angles. (Toán: Hình học - Góc.)):** Đạt mục tiêu Source B: **0/5 bài Y**, **5/5 bài N** | Số phép tính mỗi bài: `[1, 1, 1, 1, 1]`.
+- **W134 (Geometry: Triangles. (Toán: Hình học - Tam giác.)):** Đạt mục tiêu Source B: **0/5 bài Y**, **5/5 bài N** | Số phép tính mỗi bài: `[2, 1, 2, 1, 2]`.
+- **Tổng toàn khối Wave 3 Math (4 tuần × 5 bài = 20 bài):** **0/20 Y**, **20/20 N**.
+- **Gợi ý tùy chọn (KHÔNG dùng làm điều kiện FAIL):** Sau khi đáp ứng đúng chuẩn Source B (W126 suy luận logic thật, W127 kiểm chứng/phản biện dữ liệu thật, W133 nhận diện góc vuông/nhọn/tù trong hình & đo góc, W134 phân loại tam giác theo cạnh), có thể cân nhắc bổ sung dạng mở rộng nâng cao như tổng góc tam giác 180°, bất đẳng thức tam giác, diện tích tam giác như bài luyện nâng cao tùy chọn.
+- **Cam kết phạm vi:** Giữ nguyên hiện trạng staging, KHÔNG sinh lại hay sửa nội dung `src/data/weeks` và `staging` trong Round 77.

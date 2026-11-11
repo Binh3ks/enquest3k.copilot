@@ -1,0 +1,248 @@
+====================================================================================================
+🏛️ XÁC NHẬN QUY ĐỊNH MOCK & GOVERNANCE TỪ FILE THẬT (ROUND 77 — TASKS A.1, A.2, A.3, D)
+Thời điểm chạy: 2026-11-11T02:28:21.139Z
+====================================================================================================
+
+### 1. CHECKSUM SHA-256 TẠI THỜI ĐIỂM CHẠY (TASK A.2)
+
+- `docs/WEEK_PRODUCTION_SOP.md`: `1562b19b0e3ac9a9be0d7eca812e0bac0f534a5583e8422057d0f23034495963`
+- `docs/MASTER_ARCHITECTURE_W01_W156.md`: `7e51d03516c926482999c8dc2c5102d1d6e1052cdb8a123910329c1702026488`
+- `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`: `e9dcbcb4786a76ae683bdd6929dc15abf9de656a8229c9cc67bd36480ff51428`
+- `docs/agent_artifacts/round64_mock_schedule_and_conflicts.md`: `5fb727bfa4fe588d5c582096ce774384c13fa7b7176891909822a27a8ca9cda0`
+
+### 2. NGUYÊN VĂN TRÍCH TỪ FILE THẬT QUA `sed`/`grep`/`readFileSync` (TASK A.1)
+
+2.1. `sed -n '126,133p' docs/WEEK_PRODUCTION_SOP.md`:
+```markdown
+### Danh mục 28 Tuần Mock Test:
+- **Starters (1 Mock)**: W16
+- **Movers (2 Mocks)**: W24, W32
+- **Flyers (8 Mocks - Nhịp 4+1)**: W37, W42, W47, W52, W57, W62, W67, W72 (Official Flyers Gate)
+- **B1 PET & CLIL (8 Mocks - Nhịp 4+1)**: W77, W82, W87, W92, W97, W102, W107, W112 (Official PET Gate)
+- **B2 FCE & Acellus (9 Mocks - Nhịp 4+1)**: W117, W122, W127, W132, W137, W142, W147, W152, W156 (Final Capstone & Graduation)
+
+> **Note**: Giai đoạn W113–W156 mục tiêu điều chỉnh thành **B1+ Academic Reading & Structured Opinion** (thay vì B2 FCE/Acellus). Mock Test labels trên UI hiển thị là `★ B1+ Academic Assessment Mock`.
+```
+
+2.2. `sed -n '176,189p' docs/MASTER_ARCHITECTURE_W01_W156.md`:
+```markdown
+│ Giai đoạn     │ Trình độ     │ Số lượng Mock Test     │ Vị trí Tuần Thi Thử (Full Mock)     │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W01 – W16     │ Pre-A1       │ 1 Mock Test Duy nhất   │ W16 (Starters Graduation Shield)    │
+│               │ (LITE MODE)  │                        │                                     │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W17 – W32     │ A1 Movers    │ 2 Mock Tests           │ W24 (Mid-Movers), W32 (Final Movers)│
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W33 – W72     │ A2 Flyers    │ 8 Mock Tests (Nhịp 4+1)│ W37, W42, W47, W52, W57, W62, W67,  │
+│               │              │                        │ W72 (Official Flyers Gate)          │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W73 – W112    │ B1 PET       │ 8 Mock Tests (Nhịp 4+1)│ W77, W82, W87, W92, W97, W102, W107,│
+│               │ & CLIL Lab   │                        │ W112 (B1 PET Official Gate)         │
+├───────────────┼──────────────┼────────────────────────┼─────────────────────────────────────┤
+│ W113 – W156   │ B1+ Academic │ 9 Mock Tests (Nhịp 4+1)│ W117, W122, W127, W132, W137, W142, │
+```
+*(Dòng nối tiếp L190–L191 để đọc trọn vẹn hàng cuối của bảng trong `MASTER_ARCHITECTURE_W01_W156.md`):*
+```markdown
+│               │ Reading      │                        │ W147, W152, W156 (Final Capstone)   │
+└───────────────┴──────────────┴────────────────────────┴─────────────────────────────────────┘
+```
+
+2.3. `grep -n "FULL MOCK" docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`:
+```markdown
+28:│                            BẢNG PHÂN BỔ 28 TUẦN FULL MOCK TEST TOÀN DIỆN                    │
+73:| **W16** | **Sports Commentary (Dynamic Verbs)** | **★ FULL MOCK 01 (Starters)** | Bình luận Thể thao: Use action verbs with energy | **Tier 1 (Festival)**| **Bài thi thử Starters trọn vẹn: L1–L4, R1–R5, S1–S3; Lễ trao Khiên Starters** |
+89:| **W24** | **Feelings in the Past (Was/Were + Adjectives)** | **★ FULL MOCK 02 (Movers)** | Cảm xúc trong Quá khứ: Express past emotions and reasons | **Tier 2 (Exam)** | **Full Mock Movers 1: Đánh giá giữa kỳ L1–L5, R1–R6, S1–S4; Kiểm tra Notepad** |
+97:| **W32** | **The Busy Day (Irregular Verbs 4: Tasks)** | **★ FULL MOCK 03 (Movers)** | Ngày Bận rộn - Động từ Bất quy tắc nhóm 4: Describe completed tasks | **Tier 2 (Official)**| **Full Mock Movers 2: Cấp Chứng chỉ Hoàn thành Movers; Lễ phong Khiên A1** |
+110:| **W37** | **Living vs. Non-Living (Reasoning)** | **★ FULL MOCK 04 (Flyers)** | Vật sống & Không sống: Explain why something is living or non-living using "Because" | **Tier 2 (Exam)** | **Full Mock Flyers 1: Trọn vẹn 16 Parts Cambridge (L1–L5, R1–R7, S1–S4)** |
+115:| **W42** | **The Water Journey (Cycle)** | **★ FULL MOCK 05 (Flyers)** | Hành trình của Nước: Sequence nature's events | **Tier 2 (Exam)** | **Full Mock Flyers 2: Bấm giờ 3 bài thi chính thức; Cập nhật Hộ chiếu Khiên** |
+120:| **W47** | **Big Numbers (Place Value)** | **★ FULL MOCK 06 (Flyers)** | Số lớn - Giá trị hàng: Read and write numbers up to 100 correctly in English | **Tier 2 (Exam)** | **Full Mock Flyers 3: Rà soát lỗi đọc Part 5 (1-4 từ) và viết Part 7** |
+125:| **W52** | **Have You Ever" Bingo (Seeding)** | **★ FULL MOCK 07 (Flyers)** | Bingo "Bạn đã bao giờ...?" - Gieo hạt: Use specific chunks to ask about experiences (Preparation for | **Tier 2 (Exam)** | **Full Mock Flyers 4: Đo lường tốc độ làm bài và độ chính xác Speaking** |
+138:| **W57** | **ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts  / Toán: Khái niệm Phép nhân)** | **★ FULL MOCK 08 (Flyers)** | ELA: Vấn đề & Giải pháp (Câu: Write sentences proposing a solution using modals | **Tier 2 (Exam)** | **Full Mock Flyers 5: Bắt đầu áp dụng chuẩn chấm gắt gao của giám khảo Cambridge** |
+143:| **W62** | **ELA: The Movie Trailer (Summarizing) / Math: Rounding** | **★ FULL MOCK 09 (Flyers)** | ELA: Trailer Phim - Tóm tắt / Toán: Làm tròn: Paraphrase a text in 3 sentences | **Tier 2 (Exam)** | **Full Mock Flyers 6: Đánh giá độ ổn định 15 Khiên trên cả 3 bài thi** |
+148:| **W67** | **ELA: The OREO Structure / Math: Measuring Mass** | **★ FULL MOCK 10 (Flyers)** | ELA: Cấu trúc OREO / Toán: Đo khối lượng: Identify and label parts: Opinion, Reason, Example, Opinion Restated | **Tier 2 (Exam)** | **Full Mock Flyers 7: Tiền tổng duyệt trước kỳ thi chính thức** |
+153:| **W72** | **Science/ELA: Photosynthesis / Math: Area & Perimeter** | **★ FULL MOCK 11 (OFFICIAL)**| Khoa học/ELA: Quang hợp / Toán: Diện tích & Chu vi: Explain the process of photosynthesis | **Tier 2 (Official)**| **KỲ THI CHÍNH THỨC CAMBRIDGE FLYERS — MỤC TIÊU TUYỆT ĐỐI 15/15 KHIÊN!** |
+168:| **W77** | **Social Studies/ELA: World Landmarks / Math: 3D Geometry** | **★ FULL MOCK 12 (PET)** | Xã hội/ELA: Kỳ quan Thế giới / Toán: Hình học 3D: Write a technical description of a landmark | **Tier 3 (Exam)** | **Full Mock B1 PET 1 (4 Parts Listening, 6 Parts Reading, 2 Parts Writing, Speaking)** |
+173:| **W82** | **ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data** | **★ FULL MOCK 13 (PET)** | ELA: Vlogger Du Lịch - Viết nháp / Toán: Phân tích Dữ liệu: Write a descriptive essay draft | **Tier 3 (Exam)** | **Full Mock B1 PET 2: Chấm bài viết email 100 từ và bài đọc dài Part 3** |
+178:| **W87** | **Human Body / Math: Elapsed Time** | **★ FULL MOCK 14 (PET)** | Cơ thể Người / Toán: Thời gian trôi qua: Explain a body system's function (e.g., Circulatory) | **Tier 3 (Exam)** | **Full Mock B1 PET 3: Đánh giá khả năng thảo luận hai chiều Speaking Part 3** |
+183:| **W92** | **Community Helpers / Math: Surveys** | **★ FULL MOCK 15 (PET)** | Người giúp đỡ Cộng đồng / Toán: Khảo sát: Write an interview report about a job | **Tier 3 (Exam)** | **Full Mock B1 PET 4: Nâng cao độ khó bài đọc Gapped Text (Part 4)** |
+196:| **W97** | **Government / Math: Percentages Intro** | **★ FULL MOCK 16 (PET)** | Chính phủ / Toán: Giới thiệu Phần trăm: Define Government and its role | **Tier 3 (Exam)** | **Full Mock B1 PET 5: Đánh giá độc lập trên thang điểm Cambridge English Scale** |
+201:| **W102**| **Goods & Services / Math: Total Costs** | **★ FULL MOCK 17 (PET)** | Hàng hóa & Dịch vụ / Toán: Tổng chi phí: Classify goods and services | **Tier 3 (Exam)** | **Full Mock B1 PET 6: Chấm bài viết bài báo 100 từ Part 2** |
+206:| **W107**| **The Note-Taker (Summary)** | **★ FULL MOCK 18 (PET)** | Người Ghi chép - Tóm tắt: Convert a paragraph into bullet points (keywords only) | **Tier 3 (Exam)** | **Full Mock B1 PET 7: Tổng duyệt kỹ năng làm bài trước kỳ thi chính thức** |
+211:| **W112**| **The Editor's Eye (Review)** | **★ FULL MOCK 19 (OFFICIAL)**| Con mắt Biên tập viên - Chỉnh sửa: Self-correct spelling and basic grammar errors | **Tier 3 (Official)**| **KỲ THI CHÍNH THỨC B1 PET — MỤC TIÊU: PASS WITH MERIT / DISTINCTION!** |
+216:| **W117**| **The Knowledge Fair (Group A)** | **★ FULL MOCK (Presentation A)**| **Hội chợ Tri thức Nhóm A: Báo cáo dự án Passion Project** | **Tier 3 (Exam)** | **Thuyết trình 3 phút + Q&A; Đánh giá năng lực thuyết trình B1 Part A** |
+236:| **W127**| **Rebuttal Practice** | **★ FULL MOCK 20 (B1+)**| Luyện Phản biện: Use "They say... but I say..." structure | **Tier 3 (Exam)** | **Full Mock B1+ Academic 1: Reading 500–800w passages + Opinion Essay 140–190w** |
+241:| **W132**| **B1+ Academic Assessment Mock 2** | **★ FULL MOCK 21 (B1+)**| **Khảo sát Năng lực Chuẩn hóa B1+ 2** | **Tier 3 (Exam)** | **Full Mock B1+ Academic 2: Chấm bài luận Opinion Essay theo Rubric** |
+246:| **W137**| **Editing & Polishing (Word Choice)** | **★ FULL MOCK 22 (B1+)**| Chỉnh sửa & Trau chuốt - Dùng từ: Replace weak verbs/adjectives with stronger ones (e.g., "bad" -> "harmful", "good" -> "beneficial") | **Tier 3 (Exam)** | **Full Mock B1+ Academic 3: Đọc bài khoa học 600w + Nghe bài giảng + Opinion Essay** |
+251:| **W142**| **Geometry Review - Area & Volume** | **★ FULL MOCK 23 (B1+)**| Ôn tập Hình học - Diện tích & Thể tích: Calculate volume of cubes and cuboids | **Tier 3 (Exam)** | **Full Mock B1+ Academic 4: Đọc liên môn + Toán lời văn + Opinion Essay** |
+264:| **W147**| **Advanced Thesis Writing** | **★ FULL MOCK 24 (B1+)**| Viết Luận đề Nâng cao: Write a thesis that acknowledges complexity ("While X is true, Y is better because...") | **Tier 3 (Exam)** | **Full Mock B1+: 4 Kỹ năng Nghe, Nói, Đọc, Viết theo chuẩn B1+ học thuật** |
+269:| **W152**| **Genre Review: Narrative** | **★ FULL MOCK 25 (B1+)**| Ôn tập Thể loại: Tường thuật: Write a complete story in 45 minutes | **Tier 3 (Exam)** | **Full Mock B1+ Academic Tổng hợp: Đọc 800w + Opinion Essay + Nghe bài giảng + Thuyết trình** |
+273:| **W156**| **GRADUATION CEREMONY & FINAL SHOWCASE** | **★ FULL MOCK 26 / GRADUATION**| LỄ TỐT NGHIỆP & TRÌNH DIỄN CUỐI CÙNG: The Graduation Ceremony | **★ GRADUATION** | **LỄ TỐT NGHIỆP — TRÌNH BÀY EXTENDED PROJECT & NHẬN BẰNG B1+ ACADEMIC PROFICIENCY!** |
+280:2. **Khai Báo Cột Milestone**: Các tuần có gắn mác `★ FULL MOCK` bắt buộc phải cấu hình cờ `isFullMock: true` trong file metadata `index.js` của tuần đó, kích hoạt chế độ tính giờ làm bài và bộ đề thi trọn gói tại Zone 5.
+```
+
+2.4. `sed -n '3,8p' docs/agent_artifacts/round64_mock_schedule_and_conflicts.md`:
+```markdown
+> **Phiên bản:** Round 64 — Quyết định Kiến trúc Sư phạm
+> **Quy tắc mới:** Chu kỳ cố định **đúng 4 tuần / 1 bài Mock Exam** xuyên suốt toàn bộ 156 tuần (W4, W8, W12, ... W156 = 39 tuần mock).
+> **Phân định Stage:**
+> - **Stage 1 (Tuần 1 – 72):** Định dạng **Cambridge YLE Flyers (A2)** (18 tuần mock).
+> - **Stage 2 (Tuần 73 – 156):** Định dạng **Cambridge B1 Preliminary / PET** (21 tuần mock).
+> - **Trạng thái Lite Mode (W01–W16):** Tạm hoãn (Deferred) — W4, W8, W12, W16 thuộc dải Lite Mode, không build engine lúc này.
+```
+
+### 3. ĐỐI CHIẾU TỪNG DÒNG: OUTPUT ĐỌC THẬT VS VĂN BẢN ROUND 76 (TASK A.2)
+
+- **Mục 1.1 SOP L126–133:** GIỐNG NHAU 100% (8/8 dòng khớp từng ký tự với `readFileSync`/`sed`/`grep`).
+- **Mục 1.2 MASTER_ARCH L176–189:** GIỐNG NHAU 100% (14/14 dòng khớp từng ký tự với `readFileSync`/`sed`/`grep`).
+- **Mục 1.3 MAP FULL MOCK grep:** GIỐNG NHAU 100% (29/29 dòng khớp từng ký tự với `readFileSync`/`sed`/`grep`).
+- **Mục 1.4 Round 64 L3–8:** GIỐNG NHAU 100% (6/6 dòng khớp từng ký tự với `readFileSync`/`sed`/`grep`).
+
+- **Các khối prose/tóm tắt literal trong R76 (`docs/agent_artifacts/round76_mock_regulations_raw.txt`):**
+  - **Biến khai báo không dùng trong R76:** `generate_round76_forensic_reports.mjs:L30` (`const EXAM_STD_PATH = path.join(ROOT_DIR, 'src/config/cambridgeExamStandards.js');`) được khai báo nhưng chưa đọc trong R76.
+  - **R76 L80–85 (Mục 2 trong R76):** Sinh bằng chuỗi `mockRaw += '...' ` trong `generate_round76_forensic_reports.mjs:L163–167` (không cắt từ file).
+    - Dòng R76 L84: `- **Tổng số mock đầu khóa (W01–W35):** Chính xác **3 bài mock** (1 Starters + 2 Movers). Ký ức của Owner về "2 mock trong W1-W35" chính là 2 bài mock của trình độ A1 Movers (W24, W32).` -> Không có trong `MASTER_ARCHITECTURE_W01_W156.md` (false) hay `WEEK_PRODUCTION_SOP.md` (false); là diễn giải literal.
+  - **R76 L87–99 (Mục 3 trong R76):** Sinh bằng chuỗi `mockRaw += '...' ` tại `L169–180`; các trích dẫn bị cắt/nối tay so với nguyên văn:
+    - R76 L93 nối tay `SOP:131,133` bằng `...` và bỏ backtick quanh UI label; nguyên văn file thật gồm:
+      - `docs/WEEK_PRODUCTION_SOP.md:L131`: `- **B2 FCE & Acellus (9 Mocks - Nhịp 4+1)**: W117, W122, W127, W132, W137, W142, W147, W152, W156 (Final Capstone & Graduation)`
+      - `docs/WEEK_PRODUCTION_SOP.md:L133`: `> **Note**: Giai đoạn W113–W156 mục tiêu điều chỉnh thành **B1+ Academic Reading & Structured Opinion** (thay vì B2 FCE/Acellus). Mock Test labels trên UI hiển thị là `★ B1+ Academic Assessment Mock`.`
+    - R76 L94 trích `ARCH:189` chỉ cắt chuỗi ngắn, bỏ cột tuần và phần cuối hàng ở L190; nguyên văn `MASTER_ARCHITECTURE_W01_W156.md:L189-190` là:
+      - `L189`: `│ W113 – W156   │ B1+ Academic │ 9 Mock Tests (Nhịp 4+1)│ W117, W122, W127, W132, W137, W142, │`
+      - `L190`: `│               │ Reading      │                        │ W147, W152, W156 (Final Capstone)   │`
+    - R76 L95 trích `MAP:236,241` rút gọn thành 2 cụm ngắn; nguyên văn `ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md:L236,L241` là:
+      - `L236`: `| **W127**| **Rebuttal Practice** | **★ FULL MOCK 20 (B1+)**| Luyện Phản biện: Use "They say... but I say..." structure | **Tier 3 (Exam)** | **Full Mock B1+ Academic 1: Reading 500–800w passages + Opinion Essay 140–190w** |`
+      - `L241`: `| **W132**| **B1+ Academic Assessment Mock 2** | **★ FULL MOCK 21 (B1+)**| **Khảo sát Năng lực Chuẩn hóa B1+ 2** | **Tier 3 (Exam)** | **Full Mock B1+ Academic 2: Chấm bài luận Opinion Essay theo Rubric** |`
+  - **R76 L101–152 (Mục 4 & Mục 5 trong R76):** Dùng mảng literal `post36Mocks` và câu prose literal từ `L182` trở đi:
+    - **SAI SỰ THẬT TẠI R76 L149:** `- **Rào cản Governance:** `WEEK_PRODUCTION_SOP.md` và `MASTER_ARCHITECTURE_W01_W156.md` là các tài liệu hiến pháp bị khóa mã băm mật mã trong `docs/GATE15_SPEC_W33.json` và guard test `guard_governance_docs.mjs`.`
+      -> Đối chiếu với `GLOBAL_GOVERNANCE_MANIFEST.json` & `GATE15_SPEC_W33.json` ở Mục 4 dưới đây cho thấy khẳng định về `MASTER_ARCHITECTURE_W01_W156.md` và `GATE15_SPEC_W33.json` trong R76 là SAI.
+
+### 4. XÁC MINH GOVERNANCE THẬT SỰ (TASK A.3)
+
+4.1. `cat docs/GLOBAL_GOVERNANCE_MANIFEST.json`:
+```json
+{
+  "manifestVersion": "1.0.0",
+  "governanceStandardVersion": "1.0.0",
+  "createdDate": "2026-10-29T02:20:00Z",
+  "scope": "Global System Architecture & Master Invariants Governance",
+  "description": "Khóa mã băm SHA-256 của bộ ba tài liệu Code Truth và quy chuẩn quản trị cốt lõi hệ thống EngQuest3K (W01-W156). Bất kỳ thay đổi nào bắt buộc phải thông qua quy trình phê duyệt Amendment chính thức của Owner/Claude.",
+  "protectedFiles": [
+    "docs/ARCHITECTURE_CURRENT.md",
+    "AGENTS.md",
+    "docs/WEEK_PRODUCTION_SOP.md"
+  ],
+  "protectedFileHashes": {
+    "docs/ARCHITECTURE_CURRENT.md": "1f0e8508f0d12c8d6c0d65dd58c51f6d039cc3271b40fab90d6ca83f5b869856",
+    "AGENTS.md": "0149f431854c1797631cd46eb1b5a20337b13e3cb2d16ef24360586a92a33d75",
+    "docs/WEEK_PRODUCTION_SOP.md": "1562b19b0e3ac9a9be0d7eca812e0bac0f534a5583e8422057d0f23034495963"
+  }
+}
+```
+
+4.2. `npm run guard:governance`:
+```text
+
+> engquest3k@0.0.0 guard:governance
+> node scripts/guard_governance_docs.mjs
+
+========================================================================
+🛡️  ENGQUEST3K — GLOBAL ARCHITECTURE & GOVERNANCE INTEGRITY GUARD
+🔖 Manifest Version: 1.0.0 | Governance Version: 1.0.0
+========================================================================
+
+  ✅ [LOCKED] docs/ARCHITECTURE_CURRENT.md (SHA-256: 1f0e8508f0d12c8d...)
+  ✅ [LOCKED] AGENTS.md (SHA-256: 0149f431854c1797...)
+  ✅ [LOCKED] docs/WEEK_PRODUCTION_SOP.md (SHA-256: 1562b19b0e3ac9a9...)
+
+------------------------------------------------------------------------
+🎉 GLOBAL GOVERNANCE INTEGRITY VERIFIED: 100% OF CODE TRUTH DOCUMENTS LOCKED!
+------------------------------------------------------------------------
+```
+
+4.3. Danh sách CHÍNH XÁC các file thật sự bị khóa mã băm SHA-256 theo `docs/GLOBAL_GOVERNANCE_MANIFEST.json` (3 files):
+- `docs/ARCHITECTURE_CURRENT.md`: tồn tại=true, SHA-256 khớp=true (`1f0e8508f0d12c8d6c0d65dd58c51f6d039cc3271b40fab90d6ca83f5b869856`)
+- `AGENTS.md`: tồn tại=true, SHA-256 khớp=true (`0149f431854c1797631cd46eb1b5a20337b13e3cb2d16ef24360586a92a33d75`)
+- `docs/WEEK_PRODUCTION_SOP.md`: tồn tại=true, SHA-256 khớp=true (`1562b19b0e3ac9a9be0d7eca812e0bac0f534a5583e8422057d0f23034495963`)
+
+4.4. Kiểm tra các tài liệu KHÔNG nằm trong `docs/GLOBAL_GOVERNANCE_MANIFEST.json`:
+- `docs/MASTER_ARCHITECTURE_W01_W156.md`: có trong `GLOBAL_GOVERNANCE_MANIFEST.json`? **KHÔNG (Không bị khóa hash governance)**.
+- `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`: có trong `GLOBAL_GOVERNANCE_MANIFEST.json`? **KHÔNG (Không bị khóa hash governance)**.
+
+4.5. Kiểm tra tồn tại và nội dung thực tế của `docs/GATE15_SPEC_W33.json` và `scripts/guard_governance_docs.mjs`:
+- `docs/GATE15_SPEC_W33.json`: **TỒN TẠI** (444 dòng). Metadata đọc từ file:
+  - `title`: `Gate 15 Production DOM Assertions Spec — Week 33`
+  - `version`: `2.6.0` | `week`: `33`
+  - Top-level keys: `["$schema","title","version","week","global_negative_patterns","quests","data_consistency"]`
+  - Có chứa khóa hash của SOP/MASTER_ARCH/Digital Map không? **KHÔNG — Đây chỉ là spec DOM assertions của Gate 15 Week 33, hoàn toàn không khóa hash tài liệu governance**.
+  - Trích 10 dòng đầu `docs/GATE15_SPEC_W33.json`:
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Gate 15 Production DOM Assertions Spec — Week 33",
+  "version": "2.6.0",
+  "week": 33,
+  "global_negative_patterns": [
+    "lion", "mouse", "Lion", "Mouse", "hunter", "hunters", "heavy net", "thick ropes", "chewed through",
+    "freed the lion", "trapped the lion", "grateful", "Oak Tree", "Green Valley", "Animal Cooperation",
+    "Seed Helpers", "Object 1", "Object 2", "data not found", "caught 24 fish"
+  ],
+```
+- `scripts/guard_governance_docs.mjs`: **TỒN TẠI** (58 dòng). Đọc manifest tại dòng L7 (`const manifestPath = path.resolve(rootDir, 'docs/GLOBAL_GOVERNANCE_MANIFEST.json');`) và đọc `protectedFileHashes` tại dòng L15 (`const protectedHashes = manifest.protectedFileHashes || {};`).
+  - Kiểm tra tham chiếu trong mã nguồn: `GATE15_SPEC_W33.json` = **KHÔNG** | `MASTER_ARCHITECTURE` = **KHÔNG** | `DIGITAL_SYLLABUS` (Digital Map) = **KHÔNG**.
+
+### 5. LỊCH MOCK ĐƯỢC TÍNH TOÁN TỪ FILE & CÂU HỎI MỞ CHỜ OWNER (TASK D)
+
+| STT Mock | Vị Trí Tuần | Giai Đoạn / Khảo Thí (Theo Quyết Định/Mâu Thuẫn) | Trạng Thái Đọc Từ Đĩa | Tham Chiếu Trong Digital Map |
+| :---: | :--- | :--- | :--- | :--- |
+| **M01** | Chèn sau W16 | Starters (1 Mock) (SOP:L127) | Chưa có thư mục mock | MAP:L73 (★ FULL MOCK 01 (Starters)) |
+| **M02** | Chèn sau W24 | Movers (2 Mocks) (SOP:L128) | Chưa có thư mục mock | MAP:L89 (★ FULL MOCK 02 (Movers)) |
+| **M03** | Chèn sau W32 | Movers (2 Mocks) (SOP:L128) | Chưa có thư mục mock | MAP:L97 (★ FULL MOCK 03 (Movers)) |
+| **M04** | Chèn sau W36 | A2 Flyers | Đã merge tại src/data/weeks/week_36 (cũng có staging/week_36_mock) | MAP:L110 (gần nhất: W37 ★ FULL MOCK 04 (Flyers)) |
+| **M05** | Chèn sau W40 | A2 Flyers | Staged tại docs/agent_artifacts/staging/week_40_mock | MAP:L115 (gần nhất: W42 ★ FULL MOCK 05 (Flyers)) |
+| **M06** | Chèn sau W44 | A2 Flyers | Staged tại docs/agent_artifacts/staging/week_44_mock | MAP:L120 (gần nhất: W47 ★ FULL MOCK 06 (Flyers)) |
+| **M07** | Chèn sau W48 | A2 Flyers | Staged tại docs/agent_artifacts/staging/week_48_mock | MAP:L120 (gần nhất: W47 ★ FULL MOCK 06 (Flyers)) |
+| **M08** | Chèn sau W52 | A2 Flyers | Chưa có thư mục mock | MAP:L125 (★ FULL MOCK 07 (Flyers)) |
+| **M09** | Chèn sau W56 | A2 Flyers | Chưa có thư mục mock | MAP:L138 (gần nhất: W57 ★ FULL MOCK 08 (Flyers)) |
+| **M10** | Chèn sau W60 | A2 Flyers | Chưa có thư mục mock | MAP:L143 (gần nhất: W62 ★ FULL MOCK 09 (Flyers)) |
+| **M11** | Chèn sau W64 | A2 Flyers | Chưa có thư mục mock | MAP:L148 (gần nhất: W67 ★ FULL MOCK 10 (Flyers)) |
+| **M12** | Chèn sau W68 | A2 Flyers | Chưa có thư mục mock | MAP:L148 (gần nhất: W67 ★ FULL MOCK 10 (Flyers)) |
+| **M13** | Chèn sau W72 | A2 Flyers (Official Gate) | Chưa có thư mục mock | MAP:L153 (★ FULL MOCK 11 (OFFICIAL)) |
+| **M14** | Chèn sau W76 | B1 PET | Đã merge tại src/data/weeks/week_76 (cũng có staging/week_76_mock) | MAP:L168 (gần nhất: W77 ★ FULL MOCK 12 (PET)) |
+| **M15** | Chèn sau W80 | B1 PET | Đã merge tại src/data/weeks/week_80 (cũng có staging/week_80_mock) | MAP:L173 (gần nhất: W82 ★ FULL MOCK 13 (PET)) |
+| **M16** | Chèn sau W84 | B1 PET | Chưa có thư mục mock | MAP:L178 (gần nhất: W87 ★ FULL MOCK 14 (PET)) |
+| **M17** | Chèn sau W88 | B1 PET | Chưa có thư mục mock | MAP:L178 (gần nhất: W87 ★ FULL MOCK 14 (PET)) |
+| **M18** | Chèn sau W92 | B1 PET | Chưa có thư mục mock | MAP:L183 (★ FULL MOCK 15 (PET)) |
+| **M19** | Chèn sau W96 | B1 PET | Chưa có thư mục mock | MAP:L196 (gần nhất: W97 ★ FULL MOCK 16 (PET)) |
+| **M20** | Chèn sau W100 | B1 PET | Chưa có thư mục mock | MAP:L201 (gần nhất: W102 ★ FULL MOCK 17 (PET)) |
+| **M21** | Chèn sau W104 | B1 PET | Chưa có thư mục mock | MAP:L206 (gần nhất: W107 ★ FULL MOCK 18 (PET)) |
+| **M22** | Chèn sau W108 | B1 PET | Chưa có thư mục mock | MAP:L206 (gần nhất: W107 ★ FULL MOCK 18 (PET)) |
+| **M23** | Chèn sau W112 | B1 PET (Official Gate) | Chưa có thư mục mock | MAP:L211 (★ FULL MOCK 19 (OFFICIAL)) |
+| **M24** | Chèn sau W116 | [CHỜ OWNER QUYẾT ĐỊNH: PET (Owner Decision 6) vs B1+ Academic (SOP/ARCH/MAP)] | Chưa có thư mục mock | MAP:L216 (gần nhất: W117 ★ FULL MOCK (Presentation A)) |
+| **M25** | Chèn sau W120 | [CHỜ OWNER QUYẾT ĐỊNH: PET (Owner Decision 6) vs B1+ Academic (SOP/ARCH/MAP)] | Chưa có thư mục mock | MAP:L219 (PHASE 2 GRADUATION) |
+| **M26** | Chèn sau W124 | [CHỜ OWNER QUYẾT ĐỊNH: PET (Owner Decision 6) vs B1+ Academic (SOP/ARCH/MAP)] | Chưa có thư mục mock | MAP:L236 (gần nhất: W127 ★ FULL MOCK 20 (B1+)) |
+| **M27** | Chèn sau W128 | [CHỜ OWNER QUYẾT ĐỊNH: PET (Owner Decision 6) vs B1+ Academic (SOP/ARCH/MAP)] | Chưa có thư mục mock | MAP:L236 (gần nhất: W127 ★ FULL MOCK 20 (B1+)) |
+| **M28** | Chèn sau W132 | [CHỜ OWNER QUYẾT ĐỊNH: PET (Owner Decision 6) vs B1+ Academic (SOP/ARCH/MAP)] | Chưa có thư mục mock | MAP:L241 (★ FULL MOCK 21 (B1+)) |
+| **M29** | Chèn sau W136 | [CHỜ OWNER QUYẾT ĐỊNH: PET (Owner Decision 6) vs B1+ Academic (SOP/ARCH/MAP)] | Chưa có thư mục mock | MAP:L246 (gần nhất: W137 ★ FULL MOCK 22 (B1+)) |
+| **M30** | Chèn sau W140 | [CHỜ OWNER QUYẾT ĐỊNH: PET (Owner Decision 6) vs B1+ Academic (SOP/ARCH/MAP)] | Chưa có thư mục mock | MAP:L251 (gần nhất: W142 ★ FULL MOCK 23 (B1+)) |
+| **M31** | Chèn sau W144 | [CHỜ OWNER QUYẾT ĐỊNH: PET (Owner Decision 6) vs B1+ Academic (SOP/ARCH/MAP)] | Chưa có thư mục mock | MAP:L264 (gần nhất: W147 ★ FULL MOCK 24 (B1+)) |
+| **M32** | Chèn sau W148 | [CHỜ OWNER QUYẾT ĐỊNH: PET (Owner Decision 6) vs B1+ Academic (SOP/ARCH/MAP)] | Chưa có thư mục mock | MAP:L264 (gần nhất: W147 ★ FULL MOCK 24 (B1+)) |
+| **M33** | Chèn sau W152 | [CHỜ OWNER QUYẾT ĐỊNH: PET (Owner Decision 6) vs B1+ Academic (SOP/ARCH/MAP)] | Chưa có thư mục mock | MAP:L269 (★ FULL MOCK 25 (B1+)) |
+| **M34** | Chèn sau W156 | [CHỜ OWNER QUYẾT ĐỊNH: PET (Owner Decision 6) vs B1+ Academic (SOP/ARCH/MAP)] | Chưa có thư mục mock | MAP:L273 (GRADUATION CEREMONY & FINAL SHOWCASE) |
+
+- **Tổng số liệu tính từ danh sách trên:** 3 (đầu khóa theo `SOP:L127-128`) + 31 (chu kỳ `32 + 4n`, n=1..31) = **34 bài mock**.
+- **Tổng số tuần lịch toàn khóa (khi tách mock xen kẽ giữa 156 tuần nội dung):** 156 + 34 = **190 tuần lịch**.
+
+#### CÂU HỎI MỞ DÀNH CHO OWNER — KHÔNG TỰ QUYẾT (TASK D)
+- **Vấn đề cần Owner chốt:** Các bài mock từ sau W116 đến W156 (M24..M34) dùng định dạng **Cambridge B1 PET** hay **B1+ Academic Reading & Structured Opinion**?
+- **Trích dẫn thật xác nhận từ hai nguồn mâu thuẫn:**
+  1. **Nguồn A — Round 64 & Round 75 (`docs/agent_artifacts/round64_mock_schedule_and_conflicts.md:L7`):**
+     `> - **Stage 2 (Tuần 73 – 156):** Định dạng **Cambridge B1 Preliminary / PET** (21 tuần mock).`
+  2. **Nguồn B — `docs/WEEK_PRODUCTION_SOP.md` (đang khóa SHA-256 trong `GLOBAL_GOVERNANCE_MANIFEST.json`):**
+     - `L131`: `- **B2 FCE & Acellus (9 Mocks - Nhịp 4+1)**: W117, W122, W127, W132, W137, W142, W147, W152, W156 (Final Capstone & Graduation)`
+     - `L133`: `> **Note**: Giai đoạn W113–W156 mục tiêu điều chỉnh thành **B1+ Academic Reading & Structured Opinion** (thay vì B2 FCE/Acellus). Mock Test labels trên UI hiển thị là `★ B1+ Academic Assessment Mock`.`
+  3. **Nguồn C — `docs/MASTER_ARCHITECTURE_W01_W156.md`:**
+     - `L189`: `│ W113 – W156   │ B1+ Academic │ 9 Mock Tests (Nhịp 4+1)│ W117, W122, W127, W132, W137, W142, │`
+     - `L190`: `│               │ Reading      │                        │ W147, W152, W156 (Final Capstone)   │`
+  4. **Nguồn D — `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`:**
+     - `L236`: `| **W127**| **Rebuttal Practice** | **★ FULL MOCK 20 (B1+)**| Luyện Phản biện: Use "They say... but I say..." structure | **Tier 3 (Exam)** | **Full Mock B1+ Academic 1: Reading 500–800w passages + Opinion Essay 140–190w** |`
+     - `L241`: `| **W132**| **B1+ Academic Assessment Mock 2** | **★ FULL MOCK 21 (B1+)**| **Khảo sát Năng lực Chuẩn hóa B1+ 2** | **Tier 3 (Exam)** | **Full Mock B1+ Academic 2: Chấm bài luận Opinion Essay theo Rubric** |`
+- **Kết luận Round 77:** `WEEK_PRODUCTION_SOP.md:L133` (đang khóa SHA-256) và `MASTER_ARCHITECTURE_W01_W156.md:L189-190` ghi giai đoạn W113–W156 dùng `B1+ Academic Reading` / `Structured Opinion`; `ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md:L236,L241` ghi `Full Mock B1+ Academic` (`Reading 500–800w passages + Opinion Essay 140–190w`). Các quy định này mâu thuẫn với giả định W73–156 dùng PET của Round 64/Decision 6. Giữ trạng thái **[CHỜ OWNER QUYẾT ĐỊNH]**, không tự ý chọn.
