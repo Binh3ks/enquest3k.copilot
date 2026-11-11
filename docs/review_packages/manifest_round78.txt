@@ -1,0 +1,36 @@
+ROUND 78 PACKAGE & COMMIT MANIFEST
+========================================================================
+Timestamp:           2026-11-11T07:37:25.201Z
+deliverables_commit: 734eb3d0c0e8e90bfe1072e85698f19eb0d191e7
+
+ZIP PACKAGE:
+  Path:    docs/review_packages/round78_20261111.zip
+  Size:    583326 bytes
+  SHA-256: 41391d6722551a1bbade1f22796033261d6dce2bfd416f839b1dc98abccc2da6
+
+DRY-RUN TEMP BLUEPRINTS:
+  Directory: docs/agent_artifacts/round78_temp_blueprints/ (156 files)
+
+RAW FORENSIC ARTIFACTS & SHA-256 HASHES:
+  34648a6e0922ab635f089610ed24375f7da897128002aef9e846ee47d61936ee  docs/agent_artifacts/round78_task_a_clarifications_raw.txt
+  09ae02d7bc873ec911d4f99674521020573c010d20a9481f63c08f4549b1831e  docs/agent_artifacts/round78_proposed_digital_map_v2.md
+  b6155552c369587799524a9685969eb9f2bf4b57f5d22bba7e3e307bc3c444c2  docs/agent_artifacts/round78_source_a_patch_v2_raw.txt
+  9ae71baa2ba1608994d4028075f4ab1f2287e42c43e6c973163c7655afbf2ba9  docs/agent_artifacts/round78_blueprint_and_part_audit_raw.txt
+  a364cc70a7cfdd8414e8b8d03b12f18a8a6ece4ac1fe2b6c0826584606f84419  docs/agent_artifacts/round78_w79_w80_split_proposal.md
+  d24d59131724745e362871b477c7ff1f5eb045914279cf79e206bd8c0dbbff5f  docs/agent_artifacts/round78_wave3_acceptance_spec.md
+  5fb727bfa4fe588d5c582096ce774384c13fa7b7176891909822a27a8ca9cda0  docs/agent_artifacts/round64_mock_schedule_and_conflicts.md
+
+SCOPE COMPLIANCE (ROUND 78 — PROPOSAL ONLY):
+  - src/data/weeks/: 0 modifications
+  - SOP / MASTER_ARCH / ARCHITECTURE_CURRENT / AGENTS / Digital Map: 0 modifications
+  - docs/agent_artifacts/staging/: 0 modifications / 0 regeneration / 0 merge
+  - Proposals included for review:
+      * Task A (A.1 W35 Math AST vs hub, A.2 M01 Deferred Lite Mode in 34 Mocks, A.3 PET spec absent)
+      * Task B (Digital Map v2 aligned to Source B Part II + full diff -u + B.5 L28/L280 + B.6 conflicts)
+      * Task C (156 dry-run temp blueprints + C.7.1..C.7.4 + C.8 full 44-week W113-W156 Part I/II table)
+      * Task D (W79/W80 Source B vs SUPPLEMENT split table)
+      * Task E (W79, W80, W126, W127, W129-132, W133, W134 acceptance spec; Cambridge waiting doc)
+  - Pending Owner Decision:
+      * Mock format after W116 (PET per Decision 6 vs B1+ Academic per SOP/ARCH/MAP) -> M24..M34 marked [CHỜ OWNER]
+      * Approval of SUPPLEMENT items (W79/80 Math, 20-word vocab padding, Digital Map v2 patch)
+========================================================================
