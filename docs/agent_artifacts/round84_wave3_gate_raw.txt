@@ -1,0 +1,104 @@
+========================================================================
+ROUND 83 WAVE 3 STAGING GATE AUDIT (DYNAMIC COMPUTATION — ZERO LITERALS)
+Generated: 2026-11-12T09:57:24.608Z
+========================================================================
+
+--- WEEK 126 (From Essay to Speech) [review_status=PENDING_CLAUDE_ESL_SIGNOFF] ---
+  [G-GEN-11 Theme/Math Count]: PASS (theme="From Essay to Speech", mathItems=5/5)
+  [G-GEN-12 Math/CLIL Schema]: PASS (validMath=5/5, clilQuestions=3)
+  [G-GEN-13 Readability/Scope]: PASS (vocabCount=20, clilWords=168)
+  [G-GEN-14 Clean English/No Boilerplate]: PASS (viLeaks=0, boilerplate=0)
+  [G-GEN-15 Vocab Coverage in CLIL]: PASS (20/20 = 100%, SB=0/0 = 100%)
+    Matched: signpost, cue, transition, rhetoric, delivery, articulate, outline, audience, gesture, pacing, emphasis, rehearse, intonation, verbal, projection, elocution, summary, structure, keynote, oratory
+    Missing: (none)
+  [G-GEN-16 ESL Anomaly Scan]: PASS (hits=0)
+  [R83-STRAND Logic Puzzles]: PASS
+  => WEEK 126 VERDICT: PASS
+
+  [WEEK 126 MATH PROBLEMS VERBATIM]
+    P1 (logic_puzzle) | Title: Ordering the Finalist Speeches | Answer: 32 points | svg_url: N/A (BarModelSVG)
+       Prompt: Four speakers (Ava, Ben, Cara, and Dan) present in Slots 1, 2, 3, and 4, earning 12, 16, 20, and 24 points respectively for their slot difficulty. Clue 1: Ben speaks immediately after Ava. Clue 2: Cara speaks before Ava. Clue 3: Dan speaks in neither Slot 1 nor Slot 4. What is the combined score of Ava and Cara?
+    P2 (logic_puzzle) | Title: Cue Card Allocation Logic | Answer: 12 cue cards | svg_url: N/A (BarModelSVG)
+       Prompt: Three debaters—Leo, Mia, and Noah—prepare a combined total of 36 cue cards. Leo brings twice as many cue cards as Mia. Noah brings 4 fewer cue cards than Leo. How many cue cards does Noah bring?
+    P3 (logic_puzzle) | Title: Keynote Room Assignment Grid | Answer: 24 seats | svg_url: N/A (BarModelSVG)
+       Prompt: Three speech workshops—Rhetoric, Delivery, and Pacing—are assigned to Room A (18 seats), Room B (26 seats), and Room C (42 seats). Clue 1: Pacing is assigned to neither the smallest room nor Room C. Clue 2: Rhetoric requires at least 30 seats. How many more seats are in the Rhetoric room than in the Delivery room?
+    P4 (logic_puzzle) | Title: Overlapping Rehearsal Workshops | Answer: 9 students | svg_url: N/A (BarModelSVG)
+       Prompt: Every one of the 45 members in the Speech Club joins at least one afternoon session: Elocution or Intonation (or both). Exactly 28 members attend Elocution and 26 members attend Intonation. How many members attend BOTH sessions?
+    P5 (logic_puzzle) | Title: The Three-Digit Keynote Passcode | Answer: 268 passcode | svg_url: N/A (BarModelSVG)
+       Prompt: Maya locks her keynote slides with a 3-digit passcode [A B C], where A, B, and C are single whole digits from 1 to 9. Clue 1: B is 3 times A. Clue 2: C is 2 greater than B. Clue 3: The sum A + B + C equals 16. What is the 3-digit passcode?
+
+--- WEEK 127 (Rebuttal Practice) [review_status=PENDING_CLAUDE_ESL_SIGNOFF] ---
+  [G-GEN-11 Theme/Math Count]: PASS (theme="Rebuttal Practice", mathItems=5/5)
+  [G-GEN-12 Math/CLIL Schema]: PASS (validMath=5/5, clilQuestions=3)
+  [G-GEN-13 Readability/Scope]: PASS (vocabCount=20, clilWords=167)
+  [G-GEN-14 Clean English/No Boilerplate]: PASS (viLeaks=0, boilerplate=0)
+  [G-GEN-15 Vocab Coverage in CLIL]: PASS (20/20 = 100%, SB=5/5 = 100%)
+    Matched: disagree, counter, point, false, true, rebuttal, refute, concede, oppose, objection, contradict, fallacious, premise, evidence, flaw, standpoint, contend, disprove, rebut, validity
+    Missing: (none)
+  [G-GEN-16 ESL Anomaly Scan]: PASS (hits=0)
+  [R83-STRAND Critical Thinking Math]: PASS
+  => WEEK 127 VERDICT: PASS
+
+  [WEEK 127 MATH PROBLEMS VERBATIM]
+    P1 (critical_thinking) | Title: Exposing a Double-Counting Claim | Answer: 12 students | svg_url: N/A (BarModelSVG)
+       Prompt: An opponent argues: 'In our 60-student grade, 38 students read news blogs and 34 watch video debates, so 72 different students follow current events!' Suppose every student does at least one of those two activities. At minimum, how many students did the opponent count twice?
+    P2 (critical_thinking) | Title: Refuting Contradictory Ballot Totals | Answer: 16 votes | svg_url: N/A (BarModelSVG)
+       Prompt: A debate tally sheet claims that out of 80 total ballots cast, Team Alpha earned 44 votes, Team Beta earned 38 votes, and 14 ballots were left blank. Each ballot has only one mark (or blank). How many phantom (impossible) extra votes appear in that claimed tally?
+    P3 (critical_thinking) | Title: Detecting Denominator Neglect in Rates | Answer: 15 winners | svg_url: N/A (BarModelSVG)
+       Prompt: Speaker A claims School X performs better because it produced 45 debate winners out of 150 applicants (30%), whereas School Y produced 36 winners out of 90 applicants (40%). If School Y maintained its 40% winning rate across 150 applicants just like School X, how many MORE winners would School Y produce than School X?
+    P4 (critical_thinking) | Title: Exposing an Unweighted Average Fallacy | Answer: 80 points | svg_url: N/A (BarModelSVG)
+       Prompt: A debater scores 60 points in Round 1 and 90 points in the Final Round, claiming a final average of 75 points. However, the rubric states that the Final Round counts TWICE as much (2 weights) as Round 1 (1 weight). What is the debater's true weighted average?
+    P5 (critical_thinking) | Title: Challenging an Inflated Fraction Claim | Answer: 24 students | svg_url: N/A (BarModelSVG)
+       Prompt: During a rebuttal, a speaker asserts that 3/5 of the 120 surveyed students oppose the new schedule. In reality, out of 120 students, 60 support the plan, 12 are undecided, and the rest oppose it. By how many students does the speaker exaggerate the opposition?
+
+--- WEEK 133 (Deep Research & Data) [review_status=PENDING_CLAUDE_ESL_SIGNOFF] ---
+  [G-GEN-11 Theme/Math Count]: PASS (theme="Deep Research & Data", mathItems=5/5)
+  [G-GEN-12 Math/CLIL Schema]: PASS (validMath=5/5, clilQuestions=3)
+  [G-GEN-13 Readability/Scope]: PASS (vocabCount=20, clilWords=198)
+  [G-GEN-14 Clean English/No Boilerplate]: PASS (viLeaks=0, boilerplate=0)
+  [G-GEN-15 Vocab Coverage in CLIL]: PASS (20/20 = 100%, SB=8/8 = 100%)
+    Matched: statistic, percent, study, data, majority, minority, survey, population, sample, quantitative, methodology, findings, correlation, variable, analyze, respondent, metric, empirical, hypothesis, frequency
+    Missing: (none)
+  [G-GEN-16 ESL Anomaly Scan]: PASS (hits=0)
+  [R83-STRAND Geometry: Angles]: PASS
+  => WEEK 133 VERDICT: PASS
+
+  [WEEK 133 MATH PROBLEMS VERBATIM]
+    P1 (geometry_angles) | Title: Complementary Angles in a Right Angle | Answer: 53 degrees | svg_url: /images/week133/w133_angle_p1.svg
+       Prompt: In the diagram, ray BD divides right angle ∠ABC (90°) into two adjacent angles. If ∠ABD measures 37°, what is the measure of angle x (∠DBC) in degrees?
+    P2 (geometry_angles) | Title: Angles on a Straight Line | Answer: 52 degrees | svg_url: /images/week133/w133_angle_p2.svg
+       Prompt: Points P, O, and Q lie on a straight line (180°). In the diagram, ∠POR measures 38° and ∠ROS is marked as a right angle (90°). What is the measure of angle x (∠SOQ) in degrees?
+    P3 (geometry_angles) | Title: Measuring with a Protractor Scale | Answer: 110 degrees | svg_url: /images/week133/w133_angle_p3.svg
+       Prompt: Look at the protractor diagram. Ray OA points to 25° on the scale and ray OB points to 135°. What is the measure of angle ∠AOB in degrees?
+    P4 (geometry_angles) | Title: Classifying an Angle by Measure | Answer: 3 category (1, 2, or 3) | svg_url: /images/week133/w133_angle_p4.svg
+       Prompt: Examine angle ∠M (128°) in the diagram. Which angle category does it belong to? Enter 1 for Acute (less than 90°), 2 for Right (exactly 90°), or 3 for Obtuse (between 90° and 180°).
+    P5 (geometry_angles) | Title: Angles Around a Full Point | Answer: 65 degrees | svg_url: /images/week133/w133_angle_p5.svg
+       Prompt: Four rays meet at point O to form a complete turn (360°). Three of the angles measure 85°, 115°, and 95°. What is the measure of the fourth angle x in degrees?
+
+--- WEEK 134 (Identifying Fallacies) [review_status=PENDING_CLAUDE_ESL_SIGNOFF] ---
+  [G-GEN-11 Theme/Math Count]: PASS (theme="Identifying Fallacies", mathItems=5/5)
+  [G-GEN-12 Math/CLIL Schema]: PASS (validMath=5/5, clilQuestions=3)
+  [G-GEN-13 Readability/Scope]: PASS (vocabCount=20, clilWords=161)
+  [G-GEN-14 Clean English/No Boilerplate]: PASS (viLeaks=0, boilerplate=0)
+  [G-GEN-15 Vocab Coverage in CLIL]: PASS (20/20 = 100%, SB=8/8 = 100%)
+    Matched: fallacy, generalization, assumption, true, false, valid, invalid, logic, premise, conclusion, flaw, stereotype, deduction, reasoning, claim, bias, hasty, misleading, soundness, argumentation
+    Missing: (none)
+  [G-GEN-16 ESL Anomaly Scan]: PASS (hits=0)
+  [R83-STRAND Geometry: Triangles]: PASS
+  => WEEK 134 VERDICT: PASS
+
+  [WEEK 134 MATH PROBLEMS VERBATIM]
+    P1 (geometry_triangles) | Title: Classifying Triangle ABC by Sides | Answer: 2 category (1, 2, or 3) | svg_url: /images/week134/w134_triangle_p1.svg
+       Prompt: Inspect triangle ΔABC with side lengths 7 cm, 7 cm, and 10 cm shown in the diagram. Classify this triangle by its sides: enter 1 for Equilateral (all 3 sides equal), 2 for Isosceles (at least 2 sides equal), or 3 for Scalene (no equal sides).
+    P2 (geometry_triangles) | Title: Finding Equal Sides from Perimeter | Answer: 16 cm | svg_url: /images/week134/w134_triangle_p2.svg
+       Prompt: Triangle ΔPQR has a total perimeter of 44 cm and a base QR = 12 cm. The remaining two sides PQ and PR have equal length (x cm each, shown by matching tick marks). What is the value of x in cm?
+    P3 (geometry_triangles) | Title: Classifying Triangle XYZ by Sides | Answer: 3 category (1, 2, or 3) | svg_url: /images/week134/w134_triangle_p3.svg
+       Prompt: Inspect triangle ΔXYZ with side lengths 6 cm, 9 cm, and 12 cm shown in the diagram. Classify this triangle by its sides: enter 1 for Equilateral (all 3 sides equal), 2 for Isosceles (exactly 2 sides equal), or 3 for Scalene (all 3 sides different).
+    P4 (geometry_triangles) | Title: Maximum Whole Side by Triangle Inequality | Answer: 17 cm | svg_url: /images/week134/w134_triangle_p4.svg
+       Prompt: Two sides of triangle ΔDEF measure 7 cm and 11 cm. By the Triangle Inequality Theorem (the sum of any two sides must be strictly greater than the third side), what is the GREATEST possible whole-number length in cm for side c?
+    P5 (geometry_triangles) | Title: Angle Sum with Equal Sides | Answer: 68 degrees | svg_url: /images/week134/w134_triangle_p5.svg
+       Prompt: In triangle ΔKLM, sides KL and KM are equal (10 cm each), which forces base angles ∠L and ∠M to have the same measure (x° each). If top angle ∠K measures 44°, what is the measure of angle x (∠L) in degrees?
+
+========================================================================
+OVERALL WAVE 3 STAGING GATE STATUS: ALL_PASS
+========================================================================

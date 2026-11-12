@@ -216,7 +216,7 @@ export const readingHubData = {
   "clil_article": {
     "title_en": "Rebuttal Practice: Disagreeing with Facts and Politeness",
     "title_vi": "Luyện Phản Biện: Phản Đối Bằng Dữ Liệu Và Sự Lịch Thiệp",
-    "content_en": "In formal debate, learning how to disagree respectfully requires more than restating your own original position. Simply repeating earlier claims avoids engagement; an effective rebuttal must directly examine and dismantle each specific point raised by the opposing standpoint. When you oppose a claim, begin by testing its underlying premise and logical validity. A helpful tool is the 'They say... but I say...' template, which lets you acknowledge an opponent's claim before introducing a stronger counter-argument. For instance, you might concede a minor point that is true to build credibility, while working to refute the main conclusion as false or incomplete. To rebut an argument convincingly, inspect it for any logical flaw or fallacious leap, and check whether verified evidence can contradict and disprove what rivals contend. Finally, address each serious objection using sharp contrast connectors such as 'However,' 'Nevertheless,' or 'On the contrary,' which signal direct logical opposition and keep your reasoning disciplined.",
+    "content_en": "In a school debate, learning how to disagree politely takes real skill. You should not just repeat your own first speech. Instead, give a rebuttal—a clear reply that answers each point from the other side's standpoint. When you oppose an idea, first check the main reason, or premise, behind it. Does it have real validity, meaning it makes logical sense? A helpful frame is: 'They say... but I say...' This shows what the other team argues before you give your counter idea. Sometimes one small detail they share is true. You can concede, or fairly admit, that small fact. Then rebut their main claim by explaining why it is false. Look closely for a flaw, or hidden mistake, in their thinking. If a reason is fallacious, it uses bad logic that only sounds right. Share clear evidence—real facts or examples—to contradict and disprove what other speakers contend. Finally, answer each serious objection calmly. To refute weak claims politely, use linking words like 'However' or 'On the contrary.'",
     "glossary": [
       {
         "word": "rebuttal",
@@ -247,38 +247,38 @@ export const readingHubData = {
     "check_questions": [
       {
         "id": 1,
-        "question_en": "What is the primary purpose of the 'They say... but I say...' template?",
+        "question_en": "What is the main purpose of the 'They say... but I say...' frame?",
         "options": [
-          "To acknowledge an opponent's claim before presenting a stronger counter-argument",
-          "To repeat an opponent's entire speech without changes",
-          "To concede the entire debate immediately"
+          "To show the other team's claim before giving your stronger counter idea",
+          "To repeat an opponent's full speech without changes",
+          "To give up on the debate right away"
         ],
-        "answer": "To acknowledge an opponent's claim before presenting a stronger counter-argument"
+        "answer": "To show the other team's claim before giving your stronger counter idea"
       },
       {
         "id": 2,
-        "question_en": "Why should debaters avoid simply restating their own original claims during a rebuttal?",
+        "question_en": "Why should debaters avoid simply repeating their own first speech?",
         "options": [
-          "Because a rebuttal must directly engage and dismantle the opponent's specific points",
-          "Because original claims are deleted by the judges",
+          "Because a rebuttal must answer each point from the other side",
+          "Because judges delete repeated sentences",
           "Because repeating words makes speeches too loud"
         ],
-        "answer": "Because a rebuttal must directly engage and dismantle the opponent's specific points"
+        "answer": "Because a rebuttal must answer each point from the other side"
       },
       {
         "id": 3,
-        "question_en": "Which connector signals a direct logical opposition between two statements?",
+        "question_en": "Which linking phrase signals a polite contrast between two ideas?",
         "options": [
           "On the contrary,",
-          "Similarly,",
-          "Consequently,"
+          "For example,",
+          "In the same way,"
         ],
         "answer": "On the contrary,"
       }
     ],
     "critical_thinking": {
-      "question_en": "Why is conceding a minor, undeniable fact a sign of strategic strength rather than weakness in debate?",
-      "hint_en": "Conceding an undeniable point shows fair-mindedness and honesty, building credibility while refocusing the debate on more decisive arguments."
+      "question_en": "Why does conceding one small true detail actually make your rebuttal stronger instead of weaker?",
+      "hint_en": "Admitting a true detail shows that you are fair and honest, so listeners trust your main counter point more."
     }
   },
   "story_scenes": [

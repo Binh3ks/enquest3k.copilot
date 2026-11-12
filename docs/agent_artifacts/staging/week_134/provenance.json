@@ -62,5 +62,13 @@
       "docs/agent_artifacts/staging/week_134/svg/w134_triangle_p5.svg"
     ],
     "promotion_asset_copy_required": "Copy docs/agent_artifacts/staging/week_134/svg/*.svg to public/images/week134/ upon merge approval"
+  },
+  "round84_b1_register_rewrite": {
+    "round": 84,
+    "rewritten_at": "2026-11-12T09:54:02.083Z",
+    "baseline_commit": "0e7419a6e69b7157d33434da26acbe5d713b4c3b",
+    "scope": "STAGING_ONLY_CLIL_B1_PLUS_REGISTER",
+    "updated_file": "docs/agent_artifacts/staging/week_134/reading_hub.js",
+    "notes": "Rewrote clil_article.content_en and aligned clil_article.check_questions to genuine CEFR B1+ register while preserving 100% (20/20) target vocabulary coverage."
   }
 }

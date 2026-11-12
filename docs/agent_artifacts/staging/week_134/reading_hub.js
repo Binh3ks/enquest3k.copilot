@@ -216,7 +216,7 @@ export const readingHubData = {
   "clil_article": {
     "title_en": "Identifying Fallacies: Spotting Faulty Reasoning",
     "title_vi": "Nhận Diện Lỗi Ngụy Biện: Phát Hiện Lập Luận Khiếm Khuyết",
-    "content_en": "In formal argumentation, skilled thinkers examine whether a claim relies on sound logic or commits a logical fallacy. One common flaw is a hasty generalization—drawing a sweeping universal conclusion from only a few limited examples. This error often turns into an unfair stereotype when a speaker assumes an entire group behaves the exact same way without true proof. For instance, declaring that all video gamers are lazy and avoid books is a misleading assumption that empirical research shows to be false. Sound deduction demands disciplined reasoning: if a starting premise reflects personal bias rather than verified facts, the entire argument loses soundness and becomes invalid. Conversely, when a point is built on solid evidence, its reasoning remains valid. To protect their credibility from sweeping errors, careful debaters use qualifying words such as 'some,' 'many,' 'often,' and 'tend to,' keeping every conclusion fair and balanced.",
+    "content_en": "Good argumentation—building a fair case in debate—needs clear logic. Smart listeners check if a claim is strong or hides a fallacy, a common mistake in thinking. One common flaw is a hasty generalization. This happens when someone jumps to a big conclusion after seeing only one or two examples. Often, that creates an unfair stereotype about a whole group of people. For example, saying 'All video gamers are lazy' is a misleading assumption made without true proof. Real facts show that this idea is false. Good deduction means step-by-step thinking that actually works. Your reasoning starts from a premise, or first idea. If that idea comes from personal bias instead of facts, your argument loses soundness. Without strong facts, the whole point becomes invalid. However, when true facts support every step, your point stays valid. To keep your ideas fair, use careful words like 'some,' 'many,' 'often,' and 'tend to.' These simple words stop you from making unfair guesses about everyone.",
     "glossary": [
       {
         "word": "fallacy",
@@ -249,36 +249,36 @@ export const readingHubData = {
         "id": 1,
         "question_en": "What is a 'hasty generalization' fallacy?",
         "options": [
-          "Drawing a sweeping universal conclusion from inadequate or limited examples",
-          "Speaking too fast during an oral speech rehearsal",
-          "Using too many verified statistical studies"
+          "Jumping to a big conclusion from only one or two examples",
+          "Speaking too quickly during speech practice",
+          "Using too many true facts from a class survey"
         ],
-        "answer": "Drawing a sweeping universal conclusion from inadequate or limited examples"
+        "answer": "Jumping to a big conclusion from only one or two examples"
       },
       {
         "id": 2,
-        "question_en": "Which qualifying words help speakers avoid making fallacious generalizations?",
+        "question_en": "Which careful words help speakers avoid making unfair guesses about everyone?",
         "options": [
-          "'Some', 'many', 'often', and 'tend to'",
-          "'All', 'every', 'always', and 'never'",
-          "'Nobody', 'nowhere', and 'impossible'"
+          "'Some,' 'many,' 'often,' and 'tend to'",
+          "'All,' 'every,' 'always,' and 'never'",
+          "'Nobody,' 'nowhere,' and 'impossible'"
         ],
-        "answer": "'Some', 'many', 'often', and 'tend to'"
+        "answer": "'Some,' 'many,' 'often,' and 'tend to'"
       },
       {
         "id": 3,
-        "question_en": "Why is the statement 'All video gamers are lazy and unmotivated' invalid?",
+        "question_en": "Why is the claim 'All video gamers are lazy' invalid?",
         "options": [
-          "It is a sweeping generalization contradicted by empirical research and diverse real-world players",
-          "Because video games were only invented last week",
-          "Because lazy people are not allowed to play games"
+          "It is an unfair assumption made with no true proof",
+          "Because video games were only made last week",
+          "Because lazy students cannot join clubs"
         ],
-        "answer": "It is a sweeping generalization contradicted by empirical research and diverse real-world players"
+        "answer": "It is an unfair assumption made with no true proof"
       }
     ],
     "critical_thinking": {
-      "question_en": "How does using qualifiers like 'tend to' or 'in many cases' protect a speaker's academic credibility during debate cross-examination?",
-      "hint_en": "Absolute statements ('all', 'never') can be disproven by a single counterexample, whereas careful qualifiers acknowledge nuances and withstand factual challenges."
+      "question_en": "How do careful words like 'many' or 'tend to' make a debater's claim harder to disprove?",
+      "hint_en": "Words like 'all' or 'never' can be broken by just one example, while words like 'often' match real life much better."
     }
   },
   "story_scenes": [

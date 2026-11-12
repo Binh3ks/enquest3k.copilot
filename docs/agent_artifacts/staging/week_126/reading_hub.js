@@ -216,7 +216,7 @@ export const readingHubData = {
   "clil_article": {
     "title_en": "From Essay to Speech: Delivering Spoken Ideas",
     "title_vi": "Từ Bài Viết Đến Bài Nói: Truyền Đạt Ý Tưởng Bằng Lời",
-    "content_en": "Turning a written essay into a compelling speech requires strong oratory and careful delivery. Unlike readers, your audience cannot see paragraph formatting on a page, and reading full essays verbatim sounds flat and monotone. Instead of reading sheets word-for-word, effective speakers convert their outline into pocket cue cards containing only concise keywords and transition prompts. Clear structure keeps listeners engaged from the opening hook to the final summary. To guide listeners through shifts in topic and argument, speakers use verbal signpost markers such as 'Moving on to...' or 'Turning our attention to...'. Strong rhetoric also depends on vocal and physical technique. Careful elocution helps you articulate complex terms, while steady projection carries your voice across a room. Varying intonation, pacing, and vocal emphasis highlights key claims far better than rushing, and purposeful hand gestures reinforce major ideas. Whether preparing a classroom talk or a major keynote, you should always rehearse aloud with your cue cards so deliberate pauses give listeners time to process every message.",
+    "content_en": "Giving a good school speech—called oratory—is different from writing an essay. Readers can see paragraphs on paper, but an audience only hears your voice. If you read a full page word by word, people feel bored. Instead, turn your essay outline into small cue cards with only short notes. Good structure helps everyone follow your talk from the start to the final summary. Use verbal signpost phrases like 'Next, let's look at...' to help listeners move through each transition. Strong delivery also depends on how you use your voice and body. When you articulate words clearly—good elocution—people understand every idea. Voice projection means speaking loudly enough for the back row without shouting. Good pacing keeps you from talking too fast. Changing your intonation—how your voice rises and falls—adds emphasis to key ideas. Friendly hand gestures make your point easier to picture. That is why rhetoric, the art of speaking well to persuade others, takes practice. Even for a big keynote speech, always rehearse aloud with your cards first.",
     "glossary": [
       {
         "word": "signpost",
@@ -234,51 +234,51 @@ export const readingHubData = {
         "definition_vi": "thính giả lắng nghe bài thuyết trình"
       },
       {
-        "word": "pause",
-        "definition_en": "A short stop in speech to give listeners time to think",
-        "definition_vi": "khoảng dừng ngắn khi nói"
+        "word": "outline",
+        "definition_en": "A short plan showing the main points of an essay or speech",
+        "definition_vi": "dàn ý tóm tắt bài viết hoặc bài nói"
       },
       {
-        "word": "confidence",
-        "definition_en": "A calm feeling of trust in your speaking skills",
-        "definition_vi": "sự tự tin khi trình bày"
+        "word": "intonation",
+        "definition_en": "How your voice rises and falls when you speak",
+        "definition_vi": "ngữ điệu lên xuống của giọng nói"
       }
     ],
     "check_questions": [
       {
         "id": 1,
-        "question_en": "Why should speakers avoid reading full essay paragraphs verbatim from a sheet?",
+        "question_en": "Why should speakers avoid reading a full essay page word by word?",
         "options": [
-          "Because audiences cannot see paragraph formatting and reading aloud sounds monotone",
+          "Because listeners cannot see paragraphs on paper and may feel bored",
           "Because written essays are always shorter than speeches",
-          "Because reading aloud damages vocal cords"
+          "Because reading aloud is not allowed in class"
         ],
-        "answer": "Because audiences cannot see paragraph formatting and reading aloud sounds monotone"
+        "answer": "Because listeners cannot see paragraphs on paper and may feel bored"
       },
       {
         "id": 2,
-        "question_en": "What is the primary function of oral signposting markers like 'Moving on to...'?",
+        "question_en": "What do verbal signpost phrases like 'Next, let's look at...' do?",
         "options": [
-          "They guide listeners clearly through changes in topic and argument structure",
-          "They tell the audience that the speech is immediately finished",
-          "They replace the need for any research evidence"
+          "They help listeners move smoothly through each transition",
+          "They tell the audience that the speech is finished",
+          "They replace the need for any examples"
         ],
-        "answer": "They guide listeners clearly through changes in topic and argument structure"
+        "answer": "They help listeners move smoothly through each transition"
       },
       {
         "id": 3,
-        "question_en": "What do effective speakers write on pocket cue cards?",
+        "question_en": "What should effective speakers write on small cue cards?",
         "options": [
-          "Concise keywords and transitional prompts",
-          "Full essays word-for-word in tiny font",
-          "Doodles and unrelated drawings"
+          "Short notes from their essay outline",
+          "Every full sentence in tiny handwriting",
+          "Pictures and jokes unrelated to the talk"
         ],
-        "answer": "Concise keywords and transitional prompts"
+        "answer": "Short notes from their essay outline"
       }
     ],
     "critical_thinking": {
-      "question_en": "How do vocal pauses and signposting phrases work together to help listeners remember key ideas?",
-      "hint_en": "Signposts warn the audience of a new concept, while deliberate pauses give listeners time to process and file the information mentally."
+      "question_en": "How do verbal signpost phrases and good pacing work together to help listeners follow your main ideas?",
+      "hint_en": "Signpost phrases show when a new point starts, and calm pacing gives listeners time to understand each idea."
     }
   },
   "story_scenes": [

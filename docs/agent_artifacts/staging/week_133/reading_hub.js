@@ -216,7 +216,7 @@ export const readingHubData = {
   "clil_article": {
     "title_en": "Deep Research and Data: Citing Facts with Care",
     "title_vi": "Nghiên Cứu Sâu Và Dữ Liệu: Trích Dẫn Dữ Liệu Cẩn Thận",
-    "content_en": "In academic debate, strong claims depend on empirical proof rather than personal guesses. Reliable quantitative research helps speakers analyze real-world behavior before testing a hypothesis. Consider how researchers design a rigorous study with clear methodology: they select a representative sample from a larger student population and ask every respondent to complete a standardized survey. In a recent university report introduced with phrases like 'According to a study by Dr. Lin,' researchers tracked weekly gaming frequency and measured teamwork as a key metric. The findings revealed that seventy percent of adolescent participants play video games each week. Crucially, the data showed that a substantial majority of those adolescent players utilize cooperative games to build positive social connections, whereas only a small minority—roughly fifteen percent—reported playing exclusively alone. Each statistic tells part of the story, yet careful analysts check every hidden variable as well. Even when figures suggest a link between late-night gaming and sleep deficits, correlation alone does not prove that gaming directly causes insomnia.",
+    "content_en": "When you speak in a school debate, facts are stronger than guesses. Good speakers use empirical proof—facts we can actually check and measure. Testing an idea, called a hypothesis, often starts with quantitative data, which simply means useful number facts. Suppose your debate club runs a study about after-school screen habits. First, plan your methodology, or step-by-step plan for collecting answers. Instead of asking the whole school population, you ask a smaller sample of one hundred students. Each respondent answers the same short survey. You might track how many hours they play each week—a metric showing their weekly gaming frequency. Next, analyze the findings carefully. Imagine a real report introduced with 'According to a study by Dr. Lin.' It shows seventy percent of middle-school students play video games each week. That statistic proves gaming is common. A large majority of players—more than half—use team games to make friends. Only a small minority, around fifteen percent, play alone all the time. Still, check every hidden variable, or outside reason, like homework or stress. Sometimes two habits happen together, like late gaming and tired mornings. That link is a correlation, but it does not always prove one causes the other.",
     "glossary": [
       {
         "word": "statistic",
@@ -247,7 +247,7 @@ export const readingHubData = {
     "check_questions": [
       {
         "id": 1,
-        "question_en": "What percentage of adolescent students play video games weekly according to the university study?",
+        "question_en": "What percentage of middle-school students play video games each week in Dr. Lin's study?",
         "options": [
           "Seventy percent",
           "Ten percent",
@@ -257,28 +257,28 @@ export const readingHubData = {
       },
       {
         "id": 2,
-        "question_en": "What did the research data reveal about the majority of adolescent players?",
+        "question_en": "What did the survey data show about the majority of student players?",
         "options": [
-          "A substantial majority utilize cooperative games to build positive social connections",
-          "The majority never speak to their friends or family",
-          "The majority only play games on old radio sets"
+          "Most players use team games to make friends",
+          "Most players never talk to friends or family",
+          "Most players only play alone every night"
         ],
-        "answer": "A substantial majority utilize cooperative games to build positive social connections"
+        "answer": "Most players use team games to make friends"
       },
       {
         "id": 3,
-        "question_en": "Which phrase is an accurate academic citation formula for introducing data?",
+        "question_en": "Which phrase is a clear way to introduce study findings in a debate?",
         "options": [
           "'According to a study by...'",
-          "'I personally dreamed that...'",
-          "'Everybody always knows that...'"
+          "'I once guessed that...'",
+          "'Everyone always thinks that...'"
         ],
         "answer": "'According to a study by...'"
       }
     ],
     "critical_thinking": {
-      "question_en": "Why does correlation between late-night gaming and sleep deficits not automatically prove that gaming is the sole cause of insomnia?",
-      "hint_en": "Other hidden variables, such as school stress, caffeine consumption, or academic homework loads, could independently cause both delayed sleep and late gaming."
+      "question_en": "Why does a correlation between late-night gaming and tired mornings not automatically prove that gaming causes tiredness?",
+      "hint_en": "Hidden variables—like heavy homework or school stress—could cause both late gaming and tired mornings at the same time."
     }
   },
   "story_scenes": [

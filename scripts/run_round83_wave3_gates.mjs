@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 
+const outArgIdx = process.argv.indexOf('--out');
 const STAGING_DIR = path.resolve('docs/agent_artifacts/staging');
-const OUT_FILE = path.resolve('docs/agent_artifacts/round83_wave3_gate_raw.txt');
+const OUT_FILE = path.resolve(outArgIdx !== -1 && process.argv[outArgIdx + 1] ? process.argv[outArgIdx + 1] : 'docs/agent_artifacts/round83_wave3_gate_raw.txt');
 
 const WEEKS = [
   { num: 126, sbWords: [], expectedMathStrand: 'Logic Puzzles', useStaticSvg: false },
