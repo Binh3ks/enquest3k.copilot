@@ -45,5 +45,22 @@
     "GATE_13_READABILITY_CEILING",
     "GATE_14_PROVENANCE_INTEGRITY"
   ],
-  "review_status": "BLOCKED"
+  "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
+  "round83_regeneration": {
+    "round": 83,
+    "regenerated_at": "2026-11-12T08:26:43.793Z",
+    "baseline_commit": "1e0039adbdf0ac56789b8d11e3e57888f5d00f44",
+    "scope": "STAGING_ONLY_NO_MERGE",
+    "acceptance_spec": "docs/agent_artifacts/round79_wave3_acceptance_spec_v2.md",
+    "updated_files": [
+      "docs/agent_artifacts/staging/week_134/reading_hub.js",
+      "docs/agent_artifacts/staging/week_134/skill_practice_hub.js",
+      "docs/agent_artifacts/staging/week_134/svg/w134_triangle_p1.svg",
+      "docs/agent_artifacts/staging/week_134/svg/w134_triangle_p2.svg",
+      "docs/agent_artifacts/staging/week_134/svg/w134_triangle_p3.svg",
+      "docs/agent_artifacts/staging/week_134/svg/w134_triangle_p4.svg",
+      "docs/agent_artifacts/staging/week_134/svg/w134_triangle_p5.svg"
+    ],
+    "promotion_asset_copy_required": "Copy docs/agent_artifacts/staging/week_134/svg/*.svg to public/images/week134/ upon merge approval"
+  }
 }

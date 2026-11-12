@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260" role="img" aria-label="Triangle KLM with equal sides 10 cm, top angle 44 degrees, base angle x degrees">
+  <rect width="600" height="260" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <title>Triangle KLM Angle Sum</title>
+  <polygon points="300,52.4 236.3,210 363.7,210" fill="#eff6ff" stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round"/>
+  <line x1="274.6" y1="133.8" x2="261.7" y2="128.6" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="338.3" y1="128.6" x2="325.4" y2="133.8" stroke="#dc2626" stroke-width="2.5"/>
+  <!-- Top angle arc -->
+  <path d="M 288 81 A 31 31 0 0 0 312 81" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Base angle L arc -->
+  <path d="M 263 210 A 27 27 0 0 0 247 185" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="300" y="40.4" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1e293b">K</text>
+  <text x="218.3" y="218" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">L</text>
+  <text x="371.7" y="218" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">M</text>
+  <text x="300" y="106" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#2563eb">44°</text>
+  <text x="275" y="196" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#dc2626">x°</text>
+  <text x="225" y="128" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#2563eb">10 cm</text>
+  <text x="348" y="128" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#2563eb">10 cm</text>
+</svg>

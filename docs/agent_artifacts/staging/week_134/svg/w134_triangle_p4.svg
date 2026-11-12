@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260" role="img" aria-label="Triangle DEF with sides 7 cm, 11 cm, and unknown side c cm">
+  <rect width="600" height="260" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <title>Triangle Inequality DEF</title>
+  <polygon points="255,75 145,208 455,208" fill="#faf5ff" stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round"/>
+  <text x="255" y="63" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1e293b">D</text>
+  <text x="127" y="214" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">E</text>
+  <text x="463" y="214" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">F</text>
+  <text x="165" y="136" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb">7 cm</text>
+  <text x="368" y="136" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb">11 cm</text>
+  <text x="300" y="234" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#dc2626">c cm (whole number)</text>
+</svg>

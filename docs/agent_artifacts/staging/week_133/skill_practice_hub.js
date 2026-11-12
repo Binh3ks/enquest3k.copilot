@@ -65,154 +65,94 @@ export const skillPracticeHubData = {
   ],
   "singapore_math": [
     {
-      "id": "w133_p1",
-      "type": "part_whole",
-      "title": "Problem 1: Supplementary Angles on a Straight Line",
-      "question": "On a geometry diagram, an angle measuring 90 degrees and an adjacent angle measuring 45 degrees meet on a baseline. What is their combined angle measure in degrees?",
-      "storyContext": "Students measure angles with a protractor during geometry research.",
-      "modelData": {
-        "bars": [
-          {
-            "label": "Right Angle",
-            "value": 90,
-            "color": "#0ea5e9"
-          },
-          {
-            "label": "Acute Angle",
-            "value": 45,
-            "color": "#10b981"
-          }
-        ],
-        "total": 135,
-        "unit": "degrees"
-      },
-      "target_answer": 135,
+      "id": 1,
+      "title": "Complementary Angles in a Right Angle",
+      "difficulty": "medium",
+      "type": "geometry_angles",
+      "problemText": "In the diagram, ray BD divides right angle ∠ABC (90°) into two adjacent angles. If ∠ABD measures 37°, what is the measure of angle x (∠DBC) in degrees?",
+      "question": "In the diagram, ray BD divides right angle ∠ABC (90°) into two adjacent angles. If ∠ABD measures 37°, what is the measure of angle x (∠DBC) in degrees?",
+      "correctAnswer": 53,
       "unit": "degrees",
+      "hintText": "Complementary angles inside a right angle always add up to 90°.",
       "steps": [
-        "Right angle: 90 degrees.",
-        "Acute angle: 45 degrees.",
-        "90 + 45 = 135 degrees."
-      ]
+        "The square corner marker confirms ∠ABC = 90°.",
+        "Subtract the known angle: 90 - 37.",
+        "x = 53°."
+      ],
+      "svg_url": "/images/week133/w133_angle_p1.svg",
+      "modelData": null
     },
     {
-      "id": "w133_p2",
-      "type": "comparison",
-      "title": "Problem 2: Comparing Acute and Obtuse Angles",
-      "question": "In a geometry shape investigation, Angle A is an obtuse angle of 120 degrees and Angle B is an acute angle of 50 degrees. How many degrees larger is Angle A than Angle B?",
-      "storyContext": "Learners classify angles by degrees using geometry cards.",
-      "modelData": {
-        "bars": [
-          {
-            "label": "Obtuse Angle A",
-            "value": 120,
-            "color": "#8b5cf6"
-          },
-          {
-            "label": "Acute Angle B",
-            "value": 50,
-            "color": "#f59e0b"
-          }
-        ],
-        "difference": 70,
-        "unit": "degrees"
-      },
-      "target_answer": 70,
+      "id": 2,
+      "title": "Angles on a Straight Line",
+      "difficulty": "medium",
+      "type": "geometry_angles",
+      "problemText": "Points P, O, and Q lie on a straight line (180°). In the diagram, ∠POR measures 38° and ∠ROS is marked as a right angle (90°). What is the measure of angle x (∠SOQ) in degrees?",
+      "question": "Points P, O, and Q lie on a straight line (180°). In the diagram, ∠POR measures 38° and ∠ROS is marked as a right angle (90°). What is the measure of angle x (∠SOQ) in degrees?",
+      "correctAnswer": 52,
       "unit": "degrees",
+      "hintText": "All angles along one side of a straight line sum to 180°. Subtract both 90° and 38° from 180°.",
       "steps": [
-        "Angle A: 120 degrees.",
-        "Angle B: 50 degrees.",
-        "120 - 50 = 70 degrees."
-      ]
+        "Angles along straight line POQ sum to 180°.",
+        "Known sum: 38° + 90° = 128°.",
+        "x = 180 - 128 = 52°."
+      ],
+      "svg_url": "/images/week133/w133_angle_p2.svg",
+      "modelData": null
     },
     {
-      "id": "w133_p3",
-      "type": "part_whole",
-      "title": "Problem 3: Right Angle Subdivisions",
-      "question": "A right angle of 90 degrees is divided into two acute angles. If the first angle is 35 degrees, what is the measure of the complementary angle that adds to 90 degrees?",
-      "storyContext": "Students solve complementary angle puzzles in math workshop.",
-      "modelData": {
-        "bars": [
-          {
-            "label": "First Angle",
-            "value": 35,
-            "color": "#ec4899"
-          },
-          {
-            "label": "Complement",
-            "value": 55,
-            "color": "#06b6d4"
-          }
-        ],
-        "total": 90,
-        "unit": "degrees"
-      },
-      "target_answer": 55,
+      "id": 3,
+      "title": "Measuring with a Protractor Scale",
+      "difficulty": "medium",
+      "type": "geometry_angles",
+      "problemText": "Look at the protractor diagram. Ray OA points to 25° on the scale and ray OB points to 135°. What is the measure of angle ∠AOB in degrees?",
+      "question": "Look at the protractor diagram. Ray OA points to 25° on the scale and ray OB points to 135°. What is the measure of angle ∠AOB in degrees?",
+      "correctAnswer": 110,
       "unit": "degrees",
+      "hintText": "Neither ray lies on 0°, so find the difference between the two degree readings on the same scale.",
       "steps": [
-        "Total right angle: 90 degrees.",
-        "First part: 35 degrees.",
-        "90 - 35 = 55 degrees."
-      ]
+        "Read the two ray positions on the outer scale: 135° and 25°.",
+        "Find the spread between the rays: 135 - 25.",
+        "∠AOB = 110°."
+      ],
+      "svg_url": "/images/week133/w133_angle_p3.svg",
+      "modelData": null
     },
     {
-      "id": "w133_p4",
-      "type": "comparison",
-      "title": "Problem 4: Angle Difference in Design Graphics",
-      "question": "A poster graphic features an angle of 110 degrees and a sharp angle of 40 degrees. What is the difference between these two measured angles?",
-      "storyContext": "Graphic designers verify angle constraints for debate visual aids.",
-      "modelData": {
-        "bars": [
-          {
-            "label": "Wide Angle",
-            "value": 110,
-            "color": "#3b82f6"
-          },
-          {
-            "label": "Sharp Angle",
-            "value": 40,
-            "color": "#64748b"
-          }
-        ],
-        "difference": 70,
-        "unit": "degrees"
-      },
-      "target_answer": 70,
-      "unit": "degrees",
+      "id": 4,
+      "title": "Classifying an Angle by Measure",
+      "difficulty": "easy",
+      "type": "geometry_angles",
+      "problemText": "Examine angle ∠M (128°) in the diagram. Which angle category does it belong to? Enter 1 for Acute (less than 90°), 2 for Right (exactly 90°), or 3 for Obtuse (between 90° and 180°).",
+      "question": "Examine angle ∠M (128°) in the diagram. Which angle category does it belong to? Enter 1 for Acute (less than 90°), 2 for Right (exactly 90°), or 3 for Obtuse (between 90° and 180°).",
+      "correctAnswer": 3,
+      "unit": "category (1, 2, or 3)",
+      "hintText": "Compare 128° with a 90° right angle and a 180° straight line.",
       "steps": [
-        "Wide angle: 110 degrees.",
-        "Sharp angle: 40 degrees.",
-        "110 - 40 = 70 degrees."
-      ]
+        "128° is greater than 90° and less than 180°.",
+        "Categories: 1 = Acute (<90°), 2 = Right (=90°), 3 = Obtuse (90°<θ<180°).",
+        "Correct code: 3."
+      ],
+      "svg_url": "/images/week133/w133_angle_p4.svg",
+      "modelData": null
     },
     {
-      "id": "w133_p5",
-      "type": "part_whole",
-      "title": "Problem 5: Total Degrees in Corner Angles",
-      "question": "Two adjacent corner angles in a wooden frame each measure exactly 90 degrees. What is the sum of these two right angles in degrees?",
-      "storyContext": "Carpentry math checks frame squareness.",
-      "modelData": {
-        "bars": [
-          {
-            "label": "Corner 1",
-            "value": 90,
-            "color": "#14b8a6"
-          },
-          {
-            "label": "Corner 2",
-            "value": 90,
-            "color": "#f97316"
-          }
-        ],
-        "total": 180,
-        "unit": "degrees"
-      },
-      "target_answer": 180,
+      "id": 5,
+      "title": "Angles Around a Full Point",
+      "difficulty": "hard",
+      "type": "geometry_angles",
+      "problemText": "Four rays meet at point O to form a complete turn (360°). Three of the angles measure 85°, 115°, and 95°. What is the measure of the fourth angle x in degrees?",
+      "question": "Four rays meet at point O to form a complete turn (360°). Three of the angles measure 85°, 115°, and 95°. What is the measure of the fourth angle x in degrees?",
+      "correctAnswer": 65,
       "unit": "degrees",
+      "hintText": "Angles around a single point always sum to 360°. Add the three given angles and subtract from 360°.",
       "steps": [
-        "Corner 1: 90 degrees.",
-        "Corner 2: 90 degrees.",
-        "90 + 90 = 180 degrees."
-      ]
+        "Sum the three given angles: 85 + 115 + 95 = 295°.",
+        "Subtract from a full turn: 360 - 295.",
+        "x = 65°."
+      ],
+      "svg_url": "/images/week133/w133_angle_p5.svg",
+      "modelData": null
     }
   ],
   "science_lab": {

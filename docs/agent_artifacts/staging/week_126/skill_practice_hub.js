@@ -65,154 +65,188 @@ export const skillPracticeHubData = {
   ],
   "singapore_math": [
     {
-      "id": "w126_p1",
-      "type": "part_whole",
-      "title": "Problem 1: Logic Puzzle of Speaker Time Slots",
-      "question": "In a speech logic puzzle, Speaker A speaks for 45 seconds and Speaker B speaks for 35 seconds to introduce the topic. What is their combined speaking time?",
-      "storyContext": "Debaters time their speech transitions using a logic stopwatch.",
+      "id": 1,
+      "title": "Ordering the Finalist Speeches",
+      "difficulty": "medium",
+      "type": "logic_puzzle",
+      "problemText": "Four speakers (Ava, Ben, Cara, and Dan) present in Slots 1, 2, 3, and 4, earning 12, 16, 20, and 24 points respectively for their slot difficulty. Clue 1: Ben speaks immediately after Ava. Clue 2: Cara speaks before Ava. Clue 3: Dan speaks in neither Slot 1 nor Slot 4. What is the combined score of Ava and Cara?",
+      "question": "Four speakers (Ava, Ben, Cara, and Dan) present in Slots 1, 2, 3, and 4, earning 12, 16, 20, and 24 points respectively for their slot difficulty. Clue 1: Ben speaks immediately after Ava. Clue 2: Cara speaks before Ava. Clue 3: Dan speaks in neither Slot 1 nor Slot 4. What is the combined score of Ava and Cara?",
+      "correctAnswer": 32,
+      "unit": "points",
+      "hintText": "Try placing Dan in Slot 2 or Slot 3 first. Only one placement leaves two adjacent slots for Ava followed by Ben while keeping Cara before Ava.",
+      "steps": [
+        "If Dan were in Slot 3, the remaining slots {1, 2, 4} force Ava-Ben into (1, 2), leaving Cara in Slot 4 (violates Cara before Ava).",
+        "So Dan must be in Slot 2. Then Ava-Ben take consecutive Slots (3, 4), and Cara takes Slot 1.",
+        "Cara (Slot 1 = 12) + Ava (Slot 3 = 20) = 32 points."
+      ],
       "modelData": {
+        "type": "part_whole",
         "bars": [
           {
-            "label": "Speaker A",
-            "value": 45,
-            "color": "#0ea5e9"
+            "label": "S1: 12",
+            "value": 12,
+            "color": "#4f46e5"
           },
           {
-            "label": "Speaker B",
-            "value": 35,
+            "label": "S2: 16",
+            "value": 16,
+            "color": "#94a3b8"
+          },
+          {
+            "label": "S3: 20",
+            "value": 20,
+            "color": "#06b6d4"
+          },
+          {
+            "label": "S4: 24",
+            "value": 24,
+            "color": "#cbd5e1"
+          }
+        ],
+        "totalLabel": "All 4 Slots = 72"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Cue Card Allocation Logic",
+      "difficulty": "medium",
+      "type": "logic_puzzle",
+      "problemText": "Three debaters—Leo, Mia, and Noah—prepare a combined total of 36 cue cards. Leo brings twice as many cue cards as Mia. Noah brings 4 fewer cue cards than Leo. How many cue cards does Noah bring?",
+      "question": "Three debaters—Leo, Mia, and Noah—prepare a combined total of 36 cue cards. Leo brings twice as many cue cards as Mia. Noah brings 4 fewer cue cards than Leo. How many cue cards does Noah bring?",
+      "correctAnswer": 12,
+      "unit": "cue cards",
+      "hintText": "Represent Mia as 1 unit (u). Express Leo (2u) and Noah (2u - 4), add 4 to the total to make 5 equal units, then solve for u first.",
+      "steps": [
+        "Let Mia = 1 unit, Leo = 2 units, and Noah = 2 units - 4.",
+        "Total units equation: 5 units - 4 = 36, so 5 units = 40 and 1 unit = 8.",
+        "Noah = 2(8) - 4 = 12 cue cards."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "M: 1u",
+            "value": 8,
+            "color": "#4f46e5"
+          },
+          {
+            "label": "L: 2u",
+            "value": 16,
+            "color": "#06b6d4"
+          },
+          {
+            "label": "N: 2u-4",
+            "value": 12,
             "color": "#10b981"
           }
         ],
-        "total": 80,
-        "unit": "seconds"
-      },
-      "target_answer": 80,
-      "unit": "seconds",
-      "steps": [
-        "Speaker A time: 45 seconds.",
-        "Speaker B time: 35 seconds.",
-        "45 + 35 = 80 seconds."
-      ]
+        "totalLabel": "36 cue cards"
+      }
     },
     {
-      "id": "w126_p2",
-      "type": "comparison",
-      "title": "Problem 2: Logic Constraint on Cue Cards",
-      "question": "A logic puzzle states: Maya prepared 14 cue cards for her presentation. Liam prepared 8 fewer cue cards than Maya under the tournament rules. How many cue cards did Liam prepare?",
-      "storyContext": "Students organize their speech cue cards under logic rules.",
+      "id": 3,
+      "title": "Keynote Room Assignment Grid",
+      "difficulty": "medium",
+      "type": "logic_puzzle",
+      "problemText": "Three speech workshops—Rhetoric, Delivery, and Pacing—are assigned to Room A (18 seats), Room B (26 seats), and Room C (42 seats). Clue 1: Pacing is assigned to neither the smallest room nor Room C. Clue 2: Rhetoric requires at least 30 seats. How many more seats are in the Rhetoric room than in the Delivery room?",
+      "question": "Three speech workshops—Rhetoric, Delivery, and Pacing—are assigned to Room A (18 seats), Room B (26 seats), and Room C (42 seats). Clue 1: Pacing is assigned to neither the smallest room nor Room C. Clue 2: Rhetoric requires at least 30 seats. How many more seats are in the Rhetoric room than in the Delivery room?",
+      "correctAnswer": 24,
+      "unit": "seats",
+      "hintText": "Deduce which workshop belongs in Room B first using Clue 1, then place Rhetoric using Clue 2.",
+      "steps": [
+        "Clue 1 eliminates Room A (smallest) and Room C for Pacing, so Pacing is in Room B (26 seats).",
+        "Clue 2 requires at least 30 seats for Rhetoric, so Rhetoric is in Room C (42 seats), leaving Delivery in Room A (18 seats).",
+        "Difference: 42 - 18 = 24 seats."
+      ],
       "modelData": {
+        "type": "part_whole",
         "bars": [
           {
-            "label": "Maya's Cards",
-            "value": 14,
-            "color": "#8b5cf6"
+            "label": "Rm A: 18",
+            "value": 18,
+            "color": "#06b6d4"
           },
           {
-            "label": "Difference",
+            "label": "Rm B: 26",
+            "value": 26,
+            "color": "#94a3b8"
+          },
+          {
+            "label": "Rm C: 42",
+            "value": 42,
+            "color": "#4f46e5"
+          }
+        ],
+        "totalLabel": "86 total seats"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Overlapping Rehearsal Workshops",
+      "difficulty": "hard",
+      "type": "logic_puzzle",
+      "problemText": "Every one of the 45 members in the Speech Club joins at least one afternoon session: Elocution or Intonation (or both). Exactly 28 members attend Elocution and 26 members attend Intonation. How many members attend BOTH sessions?",
+      "question": "Every one of the 45 members in the Speech Club joins at least one afternoon session: Elocution or Intonation (or both). Exactly 28 members attend Elocution and 26 members attend Intonation. How many members attend BOTH sessions?",
+      "correctAnswer": 9,
+      "unit": "students",
+      "hintText": "Adding 28 + 26 counts the students who attend both sessions twice. Compare that sum to the 45 real club members.",
+      "steps": [
+        "Combined attendance counts: 28 + 26 = 54.",
+        "Since only 45 distinct members exist and everyone joins at least one, the extra count equals the overlap.",
+        "Students in both sessions: 54 - 45 = 9."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Combined Sum: 54",
+            "value": 54,
+            "color": "#4f46e5"
+          },
+          {
+            "label": "Club Members: 45",
+            "value": 45,
+            "color": "#10b981"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "title": "The Three-Digit Keynote Passcode",
+      "difficulty": "hard",
+      "type": "logic_puzzle",
+      "problemText": "Maya locks her keynote slides with a 3-digit passcode [A B C], where A, B, and C are single whole digits from 1 to 9. Clue 1: B is 3 times A. Clue 2: C is 2 greater than B. Clue 3: The sum A + B + C equals 16. What is the 3-digit passcode?",
+      "question": "Maya locks her keynote slides with a 3-digit passcode [A B C], where A, B, and C are single whole digits from 1 to 9. Clue 1: B is 3 times A. Clue 2: C is 2 greater than B. Clue 3: The sum A + B + C equals 16. What is the 3-digit passcode?",
+      "correctAnswer": 268,
+      "unit": "passcode",
+      "hintText": "Since C <= 9 and C = 3A + 2, test the only small digits possible for A (1 or 2) against Clue 3.",
+      "steps": [
+        "From B = 3A and C = B + 2 <= 9, A can only be 1 or 2 (A = 3 would make C = 11).",
+        "Test A = 1 -> 1 + 3 + 5 = 9 (false). Test A = 2 -> B = 6, C = 8 -> 2 + 6 + 8 = 16 (true!).",
+        "The 3-digit passcode [A B C] is 268."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "A",
+            "value": 2,
+            "color": "#4f46e5"
+          },
+          {
+            "label": "3A",
+            "value": 6,
+            "color": "#06b6d4"
+          },
+          {
+            "label": "3A+2",
             "value": 8,
-            "color": "#ef4444"
+            "color": "#10b981"
           }
         ],
-        "difference": 6,
-        "unit": "cue cards"
-      },
-      "target_answer": 6,
-      "unit": "cue cards",
-      "steps": [
-        "Maya has 14 cards.",
-        "Liam has 8 fewer cards.",
-        "14 - 8 = 6 cards for Liam."
-      ]
-    },
-    {
-      "id": "w126_p3",
-      "type": "part_whole",
-      "title": "Problem 3: Speech Structure Logic Puzzle",
-      "question": "Under the debate timing rules, the introduction takes 30 seconds and the main arguments take 60 seconds. What is the total allotted time for this speech section?",
-      "storyContext": "Speech coaches solve timing constraints for the debate showcase.",
-      "modelData": {
-        "bars": [
-          {
-            "label": "Introduction",
-            "value": 30,
-            "color": "#f59e0b"
-          },
-          {
-            "label": "Main Arguments",
-            "value": 60,
-            "color": "#3b82f6"
-          }
-        ],
-        "total": 90,
-        "unit": "seconds"
-      },
-      "target_answer": 90,
-      "unit": "seconds",
-      "steps": [
-        "Intro duration: 30 seconds.",
-        "Body duration: 60 seconds.",
-        "30 + 60 = 90 seconds total."
-      ]
-    },
-    {
-      "id": "w126_p4",
-      "type": "comparison",
-      "title": "Problem 4: Logic Deduction of Signpost Markers",
-      "question": "In a speech analysis puzzle, Team 1 used 15 signpost phrases while Team 2 used 9 signpost phrases. How many more signpost markers did Team 1 use?",
-      "storyContext": "Adjudicators count transition cues in speech transcripts.",
-      "modelData": {
-        "bars": [
-          {
-            "label": "Team 1",
-            "value": 15,
-            "color": "#ec4899"
-          },
-          {
-            "label": "Team 2",
-            "value": 9,
-            "color": "#64748b"
-          }
-        ],
-        "difference": 6,
-        "unit": "signpost markers"
-      },
-      "target_answer": 6,
-      "unit": "signpost markers",
-      "steps": [
-        "Team 1 count: 15 markers.",
-        "Team 2 count: 9 markers.",
-        "15 - 9 = 6 more markers."
-      ]
-    },
-    {
-      "id": "w126_p5",
-      "type": "part_whole",
-      "title": "Problem 5: Audience Feedback Logic Venn",
-      "question": "A presentation logic puzzle tracks 40 feedback slips. 25 listeners commended the speaker's vocal volume and 15 commended the signpost clarity. How many total positive notes were counted?",
-      "storyContext": "Students tally audience comment cards after the speeches.",
-      "modelData": {
-        "bars": [
-          {
-            "label": "Volume Praise",
-            "value": 25,
-            "color": "#14b8a6"
-          },
-          {
-            "label": "Signpost Praise",
-            "value": 15,
-            "color": "#f97316"
-          }
-        ],
-        "total": 40,
-        "unit": "feedback slips"
-      },
-      "target_answer": 40,
-      "unit": "feedback slips",
-      "steps": [
-        "Volume feedback: 25 slips.",
-        "Signpost feedback: 15 slips.",
-        "25 + 15 = 40 slips total."
-      ]
+        "totalLabel": "Sum = 16"
+      }
     }
   ],
   "science_lab": {

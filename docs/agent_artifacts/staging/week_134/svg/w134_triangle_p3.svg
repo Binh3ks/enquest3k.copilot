@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260" role="img" aria-label="Triangle XYZ with sides 6 cm, 9 cm, and 12 cm">
+  <rect width="600" height="260" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <title>Triangle XYZ</title>
+  <polygon points="253.1,101.1 150,210 450,210" fill="#fefce8" stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round"/>
+  <line x1="196.5" y1="150.7" x2="206.6" y2="160.4" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="351.4" y1="147.5" x2="344.7" y2="159.7" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="358.4" y1="151.4" x2="351.7" y2="163.6" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="293.0" y1="203.0" x2="293.0" y2="217.0" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="300.0" y1="203.0" x2="300.0" y2="217.0" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="307.0" y1="203.0" x2="307.0" y2="217.0" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="253.1" y="89.1" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1e293b">Z</text>
+  <text x="132" y="216" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">X</text>
+  <text x="458" y="216" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Y</text>
+  <text x="168" y="142" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb">6 cm</text>
+  <text x="366" y="142" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb">9 cm</text>
+  <text x="300" y="236" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2563eb">12 cm</text>
+</svg>

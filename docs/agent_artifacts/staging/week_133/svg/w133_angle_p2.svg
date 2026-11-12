@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260" role="img" aria-label="Supplementary angles on straight line POQ">
+  <rect width="600" height="260" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <title>Straight Line POQ with Right Angle ROS</title>
+  <line x1="90" y1="200" x2="510" y2="200" stroke="#1e293b" stroke-width="3.5"/>
+  <polygon points="82,200 95,194 95,206" fill="#1e293b"/>
+  <polygon points="518,200 505,194 505,206" fill="#1e293b"/>
+  <line x1="300" y1="200" x2="177.9" y2="104.6" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="300" y1="200" x2="395.4" y2="77.9" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round"/>
+  <polyline points="282.7,186.5 296.2,169.2 313.5,182.7" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+  <circle cx="300" cy="200" r="4.5" fill="#1e293b"/>
+  <path d="M 235 200 A 65 65 0 0 1 248.8 160" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <path d="M 343.1 144.8 A 70 70 0 0 1 370 200" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <text x="85" y="224" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">P</text>
+  <text x="294" y="224" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">O</text>
+  <text x="502" y="224" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Q</text>
+  <text x="157.9" y="98.6" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb">R</text>
+  <text x="403.4" y="71.9" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb">S</text>
+  <text x="198" y="178" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#2563eb">38°</text>
+  <text x="380" y="175" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#dc2626">x°</text>
+</svg>

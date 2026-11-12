@@ -1,0 +1,94 @@
+========================================================================
+ROUND 83 RUNTIME ADAPTER & BOUNDARY VERIFICATION
+Generated: 2026-11-12T08:33:26.322Z
+Baseline Commit: 1e0039adbdf0ac56789b8d11e3e57888f5d00f44
+========================================================================
+
+1. REAL normalizeBarModelQuestion() + evaluateBarModelAnswer() DUMP (20 items):
+
+--- Week 126 ---
+  [1] title="Ordering the Finalist Speeches" | answer=32 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=part_whole | svg_url="/images/week126/barmodel_w126_adv_p1.svg" | stagedSvgExists=true
+      problemText: Four speakers (Ava, Ben, Cara, and Dan) present in Slots 1, 2, 3, and 4, earning 12, 16, 20, and 24 points respectively for their slot difficulty. Clue 1: Ben speaks immediately after Ava. Clue 2: Cara speaks before Ava. Clue 3: Dan speaks in neither Slot 1 nor Slot 4. What is the combined score of Ava and Cara?
+  [2] title="Cue Card Allocation Logic" | answer=12 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=part_whole | svg_url="/images/week126/barmodel_w126_adv_p2.svg" | stagedSvgExists=true
+      problemText: Three debaters—Leo, Mia, and Noah—prepare a combined total of 36 cue cards. Leo brings twice as many cue cards as Mia. Noah brings 4 fewer cue cards than Leo. How many cue cards does Noah bring?
+  [3] title="Keynote Room Assignment Grid" | answer=24 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=part_whole | svg_url="/images/week126/barmodel_w126_adv_p3.svg" | stagedSvgExists=true
+      problemText: Three speech workshops—Rhetoric, Delivery, and Pacing—are assigned to Room A (18 seats), Room B (26 seats), and Room C (42 seats). Clue 1: Pacing is assigned to neither the smallest room nor Room C. Clue 2: Rhetoric requires at least 30 seats. How many more seats are in the Rhetoric room than in the Delivery room?
+  [4] title="Overlapping Rehearsal Workshops" | answer=9 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=comparison | svg_url="/images/week126/barmodel_w126_adv_p4.svg" | stagedSvgExists=true
+      problemText: Every one of the 45 members in the Speech Club joins at least one afternoon session: Elocution or Intonation (or both). Exactly 28 members attend Elocution and 26 members attend Intonation. How many members attend BOTH sessions?
+  [5] title="The Three-Digit Keynote Passcode" | answer=268 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=part_whole | svg_url="/images/week126/barmodel_w126_adv_p5.svg" | stagedSvgExists=true
+      problemText: Maya locks her keynote slides with a 3-digit passcode [A B C], where A, B, and C are single whole digits from 1 to 9. Clue 1: B is 3 times A. Clue 2: C is 2 greater than B. Clue 3: The sum A + B + C equals 16. What is the 3-digit passcode?
+
+--- Week 127 ---
+  [1] title="Exposing a Double-Counting Claim" | answer=12 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=comparison | svg_url="/images/week127/barmodel_w127_adv_p1.svg" | stagedSvgExists=true
+      problemText: An opponent argues: 'In our 60-student grade, 38 students read news blogs and 34 watch video debates, so 72 different students follow current events!' Suppose every student does at least one of those two activities. At minimum, how many students did the opponent count twice?
+  [2] title="Refuting Contradictory Ballot Totals" | answer=16 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=part_whole | svg_url="/images/week127/barmodel_w127_adv_p2.svg" | stagedSvgExists=true
+      problemText: A debate tally sheet claims that out of 80 total ballots cast, Team Alpha earned 44 votes, Team Beta earned 38 votes, and 14 ballots were left blank. Each ballot has only one mark (or blank). How many phantom (impossible) extra votes appear in that claimed tally?
+  [3] title="Detecting Denominator Neglect in Rates" | answer=15 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=comparison | svg_url="/images/week127/barmodel_w127_adv_p3.svg" | stagedSvgExists=true
+      problemText: Speaker A claims School X performs better because it produced 45 debate winners out of 150 applicants (30%), whereas School Y produced 36 winners out of 90 applicants (40%). If School Y maintained its 40% winning rate across 150 applicants just like School X, how many MORE winners would School Y produce than School X?
+  [4] title="Exposing an Unweighted Average Fallacy" | answer=80 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=part_whole | svg_url="/images/week127/barmodel_w127_adv_p4.svg" | stagedSvgExists=true
+      problemText: A debater scores 60 points in Round 1 and 90 points in the Final Round, claiming a final average of 75 points. However, the rubric states that the Final Round counts TWICE as much (2 weights) as Round 1 (1 weight). What is the debater's true weighted average?
+  [5] title="Challenging an Inflated Fraction Claim" | answer=24 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=comparison | svg_url="/images/week127/barmodel_w127_adv_p5.svg" | stagedSvgExists=true
+      problemText: During a rebuttal, a speaker asserts that 3/5 of the 120 surveyed students oppose the new schedule. In reality, out of 120 students, 60 support the plan, 12 are undecided, and the rest oppose it. By how many students does the speaker exaggerate the opposition?
+
+--- Week 133 ---
+  [1] title="Complementary Angles in a Right Angle" | answer=53 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=null | svg_url="/images/week133/w133_angle_p1.svg" | stagedSvgExists=true
+      problemText: In the diagram, ray BD divides right angle ∠ABC (90°) into two adjacent angles. If ∠ABD measures 37°, what is the measure of angle x (∠DBC) in degrees?
+  [2] title="Angles on a Straight Line" | answer=52 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=null | svg_url="/images/week133/w133_angle_p2.svg" | stagedSvgExists=true
+      problemText: Points P, O, and Q lie on a straight line (180°). In the diagram, ∠POR measures 38° and ∠ROS is marked as a right angle (90°). What is the measure of angle x (∠SOQ) in degrees?
+  [3] title="Measuring with a Protractor Scale" | answer=110 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=null | svg_url="/images/week133/w133_angle_p3.svg" | stagedSvgExists=true
+      problemText: Look at the protractor diagram. Ray OA points to 25° on the scale and ray OB points to 135°. What is the measure of angle ∠AOB in degrees?
+  [4] title="Classifying an Angle by Measure" | answer=3 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=null | svg_url="/images/week133/w133_angle_p4.svg" | stagedSvgExists=true
+      problemText: Examine angle ∠M (128°) in the diagram. Which angle category does it belong to? Enter 1 for Acute (less than 90°), 2 for Right (exactly 90°), or 3 for Obtuse (between 90° and 180°).
+  [5] title="Angles Around a Full Point" | answer=65 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=null | svg_url="/images/week133/w133_angle_p5.svg" | stagedSvgExists=true
+      problemText: Four rays meet at point O to form a complete turn (360°). Three of the angles measure 85°, 115°, and 95°. What is the measure of the fourth angle x in degrees?
+
+--- Week 134 ---
+  [1] title="Classifying Triangle ABC by Sides" | answer=2 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=null | svg_url="/images/week134/w134_triangle_p1.svg" | stagedSvgExists=true
+      problemText: Inspect triangle ΔABC with side lengths 7 cm, 7 cm, and 10 cm shown in the diagram. Classify this triangle by its sides: enter 1 for Equilateral (all 3 sides equal), 2 for Isosceles (at least 2 sides equal), or 3 for Scalene (no equal sides).
+  [2] title="Finding Equal Sides from Perimeter" | answer=16 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=null | svg_url="/images/week134/w134_triangle_p2.svg" | stagedSvgExists=true
+      problemText: Triangle ΔPQR has a total perimeter of 44 cm and a base QR = 12 cm. The remaining two sides PQ and PR have equal length (x cm each, shown by matching tick marks). What is the value of x in cm?
+  [3] title="Classifying Triangle XYZ by Sides" | answer=3 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=null | svg_url="/images/week134/w134_triangle_p3.svg" | stagedSvgExists=true
+      problemText: Inspect triangle ΔXYZ with side lengths 6 cm, 9 cm, and 12 cm shown in the diagram. Classify this triangle by its sides: enter 1 for Equilateral (all 3 sides equal), 2 for Isosceles (exactly 2 sides equal), or 3 for Scalene (all 3 sides different).
+  [4] title="Maximum Whole Side by Triangle Inequality" | answer=17 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=null | svg_url="/images/week134/w134_triangle_p4.svg" | stagedSvgExists=true
+      problemText: Two sides of triangle ΔDEF measure 7 cm and 11 cm. By the Triangle Inequality Theorem (the sum of any two sides must be strictly greater than the third side), what is the GREATEST possible whole-number length in cm for side c?
+  [5] title="Angle Sum with Equal Sides" | answer=68 | eval=true ({"isCorrect":true,"score":100,"errorMsg":null}) | modelData=null | svg_url="/images/week134/w134_triangle_p5.svg" | stagedSvgExists=true
+      problemText: In triangle ΔKLM, sides KL and KM are equal (10 cm each), which forces base angles ∠L and ∠M to have the same measure (x° each). If top angle ∠K measures 44°, what is the measure of angle x (∠L) in degrees?
+
+2. PROTECTED PATHS BOUNDARY CHECK vs BASELINE:
+  Tracked files modified vs 1e0039ad: 31
+    - docs/Claude_handoff.txt
+    - docs/agent_artifacts/differentiation_options_w79_80_w129_132.md
+    - docs/agent_artifacts/staging/week_126/provenance.json
+    - docs/agent_artifacts/staging/week_126/reading_hub.js
+    - docs/agent_artifacts/staging/week_126/skill_practice_hub.js
+    - docs/agent_artifacts/staging/week_127/provenance.json
+    - docs/agent_artifacts/staging/week_127/reading_hub.js
+    - docs/agent_artifacts/staging/week_127/skill_practice_hub.js
+    - docs/agent_artifacts/staging/week_133/provenance.json
+    - docs/agent_artifacts/staging/week_133/reading_hub.js
+    - docs/agent_artifacts/staging/week_133/skill_practice_hub.js
+    - docs/agent_artifacts/staging/week_134/provenance.json
+    - docs/agent_artifacts/staging/week_134/reading_hub.js
+    - docs/agent_artifacts/staging/week_134/skill_practice_hub.js
+    - docs/review_packages/manifest_round70.txt
+    - docs/review_packages/manifest_round71.txt
+    - docs/review_packages/manifest_round72.txt
+    - docs/review_packages/manifest_round73.txt
+    - docs/review_packages/manifest_round74.txt
+    - docs/review_packages/manifest_round75.txt
+    - docs/review_packages/manifest_round80.txt
+    - scripts/analyze_source_b_internal_conflicts.mjs
+    - scripts/audit_round73_source_b_baseline.mjs
+    - scripts/audit_round75_source_b_baseline.mjs
+    - scripts/audit_staged_gate11.mjs
+    - scripts/build_source_a_vs_source_b_table.mjs
+    - scripts/package_round73.mjs
+    - scripts/package_round74.mjs
+    - scripts/package_round75.mjs
+    - scripts/package_round76.mjs
+    - scripts/package_round78.mjs
+  Protected-path violations: 0
+
+========================================================================
+VERIFICATION SUMMARY: errors=0 (PASS)
+========================================================================

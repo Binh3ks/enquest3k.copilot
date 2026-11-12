@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260" role="img" aria-label="Triangle ABC with sides 7 cm, 7 cm, and 10 cm">
+  <rect width="600" height="260" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <title>Triangle ABC</title>
+  <polygon points="300,87.6 170,215 430,215" fill="#eff6ff" stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round"/>
+  <line x1="239.9" y1="156.3" x2="230.1" y2="146.3" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="369.9" y1="146.3" x2="360.1" y2="156.3" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="300" y="75.6" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1e293b">A</text>
+  <text x="154" y="221" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">B</text>
+  <text x="438" y="221" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">C</text>
+  <text x="200" y="142" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb">7 cm</text>
+  <text x="372" y="142" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb">7 cm</text>
+  <text x="300" y="238" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2563eb">10 cm</text>
+</svg>
