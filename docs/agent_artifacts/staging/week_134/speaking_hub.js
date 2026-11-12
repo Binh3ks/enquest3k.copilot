@@ -14,7 +14,7 @@ export const speakingHubData = {
   "talkshow_prompt": {
     "topic": "Detecting and Correcting Logical Fallacies in Public Debate",
     "question": "Zoe, why is the hasty generalization fallacy so common, and how can debaters avoid committing it?",
-    "model_response": "The hasty generalization fallacy is tempting because human brains love shortcuts! When someone sees one or two lazy gamers, they jump to the lazy conclusion that 'all gamers are unmotivated.' But in formal academic debate, a single counterexample shatters an absolute 'all' or 'never' claim! Skilled debaters protect their credibility by using qualifiers like 'many', 'some', or 'tend to.' Qualifiers reflect real-world complexity and ensure arguments remain logically sound!"
+    "model_response": "A hasty generalization is tempting because people love quick shortcuts! When someone sees one or two lazy gamers, they jump to saying 'all gamers are lazy.' But in a school debate, just one counterexample breaks an extreme 'all' or 'never' claim! Smart speakers keep their points fair by using careful words like 'many', 'some', or 'tend to' so their logic stays sound."
   },
   "info_exchange_cards": {
     "table_a": {
@@ -68,7 +68,7 @@ export const speakingHubData = {
             "Who was the logic professor?",
             "Who taught the course?"
           ],
-          "nova_reply": "Professor Arthur Pendelton, senior fellow in formal epistemology."
+          "nova_reply": "Mr. Arthur Pendelton, our school debate and logic coach."
         },
         {
           "id": "field_a5",
@@ -93,64 +93,65 @@ export const speakingHubData = {
           "id": "field_b1",
           "cue_prompt": "where / download the fallacy classification chart?",
           "cue_word": "where",
-          "value": "From the collegiate logic consortium educational portal.",
+          "value": "From the school debate club study page.",
           "nova_question": "Where can students download the fallacy classification chart?",
           "acceptable_answers": [
-            "From the collegiate logic consortium educational portal.",
-            "From the logic consortium portal.",
-            "Collegiate logic consortium portal."
+            "From the school debate club study page.",
+            "From the debate club page.",
+            "School debate club page."
           ]
         },
         {
           "id": "field_b2",
           "cue_prompt": "what / three essential qualifiers recommended?",
           "cue_word": "what",
-          "value": "'Some', 'frequently', and 'tend to' for empirical statements.",
+          "value": "'Some', 'often', and 'tend to' for fair claims.",
           "nova_question": "What three essential qualifiers are recommended?",
           "acceptable_answers": [
-            "'Some', 'frequently', and 'tend to' for empirical statements.",
-            "'Some', 'frequently', and 'tend to'.",
-            "Some, frequently, tend to."
+            "'Some', 'often', and 'tend to' for fair claims.",
+            "'Some', 'often', and 'tend to'.",
+            "Some, often, tend to."
           ]
         },
         {
           "id": "field_b3",
-          "cue_prompt": "how / test whether an argument is logically sound?",
+          "cue_prompt": "how / test if an argument is sound?",
           "cue_word": "how",
-          "value": "Verify that all premises are true and the deductive inference is valid.",
-          "nova_question": "How do philosophers test whether an argument is logically sound?",
+          "value": "Check that all starting facts are true and every logic step is valid.",
+          "nova_question": "How do debaters test whether an argument is sound?",
           "acceptable_answers": [
-            "Verify that all premises are true and the deductive inference is valid.",
-            "Verify true premises and valid inference.",
-            "Check premises and deductive validity."
+            "Check that all starting facts are true and every logic step is valid.",
+            "Check true facts and valid logic steps.",
+            "Test true starting facts and logic."
           ]
         },
         {
           "id": "field_b4",
-          "cue_prompt": "who / formulated the classic rules of deductive syllogisms?",
+          "cue_prompt": "who / wrote the early rules of step-by-step logic?",
           "cue_word": "who",
-          "value": "Aristotle laid the foundational principles of deductive logic.",
-          "nova_question": "Who formulated the classic rules of deductive syllogisms?",
+          "value": "Aristotle wrote the early rules of step-by-step logic.",
+          "nova_question": "Who wrote the early rules of step-by-step logic?",
           "acceptable_answers": [
-            "Aristotle laid the foundational principles of deductive logic.",
+            "Aristotle wrote the early rules of step-by-step logic.",
             "Aristotle.",
-            "Ancient philosopher Aristotle."
+            "Ancient thinker Aristotle."
           ]
         },
         {
           "id": "field_b5",
           "cue_prompt": "why / critical thinking essential for democratic citizens?",
           "cue_word": "why",
-          "value": "To evaluate political arguments objectively and resist deceptive rhetoric.",
+          "value": "To check claims fairly and spot tricky ads or rumors.",
           "nova_question": "Why is critical thinking essential for democratic citizens?",
           "acceptable_answers": [
-            "To evaluate political arguments objectively and resist deceptive rhetoric.",
-            "To evaluate arguments objectively and resist deception.",
-            "To resist deceptive rhetoric."
+            "To check claims fairly and spot tricky ads or rumors.",
+            "To check claims fairly and avoid tricks.",
+            "To spot unfair tricks."
           ]
         }
       ]
     }
   }
 };
+
 export default speakingHubData;

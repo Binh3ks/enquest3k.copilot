@@ -4,7 +4,12 @@ import vm from 'node:vm';
 import { execFileSync } from 'node:child_process';
 
 const BEFORE_COMMIT = '0e7419a6e69b7157d33434da26acbe5d713b4c3b';
-const OUT_RAW = path.resolve('docs/agent_artifacts/round84_b1_register_raw.txt');
+const outIdx = process.argv.indexOf('--out');
+const OUT_RAW = path.resolve(
+  outIdx !== -1 && process.argv[outIdx + 1]
+    ? process.argv[outIdx + 1]
+    : 'docs/agent_artifacts/round84_b1_register_raw.txt'
+);
 const WEEKS = [126, 127, 133, 134];
 
 const WL_FILES = [

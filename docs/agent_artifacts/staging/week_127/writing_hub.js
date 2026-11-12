@@ -18,7 +18,7 @@ export const writingHubData = {
     "min_sentences": 3,
     "min_words": 20,
     "max_words": 90,
-    "model_sentence": "They claim that renewable energy is too unreliable to power modern cities, but recent engineering data proves the contrary. While opponents argue that solar output drops at night, advanced battery storage facilities store excess power during peak hours. On the contrary, empirical studies demonstrate that modern renewable grids maintain steady electrical currents, exposing the opposition's premise as false.",
+    "model_sentence": "They claim that clean energy is too weak to power modern cities, but recent data proves the contrary. While opponents argue that solar power drops at night, big new batteries store extra power during sunny hours. On the contrary, recent studies show that clean power grids stay steady, proving the other claim false.",
     "word_bank": [
       "disagree",
       "counter",
@@ -32,10 +32,10 @@ export const writingHubData = {
       "validity"
     ],
     "sentence_frames": [
-      "They say that renewable grids are unstable, but recent ___ proves otherwise.",
-      "While opponents argue that solar power fluctuates, storage ___ solves the issue.",
-      "On the contrary, empirical data exposes their premise as completely ___.",
-      "In the end, our direct rebuttal confirms the ___ of clean energy policies."
+      "They say clean power is weak, but recent ___ proves them wrong.",
+      "While opponents say solar power drops at night, battery ___ solves the issue.",
+      "On the contrary, real data shows their first premise is completely ___.",
+      "In the end, our clear rebuttal confirms the ___ of clean energy plans."
     ],
     "panels": [
       {
@@ -44,12 +44,12 @@ export const writingHubData = {
         "title_vi": "Khung 1: Ghi Nhận Khẳng Định Của Đối Thủ",
         "image_url": "/images/week127/writing_panel_1.png",
         "image_prompt": "A debater taking concise notes while an opposing speaker presents at a tournament podium.",
-        "caption": "Debaters identify the exact claim made by the opposing speaker.",
-        "sentence_frame": "Speakers [carefully note opposing arguments] to [understand the underlying premise].",
+        "caption": "Debaters listen carefully to find the exact claim made by the other side.",
+        "sentence_frame": "Speakers [note the opposing claim] to [check its starting premise].",
         "pills": [
-          "carefully note opposing arguments",
-          "understand the underlying premise",
-          "identify logical assumptions",
+          "note the opposing claim",
+          "check its starting premise",
+          "spot false assumptions",
           "listen actively"
         ],
         "connectors": [
@@ -64,18 +64,18 @@ export const writingHubData = {
         "title_vi": "Khung 2: Vạch Trần Giả Định Sai Lầm",
         "image_url": "/images/week127/writing_panel_2.png",
         "image_prompt": "A magnifying glass examining an outdated statistical chart with red exclamation marks over errors.",
-        "caption": "Rebuttal analysis highlights factual errors and outdated evidence.",
-        "sentence_frame": "The rebuttal [exposes factual errors] in the [opponent's outdated statistical data].",
+        "caption": "Rebuttal notes point out wrong facts and old numbers.",
+        "sentence_frame": "A clear rebuttal [spots factual mistakes] in the [other side's old numbers].",
         "pills": [
-          "exposes factual errors",
-          "opponent's outdated statistical data",
-          "highlights flawed reasoning",
-          "weak foundation"
+          "spots factual mistakes",
+          "other side's old numbers",
+          "shows flawed reasoning",
+          "weak basis"
         ],
         "connectors": [
           "However,",
-          "Upon closer examination,",
-          "In reality,"
+          "Look closely,",
+          "In fact,"
         ]
       },
       {
@@ -84,18 +84,18 @@ export const writingHubData = {
         "title_vi": "Khung 3: Đưa Ra Bằng Chứng Phản Bác",
         "image_url": "/images/week127/writing_panel_3.png",
         "image_prompt": "A confident student presenting modern scientific research charts to debate judges.",
-        "caption": "Speakers counter with verifiable empirical research.",
-        "sentence_frame": "Debaters [present recent empirical studies] to [counter the false assertion].",
+        "caption": "Speakers counter weak claims with real, checked studies.",
+        "sentence_frame": "Debaters [share recent real studies] to [counter a false claim].",
         "pills": [
-          "present recent empirical studies",
-          "counter the false assertion",
-          "verifiable research data",
-          "peer-reviewed findings"
+          "share recent real studies",
+          "counter a false claim",
+          "checked survey data",
+          "verified facts"
         ],
         "connectors": [
           "On the contrary,",
-          "While proponents claim this,",
-          "Evidence reveals that"
+          "However,",
+          "Real data shows that"
         ]
       },
       {
@@ -105,12 +105,12 @@ export const writingHubData = {
         "image_url": "/images/week127/writing_panel_4.png",
         "image_prompt": "Debate judges awarding high scores on a scoring tablet following a structured rebuttal.",
         "caption": "A structured rebuttal confirms the validity of the speaker's case.",
-        "sentence_frame": "A structured rebuttal [dismantles the opposing case] and [reaffirms the validity of our position].",
+        "sentence_frame": "A clear rebuttal [answers the opposing claim] and [proves the validity of our idea].",
         "pills": [
-          "dismantles the opposing case",
-          "reaffirms the validity of our position",
-          "persuades the adjudicators",
-          "sound conclusion"
+          "answers the opposing claim",
+          "proves the validity of our idea",
+          "convinces the judges",
+          "clear conclusion"
         ],
         "connectors": [
           "Ultimately,",
@@ -124,7 +124,7 @@ export const writingHubData = {
         "badge_label": "MODEL",
         "title": "Stage 1: Stating the Opposing Point",
         "image_url": "/images/week127/writing_panel_1.png",
-        "caption": "Debaters identify the exact claim made by the opposing speaker.",
+        "caption": "Debaters listen carefully to find the exact claim made by the other side.",
         "frame_L1": "Opponents claim that clean energy is unreliable. They argue solar power drops on cloudy days.",
         "connectors": [
           "They claim that",
@@ -139,52 +139,52 @@ export const writingHubData = {
           "during cloudy winter weather."
         ],
         "pills": [
-          "opponents claim",
-          "renewable energy is unreliable",
-          "solar output drops",
-          "stated fairly"
+          "note the opposing claim",
+          "check its starting premise",
+          "spot false assumptions",
+          "listen actively"
         ],
-        "sentence_frame": "Opponents [claim that clean energy is unreliable] because [weather conditions fluctuate]."
+        "sentence_frame": "Speakers [note the opposing claim] to [check its starting premise]."
       },
       {
         "badge_label": "BUILD",
         "title": "Stage 2: Introducing the Contrast Marker",
         "image_url": "/images/week127/writing_panel_2.png",
-        "caption": "Rebuttal analysis highlights factual errors and outdated evidence.",
+        "caption": "Rebuttal notes point out wrong facts and old numbers.",
         "frame_L1": "However, that assumption is false. Modern batteries store excess electrical energy.",
         "connectors": [
           "However,",
-          "On the contrary,",
-          "In contrast,"
+          "Look closely,",
+          "In fact,"
         ],
         "sentence_hint": "Write 2 sentences using 'However' or 'On the contrary' to introduce your counter-claim.",
         "pills": [
-          "assumption is false",
-          "modern batteries store power",
-          "on the contrary",
-          "flawed premise"
+          "spots factual mistakes",
+          "other side's old numbers",
+          "shows flawed reasoning",
+          "weak basis"
         ],
-        "sentence_frame": "However, that assumption [is proven to be false] by [recent technological breakthroughs]."
+        "sentence_frame": "A clear rebuttal [spots factual mistakes] in the [other side's old numbers]."
       },
       {
         "badge_label": "WRITE",
         "title": "Stage 3: Presenting Verified Evidence",
         "image_url": "/images/week127/writing_panel_3.png",
-        "caption": "Speakers counter with verifiable empirical research.",
+        "caption": "Speakers counter weak claims with real, checked studies.",
         "frame_L1": "Recent engineering data shows constant power delivery. Modern battery storage prevents grid failures.",
         "connectors": [
-          "Furthermore,",
-          "Empirical data shows,",
-          "In fact,"
+          "On the contrary,",
+          "However,",
+          "Real data shows that"
         ],
         "sentence_hint": "Write 2 sentences citing facts that refute the opponent's claim.",
         "pills": [
-          "engineering data shows",
-          "constant power delivery",
-          "prevents grid failures",
-          "refutes the claim"
+          "share recent real studies",
+          "counter a false claim",
+          "checked survey data",
+          "verified facts"
         ],
-        "sentence_frame": "Empirical studies [demonstrate that battery storage] ensures [continuous electrical supply]."
+        "sentence_frame": "Debaters [share recent real studies] to [counter a false claim]."
       },
       {
         "badge_label": "EXPAND",
@@ -199,14 +199,15 @@ export const writingHubData = {
         ],
         "sentence_hint": "Write 2 sentences concluding why your side has the stronger argument.",
         "pills": [
-          "factually true position",
-          "direct rebuttal wins",
-          "exposes weak evidence",
-          "stronger argument"
+          "answers the opposing claim",
+          "proves the validity of our idea",
+          "convinces the judges",
+          "clear conclusion"
         ],
-        "sentence_frame": "Therefore, our evidence [confirms that clean energy is dependable] and [disproves the opposing claim]."
+        "sentence_frame": "A clear rebuttal [answers the opposing claim] and [proves the validity of our idea]."
       }
     ]
   }
 };
+
 export default writingHubData;

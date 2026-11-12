@@ -13,7 +13,7 @@ export const skillPracticeHubData = {
   "cefr_level": "B1+ Academic",
   "grammar_drills": [
     {
-      "sentence": "Many adolescent players tend to develop strong teamwork skills.",
+      "sentence": "Many middle school players tend to build strong teamwork skills.",
       "options": [
         "tend to",
         "tend on",
@@ -23,7 +23,7 @@ export const skillPracticeHubData = {
       "explanation": "Use 'tend to' followed by a base verb to express a habitual likelihood or disposition."
     },
     {
-      "sentence": "Claiming that all gamers are unmotivated is an invalid generalization.",
+      "sentence": "Saying that all gamers are lazy is an invalid generalization.",
       "options": [
         "an invalid",
         "a invalid",
@@ -33,7 +33,7 @@ export const skillPracticeHubData = {
       "explanation": "Use the indefinite article 'an' before the vowel sound in 'invalid'."
     },
     {
-      "sentence": "Critical thinkers use qualifiers such as some, many, and often.",
+      "sentence": "Careful thinkers use words such as some, many, and often.",
       "options": [
         "such as",
         "as such",
@@ -43,7 +43,7 @@ export const skillPracticeHubData = {
       "explanation": "Use 'such as' to introduce specific illustrative examples."
     },
     {
-      "sentence": "An argument is sound only when its foundational premises are true.",
+      "sentence": "An argument works only when its starting premises are true.",
       "options": [
         "premises are true",
         "premises is true",
@@ -193,7 +193,7 @@ export const skillPracticeHubData = {
             "target": "analysis_table"
           },
           {
-            "label": "Objective Summary Statement",
+            "label": "Fair Checked Statement",
             "target": "debate_ledger"
           }
         ]
@@ -221,4 +221,5 @@ export const skillPracticeHubData = {
     ]
   }
 };
+
 export default skillPracticeHubData;

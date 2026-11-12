@@ -19,8 +19,8 @@ export const readingHubData = {
       "ipa": "/ˌdɪsəˈɡriː/",
       "definition_en": "To have or express a different opinion from someone else",
       "definition_vi": "không đồng ý / bất đồng ý kiến",
-      "example_en": "Debaters often disagree on policy priorities while maintaining mutual professional respect.",
-      "example_vi": "Các tranh biện viên thường bất đồng về các ưu tiên chính sách trong khi vẫn duy trì sự tôn trọng lẫn nhau."
+      "example_en": "Debaters often disagree on school rules while still speaking politely.",
+      "example_vi": "Người tranh biện thường bất đồng về nội quy trường học nhưng vẫn nói năng lịch sự."
     },
     {
       "id": 2,
@@ -29,8 +29,8 @@ export const readingHubData = {
       "ipa": "/ˈkaʊntər/",
       "definition_en": "To respond in opposition to an argument or claim with evidence",
       "definition_vi": "phản bác lại / đáp lại",
-      "example_en": "She presented three recent peer-reviewed studies to counter her opponent's assertion.",
-      "example_vi": "Cô ấy đã đưa ra ba nghiên cứu được bình duyệt gần đây để phản bác lại khẳng định của đối thủ."
+      "example_en": "She shared three recent school studies to counter her opponent's claim.",
+      "example_vi": "Cô ấy đưa ra ba nghiên cứu gần đây để phản bác lại khẳng định của đối thủ."
     },
     {
       "id": 3,
@@ -39,8 +39,8 @@ export const readingHubData = {
       "ipa": "/pɔɪnt/",
       "definition_en": "A single argument, idea, or fact raised in a structured discussion",
       "definition_vi": "luận điểm / ý kiến",
-      "example_en": "The speaker raised an insightful point concerning the environmental cost of manufacturing.",
-      "example_vi": "Diễn giả đã nêu ra một luận điểm sâu sắc liên quan đến chi phí môi trường của sản xuất."
+      "example_en": "The speaker made a helpful point about the cost of plastic bottles.",
+      "example_vi": "Người nói đã nêu một ý hữu ích về chi phí của chai nhựa."
     },
     {
       "id": 4,
@@ -49,8 +49,8 @@ export const readingHubData = {
       "ipa": "/fɔːls/",
       "definition_en": "Not in accordance with truth or reality; incorrect or misleading",
       "definition_vi": "sai lầm / không đúng sự thật",
-      "example_en": "His rebuttal exposed the false assumption that all economic growth harms nature.",
-      "example_vi": "Bài phản biện của anh ấy đã vạch trần giả định sai lầm rằng mọi sự tăng trưởng kinh tế đều làm hại thiên nhiên."
+      "example_en": "His rebuttal proved that the false claim about student homework was wrong.",
+      "example_vi": "Phần phản biện của cậu ấy chứng minh nhận định sai về bài tập là không đúng."
     },
     {
       "id": 5,
@@ -59,8 +59,8 @@ export const readingHubData = {
       "ipa": "/truː/",
       "definition_en": "In accordance with verifiable fact or reality; accurate and reliable",
       "definition_vi": "đúng đắn / có thực / xác thực",
-      "example_en": "While the claim sounded persuasive, it was not true when tested against recent data.",
-      "example_vi": "Mặc dù khẳng định nghe có vẻ thuyết phục, nhưng nó không đúng khi được kiểm chứng với dữ liệu gần đây."
+      "example_en": "The idea sounded nice, but it was not true when we checked the facts.",
+      "example_vi": "Ý tưởng nghe có vẻ hay nhưng không đúng sự thật khi chúng tôi kiểm tra số liệu."
     },
     {
       "id": 6,
@@ -69,8 +69,8 @@ export const readingHubData = {
       "ipa": "/rɪˈbʌtəl/",
       "definition_en": "A structured refutation or counter-argument against an opposing claim",
       "definition_vi": "bài phản biện / lời phản bác",
-      "example_en": "In the rebuttal round, speakers must address opposing points directly.",
-      "example_vi": "Trong vòng phản biện, các diễn giả phải trực tiếp giải quyết các luận điểm đối lập."
+      "example_en": "In the rebuttal round, speakers answer the other team directly.",
+      "example_vi": "Trong vòng phản biện, các thí sinh trả lời trực tiếp ý kiến của đội kia."
     },
     {
       "id": 7,
@@ -79,8 +79,8 @@ export const readingHubData = {
       "ipa": "/rɪˈfjuːt/",
       "definition_en": "To prove a statement, theory, or claim to be wrong or invalid",
       "definition_vi": "bác bỏ / chứng minh là sai",
-      "example_en": "Empirical survey data refuted the claim that youth are disinterested in civic affairs.",
-      "example_vi": "Dữ liệu khảo sát thực nghiệm đã bác bỏ khẳng định rằng giới trẻ không quan tâm đến các vấn đề công dân."
+      "example_en": "New survey numbers refuted the claim that students never read books.",
+      "example_vi": "Số liệu khảo sát mới đã bác bỏ nhận định cho rằng học sinh không bao giờ đọc sách."
     },
     {
       "id": 8,
@@ -89,8 +89,8 @@ export const readingHubData = {
       "ipa": "/kənˈsiːd/",
       "definition_en": "To acknowledge or admit that an opponent's point is true or valid",
       "definition_vi": "thừa nhận / nhượng bộ một điểm đúng",
-      "example_en": "A strategic debater may concede a minor point to focus energy on the core dispute.",
-      "example_vi": "Một tranh biện viên chiến lược có thể thừa nhận một điểm phụ để tập trung năng lượng vào cuộc tranh chấp cốt lõi."
+      "example_en": "A smart speaker may concede one small true fact before giving a stronger point.",
+      "example_vi": "Người nói khéo có thể thừa nhận một sự thật nhỏ trước khi nêu luận điểm mạnh hơn."
     },
     {
       "id": 9,
@@ -99,8 +99,8 @@ export const readingHubData = {
       "ipa": "/əˈpoʊz/",
       "definition_en": "To argue strongly against a proposed policy, resolution, or claim",
       "definition_vi": "phản đối / chống lại",
-      "example_en": "Many economists oppose tariffs because they raise prices for working families.",
-      "example_vi": "Nhiều nhà kinh tế phản đối thuế quan vì chúng làm tăng giá cả đối với các gia đình lao động."
+      "example_en": "Many parents oppose longer school days because kids need rest.",
+      "example_vi": "Nhiều phụ huynh phản đối kéo dài giờ học vì trẻ em cần được nghỉ ngơi."
     },
     {
       "id": 10,
@@ -109,8 +109,8 @@ export const readingHubData = {
       "ipa": "/əbˈdʒekʃən/",
       "definition_en": "A reason or argument given in opposition to a proposal",
       "definition_vi": "sự phản đối / lý do phản đối",
-      "example_en": "Her primary objection was that the research methodology lacked a control group.",
-      "example_vi": "Sự phản đối chính của cô ấy là phương pháp nghiên cứu thiếu một nhóm đối chứng."
+      "example_en": "Her main objection was that the study tested only five students.",
+      "example_vi": "Phản đối chính của cô ấy là nghiên cứu đó chỉ kiểm tra năm học sinh."
     },
     {
       "id": 11,
@@ -119,8 +119,8 @@ export const readingHubData = {
       "ipa": "/ˌkɑːntrəˈdɪkt/",
       "definition_en": "To assert the opposite of a statement or claim made by another",
       "definition_vi": "mâu thuẫn với / cãi lại",
-      "example_en": "Official government trade statistics contradicted the politician's campaign speech.",
-      "example_vi": "Số liệu thống kê thương mại chính thức của chính phủ đã mâu thuẫn với bài phát biểu vận động tranh cử."
+      "example_en": "The library checkout numbers contradicted the claim that nobody reads.",
+      "example_vi": "Số liệu mượn sách thư viện trái ngược với nhận định rằng không ai đọc sách."
     },
     {
       "id": 12,
@@ -129,8 +129,8 @@ export const readingHubData = {
       "ipa": "/fəˈleɪʃəs/",
       "definition_en": "Based on a mistaken belief or unsound, deceptive reasoning",
       "definition_vi": "ngụy biện / sai lầm về mặt logic",
-      "example_en": "Attacking a speaker's character rather than their evidence is a fallacious tactic.",
-      "example_vi": "Tấn công tính cách của diễn giả thay vì bằng chứng của họ là một chiến thuật ngụy biện."
+      "example_en": "Attacking a speaker instead of their ideas is a fallacious trick.",
+      "example_vi": "Công kích cá nhân người nói thay vì lý lẽ của họ là cách lập luận ngụy biện."
     },
     {
       "id": 13,
@@ -139,18 +139,18 @@ export const readingHubData = {
       "ipa": "/ˈpremɪs/",
       "definition_en": "A foundational statement or assumption from which a conclusion is drawn",
       "definition_vi": "tiền đề",
-      "example_en": "If the underlying premise is flawed, the entire argument collapses.",
-      "example_vi": "Nếu tiền đề cơ bản bị sai sót, toàn bộ lập luận sẽ sụp đổ."
+      "example_en": "If your starting premise is wrong, your final conclusion fails too.",
+      "example_vi": "Nếu tiền đề ban đầu sai thì kết luận cuối cùng cũng sụp đổ."
     },
     {
       "id": 14,
       "word": "evidence",
       "pos": "n",
       "ipa": "/ˈevɪdəns/",
-      "definition_en": "The available body of factual proof indicating whether a proposition is valid",
+      "definition_en": "Real facts and examples showing whether a claim is true",
       "definition_vi": "bằng chứng / chứng cứ",
-      "example_en": "Scientific evidence must be verifiable, reproducible, and cited accurately.",
-      "example_vi": "Bằng chứng khoa học phải có thể kiểm chứng, tái lập được và được trích dẫn chính xác."
+      "example_en": "Good debate evidence comes from real facts that anyone can check.",
+      "example_vi": "Bằng chứng tranh biện tốt đến từ các sự thật mà ai cũng có thể kiểm tra."
     },
     {
       "id": 15,
@@ -159,8 +159,8 @@ export const readingHubData = {
       "ipa": "/flɔː/",
       "definition_en": "A defect, weakness, or logical error in an argument or theory",
       "definition_vi": "lỗ hổng / khuyết điểm",
-      "example_en": "The audience identified a major logical flaw in the speaker's deductive reasoning.",
-      "example_vi": "Khán giả đã xác định được một lỗ hổng logic lớn trong lập luận suy diễn của người nói."
+      "example_en": "The judges spotted a big flaw in the speaker’s math example.",
+      "example_vi": "Ban giám khảo phát hiện ra một lỗi lớn trong ví dụ toán học của người nói."
     },
     {
       "id": 16,
@@ -169,8 +169,8 @@ export const readingHubData = {
       "ipa": "/ˈstændpɔɪnt/",
       "definition_en": "A particular attitude toward or perspective on an issue",
       "definition_vi": "quan điểm / lập trường",
-      "example_en": "From an environmental standpoint, protecting coastal wetlands is an urgent necessity.",
-      "example_vi": "Từ lập trường môi trường, việc bảo vệ các vùng đất ngập nước ven biển là một nhu cầu cấp bách."
+      "example_en": "From a health standpoint, fresh fruit is better than sweet soda.",
+      "example_vi": "Xét từ góc độ sức khỏe, trái cây tươi tốt hơn nước ngọt có ga."
     },
     {
       "id": 17,
@@ -179,18 +179,18 @@ export const readingHubData = {
       "ipa": "/kənˈtend/",
       "definition_en": "To assert or maintain earnestly in an argumentative discussion",
       "definition_vi": "dám chắc / quả quyết rằng",
-      "example_en": "The affirmative team contended that mandatory uniforms reduce social inequality.",
-      "example_vi": "Đội khẳng định quả quyết rằng đồng phục bắt buộc giúp giảm bất bình đẳng xã hội."
+      "example_en": "The first team contended that school uniforms help students feel equal.",
+      "example_vi": "Đội thứ nhất cho rằng đồng phục học sinh giúp mọi bạn cảm thấy bình đẳng."
     },
     {
       "id": 18,
       "word": "disprove",
       "pos": "v",
       "ipa": "/dɪsˈpruːv/",
-      "definition_en": "To prove that a statement, hypothesis, or claim is wrong",
+      "definition_en": "To show with real facts that a claim or idea is wrong",
       "definition_vi": "bác bỏ / chứng minh là không đúng",
-      "example_en": "Researchers conducted clinical trials to disprove the alleged health risks.",
-      "example_vi": "Các nhà nghiên cứu đã tiến hành các thử nghiệm lâm sàng để bác bỏ các rủi ro sức khỏe bị cáo buộc."
+      "example_en": "Doctors ran careful tests to disprove the rumor about energy drinks.",
+      "example_vi": "Các bác sĩ đã làm kiểm tra cẩn thận để bác bỏ tin đồn về nước tăng lực."
     },
     {
       "id": 19,
@@ -199,18 +199,18 @@ export const readingHubData = {
       "ipa": "/rɪˈbʌt/",
       "definition_en": "To offer counter-evidence and logical reasoning to defeat an argument",
       "definition_vi": "phản biện / bẻ gãy luận điểm",
-      "example_en": "She stepped to the microphone prepared to rebut every assertion made by the opposition.",
-      "example_vi": "Cô ấy bước đến bên micro sẵn sàng phản biện mọi khẳng định mà phe đối lập đưa ra."
+      "example_en": "She stepped up to the microphone ready to rebut each weak point politely.",
+      "example_vi": "Cô ấy bước lên micro sẵn sàng phản bác lịch sự từng điểm yếu."
     },
     {
       "id": 20,
       "word": "validity",
       "pos": "n",
       "ipa": "/vəˈlɪdəti/",
-      "definition_en": "The state or quality of being logically sound or factually sound",
+      "definition_en": "Being true, fair, and backed by good reasons",
       "definition_vi": "tính hợp lệ / giá trị pháp lý và logic",
-      "example_en": "Rigorous cross-examination tests the validity of expert witness testimonies.",
-      "example_vi": "Thẩm vấn chéo nghiêm ngặt kiểm tra tính hợp lệ của lời khai nhân chứng chuyên gia."
+      "example_en": "Careful questions test the validity of every fact in a debate.",
+      "example_vi": "Những câu hỏi kỹ lưỡng kiểm tra tính xác thực của mọi thông tin trong tranh biện."
     }
   ],
   "clil_article": {
@@ -332,8 +332,8 @@ export const readingHubData = {
       "scene_number": 5,
       "title_en": "Winning the Rebuttal Round",
       "title_vi": "Chiến Thắng Vòng Phản Biện",
-      "description_en": "The adjudicators nod in agreement and award high marks for Nora's direct engagement with the opposing argument.",
-      "description": "The adjudicators nod in agreement and award high marks for Nora's direct engagement with the opposing argument.",
+      "description_en": "The debate judges nod in agreement and give high marks for Nora's clear, direct answer to the other side.",
+      "description": "The debate judges nod in agreement and give high marks for Nora's clear, direct answer to the other side.",
       "image_url": "/images/week127/webtoon_scene_5.png",
       "audio_url": "/audio/week127/scene_5.mp3"
     }
@@ -342,14 +342,13 @@ export const readingHubData = {
     "sentences": [
       {
         "id": 1,
-        "text": "They claim that space travel wastes money, but I say it pioneers vital technologies.",
-        "en": "They claim that space travel wastes money, but I say it pioneers vital technologies.",
-        "vi": "Họ cho rằng du hành vũ trụ lãng phí tiền, nhưng tôi nói rằng nó tiên phong các công nghệ quan trọng.",
-        "ipa": "/ðeɪ kleɪm ðæt speɪs ˈtrævəl weɪsts ˈmʌni bʌt aɪ seɪ ɪt ˌpaɪəˈnɪərz ˈvaɪtl tekˈnɑːlədʒiz/",
+        "text": "They say space travel wastes money, but I say it brings helpful new tools.",
+        "en": "They say space travel wastes money, but I say it brings helpful new tools.",
+        "vi": "Họ nói du hành vũ trụ tốn tiền, nhưng tôi nói nó mang lại nhiều công cụ hữu ích.",
+        "ipa": "/ðeɪ seɪ speɪs ˈtrævəl weɪsts ˈmʌni bʌt aɪ seɪ ɪt brɪŋz ˈhelpfəl nuː tuːlz/",
         "words": [
           "They",
-          "claim",
-          "that",
+          "say",
           "space",
           "travel",
           "wastes",
@@ -358,48 +357,49 @@ export const readingHubData = {
           "I",
           "say",
           "it",
-          "pioneers",
-          "vital",
-          "technologies"
+          "brings",
+          "helpful",
+          "new",
+          "tools"
         ]
       },
       {
         "id": 2,
-        "text": "A skilled speaker directly addresses opposing points rather than ignoring them.",
-        "en": "A skilled speaker directly addresses opposing points rather than ignoring them.",
-        "vi": "Một diễn giả lành nghề trực tiếp giải quyết các luận điểm đối lập thay vì phớt lờ chúng.",
-        "ipa": "/ə skɪld ˈspiːkər dəˈrektli əˈdresɪz əˈpoʊzɪŋ pɔɪnts ˈræðər ðæn ɪɡˈnɔːrɪŋ ðem/",
+        "text": "A skilled speaker answers opposing points directly instead of ignoring them.",
+        "en": "A skilled speaker answers opposing points directly instead of ignoring them.",
+        "vi": "Người nói giỏi trả lời trực tiếp các ý kiến trái chiều thay vì phớt lờ chúng.",
+        "ipa": "/ə skɪld ˈspiːkər ˈænsərz əˈpoʊzɪŋ pɔɪnts dəˈrektli ɪnˈsted əv ɪɡˈnɔːrɪŋ ðem/",
         "words": [
           "A",
           "skilled",
           "speaker",
-          "directly",
-          "addresses",
+          "answers",
           "opposing",
           "points",
-          "rather",
-          "than",
+          "directly",
+          "instead",
+          "of",
           "ignoring",
           "them"
         ]
       },
       {
         "id": 3,
-        "text": "On the contrary, recent scientific evidence proves that the initial premise was false.",
-        "en": "On the contrary, recent scientific evidence proves that the initial premise was false.",
-        "vi": "Trái lại, bằng chứng khoa học gần đây chứng minh rằng tiền đề ban đầu là sai lầm.",
-        "ipa": "/ɑːn ðə ˈkɑːntreri ˈriːsənt ˌsaɪənˈtɪfɪk ˈevɪdəns pruːvz ðæt ði ɪˈnɪʃəl ˈpremɪs wʌz fɔːls/",
+        "text": "On the contrary, recent science studies prove that the first premise was false.",
+        "en": "On the contrary, recent science studies prove that the first premise was false.",
+        "vi": "Ngược lại, các nghiên cứu khoa học gần đây chứng minh tiền đề đầu tiên là sai.",
+        "ipa": "/ɑːn ðə ˈkɑːntreri ˈriːsənt ˈsaɪəns ˈstʌdiz pruːv ðæt ðə fɜːrst ˈpremɪs wʌz fɔːls/",
         "words": [
           "On",
           "the",
           "contrary",
           "recent",
-          "scientific",
-          "evidence",
-          "proves",
+          "science",
+          "studies",
+          "prove",
           "that",
           "the",
-          "initial",
+          "first",
           "premise",
           "was",
           "false"
@@ -407,105 +407,106 @@ export const readingHubData = {
       },
       {
         "id": 4,
-        "text": "While opponents argue for strict prohibitions, data shows that education is more effective.",
-        "en": "While opponents argue for strict prohibitions, data shows that education is more effective.",
-        "vi": "Trong khi phe đối lập ủng hộ các lệnh cấm nghiêm ngặt, dữ liệu cho thấy giáo dục hiệu quả hơn.",
-        "ipa": "/waɪl əˈpoʊnənts ˈɑːrɡjuː fɔːr strɪkt ˌproʊhəˈbɪʃənz ˈdeɪtə ʃoʊz ðæt ˌedʒuˈkeɪʃən ɪz mɔːr ɪˈfektɪv/",
+        "text": "While opponents ask for strict bans, real data shows that education works better.",
+        "en": "While opponents ask for strict bans, real data shows that education works better.",
+        "vi": "Trong khi đối thủ đòi lệnh cấm nghiêm ngặt, dữ liệu thực cho thấy giáo dục hiệu quả hơn.",
+        "ipa": "/waɪl əˈpoʊnənts æsk fɔːr strɪkt bænz riːl ˈdeɪtə ʃoʊz ðæt ˌedʒuˈkeɪʃən wɜːrks ˈbetər/",
         "words": [
           "While",
           "opponents",
-          "argue",
+          "ask",
           "for",
           "strict",
-          "prohibitions",
+          "bans",
+          "real",
           "data",
           "shows",
           "that",
           "education",
-          "is",
-          "more",
-          "effective"
+          "works",
+          "better"
         ]
       },
       {
         "id": 5,
-        "text": "Strategic debaters concede minor points to focus attention on their strongest arguments.",
-        "en": "Strategic debaters concede minor points to focus attention on their strongest arguments.",
-        "vi": "Các tranh biện viên chiến lược thừa nhận các điểm phụ để tập trung sự chú ý vào lập luận mạnh nhất.",
-        "ipa": "/strəˈtiːdʒɪk dɪˈbeɪtərz kənˈsiːd ˈmaɪnər pɔɪnts tuː ˈfoʊkəs əˈtenʃən ɑːn ðer ˈstrɔːŋɡɪst ˈɑːrɡjəmənts/",
+        "text": "Smart debaters concede small true points so they can focus on big reasons.",
+        "en": "Smart debaters concede small true points so they can focus on big reasons.",
+        "vi": "Người tranh biện thông minh nhượng bộ ý nhỏ đúng để tập trung vào lý lẽ lớn.",
+        "ipa": "/smɑːrt dɪˈbeɪtərz kənˈsiːd smɔːl truː pɔɪnts soʊ ðeɪ kæn ˈfoʊkəs ɑːn bɪɡ ˈriːzənz/",
         "words": [
-          "Strategic",
+          "Smart",
           "debaters",
           "concede",
-          "minor",
+          "small",
+          "true",
           "points",
-          "to",
+          "so",
+          "they",
+          "can",
           "focus",
-          "attention",
           "on",
-          "their",
-          "strongest",
-          "arguments"
+          "big",
+          "reasons"
         ]
       },
       {
         "id": 6,
-        "text": "Exposing a logical flaw in an opponent's argument quickly undermines their credibility.",
-        "en": "Exposing a logical flaw in an opponent's argument quickly undermines their credibility.",
-        "vi": "Vạch trần một lỗ hổng logic trong lập luận của đối thủ sẽ nhanh chóng làm suy yếu uy tín của họ.",
-        "ipa": "/ɪkˈspoʊzɪŋ ə ˈlɑːdʒɪkəl flɔː ɪn ən əˈpoʊnənts ˈɑːrɡjəmənt ˈkwɪkli ˌʌndərˈmaɪnz ðer ˌkredəˈbɪləti/",
+        "text": "Showing a mistake in reasoning quickly weakens an unfair debate claim.",
+        "en": "Showing a mistake in reasoning quickly weakens an unfair debate claim.",
+        "vi": "Chỉ ra lỗi suy luận nhanh chóng làm suy yếu một tuyên bố thiếu công bằng.",
+        "ipa": "/ˈʃoʊɪŋ ə mɪˈsteɪk ɪn ˈriːzənɪŋ ˈkwɪkli ˈwiːkənz ən ʌnˈfer dɪˈbeɪt kleɪm/",
         "words": [
-          "Exposing",
+          "Showing",
           "a",
-          "logical",
-          "flaw",
+          "mistake",
           "in",
-          "an",
-          "opponent's",
-          "argument",
+          "reasoning",
           "quickly",
-          "undermines",
-          "their",
-          "credibility"
+          "weakens",
+          "an",
+          "unfair",
+          "debate",
+          "claim"
         ]
       },
       {
         "id": 7,
-        "text": "We must evaluate whether claims are factually true before accepting their conclusions.",
-        "en": "We must evaluate whether claims are factually true before accepting their conclusions.",
-        "vi": "Chúng ta phải đánh giá xem các khẳng định có đúng thực tế hay không trước khi chấp nhận kết luận.",
-        "ipa": "/wiː mʌst ɪˈvæljueɪt ˈweðər kleɪmz ɑːr ˈfæktʃuəli truː bɪˈfɔːr əkˈseptɪŋ ðer kənˈkluːʒənz/",
+        "text": "We should check whether claims are really true before believing their conclusions.",
+        "en": "We should check whether claims are really true before believing their conclusions.",
+        "vi": "Chúng ta cần kiểm tra xem các tuyên bố có thật sự đúng không trước khi tin kết luận.",
+        "ipa": "/wi ʃʊd tʃek ˈweðər kleɪmz ɑːr ˈriːəli truː bɪˈfɔːr bɪˈliːvɪŋ ðer kənˈkluːʒənz/",
         "words": [
           "We",
-          "must",
-          "evaluate",
+          "should",
+          "check",
           "whether",
           "claims",
           "are",
-          "factually",
+          "really",
           "true",
           "before",
-          "accepting",
+          "believing",
           "their",
           "conclusions"
         ]
       },
       {
         "id": 8,
-        "text": "Rigorous rebuttal training strengthens critical thinking and persuasive communication.",
-        "en": "Rigorous rebuttal training strengthens critical thinking and persuasive communication.",
-        "vi": "Luyện tập phản biện nghiêm ngặt củng cố tư duy phản biện và khả năng giao tiếp thuyết phục.",
-        "ipa": "/ˈrɪɡərəs rɪˈbʌtəl ˈtreɪnɪŋ ˈstreŋθənz ˈkrɪtɪkəl ˈθɪŋkɪŋ ænd pərˈsweɪsɪv kəˌmjuːnəˈkeɪʃən/",
+        "text": "Careful rebuttal practice builds clear thinking and polite speaking skills.",
+        "en": "Careful rebuttal practice builds clear thinking and polite speaking skills.",
+        "vi": "Luyện tập phản biện cẩn thận giúp rèn tư duy rõ ràng và kỹ năng nói lịch sự.",
+        "ipa": "/ˈkerfəl rɪˈbʌtl ˈpræktɪs bɪldz klɪr ˈθɪŋkɪŋ ænd pəˈlaɪt ˈspiːkɪŋ skɪlz/",
         "words": [
-          "Rigorous",
+          "Careful",
           "rebuttal",
-          "training",
-          "strengthens",
-          "critical",
+          "practice",
+          "builds",
+          "clear",
           "thinking",
           "and",
-          "persuasive",
-          "communication"
+          "polite",
+          "speaking",
+          "skills"
         ]
       }
     ]
@@ -580,50 +581,50 @@ export const readingHubData = {
         "speaker": "Lucas",
         "prompt": "How does the 'They say... but I say...' formula improve our responses?",
         "options": [
-          "It proves we listened to the opponent before dismantling their underlying premise.",
+          "It proves we listened to the other speaker before answering their main reason.",
           "It automatically makes every statement true without evidence.",
           "It forces the judges to stop the debate early."
         ],
-        "answer": "It proves we listened to the opponent before dismantling their underlying premise."
+        "answer": "It proves we listened to the other speaker before answering their main reason."
       },
       {
         "id": 3,
         "speaker": "Lucas",
         "prompt": "What should we do when an opponent presents an outdated statistical claim?",
         "options": [
-          "Provide recent peer-reviewed data that directly contradicts their assumption.",
+          "Share recent real facts that clearly show why their guess is wrong.",
           "Agree that old data is always better than new data.",
           "Stop speaking and sit down immediately."
         ],
-        "answer": "Provide recent peer-reviewed data that directly contradicts their assumption."
+        "answer": "Share recent real facts that clearly show why their guess is wrong."
       },
       {
         "id": 4,
         "speaker": "Lucas",
         "prompt": "Is it ever wise to concede a minor point during a debate?",
         "options": [
-          "Yes, conceding an undeniable minor point demonstrates intellectual honesty and saves time.",
+          "Yes, admitting a small true point shows fairness and saves debate time.",
           "No, debaters must insist that every single opponent statement is false.",
           "Conceding a point disqualifies the team instantly."
         ],
-        "answer": "Yes, conceding an undeniable minor point demonstrates intellectual honesty and saves time."
+        "answer": "Yes, admitting a small true point shows fairness and saves debate time."
       },
       {
         "id": 5,
         "speaker": "Lucas",
         "prompt": "How do contrast connectors like 'on the contrary' help the judges follow our logic?",
         "options": [
-          "They signal a sharp, direct opposition between the flawed claim and our verified evidence.",
+          "They show a clear, direct contrast between a weak claim and our checked facts.",
           "They tell the judges that our microphone is turned off.",
           "They indicate that the debate has turned into a musical concert."
         ],
-        "answer": "They signal a sharp, direct opposition between the flawed claim and our verified evidence."
+        "answer": "They show a clear, direct contrast between a weak claim and our checked facts."
       }
     ]
   },
   "rw_part6": {
     "instructions": "Read the text about rebuttal techniques and choose the correct function word for each blank space.",
-    "text_template": "In competitive debate, an effective rebuttal requires active listening. When an opponent presents a claim, debaters must evaluate whether it [1] factually true or false. Strategic speakers do not merely disagree; on the contrary, they counter [2] verifiable evidence. While opponents may argue passionately, data [3] often expose logical flaws in their reasoning. By engaging directly [4] opposing points, speakers confirm the validity [5] their own arguments.",
+    "text_template": "In a school debate, a strong rebuttal starts with careful listening. When someone makes a claim, debaters must check whether it [1] actually true or false. Smart speakers do not just disagree; on the contrary, they counter [2] real evidence. Even when opponents sound confident, facts [3] often show clear flaws in their thinking. By dealing directly [4] opposing points, speakers prove the validity [5] their own case.",
     "answers": {
       "1": "is",
       "2": "with",

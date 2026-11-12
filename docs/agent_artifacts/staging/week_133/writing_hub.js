@@ -12,13 +12,13 @@ export const writingHubData = {
   "theme": "Deep Research & Data",
   "cefr_level": "B1+ Academic",
   "picture_story": {
-    "title": "Citing Quantitative Evidence and Statistical Findings in Research",
+    "title": "Using Numbers and Study Findings in Debate Writing",
     "prompt_en": "Look at the four panels. Write a research findings paragraph reporting quantitative data on youth gaming habits. Use formal attribution citation formulas ('According to a study by...', 'Statistics demonstrate that...', 'Data reveals that...') and precise numerical metrics. Write 20 or more words.",
     "prompt_vi": "Nhìn vào 4 khung tranh. Viết một đoạn văn kết quả nghiên cứu báo cáo dữ liệu định lượng về thói quen chơi game của giới trẻ. Sử dụng các cấu trúc trích dẫn chính thức ('According to a study by...', 'Statistics demonstrate that...', 'Data reveals that...') và các chỉ số số liệu chính xác. Viết từ 20 từ trở lên.",
     "min_sentences": 3,
     "min_words": 20,
     "max_words": 90,
-    "model_sentence": "According to a landmark empirical study conducted by university psychologists, seventy percent of adolescent students play video games on a weekly basis. Survey data demonstrates that a substantial majority of players utilize cooperative multiplayer modes to build social friendships. Furthermore, statistics reveal that only a small twelve-percent minority exhibit problematic sleep disruption, disproving the stereotype that all gaming harms academic wellbeing.",
+    "model_sentence": "According to an empirical study by school researchers, seventy percent of students play video games every week. Survey data shows that a large majority of players use team games to build friendships. In addition, statistics reveal that only a small minority lose sleep, showing that most students balance gaming and homework well.",
     "word_bank": [
       "statistic",
       "percent",
@@ -32,10 +32,10 @@ export const writingHubData = {
       "empirical"
     ],
     "sentence_frames": [
-      "According to a landmark ___, seventy percent of youth play digital games weekly.",
-      "The collected survey ___ reveals that a substantial majority play cooperatively.",
-      "Furthermore, statistics demonstrate that only a small ___ experiences sleep issues.",
-      "Ultimately, citing verified ___ transforms personal claims into credible scholarship."
+      "According to a recent ___, seventy percent of students play games weekly.",
+      "The collected survey ___ reveals that a large majority play together.",
+      "In addition, statistics show that only a small ___ loses sleep at night.",
+      "Finally, sharing checked ___ turns a guess into strong proof."
     ],
     "panels": [
       {
@@ -44,13 +44,13 @@ export const writingHubData = {
         "title_vi": "Khung 1: Xây Dựng Giả Thuyết Khảo Sát",
         "image_url": "/images/week133/writing_panel_1.png",
         "image_prompt": "Two researchers designing a questionnaire on laptop screens with statistical flowcharts on the whiteboard.",
-        "caption": "Researchers draft a structured survey to test hypotheses against demographic data.",
-        "sentence_frame": "Researchers [formulate an empirical hypothesis] to [evaluate youth gaming habits scientifically].",
+        "caption": "Students plan a short survey to test ideas with real school data.",
+        "sentence_frame": "Students [test an empirical hypothesis] to [check how gaming affects study time].",
         "pills": [
-          "formulate an empirical hypothesis",
-          "evaluate youth gaming habits scientifically",
-          "structured survey questionnaire",
-          "demographic research sample"
+          "test an empirical hypothesis",
+          "check how gaming affects study time",
+          "short survey questions",
+          "fair student sample"
         ],
         "connectors": [
           "First,",
@@ -64,18 +64,18 @@ export const writingHubData = {
         "title_vi": "Khung 2: Lấy Mẫu Quần Thể Học Sinh",
         "image_url": "/images/week133/writing_panel_2.png",
         "image_prompt": "Students in a school computer lab quietly answering an online research survey with privacy dividers.",
-        "caption": "A randomized sample of respondents completes the quantitative questionnaire.",
-        "sentence_frame": "A representative sample [completes the anonymous survey] to [provide verifiable numerical data].",
+        "caption": "A fair random sample of students answers the short online survey.",
+        "sentence_frame": "A fair student sample [answers the short online survey] to [share true number facts].",
         "pills": [
-          "completes the anonymous survey",
-          "provide verifiable numerical data",
-          "randomized participant sample",
-          "diverse student population"
+          "answers the short online survey",
+          "share true number facts",
+          "randomized student sample",
+          "fair school group"
         ],
         "connectors": [
-          "Next,",
-          "During data collection,",
-          "Across the survey,"
+          "Survey data shows,",
+          "In addition,",
+          "Also,"
         ]
       },
       {
@@ -84,38 +84,38 @@ export const writingHubData = {
         "title_vi": "Khung 3: Phân Tích Các Chỉ Số Số Liệu",
         "image_url": "/images/week133/writing_panel_3.png",
         "image_prompt": "A researcher pointing to colorful pie charts and bar graphs showing seventy percent participation and high grades.",
-        "caption": "Statistical analysis reveals that seventy percent of gamers maintain strong grades.",
-        "sentence_frame": "Data analysis [reveals that a substantial majority] of [gamers maintain high academic standing].",
+        "caption": "Simple charts show that seventy percent of gamers keep strong grades.",
+        "sentence_frame": "Data charts [show that a large majority] of [gamers keep strong school grades].",
         "pills": [
-          "reveals that a substantial majority",
-          "gamers maintain high academic standing",
-          "statistical pie charts",
-          "seventy percent metric"
+          "show that a large majority",
+          "gamers keep strong school grades",
+          "simple pie charts",
+          "seventy percent result"
         ],
         "connectors": [
           "According to the data,",
           "Statistics reveal that,",
-          "Furthermore,"
+          "In addition,"
         ]
       },
       {
         "panel_id": "panel_4",
-        "title_en": "Panel 4: Citing Formal Scholarly Findings",
-        "title_vi": "Khung 4: Trích Dẫn Các Phát Hiện Học Thuật Chính Thức",
+        "title_en": "Panel 4: Sharing Clear Study Proof",
+        "title_vi": "Khung 4: Chia Sẻ Bằng Chứng Rõ Ràng",
         "image_url": "/images/week133/writing_panel_4.png",
         "image_prompt": "A student presenting a research poster titled Deep Research & Data at a science symposium with faculty listening.",
-        "caption": "Scholarly citation phrases ground arguments in verifiable scientific data.",
-        "sentence_frame": "Scholarly citation formulas [transform subjective opinions into] an [evidence-based research publication].",
+        "caption": "Clear citation phrases base your points on checked facts.",
+        "sentence_frame": "Clear citation phrases [turn personal guesses into] an [honest fact-based report].",
         "pills": [
-          "transform subjective opinions into",
-          "evidence-based research publication",
-          "scholarly citation formulas",
-          "verifiable academic proof"
+          "turn personal guesses into",
+          "honest fact-based report",
+          "clear citation phrases",
+          "checked school facts"
         ],
         "connectors": [
           "In conclusion,",
-          "Ultimately,",
-          "Consequently,"
+          "Finally,",
+          "Because of this,"
         ]
       }
     ],
@@ -124,7 +124,7 @@ export const writingHubData = {
         "badge_label": "MODEL",
         "title": "Stage 1: Introducing the Survey Source",
         "image_url": "/images/week133/writing_panel_1.png",
-        "caption": "Researchers draft a structured survey to test hypotheses against demographic data.",
+        "caption": "Students plan a short survey to test ideas with real school data.",
         "frame_L1": "Scientists conducted a study on video games. They surveyed many students to collect facts.",
         "connectors": [
           "First,",
@@ -139,74 +139,75 @@ export const writingHubData = {
           "play video games weekly."
         ],
         "pills": [
-          "according to a study",
-          "university researchers",
-          "seventy percent of students",
-          "play video games weekly"
+          "test an empirical hypothesis",
+          "check how gaming affects study time",
+          "short survey questions",
+          "fair student sample"
         ],
-        "sentence_frame": "Researchers [formulate an empirical hypothesis] to [evaluate youth gaming habits scientifically]."
+        "sentence_frame": "Students [test an empirical hypothesis] to [check how gaming affects study time]."
       },
       {
         "badge_label": "BUILD",
-        "title": "Stage 2: Reporting the Majority Metric",
+        "title": "Stage 2: Collecting Survey Answers",
         "image_url": "/images/week133/writing_panel_2.png",
-        "caption": "A randomized sample of respondents completes the quantitative questionnaire.",
+        "caption": "A fair random sample of students answers the short online survey.",
         "frame_L1": "The survey data shows interesting facts. A large majority of players enjoy cooperative team games.",
         "connectors": [
           "Survey data shows,",
-          "Furthermore,",
-          "In addition,"
+          "In addition,",
+          "Also,"
         ],
         "sentence_hint": "Write 2 sentences reporting the findings about the majority of players.",
         "pills": [
-          "survey data shows",
-          "large majority of players",
-          "cooperative team games",
-          "build friendships"
+          "answers the short online survey",
+          "share true number facts",
+          "randomized student sample",
+          "fair school group"
         ],
-        "sentence_frame": "The collected survey data [reveals that a substantial majority] of [participants play cooperative games]."
+        "sentence_frame": "A fair student sample [answers the short online survey] to [share true number facts]."
       },
       {
         "badge_label": "WRITE",
         "title": "Stage 3: Quantifying the Minority Finding",
         "image_url": "/images/week133/writing_panel_3.png",
-        "caption": "Statistical analysis reveals that seventy percent of gamers maintain strong grades.",
+        "caption": "Simple charts show that seventy percent of gamers keep strong grades.",
         "frame_L1": "Only a small minority has sleep problems. Statistics prove that most gamers keep good school marks.",
         "connectors": [
-          "In contrast,",
-          "Statistics demonstrate that,",
-          "On the other hand,"
+          "According to the data,",
+          "Statistics reveal that,",
+          "In addition,"
         ],
         "sentence_hint": "Write 2 sentences contrasting the small minority with the broader population.",
         "pills": [
-          "small minority has issues",
-          "statistics demonstrate that",
-          "keep good school marks",
-          "twelve percent metric"
+          "show that a large majority",
+          "gamers keep strong school grades",
+          "simple pie charts",
+          "seventy percent result"
         ],
-        "sentence_frame": "Statistics demonstrate that [only a twelve-percent minority] experiences [problematic sleep disruption]."
+        "sentence_frame": "Data charts [show that a large majority] of [gamers keep strong school grades]."
       },
       {
         "badge_label": "EXPAND",
         "title": "Stage 4: Synthesizing Evidence-Based Claims",
         "image_url": "/images/week133/writing_panel_4.png",
-        "caption": "Scholarly citation phrases ground arguments in verifiable scientific data.",
-        "frame_L1": "Using real statistics makes our writing credible. Empirical evidence proves that stereotypes about gaming are false.",
+        "caption": "Clear citation phrases base your points on checked facts.",
+        "frame_L1": "Using real statistics makes our writing trusted. Empirical evidence proves that guesses about gaming can be false.",
         "connectors": [
           "In conclusion,",
-          "Ultimately,",
-          "Consequently,"
+          "Finally,",
+          "Because of this,"
         ],
         "sentence_hint": "Write 2 sentences concluding why quantitative data makes claims believable.",
         "pills": [
-          "real statistics create credibility",
-          "empirical evidence proves",
-          "stereotypes are false",
-          "evidence-based scholarship"
+          "turn personal guesses into",
+          "honest fact-based report",
+          "clear citation phrases",
+          "checked school facts"
         ],
-        "sentence_frame": "Scholarly citation formulas [transform subjective opinions into] an [evidence-based research publication]."
+        "sentence_frame": "Clear citation phrases [turn personal guesses into] an [honest fact-based report]."
       }
     ]
   }
 };
+
 export default writingHubData;

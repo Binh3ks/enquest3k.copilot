@@ -13,7 +13,7 @@ export const skillPracticeHubData = {
   "cefr_level": "B1+ Academic",
   "grammar_drills": [
     {
-      "sentence": "Moving on to our second main finding, let us examine the survey data.",
+      "sentence": "Moving on to our second finding, let us look at the survey data.",
       "options": [
         "Moving on to",
         "Move on at",
@@ -23,7 +23,7 @@ export const skillPracticeHubData = {
       "explanation": "Use 'Moving on to...' as an oral signpost to transition smoothly to a new topic."
     },
     {
-      "sentence": "Having examined the historical background, we can now address current policies.",
+      "sentence": "Having examined the class survey, we can now plan our speech.",
       "options": [
         "Having examined",
         "Have examined",
@@ -33,7 +33,7 @@ export const skillPracticeHubData = {
       "explanation": "Use the perfect participle clause 'Having examined...' to summarize prior context before introducing a new focus."
     },
     {
-      "sentence": "Turning our attention to the global market, export numbers grew significantly.",
+      "sentence": "Turning our attention to the school library, book loans grew fast.",
       "options": [
         "Turning our attention to",
         "Turn our attention on",
@@ -43,7 +43,7 @@ export const skillPracticeHubData = {
       "explanation": "Use 'Turning our attention to...' to direct listeners' focus toward a specific aspect."
     },
     {
-      "sentence": "Speakers should pause deliberately so that listeners can absorb difficult points.",
+      "sentence": "Speakers should pause briefly so that listeners can follow hard ideas.",
       "options": [
         "so that",
         "because of",
@@ -53,14 +53,14 @@ export const skillPracticeHubData = {
       "explanation": "Use 'so that' followed by a clause to express the intended purpose of an action."
     },
     {
-      "sentence": "Varying vocal intonation keeps the audience engaged throughout the address.",
+      "sentence": "Varying your voice keeps the audience interested through your whole speech.",
       "options": [
         "keeps",
         "keep",
         "keeping"
       ],
       "answer": "keeps",
-      "explanation": "The singular gerund subject 'Varying vocal intonation' takes the singular verb 'keeps'."
+      "explanation": "The singular gerund phrase 'Varying your voice' takes the singular verb 'keeps'."
     }
   ],
   "singapore_math": [
@@ -315,4 +315,5 @@ export const skillPracticeHubData = {
     ]
   }
 };
+
 export default skillPracticeHubData;

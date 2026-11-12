@@ -64,5 +64,20 @@
     "scope": "STAGING_ONLY_CLIL_B1_PLUS_REGISTER",
     "updated_file": "docs/agent_artifacts/staging/week_127/reading_hub.js",
     "notes": "Rewrote clil_article.content_en and aligned clil_article.check_questions to genuine CEFR B1+ register while preserving 100% (20/20) target vocabulary coverage."
+  },
+  "round85_nonclil_b1_register_rewrite": {
+    "round": 85,
+    "rewritten_at": "2026-11-12T10:29:16.470Z",
+    "baseline_commit": "0347975fb7f84808b23901179b562ba167853774",
+    "scope": "STAGING_ONLY_NON_CLIL_B1_PLUS_REGISTER",
+    "updated_files": [
+      "docs/agent_artifacts/staging/week_127/reading_hub.js",
+      "docs/agent_artifacts/staging/week_127/vocab.js",
+      "docs/agent_artifacts/staging/week_127/listening_hub.js",
+      "docs/agent_artifacts/staging/week_127/writing_hub.js",
+      "docs/agent_artifacts/staging/week_127/speaking_hub.js",
+      "docs/agent_artifacts/staging/week_127/skill_practice_hub.js"
+    ],
+    "notes": "Rewrote flagged non-CLIL vocab definitions/examples, shadowing/dictation sentences, story/RW prompts, writing/speaking frames, and grammar/lab items to genuine CEFR B1+ register while keeping syllabus target words and math untouched."
   }
 }

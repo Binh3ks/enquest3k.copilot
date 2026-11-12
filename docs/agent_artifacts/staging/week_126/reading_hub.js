@@ -17,10 +17,10 @@ export const readingHubData = {
       "word": "signpost",
       "pos": "v",
       "ipa": "/ˈsaɪnpoʊst/",
-      "definition_en": "To provide clear verbal indicators that guide an audience through a presentation",
+      "definition_en": "To use clear spoken phrases that guide listeners through your talk",
       "definition_vi": "dùng lời chỉ dẫn hướng / định hướng người nghe",
-      "example_en": "Skilled speakers signpost their major points so listeners follow the presentation structure.",
-      "example_vi": "Các diễn giả lành nghề định hướng các luận điểm chính để người nghe theo kịp cấu trúc bài thuyết trình."
+      "example_en": "Good speakers signpost their main points so listeners can follow easily.",
+      "example_vi": "Người nói giỏi dùng từ dẫn ý để người nghe dễ theo dõi các ý chính."
     },
     {
       "id": 2,
@@ -29,8 +29,8 @@ export const readingHubData = {
       "ipa": "/kjuː/",
       "definition_en": "A brief prompt or reminder note used to guide a speaker on stage",
       "definition_vi": "thẻ gợi ý / lời gợi ý",
-      "example_en": "She wrote bullet points on pocket-sized cue cards to remember key transition phrases.",
-      "example_vi": "Cô ấy viết các gạch đầu dòng lên thẻ gợi ý bỏ túi để ghi nhớ các cụm từ chuyển ý quan trọng."
+      "example_en": "She wrote short key words on pocket cue cards to help her remember.",
+      "example_vi": "Cô ấy viết từ khóa ngắn lên thẻ gợi ý bỏ túi để giúp nhớ bài."
     },
     {
       "id": 3,
@@ -39,38 +39,38 @@ export const readingHubData = {
       "ipa": "/trænˈzɪʃən/",
       "definition_en": "The process or a period of changing smoothly from one topic to another",
       "definition_vi": "sự chuyển tiếp / bước chuyển",
-      "example_en": "The transition between the historical context and the current data was remarkably smooth.",
-      "example_vi": "Bước chuyển giữa bối cảnh lịch sử và dữ liệu hiện tại diễn ra rất mượt mà."
+      "example_en": "The transition from her first point to her second example was smooth.",
+      "example_vi": "Phần chuyển ý từ luận điểm đầu sang ví dụ thứ hai rất mượt mà."
     },
     {
       "id": 4,
       "word": "rhetoric",
       "pos": "n",
       "ipa": "/ˈretərɪk/",
-      "definition_en": "The art of effective or persuasive speaking or writing",
+      "definition_en": "The art of speaking or writing clearly to persuade others",
       "definition_vi": "nghệ thuật tu từ / tài hùng biện",
-      "example_en": "Classical rhetoric teaches speakers how to balance logical evidence with vocal emotion.",
-      "example_vi": "Thuật tu từ cổ điển dạy người nói cách cân bằng bằng chứng logic với cảm xúc giọng nói."
+      "example_en": "School rhetoric practice teaches students how to share reasons and feelings well.",
+      "example_vi": "Luyện tập hùng biện ở trường dạy học sinh cách chia sẻ lý lẽ và cảm xúc tốt."
     },
     {
       "id": 5,
       "word": "delivery",
       "pos": "n",
       "ipa": "/dɪˈlɪvəri/",
-      "definition_en": "The manner or vocal style in which a speech or presentation is spoken",
+      "definition_en": "The way a speaker uses voice and body during a speech",
       "definition_vi": "phong cách diễn thuyết / cách trình bày",
-      "example_en": "His energetic delivery kept the auditorium audience engaged throughout the lecture.",
-      "example_vi": "Phong cách diễn thuyết tràn đầy năng lượng của anh ấy giữ cho khán giả hội trường chăm chú suốt bài giảng."
+      "example_en": "His bright delivery kept the whole school hall listening closely.",
+      "example_vi": "Cách trình bày sinh động của cậu ấy khiến cả hội trường chăm chú lắng nghe."
     },
     {
       "id": 6,
       "word": "articulate",
       "pos": "v",
       "ipa": "/ɑːrˈtɪkjəleɪt/",
-      "definition_en": "To express an idea or feeling fluently and coherently aloud",
+      "definition_en": "To say ideas clearly so listeners understand every word",
       "definition_vi": "diễn đạt rõ ràng / phát âm rành mạch",
-      "example_en": "Debaters must articulate complex ethical principles clearly under strict time limits.",
-      "example_vi": "Các tranh biện viên phải diễn đạt rõ ràng các nguyên tắc đạo đức phức tạp trong giới hạn thời gian nghiêm ngặt."
+      "example_en": "Debaters must articulate hard ideas clearly even when time is short.",
+      "example_vi": "Người tranh biện phải diễn đạt rõ các ý khó ngay cả khi thời gian ngắn."
     },
     {
       "id": 7,
@@ -79,18 +79,18 @@ export const readingHubData = {
       "ipa": "/ˈaʊtlaɪn/",
       "definition_en": "A general sketch or framework giving the essential features of a speech",
       "definition_vi": "dàn ý / đề cương",
-      "example_en": "Prepare an outline before transferring full essay paragraphs onto speaker cards.",
-      "example_vi": "Hãy chuẩn bị một dàn ý trước khi chuyển toàn bộ các đoạn văn thành thẻ ghi chú."
+      "example_en": "Make a short outline before writing key words onto note cards.",
+      "example_vi": "Hãy lập dàn ý ngắn trước khi viết từ khóa lên thẻ ghi chú."
     },
     {
       "id": 8,
       "word": "audience",
       "pos": "n",
       "ipa": "/ˈɔːdiəns/",
-      "definition_en": "The assembled spectators or listeners at a public performance or lecture",
+      "definition_en": "The people watching or listening to a speech or performance",
       "definition_vi": "khán giả / thính giả",
-      "example_en": "Maintain consistent eye contact with your audience across all sections of the hall.",
-      "example_vi": "Hãy duy trì giao tiếp bằng mắt nhất quán với khán giả của bạn trên khắp các khu vực của khán phòng."
+      "example_en": "Look up from your notes and make eye contact with your audience.",
+      "example_vi": "Hãy ngẩng lên khỏi ghi chú và giao tiếp bằng mắt với khán giả."
     },
     {
       "id": 9,
@@ -99,18 +99,18 @@ export const readingHubData = {
       "ipa": "/ˈdʒestʃər/",
       "definition_en": "A movement of hands or body to emphasize an idea or feeling",
       "definition_vi": "cử chỉ / điệu bộ",
-      "example_en": "Natural hand gestures reinforce verbal emphasis during oral presentations.",
-      "example_vi": "Cử chỉ tay tự nhiên củng cố sự nhấn mạnh bằng lời nói trong các bài thuyết trình."
+      "example_en": "Friendly hand gestures help your listeners picture each idea clearly.",
+      "example_vi": "Cử chỉ tay thân thiện giúp người nghe hình dung rõ từng ý."
     },
     {
       "id": 10,
       "word": "pacing",
       "pos": "n",
       "ipa": "/ˈpeɪsɪŋ/",
-      "definition_en": "The speed and tempo at which an oral speech or presentation progresses",
+      "definition_en": "The speed at which a speaker talks during a speech",
       "definition_vi": "nhịp độ nói / tốc độ nói",
-      "example_en": "Deliberate pacing allows listeners sufficient time to absorb difficult technical ideas.",
-      "example_vi": "Nhịp độ nói thận trọng cho phép người nghe có đủ thời gian để tiếp thu các ý tưởng kỹ thuật khó."
+      "example_en": "Steady pacing gives listeners enough time to understand new ideas.",
+      "example_vi": "Tốc độ nói ổn định giúp người nghe đủ thời gian hiểu các ý mới."
     },
     {
       "id": 11,
@@ -119,8 +119,8 @@ export const readingHubData = {
       "ipa": "/ˈemfəsɪs/",
       "definition_en": "Special importance, value, or vocal stress given to something",
       "definition_vi": "sự nhấn mạnh / trọng âm ngữ điệu",
-      "example_en": "Place vocal emphasis on the contrastive connectors to highlight opposing viewpoints.",
-      "example_vi": "Hãy đặt trọng âm ngữ điệu vào các từ nối tương phản để làm nổi bật các quan điểm đối lập."
+      "example_en": "Put strong vocal emphasis on words like 'however' to show contrast.",
+      "example_vi": "Hãy nhấn giọng rõ vào những từ như 'however' để thể hiện sự đối lập."
     },
     {
       "id": 12,
@@ -129,8 +129,8 @@ export const readingHubData = {
       "ipa": "/rɪˈhɜːrs/",
       "definition_en": "To practice a speech or performance before presenting it publicly",
       "definition_vi": "luyện tập / diễn tập",
-      "example_en": "Students rehearse their five-minute speeches with a timer to refine pacing.",
-      "example_vi": "Học sinh luyện tập các bài nói năm phút của mình với đồng hồ bấm giờ để tinh chỉnh nhịp độ."
+      "example_en": "Students rehearse their three-minute talks with a timer before class.",
+      "example_vi": "Học sinh tập dượt bài nói ba phút với đồng hồ bấm giờ trước giờ học."
     },
     {
       "id": 13,
@@ -139,8 +139,8 @@ export const readingHubData = {
       "ipa": "/ˌɪntəˈneɪʃən/",
       "definition_en": "The rise and fall of voice pitch when speaking",
       "definition_vi": "ngữ điệu giọng nói",
-      "example_en": "Varying your intonation prevents speeches from sounding monotonous and flat.",
-      "example_vi": "Thay đổi ngữ điệu của bạn giúp bài phát biểu không bị đơn điệu và bằng phẳng."
+      "example_en": "Changing your intonation keeps your speech from sounding flat and boring.",
+      "example_vi": "Thay đổi ngữ điệu giúp bài nói không bị đều đều và nhàm chán."
     },
     {
       "id": 14,
@@ -149,8 +149,8 @@ export const readingHubData = {
       "ipa": "/ˈvɜːrbəl/",
       "definition_en": "Relating to or in the form of words spoken aloud",
       "definition_vi": "bằng lời nói / thuộc về ngôn từ",
-      "example_en": "Verbal cues such as 'furthermore' signal that an additional argument is coming.",
-      "example_vi": "Các dấu hiệu bằng lời nói như 'hơn nữa' báo hiệu rằng một lập luận bổ sung sắp được đưa ra."
+      "example_en": "Verbal signals like 'next' tell listeners a new point is coming.",
+      "example_vi": "Các tín hiệu lời nói như 'next' báo cho người nghe biết sắp sang ý mới."
     },
     {
       "id": 15,
@@ -159,18 +159,18 @@ export const readingHubData = {
       "ipa": "/prəˈdʒekʃən/",
       "definition_en": "The strength and volume of speaking to be heard clearly at a distance",
       "definition_vi": "độ vang giọng / phóng âm",
-      "example_en": "Good vocal projection ensures that listeners in the back row hear every syllable.",
-      "example_vi": "Khả năng phóng âm tốt đảm bảo rằng người nghe ở hàng ghế sau cùng nghe rõ từng âm tiết."
+      "example_en": "Good voice projection helps people in the back row hear every word.",
+      "example_vi": "Phát âm vang rõ giúp người ngồi hàng cuối nghe được từng chữ."
     },
     {
       "id": 16,
       "word": "elocution",
       "pos": "n",
       "ipa": "/ˌeləˈkjuːʃən/",
-      "definition_en": "The skill of clear and expressive speech, especially of pronunciation",
+      "definition_en": "The skill of speaking clearly with careful word sounds",
       "definition_vi": "nghệ thuật phát âm / thuật đọc diễn cảm",
-      "example_en": "Elocution training develops crisp consonant pronunciation and breath support.",
-      "example_vi": "Huấn luyện phát âm phát triển cách phát âm phụ âm rõ nét và khả năng làm chủ hơi thở."
+      "example_en": "Elocution practice helps you say hard word endings clearly.",
+      "example_vi": "Luyện phát âm rõ giúp bạn đọc rõ các âm cuối khó."
     },
     {
       "id": 17,
@@ -179,8 +179,8 @@ export const readingHubData = {
       "ipa": "/ˈsʌməri/",
       "definition_en": "A brief statement reviewing the main points or findings of a speech",
       "definition_vi": "phần tóm tắt / tổng kết",
-      "example_en": "Conclude your speech with a succinct summary of your three primary recommendations.",
-      "example_vi": "Hãy kết thúc bài phát biểu của bạn bằng một bản tóm tắt ngắn gọn về ba khuyến nghị chính."
+      "example_en": "End your speech with a short summary of your three main ideas.",
+      "example_vi": "Hãy kết thúc bài nói bằng một bản tóm tắt ngắn gọn ba ý chính."
     },
     {
       "id": 18,
@@ -189,8 +189,8 @@ export const readingHubData = {
       "ipa": "/ˈstrʌktʃər/",
       "definition_en": "The organization or arrangement of components within a presentation",
       "definition_vi": "cấu trúc bài diễn thuyết",
-      "example_en": "A three-part structure comprising introduction, body arguments, and conclusion clarifies intent.",
-      "example_vi": "Cấu trúc ba phần gồm mở đầu, thân bài và kết luận làm sáng tỏ mục đích của bài thuyết trình."
+      "example_en": "A clear three-part structure with start, middle, and end helps listeners.",
+      "example_vi": "Cấu trúc ba phần rõ ràng gồm mở đầu, thân bài và kết luận giúp người nghe dễ hiểu."
     },
     {
       "id": 19,
@@ -199,18 +199,18 @@ export const readingHubData = {
       "ipa": "/ˈkiːnoʊt/",
       "definition_en": "The central theme or opening address that sets the tone for an event",
       "definition_vi": "bài diễn văn chủ đề / ý tưởng cốt lõi",
-      "example_en": "Her keynote speech emphasized the ethical responsibilities of scientific researchers.",
-      "example_vi": "Bài diễn văn chủ đề của cô ấy nhấn mạnh trách nhiệm đạo đức của các nhà nghiên cứu khoa học."
+      "example_en": "Her keynote speech explained why honesty matters in school science fairs.",
+      "example_vi": "Bài phát biểu chính của cô ấy giải thích vì sao sự trung thực quan trọng ở hội chợ khoa học."
     },
     {
       "id": 20,
       "word": "oratory",
       "pos": "n",
       "ipa": "/ˈɔːrətɔːri/",
-      "definition_en": "The formal practice or study of eloquent public address",
+      "definition_en": "The skill and practice of giving strong, clear speeches in public",
       "definition_vi": "tài hùng biện / khoa diễn thuyết",
-      "example_en": "The school debate tournament celebrates outstanding student oratory and civic dialogue.",
-      "example_vi": "Giải đấu tranh biện của trường tôn vinh tài hùng biện xuất sắc của học sinh và sự đối thoại công dân."
+      "example_en": "Our school speech contest celebrates clear student oratory and fair talks.",
+      "example_vi": "Cuộc thi nói của trường tôn vinh tài diễn thuyết rõ ràng và công bằng của học sinh."
     }
   ],
   "clil_article": {
@@ -288,8 +288,8 @@ export const readingHubData = {
       "scene_number": 1,
       "title_en": "Facing the Written Essay Draft",
       "title_vi": "Đối Mặt Với Bản Thảo Bài Luận Viết",
-      "description_en": "Lucas reviews his ten-page academic research paper and wonders how to deliver it aloud in seven minutes.",
-      "description": "Lucas reviews his ten-page academic research paper and wonders how to deliver it aloud in seven minutes.",
+      "description_en": "Lucas looks at his long written essay and plans how to share it aloud in five minutes.",
+      "description": "Lucas looks at his long written essay and plans how to share it aloud in five minutes.",
       "image_url": "/images/week126/webtoon_scene_1.png",
       "audio_url": "/audio/week126/scene_1.mp3"
     },
@@ -332,8 +332,8 @@ export const readingHubData = {
       "scene_number": 5,
       "title_en": "Delivering the Keynote Address",
       "title_vi": "Trình Bày Bài Diễn Văn Chủ Đề",
-      "description_en": "The audience erupts into applause as Lucas concludes his presentation with an articulate final summary.",
-      "description": "The audience erupts into applause as Lucas concludes his presentation with an articulate final summary.",
+      "description_en": "The audience claps loudly as Lucas finishes his speech with a clear final summary.",
+      "description": "The audience claps loudly as Lucas finishes his speech with a clear final summary.",
       "image_url": "/images/week126/webtoon_scene_5.png",
       "audio_url": "/audio/week126/scene_5.mp3"
     }
@@ -342,53 +342,53 @@ export const readingHubData = {
     "sentences": [
       {
         "id": 1,
-        "text": "Transforming a written essay into an oral speech requires strategic signposting phrases.",
-        "en": "Transforming a written essay into an oral speech requires strategic signposting phrases.",
-        "vi": "Chuyển một bài luận viết thành bài nói đòi hỏi các cụm từ định hướng chiến lược.",
-        "ipa": "/trænsˈfɔːrmɪŋ ə ˈrɪtn ˈeseɪ ˈɪntuː ən ˈɔːrəl spiːtʃ rɪˈkwaɪərz strəˈtiːdʒɪk ˈsaɪnpoʊstɪŋ ˈfreɪzɪz/",
+        "text": "Turning a written essay into a spoken talk needs clear signpost phrases.",
+        "en": "Turning a written essay into a spoken talk needs clear signpost phrases.",
+        "vi": "Chuyển bài luận viết thành bài nói cần các cụm từ dẫn ý rõ ràng.",
+        "ipa": "/ˈtɜːrnɪŋ ə ˈrɪtn ˈeseɪ ˈɪntuː ə ˈspoʊkən tɔːk niːdz klɪr ˈsaɪnpoʊst ˈfreɪzɪz/",
         "words": [
-          "Transforming",
+          "Turning",
           "a",
           "written",
           "essay",
           "into",
-          "an",
-          "oral",
-          "speech",
-          "requires",
-          "strategic",
-          "signposting",
+          "a",
+          "spoken",
+          "talk",
+          "needs",
+          "clear",
+          "signpost",
           "phrases"
         ]
       },
       {
         "id": 2,
-        "text": "Speakers write bullet point keywords on portable cue cards instead of full paragraphs.",
-        "en": "Speakers write bullet point keywords on portable cue cards instead of full paragraphs.",
-        "vi": "Các diễn giả viết từ khóa dạng gạch đầu dòng lên thẻ gợi ý thay vì đọc cả đoạn văn.",
-        "ipa": "/ˈspiːkərz raɪt ˈbʊlɪt pɔɪnt ˈkiːwɜːrdz ɑːn ˈpɔːrtəbəl kjuː kɑːrdz ɪnˈsted əv fʊl ˈpærəɡræfs/",
+        "text": "Speakers write short key words on pocket cue cards instead of full pages.",
+        "en": "Speakers write short key words on pocket cue cards instead of full pages.",
+        "vi": "Người nói viết các từ khóa ngắn lên thẻ gợi ý bỏ túi thay vì cả trang chữ.",
+        "ipa": "/ˈspiːkərz raɪt ʃɔːrt kiː wɜːrdz ɑːn ˈpɑːkɪt kjuː kɑːrdz ɪnˈsted əv fʊl ˈpeɪdʒɪz/",
         "words": [
           "Speakers",
           "write",
-          "bullet",
-          "point",
-          "keywords",
+          "short",
+          "key",
+          "words",
           "on",
-          "portable",
+          "pocket",
           "cue",
           "cards",
           "instead",
           "of",
           "full",
-          "paragraphs"
+          "pages"
         ]
       },
       {
         "id": 3,
-        "text": "Moving on to our second finding, let us examine the statistical survey results.",
-        "en": "Moving on to our second finding, let us examine the statistical survey results.",
-        "vi": "Chuyển sang phát hiện thứ hai, chúng ta hãy xem xét kết quả khảo sát thống kê.",
-        "ipa": "/ˈmuːvɪŋ ɑːn tuː ˈaʊər ˈsekənd ˈfaɪndɪŋ let ʌs ɪɡˈzæmɪn ðə stəˈtɪstɪkəl ˈsɜːrveɪ rɪˈzʌlts/",
+        "text": "Moving on to our second finding, let us look at the class survey results.",
+        "en": "Moving on to our second finding, let us look at the class survey results.",
+        "vi": "Chuyển sang phát hiện thứ hai, chúng ta hãy xem kết quả khảo sát của lớp.",
+        "ipa": "/ˈmuːvɪŋ ɑːn tuː ˈaʊər ˈsekənd ˈfaɪndɪŋ let ʌs lʊk æt ðə klæs ˈsɜːrveɪ rɪˈzʌlts/",
         "words": [
           "Moving",
           "on",
@@ -398,113 +398,118 @@ export const readingHubData = {
           "finding",
           "let",
           "us",
-          "examine",
+          "look",
+          "at",
           "the",
-          "statistical",
+          "class",
           "survey",
           "results"
         ]
       },
       {
         "id": 4,
-        "text": "Deliberate pacing and pauses give the audience time to absorb complex arguments.",
-        "en": "Deliberate pacing and pauses give the audience time to absorb complex arguments.",
-        "vi": "Nhịp độ nói cẩn trọng và những khoảng dừng giúp khán giả có thời gian tiếp thu các lập luận phức tạp.",
-        "ipa": "/dɪˈlɪbərət ˈpeɪsɪŋ ænd ˈpɔːzɪz ɡɪv ði ˈɔːdiəns taɪm tuː əbˈzɔːrb ˈkɑːmpleks ˈɑːrɡjəmənts/",
+        "text": "Steady pacing and short pauses give listeners time to follow hard ideas.",
+        "en": "Steady pacing and short pauses give listeners time to follow hard ideas.",
+        "vi": "Tốc độ nói đều đặn và khoảng dừng ngắn giúp người nghe theo kịp các ý khó.",
+        "ipa": "/ˈstedi ˈpeɪsɪŋ ænd ʃɔːrt ˈpɔːzɪz ɡɪv ˈlɪsənərz taɪm tuː ˈfɑːloʊ hɑːrd aɪˈdiːəz/",
         "words": [
-          "Deliberate",
+          "Steady",
           "pacing",
           "and",
+          "short",
           "pauses",
           "give",
-          "the",
-          "audience",
+          "listeners",
           "time",
           "to",
-          "absorb",
-          "complex",
-          "arguments"
+          "follow",
+          "hard",
+          "ideas"
         ]
       },
       {
         "id": 5,
-        "text": "Varying your vocal intonation keeps listeners engaged throughout the presentation.",
-        "en": "Varying your vocal intonation keeps listeners engaged throughout the presentation.",
-        "vi": "Thay đổi ngữ điệu giọng nói giúp khán giả luôn tập trung trong suốt bài thuyết trình.",
-        "ipa": "/ˈveriɪŋ jʊər ˈvoʊkəl ˌɪntəˈneɪʃən kiːps ˈlɪsənərz ɪnˈɡeɪdʒd θruːˈaʊt ðə ˌpriːzenˈteɪʃən/",
+        "text": "Changing your voice intonation keeps the class interested through your whole talk.",
+        "en": "Changing your voice intonation keeps the class interested through your whole talk.",
+        "vi": "Thay đổi ngữ điệu giọng nói giúp cả lớp hứng thú suốt bài trình bày.",
+        "ipa": "/ˈtʃeɪndʒɪŋ jʊr vɔɪs ˌɪntəˈneɪʃən kiːps ðə klæs ˈɪntrəstɪd θruː jʊr hoʊl tɔːk/",
         "words": [
-          "Varying",
+          "Changing",
           "your",
-          "vocal",
+          "voice",
           "intonation",
           "keeps",
-          "listeners",
-          "engaged",
-          "throughout",
           "the",
-          "presentation"
+          "class",
+          "interested",
+          "through",
+          "your",
+          "whole",
+          "talk"
         ]
       },
       {
         "id": 6,
-        "text": "Natural hand gestures and steady eye contact strengthen speaker credibility on stage.",
-        "en": "Natural hand gestures and steady eye contact strengthen speaker credibility on stage.",
-        "vi": "Cử chỉ tay tự nhiên và ánh mắt tự tin củng cố uy tín của diễn giả trên sân khấu.",
-        "ipa": "/ˈnætʃərəl hænd ˈdʒestʃərz ænd ˈstedi aɪ ˈkɑːntækt ˈstreŋθən ˈspiːkər ˌkredəˈbɪləti ɑːn steɪdʒ/",
+        "text": "Friendly hand gestures and steady eye contact build trust with your audience.",
+        "en": "Friendly hand gestures and steady eye contact build trust with your audience.",
+        "vi": "Cử chỉ tay thân thiện và giao tiếp mắt ổn định tạo sự tin cậy với khán giả.",
+        "ipa": "/ˈfrendli hænd ˈdʒestʃərz ænd ˈstedi aɪ ˈkɑːntækt bɪld trʌst wɪð jʊr ˈɔːdiəns/",
         "words": [
-          "Natural",
+          "Friendly",
           "hand",
           "gestures",
           "and",
           "steady",
           "eye",
           "contact",
-          "strengthen",
-          "speaker",
-          "credibility",
-          "on",
-          "stage"
+          "build",
+          "trust",
+          "with",
+          "your",
+          "audience"
         ]
       },
       {
         "id": 7,
-        "text": "Rehearsing aloud with a timer ensures that each transition fits the schedule.",
-        "en": "Rehearsing aloud with a timer ensures that each transition fits the schedule.",
-        "vi": "Luyện tập nói to với đồng hồ bấm giờ đảm bảo mỗi bước chuyển đều khớp lịch trình.",
-        "ipa": "/rɪˈhɜːrsɪŋ əˈlaʊd wɪð ə ˈtaɪmər ɪnˈʃʊrz ðæt iːtʃ trænˈzɪʃən fɪts ðə ˈskedʒuːl/",
+        "text": "Rehearsing aloud with a timer helps every transition fit your time limit.",
+        "en": "Rehearsing aloud with a timer helps every transition fit your time limit.",
+        "vi": "Tập nói to với đồng hồ bấm giờ giúp mỗi phần chuyển ý vừa đúng thời gian.",
+        "ipa": "/rɪˈhɜːrsɪŋ əˈlaʊd wɪð ə ˈtaɪmər helps ˈevri trænˈzɪʃən fɪt jʊr taɪm ˈlɪmɪt/",
         "words": [
           "Rehearsing",
           "aloud",
           "with",
           "a",
           "timer",
-          "ensures",
-          "that",
-          "each",
+          "helps",
+          "every",
           "transition",
-          "fits",
-          "the",
-          "schedule"
+          "fit",
+          "your",
+          "time",
+          "limit"
         ]
       },
       {
         "id": 8,
-        "text": "An effective summary reviews key insights without repeating the full text.",
-        "en": "An effective summary reviews key insights without repeating the full text.",
-        "vi": "Một phần tổng kết hiệu quả ôn lại các điểm cốt lõi mà không cần lặp lại toàn văn.",
-        "ipa": "/ən ɪˈfektɪv ˈsʌməri rɪˈvjuːz kiː ˈɪnsaɪts wɪðˈaʊt rɪˈpiːtɪŋ ðə fʊl tekst/",
+        "text": "A clear summary reviews your main points without reading the whole essay again.",
+        "en": "A clear summary reviews your main points without reading the whole essay again.",
+        "vi": "Bản tóm tắt rõ ràng nhắc lại các ý chính mà không đọc lại toàn bộ bài luận.",
+        "ipa": "/ə klɪr ˈsʌməri rɪˈvjuːz jʊr meɪn pɔɪnts wɪˈðaʊt ˈriːdɪŋ ðə hoʊl ˈeseɪ əˈɡen/",
         "words": [
-          "An",
-          "effective",
+          "A",
+          "clear",
           "summary",
           "reviews",
-          "key",
-          "insights",
+          "your",
+          "main",
+          "points",
           "without",
-          "repeating",
+          "reading",
           "the",
-          "full",
-          "text"
+          "whole",
+          "essay",
+          "again"
         ]
       }
     ]
@@ -566,63 +571,63 @@ export const readingHubData = {
       {
         "id": 1,
         "speaker": "Elena",
-        "prompt": "Lucas, why should you avoid reading your essay word-for-word at the podium?",
+        "prompt": "Lucas, why should you avoid reading your essay word for word on stage?",
         "options": [
-          "Because reading directly sounds monotone and breaks eye contact with the audience.",
+          "Because reading directly sounds flat and breaks eye contact with the audience.",
           "Because podium lights are too bright to see text.",
           "Because speeches must be whispered quietly."
         ],
-        "answer": "Because reading directly sounds monotone and breaks eye contact with the audience."
+        "answer": "Because reading directly sounds flat and breaks eye contact with the audience."
       },
       {
         "id": 2,
         "speaker": "Elena",
         "prompt": "How do pocket cue cards help you deliver a more natural presentation?",
         "options": [
-          "They display concise bullet points that prompt your memory while keeping delivery conversational.",
+          "They show short key words that help your memory while keeping your voice natural.",
           "They hide your hands so nobody sees them shaking.",
           "They replace the need to understand your topic."
         ],
-        "answer": "They display concise bullet points that prompt your memory while keeping delivery conversational."
+        "answer": "They show short key words that help your memory while keeping your voice natural."
       },
       {
         "id": 3,
         "speaker": "Elena",
         "prompt": "Which phrase is an example of an effective oral signpost?",
         "options": [
-          "'Moving on to our second finding, let us examine the statistical evidence.'",
+          "'Moving on to our second finding, let us look at the class survey results.'",
           "'I have forgotten what my next slide shows.'",
           "'This paragraph has twelve lines and three commas.'"
         ],
-        "answer": "'Moving on to our second finding, let us examine the statistical evidence.'"
+        "answer": "'Moving on to our second finding, let us look at the class survey results.'"
       },
       {
         "id": 4,
         "speaker": "Elena",
-        "prompt": "Why is deliberate pacing essential when explaining complex scientific models?",
+        "prompt": "Why is steady pacing important when explaining hard science ideas?",
         "options": [
-          "It gives listeners sufficient mental time to process unfamiliar concepts and evidence.",
+          "It gives listeners enough time to think about new facts and ideas.",
           "It ensures you finish before the auditorium doors unlock.",
           "It makes the speech twice as loud."
         ],
-        "answer": "It gives listeners sufficient mental time to process unfamiliar concepts and evidence."
+        "answer": "It gives listeners enough time to think about new facts and ideas."
       },
       {
         "id": 5,
         "speaker": "Elena",
         "prompt": "How should you conclude your oral presentation effectively?",
         "options": [
-          "Deliver a concise summary reviewing the central insights and thank the audience.",
+          "Give a short summary of your main points and thank the audience.",
           "Walk off the stage without saying another word.",
           "Re-read the entire paper from page one."
         ],
-        "answer": "Deliver a concise summary reviewing the central insights and thank the audience."
+        "answer": "Give a short summary of your main points and thank the audience."
       }
     ]
   },
   "rw_part6": {
     "instructions": "Read the text about speech preparation and choose the correct function word for each blank space.",
-    "text_template": "Converting an essay into an oral speech requires strategic planning. Instead [1] reading full paragraphs aloud, speakers prepare cue cards with key words. Signposting phrases are used [2] indicate when a new topic begins. Furthermore, presenters practice pacing so [3] listeners have time to understand difficult ideas. In the end, rehearsal ensures [4] the speaker delivers [5] inspiring and articulate presentation.",
+    "text_template": "Turning an essay into a spoken talk takes good planning. Instead [1] reading full pages aloud, speakers write key words on cue cards. Signpost phrases are used [2] show when a new topic begins. Next, speakers practice steady pacing so [3] listeners have time to understand hard ideas. In the end, practice makes sure [4] the speaker gives [5] interesting and clear talk.",
     "answers": {
       "1": "of",
       "2": "to",

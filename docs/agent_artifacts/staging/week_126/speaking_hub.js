@@ -12,9 +12,9 @@ export const speakingHubData = {
   "theme": "From Essay to Speech",
   "cefr_level": "B1+ Academic",
   "talkshow_prompt": {
-    "topic": "Mastering the Art of Converting Essays into Speeches",
-    "question": "Lucas, why is oral signposting more essential in spoken presentations than in written essays?",
-    "model_response": "In a written essay, readers can glance at subheadings, check footnotes, or re-read confusing paragraphs at their own pace. But in an oral presentation, the audience hears your words only once in real time! Signposting markers like 'Moving on to our next question' or 'Turning our attention to the data' act as mental road signs. They prepare listeners for what comes next, keeping everyone united and engaged throughout the entire speech!"
+    "topic": "Turning a Written Essay into a Good Speech",
+    "question": "Lucas, why are spoken signposts more helpful in a speech than in a written essay?",
+    "model_response": "In a written essay, readers can look at headings or read hard parts again slowly. But in a speech, the audience hears your words only once! Spoken signpost phrases like 'Moving on to our next question' act like road signs so every listener can follow your talk."
   },
   "info_exchange_cards": {
     "table_a": {
@@ -32,7 +32,7 @@ export const speakingHubData = {
             "Where is the workshop?",
             "Where does Lucas attend the workshop?"
           ],
-          "nova_reply": "The workshop is held in the university debate lecture auditorium."
+          "nova_reply": "The workshop is held in the school speech hall."
         },
         {
           "id": "field_a2",
@@ -44,7 +44,7 @@ export const speakingHubData = {
             "What core skill do they learn?",
             "What is taught in the session?"
           ],
-          "nova_reply": "Techniques for condensing essay paragraphs into keyword cue cards."
+          "nova_reply": "How to turn long essay paragraphs into short cue card notes."
         },
         {
           "id": "field_a3",
@@ -68,7 +68,7 @@ export const speakingHubData = {
             "Who is the speech coach?",
             "Who leads the training session?"
           ],
-          "nova_reply": "Professor Elena Vance, a national collegiate debate champion."
+          "nova_reply": "Coach Elena Vance, a two-time national school debate winner."
         },
         {
           "id": "field_a5",
@@ -91,25 +91,25 @@ export const speakingHubData = {
       "fields": [
         {
           "id": "field_b1",
-          "cue_prompt": "where / speech rehearsal studio located?",
+          "cue_prompt": "where / speech practice room located?",
           "cue_word": "where",
-          "value": "On the third floor of the civic arts center.",
-          "nova_question": "Where is the speech rehearsal studio located?",
+          "value": "On the third floor of the community arts center.",
+          "nova_question": "Where is the speech practice room located?",
           "acceptable_answers": [
-            "On the third floor of the civic arts center.",
-            "At the civic arts center.",
-            "Third floor of the civic arts center."
+            "On the third floor of the community arts center.",
+            "At the community arts center.",
+            "Third floor of the community arts center."
           ]
         },
         {
           "id": "field_b2",
           "cue_prompt": "what / maximum number of words per cue card?",
           "cue_word": "what",
-          "value": "Six bullet point keywords to prevent verbatim reading.",
+          "value": "Six short key words so speakers do not read word for word.",
           "nova_question": "What is the maximum number of words per cue card?",
           "acceptable_answers": [
-            "Six bullet point keywords to prevent verbatim reading.",
-            "Six bullet point keywords.",
+            "Six short key words so speakers do not read word for word.",
+            "Six short key words.",
             "Six words per card."
           ]
         },
@@ -129,12 +129,12 @@ export const speakingHubData = {
           "id": "field_b4",
           "cue_prompt": "who / evaluates the final presentations?",
           "cue_word": "who",
-          "value": "A panel of three professional communications instructors.",
+          "value": "A team of three school speech teachers.",
           "nova_question": "Who evaluates the final student presentations?",
           "acceptable_answers": [
-            "A panel of three professional communications instructors.",
-            "Three communications instructors.",
-            "Professional instructors."
+            "A team of three school speech teachers.",
+            "Three speech teachers.",
+            "School speech teachers."
           ]
         },
         {
@@ -153,4 +153,5 @@ export const speakingHubData = {
     }
   }
 };
+
 export default speakingHubData;

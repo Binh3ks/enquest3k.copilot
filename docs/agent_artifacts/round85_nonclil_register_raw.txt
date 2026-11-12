@@ -1,0 +1,337 @@
+========================================================================
+ROUND 85 NON-CLIL CEFR B1+ REGISTER AUDIT & WORDLIST CROSS-CHECK
+Generated: 2026-11-12T10:29:26.716Z
+Before Reference Commit (Round 84 HEAD): 0347975fb7f84808b23901179b562ba167853774
+========================================================================
+
+0. REPOSITORY CAMBRIDGE WORDLIST INVENTORY (src/data/official_wordlists/):
+  - starters_pre_a1.json: 504 entries (a .. zoo)
+  - movers_a1.json: 412 entries (above .. zoe)
+  - flyers_a2.json: 519 entries (a few .. zero)
+  - ket_a2.json: 316 entries (ability .. candidate)
+  - pet_b1.json: 481 entries (abroad .. candidate)
+  Cumulative whitelist entries indexed: 1679
+  NOTE: ket_a2.json & pet_b1.json in this repo span ONLY letters A-C (ending at "candidate").
+
+========================================================================
+WEEK 126: From Essay to Speech
+========================================================================
+  Sync Checks: vocab<->reading_hub=PASS | shadowing<->listening_hub=PASS | panel_pills_aligned=PASS | singapore_math_unchanged=PASS
+  vocab[].example_en (20):
+    BEFORE: Avg=11.4w | Max=14w | Uncalibrated_FK=12.1 | Unlisted A-C=19, D-Z=70
+    AFTER : Avg=11.2w | Max=13w | Uncalibrated_FK=6.4 | Unlisted A-C=6, D-Z=24
+  shadowing/dictation (8):
+    BEFORE: Avg=11.9w | Max=13w | Uncalibrated_FK=10.7 | Unlisted A-C=4, D-Z=33
+    AFTER : Avg=12.5w | Max=14w | Uncalibrated_FK=6.9 | Unlisted A-C=2, D-Z=16
+  Combined Non-CLIL Sentences (example_en + shadowing/dictation + drills + rw_part6 + writing model):
+    BEFORE: Avg=14.2w | Max=61w | Uncalibrated_FK=12.4 | Unlisted A-C=27, D-Z=109
+    AFTER : Avg=14.1w | Max=58w | Uncalibrated_FK=7.4 | Unlisted A-C=7, D-Z=42
+  Unlisted A-C Audit (7):
+    - clearly: A2/B1 adverb from "clear"
+    - contact: B1 everyday noun ("eye contact")
+    - contrast: B1 everyday noun ("show contrast")
+    - clear: A2/B1 core adjective
+    - contest: A2/B1 school noun ("speech contest")
+    - celebrates: B1 everyday verb
+    - copy: A2/B1 school verb
+  Unlisted D-Z Audit (42):
+    - speakers: Everyday noun ("speak" + -er)
+    - main: A2/B1 everyday adjective
+    - listeners: Everyday noun ("listen" + -er)
+    - easily: A2/B1 adverb from "easy"
+    - smooth: B1 everyday adjective
+    - share: A2/B1 everyday verb
+    - reasons: Plural of A2/B1 "reason"
+    - feelings: A2/B1 noun ("feel" + -ing)
+    - whole: A2/B1 everyday adjective
+    - debaters: Derived from "debate"
+    - even: A2/B1 everyday adverb
+    - onto: A2/B1 preposition
+    - note: A2/B1 school noun ("note cards")
+    - steady: B1 everyday adjective
+    - vocal: Derived from A2 "voice" (paired with W126 delivery/emphasis)
+    - however: Source B W127 grammar focus ("However")
+    - three: A1 number word
+    - timer: Derived from A1 "time"
+    - speech: W126 theme word ("From Essay to Speech")
+    - signals: Plural of B1 "signal"
+    - voice: A2/B1 everyday noun
+    - row: A2/B1 everyday noun ("back row")
+    - endings: A2/B1 plural noun ("word endings")
+    - honesty: Derived from "honest"
+    - essay: W126 theme word ("From Essay to Speech")
+    - phrases: Everyday classroom English term
+    - survey: W133 syllabus target word
+    - results: B1 everyday noun
+    - pauses: Plural of "pause"
+    - trust: B1 everyday verb/noun
+    - fit: A2/B1 everyday verb
+    - limit: B1 everyday noun ("time limit")
+    - reviews: 3sg of B1 "review"
+    - data: W133 syllabus target word
+    - examined: Grammar anchor W126 ("Having examined...")
+    - plan: A2/B1 everyday noun/verb
+    - loans: Everyday library noun ("book loans")
+    - pause: B1 everyday noun/verb
+    - varying: -ing form of B1 "vary" (grammar drill anchor)
+    - planning: -ing form of "plan"
+    - topic: B1 everyday noun
+    - simple: A2/B1 everyday adjective
+  Whole-Week Non-Target C1 Token Scan across ALL 6 files: 0 hits (PASS)
+
+========================================================================
+WEEK 127: Rebuttal Practice
+========================================================================
+  Sync Checks: vocab<->reading_hub=PASS | shadowing<->listening_hub=PASS | panel_pills_aligned=PASS | singapore_math_unchanged=PASS
+  vocab[].example_en (20):
+    BEFORE: Avg=11.4w | Max=15w | Uncalibrated_FK=12.1 | Unlisted A-C=16, D-Z=81
+    AFTER : Avg=11.3w | Max=14w | Uncalibrated_FK=6.6 | Unlisted A-C=6, D-Z=35
+  shadowing/dictation (8):
+    BEFORE: Avg=12w | Max=14w | Uncalibrated_FK=12.1 | Unlisted A-C=7, D-Z=31
+    AFTER : Avg=12.1w | Max=14w | Uncalibrated_FK=7.4 | Unlisted A-C=6, D-Z=24
+  Combined Non-CLIL Sentences (example_en + shadowing/dictation + drills + rw_part6 + writing model):
+    BEFORE: Avg=14.4w | Max=62w | Uncalibrated_FK=13.2 | Unlisted A-C=27, D-Z=132
+    AFTER : Avg=14.3w | Max=63w | Uncalibrated_FK=8.2 | Unlisted A-C=15, D-Z=68
+  Unlisted A-C Audit (15):
+    - claim: W134 syllabus target word / B1 debate core verb-noun
+    - cost: A2/B1 everyday verb/noun
+    - checked: Past/participle of "check"
+    - checkout: Everyday school library term ("library checkout numbers")
+    - conclusion: W134 syllabus target word / B1 debate term
+    - check: A2/B1 classroom verb
+    - contrary: Source B W127 grammar focus ("On the contrary")
+    - claims: Plural of "claim"
+    - conclusions: Plural of "conclusion"
+    - clear: A2/B1 core adjective
+    - costs: Plural/3sg of "cost"
+    - bigger: Comparative of A1 "big"
+    - creates: B1 verb ("create")
+    - confident: B1 everyday adjective
+    - case: A2/B1 everyday noun ("debating your case")
+  Unlisted D-Z Audit (68):
+    - debaters: Derived from "debate"
+    - rules: Plural of "rule"
+    - politely: Source B W127 focus ("Disagreeing politely")
+    - shared: Past tense of "share"
+    - three: A1 number word
+    - recent: B1 everyday adjective
+    - helpful: Derived from A1 "help"
+    - proved: Past tense of "prove"
+    - facts: Plural of "fact"
+    - speakers: Everyday noun ("speak" + -er)
+    - directly: B1 adverb from "direct"
+    - survey: W133 syllabus target word
+    - smart: A2/B1 everyday adjective
+    - fact: A2/B1 everyday noun
+    - rest: A1/A2 everyday noun
+    - main: A2/B1 everyday adjective
+    - tested: Past tense of "test"
+    - five: A1 number word
+    - nobody: A2/B1 pronoun
+    - trick: A2/B1 everyday noun
+    - final: A2/B1 adjective
+    - fails: B1 everyday verb
+    - debate: Course-wide theme word ("school debate")
+    - real: A2/B1 everyday adjective
+    - judges: A2/B1 noun ("debate judges")
+    - health: A2/B1 everyday noun
+    - fresh: A2/B1 adjective ("fresh fruit")
+    - soda: A2/B1 everyday drink noun
+    - equal: A2/B1 adjective ("feel equal")
+    - tests: Plural/3sg of "test"
+    - rumor: B1 everyday noun
+    - energy: B1 everyday noun ("clean energy")
+    - stepped: Past tense of A2 "step"
+    - microphone: A2/B1 everyday classroom noun
+    - test: A1/A2 everyday verb/noun
+    - wastes: 3sg of B1 "waste"
+    - tools: A2/B1 everyday noun
+    - skilled: Derived from A2/B1 "skill"
+    - ignoring: -ing form of "ignore"
+    - prove: B1 everyday verb
+    - opponents: W127/debate core B1 noun ("the other side")
+    - strict: B1 everyday adjective
+    - data: W133 syllabus target word
+    - education: B1 everyday noun
+    - focus: B1 everyday verb
+    - reasons: Plural of A2/B1 "reason"
+    - reasoning: W134 syllabus target word
+    - weakens: 3sg of B1 "weaken" ("weak" + -en)
+    - unfair: B1 everyday adjective ("un-" + "fair")
+    - whether: B1 conjunction
+    - polite: B1 everyday adjective
+    - skills: A2/B1 everyday plural noun
+    - scientific: Derived from A2 "science"
+    - proves: 3sg of "prove"
+    - power: A2/B1 noun ("clean power")
+    - term: B1 everyday school noun ("long-term")
+    - savings: B1 plural noun ("save" + -ings)
+    - useful: A2/B1 everyday adjective
+    - invalid: W134 syllabus target word
+    - even: A2/B1 everyday adverb
+    - dealing: Gerund of B1 "deal" ("deal with")
+    - own: A2/B1 everyday determiner/adjective
+    - modern: A2/B1 adjective
+    - solar: B1 everyday science adjective ("solar power")
+    - extra: A2/B1 everyday adjective
+    - grids: B1 noun ("power grids")
+    - steady: B1 everyday adjective
+    - proving: -ing form of "prove"
+  Whole-Week Non-Target C1 Token Scan across ALL 6 files: 0 hits (PASS)
+
+========================================================================
+WEEK 133: Deep Research & Data
+========================================================================
+  Sync Checks: vocab<->reading_hub=PASS | shadowing<->listening_hub=PASS | panel_pills_aligned=PASS | singapore_math_unchanged=PASS
+  vocab[].example_en (20):
+    BEFORE: Avg=11.8w | Max=14w | Uncalibrated_FK=14 | Unlisted A-C=11, D-Z=75
+    AFTER : Avg=12.3w | Max=14w | Uncalibrated_FK=6.6 | Unlisted A-C=7, D-Z=25
+  shadowing/dictation (8):
+    BEFORE: Avg=12.3w | Max=15w | Uncalibrated_FK=15.8 | Unlisted A-C=5, D-Z=36
+    AFTER : Avg=12.8w | Max=15w | Uncalibrated_FK=9.2 | Unlisted A-C=4, D-Z=13
+  Combined Non-CLIL Sentences (example_en + shadowing/dictation + drills + rw_part6 + writing model):
+    BEFORE: Avg=14.5w | Max=62w | Uncalibrated_FK=15.4 | Unlisted A-C=17, D-Z=119
+    AFTER : Avg=14.6w | Max=59w | Uncalibrated_FK=9 | Unlisted A-C=10, D-Z=47
+  Unlisted A-C Audit (10):
+    - clear: A2/B1 core adjective
+    - checked: Past/participle of "check"
+    - chose: Past simple of A2 "choose"
+    - chart: A2/B1 everyday classroom noun
+    - charts: Plural of "chart"
+    - check: A2/B1 classroom verb
+    - cooperate: B1 school collaboration verb
+    - checking: Gerund of "check"
+    - claims: Plural of "claim"
+    - cooperative: Derived from "cooperate"
+  Unlisted D-Z Audit (47):
+    - seventy: A1/A2 number word
+    - twelve: A1 number word
+    - four: A1 number word
+    - free: A1/A2 adjective ("free time")
+    - real: A2/B1 everyday adjective
+    - speakers: Everyday noun ("speak" + -er)
+    - trust: B1 everyday verb/noun
+    - debate: Course-wide theme word ("school debate")
+    - grade: A2/B1 school noun
+    - whole: A2/B1 everyday adjective
+    - researchers: Derived from "research"
+    - five: A1 number word
+    - percentages: Plural of W133 target "percent" (+ -age)
+    - shared: Past tense of "share"
+    - scientists: A2/B1 noun
+    - noticed: Past tense of A2/B1 "notice"
+    - sleepy: A2/B1 everyday adjective ("sleep" + -y)
+    - tracked: Past tense of A2/B1 "track"
+    - simple: A2/B1 everyday adjective
+    - ten: A1 number word
+    - per: A2/B1 preposition ("per week")
+    - main: A2/B1 everyday adjective
+    - evidence: W127 syllabus target word
+    - facts: Plural of "fact"
+    - tested: Past tense of "test"
+    - trouble: A2/B1 everyday noun
+    - random: B1 adjective ("random sample")
+    - two: A1 number word
+    - personal: B1 everyday adjective
+    - sharing: -ing form of "share"
+    - exact: B1 adjective
+    - test: A1/A2 everyday verb/noun
+    - health: A2/B1 everyday noun
+    - demonstrate: W133 grammar anchor ("Statistics demonstrate that...")
+    - reveals: 3sg of "reveal"
+    - teamwork: Everyday compound ("team" + "work")
+    - skills: A2/B1 everyday plural noun
+    - reported: Past tense of A2/B1 "report"
+    - debates: Plural of "debate"
+    - rely: B1 verb ("rely on")
+    - support: B1 everyday verb
+    - recent: B1 everyday adjective
+    - habits: B1 everyday noun
+    - honest: B1 everyday adjective
+    - proof: B1 everyday noun
+    - friendships: B1 everyday plural noun ("friend" + -ship)
+    - reveal: B1 verb ("survey results show/reveal")
+  W133 Syllabus Target Words Kept in B1+ Context:
+    - [methodology] def="A clear, step-by-step plan for doing a study or survey" | ex="Our club shared its full methodology so other classes could repeat the same steps."
+    - [empirical] def="Based on real facts and tests you can actually check" | ex="Empirical evidence—real facts you can check—is stronger than one person's guess."
+    - shadow#5: "Empirical evidence uses real facts we can check instead of personal guesses."
+    - shadow#7: "Sharing your exact methodology helps other students repeat the same survey safely."
+  Whole-Week Non-Target C1 Token Scan across ALL 6 files: 0 hits (PASS)
+
+========================================================================
+WEEK 134: Identifying Fallacies
+========================================================================
+  Sync Checks: vocab<->reading_hub=PASS | shadowing<->listening_hub=PASS | panel_pills_aligned=PASS | singapore_math_unchanged=PASS
+  vocab[].example_en (20):
+    BEFORE: Avg=11.7w | Max=15w | Uncalibrated_FK=14.9 | Unlisted A-C=12, D-Z=75
+    AFTER : Avg=11.3w | Max=13w | Uncalibrated_FK=7.5 | Unlisted A-C=6, D-Z=28
+  shadowing/dictation (8):
+    BEFORE: Avg=11.4w | Max=13w | Uncalibrated_FK=14.7 | Unlisted A-C=8, D-Z=29
+    AFTER : Avg=11.5w | Max=13w | Uncalibrated_FK=8.1 | Unlisted A-C=4, D-Z=18
+  Combined Non-CLIL Sentences (example_en + shadowing/dictation + drills + rw_part6 + writing model):
+    BEFORE: Avg=14.4w | Max=70w | Uncalibrated_FK=14.8 | Unlisted A-C=20, D-Z=115
+    AFTER : Avg=13.8w | Max=67w | Uncalibrated_FK=8.8 | Unlisted A-C=9, D-Z=50
+  Unlisted A-C Audit (9):
+    - costs: Plural/3sg of "cost"
+    - clearly: A2/B1 adverb from "clear"
+    - clear: A2/B1 core adjective
+    - checking: Gerund of "check"
+    - ad: B1 everyday short noun ("advertisement")
+    - check: A2/B1 classroom verb
+    - creates: B1 verb ("create")
+    - ads: Plural of "ad"
+    - critical: B1 phrase ("critical thinking")
+  Unlisted D-Z Audit (50):
+    - gamers: Everyday youth noun ("video gamers")
+    - unfair: B1 everyday adjective ("un-" + "fair")
+    - two: A1 number word
+    - whole: A2/B1 everyday adjective
+    - objection: W127 syllabus target word
+    - facts: Plural of "fact"
+    - sharing: -ing form of "share"
+    - debate: Course-wide theme word ("school debate")
+    - fails: B1 everyday verb
+    - simple: A2/B1 everyday adjective
+    - proof: B1 everyday noun
+    - tricks: Plural of "trick"
+    - final: A2/B1 adjective
+    - supported: Past/participle of "support"
+    - three: A1 number word
+    - separate: B1 everyday adjective
+    - surveys: Plural of "survey"
+    - detective: A2/B1 everyday story noun
+    - ruled: Past tense of "rule" ("ruled out")
+    - rule: A2/B1 school noun
+    - real: A2/B1 everyday adjective
+    - researchers: Derived from "research"
+    - personal: B1 everyday adjective
+    - survey: W133 syllabus target word
+    - results: B1 everyday noun
+    - healthy: A2/B1 adjective
+    - judges: A2/B1 noun ("debate judges")
+    - testing: -ing form of "test"
+    - thinkers: Derived from A1 "think"
+    - tend: W134 grammar/check target ("tend to")
+    - teamwork: Everyday compound ("team" + "work")
+    - solving: From A2/B1 "solve" ("problem solving")
+    - skills: A2/B1 everyday plural noun
+    - whether: B1 conjunction
+    - spotting: -ing form of A2/B1 "spot"
+    - protects: 3sg of "protect"
+    - tricky: B1 everyday adjective ("trick" + -y)
+    - rumors: Plural of "rumor"
+    - leads: B1 verb ("lead to")
+    - honest: B1 everyday adjective
+    - polite: B1 everyday adjective
+    - debates: Plural of "debate"
+    - single: A2/B1 everyday adjective
+    - rests: 3sg of "rest" ("rests on")
+    - extreme: B1 everyday adjective
+    - smart: A2/B1 everyday adjective
+    - speakers: Everyday noun ("speak" + -er)
+    - protect: B1 everyday verb
+    - ignores: B1 everyday verb
+    - research: B1 school noun
+  Whole-Week Non-Target C1 Token Scan across ALL 6 files: 0 hits (PASS)
+
+SUMMARY TOTALS: unjustified_tokens=0 | non_target_C1_hits=0 | sync_errors=0

@@ -18,7 +18,7 @@ export const writingHubData = {
     "min_sentences": 3,
     "min_words": 20,
     "max_words": 90,
-    "model_sentence": "Claiming that all video gamers are lazy and unmotivated represents an invalid hasty generalization fallacy. This flawed assumption ignores empirical research showing that many gamers develop strategic thinking and teamwork skills. To maintain academic soundness, critical thinkers must use careful qualifiers, noting that while excessive gaming may impair some students, many players manage their screen time responsibly.",
+    "model_sentence": "Claiming that all video gamers are lazy is an invalid hasty generalization fallacy. This weak assumption ignores real research showing that many gamers build problem-solving and teamwork skills. To keep arguments sound, careful speakers use words like some and often so their points stay fair.",
     "word_bank": [
       "fallacy",
       "generalization",
@@ -32,25 +32,25 @@ export const writingHubData = {
       "stereotype"
     ],
     "sentence_frames": [
-      "Claiming that all gamers are lazy represents a classic hasty ___ fallacy.",
-      "This invalid argument rests on a completely false ___.",
-      "In contrast, empirical studies prove that ___ players build strong problem-solving skills.",
-      "Ultimately, using qualifiers like 'often' and 'tend to' ensures logical ___."
+      "Claiming that all gamers are lazy is a classic hasty ___ fallacy.",
+      "This invalid point rests on a completely false ___.",
+      "In contrast, real studies show that ___ players build strong teamwork skills.",
+      "Finally, using words like 'often' and 'tend to' keeps our logic ___."
     ],
     "panels": [
       {
         "panel_id": "panel_1",
-        "title_en": "Panel 1: Identifying the Universal Claim",
+        "title_en": "Panel 1: Spotting Extreme All-or-Never Claims",
         "title_vi": "Khung 1: Nhận Diện Khẳng Định Tuyệt Đối",
         "image_url": "/images/week134/writing_panel_1.png",
         "image_prompt": "A student circling words like ALL and NEVER in red marker on a printed newspaper editorial.",
-        "caption": "Absolute universal claims often signal an invalid generalization fallacy.",
-        "sentence_frame": "The editorial [makes an absolute universal claim] that [all digital gamers lack academic motivation].",
+        "caption": "Words like all and never often show an unfair generalization.",
+        "sentence_frame": "The writer [makes an extreme all-group claim] that [all video gamers feel lazy].",
         "pills": [
-          "makes an absolute universal claim",
-          "all digital gamers lack academic motivation",
-          "sweeping generalization",
-          "unsubstantiated stereotype"
+          "makes an extreme all-group claim",
+          "all video gamers feel lazy",
+          "broad generalization",
+          "unfair stereotype"
         ],
         "connectors": [
           "First,",
@@ -65,31 +65,31 @@ export const writingHubData = {
         "image_url": "/images/week134/writing_panel_2.png",
         "image_prompt": "A balance scale tipping unevenly with one single anecdotal feather outweighing massive research books.",
         "caption": "Drawing sweeping conclusions from isolated cases invalidates deductive reasoning.",
-        "sentence_frame": "The writer [draws an invalid sweeping deduction] from [isolated individual anecdotes].",
+        "sentence_frame": "The writer [makes an invalid quick guess] from [one or two stories].",
         "pills": [
-          "draws an invalid sweeping deduction",
-          "isolated individual anecdotes",
-          "unreliable premise",
-          "logical fallacy"
+          "makes an invalid quick guess",
+          "one or two stories",
+          "weak premise",
+          "logic fallacy"
         ],
         "connectors": [
           "However,",
-          "Upon scrutiny,",
-          "In reality,"
+          "Look closely,",
+          "In fact,"
         ]
       },
       {
         "panel_id": "panel_3",
-        "title_en": "Panel 3: Introducing Epistemic Qualifiers",
-        "title_vi": "Khung 3: Đưa Vào Các Từ Chỉ Mức Độ",
+        "title_en": "Panel 3: Using Careful Qualifying Words",
+        "title_vi": "Khung 3: Dùng Từ Giới Hạn Cẩn Thận",
         "image_url": "/images/week134/writing_panel_3.png",
         "image_prompt": "A student typing on a laptop screen replacing the word ALL with SOME and TEND TO in bold font.",
-        "caption": "Careful qualifiers replace absolute universal words with nuanced precision.",
-        "sentence_frame": "Critical thinkers [replace absolute universal words] with [careful qualifiers like some and often].",
+        "caption": "Careful words like some and often replace extreme words like always.",
+        "sentence_frame": "Careful speakers [replace extreme all-or-never words] with [careful words like some and often].",
         "pills": [
-          "replace absolute universal words",
-          "careful qualifiers like some and often",
-          "nuanced factual precision",
+          "replace extreme all-or-never words",
+          "careful words like some and often",
+          "fair and accurate facts",
           "avoids generalization"
         ],
         "connectors": [
@@ -100,31 +100,31 @@ export const writingHubData = {
       },
       {
         "panel_id": "panel_4",
-        "title_en": "Panel 4: Restoring Intellectual Soundness",
-        "title_vi": "Khung 4: Khôi Phục Tính Xác Đáng Trí Tuệ",
+        "title_en": "Panel 4: Building Fair, Sound Logic",
+        "title_vi": "Khung 4: Xây Dựng Lập Luận Vững Chắc",
         "image_url": "/images/week134/writing_panel_4.png",
         "image_prompt": "A logic seminar discussion board showing verified premises connecting smoothly to sound conclusions.",
-        "caption": "Sound reasoning grounded in true premises fosters honest academic discourse.",
-        "sentence_frame": "Sound argumentation [ensures that conclusions follow logically] from [factually true empirical premises].",
+        "caption": "True starting facts and fair logic build honest school debates.",
+        "sentence_frame": "Fair argumentation [makes sure conclusions follow] from [true checked facts].",
         "pills": [
-          "ensures that conclusions follow logically",
-          "factually true empirical premises",
-          "valid intellectual soundness",
-          "honest academic discourse"
+          "makes sure conclusions follow",
+          "true checked facts",
+          "clear logic soundness",
+          "honest school debate"
         ],
         "connectors": [
-          "Ultimately,",
+          "Finally,",
           "In conclusion,",
-          "Consequently,"
+          "Because of this,"
         ]
       }
     ],
     "ladder_stages": [
       {
         "badge_label": "MODEL",
-        "title": "Stage 1: Stating the Flawed Generalization",
+        "title": "Stage 1: Spotting the Unfair Claim",
         "image_url": "/images/week134/writing_panel_1.png",
-        "caption": "Absolute universal claims often signal an invalid generalization fallacy.",
+        "caption": "Words like all and never often show an unfair generalization.",
         "frame_L1": "The editorial claims that all video gamers are lazy. This is an invalid generalization fallacy.",
         "connectors": [
           "First,",
@@ -139,12 +139,12 @@ export const writingHubData = {
           "hasty generalization fallacy."
         ],
         "pills": [
-          "all gamers are lazy",
-          "hasty generalization fallacy",
-          "absolute universal claim",
-          "unproven assumption"
+          "makes an extreme all-group claim",
+          "all video gamers feel lazy",
+          "broad generalization",
+          "unfair stereotype"
         ],
-        "sentence_frame": "The editorial [makes an absolute universal claim] that [all digital gamers lack academic motivation]."
+        "sentence_frame": "The writer [makes an extreme all-group claim] that [all video gamers feel lazy]."
       },
       {
         "badge_label": "BUILD",
@@ -154,23 +154,23 @@ export const writingHubData = {
         "frame_L1": "The assumption is false. Many students play games and still earn excellent grades.",
         "connectors": [
           "However,",
-          "In reality,",
-          "Upon examination,"
+          "Look closely,",
+          "In fact,"
         ],
         "sentence_hint": "Write 2 sentences explaining why the premise is factually untrue.",
         "pills": [
-          "assumption is false",
-          "earn excellent grades",
-          "isolated examples",
-          "cannot support generalization"
+          "makes an invalid quick guess",
+          "one or two stories",
+          "weak premise",
+          "logic fallacy"
         ],
-        "sentence_frame": "The writer [draws an invalid sweeping deduction] from [isolated individual anecdotes]."
+        "sentence_frame": "The writer [makes an invalid quick guess] from [one or two stories]."
       },
       {
         "badge_label": "WRITE",
         "title": "Stage 3: Rewriting with Careful Qualifiers",
         "image_url": "/images/week134/writing_panel_3.png",
-        "caption": "Careful qualifiers replace absolute universal words with nuanced precision.",
+        "caption": "Careful words like some and often replace extreme words like always.",
         "frame_L1": "We should use words like 'some' and 'often'. While some kids play too much, many play responsibly.",
         "connectors": [
           "Instead,",
@@ -179,34 +179,35 @@ export const writingHubData = {
         ],
         "sentence_hint": "Write 2 sentences using 'some', 'many', or 'tend to' to state the truth accurately.",
         "pills": [
-          "words like some and often",
-          "some kids play too much",
-          "many play responsibly",
-          "nuanced precision"
+          "replace extreme all-or-never words",
+          "careful words like some and often",
+          "fair and accurate facts",
+          "avoids generalization"
         ],
-        "sentence_frame": "Critical thinkers [replace absolute universal words] with [careful qualifiers like some and often]."
+        "sentence_frame": "Careful speakers [replace extreme all-or-never words] with [careful words like some and often]."
       },
       {
         "badge_label": "EXPAND",
-        "title": "Stage 4: Synthesizing the Critical Thinking Lesson",
+        "title": "Stage 4: Building Fair, Sound Logic",
         "image_url": "/images/week134/writing_panel_4.png",
-        "caption": "Sound reasoning grounded in true premises fosters honest academic discourse.",
+        "caption": "True starting facts and fair logic build honest school debates.",
         "frame_L1": "Sound logic requires true premises. Spotting fallacies protects us from misleading advertisements and bias.",
         "connectors": [
-          "Ultimately,",
+          "Finally,",
           "In conclusion,",
-          "Consequently,"
+          "Because of this,"
         ],
         "sentence_hint": "Write 2 sentences summarizing why identifying fallacies strengthens critical thinking.",
         "pills": [
-          "sound logic requires truth",
-          "spotting fallacies protects us",
-          "misleading bias",
-          "critical thinking skills"
+          "makes sure conclusions follow",
+          "true checked facts",
+          "clear logic soundness",
+          "honest school debate"
         ],
-        "sentence_frame": "Sound argumentation [ensures that conclusions follow logically] from [factually true empirical premises]."
+        "sentence_frame": "Fair argumentation [makes sure conclusions follow] from [true checked facts]."
       }
     ]
   }
 };
+
 export default writingHubData;

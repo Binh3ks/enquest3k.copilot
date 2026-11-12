@@ -14,7 +14,7 @@ export const speakingHubData = {
   "talkshow_prompt": {
     "topic": "The Mechanics of Strategic Debate Rebuttals",
     "question": "Nora, why should debaters avoid simply repeating their original speech during a rebuttal round?",
-    "model_response": "Simply repeating your original points signals to the judges that you did not listen to the debate! A true rebuttal must grapple directly with what your opponent just said. By using the 'They say... but I say...' formula, you prove you heard their point, identify their logical flaw, and deploy fresh evidence to dismantle their premise. That is what wins competitive debate rounds!"
+    "model_response": "Simply repeating your first speech tells judges you did not listen! A real rebuttal answers what your opponent just said. Using 'They say... but I say...' shows you heard their point, spotted the mistake, and brought better facts to answer it."
   },
   "info_exchange_cards": {
     "table_a": {
@@ -44,7 +44,7 @@ export const speakingHubData = {
             "What was the debate topic?",
             "What resolution did they debate?"
           ],
-          "nova_reply": "Whether governments should mandate 100 percent renewable energy by 2035."
+          "nova_reply": "Whether cities should switch to 100 percent clean energy by 2035."
         },
         {
           "id": "field_a3",
@@ -80,12 +80,12 @@ export const speakingHubData = {
             "Why did Nora receive high marks?",
             "Why was her rebuttal effective?"
           ],
-          "nova_reply": "Because she directly dismantled the opposition's data without personal insults."
+          "nova_reply": "Because she answered the other team’s numbers politely without personal insults."
         }
       ]
     },
     "table_b": {
-      "title": "Judge Miller's Adjudication Sheet",
+      "title": "Judge Miller's Debate Score Sheet",
       "subtitle": "Information Card (Answer Examiner's Questions)",
       "person": "Judge Miller",
       "fields": [
@@ -105,12 +105,12 @@ export const speakingHubData = {
           "id": "field_b2",
           "cue_prompt": "what / main scoring criterion for rebuttals?",
           "cue_word": "what",
-          "value": "Direct responsiveness to opponents' arguments and logical soundness.",
+          "value": "Direct answers to opposing points and clear, fair facts.",
           "nova_question": "What was the main scoring criterion for rebuttals?",
           "acceptable_answers": [
-            "Direct responsiveness to opponents' arguments and logical soundness.",
-            "Direct responsiveness and logical soundness.",
-            "Responsiveness and logic."
+            "Direct answers to opposing points and clear, fair facts.",
+            "Direct answers and clear facts.",
+            "Fair logic and facts."
           ]
         },
         {
@@ -129,10 +129,10 @@ export const speakingHubData = {
           "id": "field_b4",
           "cue_prompt": "who / won the best speaker award?",
           "cue_word": "who",
-          "value": "Nora received the award for her articulate cross-examination.",
+          "value": "Nora won best speaker for her clear, polite rebuttal answers.",
           "nova_question": "Who won the best speaker award?",
           "acceptable_answers": [
-            "Nora received the award for her articulate cross-examination.",
+            "Nora won best speaker for her clear, polite rebuttal answers.",
             "Nora.",
             "Nora won best speaker."
           ]
@@ -141,16 +141,17 @@ export const speakingHubData = {
           "id": "field_b5",
           "cue_prompt": "why / debaters avoid personal attacks?",
           "cue_word": "why",
-          "value": "Because personal attacks commit an ad hominem fallacy and lose points.",
+          "value": "Because personal insults attack the person instead of the idea and lose points.",
           "nova_question": "Why must debaters avoid personal attacks?",
           "acceptable_answers": [
-            "Because personal attacks commit an ad hominem fallacy and lose points.",
-            "They commit a fallacy and lose points.",
-            "Personal attacks are fallacious."
+            "Because personal insults attack the person instead of the idea and lose points.",
+            "They attack the person instead of the idea.",
+            "Personal insults lose points."
           ]
         }
       ]
     }
   }
 };
+
 export default speakingHubData;

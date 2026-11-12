@@ -1,0 +1,189 @@
+========================================================================
+ROUND 84 CEFR B1+ CLIL REGISTER AUDIT & WORDLIST CROSS-CHECK
+Generated: 2026-11-12T10:29:26.892Z
+Before Reference Commit: 0e7419a6e69b7157d33434da26acbe5d713b4c3b
+========================================================================
+
+0. REPOSITORY CAMBRIDGE WORDLIST INVENTORY (src/data/official_wordlists/):
+  - starters_pre_a1.json: 504 entries (a .. zoo)
+  - movers_a1.json: 412 entries (above .. zoe)
+  - flyers_a2.json: 519 entries (a few .. zero)
+  - ket_a2.json: 316 entries (ability .. candidate)
+  - pet_b1.json: 481 entries (abroad .. candidate)
+  Cumulative whitelist entries indexed: 1679
+  NOTE: ket_a2.json & pet_b1.json in this repo span ONLY letters A-C (ending at "candidate").
+        Therefore, unlisted A-C tokens indicate genuine absence from PET A-C, while
+        unlisted D-Z tokens indicate words outside Flyers A2 (+ must be checked as B1/everyday).
+
+========================================================================
+WEEK 126: From Essay to Speech (From Essay to Speech: Delivering Spoken Ideas)
+========================================================================
+BEFORE (Round 83 commit 0e7419a6):
+  Words=167 | Sentences=9 | AvgWords/Sent=18.6 | MaxSent=28 | Uncalibrated_FK=12.4
+  Target Vocab Coverage: 20/20 (100%)
+  Unlisted A-C: [compelling, convert, containing, concise, clear, complex, claims]
+  Unlisted D-Z: [essay, speech, requires, unlike, readers, paragraph, formatting, essays, verbatim, monotone, sheets, effective, speakers, keywords, prompts, listeners, engaged, hook, final, guide, shifts, topic, markers, depends, vocal, physical, technique, terms, steady, voice, varying, highlights, rushing, purposeful, reinforce, major, whether, deliberate, pauses, process]
+  Prose: "Turning a written essay into a compelling speech requires strong oratory and careful delivery. Unlike readers, your audience cannot see paragraph formatting on a page, and reading full essays verbatim sounds flat and monotone. Instead of reading sheets word-for-word, effective speakers convert their outline into pocket cue cards containing only concise keywords and transition prompts. Clear structure keeps listeners engaged from the opening hook to the final summary. To guide listeners through shifts in topic and argument, speakers use verbal signpost markers such as 'Moving on to...' or 'Turning our attention to...'. Strong rhetoric also depends on vocal and physical technique. Careful elocution helps you articulate complex terms, while steady projection carries your voice across a room. Varying intonation, pacing, and vocal emphasis highlights key claims far better than rushing, and purposeful hand gestures reinforce major ideas. Whether preparing a classroom talk or a major keynote, you should always rehearse aloud with your cue cards so deliberate pauses give listeners time to process every message."
+
+AFTER (Round 84 genuine B1+ rewrite):
+  Words=174 | Sentences=14 | AvgWords/Sent=12.4 | MaxSent=16 | Uncalibrated_FK=6.7
+  Target Vocab Coverage: 20/20 (100%)
+  Unlisted A-C (1):
+    - clearly: A2/B1 common adverb from "clear"
+  Unlisted D-Z (14):
+    - speech: W126 theme ("From Essay to Speech")
+    - essay: W126 theme ("From Essay to Speech")
+    - readers: Everyday noun ("read" + -er)
+    - paragraphs: School writing term ("paragraphs on paper")
+    - voice: Everyday A2/B1 noun ("your voice")
+    - final: Everyday A2/B1 adjective
+    - phrases: Everyday classroom English term
+    - listeners: Everyday noun ("listen" + -er)
+    - depends: B1 core verb ("depends on")
+    - row: Everyday A2/B1 noun ("back row")
+    - rises: B1 core verb ("voice rises and falls")
+    - easier: Comparative of A1 "easy"
+    - persuade: B1 debate verb (explained via "Art of speaking well to persuade others")
+    - even: A2/B1 everyday adverb
+  Prose: "Giving a good school speech—called oratory—is different from writing an essay. Readers can see paragraphs on paper, but an audience only hears your voice. If you read a full page word by word, people feel bored. Instead, turn your essay outline into small cue cards with only short notes. Good structure helps everyone follow your talk from the start to the final summary. Use verbal signpost phrases like 'Next, let's look at...' to help listeners move through each transition. Strong delivery also depends on how you use your voice and body. When you articulate words clearly—good elocution—people understand every idea. Voice projection means speaking loudly enough for the back row without shouting. Good pacing keeps you from talking too fast. Changing your intonation—how your voice rises and falls—adds emphasis to key ideas. Friendly hand gestures make your point easier to picture. That is why rhetoric, the art of speaking well to persuade others, takes practice. Even for a big keynote speech, always rehearse aloud with your cards first."
+
+  [WHOLE-WEEK NON-CLIL REGISTER SCAN (out-of-scope in R84, for Claude QA transparency)]
+    Hits: 0 elevated undergrad terms detected outside CLIL.
+
+========================================================================
+WEEK 127: Rebuttal Practice (Rebuttal Practice: Disagreeing with Facts and Politeness)
+========================================================================
+BEFORE (Round 83 commit 0e7419a6):
+  Words=154 | Sentences=7 | AvgWords/Sent=22 | MaxSent=27 | Uncalibrated_FK=14.7
+  Target Vocab Coverage: 20/20 (100%)
+  Unlisted A-C: [claims, claim, credibility, conclusion, convincingly, check, contrast, connectors, contrary]
+  Unlisted D-Z: [formal, debate, respectfully, requires, restating, own, original, position, simply, earlier, engagement, effective, directly, examine, dismantle, specific, raised, testing, underlying, logical, helpful, tool, template, introducing, instance, minor, main, incomplete, inspect, leap, whether, verified, rivals, finally, serious, sharp, however, nevertheless, signal, direct, opposition, reasoning, disciplined]
+  Prose: "In formal debate, learning how to disagree respectfully requires more than restating your own original position. Simply repeating earlier claims avoids engagement; an effective rebuttal must directly examine and dismantle each specific point raised by the opposing standpoint. When you oppose a claim, begin by testing its underlying premise and logical validity. A helpful tool is the 'They say... but I say...' template, which lets you acknowledge an opponent's claim before introducing a stronger counter-argument. For instance, you might concede a minor point that is true to build credibility, while working to refute the main conclusion as false or incomplete. To rebut an argument convincingly, inspect it for any logical flaw or fallacious leap, and check whether verified evidence can contradict and disprove what rivals contend. Finally, address each serious objection using sharp contrast connectors such as 'However,' 'Nevertheless,' or 'On the contrary,' which signal direct logical opposition and keep your reasoning disciplined."
+
+AFTER (Round 84 genuine B1+ rewrite):
+  Words=170 | Sentences=15 | AvgWords/Sent=11.3 | MaxSent=15 | Uncalibrated_FK=6.1
+  Target Vocab Coverage: 20/20 (100%)
+  Unlisted A-C (5):
+    - clear: A2/B1 core adjective (everyday classroom word)
+    - check: A2/B1 verb (Flyers A2 / classroom instruction)
+    - claim: B1 target word in W134 & core debate word (everyday "say something is true")
+    - claims: plural of "claim" (W134 target)
+    - contrary: Source B W127 prescribed grammar focus ("On the contrary")
+  Unlisted D-Z (23):
+    - debate: Course-wide theme word (school debate club)
+    - politely: Source B W127 focus ("Disagreeing politely")
+    - real: A2/B1 everyday adjective
+    - skill: A2/B1 everyday noun
+    - own: A2/B1 everyday determiner/adjective
+    - speech: W126 theme ("From Essay to Speech")
+    - reply: A2/B1 everyday noun/verb
+    - main: A2/B1 everyday adjective
+    - reason: A2/B1 everyday noun
+    - logical: Derived from W134 target "logic"
+    - sense: B1 everyday noun ("makes logical sense")
+    - helpful: Derived from A1 "help"
+    - frame: B1 classroom scaffolding noun ("a helpful frame")
+    - detail: B1 everyday noun
+    - share: A2/B1 everyday verb
+    - fact: A2/B1 everyday noun
+    - logic: W134 Source B target word
+    - facts: Plural of "fact"
+    - speakers: Everyday noun ("speak" + -er)
+    - finally: A2/B1 sequence adverb
+    - serious: B1 everyday adjective
+    - linking: Classroom grammar term ("linking words")
+    - however: Source B W127 prescribed grammar focus ("However")
+  Prose: "In a school debate, learning how to disagree politely takes real skill. You should not just repeat your own first speech. Instead, give a rebuttal—a clear reply that answers each point from the other side's standpoint. When you oppose an idea, first check the main reason, or premise, behind it. Does it have real validity, meaning it makes logical sense? A helpful frame is: 'They say... but I say...' This shows what the other team argues before you give your counter idea. Sometimes one small detail they share is true. You can concede, or fairly admit, that small fact. Then rebut their main claim by explaining why it is false. Look closely for a flaw, or hidden mistake, in their thinking. If a reason is fallacious, it uses bad logic that only sounds right. Share clear evidence—real facts or examples—to contradict and disprove what other speakers contend. Finally, answer each serious objection calmly. To refute weak claims politely, use linking words like 'However' or 'On the contrary.'"
+
+  [WHOLE-WEEK NON-CLIL REGISTER SCAN (out-of-scope in R84, for Claude QA transparency)]
+    Hits: 0 elevated undergrad terms detected outside CLIL.
+
+========================================================================
+WEEK 133: Deep Research & Data (Deep Research and Data: Citing Facts with Care)
+========================================================================
+BEFORE (Round 83 commit 0e7419a6):
+  Words=168 | Sentences=8 | AvgWords/Sent=21 | MaxSent=30 | Uncalibrated_FK=15.3
+  Target Vocab Coverage: 20/20 (100%)
+  Unlisted A-C: [claims, consider, clear, adolescent, crucially, cooperative, connections, check, causes]
+  Unlisted D-Z: [debate, depend, proof, rather, personal, reliable, research, speakers, real, testing, researchers, rigorous, select, representative, larger, standardized, recent, report, introduced, phrases, tracked, measured, teamwork, revealed, seventy, participants, substantial, utilize, positive, social, whereas, roughly, fifteen, reported, exclusively, even, figures, suggest, link, deficits, prove, directly, insomnia]
+  Prose: "In academic debate, strong claims depend on empirical proof rather than personal guesses. Reliable quantitative research helps speakers analyze real-world behavior before testing a hypothesis. Consider how researchers design a rigorous study with clear methodology: they select a representative sample from a larger student population and ask every respondent to complete a standardized survey. In a recent university report introduced with phrases like 'According to a study by Dr. Lin,' researchers tracked weekly gaming frequency and measured teamwork as a key metric. The findings revealed that seventy percent of adolescent participants play video games each week. Crucially, the data showed that a substantial majority of those adolescent players utilize cooperative games to build positive social connections, whereas only a small minority—roughly fifteen percent—reported playing exclusively alone. Each statistic tells part of the story, yet careful analysts check every hidden variable as well. Even when figures suggest a link between late-night gaming and sleep deficits, correlation alone does not prove that gaming directly causes insomnia."
+
+AFTER (Round 84 genuine B1+ rewrite):
+  Words=206 | Sentences=17 | AvgWords/Sent=12.1 | MaxSent=17 | Uncalibrated_FK=7.5
+  Target Vocab Coverage: 20/20 (100%)
+  Unlisted A-C (3):
+    - check: A2/B1 verb (Flyers A2 / classroom instruction)
+    - common: A2/B1 everyday adjective ("usual/frequent"; absent in repo 481-word A-C PET sample)
+    - causes: B1 verb ("causes the other")
+  Unlisted D-Z (24):
+    - debate: Course-wide theme word (school debate club)
+    - facts: Plural of "fact"
+    - speakers: Everyday noun ("speak" + -er)
+    - proof: B1 everyday noun (paired with "true facts / check")
+    - measure: B1 everyday verb ("check and measure")
+    - testing: A2/B1 "-ing" form of "test"
+    - simply: B1 adverb from "simple"
+    - useful: A2/B1 everyday adjective
+    - suppose: B1 everyday verb ("Suppose your debate club...")
+    - habits: B1 everyday noun ("screen habits")
+    - plan: A2/B1 everyday noun/verb
+    - whole: A2/B1 everyday adjective ("whole school")
+    - track: A2/B1 everyday verb ("track how many hours")
+    - imagine: A2/B1 everyday verb
+    - real: A2/B1 everyday adjective
+    - report: A2/B1 everyday noun
+    - introduced: B1 everyday verb ("introduced with")
+    - seventy: A1/A2 number word (existing W133 study datum)
+    - proves: 3sg of B1 verb "prove"
+    - fifteen: A1 number word
+    - reason: A2/B1 everyday noun
+    - stress: B1 everyday noun ("homework or stress")
+    - link: B1 everyday noun ("connection between two habits")
+    - prove: B1 everyday verb
+  Prose: "When you speak in a school debate, facts are stronger than guesses. Good speakers use empirical proof—facts we can actually check and measure. Testing an idea, called a hypothesis, often starts with quantitative data, which simply means useful number facts. Suppose your debate club runs a study about after-school screen habits. First, plan your methodology, or step-by-step plan for collecting answers. Instead of asking the whole school population, you ask a smaller sample of one hundred students. Each respondent answers the same short survey. You might track how many hours they play each week—a metric showing their weekly gaming frequency. Next, analyze the findings carefully. Imagine a real report introduced with 'According to a study by Dr. Lin.' It shows seventy percent of middle-school students play video games each week. That statistic proves gaming is common. A large majority of players—more than half—use team games to make friends. Only a small minority, around fifteen percent, play alone all the time. Still, check every hidden variable, or outside reason, like homework or stress. Sometimes two habits happen together, like late gaming and tired mornings. That link is a correlation, but it does not always prove one causes the other."
+
+  [WHOLE-WEEK NON-CLIL REGISTER SCAN (out-of-scope in R84, for Claude QA transparency)]
+    - reading_hub.js: methodology, empirical
+    - listening_hub.js: empirical, methodology
+    - writing_hub.js: empirical
+    - speaking_hub.js: empirical
+
+========================================================================
+WEEK 134: Identifying Fallacies (Identifying Fallacies: Spotting Faulty Reasoning)
+========================================================================
+BEFORE (Round 83 commit 0e7419a6):
+  Words=145 | Sentences=7 | AvgWords/Sent=20.7 | MaxSent=26 | Uncalibrated_FK=13.6
+  Target Vocab Coverage: 20/20 (100%)
+  Unlisted A-C: [commits, common, conversely, credibility]
+  Unlisted D-Z: [formal, skilled, thinkers, examine, whether, relies, logical, sweeping, universal, limited, error, unfair, entire, exact, proof, instance, declaring, gamers, empirical, research, demands, disciplined, reflects, personal, rather, verified, facts, solid, evidence, remains, protect, errors, debaters, qualifying, tend]
+  Prose: "In formal argumentation, skilled thinkers examine whether a claim relies on sound logic or commits a logical fallacy. One common flaw is a hasty generalization—drawing a sweeping universal conclusion from only a few limited examples. This error often turns into an unfair stereotype when a speaker assumes an entire group behaves the exact same way without true proof. For instance, declaring that all video gamers are lazy and avoid books is a misleading assumption that empirical research shows to be false. Sound deduction demands disciplined reasoning: if a starting premise reflects personal bias rather than verified facts, the entire argument loses soundness and becomes invalid. Conversely, when a point is built on solid evidence, its reasoning remains valid. To protect their credibility from sweeping errors, careful debaters use qualifying words such as 'some,' 'many,' 'often,' and 'tend to,' keeping every conclusion fair and balanced."
+
+AFTER (Round 84 genuine B1+ rewrite):
+  Words=165 | Sentences=14 | AvgWords/Sent=11.8 | MaxSent=17 | Uncalibrated_FK=7
+  Target Vocab Coverage: 20/20 (100%)
+  Unlisted A-C (5):
+    - case: A2/B1 core noun ("building a fair case")
+    - clear: A2/B1 core adjective (everyday classroom word)
+    - check: A2/B1 verb (Flyers A2 / classroom instruction)
+    - common: A2/B1 everyday adjective ("usual/frequent"; absent in repo 481-word A-C PET sample)
+    - creates: B1 verb ("creates an unfair...")
+  Unlisted D-Z (14):
+    - debate: Course-wide theme word (school debate club)
+    - smart: A2/B1 everyday adjective
+    - listeners: Everyday noun ("listen" + -er)
+    - unfair: B1 everyday adjective ("un-" + "fair")
+    - whole: A2/B1 everyday adjective ("whole school")
+    - gamers: Everyday youth noun ("video gamers")
+    - proof: B1 everyday noun (paired with "true facts / check")
+    - real: A2/B1 everyday adjective
+    - facts: Plural of "fact"
+    - personal: B1 everyday adjective
+    - however: Source B W127 prescribed grammar focus ("However")
+    - support: B1 everyday verb ("facts support")
+    - tend: W134 check_question target phrase ("tend to")
+    - simple: A2/B1 everyday adjective
+  Prose: "Good argumentation—building a fair case in debate—needs clear logic. Smart listeners check if a claim is strong or hides a fallacy, a common mistake in thinking. One common flaw is a hasty generalization. This happens when someone jumps to a big conclusion after seeing only one or two examples. Often, that creates an unfair stereotype about a whole group of people. For example, saying 'All video gamers are lazy' is a misleading assumption made without true proof. Real facts show that this idea is false. Good deduction means step-by-step thinking that actually works. Your reasoning starts from a premise, or first idea. If that idea comes from personal bias instead of facts, your argument loses soundness. Without strong facts, the whole point becomes invalid. However, when true facts support every step, your point stays valid. To keep your ideas fair, use careful words like 'some,' 'many,' 'often,' and 'tend to.' These simple words stop you from making unfair guesses about everyone."
+
+  [WHOLE-WEEK NON-CLIL REGISTER SCAN (out-of-scope in R84, for Claude QA transparency)]
+    Hits: 0 elevated undergrad terms detected outside CLIL.
+

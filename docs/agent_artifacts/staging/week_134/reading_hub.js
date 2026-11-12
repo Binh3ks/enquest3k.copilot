@@ -19,8 +19,8 @@ export const readingHubData = {
       "ipa": "/ˈfæləsi/",
       "definition_en": "A mistaken belief or a flaw in reasoning that invalidates an argument",
       "definition_vi": "lỗi ngụy biện / sự ngụy biện",
-      "example_en": "Claiming that all computer gamers are lazy is a classic hasty generalization fallacy.",
-      "example_vi": "Khẳng định rằng tất cả người chơi máy tính đều lười biếng là một lỗi ngụy biện khái quát hóa vội vã kinh điển."
+      "example_en": "Saying 'all gamers are lazy' is an unfair hasty generalization fallacy.",
+      "example_vi": "Nói rằng 'mọi người chơi game đều lười' là một ngụy biện khái quát vội vàng thiếu công bằng."
     },
     {
       "id": 2,
@@ -29,8 +29,8 @@ export const readingHubData = {
       "ipa": "/ˌdʒenərələˈzeɪʃən/",
       "definition_en": "A broad statement obtained by inferring from only a small number of specific cases",
       "definition_vi": "sự khái quát hóa / sự vơ đũa cả nắm",
-      "example_en": "Avoid making a sweeping generalization without examining comprehensive statistical data.",
-      "example_vi": "Hãy tránh đưa ra một sự khái quát hóa vơ đũa cả nắm mà không kiểm tra dữ liệu thống kê toàn diện."
+      "example_en": "Do not make a broad generalization after seeing only two examples.",
+      "example_vi": "Đừng vội khái quát chung chung chỉ sau khi nhìn thấy hai ví dụ."
     },
     {
       "id": 3,
@@ -39,8 +39,8 @@ export const readingHubData = {
       "ipa": "/əˈsʌmpʃən/",
       "definition_en": "A thing that is accepted as true without proof or critical verification",
       "definition_vi": "giả định / điều mặc nhiên thừa nhận",
-      "example_en": "Her entire objection rested on the false assumption that mobile technology has no educational value.",
-      "example_vi": "Toàn bộ sự phản đối của cô ấy dựa trên giả định sai lầm rằng công nghệ di động không có giá trị giáo dục."
+      "example_en": "Her whole objection used the false assumption that phones never help learning.",
+      "example_vi": "Toàn bộ ý kiến phản đối của cô ấy dựa trên giả định sai rằng điện thoại không bao giờ giúp học tập."
     },
     {
       "id": 4,
@@ -49,8 +49,8 @@ export const readingHubData = {
       "ipa": "/truː/",
       "definition_en": "In accordance with verifiable fact, accurate reality, and sound logic",
       "definition_vi": "đúng đắn / chân thực / xác thực",
-      "example_en": "An argument can only be valid if its foundational premises are factually true.",
-      "example_vi": "Một lập luận chỉ có thể hợp lệ nếu các tiền đề nền tảng của nó đúng về mặt thực tế."
+      "example_en": "An argument works only when its starting facts are actually true.",
+      "example_vi": "Một lập luận chỉ vững khi các dữ kiện mở đầu của nó thật sự đúng."
     },
     {
       "id": 5,
@@ -59,18 +59,18 @@ export const readingHubData = {
       "ipa": "/fɔːls/",
       "definition_en": "Not in accordance with truth or reality; incorrect, mistaken, or misleading",
       "definition_vi": "sai lầm / giả tạo / không đúng",
-      "example_en": "Presenting false statistics in an academic debate immediately disqualifies a debater.",
-      "example_vi": "Đưa ra các số liệu thống kê sai lệch trong một cuộc tranh biện học thuật sẽ khiến tranh biện viên bị loại ngay lập tức."
+      "example_en": "Sharing false numbers in a school debate costs your team points.",
+      "example_vi": "Đưa số liệu sai trong buổi tranh biện của trường sẽ làm đội bạn mất điểm."
     },
     {
       "id": 6,
       "word": "valid",
       "pos": "adj",
       "ipa": "/ˈvælɪd/",
-      "definition_en": "Having a sound basis in logic or fact; reasonable, cogent, and legally binding",
+      "definition_en": "Based on true facts and clear, sensible thinking",
       "definition_vi": "hợp lệ / có căn cứ vững chắc",
-      "example_en": "Her deduction was logically valid because the conclusion followed necessarily from true premises.",
-      "example_vi": "Suy luận của cô ấy hợp lệ về mặt logic vì kết luận bắt nguồn một cách tất yếu từ các tiền đề đúng."
+      "example_en": "Her conclusion was valid because it followed clearly from two true facts.",
+      "example_vi": "Kết luận của cô ấy hợp lý vì nó suy ra rõ ràng từ hai sự thật đúng."
     },
     {
       "id": 7,
@@ -79,8 +79,8 @@ export const readingHubData = {
       "ipa": "/ɪnˈvælɪd/",
       "definition_en": "Not logically or factually sound; containing reasoning errors or false premises",
       "definition_vi": "không hợp lệ / vô căn cứ về mặt logic",
-      "example_en": "An invalid argument fails to prove its point because its logical structure is broken.",
-      "example_vi": "Một lập luận không hợp lệ không thể chứng minh được luận điểm của nó vì cấu trúc logic của nó bị phá vỡ."
+      "example_en": "An invalid argument fails because its logic step is broken.",
+      "example_vi": "Một lập luận không hợp lệ sẽ thất bại vì bước suy luận của nó bị sai."
     },
     {
       "id": 8,
@@ -89,8 +89,8 @@ export const readingHubData = {
       "ipa": "/ˈlɑːdʒɪk/",
       "definition_en": "Reasoning conducted according to strict principles of validity and sound inference",
       "definition_vi": "tính logic / lý luận chặt chẽ",
-      "example_en": "Studying formal logic teaches students to separate compelling proof from deceptive rhetoric.",
-      "example_vi": "Học logic hình thức dạy học sinh cách phân biệt bằng chứng thuyết phục với những lời tu từ lừa dối."
+      "example_en": "Learning simple logic helps students tell strong proof from weak tricks.",
+      "example_vi": "Học logic cơ bản giúp học sinh phân biệt bằng chứng vững với mẹo lập luận yếu."
     },
     {
       "id": 9,
@@ -99,8 +99,8 @@ export const readingHubData = {
       "ipa": "/ˈpremɪs/",
       "definition_en": "A previous proposition from which another inference is drawn as a conclusion",
       "definition_vi": "tiền đề",
-      "example_en": "If a speaker begins with a flawed premise, their final conclusion will inevitably be defective.",
-      "example_vi": "Nếu một diễn giả bắt đầu bằng một tiền đề sai sót, kết luận cuối cùng của họ chắc chắn sẽ bị khiếm khuyết."
+      "example_en": "If a speaker starts with a wrong premise, their final conclusion fails.",
+      "example_vi": "Nếu người nói bắt đầu từ một tiền đề sai, kết luận cuối cùng sẽ sai."
     },
     {
       "id": 10,
@@ -109,8 +109,8 @@ export const readingHubData = {
       "ipa": "/kənˈkluːʒən/",
       "definition_en": "A judgment or formal decision reached by reasoning from supporting premises",
       "definition_vi": "kết luận",
-      "example_en": "The final conclusion was substantiated by three independent empirical studies.",
-      "example_vi": "Kết luận cuối cùng đã được chứng minh bởi ba nghiên cứu thực nghiệm độc lập."
+      "example_en": "Our final conclusion was supported by three separate class surveys.",
+      "example_vi": "Kết luận cuối cùng của chúng tôi được ủng hộ bởi ba khảo sát lớp độc lập."
     },
     {
       "id": 11,
@@ -119,8 +119,8 @@ export const readingHubData = {
       "ipa": "/flɔː/",
       "definition_en": "A defect, mistake, or vulnerability that impairs the soundness of an argument",
       "definition_vi": "lỗ hổng / khuyết điểm logic",
-      "example_en": "The adjudicator pointed out a critical reasoning flaw in the affirmative team's case.",
-      "example_vi": "Trọng tài đã chỉ ra một lỗ hổng lập luận nghiêm trọng trong vụ kiện của đội khẳng định."
+      "example_en": "The teacher pointed out a clear flaw in the first team’s example.",
+      "example_vi": "Giáo viên chỉ ra một lỗ hổng rõ ràng trong ví dụ của đội thứ nhất."
     },
     {
       "id": 12,
@@ -129,8 +129,8 @@ export const readingHubData = {
       "ipa": "/ˈsteriətaɪp/",
       "definition_en": "A widely held but oversimplified, unfair image or belief about a group",
       "definition_vi": "khuôn mẫu định kiến / định kiến hẹp hòi",
-      "example_en": "Relying on a cultural stereotype blinds researchers to individual diversity and variation.",
-      "example_vi": "Dựa vào một định kiến văn hóa khiến các nhà nghiên cứu mù quáng trước sự đa dạng và khác biệt của cá nhân."
+      "example_en": "Believing a lazy stereotype makes us miss how different each student is.",
+      "example_vi": "Tin vào định kiến rập khuôn khiến ta bỏ qua sự khác biệt của từng học sinh."
     },
     {
       "id": 13,
@@ -139,8 +139,8 @@ export const readingHubData = {
       "ipa": "/dɪˈdʌkʃən/",
       "definition_en": "The process of reaching a conclusion by applying general principles to specific cases",
       "definition_vi": "sự suy diễn logic",
-      "example_en": "Through careful deduction, the detective eliminated three impossible scenarios.",
-      "example_vi": "Thông qua sự suy diễn cẩn thận, thám tử đã loại trừ ba kịch bản bất khả thi."
+      "example_en": "Using careful deduction, the student detective ruled out three wrong answers.",
+      "example_vi": "Nhờ suy diễn cẩn thận, học sinh thám tử loại bỏ được ba đáp án sai."
     },
     {
       "id": 14,
@@ -149,38 +149,38 @@ export const readingHubData = {
       "ipa": "/ˈriːzənɪŋ/",
       "definition_en": "The intellectual action of thinking about things in a logical and sensible manner",
       "definition_vi": "quá trình lập luận / suy luận",
-      "example_en": "Sound moral reasoning requires considering the consequences of policies on vulnerable people.",
-      "example_vi": "Lập luận đạo đức đúng đắn đòi hỏi phải xem xét hậu quả của các chính sách đối với những người dễ bị tổn thương."
+      "example_en": "Fair reasoning means thinking about how a new rule affects every student.",
+      "example_vi": "Suy luận công bằng nghĩa là nghĩ xem quy định mới ảnh hưởng thế nào đến mọi học sinh."
     },
     {
       "id": 15,
       "word": "claim",
       "pos": "n",
       "ipa": "/kleɪm/",
-      "definition_en": "An assertion that something is true, typically one requiring substantiating evidence",
+      "definition_en": "A statement saying something is true that still needs proof",
       "definition_vi": "tuyên bố / khẳng định",
-      "example_en": "Before accepting an extraordinary scientific claim, demand extraordinary empirical proof.",
-      "example_vi": "Trước khi chấp nhận một khẳng định khoa học phi thường, hãy yêu cầu bằng chứng thực nghiệm phi thường."
+      "example_en": "Before believing a surprising claim, ask to see real facts first.",
+      "example_vi": "Trước khi tin một tuyên bố gây ngạc nhiên, hãy hỏi xem sự thật trước đã."
     },
     {
       "id": 16,
       "word": "bias",
       "pos": "n",
       "ipa": "/ˈbaɪəs/",
-      "definition_en": "Prejudice in favor of or against one thing or group compared with another",
+      "definition_en": "An unfair feeling for or against one side before checking the facts",
       "definition_vi": "sự thiên vị / định kiến",
-      "example_en": "Researchers must guard against confirmation bias when evaluating experimental results.",
-      "example_vi": "Các nhà nghiên cứu phải đề phòng sự thiên vị xác nhận khi đánh giá các kết quả thực nghiệm."
+      "example_en": "Good researchers avoid personal bias when checking survey results.",
+      "example_vi": "Người nghiên cứu giỏi tránh thiên vị cá nhân khi kiểm tra kết quả khảo sát."
     },
     {
       "id": 17,
       "word": "hasty",
       "pos": "adj",
       "ipa": "/ˈheɪsti/",
-      "definition_en": "Done with excessive speed or urgency; hurried without adequate deliberation",
+      "definition_en": "Done too fast without taking time to think or check",
       "definition_vi": "vội vã / thiếu cân nhắc",
-      "example_en": "Drawing a hasty conclusion from a single interview is a dangerous investigative error.",
-      "example_vi": "Rút ra một kết luận vội vã từ một cuộc phỏng vấn duy nhất là một sai lầm điều tra nguy hiểm."
+      "example_en": "Making a hasty guess from one short talk is an easy mistake.",
+      "example_vi": "Đưa ra phán đoán vội vàng chỉ từ một cuộc trò chuyện ngắn là lỗi dễ mắc phải."
     },
     {
       "id": 18,
@@ -189,28 +189,28 @@ export const readingHubData = {
       "ipa": "/ˌmɪsˈliːdɪŋ/",
       "definition_en": "Giving the wrong impression or leading an audience toward a false belief",
       "definition_vi": "gây hiểu lầm / sai lệch",
-      "example_en": "The advertisement used misleading percentages to exaggerate product effectiveness.",
-      "example_vi": "Quảng cáo đã sử dụng tỷ lệ phần trăm gây hiểu lầm để phóng đại hiệu quả của sản phẩm."
+      "example_en": "The ad used misleading numbers to make a weak drink sound healthy.",
+      "example_vi": "Quảng cáo dùng những con số gây hiểu lầm để làm món đồ uống yếu nghe có vẻ tốt cho sức khỏe."
     },
     {
       "id": 19,
       "word": "soundness",
       "pos": "n",
       "ipa": "/ˈsaʊndnəs/",
-      "definition_en": "The state of an argument having both valid logical structure and true premises",
+      "definition_en": "Having both true starting facts and valid step-by-step logic",
       "definition_vi": "tính xác đáng / sự đúng đắn toàn diện về logic và thực tế",
-      "example_en": "Scholars admire the intellectual soundness of her philosophical treatise.",
-      "example_vi": "Các học giả ngưỡng mộ tính xác đáng về mặt trí tuệ trong luận văn triết học của cô ấy."
+      "example_en": "Judges check the soundness of an argument by testing both facts and logic.",
+      "example_vi": "Giám khảo kiểm tra tính vững chắc của lập luận bằng cách xem cả sự thật lẫn logic."
     },
     {
       "id": 20,
       "word": "argumentation",
       "pos": "n",
       "ipa": "/ˌɑːrɡjəmenˈteɪʃən/",
-      "definition_en": "The methodical process of establishing reasons and conclusions to persuade others",
+      "definition_en": "Building clear reasons and proof to support your point in a debate",
       "definition_vi": "nghệ thuật lập luận / quá trình tranh luận",
-      "example_en": "Rigorous argumentation relies on precise qualifiers rather than absolute universal assertions.",
-      "example_vi": "Lập luận nghiêm ngặt dựa trên các từ ngữ định lượng chính xác thay vì các khẳng định tuyệt đối phổ quát."
+      "example_en": "Careful argumentation uses words like 'many' and 'often' instead of 'always'.",
+      "example_vi": "Cách lập luận cẩn thận dùng các từ như 'many' và 'often' thay cho 'always'."
     }
   ],
   "clil_article": {
@@ -308,10 +308,10 @@ export const readingHubData = {
       "id": 3,
       "scene_id": "scene_3",
       "scene_number": 3,
-      "title_en": "Applying Epistemic Qualifiers",
+      "title_en": "Using Careful Words",
       "title_vi": "Áp Dụng Các Từ Ngữ Định Lượng Nhận Thức",
-      "description_en": "Liam rewrites the editorial sentence using careful qualifiers: 'Some excessive gaming may disrupt focus, but many games build skills.'",
-      "description": "Liam rewrites the editorial sentence using careful qualifiers: 'Some excessive gaming may disrupt focus, but many games build skills.'",
+      "description_en": "Liam fixes the newspaper line using careful words: 'Some late gaming hurts sleep, but many games build skills.'",
+      "description": "Liam fixes the newspaper line using careful words: 'Some late gaming hurts sleep, but many games build skills.'",
       "image_url": "/images/week134/webtoon_scene_3.png",
       "audio_url": "/audio/week134/scene_3.mp3"
     },
@@ -332,8 +332,8 @@ export const readingHubData = {
       "scene_number": 5,
       "title_en": "Presenting the Fallacy Audit",
       "title_vi": "Trình Bày Kiểm Toán Lỗi Ngụy Biện",
-      "description_en": "Zoe and Liam present their critical logic audit to the philosophy club, receiving applause for their rigorous analysis.",
-      "description": "Zoe and Liam present their critical logic audit to the philosophy club, receiving applause for their rigorous analysis.",
+      "description_en": "Zoe and Liam present their fallacy check to the school debate club, winning claps for their careful work.",
+      "description": "Zoe and Liam present their fallacy check to the school debate club, winning claps for their careful work.",
       "image_url": "/images/week134/webtoon_scene_5.png",
       "audio_url": "/audio/week134/scene_5.mp3"
     }
@@ -342,18 +342,18 @@ export const readingHubData = {
     "sentences": [
       {
         "id": 1,
-        "text": "Claiming that all computer gamers are unmotivated is an invalid generalization fallacy.",
-        "en": "Claiming that all computer gamers are unmotivated is an invalid generalization fallacy.",
-        "vi": "Khẳng định rằng tất cả game thủ máy tính đều thiếu động lực là một lỗi ngụy biện khái quát hóa không hợp lệ.",
-        "ipa": "/ˈkleɪmɪŋ ðæt ɔːl kəmˈpjuːtər ˈɡeɪmərz ɑːr ˌʌnˈmoʊtəveɪtɪd ɪz ən ɪnˈvælɪd ˌdʒenərələˈzeɪʃən ˈfæləsi/",
+        "text": "Saying that all video gamers are lazy is an invalid generalization fallacy.",
+        "en": "Saying that all video gamers are lazy is an invalid generalization fallacy.",
+        "vi": "Nói rằng tất cả người chơi game đều lười là một ngụy biện khái quát không hợp lệ.",
+        "ipa": "/ˈseɪɪŋ ðæt ɔːl ˈvɪdioʊ ˈɡeɪmərz ɑːr ˈleɪzi ɪz æn ɪnˈvælɪd ˌdʒenrələˈzeɪʃən ˈfæləsi/",
         "words": [
-          "Claiming",
+          "Saying",
           "that",
           "all",
-          "computer",
+          "video",
           "gamers",
           "are",
-          "unmotivated",
+          "lazy",
           "is",
           "an",
           "invalid",
@@ -363,32 +363,32 @@ export const readingHubData = {
       },
       {
         "id": 2,
-        "text": "Critical thinkers use qualifiers like some, many, and often to prevent sweeping statements.",
-        "en": "Critical thinkers use qualifiers like some, many, and often to prevent sweeping statements.",
-        "vi": "Những người tư duy phản biện sử dụng các từ chỉ mức độ như some, many và often để ngăn chặn các khẳng định vơ đũa cả nắm.",
-        "ipa": "/ˈkrɪtɪkəl ˈθɪŋkərz juːz ˈkwɑːləˌfaɪərz laɪk sʌm ˈmeni ænd ˈɔːfən tuː prɪˈvent ˈswiːpɪŋ ˈsteɪtmənts/",
+        "text": "Careful thinkers use words like some, many, and often to keep claims fair.",
+        "en": "Careful thinkers use words like some, many, and often to keep claims fair.",
+        "vi": "Người suy nghĩ cẩn thận dùng những từ như một số, nhiều và thường để giữ nhận định công bằng.",
+        "ipa": "/ˈkerfəl ˈθɪŋkərz juːz wɜːrdz laɪk sʌm ˈmeni ænd ˈɔːfən tuː kiːp kleɪmz fer/",
         "words": [
-          "Critical",
+          "Careful",
           "thinkers",
           "use",
-          "qualifiers",
+          "words",
           "like",
           "some",
           "many",
           "and",
           "often",
           "to",
-          "prevent",
-          "sweeping",
-          "statements"
+          "keep",
+          "claims",
+          "fair"
         ]
       },
       {
         "id": 3,
-        "text": "An argument is valid only when its underlying premises are factually true.",
-        "en": "An argument is valid only when its underlying premises are factually true.",
-        "vi": "Một lập luận chỉ hợp lệ khi các tiền đề cơ bản của nó đúng về mặt thực tế.",
-        "ipa": "/ən ˈɑːrɡjəmənt ɪz ˈvælɪd ˈoʊnli wen ɪts ˌʌndərˈlaɪɪŋ ˈpremɪsɪz ɑːr ˈfæktʃuəli truː/",
+        "text": "An argument is valid only when its starting premises are really true.",
+        "en": "An argument is valid only when its starting premises are really true.",
+        "vi": "Một lập luận chỉ hợp lệ khi các tiền đề mở đầu của nó thật sự đúng.",
+        "ipa": "/æn ˈɑːrɡjəmənt ɪz ˈvælɪd ˈoʊnli wen ɪts ˈstɑːrtɪŋ ˈpremɪsɪz ɑːr ˈriːəli truː/",
         "words": [
           "An",
           "argument",
@@ -397,48 +397,48 @@ export const readingHubData = {
           "only",
           "when",
           "its",
-          "underlying",
+          "starting",
           "premises",
           "are",
-          "factually",
+          "really",
           "true"
         ]
       },
       {
         "id": 4,
-        "text": "Drawing a hasty conclusion from a single example creates misleading stereotypes.",
-        "en": "Drawing a hasty conclusion from a single example creates misleading stereotypes.",
-        "vi": "Rút ra một kết luận vội vã từ một ví dụ duy nhất tạo ra những định kiến gây hiểu lầm.",
-        "ipa": "/ˈdrɔːɪŋ ə ˈheɪsti kənˈkluːʒən frəm ə ˈsɪŋɡəl ɪɡˈzæmpəl kriˈeɪts ˌmɪsˈliːdɪŋ ˈsteriətaɪps/",
+        "text": "Making a hasty conclusion from one example creates unfair stereotypes.",
+        "en": "Making a hasty conclusion from one example creates unfair stereotypes.",
+        "vi": "Rút ra kết luận vội vàng từ một ví dụ tạo ra những định kiến thiếu công bằng.",
+        "ipa": "/ˈmeɪkɪŋ ə ˈheɪsti kənˈkluːʒən frʌm wʌn ɪɡˈzæmpəl kriˈeɪts ʌnˈfer ˈsteriətaɪps/",
         "words": [
-          "Drawing",
+          "Making",
           "a",
           "hasty",
           "conclusion",
           "from",
-          "a",
-          "single",
+          "one",
           "example",
           "creates",
-          "misleading",
+          "unfair",
           "stereotypes"
         ]
       },
       {
         "id": 5,
-        "text": "Many adolescent players tend to develop strong cooperative problem solving skills.",
-        "en": "Many adolescent players tend to develop strong cooperative problem solving skills.",
-        "vi": "Nhiều người chơi thanh thiếu niên có xu hướng phát triển kỹ năng giải quyết vấn đề hợp tác mạnh mẽ.",
-        "ipa": "/ˈmeni ˌædəˈlesənt ˈpleɪərz tend tuː dɪˈveləp strɔːŋ koʊˈɑːpərətɪv ˈprɑːbləm ˈsɑːlvɪŋ skɪlz/",
+        "text": "Many middle school players tend to build strong teamwork problem solving skills.",
+        "en": "Many middle school players tend to build strong teamwork problem solving skills.",
+        "vi": "Nhiều người chơi cấp trung học có xu hướng xây dựng kỹ năng giải quyết vấn đề theo nhóm tốt.",
+        "ipa": "/ˈmeni ˈmɪdl skuːl ˈpleɪərz tend tuː bɪld strɔːŋ ˈtiːmwɜːrk ˈprɑːbləm ˈsɑːlvɪŋ skɪlz/",
         "words": [
           "Many",
-          "adolescent",
+          "middle",
+          "school",
           "players",
           "tend",
           "to",
-          "develop",
+          "build",
           "strong",
-          "cooperative",
+          "teamwork",
           "problem",
           "solving",
           "skills"
@@ -446,61 +446,62 @@ export const readingHubData = {
       },
       {
         "id": 6,
-        "text": "We must scrutinize whether evidence is reliable before accepting controversial assertions.",
-        "en": "We must scrutinize whether evidence is reliable before accepting controversial assertions.",
-        "vi": "Chúng ta phải xem xét kỹ lưỡng liệu bằng chứng có đáng tin cậy hay không trước khi chấp nhận các khẳng định gây tranh cãi.",
-        "ipa": "/wiː mʌst ˈskruːtənaɪz ˈweðər ˈevɪdəns ɪz rɪˈlaɪəbəl bɪˈfɔːr əkˈseptɪŋ ˌkɑːntrəˈvɜːrʃəl əˈsɜːrʃənz/",
+        "text": "We must check whether proof is real before believing surprising claims.",
+        "en": "We must check whether proof is real before believing surprising claims.",
+        "vi": "Chúng ta phải kiểm tra xem bằng chứng có thật không trước khi tin các tuyên bố gây ngạc nhiên.",
+        "ipa": "/wi mʌst tʃek ˈweðər pruːf ɪz riːl bɪˈfɔːr bɪˈliːvɪŋ sərˈpraɪzɪŋ kleɪmz/",
         "words": [
           "We",
           "must",
-          "scrutinize",
+          "check",
           "whether",
-          "evidence",
+          "proof",
           "is",
-          "reliable",
+          "real",
           "before",
-          "accepting",
-          "controversial",
-          "assertions"
+          "believing",
+          "surprising",
+          "claims"
         ]
       },
       {
         "id": 7,
-        "text": "Recognizing logical flaws protects learners from manipulative advertising and false propaganda.",
-        "en": "Recognizing logical flaws protects learners from manipulative advertising and false propaganda.",
-        "vi": "Nhận biết các lỗ hổng logic bảo vệ người học khỏi quảng cáo thao túng và tuyên truyền sai lệch.",
-        "ipa": "/ˈrekəɡnaɪzɪŋ ˈlɑːdʒɪkəl flɔːz prəˈtekts ˈlɜːrnərz frəm məˈnɪpjəleɪtɪv ˈædvərtaɪzɪŋ ænd fɔːls ˌprɑːpəˈɡændə/",
+        "text": "Spotting logic flaws protects students from tricky ads and false rumors.",
+        "en": "Spotting logic flaws protects students from tricky ads and false rumors.",
+        "vi": "Nhận ra lỗi logic giúp học sinh tránh được quảng cáo đánh lừa và tin đồn sai.",
+        "ipa": "/ˈspɑːtɪŋ ˈlɑːdʒɪk flɔːz prəˈtekts ˈstuːdənts frʌm ˈtrɪki ædz ænd fɔːls ˈruːmərz/",
         "words": [
-          "Recognizing",
-          "logical",
+          "Spotting",
+          "logic",
           "flaws",
           "protects",
-          "learners",
+          "students",
           "from",
-          "manipulative",
-          "advertising",
+          "tricky",
+          "ads",
           "and",
           "false",
-          "propaganda"
+          "rumors"
         ]
       },
       {
         "id": 8,
-        "text": "Mastering critical logic cultivates intellectually honest and respectful civic discussions.",
-        "en": "Mastering critical logic cultivates intellectually honest and respectful civic discussions.",
-        "vi": "Làm chủ logic phản biện nuôi dưỡng các cuộc thảo luận công dân trung thực và tôn trọng về mặt trí tuệ.",
-        "ipa": "/ˈmæstərɪŋ ˈkrɪtɪkəl ˈlɑːdʒɪk ˈkʌltɪveɪts ˌɪntəˈlektʃuəli ˈɑːnɪst ænd rɪˈspektfəl ˈsɪvɪk dɪˈskʌʃənz/",
+        "text": "Good critical thinking leads to honest, fair, and polite school debates.",
+        "en": "Good critical thinking leads to honest, fair, and polite school debates.",
+        "vi": "Tư duy phản biện tốt dẫn đến những buổi tranh biện ở trường trung thực, công bằng và lịch sự.",
+        "ipa": "/ɡʊd ˈkrɪtɪkəl ˈθɪŋkɪŋ liːdz tuː ˈɑːnɪst fer ænd pəˈlaɪt skuːl dɪˈbeɪts/",
         "words": [
-          "Mastering",
+          "Good",
           "critical",
-          "logic",
-          "cultivates",
-          "intellectually",
+          "thinking",
+          "leads",
+          "to",
           "honest",
+          "fair",
           "and",
-          "respectful",
-          "civic",
-          "discussions"
+          "polite",
+          "school",
+          "debates"
         ]
       }
     ]
@@ -564,61 +565,61 @@ export const readingHubData = {
         "speaker": "Liam",
         "prompt": "Zoe, what makes the statement 'All gamers are lazy' a logical fallacy?",
         "options": [
-          "It is a hasty generalization that unfairly applies an extreme stereotype to an entire population.",
+          "It is a hasty generalization that applies an unfair stereotype to a whole group of people.",
           "It is spelled with five letters instead of six.",
           "It was written on a Sunday afternoon."
         ],
-        "answer": "It is a hasty generalization that unfairly applies an extreme stereotype to an entire population."
+        "answer": "It is a hasty generalization that applies an unfair stereotype to a whole group of people."
       },
       {
         "id": 2,
         "speaker": "Liam",
-        "prompt": "How can an opponent dismantle an absolute claim containing the word 'never'?",
+        "prompt": "How can a speaker answer an extreme claim that uses the word 'never'?",
         "options": [
-          "By presenting a single verifiable counterexample that disproves the universal statement.",
+          "By showing one clear real example that proves the extreme statement wrong.",
           "By shouting louder than the speaker.",
           "By agreeing that 'never' means 'always'."
         ],
-        "answer": "By presenting a single verifiable counterexample that disproves the universal statement."
+        "answer": "By showing one clear real example that proves the extreme statement wrong."
       },
       {
         "id": 3,
         "speaker": "Liam",
-        "prompt": "Which qualifying words help us formulate academically sound arguments?",
+        "prompt": "Which careful words help us make fair, sound arguments?",
         "options": [
-          "Careful qualifiers such as 'some', 'many', 'often', and 'tend to'.",
+          "Careful words like 'some', 'many', 'often', and 'tend to'.",
           "Universal extremes like 'always', 'all', and 'everybody'.",
           "Made-up slang words with no dictionary definitions."
         ],
-        "answer": "Careful qualifiers such as 'some', 'many', 'often', and 'tend to'."
+        "answer": "Careful words like 'some', 'many', 'often', and 'tend to'."
       },
       {
         "id": 4,
         "speaker": "Liam",
         "prompt": "What is the difference between a valid argument and a sound argument?",
         "options": [
-          "A valid argument has correct logical structure, while a sound argument also has factually true premises.",
+          "A valid argument has clear logic steps, while a sound argument also has true starting facts.",
           "A sound argument is played through high-volume audio speakers.",
           "There is no difference; both words mean the same thing."
         ],
-        "answer": "A valid argument has correct logical structure, while a sound argument also has factually true premises."
+        "answer": "A valid argument has clear logic steps, while a sound argument also has true starting facts."
       },
       {
         "id": 5,
         "speaker": "Liam",
-        "prompt": "Why is recognizing fallacies an empowering skill in everyday life?",
+        "prompt": "Why is spotting fallacies a helpful skill in everyday life?",
         "options": [
-          "It protects us from misleading advertisements, unfounded political claims, and biased thinking.",
+          "It protects us from misleading ads, weak rumors, and biased thinking.",
           "It allows us to avoid doing our homework.",
           "It makes computers run twice as fast."
         ],
-        "answer": "It protects us from misleading advertisements, unfounded political claims, and biased thinking."
+        "answer": "It protects us from misleading ads, weak rumors, and biased thinking."
       }
     ]
   },
   "rw_part6": {
     "instructions": "Read the text about critical thinking and choose the correct function word for each blank space.",
-    "text_template": "Critical thinking helps students identify flaws in argumentation. When someone claims that all gamers are unmotivated, they commit [1] hasty generalization fallacy. This invalid statement rests on [2] false assumption. Rather than using absolute words like 'always', careful thinkers use qualifiers such [3] 'some' and 'often'. An argument is sound only when its premises are true and its logic holds. Developing these skills protects citizens [4] misleading claims and fosters respectful debate [5] modern society.",
+    "text_template": "Careful thinking helps students spot flaws in argumentation. When someone says all gamers are lazy, they make [1] hasty generalization fallacy. This invalid claim rests on [2] false assumption. Instead of extreme words like 'always', smart speakers use careful words such [3] 'some' and 'often'. An argument stays sound only when its facts are true and its logic works. These skills protect students [4] unfair tricks and help polite debate [5] school.",
     "answers": {
       "1": "a",
       "2": "a",

@@ -13,7 +13,7 @@ export const skillPracticeHubData = {
   "cefr_level": "B1+ Academic",
   "grammar_drills": [
     {
-      "sentence": "According to a study by university psychologists, seventy percent play video games.",
+      "sentence": "According to a study by university researchers, seventy percent play video games.",
       "options": [
         "According to",
         "According with",
@@ -23,7 +23,7 @@ export const skillPracticeHubData = {
       "explanation": "Use 'According to' followed by a source or authority to introduce cited evidence."
     },
     {
-      "sentence": "Statistics demonstrate that a small minority exhibits signs of fatigue.",
+      "sentence": "Statistics demonstrate that only a small minority feels tired in the morning.",
       "options": [
         "demonstrate",
         "demonstrates",
@@ -43,7 +43,7 @@ export const skillPracticeHubData = {
       "explanation": "Use 'reveals that' followed by a declarative clause to present research findings."
     },
     {
-      "sentence": "Researchers analyzed a randomized demographic sample of two thousand students.",
+      "sentence": "Researchers analyzed a fair random sample of two thousand students.",
       "options": [
         "analyzed",
         "analyze",
@@ -53,7 +53,7 @@ export const skillPracticeHubData = {
       "explanation": "Use past simple 'analyzed' to describe completed research actions."
     },
     {
-      "sentence": "A substantial majority of respondents reported positive social connections.",
+      "sentence": "A large majority of students reported better teamwork skills.",
       "options": [
         "majority of",
         "majority to",
@@ -165,24 +165,24 @@ export const skillPracticeHubData = {
         "instruction": "Construct a fair random sample of 100 middle school learners.",
         "items": [
           {
-            "label": "Grade 6-8 Cohort Pool",
+            "label": "Grade 6-8 Student Pool",
             "target": "population_pool"
           },
           {
-            "label": "Standardized Questionnaire",
+            "label": "Clear Short Survey",
             "target": "survey_tool"
           },
           {
-            "label": "100 Randomized Respondents",
+            "label": "100 Chosen Respondents",
             "target": "sample_group"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Data Tally and Percentage Tabulation",
+        "title": "Counting Answers and Percentages",
         "diagram_type": "percentage_tabulation",
-        "instruction": "Convert raw survey answer counts into percentages.",
+        "instruction": "Turn raw survey counts into clear percentages.",
         "items": [
           {
             "label": "Raw Tally Marks (70 votes)",
@@ -200,20 +200,20 @@ export const skillPracticeHubData = {
       },
       {
         "stage": 3,
-        "title": "Citation Proof Protocol",
+        "title": "Sharing Real Study Proof",
         "diagram_type": "citation_proof",
-        "instruction": "Format an authoritative source citation for speech delivery.",
+        "instruction": "Put a clear source citation together for your speech.",
         "items": [
           {
-            "label": "Lead-in Attribution Tag",
+            "label": "Source Citation Tag",
             "target": "intro_clause"
           },
           {
-            "label": "Classroom Survey Data Point",
+            "label": "Class Survey Number Fact",
             "target": "statistic_core"
           },
           {
-            "label": "Analytical Synthesis Sentence",
+            "label": "Clear Evidence Sentence",
             "target": "impact_clause"
           }
         ]
@@ -221,4 +221,5 @@ export const skillPracticeHubData = {
     ]
   }
 };
+
 export default skillPracticeHubData;

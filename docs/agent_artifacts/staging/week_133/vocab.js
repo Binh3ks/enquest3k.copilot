@@ -13,10 +13,10 @@ export const vocab = [
     "word": "statistic",
     "pos": "n",
     "ipa": "/stəˈtɪstɪk/",
-    "definition_en": "A numerical fact or piece of data derived from a large quantity of numerical data",
+    "definition_en": "A number fact collected from a study or survey",
     "definition_vi": "số liệu thống kê",
-    "example_en": "The landmark statistic indicated that seventy percent of middle school students play video games.",
-    "example_vi": "Số liệu thống kê mang tính bước ngoặt chỉ ra rằng bảy mươi phần trăm học sinh trung học cơ sở chơi trò chơi điện tử."
+    "example_en": "One clear statistic showed that seventy percent of middle school students play games.",
+    "example_vi": "Một số liệu thống kê rõ ràng cho thấy bảy mươi phần trăm học sinh THCS chơi game."
   },
   {
     "id": 2,
@@ -25,18 +25,18 @@ export const vocab = [
     "ipa": "/pərˈsent/",
     "definition_en": "One part in every hundred; represented by the percent symbol",
     "definition_vi": "phần trăm",
-    "example_en": "Only twelve percent of surveyed players reported persistent feelings of digital fatigue.",
-    "example_vi": "Chỉ mười hai phần trăm người chơi được khảo sát báo cáo cảm giác mệt mỏi kỹ thuật số kéo dài."
+    "example_en": "Only twelve percent of students in the survey felt tired the next morning.",
+    "example_vi": "Chỉ mười hai phần trăm học sinh tham gia khảo sát cảm thấy mệt vào sáng hôm sau."
   },
   {
     "id": 3,
     "word": "study",
     "pos": "n",
     "ipa": "/ˈstʌdi/",
-    "definition_en": "A detailed investigation and analytical examination of a subject or situation",
+    "definition_en": "A careful research project looking into a topic",
     "definition_vi": "công trình nghiên cứu",
-    "example_en": "A four-year longitudinal study tracked adolescent gaming habits across twenty school districts.",
-    "example_vi": "Một nghiên cứu theo chiều dọc kéo dài bốn năm đã theo dõi thói quen chơi game của thanh thiếu niên trên hai mươi học khu."
+    "example_en": "A four-year school study followed how students spend free time after class.",
+    "example_vi": "Một nghiên cứu kéo dài bốn năm theo dõi cách học sinh dùng thời gian rảnh sau giờ học."
   },
   {
     "id": 4,
@@ -45,8 +45,8 @@ export const vocab = [
     "ipa": "/ˈdeɪtə/",
     "definition_en": "Facts and statistics collected together for reference, calculation, or analysis",
     "definition_vi": "dữ liệu / số liệu thu thập",
-    "example_en": "Empirical survey data provides verifiable foundation for evidence-based policymaking.",
-    "example_vi": "Dữ liệu khảo sát thực nghiệm cung cấp nền tảng có thể kiểm chứng cho việc hoạch định chính sách dựa trên bằng chứng."
+    "example_en": "Real survey data gives speakers checked numbers they can trust in a debate.",
+    "example_vi": "Dữ liệu khảo sát thực tế mang lại những con số đáng tin cậy trong tranh biện."
   },
   {
     "id": 5,
@@ -55,8 +55,8 @@ export const vocab = [
     "ipa": "/məˈdʒɔːrəti/",
     "definition_en": "The greater number or part of something; representing more than fifty percent",
     "definition_vi": "đa số / phần lớn",
-    "example_en": "The vast majority of respondents reported that cooperative gaming improved their teamwork skills.",
-    "example_vi": "Đại đa số người được hỏi cho biết việc chơi game hợp tác đã cải thiện kỹ năng làm việc nhóm của họ."
+    "example_en": "The large majority of students said team games helped them make friends.",
+    "example_vi": "Phần lớn học sinh cho biết trò chơi đồng đội giúp các em kết bạn."
   },
   {
     "id": 6,
@@ -65,28 +65,28 @@ export const vocab = [
     "ipa": "/maɪˈnɔːrəti/",
     "definition_en": "The smaller number or part of a group; representing less than fifty percent",
     "definition_vi": "thiểu số / phần nhỏ",
-    "example_en": "A small minority of participants exhibited signs of compulsive overnight screen usage.",
-    "example_vi": "Một bộ phận nhỏ người tham gia có dấu hiệu sử dụng màn hình cưỡng chế qua đêm."
+    "example_en": "Only a small minority of players stayed up late playing on school nights.",
+    "example_vi": "Chỉ một thiểu số nhỏ người chơi thức khuya chơi game vào tối đi học."
   },
   {
     "id": 7,
     "word": "survey",
     "pos": "n",
     "ipa": "/ˈsɜːrveɪ/",
-    "definition_en": "A research investigation of opinions or behaviors of a representative sample group",
+    "definition_en": "A set of questions asked to many people to collect facts",
     "definition_vi": "cuộc khảo sát / điều tra",
-    "example_en": "The university conducted an anonymous online survey involving four thousand young players.",
-    "example_vi": "Trường đại học đã tiến hành một cuộc khảo sát trực tuyến ẩn danh với sự tham gia của bốn nghìn người chơi trẻ tuổi."
+    "example_en": "Our school club ran an online survey asking four hundred students about hobbies.",
+    "example_vi": "Câu lạc bộ trường tôi đã thực hiện khảo sát trực tuyến hỏi bốn trăm học sinh về sở thích."
   },
   {
     "id": 8,
     "word": "population",
     "pos": "n",
     "ipa": "/ˌpɑːpjəˈleɪʃən/",
-    "definition_en": "The entire group of individuals from which a statistical sample is drawn",
+    "definition_en": "The whole group of people that a study wants to learn about",
     "definition_vi": "quần thể nghiên cứu / tổng dân số đối tượng",
-    "example_en": "The sample was carefully calibrated to mirror the broader national adolescent population.",
-    "example_vi": "Mẫu khảo sát đã được hiệu chuẩn cẩn thận để phản ánh đúng quần thể thanh thiếu niên quốc gia rộng lớn hơn."
+    "example_en": "We chose students from every grade so our sample matched the whole school population.",
+    "example_vi": "Chúng tôi chọn học sinh từ mọi khối lớp để mẫu khớp với toàn bộ học sinh của trường."
   },
   {
     "id": 9,
@@ -95,8 +95,8 @@ export const vocab = [
     "ipa": "/ˈsæmpəl/",
     "definition_en": "A representative subset of individuals selected from a larger population",
     "definition_vi": "mẫu nghiên cứu",
-    "example_en": "Researchers selected a randomized sample of one thousand students from diverse backgrounds.",
-    "example_vi": "Các nhà nghiên cứu đã chọn một mẫu ngẫu nhiên gồm một nghìn học sinh từ các hoàn cảnh khác nhau."
+    "example_en": "Researchers picked a fair sample of one hundred students from five classes.",
+    "example_vi": "Các nhà nghiên cứu chọn một mẫu công bằng gồm một trăm học sinh từ năm lớp."
   },
   {
     "id": 10,
@@ -105,18 +105,18 @@ export const vocab = [
     "ipa": "/ˈkwɑːntəteɪtɪv/",
     "definition_en": "Relating to, measuring, or measured by the numerical quantity of something",
     "definition_vi": "định lượng",
-    "example_en": "Quantitative research relies on measurable data and mathematical statistical models.",
-    "example_vi": "Nghiên cứu định lượng dựa trên dữ liệu có thể đo lường và các mô hình thống kê toán học."
+    "example_en": "Quantitative studies use counted numbers and percentages instead of guesses.",
+    "example_vi": "Nghiên cứu định lượng dùng các con số đếm được và tỷ lệ phần trăm thay vì phỏng đoán."
   },
   {
     "id": 11,
     "word": "methodology",
     "pos": "n",
     "ipa": "/ˌmeθəˈdɑːlədʒi/",
-    "definition_en": "A systematic system of methods applied within a particular research field",
+    "definition_en": "A clear, step-by-step plan for doing a study or survey",
     "definition_vi": "phương pháp luận nghiên cứu",
-    "example_en": "The research team published their full methodology to ensure scientific transparency.",
-    "example_vi": "Nhóm nghiên cứu đã công bố toàn bộ phương pháp luận của họ để đảm bảo tính minh bạch khoa học."
+    "example_en": "Our club shared its full methodology so other classes could repeat the same steps.",
+    "example_vi": "Câu lạc bộ của chúng tôi chia sẻ đầy đủ phương pháp để các lớp khác làm lại đúng các bước."
   },
   {
     "id": 12,
@@ -125,8 +125,8 @@ export const vocab = [
     "ipa": "/ˈfaɪndɪŋz/",
     "definition_en": "Information or conclusions discovered as the result of a scientific inquiry",
     "definition_vi": "kết quả nghiên cứu / các phát hiện",
-    "example_en": "The initial findings challenged common stereotypes regarding youth computer usage.",
-    "example_vi": "Các phát hiện ban đầu đã thách thức những định kiến phổ biến liên quan đến việc sử dụng máy tính của giới trẻ."
+    "example_en": "Our survey findings showed that most players finish homework before playing.",
+    "example_vi": "Kết quả khảo sát cho thấy hầu hết người chơi đều làm xong bài tập trước khi chơi."
   },
   {
     "id": 13,
@@ -135,8 +135,8 @@ export const vocab = [
     "ipa": "/ˌkɔːrəˈleɪʃən/",
     "definition_en": "A mutual statistical relationship or connection between two or more variables",
     "definition_vi": "sự tương quan",
-    "example_en": "Scientists discovered a moderate correlation between late-night gaming and morning tardiness.",
-    "example_vi": "Các nhà khoa học đã phát hiện ra mối tương quan vừa phải giữa việc chơi game khuya và việc đi học muộn vào buổi sáng."
+    "example_en": "Scientists noticed a correlation between late screen time and sleepy mornings.",
+    "example_vi": "Các nhà khoa học nhận thấy mối liên hệ giữa việc xem màn hình khuya và buổi sáng buồn ngủ."
   },
   {
     "id": 14,
@@ -145,18 +145,18 @@ export const vocab = [
     "ipa": "/ˈveriəbəl/",
     "definition_en": "An element, feature, or numerical factor that is liable to change in an experiment",
     "definition_vi": "biến số nghiên cứu",
-    "example_en": "Sleep duration was treated as the primary dependent variable in the regression analysis.",
-    "example_vi": "Thời lượng giấc ngủ được coi là biến phụ thuộc chính trong phân tích hồi quy."
+    "example_en": "Hours of sleep was one important variable we tracked in our class chart.",
+    "example_vi": "Số giờ ngủ là một biến số quan trọng chúng tôi theo dõi trên biểu đồ của lớp."
   },
   {
     "id": 15,
     "word": "analyze",
     "pos": "v",
     "ipa": "/ˈænəlaɪz/",
-    "definition_en": "To examine methodically and in detail the constitution or structure of data",
+    "definition_en": "To study numbers or facts carefully to understand what they show",
     "definition_vi": "phân tích",
-    "example_en": "Data analysts use advanced statistical software to analyze thousands of survey responses.",
-    "example_vi": "Các nhà phân tích dữ liệu sử dụng phần mềm thống kê tiên tiến để phân tích hàng nghìn phản hồi khảo sát."
+    "example_en": "Students use simple bar charts to analyze answers from their class survey.",
+    "example_vi": "Học sinh dùng biểu đồ cột đơn giản để phân tích câu trả lời từ khảo sát lớp."
   },
   {
     "id": 16,
@@ -165,8 +165,8 @@ export const vocab = [
     "ipa": "/rɪˈspɑːndənt/",
     "definition_en": "A person who replies to an inquiry, questionnaire, or research survey",
     "definition_vi": "người trả lời khảo sát",
-    "example_en": "Each respondent completed a thirty-question survey evaluating daily digital habits.",
-    "example_vi": "Mỗi người trả lời đã hoàn thành một bảng khảo sát gồm ba mươi câu hỏi đánh giá thói quen kỹ thuật số hàng ngày."
+    "example_en": "Each respondent answered ten short questions about after-school screen time.",
+    "example_vi": "Mỗi người trả lời đã hoàn thành mười câu hỏi ngắn về thời gian dùng màn hình sau giờ học."
   },
   {
     "id": 17,
@@ -175,18 +175,18 @@ export const vocab = [
     "ipa": "/ˈmetrɪk/",
     "definition_en": "A standard of quantitative measurement used for assessment or tracking",
     "definition_vi": "chỉ số đo lường",
-    "example_en": "Weekly active playing hours served as the primary behavioral metric in the investigation.",
-    "example_vi": "Số giờ chơi tích cực hàng tuần đóng vai trò là chỉ số đo lường hành vi chính trong cuộc điều tra."
+    "example_en": "Hours played per week was our main metric in the school survey.",
+    "example_vi": "Số giờ chơi mỗi tuần là chỉ số chính trong khảo sát của trường."
   },
   {
     "id": 18,
     "word": "empirical",
     "pos": "adj",
     "ipa": "/ɪmˈpɪrɪkəl/",
-    "definition_en": "Based on, concerned with, or verifiable by systematic observation or experience",
+    "definition_en": "Based on real facts and tests you can actually check",
     "definition_vi": "mang tính thực nghiệm",
-    "example_en": "Empirical evidence carries far more scholarly weight than unsubstantiated personal anecdotes.",
-    "example_vi": "Bằng chứng thực nghiệm mang nhiều trọng lượng học thuật hơn là những giai thoại cá nhân vô căn cứ."
+    "example_en": "Empirical evidence—real facts you can check—is stronger than one person's guess.",
+    "example_vi": "Bằng chứng thực nghiệm—những sự thật kiểm chứng được—mạnh hơn lời đoán của một người."
   },
   {
     "id": 19,
@@ -195,8 +195,8 @@ export const vocab = [
     "ipa": "/haɪˈpɑːθəsɪs/",
     "definition_en": "A proposed formal explanation made on the basis of limited evidence as a starting point",
     "definition_vi": "giả thuyết nghiên cứu",
-    "example_en": "The research team formulated a hypothesis that moderate puzzle gaming enhances spatial reasoning.",
-    "example_vi": "Nhóm nghiên cứu đã xây dựng giả thuyết rằng chơi game giải đố có chừng mực sẽ nâng cao khả năng suy luận không gian."
+    "example_en": "Our club tested the hypothesis that team games help students cooperate better.",
+    "example_vi": "Câu lạc bộ kiểm tra giả thuyết rằng trò chơi đồng đội giúp học sinh hợp tác tốt hơn."
   },
   {
     "id": 20,
@@ -205,8 +205,8 @@ export const vocab = [
     "ipa": "/ˈfriːkwənsi/",
     "definition_en": "The rate at which something occurs or is repeated over a specified time period",
     "definition_vi": "tần suất xuất hiện",
-    "example_en": "The survey recorded the frequency of multiplayer collaborative sessions per week.",
-    "example_vi": "Cuộc khảo sát đã ghi lại tần suất của các buổi chơi hợp tác nhiều người chơi mỗi tuần."
+    "example_en": "The survey asked about the weekly frequency of team games after school.",
+    "example_vi": "Khảo sát hỏi về tần suất chơi game đồng đội hằng tuần sau giờ học."
   }
 ];
 export const vocabList = vocab;

@@ -20,10 +20,10 @@ export const skillPracticeHubData = {
         "Consequently,"
       ],
       "answer": "On the contrary,",
-      "explanation": "Use 'On the contrary,' to signal that a preceding assertion was incorrect and the opposite is true."
+      "explanation": "Use 'On the contrary,' to show the claim before it was wrong and the opposite is true."
     },
     {
-      "sentence": "While proponents claim that costs are high, long-term savings outweigh initial expenses.",
+      "sentence": "While opponents say clean power costs a lot, long-term savings are much bigger.",
       "options": [
         "While",
         "During",
@@ -33,7 +33,7 @@ export const skillPracticeHubData = {
       "explanation": "Use 'While' to introduce a concession clause that contrasts with the main clause."
     },
     {
-      "sentence": "They claim that space travel is wasteful, but evidence shows it pioneers vital medical technologies.",
+      "sentence": "They claim space travel wastes money, but evidence shows it creates useful health tools.",
       "options": [
         "shows",
         "show",
@@ -43,7 +43,7 @@ export const skillPracticeHubData = {
       "explanation": "The uncountable singular noun 'evidence' takes the singular verb 'shows'."
     },
     {
-      "sentence": "Debaters must disagree with arguments without attacking an opponent's character.",
+      "sentence": "Debaters should disagree with ideas politely without attacking the other speaker.",
       "options": [
         "disagree with",
         "disagree to",
@@ -53,7 +53,7 @@ export const skillPracticeHubData = {
       "explanation": "Use the preposition 'with' after the verb 'disagree' when referring to arguments or people."
     },
     {
-      "sentence": "If the foundational premise is invalid, the entire conclusion collapses.",
+      "sentence": "If the starting premise is invalid, the final conclusion fails too.",
       "options": [
         "invalid",
         "invalided",
@@ -239,7 +239,7 @@ export const skillPracticeHubData = {
         "stage": 1,
         "title": "Identifying Claim vs Counter Evidence",
         "diagram_type": "claim_vs_evidence",
-        "instruction": "Separate an opponent assertion from verified rebuttal facts.",
+        "instruction": "Separate an opponent's claim from checked rebuttal facts.",
         "items": [
           {
             "label": "Opponent Generalization",
@@ -298,4 +298,5 @@ export const skillPracticeHubData = {
     ]
   }
 };
+
 export default skillPracticeHubData;
