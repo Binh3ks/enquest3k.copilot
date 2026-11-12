@@ -1,0 +1,211 @@
+ROUND 83 PACKAGE & COMMIT MANIFEST
+========================================================================
+Timestamp:                 2026-11-12T08:33:35.045Z
+round82_baseline_commit:   1e0039adbdf0ac56789b8d11e3e57888f5d00f44
+deliverables_commit:       382f51c208ba0f16d827d86a41cbedc98187c967
+deliverables_clean_check:  PASS (0 uncommitted/untracked changes in Round 83 deliverables)
+manifest_commit_contract:  Generated strictly AFTER Commit 1 (deliverables_commit).
+                           Commit 2 ONLY adds docs/review_packages/manifest_round83.txt
+                           (round83_20261112.zip is gitignored via .gitignore; 0 code/artifact delta in Commit 2).
+
+ZIP PACKAGE:
+  Path:    docs/review_packages/round83_20261112.zip
+  Size:    98384 bytes
+  SHA-256: 2e293f676c164c9211dd416292845f6496cbadb7bb32bb4fdfd33def06154c89
+
+ROUND 83 SCRIPTS, STAGING & ARTIFACT HASHES (SHA-256):
+  f7b1f706dc5130a805794a9c611a5e793c1372e3bb42c90cb359eab0cd8b9efc  scripts/run_round83_wave3_gates.mjs
+  5b7fea8981175d93aea3b15e9c6c638858b8124082c7dcb186023c3f7f6066a2  scripts/verify_round83.mjs
+  f48dba83e4cebb809c3ba816cbaf3257bf8c7678c3e51f81e71c115ad04951ab  scripts/package_round83.mjs
+  7568764b02fe5d3dcf0b0a0cd7906444db74170ca6358fe64e1ea126ce65b9c4  docs/agent_artifacts/round83_wave3_gate_raw.txt
+  4a3a3a895b908109879d0d6a0c85521976c1af40ba3ebbd8ce99f4797348e359  docs/agent_artifacts/round83_verification_raw.txt
+  62ddfe3cd1622b2515ea47af8d4d61116cd89dbbad63f1c94018826f866cffea  docs/agent_artifacts/staging/week_126/reading_hub.js
+  bb4997672c95d3cc68bcf0af064472a79b7a9c653a60b436de71f20fe287df23  docs/agent_artifacts/staging/week_126/skill_practice_hub.js
+  5a4da1990f2270536b441f80998cfeb5e1ac2ef5af2a1afa94f4a7e9aef6cff5  docs/agent_artifacts/staging/week_126/provenance.json
+  66dae6570ef931b5800b6bf0c5834d501727fcb94ee2171c28316c2f77895b24  docs/agent_artifacts/staging/week_127/reading_hub.js
+  823f37db88b17c98ab8285aa70bdf2f5499f6dda3414a877b23575be8f8581b6  docs/agent_artifacts/staging/week_127/skill_practice_hub.js
+  15dc6e577705a5f7ff39f16a2863d0d98b41d8f76b9dfa417d68d5666a8de6b4  docs/agent_artifacts/staging/week_127/provenance.json
+  89fc006e24164432d3a67a54999599910773d05034c54fc3def6671030176ace  docs/agent_artifacts/staging/week_133/reading_hub.js
+  9ef8296e5f181778dd5cc1383b458b06f1bcfca611ff2092bbe1cfe10c150a6d  docs/agent_artifacts/staging/week_133/skill_practice_hub.js
+  97a892b1325cd70f7643d715c89184acc453b47a4c67ff531672926e92b61531  docs/agent_artifacts/staging/week_133/provenance.json
+  766c103e8ead3c5f73deb108b9ee41afccfb8d025bfee8a4a59aef3e123a282e  docs/agent_artifacts/staging/week_134/reading_hub.js
+  d5cb840d40c0ac0d0ce3c6938ce2f59fe5fb4256f16c843011d204189fad3fa1  docs/agent_artifacts/staging/week_134/skill_practice_hub.js
+  5a959a678b846b0bfb0ba4e2c81b6efd04ae5923b3f9b49bb0f2aa9077330ffb  docs/agent_artifacts/staging/week_134/provenance.json
+  8ca0970b9fad844e0951764a917f54d10ef13c1330da6112fb93e32a5f43ec27  docs/agent_artifacts/staging/week_133/svg/w133_angle_p1.svg
+  aa322d2cb50fe107b87ab592667acd75b03e073b15416c54d4a5fd34963da6d3  docs/agent_artifacts/staging/week_133/svg/w133_angle_p2.svg
+  0c9b473b2a31d2158d541b6131fd1f576e1b7b08f7ac3d792c2026112c0c6482  docs/agent_artifacts/staging/week_133/svg/w133_angle_p3.svg
+  2f2f25963fb038e3f07be2e04bb671360552c793febc34ee1a03c5db7c3e0707  docs/agent_artifacts/staging/week_133/svg/w133_angle_p4.svg
+  9949952bc55c8f7086fb91addf38dd9042b34ef17f6a60a32cefd5b2a7a53376  docs/agent_artifacts/staging/week_133/svg/w133_angle_p5.svg
+  0b9a9d19ac76d91dfd15294e230fec34315b48270c12671f3cf0dc51b45f770f  docs/agent_artifacts/staging/week_134/svg/w134_triangle_p1.svg
+  59154ab76f47bf97e653c4617f83c2fa47d2759b5b4fc5b39c13f20f4a198b21  docs/agent_artifacts/staging/week_134/svg/w134_triangle_p2.svg
+  88f56771003cb37a03d8f05b3d487e3de3319a67743c759576472de7aeeb5132  docs/agent_artifacts/staging/week_134/svg/w134_triangle_p3.svg
+  f796a3fc58b7108b8dab9522d1785cbf01d37493770ad232a9d88e9a54f3b332  docs/agent_artifacts/staging/week_134/svg/w134_triangle_p4.svg
+  debca1ab31eeec37238ee6a295071a04c9920e0365713803e45e5b86c5fbe6b9  docs/agent_artifacts/staging/week_134/svg/w134_triangle_p5.svg
+
+LIVE GIT SCOPE DISCLOSURE (R82 BASELINE 1e0039ad..382f51c2):
+1. src/ (including src/data/weeks/) delta (MUST be none):
+   (none)
+   (src/data/weeks/: (none))
+2. public/ delta (MUST be none):
+   (none)
+3. Live Digital Map (docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md) delta (MUST be none):
+   (none)
+4. Governance docs & freeze manifests delta (MUST be none):
+   (none)
+5. Full Round 83 deliverables delta (R82..deliverables_commit):
+   A	docs/agent_artifacts/round83_verification_raw.txt
+   A	docs/agent_artifacts/round83_wave3_gate_raw.txt
+   M	docs/agent_artifacts/staging/week_126/provenance.json
+   M	docs/agent_artifacts/staging/week_126/reading_hub.js
+   M	docs/agent_artifacts/staging/week_126/skill_practice_hub.js
+   M	docs/agent_artifacts/staging/week_127/provenance.json
+   M	docs/agent_artifacts/staging/week_127/reading_hub.js
+   M	docs/agent_artifacts/staging/week_127/skill_practice_hub.js
+   M	docs/agent_artifacts/staging/week_133/provenance.json
+   M	docs/agent_artifacts/staging/week_133/reading_hub.js
+   M	docs/agent_artifacts/staging/week_133/skill_practice_hub.js
+   A	docs/agent_artifacts/staging/week_133/svg/w133_angle_p1.svg
+   A	docs/agent_artifacts/staging/week_133/svg/w133_angle_p2.svg
+   A	docs/agent_artifacts/staging/week_133/svg/w133_angle_p3.svg
+   A	docs/agent_artifacts/staging/week_133/svg/w133_angle_p4.svg
+   A	docs/agent_artifacts/staging/week_133/svg/w133_angle_p5.svg
+   M	docs/agent_artifacts/staging/week_134/provenance.json
+   M	docs/agent_artifacts/staging/week_134/reading_hub.js
+   M	docs/agent_artifacts/staging/week_134/skill_practice_hub.js
+   A	docs/agent_artifacts/staging/week_134/svg/w134_triangle_p1.svg
+   A	docs/agent_artifacts/staging/week_134/svg/w134_triangle_p2.svg
+   A	docs/agent_artifacts/staging/week_134/svg/w134_triangle_p3.svg
+   A	docs/agent_artifacts/staging/week_134/svg/w134_triangle_p4.svg
+   A	docs/agent_artifacts/staging/week_134/svg/w134_triangle_p5.svg
+   A	scripts/package_round83.mjs
+   A	scripts/run_round83_wave3_gates.mjs
+   A	scripts/verify_round83.mjs
+6. Remaining working-tree entries (pre-existing unrelated files left unstaged + current zip/manifest):
+   M docs/Claude_handoff.txt
+    M docs/agent_artifacts/differentiation_options_w79_80_w129_132.md
+    D docs/review_packages/manifest_round70.txt
+    D docs/review_packages/manifest_round71.txt
+    D docs/review_packages/manifest_round72.txt
+    D docs/review_packages/manifest_round73.txt
+    D docs/review_packages/manifest_round74.txt
+    D docs/review_packages/manifest_round75.txt
+    D docs/review_packages/manifest_round80.txt
+    M scripts/analyze_source_b_internal_conflicts.mjs
+    M scripts/audit_round73_source_b_baseline.mjs
+    M scripts/audit_round75_source_b_baseline.mjs
+    M scripts/audit_staged_gate11.mjs
+    M scripts/build_source_a_vs_source_b_table.mjs
+    M scripts/package_round73.mjs
+    M scripts/package_round74.mjs
+    M scripts/package_round75.mjs
+    M scripts/package_round76.mjs
+    M scripts/package_round78.mjs
+   ?? "docs/Claude_handoff copy.txt"
+   ?? docs/OPEN_ITEMS.md
+   ?? docs/agent_artifacts/G1D_SO_DANG_KY_NGUON_SU_THAT_W33.md
+   ?? docs/agent_artifacts/HOTFIX_W35_DOM_EVIDENCE.json
+   ?? docs/agent_artifacts/ROUND53_DRY_RUN_PHONETICS_COVERAGE_REPORT.json
+   ?? docs/agent_artifacts/ROUND53_DRY_RUN_PHONETICS_COVERAGE_REPORT.md
+   ?? docs/agent_artifacts/ROUND55_AUDIO_FEASIBILITY_AUDIT.json
+   ?? docs/agent_artifacts/ROUND56_W35_FORENSIC_SCOPE_REPORT.md
+   ?? docs/agent_artifacts/ROUND57_W35_FIELD_LEVEL_DATA_AUDIT.md
+   ?? docs/agent_artifacts/STEP_C_FALLBACK_TABLE.md
+   ?? docs/agent_artifacts/W33_40_COMMITS_AFTER_TAG.csv
+   ?? docs/agent_artifacts/W33_W34_DATA_COMPARISON.md
+   ?? docs/agent_artifacts/W34_AUDIO_COVERAGE_TABLE.md
+   ?? docs/agent_artifacts/W34_HANDOFF_LOGS_2026-10-28.md
+   ?? docs/agent_artifacts/analyze_mcq_recursive.mjs
+   ?? docs/agent_artifacts/analyze_w33_mcq.mjs
+   ?? docs/agent_artifacts/broadcast_studio_scene_proof.png
+   ?? docs/agent_artifacts/build_40_commits_csv.mjs
+   ?? docs/agent_artifacts/doc_inventory.tsv
+   ?? docs/agent_artifacts/exhaustive_production_playtest_report.json
+   ?? docs/agent_artifacts/f7d3_batch1.json
+   ?? docs/agent_artifacts/fallback_scan_raw.json
+   ?? docs/agent_artifacts/fs_trace.cjs
+   ?? docs/agent_artifacts/g1i_raw/m41_git_commit_w34.txt
+   ?? docs/agent_artifacts/g1i_raw/m42_git_log_and_status.txt
+   ?? docs/agent_artifacts/g1i_scripts/
+   ?? docs/agent_artifacts/gate15_v2_audio_log_w33.json
+   ?? docs/agent_artifacts/gate15_v2_audio_log_w34.json
+   ?? docs/agent_artifacts/gate15_w33_local.txt
+   ?? docs/agent_artifacts/gate15_w33_prod.txt
+   ?? docs/agent_artifacts/gate_run_results_1218f5af.json
+   ?? docs/agent_artifacts/gate_run_results_df023efe.json
+   ?? docs/agent_artifacts/gate_run_results_e8dbc532.json
+   ?? docs/agent_artifacts/generate_quality_dump.mjs
+   ?? docs/agent_artifacts/investigation_w34/
+   ?? docs/agent_artifacts/official_wordlists_scanned.json
+   ?? docs/agent_artifacts/oxford_a2_verified_36.json
+   ?? docs/agent_artifacts/oxford_a2_word_levels.json
+   ?? docs/agent_artifacts/oxford_scraped_lemmas.json
+   ?? docs/agent_artifacts/prod_vs_local_73_mp3.json
+   ?? docs/agent_artifacts/round10_diff.patch
+   ?? docs/agent_artifacts/round75_prompt.txt
+   ?? docs/agent_artifacts/round75_prompt_full.txt
+   ?? docs/agent_artifacts/screenshots/audit_all_21_games_results.json
+   ?? docs/agent_artifacts/screenshots/hotfix_w35/
+   ?? docs/agent_artifacts/screenshots/w33/
+   ?? docs/agent_artifacts/screenshots/w34/broadcast_studio_direction_a.png
+   ?? docs/agent_artifacts/screenshots/w34/broadcast_studio_fixed.png
+   ?? docs/agent_artifacts/screenshots/w34/mouse_or_squirrel_closeup.jpg
+   ?? docs/agent_artifacts/screenshots/w34/science_report_hotspot_mouse_ui.png
+   ?? docs/agent_artifacts/test_all_gates.mjs
+   ?? docs/agent_artifacts/test_negative_empty_data_output.txt
+   ?? docs/agent_artifacts/w33_inventory_run1.json
+   ?? docs/agent_artifacts/w33_inventory_run2.json
+   ?? docs/agent_artifacts/w33_orphaned_media_full_list.json
+   ?? docs/agent_artifacts/w33_quality_dump.txt
+   ?? docs/agent_artifacts/w34_audio_comparison.json
+   ?? docs/agent_artifacts/w34_auto_extracted_expected.json
+   ?? docs/agent_artifacts/w34_prod_playtest_report.json
+   ?? docs/agent_artifacts/w34_rigorous_asr_audit_small.json
+   ?? docs/agent_artifacts/w34_whisper_all_73.json
+   ?? docs/agent_artifacts/w34_wip_2026-10-20.patch
+   ?? docs/agent_artifacts/week_inventory.mjs
+   ?? scripts/audit_week_audio_readiness.mjs
+   ?? scripts/batch_generate_week_audio.mjs
+   ?? scripts/build_wave1_specs.mjs
+   ?? scripts/build_wave3_specs.mjs
+   ?? scripts/capture_followup_evidence.mjs
+   ?? scripts/capture_hotfix_w35_evidence.mjs
+   ?? scripts/capture_investigation_proofs.mjs
+   ?? scripts/capture_round12_requested_screenshots.mjs
+   ?? scripts/capture_w33_batch1_screenshots.mjs
+   ?? scripts/capture_w34_package_screenshots.mjs
+   ?? scripts/compare_w33_w34_data_metrics.mjs
+   ?? scripts/compare_w33_w34_schemas.mjs
+   ?? scripts/create_w80_generator.py
+   ?? scripts/deep_audio_playtest_prod.mjs
+   ?? scripts/enrich_audio_log.mjs
+   ?? scripts/extract_w34_expected.mjs
+   ?? scripts/fetch_oxford_lemmas_real.py
+   ?? scripts/gen_w127_w129.py
+   ?? scripts/gen_w129_w130.py
+   ?? scripts/gen_w131.py
+   ?? scripts/gen_w134.py
+   ?? scripts/generate_step_c_table.mjs
+   ?? scripts/generate_w34_all_images.py
+   ?? scripts/generate_w34_audio_coverage_table.mjs
+   ?? scripts/generate_wave3_specs.py
+   ?? scripts/generate_wave3_specs_full.py
+   ?? scripts/migrate_w35_group_a.mjs
+   ?? scripts/package_round56_batch_audio.mjs
+   ?? scripts/package_round56_hotfix.mjs
+   ?? scripts/package_round58_migration.mjs
+   ?? scripts/package_round59.mjs
+   ?? scripts/package_round60.mjs
+   ?? scripts/patch_w80.py
+   ?? scripts/play_15_quests_production_forensics.mjs
+   ?? scripts/playtest_production_exhaustive.mjs
+   ?? scripts/rigorous_w34_audio_asr_audit.py
+   ?? scripts/run_14_gates_logging.mjs
+   ?? scripts/scan_fallbacks_and_defaults.mjs
+   ?? scripts/scan_hardcoded_student_strings.mjs
+   ?? scripts/test_batch_audio_generator.mjs
+   ?? scripts/test_cross_week_duplication.mjs
+   ?? scripts/test_negative_empty_data.mjs
+   ?? scripts/test_parse_source_b.mjs
+   ?? scripts/validate_f7d3_batch1.mjs
+   ?? scripts/verify_broadcast_5scenes.mjs
+========================================================================
