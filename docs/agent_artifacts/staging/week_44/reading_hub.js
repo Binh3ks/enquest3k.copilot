@@ -1,9 +1,8 @@
 /**
- * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
+ * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 44 | Theme: "The Cookie Monster (Subtraction Language)" | CEFR: A2 Flyers
- * Generated: 2026-11-07T10:57:56.167Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
- * Provenance: Grounded in blueprint.json + Source B Syllabus
+ * Generated: 2026-11-13T05:36:25.000Z
+ * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
@@ -17,472 +16,390 @@ export const readingHubData = {
       "word": "minus",
       "pos": "prep",
       "ipa": "/ˈmaɪnəs/",
-      "definition_en": "With the subtraction of; less by a specified number",
+      "definition_en": "Word showing subtraction of a number.",
       "definition_vi": "trừ đi",
-      "example_en": "Ten minus three equals seven chocolate cookies.",
-      "example_vi": "Mười trừ ba bằng bảy chiếc bánh quy sô-cô-la."
+      "example_en": "Ten crunchy cookies minus four cookies equals six.",
+      "example_vi": "Mười chiếc bánh quy giòn trừ bốn cái bằng sáu."
     },
     {
       "id": 2,
       "word": "subtract",
       "pos": "v",
       "ipa": "/səbˈtrækt/",
-      "definition_en": "Take away a number or amount from another number",
+      "definition_en": "To take away one number from another.",
       "definition_vi": "làm phép trừ",
-      "example_en": "We can subtract the cookies eaten from the total batch.",
-      "example_vi": "Chúng ta có thể trừ số bánh đã ăn khỏi tổng mẻ bánh."
+      "example_en": "We subtract small numbers to find what remains.",
+      "example_vi": "Chúng ta trừ các số nhỏ để tìm phần còn lại."
     },
     {
       "id": 3,
       "word": "take away",
-      "pos": "v",
+      "pos": "phr v",
       "ipa": "/teɪk əˈweɪ/",
-      "definition_en": "Remove a specified quantity from a larger collection",
+      "definition_en": "To remove an amount from a group.",
       "definition_vi": "lấy bớt đi",
-      "example_en": "If you take away two muffins, four muffins remain.",
-      "example_vi": "Nếu bạn lấy bớt đi hai chiếc bánh nướng, còn lại bốn chiếc."
+      "example_en": "Please take away two warm cookies from the tray.",
+      "example_vi": "Làm ơn lấy bớt hai chiếc bánh quy ấm khỏi khay."
     },
     {
       "id": 4,
-      "word": "left",
-      "pos": "adj",
-      "ipa": "/left/",
-      "definition_en": "Remaining behind after other parts have been removed",
-      "definition_vi": "còn lại",
-      "example_en": "How many delicious cookies are left on the blue tray?",
-      "example_vi": "Còn lại bao nhiêu chiếc bánh quy thơm ngon trên khay xanh?"
+      "word": "how many left",
+      "pos": "phr",
+      "ipa": "/haʊ ˈmeni left/",
+      "definition_en": "Asking for the remaining quantity.",
+      "definition_vi": "còn lại bao nhiêu",
+      "example_en": "How many left after the hungry children ate lunch?",
+      "example_vi": "Còn lại bao nhiêu sau khi những đứa trẻ đói ăn trưa?"
     },
     {
       "id": 5,
       "word": "lose",
       "pos": "v",
       "ipa": "/luːz/",
-      "definition_en": "Be deprived of or cease to have something in possession",
-      "definition_vi": "mất đi, bớt đi",
-      "example_en": "Do not lose any counting tokens under the table.",
-      "example_vi": "Đừng làm mất bất kỳ đồng xu đếm nào dưới gầm bàn."
+      "definition_en": "To have less by misplacing pieces.",
+      "definition_vi": "làm mất, mất đi",
+      "example_en": "Be careful not to lose any cookie tokens.",
+      "example_vi": "Cẩn thận đừng làm mất đồng xu bánh quy nào."
     },
     {
       "id": 6,
       "word": "cookie",
       "pos": "n",
       "ipa": "/ˈkʊki/",
-      "definition_en": "A sweet baked biscuit that is flat and round",
+      "definition_en": "A sweet small flat baked treat.",
       "definition_vi": "bánh quy",
-      "example_en": "Grandma baked a batch of warm oatmeal cookies.",
-      "example_vi": "Bà đã nướng một mẻ bánh quy yến mạch ấm nóng."
+      "example_en": "Grandma baked sweet chocolate chip cookies today.",
+      "example_vi": "Hôm nay bà nướng bánh quy sô-cô-la ngọt ngào."
     },
     {
       "id": 7,
-      "word": "jar",
+      "word": "baker",
       "pos": "n",
-      "ipa": "/dʒɑːr/",
-      "definition_en": "A wide-mouthed cylindrical container made of glass",
-      "definition_vi": "lọ, hũ",
-      "example_en": "Lucas reached his hand into the glass cookie jar.",
-      "example_vi": "Lucas thò tay vào chiếc hũ thủy tinh đựng bánh quy."
+      "ipa": "/ˈbeɪkər/",
+      "definition_en": "A person who bakes bread and cakes.",
+      "definition_vi": "thợ làm bánh",
+      "example_en": "The friendly baker opened the bakery at dawn.",
+      "example_vi": "Người thợ bánh thân thiện mở cửa tiệm lúc bình minh."
     },
     {
       "id": 8,
-      "word": "plate",
-      "pos": "n",
-      "ipa": "/pleɪt/",
-      "definition_en": "A flat dish from which food is served or eaten",
-      "definition_vi": "đĩa thức ăn",
-      "example_en": "Chloe arranged eight butter cookies on the white plate.",
-      "example_vi": "Chloe xếp tám chiếc bánh quy bơ lên chiếc đĩa trắng."
-    },
-    {
-      "id": 9,
-      "word": "share",
-      "pos": "v",
-      "ipa": "/ʃer/",
-      "definition_en": "Distribute or give a portion of something to others",
-      "definition_vi": "chia sẻ",
-      "example_en": "It is kind to share your sweet snacks with friends.",
-      "example_vi": "Thật tử tế khi chia sẻ đồ ăn vặt ngọt ngào của bạn với bạn bè."
-    },
-    {
-      "id": 10,
-      "word": "remain",
-      "pos": "v",
-      "ipa": "/rɪˈmeɪn/",
-      "definition_en": "Continue to exist after other parts are taken away",
-      "definition_vi": "còn lại, duy trì",
-      "example_en": "Only five golden cookies remain on the baking sheet.",
-      "example_vi": "Chỉ còn lại năm chiếc bánh vàng óng trên khay nướng."
-    },
-    {
-      "id": 11,
-      "word": "remove",
-      "pos": "v",
-      "ipa": "/rɪˈmuːv/",
-      "definition_en": "Take something away from its current position",
-      "definition_vi": "lấy đi, dọn đi",
-      "example_en": "Please remove three cookies to share with grandpa.",
-      "example_vi": "Làm ơn lấy đi ba chiếc bánh quy để chia sẻ với ông."
-    },
-    {
-      "id": 12,
-      "word": "snack",
-      "pos": "n",
-      "ipa": "/snæk/",
-      "definition_en": "A small amount of food eaten between regular meals",
-      "definition_vi": "món ăn nhẹ, đồ ăn vặt",
-      "example_en": "Fresh fruit and cookies make a lovely afternoon snack.",
-      "example_vi": "Trái cây tươi và bánh quy làm nên một bữa ăn nhẹ buổi chiều đáng yêu."
-    },
-    {
-      "id": 13,
-      "word": "monster",
-      "pos": "n",
-      "ipa": "/ˈmɑːnstər/",
-      "definition_en": "A playful furry creature in a story or puppet game",
-      "definition_vi": "quái vật (đồ chơi/rối)",
-      "example_en": "The blue puppet monster pretended to eat all the crumbs.",
-      "example_vi": "Chú rối quái vật xanh giả vờ ăn hết tất cả các mẩu vụn bánh."
-    },
-    {
-      "id": 14,
-      "word": "bake",
-      "pos": "v",
-      "ipa": "/beɪk/",
-      "definition_en": "Cook sweet food using dry heat inside an oven",
-      "definition_vi": "nướng bánh",
-      "example_en": "Grandma loves to bake ginger biscuits on rainy days.",
-      "example_vi": "Bà thích nướng bánh quy gừng vào những ngày mưa."
-    },
-    {
-      "id": 15,
-      "word": "hungry",
-      "pos": "adj",
-      "ipa": "/ˈhʌŋɡri/",
-      "definition_en": "Feeling an urgent physical need to eat food",
-      "definition_vi": "đói bụng",
-      "example_en": "The hungry children smelled the warm vanilla baking.",
-      "example_vi": "Những đứa trẻ đói bụng ngửi thấy mùi thơm vani nướng ấm áp."
-    },
-    {
-      "id": 16,
-      "word": "fewer",
-      "pos": "adj",
-      "ipa": "/ˈfjuːər/",
-      "definition_en": "A smaller number of separate individual items",
-      "definition_vi": "ít hơn (cho danh từ đếm được)",
-      "example_en": "There are fewer cookies on the tray than before.",
-      "example_vi": "Có ít bánh quy trên khay hơn so với lúc trước."
-    },
-    {
-      "id": 17,
-      "word": "difference",
-      "pos": "n",
-      "ipa": "/ˈdɪfərəns/",
-      "definition_en": "The quantity remaining after one value is subtracted",
-      "definition_vi": "hiệu số",
-      "example_en": "The difference between ten and seven is three.",
-      "example_vi": "Hiệu số giữa mười và bảy là ba."
-    },
-    {
-      "id": 18,
-      "word": "delicious",
-      "pos": "adj",
-      "ipa": "/dɪˈlɪʃəs/",
-      "definition_en": "Highly pleasing to the sense of taste; yummy",
-      "definition_vi": "thơm ngon",
-      "example_en": "These crispy cinnamon cookies are truly delicious.",
-      "example_vi": "Những chiếc bánh quy quế giòn rụm này thực sự rất thơm ngon."
-    },
-    {
-      "id": 19,
       "word": "tray",
       "pos": "n",
       "ipa": "/treɪ/",
-      "definition_en": "A flat shallow container used for holding food dishes",
-      "definition_vi": "khay đựng",
-      "example_en": "Grandma pulled a hot metal tray out of the oven.",
-      "example_vi": "Bà kéo một khay kim loại nóng hổi ra khỏi lò nướng."
+      "definition_en": "A flat metal plate for baking food.",
+      "definition_vi": "khay nướng",
+      "example_en": "The baker placed a metal tray into the oven.",
+      "example_vi": "Người thợ đặt khay kim loại vào lò nướng."
     },
     {
-      "id": 20,
+      "id": 9,
+      "word": "oven",
+      "pos": "n",
+      "ipa": "/ˈʌvən/",
+      "definition_en": "An enclosed space for heating food.",
+      "definition_vi": "lò nướng",
+      "example_en": "Fresh cookies bake inside the warm kitchen oven.",
+      "example_vi": "Bánh quy thơm lừng nướng trong lò bếp ấm."
+    },
+    {
+      "id": 10,
+      "word": "jar",
+      "pos": "n",
+      "ipa": "/dʒɑːr/",
+      "definition_en": "A glass container with a wide lid.",
+      "definition_vi": "hũ thủy tinh",
+      "example_en": "Mom keeps ginger cookies in a tall glass jar.",
+      "example_vi": "Mẹ cất bánh quy gừng trong hũ thủy tinh cao."
+    },
+    {
+      "id": 11,
+      "word": "eat",
+      "pos": "v",
+      "ipa": "/iːt/",
+      "definition_en": "To put food in mouth and chew it.",
+      "definition_vi": "ăn",
+      "example_en": "The hungry children eat crunchy cookies after school.",
+      "example_vi": "Những đứa trẻ đói ăn bánh quy giòn sau giờ học."
+    },
+    {
+      "id": 12,
+      "word": "share",
+      "pos": "v",
+      "ipa": "/ʃer/",
+      "definition_en": "To divide food equally with others.",
+      "definition_vi": "chia sẻ",
+      "example_en": "Good friends share their afternoon snacks happily.",
+      "example_vi": "Bạn tốt chia sẻ đồ ăn vặt buổi chiều vui vẻ."
+    },
+    {
+      "id": 13,
+      "word": "give",
+      "pos": "v",
+      "ipa": "/ɡɪv/",
+      "definition_en": "To hand something over to another.",
+      "definition_vi": "cho, tặng",
+      "example_en": "I give three oatmeal cookies to my sister.",
+      "example_vi": "Tôi cho em gái ba chiếc bánh quy yến mạch."
+    },
+    {
+      "id": 14,
+      "word": "snack",
+      "pos": "n",
+      "ipa": "/snæk/",
+      "definition_en": "A small portion of food between meals.",
+      "definition_vi": "bữa ăn nhẹ",
+      "example_en": "Cookies and milk make a delicious afternoon snack.",
+      "example_vi": "Bánh quy và sữa làm thành bữa ăn nhẹ ngon miệng."
+    },
+    {
+      "id": 15,
+      "word": "crumb",
+      "pos": "n",
+      "ipa": "/krʌm/",
+      "definition_en": "A tiny piece that breaks off bread.",
+      "definition_vi": "vụn bánh",
+      "example_en": "Little birds pecked at sweet cookie crumbs outside.",
+      "example_vi": "Những chú chim nhỏ mổ vụn bánh quy ngọt bên ngoài."
+    },
+    {
+      "id": 16,
+      "word": "count",
+      "pos": "v",
+      "ipa": "/kaʊnt/",
+      "definition_en": "To find the total number of things.",
+      "definition_vi": "đếm",
+      "example_en": "Let us count the remaining cookies in the jar.",
+      "example_vi": "Chúng ta hãy đếm số bánh quy còn lại trong hũ."
+    },
+    {
+      "id": 17,
       "word": "batch",
       "pos": "n",
       "ipa": "/bætʃ/",
-      "definition_en": "An amount of food produced together in one baking",
+      "definition_en": "A quantity of food baked at one time.",
       "definition_vi": "mẻ bánh",
-      "example_en": "This fresh batch of cookies has twelve sweet pieces.",
-      "example_vi": "Mẻ bánh quy mới này có mười hai chiếc ngọt ngào."
+      "example_en": "The baker finished a fresh batch of butter cookies.",
+      "example_vi": "Người thợ bánh hoàn thành một mẻ bánh bơ tươi mới."
+    },
+    {
+      "id": 18,
+      "word": "hungry",
+      "pos": "adj",
+      "ipa": "/ˈhʌŋɡri/",
+      "definition_en": "Feeling a strong physical need for food.",
+      "definition_vi": "đói bụng",
+      "example_en": "The hungry monster wanted to eat all the cookies.",
+      "example_vi": "Con quái vật đói bụng muốn ăn hết bánh quy."
+    },
+    {
+      "id": 19,
+      "word": "recipe",
+      "pos": "n",
+      "ipa": "/ˈresəpi/",
+      "definition_en": "A set of cooking directions for meals.",
+      "definition_vi": "công thức nấu ăn",
+      "example_en": "Follow this simple recipe to bake crunchy treats.",
+      "example_vi": "Làm theo công thức đơn giản này để nướng bánh giòn."
+    },
+    {
+      "id": 20,
+      "word": "difference",
+      "pos": "n",
+      "ipa": "/ˈdɪfərəns/",
+      "definition_en": "The result of taking away one number.",
+      "definition_vi": "hiệu số",
+      "example_en": "The difference between ten and seven is three.",
+      "example_vi": "Hiệu số giữa mười và bảy là ba."
     }
   ],
   "clil_article": {
-    "title_en": "The Story of Subtraction: Counting What Remains",
-    "title_vi": "Câu Chuyện Phép Trừ: Đếm Những Gì Còn Lại",
-    "content_en": "Subtraction is the math language we use when items are taken away or shared. While addition combines things, subtraction helps us find the difference between amounts. In Grandma Baker's sunny kitchen, Lucas and Chloe practice subtraction with baked treats. Imagine you have a fresh batch of ten crispy cookies on a tray. If a friendly puppet monster takes away four cookies for an afternoon snack, how many remain? To solve this puzzle, we count backward from ten. We say aloud: ten minus four equals six cookies left. We can also ask how many fewer cookies there are now. Using math words like minus, take away, and left helps us explain real everyday situations clearly. Math helps us share fairly with everyone.",
+    "title_en": "The Language of Taking Away",
+    "title_vi": "Ngôn ngữ của Phép Trừ và Lấy Bớt",
+    "content_en": "In the bakery kitchen, arithmetic helps us track sweet treats! When a baker bakes a batch of forty cookies on a metal tray in the oven, everyone is hungry. If hungry friends eat fifteen cookies for an afternoon snack, we use subtraction to find how many left. To solve this, we subtract fifteen from forty, or say forty minus fifteen. When you take away fifteen items, the difference is twenty-five cookies remaining in the glass jar. Next time you share baked cookies or give treats to a friend, count carefully so you do not lose any pieces!",
     "glossary": [
       {
         "word": "subtract",
-        "definition_en": "To take one number away from another to find the remainder",
-        "definition_vi": "lấy bớt một số khỏi số khác để tìm phần còn lại"
+        "definition_en": "To take away a number",
+        "definition_vi": "trừ đi"
       },
       {
         "word": "minus",
-        "definition_en": "A mathematical word meaning with the subtraction of",
-        "definition_vi": "từ chỉ phép trừ mang nghĩa trừ đi"
-      },
-      {
-        "word": "take away",
-        "definition_en": "To remove a certain quantity from a larger collection",
-        "definition_vi": "lấy bớt một lượng ra khỏi tập hợp lớn hơn"
-      },
-      {
-        "word": "left",
-        "definition_en": "Remaining behind after some pieces have been removed",
-        "definition_vi": "còn sót lại sau khi đã lấy bớt đi"
+        "definition_en": "Subtraction symbol or word",
+        "definition_vi": "dấu trừ"
       },
       {
         "word": "difference",
-        "definition_en": "The exact amount by which two numbers differ",
-        "definition_vi": "khoảng chênh lệch chính xác giữa hai số"
+        "definition_en": "The result of subtraction",
+        "definition_vi": "hiệu số"
+      },
+      {
+        "word": "take away",
+        "definition_en": "To remove from a group",
+        "definition_vi": "lấy bớt đi"
+      },
+      {
+        "word": "batch",
+        "definition_en": "Items baked at one time",
+        "definition_vi": "mẻ bánh"
       }
     ],
     "check_questions": [
       {
         "id": 1,
-        "question_en": "What happens when you take away four cookies from ten?",
+        "question_en": "What math operation helps us find how many cookies are left?",
         "options": [
-          "Six cookies are left on the tray",
-          "Fourteen cookies appear",
-          "All the cookies turn into apples"
+          "Subtraction",
+          "Multiplication",
+          "Division"
         ],
-        "answer": "Six cookies are left on the tray"
+        "answer": "Subtraction"
       },
       {
         "id": 2,
-        "question_en": "Which sentence explains 10 - 4 = 6 correctly in words?",
+        "question_en": "If you bake 40 cookies and eat 15, how many remain?",
         "options": [
-          "Ten plus four equals six",
-          "Ten minus four equals six",
-          "Ten times four makes six"
+          "25 cookies",
+          "55 cookies",
+          "10 cookies"
         ],
-        "answer": "Ten minus four equals six"
+        "answer": "25 cookies"
       },
       {
         "id": 3,
-        "question_en": "Why do we use words like 'take away' and 'left'?",
+        "question_en": "What word means the result of a subtraction problem?",
         "options": [
-          "To describe real everyday sharing situations clearly",
-          "To make math confusing",
-          "To hide the cookies from friends"
+          "The difference",
+          "The sum",
+          "The product"
         ],
-        "answer": "To describe real everyday sharing situations clearly"
+        "answer": "The difference"
       }
-    ]
+    ],
+    "text": "In the bakery kitchen, arithmetic helps us track sweet treats! When a baker bakes a batch of forty cookies on a metal tray in the oven, everyone is hungry. If hungry friends eat fifteen cookies for an afternoon snack, we use subtraction to find how many left. To solve this, we subtract fifteen from forty, or say forty minus fifteen. When you take away fifteen items, the difference is twenty-five cookies remaining in the glass jar. Next time you share baked cookies or give treats to a friend, count carefully so you do not lose any pieces!"
   },
   "story_scenes": [
     {
-      "id": 1,
-      "scene_id": "scene_1",
-      "scene_number": 1,
-      "title_en": "Grandma's Sunny Kitchen",
-      "title_vi": "Gian Bếp Ngập Nắng Của Bà",
-      "description_en": "Grandma Baker places a steaming tray of twelve round chocolate chip cookies on the table.",
-      "description": "Grandma Baker places a steaming tray of twelve round chocolate chip cookies on the table.",
-      "image_url": "/images/week44/webtoon_scene_1.png",
-      "audio_url": "/audio/week44/scene_1.mp3"
+      "scene": 1,
+      "title": "Baking Day at Grandma's House",
+      "narration_en": "Ben and Mia tied on aprons to bake chocolate cookies.",
+      "narration_vi": "Ben và Mia đeo tạp dề để nướng bánh quy sô-cô-la.",
+      "dialogue": [
+        {
+          "speaker": "Ben",
+          "text": "Grandma has a special recipe for butter cookies!"
+        },
+        {
+          "speaker": "Mia",
+          "text": "Let's bake a huge batch of thirty cookies!"
+        }
+      ]
     },
     {
-      "id": 2,
-      "scene_id": "scene_2",
-      "scene_number": 2,
-      "title_en": "Counting the Fresh Batch",
-      "title_vi": "Đếm Mẻ Bánh Mới Nướng",
-      "description_en": "Lucas and Chloe count the twelve cookies proudly before putting them onto blue serving plates.",
-      "description": "Lucas and Chloe count the twelve cookies proudly before putting them onto blue serving plates.",
-      "image_url": "/images/week44/webtoon_scene_2.png",
-      "audio_url": "/audio/week44/scene_2.mp3"
+      "scene": 2,
+      "title": "The Cookie Monster Arrives",
+      "narration_en": "As the warm tray cooled, their pet dog Buster sniffed the kitchen.",
+      "narration_vi": "Khi khay bánh nguội, chú chó Buster đánh hơi gian bếp.",
+      "dialogue": [
+        {
+          "speaker": "Ben",
+          "text": "Buster is looking at the tray like a cookie monster!"
+        },
+        {
+          "speaker": "Mia",
+          "text": "Quick, put them inside the tall glass jar!"
+        }
+      ]
     },
     {
-      "id": 3,
-      "scene_id": "scene_3",
-      "scene_number": 3,
-      "title_en": "The Cookie Monster Visits",
-      "title_vi": "Quái Vật Bánh Quy Ghé Thăm",
-      "description_en": "Lucas puts on a furry blue Cookie Monster puppet and pretends to take away four crunchy cookies.",
-      "description": "Lucas puts on a furry blue Cookie Monster puppet and pretends to take away four crunchy cookies.",
-      "image_url": "/images/week44/webtoon_scene_3.png",
-      "audio_url": "/audio/week44/scene_3.mp3"
+      "scene": 3,
+      "title": "Sharing with Friends",
+      "narration_en": "After school, their neighborhood friends knocked on the door.",
+      "narration_vi": "Sau giờ học, những người bạn hàng xóm gõ cửa.",
+      "dialogue": [
+        {
+          "speaker": "Ben",
+          "text": "We started with thirty cookies in the jar."
+        },
+        {
+          "speaker": "Mia",
+          "text": "Let us take away twelve cookies to share with everyone!"
+        }
+      ]
     },
     {
-      "id": 4,
-      "scene_id": "scene_4",
-      "scene_number": 4,
-      "title_en": "Calculating How Many Left",
-      "title_vi": "Tính Xem Còn Lại Bao Nhiêu",
-      "description_en": "Chloe uses a wooden math slate to write the equation: twelve minus four equals eight cookies left.",
-      "description": "Chloe uses a wooden math slate to write the equation: twelve minus four equals eight cookies left.",
-      "image_url": "/images/week44/webtoon_scene_4.png",
-      "audio_url": "/audio/week44/scene_4.mp3"
+      "scene": 4,
+      "title": "How Many Left?",
+      "narration_en": "Mia counted the cookies that remained in the glass jar.",
+      "narration_vi": "Mia đếm số bánh quy còn lại trong hũ thủy tinh.",
+      "dialogue": [
+        {
+          "speaker": "Mia",
+          "text": "Thirty minus twelve leaves eighteen cookies!"
+        },
+        {
+          "speaker": "Ben",
+          "text": "The difference is eighteen sweet treats!"
+        }
+      ]
     },
     {
-      "id": 5,
-      "scene_id": "scene_5",
-      "scene_number": 5,
-      "title_en": "Sharing with the Family",
-      "title_vi": "Chia Sẻ Cùng Cả Nhà",
-      "description_en": "Grandma smiles warmly as Lucas and Chloe share the remaining cookies with their happy grandfather.",
-      "description": "Grandma smiles warmly as Lucas and Chloe share the remaining cookies with their happy grandfather.",
-      "image_url": "/images/week44/webtoon_scene_5.png",
-      "audio_url": "/audio/week44/scene_5.mp3"
+      "scene": 5,
+      "title": "Enjoying the Afternoon Snack",
+      "narration_en": "Everyone sat on the porch eating cookies with cold milk.",
+      "narration_vi": "Mọi người ngồi ngoài hiên ăn bánh quy cùng sữa lạnh.",
+      "dialogue": [
+        {
+          "speaker": "Mia",
+          "text": "Math helps us share food fairly with friends."
+        },
+        {
+          "speaker": "Ben",
+          "text": "And nobody has to lose their fair share!"
+        }
+      ]
     }
   ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
-        "text": "Grandma baked ten delicious cookies on a wide metal tray.",
-        "en": "Grandma baked ten delicious cookies on a wide metal tray.",
-        "vi": "Bà đã nướng mười chiếc bánh quy thơm ngon trên chiếc khay kim loại rộng.",
-        "ipa": "/ˈɡrænmɑː beɪkt ten dɪˈlɪʃəs ˈkʊkiz ɑːn ə waɪd ˈmetəl treɪ/",
-        "words": [
-          "Grandma",
-          "baked",
-          "ten",
-          "delicious",
-          "cookies",
-          "on",
-          "a",
-          "wide",
-          "metal",
-          "tray"
-        ]
+        "text": "The baker took twenty cookies out of the oven.",
+        "ipa": "/ðə ˈbeɪkər tʊk ˈtwenti ˈkʊkiz aʊt ʌv ðə ˈʌvən./"
       },
       {
         "id": 2,
-        "text": "The playful puppet monster wants to take away four cookies.",
-        "en": "The playful puppet monster wants to take away four cookies.",
-        "vi": "Chú rối quái vật tinh nghịch muốn lấy bớt đi bốn chiếc bánh quy.",
-        "ipa": "/ðə ˈpleɪfəl ˈpʌpɪt ˈmɑːnstər wɑːnts tuː teɪk əˈweɪ fɔːr ˈkʊkiz/",
-        "words": [
-          "The",
-          "playful",
-          "puppet",
-          "monster",
-          "wants",
-          "to",
-          "take",
-          "away",
-          "four",
-          "cookies"
-        ]
+        "text": "Subtract five cookies to find how many left.",
+        "ipa": "/səbˈtrækt faɪv ˈkʊkiz tuː faɪnd haʊ ˈmeni left./"
       },
       {
         "id": 3,
-        "text": "Ten minus four leaves six sweet cookies on the plate.",
-        "en": "Ten minus four leaves six sweet cookies on the plate.",
-        "vi": "Mười trừ bốn còn lại sáu chiếc bánh quy ngọt ngào trên đĩa.",
-        "ipa": "/ten ˈmaɪnəs fɔːr liːvz sɪks swiːt ˈkʊkiz ɑːn ðə pleɪt/",
-        "words": [
-          "Ten",
-          "minus",
-          "four",
-          "leaves",
-          "six",
-          "sweet",
-          "cookies",
-          "on",
-          "the",
-          "plate"
-        ]
+        "text": "Fifty minus twenty equals thirty sweet treats.",
+        "ipa": "/ˈfɪfti ˈmaɪnəs ˈtwenti ˈiːkwəlz ˈθɜːrti swiːt triːts./"
       },
       {
         "id": 4,
-        "text": "How many crunchy cookies are left after snack time?",
-        "en": "How many crunchy cookies are left after snack time?",
-        "vi": "Còn lại bao nhiêu chiếc bánh quy giòn sau giờ ăn nhẹ?",
-        "ipa": "/haʊ ˈmeni ˈkrʌntʃi ˈkʊkiz ɑːr left ˈæftər snæk taɪm/",
-        "words": [
-          "How",
-          "many",
-          "crunchy",
-          "cookies",
-          "are",
-          "left",
-          "after",
-          "snack",
-          "time"
-        ]
+        "text": "Good friends share their afternoon snack happily.",
+        "ipa": "/ɡʊd frendz ʃer ðer ˌæftərˈnuːn snæk ˈhæpɪli./"
       },
       {
         "id": 5,
-        "text": "We subtract the cookies eaten from the total baking batch.",
-        "en": "We subtract the cookies eaten from the total baking batch.",
-        "vi": "Chúng tôi trừ số bánh đã ăn khỏi tổng mẻ bánh nướng.",
-        "ipa": "/wiː səbˈtrækt ðə ˈkʊkiz ˈiːtən frʌm ðə ˈtoʊtəl ˈbeɪkɪŋ bætʃ/",
-        "words": [
-          "We",
-          "subtract",
-          "the",
-          "cookies",
-          "eaten",
-          "from",
-          "the",
-          "total",
-          "baking",
-          "batch"
-        ]
+        "text": "Please do not lose any pieces of the puzzle.",
+        "ipa": "/pliːz duː nɑːt luːz ˈeni ˈpiːsɪz ʌv ðə ˈpʌzəl./"
       },
       {
         "id": 6,
-        "text": "Lucas placed two treats into the glass cookie jar.",
-        "en": "Lucas placed two treats into the glass cookie jar.",
-        "vi": "Lucas đặt hai chiếc bánh vào trong chiếc hũ bánh quy thủy tinh.",
-        "ipa": "/ˈluːkəs pleɪst tuː triːts ˈɪntuː ðə ɡlæs ˈkʊki dʒɑːr/",
-        "words": [
-          "Lucas",
-          "placed",
-          "two",
-          "treats",
-          "into",
-          "the",
-          "glass",
-          "cookie",
-          "jar"
-        ]
+        "text": "The difference between forty and ten is thirty.",
+        "ipa": "/ðə ˈdɪfərəns bɪˈtwiːn ˈfɔːrti ænd ten ɪz ˈθɜːrti./"
       },
       {
         "id": 7,
-        "text": "Chloe loves to share her favorite snacks with friends.",
-        "en": "Chloe loves to share her favorite snacks with friends.",
-        "vi": "Chloe rất thích chia sẻ những món ăn vặt yêu thích với bạn bè.",
-        "ipa": "/ˈkloʊi lʌvz tuː ʃer hɜːr ˈfeɪvərɪt snæks wɪð frendz/",
-        "words": [
-          "Chloe",
-          "loves",
-          "to",
-          "share",
-          "her",
-          "favorite",
-          "snacks",
-          "with",
-          "friends"
-        ]
+        "text": "Take away eight cookies from the metal tray.",
+        "ipa": "/teɪk əˈweɪ eɪt ˈkʊkiz frʌm ðə ˈmetəl treɪ./"
       },
       {
         "id": 8,
-        "text": "Subtracting numbers tells us how many items still remain.",
-        "en": "Subtracting numbers tells us how many items still remain.",
-        "vi": "Phép trừ các con số cho chúng ta biết còn lại bao nhiêu đồ vật.",
-        "ipa": "/səbˈtræktɪŋ ˈnʌmbərz telz ʌs haʊ ˈmeni ˈaɪtəmz stɪl rɪˈmeɪn/",
-        "words": [
-          "Subtracting",
-          "numbers",
-          "tells",
-          "us",
-          "how",
-          "many",
-          "items",
-          "still",
-          "remain"
-        ]
+        "text": "We count remaining treats inside the glass jar.",
+        "ipa": "/wiː kaʊnt rɪˈmeɪnɪŋ triːts ɪnˈsaɪd ðə ɡlæs dʒɑːr./"
       }
     ]
   },
@@ -490,171 +407,237 @@ export const readingHubData = {
     "word_bank": [
       "minus",
       "subtract",
-      "take away",
-      "left",
-      "lose",
       "cookie",
+      "baker",
+      "oven",
       "jar",
-      "plate",
-      "share",
-      "remain",
-      "remove",
       "snack",
-      "monster",
-      "bake",
-      "hungry",
-      "fewer",
-      "difference",
-      "delicious",
-      "tray",
-      "batch"
+      "crumb",
+      "recipe",
+      "difference"
     ],
     "definitions": [
       {
         "id": 1,
-        "text": "A preposition meaning with the subtraction of a specified amount.",
-        "target": "minus"
+        "description": "A person whose job is baking fresh bread and cakes.",
+        "word": "baker"
       },
       {
         "id": 2,
-        "text": "A sweet flat biscuit baked in an oven that children love to eat.",
-        "target": "cookie"
+        "description": "A sweet small flat baked treat made with flour and sugar.",
+        "word": "cookie"
       },
       {
         "id": 3,
-        "text": "Remaining behind after other parts have been taken away.",
-        "target": "left"
+        "description": "An enclosed kitchen space used for heating and baking food.",
+        "word": "oven"
       },
       {
         "id": 4,
-        "text": "To give a portion of your food or toys to another person.",
-        "target": "share"
+        "description": "A glass container with a wide lid used for storing food.",
+        "word": "jar"
       },
       {
         "id": 5,
-        "text": "A flat shallow dish used for serving food or snacks.",
-        "target": "plate"
+        "description": "The number that remains after subtracting one amount.",
+        "word": "difference"
       }
     ]
   },
   "rw_part2": {
-    "title": "Lucas & Chloe Discussing Cookie Subtraction",
+    "title": "Ben & Mia in the Bakery Kitchen",
     "turns": [
       {
-        "id": 1,
-        "speaker": "Lucas",
-        "prompt": "Chloe, how many cookies did Grandma bake on the tray?",
+        "speaker": "Ben",
+        "statement": "How many cookies did Grandma bake today?",
         "options": [
-          "She baked ten delicious chocolate cookies.",
-          "She bought three blue umbrellas.",
-          "It is seven o'clock in the morning."
+          "She baked thirty chocolate cookies.",
+          "In the garden.",
+          "Blue and red."
         ],
-        "answer": "She baked ten delicious chocolate cookies."
+        "answer": "She baked thirty chocolate cookies."
       },
       {
-        "id": 2,
-        "speaker": "Lucas",
-        "prompt": "What happened when the Cookie Monster puppet arrived?",
+        "speaker": "Mia",
+        "statement": "If we take away twelve, how many are left?",
         "options": [
-          "He took away four cookies for an afternoon snack.",
-          "He painted the kitchen ceiling green.",
-          "He ran to the train station."
+          "There are eighteen cookies left.",
+          "Next Tuesday.",
+          "Yes, please."
         ],
-        "answer": "He took away four cookies for an afternoon snack."
+        "answer": "There are eighteen cookies left."
       },
       {
-        "id": 3,
-        "speaker": "Lucas",
-        "prompt": "How do we write that math problem as a sentence?",
+        "speaker": "Ben",
+        "statement": "Shall we put the remaining cookies in the jar?",
         "options": [
-          "Ten minus four leaves six cookies on the plate.",
-          "Ten plus four equals fourteen cookies.",
-          "Four cookies are swimming in water."
+          "Yes, put them in the glass jar now.",
+          "It was raining.",
+          "I have two shoes."
         ],
-        "answer": "Ten minus four leaves six cookies on the plate."
+        "answer": "Yes, put them in the glass jar now."
       },
       {
-        "id": 4,
-        "speaker": "Lucas",
-        "prompt": "Shall we share the remaining six cookies with grandpa?",
+        "speaker": "Mia",
+        "statement": "Can we share five cookies with our friends?",
         "options": [
-          "Yes, grandpa will love these warm vanilla cookies!",
-          "No, I never wear yellow socks.",
-          "The river is very deep."
+          "Sure, let us give them five treats.",
+          "Because it is loud.",
+          "Tomorrow morning."
         ],
-        "answer": "Yes, grandpa will love these warm vanilla cookies!"
+        "answer": "Sure, let us give them five treats."
       },
       {
-        "id": 5,
-        "speaker": "Lucas",
-        "prompt": "Can we write this subtraction story in our math notebooks?",
+        "speaker": "Ben",
+        "statement": "Did Buster eat any crumbs from the floor?",
         "options": [
-          "Yes, let's draw the cookies and write the sentence now!",
-          "I walked to the shop yesterday.",
-          "The pencil is five centimeters long."
+          "Yes, he cleaned up all the crumbs!",
+          "No, it is eight.",
+          "On the wall."
         ],
-        "answer": "Yes, let's draw the cookies and write the sentence now!"
+        "answer": "Yes, he cleaned up all the crumbs!"
       }
     ],
     "exchanges": [
       {
-        "speaker": "Lucas",
-        "text": "Chloe, how many cookies did Grandma bake on the tray?"
+        "speaker": "Ben",
+        "text": "How many cookies did Grandma bake today?"
       },
       {
-        "speaker": "Chloe",
-        "text": "She baked ten delicious chocolate cookies."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "What happened when the Cookie Monster puppet arrived?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "He took away four cookies for an afternoon snack."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "How do we write that math problem as a sentence?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "Ten minus four leaves six cookies on the plate."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "Shall we share the remaining six cookies with grandpa?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "Yes, grandpa will love these warm vanilla cookies!"
-      },
-      {
-        "speaker": "Lucas",
-        "text": "Can we write this subtraction story in our math notebooks?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "Yes, let's draw the cookies and write the sentence now!"
+        "speaker": "Mia",
+        "text": "She baked thirty chocolate cookies."
       }
     ]
   },
   "rw_part6": {
-    "title": "Chloe's Kitchen Story: Subtracting Snacks",
-    "instructions": "Read the kitchen story and write the missing words. Write one word on each line.",
-    "text_template": "Grandma baked [1]_____ batch of ten cookies. A puppet monster took [2]_____ four cookies. Ten minus four [3]_____ six cookies left. We put the remaining cookies on [4]_____ plate. It is fun to [5]_____ snacks with family.",
+    "title": "Baking Treats with Grandma",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Yesterday we helped the {1} bake thirty fresh cookies. We took {2} ten cookies for an afternoon snack. Then we used subtraction to find how {3} left. Thirty {4} ten equals twenty. Finally, we put the cookies inside a glass {5} to keep them crunchy.",
     "answers": {
-      "1": "a",
+      "1": "baker",
       "2": "away",
-      "3": "leaves",
-      "4": "a",
-      "5": "share"
+      "3": "many",
+      "4": "minus",
+      "5": "jar"
+    }
+  },
+  "rw_part_1": {
+    "word_bank": [
+      "minus",
+      "subtract",
+      "cookie",
+      "baker",
+      "oven",
+      "jar",
+      "snack",
+      "crumb",
+      "recipe",
+      "difference"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "description": "A person whose job is baking fresh bread and cakes.",
+        "word": "baker"
+      },
+      {
+        "id": 2,
+        "description": "A sweet small flat baked treat made with flour and sugar.",
+        "word": "cookie"
+      },
+      {
+        "id": 3,
+        "description": "An enclosed kitchen space used for heating and baking food.",
+        "word": "oven"
+      },
+      {
+        "id": 4,
+        "description": "A glass container with a wide lid used for storing food.",
+        "word": "jar"
+      },
+      {
+        "id": 5,
+        "description": "The number that remains after subtracting one amount.",
+        "word": "difference"
+      }
+    ]
+  },
+  "rw_part_2": {
+    "title": "Ben & Mia in the Bakery Kitchen",
+    "turns": [
+      {
+        "speaker": "Ben",
+        "statement": "How many cookies did Grandma bake today?",
+        "options": [
+          "She baked thirty chocolate cookies.",
+          "In the garden.",
+          "Blue and red."
+        ],
+        "answer": "She baked thirty chocolate cookies."
+      },
+      {
+        "speaker": "Mia",
+        "statement": "If we take away twelve, how many are left?",
+        "options": [
+          "There are eighteen cookies left.",
+          "Next Tuesday.",
+          "Yes, please."
+        ],
+        "answer": "There are eighteen cookies left."
+      },
+      {
+        "speaker": "Ben",
+        "statement": "Shall we put the remaining cookies in the jar?",
+        "options": [
+          "Yes, put them in the glass jar now.",
+          "It was raining.",
+          "I have two shoes."
+        ],
+        "answer": "Yes, put them in the glass jar now."
+      },
+      {
+        "speaker": "Mia",
+        "statement": "Can we share five cookies with our friends?",
+        "options": [
+          "Sure, let us give them five treats.",
+          "Because it is loud.",
+          "Tomorrow morning."
+        ],
+        "answer": "Sure, let us give them five treats."
+      },
+      {
+        "speaker": "Ben",
+        "statement": "Did Buster eat any crumbs from the floor?",
+        "options": [
+          "Yes, he cleaned up all the crumbs!",
+          "No, it is eight.",
+          "On the wall."
+        ],
+        "answer": "Yes, he cleaned up all the crumbs!"
+      }
+    ],
+    "exchanges": [
+      {
+        "speaker": "Ben",
+        "text": "How many cookies did Grandma bake today?"
+      },
+      {
+        "speaker": "Mia",
+        "text": "She baked thirty chocolate cookies."
+      }
+    ]
+  },
+  "rw_part_6": {
+    "title": "Baking Treats with Grandma",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Yesterday we helped the {1} bake thirty fresh cookies. We took {2} ten cookies for an afternoon snack. Then we used subtraction to find how {3} left. Thirty {4} ten equals twenty. Finally, we put the cookies inside a glass {5} to keep them crunchy.",
+    "answers": {
+      "1": "baker",
+      "2": "away",
+      "3": "many",
+      "4": "minus",
+      "5": "jar"
     }
   }
 };
-
-readingHubData.rw_part_1 = readingHubData.rw_part1;
-readingHubData.rw_part_2 = readingHubData.rw_part2;
-readingHubData.rw_part_6 = readingHubData.rw_part6;
-
 export default readingHubData;

@@ -1,8 +1,8 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-07T10:57:56.161Z",
-  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
-  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "generated_at": "2026-11-13T05:36:25.000Z",
+  "pipeline_script": "scripts/round91_data_generator.py",
+  "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
   "week_number": 40,
   "theme": "Beast Battle (Comparisons)",
   "cefr_level": "A2 Flyers",
@@ -10,7 +10,6 @@
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_40/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
-    "source_b_excerpt": "Week 40: Beast Battle (Comparisons) (Tuần 40: Cuộc chiến Quái thú)\n\t•\tTopic: Comparing predators. (Chủ đề: So sánh thú săn mồi.)\n\t•\tKey Learning Outcome: Compare size, speed, strength of two animals. (Kết quả: So sánh kích thước, tốc độ, sức mạnh.)\n\t•\tSkill Focus: Making Comparisons. (Kỹ năng: So sánh.)\n\t•\tGrammar Focus: Comparatives (-er than): faster, stronger, bigger. (Ngữ pháp: So sánh hơn.)\n\t•\tVocabulary Focus: teeth, claws, fur, skin, heavy, light.\n\t•",
     "digital_map_reference": {
       "map_week": 40,
       "map_theme": "The Secret Garden (Botany)",
@@ -39,7 +38,14 @@
     "GATE_7_VIETNAMESE_LEAK_ZERO",
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
-    "GATE_10_SKELETON_DIFFERENTIATION"
+    "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+    "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
+    "GATE_14_PROVENANCE_INTEGRITY",
+    "GATE_15_CLIL_VOCAB_INTEGRATION",
+    "GATE_16_ESL_ANOMALY_ZERO"
   ],
-  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+  "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
+  "staged_status": "STAGED_FOR_REVIEW"
 }

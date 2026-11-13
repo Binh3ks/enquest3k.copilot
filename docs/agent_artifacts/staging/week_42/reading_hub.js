@@ -1,9 +1,8 @@
 /**
- * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
+ * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 42 | Theme: "The Water Journey (Cycle)" | CEFR: A2 Flyers
- * Generated: 2026-11-09T13:11:07.330Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
- * Provenance: Grounded in blueprint.json + Source B Syllabus
+ * Generated: 2026-11-13T05:36:25.000Z
+ * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
@@ -17,478 +16,390 @@ export const readingHubData = {
       "word": "sun",
       "pos": "n",
       "ipa": "/sʌn/",
-      "definition_en": "The star that provides light and heat to Earth",
+      "definition_en": "The bright star warming planet Earth.",
       "definition_vi": "mặt trời",
-      "example_en": "Warm rays from the sun shine down upon the quiet lake.",
-      "example_vi": "Những tia nắng ấm áp từ mặt trời chiếu xuống mặt hồ yên ả."
+      "example_en": "The warm sun shines down on the ocean.",
+      "example_vi": "Mặt trời ấm áp chiếu sáng xuống đại dương."
     },
     {
       "id": 2,
       "word": "cloud",
       "pos": "n",
       "ipa": "/klaʊd/",
-      "definition_en": "A visible mass of condensed water vapor floating in the sky",
-      "definition_vi": "đám mây",
-      "example_en": "Fluffy white clouds float gently across the summer sky.",
-      "example_vi": "Những đám mây trắng xốp trôi nhẹ nhàng trên bầu trời mùa hè."
+      "definition_en": "A white shape of water drops in air.",
+      "definition_vi": "mây",
+      "example_en": "Dark rain clouds gathered before the morning storm.",
+      "example_vi": "Mây mưa đen kịt tụ lại trước cơn bão sáng."
     },
     {
       "id": 3,
       "word": "rain",
       "pos": "n",
       "ipa": "/reɪn/",
-      "definition_en": "Moisture condensed from the atmosphere that falls visibly in separate drops",
-      "definition_vi": "cơn mưa, nước mưa",
-      "example_en": "Fresh cool rain watered the thirsty village garden.",
-      "example_vi": "Cơn mưa mát lành đã tưới mát cho khu vườn làng đang khát nước."
+      "definition_en": "Water drops falling from sky to ground.",
+      "definition_vi": "mưa",
+      "example_en": "Gentle rain falls softly on the green valley.",
+      "example_vi": "Cơn mưa dịu dàng rơi êm ả xuống thung lũng xanh."
     },
     {
       "id": 4,
       "word": "river",
       "pos": "n",
       "ipa": "/ˈrɪvər/",
-      "definition_en": "A large natural stream of water flowing in a channel to the sea",
+      "definition_en": "A natural stream of water flowing to sea.",
       "definition_vi": "dòng sông",
-      "example_en": "The blue river winds through green mountain valleys.",
-      "example_vi": "Dòng sông xanh uốn lượn qua những thung lũng núi non xanh tươi."
+      "example_en": "The river carries fresh water to the ocean.",
+      "example_vi": "Dòng sông mang nước ngọt ra đại dương."
     },
     {
       "id": 5,
       "word": "ocean",
       "pos": "n",
       "ipa": "/ˈoʊʃən/",
-      "definition_en": "A very large expanse of sea covering much of Earth's surface",
+      "definition_en": "The huge body of salt water on Earth.",
       "definition_vi": "đại dương",
-      "example_en": "Dolphins swim through the vast and salty ocean.",
-      "example_vi": "Cá heo bơi lội qua vùng đại dương bao la và mặn mòi."
+      "example_en": "Blue whales swim across the wide deep ocean.",
+      "example_vi": "Cá voi xanh bơi qua đại dương sâu rộng."
     },
     {
       "id": 6,
       "word": "evaporation",
       "pos": "n",
       "ipa": "/ɪˌvæpəˈreɪʃən/",
-      "definition_en": "The process of liquid water turning into invisible gas",
-      "definition_vi": "sự bốc hơi nước",
-      "example_en": "Warm sunshine causes evaporation from puddles on the road.",
-      "example_vi": "Ánh nắng ấm áp gây ra sự bốc hơi nước từ những vũng nước trên đường."
+      "definition_en": "Process of water warming into vapor.",
+      "definition_vi": "sự bốc hơi",
+      "example_en": "Solar heat causes quick evaporation from open puddles.",
+      "example_vi": "Nhiệt mặt trời gây bốc hơi nhanh từ vũng nước."
     },
     {
       "id": 7,
       "word": "go up",
-      "pos": "v",
+      "pos": "phr v",
       "ipa": "/ɡoʊ ʌp/",
-      "definition_en": "Ascend or rise to a higher place",
+      "definition_en": "To move higher toward the sky.",
       "definition_vi": "bốc lên, đi lên",
-      "example_en": "Warm invisible water vapor begins to go up into the air.",
-      "example_vi": "Hơi nước ấm vô hình bắt đầu bốc lên vào trong không khí."
+      "example_en": "Warm water vapors go up into cool air.",
+      "example_vi": "Hơi nước ấm bốc lên vào tầng không khí mát."
     },
     {
       "id": 8,
       "word": "come down",
-      "pos": "v",
+      "pos": "phr v",
       "ipa": "/kʌm daʊn/",
-      "definition_en": "Descend or fall from the sky",
-      "definition_vi": "rơi xuống, đi xuống",
-      "example_en": "Heavy raindrops come down over the quiet forest path.",
-      "example_vi": "Những hạt mưa nặng hạt rơi xuống trên con đường rừng yên tĩnh."
+      "definition_en": "To fall lower toward the ground.",
+      "definition_vi": "rơi xuống",
+      "example_en": "Cool raindrops come down on the thirsty soil.",
+      "example_vi": "Những giọt mưa mát lành rơi xuống vùng đất khô."
     },
     {
       "id": 9,
-      "word": "water",
+      "word": "vapor",
       "pos": "n",
-      "ipa": "/ˈwɔːtər/",
-      "definition_en": "The clear liquid that forms the seas, lakes, and rivers",
-      "definition_vi": "nước",
-      "example_en": "Clean drinking water keeps our bodies healthy and hydrated.",
-      "example_vi": "Nước uống sạch giữ cho cơ thể chúng ta khỏe mạnh và đủ nước."
+      "ipa": "/ˈveɪpər/",
+      "definition_en": "Water in form of an invisible gas.",
+      "definition_vi": "hơi nước",
+      "example_en": "Rising water vapor cools as it reaches high.",
+      "example_vi": "Hơi nước bốc lên nguội dần khi lên cao."
     },
     {
       "id": 10,
-      "word": "sky",
-      "pos": "n",
-      "ipa": "/skaɪ/",
-      "definition_en": "The region of the atmosphere seen from Earth",
-      "definition_vi": "bầu trời",
-      "example_en": "Birds spread their wings and fly across the clear blue sky.",
-      "example_vi": "Những chú chim dang rộng đôi cánh và bay qua bầu trời xanh trong."
-    },
-    {
-      "id": 11,
-      "word": "wind",
-      "pos": "n",
-      "ipa": "/wɪnd/",
-      "definition_en": "Moving air across the surface of the Earth",
-      "definition_vi": "gió",
-      "example_en": "A gentle mountain wind blew the gray storm clouds east.",
-      "example_vi": "Một làn gió núi nhẹ nhàng đã thổi những đám mây giông xám về phía đông."
-    },
-    {
-      "id": 12,
-      "word": "warm",
-      "pos": "adj",
-      "ipa": "/wɔːrm/",
-      "definition_en": "At a comfortable and moderate temperature",
-      "definition_vi": "ấm áp",
-      "example_en": "Warm summer air heats the water in shallow ponds.",
-      "example_vi": "Không khí ấm áp mùa hè làm nóng nước trong những chiếc ao nông."
-    },
-    {
-      "id": 13,
       "word": "drop",
       "pos": "n",
       "ipa": "/drɑːp/",
-      "definition_en": "A small round particle of liquid",
+      "definition_en": "A small round amount of liquid.",
       "definition_vi": "giọt nước",
-      "example_en": "A single round drop of morning dew glistened on the petal.",
-      "example_vi": "Một giọt sương mai tròn xoe lấp lánh trên cánh hoa."
+      "example_en": "Each tiny drop of rain joins the stream.",
+      "example_vi": "Mỗi giọt mưa nhỏ hòa vào dòng suối."
     },
     {
-      "id": 14,
+      "id": 11,
+      "word": "cycle",
+      "pos": "n",
+      "ipa": "/ˈsaɪkəl/",
+      "definition_en": "A series of repeating nature events.",
+      "definition_vi": "chu trình",
+      "example_en": "The water cycle repeats continuously on our planet.",
+      "example_vi": "Chu trình nước lặp lại liên tục trên hành tinh."
+    },
+    {
+      "id": 12,
       "word": "stream",
       "pos": "n",
       "ipa": "/striːm/",
-      "definition_en": "A small, narrow river of clean flowing water",
-      "definition_vi": "dòng suối nhỏ",
-      "example_en": "Cold water bubbles happily down the rocky mountain stream.",
-      "example_vi": "Nước lạnh sủi bọt vui vẻ chảy xuống dòng suối núi đầy đá."
+      "definition_en": "A small narrow flowing river.",
+      "definition_vi": "con suối",
+      "example_en": "Trout swim in the cool mountain forest stream.",
+      "example_vi": "Cá hồi bơi trong dòng suối rừng núi mát mẻ."
+    },
+    {
+      "id": 13,
+      "word": "flow",
+      "pos": "v",
+      "ipa": "/floʊ/",
+      "definition_en": "To move steadily like a liquid river.",
+      "definition_vi": "chảy",
+      "example_en": "Clear rivers flow smoothly toward the sunny lake.",
+      "example_vi": "Dòng sông trong lành chảy êm đềm về hồ nắng."
+    },
+    {
+      "id": 14,
+      "word": "puddle",
+      "pos": "n",
+      "ipa": "/ˈpʌdəl/",
+      "definition_en": "A small pool of water on the ground.",
+      "definition_vi": "vũng nước",
+      "example_en": "Children jumped over the muddy rainwater puddle.",
+      "example_vi": "Trẻ em nhảy qua vũng nước mưa đầy bùn."
     },
     {
       "id": 15,
-      "word": "lake",
-      "pos": "n",
-      "ipa": "/leɪk/",
-      "definition_en": "A large body of fresh water surrounded by land",
-      "definition_vi": "hồ nước",
-      "example_en": "We paddled our small red canoe across the peaceful lake.",
-      "example_vi": "Chúng tôi chèo chiếc ca-nô nhỏ màu đỏ qua hồ nước thanh bình."
+      "word": "rise",
+      "pos": "v",
+      "ipa": "/raɪz/",
+      "definition_en": "To move upward into higher space.",
+      "definition_vi": "dâng lên, bốc lên",
+      "example_en": "Warm air bubbles rise above heated ocean waters.",
+      "example_vi": "Bọt khí ấm dâng lên trên mặt nước biển nóng."
     },
     {
       "id": 16,
       "word": "cool",
       "pos": "v",
       "ipa": "/kuːl/",
-      "definition_en": "Become lower in temperature",
+      "definition_en": "To lose warmth and become colder.",
       "definition_vi": "làm mát, nguội đi",
-      "example_en": "As rising water vapor reaches high air, it begins to cool.",
-      "example_vi": "Khi hơi nước bốc lên đạt đến tầng không khí trên cao, nó bắt đầu nguội đi."
+      "example_en": "Rising vapors cool and form fluffy white clouds.",
+      "example_vi": "Hơi nước bốc lên nguội dần tạo thành mây trắng."
     },
     {
       "id": 17,
-      "word": "flow",
-      "pos": "v",
-      "ipa": "/floʊ/",
-      "definition_en": "Move steadily and continuously in a current",
-      "definition_vi": "chảy đều",
-      "example_en": "Fresh mountain streams flow steadily toward the valley below.",
-      "example_vi": "Những con suối núi trong lành chảy đều đặn về phía thung lũng bên dưới."
+      "word": "sky",
+      "pos": "n",
+      "ipa": "/skaɪ/",
+      "definition_en": "The open space high above the ground.",
+      "definition_vi": "bầu trời",
+      "example_en": "Flocks of birds fly across the morning sky.",
+      "example_vi": "Đàn chim bay qua bầu trời buổi sáng."
     },
     {
       "id": 18,
-      "word": "fall",
-      "pos": "v",
-      "ipa": "/fɔːl/",
-      "definition_en": "Move downward under the force of gravity",
-      "definition_vi": "rơi xuống",
-      "example_en": "Gentle raindrops fall upon the green leaves of the forest.",
-      "example_vi": "Những hạt mưa nhẹ nhàng rơi xuống trên những chiếc lá xanh của khu rừng."
+      "word": "lake",
+      "pos": "n",
+      "ipa": "/leɪk/",
+      "definition_en": "A large body of water bordered by land.",
+      "definition_vi": "hồ nước",
+      "example_en": "Boats sailed across the calm mountain lake.",
+      "example_vi": "Những chiếc thuyền buồm lướt trên hồ núi phẳng lặng."
     },
     {
       "id": 19,
-      "word": "sea",
+      "word": "surface",
       "pos": "n",
-      "ipa": "/siː/",
-      "definition_en": "An expanse of salt water that covers part of Earth's surface",
-      "definition_vi": "biển",
-      "example_en": "Fishermen steer wooden fishing boats out into the open sea.",
-      "example_vi": "Các ngư dân lái những con thuyền gỗ ra khơi biển khơi bao la."
+      "ipa": "/ˈsɜːrfɪs/",
+      "definition_en": "The flat top boundary of a body of water.",
+      "definition_vi": "bề mặt",
+      "example_en": "Water evaporates from the warm lake surface.",
+      "example_vi": "Nước bốc hơi từ bề mặt hồ ấm áp."
     },
     {
       "id": 20,
-      "word": "nature",
+      "word": "heat",
       "pos": "n",
-      "ipa": "/ˈneɪtʃər/",
-      "definition_en": "The physical world and living things not made by humans",
-      "definition_vi": "tự nhiên, thiên nhiên",
-      "example_en": "The water cycle is an essential recycling system in nature.",
-      "example_vi": "Vòng tuần hoàn nước là một hệ thống tái chế thiết yếu trong thiên nhiên."
+      "ipa": "/hiːt/",
+      "definition_en": "Warmth and thermal energy from the sun.",
+      "definition_vi": "nhiệt năng",
+      "example_en": "Solar heat warms the ocean water every day.",
+      "example_vi": "Nhiệt mặt trời sưởi ấm nước biển mỗi ngày."
     }
   ],
   "clil_article": {
-    "title_en": "The Never-Ending Water Journey: How Nature Recycles",
-    "title_vi": "Hành Trình Bất Tận Của Nước: Cách Tự Nhiên Tái Chế",
-    "content_en": "Every drop of water on Earth is part of an endless recycling journey called the water cycle. First, the warm sun shines down on oceans, lakes, and rivers. The heat turns liquid water into invisible gas through evaporation. Next, this light water vapor begins to go up into the cool sky. As the warm vapor rises higher, it begins to cool and condense into fluffy white clouds. When clouds become heavy with millions of water droplets, rain begins to come down over mountains, forests, and towns. Finally, fresh rainwater collects into mountain streams, joins large rushing rivers, and flows back home into the deep blue ocean. Then the wonderful cycle begins again!",
+    "title_en": "The Endless Journey of Water",
+    "title_vi": "Hành trình Bất tận của Nước",
+    "content_en": "Water on Earth moves in a continuous cycle that never stops. The sun delivers heat to the surface of the ocean and lake. This warmth causes evaporation, and invisible water vapor begins to rise. As tiny vapors go up into the sky, they cool down and form a puffy cloud. Inside the cloud, each small drop joins others until they become heavy. Then drops come down as cool rain! Rainwater lands in puddles and forest streams, which flow into a wide river. Finally, the river returns to the ocean, and the journey begins again.",
     "glossary": [
       {
+        "word": "cycle",
+        "definition_en": "A series of repeating events",
+        "definition_vi": "chu trình"
+      },
+      {
         "word": "evaporation",
-        "definition_en": "When liquid water heats up and turns into vapor",
-        "definition_vi": "quá trình bốc hơi nước thành khí"
+        "definition_en": "Liquid turning into invisible vapor",
+        "definition_vi": "sự bốc hơi"
       },
       {
-        "word": "cloud",
-        "definition_en": "A mass of tiny water droplets floating in the sky",
-        "definition_vi": "đám mây chứa giọt nước nhỏ"
+        "word": "vapor",
+        "definition_en": "Water in gaseous state",
+        "definition_vi": "hơi nước"
       },
       {
-        "word": "rain",
-        "definition_en": "Water falling from clouds down to Earth",
-        "definition_vi": "nước mưa rơi từ trên mây xuống"
+        "word": "surface",
+        "definition_en": "The top layer of water",
+        "definition_vi": "bề mặt"
       },
       {
         "word": "stream",
-        "definition_en": "A small channel of fresh water flowing through hills",
-        "definition_vi": "dòng suối nước ngọt nhỏ"
-      },
-      {
-        "word": "cycle",
-        "definition_en": "A series of events that repeat continuously",
-        "definition_vi": "chu trình lặp đi lặp lại liên tục"
+        "definition_en": "A small narrow river",
+        "definition_vi": "con suối"
       }
     ],
     "check_questions": [
       {
         "id": 1,
-        "question_en": "What happens first when the warm sun heats the ocean surface?",
+        "question_en": "What powers the water cycle on Earth?",
         "options": [
-          "Water turns into invisible vapor through evaporation",
-          "Clouds fall into the water",
-          "The ocean turns into ice immediately"
+          "The sun and its heat",
+          "Moonlight",
+          "Car engines"
         ],
-        "answer": "Water turns into invisible vapor through evaporation"
+        "answer": "The sun and its heat"
       },
       {
         "id": 2,
-        "question_en": "Why does water vapor go up into the sky and form clouds?",
+        "question_en": "What happens when rising water vapor cools in the sky?",
         "options": [
-          "Because warm vapor is light and rises before it cools",
-          "Because wind pulls it down into the earth",
-          "Because fish push it upward"
+          "It forms clouds",
+          "It turns to stone",
+          "It disappears forever"
         ],
-        "answer": "Because warm vapor is light and rises before it cools"
+        "answer": "It forms clouds"
       },
       {
         "id": 3,
-        "question_en": "Where does rainwater flow after it falls on mountain slopes?",
+        "question_en": "Where do rainwater streams flow after falling?",
         "options": [
-          "It collects into streams and rivers flowing to the ocean",
-          "It stays frozen on the hill forever",
-          "It disappears from Earth completely"
+          "Into rivers and the ocean",
+          "Into space",
+          "Under buildings only"
         ],
-        "answer": "It collects into streams and rivers flowing to the ocean"
+        "answer": "Into rivers and the ocean"
       }
-    ]
+    ],
+    "text": "Water on Earth moves in a continuous cycle that never stops. The sun delivers heat to the surface of the ocean and lake. This warmth causes evaporation, and invisible water vapor begins to rise. As tiny vapors go up into the sky, they cool down and form a puffy cloud. Inside the cloud, each small drop joins others until they become heavy. Then drops come down as cool rain! Rainwater lands in puddles and forest streams, which flow into a wide river. Finally, the river returns to the ocean, and the journey begins again."
   },
   "story_scenes": [
     {
-      "id": 1,
-      "scene_id": "scene_1",
-      "scene_number": 1,
-      "title_en": "Sunshine on the Lake",
-      "title_vi": "Ánh Nắng Chiếu Trên Mặt Hồ",
-      "description_en": "Maya and Noah stand by the lake as warm sunshine causes water to evaporate.",
-      "description": "Maya and Noah stand by the lake as warm sunshine causes water to evaporate.",
-      "image_url": "/images/week42/webtoon_scene_1.png",
-      "audio_url": "/audio/week42/scene_1.mp3"
+      "scene": 1,
+      "title": "A Rainy Morning by the Lake",
+      "narration_en": "Lucas watched drops of water tapping against his window pane.",
+      "narration_vi": "Lucas ngắm nhìn những giọt nước gõ vào ô cửa sổ.",
+      "dialogue": [
+        {
+          "speaker": "Lucas",
+          "text": "Look at all the rain filling the garden puddles!"
+        },
+        {
+          "speaker": "Emma",
+          "text": "Where does all this rainwater come from?"
+        }
+      ]
     },
     {
-      "id": 2,
-      "scene_id": "scene_2",
-      "scene_number": 2,
-      "title_en": "Vapor Going Up",
-      "title_vi": "Hơi Nước Bốc Lên Cao",
-      "description_en": "They watch imaginary droplet Dewy rise up into the blue sky as invisible vapor.",
-      "description": "They watch imaginary droplet Dewy rise up into the blue sky as invisible vapor.",
-      "image_url": "/images/week42/webtoon_scene_2.png",
-      "audio_url": "/audio/week42/scene_2.mp3"
+      "scene": 2,
+      "title": "The Sun Comes Out",
+      "narration_en": "By noon, the clouds parted and bright sunlight warmed the soil.",
+      "narration_vi": "Đến trưa, mây tan và ánh nắng ấm áp sưởi ấm mặt đất.",
+      "dialogue": [
+        {
+          "speaker": "Emma",
+          "text": "The garden puddles are shrinking quickly!"
+        },
+        {
+          "speaker": "Lucas",
+          "text": "That is evaporation happening right before our eyes."
+        }
+      ]
     },
     {
-      "id": 3,
-      "scene_id": "scene_3",
-      "scene_number": 3,
-      "title_en": "Clouds Over the Mountain",
-      "title_vi": "Những Đám Mây Trên Đỉnh Núi",
-      "description_en": "A gentle breeze blows clouds together over the peak until they turn dark and heavy.",
-      "description": "A gentle breeze blows clouds together over the peak until they turn dark and heavy.",
-      "image_url": "/images/week42/webtoon_scene_3.png",
-      "audio_url": "/audio/week42/scene_3.mp3"
+      "scene": 3,
+      "title": "Rising Into the Sky",
+      "narration_en": "Their teacher explained how warm vapor rises into the blue sky.",
+      "narration_vi": "Thầy giáo giải thích cách hơi nước ấm bốc lên bầu trời xanh.",
+      "dialogue": [
+        {
+          "speaker": "Lucas",
+          "text": "Does the vapor stay warm up high?"
+        },
+        {
+          "speaker": "Emma",
+          "text": "No, it cools down and gathers into thick clouds."
+        }
+      ]
     },
     {
-      "id": 4,
-      "scene_id": "scene_4",
-      "scene_number": 4,
-      "title_en": "Rain Falling Down",
-      "title_vi": "Cơn Mưa Rơi Xuống Đất",
-      "description_en": "Rain comes down over the forest path while Maya and Noah shelter under their umbrella.",
-      "description": "Rain comes down over the forest path while Maya and Noah shelter under their umbrella.",
-      "image_url": "/images/week42/webtoon_scene_4.png",
-      "audio_url": "/audio/week42/scene_4.mp3"
+      "scene": 4,
+      "title": "The Mountain Stream Journey",
+      "narration_en": "On Saturday, their class hiked along a rushing mountain stream.",
+      "narration_vi": "Vào thứ Bảy, cả lớp đi bộ dọc con suối núi chảy xiết.",
+      "dialogue": [
+        {
+          "speaker": "Emma",
+          "text": "This clear stream flows down into the wide river."
+        },
+        {
+          "speaker": "Lucas",
+          "text": "And the river carries it all the way to the ocean!"
+        }
+      ]
     },
     {
-      "id": 5,
-      "scene_id": "scene_5",
-      "scene_number": 5,
-      "title_en": "Flowing to the Ocean",
-      "title_vi": "Chảy Về Với Đại Dương",
-      "description_en": "Clean rainwater flows into the valley river and journeys back home to the open sea.",
-      "description": "Clean rainwater flows into the valley river and journeys back home to the open sea.",
-      "image_url": "/images/week42/webtoon_scene_5.png",
-      "audio_url": "/audio/week42/scene_5.mp3"
+      "scene": 5,
+      "title": "Completing the Water Cycle",
+      "narration_en": "They drew a colorful chart showing the complete nature loop.",
+      "narration_vi": "Họ vẽ biểu đồ nhiều màu sắc thể hiện chu trình hoàn chỉnh.",
+      "dialogue": [
+        {
+          "speaker": "Lucas",
+          "text": "Water never disappears; it just keeps cycling!"
+        },
+        {
+          "speaker": "Emma",
+          "text": "It is an endless journey around our planet!"
+        }
+      ]
     }
   ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
-        "text": "The warm sun shines brightly on the surface of the blue lake.",
-        "en": "The warm sun shines brightly on the surface of the blue lake.",
-        "vi": "Mặt trời ấm áp chiếu sáng rực rỡ trên mặt hồ nước xanh biếc.",
-        "ipa": "/ðə wɔːrm sʌn ʃaɪnz ˈbraɪtli ɑːn ðə ˈsɜːrfɪs əv ðə bluː leɪk/",
-        "words": [
-          "The",
-          "warm",
-          "sun",
-          "shines",
-          "brightly",
-          "on",
-          "the",
-          "surface",
-          "of",
-          "the",
-          "blue",
-          "lake"
-        ]
+        "text": "The bright sun warms water on the ocean surface.",
+        "ipa": "/ðə braɪt sʌn wɔːrmz ˈwɔːtər ɑːn ðə ˈoʊʃən ˈsɜːrfɪs./"
       },
       {
         "id": 2,
-        "text": "Warm water turns into vapor through a process called evaporation.",
-        "en": "Warm water turns into vapor through a process called evaporation.",
-        "vi": "Nước ấm biến thành hơi qua một tiến trình gọi là sự bốc hơi.",
-        "ipa": "/wɔːrm ˈwɔːtər tɜːrnz ˈɪntuː ˈveɪpər θruː ə ˈprɑːses kɔːld ɪˌvæpəˈreɪʃən/",
-        "words": [
-          "Warm",
-          "water",
-          "turns",
-          "into",
-          "vapor",
-          "through",
-          "a",
-          "process",
-          "called",
-          "evaporation"
-        ]
+        "text": "Warm vapors go up high into the open sky.",
+        "ipa": "/wɔːrm ˈveɪpərz ɡoʊ ʌp haɪ ˈɪntuː ðə ˈoʊpən skaɪ./"
       },
       {
         "id": 3,
-        "text": "Invisible water vapor begins to go up into the cool sky.",
-        "en": "Invisible water vapor begins to go up into the cool sky.",
-        "vi": "Hơi nước vô hình bắt đầu bốc lên vào bầu trời mát mẻ.",
-        "ipa": "/ɪnˈvɪzəbəl ˈwɔːtər ˈveɪpər bɪˈɡɪnz tuː ɡoʊ ʌp ˈɪntuː ðə kuːl skaɪ/",
-        "words": [
-          "Invisible",
-          "water",
-          "vapor",
-          "begins",
-          "to",
-          "go",
-          "up",
-          "into",
-          "the",
-          "cool",
-          "sky"
-        ]
+        "text": "Water droplets cool down to form puffy clouds.",
+        "ipa": "/ˈwɔːtər ˈdrɑːplɪts kuːl daʊn tuː fɔːrm ˈpʌfi klaʊdz./"
       },
       {
         "id": 4,
-        "text": "As rising air cools down, fluffy white clouds form above.",
-        "en": "As rising air cools down, fluffy white clouds form above.",
-        "vi": "Khi không khí bốc lên lạnh đi, những đám mây trắng xốp hình thành phía trên.",
-        "ipa": "/æz ˈraɪzɪŋ er kuːlz daʊn ˈflʌfi waɪt klaʊdz fɔːrm əˈbʌv/",
-        "words": [
-          "As",
-          "rising",
-          "air",
-          "cools",
-          "down",
-          "fluffy",
-          "white",
-          "clouds",
-          "form",
-          "above"
-        ]
+        "text": "Heavy raindrops come down softly on the lake.",
+        "ipa": "/ˈhevi ˈreɪndrɑːps kʌm daʊn ˈsɔːftli ɑːn ðə leɪk./"
       },
       {
         "id": 5,
-        "text": "When heavy clouds gather, fresh rain will come down soon.",
-        "en": "When heavy clouds gather, fresh rain will come down soon.",
-        "vi": "Khi những đám mây nặng trĩu tụ lại, cơn mưa mát sẽ sớm rơi xuống.",
-        "ipa": "/wen ˈhevi klaʊdz ˈɡæðər freʃ reɪn wɪl kʌm daʊn suːn/",
-        "words": [
-          "When",
-          "heavy",
-          "clouds",
-          "gather",
-          "fresh",
-          "rain",
-          "will",
-          "come",
-          "down",
-          "soon"
-        ]
+        "text": "Clear forest streams flow quickly into the river.",
+        "ipa": "/klɪr ˈfɔːrɪst striːmz floʊ ˈkwɪkli ˈɪntuː ðə ˈrɪvər./"
       },
       {
         "id": 6,
-        "text": "Cool raindrops fall over the green mountain trees and flowers.",
-        "en": "Cool raindrops fall over the green mountain trees and flowers.",
-        "vi": "Những hạt mưa mát rơi xuống cây cối và hoa cỏ trên núi xanh.",
-        "ipa": "/kuːl ˈreɪndrɑːps fɔːl ˈoʊvər ðə ɡriːn ˈmaʊntn triːz ænd ˈflaʊərz/",
-        "words": [
-          "Cool",
-          "raindrops",
-          "fall",
-          "over",
-          "the",
-          "green",
-          "mountain",
-          "trees",
-          "and",
-          "flowers"
-        ]
+        "text": "Rain fills shallow puddles along the garden path.",
+        "ipa": "/reɪn fɪlz ˈʃæloʊ ˈpʌdəlz əˈlɔːŋ ðə ˈɡɑːrdən pæθ./"
       },
       {
         "id": 7,
-        "text": "Small mountain streams flow steadily into the rushing river.",
-        "en": "Small mountain streams flow steadily into the rushing river.",
-        "vi": "Những con suối núi nhỏ chảy đều đặn vào dòng sông đang cuộn chảy.",
-        "ipa": "/smɔːl ˈmaʊntn striːmz floʊ ˈstedɪli ˈɪntuː ðə ˈrʌʃɪŋ ˈrɪvər/",
-        "words": [
-          "Small",
-          "mountain",
-          "streams",
-          "flow",
-          "steadily",
-          "into",
-          "the",
-          "rushing",
-          "river"
-        ]
+        "text": "The water cycle repeats every season on Earth.",
+        "ipa": "/ðə ˈwɔːtər ˈsaɪkəl rɪˈpiːts ˈevri ˈsiːzən ɑːn ɜːrθ./"
       },
       {
         "id": 8,
-        "text": "The river carries water back to the vast blue ocean.",
-        "en": "The river carries water back to the vast blue ocean.",
-        "vi": "Dòng sông mang nước quay trở về đại dương xanh bao la.",
-        "ipa": "/ðə ˈrɪvər ˈkæriz ˈwɔːtər bæk tuː ðə væst bluː ˈoʊʃən/",
-        "words": [
-          "The",
-          "river",
-          "carries",
-          "water",
-          "back",
-          "to",
-          "the",
-          "vast",
-          "blue",
-          "ocean"
-        ]
+        "text": "Solar heat powers evaporation across every ocean.",
+        "ipa": "/ˈsoʊlər hiːt ˈpaʊərz ɪˌvæpəˈreɪʃən əˈkrɔːs ˈevri ˈoʊʃən./"
       }
     ]
   },
@@ -499,238 +410,234 @@ export const readingHubData = {
       "rain",
       "river",
       "ocean",
-      "evaporation",
-      "go up",
-      "come down",
-      "water",
-      "sky",
-      "wind",
-      "warm",
-      "drop",
+      "vapor",
+      "cycle",
       "stream",
-      "lake",
-      "cool",
-      "flow",
-      "fall",
-      "sea",
-      "nature"
+      "puddle",
+      "lake"
     ],
     "definitions": [
       {
         "id": 1,
-        "definition_en": "The bright star in our solar system that gives heat and light to Earth.",
-        "options": [
-          "sun",
-          "ocean",
-          "cloud"
-        ],
-        "answer": "sun"
+        "description": "A very large body of salt water covering most of Earth.",
+        "word": "ocean"
       },
       {
         "id": 2,
-        "definition_en": "A huge body of salt water covering most of the Earth's surface.",
-        "options": [
-          "ocean",
-          "river",
-          "lake"
-        ],
-        "answer": "ocean"
+        "description": "Water drops that fall from gray clouds to the ground.",
+        "word": "rain"
       },
       {
         "id": 3,
-        "definition_en": "A large stream of fresh water that moves across land into the sea.",
-        "options": [
-          "river",
-          "cloud",
-          "rain"
-        ],
-        "answer": "river"
+        "description": "Water in the form of an invisible gas in the air.",
+        "word": "vapor"
       },
       {
         "id": 4,
-        "definition_en": "A white or gray shape floating in the sky made of tiny water drops.",
-        "options": [
-          "cloud",
-          "sun",
-          "wind"
-        ],
-        "answer": "cloud"
+        "description": "A small narrow stream of flowing water in nature.",
+        "word": "stream"
       },
       {
         "id": 5,
-        "definition_en": "Water that falls from the sky in drops when clouds become heavy.",
-        "options": [
-          "rain",
-          "evaporation",
-          "stream"
-        ],
-        "answer": "rain"
-      },
-      {
-        "id": 6,
-        "definition_en": "The space above the Earth where clouds, the sun, and airplanes appear.",
-        "options": [
-          "sky",
-          "water",
-          "lake"
-        ],
-        "answer": "sky"
-      },
-      {
-        "id": 7,
-        "definition_en": "Natural moving air that blows across hills and bends tree branches.",
-        "options": [
-          "wind",
-          "ocean",
-          "sun"
-        ],
-        "answer": "wind"
-      },
-      {
-        "id": 8,
-        "definition_en": "A large area of water that has land all around it.",
-        "options": [
-          "lake",
-          "sea",
-          "stream"
-        ],
-        "answer": "lake"
-      },
-      {
-        "id": 9,
-        "definition_en": "A small narrow river flowing down a mountain.",
-        "options": [
-          "stream",
-          "ocean",
-          "sky"
-        ],
-        "answer": "stream"
-      },
-      {
-        "id": 10,
-        "definition_en": "The scientific process where warm water turns into invisible airborne gas.",
-        "options": [
-          "evaporation",
-          "rain",
-          "flow"
-        ],
-        "answer": "evaporation"
+        "description": "A series of natural events that repeats continuously.",
+        "word": "cycle"
       }
     ]
   },
   "rw_part2": {
-    "topic": "Tracing the Water Journey",
+    "title": "Lucas & Emma Discussing the Water Cycle",
     "turns": [
       {
-        "speaker": "Maya",
-        "text": "Noah, what happens first when the warm sun shines on the lake?",
+        "speaker": "Lucas",
+        "statement": "Where does all this garden rainwater go?",
         "options": [
-          "Water heats up and turns into vapor through evaporation.",
-          "I ate a bowl of noodle soup yesterday evening.",
-          "The yellow bus stopped at the school gates."
+          "It flows into the stream.",
+          "In my backpack.",
+          "At seven o'clock."
         ],
-        "answer": "Water heats up and turns into vapor through evaporation."
+        "answer": "It flows into the stream."
       },
       {
-        "speaker": "Noah",
-        "text": "Where does the invisible water vapor go after it leaves the lake?",
+        "speaker": "Emma",
+        "statement": "Why do puddles dry up so fast in the afternoon?",
         "options": [
-          "It begins to go up into the cool blue sky.",
-          "My father bought three new books at the store.",
-          "No, I do not like drawing with purple crayons."
+          "Because the sun heats the water.",
+          "Yes, it is Tuesday.",
+          "Under the chair."
         ],
-        "answer": "It begins to go up into the cool blue sky."
+        "answer": "Because the sun heats the water."
       },
       {
-        "speaker": "Maya",
-        "text": "How do white fluffy clouds form high in the mountain air?",
+        "speaker": "Lucas",
+        "statement": "What happens when warm water vapor rises high?",
         "options": [
-          "Rising vapor cools down and condenses into water droplets.",
-          "We played basketball in the sports hall.",
-          "The train leaves the station at half past two."
+          "It cools and forms clouds.",
+          "It eats apples.",
+          "Last weekend."
         ],
-        "answer": "Rising vapor cools down and condenses into water droplets."
+        "answer": "It cools and forms clouds."
       },
       {
-        "speaker": "Noah",
-        "text": "What happens when rain clouds become too heavy with drops?",
+        "speaker": "Emma",
+        "statement": "Does the river carry this water back to the ocean?",
         "options": [
-          "Fresh raindrops come down over the hills and forests.",
-          "My sister enjoys playing the acoustic guitar.",
-          "Yes, there are twelve pencils in the wooden box."
+          "Yes, it flows all the way to the sea.",
+          "No, it is blue.",
+          "I have three pencils."
         ],
-        "answer": "Fresh raindrops come down over the hills and forests."
+        "answer": "Yes, it flows all the way to the sea."
       },
       {
-        "speaker": "Maya",
-        "text": "Shall we walk to the river and watch the water flow to the sea?",
+        "speaker": "Lucas",
+        "statement": "Shall we finish our water cycle diagram now?",
         "options": [
-          "Yes, let's go see the rushing river right now!",
-          "I forgot to bring my warm winter gloves today.",
-          "The green salad was very tasty at dinner."
+          "Yes, let's color the rain clouds!",
+          "Because I was tired.",
+          "Tomorrow morning."
         ],
-        "answer": "Yes, let's go see the rushing river right now!"
+        "answer": "Yes, let's color the rain clouds!"
       }
     ],
     "exchanges": [
       {
-        "speaker": "Maya",
-        "text": "Noah, what happens first when the warm sun shines on the lake?"
+        "speaker": "Lucas",
+        "text": "Where does all this garden rainwater go?"
       },
       {
-        "speaker": "Noah",
-        "text": "Water heats up and turns into vapor through evaporation."
-      },
-      {
-        "speaker": "Maya",
-        "text": "Where does the invisible water vapor go after it leaves the lake?"
-      },
-      {
-        "speaker": "Noah",
-        "text": "It begins to go up into the cool blue sky."
-      },
-      {
-        "speaker": "Maya",
-        "text": "How do white fluffy clouds form high in the mountain air?"
-      },
-      {
-        "speaker": "Noah",
-        "text": "Rising vapor cools down and condenses into water droplets."
-      },
-      {
-        "speaker": "Maya",
-        "text": "What happens when rain clouds become too heavy with drops?"
-      },
-      {
-        "speaker": "Noah",
-        "text": "Fresh raindrops come down over the hills and forests."
-      },
-      {
-        "speaker": "Maya",
-        "text": "Shall we walk to the river and watch the water flow to the sea?"
-      },
-      {
-        "speaker": "Noah",
-        "text": "Yes, let's go see the rushing river right now!"
+        "speaker": "Emma",
+        "text": "It flows into the stream."
       }
     ]
   },
   "rw_part6": {
-    "title": "Maya's Science Journal: The Water Cycle",
-    "instructions": "Read the diary and write the missing words. Write one word on each line.",
-    "text_template": "Dear Journal, today Noah and I studied [1]_____ water cycle. First, warm sunshine makes lake water evaporate [2]_____ the air. Next, water vapor goes up and forms [3]_____ fluffy cloud. Soon after, heavy rain begins to come [4]_____ over the valley. Finally, rivers carry water back [5]_____ the ocean.",
+    "title": "A Raindrop's Big Adventure",
+    "instructions": "Read the story and write one word in each gap.",
+    "text_template": "First, the bright sun warmed the lake {1}. Next, water vapor began to {2} up into the sky. High in the cold air, vapors formed a fluffy {3}. Soon, heavy drops of {4} fell down on the forest. Finally, water flowed through a small {5} back to the lake.",
     "answers": {
-      "1": "the",
-      "2": "into",
-      "3": "a",
-      "4": "down",
-      "5": "to"
+      "1": "surface",
+      "2": "go",
+      "3": "cloud",
+      "4": "rain",
+      "5": "stream"
+    }
+  },
+  "rw_part_1": {
+    "word_bank": [
+      "sun",
+      "cloud",
+      "rain",
+      "river",
+      "ocean",
+      "vapor",
+      "cycle",
+      "stream",
+      "puddle",
+      "lake"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "description": "A very large body of salt water covering most of Earth.",
+        "word": "ocean"
+      },
+      {
+        "id": 2,
+        "description": "Water drops that fall from gray clouds to the ground.",
+        "word": "rain"
+      },
+      {
+        "id": 3,
+        "description": "Water in the form of an invisible gas in the air.",
+        "word": "vapor"
+      },
+      {
+        "id": 4,
+        "description": "A small narrow stream of flowing water in nature.",
+        "word": "stream"
+      },
+      {
+        "id": 5,
+        "description": "A series of natural events that repeats continuously.",
+        "word": "cycle"
+      }
+    ]
+  },
+  "rw_part_2": {
+    "title": "Lucas & Emma Discussing the Water Cycle",
+    "turns": [
+      {
+        "speaker": "Lucas",
+        "statement": "Where does all this garden rainwater go?",
+        "options": [
+          "It flows into the stream.",
+          "In my backpack.",
+          "At seven o'clock."
+        ],
+        "answer": "It flows into the stream."
+      },
+      {
+        "speaker": "Emma",
+        "statement": "Why do puddles dry up so fast in the afternoon?",
+        "options": [
+          "Because the sun heats the water.",
+          "Yes, it is Tuesday.",
+          "Under the chair."
+        ],
+        "answer": "Because the sun heats the water."
+      },
+      {
+        "speaker": "Lucas",
+        "statement": "What happens when warm water vapor rises high?",
+        "options": [
+          "It cools and forms clouds.",
+          "It eats apples.",
+          "Last weekend."
+        ],
+        "answer": "It cools and forms clouds."
+      },
+      {
+        "speaker": "Emma",
+        "statement": "Does the river carry this water back to the ocean?",
+        "options": [
+          "Yes, it flows all the way to the sea.",
+          "No, it is blue.",
+          "I have three pencils."
+        ],
+        "answer": "Yes, it flows all the way to the sea."
+      },
+      {
+        "speaker": "Lucas",
+        "statement": "Shall we finish our water cycle diagram now?",
+        "options": [
+          "Yes, let's color the rain clouds!",
+          "Because I was tired.",
+          "Tomorrow morning."
+        ],
+        "answer": "Yes, let's color the rain clouds!"
+      }
+    ],
+    "exchanges": [
+      {
+        "speaker": "Lucas",
+        "text": "Where does all this garden rainwater go?"
+      },
+      {
+        "speaker": "Emma",
+        "text": "It flows into the stream."
+      }
+    ]
+  },
+  "rw_part_6": {
+    "title": "A Raindrop's Big Adventure",
+    "instructions": "Read the story and write one word in each gap.",
+    "text_template": "First, the bright sun warmed the lake {1}. Next, water vapor began to {2} up into the sky. High in the cold air, vapors formed a fluffy {3}. Soon, heavy drops of {4} fell down on the forest. Finally, water flowed through a small {5} back to the lake.",
+    "answers": {
+      "1": "surface",
+      "2": "go",
+      "3": "cloud",
+      "4": "rain",
+      "5": "stream"
     }
   }
 };
-
-readingHubData.rw_part_1 = readingHubData.rw_part1;
-readingHubData.rw_part_2 = readingHubData.rw_part2;
-readingHubData.rw_part_6 = readingHubData.rw_part6;
-
 export default readingHubData;

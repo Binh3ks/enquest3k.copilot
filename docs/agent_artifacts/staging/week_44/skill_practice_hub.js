@@ -1,9 +1,8 @@
 /**
- * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
+ * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 44 | Theme: "The Cookie Monster (Subtraction Language)" | CEFR: A2 Flyers
- * Generated: 2026-11-07T10:57:56.167Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
- * Provenance: Grounded in blueprint.json + Source B Syllabus
+ * Generated: 2026-11-13T05:36:25.000Z
+ * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
@@ -13,178 +12,295 @@ export const skillPracticeHubData = {
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
-      "sentence": "Ten minus four equals six chocolate cookies.",
+      "sentence": "Ten cookies ___ four cookies leaves six cookies.",
       "options": [
         "minus",
         "plus",
         "times"
       ],
       "answer": "minus",
-      "explanation": "Use 'minus' to show subtraction between two numbers."
+      "explanation": "Use 'minus' to indicate subtraction in arithmetic sentences."
     },
     {
-      "sentence": "If you take away two treats, four treats remain.",
+      "sentence": "Please ___ two cookies from the warm tray.",
       "options": [
-        "take",
-        "takes",
-        "taking"
+        "take away",
+        "take over",
+        "take up"
       ],
-      "answer": "take",
-      "explanation": "Use base verb 'take' with pronoun 'you' in conditional clause."
+      "answer": "take away",
+      "explanation": "Phrasal verb 'take away' means remove from a group."
     },
     {
-      "sentence": "How many delicious cookies are left on the tray?",
+      "sentence": "If we eat three apples, how many are ___?",
       "options": [
         "left",
         "leave",
         "leaving"
       ],
       "answer": "left",
-      "explanation": "Use participle adjective 'left' meaning remaining."
+      "explanation": "'Left' is used to ask about remaining quantity."
     },
     {
-      "sentence": "Only five golden cookies remain on the baking sheet.",
+      "sentence": "The baker ___ the fresh batch of chocolate cookies.",
       "options": [
-        "remain",
-        "remains",
-        "remained"
+        "shares",
+        "share",
+        "sharing"
       ],
-      "answer": "remain",
-      "explanation": "Use plural verb 'remain' with plural subject 'five golden cookies'."
+      "answer": "shares",
+      "explanation": "Use 3rd person singular present tense 'shares'."
     },
     {
-      "sentence": "There are fewer cookies on the table than before.",
+      "sentence": "We ___ fifteen from forty to find the difference.",
       "options": [
-        "fewer",
-        "less",
-        "little"
+        "subtract",
+        "subtracts",
+        "subtracting"
       ],
-      "answer": "fewer",
-      "explanation": "Use 'fewer' with countable plural nouns like 'cookies'."
+      "answer": "subtract",
+      "explanation": "Use base verb 'subtract' with plural subject 'we'."
     }
   ],
   "singapore_math": [
     {
-      "id": "w44_p1",
-      "type": "comparison",
-      "title": "Cookie Jar Subtraction",
-      "question": "Grandma baked 45 cookies in total. The children ate 15 cookies during snack time. How many cookies are left in the jar?",
-      "storyContext": "Chloe tallies the remaining cookies before placing the glass lid on the jar.",
+      "id": 1,
+      "type": "before_after",
+      "title": "Bakery Tray Cookie Subtraction",
+      "problemText": "A baker baked 72 cookies on metal trays. Children at the bakery snack bar ate 28 cookies. How many cookies were left on the trays?",
+      "question": "A baker baked 72 cookies on metal trays. Children at the bakery snack bar ate 28 cookies. How many cookies were left on the trays?",
+      "correctAnswer": 44,
+      "target_answer": 44,
+      "unit": "cookies",
+      "hintText": "Subtract the 28 cookies eaten from the 72 initial cookies.",
+      "steps": [
+        "Initial baked cookies: 72.",
+        "Cookies eaten: 28.",
+        "Cookies left: 72 - 28 = 44 cookies."
+      ],
       "modelData": {
+        "type": "before_after",
         "bars": [
           {
-            "label": "Total Baked",
-            "value": 45,
-            "color": "#d97706"
+            "label": "Baked Total",
+            "value": 72,
+            "color": "#d35400"
           },
           {
-            "label": "Eaten Cookies",
-            "value": 15,
-            "color": "#ef4444"
+            "label": "Eaten",
+            "value": 28,
+            "color": "#c0392b"
+          },
+          {
+            "label": "Remaining",
+            "value": 44,
+            "color": "#27ae60"
           }
         ],
-        "difference": 30,
-        "unit": "cookies"
-      },
-      "target_answer": 30,
-      "unit": "cookies",
-      "steps": [
-        "Start with the 45 baked cookies.",
-        "Subtract the 15 eaten cookies.",
-        "45 - 15 = 30 cookies left."
-      ]
+        "finalValue": 44,
+        "label": "Remaining: 44 cookies"
+      }
     },
     {
-      "id": "w44_p2",
+      "id": 2,
       "type": "comparison",
-      "title": "Bake Sale Plate Count",
-      "question": "The school bake sale started with 50 lemon cupcakes. Customers bought 22 cupcakes by noon. How many cupcakes remain for the afternoon?",
-      "storyContext": "Lucas counts the cupcakes on the table before the afternoon bell rings.",
+      "title": "Chocolate and Vanilla Cookie Jar Comparison",
+      "problemText": "A large jar holds 85 chocolate cookies. A smaller jar holds 50 vanilla cookies. How many more chocolate cookies are there than vanilla cookies?",
+      "question": "A large jar holds 85 chocolate cookies. A smaller jar holds 50 vanilla cookies. How many more chocolate cookies are there than vanilla cookies?",
+      "correctAnswer": 35,
+      "target_answer": 35,
+      "unit": "cookies",
+      "hintText": "Subtract 50 vanilla cookies from 85 chocolate cookies.",
+      "steps": [
+        "Chocolate jar: 85 cookies.",
+        "Vanilla jar: 50 cookies.",
+        "Difference: 85 - 50 = 35 cookies."
+      ],
       "modelData": {
+        "type": "comparison",
         "bars": [
           {
-            "label": "Starting Cupcakes",
-            "value": 50,
-            "color": "#facc15"
+            "label": "Chocolate",
+            "value": 85,
+            "color": "#795548"
           },
           {
-            "label": "Sold Cupcakes",
-            "value": 22,
-            "color": "#f97316"
+            "label": "Vanilla",
+            "value": 50,
+            "color": "#f1c40f"
           }
         ],
-        "difference": 28,
-        "unit": "cupcakes"
-      },
-      "target_answer": 28,
-      "unit": "cupcakes",
+        "difference": 35,
+        "differenceLabel": "Difference: 35 cookies"
+      }
+    },
+    {
+      "id": 3,
+      "type": "before_after",
+      "title": "Morning Bake Sale Cookie Sales",
+      "problemText": "The school bake sale started with 96 oatmeal cookies. Morning customers bought and took away 42 cookies. How many oatmeal cookies remained for the afternoon?",
+      "question": "The school bake sale started with 96 oatmeal cookies. Morning customers bought and took away 42 cookies. How many oatmeal cookies remained for the afternoon?",
+      "correctAnswer": 54,
+      "target_answer": 54,
+      "unit": "cookies",
+      "hintText": "Subtract 42 from 96.",
       "steps": [
-        "Start with the 50 starting cupcakes.",
-        "Subtract the 22 sold cupcakes.",
-        "50 - 22 = 28 cupcakes remain."
-      ]
+        "Initial cookies: 96.",
+        "Cookies taken away: 42.",
+        "Remaining: 96 - 42 = 54 cookies."
+      ],
+      "modelData": {
+        "type": "before_after",
+        "bars": [
+          {
+            "label": "Initial Batch",
+            "value": 96,
+            "color": "#e67e22"
+          },
+          {
+            "label": "Sold",
+            "value": 42,
+            "color": "#e74c3c"
+          },
+          {
+            "label": "Remaining",
+            "value": 54,
+            "color": "#2ecc71"
+          }
+        ],
+        "finalValue": 54,
+        "label": "Remaining: 54 cookies"
+      }
+    },
+    {
+      "id": 4,
+      "type": "comparison",
+      "title": "Large and Small Baking Tray Capacity",
+      "problemText": "A large commercial baking tray holds 65 butter cookies. A small home tray holds 25 cookies. What is the difference in cookie capacity between the two trays?",
+      "question": "A large commercial baking tray holds 65 butter cookies. A small home tray holds 25 cookies. What is the difference in cookie capacity between the two trays?",
+      "correctAnswer": 40,
+      "target_answer": 40,
+      "unit": "cookies",
+      "hintText": "Subtract 25 from 65.",
+      "steps": [
+        "Large tray capacity: 65.",
+        "Small tray capacity: 25.",
+        "Difference: 65 - 25 = 40 cookies."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Large Tray",
+            "value": 65,
+            "color": "#95a5a6"
+          },
+          {
+            "label": "Small Tray",
+            "value": 25,
+            "color": "#bdc3c7"
+          }
+        ],
+        "difference": 40,
+        "differenceLabel": "Difference: 40 cookies"
+      }
+    },
+    {
+      "id": 5,
+      "type": "before_after",
+      "title": "Bakery Cookie Stock Take Away",
+      "problemText": "The bakery had 100 ginger cookies in stock. The afternoon catering order took away 65 cookies. How many ginger cookies were left in the bakery?",
+      "question": "The bakery had 100 ginger cookies in stock. The afternoon catering order took away 65 cookies. How many ginger cookies were left in the bakery?",
+      "correctAnswer": 35,
+      "target_answer": 35,
+      "unit": "cookies",
+      "hintText": "Subtract 65 from 100.",
+      "steps": [
+        "Initial stock: 100 cookies.",
+        "Catering order took away: 65.",
+        "Cookies left: 100 - 65 = 35 cookies."
+      ],
+      "modelData": {
+        "type": "before_after",
+        "bars": [
+          {
+            "label": "Total Stock",
+            "value": 100,
+            "color": "#d35400"
+          },
+          {
+            "label": "Took Away",
+            "value": 65,
+            "color": "#c0392b"
+          },
+          {
+            "label": "Left",
+            "value": 35,
+            "color": "#27ae60"
+          }
+        ],
+        "finalValue": 35,
+        "label": "Left: 35 cookies"
+      }
     }
   ],
   "science_lab": {
-    "title_en": "The Cookie Monster (Subtraction Language) Lab Workshop",
+    "title_en": "The Cookie Monster (Subtraction Language) Workshop Lab",
     "scenarios": [
       {
         "stage": 1,
-        "title": "Cookie Take Away Lab",
-        "diagram_type": "take_away_tray_grid",
-        "instruction": "Drag 4 cookies from the tray to the Cookie Monster's plate and observe what remains.",
+        "title": "Subtraction Language Modeling",
+        "instruction": "Match each math phrase to its meaning.",
         "items": [
           {
-            "label": "10 Cookies on Metal Tray",
-            "target": "original_group"
+            "label": "Take away 5",
+            "target": "Remove 5 items"
           },
           {
-            "label": "Remove 4 for Monster Snack",
-            "target": "subtraction_action"
+            "label": "Minus symbol (-)",
+            "target": "Subtraction operation"
           },
           {
-            "label": "6 Cookies Left on Tray",
-            "target": "remaining_group"
+            "label": "How many left",
+            "target": "Remaining amount"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Subtraction Equation Matching",
-        "diagram_type": "math_sentence_cards",
-        "instruction": "Match each word problem to its correct subtraction equation.",
+        "title": "Tray to Jar Inventory",
+        "instruction": "Sort cookies into initial batch, eaten snack, and remaining jar.",
         "items": [
           {
-            "label": "Start with 8, take away 3",
-            "target": "8_minus_3_equals_5"
+            "label": "Tray of 72 Fresh Cookies",
+            "target": "Initial Batch"
           },
           {
-            "label": "Start with 12, take away 5",
-            "target": "12_minus_5_equals_7"
+            "label": "Plate of 28 Eaten Snacks",
+            "target": "Subtracted Portion"
           },
           {
-            "label": "Start with 15, take away 6",
-            "target": "15_minus_6_equals_9"
+            "label": "Jar of 44 Saved Cookies",
+            "target": "Remaining Inventory"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Fair Sharing Balance",
-        "diagram_type": "snack_distribution_table",
-        "instruction": "Distribute the 6 remaining cookies equally between Lucas and Chloe.",
+        "title": "Fair Cookie Sharing Lab",
+        "instruction": "Calculate remaining cookies after equal friend shares.",
         "items": [
           {
-            "label": "3 Cookies -> Lucas's Napkin",
-            "target": "plate_lucas"
+            "label": "30 Cookies Minus 10",
+            "target": "20 Left"
           },
           {
-            "label": "3 Cookies -> Chloe's Napkin",
-            "target": "plate_chloe"
+            "label": "50 Cookies Minus 25",
+            "target": "25 Left"
           },
           {
-            "label": "Fair Share: 3 each",
-            "target": "equal_share"
+            "label": "100 Cookies Minus 65",
+            "target": "35 Left"
           }
         ]
       }

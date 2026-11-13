@@ -1,9 +1,8 @@
 /**
- * STAGED DELIVERABLE: Reading Hub & Cambridge Exam Suite
+ * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 47 | Theme: "Big Numbers (Place Value)" | CEFR: A2 Flyers
- * Generated: 2026-11-09T13:11:30.707Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
- * Provenance: Grounded in blueprint.json + Source B Syllabus
+ * Generated: 2026-11-13T05:36:25.000Z
+ * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
@@ -14,720 +13,631 @@ export const readingHubData = {
   "vocab": [
     {
       "id": 1,
-      "word": "ten",
-      "pos": "num",
-      "ipa": "/ten/",
-      "definition_en": "The number equal to nine plus one",
-      "definition_vi": "số mười",
-      "example_en": "Sophie tied ten small wooden markers with green string.",
-      "example_vi": "Sophie đã buộc mười chiếc cọc gỗ đánh dấu bằng sợi dây màu xanh."
+      "word": "place",
+      "pos": "n",
+      "ipa": "/pleɪs/",
+      "definition_en": "Position of a digit in a number.",
+      "definition_vi": "vị trí hàng",
+      "example_en": "Look at the tens place to read the number.",
+      "example_vi": "Hãy nhìn vào hàng chục để đọc con số."
     },
     {
       "id": 2,
-      "word": "twenty",
-      "pos": "num",
-      "ipa": "/ˈtwenti/",
-      "definition_en": "The number equal to two tens (20)",
-      "definition_vi": "số hai mươi",
-      "example_en": "There are twenty young pine saplings in the first row.",
-      "example_vi": "Có hai mươi cây thông non ở hàng đầu tiên."
+      "word": "value",
+      "pos": "n",
+      "ipa": "/ˈvæljuː/",
+      "definition_en": "How much a digit or number is worth.",
+      "definition_vi": "giá trị",
+      "example_en": "The value of five in fifty is fifty.",
+      "example_vi": "Giá trị của chữ số năm trong năm mươi là năm mươi."
     },
     {
       "id": 3,
-      "word": "thirty",
-      "pos": "num",
-      "ipa": "/ˈθɜːrti/",
-      "definition_en": "The number equal to three tens (30)",
-      "definition_vi": "số ba mươi",
-      "example_en": "Lucas counted thirty colorful flower pots along the terrace.",
-      "example_vi": "Lucas đã đếm ba mươi chậu hoa rực rỡ dọc theo bậc thềm."
+      "word": "digit",
+      "pos": "n",
+      "ipa": "/ˈdɪdʒɪt/",
+      "definition_en": "Any written symbol from zero to nine.",
+      "definition_vi": "chữ số",
+      "example_en": "The number forty-five has two digits.",
+      "example_vi": "Số bốn mươi lăm gồm có hai chữ số."
     },
     {
       "id": 4,
-      "word": "hundred",
-      "pos": "num",
-      "ipa": "/ˈhʌndrəd/",
-      "definition_en": "The number equal to ten tens (100)",
-      "definition_vi": "số một trăm",
-      "example_en": "The village volunteers planted over one hundred trees.",
-      "example_vi": "Các tình nguyện viên của làng đã trồng hơn một trăm cây xanh."
+      "word": "column",
+      "pos": "n",
+      "ipa": "/ˈkɑːləm/",
+      "definition_en": "Vertical group of numbers in a grid.",
+      "definition_vi": "cột dọc",
+      "example_en": "Write the tens in the left column.",
+      "example_vi": "Hãy viết các số hàng chục vào cột bên trái."
     },
     {
       "id": 5,
-      "word": "count",
-      "pos": "v",
-      "ipa": "/kaʊnt/",
-      "definition_en": "Determine the total number of items in a collection",
-      "definition_vi": "đếm",
-      "example_en": "Children learn to count saplings by grouping them in tens.",
-      "example_vi": "Trẻ em học cách đếm cây non bằng cách nhóm chúng thành từng chục."
+      "word": "chart",
+      "pos": "n",
+      "ipa": "/tʃɑːrt/",
+      "definition_en": "Sheet of organized mathematical facts.",
+      "definition_vi": "bảng số liệu",
+      "example_en": "The place value chart shows tens and ones.",
+      "example_vi": "Bảng giá trị hàng hiển thị các hàng chục và đơn vị."
     },
     {
       "id": 6,
-      "word": "how many",
-      "pos": "pron",
-      "ipa": "/haʊ ˈmeni/",
-      "definition_en": "Used to ask about the quantity or number of countable things",
-      "definition_vi": "bao nhiêu",
-      "example_en": "How many bright stars can you spot above the hill tonight?",
-      "example_vi": "Bạn có thể nhìn thấy bao nhiêu ngôi sao sáng phía trên ngọn đồi tối nay?"
+      "word": "count",
+      "pos": "v",
+      "ipa": "/kaʊnt/",
+      "definition_en": "Say numbers in order to find a total.",
+      "definition_vi": "đếm",
+      "example_en": "Students count shiny stars in the night sky.",
+      "example_vi": "Học sinh đếm những ngôi sao lấp lánh trên bầu trời đêm."
     },
     {
       "id": 7,
-      "word": "forty",
-      "pos": "num",
-      "ipa": "/ˈfɔːrti/",
-      "definition_en": "The number equal to four tens (40)",
-      "definition_vi": "số bốn mươi",
-      "example_en": "Forty students gathered at the village community garden.",
-      "example_vi": "Bốn mươi học sinh đã tập trung tại vườn cộng đồng của làng."
-    },
-    {
-      "id": 8,
-      "word": "fifty",
-      "pos": "num",
-      "ipa": "/ˈfɪfti/",
-      "definition_en": "The number equal to five tens (50)",
-      "definition_vi": "số năm mươi",
-      "example_en": "Our team planted fifty birch saplings near the stream.",
-      "example_vi": "Đội chúng tôi đã trồng năm mươi cây bạch dương non gần bờ suối."
-    },
-    {
-      "id": 9,
-      "word": "sixty",
-      "pos": "num",
-      "ipa": "/ˈsɪksti/",
-      "definition_en": "The number equal to six tens (60)",
-      "definition_vi": "số sáu mươi",
-      "example_en": "There are sixty minutes in one complete hour.",
-      "example_vi": "Có sáu mươi phút trong một giờ đồng hồ trọn vẹn."
-    },
-    {
-      "id": 10,
-      "word": "seventy",
-      "pos": "num",
-      "ipa": "/ˈsevənti/",
-      "definition_en": "The number equal to seven tens (70)",
-      "definition_vi": "số bảy mươi",
-      "example_en": "Grandpa counted seventy healthy apple trees in his orchard.",
-      "example_vi": "Ông nội đã đếm được bảy mươi cây táo khỏe mạnh trong vườn cây ăn quả của mình."
-    },
-    {
-      "id": 11,
-      "word": "eighty",
-      "pos": "num",
-      "ipa": "/ˈeɪti/",
-      "definition_en": "The number equal to eight tens (80)",
-      "definition_vi": "số tám mươi",
-      "example_en": "Eighty shining stars formed a magnificent spiral pattern.",
-      "example_vi": "Tám mươi ngôi sao lấp lánh tạo thành một hình xoắn ốc tuyệt đẹp."
-    },
-    {
-      "id": 12,
-      "word": "ninety",
-      "pos": "num",
-      "ipa": "/ˈnaɪnti/",
-      "definition_en": "The number equal to nine tens (90)",
-      "definition_vi": "số chín mươi",
-      "example_en": "The tall oak tree is more than ninety years old.",
-      "example_vi": "Cây sồi cao lớn đã hơn chín mươi năm tuổi."
-    },
-    {
-      "id": 13,
-      "word": "number",
-      "pos": "n",
-      "ipa": "/ˈnʌmbər/",
-      "definition_en": "A mathematical value used for counting or measuring",
-      "definition_vi": "con số, số lượng",
-      "example_en": "Write the correct number of seedlings on your chart.",
-      "example_vi": "Hãy viết con số chính xác về số cây con lên bảng biểu của bạn."
-    },
-    {
-      "id": 14,
       "word": "total",
       "pos": "n",
       "ipa": "/ˈtoʊtl/",
-      "definition_en": "The whole amount or number of things added together",
-      "definition_vi": "tổng số",
-      "example_en": "The total number of trees planted today was ninety-six.",
-      "example_vi": "Tổng số cây được trồng ngày hôm nay là chín mươi sáu cây."
+      "definition_en": "The whole sum of added items.",
+      "definition_vi": "tổng cộng",
+      "example_en": "The total number of village houses is ninety-nine.",
+      "example_vi": "Tổng số ngôi nhà trong làng là chín mươi chín."
+    },
+    {
+      "id": 8,
+      "word": "twenty-one",
+      "pos": "num",
+      "ipa": "/ˌtwenti ˈwʌn/",
+      "definition_en": "Number that follows twenty.",
+      "definition_vi": "hai mươi mốt",
+      "example_en": "There are twenty-one green parrots in the tree.",
+      "example_vi": "Có hai mươi mốt con vẹt xanh trên cây."
+    },
+    {
+      "id": 9,
+      "word": "thirty-four",
+      "pos": "num",
+      "ipa": "/ˌθɜːrti ˈfɔːr/",
+      "definition_en": "Number that follows thirty-three.",
+      "definition_vi": "ba mươi tư",
+      "example_en": "The farmer gathered thirty-four yellow pumpkins.",
+      "example_vi": "Bác nông dân thu hoạch được ba mươi tư quả bí ngô vàng."
+    },
+    {
+      "id": 10,
+      "word": "forty-five",
+      "pos": "num",
+      "ipa": "/ˌfɔːrti ˈfaɪv/",
+      "definition_en": "Number that follows forty-four.",
+      "definition_vi": "bốn mươi lăm",
+      "example_en": "Our science team saw forty-five bright fireflies.",
+      "example_vi": "Đội khoa học của chúng tôi nhìn thấy bốn mươi lăm con đom đóm sáng."
+    },
+    {
+      "id": 11,
+      "word": "fifty-six",
+      "pos": "num",
+      "ipa": "/ˌfɪfti ˈsɪks/",
+      "definition_en": "Number that follows fifty-five.",
+      "definition_vi": "năm mươi sáu",
+      "example_en": "The school library has fifty-six animal books.",
+      "example_vi": "Thư viện trường có năm mươi sáu cuốn sách động vật."
+    },
+    {
+      "id": 12,
+      "word": "sixty-seven",
+      "pos": "num",
+      "ipa": "/ˌsɪksti ˈsevən/",
+      "definition_en": "Number that follows sixty-six.",
+      "definition_vi": "sáu mươi bảy",
+      "example_en": "The village clinic treated sixty-seven patients.",
+      "example_vi": "Trạm xá làng đã chữa trị cho sáu mươi bảy bệnh nhân."
+    },
+    {
+      "id": 13,
+      "word": "seventy-eight",
+      "pos": "num",
+      "ipa": "/ˌsevənti ˈeɪt/",
+      "definition_en": "Number that follows seventy-seven.",
+      "definition_vi": "bảy mươi tám",
+      "example_en": "We planted seventy-eight young oak trees.",
+      "example_vi": "Chúng tôi đã trồng bảy mươi tám cây sồi non."
+    },
+    {
+      "id": 14,
+      "word": "eighty-nine",
+      "pos": "num",
+      "ipa": "/ˌeɪti ˈnaɪn/",
+      "definition_en": "Number that follows eighty-eight.",
+      "definition_vi": "tám mươi chín",
+      "example_en": "The observatory counted eighty-nine distant stars.",
+      "example_vi": "Đài thiên văn đếm được tám mươi chín ngôi sao ở xa."
     },
     {
       "id": 15,
-      "word": "add",
-      "pos": "v",
-      "ipa": "/æd/",
-      "definition_en": "Join numbers together to calculate a total",
-      "definition_vi": "cộng thêm, thêm vào",
-      "example_en": "If you add ten to forty, you get fifty.",
-      "example_vi": "Nếu bạn cộng mười vào bốn mươi, bạn sẽ được năm mươi."
+      "word": "ninety-nine",
+      "pos": "num",
+      "ipa": "/ˌnaɪnti ˈnaɪn/",
+      "definition_en": "Number that follows ninety-eight.",
+      "definition_vi": "chín mươi chín",
+      "example_en": "The mountain village has ninety-nine stone houses.",
+      "example_vi": "Ngôi làng miền núi có chín mươi chín ngôi nhà đá."
     },
     {
       "id": 16,
-      "word": "equal",
-      "pos": "adj",
-      "ipa": "/ˈiːkwəl/",
-      "definition_en": "Being the same in quantity, size, or value",
-      "definition_vi": "bằng nhau",
-      "example_en": "Five tens are equal to fifty individual units.",
-      "example_vi": "Năm chục thì bằng năm mươi đơn vị riêng lẻ."
+      "word": "hundred",
+      "pos": "num",
+      "ipa": "/ˈhʌndrəd/",
+      "definition_en": "Number equal to ten tens.",
+      "definition_vi": "một trăm",
+      "example_en": "One hundred students joined the math challenge.",
+      "example_vi": "Một trăm học sinh đã tham gia thử thách toán học."
     },
     {
       "id": 17,
-      "word": "group",
-      "pos": "n",
-      "ipa": "/ɡruːp/",
-      "definition_en": "A collection of items gathered or classed together",
-      "definition_vi": "nhóm",
-      "example_en": "Students worked in a small group to bundle saplings.",
-      "example_vi": "Các học sinh đã làm việc theo một nhóm nhỏ để buộc các bó cây non."
+      "word": "estimate",
+      "pos": "v",
+      "ipa": "/ˈestɪmeɪt/",
+      "definition_en": "Form a quick rough calculation.",
+      "definition_vi": "ước tính",
+      "example_en": "Astronomers estimate the total star count tonight.",
+      "example_vi": "Các nhà thiên văn học ước tính tổng số sao đêm nay."
     },
     {
       "id": 18,
-      "word": "star",
+      "word": "amount",
       "pos": "n",
-      "ipa": "/stɑːr/",
-      "definition_en": "A luminous celestial point shining in the night sky",
-      "definition_vi": "ngôi sao",
-      "example_en": "Sophie pointed her small telescope at the North Star.",
-      "example_vi": "Sophie đã hướng chiếc kính thiên văn nhỏ của mình về phía sao Bắc Cực."
+      "ipa": "/əˈmaʊnt/",
+      "definition_en": "A quantity of items or units.",
+      "definition_vi": "số lượng",
+      "example_en": "A large amount of corn grew in the valley.",
+      "example_vi": "Một số lượng ngô lớn đã phát triển trong thung lũng."
     },
     {
       "id": 19,
-      "word": "village",
-      "pos": "n",
-      "ipa": "/ˈvɪlɪdʒ/",
-      "definition_en": "A small settlement in a country area smaller than a town",
-      "definition_vi": "ngôi làng",
-      "example_en": "Everyone in the peaceful village joined the tree festival.",
-      "example_vi": "Mọi người trong ngôi làng yên bình đều tham gia lễ hội trồng cây."
+      "word": "separate",
+      "pos": "v",
+      "ipa": "/ˈsepəreɪt/",
+      "definition_en": "Divide numbers into smaller groups.",
+      "definition_vi": "tách rời",
+      "example_en": "We separate ninety-nine into tens and ones.",
+      "example_vi": "Chúng ta tách chín mươi chín thành hàng chục và đơn vị."
     },
     {
       "id": 20,
-      "word": "tree",
+      "word": "bundle",
       "pos": "n",
-      "ipa": "/triː/",
-      "definition_en": "A woody perennial plant with an elongated trunk and branches",
-      "definition_vi": "cây cối",
-      "example_en": "A healthy tree provides cool shade and clean oxygen.",
-      "example_vi": "Một cái cây khỏe mạnh mang lại bóng mát và oxy trong lành."
+      "ipa": "/ˈbʌndl/",
+      "definition_en": "Group of items tied neatly together.",
+      "definition_vi": "bó, tập hợp",
+      "example_en": "Ten sticks make one bundle in place value practice.",
+      "example_vi": "Mười que tính tạo thành một bó trong bài luyện tập giá trị hàng."
     }
   ],
   "clil_article": {
-    "title_en": "Counting Big Numbers with Place Value",
-    "title_vi": "Đếm Những Con Số Lớn Bằng Giá Trị Hàng",
-    "content_en": "Have you ever wondered how people count hundreds of stars or thousands of forest trees? Counting items one by one takes too long, so mathematicians invented place value. Place value means grouping numbers into sets of tens and hundreds. For example, twenty means two groups of ten, and fifty means five groups of ten. When we write compound numbers between twenty-one and ninety-nine, we always use a hyphen between the words. If volunteers plant seventy oak saplings and twenty pine saplings, we add the tens together. Seven tens plus two tens equal ninety trees in total! Understanding place value helps us calculate big quantities quickly and accurately.",
-    "glossary": [
-      {
-        "word": "number",
-        "definition_en": "A word or symbol showing a quantity",
-        "definition_vi": "con số chỉ số lượng"
-      },
-      {
-        "word": "hundred",
-        "definition_en": "A number made of ten groups of ten (100)",
-        "definition_vi": "số một trăm gồm mười chục"
-      },
-      {
-        "word": "group",
-        "definition_en": "Items placed together into organized sets",
-        "definition_vi": "nhóm các vật được tập hợp lại"
-      },
-      {
-        "word": "total",
-        "definition_en": "The combined sum of all items counted",
-        "definition_vi": "tổng số lượng gom lại"
-      },
-      {
-        "word": "equal",
-        "definition_en": "Having the exact same amount or numerical value",
-        "definition_vi": "bằng nhau về giá trị"
-      }
+    "article_title": "Counting Stars and Mountain Villages",
+    "subheadings": [
+      "The Place Value Chart",
+      "Counting Up to One Hundred"
     ],
+    "text": "Astronomers use place value to count distant stars. In a two-digit number, each digit holds a special value. We write numbers in a column chart to separate tens from ones. For example, forty-five has four tens and five ones. When we count stars over a mountain village, we group them into tens. A village census found twenty-one stone cottages in the north valley and thirty-four wooden houses near the stream. Together with fifty-six hillside homes and sixty-seven farm sheds, the total amount reaches ninety-nine buildings. If astronomers observe one more star, the count reaches one hundred. Scientists estimate total numbers accurately by checking each column.",
+    "vocabulary_recycled": [
+      "place",
+      "value",
+      "digit",
+      "column",
+      "chart",
+      "count",
+      "total",
+      "twenty-one",
+      "thirty-four",
+      "forty-five",
+      "fifty-six",
+      "sixty-seven",
+      "ninety-nine",
+      "hundred",
+      "estimate",
+      "amount",
+      "separate"
+    ],
+    "reading_time_seconds": 65,
     "check_questions": [
       {
         "id": 1,
-        "question_en": "How does grouping items into tens help when counting large collections?",
+        "question_en": "What helps astronomers separate tens and ones?",
         "options": [
-          "It makes counting much faster and prevents mistakes",
-          "It makes numbers smaller than zero",
-          "It turns trees into plastic toys"
+          "A place value column chart",
+          "A telescope lens",
+          "A wooden stick"
         ],
-        "answer": "It makes counting much faster and prevents mistakes"
+        "answer": "A place value column chart"
       },
       {
         "id": 2,
-        "question_en": "What punctuation mark is used when writing compound numbers like twenty-five?",
+        "question_en": "How many tens are in the number forty-five?",
         "options": [
-          "A hyphen between the tens and units words",
-          "An exclamation mark after each letter",
-          "A question mark at the front"
+          "Four tens",
+          "Five tens",
+          "Nine tens"
         ],
-        "answer": "A hyphen between the tens and units words"
+        "answer": "Four tens"
       },
       {
         "id": 3,
-        "question_en": "If volunteers plant fifty oak trees and thirty pine trees, what is the total?",
+        "question_en": "What number follows ninety-nine when one more is added?",
         "options": [
-          "Eighty trees in total",
-          "Ten trees in total",
-          "One hundred forty trees"
+          "One hundred",
+          "Eighty-nine",
+          "Seventy-eight"
         ],
-        "answer": "Eighty trees in total"
+        "answer": "One hundred"
       }
-    ]
+    ],
+    "content_en": "Astronomers use place value to count distant stars. In a two-digit number, each digit holds a special value. We write numbers in a column chart to separate tens from ones. For example, forty-five has four tens and five ones. When we count stars over a mountain village, we group them into tens. A village census found twenty-one stone cottages in the north valley and thirty-four wooden houses near the stream. Together with fifty-six hillside homes and sixty-seven farm sheds, the total amount reaches ninety-nine buildings. If astronomers observe one more star, the count reaches one hundred. Scientists estimate total numbers accurately by checking each column."
   },
   "story_scenes": [
     {
-      "id": 1,
-      "scene_id": "scene_1",
-      "scene_number": 1,
-      "title_en": "Village Festival Gathering",
-      "title_vi": "Tập Hợp Tại Lễ Hội Làng",
-      "description_en": "Lucas and Sophie arrive at the community garden where crates of saplings wait to be counted.",
-      "description": "Lucas and Sophie arrive at the community garden where crates of saplings wait to be counted.",
-      "image_url": "/images/week47/webtoon_scene_1.png",
-      "audio_url": "/audio/week47/scene_1.mp3"
+      "scene": 1,
+      "title": "Night at the Hilltop Observatory",
+      "narration_en": "Lucas and Mia visited the village observatory on Friday night.",
+      "narration_vi": "Lucas và Mia đến thăm đài thiên văn của làng vào tối thứ Sáu.",
+      "dialogue": [
+        {
+          "speaker": "Lucas",
+          "text": "Can we count all the stars tonight?"
+        },
+        {
+          "speaker": "Mia",
+          "text": "Let us use a place value chart to record them!"
+        }
+      ]
     },
     {
-      "id": 2,
-      "scene_id": "scene_2",
-      "scene_number": 2,
-      "title_en": "Grouping Saplings by Tens",
-      "title_vi": "Nhóm Cây Non Thành Từng Chục",
-      "description_en": "Sophie groups fifty green pine saplings into five tidy bundles of ten each.",
-      "description": "Sophie groups fifty green pine saplings into five tidy bundles of ten each.",
-      "image_url": "/images/week47/webtoon_scene_2.png",
-      "audio_url": "/audio/week47/scene_2.mp3"
+      "scene": 2,
+      "title": "Bundling the Star Counts",
+      "narration_en": "Mia grouped the bright stars into neat bundles of ten.",
+      "narration_vi": "Mia nhóm các ngôi sao sáng thành từng bó mười ngôi sao.",
+      "dialogue": [
+        {
+          "speaker": "Mia",
+          "text": "I see thirty-four stars in the northern sky."
+        },
+        {
+          "speaker": "Lucas",
+          "text": "And I spotted twenty-one stars near the moon!"
+        }
+      ]
     },
     {
-      "id": 3,
-      "scene_id": "scene_3",
-      "scene_number": 3,
-      "title_en": "Counting Eighty Oak Trees",
-      "title_vi": "Đếm Tám Mươi Cây Sồi",
-      "description_en": "Lucas tallies rows of oak trees along the river path and reaches eighty in total.",
-      "description": "Lucas tallies rows of oak trees along the river path and reaches eighty in total.",
-      "image_url": "/images/week47/webtoon_scene_3.png",
-      "audio_url": "/audio/week47/scene_3.mp3"
+      "scene": 3,
+      "title": "Adding the Mountain Houses",
+      "narration_en": "They looked down at the peaceful village lights below.",
+      "narration_vi": "Họ nhìn xuống ánh đèn của ngôi làng yên bình bên dưới.",
+      "dialogue": [
+        {
+          "speaker": "Lucas",
+          "text": "The village map shows fifty-six lit houses."
+        },
+        {
+          "speaker": "Mia",
+          "text": "Write forty-five in the chart with a hyphen!"
+        }
+      ]
     },
     {
-      "id": 4,
-      "scene_id": "scene_4",
-      "scene_number": 4,
-      "title_en": "Counting Stars at Twilight",
-      "title_vi": "Đếm Sao Lúc Hoàng Hôn",
-      "description_en": "As evening falls over the village, they count bright stars appearing across the clear sky.",
-      "description": "As evening falls over the village, they count bright stars appearing across the clear sky.",
-      "image_url": "/images/week47/webtoon_scene_4.png",
-      "audio_url": "/audio/week47/scene_4.mp3"
+      "scene": 4,
+      "title": "Reaching Big Numbers",
+      "narration_en": "Their star counter clicked past eighty-nine stars.",
+      "narration_vi": "Máy đếm sao của họ kêu lách cách vượt qua tám mươi chín ngôi sao.",
+      "dialogue": [
+        {
+          "speaker": "Lucas",
+          "text": "We have reached ninety-nine bright points!"
+        },
+        {
+          "speaker": "Mia",
+          "text": "Add one more to reach one hundred!"
+        }
+      ]
     },
     {
-      "id": 5,
-      "scene_id": "scene_5",
-      "scene_number": 5,
-      "title_en": "Certificate for One Hundred",
-      "title_vi": "Chứng Nhận Cho Con Số Một Trăm",
-      "description_en": "Teacher Martin presents volunteer certificates for planting over one hundred trees.",
-      "description": "Teacher Martin presents volunteer certificates for planting over one hundred trees.",
-      "image_url": "/images/week47/webtoon_scene_5.png",
-      "audio_url": "/audio/week47/scene_5.mp3"
+      "scene": 5,
+      "title": "The Astronomer Badge",
+      "narration_en": "The chief astronomer awarded them young observer badges.",
+      "narration_vi": "Nhà thiên văn trưởng trao cho họ huy hiệu quan sát viên trẻ.",
+      "dialogue": [
+        {
+          "speaker": "Lucas",
+          "text": "Place value makes counting big numbers easy!"
+        },
+        {
+          "speaker": "Mia",
+          "text": "Every digit in each column tells a clear story!"
+        }
+      ]
     }
   ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
-        "text": "Sophie tied ten small green markers with bright string.",
-        "en": "Sophie tied ten small green markers with bright string.",
-        "vi": "Sophie buộc mười chiếc cọc xanh nhỏ bằng sợi dây sáng màu.",
-        "ipa": "/ˈsoʊfi taɪd ten smɔːl ɡriːn ˈmɑːrkərz wɪð braɪt strɪŋ/",
-        "words": [
-          "Sophie",
-          "tied",
-          "ten",
-          "small",
-          "green",
-          "markers",
-          "with",
-          "bright",
-          "string"
-        ]
+        "text": "Always write twenty-one with a hyphen between words.",
+        "ipa": "/ˈɔːlweɪz raɪt ˌtwenti ˈwʌn wɪð ə ˈhaɪfn bɪˈtwiːn wɜːrdz./"
       },
       {
         "id": 2,
-        "text": "There are twenty young pine saplings growing in the row.",
-        "en": "There are twenty young pine saplings growing in the row.",
-        "vi": "Có hai mươi cây thông non đang lớn lên ở trong hàng.",
-        "ipa": "/ðer ɑːr ˈtwenti jʌŋ paɪn ˈsæplɪŋz ˈɡroʊɪŋ ɪn ðə roʊ/",
-        "words": [
-          "There",
-          "are",
-          "twenty",
-          "young",
-          "pine",
-          "saplings",
-          "growing",
-          "in",
-          "the",
-          "row"
-        ]
+        "text": "The place value chart shows tens and ones clearly.",
+        "ipa": "/ðə pleɪs ˈvæljuː tʃɑːrt ʃoʊz tenz ænd wʌnz ˈklɪrli./"
       },
       {
         "id": 3,
-        "text": "How many shining stars can you count in the clear sky?",
-        "en": "How many shining stars can you count in the clear sky?",
-        "vi": "Bạn có thể đếm được bao nhiêu ngôi sao sáng trên bầu trời trong?",
-        "ipa": "/haʊ ˈmeni ˈʃaɪnɪŋ stɑːrz kæn juː kaʊnt ɪn ðə klɪr skaɪ/",
-        "words": [
-          "How",
-          "many",
-          "shining",
-          "stars",
-          "can",
-          "you",
-          "count",
-          "in",
-          "the",
-          "clear",
-          "sky"
-        ]
+        "text": "The mountain village has thirty-four wooden houses.",
+        "ipa": "/ðə ˈmaʊntn ˈvɪlɪdʒ hæz ˌθɜːrti ˈfɔːr ˈwʊdn ˈhaʊzɪz./"
       },
       {
         "id": 4,
-        "text": "Lucas counted thirty colorful flower pots along the stone path.",
-        "en": "Lucas counted thirty colorful flower pots along the stone path.",
-        "vi": "Lucas đã đếm ba mươi chậu hoa rực rỡ dọc con đường đá.",
-        "ipa": "/ˈluːkəs ˈkaʊntɪd ˈθɜːrti ˈkʌlərfəl ˈflaʊər pɑːts əˈlɔːŋ ðə stoʊn pæθ/",
-        "words": [
-          "Lucas",
-          "counted",
-          "thirty",
-          "colorful",
-          "flower",
-          "pots",
-          "along",
-          "the",
-          "stone",
-          "path"
-        ]
+        "text": "Forty-five bright fireflies flashed near the creek.",
+        "ipa": "/ˌfɔːrti ˈfaɪv braɪt ˈfaɪərflaɪz flæʃt nɪr ðə kriːk./"
       },
       {
         "id": 5,
-        "text": "The village volunteers planted more than one hundred trees today.",
-        "en": "The village volunteers planted more than one hundred trees today.",
-        "vi": "Các tình nguyện viên của làng đã trồng hơn một trăm cây xanh hôm nay.",
-        "ipa": "/ðə ˈvɪlɪdʒ ˌvɑːlənˈtɪrz ˈplæntɪd mɔːr ðæn wʌn ˈhʌndrəd triːz təˈdeɪ/",
-        "words": [
-          "The",
-          "village",
-          "volunteers",
-          "planted",
-          "more",
-          "than",
-          "one",
-          "hundred",
-          "trees",
-          "today"
-        ]
+        "text": "We separate big numbers into tens and ones columns.",
+        "ipa": "/wi ˈsepəreɪt bɪɡ ˈnʌmbərz ˈɪntuː tenz ænd wʌnz ˈkɑːləmz./"
       },
       {
         "id": 6,
-        "text": "Fifty healthy saplings were neatly grouped into bundles of ten.",
-        "en": "Fifty healthy saplings were neatly grouped into bundles of ten.",
-        "vi": "Năm mươi cây non khỏe mạnh được nhóm gọn gàng thành từng bó mười cây.",
-        "ipa": "/ˈfɪfti ˈhelθi ˈsæplɪŋz wɜːr ˈniːtli ɡruːpt ˈɪntuː ˈbʌndəlz əv ten/",
-        "words": [
-          "Fifty",
-          "healthy",
-          "saplings",
-          "were",
-          "neatly",
-          "grouped",
-          "into",
-          "bundles",
-          "of",
-          "ten"
-        ]
+        "text": "Scientists estimate seventy-eight nests in the valley.",
+        "ipa": "/ˈsaɪəntɪsts ˈestɪmeɪt ˌsevənti ˈeɪt nests ɪn ðə ˈvæli./"
       },
       {
         "id": 7,
-        "text": "Forty plus forty is equal to eighty sturdy village trees.",
-        "en": "Forty plus forty is equal to eighty sturdy village trees.",
-        "vi": "Bốn mươi cộng bốn mươi bằng tám mươi cây xanh vững chãi của làng.",
-        "ipa": "/ˈfɔːrti plʌs ˈfɔːrti ɪz ˈiːkwəl tuː ˈeɪti ˈstɜːrdi ˈvɪlɪdʒ triːz/",
-        "words": [
-          "Forty",
-          "plus",
-          "forty",
-          "is",
-          "equal",
-          "to",
-          "eighty",
-          "sturdy",
-          "village",
-          "trees"
-        ]
+        "text": "The total amount reached ninety-nine before midnight.",
+        "ipa": "/ðə ˈtoʊtl əˈmaʊnt riːtʃt ˌnaɪnti ˈnaɪn bɪˈfɔːr ˈmɪdnaɪt./"
       },
       {
         "id": 8,
-        "text": "We write hyphenated numbers like seventy-five with great care.",
-        "en": "We write hyphenated numbers like seventy-five with great care.",
-        "vi": "Chúng ta viết những con số có gạch nối như bảy mươi lăm rất cẩn thận.",
-        "ipa": "/wiː raɪt ˈhaɪfəˌneɪtɪd ˈnʌmbərz laɪk ˌsevənti ˈfaɪv wɪð ɡreɪt ker/",
-        "words": [
-          "We",
-          "write",
-          "hyphenated",
-          "numbers",
-          "like",
-          "seventy-five",
-          "with",
-          "great",
-          "care"
-        ]
+        "text": "Ten groups of ten equal exactly one hundred.",
+        "ipa": "/ten ɡruːps əv ten ˈiːkwəl ɪɡˈzæktli wʌn ˈhʌndrəd./"
       }
     ]
   },
   "rw_part1": {
     "word_bank": [
-      "ten",
-      "twenty",
-      "thirty",
-      "hundred",
-      "count",
-      "how many",
-      "forty",
-      "fifty",
-      "sixty",
-      "seventy",
-      "eighty",
-      "ninety",
-      "number",
+      "digit",
+      "column",
+      "chart",
       "total",
-      "add",
-      "equal",
-      "group",
-      "star",
-      "village",
-      "tree"
+      "hundred",
+      "estimate",
+      "amount",
+      "bundle",
+      "value",
+      "place"
     ],
     "definitions": [
       {
         "id": 1,
-        "definition_en": "The number that comes after nine and before eleven.",
-        "options": [
-          "ten",
-          "twenty",
-          "thirty"
-        ],
-        "answer": "ten"
+        "description": "Any written symbol from zero to nine.",
+        "word": "digit"
       },
       {
         "id": 2,
-        "definition_en": "The number equal to two tens or twenty units.",
-        "options": [
-          "twenty",
-          "forty",
-          "sixty"
-        ],
-        "answer": "twenty"
+        "description": "A vertical arrangement of numbers in a table.",
+        "word": "column"
       },
       {
         "id": 3,
-        "definition_en": "The number equal to ten tens or ten times ten.",
-        "options": [
-          "hundred",
-          "fifty",
-          "ninety"
-        ],
-        "answer": "hundred"
+        "description": "The whole sum when items are added together.",
+        "word": "total"
       },
       {
         "id": 4,
-        "definition_en": "Find out how many things or people are present in a group.",
-        "options": [
-          "count",
-          "add",
-          "equal"
-        ],
-        "answer": "count"
+        "description": "A collection of items tied neatly together in math.",
+        "word": "bundle"
       },
       {
         "id": 5,
-        "definition_en": "A word or mathematical symbol that tells us an amount.",
-        "options": [
-          "number",
-          "tree",
-          "village"
-        ],
-        "answer": "number"
-      },
-      {
-        "id": 6,
-        "definition_en": "The complete amount when all items are added together.",
-        "options": [
-          "total",
-          "group",
-          "star"
-        ],
-        "answer": "total"
-      },
-      {
-        "id": 7,
-        "definition_en": "Put numbers together to calculate a larger whole number.",
-        "options": [
-          "add",
-          "count",
-          "equal"
-        ],
-        "answer": "add"
-      },
-      {
-        "id": 8,
-        "definition_en": "Having the exact same value or amount as another number.",
-        "options": [
-          "equal",
-          "total",
-          "number"
-        ],
-        "answer": "equal"
-      },
-      {
-        "id": 9,
-        "definition_en": "A bright burning point of light high in the night sky.",
-        "options": [
-          "star",
-          "tree",
-          "village"
-        ],
-        "answer": "star"
-      },
-      {
-        "id": 10,
-        "definition_en": "A tall plant with a woody trunk, green leaves, and roots.",
-        "options": [
-          "tree",
-          "star",
-          "group"
-        ],
-        "answer": "tree"
+        "description": "A number equal to ten groups of ten.",
+        "word": "hundred"
       }
     ]
   },
   "rw_part2": {
-    "topic": "Counting Trees at the Village Festival",
+    "title": "Lucas and Mia Discuss Place Value",
     "turns": [
       {
         "speaker": "Lucas",
-        "text": "Sophie, how many pine saplings are in this first wooden crate?",
-        "options": [
-          "There are twenty saplings tied in two neat bundles of ten.",
-          "I watched an interesting movie on television yesterday.",
-          "The weather in the mountains was very snowy last week."
-        ],
-        "answer": "There are twenty saplings tied in two neat bundles of ten."
+        "text": "How do you write the number 45 with words?"
       },
       {
-        "speaker": "Sophie",
-        "text": "How many oak trees did the volunteers plant along the river path?",
-        "options": [
-          "They planted eighty sturdy oak trees in a straight line.",
-          "My uncle drives a blue delivery truck every afternoon.",
-          "No, I prefer eating strawberry ice cream."
-        ],
-        "answer": "They planted eighty sturdy oak trees in a straight line."
+        "speaker": "Mia",
+        "text": "You write forty-five with a hyphen in the middle."
       },
       {
         "speaker": "Lucas",
-        "text": "What is the total if we add forty pine trees to fifty birch trees?",
-        "options": [
-          "Forty plus fifty is equal to ninety trees in total.",
-          "We played tennis after school on Wednesday.",
-          "The library opens at nine o'clock in the morning."
-        ],
-        "answer": "Forty plus fifty is equal to ninety trees in total."
+        "text": "What is the value of the digit 4 in that number?"
       },
       {
-        "speaker": "Sophie",
-        "text": "Did our village reach our big target of one hundred trees today?",
-        "options": [
-          "Yes, we planted over one hundred trees and won certificates!",
-          "I bought a pair of new white sneakers yesterday.",
-          "There are four windows inside our modern kitchen."
-        ],
-        "answer": "Yes, we planted over one hundred trees and won certificates!"
+        "speaker": "Mia",
+        "text": "It is in the tens column, so its value is forty."
       },
       {
         "speaker": "Lucas",
-        "text": "Shall we walk up Oak Hill tonight and count stars in the sky?",
-        "options": [
-          "Yes, let's bring our telescope and count stars together!",
-          "I do not want any tomato soup for dinner.",
-          "The train leaves the station in fifteen minutes."
-        ],
-        "answer": "Yes, let's bring our telescope and count stars together!"
-      }
-    ],
-    "exchanges": [
-      {
-        "speaker": "Lucas",
-        "text": "Sophie, how many pine saplings are in this first wooden crate?"
+        "text": "If we add ten more, what will the total be?"
       },
       {
-        "speaker": "Sophie",
-        "text": "There are twenty saplings tied in two neat bundles of ten."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "How many oak trees did the volunteers plant along the river path?"
-      },
-      {
-        "speaker": "Sophie",
-        "text": "They planted eighty sturdy oak trees in a straight line."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "What is the total if we add forty pine trees to fifty birch trees?"
-      },
-      {
-        "speaker": "Sophie",
-        "text": "Forty plus fifty is equal to ninety trees in total."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "Did our village reach our big target of one hundred trees today?"
-      },
-      {
-        "speaker": "Sophie",
-        "text": "Yes, we planted over one hundred trees and won certificates!"
-      },
-      {
-        "speaker": "Lucas",
-        "text": "Shall we walk up Oak Hill tonight and count stars in the sky?"
-      },
-      {
-        "speaker": "Sophie",
-        "text": "Yes, let's bring our telescope and count stars together!"
+        "speaker": "Mia",
+        "text": "The total will become fifty-five!"
       }
     ]
   },
   "rw_part6": {
-    "title": "Lucas's Volunteer Logbook: Big Numbers",
-    "instructions": "Read the diary and write the missing words. Write one word on each line.",
-    "text_template": "Dear Logbook, today our village held [1]_____ tree festival. Sophie and I helped count [2]_____ saplings by grouping them in tens. We had twenty pine trees and [3]_____ oak trees. In total, the volunteers planted over [4]_____ hundred trees. It was easy to calculate because [5]_____ understand place value.",
-    "answers": {
-      "1": "a",
-      "2": "the",
-      "3": "eighty",
-      "4": "one",
-      "5": "we"
-    }
+    "text": "Place value helps us read big numbers. Every digit has a special value depending on its (1) ___ in a chart. For example, twenty-one has two tens and one (2) ___. When we count past ninety-nine, we need a new (3) ___ for hundreds. Astronomers use place value to record the (4) ___ amount of stars. Always remember to use a hyphen when writing two-digit (5) ___ like forty-five.",
+    "questions": [
+      {
+        "id": 1,
+        "options": [
+          "place",
+          "color",
+          "sound"
+        ],
+        "answer": "place"
+      },
+      {
+        "id": 2,
+        "options": [
+          "one",
+          "circle",
+          "stone"
+        ],
+        "answer": "one"
+      },
+      {
+        "id": 3,
+        "options": [
+          "column",
+          "pocket",
+          "window"
+        ],
+        "answer": "column"
+      },
+      {
+        "id": 4,
+        "options": [
+          "total",
+          "slow",
+          "quiet"
+        ],
+        "answer": "total"
+      },
+      {
+        "id": 5,
+        "options": [
+          "numbers",
+          "animals",
+          "trees"
+        ],
+        "answer": "numbers"
+      }
+    ]
+  },
+  "rw_part_1": {
+    "word_bank": [
+      "digit",
+      "column",
+      "chart",
+      "total",
+      "hundred",
+      "estimate",
+      "amount",
+      "bundle",
+      "value",
+      "place"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "description": "Any written symbol from zero to nine.",
+        "word": "digit"
+      },
+      {
+        "id": 2,
+        "description": "A vertical arrangement of numbers in a table.",
+        "word": "column"
+      },
+      {
+        "id": 3,
+        "description": "The whole sum when items are added together.",
+        "word": "total"
+      },
+      {
+        "id": 4,
+        "description": "A collection of items tied neatly together in math.",
+        "word": "bundle"
+      },
+      {
+        "id": 5,
+        "description": "A number equal to ten groups of ten.",
+        "word": "hundred"
+      }
+    ]
+  },
+  "rw_part_2": {
+    "title": "Lucas and Mia Discuss Place Value",
+    "turns": [
+      {
+        "speaker": "Lucas",
+        "text": "How do you write the number 45 with words?"
+      },
+      {
+        "speaker": "Mia",
+        "text": "You write forty-five with a hyphen in the middle."
+      },
+      {
+        "speaker": "Lucas",
+        "text": "What is the value of the digit 4 in that number?"
+      },
+      {
+        "speaker": "Mia",
+        "text": "It is in the tens column, so its value is forty."
+      },
+      {
+        "speaker": "Lucas",
+        "text": "If we add ten more, what will the total be?"
+      },
+      {
+        "speaker": "Mia",
+        "text": "The total will become fifty-five!"
+      }
+    ]
+  },
+  "rw_part_6": {
+    "text": "Place value helps us read big numbers. Every digit has a special value depending on its (1) ___ in a chart. For example, twenty-one has two tens and one (2) ___. When we count past ninety-nine, we need a new (3) ___ for hundreds. Astronomers use place value to record the (4) ___ amount of stars. Always remember to use a hyphen when writing two-digit (5) ___ like forty-five.",
+    "questions": [
+      {
+        "id": 1,
+        "options": [
+          "place",
+          "color",
+          "sound"
+        ],
+        "answer": "place"
+      },
+      {
+        "id": 2,
+        "options": [
+          "one",
+          "circle",
+          "stone"
+        ],
+        "answer": "one"
+      },
+      {
+        "id": 3,
+        "options": [
+          "column",
+          "pocket",
+          "window"
+        ],
+        "answer": "column"
+      },
+      {
+        "id": 4,
+        "options": [
+          "total",
+          "slow",
+          "quiet"
+        ],
+        "answer": "total"
+      },
+      {
+        "id": 5,
+        "options": [
+          "numbers",
+          "animals",
+          "trees"
+        ],
+        "answer": "numbers"
+      }
+    ]
   }
 };
-
-readingHubData.rw_part_1 = readingHubData.rw_part1;
-readingHubData.rw_part_2 = readingHubData.rw_part2;
-readingHubData.rw_part_6 = readingHubData.rw_part6;
-
 export default readingHubData;

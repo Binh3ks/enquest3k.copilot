@@ -1,9 +1,8 @@
 /**
- * STAGED DELIVERABLE: Target Vocabulary & SRS Metadata
+ * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 44 | Theme: "The Cookie Monster (Subtraction Language)" | CEFR: A2 Flyers
- * Generated: 2026-11-07T10:57:56.167Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
- * Provenance: Grounded in blueprint.json + Source B Syllabus
+ * Generated: 2026-11-13T05:36:25.000Z
+ * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
@@ -13,200 +12,200 @@ export const vocab = [
     "word": "minus",
     "pos": "prep",
     "ipa": "/ˈmaɪnəs/",
-    "definition_en": "With the subtraction of; less by a specified number",
+    "definition_en": "Word showing subtraction of a number.",
     "definition_vi": "trừ đi",
-    "example_en": "Ten minus three equals seven chocolate cookies.",
-    "example_vi": "Mười trừ ba bằng bảy chiếc bánh quy sô-cô-la."
+    "example_en": "Ten crunchy cookies minus four cookies equals six.",
+    "example_vi": "Mười chiếc bánh quy giòn trừ bốn cái bằng sáu."
   },
   {
     "id": 2,
     "word": "subtract",
     "pos": "v",
     "ipa": "/səbˈtrækt/",
-    "definition_en": "Take away a number or amount from another number",
+    "definition_en": "To take away one number from another.",
     "definition_vi": "làm phép trừ",
-    "example_en": "We can subtract the cookies eaten from the total batch.",
-    "example_vi": "Chúng ta có thể trừ số bánh đã ăn khỏi tổng mẻ bánh."
+    "example_en": "We subtract small numbers to find what remains.",
+    "example_vi": "Chúng ta trừ các số nhỏ để tìm phần còn lại."
   },
   {
     "id": 3,
     "word": "take away",
-    "pos": "v",
+    "pos": "phr v",
     "ipa": "/teɪk əˈweɪ/",
-    "definition_en": "Remove a specified quantity from a larger collection",
+    "definition_en": "To remove an amount from a group.",
     "definition_vi": "lấy bớt đi",
-    "example_en": "If you take away two muffins, four muffins remain.",
-    "example_vi": "Nếu bạn lấy bớt đi hai chiếc bánh nướng, còn lại bốn chiếc."
+    "example_en": "Please take away two warm cookies from the tray.",
+    "example_vi": "Làm ơn lấy bớt hai chiếc bánh quy ấm khỏi khay."
   },
   {
     "id": 4,
-    "word": "left",
-    "pos": "adj",
-    "ipa": "/left/",
-    "definition_en": "Remaining behind after other parts have been removed",
-    "definition_vi": "còn lại",
-    "example_en": "How many delicious cookies are left on the blue tray?",
-    "example_vi": "Còn lại bao nhiêu chiếc bánh quy thơm ngon trên khay xanh?"
+    "word": "how many left",
+    "pos": "phr",
+    "ipa": "/haʊ ˈmeni left/",
+    "definition_en": "Asking for the remaining quantity.",
+    "definition_vi": "còn lại bao nhiêu",
+    "example_en": "How many left after the hungry children ate lunch?",
+    "example_vi": "Còn lại bao nhiêu sau khi những đứa trẻ đói ăn trưa?"
   },
   {
     "id": 5,
     "word": "lose",
     "pos": "v",
     "ipa": "/luːz/",
-    "definition_en": "Be deprived of or cease to have something in possession",
-    "definition_vi": "mất đi, bớt đi",
-    "example_en": "Do not lose any counting tokens under the table.",
-    "example_vi": "Đừng làm mất bất kỳ đồng xu đếm nào dưới gầm bàn."
+    "definition_en": "To have less by misplacing pieces.",
+    "definition_vi": "làm mất, mất đi",
+    "example_en": "Be careful not to lose any cookie tokens.",
+    "example_vi": "Cẩn thận đừng làm mất đồng xu bánh quy nào."
   },
   {
     "id": 6,
     "word": "cookie",
     "pos": "n",
     "ipa": "/ˈkʊki/",
-    "definition_en": "A sweet baked biscuit that is flat and round",
+    "definition_en": "A sweet small flat baked treat.",
     "definition_vi": "bánh quy",
-    "example_en": "Grandma baked a batch of warm oatmeal cookies.",
-    "example_vi": "Bà đã nướng một mẻ bánh quy yến mạch ấm nóng."
+    "example_en": "Grandma baked sweet chocolate chip cookies today.",
+    "example_vi": "Hôm nay bà nướng bánh quy sô-cô-la ngọt ngào."
   },
   {
     "id": 7,
-    "word": "jar",
+    "word": "baker",
     "pos": "n",
-    "ipa": "/dʒɑːr/",
-    "definition_en": "A wide-mouthed cylindrical container made of glass",
-    "definition_vi": "lọ, hũ",
-    "example_en": "Lucas reached his hand into the glass cookie jar.",
-    "example_vi": "Lucas thò tay vào chiếc hũ thủy tinh đựng bánh quy."
+    "ipa": "/ˈbeɪkər/",
+    "definition_en": "A person who bakes bread and cakes.",
+    "definition_vi": "thợ làm bánh",
+    "example_en": "The friendly baker opened the bakery at dawn.",
+    "example_vi": "Người thợ bánh thân thiện mở cửa tiệm lúc bình minh."
   },
   {
     "id": 8,
-    "word": "plate",
-    "pos": "n",
-    "ipa": "/pleɪt/",
-    "definition_en": "A flat dish from which food is served or eaten",
-    "definition_vi": "đĩa thức ăn",
-    "example_en": "Chloe arranged eight butter cookies on the white plate.",
-    "example_vi": "Chloe xếp tám chiếc bánh quy bơ lên chiếc đĩa trắng."
-  },
-  {
-    "id": 9,
-    "word": "share",
-    "pos": "v",
-    "ipa": "/ʃer/",
-    "definition_en": "Distribute or give a portion of something to others",
-    "definition_vi": "chia sẻ",
-    "example_en": "It is kind to share your sweet snacks with friends.",
-    "example_vi": "Thật tử tế khi chia sẻ đồ ăn vặt ngọt ngào của bạn với bạn bè."
-  },
-  {
-    "id": 10,
-    "word": "remain",
-    "pos": "v",
-    "ipa": "/rɪˈmeɪn/",
-    "definition_en": "Continue to exist after other parts are taken away",
-    "definition_vi": "còn lại, duy trì",
-    "example_en": "Only five golden cookies remain on the baking sheet.",
-    "example_vi": "Chỉ còn lại năm chiếc bánh vàng óng trên khay nướng."
-  },
-  {
-    "id": 11,
-    "word": "remove",
-    "pos": "v",
-    "ipa": "/rɪˈmuːv/",
-    "definition_en": "Take something away from its current position",
-    "definition_vi": "lấy đi, dọn đi",
-    "example_en": "Please remove three cookies to share with grandpa.",
-    "example_vi": "Làm ơn lấy đi ba chiếc bánh quy để chia sẻ với ông."
-  },
-  {
-    "id": 12,
-    "word": "snack",
-    "pos": "n",
-    "ipa": "/snæk/",
-    "definition_en": "A small amount of food eaten between regular meals",
-    "definition_vi": "món ăn nhẹ, đồ ăn vặt",
-    "example_en": "Fresh fruit and cookies make a lovely afternoon snack.",
-    "example_vi": "Trái cây tươi và bánh quy làm nên một bữa ăn nhẹ buổi chiều đáng yêu."
-  },
-  {
-    "id": 13,
-    "word": "monster",
-    "pos": "n",
-    "ipa": "/ˈmɑːnstər/",
-    "definition_en": "A playful furry creature in a story or puppet game",
-    "definition_vi": "quái vật (đồ chơi/rối)",
-    "example_en": "The blue puppet monster pretended to eat all the crumbs.",
-    "example_vi": "Chú rối quái vật xanh giả vờ ăn hết tất cả các mẩu vụn bánh."
-  },
-  {
-    "id": 14,
-    "word": "bake",
-    "pos": "v",
-    "ipa": "/beɪk/",
-    "definition_en": "Cook sweet food using dry heat inside an oven",
-    "definition_vi": "nướng bánh",
-    "example_en": "Grandma loves to bake ginger biscuits on rainy days.",
-    "example_vi": "Bà thích nướng bánh quy gừng vào những ngày mưa."
-  },
-  {
-    "id": 15,
-    "word": "hungry",
-    "pos": "adj",
-    "ipa": "/ˈhʌŋɡri/",
-    "definition_en": "Feeling an urgent physical need to eat food",
-    "definition_vi": "đói bụng",
-    "example_en": "The hungry children smelled the warm vanilla baking.",
-    "example_vi": "Những đứa trẻ đói bụng ngửi thấy mùi thơm vani nướng ấm áp."
-  },
-  {
-    "id": 16,
-    "word": "fewer",
-    "pos": "adj",
-    "ipa": "/ˈfjuːər/",
-    "definition_en": "A smaller number of separate individual items",
-    "definition_vi": "ít hơn (cho danh từ đếm được)",
-    "example_en": "There are fewer cookies on the tray than before.",
-    "example_vi": "Có ít bánh quy trên khay hơn so với lúc trước."
-  },
-  {
-    "id": 17,
-    "word": "difference",
-    "pos": "n",
-    "ipa": "/ˈdɪfərəns/",
-    "definition_en": "The quantity remaining after one value is subtracted",
-    "definition_vi": "hiệu số",
-    "example_en": "The difference between ten and seven is three.",
-    "example_vi": "Hiệu số giữa mười và bảy là ba."
-  },
-  {
-    "id": 18,
-    "word": "delicious",
-    "pos": "adj",
-    "ipa": "/dɪˈlɪʃəs/",
-    "definition_en": "Highly pleasing to the sense of taste; yummy",
-    "definition_vi": "thơm ngon",
-    "example_en": "These crispy cinnamon cookies are truly delicious.",
-    "example_vi": "Những chiếc bánh quy quế giòn rụm này thực sự rất thơm ngon."
-  },
-  {
-    "id": 19,
     "word": "tray",
     "pos": "n",
     "ipa": "/treɪ/",
-    "definition_en": "A flat shallow container used for holding food dishes",
-    "definition_vi": "khay đựng",
-    "example_en": "Grandma pulled a hot metal tray out of the oven.",
-    "example_vi": "Bà kéo một khay kim loại nóng hổi ra khỏi lò nướng."
+    "definition_en": "A flat metal plate for baking food.",
+    "definition_vi": "khay nướng",
+    "example_en": "The baker placed a metal tray into the oven.",
+    "example_vi": "Người thợ đặt khay kim loại vào lò nướng."
   },
   {
-    "id": 20,
+    "id": 9,
+    "word": "oven",
+    "pos": "n",
+    "ipa": "/ˈʌvən/",
+    "definition_en": "An enclosed space for heating food.",
+    "definition_vi": "lò nướng",
+    "example_en": "Fresh cookies bake inside the warm kitchen oven.",
+    "example_vi": "Bánh quy thơm lừng nướng trong lò bếp ấm."
+  },
+  {
+    "id": 10,
+    "word": "jar",
+    "pos": "n",
+    "ipa": "/dʒɑːr/",
+    "definition_en": "A glass container with a wide lid.",
+    "definition_vi": "hũ thủy tinh",
+    "example_en": "Mom keeps ginger cookies in a tall glass jar.",
+    "example_vi": "Mẹ cất bánh quy gừng trong hũ thủy tinh cao."
+  },
+  {
+    "id": 11,
+    "word": "eat",
+    "pos": "v",
+    "ipa": "/iːt/",
+    "definition_en": "To put food in mouth and chew it.",
+    "definition_vi": "ăn",
+    "example_en": "The hungry children eat crunchy cookies after school.",
+    "example_vi": "Những đứa trẻ đói ăn bánh quy giòn sau giờ học."
+  },
+  {
+    "id": 12,
+    "word": "share",
+    "pos": "v",
+    "ipa": "/ʃer/",
+    "definition_en": "To divide food equally with others.",
+    "definition_vi": "chia sẻ",
+    "example_en": "Good friends share their afternoon snacks happily.",
+    "example_vi": "Bạn tốt chia sẻ đồ ăn vặt buổi chiều vui vẻ."
+  },
+  {
+    "id": 13,
+    "word": "give",
+    "pos": "v",
+    "ipa": "/ɡɪv/",
+    "definition_en": "To hand something over to another.",
+    "definition_vi": "cho, tặng",
+    "example_en": "I give three oatmeal cookies to my sister.",
+    "example_vi": "Tôi cho em gái ba chiếc bánh quy yến mạch."
+  },
+  {
+    "id": 14,
+    "word": "snack",
+    "pos": "n",
+    "ipa": "/snæk/",
+    "definition_en": "A small portion of food between meals.",
+    "definition_vi": "bữa ăn nhẹ",
+    "example_en": "Cookies and milk make a delicious afternoon snack.",
+    "example_vi": "Bánh quy và sữa làm thành bữa ăn nhẹ ngon miệng."
+  },
+  {
+    "id": 15,
+    "word": "crumb",
+    "pos": "n",
+    "ipa": "/krʌm/",
+    "definition_en": "A tiny piece that breaks off bread.",
+    "definition_vi": "vụn bánh",
+    "example_en": "Little birds pecked at sweet cookie crumbs outside.",
+    "example_vi": "Những chú chim nhỏ mổ vụn bánh quy ngọt bên ngoài."
+  },
+  {
+    "id": 16,
+    "word": "count",
+    "pos": "v",
+    "ipa": "/kaʊnt/",
+    "definition_en": "To find the total number of things.",
+    "definition_vi": "đếm",
+    "example_en": "Let us count the remaining cookies in the jar.",
+    "example_vi": "Chúng ta hãy đếm số bánh quy còn lại trong hũ."
+  },
+  {
+    "id": 17,
     "word": "batch",
     "pos": "n",
     "ipa": "/bætʃ/",
-    "definition_en": "An amount of food produced together in one baking",
+    "definition_en": "A quantity of food baked at one time.",
     "definition_vi": "mẻ bánh",
-    "example_en": "This fresh batch of cookies has twelve sweet pieces.",
-    "example_vi": "Mẻ bánh quy mới này có mười hai chiếc ngọt ngào."
+    "example_en": "The baker finished a fresh batch of butter cookies.",
+    "example_vi": "Người thợ bánh hoàn thành một mẻ bánh bơ tươi mới."
+  },
+  {
+    "id": 18,
+    "word": "hungry",
+    "pos": "adj",
+    "ipa": "/ˈhʌŋɡri/",
+    "definition_en": "Feeling a strong physical need for food.",
+    "definition_vi": "đói bụng",
+    "example_en": "The hungry monster wanted to eat all the cookies.",
+    "example_vi": "Con quái vật đói bụng muốn ăn hết bánh quy."
+  },
+  {
+    "id": 19,
+    "word": "recipe",
+    "pos": "n",
+    "ipa": "/ˈresəpi/",
+    "definition_en": "A set of cooking directions for meals.",
+    "definition_vi": "công thức nấu ăn",
+    "example_en": "Follow this simple recipe to bake crunchy treats.",
+    "example_vi": "Làm theo công thức đơn giản này để nướng bánh giòn."
+  },
+  {
+    "id": 20,
+    "word": "difference",
+    "pos": "n",
+    "ipa": "/ˈdɪfərəns/",
+    "definition_en": "The result of taking away one number.",
+    "definition_vi": "hiệu số",
+    "example_en": "The difference between ten and seven is three.",
+    "example_vi": "Hiệu số giữa mười và bảy là ba."
   }
 ];
 export const vocabList = vocab;

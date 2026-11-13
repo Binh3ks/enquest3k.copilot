@@ -1,0 +1,156 @@
+================================================================================
+ROUND 91: RIGOROUS STAGING VERIFICATION SUITE
+Timestamp: 2026-11-13T05:36:45.453Z
+Weeks to verify: 40, 42, 44, 47, 48, 49, 50, 51, 52, 53, 54 (Total: 11 weeks)
+================================================================================
+
+--- Verifying Week 40 (/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_40) ---
+  [PASS] All 9 required files present.
+  [PASS] Vocab list length: 20 words.
+  [WARN] 6 examples had FK outside 2.5-11.5
+  [PASS] CLIL vocab coverage: 70.0% (14/20 target words integrated).
+  [PASS] Singapore Math count: 5/5.
+  [PASS] Math questions resolved: 5/5 with positive integer answers.
+  [PASS] Zero ESL anomalies detected.
+  [PASS] Zero boilerplate detected.
+  [PASS] Zero Vietnamese leaks in English sections.
+
+--- Verifying Week 42 (/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_42) ---
+  [PASS] All 9 required files present.
+  [PASS] Vocab list length: 20 words.
+  [WARN] 8 examples had FK outside 2.5-11.5
+  [PASS] CLIL vocab coverage: 90.0% (18/20 target words integrated).
+  [PASS] Singapore Math count: 5/5.
+  [PASS] Math questions resolved: 5/5 with positive integer answers.
+  [PASS] Zero ESL anomalies detected.
+  [PASS] Zero boilerplate detected.
+  [PASS] Zero Vietnamese leaks in English sections.
+
+--- Verifying Week 44 (/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_44) ---
+  [PASS] All 9 required files present.
+  [PASS] Vocab list length: 20 words.
+  [WARN] 3 examples had FK outside 2.5-11.5
+  [PASS] CLIL vocab coverage: 85.0% (17/20 target words integrated).
+  [PASS] Singapore Math count: 5/5.
+  [PASS] Math questions resolved: 5/5 with positive integer answers.
+  [PASS] Zero ESL anomalies detected.
+  [PASS] Zero boilerplate detected.
+  [PASS] Zero Vietnamese leaks in English sections.
+
+--- Verifying Week 47 (/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_47) ---
+  [PASS] All 9 required files present.
+  [PASS] Vocab list length: 20 words.
+  [WARN] 3 definitions had FK > 11.0
+  [WARN] 9 examples had FK outside 2.5-11.5
+  [PASS] CLIL vocab coverage: 85.0% (17/20 target words integrated).
+  [PASS] Singapore Math count: 5/5.
+  [PASS] Math questions resolved: 5/5 with positive integer answers.
+  [PASS] Zero ESL anomalies detected.
+  [PASS] Zero boilerplate detected.
+  [PASS] Zero Vietnamese leaks in English sections.
+
+--- Verifying Week 48 (/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_48) ---
+  [PASS] All 9 required files present.
+  [PASS] Vocab list length: 20 words.
+  [WARN] 4 examples had FK outside 2.5-11.5
+  [PASS] CLIL vocab coverage: 75.0% (15/20 target words integrated).
+  [PASS] Singapore Math count: 5/5.
+  [PASS] Math questions resolved: 5/5 with positive integer answers.
+  [PASS] Zero ESL anomalies detected.
+  [PASS] Zero boilerplate detected.
+  [PASS] Zero Vietnamese leaks in English sections.
+
+--- Verifying Week 49 (/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_49) ---
+  [PASS] All 9 required files present.
+  [PASS] Vocab list length: 20 words.
+  [WARN] 2 examples had FK outside 2.5-11.5
+  [PASS] CLIL vocab coverage: 65.0% (13/20 target words integrated).
+  [PASS] Singapore Math count: 5/5.
+  [PASS] Math questions resolved: 5/5 with positive integer answers.
+  [PASS] Zero ESL anomalies detected.
+  [PASS] Zero boilerplate detected.
+  [PASS] Zero Vietnamese leaks in English sections.
+
+--- Verifying Week 50 (/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_50) ---
+  [PASS] All 9 required files present.
+  [PASS] Vocab list length: 20 words.
+  [WARN] 4 definitions had FK > 11.0
+  [WARN] 3 examples had FK outside 2.5-11.5
+  [PASS] CLIL vocab coverage: 95.0% (19/20 target words integrated).
+  [PASS] Singapore Math count: 5/5.
+  [PASS] Math questions resolved: 5/5 with positive integer answers.
+  [PASS] Zero ESL anomalies detected.
+  [PASS] Zero boilerplate detected.
+  [PASS] Zero Vietnamese leaks in English sections.
+
+--- Verifying Week 51 (/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_51) ---
+  [PASS] All 9 required files present.
+  [PASS] Vocab list length: 20 words.
+  [WARN] 3 definitions had FK > 11.0
+  [WARN] 4 examples had FK outside 2.5-11.5
+  [PASS] CLIL vocab coverage: 65.0% (13/20 target words integrated).
+  [PASS] Singapore Math count: 5/5.
+  [PASS] Math questions resolved: 5/5 with positive integer answers.
+  [PASS] Zero ESL anomalies detected.
+  [PASS] Zero boilerplate detected.
+  [PASS] Zero Vietnamese leaks in English sections.
+
+--- Verifying Week 52 (/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_52) ---
+  [PASS] All 9 required files present.
+  [PASS] Vocab list length: 20 words.
+  [WARN] 2 definitions had FK > 11.0
+  [WARN] 6 examples had FK outside 2.5-11.5
+  [PASS] CLIL vocab coverage: 60.0% (12/20 target words integrated).
+  [PASS] Singapore Math count: 5/5.
+  [PASS] Math questions resolved: 5/5 with positive integer answers.
+  [PASS] Zero ESL anomalies detected.
+  [PASS] Zero boilerplate detected.
+  [PASS] Zero Vietnamese leaks in English sections.
+
+--- Verifying Week 53 (/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_53) ---
+  [PASS] All 9 required files present.
+  [PASS] Vocab list length: 20 words.
+  [WARN] 3 definitions had FK > 11.0
+  [WARN] 2 examples had FK outside 2.5-11.5
+  [PASS] CLIL vocab coverage: 65.0% (13/20 target words integrated).
+  [PASS] Singapore Math count: 5/5.
+  [PASS] Math questions resolved: 5/5 with positive integer answers.
+  [PASS] Zero ESL anomalies detected.
+  [PASS] Zero boilerplate detected.
+  [PASS] Zero Vietnamese leaks in English sections.
+
+--- Verifying Week 54 (/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_54) ---
+  [PASS] All 9 required files present.
+  [PASS] Vocab list length: 20 words.
+  [WARN] 6 definitions had FK > 11.0
+  [WARN] 3 examples had FK outside 2.5-11.5
+  [PASS] CLIL vocab coverage: 95.0% (19/20 target words integrated).
+  [PASS] Singapore Math count: 5/5.
+  [PASS] Math questions resolved: 5/5 with positive integer answers.
+  [PASS] Zero ESL anomalies detected.
+  [PASS] Zero boilerplate detected.
+  [PASS] Zero Vietnamese leaks in English sections.
+
+================================================================================
+VERIFICATION SUMMARY TABLE:
+================================================================================
+| Week | Theme | Vocab | CLIL Cov | Math (5/5) | Staging Status |
+|:----:|:------|:-----:|:--------:|:----------:|:---------------|
+| W40 | Beast Battle (Comparisons)               | 20/20 | 70%      | 5/5 | VERIFIED_READY_FOR_CLAUDE_QA |
+| W42 | The Water Journey (Cycle)                | 20/20 | 90%      | 5/5 | VERIFIED_READY_FOR_CLAUDE_QA |
+| W44 | The Cookie Monster (Subtraction Language) | 20/20 | 85%      | 5/5 | VERIFIED_READY_FOR_CLAUDE_QA |
+| W47 | Big Numbers (Place Value)                | 20/20 | 85%      | 5/5 | VERIFIED_READY_FOR_CLAUDE_QA |
+| W48 | Measuring Up (Length)                    | 20/20 | 75%      | 5/5 | VERIFIED_READY_FOR_CLAUDE_QA |
+| W49 | Future Dreams (Future Tense)             | 20/20 | 65%      | 5/5 | VERIFIED_READY_FOR_CLAUDE_QA |
+| W50 | Review Station 1 (Grammar Mix)           | 20/20 | 95%      | 5/5 | VERIFIED_READY_FOR_CLAUDE_QA |
+| W51 | Review Station 2 (Vocab & CLIL)          | 20/20 | 65%      | 5/5 | VERIFIED_READY_FOR_CLAUDE_QA |
+| W52 | Have You Ever" Bingo (Seeding)           | 20/20 | 60%      | 5/5 | VERIFIED_READY_FOR_CLAUDE_QA |
+| W53 | Project 4 Prep - "My Year in Review"     | 20/20 | 65%      | 5/5 | VERIFIED_READY_FOR_CLAUDE_QA |
+| W54 | PHASE 1 GRADUATION SHOWCASE              | 20/20 | 95%      | 5/5 | VERIFIED_READY_FOR_CLAUDE_QA |
+================================================================================
+Total Weeks: 11
+Total Vocab Words: 220
+Total Singapore Math Questions: 55 (100% resolved via station2Adapters.js)
+Total Errors: 0
+Total Warnings: 0
+================================================================================

@@ -1,9 +1,8 @@
 /**
- * STAGED DELIVERABLE: Target Vocabulary & SRS Metadata
+ * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 42 | Theme: "The Water Journey (Cycle)" | CEFR: A2 Flyers
- * Generated: 2026-11-09T13:11:07.330Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
- * Provenance: Grounded in blueprint.json + Source B Syllabus
+ * Generated: 2026-11-13T05:36:25.000Z
+ * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
@@ -13,200 +12,200 @@ export const vocab = [
     "word": "sun",
     "pos": "n",
     "ipa": "/sʌn/",
-    "definition_en": "The star that provides light and heat to Earth",
+    "definition_en": "The bright star warming planet Earth.",
     "definition_vi": "mặt trời",
-    "example_en": "Warm rays from the sun shine down upon the quiet lake.",
-    "example_vi": "Những tia nắng ấm áp từ mặt trời chiếu xuống mặt hồ yên ả."
+    "example_en": "The warm sun shines down on the ocean.",
+    "example_vi": "Mặt trời ấm áp chiếu sáng xuống đại dương."
   },
   {
     "id": 2,
     "word": "cloud",
     "pos": "n",
     "ipa": "/klaʊd/",
-    "definition_en": "A visible mass of condensed water vapor floating in the sky",
-    "definition_vi": "đám mây",
-    "example_en": "Fluffy white clouds float gently across the summer sky.",
-    "example_vi": "Những đám mây trắng xốp trôi nhẹ nhàng trên bầu trời mùa hè."
+    "definition_en": "A white shape of water drops in air.",
+    "definition_vi": "mây",
+    "example_en": "Dark rain clouds gathered before the morning storm.",
+    "example_vi": "Mây mưa đen kịt tụ lại trước cơn bão sáng."
   },
   {
     "id": 3,
     "word": "rain",
     "pos": "n",
     "ipa": "/reɪn/",
-    "definition_en": "Moisture condensed from the atmosphere that falls visibly in separate drops",
-    "definition_vi": "cơn mưa, nước mưa",
-    "example_en": "Fresh cool rain watered the thirsty village garden.",
-    "example_vi": "Cơn mưa mát lành đã tưới mát cho khu vườn làng đang khát nước."
+    "definition_en": "Water drops falling from sky to ground.",
+    "definition_vi": "mưa",
+    "example_en": "Gentle rain falls softly on the green valley.",
+    "example_vi": "Cơn mưa dịu dàng rơi êm ả xuống thung lũng xanh."
   },
   {
     "id": 4,
     "word": "river",
     "pos": "n",
     "ipa": "/ˈrɪvər/",
-    "definition_en": "A large natural stream of water flowing in a channel to the sea",
+    "definition_en": "A natural stream of water flowing to sea.",
     "definition_vi": "dòng sông",
-    "example_en": "The blue river winds through green mountain valleys.",
-    "example_vi": "Dòng sông xanh uốn lượn qua những thung lũng núi non xanh tươi."
+    "example_en": "The river carries fresh water to the ocean.",
+    "example_vi": "Dòng sông mang nước ngọt ra đại dương."
   },
   {
     "id": 5,
     "word": "ocean",
     "pos": "n",
     "ipa": "/ˈoʊʃən/",
-    "definition_en": "A very large expanse of sea covering much of Earth's surface",
+    "definition_en": "The huge body of salt water on Earth.",
     "definition_vi": "đại dương",
-    "example_en": "Dolphins swim through the vast and salty ocean.",
-    "example_vi": "Cá heo bơi lội qua vùng đại dương bao la và mặn mòi."
+    "example_en": "Blue whales swim across the wide deep ocean.",
+    "example_vi": "Cá voi xanh bơi qua đại dương sâu rộng."
   },
   {
     "id": 6,
     "word": "evaporation",
     "pos": "n",
     "ipa": "/ɪˌvæpəˈreɪʃən/",
-    "definition_en": "The process of liquid water turning into invisible gas",
-    "definition_vi": "sự bốc hơi nước",
-    "example_en": "Warm sunshine causes evaporation from puddles on the road.",
-    "example_vi": "Ánh nắng ấm áp gây ra sự bốc hơi nước từ những vũng nước trên đường."
+    "definition_en": "Process of water warming into vapor.",
+    "definition_vi": "sự bốc hơi",
+    "example_en": "Solar heat causes quick evaporation from open puddles.",
+    "example_vi": "Nhiệt mặt trời gây bốc hơi nhanh từ vũng nước."
   },
   {
     "id": 7,
     "word": "go up",
-    "pos": "v",
+    "pos": "phr v",
     "ipa": "/ɡoʊ ʌp/",
-    "definition_en": "Ascend or rise to a higher place",
+    "definition_en": "To move higher toward the sky.",
     "definition_vi": "bốc lên, đi lên",
-    "example_en": "Warm invisible water vapor begins to go up into the air.",
-    "example_vi": "Hơi nước ấm vô hình bắt đầu bốc lên vào trong không khí."
+    "example_en": "Warm water vapors go up into cool air.",
+    "example_vi": "Hơi nước ấm bốc lên vào tầng không khí mát."
   },
   {
     "id": 8,
     "word": "come down",
-    "pos": "v",
+    "pos": "phr v",
     "ipa": "/kʌm daʊn/",
-    "definition_en": "Descend or fall from the sky",
-    "definition_vi": "rơi xuống, đi xuống",
-    "example_en": "Heavy raindrops come down over the quiet forest path.",
-    "example_vi": "Những hạt mưa nặng hạt rơi xuống trên con đường rừng yên tĩnh."
+    "definition_en": "To fall lower toward the ground.",
+    "definition_vi": "rơi xuống",
+    "example_en": "Cool raindrops come down on the thirsty soil.",
+    "example_vi": "Những giọt mưa mát lành rơi xuống vùng đất khô."
   },
   {
     "id": 9,
-    "word": "water",
+    "word": "vapor",
     "pos": "n",
-    "ipa": "/ˈwɔːtər/",
-    "definition_en": "The clear liquid that forms the seas, lakes, and rivers",
-    "definition_vi": "nước",
-    "example_en": "Clean drinking water keeps our bodies healthy and hydrated.",
-    "example_vi": "Nước uống sạch giữ cho cơ thể chúng ta khỏe mạnh và đủ nước."
+    "ipa": "/ˈveɪpər/",
+    "definition_en": "Water in form of an invisible gas.",
+    "definition_vi": "hơi nước",
+    "example_en": "Rising water vapor cools as it reaches high.",
+    "example_vi": "Hơi nước bốc lên nguội dần khi lên cao."
   },
   {
     "id": 10,
-    "word": "sky",
-    "pos": "n",
-    "ipa": "/skaɪ/",
-    "definition_en": "The region of the atmosphere seen from Earth",
-    "definition_vi": "bầu trời",
-    "example_en": "Birds spread their wings and fly across the clear blue sky.",
-    "example_vi": "Những chú chim dang rộng đôi cánh và bay qua bầu trời xanh trong."
-  },
-  {
-    "id": 11,
-    "word": "wind",
-    "pos": "n",
-    "ipa": "/wɪnd/",
-    "definition_en": "Moving air across the surface of the Earth",
-    "definition_vi": "gió",
-    "example_en": "A gentle mountain wind blew the gray storm clouds east.",
-    "example_vi": "Một làn gió núi nhẹ nhàng đã thổi những đám mây giông xám về phía đông."
-  },
-  {
-    "id": 12,
-    "word": "warm",
-    "pos": "adj",
-    "ipa": "/wɔːrm/",
-    "definition_en": "At a comfortable and moderate temperature",
-    "definition_vi": "ấm áp",
-    "example_en": "Warm summer air heats the water in shallow ponds.",
-    "example_vi": "Không khí ấm áp mùa hè làm nóng nước trong những chiếc ao nông."
-  },
-  {
-    "id": 13,
     "word": "drop",
     "pos": "n",
     "ipa": "/drɑːp/",
-    "definition_en": "A small round particle of liquid",
+    "definition_en": "A small round amount of liquid.",
     "definition_vi": "giọt nước",
-    "example_en": "A single round drop of morning dew glistened on the petal.",
-    "example_vi": "Một giọt sương mai tròn xoe lấp lánh trên cánh hoa."
+    "example_en": "Each tiny drop of rain joins the stream.",
+    "example_vi": "Mỗi giọt mưa nhỏ hòa vào dòng suối."
   },
   {
-    "id": 14,
+    "id": 11,
+    "word": "cycle",
+    "pos": "n",
+    "ipa": "/ˈsaɪkəl/",
+    "definition_en": "A series of repeating nature events.",
+    "definition_vi": "chu trình",
+    "example_en": "The water cycle repeats continuously on our planet.",
+    "example_vi": "Chu trình nước lặp lại liên tục trên hành tinh."
+  },
+  {
+    "id": 12,
     "word": "stream",
     "pos": "n",
     "ipa": "/striːm/",
-    "definition_en": "A small, narrow river of clean flowing water",
-    "definition_vi": "dòng suối nhỏ",
-    "example_en": "Cold water bubbles happily down the rocky mountain stream.",
-    "example_vi": "Nước lạnh sủi bọt vui vẻ chảy xuống dòng suối núi đầy đá."
+    "definition_en": "A small narrow flowing river.",
+    "definition_vi": "con suối",
+    "example_en": "Trout swim in the cool mountain forest stream.",
+    "example_vi": "Cá hồi bơi trong dòng suối rừng núi mát mẻ."
+  },
+  {
+    "id": 13,
+    "word": "flow",
+    "pos": "v",
+    "ipa": "/floʊ/",
+    "definition_en": "To move steadily like a liquid river.",
+    "definition_vi": "chảy",
+    "example_en": "Clear rivers flow smoothly toward the sunny lake.",
+    "example_vi": "Dòng sông trong lành chảy êm đềm về hồ nắng."
+  },
+  {
+    "id": 14,
+    "word": "puddle",
+    "pos": "n",
+    "ipa": "/ˈpʌdəl/",
+    "definition_en": "A small pool of water on the ground.",
+    "definition_vi": "vũng nước",
+    "example_en": "Children jumped over the muddy rainwater puddle.",
+    "example_vi": "Trẻ em nhảy qua vũng nước mưa đầy bùn."
   },
   {
     "id": 15,
-    "word": "lake",
-    "pos": "n",
-    "ipa": "/leɪk/",
-    "definition_en": "A large body of fresh water surrounded by land",
-    "definition_vi": "hồ nước",
-    "example_en": "We paddled our small red canoe across the peaceful lake.",
-    "example_vi": "Chúng tôi chèo chiếc ca-nô nhỏ màu đỏ qua hồ nước thanh bình."
+    "word": "rise",
+    "pos": "v",
+    "ipa": "/raɪz/",
+    "definition_en": "To move upward into higher space.",
+    "definition_vi": "dâng lên, bốc lên",
+    "example_en": "Warm air bubbles rise above heated ocean waters.",
+    "example_vi": "Bọt khí ấm dâng lên trên mặt nước biển nóng."
   },
   {
     "id": 16,
     "word": "cool",
     "pos": "v",
     "ipa": "/kuːl/",
-    "definition_en": "Become lower in temperature",
+    "definition_en": "To lose warmth and become colder.",
     "definition_vi": "làm mát, nguội đi",
-    "example_en": "As rising water vapor reaches high air, it begins to cool.",
-    "example_vi": "Khi hơi nước bốc lên đạt đến tầng không khí trên cao, nó bắt đầu nguội đi."
+    "example_en": "Rising vapors cool and form fluffy white clouds.",
+    "example_vi": "Hơi nước bốc lên nguội dần tạo thành mây trắng."
   },
   {
     "id": 17,
-    "word": "flow",
-    "pos": "v",
-    "ipa": "/floʊ/",
-    "definition_en": "Move steadily and continuously in a current",
-    "definition_vi": "chảy đều",
-    "example_en": "Fresh mountain streams flow steadily toward the valley below.",
-    "example_vi": "Những con suối núi trong lành chảy đều đặn về phía thung lũng bên dưới."
+    "word": "sky",
+    "pos": "n",
+    "ipa": "/skaɪ/",
+    "definition_en": "The open space high above the ground.",
+    "definition_vi": "bầu trời",
+    "example_en": "Flocks of birds fly across the morning sky.",
+    "example_vi": "Đàn chim bay qua bầu trời buổi sáng."
   },
   {
     "id": 18,
-    "word": "fall",
-    "pos": "v",
-    "ipa": "/fɔːl/",
-    "definition_en": "Move downward under the force of gravity",
-    "definition_vi": "rơi xuống",
-    "example_en": "Gentle raindrops fall upon the green leaves of the forest.",
-    "example_vi": "Những hạt mưa nhẹ nhàng rơi xuống trên những chiếc lá xanh của khu rừng."
+    "word": "lake",
+    "pos": "n",
+    "ipa": "/leɪk/",
+    "definition_en": "A large body of water bordered by land.",
+    "definition_vi": "hồ nước",
+    "example_en": "Boats sailed across the calm mountain lake.",
+    "example_vi": "Những chiếc thuyền buồm lướt trên hồ núi phẳng lặng."
   },
   {
     "id": 19,
-    "word": "sea",
+    "word": "surface",
     "pos": "n",
-    "ipa": "/siː/",
-    "definition_en": "An expanse of salt water that covers part of Earth's surface",
-    "definition_vi": "biển",
-    "example_en": "Fishermen steer wooden fishing boats out into the open sea.",
-    "example_vi": "Các ngư dân lái những con thuyền gỗ ra khơi biển khơi bao la."
+    "ipa": "/ˈsɜːrfɪs/",
+    "definition_en": "The flat top boundary of a body of water.",
+    "definition_vi": "bề mặt",
+    "example_en": "Water evaporates from the warm lake surface.",
+    "example_vi": "Nước bốc hơi từ bề mặt hồ ấm áp."
   },
   {
     "id": 20,
-    "word": "nature",
+    "word": "heat",
     "pos": "n",
-    "ipa": "/ˈneɪtʃər/",
-    "definition_en": "The physical world and living things not made by humans",
-    "definition_vi": "tự nhiên, thiên nhiên",
-    "example_en": "The water cycle is an essential recycling system in nature.",
-    "example_vi": "Vòng tuần hoàn nước là một hệ thống tái chế thiết yếu trong thiên nhiên."
+    "ipa": "/hiːt/",
+    "definition_en": "Warmth and thermal energy from the sun.",
+    "definition_vi": "nhiệt năng",
+    "example_en": "Solar heat warms the ocean water every day.",
+    "example_vi": "Nhiệt mặt trời sưởi ấm nước biển mỗi ngày."
   }
 ];
 export const vocabList = vocab;

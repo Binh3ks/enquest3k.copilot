@@ -5,8 +5,8 @@
   "title_vi": "Quái vật Bánh quy - Ngôn ngữ Phép trừ",
   "cefr_level": "A2 Flyers",
   "cefr_stage": 1,
-  "week_type": "rotary_practice",
-  "isFullMock": false,
+  "week_type": "full_mock",
+  "isFullMock": true,
   "rotary_cycle": 4,
   "template_used": "production_kit/templates/template_flyers_rotary.js",
   "story_title": "Taking things away",
@@ -198,5 +198,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "mockFormat": "flyers"
 }

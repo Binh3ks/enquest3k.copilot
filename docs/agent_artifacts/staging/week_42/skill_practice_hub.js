@@ -1,9 +1,8 @@
 /**
- * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
+ * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 42 | Theme: "The Water Journey (Cycle)" | CEFR: A2 Flyers
- * Generated: 2026-11-09T13:11:07.330Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
- * Provenance: Grounded in blueprint.json + Source B Syllabus
+ * Generated: 2026-11-13T05:36:25.000Z
+ * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
@@ -13,182 +12,285 @@ export const skillPracticeHubData = {
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
-      "sentence": "First, the warm sun heats the surface of the lake.",
+      "sentence": "First, the warm sun ___ water on the lake surface.",
       "options": [
         "heats",
-        "heating",
-        "heated"
+        "heat",
+        "heating"
       ],
       "answer": "heats",
-      "explanation": "Use 3rd person singular present tense 'heats' with singular subject 'the warm sun'."
+      "explanation": "Use 3rd person singular present tense 'heats' with singular subject 'sun'."
     },
     {
-      "sentence": "Next, invisible water vapor begins to go up into the sky.",
+      "sentence": "Next, invisible water vapors ___ high into the sky.",
       "options": [
-        "go up",
-        "goes up",
-        "going up"
+        "rise",
+        "rises",
+        "rising"
       ],
-      "answer": "go up",
-      "explanation": "After infinitive marker 'to', use base verb form 'go up'."
+      "answer": "rise",
+      "explanation": "Use plural verb 'rise' with plural subject 'vapors'."
     },
     {
-      "sentence": "As the rising air cools, fluffy white clouds form above.",
+      "sentence": "Then, cool air ___ the vapors into puffy clouds.",
       "options": [
-        "cools",
-        "cool",
-        "cooling"
+        "turns",
+        "turn",
+        "turning"
       ],
-      "answer": "cools",
-      "explanation": "Use singular verb form 'cools' with non-count singular noun 'air'."
+      "answer": "turns",
+      "explanation": "Use 3rd person singular 'turns' with 'cool air'."
     },
     {
-      "sentence": "Heavy raindrops come down when clouds gather over the hills.",
+      "sentence": "Finally, raindrops ___ down onto the mountain forest.",
       "options": [
-        "come down",
-        "comes down",
-        "came down"
+        "fall",
+        "falls",
+        "falling"
       ],
-      "answer": "come down",
-      "explanation": "Use plural verb form 'come down' with plural subject 'heavy raindrops'."
+      "answer": "fall",
+      "explanation": "Use plural verb 'fall' with 'raindrops'."
     },
     {
-      "sentence": "Finally, the wide river flows steadily into the ocean.",
+      "sentence": "The river ___ fresh water back into the deep ocean.",
       "options": [
-        "flows",
-        "flow",
-        "flowing"
+        "carries",
+        "carry",
+        "carrying"
       ],
-      "answer": "flows",
-      "explanation": "Use 3rd person singular present tense 'flows' with singular subject 'the wide river'."
+      "answer": "carries",
+      "explanation": "Use 3rd person singular 'carries' with 'the river'."
     }
   ],
   "singapore_math": [
     {
-      "id": "w42_p1",
+      "id": 1,
       "type": "part_whole",
-      "title": "Measuring Valley Stream Rainfall",
-      "question": "A mountain rainstorm added 46 liters of water to the north stream and 54 liters to the south stream. How many liters of rainwater were collected in total?",
-      "storyContext": "Maya checks the stream collection rain gauges after a gentle afternoon shower.",
+      "title": "Rainwater Tank Collection",
+      "problemText": "A school garden rainwater tank collected 45 liters of rain on Monday and 55 liters on Tuesday. How many liters of rainwater did the tank collect in total?",
+      "question": "A school garden rainwater tank collected 45 liters of rain on Monday and 55 liters on Tuesday. How many liters of rainwater did the tank collect in total?",
+      "correctAnswer": 100,
+      "target_answer": 100,
+      "unit": "liters",
+      "hintText": "Add Monday's rainfall (45 L) and Tuesday's rainfall (55 L).",
+      "steps": [
+        "Monday rainfall: 45 liters.",
+        "Tuesday rainfall: 55 liters.",
+        "Total collection: 45 + 55 = 100 liters."
+      ],
       "modelData": {
+        "type": "part_whole",
         "bars": [
           {
-            "label": "North Stream Gauge",
-            "value": 46,
-            "color": "#0ea5e9"
+            "label": "Monday",
+            "value": 45,
+            "color": "#3498db"
           },
           {
-            "label": "South Stream Gauge",
-            "value": 54,
-            "color": "#3b82f6"
+            "label": "Tuesday",
+            "value": 55,
+            "color": "#2980b9"
           }
         ],
         "total": 100,
-        "unit": "liters"
-      },
-      "target_answer": 100,
-      "unit": "liters",
-      "steps": [
-        "Record 46 liters from the north stream.",
-        "Add 54 liters from the south stream.",
-        "46 + 54 = 100 liters of water collected."
-      ]
+        "totalLabel": "Total: 100 liters"
+      }
     },
     {
-      "id": "w42_p2",
+      "id": 2,
       "type": "comparison",
-      "title": "Lake Water Level Comparison",
-      "question": "The lake water level rose by 38 centimeters during rainy spring, but dropped by 15 centimeters during hot sunny summer evaporation. How many centimeters higher is the lake now compared to winter?",
-      "storyContext": "Noah reads the water level measuring ruler anchored near the wooden lake pier.",
+      "title": "Reservoir Lake and Garden Pond Depth",
+      "problemText": "A reservoir lake is 85 meters deep. A shallow garden pond is 15 meters deep. How many meters deeper is the reservoir lake than the garden pond?",
+      "question": "A reservoir lake is 85 meters deep. A shallow garden pond is 15 meters deep. How many meters deeper is the reservoir lake than the garden pond?",
+      "correctAnswer": 70,
+      "target_answer": 70,
+      "unit": "meters",
+      "hintText": "Subtract the pond depth (15 m) from the lake depth (85 m).",
+      "steps": [
+        "Lake depth: 85 meters.",
+        "Pond depth: 15 meters.",
+        "Difference: 85 - 15 = 70 meters deeper."
+      ],
       "modelData": {
+        "type": "comparison",
         "bars": [
           {
-            "label": "Spring Rise",
-            "value": 38,
-            "color": "#10b981"
+            "label": "Lake",
+            "value": 85,
+            "color": "#1abc9c"
           },
           {
-            "label": "Summer Evaporation",
+            "label": "Pond",
             "value": 15,
-            "color": "#f59e0b"
+            "color": "#16a085"
           }
         ],
-        "difference": 23,
-        "unit": "centimeters"
-      },
-      "target_answer": 23,
-      "unit": "centimeters",
+        "difference": 70,
+        "differenceLabel": "Difference: 70 meters"
+      }
+    },
+    {
+      "id": 3,
+      "type": "part_whole",
+      "title": "Cloud Experiment Beaker Water",
+      "problemText": "In a science class cloud experiment, Beaker A condensed 64 milliliters of water and Beaker B condensed 36 milliliters. How many milliliters of water condensed altogether?",
+      "question": "In a science class cloud experiment, Beaker A condensed 64 milliliters of water and Beaker B condensed 36 milliliters. How many milliliters of water condensed altogether?",
+      "correctAnswer": 100,
+      "target_answer": 100,
+      "unit": "ml",
+      "hintText": "Add 64 ml and 36 ml together.",
       "steps": [
-        "Start with 38 centimeters of spring rain rise.",
-        "Subtract 15 centimeters lost to summer evaporation.",
-        "38 - 15 = 23 centimeters higher."
-      ]
+        "Beaker A condensation: 64 ml.",
+        "Beaker B condensation: 36 ml.",
+        "Total: 64 + 36 = 100 ml."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Beaker A",
+            "value": 64,
+            "color": "#34495e"
+          },
+          {
+            "label": "Beaker B",
+            "value": 36,
+            "color": "#2c3e50"
+          }
+        ],
+        "total": 100,
+        "totalLabel": "Total: 100 ml"
+      }
+    },
+    {
+      "id": 4,
+      "type": "comparison",
+      "title": "Mountain River and Stream Length",
+      "problemText": "The Pine River flows 95 kilometers from the highlands to the ocean. The valley stream flows for 38 kilometers. How many kilometers longer is the Pine River than the valley stream?",
+      "question": "The Pine River flows 95 kilometers from the highlands to the ocean. The valley stream flows for 38 kilometers. How many kilometers longer is the Pine River than the valley stream?",
+      "correctAnswer": 57,
+      "target_answer": 57,
+      "unit": "km",
+      "hintText": "Subtract 38 km from 95 km.",
+      "steps": [
+        "River length: 95 km.",
+        "Stream length: 38 km.",
+        "Difference: 95 - 38 = 57 km longer."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Pine River",
+            "value": 95,
+            "color": "#2980b9"
+          },
+          {
+            "label": "Stream",
+            "value": 38,
+            "color": "#7f8c8d"
+          }
+        ],
+        "difference": 57,
+        "differenceLabel": "Difference: 57 km"
+      }
+    },
+    {
+      "id": 5,
+      "type": "before_after",
+      "title": "Solar Evaporation Basin Water",
+      "problemText": "A solar basin held 120 liters of water at sunrise. Under the hot noon sun, 35 liters evaporated into the atmosphere. How many liters of water remained in the basin at sunset?",
+      "question": "A solar basin held 120 liters of water at sunrise. Under the hot noon sun, 35 liters evaporated into the atmosphere. How many liters of water remained in the basin at sunset?",
+      "correctAnswer": 85,
+      "target_answer": 85,
+      "unit": "liters",
+      "hintText": "Subtract the evaporated water (35 L) from the initial volume (120 L).",
+      "steps": [
+        "Initial volume: 120 liters.",
+        "Evaporated water: 35 liters.",
+        "Remaining: 120 - 35 = 85 liters."
+      ],
+      "modelData": {
+        "type": "before_after",
+        "bars": [
+          {
+            "label": "Initial Basin",
+            "value": 120,
+            "color": "#3498db"
+          },
+          {
+            "label": "Evaporated",
+            "value": 35,
+            "color": "#e74c3c"
+          },
+          {
+            "label": "Remaining",
+            "value": 85,
+            "color": "#2ecc71"
+          }
+        ],
+        "finalValue": 85,
+        "label": "Remaining: 85 liters"
+      }
     }
   ],
   "science_lab": {
-    "title_en": "The Water Journey (Cycle) Lab Workshop",
+    "title_en": "The Water Journey (Cycle) Workshop Lab",
     "scenarios": [
       {
         "stage": 1,
-        "title": "Sequencing the Water Journey",
-        "diagram_type": "water_cycle_wheel",
-        "instruction": "Place the four natural water cycle stages in chronological order.",
+        "title": "Solar Evaporation Stage",
+        "instruction": "Identify how heat turns liquid into vapor.",
         "items": [
           {
-            "label": "Sunlight Causes Evaporation",
-            "target": "phase_1"
+            "label": "Liquid Water Basin",
+            "target": "Ocean Surface"
           },
           {
-            "label": "Vapor Goes Up and Cools into Clouds",
-            "target": "phase_2"
+            "label": "Solar Thermal Heat",
+            "target": "Energy Source"
           },
           {
-            "label": "Rain Comes Down Over Mountains",
-            "target": "phase_3"
-          },
-          {
-            "label": "River Flows Water to the Ocean",
-            "target": "phase_4"
+            "label": "Rising Water Vapor",
+            "target": "Evaporation"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Temperature and Water States",
-        "diagram_type": "temperature_chamber",
-        "instruction": "Match each temperature condition to its correct water transformation.",
+        "title": "Cloud Condensation Stage",
+        "instruction": "Sequence how vapors cool to form water droplets.",
         "items": [
           {
-            "label": "Warm Sun -> Liquid Water Evaporates",
-            "target": "evaporation"
+            "label": "Cool High Atmosphere",
+            "target": "Chilling Zone"
           },
           {
-            "label": "Cool Sky -> Water Vapor Condenses",
-            "target": "condensation"
+            "label": "Gathering Droplets",
+            "target": "Cloud Formation"
           },
           {
-            "label": "Heavy Droplets -> Precipitation Falls",
-            "target": "precipitation"
+            "label": "Heavy Cloud Layer",
+            "target": "Precipitation Ready"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Protecting Watershed Health",
-        "diagram_type": "clean_water_action",
-        "instruction": "Select the three positive community actions that keep rivers clean.",
+        "title": "Precipitation and Collection",
+        "instruction": "Guide raindrops from sky back to ocean basin.",
         "items": [
           {
-            "label": "Plant Trees Along Stream Banks",
-            "target": "protect_banks"
+            "label": "Falling Raindrops",
+            "target": "Precipitation"
           },
           {
-            "label": "Clean Up Plastic Bottles Near Shore",
-            "target": "remove_waste"
+            "label": "Mountain Stream",
+            "target": "Runoff Flow"
           },
           {
-            "label": "Monitor Rain Gauges Regularly",
-            "target": "track_data"
+            "label": "Coastal Estuary",
+            "target": "Ocean Return"
           }
         ]
       }

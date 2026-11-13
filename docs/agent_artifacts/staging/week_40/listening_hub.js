@@ -1,9 +1,8 @@
 /**
- * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
+ * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 40 | Theme: "Beast Battle (Comparisons)" | CEFR: A2 Flyers
- * Generated: 2026-11-07T10:57:56.161Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
- * Provenance: Grounded in blueprint.json + Source B Syllabus
+ * Generated: 2026-11-13T05:36:25.000Z
+ * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
@@ -12,199 +11,68 @@ export const listeningHubData = {
   "theme": "Beast Battle (Comparisons)",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Marcus & Maya Comparing Wild Predators",
+    "title": "Oliver & Sophia at the Predator Exhibit",
     "exchanges": [
       {
-        "speaker": "Marcus",
-        "text": "Maya, is a Siberian tiger bigger than a cheetah?"
+        "speaker": "Oliver",
+        "text": "Sophia, look at the tiger's teeth!"
       },
       {
-        "speaker": "Maya",
-        "text": "Yes, a tiger is much bigger and heavier."
+        "speaker": "Sophia",
+        "text": "They look very sharp!"
       },
       {
-        "speaker": "Marcus",
-        "text": "Which animal runs faster across the open grass?"
+        "speaker": "Oliver",
+        "text": "Do you think a cheetah is stronger than a tiger?"
       },
       {
-        "speaker": "Maya",
-        "text": "The cheetah runs much faster than the tiger."
-      },
-      {
-        "speaker": "Marcus",
-        "text": "Why do leopards have such sharp curved claws?"
-      },
-      {
-        "speaker": "Maya",
-        "text": "To pull food high up into tall trees."
-      },
-      {
-        "speaker": "Marcus",
-        "text": "Does a grizzly bear weigh more than a leopard?"
-      },
-      {
-        "speaker": "Maya",
-        "text": "Yes, grizzly bears are much heavier."
-      },
-      {
-        "speaker": "Marcus",
-        "text": "Shall we write these animal facts on our science poster?"
-      },
-      {
-        "speaker": "Maya",
-        "text": "Yes, let's start writing them now!"
+        "speaker": "Sophia",
+        "text": "No, the tiger is much stronger."
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "text": "The Siberian tiger is bigger and stronger than the cheetah.",
-      "en": "The Siberian tiger is bigger and stronger than the cheetah.",
-      "vi": "Hổ Siberia to lớn hơn và khỏe hơn loài báo săn.",
-      "ipa": "/ðə saɪˈbɪriən ˈtaɪɡər ɪz ˈbɪɡər ænd ˈstrɔːŋɡər ðæn ðə ˈtʃiːtə/",
-      "words": [
-        "The",
-        "Siberian",
-        "tiger",
-        "is",
-        "bigger",
-        "and",
-        "stronger",
-        "than",
-        "the",
-        "cheetah"
-      ]
+      "text": "The tiger has sharper teeth than the leopard.",
+      "ipa": "/ðə ˈtaɪɡər hæz ˈʃɑːrpər tiːθ ðæn ðə ˈlepərd./"
     },
     {
       "id": 2,
-      "text": "A cheetah is lighter and runs faster across open fields.",
-      "en": "A cheetah is lighter and runs faster across open fields.",
-      "vi": "Báo săn nhẹ hơn và chạy nhanh hơn qua những cánh đồng mở.",
-      "ipa": "/ə ˈtʃiːtə ɪz ˈlaɪtər ænd rʌnz ˈfæstər əˈkrɔːs ˈoʊpən fiːldz/",
-      "words": [
-        "A",
-        "cheetah",
-        "is",
-        "lighter",
-        "and",
-        "runs",
-        "faster",
-        "across",
-        "open",
-        "fields"
-      ]
+      "text": "Cheetahs run faster than lions across the savanna.",
+      "ipa": "/ˈtʃiːtəz rʌn ˈfæstər ðæn ˈlaɪənz əˈkrɔːs ðə səˈvænə./"
     },
     {
       "id": 3,
-      "text": "Grizzly bears have sharper claws for catching river fish.",
-      "en": "Grizzly bears have sharper claws for catching river fish.",
-      "vi": "Gấu xám có móng vuốt sắc nhọn hơn để bắt cá dưới sông.",
-      "ipa": "/ˈɡrɪzli berz hæv ˈʃɑːrpər klɔːz fɔːr ˈkætʃɪŋ ˈrɪvər fɪʃ/",
-      "words": [
-        "Grizzly",
-        "bears",
-        "have",
-        "sharper",
-        "claws",
-        "for",
-        "catching",
-        "river",
-        "fish"
-      ]
+      "text": "A grizzly bear is much heavier than a wolf.",
+      "ipa": "/ə ˈɡrɪzli ber ɪz mʌtʃ ˈheviər ðæn ə wʊlf./"
     },
     {
       "id": 4,
-      "text": "The spotted leopard climbs trees better than the heavy lion.",
-      "en": "The spotted leopard climbs trees better than the heavy lion.",
-      "vi": "Báo hoa mai đốm trèo cây giỏi hơn chú sư tử nặng nề.",
-      "ipa": "/ðə ˈspɑːtɪd ˈlepərd klaɪmz triːz ˈbetər ðæn ðə ˈhevi ˈlaɪən/",
-      "words": [
-        "The",
-        "spotted",
-        "leopard",
-        "climbs",
-        "trees",
-        "better",
-        "than",
-        "the",
-        "heavy",
-        "lion"
-      ]
+      "text": "The leopard has dark spots on its golden fur.",
+      "ipa": "/ðə ˈlepərd hæz dɑːrk spɑːts ɑːn ɪts ˈɡoʊldən fɜːr./"
     },
     {
       "id": 5,
-      "text": "Crocodiles have thicker skin and more powerful jaws.",
-      "en": "Crocodiles have thicker skin and more powerful jaws.",
-      "vi": "Cá sấu có lớp da dày hơn và bộ hàm mạnh mẽ hơn.",
-      "ipa": "/ˈkrɑːkədaɪlz hæv ˈθɪkər skɪn ænd mɔːr ˈpaʊərfəl dʒɔːz/",
-      "words": [
-        "Crocodiles",
-        "have",
-        "thicker",
-        "skin",
-        "and",
-        "more",
-        "powerful",
-        "jaws"
-      ]
+      "text": "Lions have powerful jaws and strong neck muscles.",
+      "ipa": "/ˈlaɪənz hæv ˈpaʊərfəl dʒɔːz ænd strɔːŋ nek ˈmʌsəlz./"
     },
     {
       "id": 6,
-      "text": "An adult tiger can weigh three hundred heavy kilograms.",
-      "en": "An adult tiger can weigh three hundred heavy kilograms.",
-      "vi": "Một chú hổ trưởng thành có thể nặng ba trăm ki-lô-gam nặng nề.",
-      "ipa": "/ən əˈdʌlt ˈtaɪɡər kæn weɪ θriː ˈhʌndrəd ˈhevi ˈkɪləɡræmz/",
-      "words": [
-        "An",
-        "adult",
-        "tiger",
-        "can",
-        "weigh",
-        "three",
-        "hundred",
-        "heavy",
-        "kilograms"
-      ]
+      "text": "Scientists compare animal speed and body strength.",
+      "ipa": "/ˈsaɪəntɪsts kəmˈper ˈænɪməl spiːd ænd ˈbɑːdi strɛŋkθ./"
     },
     {
       "id": 7,
-      "text": "We can compare the speed and strength of wild beasts.",
-      "en": "We can compare the speed and strength of wild beasts.",
-      "vi": "Chúng ta có thể so sánh tốc độ và sức mạnh của các loài thú hoang dã.",
-      "ipa": "/wiː kæn kəmˈper ðə spiːd ænd streŋθ ʌv waɪld biːsts/",
-      "words": [
-        "We",
-        "can",
-        "compare",
-        "the",
-        "speed",
-        "and",
-        "strength",
-        "of",
-        "wild",
-        "beasts"
-      ]
+      "text": "The swift cheetah catches prey with great speed.",
+      "ipa": "/ðə swɪft ˈtʃiːtə ˈkætʃɪz preɪ wɪð ɡreɪt spiːd./"
     },
     {
       "id": 8,
-      "text": "Every hunting predator uses its body tools to survive.",
-      "en": "Every hunting predator uses its body tools to survive.",
-      "vi": "Mọi loài thú săn mồi đều dùng các công cụ cơ thể để sinh tồn.",
-      "ipa": "/ˈevri ˈhʌntɪŋ ˈpredətər ˈjuːzɪz ɪts ˈbɑːdi tuːlz tuː sərˈvaɪv/",
-      "words": [
-        "Every",
-        "hunting",
-        "predator",
-        "uses",
-        "its",
-        "body",
-        "tools",
-        "to",
-        "survive"
-      ]
+      "text": "Tough skin protects wild animals from sharp thorns.",
+      "ipa": "/tʌf skɪn prəˈtekts waɪld ˈænɪməlz frʌm ʃɑːrp θɔːrnz./"
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 40. Theme: Beast Battle (Comparisons).\nSpeaker: The Siberian tiger is bigger and stronger than the cheetah.\nSpeaker: A cheetah is lighter and runs faster across open fields.\nSpeaker: Grizzly bears have sharper claws for catching river fish.\nSpeaker: The spotted leopard climbs trees better than the heavy lion.\nSpeaker: Crocodiles have thicker skin and more powerful jaws.\nSpeaker: An adult tiger can weigh three hundred heavy kilograms.\nSpeaker: We can compare the speed and strength of wild beasts.\nSpeaker: Every hunting predator uses its body tools to survive."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 40. Theme: Beast Battle (Comparisons).\nSpeaker: The tiger has sharper teeth than the leopard.\nSpeaker: Cheetahs run faster than lions across the savanna.\nSpeaker: A grizzly bear is much heavier than a wolf.\nSpeaker: The leopard has dark spots on its golden fur.\nSpeaker: Lions have powerful jaws and strong neck muscles.\nSpeaker: Scientists compare animal speed and body strength.\nSpeaker: The swift cheetah catches prey with great speed.\nSpeaker: Tough skin protects wild animals from sharp thorns."
 };
 export default listeningHubData;

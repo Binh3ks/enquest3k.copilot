@@ -1,9 +1,8 @@
 /**
- * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
+ * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 40 | Theme: "Beast Battle (Comparisons)" | CEFR: A2 Flyers
- * Generated: 2026-11-07T10:57:56.161Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
- * Provenance: Grounded in blueprint.json + Source B Syllabus
+ * Generated: 2026-11-13T05:36:25.000Z
+ * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
@@ -13,178 +12,285 @@ export const skillPracticeHubData = {
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
-      "sentence": "A Siberian tiger is heavier than an African cheetah.",
-      "options": [
-        "heavier",
-        "heavy",
-        "heaviest"
-      ],
-      "answer": "heavier",
-      "explanation": "Use comparative adjective 'heavier' with 'than'."
-    },
-    {
-      "sentence": "The cheetah runs faster than any other land animal.",
-      "options": [
-        "faster",
-        "fast",
-        "fastest"
-      ],
-      "answer": "faster",
-      "explanation": "Use comparative 'faster' when comparing two entities."
-    },
-    {
-      "sentence": "Grizzly bears have stronger jaws than wolves.",
+      "sentence": "The male tiger is ___ than the spotted leopard.",
       "options": [
         "stronger",
         "strong",
         "strongest"
       ],
       "answer": "stronger",
-      "explanation": "Use comparative 'stronger' followed by 'than'."
+      "explanation": "Use comparative -er with 'than' to compare two animals."
     },
     {
-      "sentence": "A leopard climbs trees better than a heavy lion.",
+      "sentence": "Cheetahs can run ___ than heavy grizzly bears.",
       "options": [
-        "better",
-        "good",
-        "best"
+        "faster",
+        "fast",
+        "fastest"
       ],
-      "answer": "better",
-      "explanation": "'Better' is the comparative form of 'well/good'."
+      "answer": "faster",
+      "explanation": "Use comparative 'faster' when comparing two speeds."
     },
     {
-      "sentence": "We can compare the physical size of wild predators.",
+      "sentence": "A polar bear is much ___ than an arctic fox.",
       "options": [
-        "compare",
-        "comparing",
-        "compared"
+        "heavier",
+        "heavy",
+        "heaviest"
       ],
-      "answer": "compare",
-      "explanation": "Use bare infinitive 'compare' after modal verb 'can'."
+      "answer": "heavier",
+      "explanation": "Change -y to -ier for comparative 'heavier'."
+    },
+    {
+      "sentence": "Eagles have ___ talons than songbirds.",
+      "options": [
+        "sharper",
+        "sharp",
+        "sharpest"
+      ],
+      "answer": "sharper",
+      "explanation": "Use comparative 'sharper' with two items."
+    },
+    {
+      "sentence": "Elephants are ___ than wild savanna lions.",
+      "options": [
+        "bigger",
+        "big",
+        "biggest"
+      ],
+      "answer": "bigger",
+      "explanation": "Double the consonant 'g' in comparative 'bigger'."
     }
   ],
   "singapore_math": [
     {
-      "id": "w40_p1",
+      "id": 1,
       "type": "comparison",
-      "title": "Predator Body Weight Comparison",
-      "question": "A male Siberian tiger weighs 300 kilograms. A cheetah weighs 60 kilograms. How much heavier is the tiger than the cheetah?",
-      "storyContext": "Marcus examines the museum animal scales to compare big cat body weights.",
+      "title": "Tiger and Cheetah Body Weight Comparison",
+      "problemText": "A male Siberian tiger weighs 300 kilograms. A cheetah weighs 60 kilograms. How many kilograms heavier is the tiger than the cheetah?",
+      "question": "A male Siberian tiger weighs 300 kilograms. A cheetah weighs 60 kilograms. How many kilograms heavier is the tiger than the cheetah?",
+      "correctAnswer": 240,
+      "target_answer": 240,
+      "unit": "kg",
+      "hintText": "Subtract the cheetah's weight (60 kg) from the tiger's weight (300 kg).",
+      "steps": [
+        "Tiger weight: 300 kg.",
+        "Cheetah weight: 60 kg.",
+        "Difference: 300 - 60 = 240 kg heavier."
+      ],
       "modelData": {
+        "type": "comparison",
         "bars": [
           {
-            "label": "Siberian Tiger",
+            "label": "Tiger",
             "value": 300,
-            "color": "#f97316"
+            "color": "#e67e22"
           },
           {
             "label": "Cheetah",
             "value": 60,
-            "color": "#eab308"
+            "color": "#f1c40f"
           }
         ],
         "difference": 240,
-        "unit": "kg"
-      },
-      "target_answer": 240,
-      "unit": "kg",
-      "steps": [
-        "Start with the tiger's weight: 300 kg.",
-        "Subtract the cheetah's weight: 60 kg.",
-        "300 - 60 = 240 kg heavier."
-      ]
+        "differenceLabel": "Difference: 240 kg"
+      }
     },
     {
-      "id": "w40_p2",
-      "type": "part_whole",
-      "title": "Total Food for the Big Cats",
-      "question": "The zoo keepers prepared 28 kilograms of meat for the lions and 16 kilograms for the leopards. How much meat did they prepare in total?",
-      "storyContext": "Maya tallies the food buckets before the afternoon feeding time.",
+      "id": 2,
+      "type": "comparison",
+      "title": "Predator Sprint Speed Comparison",
+      "problemText": "A sprinting cheetah can reach a top speed of 110 kilometers per hour. A lion can run at 80 kilometers per hour. How many kilometers per hour faster is the cheetah than the lion?",
+      "question": "A sprinting cheetah can reach a top speed of 110 kilometers per hour. A lion can run at 80 kilometers per hour. How many kilometers per hour faster is the cheetah than the lion?",
+      "correctAnswer": 30,
+      "target_answer": 30,
+      "unit": "km/h",
+      "hintText": "Subtract 80 km/h from 110 km/h.",
+      "steps": [
+        "Cheetah speed: 110 km/h.",
+        "Lion speed: 80 km/h.",
+        "110 - 80 = 30 km/h faster."
+      ],
       "modelData": {
+        "type": "comparison",
         "bars": [
           {
-            "label": "Lion Meat",
-            "value": 28,
-            "color": "#ef4444"
+            "label": "Cheetah",
+            "value": 110,
+            "color": "#f39c12"
           },
           {
-            "label": "Leopard Meat",
-            "value": 16,
-            "color": "#8b5cf6"
+            "label": "Lion",
+            "value": 80,
+            "color": "#d35400"
           }
         ],
-        "total": 44,
-        "unit": "kg"
-      },
-      "target_answer": 44,
-      "unit": "kg",
+        "difference": 30,
+        "differenceLabel": "Difference: 30 km/h"
+      }
+    },
+    {
+      "id": 3,
+      "type": "part_whole",
+      "title": "Wildlife Reserve Big Cat Census",
+      "problemText": "A wildlife reserve protects 48 lions in the eastern valley and 36 tigers in the western hills. How many big cat predators are protected in the reserve altogether?",
+      "question": "A wildlife reserve protects 48 lions in the eastern valley and 36 tigers in the western hills. How many big cat predators are protected in the reserve altogether?",
+      "correctAnswer": 84,
+      "target_answer": 84,
+      "unit": "big cats",
+      "hintText": "Add the lions (48) and tigers (36) together.",
       "steps": [
-        "Add the lion food: 28 kg.",
-        "Add the leopard food: 16 kg.",
-        "28 + 16 = 44 kg in total."
-      ]
+        "Lions in eastern valley: 48.",
+        "Tigers in western hills: 36.",
+        "Total big cats: 48 + 36 = 84."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Lions",
+            "value": 48,
+            "color": "#e67e22"
+          },
+          {
+            "label": "Tigers",
+            "value": 36,
+            "color": "#d35400"
+          }
+        ],
+        "total": 84,
+        "totalLabel": "Total: 84 big cats"
+      }
+    },
+    {
+      "id": 4,
+      "type": "comparison",
+      "title": "Grizzly and Black Bear Weight",
+      "problemText": "A large grizzly bear weighs 280 kilograms at the start of autumn. A black bear weighs 130 kilograms. How many kilograms heavier is the grizzly bear than the black bear?",
+      "question": "A large grizzly bear weighs 280 kilograms at the start of autumn. A black bear weighs 130 kilograms. How many kilograms heavier is the grizzly bear than the black bear?",
+      "correctAnswer": 150,
+      "target_answer": 150,
+      "unit": "kg",
+      "hintText": "Subtract the black bear weight (130) from the grizzly weight (280).",
+      "steps": [
+        "Grizzly weight: 280 kg.",
+        "Black bear weight: 130 kg.",
+        "Difference: 280 - 130 = 150 kg."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Grizzly",
+            "value": 280,
+            "color": "#795548"
+          },
+          {
+            "label": "Black Bear",
+            "value": 130,
+            "color": "#424242"
+          }
+        ],
+        "difference": 150,
+        "differenceLabel": "Difference: 150 kg"
+      }
+    },
+    {
+      "id": 5,
+      "type": "before_after",
+      "title": "Wolf Pack Valley Tracking",
+      "problemText": "A wolf pack had 25 wolves roaming together in the snow valley. During the afternoon hunt, 8 wolves crossed the river to the ridge. How many wolves remained in the valley?",
+      "question": "A wolf pack had 25 wolves roaming together in the snow valley. During the afternoon hunt, 8 wolves crossed the river to the ridge. How many wolves remained in the valley?",
+      "correctAnswer": 17,
+      "target_answer": 17,
+      "unit": "wolves",
+      "hintText": "Subtract the 8 wolves that crossed the river from the 25 total wolves.",
+      "steps": [
+        "Total pack members: 25 wolves.",
+        "Wolves crossing river: 8.",
+        "Remaining wolves: 25 - 8 = 17 wolves."
+      ],
+      "modelData": {
+        "type": "before_after",
+        "bars": [
+          {
+            "label": "Initial Pack",
+            "value": 25,
+            "color": "#607d8b"
+          },
+          {
+            "label": "Crossed River",
+            "value": 8,
+            "color": "#90a4ae"
+          },
+          {
+            "label": "Remaining",
+            "value": 17,
+            "color": "#37474f"
+          }
+        ],
+        "finalValue": 17,
+        "label": "Remaining: 17 wolves"
+      }
     }
   ],
   "science_lab": {
-    "title_en": "Beast Battle (Comparisons) Lab Workshop",
+    "title_en": "Beast Battle (Comparisons) Workshop Lab",
     "scenarios": [
       {
         "stage": 1,
-        "title": "Claws and Teeth Matching",
-        "diagram_type": "predator_weapon_slots",
-        "instruction": "Match each physical tool to its hunting function.",
+        "title": "Predator Feature Matching",
+        "instruction": "Match each physical hunting tool to its specialized animal.",
         "items": [
           {
-            "label": "Sharp Curved Claws",
-            "target": "tree_climbing"
+            "label": "Sharp Retractable Claws",
+            "target": "Leopard"
           },
           {
-            "label": "Crushing Powerful Jaws",
-            "target": "bone_crushing"
+            "label": "Spotted Camouflage Fur",
+            "target": "Cheetah"
           },
           {
-            "label": "Flexible Agile Spine",
-            "target": "high_speed_running"
+            "label": "Heavy Crushing Jaw",
+            "target": "Grizzly Bear"
           }
         ]
       },
       {
         "stage": 2,
-        "title": "Speed vs Strength Sorting",
-        "diagram_type": "speed_strength_matrix",
-        "instruction": "Sort the predators by their main hunting advantage.",
+        "title": "Speed vs Power Comparison",
+        "instruction": "Sort predators into speed specialists or strength specialists.",
         "items": [
           {
-            "label": "African Cheetah",
-            "target": "speed_specialist"
+            "label": "Lightweight Cheetah",
+            "target": "Speed Specialist"
           },
           {
-            "label": "Grizzly Bear",
-            "target": "strength_specialist"
+            "label": "Heavy Siberian Tiger",
+            "target": "Strength Specialist"
           },
           {
-            "label": "Spotted Leopard",
-            "target": "climbing_specialist"
+            "label": "Muscular Grizzly",
+            "target": "Strength Specialist"
           }
         ]
       },
       {
         "stage": 3,
-        "title": "Apex Predator Rank",
-        "diagram_type": "predator_ranking_board",
-        "instruction": "Place the three predators in order from heaviest to lightest.",
+        "title": "Habitat Adaptations",
+        "instruction": "Place each hunter into its natural ecosystem.",
         "items": [
           {
-            "label": "Grizzly Bear (400kg)",
-            "target": "rank_1_heaviest"
+            "label": "Striped Tiger",
+            "target": "Dense Jungle"
           },
           {
-            "label": "Siberian Tiger (300kg)",
-            "target": "rank_2_medium"
+            "label": "Spotted Cheetah",
+            "target": "Open Savanna"
           },
           {
-            "label": "Cheetah (50kg)",
-            "target": "rank_3_lightest"
+            "label": "Thick-Furred Bear",
+            "target": "Pine Mountain"
           }
         ]
       }

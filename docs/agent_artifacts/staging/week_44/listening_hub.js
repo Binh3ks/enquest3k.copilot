@@ -1,9 +1,8 @@
 /**
- * STAGED DELIVERABLE: Listening Hub & Audio Pipeline Scripts
+ * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 44 | Theme: "The Cookie Monster (Subtraction Language)" | CEFR: A2 Flyers
- * Generated: 2026-11-07T10:57:56.167Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
- * Provenance: Grounded in blueprint.json + Source B Syllabus
+ * Generated: 2026-11-13T05:36:25.000Z
+ * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
@@ -12,200 +11,60 @@ export const listeningHubData = {
   "theme": "The Cookie Monster (Subtraction Language)",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Lucas & Chloe Discussing Cookie Subtraction",
+    "title": "Ben & Mia in the Bakery Kitchen",
     "exchanges": [
       {
-        "speaker": "Lucas",
-        "text": "Chloe, how many cookies did Grandma bake on the tray?"
+        "speaker": "Ben",
+        "text": "How many cookies did Grandma bake today?"
       },
       {
-        "speaker": "Chloe",
-        "text": "She baked ten delicious chocolate cookies."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "What happened when the Cookie Monster puppet arrived?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "He took away four cookies for an afternoon snack."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "How do we write that math problem as a sentence?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "Ten minus four leaves six cookies on the plate."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "Shall we share the remaining six cookies with grandpa?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "Yes, grandpa will love these warm vanilla cookies!"
-      },
-      {
-        "speaker": "Lucas",
-        "text": "Can we write this subtraction story in our math notebooks?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "Yes, let's draw the cookies and write the sentence now!"
+        "speaker": "Mia",
+        "text": "She baked thirty chocolate cookies."
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "text": "Grandma baked ten delicious cookies on a wide metal tray.",
-      "en": "Grandma baked ten delicious cookies on a wide metal tray.",
-      "vi": "Bà đã nướng mười chiếc bánh quy thơm ngon trên chiếc khay kim loại rộng.",
-      "ipa": "/ˈɡrænmɑː beɪkt ten dɪˈlɪʃəs ˈkʊkiz ɑːn ə waɪd ˈmetəl treɪ/",
-      "words": [
-        "Grandma",
-        "baked",
-        "ten",
-        "delicious",
-        "cookies",
-        "on",
-        "a",
-        "wide",
-        "metal",
-        "tray"
-      ]
+      "text": "The baker took twenty cookies out of the oven.",
+      "ipa": "/ðə ˈbeɪkər tʊk ˈtwenti ˈkʊkiz aʊt ʌv ðə ˈʌvən./"
     },
     {
       "id": 2,
-      "text": "The playful puppet monster wants to take away four cookies.",
-      "en": "The playful puppet monster wants to take away four cookies.",
-      "vi": "Chú rối quái vật tinh nghịch muốn lấy bớt đi bốn chiếc bánh quy.",
-      "ipa": "/ðə ˈpleɪfəl ˈpʌpɪt ˈmɑːnstər wɑːnts tuː teɪk əˈweɪ fɔːr ˈkʊkiz/",
-      "words": [
-        "The",
-        "playful",
-        "puppet",
-        "monster",
-        "wants",
-        "to",
-        "take",
-        "away",
-        "four",
-        "cookies"
-      ]
+      "text": "Subtract five cookies to find how many left.",
+      "ipa": "/səbˈtrækt faɪv ˈkʊkiz tuː faɪnd haʊ ˈmeni left./"
     },
     {
       "id": 3,
-      "text": "Ten minus four leaves six sweet cookies on the plate.",
-      "en": "Ten minus four leaves six sweet cookies on the plate.",
-      "vi": "Mười trừ bốn còn lại sáu chiếc bánh quy ngọt ngào trên đĩa.",
-      "ipa": "/ten ˈmaɪnəs fɔːr liːvz sɪks swiːt ˈkʊkiz ɑːn ðə pleɪt/",
-      "words": [
-        "Ten",
-        "minus",
-        "four",
-        "leaves",
-        "six",
-        "sweet",
-        "cookies",
-        "on",
-        "the",
-        "plate"
-      ]
+      "text": "Fifty minus twenty equals thirty sweet treats.",
+      "ipa": "/ˈfɪfti ˈmaɪnəs ˈtwenti ˈiːkwəlz ˈθɜːrti swiːt triːts./"
     },
     {
       "id": 4,
-      "text": "How many crunchy cookies are left after snack time?",
-      "en": "How many crunchy cookies are left after snack time?",
-      "vi": "Còn lại bao nhiêu chiếc bánh quy giòn sau giờ ăn nhẹ?",
-      "ipa": "/haʊ ˈmeni ˈkrʌntʃi ˈkʊkiz ɑːr left ˈæftər snæk taɪm/",
-      "words": [
-        "How",
-        "many",
-        "crunchy",
-        "cookies",
-        "are",
-        "left",
-        "after",
-        "snack",
-        "time"
-      ]
+      "text": "Good friends share their afternoon snack happily.",
+      "ipa": "/ɡʊd frendz ʃer ðer ˌæftərˈnuːn snæk ˈhæpɪli./"
     },
     {
       "id": 5,
-      "text": "We subtract the cookies eaten from the total baking batch.",
-      "en": "We subtract the cookies eaten from the total baking batch.",
-      "vi": "Chúng tôi trừ số bánh đã ăn khỏi tổng mẻ bánh nướng.",
-      "ipa": "/wiː səbˈtrækt ðə ˈkʊkiz ˈiːtən frʌm ðə ˈtoʊtəl ˈbeɪkɪŋ bætʃ/",
-      "words": [
-        "We",
-        "subtract",
-        "the",
-        "cookies",
-        "eaten",
-        "from",
-        "the",
-        "total",
-        "baking",
-        "batch"
-      ]
+      "text": "Please do not lose any pieces of the puzzle.",
+      "ipa": "/pliːz duː nɑːt luːz ˈeni ˈpiːsɪz ʌv ðə ˈpʌzəl./"
     },
     {
       "id": 6,
-      "text": "Lucas placed two treats into the glass cookie jar.",
-      "en": "Lucas placed two treats into the glass cookie jar.",
-      "vi": "Lucas đặt hai chiếc bánh vào trong chiếc hũ bánh quy thủy tinh.",
-      "ipa": "/ˈluːkəs pleɪst tuː triːts ˈɪntuː ðə ɡlæs ˈkʊki dʒɑːr/",
-      "words": [
-        "Lucas",
-        "placed",
-        "two",
-        "treats",
-        "into",
-        "the",
-        "glass",
-        "cookie",
-        "jar"
-      ]
+      "text": "The difference between forty and ten is thirty.",
+      "ipa": "/ðə ˈdɪfərəns bɪˈtwiːn ˈfɔːrti ænd ten ɪz ˈθɜːrti./"
     },
     {
       "id": 7,
-      "text": "Chloe loves to share her favorite snacks with friends.",
-      "en": "Chloe loves to share her favorite snacks with friends.",
-      "vi": "Chloe rất thích chia sẻ những món ăn vặt yêu thích với bạn bè.",
-      "ipa": "/ˈkloʊi lʌvz tuː ʃer hɜːr ˈfeɪvərɪt snæks wɪð frendz/",
-      "words": [
-        "Chloe",
-        "loves",
-        "to",
-        "share",
-        "her",
-        "favorite",
-        "snacks",
-        "with",
-        "friends"
-      ]
+      "text": "Take away eight cookies from the metal tray.",
+      "ipa": "/teɪk əˈweɪ eɪt ˈkʊkiz frʌm ðə ˈmetəl treɪ./"
     },
     {
       "id": 8,
-      "text": "Subtracting numbers tells us how many items still remain.",
-      "en": "Subtracting numbers tells us how many items still remain.",
-      "vi": "Phép trừ các con số cho chúng ta biết còn lại bao nhiêu đồ vật.",
-      "ipa": "/səbˈtræktɪŋ ˈnʌmbərz telz ʌs haʊ ˈmeni ˈaɪtəmz stɪl rɪˈmeɪn/",
-      "words": [
-        "Subtracting",
-        "numbers",
-        "tells",
-        "us",
-        "how",
-        "many",
-        "items",
-        "still",
-        "remain"
-      ]
+      "text": "We count remaining treats inside the glass jar.",
+      "ipa": "/wiː kaʊnt rɪˈmeɪnɪŋ triːts ɪnˈsaɪd ðə ɡlæs dʒɑːr./"
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 44. Theme: The Cookie Monster (Subtraction Language).\nSpeaker: Grandma baked ten delicious cookies on a wide metal tray.\nSpeaker: The playful puppet monster wants to take away four cookies.\nSpeaker: Ten minus four leaves six sweet cookies on the plate.\nSpeaker: How many crunchy cookies are left after snack time?\nSpeaker: We subtract the cookies eaten from the total baking batch.\nSpeaker: Lucas placed two treats into the glass cookie jar.\nSpeaker: Chloe loves to share her favorite snacks with friends.\nSpeaker: Subtracting numbers tells us how many items still remain."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 44. Theme: The Cookie Monster (Subtraction Language).\nSpeaker: The baker took twenty cookies out of the oven.\nSpeaker: Subtract five cookies to find how many left.\nSpeaker: Fifty minus twenty equals thirty sweet treats.\nSpeaker: Good friends share their afternoon snack happily.\nSpeaker: Please do not lose any pieces of the puzzle.\nSpeaker: The difference between forty and ten is thirty.\nSpeaker: Take away eight cookies from the metal tray.\nSpeaker: We count remaining treats inside the glass jar."
 };
 export default listeningHubData;

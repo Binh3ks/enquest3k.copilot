@@ -1,16 +1,15 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-09T13:11:07.330Z",
-  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
-  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "generated_at": "2026-11-13T05:36:25.000Z",
+  "pipeline_script": "scripts/round91_data_generator.py",
+  "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
   "week_number": 42,
   "theme": "The Water Journey (Cycle)",
   "cefr_level": "A2 Flyers",
-  "grammar_focus": "Review Sequencing + Present Tense: 'First, the sun warms the water. Then, vapor goes up into the sky.'",
+  "grammar_focus": "Review Sequencing + Present Tense",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_42/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
-    "source_b_excerpt": "Week 42: The Water Journey (Cycle) (Tuần 42: Hành trình của Nước)\n\t•\tTopic: The Water Cycle Story. (Chủ đề: Câu chuyện Vòng tuần hoàn nước.)\n\t•\tKey Learning Outcome: Sequence nature's events. (Kết quả: Sắp xếp sự kiện tự nhiên.)\n\t•\tSkill Focus: Understanding Cycles. (Kỹ năng: Hiểu về chu trình.)\n\t•\tGrammar Focus: Review Sequencing + Present Tense.\n\t•\tVocabulary Focus: sun, cloud, rain, river, ocean, evaporation (intro), go up, come down.\nUnit 7: The Math Bridge (Math CLIL) (Weeks 43-48)\n(Mục tiêu: Học tiếng Anh qua Toán học, không dạy tính toán phức tạp)\n\t•",
     "digital_map_reference": {
       "map_week": 42,
       "map_theme": "Full Cambridge Mock 2",
@@ -39,7 +38,14 @@
     "GATE_7_VIETNAMESE_LEAK_ZERO",
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
-    "GATE_10_SKELETON_DIFFERENTIATION"
+    "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+    "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
+    "GATE_14_PROVENANCE_INTEGRITY",
+    "GATE_15_CLIL_VOCAB_INTEGRATION",
+    "GATE_16_ESL_ANOMALY_ZERO"
   ],
-  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+  "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
+  "staged_status": "STAGED_FOR_REVIEW"
 }

@@ -1,16 +1,15 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-07T10:57:56.167Z",
-  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
-  "generator_agent": "Claude Sonnet (Thinking) / Automated SOP Content Pipeline (Round 61)",
+  "generated_at": "2026-11-13T05:36:25.000Z",
+  "pipeline_script": "scripts/round91_data_generator.py",
+  "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
   "week_number": 44,
   "theme": "The Cookie Monster (Subtraction Language)",
   "cefr_level": "A2 Flyers",
-  "grammar_focus": "Subtraction Language: \"Take away\", \"Left\", \"Minus\"",
+  "grammar_focus": "Take away, Left, Minus",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_44/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
-    "source_b_excerpt": "Week 44: The Cookie Monster (Subtraction Language) (Tuần 44: Quái vật Bánh quy - Ngôn ngữ Phép trừ)\n\t•\tTopic: Taking things away. (Chủ đề: Lấy bớt đi.)\n\t•\tKey Learning Outcome: Explain subtraction concepts in English. (Kết quả: Giải thích khái niệm trừ bằng tiếng Anh.)\n\t•\tSkill Focus: Inverse Logic. (Kỹ năng: Logic ngược.)\n\t•\tGrammar Focus: \"Take away\", \"Left\", \"Minus\". (Ngữ pháp: Cấu trúc câu trừ.)\n\t•\tVocabulary Focus: minus, subtract, take away, how many left, lose.\n\t•",
     "digital_map_reference": {
       "map_week": 44,
       "map_theme": "Maps & Navigation",
@@ -39,7 +38,14 @@
     "GATE_7_VIETNAMESE_LEAK_ZERO",
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
-    "GATE_10_SKELETON_DIFFERENTIATION"
+    "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+    "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
+    "GATE_14_PROVENANCE_INTEGRITY",
+    "GATE_15_CLIL_VOCAB_INTEGRATION",
+    "GATE_16_ESL_ANOMALY_ZERO"
   ],
-  "review_status": "STAGED_FOR_CLAUDE_ESL_REVIEW"
+  "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
+  "staged_status": "STAGED_FOR_REVIEW"
 }
