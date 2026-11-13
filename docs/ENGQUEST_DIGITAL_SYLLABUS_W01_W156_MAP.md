@@ -99,7 +99,7 @@ Tài liệu này đóng vai trò là cây cầu nối số (Digital Bridge) chuy
 ---
 
 #### Block C: CLIL Foundations & Cambridge Flyers (Weeks 37–54)
-*Focus: Chu kỳ nghiêm ngặt 4+1 (4 tuần Rotary + 1 tuần Full Mock), Singapore Math, viết truyện $\ge 20$ từ.*
+*Focus: Chu kỳ luyện tập xoay vòng 4 kỹ năng Cambridge (Rotary 1–4), Singapore Math, viết truyện $\ge 20$ từ.*
 
 | Tuần | Tên Chủ Đề Tuần | CEFR & Phân Loại Tuần | CLIL STEM Module | Giàn Giáo | Ngữ Pháp Trọng Tâm & Dữ Liệu Hub |
 | :---: | :--- | :---: | :--- | :---: | :--- |
@@ -161,7 +161,7 @@ Tài liệu này đóng vai trò là cây cầu nối số (Digital Bridge) chuy
 | **W74** | Science/ELA: Food Chains / Math: Complex Charts | B1 PET · Rotary 2 | Khoa học/ELA: Chuỗi thức ăn / Toán: Biểu đồ phức tạp: Write a paragraph explaining dependency in nature | Tier 3 (Guided CER)| Thể bị động nâng cao (*plates are forced together*); `action_lab` địa chấn kế |
 | **W75** | History/ELA: Ancient Egypt / Math: Timelines | B1 PET · Rotary 3 | Lịch sử/ELA: Ai Cập Cổ đại / Toán: Dòng thời gian: Write a descriptive paragraph about Ancient Egypt | Tier 3 (Guided CER)| Giải thích phương trình hóa học; `reading_hub` quang phổ diệp lục |
 | **W76** | History/ELA: Explorers / Math: Map Scales | B1 PET · Rotary 4 | Lịch sử/ELA: Các nhà Thám hiểm / Toán: Tỷ lệ Bản đồ: Write a short biography of an explorer | Tier 3 (Guided CER)| Tích hợp toán - ngôn ngữ; `math_quest` toán lời văn tính gia tốc |
-| **W77** | Social Studies/ELA: World Landmarks / Math: 3D Geometry | B1 PET · Rotary 1 | Xã hội/ELA: Kỳ quan Thế giới / Toán: Hình học 3D: Write a technical description of a landmark | Tier 3 (Guided CER) | Full Mock B1 PET 1 (4 Parts Listening, 6 Parts Reading, 2 Parts Writing, Speaking); Rotary Cycle 1 |
+| **W77** | Social Studies/ELA: World Landmarks / Math: 3D Geometry | B1 PET · Rotary 1 | Xã hội/ELA: Kỳ quan Thế giới / Toán: Hình học 3D: Write a technical description of a landmark | Tier 3 (Guided CER)| Tính từ chất liệu & hình khối (*made of stone, shaped like*); `story_writer` miêu tả danh thắng |
 | **W78** | Social Studies/ELA: Cultures / Math: Surveys | B1 PET · Rotary 1 | Xã hội/ELA: Văn hóa / Toán: Khảo sát: Write a paragraph comparing two traditions | Tier 3 (Guided CER)| Bài luận tương phản (*In contrast to tropical biomes...*); `writing_hub` |
 | **W79** | The Industrial Revolution | B1 PET · Rotary 2 | Lịch sử thế giới: Động cơ hơi nước & Nhà máy| Tier 3 (Guided CER)| Nguyên nhân & tác động lịch sử; `broadcast_studio` phim tài liệu lịch sử |
 | **W80** | Supply, Demand & Market Prices | B1 PET · Rotary 3 | Kinh tế học: Giá cân bằng thị trường | Tier 3 (Guided CER)| Logic điều kiện kinh tế; `math_quest` biểu đồ đường cung - cầu |
