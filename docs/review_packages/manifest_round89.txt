@@ -1,0 +1,242 @@
+ROUND 89 PACKAGE & COMMIT MANIFEST
+========================================================================
+Timestamp:                 2026-11-13T04:19:41.433Z
+round88_baseline_commit:   6e3e220578cf33b9577d6ec4cf302dc3888d8bd6
+deliverables_commit:       09f1d926d3dcc2da351898ecb202209cf69653ba
+deliverables_clean_check:  PASS (0 uncommitted/untracked changes in Round 89 deliverables)
+manifest_commit_contract:  Generated strictly AFTER Commit 1 (deliverables_commit).
+                           Commit 2 ONLY adds docs/review_packages/manifest_round89.txt
+                           (round89_20261113.zip is gitignored via .gitignore; 0 code/artifact delta in Commit 2).
+
+ZIP PACKAGE:
+  Path:    docs/review_packages/round89_20261113.zip
+  Size:    98087 bytes
+  SHA-256: 2473bd29b328947274f81f4db61b22190de19a3d485d4e37d917092909426b99
+
+PER-WEEK NUMSTAT DELTAS IN skill_practice_hub.js (R88..Commit 1):
+   Week  35: numstat: 105	4	src/data/weeks/week_35/skill_practice_hub.js
+   Week  38: numstat: 105	4	src/data/weeks/week_38/skill_practice_hub.js
+   Week  39: numstat: 105	4	src/data/weeks/week_39/skill_practice_hub.js
+   Week  41: numstat: 105	4	src/data/weeks/week_41/skill_practice_hub.js
+   Week  43: numstat: 105	4	src/data/weeks/week_43/skill_practice_hub.js
+   Week  45: numstat: 104	4	src/data/weeks/week_45/skill_practice_hub.js
+   Week  46: numstat: 105	4	src/data/weeks/week_46/skill_practice_hub.js
+   Week  73: numstat: 109	4	src/data/weeks/week_73/skill_practice_hub.js
+   Week  74: numstat: 109	4	src/data/weeks/week_74/skill_practice_hub.js
+   Week  75: numstat: 105	4	src/data/weeks/week_75/skill_practice_hub.js
+   Week  76: numstat: 255	69	src/data/weeks/week_76/skill_practice_hub.js
+   Week  77: numstat: 105	4	src/data/weeks/week_77/skill_practice_hub.js
+   Week  78: numstat: 105	4	src/data/weeks/week_78/skill_practice_hub.js
+   Week  79: numstat: 105	4	src/data/weeks/week_79/skill_practice_hub.js
+   Week  80: numstat: 255	69	src/data/weeks/week_80/skill_practice_hub.js
+   Week  81: numstat: 105	4	src/data/weeks/week_81/skill_practice_hub.js
+   Week  82: numstat: 105	4	src/data/weeks/week_82/skill_practice_hub.js
+   Week 125: numstat: 105	4	src/data/weeks/week_125/skill_practice_hub.js
+
+ROUND 89 SCRIPTS, PROD WEEKS & ARTIFACT HASHES (SHA-256):
+  46e83128a84a4c67ce2e99ff74dcb3f4ff84c11528122b21c9c8e617cab34381  scripts/expand_singapore_math_18weeks.mjs
+  55ecb75e30bcc875ab35c0ebbdba714effe942eb2c85a4cb087145bd62152242  scripts/verify_round89_math_regression.mjs
+  262032902cc00075d7c1988248c372ca84b99cbebc53fe31dfe78923880fe97e  scripts/package_round89.mjs
+  9720b74232b2b5ffe6639adc968d2723f28b7ab748f914ff40a671acceabbcb0  docs/agent_artifacts/round89_report.md
+  94b4d606322b4b1ab5454f8f5ccaa248c2a486e8f08175d684b4b9540832d8d9  docs/agent_artifacts/round89_math_regression_raw.txt
+  0dfa0151620fdf60ff57945e19f85ee19bb088ad773914760cf4021147c2563b  src/data/weeks/week_35/skill_practice_hub.js
+  a72cf9bb11db5d3a8f395ec9823d7c6f5ae74fdb06a2a614555246d8c70a0d1d  src/data/weeks/week_38/skill_practice_hub.js
+  4a72e3bb8d4d5f0efce802bfe33d569cb2f862bf0ef280e6a1e3a85e1026afbb  src/data/weeks/week_39/skill_practice_hub.js
+  9712a197e7e9243a5e131473cf2ba9dc92d127554e2aeea38e92a7b45212c3ec  src/data/weeks/week_41/skill_practice_hub.js
+  bcfc48fb42e279214cf34b451655127d0cc84daafcfc0fa6810f68579dc9966a  src/data/weeks/week_43/skill_practice_hub.js
+  dc66ef52d9e1cb9784e33769ea1c5b4d5efc8bc4e8ec512a5c11dc1a5061335a  src/data/weeks/week_45/skill_practice_hub.js
+  fe1da6d75e44c412c33354eed929938a4066760d78b2bf26c2fd86cb9eb4b9ff  src/data/weeks/week_46/skill_practice_hub.js
+  33f8fe7752b98b9c44d6af4d577790346e0b7b726fab62adb3238295177c6937  src/data/weeks/week_73/skill_practice_hub.js
+  6c806660060c896196f24617761e807e1ed6e9695c4efc6a67b892fbebfc2f5b  src/data/weeks/week_74/skill_practice_hub.js
+  9741df714a2e0405aae9a3a6b6d762a764136b83439fbbaa15a243862141b11e  src/data/weeks/week_75/skill_practice_hub.js
+  a2e913a07ed8b0c1cfd8d51cdd7579abc4c0f3badaa6958dcd5c547628c8a6fd  src/data/weeks/week_76/skill_practice_hub.js
+  eba3176fed9fa10528211379b45e3133ec37ea3cf70c282f813c5dddd3fec1be  src/data/weeks/week_77/skill_practice_hub.js
+  e3676389af014a9b160ed112495bd86f3e395579ceebfb4f40f00c8babc92dd3  src/data/weeks/week_78/skill_practice_hub.js
+  909d8c65949cc6eeba860d81e8f0d2ccf6071889101b842c1dc7086af626af7f  src/data/weeks/week_79/skill_practice_hub.js
+  10d172d4cc0aeeadb45dbb4fbf4228991b053418bff3a4d8c61741c209b785d2  src/data/weeks/week_80/skill_practice_hub.js
+  d32460a73898027af7f10d9e2209cdadcc37f9ed41b23d76efa7bdc051a3091a  src/data/weeks/week_81/skill_practice_hub.js
+  5c1fe9f0204b9b3cfcb97c35ce8e98aac7a73738ccc058d97766e3bd732be115  src/data/weeks/week_82/skill_practice_hub.js
+  c00fe1541641a8d6af2b0f3e079584dcc36e9df665ad67d82aa68f454d456973  src/data/weeks/week_125/skill_practice_hub.js
+
+LIVE GIT SCOPE DISCLOSURE (R88 BASELINE 6e3e2205..09f1d926):
+1. Production weeks (src/data/weeks/) delta (18 skill_practice_hub.js expanded 2/5 -> 5/5):
+   M	src/data/weeks/week_125/skill_practice_hub.js
+   M	src/data/weeks/week_35/skill_practice_hub.js
+   M	src/data/weeks/week_38/skill_practice_hub.js
+   M	src/data/weeks/week_39/skill_practice_hub.js
+   M	src/data/weeks/week_41/skill_practice_hub.js
+   M	src/data/weeks/week_43/skill_practice_hub.js
+   M	src/data/weeks/week_45/skill_practice_hub.js
+   M	src/data/weeks/week_46/skill_practice_hub.js
+   M	src/data/weeks/week_73/skill_practice_hub.js
+   M	src/data/weeks/week_74/skill_practice_hub.js
+   M	src/data/weeks/week_75/skill_practice_hub.js
+   M	src/data/weeks/week_76/skill_practice_hub.js
+   M	src/data/weeks/week_77/skill_practice_hub.js
+   M	src/data/weeks/week_78/skill_practice_hub.js
+   M	src/data/weeks/week_79/skill_practice_hub.js
+   M	src/data/weeks/week_80/skill_practice_hub.js
+   M	src/data/weeks/week_81/skill_practice_hub.js
+   M	src/data/weeks/week_82/skill_practice_hub.js
+2. Governance docs & freeze manifests delta (MUST be none):
+   (none)
+3. Full Round 89 deliverables delta (R88..deliverables_commit):
+   A	docs/agent_artifacts/round89_math_regression_raw.txt
+   A	docs/agent_artifacts/round89_report.md
+   A	scripts/expand_singapore_math_18weeks.mjs
+   A	scripts/package_round89.mjs
+   A	scripts/verify_round89_math_regression.mjs
+   M	src/data/weeks/week_125/skill_practice_hub.js
+   M	src/data/weeks/week_35/skill_practice_hub.js
+   M	src/data/weeks/week_38/skill_practice_hub.js
+   M	src/data/weeks/week_39/skill_practice_hub.js
+   M	src/data/weeks/week_41/skill_practice_hub.js
+   M	src/data/weeks/week_43/skill_practice_hub.js
+   M	src/data/weeks/week_45/skill_practice_hub.js
+   M	src/data/weeks/week_46/skill_practice_hub.js
+   M	src/data/weeks/week_73/skill_practice_hub.js
+   M	src/data/weeks/week_74/skill_practice_hub.js
+   M	src/data/weeks/week_75/skill_practice_hub.js
+   M	src/data/weeks/week_76/skill_practice_hub.js
+   M	src/data/weeks/week_77/skill_practice_hub.js
+   M	src/data/weeks/week_78/skill_practice_hub.js
+   M	src/data/weeks/week_79/skill_practice_hub.js
+   M	src/data/weeks/week_80/skill_practice_hub.js
+   M	src/data/weeks/week_81/skill_practice_hub.js
+   M	src/data/weeks/week_82/skill_practice_hub.js
+4. Remaining working-tree entries (pre-existing unrelated files left unstaged + current zip/manifest):
+   M docs/Claude_handoff.txt
+    M docs/agent_artifacts/differentiation_options_w79_80_w129_132.md
+    M docs/agent_artifacts/round86_report.md
+    M docs/agent_artifacts/round87_report.md
+    M docs/agent_artifacts/round88_report.md
+    D docs/review_packages/manifest_round70.txt
+    D docs/review_packages/manifest_round71.txt
+    D docs/review_packages/manifest_round72.txt
+    D docs/review_packages/manifest_round73.txt
+    D docs/review_packages/manifest_round74.txt
+    D docs/review_packages/manifest_round75.txt
+    D docs/review_packages/manifest_round80.txt
+    M public/version.json
+    M scripts/analyze_source_b_internal_conflicts.mjs
+    M scripts/audit_round73_source_b_baseline.mjs
+    M scripts/audit_round75_source_b_baseline.mjs
+    M scripts/audit_staged_gate11.mjs
+    M scripts/build_source_a_vs_source_b_table.mjs
+    M scripts/merge_wave3_production.mjs
+    M scripts/package_round73.mjs
+    M scripts/package_round74.mjs
+    M scripts/package_round75.mjs
+    M scripts/package_round76.mjs
+    M scripts/package_round78.mjs
+    M scripts/package_round87.mjs
+    M scripts/package_round88.mjs
+   ?? "docs/Claude_handoff copy.txt"
+   ?? docs/OPEN_ITEMS.md
+   ?? docs/agent_artifacts/G1D_SO_DANG_KY_NGUON_SU_THAT_W33.md
+   ?? docs/agent_artifacts/HOTFIX_W35_DOM_EVIDENCE.json
+   ?? docs/agent_artifacts/ROUND53_DRY_RUN_PHONETICS_COVERAGE_REPORT.json
+   ?? docs/agent_artifacts/ROUND53_DRY_RUN_PHONETICS_COVERAGE_REPORT.md
+   ?? docs/agent_artifacts/ROUND55_AUDIO_FEASIBILITY_AUDIT.json
+   ?? docs/agent_artifacts/ROUND56_W35_FORENSIC_SCOPE_REPORT.md
+   ?? docs/agent_artifacts/ROUND57_W35_FIELD_LEVEL_DATA_AUDIT.md
+   ?? docs/agent_artifacts/STEP_C_FALLBACK_TABLE.md
+   ?? docs/agent_artifacts/W33_40_COMMITS_AFTER_TAG.csv
+   ?? docs/agent_artifacts/W33_W34_DATA_COMPARISON.md
+   ?? docs/agent_artifacts/W34_AUDIO_COVERAGE_TABLE.md
+   ?? docs/agent_artifacts/W34_HANDOFF_LOGS_2026-10-28.md
+   ?? docs/agent_artifacts/analyze_mcq_recursive.mjs
+   ?? docs/agent_artifacts/analyze_w33_mcq.mjs
+   ?? docs/agent_artifacts/broadcast_studio_scene_proof.png
+   ?? docs/agent_artifacts/build_40_commits_csv.mjs
+   ?? docs/agent_artifacts/doc_inventory.tsv
+   ?? docs/agent_artifacts/exhaustive_production_playtest_report.json
+   ?? docs/agent_artifacts/f7d3_batch1.json
+   ?? docs/agent_artifacts/fallback_scan_raw.json
+   ?? docs/agent_artifacts/fs_trace.cjs
+   ?? docs/agent_artifacts/g1i_raw/m41_git_commit_w34.txt
+   ?? docs/agent_artifacts/g1i_raw/m42_git_log_and_status.txt
+   ?? docs/agent_artifacts/g1i_scripts/
+   ?? docs/agent_artifacts/gate15_v2_audio_log_w33.json
+   ?? docs/agent_artifacts/gate15_v2_audio_log_w34.json
+   ?? docs/agent_artifacts/gate15_w33_local.txt
+   ?? docs/agent_artifacts/gate15_w33_prod.txt
+   ?? docs/agent_artifacts/gate_run_results_1218f5af.json
+   ?? docs/agent_artifacts/gate_run_results_df023efe.json
+   ?? docs/agent_artifacts/gate_run_results_e8dbc532.json
+   ?? docs/agent_artifacts/generate_quality_dump.mjs
+   ?? docs/agent_artifacts/investigation_w34/
+   ?? docs/agent_artifacts/official_wordlists_scanned.json
+   ?? docs/agent_artifacts/oxford_a2_verified_36.json
+   ?? docs/agent_artifacts/oxford_a2_word_levels.json
+   ?? docs/agent_artifacts/oxford_scraped_lemmas.json
+   ?? docs/agent_artifacts/prod_vs_local_73_mp3.json
+   ?? docs/agent_artifacts/round10_diff.patch
+   ?? docs/agent_artifacts/round75_prompt.txt
+   ?? docs/agent_artifacts/round75_prompt_full.txt
+   ?? docs/agent_artifacts/screenshots/audit_all_21_games_results.json
+   ?? docs/agent_artifacts/screenshots/hotfix_w35/
+   ?? docs/agent_artifacts/screenshots/w33/
+   ?? docs/agent_artifacts/screenshots/w34/broadcast_studio_direction_a.png
+   ?? docs/agent_artifacts/screenshots/w34/broadcast_studio_fixed.png
+   ?? docs/agent_artifacts/screenshots/w34/mouse_or_squirrel_closeup.jpg
+   ?? docs/agent_artifacts/screenshots/w34/science_report_hotspot_mouse_ui.png
+   ?? docs/agent_artifacts/test_all_gates.mjs
+   ?? docs/agent_artifacts/test_negative_empty_data_output.txt
+   ?? docs/agent_artifacts/w33_inventory_run1.json
+   ?? docs/agent_artifacts/w33_inventory_run2.json
+   ?? docs/agent_artifacts/w33_orphaned_media_full_list.json
+   ?? docs/agent_artifacts/w33_quality_dump.txt
+   ?? docs/agent_artifacts/w34_audio_comparison.json
+   ?? docs/agent_artifacts/w34_auto_extracted_expected.json
+   ?? docs/agent_artifacts/w34_prod_playtest_report.json
+   ?? docs/agent_artifacts/w34_rigorous_asr_audit_small.json
+   ?? docs/agent_artifacts/w34_whisper_all_73.json
+   ?? docs/agent_artifacts/w34_wip_2026-10-20.patch
+   ?? docs/agent_artifacts/week_inventory.mjs
+   ?? scripts/audit_week_audio_readiness.mjs
+   ?? scripts/batch_generate_week_audio.mjs
+   ?? scripts/build_wave1_specs.mjs
+   ?? scripts/build_wave3_specs.mjs
+   ?? scripts/capture_followup_evidence.mjs
+   ?? scripts/capture_hotfix_w35_evidence.mjs
+   ?? scripts/capture_investigation_proofs.mjs
+   ?? scripts/capture_round12_requested_screenshots.mjs
+   ?? scripts/capture_w33_batch1_screenshots.mjs
+   ?? scripts/capture_w34_package_screenshots.mjs
+   ?? scripts/compare_w33_w34_data_metrics.mjs
+   ?? scripts/compare_w33_w34_schemas.mjs
+   ?? scripts/create_w80_generator.py
+   ?? scripts/deep_audio_playtest_prod.mjs
+   ?? scripts/enrich_audio_log.mjs
+   ?? scripts/extract_w34_expected.mjs
+   ?? scripts/fetch_oxford_lemmas_real.py
+   ?? scripts/gen_w127_w129.py
+   ?? scripts/gen_w129_w130.py
+   ?? scripts/gen_w131.py
+   ?? scripts/gen_w134.py
+   ?? scripts/generate_step_c_table.mjs
+   ?? scripts/generate_w34_all_images.py
+   ?? scripts/generate_w34_audio_coverage_table.mjs
+   ?? scripts/generate_wave3_specs.py
+   ?? scripts/generate_wave3_specs_full.py
+   ?? scripts/migrate_w35_group_a.mjs
+   ?? scripts/package_round56_batch_audio.mjs
+   ?? scripts/package_round56_hotfix.mjs
+   ?? scripts/package_round58_migration.mjs
+   ?? scripts/package_round59.mjs
+   ?? scripts/package_round60.mjs
+   ?? scripts/patch_w80.py
+   ?? scripts/play_15_quests_production_forensics.mjs
+   ?? scripts/playtest_production_exhaustive.mjs
+   ?? scripts/rigorous_w34_audio_asr_audit.py
+   ?? scripts/run_14_gates_logging.mjs
+   ?? scripts/scan_fallbacks_and_defaults.mjs
+   ?? scripts/scan_hardcoded_student_strings.mjs
+   ?? scripts/test_batch_audio_generator.mjs
+   ?? scripts/test_cross_week_duplication.mjs
+   ?? scripts/test_negative_empty_data.mjs
+   ?? scripts/test_parse_source_b.mjs
+   ?? scripts/validate_f7d3_batch1.mjs
+   ?? scripts/verify_broadcast_5scenes.mjs
+========================================================================
